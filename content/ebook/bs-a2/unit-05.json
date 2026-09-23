@@ -1,0 +1,787 @@
+{
+ "title": "Kata ganti kecil yang bertumpuk",
+ "title_target": "Daj mi ga!",
+ "goal": "Mengurus berkas, kunci, dan surel di kantor tanpa mengulang-ulang nama bendanya. Titik tata bahasanya: klitik kata ganti **lengkap** (akusatif *me, te, ga, je, nas, vas, ih*; datif *mi, ti, mu, joj, nam, vam, im*), urutan **datif sebelum akusatif** (*Dao sam mu ga.*), dan bentuk panjang untuk penekanan (*Njemu, ne njoj.*).",
+ "bekal": [
+  "mengganti orang dan benda dengan klitik: *Poslao sam ti ga. Selma će mu ih poslati.*",
+  "menyusun tumpukan klitik dalam urutan yang benar: kata bantu → datif → akusatif → *se* → *je*",
+  "memakai bentuk panjang sesudah kata depan dan untuk kontras: *kod mene, meni, ne tebi*"
+ ],
+ "dialogs": [
+  {
+   "title": "Dialog — Gdje je ključ?",
+   "intro": "Selasa pagi. Tarik baru kembali sesudah seminggu sakit, dan mejanya penuh kertas. Ia mencari dua hal sekaligus, dan Budi tahu jawabannya — separuhnya.",
+   "lines": [
+    {
+     "speaker": "Tarik:",
+     "text": "Budi, jesi li vidio ključ od arhive? Ne mogu ga naći.",
+     "id": "Budi, kamu lihat kunci ruang arsip? Saya tidak bisa menemukannya.",
+     "literal": "Budi, kamu-adalah apakah melihat-lk kunci dari arsip-genitif? tidak saya-bisa dia-lk-akusatif menemukan."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Selma ga je jučer uzela. Mislim da je kod nje.",
+     "id": "Selma kemarin mengambilnya. Kayaknya ada di dia.",
+     "literal": "Selma dia-lk-akusatif ia-adalah kemarin mengambil-pr. saya-kira bahwa ia-adalah di-tempat dia-pr-genitif."
+    },
+    {
+     "speaker": "Tarik:",
+     "text": "A katalog za Tuzlu? Jesi li ga završio?",
+     "id": "Terus katalog untuk Tuzla? Sudah kamu selesaikan?",
+     "literal": "dan katalog untuk Tuzla-akusatif? kamu-adalah apakah dia-lk-akusatif menyelesaikan-lk?"
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Jesam. Poslao sam ti ga mejlom jutros.",
+     "id": "Sudah. Tadi pagi sudah saya kirim ke kamu lewat surel.",
+     "literal": "saya-adalah. mengirim-lk saya-adalah kepada-kamu dia-lk-akusatif surel-instrumental tadi-pagi."
+    },
+    {
+     "speaker": "Tarik:",
+     "text": "Nisam ga dobio. Možeš li mi ga poslati opet?",
+     "id": "Belum saya terima. Bisa kirim lagi ke saya?",
+     "literal": "saya-bukan dia-lk-akusatif menerima-lk. kamu-bisa apakah kepada-saya dia-lk-akusatif mengirim lagi?"
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Evo, šaljem ti ga odmah. Provjeri i spam.",
+     "id": "Nih, saya kirim sekarang juga. Cek juga folder spam.",
+     "literal": "ini, saya-mengirim kepada-kamu dia-lk-akusatif segera. periksalah juga spam."
+    },
+    {
+     "speaker": "Tarik:",
+     "text": "Evo ga! Hvala. A gdje su fotografije namještaja?",
+     "id": "Nah, ini dia! Makasih. Terus foto-foto mebelnya di mana?",
+     "literal": "ini dia-lk-genitif! terima-kasih. dan di-mana mereka-adalah foto-jm mebel-genitif?"
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Njih nemam. Selma ih ima na laptopu.",
+     "id": "Kalau itu saya tidak punya. Selma yang punya, di laptopnya.",
+     "literal": "mereka-akusatif saya-tidak-punya. Selma mereka-akusatif ia-punya pada laptop-lokatif."
+    },
+    {
+     "speaker": "Selma:",
+     "text": "Šta tražite, momci? Čujem svoje ime.",
+     "id": "Kalian cari apa, anak-anak? Saya dengar nama saya disebut.",
+     "literal": "apa kalian-mencari, pemuda-vokatif-jm? saya-mendengar sendiri-punya-akusatif nama."
+    },
+    {
+     "speaker": "Tarik:",
+     "text": "Ključ od arhive i fotografije. Budi kaže da su kod vas.",
+     "id": "Kunci arsip dan foto-fotonya. Kata Budi ada di Ibu.",
+     "literal": "kunci dari arsip-genitif dan foto-jm. Budi ia-berkata bahwa mereka-adalah di-tempat anda-genitif."
+    },
+    {
+     "speaker": "Selma:",
+     "text": "Ključ je kod mene, da. Evo ti ga.",
+     "id": "Kuncinya memang di saya. Ini, ambil.",
+     "literal": "kunci ia-adalah di-tempat saya-genitif, ya. ini kepada-kamu dia-lk-akusatif."
+    },
+    {
+     "speaker": "Tarik:",
+     "text": "A fotografije? Pošaljite mi ih, molim vas.",
+     "id": "Terus foto-fotonya? Tolong kirimkan ke saya, Bu.",
+     "literal": "dan foto-jm? kirimlah-anda kepada-saya mereka-akusatif, saya-mohon anda-akusatif."
+    },
+    {
+     "speaker": "Selma:",
+     "text": "Poslat ću ih njemu, ne tebi. On piše tekst.",
+     "id": "Saya kirim ke dia, bukan ke kamu. Dia yang menulis teksnya.",
+     "literal": "akan-mengirim saya-akan mereka-akusatif dia-lk-datif, bukan kamu-datif. dia ia-menulis teks-akusatif."
+    },
+    {
+     "speaker": "Tarik:",
+     "text": "Dobro, dobro. Ali meni ih pokaži kad stignu!",
+     "id": "Ya sudah, ya sudah. Tapi tunjukkan ke saya kalau sudah datang!",
+     "literal": "baik, baik. tetapi saya-datif mereka-akusatif tunjukkanlah ketika mereka-tiba!"
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Hoću. Pokazat ću ti ih sve.",
+     "id": "Pasti. Nanti saya tunjukkan semuanya ke kamu.",
+     "literal": "saya-mau. akan-menunjukkan saya-akan kepada-kamu mereka-akusatif semua-jm."
+    }
+   ],
+   "notes": [
+    "***Ne mogu ga naći* — kata ganti menggantikan benda, bukan cuma orang.** *Ključ* lelaki, jadi penggantinya *ga*; *katalog* juga *ga*; *fotografije* jamak, jadi *ih*. Bahasa Indonesia cukup berkata \"-nya\" untuk semuanya. Bahasa Bosnia memaksamu mengingat jenis kelamin dan jumlah bendanya — itu sebabnya daftar kosakata selalu mencantumkan *(lk), (pr), (nt)*.",
+    "***Poslao sam ti ga* — tiga klitik berbaris.** Kata bantu *sam* duduk paling depan, lalu datif *ti* (kepada kamu), lalu akusatif *ga* (itu). Urutannya tidak pernah berubah. Mengatakan *poslao sam ga ti* akan langsung terdengar asing bagi telinga Bosnia, walaupun orang masih menangkap maksudmu.",
+    "***Evo ga!* — genitif sesudah *evo*.** Seperti *evo vaše tepsije* di unit 3, *evo* suka genitif, dan genitif *on* sama dengan akusatifnya: *ga*. *Evo ga!* adalah cara spontan berkata \"nah, ini dia!\" waktu sesuatu yang dicari akhirnya muncul. *Evo ti ga* (\"nih, untukmu\") menambahkan datif penerima.",
+    "***kod nje, kod vas, kod mene* — sesudah kata depan, pakai bentuk panjang.** Klitik tidak boleh berdiri sesudah kata depan. Karena itu *kod nje* (bukan *kod je*), *za njega*, *s njom*, *o njima*. *Kod* + orang berarti \"ada pada, dipegang oleh\": *Ključ je kod mene.*",
+    "***Njemu, ne tebi* — bentuk panjang untuk kontras.** Kalau yang penting adalah *siapa* (dia, bukan kamu), bentuk pendek tidak cukup kuat. Maka Selma berkata *njemu, ne tebi*, dan Tarik membalas *meni ih pokaži*. Bentuk panjang boleh berdiri di mana saja, termasuk di awal kalimat.",
+    "***Čujem svoje ime* — satu pratinjau.** *Svoje* berarti \"milik sendiri\" dan dipakai kalau pemiliknya adalah pelaku kalimat itu sendiri. Kata ini punya unitnya sendiri (unit 10); untuk sekarang cukup kenali bahwa ia bukan salah ketik untuk *moje*."
+   ],
+   "grammars": [
+    {
+     "title": "Kata ganti orang: bentuk panjang dan klitik",
+     "body": [
+      "Setiap kata ganti orang punya dua bentuk di genitif, datif, dan akusatif: bentuk **panjang** (bertekanan, boleh berdiri sendiri) dan **klitik** (tanpa tekanan, wajib di kursi kedua). Genitif dan akusatif bentuknya kembar, jadi kamu hanya perlu menghafal dua kolom klitik."
+     ],
+     "table": {
+      "head": [
+       "Pelaku",
+       "Akusatif / Genitif panjang",
+       "Klitik A / G",
+       "Datif panjang",
+       "Klitik D"
+      ],
+      "rows": [
+       [
+        "**ja**",
+        "*mene*",
+        "*me*",
+        "*meni*",
+        "*mi*"
+       ],
+       [
+        "**ti**",
+        "*tebe*",
+        "*te*",
+        "*tebi*",
+        "*ti*"
+       ],
+       [
+        "**on / ono**",
+        "*njega*",
+        "*ga*",
+        "*njemu*",
+        "*mu*"
+       ],
+       [
+        "**ona**",
+        "*nju* (A) / *nje* (G)",
+        "*je* (atau *ju*)",
+        "*njoj*",
+        "*joj*"
+       ],
+       [
+        "**mi**",
+        "*nas*",
+        "*nas*",
+        "*nama*",
+        "*nam*"
+       ],
+       [
+        "**vi / Vi**",
+        "*vas*",
+        "*vas*",
+        "*vama*",
+        "*vam*"
+       ],
+       [
+        "**oni / one / ona**",
+        "*njih*",
+        "*ih*",
+        "*njima*",
+        "*im*"
+       ]
+      ]
+     },
+     "after": [
+      "**Dua deret, dua pertanyaan.** Datif *mi, ti, mu, joj, nam, vam, im* menjawab \"kepada siapa\"; akusatif *me, te, ga, je, nas, vas, ih* menjawab \"siapa / apa\". Ucapkan kedua deret itu berpasangan (*mi — me, ti — te, mu — ga, joj — je*) sampai terdengar seperti satu lagu.",
+      "***je* punya dua pekerjaan.** Ia \"adalah\" (*on je*) dan juga \"dia perempuan\" (*vidim je*). Kalau keduanya bertemu, akusatif perempuan berganti menjadi ***ju***: *Vidio ju je* (Ia melihatnya), bukan *vidio je je*. Di luar tabrakan itu, *je* yang lazim.",
+      "***Ga* dan *mu* juga untuk netral.** *Selo, pismo, dijete* digantikan oleh *ga* dan *mu*, sama seperti lelaki: *Pismo? Poslao sam ga.*",
+      "***nas* dan *vas* sama saja**, panjang maupun pendek; yang membedakan hanya tekanan dan posisinya: *Vidiš li nas?* (klitik) lawan *Nas ne vidiš, a njih vidiš?* (panjang, kontras)."
+     ]
+    },
+    {
+     "title": "Antrean di kursi kedua",
+     "body": [
+      "Di A1 kamu memasang aturan kursi kedua dengan satu atau dua klitik. Sekarang antreannya lengkap. Bayangkan satu bangku panjang di belakang kata pertama, dengan tempat duduk bernomor:"
+     ],
+     "table": {
+      "head": [
+       "1",
+       "2",
+       "3",
+       "4",
+       "5",
+       "6",
+       "Kalimat"
+      ],
+      "rows": [
+       [
+        "*li*",
+        "kata bantu (*sam, si, smo, ste, su, ću, ćeš…, bih*)",
+        "datif",
+        "akusatif / genitif",
+        "*se*",
+        "*je*",
+        "—"
+       ],
+       [
+        "—",
+        "*sam*",
+        "*mu*",
+        "*ga*",
+        "—",
+        "—",
+        "*Dao **sam mu ga**.*"
+       ],
+       [
+        "*li*",
+        "—",
+        "*mi*",
+        "*ga*",
+        "—",
+        "—",
+        "*Možeš **li mi ga** poslati?*"
+       ],
+       [
+        "—",
+        "*će*",
+        "*mu*",
+        "*ih*",
+        "—",
+        "—",
+        "*Selma **će mu ih** poslati.*"
+       ],
+       [
+        "—",
+        "—",
+        "*mi*",
+        "*ga*",
+        "—",
+        "*je*",
+        "*Poslala **mi ga je**.*"
+       ],
+       [
+        "—",
+        "—",
+        "*mi*",
+        "—",
+        "*se*",
+        "—",
+        "*Svidjelo **mi se**.*"
+       ],
+       [
+        "—",
+        "—",
+        "*joj*",
+        "*ih*",
+        "—",
+        "*je*",
+        "*Dao **joj ih je**.*"
+       ]
+      ]
+     },
+     "after": [
+      "**Satu-satunya yang melompat: *je*.** Semua kata bantu duduk di tempat 2, **kecuali *je***, yang selalu duduk paling belakang: *Dao sam mu ga* tetapi *Dao mu ga je*. Karena itu *Selma mi ga je dala*, bukan *Selma je mi ga dala*.",
+      "**Kata pertama bisa apa saja:** pelaku (*Selma mi ga je dala*), kata kerja (*Dala mi ga je*), kata tanya (*Kad si mi ga poslao?*), atau keterangan (*Jutros sam ti ga poslao*). Yang tidak boleh: klitik di awal kalimat. *Mi ga je dala* salah.",
+      "**Perintah memakai urutan yang sama.** Kata kerja perintah di depan, klitik di belakangnya: *Daj mi ga! Pošaljite mi ih! Pokaži mi je!* Dengan larangan: *Nemoj mi ga davati.*"
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Dialog kedua — Pošaljite ga direktno meni",
+   "intro": "Siangnya, Budi menelepon klien di Tuzla, gospodin Hasanović, untuk memastikan kontrak sudah sampai. Nada bicaranya resmi: *Vi*, bukan *ti*.",
+   "lines": [
+    {
+     "speaker": "Budi:",
+     "text": "Dobar dan, gospodine Hasanoviću. Zovem iz agencije gospođe Hodžić.",
+     "id": "Selamat siang, Pak Hasanović. Saya menelepon dari agensi Ibu Hodžić.",
+     "literal": "baik hari, tuan-vokatif Hasanović-vokatif. saya-menelepon dari agensi-genitif nyonya-genitif Hodžić."
+    },
+    {
+     "speaker": "Hasanović:",
+     "text": "Dobar dan. Jeste li nam poslali ugovor?",
+     "id": "Selamat siang. Kontraknya sudah Anda kirim ke kami?",
+     "literal": "baik hari. anda-adalah apakah kepada-kami mengirim-jm kontrak-akusatif?"
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Jesam, jutros. Poslao sam ga vašoj sekretarici.",
+     "id": "Sudah, tadi pagi. Saya kirim ke sekretaris Anda.",
+     "literal": "saya-adalah, tadi-pagi. mengirim-lk saya-adalah dia-lk-akusatif anda-punya-datif-pr sekretaris-datif."
+    },
+    {
+     "speaker": "Hasanović:",
+     "text": "Ona je danas na godišnjem. Možete li ga poslati direktno meni?",
+     "id": "Dia hari ini sedang cuti. Bisa Anda kirim langsung ke saya?",
+     "literal": "dia ia-adalah hari-ini pada tahunan-lokatif. anda-bisa apakah dia-lk-akusatif mengirim langsung saya-datif?"
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Naravno. Šaljem vam ga za pet minuta.",
+     "id": "Tentu. Lima menit lagi saya kirim.",
+     "literal": "tentu. saya-mengirim kepada-anda dia-lk-akusatif dalam lima menit-genitif-jm."
+    },
+    {
+     "speaker": "Hasanović:",
+     "text": "Hvala. I pozdravite mi gospođu Hodžić.",
+     "id": "Terima kasih. Dan sampaikan salam saya untuk Ibu Hodžić.",
+     "literal": "terima-kasih. dan salamilah-anda kepada-saya nyonya-akusatif Hodžić."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Hoću. Treba li vam još nešto?",
+     "id": "Baik. Ada lagi yang Anda perlukan?",
+     "literal": "saya-mau. ia-perlu apakah kepada-anda lagi sesuatu?"
+    },
+    {
+     "speaker": "Hasanović:",
+     "text": "Fotografije. Naš direktor ih želi vidjeti prije sastanka.",
+     "id": "Foto-fotonya. Direktur kami ingin melihatnya sebelum rapat.",
+     "literal": "foto-jm. kami-punya direktur mereka-akusatif ia-ingin melihat sebelum rapat-genitif."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Selma će mu ih poslati danas.",
+     "id": "Selma akan mengirimkannya ke beliau hari ini.",
+     "literal": "Selma ia-akan dia-lk-datif mereka-akusatif mengirim hari-ini."
+    },
+    {
+     "speaker": "Hasanović:",
+     "text": "Odlično. Hvala vam i doviđenja.",
+     "id": "Bagus. Terima kasih, sampai jumpa.",
+     "literal": "sangat-baik. terima-kasih kepada-anda dan sampai-bertemu."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Nema na čemu. Prijatno!",
+     "id": "Sama-sama. Selamat siang!",
+     "literal": "tidak-ada pada apa-lokatif. menyenangkan!"
+    }
+   ],
+   "notes": [
+    "***gospodine Hasanoviću* — lelaki: gelar dan nama sama-sama berubah.** Bandingkan dengan *gospođo Hodžić* di unit 1, tempat nama perempuan membeku. Nama keluarga berakhiran *-ić* mendapat vokatif *-iću*: *gospodine Kovačeviću, gospodine Begiću*.",
+    "***Možete li ga poslati direktno meni?* — pendek dan panjang dalam satu kalimat.** Kontrak itu biasa saja, jadi cukup *ga*. Penerimanya yang penting — saya, bukan sekretaris — jadi dipakai bentuk panjang *meni* dan ditaruh di ujung kalimat, tempat bahasa Bosnia menyimpan informasi baru.",
+    "***Pozdravite mi gospođu Hodžić* — datif \"atas nama saya\".** Klitik *mi* di sini bukan penerima salam, melainkan pengirimnya: \"salami Ibu Hodžić untuk saya\". Pola ini sangat sering: *Pozdravi mi mamu! Čuvaj mi se!* (\"jaga dirimu, demi aku\").",
+    "***na godišnjem* — cuti tahunan.** Kependekan dari *na godišnjem odmoru*. Kata sifatnya berdiri sendiri, dan kata bendanya dibuang karena semua orang tahu maksudnya. Pola yang sama: *na bolovanju* (cuti sakit), *na porodiljskom* (cuti melahirkan).",
+    "***Prijatno!*** Salam penutup serba guna di Bosnia: sesudah telepon, waktu meninggalkan toko, atau kepada orang yang sedang makan (\"selamat makan\"). Kalau ragu harus berkata apa di pintu keluar, *prijatno* hampir tak pernah salah."
+   ],
+   "grammars": [
+    {
+     "title": "Kapan bentuk panjang wajib",
+     "body": [
+      "Bentuk panjang tidak lebih sopan atau lebih baku daripada klitik; ia dipakai karena posisinya menuntut tekanan. Empat situasi ini mencakup hampir semuanya."
+     ],
+     "table": {
+      "head": [
+       "Situasi",
+       "Contoh",
+       "Bahasa Indonesia"
+      ],
+      "rows": [
+       [
+        "sesudah kata depan",
+        "*kod mene, za njega, s njom, o njima, prema vama*",
+        "di saya, untuk dia, dengan dia, tentang mereka, terhadap Anda"
+       ],
+       [
+        "kontras atau penekanan",
+        "*Njemu, ne njoj. Meni se to ne sviđa.*",
+        "Ke dia (lk), bukan ke dia (pr). Saya sih tidak suka."
+       ],
+       [
+        "jawaban satu kata",
+        "*Kome si ga dao? — Njoj.*",
+        "Kamu berikan ke siapa? — Ke dia."
+       ],
+       [
+        "informasi baru di ujung kalimat",
+        "*Pošaljite ga direktno meni.*",
+        "Kirim langsung ke saya."
+       ]
+      ]
+     },
+     "after": [
+      "**Klitik adalah pilihan bawaan.** Kalau tidak ada alasan di atas, pakai klitik. Kalimat seperti *Dao sam njemu njega* benar secara bentuk, tetapi terdengar seperti orang yang sedang marah atau menunjuk-nunjuk.",
+      "***Vi* resmi memakai bentuk jamak yang sama:** *vas, vam, vama*. Dalam surat dan surel resmi ditulis dengan huruf besar — *Šaljem Vam ugovor u prilogu* — sedangkan dalam dialog ini ditulis kecil seperti ucapan biasa."
+     ]
+    }
+   ]
+  }
+ ],
+ "sections": [
+  {
+   "title": "Berkas, surel, dan meja kantor",
+   "blocks": [
+    {
+     "type": "tabel",
+     "head": [
+      "Bosanski",
+      "Bahasa Indonesia",
+      "Dengan klitik"
+     ],
+     "rows": [
+      [
+       "*mejl* (lk)",
+       "surel",
+       "*Poslao sam ti ga.*"
+      ],
+      [
+       "*prilog* (lk)",
+       "lampiran",
+       "*Šaljem Vam ga u prilogu.*"
+      ],
+      [
+       "*fajl / dokument* (lk)",
+       "berkas digital",
+       "*Ne mogu ga otvoriti.*"
+      ],
+      [
+       "*fascikla* (pr)",
+       "map, folder kertas",
+       "*Stavio sam je na tvoj sto.*"
+      ],
+      [
+       "*ključ* (lk)",
+       "kunci",
+       "*Evo ti ga.*"
+      ],
+      [
+       "*arhiva* (pr)",
+       "ruang arsip",
+       "*Zaključaj je, molim te.*"
+      ],
+      [
+       "*štampati / odštampati*",
+       "mencetak",
+       "*Odštampaj mi ga.*"
+      ],
+      [
+       "*skenirati*",
+       "memindai",
+       "*Skeniraj mi ih.*"
+      ],
+      [
+       "*potpisati*",
+       "menandatangani",
+       "*Potpisala ga je jučer.*"
+      ],
+      [
+       "*pečat* (lk)",
+       "cap, stempel",
+       "*Treba mu pečat.*"
+      ],
+      [
+       "*proslijediti*",
+       "meneruskan (surel)",
+       "*Proslijedi mi ga.*"
+      ],
+      [
+       "*odgovoriti na*",
+       "membalas",
+       "*Odgovorio sam mu.*"
+      ],
+      [
+       "*rok* (lk)",
+       "tenggat",
+       "*Rok nam je u petak.*"
+      ]
+     ]
+    },
+    {
+     "type": "p",
+     "text": "Kolom ketiga adalah latihan tersembunyi: setiap kalimat mengganti bendanya dengan klitik. *Fascikla* dan *arhiva* perempuan, jadi *je*; *fajl, ključ, prilog* lelaki, jadi *ga*. Perhatikan juga *Rok nam je u petak* — \"tenggat kita hari Jumat\": datif *nam* di sini berarti \"milik kami\", pola yang sangat umum untuk hal yang kita alami bersama. Dalam bahasa sehari-hari di kantor Sarajevo kamu akan mendengar *printati* dan *printer* di samping *štampati* dan *štampač*; keduanya dimengerti."
+    },
+    {
+     "type": "kotak",
+     "title": "Stempel dan tanda tangan",
+     "items": [
+      "Banyak dokumen bisnis dan administrasi di Bosnia-Herzegovina masih dibubuhi **pečat** (cap perusahaan) di samping tanda tangan, terutama kontrak, faktur, dan surat resmi. Kalimat yang akan sering kamu dengar: *Treba još pečat.*",
+      "Dokumen resmi terkadang juga meminta salinan yang disahkan (*ovjerena kopija*), yang dibuat di kantor notaris atau di kantor *općina* — tanyakan dulu jenis salinan yang diminta sebelum datang.",
+      "Surel resmi dibuka dengan *Poštovani gospodine…* / *Poštovana gospođo…* dan ditutup dengan *S poštovanjem*. Di tengahnya, *Vi, Vam, Vaš* ditulis dengan huruf besar."
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Ungkapan sehari-hari yang memuat klitik",
+   "blocks": [
+    {
+     "type": "tabel",
+     "head": [
+      "Ungkapan",
+      "Harfiah",
+      "Arti sebenarnya"
+     ],
+     "rows": [
+      [
+       "*Daj mi ga!*",
+       "berikan kepadaku dia",
+       "Sini, kasih ke saya!"
+      ],
+      [
+       "*Evo ti ga.*",
+       "ini kepadamu dia",
+       "Nih, ambil."
+      ],
+      [
+       "*Javi mi se.*",
+       "kabari aku dirimu",
+       "Kabari saya ya."
+      ],
+      [
+       "*Nedostaješ mi.*",
+       "kamu kurang bagiku",
+       "Aku kangen kamu."
+      ],
+      [
+       "*Žao mi je.*",
+       "sayang bagiku adalah",
+       "Maaf; saya ikut sedih."
+      ],
+      [
+       "*Svejedno mi je.*",
+       "sama saja bagiku",
+       "Terserah, sama saja bagi saya."
+      ],
+      [
+       "*Ostavi me na miru.*",
+       "tinggalkan aku dalam damai",
+       "Jangan ganggu saya."
+      ],
+      [
+       "*Čuješ li me?*",
+       "kamu dengar apakah aku",
+       "Kedengaran? (di telepon)"
+      ],
+      [
+       "*Pozdravi mi ih.*",
+       "salami untukku mereka",
+       "Salam untuk mereka ya."
+      ],
+      [
+       "*Briga me.*",
+       "urusan aku",
+       "Masa bodoh. (kasar, santai)"
+      ]
+     ]
+    },
+    {
+     "type": "p",
+     "text": "Ungkapan-ungkapan ini lebih baik dihafal sebagai satu kesatuan bunyi daripada dibongkar. *Dajmiga* terdengar seperti satu kata, begitu juga *evotiga* dan *javimise*. Kalau kamu sudah bisa mengucapkannya tanpa berpikir, urutan klitik di kalimat yang lebih panjang akan terasa alami dengan sendirinya — telingamu sudah tahu bahwa *mi* datang sebelum *ga* dan *se*. Satu peringatan: *Briga me* dan *Ostavi me na miru* cukup ketus; simpan untuk teman dekat atau untuk penjual yang terlalu memaksa di Baščaršija."
+    },
+    {
+     "type": "kotak",
+     "title": "Ti atau Vi di kantor",
+     "items": [
+      "Rekan kerja yang sebaya biasanya cepat beralih ke *ti*, bahkan sejak hari pertama. Kepada atasan, klien, dan orang yang jauh lebih tua, mulailah dengan *Vi* dan tunggu tawaran *Možemo na ti* (kita pakai *ti* saja).",
+      "Kalau atasan memakai *ti* kepadamu tetapi kamu tetap memakai *Vi* kepadanya, itu wajar dan tidak dianggap kaku — seperti Budi dan gospođa Hodžić.",
+      "Di telepon dengan orang yang belum dikenal, *Vi* selalu aman. Kesalahan ke arah terlalu sopan jauh lebih mudah dimaafkan daripada sebaliknya."
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Ulangan berjenjang — unit 3",
+   "blocks": [
+    {
+     "type": "p",
+     "text": "Tutup kolom Bosnia, baca terjemahan Indonesianya, lalu susun kembali kalimatnya dari ingatan."
+    },
+    {
+     "type": "tabel",
+     "head": [
+      "Bahasa Indonesia",
+      "Bosanski"
+     ],
+     "rows": [
+      [
+       "Budi, kardus besar ini isinya apa? Beratnya kayak batu!",
+       "*Budi, šta je u ovoj velikoj kutiji? Teška je kao kamen!*"
+      ],
+      [
+       "Saya bawakan kalian pita kentang yang masih hangat. Selamat datang di gedung kita!",
+       "*Donijela sam vam toplu krompirušu. Dobro došli u našu zgradu!*"
+      ],
+      [
+       "Nak, kalau kamu punya tetangga yang baik, kamu punya segalanya.",
+       "*E, moj sine, kad imaš dobre komšije, imaš sve.*"
+      ],
+      [
+       "Masuk sebentar. Ibu ceritakan semua tentang tetangga-tetangga kita.",
+       "*Uđi malo. Ispričat ću ti sve o našim komšijama.*"
+      ],
+      [
+       "Itu Mirsad dari lantai enam. Anjingnya paling baik, musiknya paling jelek!",
+       "*To je Mirsad sa šestog. Ima najboljeg psa i najgoru muziku!*"
+      ]
+     ]
+    }
+   ]
+  }
+ ],
+ "vocab": [
+  {
+   "bs": "ključ, ključevi (lk)",
+   "baca": "klyuch, KLYU-che-vi",
+   "id": "kunci"
+  },
+  {
+   "bs": "arhiva (pr)",
+   "baca": "AR-hi-va",
+   "id": "arsip; ruang arsip"
+  },
+  {
+   "bs": "tražiti (tražim) — ipf",
+   "baca": "TRA-zhi-ti",
+   "id": "mencari; meminta"
+  },
+  {
+   "bs": "nalaziti (nalazim) / naći (nađem)",
+   "baca": "NA-la-zi-ti / NA-chi",
+   "id": "menemukan"
+  },
+  {
+   "bs": "uzimati (uzimam) / uzeti (uzmem)",
+   "baca": "u-ZI-ma-ti / U-ze-ti",
+   "id": "mengambil"
+  },
+  {
+   "bs": "davati (dajem) / dati (dam)",
+   "baca": "DA-va-ti / DA-ti",
+   "id": "memberi"
+  },
+  {
+   "bs": "slati (šaljem) / poslati (pošaljem)",
+   "baca": "SLA-ti / POS-la-ti",
+   "id": "mengirim"
+  },
+  {
+   "bs": "dobivati (dobivam) / dobiti (dobijem)",
+   "baca": "do-BI-va-ti / DO-bi-ti",
+   "id": "menerima, mendapat"
+  },
+  {
+   "bs": "završavati (završavam) / završiti (završim)",
+   "baca": "za-vr-SYA-va-ti / ZA-vr-syi-ti",
+   "id": "menyelesaikan"
+  },
+  {
+   "bs": "provjeravati (provjeravam) / provjeriti (provjerim)",
+   "baca": "pro-VYE-ra-va-ti / PROV-ye-ri-ti",
+   "id": "memeriksa, mengecek"
+  },
+  {
+   "bs": "pokazivati (pokazujem) / pokazati (pokažem)",
+   "baca": "po-ka-ZI-va-ti / po-KA-za-ti",
+   "id": "menunjukkan"
+  },
+  {
+   "bs": "vraćati (vraćam) / vratiti (vratim)",
+   "baca": "VRA-cha-ti / VRA-ti-ti",
+   "id": "mengembalikan"
+  },
+  {
+   "bs": "fotografija (pr)",
+   "baca": "fo-to-GRA-fi-ya",
+   "id": "foto"
+  },
+  {
+   "bs": "mejl, mejlovi (lk)",
+   "baca": "meyl, MEY-lo-vi",
+   "id": "surel"
+  },
+  {
+   "bs": "prilog, prilozi (lk)",
+   "baca": "PRI-log, PRI-lo-zi",
+   "id": "lampiran"
+  },
+  {
+   "bs": "tekst, tekstovi (lk)",
+   "baca": "tekst, TEKS-to-vi",
+   "id": "teks"
+  },
+  {
+   "bs": "sekretarica (pr)",
+   "baca": "sek-re-TA-ri-tsa",
+   "id": "sekretaris (perempuan)"
+  },
+  {
+   "bs": "direktor, direktori (lk)",
+   "baca": "DI-rek-tor",
+   "id": "direktur"
+  },
+  {
+   "bs": "sastanak, sastanka (lk)",
+   "baca": "SAS-ta-nak",
+   "id": "rapat (N, G)"
+  },
+  {
+   "bs": "godišnji odmor (lk)",
+   "baca": "GO-disy-nyi OD-mor",
+   "id": "cuti tahunan"
+  },
+  {
+   "bs": "direktno",
+   "baca": "DI-rekt-no",
+   "id": "langsung"
+  },
+  {
+   "bs": "pozdravljati (pozdravljam) / pozdraviti (pozdravim)",
+   "baca": "poz-DRAV-lya-ti / POZ-dra-vi-ti",
+   "id": "menyalami, titip salam"
+  },
+  {
+   "bs": "štampati (štampam) / odštampati (odštampam)",
+   "baca": "SYTAM-pa-ti / OD-sytam-pa-ti",
+   "id": "mencetak"
+  },
+  {
+   "bs": "pečat, pečati (lk)",
+   "baca": "PE-chat, PE-cha-ti",
+   "id": "cap, stempel"
+  },
+  {
+   "bs": "prijatno",
+   "baca": "PRI-yat-no",
+   "id": "salam pamit; selamat makan"
+  }
+ ],
+ "exercises": [
+  {
+   "prompt": "Terjemahkan ke bahasa Bosnia dengan klitik (benda yang dimaksud ada di dalam kurung).",
+   "items": [
+    "Saya tidak bisa menemukannya. (kuncinya)",
+    "Tadi pagi sudah saya kirim ke kamu lewat surel. (katalognya; pembicara lelaki)",
+    "Bisa kirim lagi ke saya? (katalognya; kepada teman)",
+    "Saya kirim ke dia, bukan ke kamu. (foto-fotonya; *dia* lelaki; futur)",
+    "Bisakah Anda mengirimnya langsung ke saya? (kontraknya)",
+    "Selma akan mengirimkannya ke beliau hari ini. (foto-fotonya; *beliau* lelaki)"
+   ]
+  },
+  {
+   "prompt": "Ganti kata benda yang dicetak miring di kalimat pertama dengan klitik, lalu isi titik-titiknya.",
+   "items": [
+    "Dao sam *Tariku ključ*. → Dao sam ____.",
+    "Poslala sam *Amini knjige*. → Poslala sam ____.",
+    "Selma je dala *nama ugovor*. → Selma ____ je dala.",
+    "Pokazat ću *tebi fotografije*. → Pokazat ću ____.",
+    "Jesi li vidio *Aminu*? → Jesi li ____ vidio?",
+    "Kupio sam *mami cvijeće*. → Kupio sam ____.",
+    "Vratit ću *vama knjigu*. → Vratit ću ____."
+   ]
+  },
+  {
+   "prompt": "Jawab \"ya\" dengan kalimat lengkap yang memakai dua klitik. Contoh: *Jesi li poslao mejl Selmi?* → *Jesam, poslao sam joj ga.*",
+   "items": [
+    "Jesi li dao ključ Tariku?",
+    "Jesi li poslala fotografije klijentu? (pembicara perempuan)",
+    "Hoćeš li mi pokazati katalog?",
+    "Jesu li vam vratili knjige?",
+    "Je li Selma dala ugovor Amini?",
+    "Hoćete li nam poslati račun? (pembicara satu orang)"
+   ]
+  },
+  {
+   "prompt": "Susun jadi kalimat yang benar.",
+   "items": [
+    "ga / mogu / ne / naći",
+    "sam / ga / poslao / ti / jutros / mejlom",
+    "ih / ću / poslat / njemu / tebi / ne",
+    "li / ga / možete / poslati / meni / direktno",
+    "mu / će / ih / Selma / poslati / danas"
+   ]
+  }
+ ],
+ "answers": [
+  "Ne mogu ga naći. — Poslao sam ti ga mejlom jutros. — Možeš li mi ga poslati opet? — Poslat ću ih njemu, ne tebi. — Možete li ga poslati direktno meni? — Selma će mu ih poslati danas.",
+  "mu ga — joj ih — nam ga — ti ih — je — joj ga — vam je",
+  "Jesam, dao sam mu ga. — Jesam, poslala sam mu ih. — Hoću, pokazat ću ti ga. — Jesu, vratili su nam ih. — Jeste, dala joj ga je. — Hoću, poslat ću vam ga.",
+  "Ne mogu ga naći. — Poslao sam ti ga mejlom jutros. — Poslat ću ih njemu, ne tebi. — Možete li ga poslati direktno meni? — Selma će mu ih poslati danas."
+ ]
+}

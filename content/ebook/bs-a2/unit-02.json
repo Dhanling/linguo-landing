@@ -1,0 +1,750 @@
+{
+ "title": "Mencari tempat tinggal — padež jamak",
+ "title_target": "Tražim stan",
+ "goal": "Melihat apartemen sewaan, bertanya soal kamar, harga, dan lingkungan, lalu membandingkan pilihan dengan teman. Titik tata bahasanya: deklinasi **jamak** lengkap (genitif *stanova, soba, sela*; datif, lokatif, dan instrumental *-ima / -ama*) dan kata kuantitas *puno, malo, nekoliko, koliko* + genitif jamak.",
+ "bekal": [
+  "menyebut jumlah dengan benar: *dva stana*, *pet stanova*, *nekoliko stolica*",
+  "memakai satu ekor untuk tiga padež jamak: *u oglasima, s komšijama, vlasnicima*",
+  "membaca iklan sewa dan bertanya *Koliko je kirija? Jesu li režije uključene?*"
+ ],
+ "dialogs": [
+  {
+   "title": "Dialog — Stan na Grbavici",
+   "intro": "Sabtu pagi di Grbavica, lingkungan di tepi selatan Miljacka. Budi sudah melihat dua apartemen yang mengecewakan. Agen ketiga, Senad, menunggunya di depan gedung bertingkat delapan.",
+   "lines": [
+    {
+     "speaker": "Senad:",
+     "text": "Dobar dan! Vi ste Budi? Ja sam Senad iz agencije.",
+     "id": "Selamat siang! Anda Budi? Saya Senad dari agensi.",
+     "literal": "baik hari! Anda anda-adalah Budi? saya saya-adalah Senad dari agensi-genitif."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Jesam, drago mi je. Hvala što ste došli tako rano.",
+     "id": "Betul, senang bertemu. Terima kasih sudah datang sepagi ini.",
+     "literal": "saya-adalah, senang-nt kepada-saya ia-adalah. terima-kasih bahwa anda-adalah datang-jm begitu pagi."
+    },
+    {
+     "speaker": "Senad:",
+     "text": "Nema na čemu. Zgrada ima osam spratova i četrdeset stanova.",
+     "id": "Sama-sama. Gedungnya punya delapan lantai dan empat puluh apartemen.",
+     "literal": "tidak-ada pada apa-lokatif. gedung ia-punya delapan lantai-genitif-jm dan empat-puluh apartemen-genitif-jm."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "A na kojem je spratu stan?",
+     "id": "Apartemennya di lantai berapa?",
+     "literal": "dan pada yang-mana-lokatif ia-adalah lantai-lokatif apartemen?"
+    },
+    {
+     "speaker": "Senad:",
+     "text": "Na petom. Ali ima lift, ne brinite.",
+     "id": "Di lantai lima. Tapi ada lift, jangan khawatir.",
+     "literal": "pada kelima-lokatif. tetapi ada lift, jangan khawatirlah."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Lijepo je i svijetlo. Koliko ima prozora?",
+     "id": "Bagus dan terang. Ada berapa jendela?",
+     "literal": "indah-nt ia-adalah dan terang-nt. berapa ada jendela-genitif-jm?"
+    },
+    {
+     "speaker": "Senad:",
+     "text": "Pet prozora, i iz obje sobe se vidi Miljacka.",
+     "id": "Lima jendela, dan dari kedua kamar kelihatan Sungai Miljacka.",
+     "literal": "lima jendela-genitif-jm, dan dari kedua kamar-genitif diri-sendiri terlihat Miljacka."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Je li stan namješten?",
+     "id": "Apartemennya sudah berperabot?",
+     "literal": "ia-adalah apakah apartemen berperabot-lk?"
+    },
+    {
+     "speaker": "Senad:",
+     "text": "Djelimično. Ima krevet, dva ormara i nekoliko stolica.",
+     "id": "Sebagian. Ada tempat tidur, dua lemari, dan beberapa kursi.",
+     "literal": "sebagian. ada tempat-tidur-akusatif, dua lemari-genitif dan beberapa kursi-genitif-jm."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "A kakvi su komšije?",
+     "id": "Tetangganya seperti apa?",
+     "literal": "dan macam-apa-jm mereka-adalah tetangga-jm?"
+    },
+    {
+     "speaker": "Senad:",
+     "text": "Mirni. Uglavnom penzioneri i nekoliko studenata. S komšijama nema problema.",
+     "id": "Tenang. Kebanyakan pensiunan dan beberapa mahasiswa. Dengan tetangga tidak ada masalah.",
+     "literal": "tenang-jm. umumnya pensiunan-jm dan beberapa mahasiswa-genitif-jm. dengan tetangga-instrumental-jm tidak-ada masalah-genitif-jm."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "A šta ima u blizini?",
+     "id": "Di sekitar sini ada apa saja?",
+     "literal": "dan apa ada di dekat-lokatif?"
+    },
+    {
+     "speaker": "Senad:",
+     "text": "U blizini ima puno prodavnica i kafića.",
+     "id": "Di dekat sini banyak toko dan kafe.",
+     "literal": "di dekat-lokatif ada banyak toko-genitif-jm dan kafe-genitif-jm."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Odlično. I koliko je kirija?",
+     "id": "Bagus. Terus sewanya berapa?",
+     "literal": "sangat-baik. dan berapa ia-adalah sewa?"
+    },
+    {
+     "speaker": "Senad:",
+     "text": "Petsto maraka mjesečno, bez režija.",
+     "id": "Lima ratus mark sebulan, belum termasuk tagihan.",
+     "literal": "lima-ratus mark-genitif-jm per-bulan, tanpa tagihan-genitif-jm."
+    }
+   ],
+   "notes": [
+    "***osam spratova i četrdeset stanova* — genitif jamak sesudah angka 5 ke atas.** Aturan A1 masih berlaku: 1 + nominatif (*jedan stan*), 2–4 + genitif tunggal (*dva ormara*), 5 ke atas + genitif jamak (*pet prozora*). Yang baru adalah bentuk genitif jamaknya sendiri, dan hampir selalu berakhir **-a**: *stanova, prozora, soba, stolica*.",
+    "***stan → stanovi, sprat → spratovi* — sisipan *-ov-*.** Kata benda lelaki bersuku satu biasanya menyisipkan *-ov-* (atau *-ev-* sesudah huruf lunak) di seluruh jamaknya: *grad → gradovi, gradova*; *broj → brojevi, brojeva*. Kata bersuku dua atau lebih tidak: *prozor → prozori, prozora*; *ormar → ormari, ormara*.",
+    "***Na kojem je spratu stan?* — klitik membelah frasa.** Kata *je* ingin duduk di kursi kedua, dan di sini ia menyelip di antara *na kojem* dan *spratu*. Itu sah dan sangat lazim. *Na kojem spratu je stan?* juga terdengar, terutama di Sarajevo, tetapi belahan tadi lebih rapi.",
+    "***sprat, kupatilo, djelimično, prodavnica* — kosakata Bosnia.** Di Kroasia orang berkata *kat, kupaonica, djelomično, trgovina*. Di Sarajevo *trgovina* juga dimengerti, dan kata *kat* kadang terdengar, tetapi dalam iklan dan percakapan Bosnia yang umum adalah *sprat* dan *prodavnica*.",
+    "***nekoliko stolica*, bukan *nekoliko stolice*.** Kata kuantitas (*nekoliko, puno, mnogo, malo, koliko*) selalu diikuti genitif — genitif **jamak** untuk hal yang bisa dihitung. Kata *ima* dalam arti \"ada\" juga suka genitif kalau jumlahnya tak ditentukan: *Ima problema?* (Ada masalah?).",
+    "***kirija* dan *režije*.** *Kirija* (dari bahasa Turki) adalah kata sehari-hari untuk uang sewa; dalam kontrak tertulis *zakupnina* atau *najamnina*. *Režije* adalah tagihan bulanan — listrik, air, pemanas, sampah — dan hanya ada dalam bentuk jamak: *režije su visoke, bez režija*."
+   ],
+   "grammars": [
+    {
+     "title": "Deklinasi jamak — tabel lengkap",
+     "body": [
+      "Kabar baiknya dulu: jamak jauh **lebih sederhana** daripada tunggal. Dari tujuh padež, tiga (datif, lokatif, instrumental) berbagi satu ekor, dan vokatif hampir selalu sama dengan nominatif. Yang benar-benar perlu diingat hanya nominatif, genitif, akusatif, dan satu ekor untuk tiga sisanya."
+     ],
+     "table": {
+      "head": [
+       "Padež",
+       "lk bersuku satu",
+       "lk bersuku banyak",
+       "nt",
+       "pr -a",
+       "pr konsonan"
+      ],
+      "rows": [
+       [
+        "**N**",
+        "*stanovi*",
+        "*prozori*",
+        "*sela*",
+        "*sobe*",
+        "*stvari*"
+       ],
+       [
+        "**G**",
+        "*stanova*",
+        "*prozora*",
+        "*sela*",
+        "*soba*",
+        "*stvari*"
+       ],
+       [
+        "**D**",
+        "*stanovima*",
+        "*prozorima*",
+        "*selima*",
+        "*sobama*",
+        "*stvarima*"
+       ],
+       [
+        "**A**",
+        "*stanove*",
+        "*prozore*",
+        "*sela*",
+        "*sobe*",
+        "*stvari*"
+       ],
+       [
+        "**V**",
+        "*stanovi!*",
+        "*prozori!*",
+        "*sela!*",
+        "*sobe!*",
+        "*stvari!*"
+       ],
+       [
+        "**L**",
+        "*stanovima*",
+        "*prozorima*",
+        "*selima*",
+        "*sobama*",
+        "*stvarima*"
+       ],
+       [
+        "**I**",
+        "*stanovima*",
+        "*prozorima*",
+        "*selima*",
+        "*sobama*",
+        "*stvarima*"
+       ]
+      ]
+     },
+     "after": [
+      "**Genitif jamak = -a untuk hampir semuanya.** Lelaki *stan-ov-a*, netral *sel-a*, perempuan *sob-a*. Pengecualian yang sering: kata perempuan berakhiran konsonan (*stvar, noć, riječ*) memakai *-i*: *pet stvari, deset noći*. Beberapa kata memakai *-u*: *ruka → ruku, noga → nogu*. Dan beberapa kata lelaki memakai *-i* atau *-iju*: *sat → sati* (*dvanaest sati*), *mjesec → mjeseci*, *gost → gostiju*.",
+      "**Sisipan -a- untuk memecah gugus konsonan.** Kalau genitif jamaknya berakhir dengan dua konsonan yang sulit diucapkan, disisipkan *a*: *student → studenata*, *marka → maraka*, *sestra → sestara*, *djevojka → djevojaka*, *lonac → lonaca*. Jangan menghafalnya sebagai aturan; dengarkan saja bunyinya; *studenata, maraka, sestara* terdengar setiap hari di sekitarmu.",
+      "**Akusatif jamak tidak membedakan hidup dan mati.** Di tunggal kamu harus memilih (*vidim stan* tetapi *vidim brata*); di jamak semuanya sama: *vidim stanove, vidim studente*.",
+      "**Netral di jamak berakhir -a di N, G, A sekaligus:** *jedno selo, dva sela, pet sela*. Kedengarannya sama, tetapi *sela* dalam *dva sela* adalah genitif tunggal, dalam *pet sela* genitif jamak. Untuk telinga tidak ada bedanya — dan itu memudahkanmu."
+     ]
+    },
+    {
+     "title": "Berapa banyak — kata kuantitas + genitif",
+     "body": [
+      "Bahasa Indonesia cukup berkata \"banyak toko\". Bahasa Bosnia menambahkan satu langkah: sesudah kata kuantitas, kata bendanya masuk **genitif** — jamak untuk yang bisa dihitung, tunggal untuk yang tidak."
+     ],
+     "table": {
+      "head": [
+       "Kata",
+       "Arti",
+       "Bisa dihitung (G jamak)",
+       "Tak bisa dihitung (G tunggal)"
+      ],
+      "rows": [
+       [
+        "*puno / mnogo*",
+        "banyak",
+        "*puno prodavnica*",
+        "*puno vremena*"
+       ],
+       [
+        "*malo*",
+        "sedikit",
+        "*malo ljudi*",
+        "*malo novca*"
+       ],
+       [
+        "*nekoliko*",
+        "beberapa",
+        "*nekoliko stolica*",
+        "—"
+       ],
+       [
+        "*koliko?*",
+        "berapa?",
+        "*koliko prozora?*",
+        "*koliko kafe?*"
+       ],
+       [
+        "*dosta*",
+        "cukup, lumayan banyak",
+        "*dosta studenata*",
+        "*dosta posla*"
+       ],
+       [
+        "*previše*",
+        "terlalu banyak",
+        "*previše stvari*",
+        "*previše buke*"
+       ]
+      ]
+     },
+     "after": [
+      "**Kata kerjanya tunggal.** Frasa kuantitas dianggap satu kesatuan: *Puno studenata **živi** ovdje. Nekoliko ljudi **čeka** tramvaj.* Dalam kala lampau kata kerjanya netral tunggal: *Došlo je puno ljudi.*",
+      "***ljudi* adalah genitif jamak dari *ljudi* sendiri.** Kata *čovjek* (orang) jamaknya *ljudi*, dan genitif jamaknya juga *ljudi*: *pet ljudi, malo ljudi*. Satu dari sedikit kata yang benar-benar tak beraturan di sini."
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Dialog kedua — Koliko si stanova vidio?",
+   "intro": "Sore harinya, di kafe dekat Pozorište mladih. Amina ingin tahu hasil perburuan hari ini.",
+   "lines": [
+    {
+     "speaker": "Amina:",
+     "text": "I? Koliko si stanova danas vidio?",
+     "id": "Jadi? Hari ini kamu lihat berapa apartemen?",
+     "literal": "dan? berapa kamu-adalah apartemen-genitif-jm hari-ini melihat-lk?"
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Tri stana: dva na Grbavici i jedan na Otoci.",
+     "id": "Tiga: dua di Grbavica dan satu di Otoka.",
+     "literal": "tiga apartemen-genitif: dua pada Grbavica-lokatif dan satu pada Otoka-lokatif."
+    },
+    {
+     "speaker": "Amina:",
+     "text": "Koji ti se najviše svidio?",
+     "id": "Yang mana yang paling kamu suka?",
+     "literal": "yang-mana kepada-kamu diri-sendiri paling-banyak menyukakan-lk?"
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Onaj na petom spratu. Pet prozora i pogled na rijeku.",
+     "id": "Yang di lantai lima. Lima jendela dan pemandangan ke sungai.",
+     "literal": "itu-lk pada kelima-lokatif lantai-lokatif. lima jendela-genitif-jm dan pemandangan ke sungai-akusatif."
+    },
+    {
+     "speaker": "Amina:",
+     "text": "Zvuči savršeno. Ali pazi, s vlasnicima često ima problema.",
+     "id": "Kedengarannya sempurna. Tapi hati-hati, dengan pemilik sering ada masalah.",
+     "literal": "ia-terdengar sempurna. tetapi hati-hatilah, dengan pemilik-instrumental-jm sering ada masalah-genitif-jm."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Ovi su dobri. Stariji bračni par, žive kod sina u Beču.",
+     "id": "Yang ini baik. Pasangan suami-istri yang sudah tua, tinggal di rumah anaknya di Wina.",
+     "literal": "ini-jm mereka-adalah baik-jm. lebih-tua-lk perkawinan-lk pasangan, mereka-tinggal di-tempat anak-genitif di Wina-lokatif."
+    },
+    {
+     "speaker": "Amina:",
+     "text": "Onda je sve u redu. Jesu li režije uključene?",
+     "id": "Kalau begitu beres. Tagihannya sudah termasuk?",
+     "literal": "kalau-begitu ia-adalah semua dalam urutan-lokatif. mereka-adalah apakah tagihan-jm termasuk-jm?"
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Nisu. Ali u starim zgradama su režije još veće.",
+     "id": "Belum. Tapi di gedung-gedung tua tagihannya malah lebih besar.",
+     "literal": "mereka-bukan. tetapi di tua-lokatif-jm gedung-lokatif-jm mereka-adalah tagihan-jm masih lebih-besar-jm."
+    },
+    {
+     "speaker": "Amina:",
+     "text": "Tačno. A šta ti još treba za stan?",
+     "id": "Betul. Terus apa lagi yang kamu perlukan untuk apartemennya?",
+     "literal": "tepat. dan apa kepada-kamu lagi ia-perlu untuk apartemen-akusatif?"
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Nekoliko stvari: tanjiri, čaše, peškiri, par lonaca…",
+     "id": "Beberapa barang: piring, gelas, handuk, sepasang panci…",
+     "literal": "beberapa barang-genitif-jm: piring-jm, gelas-jm, handuk-jm, pasangan panci-genitif-jm…"
+    },
+    {
+     "speaker": "Amina:",
+     "text": "Ništa ne kupuj! Moja mama ima pun podrum tanjira i čaša.",
+     "id": "Jangan beli apa-apa! Mamaku punya satu gudang bawah tanah penuh piring dan gelas.",
+     "literal": "tidak-apa-pun jangan belilah! saya-punya mama ia-punya penuh-lk gudang piring-genitif-jm dan gelas-genitif-jm."
+    }
+   ],
+   "notes": [
+    "***Koliko si stanova vidio?* — kata tanya dulu, klitik kedua, benda belakangan.** Frasa *koliko stanova* boleh dibelah seperti *na kojem spratu* tadi, dan orang Bosnia justru lebih suka begitu. *Koliko stanova si vidio?* juga benar tetapi terdengar lebih kaku.",
+    "***na Grbavici, na Otoci* — nama kawasan memakai *na*.** Banyak nama lingkungan di Sarajevo dipakai dengan *na*, bukan *u*: *na Grbavici, na Otoci, na Baščaršiji, na Marijin Dvoru, na Ilidži*. Perhatikan juga *Otoka → na Otoci*: *k* berubah menjadi *c* sebelum ekor *-i*, sama seperti *Amerika → u Americi*.",
+    "***s vlasnicima* — *k* menjadi *c* di jamak.** Kata *vlasnik* (pemilik) berakhir *k*, dan sebelum ekor jamak *-i* ia berubah: *vlasnici, vlasnicima*. Pola yang sama: *katalog → katalozi*, *Čeh → Česi*. Genitif dan akusatif tidak berubah karena ekornya bukan *-i*: *vlasnika, vlasnike*.",
+    "***Ništa ne kupuj!* — dua kata ingkar sekaligus.** Bahasa Bosnia wajib memakai ingkar ganda: *ništa* (tidak apa-apa) **dan** *ne* di depan kata kerjanya. *Kupuj ništa* salah, dan *Ne kupuj nešto* tidak berarti \"jangan beli apa-apa\". Bentuk perintah seperti *kupuj* akan dibahas tuntas di unit 7.",
+    "***Beč* adalah Wina.** Banyak keluarga Bosnia punya anak atau kerabat di Austria, Jerman, Swedia, dan negara-negara lain sejak gelombang pekerja tamu yang dimulai akhir 1960-an dan pengungsian tahun 1990-an. Maka pemilik yang tinggal di luar negeri dan menyewakan apartemennya lewat agen bukan hal aneh di Sarajevo."
+   ],
+   "grammars": [
+    {
+     "title": "Satu ekor untuk tiga padež: -ima dan -ama",
+     "body": [
+      "Datif, lokatif, dan instrumental jamak selalu sama bentuknya. Aturannya cuma satu: kata benda perempuan berakhiran *-a* memakai **-ama**, semua yang lain memakai **-ima**. Yang harus kamu pikirkan bukan ekornya, melainkan kata depannya."
+     ],
+     "table": {
+      "head": [
+       "Tunggal",
+       "N jamak",
+       "D / L / I jamak",
+       "Dalam kalimat"
+      ],
+      "rows": [
+       [
+        "*vlasnik* (lk)",
+        "*vlasnici*",
+        "*vlasnicima*",
+        "*Pišem vlasnicima.* (D)"
+       ],
+       [
+        "*oglas* (lk)",
+        "*oglasi*",
+        "*oglasima*",
+        "*u oglasima* (L)"
+       ],
+       [
+        "*grad* (lk)",
+        "*gradovi*",
+        "*gradovima*",
+        "*po gradovima* (L)"
+       ],
+       [
+        "*selo* (nt)",
+        "*sela*",
+        "*selima*",
+        "*u selima* (L)"
+       ],
+       [
+        "*zgrada* (pr)",
+        "*zgrade*",
+        "*zgradama*",
+        "*u starim zgradama* (L)"
+       ],
+       [
+        "*komšija* (lk, berakhir -a)",
+        "*komšije*",
+        "*komšijama*",
+        "*s komšijama* (I)"
+       ],
+       [
+        "*stvar* (pr)",
+        "*stvari*",
+        "*stvarima*",
+        "*sa stvarima* (I)"
+       ],
+       [
+        "*čovjek* (lk)",
+        "*ljudi*",
+        "*ljudima*",
+        "*s ljudima* (I)"
+       ]
+      ]
+     },
+     "after": [
+      "**Yang menentukan -ama adalah bentuknya, bukan jenisnya.** *Komšija* dan *tata* lelaki, tetapi berakhir *-a*, jadi ikut deret perempuan: *s komšijama*. Di tunggal kata sifatnya tetap lelaki (*dobar komšija*); di jamak orang memakai dua-duanya (*dobri komšije* atau *dobre komšije*) — itu bahan unit berikutnya.",
+      "**Kata ganti pun mengikuti.** *Nama, vama* (kepada kami, kepada kalian) dan *njima* (kepada / dengan mereka) sudah memuat bunyi yang sama: *s njima, o nama, prema vama*."
+     ]
+    }
+   ]
+  }
+ ],
+ "sections": [
+  {
+   "title": "Isi apartemen — kata untuk rumah",
+   "blocks": [
+    {
+     "type": "tabel",
+     "head": [
+      "Bosanski",
+      "Genitif jamak",
+      "Bahasa Indonesia"
+     ],
+     "rows": [
+      [
+       "*stan* (lk)",
+       "*stanova*",
+       "apartemen, flat"
+      ],
+      [
+       "*zgrada* (pr)",
+       "*zgrada*",
+       "gedung"
+      ],
+      [
+       "*sprat* (lk)",
+       "*spratova*",
+       "lantai, tingkat"
+      ],
+      [
+       "*dnevni boravak* (lk)",
+       "*dnevnih boravaka*",
+       "ruang keluarga"
+      ],
+      [
+       "*spavaća soba* (pr)",
+       "*spavaćih soba*",
+       "kamar tidur"
+      ],
+      [
+       "*kuhinja* (pr)",
+       "*kuhinja*",
+       "dapur"
+      ],
+      [
+       "*kupatilo* (nt)",
+       "*kupatila*",
+       "kamar mandi"
+      ],
+      [
+       "*hodnik* (lk)",
+       "*hodnika*",
+       "lorong"
+      ],
+      [
+       "*balkon* (lk)",
+       "*balkona*",
+       "balkon"
+      ],
+      [
+       "*podrum* (lk)",
+       "*podruma*",
+       "gudang bawah tanah"
+      ],
+      [
+       "*ormar* (lk)",
+       "*ormara*",
+       "lemari"
+      ],
+      [
+       "*stolica* (pr)",
+       "*stolica*",
+       "kursi"
+      ],
+      [
+       "*sto* (lk)",
+       "*stolova*",
+       "meja"
+      ],
+      [
+       "*kvadrat* (lk)",
+       "*kvadrata*",
+       "meter persegi (lisan)"
+      ]
+     ]
+    },
+    {
+     "type": "p",
+     "text": "Orang Sarajevo mengukur apartemen dengan **kvadrat**: *stan od pedeset kvadrata* (apartemen lima puluh meter persegi). Karena itu angka dan genitif jamak muncul di setiap kalimat tentang rumah: *pedeset kvadrata, dvije sobe, tri balkona* — eh, tiga balkon terlalu mewah — *jedan balkon, pet spratova*. Perhatikan *sto* (meja): kata bersuku satu yang jamaknya *stolovi, stolova*, dengan *l* yang kembali muncul. Di Kroasia meja disebut *stol*; di Bosnia keduanya dimengerti, tetapi *sto* lebih umum."
+    },
+    {
+     "type": "kotak",
+     "title": "Menyewa di Sarajevo: yang biasa ditanyakan",
+     "items": [
+      "Iklan sewa paling banyak dicari di portal jual-beli **OLX.ba**, selain lewat agen dan kabar dari mulut ke mulut. Frasa yang kamu cari: *izdaje se stan* (apartemen disewakan).",
+      "Ukuran sering ditulis *jednosoban, dvosoban, trosoban*. Hitungannya biasanya **termasuk ruang keluarga**, jadi *dvosoban stan* umumnya berarti ruang keluarga plus satu kamar tidur. Tanyakan saja: *Koliko ima spavaćih soba?*",
+      "Harga ditulis dalam **KM** (*konvertibilna marka*), dan hampir selalu tanpa *režije*. Banyak pemilik meminta **depozit** sebesar sewa satu bulan. Tanyakan juga jenis pemanasnya: *centralno grijanje* (pemanas terpusat kota), *plin* (gas), atau *struja* (listrik) — di musim dingin Sarajevo bedanya terasa di tagihan."
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Membaca iklan sewa",
+   "blocks": [
+    {
+     "type": "tabel",
+     "head": [
+      "Dalam iklan",
+      "Artinya"
+     ],
+     "rows": [
+      [
+       "*Izdaje se dvosoban stan, 55 m²*",
+       "Disewakan apartemen dua ruang, 55 m²"
+      ],
+      [
+       "*namješten / polunamješten / nenamješten*",
+       "berperabot / sebagian / kosong"
+      ],
+      [
+       "*Cijena: 500 KM + režije*",
+       "Harga: 500 KM belum termasuk tagihan"
+      ],
+      [
+       "*Kirija se plaća unaprijed.*",
+       "Sewa dibayar di muka."
+      ],
+      [
+       "*Useljiv odmah.*",
+       "Bisa langsung ditempati."
+      ],
+      [
+       "*Samo za zaposlene.*",
+       "Hanya untuk yang bekerja."
+      ],
+      [
+       "*Bez kućnih ljubimaca.*",
+       "Tidak boleh membawa hewan peliharaan."
+      ],
+      [
+       "*Blizu tramvajske stanice i prodavnica.*",
+       "Dekat halte tram dan toko-toko."
+      ],
+      [
+       "*Ugovor na godinu dana.*",
+       "Kontrak satu tahun."
+      ]
+     ]
+    },
+    {
+     "type": "p",
+     "text": "Hampir setiap baris iklan memuat genitif: *bez režija, bez kućnih ljubimaca, blizu prodavnica, na godinu dana* (akusatif, untuk jangka waktu). Kalau menelepon untuk bertanya, tiga kalimat ini sudah cukup: *Zovem zbog oglasa. Je li stan još slobodan? Mogu li ga pogledati danas?* Dan untuk menutup: *Hvala, javit ću se.* Yang terakhir itu sopan, dan juga cara halus orang Bosnia untuk berkata \"tidak, terima kasih\"."
+    },
+    {
+     "type": "kotak",
+     "title": "Grbavica: lingkungan, stadion, dan tram",
+     "items": [
+      "**Grbavica** terletak di tepi selatan Sungai Miljacka, tak jauh dari pusat kota. Deretan gedung apartemennya dibangun terutama pada masa Yugoslavia, dan banyak di antaranya sudah direnovasi.",
+      "Di sana berdiri **Stadion Grbavica**, kandang FK Željezničar — klub kesayangan Emir. Pada hari pertandingan kawasan ini ramai dan berisik, jadi kalau mencari stan yang tenang, tanyakan juga seberapa dekat ia dengan stadion.",
+      "Jalur tram utama kota berjalan di tepi utara sungai; dari Grbavica cukup menyeberang jembatan untuk naik tram ke Baščaršija atau ke arah Ilidža."
+     ]
+    }
+   ]
+  }
+ ],
+ "vocab": [
+  {
+   "bs": "stan, stanovi (lk)",
+   "baca": "stan, STA-no-vi",
+   "id": "apartemen, flat"
+  },
+  {
+   "bs": "zgrada (pr)",
+   "baca": "ZGRA-da",
+   "id": "gedung"
+  },
+  {
+   "bs": "sprat, spratovi (lk)",
+   "baca": "sprat, SPRA-to-vi",
+   "id": "lantai, tingkat"
+  },
+  {
+   "bs": "soba (pr)",
+   "baca": "SO-ba",
+   "id": "kamar"
+  },
+  {
+   "bs": "kuhinja (pr)",
+   "baca": "KU-hi-nya",
+   "id": "dapur"
+  },
+  {
+   "bs": "kupatilo, kupatila (nt)",
+   "baca": "KU-pa-ti-lo",
+   "id": "kamar mandi"
+  },
+  {
+   "bs": "prozor, prozori (lk)",
+   "baca": "PRO-zor, PRO-zo-ri",
+   "id": "jendela"
+  },
+  {
+   "bs": "ormar, ormari (lk)",
+   "baca": "OR-mar, OR-ma-ri",
+   "id": "lemari"
+  },
+  {
+   "bs": "stolica (pr)",
+   "baca": "STO-li-tsa",
+   "id": "kursi"
+  },
+  {
+   "bs": "krevet, kreveti (lk)",
+   "baca": "KRE-vet, KRE-ve-ti",
+   "id": "tempat tidur"
+  },
+  {
+   "bs": "namješten",
+   "baca": "NAM-yesy-ten",
+   "id": "berperabot"
+  },
+  {
+   "bs": "komšija, komšije (lk)",
+   "baca": "KOM-syi-ya, KOM-syi-ye",
+   "id": "tetangga"
+  },
+  {
+   "bs": "penzioner, penzioneri (lk)",
+   "baca": "pen-zi-O-ner",
+   "id": "pensiunan"
+  },
+  {
+   "bs": "student, studenti (lk) — G jm *studenata*",
+   "baca": "STU-dent, stu-DE-na-ta",
+   "id": "mahasiswa"
+  },
+  {
+   "bs": "prodavnica (pr)",
+   "baca": "PRO-dav-ni-tsa",
+   "id": "toko"
+  },
+  {
+   "bs": "kafić, kafići (lk)",
+   "baca": "KA-fich, KA-fi-chi",
+   "id": "kafe"
+  },
+  {
+   "bs": "kirija (pr)",
+   "baca": "KI-ri-ya",
+   "id": "uang sewa"
+  },
+  {
+   "bs": "režije (pr, hanya jamak)",
+   "baca": "RE-zhi-ye",
+   "id": "tagihan bulanan (listrik, air, pemanas)"
+  },
+  {
+   "bs": "vlasnik, vlasnici (lk)",
+   "baca": "VLAS-nik, VLAS-ni-tsi",
+   "id": "pemilik"
+  },
+  {
+   "bs": "oglas, oglasi (lk)",
+   "baca": "OG-las, OG-la-si",
+   "id": "iklan"
+  },
+  {
+   "bs": "izdavati (izdajem) / izdati (izdam)",
+   "baca": "iz-DA-va-ti / IZ-da-ti",
+   "id": "menyewakan"
+  },
+  {
+   "bs": "unajmljivati (unajmljujem) / unajmiti (unajmim)",
+   "baca": "u-nay-MLYI-va-ti / u-NAY-mi-ti",
+   "id": "menyewa"
+  },
+  {
+   "bs": "nekoliko + G",
+   "baca": "NE-ko-li-ko",
+   "id": "beberapa"
+  },
+  {
+   "bs": "puno / mnogo + G",
+   "baca": "PU-no / MNO-go",
+   "id": "banyak"
+  },
+  {
+   "bs": "u blizini",
+   "baca": "u BLI-zi-ni",
+   "id": "di dekat sini, di sekitar"
+  },
+  {
+   "bs": "pogled, pogledi (lk)",
+   "baca": "PO-gled",
+   "id": "pemandangan; pandangan"
+  }
+ ],
+ "exercises": [
+  {
+   "prompt": "Terjemahkan ke bahasa Bosnia.",
+   "items": [
+    "Gedungnya punya delapan lantai dan empat puluh apartemen.",
+    "Hari ini kamu lihat berapa apartemen? (kepada Budi)",
+    "Ada tempat tidur, dua lemari, dan beberapa kursi.",
+    "Di dekat sini banyak toko dan kafe.",
+    "Dengan tetangga tidak ada masalah.",
+    "Sewanya lima ratus mark sebulan, belum termasuk tagihan."
+   ]
+  },
+  {
+   "prompt": "Isi dengan bentuk jamak yang benar.",
+   "items": [
+    "U zgradi ima dvadeset ____. (stan)",
+    "Koliko ima ____ u stanu? (soba)",
+    "Razgovaram s ____. (komšija)",
+    "U ____ piše \"bez režija\". (oglas, lokatif)",
+    "Na Grbavici živi puno ____. (student)",
+    "Pišem mejl ____ stana. (vlasnik, datif)",
+    "Kupio sam nekoliko ____. (čaša)"
+   ]
+  },
+  {
+   "prompt": "Ganti angka satu dengan kata di dalam kurung dan sesuaikan kalimatnya.",
+   "items": [
+    "U gradu ima jedan park. (puno)",
+    "Imam jednu stolicu. (nekoliko)",
+    "U zgradi živi jedan student. (mnogo)",
+    "Vidio sam jedan stan. (pet)",
+    "U kuhinji je jedan prozor. (dva)",
+    "Imam jednog komšiju. (malo)"
+   ]
+  },
+  {
+   "prompt": "Susun jadi kalimat yang benar.",
+   "items": [
+    "ima / zgrada / spratova / osam",
+    "stanova / si / koliko / vidio / danas",
+    "ima / blizini / u / puno / prodavnica",
+    "problema / s / nema / komšijama",
+    "nekoliko / ima / stolica / krevet / i"
+   ]
+  }
+ ],
+ "answers": [
+  "Zgrada ima osam spratova i četrdeset stanova. — Koliko si stanova danas vidio? — Ima krevet, dva ormara i nekoliko stolica. — U blizini ima puno prodavnica i kafića. — S komšijama nema problema. — Kirija je petsto maraka mjesečno, bez režija.",
+  "stanova — soba — komšijama — oglasima — studenata — vlasnicima — čaša",
+  "U gradu ima puno parkova. — Imam nekoliko stolica. — U zgradi živi mnogo studenata. — Vidio sam pet stanova. — U kuhinji su dva prozora. — Imam malo komšija.",
+  "Zgrada ima osam spratova. — Koliko si stanova danas vidio? — U blizini ima puno prodavnica. — S komšijama nema problema. — Ima krevet i nekoliko stolica."
+ ]
+}

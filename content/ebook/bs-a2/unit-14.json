@@ -1,0 +1,763 @@
+{
+ "title": "Hari raya dan tanggal — bilangan urut",
+ "title_target": "Bajram i Božić",
+ "goal": "Menerima undangan bajram, menanyakan alamat sampai ke lantai dan pintunya, lalu bicara tentang Natal, Tahun Baru, dan hari ulang tahun. Titik tata bahasanya: **bilangan urut** yang berubah seperti kata sifat — *prvog maja, na petom spratu, u trećoj zgradi, 1997. godine, u 21. vijeku*.",
+ "bekal": [
+  "membentuk dan mengubah bilangan urut di semua padež: *prvi, prvog, prvom, prvu; treća, treće, trećoj, treću*",
+  "menyebut tanggal, tahun, dan abad, lisan maupun tulisan: *sedmog januara*, *7. januara 2027. godine*",
+  "mengucapkan dan menjawab salam hari raya Bosnia dengan tepat: *Bajram šerif mubarek olsun*, *Sretan Božić*, *Hristos se rodi*"
+ ],
+ "dialogs": [
+  {
+   "title": "Dialog — Poziv za bajram",
+   "intro": "Siang di kantor. Amina mampir menjemput buku dan berhenti di meja Budi dengan wajah orang yang sudah merencanakan sesuatu.",
+   "lines": [
+    {
+     "speaker": "Amina:",
+     "text": "Budi, šta radiš prvog dana bajrama?",
+     "id": "Budi, kamu ngapain di hari pertama bajram?",
+     "literal": "Budi, apa kamu-kerjakan pertama-genitif hari-genitif bajram-genitif?"
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Ne znam još. Kad je tačno bajram ove godine?",
+     "id": "Belum tahu. Bajram tahun ini tepatnya kapan?",
+     "literal": "tidak saya-tahu masih. kapan ia-adalah tepat bajram ini-genitif tahun-genitif?"
+    },
+    {
+     "speaker": "Amina:",
+     "text": "Svake godine dođe jedanaest dana ranije, otprilike. Ovaj put pada u petak.",
+     "id": "Tiap tahun datangnya sebelas hari lebih awal, kira-kira. Kali ini jatuh hari Jumat.",
+     "literal": "setiap-genitif tahun-genitif ia-datang sebelas hari-genitif lebih-awal, kira-kira. ini-lk kali ia-jatuh pada Jumat-akusatif."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "A dolaze li i tvoji roditelji?",
+     "id": "Orang tuamu juga datang?",
+     "literal": "dan mereka-datang apakah juga milik-kamu-jm orang-tua-jm?"
+    },
+    {
+     "speaker": "Amina:",
+     "text": "Dolaze iz Zenice. Dođi i ti kod nas na ručak, oko podne. Bit će i baklave!",
+     "id": "Datang dari Zenica. Kamu juga datang ke rumah kami untuk makan siang, sekitar tengah hari. Ada baklava juga!",
+     "literal": "mereka-datang dari Zenica-genitif. datanglah juga kamu ke-tempat kami-genitif ke makan-siang-akusatif, sekitar tengah-hari. ada ia-akan juga baklava-genitif!"
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Rado! Kako da dođem do tebe?",
+     "id": "Dengan senang hati! Ke tempatmu lewat mana?",
+     "literal": "dengan-senang! bagaimana agar saya-datang sampai kamu-genitif?"
+    },
+    {
+     "speaker": "Amina:",
+     "text": "Stanujem na Koševskom brdu, u trećoj zgradi s lijeve strane.",
+     "id": "Aku tinggal di Koševsko brdo, gedung ketiga di sebelah kiri.",
+     "literal": "saya-tinggal di Koševo-lokatif bukit-lokatif, di ketiga-lokatif gedung-lokatif dari kiri-genitif sisi-genitif."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Na kojem spratu?",
+     "id": "Lantai berapa?",
+     "literal": "di yang-mana-lokatif lantai-lokatif?"
+    },
+    {
+     "speaker": "Amina:",
+     "text": "Na petom spratu, druga vrata desno od lifta.",
+     "id": "Lantai lima, pintu kedua di kanan lift.",
+     "literal": "di kelima-lokatif lantai-lokatif, kedua-jm pintu-jm kanan dari lift-genitif."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Peti sprat, druga vrata desno. Šta da ponesem?",
+     "id": "Lantai lima, pintu kedua di kanan. Aku bawa apa?",
+     "literal": "kelima lantai, kedua-jm pintu-jm kanan. apa agar saya-bawa?"
+    },
+    {
+     "speaker": "Amina:",
+     "text": "Ništa, samo dođi. Ali nauči čestitku: Bajram šerif mubarek olsun!",
+     "id": "Tidak usah, datang saja. Tapi hafalkan ucapannya: Bajram šerif mubarek olsun!",
+     "literal": "tidak-ada, hanya datanglah. tetapi pelajarilah ucapan-selamat-akusatif: (Turki) bajram mulia diberkahi semoga-jadi!"
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Bajram šerif mubarek olsun… A šta se odgovara?",
+     "id": "Bajram šerif mubarek olsun… Terus jawabnya apa?",
+     "literal": "(Turki) bajram mulia diberkahi semoga-jadi… dan apa diri-sendiri ia-dijawab?"
+    },
+    {
+     "speaker": "Amina:",
+     "text": "Allah razi olsun. To ćeš tog dana čuti stotinu puta.",
+     "id": "Allah razi olsun. Hari itu kamu akan mendengarnya seratus kali.",
+     "literal": "(Turki) Allah rida semoga-jadi. itu kamu-akan itu-genitif hari-genitif mendengar seratus kali-genitif."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Prvi put ću biti na bajramu u bosanskoj porodici.",
+     "id": "Ini pertama kalinya aku berlebaran bersama keluarga Bosnia.",
+     "literal": "pertama kali saya-akan ada di bajram-lokatif di bosnia-pr-lokatif keluarga-lokatif."
+    }
+   ],
+   "notes": [
+    "***Prvog dana bajrama* — \"pada hari pertama\" memakai genitif.** Waktu yang jatuh pada satu hari atau tanggal tertentu disebut dengan genitif tanpa kata depan, dan bilangan urutnya ikut: *prvog dana, drugog dana, zadnjeg dana*. Pola yang sama dengan *prvog maja* dari A1 — sekarang kamu tahu mengapa: ini genitif waktu.",
+    "***U trećoj zgradi, na petom spratu* — bilangan urut adalah kata sifat.** Ia ikut padež, jenis, dan jumlah kata bendanya: *treća zgrada → u trećoj zgradi*, *peti sprat → na petom spratu*, *druga vrata* (jamak netral, karena *vrata* selalu jamak). Tidak ada aturan baru — ekornya persis ekor kata sifat dari unit 1 dan 3.",
+    "***Sprat* dan *kat*.** Di Bosnia lantai gedung umumnya disebut *sprat* (kadang juga *kat*); di Kroasia *kat*. Lantai dasar adalah *prizemlje*, jadi *prvi sprat* sudah satu lantai di atas tanah — seperti di Eropa umumnya, tidak seperti kebiasaan di Indonesia.",
+    "***Dolaze iz Zenice. Dođi i ti!*** Kini imperfektif *dolaze* (mereka akan datang, sudah pasti), lalu perintah perfektif *dođi*. *I ti* = \"kamu juga\" — *i* di depan kata ganti berarti \"juga\".",
+    "***Bajram šerif mubarek olsun.*** Ucapan ini berbahasa Turki dan berarti kira-kira \"semoga bajram yang mulia ini diberkahi\". Jawabannya *Allah razi olsun* (\"semoga Allah rida\"). Yang lebih ringkas dan selalu aman: *Sretan Bajram!* atau *Bajram mubarek!*",
+    "***Kod nas* dan *do tebe*.** Ke rumah orang: *kod* + genitif (*dođi kod nas*); menanyakan jalan menuju orangnya: *do* + genitif (*kako da dođem do tebe?*). Keduanya dari unit 11."
+   ],
+   "grammars": [
+    {
+     "title": "Bilangan urut",
+     "body": [
+      "Hampir semua bilangan urut dibentuk dengan menempelkan ekor kata sifat *-i* pada bilangan pokoknya: *pet → peti*, *deset → deseti*. Yang perlu dihafal hanya empat yang pertama, plus perubahan bunyi pada *sedam → sedmi* dan *osam → osmi*."
+     ],
+     "table": {
+      "head": [
+       "Angka",
+       "Bilangan urut (lk)",
+       "Cara baca",
+       "Angka",
+       "Bilangan urut (lk)",
+       "Cara baca"
+      ],
+      "rows": [
+       [
+        "1.",
+        "*prvi*",
+        "PR-vi",
+        "11.",
+        "*jedanaesti*",
+        "ye-DA-na-es-ti"
+       ],
+       [
+        "2.",
+        "*drugi*",
+        "DRU-gi",
+        "12.",
+        "*dvanaesti*",
+        "DVA-na-es-ti"
+       ],
+       [
+        "3.",
+        "*treći*",
+        "TRE-chi",
+        "20.",
+        "*dvadeseti*",
+        "DVA-de-se-ti"
+       ],
+       [
+        "4.",
+        "*četvrti*",
+        "CHET-vr-ti",
+        "21.",
+        "*dvadeset prvi*",
+        "DVA-de-set PR-vi"
+       ],
+       [
+        "5.",
+        "*peti*",
+        "PE-ti",
+        "30.",
+        "*trideseti*",
+        "TRI-de-se-ti"
+       ],
+       [
+        "6.",
+        "*šesti*",
+        "SYES-ti",
+        "50.",
+        "*pedeseti*",
+        "PE-de-se-ti"
+       ],
+       [
+        "7.",
+        "*sedmi*",
+        "SED-mi",
+        "100.",
+        "*stoti*",
+        "STO-ti"
+       ],
+       [
+        "8.",
+        "*osmi*",
+        "OS-mi",
+        "1000.",
+        "*hiljaditi*",
+        "HI-lya-di-ti"
+       ],
+       [
+        "9.",
+        "*deveti*",
+        "DE-ve-ti",
+        "",
+        "",
+        ""
+       ],
+       [
+        "10.",
+        "*deseti*",
+        "DE-se-ti",
+        "",
+        "",
+        ""
+       ]
+      ]
+     },
+     "after": [
+      "**Pada bilangan bersusun, hanya bagian terakhir yang jadi urutan:** *dvadeset prvi* (ke-21), *sto pedeset treći* (ke-153), *hiljadu devetsto devedeset sedmi* (ke-1997). Bagian depannya tetap bilangan pokok dan tidak berubah.",
+      "**Dalam tulisan, bilangan urut ditandai titik:** *5. sprat* dibaca *peti sprat*; *21. vijek* dibaca *dvadeset prvi vijek*. Titik itu penting — tanpa titik, angka dibaca sebagai bilangan pokok: *5 spratova* = lima lantai."
+     ]
+    },
+    {
+     "title": "Bilangan urut berubah seperti kata sifat",
+     "body": [
+      "Ambil ekor kata sifat yang sudah kamu kenal dari unit 1 dan 3. *Treći* berakar lunak (*-ć*), jadi ia memakai *-em* dan *-e* di tempat *-om* dan *-o*: *trećem, treće* — sama seperti *naš → našem*."
+     ],
+     "table": {
+      "head": [
+       "Padež",
+       "Lk / nt",
+       "Pr",
+       "Contoh"
+      ],
+      "rows": [
+       [
+        "nominatif",
+        "*prvi / prvo*; *treći / treće*",
+        "*prva*; *treća*",
+        "*Danas je prvi maj.*"
+       ],
+       [
+        "genitif",
+        "*prvog*; *trećeg*",
+        "*prve*; *treće*",
+        "*prvog maja, treće sedmice*"
+       ],
+       [
+        "datif / lokatif",
+        "*prvom*; *trećem*",
+        "*prvoj*; *trećoj*",
+        "*na prvom spratu, u trećoj zgradi*"
+       ],
+       [
+        "akuzatif",
+        "*prvi* / hidup: *prvog*; *treći*",
+        "*prvu*; *treću*",
+        "*za prvi dan, uđi u treću zgradu*"
+       ],
+       [
+        "instrumental",
+        "*prvim*; *trećim*",
+        "*prvom*; *trećom*",
+        "*s prvim autobusom, pred trećom zgradom*"
+       ]
+      ]
+     },
+     "after": [
+      "**Genitif lk kadang diberi *-a* di ujung:** *prvoga, trećega*. Itu bentuk yang sama, sedikit lebih resmi atau berirama; di obrolan *prvog, trećeg* sudah cukup.",
+      "**Akuzatif lk untuk benda hidup = genitif:** *Vidio sam prvog gosta* (aku melihat tamu pertama), tetapi *Uzmi prvi autobus* (benda mati, sama dengan nominatif)."
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Dialog kedua — Dva Božića i dvije Nove godine",
+   "intro": "Hari pertama bajram, di meja makan Amina. Selain Budi dan orang tua Amina, ada dua teman lama: Ivana dari Mostar dan Dragan dari Banja Luka. Piring baklava berputar untuk ketiga kalinya.",
+   "lines": [
+    {
+     "speaker": "Ivana:",
+     "text": "Amina nas svake godine zove za bajram, a mi nju za Božić.",
+     "id": "Tiap tahun Amina mengundang kami waktu bajram, dan kami mengundangnya waktu Natal.",
+     "literal": "Amina kami-akusatif setiap-genitif tahun-genitif ia-memanggil untuk bajram-akusatif, dan kami dia-pr-akusatif untuk Natal-akusatif."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Ivana, ti slaviš Božić dvadeset petog decembra, zar ne?",
+     "id": "Ivana, kamu merayakan Natal tanggal 25 Desember, kan?",
+     "literal": "Ivana, kamu kamu-merayakan Natal-akusatif dua-puluh kelima-genitif Desember-genitif, masa tidak?"
+    },
+    {
+     "speaker": "Ivana:",
+     "text": "Tako je. A Dragan ga slavi trinaest dana kasnije, sedmog januara.",
+     "id": "Betul. Dragan merayakannya tiga belas hari kemudian, tanggal 7 Januari.",
+     "literal": "begitu ia-adalah. dan Dragan dia-lk-akusatif ia-merayakan tiga-belas hari-genitif kemudian, ketujuh-genitif Januari-genitif."
+    },
+    {
+     "speaker": "Dragan:",
+     "text": "Jer mi pravoslavni računamo po julijanskom kalendaru. Zato imamo i dvije Nove godine!",
+     "id": "Karena kami orang Ortodoks menghitung menurut kalender Julian. Makanya kami punya dua Tahun Baru!",
+     "literal": "karena kami ortodoks-jm kami-menghitung menurut julian-lokatif kalender-lokatif. karena-itu kami-punya juga dua baru-pr tahun-genitif!"
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Znači, u januaru stalno slavite?",
+     "id": "Jadi, bulan Januari kalian terus merayakan?",
+     "literal": "berarti, di Januari-lokatif terus kalian-merayakan?"
+    },
+    {
+     "speaker": "Dragan:",
+     "text": "Skoro. Prvog januara jedna Nova godina, sedmog Božić, a četrnaestog druga Nova godina.",
+     "id": "Hampir. Tanggal 1 Januari Tahun Baru yang satu, tanggal 7 Natal, dan tanggal 14 Tahun Baru yang kedua.",
+     "literal": "hampir. pertama-genitif Januari-genitif satu-pr baru-pr tahun, ketujuh-genitif Natal, dan keempat-belas-genitif kedua-pr baru-pr tahun."
+    },
+    {
+     "speaker": "Amina:",
+     "text": "A Budi ima rođendan dvadeset prvog marta, prvog dana proljeća.",
+     "id": "Kalau Budi ulang tahun tanggal 21 Maret, hari pertama musim semi.",
+     "literal": "dan Budi ia-punya ulang-tahun dua-puluh pertama-genitif Maret-genitif, pertama-genitif hari-genitif musim-semi-genitif."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Tačno. Rođen sam hiljadu devetsto devedeset sedme godine.",
+     "id": "Betul. Aku lahir tahun 1997.",
+     "literal": "tepat. lahir-lk saya-adalah seribu sembilan-ratus sembilan-puluh ketujuh-genitif tahun-genitif."
+    },
+    {
+     "speaker": "Ivana:",
+     "text": "A ja sam rođena dvadeset petog decembra, baš na Božić!",
+     "id": "Kalau aku lahir tanggal 25 Desember, pas hari Natal!",
+     "literal": "dan saya saya-adalah lahir-pr dua-puluh kelima-genitif Desember-genitif, tepat pada Natal-akusatif!"
+    },
+    {
+     "speaker": "Dragan:",
+     "text": "Zato ona svake godine dobije poklone dva puta istog dana.",
+     "id": "Makanya tiap tahun dia dapat kado dua kali di hari yang sama.",
+     "literal": "karena-itu dia-pr setiap-genitif tahun-genitif ia-mendapat hadiah-jm-akusatif dua kali-genitif sama-genitif hari-genitif."
+    },
+    {
+     "speaker": "Amina:",
+     "text": "Hajde, uzmite još baklave. Za sve naše praznike!",
+     "id": "Ayo, ambil baklava lagi. Untuk semua hari raya kita!",
+     "literal": "ayo, ambillah-kalian lagi baklava-genitif. untuk semua-jm-akusatif milik-kita-jm-akusatif hari-raya-jm-akusatif!"
+    }
+   ],
+   "notes": [
+    "***Sedmog januara* lawan *Danas je sedmi januar*.** Dua bentuk tanggal, dua fungsi: nominatif untuk menyebut tanggal hari ini (*Danas je sedmi januar*), genitif untuk \"pada tanggal…\" (*Božić je sedmog januara*, *Rođena sam dvadeset petog decembra*). Nama bulannya ikut genitif: *januar → januara*, *mart → marta*.",
+    "***Rođen sam … sedme godine* — hanya kata terakhir yang berubah.** *Hiljadu devetsto devedeset* tetap; hanya *sedma* yang menjadi urutan dan ikut genitif bersama *godine*. Untuk tahun 2000-an: *dvije hiljade dvadeset šeste godine* (2026). Dan perempuan berkata ***rođena sam***, seperti Ivana.",
+    "***Julijanski kalendar.*** Gereja Ortodoks Serbia masih memakai kalender Julian untuk hari raya, yang kini tertinggal 13 hari dari kalender umum. Karena itu Natal Ortodoks jatuh pada 7 Januari, dan \"Tahun Baru Ortodoks\" (*pravoslavna Nova godina*) pada malam 13 ke 14 Januari. Gereja Katolik dan pemerintah memakai kalender Gregorian.",
+    "***Za bajram, za Božić*** memakai akuzatif: \"untuk (merayakan) bajram\". Kalau menyebut waktunya: *na bajram, na Božić* (pada hari itu), *za vrijeme bajrama* (selama bajram). Ivana memakai *na Božić*: *rođena sam baš na Božić*.",
+    "***Uzmite još baklave.*** Genitif sesudah *još* berarti \"(sedikit) lagi dari itu\": *još kafe, još hljeba, još baklave*. Menolak tawaran ketiga di meja bajram membutuhkan keteguhan hati; kalimat yang biasa dipakai: *Hvala, stvarno ne mogu više!*"
+   ],
+   "grammars": [
+    {
+     "title": "Tanggal, tahun, abad — lisan dan tulisan",
+     "body": [
+      "Dalam tulisan orang Bosnia memakai angka dengan titik; dalam ucapan angka itu berubah jadi bilangan urut yang sudah ber-padež. Latih membaca kolom tengah keras-keras sampai lancar."
+     ],
+     "table": {
+      "head": [
+       "Tulisan",
+       "Ucapan",
+       "Bahasa Indonesia"
+      ],
+      "rows": [
+       [
+        "*Danas je 23. 9.*",
+        "*Danas je dvadeset treći septembar.*",
+        "Hari ini tanggal 23 September."
+       ],
+       [
+        "*Božić je 25. 12.*",
+        "*Božić je dvadeset petog decembra.*",
+        "Natal tanggal 25 Desember."
+       ],
+       [
+        "*od 1. do 3. maja*",
+        "*od prvog do trećeg maja*",
+        "dari 1 sampai 3 Mei"
+       ],
+       [
+        "*2026. godine*",
+        "*dvije hiljade dvadeset šeste godine*",
+        "pada tahun 2026"
+       ],
+       [
+        "*u 2026. godini*",
+        "*u dvije hiljade dvadeset šestoj godini*",
+        "di dalam tahun 2026"
+       ],
+       [
+        "*u 16. vijeku*",
+        "*u šesnaestom vijeku*",
+        "pada abad ke-16"
+       ],
+       [
+        "*krajem 19. vijeka*",
+        "*krajem devetnaestog vijeka*",
+        "pada akhir abad ke-19"
+       ],
+       [
+        "*na 5. spratu*",
+        "*na petom spratu*",
+        "di lantai lima"
+       ]
+      ]
+     },
+     "after": [
+      "***Vijek*** adalah kata Bosnia untuk abad; di Kroasia orang berkata *stoljeće*. Kadang abad ditulis dengan angka Romawi: *XVI vijek*.",
+      "**Tahun cukup disebut tanpa *godine* kalau jelas dari konteks**, terutama untuk dasawarsa: *devedesetih* (tahun 90-an), *rođen je devedeset sedme* (dia lahir tahun '97)."
+     ]
+    }
+   ]
+  }
+ ],
+ "sections": [
+  {
+   "title": "Hari raya di Bosnia",
+   "blocks": [
+    {
+     "type": "tabel",
+     "head": [
+      "Hari raya",
+      "Tanggal",
+      "Catatan"
+     ],
+     "rows": [
+      [
+       "*Nova godina*",
+       "*1. i 2. januara*",
+       "libur di kedua entitas"
+      ],
+      [
+       "*Pravoslavni Božić*",
+       "*7. januara*",
+       "Natal Ortodoks"
+      ],
+      [
+       "*Dan nezavisnosti*",
+       "*1. marta*",
+       "libur di Federasi BiH"
+      ],
+      [
+       "*Uskrs* (Katolik / Ortodoks)",
+       "bergerak, musim semi",
+       "Paskah; kedua gereja sering berbeda tanggal"
+      ],
+      [
+       "*Praznik rada*",
+       "*1. i 2. maja*",
+       "Hari Buruh, musim piknik dan *roštilj*"
+      ],
+      [
+       "*Ramazanski bajram*",
+       "bergerak, kalender Hijriah",
+       "Idulfitri, sesudah bulan Ramadan (*ramazan*)"
+      ],
+      [
+       "*Kurban-bajram*",
+       "bergerak, kalender Hijriah",
+       "Iduladha"
+      ],
+      [
+       "*Dan državnosti*",
+       "*25. novembra*",
+       "libur di Federasi BiH"
+      ],
+      [
+       "*Katolički Božić*",
+       "*25. decembra*",
+       "Natal Katolik"
+      ]
+     ]
+    },
+    {
+     "type": "p",
+     "text": "Bosnia-Herzegovina hidup dengan tiga kalender hari raya sekaligus — Islam, Katolik, dan Ortodoks — ditambah hari libur negara yang berbeda antara Federasi BiH dan Republika Srpska. Di kantor gospođa Selma kamu akan melihat hal yang wajar di sini: rekan yang merayakan bajram mengambil libur, rekan Katolik dan Ortodoks mengambil hari Natalnya masing-masing, dan semua orang saling mengirim ucapan. Mengucapkan selamat untuk hari raya orang lain adalah tanda sopan santun yang dihargai, bukan pernyataan iman."
+    },
+    {
+     "type": "kotak",
+     "title": "Ucapan hari raya dan jawabannya",
+     "items": [
+      "**Bajram:** *Bajram šerif mubarek olsun!* — dijawab *Allah razi olsun!* Ringkas: *Sretan Bajram!* Di hari pertama, orang biasa mengunjungi orang tua dan kerabat yang lebih tua lebih dulu, dan anak-anak menerima *bajramluk* — hadiah kecil atau uang, mirip angpau Lebaran.",
+      "**Natal:** *Sretan Božić!* atau *Čestit Božić!* Di kalangan Ortodoks salam tradisionalnya *Hristos se rodi!* (Kristus lahir), dijawab *Vaistinu se rodi!* (sungguh Ia lahir).",
+      "**Paskah:** *Sretan Uskrs!* Salam Ortodoks: *Hristos vaskrse!* — dijawab *Vaistinu vaskrse!* **Tahun Baru:** *Sretna Nova godina!* Kalau tidak yakin salam mana yang tepat, *Sretni praznici!* (selamat hari raya) selalu aman."
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Ungkapan waktu dengan bilangan urut",
+   "blocks": [
+    {
+     "type": "tabel",
+     "head": [
+      "Bosanski",
+      "Bahasa Indonesia"
+     ],
+     "rows": [
+      [
+       "*prvi put / drugi put*",
+       "pertama kali / kedua kali"
+      ],
+      [
+       "*po prvi put*",
+       "untuk pertama kalinya"
+      ],
+      [
+       "*prvog dana, zadnjeg dana*",
+       "pada hari pertama, pada hari terakhir"
+      ],
+      [
+       "*početkom maja, sredinom maja, krajem maja*",
+       "awal Mei, pertengahan Mei, akhir Mei"
+      ],
+      [
+       "*prošlog vijeka*",
+       "abad lalu"
+      ],
+      [
+       "*devedesetih godina*",
+       "pada tahun 90-an"
+      ],
+      [
+       "*u prizemlju / na prvom spratu*",
+       "di lantai dasar / di lantai satu"
+      ],
+      [
+       "*treća vrata lijevo*",
+       "pintu ketiga di kiri"
+      ],
+      [
+       "*druga ulica desno*",
+       "jalan kedua di kanan"
+      ],
+      [
+       "*na prvom mjestu*",
+       "di urutan pertama; yang paling penting"
+      ]
+     ]
+    },
+    {
+     "type": "p",
+     "text": "Tiga ungkapan waktu di tengah tabel — *početkom, sredinom, krajem* — sebenarnya bentuk instrumental dari *početak, sredina, kraj*, dan selalu diikuti genitif: *početkom godine, krajem sedmice, sredinom decembra*. Dengan bilangan urut semuanya bisa digabung: *krajem devetnaestog vijeka* (akhir abad ke-19), *početkom devedesetih* (awal tahun 90-an). Kalau hafal sepuluh kalimat ini, kamu bisa menyebut hampir semua waktu dalam sejarah dan dalam hidupmu sendiri."
+    },
+    {
+     "type": "kotak",
+     "title": "Membaca tanggal gaya Bosnia",
+     "items": [
+      "Urutannya hari, bulan, tahun, dipisah titik — dan **ada titik juga sesudah tahun**, karena tahun di sini dibaca sebagai bilangan urut: *7. 1. 2027.* Di formulir resmi kamu akan melihat *Datum rođenja: 21. 3. 1997.*",
+      "Nama bulan sering ditulis angka Romawi di dokumen lama dan batu nisan: *21. III 1997.*",
+      "Minggu dimulai hari Senin (*ponedjeljak*). Kalender dinding di rumah-rumah Bosnia sering mencantumkan hari raya ketiga agama sekaligus — cara yang praktis untuk tahu kapan harus menelepon siapa."
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Ulangan berjenjang — unit 12",
+   "blocks": [
+    {
+     "type": "p",
+     "text": "Tutup kolom Bosnia, baca terjemahan Indonesianya, lalu susun kembali kalimatnya dari ingatan."
+    },
+    {
+     "type": "tabel",
+     "head": [
+      "Bahasa Indonesia",
+      "Bosanski"
+     ],
+     "rows": [
+      [
+       "Selamat siang. Saya ingin memesan dua kamar untuk akhir pekan depan.",
+       "*Dobar dan. Htio bih rezervisati dvije sobe za sljedeći vikend.*"
+      ],
+      [
+       "Itu akan menyenangkan, kalau tidak jauh lebih mahal. Kira-kira berapa harganya?",
+       "*Bilo bi lijepo, ako nije mnogo skuplja. Koliko bi to koštalo?*"
+      ],
+      [
+       "Bagus. Bisakah Anda mengirimkan penawarannya lewat surel?",
+       "*Odlično. Da li biste mi mogli poslati ponudu mejlom?*"
+      ],
+      [
+       "Silakan. Kami juga ingin makan malam di sini.",
+       "*Izvolite. Htjeli bismo i večerati ovdje.*"
+      ],
+      [
+       "Saya sarankan ikan trout dari Sungai Pliva, dengan sayur blitva dan kentang.",
+       "*Preporučila bih vam pastrmku iz Plive, s blitvom i krompirom.*"
+      ]
+     ]
+    }
+   ]
+  }
+ ],
+ "vocab": [
+  {
+   "bs": "prvi, drugi, treći",
+   "baca": "PR-vi, DRU-gi, TRE-chi",
+   "id": "pertama, kedua, ketiga"
+  },
+  {
+   "bs": "četvrti, peti, šesti",
+   "baca": "CHET-vr-ti, PE-ti, SYES-ti",
+   "id": "keempat, kelima, keenam"
+  },
+  {
+   "bs": "sedmi, osmi, deveti, deseti",
+   "baca": "SED-mi, OS-mi, DE-ve-ti, DE-se-ti",
+   "id": "ketujuh, kedelapan, kesembilan, kesepuluh"
+  },
+  {
+   "bs": "dvadeseti, stoti, hiljaditi",
+   "baca": "DVA-de-se-ti, STO-ti, HI-lya-di-ti",
+   "id": "kedua puluh, keseratus, keseribu"
+  },
+  {
+   "bs": "zadnji / posljednji",
+   "baca": "ZAD-nyi / POS-lyed-nyi",
+   "id": "terakhir"
+  },
+  {
+   "bs": "praznik, praznici (lk)",
+   "baca": "PRAZ-nik, PRAZ-ni-tsi",
+   "id": "hari raya, hari libur"
+  },
+  {
+   "bs": "bajram, bajrami (lk)",
+   "baca": "BAY-ram",
+   "id": "hari raya Idulfitri / Iduladha"
+  },
+  {
+   "bs": "Božić (lk)",
+   "baca": "BO-zhich",
+   "id": "Natal"
+  },
+  {
+   "bs": "Uskrs (lk)",
+   "baca": "US-krs",
+   "id": "Paskah"
+  },
+  {
+   "bs": "Nova godina (pr)",
+   "baca": "NO-va GO-di-na",
+   "id": "Tahun Baru"
+  },
+  {
+   "bs": "rođendan, rođendani (lk)",
+   "baca": "RO-jen-dan",
+   "id": "ulang tahun"
+  },
+  {
+   "bs": "slaviti (slavim) / proslaviti (proslavim)",
+   "baca": "SLA-vi-ti / PRO-sla-vi-ti",
+   "id": "merayakan"
+  },
+  {
+   "bs": "čestitati (čestitam) — dua vid",
+   "baca": "CHES-ti-ta-ti",
+   "id": "mengucapkan selamat"
+  },
+  {
+   "bs": "čestitka (pr)",
+   "baca": "CHES-tit-ka",
+   "id": "ucapan selamat; kartu ucapan"
+  },
+  {
+   "bs": "roditi se — rođen / rođena sam",
+   "baca": "RO-di-ti se — RO-jen / RO-je-na sam",
+   "id": "lahir — saya lahir"
+  },
+  {
+   "bs": "nositi (nosim) / ponijeti (ponesem)",
+   "baca": "NO-si-ti / PO-ni-ye-ti",
+   "id": "membawa"
+  },
+  {
+   "bs": "sprat, spratovi (lk)",
+   "baca": "sprat, SPRA-to-vi",
+   "id": "lantai (gedung)"
+  },
+  {
+   "bs": "prizemlje (nt)",
+   "baca": "PRI-zem-lye",
+   "id": "lantai dasar"
+  },
+  {
+   "bs": "zgrada (pr)",
+   "baca": "ZGRA-da",
+   "id": "gedung, bangunan apartemen"
+  },
+  {
+   "bs": "vijek, vijekovi (lk)",
+   "baca": "VI-yek, VI-ye-ko-vi",
+   "id": "abad"
+  },
+  {
+   "bs": "datum, datumi (lk)",
+   "baca": "DA-tum",
+   "id": "tanggal"
+  },
+  {
+   "bs": "kalendar, kalendari (lk)",
+   "baca": "ka-LEN-dar",
+   "id": "kalender"
+  },
+  {
+   "bs": "poklon, pokloni (lk)",
+   "baca": "POK-lon",
+   "id": "hadiah, kado"
+  },
+  {
+   "bs": "bajramluk (lk)",
+   "baca": "BAY-ram-luk",
+   "id": "hadiah bajram untuk anak-anak"
+  },
+  {
+   "bs": "pravoslavni / katolički",
+   "baca": "PRA-vo-slav-ni / KA-to-lich-ki",
+   "id": "Ortodoks / Katolik"
+  }
+ ],
+ "exercises": [
+  {
+   "prompt": "Terjemahkan ke bahasa Bosnia. Tulis bilangannya dengan huruf.",
+   "items": [
+    "Kamu ngapain di hari pertama bajram?",
+    "Aku tinggal di lantai lima.",
+    "Natal Ortodoks tanggal 7 Januari.",
+    "Ivana lahir tanggal 25 Desember.",
+    "Aku lahir tahun 1997. (Budi)",
+    "Ini pertama kalinya aku ikut bajram."
+   ]
+  },
+  {
+   "prompt": "Isi dengan bilangan urut dalam bentuk yang tepat.",
+   "items": [
+    "Stan je na ____ spratu. (3.)",
+    "Vidimo se ____ maja. (1.)",
+    "Danas je ____ januar. (7.)",
+    "Rođena sam ____ godine. (2001.)",
+    "Živimo u ____ vijeku. (21.)",
+    "Ovo je moja ____ godina u Sarajevu. (2.)",
+    "Uđi u ____ zgradu lijevo. (3.)"
+   ]
+  },
+  {
+   "prompt": "Jawab dengan kalimat lengkap. Tulis bilangannya dengan huruf.",
+   "items": [
+    "Koji je danas datum? (23. 9.)",
+    "Kad je katolički Božić?",
+    "Kad je Nova godina?",
+    "Na kojem spratu stanuješ? (4.)",
+    "Kad si rođen? (Budi: 21. 3. 1997.)",
+    "U kojem vijeku živimo?"
+   ]
+  },
+  {
+   "prompt": "Susun jadi kalimat yang benar.",
+   "items": [
+    "radiš / prvog / šta / bajrama / dana / ?",
+    "na / stanujem / petom / spratu",
+    "je / Božić / sedmog / pravoslavni / januara",
+    "sam / rođena / decembra / petog / dvadeset",
+    "trećoj / u / zgradi / stanujem"
+   ]
+  }
+ ],
+ "answers": [
+  "Šta radiš prvog dana bajrama? — Stanujem na petom spratu. — Pravoslavni Božić je sedmog januara. — Ivana je rođena dvadeset petog decembra. — Rođen sam hiljadu devetsto devedeset sedme godine. — Prvi put sam na bajramu; atau Ovo mi je prvi bajram.",
+  "trećem — prvog — sedmi — dvije hiljade prve — dvadeset prvom — druga — treću",
+  "Danas je dvadeset treći septembar. — Katolički Božić je dvadeset petog decembra. — Nova godina je prvog januara. — Stanujem na četvrtom spratu. — Rođen sam dvadeset prvog marta hiljadu devetsto devedeset sedme godine. — Živimo u dvadeset prvom vijeku.",
+  "Šta radiš prvog dana bajrama? — Stanujem na petom spratu. — Pravoslavni Božić je sedmog januara. — Rođena sam dvadeset petog decembra. — Stanujem u trećoj zgradi."
+ ]
+}

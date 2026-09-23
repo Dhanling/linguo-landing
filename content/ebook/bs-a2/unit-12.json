@@ -1,0 +1,714 @@
+{
+ "title": "Memesan hotel — bentuk sopan \"ingin\"",
+ "title_target": "Htio bih rezervisati sobu",
+ "goal": "Memesan kamar lewat telepon dan surel, lalu meminta ini-itu di resepsionis tanpa terdengar memerintah. Titik tata bahasanya: **kondisional I** (*bih, bi, bismo, biste, bi* + bentuk lampau) untuk permintaan sopan — *htio bih, mogli biste, bilo bi dobro*.",
+ "bekal": [
+  "membentuk kondisional I untuk semua pelaku, lelaki dan perempuan: *htio bih, htjela bih, htjeli bismo*",
+  "menaikkan tingkat kesopanan: *hoću* → *htio bih* → *da li biste mi mogli…?*",
+  "menaruh *bih / biste* di kursi kedua bersama klitik lain: *Biste li mi mogli poslati ponudu?*"
+ ],
+ "dialogs": [
+  {
+   "title": "Dialog — Rezervacija telefonom",
+   "intro": "Kamis sore di kantor. Budi, Amina, dan Emir berencana ke Jajce akhir pekan depan, dan Budi kebagian tugas menelepon penginapan. Ia sudah menulis kalimat pertamanya di secarik kertas.",
+   "lines": [
+    {
+     "speaker": "Recepcionerka:",
+     "text": "Recepcija, dobar dan, izvolite.",
+     "id": "Resepsionis, selamat siang, silakan.",
+     "literal": "resepsi, baik-akusatif hari-akusatif, silakan."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Dobar dan. Htio bih rezervisati dvije sobe za sljedeći vikend.",
+     "id": "Selamat siang. Saya ingin memesan dua kamar untuk akhir pekan depan.",
+     "literal": "baik-akusatif hari-akusatif. mau-lk saya-andai memesan dua kamar-genitif untuk berikutnya-akusatif akhir-pekan-akusatif."
+    },
+    {
+     "speaker": "Recepcionerka:",
+     "text": "Naravno. Koliko noći biste ostali?",
+     "id": "Tentu. Berapa malam Anda akan menginap?",
+     "literal": "tentu. berapa malam-genitif kalian-andai tinggal-jm?"
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Dvije noći, od petka do nedjelje. Htjeli bismo jednu jednokrevetnu i jednu dvokrevetnu sobu.",
+     "id": "Dua malam, dari Jumat sampai Minggu. Kami ingin satu kamar single dan satu kamar untuk dua orang.",
+     "literal": "dua malam-genitif, dari Jumat-genitif sampai Minggu-genitif. mau-jm kami-andai satu-akusatif ranjang-satu-akusatif dan satu-akusatif ranjang-dua-akusatif kamar-akusatif."
+    },
+    {
+     "speaker": "Recepcionerka:",
+     "text": "Dvokrevetnu s bračnim krevetom ili s dva odvojena kreveta?",
+     "id": "Yang untuk dua orang itu ranjang besar atau dua ranjang terpisah?",
+     "literal": "ranjang-dua-akusatif dengan pasutri-instrumental ranjang-instrumental atau dengan dua terpisah-genitif ranjang-genitif?"
+    },
+    {
+     "speaker": "Budi:",
+     "text": "S dva odvojena, molim vas. Spavat ću u sobi s prijateljem.",
+     "id": "Dua ranjang terpisah, tolong. Saya sekamar dengan teman.",
+     "literal": "dengan dua terpisah-genitif, saya-mohon kalian-akusatif. tidur saya-akan di kamar-lokatif dengan teman-instrumental."
+    },
+    {
+     "speaker": "Recepcionerka:",
+     "text": "U redu. Da li biste htjeli sobu s pogledom na vodopad? Malo je skuplja.",
+     "id": "Baik. Apakah Anda mau kamar yang menghadap air terjun? Sedikit lebih mahal.",
+     "literal": "dalam urutan. bahwa apakah kalian-andai mau-jm kamar-akusatif dengan pemandangan-instrumental ke air-terjun-akusatif? sedikit ia-adalah lebih-mahal-pr."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Bilo bi lijepo, ako nije mnogo skuplja. Koliko bi to koštalo?",
+     "id": "Itu akan menyenangkan, kalau tidak jauh lebih mahal. Kira-kira berapa harganya?",
+     "literal": "ada-nt ia-andai indah, kalau ia-bukan banyak lebih-mahal-pr. berapa ia-andai itu berharga-nt?"
+    },
+    {
+     "speaker": "Recepcionerka:",
+     "text": "Razliku ću vam poslati zajedno s ponudom. Doručak je uključen u cijenu.",
+     "id": "Selisihnya akan saya kirimkan bersama penawaran. Sarapan sudah termasuk dalam harga.",
+     "literal": "selisih-akusatif saya-akan kepada-kalian mengirim bersama dengan penawaran-instrumental. sarapan ia-adalah termasuk ke harga-akusatif."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Odlično. Da li biste mi mogli poslati ponudu mejlom?",
+     "id": "Bagus. Bisakah Anda mengirimkan penawarannya lewat surel?",
+     "literal": "bagus-sekali. bahwa apakah kalian-andai kepada-saya bisa-jm mengirim penawaran-akusatif surel-instrumental?"
+    },
+    {
+     "speaker": "Recepcionerka:",
+     "text": "Svakako. Samo mi recite svoje ime i adresu e-pošte.",
+     "id": "Tentu saja. Sebutkan saja nama dan alamat surel Anda.",
+     "literal": "tentu. hanya kepada-saya katakanlah-kalian milik-sendiri-akusatif nama dan alamat-akusatif surel-genitif."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Budi Santoso. Adresu ću vam poslati porukom, tako je lakše.",
+     "id": "Budi Santoso. Alamatnya saya kirim lewat pesan saja, lebih gampang.",
+     "literal": "Budi Santoso. alamat-akusatif saya-akan kepada-kalian mengirim pesan-instrumental, begitu ia-adalah lebih-mudah."
+    },
+    {
+     "speaker": "Recepcionerka:",
+     "text": "Može. Kad uplatite akontaciju, rezervacija je sigurna. Ne bih vam savjetovala da čekate, vikendom je gužva.",
+     "id": "Boleh. Begitu Anda transfer uang muka, pesanannya aman. Saran saya jangan ditunda, akhir pekan ramai.",
+     "literal": "bisa. ketika kalian-menyetor uang-muka-akusatif, reservasi ia-adalah pasti. tidak saya-andai kepada-kalian menasihati-pr agar kalian-menunggu, akhir-pekan-instrumental ia-adalah keramaian."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Razumijem, uplatit ću danas. Hvala vam, bili ste jako ljubazni.",
+     "id": "Mengerti, hari ini saya transfer. Terima kasih, Anda sangat ramah.",
+     "literal": "saya-mengerti, menyetor saya-akan hari-ini. terima-kasih kepada-kalian, ada-jm kalian-adalah sangat ramah-jm."
+    }
+   ],
+   "notes": [
+    "***Htio bih*, bukan *hoću*.** *Hoću sobu* secara tata bahasa benar, tetapi di telepon ke hotel terdengar seperti anak kecil menunjuk permen. *Htio bih* (lelaki) atau *htjela bih* (perempuan) adalah cara biasa untuk meminta — padanannya \"saya ingin…, kalau boleh\". Perhatikan ejaan ijekavski: *htio, htjela, htjeli*; bentuk *hteo, htela* adalah ekavski Serbia.",
+    "**Bentuknya sudah kamu kenal separuh.** Kondisional = *bih / bi / bismo / biste / bi* + bentuk lampau berjenis yang sama dengan perfekt: *htio, mogla, ostali, koštalo*. Yang baru hanya kata bantunya. Jadi *Koliko bi to koštalo?* memakai *koštalo* netral karena pelakunya *to*.",
+    "***Koliko noći biste ostali?* — *Vi* sopan memakai jamak.** Resepsionis menyapa Budi dengan *Vi*, dan bentuk lampaunya ikut jamak: *ostali, htjeli, mogli* — bahkan kalau lawan bicaranya satu perempuan: *Gospođo, da li biste htjeli…?* Ini sama dengan aturan *Vi* di perfekt: *Bili ste jako ljubazni.*",
+    "***Ne bih vam savjetovala* — resepsionisnya perempuan.** Bentuk lampau di dalam kondisional tetap memberitahu jenis kelamin: *savjetovala*, *preporučila*, *htjela*. Kalau kamu perempuan dan menelepon hotel, kalimat pertamamu adalah ***Htjela bih rezervisati sobu.***",
+    "***Dvije sobe*, *dvije noći*, *s dva odvojena kreveta*.** Aturan 2–4 + genitif tunggal berlaku juga untuk kata sifat: *dva odvojena kreveta, dvije velike sobe*. Dan *dvije* (bukan *dva*) karena *soba* dan *noć* perempuan.",
+    "***Mejlom* dan *e-poštom*.** Dalam obrolan orang Sarajevo bilang *mejl* dan *poslati mejlom*; di formulir dan surat resmi tertulis *e-pošta* atau *e-mail*. *Akontacija* adalah uang muka — kata yang akan kamu temui di hampir semua pemesanan penginapan kecil."
+   ],
+   "grammars": [
+    {
+     "title": "Kondisional I — *bih, bi, bismo, biste, bi*",
+     "body": [
+      "Rumusnya: **kata bantu kondisional + bentuk lampau berjenis**. Kata bantunya klitik, jadi ia duduk di kursi kedua seperti *sam* dan *ću*: *Htio **bih**…*, *Ja **bih** htio…*, *Da li **biste**…?* Kalimat tak pernah dibuka dengan *bih*."
+     ],
+     "table": {
+      "head": [
+       "Pelaku",
+       "Kata bantu",
+       "Lelaki",
+       "Perempuan",
+       "Bahasa Indonesia"
+      ],
+      "rows": [
+       [
+        "*ja*",
+        "*bih*",
+        "*htio bih*",
+        "*htjela bih*",
+        "saya ingin"
+       ],
+       [
+        "*ti*",
+        "*bi*",
+        "*htio bi*",
+        "*htjela bi*",
+        "kamu ingin"
+       ],
+       [
+        "*on / ona / ono*",
+        "*bi*",
+        "*htio bi*",
+        "*htjela bi* (nt: *htjelo bi*)",
+        "ia ingin"
+       ],
+       [
+        "*mi*",
+        "*bismo*",
+        "*htjeli bismo*",
+        "*htjele bismo*",
+        "kami ingin"
+       ],
+       [
+        "*vi / Vi*",
+        "*biste*",
+        "*htjeli biste*",
+        "*htjele biste* (Vi sopan: *htjeli*)",
+        "kalian / Anda ingin"
+       ],
+       [
+        "*oni / one / ona*",
+        "*bi*",
+        "*htjeli bi*",
+        "*htjele bi* (nt: *htjela bi*)",
+        "mereka ingin"
+       ]
+      ]
+     },
+     "after": [
+      "**Tiga kata kerja ini mengerjakan sembilan puluh persen kesopanan:** *htio bih* (saya ingin), *mogao bih / mogla bih* (saya bisa), dan *bilo bi* (akan…): *Bilo bi lijepo. Bilo bi dobro. Ne bi bilo loše.*",
+      "***Ti bi* dan *on bi* bentuknya sama.** Konteks dan kata gantinya yang membedakan: *Da li bi ti htio kafu?* lawan *Da li bi on htio kafu?*",
+      "**Hati-hati dengan *mi bi* dan *vi bi*.** Dalam obrolan cepat di seluruh kawasan ini kadang terdengar *mi bi išli, vi bi htjeli*; bentuk baku, dan yang harus kamu tulis, tetap *bismo, biste*."
+     ]
+    },
+    {
+     "title": "Tangga kesopanan",
+     "body": [
+      "Makin ke bawah, makin halus. Untuk hotel, dokter, kantor pemerintah, atau orang yang lebih tua, mulailah dari baris ketiga."
+     ],
+     "table": {
+      "head": [
+       "Kalimat",
+       "Nada",
+       "Kira-kira dalam bahasa Indonesia"
+      ],
+      "rows": [
+       [
+        "*Hoću sobu.*",
+        "langsung, bisa terdengar kasar",
+        "Aku mau kamar."
+       ],
+       [
+        "*Želim sobu.*",
+        "netral, agak kaku",
+        "Saya menginginkan kamar."
+       ],
+       [
+        "*Htio bih sobu.*",
+        "sopan, paling umum",
+        "Saya ingin kamar."
+       ],
+       [
+        "*Mogu li dobiti sobu?*",
+        "sopan, bertanya",
+        "Boleh saya dapat kamar?"
+       ],
+       [
+        "*Da li biste mi mogli dati sobu?*",
+        "sangat sopan",
+        "Apakah Anda bisa memberi saya kamar?"
+       ],
+       [
+        "*Bilo bi dobro kad…* / *Bilo bi lijepo…*",
+        "sopan, tak langsung",
+        "Akan baik sekali kalau…"
+       ]
+      ]
+     },
+     "after": [
+      "***Molim vas*** bisa ditempel di ujung mana pun dan langsung menaikkan satu anak tangga: *Htio bih sobu s pogledom, molim vas.*",
+      "**Jawaban pun bisa sopan:** *Ne bih rekao* (menurut saya tidak begitu), *Bilo bi mi drago* (saya akan senang)."
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Dialog kedua — Na recepciji u Jajcu",
+   "intro": "Jumat malam, Jajce. Dari jendela lobi terdengar gemuruh air terjun Pliva. Resepsionis yang sama menyambut mereka.",
+   "lines": [
+    {
+     "speaker": "Amina:",
+     "text": "Dobro veče. Imamo rezervaciju na ime Budi Santoso.",
+     "id": "Selamat malam. Kami punya pesanan atas nama Budi Santoso.",
+     "literal": "baik malam. kami-punya reservasi-akusatif atas nama-akusatif Budi Santoso."
+    },
+    {
+     "speaker": "Recepcionerka:",
+     "text": "Dobro došli u Jajce! Mogu li dobiti vaše lične karte ili pasoše?",
+     "id": "Selamat datang di Jajce! Boleh saya minta KTP atau paspor kalian?",
+     "literal": "baik datang-jm ke Jajce-akusatif! saya-bisa apakah mendapat milik-kalian-akusatif-jm pribadi-jm kartu-jm atau paspor-jm?"
+    },
+    {
+     "speaker": "Emir:",
+     "text": "Izvolite. Htjeli bismo i večerati ovdje.",
+     "id": "Silakan. Kami juga ingin makan malam di sini.",
+     "literal": "silakan. mau-jm kami-andai juga makan-malam di-sini."
+    },
+    {
+     "speaker": "Recepcionerka:",
+     "text": "Kuhinja radi do deset. Da li biste večerali unutra ili na terasi?",
+     "id": "Dapur buka sampai jam sepuluh. Mau makan di dalam atau di teras?",
+     "literal": "dapur ia-bekerja sampai sepuluh. bahwa apakah kalian-andai makan-malam-jm di-dalam atau di teras-lokatif?"
+    },
+    {
+     "speaker": "Amina:",
+     "text": "Na terasi, ako nije hladno. Ja bih samo nešto lagano.",
+     "id": "Di teras, kalau tidak dingin. Saya yang ringan-ringan saja.",
+     "literal": "di teras-lokatif, kalau ia-bukan dingin. saya saya-andai hanya sesuatu ringan."
+    },
+    {
+     "speaker": "Recepcionerka:",
+     "text": "Preporučila bih vam pastrmku iz Plive, s blitvom i krompirom.",
+     "id": "Saya sarankan ikan trout dari Sungai Pliva, dengan sayur blitva dan kentang.",
+     "literal": "menyarankan-pr saya-andai kepada-kalian trout-akusatif dari Pliva-genitif, dengan blitva-instrumental dan kentang-instrumental."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "A ja bih uzeo bosanski lonac, ako ga imate.",
+     "id": "Kalau saya, bosanski lonac saja, kalau ada.",
+     "literal": "dan saya saya-andai mengambil-lk bosnia-akusatif panci-akusatif, kalau dia-lk-akusatif kalian-punya."
+    },
+    {
+     "speaker": "Emir:",
+     "text": "I još nešto: bi li bilo moguće da u nedjelju doručkujemo kasnije?",
+     "id": "Satu lagi: mungkinkah hari Minggu kami sarapan lebih siang?",
+     "literal": "dan lagi sesuatu: ia-andai apakah ada-nt mungkin agar pada Minggu-akusatif kami-sarapan lebih-lambat?"
+    },
+    {
+     "speaker": "Recepcionerka:",
+     "text": "Doručak je do deset, ali za vas bismo mogli napraviti izuzetak.",
+     "id": "Sarapan sampai jam sepuluh, tapi untuk kalian kami bisa buat pengecualian.",
+     "literal": "sarapan ia-adalah sampai sepuluh, tetapi untuk kalian-akusatif kami-andai bisa-jm membuat pengecualian-akusatif."
+    },
+    {
+     "speaker": "Amina:",
+     "text": "To bi bilo divno. Baš ste ljubazni!",
+     "id": "Itu akan menyenangkan sekali. Anda baik sekali!",
+     "literal": "itu ia-andai ada-nt menakjubkan. sungguh kalian-adalah ramah-jm!"
+    }
+   ],
+   "notes": [
+    "***Ja bih samo nešto lagano.*** Kata kerjanya hilang sama sekali, dan kalimatnya tetap sempurna. Di restoran, *Ja bih…* + nama makanan sudah cukup: *Ja bih kafu. Ja bih ćevape.* Kata *ja* di depan memberi tekanan \"kalau saya…\" — pas ketika orang bergiliran memesan.",
+    "***Preporučila bih vam pastrmku* — urutan klitik.** *Bih* (kata bantu) dulu, lalu *vam* (datif). Kalau masih ada akuzatif, ia menyusul: *Preporučila bih vam je* (saya sarankan itu kepada Anda). Satu tambahan: *se* menyusul sesudah kata bantu, *Ne bih se žalio* (saya tak akan mengeluh).",
+    "***Bi li bilo moguće…?*** Dua cara bertanya, sama baiknya: *Da li bi bilo moguće…?* dan *Bi li bilo moguće…?* Dalam bentuk kedua, *bi* naik ke depan dan *li* menempel padanya — satu-satunya saat kata bantu kondisional boleh membuka kalimat.",
+    "***Pastrmka* dan *blitva*.** Sungai dan danau Pliva di sekitar Jajce terkenal dengan ikan trout, *pastrmka* (Kroasia: *pastrva*). *Blitva* (sejenis sawi Swiss chard) yang direbus dengan kentang dan minyak zaitun adalah lauk klasik untuk ikan, terutama di Hercegovina dan pesisir Dalmatia.",
+    "***Dobro veče*.** Di Bosnia salam malam yang paling umum adalah *dobro veče*; *dobra večer* lebih terdengar Kroasia. Keduanya dimengerti di mana-mana."
+   ],
+   "grammars": [
+    {
+     "title": "Ingkar, tanya, dan klitik dalam kondisional",
+     "body": [
+      "Kata bantu kondisional bertingkah persis seperti *sam* dan *ću*: ingkarnya cukup diberi *ne* (terpisah), pertanyaannya dengan *da li* atau dengan *li* yang menempel."
+     ],
+     "table": {
+      "head": [
+       "Bentuk",
+       "Contoh",
+       "Bahasa Indonesia"
+      ],
+      "rows": [
+       [
+        "Positif",
+        "*Mogli bismo napraviti izuzetak.*",
+        "Kami bisa membuat pengecualian."
+       ],
+       [
+        "Ingkar",
+        "*Ne bih vam savjetovala da čekate.*",
+        "Saya tidak menyarankan Anda menunggu."
+       ],
+       [
+        "Tanya dengan *da li*",
+        "*Da li biste mi mogli poslati ponudu?*",
+        "Bisakah Anda mengirimi saya penawaran?"
+       ],
+       [
+        "Tanya dengan *li*",
+        "*Biste li mi mogli poslati ponudu?*",
+        "(sama)"
+       ],
+       [
+        "+ datif + akuzatif",
+        "*Poslala bih vam ga danas.*",
+        "Saya akan mengirimkannya kepada Anda hari ini."
+       ],
+       [
+        "+ *se*",
+        "*Rado bih se vratio ovdje.*",
+        "Saya ingin sekali kembali ke sini."
+       ]
+      ]
+     },
+     "after": [
+      "**Urutan kursi kedua tetap sama:** *li* → kata bantu (*bih, biste*) → datif (*mi, vam*) → akuzatif (*ga, je*) → *se*. Kondisional tidak punya pengecualian seperti *je* di perfekt, jadi *On bi se vratio* utuh.",
+      "***Ne bih* tidak pernah melebur** seperti *nisam* atau *neću*. Tulis dua kata: *ne bih, ne bismo, ne biste*."
+     ]
+    }
+   ]
+  }
+ ],
+ "sections": [
+  {
+   "title": "Di hotel dan penginapan",
+   "blocks": [
+    {
+     "type": "tabel",
+     "head": [
+      "Bosanski",
+      "Cara baca",
+      "Bahasa Indonesia"
+     ],
+     "rows": [
+      [
+       "*jednokrevetna soba*",
+       "YED-no-kre-vet-na SO-ba",
+       "kamar untuk satu orang"
+      ],
+      [
+       "*dvokrevetna soba*",
+       "DVO-kre-vet-na SO-ba",
+       "kamar untuk dua orang"
+      ],
+      [
+       "*bračni krevet*",
+       "BRACH-ni KRE-vet",
+       "ranjang besar (untuk pasangan)"
+      ],
+      [
+       "*polupansion* (lk)",
+       "PO-lu-pan-si-on",
+       "setengah pensiun (sarapan + makan malam)"
+      ],
+      [
+       "*prijava / odjava* (pr)",
+       "PRI-ya-va / OD-ya-va",
+       "check-in / check-out"
+      ],
+      [
+       "*ključ, kartica*",
+       "klyuch, KAR-ti-tsa",
+       "kunci, kartu kamar"
+      ],
+      [
+       "*boravišna taksa* (pr)",
+       "BO-ra-visy-na TAK-sa",
+       "pajak turis per malam"
+      ],
+      [
+       "*apartman* (lk)",
+       "a-PART-man",
+       "apartemen sewaan harian"
+      ],
+      [
+       "*besplatan parking*",
+       "BES-pla-tan PAR-king",
+       "parkir gratis"
+      ],
+      [
+       "*Da li je doručak uključen?*",
+       "da li ye DO-ru-chak UK-lyu-chen",
+       "Sarapan sudah termasuk?"
+      ]
+     ]
+    },
+    {
+     "type": "p",
+     "text": "Di Bosnia banyak penginapan kecil — *pansion*, *apartman*, *soba za izdavanje* (kamar disewakan) — yang dikelola keluarga. Pemiliknya sering menjawab sendiri telepon dan pesan, jadi nada sopan yang kamu pelajari di unit ini benar-benar terpakai. Dua kalimat penutup yang membuat kesan baik: *Hvala vam unaprijed* (terima kasih sebelumnya) dan *Radujem se dolasku* (saya menantikan kedatangan ke sana)."
+    },
+    {
+     "type": "kotak",
+     "title": "Jajce: air terjun di tengah kota",
+     "items": [
+      "Di Jajce, Sungai **Pliva** jatuh ke Sungai **Vrbas** lewat air terjun yang megah — tepat di pinggir kota tua, bisa dilihat dari jalan raya.",
+      "Di hulu kota, di tepi danau Pliva, berderet **Mlinčići**: kincir-kincir air kayu kecil yang dulu dipakai menggiling gandum dan kini menjadi salah satu pemandangan paling terkenal di Bosnia.",
+      "Jajce pernah menjadi kedudukan raja-raja Bosnia abad pertengahan; benteng di puncak bukitnya masih berdiri. Kota ini juga tempat sidang kedua AVNOJ pada 29 November 1943, peristiwa penting dalam berdirinya Yugoslavia sosialis — gedungnya kini museum."
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Menulis surel ke hotel",
+   "blocks": [
+    {
+     "type": "tabel",
+     "head": [
+      "Bagian surel",
+      "Bosanski",
+      "Bahasa Indonesia"
+     ],
+     "rows": [
+      [
+       "Pembuka",
+       "*Poštovani,* / *Poštovana gospođo Kovač,*",
+       "Yth., / Yth. Ibu Kovač,"
+      ],
+      [
+       "Maksud",
+       "*Htio bih rezervisati sobu od 10. do 12. oktobra.*",
+       "Saya ingin memesan kamar tanggal 10–12 Oktober."
+      ],
+      [
+       "Rincian",
+       "*Htjeli bismo sobu za dvije odrasle osobe.*",
+       "Kami ingin kamar untuk dua orang dewasa."
+      ],
+      [
+       "Permintaan",
+       "*Da li biste mi mogli poslati ponudu?*",
+       "Bisakah Anda mengirimkan penawaran?"
+      ],
+      [
+       "Pertanyaan",
+       "*Zanimalo bi me da li imate parking.*",
+       "Saya ingin tahu apakah ada tempat parkir."
+      ],
+      [
+       "Harapan",
+       "*Bilo bi dobro dobiti sobu s pogledom.*",
+       "Akan menyenangkan mendapat kamar dengan pemandangan."
+      ],
+      [
+       "Penutup",
+       "*Unaprijed hvala. Srdačan pozdrav,*",
+       "Terima kasih sebelumnya. Salam hangat,"
+      ]
+     ]
+    },
+    {
+     "type": "p",
+     "text": "Perhatikan *Zanimalo bi me* — harfiahnya \"itu akan menarik minat saya\", cara halus bertanya tanpa tanda tanya. Kondisional bekerja sebagai peredam di seluruh surel: *Htio bih* menggantikan *Hoću*, *Htjeli bismo* menggantikan *Hoćemo*, *Da li biste* menggantikan *Možete li*. Surel yang ditulis begini tak akan pernah terdengar kurang ajar, bahkan kalau tata bahasamu masih ada salah di sana-sini. Satu hal lagi: dalam surat resmi, *Vi* dan *Vaš* sering ditulis berhuruf besar sebagai tanda hormat — *Unaprijed Vam hvala.*"
+    },
+    {
+     "type": "kotak",
+     "title": "Tiga hal praktis saat menginap",
+     "items": [
+      "Resepsionis akan meminta paspor atau kartu identitas. Tamu asing wajib didaftarkan tempat tinggalnya selama di Bosnia; di hotel dan penginapan resmi, pendaftaran itu diurus pengelolanya.",
+      "**Boravišna taksa** (pajak turis) biasanya ditambahkan per orang per malam dan kadang belum tercantum di harga penawaran. Tanyakan: *Da li je boravišna taksa uključena?*",
+      "Di penginapan keluarga, pembayaran tunai dalam *KM* masih lazim. Kalau ingin bayar kartu, tanyakan dulu: *Mogu li platiti karticom?*"
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Ulangan berjenjang — unit 10",
+   "blocks": [
+    {
+     "type": "p",
+     "text": "Tutup kolom Bosnia, baca terjemahan Indonesianya, lalu susun kembali kalimatnya dari ingatan."
+    },
+    {
+     "type": "tabel",
+     "head": [
+      "Bahasa Indonesia",
+      "Bosanski"
+     ],
+     "rows": [
+      [
+       "Blokir dulu kartunya. Telepon bankmu sekarang juga.",
+       "*Prvo blokiraj karticu. Nazovi svoju banku odmah.*"
+      ],
+      [
+       "Sudah kublokir. Aku urus sendiri waktu masih berdiri di halte.",
+       "*Već sam je blokirao. Sam sam to uradio, dok sam stajao na stanici.*"
+      ],
+      [
+       "Aku harus pergi sendiri? Bahasa Bosniaku belum cukup bagus untuk urusan polisi.",
+       "*Moram li ići sam? Moj bosanski nije dovoljno dobar za policiju.*"
+      ],
+      [
+       "Sungguh? Dia meninggalkan nomor teleponnya? Saya mau berterima kasih.",
+       "*Stvarno? Je li ostavila svoj broj telefona? Hoću da joj zahvalim.*"
+      ],
+      [
+       "Tidak apa-apa. Yang penting dokumen-dokumenku ada.",
+       "*Nema veze. Glavno da imam svoje dokumente.*"
+      ]
+     ]
+    }
+   ]
+  }
+ ],
+ "vocab": [
+  {
+   "bs": "htjeti (hoću) — htio / htjela bih",
+   "baca": "HTYE-ti",
+   "id": "ingin, mau (kondisional: saya ingin)"
+  },
+  {
+   "bs": "moći (mogu) — mogao / mogla bih",
+   "baca": "MO-chi",
+   "id": "bisa (kondisional: saya bisa)"
+  },
+  {
+   "bs": "rezervisati (rezervišem) — dua vid",
+   "baca": "re-ZER-vi-sa-ti",
+   "id": "memesan tempat"
+  },
+  {
+   "bs": "ostajati (ostajem) / ostati (ostanem)",
+   "baca": "os-TA-ya-ti / OS-ta-ti",
+   "id": "tinggal, menginap"
+  },
+  {
+   "bs": "uplaćivati (uplaćujem) / uplatiti (uplatim)",
+   "baca": "u-pla-CHI-va-ti / U-pla-ti-ti",
+   "id": "menyetor, mentransfer uang"
+  },
+  {
+   "bs": "preporučivati (preporučujem) / preporučiti (preporučim)",
+   "baca": "pre-po-ru-CHI-va-ti / pre-po-RU-chi-ti",
+   "id": "menyarankan, merekomendasikan"
+  },
+  {
+   "bs": "savjetovati (savjetujem) — ipf",
+   "baca": "SAV-ye-to-va-ti",
+   "id": "menasihati"
+  },
+  {
+   "bs": "koštati (košta) — ipf",
+   "baca": "KOSY-ta-ti",
+   "id": "berharga, seharga"
+  },
+  {
+   "bs": "soba, sobe (pr)",
+   "baca": "SO-ba",
+   "id": "kamar"
+  },
+  {
+   "bs": "krevet, kreveti (lk)",
+   "baca": "KRE-vet",
+   "id": "ranjang"
+  },
+  {
+   "bs": "noć, noći (pr)",
+   "baca": "noch, NO-chi",
+   "id": "malam"
+  },
+  {
+   "bs": "doručak, doručci (lk)",
+   "baca": "DO-ru-chak",
+   "id": "sarapan"
+  },
+  {
+   "bs": "uključen",
+   "baca": "UK-lyu-chen",
+   "id": "termasuk"
+  },
+  {
+   "bs": "pogled na (+ akuz)",
+   "baca": "PO-gled na",
+   "id": "pemandangan ke"
+  },
+  {
+   "bs": "vodopad, vodopadi (lk)",
+   "baca": "VO-do-pad",
+   "id": "air terjun"
+  },
+  {
+   "bs": "cijena (pr)",
+   "baca": "TSI-ye-na",
+   "id": "harga"
+  },
+  {
+   "bs": "ponuda (pr)",
+   "baca": "PO-nu-da",
+   "id": "penawaran"
+  },
+  {
+   "bs": "akontacija (pr)",
+   "baca": "a-kon-TA-tsi-ya",
+   "id": "uang muka"
+  },
+  {
+   "bs": "recepcija (pr)",
+   "baca": "re-TSEP-tsi-ya",
+   "id": "resepsionis (tempat)"
+  },
+  {
+   "bs": "lična karta (pr)",
+   "baca": "LICH-na KAR-ta",
+   "id": "kartu identitas"
+  },
+  {
+   "bs": "pasoš, pasoši (lk)",
+   "baca": "PA-sosy",
+   "id": "paspor"
+  },
+  {
+   "bs": "izuzetak, izuzeci (lk)",
+   "baca": "I-zu-ze-tak",
+   "id": "pengecualian"
+  },
+  {
+   "bs": "pastrmka (pr)",
+   "baca": "PAS-trm-ka",
+   "id": "ikan trout"
+  },
+  {
+   "bs": "ljubazan",
+   "baca": "LYU-ba-zan",
+   "id": "ramah, baik hati"
+  },
+  {
+   "bs": "unaprijed",
+   "baca": "U-na-pri-yed",
+   "id": "sebelumnya, di muka"
+  },
+  {
+   "bs": "gužva (pr)",
+   "baca": "GUZH-va",
+   "id": "keramaian, penuh sesak"
+  }
+ ],
+ "exercises": [
+  {
+   "prompt": "Terjemahkan ke bahasa Bosnia dengan kondisional. Perhatikan siapa yang bicara.",
+   "items": [
+    "Saya ingin memesan dua kamar untuk akhir pekan depan. (Budi)",
+    "Kira-kira berapa harganya?",
+    "Bisakah Anda mengirimkan penawarannya lewat surel?",
+    "Kami ingin makan malam di sini.",
+    "Saya yang ringan-ringan saja. (Amina)",
+    "Itu akan menyenangkan sekali."
+   ]
+  },
+  {
+   "prompt": "Isi dengan bentuk yang tepat. Petunjuk di dalam kurung.",
+   "items": [
+    "____ bih rezervisati sobu. (htjeti, Amina)",
+    "Da li ____ mogli pomoći? (kata bantu, Vi)",
+    "Mi ____ ostali dvije noći. (kata bantu, mi)",
+    "Ja ____ uzeo bosanski lonac. (kata bantu, ja)",
+    "Emir bi ____ spavati duže. (htjeti)",
+    "To ne bi ____ problem. (biti)",
+    "Biste li mi ____ reći gdje je recepcija? (moći, Vi)"
+   ]
+  },
+  {
+   "prompt": "Ubah jadi permintaan yang lebih sopan dengan kondisional. Anggap pembicaranya lelaki.",
+   "items": [
+    "Hoću kafu.",
+    "Možete li mi pomoći?",
+    "Hoćemo sobu s pogledom.",
+    "Daj mi ključ.",
+    "Dobro je rezervisati unaprijed.",
+    "Ne želim čekati."
+   ]
+  },
+  {
+   "prompt": "Susun jadi kalimat yang benar.",
+   "items": [
+    "bih / rezervisati / htio / sobu",
+    "bi / koštalo / koliko / to / ?",
+    "biste / li / mi / mogli / poslati / ponudu / ?",
+    "bismo / večerati / htjeli / ovdje",
+    "bih / vam / preporučila / pastrmku"
+   ]
+  }
+ ],
+ "answers": [
+  "Htio bih rezervisati dvije sobe za sljedeći vikend. — Koliko bi to koštalo? — Da li biste mi mogli poslati ponudu mejlom?; atau Biste li mi mogli poslati ponudu e-poštom? — Htjeli bismo večerati ovdje. — Ja bih samo nešto lagano. — To bi bilo divno.",
+  "Htjela — biste — bismo — bih — htio — bio — mogli",
+  "Htio bih kafu; atau Ja bih kafu. — Da li biste mi mogli pomoći?; atau Biste li mi mogli pomoći? — Htjeli bismo sobu s pogledom. — Da li bi mi mogao dati ključ?; atau Bi li mi dao ključ? — Bilo bi dobro rezervisati unaprijed. — Ne bih htio čekati.",
+  "Htio bih rezervisati sobu. — Koliko bi to koštalo? — Biste li mi mogli poslati ponudu? — Htjeli bismo večerati ovdje. — Preporučila bih vam pastrmku."
+ ]
+}

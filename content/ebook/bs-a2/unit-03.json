@@ -1,0 +1,777 @@
+{
+ "title": "Pindahan dan tetangga baru — kata sifat perempuan & jamak",
+ "title_target": "Selidba",
+ "goal": "Mengangkut barang, menata apartemen baru, dan berkenalan dengan tetangga. Titik tata bahasanya: ekor kata sifat **perempuan** dan **jamak** di semua padež (*lijepe, lijepoj, lijepu, lijepih, lijepim*), ditambah kata benda lelaki berakhiran *-a* yang tetap membawa kata sifat lelaki: *najbolji komšija*.",
+ "bekal": [
+  "menempelkan ekor kata sifat perempuan: *u maloj sobi, pored bijele police, toplu pitu*",
+  "memakai kata sifat jamak di semua padež: *dobre komšije, bez jeftinih stanova, s plavim zavjesama*",
+  "berterima kasih kepada tetangga dan mengikuti kebiasaan *tepsija se ne vraća prazna*"
+ ],
+ "dialogs": [
+  {
+   "title": "Dialog — Teška kutija",
+   "intro": "Hari pindahan. Emir meminjam mobil kakaknya dan sudah tiga kali naik-turun ke lantai lima. Liftnya sempit, kardusnya banyak, dan kesabaran Emir mulai menipis.",
+   "lines": [
+    {
+     "speaker": "Emir:",
+     "text": "Budi, šta je u ovoj velikoj kutiji? Teška je kao kamen!",
+     "id": "Budi, kardus besar ini isinya apa? Beratnya kayak batu!",
+     "literal": "Budi, apa ia-adalah di ini-lokatif-pr besar-lokatif-pr kardus-lokatif? berat-pr ia-adalah seperti batu!"
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Knjige. Sve moje knjige i dva rječnika.",
+     "id": "Buku. Semua bukuku dan dua kamus.",
+     "literal": "buku-jm. semua-jm saya-punya-jm buku-jm dan dua kamus-genitif."
+    },
+    {
+     "speaker": "Emir:",
+     "text": "Pa ti si pravi intelektualac. Gdje ću je staviti?",
+     "id": "Wah, kamu benar-benar kutu buku. Mau kutaruh di mana?",
+     "literal": "nah kamu kamu-adalah sejati-lk intelektual. di-mana saya-akan dia-pr-akusatif menaruh?"
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Stavi je pored bijele police, u maloj sobi.",
+     "id": "Taruh di samping rak putih, di kamar kecil.",
+     "literal": "taruhlah dia-pr-akusatif di-samping putih-genitif-pr rak-genitif, di kecil-lokatif-pr kamar-lokatif."
+    },
+    {
+     "speaker": "Emir:",
+     "text": "U maloj sobi nema mjesta. Tamo su već tvoje stare stolice.",
+     "id": "Di kamar kecil tidak ada tempat. Di sana sudah ada kursi-kursi lamamu.",
+     "literal": "di kecil-lokatif-pr kamar-lokatif tidak-ada tempat-genitif. di-sana mereka-adalah sudah kamu-punya-jm tua-jm kursi-jm."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Onda u dnevni boravak, ispod velikog prozora.",
+     "id": "Kalau begitu ke ruang keluarga, di bawah jendela besar.",
+     "literal": "kalau-begitu ke harian-akusatif ruang-akusatif, di-bawah besar-genitif jendela-genitif."
+    },
+    {
+     "speaker": "Emir:",
+     "text": "Dobro. A ove plave zavjese? I njih nosimo gore?",
+     "id": "Oke. Terus tirai biru ini? Ini juga kita bawa ke atas?",
+     "literal": "baik. dan ini-jm biru-jm tirai-jm? juga mereka-akusatif kami-membawa ke-atas?"
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Da, one su za spavaću sobu. Kupio sam ih u jednoj maloj radnji na Ferhadiji.",
+     "id": "Iya, itu untuk kamar tidur. Saya beli di satu toko kecil di Ferhadija.",
+     "literal": "ya, mereka-pr mereka-adalah untuk tidur-akusatif-pr kamar-akusatif. membeli-lk saya-adalah mereka-akusatif di satu-lokatif-pr kecil-lokatif-pr toko-lokatif pada Ferhadija-lokatif."
+    },
+    {
+     "speaker": "Emir:",
+     "text": "Lijepe su. S ovim plavim zavjesama soba će biti kao more.",
+     "id": "Bagus. Dengan tirai biru ini kamarnya bakal kayak laut.",
+     "literal": "indah-jm mereka-adalah. dengan ini-instrumental-jm biru-instrumental-jm tirai-instrumental-jm kamar ia-akan menjadi seperti laut."
+    },
+    {
+     "speaker": "Hajra:",
+     "text": "Dobar dan, djeco! Ja sam Hajra, iz stana preko puta.",
+     "id": "Selamat siang, anak-anak! Saya Hajra, dari apartemen seberang.",
+     "literal": "baik hari, anak-anak-vokatif! saya saya-adalah Hajra, dari apartemen-genitif seberang jalan-genitif."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Dobar dan, teto Hajra! Ja sam Budi, novi stanar.",
+     "id": "Selamat siang, Bu Hajra! Saya Budi, penghuni baru.",
+     "literal": "baik hari, bibi-vokatif Hajra! saya saya-adalah Budi, baru-lk penghuni."
+    },
+    {
+     "speaker": "Hajra:",
+     "text": "Donijela sam vam toplu krompirušu. Dobro došli u našu zgradu!",
+     "id": "Saya bawakan kalian pita kentang yang masih hangat. Selamat datang di gedung kita!",
+     "literal": "membawa-pr saya-adalah kepada-kalian hangat-akusatif-pr pita-kentang-akusatif. baik datang-jm ke kita-punya-akusatif-pr gedung-akusatif!"
+    },
+    {
+     "speaker": "Emir:",
+     "text": "Teto Hajra, vi ste najbolja komšinica na svijetu!",
+     "id": "Bu Hajra, Ibu tetangga terbaik sedunia!",
+     "literal": "bibi-vokatif Hajra, anda anda-adalah terbaik-pr tetangga-pr pada dunia-lokatif!"
+    },
+    {
+     "speaker": "Hajra:",
+     "text": "E, moj sine, kad imaš dobre komšije, imaš sve.",
+     "id": "Nak, kalau kamu punya tetangga yang baik, kamu punya segalanya.",
+     "literal": "eh, saya-punya anak-vokatif, kalau kamu-punya baik-akusatif-jm tetangga-akusatif-jm, kamu-punya semua."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Onda sam ja najsretniji čovjek u ovoj zgradi.",
+     "id": "Kalau begitu sayalah orang paling beruntung di gedung ini.",
+     "literal": "kalau-begitu saya-adalah saya paling-beruntung-lk orang di ini-lokatif-pr gedung-lokatif."
+    }
+   ],
+   "notes": [
+    "***u ovoj velikoj kutiji* — satu ekor, tiga kata.** Di lokatif perempuan, kata tunjuk, kata sifat, dan kata milik semuanya berakhir **-oj**, sementara kata bendanya *-i*: *u ovoj velikoj kutiji, u maloj sobi, u jednoj maloj radnji*. Kalau kamu mendengar *-oj* dua kali berturut-turut, hampir pasti itu lokatif atau datif perempuan.",
+    "***Gdje ću je staviti? — Stavi je…* — *je* yang lain.** Di sini *je* bukan \"adalah\", melainkan kata ganti akusatif perempuan: \"dia (kardus itu)\". *Kutija* perempuan, jadi yang menggantikannya juga perempuan. Unit 5 akan menata seluruh keluarga kata ganti kecil ini; untuk sekarang cukup kenali: *vidim je* = saya melihatnya (perempuan).",
+    "***teto Hajra* — gelar kekeluargaan untuk tetangga tua.** Anak muda di Bosnia menyapa perempuan tua yang dekat dengan *teta* (bibi) dan lelaki tua dengan *čiko* (paman; di kalangan yang lebih tradisional juga *amidža*) — meski tidak ada hubungan darah. Vokatif baku *teta* adalah *teto*, dan nama *Hajra* tetap *Hajra*; dalam obrolan cepat kamu juga akan mendengar *teta Hajra!* tanpa perubahan.",
+    "***djeco* dan *moj sine* — sapaan orang tua kepada yang muda.** *Djeco* (vokatif dari *djeca*) dipakai teta Hajra untuk Budi dan Emir yang sudah dewasa, dan *moj sine* (\"anakku\") adalah sapaan hangat untuk lelaki muda siapa pun. Jangan tersinggung; itu tanda kamu sudah diterima.",
+    "**Krompiruša.** Salah satu jenis *pita* — adonan tipis (*jufka*) yang digulung berisi kentang cincang, lalu dipanggang dalam *tepsija* bundar. Di Bosnia hanya *pita* berisi daging yang disebut *burek*; yang berisi keju adalah *sirnica*, bayam *zeljanica*, kentang *krompiruša*. Menyebut semuanya \"burek\" adalah cara tercepat membuat orang Sarajevo mengoreksimu.",
+    "***najbolja komšinica* dan *najbolji komšija*.** Tetangga perempuan adalah *komšinica*, kata benda perempuan biasa. Tetangga lelaki *komšija* berakhir *-a*, tetapi kata sifatnya tetap lelaki: *najbolji komšija, dobar komšija*. Kotak di dialog kedua menjelaskannya."
+   ],
+   "grammars": [
+    {
+     "title": "Kata sifat perempuan di semua padež",
+     "body": [
+      "Deret perempuan mengikuti bunyi kata bendanya dengan sangat patuh. Dari tujuh padež, kata sifat perempuan hanya punya **lima bunyi**: *-a, -e, -oj, -u, -om*."
+     ],
+     "table": {
+      "head": [
+       "Padež",
+       "Kata sifat + benda",
+       "Ekor sifat",
+       "Dari dialog"
+      ],
+      "rows": [
+       [
+        "**N**",
+        "*lijepa soba*",
+        "-a",
+        "*najbolja komšinica*"
+       ],
+       [
+        "**G**",
+        "*lijepe sobe*",
+        "**-e**",
+        "*pored bijele police*"
+       ],
+       [
+        "**D**",
+        "*lijepoj sobi*",
+        "**-oj**",
+        "*pomažem novoj komšinici*"
+       ],
+       [
+        "**A**",
+        "*lijepu sobu*",
+        "**-u**",
+        "*toplu krompirušu, u našu zgradu*"
+       ],
+       [
+        "**V**",
+        "*lijepa sobo!*",
+        "-a",
+        "*draga Amina!*"
+       ],
+       [
+        "**L**",
+        "*u lijepoj sobi*",
+        "**-oj**",
+        "*u maloj sobi, u ovoj zgradi*"
+       ],
+       [
+        "**I**",
+        "*s lijepom sobom*",
+        "**-om**",
+        "*s dobrom komšinicom*"
+       ]
+      ]
+     },
+     "after": [
+      "**Kata sifat dan kata benda perempuan berbeda hanya di D dan L.** Kata benda mendapat *-i* (*sobi*), kata sifat mendapat *-oj* (*lijepoj*). Di padež lain bunyinya kembar: *lijepe sobe, lijepu sobu, lijepom sobom*.",
+      "**Huruf lunak tidak mengubah apa-apa di sini.** Berbeda dengan lk/nt (*našeg, našem*), deret perempuan selalu sama: *naša, naše, našoj, našu, našom*.",
+      "**Vokal yang hilang.** Kata sifat seperti *težak, dobar, pametan, bolestan* kehilangan *a*-nya begitu diberi ekor: *teška kutija, dobra komšinica, pametna djevojka, bolesna sestra*. Hanya bentuk dasar lelaki yang menyimpannya."
+     ]
+    },
+    {
+     "title": "Kata sifat jamak di semua padež",
+     "body": [
+      "Di jamak, ketiga jenis kelamin hampir menyatu. Hanya nominatif dan akusatif yang masih membedakan; genitif, datif, lokatif, dan instrumental sama untuk semuanya."
+     ],
+     "table": {
+      "head": [
+       "Padež",
+       "lk",
+       "pr",
+       "nt"
+      ],
+      "rows": [
+       [
+        "**N**",
+        "*stari prozori*",
+        "*stare stolice*",
+        "*stara sela*"
+       ],
+       [
+        "**G**",
+        "*starih prozora*",
+        "*starih stolica*",
+        "*starih sela*"
+       ],
+       [
+        "**D**",
+        "*starim prozorima*",
+        "*starim stolicama*",
+        "*starim selima*"
+       ],
+       [
+        "**A**",
+        "*stare prozore*",
+        "*stare stolice*",
+        "*stara sela*"
+       ],
+       [
+        "**L**",
+        "*o starim prozorima*",
+        "*o starim stolicama*",
+        "*o starim selima*"
+       ],
+       [
+        "**I**",
+        "*sa starim prozorima*",
+        "*sa starim stolicama*",
+        "*sa starim selima*"
+       ]
+      ]
+     },
+     "after": [
+      "**Dua bunyi baru saja: *-ih* dan *-im*.** Genitif jamak *-ih* (*bez jeftinih stanova, puno dobrih ljudi*) dan satu bunyi *-im* untuk D, L, I (*s plavim zavjesama, o našim komšijama*). Bentuk panjang *-ima* (*starima, dobrima*) ada, tetapi terdengar terutama kalau kata sifatnya berdiri sendiri: *Pomažem starima.*",
+      "**Akusatif jamak lelaki = perempuan: *-e*.** *Vidim stare prozore, vidim stare stolice.* Karena itu *dobre komšije* dalam kalimat teta Hajra benar untuk kedua jenis.",
+      "***sa* sebelum *s-*.** *S* menjadi *sa* kalau kata berikutnya dimulai dengan *s, z, š, ž* atau gugus sulit: *sa starim, sa šećerom, sa mnom*. Di tempat lain *s* dan *sa* sama-sama terdengar di Bosnia."
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Dialog kedua — Tepsija se ne vraća prazna",
+   "intro": "Dua hari kemudian. Budi mengetuk pintu teta Hajra sambil membawa kembali loyang pitanya — dan loyang itu tidak kosong.",
+   "lines": [
+    {
+     "speaker": "Budi:",
+     "text": "Teto Hajra, evo vaše tepsije. Hvala vam još jednom!",
+     "id": "Bu Hajra, ini loyang Ibu. Terima kasih sekali lagi!",
+     "literal": "bibi-vokatif Hajra, ini anda-punya-genitif-pr loyang-genitif. terima-kasih kepada-anda lagi satu-instrumental!"
+    },
+    {
+     "speaker": "Hajra:",
+     "text": "Pa nisi je trebao vratiti punu, sine!",
+     "id": "Lho, kamu tidak perlu mengembalikannya penuh, Nak!",
+     "literal": "lho kamu-bukan dia-pr-akusatif perlu-lk mengembalikan penuh-akusatif-pr, anak-vokatif!"
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Amina mi je rekla da se tepsija ne vraća prazna.",
+     "id": "Amina bilang ke saya bahwa loyang tidak dikembalikan kosong.",
+     "literal": "Amina kepada-saya ia-adalah berkata-pr bahwa diri-sendiri loyang tidak ia-kembali kosong-pr."
+    },
+    {
+     "speaker": "Hajra:",
+     "text": "Pametna djevojka. A šta je ovo, neki indonezijski kolači?",
+     "id": "Gadis pintar. Terus ini apa, kue-kue Indonesia?",
+     "literal": "pintar-pr gadis. dan apa ia-adalah ini, suatu-jm indonesia-jm kue-jm?"
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Da, kolačići s kokosom. Mama mi ih je poslala iz Jakarte.",
+     "id": "Iya, kue kecil pakai kelapa. Mama mengirimkannya dari Jakarta.",
+     "literal": "ya, kue-kecil-jm dengan kelapa-instrumental. mama kepada-saya mereka-akusatif ia-adalah mengirim-pr dari Jakarta-genitif."
+    },
+    {
+     "speaker": "Hajra:",
+     "text": "Uđi malo. Ispričat ću ti sve o našim komšijama.",
+     "id": "Masuk sebentar. Ibu ceritakan semua tentang tetangga-tetangga kita.",
+     "literal": "masuklah sedikit. akan-menceritakan saya-akan kepada-kamu semua tentang kita-punya-lokatif-jm tetangga-lokatif-jm."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Rado. Ko živi na drugim spratovima?",
+     "id": "Dengan senang hati. Siapa yang tinggal di lantai-lantai lain?",
+     "literal": "dengan-senang. siapa ia-tinggal pada lain-lokatif-jm lantai-lokatif-jm?"
+    },
+    {
+     "speaker": "Hajra:",
+     "text": "Na trećem su dvije mlade sestre, studentice. Mirne, pametne djevojke.",
+     "id": "Di lantai tiga ada dua kakak-beradik perempuan, mahasiswi. Anak-anak yang tenang dan pintar.",
+     "literal": "pada ketiga-lokatif mereka-adalah dua muda-pr saudari, mahasiswi-jm. tenang-jm, pintar-jm gadis-jm."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "A ko je gospodin s velikim crnim psom?",
+     "id": "Terus siapa bapak yang punya anjing hitam besar itu?",
+     "literal": "dan siapa ia-adalah tuan dengan besar-instrumental hitam-instrumental anjing-instrumental?"
+    },
+    {
+     "speaker": "Hajra:",
+     "text": "To je Mirsad sa šestog. Ima najboljeg psa i najgoru muziku!",
+     "id": "Itu Mirsad dari lantai enam. Anjingnya paling baik, musiknya paling jelek!",
+     "literal": "itu ia-adalah Mirsad dari keenam-genitif. ia-punya terbaik-akusatif anjing-akusatif dan terburuk-akusatif-pr musik-akusatif!"
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Dobro je znati. Hvala vam na svim informacijama!",
+     "id": "Bagus untuk diketahui. Terima kasih untuk semua informasinya!",
+     "literal": "baik-nt ia-adalah mengetahui. terima-kasih kepada-anda pada semua-lokatif-jm informasi-lokatif-jm!"
+    }
+   ],
+   "notes": [
+    "***evo vaše tepsije* — *evo* membawa genitif.** *Evo* (ini dia, di sini), *eno* (itu di sana), dan *eto* (itu di dekatmu) sering diikuti genitif kalau benda yang ditunjuk diserahkan atau ditemukan: *Evo ključa! Eno Emira!* Nominatif juga terdengar (*evo ključ*), tetapi genitif terdengar lebih rapi.",
+    "***nisi je trebao vratiti punu* — kata sifat pun ikut padež bendanya.** Loyang (*tepsija*) perempuan dan menjadi objek, jadi kata sifat yang menerangkannya juga akusatif perempuan: *punu*. Teta Hajra memakai *trebao*, bentuk lelaki, karena ia berbicara tentang Budi.",
+    "***na trećem, sa šestog* — kata *sprat* boleh dibuang.** Dalam percakapan tentang gedung, bilangan urutan cukup, dan padežnya tetap mengikuti kata depannya: *na trećem* (lokatif), *sa šestog* (genitif). Pola yang sama dipakai untuk jam dan tanggal.",
+    "***dvije mlade sestre* — perempuan sesudah 2, 3, 4.** Kata benda perempuan sesudah *dvije, tri, četiri* berakhir *-e*, dan kata sifatnya juga: *dvije mlade sestre, tri bijele police*. Lelaki dan netral berakhir *-a*: *dva velika prozora*.",
+    "***Hvala na* + lokatif.** Berterima kasih \"untuk\" sesuatu memakai *na* + lokatif, bukan *za*: *hvala na pomoći, hvala na svim informacijama, hvala na krompiruši*. *Hvala za* juga terdengar, tetapi *hvala na* adalah bentuk yang dianjurkan."
+   ],
+   "grammars": [
+    {
+     "title": "Lelaki yang berakhir -a: komšija, tata, Mirza",
+     "body": [
+      "Beberapa kata benda lelaki berakhir *-a*: *komšija, tata, sudija, amidža, daidža*, dan banyak nama Bosnia seperti *Mirza, Alija, Hamza, Luka*. Kata bendanya berubah **seperti perempuan**, tetapi kata sifat, kata milik, dan kata kerja lampaunya tetap **lelaki**."
+     ],
+     "table": {
+      "head": [
+       "Padež",
+       "Tunggal",
+       "Jamak"
+      ],
+      "rows": [
+       [
+        "**N**",
+        "*najbolji komšija*",
+        "*naše komšije / naši komšije*"
+       ],
+       [
+        "**G**",
+        "*najboljeg komšije*",
+        "*naših komšija*"
+       ],
+       [
+        "**D**",
+        "*najboljem komšiji*",
+        "*našim komšijama*"
+       ],
+       [
+        "**A**",
+        "*najboljeg komšiju*",
+        "*naše komšije*"
+       ],
+       [
+        "**V**",
+        "*komšija! / komšo!*",
+        "*komšije!*"
+       ],
+       [
+        "**L**",
+        "*o najboljem komšiji*",
+        "*o našim komšijama*"
+       ],
+       [
+        "**I**",
+        "*s najboljim komšijom*",
+        "*s našim komšijama*"
+       ]
+      ]
+     },
+     "after": [
+      "**Di tunggal kata sifatnya selalu lelaki:** *Moj komšija je došao. Tata je bio umoran. Mirza je dobar čovjek.* Mengatakan *moja komšija* akan terdengar seperti kamu sedang membicarakan perempuan — dan untuk perempuan kata yang benar adalah *komšinica*.",
+      "**Di jamak dua bentuk sama-sama dipakai:** *naši komšije* (lelaki) dan *naše komšije* (perempuan secara bentuk). Dalam percakapan sehari-hari di Bosnia bentuk kedua lebih sering terdengar, seperti dalam kalimat teta Hajra: *dobre komšije*.",
+      "**Vokatif *komšo!*** adalah sapaan akrab yang sangat Bosnia untuk tetangga lelaki: *Kako si, komšo?* Kepada tetangga perempuan: *komšinice!*"
+     ]
+    }
+   ]
+  }
+ ],
+ "sections": [
+  {
+   "title": "Kardus, perabot, dan perkakas",
+   "blocks": [
+    {
+     "type": "tabel",
+     "head": [
+      "Bosanski",
+      "Bahasa Indonesia",
+      "Dengan kata sifat"
+     ],
+     "rows": [
+      [
+       "*kutija* (pr)",
+       "kardus, kotak",
+       "*teška kutija, u velikoj kutiji*"
+      ],
+      [
+       "*polica* (pr)",
+       "rak",
+       "*pored bijele police*"
+      ],
+      [
+       "*zavjesa* (pr)",
+       "tirai, gorden",
+       "*s plavim zavjesama*"
+      ],
+      [
+       "*ćilim* (lk)",
+       "permadani (tenun)",
+       "*stari bosanski ćilim*"
+      ],
+      [
+       "*lampa* (pr)",
+       "lampu",
+       "*na novoj lampi*"
+      ],
+      [
+       "*frižider* (lk)",
+       "kulkas",
+       "*u praznom frižideru*"
+      ],
+      [
+       "*šporet* (lk)",
+       "kompor",
+       "*na električnom šporetu*"
+      ],
+      [
+       "*veš-mašina* (pr)",
+       "mesin cuci",
+       "*bez nove veš-mašine*"
+      ],
+      [
+       "*kauč* (lk)",
+       "sofa",
+       "*na udobnom kauču*"
+      ],
+      [
+       "*tepsija* (pr)",
+       "loyang bundar",
+       "*u okrugloj tepsiji*"
+      ],
+      [
+       "*ključ* (lk)",
+       "kunci",
+       "*bez rezervnog ključa*"
+      ],
+      [
+       "*selidba* (pr)",
+       "pindahan",
+       "*poslije duge selidbe*"
+      ]
+     ]
+    },
+    {
+     "type": "p",
+     "text": "Separuh kata di dapur Bosnia berasal dari bahasa Jerman dan Turki. *Šporet* dan *veš-mašina* datang dari Jerman (*Sparherd, Wäsche*), *tepsija* dan *ćilim* dari Turki. Dalam ragam yang lebih formal (dan di Kroasia) kamu akan menemukan *štednjak* untuk kompor dan *mašina za pranje veša* untuk mesin cuci, tetapi di toko elektronik dan di rumah orang Sarajevo *šporet* dan *veš-mašina* yang terdengar. Perhatikan juga kolom ketiga: setiap kali kata benda perempuan berpindah padež, kata sifatnya ikut berpindah — *teška kutija*, *u velikoj kutiji*, *bez nove veš-mašine*."
+    },
+    {
+     "type": "kotak",
+     "title": "Tetangga baru: yang biasa terjadi",
+     "items": [
+      "Tetangga yang lebih tua sering datang lebih dulu membawa sesuatu: *pita*, kue, atau sekadar ajakan minum kopi. Kalau diajak, terimalah; menolak kopi pertama terasa dingin.",
+      "Wadah makanan tetangga dikembalikan **tidak kosong** — berisi kue, buah, atau cokelat. Ungkapannya: *Tepsija se ne vraća prazna.*",
+      "Di gedung apartemen biasanya ada *kućni red* (aturan rumah tangga) yang ditempel di pintu masuk, antara lain soal jam tenang. Kalau berencana membuat keributan saat pindahan, memberi tahu tetangga lebih dulu dianggap sopan: *Izvinite zbog buke, selimo se.*"
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Warna dan kata sifat sehari-hari",
+   "blocks": [
+    {
+     "type": "tabel",
+     "head": [
+      "lk",
+      "pr",
+      "jamak lk / pr",
+      "Bahasa Indonesia"
+     ],
+     "rows": [
+      [
+       "*bijel*",
+       "*bijela*",
+       "*bijeli / bijele*",
+       "putih"
+      ],
+      [
+       "*crn*",
+       "*crna*",
+       "*crni / crne*",
+       "hitam"
+      ],
+      [
+       "*crven*",
+       "*crvena*",
+       "*crveni / crvene*",
+       "merah"
+      ],
+      [
+       "*plav*",
+       "*plava*",
+       "*plavi / plave*",
+       "biru; pirang"
+      ],
+      [
+       "*zelen*",
+       "*zelena*",
+       "*zeleni / zelene*",
+       "hijau"
+      ],
+      [
+       "*žut*",
+       "*žuta*",
+       "*žuti / žute*",
+       "kuning"
+      ],
+      [
+       "*siv*",
+       "*siva*",
+       "*sivi / sive*",
+       "abu-abu"
+      ],
+      [
+       "*smeđ*",
+       "*smeđa*",
+       "*smeđi / smeđe*",
+       "cokelat"
+      ],
+      [
+       "*narandžast*",
+       "*narandžasta*",
+       "*narandžasti / narandžaste*",
+       "jingga"
+      ],
+      [
+       "*težak*",
+       "*teška*",
+       "*teški / teške*",
+       "berat; sulit"
+      ],
+      [
+       "*lagan*",
+       "*lagana*",
+       "*lagani / lagane*",
+       "ringan; mudah"
+      ],
+      [
+       "*pametan*",
+       "*pametna*",
+       "*pametni / pametne*",
+       "pintar"
+      ]
+     ]
+    },
+    {
+     "type": "p",
+     "text": "Dua catatan kecil. Pertama, *bijel* mempertahankan *ije*-nya di semua bentuk: *bijela, bijelog, bijeloj*. Kedua, *plav* berarti biru **dan** pirang: *plava kosa* adalah rambut pirang, bukan rambut biru. Untuk warna cokelat kamu juga akan mendengar *braon*, yang tidak pernah berubah bentuk (*braon kauč, braon cipele*); *smeđ* lebih baku. Dan *narandžast* berasal dari *narandža* (jeruk manis) — di Kroasia jeruk itu *naranča* dan warnanya *narančast*."
+    },
+    {
+     "type": "kotak",
+     "title": "Biru atau merah marun: warna yang memecah kota",
+     "items": [
+      "Di Sarajevo, warna kadang lebih dari sekadar warna. **FK Željezničar** berseragam biru dan dijuluki *Plavi*; lawan sekotanya, **FK Sarajevo**, berseragam merah marun dan sering disebut *bordo-bijeli*.",
+      "Pertandingan di antara keduanya disebut *Sarajevski derbi* dan termasuk hari paling ramai di kota. Emir, tentu saja, *plavi* sampai ke tulang.",
+      "*Bordo* tidak berubah bentuk, seperti *braon* dan *roze*: *bordo dres, bordo zastava*. Kata-kata warna pinjaman ini membeku di semua padež."
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Ulangan berjenjang — unit 1",
+   "blocks": [
+    {
+     "type": "p",
+     "text": "Tutup kolom Bosnia, baca terjemahan Indonesianya, lalu susun kembali kalimatnya dari ingatan."
+    },
+    {
+     "type": "tabel",
+     "head": [
+      "Bahasa Indonesia",
+      "Bosanski"
+     ],
+     "rows": [
+      [
+       "Dan sekarang kamu kembali di kota kita yang indah.",
+       "*A sad si opet u našem lijepom gradu.*"
+      ],
+      [
+       "Saya bawakan teh istimewa untuk ayahmu, Amina.",
+       "*Donio sam poseban čaj za tvog oca, Amina.*"
+      ],
+      [
+       "Dua belas jam tanpa tidur nyenyak? Kasihan!",
+       "*Dvanaest sati bez dobrog sna? Jadan čovjek!*"
+      ],
+      [
+       "Dengan senang hati!",
+       "*S velikim zadovoljstvom!*"
+      ],
+      [
+       "Bagus. Kita punya klien baru dari Tuzla.",
+       "*Odlično. Imamo novog klijenta iz Tuzle.*"
+      ]
+     ]
+    }
+   ]
+  }
+ ],
+ "vocab": [
+  {
+   "bs": "selidba (pr)",
+   "baca": "SE-lid-ba",
+   "id": "pindahan"
+  },
+  {
+   "bs": "seliti se (selim se) / preseliti se (preselim se)",
+   "baca": "SE-li-ti se / PRE-se-li-ti se",
+   "id": "pindah rumah"
+  },
+  {
+   "bs": "kutija (pr)",
+   "baca": "KU-ti-ya",
+   "id": "kardus, kotak"
+  },
+  {
+   "bs": "nositi (nosim) — ipf",
+   "baca": "NO-si-ti",
+   "id": "membawa, mengangkut"
+  },
+  {
+   "bs": "stavljati (stavljam) / staviti (stavim)",
+   "baca": "STAV-lya-ti / STA-vi-ti",
+   "id": "menaruh, meletakkan"
+  },
+  {
+   "bs": "težak — teži",
+   "baca": "TE-zhak",
+   "id": "berat; sulit"
+  },
+  {
+   "bs": "lagan",
+   "baca": "LA-gan",
+   "id": "ringan; mudah"
+  },
+  {
+   "bs": "polica (pr)",
+   "baca": "PO-li-tsa",
+   "id": "rak"
+  },
+  {
+   "bs": "zavjesa (pr)",
+   "baca": "ZAV-ye-sa",
+   "id": "tirai, gorden"
+  },
+  {
+   "bs": "radnja (pr)",
+   "baca": "RAD-nya",
+   "id": "toko kecil"
+  },
+  {
+   "bs": "stanar, stanari (lk)",
+   "baca": "STA-nar, STA-na-ri",
+   "id": "penghuni"
+  },
+  {
+   "bs": "komšinica (pr)",
+   "baca": "KOM-syi-ni-tsa",
+   "id": "tetangga (perempuan)"
+  },
+  {
+   "bs": "teta (pr) — V *teto*",
+   "baca": "TE-ta",
+   "id": "bibi; sapaan untuk perempuan tua"
+  },
+  {
+   "bs": "preko puta",
+   "baca": "PRE-ko PU-ta",
+   "id": "di seberang"
+  },
+  {
+   "bs": "tepsija (pr)",
+   "baca": "TEP-si-ya",
+   "id": "loyang bundar"
+  },
+  {
+   "bs": "krompiruša (pr)",
+   "baca": "KROM-pi-ru-sya",
+   "id": "pita isi kentang"
+  },
+  {
+   "bs": "kolač, kolači (lk)",
+   "baca": "KO-lach, KO-la-chi",
+   "id": "kue"
+  },
+  {
+   "bs": "pametan",
+   "baca": "PA-me-tan",
+   "id": "pintar"
+  },
+  {
+   "bs": "pun / prazan",
+   "baca": "pun / PRA-zan",
+   "id": "penuh / kosong"
+  },
+  {
+   "bs": "pričati (pričam) / ispričati (ispričam)",
+   "baca": "PRI-cha-ti / IS-pri-cha-ti",
+   "id": "bercerita / menceritakan"
+  },
+  {
+   "bs": "pas, psi (lk)",
+   "baca": "pas, psi",
+   "id": "anjing"
+  },
+  {
+   "bs": "najbolji / najgori",
+   "baca": "NAY-bo-lyi / NAY-go-ri",
+   "id": "terbaik / terburuk"
+  },
+  {
+   "bs": "sretan — sretniji",
+   "baca": "SRE-tan",
+   "id": "bahagia, beruntung"
+  },
+  {
+   "bs": "bijel / crn / plav",
+   "baca": "BI-yel / tsrn / plav",
+   "id": "putih / hitam / biru"
+  }
+ ],
+ "exercises": [
+  {
+   "prompt": "Terjemahkan ke bahasa Bosnia.",
+   "items": [
+    "Apa isi kardus besar ini?",
+    "Saya bawakan kalian pita kentang yang hangat. (pembicara perempuan)",
+    "Kalau punya tetangga baik, kamu punya segalanya.",
+    "Tirai biru ini untuk kamar tidur.",
+    "Dia punya anjing terbaik dan musik terburuk di gedung ini.",
+    "Taruh di samping rak putih. (kardusnya)"
+   ]
+  },
+  {
+   "prompt": "Isi dengan kata sifat + kata benda dalam padež yang benar.",
+   "items": [
+    "Živim u ____. (nova zgrada)",
+    "Kutija je pored ____. (bijela polica)",
+    "Pijem kafu s ____. (dobra komšinica)",
+    "Kupio sam ____. (plave zavjese)",
+    "Pričamo o ____. (mlade sestre)",
+    "U gradu nema ____. (jeftini stanovi)",
+    "Ovo je poklon za ____. (najbolji komšija)"
+   ]
+  },
+  {
+   "prompt": "Ubah ke jamak.",
+   "items": [
+    "Vidim staru kuću.",
+    "U maloj sobi nema mjesta.",
+    "Razgovaram s novom komšinicom.",
+    "To je lijepa zavjesa.",
+    "Nema dobrog stana.",
+    "Pišem mladoj studentici."
+   ]
+  },
+  {
+   "prompt": "Susun jadi kalimat yang benar.",
+   "items": [
+    "je / šta / ovoj / u / kutiji / velikoj",
+    "sam / toplu / donijela / vam / krompirušu",
+    "imaš / kad / komšije / dobre / sve / imaš",
+    "najboljeg / ima / psa / najgoru / i / muziku",
+    "ti / o / ispričat / našim / komšijama / ću / sve"
+   ]
+  }
+ ],
+ "answers": [
+  "Šta je u ovoj velikoj kutiji? — Donijela sam vam toplu krompirušu. — Kad imaš dobre komšije, imaš sve. — Ove plave zavjese su za spavaću sobu. — Ima najboljeg psa i najgoru muziku u ovoj zgradi. — Stavi je pored bijele police.",
+  "novoj zgradi — bijele police — dobrom komšinicom — plave zavjese — mladim sestrama — jeftinih stanova — najboljeg komšiju",
+  "Vidim stare kuće. — U malim sobama nema mjesta. — Razgovaram s novim komšinicama. — To su lijepe zavjese. — Nema dobrih stanova. — Pišem mladim studenticama.",
+  "Šta je u ovoj velikoj kutiji? — Donijela sam vam toplu krompirušu. — Kad imaš dobre komšije, imaš sve. — Ima najboljeg psa i najgoru muziku. — Ispričat ću ti sve o našim komšijama."
+ ]
+}

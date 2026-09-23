@@ -1,0 +1,744 @@
+{
+ "title": "Membeli pakaian — ini, itu, yang mana",
+ "title_target": "U butiku",
+ "goal": "Berbelanja pakaian dari awal sampai kasir: menunjuk barang, menyebut ukuran dan warna, mencoba, lalu memutuskan. Titik tata bahasanya: *ovaj, taj, onaj* dan *koji, kakav* yang ikut berubah di semua padež, persis seperti kata sifat.",
+ "bekal": [
+  "menunjuk barang dekat, sedang, dan jauh dengan *ovaj, taj, onaj* dalam padež apa pun (*pored onog ogledala, s tom jaknom*)",
+  "bertanya pilihan dan sifat dengan *koji* dan *kakav* yang dideklinasi (*Koju veličinu nosite? Kakve je boje?*)",
+  "mengatakan pas atau tidaknya pakaian: *pristaje mi, stoji ti dobro, tijesna mi je*"
+ ],
+ "dialogs": [
+  {
+   "title": "Dialog — Butik na Ferhadiji",
+   "intro": "Awal November, dan angin dari Trebević mulai menggigit. Amina menyeret Budi ke sebuah butik kecil di Ferhadija karena jaket lamanya jelas tak akan selamat melewati musim dingin Sarajevo.",
+   "lines": [
+    {
+     "speaker": "Budi:",
+     "text": "Amina, treba mi zimska jakna. Ova moja je pretanka.",
+     "id": "Amina, aku butuh jaket musim dingin. Jaketku yang ini terlalu tipis.",
+     "literal": "Amina, perlu kepada-saya musim-dingin-pr jaket. ini-pr milik-saya-pr ia-adalah terlalu-tipis-pr."
+    },
+    {
+     "speaker": "Amina:",
+     "text": "Hajde u ovaj butik. Oni uvijek imaju dobre jakne na sniženju.",
+     "id": "Yuk, masuk butik ini. Mereka selalu punya jaket bagus yang sedang diskon.",
+     "literal": "ayo ke ini-akusatif butik. mereka selalu mereka-punya bagus-jm-akusatif jaket-jm-akusatif pada diskon-lokatif."
+    },
+    {
+     "speaker": "Prodavačica:",
+     "text": "Dobar dan! Mogu li vam pomoći?",
+     "id": "Selamat siang! Ada yang bisa saya bantu?",
+     "literal": "baik hari! saya-bisa apakah kepada-Anda membantu?"
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Dobar dan. Tražim toplu jaknu, nešto tamno.",
+     "id": "Selamat siang. Saya cari jaket yang hangat, yang warnanya gelap.",
+     "literal": "baik hari. saya-mencari hangat-pr-akusatif jaket-akusatif, sesuatu gelap-nt."
+    },
+    {
+     "speaker": "Prodavačica:",
+     "text": "Pogledajte ove ovdje. Koja vam se boja sviđa?",
+     "id": "Coba lihat yang ini. Warna apa yang Anda suka?",
+     "literal": "lihatlah ini-jm-akusatif di-sini. yang-mana-pr kepada-Anda diri-sendiri warna disukai?"
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Ova plava, a i ona siva tamo pozadi.",
+     "id": "Yang biru ini, dan juga yang abu-abu di belakang sana.",
+     "literal": "ini-pr biru-pr, dan juga itu-sana-pr abu-abu-pr di-sana di-belakang."
+    },
+    {
+     "speaker": "Prodavačica:",
+     "text": "Koju veličinu nosite?",
+     "id": "Anda pakai ukuran berapa?",
+     "literal": "yang-mana-pr-akusatif ukuran-akusatif kalian-memakai?"
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Obično L. Mogu li probati ovu plavu jaknu?",
+     "id": "Biasanya L. Boleh saya coba jaket biru yang ini?",
+     "literal": "biasanya L. saya-bisa apakah mencoba ini-pr-akusatif biru-pr-akusatif jaket-akusatif?"
+    },
+    {
+     "speaker": "Prodavačica:",
+     "text": "Naravno. Kabina je lijevo, pored onog velikog ogledala.",
+     "id": "Tentu. Kamar pasnya di kiri, di sebelah cermin besar itu.",
+     "literal": "tentu. kabin ia-adalah di-kiri, di-sebelah itu-sana-genitif besar-genitif cermin-genitif."
+    },
+    {
+     "speaker": "Amina:",
+     "text": "Ta jakna ti baš stoji dobro, ali rukavi su malo dugi.",
+     "id": "Jaket itu cocok banget di kamu, tapi lengannya agak kepanjangan.",
+     "literal": "itu-pr jaket kepada-kamu benar-benar ia-berdiri baik, tetapi lengan-jm mereka-adalah sedikit panjang-jm."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Da, ne pristaje mi baš najbolje. Imate li je u veličini M?",
+     "id": "Iya, kurang pas di badanku. Ada ukuran M-nya?",
+     "literal": "ya, tidak ia-pas kepada-saya benar-benar paling-baik. kalian-punya apakah dia-pr-akusatif dalam ukuran-lokatif M?"
+    },
+    {
+     "speaker": "Prodavačica:",
+     "text": "Plavu u M nemamo, ali onu sivu imamo. Hoćete li je probati?",
+     "id": "Yang biru ukuran M tidak ada, tapi yang abu-abu ada. Mau dicoba?",
+     "literal": "biru-pr-akusatif dalam M kami-tidak-punya, tetapi itu-sana-pr-akusatif abu-abu-pr-akusatif kami-punya. kalian-mau apakah dia-pr-akusatif mencoba?"
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Ova mi pristaje kao salivena!",
+     "id": "Yang ini pas sekali, seperti dijahit untukku!",
+     "literal": "ini-pr kepada-saya ia-pas seperti dituang-pr!"
+    },
+    {
+     "speaker": "Amina:",
+     "text": "S tom sivom izgledaš ozbiljnije, kao pravi Sarajlija.",
+     "id": "Pakai yang abu-abu itu kamu kelihatan lebih serius, seperti orang Sarajevo asli.",
+     "literal": "dengan itu-pr-instrumental abu-abu-pr-instrumental kamu-tampak lebih-serius, seperti sejati orang-Sarajevo."
+    },
+    {
+     "speaker": "Prodavačica:",
+     "text": "I na sniženju je: sto dvadeset maraka umjesto sto osamdeset.",
+     "id": "Dan sedang diskon: seratus dua puluh mark, bukan seratus delapan puluh.",
+     "literal": "dan pada diskon-lokatif ia-adalah: seratus dua-puluh mark-genitif-jm alih-alih seratus delapan-puluh."
+    }
+   ],
+   "notes": [
+    "***Ova moja*, *ta jakna*, *ona siva* — tiga jarak, bukan dua.** Bahasa Indonesia cukup punya \"ini\" dan \"itu\". Bahasa Bosnia punya tiga: *ovaj* untuk yang dekat dengan pembicara, *taj* untuk yang dekat dengan lawan bicara atau yang baru saja disebut, *onaj* untuk yang jauh dari keduanya. Amina berkata *ta jakna* karena jaketnya sedang dipakai Budi, bukan olehnya.",
+    "***Pored onog velikog ogledala* — penunjuk berjalan bersama kata sifat.** *Pored* meminta genitif, dan ketiganya — penunjuk, kata sifat, kata benda — ikut berubah: *onog velikog ogledala*. Kabar baiknya: ekor *ovaj/taj/onaj* nyaris sama dengan ekor kata sifat yang sudah kamu kenal di unit 1 dan 3 (*-og, -om, -im*).",
+    "***Koja vam se boja sviđa?* — kata tanya terbelah.** Klitik *vam* dan *se* menyelip di kursi kedua, tepat sesudah kata pertama, sehingga *koja … boja* terpisah. Ini sangat lazim dan terdengar alami: *Koju si jaknu kupio?* Kalau belum berani, *Koja boja vam se sviđa?* juga benar.",
+    "***Stoji ti dobro* dan *pristaje mi* — dua cara bilang \"cocok\".** *Stajati* (berdiri) dipakai untuk kesan: warna dan potongan yang membuatmu tampak bagus. *Pristajati* dipakai untuk ukuran: pas di badan atau tidak. Keduanya memakai datif untuk orangnya: *ti, mi, joj, mu*.",
+    "***Kao salivena*** — harfiahnya \"seperti dituang (ke cetakan)\". Ungkapan tetap untuk pakaian yang pas sempurna. Ekornya ikut barangnya: *jakna mi stoji kao salivena*, *kaput kao saliven*.",
+    "***Sarajlija*** — sebutan akrab untuk orang Sarajevo (perempuannya *Sarajka*). Pujian Amina di sini manis: berpakaian rapi dan agak serius sering dianggap gaya kota ini, terutama di musim dingin."
+   ],
+   "grammars": [
+    {
+     "title": "*Ovaj, taj, onaj* di semua padež (tunggal)",
+     "body": [
+      "Ketiga penunjuk berubah dengan pola yang sama; cukup hafalkan *ovaj*, lalu ganti awalannya. Bentuk dalam kurung (*ovoga, ovome*) lebih panjang dan sedikit lebih tegas atau luwes di ujung kalimat — artinya sama."
+     ],
+     "table": {
+      "head": [
+       "Padež",
+       "lk (*ovaj*)",
+       "nt (*ovo*)",
+       "pr (*ova*)"
+      ],
+      "rows": [
+       [
+        "N",
+        "*ovaj butik*",
+        "*ovo ogledalo*",
+        "*ova jakna*"
+       ],
+       [
+        "G",
+        "*ovog(a) butika*",
+        "*ovog(a) ogledala*",
+        "*ove jakne*"
+       ],
+       [
+        "D",
+        "*ovom(e) butiku*",
+        "*ovom(e) ogledalu*",
+        "*ovoj jakni*"
+       ],
+       [
+        "A",
+        "*ovaj butik* · *ovog prodavača*",
+        "*ovo ogledalo*",
+        "*ovu jaknu*"
+       ],
+       [
+        "L",
+        "*u ovom(e) butiku*",
+        "*u ovom(e) ogledalu*",
+        "*u ovoj jakni*"
+       ],
+       [
+        "I",
+        "*s ovim butikom*",
+        "*s ovim ogledalom*",
+        "*s ovom jaknom*"
+       ]
+      ]
+     },
+     "after": [
+      "***Taj*** → *tog(a), tom(e), tim* / *ta, te, toj, tu, tom*. ***Onaj*** → *onog(a), onom(e), onim* / *ona, one, onoj, onu, onom*. Netral: *to, ono*.",
+      "**Akusatif lk bergantung pada hidup-tidaknya benda**, sama seperti kata sifat: *vidim ovaj butik* (benda) tetapi *vidim ovog prodavača* (orang).",
+      "**Jebakan instrumental perempuan:** *s ovom, s tom, s onom* — berakhir *-om*, bukan *-im*. *-im* hanya untuk lk dan nt."
+     ]
+    },
+    {
+     "title": "*Koji* dan *kakav* — yang mana, dan yang seperti apa",
+     "body": [
+      "Di A1 kamu memakai keduanya dalam bentuk dasar. Sekarang keduanya ikut padež: *koji* seperti kata sifat lunak (*-eg, -em, -im*), *kakav* seperti kata sifat biasa (*-og, -om, -im*)."
+     ],
+     "table": {
+      "head": [
+       "Padež",
+       "*koji* (lk)",
+       "*koja* (pr)",
+       "*kakav* (lk)",
+       "*kakva* (pr)"
+      ],
+      "rows": [
+       [
+        "N",
+        "*koji*",
+        "*koja*",
+        "*kakav*",
+        "*kakva*"
+       ],
+       [
+        "G",
+        "*kojeg* (*kog*)",
+        "*koje*",
+        "*kakvog*",
+        "*kakve*"
+       ],
+       [
+        "D",
+        "*kojem* (*kom*)",
+        "*kojoj*",
+        "*kakvom*",
+        "*kakvoj*"
+       ],
+       [
+        "A",
+        "*koji* · *kojeg*",
+        "*koju*",
+        "*kakav* · *kakvog*",
+        "*kakvu*"
+       ],
+       [
+        "L",
+        "*o kojem* (*kom*)",
+        "*o kojoj*",
+        "*o kakvom*",
+        "*o kakvoj*"
+       ],
+       [
+        "I",
+        "*s kojim*",
+        "*s kojom*",
+        "*s kakvim*",
+        "*s kakvom*"
+       ]
+      ]
+     },
+     "after": [
+      "***Koju veličinu nosite?*** — pilihan di antara ukuran yang ada. ***Kakvu jaknu tražite?*** — sifatnya: hangat, ringan, panjang?",
+      "***Kakve je boje?*** — warna ditanyakan dengan **genitif sifat**: *Kakve je boje tvoja jakna?* (jaketmu warna apa?). Jawabannya bisa sederhana: *Siva je* atau *Sive je boje*."
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Dialog kedua — Poklon za mamu",
+   "intro": "Sabtu sore di Sarajevo City Center. Budi mencari oleh-oleh untuk ibunya di Jakarta, yang akan menerima paket lewat pos — sesuatu yang ringan dan tidak butuh ukuran.",
+   "lines": [
+    {
+     "speaker": "Budi:",
+     "text": "Izvinite, tražim poklon za mamu. Kakve šalove imate?",
+     "id": "Permisi, saya cari hadiah untuk ibu. Syal jenis apa saja yang ada?",
+     "literal": "maafkanlah, saya-mencari hadiah untuk ibu-akusatif. seperti-apa-jm-akusatif syal-jm-akusatif kalian-punya?"
+    },
+    {
+     "speaker": "Prodavač:",
+     "text": "Kakav šal tražite — vuneni ili svileni?",
+     "id": "Syal seperti apa yang Anda cari, wol atau sutra?",
+     "literal": "seperti-apa-lk syal kalian-mencari — wol-lk atau sutra-lk?"
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Nešto lagano. Kod nas je toplo cijele godine.",
+     "id": "Yang ringan saja. Di negara kami hangat sepanjang tahun.",
+     "literal": "sesuatu ringan-nt. di-tempat kami-genitif ia-adalah hangat sepanjang-genitif tahun-genitif."
+    },
+    {
+     "speaker": "Prodavač:",
+     "text": "Onda je svila najbolja. Ovi s cvjetovima su novi.",
+     "id": "Kalau begitu sutra yang paling cocok. Yang bermotif bunga ini baru datang.",
+     "literal": "kalau-begitu ia-adalah sutra paling-baik-pr. ini-jm dengan bunga-jm-instrumental mereka-adalah baru-jm."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Sviđa mi se onaj crveni. A kakve je boje ovaj pored njega?",
+     "id": "Saya suka yang merah itu. Kalau yang di sebelahnya ini warnanya apa?",
+     "literal": "disukai kepada-saya diri-sendiri itu-sana-lk merah-lk. dan seperti-apa-genitif ia-adalah warna-genitif ini-lk di-sebelah dia-lk-genitif?"
+    },
+    {
+     "speaker": "Prodavač:",
+     "text": "To je bordo. Na ovom svjetlu izgleda tamnije.",
+     "id": "Itu merah marun. Di bawah lampu ini kelihatannya lebih gelap.",
+     "literal": "itu ia-adalah marun. pada ini-lokatif cahaya-lokatif ia-tampak lebih-gelap."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Mama voli tamne boje. Koji je od ova dva jeftiniji?",
+     "id": "Ibu suka warna gelap. Dari dua ini, yang mana yang lebih murah?",
+     "literal": "ibu ia-menyukai gelap-jm-akusatif warna-jm-akusatif. yang-mana-lk ia-adalah dari ini dua lebih-murah-lk?"
+    },
+    {
+     "speaker": "Prodavač:",
+     "text": "Isti su, po trideset pet maraka. Da vam ga zamotam kao poklon?",
+     "id": "Harganya sama, masing-masing tiga puluh lima mark. Mau saya bungkus sebagai kado?",
+     "literal": "sama-jm mereka-adalah, per tiga-puluh lima mark-genitif-jm. agar kepada-Anda dia-lk-akusatif saya-bungkus sebagai hadiah?"
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Da, molim vas. Uzet ću onaj bordo.",
+     "id": "Ya, tolong. Saya ambil yang marun itu.",
+     "literal": "ya, saya-mohon kalian-akusatif. akan-mengambil saya-akan itu-sana-lk marun."
+    },
+    {
+     "speaker": "Prodavač:",
+     "text": "Izvolite. Ako se mami ne svidi boja, možete ga vratiti u roku od petnaest dana.",
+     "id": "Silakan. Kalau ibu Anda tidak suka warnanya, bisa dikembalikan dalam lima belas hari.",
+     "literal": "silakan. kalau diri-sendiri ibu-datif tidak disukai warna, kalian-bisa dia-lk-akusatif mengembalikan dalam tenggat-lokatif dari lima-belas hari-genitif-jm."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Super. Sačuvat ću račun, hvala vam!",
+     "id": "Mantap. Struknya saya simpan, terima kasih!",
+     "literal": "super. akan-menyimpan saya-akan struk-akusatif, terima-kasih kepada-Anda!"
+    }
+   ],
+   "notes": [
+    "***Ovi s cvjetovima* — penunjuk berdiri sendiri.** Seperti \"yang ini\" dalam bahasa Indonesia, *ovaj/taj/onaj* boleh dipakai tanpa kata benda kalau barangnya sudah jelas: *onaj crveni* (yang merah itu), *ovaj pored njega* (yang di sebelahnya ini). Ekornya tetap mengikuti kata benda yang dihilangkan — di sini *šal*, lk.",
+    "***Od ova dva* — dan bukan *od ovih dva*.** Sesudah angka *dva, tri, četiri*, penunjuk untuk lk dan nt memakai bentuk *-a*: *ova dva šala, ta tri ogledala*. Untuk pr bentuknya *-e*: *ove dvije jakne*. Bentuk ini tetap sama walaupun didahului kata depan, jadi *od ova dva* benar.",
+    "***Po trideset pet maraka*** — *po* di depan angka berarti \"masing-masing\" atau \"per buah\": *po pet maraka komad* (lima mark per buah). *Marka* adalah mata uang BiH, *konvertibilna marka* (KM); genitif jamaknya *maraka*.",
+    "***Da vam ga zamotam?*** — tawaran sopan \"mau saya…?\". Klitik datif *vam* datang sebelum akusatif *ga*, sesuai urutan unit 5. Bentuk *da* + kala kini ini akan dibedah tuntas di unit 9.",
+    "***Ako se mami ne svidi*** — *svidjeti se* (perfektif dari *sviđati se*) dipakai untuk kesan pertama yang belum terjadi: kalau nanti ternyata tidak suka. Kata *mama* berubah jadi *mami* di datif."
+   ],
+   "grammars": [
+    {
+     "title": "Penunjuk dalam bentuk jamak",
+     "body": [
+      "Kabar gembira: di jamak, genitif, datif, lokatif, dan instrumental **sama untuk ketiga jenis**. Yang perlu diperhatikan hanya nominatif dan akusatif."
+     ],
+     "table": {
+      "head": [
+       "Padež",
+       "lk jm",
+       "pr jm",
+       "nt jm"
+      ],
+      "rows": [
+       [
+        "N",
+        "*ovi šalovi*",
+        "*ove jakne*",
+        "*ova ogledala*"
+       ],
+       [
+        "G",
+        "*ovih šalova*",
+        "*ovih jakni*",
+        "*ovih ogledala*"
+       ],
+       [
+        "D / L / I",
+        "*ovim(a) šalovima*",
+        "*ovim(a) jaknama*",
+        "*ovim(a) ogledalima*"
+       ],
+       [
+        "A",
+        "*ove šalove*",
+        "*ove jakne*",
+        "*ova ogledala*"
+       ],
+       [
+        "sesudah 2–4",
+        "*ova dva šala*",
+        "*ove dvije jakne*",
+        "*ova dva ogledala*"
+       ]
+      ]
+     },
+     "after": [
+      "**Pola yang sama untuk yang lain:** *ti, tih, tim, te* · *oni, onih, onim, one* · *koji, kojih, kojim, koje* · *kakvi, kakvih, kakvim, kakve*.",
+      "**Jangan lupa: *ove* bisa tiga hal** — genitif tunggal pr (*ove jakne* = jaket ini-genitif), nominatif jamak pr, dan akusatif jamak lk atau pr. Konteks dan kata bendanya yang memberi tahu."
+     ]
+    }
+   ]
+  }
+ ],
+ "sections": [
+  {
+   "title": "Warna, bahan, dan ukuran",
+   "blocks": [
+    {
+     "type": "tabel",
+     "head": [
+      "Bosanski",
+      "Cara baca",
+      "Bahasa Indonesia"
+     ],
+     "rows": [
+      [
+       "*bijel, bijela*",
+       "BI-yel, BI-ye-la",
+       "putih"
+      ],
+      [
+       "*crn, crna*",
+       "tsrn, TSR-na",
+       "hitam"
+      ],
+      [
+       "*crven, crvena*",
+       "TSR-ven, TSR-ve-na",
+       "merah"
+      ],
+      [
+       "*plav, plava*",
+       "plav, PLA-va",
+       "biru; pirang (rambut)"
+      ],
+      [
+       "*zelen, zelena*",
+       "ZE-len, ZE-le-na",
+       "hijau"
+      ],
+      [
+       "*žut, žuta*",
+       "zhut, ZHU-ta",
+       "kuning"
+      ],
+      [
+       "*siv, siva*",
+       "siv, SI-va",
+       "abu-abu"
+      ],
+      [
+       "*smeđ, smeđa*",
+       "smej, SME-ja",
+       "cokelat"
+      ],
+      [
+       "*narandžast*",
+       "na-RAN-jast",
+       "jingga"
+      ],
+      [
+       "*ljubičast*",
+       "LYU-bi-chast",
+       "ungu"
+      ],
+      [
+       "*roze · bordo · teget*",
+       "RO-ze · BOR-do · TE-get",
+       "merah muda · marun · biru dongker (tak berubah)"
+      ],
+      [
+       "*pamučan · vunen · svilen · kožni*",
+       "PA-mu-chan · VU-nen · SVI-len · KOZH-ni",
+       "dari katun · wol · sutra · kulit"
+      ]
+     ]
+    },
+    {
+     "type": "p",
+     "text": "Warna adalah kata sifat biasa, jadi ikut jenis dan padež: *crvena jakna, crveni šal, u crvenoj jakni, s crvenim šalom*. Kekecualian yang menyenangkan: kata serapan *roze, bordo, teget, bež* tidak pernah berubah — *bordo šal, bordo jakna, s bordo šalom*. Nuansa terang dan gelap dibentuk dengan *svijetlo-* dan *tamno-* yang disambung: *svijetloplav* (biru muda), *tamnozelen* (hijau tua). Hati-hati dengan *plav*: *plava jakna* jaket biru, tetapi *plava kosa* rambut pirang, dan *plavuša* si pirang."
+    },
+    {
+     "type": "kotak",
+     "title": "Belanja di Sarajevo: dari Ferhadija ke Marijin Dvor",
+     "items": [
+      "**Ferhadija** adalah jalan pejalan kaki yang menyambung Baščaršija dengan kawasan Austro-Hungaria di sekitar Vječna vatra (Api Abadi). Di kedua sisinya berderet butik, toko sepatu, dan kafe; enak untuk berjalan dari satu toko ke toko lain tanpa rencana.",
+      "**Sarajevo City Center (SCC)** di Marijin Dvor adalah pusat belanja besar dengan merek-merek internasional. Orang Sarajevo menyebut lantainya *sprat*: *na drugom spratu* (di lantai dua). Bahasa Kroasia memakai *kat*.",
+      "**Ukuran** memakai sistem Eropa: pakaian S–XL atau angka (*veličina 48*), sepatu dengan angka seperti *broj 42*. Tanyakan *Koji broj nosite?* untuk sepatu, *Koju veličinu?* untuk pakaian.",
+      "**Harga** tertulis dalam KM (*konvertibilna marka*). Musim diskon (*sniženje*) biasanya datang menjelang pergantian musim; kata yang tertempel di kaca etalase: *SNIŽENJE* atau *AKCIJA*."
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Kalimat siap pakai di toko",
+   "blocks": [
+    {
+     "type": "tabel",
+     "head": [
+      "Bosanski",
+      "Bahasa Indonesia"
+     ],
+     "rows": [
+      [
+       "*Samo gledam, hvala.*",
+       "Cuma lihat-lihat, terima kasih."
+      ],
+      [
+       "*Imate li ovo u drugoj boji?*",
+       "Ada warna lain untuk yang ini?"
+      ],
+      [
+       "*Imate li ovu jaknu u manjoj veličini?*",
+       "Jaket ini ada ukuran yang lebih kecil?"
+      ],
+      [
+       "*Mogu li ovo probati? Gdje su kabine?*",
+       "Boleh dicoba? Kamar pasnya di mana?"
+      ],
+      [
+       "*Ova jakna mi je tijesna / široka.*",
+       "Jaket ini sempit / longgar di badanku."
+      ],
+      [
+       "*Ne odgovara mi ova veličina.*",
+       "Ukuran ini tidak cocok untukku."
+      ],
+      [
+       "*Stoji ti odlično!*",
+       "Cocok banget di kamu!"
+      ],
+      [
+       "*Uzet ću ovo.* · *Ipak ću razmisliti.*",
+       "Saya ambil ini. · Saya pikir-pikir dulu."
+      ],
+      [
+       "*Mogu li platiti karticom?*",
+       "Boleh bayar pakai kartu?"
+      ],
+      [
+       "*Mogu li ovo zamijeniti ako ne pristaje?*",
+       "Bisa ditukar kalau tidak pas?"
+      ]
+     ]
+    },
+    {
+     "type": "p",
+     "text": "Tiga kata kerja \"cocok\" sekarang bisa kamu pisahkan: *pristajati* untuk ukuran badan (*Pristaje mi.*), *stajati* untuk kesan yang ditimbulkan (*Lijepo ti stoji.*), dan *odgovarati* untuk kecocokan secara umum — ukuran, harga, juga jadwal (*Odgovara li vam u pet?*). Ketiganya meletakkan orangnya di datif, jadi pola kalimatnya sama dengan *sviđa mi se* dari A1: benda jadi pelaku, orang jadi datif."
+    },
+    {
+     "type": "kotak",
+     "title": "Nosio zdravo! — ucapan untuk baju baru",
+     "items": [
+      "Kalau temanmu memamerkan baju atau sepatu baru, ucapan yang lazim adalah ***Nosio zdravo!*** untuk lelaki dan ***Nosila zdravo!*** untuk perempuan (kepada beberapa orang: *Nosili zdravo!*) — kira-kira \"semoga dipakai dalam keadaan sehat\". Jawabannya cukup *Hvala!*",
+      "Perhatikan: *nosio / nosila* bentuknya sama dengan partisip lampau, tetapi di sini ia berfungsi sebagai harapan, seperti pada *Živio!* Karena itu bentuknya mengikuti orang yang memakai baju, bukan yang mengucapkan.",
+      "Di butik dan pusat belanja harga sudah pasti. Tawar-menawar kecil kadang masih terjadi di kios kerajinan Baščaršija, tetapi dilakukan dengan ramah: *Može li malo jeftinije?* (Bisa sedikit lebih murah?)"
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Ulangan berjenjang — unit 4",
+   "blocks": [
+    {
+     "type": "p",
+     "text": "Tutup kolom Bosnia, baca terjemahan Indonesianya, lalu susun kembali kalimatnya dari ingatan."
+    },
+    {
+     "type": "tabel",
+     "head": [
+      "Bahasa Indonesia",
+      "Bosanski"
+     ],
+     "rows": [
+      [
+       "Tiap Sabtu saya pergi ke kolam renang dengan adik saya.",
+       "*Svake subote sam išao na bazen s bratom.*"
+      ],
+      [
+       "Saya terus-terusan nonton kartun sepulang sekolah. Mama sampai marah.",
+       "*Stalno sam gledao crtiće poslije škole. Mama se ljutila.*"
+      ],
+      [
+       "Iya. Biasanya saya membaca buku kalau hujan turun.",
+       "*Znam. Obično sam čitala knjige kad je padala kiša.*"
+      ],
+      [
+       "Tidak bisa. Belum pernah sama sekali.",
+       "*Ne umijem. Nikad ga nisam vozio.*"
+      ],
+      [
+       "Saya terus-terusan memanjat pohon, dan jatuh.",
+       "*Stalno sam se penjao po drveću i padao.*"
+      ]
+     ]
+    }
+   ]
+  }
+ ],
+ "vocab": [
+  {
+   "bs": "butik, butici (lk)",
+   "baca": "BU-tik, BU-ti-tsi",
+   "id": "butik, toko pakaian"
+  },
+  {
+   "bs": "jakna (pr)",
+   "baca": "YAK-na",
+   "id": "jaket"
+  },
+  {
+   "bs": "zimski / ljetni",
+   "baca": "ZIM-ski / LYET-ni",
+   "id": "untuk musim dingin / musim panas"
+  },
+  {
+   "bs": "veličina (pr)",
+   "baca": "VE-li-chi-na",
+   "id": "ukuran"
+  },
+  {
+   "bs": "broj (lk)",
+   "baca": "broy",
+   "id": "nomor; ukuran sepatu"
+  },
+  {
+   "bs": "kabina (pr)",
+   "baca": "ka-BI-na",
+   "id": "kamar pas"
+  },
+  {
+   "bs": "ogledalo, ogledala (nt)",
+   "baca": "o-GLE-da-lo, o-GLE-da-la",
+   "id": "cermin"
+  },
+  {
+   "bs": "rukav, rukavi (lk)",
+   "baca": "RU-kav, RU-ka-vi",
+   "id": "lengan baju"
+  },
+  {
+   "bs": "šal, šalovi (lk)",
+   "baca": "syal, SYA-lo-vi",
+   "id": "syal"
+  },
+  {
+   "bs": "svila (pr) · vuna (pr)",
+   "baca": "SVI-la · VU-na",
+   "id": "sutra · wol"
+  },
+  {
+   "bs": "boja (pr)",
+   "baca": "BO-ya",
+   "id": "warna"
+  },
+  {
+   "bs": "sniženje (nt)",
+   "baca": "SNI-zhe-nye",
+   "id": "diskon, obral"
+  },
+  {
+   "bs": "poklon, pokloni (lk)",
+   "baca": "POK-lon, POK-lo-ni",
+   "id": "hadiah, kado"
+  },
+  {
+   "bs": "račun (lk)",
+   "baca": "RA-chun",
+   "id": "struk, nota; tagihan"
+  },
+  {
+   "bs": "sprat, spratovi (lk)",
+   "baca": "sprat, SPRA-to-vi",
+   "id": "lantai (gedung)"
+  },
+  {
+   "bs": "probavati (probavam) / probati (probam)",
+   "baca": "pro-BA-va-ti / PRO-ba-ti",
+   "id": "mencoba"
+  },
+  {
+   "bs": "pristajati (pristaje) — ipf",
+   "baca": "pris-TA-ya-ti",
+   "id": "pas (ukuran), cocok"
+  },
+  {
+   "bs": "stajati (stoji) — ipf",
+   "baca": "STA-ya-ti",
+   "id": "berdiri; tampak cocok (*stoji ti*)"
+  },
+  {
+   "bs": "izgledati (izgledam) — ipf",
+   "baca": "IZ-gle-da-ti",
+   "id": "tampak, kelihatan"
+  },
+  {
+   "bs": "vraćati (vraćam) / vratiti (vratim)",
+   "baca": "VRA-cha-ti / VRA-ti-ti",
+   "id": "mengembalikan"
+  },
+  {
+   "bs": "zamotavati (zamotavam) / zamotati (zamotam)",
+   "baca": "za-mo-TA-va-ti / za-MO-ta-ti",
+   "id": "membungkus"
+  },
+  {
+   "bs": "tijesan — širok",
+   "baca": "TI-ye-san — SYI-rok",
+   "id": "sempit — longgar, lebar"
+  },
+  {
+   "bs": "skup — jeftin",
+   "baca": "skup — YEF-tin",
+   "id": "mahal — murah"
+  },
+  {
+   "bs": "ovaj / taj / onaj",
+   "baca": "O-vay / tay / O-nay",
+   "id": "ini / itu / itu (di sana)"
+  },
+  {
+   "bs": "koji / kakav",
+   "baca": "KO-yi / KA-kav",
+   "id": "yang mana / seperti apa"
+  }
+ ],
+ "exercises": [
+  {
+   "prompt": "Terjemahkan ke bahasa Bosnia (pakai *vi* kepada penjual).",
+   "items": [
+    "Aku butuh jaket musim dingin.",
+    "Anda pakai ukuran berapa?",
+    "Boleh saya coba jaket biru ini?",
+    "Jaket itu cocok banget di kamu.",
+    "Syal seperti apa yang Anda cari?",
+    "Dari dua ini, yang mana yang lebih murah?"
+   ]
+  },
+  {
+   "prompt": "Isi dengan bentuk yang tepat dari kata di dalam kurung.",
+   "items": [
+    "Kabina je pored ____ ogledala. (onaj)",
+    "Sviđa mi se ____ jakna. (ovaj)",
+    "S ____ kapom izgledaš mlađe. (ovaj)",
+    "U ____ radnji si kupio šal? (koji)",
+    "____ je boje tvoja nova jakna? (kakav)",
+    "Ne sviđaju mi se ____ cipele. (onaj)",
+    "Kupio sam poklon za ____ prodavača. (taj)"
+   ]
+  },
+  {
+   "prompt": "Ubah ke bentuk jamak.",
+   "items": [
+    "Ova jakna je skupa.",
+    "Taj šal je lijep.",
+    "Sviđa mi se ovo ogledalo.",
+    "Koja haljina ti se sviđa?",
+    "Onaj butik je na drugom spratu.",
+    "Kupio sam poklon za onog prijatelja."
+   ]
+  },
+  {
+   "prompt": "Susun jadi kalimat yang benar.",
+   "items": [
+    "veličinu / nosite / koju / ?",
+    "ti / dobro / stoji / jakna / ta",
+    "ovu / li / probati / mogu / jaknu / plavu / ?",
+    "je / kabina / onog / pored / ogledala",
+    "dva / od / jeftiniji / koji / je / ova / ?"
+   ]
+  }
+ ],
+ "answers": [
+  "Treba mi zimska jakna. — Koju veličinu nosite? — Mogu li probati ovu plavu jaknu? — Ta jakna ti baš stoji dobro. — Kakav šal tražite? — Koji je od ova dva jeftiniji?",
+  "onog — ova — ovom — kojoj — Kakve — one — tog",
+  "Ove jakne su skupe. — Ti šalovi su lijepi. — Sviđaju mi se ova ogledala. — Koje haljine ti se sviđaju? — Oni butici su na drugom spratu. — Kupio sam poklone za one prijatelje.",
+  "Koju veličinu nosite? — Ta jakna ti stoji dobro (atau Ta ti jakna stoji dobro). — Mogu li probati ovu plavu jaknu? — Kabina je pored onog ogledala. — Koji je od ova dva jeftiniji?"
+ ]
+}
