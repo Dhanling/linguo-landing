@@ -536,8 +536,9 @@ export default function JadwalCalendar({
                             <span
                               key={e.id}
                               title={`${e._time} · ${e.language}${e.level ? ` ${e.level}` : ""}${e.teacher ? ` · ${e.teacher}` : ""}${e._live ? " · Sedang berlangsung" : st ? ` · ${st.label}` : ""}`}
-                              className="flex items-center gap-1 truncate rounded-md px-1.5 py-0.5 text-[10px] font-bold leading-tight"
-                              style={{ background: c.bg, color: c.text, opacity: e._past || isDead(e.status) ? 0.55 : 1 }}
+                              // [jadwal-selesai-grayscale-v1] sesi yang sudah beres → abu-abu
+                              className={`flex items-center gap-1 truncate rounded-md px-1.5 py-0.5 text-[10px] font-bold leading-tight ${e._past || isDead(e.status) ? "opacity-55 grayscale" : ""}`}
+                              style={{ background: c.bg, color: c.text }}
                             >
                               {/* jadwal-flag-avatar-v1: bendera dulu, titik status tetap dipertahankan —
                                   bendera menjawab "kelas apa", titik menjawab "hasilnya apa". */}
@@ -693,7 +694,9 @@ export default function JadwalCalendar({
                                     aria-label={`${e._time}–${akhir} · ${e.language}${e.level ? ` ${e.level}` : ""}${e.teacher ? ` · ${e.teacher}` : ""}${blok.length > 1 ? ` · ${blok.length} ${tt("sesi")}` : ""}`}
                                     onPointerEnter={(ev) => { if (ev.pointerType === "mouse") bukaHover(blok, ev.currentTarget.getBoundingClientRect()); }}
                                     onPointerLeave={(ev) => { if (ev.pointerType === "mouse") tutupHover(); }}
-                                    className={`absolute overflow-hidden rounded-md px-1.5 py-0.5 text-left shadow-sm transition-[transform,box-shadow] duration-300 ease-[cubic-bezier(.16,1,.3,1)] hover:z-20 hover:scale-[1.04] hover:shadow-md ${live ? "z-20" : "z-10"}`}
+                                    // [jadwal-selesai-grayscale-v1] sesi yang sudah beres luntur
+                                    // jadi abu-abu — warna aslinya balik pas kartunya di-hover.
+                                    className={`absolute overflow-hidden rounded-md px-1.5 py-0.5 text-left shadow-sm transition-[transform,box-shadow,filter,opacity] duration-300 ease-[cubic-bezier(.16,1,.3,1)] hover:z-20 hover:scale-[1.04] hover:shadow-md ${live ? "z-20" : "z-10"} ${redup ? "opacity-60 grayscale hover:opacity-100 hover:grayscale-0" : ""}`}
                                     style={{
                                       top: ((e._d.getHours() * 60 + e._d.getMinutes() - h0 * 60) / 60) * hourPx + 1,
                                       height: hPx,
@@ -705,7 +708,6 @@ export default function JadwalCalendar({
                                       // (sewarna garis "sekarang") biar kelihatan dari seberang layar.
                                       borderLeft: `3px solid ${live ? LIVE_COLOR : st ? st.color : c.dot}`,
                                       boxShadow: live ? `0 0 0 2px ${LIVE_COLOR}` : undefined,
-                                      opacity: redup ? 0.6 : 1,
                                     }}
                                   >
                                     {/* Susunan ala Google Calendar: judul kelas dulu, jam di bawahnya.
@@ -963,7 +965,9 @@ function SessionCard({ e, now, studentName, aksesRekaman }: { e: NormSession; no
     >
       <div className="flex items-stretch gap-3">
         <span
-          className="flex w-20 shrink-0 flex-col items-center justify-center rounded-xl py-2"
+          // [jadwal-selesai-grayscale-v1] blok jam sesi yang sudah beres ikut luntur
+          // jadi abu-abu, senada dengan kartu di kalender.
+          className={`flex w-20 shrink-0 flex-col items-center justify-center rounded-xl py-2 ${!e._live && (e._past || isDead(e.status)) ? "grayscale" : ""}`}
           style={{ background: e._live ? `${LIVE_COLOR}14` : c.bg }}
         >
           <span className="text-[16px] font-extrabold" style={{ color: c.text }}>{e._time}</span>
