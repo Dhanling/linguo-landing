@@ -1,0 +1,717 @@
+{
+ "title": "Kembali ke Kraków — kilas balik kasus",
+ "title_target": "Znowu w Krakowie",
+ "goal": "Menyapa teman lama, bercerita tentang liburan, dan memperkenalkan diri di tempat magang. Titik tata bahasanya: tujuh kasus tunggal dalam satu tabel, ditambah ekor kata sifat lelaki dan netral (*nowego, nowemu, nowym*).",
+ "bekal": [
+  "memilih kasus yang benar sesudah kata kerja dan kata depan yang paling sering dipakai",
+  "menempelkan ekor kata sifat yang cocok dengan kata benda lelaki, perempuan, dan netral",
+  "menyapa atasan dan rekan kerja dengan *pan/pani* di hari pertama magang"
+ ],
+ "dialogs": [
+  {
+   "title": "Dialog — Znowu w Krakowie",
+   "intro": "Awal Oktober. Budi baru pulang dari dua bulan liburan di Jakarta. Ania menunggunya di Rynek Główny, tepat saat jam menunjukkan pukul dua belas.",
+   "lines": [
+    {
+     "speaker": "Ania:",
+     "text": "Budi! Nareszcie jesteś! Witaj z powrotem w Krakowie!",
+     "id": "Budi! Akhirnya kamu datang! Selamat datang kembali di Kraków!",
+     "literal": "Budi! akhirnya kamu-adalah! salam dengan kembali di Kraków!"
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Cześć, Aniu! Ale się cieszę, że cię widzę!",
+     "id": "Hai, Ania! Senang banget bisa ketemu kamu lagi!",
+     "literal": "halo, Ania! betapa diri saya-bergembira, bahwa kamu saya-melihat!"
+    },
+    {
+     "speaker": "Ania:",
+     "text": "Jak było w Indonezji? Opowiadaj!",
+     "id": "Gimana di Indonesia? Cerita dong!",
+     "literal": "bagaimana adalah-lampau di Indonesia? ceritakanlah!"
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Dwa miesiące spędziłem z rodziną w Dżakarcie.",
+     "id": "Dua bulan saya habiskan bareng keluarga di Jakarta.",
+     "literal": "dua bulan saya-menghabiskan-lampau-lk dengan keluarga di Jakarta."
+    },
+    {
+     "speaker": "Ania:",
+     "text": "Zazdroszczę ci! A co mi przywiozłeś?",
+     "id": "Iri deh! Terus kamu bawa apa buat aku?",
+     "literal": "saya-iri kamu! dan apa bagi-saya kamu-membawa-lampau-lk?"
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Mam dla ciebie batik i paczkę kawy z Sumatry.",
+     "id": "Aku bawa batik dan sebungkus kopi Sumatra buat kamu.",
+     "literal": "saya-punya untuk kamu batik dan bungkus kopi dari Sumatra."
+    },
+    {
+     "speaker": "Ania:",
+     "text": "Dziękuję! O, słyszysz? Hejnał z wieży Kościoła Mariackiego.",
+     "id": "Makasih! Eh, dengar nggak? Hejnał dari menara Gereja Santa Maria.",
+     "literal": "terima-kasih! o, kamu-mendengar? hejnał dari menara gereja Maria."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Tak! Brakowało mi tego dźwięku.",
+     "id": "Iya! Aku kangen bunyi ini.",
+     "literal": "ya! kurang-lampau bagi-saya ini bunyi."
+    },
+    {
+     "speaker": "Ania:",
+     "text": "A pamiętasz, dlaczego melodia urywa się w połowie?",
+     "id": "Masih ingat kenapa melodinya putus di tengah?",
+     "literal": "dan kamu-ingat, mengapa melodi terputus diri di separuh?"
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Pewnie. To legenda o trębaczu i tatarskiej strzale.",
+     "id": "Tentu. Itu legenda tentang peniup terompet dan panah Tatar.",
+     "literal": "tentu. itu legenda tentang peniup-terompet dan Tatar panah."
+    },
+    {
+     "speaker": "Ania:",
+     "text": "Brawo! Chodź na kawę do małego lokalu obok Sukiennic.",
+     "id": "Pinter! Yuk ngopi di kedai kecil sebelah Sukiennice.",
+     "literal": "bravo! ayolah untuk kopi ke kecil kedai di-samping Sukiennice."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Chętnie, ale nie na długo. Jutro zaczynam praktykę.",
+     "id": "Mau, tapi jangan lama-lama. Besok aku mulai magang.",
+     "literal": "dengan-senang-hati, tetapi tidak untuk lama. besok saya-memulai magang."
+    },
+    {
+     "speaker": "Ania:",
+     "text": "Naprawdę? W jakiej firmie?",
+     "id": "Serius? Di perusahaan apa?",
+     "literal": "sungguh? di yang-bagaimana perusahaan?"
+    },
+    {
+     "speaker": "Budi:",
+     "text": "W małej firmie informatycznej na Kazimierzu. Nazywa się Kodex.",
+     "id": "Di perusahaan IT kecil di Kazimierz. Namanya Kodex.",
+     "literal": "di kecil perusahaan informatika di Kazimierz. ia-menamai diri Kodex."
+    },
+    {
+     "speaker": "Ania:",
+     "text": "Gratuluję! Wszystko mi opowiesz przy kawie.",
+     "id": "Selamat! Nanti ceritakan semuanya sambil ngopi.",
+     "literal": "saya-memberi-selamat! semuanya bagi-saya kamu-akan-menceritakan di-dekat kopi."
+    }
+   ],
+   "notes": [
+    "**Witaj z powrotem** — \"selamat datang kembali\". *Witaj* dipakai ke satu orang yang akrab; ke banyak orang atau dengan sopan jadi *Witamy* (kami menyambut), seperti yang nanti diucapkan pani Magdalena.",
+    "**Ale się cieszę!** *Ale* di awal kalimat seru bukan \"tetapi\", melainkan \"betapa\" atau \"duh\": *Ale zimno!* (duh, dinginnya!), *Ale ładnie!* (cantik banget!).",
+    "**W Dżakarcie, w Indonezji, z Sumatry** — nama tempat asing ikut berubah kasus seperti kata Polandia biasa. *Dżakarta* berperilaku persis seperti *gazeta*: *w gazecie*, *w Dżakarcie*. Kalau nama itu berakhir *-a*, anggap saja kata benda perempuan.",
+    "**Zazdroszczę ci, brakowało mi tego dźwięku** — dua kata kerja yang meminta *celownik* untuk orangnya. *Brakować* malah membalik susunan Indonesia: yang merasa kurang masuk C. (*mi*), yang dirindukan masuk D. (*tego dźwięku*), dan kata kerjanya bentuk netral *brakowało*. Harfiahnya \"(bagi saya) kurang bunyi ini\".",
+    "**Z wieży Kościoła Mariackiego** — dua *dopełniacz* berbaris: \"dari menara (milik) gereja Maria\". Bahasa Indonesia cukup menjejerkan kata; bahasa Polandia menandai tiap mata rantai dengan D.",
+    "**Do małego lokalu, w jakiej firmie** — kata sifat selalu ikut kasus kata bendanya: *mały lokal* → *do małego lokalu* (D.), *jaka firma* → *w jakiej firmie* (Ms.). Ekor kata sifat inilah bahan utama unit ini."
+   ],
+   "grammars": [
+    {
+     "title": "Tujuh kasus tunggal dalam satu tabel",
+     "body": [
+      "Semua yang kamu pelajari tersebar di A1 kini dikumpulkan di satu tempat. Baca per baris: setiap kasus menjawab satu pertanyaan, dan kata sifat ikut berubah bersama kata bendanya."
+     ],
+     "table": {
+      "head": [
+       "Kasus",
+       "Pertanyaan",
+       "m: *nowy student*",
+       "ż: *nowa koleżanka*",
+       "n: *nowe miasto*"
+      ],
+      "rows": [
+       [
+        "**M.** mianownik",
+        "*kto? co?*",
+        "*nowy student*",
+        "*nowa koleżanka*",
+        "*nowe miasto*"
+       ],
+       [
+        "**D.** dopełniacz",
+        "*kogo? czego?*",
+        "*nowego studenta*",
+        "*nowej koleżanki*",
+        "*nowego miasta*"
+       ],
+       [
+        "**C.** celownik",
+        "*komu? czemu?*",
+        "*nowemu studentowi*",
+        "*nowej koleżance*",
+        "*nowemu miastu*"
+       ],
+       [
+        "**B.** biernik",
+        "*kogo? co?*",
+        "*nowego studenta*",
+        "*nową koleżankę*",
+        "*nowe miasto*"
+       ],
+       [
+        "**N.** narzędnik",
+        "*z kim? z czym?*",
+        "*nowym studentem*",
+        "*nową koleżanką*",
+        "*nowym miastem*"
+       ],
+       [
+        "**Ms.** miejscownik",
+        "*o kim? o czym?*",
+        "*nowym studencie*",
+        "*nowej koleżance*",
+        "*nowym mieście*"
+       ],
+       [
+        "**W.** wołacz",
+        "sapaan",
+        "*nowy studencie!*",
+        "*nowa koleżanko!*",
+        "*nowe miasto!*"
+       ]
+      ]
+     },
+     "after": [
+      "**B. lelaki hidup = D.**: *znam nowego studenta*, tapi *mam nowy dom*. Untuk benda mati lelaki dan untuk netral, B. sama dengan M.",
+      "**Perempuan: D., C., dan Ms. kembar di kata sifat** (*nowej*), dan C. = Ms. juga di kata bendanya (*koleżance*). Tiga kasus, satu bentuk.",
+      "**C. dan Ms. sering mengubah huruf terakhir kata benda**: *student → studencie*, *miasto → mieście*, *koleżanka → koleżance*, *Dżakarta → Dżakarcie*. Perubahannya sama dengan yang sudah kamu kenal dari *miejscownik* di A1."
+     ]
+    },
+    {
+     "title": "Ekor kata sifat lelaki dan netral",
+     "body": [
+      "Kabar baiknya: lelaki dan netral memakai ekor yang sama di hampir semua kasus. Bedanya hanya di M. dan B."
+     ],
+     "table": {
+      "head": [
+       "Kasus",
+       "m hidup",
+       "m mati",
+       "n",
+       "Contoh"
+      ],
+      "rows": [
+       [
+        "M.",
+        "*-y* (*nowy*)",
+        "*-y* (*nowy*)",
+        "*-e* (*nowe*)",
+        "*To jest nowy projekt.*"
+       ],
+       [
+        "D.",
+        "*-ego*",
+        "*-ego*",
+        "*-ego*",
+        "*Nie mam nowego laptopa.*"
+       ],
+       [
+        "C.",
+        "*-emu*",
+        "*-emu*",
+        "*-emu*",
+        "*Dziękuję nowemu koledze.*"
+       ],
+       [
+        "B.",
+        "*-ego*",
+        "*-y*",
+        "*-e*",
+        "*Znam nowego szefa. Mam nowy telefon.*"
+       ],
+       [
+        "N.",
+        "*-ym*",
+        "*-ym*",
+        "*-ym*",
+        "*Rozmawiam z nowym szefem.*"
+       ],
+       [
+        "Ms.",
+        "*-ym*",
+        "*-ym*",
+        "*-ym*",
+        "*Mieszkam w nowym mieszkaniu.*"
+       ]
+      ]
+     },
+     "after": [
+      "Kata sifat berakhiran **-ki / -gi** (*polski, drogi, wysoki*) menyisipkan *i*: *polskiego, polskiemu, polskim*; *drogiego, drogim*. Begitu juga kata sifat lunak seperti *tani* (murah): *taniego, tanim*.",
+      "*Mój, twój, nasz* dan *ten* memakai ekor yang sama: *mojego, mojemu, moim*; *naszego, naszym*; *tego, temu, tym*. Jadi sekali hafal tabel ini, kamu menguasai puluhan kata sekaligus."
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Dialog kedua — Pierwszy dzień w pracy",
+   "intro": "Senin pagi di kantor Kodex di Kazimierz. Pemilik perusahaan, pani Magdalena Wiśniewska, menyambut Budi di pintu.",
+   "lines": [
+    {
+     "speaker": "Magdalena:",
+     "text": "Dzień dobry! Pan Budi, prawda? Magdalena Wiśniewska.",
+     "id": "Selamat pagi! Mas Budi, ya? Saya Magdalena Wiśniewska.",
+     "literal": "hari baik! tuan Budi, benar? Magdalena Wiśniewska."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Dzień dobry. Bardzo mi miło.",
+     "id": "Selamat pagi, Bu. Senang sekali bertemu Ibu.",
+     "literal": "hari baik. sangat bagi-saya menyenangkan."
+    },
+    {
+     "speaker": "Magdalena:",
+     "text": "Witamy w naszym zespole. To jest pana biurko, przy oknie.",
+     "id": "Selamat bergabung di tim kami. Ini meja Anda, dekat jendela.",
+     "literal": "kami-menyambut di kami tim. ini adalah tuan meja, di-dekat jendela."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Dziękuję. Z kim będę pracował?",
+     "id": "Terima kasih. Saya akan bekerja dengan siapa?",
+     "literal": "terima-kasih. dengan siapa saya-akan bekerja-lk?"
+    },
+    {
+     "speaker": "Magdalena:",
+     "text": "Będzie pan pracował z Markiem, naszym głównym programistą.",
+     "id": "Anda akan bekerja dengan Marek, programmer utama kami.",
+     "literal": "akan tuan bekerja-lk dengan Marek, kami utama programmer."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "A nad czym teraz pracujecie?",
+     "id": "Sekarang tim sedang menggarap apa?",
+     "literal": "dan di-atas apa sekarang kalian-bekerja?"
+    },
+    {
+     "speaker": "Magdalena:",
+     "text": "Pracujemy nad aplikacją dla dużego sklepu internetowego.",
+     "id": "Kami sedang menggarap aplikasi untuk sebuah toko daring besar.",
+     "literal": "kami-bekerja di-atas aplikasi untuk besar toko internet."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Brzmi ciekawie. Czy mogę już dziś zobaczyć kod?",
+     "id": "Kedengarannya menarik. Boleh saya lihat kodenya hari ini juga?",
+     "literal": "terdengar menarik. apakah saya-bisa sudah hari-ini melihat kode?"
+    },
+    {
+     "speaker": "Magdalena:",
+     "text": "Oczywiście. Marek zaraz wyśle panu link do repozytorium.",
+     "id": "Tentu. Sebentar lagi Marek kirim tautan repositorinya ke Anda.",
+     "literal": "tentu-saja. Marek segera akan-mengirim tuan tautan ke repositori."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Dziękuję pani za ciepłe przyjęcie.",
+     "id": "Terima kasih atas sambutan hangatnya, Bu.",
+     "literal": "terima-kasih nyonya untuk hangat sambutan."
+    },
+    {
+     "speaker": "Magdalena:",
+     "text": "Nie ma za co. Z pytaniami proszę przychodzić do mnie albo do Marka.",
+     "id": "Sama-sama. Kalau ada pertanyaan, datang saja ke saya atau ke Marek.",
+     "literal": "tidak ada untuk apa. dengan pertanyaan-jamak silakan datang ke saya atau ke Marek."
+    }
+   ],
+   "notes": [
+    "**Pan Budi, pani Magdalena** — di kantor Polandia orang baru lazim disapa *pan/pani* + nama depan. Kata kerjanya memakai orang ketiga: *Będzie pan pracował* (Anda akan bekerja), bukan *będziesz*. Karena itu terjemahannya kami tulis \"Anda\" atau \"Ibu\".",
+    "**Z Markiem, naszym głównym programistą** — keterangan tambahan ikut kasus kata yang diterangkannya. *Marek* ada di N. (*z Markiem*), maka *nasz główny programista* juga masuk N.: *naszym głównym programistą*.",
+    "**Pracować nad czymś** — \"menggarap sesuatu\", harfiahnya \"bekerja di atas\". *Nad* selalu meminta *narzędnik*: *nad projektem, nad aplikacją, nad raportem*.",
+    "**Wyśle panu link** — penerima masuk *celownik* (*panu*), barang yang dikirim masuk *biernik* (*link*). Pola \"memberi sesuatu kepada seseorang\" ini dibahas tuntas di unit 5.",
+    "**Dziękuję pani za przyjęcie** — orang yang diberi terima kasih masuk C. (*pani*), hal yang disyukuri masuk *za* + B. (*za ciepłe przyjęcie*). *Przyjęcie* netral, jadi B.-nya sama dengan M.",
+    "**Do Marka** — *Marek* kehilangan *e* begitu diberi ekor: *Marka, Markowi, Markiem*. Nama *Tomek* sama: *Tomka, z Tomkiem*. Huruf *e* yang \"menguap\" ini sangat umum pada kata benda lelaki berakhiran *-ek*."
+   ],
+   "grammars": [
+    {
+     "title": "Kata depan menentukan kasus",
+     "body": [
+      "Sebagian besar kasus yang kamu pakai sehari-hari dipicu oleh kata depan. Peta ini merangkum yang sudah muncul di A1 dan di unit ini."
+     ],
+     "table": {
+      "head": [
+       "Kasus",
+       "Kata depan",
+       "Contoh dari unit ini"
+      ],
+      "rows": [
+       [
+        "**D.**",
+        "*do, od, z* (dari), *dla, bez, obok, u, koło*",
+        "*do Marka, z Sumatry, obok Sukiennic, dla dużego sklepu*"
+       ],
+       [
+        "**C.**",
+        "*dzięki, przeciwko*",
+        "*dzięki koledze* (berkat rekan)"
+       ],
+       [
+        "**B.**",
+        "*na, w* (arah), *przez, za* (atas; untuk)",
+        "*na kawę, za ciepłe przyjęcie*"
+       ],
+       [
+        "**N.**",
+        "*z* (bersama), *nad, pod, przed, za* (di belakang), *między*",
+        "*z Markiem, nad aplikacją, przed biurem*"
+       ],
+       [
+        "**Ms.**",
+        "*w, na* (tempat), *o* (tentang), *przy, po*",
+        "*w Krakowie, o trębaczu, przy oknie*"
+       ]
+      ]
+     },
+     "after": [
+      "Tiga kata depan punya dua wajah. **z** + D. \"dari\" (*z Sumatry*), + N. \"bersama\" (*z Markiem*). **na / w** + B. untuk arah (*idę na kawę*), + Ms. untuk tempat (*jestem na kawie*). **za** + B. \"atas/untuk\" (*dziękuję za kawę*), + N. \"di belakang\" (*za biurem*).",
+      "Kalau bingung, tanyakan: **ke mana** atau **di mana**? Arah hampir selalu B. atau D., tempat hampir selalu Ms. atau N."
+     ]
+    }
+   ]
+  }
+ ],
+ "sections": [
+  {
+   "title": "Pulang dan bertemu lagi",
+   "blocks": [
+    {
+     "type": "tabel",
+     "head": [
+      "Polski",
+      "Cara baca",
+      "Arti"
+     ],
+     "rows": [
+      [
+       "*Witaj z powrotem!*",
+       "VI-tay z po-VRO-tem",
+       "Selamat datang kembali!"
+      ],
+      [
+       "*Kopę lat!*",
+       "KO-pe lat",
+       "Lama nggak ketemu!"
+      ],
+      [
+       "*Co słychać?*",
+       "tso SWY-hac",
+       "Apa kabar?"
+      ],
+      [
+       "*Wszystko po staremu.*",
+       "FSYYST-ko po sta-RE-mu",
+       "Semuanya masih sama."
+      ],
+      [
+       "*Jak było na wakacjach?*",
+       "yak BY-wo na va-KA-tsyah",
+       "Liburannya gimana?"
+      ],
+      [
+       "*Stęskniłem się.* / *Stęskniłam się.*",
+       "stensk-NI-wem sye / stensk-NI-wam sye",
+       "Aku kangen. (lk / pr)"
+      ],
+      [
+       "*Dobrze cię widzieć.*",
+       "DOB-zye cye VI-jyec",
+       "Senang melihatmu."
+      ],
+      [
+       "*Zmieniłeś się!*",
+       "zmye-NI-wesy sye",
+       "Kamu berubah! (ke lk)"
+      ],
+      [
+       "*Jak lot?*",
+       "yak lot",
+       "Penerbangannya gimana?"
+      ],
+      [
+       "*Jestem jeszcze zmęczony po podróży.*",
+       "YES-tem YESY-ce zmen-CO-ny po po-DRU-zyy",
+       "Aku masih capek habis perjalanan. (lk)"
+      ]
+     ]
+    },
+    {
+     "type": "p",
+     "text": "*Kopę lat!* harfiahnya \"sekopa tahun!\" — *kopa* adalah satuan hitung lama yang berarti enam puluh, jadi ungkapan ini melebih-lebihkan seperti \"udah seabad nggak ketemu\". *Stęskniłem się* berasal dari *tęsknić* (merindukan), kerabat kata *tęsknota*: rasa rindu yang dalam, yang oleh orang Polandia sering disebut sulit diterjemahkan, mirip kata \"rindu\" kita sendiri. Perhatikan pula *po podróży* — *po* + Ms. berarti \"sesudah\"."
+    },
+    {
+     "type": "kotak",
+     "title": "Hejnał mariacki",
+     "items": [
+      "*Hejnał* adalah melodi terompet pendek yang dimainkan **setiap jam** dari menara yang lebih tinggi di Kościół Mariacki. Peniupnya adalah petugas pemadam kebakaran kota yang bertugas bergiliran di menara.",
+      "Melodinya dimainkan **empat kali**, ke empat arah mata angin, dan selalu **terputus di tengah nada**.",
+      "Menurut legenda, seorang peniup terompet yang memperingatkan kota akan serangan Tatar terkena panah di tenggorokan dan berhenti di tengah lagu. Ini legenda, bukan catatan sejarah — tapi setiap anak Kraków mengenalnya.",
+      "Hejnał pukul dua belas siang disiarkan radio nasional ke seluruh Polandia. Kalau kamu berdiri di Rynek pada jam itu, lambaikan tangan ke menara: peniupnya sering membalas."
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Hari pertama di kantor",
+   "blocks": [
+    {
+     "type": "tabel",
+     "head": [
+      "Polski",
+      "Arti",
+      "Kasus yang bekerja"
+     ],
+     "rows": [
+      [
+       "*Witamy w zespole!*",
+       "Selamat bergabung!",
+       "Ms. sesudah *w*"
+      ],
+      [
+       "*Jestem nowym praktykantem.* / *nową praktykantką.*",
+       "Saya anak magang baru. (lk / pr)",
+       "N. sesudah *być*"
+      ],
+      [
+       "*Mam pytanie do pani.*",
+       "Saya mau tanya ke Ibu.",
+       "D. sesudah *do*"
+      ],
+      [
+       "*Komu mam to wysłać?*",
+       "Ini saya kirim ke siapa?",
+       "C. untuk penerima"
+      ],
+      [
+       "*Pracuję nad nowym projektem.*",
+       "Saya menggarap proyek baru.",
+       "N. sesudah *nad*"
+      ],
+      [
+       "*Dziękuję za pomoc.*",
+       "Makasih bantuannya.",
+       "B. sesudah *za*"
+      ],
+      [
+       "*Nie mam jeszcze dostępu do systemu.*",
+       "Saya belum punya akses ke sistem.",
+       "D. karena penyangkalan"
+      ],
+      [
+       "*Jutro będę w biurze od dziewiątej.*",
+       "Besok saya di kantor mulai jam sembilan.",
+       "Ms. dan D."
+      ],
+      [
+       "*Kto jest odpowiedzialny za ten projekt?*",
+       "Siapa penanggung jawab proyek ini?",
+       "B. sesudah *za*"
+      ],
+      [
+       "*Idę na przerwę.*",
+       "Saya istirahat dulu, ya.",
+       "B. untuk arah"
+      ]
+     ]
+    },
+    {
+     "type": "p",
+     "text": "Di kantor, kasus muncul di tempat yang kadang tak terduga: *jestem praktykantem* (N. sesudah *być*), *mam pytanie do pani* (D. sesudah *do*), *komu mam to wysłać?* (C. untuk penerima). Kalau ragu, ajukan pertanyaan kasusnya dalam hati — *kogo? komu? z kim? o czym?* — lalu pilih ekornya. Lama-lama pertanyaan itu hilang dan yang tersisa hanya refleks. Satu kebiasaan kecil yang menolong: setiap kali menerima surel dari rekan Polandia, garis bawahi satu frasa kata depan + kata benda, lalu tebak kasusnya sebelum membaca terus."
+    },
+    {
+     "type": "kotak",
+     "title": "Dari *pan* ke *ty*",
+     "items": [
+      "Di banyak kantor Polandia orang baru disapa *pan/pani* + nama depan dalam bentuk *wołacz*: *pani Magdo, panie Marku*. Nama asing yang tak bisa diubah tetap utuh: *panie Budi*.",
+      "Peralihan ke *ty* biasanya **ditawarkan** oleh yang lebih tua atau lebih tinggi jabatannya: *Mów mi Magda.* (Panggil saya Magda saja.) atau *Przejdźmy na ty.* (Kita pakai *ty* saja.)",
+      "Di perusahaan IT dan perusahaan rintisan, *ty* sering dipakai sejak hari pertama. Di kantor pemerintahan, bank, dan dengan orang yang jauh lebih tua, *pan/pani* bertahan lama.",
+      "Kalau ragu, mulailah dengan *pan/pani*. Terlalu sopan tak pernah menyinggung; terlalu akrab bisa."
+     ]
+    }
+   ]
+  }
+ ],
+ "vocab": [
+  {
+   "pl": "znowu",
+   "baca": "ZNO-vu",
+   "id": "lagi; kembali"
+  },
+  {
+   "pl": "nareszcie",
+   "baca": "na-RESY-cye",
+   "id": "akhirnya"
+  },
+  {
+   "pl": "powrót, powrotu (m)",
+   "baca": "PO-vrut, po-VRO-tu",
+   "id": "kepulangan"
+  },
+  {
+   "pl": "spędzać (spędzam) / spędzić (spędzę)",
+   "baca": "SPEN-dzac / SPEN-jic",
+   "id": "menghabiskan (waktu)"
+  },
+  {
+   "pl": "przywozić (przywożę) / przywieźć (przywiozę)",
+   "baca": "psy-VO-zyic / PSY-vyesyc",
+   "id": "membawa (dari perjalanan)"
+  },
+  {
+   "pl": "zazdrościć (zazdroszczę) (+ C.) — ndk",
+   "baca": "zaz-DROSY-cic",
+   "id": "iri pada"
+  },
+  {
+   "pl": "brakować (brakuje mi + D.) — ndk",
+   "baca": "bra-KO-vac",
+   "id": "kurang; merindukan"
+  },
+  {
+   "pl": "dźwięk, dźwięku (m)",
+   "baca": "jvyenk, JVYEN-ku",
+   "id": "bunyi"
+  },
+  {
+   "pl": "wieża (ż)",
+   "baca": "VYE-zya",
+   "id": "menara"
+  },
+  {
+   "pl": "kościół, kościoła (m)",
+   "baca": "KOSY-cyuw, kosy-CYO-wa",
+   "id": "gereja"
+  },
+  {
+   "pl": "trębacz, trębacza (m)",
+   "baca": "TREM-bac, trem-BA-ca",
+   "id": "peniup terompet"
+  },
+  {
+   "pl": "strzała (ż)",
+   "baca": "STSYA-wa",
+   "id": "anak panah"
+  },
+  {
+   "pl": "lokal, lokalu (m)",
+   "baca": "LO-kal, lo-KA-lu",
+   "id": "kedai; tempat usaha"
+  },
+  {
+   "pl": "praktyka (ż)",
+   "baca": "PRAK-ty-ka",
+   "id": "magang; praktik"
+  },
+  {
+   "pl": "praktykant / praktykantka",
+   "baca": "prak-TY-kant / prak-ty-KANT-ka",
+   "id": "anak magang (lk / pr)"
+  },
+  {
+   "pl": "firma (ż)",
+   "baca": "FIR-ma",
+   "id": "perusahaan"
+  },
+  {
+   "pl": "zespół, zespołu (m)",
+   "baca": "ZES-puw, zes-PO-wu",
+   "id": "tim; grup musik"
+  },
+  {
+   "pl": "biurko (n)",
+   "baca": "BYUR-ko",
+   "id": "meja kerja"
+  },
+  {
+   "pl": "programista (m)",
+   "baca": "pro-gra-MIS-ta",
+   "id": "programmer"
+  },
+  {
+   "pl": "główny",
+   "baca": "GWUV-ny",
+   "id": "utama"
+  },
+  {
+   "pl": "pracować (pracuję) nad (+ N.) — ndk",
+   "baca": "pra-TSO-vac nad",
+   "id": "menggarap, mengerjakan"
+  },
+  {
+   "pl": "aplikacja (ż)",
+   "baca": "a-pli-KA-tsya",
+   "id": "aplikasi"
+  },
+  {
+   "pl": "sklep internetowy (m)",
+   "baca": "sklep in-ter-ne-TO-vy",
+   "id": "toko daring"
+  },
+  {
+   "pl": "przyjęcie (n)",
+   "baca": "psy-YEN-cye",
+   "id": "sambutan; pesta"
+  },
+  {
+   "pl": "zapraszać (zapraszam) / zaprosić (zaproszę)",
+   "baca": "za-PRA-syac / za-PRO-syic",
+   "id": "mengundang; mentraktir"
+  }
+ ],
+ "exercises": [
+  {
+   "prompt": "Terjemahkan ke bahasa Polandia.",
+   "items": [
+    "Dua bulan saya habiskan bersama keluarga di Jakarta. (pembicara lk)",
+    "Aku punya sebungkus kopi dari Sumatra untukmu.",
+    "Anda akan bekerja dengan programmer utama kami. (kepada lk, sopan)",
+    "Kami sedang menggarap aplikasi untuk toko daring besar.",
+    "Terima kasih atas sambutan hangatnya, Bu.",
+    "Aku kangen makanan Polandia. (dengan *brakować*, lampau)"
+   ]
+  },
+  {
+   "prompt": "Isi dengan bentuk kata sifat atau nama yang tepat.",
+   "items": [
+    "Mieszkam w ____ mieszkaniu. (nowy → miejscownik)",
+    "Nie mam ____ laptopa. (służbowy → dopełniacz)",
+    "Dziękuję ____ koledze. (nowy → celownik)",
+    "Rozmawiam z ____ szefem. (miły → narzędnik)",
+    "Znam ____ programistę z Gdańska. (dobry → biernik)",
+    "Kupiłem ____ telefon. (drogi → biernik)",
+    "Czekam na ____. (Marek → biernik)"
+   ]
+  },
+  {
+   "prompt": "Ubah kata dalam kurung ke kasus yang diminta kata depannya, lalu tulis kalimatnya utuh.",
+   "items": [
+    "Idę do (biuro). →",
+    "Pracuję z (Marek). →",
+    "Rozmawiamy o (Kraków). →",
+    "Siedzę nad (projekt). →",
+    "To prezent dla (mama). →",
+    "Mieszkam przy (ulica Długa). →"
+   ]
+  },
+  {
+   "prompt": "Susun jadi kalimat yang benar.",
+   "items": [
+    "spędziłem / w / miesiące / Dżakarcie / dwa",
+    "z / pan / pracował / Markiem / będzie",
+    "dla / mam / kawę / ciebie",
+    "nad / pracujemy / aplikacją / nową",
+    "mi / tego / brakowało / dźwięku"
+   ]
+  }
+ ],
+ "answers": [
+  "Dwa miesiące spędziłem z rodziną w Dżakarcie. — Mam dla ciebie paczkę kawy z Sumatry. — Będzie pan pracował z naszym głównym programistą. — Pracujemy nad aplikacją dla dużego sklepu internetowego. — Dziękuję pani za ciepłe przyjęcie. — Brakowało mi polskiego jedzenia.",
+  "nowym — służbowego — nowemu — miłym — dobrego — drogi — Marka",
+  "Idę do biura. — Pracuję z Markiem. — Rozmawiamy o Krakowie. — Siedzę nad projektem. — To prezent dla mamy. — Mieszkam przy ulicy Długiej.",
+  "Dwa miesiące spędziłem w Dżakarcie. — Będzie pan pracował z Markiem. — Mam dla ciebie kawę. — Pracujemy nad nową aplikacją. — Brakowało mi tego dźwięku."
+ ]
+}

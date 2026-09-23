@@ -1,0 +1,786 @@
+{
+ "title": "Membuat pierogi — kalimat perintah",
+ "title_target": "Jak się robi pierogi?",
+ "goal": "Mengikuti dan memberi petunjuk memasak langkah demi langkah, lalu membaca resep sederhana. Titik tata bahasanya: **tryb rozkazujący** (*weź, zrób, pokrój, dodaj, weźmy, weźcie*), perintah ndk lawan dk, larangan *nie* + ndk (*nie dodawaj!*), dan perintah sopan *proszę* + infinitif.",
+ "bekal": [
+  "membentuk perintah untuk *ty, my, wy* dari bentuk kala kini",
+  "memilih ndk atau dk dalam perintah, dan selalu ndk dalam larangan",
+  "memahami takaran dan kata kerja dalam resep Polandia"
+ ],
+ "dialogs": [
+  {
+   "title": "Dialog — Od czego zaczynamy?",
+   "intro": "Sabtu sore di dapur mieszkanie Budi dan Tomek di Podgórze. Pani Halina, tetangga di lantai bawah, datang dengan celemek dan tekad mengajari \"anak-anak\" membuat pierogi ruskie.",
+   "lines": [
+    {
+     "speaker": "Pani Halina:",
+     "text": "Chłopcy, umyjcie ręce i załóżcie fartuchy!",
+     "id": "Anak-anak, cuci tangan dan pakai celemek!",
+     "literal": "anak-anak-lk, cucilah-kalian tangan dan pakailah-kalian celemek!"
+    },
+    {
+     "speaker": "Tomek:",
+     "text": "Już! Od czego zaczynamy?",
+     "id": "Siap! Kita mulai dari mana?",
+     "literal": "sudah! dari apa kita-memulai?"
+    },
+    {
+     "speaker": "Pani Halina:",
+     "text": "Od ciasta. Budi, weź tę dużą miskę.",
+     "id": "Dari adonan. Budi, ambil mangkuk besar itu.",
+     "literal": "dari adonan. Budi, ambillah ini besar mangkuk."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Mam ją. Ile mąki wsypać?",
+     "id": "Sudah. Tepungnya dituang berapa?",
+     "literal": "saya-punya dia-pr. berapa tepung menuang?"
+    },
+    {
+     "speaker": "Pani Halina:",
+     "text": "Pół kilo, nie więcej.",
+     "id": "Setengah kilo, jangan lebih.",
+     "literal": "setengah kilo, tidak lebih."
+    },
+    {
+     "speaker": "Tomek:",
+     "text": "A co z wodą?",
+     "id": "Terus airnya bagaimana?",
+     "literal": "dan apa dengan air?"
+    },
+    {
+     "speaker": "Pani Halina:",
+     "text": "Dodaj szklankę ciepłej wody i szczyptę soli.",
+     "id": "Tambahkan segelas air hangat dan sejumput garam.",
+     "literal": "tambahkanlah gelas hangat air dan sejumput garam."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Mieszać łyżką?",
+     "id": "Diaduk pakai sendok?",
+     "literal": "mengaduk dengan-sendok?"
+    },
+    {
+     "speaker": "Pani Halina:",
+     "text": "Nie, rękami! Nie żałuj siły, zagniataj mocno.",
+     "id": "Bukan, pakai tangan! Jangan pelit tenaga, uleni yang kuat.",
+     "literal": "tidak, dengan-tangan! jangan menyayangkan tenaga, ulenilah kuat."
+    },
+    {
+     "speaker": "Tomek:",
+     "text": "A ja? Co mogę zrobić?",
+     "id": "Saya? Saya bisa bantu apa?",
+     "literal": "dan saya? apa saya-bisa melakukan?"
+    },
+    {
+     "speaker": "Pani Halina:",
+     "text": "Obierz ziemniaki i pokrój cebulę. Tylko drobno!",
+     "id": "Kupas kentang dan iris bawangnya. Yang halus, ya!",
+     "literal": "kupaslah kentang dan irislah bawang. hanya halus!"
+    },
+    {
+     "speaker": "Tomek:",
+     "text": "Cebulę? Zaraz będę płakał…",
+     "id": "Bawang? Sebentar lagi saya nangis nih…",
+     "literal": "bawang? segera saya-akan menangis-lk…"
+    },
+    {
+     "speaker": "Pani Halina:",
+     "text": "Nie marudź, Tomku. Weźcie się do roboty!",
+     "id": "Jangan menggerutu, Tomek. Ayo kalian mulai kerja!",
+     "literal": "jangan menggerutu, Tomek(W.). ambillah-kalian diri ke kerja!"
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Pani Halino, czy to ciasto jest już dobre?",
+     "id": "Bu Halina, adonan ini sudah jadi?",
+     "literal": "nyonya Halina(W.), apakah ini adonan adalah sudah baik?"
+    },
+    {
+     "speaker": "Pani Halina:",
+     "text": "Jeszcze nie. Zagniataj dalej i nie dodawaj już mąki!",
+     "id": "Belum. Uleni terus dan jangan tambah tepung lagi!",
+     "literal": "masih tidak. ulenilah lebih-lanjut dan jangan menambahkan lagi tepung!"
+    }
+   ],
+   "notes": [
+    "**Umyjcie, załóżcie** — ekor *-cie* berarti perintah untuk \"kalian\". Pani Halina berbicara kepada dua orang sekaligus; kepada Budi saja ia akan berkata *umyj, załóż*.",
+    "**Od czego zaczynamy? — Od ciasta.** *Zaczynać od* + D. (mulai dari). Jawabannya cukup kata depan dan kata benda, tanpa mengulang kata kerja.",
+    "**Weź tę dużą miskę** — *weź* dari *wziąć* (*weźmie*), perintah yang paling sering terdengar di dapur dan di mana pun. Jamaknya *weźcie*, dan \"ayo kita ambil\" *weźmy*.",
+    "**Mieszać łyżką?** — pertanyaan dengan infinitif saja berarti \"apakah saya harus…?\". Sangat umum saat meminta petunjuk: *Ile mąki wsypać? Gdzie to położyć?*",
+    "**Nie żałuj siły** — larangan memakai ndk: *żałować* (menyayangkan) + D. Ungkapan ini berarti \"jangan pelit tenaga\"; versi lain yang sering didengar: *Nie żałuj sobie!* (\"jangan sungkan, ambil banyak-banyak\").",
+    "**Pani Halino, Tomku** — wołacz. Tetangga yang lebih tua disapa *pani* + nama depan dalam wołacz; teman akrab cukup nama dalam wołacz (*Tomek → Tomku*)."
+   ],
+   "grammars": [
+    {
+     "title": "Membentuk perintah",
+     "body": [
+      "Ambil bentuk kala kini orang ketiga (*on/ona*), lalu buang vokal terakhirnya. Yang tersisa adalah perintah untuk *ty*. Tambahkan **-my** untuk \"ayo kita\" dan **-cie** untuk \"kalian\"."
+     ],
+     "table": {
+      "head": [
+       "Bentuk kamus",
+       "on (kini/futur)",
+       "ty",
+       "my",
+       "wy"
+      ],
+      "rows": [
+       [
+        "*czytać*",
+        "*czyta*",
+        "*czytaj*",
+        "*czytajmy*",
+        "*czytajcie*"
+       ],
+       [
+        "*dodać* (dk)",
+        "*doda*",
+        "*dodaj*",
+        "*dodajmy*",
+        "*dodajcie*"
+       ],
+       [
+        "*zrobić* (dk)",
+        "*zrobi*",
+        "*zrób*",
+        "*zróbmy*",
+        "*zróbcie*"
+       ],
+       [
+        "*pokroić* (dk)",
+        "*pokroi*",
+        "*pokrój*",
+        "*pokrójmy*",
+        "*pokrójcie*"
+       ],
+       [
+        "*napisać* (dk)",
+        "*napisze*",
+        "*napisz*",
+        "*napiszmy*",
+        "*napiszcie*"
+       ],
+       [
+        "*kupować*",
+        "*kupuje*",
+        "*kupuj*",
+        "*kupujmy*",
+        "*kupujcie*"
+       ],
+       [
+        "*wziąć* (dk)",
+        "*weźmie*",
+        "*weź*",
+        "*weźmy*",
+        "*weźcie*"
+       ],
+       [
+        "*wyciąć* (dk)",
+        "*wytnie*",
+        "*wytnij*",
+        "*wytnijmy*",
+        "*wytnijcie*"
+       ]
+      ]
+     },
+     "after": [
+      "Kata kerja *-a* (golongan *-am/-asz*) mendapat *-j*: *czyta → czytaj, doda → dodaj, wymiesza → wymieszaj*.",
+      "Kalau suku terakhir tertutup, **o** sering berubah menjadi **ó**: *robi → rób, pokroi → pokrój, złoży → złóż*. Polanya sama dengan *stół* (suku tertutup, ó) lawan *stołu* (suku terbuka, o).",
+      "Kalau sesudah vokal dibuang tersisa gugus konsonan yang sulit diucapkan, disisipkan **-ij** atau **-yj**: *wytnie → wytnij, zamknie → zamknij, śpi → śpij*."
+     ]
+    },
+    {
+     "title": "Perintah yang tak beraturan",
+     "body": [
+      "Beberapa kata kerja yang paling sering dipakai membentuk perintah dengan caranya sendiri. Enam ini wajib dihafal."
+     ],
+     "table": {
+      "head": [
+       "Bentuk kamus",
+       "ty",
+       "wy",
+       "Arti"
+      ],
+      "rows": [
+       [
+        "*być*",
+        "*bądź*",
+        "*bądźcie*",
+        "jadilah"
+       ],
+       [
+        "*mieć*",
+        "*miej*",
+        "*miejcie*",
+        "milikilah (*Miej cierpliwość!*)"
+       ],
+       [
+        "*jeść / zjeść*",
+        "*jedz / zjedz*",
+        "*jedzcie / zjedzcie*",
+        "makanlah"
+       ],
+       [
+        "*dać*",
+        "*daj*",
+        "*dajcie*",
+        "berilah"
+       ],
+       [
+        "*iść / pójść*",
+        "*idź / pójdź*",
+        "*idźcie / pójdźcie*",
+        "pergilah"
+       ],
+       [
+        "*chodzić*",
+        "*chodź*",
+        "*chodźcie*",
+        "ayo, sini"
+       ]
+      ]
+     },
+     "after": [
+      "**Chodź!** adalah perintah paling ramah dalam bahasa Polandia: \"sini\", \"ayo ikut\". *Chodźmy!* berarti \"yuk, jalan\". *Pójdź* terdengar kuno; untuk \"pergilah\" orang berkata *idź*.",
+      "Perintah dengan *się* membawa *się*-nya: *uspokój się* (tenanglah), *pospiesz się* (cepatlah), *weźcie się do roboty* (mulailah bekerja)."
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Dialog kedua — Nie wrzucajcie wszystkich naraz!",
+   "intro": "Satu jam kemudian adonan sudah licin, kentang sudah matang, dan dapur penuh tepung. Tinggal isian, membentuk pierogi, dan merebusnya.",
+   "lines": [
+    {
+     "speaker": "Pani Halina:",
+     "text": "Teraz farsz. Wymieszajcie ziemniaki z twarogiem i cebulą.",
+     "id": "Sekarang isiannya. Campur kentang dengan twaróg dan bawang.",
+     "literal": "sekarang isian. campurlah-kalian kentang dengan twaróg dan bawang."
+    },
+    {
+     "speaker": "Tomek:",
+     "text": "Dosypać pieprzu?",
+     "id": "Tambah merica?",
+     "literal": "menambah-tabur merica?"
+    },
+    {
+     "speaker": "Pani Halina:",
+     "text": "Nie przesadzaj z pieprzem. Najpierw spróbuj!",
+     "id": "Jangan kebanyakan merica. Cicipi dulu!",
+     "literal": "jangan berlebihan dengan merica. pertama cobalah!"
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Ciasto jest gotowe. Rozwałkujmy je!",
+     "id": "Adonannya sudah siap. Ayo kita gilas!",
+     "literal": "adonan adalah siap. mari-kita-menggilas dia-n!"
+    },
+    {
+     "speaker": "Pani Halina:",
+     "text": "Cienko, proszę. A teraz wytnijcie szklanką kółka.",
+     "id": "Tipis, ya. Sekarang cetak bulatan-bulatan pakai gelas.",
+     "literal": "tipis, silakan. dan sekarang potonglah-kalian dengan-gelas bulatan-bulatan."
+    },
+    {
+     "speaker": "Tomek:",
+     "text": "Ile farszu nałożyć na jedno kółko?",
+     "id": "Isiannya berapa banyak untuk satu bulatan?",
+     "literal": "berapa isian menaruh pada satu bulatan?"
+    },
+    {
+     "speaker": "Pani Halina:",
+     "text": "Łyżeczkę. Potem złóżcie kółko na pół i dobrze sklejcie brzegi.",
+     "id": "Satu sendok teh. Lalu lipat bulatannya jadi dua dan rekatkan pinggirnya baik-baik.",
+     "literal": "sendok-teh. kemudian lipatlah-kalian bulatan pada setengah dan baik rekatkanlah-kalian tepi-tepi."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Wrzucić je od razu do wody?",
+     "id": "Langsung dicemplungkan ke air?",
+     "literal": "mencemplungkan mereka segera ke air?"
+    },
+    {
+     "speaker": "Pani Halina:",
+     "text": "Tak, do garnka z wrzątkiem. Tylko nie wrzucajcie wszystkich naraz!",
+     "id": "Ya, ke panci berisi air mendidih. Cuma jangan dicemplungkan semua sekaligus!",
+     "literal": "ya, ke panci dengan air-mendidih. hanya jangan mencemplungkan-kalian semua sekaligus!"
+    },
+    {
+     "speaker": "Tomek:",
+     "text": "A skąd wiadomo, że są gotowe?",
+     "id": "Terus dari mana tahunya sudah matang?",
+     "literal": "dan dari-mana diketahui, bahwa mereka-adalah siap?"
+    },
+    {
+     "speaker": "Pani Halina:",
+     "text": "Kiedy wypłyną, gotujcie je jeszcze dwie minuty. Smacznego!",
+     "id": "Kalau sudah mengapung, rebus dua menit lagi. Selamat makan!",
+     "literal": "ketika mereka-akan-mengapung, rebuslah-kalian mereka lagi dua menit. selamat-makan!"
+    }
+   ],
+   "notes": [
+    "**Nie przesadzaj z pieprzem** — *przesadzać z* + N. berarti \"berlebihan dengan\". Ungkapan ini juga dipakai di luar dapur: *Nie przesadzaj!* (\"jangan lebay\").",
+    "**Rozwałkujmy je!** — ekor *-my* membuat ajakan \"ayo kita\". Bandingkan dengan futur *Rozwałkujemy je* (\"kita akan menggilasnya\"): beda satu suku kata, beda nada.",
+    "**Wytnijcie szklanką kółka** — alat dipakai dengan narzędnik tanpa kata depan: *szklanką, łyżką, nożem, wałkiem*. Jangan menambahkan *z*: *z łyżką* berarti \"bersama sendok\", bukan \"memakai sendok\".",
+    "**Nie wrzucajcie wszystkich naraz** — larangan dengan ndk *wrzucać*, walaupun perintahnya tadi dk (*wrzuć*). Sasarannya pindah ke dopełniacz karena disangkal: *wszystkie* → *wszystkich*.",
+    "**Kiedy wypłyną** — pierogi yang matang naik ke permukaan air. Kiat pani Halina ini memang cara umum orang Polandia menakar kematangan pierogi.",
+    "**Smacznego!** — \"selamat makan\", diucapkan kepada orang yang akan atau sedang makan. Jawabannya *Dziękuję, nawzajem!* (terima kasih, kamu juga)."
+   ],
+   "grammars": [
+    {
+     "title": "Ndk atau dk dalam perintah dan larangan",
+     "body": [
+      "Untuk perintah, kedua aspek dipakai dengan arti yang berbeda. Untuk larangan, pilihannya hampir selalu satu: **nie + ndk**."
+     ],
+     "table": {
+      "head": [
+       "Maksud",
+       "Aspek",
+       "Contoh"
+      ],
+      "rows": [
+       [
+        "satu tindakan konkret sampai selesai",
+        "dk",
+        "*Pokrój cebulę. Weź miskę.*"
+       ],
+       [
+        "proses yang berlangsung, \"terus\"",
+        "ndk",
+        "*Zagniataj dalej. Mieszaj powoli.*"
+       ],
+       [
+        "ajakan ramah, silakan",
+        "ndk",
+        "*Siadaj! Jedz, jedz!*"
+       ],
+       [
+        "larangan",
+        "*nie* + ndk",
+        "*Nie dodawaj mąki! Nie wrzucajcie wszystkich!*"
+       ],
+       [
+        "peringatan \"jangan sampai\"",
+        "*nie* + dk (jarang)",
+        "*Nie zapomnij soli! Nie spóźnij się!*"
+       ],
+       [
+        "sopan, resmi, papan tanda",
+        "*proszę* + infinitif",
+        "*Proszę usiąść. Proszę nie palić.*"
+       ]
+      ]
+     },
+     "after": [
+      "**Aturan praktis:** kalau kamu ingin berkata \"jangan\", ambil kata kerja ndk. *Nie zrób tego* salah untuk larangan biasa; yang benar *Nie rób tego!*",
+      "Satu-satunya pengecualian yang sering dipakai adalah peringatan tentang hal yang tidak disengaja: *Nie zapomnij!* (jangan sampai lupa), *Nie zgub kluczy!* (jangan sampai kuncinya hilang).",
+      "*Proszę* + infinitif adalah cara sopan untuk *pan/pani* dan juga bahasa papan pengumuman: *Proszę nie dotykać* (jangan disentuh), *Proszę zamknąć drzwi* (tolong tutup pintunya)."
+     ]
+    }
+   ]
+  }
+ ],
+ "sections": [
+  {
+   "title": "Di dapur: kata kerja resep",
+   "blocks": [
+    {
+     "type": "tabel",
+     "head": [
+      "Polski (ndk / dk)",
+      "Arti",
+      "Perintah dk"
+     ],
+     "rows": [
+      [
+       "*obierać / obrać*",
+       "mengupas",
+       "*obierz*"
+      ],
+      [
+       "*kroić / pokroić*",
+       "memotong, mengiris",
+       "*pokrój*"
+      ],
+      [
+       "*gotować / ugotować*",
+       "merebus, memasak",
+       "*ugotuj*"
+      ],
+      [
+       "*smażyć / usmażyć*",
+       "menggoreng",
+       "*usmaż*"
+      ],
+      [
+       "*mieszać / wymieszać*",
+       "mengaduk, mencampur",
+       "*wymieszaj*"
+      ],
+      [
+       "*dodawać / dodać*",
+       "menambahkan",
+       "*dodaj*"
+      ],
+      [
+       "*wałkować / rozwałkować*",
+       "menggilas adonan",
+       "*rozwałkuj*"
+      ],
+      [
+       "*zagniatać / zagnieść*",
+       "menguleni",
+       "*zagnieć*"
+      ],
+      [
+       "*wrzucać / wrzucić*",
+       "mencemplungkan",
+       "*wrzuć*"
+      ],
+      [
+       "*solić / posolić*",
+       "menggarami",
+       "*posól*"
+      ],
+      [
+       "*odcedzać / odcedzić*",
+       "meniriskan",
+       "*odcedź*"
+      ],
+      [
+       "*podawać / podać*",
+       "menyajikan",
+       "*podaj*"
+      ]
+     ]
+    },
+    {
+     "type": "p",
+     "text": "Buku resep Polandia jarang memakai perintah seperti pani Halina. Yang lebih sering adalah **infinitif** (*Ziemniaki obrać i ugotować. Cebulę pokroić w kostkę.*) atau bentuk **\"kita\" kala kini** (*Obieramy ziemniaki, kroimy cebulę…*), persis seperti gaya acara masak di televisi. Ketiga gaya ini artinya sama; yang berbeda hanya nadanya."
+    },
+    {
+     "type": "kotak",
+     "title": "Pierogi ruskie dan saudara-saudaranya",
+     "items": [
+      "Nama *ruskie* merujuk pada **Ruś**, wilayah bersejarah yang kini sebagian besar berada di Ukraina barat, bukan pada Rusia. Isiannya kentang, *twaróg* (keju segar yang agak asam), dan bawang goreng.",
+      "Isian lain yang sangat umum: *z mięsem* (daging), *z kapustą i grzybami* (kol asam dan jamur, hidangan khas malam Natal), dan pierogi manis *z jagodami* atau *z truskawkami* (blueberry, stroberi) dengan krim asam dan gula.",
+      "Pierogi disajikan dengan bawang goreng, *skwarki* (potongan lemak babi goreng), atau *śmietana* (krim asam). Sisa pierogi sering digoreng keesokan harinya, dan banyak orang justru lebih menyukainya begitu.",
+      "Di *bar mleczny* (kantin murah yang sudah ada sebelum perang dan berjaya di era PRL) pierogi termasuk menu yang paling murah dan paling laris."
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Takaran dan alat dapur",
+   "blocks": [
+    {
+     "type": "tabel",
+     "head": [
+      "Polski",
+      "Arti",
+      "Contoh"
+     ],
+     "rows": [
+      [
+       "*szklanka*",
+       "gelas (sekitar 250 ml)",
+       "*szklanka mąki*"
+      ],
+      [
+       "*łyżka*",
+       "sendok makan",
+       "*dwie łyżki oleju*"
+      ],
+      [
+       "*łyżeczka*",
+       "sendok teh",
+       "*łyżeczka cukru*"
+      ],
+      [
+       "*szczypta*",
+       "sejumput",
+       "*szczypta soli*"
+      ],
+      [
+       "*pół kilo*",
+       "setengah kilo",
+       "*pół kilo ziemniaków*"
+      ],
+      [
+       "*deko* (dag)",
+       "dekagram, 10 gram",
+       "*dwadzieścia deko twarogu*"
+      ],
+      [
+       "*garnek*",
+       "panci",
+       "*garnek wody*"
+      ],
+      [
+       "*patelnia*",
+       "wajan",
+       "*na patelni*"
+      ],
+      [
+       "*miska*",
+       "mangkuk",
+       "*w misce*"
+      ],
+      [
+       "*wałek*",
+       "penggilas",
+       "*wałkiem*"
+      ],
+      [
+       "*nóż*",
+       "pisau",
+       "*nożem*"
+      ],
+      [
+       "*deska*",
+       "talenan",
+       "*na desce*"
+      ]
+     ]
+    },
+    {
+     "type": "p",
+     "text": "Takaran mengikuti aturan angka yang sudah kamu kenal: *jedna łyżka*, *dwie łyżki*, *pięć łyżek*, dan bendanya dalam dopełniacz (*łyżka cukru*, *szklanka wody*). Satuan yang paling khas Polandia adalah **deko**: orang di pasar dan di toko daging meminta *dwadzieścia deko sera* atau *pół kilo kiełbasy*, bukan \"dua ratus gram\". Di kemasan tertulis *dag*."
+    },
+    {
+     "type": "kotak",
+     "title": "Membaca resep Polandia",
+     "items": [
+      "*Sól i pieprz do smaku* — garam dan merica secukupnya.",
+      "*Gotować na małym ogniu* — masak dengan api kecil. *Doprowadzić do wrzenia* — didihkan.",
+      "*Piec w piekarniku nagrzanym do 180 stopni* — panggang di oven yang sudah dipanaskan sampai 180 derajat. Suhu selalu dalam derajat Celsius.",
+      "*Składniki* — bahan-bahan; *sposób przygotowania* — cara membuat; *porcja* — porsi."
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Ulangan berjenjang — unit 6",
+   "blocks": [
+    {
+     "type": "p",
+     "text": "Tutup kolom Polandia, baca terjemahan Indonesianya, lalu susun kembali kalimatnya dari ingatan."
+    },
+    {
+     "type": "tabel",
+     "head": [
+      "Bahasa Indonesia",
+      "Polski"
+     ],
+     "rows": [
+      [
+       "Kamu lihat laptop saya? Saya nggak bisa menemukannya di mana pun.",
+       "*Widziałeś mój laptop? Nie mogę go nigdzie znaleźć.*"
+      ],
+      [
+       "Nggak ada. Kemarin saya kasih ke Ewa.",
+       "*Nie mam go. Dałem go wczoraj Ewie.*"
+      ],
+      [
+       "Pasti. Saya kembalikan langsung sesudah makan siang.",
+       "*Jasne. Oddam ci go zaraz po obiedzie.*"
+      ],
+      [
+       "Baik, saya bicara dengan dia sesudah makan siang.",
+       "*Dobrze, porozmawiam z nim po obiedzie.*"
+      ],
+      [
+       "Terima kasih. Saya andalkan Anda.",
+       "*Dziękuję. Liczę na pana.*"
+      ]
+     ]
+    }
+   ]
+  }
+ ],
+ "vocab": [
+  {
+   "pl": "ciasto (n)",
+   "baca": "CYAS-to",
+   "id": "adonan; kue"
+  },
+  {
+   "pl": "farsz, farszu (m)",
+   "baca": "farsy, FAR-syu",
+   "id": "isian"
+  },
+  {
+   "pl": "mąka (ż)",
+   "baca": "MON-ka",
+   "id": "tepung"
+  },
+  {
+   "pl": "twaróg, twarogu (m)",
+   "baca": "TFA-ruk, tfa-RO-gu",
+   "id": "twaróg, keju segar"
+  },
+  {
+   "pl": "ziemniak, ziemniaki (m)",
+   "baca": "ZYEM-nyak, zyem-NYA-ki",
+   "id": "kentang"
+  },
+  {
+   "pl": "cebula (ż)",
+   "baca": "tse-BU-la",
+   "id": "bawang bombai"
+  },
+  {
+   "pl": "sól, soli (ż)",
+   "baca": "sul, SO-li",
+   "id": "garam"
+  },
+  {
+   "pl": "pieprz, pieprzu (m)",
+   "baca": "pyepsy, PYEP-syu",
+   "id": "merica"
+  },
+  {
+   "pl": "miska (ż)",
+   "baca": "MIS-ka",
+   "id": "mangkuk"
+  },
+  {
+   "pl": "szklanka (ż)",
+   "baca": "SYKLAN-ka",
+   "id": "gelas"
+  },
+  {
+   "pl": "łyżka / łyżeczka (ż)",
+   "baca": "WYSY-ka / wy-ZYEC-ka",
+   "id": "sendok makan / sendok teh"
+  },
+  {
+   "pl": "szczypta (ż)",
+   "baca": "SYCYP-ta",
+   "id": "sejumput"
+  },
+  {
+   "pl": "fartuch (m)",
+   "baca": "FAR-tuh",
+   "id": "celemek"
+  },
+  {
+   "pl": "garnek, garnka (m)",
+   "baca": "GAR-nek, GARN-ka",
+   "id": "panci"
+  },
+  {
+   "pl": "wrzątek, wrzątku (m)",
+   "baca": "VZYON-tek, VZYONT-ku",
+   "id": "air mendidih"
+  },
+  {
+   "pl": "brzeg, brzegi (m)",
+   "baca": "bzyek, BZYE-gi",
+   "id": "tepi, pinggir"
+  },
+  {
+   "pl": "kroić (kroję) / pokroić (pokroję)",
+   "baca": "KRO-yic (KRO-ye) / po-KRO-yic (po-KRO-ye)",
+   "id": "memotong, mengiris"
+  },
+  {
+   "pl": "obierać (obieram) / obrać (obiorę)",
+   "baca": "o-BYE-rac (o-BYE-ram) / OB-rac (o-BYO-re)",
+   "id": "mengupas"
+  },
+  {
+   "pl": "mieszać (mieszam) / wymieszać (wymieszam)",
+   "baca": "MYE-syac (MYE-syam) / vy-MYE-syac (vy-MYE-syam)",
+   "id": "mengaduk, mencampur"
+  },
+  {
+   "pl": "dodawać (dodaję) / dodać (dodam)",
+   "baca": "do-DA-vac (do-DA-ye) / DO-dac (DO-dam)",
+   "id": "menambahkan"
+  },
+  {
+   "pl": "wrzucać (wrzucam) / wrzucić (wrzucę)",
+   "baca": "VZYU-tsac (VZYU-tsam) / VZYU-cic (VZYU-tse)",
+   "id": "mencemplungkan"
+  },
+  {
+   "pl": "zagniatać (zagniatam) / zagnieść (zagniotę)",
+   "baca": "zag-NYA-tac (zag-NYA-tam) / ZAG-nyesyc (zag-NYO-te)",
+   "id": "menguleni"
+  },
+  {
+   "pl": "próbować (próbuję) / spróbować (spróbuję)",
+   "baca": "pru-BO-vac (pru-BU-ye) / spru-BO-vac (spru-BU-ye)",
+   "id": "mencoba, mencicipi"
+  },
+  {
+   "pl": "przesadzać (przesadzam) — ndk",
+   "baca": "psye-SA-dzac (psye-SA-dzam)",
+   "id": "berlebihan"
+  },
+  {
+   "pl": "cienko",
+   "baca": "CYEN-ko",
+   "id": "tipis (kata keterangan)"
+  },
+  {
+   "pl": "naraz",
+   "baca": "NA-ras",
+   "id": "sekaligus"
+  }
+ ],
+ "exercises": [
+  {
+   "prompt": "Terjemahkan ke bahasa Polandia.",
+   "items": [
+    "Kupas kentang dan iris bawangnya. (kepada satu orang)",
+    "Tambahkan segelas air hangat.",
+    "Jangan tambah tepung lagi!",
+    "Ayo kita gilas adonannya!",
+    "Cuci tangan kalian!",
+    "Silakan duduk. (resmi, dengan *proszę*)"
+   ]
+  },
+  {
+   "prompt": "Isi dengan bentuk perintah yang diminta.",
+   "items": [
+    "____ tę miskę! (wziąć, ty)",
+    "____ ciasto cienko! (rozwałkować, wy)",
+    "Nie ____ tyle soli! (dodawać, ty)",
+    "____ razem pierogi! (zrobić, my)",
+    "____ cierpliwy! (być, ty)",
+    "Nie ____ wszystkich naraz! (wrzucać, wy)",
+    "____ jeszcze trochę! (jeść, ty)"
+   ]
+  },
+  {
+   "prompt": "Ubah perintah menjadi larangan. Ingat: *nie* + ndk, dan sasaran yang disangkal pindah ke dopełniacz. Contoh: *Dodaj soli!* → *Nie dodawaj soli!*",
+   "items": [
+    "Pokrój cebulę!",
+    "Wrzuć pierogi do wody!",
+    "Kup chleb!",
+    "Otwórz okno!",
+    "Zadzwoń do Tomka!",
+    "Weźcie parasol!"
+   ]
+  },
+  {
+   "prompt": "Susun jadi kalimat yang benar.",
+   "items": [
+    "ziemniaki / pokrój / i / cebulę / obierz",
+    "mąki / nie / już / dodawaj",
+    "ciasto / cienko / rozwałkujmy",
+    "z / nie / pieprzem / przesadzaj",
+    "nie / proszę / naraz / wrzucać / wszystkich"
+   ]
+  }
+ ],
+ "answers": [
+  "Obierz ziemniaki i pokrój cebulę. — Dodaj szklankę ciepłej wody. — Nie dodawaj już mąki! — Rozwałkujmy ciasto! — Umyjcie ręce! — Proszę usiąść.",
+  "Weź — Rozwałkujcie — dodawaj — Zróbmy — Bądź — wrzucajcie — Jedz",
+  "Nie krój cebuli! — Nie wrzucaj pierogów do wody! — Nie kupuj chleba! — Nie otwieraj okna! — Nie dzwoń do Tomka! — Nie bierzcie parasola!",
+  "Obierz ziemniaki i pokrój cebulę. — Nie dodawaj już mąki! — Rozwałkujmy ciasto cienko! — Nie przesadzaj z pieprzem! — Proszę nie wrzucać wszystkich naraz!"
+ ]
+}

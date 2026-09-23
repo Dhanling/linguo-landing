@@ -1,0 +1,760 @@
+{
+ "title": "Pergi, datang, masuk, keluar — kata kerja gerak berawalan",
+ "title_target": "Przyjechałem, wyszedłem",
+ "goal": "Menceritakan perjalanan dengan tepat: tiba, berangkat, masuk, keluar, menyeberang, sampai. Unit ini memasang awalan gerak *przy-, wy-, w-, po-, do-, od-, prze-, ob-, z-* pada *-iść/-jść* dan *-jechać*, lengkap dengan kata depan pasangannya.",
+ "bekal": [
+  "mengatakan tiba, berangkat, masuk, dan keluar dengan kata kerja yang tepat",
+  "memilih kata depan yang berpasangan dengan tiap awalan gerak",
+  "membentuk lampau, futur, dan pasangan ndk dari *przyjść, wyjść, wejść* dan kawan-kawannya"
+ ],
+ "dialogs": [
+  {
+   "title": "Dialog — Już dojechałeś?",
+   "intro": "Sabtu pagi Budi naik kereta dari Kraków ke Wrocław untuk mengunjungi Ola, pacar Tomek. Begitu turun di stasiun Wrocław Główny, ponselnya berdering. Tak lama kemudian Tomek muncul.",
+   "lines": [
+    {
+     "speaker": "Ola:",
+     "text": "Cześć, Budi! Już dojechałeś do Wrocławia?",
+     "id": "Halo, Budi! Sudah sampai di Wrocław?",
+     "literal": "halo, Budi! sudah kamu-sampai-lampau-lk ke Wrocław?"
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Tak, właśnie wysiadłem z pociągu. Przyjechał punktualnie!",
+     "id": "Sudah, barusan turun dari kereta. Keretanya datang tepat waktu!",
+     "literal": "ya, baru-saja saya-turun-lampau-lk dari kereta. ia-tiba-lampau-lk tepat-waktu!"
+    },
+    {
+     "speaker": "Ola:",
+     "text": "Brawo, to rzadkość. Tomek już wyszedł po ciebie na dworzec.",
+     "id": "Wah, itu jarang. Tomek sudah berangkat menjemputmu ke stasiun.",
+     "literal": "bravo, itu kelangkaan. Tomek sudah ia-keluar-lampau-lk untuk kamu ke stasiun."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Naprawdę? Nie widzę go. Z peronu wychodzi mnóstwo ludzi.",
+     "id": "Masa? Saya nggak lihat dia. Banyak sekali orang keluar dari peron.",
+     "literal": "sungguh? tidak saya-melihat dia. dari peron ia-keluar banyak-sekali orang."
+    },
+    {
+     "speaker": "Ola:",
+     "text": "Wyjdź z dworca głównym wyjściem i poczekaj przed budynkiem.",
+     "id": "Keluar dari stasiun lewat pintu utama, lalu tunggu di depan gedung.",
+     "literal": "keluarlah dari stasiun utama pintu-keluar dan tunggulah di-depan gedung."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Dobrze, już wychodzę. Pa!",
+     "id": "Oke, saya keluar sekarang. Dah!",
+     "literal": "baik, sudah saya-keluar. dah!"
+    },
+    {
+     "speaker": "Tomek:",
+     "text": "Budi, tutaj! Przepraszam, wszedłem do dworca z drugiej strony.",
+     "id": "Budi, sini! Maaf, saya masuk stasiun dari sisi yang lain.",
+     "literal": "Budi, di-sini! maaf, saya-masuk-lampau-lk ke stasiun dari lain sisi."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Nic nie szkodzi. Daleko stąd do mieszkania Oli?",
+     "id": "Nggak apa-apa. Jauh nggak dari sini ke apartemen Ola?",
+     "literal": "tidak-ada tidak merugikan. jauh dari-sini ke apartemen Ola?"
+    },
+    {
+     "speaker": "Tomek:",
+     "text": "Dojdziemy tam pieszo w dwadzieścia minut.",
+     "id": "Jalan kaki dua puluh menit juga sampai.",
+     "literal": "kita-akan-sampai ke-sana berjalan-kaki dalam dua-puluh menit."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "A może pojedziemy tramwajem? Mam ciężki plecak.",
+     "id": "Atau naik trem saja? Ransel saya berat.",
+     "literal": "dan mungkin kita-akan-berkendara dengan-trem? saya-punya berat ransel."
+    },
+    {
+     "speaker": "Tomek:",
+     "text": "Dobra. Wysiądziemy przy Rynku, a potem przejdziemy przez most.",
+     "id": "Oke. Kita turun dekat Rynek, lalu menyeberangi jembatan.",
+     "literal": "baik. kita-akan-turun dekat Rynek, dan kemudian kita-akan-menyeberang melalui jembatan."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "A Ola czeka na nas w domu?",
+     "id": "Ola nunggu kita di rumah?",
+     "literal": "dan Ola ia-menunggu untuk kita di rumah?"
+    },
+    {
+     "speaker": "Tomek:",
+     "text": "Ola wyszła na chwilę do sklepu, ale zaraz wróci.",
+     "id": "Ola keluar sebentar ke toko, tapi sebentar lagi pulang.",
+     "literal": "Ola ia-keluar-lampau-pr untuk sebentar ke toko, tetapi segera ia-akan-kembali."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "To chodźmy! Po drodze chcę zobaczyć pierwsze krasnale.",
+     "id": "Ayo jalan! Di jalan saya mau lihat kurcaci-kurcaci pertama.",
+     "literal": "jadi marilah-berjalan! di jalan saya-mau melihat pertama kurcaci-jamak."
+    }
+   ],
+   "notes": [
+    "**Dojechałeś, przyjechał** — dua-duanya bisa diterjemahkan \"sampai\", tapi sudut pandangnya beda. *Przyjechać* = tiba, datang ke tujuan; *dojechać* = berhasil mencapai titik akhir, sering sesudah perjalanan panjang atau berliku. *Pociąg przyjechał punktualnie*, tapi *Dojechałeś szczęśliwie?* — sampai dengan selamat?",
+    "**Wysiadłem z pociągu** — naik dan turun kendaraan **tidak** memakai *wejść/wyjść*, melainkan *wsiąść do* + D. (naik ke) dan *wysiąść z* + D. (turun dari): *wsiadam do tramwaju, wysiadam z tramwaju*. Ini jebakan klasik; *wyjść z pociągu* memang terdengar dalam obrolan, tapi yang baku dan paling lazim *wysiąść*.",
+    "**Wyszedł po ciebie** — *po* + B. sesudah kata kerja gerak berarti \"untuk menjemput/mengambil\": *iść po chleb* (pergi beli roti), *przyjechać po kogoś* (datang menjemput seseorang). Arah tujuannya tetap sendiri: *na dworzec* (B.).",
+    "**Wyjdź, poczekaj** — perintah dari *wyjść* adalah *wyjdź, wyjdźmy, wyjdźcie*. Polanya sama untuk *wejdź* (masuklah), *przyjdź* (datanglah), *przejdź* (seberangilah). Tapi \"ayo pergi\" sehari-hari bukan dari *pójść*, melainkan *chodź / chodźmy*.",
+    "**Już wychodzę** — kala kini hanya ada pada pasangan ndk: *wychodzę* (saya sedang/segera keluar). *Wyjdę* adalah bentuk dk, jadi artinya futur: saya akan keluar. Sama halnya *przychodzę / przyjdę*, *wchodzę / wejdę*.",
+    "**Ola wyszła** — lampau dk dari kata kerja gerak sering berarti hasilnya masih berlaku: Ola sudah pergi dan **belum** kembali. Kalau ia sudah pulang lagi, orang Polandia lebih suka bilang *Była w sklepie* — tadi dia ke toko."
+   ],
+   "grammars": [
+    {
+     "title": "Sembilan awalan gerak (dan satu kata depan)",
+     "body": [
+      "Semua kata kerja di tabel ini **dk** (perfektif): satu gerakan utuh yang selesai. Awalannya bekerja seperti kata arah dalam bahasa Indonesia — *masuk, keluar, menyeberang* — tetapi menempel pada *iść* (berjalan kaki) atau *jechać* (berkendara), jadi kamu selalu sekaligus mengatakan **cara** bergeraknya."
+     ],
+     "table": {
+      "head": [
+       "Awalan",
+       "Arti dasar",
+       "Jalan kaki",
+       "Berkendara",
+       "Kata depan"
+      ],
+      "rows": [
+       [
+        "**przy-**",
+        "tiba, datang",
+        "*przyjść*",
+        "*przyjechać*",
+        "*do* + D., *na* + B."
+       ],
+       [
+        "**wy-**",
+        "keluar, berangkat",
+        "*wyjść*",
+        "*wyjechać*",
+        "*z* + D."
+       ],
+       [
+        "**w-**",
+        "masuk; naik ke atas",
+        "*wejść*",
+        "*wjechać*",
+        "*do* + D.; *na* + B."
+       ],
+       [
+        "**po-**",
+        "berangkat, mulai pergi",
+        "*pójść*",
+        "*pojechać*",
+        "*do* + D., *na* + B."
+       ],
+       [
+        "**do-**",
+        "sampai ke titik akhir",
+        "*dojść*",
+        "*dojechać*",
+        "*do* + D."
+       ],
+       [
+        "**od-**",
+        "menjauh, meninggalkan",
+        "*odejść*",
+        "*odjechać*",
+        "*od* + D., *z* + D."
+       ],
+       [
+        "**prze-**",
+        "menyeberang, melewati",
+        "*przejść*",
+        "*przejechać*",
+        "*przez* + B."
+       ],
+       [
+        "**ob-**",
+        "mengitari",
+        "*obejść*",
+        "*objechać*",
+        "B. langsung"
+       ],
+       [
+        "**z-**",
+        "turun",
+        "*zejść*",
+        "*zjechać*",
+        "*z* + D.; *na dół*"
+       ]
+      ]
+     },
+     "after": [
+      "**przez-** bukan awalan tersendiri: itu kata depan *przez* (melalui) yang hampir selalu menemani *prze-*: *przejść przez ulicę*, *przejechać przez most*. Keduanya seakar, maka sering tampil berdua.",
+      "Perhatikan ejaan *-jść* dan *-ejść*. Sesudah awalan yang berakhir vokal, *iść* menjadi *-jść*: *przyjść, wyjść, dojść, przejść, pójść*. Sesudah awalan yang berakhir huruf mati, disisipkan *e*: *wejść, odejść, obejść, zejść*."
+     ]
+    },
+    {
+     "title": "Futur, lampau, dan pasangan ndk",
+     "body": [
+      "Bentuk dk berawalan tidak punya kala kini: bentuk \"kini\"-nya berarti futur. Lampaunya mewarisi ketidakberaturan *iść* (*szedłem, szłam*)."
+     ],
+     "table": {
+      "head": [
+       "Bentuk kamus (dk)",
+       "Futur (ja)",
+       "Lampau lk / pr",
+       "Pasangan ndk"
+      ],
+      "rows": [
+       [
+        "*przyjść*",
+        "*przyjdę*",
+        "*przyszedłem / przyszłam*",
+        "*przychodzić*"
+       ],
+       [
+        "*wyjść*",
+        "*wyjdę*",
+        "*wyszedłem / wyszłam*",
+        "*wychodzić*"
+       ],
+       [
+        "*wejść*",
+        "*wejdę*",
+        "*wszedłem / weszłam*",
+        "*wchodzić*"
+       ],
+       [
+        "*odejść*",
+        "*odejdę*",
+        "*odszedłem / odeszłam*",
+        "*odchodzić*"
+       ],
+       [
+        "*przejść*",
+        "*przejdę*",
+        "*przeszedłem / przeszłam*",
+        "*przechodzić*"
+       ],
+       [
+        "*zejść*",
+        "*zejdę*",
+        "*zszedłem / zeszłam*",
+        "*schodzić*"
+       ],
+       [
+        "*przyjechać*",
+        "*przyjadę*",
+        "*przyjechałem / przyjechałam*",
+        "*przyjeżdżać*"
+       ],
+       [
+        "*wyjechać*",
+        "*wyjadę*",
+        "*wyjechałem / wyjechałam*",
+        "*wyjeżdżać*"
+       ]
+      ]
+     },
+     "after": [
+      "Pasangan ndk dibentuk dengan awalan yang sama + *-chodzić* (untuk *-jść*) atau *-jeżdżać* (untuk *-jechać*). Pakai ndk untuk kebiasaan dan proses: *Codziennie wychodzę z domu o ósmej*; dk untuk satu kejadian: *Dziś wyszedłem o dziewiątej*.",
+      "Satu pengecualian penting: *pójść* dan *pojechać* tidak punya pasangan *pochodzić* dalam arti gerak — *pochodzić* berarti \"berasal\" (*Pochodzę z Indonezji*). Pasangan ndk-nya adalah *iść* dan *jechać* sendiri."
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Dialog kedua — Jak było we Wrocławiu?",
+   "intro": "Senin sore di ruang guru sekolah Ania. Budi mampir mengembalikan buku dan Ania langsung menagih cerita akhir pekannya.",
+   "lines": [
+    {
+     "speaker": "Ania:",
+     "text": "No i jak było we Wrocławiu? Kiedy wróciłeś?",
+     "id": "Jadi gimana Wrocław? Kapan kamu pulang?",
+     "literal": "nah dan bagaimana adalah-lampau di Wrocław? kapan kamu-kembali-lampau-lk?"
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Wczoraj w nocy. Pociąg odjechał z godzinnym opóźnieniem.",
+     "id": "Kemarin malam. Keretanya berangkat telat sejam.",
+     "literal": "kemarin di malam. kereta ia-berangkat-lampau-lk dengan sejam-an keterlambatan."
+    },
+    {
+     "speaker": "Ania:",
+     "text": "Klasyka. A co robiliście w sobotę?",
+     "id": "Biasa. Terus Sabtu kalian ngapain?",
+     "literal": "klasik. dan apa kalian-melakukan-lampau di Sabtu?"
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Obeszliśmy cały Rynek i szukaliśmy krasnali.",
+     "id": "Kami keliling seluruh Rynek dan mencari kurcaci.",
+     "literal": "kami-mengitari-lampau seluruh Rynek dan kami-mencari-lampau kurcaci-jamak."
+    },
+    {
+     "speaker": "Ania:",
+     "text": "Ile ich znalazłeś?",
+     "id": "Berapa yang kamu temukan?",
+     "literal": "berapa mereka kamu-menemukan-lampau-lk?"
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Chyba trzydzieści. Tomek każdemu zrobił zdjęcie.",
+     "id": "Kayaknya tiga puluh. Tomek memotret satu per satu.",
+     "literal": "mungkin tiga-puluh. Tomek setiap-satu ia-membuat-lampau-lk foto."
+    },
+    {
+     "speaker": "Ania:",
+     "text": "A w niedzielę gdzieś wyszliście?",
+     "id": "Hari Minggu kalian pergi ke mana-mana?",
+     "literal": "dan di Minggu ke-suatu-tempat kalian-keluar-lampau?"
+    },
+    {
+     "speaker": "Budi:",
+     "text": "W niedzielę weszliśmy na wieżę katedry.",
+     "id": "Hari Minggu kami naik ke menara katedral.",
+     "literal": "di Minggu kami-masuk-lampau ke menara katedral."
+    },
+    {
+     "speaker": "Ania:",
+     "text": "Zazdroszczę! Ja byłam we Wrocławiu tylko przejazdem.",
+     "id": "Iri deh! Saya ke Wrocław cuma numpang lewat.",
+     "literal": "saya-iri! saya saya-adalah-lampau-pr di Wrocław hanya sambil-lewat."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "To następnym razem pojedziesz z nami. Ola cię zaprasza.",
+     "id": "Kalau gitu lain kali kamu ikut kami. Ola mengundangmu.",
+     "literal": "jadi berikut kali kamu-akan-berkendara dengan kami. Ola kamu ia-mengundang."
+    }
+   ],
+   "notes": [
+    "**Odjechał z opóźnieniem** — *odjechać* = berangkat meninggalkan titik tertentu. Kereta *odjeżdża* dari peron dan *przyjeżdża* ke tujuan. Papan di stasiun Polandia pun dibagi dua: *Odjazdy* (keberangkatan) dan *Przyjazdy* (kedatangan).",
+    "**Obeszliśmy cały Rynek** — *obejść* langsung diikuti biernik tanpa kata depan: *obejść Rynek, objechać jezioro*. Maknanya \"mengelilingi\" satu putaran penuh, bukan sekadar berjalan-jalan.",
+    "**Weszliśmy na wieżę** — *wejść do* + D. untuk masuk ke dalam ruang (*do katedry*), *wejść na* + B. untuk naik ke atas sesuatu (*na wieżę, na górę, na Giewont*). Lawannya: *wyjść z katedry*, *zejść z wieży*.",
+    "**Szukaliśmy krasnali** — *szukać* menuntut dopełniacz. Jamak *krasnal* di dopełniacz paling sering *krasnali*; bentuk *krasnalów* juga terdengar.",
+    "**Przejazdem** — \"sambil lewat\", dari akar yang sama dengan *przejechać*. Kalimat siap pakai: *Jestem tu tylko przejazdem* — saya cuma mampir lewat."
+   ],
+   "grammars": [
+    {
+     "title": "Pergi dan datang: pasangan yang berlawanan",
+     "body": [
+      "Awalan gerak berpasangan seperti antonim: yang satu menjauh dari tempat (*z* + D., *od* + D.), yang lain mendekat atau masuk (*do* + D., *na* + B.). Hafalkan berpasangan, bukan satu-satu."
+     ],
+     "table": {
+      "head": [
+       "Menjauh",
+       "Mendekat / masuk",
+       "Arti"
+      ],
+      "rows": [
+       [
+        "*wyjść z domu*",
+        "*wejść do domu*",
+        "keluar / masuk rumah"
+       ],
+       [
+        "*wyjechać z Krakowa*",
+        "*przyjechać do Krakowa*",
+        "meninggalkan / tiba di Kraków"
+       ],
+       [
+        "*odjechać z peronu*",
+        "*przyjechać na peron*",
+        "berangkat dari / tiba di peron"
+       ],
+       [
+        "*zejść z wieży*",
+        "*wejść na wieżę*",
+        "turun dari / naik ke menara"
+       ],
+       [
+        "*wysiąść z tramwaju*",
+        "*wsiąść do tramwaju*",
+        "turun dari / naik trem"
+       ]
+      ]
+     },
+     "after": [
+      "Kata depan *z* di sini selalu dengan **dopełniacz** (dari), bukan narzędnik (bersama). *Wyszedłem z Anią* = saya keluar bersama Ania; *wyszedłem z domu* = saya keluar dari rumah. Kasus bendanya yang membedakan.",
+      "Sebelum gugus huruf mati yang sulit, *w* menjadi *we* dan *z* menjadi *ze*: *we Wrocławiu, we wtorek, ze szkoły, ze sklepu*."
+     ]
+    }
+   ]
+  }
+ ],
+ "sections": [
+  {
+   "title": "Di stasiun dan di kereta",
+   "blocks": [
+    {
+     "type": "tabel",
+     "head": [
+      "Polski",
+      "Cara baca",
+      "Arti"
+     ],
+     "rows": [
+      [
+       "*dworzec* (m)",
+       "DVO-zyets",
+       "stasiun"
+      ],
+      [
+       "*peron* (m)",
+       "PE-ron",
+       "peron"
+      ],
+      [
+       "*tor* (m)",
+       "tor",
+       "jalur rel"
+      ],
+      [
+       "*odjazdy / przyjazdy*",
+       "od-YAZ-dy / psyy-YAZ-dy",
+       "keberangkatan / kedatangan"
+      ],
+      [
+       "*opóźnienie* (n)",
+       "o-puzy-NYE-nye",
+       "keterlambatan"
+      ],
+      [
+       "*przesiadka* (ż)",
+       "psye-SYAT-ka",
+       "ganti kendaraan, transit"
+      ],
+      [
+       "*bilet w jedną stronę*",
+       "BI-let v YED-nom STRO-ne",
+       "tiket sekali jalan"
+      ],
+      [
+       "*bilet powrotny*",
+       "BI-let po-VROT-ny",
+       "tiket pulang-pergi"
+      ],
+      [
+       "*miejscówka* (ż)",
+       "myey-STSUF-ka",
+       "tempat duduk bernomor"
+      ],
+      [
+       "*wagon* (m)",
+       "VA-gon",
+       "gerbong"
+      ],
+      [
+       "*konduktor* (m)",
+       "kon-DUK-tor",
+       "kondektur"
+      ],
+      [
+       "*kasa biletowa* (ż)",
+       "KA-sa bi-le-TO-va",
+       "loket tiket"
+      ]
+     ]
+    },
+    {
+     "type": "p",
+     "text": "Pengumuman di stasiun Polandia sering membingungkan pendatang karena memakai dua angka sekaligus: *Pociąg do Krakowa wjedzie na tor drugi przy peronie pierwszym* — kereta ke Kraków akan masuk ke jalur dua di peron satu. **Peron** adalah pelatarannya, **tor** adalah relnya, dan satu peron biasanya diapit dua tor. Perhatikan juga kata kerjanya: kereta *wjeżdża* (masuk) ke stasiun, *odjeżdża* (berangkat) dari peron, dan kamu *wsiadasz* ke dalamnya."
+    },
+    {
+     "type": "kotak",
+     "title": "Naik kereta antarkota",
+     "items": [
+      "Kereta jarak jauh terutama dijalankan PKP Intercity (kelas *EIC*, *IC*, *TLK*); kereta regional dijalankan perusahaan lain, misalnya *Polregio* atau perusahaan wilayah seperti *Koleje Dolnośląskie* di sekitar Wrocław.",
+      "Tiket bisa dibeli di *kasa biletowa*, di mesin tiket, atau lewat aplikasi. Pada banyak kereta Intercity nomor gerbong (*wagon*) dan kursi (*miejsce*) sudah tercetak di tiket.",
+      "Kondektur memeriksa tiket di dalam kereta. Kalau kamu memakai potongan harga (*zniżka*), misalnya potongan mahasiswa, siapkan kartu yang membuktikannya.",
+      "Kalimat yang paling berguna: *Z którego peronu odjeżdża pociąg do Wrocławia?* — Dari peron mana kereta ke Wrocław berangkat?"
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Wrocław, kota kurcaci",
+   "blocks": [
+    {
+     "type": "tabel",
+     "head": [
+      "Polski",
+      "Arti",
+      "Contoh"
+     ],
+     "rows": [
+      [
+       "*przejść przez ulicę*",
+       "menyeberang jalan",
+       "*Przejdź przez ulicę na zielonym świetle.*"
+      ],
+      [
+       "*dojść do Rynku*",
+       "sampai ke Rynek",
+       "*Przepraszam, jak dojść do Rynku?*"
+      ],
+      [
+       "*obejść dookoła*",
+       "mengelilingi",
+       "*Obeszliśmy wyspę dookoła.*"
+      ],
+      [
+       "*wejść na górę*",
+       "naik ke atas",
+       "*Wejdźmy na górę po schodach.*"
+      ],
+      [
+       "*zejść na dół*",
+       "turun ke bawah",
+       "*Zejdź na dół, obiad gotowy!*"
+      ],
+      [
+       "*wyjść na spacer*",
+       "keluar jalan-jalan",
+       "*Wyjdziemy wieczorem na spacer.*"
+      ],
+      [
+       "*odejść od stołu*",
+       "meninggalkan meja",
+       "*Nie odchodź od stołu, zaraz deser!*"
+      ],
+      [
+       "*przyjść na czas*",
+       "datang tepat waktu",
+       "*Przyszła na czas, jak zawsze.*"
+      ]
+     ]
+    },
+    {
+     "type": "p",
+     "text": "*Jak dojść do…?* dan *Jak dojechać do…?* (bagaimana cara sampai ke…) adalah dua pertanyaan arah yang paling sering terdengar dari turis. Pilih *dojść* kalau kamu berjalan kaki dan *dojechać* kalau naik apa pun — trem, bus, mobil. Orang Polandia biasanya menjawab sesuai kata kerja yang kamu pakai: pertanyaan dengan *dojść* dijawab dengan rute jalan kaki."
+    },
+    {
+     "type": "kotak",
+     "title": "Krasnale dan penyulut lampu",
+     "items": [
+      "Di trotoar, pagar, dan ambang pintu Wrocław tersebar ratusan patung kurcaci perunggu kecil, *krasnale*. Asal-usulnya politis: pada tahun 1980-an gerakan *Pomarańczowa Alternatywa* (Alternatif Oranye) memakai gambar kurcaci untuk mengejek rezim komunis lewat aksi jalanan yang jenaka dan damai.",
+      "Patung pertama, *Papa Krasnal*, dipasang di ulica Świdnicka pada 2001 untuk mengenang gerakan itu; sesudahnya kota, toko, dan lembaga menambah kurcacinya sendiri.",
+      "Di Ostrów Tumski, bagian kota tertua tempat katedral berdiri, lampu gas di jalan masih dinyalakan satu per satu oleh seorang *latarnik* (penyulut lampu) setiap senja.",
+      "Berburu krasnale adalah latihan kata kerja gerak yang sempurna: *obejść Rynek, przejść przez most, wejść do bramy, zejść nad rzekę*."
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Ulangan berjenjang — unit 9",
+   "blocks": [
+    {
+     "type": "p",
+     "text": "Tutup kolom Polandia, baca terjemahan Indonesianya, lalu susun kembali kalimatnya dari ingatan."
+    },
+    {
+     "type": "tabel",
+     "head": [
+      "Bahasa Indonesia",
+      "Polski"
+     ],
+     "rows": [
+      [
+       "Kayaknya saya bakal nulis laporan magang.",
+       "*Chyba będę pisał raport z praktyki.*"
+      ],
+      [
+       "Kedengarannya keren. Saya pasti ikut!",
+       "*Brzmi świetnie. Na pewno pojadę z tobą!*"
+      ],
+      [
+       "Mantap. Saya berencana berangkat Jumat malam, langsung sesudah kerja.",
+       "*Super. Zamierzam wyjechać w piątek wieczorem, zaraz po pracy.*"
+      ],
+      [
+       "Kalau begitu besok saya selesaikan setengah laporannya.",
+       "*W takim razie jutro napiszę połowę raportu.*"
+      ],
+      [
+       "Iya. Saya berniat naik ke Kasprowy Wierch.",
+       "*Tak. Mam zamiar wejść na Kasprowy Wierch.*"
+      ]
+     ]
+    }
+   ]
+  }
+ ],
+ "vocab": [
+  {
+   "pl": "przychodzić (przychodzę) / przyjść (przyjdę)",
+   "baca": "psyy-HO-jic / psyysyc",
+   "id": "datang, tiba (jalan kaki)"
+  },
+  {
+   "pl": "wychodzić (wychodzę) / wyjść (wyjdę)",
+   "baca": "vy-HO-jic / vyysyc",
+   "id": "keluar"
+  },
+  {
+   "pl": "wchodzić (wchodzę) / wejść (wejdę)",
+   "baca": "FHO-jic / veysyc",
+   "id": "masuk; naik (na + B.)"
+  },
+  {
+   "pl": "przechodzić (przechodzę) / przejść (przejdę)",
+   "baca": "psye-HO-jic / psyeysyc",
+   "id": "menyeberang, melewati"
+  },
+  {
+   "pl": "dochodzić (dochodzę) / dojść (dojdę)",
+   "baca": "do-HO-jic / doysyc",
+   "id": "sampai (jalan kaki)"
+  },
+  {
+   "pl": "odchodzić (odchodzę) / odejść (odejdę)",
+   "baca": "ot-HO-jic / O-deysyc",
+   "id": "pergi menjauh, meninggalkan"
+  },
+  {
+   "pl": "obchodzić (obchodzę) / obejść (obejdę)",
+   "baca": "op-HO-jic / O-beysyc",
+   "id": "mengelilingi"
+  },
+  {
+   "pl": "schodzić (schodzę) / zejść (zejdę)",
+   "baca": "SHO-jic / zeysyc",
+   "id": "turun"
+  },
+  {
+   "pl": "przyjeżdżać (przyjeżdżam) / przyjechać (przyjadę)",
+   "baca": "psyy-YEZY-djac / psyy-YE-hac",
+   "id": "tiba (berkendara)"
+  },
+  {
+   "pl": "wyjeżdżać (wyjeżdżam) / wyjechać (wyjadę)",
+   "baca": "vy-YEZY-djac / vy-YE-hac",
+   "id": "berangkat, pergi ke luar kota"
+  },
+  {
+   "pl": "odjeżdżać (odjeżdżam) / odjechać (odjadę)",
+   "baca": "od-YEZY-djac / od-YE-hac",
+   "id": "berangkat (kendaraan)"
+  },
+  {
+   "pl": "dojeżdżać (dojeżdżam) / dojechać (dojadę)",
+   "baca": "do-YEZY-djac / do-YE-hac",
+   "id": "sampai (berkendara)"
+  },
+  {
+   "pl": "wsiadać (wsiadam) / wsiąść (wsiądę) do + D.",
+   "baca": "FSYA-dac / fsyonsyc",
+   "id": "naik (kendaraan)"
+  },
+  {
+   "pl": "wysiadać (wysiadam) / wysiąść (wysiądę) z + D.",
+   "baca": "vy-SYA-dac / VY-syonsyc",
+   "id": "turun (kendaraan)"
+  },
+  {
+   "pl": "dworzec, dworca (m)",
+   "baca": "DVO-zyets, DVOR-tsa",
+   "id": "stasiun"
+  },
+  {
+   "pl": "peron (m)",
+   "baca": "PE-ron",
+   "id": "peron"
+  },
+  {
+   "pl": "wyjście (n)",
+   "baca": "VYYSY-cye",
+   "id": "pintu keluar"
+  },
+  {
+   "pl": "wejście (n)",
+   "baca": "VEYSY-cye",
+   "id": "pintu masuk"
+  },
+  {
+   "pl": "opóźnienie (n)",
+   "baca": "o-puzy-NYE-nye",
+   "id": "keterlambatan"
+  },
+  {
+   "pl": "most, mosty (m)",
+   "baca": "most, MOS-ty",
+   "id": "jembatan"
+  },
+  {
+   "pl": "wieża (ż)",
+   "baca": "VYE-zya",
+   "id": "menara"
+  },
+  {
+   "pl": "krasnal, krasnale (m)",
+   "baca": "KRAS-nal, kras-NA-le",
+   "id": "kurcaci"
+  },
+  {
+   "pl": "pieszo",
+   "baca": "PYE-syo",
+   "id": "berjalan kaki"
+  },
+  {
+   "pl": "przejazdem",
+   "baca": "psye-YAZ-dem",
+   "id": "sambil lewat"
+  },
+  {
+   "pl": "zazdrościć (zazdroszczę) — ndk (+ C.)",
+   "baca": "za-ZDROSY-cic",
+   "id": "iri (pada)"
+  }
+ ],
+ "exercises": [
+  {
+   "prompt": "Terjemahkan ke bahasa Polandia.",
+   "items": [
+    "Kereta ke Wrocław berangkat jam delapan.",
+    "Saya (perempuan) keluar dari rumah jam tujuh.",
+    "Kemarin kami menyeberangi jembatan dan sampai ke Rynek.",
+    "Masuklah, pintunya terbuka!",
+    "Kapan kamu (laki-laki) tiba di Kraków?",
+    "Kita akan turun dari trem di dekat Rynek."
+   ]
+  },
+  {
+   "prompt": "Isi titik-titiknya sesuai petunjuk di dalam kurung.",
+   "items": [
+    "Tomek ____ do Wrocławia w piątek. (przyjechać, lampau)",
+    "Ania ____ z domu o ósmej. (wyjść, lampau)",
+    "Jutro ____ do biura wcześniej. (przyjść, futur, ja)",
+    "Codziennie ____ z domu o siódmej. (wychodzić, ja)",
+    "Weszliśmy ____ wieżę. (kata depan)",
+    "Pociąg odjechał ____ peronu trzeciego. (kata depan)",
+    "Studenci ____ do sali i usiedli. (wejść, lampau)"
+   ]
+  },
+  {
+   "prompt": "Ganti gerakannya dengan lawannya (masuk ↔ keluar, naik ↔ turun, tiba ↔ berangkat) dan sesuaikan kata depan serta kasusnya.",
+   "items": [
+    "Wszedłem do sklepu. →",
+    "Wysiadła z tramwaju. →",
+    "Przyjechaliśmy do Gdańska. →",
+    "Weszła na wieżę. →",
+    "Wyjdź z pokoju! →",
+    "Pociąg przyjechał na peron pierwszy. →"
+   ]
+  },
+  {
+   "prompt": "Susun jadi kalimat yang benar.",
+   "items": [
+    "dworca / wyjdź / z / głównym / wyjściem",
+    "pieszo / tam / dojdziemy / w / minut / dwadzieścia",
+    "chwilę / Ola / na / wyszła / sklepu / do",
+    "cały / obeszliśmy / Rynek",
+    "przez / przejdziemy / potem / most"
+   ]
+  }
+ ],
+ "answers": [
+  "Pociąg do Wrocławia odjeżdża o ósmej. — Wyszłam z domu o siódmej. — Wczoraj przeszliśmy przez most i doszliśmy do Rynku. — Wejdź, drzwi są otwarte! — Kiedy przyjechałeś do Krakowa? — Wysiądziemy z tramwaju przy Rynku.",
+  "przyjechał — wyszła — przyjdę — wychodzę — na — z — weszli",
+  "Wyszedłem ze sklepu. — Wsiadła do tramwaju. — Wyjechaliśmy z Gdańska. — Zeszła z wieży. — Wejdź do pokoju! — Pociąg odjechał z peronu pierwszego.",
+  "Wyjdź z dworca głównym wyjściem. — Dojdziemy tam pieszo w dwadzieścia minut. — Ola wyszła na chwilę do sklepu. — Obeszliśmy cały Rynek. — Potem przejdziemy przez most."
+ ]
+}

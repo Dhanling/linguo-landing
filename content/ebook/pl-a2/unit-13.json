@@ -1,0 +1,733 @@
+{
+ "title": "Di dokter — rasa sakit",
+ "title_target": "Co panu dolega?",
+ "goal": "Menjelaskan keluhan kepada dokter dan apoteker, lalu memahami anjurannya. Unit ini memasang *boli mnie / bolą mnie* (orang yang sakit dalam biernik), keadaan badan dengan celownik (*jest mi niedobrze*), serta kosakata *recepta, apteka, zwolnienie lekarskie*.",
+ "bekal": [
+  "menyebut bagian tubuh yang sakit dengan *boli mnie* dan *bolą mnie*",
+  "menjelaskan gejala dan keadaan badan (*mam gorączkę, jest mi słabo*)",
+  "menebus resep dan meminta obat di apotek"
+ ],
+ "dialogs": [
+  {
+   "title": "Dialog — Co panu dolega?",
+   "intro": "Sudah tiga hari Budi demam. Tomek memaksanya pergi ke *przychodnia* (klinik) dekat rumah mereka di Podgórze. Dokter yang menerimanya seorang perempuan.",
+   "lines": [
+    {
+     "speaker": "Lekarka:",
+     "text": "Dzień dobry, proszę usiąść. Co panu dolega?",
+     "id": "Selamat pagi, silakan duduk. Apa keluhan Bapak?",
+     "literal": "baik hari, silakan duduk. apa kepada-tuan ia-mengganggu?"
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Od trzech dni bardzo źle się czuję.",
+     "id": "Sudah tiga hari saya merasa sangat tidak enak badan.",
+     "literal": "sejak tiga hari sangat buruk diri saya-merasa."
+    },
+    {
+     "speaker": "Lekarka:",
+     "text": "Co dokładnie pana boli?",
+     "id": "Apa persisnya yang sakit?",
+     "literal": "apa persisnya tuan ia-menyakiti?"
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Boli mnie głowa i gardło.",
+     "id": "Kepala dan tenggorokan saya sakit.",
+     "literal": "ia-menyakiti saya(B.) kepala dan tenggorokan."
+    },
+    {
+     "speaker": "Lekarka:",
+     "text": "Ma pan gorączkę?",
+     "id": "Bapak demam?",
+     "literal": "ia-punya tuan demam?"
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Tak, wczoraj wieczorem miałem prawie trzydzieści dziewięć stopni.",
+     "id": "Ya, kemarin malam hampir tiga puluh sembilan derajat.",
+     "literal": "ya, kemarin malam saya-punya-lampau-lk hampir tiga-puluh sembilan derajat."
+    },
+    {
+     "speaker": "Lekarka:",
+     "text": "A kaszel? Katar?",
+     "id": "Batuk? Pilek?",
+     "literal": "dan batuk? pilek?"
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Kaszlę w nocy i bolą mnie wszystkie mięśnie.",
+     "id": "Saya batuk kalau malam dan semua otot saya pegal.",
+     "literal": "saya-batuk di malam dan mereka-menyakiti saya semua otot-jamak."
+    },
+    {
+     "speaker": "Lekarka:",
+     "text": "Jak z apetytem? Nie jest panu niedobrze?",
+     "id": "Nafsu makannya bagaimana? Bapak tidak mual?",
+     "literal": "bagaimana dengan nafsu-makan? tidak adalah kepada-tuan tidak-baik?"
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Jest mi niedobrze i kręci mi się w głowie.",
+     "id": "Saya mual dan kepala saya pusing.",
+     "literal": "adalah kepada-saya tidak-baik dan ia-memutar kepada-saya diri di kepala."
+    },
+    {
+     "speaker": "Lekarka:",
+     "text": "Proszę otworzyć usta… Gardło jest bardzo czerwone. To wygląda na grypę.",
+     "id": "Tolong buka mulutnya… Tenggorokannya merah sekali. Sepertinya flu.",
+     "literal": "silakan membuka mulut… tenggorokan adalah sangat merah. itu ia-terlihat seperti flu."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Czy to coś poważnego? Jutro muszę iść na praktykę.",
+     "id": "Apa ini serius? Besok saya harus berangkat magang.",
+     "literal": "apakah itu sesuatu serius? besok saya-harus pergi ke magang."
+    },
+    {
+     "speaker": "Lekarka:",
+     "text": "Nic poważnego. Przepiszę panu leki, ale musi pan leżeć w łóżku.",
+     "id": "Tidak serius. Saya resepkan obat, tapi Bapak harus berbaring di tempat tidur.",
+     "literal": "tidak-ada serius. saya-akan-meresepkan kepada-tuan obat-jamak, tetapi ia-harus tuan berbaring di tempat-tidur."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "A praktyka? Szefowa na mnie czeka.",
+     "id": "Lalu magangnya? Bos saya menunggu.",
+     "literal": "dan magang? bos-perempuan untuk saya ia-menunggu."
+    },
+    {
+     "speaker": "Lekarka:",
+     "text": "Wystawię panu zwolnienie lekarskie na pięć dni.",
+     "id": "Saya buatkan surat keterangan sakit untuk lima hari.",
+     "literal": "saya-akan-menerbitkan kepada-tuan pembebasan dokter untuk lima hari."
+    }
+   ],
+   "notes": [
+    "**Co panu dolega?** — pertanyaan baku dokter: \"apa yang mengganggu Bapak?\". *Dolegać* diikuti celownik: *Co ci dolega?* (kepada teman), *Co pani dolega?*. Di luar ruang praktik orang lebih sering bertanya *Co ci jest?* — kamu kenapa?",
+    "**Boli mnie głowa** — susunannya kebalikan bahasa Indonesia. Yang menjadi pelaku adalah **bagian tubuh** (*głowa*, M.), sedangkan orangnya masuk biernik (*mnie*): harfiahnya \"kepala menyakiti saya\". Karena itu kata kerjanya ikut bagian tubuh: satu = *boli*, jamak = *bolą*. Kalimat *Boli mnie głowa i gardło* memakai *boli* karena kata kerjanya menyesuaikan dengan bagian tubuh terdekat.",
+    "**Ma pan gorączkę?** — demam itu \"dipunyai\": *mam gorączkę, mam katar, mam kaszel*. Suhunya disebut dalam derajat: *mam trzydzieści osiem stopni*. Orang juga bilang *mam temperaturę* untuk \"saya demam\".",
+    "**Kręci mi się w głowie** — \"di kepala saya berputar\", yaitu pusing. Bersama *jest mi niedobrze* (mual) dan *jest mi słabo* (lemas, mau pingsan), ini keadaan badan yang dinyatakan dengan **celownik**: tubuhmulah yang \"mengalami\".",
+    "**To wygląda na grypę** — *wyglądać na* + B. = kelihatannya (seperti). *Wygląda na przeziębienie* — kelihatannya cuma masuk angin.",
+    "**Wystawię panu zwolnienie** — dokter *wystawia* (menerbitkan) *zwolnienie lekarskie* dan *przepisuje* (meresepkan) obat. Sehari-hari surat sakit disebut **L4** (dibaca *el cztery*): *Jestem na L4* — saya sedang cuti sakit."
+   ],
+   "grammars": [
+    {
+     "title": "Boli mnie… / Bolą mnie…",
+     "body": [
+      "Kata kerja *boleć* hampir hanya dipakai dalam dua bentuk: *boli* (satu bagian tubuh) dan *bolą* (jamak). Orang yang merasakan sakitnya selalu dalam **biernik**."
+     ],
+     "table": {
+      "head": [
+       "Bagian tubuh",
+       "Kini",
+       "Lampau"
+      ],
+      "rows": [
+       [
+        "*głowa* (ż)",
+        "*Boli mnie głowa.*",
+        "*Bolała mnie głowa.*"
+       ],
+       [
+        "*brzuch* (m)",
+        "*Boli mnie brzuch.*",
+        "*Bolał mnie brzuch.*"
+       ],
+       [
+        "*gardło* (n)",
+        "*Boli mnie gardło.*",
+        "*Bolało mnie gardło.*"
+       ],
+       [
+        "*zęby* (jamak)",
+        "*Bolą mnie zęby.*",
+        "*Bolały mnie zęby.*"
+       ],
+       [
+        "*plecy* (jamak saja)",
+        "*Bolą mnie plecy.*",
+        "*Bolały mnie plecy.*"
+       ]
+      ]
+     },
+     "after": [
+      "Kalau yang sakit orang lain, ganti *mnie* dengan biernik lain: *boli cię, boli go, boli ją, boli nas, boli ich*. Dokter bertanya: *Co pana boli? Gdzie panią boli?* Cukup menunjuk pun bisa: *Tu mnie boli* — sakitnya di sini.",
+      "Lampaunya mengikuti jenis kelamin **bagian tubuh**, bukan orangnya: Budi mengatakan *bolała mnie głowa* (sebab *głowa* perempuan), bukan *bolał*.",
+      "Dengan kata *ból* (rasa sakit) pola ini tidak berlaku: *ból* adalah kata benda biasa, maka *Mam ból głowy* juga benar, tetapi *Boli mnie głowa* jauh lebih sering terdengar."
+     ]
+    },
+    {
+     "title": "Keadaan badan dengan celownik",
+     "body": [
+      "Keadaan yang \"menimpa\" badan dinyatakan tanpa pelaku: *jest* + celownik orangnya + kata keterangan. Bahasa Indonesia bilang \"saya mual\"; bahasa Polandia bilang \"kepada saya tidak enak\"."
+     ],
+     "table": {
+      "head": [
+       "Polski",
+       "Arti",
+       "Untuk orang lain"
+      ],
+      "rows": [
+       [
+        "*Jest mi niedobrze.*",
+        "Saya mual.",
+        "*Jest mu niedobrze.*"
+       ],
+       [
+        "*Jest mi słabo.*",
+        "Saya lemas, mau pingsan.",
+        "*Jest jej słabo.*"
+       ],
+       [
+        "*Jest mi zimno / gorąco.*",
+        "Saya kedinginan / kepanasan.",
+        "*Jest ci zimno?*"
+       ],
+       [
+        "*Kręci mi się w głowie.*",
+        "Saya pusing.",
+        "*Kręci mu się w głowie.*"
+       ],
+       [
+        "*Coś mi wpadło do oka.*",
+        "Ada yang masuk ke mata saya.",
+        "*Coś jej wpadło do oka.*"
+       ],
+       [
+        "*Co ci jest?*",
+        "Kamu kenapa?",
+        "*Co panu jest?*"
+       ]
+      ]
+     },
+     "after": [
+      "Lampaunya dengan *było*: *Wczoraj było mi niedobrze.* Futurnya dengan *będzie*: *Będzie ci zimno bez kurtki.*",
+      "Celownik yang sama muncul dalam kejadian kecil yang menimpa tubuh: *Złamał mi się ząb* — gigi saya patah."
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Dialog kedua — W aptece",
+   "intro": "Sore harinya Tomek masih di kantor, jadi Budi — berjaket tebal dan bersyal — berjalan sendiri ke apotek terdekat.",
+   "lines": [
+    {
+     "speaker": "Budi:",
+     "text": "Dzień dobry. Mam e-receptę od lekarki.",
+     "id": "Selamat sore. Saya punya e-resep dari dokter.",
+     "literal": "baik hari. saya-punya e-resep dari dokter-perempuan."
+    },
+    {
+     "speaker": "Farmaceutka:",
+     "text": "Poproszę kod z SMS-a i numer PESEL.",
+     "id": "Boleh saya minta kode dari SMS dan nomor PESEL-nya?",
+     "literal": "saya-akan-meminta kode dari SMS dan nomor PESEL."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Proszę. Jak często trzeba brać te leki?",
+     "id": "Ini. Obatnya diminum berapa kali?",
+     "literal": "silakan. bagaimana sering perlu mengambil ini obat-jamak?"
+    },
+    {
+     "speaker": "Farmaceutka:",
+     "text": "Tabletki trzy razy dziennie po jedzeniu, a syrop przed snem.",
+     "id": "Tabletnya tiga kali sehari sesudah makan, sirupnya sebelum tidur.",
+     "literal": "tablet-jamak tiga kali sehari sesudah makan, dan sirup sebelum tidur."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Czy ma pani też coś na ból gardła?",
+     "id": "Ibu juga punya sesuatu untuk sakit tenggorokan?",
+     "literal": "apakah ia-punya nyonya juga sesuatu untuk sakit tenggorokan?"
+    },
+    {
+     "speaker": "Farmaceutka:",
+     "text": "Tak, te tabletki do ssania są bardzo dobre. Boli pana coś jeszcze?",
+     "id": "Ada, tablet isap ini bagus sekali. Ada lagi yang sakit?",
+     "literal": "ya, ini tablet-jamak untuk mengisap adalah sangat baik. ia-menyakiti tuan sesuatu lagi?"
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Bolą mnie też plecy, bo ciągle leżę.",
+     "id": "Punggung saya juga pegal, soalnya berbaring terus.",
+     "literal": "mereka-menyakiti saya juga punggung, karena terus-menerus saya-berbaring."
+    },
+    {
+     "speaker": "Farmaceutka:",
+     "text": "To normalne przy grypie. Proszę dużo pić, najlepiej herbatę z miodem.",
+     "id": "Itu biasa kalau flu. Banyak-banyak minum, paling baik teh dengan madu.",
+     "literal": "itu normal pada flu. silakan banyak minum, paling-baik teh dengan madu."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Dziękuję. Zapłacę kartą.",
+     "id": "Terima kasih. Saya bayar pakai kartu.",
+     "literal": "terima-kasih. saya-akan-membayar dengan-kartu."
+    },
+    {
+     "speaker": "Farmaceutka:",
+     "text": "Proszę bardzo. Dużo zdrowia!",
+     "id": "Silakan. Semoga lekas sehat!",
+     "literal": "silakan sangat. banyak kesehatan!"
+    }
+   ],
+   "notes": [
+    "**E-recepta** — di Polandia resep kini umumnya elektronik. Pasien menerima kode empat angka lewat SMS atau surel, lalu di apotek cukup menyebut kode itu bersama nomor PESEL (nomor identitas kependudukan).",
+    "**Coś na ból gardła** — obat \"untuk\" suatu keluhan memakai *na* + B.: *coś na kaszel, na gorączkę, na katar, na ból głowy*. *Lek na grypę* = obat flu.",
+    "**Trzy razy dziennie** — aturan pakai obat: *raz dziennie* (sekali sehari), *co osiem godzin* (tiap delapan jam), *przed jedzeniem / po jedzeniu* (sebelum / sesudah makan), *przed snem* (sebelum tidur).",
+    "**Tabletki do ssania** — *do* + D. menyatakan kegunaan: *tabletki do ssania* (tablet isap; *ssanie* = mengisap), *pasta do zębów* (pasta gigi), *krem do rąk* (krim tangan).",
+    "**Dużo zdrowia!** — ucapan yang lazim untuk orang sakit, dalam dopełniacz: *Dużo zdrowia!* atau *Szybkiego powrotu do zdrowia!* (semoga lekas pulih). Jawabannya cukup *Dziękuję*.",
+    "**Zapłacę kartą** — di apotek, seperti di hampir semua toko di Polandia, kartu dan pembayaran nirsentuh diterima luas. *Zapłacę kartą* (futur dk: saya akan bayar) dan *Płacę kartą* (kala kini) sama-sama wajar di kasir; pertanyaan kasirnya biasanya *Kartą czy gotówką?* — kartu atau tunai?"
+   ],
+   "grammars": [
+    {
+     "title": "Bagian tubuh dengan jamak tak beraturan",
+     "body": [
+      "Beberapa bagian tubuh punya jamak yang harus dihafal. *Oczy, uszy, ręce* adalah sisa bentuk \"dua\" (dual) kuno bahasa Polandia — pantas, karena kita memang punya dua mata, dua telinga, dua tangan."
+     ],
+     "table": {
+      "head": [
+       "Tunggal",
+       "Jamak",
+       "Contoh"
+      ],
+      "rows": [
+       [
+        "*ręka* (ż)",
+        "*ręce*",
+        "*Bolą mnie ręce.*"
+       ],
+       [
+        "*oko* (n)",
+        "*oczy*",
+        "*Bolą mnie oczy od komputera.*"
+       ],
+       [
+        "*ucho* (n)",
+        "*uszy*",
+        "*Bolą go uszy.*"
+       ],
+       [
+        "*ząb* (m)",
+        "*zęby*",
+        "*Myję zęby dwa razy dziennie.*"
+       ],
+       [
+        "*noga* (ż)",
+        "*nogi*",
+        "*Bolą mnie nogi po górach.*"
+       ],
+       [
+        "(tidak ada)",
+        "*plecy*",
+        "*Bolą mnie plecy.*"
+       ]
+      ]
+     },
+     "after": [
+      "*Plecy* (punggung) hanya ada dalam bentuk jamak, jadi selalu *bolą*: *bolą mnie plecy*, tidak pernah *boli*.",
+      "*Ręka* berarti tangan sekaligus lengan, dan *noga* berarti kaki sekaligus tungkai. Telapak kaki punya kata sendiri: *stopa*."
+     ]
+    }
+   ]
+  }
+ ],
+ "sections": [
+  {
+   "title": "Tubuh dan gejala",
+   "blocks": [
+    {
+     "type": "tabel",
+     "head": [
+      "Polski",
+      "Cara baca",
+      "Arti"
+     ],
+     "rows": [
+      [
+       "*brzuch* (m)",
+       "bzyuh",
+       "perut"
+      ],
+      [
+       "*żołądek* (m)",
+       "zyo-WON-dek",
+       "lambung"
+      ],
+      [
+       "*kolano* (n)",
+       "ko-LA-no",
+       "lutut"
+      ],
+      [
+       "*serce* (n)",
+       "SER-tse",
+       "jantung"
+      ],
+      [
+       "*kaszel* (m)",
+       "KA-syel",
+       "batuk"
+      ],
+      [
+       "*katar* (m)",
+       "KA-tar",
+       "pilek"
+      ],
+      [
+       "*gorączka* (ż)",
+       "go-RONC-ka",
+       "demam"
+      ],
+      [
+       "*przeziębienie* (n)",
+       "psye-zyem-BYE-nye",
+       "masuk angin, selesma"
+      ],
+      [
+       "*grypa* (ż)",
+       "GRY-pa",
+       "flu"
+      ],
+      [
+       "*alergia* (ż)",
+       "a-LER-gya",
+       "alergi"
+      ],
+      [
+       "*biegunka* (ż)",
+       "bye-GUN-ka",
+       "diare"
+      ],
+      [
+       "*ból* (m)",
+       "bul",
+       "rasa sakit"
+      ],
+      [
+       "*wysypka* (ż)",
+       "vy-SYP-ka",
+       "ruam kulit"
+      ]
+     ]
+    },
+    {
+     "type": "p",
+     "text": "Untuk menanyakan kabar kesehatan ada dua pertanyaan: *Jak się czujesz?* (bagaimana badanmu?) dan *Co ci jest?* (kamu kenapa?). Jawabannya dengan *czuć się*: *Czuję się lepiej / gorzej / fatalnie* — saya merasa lebih baik / lebih buruk / parah sekali. *Się* selalu ikut: *czuję się dobrze*, bukan *czuję dobrze*. Kata benda *ból* (rasa sakit) dipakai dengan dopełniacz bagian tubuhnya: *ból głowy, ból gardła, ból brzucha*. Hasilnya selalu \"sakit + apa\": *ból zęba* (sakit gigi), *ból pleców* (sakit punggung)."
+    },
+    {
+     "type": "kotak",
+     "title": "Kalimat darurat",
+     "items": [
+      "*Proszę wezwać karetkę!* — Tolong panggil ambulans!",
+      "*Źle się czuję.* — Saya merasa tidak enak badan.",
+      "*Jestem uczulony na…* (lk) / *uczulona na…* (pr) + B. — Saya alergi terhadap…",
+      "*Mam cukrzycę / astmę.* — Saya punya diabetes / asma.",
+      "*Gdzie jest najbliższa apteka?* — Di mana apotek terdekat?",
+      "Nomor darurat umum di Polandia, seperti di seluruh Uni Eropa, adalah **112**."
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Berobat di Polandia",
+   "blocks": [
+    {
+     "type": "tabel",
+     "head": [
+      "Polski",
+      "Arti"
+     ],
+     "rows": [
+      [
+       "*przychodnia* (ż)",
+       "klinik, pusat layanan kesehatan"
+      ],
+      [
+       "*lekarz rodzinny*",
+       "dokter keluarga (dokter umum tetap)"
+      ],
+      [
+       "*lekarz specjalista*",
+       "dokter spesialis"
+      ],
+      [
+       "*skierowanie* (n)",
+       "surat rujukan"
+      ],
+      [
+       "*umówić się na wizytę*",
+       "membuat janji ke dokter"
+      ],
+      [
+       "*termin* (m)",
+       "tanggal/jam janji yang tersedia"
+      ],
+      [
+       "*recepta / e-recepta* (ż)",
+       "resep / resep elektronik"
+      ],
+      [
+       "*lek bez recepty*",
+       "obat bebas"
+      ],
+      [
+       "*zwolnienie lekarskie, L4* (n)",
+       "surat keterangan sakit"
+      ],
+      [
+       "*SOR* (szpitalny oddział ratunkowy)",
+       "IGD rumah sakit"
+      ],
+      [
+       "*pogotowie* (n)",
+       "layanan gawat darurat, ambulans"
+      ],
+      [
+       "*szpital* (m)",
+       "rumah sakit"
+      ]
+     ]
+    },
+    {
+     "type": "p",
+     "text": "Layanan kesehatan umum di Polandia dibiayai lewat NFZ (*Narodowy Fundusz Zdrowia*). Siapa yang berhak memakainya bergantung pada asuransinya, jadi mahasiswa dan pekerja asing sebaiknya menanyakan statusnya ke kampus atau tempat kerja. Banyak orang juga berobat *prywatnie* (di klinik swasta), yang biasanya lebih cepat tetapi berbayar. Untuk dokter spesialis lewat NFZ umumnya dibutuhkan *skierowanie* dari dokter keluarga."
+    },
+    {
+     "type": "kotak",
+     "title": "Di apotek dan soal L4",
+     "items": [
+      "Apotek mudah dikenali dari papan bertuliskan *Apteka*, kadang dengan lambang salib hijau. Di kota besar biasanya ada apotek yang buka sepanjang malam; cari tulisan *całodobowa* (24 jam).",
+      "Apoteker (*farmaceuta, farmaceutka*) boleh ditanya soal obat bebas: *Co pani poleca na katar?*",
+      "Surat sakit kini diterbitkan secara elektronik dan sampai ke pemberi kerja tanpa kertas; orang tetap menyebutnya **L4**, nama formulir kertas yang lama.",
+      "Obat penurun demam yang paling umum dikenal dengan nama zat aktifnya, *paracetamol* dan *ibuprofen*; apoteker langsung paham kedua kata itu."
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Ulangan berjenjang — unit 11",
+   "blocks": [
+    {
+     "type": "p",
+     "text": "Tutup kolom Polandia, baca terjemahan Indonesianya, lalu susun kembali kalimatnya dari ingatan."
+    },
+    {
+     "type": "tabel",
+     "head": [
+      "Bahasa Indonesia",
+      "Polski"
+     ],
+     "rows": [
+      [
+       "Keluar dari stasiun lewat pintu utama, lalu tunggu di depan gedung.",
+       "*Wyjdź z dworca głównym wyjściem i poczekaj przed budynkiem.*"
+      ],
+      [
+       "Jalan kaki dua puluh menit juga sampai.",
+       "*Dojdziemy tam pieszo w dwadzieścia minut.*"
+      ],
+      [
+       "Ola keluar sebentar ke toko, tapi sebentar lagi pulang.",
+       "*Ola wyszła na chwilę do sklepu, ale zaraz wróci.*"
+      ],
+      [
+       "Kami keliling seluruh Rynek dan mencari kurcaci.",
+       "*Obeszliśmy cały Rynek i szukaliśmy krasnali.*"
+      ],
+      [
+       "Hari Minggu kami naik ke menara katedral.",
+       "*W niedzielę weszliśmy na wieżę katedry.*"
+      ]
+     ]
+    }
+   ]
+  }
+ ],
+ "vocab": [
+  {
+   "pl": "boleć (boli, bolą) — ndk",
+   "baca": "BO-lec",
+   "id": "sakit, terasa nyeri"
+  },
+  {
+   "pl": "dolegać (dolega) — ndk (+ C.)",
+   "baca": "do-LE-gac",
+   "id": "mengganggu (keluhan)"
+  },
+  {
+   "pl": "czuć się (czuję się) — ndk",
+   "baca": "cuc sye",
+   "id": "merasa (badan)"
+  },
+  {
+   "pl": "lekarz, lekarze (m) / lekarka (ż)",
+   "baca": "LE-kasy, le-KA-zye / le-KAR-ka",
+   "id": "dokter"
+  },
+  {
+   "pl": "przychodnia (ż)",
+   "baca": "psyy-HOD-nya",
+   "id": "klinik"
+  },
+  {
+   "pl": "głowa (ż)",
+   "baca": "GWO-va",
+   "id": "kepala"
+  },
+  {
+   "pl": "gardło (n)",
+   "baca": "GARD-wo",
+   "id": "tenggorokan"
+  },
+  {
+   "pl": "plecy (jamak)",
+   "baca": "PLE-tsy",
+   "id": "punggung"
+  },
+  {
+   "pl": "mięsień, mięśnie (m)",
+   "baca": "MYEN-syeny, MYENSY-nye",
+   "id": "otot"
+  },
+  {
+   "pl": "oko, oczy (n)",
+   "baca": "O-ko, O-cy",
+   "id": "mata"
+  },
+  {
+   "pl": "ucho, uszy (n)",
+   "baca": "U-ho, U-syy",
+   "id": "telinga"
+  },
+  {
+   "pl": "ręka, ręce (ż)",
+   "baca": "REN-ka, REN-tse",
+   "id": "tangan, lengan"
+  },
+  {
+   "pl": "gorączka (ż)",
+   "baca": "go-RONC-ka",
+   "id": "demam"
+  },
+  {
+   "pl": "kaszleć (kaszlę) — ndk",
+   "baca": "KASY-lec",
+   "id": "batuk"
+  },
+  {
+   "pl": "brzuch (m)",
+   "baca": "bzyuh",
+   "id": "perut"
+  },
+  {
+   "pl": "noga, nogi (ż)",
+   "baca": "NO-ga, NO-gi",
+   "id": "kaki, tungkai"
+  },
+  {
+   "pl": "grypa (ż)",
+   "baca": "GRY-pa",
+   "id": "flu"
+  },
+  {
+   "pl": "niedobrze",
+   "baca": "nye-DOB-zye",
+   "id": "tidak enak; mual (jest mi…)"
+  },
+  {
+   "pl": "słabo",
+   "baca": "SWA-bo",
+   "id": "lemas"
+  },
+  {
+   "pl": "recepta (ż)",
+   "baca": "re-TSEP-ta",
+   "id": "resep"
+  },
+  {
+   "pl": "lek, leki (m)",
+   "baca": "lek, LE-ki",
+   "id": "obat"
+  },
+  {
+   "pl": "apteka (ż)",
+   "baca": "ap-TE-ka",
+   "id": "apotek"
+  },
+  {
+   "pl": "zwolnienie lekarskie (n)",
+   "baca": "zvol-NYE-nye le-KAR-skye",
+   "id": "surat keterangan sakit"
+  },
+  {
+   "pl": "wystawiać (wystawiam) / wystawić (wystawię)",
+   "baca": "vys-TA-vyac / vys-TA-vic",
+   "id": "menerbitkan (surat, resep)"
+  },
+  {
+   "pl": "przepisywać (przepisuję) / przepisać (przepiszę)",
+   "baca": "psye-pi-SY-vac / psye-PI-sac",
+   "id": "meresepkan"
+  },
+  {
+   "pl": "zdrowie (n)",
+   "baca": "ZDRO-vye",
+   "id": "kesehatan"
+  }
+ ],
+ "exercises": [
+  {
+   "prompt": "Terjemahkan ke bahasa Polandia.",
+   "items": [
+    "Kepala saya sakit.",
+    "Punggungnya (laki-laki) sakit.",
+    "Kemarin perut saya sakit.",
+    "Saya mual dan pusing.",
+    "Apakah Ibu punya sesuatu untuk batuk? (kepada apoteker)",
+    "Dokter (perempuan) menerbitkan surat sakit untuk saya."
+   ]
+  },
+  {
+   "prompt": "Isi titik-titiknya sesuai petunjuk di dalam kurung.",
+   "items": [
+    "____ mnie zęby. (boleć)",
+    "Wczoraj ____ mnie gardło. (boleć, lampau)",
+    "Co ____ dolega? (pan → C.)",
+    "Jest ____ zimno. (ja → C.)",
+    "Ania, co ____ jest? (ty → C.)",
+    "Czy boli ____ głowa? (ona → B.)",
+    "Poproszę coś ____ katar. (kata depan)"
+   ]
+  },
+  {
+   "prompt": "Ubah ke lampau. Ingat: bentuk *boleć* ikut jenis kelamin bagian tubuhnya, bukan orangnya.",
+   "items": [
+    "Boli mnie głowa. →",
+    "Bolą mnie nogi. →",
+    "Boli go brzuch. →",
+    "Boli ją ucho. →",
+    "Jest mi niedobrze. →",
+    "Mam gorączkę. (Budi) →"
+   ]
+  },
+  {
+   "prompt": "Susun jadi kalimat yang benar.",
+   "items": [
+    "gardło / mnie / głowa / i / boli",
+    "mi / niedobrze / jest",
+    "zwolnienie / panu / wystawię / lekarskie",
+    "pani / coś / czy / ma / na / gardła / ból",
+    "plecy / mnie / też / bolą"
+   ]
+  }
+ ],
+ "answers": [
+  "Boli mnie głowa. — Bolą go plecy. — Wczoraj bolał mnie brzuch. — Jest mi niedobrze i kręci mi się w głowie. — Czy ma pani coś na kaszel? — Lekarka wystawiła mi zwolnienie lekarskie.",
+  "Bolą — bolało — panu — mi — ci — ją — na",
+  "Bolała mnie głowa. — Bolały mnie nogi. — Bolał go brzuch. — Bolało ją ucho. — Było mi niedobrze. — Miałem gorączkę.",
+  "Boli mnie głowa i gardło. — Jest mi niedobrze. — Wystawię panu zwolnienie lekarskie. — Czy ma pani coś na ból gardła? — Bolą mnie też plecy."
+ ]
+}

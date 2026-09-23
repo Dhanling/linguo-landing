@@ -1,0 +1,764 @@
+{
+ "title": "Kata ganti kecil dalam semua kasus — dia, -nya, kepadanya",
+ "title_target": "Daj mi go!",
+ "goal": "Mengurus laptop, kunci, dan berkas di kantor tanpa mengulang-ulang nama bendanya. Titik tata bahasanya: **kata ganti orang di semua kasus**, bentuk pendek dan panjang (*go/jego, mu/jemu, mi/mnie, cię/ciebie*), bentuk *n-* sesudah kata depan (*do niego, z nią, dla nich, o niej*), dan urutan dua kata ganti kecil (*Daj mi go!*).",
+ "bekal": [
+  "mengganti benda dan orang dengan *go, ją, je, mu, jej, im* di kalimat mana pun",
+  "memilih bentuk panjang ketika ada tekanan, kontras, atau kata depan",
+  "menaruh dua kata ganti kecil dalam urutan yang wajar: penerima dulu, lalu bendanya"
+ ],
+ "dialogs": [
+  {
+   "title": "Dialog — Gdzie jest mój laptop?",
+   "intro": "Senin pagi di kantor Kodex. Marek, kolega dari Gdańsk, panik mencari laptopnya. Ewa dari bagian keuangan duduk di meja sebelah Budi.",
+   "lines": [
+    {
+     "speaker": "Marek:",
+     "text": "Widziałeś mój laptop? Nie mogę go nigdzie znaleźć.",
+     "id": "Kamu lihat laptop saya? Saya nggak bisa menemukannya di mana pun.",
+     "literal": "kamu-melihat-lampau-lk milikku laptop? tidak saya-bisa dia(B.) di-mana-pun menemukan."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Widziałem go rano. Pani Magdalena wzięła go na spotkanie z klientem.",
+     "id": "Tadi pagi saya lihat. Bu Magdalena membawanya ke rapat dengan klien.",
+     "literal": "saya-melihat-lampau-lk dia(B.) pagi. nyonya Magdalena ia-mengambil-lampau-pr dia(B.) untuk pertemuan dengan klien."
+    },
+    {
+     "speaker": "Marek:",
+     "text": "Z klientem? Ale na nim są wszystkie moje pliki!",
+     "id": "Dengan klien? Tapi semua berkas saya ada di situ!",
+     "literal": "dengan klien? tetapi pada dia(Ms.) mereka-adalah semua milikku berkas!"
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Spokojnie. Zadzwoń do niej. Na pewno szybko ci go odda.",
+     "id": "Tenang. Telepon dia. Pasti dia cepat mengembalikannya ke kamu.",
+     "literal": "tenang. teleponlah ke dia-pr(D.). pasti cepat kamu(C.) dia(B.) ia-akan-mengembalikan."
+    },
+    {
+     "speaker": "Marek:",
+     "text": "Dobra. A klucz do serwerowni? Masz go?",
+     "id": "Oke. Terus kunci ruang server? Ada di kamu?",
+     "literal": "baik. dan kunci ke ruang-server? kamu-punya dia(B.)?"
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Nie mam go. Dałem go wczoraj Ewie.",
+     "id": "Nggak ada. Kemarin saya kasih ke Ewa.",
+     "literal": "tidak saya-punya dia(D.). saya-memberi-lampau-lk dia(B.) kemarin Ewa(C.)."
+    },
+    {
+     "speaker": "Marek:",
+     "text": "Ewa, masz klucz do serwerowni? Daj mi go, proszę.",
+     "id": "Ewa, kamu pegang kunci ruang server? Tolong kasih ke saya.",
+     "literal": "Ewa, kamu-punya kunci ke ruang-server? berilah saya(C.) dia(B.), silakan."
+    },
+    {
+     "speaker": "Ewa:",
+     "text": "Proszę bardzo. Ale oddaj mi go przed piątą!",
+     "id": "Silakan. Tapi kembalikan ke saya sebelum jam lima!",
+     "literal": "silakan sangat. tetapi kembalikanlah saya(C.) dia(B.) sebelum kelima!"
+    },
+    {
+     "speaker": "Marek:",
+     "text": "Jasne. Oddam ci go zaraz po obiedzie.",
+     "id": "Pasti. Saya kembalikan langsung sesudah makan siang.",
+     "literal": "jelas. saya-akan-mengembalikan kamu(C.) dia(B.) segera sesudah makan-siang."
+    },
+    {
+     "speaker": "Ewa:",
+     "text": "A to czyj pendrive? Leżał pod moim biurkiem.",
+     "id": "Terus ini flashdisk siapa? Tadi tergeletak di bawah meja saya.",
+     "literal": "dan ini milik-siapa flashdisk? ia-tergeletak-lampau-lk di-bawah milikku meja."
+    },
+    {
+     "speaker": "Marek:",
+     "text": "Nie mój. Chyba Budiego.",
+     "id": "Bukan punya saya. Kayaknya punya Budi.",
+     "literal": "bukan milikku. mungkin Budi(D.)."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Tak, mój! Szukałem go od rana. Gdzie go znalazłaś?",
+     "id": "Iya, punya saya! Saya cari dari pagi. Kamu temukan di mana?",
+     "literal": "ya, milikku! saya-mencari-lampau-lk dia(D.) sejak pagi. di-mana dia(B.) kamu-menemukan-lampau-pr?"
+    },
+    {
+     "speaker": "Ewa:",
+     "text": "Pod biurkiem. Następnym razem pilnuj go lepiej!",
+     "id": "Di bawah meja. Lain kali jaga baik-baik!",
+     "literal": "di-bawah meja. berikutnya kali jagalah dia(D.) lebih-baik!"
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Dzięki! Masz u mnie kawę.",
+     "id": "Makasih! Nanti saya traktir kopi.",
+     "literal": "terima-kasih! kamu-punya di saya kopi."
+    }
+   ],
+   "notes": [
+    "**Nie mogę go nigdzie znaleźć** — *go* menggantikan *laptop* (m). Kata ganti kecil ini tidak menempel di ujung seperti \"-nya\" dalam \"menemukannya\"; ia justru maju ke **depan**, sedekat mungkin ke kata pertama yang bertekanan. Perhatikan juga negasi ganda: *nigdzie* (di mana pun) tetap butuh *nie*.",
+    "**Nie mam go** — sesudah penyangkalan sasaran pindah ke *dopełniacz*. Untuk *on* dan *ono* bentuk D. dan B. sama-sama *go*, jadi perubahannya tak kelihatan. Untuk *ona* kelihatan: *Mam ją* → *Nie mam jej*.",
+    "**Dałem go wczoraj Ewie** — penerima memakai celownik (*Ewa → Ewie*, seperti *mama → mamie* di unit 5), dan *go* berdiri tepat sesudah kata kerja, mendahului keterangan waktu dan nama.",
+    "**Daj mi go, oddam ci go** — dua kata ganti kecil berurutan: **penerima (C.) dulu, lalu bendanya (B.)**. *Daj mi go*, bukan *Daj go mi*. Urutan ini hampir tak pernah berubah, jadi hafalkan sebagai satu bunyi: *mi-go, ci-go, mu-go, jej-go*.",
+    "**Na nim są wszystkie moje pliki** — sesudah kata depan, kata ganti orang ketiga berubah jadi bentuk ber-*n*: *on → na nim*. Ini akan dibahas di dialog kedua.",
+    "**Masz u mnie kawę** — harfiahnya \"kamu punya kopi di saya\": cara santai mengatakan \"aku utang budi, nanti kutraktir\". Sesudah kata depan *u*, dipakai bentuk panjang *mnie*."
+   ],
+   "grammars": [
+    {
+     "title": "Kata ganti orang di enam kasus",
+     "body": [
+      "Tabel ini terlihat penuh, tetapi separuhnya sudah kamu kenal dari A1. Di kolom yang berisi garis miring, bentuk kiri adalah **bentuk pendek** (tanpa tekanan), bentuk kanan **bentuk panjang**, dan bentuk ber-*n* hanya muncul sesudah kata depan."
+     ],
+     "table": {
+      "head": [
+       "M.",
+       "D.",
+       "C.",
+       "B.",
+       "N.",
+       "Ms."
+      ],
+      "rows": [
+       [
+        "*ja*",
+        "*mnie*",
+        "*mi / mnie*",
+        "*mnie*",
+        "*mną*",
+        "*mnie*"
+       ],
+       [
+        "*ty*",
+        "*cię / ciebie*",
+        "*ci / tobie*",
+        "*cię / ciebie*",
+        "*tobą*",
+        "*tobie*"
+       ],
+       [
+        "*on*",
+        "*go / jego / niego*",
+        "*mu / jemu / niemu*",
+        "*go / jego / niego*",
+        "*nim*",
+        "*nim*"
+       ],
+       [
+        "*ona*",
+        "*jej / niej*",
+        "*jej / niej*",
+        "*ją / nią*",
+        "*nią*",
+        "*niej*"
+       ],
+       [
+        "*ono*",
+        "*go / jego / niego*",
+        "*mu / jemu / niemu*",
+        "*je / nie*",
+        "*nim*",
+        "*nim*"
+       ],
+       [
+        "*my*",
+        "*nas*",
+        "*nam*",
+        "*nas*",
+        "*nami*",
+        "*nas*"
+       ],
+       [
+        "*wy*",
+        "*was*",
+        "*wam*",
+        "*was*",
+        "*wami*",
+        "*was*"
+       ],
+       [
+        "*oni*",
+        "*ich / nich*",
+        "*im / nim*",
+        "*ich / nich*",
+        "*nimi*",
+        "*nich*"
+       ],
+       [
+        "*one*",
+        "*ich / nich*",
+        "*im / nim*",
+        "*je / nie*",
+        "*nimi*",
+        "*nich*"
+       ]
+      ]
+     },
+     "after": [
+      "**Hafalkan per kolom, bukan per baris.** Kolom C. saja sudah memberi sebagian besar kalimat sehari-hari: *mi, ci, mu, jej, nam, wam, im*. Kolom B. untuk orang ketiga: *go, ją, je, ich*.",
+      "*Ono* hanya berbeda dari *on* di biernik: *je* (*Widzę dziecko → Widzę je*). Dan *je* juga dipakai untuk jamak yang **bukan** orang laki-laki: *Widzę książki → Widzę je*. Untuk orang laki-laki: *Widzę studentów → Widzę ich*.",
+      "Miejscownik tidak punya bentuk pendek, karena miejscownik selalu datang sesudah kata depan: *o mnie, o tobie, o nim, o niej, o nas, o nich*."
+     ]
+    },
+    {
+     "title": "Pendek atau panjang?",
+     "body": [
+      "Bentuk panjang bukan bentuk sopan. Ia dipakai karena **posisinya menuntut tekanan**. Empat situasi ini mencakup hampir semuanya."
+     ],
+     "table": {
+      "head": [
+       "Situasi",
+       "Bentuk",
+       "Contoh"
+      ],
+      "rows": [
+       [
+        "di tengah kalimat, tanpa tekanan",
+        "pendek",
+        "*Widziałem go. Oddam ci go.*"
+       ],
+       [
+        "kontras atau penekanan",
+        "panjang",
+        "*Ciebie szukałem, nie jego!*"
+       ],
+       [
+        "jawaban satu kata",
+        "panjang",
+        "*Komu to dałeś? — Jemu.*"
+       ],
+       [
+        "sesudah kata depan",
+        "panjang (orang ketiga dengan *n-*)",
+        "*do mnie, dla ciebie, z nim, o niej*"
+       ]
+      ]
+     },
+     "after": [
+      "**Jangan membuka kalimat dengan bentuk pendek.** *Go widziałem* salah. Kalau ingin menaruh kata ganti di depan untuk menekankannya, pakai bentuk panjang: *Jego widziałem, jej nie*.",
+      "*Mnie* bekerja ganda: ia bentuk D., B., dan Ms., sekaligus bentuk panjang C. Jadi *Mnie się to nie podoba* (\"saya sih tidak suka\") adalah versi bertekanan dari *Nie podoba mi się to*."
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Dialog kedua — Wyśle mu go pan dzisiaj?",
+   "intro": "Sesudah makan siang, pani Magdalena menghampiri meja Budi. Seperti sejak hari pertama, keduanya saling menyapa dengan *pan/pani*.",
+   "lines": [
+    {
+     "speaker": "Magdalena:",
+     "text": "Panie Budi, ma pan chwilę? Dzwonił do mnie klient z Gdańska.",
+     "id": "Mas Budi, ada waktu sebentar? Klien dari Gdańsk tadi menelepon saya.",
+     "literal": "tuan Budi, ia-punya tuan sebentar? ia-menelepon-lampau-lk ke saya klien dari Gdańsk."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Tak, oczywiście. Czego od nas chce?",
+     "id": "Ya, tentu. Dia mau apa dari kita?",
+     "literal": "ya, tentu-saja. apa dari kami ia-mau?"
+    },
+    {
+     "speaker": "Magdalena:",
+     "text": "Chce zobaczyć prototyp. Wyśle mu go pan dzisiaj?",
+     "id": "Dia mau lihat prototipenya. Hari ini bisa Anda kirim ke dia?",
+     "literal": "ia-mau melihat prototipe. ia-akan-mengirim dia(C.) dia(B.) tuan hari-ini?"
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Jasne. Wysłać go jemu czy jego asystentce?",
+     "id": "Tentu. Dikirim ke dia langsung atau ke asistennya?",
+     "literal": "jelas. mengirim dia(B.) dia(C.) atau miliknya-lk asisten(C.)?"
+    },
+    {
+     "speaker": "Magdalena:",
+     "text": "Jemu, nie jej. Ona jest w tym tygodniu na urlopie.",
+     "id": "Ke dia, bukan ke asistennya. Minggu ini dia sedang cuti.",
+     "literal": "dia-lk(C.), bukan dia-pr(C.). dia adalah di ini minggu pada cuti."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Dobrze. A dokumentacja? Też mu ją wysłać?",
+     "id": "Baik. Dokumentasinya? Dikirim ke dia juga?",
+     "literal": "baik. dan dokumentasi? juga dia(C.) dia-pr(B.) mengirim?"
+    },
+    {
+     "speaker": "Magdalena:",
+     "text": "Jeszcze nie. Wciąż nad nią pracujemy.",
+     "id": "Belum. Kita masih mengerjakannya.",
+     "literal": "masih tidak. terus-menerus di-atas dia-pr(N.) kami-bekerja."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Rozumiem. A w razie problemów mogę do pani zadzwonić?",
+     "id": "Paham. Kalau ada masalah, boleh saya telepon Ibu?",
+     "literal": "saya-mengerti. dan dalam hal masalah saya-bisa ke nyonya menelepon?"
+    },
+    {
+     "speaker": "Magdalena:",
+     "text": "Oczywiście. Albo proszę zapytać Marka, on wie o nim wszystko.",
+     "id": "Tentu. Atau tanya saja Marek, dia tahu segalanya soal prototipe itu.",
+     "literal": "tentu-saja. atau silakan bertanya Marek, dia tahu tentang dia(Ms.) semuanya."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Dobrze, porozmawiam z nim po obiedzie.",
+     "id": "Baik, saya bicara dengan dia sesudah makan siang.",
+     "literal": "baik, saya-akan-berbicara dengan dia(N.) sesudah makan-siang."
+    },
+    {
+     "speaker": "Magdalena:",
+     "text": "Dziękuję. Liczę na pana.",
+     "id": "Terima kasih. Saya andalkan Anda.",
+     "literal": "terima-kasih. saya-menghitung pada tuan."
+    }
+   ],
+   "notes": [
+    "**Wyśle mu go pan dzisiaj?** — futur perfektif orang ketiga (karena sapaan *pan*) ditambah dua kata ganti kecil. Urutannya sama dengan *Daj mi go*: penerima *mu*, lalu benda *go*, dan keduanya menempel di belakang kata kerja, sebelum *pan*. Kepada teman cukup *Wyślesz mu go dzisiaj?*",
+    "**Jemu czy jego asystentce?** — ada pilihan, jadi ada kontras, dan kontras menuntut bentuk panjang *jemu*. Jawabannya pun panjang: *Jemu, nie jej*. Kalimat *Wysłać mu czy asystentce?* akan terdengar janggal.",
+    "**jego asystentce** — di sini *jego* adalah kata milik (\"asistennya\"), bukan kata ganti. Kata milik *jego, jej, ich* **tidak pernah berubah** dan tidak pernah mendapat *n-*: *u jego asystentki, z jej mamą*.",
+    "**Wciąż nad nią pracujemy** — *pracować nad* + N. (mengerjakan sesuatu). *Dokumentacja* perempuan, jadi *nad nią*.",
+    "**Do pani** — sapaan hormat *pani* juga berubah kasus: *pani* (D., C., Ms.), *panią* (B., N.). *Pan*: *pana* (D., B.), *panu* (C., Ms.), *panem* (N.). Dalam dialog keduanya ditulis dengan huruf kecil; huruf besar lazim dipakai di surat atau surel sebagai tanda hormat.",
+    "**Liczę na pana** — *liczyć na* + B. (mengandalkan). Kepada teman: *Liczę na ciebie*. Sesudah kata depan selalu dipakai bentuk panjang: *na ciebie*, bukan *na cię*."
+   ],
+   "grammars": [
+    {
+     "title": "Bentuk n- sesudah kata depan",
+     "body": [
+      "Kata ganti orang ketiga yang berawal dengan vokal atau *j-* (*jego, jemu, jej, ją, je, ich, im*) mendapat *n-* di depannya setiap kali berdiri langsung sesudah kata depan. Bentuk untuk *ja, ty, my, wy* tidak berubah."
+     ],
+     "table": {
+      "head": [
+       "Kata depan + kasus",
+       "on / ono",
+       "ona",
+       "oni / one"
+      ],
+      "rows": [
+       [
+        "*do, dla, u, od, bez* + D.",
+        "*do niego*",
+        "*do niej*",
+        "*do nich*"
+       ],
+       [
+        "*z, nad, pod, przed, za* + N.",
+        "*z nim*",
+        "*z nią*",
+        "*z nimi*"
+       ],
+       [
+        "*o, na, w, przy, po* + Ms.",
+        "*o nim*",
+        "*o niej*",
+        "*o nich*"
+       ],
+       [
+        "*na, przez, za* + B.",
+        "*na niego*",
+        "*na nią*",
+        "*na nich / na nie*"
+       ],
+       [
+        "*dzięki, ku* + C.",
+        "*dzięki niemu*",
+        "*dzięki niej*",
+        "*dzięki nim*"
+       ]
+      ]
+     },
+     "after": [
+      "**Jebakan yang paling sering:** *u jej mamy* (di rumah ibunya) dan *u niej* (di rumah dia) sama-sama benar, tetapi artinya lain. Yang pertama kata milik (tak berubah), yang kedua kata ganti (mendapat *n-*).",
+      "Tanpa kata depan, bentuknya kembali biasa: *do niego* tetapi *Pomagam mu*, *Znam go*, *Widzę ją*. Jadi *n-* bukan milik kata gantinya, melainkan milik kata depan di depannya."
+     ]
+    }
+   ]
+  }
+ ],
+ "sections": [
+  {
+   "title": "Barang kantor dan kata gantinya",
+   "blocks": [
+    {
+     "type": "tabel",
+     "head": [
+      "Polski",
+      "Arti",
+      "Diganti kata ganti"
+     ],
+     "rows": [
+      [
+       "*laptop* (m)",
+       "laptop",
+       "*Nie mogę go włączyć.*"
+      ],
+      [
+       "*klucz* (m)",
+       "kunci",
+       "*Daj mi go.*"
+      ],
+      [
+       "*plik* (m)",
+       "berkas digital",
+       "*Wyślij mi go mejlem.*"
+      ],
+      [
+       "*mejl* (m)",
+       "surel",
+       "*Odpisz na niego dzisiaj.*"
+      ],
+      [
+       "*drukarka* (ż)",
+       "printer",
+       "*Nie umiem jej obsługiwać.*"
+      ],
+      [
+       "*umowa* (ż)",
+       "kontrak",
+       "*Szefowa podpisała ją wczoraj.*"
+      ],
+      [
+       "*hasło* (n)",
+       "kata sandi",
+       "*Podaj mi je, proszę.*"
+      ],
+      [
+       "*biurko* (n)",
+       "meja kerja",
+       "*Stoi na nim kubek.*"
+      ],
+      [
+       "*dokumenty* (jamak)",
+       "dokumen",
+       "*Wydrukuj mi je.*"
+      ],
+      [
+       "*klienci* (jamak lk)",
+       "para klien",
+       "*Spotkam się z nimi jutro.*"
+      ],
+      [
+       "*spotkanie* (n)",
+       "rapat",
+       "*Przełożyli je na piątek.*"
+      ],
+      [
+       "*szef / szefowa*",
+       "atasan lk / pr",
+       "*Powiedz mu. Powiedz jej.*"
+      ]
+     ]
+    },
+    {
+     "type": "p",
+     "text": "Kolom ketiga adalah latihan tersembunyi. *Hasło, biurko, spotkanie* netral, jadi B.-nya *je*; *dokumenty* jamak bukan orang, jadi juga *je*; *klienci* orang laki-laki, jadi *ich* (dan *z nimi* sesudah kata depan). Perhatikan juga *Nie umiem jej obsługiwać*: *obsługiwać drukarkę* (B.) disangkal, jadi *ją* berubah jadi *jej*. Di kantor Polandia kamu akan mendengar *mejl* di samping *e-mail* dan *mail*; ketiganya dimengerti, dan *mejl* adalah ejaan yang diterima kamus."
+    },
+    {
+     "type": "kotak",
+     "title": "Sapaan di kantor: *pan/pani* atau *ty*?",
+     "items": [
+      "Di kantor Polandia, orang yang baru bertemu biasanya mulai dengan *pan/pani*. Peralihan ke *ty* (*przejść na ty*) umumnya ditawarkan oleh yang lebih tua atau lebih tinggi jabatannya, misalnya dengan kalimat *Mów mi Magda*.",
+      "Di perusahaan IT dan perusahaan rintisan, *ty* sering berlaku sejak hari pertama. Kalau ragu, pakai *pan/pani* dan ikuti cara rekanmu menyapamu.",
+      "Menyapa langsung dengan nama keluarga (*panie Kowalski*) terdengar kasar. Yang wajar: *proszę pana / proszę pani*, gelar (*panie dyrektorze*), atau *pan/pani* + nama depan dalam wołacz (*pani Magdaleno, panie Marku*)."
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Ungkapan sehari-hari yang memuat kata ganti",
+   "blocks": [
+    {
+     "type": "tabel",
+     "head": [
+      "Polski",
+      "Harfiah",
+      "Maksudnya"
+     ],
+     "rows": [
+      [
+       "*Co ci jest?*",
+       "apa kamu(C.) ada?",
+       "Kamu kenapa?"
+      ],
+      [
+       "*Nic mi nie jest.*",
+       "tidak-apa-pun saya(C.) tidak ada",
+       "Saya nggak apa-apa."
+      ],
+      [
+       "*Wszystko mi jedno.*",
+       "semua saya(C.) satu",
+       "Sama saja buat saya, terserah."
+      ],
+      [
+       "*Daj mi spokój!*",
+       "berilah saya ketenangan",
+       "Jangan ganggu saya!"
+      ],
+      [
+       "*Nie ma go.*",
+       "tidak ada dia(D.)",
+       "Dia sedang tidak ada."
+      ],
+      [
+       "*Szkoda mi jej.*",
+       "sayang saya(C.) dia(D.)",
+       "Kasihan dia (pr)."
+      ],
+      [
+       "*Między nami…*",
+       "di-antara kita(N.)",
+       "Antara kita saja…"
+      ],
+      [
+       "*Dzięki tobie!*",
+       "berkat kamu(C.)",
+       "Berkat kamu!"
+      ],
+      [
+       "*Mam cię!*",
+       "saya-punya kamu",
+       "Ketahuan! Kena kau!"
+      ],
+      [
+       "*Zostaw mnie w spokoju.*",
+       "tinggalkanlah saya dalam ketenangan",
+       "Biarkan saya sendiri."
+      ]
+     ]
+    },
+    {
+     "type": "p",
+     "text": "Separuh ungkapan di atas memakai celownik untuk orang yang **mengalami** sesuatu: *Co ci jest?* bukan \"apa kamu\", melainkan \"apa yang ada padamu\". Pola ini sudah kamu lihat di *podoba mi się* dan *jest mi zimno*; di sini ia muncul dalam kalimat yang sangat sering didengar. *Nie ma go* dan *nie ma jej* memakai *dopełniacz*, karena *nie ma* selalu diikuti D."
+    },
+    {
+     "type": "kotak",
+     "title": "Menelepon ke kantor",
+     "items": [
+      "*Czy zastałem pana Marka?* (penelepon lk) / *Czy zastałam…?* (pr) — \"Apakah Pak Marek ada?\" Ungkapan tetap yang sangat sopan, harfiahnya \"apakah saya mendapati…\".",
+      "*Niestety, nie ma go dzisiaj. Coś mu przekazać?* — Sayang, beliau tidak ada hari ini. Ada pesan untuknya?",
+      "*Czy mogę zostawić mu wiadomość?* — Boleh saya titip pesan untuknya?",
+      "*Oddzwonię do niego później.* — Nanti saya telepon dia lagi."
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Ulangan berjenjang — unit 4",
+   "blocks": [
+    {
+     "type": "p",
+     "text": "Tutup kolom Polandia, baca terjemahan Indonesianya, lalu susun kembali kalimatnya dari ingatan."
+    },
+    {
+     "type": "tabel",
+     "head": [
+      "Bahasa Indonesia",
+      "Polski"
+     ],
+     "rows": [
+      [
+       "Waktu aku kecil, kami tinggal dekat laut.",
+       "*Kiedy byłem mały, mieszkaliśmy blisko morza.*"
+      ],
+      [
+       "Tiap hari main bola sama teman-teman di jalan.",
+       "*Codziennie grałem z kolegami w piłkę na ulicy.*"
+      ],
+      [
+       "Lama aku nggak sanggup berenang, soalnya takut air.",
+       "*Długo nie potrafiłam pływać, bo bałam się wody.*"
+      ],
+      [
+       "Kalau aku, waktu kecil sering naik gunung sama bapak.",
+       "*A ja w dzieciństwie często chodziłem z tatą po górach.*"
+      ],
+      [
+       "Aku bisa masak, soalnya diajari ibu.",
+       "*Umiem gotować, bo mama mnie nauczyła.*"
+      ]
+     ]
+    }
+   ]
+  }
+ ],
+ "vocab": [
+  {
+   "pl": "laptop, laptopa (m)",
+   "baca": "LAP-top, lap-TO-pa",
+   "id": "laptop"
+  },
+  {
+   "pl": "klucz, klucza (m)",
+   "baca": "kluc, KLU-ca",
+   "id": "kunci"
+  },
+  {
+   "pl": "plik, pliku (m)",
+   "baca": "plik, PLI-ku",
+   "id": "berkas digital"
+  },
+  {
+   "pl": "serwerownia (ż)",
+   "baca": "ser-ve-ROV-nya",
+   "id": "ruang server"
+  },
+  {
+   "pl": "biurko (n)",
+   "baca": "BYUR-ko",
+   "id": "meja kerja"
+  },
+  {
+   "pl": "pendrive, pendrive'a (m)",
+   "baca": "PEN-drayf, pen-DRAY-va",
+   "id": "flashdisk"
+  },
+  {
+   "pl": "hasło (n)",
+   "baca": "HAS-wo",
+   "id": "kata sandi"
+  },
+  {
+   "pl": "umowa (ż)",
+   "baca": "u-MO-va",
+   "id": "kontrak"
+  },
+  {
+   "pl": "klient, klienci (m)",
+   "baca": "KLI-yent, kli-YEN-ci",
+   "id": "klien, pelanggan"
+  },
+  {
+   "pl": "asystentka (ż)",
+   "baca": "a-sys-TENT-ka",
+   "id": "asisten (pr)"
+  },
+  {
+   "pl": "urlop, urlopu (m)",
+   "baca": "UR-lop, ur-LO-pu",
+   "id": "cuti"
+  },
+  {
+   "pl": "dokumentacja (ż)",
+   "baca": "do-ku-men-TA-tsya",
+   "id": "dokumentasi"
+  },
+  {
+   "pl": "prototyp (m)",
+   "baca": "pro-TO-typ",
+   "id": "prototipe"
+  },
+  {
+   "pl": "dawać (daję) / dać (dam)",
+   "baca": "DA-vac (DA-ye) / dac (dam)",
+   "id": "memberi"
+  },
+  {
+   "pl": "oddawać (oddaję) / oddać (oddam)",
+   "baca": "od-DA-vac (od-DA-ye) / OD-dac (OD-dam)",
+   "id": "mengembalikan"
+  },
+  {
+   "pl": "wysyłać (wysyłam) / wysłać (wyślę)",
+   "baca": "vy-SY-wac (vy-SY-wam) / VYS-wac (VY-syle)",
+   "id": "mengirim"
+  },
+  {
+   "pl": "brać (biorę) / wziąć (wezmę)",
+   "baca": "brac (BYO-re) / vzyonc (VEZ-me)",
+   "id": "mengambil"
+  },
+  {
+   "pl": "szukać (+ D.) — ndk",
+   "baca": "SYU-kac",
+   "id": "mencari"
+  },
+  {
+   "pl": "pilnować (+ D.) — ndk",
+   "baca": "pil-NO-vac",
+   "id": "menjaga, mengawasi"
+  },
+  {
+   "pl": "liczyć na (+ B.) — ndk",
+   "baca": "LI-cyc na",
+   "id": "mengandalkan"
+  },
+  {
+   "pl": "pracować nad (+ N.) — ndk",
+   "baca": "pra-TSO-vac nat",
+   "id": "mengerjakan"
+  },
+  {
+   "pl": "nigdzie",
+   "baca": "NIG-jye",
+   "id": "di mana pun (dengan *nie*)"
+  },
+  {
+   "pl": "wciąż",
+   "baca": "fcyonsy",
+   "id": "masih, terus-menerus"
+  },
+  {
+   "pl": "w razie (+ D.)",
+   "baca": "v RA-zye",
+   "id": "kalau terjadi, jika ada"
+  },
+  {
+   "pl": "spokojnie",
+   "baca": "spo-KOY-nye",
+   "id": "tenang"
+  }
+ ],
+ "exercises": [
+  {
+   "prompt": "Terjemahkan ke bahasa Polandia. Benda yang dimaksud ada di dalam kurung; pakai kata ganti, bukan nama bendanya.",
+   "items": [
+    "Saya nggak bisa menemukannya di mana pun. (laptopnya)",
+    "Kemarin saya kasih ke Ewa. (kuncinya; pembicara lk)",
+    "Tolong kirimkan ke saya. (berkasnya; kepada teman)",
+    "Besok saya bicara dengan dia. (*dia* perempuan)",
+    "Ini untuk kamu, bukan untuk dia. (*dia* laki-laki)",
+    "Dia tidak ada hari ini. (*dia* perempuan)"
+   ]
+  },
+  {
+   "prompt": "Isi dengan kata ganti dalam kasus yang tepat.",
+   "items": [
+    "Widzisz Anię? Tak, widzę ____. (ona, B.)",
+    "Nie znam Tomka. Nie znam ____. (on, sesudah penyangkalan)",
+    "To prezent dla Kasi. To prezent dla ____. (ona, sesudah kata depan)",
+    "Idę do Marka. Idę do ____. (on, sesudah kata depan)",
+    "Rozmawiałem z klientami. Rozmawiałem z ____. (oni, N.)",
+    "Pomagam mamie. Pomagam ____. (ona, C.)",
+    "____ szukałem, nie jego! (ty, bentuk panjang)"
+   ]
+  },
+  {
+   "prompt": "Ganti **dua** kata benda yang dicetak miring dengan kata ganti. Contoh: *Dałem Ewie klucz.* → *Dałem jej go.*",
+   "items": [
+    "Pokażę *Tomkowi mieszkanie*.",
+    "Wysłałam *klientom umowę*.",
+    "Oddaj *Markowi laptop*!",
+    "Kupiłem *Ani kwiaty*.",
+    "Daj *dziecku jabłko*.",
+    "Opowiem *kolegom* o *projekcie*."
+   ]
+  },
+  {
+   "prompt": "Susun jadi kalimat yang benar.",
+   "items": [
+    "go / nie / znaleźć / mogę / nigdzie",
+    "mi / oddaj / piątą / przed / go",
+    "z / po / porozmawiam / obiedzie / nim",
+    "ci / zaraz / go / oddam",
+    "nią / nad / pracujemy / wciąż"
+   ]
+  }
+ ],
+ "answers": [
+  "Nie mogę go nigdzie znaleźć. — Dałem go wczoraj Ewie. — Wyślij mi go, proszę. — Jutro porozmawiam z nią. — To dla ciebie, nie dla niego. — Nie ma jej dzisiaj (atau: Dzisiaj jej nie ma).",
+  "ją — go — niej — niego — nimi — jej — Ciebie",
+  "Pokażę mu je. — Wysłałam im ją. — Oddaj mu go! — Kupiłem jej je. — Daj mu je. — Opowiem im o nim.",
+  "Nie mogę go nigdzie znaleźć. — Oddaj mi go przed piątą. — Porozmawiam z nim po obiedzie. — Oddam ci go zaraz (atau: Zaraz ci go oddam). — Wciąż nad nią pracujemy."
+ ]
+}

@@ -1,0 +1,705 @@
+{
+ "title": "Menghitung orang dan barang — angka & kasus",
+ "title_target": "Pięciu studentów, dwie koleżanki",
+ "goal": "Menghitung orang dan barang di rapat, di restoran, dan di kantor tanpa salah kasus. Unit ini memasang angka + kasus lengkap: 2–4 vs 5+ vs 12–14, *dwaj/dwóch/dwie/dwa*, angka untuk orang laki-laki (*pięciu studentów*), kata kerja tunggal netral sesudah 5+, dan mengenalkan *dwoje dzieci*.",
+ "bekal": [
+  "memilih bentuk angka yang cocok dengan jenis kata benda",
+  "memilih kasus kata benda sesudah 2–4, 5 ke atas, dan 12–14",
+  "menyesuaikan kata kerja dengan kelompok yang dihitung (*przyszły, przyszli, przyszło*)"
+ ],
+ "dialogs": [
+  {
+   "title": "Dialog — Ilu nas jest?",
+   "intro": "Senin pagi, rapat mingguan di Kodex. Pani Magdalena membuka rapat dengan menghitung siapa saja yang datang. Marek, programmer utama, memegang catatan.",
+   "lines": [
+    {
+     "speaker": "Magdalena:",
+     "text": "Dzień dobry wszystkim. W zeszłym tygodniu przyszło tylko pięć osób.",
+     "id": "Selamat pagi semuanya. Minggu lalu yang datang cuma lima orang.",
+     "literal": "baik hari kepada-semua. di lalu minggu datang-lampau hanya lima orang."
+    },
+    {
+     "speaker": "Marek:",
+     "text": "Dziś jest nas więcej: pięciu programistów, dwie graficzki i jeden tester.",
+     "id": "Hari ini kita lebih banyak: lima programmer, dua desainer grafis, dan satu penguji.",
+     "literal": "hari-ini adalah kita lebih-banyak: lima programmer, dua desainer-pr dan satu penguji."
+    },
+    {
+     "speaker": "Magdalena:",
+     "text": "A gdzie są dwaj nowi praktykanci?",
+     "id": "Lalu di mana dua anak magang yang baru?",
+     "literal": "dan di-mana mereka-adalah dua baru anak-magang?"
+    },
+    {
+     "speaker": "Marek:",
+     "text": "Dwóch nowych praktykantów przyjdzie po obiedzie.",
+     "id": "Dua anak magang baru datang sesudah makan siang.",
+     "literal": "dua baru anak-magang(D.) ia-akan-datang sesudah makan-siang."
+    },
+    {
+     "speaker": "Magdalena:",
+     "text": "Dobrze. W tym miesiącu mamy trzy nowe projekty i czterech nowych klientów.",
+     "id": "Baik. Bulan ini kita punya tiga proyek baru dan empat klien baru.",
+     "literal": "baik. di ini bulan kami-punya tiga baru proyek dan empat baru klien(D.)."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "A ile błędów znaleźliśmy w nowej aplikacji?",
+     "id": "Lalu berapa bug yang kita temukan di aplikasi baru?",
+     "literal": "dan berapa kesalahan kami-menemukan-lampau di baru aplikasi?"
+    },
+    {
+     "speaker": "Marek:",
+     "text": "Znaleźliśmy dwadzieścia dwa błędy, w tym dwanaście poważnych.",
+     "id": "Kita menemukan dua puluh dua bug, dua belas di antaranya serius.",
+     "literal": "kami-menemukan-lampau dua-puluh dua kesalahan, termasuk dua-belas serius(D.)."
+    },
+    {
+     "speaker": "Magdalena:",
+     "text": "Dwanaście? To dużo. Ile osób nad tym pracuje?",
+     "id": "Dua belas? Banyak itu. Berapa orang yang menanganinya?",
+     "literal": "dua-belas? itu banyak. berapa orang atas itu ia-bekerja?"
+    },
+    {
+     "speaker": "Marek:",
+     "text": "Trzy osoby: ja, Budi i nasz tester.",
+     "id": "Tiga orang: saya, Budi, dan penguji kita.",
+     "literal": "tiga orang: saya, Budi dan kami-punya penguji."
+    },
+    {
+     "speaker": "Magdalena:",
+     "text": "To za mało. Od jutra będzie nad tym pracować pięć osób.",
+     "id": "Terlalu sedikit. Mulai besok lima orang akan menanganinya.",
+     "literal": "itu terlalu sedikit. dari besok akan-ada atas itu bekerja lima orang."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Czy dwaj praktykanci też nam pomogą?",
+     "id": "Apakah dua anak magang itu juga akan membantu kita?",
+     "literal": "apakah dua anak-magang juga kepada-kami mereka-akan-membantu?"
+    },
+    {
+     "speaker": "Magdalena:",
+     "text": "Tak. A w piątek zapraszam wszystkich na kolację!",
+     "id": "Ya. Dan hari Jumat saya traktir semuanya makan malam!",
+     "literal": "ya. dan di Jumat saya-mengundang semua untuk makan-malam!"
+    },
+    {
+     "speaker": "Marek:",
+     "text": "Czyli razem z panią jedenaście osób. Budi, zarezerwujesz stolik?",
+     "id": "Jadi dengan Ibu, total sebelas orang. Budi, kamu yang pesan meja?",
+     "literal": "jadi bersama dengan nyonya sebelas orang. Budi, kamu-akan-memesan meja?"
+    }
+   ],
+   "notes": [
+    "**Przyszło pięć osób** — sesudah 5 ke atas kata bendanya dopełniacz jamak (*osób*), dan kata kerjanya **tunggal netral**: *przyszło, było, pracuje*. Angka besar diperlakukan seperti satu \"jumlah\", bukan seperti pelaku jamak.",
+    "**Jest nas więcej** — cara menghitung kelompok sendiri: *jest nas…* (kita ada…), *było nas…* (waktu itu kita ada…). Pertanyaannya: *Ilu nas jest?* — kita ada berapa orang?",
+    "**Dwaj nowi praktykanci / dwóch nowych praktykantów** — untuk 2–4 laki-laki ada dua pilihan yang sama benarnya: *dwaj* + M. jamak dengan kata kerja jamak (*dwaj praktykanci przyjdą*), atau *dwóch* + D. jamak dengan kata kerja tunggal (*dwóch praktykantów przyjdzie*). Dalam percakapan, *dwóch* lebih sering.",
+    "**Czterech nowych klientów** — *klient* adalah orang (laki-laki atau campuran), jadi *czterech* + D. Bandingkan *trzy nowe projekty*: benda, jadi *trzy* + M. jamak.",
+    "**Dwadzieścia dwa błędy, dwanaście poważnych** — angka majemuk ikut angka **terakhirnya**: 22, 23, 24 seperti 2–4 (*dwadzieścia dwa błędy*), tetapi 12–14 seperti 5+ (*dwanaście błędów*). Kata *błędów* tidak perlu diulang: *dwanaście poważnych* sudah cukup.",
+    "**Ile osób?** — *ile* + D. untuk semua yang dihitung; untuk orang laki-laki ada bentuk khusus *ilu*: *Ilu studentów przyszło?*"
+   ],
+   "grammars": [
+    {
+     "title": "Satu, dua, lima: bentuk angka dan kasus kata benda",
+     "body": [
+      "Tiga kelompok angka, empat jenis kata benda. Perhatikan kolom 2–4 dengan teliti: di situlah angkanya berganti bentuk menurut jenis, sedangkan kolom 5+ selalu dopełniacz jamak."
+     ],
+     "table": {
+      "head": [
+       "Jenis",
+       "1",
+       "2–4",
+       "5–21 (termasuk 12–14)"
+      ],
+      "rows": [
+       [
+        "orang laki-laki",
+        "*jeden student*",
+        "*dwaj studenci / dwóch studentów*",
+        "*pięciu studentów*"
+       ],
+       [
+        "maskulin benda/hewan",
+        "*jeden komputer*",
+        "*dwa komputery*",
+        "*pięć komputerów*"
+       ],
+       [
+        "feminin",
+        "*jedna koleżanka*",
+        "*dwie koleżanki*",
+        "*pięć koleżanek*"
+       ],
+       [
+        "netral",
+        "*jedno okno*",
+        "*dwa okna*",
+        "*pięć okien*"
+       ]
+      ]
+     },
+     "after": [
+      "Angka yang berakhir 2, 3, 4 (kecuali 12, 13, 14) kembali ke kolom 2–4: *dwadzieścia dwa komputery, trzydzieści cztery koleżanki*, tetapi *dwadzieścia pięć komputerów*.",
+      "Angka 21, 31, 41… berakhiran *jeden*, tetapi **tidak** ikut kolom 1: *dwadzieścia jeden osób*, *trzydzieści jeden dni*. Kata *jeden* di sini tidak berubah sama sekali."
+     ]
+    },
+    {
+     "title": "Kata kerja sesudah angka",
+     "body": [
+      "Kata kerja juga ikut aturan angka. Pertanyaan kuncinya: apakah kata bendanya berdiri di M. (pelaku biasa) atau di D. (\"sejumlah…\")?"
+     ],
+     "table": {
+      "head": [
+       "Kelompok",
+       "Kata kerja",
+       "Contoh"
+      ],
+      "rows": [
+       [
+        "1",
+        "tunggal, ikut jenis",
+        "*Przyszedł jeden student. Przyszła jedna koleżanka.*"
+       ],
+       [
+        "2–4 benda / perempuan",
+        "jamak non-laki-laki",
+        "*Dwie koleżanki przyszły. Trzy komputery nie działają.*"
+       ],
+       [
+        "*dwaj / trzej / czterej* + M.",
+        "jamak laki-laki",
+        "*Dwaj koledzy przyszli.*"
+       ],
+       [
+        "*dwóch / trzech / czterech* + D.",
+        "tunggal netral",
+        "*Dwóch kolegów przyszło.*"
+       ],
+       [
+        "5+ (semua jenis)",
+        "tunggal netral",
+        "*Pięć osób przyszło. Pięciu studentów przyszło.*"
+       ]
+      ]
+     },
+     "after": [
+      "Logikanya sederhana: kalau kata bendanya dalam dopełniacz, kelompoknya diperlakukan sebagai satu \"jumlah\" netral — maka *przyszło, było, pracuje*. Kala kini dan futur sama saja: *Pięć osób czeka*, *Pięć osób będzie pracować*.",
+      "Bentuk *dwaj, trzej, czterej* hanya untuk orang laki-laki dan hanya dengan M. jamak; untuk lima ke atas bentuk seperti ini tidak ada."
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Dialog kedua — Stolik na jedenaście osób",
+   "intro": "Siangnya Budi menelepon sebuah restoran di Kazimierz untuk memesan meja makan malam tim Kodex.",
+   "lines": [
+    {
+     "speaker": "Kelner:",
+     "text": "Restauracja, dzień dobry. Słucham?",
+     "id": "Restoran, selamat siang. Ada yang bisa dibantu?",
+     "literal": "restoran, baik hari. saya-mendengarkan?"
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Dzień dobry. Chciałbym zarezerwować stolik na piątek na jedenaście osób.",
+     "id": "Selamat siang. Saya ingin memesan meja untuk hari Jumat, untuk sebelas orang.",
+     "literal": "baik hari. saya-mau-andai-lk memesan meja untuk Jumat untuk sebelas orang."
+    },
+    {
+     "speaker": "Kelner:",
+     "text": "Na którą godzinę?",
+     "id": "Untuk jam berapa?",
+     "literal": "untuk yang-ke-berapa jam?"
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Na dziewiętnastą. Będzie sześciu panów i pięć pań.",
+     "id": "Jam tujuh malam. Enam bapak-bapak dan lima ibu-ibu.",
+     "literal": "untuk kesembilan-belas. akan-ada enam tuan dan lima nyonya."
+    },
+    {
+     "speaker": "Kelner:",
+     "text": "Mamy duży stół przy oknie, ale tylko dla dziesięciu osób.",
+     "id": "Kami punya meja besar dekat jendela, tapi hanya untuk sepuluh orang.",
+     "literal": "kami-punya besar meja dekat jendela, tetapi hanya untuk sepuluh orang."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "A czy mogliby państwo dostawić jedno krzesło?",
+     "id": "Bisakah ditambah satu kursi?",
+     "literal": "dan apakah mereka-bisa-andai-lk tuan-nyonya menambahkan satu kursi?"
+    },
+    {
+     "speaker": "Kelner:",
+     "text": "Oczywiście, bez problemu. Czy ktoś ma specjalne życzenia?",
+     "id": "Tentu, tidak masalah. Ada permintaan khusus?",
+     "literal": "tentu, tanpa masalah. apakah seseorang ia-punya khusus keinginan-jamak?"
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Dwie koleżanki nie jedzą mięsa.",
+     "id": "Dua rekan kerja perempuan tidak makan daging.",
+     "literal": "dua kolega-pr tidak mereka-makan daging."
+    },
+    {
+     "speaker": "Kelner:",
+     "text": "Mamy pięć dań wegetariańskich, na przykład pierogi ruskie.",
+     "id": "Kami punya lima hidangan vegetarian, misalnya pierogi ruskie.",
+     "literal": "kami-punya lima hidangan vegetarian(D.), misalnya pierogi ruskie."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Świetnie. Rezerwacja na nazwisko Wiśniewska, dla firmy Kodex.",
+     "id": "Bagus. Pesanannya atas nama Wiśniewska, untuk perusahaan Kodex.",
+     "literal": "hebat. pemesanan untuk nama-keluarga Wiśniewska, untuk perusahaan Kodex."
+    },
+    {
+     "speaker": "Kelner:",
+     "text": "Zapisałem. Jedenaście osób, piątek, dziewiętnasta. Do zobaczenia!",
+     "id": "Sudah saya catat. Sebelas orang, Jumat, jam tujuh malam. Sampai jumpa!",
+     "literal": "saya-mencatat-lampau-lk. sebelas orang, Jumat, kesembilan-belas. sampai bertemu!"
+    }
+   ],
+   "notes": [
+    "**Stolik na jedenaście osób** — meja \"untuk\" sekian orang memakai *na* + B., dan angkanya tidak berubah: *stolik na dwie osoby, na pięć osób*. Kalau memakai *dla*, angkanya ikut dopełniacz: *dla dwóch osób, dla dziesięciu osób*.",
+    "**Sześciu panów i pięć pań** — laki-laki dihitung dengan bentuk *-u* (*sześciu*) + D. jamak (*panów*); perempuan dengan bentuk dasar (*pięć*) + D. jamak (*pań*). Kelompok campuran memakai bentuk laki-laki: *sześciu studentów* bisa saja berisi tiga mahasiswi.",
+    "**Dwie koleżanki nie jedzą** — 2–4 perempuan: *dwie* + M. jamak dan kata kerja jamak: *jedzą, przyszły, pracują*. *Dwie* hanya untuk kata benda feminin; *dwa* untuk maskulin benda dan netral.",
+    "**Pięć dań** — dopełniacz jamak *danie* adalah *dań*: kata netral berakhiran *-nie* kehilangan ekornya (*zdanie → zdań, mieszkanie → mieszkań*). Kata sifatnya ikut: *pięć dań wegetariańskich*.",
+    "**Na dziewiętnastą** — jam janji memakai *na* + B. angka urutan feminin (karena *godzina*): *na siódmą, na dziewiętnastą*. Di restoran dan kantor, jam 24 sudah lazim."
+   ],
+   "grammars": [
+    {
+     "title": "Angka untuk orang laki-laki — dan mengenal dwoje",
+     "body": [
+      "Untuk orang laki-laki (dan kelompok campuran) angkanya sendiri berganti bentuk: berakhiran *-u*, atau *-ch* untuk 2–4. Bentuk yang sama juga dipakai untuk semua jenis sesudah kata depan yang menuntut dopełniacz: *dla pięciu osób, do dwóch godzin*."
+     ],
+     "table": {
+      "head": [
+       "Angka",
+       "Benda / perempuan",
+       "Orang laki-laki",
+       "Contoh"
+      ],
+      "rows": [
+       [
+        "2",
+        "*dwa / dwie*",
+        "*dwóch* (atau *dwaj*)",
+        "*dwóch kolegów*"
+       ],
+       [
+        "3",
+        "*trzy*",
+        "*trzech* (atau *trzej*)",
+        "*trzech braci*"
+       ],
+       [
+        "4",
+        "*cztery*",
+        "*czterech* (atau *czterej*)",
+        "*czterech lekarzy*"
+       ],
+       [
+        "5",
+        "*pięć*",
+        "*pięciu*",
+        "*pięciu panów*"
+       ],
+       [
+        "6",
+        "*sześć*",
+        "*sześciu*",
+        "*sześciu studentów*"
+       ],
+       [
+        "10",
+        "*dziesięć*",
+        "*dziesięciu*",
+        "*dziesięciu programistów*"
+       ],
+       [
+        "11",
+        "*jedenaście*",
+        "*jedenastu*",
+        "*jedenastu piłkarzy*"
+       ],
+       [
+        "20",
+        "*dwadzieścia*",
+        "*dwudziestu*",
+        "*dwudziestu gości*"
+       ]
+      ]
+     },
+     "after": [
+      "Untuk anak-anak dan pasangan laki-laki–perempuan ada lagi angka kolektif: *dwoje dzieci* (dua anak), *troje dzieci*, *pięcioro dzieci*. Cukup kenali dulu; bentuk ini dibahas lengkap di tingkat B1.",
+      "Tanya jawab jumlah orang: *Ile osób?* (aman untuk siapa saja) dan *Ilu panów? Ilu studentów?* (khusus laki-laki atau campuran)."
+     ]
+    }
+   ]
+  }
+ ],
+ "sections": [
+  {
+   "title": "Dopełniacz jamak yang paling sering dihitung",
+   "blocks": [
+    {
+     "type": "tabel",
+     "head": [
+      "Tunggal",
+      "Dopełniacz jamak",
+      "Dengan 5"
+     ],
+     "rows": [
+      [
+       "*osoba*",
+       "*osób*",
+       "*pięć osób*"
+      ],
+      [
+       "*człowiek*",
+       "*ludzi*",
+       "*pięciu ludzi*"
+      ],
+      [
+       "*dziecko*",
+       "*dzieci*",
+       "*pięcioro dzieci*"
+      ],
+      [
+       "*pan / pani*",
+       "*panów / pań*",
+       "*pięciu panów, pięć pań*"
+      ],
+      [
+       "*dzień*",
+       "*dni*",
+       "*pięć dni*"
+      ],
+      [
+       "*tydzień*",
+       "*tygodni*",
+       "*pięć tygodni*"
+      ],
+      [
+       "*miesiąc*",
+       "*miesięcy*",
+       "*pięć miesięcy*"
+      ],
+      [
+       "*rok*",
+       "*lat*",
+       "*pięć lat*"
+      ],
+      [
+       "*złoty*",
+       "*złotych*",
+       "*pięć złotych*"
+      ],
+      [
+       "*danie*",
+       "*dań*",
+       "*pięć dań*"
+      ],
+      [
+       "*błąd*",
+       "*błędów*",
+       "*pięć błędów*"
+      ]
+     ]
+    },
+    {
+     "type": "p",
+     "text": "Dua di antaranya benar-benar tak beraturan: *rok* menjadi *lat* sesudah 5 (*pięć lat*), dan *człowiek* menjadi *ludzi* (*pięciu ludzi*). Umur mengikuti aturan yang persis sama dengan benda lain: *dwadzieścia trzy lata*, tetapi *dwadzieścia pięć lat* dan *dwadzieścia jeden lat*. Begitu pula uang: *dwa złote, pięć złotych, dwadzieścia dwa złote*; dan sen: *dwa grosze, pięć groszy*."
+    },
+    {
+     "type": "kotak",
+     "title": "Angka dalam hidup sehari-hari",
+     "items": [
+      "Di restoran: *Stolik dla dwóch osób?* atau *Stolik na cztery osoby, proszę.*",
+      "Di toko roti: *Poproszę dwie bułki i pięć pączków.*",
+      "Di kantor: *Na spotkanie przyszło dwanaście osób.*",
+      "Umur: *Ile masz lat?* — *Mam dwadzieścia cztery lata.*",
+      "Waktu: *Czekam od dwóch godzin!* — Saya sudah menunggu dua jam!"
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Kerja tim di kantor Polandia",
+   "blocks": [
+    {
+     "type": "tabel",
+     "head": [
+      "Polski",
+      "Arti"
+     ],
+     "rows": [
+      [
+       "*zespół* (m)",
+       "tim"
+      ],
+      [
+       "*spotkanie / zebranie* (n)",
+       "rapat"
+      ],
+      [
+       "*projekt* (m)",
+       "proyek"
+      ],
+      [
+       "*klient* (m)",
+       "klien"
+      ],
+      [
+       "*termin* (m)",
+       "tenggat"
+      ],
+      [
+       "*błąd, błędy* (m)",
+       "kesalahan, bug"
+      ],
+      [
+       "*praktykant / praktykantka*",
+       "anak magang"
+      ],
+      [
+       "*grafik / graficzka*",
+       "desainer grafis"
+      ],
+      [
+       "*kolacja firmowa* (ż)",
+       "makan malam kantor"
+      ],
+      [
+       "*zrzutka / składka* (ż)",
+       "patungan"
+      ]
+     ]
+    },
+    {
+     "type": "p",
+     "text": "Makan bersama tim sering dibayar perusahaan, tetapi untuk hadiah kolega yang berulang tahun biasanya diadakan *zrzutka* — patungan. Kalimat yang sering terdengar: *Zrzucamy się po dwadzieścia złotych* — kita patungan masing-masing dua puluh złoty. *Po* + angka di sini berarti \"masing-masing\", dan angka sesudahnya tetap mengikuti aturan unit ini: *po dwa złote, po pięć złotych*."
+    },
+    {
+     "type": "kotak",
+     "title": "Kebiasaan kecil di tim Polandia",
+     "items": [
+      "Rapat diharapkan dimulai tepat waktu; kalau akan terlambat, kirim pesan singkat lebih dulu: *Spóźnię się pięć minut.*",
+      "Ulang tahun dan *imieniny* (hari nama) kolega sering dirayakan di kantor dengan kue — dan tidak jarang yang merayakan sendiri yang membawa kuenya.",
+      "Rombongan besar sebaiknya memesan meja lebih dulu; untuk kelompok besar, restoran kadang meminta menu dipilih sebelumnya.",
+      "Ucapan bersulang di meja makan: *Na zdrowie!*"
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Ulangan berjenjang — unit 13",
+   "blocks": [
+    {
+     "type": "p",
+     "text": "Tutup kolom Polandia, baca terjemahan Indonesianya, lalu susun kembali kalimatnya dari ingatan."
+    },
+    {
+     "type": "tabel",
+     "head": [
+      "Bahasa Indonesia",
+      "Polski"
+     ],
+     "rows": [
+      [
+       "Kepala dan tenggorokan saya sakit.",
+       "*Boli mnie głowa i gardło.*"
+      ],
+      [
+       "Saya mual dan kepala saya pusing.",
+       "*Jest mi niedobrze i kręci mi się w głowie.*"
+      ],
+      [
+       "Saya buatkan surat keterangan sakit untuk lima hari.",
+       "*Wystawię panu zwolnienie lekarskie na pięć dni.*"
+      ],
+      [
+       "Ibu juga punya sesuatu untuk sakit tenggorokan?",
+       "*Czy ma pani też coś na ból gardła?*"
+      ],
+      [
+       "Punggung saya juga pegal, soalnya berbaring terus.",
+       "*Bolą mnie też plecy, bo ciągle leżę.*"
+      ]
+     ]
+    }
+   ]
+  }
+ ],
+ "vocab": [
+  {
+   "pl": "dwaj / dwóch — dwie — dwa",
+   "baca": "dvay / dvuh — dvye — dva",
+   "id": "dua (orang lk — pr — benda/netral)"
+  },
+  {
+   "pl": "trzej / trzech — trzy",
+   "baca": "tsyey / tsyeh — tsyy",
+   "id": "tiga (orang lk — lainnya)"
+  },
+  {
+   "pl": "czterej / czterech — cztery",
+   "baca": "CTE-rey / CTE-reh — CTE-ry",
+   "id": "empat (orang lk — lainnya)"
+  },
+  {
+   "pl": "pięć — pięciu",
+   "baca": "pyenc — PYEN-cu",
+   "id": "lima — lima (orang lk)"
+  },
+  {
+   "pl": "sześć — sześciu",
+   "baca": "syesyc — SYESY-cu",
+   "id": "enam — enam (orang lk)"
+  },
+  {
+   "pl": "dziesięć — dziesięciu",
+   "baca": "JYE-syenc — jye-SYEN-cu",
+   "id": "sepuluh — sepuluh (orang lk)"
+  },
+  {
+   "pl": "jedenaście — jedenastu",
+   "baca": "ye-de-NASY-cye — ye-de-NAS-tu",
+   "id": "sebelas — sebelas (orang lk)"
+  },
+  {
+   "pl": "dwanaście",
+   "baca": "dva-NASY-cye",
+   "id": "dua belas"
+  },
+  {
+   "pl": "dwadzieścia dwa",
+   "baca": "dva-JYESY-cya dva",
+   "id": "dua puluh dua"
+  },
+  {
+   "pl": "ile / ilu (+ D.)",
+   "baca": "I-le / I-lu",
+   "id": "berapa / berapa (orang lk)"
+  },
+  {
+   "pl": "dwoje dzieci",
+   "baca": "DVO-ye JYE-ci",
+   "id": "dua anak"
+  },
+  {
+   "pl": "osoba, osób (ż)",
+   "baca": "o-SO-ba, O-sup",
+   "id": "orang"
+  },
+  {
+   "pl": "człowiek, ludzie, ludzi (m)",
+   "baca": "CWO-vyek, LU-jye, LU-ji",
+   "id": "manusia; orang-orang"
+  },
+  {
+   "pl": "pan, panów / pani, pań",
+   "baca": "pan, PA-nuf / PA-ni, pany",
+   "id": "bapak / ibu (dengan D. jamak)"
+  },
+  {
+   "pl": "danie, dań (n)",
+   "baca": "DA-nye, dany",
+   "id": "hidangan"
+  },
+  {
+   "pl": "błąd, błędy, błędów (m)",
+   "baca": "bwont, BWEN-dy, BWEN-duf",
+   "id": "kesalahan, bug"
+  },
+  {
+   "pl": "praktykant, praktykanci (m)",
+   "baca": "prak-TY-kant, prak-ty-KAN-ci",
+   "id": "anak magang"
+  },
+  {
+   "pl": "programista, programiści (m)",
+   "baca": "pro-gra-MIS-ta, pro-gra-MISY-ci",
+   "id": "programmer"
+  },
+  {
+   "pl": "klient, klienci (m)",
+   "baca": "KLI-yent, kli-YEN-ci",
+   "id": "klien"
+  },
+  {
+   "pl": "projekt, projekty (m)",
+   "baca": "PRO-yekt, pro-YEK-ty",
+   "id": "proyek"
+  },
+  {
+   "pl": "stolik (m)",
+   "baca": "STO-lik",
+   "id": "meja (restoran)"
+  },
+  {
+   "pl": "dostawiać (dostawiam) / dostawić (dostawię)",
+   "baca": "dos-TA-vyac / dos-TA-vic",
+   "id": "menambahkan (kursi, meja)"
+  },
+  {
+   "pl": "razem",
+   "baca": "RA-zem",
+   "id": "bersama; total"
+  }
+ ],
+ "exercises": [
+  {
+   "prompt": "Terjemahkan ke bahasa Polandia.",
+   "items": [
+    "Lima orang datang ke rapat.",
+    "Dua rekan kerja perempuan tidak makan daging.",
+    "Kami punya tiga proyek baru.",
+    "Enam mahasiswa sedang menunggu.",
+    "Saya (laki-laki) ingin memesan meja untuk empat orang.",
+    "Dia berumur dua puluh lima tahun."
+   ]
+  },
+  {
+   "prompt": "Isi titik-titiknya sesuai petunjuk di dalam kurung.",
+   "items": [
+    "Mam ____ siostry. (2)",
+    "W biurze pracuje ____ programistów. (5)",
+    "Kupiłem ____ bilety. (3)",
+    "Na zdjęciu jest dwanaście ____. (osoba)",
+    "Mamy dwadzieścia dwa ____. (komputer)",
+    "____ koledzy przyszli wcześniej. (2, bentuk dengan M.)",
+    "Pięć koleżanek ____ na kolację. (przyjść, lampau)"
+   ]
+  },
+  {
+   "prompt": "Ganti angkanya sesuai petunjuk, lalu sesuaikan kata benda dan kata kerjanya.",
+   "items": [
+    "Przyszedł jeden student. (3) →",
+    "Mam jeden projekt. (4) →",
+    "Czeka jedna osoba. (5) →",
+    "Była jedna koleżanka. (2) →",
+    "Pracuje jeden programista. (6) →",
+    "Mam jeden błąd. (12) →"
+   ]
+  },
+  {
+   "prompt": "Susun jadi kalimat yang benar.",
+   "items": [
+    "nowi / są / praktykanci / gdzie / dwaj",
+    "przyjdzie / praktykantów / dwóch / po / nowych / obiedzie",
+    "dwa / znaleźliśmy / błędy / dwadzieścia",
+    "mięsa / koleżanki / jedzą / nie / dwie",
+    "dań / mamy / wegetariańskich / pięć"
+   ]
+  }
+ ],
+ "answers": [
+  "Na spotkanie przyszło pięć osób. — Dwie koleżanki nie jedzą mięsa. — Mamy trzy nowe projekty. — Sześciu studentów czeka. — Chciałbym zarezerwować stolik na cztery osoby. — Ma dwadzieścia pięć lat.",
+  "dwie — pięciu — trzy — osób — komputery — Dwaj — przyszło",
+  "Przyszło trzech studentów (atau: Przyszli trzej studenci). — Mam cztery projekty. — Czeka pięć osób. — Były dwie koleżanki. — Pracuje sześciu programistów. — Mam dwanaście błędów.",
+  "Gdzie są dwaj nowi praktykanci? — Dwóch nowych praktykantów przyjdzie po obiedzie. — Znaleźliśmy dwadzieścia dwa błędy. — Dwie koleżanki nie jedzą mięsa. — Mamy pięć dań wegetariańskich."
+ ]
+}

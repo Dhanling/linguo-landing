@@ -1,0 +1,709 @@
+{
+ "title": "Kalau… — kalimat syarat nyata dan sebab",
+ "title_target": "Jeśli będzie ładnie, pojedziemy",
+ "goal": "Membuat rencana yang bergantung pada keadaan dan menjelaskan alasan. Titik tata bahasanya: **jeśli / jeżeli / kiedy + futur** (bukan kala kini!) dengan *to* di induk kalimat, serta penghubung **bo, ponieważ, dlatego, więc, chociaż, ale, jednak**.",
+ "bekal": [
+  "menyusun syarat untuk masa depan: *Jeśli będzie padać, pójdziemy do kina.*",
+  "membedakan *kiedy* (pasti terjadi) dan *jeśli* (belum pasti)",
+  "memberi alasan dan akibat dengan *bo, ponieważ, dlatego, więc*, dan mempertentangkan dengan *chociaż, ale, jednak*"
+ ],
+ "dialogs": [
+  {
+   "title": "Dialog — A jeśli będzie padać?",
+   "intro": "Jumat malam akhir November, di dapur mieszkanie di Podgórze. Ramalan menjanjikan Sabtu yang cerah dan hangat untuk musimnya — mungkin yang terakhir sebelum musim dingin. Ania mampir, dan tiga sekawan itu menyusun rencana.",
+   "lines": [
+    {
+     "speaker": "Ania:",
+     "text": "Co robimy jutro? Wszyscy mamy wolną sobotę.",
+     "id": "Besok kita ngapain? Sabtu ini kita semua libur.",
+     "literal": "apa kita-melakukan besok? semua kita-punya bebas Sabtu."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Jeśli będzie ładnie, pojedziemy rowerami nad Wisłę.",
+     "id": "Kalau cuacanya bagus, kita naik sepeda ke tepi Wisła.",
+     "literal": "jika akan-ada indah, kita-akan-berkendara sepeda-sepeda ke-tepi Wisła."
+    },
+    {
+     "speaker": "Tomek:",
+     "text": "A jeśli będzie padać? Prognoza nie jest pewna.",
+     "id": "Kalau hujan? Ramalan cuacanya belum pasti.",
+     "literal": "dan jika akan-ada turun? ramalan tidak ia-adalah pasti."
+    },
+    {
+     "speaker": "Ania:",
+     "text": "To pójdziemy do kina, bo piknik w deszczu nie ma sensu.",
+     "id": "Ya kita ke bioskop, soalnya piknik pas hujan nggak ada gunanya.",
+     "literal": "maka kita-akan-pergi ke bioskop, karena piknik di hujan tidak ia-punya makna."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Zgoda. Ja zrobię kanapki, jeżeli ktoś kupi owoce.",
+     "id": "Setuju. Saya bikin roti isi, asal ada yang beli buah.",
+     "literal": "sepakat. saya saya-akan-membuat roti-isi, jika seseorang ia-akan-membeli buah-buahan."
+    },
+    {
+     "speaker": "Tomek:",
+     "text": "Ja kupię, ale dopiero rano, bo dziś nie mam już siły.",
+     "id": "Saya yang beli, tapi baru besok pagi, soalnya hari ini sudah nggak ada tenaga.",
+     "literal": "saya saya-akan-membeli, tetapi baru pagi, karena hari-ini tidak saya-punya lagi tenaga."
+    },
+    {
+     "speaker": "Ania:",
+     "text": "Tylko nie zapomnij, jak ostatnio!",
+     "id": "Asal jangan lupa kayak kemarin-kemarin!",
+     "literal": "hanya jangan lupa, seperti terakhir-kali!"
+    },
+    {
+     "speaker": "Tomek:",
+     "text": "Kiedy wstanę, od razu pójdę na Kleparz.",
+     "id": "Begitu bangun, saya langsung ke pasar Kleparz.",
+     "literal": "ketika saya-akan-bangun, sekaligus saya-akan-pergi ke Kleparz."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Weźmiemy też koc, ponieważ trawa może być mokra.",
+     "id": "Kita bawa tikar juga, karena rumputnya mungkin basah.",
+     "literal": "kita-akan-mengambil juga selimut, karena rumput ia-bisa adalah basah."
+    },
+    {
+     "speaker": "Ania:",
+     "text": "Chociaż prognoza nie jest najlepsza, jestem dobrej myśli.",
+     "id": "Walaupun ramalannya kurang bagus, saya optimis.",
+     "literal": "walaupun ramalan tidak ia-adalah terbaik, saya-adalah baik(D.) pikiran(D.)."
+    },
+    {
+     "speaker": "Tomek:",
+     "text": "Ja też. Więc gdzie i o której się spotykamy?",
+     "id": "Saya juga. Jadi kita ketemu di mana dan jam berapa?",
+     "literal": "saya juga. jadi di-mana dan pada yang-keberapa diri kita-bertemu?"
+    },
+    {
+     "speaker": "Ania:",
+     "text": "O jedenastej pod Wawelem, przy smoku.",
+     "id": "Jam sebelas di kaki Wawel, dekat patung naga.",
+     "literal": "pada kesebelas di-bawah Wawel, di-dekat naga."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Dobrze. Jeśli się spóźnię, zadzwonię.",
+     "id": "Oke. Kalau saya telat, saya telepon.",
+     "literal": "baik. jika diri saya-akan-terlambat, saya-akan-menelepon."
+    },
+    {
+     "speaker": "Tomek:",
+     "text": "Ty zawsze się spóźniasz, dlatego umówmy się o wpół do jedenastej!",
+     "id": "Kamu kan selalu telat, makanya kita janjian jam setengah sebelas saja!",
+     "literal": "kamu selalu diri kamu-terlambat, karena-itu mari-berjanji diri pada setengah ke kesebelas!"
+    }
+   ],
+   "notes": [
+    "**Jeśli będzie ładnie** — inilah titik terpenting unit ini. Bahasa Indonesia berkata \"kalau **cuacanya bagus**\" tanpa penanda waktu, dan bahasa Inggris berkata *if it is nice* dengan kala kini. Bahasa Polandia lebih logis: yang dibicarakan adalah besok, jadi **kedua** bagian kalimat memakai futur — *będzie ładnie* dan *pojedziemy*. *Jeśli jest ładnie jutro* adalah kesalahan khas pelajar asing.",
+    "**Jeśli, jeżeli** — artinya sama persis. *Jeśli* lebih pendek dan lebih sering dalam percakapan; *jeżeli* sedikit lebih resmi dan sering muncul dalam tulisan. Budi memakai keduanya bergantian, dan itu wajar.",
+    "**To pójdziemy do kina** — *to* di awal induk kalimat berarti \"maka, ya sudah\". Ia boleh dibuang (*Jeśli będzie padać, pójdziemy do kina*), tapi dalam percakapan sangat sering muncul, terutama ketika induk kalimat berdiri sendiri sebagai jawaban seperti di sini.",
+    "**Kiedy wstanę** — *kiedy* + futur dk berarti \"begitu/setelah (nanti)\": kejadiannya pasti, hanya waktunya di depan. Bandingkan: *Kiedy wstanę* (saya pasti bangun), *Jeśli wstanę* (belum tentu bangun — sindiran bagus untuk Tomek). Bahasa Indonesia memakai \"kalau\" untuk keduanya, jadi perhatikan bedanya.",
+    "**Bo, ponieważ** — dua-duanya \"karena\". *Bo* santai dan paling sering; *ponieważ* lebih rapi dan boleh membuka kalimat (*Ponieważ pada, zostajemy*). *Bo* tidak dipakai di awal kalimat dalam bahasa tulis yang rapi.",
+    "**Pod Wawelem, przy smoku** — patung naga Wawel (*Smok Wawelski*) di kaki bukit Wawel, di tepi Wisła, adalah titik temu klasik orang Kraków. *Pod* + narzędnik untuk tempat: \"di bawah, di kaki\"."
+   ],
+   "grammars": [
+    {
+     "title": "Syarat nyata: jeśli / kiedy + futur",
+     "body": [
+      "Untuk syarat yang mungkin terjadi di masa depan, **anak kalimat dan induknya sama-sama futur**. Pilih futur dk untuk kejadian sekali yang tuntas (*spóźnię się, zacznie, skończę*), futur *będzie* untuk keadaan (*będzie ładnie, będzie padać*)."
+     ],
+     "table": {
+      "head": [
+       "Anak kalimat (syarat)",
+       "Induk kalimat",
+       "Arti"
+      ],
+      "rows": [
+       [
+        "*Jeśli będzie ładnie,*",
+        "*pojedziemy nad Wisłę.*",
+        "Kalau cuaca bagus, kita ke Wisła."
+       ],
+       [
+        "*Jeśli będzie padać,*",
+        "*(to) pójdziemy do kina.*",
+        "Kalau hujan, (ya) kita ke bioskop."
+       ],
+       [
+        "*Jeżeli ktoś kupi owoce,*",
+        "*zrobię kanapki.*",
+        "Kalau ada yang beli buah, saya bikin roti isi."
+       ],
+       [
+        "*Jeśli się spóźnię,*",
+        "*zadzwonię.*",
+        "Kalau saya telat, saya telepon."
+       ],
+       [
+        "*Kiedy wstanę,*",
+        "*pójdę na targ.*",
+        "Begitu bangun, saya ke pasar."
+       ],
+       [
+        "*Kiedy skończę pracę,*",
+        "*zadzwoń do mnie.*",
+        "Kalau kerjaanku sudah selesai, telepon aku."
+       ],
+       [
+        "*Jeśli masz czas,*",
+        "*chodź z nami.*",
+        "Kalau (sekarang) kamu ada waktu, ayo ikut."
+       ]
+      ]
+     },
+     "after": [
+      "Baris terakhir memakai kala kini, dan itu benar: syaratnya berlaku **sekarang** (kamu punya waktu saat ini). Aturannya bukan \"setelah *jeśli* selalu futur\", melainkan \"waktu yang dimaksud menentukan kalanya\" — dan karena rencana hampir selalu tentang masa depan, futurlah yang paling sering.",
+      "Induk kalimat boleh berupa perintah: *Kiedy skończysz, zadzwoń!* Urutan kedua bagian juga boleh dibalik, asal koma tetap ada: *Zadzwonię, jeśli się spóźnię.*",
+      "Kalimat \"seandainya\" yang tidak nyata (*Gdybym miał czas…*) adalah pola lain dengan bentuk *-by-*, dipelajari di B1."
+     ]
+    },
+    {
+     "title": "Sebab dan akibat: bo, ponieważ, dlatego, więc",
+     "body": [
+      "Empat kata ini membentuk dua pasang. *Bo* dan *ponieważ* memperkenalkan **sebab**; *dlatego* dan *więc* memperkenalkan **akibat**."
+     ],
+     "table": {
+      "head": [
+       "Penghubung",
+       "Arti",
+       "Contoh"
+      ],
+      "rows": [
+       [
+        "*bo*",
+        "karena, soalnya (santai)",
+        "*Zostaję w domu, bo pada.*"
+       ],
+       [
+        "*ponieważ*",
+        "karena (rapi, boleh di awal)",
+        "*Ponieważ pada, zostaję w domu.*"
+       ],
+       [
+        "*dlatego*",
+        "karena itu, makanya",
+        "*Pada, dlatego zostaję w domu.*"
+       ],
+       [
+        "*więc*",
+        "jadi, maka",
+        "*Pada, więc zostaję w domu.*"
+       ],
+       [
+        "*dlatego, że*",
+        "karena (menekankan alasan)",
+        "*Zostaję w domu dlatego, że pada.*"
+       ]
+      ]
+     },
+     "after": [
+      "Lima kalimat di atas menyampaikan fakta yang sama dari arah berbeda. Di depan *bo, ponieważ, dlatego, więc* selalu ada koma — ingat aturan koma dari unit 17. Pada *dlatego, że* komanya boleh pindah ke depan *że*, seperti di baris terakhir.",
+      "*Więc* juga dipakai di awal pertanyaan untuk \"jadi…?\": *Więc o której się spotykamy?* Dalam tulisan yang sangat baku, beberapa guru tidak menyukai *więc* di awal kalimat; dalam percakapan, ia sepenuhnya wajar."
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Dialog kedua — Chociaż wieje, jest pięknie",
+   "intro": "Sabtu siang di bulwary Wisły, di seberang Wawel. Matahari bersinar, tetapi angin bertiup kencang dan awan mulai berkumpul di barat.",
+   "lines": [
+    {
+     "speaker": "Ania:",
+     "text": "Widzicie? Słońce! Mówiłam, że będzie ładnie.",
+     "id": "Lihat kan? Matahari! Sudah saya bilang cuacanya bakal bagus.",
+     "literal": "kalian-melihat? matahari! saya-berkata-lampau-pr, bahwa akan-ada indah."
+    },
+    {
+     "speaker": "Tomek:",
+     "text": "Tak, ale strasznie wieje, więc trzymajcie koc!",
+     "id": "Iya, tapi anginnya kencang banget, jadi pegangin tikarnya!",
+     "literal": "ya, tetapi sangat-mengerikan ia-bertiup, jadi peganglah-kalian selimut!"
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Tomek, kupiłeś owoce?",
+     "id": "Tomek, buahnya sudah kamu beli?",
+     "literal": "Tomek, kamu-membeli-lampau-lk buah-buahan?"
+    },
+    {
+     "speaker": "Tomek:",
+     "text": "Kupiłem owoce, chociaż była straszna kolejka.",
+     "id": "Sudah, walaupun antreannya parah banget.",
+     "literal": "saya-membeli-lampau-lk buah-buahan, walaupun ia-adalah-lampau-pr mengerikan antrean."
+    },
+    {
+     "speaker": "Ania:",
+     "text": "Tam na zachodzie są chmury. Co zrobimy, jeśli zacznie padać?",
+     "id": "Di sebelah barat ada awan. Kita ngapain kalau mulai hujan?",
+     "literal": "di-sana di barat mereka-adalah awan-awan. apa kita-akan-melakukan, jika ia-akan-mulai turun?"
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Jeżeli zacznie padać, schowamy się pod mostem.",
+     "id": "Kalau mulai hujan, kita berteduh di bawah jembatan.",
+     "literal": "jika ia-akan-mulai turun, kita-akan-bersembunyi diri di-bawah jembatan."
+    },
+    {
+     "speaker": "Tomek:",
+     "text": "Albo pójdziemy na kawę na Kazimierz, bo to blisko.",
+     "id": "Atau kita ngopi ke Kazimierz, kan dekat.",
+     "literal": "atau kita-akan-pergi untuk kopi ke Kazimierz, karena itu dekat."
+    },
+    {
+     "speaker": "Ania:",
+     "text": "Dobrze, ale najpierw zjemy, ponieważ umieram z głodu.",
+     "id": "Oke, tapi kita makan dulu, soalnya saya kelaparan.",
+     "literal": "baik, tetapi pertama kita-akan-makan-habis, karena saya-mati dari lapar."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Proszę bardzo. Kanapki są jednak trochę zgniecione…",
+     "id": "Silakan. Tapi roti isinya agak gepeng, sih…",
+     "literal": "silakan sangat. roti-isi mereka-adalah namun sedikit tergencet…"
+    },
+    {
+     "speaker": "Tomek:",
+     "text": "Nie szkodzi. Zjemy je i tak!",
+     "id": "Nggak apa-apa. Tetap kita makan!",
+     "literal": "tidak merugikan. kita-akan-makan-habis mereka dan begitu!"
+    }
+   ],
+   "notes": [
+    "**Chociaż była straszna kolejka** — *chociaż* (atau pendeknya *choć*) berarti \"walaupun\": hal yang diharapkan menghalangi, tapi tidak menghalangi. Anak kalimatnya boleh di depan atau di belakang: *Chociaż była kolejka, kupiłem owoce.*",
+    "**Wieje, pada** — cuaca dalam bahasa Polandia sering hanya berupa kata kerja tanpa pelaku: *wieje* (angin bertiup), *pada* (hujan/salju turun), *grzmi* (bergemuruh). Tidak ada \"ia\" di depannya, seperti \"hujan\" dalam bahasa Indonesia.",
+    "**Jednak** — \"namun, tapi ternyata\". Berbeda dengan *ale* yang selalu di awal bagian kedua, *jednak* bebas bergeser: *Jednak kanapki są zgniecione* atau *Kanapki są jednak zgniecione*. Di tengah kalimat, ia terdengar lebih halus dan sedikit menyesal.",
+    "**Umieram z głodu** — \"saya mati karena lapar\", ungkapan berlebihan yang sangat umum untuk \"saya lapar banget\". *Z* + dopełniacz di sini menyatakan sebab: *z głodu, ze strachu* (karena takut), *z radości* (karena gembira).",
+    "**I tak** — \"toh, tetap saja\": *Zjemy je i tak* = tetap kita makan. Ungkapan kecil yang membuat bahasa lisanmu terdengar jauh lebih alami."
+   ],
+   "grammars": [
+    {
+     "title": "Mempertentangkan: ale, a, chociaż, jednak",
+     "body": [
+      "Bahasa Indonesia cukup memakai \"tapi\" dan \"walaupun\". Bahasa Polandia punya empat alat dengan nuansa yang berbeda."
+     ],
+     "table": {
+      "head": [
+       "Kata",
+       "Nuansa",
+       "Contoh"
+      ],
+      "rows": [
+       [
+        "*ale*",
+        "tapi (pertentangan langsung)",
+        "*Jest słońce, ale wieje.*"
+       ],
+       [
+        "*a*",
+        "sedangkan, dan (perbandingan lunak)",
+        "*Ja zrobię kanapki, a Tomek kupi owoce.*"
+       ],
+       [
+        "*chociaż / choć*",
+        "walaupun",
+        "*Chociaż wieje, jest pięknie.*"
+       ],
+       [
+        "*jednak*",
+        "namun, tapi ternyata",
+        "*Prognoza była zła. Jednak nie padało.*"
+       ],
+       [
+        "*ale jednak*",
+        "tapi toh tetap (penekanan)",
+        "*Było zimno, ale jednak poszliśmy.*"
+       ]
+      ]
+     },
+     "after": [
+      "Kesalahan paling umum pelajar Indonesia adalah memakai *ale* di tempat *a*: *Ja lubię kawę, a Ania herbatę* — \"saya suka kopi, sedangkan Ania teh\". Tidak ada pertentangan di sini, hanya perbandingan, jadi *a*. *Ale* terdengar seperti Ania melakukan sesuatu yang salah.",
+      "Dalam bahasa yang rapi, *chociaż* tidak dipasangkan dengan *ale* dalam satu kalimat (dalam obrolan kadang terdengar, tapi dianggap kurang rapi) — berbeda dari bahasa Indonesia lisan \"walaupun… tapi…\". Cukup salah satu: *Chociaż wieje, jest pięknie.*"
+     ]
+    }
+   ]
+  }
+ ],
+ "sections": [
+  {
+   "title": "Cuaca untuk rencana akhir pekan",
+   "blocks": [
+    {
+     "type": "tabel",
+     "head": [
+      "Polski",
+      "Cara baca",
+      "Arti"
+     ],
+     "rows": [
+      [
+       "*prognoza pogody*",
+       "prog-NO-za po-GO-dy",
+       "ramalan cuaca"
+      ],
+      [
+       "*będzie ładnie*",
+       "BEN-jye WAD-nye",
+       "cuaca bakal bagus"
+      ],
+      [
+       "*będzie pochmurno*",
+       "BEN-jye poh-MUR-no",
+       "bakal mendung"
+      ],
+      [
+       "*będzie padać*",
+       "BEN-jye PA-dac",
+       "bakal hujan"
+      ],
+      [
+       "*będzie burza*",
+       "BEN-jye BU-zya",
+       "bakal ada badai petir"
+      ],
+      [
+       "*będzie upał*",
+       "BEN-jye U-paw",
+       "bakal panas terik"
+      ],
+      [
+       "*wieje*",
+       "VYE-ye",
+       "anginnya bertiup"
+      ],
+      [
+       "*przejaśnia się*",
+       "psye-YASY-nya sye",
+       "langit mulai cerah"
+      ],
+      [
+       "*jest dwadzieścia stopni*",
+       "yest dva-JYESY-cya STOP-ni",
+       "suhunya dua puluh derajat"
+      ],
+      [
+       "*może padać*",
+       "MO-zye PA-dac",
+       "mungkin hujan"
+      ],
+      [
+       "*na pewno nie będzie padać*",
+       "na PEV-no nye BEN-jye PA-dac",
+       "pasti tidak hujan"
+      ]
+     ]
+    },
+    {
+     "type": "p",
+     "text": "Ramalan cuaca Polandia biasanya disampaikan dengan futur *będzie*, jadi kalimatnya langsung siap dipasang di belakang *jeśli*: *Jeśli będzie burza, zostaniemy w domu.* Suhu disebut dalam derajat Celsius dengan aturan angka yang sudah kamu kenal: *jeden stopień, dwa stopnie, pięć stopni*, dan di bawah nol *minus pięć stopni*."
+    },
+    {
+     "type": "kotak",
+     "title": "Bulwary Wisły — ruang tamu Kraków",
+     "items": [
+      "*Bulwary Wisły* adalah tepian sungai Wisła yang berumput dan berjalur pejalan kaki, membentang di kaki Wawel sampai ke Kazimierz dan Podgórze. Saat cuaca bagus, orang datang untuk piknik, bersepeda, berlari, atau sekadar duduk menatap air.",
+      "Patung *Smok Wawelski* di kaki Wawel sesekali menyemburkan api sungguhan — anak-anak menunggu di depannya. Legenda naga ini adalah salah satu cerita rakyat Kraków yang paling terkenal.",
+      "*Kładka Ojca Bernatka*, jembatan pejalan kaki dengan patung-patung akrobat yang bergantung di atasnya, menghubungkan Kazimierz dengan Podgórze.",
+      "Satu hal praktis: minum alkohol di tempat umum pada umumnya dilarang di Polandia dan bisa berujung denda. Piknik keluarga di bulwary biasanya cukup dengan kompot, teh dalam termos, dan kanapki."
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Merangkai alasan dalam percakapan",
+   "blocks": [
+    {
+     "type": "tabel",
+     "head": [
+      "Kalimat",
+      "Arti"
+     ],
+     "rows": [
+      [
+       "*Nie przyjdę, bo jestem chory.*",
+       "Saya nggak datang, soalnya sakit."
+      ],
+      [
+       "*Ponieważ jutro jest święto, sklepy są zamknięte.*",
+       "Karena besok hari libur, toko-toko tutup."
+      ],
+      [
+       "*Jestem zmęczony, dlatego idę spać.*",
+       "Saya capek, makanya tidur."
+      ],
+      [
+       "*Wszyscy przyszli, więc możemy zaczynać.*",
+       "Semua sudah datang, jadi kita bisa mulai."
+      ],
+      [
+       "*Chociaż było zimno, poszliśmy na spacer.*",
+       "Walaupun dingin, kami tetap jalan-jalan."
+      ],
+      [
+       "*Lubię Kraków, ale wolę morze.*",
+       "Saya suka Kraków, tapi lebih suka laut."
+      ],
+      [
+       "*Ja pracuję, a ty odpoczywasz.*",
+       "Saya kerja, sedangkan kamu santai."
+      ],
+      [
+       "*Obiecał przyjść. Jednak nie przyszedł.*",
+       "Dia janji datang. Namun ternyata tidak datang."
+      ],
+      [
+       "*Nie mam parasola, więc zmoknę.*",
+       "Saya nggak bawa payung, jadi bakal kehujanan."
+      ],
+      [
+       "*Jeśli nie zdążysz, poczekamy na ciebie.*",
+       "Kalau kamu nggak keburu, kami tunggu."
+      ],
+      [
+       "*Tramwaj nie przyjechał, dlatego się spóźniłem.*",
+       "Tremnya nggak datang, makanya saya telat."
+      ]
+     ]
+    },
+    {
+     "type": "p",
+     "text": "Dalam percakapan, jawaban atas *Dlaczego?* hampir selalu dimulai dengan *bo*: *— Dlaczego nie przyszedłeś? — Bo byłem chory.* Ini satu-satunya tempat *bo* boleh membuka kalimat tanpa terdengar ceroboh. Dalam surel kerja atau tulisan resmi, gantilah dengan *ponieważ* atau *dlatego, że*."
+    },
+    {
+     "type": "kotak",
+     "title": "Cuaca dalam peribahasa Polandia",
+     "items": [
+      "*Kwiecień plecień, bo przeplata trochę zimy, trochę lata* — April itu \"penganyam\", karena menganyam sedikit musim dingin dan sedikit musim panas. Peribahasa ini diucapkan setiap kali salju turun di bulan April — dan itu memang sering terjadi.",
+      "*Babie lato* — beberapa hari hangat dan cerah di awal musim gugur, saat benang laba-laba melayang di udara. Orang Polandia juga menyebut musim gugur yang cerah *złota polska jesień*.",
+      "Orang Polandia gemar membicarakan cuaca, dan rencana akhir pekan hampir selalu datang dengan syarat: *jeśli będzie ładnie…* Belajar kalimat syarat berarti belajar cara orang Polandia membuat rencana."
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Ulangan berjenjang — unit 17",
+   "blocks": [
+    {
+     "type": "p",
+     "text": "Tutup kolom Polandia, baca terjemahan Indonesianya, lalu susun kembali kalimatnya dari ingatan."
+    },
+    {
+     "type": "tabel",
+     "head": [
+      "Bahasa Indonesia",
+      "Polski"
+     ],
+     "rows": [
+      [
+       "Programmer yang datang dari Poznań.",
+       "*To programista, który przyjechał z Poznania.*"
+      ],
+      [
+       "Ramah banget. Kayaknya kami bakal jadi teman.",
+       "*Bardzo sympatyczny. Myślę, że się zaprzyjaźnimy.*"
+      ],
+      [
+       "Bercanda! Saya ke sini buat ngopi, kok.",
+       "*Żartuję! Przyszłam tu, żeby napić się kawy.*"
+      ],
+      [
+       "Jalan, tapi itu mesin kopi yang nggak ada yang bisa membersihkan.",
+       "*Działa, ale to ekspres, którego nikt nie umie czyścić.*"
+      ],
+      [
+       "Itu Bu Magdalena yang saya ceritakan ke kamu.",
+       "*To pani Magdalena, o której ci mówiłem.*"
+      ]
+     ]
+    }
+   ]
+  }
+ ],
+ "vocab": [
+  {
+   "pl": "jeśli / jeżeli",
+   "baca": "YESY-li / ye-ZYE-li",
+   "id": "jika, kalau"
+  },
+  {
+   "pl": "bo",
+   "baca": "bo",
+   "id": "karena, soalnya"
+  },
+  {
+   "pl": "ponieważ",
+   "baca": "po-NYE-vasy",
+   "id": "karena"
+  },
+  {
+   "pl": "więc",
+   "baca": "vyents",
+   "id": "jadi, maka"
+  },
+  {
+   "pl": "chociaż / choć",
+   "baca": "HO-cyasy / hoc",
+   "id": "walaupun"
+  },
+  {
+   "pl": "jednak",
+   "baca": "YED-nak",
+   "id": "namun, tapi ternyata"
+  },
+  {
+   "pl": "prognoza (ż)",
+   "baca": "prog-NO-za",
+   "id": "ramalan"
+  },
+  {
+   "pl": "chmura (ż)",
+   "baca": "HMU-ra",
+   "id": "awan"
+  },
+  {
+   "pl": "burza (ż)",
+   "baca": "BU-zya",
+   "id": "badai petir"
+  },
+  {
+   "pl": "koc (m)",
+   "baca": "kots",
+   "id": "selimut, tikar piknik"
+  },
+  {
+   "pl": "trawa (ż)",
+   "baca": "TRA-va",
+   "id": "rumput"
+  },
+  {
+   "pl": "mokry",
+   "baca": "MOK-ry",
+   "id": "basah"
+  },
+  {
+   "pl": "kanapka (ż)",
+   "baca": "ka-NAP-ka",
+   "id": "roti isi"
+  },
+  {
+   "pl": "owoce (lm)",
+   "baca": "o-VO-tse",
+   "id": "buah-buahan"
+  },
+  {
+   "pl": "kolejka (ż)",
+   "baca": "ko-LEY-ka",
+   "id": "antrean"
+  },
+  {
+   "pl": "most (m)",
+   "baca": "most",
+   "id": "jembatan"
+  },
+  {
+   "pl": "parasol (m)",
+   "baca": "pa-RA-sol",
+   "id": "payung"
+  },
+  {
+   "pl": "zdążyć (zdążę) — dk",
+   "baca": "ZDON-zyyc",
+   "id": "keburu, sempat tepat waktu"
+  },
+  {
+   "pl": "zachód (m), na zachodzie",
+   "baca": "ZA-hut / na za-HO-jye",
+   "id": "barat; di barat"
+  },
+  {
+   "pl": "wiać (wieje) — ndk",
+   "baca": "vyac",
+   "id": "bertiup (angin)"
+  },
+  {
+   "pl": "spóźniać się (spóźniam się) / spóźnić się (spóźnię się)",
+   "baca": "SPUZY-nyac sye / SPUZY-nic sye",
+   "id": "terlambat"
+  },
+  {
+   "pl": "umawiać się (umawiam się) / umówić się (umówię się)",
+   "baca": "u-MA-vyac sye / u-MU-vic sye",
+   "id": "berjanji bertemu"
+  },
+  {
+   "pl": "chować się (chowam się) / schować się (schowam się)",
+   "baca": "HO-vac sye / SHO-vac sye",
+   "id": "bersembunyi, berteduh"
+  },
+  {
+   "pl": "zgoda (ż)",
+   "baca": "ZGO-da",
+   "id": "setuju; kesepakatan"
+  },
+  {
+   "pl": "być dobrej myśli",
+   "baca": "byc DOB-rey MYSY-li",
+   "id": "optimis"
+  },
+  {
+   "pl": "umierać z głodu",
+   "baca": "u-MYE-rac z GWO-du",
+   "id": "kelaparan (ungkapan)"
+  }
+ ],
+ "exercises": [
+  {
+   "prompt": "Terjemahkan ke bahasa Polandia.",
+   "items": [
+    "Kalau cuacanya bagus, kita naik sepeda ke tepi Wisła.",
+    "Kalau hujan, kita ke bioskop.",
+    "Begitu bangun, saya langsung ke Kleparz.",
+    "Kalau saya telat, saya telepon.",
+    "Kita bawa tikar, karena rumputnya mungkin basah.",
+    "Walaupun ramalannya kurang bagus, saya optimis."
+   ]
+  },
+  {
+   "prompt": "Isi titik-titiknya menurut petunjuk di dalam kurung.",
+   "items": [
+    "Jeśli ____ czas, pomogę ci. (mieć, ja, futur; pembicara lk)",
+    "Kiedy ____ pracę, zadzwonię do ciebie. (skończyć, ja)",
+    "Jeżeli jutro ____, zostaniemy w domu. (padać, futur)",
+    "Nie idę na piknik, ____ jestem chory. (karena, santai)",
+    "Jestem zmęczony, ____ idę spać. (jadi)",
+    "____ jest zimno, idziemy na spacer. (walaupun)",
+    "Ja zrobię kanapki, ____ Tomek kupi owoce. (sedangkan)"
+   ]
+  },
+  {
+   "prompt": "Gabungkan dua kalimat dengan kata di dalam kurung. Perhatikan kalanya.",
+   "items": [
+    "Jutro będzie ładnie. Pojedziemy nad Wisłę. (jeśli)",
+    "Skończę pracę. Przyjdę do was. (kiedy)",
+    "Nie mam czasu. Dużo pracuję. (bo)",
+    "Pada deszcz. Zostajemy w domu. (więc)",
+    "Tomek jest zmęczony. Idzie na mecz. (chociaż)",
+    "Trawa jest mokra. Weźmiemy koc. (dlatego)"
+   ]
+  },
+  {
+   "prompt": "Susun jadi kalimat yang benar. Jangan lupa koma.",
+   "items": [
+    "ładnie / jeśli / będzie / pojedziemy / rowerami / nad / Wisłę",
+    "wstanę / kiedy / od razu / pójdę / na / Kleparz",
+    "się / jeśli / spóźnię / zadzwonię",
+    "zacznie / jeżeli / padać / schowamy / się / pod / mostem",
+    "kupiłem / owoce / chociaż / była / straszna / kolejka"
+   ]
+  }
+ ],
+ "answers": [
+  "Jeśli będzie ładnie, pojedziemy rowerami nad Wisłę. — Jeśli będzie padać, pójdziemy do kina. — Kiedy wstanę, od razu pójdę na Kleparz. — Jeśli się spóźnię, zadzwonię. — Weźmiemy koc, ponieważ trawa może być mokra. — Chociaż prognoza nie jest najlepsza, jestem dobrej myśli.",
+  "będę miał (atau będę mieć) — skończę — będzie padać — bo — więc (atau dlatego) — Chociaż — a",
+  "Jeśli jutro będzie ładnie, pojedziemy nad Wisłę. — Kiedy skończę pracę, przyjdę do was. — Nie mam czasu, bo dużo pracuję. — Pada deszcz, więc zostajemy w domu. — Chociaż Tomek jest zmęczony, idzie na mecz. — Trawa jest mokra, dlatego weźmiemy koc.",
+  "Jeśli będzie ładnie, pojedziemy rowerami nad Wisłę. — Kiedy wstanę, od razu pójdę na Kleparz. — Jeśli się spóźnię, zadzwonię. — Jeżeli zacznie padać, schowamy się pod mostem. — Kupiłem owoce, chociaż była straszna kolejka."
+ ]
+}

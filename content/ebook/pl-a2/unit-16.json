@@ -1,0 +1,849 @@
+{
+ "title": "Kapan? — tanggal dan ungkapan waktu",
+ "title_target": "Którego dzisiaj jest?",
+ "goal": "Menyebut dan menanyakan tanggal, bulan, tahun, dan abad, lalu merencanakan acara dengan ungkapan waktu yang tepat. Titik tata bahasanya: **angka urutan** (*pierwszy, drugi, trzeci…*), tanggal dalam dopełniacz (*dwunastego listopada*), *w maju, w 2026 roku, w XXI wieku*, serta *przed* + N., *po* + Ms., *za tydzień, tydzień temu, od… do…, przez dwa lata*.",
+ "bekal": [
+  "menanyakan dan menjawab tanggal: *Którego dzisiaj jest? — Trzeciego listopada.*",
+  "menyebut bulan, tahun, dan abad dengan kata depan dan kasus yang benar",
+  "menata rencana dengan *za, temu, przed, po, od… do…, przez*"
+ ],
+ "dialogs": [
+  {
+   "title": "Dialog — Którego dzisiaj jest?",
+   "intro": "Awal November, dapur mieszkanie di Podgórze. Budi menatap kalender di kulkas, lalu tiba-tiba teringat sesuatu yang penting.",
+   "lines": [
+    {
+     "speaker": "Budi:",
+     "text": "Tomek, którego dzisiaj jest?",
+     "id": "Tomek, hari ini tanggal berapa?",
+     "literal": "Tomek, yang-keberapa hari-ini ada?"
+    },
+    {
+     "speaker": "Tomek:",
+     "text": "Trzeciego listopada. A co?",
+     "id": "Tanggal tiga November. Kenapa?",
+     "literal": "ketiga november. dan apa?"
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Ania ma urodziny dwunastego listopada.",
+     "id": "Ania ulang tahun tanggal dua belas November.",
+     "literal": "Ania ia-punya ulang-tahun kedua-belas november."
+    },
+    {
+     "speaker": "Tomek:",
+     "text": "Faktycznie! To już za dziewięć dni.",
+     "id": "Iya juga! Berarti tinggal sembilan hari lagi.",
+     "literal": "memang! itu sudah dalam sembilan hari."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Może zrobimy jej imprezę niespodziankę?",
+     "id": "Gimana kalau kita bikin pesta kejutan buat dia?",
+     "literal": "mungkin kita-akan-membuat untuk-dia pesta kejutan?"
+    },
+    {
+     "speaker": "Tomek:",
+     "text": "Świetny pomysł. Ale dwunasty to czwartek, a ona pracuje do wieczora.",
+     "id": "Ide bagus. Tapi tanggal dua belas itu hari Kamis, dan dia kerja sampai malam.",
+     "literal": "hebat gagasan. tetapi kedua-belas itu Kamis, dan dia ia-bekerja sampai malam."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "To zróbmy ją w sobotę, czternastego. Od siódmej do północy.",
+     "id": "Kalau gitu kita adakan hari Sabtu, tanggal empat belas. Dari jam tujuh sampai tengah malam.",
+     "literal": "jadi mari-kita-buat dia pada Sabtu, keempat-belas. dari ketujuh sampai tengah-malam."
+    },
+    {
+     "speaker": "Tomek:",
+     "text": "Dobrze. Zaproszenia wyślemy przed weekendem.",
+     "id": "Oke. Undangannya kita kirim sebelum akhir pekan.",
+     "literal": "baik. undangan-undangan kita-akan-mengirim sebelum akhir-pekan."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "A prezent? W zeszłym roku dałem jej książkę.",
+     "id": "Terus kadonya? Tahun lalu saya kasih dia buku.",
+     "literal": "dan hadiah? pada lalu tahun saya-memberi-lampau-lk kepada-dia buku."
+    },
+    {
+     "speaker": "Tomek:",
+     "text": "Od miesięcy mówi o kursie tańca. Kupmy jej karnet.",
+     "id": "Sudah berbulan-bulan dia ngomongin kursus dansa. Kita belikan kartu langganannya saja.",
+     "literal": "sejak bulan-bulan ia-berbicara tentang kursus tari. mari-kita-beli untuk-dia kartu-langganan."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Kupię go w piątek po pracy.",
+     "id": "Saya beli hari Jumat sepulang kerja.",
+     "literal": "saya-akan-membeli dia pada Jumat sesudah kerja."
+    },
+    {
+     "speaker": "Tomek:",
+     "text": "A tort? Pani Halina piecze najlepszy sernik na Podgórzu.",
+     "id": "Kuenya? Bu Halina bikin sernik paling enak se-Podgórze.",
+     "literal": "dan kue-tar? nyonya Halina ia-memanggang terbaik kue-keju di Podgórze."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Zapytam ją jutro rano.",
+     "id": "Besok pagi saya tanya dia.",
+     "literal": "saya-akan-bertanya dia besok pagi."
+    },
+    {
+     "speaker": "Tomek:",
+     "text": "Jasne. Nikomu ani słowa przed imprezą!",
+     "id": "Beres. Jangan bocor ke siapa pun sebelum pestanya!",
+     "literal": "jelas. kepada-siapa-pun-tidak bahkan-tidak kata sebelum pesta!"
+    }
+   ],
+   "notes": [
+    "**Którego dzisiaj jest?** — secara harfiah \"yang keberapa hari ini?\". Pertanyaannya sudah dalam dopełniacz, jadi jawabannya juga: *Trzeciego (listopada).* Ada juga versi *Który dzisiaj jest?* dengan jawaban mianownik: *Dzisiaj jest trzeci listopada.* Dua-duanya benar dan sama lazimnya; yang penting jawabanmu mengikuti bentuk pertanyaannya.",
+    "**Dwunastego listopada** — tanggal diucapkan dengan **angka urutan**, bukan angka biasa: \"hari kedua belas (dari) November\". Nama bulan di dalam tanggal selalu dopełniacz (*listopada*, bukan *listopad*), dan kalau tanggal menjawab \"kapan?\", angka urutannya ikut dopełniacz: *dwunastego*. Tidak perlu kata depan apa pun.",
+    "**Dwunasty to czwartek** — kalau tanggal menjadi pokok kalimat (bukan jawaban \"kapan?\"), angka urutannya kembali ke mianownik: *dwunasty*. Lawannya di baris berikutnya: *w sobotę, czternastego* — \"kapan\", jadi dopełniacz.",
+    "**Za dziewięć dni** — *za* + biernik untuk waktu berarti \"lagi, dari sekarang\": *za tydzień, za godzinę, za rok*. Kebalikannya *temu* yang berdiri sesudah jangka waktunya: *tydzień temu*. Awas, *za* di sini bukan \"terlalu\" (*za mały*) — konteksnya selalu jelas.",
+    "**Od siódmej do północy** — *od* dan *do* sama-sama membawa dopełniacz. Jam memakai angka urutan perempuan karena yang dimaksud *godzina*: *od siódmej* = \"dari (jam) ketujuh\". *Północ* (tengah malam) menjadi *północy*.",
+    "**Przed weekendem, po pracy** — dua kata depan waktu yang paling sering dipakai membawa kasus berbeda: *przed* + narzędnik (*przed imprezą, przed obiadem*), *po* + miejscownik (*po pracy, po imprezie*). Hafalkan sebagai pasangan dengan contohnya."
+   ],
+   "grammars": [
+    {
+     "title": "Angka urutan dan tanggal",
+     "body": [
+      "Angka urutan berperilaku persis seperti kata sifat: punya jenis kelamin dan kasus. Untuk tanggal, kamu hampir selalu hanya butuh dua bentuk: mianownik laki-laki (*dzień* laki-laki, jadi *pierwszy*) dan dopełniacznya (*pierwszego*) untuk menjawab \"kapan?\"."
+     ],
+     "table": {
+      "head": [
+       "Angka",
+       "Mianownik (m)",
+       "Tanggal, D.",
+       "Cara baca (M.)"
+      ],
+      "rows": [
+       [
+        "1.",
+        "*pierwszy*",
+        "*pierwszego*",
+        "PYER-fsyy"
+       ],
+       [
+        "2.",
+        "*drugi*",
+        "*drugiego*",
+        "DRU-gi"
+       ],
+       [
+        "3.",
+        "*trzeci*",
+        "*trzeciego*",
+        "TSYE-ci"
+       ],
+       [
+        "4.",
+        "*czwarty*",
+        "*czwartego*",
+        "CFAR-ty"
+       ],
+       [
+        "5.",
+        "*piąty*",
+        "*piątego*",
+        "PYON-ty"
+       ],
+       [
+        "6.",
+        "*szósty*",
+        "*szóstego*",
+        "SYUS-ty"
+       ],
+       [
+        "7.",
+        "*siódmy*",
+        "*siódmego*",
+        "SYUD-my"
+       ],
+       [
+        "8.",
+        "*ósmy*",
+        "*ósmego*",
+        "US-my"
+       ],
+       [
+        "9.",
+        "*dziewiąty*",
+        "*dziewiątego*",
+        "jye-VYON-ty"
+       ],
+       [
+        "10.",
+        "*dziesiąty*",
+        "*dziesiątego*",
+        "jye-SYON-ty"
+       ],
+       [
+        "11.",
+        "*jedenasty*",
+        "*jedenastego*",
+        "ye-de-NAS-ty"
+       ],
+       [
+        "12.",
+        "*dwunasty*",
+        "*dwunastego*",
+        "dvu-NAS-ty"
+       ],
+       [
+        "20.",
+        "*dwudziesty*",
+        "*dwudziestego*",
+        "dvu-JYES-ty"
+       ],
+       [
+        "21.",
+        "*dwudziesty pierwszy*",
+        "*dwudziestego pierwszego*",
+        "dvu-JYES-ty PYER-fsyy"
+       ],
+       [
+        "30.",
+        "*trzydziesty*",
+        "*trzydziestego*",
+        "tsy-JYES-ty"
+       ],
+       [
+        "31.",
+        "*trzydziesty pierwszy*",
+        "*trzydziestego pierwszego*",
+        "tsy-JYES-ty PYER-fsyy"
+       ]
+      ]
+     },
+     "after": [
+      "Empat yang pertama tidak bisa ditebak dari angka biasanya (*jeden → pierwszy, dwa → drugi, trzy → trzeci, cztery → czwarty*); sisanya cukup teratur: *pięć → piąty, osiem → ósmy, dziesięć → dziesiąty*.",
+      "Pada angka gabungan, **kedua** bagian berubah: *dwudziestego pierwszego maja*. Ini berbeda dengan tahun (lihat dialog kedua), di mana hanya bagian belakangnya yang berubah.",
+      "Dalam tulisan, angka urutan diberi titik: *3. miejsce* (tempat ketiga). Tanggal ditulis tanpa titik sesudah angka hari: *3 listopada 2026 r.*"
+     ]
+    },
+    {
+     "title": "Kata depan waktu dan kasusnya",
+     "body": [
+      "Setiap ungkapan waktu membawa kasusnya sendiri. Tabel ini merangkum semuanya — kebanyakan kasusnya sudah kamu kenal dari A1, di sini hanya dikumpulkan dalam satu tempat."
+     ],
+     "table": {
+      "head": [
+       "Pola",
+       "Kasus",
+       "Contoh",
+       "Arti"
+      ],
+      "rows": [
+       [
+        "tanggal tanpa kata depan",
+        "D.",
+        "*dwunastego listopada*",
+        "pada tanggal 12 November"
+       ],
+       [
+        "*w* + hari",
+        "B.",
+        "*w sobotę, w czwartek*",
+        "pada hari Sabtu, Kamis"
+       ],
+       [
+        "*w* + bulan, tahun, abad",
+        "Ms.",
+        "*w listopadzie, w tym roku, w XXI wieku*",
+        "pada bulan/tahun/abad"
+       ],
+       [
+        "*za* + jangka",
+        "B.",
+        "*za tydzień, za dziewięć dni*",
+        "seminggu lagi, sembilan hari lagi"
+       ],
+       [
+        "jangka + *temu*",
+        "B.",
+        "*tydzień temu, dwa lata temu*",
+        "seminggu lalu, dua tahun lalu"
+       ],
+       [
+        "*przed*",
+        "N.",
+        "*przed weekendem, przed imprezą*",
+        "sebelum"
+       ],
+       [
+        "*po*",
+        "Ms.",
+        "*po pracy, po imprezie*",
+        "sesudah"
+       ],
+       [
+        "*od… do…*",
+        "D.",
+        "*od siódmej do północy, od maja do lipca*",
+        "dari… sampai…"
+       ],
+       [
+        "*od* (sejak)",
+        "D.",
+        "*od miesięcy, od 1975 roku*",
+        "sejak, sudah selama"
+       ],
+       [
+        "*przez*",
+        "B.",
+        "*przez dwa lata, przez całą noc*",
+        "selama (dari awal sampai akhir)"
+       ]
+      ]
+     },
+     "after": [
+      "**Od + kala kini, przez + kala lampau.** Bahasa Polandia berkata *Mieszkam tu od roku* — \"saya tinggal di sini sejak setahun\" — dengan kala **kini**, karena keadaannya masih berlangsung. Kalau sudah selesai, pakai *przez* dan kala lampau: *Przez rok mieszkałem w akademiku.* Penutur Indonesia jarang salah di sini; penutur bahasa Inggris sering.",
+      "*Przed* dan *po* juga bekerja dengan jam: *przed ósmą* (N.), *po ósmej* (Ms.). Jadi *przed siódmą* = sebelum jam tujuh, *po siódmej* = lewat jam tujuh."
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Dialog kedua — Sto lat, Aniu!",
+   "intro": "Sabtu malam, tanggal 14. Lampu dinyalakan begitu Ania masuk. Semua sudah menunggu: Tomek, Budi, Kasia, dan pani Halina dengan sernik buatannya.",
+   "lines": [
+    {
+     "speaker": "Wszyscy:",
+     "text": "Niespodzianka! Sto lat, Aniu!",
+     "id": "Kejutan! Selamat ulang tahun, Ania!",
+     "literal": "kejutan! seratus tahun, Ania!"
+    },
+    {
+     "speaker": "Ania:",
+     "text": "Nie wierzę! Przecież urodziny miałam w czwartek!",
+     "id": "Nggak percaya! Kan ulang tahunku hari Kamis!",
+     "literal": "tidak saya-percaya! kan ulang-tahun saya-punya-lampau-pr pada Kamis!"
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Wiemy. Ale w czwartek pracowałaś od rana do wieczora.",
+     "id": "Kami tahu. Tapi hari Kamis kamu kerja dari pagi sampai malam.",
+     "literal": "kami-tahu. tetapi pada Kamis kamu-bekerja-lampau-pr dari pagi sampai malam."
+    },
+    {
+     "speaker": "Ania:",
+     "text": "To prawda. A kto upiekł ten piękny sernik?",
+     "id": "Betul juga. Terus siapa yang bikin sernik secantik ini?",
+     "literal": "itu kebenaran. dan siapa memanggang-lampau-lk ini indah kue-keju?"
+    },
+    {
+     "speaker": "Pani Halina:",
+     "text": "Ja, kochanie. Piekę go od pięćdziesięciu lat.",
+     "id": "Saya, Sayang. Sudah lima puluh tahun saya bikin kue ini.",
+     "literal": "saya, sayang. saya-memanggang dia sejak lima-puluh tahun."
+    },
+    {
+     "speaker": "Tomek:",
+     "text": "Pani Halina mieszka na Podgórzu od 1975 roku.",
+     "id": "Bu Halina tinggal di Podgórze sejak tahun 1975.",
+     "literal": "nyonya Halina ia-tinggal di Podgórze sejak 1975 tahun."
+    },
+    {
+     "speaker": "Ania:",
+     "text": "Budi, pamiętasz? Poznaliśmy się ponad rok temu w akademiku.",
+     "id": "Budi, ingat nggak? Kita kenalan lebih dari setahun lalu di asrama.",
+     "literal": "Budi, kamu-ingat? kami-berkenalan-lampau diri lebih-dari tahun lalu di asrama."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Oczywiście. Drugiego października, w kuchni w akademiku.",
+     "id": "Tentu saja. Tanggal dua Oktober, di dapur asrama.",
+     "literal": "tentu. kedua oktober, di dapur di asrama."
+    },
+    {
+     "speaker": "Kasia:",
+     "text": "Aniu, zdmuchnij świeczki i pomyśl życzenie!",
+     "id": "Ania, tiup lilinnya dan bikin permohonan!",
+     "literal": "Ania, tiuplah lilin-lilin dan pikirkanlah permohonan!"
+    },
+    {
+     "speaker": "Ania:",
+     "text": "Dziękuję wam. To najlepsze urodziny od lat!",
+     "id": "Makasih semuanya. Ini ulang tahun terbaik sejak bertahun-tahun!",
+     "literal": "saya-berterima-kasih kepada-kalian. itu terbaik ulang-tahun sejak tahun-tahun!"
+    }
+   ],
+   "notes": [
+    "**Sto lat!** — \"seratus tahun!\" adalah ucapan ulang tahun khas Polandia dan juga judul lagu yang dinyanyikan bersama sesudah kejutan dibuka. *Aniu* adalah wołacz dari *Ania*: nama perempuan berakhiran *-ia* berubah menjadi *-iu* saat dipanggil (*Kasiu, Zosiu*).",
+    "**Urodziny** hanya punya bentuk jamak, seperti *drzwi* (pintu) dan *okulary* (kacamata). Karena itu *najlepsze urodziny* dan *moje urodziny są…*, bukan bentuk tunggal. Dopełniacznya *urodzin*: *z okazji urodzin* (dalam rangka ulang tahun); miejscowniknya *urodzinach*: *Nie pamiętał o moich urodzinach.*",
+    "**Od pięćdziesięciu lat, od 1975 roku** — \"sejak\" selalu *od* + dopełniacz, dan kata kerjanya kala **kini** karena pani Halina masih memanggang dan masih tinggal di sana. *Pięćdziesiąt* menjadi *pięćdziesięciu* di dopełniacz; *lat* adalah dopełniacz jamak dari *rok* (jamaknya memakai akar lain: *lata*).",
+    "**Ponad rok temu** — *temu* berdiri sesudah jangka waktunya: *rok temu, dwa lata temu, pięć lat temu*. Perhatikan *lata*, bukan *roku*: sesudah *dwa, trzy, cztery* dipakai mianownik jamak *lata*, sesudah lima ke atas *lat*. *Ponad* = lebih dari. *Rok* memang meminjam jamak dari kata lain; hafalkan saja *rok — dwa lata — pięć lat*.",
+    "**Zdmuchnij świeczki i pomyśl życzenie** — dua perintah perfektif, persis seperti orang Indonesia di depan kue: tiup lilin, buat permohonan. *Pomyśl życzenie* adalah ungkapan tetap untuk \"bikin permohonan\"."
+   ],
+   "grammars": [
+    {
+     "title": "Membaca tahun dan abad",
+     "body": [
+      "Tahun dibaca dengan aturan yang mengejutkan: **ribuan dan ratusan tetap angka biasa**, hanya puluhan dan satuan terakhir yang menjadi angka urutan dan berubah kasus. Kata *rok* ikut di belakang, dalam kasus yang sama.",
+      "Abad ditulis dengan angka Romawi dan dibaca sebagai angka urutan biasa: *XXI wiek* = *dwudziesty pierwszy wiek*."
+     ],
+     "table": {
+      "head": [
+       "Tulisan",
+       "Dibaca",
+       "Kasus"
+      ],
+      "rows": [
+       [
+        "*w 1975 roku*",
+        "*w tysiąc dziewięćset siedemdziesiątym piątym roku*",
+        "Ms. (pada tahun)"
+       ],
+       [
+        "*od 1975 roku*",
+        "*od tysiąc dziewięćset siedemdziesiątego piątego roku*",
+        "D. (sejak tahun)"
+       ],
+       [
+        "*w 2000 roku*",
+        "*w dwutysięcznym roku*",
+        "Ms."
+       ],
+       [
+        "*w 2026 roku*",
+        "*w dwa tysiące dwudziestym szóstym roku*",
+        "Ms."
+       ],
+       [
+        "*12 listopada 2026*",
+        "*dwunastego listopada dwa tysiące dwudziestego szóstego roku*",
+        "D. (tanggal lengkap)"
+       ],
+       [
+        "*w XXI wieku*",
+        "*w dwudziestym pierwszym wieku*",
+        "Ms."
+       ],
+       [
+        "*w latach 90.*",
+        "*w latach dziewięćdziesiątych*",
+        "Ms. jamak (tahun 90-an)"
+       ]
+      ]
+     },
+     "after": [
+      "Dalam tulisan resmi kamu akan sering melihat singkatan *r.* untuk *roku* dan *w.* untuk *wieku*: *w 2026 r.*, *w XXI w.* Bacalah tetap lengkap.",
+      "Dalam percakapan, orang Polandia sering membuang ribuan dan ratusan kalau konteksnya jelas: *w dziewięćdziesiątym ósmym* (tahun '98). Kalau ragu, sebutkan lengkap — tidak pernah salah."
+     ]
+    }
+   ]
+  }
+ ],
+ "sections": [
+  {
+   "title": "Dua belas bulan dan tiga bentuknya",
+   "blocks": [
+    {
+     "type": "tabel",
+     "head": [
+      "Bulan (M.)",
+      "Cara baca",
+      "Tanggal (D.)",
+      "Pada bulan (w + Ms.)"
+     ],
+     "rows": [
+      [
+       "*styczeń*",
+       "STY-ceny",
+       "*pierwszego stycznia*",
+       "*w styczniu*"
+      ],
+      [
+       "*luty*",
+       "LU-ty",
+       "*czternastego lutego*",
+       "*w lutym*"
+      ],
+      [
+       "*marzec*",
+       "MA-zyets",
+       "*ósmego marca*",
+       "*w marcu*"
+      ],
+      [
+       "*kwiecień*",
+       "KFYE-cyeny",
+       "*pierwszego kwietnia*",
+       "*w kwietniu*"
+      ],
+      [
+       "*maj*",
+       "may",
+       "*trzeciego maja*",
+       "*w maju*"
+      ],
+      [
+       "*czerwiec*",
+       "CER-vyets",
+       "*pierwszego czerwca*",
+       "*w czerwcu*"
+      ],
+      [
+       "*lipiec*",
+       "LI-pyets",
+       "*dwudziestego szóstego lipca*",
+       "*w lipcu*"
+      ],
+      [
+       "*sierpień*",
+       "SYER-pyeny",
+       "*piętnastego sierpnia*",
+       "*w sierpniu*"
+      ],
+      [
+       "*wrzesień*",
+       "VZYE-syeny",
+       "*pierwszego września*",
+       "*we wrześniu*"
+      ],
+      [
+       "*październik*",
+       "pazy-JYER-nik",
+       "*drugiego października*",
+       "*w październiku*"
+      ],
+      [
+       "*listopad*",
+       "lis-TO-pat",
+       "*jedenastego listopada*",
+       "*w listopadzie*"
+      ],
+      [
+       "*grudzień*",
+       "GRU-jyeny",
+       "*dwudziestego piątego grudnia*",
+       "*w grudniu*"
+      ]
+     ]
+    },
+    {
+     "type": "p",
+     "text": "Nama bulan Polandia tidak berasal dari bahasa Latin seperti bahasa Indonesia, melainkan dari alam dan pekerjaan di desa: *lipiec* dari *lipa* (pohon linden yang berbunga di bulan Juli), *listopad* \"daun berguguran\", *sierpień* dari *sierp* (sabit panen). Karena itu tidak bisa ditebak — tapi justru mudah diingat kalau kamu tahu ceritanya. Nama bulan ditulis **huruf kecil**, begitu juga nama hari. Perhatikan *we wrześniu*: *w* menjadi *we* supaya tiga huruf mati tidak bertumpuk di depan kata."
+    },
+    {
+     "type": "kotak",
+     "title": "Imieniny — \"ulang tahun\" kedua orang Polandia",
+     "items": [
+      "Selain *urodziny*, banyak orang Polandia merayakan *imieniny* — hari nama, yaitu hari santo yang namanya sama dengan nama mereka di kalender. *Anna* merayakannya tanggal 26 Juli (*dwudziestego szóstego lipca*).",
+      "Kalender dinding dan banyak aplikasi kalender di Polandia mencantumkan nama-nama yang berimieniny hari itu. Generasi yang lebih tua sering menganggap imieniny sama penting dengan ulang tahun, bahkan lebih.",
+      "Ucapan untuk keduanya sama: *Wszystkiego najlepszego!* (Semoga yang terbaik!) atau *Sto lat!*. Untuk imieniny, orang juga berkata *Wszystkiego najlepszego z okazji imienin!*",
+      "Tidak punya nama Polandia? Tidak apa-apa — tapi jangan kaget kalau rekan kantormu tiba-tiba membawa kue ke kantor di hari yang bukan ulang tahunnya."
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Ungkapan waktu sehari-hari",
+   "blocks": [
+    {
+     "type": "tabel",
+     "head": [
+      "Polski",
+      "Cara baca",
+      "Arti"
+     ],
+     "rows": [
+      [
+       "*przedwczoraj*",
+       "psyet-FCO-ray",
+       "kemarin lusa"
+      ],
+      [
+       "*pojutrze*",
+       "po-YU-tsye",
+       "lusa"
+      ],
+      [
+       "*w przyszłym tygodniu*",
+       "f PSYYSY-wym ty-GOD-nyu",
+       "minggu depan"
+      ],
+      [
+       "*w zeszłym miesiącu*",
+       "v ZESY-wym mye-SYON-tsu",
+       "bulan lalu"
+      ],
+      [
+       "*na początku miesiąca*",
+       "na po-CONT-ku mye-SYON-tsa",
+       "di awal bulan"
+      ],
+      [
+       "*w połowie roku*",
+       "f po-WO-vye RO-ku",
+       "di pertengahan tahun"
+      ],
+      [
+       "*pod koniec roku*",
+       "pot KO-nyets RO-ku",
+       "menjelang akhir tahun"
+      ],
+      [
+       "*do końca tygodnia*",
+       "do KONY-tsa ty-GOD-nya",
+       "sampai akhir minggu"
+      ],
+      [
+       "*co roku*",
+       "tso RO-ku",
+       "setiap tahun"
+      ],
+      [
+       "*raz w miesiącu*",
+       "ras v mye-SYON-tsu",
+       "sebulan sekali"
+      ],
+      [
+       "*od czasu do czasu*",
+       "ot CA-su do CA-su",
+       "sesekali"
+      ],
+      [
+       "*na razie*",
+       "na RA-zye",
+       "untuk sementara; sampai nanti"
+      ]
+     ]
+    },
+    {
+     "type": "p",
+     "text": "*W przyszłym* dan *w zeszłym* adalah miejscownik dari *przyszły* (yang akan datang) dan *zeszły* (yang lalu); keduanya dipakai untuk *tydzień, miesiąc, rok*. Untuk hari, bahasa Polandia punya kata sendiri: *przedwczoraj, wczoraj, dziś, jutro, pojutrze*. Kalau berencana dengan orang Polandia, biasakan juga menyebut tanggalnya, bukan hanya harinya — *w sobotę, czternastego* — karena \"Sabtu\" saja sering berarti \"Sabtu yang mana?\"."
+    },
+    {
+     "type": "kotak",
+     "title": "Tanggal yang perlu kamu tahu di Polandia",
+     "items": [
+      "Tanggal ditulis hari–bulan–tahun: *14.11.2026* atau *14 listopada 2026 r.* Di surat resmi dan batu nisan kamu juga akan melihat bulan dalam angka Romawi: *14 XI 2026*.",
+      "*Trzeci maja* — Hari Konstitusi 3 Mei (Konstitusi 1791). *Jedenasty listopada* — Hari Kemerdekaan (1918). Keduanya hari libur nasional; di Kraków ada upacara dan bendera di mana-mana.",
+      "*Pierwszy listopada* — Wszystkich Świętych, hari libur ketika keluarga mengunjungi makam dan menyalakan lilin. Pemakaman Rakowicki di Kraków bercahaya ribuan lilin malam itu.",
+      "Tahun akademik di universitas Polandia umumnya mulai **1 Oktober** (*pierwszego października*), dan kota mahasiswa seperti Kraków tiba-tiba penuh lagi di minggu itu."
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Ulangan berjenjang — unit 14",
+   "blocks": [
+    {
+     "type": "p",
+     "text": "Tutup kolom Polandia, baca terjemahan Indonesianya, lalu susun kembali kalimatnya dari ingatan."
+    },
+    {
+     "type": "tabel",
+     "head": [
+      "Bahasa Indonesia",
+      "Polski"
+     ],
+     "rows": [
+      [
+       "Wrocław lebih bagus daripada yang saya kira.",
+       "*Wrocław był lepszy, niż myślałem.*"
+      ],
+      [
+       "Tapi Kraków lebih tua dan punya lebih banyak bangunan bersejarah.",
+       "*Ale Kraków jest starszy i ma więcej zabytków.*"
+      ],
+      [
+       "Biaya hidup di Warsawa lebih mahal daripada di Kraków.",
+       "*Życie w Warszawie jest droższe niż w Krakowie.*"
+      ],
+      [
+       "Di Jakarta jauh lebih hangat daripada di Kraków.",
+       "*W Dżakarcie jest dużo cieplej niż w Krakowie.*"
+      ],
+      [
+       "Makin banyak saya bicara, makin berkurang rasa takut saya.",
+       "*Im więcej mówię, tym mniej się boję.*"
+      ]
+     ]
+    }
+   ]
+  }
+ ],
+ "vocab": [
+  {
+   "pl": "pierwszy — drugi — trzeci",
+   "baca": "PYER-fsyy / DRU-gi / TSYE-ci",
+   "id": "pertama — kedua — ketiga"
+  },
+  {
+   "pl": "data (ż)",
+   "baca": "DA-ta",
+   "id": "tanggal"
+  },
+  {
+   "pl": "urodziny (tylko lm), urodzin",
+   "baca": "u-ro-JI-ny",
+   "id": "ulang tahun"
+  },
+  {
+   "pl": "imieniny (tylko lm)",
+   "baca": "i-mye-NI-ny",
+   "id": "hari nama"
+  },
+  {
+   "pl": "impreza (ż)",
+   "baca": "im-PRE-za",
+   "id": "pesta"
+  },
+  {
+   "pl": "niespodzianka (ż)",
+   "baca": "nye-spo-JYAN-ka",
+   "id": "kejutan"
+  },
+  {
+   "pl": "zaproszenie (n)",
+   "baca": "za-pro-SYE-nye",
+   "id": "undangan"
+  },
+  {
+   "pl": "prezent (m)",
+   "baca": "PRE-zent",
+   "id": "kado, hadiah"
+  },
+  {
+   "pl": "karnet (m)",
+   "baca": "KAR-net",
+   "id": "kartu langganan (kursus, gym)"
+  },
+  {
+   "pl": "tort (m)",
+   "baca": "tort",
+   "id": "kue tar"
+  },
+  {
+   "pl": "świeczka (ż)",
+   "baca": "SYFYEC-ka",
+   "id": "lilin (kecil)"
+  },
+  {
+   "pl": "życzenie (n)",
+   "baca": "zyy-CE-nye",
+   "id": "permohonan; ucapan selamat"
+  },
+  {
+   "pl": "miesiąc, miesiące (m)",
+   "baca": "MYE-syonts / mye-SYON-tse",
+   "id": "bulan"
+  },
+  {
+   "pl": "rok, dwa lata, pięć lat (m)",
+   "baca": "rok / LA-ta / lat",
+   "id": "tahun"
+  },
+  {
+   "pl": "wiek (m)",
+   "baca": "vyek",
+   "id": "abad; usia"
+  },
+  {
+   "pl": "temu",
+   "baca": "TE-mu",
+   "id": "yang lalu (sesudah jangka waktu)"
+  },
+  {
+   "pl": "przed (+ N.)",
+   "baca": "psyet",
+   "id": "sebelum"
+  },
+  {
+   "pl": "po (+ Ms.)",
+   "baca": "po",
+   "id": "sesudah"
+  },
+  {
+   "pl": "zapraszać (zapraszam) / zaprosić (zaproszę)",
+   "baca": "za-PRA-syac / za-PRO-syic",
+   "id": "mengundang"
+  },
+  {
+   "pl": "wysyłać (wysyłam) / wysłać (wyślę)",
+   "baca": "vy-SY-wac / VYS-wac",
+   "id": "mengirim"
+  },
+  {
+   "pl": "piec (piekę) / upiec (upiekę)",
+   "baca": "pyets / U-pyets",
+   "id": "memanggang"
+  },
+  {
+   "pl": "zdmuchnąć (zdmuchnę) — dk",
+   "baca": "ZDMUH-nonc",
+   "id": "meniup (padam)"
+  },
+  {
+   "pl": "poznać się (poznamy się) — dk",
+   "baca": "POZ-nac sye",
+   "id": "berkenalan"
+  },
+  {
+   "pl": "faktycznie",
+   "baca": "fak-TYC-nye",
+   "id": "memang, betul juga"
+  },
+  {
+   "pl": "przecież",
+   "baca": "PSYE-cyesy",
+   "id": "kan, padahal"
+  }
+ ],
+ "exercises": [
+  {
+   "prompt": "Terjemahkan ke bahasa Polandia.",
+   "items": [
+    "Hari ini tanggal berapa?",
+    "Ania ulang tahun tanggal dua belas November.",
+    "Tinggal sembilan hari lagi.",
+    "Seminggu lalu saya menelepon Kasia. (pelaku laki-laki)",
+    "Pestanya dari jam tujuh sampai tengah malam.",
+    "Selama dua tahun saya tinggal di asrama. (pelaku laki-laki)"
+   ]
+  },
+  {
+   "prompt": "Isi dengan ungkapan waktu yang benar menurut petunjuk di dalam kurung. Tulis angka dengan huruf.",
+   "items": [
+    "Moje urodziny są ____. (5, maj → tanggal)",
+    "Wracam do Polski ____. (wrzesień, w + Ms.)",
+    "Urodziłam się ____. (1999, w + Ms.)",
+    "Zadzwonię do ciebie ____. (praca, po + Ms.)",
+    "Zrób zakupy ____. (impreza, przed + N.)",
+    "Mieszkam w Krakowie ____. (dwa lata, od + D.)",
+    "Dzisiaj jest ____. (1, styczeń, M.)"
+   ]
+  },
+  {
+   "prompt": "Jawab dengan kalimat lengkap memakai keterangan di dalam kurung. Pelaku laki-laki.",
+   "items": [
+    "Kiedy masz urodziny? (23.07)",
+    "Kiedy jest Święto Niepodległości? (11.11)",
+    "Od kiedy uczysz się polskiego? (dwa lata)",
+    "Kiedy wróciłeś z Dżakarty? (tydzień, temu)",
+    "Kiedy kończysz studia? (lipiec)",
+    "Jak długo mieszkałeś w akademiku? (rok, przez)"
+   ]
+  },
+  {
+   "prompt": "Susun jadi kalimat yang benar.",
+   "items": [
+    "dzisiaj / którego / jest / ?",
+    "urodziny / ma / Ania / listopada / dwunastego",
+    "ani / nikomu / imprezą / słowa / przed",
+    "się / rok / temu / poznaliśmy / ponad",
+    "mieszka / od / w / Podgórzu / Halina / pani / 1975 / roku"
+   ]
+  }
+ ],
+ "answers": [
+  "Którego dzisiaj jest? (atau: Który dzisiaj jest?) — Ania ma urodziny dwunastego listopada. — To już za dziewięć dni. — Tydzień temu dzwoniłem do Kasi. — Impreza jest od siódmej do północy. — Przez dwa lata mieszkałem w akademiku.",
+  "piątego maja — we wrześniu — w tysiąc dziewięćset dziewięćdziesiątym dziewiątym roku — po pracy — przed imprezą — od dwóch lat — pierwszy stycznia",
+  "Mam urodziny dwudziestego trzeciego lipca. — Święto Niepodległości jest jedenastego listopada. — Uczę się polskiego od dwóch lat. — Wróciłem z Dżakarty tydzień temu. — Kończę studia w lipcu. — Mieszkałem w akademiku przez rok.",
+  "Którego dzisiaj jest? — Ania ma urodziny dwunastego listopada. — Nikomu ani słowa przed imprezą! — Poznaliśmy się ponad rok temu. — Pani Halina mieszka na Podgórzu od 1975 roku."
+ ]
+}

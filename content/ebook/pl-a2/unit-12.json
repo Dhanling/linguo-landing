@@ -1,0 +1,725 @@
+{
+ "title": "Memesan hotel — bentuk sopan \"ingin\"",
+ "title_target": "Chciałbym zarezerwować pokój",
+ "goal": "Memesan kamar dan meminta sesuatu dengan sopan lewat telepon, surel, dan di meja resepsionis. Unit ini memasang *tryb przypuszczający* (bentuk *-by-*) untuk permintaan sopan: bentuk lengkap per orang dan jenis kelamin, letak *-by-*, serta *pan/pani/państwo* dalam kasus.",
+ "bekal": [
+  "memesan kamar dan menanyakan harga, sarapan, dan jam masuk",
+  "meminta tolong dengan sopan memakai *chciałbym, mógłbyś, czy mogłaby pani*",
+  "memilih bentuk *-by-* yang cocok dengan pelaku dan jenis kelaminnya"
+ ],
+ "dialogs": [
+  {
+   "title": "Dialog — Chciałbym zarezerwować pokój",
+   "intro": "Budi dan Tomek merencanakan akhir pekan di Toruń. Budi menelepon sebuah *pensjonat* kecil di dekat kota tua.",
+   "lines": [
+    {
+     "speaker": "Recepcjonistka:",
+     "text": "Pensjonat „Nad Wisłą”, dzień dobry. W czym mogę pomóc?",
+     "id": "Pensjonat Nad Wisłą, selamat siang. Ada yang bisa saya bantu?",
+     "literal": "penginapan „di-tepi Wisła”, baik hari. dalam apa saya-bisa membantu?"
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Dzień dobry. Chciałbym zarezerwować pokój na weekend.",
+     "id": "Selamat siang. Saya ingin memesan kamar untuk akhir pekan.",
+     "literal": "baik hari. saya-mau-andai-lk memesan kamar untuk akhir-pekan."
+    },
+    {
+     "speaker": "Recepcjonistka:",
+     "text": "Oczywiście. Na które dni i dla ilu osób?",
+     "id": "Tentu. Untuk hari apa saja dan berapa orang?",
+     "literal": "tentu. untuk yang-mana hari dan untuk berapa orang?"
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Od piątku do niedzieli, dla dwóch osób. Mieliby państwo pokój z dwoma łóżkami?",
+     "id": "Dari Jumat sampai Minggu, untuk dua orang. Apakah ada kamar dengan dua tempat tidur?",
+     "literal": "dari Jumat sampai Minggu, untuk dua orang. mereka-punya-andai-lk tuan-nyonya kamar dengan dua tempat-tidur?"
+    },
+    {
+     "speaker": "Recepcjonistka:",
+     "text": "Chwileczkę, sprawdzę… Tak, został nam jeszcze jeden pokój z widokiem na Wisłę.",
+     "id": "Sebentar, saya cek… Ya, masih tersisa satu kamar dengan pemandangan ke Sungai Wisła.",
+     "literal": "sebentar, saya-akan-memeriksa… ya, ia-tersisa-lampau-lk kepada-kami masih satu kamar dengan pemandangan ke Wisła."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Świetnie. Ile kosztowałby taki pokój za dwie noce?",
+     "id": "Bagus. Kira-kira berapa harga kamar itu untuk dua malam?",
+     "literal": "hebat. berapa ia-berharga-andai-lk begitu kamar untuk dua malam?"
+    },
+    {
+     "speaker": "Recepcjonistka:",
+     "text": "Śniadanie jest wliczone w cenę. Cenę i wszystkie szczegóły wyślę panu mejlem.",
+     "id": "Sarapan sudah termasuk. Harga dan semua rinciannya saya kirim ke Bapak lewat surel.",
+     "literal": "sarapan adalah dihitung-n ke harga. harga dan semua rincian saya-akan-mengirim tuan dengan-surel."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Czy mogłaby pani wysłać mi też potwierdzenie rezerwacji?",
+     "id": "Bisakah Ibu juga mengirimi saya konfirmasi pemesanannya?",
+     "literal": "apakah ia-bisa-andai-pr nyonya mengirim kepada-saya juga konfirmasi pemesanan?"
+    },
+    {
+     "speaker": "Recepcjonistka:",
+     "text": "Oczywiście. Poproszę pana imię i nazwisko.",
+     "id": "Tentu. Boleh saya minta nama depan dan nama keluarga Bapak?",
+     "literal": "tentu. saya-akan-meminta tuan nama dan nama-keluarga."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Budi. Mam tylko jedno imię, jak wielu Indonezyjczyków.",
+     "id": "Budi. Saya cuma punya satu nama, seperti banyak orang Indonesia.",
+     "literal": "Budi. saya-punya hanya satu nama, seperti banyak orang-Indonesia."
+    },
+    {
+     "speaker": "Recepcjonistka:",
+     "text": "Rozumiem, wpiszę samo imię. Czy chciałby pan coś jeszcze?",
+     "id": "Baik, saya tulis namanya saja. Ada lagi yang Bapak perlukan?",
+     "literal": "saya-mengerti, saya-akan-menulis sendiri nama. apakah ia-mau-andai-lk tuan sesuatu lagi?"
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Tak. Czy moglibyśmy przyjechać wcześniej, około południa?",
+     "id": "Ya. Bisakah kami datang lebih awal, sekitar tengah hari?",
+     "literal": "ya. apakah kami-bisa-andai-lk tiba lebih-awal, sekitar tengah-hari?"
+    },
+    {
+     "speaker": "Recepcjonistka:",
+     "text": "Pokój będzie gotowy o czternastej, ale bagaże mogą państwo zostawić w recepcji.",
+     "id": "Kamarnya siap jam dua siang, tapi barang bawaan bisa dititipkan di resepsionis.",
+     "literal": "kamar akan-ada siap pada keempat-belas, tetapi bagasi-jamak mereka-bisa tuan-nyonya meninggalkan di resepsionis."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "To by nam bardzo pomogło.",
+     "id": "Itu akan sangat membantu kami.",
+     "literal": "itu andai kepada-kami sangat menolong-lampau."
+    },
+    {
+     "speaker": "Recepcjonistka:",
+     "text": "Nie ma za co. Do zobaczenia w piątek!",
+     "id": "Sama-sama. Sampai jumpa hari Jumat!",
+     "literal": "tidak ada untuk apa. sampai bertemu di Jumat!"
+    }
+   ],
+   "notes": [
+    "**Chciałbym** — bentuk *-by-* dari *chcieć*: \"saya ingin (kalau boleh)\". Dibanding *chcę* (saya mau) ia jauh lebih halus; di hotel, restoran, dan kantor inilah bentuk bakunya. Kalau yang bicara perempuan: *chciałabym*.",
+    "**Mieliby państwo…?** — kepada *państwo* (Bapak-Ibu, pihak penginapan) kata kerjanya orang ketiga **jamak** bentuk laki-laki/campuran: *mieliby, mogliby, chcieliby*. Ini cara sopan bertanya \"apakah ada…?\" tanpa menunjuk satu orang.",
+    "**Ile kosztowałby…?** — bentuk *-by-* juga melunakkan pertanyaan harga: \"kira-kira berapa kalau…\". *Ile kosztuje?* tidak salah, hanya lebih lugas.",
+    "**Czy mogłaby pani…?** — *pani* + kata kerja orang ketiga perempuan: *mogłaby*. Kepada laki-laki: *Czy mógłby pan…?* Inilah rumus permintaan sopan nomor satu dalam bahasa Polandia; hafalkan sebagai satu blok.",
+    "**Poproszę pana imię** — *pana* di sini dopełniacz yang berfungsi sebagai \"milik Bapak\": *pana imię, pani paszport, państwa pokój*. Tak ada kata milik khusus untuk *pan/pani*.",
+    "**To by nam bardzo pomogło** — *by* bisa lepas dari kata kerjanya dan menempel pada kata pertama kalimat: *to by pomogło* sama dengan *to pomogłoby*. Pelakunya *to* (netral), maka *pomogło*."
+   ],
+   "grammars": [
+    {
+     "title": "Tryb przypuszczający: lampau + -by- + ekor orang",
+     "body": [
+      "Resepnya tiga langkah: ambil bentuk lampau orang ketiga (*chciał, chciała, chcieli, chciały*), tempelkan *-by*, lalu ekor orang: *-m, -ś*, tanpa ekor, *-śmy, -ście*. Bentuk ini dipakai untuk permintaan sopan, keinginan, dan (di tingkat berikutnya) pengandaian."
+     ],
+     "table": {
+      "head": [
+       "Pelaku",
+       "Laki-laki / campuran",
+       "Perempuan"
+      ],
+      "rows": [
+       [
+        "ja",
+        "*chciałbym*",
+        "*chciałabym*"
+       ],
+       [
+        "ty",
+        "*chciałbyś*",
+        "*chciałabyś*"
+       ],
+       [
+        "on / ona / ono",
+        "*chciałby*",
+        "*chciałaby* / *chciałoby*"
+       ],
+       [
+        "my",
+        "*chcielibyśmy*",
+        "*chciałybyśmy*"
+       ],
+       [
+        "wy",
+        "*chcielibyście*",
+        "*chciałybyście*"
+       ],
+       [
+        "oni / one",
+        "*chcieliby*",
+        "*chciałyby*"
+       ],
+       [
+        "pan / pani",
+        "*pan chciałby*",
+        "*pani chciałaby*"
+       ],
+       [
+        "państwo",
+        "*państwo chcieliby*",
+        "(selalu bentuk campuran)"
+       ]
+      ]
+     },
+     "after": [
+      "Jenis kelamin mengikuti pelaku, persis seperti kala lampau. Budi: *chciałbym*; Ania: *chciałabym*; Budi dan Tomek bersama: *chcielibyśmy*; Ania dan Kasia: *chciałybyśmy*.",
+      "Tekanan kata tetap di tempat tekanan bentuk lampaunya; *-by-* dan ekornya tidak menariknya: *zrobiłbym* dibaca ZRO-biw-bym, *chcielibyśmy* HCYE-li-bysy-my (bentuk jamak ini: suku keempat dari belakang; dalam obrolan sering juga hcye-li-BYSY-my)."
+     ]
+    },
+    {
+     "title": "Di mana -by- berdiri",
+     "body": [
+      "*-by-* bersama ekornya adalah klitik yang bisa berpindah. Biasanya ia menempel pada kata kerja, tetapi dalam percakapan sering melekat pada kata pertama kalimat — kata tanya, *to*, atau kata ganti. Kata kerjanya lalu tinggal bentuk lampau orang ketiga tanpa ekor."
+     ],
+     "table": {
+      "head": [
+       "Menempel di kata kerja",
+       "Menempel di depan",
+       "Arti"
+      ],
+      "rows": [
+       [
+        "*Co zjadłbyś?*",
+        "*Co byś zjadł?*",
+        "Kamu mau makan apa?"
+       ],
+       [
+        "*Ja chętnie pojechałabym.*",
+        "*Ja bym chętnie pojechała.*",
+        "Saya sih mau ikut."
+       ],
+       [
+        "*To pomogłoby nam.*",
+        "*To by nam pomogło.*",
+        "Itu akan menolong kami."
+       ],
+       [
+        "*Gdzie poszlibyście?*",
+        "*Gdzie byście poszli?*",
+        "Kalian mau pergi ke mana?"
+       ]
+      ]
+     },
+     "after": [
+      "Kolom kedua lebih sering terdengar dalam obrolan; kolom pertama lebih umum dalam tulisan. Keduanya benar.",
+      "Jangan memecah ekornya: *byś, byśmy, byście* selalu utuh, dan kata kerjanya tidak ikut membawa ekor (*zjadł*, bukan *zjadłeś*)."
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Dialog kedua — Czy mógłby nam pan polecić…?",
+   "intro": "Jumat siang, Budi dan Tomek tiba di Toruń lebih awal dari jam masuk. Di meja resepsionis berdiri seorang petugas laki-laki.",
+   "lines": [
+    {
+     "speaker": "Budi:",
+     "text": "Dzień dobry. Mamy rezerwację na imię Budi.",
+     "id": "Selamat siang. Kami ada pemesanan atas nama Budi.",
+     "literal": "baik hari. kami-punya pemesanan untuk nama Budi."
+    },
+    {
+     "speaker": "Recepcjonista:",
+     "text": "Witamy w Toruniu! Czy mógłbym prosić o paszport?",
+     "id": "Selamat datang di Toruń! Boleh saya minta paspornya?",
+     "literal": "kami-menyambut di Toruń! apakah saya-bisa-andai-lk meminta tentang paspor?"
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Proszę bardzo. Przyjechaliśmy trochę za wcześnie, prawda?",
+     "id": "Silakan. Kami datang kecepatan, ya?",
+     "literal": "silakan sangat. kami-tiba-lampau sedikit terlalu awal, benar?"
+    },
+    {
+     "speaker": "Recepcjonista:",
+     "text": "Nic nie szkodzi. Bagaże mogą panowie zostawić tutaj.",
+     "id": "Tidak apa-apa. Barangnya bisa Bapak-bapak titipkan di sini.",
+     "literal": "tidak-ada tidak merugikan. bagasi-jamak mereka-bisa tuan-tuan meninggalkan di-sini."
+    },
+    {
+     "speaker": "Tomek:",
+     "text": "Czy mógłby nam pan polecić dobrą restaurację?",
+     "id": "Bisakah Bapak merekomendasikan restoran yang enak?",
+     "literal": "apakah ia-bisa-andai-lk kepada-kami tuan merekomendasikan baik restoran?"
+    },
+    {
+     "speaker": "Recepcjonista:",
+     "text": "Na obiad poleciłbym pierogarnię przy Rynku Staromiejskim.",
+     "id": "Untuk makan siang saya sarankan kedai pierogi dekat Rynek Staromiejski.",
+     "literal": "untuk makan-siang saya-merekomendasikan-andai-lk kedai-pierogi dekat Rynek Staromiejski."
+    },
+    {
+     "speaker": "Tomek:",
+     "text": "A ja bym najchętniej od razu zjadł pierniki!",
+     "id": "Kalau saya sih maunya langsung makan piernik!",
+     "literal": "dan saya saya-andai paling-senang dari sekali makan-lampau-lk piernik-jamak!"
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Najpierw obiad, Tomek. Pierniki kupimy potem.",
+     "id": "Makan siang dulu, Tomek. Pierniknya kita beli nanti.",
+     "literal": "pertama makan-siang, Tomek. piernik-jamak kita-akan-membeli kemudian."
+    },
+    {
+     "speaker": "Recepcjonista:",
+     "text": "Niedaleko jest Dom Mikołaja Kopernika. Warto by było go zobaczyć.",
+     "id": "Tak jauh dari sini ada Rumah Nicolaus Copernicus. Sayang kalau tidak dikunjungi.",
+     "literal": "tidak-jauh adalah rumah Mikołaj Kopernik. layak andai adalah-lampau dia melihat."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Bylibyśmy wdzięczni za mapę miasta.",
+     "id": "Kami akan berterima kasih kalau diberi peta kota.",
+     "literal": "kami-adalah-andai-lk berterima-kasih untuk peta kota."
+    },
+    {
+     "speaker": "Recepcjonista:",
+     "text": "Proszę bardzo. Miłego pobytu!",
+     "id": "Silakan. Selamat menikmati kunjungannya!",
+     "literal": "silakan sangat. menyenangkan kunjungan!"
+    }
+   ],
+   "notes": [
+    "**Czy mógłbym prosić o…?** — rumus sopan untuk meminta sesuatu: *prosić o* + B. Petugas memakainya kepada tamu, tamu memakainya kepada petugas. Versi yang lebih pendek dan sama sopannya: *Poproszę paszport.*",
+    "**Mogą panowie** — *panowie* adalah jamak *pan* untuk sekelompok laki-laki; *panie* untuk sekelompok perempuan; *państwo* untuk kelompok campuran atau pasangan. Ketiganya memakai kata kerja orang ketiga jamak.",
+    "**Ja bym najchętniej zjadł** — Tomek memindahkan *bym* ke depan dan menambahkan *najchętniej* (paling senang). *Chętnie bym…* adalah cara santai mengatakan \"aku sih mau banget…\".",
+    "**Warto by było** — kata tanpa pelaku (*warto, trzeba, można*) dijadikan bentuk pengandaian dengan *by było*: *warto by było* (ada baiknya), *można by było* (bisa saja), *trzeba by było* (perlu).",
+    "**Bylibyśmy wdzięczni** — \"kami akan sangat berterima kasih\": ungkapan resmi yang juga lazim di surel. Satu orang perempuan: *byłabym wdzięczna*; satu orang laki-laki: *byłbym wdzięczny*."
+   ],
+   "grammars": [
+    {
+     "title": "Pan, pani, państwo dalam semua kasus",
+     "body": [
+      "Karena *pan/pani/państwo* dipakai sebagai \"Anda\", kasusnya muncul di mana-mana: *dziękuję panu*, *czekam na panią*, *rozmawiałem z państwem*, *to dla pana*."
+     ],
+     "table": {
+      "head": [
+       "Kasus",
+       "pan",
+       "pani",
+       "państwo"
+      ],
+      "rows": [
+       [
+        "M.",
+        "*pan*",
+        "*pani*",
+        "*państwo*"
+       ],
+       [
+        "D.",
+        "*pana*",
+        "*pani*",
+        "*państwa*"
+       ],
+       [
+        "C.",
+        "*panu*",
+        "*pani*",
+        "*państwu*"
+       ],
+       [
+        "B.",
+        "*pana*",
+        "*panią*",
+        "*państwa*"
+       ],
+       [
+        "N.",
+        "*panem*",
+        "*panią*",
+        "*państwem*"
+       ],
+       [
+        "Ms.",
+        "*panu*",
+        "*pani*",
+        "*państwu*"
+       ],
+       [
+        "W.",
+        "*panie*",
+        "*pani*",
+        "*państwo*"
+       ]
+      ]
+     },
+     "after": [
+      "*Pani* hampir tak berubah: hanya B. dan N. yang menjadi *panią*. *Pan* berperilaku seperti kata benda laki-laki hidup biasa, jadi B. = D.: *widzę pana*.",
+      "Dalam surat dan surel bentuk-bentuk ini ditulis dengan huruf besar sebagai tanda hormat: *Dziękuję Panu*, *Czy mogłaby Pani…*. Dalam dialog dan percakapan biasa ditulis kecil."
+     ]
+    }
+   ]
+  }
+ ],
+ "sections": [
+  {
+   "title": "Menulis surel pemesanan",
+   "blocks": [
+    {
+     "type": "tabel",
+     "head": [
+      "Polski",
+      "Arti",
+      "Kapan dipakai"
+     ],
+     "rows": [
+      [
+       "*Szanowni Państwo,*",
+       "Bapak/Ibu yang terhormat,",
+       "pembuka ke lembaga, nama tak diketahui"
+      ],
+      [
+       "*Szanowna Pani, / Szanowny Panie,*",
+       "Ibu / Bapak yang terhormat,",
+       "pembuka ke orang tertentu"
+      ],
+      [
+       "*Dzień dobry,*",
+       "Selamat siang,",
+       "pembuka netral yang makin umum"
+      ],
+      [
+       "*Chciałbym zapytać o…*",
+       "Saya ingin menanyakan…",
+       "isi pertanyaan"
+      ],
+      [
+       "*Czy byłaby możliwość…?*",
+       "Apakah ada kemungkinan…?",
+       "permintaan khusus"
+      ],
+      [
+       "*Byłbym wdzięczny za…*",
+       "Saya akan berterima kasih atas…",
+       "permintaan halus"
+      ],
+      [
+       "*Z góry dziękuję.*",
+       "Terima kasih sebelumnya.",
+       "sebelum penutup"
+      ],
+      [
+       "*Z poważaniem*",
+       "Hormat saya",
+       "penutup resmi"
+      ],
+      [
+       "*Pozdrawiam serdecznie*",
+       "Salam hangat",
+       "penutup semi-resmi"
+      ]
+     ]
+    },
+    {
+     "type": "p",
+     "text": "Surel Budi yang sebenarnya berbunyi begini: *Dzień dobry, chciałbym zarezerwować pokój dwuosobowy z dwoma łóżkami na najbliższy weekend, od piątku do niedzieli. Czy byłaby możliwość wcześniejszego zameldowania? Byłbym wdzięczny za potwierdzenie rezerwacji. Z poważaniem, Budi.* Perhatikan bahwa semua permintaannya memakai bentuk *-by-*; kata *chcę* tidak muncul sekali pun. Kalau Ania yang menulis, dua bentuknya berganti: *chciałabym, byłabym wdzięczna*."
+    },
+    {
+     "type": "kotak",
+     "title": "Huruf besar tanda hormat",
+     "items": [
+      "Dalam surat dan surel, orang Polandia menulis *Pan, Pani, Państwo* serta *Ty, Ciebie, Twój* dengan huruf besar bila ditujukan langsung kepada penerima: *Dziękuję Pani za szybką odpowiedź.* Ini sopan santun tulis, bukan kewajiban tata bahasa.",
+      "Sesudah salam pembuka seperti *Szanowni Państwo,* atau *Dzień dobry,* diletakkan koma, dan kalimat pertama di baris baru dimulai dengan huruf kecil.",
+      "*Z poważaniem* terdengar resmi dan agak kaku; untuk penginapan kecil, *Pozdrawiam* atau *Pozdrawiam serdecznie* sudah cukup sopan."
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Di penginapan",
+   "blocks": [
+    {
+     "type": "tabel",
+     "head": [
+      "Polski",
+      "Cara baca",
+      "Arti"
+     ],
+     "rows": [
+      [
+       "*pokój jednoosobowy*",
+       "PO-kuy yed-no-o-so-BO-vy",
+       "kamar untuk satu orang"
+      ],
+      [
+       "*pokój dwuosobowy*",
+       "PO-kuy dvu-o-so-BO-vy",
+       "kamar untuk dua orang"
+      ],
+      [
+       "*łóżko małżeńskie*",
+       "WUSY-ko maw-ZYENY-skye",
+       "tempat tidur ganda"
+      ],
+      [
+       "*z łazienką*",
+       "z wa-ZYEN-kon",
+       "dengan kamar mandi"
+      ],
+      [
+       "*śniadanie wliczone w cenę*",
+       "synya-DA-nye vli-CO-ne f TSE-ne",
+       "sarapan sudah termasuk"
+      ],
+      [
+       "*zameldowanie / wymeldowanie*",
+       "za-mel-do-VA-nye / vy-mel-do-VA-nye",
+       "check-in / check-out"
+      ],
+      [
+       "*recepcja*",
+       "re-TSEP-tsya",
+       "meja resepsionis"
+      ],
+      [
+       "*klucz / karta do pokoju*",
+       "kluc / KAR-ta do po-KO-yu",
+       "kunci / kartu kamar"
+      ],
+      [
+       "*zaliczka*",
+       "za-LIC-ka",
+       "uang muka"
+      ],
+      [
+       "*nocleg*",
+       "NOTS-lek",
+       "tempat menginap semalam"
+      ]
+     ]
+    },
+    {
+     "type": "p",
+     "text": "*Pensjonat* adalah penginapan kecil, sering milik keluarga, kadang dengan sarapan buatan rumah; *hostel* untuk kantong mahasiswa; *hotel* untuk yang lebih resmi. Untuk jam masuk dan keluar dipakai angka urutan, seperti di unit tentang jam: *zameldowanie od czternastej* (masuk mulai pukul dua siang), *wymeldowanie do jedenastej* (keluar paling lambat pukul sebelas)."
+    },
+    {
+     "type": "kotak",
+     "title": "Toruń: Kopernik dan piernik",
+     "items": [
+      "Kota tua Toruń yang dibangun dari bata merah pada abad pertengahan masuk daftar Warisan Dunia UNESCO sejak 1997.",
+      "Mikołaj Kopernik (Nicolaus Copernicus) lahir di Toruń pada 1473. Patungnya berdiri di dekat balai kota lama di Rynek Staromiejski, dan universitas kota ini memakai namanya.",
+      "*Piernik toruński* — kue jahe berempah — sudah dibuat di kota ini sejak berabad-abad lalu dan menjadi oleh-oleh wajib. Di beberapa museum kamu bisa ikut membuat piernik sendiri.",
+      "Kalau datang bermobil ke kota tua, tanyakan dulu: *Czy jest parking w pobliżu?* — jalannya sempit dan tempat parkir terbatas."
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Ulangan berjenjang — unit 10",
+   "blocks": [
+    {
+     "type": "p",
+     "text": "Tutup kolom Polandia, baca terjemahan Indonesianya, lalu susun kembali kalimatnya dari ingatan."
+    },
+    {
+     "type": "tabel",
+     "head": [
+      "Bahasa Indonesia",
+      "Polski"
+     ],
+     "rows": [
+      [
+       "Dompet saya hilang. Kayaknya di trem.",
+       "*Zgubiłem swój portfel. Chyba w tramwaju.*"
+      ],
+      [
+       "Ada. Sudah saya blokir sendiri, langsung.",
+       "*Mam. Zablokowałem ją sam, od razu.*"
+      ],
+      [
+       "Ya sudah, kamu rebahan saja, biar aku bikin makan malam sendiri.",
+       "*No to idź się położyć, a ja sam zrobię kolację.*"
+      ],
+      [
+       "Masinis trem. Dia sendiri yang menemukannya di bawah kursi.",
+       "*Motorniczy. Sam go znalazł pod siedzeniem.*"
+      ],
+      [
+       "Silakan dicek, lalu tulis nama lengkap Bapak di sini.",
+       "*Proszę sprawdzić, a potem wpisać tutaj swoje imię i nazwisko.*"
+      ]
+     ]
+    }
+   ]
+  }
+ ],
+ "vocab": [
+  {
+   "pl": "rezerwować (rezerwuję) / zarezerwować (zarezerwuję)",
+   "baca": "re-zer-VO-vac / za-re-zer-VO-vac",
+   "id": "memesan (tempat)"
+  },
+  {
+   "pl": "rezerwacja (ż)",
+   "baca": "re-zer-VA-tsya",
+   "id": "pemesanan"
+  },
+  {
+   "pl": "pensjonat (m)",
+   "baca": "pen-SYO-nat",
+   "id": "penginapan kecil"
+  },
+  {
+   "pl": "pokój dwuosobowy (m)",
+   "baca": "PO-kuy dvu-o-so-BO-vy",
+   "id": "kamar untuk dua orang"
+  },
+  {
+   "pl": "łóżko, łóżka (n)",
+   "baca": "WUSY-ko, WUSY-ka",
+   "id": "tempat tidur"
+  },
+  {
+   "pl": "noc, noce (ż)",
+   "baca": "nots, NO-tse",
+   "id": "malam"
+  },
+  {
+   "pl": "widok (m) na + B.",
+   "baca": "VI-dok",
+   "id": "pemandangan (ke)"
+  },
+  {
+   "pl": "śniadanie (n)",
+   "baca": "synya-DA-nye",
+   "id": "sarapan"
+  },
+  {
+   "pl": "wliczony w cenę",
+   "baca": "vli-CO-ny f TSE-ne",
+   "id": "sudah termasuk harga"
+  },
+  {
+   "pl": "potwierdzenie (n)",
+   "baca": "pot-fyer-DZE-nye",
+   "id": "konfirmasi"
+  },
+  {
+   "pl": "imię, imiona (n)",
+   "baca": "I-mye, i-MYO-na",
+   "id": "nama depan"
+  },
+  {
+   "pl": "nazwisko (n)",
+   "baca": "naz-VIS-ko",
+   "id": "nama keluarga"
+  },
+  {
+   "pl": "bagaż, bagaże (m)",
+   "baca": "BA-gasy, ba-GA-zye",
+   "id": "barang bawaan"
+  },
+  {
+   "pl": "recepcja (ż)",
+   "baca": "re-TSEP-tsya",
+   "id": "meja resepsionis"
+  },
+  {
+   "pl": "zostawiać (zostawiam) / zostawić (zostawię)",
+   "baca": "zos-TA-vyac / zos-TA-vic",
+   "id": "meninggalkan, menitipkan"
+  },
+  {
+   "pl": "polecać (polecam) / polecić (polecę)",
+   "baca": "po-LE-tsac / po-LE-cic",
+   "id": "merekomendasikan"
+  },
+  {
+   "pl": "prosić (proszę) / poprosić (poproszę) o + B.",
+   "baca": "PRO-syic / po-PRO-syic",
+   "id": "meminta"
+  },
+  {
+   "pl": "wdzięczny",
+   "baca": "VJYENC-ny",
+   "id": "berterima kasih"
+  },
+  {
+   "pl": "chętnie",
+   "baca": "HENT-nye",
+   "id": "dengan senang hati"
+  },
+  {
+   "pl": "piernik, pierniki (m)",
+   "baca": "PYER-nik, pyer-NI-ki",
+   "id": "kue jahe khas Toruń"
+  },
+  {
+   "pl": "pan, panowie (m)",
+   "baca": "pan, pa-NO-vye",
+   "id": "Bapak; bapak-bapak"
+  },
+  {
+   "pl": "państwo",
+   "baca": "PANY-stfo",
+   "id": "Bapak-Ibu (campuran)"
+  },
+  {
+   "pl": "pobyt (m)",
+   "baca": "PO-byt",
+   "id": "masa tinggal, kunjungan"
+  },
+  {
+   "pl": "szczegół, szczegóły (m)",
+   "baca": "SYCE-guw, syce-GU-wy",
+   "id": "rincian"
+  }
+ ],
+ "exercises": [
+  {
+   "prompt": "Terjemahkan ke bahasa Polandia dengan bentuk sopan *-by-*.",
+   "items": [
+    "Saya (laki-laki) ingin memesan kamar untuk dua malam.",
+    "Bisakah Ibu mengirimi saya konfirmasi?",
+    "Bisakah Bapak merekomendasikan restoran yang enak?",
+    "Kami (Budi dan Tomek) ingin datang lebih awal.",
+    "Saya (perempuan) akan berterima kasih atas peta kota.",
+    "Itu akan sangat menolong kami."
+   ]
+  },
+  {
+   "prompt": "Isi titik-titiknya sesuai petunjuk di dalam kurung.",
+   "items": [
+    "Ania: ____ zarezerwować stolik. (chcieć, ja)",
+    "Budi, ____ mi pomóc? (móc, ty)",
+    "Czy ____ pani zamknąć okno? (móc)",
+    "Czy państwo ____ pokój z widokiem? (chcieć)",
+    "Kasiu, co ____ zjadła? (by + ty)",
+    "Ania i Kasia ____ pojechać do Torunia. (chcieć, one)",
+    "Dziękuję ____ za pomoc. (pan → C.)"
+   ]
+  },
+  {
+   "prompt": "Ubah permintaan langsung ini menjadi permintaan sopan dengan bentuk *-by-*. Perhatikan siapa yang bicara atau diajak bicara.",
+   "items": [
+    "Chcę kawę. (Budi) →",
+    "Chcę zapłacić kartą. (Ania) →",
+    "Może pan powtórzyć? →",
+    "Możesz mi pomóc? (kepada Ania) →",
+    "Chcemy pokój z balkonem. (Budi dan Tomek) →",
+    "Macie wolny stolik? (kepada pelayan, dengan *państwo*) →"
+   ]
+  },
+  {
+   "prompt": "Susun jadi kalimat yang benar.",
+   "items": [
+    "zarezerwować / chciałbym / weekend / na / pokój",
+    "nam / by / pomogło / to / bardzo",
+    "czy / pani / mogłaby / potwierdzenie / wysłać / mi",
+    "bagaże / zostawić / czy / tu / moglibyśmy",
+    "za / wdzięczni / mapę / bylibyśmy / miasta"
+   ]
+  }
+ ],
+ "answers": [
+  "Chciałbym zarezerwować pokój na dwie noce. — Czy mogłaby mi pani wysłać potwierdzenie? — Czy mógłby pan polecić dobrą restaurację? — Chcielibyśmy przyjechać wcześniej. — Byłabym wdzięczna za mapę miasta. — To by nam bardzo pomogło.",
+  "Chciałabym — mógłbyś — mogłaby — chcieliby — byś — chciałyby — panu",
+  "Chciałbym kawę. — Chciałabym zapłacić kartą. — Czy mógłby pan powtórzyć? — Mogłabyś mi pomóc? — Chcielibyśmy pokój z balkonem. — Czy mieliby państwo wolny stolik?",
+  "Chciałbym zarezerwować pokój na weekend. — To by nam bardzo pomogło. — Czy mogłaby pani wysłać mi potwierdzenie? — Czy moglibyśmy zostawić tu bagaże? — Bylibyśmy wdzięczni za mapę miasta."
+ ]
+}

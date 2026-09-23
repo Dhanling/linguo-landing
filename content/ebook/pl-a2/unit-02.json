@@ -1,0 +1,746 @@
+{
+ "title": "Mencari tempat tinggal — kata benda jamak",
+ "title_target": "Szukam mieszkania",
+ "goal": "Melihat apartemen sewaan, bertanya tentang kamar, perabot, dan tetangga, lalu menceritakannya ke teman. Titik tata bahasanya: deklinasi jamak lengkap — D. jamak (*mieszkań, pokoi, domów, kobiet*), C./N./Ms. jamak (*-om, -ami, -ach*), dan *dużo/mało/kilka/wiele* + D. jamak.",
+ "bekal": [
+  "membentuk D. jamak dengan tiga polanya: *-ów*, *-i/-y*, dan tanpa ekor",
+  "memakai ekor jamak *-om, -ami, -ach* yang sama untuk semua jenis kata benda",
+  "menghitung dan menakar dengan *dużo, mało, kilka, wiele, sporo* + D. jamak"
+ ],
+ "dialogs": [
+  {
+   "title": "Dialog — Szukam mieszkania",
+   "intro": "Sabtu pagi di Podgórze. Budi dan Tomek sudah melihat banyak apartemen minggu ini. Pemilik yang satu ini, pan Zbigniew, menunggu di depan sebuah *kamienica* tua.",
+   "lines": [
+    {
+     "speaker": "Zbigniew:",
+     "text": "Dzień dobry panom! Mieszkanie jest na trzecim piętrze.",
+     "id": "Selamat pagi, Mas-mas! Apartemennya di lantai tiga.",
+     "literal": "hari baik tuan-tuan! apartemen adalah di ketiga lantai."
+    },
+    {
+     "speaker": "Tomek:",
+     "text": "Bez windy? Ile tu jest schodów?",
+     "id": "Tanpa lift? Berapa banyak anak tangganya?",
+     "literal": "tanpa lift? berapa di-sini adalah tangga-jamak?"
+    },
+    {
+     "speaker": "Zbigniew:",
+     "text": "Sporo, ale panowie są młodzi. Proszę, oto mieszkanie.",
+     "id": "Lumayan, tapi kalian kan masih muda. Silakan, ini apartemennya.",
+     "literal": "lumayan-banyak, tetapi tuan-tuan mereka-adalah muda. silakan, inilah apartemen."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Widzieliśmy już dziesięć mieszkań w tej dzielnicy.",
+     "id": "Kami sudah lihat sepuluh apartemen di kawasan ini.",
+     "literal": "kami-melihat-lampau sudah sepuluh apartemen di ini kawasan."
+    },
+    {
+     "speaker": "Zbigniew:",
+     "text": "To panowie są już ekspertami! Są tu trzy pokoje, kuchnia i łazienka.",
+     "id": "Wah, berarti kalian sudah ahli! Di sini ada tiga ruang, dapur, dan kamar mandi.",
+     "literal": "jadi tuan-tuan mereka-adalah sudah ahli-jamak! mereka-adalah di-sini tiga ruang, dapur dan kamar-mandi."
+    },
+    {
+     "speaker": "Tomek:",
+     "text": "Jak tu jasno!",
+     "id": "Terang banget di sini!",
+     "literal": "betapa di-sini terang!"
+    },
+    {
+     "speaker": "Zbigniew:",
+     "text": "We wszystkich pokojach są nowe, duże okna.",
+     "id": "Di semua ruangan jendelanya baru dan besar.",
+     "literal": "di semua ruang-jamak mereka-adalah baru, besar jendela-jamak."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Ale nie ma tu łóżek ani szaf.",
+     "id": "Tapi di sini nggak ada ranjang maupun lemari.",
+     "literal": "tetapi tidak ada di-sini ranjang-jamak maupun lemari-jamak."
+    },
+    {
+     "speaker": "Zbigniew:",
+     "text": "Przywiozę je w przyszłym tygodniu. Mam w garażu kilka łóżek i dwie szafy.",
+     "id": "Minggu depan saya bawa. Di garasi saya ada beberapa ranjang dan dua lemari.",
+     "literal": "saya-akan-membawa mereka di depan minggu. saya-punya di garasi beberapa ranjang dan dua lemari."
+    },
+    {
+     "speaker": "Tomek:",
+     "text": "A sąsiedzi? Mieszka tu dużo studentów?",
+     "id": "Tetangganya gimana? Banyak mahasiswa tinggal di sini?",
+     "literal": "dan tetangga-jamak? tinggal di-sini banyak mahasiswa?"
+    },
+    {
+     "speaker": "Zbigniew:",
+     "text": "Nie, raczej rodziny z dziećmi i kilka starszych pań.",
+     "id": "Nggak, lebih banyak keluarga dengan anak dan beberapa ibu-ibu lansia.",
+     "literal": "tidak, lebih-tepatnya keluarga-jamak dengan anak-anak dan beberapa lebih-tua nyonya-jamak."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "To dobrze, lubimy ciszę. A ile płacimy za media?",
+     "id": "Bagus, kami suka tenang. Terus listrik, air, dan lain-lain bayar berapa?",
+     "literal": "itu baik, kami-suka ketenangan. dan berapa kami-membayar untuk utilitas?"
+    },
+    {
+     "speaker": "Zbigniew:",
+     "text": "To zależy od zużycia. Rachunki przychodzą co dwa miesiące.",
+     "id": "Tergantung pemakaian. Tagihannya datang tiap dua bulan.",
+     "literal": "itu bergantung dari pemakaian. tagihan-jamak mereka-datang setiap dua bulan."
+    },
+    {
+     "speaker": "Tomek:",
+     "text": "Rozumiem. Musimy to jeszcze przemyśleć.",
+     "id": "Oke. Kami masih harus pikir-pikir dulu.",
+     "literal": "saya-mengerti. kami-harus itu masih memikirkan-matang."
+    },
+    {
+     "speaker": "Zbigniew:",
+     "text": "Dobrze, ale proszę się szybko zdecydować. Mam wielu chętnych.",
+     "id": "Baik, tapi tolong cepat putuskan. Peminatnya banyak.",
+     "literal": "baik, tetapi silakan diri cepat memutuskan. saya-punya banyak peminat."
+    }
+   ],
+   "notes": [
+    "**Na trzecim piętrze** — lantai di Polandia dihitung **mulai dari atas lantai dasar**. Lantai dasar adalah *parter*; *pierwsze piętro* adalah satu tingkat di atasnya. Jadi \"lantai tiga\" pan Zbigniew sama dengan lantai empat hitungan Indonesia — dan tanpa lift, bedanya terasa di kaki.",
+    "**Dzień dobry panom, panowie są młodzi** — *panowie* adalah jamak *pan*, dan *panom* bentuk C.-nya. Pemilik rumah menyapa dua pemuda dengan sopan dan memakai kata kerja orang ketiga jamak: *panowie są* (kalian adalah).",
+    "**Ile tu jest schodów? Ile pokoi?** — sesudah *ile* kata bendanya masuk D. jamak. *Schody* (tangga) hanya punya bentuk jamak, sama seperti *drzwi* (pintu) dan *meble* (perabot).",
+    "**Dziesięć mieszkań** — angka lima ke atas meminta D. jamak. Netral berakhiran *-nie* kehilangan ekornya dan menjadi *-ń*: *mieszkanie → mieszkań*, *zdjęcie → zdjęć*.",
+    "**Nie ma tu łóżek ani szaf** — penyangkalan meminta D., dan di jamak D. itu sering **tanpa ekor**: *szafa → szaf*, *łóżko → łóżek* (dengan sisipan *e* supaya bisa diucapkan). *Ani* di sini berarti \"maupun\".",
+    "**Kilka łóżek i dwie szafy** — perhatikan kontrasnya: *kilka* (dan angka 5 ke atas) + D. jamak, tetapi *dwie* (2–4) + M. jamak. *Dwie* adalah bentuk perempuan dari *dwa*, karena *szafa* perempuan."
+   ],
+   "grammars": [
+    {
+     "title": "Tujuh kasus dalam jamak",
+     "body": [
+      "Jamak lebih mudah daripada tunggal: tiga kasus memakai ekor yang sama untuk semua jenis. Satu-satunya kasus yang perlu perhatian khusus adalah D."
+     ],
+     "table": {
+      "head": [
+       "Kasus",
+       "m: *dom*",
+       "ż: *kobieta*",
+       "n: *mieszkanie*",
+       "Ekor"
+      ],
+      "rows": [
+       [
+        "**M.**",
+        "*domy*",
+        "*kobiety*",
+        "*mieszkania*",
+        "*-y / -i / -e / -a*"
+       ],
+       [
+        "**D.**",
+        "*domów*",
+        "*kobiet*",
+        "*mieszkań*",
+        "*-ów*, *-i/-y*, atau tanpa ekor"
+       ],
+       [
+        "**C.**",
+        "*domom*",
+        "*kobietom*",
+        "*mieszkaniom*",
+        "**-om**"
+       ],
+       [
+        "**B.**",
+        "*domy*",
+        "*kobiety*",
+        "*mieszkania*",
+        "= M. (kecuali orang lelaki)"
+       ],
+       [
+        "**N.**",
+        "*domami*",
+        "*kobietami*",
+        "*mieszkaniami*",
+        "**-ami**"
+       ],
+       [
+        "**Ms.**",
+        "*domach*",
+        "*kobietach*",
+        "*mieszkaniach*",
+        "**-ach**"
+       ]
+      ]
+     },
+     "after": [
+      "Baris C., N., dan Ms. adalah hadiah: ketiganya memakai ekor yang **sama untuk semua jenis** — *-om, -ami, -ach*. *Studentom, paniom, dzieciom; z meblami, z oknami; w pokojach, na bulwarach.*",
+      "Beberapa kata memakai *-mi* sebagai ganti *-ami* di N.: *dzieci → dziećmi*, *ludzie → ludźmi*, *pieniądze → pieniędzmi*, *przyjaciele → przyjaciółmi*.",
+      "B. jamak sama dengan M. — kecuali untuk kelompok orang lelaki, yang B.-nya kembar dengan D. (*widzę studentów*). Itu bahan unit 3."
+     ]
+    },
+    {
+     "title": "D. jamak: tiga pola dan beberapa pembangkang",
+     "body": [
+      "Tebak polanya dari huruf terakhir kata benda dalam bentuk M. tunggal."
+     ],
+     "table": {
+      "head": [
+       "Pola",
+       "Siapa yang memakainya",
+       "Contoh"
+      ],
+      "rows": [
+       [
+        "**-ów**",
+        "kebanyakan lelaki berakhir huruf mati keras",
+        "*dom → domów, sklep → sklepów, student → studentów*"
+       ],
+       [
+        "**-i / -y**",
+        "lelaki berakhir huruf lunak atau *-cz, -sz, -rz*; perempuan berakhir *-ia* atau huruf mati",
+        "*pokój → pokoi, nauczyciel → nauczycieli, klucz → kluczy, kawiarnia → kawiarni, noc → nocy*"
+       ],
+       [
+        "**tanpa ekor**",
+        "kebanyakan perempuan *-a* dan netral *-o / -e*",
+        "*kobieta → kobiet, szafa → szaf, łóżko → łóżek, okno → okien, szkoła → szkół*"
+       ],
+       [
+        "**tak beraturan**",
+        "dihafal satu per satu",
+        "*pani → pań, ludzie → ludzi, dzieci → dzieci, tydzień → tygodni, rok → lat*"
+       ]
+      ]
+     },
+     "after": [
+      "Pola tanpa ekor sering membawa sisipan *e* (*łóżek, okien*) atau mengubah *o* menjadi *ó* (*szkoła → szkół*, *droga → dróg*). Tujuannya satu: supaya kata itu bisa diucapkan.",
+      "D. jamak muncul di tiga tempat sekaligus: sesudah **penyangkalan** (*nie ma łóżek*), sesudah **angka 5 ke atas** (*dziesięć mieszkań*), dan sesudah **kata takaran** (*dużo sklepów*). Karena itu ia layak dihafal paling dulu.",
+      "*Pokój* punya dua bentuk D. jamak yang sama-sama benar: *pokoi* (lebih umum) dan *pokojów*."
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Dialog kedua — Co z meblami?",
+   "intro": "Malam harinya Ania menelepon Budi. Ia ingin tahu hasil perburuan apartemen hari ini.",
+   "lines": [
+    {
+     "speaker": "Ania:",
+     "text": "No i jak? Znaleźliście coś?",
+     "id": "Jadi gimana? Kalian nemu sesuatu?",
+     "literal": "nah dan bagaimana? kalian-menemukan-lampau sesuatu?"
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Chyba tak. Mieszkanie na Podgórzu, blisko bulwarów Wisły.",
+     "id": "Kayaknya iya. Apartemen di Podgórze, dekat tepian Sungai Wisła.",
+     "literal": "rasanya ya. apartemen di Podgórze, dekat tepian-sungai-jamak Wisła."
+    },
+    {
+     "speaker": "Ania:",
+     "text": "Super! Pełno tam teraz kawiarni i małych galerii.",
+     "id": "Keren! Sekarang di sana banyak banget kafe dan galeri kecil.",
+     "literal": "super! penuh di-sana sekarang kafe-jamak dan kecil galeri-jamak."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Pan Zbigniew wynajmuje mieszkania tylko studentom.",
+     "id": "Pan Zbigniew cuma menyewakan apartemen ke mahasiswa.",
+     "literal": "tuan Zbigniew menyewakan apartemen-jamak hanya mahasiswa-jamak."
+    },
+    {
+     "speaker": "Ania:",
+     "text": "Mądry człowiek. A co z meblami?",
+     "id": "Orangnya pintar. Terus gimana perabotnya?",
+     "literal": "bijak manusia. dan apa dengan perabot-jamak?"
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Łóżka i szafy przywiezie w przyszłym tygodniu.",
+     "id": "Ranjang dan lemari dia bawa minggu depan.",
+     "literal": "ranjang-jamak dan lemari-jamak ia-akan-membawa di depan minggu."
+    },
+    {
+     "speaker": "Ania:",
+     "text": "A o sąsiadach coś wiecie?",
+     "id": "Soal tetangga, kalian tahu sesuatu?",
+     "literal": "dan tentang tetangga-jamak sesuatu kalian-tahu?"
+    },
+    {
+     "speaker": "Budi:",
+     "text": "W kamienicy mieszka kilka rodzin z dziećmi.",
+     "id": "Di gedungnya tinggal beberapa keluarga dengan anak-anak.",
+     "literal": "di gedung tinggal beberapa keluarga dengan anak-anak."
+    },
+    {
+     "speaker": "Ania:",
+     "text": "To dobrze. Pomogę wam z przeprowadzką, ale mam jeden warunek.",
+     "id": "Bagus. Aku bantu kalian pindahan, tapi ada satu syarat.",
+     "literal": "itu baik. saya-akan-membantu kalian dengan pindahan, tetapi saya-punya satu syarat."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Jaki?",
+     "id": "Apa?",
+     "literal": "yang-bagaimana?"
+    },
+    {
+     "speaker": "Ania:",
+     "text": "Będziecie mnie zapraszać na kolacje nad Wisłą!",
+     "id": "Kalian harus sering ngajak aku makan malam di tepi Wisła!",
+     "literal": "kalian-akan saya mengundang untuk makan-malam-jamak di-atas Wisła!"
+    }
+   ],
+   "notes": [
+    "**Na Podgórzu** — Ms. dari *Podgórze*, netral berakhiran *-rze*, ekornya *-u* seperti *w morzu*. Orang Kraków memakai *na* untuk kawasan kotanya sendiri: *na Podgórzu, na Kazimierzu, na Zabłociu* (*w Podgórzu* juga terdengar, tapi kurang lazim). Nama kawasan ini kira-kira berarti \"daerah di kaki bukit\".",
+    "**Blisko bulwarów Wisły** — *blisko* diikuti D., dan *bulwary* (tepian sungai yang ditata untuk berjalan kaki) adalah jamak lelaki, jadi *bulwarów*. *Wisły* sendiri D. tunggal: \"tepian (milik) Wisła\".",
+    "**Pełno tam kawiarni i małych galerii** — *pełno* (penuh, banyak sekali) juga kata takaran + D. jamak. *Kawiarnia* dan *galeria* berakhiran *-ia*, jadi D. jamaknya *-i*: *kawiarni, galerii*.",
+    "**Wynajmuje mieszkania studentom** — orang yang menerima sesuatu masuk C., dan C. jamak selalu *-om*: *studentom, rodzinom, dzieciom*. Barangnya (*mieszkania*) masuk B. jamak, yang sama dengan M.",
+    "**A co z meblami?** — \"terus gimana soal perabotnya?\". Rumus *co z* + N. sangat berguna: *Co z kolacją? Co z Tomkiem?* Ekor N. jamak *-ami* tak pernah berubah.",
+    "**Kilka rodzin z dziećmi** — dua jamak berbeda dalam satu frasa: *rodzin* (D. sesudah *kilka*, tanpa ekor) dan *dziećmi* (N. tak beraturan sesudah *z*). Kata kerjanya **tunggal**: *mieszka*, bukan *mieszkają*."
+   ],
+   "grammars": [
+    {
+     "title": "Kata takaran + D. jamak",
+     "body": [
+      "Semua kata di tabel ini diikuti D.: jamak untuk yang bisa dihitung, tunggal untuk yang tak bisa dihitung (*dużo czasu, mało miejsca*)."
+     ],
+     "table": {
+      "head": [
+       "Kata",
+       "Arti",
+       "Contoh"
+      ],
+      "rows": [
+       [
+        "*dużo*",
+        "banyak",
+        "*dużo sklepów*"
+       ],
+       [
+        "*mało*",
+        "sedikit",
+        "*mało miejsc parkingowych*"
+       ],
+       [
+        "*kilka*",
+        "beberapa",
+        "*kilka rodzin*"
+       ],
+       [
+        "*wiele*",
+        "banyak (lebih resmi)",
+        "*wiele kawiarni*"
+       ],
+       [
+        "*sporo*",
+        "lumayan banyak",
+        "*sporo schodów*"
+       ],
+       [
+        "*pełno*",
+        "penuh; banyak sekali",
+        "*pełno turystów*"
+       ],
+       [
+        "*ile? / tyle*",
+        "berapa? / sebanyak itu",
+        "*Ile pokoi? Tyle książek!*"
+       ],
+       [
+        "*więcej / mniej*",
+        "lebih banyak / lebih sedikit",
+        "*więcej okien, mniej hałasu*"
+       ]
+      ]
+     },
+     "after": [
+      "Kata kerja sesudah kata takaran berbentuk **tunggal netral**: *W kamienicy mieszka kilka rodzin.* *Było dużo ludzi.* Bentuk lampaunya pun netral: *było, mieszkało*.",
+      "Untuk kelompok **orang lelaki** (atau campuran), *kilka* dan *wiele* berubah menjadi *kilku* dan *wielu*: *kilku studentów, wielu chętnych*. Ini dibahas lagi di unit 3 dan unit 15.",
+      "*Trochę* (sedikit) biasanya dipakai untuk yang tak terhitung dan diikuti D. tunggal: *trochę czasu, trochę cukru*.",
+      "Dalam percakapan sehari-hari *dużo* jauh lebih sering terdengar daripada *wiele*; *wiele* terasa sedikit lebih rapi dan banyak muncul dalam tulisan, berita, dan iklan."
+     ]
+    }
+   ]
+  }
+ ],
+ "sections": [
+  {
+   "title": "Membaca iklan sewa",
+   "blocks": [
+    {
+     "type": "tabel",
+     "head": [
+      "Polski",
+      "Arti"
+     ],
+     "rows": [
+      [
+       "*do wynajęcia*",
+       "disewakan"
+      ],
+      [
+       "*kawalerka*",
+       "apartemen studio (satu ruang)"
+      ],
+      [
+       "*mieszkanie dwupokojowe*",
+       "apartemen dua ruang"
+      ],
+      [
+       "*umeblowane*",
+       "lengkap dengan perabot"
+      ],
+      [
+       "*czynsz*",
+       "sewa bulanan; iuran gedung"
+      ],
+      [
+       "*media*",
+       "listrik, gas, air, pemanas"
+      ],
+      [
+       "*kaucja*",
+       "uang jaminan"
+      ],
+      [
+       "*w kamienicy*",
+       "di gedung tua bertingkat"
+      ],
+      [
+       "*w bloku*",
+       "di blok apartemen (umumnya era sosialis)"
+      ],
+      [
+       "*parter / piętro*",
+       "lantai dasar / lantai di atasnya"
+      ],
+      [
+       "*od zaraz*",
+       "bisa segera ditempati"
+      ],
+      [
+       "*umowa najmu*",
+       "kontrak sewa"
+      ],
+      [
+       "*blisko komunikacji*",
+       "dekat transportasi umum"
+      ],
+      [
+       "*miejsce parkingowe*",
+       "tempat parkir"
+      ],
+      [
+       "*bez zwierząt*",
+       "tanpa hewan peliharaan"
+      ],
+      [
+       "*dla studentów*",
+       "untuk mahasiswa"
+      ]
+     ]
+    },
+    {
+     "type": "p",
+     "text": "Iklan sewa ditulis padat dan penuh jamak: *dwa pokoje, balkon, blisko sklepów i przystanków*. Kata *pokój* dalam iklan menghitung ruang tidur **dan** ruang tamu — dapur dan kamar mandi tak dihitung. Jadi *mieszkanie trzypokojowe* biasanya berarti ruang tamu ditambah dua kamar tidur, pas untuk dua penyewa seperti Budi dan Tomek. Frasa *dla studentów* dan *bez zwierząt* sendiri adalah latihan D. jamak gratis: *dla* dan *bez* selalu meminta D."
+    },
+    {
+     "type": "kotak",
+     "title": "Sebelum menandatangani kontrak",
+     "items": [
+      "Tanyakan dengan jelas apa yang termasuk *czynsz* dan apa yang dibayar terpisah sebagai *media*. Di gedung tua, biaya pemanas kadang dihitung sendiri.",
+      "*Kaucja* lazimnya setara sewa satu atau dua bulan dan dikembalikan saat kamu pindah, dikurangi biaya kerusakan kalau ada.",
+      "Mintalah *umowa najmu* tertulis. Dokumen ini juga berguna ketika kamu perlu mendaftarkan alamat (*meldunek*).",
+      "Foto kondisi apartemen di hari pertama — dinding, lantai, perabot. Semua orang Polandia yang pernah menyewa akan memberi saran yang sama."
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Isi rumah dalam jamak",
+   "blocks": [
+    {
+     "type": "tabel",
+     "head": [
+      "Tunggal",
+      "Jamak (M.)",
+      "D. jamak",
+      "Arti"
+     ],
+     "rows": [
+      [
+       "*łóżko*",
+       "*łóżka*",
+       "*łóżek*",
+       "ranjang"
+      ],
+      [
+       "*szafa*",
+       "*szafy*",
+       "*szaf*",
+       "lemari"
+      ],
+      [
+       "*krzesło*",
+       "*krzesła*",
+       "*krzeseł*",
+       "kursi"
+      ],
+      [
+       "*stół*",
+       "*stoły*",
+       "*stołów*",
+       "meja"
+      ],
+      [
+       "*półka*",
+       "*półki*",
+       "*półek*",
+       "rak"
+      ],
+      [
+       "*lampa*",
+       "*lampy*",
+       "*lamp*",
+       "lampu"
+      ],
+      [
+       "*okno*",
+       "*okna*",
+       "*okien*",
+       "jendela"
+      ],
+      [
+       "*klucz*",
+       "*klucze*",
+       "*kluczy*",
+       "kunci"
+      ],
+      [
+       "*pokój*",
+       "*pokoje*",
+       "*pokoi*",
+       "kamar; ruang"
+      ],
+      [
+       "*kuchnia*",
+       "*kuchnie*",
+       "*kuchni*",
+       "dapur"
+      ],
+      [
+       "—",
+       "*drzwi*",
+       "*drzwi*",
+       "pintu (hanya jamak)"
+      ],
+      [
+       "—",
+       "*schody*",
+       "*schodów*",
+       "tangga (hanya jamak)"
+      ]
+     ]
+    },
+    {
+     "type": "p",
+     "text": "Perhatikan kolom ketiga. Tanpa sisipan *e*, bentuk seperti *krzesł* atau *okn* mustahil diucapkan, maka bahasa Polandia menyelipkan vokal: *krzeseł, okien, półek, łóżek*. Sebaliknya *stół* mengembalikan *ó* menjadi *o* begitu mendapat ekor: *stoły, stołów*. Kamu tidak perlu menebak — cukup ucapkan keras-keras beberapa kali sampai telingamu menolak bentuk yang salah."
+    },
+    {
+     "type": "kotak",
+     "title": "Podgórze dalam lima kalimat",
+     "items": [
+      "Podgórze terletak di tepi selatan Wisła, berseberangan dengan Kazimierz. Dulu ia kota tersendiri dan baru bergabung dengan Kraków pada 1915.",
+      "Jembatan pejalan kaki *Kładka Ojca Bernatka* menghubungkan Kazimierz dan Podgórze; di atasnya tergantung patung-patung akrobat.",
+      "Selama Perang Dunia II, penjajah Jerman mendirikan ghetto Yahudi Kraków di Podgórze. Di *Plac Bohaterów Getta* kini berdiri monumen berupa kursi-kursi kosong.",
+      "Di kawasan Zabłocie, bekas pabrik Oskar Schindler kini menjadi museum tentang Kraków pada masa pendudukan.",
+      "Dari *Kopiec Krakusa*, bukit gundukan kuno di Podgórze, kamu bisa memandang seluruh kota — tempat favorit warga untuk melihat matahari terbenam."
+     ]
+    }
+   ]
+  }
+ ],
+ "vocab": [
+  {
+   "pl": "mieszkanie, D. lm mieszkań (n)",
+   "baca": "myesy-KA-nye, MYESY-kany",
+   "id": "apartemen; tempat tinggal"
+  },
+  {
+   "pl": "wynajmować (wynajmuję) / wynająć (wynajmę)",
+   "baca": "vy-nay-MO-vac / vy-NA-yonc",
+   "id": "menyewakan; menyewa"
+  },
+  {
+   "pl": "właściciel, lm właściciele (m)",
+   "baca": "vwasy-CI-cyel, vwasy-ci-CYE-le",
+   "id": "pemilik"
+  },
+  {
+   "pl": "piętro (n)",
+   "baca": "PYEN-tro",
+   "id": "lantai (di atas lantai dasar)"
+  },
+  {
+   "pl": "winda (ż)",
+   "baca": "VIN-da",
+   "id": "lift"
+  },
+  {
+   "pl": "schody, schodów (lm)",
+   "baca": "SHO-dy, SHO-duf",
+   "id": "tangga"
+  },
+  {
+   "pl": "pokój, pokoju; lm pokoje, D. lm pokoi (m)",
+   "baca": "PO-kuy, po-KO-yu; po-KO-ye, po-KO-i",
+   "id": "kamar; ruang"
+  },
+  {
+   "pl": "łazienka (ż)",
+   "baca": "wa-ZYEN-ka",
+   "id": "kamar mandi"
+  },
+  {
+   "pl": "meble, mebli (lm)",
+   "baca": "MEB-le, MEB-li",
+   "id": "perabot"
+  },
+  {
+   "pl": "łóżko, D. lm łóżek (n)",
+   "baca": "WUSY-ko, WU-zyek",
+   "id": "ranjang"
+  },
+  {
+   "pl": "szafa, D. lm szaf (ż)",
+   "baca": "SYA-fa, syaf",
+   "id": "lemari"
+  },
+  {
+   "pl": "okno, D. lm okien (n)",
+   "baca": "OK-no, O-kyen",
+   "id": "jendela"
+  },
+  {
+   "pl": "sąsiad, lm sąsiedzi (m)",
+   "baca": "SON-syat, son-SYE-ji",
+   "id": "tetangga"
+  },
+  {
+   "pl": "dziecko, lm dzieci, N. lm dziećmi (n)",
+   "baca": "JYETS-ko, JYE-ci, JYEC-mi",
+   "id": "anak"
+  },
+  {
+   "pl": "rodzina (ż)",
+   "baca": "ro-JI-na",
+   "id": "keluarga"
+  },
+  {
+   "pl": "dzielnica (ż)",
+   "baca": "jyel-NI-tsa",
+   "id": "kawasan; distrik kota"
+  },
+  {
+   "pl": "kamienica (ż)",
+   "baca": "ka-mye-NI-tsa",
+   "id": "gedung tua bertingkat"
+  },
+  {
+   "pl": "bulwar, bulwaru (m)",
+   "baca": "BUL-var, bul-VA-ru",
+   "id": "tepian sungai untuk berjalan kaki"
+  },
+  {
+   "pl": "dużo / mało (+ D.)",
+   "baca": "DU-zyo / MA-wo",
+   "id": "banyak / sedikit"
+  },
+  {
+   "pl": "kilka / wiele (+ D.)",
+   "baca": "KIL-ka / VYE-le",
+   "id": "beberapa / banyak"
+  },
+  {
+   "pl": "sporo / pełno (+ D.)",
+   "baca": "SPO-ro / PEW-no",
+   "id": "lumayan banyak / banyak sekali"
+  },
+  {
+   "pl": "cisza (ż)",
+   "baca": "CI-sya",
+   "id": "ketenangan; sunyi"
+  },
+  {
+   "pl": "rachunek, rachunku (m)",
+   "baca": "ra-HU-nek, ra-HUN-ku",
+   "id": "tagihan"
+  },
+  {
+   "pl": "przemyśleć (przemyślę) — dk",
+   "baca": "psye-MYSY-lec",
+   "id": "memikirkan matang-matang"
+  },
+  {
+   "pl": "zdecydować się (zdecyduję się) — dk",
+   "baca": "zde-tsy-DO-vac sye",
+   "id": "memutuskan"
+  },
+  {
+   "pl": "warunek, warunku (m)",
+   "baca": "va-RU-nek, va-RUN-ku",
+   "id": "syarat"
+  }
+ ],
+ "exercises": [
+  {
+   "prompt": "Terjemahkan ke bahasa Polandia.",
+   "items": [
+    "Kami sudah melihat sepuluh apartemen di kawasan ini. (kelompok ada lk)",
+    "Di sini tidak ada ranjang maupun lemari.",
+    "Di semua ruangan jendelanya baru.",
+    "Di gedung itu tinggal beberapa keluarga dengan anak-anak.",
+    "Pemiliknya menyewakan apartemen hanya kepada mahasiswa.",
+    "Di Podgórze ada banyak kafe."
+   ]
+  },
+  {
+   "prompt": "Isi dengan bentuk jamak yang tepat.",
+   "items": [
+    "Nie ma tu ____. (szafy → dopełniacz)",
+    "W okolicy jest dużo ____. (sklepy → dopełniacz)",
+    "Rozmawiamy o ____. (sąsiedzi → miejscownik)",
+    "Pomagam ____. (studenci → celownik)",
+    "Idę na spacer z ____. (koleżanki → narzędnik)",
+    "Widzieliśmy pięć ____. (mieszkania → dopełniacz)",
+    "Ile tu jest ____? (pokoje → dopełniacz)"
+   ]
+  },
+  {
+   "prompt": "Ubah ke jamak sesuai kata di dalam kurung. Perhatikan bentuk kata kerjanya.",
+   "items": [
+    "Mam jedno łóżko. (kilka) →",
+    "W bloku jest jedna winda. (dwie) →",
+    "Tu mieszka jedna rodzina. (pięć) →",
+    "Widzę jeden sklep. (dużo) →",
+    "Nie mam klucza. (jamak) →",
+    "Mówimy o kawiarni. (jamak) →"
+   ]
+  },
+  {
+   "prompt": "Susun jadi kalimat yang benar.",
+   "items": [
+    "dużo / w / sklepów / okolicy / jest",
+    "łóżek / tu / ma / nie / ani / szaf",
+    "z / mieszka / rodzin / tu / kilka / dziećmi",
+    "studentom / wynajmuję / mieszkania",
+    "meblami / co / z / ?"
+   ]
+  }
+ ],
+ "answers": [
+  "Widzieliśmy już dziesięć mieszkań w tej dzielnicy. — Nie ma tu łóżek ani szaf. — We wszystkich pokojach są nowe okna. — W kamienicy mieszka kilka rodzin z dziećmi. — Właściciel wynajmuje mieszkania tylko studentom. — Na Podgórzu jest dużo kawiarni.",
+  "szaf — sklepów — sąsiadach — studentom — koleżankami — mieszkań — pokoi",
+  "Mam kilka łóżek. — W bloku są dwie windy. — Tu mieszka pięć rodzin. — Widzę dużo sklepów. — Nie mam kluczy. — Mówimy o kawiarniach.",
+  "W okolicy jest dużo sklepów. — Nie ma tu łóżek ani szaf. — Tu mieszka kilka rodzin z dziećmi. — Wynajmuję mieszkania studentom. — Co z meblami?"
+ ]
+}

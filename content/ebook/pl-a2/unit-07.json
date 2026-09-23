@@ -1,0 +1,737 @@
+{
+ "title": "Belanja pakaian — ini, itu, yang mana",
+ "title_target": "W sklepie z ubraniami",
+ "goal": "Memilih, mencoba, dan membeli pakaian: menanyakan ukuran dan warna, lalu membandingkan barang yang dekat dengan yang jauh. Titik tata bahasanya: deklinasi **ten/ta/to** dan **tamten** di semua kasus, **który** lawan **jaki**, serta ungkapan *pasuje mi, jest mi za mały, do twarzy ci w…*.",
+ "bekal": [
+  "menunjuk barang dengan *ten, ta, to, tamten* dalam kasus yang tepat",
+  "bertanya *który?* dan *jaki?* dan tahu kapan memakai yang mana",
+  "meminta ukuran lain, mencoba pakaian, dan menolak dengan sopan"
+ ],
+ "dialogs": [
+  {
+   "title": "Dialog — Ta czarna czy tamta zielona?",
+   "intro": "Akhir Oktober. Pagi sudah dingin, dan Budi masih memakai jaket tipis dari Jakarta. Ania mengajaknya ke Galeria Krakowska, pusat belanja di samping stasiun utama.",
+   "lines": [
+    {
+     "speaker": "Ania:",
+     "text": "Idzie zima. Masz ciepłą kurtkę?",
+     "id": "Musim dingin datang. Kamu punya jaket hangat?",
+     "literal": "ia-berjalan musim-dingin. kamu-punya hangat jaket?"
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Nie mam. W Dżakarcie nie była mi potrzebna.",
+     "id": "Nggak punya. Di Jakarta saya nggak butuh.",
+     "literal": "tidak saya-punya. di Jakarta tidak ia-adalah-lampau-pr saya(C.) perlu."
+    },
+    {
+     "speaker": "Ania:",
+     "text": "To chodź, zobaczymy te kurtki przy wejściu.",
+     "id": "Kalau begitu ayo, kita lihat jaket-jaket di dekat pintu masuk itu.",
+     "literal": "jadi ayo, kita-akan-melihat ini(B.) jaket-jaket di-dekat pintu-masuk."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Która ci się podoba? Ta czarna czy tamta zielona?",
+     "id": "Kamu suka yang mana? Yang hitam ini atau yang hijau di sana?",
+     "literal": "yang-mana kamu(C.) diri disukai? ini hitam atau itu hijau?"
+    },
+    {
+     "speaker": "Ania:",
+     "text": "Ta zielona. Do twarzy ci w zielonym.",
+     "id": "Yang hijau. Kamu cocok pakai hijau.",
+     "literal": "ini hijau. ke wajah kamu(C.) dalam hijau."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Przepraszam, czy ma pani tę kurtkę w rozmiarze L?",
+     "id": "Permisi, Mbak punya jaket ini ukuran L?",
+     "literal": "maaf, apakah nyonya-punya ini(B.) jaket dalam ukuran L?"
+    },
+    {
+     "speaker": "Sprzedawczyni:",
+     "text": "Tak, proszę. Przymierzalnia jest tam, za tymi lustrami.",
+     "id": "Ada, silakan. Kamar pas di sana, di balik cermin-cermin itu.",
+     "literal": "ya, silakan. kamar-pas adalah di-sana, di-balik ini(N.) cermin-cermin."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Niestety, jest mi za mała. Ma pani rozmiar XL?",
+     "id": "Sayang, kekecilan buat saya. Ada ukuran XL?",
+     "literal": "sayangnya, adalah saya(C.) terlalu kecil. nyonya-punya ukuran XL?"
+    },
+    {
+     "speaker": "Sprzedawczyni:",
+     "text": "W tym kolorze już nie. XL mamy tylko w tamtym, granatowym.",
+     "id": "Warna ini sudah habis. XL cuma ada yang biru dongker itu.",
+     "literal": "dalam ini warna sudah tidak. XL kami-punya hanya dalam itu, biru-tua."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Jaki to materiał? Jest ciepła?",
+     "id": "Bahannya apa? Hangat nggak?",
+     "literal": "yang-bagaimana ini bahan? ia-adalah hangat?"
+    },
+    {
+     "speaker": "Sprzedawczyni:",
+     "text": "Bardzo. Ma puch w środku, wytrzyma nawet duży mróz.",
+     "id": "Hangat sekali. Isinya bulu angsa, tahan bahkan di suhu beku.",
+     "literal": "sangat. ia-punya bulu-halus di dalam, ia-akan-tahan bahkan besar embun-beku."
+    },
+    {
+     "speaker": "Ania:",
+     "text": "No i jak? Pasuje?",
+     "id": "Gimana? Pas?",
+     "literal": "nah dan bagaimana? ia-cocok?"
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Pasuje idealnie. W której kasie mogę zapłacić?",
+     "id": "Pas banget. Bayarnya di kasir yang mana?",
+     "literal": "ia-cocok sempurna. di yang-mana kasir saya-bisa membayar?"
+    },
+    {
+     "speaker": "Sprzedawczyni:",
+     "text": "W tej przy wyjściu. Dziękuję i zapraszam ponownie!",
+     "id": "Di kasir dekat pintu keluar. Terima kasih, silakan datang lagi!",
+     "literal": "di ini(Ms.) di-dekat pintu-keluar. terima-kasih dan saya-mengundang lagi!"
+    }
+   ],
+   "notes": [
+    "**Idzie zima** — \"musim dingin sedang berjalan datang\". Musim dan cuaca dalam bahasa Polandia sering *iść*: *Idzie wiosna, idzie burza*. Kata kerjanya boleh di depan, seperti pengumuman.",
+    "**Ta czarna czy tamta zielona?** — kata sifat berdiri sendiri menggantikan bendanya, persis seperti \"yang hitam\" dalam bahasa Indonesia. Tak perlu mengulang *kurtka*; *ta* dan *tamta* sudah memberi tahu jenisnya perempuan.",
+    "**Do twarzy ci w zielonym** — harfiahnya \"ke wajahmu dalam hijau\": pujian baku di toko pakaian. Warnanya memakai miejscownik bentuk netral: *w zielonym, w czarnym, w czerwonym*.",
+    "**Czy ma pani tę kurtkę?** — biernik perempuan dari *ta* adalah **tę**. Dalam percakapan banyak orang Polandia mengucapkan *tą kurtkę*, tetapi bentuk tulis yang benar tetap *tę*. Bentuk *tą* yang benar ada di narzędnik: *z tą kurtką*.",
+    "**Jest mi za mała** — \"kekecilan untuk saya\". Pakaian menjadi pelaku, orangnya celownik. *Za* di depan kata sifat berarti \"terlalu\": *za duża, za długa, za droga*.",
+    "**Zapraszam ponownie** — \"saya mengundang Anda lagi\": kalimat penutup kasir yang akan kamu dengar di hampir setiap toko. Tak perlu dijawab selain *Dziękuję, do widzenia*."
+   ],
+   "grammars": [
+    {
+     "title": "Ten, ta, to di semua kasus",
+     "body": [
+      "Ekornya sama dengan ekor kata sifat yang sudah kamu pelajari di unit 1 dan 3 (*nowego, nowej, nowym*). Kalau kamu hafal satu, kamu hafal dua-duanya."
+     ],
+     "table": {
+      "head": [
+       "Kasus",
+       "m",
+       "ż",
+       "n",
+       "jamak lk (orang)",
+       "jamak lain"
+      ],
+      "rows": [
+       [
+        "M.",
+        "*ten*",
+        "*ta*",
+        "*to*",
+        "*ci*",
+        "*te*"
+       ],
+       [
+        "D.",
+        "*tego*",
+        "*tej*",
+        "*tego*",
+        "*tych*",
+        "*tych*"
+       ],
+       [
+        "C.",
+        "*temu*",
+        "*tej*",
+        "*temu*",
+        "*tym*",
+        "*tym*"
+       ],
+       [
+        "B.",
+        "*ten* / *tego* (hidup)",
+        "*tę*",
+        "*to*",
+        "*tych*",
+        "*te*"
+       ],
+       [
+        "N.",
+        "*tym*",
+        "*tą*",
+        "*tym*",
+        "*tymi*",
+        "*tymi*"
+       ],
+       [
+        "Ms.",
+        "*tym*",
+        "*tej*",
+        "*tym*",
+        "*tych*",
+        "*tych*"
+       ]
+      ]
+     },
+     "after": [
+      "**Tamten** (yang di sana) mengikuti tabel ini dengan awalan *tam-*: *tamtego, tamtej, tamtemu, tamtym, tamci, tamte*. Satu pengecualian penting: biernik perempuannya **tamtą**, bukan *tamtę*: *Wezmę tamtą kurtkę*.",
+      "*Ten* lebih luas daripada \"ini\": ia juga dipakai untuk sesuatu yang baru disebut, yang dalam bahasa Indonesia kita sebut \"itu\". *Tamten* baru muncul ketika ada dua benda yang dibandingkan, satu dekat dan satu jauh.",
+      "Biernik laki-laki punya dua bentuk seperti kata sifat: benda mati *Wezmę ten sweter*, makhluk hidup *Znasz tego pana?*"
+     ]
+    },
+    {
+     "title": "Który atau jaki?",
+     "body": [
+      "Dua-duanya diterjemahkan \"yang mana\" atau \"apa\", tetapi pertanyaannya berbeda. **Który** memilih satu dari beberapa yang sudah ada di depan mata; **jaki** menanyakan sifatnya."
+     ],
+     "table": {
+      "head": [
+       "",
+       "*który?*",
+       "*jaki?*"
+      ],
+      "rows": [
+       [
+        "menanyakan",
+        "yang mana (dari pilihan)",
+        "seperti apa, jenis apa"
+       ],
+       [
+        "contoh",
+        "*Która kurtka? — Ta zielona.*",
+        "*Jaka kurtka? — Ciepła, zimowa.*"
+       ],
+       [
+        "D. / C.",
+        "*którego, której / któremu, której*",
+        "*jakiego, jakiej / jakiemu, jakiej*"
+       ],
+       [
+        "B. / N.",
+        "*który (którego), którą / którym, którą*",
+        "*jaki (jakiego), jaką / jakim, jaką*"
+       ],
+       [
+        "Ms.",
+        "*o którym, o której*",
+        "*o jakim, o jakiej*"
+       ],
+       [
+        "jamak",
+        "*którzy* (orang lk), *które*",
+        "*jacy* (orang lk), *jakie*"
+       ]
+      ]
+     },
+     "after": [
+      "Keduanya berdeklinasi persis seperti kata sifat. Jadi *W której kasie?* (di kasir yang mana), *Z którym panem rozmawiałeś?* (dengan bapak yang mana kamu bicara), *Jaką koszulę pan woli?* (kemeja seperti apa).",
+      "**Jaki to…?** adalah pola sehari-hari untuk \"… apa ini?\": *Jaki to materiał?* (bahannya apa), *Jaki to rozmiar?* (ini ukuran berapa)."
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Dialog kedua — Tej białej nie wezmę",
+   "intro": "Minggu berikutnya Budi harus mempresentasikan proyek magangnya di depan klien. Ia masuk ke toko kecil di ulica Floriańska untuk membeli kemeja.",
+   "lines": [
+    {
+     "speaker": "Sprzedawca:",
+     "text": "Dzień dobry. W czym mogę pomóc?",
+     "id": "Selamat siang. Ada yang bisa saya bantu?",
+     "literal": "hari baik. dalam apa saya-bisa membantu?"
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Szukam koszuli na ważne spotkanie.",
+     "id": "Saya cari kemeja untuk rapat penting.",
+     "literal": "saya-mencari kemeja(D.) untuk penting pertemuan."
+    },
+    {
+     "speaker": "Sprzedawca:",
+     "text": "Jaką koszulę pan woli: gładką czy w paski?",
+     "id": "Bapak suka kemeja yang seperti apa: polos atau bergaris?",
+     "literal": "yang-bagaimana(B.) kemeja tuan lebih-suka: polos atau dalam garis-garis?"
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Gładką. Może tę białą z wystawy?",
+     "id": "Polos. Mungkin yang putih di etalase itu?",
+     "literal": "polos. mungkin ini(B.) putih dari etalase?"
+    },
+    {
+     "speaker": "Sprzedawca:",
+     "text": "Tę? Mamy ją też w kolorze błękitnym. Jaki rozmiar pan nosi?",
+     "id": "Yang ini? Kami juga punya yang biru muda. Bapak pakai ukuran berapa?",
+     "literal": "ini(B.)? kami-punya dia-pr juga dalam warna biru-muda. yang-bagaimana ukuran tuan ia-memakai?"
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Czterdzieści, chyba. Mogę przymierzyć obie?",
+     "id": "Empat puluh, kayaknya. Boleh saya coba dua-duanya?",
+     "literal": "empat-puluh, mungkin. saya-bisa mencoba keduanya?"
+    },
+    {
+     "speaker": "Sprzedawca:",
+     "text": "Oczywiście. Przymierzalnia jest po lewej stronie.",
+     "id": "Tentu. Kamar pas di sebelah kiri.",
+     "literal": "tentu-saja. kamar-pas adalah di kiri sisi."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Tej białej nie wezmę, jest za szeroka.",
+     "id": "Yang putih tidak saya ambil, kebesaran.",
+     "literal": "ini(D.) putih tidak saya-akan-mengambil, ia-adalah terlalu lebar."
+    },
+    {
+     "speaker": "Sprzedawca:",
+     "text": "A w tej błękitnej jest panu bardzo dobrze.",
+     "id": "Tapi pakai yang biru muda, Bapak kelihatan bagus sekali.",
+     "literal": "dan dalam ini(Ms.) biru-muda adalah tuan sangat baik."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "To poproszę tę. Który krawat do niej pasuje?",
+     "id": "Kalau begitu saya ambil yang ini. Dasi mana yang cocok dengannya?",
+     "literal": "jadi saya-akan-meminta ini(B.). yang-mana dasi ke dia-pr ia-cocok?"
+    },
+    {
+     "speaker": "Sprzedawca:",
+     "text": "Ten granatowy, bez wątpienia.",
+     "id": "Yang biru dongker ini, jelas.",
+     "literal": "ini biru-tua, tanpa keraguan."
+    }
+   ],
+   "notes": [
+    "**Szukam koszuli** — *szukać* selalu diikuti dopełniacz: *koszula → koszuli*. Bandingkan *Kupuję koszulę* (B.).",
+    "**gładka, w paski** — motif kain memakai *w* + biernik: *w paski* (bergaris), *w kropki* (berbintik) — keduanya jamak — dan *w kratkę* (kotak-kotak, tunggal). *Gładki* berarti polos, tanpa motif.",
+    "**Tej białej nie wezmę** — kalimat ini membalik urutan biasa supaya yang dibandingkan maju ke depan. Karena disangkal, *tę białą* berubah menjadi dopełniacz *tej białej*.",
+    "**W tej błękitnej jest panu dobrze** — \"dalam yang biru muda itu, Bapak baik\". Pujian kedua yang sering didengar di toko, bersaudara dengan *do twarzy panu w…*.",
+    "**Który krawat do niej pasuje?** — *pasować do* + D. berarti \"serasi dengan\": *Ten krawat pasuje do tej koszuli*. Bandingkan *pasuje mi* (+ C.) yang berarti \"pas di badan saya\".",
+    "**Czterdzieści** — ukuran kemeja pria di Polandia sering dinyatakan dengan lingkar kerah dalam sentimeter (39, 40, 41…), di samping ukuran S, M, L, XL."
+   ],
+   "grammars": [
+    {
+     "title": "Ukuran, kecocokan, dan pujian",
+     "body": [
+      "Hampir semua ungkapan di toko pakaian menaruh **orangnya di celownik**. Bahasa Polandia tidak berkata \"saya pas\", melainkan \"(pakaian ini) pas kepada saya\"."
+     ],
+     "table": {
+      "head": [
+       "Polski",
+       "Susunan",
+       "Arti"
+      ],
+      "rows": [
+       [
+        "*Ta kurtka mi pasuje.*",
+        "pakaian (M.) + orang (C.) + *pasować*",
+        "Jaket ini pas di saya."
+       ],
+       [
+        "*Jest mi za mała.*",
+        "*jest* + C. + *za* + kata sifat",
+        "Kekecilan buat saya."
+       ],
+       [
+        "*Te spodnie są za długie.*",
+        "*są* + *za* + kata sifat jamak",
+        "Celana ini kepanjangan."
+       ],
+       [
+        "*Do twarzy ci w zielonym.*",
+        "*do twarzy* + C. + *w* + Ms.",
+        "Kamu cocok pakai hijau."
+       ],
+       [
+        "*W tej jest panu dobrze.*",
+        "*w* + Ms. + *jest* + C. + *dobrze*",
+        "Bapak kelihatan bagus pakai yang ini."
+       ],
+       [
+        "*Ta koszula pasuje do krawata.*",
+        "*pasować do* + D.",
+        "Kemeja ini serasi dengan dasinya."
+       ]
+      ]
+     },
+     "after": [
+      "*Spodnie, okulary, drzwi* hanya ada dalam bentuk jamak, jadi kata tunjuknya pun jamak: *te spodnie, w tych spodniach, tych okularów*. Satu celana tetap *te spodnie*.",
+      "Untuk menolak dengan halus, cukup sebut alasannya dengan *za*: *Jest trochę za drogi* (agak kemahalan). Penjual Polandia tidak akan memaksa."
+     ]
+    }
+   ]
+  }
+ ],
+ "sections": [
+  {
+   "title": "Pakaian dan warna",
+   "blocks": [
+    {
+     "type": "tabel",
+     "head": [
+      "Polski",
+      "Arti",
+      "Contoh"
+     ],
+     "rows": [
+      [
+       "*kurtka* (ż)",
+       "jaket",
+       "*Ta kurtka jest ciepła.*"
+      ],
+      [
+       "*płaszcz* (m)",
+       "mantel",
+       "*Ten płaszcz jest za długi.*"
+      ],
+      [
+       "*sweter, swetra* (m)",
+       "sweter",
+       "*Wezmę ten sweter.*"
+      ],
+      [
+       "*koszula* (ż)",
+       "kemeja",
+       "*Przymierzę tę koszulę.*"
+      ],
+      [
+       "*spodnie* (jamak)",
+       "celana panjang",
+       "*Te spodnie mi pasują.*"
+      ],
+      [
+       "*buty* (jamak)",
+       "sepatu",
+       "*W tych butach jest mi wygodnie.*"
+      ],
+      [
+       "*sukienka* (ż)",
+       "gaun",
+       "*Do twarzy ci w tej sukience.*"
+      ],
+      [
+       "*szalik, czapka, rękawiczki*",
+       "syal, topi, sarung tangan",
+       "*Tamten szalik jest ładniejszy.*"
+      ],
+      [
+       "*czarny, biały, szary*",
+       "hitam, putih, abu-abu",
+       "*w szarym swetrze*"
+      ],
+      [
+       "*czerwony, zielony, żółty*",
+       "merah, hijau, kuning",
+       "*tamta czerwona sukienka*"
+      ],
+      [
+       "*niebieski, błękitny, granatowy*",
+       "biru, biru muda, biru dongker",
+       "*ten granatowy krawat*"
+      ],
+      [
+       "*brązowy, różowy, beżowy*",
+       "cokelat, merah muda, krem",
+       "*w brązowych butach*"
+      ]
+     ]
+    },
+    {
+     "type": "p",
+     "text": "Bahasa Polandia punya tiga kata untuk biru yang dipakai sehari-hari, dan ketiganya dianggap warna yang berbeda: *niebieski* (biru biasa), *błękitny* (biru langit, biru muda), dan *granatowy* (biru dongker, dari *granat*). Semua warna adalah kata sifat, jadi ikut jenis dan kasus bendanya: *czarny płaszcz, czarna kurtka, czarne buty, w czarnych butach*."
+    },
+    {
+     "type": "kotak",
+     "title": "Ukuran di toko Polandia",
+     "items": [
+      "Pakaian umumnya memakai S, M, L, XL atau ukuran Eropa (misalnya 38, 40, 42 untuk pakaian perempuan). Ukuran sering berbeda antar merek, jadi *przymierzalnia* adalah temanmu.",
+      "Sepatu memakai ukuran Eropa. Pertanyaannya: *Jaki numer buta pan nosi?* Jawabannya: *Noszę czterdzieści trzy.*",
+      "Musim obral (*wyprzedaż*) yang besar biasanya datang sesudah Natal dan di pertengahan musim panas. Simpan struk (*paragon*) kalau mungkin ingin menukar barang; aturan tukar dan kembali berbeda di tiap toko."
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Kalimat siap pakai di toko",
+   "blocks": [
+    {
+     "type": "tabel",
+     "head": [
+      "Polski",
+      "Arti"
+     ],
+     "rows": [
+      [
+       "*Tylko się rozglądam, dziękuję.*",
+       "Saya cuma lihat-lihat, terima kasih."
+      ],
+      [
+       "*Czy mogę to przymierzyć?*",
+       "Boleh saya coba?"
+      ],
+      [
+       "*Gdzie jest przymierzalnia?*",
+       "Kamar pas di mana?"
+      ],
+      [
+       "*Czy jest to w innym kolorze?*",
+       "Ada warna lain?"
+      ],
+      [
+       "*Poproszę większy / mniejszy rozmiar.*",
+       "Minta ukuran yang lebih besar / lebih kecil."
+      ],
+      [
+       "*Czy to jest w promocji?*",
+       "Ini sedang diskon?"
+      ],
+      [
+       "*Wezmę to.*",
+       "Saya ambil yang ini."
+      ],
+      [
+       "*Zastanowię się jeszcze.*",
+       "Saya pikir-pikir dulu."
+      ],
+      [
+       "*Płacę kartą / gotówką.*",
+       "Saya bayar pakai kartu / tunai."
+      ],
+      [
+       "*Czy mogę to wymienić?*",
+       "Boleh ditukar?"
+      ]
+     ]
+    },
+    {
+     "type": "p",
+     "text": "Dua kalimat paling berguna di tabel ini adalah dua jalan keluar: *Tylko się rozglądam* ketika penjual menghampirimu terlalu cepat, dan *Zastanowię się jeszcze* ketika kamu tidak ingin membeli. Keduanya sopan dan umum; penjual akan menjawab *Oczywiście* atau *Zapraszam*. Perhatikan juga *to* di *Wezmę to*: untuk menunjuk barang tanpa menyebut namanya, bahasa Polandia memakai *to* netral, apa pun jenis bendanya."
+    },
+    {
+     "type": "kotak",
+     "title": "Belanja di Kraków",
+     "items": [
+      "**Galeria Krakowska** adalah pusat belanja besar yang menempel pada stasiun utama Kraków Główny, praktis untuk belanja sebelum atau sesudah naik kereta.",
+      "**Ulica Floriańska** menghubungkan Brama Floriańska dengan Rynek Główny. Jalan ini khusus pejalan kaki dan penuh toko, kafe, serta toko suvenir.",
+      "Sejak 2018 sebagian besar toko di Polandia tutup pada kebanyakan hari Minggu (*niedziela niehandlowa*). Ada beberapa Minggu belanja dalam setahun dan pengecualian untuk toko tertentu, tetapi rencanakan belanja besar pada hari Sabtu."
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Ulangan berjenjang — unit 5",
+   "blocks": [
+    {
+     "type": "p",
+     "text": "Tutup kolom Polandia, baca terjemahan Indonesianya, lalu susun kembali kalimatnya dari ingatan."
+    },
+    {
+     "type": "tabel",
+     "head": [
+      "Bahasa Indonesia",
+      "Polski"
+     ],
+     "rows": [
+      [
+       "Lima menit lagi kukirim berkas yang sudah dibetulkan.",
+       "*Wyślę ci poprawiony plik za pięć minut.*"
+      ],
+      [
+       "Saya sedang membantu Marek dengan berkas-berkas klien.",
+       "*Pomagam Markowi z plikami klienta.*"
+      ],
+      [
+       "Besok Anda yang menunjukkan aplikasi kita ke klien-klien baru.",
+       "*Jutro pokaże pan naszą aplikację nowym klientom.*"
+      ],
+      [
+       "Aku selalu senang membantu teman-teman.",
+       "*Zawsze chętnie pomagam kolegom.*"
+      ],
+      [
+       "Kita belikan apa buat Bu Halina di hari namanya?",
+       "*Co kupimy pani Halinie na imieniny?*"
+      ]
+     ]
+    }
+   ]
+  }
+ ],
+ "vocab": [
+  {
+   "pl": "ubranie, ubrania (n)",
+   "baca": "u-BRA-nye, u-BRA-nya",
+   "id": "pakaian"
+  },
+  {
+   "pl": "kurtka (ż)",
+   "baca": "KURT-ka",
+   "id": "jaket"
+  },
+  {
+   "pl": "płaszcz, płaszcza (m)",
+   "baca": "pwasyc, PWA-syca",
+   "id": "mantel"
+  },
+  {
+   "pl": "koszula (ż)",
+   "baca": "ko-SYU-la",
+   "id": "kemeja"
+  },
+  {
+   "pl": "spodnie, spodni (jamak)",
+   "baca": "SPOD-nye, SPOD-ni",
+   "id": "celana panjang"
+  },
+  {
+   "pl": "krawat (m)",
+   "baca": "KRA-vat",
+   "id": "dasi"
+  },
+  {
+   "pl": "rozmiar (m)",
+   "baca": "ROZ-myar",
+   "id": "ukuran"
+  },
+  {
+   "pl": "kolor (m)",
+   "baca": "KO-lor",
+   "id": "warna"
+  },
+  {
+   "pl": "materiał (m)",
+   "baca": "ma-TE-ryaw",
+   "id": "bahan, kain"
+  },
+  {
+   "pl": "przymierzalnia (ż)",
+   "baca": "psyy-mye-ZYAL-nya",
+   "id": "kamar pas"
+  },
+  {
+   "pl": "przymierzać (przymierzam) / przymierzyć (przymierzę)",
+   "baca": "psyy-MYE-zyac (psyy-MYE-zyam) / psyy-MYE-zyyc (psyy-MYE-zye)",
+   "id": "mencoba (pakaian)"
+  },
+  {
+   "pl": "pasować (pasuję) — ndk",
+   "baca": "pa-SO-vac (pa-SU-ye)",
+   "id": "pas (+ C.); serasi (*do* + D.)"
+  },
+  {
+   "pl": "nosić (noszę) — ndk",
+   "baca": "NO-syic (NO-sye)",
+   "id": "memakai (pakaian, ukuran)"
+  },
+  {
+   "pl": "tamten, tamta, tamto",
+   "baca": "TAM-ten, TAM-ta, TAM-to",
+   "id": "yang itu (di sana)"
+  },
+  {
+   "pl": "który, która, które",
+   "baca": "KTU-ry, KTU-ra, KTU-re",
+   "id": "yang mana"
+  },
+  {
+   "pl": "jaki, jaka, jakie",
+   "baca": "YA-ki, YA-ka, YA-kye",
+   "id": "seperti apa, apa"
+  },
+  {
+   "pl": "gładki",
+   "baca": "GWAT-ki",
+   "id": "polos (tanpa motif)"
+  },
+  {
+   "pl": "w paski / w kratkę",
+   "baca": "f PAS-ki / f KRAT-ke",
+   "id": "bergaris / kotak-kotak"
+  },
+  {
+   "pl": "granatowy",
+   "baca": "gra-na-TO-vy",
+   "id": "biru dongker"
+  },
+  {
+   "pl": "błękitny",
+   "baca": "bwen-KIT-ny",
+   "id": "biru muda"
+  },
+  {
+   "pl": "szeroki — wąski",
+   "baca": "sye-RO-ki — VONS-ki",
+   "id": "lebar — sempit"
+  },
+  {
+   "pl": "do twarzy (+ C.)",
+   "baca": "do TFA-zyy",
+   "id": "cocok (di wajah, penampilan)"
+  },
+  {
+   "pl": "wejście / wyjście (n)",
+   "baca": "VEY-sycye / VYY-sycye",
+   "id": "pintu masuk / pintu keluar"
+  },
+  {
+   "pl": "kasa (ż)",
+   "baca": "KA-sa",
+   "id": "kasir"
+  },
+  {
+   "pl": "wystawa (ż)",
+   "baca": "vys-TA-va",
+   "id": "etalase"
+  }
+ ],
+ "exercises": [
+  {
+   "prompt": "Terjemahkan ke bahasa Polandia.",
+   "items": [
+    "Kamu suka yang mana? Yang hitam ini atau yang hijau di sana? (jaket)",
+    "Mbak punya jaket ini ukuran L?",
+    "Sweter ini kekecilan buat saya.",
+    "Kamu cocok pakai merah.",
+    "Saya bayar di kasir yang mana?",
+    "Boleh saya coba celana ini?"
+   ]
+  },
+  {
+   "prompt": "Isi dengan bentuk yang tepat.",
+   "items": [
+    "Poproszę ____ koszulę. (ta, B.)",
+    "Nie wezmę ____ swetra. (ten, D.)",
+    "W ____ butach jest mi wygodnie. (te, Ms.)",
+    "Z ____ panem rozmawiałeś? (który, N.)",
+    "Do twarzy ci w ____ sukience. (tamta, Ms.)",
+    "____ spodnie mi nie pasują. (ten, jamak)",
+    "____ kolor pan woli? (jaki, B.)"
+   ]
+  },
+  {
+   "prompt": "Jawab dengan menunjuk barang atau orang yang lebih jauh (*tamten*), dalam kasus yang sama dengan pertanyaannya. Contoh: *Który sweter? Ten?* → *Nie, tamten.*",
+   "items": [
+    "Którą kurtkę bierzesz? Tę?",
+    "W którym sklepie to kupiłaś? W tym?",
+    "Z którą koleżanką rozmawiałeś? Z tą?",
+    "Których butów szukasz? Tych?",
+    "Któremu klientowi to dałeś? Temu?",
+    "Którzy studenci przyszli? Ci?"
+   ]
+  },
+  {
+   "prompt": "Susun jadi kalimat yang benar.",
+   "items": [
+    "mi / ta / jest / mała / kurtka / za",
+    "ci / w / twarzy / zielonym / do",
+    "kasie / zapłacić / której / mogę / w",
+    "białej / nie / tej / wezmę",
+    "pan / koszulę / jaką / woli"
+   ]
+  }
+ ],
+ "answers": [
+  "Która ci się podoba? Ta czarna czy tamta zielona? — Czy ma pani tę kurtkę w rozmiarze L? — Ten sweter jest mi za mały. — Do twarzy ci w czerwonym. — W której kasie mogę zapłacić? — Czy mogę przymierzyć te spodnie?",
+  "tę — tego — tych — którym — tamtej — Te — Jaki",
+  "Nie, tamtą. — Nie, w tamtym. — Nie, z tamtą. — Nie, tamtych. — Nie, tamtemu. — Nie, tamci.",
+  "Ta kurtka jest mi za mała. — Do twarzy ci w zielonym. — W której kasie mogę zapłacić? — Tej białej nie wezmę. — Jaką koszulę pan woli?"
+ ]
+}

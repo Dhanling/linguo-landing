@@ -1,0 +1,746 @@
+{
+ "title": "Memberi dan menolong — celownik penuh",
+ "title_target": "Pomagam koledze",
+ "goal": "Meminta dan menawarkan bantuan di kantor, mengirim dan memberi sesuatu kepada orang lain, serta mengungkapkan rasa dingin, suka, atau tidak enak hati. Titik tata bahasanya: **celownik** tunggal dan jamak (*koledze, mamie, dziecku, kolegom*), kata kerja + C. (*dawać, pomagać, dziękować, pokazywać, wysyłać*), *podoba mi się*, dan *jest mi zimno/smutno*.",
+ "bekal": [
+  "membentuk C. tunggal dan jamak untuk kata benda dan kata sifat",
+  "memakai kata kerja yang meminta C. untuk penerima: *dać komuś coś*, *pomóc komuś*",
+  "mengungkapkan rasa dan keadaan dengan *jest mi…* dan *podoba mi się…*"
+ ],
+ "dialogs": [
+  {
+   "title": "Dialog — Pomagam koledze",
+   "intro": "Selasa pagi di kantor Kodex. Marek, programmer utama dari Gdańsk, sedang berjuang dengan berkas kiriman klien, sementara pani Magdalena belum datang.",
+   "lines": [
+    {
+     "speaker": "Marek:",
+     "text": "Budi, możesz mi pomóc? Nie mogę otworzyć tego pliku.",
+     "id": "Budi, bisa bantu aku? Berkas ini nggak bisa kubuka.",
+     "literal": "Budi, kamu-bisa bagi-saya membantu? tidak saya-bisa membuka ini berkas."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Jasne. Pokaż mi, co się dzieje.",
+     "id": "Tentu. Coba tunjukkan ke aku ada apa.",
+     "literal": "jelas. tunjukkanlah bagi-saya, apa diri terjadi."
+    },
+    {
+     "speaker": "Marek:",
+     "text": "Klient przysłał nam nową wersję w starym formacie.",
+     "id": "Klien mengirimi kita versi baru dalam format lama.",
+     "literal": "klien mengirim-lampau-lk kami baru versi di lama format."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Wyślę ci poprawiony plik za pięć minut.",
+     "id": "Lima menit lagi kukirim berkas yang sudah dibetulkan.",
+     "literal": "saya-akan-mengirim kamu dibetulkan berkas dalam lima menit."
+    },
+    {
+     "speaker": "Marek:",
+     "text": "Dzięki! A ja muszę jeszcze odpisać klientowi i szefowej.",
+     "id": "Makasih! Aku masih harus balas klien dan bos.",
+     "literal": "terima-kasih! dan saya harus masih membalas klien dan bos-pr."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "A komu mam dać raport z testów?",
+     "id": "Terus laporan hasil tes kukasih ke siapa?",
+     "literal": "dan kepada-siapa saya-punya memberi laporan dari tes-jamak?"
+    },
+    {
+     "speaker": "Marek:",
+     "text": "Pani Magdalenie. Ona wszystko sprawdza osobiście.",
+     "id": "Ke Bu Magdalena. Beliau mengecek semuanya sendiri.",
+     "literal": "nyonya Magdalena. ia semuanya memeriksa secara-pribadi."
+    },
+    {
+     "speaker": "Magdalena:",
+     "text": "Dzień dobry, panowie! Jak idzie praca?",
+     "id": "Pagi, Mas-mas! Kerjaannya gimana?",
+     "literal": "hari baik, tuan-tuan! bagaimana berjalan kerja?"
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Pomagam Markowi z plikami klienta.",
+     "id": "Saya sedang membantu Marek dengan berkas-berkas klien.",
+     "literal": "saya-membantu Marek dengan berkas-jamak klien."
+    },
+    {
+     "speaker": "Magdalena:",
+     "text": "Świetnie, podoba mi się taka współpraca. Panie Budi, mam do pana prośbę.",
+     "id": "Bagus, saya suka kerja sama seperti ini. Mas Budi, saya ada permintaan.",
+     "literal": "hebat, disukai bagi-saya seperti-itu kerja-sama. tuan Budi, saya-punya ke tuan permintaan."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Tak, słucham?",
+     "id": "Ya, Bu?",
+     "literal": "ya, saya-mendengarkan?"
+    },
+    {
+     "speaker": "Magdalena:",
+     "text": "Jutro pokaże pan naszą aplikację nowym klientom.",
+     "id": "Besok Anda yang menunjukkan aplikasi kita ke klien-klien baru.",
+     "literal": "besok akan-menunjukkan tuan kami aplikasi baru klien-jamak."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Oczywiście. Czy mam im też wysłać prezentację?",
+     "id": "Tentu. Apa presentasinya juga perlu saya kirim ke mereka?",
+     "literal": "tentu-saja. apakah saya-punya mereka juga mengirim presentasi?"
+    },
+    {
+     "speaker": "Magdalena:",
+     "text": "Tak, proszę. I proszę podziękować Markowi za pomoc.",
+     "id": "Ya, tolong. Dan sampaikan terima kasih ke Marek atas bantuannya.",
+     "literal": "ya, silakan. dan silakan berterima-kasih Marek untuk bantuan."
+    },
+    {
+     "speaker": "Marek:",
+     "text": "Zawsze chętnie pomagam kolegom.",
+     "id": "Aku selalu senang membantu teman-teman.",
+     "literal": "selalu dengan-senang-hati saya-membantu teman-jamak."
+    }
+   ],
+   "notes": [
+    "**Możesz mi pomóc?** — *pomagać/pomóc* meminta C.: harfiahnya \"membantu **kepada** seseorang\". Bahasa Indonesia langsung menaruh objeknya (\"membantu Marek\"), jadi kesalahan paling umum pemula adalah *pomagam Marka* — yang benar *pomagam Markowi*.",
+    "**Przysłał nam, wyślę ci** — penerima kiriman masuk C. (*nam, ci*), barang yang dikirim masuk B. (*nową wersję, plik*). Pola \"memberi sesuatu kepada seseorang\" ini bekerja pada puluhan kata kerja.",
+    "**Odpisać klientowi i szefowej** — kata benda lelaki kebanyakan mendapat *-owi* di C. *Szefowa* (bos perempuan) berubah seperti kata sifat, jadi C.-nya *szefowej*, sama seperti *nowej*.",
+    "**Komu? Pani Magdalenie.** *Komu* adalah \"kepada siapa\", pertanyaan C. Nama perempuan berakhiran *-a* mengubah huruf terakhirnya persis seperti di Ms.: *Magdalena → Magdalenie*. *Pani* sendiri tetap *pani*.",
+    "**Podoba mi się taka współpraca** — \"saya suka kerja sama seperti ini\", tapi susunannya terbalik: yang disukai adalah pelaku kalimat, dan orang yang menyukai masuk C. (*mi*). Harfiahnya: \"kerja sama ini menyenangkan bagi saya\".",
+    "**Nowym klientom, kolegom** — C. jamak selalu berakhiran *-om*, dan kata sifatnya *-ym*. Tak peduli jenis kelaminnya: *klientom, koleżankom, dzieciom*."
+   ],
+   "grammars": [
+    {
+     "title": "Celownik tunggal",
+     "body": [
+      "C. menjawab *komu? czemu?* — kepada siapa, untuk siapa. Tabel ini merangkum semua ekornya, dari yang paling sering sampai yang perlu dihafal."
+     ],
+     "table": {
+      "head": [
+       "Jenis",
+       "Ekor",
+       "Contoh"
+      ],
+      "rows": [
+       [
+        "m (kebanyakan)",
+        "*-owi*",
+        "*Markowi, klientowi, Tomkowi, szefowi*"
+       ],
+       [
+        "m pendek (hafalan)",
+        "*-u*",
+        "*panu, bratu, ojcu, chłopcu, kotu, psu*"
+       ],
+       [
+        "m berakhiran *-a*",
+        "ikut ż",
+        "*koledze, mężczyźnie*"
+       ],
+       [
+        "ż berakhiran *-a* (keras)",
+        "*-e* + perubahan huruf",
+        "*mamie, Magdalenie, koleżance, siostrze*"
+       ],
+       [
+        "ż lunak (*-ia, -i*, huruf mati)",
+        "*-i / -y*",
+        "*Kasi, Ani, pani, babci, nocy*"
+       ],
+       [
+        "n",
+        "*-u*",
+        "*dziecku, biuru, miastu*"
+       ],
+       [
+        "kata sifat",
+        "*-emu* (m, n), *-ej* (ż)",
+        "*nowemu koledze, nowej koleżance*"
+       ]
+      ]
+     },
+     "after": [
+      "Perubahan huruf pada kata benda perempuan sama persis dengan Ms.: *k → c* (*koleżanka → koleżance*), *g → dz* (*Olga → Oldze*), *r → rz* (*siostra → siostrze*), *t → ci* (*Marta → Marcie*). Kalau *w Krakowie, na poczcie* sudah lancar, kamu sudah separuh jalan.",
+      "Kata ganti C. yang paling sering: *mi, ci, mu, jej, nam, wam, im*. Bentuk panjangnya (*mnie, tobie, jemu*) dan kapan memakainya dibahas di unit 6.",
+      "Nama *Budi* berubah seperti kata sifat, sama seperti di A1 (*Budiego, Budim*), jadi C.-nya *Budiemu*: *Daj to Budiemu.* Nama asing berakhiran *-i* lainnya berperilaku serupa."
+     ]
+    },
+    {
+     "title": "Kata kerja yang meminta C.",
+     "body": [
+      "Pola dasarnya: **orang di C., barang di B.** Bahasa Indonesia memakai \"kepada\" atau akhiran *-kan*; bahasa Polandia cukup dengan ekor."
+     ],
+     "table": {
+      "head": [
+       "Kata kerja (ndk / dk)",
+       "Arti",
+       "Contoh"
+      ],
+      "rows": [
+       [
+        "*dawać / dać*",
+        "memberi",
+        "*Daj mi raport.*"
+       ],
+       [
+        "*pomagać / pomóc*",
+        "membantu",
+        "*Pomagam Markowi.*"
+       ],
+       [
+        "*dziękować / podziękować*",
+        "berterima kasih",
+        "*Dziękuję pani za pomoc.*"
+       ],
+       [
+        "*pokazywać / pokazać*",
+        "menunjukkan",
+        "*Pokażę klientom aplikację.*"
+       ],
+       [
+        "*wysyłać / wysłać*",
+        "mengirim",
+        "*Wyślę ci plik.*"
+       ],
+       [
+        "*odpisywać / odpisać*",
+        "membalas (surel, pesan)",
+        "*Odpisz szefowej.*"
+       ],
+       [
+        "*obiecywać / obiecać*",
+        "menjanjikan",
+        "*Obiecałem mamie, że zadzwonię.*"
+       ],
+       [
+        "*kupować / kupić*",
+        "membelikan",
+        "*Kupimy jej kwiaty.*"
+       ],
+       [
+        "*ufać / zaufać*",
+        "memercayai",
+        "*Ufam ci.*"
+       ]
+      ]
+     },
+     "after": [
+      "C. jamak selalu **-om**, kata sifatnya **-ym**: *nowym klientom, starszym paniom, kolegom, dzieciom, ludziom*. Tak ada pengecualian yang perlu dicemaskan.",
+      "Hati-hati dengan *dziękować*: orangnya masuk C., hal yang disyukuri masuk *za* + B. — *Dziękuję ci za kawę.* Sedangkan *prosić* (meminta) justru memakai B. untuk orangnya: *Proszę Marka o pomoc.*"
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Dialog kedua — Jest mi zimno",
+   "intro": "Kamis malam di Podgórze. Pemanas di apartemen belum menyala sempurna, dan Tomek duduk di sofa berbalut selimut sambil menonton pertandingan Cracovia.",
+   "lines": [
+    {
+     "speaker": "Tomek:",
+     "text": "Brr, jest mi strasznie zimno. Kaloryfery nie działają?",
+     "id": "Brr, aku kedinginan banget. Pemanasnya nggak nyala?",
+     "literal": "brr, adalah bagi-saya sangat dingin. radiator-jamak tidak mereka-berfungsi?"
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Działają, ale słabo. Napiszę do pana Zbigniewa.",
+     "id": "Nyala, tapi lemah. Nanti kukabari Pak Zbigniew.",
+     "literal": "mereka-berfungsi, tetapi lemah. saya-akan-menulis ke tuan Zbigniew."
+    },
+    {
+     "speaker": "Tomek:",
+     "text": "Co kupimy pani Halinie na imieniny?",
+     "id": "Kita belikan apa buat Bu Halina di hari namanya?",
+     "literal": "apa kita-akan-membeli nyonya Halina untuk hari-nama?"
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Może kwiaty? Starszym paniom zawsze podobają się kwiaty.",
+     "id": "Bunga, mungkin? Ibu-ibu senior selalu suka bunga.",
+     "literal": "mungkin bunga-jamak? lebih-tua nyonya-jamak selalu disukai diri bunga-jamak."
+    },
+    {
+     "speaker": "Tomek:",
+     "text": "Kwiaty to za mało. Wiem, że lubi kryminały.",
+     "id": "Bunga aja kurang. Aku tahu dia suka novel detektif.",
+     "literal": "bunga-jamak itu terlalu sedikit. saya-tahu, bahwa ia-suka novel-detektif-jamak."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "To kupmy jej kryminał i kwiaty. Damy jej prezent w sobotę.",
+     "id": "Ya udah, kita beliin dia novel detektif dan bunga. Hadiahnya kita kasih hari Sabtu.",
+     "literal": "jadi marilah-membeli dia novel-detektif dan bunga-jamak. kita-akan-memberi dia hadiah di Sabtu."
+    },
+    {
+     "speaker": "Tomek:",
+     "text": "A Kasi musisz podziękować za pomoc przy przeprowadzce.",
+     "id": "Terus kamu harus berterima kasih ke Kasia atas bantuannya waktu pindahan.",
+     "literal": "dan Kasia kamu-harus berterima-kasih untuk bantuan di pindahan."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Już jej podziękowałem, ale jest mi głupio. Tyle dla nas zrobiła.",
+     "id": "Sudah, tapi aku masih nggak enak hati. Dia sudah bantu kita banyak banget.",
+     "literal": "sudah dia saya-berterima-kasih-lampau-lk, tetapi adalah bagi-saya konyol. begitu-banyak untuk kami ia-melakukan-lampau-pr."
+    },
+    {
+     "speaker": "Tomek:",
+     "text": "To zaproś ją na obiad i ugotuj jej coś indonezyjskiego.",
+     "id": "Ajak aja dia makan, terus masakin sesuatu yang khas Indonesia.",
+     "literal": "jadi undanglah dia untuk makan-siang dan masakkanlah dia sesuatu Indonesia."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Dobry pomysł. A teraz podaj mi koc. Jest mi zimno jak w Tatrach!",
+     "id": "Ide bagus. Sekarang ambilin aku selimut. Dinginnya kayak di Tatra!",
+     "literal": "baik gagasan. dan sekarang berikanlah bagi-saya selimut. adalah bagi-saya dingin seperti di Tatra!"
+    }
+   ],
+   "notes": [
+    "**Jest mi zimno** — rasa di tubuh dan di hati diungkapkan dengan C. + kata keterangan netral: \"(adalah) dingin bagi saya\". Bentuk lampaunya *było mi zimno*, futurnya *będzie mi zimno*. Pelaku yang merasa bisa diganti: *Jest ci zimno? Jest mu zimno.*",
+    "**Pani Halinie** — *Halina* berakhiran *-a* keras, jadi C.-nya *-ie*: *Halinie*, seperti *Magdalenie*. *Pani* di depannya tetap *pani* — ia punya bentuk yang sama di D., C., dan Ms.",
+    "**Na imieniny** — *imieniny* (hari nama) hanya punya bentuk jamak, seperti *urodziny* (ulang tahun). \"Untuk hari nama\" memakai *na* + B.: *na imieniny, na urodziny, na święta*.",
+    "**Kasi** — nama perempuan berakhiran *-ia* (*Kasia, Ania*), juga *Ola*, mendapat *-i* di C.: *Kasi, Ani, Oli*. Bentuk ini kembar dengan D. dan Ms., jadi kamu sudah sering mendengarnya: *u Ani, o Kasi*.",
+    "**Jest mi głupio** — \"aku nggak enak hati\" atau \"aku malu\", perasaan yang muncul ketika seseorang terlalu baik kepadamu atau ketika kamu berbuat kekeliruan kecil. Ungkapan yang sangat Polandia dan sangat berguna.",
+    "**Coś indonezyjskiego** — sesudah *coś* (sesuatu), kata sifat masuk D.: *coś dobrego, coś słodkiego, coś ciepłego*. Jadi \"sesuatu yang hangat\" bukan *coś ciepły*, melainkan *coś ciepłego*."
+   ],
+   "grammars": [
+    {
+     "title": "Rasa dan keadaan: jest mi zimno, podoba mi się",
+     "body": [
+      "Dalam semua ungkapan ini, orang yang merasakan duduk di C. Bahasa Polandia tidak berkata \"aku kedinginan\", melainkan \"dingin bagiku\"."
+     ],
+     "table": {
+      "head": [
+       "Polski",
+       "Arti",
+       "Harfiah"
+      ],
+      "rows": [
+       [
+        "*Jest mi zimno / gorąco.*",
+        "Aku kedinginan / kepanasan.",
+        "adalah bagi-saya dingin / panas"
+       ],
+       [
+        "*Jest mi smutno / wesoło.*",
+        "Aku sedih / riang.",
+        "adalah bagi-saya sedih / riang"
+       ],
+       [
+        "*Jest mi głupio.*",
+        "Aku nggak enak hati; malu.",
+        "adalah bagi-saya konyol"
+       ],
+       [
+        "*Jest mi niedobrze.*",
+        "Aku mual.",
+        "adalah bagi-saya tidak-baik"
+       ],
+       [
+        "*Jest mi wstyd.*",
+        "Aku malu.",
+        "adalah bagi-saya malu"
+       ],
+       [
+        "*Było mi przykro.*",
+        "Aku menyesal; aku sedih.",
+        "adalah-lampau bagi-saya tidak-enak"
+       ],
+       [
+        "*Podoba mi się ta kurtka.*",
+        "Aku suka jaket ini.",
+        "disukai bagi-saya jaket ini"
+       ],
+       [
+        "*Podobają mi się kwiaty.*",
+        "Aku suka bunga-bunga ini.",
+        "disukai-jamak bagi-saya bunga"
+       ],
+       [
+        "*Wszystko mi jedno.*",
+        "Terserah; sama saja bagiku.",
+        "semuanya bagi-saya satu"
+       ]
+      ]
+     },
+     "after": [
+      "Kata keterangannya selalu berbentuk netral (*zimno, smutno, głupio*), dan kata kerjanya *jest / było / będzie*. Ganti pelakunya cukup dengan mengganti kata ganti C.: *Było mu smutno. Będzie nam gorąco. Jest wam zimno?*",
+      "*Podobać się* setuju dengan **barang yang disukai**, bukan dengan orangnya: *Podobał mi się film* (lk), *Podobała mi się wystawa* (pr), *Podobały mi się kwiaty* (jamak). *Podoba mi się* untuk kesan saat ini; *lubię* untuk kesukaan tetap: *Lubię kwiaty.*",
+      "Dua ungkapan lain memakai pola yang sama walau bentuknya bukan kata keterangan biasa: *Jest mi wstyd* (aku malu) dan *Żal mi go* (aku kasihan padanya). Hafalkan utuh saja; keduanya sering terdengar."
+     ]
+    }
+   ]
+  }
+ ],
+ "sections": [
+  {
+   "title": "Meminta dan menawarkan bantuan di kantor",
+   "blocks": [
+    {
+     "type": "tabel",
+     "head": [
+      "Polski",
+      "Arti"
+     ],
+     "rows": [
+      [
+       "*Możesz mi pomóc?*",
+       "Bisa bantu aku?"
+      ],
+      [
+       "*Pomóc ci?*",
+       "Perlu kubantu?"
+      ],
+      [
+       "*Podaj mi, proszę, ładowarkę.*",
+       "Tolong ambilkan pengisi daya."
+      ],
+      [
+       "*Przypomnij mi jutro.*",
+       "Ingatkan aku besok."
+      ],
+      [
+       "*Wyślij mi to mejlem.*",
+       "Kirim ke aku lewat surel."
+      ],
+      [
+       "*Daj mi znać.*",
+       "Kabari aku."
+      ],
+      [
+       "*Pożycz mi długopis.*",
+       "Pinjami aku pulpen."
+      ],
+      [
+       "*Zostaw mi klucze na biurku.*",
+       "Tinggalkan kuncinya di mejaku."
+      ],
+      [
+       "*Przekaż Markowi, że…*",
+       "Sampaikan ke Marek bahwa…"
+      ],
+      [
+       "*Odpisz klientowi jeszcze dziś.*",
+       "Balas klien hari ini juga."
+      ],
+      [
+       "*Dziękuję wam za pomoc.*",
+       "Terima kasih atas bantuan kalian."
+      ],
+      [
+       "*Nie ma sprawy.*",
+       "Nggak masalah."
+      ],
+      [
+       "*Służę pomocą.*",
+       "Siap membantu. (resmi)"
+      ]
+     ]
+    },
+    {
+     "type": "p",
+     "text": "Perhatikan betapa seringnya *mi* muncul: hampir setiap permintaan di kantor punya penerima, dan penerima itu selalu C. Kata *mejl* adalah ejaan Polandia untuk *e-mail*; keduanya diterima dan sama-sama dipakai, *mejl* lebih santai. *Przekaż Markowi* (sampaikan ke Marek) dan *daj mi znać* (kabari aku) layak dihafal utuh — keduanya muncul di hampir setiap percakapan kerja."
+    },
+    {
+     "type": "kotak",
+     "title": "*Imieniny*, hari nama",
+     "items": [
+      "Selain ulang tahun, banyak orang Polandia merayakan *imieniny* — hari nama, yaitu hari peringatan santo yang namanya mereka sandang. Setiap tanggal di kalender Polandia memuat beberapa nama.",
+      "Bagi generasi yang lebih tua, *imieniny* sering sama penting atau malah lebih penting daripada ulang tahun. Di kantor pun ada yang membawa kue untuk dibagi.",
+      "Ucapan yang lazim: *Wszystkiego najlepszego z okazji imienin!* Perhatikan *imienin*, D. dari *imieniny*.",
+      "Kalau tak tahu kapan hari nama seseorang, tak ada salahnya bertanya: *Kiedy ma pani imieniny?*"
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Hadiah dan ucapan",
+   "blocks": [
+    {
+     "type": "tabel",
+     "head": [
+      "Polski",
+      "Arti",
+      "Siapa di C."
+     ],
+     "rows": [
+      [
+       "*kupić komuś prezent*",
+       "membelikan seseorang hadiah",
+       "*komuś*"
+      ],
+      [
+       "*dać komuś kwiaty*",
+       "memberi seseorang bunga",
+       "*komuś*"
+      ],
+      [
+       "*Życzę ci zdrowia!*",
+       "Semoga kamu sehat!",
+       "*ci*"
+      ],
+      [
+       "*Życzę pani wszystkiego najlepszego.*",
+       "Semoga yang terbaik untuk Ibu.",
+       "*pani*"
+      ],
+      [
+       "*Gratuluję ci!*",
+       "Selamat, ya!",
+       "*ci*"
+      ],
+      [
+       "*Zazdroszczę mu.*",
+       "Aku iri padanya.",
+       "*mu*"
+      ],
+      [
+       "*Współczuję jej.*",
+       "Aku turut prihatin padanya.",
+       "*jej*"
+      ],
+      [
+       "*Wierzę ci.*",
+       "Aku percaya padamu.",
+       "*ci*"
+      ]
+     ]
+    },
+    {
+     "type": "p",
+     "text": "*Życzyć* (mengharapkan, mendoakan) meminta **dua** kasus sekaligus: orangnya di C., harapannya di D. — *Życzę ci zdrowia, szczęścia i sukcesów.* Karena itu ucapan ulang tahun Polandia penuh dengan D.: *zdrowia* (dari *zdrowie*), *szczęścia* (dari *szczęście*), *sukcesów* (D. jamak dari *sukces*). Sekali kamu menghafal satu kalimat ucapan, sistem ini ikut terhafal. Untuk orang yang lebih tua, cukup ganti *ci* dengan *panu* atau *pani*: *Życzę pani zdrowia.*"
+    },
+    {
+     "type": "kotak",
+     "title": "Etiket bunga di Polandia",
+     "items": [
+      "Menurut kebiasaan lama, bunga dalam buket diberikan dalam jumlah **ganjil**; jumlah genap dikaitkan dengan pemakaman.",
+      "Krisan identik dengan makam dan hari *Wszystkich Świętych* (1 November). Untuk tetangga yang berulang tahun, pilihlah bunga lain.",
+      "Etiket lama juga menyarankan membuka kertas pembungkus sebelum menyerahkan bunga. Anak muda jarang memperhatikannya, tapi pani Halina mungkin memperhatikan.",
+      "Dan jangan lupa kalimatnya: *To dla pani!* (Ini untuk Ibu!) — *dla* + D., bukan C."
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Ulangan berjenjang — unit 3",
+   "blocks": [
+    {
+     "type": "p",
+     "text": "Tutup kolom Polandia, baca terjemahan Indonesianya, lalu susun kembali kalimatnya dari ingatan."
+    },
+    {
+     "type": "tabel",
+     "head": [
+      "Bahasa Indonesia",
+      "Polski"
+     ],
+     "rows": [
+      [
+       "Teman-temanmu benar-benar luar biasa.",
+       "*Twoi koledzy są naprawdę niesamowici.*"
+      ],
+      [
+       "Ola dan Kasia tadi pagi sudah ke sini.",
+       "*Ola i Kasia były tu rano.*"
+      ],
+      [
+       "Penyewa sebelumnya juga baik-baik sekali.",
+       "*Poprzedni lokatorzy też byli bardzo mili.*"
+      ],
+      [
+       "Teman-teman cowok angkut kardus, teman-teman cewek beli lampu.",
+       "*Koledzy nosili pudła, a koleżanki kupiły lampy.*"
+      ],
+      [
+       "Sama tetangga yang lain kami belum ngobrol.",
+       "*Z innymi sąsiadami jeszcze nie rozmawialiśmy.*"
+      ]
+     ]
+    }
+   ]
+  }
+ ],
+ "vocab": [
+  {
+   "pl": "pomagać (pomagam) / pomóc (pomogę) (+ C.)",
+   "baca": "po-MA-gac / PO-muts",
+   "id": "membantu"
+  },
+  {
+   "pl": "dawać (daję) / dać (dam) (+ C.)",
+   "baca": "DA-vac / dac",
+   "id": "memberi"
+  },
+  {
+   "pl": "dziękować (dziękuję) / podziękować (+ C.)",
+   "baca": "jyen-KO-vac / po-jyen-KO-vac",
+   "id": "berterima kasih"
+  },
+  {
+   "pl": "pokazywać (pokazuję) / pokazać (pokażę)",
+   "baca": "po-ka-ZY-vac / po-KA-zac",
+   "id": "menunjukkan"
+  },
+  {
+   "pl": "wysyłać (wysyłam) / wysłać (wyślę)",
+   "baca": "vy-SY-wac / VYS-wac",
+   "id": "mengirim"
+  },
+  {
+   "pl": "odpisywać (odpisuję) / odpisać (odpiszę)",
+   "baca": "ot-pi-SY-vac / ot-PI-sac",
+   "id": "membalas (surel, pesan)"
+  },
+  {
+   "pl": "obiecywać (obiecuję) / obiecać (obiecam)",
+   "baca": "o-bye-TSY-vac / o-BYE-tsac",
+   "id": "menjanjikan"
+  },
+  {
+   "pl": "ufać (ufam) (+ C.) — ndk",
+   "baca": "U-fac",
+   "id": "memercayai"
+  },
+  {
+   "pl": "podobać się (podoba mi się) — ndk",
+   "baca": "po-DO-bac sye",
+   "id": "disukai; menyenangkan (bagi)"
+  },
+  {
+   "pl": "plik, pliku (m)",
+   "baca": "plik, PLI-ku",
+   "id": "berkas digital"
+  },
+  {
+   "pl": "klient, lm klienci (m)",
+   "baca": "KLI-yent, kli-YEN-ci",
+   "id": "klien"
+  },
+  {
+   "pl": "szefowa, C. szefowej (ż)",
+   "baca": "sye-FO-va, sye-FO-vey",
+   "id": "bos (pr)"
+  },
+  {
+   "pl": "raport (m)",
+   "baca": "RA-port",
+   "id": "laporan"
+  },
+  {
+   "pl": "prezentacja (ż)",
+   "baca": "pre-zen-TA-tsya",
+   "id": "presentasi"
+  },
+  {
+   "pl": "prośba (ż)",
+   "baca": "PROZY-ba",
+   "id": "permintaan"
+  },
+  {
+   "pl": "współpraca (ż)",
+   "baca": "fspuw-PRA-tsa",
+   "id": "kerja sama"
+  },
+  {
+   "pl": "kaloryfer (m)",
+   "baca": "ka-lo-RY-fer",
+   "id": "radiator pemanas"
+  },
+  {
+   "pl": "koc (m)",
+   "baca": "kots",
+   "id": "selimut"
+  },
+  {
+   "pl": "imieniny, imienin (lm)",
+   "baca": "i-mye-NI-ny, i-MYE-nin",
+   "id": "hari nama"
+  },
+  {
+   "pl": "prezent (m)",
+   "baca": "PRE-zent",
+   "id": "hadiah"
+  },
+  {
+   "pl": "kryminał (m)",
+   "baca": "kry-MI-naw",
+   "id": "novel atau film detektif"
+  },
+  {
+   "pl": "kwiat, lm kwiaty (m)",
+   "baca": "kfyat, KFYA-ty",
+   "id": "bunga"
+  },
+  {
+   "pl": "głupio (jest mi głupio)",
+   "baca": "GWU-pyo",
+   "id": "nggak enak hati; konyol"
+  },
+  {
+   "pl": "strasznie",
+   "baca": "STRASY-nye",
+   "id": "sangat; mengerikan"
+  },
+  {
+   "pl": "działać (działa) — ndk",
+   "baca": "JYA-wac",
+   "id": "berfungsi; menyala"
+  }
+ ],
+ "exercises": [
+  {
+   "prompt": "Terjemahkan ke bahasa Polandia.",
+   "items": [
+    "Lima menit lagi kukirim berkas yang sudah dibetulkan ke kamu.",
+    "Aku sedang membantu Marek dengan berkas-berkas klien.",
+    "Besok Anda yang menunjukkan aplikasi kita ke klien-klien baru. (kepada lk, sopan)",
+    "Aku selalu senang membantu teman-teman.",
+    "Kita belikan apa untuk Bu Halina di hari namanya?",
+    "Aku kedinginan sekali."
+   ]
+  },
+  {
+   "prompt": "Isi dengan bentuk yang tepat.",
+   "items": [
+    "Dziękuję ____ za pomoc. (Tomek → celownik)",
+    "Pokażę plan ____. (mama → celownik)",
+    "Muszę odpisać ____. (nowy klient → celownik)",
+    "Kupiłem prezent ____. (koleżanka → celownik)",
+    "Pomagamy ____. (dzieci → celownik)",
+    "____ mi się ten film. (podobać się, lampau)",
+    "Wczoraj ____ mi bardzo zimno. (być, lampau)"
+   ]
+  },
+  {
+   "prompt": "Jawab dengan kalimat lengkap. Orang di dalam kurung masuk C.",
+   "items": [
+    "Komu dajesz kwiaty? (pani Halina) →",
+    "Komu wysłałeś raport? (szefowa) →",
+    "Komu pomagasz? (Kasia) →",
+    "Komu pokazujesz aplikację? (nowi klienci) →",
+    "Komu dziękujesz? (koledzy) →",
+    "Komu jest zimno? (Tomek) →"
+   ]
+  },
+  {
+   "prompt": "Susun jadi kalimat yang benar.",
+   "items": [
+    "ci / plik / wyślę / jutro",
+    "pomagam / kolegom / chętnie",
+    "się / podoba / mi / Kraków",
+    "zimno / mi / jest",
+    "za / dziękuję / pani / pomoc"
+   ]
+  }
+ ],
+ "answers": [
+  "Wyślę ci poprawiony plik za pięć minut. — Pomagam Markowi z plikami klienta. — Jutro pokaże pan naszą aplikację nowym klientom. — Zawsze chętnie pomagam kolegom. — Co kupimy pani Halinie na imieniny? — Jest mi strasznie zimno.",
+  "Tomkowi — mamie — nowemu klientowi — koleżance — dzieciom — Podobał — było",
+  "Daję kwiaty pani Halinie. — Wysłałem raport szefowej. — Pomagam Kasi. — Pokazuję aplikację nowym klientom. — Dziękuję kolegom. — Tomkowi jest zimno.",
+  "Jutro wyślę ci plik. — Chętnie pomagam kolegom. — Podoba mi się Kraków. — Jest mi zimno. — Dziękuję pani za pomoc."
+ ]
+}
