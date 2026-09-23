@@ -42,14 +42,14 @@ export interface EtpBatchRow {
 // ("website masih memajang batch Agustus padahal September sudah dipublish").
 export const ETP_FALLBACK_BATCHES: EtpBatchRow[] = [
   {
-    id: "toefl-sep26",
+    id: "toefl-oct26",
     title: "TOEFL Preparation",
     badge: "TOEFL",
     icon: "", // ikon dirender lewat <EtpIcon> (Lucide) berdasarkan badge
     color: "teal",
     days: "Senin & Rabu",
     time: "19.30 – 21.00 WIB",
-    start_date: "2026-09-16",
+    start_date: "2026-10-26",
     duration_min: 90,
     total_sessions: 16,
     price: 300000,
@@ -74,14 +74,14 @@ export const ETP_FALLBACK_BATCHES: EtpBatchRow[] = [
     is_active: true,
   },
   {
-    id: "ielts-sep26",
+    id: "ielts-oct26",
     title: "IELTS Preparation",
     badge: "IELTS",
     icon: "",
     color: "blue",
     days: "Selasa & Kamis",
     time: "19.30 – 21.00 WIB",
-    start_date: "2026-09-17",
+    start_date: "2026-10-27",
     duration_min: 90,
     total_sessions: 16,
     price: 300000,
