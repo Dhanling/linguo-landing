@@ -1,0 +1,721 @@
+{
+ "title": "Kata kerja yang menuntut kasus tertentu",
+ "title_target": "Zależy mi na tym",
+ "goal": "Bernegosiasi dengan mitra bisnis: menyebut apa yang penting bagimu, apa yang kamu khawatirkan, dan siapa memegang kendali. Titik tata bahasanya: **rekcja** — kata kerja yang menentukan kasus pelengkapnya: *zależeć (komuś) na* + Ms., *polegać na* + Ms., *wpływać na* + B., *bać się, unikać, wymagać, dotyczyć, udzielać* + D., *zarządzać, kierować, dysponować* + N., *ufać, zagrażać* + C.",
+ "bekal": [
+  "menyatakan prioritas dan kekhawatiran dalam rapat: *Zależy nam na terminie. Boimy się opóźnień.*",
+  "memilih kasus yang benar sesudah kata kerja, dengan atau tanpa kata depan: *kierować projektem, ufać partnerowi, wpływać na cenę*",
+  "menyambung kata kerja ber-rekcja dengan anak kalimat lewat *to* berkasus: *Zależy mi na tym, żeby… Problem polega na tym, że…*"
+ ],
+ "dialogs": [
+  {
+   "title": "Dialog — Przejdźmy do konkretów",
+   "intro": "Ruang rapat Kodex. Pan Sadowski, wakil perusahaan penyedia server di Warszawa, datang membahas kerja sama untuk sistem yang sedang dibangun Budi bagi universitas-universitas di Indonesia. Pani Magdalena mendampingi, tapi Budi yang memimpin pembicaraan.",
+   "lines": [
+    {
+     "speaker": "Sadowski:",
+     "text": "Dziękuję za spotkanie. Od razu przejdę do rzeczy: nasza oferta dotyczy serwerów i wsparcia technicznego.",
+     "id": "Terima kasih atas pertemuannya. Langsung saja: penawaran kami menyangkut server dan dukungan teknis.",
+     "literal": "saya-berterima-kasih untuk pertemuan. seketika saya-akan-beralih ke hal: kami-punya penawaran menyangkut server(D.) dan dukungan(D.) teknis."
+    },
+    {
+     "speaker": "Magdalena:",
+     "text": "Świetnie. Projektem kieruje pan Budi, więc to z nim będzie pan rozmawiał.",
+     "id": "Bagus. Proyek ini dipimpin Pak Budi, jadi Bapak akan berbicara dengan beliau.",
+     "literal": "hebat. proyek(N.) mengarahkan tuan Budi, jadi itu dengan dia akan tuan berbicara-lk."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Zależy nam przede wszystkim na stabilności. System nie może się zawieszać.",
+     "id": "Yang terutama penting bagi kami adalah stabilitas. Sistemnya tidak boleh macet.",
+     "literal": "bergantung kami-C. terutama pada stabilitas(Ms.). sistem tidak bisa diri menggantung."
+    },
+    {
+     "speaker": "Sadowski:",
+     "text": "Rozumiem. Mamy serwery w Warszawie i we Frankfurcie, więc nie muszą się państwo bać awarii.",
+     "id": "Saya mengerti. Server kami ada di Warszawa dan di Frankfurt, jadi Bapak-Ibu tidak perlu takut gangguan.",
+     "literal": "saya-mengerti. kami-punya server di Warszawa dan di Frankfurt, jadi tidak mereka-harus diri tuan-nyonya takut kerusakan(D.)."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Najbardziej boimy się opóźnień przy wdrożeniu.",
+     "id": "Yang paling kami takutkan adalah keterlambatan saat implementasi.",
+     "literal": "paling kami-takut diri keterlambatan(D.) pada implementasi."
+    },
+    {
+     "speaker": "Sadowski:",
+     "text": "Dlatego proponujemy osobnego inżyniera. Będzie udzielał państwu wsparcia przez całą dobę.",
+     "id": "Karena itu kami menawarkan satu insinyur khusus. Dia akan memberi Bapak-Ibu dukungan selama 24 jam.",
+     "literal": "karena-itu kami-mengusulkan tersendiri insinyur. akan memberikan-lk tuan-nyonya(C.) dukungan(D.) selama seluruh hari-semalam."
+    },
+    {
+     "speaker": "Magdalena:",
+     "text": "Brzmi dobrze. Musimy jednak uniknąć przekroczenia budżetu.",
+     "id": "Kedengarannya bagus. Tapi kami harus menghindari pembengkakan anggaran.",
+     "literal": "terdengar baik. kami-harus namun menghindari pelampauan(D.) anggaran."
+    },
+    {
+     "speaker": "Sadowski:",
+     "text": "Cena zależy od liczby użytkowników. Na ilu państwo liczą?",
+     "id": "Harganya tergantung jumlah pengguna. Bapak-Ibu memperkirakan berapa orang?",
+     "literal": "harga bergantung dari jumlah(D.) pengguna. pada berapa tuan-nyonya menghitung?"
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Na początek pięć tysięcy. Ale to chyba wpływa na cenę?",
+     "id": "Untuk awal lima ribu. Tapi itu tentu memengaruhi harga, kan?",
+     "literal": "untuk permulaan lima ribu. tetapi itu mungkin memengaruhi pada harga(B.)?"
+    },
+    {
+     "speaker": "Sadowski:",
+     "text": "Oczywiście. Przy tej liczbie możemy udzielić państwu dziesięcioprocentowego rabatu.",
+     "id": "Tentu. Dengan jumlah itu kami bisa memberi Bapak-Ibu potongan sepuluh persen.",
+     "literal": "tentu-saja. pada ini jumlah kami-bisa memberikan tuan-nyonya(C.) sepuluh-persen potongan(D.)."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Szczerze mówiąc, liczyliśmy na piętnaście procent.",
+     "id": "Terus terang, kami tadinya berharap lima belas persen.",
+     "literal": "jujur sambil-berkata, kami-menghitung-lampau pada lima-belas persen(B.)."
+    },
+    {
+     "speaker": "Sadowski:",
+     "text": "Piętnaście to dużo. To wymaga zgody zarządu.",
+     "id": "Lima belas itu banyak. Itu perlu persetujuan direksi.",
+     "literal": "lima-belas itu banyak. itu menuntut persetujuan(D.) direksi."
+    },
+    {
+     "speaker": "Magdalena:",
+     "text": "Rozumiemy. Ufamy panu i poczekamy na odpowiedź do piątku.",
+     "id": "Kami mengerti. Kami percaya pada Bapak dan akan menunggu jawaban sampai Jumat.",
+     "literal": "kami-mengerti. kami-percaya tuan(C.) dan kami-akan-menunggu pada jawaban sampai Jumat."
+    },
+    {
+     "speaker": "Sadowski:",
+     "text": "Dziękuję. Nic nie powinno zagrażać naszej współpracy.",
+     "id": "Terima kasih. Tidak boleh ada yang mengancam kerja sama kita.",
+     "literal": "saya-berterima-kasih. tidak-ada tidak seharusnya mengancam kami-punya kerja-sama(C.)."
+    }
+   ],
+   "notes": [
+    "**Zależy nam na stabilności** — kalimat terpenting dalam negosiasi mana pun. Strukturnya terbalik dari bahasa Indonesia: orang yang peduli masuk **celownik** (*nam, mi, panu*), hal yang dipedulikan masuk **miejscownik** sesudah *na*. Harfiahnya \"bagi kami bergantung pada stabilitas\". Kata kerjanya selalu orang ketiga tunggal: *zależy mi, zależało nam, będzie im zależeć*.",
+    "**Cena zależy od liczby** — kata kerja yang sama dengan *od* + D. berarti \"tergantung pada\". Dua pola ini wajib dibedakan: *To zależy od ciebie* (itu tergantung kamu) lawan *Zależy mi na tobie* (kamu penting bagiku).",
+    "**Projektem kieruje pan Budi** — *kierować, zarządzać, dysponować* menuntut narzędnik, kasus \"alat\": yang dipimpin atau dikelola diperlakukan seperti setir di tangan. Urutan kata di sini membalik subjek ke belakang karena yang baru bagi pan Sadowski adalah *siapa* pemimpinnya.",
+    "**Nie muszą się państwo bać awarii** — *państwo* memakai kata kerja orang ketiga jamak (*muszą*), dan *bać się* menuntut dopełniacz: *boję się awarii, opóźnień, psa*. Dopełniacz yang sama dipakai *obawiać się* (lebih resmi) dan *unikać / uniknąć*.",
+    "**Udzielić państwu rabatu** — *udzielać* punya dua pelengkap: penerima dalam celownik, hal yang diberikan dalam dopełniacz. Kata kerja ini khas bahasa kantor: *udzielić informacji, pomocy, odpowiedzi, zgody, rabatu*. Dalam percakapan biasa orang cukup bilang *dać rabat*.",
+    "**Liczyliśmy na piętnaście procent** — *liczyć na* + B. berarti \"mengandalkan, berharap mendapat\". Bentuk lampau di sini adalah taktik halus: \"tadinya kami berharap\" terdengar lebih lunak daripada *żądamy piętnastu procent* (kami menuntut lima belas persen; *żądać* juga + D.)."
+   ],
+   "grammars": [
+    {
+     "title": "Kata kerja + kata depan + kasus",
+     "body": [
+      "Pada kelompok ini kasusnya ditentukan pasangan kata kerja dan kata depan, bukan oleh arti kata depan itu sendiri. *Na* bisa diikuti miejscownik atau biernik, dan hanya kata kerjanya yang memberi tahu mana."
+     ],
+     "table": {
+      "head": [
+       "Kata kerja",
+       "Pola",
+       "Arti",
+       "Contoh"
+      ],
+      "rows": [
+       [
+        "*zależeć*",
+        "komuś **na** + Ms.",
+        "penting bagi seseorang",
+        "*Zależy mi na terminie.*"
+       ],
+       [
+        "*zależeć*",
+        "**od** + D.",
+        "tergantung pada",
+        "*To zależy od budżetu.*"
+       ],
+       [
+        "*polegać*",
+        "**na** + Ms.",
+        "mengandalkan; berupa",
+        "*Możemy na nim polegać.*"
+       ],
+       [
+        "*wpływać / wpłynąć*",
+        "**na** + B.",
+        "memengaruhi",
+        "*To wpływa na cenę.*"
+       ],
+       [
+        "*liczyć*",
+        "**na** + B.",
+        "mengandalkan, berharap",
+        "*Liczymy na pana.*"
+       ],
+       [
+        "*czekać*",
+        "**na** + B.",
+        "menunggu",
+        "*Czekamy na odpowiedź.*"
+       ],
+       [
+        "*korzystać / skorzystać*",
+        "**z** + D.",
+        "memanfaatkan, memakai",
+        "*Korzystamy z chmury.*"
+       ],
+       [
+        "*rezygnować / zrezygnować*",
+        "**z** + D.",
+        "melepaskan, batal",
+        "*Zrezygnujemy z tej opcji.*"
+       ]
+      ]
+     },
+     "after": [
+      "*Polegać na* punya dua arti. Dengan orang: \"mengandalkan\" (*polegam na tobie*). Dengan *tym, że*: \"berupa, terletak pada\" (*Problem polega na tym, że…* — masalahnya adalah bahwa…).",
+      "Kalau kamu ragu antara *na* + Ms. dan *na* + B., ingat: kata kerja **gerak dan arah pengaruh** (*wpływać, liczyć, czekać*) condong ke biernik; kata kerja **keadaan** (*zależeć, polegać*) condong ke miejscownik."
+     ]
+    },
+    {
+     "title": "Kata kerja + kasus tanpa kata depan",
+     "body": [
+      "Kelompok kedua langsung menuntut kasus tertentu. Bahasa Indonesia dan Inggris memakai objek biasa untuk hampir semuanya, jadi di sinilah kesalahan paling sering muncul: *unikać błędy* (salah) alih-alih *unikać błędów*."
+     ],
+     "table": {
+      "head": [
+       "Kasus",
+       "Kata kerja",
+       "Contoh"
+      ],
+      "rows": [
+       [
+        "D.",
+        "*bać się, obawiać się, unikać, wymagać, dotyczyć, potrzebować, dotrzymywać*",
+        "*Unikamy ryzyka. To wymaga czasu. Ta sprawa dotyczy umowy.*"
+       ],
+       [
+        "C. + D.",
+        "*udzielać / udzielić* (komuś czegoś)",
+        "*Udzielimy panu rabatu.*"
+       ],
+       [
+        "N.",
+        "*kierować, zarządzać, dysponować, zajmować się*",
+        "*Kieruje zespołem. Dysponujemy budżetem.*"
+       ],
+       [
+        "C.",
+        "*ufać, zagrażać, dziękować, pomagać, sprzyjać*",
+        "*Ufam partnerowi. To zagraża projektowi.*"
+       ]
+      ]
+     },
+     "after": [
+      "Kelompok dopełniacz paling besar dan paling licin, karena bentuk dopełniacz juga muncul sesudah penyangkalan. Hasilnya sama, tapi alasannya lain: *Nie mam budżetu* (penyangkalan) lawan *Wymagamy budżetu* (rekcja).",
+      "*Kierować* + N. berarti \"memimpin\" atau \"mengemudikan\", tergantung bendanya: *kierować samochodem* (menyetir mobil), *kierować firmą* (memimpin perusahaan). Dengan *do* + D. artinya lain lagi, \"mengarahkan, mengirim\": *kierować pismo do ministerstwa*."
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Dialog kedua — Czy możemy na nim polegać?",
+   "intro": "Sesudah pan Sadowski pergi, Budi dan pani Magdalena menilai hasil rapat sambil minum kopi di dapur kantor.",
+   "lines": [
+    {
+     "speaker": "Magdalena:",
+     "text": "I jak? Co myślisz o jego ofercie?",
+     "id": "Gimana? Pendapatmu soal penawarannya?",
+     "literal": "dan bagaimana? apa kamu-berpikir tentang dia-punya penawaran?"
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Zależy mi na sukcesie projektu. Ale czy możemy polegać na Sadowskim?",
+     "id": "Keberhasilan proyek ini penting sekali buat saya. Tapi apa kita bisa mengandalkan Sadowski?",
+     "literal": "bergantung saya-C. pada keberhasilan(Ms.) proyek. tetapi apakah kami-bisa mengandalkan pada Sadowski(Ms.)?"
+    },
+    {
+     "speaker": "Magdalena:",
+     "text": "Pracowałam z nim dwa lata temu. Zawsze dotrzymywał terminów.",
+     "id": "Saya pernah kerja sama dia dua tahun lalu. Dia selalu menepati tenggat.",
+     "literal": "saya-bekerja-lampau-pr dengan dia dua tahun lalu. selalu ia-menepati-lampau-lk tenggat(D.)."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "To dobrze. A jeśli zarząd odmówi nam rabatu?",
+     "id": "Baguslah. Tapi kalau direksinya menolak memberi kita potongan?",
+     "literal": "itu baik. dan jika direksi akan-menolak kami(C.) potongan(D.)?"
+    },
+    {
+     "speaker": "Magdalena:",
+     "text": "Wtedy zrezygnujemy z nocnego wsparcia. Nie potrzebujemy inżyniera o trzeciej rano.",
+     "id": "Kalau begitu kita lepas dukungan malamnya. Kita tidak butuh insinyur jam tiga pagi.",
+     "literal": "waktu-itu kami-akan-melepaskan dari malam dukungan(D.). tidak kami-membutuhkan insinyur(D.) pada ketiga pagi."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Tylko że przez różnicę czasu nasza noc to ich dzień.",
+     "id": "Masalahnya, karena beda waktu, malam kita itu siang mereka.",
+     "literal": "hanya bahwa karena perbedaan waktu kami-punya malam itu mereka-punya hari."
+    },
+    {
+     "speaker": "Magdalena:",
+     "text": "Racja, nie pomyślałam o tym, że oni pracują, kiedy my śpimy.",
+     "id": "Betul, saya tidak terpikir bahwa mereka bekerja saat kita tidur.",
+     "literal": "benar, tidak saya-berpikir-lampau-pr tentang itu(Ms.), bahwa mereka mereka-bekerja, ketika kami kami-tidur."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Napiszę do niego jeszcze dziś i podziękuję mu za spotkanie.",
+     "id": "Hari ini juga saya tulis surel ke dia dan berterima kasih atas pertemuannya.",
+     "literal": "saya-akan-menulis ke dia masih hari-ini dan saya-akan-berterima-kasih dia(C.) untuk pertemuan."
+    },
+    {
+     "speaker": "Magdalena:",
+     "text": "Dobrze, tylko nie zdradzaj mu naszego limitu.",
+     "id": "Oke, asal jangan bocorkan batas anggaran kita.",
+     "literal": "baik, hanya jangan membocorkanlah dia(C.) kami-punya batas(D.)."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Spokojnie. Nauczyłem się tego od pani: w negocjacjach milczenie jest złotem.",
+     "id": "Tenang. Itu saya pelajari dari Ibu: dalam negosiasi, diam itu emas.",
+     "literal": "tenang. saya-belajar-lampau-lk diri itu(D.) dari nyonya: dalam negosiasi-negosiasi diam adalah emas(N.)."
+    }
+   ],
+   "notes": [
+    "**Zależy mi na sukcesie… polegać na Sadowskim** — dua kata kerja, satu kata depan, satu kasus: *na* + Ms. Nama keluarga berakhiran *-ski* berubah seperti kata sifat: *Sadowski, Sadowskiego, Sadowskiemu, z Sadowskim, o Sadowskim*.",
+    "**Nie pomyślałam o tym, że…** — kalau pelengkapnya berupa anak kalimat, bahasa Polandia menaruh \"penampung\" *to* dalam kasus yang dituntut: *myśleć o* + Ms. → *o tym, że…* Bahasa Indonesia cukup berkata \"tidak terpikir bahwa…\"; bahasa Polandia harus memasang jembatan dulu (lihat tabel di bawah).",
+    "**Dotrzymywał terminów** — *dotrzymywać / dotrzymać* (menepati) menuntut dopełniacz: *dotrzymać słowa, obietnicy, terminu*. Karena jamak, bentuknya *terminów*.",
+    "**Przez różnicę czasu** — *przez* + B. di sini berarti \"karena, gara-gara\", biasanya untuk sebab yang tidak menyenangkan. Indonesia lima sampai enam jam lebih awal dari Polandia (tergantung musim), jadi pagi di Jakarta adalah tengah malam di Kraków.",
+    "**Nie zdradzaj mu naszego limitu** — dua aturan bertumpuk: *zdradzać* (membocorkan) biasanya diikuti biernik, tapi karena ada *nie*, bendanya pindah ke dopełniacz. Penerimanya tetap celownik (*mu*).",
+    "**Milczenie jest złotem** — peribahasa \"diam itu emas\", dengan narzędnik sesudah *jest*. Versi lengkapnya: *Mowa jest srebrem, a milczenie złotem.*"
+   ],
+   "grammars": [
+    {
+     "title": "To yang ikut berkasus: na tym, że… / tego, że… / o to, że…",
+     "body": [
+      "Ketika kata kerja ber-rekcja disambung dengan anak kalimat *że* atau *żeby*, kata ganti *to* berdiri di depan anak kalimat dan memikul kasus yang dituntut. Tanpa jembatan ini kalimatnya terdengar patah bagi telinga Polandia."
+     ],
+     "table": {
+      "head": [
+       "Kata kerja",
+       "Jembatan",
+       "Contoh",
+       "Arti"
+      ],
+      "rows": [
+       [
+        "*zależeć na* + Ms.",
+        "*na tym, że / żeby*",
+        "*Zależy nam na tym, żeby zdążyć.*",
+        "Kami sangat ingin keburu."
+       ],
+       [
+        "*polegać na* + Ms.",
+        "*na tym, że*",
+        "*Problem polega na tym, że nie ma czasu.*",
+        "Masalahnya, tak ada waktu."
+       ],
+       [
+        "*bać się* + D.",
+        "*tego, że*",
+        "*Boję się tego, że nie zdążymy.*",
+        "Saya takut kita tak keburu."
+       ],
+       [
+        "*chodzić o* + B.",
+        "*o to, że / żeby*",
+        "*Chodzi o to, żeby klient był zadowolony.*",
+        "Intinya, klien harus puas."
+       ],
+       [
+        "*dziękować za* + B.",
+        "*za to, że*",
+        "*Dziękuję za to, że pan przyszedł.*",
+        "Terima kasih Bapak sudah datang."
+       ],
+       [
+        "*liczyć na* + B.",
+        "*na to, że*",
+        "*Liczymy na to, że zarząd się zgodzi.*",
+        "Kami berharap direksi setuju."
+       ]
+      ]
+     },
+     "after": [
+      "Dalam percakapan santai jembatan *to* kadang dihilangkan (*boję się, że…*), terutama sesudah kata kerja perasaan. Dalam tulisan dan rapat resmi, pakailah lengkap.",
+      "Perhatikan tanda koma: selalu ada koma sebelum *że* dan *żeby*, dan jembatannya berada di **depan** koma: *na tym, że…*"
+     ]
+    }
+   ]
+  }
+ ],
+ "sections": [
+  {
+   "title": "Bahasa meja perundingan",
+   "blocks": [
+    {
+     "type": "tabel",
+     "head": [
+      "Polski",
+      "Arti",
+      "Fungsi"
+     ],
+     "rows": [
+      [
+       "*Przejdźmy do konkretów.*",
+       "Mari masuk ke hal konkret.",
+       "membuka"
+      ],
+      [
+       "*Jaka jest państwa propozycja?*",
+       "Apa usulan Bapak-Ibu?",
+       "memancing tawaran"
+      ],
+      [
+       "*Zależy nam przede wszystkim na…*",
+       "Bagi kami yang terpenting…",
+       "prioritas"
+      ],
+      [
+       "*Obawiamy się, że…*",
+       "Kami khawatir bahwa…",
+       "keberatan halus"
+      ],
+      [
+       "*To dla nas nie do przyjęcia.*",
+       "Itu tidak bisa kami terima.",
+       "menolak tegas"
+      ],
+      [
+       "*Możemy pójść na kompromis.*",
+       "Kami bisa berkompromi.",
+       "melunak"
+      ],
+      [
+       "*Musimy to skonsultować z zarządem.*",
+       "Kami harus membahasnya dengan direksi.",
+       "menunda"
+      ],
+      [
+       "*Wrócimy do tego później.*",
+       "Kita kembali ke soal itu nanti.",
+       "mengalihkan"
+      ],
+      [
+       "*Czy mogę to podsumować?*",
+       "Boleh saya rangkum?",
+       "menutup"
+      ],
+      [
+       "*Prześlę notatkę ze spotkania.*",
+       "Saya kirim catatan rapatnya.",
+       "tindak lanjut"
+      ]
+     ]
+    },
+    {
+     "type": "p",
+     "text": "Hampir setiap kalimat di tabel ini menyembunyikan rekcja: *zależeć na* + Ms., *skonsultować z* + N., *wrócić do* + D., *pójść na* + B. Karena itu cara paling cepat untuk menguasai bahasa rapat bukan menghafal daftar kata kerja, melainkan menghafal **frasa utuh** beserta pelengkapnya. Kalimat *Musimy to skonsultować z zarządem* akan kamu pakai jauh lebih sering daripada kata *skonsultować* sendirian."
+    },
+    {
+     "type": "kotak",
+     "title": "Rapat bisnis di Polandia",
+     "items": [
+      "**Tepat waktu dianggap tanda hormat.** Kalau terlambat, kabari lebih dulu lewat telepon atau pesan singkat.",
+      "Rapat pertama biasanya dibuka dengan *pan/pani* dan nama keluarga, atau dengan gelar (*panie prezesie, pani dyrektor*). Beralih ke nama depan (*przejść na ty*) umumnya ditawarkan oleh pihak yang lebih senior atau lebih tua.",
+      "Orang Polandia cenderung langsung ke pokok persoalan sesudah basa-basi singkat. Penolakan yang lugas (*to niemożliwe*) bukan tanda permusuhan.",
+      "Di perusahaan berbentuk *spółka*, keputusan besar sering harus disetujui *zarząd* (direksi). *Muszę to skonsultować z zarządem* bisa berarti sungguhan, bisa juga cara sopan untuk mengulur waktu."
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Pasangan yang sering tertukar",
+   "blocks": [
+    {
+     "type": "tabel",
+     "head": [
+      "Pola A",
+      "Arti A",
+      "Pola B",
+      "Arti B"
+     ],
+     "rows": [
+      [
+       "*zależeć od* + D.",
+       "tergantung pada",
+       "*zależeć (komuś) na* + Ms.",
+       "penting bagi"
+      ],
+      [
+       "*odpowiadać na* + B.",
+       "menjawab",
+       "*odpowiadać za* + B.",
+       "bertanggung jawab atas"
+      ],
+      [
+       "*grać w* + B.",
+       "bermain (olahraga, gim)",
+       "*grać na* + Ms.",
+       "memainkan (alat musik)"
+      ],
+      [
+       "*pytać* + B. (orang)",
+       "bertanya kepada",
+       "*pytać o* + B. (hal)",
+       "menanyakan"
+      ],
+      [
+       "*myśleć o* + Ms.",
+       "memikirkan",
+       "*myśleć nad* + N.",
+       "merenungkan (soal)"
+      ],
+      [
+       "*składać się z* + D.",
+       "terdiri atas",
+       "*polegać na* + Ms.",
+       "berupa, terletak pada"
+      ],
+      [
+       "*kierować* + N.",
+       "memimpin",
+       "*kierować się* + N.",
+       "berpedoman pada"
+      ],
+      [
+       "*dziękować* + C. (orang)",
+       "berterima kasih kepada",
+       "*dziękować za* + B. (hal)",
+       "berterima kasih atas"
+      ]
+     ]
+    },
+    {
+     "type": "p",
+     "text": "Sebagian besar pasangan ini berbeda karena **kata depannya**, bukan karena kata kerjanya. *Odpowiadam na mejla* (saya membalas surel) dan *Odpowiadam za projekt* (saya bertanggung jawab atas proyek) memakai kata kerja yang persis sama; *na* dan *za* yang mengubah seluruh maknanya. Maka catat setiap kata kerja baru bersama kata depannya, seolah-olah itu satu kata: *odpowiadać-za*, *zależeć-na*."
+    },
+    {
+     "type": "kotak",
+     "title": "Cara menghafal rekcja: pakai ktoś dan coś",
+     "items": [
+      "Kamus Polandia mencantumkan rekcja dengan kata ganti *ktoś* (seseorang) dan *coś* (sesuatu) dalam kasus yang benar: *ufać komuś*, *bać się czegoś*, *kierować czymś*, *zależeć komuś na czymś*.",
+      "Tiru cara itu di catatanmu. Bentuk *komuś / czegoś / czymś / coś* langsung memberi tahu kasusnya: *komuś* = C., *czegoś* = D., *czymś* = N., *coś* = B., *o czymś* = Ms.",
+      "Uji dirimu dengan pertanyaan kasus: *Na czym ci zależy? Czego się boisz? Czym kierujesz? Komu ufasz?* Kalau pertanyaannya terasa wajar di telinga, kasusnya sudah melekat."
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Ulangan berjenjang — unit 10",
+   "blocks": [
+    {
+     "type": "p",
+     "text": "Tutup kolom Polandia, baca terjemahan Indonesianya, lalu susun kembali kalimatnya dari ingatan."
+    },
+    {
+     "type": "tabel",
+     "head": [
+      "Bahasa Indonesia",
+      "Polski"
+     ],
+     "rows": [
+      [
+       "Maaf, aku potong, tapi aku tidak setuju denganmu.",
+       "*Przepraszam, że ci przerywam, ale nie zgadzam się z tobą.*"
+      ],
+      [
+       "Memang, aku pernah bilang. Perjalanan memang melelahkan, tapi di kantor kita bekerja lebih cepat.",
+       "*Owszem, mówiłem. Co prawda dojazdy męczą, ale w biurze pracujemy szybciej.*"
+      ],
+      [
+       "Di satu sisi kamu benar, di sisi lain yang penting timnya.",
+       "*Z jednej strony masz rację, z drugiej strony liczy się zespół.*"
+      ],
+      [
+       "Kami nggak ribut, melainkan berdiskusi dengan kepala dingin.",
+       "*Nie kłóciliśmy się, tylko rzeczowo dyskutowaliśmy.*"
+      ],
+      [
+       "Memang, tapi di kerjaan kamu nggak punya teman ngobrol sambil ngopi.",
+       "*Owszem, ale w pracy nie masz z kim porozmawiać przy kawie.*"
+      ]
+     ]
+    }
+   ]
+  }
+ ],
+ "vocab": [
+  {
+   "pl": "zależeć (zależy) — ndk (komuś na + Ms.; od + D.)",
+   "baca": "za-LE-zyec",
+   "id": "penting bagi; tergantung pada"
+  },
+  {
+   "pl": "polegać (polegam) — ndk (na + Ms.)",
+   "baca": "po-LE-gac",
+   "id": "mengandalkan; berupa"
+  },
+  {
+   "pl": "wpływać (wpływam) / wpłynąć (wpłynę) (na + B.)",
+   "baca": "FPWY-vac / FPWY-nonc",
+   "id": "memengaruhi"
+  },
+  {
+   "pl": "unikać (unikam) / uniknąć (uniknę) (+ D.)",
+   "baca": "u-NI-kac / u-NIK-nonc",
+   "id": "menghindari"
+  },
+  {
+   "pl": "wymagać (wymagam) — ndk (+ D.)",
+   "baca": "vy-MA-gac",
+   "id": "menuntut, memerlukan"
+  },
+  {
+   "pl": "dotyczyć (dotyczy) — ndk (+ D.)",
+   "baca": "do-TY-cyc",
+   "id": "menyangkut"
+  },
+  {
+   "pl": "udzielać (udzielam) / udzielić (udzielę) (+ C., + D.)",
+   "baca": "u-JYE-lac / u-JYE-lic",
+   "id": "memberikan (resmi)"
+  },
+  {
+   "pl": "kierować (kieruję) — ndk (+ N.)",
+   "baca": "kye-RO-vac",
+   "id": "memimpin; menyetir"
+  },
+  {
+   "pl": "zarządzać (zarządzam) — ndk (+ N.)",
+   "baca": "za-ZYON-dzac",
+   "id": "mengelola"
+  },
+  {
+   "pl": "dysponować (dysponuję) — ndk (+ N.)",
+   "baca": "dys-po-NO-vac",
+   "id": "memiliki, menguasai (dana)"
+  },
+  {
+   "pl": "ufać (ufam) / zaufać (zaufam) (+ C.)",
+   "baca": "U-fac / za-U-fac",
+   "id": "percaya kepada"
+  },
+  {
+   "pl": "zagrażać (zagrażam) — ndk (+ C.)",
+   "baca": "za-GRA-zyac",
+   "id": "mengancam"
+  },
+  {
+   "pl": "rezygnować (rezygnuję) / zrezygnować (zrezygnuję) (z + D.)",
+   "baca": "re-zyyg-NO-vac / zre-zyyg-NO-vac",
+   "id": "melepaskan, membatalkan"
+  },
+  {
+   "pl": "korzystać (korzystam) / skorzystać (skorzystam) (z + D.)",
+   "baca": "ko-ZYYS-tac / sko-ZYYS-tac",
+   "id": "memakai, memanfaatkan"
+  },
+  {
+   "pl": "dotrzymywać (dotrzymuję) / dotrzymać (dotrzymam) (+ D.)",
+   "baca": "do-tsyy-MY-vac / do-TSYY-mac",
+   "id": "menepati"
+  },
+  {
+   "pl": "liczyć (liczę) — ndk (na + B.)",
+   "baca": "LI-cyc",
+   "id": "mengandalkan, berharap"
+  },
+  {
+   "pl": "rabat, rabatu (m)",
+   "baca": "RA-bat, ra-BA-tu",
+   "id": "potongan harga"
+  },
+  {
+   "pl": "zarząd, zarządu (m)",
+   "baca": "ZA-zyont, za-ZYON-du",
+   "id": "direksi"
+  },
+  {
+   "pl": "awaria (ż)",
+   "baca": "a-VA-rya",
+   "id": "kerusakan, gangguan"
+  },
+  {
+   "pl": "opóźnienie (n)",
+   "baca": "o-puzy-NYE-nye",
+   "id": "keterlambatan"
+  },
+  {
+   "pl": "wdrożenie (n)",
+   "baca": "vdro-ZYE-nye",
+   "id": "implementasi"
+  },
+  {
+   "pl": "wsparcie (n)",
+   "baca": "FSPAR-cye",
+   "id": "dukungan"
+  },
+  {
+   "pl": "współpraca (ż)",
+   "baca": "fspuw-PRA-tsa",
+   "id": "kerja sama"
+  },
+  {
+   "pl": "budżet (m)",
+   "baca": "BU-djet",
+   "id": "anggaran"
+  }
+ ],
+ "exercises": [
+  {
+   "prompt": "Terjemahkan ke bahasa Polandia.",
+   "items": [
+    "Yang terutama penting bagi kami adalah stabilitas.",
+    "Harganya tergantung jumlah pengguna.",
+    "Budi memimpin proyek ini.",
+    "Kami takut keterlambatan.",
+    "Kami percaya pada Bapak.",
+    "Perubahan ini menyangkut kontrak."
+   ]
+  },
+  {
+   "prompt": "Isi dengan bentuk yang dituntut kata kerjanya.",
+   "items": [
+    "Nasza firma dysponuje dużym ____. (budżet → N.)",
+    "Musimy unikać ____. (błędy → D.)",
+    "Zależy mi na ____. (twoja pomoc → Ms.)",
+    "Ta decyzja wpłynie na ____. (cała firma → B.)",
+    "Pani Magdalena zarządza ____ od dziesięciu lat. (ta firma → N.)",
+    "Ten projekt wymaga ____. (duża cierpliwość → D.)",
+    "Nie ufam ____. (ten dostawca → C.)"
+   ]
+  },
+  {
+   "prompt": "Gabungkan dengan jembatan *to* dalam kasus yang tepat (*na tym, tego, o to, za to*), lalu tambahkan *że* atau *żeby* sesuai petunjuk.",
+   "items": [
+    "Zależy mi… (projekt się uda; żeby)",
+    "Boję się… (nie zdążymy; że)",
+    "Chodzi… (klient chce rabatu; że)",
+    "Problem polega… (nie mamy czasu; że)",
+    "Dziękuję… (pan przyszedł; że)",
+    "Liczymy… (zarząd się zgodzi; że)"
+   ]
+  },
+  {
+   "prompt": "Susun menjadi kalimat yang benar.",
+   "items": [
+    "nam / na / zależy / terminie",
+    "projektem / Budi / tym / kieruje",
+    "nie / na / możemy / nim / polegać",
+    "wymaga / zgody / to / zarządu",
+    "rabatu / udzielić / możemy / państwu"
+   ]
+  }
+ ],
+ "answers": [
+  "Zależy nam przede wszystkim na stabilności. — Cena zależy od liczby użytkowników. — Budi kieruje tym projektem. — Boimy się opóźnień. — Ufamy panu. — Ta zmiana dotyczy umowy.",
+  "budżetem — błędów — twojej pomocy — całą firmę — tą firmą — dużej cierpliwości — temu dostawcy",
+  "Zależy mi na tym, żeby projekt się udał. — Boję się tego, że nie zdążymy. — Chodzi o to, że klient chce rabatu. — Problem polega na tym, że nie mamy czasu. — Dziękuję za to, że pan przyszedł. — Liczymy na to, że zarząd się zgodzi.",
+  "Zależy nam na terminie. — Budi kieruje tym projektem (atau: Tym projektem kieruje Budi). — Nie możemy na nim polegać. — To wymaga zgody zarządu. — Możemy udzielić państwu rabatu (atau: Możemy państwu udzielić rabatu)."
+ ]
+}

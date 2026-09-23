@@ -1,0 +1,741 @@
+{
+ "title": "Syarat berlapis — kalimat majemuk lanjut",
+ "title_target": "Pod warunkiem że…",
+ "goal": "Menyusun dan membahas pasal-pasal kontrak kerja sama: syarat, pengecualian, dan langkah berjaga-jaga. Titik tata bahasanya: penghubung syarat lanjutan **o ile, chyba że, pod warunkiem że, w razie gdyby, na wypadek gdyby, nawet jeśli / nawet gdyby, zamiast / zamiast żeby**, bentuk kata kerja yang dituntut masing-masing, dan **tanda koma** dalam kalimat panjang.",
+ "bekal": [
+  "memasang syarat dan pengecualian: *Zapłacimy, pod warunkiem że… Termin się przesuwa, chyba że…*",
+  "berjaga-jaga terhadap kemungkinan dengan bentuk *-by*: *w razie gdyby serwer przestał działać, na wypadek gdybyś zapomniał*",
+  "menaruh koma dengan benar di depan penghubung majemuk: *…, pod warunkiem że…; O ile wiem, …*"
+ ],
+ "dialogs": [
+  {
+   "title": "Dialog — Umowa o współpracy",
+   "intro": "Ruang rapat kecil di Kodex. Budi dan pani Magdalena menyusun kontrak kerja sama dengan konsorsium universitas di Indonesia bersama penasihat hukum perusahaan, pani mecenas Nowicka. Di layar terbuka draf yang sudah penuh coretan.",
+   "lines": [
+    {
+     "speaker": "Nowicka:",
+     "text": "Zacznijmy od terminów. Wdrożenie kończy się w marcu, o ile klient dostarczy dane do końca stycznia.",
+     "id": "Kita mulai dari tenggat. Implementasi selesai bulan Maret, asalkan klien menyerahkan data paling lambat akhir Januari.",
+     "literal": "mari-kita-mulai dari tenggat-tenggat. implementasi berakhir diri di Maret, sejauh klien akan-menyerahkan data sampai akhir Januari."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "A jeśli dane przyjdą później? W Indonezji to się zdarza.",
+     "id": "Kalau datanya datang belakangan? Di Indonesia itu bisa terjadi.",
+     "literal": "dan jika data akan-datang lebih-lambat? di Indonesia itu diri terjadi."
+    },
+    {
+     "speaker": "Nowicka:",
+     "text": "Termin się przesuwa, chyba że opóźnienie jest krótsze niż tydzień.",
+     "id": "Tenggatnya bergeser, kecuali keterlambatannya kurang dari seminggu.",
+     "literal": "tenggat diri bergeser, kecuali-bahwa keterlambatan adalah lebih-pendek daripada minggu."
+    },
+    {
+     "speaker": "Magdalena:",
+     "text": "Dobrze. A płatność? Dzielimy ją na trzy raty?",
+     "id": "Baik. Pembayarannya? Kita bagi tiga termin?",
+     "literal": "baik. dan pembayaran? kami-membagi dia untuk tiga cicilan?"
+    },
+    {
+     "speaker": "Nowicka:",
+     "text": "Tak, pod warunkiem że każdy etap zostanie odebrany na piśmie.",
+     "id": "Ya, dengan syarat setiap tahap diterima secara tertulis.",
+     "literal": "ya, di-bawah syarat bahwa setiap tahap akan-menjadi diterima-lk pada tulisan."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "A co w razie awarii serwera? Kto wtedy odpowiada?",
+     "id": "Lalu bagaimana kalau server rusak? Siapa yang bertanggung jawab?",
+     "literal": "dan apa dalam hal kerusakan server? siapa waktu-itu bertanggung-jawab?"
+    },
+    {
+     "speaker": "Nowicka:",
+     "text": "W razie gdyby serwer przestał działać, odpowiada dostawca.",
+     "id": "Seandainya server berhenti bekerja, yang bertanggung jawab adalah pemasok.",
+     "literal": "dalam hal seandainya server berhenti-lampau-lk bekerja, bertanggung-jawab pemasok."
+    },
+    {
+     "speaker": "Magdalena:",
+     "text": "Dopiszmy też klauzulę, na wypadek gdyby klient zmienił zakres projektu.",
+     "id": "Tambahkan juga klausul untuk berjaga-jaga kalau klien mengubah lingkup proyek.",
+     "literal": "mari-kita-menambah-tulis juga klausul, untuk kasus seandainya klien mengubah-lampau-lk lingkup proyek."
+    },
+    {
+     "speaker": "Nowicka:",
+     "text": "Słusznie. Każda zmiana zakresu wymaga aneksu do umowy.",
+     "id": "Tepat. Setiap perubahan lingkup memerlukan adendum kontrak.",
+     "literal": "tepat. setiap perubahan lingkup menuntut adendum ke kontrak."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Nawet jeśli to drobna zmiana, na przykład kolor przycisku?",
+     "id": "Bahkan kalau perubahannya kecil, misalnya warna tombol?",
+     "literal": "bahkan jika itu kecil perubahan, misalnya warna tombol?"
+    },
+    {
+     "speaker": "Nowicka:",
+     "text": "Nawet wtedy. Zamiast dyskutować po fakcie, lepiej wszystko spisać.",
+     "id": "Bahkan dalam hal itu. Daripada berdebat belakangan, lebih baik semuanya ditulis.",
+     "literal": "bahkan waktu-itu. alih-alih berdiskusi sesudah fakta, lebih-baik semuanya mencatat."
+    },
+    {
+     "speaker": "Magdalena:",
+     "text": "Zgoda. Ale zamiast żeby klient płacił za każdą poprawkę, dajmy mu dwie rundy poprawek w cenie.",
+     "id": "Setuju. Tapi daripada klien membayar setiap revisi, kita beri saja dua putaran revisi yang sudah termasuk harga.",
+     "literal": "setuju. tetapi alih-alih agar klien membayar-lampau-lk untuk setiap revisi, mari-kita-beri dia dua putaran revisi dalam harga."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Świetny pomysł. O ile oczywiście pani mecenas nie widzi przeszkód.",
+     "id": "Ide bagus. Asalkan tentu saja Ibu tidak melihat halangan.",
+     "literal": "hebat gagasan. sejauh tentu-saja nyonya pengacara tidak melihat halangan-halangan."
+    },
+    {
+     "speaker": "Nowicka:",
+     "text": "Nie widzę, pod warunkiem że dokładnie opiszemy, czym jest „runda poprawek”.",
+     "id": "Tidak, asalkan kita jelaskan dengan tepat apa yang dimaksud \"putaran revisi\".",
+     "literal": "tidak saya-melihat, di-bawah syarat bahwa tepat kita-akan-menguraikan, apa(N.) adalah „putaran revisi”."
+    }
+   ],
+   "notes": [
+    "**O ile klient dostarczy dane** — *o ile* berarti \"asalkan, sejauh\". Ia lebih lunak dan lebih resmi daripada *jeśli*: syaratnya dianggap wajar dan kemungkinan besar terpenuhi. Kata kerjanya indikatif biasa, dan seperti *jeśli*, untuk masa depan memakai futur: *o ile zdążymy*, bukan *o ile zdążamy*.",
+    "**Chyba że** — \"kecuali (kalau)\". Jangan tertukar dengan *chyba* sendirian yang berarti \"barangkali\": *Chyba przyjdzie* (barangkali dia datang) lawan *Przyjdzie, chyba że zachoruje* (dia datang, kecuali kalau sakit).",
+    "**Pod warunkiem że** — \"dengan syarat bahwa\", syarat yang lebih tegas dan mengikat daripada *o ile*. Dalam kontrak dan negosiasi ia hampir selalu menjadi pilihan. Frasa pendeknya: *pod jednym warunkiem* (dengan satu syarat).",
+    "**W razie awarii / w razie gdyby serwer przestał działać** — *w razie* + D. untuk kata benda; *w razie gdyby* + bentuk *-by* untuk anak kalimat. Keduanya berarti \"seandainya terjadi\", untuk kemungkinan yang tidak diharapkan. Papan di gedung Polandia: *W razie pożaru…* (jika terjadi kebakaran…).",
+    "**Nawet jeśli** — \"bahkan kalau\" untuk kemungkinan nyata (indikatif). Untuk kemungkinan yang dibayangkan atau mustahil dipakai *nawet gdyby* + *-by*: *Nawet gdybym chciał, nie zdążyłbym.*",
+    "**Zamiast dyskutować / zamiast żeby klient płacił** — *zamiast* + infinitif bila pelakunya sama dengan kalimat induk; *zamiast żeby* + bentuk *-by* bila pelakunya berbeda (di sini: klien membayar, tapi *kita* yang memberi). Versi yang lebih cermat dalam tulisan: *zamiast tego, żeby…*"
+   ],
+   "grammars": [
+    {
+     "title": "Peta penghubung syarat",
+     "body": [
+      "Semua penghubung ini menjawab pertanyaan \"dalam keadaan apa?\", tetapi masing-masing memberi nada berbeda dan menuntut bentuk kata kerja tertentu. Pembedanya yang utama: **indikatif** untuk syarat nyata, **bentuk -by** untuk kemungkinan yang dibayangkan."
+     ],
+     "table": {
+      "head": [
+       "Penghubung",
+       "Arti",
+       "Kata kerja",
+       "Contoh"
+      ],
+      "rows": [
+       [
+        "*jeśli / jeżeli*",
+        "jika",
+        "indikatif (futur untuk masa depan)",
+        "*Jeśli zdążymy, zadzwonię.*"
+       ],
+       [
+        "*o ile*",
+        "asalkan, sejauh",
+        "indikatif",
+        "*O ile wiem, spotkanie jest jutro.*"
+       ],
+       [
+        "*pod warunkiem że*",
+        "dengan syarat bahwa",
+        "indikatif",
+        "*Pomogę, pod warunkiem że zapłacisz.*"
+       ],
+       [
+        "*chyba że*",
+        "kecuali kalau",
+        "indikatif",
+        "*Przyjdę, chyba że będzie padać.*"
+       ],
+       [
+        "*w razie* + D.",
+        "jika terjadi",
+        "—",
+        "*W razie pytań proszę dzwonić.*"
+       ],
+       [
+        "*w razie gdyby*",
+        "seandainya terjadi",
+        "bentuk *-by*",
+        "*W razie gdyby padało, zostaniemy.*"
+       ],
+       [
+        "*na wypadek* + D. / *gdyby*",
+        "untuk berjaga-jaga",
+        "bentuk *-by*",
+        "*Weź kurtkę, na wypadek gdyby było zimno.*"
+       ],
+       [
+        "*nawet jeśli*",
+        "bahkan kalau (nyata)",
+        "indikatif",
+        "*Nawet jeśli będzie drogo, kupię.*"
+       ],
+       [
+        "*nawet gdyby*",
+        "bahkan seandainya",
+        "bentuk *-by*",
+        "*Nawet gdybym mógł, nie pojechałbym.*"
+       ],
+       [
+        "*zamiast* + inf. / *zamiast żeby*",
+        "alih-alih",
+        "inf. / bentuk *-by*",
+        "*Zamiast czekać, zacznijmy.*"
+       ]
+      ]
+     },
+     "after": [
+      "Perhatikan perbedaan halus *w razie gdyby* dan *na wypadek gdyby*: yang pertama menyebut apa yang dilakukan **ketika** hal itu terjadi (*w razie gdyby…, odpowiada dostawca*), yang kedua menyebut apa yang dilakukan **sekarang** sebagai persiapan (*weź kurtkę, na wypadek gdyby…*).",
+      "*Chyba że* sering berdiri sendiri di akhir percakapan sebagai tambahan: *Widzimy się jutro. Chyba że coś ci wypadnie.* (Sampai besok. Kecuali ada urusan mendadak.)"
+     ]
+    },
+    {
+     "title": "Tanda koma dalam kalimat berlapis",
+     "body": [
+      "Tanda koma Polandia mengikuti tata bahasa, bukan tarikan napas: setiap anak kalimat dipisahkan dengan koma dari kalimat induknya. Untuk penghubung yang terdiri dari beberapa kata, koma diletakkan **di depan seluruh penghubung**."
+     ],
+     "table": {
+      "head": [
+       "Aturan",
+       "Contoh"
+      ],
+      "rows": [
+       [
+        "koma di depan penghubung majemuk",
+        "*Zapłacimy, pod warunkiem że… Przyjdę, chyba że…*"
+       ],
+       [
+        "koma di dalam hanya untuk penekanan",
+        "*Pomogę ci pod warunkiem, że zapłacisz z góry.* (syaratnya ditonjolkan)"
+       ],
+       [
+        "anak kalimat di depan: koma sesudahnya",
+        "*O ile wiem, nic się nie zmieniło.*"
+       ],
+       [
+        "sisipan: koma di kedua sisi",
+        "*Termin, o ile nic się nie zmieni, to marzec.*"
+       ],
+       [
+        "dua anak kalimat dengan *i*: tanpa koma di antaranya",
+        "*…, jeśli klient zapłaci i podpisze aneks.*"
+       ],
+       [
+        "kata tanya sebagai penghubung: koma di depannya",
+        "*Opiszemy, czym jest runda poprawek.*"
+       ]
+      ]
+     },
+     "after": [
+      "Dalam kalimat Nowicka yang terakhir ada dua anak kalimat bertingkat, dan masing-masing mendapat koma: *Nie widzę, pod warunkiem że dokładnie opiszemy, czym jest…*",
+      "Untuk *mimo że, zwłaszcza że, chyba że, podczas gdy* koma selalu di depan seluruh ungkapan, tak pernah di tengah. Hanya penghubung yang bagian pertamanya bisa menjadi unsur kalimat induk (*dlatego że, pod warunkiem że*) boleh dipecah koma untuk penekanan: *Zrobiłem to dlatego, że musiałem.*"
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Dialog kedua — Pod jednym warunkiem",
+   "intro": "Malam itu di apartemen Podgórze. Kepala Budi masih penuh pasal kontrak, dan Tomek, yang pulang lapar, langsung menjadi korbannya.",
+   "lines": [
+    {
+     "speaker": "Tomek:",
+     "text": "Budi, zrobisz dziś kolację? Nie mam już siły.",
+     "id": "Budi, kamu yang masak malam ini? Aku udah nggak kuat.",
+     "literal": "Budi, kamu-akan-membuat hari-ini makan-malam? tidak saya-punya lagi tenaga."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Zrobię, pod warunkiem że potem pozmywasz.",
+     "id": "Oke, asal habis itu kamu yang cuci piring.",
+     "literal": "saya-akan-membuat, di-bawah syarat bahwa kemudian kamu-akan-mencuci-piring."
+    },
+    {
+     "speaker": "Tomek:",
+     "text": "Ha! Mówisz jak prawnik. Dobra, pozmywam, chyba że będzie mecz.",
+     "id": "Ha! Kamu ngomong kayak pengacara. Oke, aku cuci, kecuali ada pertandingan.",
+     "literal": "ha! kamu-berbicara seperti pengacara. baik, saya-akan-mencuci-piring, kecuali-bahwa akan-ada pertandingan."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "O ile wiem, Cracovia gra dopiero w sobotę.",
+     "id": "Setahu saya, Cracovia baru main hari Sabtu.",
+     "literal": "sejauh saya-tahu, Cracovia bermain baru di Sabtu."
+    },
+    {
+     "speaker": "Tomek:",
+     "text": "No dobra. Na wypadek gdybyś spalił kolację, mam w zamrażarce pierogi.",
+     "id": "Ya sudah. Buat jaga-jaga kalau kamu gosongin masakannya, aku punya pierogi di freezer.",
+     "literal": "nah baik. untuk kasus seandainya-kamu membakar-lampau-lk makan-malam, saya-punya di pembeku pierogi."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Bardzo zabawne. Nawet gdybym chciał, nie spaliłbym ryżu. Mam przecież ryżowar.",
+     "id": "Lucu banget. Sengaja pun saya nggak bakal bisa bikin nasi gosong. Saya kan punya penanak nasi.",
+     "literal": "sangat lucu. bahkan seandainya-saya mau-lampau-lk, tidak saya-membakar-andai-lk nasi. saya-punya padahal penanak-nasi."
+    },
+    {
+     "speaker": "Tomek:",
+     "text": "A może zamiast gotować, zamówimy pizzę?",
+     "id": "Atau daripada masak, kita pesan pizza saja?",
+     "literal": "dan mungkin alih-alih memasak, kita-akan-memesan pizza?"
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Zamiast żeby kurier przywiózł nam pizzę, nauczę cię robić nasi goreng.",
+     "id": "Daripada kurir mengantar pizza, kamu saya ajari bikin nasi goreng.",
+     "literal": "alih-alih agar kurir membawa-lampau-lk kami pizza, saya-akan-mengajari kamu membuat nasi goreng."
+    },
+    {
+     "speaker": "Tomek:",
+     "text": "Zgoda! Ale pod jednym warunkiem: ty kroisz cebulę.",
+     "id": "Setuju! Tapi dengan satu syarat: kamu yang iris bawang.",
+     "literal": "setuju! tetapi di-bawah satu syarat: kamu mengiris bawang."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Przyjmuję warunki. Pani mecenas byłaby z nas dumna.",
+     "id": "Syarat diterima. Bu pengacara pasti bangga pada kita.",
+     "literal": "saya-menerima syarat-syarat. nyonya pengacara adalah-andai-pr dari kami bangga-pr."
+    }
+   ],
+   "notes": [
+    "**Pozmywam, chyba że będzie mecz** — dalam percakapan, *chyba że* memberi jalan keluar yang lucu atau sopan. Futur (*będzie*) wajib karena pertandingannya belum terjadi, persis seperti sesudah *jeśli*.",
+    "**O ile wiem** — \"setahu saya\", ungkapan tetap yang sangat berguna untuk berhati-hati. Saudaranya: *o ile pamiętam* (seingat saya), *o ile się nie mylę* (kalau saya tidak salah).",
+    "**Na wypadek gdybyś spalił** — *-by* dan akhiran orang menempel pada *gdy*: *gdybym, gdybyś, gdyby, gdybyśmy, gdybyście*. Kata kerjanya tetap bentuk lampau dan ikut jenis kelamin pelaku: Tomek bicara kepada Budi, maka *spalił*.",
+    "**Nie spaliłbym ryżu** — kalimat induk sesudah *nawet gdyby* ikut memakai kondisional (*spaliłbym*). Dan karena ada *nie*, bendanya masuk dopełniacz: *ryżu*, bukan *ryż*.",
+    "**Cracovia gra dopiero w sobotę** — Cracovia, klub kesayangan Tomek, adalah salah satu dari dua klub sepak bola besar Kraków bersama Wisła; keduanya berdiri tahun 1906 dan stadionnya hanya dipisahkan padang Błonia. Derby mereka dijuluki *Święta Wojna* (Perang Suci), dan pada malam seperti itu Tomek tentu tidak akan mencuci piring.",
+    "**Byłaby z nas dumna** — kondisional tanpa *gdyby*: \"(kalau melihat kita) ia akan bangga\". Pani mecenas perempuan, jadi *byłaby … dumna*."
+   ],
+   "grammars": [
+    {
+     "title": "Bentuk -by yang menempel pada penghubung",
+     "body": [
+      "*Gdyby* dan *żeby* sudah kamu kenal dari B1. Di unit ini keduanya bersembunyi di dalam penghubung yang lebih panjang, tetapi cara kerjanya tidak berubah: **penanda orang pindah ke penghubung**, kata kerjanya tinggal bentuk lampau berjenis."
+     ],
+     "table": {
+      "head": [
+       "Pelaku",
+       "*na wypadek gdyby…*",
+       "*nawet gdyby…*",
+       "*zamiast żeby…*"
+      ],
+      "rows": [
+       [
+        "ja",
+        "*gdybym zapomniał(a)*",
+        "*gdybym chciał(a)*",
+        "*żebym czekał(a)*"
+       ],
+       [
+        "ty",
+        "*gdybyś zapomniał(a)*",
+        "*gdybyś chciał(a)*",
+        "*żebyś czekał(a)*"
+       ],
+       [
+        "on / ona",
+        "*gdyby zapomniał / zapomniała*",
+        "*gdyby chciał / chciała*",
+        "*żeby czekał / czekała*"
+       ],
+       [
+        "my",
+        "*gdybyśmy zapomnieli / zapomniały*",
+        "*gdybyśmy chcieli / chciały*",
+        "*żebyśmy czekali / czekały*"
+       ],
+       [
+        "wy",
+        "*gdybyście zapomnieli / zapomniały*",
+        "*gdybyście chcieli / chciały*",
+        "*żebyście czekali / czekały*"
+       ],
+       [
+        "oni / one",
+        "*gdyby zapomnieli / zapomniały*",
+        "*gdyby chcieli / chciały*",
+        "*żeby czekali / czekały*"
+       ]
+      ]
+     },
+     "after": [
+      "Kesalahan yang sering: memasang *-by* dua kali, di penghubung dan di kata kerja (*gdybyś zapomniałbyś* — salah). Cukup satu, di penghubung.",
+      "Tekanan tetap jatuh sesuai aturan kondisional: *GDY-bysy-my, GDY-bysy-cye*, dengan tekanan di suku ketiga dari belakang."
+     ]
+    }
+   ]
+  }
+ ],
+ "sections": [
+  {
+   "title": "Bahasa kontrak",
+   "blocks": [
+    {
+     "type": "tabel",
+     "head": [
+      "Polski",
+      "Arti",
+      "Contoh dalam kontrak"
+     ],
+     "rows": [
+      [
+       "*umowa o współpracy*",
+       "perjanjian kerja sama",
+       "*Strony zawierają umowę o współpracy.*"
+      ],
+      [
+       "*strony umowy*",
+       "para pihak",
+       "*Każda ze stron…*"
+      ],
+      [
+       "*zamawiający / wykonawca*",
+       "pemesan / pelaksana",
+       "*Wykonawca zobowiązuje się…*"
+      ],
+      [
+       "*przedmiot umowy*",
+       "objek perjanjian",
+       "*Przedmiotem umowy jest…*"
+      ],
+      [
+       "*wynagrodzenie*",
+       "imbalan, bayaran",
+       "*Wynagrodzenie płatne w trzech ratach.*"
+      ],
+      [
+       "*termin realizacji*",
+       "tenggat pelaksanaan",
+       "*Termin realizacji: 31 marca.*"
+      ],
+      [
+       "*aneks*",
+       "adendum",
+       "*Zmiany wymagają aneksu.*"
+      ],
+      [
+       "*kara umowna*",
+       "denda kontraktual",
+       "*W razie opóźnienia…*"
+      ],
+      [
+       "*siła wyższa*",
+       "keadaan kahar",
+       "*z wyjątkiem siły wyższej*"
+      ],
+      [
+       "*wypowiedzenie*",
+       "pemutusan dengan pemberitahuan",
+       "*z miesięcznym okresem wypowiedzenia*"
+      ],
+      [
+       "*wejść w życie*",
+       "mulai berlaku",
+       "*Umowa wchodzi w życie z dniem podpisania.*"
+      ]
+     ]
+    },
+    {
+     "type": "p",
+     "text": "Bahasa kontrak Polandia memakai kala kini untuk kewajiban (*Wykonawca dostarcza…*, pelaksana menyerahkan…) dan banyak kata kerja resmi dengan *się*: *zobowiązuje się* (berkewajiban), *strony ustalają* (para pihak menetapkan). Pasal-pasalnya ditandai *§* (dibaca *paragraf*): *zgodnie z § 5* — sesuai pasal 5. Kalimatnya panjang dan bertingkat, jadi latihan koma di unit ini langsung terpakai ketika kamu membaca draf pertamamu."
+    },
+    {
+     "type": "kotak",
+     "title": "Menandatangani kontrak di Polandia",
+     "items": [
+      "Kontrak kertas lazim ditutup dengan kalimat *Umowę sporządzono w dwóch jednobrzmiących egzemplarzach, po jednym dla każdej ze stron* — dibuat dalam dua rangkap yang sama bunyinya, satu untuk tiap pihak.",
+      "Dalam praktik bisnis, pihak-pihak sering memaraf (*parafować*) setiap halaman, bukan hanya menandatangani halaman terakhir.",
+      "Kontrak kini juga sering ditandatangani secara elektronik. Jenis tanda tangan yang sah untuk suatu kontrak bergantung pada jenis perjanjiannya — untuk hal yang penting, tanyakan kepada ahli hukum, seperti Budi bertanya kepada pani mecenas Nowicka."
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Syarat dalam percakapan sehari-hari",
+   "blocks": [
+    {
+     "type": "tabel",
+     "head": [
+      "Ungkapan",
+      "Arti",
+      "Contoh"
+     ],
+     "rows": [
+      [
+       "*Pod jednym warunkiem.*",
+       "Dengan satu syarat.",
+       "*Pojadę, pod jednym warunkiem: ty prowadzisz.*"
+      ],
+      [
+       "*To zależy.*",
+       "Tergantung.",
+       "*— Idziesz? — To zależy od pogody.*"
+      ],
+      [
+       "*W takim razie…*",
+       "Kalau begitu…",
+       "*W takim razie zostaję w domu.*"
+      ],
+      [
+       "*Najwyżej…*",
+       "Paling-paling…",
+       "*Najwyżej zamówimy pizzę.*"
+      ],
+      [
+       "*W najgorszym razie…*",
+       "Dalam kasus terburuk…",
+       "*W najgorszym razie przełożymy spotkanie.*"
+      ],
+      [
+       "*Tak czy inaczej…*",
+       "Bagaimanapun juga…",
+       "*Tak czy inaczej, musimy zdążyć.*"
+      ],
+      [
+       "*W każdym razie…*",
+       "Pokoknya, bagaimanapun…",
+       "*W każdym razie dam ci znać.*"
+      ],
+      [
+       "*Jak nie, to nie.*",
+       "Kalau nggak mau, ya sudah.",
+       "sedikit ketus"
+      ],
+      [
+       "*Co będzie, jeśli…?*",
+       "Bagaimana kalau…?",
+       "*Co będzie, jeśli nie zdążymy?*"
+      ]
+     ]
+    },
+    {
+     "type": "p",
+     "text": "Ungkapan pendek ini membuat percakapan terasa alami tanpa harus membangun kalimat bertingkat. *Najwyżej* (paling-paling) sangat khas Polandia untuk meredakan kekhawatiran: *Najwyżej się spóźnimy* — ya paling-paling kita telat. Kata *razie* muncul di tiga ungkapan (*w takim razie, w najgorszym razie, w każdym razie*) dan satu penghubung (*w razie gdyby*); semuanya berasal dari *raz* dalam arti \"kasus, peristiwa\", bukan \"kali\"."
+    },
+    {
+     "type": "kotak",
+     "title": "Jebakan kecil: chyba, chyba że, o ile",
+     "items": [
+      "*Chyba* = barangkali: *Chyba pada.* (Kayaknya hujan.) *Chyba że* = kecuali kalau: *Idę, chyba że pada.* Satu kata *że* mengubah seluruh maknanya.",
+      "*O ile* juga dipakai dalam perbandingan: *O ile droższy jest ten laptop?* (Laptop ini lebih mahal berapa?) Konteks dan tanda tanya biasanya langsung memperjelas.",
+      "*Jeśli* dan *jeżeli* sama artinya; *jeżeli* terdengar sedikit lebih resmi dan lebih sering dalam teks hukum."
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Ulangan berjenjang — unit 12",
+   "blocks": [
+    {
+     "type": "p",
+     "text": "Tutup kolom Polandia, baca terjemahan Indonesianya, lalu susun kembali kalimatnya dari ingatan."
+    },
+    {
+     "type": "tabel",
+     "head": [
+      "Bahasa Indonesia",
+      "Polski"
+     ],
+     "rows": [
+      [
+       "Yang terutama penting bagi kami adalah stabilitas. Sistemnya tidak boleh macet.",
+       "*Zależy nam przede wszystkim na stabilności. System nie może się zawieszać.*"
+      ],
+      [
+       "Yang paling kami takutkan adalah keterlambatan saat implementasi.",
+       "*Najbardziej boimy się opóźnień przy wdrożeniu.*"
+      ],
+      [
+       "Lima belas itu banyak. Itu perlu persetujuan direksi.",
+       "*Piętnaście to dużo. To wymaga zgody zarządu.*"
+      ],
+      [
+       "Terima kasih. Tidak boleh ada yang mengancam kerja sama kita.",
+       "*Dziękuję. Nic nie powinno zagrażać naszej współpracy.*"
+      ],
+      [
+       "Keberhasilan proyek ini penting sekali buat saya. Tapi apa kita bisa mengandalkan Sadowski?",
+       "*Zależy mi na sukcesie projektu. Ale czy możemy polegać na Sadowskim?*"
+      ]
+     ]
+    }
+   ]
+  }
+ ],
+ "vocab": [
+  {
+   "pl": "o ile",
+   "baca": "o I-le",
+   "id": "asalkan, sejauh"
+  },
+  {
+   "pl": "chyba że",
+   "baca": "HY-ba zye",
+   "id": "kecuali kalau"
+  },
+  {
+   "pl": "pod warunkiem że",
+   "baca": "pod va-RUN-kyem zye",
+   "id": "dengan syarat bahwa"
+  },
+  {
+   "pl": "w razie (+ D.) / w razie gdyby",
+   "baca": "v RA-zye / v RA-zye GDY-by",
+   "id": "jika terjadi / seandainya terjadi"
+  },
+  {
+   "pl": "na wypadek (+ D.) / na wypadek gdyby",
+   "baca": "na vy-PA-dek / na vy-PA-dek GDY-by",
+   "id": "untuk berjaga-jaga"
+  },
+  {
+   "pl": "nawet jeśli / nawet gdyby",
+   "baca": "NA-vet YESY-li / NA-vet GDY-by",
+   "id": "bahkan kalau / bahkan seandainya"
+  },
+  {
+   "pl": "zamiast (+ D.; + inf.)",
+   "baca": "ZA-myast",
+   "id": "alih-alih, daripada"
+  },
+  {
+   "pl": "warunek, warunku (m)",
+   "baca": "va-RU-nek, va-RUN-ku",
+   "id": "syarat"
+  },
+  {
+   "pl": "umowa (ż)",
+   "baca": "u-MO-va",
+   "id": "perjanjian, kontrak"
+  },
+  {
+   "pl": "aneks, aneksu (m)",
+   "baca": "A-neks, a-NEK-su",
+   "id": "adendum"
+  },
+  {
+   "pl": "klauzula (ż)",
+   "baca": "klaw-ZU-la",
+   "id": "klausul"
+  },
+  {
+   "pl": "zakres (m)",
+   "baca": "ZA-kres",
+   "id": "lingkup"
+  },
+  {
+   "pl": "rata (ż)",
+   "baca": "RA-ta",
+   "id": "cicilan, termin pembayaran"
+  },
+  {
+   "pl": "etap (m)",
+   "baca": "E-tap",
+   "id": "tahap"
+  },
+  {
+   "pl": "wynagrodzenie (n)",
+   "baca": "vy-na-gro-DZE-nye",
+   "id": "imbalan, bayaran"
+  },
+  {
+   "pl": "przesuwać (przesuwam) / przesunąć (przesunę)",
+   "baca": "psye-SU-vac / psye-SU-nonc",
+   "id": "menggeser, menunda"
+  },
+  {
+   "pl": "dostarczać (dostarczam) / dostarczyć (dostarczę)",
+   "baca": "dos-TAR-cac / dos-TAR-cyc",
+   "id": "menyerahkan, mengirimkan"
+  },
+  {
+   "pl": "odbierać (odbieram) / odebrać (odbiorę)",
+   "baca": "od-BYE-rac / o-DEB-rac",
+   "id": "menerima (hasil kerja); mengambil"
+  },
+  {
+   "pl": "odpowiadać (odpowiadam) — ndk (za + B.)",
+   "baca": "od-po-VYA-dac",
+   "id": "bertanggung jawab atas"
+  },
+  {
+   "pl": "dopisywać (dopisuję) / dopisać (dopiszę)",
+   "baca": "do-pi-SY-vac / do-PI-sac",
+   "id": "menambahkan (tulisan)"
+  },
+  {
+   "pl": "poprawka (ż)",
+   "baca": "po-PRAF-ka",
+   "id": "revisi, perbaikan"
+  },
+  {
+   "pl": "prawnik / prawniczka",
+   "baca": "PRAV-nik / prav-NIC-ka",
+   "id": "ahli hukum (lk / pr)"
+  },
+  {
+   "pl": "mecenas (sapaan)",
+   "baca": "me-TSE-nas",
+   "id": "sapaan untuk advokat"
+  },
+  {
+   "pl": "zmywać (zmywam) / pozmywać (pozmywam)",
+   "baca": "ZMY-vac / poz-MY-vac",
+   "id": "mencuci piring"
+  },
+  {
+   "pl": "kroić (kroję) / pokroić (pokroję)",
+   "baca": "KRO-ic / po-KRO-ic",
+   "id": "mengiris"
+  }
+ ],
+ "exercises": [
+  {
+   "prompt": "Terjemahkan ke bahasa Polandia.",
+   "items": [
+    "Tenggatnya bergeser, kecuali keterlambatannya kurang dari seminggu.",
+    "Kami akan membayar, dengan syarat setiap tahap diterima secara tertulis.",
+    "Seandainya server berhenti bekerja, pemasok yang bertanggung jawab.",
+    "Setahu saya, Cracovia main hari Sabtu.",
+    "Bahkan kalau itu perubahan kecil, kita perlu adendum.",
+    "Daripada berdebat, lebih baik semuanya ditulis."
+   ]
+  },
+  {
+   "prompt": "Isi dengan penghubung atau bentuk yang tepat.",
+   "items": [
+    "Przyjdę jutro, ____ będzie padać. (kecuali kalau)",
+    "Podpiszemy umowę, ____ zarząd się zgodzi. (dengan syarat)",
+    "Weź parasol, ____ gdyby zaczęło padać. (untuk berjaga-jaga)",
+    "____ awarii proszę dzwonić pod ten numer. (jika terjadi)",
+    "____ gdybyś mnie prosił, nie zmieniłbym zdania. (bahkan)",
+    "Zapisz hasło, na wypadek ____ je zapomniał. (gdyby + ty)",
+    "____ wiem, spotkanie jest o dziesiątej. (sejauh)"
+   ]
+  },
+  {
+   "prompt": "Gabungkan dua kalimat dengan penghubung dalam kurung. Perhatikan bentuk kata kerja dan koma.",
+   "items": [
+    "Zdążymy z projektem. Klient dostarczy dane na czas. (pod warunkiem że)",
+    "Spotkanie odbędzie się w piątek. Szef zachoruje. (chyba że)",
+    "Serwer przestanie działać. Proszę zadzwonić do dostawcy. (w razie gdyby)",
+    "Będzie drogo. Kupimy ten bilet. (nawet jeśli)",
+    "Nie zamawiajmy pizzy. Ugotujmy coś. (zamiast + inf.)",
+    "Klient może się rozmyślić. Dopiszmy klauzulę. (na wypadek gdyby)"
+   ]
+  },
+  {
+   "prompt": "Susun menjadi kalimat yang benar dan beri koma.",
+   "items": [
+    "przyjdę / chyba / że / będzie / padać",
+    "podpiszemy / pod / warunkiem / że / zarząd / się / zgodzi",
+    "ile / o / wiem / nic / się / nie / zmieniło",
+    "nawet / chciał / gdybym / zdążyłbym / nie",
+    "zamiast / dyskutować / spiszmy / wszystko"
+   ]
+  }
+ ],
+ "answers": [
+  "Termin się przesuwa, chyba że opóźnienie jest krótsze niż tydzień. — Zapłacimy, pod warunkiem że każdy etap zostanie odebrany na piśmie. — W razie gdyby serwer przestał działać, odpowiada dostawca. — O ile wiem, Cracovia gra w sobotę. — Nawet jeśli to drobna zmiana, potrzebujemy aneksu. — Zamiast dyskutować, lepiej wszystko spisać.",
+  "chyba że — pod warunkiem że — na wypadek — W razie — Nawet — gdybyś — O ile",
+  "Zdążymy z projektem, pod warunkiem że klient dostarczy dane na czas. — Spotkanie odbędzie się w piątek, chyba że szef zachoruje. — W razie gdyby serwer przestał działać, proszę zadzwonić do dostawcy. — Nawet jeśli będzie drogo, kupimy ten bilet. — Zamiast zamawiać pizzę, ugotujmy coś. — Dopiszmy klauzulę, na wypadek gdyby klient się rozmyślił.",
+  "Przyjdę, chyba że będzie padać. — Podpiszemy, pod warunkiem że zarząd się zgodzi. — O ile wiem, nic się nie zmieniło. — Nawet gdybym chciał, nie zdążyłbym. — Zamiast dyskutować, spiszmy wszystko."
+ ]
+}

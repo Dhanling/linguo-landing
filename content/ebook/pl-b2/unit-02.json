@@ -1,0 +1,718 @@
+{
+ "title": "Surat resmi — gaya kantor",
+ "title_target": "Uprzejmie informuję",
+ "goal": "Menulis surel kepada kementerian dan mitra dengan gaya kantor Polandia yang rapi, sekaligus membaca surel resmi yang penuh singkatan. Titik tata bahasanya: **styl urzędowy** (*uprzejmie proszę, w nawiązaniu do, w związku z, zgodnie z*), **konstruksi tak berpelaku** (*należy, postanowiono, zostało postanowione*), dan **singkatan** (*ws., dot., tzw., m.in.*).",
+ "bekal": [
+  "membuka, mengisi, dan menutup surel resmi dengan formula yang diharapkan pembaca Polandia",
+  "memilih kasus yang tepat sesudah preposisi kantor: *w nawiązaniu do* + D., *w związku z* + N., *zgodnie z* + N.",
+  "mengubah kalimat pribadi menjadi tak berpelaku dan membaca singkatan yang lazim di surat resmi"
+ ],
+ "dialogs": [
+  {
+   "title": "Dialog — Mejl do ministerstwa",
+   "intro": "Kantor Kodex, Senin sore. Budi harus mengirim surel kepada direktur departemen di sebuah kementerian mitra proyek. Sebelum ia menekan \"kirim\", pani Magdalena minta melihat drafnya. Seperti sejak B1, ia memanggil Budi dengan *ty*, sedangkan Budi tetap memakai *pani*.",
+   "lines": [
+    {
+     "speaker": "Magdalena:",
+     "text": "Budi, zanim wyślesz ten mejl do ministerstwa, pokaż mi go, proszę.",
+     "id": "Budi, sebelum kamu kirim surel ke kementerian itu, tolong perlihatkan dulu ke saya.",
+     "literal": "Budi, sebelum kamu-akan-mengirim ini surel ke kementerian, perlihatkanlah saya dia, saya-mohon."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Proszę bardzo. Zacząłem od: „Dzień dobry, piszę w sprawie projektu”.",
+     "id": "Silakan. Saya mulai dengan: \"Selamat siang, saya menulis soal proyek.\"",
+     "literal": "silakan sangat. saya-memulai-lampau-lk dari: hari baik, saya-menulis dalam perkara proyek."
+    },
+    {
+     "speaker": "Magdalena:",
+     "text": "Do urzędu tak się nie pisze. Zacznij od: „Szanowna Pani Dyrektor”.",
+     "id": "Ke instansi pemerintah tidak menulis begitu. Mulailah dengan: \"Yth. Ibu Direktur\".",
+     "literal": "ke kantor-pemerintah begitu diri tidak ia-menulis. mulailah dari: yang-terhormat nyonya direktur."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Dobrze. A potem? Nie wiem, jak nawiązać do naszego wtorkowego spotkania.",
+     "id": "Baik. Lalu? Saya tidak tahu bagaimana merujuk ke pertemuan kita hari Selasa.",
+     "literal": "baik. dan kemudian? tidak saya-tahu, bagaimana menyambung ke kami selasa-an pertemuan."
+    },
+    {
+     "speaker": "Magdalena:",
+     "text": "Jest na to gotowa formuła. Zaczyna się od słów „w nawiązaniu do”.",
+     "id": "Untuk itu ada formula siap pakai. Dimulai dengan kata-kata \"menindaklanjuti\".",
+     "literal": "ada untuk itu siap formula. ia-memulai diri dari kata-kata dalam penyambungan ke."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "W nawiązaniu do wtorkowego spotkania uprzejmie informuję, że projekt został uruchomiony.",
+     "id": "Menindaklanjuti pertemuan hari Selasa, dengan hormat saya sampaikan bahwa proyek telah dimulai.",
+     "literal": "dalam penyambungan ke selasa-an pertemuan dengan-sopan saya-memberitahu, bahwa proyek menjadi-lampau-lk dijalankan-lk."
+    },
+    {
+     "speaker": "Magdalena:",
+     "text": "Bardzo dobrze. A co napisałeś o umowie?",
+     "id": "Bagus sekali. Lalu apa yang kamu tulis soal kontraknya?",
+     "literal": "sangat baik. dan apa kamu-menulis-lampau-lk tentang kontrak?"
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Napisałem: „Chcę, żebyście przysłali umowę”. Za prosto?",
+     "id": "Saya tulis: \"Saya mau kalian mengirim kontraknya.\" Terlalu sederhana?",
+     "literal": "saya-menulis-lampau-lk: saya-mau, agar-kalian mengirim-lampau-lk kontrak. terlalu sederhana?"
+    },
+    {
+     "speaker": "Magdalena:",
+     "text": "Za prosto i trochę za ostro. W piśmie do urzędu nikt nie pisze „chcę”.",
+     "id": "Terlalu sederhana dan agak terlalu tajam. Dalam surat ke instansi pemerintah tak seorang pun menulis \"saya mau\".",
+     "literal": "terlalu sederhana dan sedikit terlalu tajam. dalam surat ke kantor-pemerintah tak-seorang-pun tidak ia-menulis saya-mau."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Uprzejmie proszę o przesłanie podpisanej umowy.",
+     "id": "Dengan hormat saya mohon agar kontrak yang telah ditandatangani dikirimkan.",
+     "literal": "dengan-sopan saya-mohon untuk pengiriman ditandatangani-pr kontrak."
+    },
+    {
+     "speaker": "Magdalena:",
+     "text": "Idealnie. Zostaje jeszcze zmiana terminu.",
+     "id": "Sempurna. Tinggal soal perubahan tenggat.",
+     "literal": "ideal. ia-tersisa masih perubahan tenggat."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Napisałem: „Zdecydowaliśmy, że przesuniemy termin”. Może tak być?",
+     "id": "Saya tulis: \"Kami memutuskan akan menggeser tenggatnya.\" Boleh begitu?",
+     "literal": "saya-menulis-lampau-lk: kami-memutuskan-lampau, bahwa kami-akan-menggeser tenggat. boleh begitu adalah?"
+    },
+    {
+     "speaker": "Magdalena:",
+     "text": "W piśmie urzędowym lepiej bez „my”. Na przykład: „postanowiono przesunąć termin”.",
+     "id": "Dalam surat dinas lebih baik tanpa \"kami\". Misalnya: \"telah diputuskan untuk menggeser tenggat\".",
+     "literal": "dalam surat dinas lebih-baik tanpa kami. pada contoh: diputuskan-orang menggeser tenggat."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Zgodnie z ustaleniami termin został przesunięty na koniec marca.",
+     "id": "Sesuai dengan kesepakatan, tenggat telah digeser ke akhir Maret.",
+     "literal": "sesuai dengan kesepakatan-kesepakatan tenggat menjadi-lampau-lk digeser-lk pada akhir maret."
+    },
+    {
+     "speaker": "Magdalena:",
+     "text": "Brzmisz jak urzędnik z trzydziestoletnim stażem!",
+     "id": "Kamu sudah terdengar seperti pegawai negeri dengan masa kerja tiga puluh tahun!",
+     "literal": "kamu-terdengar seperti pegawai dengan tiga-puluh-tahun masa-kerja!"
+    }
+   ],
+   "notes": [
+    "***Szanowna Pani Dyrektor* — gelar tetap, tidak berubah.** Dalam sapaan surat, gelar perempuan tidak dideklinasikan (*Szanowna Pani Dyrektor, Szanowna Pani Profesor*), sedangkan gelar lelaki masuk ke *wołacz*: *Szanowny Panie Dyrektorze, Szanowny Panie Ministrze*. Kesalahan kecil ini langsung terlihat oleh pembaca kantor.",
+    "***uprzejmie informuję, że…* — \"dengan hormat saya beritahukan\".** Kata keterangan *uprzejmie* (dengan sopan) menempel pada kata kerja pembuka: *uprzejmie informuję, uprzejmie proszę, uprzejmie przypominam*. Di luar surat resmi gabungan ini terdengar kaku, jadi jangan membawanya ke obrolan.",
+    "***proszę o* + B. — meminta sesuatu.** *Proszę o przesłanie umowy* (saya mohon pengiriman kontrak) lebih resmi daripada *proszę przesłać umowę* (tolong kirim kontraknya). Yang pertama memakai kata benda dan terdengar seperti permohonan; yang kedua masih terdengar seperti perintah halus.",
+    "***Nikt nie pisze* — negasi ganda tetap wajib.** Bahkan dalam kalimat tentang gaya kantor, *nikt* harus ditemani *nie*. Menulis *nikt pisze* sama salahnya dengan menulis tanpa diakritik.",
+    "***postanowiono / termin został przesunięty* — menghilangkan pelaku.** Surat dinas Polandia lebih suka keputusan yang \"terjadi\" daripada keputusan yang \"kami buat\". Bentuk *-no/-to* dan pasif *zostać* + partisip adalah dua alat utamanya.",
+    "***z trzydziestoletnim stażem* — kata sifat majemuk dari angka.** *Trzydzieści lat → trzydziestoletni*, *pięć lat → pięcioletni*, *dwa lata → dwuletni*. *Staż* adalah masa kerja; *staż* juga berarti magang, dan konteks yang menentukan."
+   ],
+   "grammars": [
+    {
+     "title": "Preposisi kantor dan kasusnya",
+     "body": [
+      "Frasa-frasa ini adalah tulang punggung surat resmi Polandia. Masing-masing menuntut kasus tertentu, dan kasus itu tidak bisa ditebak dari arti Indonesianya — hafalkan frasa bersama kasusnya."
+     ],
+     "table": {
+      "head": [
+       "Frasa",
+       "Kasus",
+       "Contoh",
+       "Arti"
+      ],
+      "rows": [
+       [
+        "*w nawiązaniu do*",
+        "D.",
+        "*w nawiązaniu do rozmowy*",
+        "menindaklanjuti percakapan"
+       ],
+       [
+        "*w odpowiedzi na*",
+        "B.",
+        "*w odpowiedzi na Pani pismo*",
+        "menanggapi surat Ibu"
+       ],
+       [
+        "*w związku z*",
+        "N.",
+        "*w związku ze zmianą terminu*",
+        "sehubungan dengan perubahan tenggat"
+       ],
+       [
+        "*zgodnie z*",
+        "N.",
+        "*zgodnie z umową*",
+        "sesuai dengan kontrak"
+       ],
+       [
+        "*w sprawie*",
+        "D.",
+        "*w sprawie budżetu*",
+        "perihal anggaran"
+       ],
+       [
+        "*w imieniu*",
+        "D.",
+        "*w imieniu zespołu*",
+        "atas nama tim"
+       ],
+       [
+        "*na podstawie*",
+        "D.",
+        "*na podstawie ustaleń*",
+        "berdasarkan kesepakatan"
+       ],
+       [
+        "*w celu*",
+        "D.",
+        "*w celu wyjaśnienia*",
+        "dengan tujuan menjelaskan"
+       ]
+      ]
+     },
+     "after": [
+      "**Perhatikan *ze zmianą*.** Sebelum gugus konsonan yang diawali *s, z, ś, ź, sz, ż* kata depan *z* menjadi *ze*: *ze zmianą, ze szkołą, ze swoim zespołem*. Hal yang sama terjadi pada *w → we*: *we wtorek, we Wrocławiu*.",
+      "**Kata benda sesudah frasa-frasa ini hampir selalu hasil nominalisasi** (unit 1): *w celu wyjaśnienia* (untuk menjelaskan), *w sprawie przedłużenia* (perihal perpanjangan). Itulah sebabnya surat resmi terasa padat."
+     ]
+    },
+    {
+     "title": "Dari \"kami memutuskan\" ke \"telah diputuskan\"",
+     "body": [
+      "Ada empat cara menghapus pelaku dari kalimat kantor. Semuanya sudah kamu kenal satu per satu di B1; di sini mereka bekerja bersama."
+     ],
+     "table": {
+      "head": [
+       "Pribadi",
+       "Tak berpelaku",
+       "Alat",
+       "Arti"
+      ],
+      "rows": [
+       [
+        "*Musicie pamiętać o terminie.*",
+        "*Należy pamiętać o terminie.*",
+        "*należy* + inf.",
+        "Tenggat harus diingat."
+       ],
+       [
+        "*Postanowiliśmy przesunąć termin.*",
+        "*Postanowiono przesunąć termin.*",
+        "bentuk *-no/-to*",
+        "Diputuskan untuk menggeser tenggat."
+       ],
+       [
+        "*Postanowiliśmy, że…*",
+        "*Zostało postanowione, że…*",
+        "pasif netral + *że*",
+        "Telah diputuskan bahwa…"
+       ],
+       [
+        "*Przesunęliśmy termin.*",
+        "*Termin został przesunięty.*",
+        "pasif *zostać*",
+        "Tenggat telah digeser."
+       ],
+       [
+        "*Prosimy, żeby…*",
+        "*Uprzejmie prosi się o…*",
+        "*się* impersonal",
+        "Dimohon…"
+       ]
+      ]
+     },
+     "after": [
+      "***Zostało postanowione, że…* benar, tetapi berat.** Ia muncul di notulen dan keputusan rapat. Dalam surel biasa *postanowiono* lebih ringkas dan lebih sering dipakai.",
+      "**Jangan berlebihan.** Surel yang seluruhnya tak berpelaku terdengar seperti dokumen hukum. Campur dengan *uprzejmie informuję* dan *proszę o* supaya tetap ada manusia di belakangnya."
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Dialog kedua — Dot., ws., m.in.",
+   "intro": "Keesokan harinya. Budi menerima surel dari Marek, rekan setimnya di Kodex, dan tidak mengerti separuh singkatannya. Tomek, yang mampir membawa kopi, ikut melirik layarnya.",
+   "lines": [
+    {
+     "speaker": "Tomek:",
+     "text": "Czemu tak marszczysz czoło? Znowu ministerstwo?",
+     "id": "Kenapa dahimu berkerut begitu? Kementerian lagi?",
+     "literal": "mengapa begitu kamu-mengerutkan dahi? lagi kementerian?"
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Nie, mejl od Marka. Pisze bardzo oficjalnie i używa samych skrótów.",
+     "id": "Bukan, surel dari Marek. Dia menulis sangat resmi dan isinya singkatan semua.",
+     "literal": "tidak, surel dari Marek. ia-menulis sangat resmi dan ia-memakai semata-mata singkatan-singkatan."
+    },
+    {
+     "speaker": "Tomek:",
+     "text": "Pokaż. „Dot. spotkania ws. budżetu”. „Dot.” to „dotyczy”, a „ws.” to „w sprawie”.",
+     "id": "Coba lihat. \"Ttg. rapat perihal anggaran\". \"Dot.\" itu \"mengenai\", dan \"ws.\" itu \"perihal\".",
+     "literal": "tunjukkanlah. mengenai rapat dalam-perkara anggaran. dot. itu ia-mengenai, dan ws. itu dalam perkara."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Uprzejmie przypominam o terminie przesłania oferty.",
+     "id": "Dengan hormat saya ingatkan tenggat pengiriman penawaran.",
+     "literal": "dengan-sopan saya-mengingatkan tentang tenggat pengiriman penawaran."
+    },
+    {
+     "speaker": "Tomek:",
+     "text": "Typowy Marek. On tak pisze nawet do własnej mamy.",
+     "id": "Marek banget. Ke ibunya sendiri pun dia menulis begitu.",
+     "literal": "khas Marek. dia begitu ia-menulis bahkan ke sendiri ibu."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "A co znaczą „m.in.” i „tzw.”?",
+     "id": "Lalu \"m.in.\" dan \"tzw.\" artinya apa?",
+     "literal": "dan apa mereka-berarti m.in. dan tzw.?"
+    },
+    {
+     "speaker": "Tomek:",
+     "text": "„Między innymi” i „tak zwany”. Bez nich żaden urzędnik nie przeżyje dnia.",
+     "id": "\"Antara lain\" dan \"yang disebut\". Tanpa keduanya tak ada pegawai kantor yang bisa bertahan sehari.",
+     "literal": "di-antara lain-lain dan begitu disebut. tanpa mereka tak-satu-pun pegawai tidak ia-akan-bertahan hari."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Czy w związku z tym muszę mu odpisać równie oficjalnie?",
+     "id": "Kalau begitu, apa saya harus membalasnya dengan sama resminya?",
+     "literal": "apakah dalam hubungan dengan ini saya-harus dia-C. membalas sama resmi?"
+    },
+    {
+     "speaker": "Tomek:",
+     "text": "Nie przesadzaj. Znacie się, więc wystarczy „Cześć, Marku” i „Pozdrawiam”.",
+     "id": "Jangan berlebihan. Kalian saling kenal, jadi cukup \"Hai, Marek\" dan \"Salam\".",
+     "literal": "jangan berlebihan. kalian-kenal diri, jadi cukup hai, Marek dan saya-menyalami."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Ale w kopii jest klient. Napiszę „Dzień dobry” i „Z pozdrowieniami”.",
+     "id": "Tapi kliennya ikut di tembusan. Saya tulis \"Selamat siang\" dan \"Salam hormat\" saja.",
+     "literal": "tetapi dalam salinan adalah klien. saya-akan-menulis hari baik dan dengan salam-salam."
+    },
+    {
+     "speaker": "Tomek:",
+     "text": "Lepiej być zbyt uprzejmym niż zbyt poufałym.",
+     "id": "Lebih baik terlalu sopan daripada terlalu sok akrab.",
+     "literal": "lebih-baik adalah-inf terlalu sopan daripada terlalu akrab."
+    }
+   ],
+   "notes": [
+    "***Dot.* dan *ws.* di baris perihal.** Baris perihal surel (*temat*) sering ditulis sangat ringkas: *Dot. faktury nr 15*, *Ws. spotkania w czwartek*. Keduanya berarti \"perihal\"; *dot.* dibaca *dotyczy*, *ws.* dibaca *w sprawie*, dan kata bendanya tetap dopełniacz.",
+    "***Uprzejmie przypominam o* + Ms.** *Przypominać* menarik *o* + miejscownik untuk hal yang diingatkan dan celownik untuk orangnya: *Przypominam Panu o terminie.* Dalam surat kantor, kalimat ini adalah cara halus berkata \"Anda terlambat\".",
+    "***Cześć, Marku* — wołacz dalam surel.** Dalam salam pembuka surel yang akrab, nama dipanggil dengan *wołacz*: *Cześć, Marku / Cześć, Aniu / Dzień dobry, Tomku*. Dalam obrolan lisan banyak orang memakai nominatif (*Cześć, Marek*), tetapi di tulisan *wołacz* terlihat lebih terpelajar.",
+    "***Pozdrawiam, Z pozdrowieniami, Z poważaniem, Z wyrazami szacunku*** — empat tingkat penutup, dari yang paling santai ke paling resmi. Perhatikan: sesudah formula penutup ini, ragam baku tidak memakai koma; nama langsung di baris berikutnya.",
+    "***być zbyt uprzejmym* — narzędnik sesudah *być*, juga untuk kata sifat.** Dalam kalimat dengan infinitif *być*, kata sifat pelengkapnya masuk narzędnik: *lepiej być ostrożnym, trudno być cierpliwym*. Bandingkan dengan *On jest uprzejmy*, yang boleh tetap mianownik."
+   ],
+   "grammars": [
+    {
+     "title": "Singkatan dalam surat resmi",
+     "body": [
+      "Singkatan Polandia punya satu aturan titik yang rapi: kalau singkatan **berakhir dengan huruf terakhir kata aslinya**, ia ditulis **tanpa titik** (*dr* = doktor, *nr* = numer, *wg* = według). Kalau tidak, pakai titik (*np.*, *tzw.*)."
+     ],
+     "table": {
+      "head": [
+       "Singkatan",
+       "Dibaca",
+       "Arti",
+       "Contoh"
+      ],
+      "rows": [
+       [
+        "*ws.*",
+        "*w sprawie*",
+        "perihal",
+        "*ws. faktury*"
+       ],
+       [
+        "*dot.*",
+        "*dotyczy*",
+        "mengenai",
+        "*dot. spotkania*"
+       ],
+       [
+        "*tzw.*",
+        "*tak zwany*",
+        "yang disebut",
+        "*tzw. okres próbny*"
+       ],
+       [
+        "*m.in.*",
+        "*między innymi*",
+        "antara lain",
+        "*m.in. Polska i Indonezja*"
+       ],
+       [
+        "*np.*",
+        "*na przykład*",
+        "misalnya",
+        "*np. w czwartek*"
+       ],
+       [
+        "*tj.*",
+        "*to jest*",
+        "yaitu",
+        "*tj. do piątku*"
+       ],
+       [
+        "*wg*",
+        "*według*",
+        "menurut",
+        "*wg umowy*"
+       ],
+       [
+        "*br.*",
+        "*bieżącego roku*",
+        "tahun ini",
+        "*do 15 marca br.*"
+       ],
+       [
+        "*zał.*",
+        "*załącznik*",
+        "lampiran",
+        "*zał. 2*"
+       ]
+      ]
+     },
+     "after": [
+      "**Singkatan dibaca penuh.** Tak ada orang Polandia yang mengucapkan \"te-zet-wu\" — di rapat, *tzw.* dibaca *tak zwany*, lengkap dengan kasusnya: *tak zwanego okresu próbnego*.",
+      "***br.* dan tanggal.** *15 marca br.* dibaca *piętnastego marca bieżącego roku*. Singkatan ini lazim di surat dinas dan hampir tidak dipakai di surel antarteman."
+     ]
+    }
+   ]
+  }
+ ],
+ "sections": [
+  {
+   "title": "Kerangka surel resmi",
+   "blocks": [
+    {
+     "type": "tabel",
+     "head": [
+      "Bagian",
+      "Formula",
+      "Arti"
+     ],
+     "rows": [
+      [
+       "salam pembuka",
+       "*Szanowna Pani, / Szanowny Panie, / Szanowni Państwo,*",
+       "Yth. Ibu / Bapak / Bapak-Ibu"
+      ],
+      [
+       "pembuka",
+       "*W nawiązaniu do naszej rozmowy…*",
+       "Menindaklanjuti percakapan kita…"
+      ],
+      [
+       "pembuka lain",
+       "*W odpowiedzi na Pani wiadomość…*",
+       "Menanggapi pesan Ibu…"
+      ],
+      [
+       "isi: memberi tahu",
+       "*Uprzejmie informuję, że…*",
+       "Dengan hormat kami sampaikan bahwa…"
+      ],
+      [
+       "isi: meminta",
+       "*Uprzejmie proszę o* + B.",
+       "Dengan hormat kami mohon…"
+      ],
+      [
+       "lampiran",
+       "*W załączniku przesyłam…*",
+       "Terlampir kami kirimkan…"
+      ],
+      [
+       "penutup isi",
+       "*Z góry dziękuję za odpowiedź.*",
+       "Atas jawabannya kami ucapkan terima kasih."
+      ],
+      [
+       "menawarkan bantuan",
+       "*Pozostaję do dyspozycji.*",
+       "Saya siap membantu bila diperlukan."
+      ],
+      [
+       "salam penutup",
+       "*Z poważaniem / Z wyrazami szacunku*",
+       "Hormat saya"
+      ]
+     ]
+    },
+    {
+     "type": "p",
+     "text": "Satu kebiasaan ejaan yang mengejutkan: sesudah salam pembuka yang diakhiri koma, tradisi baku melanjutkan surat **dengan huruf kecil** di baris berikutnya (*Szanowna Pani, / uprzejmie informuję…*). Banyak orang kini memakai huruf besar, dan keduanya dimengerti, tetapi huruf kecil menunjukkan bahwa kamu tahu aturannya. Sebaliknya, *Pani, Pan, Państwo* dan kata milik *Pani, Pana* di tengah surat lazim ditulis dengan huruf besar."
+    },
+    {
+     "type": "kotak",
+     "title": "\"Witam\" atau tidak?",
+     "items": [
+      "*Witam* (saya menyambut) sangat umum sebagai pembuka surel, tetapi banyak orang Polandia — terutama yang lebih tua dan yang bekerja di instansi — menganggapnya kurang pantas: yang \"menyambut\" adalah tuan rumah, bukan orang yang menulis pertama kali.",
+      "Kepada orang yang belum kamu kenal, pilih *Szanowna Pani / Szanowny Panie* atau *Dzień dobry*. *Witam* aman hanya sebagai balasan, atau kalau lawan bicaramu sendiri memakainya.",
+      "Instansi sering mencantumkan nomor perkara (*znak sprawy*) di suratnya. Kutip nomor itu di baris perihal balasanmu; surat tanpa nomor bisa lebih lama menemukan mejanya."
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Kata kerja kantor dan pasangannya",
+   "blocks": [
+    {
+     "type": "tabel",
+     "head": [
+      "Polski",
+      "Arti",
+      "Contoh"
+     ],
+     "rows": [
+      [
+       "*przesyłać / przesłać w załączniku*",
+       "mengirim sebagai lampiran",
+       "*Przesyłam w załączniku raport.*"
+      ],
+      [
+       "*uzupełniać / uzupełnić*",
+       "melengkapi",
+       "*Proszę uzupełnić brakujące dokumenty.*"
+      ],
+      [
+       "*potwierdzać / potwierdzić odbiór*",
+       "mengonfirmasi penerimaan",
+       "*Uprzejmie proszę o potwierdzenie odbioru.*"
+      ],
+      [
+       "*udzielać / udzielić* (+ D.)",
+       "memberikan (informasi, izin)",
+       "*Udzielimy wszelkich informacji.*"
+      ],
+      [
+       "*rozpatrywać / rozpatrzyć*",
+       "mempertimbangkan (permohonan)",
+       "*Wniosek zostanie rozpatrzony.*"
+      ],
+      [
+       "*wyrażać / wyrazić zgodę na* + B.",
+       "menyetujui",
+       "*Wyrażamy zgodę na zmianę terminu.*"
+      ],
+      [
+       "*dokładać / dołożyć wszelkich starań*",
+       "mengerahkan segala upaya",
+       "*Dołożymy wszelkich starań.*"
+      ],
+      [
+       "*odpisywać / odpisać* (+ C.)",
+       "membalas surat",
+       "*Odpiszę Panu jutro.*"
+      ]
+     ]
+    },
+    {
+     "type": "p",
+     "text": "Surat kantor Polandia terdengar resmi bukan karena kata-katanya sulit, melainkan karena **pasangan kata yang tetap**: orang tidak \"memberi informasi\" tetapi *udziela informacji*, tidak \"setuju\" tetapi *wyraża zgodę*. Kalau kamu menghafal kolokasi utuhnya, kasusnya ikut terbawa dengan sendirinya — *udzielać* + D., *zgoda na* + B."
+    },
+    {
+     "type": "kotak",
+     "title": "Sebelum menekan \"kirim\"",
+     "items": [
+      "Periksa gelar di salam pembuka: *Pani Dyrektor* tetap, *Panie Dyrektorze* berubah.",
+      "Periksa *Pan/Pani/Państwo* ditulis dengan huruf besar di seluruh isi surat.",
+      "Periksa bahwa lampiran yang kamu sebut benar-benar terlampir. Kalimat *Przepraszam, zapomniałem o załączniku* adalah surel kedua yang paling sering dikirim di kantor mana pun."
+     ]
+    }
+   ]
+  }
+ ],
+ "vocab": [
+  {
+   "pl": "uprzejmie",
+   "baca": "u-PSYEY-mye",
+   "id": "dengan hormat, dengan sopan"
+  },
+  {
+   "pl": "informować (informuję) / poinformować (poinformuję)",
+   "baca": "in-for-MO-vac (in-for-MU-ye) / po-in-for-MO-vac (po-in-for-MU-ye)",
+   "id": "memberitahukan"
+  },
+  {
+   "pl": "w nawiązaniu do (+ D.)",
+   "baca": "v na-vyon-ZA-nyu do",
+   "id": "menindaklanjuti, merujuk pada"
+  },
+  {
+   "pl": "w związku z (+ N.)",
+   "baca": "v ZVYONS-ku z",
+   "id": "sehubungan dengan"
+  },
+  {
+   "pl": "zgodnie z (+ N.)",
+   "baca": "ZGOD-nye z",
+   "id": "sesuai dengan"
+  },
+  {
+   "pl": "w sprawie (+ D.)",
+   "baca": "f SPRA-vye",
+   "id": "perihal, mengenai"
+  },
+  {
+   "pl": "pismo (n)",
+   "baca": "PIS-mo",
+   "id": "surat (resmi)"
+  },
+  {
+   "pl": "urząd, urzędu (m)",
+   "baca": "U-zyont, u-ZYEN-du",
+   "id": "kantor pemerintah, instansi"
+  },
+  {
+   "pl": "urzędnik / urzędniczka",
+   "baca": "u-ZYEND-nik / u-zyend-NIC-ka",
+   "id": "pegawai kantor pemerintah"
+  },
+  {
+   "pl": "urzędowy",
+   "baca": "u-zyen-DO-vy",
+   "id": "resmi, dinas"
+  },
+  {
+   "pl": "ministerstwo (n)",
+   "baca": "mi-nis-TER-stfo",
+   "id": "kementerian"
+  },
+  {
+   "pl": "przesyłać (przesyłam) / przesłać (prześlę)",
+   "baca": "psye-SY-wac (psye-SY-wam) / PSYE-swac (PSYE-syle)",
+   "id": "mengirimkan"
+  },
+  {
+   "pl": "załącznik (m)",
+   "baca": "za-WONC-nik",
+   "id": "lampiran"
+  },
+  {
+   "pl": "umowa (ż)",
+   "baca": "u-MO-va",
+   "id": "kontrak, perjanjian"
+  },
+  {
+   "pl": "termin (m)",
+   "baca": "TER-min",
+   "id": "tenggat; tanggal yang disepakati"
+  },
+  {
+   "pl": "przesuwać (przesuwam) / przesunąć (przesunę)",
+   "baca": "psye-SU-vac (psye-SU-vam) / psye-SU-nonc (psye-SU-ne)",
+   "id": "menggeser, mengundurkan"
+  },
+  {
+   "pl": "postanawiać (postanawiam) / postanowić (postanowię)",
+   "baca": "pos-ta-NA-vyac (pos-ta-NA-vyam) / pos-ta-NO-vic (pos-ta-NO-vye)",
+   "id": "memutuskan"
+  },
+  {
+   "pl": "należy (+ inf.)",
+   "baca": "na-LE-zyy",
+   "id": "sepatutnya, harus (tak berpelaku)"
+  },
+  {
+   "pl": "ustalenie, ustalenia (n)",
+   "baca": "us-ta-LE-nye, us-ta-LE-nya",
+   "id": "kesepakatan, hasil pembicaraan (lazim jamak)"
+  },
+  {
+   "pl": "przypominać (przypominam) / przypomnieć (przypomnę) (+ C. o + Ms.)",
+   "baca": "psyy-po-MI-nac (psyy-po-MI-nam) / psyy-POM-nyec (psyy-POM-ne)",
+   "id": "mengingatkan"
+  },
+  {
+   "pl": "oferta (ż)",
+   "baca": "o-FER-ta",
+   "id": "penawaran"
+  },
+  {
+   "pl": "skrót (m)",
+   "baca": "skrut",
+   "id": "singkatan"
+  },
+  {
+   "pl": "odpisywać (odpisuję) / odpisać (odpiszę) (+ C.)",
+   "baca": "ot-pi-SY-vac (ot-pi-SU-ye) / ot-PI-sac (ot-PI-sye)",
+   "id": "membalas surat"
+  },
+  {
+   "pl": "poufały",
+   "baca": "po-u-FA-wy",
+   "id": "sok akrab, terlalu akrab"
+  },
+  {
+   "pl": "z poważaniem",
+   "baca": "s po-va-ZYA-nyem",
+   "id": "hormat saya (penutup surat)"
+  },
+  {
+   "pl": "staż, stażu (m)",
+   "baca": "stasy, STA-zyu",
+   "id": "masa kerja; magang"
+  }
+ ],
+ "exercises": [
+  {
+   "prompt": "Terjemahkan ke bahasa Polandia dengan gaya surat resmi.",
+   "items": [
+    "Dengan hormat kami sampaikan bahwa rapat telah digeser.",
+    "Menindaklanjuti percakapan kita, saya kirimkan kontraknya.",
+    "Dengan hormat kami mohon dokumen-dokumennya dapat dikirimkan.",
+    "Sesuai dengan kesepakatan, tenggat telah digeser ke akhir Maret.",
+    "Terlampir saya kirimkan laporannya.",
+    "Atas jawabannya kami ucapkan terima kasih."
+   ]
+  },
+  {
+   "prompt": "Isi titik-titiknya.",
+   "items": [
+    "W nawiązaniu ____ naszej rozmowy przesyłam ofertę. (kata depan)",
+    "W związku ____ zmianą terminu proszę o kontakt. (kata depan)",
+    "Zgodnie ____ umową płatność nastąpi w czerwcu. (kata depan)",
+    "Piszę w sprawie ____. (spotkanie → D.)",
+    "Uprzejmie proszę o ____ dokumentów. (przesłać → kata benda, B.)",
+    "____ pamiętać o terminie. (keharusan tak berpelaku)",
+    "Termin ____ przesunięty na maj. (zostać, lampau)"
+   ]
+  },
+  {
+   "prompt": "Ubah kalimat sehari-hari ini menjadi gaya surat resmi.",
+   "items": [
+    "Piszę, bo chcę zapytać o umowę.",
+    "Chcę, żebyście mi przysłali fakturę.",
+    "Zdecydowaliśmy, że zmienimy termin.",
+    "Jak się umówiliśmy, wysyłam plik.",
+    "Musicie pamiętać o podpisie.",
+    "Odpiszcie szybko, dzięki!"
+   ]
+  },
+  {
+   "prompt": "Susun jadi kalimat yang benar.",
+   "items": [
+    "informuję / uprzejmie / że / projekt / został / uruchomiony",
+    "o / proszę / przesłanie / uprzejmie / podpisanej / umowy",
+    "z / zgodnie / ustaleniami / termin / został / przesunięty",
+    "przypominam / uprzejmie / o / terminie / przesłania / oferty",
+    "być / lepiej / zbyt / uprzejmym / niż / zbyt / poufałym"
+   ]
+  }
+ ],
+ "answers": [
+  "Uprzejmie informuję, że spotkanie zostało przesunięte. — W nawiązaniu do naszej rozmowy przesyłam umowę. — Uprzejmie proszę o przesłanie dokumentów. — Zgodnie z ustaleniami termin został przesunięty na koniec marca. — W załączniku przesyłam raport. — Z góry dziękuję za odpowiedź.",
+  "do — ze — z — spotkania — przesłanie — Należy — został",
+  "Piszę w sprawie umowy. — Uprzejmie proszę o przesłanie faktury. — Postanowiono zmienić termin. — Zgodnie z ustaleniami przesyłam plik. — Należy pamiętać o podpisie. — Z góry dziękuję za szybką odpowiedź.",
+  "Uprzejmie informuję, że projekt został uruchomiony. — Uprzejmie proszę o przesłanie podpisanej umowy. — Zgodnie z ustaleniami termin został przesunięty. — Uprzejmie przypominam o terminie przesłania oferty. — Lepiej być zbyt uprzejmym niż zbyt poufałym."
+ ]
+}

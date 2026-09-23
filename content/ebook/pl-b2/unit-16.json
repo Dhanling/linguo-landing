@@ -1,0 +1,756 @@
+{
+ "title": "Membaca berita — bahasa media",
+ "title_target": "Jak podają media",
+ "goal": "Membaca dan merangkum berita ekonomi dan teknologi, lalu menyampaikannya dengan jarak yang tepat antara fakta dan kabar burung. Unit ini memasang penanda sumber (*według* + D., *jak podaje, jak poinformował, z … wynika*), penanda jarak (*podobno, ponoć, rzekomo, ma* + inf.), angka besar dan *procent* + D., serta nominalisasi gaya judul berita.",
+ "bekal": [
+  "menyebut sumber berita dan menakar seberapa yakin sumber itu",
+  "membaca dan menulis angka besar, persen, dan singkatan khas berita (*tys., mln, mld, proc.*)",
+  "mengubah kalimat biasa menjadi judul berita bergaya kata benda, dan sebaliknya"
+ ],
+ "dialogs": [
+  {
+   "title": "Dialog — Przegląd prasy",
+   "intro": "Senin pagi di kantor Kodex. Tiap minggu seorang anggota tim menyiapkan *przegląd prasy* — rangkuman berita singkat untuk rapat proyek. Kali ini giliran Budi, dan Ewa menemaninya membaca portal berita.",
+   "lines": [
+    {
+     "speaker": "Ewa:",
+     "text": "Budi, to ty dziś przygotowujesz przegląd prasy na zebranie?",
+     "id": "Budi, hari ini kamu yang menyiapkan rangkuman berita untuk rapat?",
+     "literal": "Budi, itu kamu hari-ini kamu-menyiapkan tinjauan pers untuk rapat?"
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Tak. Zacznę od tego artykułu: „Krakowski start-up pozyskał 12 mln zł”.",
+     "id": "Iya. Saya mulai dari artikel ini: \"Startup Kraków meraih 12 juta złoty\".",
+     "literal": "ya. saya-akan-memulai dari ini artikel: \"krakow-an perusahaan-rintisan memperoleh-lampau-lk 12 juta złoty\"."
+    },
+    {
+     "speaker": "Ewa:",
+     "text": "Chodzi o Sensio? Według portalu branżowego firma podwoiła przychody w ciągu roku.",
+     "id": "Maksudnya Sensio? Menurut portal industri, pendapatan perusahaan itu naik dua kali lipat dalam setahun.",
+     "literal": "ia-berkisar tentang Sensio? menurut portal industri-an perusahaan melipatduakan-lampau-pr pendapatan-jamak dalam rentang tahun."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Jak podaje agencja, inwestorem jest fundusz z Niemiec.",
+     "id": "Menurut kantor berita, investornya sebuah dana dari Jerman.",
+     "literal": "seperti ia-memberitakan kantor-berita, investor(N.) adalah dana dari Jerman."
+    },
+    {
+     "speaker": "Ewa:",
+     "text": "Podobno ma powstać sto nowych miejsc pracy.",
+     "id": "Katanya bakal ada seratus lapangan kerja baru.",
+     "literal": "katanya ia-punya muncul seratus baru tempat-jamak kerja."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "W kolejnym nagłówku jest słowo „rzekomo”. Czyli dziennikarz nie jest pewien?",
+     "id": "Di judul berikutnya ada kata *rzekomo*. Berarti wartawannya nggak yakin?",
+     "literal": "di berikutnya judul adalah kata „rzekomo”. jadi wartawan tidak adalah yakin?"
+    },
+    {
+     "speaker": "Ewa:",
+     "text": "Właśnie. „Rzekomo” znaczy: ktoś tak twierdzi, ale my za to nie ręczymy.",
+     "id": "Persis. *Rzekomo* artinya: ada yang bilang begitu, tapi kami tidak menjaminnya.",
+     "literal": "justru. \"rzekomo\" ia-berarti: seseorang begitu ia-menyatakan, tetapi kami untuk itu tidak kami-menjamin."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Według ankiety sześćdziesiąt procent programistów woli pracę hybrydową.",
+     "id": "Menurut survei, enam puluh persen programmer lebih suka kerja hibrida.",
+     "literal": "menurut survei enam-puluh persen programmer-jamak(D.) ia-lebih-suka kerja hibrida."
+    },
+    {
+     "speaker": "Ewa:",
+     "text": "Możesz zapisać „60 proc.”. W prasie to bardzo częsty skrót.",
+     "id": "Tulis saja \"60 proc.\". Di media itu singkatan yang umum sekali.",
+     "literal": "kamu-bisa mencatat \"60 proc.\". di pers itu sangat sering singkatan."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "A jak skrócić „dwa i pół miliarda złotych”?",
+     "id": "Terus \"dua setengah miliar złoty\" disingkat bagaimana?",
+     "literal": "dan bagaimana menyingkat \"dua dan setengah miliar złoty\"?"
+    },
+    {
+     "speaker": "Ewa:",
+     "text": "„2,5 mld zł”. Tysiące to „tys.”, a miliony to „mln”, bez kropki.",
+     "id": "\"2,5 mld zł\". Ribuan jadi \"tys.\", jutaan jadi \"mln\", tanpa titik.",
+     "literal": "\"2,5 mld zł\". ribuan itu \"tys.\", dan jutaan itu \"mln\", tanpa titik."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Trzeci temat napiszę tak: „Rząd przygotowuje nowe przepisy o AI”.",
+     "id": "Topik ketiga saya tulis begini: \"Pemerintah menyiapkan aturan baru tentang AI\".",
+     "literal": "ketiga topik saya-akan-menulis begini: \"pemerintah ia-menyiapkan baru peraturan-jamak tentang AI\"."
+    },
+    {
+     "speaker": "Ewa:",
+     "text": "Dobrze, ale w nagłówku lepiej brzmi rzeczownik: „Prace nad przepisami o AI”.",
+     "id": "Boleh, tapi di judul kata benda terdengar lebih pas: \"Penggodokan aturan tentang AI\".",
+     "literal": "baik, tetapi di judul lebih-baik ia-berbunyi kata-benda: \"kerja-jamak atas peraturan-jamak tentang AI\"."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Rozumiem: mniej czasowników, więcej rzeczowników. Jak w urzędzie!",
+     "id": "Paham: kurangi kata kerja, perbanyak kata benda. Kayak di kantor pemerintahan!",
+     "literal": "saya-mengerti: lebih-sedikit kata-kerja-jamak, lebih-banyak kata-benda-jamak. seperti di kantor-pemerintah!"
+    },
+    {
+     "speaker": "Ewa:",
+     "text": "Prawie. Tylko że gazeta chce, żeby ktoś ją jeszcze przeczytał.",
+     "id": "Hampir. Bedanya, koran masih ingin ada yang membacanya.",
+     "literal": "hampir. hanya bahwa koran ia-mau, agar seseorang dia masih membaca-lampau-lk."
+    }
+   ],
+   "notes": [
+    "**Według portalu branżowego** — *według* selalu diikuti **dopełniacz**: *według ekspertów, według danych, według ankiety, według mnie*. Kata ini netral dan menandai bahwa informasinya milik orang lain, bukan milik penulis. Dalam berita, hampir setiap angka dibuka atau ditutup dengan *według…*.",
+    "**Jak podaje agencja** — perhatikan kala **kini** (*podaje*), walaupun beritanya sudah terbit. Media memperlakukan sumber tertulis seperti sesuatu yang \"terus berbicara\". Untuk pernyataan lisan satu kali dipakai kala lampau: *jak poinformował rzecznik, jak powiedziała minister*.",
+    "**Inwestorem jest fundusz** — kalimat *być* + narzędnik yang urutannya dibalik: informasi baru (*fundusz z Niemiec*) sengaja ditaruh di ujung. Artinya sama dengan *Fundusz z Niemiec jest inwestorem*, tapi tekanannya berbeda.",
+    "**Podobno ma powstać** — dua penanda jarak sekaligus. *Podobno* = katanya. *Ma* + infinitif di berita berarti \"menurut rencana atau klaim pihak lain\", bukan \"harus\": *Most ma zostać otwarty w maju* — jembatannya direncanakan dibuka Mei.",
+    "**Sto nowych miejsc pracy** — sesudah *sto* (juga *pięć, dwadzieścia, tysiąc*) kata benda masuk **dopełniacz jamak**: *miejsce → miejsc*. *Miejsce pracy* (harfiah \"tempat kerja\") adalah istilah baku untuk \"lapangan kerja\".",
+    "**Ręczyć za coś** — \"menjamin, bertanggung jawab atas\" (+ B.). *Nie ręczę za to* sering dipakai dalam obrolan: \"Saya nggak jamin, ya.\""
+   ],
+   "grammars": [
+    {
+     "title": "Siapa yang bilang, dan seberapa yakin",
+     "body": [
+      "Berita yang baik memisahkan tiga hal: **fakta** yang dipastikan redaksi, **klaim** yang dikutip dari sumber, dan **kabar** yang belum terkonfirmasi. Bahasa Polandia punya perangkat untuk ketiganya."
+     ],
+     "table": {
+      "head": [
+       "Ungkapan",
+       "Bentuk",
+       "Nada",
+       "Contoh"
+      ],
+      "rows": [
+       [
+        "*według*",
+        "+ D.",
+        "netral: menurut",
+        "*Według ekspertów ceny spadną.*"
+       ],
+       [
+        "*jak podaje / podają*",
+        "+ M. (pelaku)",
+        "sumber tertulis",
+        "*Jak podaje PAP, umowa jest gotowa.*"
+       ],
+       [
+        "*jak poinformował(a)*",
+        "+ M. (pelaku)",
+        "pernyataan resmi",
+        "*Jak poinformowała rzeczniczka, biuro będzie zamknięte.*"
+       ],
+       [
+        "*z … wynika, że*",
+        "*z* + D.",
+        "kesimpulan dari data",
+        "*Z raportu wynika, że sprzedaż rośnie.*"
+       ],
+       [
+        "*powołując się na*",
+        "+ B.",
+        "mengutip sumber lain",
+        "*Portal, powołując się na źródła, pisze o zwolnieniach.*"
+       ],
+       [
+        "*podobno / ponoć*",
+        "keterangan",
+        "katanya, konon",
+        "*Podobno prezes odchodzi.*"
+       ],
+       [
+        "*rzekomo / jakoby*",
+        "keterangan",
+        "diragukan, \"diduga\"",
+        "*Firma rzekomo ukrywała straty.*"
+       ],
+       [
+        "*mieć* + inf.",
+        "*ma, mają, miał*",
+        "klaim atau rencana pihak lain",
+        "*Sprawca miał uciec samochodem.*"
+       ]
+      ]
+     },
+     "after": [
+      "**Tiga tingkat \"katanya\".** *Podobno* paling netral dan paling sering. *Ponoć* maknanya sama, tapi terdengar lebih santai atau sedikit bergaya. *Rzekomo* (dan *jakoby* yang lebih kaku) membawa **keraguan**: penulis mengambil jarak dan memberi isyarat bahwa klaim itu bisa saja keliru. Karena itu *rzekomo* sering muncul di berita hukum dan kriminal.",
+      "***Miał uciec*** — bentuk lampau *mieć* + infinitif adalah ciri khas berita Polandia untuk hal yang **belum terbukti**: *Kierowca miał przekroczyć prędkość* = sopir itu diduga melanggar batas kecepatan. Terjemahkan dengan \"diduga\" atau \"disebut-sebut\", jangan dengan \"harus\".",
+      "**Kala kini untuk sumber, kala lampau untuk peristiwa:** *Jak podaje portal, firma zwolniła stu pracowników.*"
+     ]
+    },
+    {
+     "title": "Angka besar, persen, dan singkatannya",
+     "body": [
+      "Aturan angka dari A2 tetap berlaku untuk *tysiąc, milion, miliard*: sesudah 2–4 bentuk jamak nominatif, sesudah 5 ke atas dopełniacz jamak. Yang baru hanya *procent* dan pecahan."
+     ],
+     "table": {
+      "head": [
+       "Tulisan",
+       "Dibaca",
+       "Catatan"
+      ],
+      "rows": [
+       [
+        "*1 tys. zł*",
+        "*tysiąc złotych*",
+        "*tys.* bertitik"
+       ],
+       [
+        "*3 tys. osób*",
+        "*trzy tysiące osób*",
+        "2–4 → *tysiące*"
+       ],
+       [
+        "*12 mln zł*",
+        "*dwanaście milionów złotych*",
+        "12–14 dan 5+ → D. jamak"
+       ],
+       [
+        "*2,5 mld zł*",
+        "*dwa i pół miliarda złotych*",
+        "pecahan → D. tunggal"
+       ],
+       [
+        "*1,5 mln*",
+        "*półtora miliona*",
+        "*półtora* + D. tunggal"
+       ],
+       [
+        "*3 proc.*",
+        "*trzy procent*",
+        "*procent* tidak berubah sesudah angka"
+       ],
+       [
+        "*60 proc. firm*",
+        "*sześćdziesiąt procent firm*",
+        "yang dihitung masuk D."
+       ],
+       [
+        "*0,5 proc.*",
+        "*zero przecinek pięć procent* (cermat: *pięć dziesiątych procent*) / *pół procent*",
+        "koma desimal, bukan titik"
+       ]
+      ]
+     },
+     "after": [
+      "***Mln* dan *mld* tanpa titik** karena singkatannya berakhir dengan huruf terakhir kata aslinya (*milio-n*, *miliar-d*). *Tys.* dan *proc.* tidak begitu, jadi bertitik. *Zł* ditulis tanpa titik.",
+      "**Naik \"sebesar\" dan naik \"menjadi\".** *Ceny wzrosły o 3 proc.* = naik **sebesar** 3 persen. *Inflacja spadła do 3 proc.* = turun **menjadi** 3 persen. *Z 5 do 3 proc.* = dari 5 ke 3 persen. Salah pilih *o* atau *do* mengubah beritanya sama sekali.",
+      "**Kata kerjanya tunggal.** *Sześćdziesiąt procent programistów woli…*; dalam kala lampau netral: *Czterdzieści procent ankietowanych odpowiedziało „nie”.*"
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Dialog kedua — Po ludzku, proszę",
+   "intro": "Sabtu pagi di dapur flat Podgórze. Tomek membacakan judul-judul berita dari ponselnya, dan Budi harus \"menerjemahkannya\" ke bahasa sehari-hari.",
+   "lines": [
+    {
+     "speaker": "Tomek:",
+     "text": "Test z polskiego! Nagłówek: „Zamknięcie mostu na Wiśle. Utrudnienia do piątku”.",
+     "id": "Ujian bahasa Polandia! Judulnya: \"Penutupan jembatan di Wisła. Lalu lintas terganggu sampai Jumat\".",
+     "literal": "ujian dari bahasa-polandia! judul: \"penutupan jembatan di Wisła. hambatan-jamak sampai Jumat\"."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Po ludzku: zamkną most i do piątku będą korki.",
+     "id": "Bahasa manusianya: jembatannya ditutup, dan sampai Jumat bakal macet.",
+     "literal": "secara-manusiawi: mereka-akan-menutup jembatan dan sampai Jumat akan-ada kemacetan-jamak."
+    },
+    {
+     "speaker": "Tomek:",
+     "text": "Brawo. Następny: „Rekordowy wzrost liczby turystów w Krakowie”.",
+     "id": "Bravo. Berikutnya: \"Jumlah turis di Kraków naik mencetak rekor\".",
+     "literal": "bravo. berikutnya: \"rekor-an kenaikan jumlah turis-jamak di Kraków\"."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Turystów jest więcej niż kiedykolwiek. Czyli na Rynek lepiej nie chodzić.",
+     "id": "Turisnya lebih banyak dari kapan pun. Artinya, mending jangan ke Rynek.",
+     "literal": "turis-jamak(D.) adalah lebih-banyak daripada kapan-pun. jadi ke Rynek lebih-baik tidak berjalan."
+    },
+    {
+     "speaker": "Tomek:",
+     "text": "A to coś dla mnie: „Cracovia rzekomo bliska podpisania kontraktu z napastnikiem”.",
+     "id": "Nah, ini buat saya: \"Cracovia konon nyaris meneken kontrak dengan seorang penyerang\".",
+     "literal": "dan ini sesuatu untuk saya: \"Cracovia konon dekat penandatanganan kontrak dengan penyerang\"."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "„Rzekomo bliska”, czyli nikt nic nie wie na pewno.",
+     "id": "\"Konon nyaris\", artinya belum ada yang tahu pasti.",
+     "literal": "\"konon dekat\", jadi tak-seorang-pun tak-sesuatu-pun tidak ia-tahu dengan pasti."
+    },
+    {
+     "speaker": "Tomek:",
+     "text": "Ponoć agent piłkarza był wczoraj w Krakowie.",
+     "id": "Konon agen pemainnya kemarin ada di Kraków.",
+     "literal": "konon agen pemain-bola ia-adalah-lampau-lk kemarin di Kraków."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "A kto to podaje? Jakie jest źródło?",
+     "id": "Siapa yang memberitakan? Sumbernya apa?",
+     "literal": "dan siapa ini ia-memberitakan? yang-bagaimana adalah sumber?"
+    },
+    {
+     "speaker": "Tomek:",
+     "text": "Według anonimowego źródła w klubie rozmowy trwają od tygodnia.",
+     "id": "Menurut sumber anonim di klub, pembicaraannya sudah berlangsung seminggu.",
+     "literal": "menurut anonim sumber di klub pembicaraan-jamak mereka-berlangsung sejak minggu."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "No to ja poczekam na oficjalny komunikat.",
+     "id": "Ya sudah, saya tunggu pengumuman resminya saja.",
+     "literal": "nah maka saya saya-akan-menunggu pada resmi pengumuman."
+    },
+    {
+     "speaker": "Tomek:",
+     "text": "Z tobą nawet plotki są nudne!",
+     "id": "Sama kamu, gosip pun jadi membosankan!",
+     "literal": "dengan kamu bahkan gosip-jamak mereka-adalah membosankan!"
+    }
+   ],
+   "notes": [
+    "**Po ludzku** — \"dalam bahasa manusia\", ungkapan santai untuk meminta atau memberi penjelasan sederhana: *Powiedz to po ludzku!* Bentuknya sama dengan *po polsku, po angielsku*.",
+    "**Wzrost liczby turystów** — rantai dopełniacz: *wzrost* (M.) → *liczby* (D. dari *liczba*) → *turystów* (D. jamak). Judul berita Polandia suka menumpuk tiga atau empat genitif berturut-turut. Bacalah dari belakang: turis → jumlahnya → kenaikannya.",
+    "**Turystów jest więcej** — kata kuantitas (*więcej, mniej, dużo, mało*) menuntut dopełniacz dan kata kerja tunggal: *Turystów jest więcej*, *Było mniej samochodów*.",
+    "**Bliska podpisania** — kata sifat *bliski* + D. berarti \"dekat dengan, hampir\". Judul berita membuang *jest*: *Cracovia (jest) bliska podpisania…*. Pola yang sama: *Rząd bliski porozumienia z rolnikami.*",
+    "**Nikt nic nie wie** — negasi ganda, bahkan rangkap tiga, yang kamu pasang di B1. Dalam bahasa Polandia ini bukan kesalahan, melainkan keharusan.",
+    "**Rozmowy trwają od tygodnia** — keadaan yang dimulai di masa lalu dan **masih berjalan** memakai kala **kini** + *od* (sejak): *Mieszkam tu od roku.* Bahasa Indonesia juga begitu: \"sudah berlangsung seminggu\"."
+   ],
+   "grammars": [
+    {
+     "title": "Nominalisasi: dari kalimat ke judul berita",
+     "body": [
+      "Judul berita memadatkan kalimat menjadi kata benda. Kata kerjanya berubah menjadi kata benda, dan **objeknya pindah ke dopełniacz** di belakangnya. Untuk membaca judul, lakukan kebalikannya: kembalikan kata benda itu menjadi kata kerja."
+     ],
+     "table": {
+      "head": [
+       "Kalimat",
+       "Judul berita",
+       "Arti judul"
+      ],
+      "rows": [
+       [
+        "*Miasto zamknie most.*",
+        "*Zamknięcie mostu*",
+        "Penutupan jembatan"
+       ],
+       [
+        "*Ceny mieszkań wzrosły.*",
+        "*Wzrost cen mieszkań*",
+        "Kenaikan harga rumah"
+       ],
+       [
+        "*Sprzedaż spadła.*",
+        "*Spadek sprzedaży*",
+        "Penurunan penjualan"
+       ],
+       [
+        "*Firmy podpisały umowę.*",
+        "*Podpisanie umowy*",
+        "Penandatanganan perjanjian"
+       ],
+       [
+        "*Rząd obniży podatki.*",
+        "*Obniżka podatków*",
+        "Penurunan pajak"
+       ],
+       [
+        "*Firma zwolni pracowników.*",
+        "*Zwolnienia w firmie*",
+        "PHK di perusahaan"
+       ],
+       [
+        "*Rozpoczęła się budowa.*",
+        "*Rozpoczęcie budowy*",
+        "Dimulainya pembangunan"
+       ],
+       [
+        "*Ktoś zaatakował bank.*",
+        "*Atak na bank*",
+        "Serangan terhadap bank"
+       ]
+      ]
+     },
+     "after": [
+      "**Tiga akhiran utama.** *-nie / -cie* dari hampir semua kata kerja (*zamknąć → zamknięcie, podpisać → podpisanie*); akar pendek tanpa akhiran untuk kata kerja gerak dan perubahan (*wzrosnąć → wzrost, spaść → spadek*); *-ka* untuk beberapa kata sehari-hari (*obniżyć → obniżka, podwyżka*).",
+      "**Pelakunya hilang atau pindah ke *przez* + B.:** *Podpisanie umowy przez prezydenta.* Dalam judul pelaku sering dibuang sama sekali karena sudah jelas dari foto atau paragraf pertama.",
+      "Gaya ini cocok untuk judul dan surat resmi. Dalam percakapan, kalimat berkata kerja jauh lebih wajar — itulah yang dilakukan Budi ketika berkata *po ludzku*."
+     ]
+    }
+   ]
+  }
+ ],
+ "sections": [
+  {
+   "title": "Kosakata berita ekonomi dan teknologi",
+   "blocks": [
+    {
+     "type": "tabel",
+     "head": [
+      "Polski",
+      "Arti",
+      "Contoh"
+     ],
+     "rows": [
+      [
+       "*PKB (produkt krajowy brutto)*",
+       "PDB",
+       "*Wzrost PKB był wyższy od prognoz.*"
+      ],
+      [
+       "*inflacja* (ż)",
+       "inflasi",
+       "*Inflacja powoli spada.*"
+      ],
+      [
+       "*stopy procentowe* (lm)",
+       "suku bunga",
+       "*Stopy procentowe pozostały bez zmian.*"
+      ],
+      [
+       "*giełda* (ż)",
+       "bursa efek",
+       "*Spółka weszła na giełdę.*"
+      ],
+      [
+       "*spółka* (ż)",
+       "perseroan, badan usaha",
+       "*Spółka zanotowała zysk.*"
+      ],
+      [
+       "*przejęcie* (n)",
+       "akuisisi",
+       "*Przejęcie start-upu zostało potwierdzone.*"
+      ],
+      [
+       "*zwolnienia* (lm)",
+       "PHK",
+       "*Firma zapowiada zwolnienia.*"
+      ],
+      [
+       "*bezrobocie* (n)",
+       "pengangguran",
+       "*Bezrobocie jest rekordowo niskie.*"
+      ],
+      [
+       "*rynek pracy* (m)",
+       "pasar kerja",
+       "*Rynek pracy w IT się zmienia.*"
+      ],
+      [
+       "*sztuczna inteligencja* (ż)",
+       "kecerdasan buatan",
+       "*Firmy coraz częściej wdrażają sztuczną inteligencję.*"
+      ]
+     ]
+    },
+    {
+     "type": "p",
+     "text": "Dalam berita teknologi kamu akan menemukan dua singkatan untuk kecerdasan buatan: *SI* (*sztuczna inteligencja*) dan *AI* dari bahasa Inggris. Keduanya dipakai; *AI* kini lebih sering di portal dan iklan, *SI* lebih sering di teks ilmiah dan resmi. Dalam berita ekonomi, perhatikan kata kerja \"perubahan\": *rosnąć / wzrosnąć* (naik), *spadać / spaść* (turun), *umacniać się* (menguat), *słabnąć* (melemah), *utrzymywać się* (bertahan)."
+    },
+    {
+     "type": "kotak",
+     "title": "Peta singkat media Polandia",
+     "items": [
+      "**PAP** (*Polska Agencja Prasowa*) adalah kantor berita nasional. Banyak berita di portal lain bersumber darinya dan diberi tanda *(PAP)* di akhir.",
+      "Televisi: **TVP** (penyiar publik) serta stasiun swasta **TVN** dan **Polsat**. Radio: **Polskie Radio** (publik) serta swasta **RMF FM** — yang bermarkas di Kraków — dan **Radio ZET**.",
+      "Portal besar: **Onet**, **Wirtualna Polska (WP)**, dan **Interia**; Onet dan Interia sama-sama berawal dari Kraków. Harian nasional yang sering dikutip: *Gazeta Wyborcza*, *Rzeczpospolita*, dan *Dziennik Gazeta Prawna* (dua yang terakhir kuat di ekonomi dan hukum).",
+      "Seperti di mana pun, tiap media punya warna politiknya. Kebiasaan yang baik: bandingkan satu berita di dua atau tiga sumber sebelum mengutipnya."
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Seberapa pasti beritanya?",
+   "blocks": [
+    {
+     "type": "tabel",
+     "head": [
+      "Ungkapan",
+      "Tingkat kepastian",
+      "Contoh"
+     ],
+     "rows": [
+      [
+       "*potwierdzono, że…*",
+       "pasti, sudah dikonfirmasi",
+       "*Potwierdzono, że nikt nie ucierpiał.*"
+      ],
+      [
+       "*oficjalnie*",
+       "resmi",
+       "*Oficjalnie: stadion zostanie wyremontowany.*"
+      ],
+      [
+       "*jak dowiedziała się redakcja*",
+       "info eksklusif media itu",
+       "*Jak dowiedziała się redakcja, prezes złożył rezygnację.*"
+      ],
+      [
+       "*według nieoficjalnych informacji*",
+       "belum resmi",
+       "*Według nieoficjalnych informacji umowa jest gotowa.*"
+      ],
+      [
+       "*podobno / ponoć*",
+       "kabar dari mulut ke mulut",
+       "*Podobno będzie podwyżka.*"
+      ],
+      [
+       "*rzekomo / jakoby*",
+       "diragukan",
+       "*Polityk rzekomo przyjął łapówkę.*"
+      ],
+      [
+       "*plotki głoszą, że…*",
+       "gosip",
+       "*Plotki głoszą, że zespół się rozpada.*"
+      ]
+     ]
+    },
+    {
+     "type": "p",
+     "text": "Membaca berita dalam bahasa asing berarti membaca dua lapis: isinya dan sikap penulis terhadap isinya. Bahasa Indonesia berita punya \"diduga\", \"disebut-sebut\", \"kabarnya\". Bahasa Polandia punya *rzekomo, miał, podobno*. Waktu merangkum untuk rapat, jangan buang penanda itu: *Firma zwolniła stu pracowników* dan *Firma miała zwolnić stu pracowników* adalah dua berita yang sangat berbeda."
+    },
+    {
+     "type": "kotak",
+     "title": "Singkatan yang terus muncul di berita",
+     "items": [
+      "*m.in.* (*między innymi*) — antara lain; *tzw.* (*tak zwany*) — yang disebut; *ok.* (*około*) — sekitar.",
+      "*r/r* (*rok do roku*) — dibanding tahun sebelumnya; *br.* (*bieżącego roku*) — tahun ini; *ub.r.* (*ubiegłego roku*) — tahun lalu.",
+      "*mln, mld, zł* tanpa titik; *tys., proc.* dengan titik. Angka desimal memakai **koma** (*2,5*), ribuan dipisah **spasi** (*12 000*), bukan titik seperti di Indonesia.",
+      "Tanda kutip Polandia ditulis *„…”* — pembuka di bawah, penutup di atas. Di dalam kutipan kedua dipakai *«…»* atau *‚…’*."
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Ulangan berjenjang — unit 14",
+   "blocks": [
+    {
+     "type": "p",
+     "text": "Tutup kolom Polandia, baca terjemahan Indonesianya, lalu susun kembali kalimatnya dari ingatan."
+    },
+    {
+     "type": "tabel",
+     "head": [
+      "Bahasa Indonesia",
+      "Polski"
+     ],
+     "rows": [
+      [
+       "Tenggatnya bergeser, kecuali keterlambatannya kurang dari seminggu.",
+       "*Termin się przesuwa, chyba że opóźnienie jest krótsze niż tydzień.*"
+      ],
+      [
+       "Ya, dengan syarat setiap tahap diterima secara tertulis.",
+       "*Tak, pod warunkiem że każdy etap zostanie odebrany na piśmie.*"
+      ],
+      [
+       "Seandainya server berhenti bekerja, yang bertanggung jawab adalah pemasok.",
+       "*W razie gdyby serwer przestał działać, odpowiada dostawca.*"
+      ],
+      [
+       "Tambahkan juga klausul untuk berjaga-jaga kalau klien mengubah lingkup proyek.",
+       "*Dopiszmy też klauzulę, na wypadek gdyby klient zmienił zakres projektu.*"
+      ],
+      [
+       "Ya sudah. Buat jaga-jaga kalau kamu gosongin masakannya, aku punya pierogi di freezer.",
+       "*No dobra. Na wypadek gdybyś spalił kolację, mam w zamrażarce pierogi.*"
+      ]
+     ]
+    }
+   ]
+  }
+ ],
+ "vocab": [
+  {
+   "pl": "przegląd prasy (m)",
+   "baca": "PSYE-glont PRA-sy",
+   "id": "rangkuman berita"
+  },
+  {
+   "pl": "artykuł, artykułu (m)",
+   "baca": "ar-TY-kuw, ar-ty-KU-wu",
+   "id": "artikel"
+  },
+  {
+   "pl": "nagłówek, nagłówka (m)",
+   "baca": "na-GWU-vek, na-GWUF-ka",
+   "id": "judul berita"
+  },
+  {
+   "pl": "dziennikarz, dziennikarze (m)",
+   "baca": "jyen-NI-kasy, jyen-ni-KA-zye",
+   "id": "wartawan"
+  },
+  {
+   "pl": "źródło, źródła (n)",
+   "baca": "ZYRUD-wo, ZYRUD-wa",
+   "id": "sumber"
+  },
+  {
+   "pl": "według (+ D.)",
+   "baca": "VED-wuk",
+   "id": "menurut"
+  },
+  {
+   "pl": "jak podaje / jak poinformował",
+   "baca": "yak po-DA-ye / yak po-in-for-MO-vaw",
+   "id": "seperti diberitakan / seperti diumumkan"
+  },
+  {
+   "pl": "wynikać (wynika) — ndk",
+   "baca": "vy-NI-kac",
+   "id": "terlihat dari, menjadi kesimpulan (*z* + D.)"
+  },
+  {
+   "pl": "podobno / ponoć",
+   "baca": "po-DOB-no / PO-noc",
+   "id": "katanya, konon"
+  },
+  {
+   "pl": "rzekomo",
+   "baca": "zye-KO-mo",
+   "id": "diduga, konon (meragukan)"
+  },
+  {
+   "pl": "ręczyć (ręczę) za (+ B.) — ndk",
+   "baca": "REN-cyc",
+   "id": "menjamin"
+  },
+  {
+   "pl": "procent (m)",
+   "baca": "PRO-tsent",
+   "id": "persen"
+  },
+  {
+   "pl": "tysiąc, tysiące, tysięcy (m)",
+   "baca": "TY-syonts, ty-SYON-tse, ty-SYEN-tsy",
+   "id": "ribu"
+  },
+  {
+   "pl": "milion, miliony, milionów (m)",
+   "baca": "MI-lyon, mi-LYO-ny, mi-LYO-nuf",
+   "id": "juta"
+  },
+  {
+   "pl": "miliard, miliarda (m)",
+   "baca": "MI-lyart, mi-LYAR-da",
+   "id": "miliar"
+  },
+  {
+   "pl": "przychody (lm)",
+   "baca": "psyy-HO-dy",
+   "id": "pendapatan"
+  },
+  {
+   "pl": "zysk (m) / strata (ż)",
+   "baca": "zyysk / STRA-ta",
+   "id": "laba / rugi"
+  },
+  {
+   "pl": "inwestor (m) / fundusz (m)",
+   "baca": "in-VES-tor / FUN-dusy",
+   "id": "investor / dana (investasi)"
+  },
+  {
+   "pl": "ankieta (ż)",
+   "baca": "an-KYE-ta",
+   "id": "survei, angket"
+  },
+  {
+   "pl": "wzrost (m) / spadek, spadku (m)",
+   "baca": "vzrost / SPA-dek, SPAT-ku",
+   "id": "kenaikan / penurunan"
+  },
+  {
+   "pl": "rosnąć (rośnie) / wzrosnąć (wzrośnie)",
+   "baca": "ROS-nonc / VZROS-nonc",
+   "id": "naik, tumbuh"
+  },
+  {
+   "pl": "spadać (spada) / spaść (spadnie)",
+   "baca": "SPA-dac / spasyc",
+   "id": "turun, jatuh"
+  },
+  {
+   "pl": "pozyskiwać (pozyskuję) / pozyskać (pozyskam)",
+   "baca": "po-zyys-KI-vac / po-ZYYS-kac",
+   "id": "memperoleh (dana, klien)"
+  },
+  {
+   "pl": "przepis, przepisy (m)",
+   "baca": "PSYE-pis, psye-PI-sy",
+   "id": "peraturan"
+  },
+  {
+   "pl": "utrudnienia (lm)",
+   "baca": "u-trud-NYE-nya",
+   "id": "gangguan (lalu lintas)"
+  },
+  {
+   "pl": "komunikat (m) / plotka (ż)",
+   "baca": "ko-mu-NI-kat / PLOT-ka",
+   "id": "pengumuman resmi / gosip"
+  }
+ ],
+ "exercises": [
+  {
+   "prompt": "Terjemahkan ke bahasa Polandia.",
+   "items": [
+    "Menurut para ahli, inflasi akan turun.",
+    "Seperti diberitakan kantor berita, perusahaan itu memperoleh 5 juta złoty.",
+    "Katanya akan ada dua ratus lapangan kerja baru. (pakai *ma powstać*)",
+    "Empat puluh persen mahasiswa bekerja.",
+    "Harga naik sebesar tiga persen.",
+    "Dari laporan itu terlihat bahwa penjualan tumbuh."
+   ]
+  },
+  {
+   "prompt": "Isi titik-titiknya.",
+   "items": [
+    "Według ____ bezrobocie spadło. (ekonomiści → dopełniacz)",
+    "Pięćdziesiąt procent ____ korzysta z AI. (firma → dopełniacz jamak)",
+    "Ceny wzrosły ____ pięć procent. (kata depan: sebesar)",
+    "Inflacja spadła ____ dwóch procent. (kata depan: menjadi)",
+    "Jak ____ rzecznik firmy, umowa jest gotowa. (poinformować, lampau lk)",
+    "Firma pozyskała dwa ____ złotych. (milion)",
+    "Z raportu ____, że sprzedaż rośnie. (wynikać, kala kini)"
+   ]
+  },
+  {
+   "prompt": "Ubah kalimat menjadi judul berita bergaya kata benda.",
+   "items": [
+    "Rząd obniżył podatki. →",
+    "Miasto zamknie most. →",
+    "Ceny mieszkań wzrosły. →",
+    "Firmy podpisały umowę. →",
+    "Sprzedaż samochodów spadła. →",
+    "Miasto rozpoczęło budowę nowej linii tramwajowej. →"
+   ]
+  },
+  {
+   "prompt": "Susun jadi kalimat yang benar (tambahkan koma bila perlu).",
+   "items": [
+    "podaje / jak / agencja / inwestorem / jest / fundusz / z / Niemiec",
+    "ma / podobno / powstać / sto / nowych / miejsc / pracy",
+    "procent / według / ankiety / sześćdziesiąt / programistów / woli / pracę / hybrydową",
+    "agent / ponoć / piłkarza / był / wczoraj / w / Krakowie",
+    "według / źródła / anonimowego / w / klubie / rozmowy / trwają / od / tygodnia"
+   ]
+  }
+ ],
+ "answers": [
+  "Według ekspertów inflacja spadnie. — Jak podaje agencja, firma pozyskała 5 mln zł (pięć milionów złotych). — Podobno ma powstać dwieście nowych miejsc pracy. — Czterdzieści procent studentów pracuje. — Ceny wzrosły o trzy procent. — Z raportu wynika, że sprzedaż rośnie.",
+  "ekonomistów — firm — o — do — poinformował — miliony — wynika",
+  "Obniżka podatków. — Zamknięcie mostu. — Wzrost cen mieszkań. — Podpisanie umowy. — Spadek sprzedaży samochodów. — Rozpoczęcie budowy nowej linii tramwajowej.",
+  "Jak podaje agencja, inwestorem jest fundusz z Niemiec. — Podobno ma powstać sto nowych miejsc pracy. — Według ankiety sześćdziesiąt procent programistów woli pracę hybrydową. — Ponoć agent piłkarza był wczoraj w Krakowie. — Według anonimowego źródła w klubie rozmowy trwają od tygodnia."
+ ]
+}

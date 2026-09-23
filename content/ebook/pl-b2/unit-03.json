@@ -1,0 +1,698 @@
+{
+ "title": "Kalimat berpartisip panjang",
+ "title_target": "Przygotowawszy raport…",
+ "goal": "Membaca laporan proyek yang padat dan menulis kalimat laporan sendiri tanpa kesalahan yang biasa dibuat orang asing. Titik tata bahasanya: **frasa partisip panjang di depan kata benda** (*podpisana wczoraj umowa*), **partisip *-wszy/-łszy* dipakai aktif** (*przygotowawszy, wszedłszy*), dan kesalahan **imiesłów wiszący** beserta cara memperbaikinya.",
+ "bekal": [
+  "mengurai frasa partisip panjang dengan mencari kata bendanya lebih dulu, lalu membaca mundur",
+  "membentuk *-wszy/-łszy* dari kata kerja perfektif mana pun dan memakainya dengan pelaku yang sama",
+  "mengenali imiesłów wiszący dan memperbaikinya dengan tiga cara: ganti pelaku, pakai *kiedy*, atau pakai *po* + kata benda"
+ ],
+ "dialogs": [
+  {
+   "title": "Dialog — Raport z Dżakarty",
+   "intro": "Ruang rapat kecil di Kodex. Marek, rekan setim Budi, dan Budi sendiri membaca laporan kemajuan yang dikirim tim mitra di Jakarta — dalam bahasa Polandia yang sangat \"tertulis\".",
+   "lines": [
+    {
+     "speaker": "Marek:",
+     "text": "Czytałeś już raport przysłany wczoraj z Dżakarty?",
+     "id": "Kamu sudah baca laporan yang dikirim kemarin dari Jakarta?",
+     "literal": "kamu-membaca-lampau-lk sudah laporan dikirim-lk kemarin dari Jakarta?"
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Właśnie czytam. Styl jest bardzo książkowy, posłuchaj.",
+     "id": "Sedang saya baca. Gayanya sangat gaya buku, dengar deh.",
+     "literal": "justru saya-membaca. gaya adalah sangat buku-an, dengarkanlah."
+    },
+    {
+     "speaker": "Budi (czyta):",
+     "text": "Podpisana w marcu umowa przewiduje trzy etapy projektu.",
+     "id": "Kontrak yang ditandatangani pada bulan Maret mengatur tiga tahap proyek.",
+     "literal": "ditandatangani-pr di maret kontrak ia-memperkirakan tiga tahap proyek."
+    },
+    {
+     "speaker": "Marek:",
+     "text": "Normalny język raportów. Po ludzku: umowa, którą podpisaliśmy w marcu, ma trzy etapy.",
+     "id": "Bahasa laporan biasa. Kalau dibahasakan manusia: kontrak yang kita tanda tangani bulan Maret punya tiga tahap.",
+     "literal": "normal bahasa laporan-laporan. secara manusia: kontrak, yang kami-menandatangani-lampau di maret, punya tiga tahap."
+    },
+    {
+     "speaker": "Budi (czyta):",
+     "text": "Przeprowadzone w dwudziestu szkołach badania wykazały duże zainteresowanie platformą.",
+     "id": "Kajian yang dilakukan di dua puluh sekolah menunjukkan minat yang besar terhadap platform.",
+     "literal": "dilaksanakan-jamak di dua-puluh sekolah kajian-kajian menunjukkan-lampau besar minat platform."
+    },
+    {
+     "speaker": "Marek:",
+     "text": "Czyli nauczyciele chcą z niej korzystać. Tak to trzeba rozumieć.",
+     "id": "Artinya para guru mau memakainya. Begitu cara memahaminya.",
+     "literal": "jadi guru-guru mereka-mau dari dia memakai. begitu itu perlu memahami."
+    },
+    {
+     "speaker": "Budi (czyta):",
+     "text": "Przygotowawszy wstępną analizę, zespół przystąpił do testów.",
+     "id": "Setelah menyiapkan analisis awal, tim mulai melakukan uji coba.",
+     "literal": "setelah-menyiapkan awal analisis, tim memulai-lampau-lk ke uji-uji."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "„Przygotowawszy”? Czy ktoś tak jeszcze mówi?",
+     "id": "\"Setelah menyiapkan\"? Masih ada yang bicara begitu?",
+     "literal": "setelah-menyiapkan? apakah seseorang begitu masih ia-berbicara?"
+    },
+    {
+     "speaker": "Marek:",
+     "text": "Nikt tak nie mówi, ale w raportach i w literaturze to całkiem normalne.",
+     "id": "Tidak ada yang bicara begitu, tapi di laporan dan di sastra itu biasa saja.",
+     "literal": "tak-seorang-pun begitu tidak ia-berbicara, tetapi di laporan-laporan dan di sastra itu sepenuhnya normal."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "A tu jest zdanie, które brzmi dziwnie: „Analizując dane, pojawiły się nowe pytania”.",
+     "id": "Nah, di sini ada kalimat yang kedengarannya aneh: \"Sambil menganalisis data, muncul pertanyaan baru.\"",
+     "literal": "dan di-sini ada kalimat, yang ia-terdengar aneh: sambil-menganalisis data, muncul-lampau-pr diri baru pertanyaan-pertanyaan."
+    },
+    {
+     "speaker": "Marek:",
+     "text": "Bo jest błędne. To tak zwany imiesłów wiszący: pytania przecież niczego nie analizowały.",
+     "id": "Karena kalimat itu salah. Itu yang disebut partisip menggantung: pertanyaan kan tidak menganalisis apa-apa.",
+     "literal": "karena adalah salah. itu begitu disebut partisip menggantung: pertanyaan-pertanyaan kan tak-sesuatu-pun tidak menganalisis-lampau-pr."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "No tak. Podmiotem musi być ten, kto analizuje.",
+     "id": "Oh iya. Pelakunya harus yang menganalisis.",
+     "literal": "ya memang. pelaku harus adalah-inf dia, siapa ia-menganalisis."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Analizując dane, zespół zauważył nowe problemy.",
+     "id": "Sambil menganalisis data, tim melihat masalah-masalah baru.",
+     "literal": "sambil-menganalisis data, tim memperhatikan-lampau-lk baru masalah-masalah."
+    },
+    {
+     "speaker": "Marek:",
+     "text": "Brawo. Zaznacz to na czerwono i odeślij im raport.",
+     "id": "Bagus. Tandai itu dengan merah dan kirim balik laporannya ke mereka.",
+     "literal": "bravo. tandailah itu dengan merah dan kirim-baliklah mereka laporan."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Już odesłałem. Przeczytawszy nasze uwagi, na pewno go poprawią.",
+     "id": "Sudah saya kirim balik. Setelah membaca catatan kita, mereka pasti memperbaikinya.",
+     "literal": "sudah saya-mengirim-balik-lampau-lk. setelah-membaca kami catatan-catatan, pada pasti dia mereka-akan-memperbaiki."
+    }
+   ],
+   "notes": [
+    "***raport przysłany wczoraj z Dżakarty* — partisip sesudah kata benda.** Partisip pasif *przysłany* (dikirim) menempel di belakang *raport*, bersama keterangannya. Posisi ini ringan dan umum dalam percakapan. Nama kota Jakarta dalam ejaan Polandia adalah *Dżakarta*, dan berubah seperti kata benda perempuan: *z Dżakarty, w Dżakarcie*.",
+    "***Podpisana w marcu umowa* — partisip di depan kata benda.** Ini ciri khas bahasa tulis: seluruh keterangan (*w marcu*) diselipkan **di antara** partisip dan kata bendanya. Pembaca harus menahan napas sampai kata benda muncul. Trik membaca: lompati dulu ke kata bendanya (*umowa*), lalu baca mundur — \"kontrak yang ditandatangani pada bulan Maret\".",
+    "***Przygotowawszy* — \"setelah menyiapkan\".** Bentuk *-wszy* hanya dibuat dari kata kerja **perfektif** dan menyatakan tindakan yang selesai **sebelum** tindakan utama. Di B1 kamu cukup mengenalinya; di B2 kamu akan menulisnya dalam laporan dan menemukannya di banyak novel.",
+    "***Nikt tak nie mówi* — dan tetap tidak salah.** Bahasa Polandia punya jarak lebar antara ucapan dan tulisan. *-wszy* hampir hilang dari percakapan, tetapi tetap hidup di laporan, berita, dan sastra. Kamu tidak perlu memakainya saat mengobrol; kamu perlu memahaminya saat membaca.",
+    "***imiesłów wiszący* — partisip yang \"menggantung\".** Pelaku frasa *-ąc* atau *-wszy* **harus sama** dengan pelaku kalimat induk. *Analizując dane, pojawiły się pytania* salah karena pelaku induknya *pytania*, dan pertanyaan tidak menganalisis. Kesalahan ini sering dibuat juga oleh penutur asli, dan guru bahasa Polandia senang sekali menangkapnya."
+   ],
+   "grammars": [
+    {
+     "title": "Dari kalimat *który* ke frasa partisip",
+     "body": [
+      "Setiap frasa partisip panjang bisa diurai kembali menjadi kalimat *który*. Kalau kamu ragu membaca atau menulisnya, lakukan konversi ini di kepala. Partisip pasif (*-ny/-ty/-ony*) berasal dari kalimat pasif; partisip aktif (*-ący*) dari kalimat aktif kala kini."
+     ],
+     "table": {
+      "head": [
+       "Kalimat dengan *który*",
+       "Frasa partisip (bahasa tulis)",
+       "Arti"
+      ],
+      "rows": [
+       [
+        "*umowa, którą podpisano w marcu*",
+        "*podpisana w marcu umowa*",
+        "kontrak yang ditandatangani bulan Maret"
+       ],
+       [
+        "*badania, które przeprowadzono w szkołach*",
+        "*przeprowadzone w szkołach badania*",
+        "kajian yang dilakukan di sekolah-sekolah"
+       ],
+       [
+        "*raport, który przygotował zespół*",
+        "*przygotowany przez zespół raport*",
+        "laporan yang disiapkan oleh tim"
+       ],
+       [
+        "*firma, która zajmuje się IT*",
+        "*zajmująca się IT firma*",
+        "perusahaan yang bergerak di bidang TI"
+       ],
+       [
+        "*studenci, którzy uczestniczą w projekcie*",
+        "*uczestniczący w projekcie studenci*",
+        "mahasiswa yang ikut dalam proyek"
+       ],
+       [
+        "*dane, które zebrano w Dżakarcie*",
+        "*zebrane w Dżakarcie dane*",
+        "data yang dikumpulkan di Jakarta"
+       ]
+      ]
+     },
+     "after": [
+      "**Partisip ikut kasus, jenis, dan jumlah kata bendanya**, persis seperti kata sifat: *o podpisanej w marcu umowie* (Ms.), *z uczestniczącymi w projekcie studentami* (N.).",
+      "**Partisip aktif lampau tidak ada.** *-ący* hanya untuk tindakan yang sedang berlangsung. \"Mahasiswa yang *telah* ikut\" tidak bisa jadi partisip; pakai *studenci, którzy uczestniczyli*.",
+      "**Di depan atau di belakang?** Frasa pendek boleh di mana saja (*podpisana umowa* / *umowa podpisana wczoraj*). Frasa panjang di depan kata benda terdengar sangat tertulis; dalam surel biasa taruh di belakang atau kembalikan ke *który*."
+     ]
+    },
+    {
+     "title": "Membentuk *-wszy / -łszy*",
+     "body": [
+      "Bentuknya diturunkan dari **lampau orang ketiga lelaki** kata kerja perfektif. Aturannya satu: kalau sebelum *-ł* ada vokal, ganti *-ł* dengan *-wszy*; kalau sebelum *-ł* ada konsonan, tambahkan *-szy* sesudah *-ł*."
+     ],
+     "table": {
+      "head": [
+       "Kata kerja (dk)",
+       "Lampau (on)",
+       "Bentuk *-wszy/-łszy*",
+       "Arti"
+      ],
+      "rows": [
+       [
+        "*przygotować*",
+        "*przygotował*",
+        "*przygotowawszy*",
+        "setelah menyiapkan"
+       ],
+       [
+        "*przeczytać*",
+        "*przeczytał*",
+        "*przeczytawszy*",
+        "setelah membaca"
+       ],
+       [
+        "*zakończyć*",
+        "*zakończył*",
+        "*zakończywszy*",
+        "setelah menyelesaikan"
+       ],
+       [
+        "*wrócić*",
+        "*wrócił*",
+        "*wróciwszy*",
+        "setelah kembali"
+       ],
+       [
+        "*wejść*",
+        "*wszedł*",
+        "*wszedłszy*",
+        "setelah masuk"
+       ],
+       [
+        "*przyjść*",
+        "*przyszedł*",
+        "*przyszedłszy*",
+        "setelah datang"
+       ],
+       [
+        "*zjeść*",
+        "*zjadł*",
+        "*zjadłszy*",
+        "setelah makan"
+       ]
+      ]
+     },
+     "after": [
+      "**Bentuk ini tidak berubah** — tidak ada jenis kelamin, tidak ada kasus. *Przeczytawszy list, Ania zadzwoniła* dan *Przeczytawszy list, Budi zadzwonił* memakai bentuk yang sama.",
+      "**Frasa *-wszy* dan *-ąc* dipisahkan dengan koma** dari kalimat induknya, di depan maupun di belakang: *Zespół, przygotowawszy analizę, przystąpił do testów.*"
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Dialog kedua — Imiesłów wiszący",
+   "intro": "Malam hari di kafe dekat Planty. Budi harus mengirim laporannya sendiri ke Warszawa besok pagi, dan Ania — guru bahasa yang tak kenal ampun — sudah membawa pena merah.",
+   "lines": [
+    {
+     "speaker": "Ania:",
+     "text": "No to pokaż swój raport. Obiecałam, że będę surowa.",
+     "id": "Nah, tunjukkan laporanmu. Aku sudah janji akan galak.",
+     "literal": "nah jadi tunjukkanlah milik-sendiri laporan. saya-berjanji-lampau-pr, bahwa saya-akan-adalah galak."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Pierwsze zdanie: „Czekając na odpowiedź ministerstwa, projekt został wstrzymany”.",
+     "id": "Kalimat pertama: \"Sambil menunggu jawaban kementerian, proyek dihentikan sementara.\"",
+     "literal": "pertama kalimat: sambil-menunggu pada jawaban kementerian, proyek menjadi-lampau-lk dihentikan-lk."
+    },
+    {
+     "speaker": "Ania:",
+     "text": "Ojej. Projekt na nic nie czekał — to wy czekaliście.",
+     "id": "Aduh. Proyeknya tidak menunggu apa-apa — kalianlah yang menunggu.",
+     "literal": "aduh. proyek pada tak-sesuatu-pun tidak menunggu-lampau-lk — itu kalian kalian-menunggu-lampau."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Czekając na odpowiedź ministerstwa, wstrzymaliśmy projekt.",
+     "id": "Sambil menunggu jawaban kementerian, kami menghentikan sementara proyeknya.",
+     "literal": "sambil-menunggu pada jawaban kementerian, kami-menghentikan-lampau proyek."
+    },
+    {
+     "speaker": "Ania:",
+     "text": "Dobrze. Albo bez imiesłowu: „Kiedy czekaliśmy na odpowiedź, projekt był wstrzymany”.",
+     "id": "Bagus. Atau tanpa partisip: \"Selama kami menunggu jawaban, proyek dihentikan sementara.\"",
+     "literal": "baik. atau tanpa partisip: ketika kami-menunggu-lampau pada jawaban, proyek adalah-lampau-lk dihentikan-lk."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "A to? „Zakończywszy pierwszy etap, zespół rozpoczął testy”.",
+     "id": "Kalau yang ini? \"Setelah menyelesaikan tahap pertama, tim memulai pengujian.\"",
+     "literal": "dan ini? setelah-menyelesaikan pertama tahap, tim memulai-lampau-lk uji-uji."
+    },
+    {
+     "speaker": "Ania:",
+     "text": "To jest poprawne. Ten sam podmiot, najpierw jedna czynność, potem druga.",
+     "id": "Ini benar. Pelakunya sama, pertama satu kegiatan, lalu yang kedua.",
+     "literal": "ini adalah benar. ini sama pelaku, pertama satu kegiatan, kemudian kedua."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Ale brzmi trochę staroświecko, prawda?",
+     "id": "Tapi kedengarannya agak kuno, ya?",
+     "literal": "tetapi ia-terdengar sedikit kuno, benar?"
+    },
+    {
+     "speaker": "Ania:",
+     "text": "Trochę. W zwykłym tekście wystarczy „po” z miejscownikiem.",
+     "id": "Sedikit. Dalam teks biasa cukup pakai \"po\" dengan miejscownik.",
+     "literal": "sedikit. di biasa teks cukup po dengan miejscownik."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Po zakończeniu pierwszego etapu zespół rozpoczął testy.",
+     "id": "Setelah tahap pertama selesai, tim memulai pengujian.",
+     "literal": "sesudah penyelesaian pertama tahap tim memulai-lampau-lk uji-uji."
+    },
+    {
+     "speaker": "Ania:",
+     "text": "Idealnie. Jeszcze miesiąc i będziesz pisał lepiej niż moi uczniowie.",
+     "id": "Sempurna. Sebulan lagi kamu bakal menulis lebih bagus daripada murid-muridku.",
+     "literal": "ideal. masih bulan dan kamu-akan menulis-lk lebih-baik daripada milikku murid-murid."
+    }
+   ],
+   "notes": [
+    "***Obiecałam, że będę surowa* — Ania perempuan.** Lampau *obiecałam* dan kata sifat *surowa* sama-sama ikut jenis kelamin pembicara. Budi di baris terakhir mendapat *będziesz pisał* (futur dengan bentuk lampau lelaki), yang untuk Ania akan menjadi *będziesz pisała*.",
+    "***Projekt na nic nie czekał* — cara cepat menguji.** Tanyakan kepada pelaku kalimat induk: \"apakah *kamu* yang melakukan tindakan *-ąc* itu?\" Kalau jawabannya lucu (proyek menunggu, telepon masuk ruangan, hujan pergi ke kantor), kalimatnya menggantung.",
+    "***Kiedy czekaliśmy…* — jalan keluar paling aman.** Setiap frasa *-ąc* bisa diganti dengan *kiedy / gdy* + kata kerja berpelaku. Kalimatnya jadi sedikit lebih panjang, tetapi tidak pernah salah, dan dalam percakapan justru lebih alami.",
+    "***Po zakończeniu* — *po* + miejscownik kata benda.** Padanan *-wszy* yang lebih netral adalah *po* + nominalisasi: *po przeczytaniu* (setelah membaca), *po powrocie* (setelah kembali), *po zakończeniu* (setelah selesai). Bentuk ini juga membebaskanmu dari aturan pelaku yang sama.",
+    "***staroświecko* — kuno.** Kata keterangan dari *staroświecki* (\"dari dunia lama\"). *-wszy* memang terdengar agak *staroświecko* dalam ucapan; dalam tulisan resmi ia terdengar berpendidikan."
+   ],
+   "grammars": [
+    {
+     "title": "Imiesłów wiszący — tiga cara memperbaikinya",
+     "body": [
+      "Semua kalimat di kolom pertama dimengerti orang Polandia, tetapi dinilai salah dalam tulisan. Pilih perbaikan yang paling cocok dengan ragam teksmu."
+     ],
+     "table": {
+      "head": [
+       "Salah",
+       "Ganti pelaku induk",
+       "Pakai *kiedy / gdy*",
+       "Pakai *po / podczas* + kata benda"
+      ],
+      "rows": [
+       [
+        "*Analizując dane, pojawiły się pytania.*",
+        "*Analizując dane, zadaliśmy sobie pytania.*",
+        "*Kiedy analizowaliśmy dane, pojawiły się pytania.*",
+        "*Podczas analizy danych pojawiły się pytania.*"
+       ],
+       [
+        "*Wchodząc do biura, zadzwonił telefon.*",
+        "*Wchodząc do biura, usłyszałem telefon.*",
+        "*Kiedy wchodziłem do biura, zadzwonił telefon.*",
+        "*Przy wejściu do biura usłyszałem telefon.*"
+       ],
+       [
+        "*Przeczytawszy raport, wszystko stało się jasne.*",
+        "*Przeczytawszy raport, wszystko zrozumiałam.*",
+        "*Kiedy przeczytałam raport, wszystko stało się jasne.*",
+        "*Po przeczytaniu raportu wszystko stało się jasne.*"
+       ]
+      ]
+     },
+     "after": [
+      "**Pengecualian yang diterima: kalimat tanpa pelaku.** Dengan *można, trzeba, należy* pelakunya adalah \"orang pada umumnya\", jadi *Analizując dane, należy pamiętać o…* dianggap benar.",
+      "**Ungkapan tetap juga aman:** *Mówiąc krótko…* (singkatnya), *Szczerze mówiąc…* (terus terang), *Biorąc pod uwagę…* (mengingat…). Semuanya sudah membeku dan tidak dianggap menggantung."
+     ]
+    }
+   ]
+  }
+ ],
+ "sections": [
+  {
+   "title": "Bahasa laporan proyek",
+   "blocks": [
+    {
+     "type": "tabel",
+     "head": [
+      "Polski",
+      "Arti",
+      "Contoh"
+     ],
+     "rows": [
+      [
+       "*etap* (m)",
+       "tahap",
+       "*Projekt składa się z trzech etapów.*"
+      ],
+      [
+       "*przewidywać / przewidzieć*",
+       "mengatur, memperkirakan",
+       "*Umowa przewiduje karę za opóźnienie.*"
+      ],
+      [
+       "*przeprowadzać / przeprowadzić badanie*",
+       "melakukan kajian",
+       "*Przeprowadzono badanie w 20 szkołach.*"
+      ],
+      [
+       "*wykazywać / wykazać*",
+       "menunjukkan (hasil)",
+       "*Testy wykazały kilka błędów.*"
+      ],
+      [
+       "*wskaźnik* (m)",
+       "indikator",
+       "*Wszystkie wskaźniki rosną.*"
+      ],
+      [
+       "*harmonogram* (m)",
+       "jadwal kerja",
+       "*Harmonogram został zatwierdzony.*"
+      ],
+      [
+       "*przystępować / przystąpić do* + D.",
+       "mulai mengerjakan",
+       "*Zespół przystąpił do testów.*"
+      ],
+      [
+       "*osiągać / osiągnąć*",
+       "mencapai",
+       "*Osiągnęliśmy zakładane cele.*"
+      ],
+      [
+       "*opóźnienie* (n)",
+       "keterlambatan",
+       "*z dwutygodniowym opóźnieniem*"
+      ]
+     ]
+    },
+    {
+     "type": "p",
+     "text": "Laporan Polandia menyukai kata kerja perfektif lampau dalam bentuk pasif dan tak berpelaku: *przeprowadzono, wykazano, osiągnięto, zatwierdzono*. Ketika kamu membaca kalimat panjang, **cari kata kerja utamanya dulu** — biasanya hanya satu — lalu tanyakan \"siapa\" dan \"apa\". Semua sisanya, termasuk frasa partisip, hanyalah keterangan yang boleh kamu urai belakangan."
+    },
+    {
+     "type": "kotak",
+     "title": "Membaca kalimat panjang dalam tiga langkah",
+     "items": [
+      "Temukan kata kerja berpelaku (bukan partisip): *Podpisana w marcu umowa **przewiduje** trzy etapy.*",
+      "Temukan kata benda yang cocok dengan ekor partisip: *podpisan**a*** → *umow**a*** (perempuan, M.).",
+      "Baca frasa partisip terakhir, mundur ke kiri: \"yang ditandatangani — pada bulan Maret\"."
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Partisip yang sudah menjadi kata biasa",
+   "blocks": [
+    {
+     "type": "tabel",
+     "head": [
+      "Polski",
+      "Asalnya",
+      "Arti sehari-hari"
+     ],
+     "rows": [
+      [
+       "*następujący*",
+       "*następować* (menyusul)",
+       "berikut"
+      ],
+      [
+       "*obowiązujący*",
+       "*obowiązywać* (berlaku)",
+       "yang berlaku"
+      ],
+      [
+       "*wyżej wymieniony*",
+       "*wymienić* (menyebutkan)",
+       "tersebut di atas"
+      ],
+      [
+       "*załączony*",
+       "*załączyć* (melampirkan)",
+       "terlampir"
+      ],
+      [
+       "*zainteresowany*",
+       "*zainteresować* (menarik minat)",
+       "berminat"
+      ],
+      [
+       "*zajęty*",
+       "*zająć* (menempati)",
+       "sibuk; terisi"
+      ]
+     ]
+    },
+    {
+     "type": "p",
+     "text": "Banyak kata sifat yang kamu pakai sejak A1 sebenarnya partisip: *zmęczony, zamknięty, otwarty, zajęty*. Karena itu frasa partisip panjang tidak sesulit kelihatannya — kamu sudah tahu ekornya. Yang baru hanyalah **panjangnya**: *zmęczony po całym dniu pracy nauczyciel* adalah kata sifat yang kamu kenal, dengan keterangan yang diselipkan di tengah."
+    },
+    {
+     "type": "kotak",
+     "title": "Nie + partisip ditulis serangkai",
+     "items": [
+      "Partisip yang berfungsi seperti kata sifat ditulis menyatu dengan *nie*: *nieprzeczytany raport, niepodpisana umowa, niezakończony etap*.",
+      "Partisip keterangan (*-ąc, -wszy*) tetap terpisah, seperti kata kerja: *nie czekając, nie przeczytawszy*.",
+      "Jadi: *Niepodpisana umowa leży na biurku*, tetapi *Nie czekając na odpowiedź, wysłaliśmy raport.*"
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Ulangan berjenjang — unit 1",
+   "blocks": [
+    {
+     "type": "p",
+     "text": "Tutup kolom Polandia, baca terjemahan Indonesianya, lalu susun kembali kalimatnya dari ingatan."
+    },
+    {
+     "type": "tabel",
+     "head": [
+      "Bahasa Indonesia",
+      "Polski"
+     ],
+     "rows": [
+      [
+       "Izinkan saya memulai dengan sebuah pertanyaan singkat.",
+       "*Pozwolę sobie zacząć od krótkiego pytania.*"
+      ],
+      [
+       "Apakah Bapak-Ibu tahu, berapa pulau yang dimiliki Indonesia?",
+       "*Czy państwo wiedzą, ile wysp ma Indonezja?*"
+      ],
+      [
+       "Hari ini saya ingin mengajak Bapak-Ibu memperhatikan tiga hal.",
+       "*Dziś chciałbym zwrócić państwa uwagę na trzy kwestie.*"
+      ],
+      [
+       "Tentu, maaf. Apakah sekarang suara saya terdengar jelas?",
+       "*Oczywiście, przepraszam. Czy teraz państwo dobrze mnie słyszą?*"
+      ],
+      [
+       "Data rincinya dengan senang hati saya kirimkan kepada Ibu seusai konferensi.",
+       "*Szczegółowe dane chętnie prześlę pani po konferencji.*"
+      ]
+     ]
+    }
+   ]
+  }
+ ],
+ "vocab": [
+  {
+   "pl": "imiesłów, imiesłowu (m)",
+   "baca": "i-MYE-swuf, i-mye-SWO-vu",
+   "id": "partisip"
+  },
+  {
+   "pl": "imiesłów wiszący",
+   "baca": "i-MYE-swuf vi-SYON-tsy",
+   "id": "partisip menggantung (kesalahan)"
+  },
+  {
+   "pl": "raport (m)",
+   "baca": "RA-port",
+   "id": "laporan"
+  },
+  {
+   "pl": "przysyłać (przysyłam) / przysłać (przyślę)",
+   "baca": "psyy-SY-wac (psyy-SY-wam) / PSYY-swac (PSYY-syle)",
+   "id": "mengirimkan (ke sini)"
+  },
+  {
+   "pl": "odsyłać (odsyłam) / odesłać (odeślę)",
+   "baca": "ot-SY-wac (ot-SY-wam) / o-DES-wac (o-DE-syle)",
+   "id": "mengirim balik"
+  },
+  {
+   "pl": "etap (m)",
+   "baca": "E-tap",
+   "id": "tahap"
+  },
+  {
+   "pl": "przewidywać (przewiduję) / przewidzieć (przewidzę)",
+   "baca": "psye-vi-DY-vac (psye-vi-DU-ye) / psye-VI-jyec (psye-VI-dze)",
+   "id": "memperkirakan; mengatur (dalam kontrak)"
+  },
+  {
+   "pl": "przeprowadzać (przeprowadzam) / przeprowadzić (przeprowadzę)",
+   "baca": "psye-pro-VA-dzac (psye-pro-VA-dzam) / psye-pro-VA-jic (psye-pro-VA-dze)",
+   "id": "melaksanakan (kajian, tes)"
+  },
+  {
+   "pl": "badanie (n)",
+   "baca": "ba-DA-nye",
+   "id": "kajian, penelitian"
+  },
+  {
+   "pl": "wykazywać (wykazuję) / wykazać (wykażę)",
+   "baca": "vy-ka-ZY-vac (vy-ka-ZU-ye) / vy-KA-zac (vy-KA-zye)",
+   "id": "menunjukkan (hasil)"
+  },
+  {
+   "pl": "zainteresowanie (n) (+ N.)",
+   "baca": "za-in-te-re-so-VA-nye",
+   "id": "minat (terhadap)"
+  },
+  {
+   "pl": "wstępny",
+   "baca": "FSTEMP-ny",
+   "id": "awal, pendahuluan"
+  },
+  {
+   "pl": "analiza (ż)",
+   "baca": "a-na-LI-za",
+   "id": "analisis"
+  },
+  {
+   "pl": "przystępować (przystępuję) / przystąpić (przystąpię) (do + D.)",
+   "baca": "psyys-tem-PO-vac (psyys-tem-PU-ye) / psyys-TOM-pic (psyys-TOM-pye)",
+   "id": "mulai (mengerjakan)"
+  },
+  {
+   "pl": "podmiot (m)",
+   "baca": "POD-myot",
+   "id": "subjek, pelaku kalimat"
+  },
+  {
+   "pl": "błędny",
+   "baca": "BWEND-ny",
+   "id": "salah, keliru"
+  },
+  {
+   "pl": "zauważać (zauważam) / zauważyć (zauważę)",
+   "baca": "za-u-VA-zyac (za-u-VA-zyam) / za-u-VA-zyyc (za-u-VA-zye)",
+   "id": "memperhatikan, menyadari"
+  },
+  {
+   "pl": "zaznaczać (zaznaczam) / zaznaczyć (zaznaczę)",
+   "baca": "za-ZNA-cac (za-ZNA-cam) / za-ZNA-cyc (za-ZNA-ce)",
+   "id": "menandai"
+  },
+  {
+   "pl": "uwaga, uwagi (ż)",
+   "baca": "u-VA-ga, u-VA-gi",
+   "id": "catatan, masukan; perhatian"
+  },
+  {
+   "pl": "wstrzymywać (wstrzymuję) / wstrzymać (wstrzymam)",
+   "baca": "fstsy-MY-vac (fstsy-MU-ye) / FSTSY-mac (FSTSY-mam)",
+   "id": "menghentikan sementara"
+  },
+  {
+   "pl": "rozpoczynać (rozpoczynam) / rozpocząć (rozpocznę)",
+   "baca": "ros-po-CY-nac (ros-po-CY-nam) / ros-PO-conc (ros-POC-ne)",
+   "id": "memulai (resmi)"
+  },
+  {
+   "pl": "czynność (ż)",
+   "baca": "CYN-nosyc",
+   "id": "kegiatan, tindakan"
+  },
+  {
+   "pl": "staroświecki",
+   "baca": "sta-ro-SYFYETS-ki",
+   "id": "kuno, ketinggalan zaman"
+  },
+  {
+   "pl": "surowy",
+   "baca": "su-RO-vy",
+   "id": "galak, keras; mentah"
+  },
+  {
+   "pl": "harmonogram (m)",
+   "baca": "har-mo-NO-gram",
+   "id": "jadwal kerja"
+  }
+ ],
+ "exercises": [
+  {
+   "prompt": "Terjemahkan ke bahasa Polandia. Pakai frasa partisip atau *-wszy* bila diminta.",
+   "items": [
+    "Kontrak yang ditandatangani bulan Maret mengatur tiga tahap. (frasa partisip di depan kata benda)",
+    "Setelah menyiapkan analisis, tim mulai melakukan uji coba. (*-wszy*)",
+    "Sambil menganalisis data, kami melihat masalah-masalah baru.",
+    "Setelah tahap pertama selesai, tim memulai pengujian. (*po* + kata benda)",
+    "Laporan yang dikirim kemarin dari Jakarta sangat panjang. (frasa partisip di depan kata benda)",
+    "Mahasiswa yang ikut dalam proyek berasal dari Kraków. (partisip aktif di depan kata benda)"
+   ]
+  },
+  {
+   "prompt": "Isi titik-titiknya dengan partisip yang tepat.",
+   "items": [
+    "____ wczoraj umowa jest już w systemie. (podpisać, partisip pasif)",
+    "____ w szkołach badania były bardzo ciekawe. (przeprowadzić, partisip pasif)",
+    "____ w projekcie nauczyciele dostali certyfikaty. (uczestniczyć, partisip aktif)",
+    "____ raport, Budi wysłał go do Warszawy. (przeczytać, -wszy)",
+    "____ z urlopu, Marek od razu poszedł na zebranie. (wrócić, -wszy)",
+    "____ do biura, zobaczyłem nowy komputer. (wejść, -łszy)",
+    "Zespół ____ nad platformą liczy dziesięć osób. (pracować, partisip aktif)"
+   ]
+  },
+  {
+   "prompt": "Perbaiki tiga kalimat pertama (imiesłów wiszący) dengan *kiedy* atau pelaku yang benar; ubah tiga kalimat terakhir menjadi frasa partisip di depan kata benda.",
+   "items": [
+    "Wchodząc do biura, zadzwonił telefon.",
+    "Czytając raport, pojawiło się wiele pytań.",
+    "Przeczytawszy uwagi, raport został poprawiony.",
+    "Umowa, którą podpisano w marcu, jest ważna.",
+    "Firma, która zajmuje się IT, szuka programistów.",
+    "Raport, który przygotował zespół, jest gotowy."
+   ]
+  },
+  {
+   "prompt": "Susun jadi kalimat yang benar.",
+   "items": [
+    "umowa / w / podpisana / marcu / przewiduje / trzy / etapy",
+    "analizę / przygotowawszy / wstępną / zespół / przystąpił / do / testów",
+    "dane / analizując / zespół / zauważył / nowe / problemy",
+    "na / czekając / odpowiedź / wstrzymaliśmy / projekt",
+    "zakończeniu / po / pierwszego / etapu / zespół / rozpoczął / testy"
+   ]
+  }
+ ],
+ "answers": [
+  "Podpisana w marcu umowa przewiduje trzy etapy. — Przygotowawszy analizę, zespół przystąpił do testów. — Analizując dane, zauważyliśmy nowe problemy. — Po zakończeniu pierwszego etapu zespół rozpoczął testy. — Przysłany wczoraj z Dżakarty raport jest bardzo długi. — Uczestniczący w projekcie studenci pochodzą z Krakowa.",
+  "Podpisana — Przeprowadzone — Uczestniczący — Przeczytawszy — Wróciwszy — Wszedłszy — pracujący",
+  "Kiedy wchodziłem do biura, zadzwonił telefon. — Kiedy czytaliśmy raport, pojawiło się wiele pytań. — Przeczytawszy uwagi, poprawiliśmy raport. — Podpisana w marcu umowa jest ważna. — Zajmująca się IT firma szuka programistów. — Przygotowany przez zespół raport jest gotowy.",
+  "Podpisana w marcu umowa przewiduje trzy etapy. — Przygotowawszy wstępną analizę, zespół przystąpił do testów. — Analizując dane, zespół zauważył nowe problemy. — Czekając na odpowiedź, wstrzymaliśmy projekt. — Po zakończeniu pierwszego etapu zespół rozpoczął testy."
+ ]
+}

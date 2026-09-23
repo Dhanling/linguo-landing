@@ -1,0 +1,723 @@
+{
+ "title": "Teknologi dan kata serapan",
+ "title_target": "Wdrożyliśmy nową aplikację",
+ "goal": "Menjelaskan sebuah proyek teknologi kepada klien dengan bahasa yang jernih, dan memilih antara kata serapan Inggris dan padanan Polandianya. Unit ini memasang pola definisi dan proses (*polega na tym, że…; służy do* + D.; *umożliwia* + B.), anglisisme beserta padanannya, serta pembentukan kata dengan *-owy, -alny, -ność, -acja, -ować*.",
+ "bekal": [
+  "menerangkan cara kerja sebuah sistem kepada orang awam, langkah demi langkah",
+  "mengenali anglisisme dan menggantinya dengan kata Polandia baku bila situasinya resmi",
+  "menebak dan membentuk kata baru dari akhiran *-owy, -alny, -ność, -acja, -ować*"
+ ],
+ "dialogs": [
+  {
+   "title": "Dialog — Na czym to polega?",
+   "intro": "Ruang rapat Kodex. Pani Beata Wróblewska, direktur operasional sebuah perusahaan kurir di Kraków, datang untuk melihat sistem AI buatan tim proyek Indonesia–Polandia. Ia orang yang teliti — juga soal bahasa.",
+   "lines": [
+    {
+     "speaker": "Wróblewska:",
+     "text": "Panie Budi, słyszałam, że wdrożyliście już pierwszą wersję systemu.",
+     "id": "Pak Budi, saya dengar kalian sudah menerapkan versi pertama sistemnya.",
+     "literal": "tuan Budi, saya-mendengar-lampau-pr, bahwa kalian-menerapkan-lampau-lk sudah pertama versi sistem."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Tak, w zeszłym tygodniu wdrożyliśmy nową aplikację.",
+     "id": "Ya, minggu lalu kami sudah menerapkan aplikasi baru.",
+     "literal": "ya, di lalu minggu kami-menerapkan-lampau baru aplikasi."
+    },
+    {
+     "speaker": "Wróblewska:",
+     "text": "Na czym to polega? Proszę wyjaśnić prostymi słowami.",
+     "id": "Intinya bagaimana? Tolong jelaskan dengan kata-kata sederhana.",
+     "literal": "pada apa itu ia-bertumpu? saya-mohon menjelaskan sederhana-jamak kata-jamak."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "System polega na tym, że automatycznie analizuje mejle od klientów.",
+     "id": "Intinya, sistem ini secara otomatis menganalisis surel dari pelanggan.",
+     "literal": "sistem ia-bertumpu pada itu, bahwa otomatis ia-menganalisis surel-jamak dari pelanggan-jamak."
+    },
+    {
+     "speaker": "Wróblewska:",
+     "text": "Mejle? Pan chyba ma na myśli e-maile. Albo po prostu wiadomości.",
+     "id": "\"Mejle\"? Maksud Bapak barangkali e-mail. Atau cukup \"pesan\".",
+     "literal": "surel-jamak? tuan barangkali ia-punya dalam pikiran e-mail-jamak. atau sederhananya pesan-jamak."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Przepraszam, w biurze wszyscy tak mówią. Wiadomości są potem sortowane według tematu.",
+     "id": "Maaf, di kantor semua orang bilang begitu. Pesan-pesan itu kemudian dipilah menurut topiknya.",
+     "literal": "maaf, di kantor semua-orang begitu mereka-berkata. pesan-jamak mereka-adalah kemudian dipilah-jamak menurut topik."
+    },
+    {
+     "speaker": "Wróblewska:",
+     "text": "A skąd system wie, co jest reklamacją, a co zwykłym pytaniem?",
+     "id": "Lalu dari mana sistem tahu mana yang komplain dan mana yang pertanyaan biasa?",
+     "literal": "dan dari-mana sistem ia-tahu, apa adalah keluhan, dan apa biasa pertanyaan?"
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Model językowy uczy się na przykładach. Najpierw pokazaliśmy mu dziesięć tysięcy starych wiadomości.",
+     "id": "Model bahasanya belajar dari contoh. Mula-mula kami tunjukkan kepadanya sepuluh ribu pesan lama.",
+     "literal": "model bahasa-an ia-belajar diri pada contoh-jamak. pertama kami-menunjukkan-lampau dia sepuluh ribu lama pesan-jamak."
+    },
+    {
+     "speaker": "Wróblewska:",
+     "text": "A jaka jest skuteczność tego rozwiązania?",
+     "id": "Lalu seberapa efektif solusi ini?",
+     "literal": "dan yang-bagaimana adalah keefektifan ini solusi?"
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Na razie około dziewięćdziesięciu procent. Po aktualizacji będzie jeszcze wyższa.",
+     "id": "Sementara ini sekitar sembilan puluh persen. Setelah pembaruan akan lebih tinggi lagi.",
+     "literal": "untuk sementara sekitar sembilan-puluh persen. setelah pembaruan akan-ada masih lebih-tinggi."
+    },
+    {
+     "speaker": "Wróblewska:",
+     "text": "Świetnie. Kiedy możemy uruchomić wersję testową u nas?",
+     "id": "Bagus. Kapan kami bisa menjalankan versi uji cobanya di tempat kami?",
+     "literal": "hebat. kapan kami-bisa menjalankan versi uji-an di kami?"
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Deadline mamy na koniec miesiąca, czyli… przepraszam, termin.",
+     "id": "Deadline-nya akhir bulan, maksud saya… maaf, tenggatnya.",
+     "literal": "tenggat kami-punya pada akhir bulan, yaitu… maaf, tenggat."
+    },
+    {
+     "speaker": "Wróblewska:",
+     "text": "Widzę, że uczy się pan polskiego razem z naszym systemem!",
+     "id": "Rupanya Bapak belajar bahasa Polandia bareng sistem kami!",
+     "literal": "saya-melihat, bahwa ia-belajar diri tuan bahasa-polandia bersama dengan kami-punya sistem!"
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Tak, ale ja przynajmniej nie mylę reklamacji z pytaniami.",
+     "id": "Iya, tapi saya setidaknya tidak keliru membedakan komplain dan pertanyaan.",
+     "literal": "ya, tetapi saya setidaknya tidak saya-mengacaukan keluhan dengan pertanyaan-jamak."
+    }
+   ],
+   "notes": [
+    "**Wdrożyć, wdrożenie** — kata paling penting di dunia proyek Polandia: menerapkan, meluncurkan ke pemakaian nyata (*implement, deploy*). *Wdrażać* (ndk) untuk proses, *wdrożyć* (dk) untuk hasil. Di kalangan programmer kamu juga akan mendengar *zdeployować*, tapi di depan klien *wdrożyć* selalu lebih aman.",
+    "**Na czym to polega?** — pertanyaan standar untuk meminta penjelasan inti: \"intinya apa, cara kerjanya bagaimana?\". Jawabannya memakai pola yang sama: *To polega na tym, że…* Perhatikan *polegać na* + Ms. di sini berarti \"terdiri atas, intinya adalah\" — bukan \"mengandalkan\" (*polegać na kimś*) yang kamu pelajari di unit 12.",
+    "**Mejle, e-maile, wiadomości** — tiga pilihan untuk hal yang sama. *E-mail* adalah ejaan baku; *mejl* sudah tercatat di kamus, tetapi terasa santai. Dalam tulisan resmi paling netral *wiadomość* atau *wiadomość e-mail*. Pani Wróblewska tidak marah — ia hanya memberi isyarat bahwa rapat dengan klien bukan obrolan dapur.",
+    "**Są sortowane** — pasif dengan *być* untuk proses yang **berulang** atau bersifat umum. *Zostały posortowane* akan berarti satu kejadian tertentu yang sudah selesai (B1, unit 5).",
+    "**Uczy się na przykładach** — *uczyć się na* + Ms. = belajar **dari** (contoh, pengalaman, kesalahan): *uczyć się na błędach*. Bandingkan *uczyć się czegoś* (+ D.) = mempelajari sesuatu: *uczy się polskiego*.",
+    "**Około dziewięćdziesięciu procent** — *około* menuntut dopełniacz, dan angkanya ikut berubah: *dziewięćdziesiąt → dziewięćdziesięciu*. Dalam percakapan orang sering menghindarinya dengan *mniej więcej dziewięćdziesiąt procent*."
+   ],
+   "grammars": [
+    {
+     "title": "Menjelaskan cara kerja sesuatu",
+     "body": [
+      "Menjelaskan teknologi kepada orang awam butuh sedikit pola saja. Yang berikut ini dipakai di presentasi, di instruksi, dan di halaman \"tentang kami\" situs perusahaan Polandia."
+     ],
+     "table": {
+      "head": [
+       "Pola",
+       "Fungsi",
+       "Contoh"
+      ],
+      "rows": [
+       [
+        "*X polega na tym, że…*",
+        "inti atau cara kerja",
+        "*Projekt polega na tym, że łączymy dwie bazy danych.*"
+       ],
+       [
+        "*X służy do* + D.",
+        "kegunaan",
+        "*Aplikacja służy do analizy wiadomości.*"
+       ],
+       [
+        "*X pozwala* + inf. / *umożliwia* + B.",
+        "apa yang dimungkinkan",
+        "*System pozwala oszczędzać czas. Umożliwia pracę zdalną.*"
+       ],
+       [
+        "*X to (inaczej) Y*",
+        "definisi",
+        "*Phishing to inaczej wyłudzanie danych.*"
+       ],
+       [
+        "*Chodzi o to, żeby…*",
+        "tujuan",
+        "*Chodzi o to, żeby klient szybciej dostał odpowiedź.*"
+       ],
+       [
+        "*Najpierw… następnie… na końcu…*",
+        "urutan langkah",
+        "*Najpierw system czyta tekst, następnie go klasyfikuje.*"
+       ],
+       [
+        "*Dzięki temu…*",
+        "manfaat",
+        "*Dzięki temu dział obsługi ma mniej pracy.*"
+       ]
+      ]
+     },
+     "after": [
+      "***Służyć do* + D. membutuhkan kata benda**, jadi kata kerjanya diubah menjadi kata benda: *do analizowania* atau *do analizy*, *do skanowania faktur*. Bentuk *-nie* dari unit B1-1 bekerja lagi di sini.",
+      "***Umożliwiać* + B. tetapi *pozwalać* + C. (orang) + inf.** — *System umożliwia pracę zdalną*, tetapi *System pozwala pracownikom pracować zdalnie*.",
+      "**Satu langkah, satu kalimat.** Kalimat Polandia yang terlalu panjang cepat kehilangan pendengar. Pecah prosesnya, lalu hubungkan dengan *najpierw, następnie, potem, na końcu*."
+     ]
+    },
+    {
+     "title": "Anglisisme dan padanan Polandianya",
+     "body": [
+      "Bahasa Polandia menyerap kata Inggris dengan dua cara: ejaannya dipolandiakan (*mejl, lajk, hejt*) atau kata aslinya dibiarkan tetapi diberi akhiran Polandia (*e-maila, laptopa, start-upu*). Untuk hampir semuanya tersedia padanan asli."
+     ],
+     "table": {
+      "head": [
+       "Anglisisme",
+       "Padanan Polandia",
+       "Kapan anglisisme boleh"
+      ],
+      "rows": [
+       [
+        "*mejl, e-mail*",
+        "*wiadomość (e-mail)*",
+        "*e-mail* selalu boleh; *mejl* santai"
+       ],
+       [
+        "*apka*",
+        "*aplikacja*",
+        "obrolan"
+       ],
+       [
+        "*lajkować*",
+        "*polubić*",
+        "obrolan, media sosial"
+       ],
+       [
+        "*deadline*",
+        "*termin*",
+        "rapat internal, santai"
+       ],
+       [
+        "*feedback*",
+        "*informacja zwrotna, opinia*",
+        "kantor, pelatihan"
+       ],
+       [
+        "*call, kol*",
+        "*rozmowa, telekonferencja*",
+        "korpomowa, hindari di depan klien"
+       ],
+       [
+        "*update, apdejt*",
+        "*aktualizacja*",
+        "obrolan programmer"
+       ],
+       [
+        "*hejt*",
+        "*obraźliwe komentarze, mowa nienawiści*",
+        "media, obrolan"
+       ]
+      ]
+     },
+     "after": [
+      "**Kata serapan ikut berdeklinasi.** *Wysłałem e-mail* (baku) tapi dalam obrolan *wysłałem mejla* — benda mati diperlakukan seperti benda hidup, sama seperti *zjeść banana, napisać esemesa*. Dalam tulisan resmi pakai bentuk bakunya.",
+      "Beberapa kata tidak punya padanan yang dipakai orang: *laptop, internet, start-up, smartfon, komputer*. Jangan memaksakan padanan buatan — itu justru terdengar lucu.",
+      "**Aturan praktis:** makin resmi situasinya dan makin tua lawan bicaranya, makin banyak kata Polandia. Dengan rekan programmer, anglisisme adalah tanda keakraban."
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Dialog kedua — Konto zostało zhakowane",
+   "intro": "Malam hari. Ania menelepon Budi dengan panik: ada yang masuk ke akun surelnya.",
+   "lines": [
+    {
+     "speaker": "Ania:",
+     "text": "Budi, ratunku! Moje konto mejlowe zostało wczoraj zhakowane.",
+     "id": "Budi, tolong aku! Akun surelku kemarin diretas.",
+     "literal": "Budi, pertolongan(D.)! saya-punya akun surel-an menjadi-lampau-n kemarin diretas-n."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Spokojnie. Najpierw zmień hasło, a potem włącz weryfikację dwuetapową.",
+     "id": "Tenang. Pertama ganti kata sandi, lalu aktifkan verifikasi dua langkah.",
+     "literal": "tenang. pertama gantilah sandi, dan kemudian nyalakanlah verifikasi dua-tahap-an."
+    },
+    {
+     "speaker": "Ania:",
+     "text": "Weryfikację dwu… co? Mówisz jak informatyk z mojej szkoły.",
+     "id": "Verifikasi dua… apa? Kamu ngomong kayak orang IT di sekolahku.",
+     "literal": "verifikasi dua… apa? kamu-berbicara seperti ahli-informatika dari saya-punya sekolah."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "To proste. Polega na tym, że przy logowaniu potrzebujesz kodu z telefonu.",
+     "id": "Gampang. Intinya, waktu login kamu butuh kode dari ponsel.",
+     "literal": "itu sederhana. ia-bertumpu pada itu, bahwa pada login kamu-butuh kode dari telepon."
+    },
+    {
+     "speaker": "Ania:",
+     "text": "Aha. Czyli bez mojego telefonu nikt się nie zaloguje?",
+     "id": "Oh. Jadi tanpa ponselku nggak ada yang bisa masuk?",
+     "literal": "oh. jadi tanpa saya-punya telepon tak-seorang-pun diri tidak ia-akan-masuk?"
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Dokładnie. A skąd wiesz, że ktoś się włamał?",
+     "id": "Tepat. Omong-omong, dari mana kamu tahu ada yang membobol?",
+     "literal": "persis. dan dari-mana kamu-tahu, bahwa seseorang diri membobol-lampau-lk?"
+    },
+    {
+     "speaker": "Ania:",
+     "text": "Wszyscy znajomi dostali ode mnie dziwną wiadomość z linkiem.",
+     "id": "Semua kenalanku dapat pesan aneh dariku, ada tautannya.",
+     "literal": "semua kenalan-jamak mereka-mendapat-lampau-lk dari saya aneh pesan dengan tautan."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Klasyczny phishing. Po polsku mówi się też „wyłudzanie danych”.",
+     "id": "Phishing klasik. Dalam bahasa Polandia juga disebut \"wyłudzanie danych\".",
+     "literal": "klasik phishing. dalam bahasa-polandia ia-berkata diri juga \"penipuan data\"."
+    },
+    {
+     "speaker": "Ania:",
+     "text": "No proszę. Angielskie słowo jest krótsze, ale polskie przynajmniej każdy zrozumie.",
+     "id": "Nah, kan. Kata Inggrisnya lebih pendek, tapi yang Polandia setidaknya dimengerti semua orang.",
+     "literal": "nah silakan. inggris-an kata adalah lebih-pendek, tetapi polandia-an setidaknya setiap-orang ia-akan-mengerti."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Moja babcia w Dżakarcie nie zrozumiałaby żadnego z nich!",
+     "id": "Nenekku di Jakarta nggak bakal ngerti dua-duanya!",
+     "literal": "saya-punya nenek di Jakarta tidak ia-mengerti-andai-pr tak-satu-pun dari mereka!"
+    }
+   ],
+   "notes": [
+    "**Ratunku!** — \"tolong!\": *ratunek* (pertolongan, penyelamatan) dalam dopełniacz, sama seperti *Pomocy!* Keduanya seruan darurat sungguhan, tetapi di antara teman *ratunku!* sering diucapkan setengah bercanda, seperti oleh Ania di sini.",
+    "**Konto mejlowe, weryfikacja dwuetapowa** — dua contoh akhiran *-owy*, pabrik kata sifat terbesar bahasa Polandia: dari kata benda apa pun bisa dibuat kata sifat \"yang berkaitan dengan\": *mejl → mejlowy, etap → dwuetapowy, internet → internetowy*.",
+    "**Zostało zhakowane** — pasif dengan *zostać* untuk kejadian satu kali. Karena *konto* netral, partisipnya juga netral: *zhakowane*. Kata kerjanya pun hasil serapan: *haker → hakować → zhakować*, lengkap dengan awalan perfektif *z-*.",
+    "**Ktoś się włamał** — *włamać się* (do + D.) = membobol, masuk secara paksa, baik ke rumah maupun ke akun: *włamać się do systemu*. Kata Polandia asli yang dipakai berdampingan dengan *zhakować*.",
+    "**Nie zrozumiałaby żadnego z nich** — kondisional perempuan (*babcia*) dan negasi dengan *żaden* + dopełniacz. *Żadnego z nich* = tak satu pun dari keduanya."
+   ],
+   "grammars": [
+    {
+     "title": "Pabrik kata: lima akhiran untuk kata baru",
+     "body": [
+      "Kata teknologi baru masuk ke bahasa Polandia hampir selalu lewat akhiran yang sama. Kalau kamu kenal akhirannya, kamu bisa menebak jenis kata dan artinya — dan membentuk kata sendiri."
+     ],
+     "table": {
+      "head": [
+       "Akhiran",
+       "Membentuk",
+       "Contoh",
+       "Padanan Inggris"
+      ],
+      "rows": [
+       [
+        "*-owy*",
+        "kata sifat dari kata benda",
+        "*internetowy, mejlowy, komputerowy, testowy*",
+        "internet, e-mail, computer, test"
+       ],
+       [
+        "*-alny*",
+        "kata sifat dari akar Latin",
+        "*wirtualny, funkcjonalny, globalny, optymalny*",
+        "-al"
+       ],
+       [
+        "*-ność / -ość*",
+        "kata benda abstrak dari kata sifat",
+        "*skuteczność, dostępność, wydajność, prywatność*",
+        "-ity, -ness"
+       ],
+       [
+        "*-acja*",
+        "kata benda proses",
+        "*aktualizacja, weryfikacja, integracja, automatyzacja*",
+        "-ation"
+       ],
+       [
+        "*-ować*",
+        "kata kerja dari kata benda atau serapan",
+        "*aktualizować, testować, skanować, hakować*",
+        "to update, test, scan, hack"
+       ]
+      ]
+     },
+     "after": [
+      "***-acja* dan *-ować* berpasangan:** *aktualizacja ↔ aktualizować, integracja ↔ integrować, weryfikacja ↔ weryfikować*. Kalau kamu tahu satu, yang lain hampir pasti ada.",
+      "**Hati-hati dengan *-ność* dari kata sifat *-ny*:** *skuteczny → skuteczność, dostępny → dostępność*. Tapi *bezpieczny → bezpieczeństwo* (akhiran *-stwo*), bukan *bezpieczność*.",
+      "**Aspek untuk kata kerja serapan** dibentuk dengan awalan seperti biasa: *testować / przetestować, instalować / zainstalować, skanować / zeskanować, hakować / zhakować*."
+     ]
+    }
+   ]
+  }
+ ],
+ "sections": [
+  {
+   "title": "Kosakata proyek AI dan TI",
+   "blocks": [
+    {
+     "type": "tabel",
+     "head": [
+      "Polski",
+      "Arti",
+      "Contoh"
+     ],
+     "rows": [
+      [
+       "*sztuczna inteligencja (SI, AI)*",
+       "kecerdasan buatan",
+       "*Rozwiązania oparte na sztucznej inteligencji.*"
+      ],
+      [
+       "*uczenie maszynowe* (n)",
+       "pembelajaran mesin",
+       "*Uczenie maszynowe wymaga dużo danych.*"
+      ],
+      [
+       "*dane treningowe* (lm)",
+       "data latih",
+       "*Dane treningowe przygotował zespół z Dżakarty.*"
+      ],
+      [
+       "*baza danych* (ż)",
+       "basis data",
+       "*Dane klientów są w jednej bazie.*"
+      ],
+      [
+       "*chmura* (ż)",
+       "komputasi awan",
+       "*Aplikacja działa w chmurze.*"
+      ],
+      [
+       "*interfejs* (m)",
+       "antarmuka",
+       "*Interfejs jest prosty i intuicyjny.*"
+      ],
+      [
+       "*użytkownik* (m)",
+       "pengguna",
+       "*Użytkownik loguje się raz dziennie.*"
+      ],
+      [
+       "*błąd, błędu* (m)",
+       "galat, bug",
+       "*Znaleźliśmy błąd w kodzie.*"
+      ],
+      [
+       "*wersja testowa* (ż)",
+       "versi uji coba",
+       "*Wersja testowa jest dostępna od jutra.*"
+      ],
+      [
+       "*bezpieczeństwo danych* (n)",
+       "keamanan data",
+       "*Bezpieczeństwo danych jest priorytetem.*"
+      ],
+      [
+       "*dane osobowe* (lm)",
+       "data pribadi",
+       "*Nie przechowujemy danych osobowych.*"
+      ],
+      [
+       "*RODO* (n)",
+       "GDPR",
+       "*Zgodnie z RODO klient może usunąć swoje dane.*"
+      ]
+     ]
+    },
+    {
+     "type": "p",
+     "text": "*RODO* adalah singkatan Polandia untuk aturan perlindungan data Uni Eropa yang berlaku sejak 2018 (dalam bahasa Inggris dikenal sebagai GDPR). Kata ini masuk ke bahasa sehari-hari: kamu akan melihatnya di formulir dokter, di kantor, bahkan di pendaftaran kursus — biasanya bersama kalimat *wyrażam zgodę na przetwarzanie moich danych osobowych* (saya menyetujui pemrosesan data pribadi saya). Dalam proyek AI, pertanyaan pertama klien Polandia hampir selalu: *Gdzie są przechowywane dane?* — Datanya disimpan di mana? Siapkan jawabannya sebelum rapat."
+    },
+    {
+     "type": "kotak",
+     "title": "Polandia dan dunia teknologi",
+     "items": [
+      "Kraków, Wrocław, dan Warszawa adalah pusat TI dan layanan bisnis yang besar; banyak perusahaan internasional punya pusat pengembangan di sana. Karena itu korpomowa — campuran Polandia dan Inggris — terdengar di setiap trem pagi.",
+      "Industri gim Polandia terkenal di dunia: **CD Projekt** dari Warszawa membuat seri *Wiedźmin* (*The Witcher*), yang berangkat dari novel Andrzej Sapkowski.",
+      "Sejarah kriptografi: pada tahun 1930-an tiga matematikawan Polandia — **Marian Rejewski, Jerzy Różycki, Henryk Zygalski** — memecahkan sandi mesin Jerman Enigma, dan membagikan hasilnya kepada Inggris dan Prancis menjelang perang."
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Korpomowa: bahasa kantor setengah Inggris",
+   "blocks": [
+    {
+     "type": "tabel",
+     "head": [
+      "Korpomowa",
+      "Bahasa Polandia baku",
+      "Arti"
+     ],
+     "rows": [
+      [
+       "*Mam calla o trzeciej.*",
+       "*Mam rozmowę o trzeciej.*",
+       "Saya ada panggilan jam tiga."
+      ],
+      [
+       "*Daj mi feedback.*",
+       "*Przekaż mi swoją opinię.*",
+       "Beri saya masukan."
+      ],
+      [
+       "*Zrób to asap.*",
+       "*Zrób to jak najszybciej.*",
+       "Kerjakan secepatnya."
+      ],
+      [
+       "*Sforwarduj mi tego mejla.*",
+       "*Prześlij mi tę wiadomość.*",
+       "Teruskan surel itu ke saya."
+      ],
+      [
+       "*Musimy się sfokusować na kliencie.*",
+       "*Musimy się skupić na kliencie.*",
+       "Kita harus fokus ke klien."
+      ],
+      [
+       "*Zeskedżulujmy spotkanie.*",
+       "*Zaplanujmy spotkanie.*",
+       "Ayo jadwalkan rapat."
+      ],
+      [
+       "*To jest mój target na ten kwartał.*",
+       "*To mój cel na ten kwartał.*",
+       "Ini target saya kuartal ini."
+      ]
+     ]
+    },
+    {
+     "type": "p",
+     "text": "*Korpomowa* (dari *korporacja* + *mowa*) sering jadi bahan olok-olok di Polandia, termasuk di media sosial dan film komedi. Di dalam kantor ia terdengar wajar dan cepat; di luar kantor — di rumah keluarga, di urząd, di depan klien yang lebih tua — ia terdengar sok atau malas. Perhatikan juga bagaimana kata Inggris itu tetap mengikuti tata bahasa Polandia: *calla* (biernik seperti benda hidup), *sforwarduj* (awalan perfektif + imperatif), *zeskedżulujmy* (ejaan Polandia yang lucu dari *schedule*). Justru karena tata bahasanya Polandia, orang asing yang memakainya terdengar sudah sangat fasih — asal tahu kapan berhenti."
+    },
+    {
+     "type": "kotak",
+     "title": "Siapa yang menjaga bahasa Polandia?",
+     "items": [
+      "Polandia punya undang-undang tentang bahasa Polandia (*ustawa o języku polskim*, 1999) dan lembaga penasihat **Rada Języka Polskiego**. Kamus dan pedoman ejaan yang paling sering dirujuk adalah terbitan PWN.",
+      "Portal kebahasaan PWN (*poradnia językowa*) menjawab pertanyaan pembaca tentang kata-kata baru, misalnya bagaimana mengeja atau mendeklinasikan serapan. Kalau ragu *mejl* atau *e-mail*, di sanalah orang Polandia sendiri mencari jawaban.",
+      "Kata serapan tidak dianggap musuh; yang dikritik adalah serapan yang **tidak perlu**, ketika kata Polandia yang jelas sudah ada."
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Ulangan berjenjang — unit 15",
+   "blocks": [
+    {
+     "type": "p",
+     "text": "Tutup kolom Polandia, baca terjemahan Indonesianya, lalu susun kembali kalimatnya dari ingatan."
+    },
+    {
+     "type": "tabel",
+     "head": [
+      "Bahasa Indonesia",
+      "Polski"
+     ],
+     "rows": [
+      [
+       "Dia tinggal punya dua yang besar. Orang gunung bilang *ino* alih-alih *tylko*.",
+       "*Ma tylko dwa duże. Górale mówią „ino” zamiast „tylko”.*"
+      ],
+      [
+       "Itu *mazurzenie*: orang gunung bilang *cas*, bukan *czas*.",
+       "*To mazurzenie: górale mówią „cas” zamiast „czas”.*"
+      ],
+      [
+       "Dalam bahasa Silesia aku bakal bilang: \"Cakep banget di sini!\"",
+       "*Po śląsku powiedziałabym: „Ale tu je gryfnie!”.*"
+      ],
+      [
+       "Iya ya, di Kraków kami bilang *na polu*, sisa Polandia bilang *na dworze*.",
+       "*No tak, w Krakowie mówimy „na polu”, a reszta Polski „na dworze”.*"
+      ],
+      [
+       "Di Silesia *bułka* itu *żymła*, dan di Poznań *drożdżówka* itu *szneka*.",
+       "*Na Śląsku bułka to żymła, a w Poznaniu drożdżówka to szneka.*"
+      ]
+     ]
+    }
+   ]
+  }
+ ],
+ "vocab": [
+  {
+   "pl": "wdrażać (wdrażam) / wdrożyć (wdrożę)",
+   "baca": "VDRA-zyac / VDRO-zyyc",
+   "id": "menerapkan, meluncurkan"
+  },
+  {
+   "pl": "wdrożenie (n)",
+   "baca": "vdro-ZYE-nye",
+   "id": "penerapan, implementasi"
+  },
+  {
+   "pl": "polegać na (+ Ms.) — ndk",
+   "baca": "po-LE-gac na",
+   "id": "intinya adalah, terdiri atas"
+  },
+  {
+   "pl": "służyć do (+ D.) — ndk",
+   "baca": "SWU-zyyc do",
+   "id": "berguna untuk"
+  },
+  {
+   "pl": "umożliwiać (umożliwiam) / umożliwić (umożliwię)",
+   "baca": "u-mozy-LI-vyac / u-mozy-LI-vic",
+   "id": "memungkinkan (+ B.)"
+  },
+  {
+   "pl": "aplikacja (ż) / apka (ż)",
+   "baca": "ap-li-KA-tsya / AP-ka",
+   "id": "aplikasi"
+  },
+  {
+   "pl": "e-mail, e-maila (m) / mejl (m)",
+   "baca": "I-meyl, i-MEY-la / meyl",
+   "id": "surel"
+  },
+  {
+   "pl": "wiadomość, wiadomości (ż)",
+   "baca": "vya-DO-mosyc, vya-do-MO-syci",
+   "id": "pesan; berita"
+  },
+  {
+   "pl": "reklamacja (ż)",
+   "baca": "rek-la-MA-tsya",
+   "id": "komplain, klaim"
+  },
+  {
+   "pl": "skuteczność (ż)",
+   "baca": "sku-TEC-nosyc",
+   "id": "keefektifan"
+  },
+  {
+   "pl": "rozwiązanie (n)",
+   "baca": "roz-vyon-ZA-nye",
+   "id": "solusi"
+  },
+  {
+   "pl": "aktualizacja (ż)",
+   "baca": "ak-tu-a-li-ZA-tsya",
+   "id": "pembaruan"
+  },
+  {
+   "pl": "uruchamiać (uruchamiam) / uruchomić (uruchomię)",
+   "baca": "u-ru-HA-myac / u-ru-HO-mic",
+   "id": "menjalankan, menyalakan"
+  },
+  {
+   "pl": "termin (m)",
+   "baca": "TER-min",
+   "id": "tenggat; jadwal"
+  },
+  {
+   "pl": "mylić (mylę) / pomylić (pomylę)",
+   "baca": "MY-lic / po-MY-lic",
+   "id": "keliru, tertukar (*coś z czymś*)"
+  },
+  {
+   "pl": "zapożyczenie (n)",
+   "baca": "za-po-zyy-CE-nye",
+   "id": "kata serapan"
+  },
+  {
+   "pl": "konto, konta (n)",
+   "baca": "KON-to, KON-ta",
+   "id": "akun"
+  },
+  {
+   "pl": "hasło, haseł (n)",
+   "baca": "HAS-wo, HA-sew",
+   "id": "kata sandi; slogan"
+  },
+  {
+   "pl": "logować się / zalogować się",
+   "baca": "lo-GO-vac sye / za-lo-GO-vac sye",
+   "id": "masuk (log in)"
+  },
+  {
+   "pl": "hakować (hakuję) / zhakować (zhakuję)",
+   "baca": "ha-KO-vac / sha-KO-vac",
+   "id": "meretas"
+  },
+  {
+   "pl": "włamywać się / włamać się (włamię się) do (+ D.)",
+   "baca": "vwa-MY-vac sye / VWA-mac sye",
+   "id": "membobol"
+  },
+  {
+   "pl": "weryfikacja dwuetapowa (ż)",
+   "baca": "ve-ry-fi-KA-tsya dvu-e-ta-PO-va",
+   "id": "verifikasi dua langkah"
+  },
+  {
+   "pl": "użytkownik (m)",
+   "baca": "u-zyyt-KOV-nik",
+   "id": "pengguna"
+  },
+  {
+   "pl": "dane, danych (lm)",
+   "baca": "DA-ne, DA-nyh",
+   "id": "data"
+  },
+  {
+   "pl": "wyłudzanie danych (n)",
+   "baca": "vy-wu-DZA-nye DA-nyh",
+   "id": "phishing, pengelabuan data"
+  }
+ ],
+ "exercises": [
+  {
+   "prompt": "Terjemahkan ke bahasa Polandia.",
+   "items": [
+    "Minggu lalu kami menerapkan aplikasi baru.",
+    "Intinya, sistem ini menganalisis pesan dari pelanggan.",
+    "Aplikasi ini berguna untuk memindai faktur.",
+    "Seberapa efektif solusi ini?",
+    "Akun surel saya diretas.",
+    "Tenggat kami akhir bulan."
+   ]
+  },
+  {
+   "prompt": "Isi titik-titiknya.",
+   "items": [
+    "Na czym ____ ten projekt? (polegać, kala kini)",
+    "Aplikacja służy do ____ dokumentów. (analiza → dopełniacz)",
+    "Nowa wersja umożliwia ____ w chmurze. (praca → biernik)",
+    "Zamiast „lajkować” lepiej powiedzieć „____”. (padanan Polandia, dk)",
+    "Ta strona ____ jest bardzo wolna. (internet → kata sifat -owy, ż)",
+    "Musimy poprawić ____ systemu. (bezpieczny → kata benda)",
+    "Wczoraj zainstalowaliśmy ____ programu. (aktualizować → kata benda -acja, biernik)"
+   ]
+  },
+  {
+   "prompt": "Ganti korpomowa dengan bahasa Polandia baku, lalu tulis ulang kalimatnya.",
+   "items": [
+    "Mam calla z klientem o trzeciej.",
+    "Daj mi feedback do piątku.",
+    "Deadline jest w poniedziałek.",
+    "Zainstaluj tę apkę.",
+    "Musimy się sfokusować na kliencie.",
+    "Zrób to asap."
+   ]
+  },
+  {
+   "prompt": "Susun jadi kalimat yang benar (tambahkan koma bila perlu).",
+   "items": [
+    "wdrożyliśmy / w / tygodniu / zeszłym / nową / aplikację",
+    "polega / system / na / tym / że / automatycznie / analizuje / mejle / od / klientów",
+    "jest / jaka / skuteczność / tego / rozwiązania",
+    "mejlowe / moje / konto / zostało / wczoraj / zhakowane",
+    "na / polega / tym / że / przy / logowaniu / potrzebujesz / kodu / z / telefonu"
+   ]
+  }
+ ],
+ "answers": [
+  "W zeszłym tygodniu wdrożyliśmy nową aplikację. — System polega na tym, że analizuje wiadomości od klientów. — Ta aplikacja służy do skanowania faktur. — Jaka jest skuteczność tego rozwiązania? — Moje konto mejlowe (e-mailowe) zostało zhakowane. — Termin mamy na koniec miesiąca.",
+  "polega — analizy — pracę — polubić — internetowa — bezpieczeństwo — aktualizację",
+  "Mam rozmowę z klientem o trzeciej. — Przekaż mi swoją opinię (informację zwrotną) do piątku. — Termin mija w poniedziałek. — Zainstaluj tę aplikację. — Musimy się skupić na kliencie. — Zrób to jak najszybciej.",
+  "W zeszłym tygodniu wdrożyliśmy nową aplikację. — System polega na tym, że automatycznie analizuje mejle od klientów. — Jaka jest skuteczność tego rozwiązania? — Moje konto mejlowe zostało wczoraj zhakowane. — Polega na tym, że przy logowaniu potrzebujesz kodu z telefonu."
+ ]
+}
