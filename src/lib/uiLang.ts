@@ -836,6 +836,13 @@ const EN: Record<string, string> = {
   "sejak": "from",
   "hingga": "to",
   "pada": "on",
+  // [sertifikat-edit-nama-v1]
+  "Ubah nama di sertifikat": "Edit the name on the certificate",
+  "Ubah nama": "Edit name",
+  "Tulis nama lengkap persis seperti yang ingin tercetak. Berlaku untuk semua sertifikatmu.": "Type your full name exactly as you want it printed. Applies to all your certificates.",
+  "Pakai nama akun": "Use my account name",
+  "Nama lengkap": "Full name",
+  "Gagal menyimpan. Coba lagi ya.": "Couldn't save. Please try again.",
   "Sertifikat Petualang Cilik": "Little Explorer Certificate",
   "Sertifikat Persiapan Tes": "Test Preparation Certificate",
   "IELTS & TOEFL Prep": "IELTS & TOEFL Prep",

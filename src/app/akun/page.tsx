@@ -1,7 +1,7 @@
 /* linguo-patch:akun-onboarding-gate-v1 — Lewati gating + WaGate profile completion */
 "use client";
 
-import { useState, useEffect, useMemo, useRef, Fragment, type ReactNode } from "react";
+import { useState, useEffect, useMemo, useRef, useCallback, Fragment, type ReactNode } from "react";
 import { useRouter } from "next/navigation"; // [perf:sidebar-nav-v1]
 import Link from "next/link"; // [kelas-detail-page-v1] card kelas → halaman /akun/kelas/[id]
 import { classRoomUrl, isJoinable } from "@/lib/classRoom"; // [kelas-video-siswa-v1]
@@ -2781,6 +2781,20 @@ export default function AkunPage() {
   const router = useRouter(); // [perf:sidebar-nav-v1] navigasi client-side antar route
   const [previewId, setPreviewId] = useState<string | null>(null);
   const previewMode = !!previewId;
+  // [sertifikat-edit-nama-v1] Siswa boleh mengganti nama yang tercetak di sertifikat
+  // (mis. nama lengkap sesuai KTP/paspor, bukan panggilan). Disimpan di metadata akun
+  // login (auth.updateUser) — BUKAN kolom students, karena tabelnya tak punya kolom
+  // untuk itu & schema tak boleh diubah dari repo ini. Ikut lintas perangkat. State
+  // lokal dipakai biar tak perlu setUser (banyak efek bergantung pada `user`).
+  // Mode pratinjau: dimatikan — updateUser di sana menulis ke akun yang sedang login.
+  const [namaSertifikat, setNamaSertifikat] = useState<string | undefined>(undefined);
+  const namaSertifikatAktif = String((namaSertifikat ?? user?.user_metadata?.certificate_name) || "").trim();
+  const simpanNamaSertifikat = useCallback(async (nama: string) => {
+    const v = nama.trim().replace(/\s+/g, " ").slice(0, 80);
+    const { error } = await supabase.auth.updateUser({ data: { certificate_name: v || null } });
+    if (error) throw error;
+    setNamaSertifikat(v);
+  }, []);
   // [bug-report-topbar-siswa-v1] dialog Lapor Bug dari top bar beranda
   /* [preview-idle-session-v1] Sesi pratinjau yang sudah habis dulu TIDAK kelihatan:
      data siswa tetap terpampang dari cache sessionStorage, sementara semua hal yang
@@ -5622,7 +5636,9 @@ export default function AkunPage() {
           {tabShown("sertifikat") && (
             <motion.div key="sertifikat" initial={false} animate={{ opacity: 1 }} className="w-full" style={tabHidden("sertifikat")}>
               <SertifikatTab
-                studentName={displayName}
+                studentName={namaSertifikatAktif || displayName}
+                defaultName={displayName}
+                onSaveName={previewMode ? undefined : simpanNamaSertifikat}
                 certs={certs}
                 onContinue={() => setActiveTab("materi")}
                 onSchedule={() => setActiveTab("jadwal")}

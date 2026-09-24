@@ -384,11 +384,17 @@ function SkillBlock({ ct, accent }: { ct: Cert; accent: string }) {
 
 export default function SertifikatTab({
   studentName,
+  defaultName,
+  onSaveName,
   certs,
   onContinue,
   onSchedule,
 }: {
   studentName: string;
+  /** [sertifikat-edit-nama-v1] nama akun — dipakai tombol "kembalikan" di popup ubah nama. */
+  defaultName?: string;
+  /** Simpan nama sertifikat ("" = kembali ke nama akun). Tak diisi = tombol ubah disembunyikan. */
+  onSaveName?: (name: string) => Promise<void>;
   certs: Cert[];
   onContinue?: () => void;
   onSchedule?: () => void;
@@ -589,7 +595,7 @@ export default function SertifikatTab({
           <div className="flex flex-col gap-6 p-4 sm:p-5 lg:p-6">
             {selected ? (
               selected.status === "issued"
-                ? <IssuedDetail ct={selected} studentName={studentName} />
+                ? <IssuedDetail ct={selected} studentName={studentName} defaultName={defaultName} onSaveName={onSaveName} />
                 : <ProgressDetail ct={selected} onContinue={onContinue} onSchedule={onSchedule} />
             ) : (
               <div className="cert-card rounded-2xl bg-white p-12 text-center">
@@ -620,9 +626,10 @@ function fmtCertDate(iso: string | null | undefined, lang: UiLang): string | nul
   return d.toLocaleDateString(lang === "en" ? "en-GB" : "id-ID", { day: "numeric", month: "short", year: "numeric", timeZone: "Asia/Jakarta" }).replace("Sept", "Sep");
 }
 
-function IssuedDetail({ ct, studentName }: { ct: Cert; studentName: string }) {
+function IssuedDetail({ ct, studentName, defaultName, onSaveName }: { ct: Cert; studentName: string; defaultName?: string; onSaveName?: (name: string) => Promise<void> }) {
   const t = useT(); // [ui-lang-switcher-v1]
   const uiLang = useUiLang();
+  const [editOpen, setEditOpen] = useState(false); // [sertifikat-edit-nama-v1]
   const col = colorOf(ct.language);
   const kind = productKindOf(ct.product);
   const copy = COPY[kind];
@@ -722,17 +729,35 @@ function IssuedDetail({ ct, studentName }: { ct: Cert; studentName: string }) {
               {isKids && <Sparkles className="h-3.5 w-3.5" style={{ color: col.accent }} />}{t(copy.eyebrow)}
             </p>
             <p className="mt-6 text-[12px] font-medium text-[#6B7280]">{t("Diberikan kepada")}</p>
-            <h2 className="mt-1.5 text-[26px] font-extrabold leading-tight tracking-tight text-[#12172B] sm:text-[32px]">{studentName}</h2>
+            {/* [sertifikat-edit-nama-v1] pensil di samping nama — `data-html2canvas-ignore`
+                bikin tombolnya tak ikut terfoto ke PDF. Diposisikan absolute biar namanya
+                tetap persis di tengah. */}
+            <div className="relative mx-auto mt-1.5 w-fit max-w-full">
+              <h2 className="text-[26px] font-extrabold leading-tight tracking-tight text-[#12172B] sm:text-[32px]">{studentName}</h2>
+              {onSaveName && (
+                <button
+                  type="button"
+                  data-html2canvas-ignore="true"
+                  onClick={() => setEditOpen(true)}
+                  title={t("Ubah nama di sertifikat")}
+                  aria-label={t("Ubah nama di sertifikat")}
+                  className="absolute -right-10 top-1/2 flex h-8 w-8 -translate-y-1/2 items-center justify-center rounded-full transition hover:scale-110"
+                  style={{ background: col.bg, color: col.text }}
+                >
+                  <PenLine className="h-4 w-4" />
+                </button>
+              )}
+            </div>
             <div className="mx-auto mt-3 h-[3px] w-14 rounded-full" style={{ background: col.accent }} />
 
             <p className="mx-auto mt-5 max-w-[520px] text-[13.5px] font-medium leading-[1.75] text-[#6B7280]">
               {t(copy.bodyPre)} {ct.language}{copy.bodyPost ? ` ${t(copy.bodyPost)}` : ""}
               {showCefr ? <> — <b style={{ color: ink }}>{t("Level CEFR")} {ct.level}</b></> : ""}
               {ct.title && !isKids ? ` (${t(ct.title)})` : ""} {t("di Linguo")}
-              {hoursTxt ? <>, {t("dengan total")} <b style={{ color: ink }}>{hoursTxt}</b>{sessTxt ? ` (${sessTxt})` : ""}</> : ""}
+              {hoursTxt ? <>, {t("dengan total")} <b className="whitespace-nowrap" style={{ color: ink }}>{hoursTxt}</b>{sessTxt ? ` (${sessTxt})` : ""}</> : ""}
               {from && to && from !== to
-                ? <> {t("sejak")} <b style={{ color: ink }}>{from}</b> {t("hingga")} <b style={{ color: ink }}>{to}</b></>
-                : to ? <> {t("pada")} <b style={{ color: ink }}>{to}</b></> : ""}
+                ? <> {t("sejak")} <b className="whitespace-nowrap" style={{ color: ink }}>{from}</b> {t("hingga")} <b className="whitespace-nowrap" style={{ color: ink }}>{to}</b></>
+                : to ? <> {t("pada")} <b className="whitespace-nowrap" style={{ color: ink }}>{to}</b></> : ""}
               .
             </p>
 
@@ -786,8 +811,15 @@ function IssuedDetail({ ct, studentName }: { ct: Cert; studentName: string }) {
         </button>
         <button onClick={handleShare} className="cert-btn-ghost inline-flex h-12 items-center gap-2 rounded-2xl bg-white px-5 text-[14px] font-bold text-[#12172B] transition hover:bg-slate-50"><Share2 className="h-[18px] w-[18px]" />{t("Bagikan")}</button>
         <button onClick={handleLinkedIn} className="cert-btn-ghost inline-flex h-12 items-center gap-2 rounded-2xl bg-white px-5 text-[14px] font-bold text-[#12172B] transition hover:bg-slate-50"><ExternalLink className="h-[18px] w-[18px]" />{t("Tambah ke LinkedIn")}</button>
+        {onSaveName && (
+          <button onClick={() => setEditOpen(true)} className="cert-btn-ghost inline-flex h-12 items-center gap-2 rounded-2xl bg-white px-5 text-[14px] font-bold text-[#12172B] transition hover:bg-slate-50"><PenLine className="h-[18px] w-[18px]" />{t("Ubah nama")}</button>
+        )}
         <button onClick={() => setVerifyOpen(true)} className="ml-auto inline-flex h-12 items-center gap-2 px-3 text-[13px] font-bold text-[#16796E] hover:underline"><ShieldCheck className="h-[18px] w-[18px]" />{t("Verifikasi keaslian")}</button>
       </div>
+
+      {editOpen && onSaveName && (
+        <EditNamaModal current={studentName} defaultName={defaultName} accent={col.accent} onSave={onSaveName} onClose={() => setEditOpen(false)} />
+      )}
 
       {verifyOpen && (
         <div className="fixed inset-0 z-[120] flex items-center justify-center bg-black/50 p-4 backdrop-blur-sm" onClick={() => setVerifyOpen(false)}>
@@ -815,6 +847,68 @@ function IssuedDetail({ ct, studentName }: { ct: Cert; studentName: string }) {
         </div>
       )}
     </>
+  );
+}
+
+// [sertifikat-edit-nama-v1] Popup ubah nama yang tercetak di sertifikat.
+function EditNamaModal({ current, defaultName, accent, onSave, onClose }: {
+  current: string; defaultName?: string; accent: string;
+  onSave: (name: string) => Promise<void>; onClose: () => void;
+}) {
+  const t = useT();
+  const [val, setVal] = useState(current);
+  const [saving, setSaving] = useState(false);
+  const [err, setErr] = useState("");
+  useEffect(() => {
+    const onKey = (e: KeyboardEvent) => { if (e.key === "Escape") onClose(); };
+    window.addEventListener("keydown", onKey);
+    return () => window.removeEventListener("keydown", onKey);
+  }, [onClose]);
+  const bersih = val.trim().replace(/\s+/g, " ");
+  const valid = bersih.length >= 2 && bersih.length <= 80;
+  const simpan = async (nama: string) => {
+    if (saving) return;
+    setSaving(true); setErr("");
+    try { await onSave(nama); onClose(); }
+    catch (e) { console.error("[Sertifikat] gagal simpan nama:", e); setErr(t("Gagal menyimpan. Coba lagi ya.")); }
+    finally { setSaving(false); }
+  };
+  return (
+    <div className="fixed inset-0 z-[120] flex items-center justify-center bg-black/50 p-4 backdrop-blur-sm" onClick={onClose}>
+      <div className="cert-card w-full max-w-[420px] rounded-[24px] bg-white p-6 shadow-[0_40px_90px_-30px_rgba(18,23,43,.6)]" onClick={(e) => e.stopPropagation()}>
+        <div className="flex items-start justify-between gap-3">
+          <div>
+            <p className="text-[16px] font-extrabold text-[#12172B]">{t("Ubah nama di sertifikat")}</p>
+            <p className="mt-1 text-[12px] font-medium leading-relaxed text-[#6B7280]">{t("Tulis nama lengkap persis seperti yang ingin tercetak. Berlaku untuk semua sertifikatmu.")}</p>
+          </div>
+          <button onClick={onClose} className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-[#F5F6F8] text-[#6B7280] transition hover:bg-[#EAEDF0]" aria-label={t("Tutup")}><X className="h-4 w-4" /></button>
+        </div>
+        <input
+          autoFocus
+          value={val}
+          maxLength={80}
+          onChange={(e) => setVal(e.target.value)}
+          onKeyDown={(e) => { if (e.key === "Enter" && valid) void simpan(bersih); }}
+          className="mt-4 h-12 w-full rounded-xl border border-slate-200 bg-white px-4 text-[15px] font-bold text-[#12172B] outline-none transition focus:border-transparent focus:ring-2"
+          style={{ ["--tw-ring-color" as string]: accent }}
+          placeholder={t("Nama lengkap")}
+        />
+        {err && <p className="mt-2 text-[12px] font-semibold text-red-500">{err}</p>}
+        <div className="mt-5 flex items-center gap-2">
+          {defaultName && current !== defaultName && (
+            <button onClick={() => void simpan("")} disabled={saving} className="text-[12px] font-bold text-[#6B7280] underline-offset-2 hover:underline disabled:opacity-50">{t("Pakai nama akun")}</button>
+          )}
+          <button onClick={onClose} className="cert-btn-ghost ml-auto inline-flex h-10 items-center rounded-xl bg-white px-4 text-[13px] font-bold text-[#12172B] transition hover:bg-slate-50">{t("Batal")}</button>
+          <button
+            onClick={() => void simpan(bersih)}
+            disabled={!valid || saving || bersih === current}
+            className="inline-flex h-10 items-center gap-1.5 rounded-xl bg-[#16796E] px-4 text-[13px] font-extrabold text-white transition hover:bg-[#0F5A52] disabled:cursor-not-allowed disabled:opacity-50"
+          >
+            {saving && <Loader2 className="h-4 w-4 animate-spin" />}{t("Simpan")}
+          </button>
+        </div>
+      </div>
+    </div>
   );
 }
 
