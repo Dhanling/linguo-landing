@@ -8,6 +8,7 @@
 // =============================================================================
 
 import { useEffect, useMemo, useState } from "react";
+import { Hand } from "lucide-react";
 import {
   TRIAL_LANGUAGES,
   TRIAL_DURATIONS,
@@ -86,6 +87,7 @@ type LangRegion =
   | "timur-tengah"
   | "nusantara"
   | "afrika"
+  | "amerika"
   | "lainnya";
 
 const LANG_FEATURED = new Set<string>([
@@ -99,7 +101,9 @@ const LANG_FEATURED = new Set<string>([
   "Spanish",
 ]);
 
-// flag = kode ISO buat flagcdn (w40 png), region = grup chip.
+// flag = kode ISO buat flagcdn (40x30 png), atau path lokal "/flags/…" utk yg tak
+// punya negara (Esperanto, Kurdi), atau "sign" (ikon tangan). region = grup chip.
+// "lainnya" HANYA utk bahasa tanpa negara/benua (Sign Language, Esperanto).
 const LANG_META: Record<string, { flag: string; region: LangRegion }> = {
   // Kategori C (populer inti)
   Arabic: { flag: "sa", region: "timur-tengah" },
@@ -115,7 +119,7 @@ const LANG_META: Record<string, { flag: string; region: LangRegion }> = {
   Italian: { flag: "it", region: "eropa" },
   Spanish: { flag: "es", region: "eropa" },
   Thai: { flag: "th", region: "asia" },
-  "Sign Language": { flag: "un", region: "lainnya" },
+  "Sign Language": { flag: "sign", region: "lainnya" },
   // Kategori A
   Swahili: { flag: "ke", region: "afrika" },
   Greek: { flag: "gr", region: "eropa" },
@@ -126,7 +130,7 @@ const LANG_META: Record<string, { flag: string; region: LangRegion }> = {
   Vietnamese: { flag: "vn", region: "asia" },
   Swedish: { flag: "se", region: "eropa" },
   Urdu: { flag: "pk", region: "asia" },
-  Kurdish: { flag: "un", region: "timur-tengah" },
+  Kurdish: { flag: "/flags/kurdistan.svg", region: "timur-tengah" },
   Hebrew: { flag: "il", region: "timur-tengah" },
   Polish: { flag: "pl", region: "eropa" },
   Portuguese: { flag: "pt", region: "eropa" },
@@ -135,7 +139,7 @@ const LANG_META: Record<string, { flag: string; region: LangRegion }> = {
   "Traditional Chinese": { flag: "tw", region: "asia" },
   Cantonese: { flag: "hk", region: "asia" },
   Hungarian: { flag: "hu", region: "eropa" },
-  Esperanto: { flag: "un", region: "lainnya" },
+  Esperanto: { flag: "/flags/esperanto.svg", region: "lainnya" },
   Farsi: { flag: "ir", region: "timur-tengah" },
   "English British": { flag: "gb", region: "eropa" },
   Romanian: { flag: "ro", region: "eropa" },
@@ -144,8 +148,8 @@ const LANG_META: Record<string, { flag: string; region: LangRegion }> = {
   Uzbek: { flag: "uz", region: "asia" },
   Serbian: { flag: "rs", region: "eropa" },
   Estonian: { flag: "ee", region: "eropa" },
-  Latin: { flag: "un", region: "lainnya" },
-  "Ancient Egyptian": { flag: "eg", region: "lainnya" },
+  Latin: { flag: "va", region: "eropa" },
+  "Ancient Egyptian": { flag: "eg", region: "timur-tengah" },
   Georgian: { flag: "ge", region: "asia" },
   Irish: { flag: "ie", region: "eropa" },
   Bosnian: { flag: "ba", region: "eropa" },
@@ -158,11 +162,35 @@ const LANG_META: Record<string, { flag: string; region: LangRegion }> = {
   Batak: { flag: "id", region: "nusantara" },
   Banjar: { flag: "id", region: "nusantara" },
   Balinese: { flag: "id", region: "nusantara" },
-  Malay: { flag: "my", region: "nusantara" },
+  Malay: { flag: "my", region: "asia" },
   Bugis: { flag: "id", region: "nusantara" },
   // Kategori E
   BIPA: { flag: "id", region: "nusantara" },
+  // Sebelumnya tanpa entri (jatuh ke bendera "un" + tab Lainnya)
+  Acehnese: { flag: "id", region: "nusantara" },
+  Betawi: { flag: "id", region: "nusantara" },
+  Minangkabau: { flag: "id", region: "nusantara" },
+  Amharic: { flag: "et", region: "afrika" },
+  Armenian: { flag: "am", region: "asia" },
+  Burmese: { flag: "mm", region: "asia" },
+  Kazakh: { flag: "kz", region: "asia" },
+  Lao: { flag: "la", region: "asia" },
+  Mongolian: { flag: "mn", region: "asia" },
+  Nepali: { flag: "np", region: "asia" },
+  Basque: { flag: "es", region: "eropa" },
+  Bulgarian: { flag: "bg", region: "eropa" },
+  Croatian: { flag: "hr", region: "eropa" },
+  Icelandic: { flag: "is", region: "eropa" },
+  Ukrainian: { flag: "ua", region: "eropa" },
+  "English - British": { flag: "gb", region: "eropa" },
+  "English - Conversation": { flag: "gb", region: "eropa" },
+  "Egyptian Arabic Dialect": { flag: "eg", region: "timur-tengah" },
+  "Portuguese - Brazilian": { flag: "br", region: "amerika" },
 };
+
+// Tidak ditawarkan di Trial Class (tetap ada di pricelist utk alur lain).
+const TRIAL_HIDDEN_LANGS = new Set<string>(["Punjabi", "Tamil", "Yoruba", "Zulu"]);
+const TRIAL_LANG_OPTIONS = TRIAL_LANGUAGES.filter((l) => !TRIAL_HIDDEN_LANGS.has(l));
 
 const langFlag = (name: string): string => LANG_META[name]?.flag || "un";
 const langRegion = (name: string): LangRegion =>
@@ -176,6 +204,7 @@ const LANG_CHIPS: { key: string; label: string }[] = [
   { key: "timur-tengah", label: "Timur Tengah" },
   { key: "nusantara", label: "Nusantara" },
   { key: "afrika", label: "Afrika" },
+  { key: "amerika", label: "Amerika" },
   { key: "lainnya", label: "Lainnya" },
 ];
 
@@ -288,7 +317,7 @@ export default function TrialWizard({
   // linguo-patch:trial-lang-picker-v1 — daftar bahasa terfilter (search + chip)
   const filteredLangs = useMemo(() => {
     const q = langQuery.trim().toLowerCase();
-    return TRIAL_LANGUAGES.filter((l) => {
+    return TRIAL_LANG_OPTIONS.filter((l) => {
       // Pas search, abaikan kategori. Cocokkan juga lewat nama Indonesia —
       // orang mengetik "mesir kuno", bukan "Ancient Egyptian" (lib/langAlias).
       if (q) return matchesLangQuery(l, q);
@@ -303,7 +332,7 @@ export default function TrialWizard({
     () =>
       LANG_CHIPS.filter((c) => {
         if (c.key === "all" || c.key === "populer") return true;
-        return TRIAL_LANGUAGES.some((l) => langRegion(l) === c.key);
+        return TRIAL_LANG_OPTIONS.some((l) => langRegion(l) === c.key);
       }),
     []
   );
@@ -572,12 +601,19 @@ export default function TrialWizard({
                       : "border-gray-100 text-gray-700 hover:border-teal-300 hover:bg-teal-50/40")
                   }
                 >
-                  <img
-                    src={`https://flagcdn.com/w40/${langFlag(l)}.png`}
-                    alt=""
-                    loading="lazy"
-                    className="h-5 w-5 rounded-full object-cover shrink-0"
-                  />
+                  {/* bendera persegi panjang membulat [trial-lang-flag-v2] */}
+                  {langFlag(l) === "sign" ? (
+                    <span className="h-[18px] w-6 rounded-[4px] bg-teal-50 ring-1 ring-black/10 flex items-center justify-center shrink-0">
+                      <Hand className="h-3 w-3 text-teal-600" />
+                    </span>
+                  ) : (
+                    <img
+                      src={langFlag(l).startsWith("/") ? langFlag(l) : `https://flagcdn.com/40x30/${langFlag(l)}.png`}
+                      alt=""
+                      loading="lazy"
+                      className="h-[18px] w-6 rounded-[4px] object-cover ring-1 ring-black/10 shrink-0"
+                    />
+                  )}
                   <span className="truncate">{l}</span>
                 </button>
               );
