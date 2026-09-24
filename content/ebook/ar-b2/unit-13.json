@@ -1,0 +1,542 @@
+{
+ "title": "Menulis kolom opini — penegasan retoris",
+ "title_target": "مَقَالُ رَأْيٍ",
+ "goal": "Menegaskan pendapat dengan إِنَّ … لَـ dan لَقَدْ, lalu menggugah pembaca dengan pertanyaan retoris أَلَيْسَ …؟، أَلَمْ …؟ dan هَلْ مِنَ الْمَعْقُولِ أَنْ …؟ — sambil menulis kolom opini untuk koran.",
+ "bekal": [
+  "menegaskan klaim dengan إِنَّ … لَـ dan لَقَدْ tanpa terdengar berteriak",
+  "mengubah tuduhan menjadi pertanyaan retoris dan menjawabnya dengan بَلَى",
+  "menyusun kolom opini: pembuka, argumen, bantahan, penutup"
+ ],
+ "dialogs": [
+  {
+   "title": "Dialog — مُسَوَّدَةُ الْمَقَالِ",
+   "intro": "Minggu, 7 Januari 2029. Redaktur halaman budaya sebuah harian Kairo meminta Budi menulis kolom opini tentang sastra Indonesia, paling lambat Selasa. Pagi itu juga balasan Ratna Wulandari tiba: ia setuju umpatan si kakek diperhalus dengan kalimat usulan Budi (unit 12). Kini Laila membaca draf kolom itu.",
+   "lines": [
+    {
+     "speaker": "لَيْلَى:",
+     "text": "قَرَأْتُ مُسَوَّدَتَكَ. اَلْأَفْكَارُ جَيِّدَةٌ، لٰكِنَّ الْأُسْلُوبَ بَارِدٌ كَتَقْرِيرٍ رَسْمِيٍّ.",
+     "id": "Drafmu sudah kubaca. Gagasannya bagus, tapi gayanya dingin seperti laporan resmi.",
+     "literal": "saya-membaca draf-kamu. gagasan-gagasan-itu bagus, tetapi gaya-itu dingin seperti-laporan resmi."
+    },
+    {
+     "speaker": "بُودِي:",
+     "text": "وَمَاذَا يَنْقُصُهُ؟",
+     "id": "Lalu apa yang kurang?",
+     "literal": "dan apa ia-kurang-darinya?"
+    },
+    {
+     "speaker": "لَيْلَى:",
+     "text": "يَنْقُصُهُ صَوْتُكَ. جُمْلَتُكَ الْأُولَى «اَلْأَدَبُ الْإِنْدُونِيسِيُّ مُهِمٌّ» لَا تُقْنِعُ أَحَدًا.",
+     "id": "Yang kurang suaramu. Kalimat pertamamu, \"Sastra Indonesia itu penting\", tidak meyakinkan siapa pun.",
+     "literal": "ia-kurang-darinya suara-kamu. kalimat-kamu yang-pertama \"sastra-itu yang-Indonesia penting\" tidak ia-meyakinkan seseorang."
+    },
+    {
+     "speaker": "بُودِي:",
+     "text": "إِذَنْ أَكْتُبُ: «إِنَّ الْأَدَبَ الْإِنْدُونِيسِيَّ لَكَنْزٌ لَا يَعْرِفُهُ الْقَارِئُ الْعَرَبِيُّ».",
+     "id": "Kalau begitu saya tulis: \"Sastra Indonesia sungguh harta karun yang belum dikenal pembaca Arab.\"",
+     "literal": "kalau-begitu saya-menulis: \"sesungguhnya sastra-itu yang-Indonesia sungguh-harta-karun tidak ia-mengenal-nya pembaca-itu yang-Arab\"."
+    },
+    {
+     "speaker": "لَيْلَى:",
+     "text": "أَحْسَنْتَ! «إِنَّ» وَاللَّامُ مَعًا يُعْطِيَانِ الْجُمْلَةَ وَزْنًا، لٰكِنْ لَا تُكْثِرْ مِنْهُمَا.",
+     "id": "Bagus! Inna dan lam bersama-sama memberi kalimat bobot, tapi jangan terlalu sering.",
+     "literal": "kamu-berbuat-baik! \"inna\" dan lam-itu bersama keduanya-memberi kalimat-itu bobot, tetapi jangan kamu-memperbanyak dari-keduanya."
+    },
+    {
+     "speaker": "بُودِي:",
+     "text": "وَالْفِقْرَةُ الثَّانِيَةُ؟ كَتَبْتُ فِيهَا أَنَّ النُّقَّادَ الْعَرَبَ لَا يَهْتَمُّونَ بِآسِيَا.",
+     "id": "Paragraf kedua? Di situ saya tulis bahwa kritikus Arab tak peduli pada Asia.",
+     "literal": "dan paragraf-itu yang-kedua? saya-menulis di-dalamnya bahwa kritikus-kritikus-itu yang-Arab tidak mereka-peduli dengan-Asia."
+    },
+    {
+     "speaker": "لَيْلَى:",
+     "text": "هٰذَا اتِّهَامٌ. حَوِّلْهُ إِلَى سُؤَالٍ: «أَلَيْسَ غَرِيبًا أَنْ يَعْرِفَ الْقَارِئُ الْعَرَبِيُّ بَارِيسَ أَكْثَرَ مِمَّا يَعْرِفُ جَاكَرْتَا؟»",
+     "id": "Itu tuduhan. Ubah jadi pertanyaan: \"Bukankah aneh bahwa pembaca Arab lebih mengenal Paris daripada Jakarta?\"",
+     "literal": "ini tuduhan. ubahlah-ia ke pertanyaan: \"bukankah aneh bahwa ia-mengenal pembaca-itu yang-Arab Paris lebih-banyak dari-apa ia-mengenal Jakarta?\""
+    },
+    {
+     "speaker": "بُودِي:",
+     "text": "رَائِعٌ! وَالْقَارِئُ يُجِيبُ فِي نَفْسِهِ: «بَلَى، غَرِيبٌ».",
+     "id": "Keren! Dan pembaca menjawab dalam hati: \"Iya, memang aneh.\"",
+     "literal": "hebat! dan pembaca-itu ia-menjawab di diri-nya: \"tentu-saja, aneh\"."
+    },
+    {
+     "speaker": "لَيْلَى:",
+     "text": "بِالضَّبْطِ. وَالْخَاتِمَةُ؟ هَلْ عِنْدَكَ رَقْمٌ عَنِ الرِّوَايَاتِ الْمُتَرْجَمَةِ؟",
+     "id": "Tepat. Lalu penutupnya? Kamu punya angka tentang novel yang sudah diterjemahkan?",
+     "literal": "dengan-tepat. dan penutup-itu? apakah pada-kamu angka tentang novel-novel-itu yang-diterjemahkan?"
+    },
+    {
+     "speaker": "بُودِي:",
+     "text": "لَيْسَ عِنْدِي رَقْمٌ دَقِيقٌ، وَلَنْ أَخْتَرِعَهُ. لَقَدْ تَعَلَّمْتُ الدَّرْسَ مِنْ خَبَرِ التِّلِفِزْيُونِ!",
+     "id": "Saya tidak punya angka yang pasti, dan tak akan mengarangnya. Saya sudah kapok dengan berita televisi itu!",
+     "literal": "tidak-ada pada-saya angka tepat, dan tidak-akan saya-mengarang-nya. sungguh-telah saya-mempelajari pelajaran-itu dari berita televisi-itu!"
+    },
+    {
+     "speaker": "لَيْلَى:",
+     "text": "إِذَنْ، اِخْتِمْ بِسُؤَالٍ: «هَلْ مِنَ الْمَعْقُولِ أَنْ نَعْرِفَ مَسَاجِدَ إِنْدُونِيسِيَا وَلَا نَعْرِفَ رِوَايَاتِهَا؟»",
+     "id": "Kalau begitu, tutup dengan pertanyaan: \"Masuk akalkah kita mengenal masjid-masjid Indonesia, tapi tidak mengenal novel-novelnya?\"",
+     "literal": "kalau-begitu, tutuplah dengan-pertanyaan: \"apakah dari yang-masuk-akal-itu bahwa kita-mengenal masjid-masjid Indonesia dan tidak kita-mengenal novel-novel-nya?\""
+    },
+    {
+     "speaker": "بُودِي:",
+     "text": "هٰذِهِ هِيَ الْخَاتِمَةُ! سَأُرْسِلُ الْمَقَالَ إِلَى الْمُحَرِّرِ قَبْلَ يَوْمِ الثُّلَاثَاءِ.",
+     "id": "Itulah penutupnya! Artikelnya saya kirim ke redaktur sebelum hari Selasa.",
+     "literal": "ini adalah-dia penutup-itu! akan-saya-kirim artikel-itu kepada redaktur-itu sebelum hari Selasa-itu."
+    }
+   ],
+   "notes": [
+    "**Sungguh … sungguh.** Pada إِنَّ الْأَدَبَ … لَكَنْزٌ, lam penegas menempel pada predikat. Penegasan ganda ini cukup diterjemahkan \"sungguh\" — atau tanpa kata apa pun, lewat susunan kalimat Indonesia yang tegas.",
+    "**Tuduhan jadi pertanyaan.** Dengan أَلَيْسَ, pembaca tidak merasa diserang, tetapi digiring menjawab sendiri. Predikat لَيْسَ (غَرِيبًا) tetap manshub walau diletakkan di depan; subjeknya adalah أَنْ يَعْرِفَ …",
+    "**Ya untuk pertanyaan negatif.** Jawaban \"ya, memang begitu\" untuk أَلَيْسَ …؟ atau أَلَمْ …؟ adalah بَلَى. Kata نَعَمْ di sini justru membenarkan penyangkalannya.",
+    "**Fakta harus bersih.** Budi menolak mengarang angka; ia ingat berita televisi yang melebih-lebihkan ucapannya (unit 7). Kolom opini boleh bernada keras, tetapi datanya tidak boleh dikarang."
+   ],
+   "grammars": [
+    {
+     "title": "Alat penegasan retoris",
+     "body": [
+      "Kolom opini meyakinkan lewat dua jalan: menegaskan klaim, atau bertanya sehingga pembaca menyimpulkan sendiri."
+     ],
+     "table": {
+      "head": [
+       "Alat",
+       "Contoh",
+       "Efek"
+      ],
+      "rows": [
+       [
+        "إِنَّ … لَـ",
+        "إِنَّ الْأَدَبَ الْإِنْدُونِيسِيَّ لَكَنْزٌ",
+        "penegasan ganda pada klaim"
+       ],
+       [
+        "لَقَدْ + madhi",
+        "لَقَدْ تَعَلَّمْتُ الدَّرْسَ",
+        "\"sungguh sudah\": menegaskan peristiwa"
+       ],
+       [
+        "أَلَيْسَ …؟",
+        "أَلَيْسَ غَرِيبًا أَنْ …؟",
+        "pembaca menjawab \"iya\""
+       ],
+       [
+        "أَلَمْ …؟",
+        "أَلَمْ أَقُلْ لَكَ؟",
+        "\"bukankah sudah …?\""
+       ],
+       [
+        "هَلْ مِنَ الْمَعْقُولِ أَنْ …؟",
+        "هَلْ مِنَ الْمَعْقُولِ أَنْ نَنْسَى جِيرَانَنَا؟",
+        "pembaca menjawab \"tidak\""
+       ]
+      ]
+     },
+     "after": [
+      "Lam penegas menempel pada predikat, atau pada isim إِنَّ kalau isim itu diletakkan di belakang: إِنَّ فِي الرِّوَايَةِ لَجَمَالًا. Ia tidak pernah menempel pada isim yang langsung mengikuti إِنَّ."
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Dialog kedua — مُكَالَمَةٌ صَبَاحِيَّةٌ",
+   "intro": "Kamis, 11 Januari 2029, hari kolom Budi terbit. Pukul delapan 'Amm Sayyid sudah membeli lima eksemplar koran; pukul sembilan telepon Budi berdering. Di layar: Dr. Samir.",
+   "lines": [
+    {
+     "speaker": "سَمِير:",
+     "text": "صَبَاحَ الْخَيْرِ يَا أُسْتَاذُ بُودِي. لَقَدْ قَرَأْتُ مَقَالَكَ مَرَّتَيْنِ هٰذَا الصَّبَاحَ.",
+     "id": "Selamat pagi, Pak Budi. Kolommu sudah saya baca dua kali pagi ini.",
+     "literal": "pagi kebaikan-itu wahai bapak Budi. sungguh-telah saya-membaca artikel-kamu dua-kali ini pagi-itu."
+    },
+    {
+     "speaker": "بُودِي:",
+     "text": "صَبَاحَ النُّورِ يَا دُكْتُورُ! أَرْجُو أَلَّا تَكُونَ قَدْ وَجَدْتَ خَطَأً فِي الْإِعْرَابِ!",
+     "id": "Selamat pagi, Dok! Semoga Bapak tidak menemukan kesalahan i'raab!",
+     "literal": "pagi cahaya-itu wahai doktor! saya-berharap agar-tidak kamu-menjadi sungguh-telah kamu-menemukan kesalahan di i'raab-itu!"
+    },
+    {
+     "speaker": "سَمِير:",
+     "text": "لَا، كَانَ الْإِعْرَابُ سَلِيمًا. لٰكِنْ أَلَيْسَ فِي الْمَقَالِ أَسْئِلَةٌ كَثِيرَةٌ؟",
+     "id": "Tidak, i'raabnya benar. Tapi bukankah kolom itu terlalu banyak pertanyaan?",
+     "literal": "tidak, adalah i'raab-itu benar. tetapi bukankah di artikel-itu pertanyaan-pertanyaan banyak?"
+    },
+    {
+     "speaker": "بُودِي:",
+     "text": "عَدَدْتُهَا: خَمْسَةُ أَسْئِلَةٍ. هَلْ هٰذَا كَثِيرٌ؟",
+     "id": "Sudah saya hitung: lima pertanyaan. Apa itu terlalu banyak?",
+     "literal": "saya-menghitung-nya: lima pertanyaan-pertanyaan. apakah ini banyak?"
+    },
+    {
+     "speaker": "سَمِير:",
+     "text": "اَلسُّؤَالُ الْبَلَاغِيُّ كَالْمِلْحِ: قَلِيلُهُ يُطَيِّبُ الطَّعَامَ، وَكَثِيرُهُ يُفْسِدُهُ.",
+     "id": "Pertanyaan retoris itu seperti garam: sedikit membuat masakan sedap, kebanyakan malah merusaknya.",
+     "literal": "pertanyaan-itu yang-retoris seperti-garam-itu: sedikit-nya ia-menyedapkan makanan-itu, dan banyak-nya ia-merusak-nya."
+    },
+    {
+     "speaker": "بُودِي:",
+     "text": "أَنْتَ عَلَى حَقٍّ. فِي الْمَقَالِ الْقَادِمِ سَأَكْتَفِي بِسُؤَالَيْنِ.",
+     "id": "Bapak benar. Di kolom berikutnya saya cukupkan dua pertanyaan saja.",
+     "literal": "kamu di-atas kebenaran. di artikel-itu yang-akan-datang akan-saya-mencukupkan-diri dengan-dua-pertanyaan."
+    },
+    {
+     "speaker": "سَمِير:",
+     "text": "وَإِنَّ الْخَاتِمَةَ لَجَمِيلَةٌ حَقًّا. هَلْ مِنَ الْمَعْقُولِ أَلَّا أَعْتَرِفَ بِذٰلِكَ؟",
+     "id": "Dan penutupnya sungguh indah. Masuk akalkah kalau saya tidak mengakuinya?",
+     "literal": "dan sesungguhnya penutup-itu sungguh-indah benar-benar. apakah dari yang-masuk-akal-itu bahwa-tidak saya-mengakui dengan-itu?"
+    },
+    {
+     "speaker": "بُودِي:",
+     "text": "شُكْرًا يَا دُكْتُورُ. لَقَدْ طَلَبَ الْمُحَرِّرُ مَقَالًا ثَانِيًا فِي الشَّهْرِ الْقَادِمِ.",
+     "id": "Terima kasih, Dok. Redakturnya sudah minta kolom kedua bulan depan.",
+     "literal": "terima-kasih wahai doktor. sungguh-telah meminta redaktur-itu artikel kedua di bulan-itu yang-akan-datang."
+    },
+    {
+     "speaker": "سَمِير:",
+     "text": "أَلَمْ أَقُلْ لَكَ مُنْذُ سَنَوَاتٍ إِنَّ قَلَمَكَ سَيَجِدُ طَرِيقَهُ؟",
+     "id": "Bukankah sudah bertahun-tahun lalu saya bilang, penamu akan menemukan jalannya?",
+     "literal": "bukankah-tidak saya-berkata kepada-kamu sejak tahun-tahun bahwa pena-kamu akan-ia-menemukan jalan-nya?"
+    },
+    {
+     "speaker": "بُودِي:",
+     "text": "بَلَى، قُلْتَ ذٰلِكَ، وَلَمْ أُصَدِّقْكَ حِينَهَا!",
+     "id": "Betul, Bapak pernah bilang begitu — dan waktu itu saya tidak percaya!",
+     "literal": "tentu, kamu-berkata itu, dan tidak saya-mempercayai-kamu waktu-itu!"
+    }
+   ],
+   "notes": [
+    "**Selamat pagi dan balasannya.** صَبَاحَ الْخَيْرِ dibalas صَبَاحَ النُّورِ (\"pagi cahaya\"). Pola balasan yang \"menaikkan\" sapaan ini khas Arab: مَسَاءَ الْخَيْرِ dibalas مَسَاءَ النُّورِ.",
+    "**Garam retorika.** Perumpamaan Dr. Samir memakai kata ganti yang menempel pada sifat: قَلِيلُهُ (sedikitnya) dan كَثِيرُهُ (banyaknya), keduanya subjek yang marfu'.",
+    "**Bukankah sudah kukatakan.** أَلَمْ أَقُلْ لَكَ …؟ adalah salah satu pertanyaan retoris yang paling hidup dalam bahasa Arab — di rumah, di kantor, di pidato. Sesudah قَالَ, kalimat kutipan dibuka dengan إِنَّ berkasrah (B1 unit 3).",
+    "**Mengakui.** اِعْتَرَفَ بِـ = mengakui sesuatu. أَلَّا أَعْتَرِفَ adalah أَنْ + لَا, jadi kata kerjanya manshub."
+   ],
+   "grammars": [
+    {
+     "title": "Menjawab pertanyaan negatif: بَلَى atau نَعَمْ",
+     "table": {
+      "head": [
+       "Pertanyaan",
+       "\"Iya, memang begitu\"",
+       "\"Benar, memang tidak\""
+      ],
+      "rows": [
+       [
+        "أَلَيْسَ الْمَقَالُ طَوِيلًا؟",
+        "بَلَى، إِنَّهُ طَوِيلٌ.",
+        "نَعَمْ، لَيْسَ طَوِيلًا."
+       ],
+       [
+        "أَلَمْ أَقُلْ لَكَ ذٰلِكَ؟",
+        "بَلَى، قُلْتَ.",
+        "نَعَمْ، لَمْ تَقُلْ."
+       ],
+       [
+        "أَلَيْسَ غَرِيبًا أَنْ …؟",
+        "بَلَى، غَرِيبٌ.",
+        "نَعَمْ، لَيْسَ غَرِيبًا."
+       ]
+      ]
+     },
+     "after": [
+      "Dalam percakapan modern banyak orang menjawab نَعَمْ untuk keduanya, dan maksudnya ditangkap dari kalimat sesudahnya. Di tulisan dan ujian, bedakan dengan cermat."
+     ]
+    }
+   ]
+  }
+ ],
+ "sections": [
+  {
+   "title": "Anatomi kolom opini",
+   "blocks": [
+    {
+     "type": "tabel",
+     "head": [
+      "Bagian",
+      "Fungsi",
+      "Ungkapan pembuka"
+     ],
+     "rows": [
+      [
+       "اَلْمُقَدِّمَةُ",
+       "pembuka",
+       "لَا يَخْفَى عَلَى أَحَدٍ أَنَّ …"
+      ],
+      [
+       "اَلْحُجَّةُ",
+       "argumen",
+       "وَالدَّلِيلُ عَلَى ذٰلِكَ أَنَّ …"
+      ],
+      [
+       "اَلِاعْتِرَاضُ",
+       "bantahan",
+       "قَدْ يَقُولُ قَائِلٌ: …"
+      ],
+      [
+       "اَلرَّدُّ",
+       "jawaban atas bantahan",
+       "وَالْجَوَابُ أَنَّ …"
+      ],
+      [
+       "اَلْخَاتِمَةُ",
+       "penutup",
+       "وَخُلَاصَةُ الْقَوْلِ أَنَّ …"
+      ]
+     ]
+    },
+    {
+     "type": "p",
+     "text": "Kolom opini disebut مَقَالُ رَأْيٍ; kalau terbit rutin di tempat yang sama, ia disebut عَمُودٌ (\"tiang\"), dan penulisnya كَاتِبُ عَمُودٍ. Ungkapan قَدْ يَقُولُ قَائِلٌ (\"mungkin ada yang berkata\") adalah cara klasik menghadirkan bantahan lalu menjawabnya — pembaca merasa keberatannya didengar."
+    },
+    {
+     "type": "kotak",
+     "title": "Sebelum mengirim kolom",
+     "items": [
+      "**Satu gagasan, satu kolom.** Kalau ringkasan kolommu butuh lebih dari satu kalimat, kolom itu terlalu banyak bicara.",
+      "**Periksa setiap angka.** Opini boleh subjektif; fakta tidak."
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Bahasa dunia koran",
+   "blocks": [
+    {
+     "type": "tabel",
+     "head": [
+      "Arab",
+      "Cara baca",
+      "Arti"
+     ],
+     "rows": [
+      [
+       "رَئِيسُ التَّحْرِيرِ",
+       "ra'iisut-tahriir",
+       "pemimpin redaksi"
+      ],
+      [
+       "اَلصَّفْحَةُ الثَّقَافِيَّةُ",
+       "ash-shafhatuts-tsaqaafiyyah",
+       "halaman budaya"
+      ],
+      [
+       "اَلنُّسْخَةُ الْوَرَقِيَّةُ",
+       "an-nuskhatul-waraqiyyah",
+       "edisi cetak"
+      ],
+      [
+       "حَقُّ الرَّدِّ",
+       "haqqur-radd",
+       "hak jawab"
+      ]
+     ]
+    },
+    {
+     "type": "p",
+     "text": "Koran cetak di Kairo masih dijual di kios pinggir jalan, dan banyak penjaga gedung membacanya di kursi depan pintu — 'Amm Sayyid salah satunya. Namun kolom Budi paling banyak dibaca di versi daring, lewat tautan yang dibagikan teman-teman dan mitra al-Jisr."
+    },
+    {
+     "type": "kotak",
+     "title": "Kalau pembaca membantah",
+     "items": [
+      "**Jawab dengan kolom, bukan dengan komentar.** Kalau bantahan pembaca dimuat, balas singkat dengan ungkapan شُكْرًا لِلْقَارِئِ الْكَرِيمِ عَلَى مُلَاحَظَتِهِ, lalu luruskan faktanya tanpa menyerang orangnya."
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Ulangan berjenjang — unit 11",
+   "blocks": [
+    {
+     "type": "p",
+     "text": "Tutup kolom Arab, baca terjemahan Indonesianya, lalu susun kembali kalimatnya dari ingatan."
+    },
+    {
+     "type": "tabel",
+     "head": [
+      "Bahasa Indonesia",
+      "العربية"
+     ],
+     "rows": [
+      [
+       "Mesin itu gergaji yang cepat, sedangkan terjemahan sastra adalah pertukangan kayu yang halus.",
+       "اَلْآلَةُ مِنْشَارٌ سَرِيعٌ، أَمَّا التَّرْجَمَةُ الْأَدَبِيَّةُ فَنِجَارَةٌ دَقِيقَةٌ."
+      ],
+      [
+       "Saya usul jalan tengah: platformnya kita pakai untuk glosarium dan pemeriksaan nama, bukan untuk menerjemahkan itu sendiri.",
+       "أَقْتَرِحُ حَلًّا وَسَطًا: نَسْتَخْدِمُ الْمِنَصَّةَ لِلْمَسْرَدِ وَلِمُرَاجَعَةِ الْأَسْمَاءِ، لَا لِلتَّرْجَمَةِ نَفْسِهَا."
+      ],
+      [
+       "Dengan syarat keputusan akhir tetap di tangan editor, bukan komputer.",
+       "عَلَى أَنْ يَبْقَى الْقَرَارُ الْأَخِيرُ لِلْمُحَرِّرِ، لَا لِلْحَاسُوبِ."
+      ],
+      [
+       "Almarhum ayah saya dulu tukang kayu, dan sayalah yang membawakan gergaji dan palunya. Sekarang anak saya membawa komputer kecil!",
+       "كَانَ أَبِي رَحِمَهُ اللهُ نَجَّارًا، وَكُنْتُ أَحْمِلُ لَهُ الْمِنْشَارَ وَالْمِطْرَقَةَ. وَالْيَوْمَ يَحْمِلُ ابْنِي حَاسُوبًا صَغِيرًا!"
+      ],
+      [
+       "Jangan khawatir, Pak. Mesin memang menerjemahkan kata-kata, tapi ia tidak paham lelucon Mesir!",
+       "لَا تَخَفْ يَا عَمِّي، فَالْآلَةُ تُتَرْجِمُ الْكَلِمَاتِ، لٰكِنَّهَا لَا تَفْهَمُ النُّكْتَةَ الْمِصْرِيَّةَ!"
+      ]
+     ]
+    }
+   ]
+  }
+ ],
+ "vocab": [
+  {
+   "ar": "مَقَال ج مَقَالَات",
+   "baca": "maqaal j. maqaalaat",
+   "id": "artikel, kolom"
+  },
+  {
+   "ar": "مُسَوَّدَة ج مُسَوَّدَات",
+   "baca": "musawwadah j. musawwadaat",
+   "id": "draf, konsep"
+  },
+  {
+   "ar": "أُسْلُوب ج أَسَالِيب",
+   "baca": "usluub j. asaaliib",
+   "id": "gaya (bahasa)"
+  },
+  {
+   "ar": "نَقَصَ – يَنْقُصُ",
+   "baca": "naqasha – yanqushu",
+   "id": "kurang"
+  },
+  {
+   "ar": "كَنْز ج كُنُوز",
+   "baca": "kanz j. kunuuz",
+   "id": "harta karun"
+  },
+  {
+   "ar": "اِتِّهَام",
+   "baca": "ittihaam",
+   "id": "tuduhan"
+  },
+  {
+   "ar": "فِقْرَة ج فِقْرَات",
+   "baca": "fiqrah j. fiqraat",
+   "id": "paragraf"
+  },
+  {
+   "ar": "خَاتِمَة",
+   "baca": "khaatimah",
+   "id": "penutup, kesimpulan"
+  },
+  {
+   "ar": "اِخْتَرَعَ – يَخْتَرِعُ",
+   "baca": "ikhtara'a – yakhtari'u",
+   "id": "menciptakan; mengarang (fakta)"
+  },
+  {
+   "ar": "مَعْقُول",
+   "baca": "ma'quul",
+   "id": "masuk akal"
+  },
+  {
+   "ar": "بَلَى",
+   "baca": "balaa",
+   "id": "ya (untuk pertanyaan negatif)"
+  },
+  {
+   "ar": "أَقْنَعَ – يُقْنِعُ – إِقْنَاع",
+   "baca": "aqna'a – yuqni'u – iqnaa'",
+   "id": "meyakinkan"
+  },
+  {
+   "ar": "بَلَاغِيّ",
+   "baca": "balaaghiyy",
+   "id": "retoris"
+  },
+  {
+   "ar": "مِلْح",
+   "baca": "milh",
+   "id": "garam"
+  },
+  {
+   "ar": "أَفْسَدَ – يُفْسِدُ",
+   "baca": "afsada – yufsidu",
+   "id": "merusak"
+  },
+  {
+   "ar": "اِعْتَرَفَ – يَعْتَرِفُ",
+   "baca": "i'tarafa – ya'tarifu",
+   "id": "mengakui (dengan بِـ)"
+  },
+  {
+   "ar": "اِكْتَفَى – يَكْتَفِي",
+   "baca": "iktafaa – yaktafii",
+   "id": "mencukupkan diri (dengan بِـ)"
+  },
+  {
+   "ar": "قَلَم ج أَقْلَام",
+   "baca": "qalam j. aqlaam",
+   "id": "pena"
+  },
+  {
+   "ar": "مُحَرِّر ج مُحَرِّرُون",
+   "baca": "muharrir j. muharriruun",
+   "id": "redaktur, editor"
+  },
+  {
+   "ar": "نُسْخَة ج نُسَخ",
+   "baca": "nuskhah j. nusakh",
+   "id": "eksemplar, salinan"
+  },
+  {
+   "ar": "عَمُود ج أَعْمِدَة",
+   "baca": "'amuud j. a'midah",
+   "id": "tiang; kolom tetap di koran"
+  }
+ ],
+ "exercises": [
+  {
+   "prompt": "Terjemahkan ke bahasa Arab.",
+   "items": [
+    "Sastra Indonesia sungguh harta karun. (pakai إِنَّ … لَـ)",
+    "Saya sudah membaca artikelmu dua kali. (pakai لَقَدْ)",
+    "Bukankah kolom ini bagus? (pakai أَلَيْسَ)",
+    "Masuk akalkah kita menulis tanpa membaca?",
+    "Bukankah sudah saya katakan kepadamu?",
+    "Redaktur minta artikel kedua bulan depan."
+   ]
+  },
+  {
+   "prompt": "Isi dengan kata yang tepat, lengkap dengan harakatnya.",
+   "items": [
+    "إِنَّ هٰذِهِ الْفِكْرَةَ ____. (sungguh bagus, dengan lam)",
+    "____ وَصَلَتِ الرِّسَالَةُ أَمْسِ. (sungguh telah)",
+    "____ الْمَقَالُ طَوِيلًا؟ (bukankah)",
+    "____ تَقْرَأْ رِوَايَةً إِنْدُونِيسِيَّةً مِنْ قَبْلُ؟ (bukankah … belum)",
+    "أَلَيْسَ هٰذَا غَرِيبًا؟ ____، إِنَّهُ غَرِيبٌ. (iya, memang)",
+    "هَلْ مِنَ الْمَعْقُولِ ____ نَنْسَى جِيرَانَنَا؟ (bahwa)",
+    "إِنَّ فِي الرِّوَايَةِ ____. (sungguh ada keindahan, dari جَمَال)"
+   ]
+  },
+  {
+   "prompt": "Ubah sesuai petunjuk dalam kurung.",
+   "items": [
+    "اَلْأَدَبُ الْإِنْدُونِيسِيُّ كَنْزٌ. (tegaskan dengan إِنَّ … لَـ)",
+    "قَرَأْتُ الْمَقَالَ. (tegaskan dengan لَقَدْ)",
+    "لَا نَعْرِفُ جِيرَانَنَا، وَهٰذَا غَرِيبٌ. (jadikan pertanyaan dengan أَلَيْسَ غَرِيبًا أَلَّا …)",
+    "لَيْسَ مَعْقُولًا أَنْ نَنْسَى جِيرَانَنَا. (jadikan pertanyaan dengan هَلْ مِنَ الْمَعْقُولِ)",
+    "قُلْتُ لَكَ ذٰلِكَ. (jadikan pertanyaan retoris dengan أَلَمْ)",
+    "اَلْخَاتِمَةُ جَمِيلَةٌ. (tegaskan dengan إِنَّ … لَـ)"
+   ]
+  },
+  {
+   "prompt": "Susun jadi kalimat yang benar.",
+   "items": [
+    "لَكَنْزٌ / الْأَدَبَ / إِنَّ / الْإِنْدُونِيسِيَّ",
+    "الدَّرْسَ / لَقَدْ / تَعَلَّمْتُ",
+    "غَرِيبًا / أَلَيْسَ / ذٰلِكَ",
+    "الْمَعْقُولِ / هَلْ / أَنْ / مِنَ / نَنْسَى / جِيرَانَنَا",
+    "كَالْمِلْحِ / الْبَلَاغِيُّ / السُّؤَالُ"
+   ]
+  }
+ ],
+ "answers": [
+  "إِنَّ الْأَدَبَ الْإِنْدُونِيسِيَّ لَكَنْزٌ. — لَقَدْ قَرَأْتُ مَقَالَكَ مَرَّتَيْنِ. — أَلَيْسَ هٰذَا الْمَقَالُ جَمِيلًا؟ — هَلْ مِنَ الْمَعْقُولِ أَنْ نَكْتُبَ دُونَ أَنْ نَقْرَأَ؟ — أَلَمْ أَقُلْ لَكَ؟ — طَلَبَ الْمُحَرِّرُ مَقَالًا ثَانِيًا فِي الشَّهْرِ الْقَادِمِ.",
+  "لَجَمِيلَةٌ — لَقَدْ — أَلَيْسَ — أَلَمْ — بَلَى — أَنْ — لَجَمَالًا",
+  "إِنَّ الْأَدَبَ الْإِنْدُونِيسِيَّ لَكَنْزٌ. — لَقَدْ قَرَأْتُ الْمَقَالَ. — أَلَيْسَ غَرِيبًا أَلَّا نَعْرِفَ جِيرَانَنَا؟ — هَلْ مِنَ الْمَعْقُولِ أَنْ نَنْسَى جِيرَانَنَا؟ — أَلَمْ أَقُلْ لَكَ ذٰلِكَ؟ — إِنَّ الْخَاتِمَةَ لَجَمِيلَةٌ.",
+  "إِنَّ الْأَدَبَ الْإِنْدُونِيسِيَّ لَكَنْزٌ. — لَقَدْ تَعَلَّمْتُ الدَّرْسَ. — أَلَيْسَ ذٰلِكَ غَرِيبًا؟ — هَلْ مِنَ الْمَعْقُولِ أَنْ نَنْسَى جِيرَانَنَا؟ — اَلسُّؤَالُ الْبَلَاغِيُّ كَالْمِلْحِ."
+ ]
+}

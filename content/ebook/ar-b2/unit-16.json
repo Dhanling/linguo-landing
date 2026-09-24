@@ -1,0 +1,522 @@
+{
+ "title": "Membaca teks gundul — i'raab sebagai alat baca",
+ "title_target": "بَيْنَ يَدَيِ ابْنِ خَلْدُونَ",
+ "goal": "Membaca teks Arab tanpa harakat dengan bantuan pola kata, pasangan huruf jar, dan kedudukan i'raab, lalu memahami kutipan pendek dari Muqaddimah Ibnu Khaldun beserta konteksnya.",
+ "bekal": [
+  "membaca kata tanpa harakat dengan menebak pola dan kedudukannya dalam kalimat",
+  "memilih bacaan yang benar dari satu kerangka huruf yang sama (aktif atau pasif, pelaku atau objek)",
+  "membicarakan teks klasik dan pengarangnya dalam bahasa Arab modern, termasuk mengutip dengan jujur"
+ ],
+ "dialogs": [
+  {
+   "title": "Dialog — طَبْعَةٌ قَدِيمَةٌ بِلَا تَشْكِيلٍ",
+   "intro": "Selasa, 6 Maret 2029, ruang kerja Dr. Samir di fakultas, Giza. Budi sedang menulis kata pengantar buku pertama proyek al-Jisr.",
+   "lines": [
+    {
+     "speaker": "سَمِير:",
+     "text": "أَهْلًا بِالْأُسْتَاذِ بُودِي! سَمِعْتُ أَنَّكَ تَكْتُبُ مُقَدِّمَةً لِأَوَّلِ كِتَابٍ فِي مَشْرُوعِ «الْجِسْرِ».",
+     "id": "Selamat datang, Pak Budi! Saya dengar kamu sedang menulis kata pengantar untuk buku pertama proyek al-Jisr.",
+     "literal": "selamat-datang dengan-bapak-itu Budi! saya-mendengar bahwa-kamu kamu-menulis pengantar untuk-pertama buku di proyek \"jembatan-itu\"."
+    },
+    {
+     "speaker": "بُودِي:",
+     "text": "نَعَمْ يَا دُكْتُورُ، وَأُرِيدُ أَنْ أَفْتَتِحَهَا بِكَلِمَةٍ لِابْنِ خَلْدُونَ.",
+     "id": "Betul, Pak, dan saya ingin membukanya dengan perkataan Ibnu Khaldun.",
+     "literal": "ya wahai doktor, dan saya-ingin untuk saya-membuka-nya dengan-perkataan milik-Ibnu Khaldun."
+    },
+    {
+     "speaker": "سَمِير:",
+     "text": "فِكْرَةٌ جَمِيلَةٌ، بِشَرْطِ أَنْ تَقْرَأَ الْكَلَامَ فِي أَصْلِهِ. خُذْ هٰذِهِ الطَّبْعَةَ الْقَدِيمَةَ؛ لَيْسَ فِيهَا تَشْكِيلٌ إِلَّا نَادِرًا.",
+     "id": "Ide bagus, asal kamu membacanya di teks aslinya. Ambil edisi lama ini; hampir tak ada harakatnya.",
+     "literal": "ide bagus, dengan-syarat bahwa kamu-membaca perkataan-itu di asli-nya. ambillah ini cetakan-itu yang-lama; tidak-ada di-dalamnya harakat kecuali jarang."
+    },
+    {
+     "speaker": "بُودِي:",
+     "text": "«وَيُعَبِّرُ الْحُكَمَاءُ عَنْ هٰذَا بِقَوْلِهِمْ: الْإِنْسَانُ مَدَنِيٌّ بِالطَّبْعِ». أَرْجُو أَنْ أَكُونَ قَرَأْتُهَا صَحِيحَةً.",
+     "id": "\"Para bijak mengungkapkan hal ini dengan perkataan mereka: manusia menurut tabiatnya makhluk bermasyarakat.\" Semoga bacaan saya benar.",
+     "literal": "\"dan ia-mengungkapkan orang-orang-bijak-itu tentang ini dengan-perkataan-mereka: manusia-itu bermasyarakat dengan-tabiat-itu\". saya-berharap bahwa saya-adalah saya-membaca-nya benar."
+    },
+    {
+     "speaker": "سَمِير:",
+     "text": "أَحْسَنْتَ. لٰكِنْ كَيْفَ عَرَفْتَ أَنَّهَا «يُعَبِّرُ» بِالتَّشْدِيدِ، لَا «يَعْبُرُ»؟",
+     "id": "Bagus. Tapi bagaimana kamu tahu bacaannya *yu'abbiru* dengan syaddah, bukan *ya'buru*?",
+     "literal": "kamu-berbuat-baik. tetapi bagaimana kamu-tahu bahwa-dia \"ia-mengungkapkan\" dengan-syaddah-itu, bukan \"ia-menyeberang\"?"
+    },
+    {
+     "speaker": "بُودِي:",
+     "text": "مِنَ الْحَرْفِ الَّذِي بَعْدَهَا. نَقُولُ «عَبَّرَ عَنْ شَيْءٍ»، أَمَّا «عَبَرَ» فَيَأْخُذُ مَفْعُولًا مُبَاشِرًا: عَبَرَ النَّهْرَ.",
+     "id": "Dari huruf sesudahnya. Kita bilang *'abbara 'an syai'* (mengungkapkan sesuatu), sedangkan *'abara* langsung mengambil objek: *'abaran-nahr*, menyeberangi sungai.",
+     "literal": "dari huruf-itu yang sesudah-nya. kita-berkata \"ia-mengungkapkan tentang sesuatu\", adapun \"ia-menyeberang\" maka-ia-mengambil objek langsung: ia-menyeberang sungai-itu."
+    },
+    {
+     "speaker": "سَمِير:",
+     "text": "هٰذَا هُوَ السِّرُّ. اَلْقَارِئُ الْجَيِّدُ لَا يَقْرَأُ الْكَلِمَةَ وَحْدَهَا، بَلْ يَقْرَؤُهَا فِي جُمْلَتِهَا.",
+     "id": "Itulah rahasianya. Pembaca yang baik tidak membaca kata sendirian, tetapi di dalam kalimatnya.",
+     "literal": "ini adalah-dia rahasia-itu. pembaca-itu yang-baik tidak ia-membaca kata-itu sendiri-nya, melainkan ia-membaca-nya di kalimat-nya."
+    },
+    {
+     "speaker": "بُودِي:",
+     "text": "وَهُنَاكَ مُشْكِلَةٌ أُخْرَى: «بِالطَّبْعِ» فِي جَرَائِدِ الْيَوْمِ مَعْنَاهَا «طَبْعًا»، أَيْ بِلَا شَكٍّ.",
+     "id": "Ada satu masalah lagi: di koran sekarang *bith-thab'* artinya \"tentu saja\", tanpa ragu.",
+     "literal": "dan ada masalah lain: \"dengan-tabiat-itu\" di koran-koran hari-ini arti-nya \"tentu\", yaitu tanpa keraguan."
+    },
+    {
+     "speaker": "سَمِير:",
+     "text": "وَهُنَا الْفَخُّ! اَلْكَلِمَةُ الْقَدِيمَةُ قَدْ تَلْبَسُ ثَوْبًا جَدِيدًا. أَمَّا عِنْدَ ابْنِ خَلْدُونَ فَمَعْنَاهَا «بِالْفِطْرَةِ».",
+     "id": "Di situlah jebakannya! Kata lama kadang memakai baju baru. Pada Ibnu Khaldun, artinya \"menurut fitrahnya\".",
+     "literal": "dan di-sini jebakan-itu! kata-itu yang-lama kadang ia-memakai baju baru. adapun menurut Ibnu Khaldun maka-arti-nya \"dengan-fitrah-itu\"."
+    },
+    {
+     "speaker": "بُودِي:",
+     "text": "وَمَتَى كَتَبَ ابْنُ خَلْدُونَ هٰذَا الْكَلَامَ؟",
+     "id": "Kapan Ibnu Khaldun menulis kalimat ini?",
+     "literal": "dan kapan ia-menulis Ibnu Khaldun ini perkataan-itu?"
+    },
+    {
+     "speaker": "سَمِير:",
+     "text": "سَنَةَ 1377، فِي قَلْعَةٍ صَغِيرَةٍ فِي غَرْبِ الْجَزَائِرِ الْيَوْمَ. ثُمَّ جَاءَ إِلَى الْقَاهِرَةِ، وَتُوُفِّيَ فِيهَا.",
+     "id": "Tahun 1377, di sebuah benteng kecil di wilayah yang kini Aljazair barat. Kemudian ia datang ke Kairo, dan wafat di sini.",
+     "literal": "tahun 1377, di benteng kecil di barat Aljazair-itu hari-ini. kemudian ia-datang ke Kairo-itu, dan ia-diwafatkan di-dalamnya."
+    },
+    {
+     "speaker": "بُودِي:",
+     "text": "فَمِصْرُ إِذَنْ بَيْتُهُ الْأَخِيرُ. سَأَقْرَأُ الْفَصْلَ كُلَّهُ، بِلَا تَشْكِيلٍ!",
+     "id": "Jadi Mesir rumah terakhirnya. Saya akan membaca seluruh bab itu, tanpa harakat!",
+     "literal": "maka-Mesir kalau-begitu rumah-nya yang-terakhir. akan-saya-membaca bab-itu seluruh-nya, tanpa harakat!"
+    }
+   ],
+   "notes": [
+    "**Kata kerja di depan tetap tunggal.** يُعَبِّرُ tunggal walaupun pelakunya jamak (الْحُكَمَاءُ). Saat membaca gundul, kata kerja di depan tidak memberi tahu jumlah pelaku — carilah pelakunya sesudah kata kerja.",
+    "**Satu huruf jar mengubah segalanya.** Dengan عَنْ, kerangka yang sama hampir pasti dibaca عَبَّرَ (mengungkapkan); dengan objek langsung, ia dibaca عَبَرَ (menyeberang). Hafalkan kata kerja bersama huruf jarnya.",
+    "**Kata lama, baju baru.** Di koran modern بِالطَّبْعِ berarti \"tentu saja\"; di Muqaddimah (abad ke-14) artinya \"menurut tabiat\". Teks klasik dibaca dengan kamus zamannya.",
+    "**Wafat hampir selalu pasif.** Orang Arab lazim menulis تُوُفِّيَ (\"diwafatkan\"), karena yang mewafatkan adalah Allah. Perhatikan dhammah pada ت dan و."
+   ],
+   "grammars": [
+    {
+     "title": "Tiga pertanyaan untuk kata tanpa harakat",
+     "body": [
+      "Tanpa harakat, kata hanyalah kerangka konsonan. Pembaca yang lancar mengajukan tiga pertanyaan ini hampir tanpa sadar."
+     ],
+     "table": {
+      "head": [
+       "Pertanyaan",
+       "Yang dicari",
+       "Contoh dari dialog"
+      ],
+      "rows": [
+       [
+        "Pola apa?",
+        "wazan kata kerja atau kata benda",
+        "يُعَبِّرُ mengikuti pola يُفَعِّلُ (wazan II)"
+       ],
+       [
+        "Kedudukan apa?",
+        "pelaku, objek, sesudah huruf jar, mudhaf ilaih",
+        "الْحُكَمَاءُ pelaku, jadi berdhammah"
+       ],
+       [
+        "Ditemani apa?",
+        "huruf jar atau objek yang biasa menyertai kata itu",
+        "عَبَّرَ عَنْ berbeda dari عَبَرَ النَّهْرَ"
+       ]
+      ]
+     },
+     "after": [
+      "Urutannya: makna kasar kalimat, lalu kedudukan tiap kata, baru harakat ujung. Yang pernah mengaji kitab kuning di pesantren sudah akrab dengan cara ini: i'raab dipakai untuk membaca, bukan hanya untuk dianalisis."
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Dialog kedua — عَنَاوِينُ الصُّحُفِ",
+   "intro": "Rabu, 7 Maret 2029, di Dar al-Jisr. Laila menyodorkan koran pagi kepada Budi.",
+   "lines": [
+    {
+     "speaker": "لَيْلَى:",
+     "text": "أَعْطَاكَ الدُّكْتُورُ سَمِيرٌ وَاجِبًا؟ تَعَالَ نَتَدَرَّبْ: اِقْرَأْ هٰذَا الْعُنْوَانَ بِصَوْتٍ عَالٍ.",
+     "id": "Dr. Samir memberimu PR? Ayo berlatih: baca judul berita ini keras-keras.",
+     "literal": "ia-memberi-kamu doktor-itu Samir tugas? kemarilah kita-berlatih: bacalah ini judul-itu dengan-suara keras."
+    },
+    {
+     "speaker": "بُودِي:",
+     "text": "«عُقِدَ فِي الرِّبَاطِ مُؤْتَمَرٌ لِلْمُتَرْجِمِينَ الْعَرَبِ».",
+     "id": "\"Konferensi penerjemah Arab diadakan di Rabat.\"",
+     "literal": "\"diadakan di Rabat-itu konferensi untuk-para-penerjemah-itu yang-Arab-itu\"."
+    },
+    {
+     "speaker": "لَيْلَى:",
+     "text": "وَلِمَاذَا قَرَأْتَهَا «عُقِدَ» لَا «عَقَدَ»؟",
+     "id": "Kenapa kamu membacanya *'uqida*, bukan *'aqada*?",
+     "literal": "dan kenapa kamu-membaca-nya \"diadakan\" bukan \"ia-mengadakan\"?"
+    },
+    {
+     "speaker": "بُودِي:",
+     "text": "لِأَنَّهُ لَا يُوجَدُ فِي الْجُمْلَةِ مَنْ عَقَدَهُ. فَالْمُؤْتَمَرُ نَائِبُ الْفَاعِلِ، وَلِذٰلِكَ هُوَ مَرْفُوعٌ.",
+     "id": "Karena di kalimat itu tak ada yang mengadakannya. Jadi konferensinya naib al-fa'il, dan karena itu marfu'.",
+     "literal": "karena-dia tidak ditemukan di kalimat-itu siapa ia-mengadakan-nya. maka-konferensi-itu pengganti pelaku-itu, dan-karena-itu dia marfu'."
+    },
+    {
+     "speaker": "لَيْلَى:",
+     "text": "مُمْتَازٌ. وَهٰذَا؟ «يُتَوَقَّعُ أَنْ يَصِلَ عَدَدُ الْمُشَارِكِينَ إِلَى مِئَتَيْنِ».",
+     "id": "Bagus. Kalau ini? \"Jumlah peserta diperkirakan mencapai dua ratus.\"",
+     "literal": "istimewa. dan ini? \"diperkirakan bahwa ia-sampai jumlah para-peserta-itu ke dua-ratus\"."
+    },
+    {
+     "speaker": "بُودِي:",
+     "text": "«يُتَوَقَّعُ» بِالضَّمِّ، لِأَنَّ الْكَاتِبَ لَا يَذْكُرُ مَنْ يَتَوَقَّعُ. وَ«عَدَدُ» فَاعِلُ «يَصِلَ».",
+     "id": "*Yutawaqqa'* dengan dhammah, karena penulis tidak menyebut siapa yang memperkirakan. Dan *'adadu* adalah pelaku *yashila*.",
+     "literal": "\"diperkirakan\" dengan-dhammah-itu, karena penulis-itu tidak ia-menyebut siapa ia-memperkirakan. dan \"jumlah\" pelaku \"ia-sampai\"."
+    },
+    {
+     "speaker": "لَيْلَى:",
+     "text": "وَ«الْمُشَارِكِينَ»: بِكَسْرِ الرَّاءِ أَمْ بِفَتْحِهَا؟",
+     "id": "Lalu *al-musyaarikiin*: ra-nya kasrah atau fathah?",
+     "literal": "dan \"para-peserta-itu\": dengan-kasrah ra-itu atau dengan-fathah-nya?"
+    },
+    {
+     "speaker": "بُودِي:",
+     "text": "بِالْكَسْرِ، فَهُمُ الَّذِينَ يُشَارِكُونَ، كَمَا أَنَّ الْمُتَرْجِمَ هُوَ الَّذِي يُتَرْجِمُ.",
+     "id": "Kasrah, karena merekalah yang ikut serta, sama seperti *mutarjim* adalah orang yang menerjemahkan.",
+     "literal": "dengan-kasrah-itu, maka-mereka yang mereka-ikut-serta, sebagaimana bahwa penerjemah-itu dia yang ia-menerjemahkan."
+    },
+    {
+     "speaker": "لَيْلَى:",
+     "text": "مَا شَاءَ اللهُ! كُنْتَ تَطْلُبُ مِنِّي تَشْكِيلَ كُلِّ سَطْرٍ.",
+     "id": "Masya Allah! Dulu kamu minta saya memberi harakat setiap baris.",
+     "literal": "apa menghendaki Allah! kamu-adalah kamu-meminta dari-saya pemberian-harakat setiap baris."
+    },
+    {
+     "speaker": "بُودِي:",
+     "text": "وَالْآنَ أُشَكِّلُ لِنَفْسِي… وَلٰكِنْ فِي رَأْسِي فَقَطْ!",
+     "id": "Sekarang saya memberi harakat sendiri… tapi hanya di dalam kepala!",
+     "literal": "dan sekarang saya-memberi-harakat untuk-diri-saya… tetapi di kepala-saya saja!"
+    }
+   ],
+   "notes": [
+    "**Judul berita suka pasif.** Pelakunya tak penting atau tak diketahui. Tanpa harakat, pasif ketahuan dari kalimatnya: tak ada pelaku, maka kata benda marfu' sesudah kata kerja adalah naib al-fa'il.",
+    "**Rumus berita.** يُتَوَقَّعُ أَنْ (\"diperkirakan akan\") bersaudara dengan مِنَ الْمُتَوَقَّعِ أَنْ dari B1 unit 15; keduanya diikuti mudhari' manshub.",
+    "**Isim fa'il atau isim maf'ul?** Pada wazan II–X, satu harakat membedakan pelaku (kasrah) dari yang dikenai (fathah). Pasangan terpenting bagi penerjemah: مُتَرْجِمٌ (penerjemah) dan مُتَرْجَمٌ (diterjemahkan).",
+    "**Memberi harakat.** Kata kerjanya شَكَّلَ dengan mudhari' يُشَكِّلُ (wazan II), dan masdarnya تَشْكِيلٌ. Akar yang sama berarti \"membentuk\": تَشْكِيلُ الْحُكُومَةِ adalah pembentukan kabinet."
+   ],
+   "grammars": [
+    {
+     "title": "Satu kerangka, beberapa bacaan",
+     "body": [
+      "Kolom pertama sengaja tanpa harakat, seperti di koran. Kolom terakhir adalah petunjuk dari kalimat yang menentukan bacaannya."
+     ],
+     "table": {
+      "head": [
+       "Kerangka",
+       "Bacaan",
+       "Arti",
+       "Petunjuk di kalimat"
+      ],
+      "rows": [
+       [
+        "عقد",
+        "عُقِدَ",
+        "diadakan",
+        "tak ada pelaku; kata benda sesudahnya marfu'"
+       ],
+       [
+        "مترجم",
+        "مُتَرْجِمٌ",
+        "penerjemah",
+        "menunjuk orang: مُتَرْجِمُ الرِّوَايَةِ"
+       ],
+       [
+        "مترجم",
+        "مُتَرْجَمٌ",
+        "terjemahan, yang diterjemahkan",
+        "menyifati benda: كِتَابٌ مُتَرْجَمٌ"
+       ]
+      ]
+     },
+     "after": [
+      "Koran modern hanya memasang harakat di tempat rawan, misalnya dhammah pasif. Harakat sisa itu pesan penulis: \"di sini kamu bisa keliru\"."
+     ]
+    }
+   ]
+  }
+ ],
+ "sections": [
+  {
+   "title": "Ibnu Khaldun: dari Tunis sampai Kairo",
+   "blocks": [
+    {
+     "type": "tabel",
+     "head": [
+      "Tahun (M)",
+      "Tempat",
+      "Peristiwa"
+     ],
+     "rows": [
+      [
+       "1332",
+       "تُونُسُ",
+       "lahir dalam keluarga keturunan Andalusia yang terpandang"
+      ],
+      [
+       "1354–1362",
+       "فَاسُ",
+       "bekerja di istana Bani Marin; sempat dipenjara"
+      ],
+      [
+       "1375–1378",
+       "قَلْعَةُ ابْنِ سَلَامَةَ",
+       "mengasingkan diri; draf pertama Muqaddimah selesai pada 1377"
+      ],
+      [
+       "1406",
+       "اَلْقَاهِرَةُ",
+       "wafat di Kairo, sesudah lebih dari dua puluh tahun di Mesir"
+      ]
+     ]
+    },
+    {
+     "type": "p",
+     "text": "Muqaddimah sebenarnya pengantar untuk kitab sejarah Ibnu Khaldun yang jauh lebih tebal, كِتَابُ الْعِبَرِ. Di dalamnya ia membahas الْعُمْرَانُ (peradaban manusia) dan mengapa dinasti lahir, menguat, lalu runtuh. Ia pernah tinggal di Fes, kota Laila, dan wafat di Kairo, kota tempat Budi kini tinggal."
+    },
+    {
+     "type": "kotak",
+     "title": "Mengutip teks klasik dengan jujur",
+     "items": [
+      "**Perhatikan siapa yang berbicara.** Ungkapan \"manusia makhluk bermasyarakat\" bukan klaim Ibnu Khaldun sendiri; ia menyebutnya perkataan الْحُكَمَاءُ, para filsuf pewaris Aristoteles. Kutip dari kitabnya, bukan dari internet."
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Latihan membaca: satu paragraf gundul",
+   "blocks": [
+    {
+     "type": "p",
+     "text": "Inilah satu-satunya paragraf gundul di buku ini, ditulis seperti koran Arab umumnya. Baca dua kali — untuk makna, lalu untuk i'raab — lalu kerjakan latihan \"beri harakat\"."
+    },
+    {
+     "type": "passage",
+     "title": "Ibnu Khaldun dalam enam kalimat",
+     "paragraphs": [
+      "ولد ابن خلدون في تونس سنة 1332، ونشأ في أسرة اشتهرت بالعلم. وعمل في شبابه كاتبا وسفيرا لعدد من الحكام. ثم اعتزل السياسة، وكتب المقدمة في قلعة بعيدة. وفي سنة 1382 رحل إلى مصر، فدرس فيها وتولى القضاء. ويعد كتابه من أهم ما كتب عن المجتمع البشري. وقد توفي في القاهرة سنة 1406، وما زال الناس يقرؤونه."
+     ]
+    },
+    {
+     "type": "tabel",
+     "head": [
+      "Kalimat",
+      "Pertanyaan yang perlu kamu jawab"
+     ],
+     "rows": [
+      [
+       "4",
+       "Kata kerja sesudah huruf fa: belajar atau mengajar?"
+      ],
+      [
+       "5",
+       "Dua kata kerja pasif bersembunyi di sini."
+      ]
+     ]
+    },
+    {
+     "type": "kotak",
+     "title": "Cara berlatih membaca gundul",
+     "items": [
+      "**Satu berita sehari, keras-keras.** Situs berita Arab tak berharakat. Rekam bacaanmu lalu dengarkan sambil melihat teks: kesalahan i'raab lebih mudah terdengar daripada terlihat."
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Ulangan berjenjang — unit 14",
+   "blocks": [
+    {
+     "type": "p",
+     "text": "Tutup kolom Arab, baca terjemahan Indonesianya, lalu susun kembali kalimatnya dari ingatan."
+    },
+    {
+     "type": "tabel",
+     "head": [
+      "Bahasa Indonesia",
+      "العربية"
+     ],
+     "rows": [
+      [
+       "Katanya lorong ini terbelah oleh gerakan bumi, lalu dipahat air selama ribuan tahun.",
+       "يُقَالُ إِنَّهُ شُقَّ بِفِعْلِ حَرَكَةِ الْأَرْضِ، ثُمَّ نَحَتَتْهُ الْمِيَاهُ عَبْرَ آلَافِ السِّنِينَ."
+      ],
+      [
+       "Tidak, tidak dibangun, tapi dipahat langsung di tebing batunya. Tunggu… sekarang lihat!",
+       "لَا، لَمْ تُبْنَ، بَلْ نُحِتَتْ فِي الصَّخْرِ نَفْسِهِ. اِنْتَظِرْ… اُنْظُرِ الْآنَ!"
+      ],
+      [
+       "Tinggi fasadnya sekitar empat puluh meter, dan diyakini dulu ia makam salah seorang raja Nabath.",
+       "اِرْتِفَاعُ وَاجِهَتِهَا نَحْوُ أَرْبَعِينَ مِتْرًا، وَيُعْتَقَدُ أَنَّهَا كَانَتْ مَدْفَنًا لِأَحَدِ مُلُوكِ الْأَنْبَاطِ."
+      ],
+      [
+       "Ini jameed: yoghurt kering yang dicairkan dengan air, lalu dipakai memasak daging domba, dan semuanya disajikan di atas roti syrak.",
+       "هٰذَا الْجَمِيدُ: لَبَنٌ مُجَفَّفٌ يُذَابُ فِي الْمَاءِ، ثُمَّ يُطْبَخُ فِيهِ لَحْمُ الْخَرُوفِ، وَيُقَدَّمُ كُلُّ شَيْءٍ عَلَى خُبْزِ الشِّرَاكِ."
+      ],
+      [
+       "Mansaf biasanya dimakan dengan tangan kanan, Nak, tapi ambil sendok kalau kamu mau.",
+       "وَالْمَنْسَفُ يُؤْكَلُ بِالْيَدِ الْيُمْنَى عَادَةً يَا ابْنِي، لٰكِنْ خُذْ مِلْعَقَةً إِنْ شِئْتَ."
+      ]
+     ]
+    }
+   ]
+  }
+ ],
+ "vocab": [
+  {
+   "ar": "نَصّ ج نُصُوص",
+   "baca": "nashsh j. nushuush",
+   "id": "teks"
+  },
+  {
+   "ar": "تَشْكِيل",
+   "baca": "tasykiil",
+   "id": "pemberian harakat"
+  },
+  {
+   "ar": "شَكَّلَ – يُشَكِّلُ",
+   "baca": "syakkala – yusyakkilu",
+   "id": "memberi harakat; membentuk"
+  },
+  {
+   "ar": "طَبْعَة",
+   "baca": "thab'ah",
+   "id": "edisi, cetakan"
+  },
+  {
+   "ar": "مُقَدِّمَة",
+   "baca": "muqaddimah",
+   "id": "pengantar; (kitab) Muqaddimah"
+  },
+  {
+   "ar": "اِفْتَتَحَ – يَفْتَتِحُ",
+   "baca": "iftataha – yaftatihu",
+   "id": "membuka (tulisan, acara)"
+  },
+  {
+   "ar": "اِقْتِبَاس",
+   "baca": "iqtibaas",
+   "id": "kutipan"
+  },
+  {
+   "ar": "عَبَّرَ – يُعَبِّرُ عَنْ",
+   "baca": "'abbara – yu'abbiru 'an",
+   "id": "mengungkapkan"
+  },
+  {
+   "ar": "عَبَرَ – يَعْبُرُ",
+   "baca": "'abara – ya'buru",
+   "id": "menyeberang(i)"
+  },
+  {
+   "ar": "حَكِيم ج حُكَمَاء",
+   "baca": "hakiim j. hukamaa'",
+   "id": "orang bijak, filsuf"
+  },
+  {
+   "ar": "مَدَنِيّ",
+   "baca": "madaniyy",
+   "id": "bermasyarakat; sipil"
+  },
+  {
+   "ar": "بِالطَّبْعِ",
+   "baca": "bith-thab'",
+   "id": "menurut tabiat; (modern) tentu saja"
+  },
+  {
+   "ar": "فَخّ ج فِخَاخ",
+   "baca": "fakhkh j. fikhaakh",
+   "id": "jebakan"
+  },
+  {
+   "ar": "عَقَدَ – يَعْقِدُ",
+   "baca": "'aqada – ya'qidu",
+   "id": "mengadakan (rapat, konferensi)"
+  },
+  {
+   "ar": "مُؤْتَمَر",
+   "baca": "mu'tamar",
+   "id": "konferensi"
+  },
+  {
+   "ar": "مُشَارِك",
+   "baca": "musyaarik",
+   "id": "peserta"
+  },
+  {
+   "ar": "تُوُفِّيَ – يُتَوَفَّى",
+   "baca": "tuwuffiya – yutawaffaa",
+   "id": "wafat"
+  },
+  {
+   "ar": "اِعْتَزَلَ – يَعْتَزِلُ",
+   "baca": "i'tazala – ya'tazilu",
+   "id": "menarik diri dari, mengasingkan diri"
+  },
+  {
+   "ar": "تَوَلَّى – يَتَوَلَّى",
+   "baca": "tawallaa – yatawallaa",
+   "id": "memangku (jabatan)"
+  },
+  {
+   "ar": "دَوْلَة ج دُوَل",
+   "baca": "daulah j. duwal",
+   "id": "negara; dinasti"
+  }
+ ],
+ "exercises": [
+  {
+   "prompt": "Terjemahkan ke bahasa Arab.",
+   "items": [
+    "Manusia menurut tabiatnya makhluk bermasyarakat.",
+    "Saya membeli buku ini waktu masih mahasiswa. (pakai وَ + kalimat hal)",
+    "Pembaca yang baik membaca kata di dalam kalimatnya.",
+    "Konferensi itu diadakan di Rabat. (pasif)",
+    "Ibnu Khaldun wafat di Kairo.",
+    "Buku ini tidak berharakat. (pakai لَيْسَ فِي … تَشْكِيلٌ)"
+   ]
+  },
+  {
+   "prompt": "Isi dengan kata yang tepat, lengkap dengan harakatnya.",
+   "items": [
+    "يُعَبِّرُ الْكَاتِبُ ____ رَأْيِهِ بِوُضُوحٍ. (huruf jar yang tepat)",
+    "عَبَرَ الْمُسَافِرُونَ ____ عَلَى الْجِسْرِ. (sungai itu, objek)",
+    "____ الْكِتَابُ سَنَةَ 1377. (ditulis, pasif)",
+    "قَرَأَ بُودِي النَّصَّ قِرَاءَةً ____. (benar)",
+    "لَا يَقْرَأُ الْقَارِئُ الْجَيِّدُ الْكَلِمَةَ ____. (sendirian, dengan وَحْد)",
+    "اِشْتَرَيْتُ هٰذِهِ الطَّبْعَةَ وَأَنَا ____. (mahasiswa)",
+    "مَا زَالَ الْبَاحِثُونَ ____ هٰذَا الْكِتَابَ. (membaca, mudhari')"
+   ]
+  },
+  {
+   "prompt": "Beri harakat lengkap, termasuk i'raab, pada paragraf gundul \"Ibnu Khaldun dalam enam kalimat\", kalimat demi kalimat.",
+   "items": [
+    "Kalimat 1: kelahiran dan keluarga.",
+    "Kalimat 2: masa muda.",
+    "Kalimat 3: benteng yang jauh.",
+    "Kalimat 4: di Mesir.",
+    "Kalimat 5: nilai kitabnya.",
+    "Kalimat 6: wafat dan warisannya."
+   ]
+  },
+  {
+   "prompt": "Susun jadi kalimat yang benar.",
+   "items": [
+    "بِالطَّبْعِ / مَدَنِيٌّ / الْإِنْسَانُ",
+    "فِي / يَقْرَؤُهَا / جُمْلَتِهَا / بَلْ / وَحْدَهَا / الْكَلِمَةَ / يَقْرَأُ / لَا",
+    "فِي / مُؤْتَمَرٌ / الرِّبَاطِ / عُقِدَ",
+    "جَدِيدًا / تَلْبَسُ / ثَوْبًا / قَدْ / الْقَدِيمَةُ / الْكَلِمَةُ",
+    "تُوُفِّيَ / الْقَاهِرَةِ / فِي / خَلْدُونَ / ابْنُ"
+   ]
+  }
+ ],
+ "answers": [
+  "اَلْإِنْسَانُ مَدَنِيٌّ بِالطَّبْعِ. — اِشْتَرَيْتُ هٰذَا الْكِتَابَ وَأَنَا طَالِبٌ. — اَلْقَارِئُ الْجَيِّدُ يَقْرَأُ الْكَلِمَةَ فِي جُمْلَتِهَا. — عُقِدَ الْمُؤْتَمَرُ فِي الرِّبَاطِ. — تُوُفِّيَ ابْنُ خَلْدُونَ فِي الْقَاهِرَةِ. — لَيْسَ فِي هٰذَا الْكِتَابِ تَشْكِيلٌ.",
+  "عَنْ — النَّهْرَ — كُتِبَ — صَحِيحَةً — وَحْدَهَا — طَالِبٌ — يَقْرَؤُونَ",
+  "وُلِدَ ابْنُ خَلْدُونَ فِي تُونُسَ سَنَةَ 1332، وَنَشَأَ فِي أُسْرَةٍ اشْتَهَرَتْ بِالْعِلْمِ. — وَعَمِلَ فِي شَبَابِهِ كَاتِبًا وَسَفِيرًا لِعَدَدٍ مِنَ الْحُكَّامِ. — ثُمَّ اعْتَزَلَ السِّيَاسَةَ، وَكَتَبَ الْمُقَدِّمَةَ فِي قَلْعَةٍ بَعِيدَةٍ. — وَفِي سَنَةِ 1382 رَحَلَ إِلَى مِصْرَ، فَدَرَّسَ فِيهَا وَتَوَلَّى الْقَضَاءَ. — وَيُعَدُّ كِتَابُهُ مِنْ أَهَمِّ مَا كُتِبَ عَنِ الْمُجْتَمَعِ الْبَشَرِيِّ. — وَقَدْ تُوُفِّيَ فِي الْقَاهِرَةِ سَنَةَ 1406، وَمَا زَالَ النَّاسُ يَقْرَؤُونَهُ.",
+  "اَلْإِنْسَانُ مَدَنِيٌّ بِالطَّبْعِ. — لَا يَقْرَأُ الْكَلِمَةَ وَحْدَهَا، بَلْ يَقْرَؤُهَا فِي جُمْلَتِهَا. — عُقِدَ فِي الرِّبَاطِ مُؤْتَمَرٌ. — اَلْكَلِمَةُ الْقَدِيمَةُ قَدْ تَلْبَسُ ثَوْبًا جَدِيدًا. — تُوُفِّيَ ابْنُ خَلْدُونَ فِي الْقَاهِرَةِ."
+ ]
+}
