@@ -5,7 +5,8 @@
 // Begitu hasil placement test punya kontak, kabari calon siswa:
 //   1. WhatsApp — diantrikan ke `wa_outbound` (sender null = bot CS), jadi
 //      pesannya muncul di WA Inbox admin & balasan siswa masuk ke sana juga.
-//   2. Email — lewat Resend, dibungkus kop/kaki baku `bungkusEmailLinguo`.
+//   2. Email — lewat Resend. (Belum dibungkus `bungkusEmailLinguo`: emailChrome.ts
+//      belum ada di main — pasang begitu berkas itu ter-commit.)
 // Isinya: hasil tes (level, skor, waktu) + tawaran mendaftar kelas.
 //
 // Tiap baris `placement_results` dikabari SEKALI: kolom `notified_at` diklaim
@@ -15,7 +16,6 @@
 // Best-effort: gagal kirim tak boleh menggagalkan penyimpanan hasil tes.
 // =============================================================================
 
-import { bungkusEmailLinguo } from "@/lib/emailChrome";
 import { daftarSlugFromLanguageSlug } from "@/lib/funnelRouting";
 
 const RESEND_API_KEY = process.env.RESEND_API_KEY || "";
@@ -164,6 +164,9 @@ function htmlEmail(row: Row, maxScore?: number) {
           Mau tanya jadwal, pilihan kelas (Reguler / Private), atau harga dulu? Balas email ini
           atau chat CS Linguo di WhatsApp ya kak.
         </p>
+        <p style="margin:14px 0 0;font-size:11.5px;line-height:1.6;color:#9AA3B2">
+          Kamu menerima email ini karena mengikuti placement test di Linguo.id.
+        </p>
       </div>
     </div>
   </div>`;
@@ -180,9 +183,7 @@ async function kirimEmail(row: Row, to: string, maxScore?: number) {
         from: EMAIL_FROM,
         to: [to],
         subject: `Hasil Placement Test ${x.bahasa} kamu: level ${x.level}`,
-        html: bungkusEmailLinguo(htmlEmail(row, maxScore), {
-          alasanKirim: "Kamu menerima email ini karena mengikuti placement test di Linguo.id.",
-        }),
+        html: htmlEmail(row, maxScore),
       }),
     });
     if (!res.ok) console.error("[placement-notif] email gagal:", res.status, await res.text());
