@@ -762,22 +762,25 @@ function Navbar({lang,setLang,onPricingTab,onLoginOpen}:{lang:string;setLang:(l:
                   onClick={()=>{ setStartPickerOpen(false); setPlacementPickerOpen(true); }}
                   className="w-full text-left rounded-2xl border-2 border-gray-200 bg-white p-4 hover:border-[#1A9E9E] hover:bg-[#1A9E9E]/5 transition-all active:scale-[0.99] flex items-start gap-3"
                 >
-                  <div>
+                  <div className="flex-1 min-w-0">
                     <div className="font-bold text-gray-900 flex items-center gap-2">
                       Placement Test
                       <span className="text-[10px] font-bold text-emerald-700 bg-emerald-50 border border-emerald-200 px-2 py-0.5 rounded-full uppercase tracking-wide">Gratis</span>
                     </div>
                     <div className="text-xs text-gray-500 mt-0.5">Cek level bahasa kamu dulu — cuma ~10 menit, langsung dapet hasil.</div>
                   </div>
+                  {/* ilustrasi kartu pilihan [start-picker-ilustrasi-v1] */}
+                  <img src="/illustrations/placement-test.webp" alt="" aria-hidden="true" width={360} height={254} className="w-24 sm:w-28 h-auto shrink-0 self-center -my-2 -mr-1 pointer-events-none select-none" />
                 </button>
                 <button
                   onClick={()=>{ setStartPickerOpen(false); (window as any).__openTrialWizard?.(); }}
                   className="w-full text-left rounded-2xl border-2 border-gray-200 bg-white p-4 hover:border-[#1A9E9E] hover:bg-[#1A9E9E]/5 transition-all active:scale-[0.99] flex items-start gap-3"
                 >
-                  <div>
+                  <div className="flex-1 min-w-0">
                     <div className="font-bold text-gray-900">Trial Class</div>
                     <div className="text-xs text-gray-500 mt-0.5">Coba 1 sesi kelas beneran bareng pengajar (Private / Kids).</div>
                   </div>
+                  <img src="/illustrations/trial-class.webp" alt="" aria-hidden="true" width={360} height={263} className="w-24 sm:w-28 h-auto shrink-0 self-center -my-2 -mr-1 pointer-events-none select-none" />
                 </button>
               </div>
             </motion.div>
