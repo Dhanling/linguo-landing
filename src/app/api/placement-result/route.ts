@@ -1,4 +1,5 @@
 import { NextRequest, NextResponse } from "next/server";
+import { notifyPlacementResult } from "@/lib/placementNotify";
 
 /*
  * /api/placement-result
@@ -85,6 +86,7 @@ export async function POST(req: NextRequest) {
       email,
       whatsapp,
       student_id,
+      maxScore,
     } = body;
 
     const SUPABASE_URL = process.env.NEXT_PUBLIC_SUPABASE_URL;
@@ -158,6 +160,9 @@ export async function POST(req: NextRequest) {
         source,
       });
 
+      // [placement-notif-v1] Kontak baru terisi → kabari hasil tes via WA + email.
+      await notifyPlacementResult({ url: SUPABASE_URL, key: SUPABASE_KEY, id, maxScore });
+
       return NextResponse.json({ success: true, id });
     }
 
@@ -205,6 +210,11 @@ export async function POST(req: NextRequest) {
       level,
       source,
     });
+
+    // [placement-notif-v1] Hasil tes + kontak (form gate / akun) → kabari via WA + email.
+    if (insertedId) {
+      await notifyPlacementResult({ url: SUPABASE_URL, key: SUPABASE_KEY, id: insertedId, maxScore });
+    }
 
     return NextResponse.json({ success: true, id: insertedId });
   } catch (e: any) {

@@ -513,6 +513,7 @@ function ResultScreen({ score, questions, log, meta, timeElapsedSec, onRetake }:
       language: meta.name,
       level: result.sublevel,
       score,
+      maxScore,
       timeElapsedSec,
       source: fromAkun ? "akun-dashboard" : ("placement-test-" + meta.slug),
     };
@@ -547,6 +548,7 @@ function ResultScreen({ score, questions, log, meta, timeElapsedSec, onRetake }:
           rowId
             ? {
                 id: rowId,
+                maxScore,
                 name: nameValue.trim(),
                 email: emailValue.trim(),
                 whatsapp: wa,
@@ -555,6 +557,7 @@ function ResultScreen({ score, questions, log, meta, timeElapsedSec, onRetake }:
                 language: meta.name,
                 level: result.sublevel,
                 score,
+                maxScore,
                 timeElapsedSec,
                 source: "placement-test-" + meta.slug + "-unlocked",
                 name: nameValue.trim(),
