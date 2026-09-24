@@ -4,7 +4,7 @@
 -- Produk (slug baru, tanpa tier warisan):
 --   tieng-viet-102-a2-id (1e227fae-21cc-43c4-8de3-67d9a7c6eda3)
 --   tieng-viet-103-b1-id (feb2171f-2ce0-4043-a008-a5e2e6ea77d7)
---   tieng-viet-104-b2-id
+--   tieng-viet-104-b2-id (906cfaa3-4546-4a58-bc46-0d6aa234d4c1)
 
 insert into digital_product_pricing (product_id, price, duration_days, display_label, sort_order, is_active)
 select p.id, t.price, t.duration_days, t.display_label, t.sort_order, true

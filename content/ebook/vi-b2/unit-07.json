@@ -1,0 +1,676 @@
+{
+ "title": "Membaca berita ekonomi — theo, cho biết, tính đến, so với cùng kỳ",
+ "title_target": "Tin kinh tế sáng nay",
+ "goal": "Membaca dan menceritakan ulang artikel berita ekonomi tentang pariwisata dan ekspor. Titik tata bahasanya: **gaya berita** — sumber di depan (*theo …*), kata kerja pelapor (*cho biết, nhấn mạnh*), penanda waktu dan pembanding (*tính đến, so với cùng kỳ, dự kiến*), serta **singkatan** (*GDP, TP.HCM, UBND*).",
+ "bekal": [
+  "memecah kalimat berita yang panjang menjadi sumber, waktu, angka, dan pembanding",
+  "membedakan *cho biết*, *nhấn mạnh*, *khẳng định*, dan *dự kiến* saat mengutip berita",
+  "membaca angka, persen, dan singkatan dalam berita ekonomi, lalu menceritakannya dengan bahasa lisan"
+ ],
+ "dialogs": [
+  {
+   "title": "Dialog — Đọc báo cho bài thuyết trình",
+   "intro": "Selasa pagi di kantor Sen Travel. Budi sedang menyiapkan presentasi untuk mitra Indonesia dan ingin memakai angka dari artikel berita pagi itu. Artikel dalam dialog ini rekaan untuk latihan; angkanya bukan data resmi.",
+   "lines": [
+    {
+     "speaker": "Hương:",
+     "text": "Budi, em đọc bài báo sáng nay chưa? Có số liệu về khách Đông Nam Á đấy.",
+     "id": "Budi, kamu sudah baca artikel pagi ini? Ada data tentang tamu Asia Tenggara lho.",
+     "literal": "Budi, adik baca artikel koran pagi ini belum? ada angka-data tentang tamu Timur Selatan Asia tuh."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Em đang đọc đây ạ, nhưng câu dài quá, em phải đọc đi đọc lại.",
+     "id": "Sedang saya baca, Mbak, tapi kalimatnya panjang sekali, harus saya baca berulang-ulang.",
+     "literal": "adik sedang baca sini ya, tetapi kalimat panjang terlalu, adik harus baca pergi baca kembali."
+    },
+    {
+     "speaker": "Hương:",
+     "text": "Văn báo chí là thế. Em đọc to lên, chỗ nào khó chị giải thích.",
+     "id": "Bahasa berita memang begitu. Bacakan keras-keras, bagian yang sulit aku jelaskan.",
+     "literal": "gaya-tulis koran-pers adalah begitu. adik baca keras naik, tempat mana sulit kakak jelaskan."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "\"Theo báo cáo của ngành du lịch Hà Nội, tính đến hết tháng Hai, lượng khách quốc tế tăng mười hai phần trăm so với cùng kỳ năm ngoái.\"",
+     "id": "\"Menurut laporan sektor pariwisata Hà Nội, sampai akhir Februari, jumlah tamu internasional naik dua belas persen dibanding periode yang sama tahun lalu.\"",
+     "literal": "menurut laporan punya sektor wisata Hà Nội, hitung sampai habis bulan dua, jumlah tamu internasional naik dua belas bagian ratus banding dengan sama periode tahun lalu."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Chị ơi, so với cùng kỳ là so với lúc nào ạ?",
+     "id": "Mbak, dibanding periode yang sama itu dibanding kapan?",
+     "literal": "kakak hai, banding dengan sama periode adalah banding dengan saat mana ya?"
+    },
+    {
+     "speaker": "Hương:",
+     "text": "Là so với đúng khoảng thời gian ấy của năm trước. Báo kinh tế nào cũng dùng.",
+     "id": "Dibanding rentang waktu yang persis sama tahun sebelumnya. Semua berita ekonomi memakainya.",
+     "literal": "adalah banding dengan tepat rentang waktu itu punya tahun sebelum. koran ekonomi mana juga pakai."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "So với cùng kỳ năm ngoái, lượng khách tăng khá mạnh.",
+     "id": "Dibanding periode yang sama tahun lalu, jumlah tamu naik cukup tajam.",
+     "literal": "banding dengan sama periode tahun lalu, jumlah tamu naik cukup kuat."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "\"Một lãnh đạo ngành du lịch cho biết khách Đông Nam Á tăng nhanh nhất, trong đó có khách Indonesia.\"",
+     "id": "\"Seorang pimpinan sektor pariwisata menyampaikan bahwa tamu Asia Tenggara naik paling cepat, di antaranya tamu Indonesia.\"",
+     "literal": "satu pimpin sektor wisata beri tahu tamu Timur Selatan Asia naik cepat paling, dalam itu ada tamu Indonesia."
+    },
+    {
+     "speaker": "Hương:",
+     "text": "Cho biết chỉ là đưa tin, còn nhấn mạnh là muốn người đọc chú ý. Chọn động từ nào cũng có ý cả đấy.",
+     "id": "*Cho biết* cuma menyampaikan kabar, sedangkan *nhấn mạnh* berarti ingin pembaca memperhatikan. Pilihan kata kerjanya selalu ada maksudnya.",
+     "literal": "beri tahu cuma adalah antar kabar, lalu tekan kuat adalah ingin orang baca perhatikan. pilih kata-kerja mana juga ada maksud semua tuh."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Đoạn cuối viết: \"Ngành du lịch dự kiến đón thêm nhiều đoàn khách trong mùa hè.\"",
+     "id": "Paragraf terakhir menulis: \"Sektor pariwisata diperkirakan menyambut lebih banyak rombongan pada musim panas.\"",
+     "literal": "paragraf akhir tulis: sektor wisata perkirakan jemput tambah banyak rombongan tamu dalam musim panas."
+    },
+    {
+     "speaker": "Hương:",
+     "text": "Dự kiến là chưa chắc đâu em.",
+     "id": "*Dự kiến* itu artinya belum pasti.",
+     "literal": "perkirakan adalah belum pasti kok adik."
+    },
+    {
+     "speaker": "Hương:",
+     "text": "Lúc thuyết trình, em đừng nói như chuyện đã xảy ra.",
+     "id": "Waktu presentasi, jangan kamu sampaikan seolah-olah sudah terjadi.",
+     "literal": "saat presentasi, adik jangan bicara seperti hal telah terjadi."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Em sẽ ghi rõ nguồn và số liệu tính đến ngày nào.",
+     "id": "Saya akan tulis jelas sumbernya dan datanya per tanggal berapa.",
+     "literal": "adik akan catat jelas sumber dan angka-data hitung sampai hari mana."
+    },
+    {
+     "speaker": "Hương:",
+     "text": "Đúng. Nói có sách, mách có chứng mà.",
+     "id": "Betul. Bicara harus ada bukunya, melapor harus ada buktinya.",
+     "literal": "benar. bicara ada buku, adukan ada bukti kok."
+    }
+   ],
+   "notes": [
+    "**Văn báo chí** — \"gaya tulisan pers\". Kalimat berita Vietnam cenderung panjang dan menaruh **sumber** dan **waktu** di depan: *Theo …, tính đến …, [pokok] + [angka] + so với …*. Kalau tersesat, cari dulu kata kerjanya (*tăng, giảm, đạt, chiếm*), lalu baca keterangannya satu per satu.",
+    "**Tính đến hết tháng Hai** — *tính* (menghitung) + *đến* (sampai) = \"sampai dengan\". Angkanya **kumulatif**: dijumlah dari awal tahun sampai akhir Februari. Saudaranya: *tính đến nay* (sampai saat ini), *tính từ đầu năm* (terhitung sejak awal tahun).",
+    "**Lượng khách** dan **lượt khách** — *lượng* adalah jumlah atau volume, *lượt* adalah hitungan per kedatangan. Satu tamu yang datang dua kali dihitung *hai lượt khách*. Saat menyebut angka mutlak, statistik pariwisata Vietnam hampir selalu memakai *lượt*: *đón 1,2 triệu lượt khách*. Saat membicarakan naik-turunnya, *lượng khách* juga lazim, seperti di artikel yang dibaca Budi.",
+    "**Cho biết** — harfiahnya \"memberi tahu\"; kata kerja pelapor paling netral di berita, setara *menyampaikan* atau *mengatakan*. Chị Hương mengingatkan bahwa wartawan memilih kata kerja dengan sengaja: *nhấn mạnh* (menekankan) dan *khẳng định* (menegaskan) memberi bobot lebih.",
+    "**Dự kiến** — \"diperkirakan, direncanakan\". Di berita ia menandai hal yang **belum** terjadi. Kalau kamu mengutip berita, pertahankan *dự kiến* supaya pendengar tahu itu perkiraan.",
+    "**Nói có sách, mách có chứng** — \"bicara ada bukunya, mengadu ada buktinya\": setiap klaim perlu sumber. Peribahasa ini belum ada di daftar unit 6, jadi tambahkan ke koleksimu; ia pas sekali untuk dunia berita dan presentasi."
+   ],
+   "grammars": [
+    {
+     "title": "Kata kerja pelapor dalam berita",
+     "body": [
+      "Bahasa Indonesia punya *mengatakan, menyampaikan, menegaskan*. Bahasa Vietnam berita punya deretan serupa, dan masing-masing membawa nuansa sendiri."
+     ],
+     "table": {
+      "head": [
+       "Ungkapan",
+       "Arti",
+       "Nuansa",
+       "Contoh"
+      ],
+      "rows": [
+       [
+        "*cho biết*",
+        "menyampaikan",
+        "netral, paling sering",
+        "*Ông A cho biết số khách tăng.*"
+       ],
+       [
+        "*nhấn mạnh*",
+        "menekankan",
+        "hal ini penting",
+        "*Bà B nhấn mạnh vấn đề an toàn.*"
+       ],
+       [
+        "*khẳng định*",
+        "menegaskan",
+        "yakin, membantah keraguan",
+        "*Công ty khẳng định giá không đổi.*"
+       ],
+       [
+        "*thông báo*",
+        "mengumumkan",
+        "resmi, dari lembaga",
+        "*Sân bay thông báo tạm đóng cửa.*"
+       ],
+       [
+        "*chia sẻ*",
+        "berbagi cerita",
+        "pribadi, lunak",
+        "*Một du khách chia sẻ cảm nhận.*"
+       ],
+       [
+        "*đề xuất*",
+        "mengusulkan",
+        "gagasan, belum keputusan",
+        "*Các chuyên gia đề xuất giải pháp mới.*"
+       ]
+      ]
+     },
+     "after": [
+      "Pola kalimatnya selalu: **orang/lembaga + kata kerja pelapor + isi**. Kata *rằng* (bahwa) boleh dipakai atau dilewati: *Ông A cho biết (rằng) số khách tăng.* Di berita televisi, *rằng* lebih sering muncul sesudah *khẳng định* dan *nhấn mạnh*."
+     ]
+    },
+    {
+     "title": "Waktu, pembanding, dan perkiraan",
+     "body": [
+      "Lima penanda ini hampir selalu hadir di berita ekonomi. Kenali posisinya, maka kalimat sepanjang apa pun bisa diurai."
+     ],
+     "table": {
+      "head": [
+       "Penanda",
+       "Arti",
+       "Contoh"
+      ],
+      "rows": [
+       [
+        "*theo …*",
+        "menurut (sumber)",
+        "*Theo báo cáo mới nhất, …*"
+       ],
+       [
+        "*tính đến …*",
+        "sampai dengan (kumulatif)",
+        "*Tính đến hết quý I, …*"
+       ],
+       [
+        "*so với cùng kỳ (năm trước)*",
+        "dibanding periode yang sama (tahun lalu)",
+        "*… tăng 8% so với cùng kỳ.*"
+       ],
+       [
+        "*dự kiến*",
+        "diperkirakan, direncanakan",
+        "*Dự án dự kiến hoàn thành năm sau.*"
+       ],
+       [
+        "*trong đó*",
+        "di antaranya",
+        "*…, trong đó khách Hàn Quốc đông nhất.*"
+       ],
+       [
+        "*đạt / chiếm*",
+        "mencapai / menempati (porsi)",
+        "*đạt 3 tỷ USD, chiếm 40%*"
+       ]
+      ]
+     },
+     "after": [
+      "*Quý* berarti triwulan: *quý I, quý II* ditulis dengan angka Romawi dan dibaca *quý một, quý hai*. *Cùng kỳ* tanpa keterangan lain selalu berarti periode yang sama pada tahun sebelumnya."
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Dialog kedua — Bàn chuyện thời sự ở quán cà phê",
+   "intro": "Minggu pagi di kedai kopi pinggir jalan dekat Hồ Tây. Budi dan Minh duduk di kursi plastik rendah; Nam datang terlambat dan langsung sibuk dengan ponselnya.",
+   "lines": [
+    {
+     "speaker": "Minh:",
+     "text": "Anh Nam đọc gì mà chăm chú thế?",
+     "id": "Mas Nam baca apa, kok serius begitu?",
+     "literal": "kakak Nam baca apa yang tekun-perhatikan begitu?"
+    },
+    {
+     "speaker": "Nam:",
+     "text": "Tin kinh tế em ạ. Báo viết xuất khẩu cà phê quý này tăng mạnh.",
+     "id": "Berita ekonomi. Koran menulis ekspor kopi triwulan ini naik tajam.",
+     "literal": "kabar ekonomi adik ya. koran tulis keluar-pelabuhan kopi triwulan ini naik kuat."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Vì thế mà dạo này cà phê ở quán cũng đắt hơn hả anh?",
+     "id": "Karena itu belakangan kopi di kedai juga lebih mahal, Mas?",
+     "literal": "karena begitu maka belakangan ini kopi di kedai juga mahal lebih ya kakak?"
+    },
+    {
+     "speaker": "Nam:",
+     "text": "Không hẳn. Theo bài này, giá tăng chủ yếu do thời tiết.",
+     "id": "Tidak sepenuhnya. Menurut artikel ini, harganya naik terutama karena cuaca.",
+     "literal": "tidak sepenuhnya. menurut artikel ini, harga naik terutama karena cuaca."
+    },
+    {
+     "speaker": "Nam:",
+     "text": "Nhiều vùng trồng cà phê trên thế giới bị hạn hán, nên giá thế giới lên.",
+     "id": "Banyak daerah penanam kopi di dunia kena kemarau, jadi harga dunia naik.",
+     "literal": "banyak daerah tanam kopi di atas dunia kena kemarau, maka harga dunia naik."
+    },
+    {
+     "speaker": "Minh:",
+     "text": "Em thì chỉ đọc tít thôi. Báo mạng bây giờ hay giật tít lắm.",
+     "id": "Kalau aku cuma baca judulnya saja. Berita daring sekarang suka pakai judul bombastis.",
+     "literal": "adik maka cuma baca judul saja. koran jaringan sekarang sering tarik-sentak judul sekali."
+    },
+    {
+     "speaker": "Nam:",
+     "text": "Phải đọc cả bài, xem số liệu tính đến bao giờ.",
+     "id": "Harus baca seluruh artikel, lihat datanya sampai kapan.",
+     "literal": "harus baca seluruh artikel, lihat angka-data hitung sampai kapan."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Đúng đấy anh. Hôm qua em suýt dùng số liệu cũ trong bài thuyết trình.",
+     "id": "Betul, Mas. Kemarin saya hampir memakai data lama di presentasi.",
+     "literal": "benar tuh kakak. kemarin adik hampir pakai angka-data lama dalam presentasi."
+    },
+    {
+     "speaker": "Minh:",
+     "text": "Thế cậu có biết GDP tiếng Việt là gì không?",
+     "id": "Nah, kamu tahu GDP dalam bahasa Vietnam apa?",
+     "literal": "begitu kamu ada tahu GDP bahasa Việt adalah apa tidak?"
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Tổng sản phẩm trong nước, đúng không? Tớ vừa học tuần trước!",
+     "id": "Produk domestik bruto, kan? Aku baru belajar minggu lalu!",
+     "literal": "total hasil-produk dalam negeri, benar tidak? aku baru belajar minggu lalu!"
+    },
+    {
+     "speaker": "Nam:",
+     "text": "Giỏi! Cứ đọc báo đều thế này, chẳng mấy chốc em nói như chuyên gia.",
+     "id": "Hebat! Kalau rajin baca berita begini, sebentar lagi kamu bicara seperti pakar.",
+     "literal": "pandai! terus baca koran rutin begini, tak berapa saat adik bicara seperti pakar."
+    }
+   ],
+   "notes": [
+    "**Đọc gì mà chăm chú thế?** — *mà* di sini menyambung tindakan dengan keadaan yang mengherankan: \"baca apa sampai serius begitu?\". *Chăm chú* berarti memusatkan perhatian.",
+    "**Minh dan Nam** — Nam lebih tua dari Minh maupun Budi, jadi Minh memanggilnya *anh* dan menyebut diri *em*; Nam menjawab dengan *em*. Budi dan Minh tetap *cậu – tớ*. Dalam satu meja kopi ada tiga pasangan kata ganti sekaligus.",
+    "**Không hẳn** — \"tidak sepenuhnya, belum tentu\". Cara sopan menyanggah sebagian: kamu tidak bilang *salah*, hanya *tidak persis begitu*.",
+    "**Giật tít** — \"menyentak judul\": membuat judul bombastis supaya diklik. *Tít* adalah judul berita (dari bahasa Prancis *titre*). Kata ini sering muncul dalam kritik terhadap berita daring.",
+    "**Tổng sản phẩm trong nước** — GDP; ada juga bentuk Hán-Việt yang lebih resmi *tổng sản phẩm quốc nội*. Di berita, singkatan Inggrisnya *GDP* dipakai langsung dan dibaca huruf demi huruf."
+   ],
+   "grammars": [
+    {
+     "title": "Singkatan yang sering muncul di berita",
+     "body": [
+      "Judul berita Vietnam hemat tempat, jadi singkatan ada di mana-mana. Sebagian singkatan Vietnam, sebagian dipinjam dari bahasa Inggris."
+     ],
+     "table": {
+      "head": [
+       "Singkatan",
+       "Kepanjangan",
+       "Arti"
+      ],
+      "rows": [
+       [
+        "*TP.HCM*",
+        "*Thành phố Hồ Chí Minh*",
+        "Kota Hồ Chí Minh"
+       ],
+       [
+        "*UBND*",
+        "*Ủy ban nhân dân*",
+        "Komite Rakyat (pemerintah daerah)"
+       ],
+       [
+        "*ĐBSCL*",
+        "*Đồng bằng sông Cửu Long*",
+        "Delta Mekong"
+       ],
+       [
+        "*DN*",
+        "*doanh nghiệp*",
+        "perusahaan, badan usaha"
+       ],
+       [
+        "*XK / NK*",
+        "*xuất khẩu / nhập khẩu*",
+        "ekspor / impor"
+       ],
+       [
+        "*GDP*",
+        "*tổng sản phẩm trong nước*",
+        "produk domestik bruto"
+       ],
+       [
+        "*FDI*",
+        "*đầu tư trực tiếp nước ngoài*",
+        "investasi asing langsung"
+       ],
+       [
+        "*CPI*",
+        "*chỉ số giá tiêu dùng*",
+        "indeks harga konsumen"
+       ]
+      ]
+     },
+     "after": [
+      "Saat membaca keras, singkatan Vietnam biasanya diucapkan kepanjangannya (*Ủy ban nhân dân*), sedangkan singkatan Inggris diucapkan per huruf dengan lafal Vietnam. Di percakapan, *TP.HCM* hampir selalu diucapkan *Sài Gòn* atau *thành phố*."
+     ]
+    }
+   ]
+  }
+ ],
+ "sections": [
+  {
+   "title": "Membaca angka dalam berita ekonomi",
+   "blocks": [
+    {
+     "type": "tabel",
+     "head": [
+      "Tulisan",
+      "Dibaca",
+      "Arti"
+     ],
+     "rows": [
+      [
+       "*tăng 12%*",
+       "*tăng mười hai phần trăm*",
+       "naik 12 persen"
+      ],
+      [
+       "*đạt 3,5 tỷ USD*",
+       "*đạt ba phẩy năm tỷ đô la Mỹ*",
+       "mencapai 3,5 miliar dolar AS"
+      ],
+      [
+       "*1.200 nghìn tỷ đồng*",
+       "*một nghìn hai trăm nghìn tỷ đồng*",
+       "1.200 triliun đồng"
+      ],
+      [
+       "*giảm 0,8 điểm phần trăm*",
+       "*giảm không phẩy tám điểm phần trăm*",
+       "turun 0,8 poin persen"
+      ],
+      [
+       "*gấp 1,5 lần*",
+       "*gấp một phẩy năm lần*",
+       "1,5 kali lipat"
+      ],
+      [
+       "*chiếm 40% tổng kim ngạch*",
+       "*chiếm bốn mươi phần trăm tổng kim ngạch*",
+       "40% dari total nilai perdagangan"
+      ]
+     ]
+    },
+    {
+     "type": "p",
+     "text": "Kabar baiknya, Vietnam menulis angka seperti Indonesia: titik untuk ribuan, koma untuk desimal (*3,5* dibaca *ba phẩy năm*). Yang perlu dibiasakan adalah **tỷ** (miliar) dan susunan *nghìn tỷ* (ribu miliar = triliun), karena anggaran dan nilai ekspor dalam đồng sering mencapai angka itu. Kata *kim ngạch* (nilai perdagangan) hampir selalu berpasangan dengan *xuất khẩu*, *nhập khẩu*, atau *thương mại*."
+    },
+    {
+     "type": "kotak",
+     "title": "Ekspor andalan Vietnam",
+     "items": [
+      "**Kopi.** Vietnam adalah produsen kopi terbesar kedua di dunia sesudah Brasil, dan sebagian besar kopinya robusta dari dataran tinggi Tây Nguyên. Karena itu harga robusta dunia selalu jadi berita di Vietnam.",
+      "**Beras, lada, jambu mete.** Vietnam termasuk pengekspor beras terbesar di dunia, dan sejak lama menjadi pengekspor utama lada serta jambu mete.",
+      "**Elektronik.** Nilai ekspor terbesar kini datang dari ponsel, komputer, dan komponennya, sebagian besar dibuat di pabrik investasi asing di utara.",
+      "**Tekstil, sepatu, hasil laut.** Tiga kelompok ini menyerap banyak tenaga kerja dan sering disebut bersama di berita tentang pesanan dan tarif."
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Susunan artikel berita Vietnam",
+   "blocks": [
+    {
+     "type": "tabel",
+     "head": [
+      "Bagian",
+      "Nama Vietnam",
+      "Isinya"
+     ],
+     "rows": [
+      [
+       "judul",
+       "*tít*, *tiêu đề*",
+       "singkat, sering tanpa kata kerja bantu"
+      ],
+      [
+       "paragraf pembuka",
+       "*sapô*",
+       "ringkasan inti, biasanya dicetak tebal"
+      ],
+      [
+       "isi",
+       "*thân bài*",
+       "angka, kutipan, latar belakang"
+      ],
+      [
+       "kutipan",
+       "*trích dẫn*",
+       "*… cho biết*, *… nhấn mạnh*"
+      ],
+      [
+       "sumber",
+       "*nguồn*",
+       "nama media, lembaga, atau *theo …*"
+      ]
+     ]
+    },
+    {
+     "type": "p",
+     "text": "Wartawan Vietnam menyebut paragraf pembuka yang dicetak tebal *sapô* (dari istilah jurnalistik Prancis). Kalau waktumu sempit, baca judul dan *sapô* saja; keduanya biasanya sudah memuat siapa, apa, berapa, dan dibanding apa. Lalu, seperti kata Nam, periksa di isi berita **sampai kapan** data itu dihitung dan **dibanding apa** kenaikannya."
+    },
+    {
+     "type": "kotak",
+     "title": "Membaca berita dengan cermat",
+     "items": [
+      "**Lihat tanggal dan *tính đến*.** Angka \"sejak awal tahun\" di bulan Maret dan di bulan Desember sangat berbeda.",
+      "**Bedakan *phần trăm* dan *điểm phần trăm*.** Inflasi yang naik dari 3% ke 4% naik *một điểm phần trăm*, bukan *một phần trăm*.",
+      "**Nama wilayah bisa berubah.** Sejak Juli 2025 Vietnam menggabungkan provinsi-provinsinya dari 63 menjadi 34 dan menghapus tingkat kabupaten, jadi berita lama bisa memuat nama provinsi yang kini sudah dilebur.",
+      "**Satu berita, banyak media.** Berita ekonomi yang sama sering dimuat ulang oleh banyak situs. Carilah sumber pertamanya, biasanya lembaga yang disebut sesudah *theo*."
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Ulangan berjenjang — unit 5",
+   "blocks": [
+    {
+     "type": "p",
+     "text": "Tutup kolom Vietnam, baca terjemahan Indonesianya, lalu susun kembali kalimatnya dari ingatan."
+    },
+    {
+     "type": "tabel",
+     "head": [
+      "Bahasa Indonesia",
+      "Tiếng Việt"
+     ],
+     "rows": [
+      [
+       "Hampir saja aku merusak seluruh proyek, Mas.",
+       "*Suýt nữa thì em làm hỏng cả dự án, anh ạ.*"
+      ],
+      [
+       "Untung Mai memeriksa folder spam jam lima sore.",
+       "*May mà Mai kiểm tra thư rác lúc năm giờ chiều.*"
+      ],
+      [
+       "Seharusnya aku menelepon kampus untuk bertanya sejak minggu lalu.",
+       "*Lẽ ra em phải gọi điện hỏi trường từ tuần trước.*"
+      ],
+      [
+       "Kalau tadi kamu tidak sempat mengerem, pasti sudah masuk rumah sakit.",
+       "*Nếu anh không phanh kịp thì đã vào viện rồi.*"
+      ],
+      [
+       "Andai saja kemarin aku menurut kata Thảo naik taksi.",
+       "*Giá mà hôm qua tớ nghe lời Thảo đi taxi.*"
+      ]
+     ]
+    }
+   ]
+  }
+ ],
+ "vocab": [
+  {
+   "vi": "bài báo",
+   "baca": "bài báo",
+   "id": "artikel berita"
+  },
+  {
+   "vi": "báo chí",
+   "baca": "báo cí",
+   "id": "pers, media cetak"
+  },
+  {
+   "vi": "tin / thời sự",
+   "baca": "tin / thời sự",
+   "id": "kabar / berita terkini"
+  },
+  {
+   "vi": "số liệu",
+   "baca": "số liệu",
+   "id": "data, angka statistik"
+  },
+  {
+   "vi": "báo cáo",
+   "baca": "báo káo",
+   "id": "laporan; melaporkan"
+  },
+  {
+   "vi": "lượng / lượt",
+   "baca": "lượng / lượt",
+   "id": "jumlah / kali (hitungan kedatangan)"
+  },
+  {
+   "vi": "theo",
+   "baca": "theo",
+   "id": "menurut"
+  },
+  {
+   "vi": "tính đến",
+   "baca": "tíng dến",
+   "id": "sampai dengan (kumulatif)"
+  },
+  {
+   "vi": "so với cùng kỳ",
+   "baca": "so với kùng kỳ",
+   "id": "dibanding periode yang sama"
+  },
+  {
+   "vi": "cho biết",
+   "baca": "co biết",
+   "id": "menyampaikan"
+  },
+  {
+   "vi": "nhấn mạnh",
+   "baca": "nyấn mạng",
+   "id": "menekankan"
+  },
+  {
+   "vi": "khẳng định",
+   "baca": "khẳng dịng",
+   "id": "menegaskan"
+  },
+  {
+   "vi": "dự kiến",
+   "baca": "zự kiến",
+   "id": "diperkirakan, direncanakan"
+  },
+  {
+   "vi": "xuất khẩu / nhập khẩu",
+   "baca": "suất khẩu / nyập khẩu",
+   "id": "ekspor / impor"
+  },
+  {
+   "vi": "kim ngạch",
+   "baca": "kim ngạk",
+   "id": "nilai perdagangan"
+  },
+  {
+   "vi": "đạt",
+   "baca": "dạt",
+   "id": "mencapai"
+  },
+  {
+   "vi": "chiếm",
+   "baca": "ciếm",
+   "id": "menempati (porsi), mengambil"
+  },
+  {
+   "vi": "quý",
+   "baca": "kwý",
+   "id": "triwulan"
+  },
+  {
+   "vi": "lãnh đạo",
+   "baca": "lãng dạo",
+   "id": "pimpinan"
+  },
+  {
+   "vi": "viết tắt",
+   "baca": "viết tắt",
+   "id": "singkatan; menyingkat"
+  },
+  {
+   "vi": "giật tít",
+   "baca": "zật tít",
+   "id": "membuat judul bombastis"
+  },
+  {
+   "vi": "chuyên gia",
+   "baca": "cuyên za",
+   "id": "pakar, ahli"
+  },
+  {
+   "vi": "hạn hán",
+   "baca": "hạn hán",
+   "id": "kemarau panjang"
+  }
+ ],
+ "exercises": [
+  {
+   "prompt": "Terjemahkan ke bahasa Vietnam dengan gaya berita.",
+   "items": [
+    "Menurut laporan itu, jumlah tamu naik dibanding periode yang sama tahun lalu.",
+    "Sampai akhir Maret, ekspor kopi naik sepuluh persen.",
+    "Beliau menekankan bahwa kualitas lebih penting. (tentang seorang direktur laki-laki)",
+    "Kota ini diperkirakan akan menyambut lebih banyak wisatawan.",
+    "Seorang pimpinan perusahaan menyampaikan bahwa proyeknya sudah selesai.",
+    "Jangan cuma baca judulnya, bacalah seluruh artikelnya."
+   ]
+  },
+  {
+   "prompt": "Isi dengan kata yang tepat. Petunjuk ada di dalam kurung.",
+   "items": [
+    "____ báo cáo mới nhất, giá gạo tăng nhẹ. (menurut)",
+    "____ hết tháng Sáu, công ty đã đón hai nghìn lượt khách. (sampai dengan)",
+    "Doanh thu tăng tám phần trăm so với cùng ____. (periode)",
+    "Giám đốc ____ rằng an toàn là trên hết. (menekankan)",
+    "Đại diện công ty ____ đơn hàng sẽ được giao vào tuần sau. (menyampaikan, netral)",
+    "Cây cầu mới ____ hoàn thành vào cuối năm. (diperkirakan)",
+    "Cà phê ____ khoảng một phần ba kim ngạch xuất khẩu của tỉnh. (menempati porsi)"
+   ]
+  },
+  {
+   "prompt": "Ubah kalimat lisan ini menjadi gaya berita dengan kata dalam kurung.",
+   "items": [
+    "Anh Minh nói là khách tăng nhiều lắm. (cho biết)",
+    "Năm nay bán được nhiều hơn năm ngoái, cũng vào thời gian này. (so với cùng kỳ)",
+    "Từ đầu năm đến giờ, công ty có năm trăm lượt khách. (tính đến nay)",
+    "Chắc cuối năm cầu mới xong. (dự kiến)",
+    "Báo nói giá xăng giảm. (theo)",
+    "Bà ấy nói đi nói lại là phải tiết kiệm nước. (nhấn mạnh)"
+   ]
+  },
+  {
+   "prompt": "Susun jadi kalimat yang benar.",
+   "items": [
+    "so với / năm ngoái / cùng kỳ / lượng khách / tăng / khá mạnh",
+    "chắc / dự kiến / chưa / là / đâu / em",
+    "ghi rõ / sẽ / em / nguồn / và / số liệu / tính đến / ngày nào",
+    "theo / giá / tăng / bài này / chủ yếu / do / thời tiết",
+    "đọc / phải / cả bài / xem / số liệu / tính đến / bao giờ"
+   ]
+  }
+ ],
+ "answers": [
+  "Theo báo cáo đó, lượng khách tăng so với cùng kỳ năm ngoái. — Tính đến hết tháng Ba, xuất khẩu cà phê tăng mười phần trăm. — Ông ấy nhấn mạnh rằng chất lượng quan trọng hơn. — Thành phố dự kiến sẽ đón thêm nhiều khách du lịch. — Một lãnh đạo công ty cho biết dự án đã hoàn thành. — Đừng chỉ đọc tít, hãy đọc cả bài.",
+  "Theo — Tính đến — kỳ — nhấn mạnh — cho biết — dự kiến — chiếm",
+  "Anh Minh cho biết lượng khách tăng mạnh. — Năm nay doanh số tăng so với cùng kỳ năm ngoái. — Tính đến nay, công ty đã đón năm trăm lượt khách. — Cầu mới dự kiến hoàn thành vào cuối năm. — Theo báo, giá xăng giảm. — Bà ấy nhấn mạnh việc phải tiết kiệm nước.",
+  "So với cùng kỳ năm ngoái, lượng khách tăng khá mạnh. — Dự kiến là chưa chắc đâu em. — Em sẽ ghi rõ nguồn và số liệu tính đến ngày nào. — Theo bài này, giá tăng chủ yếu do thời tiết. — Phải đọc cả bài, xem số liệu tính đến bao giờ."
+ ]
+}
