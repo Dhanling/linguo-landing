@@ -3779,9 +3779,19 @@ export default function AkunPage() {
         .map((s: any) => s.scheduled_at as string)
         .sort();
       const menitPaket = Number(String(r.duration ?? "").match(/\d+/)?.[0]) || Number(sesi[0]?.duration_minutes) || 60;
-      const dateFrom = lewat[0] || r.registration_date || r.created_at || null;
-      const dateTo = lewat[lewat.length - 1] || null;
       const total = r.sessions_total || 0;
+      // [sertifikat-periode-3-4-bulan-v1] Periode dihitung dari N sesi TERAKHIR paket ini
+      // saja (N = sessions_total) — dulu dari sesi paling awal registrasi, jadi sisa sesi
+      // level lama/cuti bikin periodenya melar (9 Feb → 24 Sep = 7,5 bulan). Lalu dijaga
+      // di rentang wajar durasi kursus Linguo, 3–4 bulan (arahan Dhani 24 Sep 2026).
+      const sesiPaket = total > 0 ? lewat.slice(-total) : lewat;
+      const dateTo = sesiPaket[sesiPaket.length - 1] || null;
+      const akhir = new Date(dateTo || Date.now());
+      const mundur = (bln: number) => { const d = new Date(akhir); d.setMonth(d.getMonth() - bln); return d; };
+      let awal = new Date(sesiPaket[0] || r.registration_date || r.created_at || mundur(3).toISOString());
+      if (isNaN(awal.getTime()) || awal > mundur(3)) awal = mundur(3);
+      else if (awal < mundur(4)) awal = mundur(4);
+      const dateFrom = awal.toISOString();
       const used = r.sessions_used || 0;
       const pct = total > 0 ? Math.min(100, Math.max(0, Math.round((used / total) * 100))) : 0;
       const issued = total > 0 && used >= total;
