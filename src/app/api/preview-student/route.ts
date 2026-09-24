@@ -109,5 +109,12 @@ export async function GET(req: NextRequest) {
     (s: any) => (s.status === "scheduled" || s.status === "pending") && new Date(s.scheduled_at).getTime() > now
   );
 
-  return NextResponse.json({ student: { ...student, registrations }, schedules, upcomingSchedules });
+  // [saldo-beranda-v1] Saldo Linguo — RLS saldo butuh sesi siswa, jadi pratinjau
+  // (tanpa login) menghitungnya di sini.
+  const saldoRows = (await rest(
+    `student_wallet_entries?student_id=eq.${id}&status=eq.success&select=amount`
+  )) || [];
+  const saldo_linguo = saldoRows.reduce((a: number, r: any) => a + (Number(r.amount) || 0), 0);
+
+  return NextResponse.json({ student: { ...student, registrations, saldo_linguo }, schedules, upcomingSchedules });
 }

@@ -38,7 +38,7 @@ const PlacementPicker = dynamic(() => import('@/components/PlacementPicker'), { 
 // [remove-onesignal-prompt] provider dimatikan — hilangkan popup auto-prompt notifikasi
 // const OneSignalProvider = dynamic(() => import('@/components/OneSignalProvider'), { ssr: false });
 import PaymentDetailModal from '@/components/akun/PaymentDetailModal';
-import SaldoLinguoCard, { TopupDialog, useSaldoLinguo } from '@/components/akun/SaldoLinguo'; // [saldo-siswa-v1]
+import SaldoLinguoCard, { SaldoBerandaCard, TopupDialog, useSaldoLinguo } from '@/components/akun/SaldoLinguo'; // [saldo-siswa-v1] [saldo-beranda-v1]
 import PaymentInstructionSheet from '@/components/akun/PaymentInstructionSheet';
 import CompactHeroBanner from '@/components/akun/CompactHeroBanner';
 // [lanjutkan-belajar-v1] pintasan lintas-menu di paling atas Beranda
@@ -301,6 +301,7 @@ type StudentData = {
   whatsapp?: string;
   avatar_url?: string;
   registrations: StudentReg[];
+  saldo_linguo?: number; // [saldo-beranda-v1] cuma diisi /api/preview-student
 };
 
 type Badge = { id: string; badge_key: string; badge_icon: string; badge_label: string; earned_at: string };
@@ -1304,16 +1305,18 @@ function SetToggleRow({ label, desc, on, onClick }: { label: string; desc: strin
   );
 }
 
-function AkunTab({ user, student, avatarUrl, displayName, firstName, xp, badges, signOut, supabase, onAvatarUpdate, openEnrollWizard, onReload }: {
+function AkunTab({ user, student, avatarUrl, displayName, firstName, xp, badges, signOut, supabase, onAvatarUpdate, openEnrollWizard, onReload, bukaTagihanNonce, saldoPratinjau }: {
   user: any; student: any; avatarUrl?: string; displayName: string; firstName: string;
   xp: any; badges: any[]; signOut: () => void; supabase: any; onAvatarUpdate: (url: string) => void;
-  openEnrollWizard: () => void; onReload: () => void;
+  openEnrollWizard: () => void; onReload: () => void; bukaTagihanNonce?: number; saldoPratinjau?: number;
 }) {
   // [saldo-siswa-v1] ?pane=tagihan — balikan dari invoice top up Xendit.
   const [pane, setPane] = useState<SetPane>(() => {
     if (typeof window === "undefined") return "profil";
     return new URLSearchParams(window.location.search).get("pane") === "tagihan" ? "tagihan" : "profil";
   });
+  // [saldo-beranda-v1] kartu saldo Beranda minta pane Tagihan dibuka (tab ini keepalive).
+  useEffect(() => { if (bukaTagihanNonce) setPane("tagihan"); }, [bukaTagihanNonce]);
   const [uploadingAvatar, setUploadingAvatar] = useState(false);
   const avatarInputRef = useRef<HTMLInputElement>(null);
 
@@ -1434,7 +1437,9 @@ function AkunTab({ user, student, avatarUrl, displayName, firstName, xp, badges,
   const flash = (msg: string) => { setNotice(msg); setTimeout(() => setNotice(""), 3000); };
 
   // ── [saldo-siswa-v1] Saldo Linguo ────────────────────────────────────────
-  const saldoLinguo = useSaldoLinguo(supabase, !!user?.id && pane === "tagihan");
+  const saldoAsli = useSaldoLinguo(supabase, !!user?.id && pane === "tagihan" && saldoPratinjau === undefined);
+  // [saldo-beranda-v1] Preview POV staf: tak ada sesi siswa, angka dari /api/preview-student.
+  const saldoLinguo = saldoPratinjau === undefined ? saldoAsli : { ...saldoAsli, saldo: saldoPratinjau, loaded: true };
   const [topupOpen, setTopupOpen] = useState(false);
   const [topupAwal, setTopupAwal] = useState<number | undefined>(undefined);
   const bukaTopup = (awal?: number) => { setTopupAwal(awal); setTopupOpen(true); };
@@ -2825,6 +2830,12 @@ export default function AkunPage() {
   /* [lanjutkan-ebook-buka-langsung-v1] Modul yang readernya harus dibuka begitu
      tab Perpustakaan tampil — dititipkan kartu "Lanjutkan Belajar" di beranda. */
   const [bukaEbook, setBukaEbook] = useState<string | null>(null);
+  /* [saldo-beranda-v1] Saldo Linguo di Beranda (+ top up langsung dari sana).
+     Pratinjau staf tak punya sesi siswa → angkanya dari /api/preview-student. */
+  const berandaSaldo = useSaldoLinguo(supabase, !!user?.id && !previewId);
+  const [topupBerandaOpen, setTopupBerandaOpen] = useState(false);
+  const [bukaTagihanNonce, setBukaTagihanNonce] = useState(0);
+  const bukaTagihanSaldo = () => { setBukaTagihanNonce((n) => n + 1); setActiveTab("akun"); };
   // [perf:akun-snapshot-mount-v1] simpan keadaan terakhir ke snapshot modul. Mode
   // pratinjau dilewati: datanya punya cache sendiri per siswa & bukan milik yang login.
   useEffect(() => {
@@ -4469,6 +4480,8 @@ export default function AkunPage() {
                     status: s.status,
                   };
                 });
+                // [saldo-beranda-v1] kolom kanan kini juga memuat kartu Saldo Linguo
+                const adaKolomKanan = sesiMendatangCards.length > 0 || !!student?.id;
 
                 return (
                   <div className="flex min-h-[calc(100vh-2rem)] flex-col bg-white lg:block">
@@ -4588,7 +4601,7 @@ export default function AkunPage() {
                           + "Sesi Mendatang" (kanan). Sebelumnya kartu kelas berdiri
                           sendiri selebar kolom — punya 1 kelas bikin sisa gridnya kosong
                           melompong, sementara daftar sesi terdorong jauh ke bawah lipatan. */}
-                      <div className={`grid gap-5 lg:items-start ${sesiMendatangCards.length ? "lg:grid-cols-[minmax(0,1fr)_320px] xl:grid-cols-[minmax(0,1fr)_360px]" : ""}`}>
+                      <div className={`grid gap-5 lg:items-start ${adaKolomKanan ? "lg:grid-cols-[minmax(0,1fr)_320px] xl:grid-cols-[minmax(0,1fr)_360px]" : ""}`}>
                         <div className="min-w-0">
                         {/* [beranda-tanpa-tab-mandiri-v1] Tab "Kelas Live" vs "Belajar Mandiri"
                             dicabut — beranda cuma menampilkan kelas live. Materi mandiri
@@ -4882,7 +4895,7 @@ export default function AkunPage() {
                                             {items.map((reg: any) => renderKelasCard(reg, cardIdx++))}
                                           </div>
                                         ) : (
-                                        <div className={`mt-3 grid grid-cols-1 gap-3.5 sm:grid-cols-2 lg:grid-cols-3 ${sesiMendatangCards.length ? "2xl:grid-cols-4" : "xl:grid-cols-4"}`}>
+                                        <div className={`mt-3 grid grid-cols-1 gap-3.5 sm:grid-cols-2 lg:grid-cols-3 ${adaKolomKanan ? "2xl:grid-cols-4" : "xl:grid-cols-4"}`}>
                                           {items.map((reg: any) => renderKelasCard(reg, cardIdx++))}
                                           {/* [beranda-riwayat-kelas-v1] kartu "Tambah Kelas" cuma di
                                               view Aktif — ditaruh di seksi terakhir supaya cuma muncul
@@ -4927,14 +4940,30 @@ export default function AkunPage() {
                         {/* jadwal-gcal-v1: SESI MENDATANG — pindahan dari kolom kiri kalender
                             di tab Jadwal. Di sana daftar ini memaksa kalender berbagi lebar;
                             di sini dia jadi ringkasan harian, dan kalendernya dapat layar penuh. */}
-                        {sesiMendatangCards.length > 0 && (
-                          <SesiMendatangCard
-                            sessions={sesiMendatangCards}
-                            studentName={student?.name || undefined}
-                            onOpenJadwal={() => setActiveTab("jadwal")}
-                            layout="column"
-                            limit={5}
-                          />
+                        {adaKolomKanan && (
+                          <div className="flex min-w-0 flex-col gap-4">
+                            {/* [saldo-beranda-v1] Saldo Linguo di Beranda */}
+                            {student?.id && (
+                              <SaldoBerandaCard
+                                saldo={previewMode ? Number(student?.saldo_linguo) || 0 : berandaSaldo.saldo}
+                                loaded={previewMode ? !!student : berandaSaldo.loaded}
+                                onOpen={bukaTagihanSaldo}
+                                onTopup={previewMode ? undefined : () => setTopupBerandaOpen(true)}
+                              />
+                            )}
+                            {!previewMode && (
+                              <TopupDialog supabase={supabase} open={topupBerandaOpen} onClose={() => setTopupBerandaOpen(false)} />
+                            )}
+                            {sesiMendatangCards.length > 0 && (
+                              <SesiMendatangCard
+                                sessions={sesiMendatangCards}
+                                studentName={student?.name || undefined}
+                                onOpenJadwal={() => setActiveTab("jadwal")}
+                                layout="column"
+                                limit={5}
+                              />
+                            )}
+                          </div>
                         )}
                       </div>
 
@@ -5587,7 +5616,9 @@ export default function AkunPage() {
                 supabase={supabase}
                 onAvatarUpdate={(url) => setStudent(s => s ? { ...s, avatar_url: url } : s)}
                 openEnrollWizard={openEnrollWizard}
-                onReload={() => { if (user?.email) loadStudentData(user.email, true); }}
+                onReload={() => { if (user?.email) loadStudentData(user.email, true); berandaSaldo.reload(); }}
+                bukaTagihanNonce={bukaTagihanNonce}
+                saldoPratinjau={previewMode ? Number(student?.saldo_linguo) || 0 : undefined}
               />
             </motion.div>
           )}

@@ -184,3 +184,34 @@ export default function SaldoLinguoCard({ saldo, entries, loaded, onTopup }: {
     </section>
   );
 }
+
+/** [saldo-beranda-v1] Ringkasan saldo di kolom kanan Beranda — pintu masuk ke
+ *  Pengaturan › Tagihan & Saldo. Dulu saldo cuma ada di Pengaturan, dan siswa
+ *  (juga admin yang memakai Preview POV) mencarinya di Beranda. */
+export function SaldoBerandaCard({ saldo, loaded, onOpen, onTopup }: {
+  saldo: number; loaded: boolean; onOpen: () => void; onTopup?: () => void;
+}) {
+  const ts = useT();
+  return (
+    <div className="rounded-3xl bg-white p-4 ring-1 ring-slate-200 sm:p-5">
+      <div className="flex items-center justify-between gap-3">
+        <button type="button" onClick={onOpen} className="flex min-w-0 items-center gap-3 text-left">
+          <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-2xl bg-[#E8F4F2] text-[#16796E]"><Wallet className="h-5 w-5" strokeWidth={2.2} /></span>
+          <span className="min-w-0">
+            <span className="block text-[12px] font-bold text-gray-500">{ts("Saldo Linguo")}</span>
+            <span className="block text-[20px] font-extrabold leading-tight text-[#12172B]">{loaded ? fmtRp(saldo) : "…"}</span>
+          </span>
+        </button>
+        {onTopup ? (
+          <button type="button" onClick={onTopup}
+            className="inline-flex h-9 shrink-0 items-center gap-1 rounded-xl px-3.5 text-[13px] font-extrabold text-[#12172B] transition hover:brightness-95" style={{ background: "#F2CB05" }}>
+            <Plus className="h-4 w-4" strokeWidth={2.6} /> {ts("Top up")}
+          </button>
+        ) : null}
+      </div>
+      <button type="button" onClick={onOpen} className="mt-2 text-[12px] font-bold text-[#16796E] hover:underline">
+        {ts("Riwayat & bayar tagihan pakai saldo")} →
+      </button>
+    </div>
+  );
+}
