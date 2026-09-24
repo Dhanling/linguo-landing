@@ -17,6 +17,8 @@ const MODEL_SRC = "/models/hero-character.glb";
 const ORBIT_THETA = -35, ORBIT_PHI = 80, FOV = 30;
 const YAW_MAX = 26, PITCH_MAX = 12, BODY_YAW_MAX = 6; // derajat
 const DIAM_SETELAH_MS = 2500;
+const MELAYANG = 0.014;                                   // amplitudo naik-turun (satuan model; tinggi karakter ≈ 1)
+const BAYANGAN_JARAK = 0.12, BAYANGAN_OPASITAS = 0.32;    // celah kaki→lantai khayal
 
 const rad = (d: number) => (d * Math.PI) / 180;
 
@@ -49,7 +51,9 @@ export default function HeroModel3D({ alt }: { alt: string }) {
       renderer.toneMappingExposure = 1.05;
       renderer.setClearColor(0x000000, 0);
       const kanvas = renderer.domElement;
-      Object.assign(kanvas.style, { position: "absolute", inset: "0", width: "100%", height: "100%", pointerEvents: "none", opacity: "0", transition: "opacity .7s ease" });
+      Object.assign(kanvas.style, { position: "absolute", inset: "0", width: "100%", height: "100%", pointerEvents: "none", opacity: "0", transition: "opacity .45s ease .25s" });
+      // Transisi berurutan (PNG pudar dulu 0,3 dtk, baru 3D muncul): sudut render PNG
+      // sedikit beda dengan model, jadi kalau saling silang karakternya tampak dobel.
       kanvas.setAttribute("aria-hidden", "true");
 
       const scene = new THREE.Scene();
@@ -67,6 +71,8 @@ export default function HeroModel3D({ alt }: { alt: string }) {
       scene.add(badan);
 
       // Bingkai kamera: pusat bounding box, jarak pas memuat bola pembatas.
+      // JANGAN digeser demi bayangan — bingkai harus sama dengan PNG, kalau tidak
+      // saat PNG memudar ke 3D karakternya terlihat dobel. Ruang di bawah kaki cukup.
       const kotak = new THREE.Box3().setFromObject(model);
       const pusat = kotak.getCenter(new THREE.Vector3());
       const radius = kotak.getBoundingSphere(new THREE.Sphere()).radius;
@@ -78,6 +84,26 @@ export default function HeroModel3D({ alt }: { alt: string }) {
         pusat.z + jarak * Math.sin(ph) * Math.cos(th),
       );
       camera.lookAt(pusat);
+
+      // Bayangan melayang: elips lembut (gradien radial di kanvas) di lantai khayal
+      // di bawah kaki. Tak ikut grup badan — ia yang bereaksi pada naik-turunnya karakter.
+      const tekstur = (() => {
+        const c = document.createElement("canvas"); c.width = c.height = 128;
+        const g = c.getContext("2d")!;
+        const gr = g.createRadialGradient(64, 64, 0, 64, 64, 64);
+        gr.addColorStop(0, "rgba(0,0,0,1)"); gr.addColorStop(0.45, "rgba(0,0,0,.55)"); gr.addColorStop(1, "rgba(0,0,0,0)");
+        g.fillStyle = gr; g.fillRect(0, 0, 128, 128);
+        const t = new THREE.CanvasTexture(c); t.colorSpace = THREE.SRGBColorSpace; return t;
+      })();
+      const matBayangan = new THREE.MeshBasicMaterial({ map: tekstur, transparent: true, depthWrite: false, toneMapped: false, opacity: BAYANGAN_OPASITAS });
+      const bayangan = new THREE.Mesh(new THREE.PlaneGeometry(1, 1), matBayangan);
+      bayangan.rotation.x = -Math.PI / 2;
+      const ukuranKotak = kotak.getSize(new THREE.Vector3());
+      bayangan.scale.set(ukuranKotak.x * 0.95, ukuranKotak.z * 1.3, 1);
+      bayangan.position.set(pusat.x, kotak.min.y - BAYANGAN_JARAK, (kotak.min.z + kotak.max.z) / 2);
+      bayangan.renderOrder = -1;
+      scene.add(bayangan);
+      const skalaBayangan = bayangan.scale.clone();
 
       // Rotasi kepala dihitung di ruang model lalu dikonversi ke ruang lokal tulang:
       // lokal = pInv · delta · p · q0 — tak bergantung orientasi sumbu tulang hasil ekspor.
@@ -132,7 +158,12 @@ export default function HeroModel3D({ alt }: { alt: string }) {
         cx += (gx - cx) * k;
         cy += (gy - cy) * k;
         badan.rotation.y = rad(cx * BODY_YAW_MAX);
-        badan.position.y = diam ? 0 : Math.sin(t / 900) * 0.004; // napas
+        // Melayang naik-turun; bayangan mengecil & memudar saat karakter naik.
+        const naik = diam ? 0 : Math.sin(t / 650); // -1..1
+        badan.position.y = naik * MELAYANG;
+        const k01 = (naik + 1) / 2;
+        bayangan.scale.set(skalaBayangan.x * (1 - 0.14 * k01), skalaBayangan.y * (1 - 0.14 * k01), 1);
+        matBayangan.opacity = BAYANGAN_OPASITAS * (1 - 0.35 * k01);
         if (kepala && q0) {
           qYaw.setFromAxisAngle(sumbuYaw, rad(cx * YAW_MAX));
           qPitch.setFromAxisAngle(sumbuPitch, rad(-cy * PITCH_MAX));
@@ -177,6 +208,7 @@ export default function HeroModel3D({ alt }: { alt: string }) {
             mat.dispose();
           });
         });
+        bayangan.geometry.dispose(); matBayangan.dispose(); tekstur.dispose();
         envTex.dispose(); pmrem.dispose(); renderer.dispose();
         kanvas.remove();
       };
@@ -197,7 +229,7 @@ export default function HeroModel3D({ alt }: { alt: string }) {
       <Image
         src="/images/hero-character.png" alt={siap ? "" : alt} aria-hidden={siap || undefined}
         width={810} height={656} priority sizes="(min-width: 1024px) 810px, 0px"
-        className={`w-full h-full object-contain drop-shadow-2xl transition-opacity duration-700 ${siap ? "opacity-0" : "opacity-100"}`}
+        className={`w-full h-full object-contain drop-shadow-2xl transition-opacity duration-300 ${siap ? "opacity-0" : "opacity-100"}`}
       />
       {siap && <span className="sr-only">{alt}</span>}
     </div>
