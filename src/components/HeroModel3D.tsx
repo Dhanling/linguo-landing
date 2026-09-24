@@ -1,9 +1,11 @@
 "use client";
-// [hero-3d-v2] Karakter hero 3D yang kepalanya menoleh mengikuti cursor.
-// GLB dari Tripo diberi rig 2 tulang (root + head) lewat script Blender headless
-// — bobot kepala dihitung dari tinggi (di atas leher cuma ada kepala/headphone),
-// jadi kabel headphone ikut melengkung halus. Dikompres ke ~1,8 MB (tekstur WebP
-// + mesh terkuantisasi, tanpa decoder Draco/Meshopt).
+// [hero-3d-v3] Karakter hero 3D: kepala menoleh mengikuti cursor, jari mengetik.
+// GLB dari Tripo diberi rig lewat script Blender headless: root + head (bobot dari
+// tinggi — di atas leher cuma ada kepala/headphone, jadi kabel ikut melengkung)
+// + 2 tangan × 4 jari (bobot dari posisi, bukan sambungan mesh: vertex kembar di
+// jahitan UV harus dapat bobot identik, kalau tidak mesh retak). Klip "mengetik"
+// 3 detik dipanggang di Blender; kepala tetap dikendalikan kode di atasnya.
+// Dikompres ke ~1,8 MB (tekstur WebP + mesh terkuantisasi, tanpa decoder).
 // PNG lama tetap jadi lapisan awal & LCP — three.js baru diunduh saat browser
 // idle, hanya di desktop, dilewati kalau hemat data. Begitu frame pertama
 // dirender, PNG memudar keluar. Render berhenti saat hero tak terlihat.
@@ -13,7 +15,7 @@ import React, { useEffect, useRef, useState } from "react";
 const MODEL_SRC = "/models/hero-character.glb";
 // Sudut kamera disamakan dengan PNG lama supaya pergantiannya tidak melompat.
 const ORBIT_THETA = -35, ORBIT_PHI = 80, FOV = 30;
-const YAW_MAX = 22, PITCH_MAX = 8, BODY_YAW_MAX = 5; // derajat
+const YAW_MAX = 26, PITCH_MAX = 12, BODY_YAW_MAX = 6; // derajat
 const DIAM_SETELAH_MS = 2500;
 
 const rad = (d: number) => (d * Math.PI) / 180;
@@ -98,14 +100,29 @@ export default function HeroModel3D({ alt }: { alt: string }) {
       ukur();
       wadah.appendChild(kanvas);
 
-      // Target dari posisi cursor relatif ke pusat kanvas (satu layar penuh = ±1).
+      // Target dari posisi cursor relatif ke kepala karakter, dinormalkan PER SISI:
+      // karakter ada di kanan layar, jadi jarak ke tepi kanan/atas jauh lebih pendek
+      // — tanpa ini cursor di pojok kanan-atas cuma menghasilkan setengah sudut.
       let tx = 0, ty = 0, cx = 0, cy = 0, terakhirGerak = 0;
+      const sisi = (d: number, ke0: number, ke1: number) =>
+        Math.max(-1, Math.min(1, d < 0 ? d / Math.max(ke0, 120) : d / Math.max(ke1, 120)));
       const onPointer = (e: PointerEvent) => {
         const r = kanvas.getBoundingClientRect();
-        tx = Math.max(-1, Math.min(1, (e.clientX - (r.left + r.width / 2)) / (window.innerWidth / 2)));
-        ty = Math.max(-1, Math.min(1, (e.clientY - (r.top + r.height * 0.3)) / (window.innerHeight / 2)));
+        const kx = r.left + r.width * 0.62, ky = r.top + r.height * 0.28; // kira-kira posisi kepala
+        tx = sisi(e.clientX - kx, kx, window.innerWidth - kx);
+        ty = sisi(e.clientY - ky, ky, window.innerHeight - ky);
         terakhirGerak = performance.now();
       };
+
+      // Klip "mengetik" hanya untuk tangan & jari — trek kepala dibuang supaya
+      // tidak bertabrakan dengan rotasi kepala dari cursor.
+      const mixer = new THREE.AnimationMixer(model);
+      const klip = gltf.animations.find((a) => a.name === "mengetik");
+      if (klip && !diam) {
+        klip.tracks = klip.tracks.filter((tr) => /^(tangan_|jari_)/.test(tr.name));
+        mixer.clipAction(klip).play();
+      }
+      let tSebelum = 0;
 
       const pose = (t: number) => {
         const idle = t - terakhirGerak > DIAM_SETELAH_MS;
@@ -127,6 +144,8 @@ export default function HeroModel3D({ alt }: { alt: string }) {
       let raf = 0, terlihat = true, pertama = true;
       const frame = (t: number) => {
         raf = 0;
+        mixer.update(tSebelum ? Math.min((t - tSebelum) / 1000, 0.1) : 0);
+        tSebelum = t;
         pose(t);
         renderer.render(scene, camera);
         if (pertama) { pertama = false; kanvas.style.opacity = "1"; setSiap(true); }
@@ -144,6 +163,7 @@ export default function HeroModel3D({ alt }: { alt: string }) {
 
       bersihkan = () => {
         cancelAnimationFrame(raf);
+        mixer.stopAllAction();
         io.disconnect(); ro.disconnect();
         document.removeEventListener("visibilitychange", lanjut);
         window.removeEventListener("pointermove", onPointer);
