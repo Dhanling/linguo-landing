@@ -15,6 +15,7 @@ import { getLanguageCategory, PRICE_A1_60MIN, getPrivateBase60, getSemiPrivatePr
 import TokoCTA from "@/components/TokoCTA";
 import TautanLegal from "@/components/TautanLegal"; // [xendit-legal-links-v1]
 import Reveal from "@/components/Reveal"; // linguo-patch:scroll-reveal-v1
+import HeroModel3D from "@/components/HeroModel3D"; // [hero-3d-v1]
 import { useOverlayLock } from "@/lib/overlayStore";
 import { TESTIMONIALS } from "@/data/testimonials";
 import { regulerLangName } from "@/lib/classLanguage"; // [reguler-english-conversation-v1]
@@ -1817,8 +1818,8 @@ export default function Home() {
         </motion.div>
         <motion.div initial={{opacity:0,x:40}} animate={{opacity:1,x:0}} transition={{delay:0.3}} className="hidden lg:flex justify-end relative -mr-28">
           <div className="relative w-[810px] h-[810px]">
-            <Image src="/images/hero-character.png" alt="Learn languages with Linguo" width={810} height={656} priority sizes="(min-width: 1024px) 810px, 0px" className="w-full h-full object-contain drop-shadow-2xl" />
-            <div className="absolute top-16 left-[27%]">
+            <HeroModel3D alt="Learn languages with Linguo"/>
+            <div className="absolute top-16 left-[27%] pointer-events-none">
               <motion.div animate={{y:[0,-8,0]}} transition={{duration:3,repeat:Infinity}}>
                 <div className="relative bg-white rounded-2xl px-7 py-4 shadow-xl">
                   <TypingBubble/>
