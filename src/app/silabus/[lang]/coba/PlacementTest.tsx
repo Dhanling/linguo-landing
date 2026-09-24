@@ -116,12 +116,11 @@ export default function PlacementTest({ curriculum, questions }: Props) {
   const computeScore = (arr: (AnswerEntry | null)[]) =>
     arr.reduce((sum, a, i) => sum + (a?.correct ? DIFFICULTY_POINTS[questions[i].difficulty] : 0), 0);
 
-  const startTest = (c?: Contact | null) => {
-    const who = c ?? contact;
-    if (c) setContact(c);
-    // Catat peserta SEKARANG (ke leads) — yang berhenti di tengah jalan tetap terekam.
-    if (who) {
-      fetch("/api/placement-result", {
+  // Catat peserta begitu biodata dikirim (ke leads) — yang berhenti sebelum/di
+  // tengah tes tetap terekam.
+  const saveContact = (who: Contact) => {
+    setContact(who);
+    fetch("/api/placement-result", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
@@ -134,7 +133,9 @@ export default function PlacementTest({ curriculum, questions }: Props) {
         }),
         keepalive: true,
       }).catch(() => {});
-    }
+  };
+
+  const startTest = () => {
     startTimeRef.current = Date.now();
     setScreen("quiz"); setCurrentQ(0); setDirection(1);
     setAnswers(Array(questions.length).fill(null));
@@ -178,7 +179,7 @@ export default function PlacementTest({ curriculum, questions }: Props) {
     <main className="min-h-screen bg-gradient-to-b from-white via-slate-50 to-white">
       <AnimatePresence mode="wait">
         {screen === "intro" && (
-          <IntroScreen key="intro" meta={meta} total={questions.length} needContact={!fromAkun} onStart={startTest} />
+          <IntroScreen key="intro" meta={meta} total={questions.length} needContact={!fromAkun} onContact={saveContact} onStart={startTest} />
         )}
         {screen === "quiz" && question && (
           <QuizScreen
@@ -205,7 +206,7 @@ export default function PlacementTest({ curriculum, questions }: Props) {
             meta={meta}
             timeElapsedSec={Math.floor((Date.now() - startTimeRef.current) / 1000)}
             contact={contact}
-            onRetake={() => startTest()}
+            onRetake={startTest}
           />
         )}
       </AnimatePresence>
@@ -216,9 +217,11 @@ export default function PlacementTest({ curriculum, questions }: Props) {
 // ================================================
 // INTRO
 // ================================================
-function IntroScreen({ meta, total, needContact, onStart }: {
-  meta: any; total: number; needContact: boolean; onStart: (c: Contact | null) => void;
+function IntroScreen({ meta, total, needContact, onContact, onStart }: {
+  meta: any; total: number; needContact: boolean; onContact: (c: Contact) => void; onStart: () => void;
 }) {
+  // [placement-popup-biodata-tips-v1] "Mulai Test" → popup: biodata (wajib) → tips → mulai.
+  const [step, setStep] = useState<null | "biodata" | "tips">(null);
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [wa, setWa] = useState("");
@@ -235,8 +238,7 @@ function IntroScreen({ meta, total, needContact, onStart }: {
     } catch {}
   }, []);
 
-  const mulai = () => {
-    if (!needContact) return onStart(null);
+  const kirimBiodata = () => {
     setErr("");
     const w = cleanWa(wa);
     if (!name.trim()) return setErr("Masukkan nama dulu ya");
@@ -245,7 +247,8 @@ function IntroScreen({ meta, total, needContact, onStart }: {
     if (!w.startsWith("8")) return setErr("Nomor HP harus diawali 8 (tanpa 0 / +62)");
     const c = { name: name.trim(), email: email.trim(), whatsapp: w };
     try { localStorage.setItem("linguo_prefill", JSON.stringify(c)); } catch {}
-    onStart(c);
+    onContact(c);
+    setStep("tips");
   };
 
   const inputCls = "w-full px-4 py-3 rounded-xl border border-gray-200 bg-white focus:border-[#1A9E9E] focus:ring-2 focus:ring-[#1A9E9E]/20 outline-none text-sm";
@@ -280,44 +283,85 @@ function IntroScreen({ meta, total, needContact, onStart }: {
           <InfoCard icon="Award" value="CEFR" label="Standard" />
         </div>
 
-        <div className="bg-amber-50 border border-amber-200 rounded-2xl p-4 md:p-5 mb-8">
-          <div className="flex items-start gap-3">
-            <Info className="w-5 h-5 text-amber-600 flex-shrink-0 mt-0.5" />
-            <div className="text-sm text-amber-900 leading-relaxed">
-              <p className="font-semibold mb-1">Tips supaya akurat:</p>
-              <ul className="list-disc list-inside space-y-0.5 text-amber-800">
-                <li>Klik opsi = jawaban langsung tersubmit (tanpa tombol)</li>
-                <li>Benar/salah tidak dibocorkan per soal — biar kamu fokus</li>
-                <li>Rekap lengkap + pembahasan muncul di akhir test</li>
-                <li>Jawab jujur, tebak kalau ragu</li>
-              </ul>
-            </div>
-          </div>
-        </div>
-
-        {needContact && (
-          <div className="bg-white border border-gray-100 rounded-2xl p-4 md:p-5 mb-6">
-            <p className="text-sm font-semibold text-gray-900 mb-1">Isi data kamu dulu</p>
-            <p className="text-xs text-gray-500 mb-4">Hasil test & learning plan dikirim ke WhatsApp dan email ini.</p>
-            <div className="space-y-3">
-              <input type="text" value={name} onChange={(e) => setName(e.target.value)} placeholder="Nama kamu" autoComplete="name" className={inputCls} />
-              <input type="email" value={email} onChange={(e) => setEmail(e.target.value)} placeholder="Email kamu" autoComplete="email" className={inputCls} />
-              <div className="flex">
-                <span className="px-3 py-3 border border-r-0 border-gray-200 rounded-l-xl bg-gray-50 text-sm text-gray-600 font-mono">+62</span>
-                <input type="tel" value={wa} onChange={(e) => setWa(cleanWa(e.target.value))} placeholder="812 xxxx xxxx" inputMode="numeric" autoComplete="tel-national"
-                  className="flex-1 min-w-0 px-4 py-3 rounded-r-xl border border-gray-200 bg-white focus:border-[#1A9E9E] focus:ring-2 focus:ring-[#1A9E9E]/20 outline-none text-sm" />
-              </div>
-              {err && <p className="text-xs text-rose-600">{err}</p>}
-            </div>
-          </div>
-        )}
-
-        <button onClick={mulai}
+        <button onClick={() => setStep(needContact ? "biodata" : "tips")}
           className="w-full md:w-auto inline-flex items-center justify-center gap-2 px-8 py-4 bg-[#1A9E9E] text-white rounded-full font-bold text-lg hover:bg-[#147a7a] shadow-xl shadow-[#1A9E9E]/20 transition-all group">
           Mulai Test
           <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
         </button>
       </div>
+
+      <AnimatePresence>
+        {step && (
+          <motion.div key="intro-popup" initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}
+            className="fixed inset-0 z-[70] bg-black/50 backdrop-blur-sm flex items-center justify-center px-4"
+            onClick={() => setStep(null)}>
+            <motion.div key={step} initial={{ opacity: 0, scale: 0.95, y: 10 }} animate={{ opacity: 1, scale: 1, y: 0 }}
+              exit={{ opacity: 0, scale: 0.95, y: 10 }} transition={{ type: "spring", damping: 25, stiffness: 300 }}
+              role="dialog" aria-modal="true" aria-labelledby="intro-popup-title"
+              onClick={(e) => e.stopPropagation()}
+              className="relative w-full max-w-md bg-white rounded-3xl shadow-2xl p-6">
+              <button type="button" onClick={() => setStep(null)} aria-label="Tutup"
+                className="absolute top-4 right-4 w-9 h-9 rounded-full hover:bg-gray-100 flex items-center justify-center text-gray-400 hover:text-gray-600 transition-colors">
+                <X className="w-5 h-5" />
+              </button>
+
+              {step === "biodata" ? (
+                <form onSubmit={(e) => { e.preventDefault(); kirimBiodata(); }}>
+                  <p className="text-xs font-semibold text-[#1A9E9E] uppercase tracking-wide mb-1">Langkah 1/2</p>
+                  <h2 id="intro-popup-title" className="text-xl font-bold text-gray-900 pr-8">Isi data kamu dulu</h2>
+                  <p className="text-sm text-gray-500 mt-1 mb-5">Hasil test & learning plan dikirim ke WhatsApp dan email ini.</p>
+                  <div className="space-y-3">
+                    <input type="text" value={name} onChange={(e) => setName(e.target.value)} placeholder="Nama kamu" autoComplete="name" autoFocus className={inputCls} />
+                    <input type="email" value={email} onChange={(e) => setEmail(e.target.value)} placeholder="Email kamu" autoComplete="email" className={inputCls} />
+                    <div className="flex">
+                      <span className="px-3 py-3 border border-r-0 border-gray-200 rounded-l-xl bg-gray-50 text-sm text-gray-600 font-mono">+62</span>
+                      <input type="tel" value={wa} onChange={(e) => setWa(cleanWa(e.target.value))} placeholder="812 xxxx xxxx" inputMode="numeric" autoComplete="tel-national"
+                        className="flex-1 min-w-0 px-4 py-3 rounded-r-xl border border-gray-200 bg-white focus:border-[#1A9E9E] focus:ring-2 focus:ring-[#1A9E9E]/20 outline-none text-sm" />
+                    </div>
+                    {err && <p className="text-xs text-rose-600">{err}</p>}
+                  </div>
+                  <button type="submit"
+                    className="mt-5 w-full inline-flex items-center justify-center gap-2 px-6 py-3 bg-[#1A9E9E] text-white rounded-xl font-semibold hover:bg-[#147a7a] transition-colors">
+                    Lanjut <ArrowRight className="w-4 h-4" />
+                  </button>
+                  <p className="text-[10px] text-gray-400 mt-3 text-center">Data aman. Tidak spam.</p>
+                </form>
+              ) : (
+                <div>
+                  {needContact && <p className="text-xs font-semibold text-[#1A9E9E] uppercase tracking-wide mb-1">Langkah 2/2</p>}
+                  <div className="flex items-center gap-2 pr-8">
+                    <Info className="w-5 h-5 text-amber-600 flex-shrink-0" />
+                    <h2 id="intro-popup-title" className="text-xl font-bold text-gray-900">Tips supaya akurat</h2>
+                  </div>
+                  <ul className="mt-4 space-y-2.5 text-sm text-gray-700">
+                    {[
+                      "Klik opsi = jawaban langsung tersubmit (tanpa tombol)",
+                      "Benar/salah tidak dibocorkan per soal — biar kamu fokus",
+                      "Rekap lengkap + pembahasan muncul di akhir test",
+                      "Jawab jujur, tebak kalau ragu",
+                    ].map((t) => (
+                      <li key={t} className="flex items-start gap-2.5">
+                        <Check className="w-4 h-4 text-[#1A9E9E] flex-shrink-0 mt-0.5" strokeWidth={3} />
+                        <span>{t}</span>
+                      </li>
+                    ))}
+                  </ul>
+                  <button type="button" autoFocus onClick={onStart}
+                    className="mt-6 w-full inline-flex items-center justify-center gap-2 px-6 py-3 bg-[#1A9E9E] text-white rounded-xl font-semibold hover:bg-[#147a7a] transition-colors">
+                    Mulai Test Sekarang <ArrowRight className="w-4 h-4" />
+                  </button>
+                  {needContact && (
+                    <button type="button" onClick={() => setStep("biodata")}
+                      className="mt-2 w-full text-xs text-gray-500 hover:text-gray-700 py-1">
+                      Ubah data
+                    </button>
+                  )}
+                </div>
+              )}
+            </motion.div>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </motion.section>
   );
 }
