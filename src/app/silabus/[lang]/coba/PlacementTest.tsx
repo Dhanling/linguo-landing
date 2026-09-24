@@ -6,8 +6,9 @@ import AuthModal from "@/components/AuthModal";
 import { supabase } from "@/lib/supabase-client";
 import Link from "next/link";
 import { motion, AnimatePresence } from "framer-motion";
-import * as Icons from "lucide-react";
-import { type LanguageCurriculum, displayLangTitle } from "@/data/curriculum";
+import { ArrowLeft, ArrowRight, Award, BookOpen, Check, ChevronDown, Clock, Info, List, RotateCw, SkipForward, Target, Unlock, X } from "lucide-react";
+import type { LanguageCurriculum } from "@/data/curriculum/types";
+import { displayLangTitle } from "@/data/curriculum/languages";
 import { type Question, type DragDropQuestion, type MissingQuestion, type MatchingQuestion, type FillChoiceQuestion, DIFFICULTY_POINTS, determineLevel } from "@/data/placement/english";
 import { RectFlag, FLAG_CODE_BY_SLUG } from "@/components/RectFlag";
 import CefrLevelMap from "@/components/CefrLevelMap"; // [placement-cefr-map-v1]
@@ -37,6 +38,15 @@ import { trackEvent } from "@/lib/tracking";
 import { daftarSlugFromLanguageSlug } from "@/lib/funnelRouting";
 
 type Screen = "intro" | "quiz" | "result";
+
+// [placement-rekam-saat-mulai-v1] Kontak diisi WAJIB sebelum tes (kecuali siswa /akun).
+type Contact = { name: string; email: string; whatsapp: string };
+
+function fmtClock(sec: number): string {
+  const m = Math.floor(sec / 60);
+  const s = sec % 60;
+  return `${String(m).padStart(2, "0")}:${String(s).padStart(2, "0")}`;
+}
 
 // linguo-patch:placement-leadform-polish-v1 — normalisasi nomor WA (digit-only, buang prefix 62/0, cap 13 digit)
 function cleanWa(raw: string): string {
@@ -87,18 +97,45 @@ export default function PlacementTest({ curriculum, questions }: Props) {
   // Jawaban per soal (null = belum dijawab). Bisa diubah lewat tombol "Soal sebelumnya".
   const [answers, setAnswers] = useState<(AnswerEntry | null)[]>([]);
   const startTimeRef = useRef<number>(0);
+  // [placement-rekam-saat-mulai-v1] Siswa /akun (ref=akun&sid) sudah dikenal → tanpa form.
+  const searchParams = useSearchParams();
+  const fromAkun = searchParams?.get("ref") === "akun" && !!searchParams?.get("sid");
+  const [contact, setContact] = useState<Contact | null>(null);
 
   const question = questions[currentQ];
   const progress = ((currentQ + 1) / questions.length) * 100;
 
+  // Tutup tab / reload di tengah tes → peringatan bawaan browser.
   useEffect(() => {
-    if (screen === "quiz" && currentQ === 0) startTimeRef.current = Date.now();
-  }, [screen, currentQ]);
+    if (screen !== "quiz") return;
+    const onBeforeUnload = (e: BeforeUnloadEvent) => { e.preventDefault(); e.returnValue = ""; };
+    window.addEventListener("beforeunload", onBeforeUnload);
+    return () => window.removeEventListener("beforeunload", onBeforeUnload);
+  }, [screen]);
 
   const computeScore = (arr: (AnswerEntry | null)[]) =>
     arr.reduce((sum, a, i) => sum + (a?.correct ? DIFFICULTY_POINTS[questions[i].difficulty] : 0), 0);
 
-  const startTest = () => {
+  const startTest = (c?: Contact | null) => {
+    const who = c ?? contact;
+    if (c) setContact(c);
+    // Catat peserta SEKARANG (ke leads) — yang berhenti di tengah jalan tetap terekam.
+    if (who) {
+      fetch("/api/placement-result", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          mulai: true,
+          language: meta.name,
+          source: "placement-test-" + meta.slug + "-mulai",
+          name: who.name,
+          email: who.email,
+          whatsapp: who.whatsapp,
+        }),
+        keepalive: true,
+      }).catch(() => {});
+    }
+    startTimeRef.current = Date.now();
     setScreen("quiz"); setCurrentQ(0); setDirection(1);
     setAnswers(Array(questions.length).fill(null));
     trackEvent("placement_test_quiz_started", { language: meta?.name ?? "" });
@@ -141,7 +178,7 @@ export default function PlacementTest({ curriculum, questions }: Props) {
     <main className="min-h-screen bg-gradient-to-b from-white via-slate-50 to-white">
       <AnimatePresence mode="wait">
         {screen === "intro" && (
-          <IntroScreen key="intro" meta={meta} total={questions.length} onStart={startTest} />
+          <IntroScreen key="intro" meta={meta} total={questions.length} needContact={!fromAkun} onStart={startTest} />
         )}
         {screen === "quiz" && question && (
           <QuizScreen
@@ -156,6 +193,7 @@ export default function PlacementTest({ curriculum, questions }: Props) {
             onPass={passAnswer}
             onBack={goBack}
             langSlug={meta.slug}
+            startedAt={startTimeRef.current}
           />
         )}
         {screen === "result" && (
@@ -166,7 +204,8 @@ export default function PlacementTest({ curriculum, questions }: Props) {
             log={answers.map((a) => ({ correct: !!a?.correct, skipped: !!a?.skipped }))}
             meta={meta}
             timeElapsedSec={Math.floor((Date.now() - startTimeRef.current) / 1000)}
-            onRetake={startTest}
+            contact={contact}
+            onRetake={() => startTest()}
           />
         )}
       </AnimatePresence>
@@ -177,13 +216,46 @@ export default function PlacementTest({ curriculum, questions }: Props) {
 // ================================================
 // INTRO
 // ================================================
-function IntroScreen({ meta, total, onStart }: { meta: any; total: number; onStart: () => void }) {
+function IntroScreen({ meta, total, needContact, onStart }: {
+  meta: any; total: number; needContact: boolean; onStart: (c: Contact | null) => void;
+}) {
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [wa, setWa] = useState("");
+  const [err, setErr] = useState("");
+  // Prefill dari isian sebelumnya (gate lama / funnel) supaya tidak mengetik ulang.
+  useEffect(() => {
+    try {
+      const p = JSON.parse(localStorage.getItem("linguo_prefill") || "null");
+      if (p) {
+        if (p.name) setName(String(p.name));
+        if (p.email) setEmail(String(p.email));
+        if (p.whatsapp) setWa(cleanWa(String(p.whatsapp)));
+      }
+    } catch {}
+  }, []);
+
+  const mulai = () => {
+    if (!needContact) return onStart(null);
+    setErr("");
+    const w = cleanWa(wa);
+    if (!name.trim()) return setErr("Masukkan nama dulu ya");
+    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email.trim())) return setErr("Masukkan email yang valid");
+    if (w.length < 9) return setErr("Nomor WhatsApp minimal 9 digit");
+    if (!w.startsWith("8")) return setErr("Nomor HP harus diawali 8 (tanpa 0 / +62)");
+    const c = { name: name.trim(), email: email.trim(), whatsapp: w };
+    try { localStorage.setItem("linguo_prefill", JSON.stringify(c)); } catch {}
+    onStart(c);
+  };
+
+  const inputCls = "w-full px-4 py-3 rounded-xl border border-gray-200 bg-white focus:border-[#1A9E9E] focus:ring-2 focus:ring-[#1A9E9E]/20 outline-none text-sm";
+
   return (
     <motion.section initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}
       className="min-h-screen flex items-center justify-center px-6 py-20">
       <div className="max-w-2xl w-full">
         <Link href={"/silabus/" + meta.slug} className="text-sm text-gray-500 hover:text-gray-900 inline-flex items-center gap-1 mb-8 group">
-          <Icons.ArrowLeft className="w-4 h-4 transition-transform group-hover:-translate-x-0.5" />
+          <ArrowLeft className="w-4 h-4 transition-transform group-hover:-translate-x-0.5" />
           Kembali ke silabus
         </Link>
 
@@ -210,7 +282,7 @@ function IntroScreen({ meta, total, onStart }: { meta: any; total: number; onSta
 
         <div className="bg-amber-50 border border-amber-200 rounded-2xl p-4 md:p-5 mb-8">
           <div className="flex items-start gap-3">
-            <Icons.Info className="w-5 h-5 text-amber-600 flex-shrink-0 mt-0.5" />
+            <Info className="w-5 h-5 text-amber-600 flex-shrink-0 mt-0.5" />
             <div className="text-sm text-amber-900 leading-relaxed">
               <p className="font-semibold mb-1">Tips supaya akurat:</p>
               <ul className="list-disc list-inside space-y-0.5 text-amber-800">
@@ -223,18 +295,36 @@ function IntroScreen({ meta, total, onStart }: { meta: any; total: number; onSta
           </div>
         </div>
 
-        <button onClick={onStart}
+        {needContact && (
+          <div className="bg-white border border-gray-100 rounded-2xl p-4 md:p-5 mb-6">
+            <p className="text-sm font-semibold text-gray-900 mb-1">Isi data kamu dulu</p>
+            <p className="text-xs text-gray-500 mb-4">Hasil test & learning plan dikirim ke WhatsApp dan email ini.</p>
+            <div className="space-y-3">
+              <input type="text" value={name} onChange={(e) => setName(e.target.value)} placeholder="Nama kamu" autoComplete="name" className={inputCls} />
+              <input type="email" value={email} onChange={(e) => setEmail(e.target.value)} placeholder="Email kamu" autoComplete="email" className={inputCls} />
+              <div className="flex">
+                <span className="px-3 py-3 border border-r-0 border-gray-200 rounded-l-xl bg-gray-50 text-sm text-gray-600 font-mono">+62</span>
+                <input type="tel" value={wa} onChange={(e) => setWa(cleanWa(e.target.value))} placeholder="812 xxxx xxxx" inputMode="numeric" autoComplete="tel-national"
+                  className="flex-1 min-w-0 px-4 py-3 rounded-r-xl border border-gray-200 bg-white focus:border-[#1A9E9E] focus:ring-2 focus:ring-[#1A9E9E]/20 outline-none text-sm" />
+              </div>
+              {err && <p className="text-xs text-rose-600">{err}</p>}
+            </div>
+          </div>
+        )}
+
+        <button onClick={mulai}
           className="w-full md:w-auto inline-flex items-center justify-center gap-2 px-8 py-4 bg-[#1A9E9E] text-white rounded-full font-bold text-lg hover:bg-[#147a7a] shadow-xl shadow-[#1A9E9E]/20 transition-all group">
           Mulai Test
-          <Icons.ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+          <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
         </button>
       </div>
     </motion.section>
   );
 }
 
-function InfoCard({ icon, value, label }: { icon: string; value: string; label: string }) {
-  const Icon = (Icons as any)[icon] as React.FC<{ className?: string; strokeWidth?: number }>;
+const INFO_ICONS = { List, Clock, Award } as const;
+function InfoCard({ icon, value, label }: { icon: keyof typeof INFO_ICONS; value: string; label: string }) {
+  const Icon = INFO_ICONS[icon];
   return (
     <div className="bg-white border border-gray-100 rounded-2xl p-4 text-center">
       <Icon className="w-5 h-5 text-gray-400 mx-auto mb-2" strokeWidth={2} />
@@ -252,9 +342,16 @@ function QuizScreen(props: {
   selected: string | number | boolean | null;
   onSubmit: (v: string | number | boolean, isCorrectOverride?: boolean) => void;
   onPass: () => void;
-  onBack: () => void; langSlug: string;
+  onBack: () => void; langSlug: string; startedAt: number;
 }) {
-  const { question, currentQ, total, progress, direction, selected, onSubmit, onPass, onBack, langSlug } = props;
+  const { question, currentQ, total, progress, direction, selected, onSubmit, onPass, onBack, langSlug, startedAt } = props;
+  // [placement-timer-v1] Stopwatch sejak "Mulai Test" + konfirmasi sebelum keluar.
+  const [elapsed, setElapsed] = useState(() => Math.floor((Date.now() - startedAt) / 1000));
+  const [confirmExit, setConfirmExit] = useState(false);
+  useEffect(() => {
+    const t = setInterval(() => setElapsed(Math.floor((Date.now() - startedAt) / 1000)), 1000);
+    return () => clearInterval(t);
+  }, [startedAt]);
   const [fillValue, setFillValue] = useState("");
   // Saat pindah soal, isi ulang input teks dari jawaban tersimpan (kalau ada).
   useEffect(() => {
@@ -275,12 +372,17 @@ function QuizScreen(props: {
         <div className="mb-8">
           <div className="flex items-center justify-between mb-2 text-sm">
             <div className="flex items-center gap-2">
-              <Link href={"/silabus/" + langSlug} className="text-gray-400 hover:text-gray-600">
-                <Icons.X className="w-4 h-4" />
-              </Link>
+              <button type="button" onClick={() => setConfirmExit(true)} aria-label="Keluar dari test" className="text-gray-400 hover:text-gray-600">
+                <X className="w-4 h-4" />
+              </button>
               <span className="text-gray-500">Soal <span className="font-bold text-gray-900">{currentQ + 1}</span> dari {total}</span>
             </div>
-            <span className={"text-xs font-bold px-2 py-0.5 rounded-full " + diffCls}>{question.difficulty}</span>
+            <div className="flex items-center gap-2">
+              <span className="inline-flex items-center gap-1 text-xs font-semibold text-gray-600 bg-gray-100 px-2 py-0.5 rounded-full tabular-nums" aria-label="Waktu berjalan">
+                <Clock className="w-3.5 h-3.5" /> {fmtClock(elapsed)}
+              </span>
+              <span className={"text-xs font-bold px-2 py-0.5 rounded-full " + diffCls}>{question.difficulty}</span>
+            </div>
           </div>
           <div className="h-2 bg-gray-100 rounded-full overflow-hidden">
             <motion.div className="h-full bg-[#1A9E9E] rounded-full"
@@ -387,17 +489,46 @@ function QuizScreen(props: {
           {currentQ > 0 ? (
             <button onClick={onBack}
               className="inline-flex items-center gap-2 px-5 py-2.5 text-sm text-gray-500 hover:text-gray-700 rounded-full hover:bg-gray-100 transition-all">
-              <Icons.ArrowLeft className="w-4 h-4" />
+              <ArrowLeft className="w-4 h-4" />
               Soal sebelumnya
             </button>
           ) : <span />}
           <button onClick={onPass}
             className="inline-flex items-center gap-2 px-5 py-2.5 text-sm text-gray-500 hover:text-gray-700 rounded-full hover:bg-gray-100 transition-all">
-            <Icons.SkipForward className="w-4 h-4" />
+            <SkipForward className="w-4 h-4" />
             Tidak tahu, lewati soal
           </button>
         </div>
       </div>
+
+      {/* Konfirmasi keluar — jawaban belum tersimpan kalau keluar di tengah tes */}
+      <AnimatePresence>
+        {confirmExit && (
+          <motion.div key="exit" initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}
+            className="fixed inset-0 z-[70] bg-black/50 backdrop-blur-sm flex items-center justify-center px-4"
+            onClick={() => setConfirmExit(false)}>
+            <motion.div initial={{ scale: 0.95, y: 10 }} animate={{ scale: 1, y: 0 }} exit={{ scale: 0.95, y: 10 }}
+              role="alertdialog" aria-modal="true" aria-labelledby="exit-title"
+              onClick={(e) => e.stopPropagation()}
+              className="w-full max-w-sm bg-white rounded-3xl shadow-2xl p-6">
+              <h2 id="exit-title" className="text-lg font-bold text-gray-900">Yakin mau keluar?</h2>
+              <p className="text-sm text-gray-500 mt-1.5">
+                Kamu sudah di soal {currentQ + 1} dari {total}. Kalau keluar sekarang, jawabanmu tidak disimpan dan harus mulai dari awal.
+              </p>
+              <div className="mt-5 flex flex-col-reverse sm:flex-row gap-2">
+                <Link href={"/silabus/" + langSlug}
+                  className="flex-1 text-center px-4 py-2.5 rounded-xl border border-gray-200 text-sm font-semibold text-gray-600 hover:bg-gray-50 transition-colors">
+                  Ya, keluar
+                </Link>
+                <button type="button" autoFocus onClick={() => setConfirmExit(false)}
+                  className="flex-1 px-4 py-2.5 rounded-xl bg-[#1A9E9E] text-white text-sm font-semibold hover:bg-[#147a7a] transition-colors">
+                  Lanjut test
+                </button>
+              </div>
+            </motion.div>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </motion.section>
   );
 }
@@ -405,8 +536,9 @@ function QuizScreen(props: {
 // ================================================
 // RESULT (with Soft-gate WA)
 // ================================================
-function ResultScreen({ score, questions, log, meta, timeElapsedSec, onRetake }: {
-  score: number; questions: Question[]; log: { correct: boolean; skipped: boolean }[]; meta: any; timeElapsedSec: number; onRetake: () => void;
+function ResultScreen({ score, questions, log, meta, timeElapsedSec, contact, onRetake }: {
+  score: number; questions: Question[]; log: { correct: boolean; skipped: boolean }[]; meta: any; timeElapsedSec: number;
+  contact: Contact | null; onRetake: () => void;
 }) {
   const result = determineLevel(score);
   // Compute max score dynamically: sum of DIFFICULTY_POINTS per question
@@ -502,6 +634,30 @@ function ResultScreen({ score, questions, log, meta, timeElapsedSec, onRetake }:
     const sid = searchParams?.get("sid");
     const fromAkun = ref === "akun" && !!sid;
 
+    // [placement-rekam-saat-mulai-v1] Kontak sudah diisi sebelum tes → langsung buka
+    // hasil & simpan baris placement_results lengkap dengan kontak (memicu notif).
+    if (!fromAkun && contact) {
+      setUnlocked(true);
+      fetch("/api/placement-result", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          language: meta.name,
+          level: result.sublevel,
+          score,
+          maxScore,
+          timeElapsedSec,
+          source: "placement-test-" + meta.slug,
+          name: contact.name,
+          email: contact.email,
+          whatsapp: contact.whatsapp,
+        }),
+      })
+        .then((r) => r.json())
+        .then((d) => { if (d?.id) resultRowIdRef.current = d.id; })
+        .catch(() => {});
+      return;
+    }
     // Hard gate: cuma siswa /akun (udah login) yang auto-unlock + auto-log.
     // Non-akun WAJIB isi WA dulu — baris placement_results dibuat pas submitGate.
     if (!fromAkun) {
@@ -592,7 +748,7 @@ function ResultScreen({ score, questions, log, meta, timeElapsedSec, onRetake }:
           <motion.div initial={{ scale: 0, rotate: -180 }} animate={{ scale: 1, rotate: 0 }}
             transition={{ type: "spring", stiffness: 180, damping: 12, delay: 0.1 }}
             className={"inline-flex items-center justify-center w-20 h-20 rounded-full mb-6 " + lc.bg}>
-            <Icons.Award className={"w-10 h-10 " + lc.text} strokeWidth={2} />
+            <Award className={"w-10 h-10 " + lc.text} strokeWidth={2} />
           </motion.div>
           <h1 className="text-3xl md:text-4xl font-bold tracking-tight mb-2 text-gray-900">
             Test kamu selesai!
@@ -617,7 +773,7 @@ function ResultScreen({ score, questions, log, meta, timeElapsedSec, onRetake }:
             <button onClick={submitGate} disabled={submitting}
               className="w-full inline-flex items-center justify-center gap-2 px-6 py-3.5 bg-[#1A9E9E] text-white rounded-xl font-bold hover:bg-[#147a7a] disabled:opacity-50 transition-colors">
               {submitting ? "Menyimpan..." : "Lihat Hasil Saya"}
-              {!submitting && <Icons.ArrowRight className="w-4 h-4" />}
+              {!submitting && <ArrowRight className="w-4 h-4" />}
             </button>
             <p className="text-[10px] text-gray-400 text-center pt-1">Data aman. Pengajar Linguo bakal kirim learning plan via WhatsApp. Tidak spam.</p>
           </div>
@@ -631,7 +787,7 @@ function ResultScreen({ score, questions, log, meta, timeElapsedSec, onRetake }:
           <motion.div initial={{ scale: 0, rotate: -180 }} animate={{ scale: 1, rotate: 0 }}
             transition={{ type: "spring", stiffness: 180, damping: 12, delay: 0.2 }}
             className={"inline-flex items-center justify-center w-24 h-24 rounded-full mb-5 " + lc.bg}>
-            <Icons.Award className={"w-12 h-12 " + lc.text} strokeWidth={2} />
+            <Award className={"w-12 h-12 " + lc.text} strokeWidth={2} />
           </motion.div>
           <motion.p initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.5 }}
             className="text-sm text-gray-500 uppercase tracking-widest mb-2">Hasil Placement Test</motion.p>
@@ -675,21 +831,21 @@ function ResultScreen({ score, questions, log, meta, timeElapsedSec, onRetake }:
           <div className="flex items-center justify-between gap-3 mb-4">
             <div className="flex items-center gap-4 flex-wrap">
               <span className="inline-flex items-center gap-1.5 text-sm font-semibold text-emerald-700">
-                <Icons.Check className="w-4 h-4" /> {correctCount} benar
+                <Check className="w-4 h-4" /> {correctCount} benar
               </span>
               <span className="inline-flex items-center gap-1.5 text-sm font-semibold text-rose-600">
-                <Icons.X className="w-4 h-4" /> {wrongCount} salah
+                <X className="w-4 h-4" /> {wrongCount} salah
               </span>
               {skippedCount > 0 && (
                 <span className="inline-flex items-center gap-1.5 text-sm font-semibold text-amber-600">
-                  <Icons.SkipForward className="w-4 h-4" /> {skippedCount} dilewati
+                  <SkipForward className="w-4 h-4" /> {skippedCount} dilewati
                 </span>
               )}
             </div>
             <button onClick={() => setShowRecap((v) => !v)}
               className="text-sm font-semibold text-[#1A9E9E] hover:text-[#147a7a] inline-flex items-center gap-1 flex-shrink-0">
               {showRecap ? "Sembunyikan" : "Lihat pembahasan"}
-              <Icons.ChevronDown className={"w-4 h-4 transition-transform " + (showRecap ? "rotate-180" : "")} />
+              <ChevronDown className={"w-4 h-4 transition-transform " + (showRecap ? "rotate-180" : "")} />
             </button>
           </div>
 
@@ -731,7 +887,7 @@ function ResultScreen({ score, questions, log, meta, timeElapsedSec, onRetake }:
           <motion.div initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.9 }}
             className={"rounded-3xl p-6 md:p-8 mb-6 border " + lc.soft + " " + lc.border}>
             <div className="flex items-start gap-3 mb-4">
-              <Icons.Target className={"w-6 h-6 flex-shrink-0 mt-0.5 " + lc.text} />
+              <Target className={"w-6 h-6 flex-shrink-0 mt-0.5 " + lc.text} />
               <div className="flex-1">
                 <p className={"text-xs uppercase tracking-widest font-semibold mb-1 " + lc.text}>Rekomendasi Singkat</p>
                 <h3 className="text-xl md:text-2xl font-bold text-gray-900 mb-2">Kamu siap mulai dari level {result.sublevel}</h3>
@@ -744,7 +900,7 @@ function ResultScreen({ score, questions, log, meta, timeElapsedSec, onRetake }:
             {!showGate ? (
               <button onClick={() => setShowGate(true)}
                 className="w-full inline-flex items-center justify-center gap-2 px-6 py-3 bg-gray-900 text-white rounded-full font-semibold hover:bg-gray-700 transition-colors">
-                <Icons.Unlock className="w-4 h-4" />
+                <Unlock className="w-4 h-4" />
                 Dapatkan Learning Plan Gratis
               </button>
             ) : (
@@ -769,7 +925,7 @@ function ResultScreen({ score, questions, log, meta, timeElapsedSec, onRetake }:
                   <button onClick={submitGate} disabled={submitting}
                     className="w-full inline-flex items-center justify-center gap-2 px-6 py-3 bg-[#1A9E9E] text-white rounded-xl font-semibold hover:bg-[#147a7a] disabled:opacity-50 transition-colors">
                     {submitting ? "Menyimpan..." : "Simpan & Tampilkan Detail"}
-                    {!submitting && <Icons.ArrowRight className="w-4 h-4" />}
+                    {!submitting && <ArrowRight className="w-4 h-4" />}
                   </button>
                   <button onClick={() => setShowGate(false)}
                     className="w-full text-xs text-gray-500 hover:text-gray-700 py-1">
@@ -785,12 +941,12 @@ function ResultScreen({ score, questions, log, meta, timeElapsedSec, onRetake }:
             className={"rounded-3xl p-6 md:p-8 mb-6 border " + lc.soft + " " + lc.border}>
             <div className="flex items-center gap-2 mb-4">
               <div className="w-8 h-8 rounded-full bg-emerald-500 flex items-center justify-center">
-                <Icons.Check className="w-4 h-4 text-white" strokeWidth={3} />
+                <Check className="w-4 h-4 text-white" strokeWidth={3} />
               </div>
               <p className="text-sm font-semibold text-emerald-700">Learning plan tersimpan!</p>
             </div>
             <div className="flex items-start gap-3">
-              <Icons.Target className={"w-6 h-6 flex-shrink-0 mt-0.5 " + lc.text} />
+              <Target className={"w-6 h-6 flex-shrink-0 mt-0.5 " + lc.text} />
               <div className="flex-1">
                 <p className={"text-xs uppercase tracking-widest font-semibold mb-1 " + lc.text}>Rekomendasi Detail</p>
                 <h3 className="text-xl md:text-2xl font-bold text-gray-900 mb-2">Mulai dari {result.startChapter}</h3>
@@ -816,16 +972,16 @@ function ResultScreen({ score, questions, log, meta, timeElapsedSec, onRetake }:
             ) : (
               <>
                 Langsung Daftar Kelas
-                <Icons.ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+                <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
               </>
             )}
           </button>
           <div className="flex gap-3">
             <Link href={"/silabus/" + meta.slug} className="flex-1 inline-flex items-center justify-center gap-2 px-6 py-3 border-2 border-gray-200 text-gray-700 rounded-full font-semibold hover:bg-gray-50 transition-colors">
-              <Icons.BookOpen className="w-4 h-4" /> Lihat Silabus
+              <BookOpen className="w-4 h-4" /> Lihat Silabus
             </Link>
             <button onClick={onRetake} className="flex-1 inline-flex items-center justify-center gap-2 px-6 py-3 border-2 border-gray-200 text-gray-700 rounded-full font-semibold hover:bg-gray-50 transition-colors">
-              <Icons.RotateCw className="w-4 h-4" /> Ulangi Test
+              <RotateCw className="w-4 h-4" /> Ulangi Test
             </button>
           </div>
         </motion.div>

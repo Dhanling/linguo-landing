@@ -11,6 +11,9 @@ import { notifyPlacementResult } from "@/lib/placementNotify";
  *    layar hasil muncul (biasanya belum ada kontak). Balikin `id`
  *    baris yang baru dibuat -> PlacementTest simpen buat update nanti.
  *
+ *  MODE MULAI   (body `mulai: true`)
+ *    Klik "Mulai Test" — kontak dicatat ke `leads` walau tes tak selesai.
+ *
  *  MODE UPDATE  (body DENGAN `id`)
  *    Enrich baris yang udah ada dengan name/email/whatsapp. Dipakai
  *    submitGate pas user isi form kontak. Nggak bikin baris baru ->
@@ -87,6 +90,7 @@ export async function POST(req: NextRequest) {
       whatsapp,
       student_id,
       maxScore,
+      mulai,
     } = body;
 
     const SUPABASE_URL = process.env.NEXT_PUBLIC_SUPABASE_URL;
@@ -105,6 +109,20 @@ export async function POST(req: NextRequest) {
       Authorization: "Bearer " + SUPABASE_KEY,
       "Content-Type": "application/json",
     };
+
+    // ───────────────────────────────────────────────────────────────
+    // MODE MULAI — [placement-rekam-saat-mulai-v1] kontak diisi sebelum tes,
+    // jadi peserta yang berhenti di tengah tetap tercatat sebagai lead.
+    // Cuma ke `leads`: placement_results.level/score NOT NULL, dan baris hasil
+    // baru dibuat (plus notif) saat tes selesai.
+    // ───────────────────────────────────────────────────────────────
+    if (mulai) {
+      if (!email && !whatsapp) {
+        return NextResponse.json({ success: false, error: "Kontak kosong" }, { status: 400 });
+      }
+      await upsertLead(SUPABASE_URL, SUPABASE_KEY, { name, email, whatsapp, language, source });
+      return NextResponse.json({ success: true });
+    }
 
     // ───────────────────────────────────────────────────────────────
     // MODE UPDATE — enrich baris yang udah ada dengan kontak.

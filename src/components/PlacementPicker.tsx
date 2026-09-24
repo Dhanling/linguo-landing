@@ -1,10 +1,14 @@
 "use client";
 
 import { useState, useMemo, useEffect } from "react";
+import { useRouter } from "next/navigation";
 import { trackEvent } from "@/lib/tracking";
 import { motion, AnimatePresence } from "framer-motion";
 import { supabase } from "@/lib/supabase-client";
-import { languages, type LanguageMeta, type Region } from "@/data/curriculum";
+// Impor langsung dari languages.ts — index "@/data/curriculum" ikut membawa
+// data silabus SEMUA bahasa ke bundle homepage.
+import { languages } from "@/data/curriculum/languages";
+import type { LanguageMeta, Region } from "@/data/curriculum/types";
 import { RectFlag, FLAG_CODE_BY_SLUG } from "./RectFlag";
 
 // Category = "populer" (featured) + region keys (Indonesia-friendly slugs)
@@ -67,6 +71,7 @@ interface Props {
 }
 
 export default function PlacementPicker({ open, onClose, studentId }: Props) {
+  const router = useRouter();
   const [query, setQuery] = useState("");
   const [activeCat, setActiveCat] = useState("all");
 
@@ -181,16 +186,20 @@ export default function PlacementPicker({ open, onClose, studentId }: Props) {
                             } catch {}
                           }
                           const url = `/silabus/${lang.slug}/coba${sid ? `?ref=akun&sid=${sid}` : ""}`;
-                          window.location.href = url;
+                          // [placement-picker-cepat-v1] navigasi klien (bukan reload penuh) + prefetch saat hover
+                          router.push(url);
                         }}
-                        className="flex items-center gap-3 px-4 py-3.5 rounded-2xl border-2 border-gray-100 hover:border-[#1A9E9E] hover:bg-[#1A9E9E]/10 transition-colors group"
+                        onMouseEnter={() => router.prefetch(`/silabus/${lang.slug}/coba`)}
+                        onFocus={() => router.prefetch(`/silabus/${lang.slug}/coba`)}
+                        className="flex items-center gap-3 px-4 py-3.5 rounded-2xl border-2 border-gray-100 hover:border-[#1A9E9E] hover:bg-[#1A9E9E]/10 hover:scale-[1.02] hover:shadow-md focus-visible:scale-[1.02] transition-all duration-300 ease-out group"
                       >
-                        <RectFlag code={FLAG_CODE_BY_SLUG[lang.slug]} h={28} />
+                        <RectFlag code={FLAG_CODE_BY_SLUG[lang.slug]} h={28} className="transition-transform duration-300 ease-out group-hover:scale-110" />
                         <div className="flex-1 min-w-0">
                           <div className="font-bold text-sm text-gray-900">Bahasa {lang.name}</div>
                           <div className="text-xs text-gray-500">{lang.nativeName}</div>
                         </div>
-                        <span className="text-xs font-bold text-white bg-[#1A9E9E] px-3.5 py-1.5 rounded-full group-hover:bg-[#147a7a] transition-colors flex-shrink-0">
+                        {/* Tombol cuma muncul saat hover (layar sentuh: selalu tampil) */}
+                        <span className="text-xs font-bold text-white bg-[#1A9E9E] px-3.5 py-1.5 rounded-full group-hover:bg-[#147a7a] transition-all duration-300 ease-out flex-shrink-0 [@media(hover:hover)]:opacity-0 [@media(hover:hover)]:translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 group-focus-visible:opacity-100 group-focus-visible:translate-x-0">
                           Mulai Test
                         </span>
                       </a>
@@ -203,9 +212,9 @@ export default function PlacementPicker({ open, onClose, studentId }: Props) {
                       target="_blank"
                       rel="noopener"
                       onClick={() => trackEvent("placement_test_intent", { language: lang.name, language_slug: lang.slug, status: "coming_soon" })}
-                      className="flex items-center gap-3 px-4 py-3 rounded-2xl border-2 border-gray-100 hover:border-amber-300 hover:bg-amber-50/60 transition-colors"
+                      className="flex items-center gap-3 px-4 py-3 rounded-2xl border-2 border-gray-100 hover:border-amber-300 hover:bg-amber-50/60 hover:scale-[1.02] hover:shadow-md transition-all duration-300 ease-out group"
                     >
-                      <RectFlag code={FLAG_CODE_BY_SLUG[lang.slug]} h={28} className="opacity-70" />
+                      <RectFlag code={FLAG_CODE_BY_SLUG[lang.slug]} h={28} className="opacity-70 transition-transform duration-300 ease-out group-hover:scale-110" />
                       <div className="flex-1 min-w-0">
                         <div className="font-semibold text-sm text-gray-600">Bahasa {lang.name}</div>
                         <div className="text-xs text-gray-400">{lang.nativeName}</div>
