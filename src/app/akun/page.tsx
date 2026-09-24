@@ -38,6 +38,7 @@ const PlacementPicker = dynamic(() => import('@/components/PlacementPicker'), { 
 // [remove-onesignal-prompt] provider dimatikan — hilangkan popup auto-prompt notifikasi
 // const OneSignalProvider = dynamic(() => import('@/components/OneSignalProvider'), { ssr: false });
 import PaymentDetailModal from '@/components/akun/PaymentDetailModal';
+import SaldoLinguoCard, { TopupDialog, useSaldoLinguo } from '@/components/akun/SaldoLinguo'; // [saldo-siswa-v1]
 import PaymentInstructionSheet from '@/components/akun/PaymentInstructionSheet';
 import CompactHeroBanner from '@/components/akun/CompactHeroBanner';
 // [lanjutkan-belajar-v1] pintasan lintas-menu di paling atas Beranda
@@ -1259,7 +1260,7 @@ const SETTINGS_NAV: Array<{ id: SetPane; icon: LucideIcon; label: string; sub: s
   { id: "akun",       icon: Shield,            label: "Akun & Keamanan",    sub: "Email, kata sandi" },
   { id: "notif",      icon: Bell,              label: "Notifikasi",         sub: "Email, WhatsApp, push" },
   { id: "preferensi", icon: SlidersHorizontal, label: "Preferensi Belajar", sub: "Bahasa, pengingat" },
-  { id: "tagihan",    icon: Wallet,            label: "Tagihan & Paket",    sub: "Langganan, cicilan" },
+  { id: "tagihan",    icon: Wallet,            label: "Tagihan & Saldo",    sub: "Saldo, paket, cicilan" },
 ];
 
 function SetToggle({ on, onClick }: { on: boolean; onClick: () => void }) {
@@ -1303,12 +1304,16 @@ function SetToggleRow({ label, desc, on, onClick }: { label: string; desc: strin
   );
 }
 
-function AkunTab({ user, student, avatarUrl, displayName, firstName, xp, badges, signOut, supabase, onAvatarUpdate, openEnrollWizard }: {
+function AkunTab({ user, student, avatarUrl, displayName, firstName, xp, badges, signOut, supabase, onAvatarUpdate, openEnrollWizard, onReload }: {
   user: any; student: any; avatarUrl?: string; displayName: string; firstName: string;
   xp: any; badges: any[]; signOut: () => void; supabase: any; onAvatarUpdate: (url: string) => void;
-  openEnrollWizard: () => void;
+  openEnrollWizard: () => void; onReload: () => void;
 }) {
-  const [pane, setPane] = useState<SetPane>("profil");
+  // [saldo-siswa-v1] ?pane=tagihan — balikan dari invoice top up Xendit.
+  const [pane, setPane] = useState<SetPane>(() => {
+    if (typeof window === "undefined") return "profil";
+    return new URLSearchParams(window.location.search).get("pane") === "tagihan" ? "tagihan" : "profil";
+  });
   const [uploadingAvatar, setUploadingAvatar] = useState(false);
   const avatarInputRef = useRef<HTMLInputElement>(null);
 
@@ -1427,6 +1432,62 @@ function AkunTab({ user, student, avatarUrl, displayName, firstName, xp, badges,
   };
 
   const flash = (msg: string) => { setNotice(msg); setTimeout(() => setNotice(""), 3000); };
+
+  // ── [saldo-siswa-v1] Saldo Linguo ────────────────────────────────────────
+  const saldoLinguo = useSaldoLinguo(supabase, !!user?.id && pane === "tagihan");
+  const [topupOpen, setTopupOpen] = useState(false);
+  const [topupAwal, setTopupAwal] = useState<number | undefined>(undefined);
+  const bukaTopup = (awal?: number) => { setTopupAwal(awal); setTopupOpen(true); };
+  const [bayarSaldoId, setBayarSaldoId] = useState<string | null>(null);
+  // Balik dari Xendit: webhook bisa beberapa detik lebih lambat dari redirect —
+  // muat ulang riwayat saldo beberapa kali supaya top up-nya kelihatan masuk.
+  useEffect(() => {
+    if (typeof window === "undefined") return;
+    const q = new URLSearchParams(window.location.search);
+    if (q.get("topup") !== "sukses") return;
+    toast.success(ts("Top up diterima — saldo masuk otomatis begitu pembayaran terkonfirmasi."));
+    q.delete("topup");
+    window.history.replaceState(null, "", `/akun${q.toString() ? `?${q}` : ""}`);
+    const t = [3000, 8000, 20000].map((ms) => setTimeout(() => saldoLinguo.reload(), ms));
+    return () => t.forEach(clearTimeout);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+  const sisaTagihan = (r: StudentReg) =>
+    Math.max(0, (r.total_amount || 0) - (r.payment_status === "Cicilan" ? r.installment_paid || 0 : 0));
+  const bayarPakaiSaldo = async (r: StudentReg) => {
+    const sisa = sisaTagihan(r);
+    if (saldoLinguo.saldo < sisa) { bukaTopup(sisa - saldoLinguo.saldo); return; }
+    if (!window.confirm(`${ts("Bayar")} ${progLabel(r)} ${fmtRp(sisa)} ${ts("pakai Saldo Linguo?")}`)) return;
+    setBayarSaldoId(r.id);
+    try {
+      const { data, error } = await supabase.rpc("wallet_bayar_registrasi", { p_registration_id: r.id });
+      if (error) throw new Error(error.message);
+      if (data?.ok === false && data?.code === "SALDO_KURANG") {
+        await saldoLinguo.reload();
+        bukaTopup(Number(data.kurang) || undefined);
+        return;
+      }
+      toast.success(ts("Lunas! Tagihan dibayar pakai Saldo Linguo."));
+      await saldoLinguo.reload();
+      onReload();
+    } catch (e: any) {
+      toast.error(e?.message || ts("Gagal membayar pakai saldo."));
+    } finally {
+      setBayarSaldoId(null);
+    }
+  };
+  const tombolSaldo = (r: StudentReg) => {
+    const sisa = sisaTagihan(r);
+    if (!(r.total_amount > 0) || sisa <= 0 || !saldoLinguo.loaded || saldoLinguo.saldo <= 0) return null;
+    const cukup = saldoLinguo.saldo >= sisa;
+    return (
+      <button onClick={() => bayarPakaiSaldo(r)} disabled={bayarSaldoId === r.id}
+        title={cukup ? undefined : `${ts("Saldo kurang")} ${fmtRp(sisa - saldoLinguo.saldo)} — ${ts("top up dulu")}`}
+        className="h-11 rounded-xl border-2 px-5 text-[14px] font-extrabold text-[#16796E] transition hover:bg-[#E8F4F2] disabled:opacity-50" style={{ borderColor: "#16796E" }}>
+        {bayarSaldoId === r.id ? ts("Memproses…") : cukup ? ts("Bayar pakai Saldo") : ts("Top up & bayar pakai Saldo")}
+      </button>
+    );
+  };
 
   const isGoogle = (() => {
     const am = user?.app_metadata || {};
@@ -1701,6 +1762,8 @@ function AkunTab({ user, student, avatarUrl, displayName, firstName, xp, badges,
           {pane === "tagihan" && (
             <>
               {/* [linguo-patch:akun-tagihan-real-v1] Seluruh data di bawah REAL dari registrations + digital_purchases. */}
+              <SaldoLinguoCard saldo={saldoLinguo.saldo} entries={saldoLinguo.entries} loaded={saldoLinguo.loaded} onTopup={() => bukaTopup()} />
+              <TopupDialog supabase={supabase} open={topupOpen} onClose={() => setTopupOpen(false)} awal={topupAwal} />
               <SetCard>
                 {paidRegs.length > 0 ? (
                   <div className="flex flex-col gap-3">
@@ -1741,10 +1804,13 @@ function AkunTab({ user, student, avatarUrl, displayName, firstName, xp, badges,
                         <p className="text-[14px] font-bold text-[#12172B]">{progLabel(r)}</p>
                         <p className="mt-0.5 text-[12px] font-medium text-[#6B7280]">{fmtRp(r.total_amount || 0)} · {ts("didaftarkan")} {fmtTgl(r.created_at || r.registration_date)} · {ts("selesaikan dalam 24 jam")}</p>
                       </div>
-                      <button onClick={() => bayarSekarang(r)} disabled={payingId === r.id}
-                        className="h-11 rounded-xl px-5 text-[14px] font-extrabold text-[#12172B] transition hover:brightness-95 disabled:opacity-50" style={{ background: "#F2CB05" }}>
-                        {payingId === r.id ? ts("Membuat invoice…") : ts("Bayar Sekarang")}
-                      </button>
+                      <div className="flex flex-wrap gap-2">
+                        {tombolSaldo(r)}
+                        <button onClick={() => bayarSekarang(r)} disabled={payingId === r.id}
+                          className="h-11 rounded-xl px-5 text-[14px] font-extrabold text-[#12172B] transition hover:brightness-95 disabled:opacity-50" style={{ background: "#F2CB05" }}>
+                          {payingId === r.id ? ts("Membuat invoice…") : ts("Bayar Sekarang")}
+                        </button>
+                      </div>
                     </div>
                   ))}
                 </SetCard>
@@ -1766,9 +1832,12 @@ function AkunTab({ user, student, avatarUrl, displayName, firstName, xp, badges,
                           </p>
                           <div className="mt-2 h-2 w-48 overflow-hidden rounded-full" style={{ background: "#E8EAEE" }}><div className="h-full rounded-full" style={{ width: `${pct}%`, background: "#16796E" }} /></div>
                         </div>
-                        <a href={`https://wa.me/6282116859493?text=${encodeURIComponent(`Halo admin Linguo, saya ${displayName}. Saya mau melanjutkan pembayaran cicilan ${progLabel(r)} (sisa ${fmtRp(sisa)}).`)}`}
-                          target="_blank" rel="noopener noreferrer"
-                          className="flex h-11 items-center rounded-xl px-5 text-[14px] font-extrabold text-[#12172B] transition hover:brightness-95" style={{ background: "#F2CB05" }}>{ts("Bayar Sekarang")}</a>
+                        <div className="flex flex-wrap gap-2">
+                          {tombolSaldo(r)}
+                          <a href={`https://wa.me/6282116859493?text=${encodeURIComponent(`Halo admin Linguo, saya ${displayName}. Saya mau melanjutkan pembayaran cicilan ${progLabel(r)} (sisa ${fmtRp(sisa)}).`)}`}
+                            target="_blank" rel="noopener noreferrer"
+                            className="flex h-11 items-center rounded-xl px-5 text-[14px] font-extrabold text-[#12172B] transition hover:brightness-95" style={{ background: "#F2CB05" }}>{ts("Bayar Sekarang")}</a>
+                        </div>
                       </div>
                     );
                   })}
@@ -1781,6 +1850,13 @@ function AkunTab({ user, student, avatarUrl, displayName, firstName, xp, badges,
                   <div>
                     <p className="text-[14px] font-bold text-[#12172B]">{ts("Pembayaran online via Xendit")}</p>
                     <p className="text-[12px] font-medium text-[#6B7280]">{ts("QRIS, transfer bank (VA), e-wallet, & kartu. Linguo tidak menyimpan data kartumu.")}</p>
+                  </div>
+                </div>
+                <div className="flex items-center gap-3 py-2">
+                  <span className="flex h-9 w-11 shrink-0 items-center justify-center rounded-lg" style={{ background: "#F5F6F8" }}><Wallet className="h-5 w-5 text-[#16796E]" /></span>
+                  <div>
+                    <p className="text-[14px] font-bold text-[#12172B]">{ts("Saldo Linguo")} · {fmtRp(saldoLinguo.saldo)}</p>
+                    <p className="text-[12px] font-medium text-[#6B7280]">{ts("Top up kapan saja, pakai untuk bayar tagihan kelas.")}</p>
                   </div>
                 </div>
               </SetCard>
@@ -5511,6 +5587,7 @@ export default function AkunPage() {
                 supabase={supabase}
                 onAvatarUpdate={(url) => setStudent(s => s ? { ...s, avatar_url: url } : s)}
                 openEnrollWizard={openEnrollWizard}
+                onReload={() => { if (user?.email) loadStudentData(user.email, true); }}
               />
             </motion.div>
           )}
