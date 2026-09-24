@@ -39,6 +39,7 @@ const PlacementPicker = dynamic(() => import('@/components/PlacementPicker'), { 
 // const OneSignalProvider = dynamic(() => import('@/components/OneSignalProvider'), { ssr: false });
 import PaymentDetailModal from '@/components/akun/PaymentDetailModal';
 import SaldoLinguoCard, { SaldoBerandaCard, TopupDialog, useSaldoLinguo } from '@/components/akun/SaldoLinguo'; // [saldo-siswa-v1] [saldo-beranda-v1]
+import LihatSemuaDialog, { BATAS_TAMPIL, LihatSemuaButton } from '@/components/akun/LihatSemuaDialog'; // [tagihan-rapi-v1]
 import PaymentInstructionSheet from '@/components/akun/PaymentInstructionSheet';
 import CompactHeroBanner from '@/components/akun/CompactHeroBanner';
 // [lanjutkan-belajar-v1] pintasan lintas-menu di paling atas Beranda
@@ -1440,6 +1441,9 @@ function AkunTab({ user, student, avatarUrl, displayName, firstName, xp, badges,
   const saldoAsli = useSaldoLinguo(supabase, !!user?.id && pane === "tagihan" && saldoPratinjau === undefined);
   // [saldo-beranda-v1] Preview POV staf: tak ada sesi siswa, angka dari /api/preview-student.
   const saldoLinguo = saldoPratinjau === undefined ? saldoAsli : { ...saldoAsli, saldo: saldoPratinjau, loaded: true };
+  // [tagihan-rapi-v1] pop-up "Lihat semua" paket & riwayat tagihan
+  const [semuaPaket, setSemuaPaket] = useState(false);
+  const [semuaRiwayat, setSemuaRiwayat] = useState(false);
   const [topupOpen, setTopupOpen] = useState(false);
   const [topupAwal, setTopupAwal] = useState<number | undefined>(undefined);
   const bukaTopup = (awal?: number) => { setTopupAwal(awal); setTopupOpen(true); };
@@ -1481,6 +1485,47 @@ function AkunTab({ user, student, avatarUrl, displayName, firstName, xp, badges,
       setBayarSaldoId(null);
     }
   };
+  // [tagihan-rapi-v1] Paket aktif sebagai baris ringkas + bilah pemakaian sesi
+  // (dulu kartu teal penuh setinggi ~200px per paket → halaman memanjang).
+  const paketRow = (r: StudentReg) => {
+    const used = r.sessions_used || 0;
+    const total = r.sessions_total || 0;
+    const pct = total > 0 ? Math.min(100, Math.round((used / total) * 100)) : 0;
+    return (
+      <div key={r.id} className="rounded-2xl bg-[#F5F6F8] px-4 py-3.5">
+        <div className="flex items-start justify-between gap-3">
+          <div className="min-w-0">
+            <div className="flex flex-wrap items-center gap-2">
+              <p className="truncate text-[15px] font-extrabold text-[#12172B]">{progLabel(r)}</p>
+              {r.payment_status === "Cicilan"
+                ? <span className="rounded-full bg-amber-50 px-2 py-0.5 text-[11px] font-bold text-amber-700">{ts("Cicilan")}</span>
+                : <span className="rounded-full bg-teal-50 px-2 py-0.5 text-[11px] font-bold text-[#16796E]">{ts("Lunas")}</span>}
+            </div>
+            <p className="mt-0.5 text-[12px] font-medium text-[#6B7280]">
+              {r.level ? `${ts("Level")} ${r.level} · ` : ""}{r.duration ? `${r.duration} ${ts("menit/sesi")} · ` : ""}{ts("Terdaftar")} {fmtTgl(r.registration_date)}
+            </p>
+          </div>
+          <p className="shrink-0 text-[15px] font-extrabold text-[#12172B]">{fmtRp(r.total_amount || 0)}</p>
+        </div>
+        <div className="mt-2.5 flex items-center gap-3">
+          <div className="h-1.5 flex-1 overflow-hidden rounded-full bg-slate-200"><div className="h-full rounded-full" style={{ width: `${pct}%`, background: "#16796E" }} /></div>
+          <span className="shrink-0 text-[12px] font-bold text-[#6B7280]">{used}/{total} {ts("sesi")}</span>
+        </div>
+      </div>
+    );
+  };
+  const riwayatRow = (it: { key: string; label: string; sub: string; amount: number; state: string }) => (
+    <div key={it.key} className="flex items-center justify-between gap-4 border-b border-slate-100 py-3 last:border-0">
+      <div className="flex min-w-0 items-center gap-3">
+        {it.state === "pending"
+          ? <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-xl bg-amber-50 text-amber-500"><Clock className="h-4 w-4" /></span>
+          : <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-xl bg-emerald-50 text-emerald-600"><Check className="h-4 w-4" /></span>}
+        <div className="min-w-0"><p className="truncate text-[14px] font-bold text-[#12172B]">{it.label}</p><p className="text-[12px] font-medium text-[#6B7280]">{it.sub}</p></div>
+      </div>
+      <span className="shrink-0 text-[14px] font-extrabold text-[#12172B]">{fmtRp(it.amount)}</span>
+    </div>
+  );
+
   const tombolSaldo = (r: StudentReg) => {
     const sisa = sisaTagihan(r);
     if (!(r.total_amount > 0) || sisa <= 0 || !saldoLinguo.loaded || saldoLinguo.saldo <= 0) return null;
@@ -1577,7 +1622,7 @@ function AkunTab({ user, student, avatarUrl, displayName, firstName, xp, badges,
                   <Icon className="h-[18px] w-[18px]" />
                 </span>
                 <span className="min-w-0">
-                  <span className="block text-[14px] font-bold leading-tight" style={{ color: on ? "#16796E" : "#12172B" }}>{ts(n.label)}</span>
+                  <span className={`block text-[14px] font-bold leading-tight ${on ? "text-[#16796E]" : "text-[#12172B]"}`}>{ts(n.label)}</span>
                   <span className="hidden truncate text-[12px] font-medium text-[#6B7280] lg:block">{ts(n.sub)}</span>
                 </span>
               </button>
@@ -1771,25 +1816,21 @@ function AkunTab({ user, student, avatarUrl, displayName, firstName, xp, badges,
               <TopupDialog supabase={supabase} open={topupOpen} onClose={() => setTopupOpen(false)} awal={topupAwal} />
               <SetCard>
                 {paidRegs.length > 0 ? (
-                  <div className="flex flex-col gap-3">
-                    {paidRegs.map((r) => (
-                      <div key={r.id} className="flex flex-wrap items-center justify-between gap-4 rounded-2xl p-5 text-white" style={{ background: "#16796E" }}>
-                        <div>
-                          <span className="inline-flex items-center gap-1.5 rounded-full bg-white/20 px-2.5 py-1 text-[11px] font-bold">{r.payment_status === "Cicilan" ? ts("Paket Aktif · Cicilan") : ts("Paket Aktif")}</span>
-                          <p className="mt-2 text-[20px] font-extrabold">{progLabel(r)}</p>
-                          <p className="mt-0.5 text-[13px] font-medium text-white/80">
-                            {r.level ? `${ts("Level")} ${r.level} · ` : ""}{r.sessions_used || 0}/{r.sessions_total || 0} {ts("sesi terpakai")}{r.duration ? ` · ${r.duration} ${ts("menit/sesi")}` : ""}
-                          </p>
-                        </div>
-                        <div className="text-right">
-                          <p className="text-[24px] font-extrabold leading-none">{fmtRp(r.total_amount || 0)}</p>
-                          <p className="mt-1.5 text-[12px] font-medium text-white/80">{ts("Terdaftar")} {fmtTgl(r.registration_date)}</p>
-                        </div>
-                      </div>
-                    ))}
-                  </div>
+                  <>
+                    <div className="flex items-center justify-between pb-3 pt-5">
+                      <h3 className="text-[16px] font-extrabold text-[#12172B]">{ts("Paket Aktif")}</h3>
+                      <span className="text-[12px] font-bold text-[#6B7280]">{paidRegs.length} {ts("paket")}</span>
+                    </div>
+                    <div className="flex flex-col gap-2.5">
+                      {paidRegs.slice(0, BATAS_TAMPIL).map((r) => paketRow(r))}
+                    </div>
+                    <LihatSemuaButton total={paidRegs.length} onClick={() => setSemuaPaket(true)} label={ts("Lihat semua paket")} />
+                    <LihatSemuaDialog open={semuaPaket} onClose={() => setSemuaPaket(false)} title={`${ts("Paket Aktif")} (${paidRegs.length})`}>
+                      <div className="flex flex-col gap-2.5 py-3">{paidRegs.map((r) => paketRow(r))}</div>
+                    </LihatSemuaDialog>
+                  </>
                 ) : (
-                  <div className="rounded-2xl border border-dashed border-slate-200 px-5 py-8 text-center">
+                  <div className="mt-5 rounded-2xl border border-dashed border-slate-200 px-5 py-8 text-center">
                     <p className="text-[14px] font-bold text-[#12172B]">{ts("Belum ada paket aktif")}</p>
                     <p className="mt-1 text-[12px] font-medium text-[#6B7280]">{ts("Daftar kelas dulu yuk — paket yang sudah dibayar bakal muncul di sini.")}</p>
                   </div>
@@ -1812,7 +1853,7 @@ function AkunTab({ user, student, avatarUrl, displayName, firstName, xp, badges,
                       <div className="flex flex-wrap gap-2">
                         {tombolSaldo(r)}
                         <button onClick={() => bayarSekarang(r)} disabled={payingId === r.id}
-                          className="h-11 rounded-xl px-5 text-[14px] font-extrabold text-[#12172B] transition hover:brightness-95 disabled:opacity-50" style={{ background: "#F2CB05" }}>
+                          className="h-11 rounded-xl px-5 text-[14px] font-extrabold text-white transition hover:brightness-110 disabled:opacity-50" style={{ background: "#16796E" }}>
                           {payingId === r.id ? ts("Membuat invoice…") : ts("Bayar Sekarang")}
                         </button>
                       </div>
@@ -1841,7 +1882,7 @@ function AkunTab({ user, student, avatarUrl, displayName, firstName, xp, badges,
                           {tombolSaldo(r)}
                           <a href={`https://wa.me/6282116859493?text=${encodeURIComponent(`Halo admin Linguo, saya ${displayName}. Saya mau melanjutkan pembayaran cicilan ${progLabel(r)} (sisa ${fmtRp(sisa)}).`)}`}
                             target="_blank" rel="noopener noreferrer"
-                            className="flex h-11 items-center rounded-xl px-5 text-[14px] font-extrabold text-[#12172B] transition hover:brightness-95" style={{ background: "#F2CB05" }}>{ts("Bayar Sekarang")}</a>
+                            className="flex h-11 items-center rounded-xl px-5 text-[14px] font-extrabold text-white transition hover:brightness-110" style={{ background: "#16796E" }}>{ts("Bayar Sekarang")}</a>
                         </div>
                       </div>
                     );
@@ -1871,17 +1912,11 @@ function AkunTab({ user, student, avatarUrl, displayName, firstName, xp, badges,
                   <p className="py-4 text-center text-[13px] font-medium text-[#6B7280]">{ts("Belum ada transaksi. Riwayat pembayaran kelas & produk digital kamu bakal muncul di sini.")}</p>
                 ) : (
                   <div className="flex flex-col">
-                    {riwayat.map((it) => (
-                      <div key={it.key} className="flex items-center justify-between gap-4 border-b border-slate-100 py-3 last:border-0">
-                        <div className="flex items-center gap-3">
-                          {it.state === "pending"
-                            ? <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-xl bg-amber-50 text-amber-500"><Clock className="h-4 w-4" /></span>
-                            : <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-xl bg-emerald-50 text-emerald-600"><Check className="h-4 w-4" /></span>}
-                          <div><p className="text-[14px] font-bold text-[#12172B]">{it.label}</p><p className="text-[12px] font-medium text-[#6B7280]">{it.sub}</p></div>
-                        </div>
-                        <span className="text-[14px] font-extrabold text-[#12172B]">{fmtRp(it.amount)}</span>
-                      </div>
-                    ))}
+                    {riwayat.slice(0, BATAS_TAMPIL).map((it) => riwayatRow(it))}
+                    <LihatSemuaButton total={riwayat.length} onClick={() => setSemuaRiwayat(true)} label={ts("Lihat semua riwayat")} />
+                    <LihatSemuaDialog open={semuaRiwayat} onClose={() => setSemuaRiwayat(false)} title={`${ts("Riwayat Tagihan")} (${riwayat.length})`}>
+                      {riwayat.map((it) => riwayatRow(it))}
+                    </LihatSemuaDialog>
                   </div>
                 )}
               </SetCard>

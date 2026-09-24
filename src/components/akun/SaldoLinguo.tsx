@@ -9,6 +9,7 @@
 import { useCallback, useEffect, useState } from "react";
 import { ArrowDownLeft, ArrowUpRight, Clock, Loader2, Plus, Wallet, X } from "lucide-react";
 import { useT } from "@/lib/uiLang";
+import LihatSemuaDialog, { BATAS_TAMPIL, LihatSemuaButton } from "@/components/akun/LihatSemuaDialog";
 
 export interface SaldoEntry {
   id: string;
@@ -104,8 +105,7 @@ export function TopupDialog({ supabase, open, onClose, awal }: {
         <div className="mt-5 grid grid-cols-2 gap-2">
           {PRESET.map((p) => (
             <button key={p} type="button" onClick={() => setNominal(String(p))}
-              className="h-11 rounded-xl border text-[14px] font-bold transition"
-              style={angka === p ? { borderColor: "#16796E", background: "#E8F4F2", color: "#16796E" } : { borderColor: "#E2E8F0", color: "#12172B" }}>
+              className={`h-11 rounded-xl border-2 text-[14px] font-bold transition ${angka === p ? "border-[#16796E] bg-teal-50 text-[#16796E]" : "border-slate-200 text-[#12172B] hover:border-slate-300"}`}>
               {fmtRp(p)}
             </button>
           ))}
@@ -128,12 +128,32 @@ export function TopupDialog({ supabase, open, onClose, awal }: {
   );
 }
 
+function SaldoRow({ e }: { e: SaldoEntry }) {
+  const ts = useT();
+  const masuk = e.amount > 0;
+  return (
+    <div className="flex items-center justify-between gap-4 border-b border-slate-100 py-3 last:border-0">
+      <div className="flex min-w-0 items-center gap-3">
+        <span className={`flex h-9 w-9 shrink-0 items-center justify-center rounded-xl ${e.status === "pending" ? "bg-amber-50 text-amber-500" : masuk ? "bg-emerald-50 text-emerald-600" : "bg-slate-100 text-slate-500"}`}>
+          {e.status === "pending" ? <Clock className="h-4 w-4" /> : masuk ? <ArrowDownLeft className="h-4 w-4" /> : <ArrowUpRight className="h-4 w-4" />}
+        </span>
+        <div className="min-w-0">
+          <p className="truncate text-[14px] font-bold text-[#12172B]">{e.kind === "topup" || e.kind === "refund" || e.kind === "deposit" ? ts(LABEL[e.kind]) : e.note || ts(LABEL[e.kind])}</p>
+          <p className="text-[12px] font-medium text-[#6B7280]">{e.status === "pending" ? ts("Menunggu pembayaran") : fmtTgl(e.created_at)}{e.kind === "adjustment" ? ` · ${ts("admin")}` : ""}</p>
+        </div>
+      </div>
+      <span className={`shrink-0 text-[14px] font-extrabold ${e.status === "pending" ? "text-slate-400" : masuk ? "text-emerald-600" : "text-[#12172B]"}`}>
+        {masuk ? "+" : "−"}{fmtRp(e.amount)}
+      </span>
+    </div>
+  );
+}
+
 export default function SaldoLinguoCard({ saldo, entries, loaded, onTopup }: {
   saldo: number; entries: SaldoEntry[]; loaded: boolean; onTopup: () => void;
 }) {
   const ts = useT();
   const [semua, setSemua] = useState(false);
-  const tampil = semua ? entries : entries.slice(0, 5);
   return (
     <section className="overflow-hidden rounded-3xl bg-white">
       <div className="flex flex-wrap items-center justify-between gap-4 p-6" style={{ background: "linear-gradient(135deg,#12172B,#1F2A4A)" }}>
@@ -144,7 +164,7 @@ export default function SaldoLinguoCard({ saldo, entries, loaded, onTopup }: {
             <p className="text-[26px] font-extrabold leading-tight text-white">{loaded ? fmtRp(saldo) : "…"}</p>
           </div>
         </div>
-        <button onClick={onTopup} className="flex h-11 items-center gap-2 rounded-xl px-5 text-[14px] font-extrabold text-[#12172B] transition hover:brightness-95" style={{ background: "#F2CB05" }}>
+        <button onClick={onTopup} className="flex h-11 items-center gap-2 rounded-xl px-5 text-[14px] font-extrabold text-white shadow-sm transition hover:brightness-110" style={{ background: "#16796E" }}>
           <Plus className="h-4 w-4" /> {ts("Top up")}
         </button>
       </div>
@@ -154,32 +174,13 @@ export default function SaldoLinguoCard({ saldo, entries, loaded, onTopup }: {
         </p>
         {loaded && entries.length > 0 ? (
           <div className="mt-3 flex flex-col">
-            {tampil.map((e) => {
-              const masuk = e.amount > 0;
-              return (
-                <div key={e.id} className="flex items-center justify-between gap-4 border-b border-slate-100 py-3 last:border-0">
-                  <div className="flex min-w-0 items-center gap-3">
-                    <span className={`flex h-9 w-9 shrink-0 items-center justify-center rounded-xl ${e.status === "pending" ? "bg-amber-50 text-amber-500" : masuk ? "bg-emerald-50 text-emerald-600" : "bg-slate-100 text-slate-500"}`}>
-                      {e.status === "pending" ? <Clock className="h-4 w-4" /> : masuk ? <ArrowDownLeft className="h-4 w-4" /> : <ArrowUpRight className="h-4 w-4" />}
-                    </span>
-                    <div className="min-w-0">
-                      <p className="truncate text-[14px] font-bold text-[#12172B]">{e.kind === "topup" || e.kind === "refund" || e.kind === "deposit" ? ts(LABEL[e.kind]) : e.note || ts(LABEL[e.kind])}</p>
-                      <p className="text-[12px] font-medium text-[#6B7280]">{e.status === "pending" ? ts("Menunggu pembayaran") : fmtTgl(e.created_at)}{e.kind === "adjustment" ? ` · ${ts("admin")}` : ""}</p>
-                    </div>
-                  </div>
-                  <span className={`shrink-0 text-[14px] font-extrabold ${e.status === "pending" ? "text-slate-400" : masuk ? "text-emerald-600" : "text-[#12172B]"}`}>
-                    {masuk ? "+" : "−"}{fmtRp(e.amount)}
-                  </span>
-                </div>
-              );
-            })}
-            {entries.length > 5 ? (
-              <button onClick={() => setSemua((v) => !v)} className="mt-2 self-start text-[13px] font-bold text-[#16796E] hover:underline">
-                {semua ? ts("Tampilkan lebih sedikit") : `${ts("Lihat semua")} (${entries.length})`}
-              </button>
-            ) : null}
+            {entries.slice(0, BATAS_TAMPIL).map((e) => <SaldoRow key={e.id} e={e} />)}
+            <LihatSemuaButton total={entries.length} onClick={() => setSemua(true)} label={ts("Lihat semua riwayat saldo")} />
           </div>
         ) : null}
+        <LihatSemuaDialog open={semua} onClose={() => setSemua(false)} title={ts("Riwayat Saldo Linguo")}>
+          {entries.map((e) => <SaldoRow key={e.id} e={e} />)}
+        </LihatSemuaDialog>
       </div>
     </section>
   );
@@ -204,7 +205,7 @@ export function SaldoBerandaCard({ saldo, loaded, onOpen, onTopup }: {
         </button>
         {onTopup ? (
           <button type="button" onClick={onTopup}
-            className="inline-flex h-9 shrink-0 items-center gap-1 rounded-xl px-3.5 text-[13px] font-extrabold text-[#12172B] transition hover:brightness-95" style={{ background: "#F2CB05" }}>
+            className="inline-flex h-9 shrink-0 items-center gap-1 rounded-xl px-3.5 text-[13px] font-extrabold text-white transition hover:brightness-110" style={{ background: "#16796E" }}>
             <Plus className="h-4 w-4" strokeWidth={2.6} /> {ts("Top up")}
           </button>
         ) : null}
