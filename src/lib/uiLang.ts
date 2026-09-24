@@ -821,6 +821,13 @@ const EN: Record<string, string> = {
   "dengan penuh semangat": "with great enthusiasm",
   "atas penyelesaian program persiapan tes Bahasa": "for completing the test preparation program in",
   "atas keberhasilan menuntaskan program Bahasa": "for successfully completing the program in",
+  // [sertifikat-durasi-periode-v1] kalimat utama kertas sertifikat: jam belajar + periode.
+  "di Linguo": "at Linguo",
+  "dengan total": "with a total of",
+  "jam belajar": "hours of study",
+  "sejak": "from",
+  "hingga": "to",
+  "pada": "on",
   "Sertifikat Petualang Cilik": "Little Explorer Certificate",
   "Sertifikat Persiapan Tes": "Test Preparation Certificate",
   "IELTS & TOEFL Prep": "IELTS & TOEFL Prep",

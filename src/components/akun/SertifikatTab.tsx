@@ -16,7 +16,7 @@ import {
 } from "lucide-react";
 // [sertifikat-banner-foto-v1] foto stok bahasa — sumber sama dgn kartu kelas di Beranda
 import { getLangPhoto } from "@/lib/lang-visuals";
-import { tr, useT } from "@/lib/uiLang"; // [ui-lang-switcher-v1]
+import { tr, useT, useUiLang, type UiLang } from "@/lib/uiLang"; // [ui-lang-switcher-v1]
 
 // ── lazy-load CDN sekali doang -> nol npm dep, workflow "cp 1 file" tetep aman. ──
 function loadScript(src: string): Promise<void> {
@@ -76,6 +76,11 @@ export type Cert = {
   total?: number;
   // v2:
   product?: string;
+  // [sertifikat-durasi-periode-v1] jam belajar = sesi × menit/sesi (bukan jumlah sesi),
+  // periode = sesi pertama → sesi terakhir (ISO). Dirangkai jadi satu kalimat di kertas.
+  minutesPerSession?: number | null;
+  dateFrom?: string | null;
+  dateTo?: string | null;
   // 4-skill CEFR (skala 1-5: Pemula/Dasar/Cukup/Baik/Mahir). Optional -> render cuma kalau ada.
   speaking?: number | null;
   listening?: number | null;
@@ -151,6 +156,20 @@ const FLAG: Record<string, string> = {
   Filipino: "ph", Khmer: "kh", Lao: "la", Burmese: "mm", Urdu: "pk",
   Javanese: "id", Jawa: "id", Sundanese: "id", Sunda: "id", Balinese: "id",
   Batak: "id", Bugis: "id", Madurese: "id", BIPA: "id",
+  // [sertifikat-bendera-lengkap-v1] dulu Bosnian/Uzbek dkk. tak ada di peta → jatuh ke
+  // inisial "Bo"/"Uz". Nama Inggris + Indonesia (languages.ts) dua-duanya dipetakan.
+  Bosnian: "ba", Bosnia: "ba", Uzbek: "uz", Serbian: "rs", Serbia: "rs", Croatian: "hr", Kroasia: "hr",
+  Slovak: "sk", Slovakia: "sk", Slovenian: "si", Slovenia: "si", Kazakh: "kz", Kazakhstan: "kz",
+  Azerbaijani: "az", Azerbaijan: "az", Albanian: "al", Albania: "al", Lithuanian: "lt", Lithuania: "lt",
+  Latvian: "lv", Latvia: "lv", Estonian: "ee", Estonia: "ee", Macedonian: "mk", Makedonia: "mk",
+  Armenian: "am", Armenia: "am", Tajik: "tj", Kyrgyz: "kg", Turkmen: "tm", Pashto: "af", Sinhala: "lk",
+  Malay: "my", Melayu: "my", Tagalog: "ph", Filipina: "ph", Laos: "la", Myanmar: "mm", Thailand: "th", Vietnam: "vn",
+  Bengali: "bd", Tamil: "in", Punjabi: "in", Nepali: "np", Nepal: "np", Mongolian: "mn", Mongol: "mn",
+  Swahili: "tz", Zulu: "za", Afrikaans: "za", Yoruba: "ng", Amharic: "et", Amhar: "et",
+  Irish: "ie", Irlandia: "ie", Latin: "va", Welsh: "gb-wls", Catalan: "es-ct",
+  Georgia: "ge", Swedia: "se", Norwegia: "no", Denmark: "dk", Finlandia: "fi", Polandia: "pl", Ceko: "cz",
+  Hungaria: "hu", Rumania: "ro", Bulgaria: "bg", Ukraina: "ua", Islandia: "is", Kanton: "hk",
+  "Portugis (Portugal)": "pt", "Portugis (Brasil)": "br", Betawi: "id", Minang: "id", Aceh: "id", Banjar: "id", Bali: "id", Madura: "id",
 };
 const FLAG_LC: Record<string, string> = Object.keys(FLAG).reduce((acc, k) => {
   acc[k.toLowerCase()] = FLAG[k];
@@ -221,7 +240,7 @@ function FlagBadge({ lang, variant, dark = false }: { lang: string; variant: "li
   const code = flagCodeOf(lang);
   return (
     <span
-      className="relative flex h-7 w-10 shrink-0 items-center justify-center overflow-hidden rounded-md"
+      className="relative flex h-7 w-10 shrink-0 transform-gpu items-center justify-center overflow-hidden rounded-md transition-transform duration-200 ease-out group-hover:scale-110"
       style={{ background: dark ? col.bgDark : col.bg, boxShadow: "0 0 0 1px rgba(0,0,0,.08)" }}
     >
       <span className="text-[11px] font-extrabold" style={{ color: dark ? col.textDark : col.text }}>{glyphOf(lang)}</span>
@@ -514,10 +533,12 @@ export default function SertifikatTab({
             {filtered.map((ct) => {
               const active = ct.id === selected?.id;
               return (
+                // [sertifikat-list-hover-zoom-v1] hover = kartu membesar tipis + benderanya ikut zoom.
+                // Skala kecil (1.03) biar tak kepotong wadah scroll (px-4 = 16px ruang samping).
                 <button
                   key={ct.id}
                   onClick={() => setSelectedId(ct.id)}
-                  className="flex w-full items-center gap-3 rounded-2xl p-3 text-left transition hover:bg-[#F5F6F8]"
+                  className="group flex w-full transform-gpu items-center gap-3 rounded-2xl p-3 text-left transition duration-200 ease-out [backface-visibility:hidden] hover:scale-[1.03] hover:bg-[#F5F6F8] active:scale-[.99]"
                   style={
                     active
                       ? isDark
@@ -586,8 +607,22 @@ export default function SertifikatTab({
   );
 }
 
+// [sertifikat-durasi-periode-v1] "8 jam" / "7,5 jam" — koma desimal di ID, titik di EN.
+function fmtHours(h: number, lang: UiLang): string {
+  const r = Math.round(h * 10) / 10;
+  return Number.isInteger(r) ? String(r) : r.toLocaleString(lang === "en" ? "en-GB" : "id-ID");
+}
+function fmtCertDate(iso: string | null | undefined, lang: UiLang): string | null {
+  if (!iso) return null;
+  const d = new Date(iso);
+  if (isNaN(d.getTime())) return null;
+  // en-GB menulis "Sept" — diseragamkan jadi "Sep" biar sama dengan format di tempat lain.
+  return d.toLocaleDateString(lang === "en" ? "en-GB" : "id-ID", { day: "numeric", month: "short", year: "numeric", timeZone: "Asia/Jakarta" }).replace("Sept", "Sep");
+}
+
 function IssuedDetail({ ct, studentName }: { ct: Cert; studentName: string }) {
   const t = useT(); // [ui-lang-switcher-v1]
+  const uiLang = useUiLang();
   const col = colorOf(ct.language);
   const kind = productKindOf(ct.product);
   const copy = COPY[kind];
@@ -648,11 +683,14 @@ function IssuedDetail({ ct, studentName }: { ct: Cert; studentName: string }) {
     window.open(`https://www.linkedin.com/profile/add?${params.toString()}`, "_blank", "noopener,noreferrer");
   };
 
-  const stats = [
-    !isKids && ct.score != null ? { k: t("Nilai Akhir"), v: `${ct.score}/100` } : null,
-    ct.hours != null ? { k: t("Jam Belajar"), v: `${ct.hours} ${t("jam")}` } : null,
-    ct.date ? { k: t("Tanggal"), v: ct.date } : null,
-  ].filter(Boolean) as { k: string; v: string }[];
+  // [sertifikat-redesign-v2] Jam belajar + periode tak lagi jadi kolom statistik
+  // terpisah — dirangkai ke kalimat utama ("... di Linguo, dengan total 8 jam belajar
+  // (16 sesi × 30 menit) sejak 3 Jul 2026 hingga 24 Sep 2026.").
+  const from = fmtCertDate(ct.dateFrom, uiLang);
+  const to = fmtCertDate(ct.dateTo, uiLang) || ct.date || null;
+  const hoursTxt = ct.hours != null && ct.hours > 0 ? `${fmtHours(ct.hours, uiLang)} ${t("jam belajar")}` : null;
+  const sessTxt = ct.total && ct.minutesPerSession ? `${ct.total} ${t("sesi")} × ${ct.minutesPerSession} ${t("menit")}` : null;
+  const ink = "#12172B";
 
   return (
     <>
@@ -664,75 +702,76 @@ function IssuedDetail({ ct, studentName }: { ct: Cert; studentName: string }) {
           fontFamily: CERT_FONT,
           border: "1px solid #ECECEC",
           backgroundImage:
-            "repeating-linear-gradient(45deg, rgba(22,121,110,.045) 0 2px, transparent 2px 9px), repeating-linear-gradient(-45deg, rgba(22,121,110,.045) 0 2px, transparent 2px 9px)",
+            "repeating-linear-gradient(45deg, rgba(22,121,110,.03) 0 1px, transparent 1px 10px), repeating-linear-gradient(-45deg, rgba(22,121,110,.03) 0 1px, transparent 1px 10px)",
         }}
       >
-        {/* double border guilloche */}
-        <div className="pointer-events-none absolute inset-0 m-3 rounded-xl" style={{ border: `2px solid ${col.accent}1f` }} />
-        <div className="pointer-events-none absolute inset-0 m-[18px] rounded-lg" style={{ border: `1px solid ${col.accent}40` }} />
-        {/* accent corners */}
-        <div className="pointer-events-none absolute left-[18px] top-[18px] h-8 w-8 rounded-tl-lg border-l-2 border-t-2" style={{ borderColor: col.accent }} />
-        <div className="pointer-events-none absolute right-[18px] top-[18px] h-8 w-8 rounded-tr-lg border-r-2 border-t-2" style={{ borderColor: col.accent }} />
-        <div className="pointer-events-none absolute bottom-[18px] left-[18px] h-8 w-8 rounded-bl-lg border-b-2 border-l-2" style={{ borderColor: col.accent }} />
-        <div className="pointer-events-none absolute bottom-[18px] right-[18px] h-8 w-8 rounded-br-lg border-b-2 border-r-2" style={{ borderColor: col.accent }} />
+        {/* pita aksen atas + bingkai tipis ganda */}
+        <div className="pointer-events-none absolute inset-x-0 top-0 h-1.5" style={{ background: `linear-gradient(90deg, ${col.accent}, ${col.accent}99, ${col.accent})` }} />
+        <div className="pointer-events-none absolute inset-0 m-3 rounded-xl" style={{ border: `1px solid ${col.accent}33` }} />
+        <div className="pointer-events-none absolute inset-0 m-[17px] rounded-lg" style={{ border: `1px solid ${col.accent}1a` }} />
 
-        <div className="relative px-6 py-9 text-center sm:px-10">
-          {/* header: logo + flag chip */}
-          <div className="flex items-center justify-center gap-3">
-            <img src="/images/full-logo-linguo-hijau.png" alt="Linguo" className="h-10 w-auto object-contain" />
-          </div>
-          <div className="mt-4 flex items-center justify-center">
+        <div className="relative px-7 pb-8 pt-10 sm:px-14">
+          {/* kepala: logo kiri, bendera kanan */}
+          <div className="flex items-center justify-between gap-3">
+            <img src="/images/full-logo-linguo-hijau.png" alt="Linguo" className="h-8 w-auto object-contain" />
             <FlagBadge lang={ct.language} variant="chip" />
           </div>
 
-          <p className="mt-6 inline-flex items-center gap-1.5 text-[12px] font-bold uppercase tracking-[0.25em] text-[#6B7280]">
-            {isKids && <Sparkles className="h-3.5 w-3.5" style={{ color: col.accent }} />}{t(copy.eyebrow)}
-          </p>
-          <p className="mt-5 text-[13px] font-medium text-[#6B7280]">{t("Diberikan kepada")}</p>
-          <h2 className="mt-1 text-[26px] font-extrabold leading-tight text-[#12172B] sm:text-[30px]">{studentName}</h2>
-          <div className="mx-auto mt-3 h-1 w-16 rounded-full" style={{ background: col.accent }} />
+          <div className="mt-9 text-center">
+            <p className="inline-flex items-center gap-1.5 text-[11px] font-bold uppercase tracking-[0.3em] text-[#6B7280]">
+              {isKids && <Sparkles className="h-3.5 w-3.5" style={{ color: col.accent }} />}{t(copy.eyebrow)}
+            </p>
+            <p className="mt-6 text-[12px] font-medium text-[#6B7280]">{t("Diberikan kepada")}</p>
+            <h2 className="mt-1.5 text-[26px] font-extrabold leading-tight tracking-tight text-[#12172B] sm:text-[32px]">{studentName}</h2>
+            <div className="mx-auto mt-3 h-[3px] w-14 rounded-full" style={{ background: col.accent }} />
 
-          <p className="mx-auto mt-5 max-w-[440px] text-[13px] font-medium leading-relaxed text-[#6B7280]">
-            {t(copy.bodyPre)} {ct.language}{copy.bodyPost ? ` ${t(copy.bodyPost)}` : ""}{showCefr ? <> — <b className="text-[#12172B]">{t("Level CEFR")} {ct.level}</b></> : ""}{ct.title && !isKids ? ` (${t(ct.title)})` : ""} {t("di Linguo.")}
-          </p>
+            <p className="mx-auto mt-5 max-w-[520px] text-[13.5px] font-medium leading-[1.75] text-[#6B7280]">
+              {t(copy.bodyPre)} {ct.language}{copy.bodyPost ? ` ${t(copy.bodyPost)}` : ""}
+              {showCefr ? <> — <b style={{ color: ink }}>{t("Level CEFR")} {ct.level}</b></> : ""}
+              {ct.title && !isKids ? ` (${t(ct.title)})` : ""} {t("di Linguo")}
+              {hoursTxt ? <>, {t("dengan total")} <b style={{ color: ink }}>{hoursTxt}</b>{sessTxt ? ` (${sessTxt})` : ""}</> : ""}
+              {from && to && from !== to
+                ? <> {t("sejak")} <b style={{ color: ink }}>{from}</b> {t("hingga")} <b style={{ color: ink }}>{to}</b></>
+                : to ? <> {t("pada")} <b style={{ color: ink }}>{to}</b></> : ""}
+              .
+            </p>
 
-          {/* CEFR level chip (non-kids) atau bintang (kids) */}
-          {showCefr ? (
-            <div className="mx-auto mt-5 inline-flex items-center gap-2 rounded-2xl px-5 py-2.5" style={{ background: col.bg }}>
-              <Award className="h-5 w-5" style={{ color: col.text }} />
-              <span className="text-[16px] font-extrabold tracking-wide" style={{ color: col.text }}>CEFR {ct.level}</span>
+            {/* CEFR level chip (non-kids) atau bintang (kids) */}
+            {showCefr ? (
+              <div className="mx-auto mt-6 inline-flex items-center gap-2 rounded-full px-4 py-2" style={{ background: col.bg }}>
+                <Award className="h-4 w-4" style={{ color: col.text }} />
+                <span className="text-[13px] font-extrabold tracking-wide" style={{ color: col.text }}>CEFR {ct.level}</span>
+                {!isKids && ct.score != null && (
+                  <span className="border-l pl-2 text-[12px] font-bold" style={{ color: col.text, borderColor: `${col.accent}40` }}>{t("Nilai Akhir")} {ct.score}/100</span>
+                )}
+              </div>
+            ) : (
+              <div className="mx-auto mt-6 flex items-center justify-center gap-1.5">
+                {[0, 1, 2].map((i) => <Star key={i} className="h-6 w-6" style={{ color: col.accent }} fill={col.accent} />)}
+              </div>
+            )}
+
+            {/* 4-skill radar (Private/Reguler only, render kalau data ada) */}
+            {showsSkills(kind) && <SkillBlock ct={ct} accent={col.accent} />}
+          </div>
+
+          {/* kaki: tanda tangan pengajar · segel · tanggal terbit */}
+          <div className="mx-auto mt-10 grid max-w-[560px] grid-cols-[1fr_auto_1fr] items-end gap-4">
+            <div className="min-w-0 text-left">
+              <p className="truncate text-[14px] font-semibold italic text-[#12172B]">{ct.teacher}</p>
+              <div className="mt-1.5 h-px w-full max-w-[180px]" style={{ background: "#CBD5E1" }} />
+              <p className="mt-1.5 text-[10px] font-bold uppercase tracking-[0.14em] text-[#6B7280]">{t("Pengajar")}</p>
             </div>
-          ) : (
-            <div className="mx-auto mt-5 flex items-center justify-center gap-1.5">
-              {[0, 1, 2].map((i) => <Star key={i} className="h-6 w-6" style={{ color: col.accent }} fill={col.accent} />)}
+            <div className="flex h-12 w-12 items-center justify-center rounded-full" style={{ border: `1.5px solid ${col.accent}`, boxShadow: `0 0 0 4px ${col.accent}14` }}>
+              <Award className="h-6 w-6" style={{ color: col.accent }} />
             </div>
-          )}
-
-          {stats.length > 0 && (
-            <div className="mx-auto mt-8 grid max-w-[440px] gap-4 text-left" style={{ gridTemplateColumns: `repeat(${stats.length}, minmax(0, 1fr))` }}>
-              {stats.map((s) => (
-                <div key={s.k}>
-                  <p className="text-[10px] font-bold uppercase tracking-wide text-[#6B7280]">{s.k}</p>
-                  <p className="mt-0.5 text-[16px] font-extrabold text-[#12172B]">{s.v}</p>
-                </div>
-              ))}
-            </div>
-          )}
-
-          {/* 4-skill radar (Private/Reguler only, render kalau data ada) */}
-          {showsSkills(kind) && <SkillBlock ct={ct} accent={col.accent} />}
-
-          <div className="mx-auto mt-9 flex max-w-[440px] items-end justify-between">
-            <div className="text-left">
-              <p className="text-[20px] font-bold italic text-[#12172B]">{ct.teacher}</p>
-              <div className="mt-1 h-px w-36 bg-slate-300" />
-              <p className="mt-1 text-[11px] font-semibold text-[#6B7280]">{t("Pengajar")}</p>
-            </div>
-            <div className="flex h-14 w-14 items-center justify-center rounded-full" style={{ border: `2px solid ${col.accent}` }}>
-              <Award className="h-7 w-7" style={{ color: col.accent }} />
+            <div className="min-w-0 text-right">
+              <p className="truncate text-[14px] font-semibold text-[#12172B]">{to || "—"}</p>
+              <div className="ml-auto mt-1.5 h-px w-full max-w-[180px]" style={{ background: "#CBD5E1" }} />
+              <p className="mt-1.5 text-[10px] font-bold uppercase tracking-[0.14em] text-[#6B7280]">{t("Tanggal terbit")}</p>
             </div>
           </div>
-          {ct.idNo && <p className="mt-7 text-[11px] font-medium text-[#6B7280]">{t("No. Sertifikat")}: {ct.idNo}</p>}
+          {ct.idNo && <p className="mt-8 text-center text-[10px] font-semibold tracking-[0.12em] text-[#6B7280]">{t("No. Sertifikat")} · {ct.idNo}</p>}
         </div>
       </div>
 

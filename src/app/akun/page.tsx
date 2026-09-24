@@ -3760,9 +3760,27 @@ export default function AkunPage() {
   );
 
   // Sertifikat diturunkan dari registrasi aktif: 'progress' (used/total) atau 'issued' (used>=total).
+  // [sertifikat-durasi-periode-v1] Jam belajar = total sesi × menit/sesi paket (16 × 30
+  // menit = 8 jam — dulu ditulis "16 jam" karena angka sesi dipakai mentah sebagai jam),
+  // periode = sesi selesai pertama → terakhir dari jadwal nyata (tanpa baris sintetis).
   const certs = useMemo<Cert[]>(() => {
     const CEFR_TITLE: Record<string, string> = { A1: "Pemula", A2: "Dasar", B1: "Menengah", B2: "Menengah Atas", C1: "Mahir", C2: "Penutur Ahli" };
+    const sesiPerReg = new Map<string, any[]>();
+    for (const s of jadwalNyata as any[]) {
+      const k = String(s.registration_id);
+      if (!sesiPerReg.has(k)) sesiPerReg.set(k, []);
+      sesiPerReg.get(k)!.push(s);
+    }
+    const now = Date.now();
     return (activeRegs as any[]).map((r: any) => {
+      const sesi = (sesiPerReg.get(String(r.id)) || []).filter((s: any) => s.status !== "cancelled");
+      const selesai = sesi.filter((s: any) => s.status === "completed");
+      const lewat = (selesai.length ? selesai : sesi.filter((s: any) => new Date(s.scheduled_at).getTime() <= now))
+        .map((s: any) => s.scheduled_at as string)
+        .sort();
+      const menitPaket = Number(String(r.duration ?? "").match(/\d+/)?.[0]) || Number(sesi[0]?.duration_minutes) || 60;
+      const dateFrom = lewat[0] || r.registration_date || r.created_at || null;
+      const dateTo = lewat[lewat.length - 1] || null;
       const total = r.sessions_total || 0;
       const used = r.sessions_used || 0;
       const pct = total > 0 ? Math.min(100, Math.max(0, Math.round((used / total) * 100))) : 0;
@@ -3778,12 +3796,15 @@ export default function AkunPage() {
         product: r.product || undefined, // [pustaka/sertifikat-filter-v1] dipakai filter Kelas Live vs Belajar Mandiri
         status: issued ? "issued" : "progress",
         pct, used, total,
-        date: issued ? new Date().toLocaleDateString("id-ID", { day: "numeric", month: "short", year: "numeric" }) : undefined,
-        hours: issued ? total : undefined,
+        date: issued ? new Date(dateTo || Date.now()).toLocaleDateString("id-ID", { day: "numeric", month: "short", year: "numeric" }) : undefined,
+        hours: issued ? (total * menitPaket) / 60 : undefined,
+        minutesPerSession: menitPaket,
+        dateFrom: issued ? dateFrom : null,
+        dateTo: issued ? dateTo || new Date().toISOString() : null,
         idNo: issued ? `LING-${String(r.language || "XX").slice(0, 2).toUpperCase()}-${base}-${String(r.id).replace(/\D/g, "").slice(0, 6).padStart(6, "0")}` : undefined,
       };
     });
-  }, [activeRegs]);
+  }, [activeRegs, jadwalNyata]);
   // [akun-split-pending-active-v1] pendingRegs = belum bayar & masih dalam window
   // 24 jam sejak enroll. INI yang dirender di "Perlu Perhatian" (badge Belum Bayar
   // + tombol Bayar + Batalkan). Lewat 24 jam → di-expire effect/cron, hilang dari
