@@ -10,6 +10,7 @@ import * as Icons from "lucide-react";
 import { type LanguageCurriculum, displayLangTitle } from "@/data/curriculum";
 import { type Question, type DragDropQuestion, type MissingQuestion, type MatchingQuestion, type FillChoiceQuestion, DIFFICULTY_POINTS, determineLevel } from "@/data/placement/english";
 import { RectFlag, FLAG_CODE_BY_SLUG } from "@/components/RectFlag";
+import CefrLevelMap from "@/components/CefrLevelMap"; // [placement-cefr-map-v1]
 
 // Teks jawaban benar per tipe soal — dipakai di rekap akhir (bukan saat menjawab)
 function correctAnswerText(q: Question): string {
@@ -657,6 +658,12 @@ function ResultScreen({ score, questions, log, meta, timeElapsedSec, onRetake }:
             </div>
           </div>
           <p className="text-gray-700 text-base leading-relaxed">{result.description}</p>
+        </motion.div>
+
+        {/* [placement-cefr-map-v1] Posisi di tangga CEFR Linguo (A1.1–B2.7) —
+            sengaja di luar soft-gate: levelnya sendiri sudah tampil di atas. */}
+        <motion.div initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.82 }}>
+          <CefrLevelMap sublevel={result.sublevel} />
         </motion.div>
 
         {/* REKAP BENAR/SALAH — muncul di akhir (bukan per soal) */}
