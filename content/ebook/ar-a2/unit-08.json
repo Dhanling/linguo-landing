@@ -1,0 +1,641 @@
+{
+  "title": "Memasak koshari bersama Ahmad — perintah, larangan, dan urutan langkah",
+  "title_target": "نَطْبُخُ الْكُشَرِيَّ مَعًا",
+  "goal": "Memberi perintah dan larangan kepada perempuan (أَنْتِ) dan kepada banyak orang (أَنْتُمْ), serta mengurutkan langkah kerja dengan أَوَّلًا، ثُمَّ، بَعْدَ أَنْ، قَبْلَ أَنْ.",
+  "bekal": [
+    "membentuk amr untuk أَنْتِ dan أَنْتُمْ dari mudhari'",
+    "melarang dengan لَا + mudhari' majzum",
+    "menjelaskan resep langkah demi langkah"
+  ],
+  "dialogs": [
+    {
+      "title": "Dialog — دَرْسٌ فِي الْمَطْبَخِ",
+      "intro": "Jumat siang, 6 November 2026. Ahmad mengundang Laila dan Karim ke apartemen di Dokki dan berjanji mengajari semua orang membuat koshari.",
+      "lines": [
+        {
+          "speaker": "أَحْمَد:",
+          "text": "اِغْسِلُوا أَيْدِيَكُمْ أَوَّلًا، ثُمَّ تَعَالَوْا إِلَى الْمَطْبَخِ!",
+          "baca": "ighsiluu aidiyakum awwalan, tsumma ta'aalau ilal-mathbakh!",
+          "id": "Cuci tangan dulu, lalu ke dapur semua!",
+          "literal": "cucilah-kalian tangan-tangan-kalian pertama-kali, kemudian kemarilah-kalian ke dapur-itu!"
+        },
+        {
+          "speaker": "كَرِيم:",
+          "text": "حَاضِرٌ! مَا الْمُهِمَّةُ الْأُولَى؟",
+          "baca": "haadhir! mal-muhimmatul-uulaa?",
+          "id": "Siap! Tugas pertama apa?",
+          "literal": "siap! apa tugas-itu yang-pertama?"
+        },
+        {
+          "speaker": "أَحْمَد:",
+          "text": "يَا كَرِيمُ، اِغْسِلِ الْأَرُزَّ وَالْعَدَسَ. وَأَنْتِ يَا لَيْلَى، قَطِّعِي الْبَصَلَ شَرَائِحَ رَفِيعَةً.",
+          "baca": "yaa Kariim, ighsilil-aruzza wal-'adas. wa anti yaa Lailaa, qaththi'il-bashala syaraa'iha rafii'ah.",
+          "id": "Karim, cuci beras dan kacang adasnya. Kamu, Laila, iris bawang bombai tipis-tipis.",
+          "literal": "wahai Karim, cucilah beras-itu dan adas-itu. dan kamu-pr wahai Laila, potong-potonglah-kamu-pr bawang-itu irisan-irisan tipis."
+        },
+        {
+          "speaker": "لَيْلَى:",
+          "text": "اَلْبَصَلُ؟ دَائِمًا أَنَا! طَيِّبٌ، كَمْ بَصَلَةً؟",
+          "baca": "al-bashal? daa'iman anaa! thayyib, kam bashalah?",
+          "id": "Bawang? Selalu aku! Ya sudah, berapa butir?",
+          "literal": "bawang-itu? selalu saya! baik, berapa sebutir-bawang?"
+        },
+        {
+          "speaker": "أَحْمَد:",
+          "text": "أَرْبَعَ بَصَلَاتٍ. وَلَا تُقَطِّعِيهَا سَمِيكَةً، فَالْبَصَلُ الْمَقْلِيُّ هُوَ سِرُّ الْكُشَرِيِّ.",
+          "baca": "arba'a bashalaat. wa laa tuqaththi'iihaa samiikah, fal-bashalul-maqliyyu huwa sirrul-kusyariyy.",
+          "id": "Empat butir. Jangan diiris tebal, karena bawang goreng itu rahasia koshari.",
+          "literal": "empat bawang-bawang. dan jangan kamu-pr-memotong-nya tebal, maka-bawang-itu yang-digoreng dia rahasia koshari-itu."
+        },
+        {
+          "speaker": "بُودِي:",
+          "text": "وَأَنَا؟ مَاذَا أَفْعَلُ؟",
+          "baca": "wa anaa? maadzaa af'al?",
+          "id": "Aku? Aku ngapain?",
+          "literal": "dan saya? apa saya-lakukan?"
+        },
+        {
+          "speaker": "أَحْمَد:",
+          "text": "ضَعِ الْمَاءَ عَلَى النَّارِ، وَبَعْدَ أَنْ يَغْلِيَ أَضِفِ الْمَكَرُونَةَ.",
+          "baca": "dha'il-maa'a 'alan-naar, wa ba'da an yaghliya adhifil-makaruunah.",
+          "id": "Taruh air di atas api, dan setelah mendidih, masukkan makaroninya.",
+          "literal": "letakkanlah air-itu di-atas api-itu, dan sesudah bahwa ia-mendidih tambahkanlah makaroni-itu."
+        },
+        {
+          "speaker": "كَرِيم:",
+          "text": "غَسَلْتُ الْأَرُزَّ وَالْعَدَسَ. هَلْ نَطْبُخُهُمَا مَعًا؟",
+          "baca": "ghasaltul-aruzza wal-'adas. hal nathbukhuhumaa ma'an?",
+          "id": "Beras dan adasnya sudah kucuci. Dimasak barengan?",
+          "literal": "saya-mencuci beras-itu dan adas-itu. apakah kita-memasak-keduanya bersama?"
+        },
+        {
+          "speaker": "أَحْمَد:",
+          "text": "لَا. اُطْبُخُوا الْعَدَسَ أَوَّلًا، وَقَبْلَ أَنْ يَنْضَجَ تَمَامًا أَضِيفُوا الْأَرُزَّ.",
+          "baca": "laa. uthbukhul-'adasa awwalan, wa qabla an yandhaja tamaaman adhiiful-aruzz.",
+          "id": "Belum. Masak adasnya dulu, dan sebelum matang betul, masukkan berasnya.",
+          "literal": "tidak. masaklah-kalian adas-itu pertama-kali, dan sebelum bahwa ia-matang sepenuhnya tambahkanlah-kalian beras-itu."
+        },
+        {
+          "speaker": "لَيْلَى:",
+          "text": "وَالصَّلْصَةُ؟ هَلْ أَبْدَأُ بِهَا؟",
+          "baca": "wash-shalshah? hal abda'u bihaa?",
+          "id": "Sausnya? Aku mulai sekarang?",
+          "literal": "dan saus-itu? apakah saya-memulai dengan-nya?"
+        },
+        {
+          "speaker": "أَحْمَد:",
+          "text": "نَعَمْ، لٰكِنْ لَا تَضَعِي فِيهَا سُكَّرًا كَثِيرًا. وَلَا تَنْسَيِ الْخَلَّ وَالثُّومَ!",
+          "baca": "na'am, laakin laa tadha'ii fiihaa sukkaran katsiiran. wa laa tansayil-khalla wats-tsuum!",
+          "id": "Iya, tapi jangan kebanyakan gula. Dan jangan lupa cuka dan bawang putihnya!",
+          "literal": "ya, tetapi jangan kamu-pr-meletakkan di-dalam-nya gula banyak. dan jangan kamu-pr-lupa cuka-itu dan bawang-putih-itu!"
+        },
+        {
+          "speaker": "أَحْمَد:",
+          "text": "وَالْآنَ ضَعُوا طَبَقَةً فَوْقَ طَبَقَةٍ، وَكُلُوا قَبْلَ أَنْ يَبْرُدَ!",
+          "baca": "wal-aana dha'uu thabaqatan fauqa thabaqah, wa kuluu qabla an yabrud!",
+          "id": "Sekarang susun lapis demi lapis, lalu makan sebelum dingin!",
+          "literal": "dan sekarang letakkanlah-kalian lapisan di-atas lapisan, dan makanlah-kalian sebelum bahwa ia-dingin!"
+        }
+      ],
+      "notes": [
+        "**Amr untuk kamu-perempuan berakhiran -ii.** Ambil mudhari'-nya (تُقَطِّعِينَ), buang awalan تُـ dan nun di ujung: قَطِّعِي. Untuk kata kerja wazan I yang awalnya jadi huruf mati, tambahkan alif washal: تَغْسِلِينَ → اِغْسِلِي.",
+        "**Amr untuk kalian berakhiran -uu.** Alif di ujungnya tidak dibaca: اِغْسِلُوا dibaca *ighsiluu*. Alif ini hanya tanda tulisan, sama dengan ذَهَبُوا.",
+        "**Larangan memakai laa + mudhari' majzum.** Nun di ujung gugur, persis seperti sesudah لَمْ (lihat kolom larangan di tabel). Pada لَا تُقَطِّعِيهَا, kata ganti ـهَا menempel sesudah ya.",
+        "**Vokal alif washal ikut vokal tengah mudhari'.** Kalau vokal tengahnya u (يَطْبُخُ), amr dibuka dengan اُ — misalnya اُطْبُخْ. Kalau a atau i (يَغْسِلُ), dibuka dengan اِ — misalnya اِغْسِلْ. Wazan II seperti قَطَّعَ tidak butuh alif sama sekali.",
+        "**Beberapa kata kerja kehilangan huruf dalam amr.** Contohnya ضَعْ, amr dari وَضَعَ. Daftarnya ada di tabel bagian kedua unit ini."
+      ],
+      "grammars": [
+        {
+          "title": "Dari mudhari' ke amr dan larangan",
+          "table": {
+            "head": [
+              "Pelaku",
+              "Mudhari'",
+              "Amr",
+              "Larangan"
+            ],
+            "rows": [
+              [
+                "أَنْتَ",
+                "تَغْسِلُ",
+                "اِغْسِلْ",
+                "لَا تَغْسِلْ"
+              ],
+              [
+                "أَنْتِ",
+                "تَغْسِلِينَ",
+                "اِغْسِلِي",
+                "لَا تَغْسِلِي"
+              ],
+              [
+                "أَنْتُمْ",
+                "تَغْسِلُونَ",
+                "اِغْسِلُوا",
+                "لَا تَغْسِلُوا"
+              ],
+              [
+                "أَنْتَ",
+                "تَطْبُخُ",
+                "اُطْبُخْ",
+                "لَا تَطْبُخْ"
+              ],
+              [
+                "أَنْتِ",
+                "تَطْبُخِينَ",
+                "اُطْبُخِي",
+                "لَا تَطْبُخِي"
+              ],
+              [
+                "أَنْتُمْ",
+                "تَطْبُخُونَ",
+                "اُطْبُخُوا",
+                "لَا تَطْبُخُوا"
+              ],
+              [
+                "أَنْتِ",
+                "تُقَطِّعِينَ",
+                "قَطِّعِي",
+                "لَا تُقَطِّعِي"
+              ],
+              [
+                "أَنْتُمْ",
+                "تُقَطِّعُونَ",
+                "قَطِّعُوا",
+                "لَا تُقَطِّعُوا"
+              ]
+            ]
+          },
+          "after": [
+            "Perhatikan kolom larangan: bentuknya persis mudhari' majzum, lengkap dengan awalan ta- atau tu-. Amr membuang awalan itu; larangan mempertahankannya."
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Dialog kedua — أَرُزٌّ مَقْلِيٌّ عَلَى الْهَاتِفِ",
+      "intro": "Sabtu sore berikutnya, 14 November. Laila ingin mencoba nasi goreng di apartemennya dan menelepon Budi untuk minta petunjuk.",
+      "lines": [
+        {
+          "speaker": "لَيْلَى:",
+          "text": "يَا بُودِي، أَنَا فِي الْمَطْبَخِ، وَالْأَرُزُّ جَاهِزٌ. مَاذَا أَفْعَلُ أَوَّلًا؟",
+          "baca": "yaa Buudii, anaa fil-mathbakh, wal-aruzzu jaahiz. maadzaa af'alu awwalan?",
+          "id": "Budi, aku sudah di dapur, nasinya sudah siap. Pertama aku ngapain?",
+          "literal": "wahai Budi, saya di dapur-itu, dan nasi-itu siap. apa saya-lakukan pertama-kali?"
+        },
+        {
+          "speaker": "بُودِي:",
+          "text": "هَلْ هُوَ أَرُزٌّ مِنْ أَمْسِ؟ لَا تَسْتَعْمِلِي أَرُزًّا سَاخِنًا.",
+          "baca": "hal huwa aruzzun min ams? laa tasta'milii aruzzan saakhinan.",
+          "id": "Itu nasi kemarin? Jangan pakai nasi yang masih panas.",
+          "literal": "apakah ia nasi dari kemarin? jangan kamu-pr-memakai nasi panas."
+        },
+        {
+          "speaker": "لَيْلَى:",
+          "text": "نَعَمْ، طَبَخْتُهُ أَمْسِ. وَبَعْدَ ذٰلِكَ؟",
+          "baca": "na'am, thabakhtuhu ams. wa ba'da dzaalik?",
+          "id": "Iya, kumasak kemarin. Terus?",
+          "literal": "ya, saya-memasak-nya kemarin. dan sesudah itu?"
+        },
+        {
+          "speaker": "بُودِي:",
+          "text": "قَطِّعِي الثُّومَ وَالْبَصَلَ قِطَعًا صَغِيرَةً، ثُمَّ ضَعِيهَا فِي الْمِقْلَاةِ مَعَ قَلِيلٍ مِنَ الزَّيْتِ.",
+          "baca": "qaththi'its-tsuuma wal-bashala qitha'an shaghiirah, tsumma dha'iihaa fil-miqlaati ma'a qaliilin minaz-zait.",
+          "id": "Cincang bawang putih dan bawang merahnya kecil-kecil, lalu masukkan ke wajan dengan sedikit minyak.",
+          "literal": "potong-potonglah-kamu-pr bawang-putih-itu dan bawang-itu potongan-potongan kecil, kemudian letakkanlah-kamu-pr-ia di wajan-itu bersama sedikit dari minyak-itu."
+        },
+        {
+          "speaker": "لَيْلَى:",
+          "text": "وَمَتَى أُضِيفُ الْأَرُزَّ؟",
+          "baca": "wa mataa udhiiful-aruzz?",
+          "id": "Nasinya kapan dimasukkan?",
+          "literal": "dan kapan saya-menambahkan nasi-itu?"
+        },
+        {
+          "speaker": "بُودِي:",
+          "text": "بَعْدَ أَنْ يَصِيرَ لَوْنُ الْبَصَلِ ذَهَبِيًّا. وَلَا تَنْسَيْ صَلْصَةَ الصُّويَا الْحُلْوَةَ!",
+          "baca": "ba'da an yashiira launul-bashali dzahabiyyan. wa laa tansai shalshatash-shuuyal-hulwah!",
+          "id": "Setelah bawangnya kuning keemasan. Dan jangan lupa kecap manisnya!",
+          "literal": "sesudah bahwa menjadi warna bawang-itu keemasan. dan jangan kamu-pr-lupa saus kedelai-itu yang-manis!"
+        },
+        {
+          "speaker": "لَيْلَى:",
+          "text": "عِنْدِي صَلْصَةُ صُويَا عَادِيَّةٌ فَقَطْ.",
+          "baca": "'indii shalshatu shuuyaa 'aadiyyatun faqath.",
+          "id": "Aku cuma punya kecap asin biasa.",
+          "literal": "pada-saya saus kedelai biasa saja."
+        },
+        {
+          "speaker": "بُودِي:",
+          "text": "لَا بَأْسَ، أَضِيفِي إِلَيْهَا مِلْعَقَةً مِنَ السُّكَّرِ. وَفِي النِّهَايَةِ ضَعِي بَيْضَةً مَقْلِيَّةً فَوْقَ الْأَرُزِّ.",
+          "baca": "laa ba's, adhiifii ilaihaa mil'aqatan minas-sukkar. wa fin-nihaayati dha'ii baidhatan maqliyyatan fauqal-aruzz.",
+          "id": "Nggak apa-apa, tambahkan sesendok gula. Terakhir, taruh telur ceplok di atas nasinya.",
+          "literal": "tidak apa-apa, tambahkanlah-kamu-pr kepada-nya sesendok dari gula-itu. dan pada akhir-itu letakkanlah-kamu-pr telur yang-digoreng di-atas nasi-itu."
+        },
+        {
+          "speaker": "لَيْلَى:",
+          "text": "شُكْرًا يَا أُسْتَاذُ! سَأُرْسِلُ لَكَ صُورَةَ الطَّبَقِ بَعْدَ قَلِيلٍ.",
+          "baca": "syukran yaa ustaadz! sa'ursilu laka shuuratath-thabaqi ba'da qaliil.",
+          "id": "Makasih, Pak Guru! Nanti kukirim foto piringnya.",
+          "literal": "terima-kasih wahai guru! akan-saya-kirim untuk-kamu foto piring-itu sesudah sebentar."
+        }
+      ],
+      "notes": [
+        "**Kata kerja panjang pun sama.** Larangan لَا تَسْتَعْمِلِي mengikuti pola yang sama. Kata kerja panjang (wazan X) tidak mengubah aturannya: تَسْتَعْمِلِينَ → لَا تَسْتَعْمِلِي. Nun gugur, selebihnya utuh.",
+        "**Jangan lupa untuk perempuan.** Bentuk لَا تَنْسَيْ berasal dari تَنْسَيْنَ. Kata kerja نَسِيَ berujung huruf lemah; untuk أَنْتِ, majzumnya cukup membuang nun: تَنْسَيْ (*tansai*). Kalau disusul ال, sukunnya menjadi kasrah: لَا تَنْسَيِ الْخَلَّ.",
+        "**Kata ganti untuk potongan-potongan.** Pada ضَعِيهَا, akhiran ـهَا merujuk ke potongan-potongan bawang (قِطَع), jamak benda yang diperlakukan sebagai perempuan tunggal. Kalau yang dimaksud tegas \"keduanya\", pakai ضَعِيهِمَا (unit 9).",
+        "**Kecap manis tidak punya nama Arab baku.** Budi menyebutnya صَلْصَةُ الصُّويَا الْحُلْوَةُ (\"saus kedelai manis\"). Di toko Kairo yang tersedia biasanya kecap asin; tambahan gula adalah akal penerjemah."
+      ],
+      "grammars": [
+        {
+          "title": "Mengurutkan langkah",
+          "table": {
+            "head": [
+              "Penanda",
+              "Cara baca",
+              "Arti",
+              "Disusul"
+            ],
+            "rows": [
+              [
+                "أَوَّلًا",
+                "awwalan",
+                "pertama, dulu",
+                "—"
+              ],
+              [
+                "ثُمَّ",
+                "tsumma",
+                "lalu, kemudian",
+                "kalimat apa saja"
+              ],
+              [
+                "بَعْدَ ذٰلِكَ",
+                "ba'da dzaalik",
+                "sesudah itu",
+                "kalimat apa saja"
+              ],
+              [
+                "بَعْدَ أَنْ",
+                "ba'da an",
+                "sesudah (sesuatu terjadi)",
+                "mudhari' manshub atau madhi"
+              ],
+              [
+                "قَبْلَ أَنْ",
+                "qabla an",
+                "sebelum (sesuatu terjadi)",
+                "mudhari' manshub"
+              ],
+              [
+                "فِي النِّهَايَةِ",
+                "fin-nihaayah",
+                "akhirnya, terakhir",
+                "kalimat apa saja"
+              ]
+            ]
+          },
+          "after": [
+            "Dalam resep, بَعْدَ أَنْ hampir selalu disusul mudhari' manshub karena langkahnya belum terjadi: بَعْدَ أَنْ يَغْلِيَ الْمَاءُ. Dalam cerita lampau, madhi lebih lazim: بَعْدَ أَنْ أَكَلْنَا."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Di dapur",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "Kata kerja",
+            "Amr untuk أَنْتِ",
+            "Cara baca",
+            "Arti"
+          ],
+          "rows": [
+            [
+              "قَلَى – يَقْلِي",
+              "اِقْلِي",
+              "iqlii",
+              "menggoreng"
+            ],
+            [
+              "سَلَقَ – يَسْلُقُ",
+              "اُسْلُقِي",
+              "usluqii",
+              "merebus"
+            ],
+            [
+              "خَلَطَ – يَخْلِطُ",
+              "اِخْلِطِي",
+              "ikhlithii",
+              "mencampur"
+            ],
+            [
+              "قَطَّعَ – يُقَطِّعُ",
+              "قَطِّعِي",
+              "qaththi'ii",
+              "memotong-motong"
+            ],
+            [
+              "سَخَّنَ – يُسَخِّنُ",
+              "سَخِّنِي",
+              "sakhkhinii",
+              "memanaskan"
+            ],
+            [
+              "ذَاقَ – يَذُوقُ",
+              "ذُوقِي",
+              "dzuuqii",
+              "mencicipi"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "Resep di situs dan majalah Arab banyak yang ditulis dengan amr untuk perempuan (ضَعِي، أَضِيفِي، اُطْبُخِي), sebagian lagi dengan amr laki-laki atau masdar (اَلْغَسْلُ ثُمَّ التَّقْطِيعُ). Kalau membaca resep Arab, ketiga gaya itu akan kamu temui."
+        },
+        {
+          "type": "kotak",
+          "title": "Koshari, piring rakyat Mesir",
+          "items": [
+            "**Isinya berlapis:** nasi, kacang adas cokelat, makaroni pendek, kadang mi halus dan kacang arab, lalu disiram saus tomat, cuka-bawang putih, dan bawang goreng renyah di atasnya.",
+            "**Asal-usulnya sering dikaitkan** dengan hidangan India *khichri* yang datang ke Mesir pada abad ke-19, lalu berkembang menjadi makanan jalanan yang murah dan mengenyangkan. Hampir setiap kawasan Kairo punya kedai koshari sendiri."
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Amr yang berubah bentuk",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "Kata kerja",
+            "أَنْتَ",
+            "أَنْتِ",
+            "أَنْتُمْ"
+          ],
+          "rows": [
+            [
+              "وَضَعَ (meletakkan)",
+              "ضَعْ",
+              "ضَعِي",
+              "ضَعُوا"
+            ],
+            [
+              "أَكَلَ (makan)",
+              "كُلْ",
+              "كُلِي",
+              "كُلُوا"
+            ],
+            [
+              "أَخَذَ (mengambil)",
+              "خُذْ",
+              "خُذِي",
+              "خُذُوا"
+            ],
+            [
+              "أَضَافَ (menambahkan)",
+              "أَضِفْ",
+              "أَضِيفِي",
+              "أَضِيفُوا"
+            ],
+            [
+              "نَسِيَ (lupa) — larangan",
+              "لَا تَنْسَ",
+              "لَا تَنْسَيْ",
+              "لَا تَنْسَوْا"
+            ],
+            [
+              "(datang, kemari)",
+              "تَعَالَ",
+              "تَعَالَيْ",
+              "تَعَالَوْا"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "Beberapa kata kerja yang huruf pertamanya و (وَضَعَ) atau hamzah (أَكَلَ، أَخَذَ) memendek dalam amr. Kata kerja wazan IV seperti أَضَافَ justru mempertahankan hamzah di depannya. Adapun تَعَالَ hanya punya bentuk amr — tak ada madhi atau mudhari' yang dipakai sehari-hari."
+        },
+        {
+          "type": "kotak",
+          "title": "Memerintah dengan halus",
+          "items": [
+            "**Amr di dapur dan di antara teman itu wajar**, tidak dianggap kasar. Kepada orang yang lebih tua atau di tempat resmi, tambahkan لَوْ سَمَحْتِ atau مِنْ فَضْلِكِ.",
+            "**Pola \"bisakah kamu\"** lebih lembut lagi: هَلْ يُمْكِنُ أَنْ تُسَاعِدِينِي؟ (\"bisakah kamu membantuku?\")."
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Ulangan berjenjang — unit 6",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Tutup kolom Arab, baca terjemahan Indonesianya, lalu susun kembali kalimatnya dari ingatan."
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Bahasa Indonesia",
+            "العربية"
+          ],
+          "rows": [
+            [
+              "Aku main tiap hari sepulang sekolah, di gang depan rumah kami.",
+              "كُنْتُ أَلْعَبُ كُلَّ يَوْمٍ بَعْدَ الْمَدْرَسَةِ فِي الزُّقَاقِ أَمَامَ بَيْتِنَا."
+            ],
+            [
+              "Jadi kamu sudah kenal huruf Arab sebelum datang ke Mesir!",
+              "إِذَنْ كُنْتَ قَدْ عَرَفْتَ الْحُرُوفَ الْعَرَبِيَّةَ قَبْلَ أَنْ تَأْتِيَ إِلَى مِصْرَ!"
+            ],
+            [
+              "Nggak, dia enam tahun lebih tua. Waktu aku masuk sekolah, dia sudah lulus SD.",
+              "لَا، هِيَ أَكْبَرُ مِنِّي بِسِتِّ سَنَوَاتٍ. عِنْدَمَا دَخَلْتُ الْمَدْرَسَةَ، كَانَتْ قَدْ أَنْهَتِ الِابْتِدَائِيَّةَ."
+            ],
+            [
+              "Dia mendongeng cerita-cerita lama, dan aku membantunya di dapur.",
+              "كَانَتْ تَحْكِي لِي حِكَايَاتٍ قَدِيمَةً، وَكُنْتُ أُسَاعِدُهَا فِي الْمَطْبَخِ."
+            ],
+            [
+              "Di sekolah. Waktu masuk kuliah, aku sudah membaca banyak novel Prancis.",
+              "فِي الْمَدْرَسَةِ. وَعِنْدَمَا دَخَلْتُ الْجَامِعَةَ، كُنْتُ قَدْ قَرَأْتُ رِوَايَاتٍ فَرَنْسِيَّةً كَثِيرَةً."
+            ]
+          ]
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "ar": "أَرُزّ",
+      "baca": "aruzz",
+      "id": "beras, nasi"
+    },
+    {
+      "ar": "عَدَس",
+      "baca": "'adas",
+      "id": "kacang adas (lentil)"
+    },
+    {
+      "ar": "مَكَرُونَة",
+      "baca": "makaruunah",
+      "id": "makaroni, pasta"
+    },
+    {
+      "ar": "بَصَل",
+      "baca": "bashal",
+      "id": "bawang bombai (بَصَلَة = sebutir)"
+    },
+    {
+      "ar": "ثُوم",
+      "baca": "tsuum",
+      "id": "bawang putih"
+    },
+    {
+      "ar": "خَلّ",
+      "baca": "khall",
+      "id": "cuka"
+    },
+    {
+      "ar": "صَلْصَة",
+      "baca": "shalshah",
+      "id": "saus"
+    },
+    {
+      "ar": "زَيْت",
+      "baca": "zait",
+      "id": "minyak"
+    },
+    {
+      "ar": "سُكَّر",
+      "baca": "sukkar",
+      "id": "gula"
+    },
+    {
+      "ar": "بَيْضَة",
+      "baca": "baidhah",
+      "id": "telur (sebutir)"
+    },
+    {
+      "ar": "مِقْلَاة",
+      "baca": "miqlaah",
+      "id": "wajan"
+    },
+    {
+      "ar": "مِلْعَقَة ج مَلَاعِق",
+      "baca": "mil'aqah j. malaa'iq",
+      "id": "sendok"
+    },
+    {
+      "ar": "طَبَق ج أَطْبَاق",
+      "baca": "thabaq j. athbaaq",
+      "id": "piring; hidangan"
+    },
+    {
+      "ar": "طَبَقَة",
+      "baca": "thabaqah",
+      "id": "lapisan"
+    },
+    {
+      "ar": "سِرّ ج أَسْرَار",
+      "baca": "sirr j. asraar",
+      "id": "rahasia"
+    },
+    {
+      "ar": "غَسَلَ – يَغْسِلُ",
+      "baca": "ghasala – yaghsilu",
+      "id": "mencuci"
+    },
+    {
+      "ar": "طَبَخَ – يَطْبُخُ",
+      "baca": "thabakha – yathbukhu",
+      "id": "memasak"
+    },
+    {
+      "ar": "وَضَعَ – يَضَعُ",
+      "baca": "wadha'a – yadha'u",
+      "id": "meletakkan"
+    },
+    {
+      "ar": "أَضَافَ – يُضِيفُ",
+      "baca": "adhaafa – yudhiifu",
+      "id": "menambahkan"
+    },
+    {
+      "ar": "نَسِيَ – يَنْسَى",
+      "baca": "nasiya – yansaa",
+      "id": "lupa"
+    },
+    {
+      "ar": "غَلَى – يَغْلِي",
+      "baca": "ghalaa – yaghlii",
+      "id": "mendidih"
+    },
+    {
+      "ar": "نَضِجَ – يَنْضَجُ",
+      "baca": "nadhija – yandhaju",
+      "id": "matang"
+    },
+    {
+      "ar": "سَاخِن",
+      "baca": "saakhin",
+      "id": "panas (benda)"
+    }
+  ],
+  "exercises": [
+    {
+      "prompt": "Terjemahkan ke bahasa Arab.",
+      "items": [
+        "Cucilah berasnya! (kepada perempuan)",
+        "Jangan buka pintunya! (kepada banyak orang)",
+        "Masaklah adasnya dulu! (kepada banyak orang)",
+        "Jangan lupa bawang putihnya! (kepada perempuan)",
+        "Taruh piringnya di atas meja! (kepada perempuan)",
+        "Makanlah sebelum dingin! (kepada banyak orang)"
+      ]
+    },
+    {
+      "prompt": "Isi titik-titiknya dengan amr atau larangan sesuai petunjuk.",
+      "items": [
+        "____ الْبَصَلَ يَا لَيْلَى. (قَطَّعَ)",
+        "____ الْمَاءَ عَلَى النَّارِ يَا شَبَابُ. (وَضَعَ)",
+        "لَا ____ الْقِدْرَ يَا لَيْلَى. (فَتَحَ)",
+        "____ السُّكَّرَ بَعْدَ أَنْ يَغْلِيَ الْمَاءُ. (أَضَافَ untuk أَنْتُمْ)",
+        "لَا ____ شَيْئًا يَا شَبَابُ. (نَسِيَ)",
+        "____ قَبْلَ أَنْ يَبْرُدَ الطَّعَامُ. (أَكَلَ untuk أَنْتُمْ)",
+        "اُطْبُخِي الْعَدَسَ ____، ثُمَّ الْأَرُزَّ. (pertama)"
+      ]
+    },
+    {
+      "prompt": "Soal 1–3: ubah perintah untuk أَنْتَ menjadi untuk أَنْتِ. Soal 4–6: jadikan larangan.",
+      "items": [
+        "اِغْسِلِ الْأَرُزَّ.",
+        "ضَعِ الْمِلْحَ.",
+        "اُطْبُخِ الْعَدَسَ.",
+        "اِفْتَحُوا الْقِدْرَ.",
+        "اِخْلِطُوا كُلَّ شَيْءٍ.",
+        "كُلُوا الْآنَ."
+      ]
+    },
+    {
+      "prompt": "Susun menjadi kalimat yang benar.",
+      "items": [
+        "أَوَّلًا / اِغْسِلُوا / أَيْدِيَكُمْ",
+        "قِطَعًا كَبِيرَةً / لَا / الْبَصَلَ / تُقَطِّعِي",
+        "أَضِفِ الْمَكَرُونَةَ / بَعْدَ أَنْ / يَغْلِيَ الْمَاءُ",
+        "تَنْسَيْ / صَلْصَةَ الصُّويَا / لَا",
+        "قَبْلَ أَنْ / كُلُوا / يَبْرُدَ"
+      ]
+    }
+  ],
+  "answers": [
+    "اِغْسِلِي الْأَرُزَّ! — لَا تَفْتَحُوا الْبَابَ! — اُطْبُخُوا الْعَدَسَ أَوَّلًا! — لَا تَنْسَيِ الثُّومَ! — ضَعِي الطَّبَقَ عَلَى الطَّاوِلَةِ! — كُلُوا قَبْلَ أَنْ يَبْرُدَ!",
+    "قَطِّعِي — ضَعُوا — تَفْتَحِي — أَضِيفُوا — تَنْسَوْا — كُلُوا — أَوَّلًا",
+    "اِغْسِلِي الْأَرُزَّ. — ضَعِي الْمِلْحَ. — اُطْبُخِي الْعَدَسَ. — لَا تَفْتَحُوا الْقِدْرَ. — لَا تَخْلِطُوا كُلَّ شَيْءٍ. — لَا تَأْكُلُوا الْآنَ.",
+    "اِغْسِلُوا أَيْدِيَكُمْ أَوَّلًا. — لَا تُقَطِّعِي الْبَصَلَ قِطَعًا كَبِيرَةً. — بَعْدَ أَنْ يَغْلِيَ الْمَاءُ، أَضِفِ الْمَكَرُونَةَ. — لَا تَنْسَيْ صَلْصَةَ الصُّويَا. — كُلُوا قَبْلَ أَنْ يَبْرُدَ."
+  ]
+}

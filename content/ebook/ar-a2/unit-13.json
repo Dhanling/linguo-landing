@@ -1,0 +1,688 @@
+{
+ "title": "Wazan II dan III — فَعَّلَ dan فَاعَلَ",
+ "title_target": "دَرَسَ أَمْ دَرَّسَ؟",
+ "goal": "Mengenali dan memakai kata kerja wazan II (فَعَّلَ) dan III (فَاعَلَ): arti khasnya, bentuk sekarang yang berawalan yu-, masdar, dan isim fa'il-nya.",
+ "bekal": [
+  "membedakan kata kerja wazan I dari wazan II yang hanya berbeda syaddah",
+  "membentuk mudhari', masdar, isim fa'il, dan perintah wazan II dan III",
+  "mengenali asal kata serapan seperti tafsir, mukadimah, dan musyawarah"
+ ],
+ "dialogs": [
+  {
+   "title": "Dialog — رَاجَعْتُ تَرْجَمَتَكَ",
+   "intro": "Selasa, 15 Desember. Karim, editor senior Dar al-Jisr, sudah memeriksa terjemahan pertama Budi — teks yang membuatnya begadang sampai sakit.",
+   "lines": [
+    {
+     "speaker": "كَرِيم:",
+     "text": "بُودِي، رَاجَعْتُ تَرْجَمَتَكَ الْأُولَى أَمْسِ. تَعَالَ لِنُنَاقِشَهَا مَعًا.",
+     "baca": "Buudii, raaja'tu tarjamatakal-uulaa ams. ta'aala linunaaqisyahaa ma'an.",
+     "id": "Budi, kemarin aku sudah memeriksa terjemahan pertamamu. Sini, kita bahas bersama.",
+     "literal": "Budi, saya-memeriksa terjemahan-kamu yang-pertama kemarin. kemarilah untuk-kita-membahas-nya bersama."
+    },
+    {
+     "speaker": "بُودِي:",
+     "text": "بِكُلِّ سُرُورٍ. هَلْ غَيَّرْتَ كَثِيرًا؟",
+     "baca": "bikulli suruur. hal ghayyarta katsiiran?",
+     "id": "Dengan senang hati. Banyak yang kamu ubah?",
+     "literal": "dengan-semua kesenangan. apakah kamu-mengubah banyak?"
+    },
+    {
+     "speaker": "كَرِيم:",
+     "text": "لَا، صَحَّحْتُ بَعْضَ الْأَخْطَاءِ فَقَطْ، وَغَيَّرْتُ كَلِمَتَيْنِ أَوْ ثَلَاثًا.",
+     "baca": "laa, shahhahtu ba'dhal-akhthaa'i faqath, wa ghayyartu kalimataini au tsalaatsan.",
+     "id": "Tidak, aku cuma membetulkan beberapa kesalahan dan mengganti dua-tiga kata.",
+     "literal": "tidak, saya-membetulkan sebagian kesalahan-kesalahan-itu saja, dan saya-mengubah dua-kata atau tiga."
+    },
+    {
+     "speaker": "بُودِي:",
+     "text": "مَثَلًا؟",
+     "baca": "matsalan?",
+     "id": "Misalnya?",
+     "literal": "contohnya?"
+    },
+    {
+     "speaker": "كَرِيم:",
+     "text": "هُنَا كَتَبْتَ: دَرَسَ الْمُعَلِّمُ الطُّلَّابَ. وَالصَّوَابُ: دَرَّسَ الْمُعَلِّمُ الطُّلَّابَ.",
+     "baca": "hunaa katabt: darasal-mu'allimuth-thullaab. wash-shawaab: darrasal-mu'allimuth-thullaab.",
+     "id": "Di sini kamu menulis \"Guru itu mempelajari para murid.\" Yang benar: \"Guru itu mengajar para murid.\"",
+     "literal": "di-sini kamu-menulis: mempelajari guru-itu murid-murid-itu. dan yang-benar: mengajar guru-itu murid-murid-itu."
+    },
+    {
+     "speaker": "بُودِي:",
+     "text": "شَدَّةٌ وَاحِدَةٌ تُغَيِّرُ الْمَعْنَى كُلَّهُ!",
+     "baca": "syaddatun waahidatun tughayyirul-ma'naa kullah!",
+     "id": "Satu syaddah mengubah seluruh artinya!",
+     "literal": "syaddah satu mengubah arti-itu seluruh-nya!"
+    },
+    {
+     "speaker": "كَرِيم:",
+     "text": "بِالضَّبْطِ. اَلْأُسْتَاذُ يُدَرِّسُ، وَالطَّالِبُ يَدْرُسُ.",
+     "baca": "bidh-dhabth. al-ustaadzu yudarris, wath-thaalibu yadrus.",
+     "id": "Persis. Guru mengajar, murid belajar.",
+     "literal": "dengan-ketepatan-itu. guru-itu mengajar, dan murid-itu belajar."
+    },
+    {
+     "speaker": "بُودِي:",
+     "text": "وَمَاذَا عَنِ الْفِقْرَةِ الثَّانِيَةِ؟",
+     "baca": "wa maadzaa 'anil-fiqratits-tsaaniyah?",
+     "id": "Bagaimana dengan paragraf kedua?",
+     "literal": "dan apa tentang paragraf-itu yang-kedua?"
+    },
+    {
+     "speaker": "كَرِيم:",
+     "text": "كَتَبْتَ: شَاهَدْتُ صَدِيقِي فِي السُّوقِ. وَالْأَفْضَلُ: قَابَلْتُ صَدِيقِي.",
+     "baca": "katabt: syaahadtu shadiiqii fis-suuq. wal-afdhal: qaabaltu shadiiqii.",
+     "id": "Kamu menulis \"Aku menonton temanku di pasar.\" Lebih baik: \"Aku bertemu temanku.\"",
+     "literal": "kamu-menulis: saya-menonton teman-saya di pasar-itu. dan yang-lebih-baik: saya-menemui teman-saya."
+    },
+    {
+     "speaker": "بُودِي:",
+     "text": "فَهِمْتُ. نُشَاهِدُ التِّلْفَازَ وَالْمُبَارَيَاتِ، وَنُقَابِلُ النَّاسَ.",
+     "baca": "fahimt. nusyaahidut-tilfaaza wal-mubaarayaat, wa nuqaabilun-naas.",
+     "id": "Paham. Kita menonton televisi dan pertandingan, dan kita bertemu orang.",
+     "literal": "saya-paham. kami-menonton televisi-itu dan pertandingan-pertandingan-itu, dan kami-menemui orang-orang-itu."
+    },
+    {
+     "speaker": "كَرِيم:",
+     "text": "أَحْسَنْتَ. وَفِي الْمَرَّةِ الْقَادِمَةِ رَاجِعِ النَّصَّ بِنَفْسِكَ قَبْلَ أَنْ تُسَلِّمَهُ.",
+     "baca": "ahsant. wa fil-marratil-qaadimati raaji'in-nashsha binafsika qabla an tusallimah.",
+     "id": "Bagus. Lain kali periksa sendiri teksnya sebelum kamu serahkan.",
+     "literal": "kamu-berbuat-baik. dan pada kali-itu yang-akan-datang periksalah teks-itu dengan-diri-kamu sebelum bahwa kamu-menyerahkan-nya."
+    },
+    {
+     "speaker": "بُودِي:",
+     "text": "سَأُحَاوِلُ. هَلْ تُسَاعِدُنِي بِقَائِمَةٍ لِلْأَخْطَاءِ الشَّائِعَةِ؟",
+     "baca": "sa'uhaawil. hal tusaa'idunii biqaa'imatin lil-akhthaa'isy-syaa'i'ah?",
+     "id": "Akan kucoba. Bisa bantu aku dengan daftar kesalahan yang umum?",
+     "literal": "akan-saya-mencoba. apakah kamu-membantu-saya dengan-daftar untuk-kesalahan-kesalahan-itu yang-umum?"
+    },
+    {
+     "speaker": "كَرِيم:",
+     "text": "طَبْعًا. سَأُرْسِلُهَا إِلَيْكَ الْيَوْمَ، وَنُنَاقِشُهَا يَوْمَ الْخَمِيسِ.",
+     "baca": "thab'an. sa'ursiluhaa ilaikal-yaum, wa nunaaqisyuhaa yaumal-khamiis.",
+     "id": "Tentu. Kukirim hari ini, dan kita bahas hari Kamis.",
+     "literal": "tentu. akan-saya-kirim-nya kepada-kamu hari-ini, dan kami-membahas-nya hari Kamis-itu."
+    }
+   ],
+   "notes": [
+    "**Syaddah di huruf tengah = wazan II.** دَرَسَ (belajar) dan دَرَّسَ (mengajar) hanya berbeda satu syaddah. Wazan II sering berarti **membuat orang lain melakukan**: عَلِمَ (tahu) menjadi عَلَّمَ (mengajari). Dari sinilah kata مُدَرِّس dan مُعَلِّم yang kamu kenal sejak A1.",
+    "**Awalan yu- menandai wazan II dan III** (dan, di unit berikut, wazan IV). Wazan I berawalan ya- (يَدْرُسُ), sedangkan wazan II dan III berawalan yu-, misalnya يُدَرِّسُ (mengajar) dan يُسَاعِدُ (membantu). Kata kerja empat huruf seperti تَرْجَمَ ikut aturan ini: يُتَرْجِمُ.",
+    "**Wazan III mengarah kepada pihak lain.** قَابَلَ (menemui seseorang), سَاعَدَ (membantu), نَاقَشَ (berdiskusi dengan), رَاجَعَ (memeriksa ulang). Ciri tulisannya mudah: alif sesudah huruf pertama.",
+    "**Perintah wazan II dan III tanpa alif di depan.** Dari تُرَاجِعُ lahir رَاجِعْ; di depan ال ia mendapat kasrah penyambung: رَاجِعِ النَّصَّ. Bandingkan dengan wazan I yang memerlukan alif: اُكْتُبْ.",
+    "**Menonton dan bertemu.** شَاهَدَ untuk menonton dengan sengaja (film, pertandingan), قَابَلَ untuk bertemu seseorang, رَأَى untuk sekadar melihat."
+   ],
+   "grammars": [
+    {
+     "title": "Wazan II — فَعَّلَ",
+     "body": [
+      "Pola فَعَّلَ – يُفَعِّلُ, masdar تَفْعِيل, isim fa'il مُفَعِّل (*fa''ala – yufa''ilu – taf'iil – mufa''il*). Arti umum: membuat orang lain melakukan, atau melakukan dengan sungguh-sungguh."
+     ],
+     "table": {
+      "head": [
+       "Madhi",
+       "Mudhari'",
+       "Masdar",
+       "Isim fa'il",
+       "Arti"
+      ],
+      "rows": [
+       [
+        "دَرَّسَ",
+        "يُدَرِّسُ",
+        "تَدْرِيس",
+        "مُدَرِّس",
+        "mengajar"
+       ],
+       [
+        "عَلَّمَ",
+        "يُعَلِّمُ",
+        "تَعْلِيم",
+        "مُعَلِّم",
+        "mengajari"
+       ],
+       [
+        "صَحَّحَ",
+        "يُصَحِّحُ",
+        "تَصْحِيح",
+        "مُصَحِّح",
+        "membetulkan"
+       ],
+       [
+        "قَدَّمَ",
+        "يُقَدِّمُ",
+        "تَقْدِيم",
+        "مُقَدِّم",
+        "menyajikan, mengajukan"
+       ],
+       [
+        "نَظَّمَ",
+        "يُنَظِّمُ",
+        "تَنْظِيم",
+        "مُنَظِّم",
+        "mengatur, menyelenggarakan"
+       ],
+       [
+        "صَوَّرَ",
+        "يُصَوِّرُ",
+        "تَصْوِير",
+        "مُصَوِّر",
+        "memotret"
+       ],
+       [
+        "فَكَّرَ",
+        "يُفَكِّرُ",
+        "تَفْكِير",
+        "مُفَكِّر",
+        "berpikir"
+       ]
+      ]
+     },
+     "after": [
+      "Masdar tidak selalu تَفْعِيل; misalnya جَرَّبَ (mencoba) bermasdar تَجْرِبَة. Isim maf'ul-nya berpola مُفَعَّل, dengan fathah sebelum huruf terakhir: مُنَظَّم (teratur), مُصَوَّر (bergambar)."
+     ]
+    },
+    {
+     "title": "Wazan III — فَاعَلَ",
+     "body": [
+      "Pola فَاعَلَ – يُفَاعِلُ, masdar مُفَاعَلَة (kadang فِعَال), isim fa'il مُفَاعِل (*faa'ala – yufaa'ilu – mufaa'alah – mufaa'il*). Arti umum: berbuat **kepada atau bersama** orang lain."
+     ],
+     "table": {
+      "head": [
+       "Madhi",
+       "Mudhari'",
+       "Masdar",
+       "Isim fa'il",
+       "Arti"
+      ],
+      "rows": [
+       [
+        "سَاعَدَ",
+        "يُسَاعِدُ",
+        "مُسَاعَدَة",
+        "مُسَاعِد",
+        "membantu"
+       ],
+       [
+        "شَاهَدَ",
+        "يُشَاهِدُ",
+        "مُشَاهَدَة",
+        "مُشَاهِد",
+        "menonton"
+       ],
+       [
+        "نَاقَشَ",
+        "يُنَاقِشُ",
+        "مُنَاقَشَة",
+        "مُنَاقِش",
+        "membahas, berdiskusi"
+       ],
+       [
+        "رَاجَعَ",
+        "يُرَاجِعُ",
+        "مُرَاجَعَة",
+        "مُرَاجِع",
+        "memeriksa ulang"
+       ],
+       [
+        "شَارَكَ",
+        "يُشَارِكُ",
+        "مُشَارَكَة",
+        "مُشَارِك",
+        "ikut serta"
+       ],
+       [
+        "حَاوَرَ",
+        "يُحَاوِرُ",
+        "حِوَار",
+        "مُحَاوِر",
+        "berdialog"
+       ]
+      ]
+     },
+     "after": [
+      "Isim fa'il dan isim maf'ul wazan III hanya berbeda satu harakat: مُشَاهِد (penonton) dan مُشَاهَد (yang ditonton). Di teks gundul keduanya tertulis sama — konteks yang memutuskan."
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Dialog kedua — هَلْ تُقَدِّمُ عَرْضًا؟",
+   "intro": "Kamis malam, 17 Desember. Ahmad pulang dari sekolah membawa permintaan untuk Budi.",
+   "lines": [
+    {
+     "speaker": "أَحْمَد:",
+     "text": "بُودِي، عِنْدِي طَلَبٌ. طُلَّابِي شَاهَدُوا فِيلْمًا عَنْ بَالِي، وَيُرِيدُونَ أَنْ يُقَابِلُوا إِنْدُونِيسِيًّا حَقِيقِيًّا!",
+     "baca": "Buudii, 'indii thalab. thullaabii syaahaduu fiilman 'an Baalii, wa yuriiduuna an yuqaabiluu induuniisiyyan haqiiqiyyan!",
+     "id": "Budi, aku punya permintaan. Murid-muridku menonton film tentang Bali, dan mereka ingin bertemu orang Indonesia sungguhan!",
+     "literal": "Budi, pada-saya permintaan. murid-murid-saya mereka-menonton film tentang Bali, dan mereka-ingin bahwa mereka-menemui orang-Indonesia sungguhan!"
+    },
+    {
+     "speaker": "بُودِي:",
+     "text": "وَأَنَا الْإِنْدُونِيسِيُّ الْوَحِيدُ فِي الدُّقِّي؟",
+     "baca": "wa anal-induuniisiyyul-wahiidu fid-Duqqii?",
+     "id": "Dan akulah satu-satunya orang Indonesia di Dokki?",
+     "literal": "dan saya orang-Indonesia-itu yang-satu-satunya di Dokki?"
+    },
+    {
+     "speaker": "أَحْمَد:",
+     "text": "تَقْرِيبًا! هَلْ تَسْتَطِيعُ أَنْ تُقَدِّمَ عَرْضًا قَصِيرًا فِي الْفَصْلِ؟",
+     "baca": "taqriiban! hal tastathii'u an tuqaddima 'ardhan qashiiran fil-fashl?",
+     "id": "Hampir! Kamu bisa presentasi singkat di kelas?",
+     "literal": "hampir! apakah kamu-mampu bahwa kamu-menyajikan presentasi pendek di kelas-itu?"
+    },
+    {
+     "speaker": "بُودِي:",
+     "text": "بِالْإِنْجِلِيزِيَّةِ أَمْ بِالْعَرَبِيَّةِ؟",
+     "baca": "bil-injiliiziyyati am bil-'arabiyyah?",
+     "id": "Dalam bahasa Inggris atau Arab?",
+     "literal": "dengan-bahasa-Inggris-itu atau dengan-bahasa-Arab-itu?"
+    },
+    {
+     "speaker": "أَحْمَد:",
+     "text": "بِالْإِنْجِلِيزِيَّةِ، فَأَنَا أُدَرِّسُ الْإِنْجِلِيزِيَّةَ. وَسَأُسَاعِدُكَ فِي التَّحْضِيرِ.",
+     "baca": "bil-injiliiziyyah, fa anaa udarrisul-injiliiziyyah. wa sa'usaa'iduka fit-tahdhiir.",
+     "id": "Bahasa Inggris, kan aku guru bahasa Inggris. Nanti kubantu persiapannya.",
+     "literal": "dengan-bahasa-Inggris-itu, maka-saya saya-mengajar bahasa-Inggris-itu. dan akan-saya-bantu-kamu dalam persiapan-itu."
+    },
+    {
+     "speaker": "بُودِي:",
+     "text": "مُوَافِقٌ. سَأُحَضِّرُ صُوَرًا مِنْ جَاكَرْتَا وَبَالِي، وَأُعَلِّمُهُمْ بَعْضَ الْكَلِمَاتِ الْإِنْدُونِيسِيَّةِ.",
+     "baca": "muwaafiq. sa'uhadhdhiru shuwaran min Jaakartaa wa Baalii, wa u'allimuhum ba'dhal-kalimaatil-induuniisiyyah.",
+     "id": "Setuju. Aku siapkan foto-foto Jakarta dan Bali, dan kuajari mereka beberapa kata bahasa Indonesia.",
+     "literal": "yang-setuju. akan-saya-siapkan gambar-gambar dari Jakarta dan Bali, dan saya-mengajari-mereka sebagian kata-kata-itu yang-Indonesia."
+    },
+    {
+     "speaker": "أَحْمَد:",
+     "text": "مُمْتَازٌ! وَبَعْدَ الْعَرْضِ نُنَاقِشُ أَسْئِلَتَهُمْ.",
+     "baca": "mumtaaz! wa ba'dal-'ardhi nunaaqisyu as'ilatahum.",
+     "id": "Hebat! Sesudah presentasi kita bahas pertanyaan-pertanyaan mereka.",
+     "literal": "istimewa! dan sesudah presentasi-itu kami-membahas pertanyaan-pertanyaan-mereka."
+    },
+    {
+     "speaker": "بُودِي:",
+     "text": "وَمَتَى الْعَرْضُ؟",
+     "baca": "wa matal-'ardh?",
+     "id": "Presentasinya kapan?",
+     "literal": "dan kapan presentasi-itu?"
+    },
+    {
+     "speaker": "أَحْمَد:",
+     "text": "يَوْمَ الْأَرْبِعَاءِ الْقَادِمِ، فِي الْحِصَّةِ الثَّالِثَةِ.",
+     "baca": "yaumal-arbi'aa'il-qaadim, fil-hishshatits-tsaalitsah.",
+     "id": "Rabu depan, jam pelajaran ketiga.",
+     "literal": "hari Rabu-itu yang-akan-datang, pada jam-pelajaran-itu yang-ketiga."
+    },
+    {
+     "speaker": "بُودِي:",
+     "text": "اِتَّفَقْنَا. وَصَوِّرْنِي مِنْ فَضْلِكَ، أُرِيدُ أَنْ أُرْسِلَ الصُّوَرَ إِلَى أُخْتِي رِينَا.",
+     "baca": "ittafaqnaa. wa shawwirnii min fadhlik, uriidu an ursilash-shuwara ilaa ukhtii Riinaa.",
+     "id": "Oke. Tolong fotokan aku, ya, aku mau mengirim fotonya ke kakakku, Rina.",
+     "literal": "kami-sepakat. dan potretlah-saya dari kebaikan-kamu, saya-ingin bahwa saya-mengirim gambar-gambar-itu kepada saudari-saya Rina."
+    }
+   ],
+   "notes": [
+    "**Kata kerja قَدَّمَ serba guna:** تُقَدِّمُ عَرْضًا (menyajikan presentasi), قَدَّمَ طَلَبًا (mengajukan permohonan), قَدَّمَ الطَّعَامَ (menghidangkan makanan). Isim fa'il-nya مُقَدِّم berarti pembawa acara.",
+    "**Kata kerja عَلَّمَ berobjek dua:** orangnya dan ilmunya, keduanya manshub. أُعَلِّمُهُمْ بَعْضَ الْكَلِمَاتِ = \"mengajari mereka beberapa kata\". Sebaliknya دَرَّسَ biasanya cukup satu objek: pelajarannya (أُدَرِّسُ الْإِنْجِلِيزِيَّةَ) atau orang yang diajar (دَرَّسَ الْمُعَلِّمُ الطُّلَّابَ).",
+    "**Jawaban مُوَافِقٌ (setuju)** adalah isim fa'il wazan III dari وَافَقَ; perempuan menjawab مُوَافِقَةٌ. Ungkapan اِتَّفَقْنَا (kita sepakat) dari wazan VIII menunggu di unit 15.",
+    "**Perintah wazan II dan III bisa langsung menerima akhiran objek:** صَوِّرْنِي (potret aku), سَاعِدْنِي (bantu aku), عَلِّمْنِي (ajari aku). Yang disisipkan hanya نِي sesudah huruf bersukun."
+   ],
+   "grammars": [
+    {
+     "title": "Perintah dan larangan wazan II dan III",
+     "table": {
+      "head": [
+       "Mudhari'",
+       "Perintah (أَنْتَ)",
+       "Perintah (أَنْتِ)",
+       "Larangan (أَنْتَ)"
+      ],
+      "rows": [
+       [
+        "تُدَرِّسُ",
+        "دَرِّسْ",
+        "دَرِّسِي",
+        "لَا تُدَرِّسْ"
+       ],
+       [
+        "تُصَوِّرُ",
+        "صَوِّرْ",
+        "صَوِّرِي",
+        "لَا تُصَوِّرْ"
+       ],
+       [
+        "تُغَيِّرُ",
+        "غَيِّرْ",
+        "غَيِّرِي",
+        "لَا تُغَيِّرْ"
+       ],
+       [
+        "تُسَاعِدُ",
+        "سَاعِدْ",
+        "سَاعِدِي",
+        "لَا تُسَاعِدْ"
+       ],
+       [
+        "تُرَاجِعُ",
+        "رَاجِعْ",
+        "رَاجِعِي",
+        "لَا تُرَاجِعْ"
+       ]
+      ]
+     },
+     "after": [
+      "Caranya sama dengan wazan I: buang awalan تُـ dan sukunkan huruf terakhir — hanya saja tidak perlu alif penolong di depan."
+     ]
+    }
+   ]
+  }
+ ],
+ "sections": [
+  {
+   "title": "Wazan II dan III di dalam bahasa Indonesia",
+   "blocks": [
+    {
+     "type": "tabel",
+     "head": [
+      "Arab",
+      "Wazan",
+      "Serapan",
+      "Arti asal"
+     ],
+     "rows": [
+      [
+       "تَفْسِير",
+       "II, masdar",
+       "tafsir",
+       "penjelasan"
+      ],
+      [
+       "تَجْوِيد",
+       "II, masdar",
+       "tajwid",
+       "memperindah (bacaan)"
+      ],
+      [
+       "مُقَدِّمَة",
+       "II, isim fa'il",
+       "mukadimah",
+       "yang mendahului"
+      ],
+      [
+       "مُشَاوَرَة",
+       "III, masdar",
+       "musyawarah",
+       "saling meminta pendapat"
+      ],
+      [
+       "مُنَاقَشَة",
+       "III, masdar",
+       "munaqasyah",
+       "diskusi, sidang"
+      ],
+      [
+       "مُسَافِر",
+       "III, isim fa'il",
+       "musafir",
+       "orang yang bepergian"
+      ]
+     ]
+    },
+    {
+     "type": "p",
+     "text": "Pembaca yang pernah mengaji sebenarnya sudah mengenal pola ini lewat kata serapan: mu- dengan huruf ber-syaddah di tengah hampir selalu wazan II, mu- disusul bunyi panjang *aa* hampir selalu wazan III."
+    },
+    {
+     "type": "kotak",
+     "title": "Mengenali wazan di teks tanpa harakat",
+     "items": [
+      "**Wazan II sulit:** syaddah tidak ditulis di koran, jadi درس bisa دَرَسَ atau دَرَّسَ. Petunjuknya konteks: kalau sesudah pelakunya disebut orang yang diajar, seperti درس الأستاذ الطلاب, hampir pasti دَرَّسَ.",
+      "**Mudhari' juga menjebak:** يُدَرِّسُ dan يَدْرُسُ sama-sama tertulis يدرس. Cari petunjuk pada masdar atau isim fa'il di sekitarnya, misalnya تدريس atau مدرس."
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Satu akar, tiga wazan",
+   "blocks": [
+    {
+     "type": "tabel",
+     "head": [
+      "Akar",
+      "Wazan I",
+      "Wazan II",
+      "Wazan III"
+     ],
+     "rows": [
+      [
+       "ق ب ل",
+       "قَبِلَ (menerima)",
+       "قَبَّلَ (mencium)",
+       "قَابَلَ (menemui)"
+      ],
+      [
+       "ح ض ر",
+       "حَضَرَ (hadir)",
+       "حَضَّرَ (menyiapkan)",
+       "حَاضَرَ (memberi kuliah)"
+      ],
+      [
+       "د ر س",
+       "دَرَسَ (belajar)",
+       "دَرَّسَ (mengajar)",
+       "—"
+      ],
+      [
+       "ش ه د",
+       "شَهِدَ (menyaksikan)",
+       "—",
+       "شَاهَدَ (menonton)"
+      ]
+     ]
+    },
+    {
+     "type": "p",
+     "text": "Baris pertama pantas diingat baik-baik: أَقْبَلُ هَدِيَّتَكَ berarti \"saya menerima hadiahmu\", sedangkan أُقَبِّلُ berarti \"saya mencium\". Syaddah dan awalan yu- di sini bukan hiasan."
+    },
+    {
+     "type": "kotak",
+     "title": "Kuliah dalam tiga wazan",
+     "items": [
+      "Dari akar ح ض ر kampus memakai tiga kata sekaligus: حُضُور (kehadiran, wazan I), تَحْضِير (persiapan, wazan II), dan مُحَاضَرَة (kuliah, wazan III). Dosennya disebut مُحَاضِر."
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Ulangan berjenjang — unit 11",
+   "blocks": [
+    {
+     "type": "p",
+     "text": "Tutup kolom Arab, baca terjemahan Indonesianya, lalu susun kembali kalimatnya dari ingatan."
+    },
+    {
+     "type": "tabel",
+     "head": [
+      "Bahasa Indonesia",
+      "العربية"
+     ],
+     "rows": [
+      [
+       "Kepala saya sakit, tenggorokan juga, dan saya demam sejak tiga hari lalu.",
+       "عِنْدِي صُدَاعٌ وَأَلَمٌ فِي الْحَلْقِ، وَأَنَا مَحْمُومٌ مُنْذُ ثَلَاثَةِ أَيَّامٍ."
+      ],
+      [
+       "Soalnya ada terjemahan yang harus diserahkan hari Minggu.",
+       "لِأَنَّ عِنْدِي تَرْجَمَةً مَطْلُوبَةً يَوْمَ الْأَحَدِ."
+      ],
+      [
+       "Keluar rumah dilarang sampai hari Sabtu, komputer juga!",
+       "اَلْخُرُوجُ مَمْنُوعٌ حَتَّى يَوْمِ السَّبْتِ، وَالْحَاسُوبُ أَيْضًا!"
+      ],
+      [
+       "Cara minumnya bagaimana? Tulisan dokternya tidak terbaca!",
+       "كَيْفَ آخُذُهُمَا؟ خَطُّ الدُّكْتُورَةِ غَيْرُ مَقْرُوءٍ!"
+      ],
+      [
+       "Satu cangkir saja. Dan perhatikan tulisan di kotaknya: \"Jauhkan dari jangkauan anak-anak.\"",
+       "فِنْجَانٌ وَاحِدٌ فَقَطْ. وَانْتَبِهْ لِلْمَكْتُوبِ عَلَى الْعُلْبَةِ: يُحْفَظُ بَعِيدًا عَنْ مُتَنَاوَلِ الْأَطْفَالِ."
+      ]
+     ]
+    }
+   ]
+  }
+ ],
+ "vocab": [
+  {
+   "ar": "دَرَّسَ – يُدَرِّسُ",
+   "baca": "darrasa – yudarrisu",
+   "id": "mengajar"
+  },
+  {
+   "ar": "عَلَّمَ – يُعَلِّمُ",
+   "baca": "'allama – yu'allimu",
+   "id": "mengajari"
+  },
+  {
+   "ar": "صَحَّحَ – يُصَحِّحُ",
+   "baca": "shahhaha – yushahhihu",
+   "id": "membetulkan"
+  },
+  {
+   "ar": "غَيَّرَ – يُغَيِّرُ",
+   "baca": "ghayyara – yughayyiru",
+   "id": "mengubah"
+  },
+  {
+   "ar": "قَدَّمَ – يُقَدِّمُ",
+   "baca": "qaddama – yuqaddimu",
+   "id": "menyajikan, mengajukan"
+  },
+  {
+   "ar": "حَضَّرَ – يُحَضِّرُ",
+   "baca": "hadhdhara – yuhadhdhiru",
+   "id": "menyiapkan"
+  },
+  {
+   "ar": "صَوَّرَ – يُصَوِّرُ",
+   "baca": "shawwara – yushawwiru",
+   "id": "memotret"
+  },
+  {
+   "ar": "سَاعَدَ – يُسَاعِدُ",
+   "baca": "saa'ada – yusaa'idu",
+   "id": "membantu"
+  },
+  {
+   "ar": "شَاهَدَ – يُشَاهِدُ",
+   "baca": "syaahada – yusyaahidu",
+   "id": "menonton"
+  },
+  {
+   "ar": "قَابَلَ – يُقَابِلُ",
+   "baca": "qaabala – yuqaabilu",
+   "id": "menemui"
+  },
+  {
+   "ar": "نَاقَشَ – يُنَاقِشُ",
+   "baca": "naaqasya – yunaaqisyu",
+   "id": "membahas"
+  },
+  {
+   "ar": "رَاجَعَ – يُرَاجِعُ",
+   "baca": "raaja'a – yuraaji'u",
+   "id": "memeriksa ulang"
+  },
+  {
+   "ar": "حَاوَلَ – يُحَاوِلُ",
+   "baca": "haawala – yuhaawilu",
+   "id": "mencoba"
+  },
+  {
+   "ar": "خَطَأ ج أَخْطَاء",
+   "baca": "khatha' j. akhthaa'",
+   "id": "kesalahan"
+  },
+  {
+   "ar": "فِقْرَة ج فِقْرَات",
+   "baca": "fiqrah j. fiqraat",
+   "id": "paragraf"
+  },
+  {
+   "ar": "نَصّ ج نُصُوص",
+   "baca": "nashsh j. nushuush",
+   "id": "teks"
+  },
+  {
+   "ar": "عَرْض",
+   "baca": "'ardh",
+   "id": "presentasi"
+  },
+  {
+   "ar": "حِصَّة ج حِصَص",
+   "baca": "hishshah j. hishash",
+   "id": "jam pelajaran"
+  },
+  {
+   "ar": "مُبَارَاة ج مُبَارَيَات",
+   "baca": "mubaaraah j. mubaarayaat",
+   "id": "pertandingan"
+  },
+  {
+   "ar": "مُوَافِق",
+   "baca": "muwaafiq",
+   "id": "setuju"
+  }
+ ],
+ "exercises": [
+  {
+   "prompt": "Terjemahkan ke bahasa Arab.",
+   "items": [
+    "Ahmad mengajar bahasa Inggris.",
+    "Karim membantu Budi setiap hari.",
+    "Kami menonton pertandingan kemarin.",
+    "Laila memeriksa ulang terjemahan itu.",
+    "Dia (pr) membetulkan kesalahan-kesalahanku.",
+    "Tolong bantu aku! (kepada laki-laki)"
+   ]
+  },
+  {
+   "prompt": "Isi dengan bentuk yang tepat dari kata kerja dalam kurung.",
+   "items": [
+    "اَلْأُسْتَاذَةُ ____ الْعَرَبِيَّةَ فِي الْجَامِعَةِ. (دَرَّسَ, mudhari')",
+    "أَمْسِ ____ الطُّلَّابُ فِيلْمًا. (شَاهَدَ, madhi)",
+    "أُرِيدُ أَنْ ____ النَّصَّ. (رَاجَعَ, أَنَا)",
+    "____ الدَّرْسَ جَيِّدًا يَا لَيْلَى! (حَضَّرَ, perintah)",
+    "عَمَلُ الْمُحَرِّرِ ____ النُّصُوصِ. (رَاجَعَ, masdar)",
+    "هُوَ ____ فِي الْمَطْبَخِ. (سَاعَدَ, isim fa'il)",
+    "لَا ____ الْمَوْعِدَ! (غَيَّرَ, larangan untuk أَنْتَ)"
+   ]
+  },
+  {
+   "prompt": "Ubah ke bentuk sekarang (mudhari') dengan pelaku yang sama.",
+   "items": [
+    "دَرَّسْتُ الْإِنْجِلِيزِيَّةَ.",
+    "سَاعَدْنَا الْجِيرَانَ.",
+    "نَاقَشَتِ الْمَوْضُوعَ.",
+    "صَوَّرُوا الْأَهْرَامَ.",
+    "قَابَلْتَ الْمُدِيرَ.",
+    "صَحَّحَ الْأُسْتَاذُ الْأَوْرَاقَ."
+   ]
+  },
+  {
+   "prompt": "Susun menjadi kalimat yang benar.",
+   "items": [
+    "الطُّلَّابَ / دَرَّسَ / الْمُعَلِّمُ",
+    "صَدِيقِي / قَابَلْتُ / السُّوقِ / فِي",
+    "النَّصَّ / رَاجِعِ / بِنَفْسِكَ",
+    "أَنْ / تُقَدِّمَ / تَسْتَطِيعُ / عَرْضًا / هَلْ",
+    "سَأُعَلِّمُهُمْ / الْإِنْدُونِيسِيَّةِ / بَعْضَ / الْكَلِمَاتِ"
+   ]
+  }
+ ],
+ "answers": [
+  "يُدَرِّسُ أَحْمَدُ الْإِنْجِلِيزِيَّةَ. — يُسَاعِدُ كَرِيمٌ بُودِي كُلَّ يَوْمٍ. — شَاهَدْنَا الْمُبَارَاةَ أَمْسِ. — رَاجَعَتْ لَيْلَى التَّرْجَمَةَ. — صَحَّحَتْ أَخْطَائِي. — سَاعِدْنِي مِنْ فَضْلِكَ!",
+  "تُدَرِّسُ — شَاهَدَ — أُرَاجِعَ — حَضِّرِي — مُرَاجَعَةُ — مُسَاعِدٌ — تُغَيِّرِ",
+  "أُدَرِّسُ الْإِنْجِلِيزِيَّةَ. — نُسَاعِدُ الْجِيرَانَ. — تُنَاقِشُ الْمَوْضُوعَ. — يُصَوِّرُونَ الْأَهْرَامَ. — تُقَابِلُ الْمُدِيرَ. — يُصَحِّحُ الْأُسْتَاذُ الْأَوْرَاقَ.",
+  "دَرَّسَ الْمُعَلِّمُ الطُّلَّابَ. — قَابَلْتُ صَدِيقِي فِي السُّوقِ. — رَاجِعِ النَّصَّ بِنَفْسِكَ. — هَلْ تَسْتَطِيعُ أَنْ تُقَدِّمَ عَرْضًا؟ — سَأُعَلِّمُهُمْ بَعْضَ الْكَلِمَاتِ الْإِنْدُونِيسِيَّةِ."
+ ]
+}

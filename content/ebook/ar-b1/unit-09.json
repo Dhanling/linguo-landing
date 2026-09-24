@@ -1,0 +1,639 @@
+{
+ "title": "Akar dan kamus — mencari kata, keluarga kata, dan masdar wazan II–X",
+ "title_target": "اِبْحَثْ عَنِ الْجَذْرِ",
+ "goal": "Memakai kamus Arab yang disusun menurut akar, menemukan akar kata yang hurufnya bertambah atau berubah, dan membentuk masdar wazan II sampai X untuk menulis lebih ringkas.",
+ "bekal": [
+  "membuang huruf tambahan dan memulihkan huruf lemah untuk menemukan akar",
+  "mengenali satu keluarga kata dari satu akar",
+  "membentuk masdar wazan II–X dan memakainya sebagai judul yang ringkas"
+ ],
+ "dialogs": [
+  {
+   "title": "Dialog — فِي أَيِّ بَابٍ أَبْحَثُ؟",
+   "intro": "Kamis, 14 Oktober 2027. Dar al-Jisr menerima mahasiswi magang baru, Mariam, mahasiswi tingkat tiga jurusan bahasa Inggris. Karim memintanya memeriksa sebuah kata di al-Mu'jam al-Wasith, dan Mariam minta tolong Budi.",
+   "lines": [
+    {
+     "speaker": "مَرْيَم:",
+     "text": "يَا أُسْتَاذُ بُودِي، طَلَبَ مِنِّي كَرِيمٌ أَنْ أَبْحَثَ عَنْ كَلِمَةِ «اِسْتِقْبَال» فِي الْمُعْجَمِ، وَلَمْ أَجِدْهَا فِي بَابِ الْأَلِفِ.",
+     "id": "Pak Budi, Karim menyuruh saya mencari kata \"istiqbaal\" di kamus, dan saya tidak menemukannya di bab alif.",
+     "literal": "wahai bapak Budi, meminta dari-saya Karim bahwa saya-mencari tentang kata «istiqbaal» di kamus-itu, dan tidak saya-menemukan-nya di bab alif-itu."
+    },
+    {
+     "speaker": "بُودِي:",
+     "text": "لَنْ تَجِدِيهَا هُنَاكَ. هٰذَا الْمُعْجَمُ مُرَتَّبٌ حَسَبَ الْجُذُورِ، لَا حَسَبَ الْحَرْفِ الْأَوَّلِ.",
+     "id": "Kamu tidak akan menemukannya di situ. Kamus ini disusun menurut akar, bukan menurut huruf pertama.",
+     "literal": "tidak-akan kamu-menemukan-nya di-sana. ini kamus-itu tersusun menurut akar-akar-itu, bukan menurut huruf-itu yang-pertama."
+    },
+    {
+     "speaker": "مَرْيَم:",
+     "text": "وَكَيْفَ أَعْرِفُ الْجَذْرَ؟",
+     "id": "Lalu bagaimana saya tahu akarnya?",
+     "literal": "dan bagaimana saya-mengetahui akar-itu?"
+    },
+    {
+     "speaker": "بُودِي:",
+     "text": "اِحْذِفِي الْحُرُوفَ الزَّائِدَةَ. فِي «اِسْتِقْبَال» زِيدَتِ الْأَلِفُ وَالسِّينُ وَالتَّاءُ فِي أَوَّلِهَا، وَالْأَلِفُ قَبْلَ آخِرِهَا.",
+     "id": "Buang huruf-huruf tambahannya. Pada \"istiqbaal\" ditambahkan alif, sin, dan ta di awalnya, dan alif sebelum huruf terakhirnya.",
+     "literal": "buanglah huruf-huruf-itu yang-tambahan. di «istiqbaal» ditambahkan alif-itu dan sin-itu dan ta-itu di awal-nya, dan alif-itu sebelum akhir-nya."
+    },
+    {
+     "speaker": "مَرْيَم:",
+     "text": "يَبْقَى الْقَافُ وَالْبَاءُ وَاللَّامُ. إِذَنْ أَبْحَثُ فِي «قَبِلَ»؟",
+     "id": "Tinggal qaf, ba, dan lam. Jadi saya cari di \"qabila\"?",
+     "literal": "ia-tinggal qaf-itu dan ba-itu dan lam-itu. kalau-begitu saya-mencari di «qabila»?"
+    },
+    {
+     "speaker": "بُودِي:",
+     "text": "بِالضَّبْطِ. اِفْتَحِي بَابَ الْقَافِ، ثُمَّ ابْحَثِي عَنِ الْبَاءِ بَعْدَهَا.",
+     "id": "Tepat. Buka bab qaf, lalu cari ba sesudahnya.",
+     "literal": "dengan-ketepatan-itu. bukalah bab qaf-itu, kemudian carilah tentang ba-itu sesudah-nya."
+    },
+    {
+     "speaker": "مَرْيَم:",
+     "text": "وَجَدْتُهَا! وَتَحْتَ الْجَذْرِ نَفْسِهِ: قَبُولٌ، وَمُقَابَلَةٌ، وَاسْتِقْبَالٌ، وَمُسْتَقْبَلٌ!",
+     "id": "Ketemu! Dan di bawah akar yang sama: qabuul, muqaabalah, istiqbaal, mustaqbal!",
+     "literal": "saya-menemukan-nya! dan di-bawah akar-itu sendiri-nya: penerimaan, dan pertemuan, dan penyambutan, dan masa-depan!"
+    },
+    {
+     "speaker": "بُودِي:",
+     "text": "هٰذِهِ أُسْرَةٌ وَاحِدَةٌ. اَلْمُسْتَقْبَلُ هُوَ الزَّمَنُ الَّذِي نَسْتَقْبِلُهُ.",
+     "id": "Ini satu keluarga. Masa depan adalah waktu yang kita sambut.",
+     "literal": "ini keluarga satu. masa-depan-itu adalah-dia waktu-itu yang kami-menyambut-nya."
+    },
+    {
+     "speaker": "مَرْيَم:",
+     "text": "جَمِيلٌ! وَمَاذَا عَنْ «مِيزَانِيَّة»؟ بَحَثْتُ فِي بَابِ الْمِيمِ، وَلَمْ أَجِدْ شَيْئًا.",
+     "id": "Keren! Lalu \"miizaaniyyah\"? Saya cari di bab mim dan tidak menemukan apa-apa.",
+     "literal": "indah! dan apa tentang «miizaaniyyah»? saya-mencari di bab mim-itu, dan tidak saya-menemukan sesuatu."
+    },
+    {
+     "speaker": "بُودِي:",
+     "text": "اَلْمِيمُ زَائِدَةٌ، وَالْيَاءُ أَصْلُهَا وَاوٌ. اَلْجَذْرُ «وَزَنَ»، وَالْمِيزَانُ آلَةُ الْوَزْنِ.",
+     "id": "Mim-nya tambahan, dan ya-nya asalnya waw. Akarnya \"wazana\", dan miizaan adalah alat untuk menimbang.",
+     "literal": "mim-itu tambahan, dan ya-itu asal-nya waw. akar-itu «wazana», dan timbangan-itu alat penimbangan-itu."
+    },
+    {
+     "speaker": "مَرْيَم:",
+     "text": "هٰذَا أَصْعَبُ! كَيْفَ عَرَفْتَ أَنَّ الْيَاءَ كَانَتْ وَاوًا؟",
+     "id": "Ini lebih sulit! Bagaimana Bapak tahu ya itu dulunya waw?",
+     "literal": "ini lebih-sulit! bagaimana kamu-mengetahui bahwa ya-itu adalah waw?"
+    },
+    {
+     "speaker": "بُودِي:",
+     "text": "مِنَ الْجَمْعِ: «مَوَازِينُ». اَلْجَمْعُ يُعِيدُ الْحُرُوفَ إِلَى أَصْلِهَا أَحْيَانًا.",
+     "id": "Dari jamaknya: \"mawaaziin\". Bentuk jamak kadang mengembalikan huruf ke asalnya.",
+     "literal": "dari jamak-itu: «mawaaziin». jamak-itu ia-mengembalikan huruf-huruf-itu ke asal-nya kadang-kadang."
+    },
+    {
+     "speaker": "مَرْيَم:",
+     "text": "سَأَتَدَرَّبُ عَلَى ذٰلِكَ كُلَّ يَوْمٍ. شُكْرًا جَزِيلًا يَا أُسْتَاذُ!",
+     "id": "Saya akan berlatih setiap hari. Terima kasih banyak, Pak!",
+     "literal": "akan-saya-berlatih atas itu setiap hari. terima kasih banyak wahai bapak!"
+    }
+   ],
+   "notes": [
+    "**Kamus Arab disusun menurut akar.** Di al-Mu'jam al-Wasith terbitan Akademi Bahasa Arab Kairo, kata اِسْتِقْبَال tidak dicari di huruf ا, melainkan di akar ق ب ل. Di bawah akar itu tersusun dulu kata-kata kerjanya, lalu kata-kata bendanya.",
+    "**Kenapa bab alif kosong untuk kata ini.** Mariam mencari seperti di kamus Inggris, menurut huruf pertama. Padahal alif, sin, dan ta di depan اِسْتِقْبَال hanyalah tanda wazan X. KBBI pun mengelompokkan kata turunan di bawah kata dasarnya: \"pengajaran\" dicari di \"ajar\". Kamus Arab bekerja serupa, hanya saja kata dasarnya berupa akar konsonan.",
+    "**Satu akar, satu keluarga makna.** Akar ق ب ل berkisar pada \"menghadapi, menerima\": قَبُول (penerimaan), مُقَابَلَة (pertemuan, wawancara), اِسْتِقْبَال (penyambutan), dan مُسْتَقْبَل, harfiah \"yang disambut\", yaitu masa depan.",
+    "**Huruf lemah menyamar.** Dalam مِيزَان huruf ي sebenarnya و yang berubah karena didahului kasrah. Jamaknya مَوَازِين memperlihatkan و aslinya. Petunjuk lain untuk memulihkan huruf lemah: bentuk mudhari', masdar, atau jamaknya.",
+    "**Kamus yang dipakai santri pun begitu.** Kamus al-Munawwir yang akrab di pesantren Indonesia juga disusun menurut akar. Kalau kamu pernah memakainya, keterampilan unit ini sebenarnya sudah setengah kamu kuasai."
+   ],
+   "grammars": [
+    {
+     "title": "Menemukan akar: buang yang tambahan, pulihkan yang lemah",
+     "table": {
+      "head": [
+       "Kata",
+       "Cara baca",
+       "Akar",
+       "Petunjuk"
+      ],
+      "rows": [
+       [
+        "اِسْتِقْبَال",
+        "istiqbaal",
+        "ق ب ل",
+        "awalan wazan X dan alif panjang dibuang"
+       ],
+       [
+        "مَكْتَبَة",
+        "maktabah",
+        "ك ت ب",
+        "awalan ma- dan ta marbuthah dibuang"
+       ],
+       [
+        "اِجْتِمَاع",
+        "ijtimaa'",
+        "ج م ع",
+        "ت adalah sisipan wazan VIII"
+       ],
+       [
+        "مُسْتَشْفَى",
+        "mustasyfaa",
+        "ش ف ي",
+        "ى di ujung berasal dari ي"
+       ],
+       [
+        "مَقَال",
+        "maqaal",
+        "ق و ل",
+        "alif berasal dari و (lihat يَقُولُ)"
+       ],
+       [
+        "مِيزَان",
+        "miizaan",
+        "و ز ن",
+        "ي berasal dari و (lihat مَوَازِين)"
+       ],
+       [
+        "مُدِير",
+        "mudiir",
+        "د و ر",
+        "ي berasal dari و (lihat دَوْر)"
+       ]
+      ]
+     },
+     "after": [
+      "Urutannya selalu sama: buang awalan, sisipan, dan akhiran yang kamu kenal dari wazan; sisakan tiga huruf (sebagian kecil akar berhuruf empat); kalau salah satunya huruf lemah, cari bentuk asalnya lewat bentuk lain kata itu. Setelah itu buka kamus di huruf pertama akar, lalu huruf kedua, lalu ketiga."
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Dialog kedua — عَنَاوِينُ بِالْمَصَادِرِ",
+   "intro": "Selasa, 19 Oktober, bimbingan tesis mingguan di ruang Dr. Samir. Ia sudah membaca bab kedua tesis Budi dan membawa pena merahnya.",
+   "lines": [
+    {
+     "speaker": "سَمِير:",
+     "text": "قَرَأْتُ الْفَصْلَ الثَّانِيَ يَا بُودِي. اَلْأَفْكَارُ جَيِّدَةٌ، لٰكِنَّ الْعَنَاوِينَ طَوِيلَةٌ جِدًّا.",
+     "id": "Saya sudah membaca bab kedua, Budi. Gagasannya bagus, tapi judul-judulnya terlalu panjang.",
+     "literal": "saya-membaca bab-itu yang-kedua wahai Budi. gagasan-gagasan-itu bagus, tetapi judul-judul-itu panjang sangat."
+    },
+    {
+     "speaker": "بُودِي:",
+     "text": "أَيَّ عُنْوَانٍ تَقْصِدُ يَا دُكْتُورُ؟",
+     "id": "Judul yang mana, Pak?",
+     "literal": "judul yang-mana kamu-maksud wahai dokter?"
+    },
+    {
+     "speaker": "سَمِير:",
+     "text": "هٰذَا: «كَيْفَ نُحَوِّلُ الْكَلِمَاتِ الْأَجْنَبِيَّةَ إِلَى كَلِمَاتٍ عَرَبِيَّةٍ». قُلْ بِمَصْدَرٍ وَاحِدٍ: «تَعْرِيبُ الْكَلِمَاتِ الْأَجْنَبِيَّةِ».",
+     "id": "Yang ini: \"Bagaimana kita mengubah kata-kata asing menjadi kata-kata Arab\". Katakan dengan satu masdar: \"Pengaraban kata-kata asing\".",
+     "literal": "ini: «bagaimana kami-mengubah kata-kata-itu yang-asing ke kata-kata Arab». katakanlah dengan-masdar satu: «pengaraban kata-kata-itu yang-asing»."
+    },
+    {
+     "speaker": "بُودِي:",
+     "text": "صَحِيحٌ، اَلْمَصْدَرُ أَقْصَرُ وَأَدَقُّ. وَالْعُنْوَانُ الثَّالِثُ؟",
+     "id": "Betul, masdar lebih pendek dan lebih tepat. Lalu judul ketiga?",
+     "literal": "benar, masdar-itu lebih-pendek dan lebih-tepat. dan judul-itu yang-ketiga?"
+    },
+    {
+     "speaker": "سَمِير:",
+     "text": "«لِمَاذَا يَسْتَخْدِمُ الْمُتَرْجِمُونَ الْهَوَامِشَ». اِجْعَلْهُ: «اِسْتِخْدَامُ الْهَوَامِشِ فِي التَّرْجَمَةِ».",
+     "id": "\"Mengapa para penerjemah memakai catatan kaki\". Jadikan: \"Penggunaan catatan kaki dalam terjemahan\".",
+     "literal": "«kenapa mereka-memakai penerjemah-penerjemah-itu catatan-catatan-kaki-itu». jadikanlah-ia: «penggunaan catatan-catatan-kaki-itu di penerjemahan-itu»."
+    },
+    {
+     "speaker": "بُودِي:",
+     "text": "وَالرَّابِعُ: «كَيْفَ تَطَوَّرَتِ التَّرْجَمَةُ فِي مِصْرَ» يُصْبِحُ «تَطَوُّرُ التَّرْجَمَةِ فِي مِصْرَ»؟",
+     "id": "Dan yang keempat: \"Bagaimana terjemahan berkembang di Mesir\" menjadi \"Perkembangan terjemahan di Mesir\"?",
+     "literal": "dan yang-keempat: «bagaimana ia-berkembang penerjemahan-itu di Mesir» ia-menjadi «perkembangan penerjemahan-itu di Mesir»?"
+    },
+    {
+     "speaker": "سَمِير:",
+     "text": "أَحْسَنْتَ! أَرَأَيْتَ؟ لِكُلِّ فِعْلٍ مَصْدَرٌ، وَلِكُلِّ وَزْنٍ شَكْلٌ ثَابِتٌ لِمَصْدَرِهِ.",
+     "id": "Bagus! Kamu lihat? Setiap kata kerja punya masdar, dan setiap wazan punya bentuk masdar yang tetap.",
+     "literal": "kamu-berbuat-baik! apakah-kamu-melihat? bagi-setiap kata-kerja masdar, dan bagi-setiap wazan bentuk tetap bagi-masdar-nya."
+    },
+    {
+     "speaker": "بُودِي:",
+     "text": "لٰكِنَّ مَصَادِرَ الْوَزْنِ الْأَوَّلِ لَا تَخْضَعُ لِقَاعِدَةٍ وَاحِدَةٍ.",
+     "id": "Tapi masdar wazan pertama tidak tunduk pada satu kaidah.",
+     "literal": "tetapi masdar-masdar wazan-itu yang-pertama tidak ia-tunduk kepada-kaidah satu."
+    },
+    {
+     "speaker": "سَمِير:",
+     "text": "نَعَمْ، تِلْكَ تَعْرِفُهَا مِنَ الْمُعْجَمِ وَمِنْ كَثْرَةِ الْقِرَاءَةِ.",
+     "id": "Ya, yang itu kamu kenal dari kamus dan dari banyak membaca.",
+     "literal": "ya, itu kamu-mengetahui-nya dari kamus-itu dan dari banyaknya membaca-itu."
+    },
+    {
+     "speaker": "سَمِير:",
+     "text": "وَكَمَا يَقُولُ الْمَثَلُ: «مَنْ جَدَّ وَجَدَ».",
+     "id": "Seperti kata pepatah: \"Siapa bersungguh-sungguh, ia mendapat.\"",
+     "literal": "dan sebagaimana ia-berkata pepatah-itu: «siapa bersungguh-sungguh ia-mendapat»."
+    }
+   ],
+   "notes": [
+    "**Masdar membuat judul ringkas.** Judul Budi memakai kalimat lengkap dengan كَيْفَ dan لِمَاذَا. Dr. Samir menggantinya dengan masdar + idhafah: satu kata benda yang memuat seluruh gagasan kata kerjanya. Ini kelanjutan unit 1: masdar menggantikan أَنْ + kata kerja.",
+    "**Bentuk masdar bisa ditebak dari wazannya.** Dari عَرَّبَ (wazan II) lahir تَعْرِيب, dari اِسْتَخْدَمَ (wazan X) lahir اِسْتِخْدَام, dari تَطَوَّرَ (wazan V) lahir تَطَوُّر. Wazan I satu-satunya yang harus dihafal satu per satu.",
+    "**Pepatah dua akar.** Dalam مَنْ جَدَّ وَجَدَ dua kata kerja itu mirip bunyinya tapi berbeda akar: جَدَّ dari ج د د (bersungguh-sungguh), وَجَدَ dari و ج د (mendapati). Yang kedua kata kerja mitsal dari unit 8, jadi mudhari'-nya يَجِدُ. Pepatah ini akrab di pesantren sebagai *man jadda wajada*.",
+    "**Sapaan kepada pembimbing.** Budi memanggil Dr. Samir يَا دُكْتُورُ dengan أَنْتَ (تَقْصِدُ), dan terjemahannya \"Pak\". Di kampus Mesir, gelar dipakai terus, bahkan dalam percakapan yang akrab."
+   ],
+   "grammars": [
+    {
+     "title": "Masdar wazan II–X",
+     "table": {
+      "head": [
+       "Wazan",
+       "Pola masdar",
+       "Kata kerja",
+       "Masdar",
+       "Arti masdar"
+      ],
+      "rows": [
+       [
+        "II",
+        "تَفْعِيل",
+        "عَرَّبَ",
+        "تَعْرِيب",
+        "pengaraban"
+       ],
+       [
+        "III",
+        "مُفَاعَلَة",
+        "قَارَنَ",
+        "مُقَارَنَة",
+        "perbandingan"
+       ],
+       [
+        "IV",
+        "إِفْعَال",
+        "أَعَدَّ",
+        "إِعْدَاد",
+        "persiapan"
+       ],
+       [
+        "V",
+        "تَفَعُّل",
+        "تَطَوَّرَ",
+        "تَطَوُّر",
+        "perkembangan"
+       ],
+       [
+        "VI",
+        "تَفَاعُل",
+        "تَبَادَلَ",
+        "تَبَادُل",
+        "pertukaran"
+       ],
+       [
+        "VII",
+        "اِنْفِعَال",
+        "اِنْتَشَرَ",
+        "اِنْتِشَار",
+        "penyebaran"
+       ],
+       [
+        "VIII",
+        "اِفْتِعَال",
+        "اِخْتَارَ",
+        "اِخْتِيَار",
+        "pilihan"
+       ],
+       [
+        "X",
+        "اِسْتِفْعَال",
+        "اِسْتَخْدَمَ",
+        "اِسْتِخْدَام",
+        "penggunaan"
+       ]
+      ]
+     },
+     "after": [
+      "Kata kerja berongga di wazan IV dan X kehilangan huruf lemah di tengah akarnya, lalu diberi ganti ة di ujung: أَقَامَ menjadi إِقَامَة (izin tinggal di unit 2), dan اِسْتَقَالَ menjadi اِسْتِقَالَة (pengunduran diri). Wazan III kadang juga punya masdar فِعَال, misalnya قِتَال dan حِوَار."
+     ]
+    }
+   ]
+  }
+ ],
+ "sections": [
+  {
+   "title": "Kamus yang layak kamu kenal",
+   "blocks": [
+    {
+     "type": "tabel",
+     "head": [
+      "Kamus",
+      "Jenis",
+      "Disusun menurut"
+     ],
+     "rows": [
+      [
+       "al-Mu'jam al-Wasith",
+       "Arab–Arab, Akademi Bahasa Arab Kairo",
+       "akar"
+      ],
+      [
+       "Lisan al-'Arab",
+       "Arab–Arab klasik, Ibnu Manzhur (abad ke-13)",
+       "akar, dimulai dari huruf terakhirnya"
+      ],
+      [
+       "Hans Wehr",
+       "Arab–Inggris",
+       "akar"
+      ],
+      [
+       "al-Munawwir",
+       "Arab–Indonesia",
+       "akar"
+      ],
+      [
+       "al-Mawrid (Rohi Baalbaki)",
+       "Arab–Inggris",
+       "abjad kata"
+      ]
+     ]
+    },
+    {
+     "type": "p",
+     "text": "Aplikasi di ponsel dan kamus yang disusun menurut abjad memang cepat, tetapi hanya memberi satu kata. Kamus akar memberi seluruh keluarganya sekaligus, dan dari situ kamu belajar menebak arti kata yang belum pernah kamu lihat. Penerjemah Arab umumnya memakai keduanya: yang cepat untuk kerja harian, yang berakar untuk memastikan makna."
+    },
+    {
+     "type": "kotak",
+     "title": "Sepuluh huruf tambahan",
+     "items": [
+      "**Hanya sepuluh huruf yang bisa menjadi tambahan.** Semuanya terkumpul dalam satu kata hafalan klasik: سَأَلْتُمُونِيهَا (\"kalian menanyakannya kepadaku\").",
+      "**Huruf di luar sepuluh itu pasti huruf akar.** Dalam مُسْتَشْفَى misalnya, ش dan ف tidak ada dalam kata hafalan tadi, jadi keduanya pasti akar.",
+      "**Tapi huruf dari kata hafalan itu tidak selalu tambahan.** Dalam سَأَلَ sendiri, ketiga hurufnya adalah akar. Yang menentukan adalah wazannya."
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Satu keluarga: akar ع ل م",
+   "blocks": [
+    {
+     "type": "tabel",
+     "head": [
+      "Kata",
+      "Bentuk",
+      "Arti"
+     ],
+     "rows": [
+      [
+       "عَلِمَ – يَعْلَمُ",
+       "wazan I",
+       "mengetahui"
+      ],
+      [
+       "عَلَّمَ – يُعَلِّمُ",
+       "wazan II",
+       "mengajar"
+      ],
+      [
+       "تَعَلَّمَ – يَتَعَلَّمُ",
+       "wazan V",
+       "belajar"
+      ],
+      [
+       "عِلْم",
+       "masdar I",
+       "ilmu"
+      ],
+      [
+       "تَعْلِيم",
+       "masdar II",
+       "pendidikan"
+      ],
+      [
+       "مُعَلِّم",
+       "isim fa'il II",
+       "guru"
+      ],
+      [
+       "مَعْلُومَات",
+       "isim maf'ul I, jamak",
+       "informasi"
+      ],
+      [
+       "إِعْلَام",
+       "masdar IV",
+       "media, pemberitaan"
+      ],
+      [
+       "اِسْتِعْلَامَات",
+       "masdar X, jamak",
+       "bagian informasi"
+      ]
+     ]
+    },
+    {
+     "type": "p",
+     "text": "Bahasa Indonesia menyerap banyak anggota keluarga ini: ilmu, alim, ulama, mualim, maklumat. Jadi kamu sudah mengenal akar ع ل م jauh sebelum belajar bahasa Arab. Di Mesir, kata الِاسْتِعْلَامَات tertulis di meja informasi rumah sakit, stasiun, dan kantor pemerintah."
+    },
+    {
+     "type": "kotak",
+     "title": "Latihan lima menit sehari",
+     "items": [
+      "**Satu kata baru, satu akar.** Setiap kali bertemu kata baru, tulis akarnya di pinggir kertas sebelum membuka kamus.",
+      "**Tebak dulu, periksa kemudian.** Tebak artinya dari akar dan wazannya, lalu cocokkan dengan kamus. Tebakan yang salah pun melatih matamu."
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Ulangan berjenjang — unit 7",
+   "blocks": [
+    {
+     "type": "p",
+     "text": "Tutup kolom Arab, baca terjemahan Indonesianya, lalu susun kembali kalimatnya dari ingatan."
+    },
+    {
+     "type": "tabel",
+     "head": [
+      "Bahasa Indonesia",
+      "العربية"
+     ],
+     "rows": [
+      [
+       "Tentu, ammiyah Mesir dipahami sebagian besar orang Arab berkat film dan lagu.",
+       "طَبْعًا، فَالْعَامِّيَّةُ الْمِصْرِيَّةُ يَفْهَمُهَا أَغْلَبُ الْعَرَبِ بِفَضْلِ الْأَفْلَامِ وَالْأَغَانِي."
+      ],
+      [
+       "Pelajari Fusha dengan baik dulu, karena ia membukakan pintu bagimu di setiap negeri Arab.",
+       "تَعَلَّمِ الْفُصْحَى جَيِّدًا أَوَّلًا، فَهِيَ تَفْتَحُ لَكَ الْأَبْوَابَ فِي كُلِّ بَلَدٍ عَرَبِيٍّ."
+      ],
+      [
+       "Dialek akan datang sendiri begitu kamu hidup di tengah orang-orangnya.",
+       "وَاللَّهْجَةُ تَأْتِي وَحْدَهَا حِينَ تَعِيشُ بَيْنَ النَّاسِ."
+      ],
+      [
+       "Di kantor dan saat menulis, dan di seminar seperti seminar hari Kamis.",
+       "فِي الْعَمَلِ وَالْكِتَابَةِ، وَفِي النَّدَوَاتِ مِثْلِ نَدْوَةِ الْخَمِيسِ."
+      ],
+      [
+       "Kalau aku? Apa aku kelihatan aneh kalau bicara Fusha di pasar?",
+       "وَأَنَا؟ هَلْ أَبْدُو غَرِيبًا حِينَ أَتَكَلَّمُ الْفُصْحَى فِي السُّوقِ؟"
+      ]
+     ]
+    }
+   ]
+  }
+ ],
+ "vocab": [
+  {
+   "ar": "مُعْجَم ج مَعَاجِم",
+   "baca": "mu'jam j. ma'aajim",
+   "id": "kamus"
+  },
+  {
+   "ar": "جَذْر ج جُذُور",
+   "baca": "jadzr j. judzuur",
+   "id": "akar kata"
+  },
+  {
+   "ar": "زَائِد",
+   "baca": "zaa'id",
+   "id": "tambahan"
+  },
+  {
+   "ar": "أَصْل ج أُصُول",
+   "baca": "ashl j. ushuul",
+   "id": "asal"
+  },
+  {
+   "ar": "حَذَفَ – يَحْذِفُ – حَذْف",
+   "baca": "hadzafa – yahdzifu – hadzf",
+   "id": "membuang, menghapus"
+  },
+  {
+   "ar": "بَحَثَ – يَبْحَثُ – بَحْث",
+   "baca": "bahatsa – yabhatsu – bahts",
+   "id": "mencari (عَنْ)"
+  },
+  {
+   "ar": "رَتَّبَ – يُرَتِّبُ – تَرْتِيب",
+   "baca": "rattaba – yurattibu – tartiib",
+   "id": "menyusun"
+  },
+  {
+   "ar": "مُسْتَقْبَل",
+   "baca": "mustaqbal",
+   "id": "masa depan"
+  },
+  {
+   "ar": "اِسْتِقْبَال",
+   "baca": "istiqbaal",
+   "id": "penyambutan, resepsi"
+  },
+  {
+   "ar": "مِيزَان ج مَوَازِين",
+   "baca": "miizaan j. mawaaziin",
+   "id": "timbangan"
+  },
+  {
+   "ar": "مِيزَانِيَّة",
+   "baca": "miizaaniyyah",
+   "id": "anggaran"
+  },
+  {
+   "ar": "وَزْن ج أَوْزَان",
+   "baca": "wazn j. auzaan",
+   "id": "berat; wazan"
+  },
+  {
+   "ar": "عُنْوَان ج عَنَاوِين",
+   "baca": "'unwaan j. 'anaawiin",
+   "id": "judul; alamat"
+  },
+  {
+   "ar": "هَامِش ج هَوَامِش",
+   "baca": "haamisy j. hawaamisy",
+   "id": "catatan kaki, pinggir halaman"
+  },
+  {
+   "ar": "عَرَّبَ – يُعَرِّبُ – تَعْرِيب",
+   "baca": "'arraba – yu'arribu – ta'riib",
+   "id": "mengarabkan"
+  },
+  {
+   "ar": "قَارَنَ – يُقَارِنُ – مُقَارَنَة",
+   "baca": "qaarana – yuqaarinu – muqaaranah",
+   "id": "membandingkan"
+  },
+  {
+   "ar": "تَطَوَّرَ – يَتَطَوَّرُ – تَطَوُّر",
+   "baca": "tathawwara – yatathawwaru – tathawwur",
+   "id": "berkembang"
+  },
+  {
+   "ar": "اِنْتَشَرَ – يَنْتَشِرُ – اِنْتِشَار",
+   "baca": "intasyara – yantasyiru – intisyaar",
+   "id": "menyebar"
+  },
+  {
+   "ar": "اِسْتَخْدَمَ – يَسْتَخْدِمُ – اِسْتِخْدَام",
+   "baca": "istakhdama – yastakhdimu – istikhdaam",
+   "id": "memakai, menggunakan"
+  },
+  {
+   "ar": "تَدَرَّبَ – يَتَدَرَّبُ – تَدَرُّب",
+   "baca": "tadarraba – yatadarrabu – tadarrub",
+   "id": "berlatih"
+  },
+  {
+   "ar": "مُتَدَرِّب",
+   "baca": "mutadarrib",
+   "id": "peserta magang"
+  },
+  {
+   "ar": "جَدَّ – يَجِدُّ",
+   "baca": "jadda – yajiddu",
+   "id": "bersungguh-sungguh"
+  }
+ ],
+ "exercises": [
+  {
+   "prompt": "Terjemahkan ke bahasa Arab.",
+   "items": [
+    "Kamus ini disusun menurut akar.",
+    "Saya sedang mencari kata itu di kamus.",
+    "Buanglah huruf-huruf tambahan! (kepada laki-laki)",
+    "Masa depan adalah waktu yang kita sambut.",
+    "Penggunaan catatan kaki dalam terjemahan.",
+    "Perkembangan bahasa Arab."
+   ]
+  },
+  {
+   "prompt": "Isi dengan masdar dari kata kerja dalam kurung. Perhatikan i'raab-nya.",
+   "items": [
+    "____ الْكَلِمَاتِ الْأَجْنَبِيَّةِ صَعْبٌ. (عَرَّبَ)",
+    "نَحْتَاجُ إِلَى ____ بَيْنَ النَّصَّيْنِ. (قَارَنَ)",
+    "____ الدَّرْسِ يَأْخُذُ سَاعَةً. (أَعَدَّ)",
+    "لَاحَظْنَا ____ الْمُتَدَرِّبَةِ السَّرِيعَ. (تَطَوَّرَ)",
+    "يُسْعِدُنِي ____ الْكُتُبِ بَيْنَ الْمَكْتَبَتَيْنِ. (تَبَادَلَ)",
+    "____ اللُّغَةِ الْعَرَبِيَّةِ فِي آسِيَا قَدِيمٌ. (اِنْتَشَرَ)",
+    "أُحِبُّ ____ الْمُعْجَمِ الْوَرَقِيِّ. (اِسْتَخْدَمَ)"
+   ]
+  },
+  {
+   "prompt": "Tulis akar (tiga huruf) kata-kata berikut.",
+   "items": [
+    "مَدْرَسَة",
+    "اِجْتِمَاع",
+    "مُسْتَخْدِم",
+    "مَطَار",
+    "مُقَابَلَة",
+    "تَعْرِيب"
+   ]
+  },
+  {
+   "prompt": "Susun menjadi kalimat yang benar.",
+   "items": [
+    "الْجُذُورِ / مُرَتَّبٌ / حَسَبَ / الْمُعْجَمُ",
+    "الزَّائِدَةَ / اِحْذِفِ / الْحُرُوفَ",
+    "وَاحِدَةٌ / أُسْرَةٌ / هٰذِهِ",
+    "مَصْدَرٌ / فِعْلٍ / لِكُلِّ",
+    "فِي / تَطَوُّرُ / مِصْرَ / التَّرْجَمَةِ"
+   ]
+  }
+ ],
+ "answers": [
+  "هٰذَا الْمُعْجَمُ مُرَتَّبٌ حَسَبَ الْجُذُورِ. — أَبْحَثُ عَنِ الْكَلِمَةِ فِي الْمُعْجَمِ. — اِحْذِفِ الْحُرُوفَ الزَّائِدَةَ! — اَلْمُسْتَقْبَلُ هُوَ الزَّمَنُ الَّذِي نَسْتَقْبِلُهُ. — اِسْتِخْدَامُ الْهَوَامِشِ فِي التَّرْجَمَةِ. — تَطَوُّرُ اللُّغَةِ الْعَرَبِيَّةِ.",
+  "تَعْرِيبُ — مُقَارَنَةٍ — إِعْدَادُ — تَطَوُّرَ — تَبَادُلُ — اِنْتِشَارُ — اسْتِخْدَامَ",
+  "د ر س — ج م ع — خ د م — ط ي ر — ق ب ل — ع ر ب",
+  "اَلْمُعْجَمُ مُرَتَّبٌ حَسَبَ الْجُذُورِ. — اِحْذِفِ الْحُرُوفَ الزَّائِدَةَ. — هٰذِهِ أُسْرَةٌ وَاحِدَةٌ. — لِكُلِّ فِعْلٍ مَصْدَرٌ. — تَطَوُّرُ التَّرْجَمَةِ فِي مِصْرَ."
+ ]
+}

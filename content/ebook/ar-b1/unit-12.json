@@ -1,0 +1,678 @@
+{
+ "title": "Luxor dan Aswan — bilangan lengkap dengan yang dihitung",
+ "title_target": "أَيَّامٌ فِي الْأُقْصُرِ وَأَسْوَانَ",
+ "goal": "Menyebut bilangan berapa pun bersama kata bendanya dengan jenis kelamin dan i'raab yang benar, serta bertanya dan berseru dengan كَمْ.",
+ "bekal": [
+  "memasangkan bilangan 3–10, 11–99, dan ratusan–ribuan dengan kata benda yang dihitung",
+  "membedakan كَمْ tanya (كَمْ عَمُودًا؟) dari كَمْ seru (كَمْ سَائِحٍ!)",
+  "menanyakan harga, jarak, dan lama perjalanan, lalu menawar"
+ ],
+ "dialogs": [
+  {
+   "title": "Dialog — فِي مَعْبَدِ الْكَرْنَكِ",
+   "intro": "Kamis, 11 November 2027. Budi dan Karim mengambil cuti Kamis dan Minggu untuk libur panjang ke Mesir Selatan — kunjungan pertama Karim ke sana. Sesudah semalam di kereta tidur dari Kairo, pemandu wisata bernama Syarif mengantar mereka di Kuil Karnak, Luxor.",
+   "lines": [
+    {
+     "speaker": "شَرِيف:",
+     "text": "أَهْلًا بِكُمَا فِي الْكَرْنَكِ، أَكْبَرِ مُجَمَّعٍ دِينِيٍّ فِي الْعَالَمِ الْقَدِيمِ.",
+     "id": "Selamat datang di Karnak, kompleks keagamaan terbesar di dunia kuno.",
+     "literal": "selamat-datang bagi-kalian-berdua di Karnak-itu, terbesar kompleks keagamaan di dunia-itu yang-kuno."
+    },
+    {
+     "speaker": "كَرِيم:",
+     "text": "كَمْ سَنَةً اسْتَغْرَقَ بِنَاؤُهُ؟",
+     "id": "Berapa tahun pembangunannya?",
+     "literal": "berapa tahun memakan-waktu pembangunan-nya?"
+    },
+    {
+     "speaker": "شَرِيف:",
+     "text": "نَحْوَ أَلْفَيْ سَنَةٍ، وَأَضَافَ إِلَيْهِ نَحْوُ ثَلَاثِينَ فِرْعَوْنًا.",
+     "id": "Sekitar dua ribu tahun, dan sekitar tiga puluh firaun ikut menambahkan bangunannya.",
+     "literal": "sekitar dua-ribu tahun, dan menambahkan kepada-nya sekitar tiga-puluh firaun."
+    },
+    {
+     "speaker": "بُودِي:",
+     "text": "وَهٰذِهِ الْقَاعَةُ؟ كَمْ عَمُودًا فِيهَا؟",
+     "id": "Kalau balai ini? Ada berapa tiang?",
+     "literal": "dan balai ini? berapa tiang di-dalam-nya?"
+    },
+    {
+     "speaker": "شَرِيف:",
+     "text": "فِيهَا مِئَةٌ وَأَرْبَعَةٌ وَثَلَاثُونَ عَمُودًا، فِي سِتَّةَ عَشَرَ صَفًّا.",
+     "id": "Ada seratus tiga puluh empat tiang, dalam enam belas baris.",
+     "literal": "di-dalam-nya seratus dan empat dan tiga-puluh tiang, dalam enam-belas baris."
+    },
+    {
+     "speaker": "كَرِيم:",
+     "text": "مَا شَاءَ اللهُ! وَكَمْ يَبْلُغُ ارْتِفَاعُهَا؟",
+     "id": "Masyaallah! Berapa tingginya?",
+     "literal": "apa yang dikehendaki Allah! dan berapa mencapai tinggi-nya?"
+    },
+    {
+     "speaker": "شَرِيف:",
+     "text": "يَبْلُغُ ارْتِفَاعُ الْأَعْمِدَةِ الِاثْنَيْ عَشَرَ فِي الْوَسَطِ وَاحِدًا وَعِشْرِينَ مِتْرًا.",
+     "id": "Dua belas tiang di bagian tengah tingginya dua puluh satu meter.",
+     "literal": "mencapai tinggi tiang-tiang-itu yang-dua-belas di tengah-itu satu dan dua-puluh meter."
+    },
+    {
+     "speaker": "بُودِي:",
+     "text": "كَمْ مِنْ مَرَّةٍ رَأَيْتُ هٰذِهِ الْأَعْمِدَةَ فِي الْكُتُبِ! وَالْيَوْمَ أَرَاهَا بِعَيْنَيَّ.",
+     "id": "Entah berapa kali aku melihat tiang-tiang ini di buku! Hari ini aku melihatnya dengan mata kepala sendiri.",
+     "literal": "berapa dari kali saya-melihat tiang-tiang ini di buku-buku-itu! dan hari-ini saya-melihat-nya dengan-dua-mata-saya."
+    },
+    {
+     "speaker": "كَرِيم:",
+     "text": "وَكَمْ مَقْبَرَةً فِي وَادِي الْمُلُوكِ؟",
+     "id": "Di Lembah Para Raja ada berapa makam?",
+     "literal": "dan berapa makam di lembah raja-raja-itu?"
+    },
+    {
+     "speaker": "شَرِيف:",
+     "text": "اُكْتُشِفَ فِيهِ أَكْثَرُ مِنْ سِتِّينَ مَقْبَرَةً، لٰكِنَّ التَّذْكِرَةَ الْعَادِيَّةَ تَشْمَلُ ثَلَاثَ مَقَابِرَ فَقَطْ.",
+     "id": "Lebih dari enam puluh makam sudah ditemukan di sana, tapi tiket biasa hanya mencakup tiga makam.",
+     "literal": "telah-ditemukan di-dalam-nya lebih dari enam-puluh makam, tetapi tiket-itu yang-biasa mencakup tiga makam-makam saja."
+    },
+    {
+     "speaker": "بُودِي:",
+     "text": "ثَلَاثٌ فَقَطْ؟ وَبِكَمِ التَّذْكِرَةُ؟",
+     "id": "Cuma tiga? Tiketnya berapa?",
+     "literal": "tiga saja? dan dengan-berapa tiket-itu?"
+    },
+    {
+     "speaker": "شَرِيف:",
+     "text": "بِسَبْعِمِئَةٍ وَخَمْسِينَ جُنَيْهًا لِلْأَجَانِبِ، وَالطُّلَّابُ يَدْفَعُونَ النِّصْفَ.",
+     "id": "Tujuh ratus lima puluh pound untuk orang asing, dan pelajar membayar separuhnya.",
+     "literal": "dengan-tujuh-ratus dan lima-puluh pound bagi-orang-asing-itu, dan pelajar-pelajar-itu mereka-membayar setengah-itu."
+    },
+    {
+     "speaker": "كَرِيم:",
+     "text": "إِذَنْ يَدْفَعُ بُودِي ثَلَاثَمِئَةٍ وَخَمْسَةً وَسَبْعِينَ جُنَيْهًا، وَأَنَا أَدْفَعُ الْمَبْلَغَ كُلَّهُ!",
+     "id": "Jadi Budi bayar tiga ratus tujuh puluh lima pound, dan aku bayar penuh!",
+     "literal": "kalau-begitu membayar Budi tiga-ratus dan lima dan tujuh-puluh pound, dan saya saya-membayar jumlah-itu seluruh-nya!"
+    }
+   ],
+   "notes": [
+    "**Angka 3–10 bermain terbalik.** Jenis kelaminnya berlawanan dengan bentuk TUNGGAL benda yang dihitung: ثَلَاثَ مَقَابِرَ tanpa ة karena مَقْبَرَة perempuan; ثَلَاثَةُ كُتُبٍ ber-ة karena كِتَاب laki-laki. Bendanya jamak dan majrur.",
+    "**Dari 11 sampai 99, benda yang dihitung jadi tunggal dan manshub.** Contohnya سِتَّةَ عَشَرَ صَفًّا (enam belas baris) dan سِتِّينَ مَقْبَرَةً (enam puluh makam). Pelajar Indonesia beruntung di sini: \"enam belas baris\" pun tidak memakai bentuk jamak.",
+    "**Pada bilangan majemuk, bagian terakhir yang menentukan.** مِئَةٌ وَأَرْبَعَةٌ وَثَلَاثُونَ عَمُودًا: yang paling dekat dengan عَمُود adalah ثَلَاثُونَ, maka عَمُودًا manshub tunggal. Satuan أَرْبَعَةٌ tetap mengikuti aturan terbalik terhadap عَمُود.",
+    "**Ratusan dan ribuan menjadikan bendanya majrur tunggal.** أَلْفَيْ سَنَةٍ: dual أَلْفَانِ kehilangan nun-nya karena menjadi mudhaf, dan سَنَة majrur tunggal. Hal yang sama pada مِئَتَيْ جُنَيْهٍ.",
+    "**Kata نَحْوَ (sekitar) ikut posisinya.** نَحْوَ أَلْفَيْ سَنَةٍ manshub karena menjawab \"berapa lama\"; أَضَافَ إِلَيْهِ نَحْوُ ثَلَاثِينَ فِرْعَوْنًا marfu' karena ia pelakunya. Bilangan sesudahnya selalu majrur."
+   ],
+   "grammars": [
+    {
+     "title": "Bilangan dan benda yang dihitung — seluruh sistem",
+     "table": {
+      "head": [
+       "Bilangan",
+       "Jenis kelamin angka",
+       "Benda yang dihitung",
+       "Dengan كِتَاب",
+       "Dengan سَاعَة"
+      ],
+      "rows": [
+       [
+        "1–2",
+        "sama, di belakang benda",
+        "tunggal atau dual",
+        "كِتَابٌ وَاحِدٌ",
+        "سَاعَتَانِ"
+       ],
+       [
+        "3–10",
+        "terbalik",
+        "jamak, majrur",
+        "ثَلَاثَةُ كُتُبٍ",
+        "ثَلَاثُ سَاعَاتٍ"
+       ],
+       [
+        "11–12",
+        "sama, dua bagian",
+        "tunggal, manshub",
+        "أَحَدَ عَشَرَ كِتَابًا",
+        "إِحْدَى عَشْرَةَ سَاعَةً"
+       ],
+       [
+        "13–19",
+        "satuan terbalik, عَشَرَ sama",
+        "tunggal, manshub",
+        "ثَلَاثَةَ عَشَرَ كِتَابًا",
+        "ثَلَاثَ عَشْرَةَ سَاعَةً"
+       ],
+       [
+        "20–90",
+        "tetap",
+        "tunggal, manshub",
+        "عِشْرُونَ كِتَابًا",
+        "عِشْرُونَ سَاعَةً"
+       ],
+       [
+        "21–99",
+        "satuan seperti 1–10",
+        "tunggal, manshub",
+        "ثَلَاثَةٌ وَعِشْرُونَ كِتَابًا",
+        "ثَلَاثٌ وَعِشْرُونَ سَاعَةً"
+       ],
+       [
+        "100 dan 1000",
+        "tetap",
+        "tunggal, majrur",
+        "مِئَةُ كِتَابٍ",
+        "أَلْفُ سَاعَةٍ"
+       ],
+       [
+        "200 dan 2000",
+        "dual",
+        "tunggal, majrur",
+        "مِئَتَا كِتَابٍ",
+        "أَلْفَا سَاعَةٍ"
+       ],
+       [
+        "300–900",
+        "satuan selalu tanpa ة",
+        "tunggal, majrur",
+        "ثَلَاثُمِئَةِ كِتَابٍ",
+        "ثَلَاثُمِئَةِ سَاعَةٍ"
+       ],
+       [
+        "3000–10.000",
+        "satuan ber-ة (أَلْف laki-laki)",
+        "tunggal, majrur",
+        "ثَلَاثَةُ آلَافِ كِتَابٍ",
+        "ثَلَاثَةُ آلَافِ سَاعَةٍ"
+       ]
+      ]
+     },
+     "after": [
+      "Tiga kelompok cukup untuk diingat: **3–10 jamak majrur, 11–99 tunggal manshub, 100 ke atas tunggal majrur.** Sisanya soal jenis kelamin angka.",
+      "Angka 11–19 **mabni**: bentuknya tidak berubah di posisi apa pun, kedua bagiannya berakhir fathah (فِي سِتَّةَ عَشَرَ صَفًّا); إِحْدَى memang tak berharakat akhir. Kecualinya hanya 12: اِثْنَا عَشَرَ saat marfu', اِثْنَيْ عَشَرَ saat manshub dan majrur."
+     ]
+    },
+    {
+     "title": "Dua wajah كَمْ",
+     "table": {
+      "head": [
+       "Jenis",
+       "Sesudahnya",
+       "Contoh",
+       "Arti"
+      ],
+      "rows": [
+       [
+        "kam tanya (istifhamiyah)",
+        "tunggal, manshub",
+        "كَمْ عَمُودًا فِيهَا؟",
+        "ada berapa tiang di dalamnya?"
+       ],
+       [
+        "kam tanya sesudah huruf jar",
+        "tunggal, majrur atau manshub",
+        "بِكَمْ جُنَيْهٍ اشْتَرَيْتَهُ؟",
+        "berapa pound kamu membelinya?"
+       ],
+       [
+        "kam seru (khabariyah)",
+        "tunggal, majrur",
+        "كَمْ سَائِحٍ حَمَلْتُ!",
+        "entah berapa turis yang kuangkut!"
+       ],
+       [
+        "kam seru dengan مِنْ",
+        "مِنْ lalu tunggal atau jamak",
+        "كَمْ مِنْ مَرَّةٍ رَأَيْتُهَا!",
+        "entah berapa kali aku melihatnya!"
+       ]
+      ]
+     },
+     "after": [
+      "Di tulisan, tanda baca membedakannya (؟ lawan !); di lisan, intonasi. Harakat benda sesudahnya adalah petunjuk ketiga: **manshub = bertanya, majrur = berseru** — kecuali sesudah huruf jar (بِكَمْ جُنَيْهٍ؟), di mana pertanyaan pun boleh majrur."
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Dialog kedua — عَلَى ضِفَّةِ النِّيلِ فِي أَسْوَانَ",
+   "intro": "Sabtu sore, 13 November, di dermaga Aswan. Budi dan Karim ingin naik feluka — perahu layar kayu — sebelum matahari terbenam. Pemilik perahu, seorang lelaki Nubia bernama Idris, menyambut mereka.",
+   "lines": [
+    {
+     "speaker": "بُودِي:",
+     "text": "مَسَاءَ الْخَيْرِ يَا حَاجُّ. بِكَمِ السَّاعَةُ فِي الْفَلُوكَةِ؟",
+     "id": "Selamat sore, Pak Haji. Sejam naik feluka berapa?",
+     "literal": "sore kebaikan wahai haji. dengan-berapa jam-itu di feluka-itu?"
+    },
+    {
+     "speaker": "إِدْرِيس:",
+     "text": "اَلسَّاعَةُ بِسِتِّمِئَةِ جُنَيْهٍ، وَالْمَرْكَبُ يَتَّسِعُ لِعَشَرَةِ أَشْخَاصٍ.",
+     "id": "Sejam enam ratus pound, dan perahunya muat sepuluh orang.",
+     "literal": "jam-itu dengan-enam-ratus pound, dan perahu-itu muat untuk-sepuluh orang-orang."
+    },
+    {
+     "speaker": "كَرِيم:",
+     "text": "سِتُّمِئَةٍ؟ نَحْنُ شَخْصَانِ فَقَطْ! مَا رَأْيُكَ فِي ثَلَاثِمِئَةٍ؟",
+     "id": "Enam ratus? Kami cuma berdua! Bagaimana kalau tiga ratus?",
+     "literal": "enam-ratus? kami dua-orang saja! apa pendapat-kamu tentang tiga-ratus?"
+    },
+    {
+     "speaker": "إِدْرِيس:",
+     "text": "يَا أُسْتَاذُ، أَعْمَلُ عَلَى هٰذَا النَّهْرِ مُنْذُ خَمْسٍ وَثَلَاثِينَ سَنَةً. كَمْ سَائِحٍ حَمَلْتُ فِي مَرْكَبِي!",
+     "id": "Pak, saya sudah tiga puluh lima tahun bekerja di sungai ini. Entah berapa banyak turis yang sudah naik perahu saya!",
+     "literal": "wahai tuan, saya-bekerja di-atas sungai ini sejak lima dan tiga-puluh tahun. berapa turis saya-mengangkut di perahu-saya!"
+    },
+    {
+     "speaker": "بُودِي:",
+     "text": "وَكُلُّهُمْ دَفَعُوا سِتَّمِئَةٍ؟",
+     "id": "Dan semuanya bayar enam ratus?",
+     "literal": "dan semua-mereka mereka-membayar enam-ratus?"
+    },
+    {
+     "speaker": "إِدْرِيس:",
+     "text": "لَا، بَعْضُهُمْ كَانَ أَشْطَرَ مِنْكُمَا. طَيِّبٌ، خَمْسُمِئَةٍ.",
+     "id": "Tidak, sebagian lebih pintar menawar daripada kalian. Baiklah, lima ratus.",
+     "literal": "tidak, sebagian-mereka adalah lebih-pintar dari-kalian-berdua. baik, lima-ratus."
+    },
+    {
+     "speaker": "كَرِيم:",
+     "text": "أَرْبَعُمِئَةٍ وَخَمْسُونَ، وَلَا نَزِيدُ قِرْشًا وَاحِدًا.",
+     "id": "Empat ratus lima puluh, dan kami tidak menambah satu piaster pun.",
+     "literal": "empat-ratus dan lima-puluh, dan tidak kami-menambah piaster satu."
+    },
+    {
+     "speaker": "إِدْرِيس:",
+     "text": "اِتَّفَقْنَا. سَأُرِيكُمَا جَزِيرَةَ النَّبَاتَاتِ وَالْقُرَى النُّوبِيَّةَ.",
+     "id": "Sepakat. Saya tunjukkan Pulau Tumbuhan dan kampung-kampung Nubia.",
+     "literal": "kita-sepakat. akan-saya-memperlihatkan-kalian-berdua pulau tumbuh-tumbuhan-itu dan desa-desa-itu yang-Nubia."
+    },
+    {
+     "speaker": "بُودِي:",
+     "text": "وَكَمْ كِيلُومِتْرًا بَيْنَ أَسْوَانَ وَأَبِي سِمْبِلَ؟",
+     "id": "Berapa kilometer dari Aswan ke Abu Simbel?",
+     "literal": "dan berapa kilometer antara Aswan dan Abu Simbel?"
+    },
+    {
+     "speaker": "إِدْرِيس:",
+     "text": "نَحْوُ مِئَتَيْنِ وَثَمَانِينَ كِيلُومِتْرًا. تَخْرُجُ الْحَافِلَاتُ فِي الرَّابِعَةِ فَجْرًا، وَالطَّرِيقُ يَسْتَغْرِقُ ثَلَاثَ سَاعَاتٍ وَنِصْفًا.",
+     "id": "Sekitar dua ratus delapan puluh kilometer. Bus berangkat jam empat subuh, dan perjalanannya tiga setengah jam.",
+     "literal": "sekitar dua-ratus dan delapan-puluh kilometer. keluar bus-bus-itu pada yang-keempat subuh, dan jalan-itu memakan-waktu tiga jam-jam dan setengah."
+    }
+   ],
+   "notes": [
+    "**Harga dengan بِكَمْ di depan.** بِكَمِ السَّاعَةُ؟ (\"sejam berapa?\") dan jawabannya ikut memakai بِـ, seperti dalam بِسِتِّمِئَةِ جُنَيْهٍ. Kasrah pada بِكَمِ hanya penyambung karena bertemu ال.",
+    "**Waktu dengan مُنْذُ di depan.** مُنْذُ خَمْسٍ وَثَلَاثِينَ سَنَةً — مُنْذُ menjadikan bilangannya majrur (خَمْسٍ), satuannya tanpa ة karena سَنَة perempuan, dan سَنَةً tetap manshub tunggal karena bagian terakhirnya ثَلَاثِينَ.",
+    "**Nama أَبُو سِمْبِل ikut ber-i'raab.** Kata أَبُو di dalam nama berubah seperti biasa, maka sesudah بَيْنَ ia menjadi أَبِي. Papan jalan Mesir sering membekukannya jadi أبو سمبل; di tulisan berharakat, ikuti i'raab.",
+    "**Satuan uang Mesir.** Satu جُنَيْه (pound) = seratus قِرْش (piaster). Uang receh piaster hampir tak terlihat lagi, tapi ungkapannya hidup: وَلَا نَزِيدُ قِرْشًا وَاحِدًا = \"tak sepeser pun lebih\"."
+   ],
+   "grammars": [
+    {
+     "title": "Ratusan dalam harga",
+     "table": {
+      "head": [
+       "Angka",
+       "Tulisan",
+       "Cara baca",
+       "Catatan"
+      ],
+      "rows": [
+       [
+        "100",
+        "مِئَةٌ",
+        "mi'ah",
+        "juga ditulis مِائَةٌ; alifnya tidak dibaca"
+       ],
+       [
+        "200",
+        "مِئَتَانِ",
+        "mi'ataan",
+        "dual; jadi مِئَتَا di depan benda"
+       ],
+       [
+        "300",
+        "ثَلَاثُمِئَةٍ",
+        "tsalaatsumi'ah",
+        "satuan dan مِئَة ditulis menyambung"
+       ],
+       [
+        "450",
+        "أَرْبَعُمِئَةٍ وَخَمْسُونَ",
+        "arba'umi'atin wa khamsuun",
+        "tamyiz ikut خَمْسُونَ: manshub"
+       ],
+       [
+        "600",
+        "سِتُّمِئَةٍ",
+        "sittumi'ah",
+        "satuan tanpa ة"
+       ],
+       [
+        "800",
+        "ثَمَانِمِئَةٍ",
+        "tsamaanimi'ah",
+        "yaa' dari ثَمَانِي gugur dalam tulisan"
+       ]
+      ]
+     },
+     "after": [
+      "Bagian satuan di depan مِئَة ber-i'raab sesuai posisinya, sedangkan مِئَة sendiri selalu majrur sebagai mudhaf ilaih. Di dialog tadi ketiganya muncul: سِتُّمِئَةٍ؟ (marfu'), دَفَعُوا سِتَّمِئَةٍ (manshub), فِي ثَلَاثِمِئَةٍ (majrur)."
+     ]
+    }
+   ]
+  }
+ ],
+ "sections": [
+  {
+   "title": "Mesir Selatan dalam angka",
+   "blocks": [
+    {
+     "type": "tabel",
+     "head": [
+      "Hal",
+      "Bahasa Arab",
+      "Artinya"
+     ],
+     "rows": [
+      [
+       "Kereta tidur Kairo–Luxor",
+       "نَحْوُ عَشْرِ سَاعَاتٍ",
+       "sekitar 10 jam"
+      ],
+      [
+       "Jalan Domba, Luxor–Karnak",
+       "نَحْوُ ثَلَاثَةِ كِيلُومِتْرَاتٍ",
+       "hampir 3 km"
+      ],
+      [
+       "Balai tiang Karnak",
+       "مِئَةٌ وَأَرْبَعَةٌ وَثَلَاثُونَ عَمُودًا",
+       "134 tiang"
+      ],
+      [
+       "Lembah Para Raja",
+       "أَكْثَرُ مِنْ سِتِّينَ مَقْبَرَةً",
+       "lebih dari 60 makam"
+      ],
+      [
+       "Bendungan Tinggi Aswan (selesai 1970)",
+       "طُولُهُ نَحْوُ أَرْبَعَةِ كِيلُومِتْرَاتٍ",
+       "panjangnya hampir 4 km"
+      ],
+      [
+       "Danau Nasser",
+       "طُولُهَا أَكْثَرُ مِنْ خَمْسِمِئَةِ كِيلُومِتْرٍ",
+       "panjangnya lebih dari 500 km (sebagian di Sudan)"
+      ]
+     ]
+    },
+    {
+     "type": "p",
+     "text": "Musim terbaik ke Luxor dan Aswan adalah Oktober sampai Maret. Di musim panas suhu siang di Aswan biasa melewati 40 derajat, sehingga pemandu selalu mengajak berangkat pagi-pagi."
+    },
+    {
+     "type": "kotak",
+     "title": "Tiket, pelajar, dan tawar-menawar",
+     "items": [
+      "**Harga tiket situs purbakala** untuk orang asing jauh lebih tinggi daripada untuk warga Mesir. Mahasiswa dengan kartu pelajar yang sah biasanya membayar separuh harga — simpan kartu mahasiswamu di dompet.",
+      "**Feluka, kereta kuda, dan taksi** tidak berargo. Sepakati harga SEBELUM naik, sebut angkanya dengan jelas, dan tanyakan apakah harga itu untuk satu orang atau satu perahu: لِلشَّخْصِ أَمْ لِلْمَرْكَبِ؟",
+      "**Tip (بَقْشِيش)** untuk pemandu atau awak perahu adalah kebiasaan, bukan paksaan. Siapkan pecahan kecil."
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Membaca bilangan panjang",
+   "blocks": [
+    {
+     "type": "tabel",
+     "head": [
+      "Angka",
+      "Dengan bendanya",
+      "Cara baca"
+     ],
+     "rows": [
+      [
+       "8 jam",
+       "ثَمَانِي سَاعَاتٍ",
+       "tsamaanii saa'aat"
+      ],
+      [
+       "8 hari",
+       "ثَمَانِيَةُ أَيَّامٍ",
+       "tsamaaniyatu ayyaam"
+      ],
+      [
+       "11 malam",
+       "إِحْدَى عَشْرَةَ لَيْلَةً",
+       "ihdaa 'asyrata lailah"
+      ],
+      [
+       "25 turis",
+       "خَمْسَةٌ وَعِشْرُونَ سَائِحًا",
+       "khamsatun wa 'isyruuna saa'ihan"
+      ],
+      [
+       "250 pound",
+       "مِئَتَانِ وَخَمْسُونَ جُنَيْهًا",
+       "mi'ataani wa khamsuuna junaihan"
+      ],
+      [
+       "1001 malam",
+       "أَلْفُ لَيْلَةٍ وَلَيْلَةٌ",
+       "alfu lailatin wa lailah"
+      ],
+      [
+       "3500 tahun",
+       "ثَلَاثَةُ آلَافٍ وَخَمْسُمِئَةِ سَنَةٍ",
+       "tsalaatsatu aalaafin wa khamsumi'ati sanah"
+      ]
+     ]
+    },
+    {
+     "type": "p",
+     "text": "Urutan bacanya: ribuan, ratusan, lalu **satuan sebelum puluhan** — خَمْسَةٌ وَعِشْرُونَ harfiahnya \"lima dan dua puluh\", seperti bahasa Jerman. Setiap bagian disambung وَ. Ini sumber salah dengar paling umum di telepon dan di kasir; latih dengan membaca keras-keras nomor telepon dan harga yang kamu lihat."
+    },
+    {
+     "type": "kotak",
+     "title": "Dua sistem angka",
+     "items": [
+      "**Angka Arab-Timur** (٠ ١ ٢ ٣ ٤ ٥ ٦ ٧ ٨ ٩) dipakai di Mesir dan negara Teluk: di pelat nomor, papan harga, koran, dan nomor halaman. Angka 134 ditulis ١٣٤ — dari kiri ke kanan, walau hurufnya dari kanan ke kiri. Negara Maghrib (Maroko, Aljazair, Tunisia) memakai angka 0–9 yang kita kenal.",
+      "**Awas angka lima dan nol.** Angka lima Arab-Timur berbentuk bulatan (٥), sedangkan nol hanya titik (٠). Jangan membaca ٥٠ sebagai \"nol-titik\"; itu lima puluh."
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Ulangan berjenjang — unit 10",
+   "blocks": [
+    {
+     "type": "p",
+     "text": "Tutup kolom Arab, baca terjemahan Indonesianya, lalu susun kembali kalimatnya dari ingatan."
+    },
+    {
+     "type": "tabel",
+     "head": [
+      "Bahasa Indonesia",
+      "العربية"
+     ],
+     "rows": [
+      [
+       "Mulai paragraf kedua begini: \"Adapun teman-teman palsu, mereka lebih berbahaya bagi penerjemah.\"",
+       "اِبْدَأِ الْفِقْرَةَ الثَّانِيَةَ هٰكَذَا: «أَمَّا الْأَصْدِقَاءُ الْمُزَيَّفُونَ فَهُمْ أَخْطَرُ عَلَى الْمُتَرْجِمِ»."
+      ],
+      [
+       "Bagus. Maka tulislah: \"Di tempat kalian ia bukan 'kata', melainkan 'kalimat'.\"",
+       "جَمِيلٌ. فَاكْتُبْ: «لَيْسَتْ عِنْدَكُمْ كَلِمَةً، بَلْ جُمْلَةٌ»."
+      ],
+      [
+       "Tulis: \"Di satu sisi kata-kata ini membantu kita memahami, di sisi lain menjerumuskan kita ke dalam kesalahan.\"",
+       "اُكْتُبْ: «مِنْ نَاحِيَةٍ تُسَاعِدُنَا هٰذِهِ الْكَلِمَاتُ عَلَى الْفَهْمِ، وَمِنْ نَاحِيَةٍ أُخْرَى تُوقِعُنَا فِي الْخَطَأِ»."
+      ],
+      [
+       "Adapun yang kedua, dari seorang mahasiswa Mesir, dan ia tidak setuju dengan satu contoh.",
+       "أَمَّا الثَّانِي فَمِنْ طَالِبٍ مِصْرِيٍّ، وَهُوَ لَا يُوَافِقُ عَلَى مِثَالٍ وَاحِدٍ."
+      ],
+      [
+       "Dia benar, dulu daftar memang buku catatan nama dan hitungan. Aku akan membalas dan berterima kasih kepadanya.",
+       "إِنَّهُ عَلَى حَقٍّ، فَالدَّفْتَرُ قَدِيمًا كَانَ سِجِلًّا لِلْأَسْمَاءِ وَالْحِسَابَاتِ. سَأَرُدُّ عَلَيْهِ وَأَشْكُرُهُ."
+      ]
+     ]
+    }
+   ]
+  }
+ ],
+ "vocab": [
+  {
+   "ar": "مَعْبَد ج مَعَابِد",
+   "baca": "ma'bad j. ma'aabid",
+   "id": "kuil"
+  },
+  {
+   "ar": "عَمُود ج أَعْمِدَة",
+   "baca": "'amuud j. a'midah",
+   "id": "tiang"
+  },
+  {
+   "ar": "صَفّ ج صُفُوف",
+   "baca": "shaff j. shufuuf",
+   "id": "baris; kelas"
+  },
+  {
+   "ar": "مَقْبَرَة ج مَقَابِر",
+   "baca": "maqbarah j. maqaabir",
+   "id": "makam, pemakaman"
+  },
+  {
+   "ar": "فِرْعَوْن ج فَرَاعِنَة",
+   "baca": "fir'aun j. faraa'inah",
+   "id": "firaun"
+  },
+  {
+   "ar": "اِرْتِفَاع",
+   "baca": "irtifaa'",
+   "id": "tinggi, ketinggian"
+  },
+  {
+   "ar": "مِئَة",
+   "baca": "mi'ah",
+   "id": "seratus"
+  },
+  {
+   "ar": "أَلْف ج آلَاف",
+   "baca": "alf j. aalaaf",
+   "id": "seribu"
+  },
+  {
+   "ar": "نِصْف",
+   "baca": "nishf",
+   "id": "setengah"
+  },
+  {
+   "ar": "جُنَيْه",
+   "baca": "junaih",
+   "id": "pound Mesir"
+  },
+  {
+   "ar": "قِرْش ج قُرُوش",
+   "baca": "qirsy j. quruusy",
+   "id": "piaster"
+  },
+  {
+   "ar": "تَذْكِرَة ج تَذَاكِر",
+   "baca": "tadzkirah j. tadzaakir",
+   "id": "tiket"
+  },
+  {
+   "ar": "سَائِح ج سُيَّاح",
+   "baca": "saa'ih j. suyyaah",
+   "id": "turis"
+  },
+  {
+   "ar": "مُرْشِد سِيَاحِيّ",
+   "baca": "mursyid siyaahiyy",
+   "id": "pemandu wisata"
+  },
+  {
+   "ar": "مَرْكَب ج مَرَاكِب",
+   "baca": "markab j. maraakib",
+   "id": "perahu"
+  },
+  {
+   "ar": "اِسْتَغْرَقَ – يَسْتَغْرِقُ",
+   "baca": "istaghraqa – yastaghriqu",
+   "id": "memakan waktu"
+  },
+  {
+   "ar": "بَلَغَ – يَبْلُغُ",
+   "baca": "balagha – yablughu",
+   "id": "mencapai"
+  },
+  {
+   "ar": "اِكْتَشَفَ – يَكْتَشِفُ",
+   "baca": "iktasyafa – yaktasyifu",
+   "id": "menemukan"
+  },
+  {
+   "ar": "اِتَّسَعَ – يَتَّسِعُ لِـ",
+   "baca": "ittasa'a – yattasi'u li",
+   "id": "muat untuk"
+  },
+  {
+   "ar": "نَحْوَ",
+   "baca": "nahwa",
+   "id": "sekitar, kira-kira"
+  },
+  {
+   "ar": "بِكَمْ",
+   "baca": "bikam",
+   "id": "berapa (harganya)"
+  }
+ ],
+ "exercises": [
+  {
+   "prompt": "Terjemahkan ke bahasa Arab. Tulis bilangannya dengan huruf.",
+   "items": [
+    "Saya membeli tiga tiket.",
+    "Di kuil itu ada dua belas tiang.",
+    "Perjalanannya memakan waktu delapan jam.",
+    "Harga tiketnya lima ratus pound.",
+    "Kami tinggal di Aswan empat malam.",
+    "Berapa turis yang datang tahun ini?"
+   ]
+  },
+  {
+   "prompt": "Isi dengan bilangan (atau kata benda) yang tepat. Petunjuk dalam kurung.",
+   "items": [
+    "فِي الْقَاعَةِ ____ أَعْمِدَةٍ. (5)",
+    "قَرَأْتُ ____ رِوَايَاتٍ هٰذَا الشَّهْرَ. (3)",
+    "فِي الْفَصْلِ ____ طَالِبًا. (15)",
+    "اِنْتَظَرْنَا ____ دَقِيقَةً. (20)",
+    "عِنْدِي ____ صَدِيقَةً فِي الْقَاهِرَةِ. (11)",
+    "دَفَعْتُ ____ جُنَيْهٍ. (200)",
+    "كَمْ ____ قَرَأْتَ هٰذَا الْعَامَ؟ (buku)"
+   ]
+  },
+  {
+   "prompt": "Tulis bilangan dalam kurung dengan huruf, lengkap dengan kata bendanya, dalam bentuk marfu'.",
+   "items": [
+    "(8) يَوْم",
+    "(13) سَاعَة",
+    "(24) طَالِب",
+    "(100) جُنَيْه",
+    "(300) كِيلُومِتْر",
+    "(4000) سَنَة"
+   ]
+  },
+  {
+   "prompt": "Susun jadi kalimat yang benar.",
+   "items": [
+    "عَمُودًا / فِي / اثْنَا عَشَرَ / الْوَسَطِ",
+    "كَمْ / الرِّحْلَةُ / سَاعَةً / تَسْتَغْرِقُ / ؟",
+    "مِنْ / كَمْ / زُرْتُ / مَرَّةٍ / الْأُقْصُرَ / !",
+    "جُنَيْهٍ / التَّذْكِرَةُ / بِسِتِّمِئَةِ",
+    "مُنْذُ / بُنِيَ / ثَلَاثَةِ آلَافِ سَنَةٍ / الْمَعْبَدُ / أَكْثَرَ مِنْ"
+   ]
+  }
+ ],
+ "answers": [
+  "اِشْتَرَيْتُ ثَلَاثَ تَذَاكِرَ. — فِي الْمَعْبَدِ اثْنَا عَشَرَ عَمُودًا. — اِسْتَغْرَقَتِ الرِّحْلَةُ ثَمَانِيَ سَاعَاتٍ. — ثَمَنُ التَّذْكِرَةِ خَمْسُمِئَةِ جُنَيْهٍ. — بَقِينَا فِي أَسْوَانَ أَرْبَعَ لَيَالٍ. — كَمْ سَائِحًا جَاءَ هٰذَا الْعَامَ؟",
+  "خَمْسَةُ — ثَلَاثَ — خَمْسَةَ عَشَرَ — عِشْرِينَ — إِحْدَى عَشْرَةَ — مِئَتَيْ — كِتَابًا",
+  "ثَمَانِيَةُ أَيَّامٍ — ثَلَاثَ عَشْرَةَ سَاعَةً — أَرْبَعَةٌ وَعِشْرُونَ طَالِبًا — مِئَةُ جُنَيْهٍ — ثَلَاثُمِئَةِ كِيلُومِتْرٍ — أَرْبَعَةُ آلَافِ سَنَةٍ",
+  "فِي الْوَسَطِ اثْنَا عَشَرَ عَمُودًا. — كَمْ سَاعَةً تَسْتَغْرِقُ الرِّحْلَةُ؟ — كَمْ مِنْ مَرَّةٍ زُرْتُ الْأُقْصُرَ! — اَلتَّذْكِرَةُ بِسِتِّمِئَةِ جُنَيْهٍ. — بُنِيَ الْمَعْبَدُ مُنْذُ أَكْثَرَ مِنْ ثَلَاثَةِ آلَافِ سَنَةٍ."
+ ]
+}

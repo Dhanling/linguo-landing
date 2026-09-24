@@ -1,0 +1,705 @@
+{
+ "title": "Di dokter — isim fa'il & isim maf'ul",
+ "title_target": "عِنْدَ الطَّبِيبَةِ",
+ "goal": "Menjelaskan keluhan di klinik dan apotek, serta memakai pola فَاعِل (yang melakukan) dan مَفْعُول (yang dikenai) dari kata kerja wazan I sebagai kata sifat maupun kata benda.",
+ "bekal": [
+  "menyebut keluhan badan dan menjawab pertanyaan dokter",
+  "membentuk isim fa'il dan isim maf'ul dari kata kerja tiga huruf",
+  "memahami aturan pakai obat dan tulisan pada kemasan"
+ ],
+ "dialogs": [
+  {
+   "title": "Dialog — مِمَّ تَشْكُو؟",
+   "intro": "Rabu, 2 Desember. Sudah tiga hari Budi demam. Ahmad akhirnya menyeretnya ke klinik dr. Nadia Hilmi di Jalan Tahrir, Dokki, dan ikut masuk ke ruang periksa.",
+   "lines": [
+    {
+     "speaker": "أَحْمَد:",
+     "text": "مَسَاءَ الْخَيْرِ يَا دُكْتُورَةُ. هٰذَا صَدِيقِي بُودِي، وَأَنَا سَاكِنٌ مَعَهُ فِي الشَّقَّةِ نَفْسِهَا.",
+     "baca": "masaa'al-khairi yaa duktuurah. haadzaa shadiiqii Buudii, wa anaa saakinun ma'ahu fisy-syaqqati nafsihaa.",
+     "id": "Selamat sore, Dok. Ini teman saya, Budi. Saya tinggal satu apartemen dengannya.",
+     "literal": "sore kebaikan-itu wahai dokter. ini teman-saya Budi, dan saya yang-tinggal bersama-dia di apartemen-itu sendiri-nya."
+    },
+    {
+     "speaker": "اَلطَّبِيبَةُ:",
+     "text": "تَفَضَّلْ بِالْجُلُوسِ يَا بُودِي. مِمَّ تَشْكُو؟",
+     "baca": "tafadhdhal bil-juluusi yaa Buudii. mimma tasykuu?",
+     "id": "Silakan duduk, Budi. Apa keluhannya?",
+     "literal": "silakan dengan duduk-itu wahai Budi. dari-apa kamu-mengeluh?"
+    },
+    {
+     "speaker": "بُودِي:",
+     "text": "عِنْدِي صُدَاعٌ وَأَلَمٌ فِي الْحَلْقِ، وَأَنَا مَحْمُومٌ مُنْذُ ثَلَاثَةِ أَيَّامٍ.",
+     "baca": "'indii shudaa'un wa alamun fil-halq, wa anaa mahmuumun mundzu tsalaatsati ayyaam.",
+     "id": "Kepala saya sakit, tenggorokan juga, dan saya demam sejak tiga hari lalu.",
+     "literal": "pada-saya sakit-kepala dan nyeri di tenggorokan-itu, dan saya terkena-demam sejak tiga hari-hari."
+    },
+    {
+     "speaker": "اَلطَّبِيبَةُ:",
+     "text": "هَلْ قِسْتَ حَرَارَتَكَ؟",
+     "baca": "hal qista haraaratak?",
+     "id": "Sudah mengukur suhu badan?",
+     "literal": "apakah kamu-mengukur panas-kamu?"
+    },
+    {
+     "speaker": "بُودِي:",
+     "text": "نَعَمْ، كَانَتْ أَمْسِ تِسْعًا وَثَلَاثِينَ دَرَجَةً.",
+     "baca": "na'am, kaanat amsi tis'an wa tsalaatsiina darajah.",
+     "id": "Sudah, kemarin 39 derajat.",
+     "literal": "ya, adalah-dia kemarin sembilan dan tiga-puluh derajat."
+    },
+    {
+     "speaker": "أَحْمَد:",
+     "text": "وَهُوَ جَالِسٌ أَمَامَ الْحَاسُوبِ حَتَّى الْفَجْرِ كُلَّ لَيْلَةٍ يَا دُكْتُورَةُ!",
+     "baca": "wa huwa jaalisun amaamal-haasuubi hattal-fajri kulla lailatin yaa duktuurah!",
+     "id": "Padahal tiap malam dia duduk di depan komputer sampai subuh, Dok!",
+     "literal": "dan dia yang-duduk di-depan komputer-itu sampai fajar-itu setiap malam wahai dokter!"
+    },
+    {
+     "speaker": "بُودِي:",
+     "text": "لِأَنَّ عِنْدِي تَرْجَمَةً مَطْلُوبَةً يَوْمَ الْأَحَدِ.",
+     "baca": "li'anna 'indii tarjamatan mathluubatan yaumal-ahad.",
+     "id": "Soalnya ada terjemahan yang harus diserahkan hari Minggu.",
+     "literal": "karena pada-saya terjemahan yang-diminta hari Ahad-itu."
+    },
+    {
+     "speaker": "اَلطَّبِيبَةُ:",
+     "text": "اِفْتَحْ فَمَكَ مِنْ فَضْلِكَ. اَلْحَلْقُ أَحْمَرُ، لٰكِنَّ الصَّدْرَ سَلِيمٌ.",
+     "baca": "iftah famaka min fadhlik. al-halqu ahmar, laakinnash-shadra saliim.",
+     "id": "Tolong buka mulutnya. Tenggorokannya merah, tapi dadanya bersih.",
+     "literal": "bukalah mulut-kamu dari kebaikan-kamu. tenggorokan-itu merah, tetapi dada-itu sehat."
+    },
+    {
+     "speaker": "بُودِي:",
+     "text": "هَلِ الْأَمْرُ خَطِيرٌ؟",
+     "baca": "halil-amru khathiir?",
+     "id": "Apa ini serius?",
+     "literal": "apakah perkara-itu berbahaya?"
+    },
+    {
+     "speaker": "اَلطَّبِيبَةُ:",
+     "text": "لَا، إِنَّهَا نَزْلَةُ بَرْدٍ قَوِيَّةٌ فَقَطْ. سَأَكْتُبُ لَكَ دَوَاءَيْنِ.",
+     "baca": "laa, innahaa nazlatu bardin qawiyyatun faqath. sa'aktubu laka dawaa'ain.",
+     "id": "Tidak, cuma flu berat. Saya resepkan dua obat.",
+     "literal": "tidak, sesungguhnya-ia serangan dingin yang-kuat saja. akan-saya-tulis untuk-kamu dua-obat."
+    },
+    {
+     "speaker": "بُودِي:",
+     "text": "وَالْعَمَلُ؟ هَلِ الْخُرُوجُ مَسْمُوحٌ؟",
+     "baca": "wal-'amal? halil-khuruuju masmuuh?",
+     "id": "Terus kerjaan saya? Boleh keluar rumah?",
+     "literal": "dan pekerjaan-itu? apakah keluar-itu diizinkan?"
+    },
+    {
+     "speaker": "اَلطَّبِيبَةُ:",
+     "text": "اَلْخُرُوجُ مَمْنُوعٌ حَتَّى يَوْمِ السَّبْتِ، وَالْحَاسُوبُ أَيْضًا!",
+     "baca": "al-khuruuju mamnuu'un hattaa yaumis-sabt, wal-haasuubu aidhan!",
+     "id": "Keluar rumah dilarang sampai hari Sabtu, komputer juga!",
+     "literal": "keluar-itu dilarang sampai hari Sabtu-itu, dan komputer-itu juga!"
+    },
+    {
+     "speaker": "أَحْمَد:",
+     "text": "أَسَمِعْتَ يَا بُودِي؟ أَنَا شَاهِدٌ عَلَى ذٰلِكَ!",
+     "baca": "asami'ta yaa Buudii? anaa syaahidun 'alaa dzaalik!",
+     "id": "Dengar itu, Bud? Aku saksinya!",
+     "literal": "apakah-kamu-mendengar wahai Budi? saya saksi atas itu!"
+    }
+   ],
+   "notes": [
+    "**Isim fa'il untuk keadaan.** Pada أَنَا سَاكِنٌ مَعَهُ dan هُوَ جَالِسٌ, pola فَاعِل dari سَكَنَ (tinggal) dan جَلَسَ (duduk) menggantikan kata kerja: yang ditekankan **keadaan**, bukan kegiatan sesaat. Ia kata benda, jadi i'raab-nya ikut kedudukannya — di sini khabar marfu'.",
+    "**Isim maf'ul = awalan di- atau ter-.** مَطْلُوبَةٌ (diminta), مَمْنُوعٌ (dilarang), مَسْمُوحٌ (diizinkan) berpola مَفْعُول. مَحْمُومٌ (demam) juga isim maf'ul, dari kata kerja pasif حُمَّ, \"ia diserang demam\".",
+    "**Pertanyaan baku dokter** adalah مِمَّ تَشْكُو؟ dari مِنْ + مَا. Jawabnya dengan عِنْدِي seperti Budi, atau أَشْكُو مِنْ صُدَاعٍ (\"saya mengeluhkan sakit kepala\").",
+    "**Isim inna tetap manshub walau datang belakangan.** Pada لِأَنَّ عِنْدِي تَرْجَمَةً مَطْلُوبَةً, kata عِنْدِي maju ke depan, tetapi isim-nya tetap manshub, begitu pula sifatnya. Menulis تَرْجَمَةٌ di sini adalah kesalahan yang khas.",
+    "**Kata حَتَّى punya dua wajah.** Di unit 3 ia disusul kata kerja manshub; di sini ia kata depan \"sampai\" dengan kata benda majrur: حَتَّى الْفَجْرِ (sampai subuh)."
+   ],
+   "grammars": [
+    {
+     "title": "Isim fa'il wazan I — pola فَاعِل",
+     "body": [
+      "Tiga huruf akar, alif panjang sesudah huruf pertama, kasrah pada huruf kedua: artinya **pelaku** atau **yang sedang dalam keadaan itu**."
+     ],
+     "table": {
+      "head": [
+       "Kata kerja",
+       "Isim fa'il",
+       "Cara baca",
+       "Arti"
+      ],
+      "rows": [
+       [
+        "كَتَبَ",
+        "كَاتِب",
+        "kaatib",
+        "penulis; yang menulis"
+       ],
+       [
+        "سَكَنَ",
+        "سَاكِن",
+        "saakin",
+        "yang tinggal; penghuni"
+       ],
+       [
+        "جَلَسَ",
+        "جَالِس",
+        "jaalis",
+        "yang (sedang) duduk"
+       ],
+       [
+        "ذَهَبَ",
+        "ذَاهِب",
+        "dzaahib",
+        "yang (sedang) pergi"
+       ],
+       [
+        "شَهِدَ",
+        "شَاهِد",
+        "syaahid",
+        "saksi"
+       ],
+       [
+        "قَرَأَ",
+        "قَارِئ",
+        "qaari'",
+        "pembaca"
+       ],
+       [
+        "نَامَ",
+        "نَائِم",
+        "naa'im",
+        "yang (sedang) tidur"
+       ],
+       [
+        "زَارَ",
+        "زَائِر",
+        "zaa'ir",
+        "pengunjung, tamu"
+       ]
+      ]
+     },
+     "after": [
+      "Pada kata kerja berongga (huruf tengahnya ا) huruf tengah itu menjadi hamzah: نَائِم, bukan نَايِم. Dalam percakapan isim fa'il sering bermakna \"sedang\" atau \"mau\": أَنَا ذَاهِبٌ إِلَى الْجَامِعَةِ (saya lagi berangkat ke kampus)."
+     ]
+    },
+    {
+     "title": "Isim maf'ul wazan I — pola مَفْعُول",
+     "body": [
+      "Awalan مَـ, huruf pertama bersukun, و panjang sebelum huruf terakhir: artinya **yang dikenai** perbuatan itu."
+     ],
+     "table": {
+      "head": [
+       "Kata kerja",
+       "Isim maf'ul",
+       "Cara baca",
+       "Arti"
+      ],
+      "rows": [
+       [
+        "كَتَبَ",
+        "مَكْتُوب",
+        "maktuub",
+        "tertulis"
+       ],
+       [
+        "طَلَبَ",
+        "مَطْلُوب",
+        "mathluub",
+        "diminta, diperlukan"
+       ],
+       [
+        "مَنَعَ",
+        "مَمْنُوع",
+        "mamnuu'",
+        "dilarang"
+       ],
+       [
+        "سَمَحَ",
+        "مَسْمُوح",
+        "masmuuh",
+        "diizinkan"
+       ],
+       [
+        "عَرَفَ",
+        "مَعْرُوف",
+        "ma'ruuf",
+        "dikenal, terkenal"
+       ],
+       [
+        "فَتَحَ",
+        "مَفْتُوح",
+        "maftuuh",
+        "terbuka"
+       ],
+       [
+        "وَجَدَ",
+        "مَوْجُود",
+        "maujuud",
+        "ada, tersedia"
+       ]
+      ]
+     },
+     "after": [
+      "Kata مَوْجُود harfiahnya \"ditemukan\", tetapi artinya sehari-hari \"ada\": هَلِ الْمُدِيرُ مَوْجُودٌ؟ (\"Pak direktur ada?\").",
+      "Kata kerja yang objeknya memakai kata depan membawa kata depan itu: dalam tulisan cermat اَلتَّصْوِيرُ مَسْمُوحٌ بِهِ (memotret diizinkan). Di papan pengumuman, مَسْمُوحٌ saja sudah biasa."
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Dialog kedua — فِي الصَّيْدَلِيَّةِ",
+   "intro": "Dari klinik, Budi mampir ke apotek di lantai dasar gedungnya. Apotekernya, dr. Adil, sudah kenal semua penghuni gedung.",
+   "lines": [
+    {
+     "speaker": "بُودِي:",
+     "text": "مَسَاءَ الْخَيْرِ. هٰذِهِ وَصْفَةٌ مِنَ الدُّكْتُورَةِ نَادِيَةَ.",
+     "baca": "masaa'al-khair. haadzihi washfatun minad-duktuurati Naadiyah.",
+     "id": "Selamat sore. Ini resep dari dr. Nadia.",
+     "literal": "sore kebaikan-itu. ini resep dari dokter-itu Nadia."
+    },
+    {
+     "speaker": "اَلصَّيْدَلِيُّ:",
+     "text": "مَسَاءَ النُّورِ. لَحْظَةً وَاحِدَةً. نَعَمْ، الدَّوَاءَانِ مَوْجُودَانِ.",
+     "baca": "masaa'an-nuur. lahzhatan waahidah. na'am, ad-dawaa'aani maujuudaan.",
+     "id": "Selamat sore. Sebentar. Ya, dua-duanya ada.",
+     "literal": "sore cahaya-itu. sesaat satu. ya, dua-obat-itu dua-yang-ada."
+    },
+    {
+     "speaker": "بُودِي:",
+     "text": "كَيْفَ آخُذُهُمَا؟ خَطُّ الدُّكْتُورَةِ غَيْرُ مَقْرُوءٍ!",
+     "baca": "kaifa aakhudzuhumaa? khaththud-duktuurati ghairu maqruu'!",
+     "id": "Cara minumnya bagaimana? Tulisan dokternya tidak terbaca!",
+     "literal": "bagaimana saya-mengambil-keduanya? tulisan dokter-itu selain terbaca!"
+    },
+    {
+     "speaker": "اَلصَّيْدَلِيُّ:",
+     "text": "لَا تَقْلَقْ، أَنَا قَارِئٌ مُمْتَازٌ لِخُطُوطِ الْأَطِبَّاءِ! هٰذَا خَافِضٌ لِلْحَرَارَةِ، قُرْصٌ كُلَّ ثَمَانِي سَاعَاتٍ.",
+     "baca": "laa taqlaq, anaa qaari'un mumtaazun likhuthuuthil-athibbaa'! haadzaa khaafidhun lil-haraarah, qurshun kulla tsamaanii saa'aat.",
+     "id": "Tenang, saya jago membaca tulisan dokter! Ini penurun panas, satu tablet tiap delapan jam.",
+     "literal": "jangan kamu-cemas, saya pembaca istimewa untuk tulisan-tulisan dokter-dokter-itu! ini penurun untuk panas-itu, tablet setiap delapan jam-jam."
+    },
+    {
+     "speaker": "بُودِي:",
+     "text": "قَبْلَ الْأَكْلِ أَمْ بَعْدَهُ؟",
+     "baca": "qablal-akli am ba'dah?",
+     "id": "Sebelum makan atau sesudahnya?",
+     "literal": "sebelum makan-itu atau sesudah-nya?"
+    },
+    {
+     "speaker": "اَلصَّيْدَلِيُّ:",
+     "text": "بَعْدَهُ. وَهٰذَا شَرَابٌ لِلْحَلْقِ، مِلْعَقَةٌ ثَلَاثَ مَرَّاتٍ فِي الْيَوْمِ.",
+     "baca": "ba'dah. wa haadzaa syaraabun lil-halq, mil'aqatun tsalaatsa marraatin fil-yaum.",
+     "id": "Sesudahnya. Dan ini sirup untuk tenggorokan, satu sendok tiga kali sehari.",
+     "literal": "sesudah-nya. dan ini sirup untuk tenggorokan-itu, sendok tiga kali dalam hari-itu."
+    },
+    {
+     "speaker": "بُودِي:",
+     "text": "وَهَلِ الْقَهْوَةُ مَسْمُوحَةٌ؟",
+     "baca": "wa halil-qahwatu masmuuhah?",
+     "id": "Kopi boleh?",
+     "literal": "dan apakah kopi-itu diizinkan?"
+    },
+    {
+     "speaker": "اَلصَّيْدَلِيُّ:",
+     "text": "فِنْجَانٌ وَاحِدٌ فَقَطْ. وَانْتَبِهْ لِلْمَكْتُوبِ عَلَى الْعُلْبَةِ: يُحْفَظُ بَعِيدًا عَنْ مُتَنَاوَلِ الْأَطْفَالِ.",
+     "baca": "finjaanun waahidun faqath. wantabih lil-maktuubi 'alal-'ulbah: yuhfazhu ba'iidan 'an mutanaawalil-athfaal.",
+     "id": "Satu cangkir saja. Dan perhatikan tulisan di kotaknya: \"Jauhkan dari jangkauan anak-anak.\"",
+     "literal": "cangkir satu saja. dan perhatikanlah untuk yang-tertulis di-atas kotak-itu: disimpan jauh dari jangkauan anak-anak-itu."
+    },
+    {
+     "speaker": "بُودِي:",
+     "text": "فَهِمْتُ. كَمِ الْحِسَابُ؟",
+     "baca": "fahimt. kamil-hisaab?",
+     "id": "Baik. Semuanya berapa?",
+     "literal": "saya-paham. berapa hitungan-itu?"
+    },
+    {
+     "speaker": "اَلصَّيْدَلِيُّ:",
+     "text": "مِئَةٌ وَعِشْرُونَ جُنَيْهًا. شَفَاكَ اللهُ!",
+     "baca": "mi'atun wa 'isyruuna junaihan. syafaakallaah!",
+     "id": "Seratus dua puluh pound. Semoga lekas sembuh!",
+     "literal": "seratus dan dua-puluh pound. menyembuhkan-kamu Allah!"
+    }
+   ],
+   "notes": [
+    "**Isim maf'ul ikut jumlah kata bendanya.** اَلدَّوَاءُ مَوْجُودٌ (satu), اَلدَّوَاءَانِ مَوْجُودَانِ (dua), اَلْأَدْوِيَةُ مَوْجُودَةٌ (banyak — jamak benda = perempuan tunggal).",
+    "**Pola غَيْرُ + isim maf'ul berarti \"tidak ter-…\".** غَيْرُ مَقْرُوءٍ (tidak terbaca), غَيْرُ مَعْرُوفٍ (tidak dikenal). Kata sesudah غَيْرُ majrur karena keduanya membentuk idhafah.",
+    "**Isim fa'il bisa membawa objek** lewat لِـ, misalnya قَارِئٌ لِخُطُوطِ الْأَطِبَّاءِ (pembaca tulisan dokter), خَافِضٌ لِلْحَرَارَةِ (penurun panas — nama resmi golongan obatnya).",
+    "**Doa untuk orang sakit:** شَفَاكَ اللهُ (kepada perempuan شَفَاكِ اللهُ). Jawabannya آمِينَ atau شُكْرًا."
+   ],
+   "grammars": [
+    {
+     "title": "Fa'il dan maf'ul berubah seperti kata sifat",
+     "table": {
+      "head": [
+       "Bentuk",
+       "فَاعِل",
+       "مَفْعُول",
+       "Contoh"
+      ],
+      "rows": [
+       [
+        "tunggal lk",
+        "كَاتِبٌ",
+        "مَكْتُوبٌ",
+        "اَلْبَابُ مَفْتُوحٌ"
+       ],
+       [
+        "tunggal pr",
+        "كَاتِبَةٌ",
+        "مَكْتُوبَةٌ",
+        "اَلصَّيْدَلِيَّةُ مَفْتُوحَةٌ"
+       ],
+       [
+        "dua (marfu')",
+        "كَاتِبَانِ",
+        "مَكْتُوبَانِ",
+        "اَلدَّوَاءَانِ مَوْجُودَانِ"
+       ],
+       [
+        "jamak lk",
+        "كَاتِبُونَ",
+        "مَكْتُوبُونَ",
+        "اَلطُّلَّابُ مَشْغُولُونَ"
+       ],
+       [
+        "jamak pr",
+        "كَاتِبَاتٌ",
+        "مَكْتُوبَاتٌ",
+        "اَلطَّبِيبَاتُ مَشْغُولَاتٌ"
+       ],
+       [
+        "jamak benda",
+        "كَاتِبَةٌ",
+        "مَكْتُوبَةٌ",
+        "اَلْمَحَلَّاتُ مَفْتُوحَةٌ"
+       ]
+      ]
+     },
+     "after": [
+      "Sebagai **sifat**, isim fa'il berjamak salim (اَلرُّكَّابُ مُسَافِرُونَ, para penumpang sedang bepergian). Sebagai **nama orang atau profesi**, banyak yang memakai jamak taksir — lihat bagian berikut."
+     ]
+    }
+   ]
+  }
+ ],
+ "sections": [
+  {
+   "title": "Keluhan badan",
+   "blocks": [
+    {
+     "type": "tabel",
+     "head": [
+      "Arab",
+      "Cara baca",
+      "Arti"
+     ],
+     "rows": [
+      [
+       "عِنْدِي صُدَاعٌ.",
+       "'indii shudaa'.",
+       "Kepala saya sakit."
+      ],
+      [
+       "عِنْدِي سُعَالٌ.",
+       "'indii su'aal.",
+       "Saya batuk."
+      ],
+      [
+       "أَنَا مَزْكُومٌ.",
+       "anaa mazkuum.",
+       "Saya pilek."
+      ],
+      [
+       "أَنَا مَحْمُومٌ.",
+       "anaa mahmuum.",
+       "Saya demam."
+      ],
+      [
+       "بَطْنِي يُؤْلِمُنِي.",
+       "bathnii yu'limunii.",
+       "Perut saya sakit."
+      ]
+     ]
+    },
+    {
+     "type": "p",
+     "text": "Perhatikan bahwa مَزْكُوم dan مَحْمُوم keduanya isim maf'ul: orang pilek dan demam \"dikenai\" penyakitnya. Untuk bagian badan yang sakit, pola paling aman adalah **bagian badan + milik**, lalu يُؤْلِمُنِي, misalnya رَأْسِي يُؤْلِمُنِي (kepala saya sakit)."
+    },
+    {
+     "type": "kotak",
+     "title": "Berobat di Mesir",
+     "items": [
+      "**Klinik dokter praktik** (عِيَادَة) biasanya buka sore sampai malam, sering sampai pukul sepuluh. Biaya periksa disebut كَشْف dan dibayar di muka kepada asisten di meja depan.",
+      "**Apotek** (صَيْدَلِيَّة) ada di hampir setiap blok, banyak yang buka sampai larut dan sebagian 24 jam. Apoteker di Mesir juga bergelar دُكْتُور dan terbiasa memberi saran untuk keluhan ringan.",
+      "**Nomor darurat Mesir:** ambulans 123, polisi 122. Simpan keduanya di ponselmu sejak hari pertama."
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Isim fa'il dan maf'ul yang menjadi kata benda",
+   "blocks": [
+    {
+     "type": "tabel",
+     "head": [
+      "Tunggal",
+      "Jamak",
+      "Cara baca",
+      "Arti"
+     ],
+     "rows": [
+      [
+       "طَالِب",
+       "طُلَّاب",
+       "thaalib j. thullaab",
+       "mahasiswa, pelajar"
+      ],
+      [
+       "كَاتِب",
+       "كُتَّاب",
+       "kaatib j. kuttaab",
+       "penulis"
+      ],
+      [
+       "عَامِل",
+       "عُمَّال",
+       "'aamil j. 'ummaal",
+       "pekerja"
+      ],
+      [
+       "سَاكِن",
+       "سُكَّان",
+       "saakin j. sukkaan",
+       "penghuni, penduduk"
+      ],
+      [
+       "زَائِر",
+       "زُوَّار",
+       "zaa'ir j. zuwwaar",
+       "pengunjung"
+      ],
+      [
+       "شَاهِد",
+       "شُهُود",
+       "syaahid j. syuhuud",
+       "saksi"
+      ],
+      [
+       "مَشْرُوب",
+       "مَشْرُوبَات",
+       "masyruub j. masyruubaat",
+       "minuman"
+      ]
+     ]
+    },
+    {
+     "type": "p",
+     "text": "Pola jamak فُعَّال (seperti طُلَّاب dan عُمَّال) hampir khusus milik isim fa'il yang menjadi nama orang: \"sekelompok orang yang melakukan sesuatu\". Isim maf'ul yang menjadi kata benda lebih sering berjamak ـَات."
+    },
+    {
+     "type": "kotak",
+     "title": "Satu akar, tiga kata",
+     "items": [
+      "Akar ك ت ب memberi كَتَبَ (menulis), كَاتِب (penulis), dan مَكْتُوب (tertulis; juga \"surat\" dan \"takdir\").",
+      "Akar ع ر ف memberi عَرَفَ (mengetahui), عَارِف (yang tahu), dan مَعْرُوف (dikenal; juga \"kebaikan\")."
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Ulangan berjenjang — unit 9",
+   "blocks": [
+    {
+     "type": "p",
+     "text": "Tutup kolom Arab, baca terjemahan Indonesianya, lalu susun kembali kalimatnya dari ingatan."
+    },
+    {
+     "type": "tabel",
+     "head": [
+      "Bahasa Indonesia",
+      "العربية"
+     ],
+     "rows": [
+      [
+       "Selamat datang, kalian berdua! Capek di jalan?",
+       "أَهْلًا وَسَهْلًا بِكُمَا! هَلْ تَعِبْتُمَا فِي الطَّرِيقِ؟"
+      ],
+      [
+       "Dan ini kedua putriku, Nada dan Nuha. Mereka kembar, dan dua-duanya kuliah di Universitas Alexandria.",
+       "وَهٰتَانِ ابْنَتَايَ، نَدَى وَنُهَى. هُمَا تَوْأَمَانِ، وَتَدْرُسَانِ فِي جَامِعَةِ الْإِسْكَنْدَرِيَّةِ."
+      ],
+      [
+       "Silakan, makanan sudah siap. Cuci tangan, lalu duduk!",
+       "تَفَضَّلَا، اَلطَّعَامُ جَاهِزٌ. اِغْسِلَا يَدَيْكُمَا وَاجْلِسَا!"
+      ],
+      [
+       "Dengan senang hati. Berdiri dekat gerbang. Senyum!",
+       "بِكُلِّ سُرُورٍ. قِفَا قُرْبَ الْبَابِ. اِبْتَسِمَا!"
+      ],
+      [
+       "Terima kasih banyak! Sekarang makan siang — orang tua Ahmad sudah menunggu kita.",
+       "شُكْرًا جَزِيلًا! وَالْآنَ إِلَى الْغَدَاءِ، فَوَالِدَا أَحْمَدَ يَنْتَظِرَانِنَا."
+      ]
+     ]
+    }
+   ]
+  }
+ ],
+ "vocab": [
+  {
+   "ar": "طَبِيب ج أَطِبَّاء",
+   "baca": "thabiib j. athibbaa'",
+   "id": "dokter"
+  },
+  {
+   "ar": "عِيَادَة",
+   "baca": "'iyaadah",
+   "id": "klinik (dokter praktik)"
+  },
+  {
+   "ar": "صَيْدَلِيَّة",
+   "baca": "shaidaliyyah",
+   "id": "apotek"
+  },
+  {
+   "ar": "مَرِيض ج مَرْضَى",
+   "baca": "mariidh j. mardhaa",
+   "id": "sakit; pasien"
+  },
+  {
+   "ar": "شَكَا – يَشْكُو",
+   "baca": "syakaa – yasykuu",
+   "id": "mengeluh (dengan kata depan مِنْ)"
+  },
+  {
+   "ar": "صُدَاع",
+   "baca": "shudaa'",
+   "id": "sakit kepala"
+  },
+  {
+   "ar": "أَلَم ج آلَام",
+   "baca": "alam j. aalaam",
+   "id": "rasa sakit, nyeri"
+  },
+  {
+   "ar": "حَلْق",
+   "baca": "halq",
+   "id": "tenggorokan"
+  },
+  {
+   "ar": "مَحْمُوم",
+   "baca": "mahmuum",
+   "id": "demam (orangnya)"
+  },
+  {
+   "ar": "مَزْكُوم",
+   "baca": "mazkuum",
+   "id": "pilek (orangnya)"
+  },
+  {
+   "ar": "نَزْلَةُ بَرْد",
+   "baca": "nazlatu bard",
+   "id": "flu, masuk angin"
+  },
+  {
+   "ar": "دَوَاء ج أَدْوِيَة",
+   "baca": "dawaa' j. adwiyah",
+   "id": "obat"
+  },
+  {
+   "ar": "وَصْفَة",
+   "baca": "washfah",
+   "id": "resep"
+  },
+  {
+   "ar": "قُرْص ج أَقْرَاص",
+   "baca": "qursh j. aqraash",
+   "id": "tablet"
+  },
+  {
+   "ar": "خَافِضٌ لِلْحَرَارَة",
+   "baca": "khaafidhun lil-haraarah",
+   "id": "penurun panas"
+  },
+  {
+   "ar": "قَاسَ – يَقِيسُ",
+   "baca": "qaasa – yaqiisu",
+   "id": "mengukur"
+  },
+  {
+   "ar": "مَطْلُوب",
+   "baca": "mathluub",
+   "id": "diminta, diperlukan"
+  },
+  {
+   "ar": "مَمْنُوع",
+   "baca": "mamnuu'",
+   "id": "dilarang"
+  },
+  {
+   "ar": "مَسْمُوح",
+   "baca": "masmuuh",
+   "id": "diizinkan"
+  },
+  {
+   "ar": "مَوْجُود",
+   "baca": "maujuud",
+   "id": "ada, tersedia"
+  },
+  {
+   "ar": "شَفَاكَ اللهُ",
+   "baca": "syafaakallaah",
+   "id": "semoga Allah menyembuhkanmu"
+  }
+ ],
+ "exercises": [
+  {
+   "prompt": "Terjemahkan ke bahasa Arab dengan isim fa'il atau isim maf'ul.",
+   "items": [
+    "Saya demam dan tenggorokan saya sakit.",
+    "Merokok dilarang di klinik.",
+    "Pintu apotek terbuka sampai tengah malam.",
+    "Saya sedang pergi ke kampus sekarang.",
+    "Apakah Bu Huda ada?",
+    "Tulisan dokter itu tidak terbaca."
+   ]
+  },
+  {
+   "prompt": "Isi dengan isim fa'il atau isim maf'ul dari kata kerja dalam kurung.",
+   "items": [
+    "اَلْمَكْتَبَةُ ____ يَوْمَ الْجُمُعَةِ. (فَتَحَ)",
+    "هَلْ أَنْتِ ____ فِي الدُّقِّي؟ (سَكَنَ)",
+    "هٰذَا الْكَاتِبُ ____ فِي كُلِّ الْعَالَمِ الْعَرَبِيِّ. (عَرَفَ)",
+    "اَلطُّلَّابُ ____ فِي الْفَصْلِ. (جَلَسَ)",
+    "اَلتَّصْوِيرُ ____ فِي الْمَتْحَفِ. (مَنَعَ)",
+    "اَلْكُتُبُ ____ عَلَى الرَّفِّ. (وَجَدَ)",
+    "لَا تُوقِظْهُ، إِنَّهُ ____. (نَامَ)"
+   ]
+  },
+  {
+   "prompt": "Ubah menjadi kalimat nominal dengan isim maf'ul. Contoh: كَتَبَ بُودِي الرِّسَالَةَ menjadi اَلرِّسَالَةُ مَكْتُوبَةٌ.",
+   "items": [
+    "فَتَحَ عَمُّ سَيِّدٍ الْبَابَ.",
+    "طَلَبَتِ الْأُسْتَاذَةُ هُدَى التَّرْجَمَةَ.",
+    "مَنَعَتِ الطَّبِيبَةُ الْقَهْوَةَ.",
+    "كَسَرَ أَحْمَدُ الْفِنْجَانَ.",
+    "عَرَفَ النَّاسُ هٰذَا الْمَطْعَمَ.",
+    "شَغَلَ الْعَمَلُ لَيْلَى."
+   ]
+  },
+  {
+   "prompt": "Susun menjadi kalimat yang benar.",
+   "items": [
+    "مَحْمُومٌ / ثَلَاثَةِ / أَنَا / أَيَّامٍ / مُنْذُ",
+    "مَمْنُوعٌ / السَّبْتِ / الْخُرُوجُ / يَوْمِ / حَتَّى",
+    "الْأَطِبَّاءِ / غَيْرُ / خَطُّ / مَقْرُوءٍ",
+    "سَاعَاتٍ / قُرْصٌ / ثَمَانِي / كُلَّ",
+    "مَعَهُ / سَاكِنٌ / الشَّقَّةِ / أَنَا / فِي"
+   ]
+  }
+ ],
+ "answers": [
+  "أَنَا مَحْمُومٌ وَحَلْقِي يُؤْلِمُنِي. — اَلتَّدْخِينُ مَمْنُوعٌ فِي الْعِيَادَةِ. — بَابُ الصَّيْدَلِيَّةِ مَفْتُوحٌ حَتَّى مُنْتَصَفِ اللَّيْلِ. — أَنَا ذَاهِبٌ إِلَى الْجَامِعَةِ الْآنَ. — هَلِ الْأُسْتَاذَةُ هُدَى مَوْجُودَةٌ؟ — خَطُّ الطَّبِيبِ غَيْرُ مَقْرُوءٍ.",
+  "مَفْتُوحَةٌ — سَاكِنَةٌ — مَعْرُوفٌ — جَالِسُونَ — مَمْنُوعٌ — مَوْجُودَةٌ — نَائِمٌ",
+  "اَلْبَابُ مَفْتُوحٌ. — اَلتَّرْجَمَةُ مَطْلُوبَةٌ. — اَلْقَهْوَةُ مَمْنُوعَةٌ. — اَلْفِنْجَانُ مَكْسُورٌ. — هٰذَا الْمَطْعَمُ مَعْرُوفٌ. — لَيْلَى مَشْغُولَةٌ.",
+  "أَنَا مَحْمُومٌ مُنْذُ ثَلَاثَةِ أَيَّامٍ. — اَلْخُرُوجُ مَمْنُوعٌ حَتَّى يَوْمِ السَّبْتِ. — خَطُّ الْأَطِبَّاءِ غَيْرُ مَقْرُوءٍ. — قُرْصٌ كُلَّ ثَمَانِي سَاعَاتٍ. — أَنَا سَاكِنٌ مَعَهُ فِي الشَّقَّةِ."
+ ]
+}

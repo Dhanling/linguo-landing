@@ -1,0 +1,652 @@
+{
+ "title": "Kembali ke Kairo — sudah, belum, dan sejak",
+ "title_target": "اَلْعَوْدَةُ إِلَى الْقَاهِرَةِ",
+ "goal": "Menyatakan apa yang sudah terjadi, apa yang belum, dan sejak kapan sesuatu berlangsung — tiga hal yang langsung kamu perlukan begitu turun dari pesawat.",
+ "bekal": [
+  "menegaskan kejadian yang sudah selesai dengan *qad* + kata kerja lampau",
+  "menyangkal masa lampau dengan *lam* dan membedakannya dari *lammaa* \"belum\"",
+  "memakai *mundzu* untuk keadaan yang dimulai di masa lalu dan masih berjalan"
+ ],
+ "dialogs": [
+  {
+   "title": "Dialog — فِي صَالَةِ الْوُصُولِ",
+   "intro": "Kamis malam, 24 September 2026, menjelang tengah malam. Budi keluar dari pintu kedatangan Bandara Internasional Kairo dengan satu koper. Ahmad menjemputnya.",
+   "lines": [
+    {
+     "speaker": "أَحْمَد:",
+     "text": "بُودِي! اَلْحَمْدُ لِلّٰهِ عَلَى السَّلَامَةِ!",
+     "baca": "Buudii! alhamdu lillaahi 'alas-salaamah!",
+     "id": "Budi! Syukurlah, sampai juga dengan selamat!",
+     "literal": "Budi! segala-puji bagi-Allah atas keselamatan-itu!"
+    },
+    {
+     "speaker": "بُودِي:",
+     "text": "اَللهُ يُسَلِّمُكَ يَا أَحْمَدُ! آسِفٌ، قَدْ تَأَخَّرَتِ الطَّائِرَةُ سَاعَتَيْنِ.",
+     "baca": "allaahu yusallimuka yaa Ahmad! aasif, qad ta'akhkharatith-thaa'iratu saa'atain.",
+     "id": "Terima kasih, Ahmad! Maaf, pesawatnya terlambat dua jam.",
+     "literal": "Allah menyelamatkan-kamu wahai Ahmad! menyesal, sungguh-telah terlambat pesawat-itu dua-jam."
+    },
+    {
+     "speaker": "أَحْمَد:",
+     "text": "لَا مُشْكِلَةَ. أَنَا هُنَا مُنْذُ التَّاسِعَةِ، وَقَدْ شَرِبْتُ فِنْجَانَيْنِ مِنَ الْقَهْوَةِ.",
+     "baca": "laa musykilah. anaa hunaa mundzut-taasi'ah, wa qad syaribtu finjaanaini minal-qahwah.",
+     "id": "Nggak apa-apa. Aku di sini dari jam sembilan, dan sudah habis dua cangkir kopi.",
+     "literal": "tidak-ada masalah. saya di-sini sejak yang-kesembilan, dan sungguh-telah saya-minum dua-cangkir dari kopi-itu."
+    },
+    {
+     "speaker": "بُودِي:",
+     "text": "وَصَلَتْ حَقِيبَةٌ وَاحِدَةٌ فَقَطْ. اَلثَّانِيَةُ لَمْ تَصِلْ.",
+     "baca": "washalat haqiibatun waahidatun faqath. ats-tsaaniyatu lam tashil.",
+     "id": "Cuma satu koper yang sampai. Yang kedua tidak ikut datang.",
+     "literal": "tiba koper satu saja. yang-kedua-itu tidak tiba."
+    },
+    {
+     "speaker": "أَحْمَد:",
+     "text": "هٰذَا مُزْعِجٌ! هَلْ قَدَّمْتَ بَلَاغًا؟",
+     "baca": "haadzaa muz'ij! hal qaddamta balaaghan?",
+     "id": "Nyebelin! Kamu sudah lapor?",
+     "literal": "ini menjengkelkan! apakah kamu-mengajukan laporan?"
+    },
+    {
+     "speaker": "بُودِي:",
+     "text": "نَعَمْ، وَكَتَبْتُ فِي الِاسْتِمَارَةِ رَقْمَ هَاتِفِكَ أَنْتَ.",
+     "baca": "na'am, wa katabtu fil-istimaarati raqma haatifika ant.",
+     "id": "Sudah, dan di formulirnya aku tulis nomor teleponmu.",
+     "literal": "ya, dan saya-menulis di formulir-itu nomor telepon-kamu kamu."
+    },
+    {
+     "speaker": "أَحْمَد:",
+     "text": "فِكْرَةٌ جَيِّدَةٌ. هَلْ أَكَلْتَ؟",
+     "baca": "fikratun jayyidah. hal akalt?",
+     "id": "Ide bagus. Sudah makan?",
+     "literal": "gagasan bagus. apakah kamu-makan?"
+    },
+    {
+     "speaker": "بُودِي:",
+     "text": "لَا، لَمْ آكُلْ شَيْئًا مُنْذُ الظُّهْرِ.",
+     "baca": "laa, lam aakul syai'an mundzuzh-zhuhr.",
+     "id": "Belum, aku belum makan apa-apa sejak siang.",
+     "literal": "tidak, tidak saya-makan sesuatu sejak zuhur-itu."
+    },
+    {
+     "speaker": "أَحْمَد:",
+     "text": "لَا تَقْلَقْ، قَدْ طَبَخْتُ لَكَ مُلُوخِيَّةً بِالْأَرُزِّ!",
+     "baca": "laa taqlaq, qad thabakhtu laka muluukhiyyatan bil-aruzz!",
+     "id": "Tenang, aku sudah masakin kamu mulukhiyah pakai nasi!",
+     "literal": "jangan kamu-khawatir, sungguh-telah saya-memasak untuk-kamu mulukhiyah dengan nasi-itu!"
+    },
+    {
+     "speaker": "بُودِي:",
+     "text": "أَنْتَ طَبَخْتَ؟ مُنْذُ مَتَى تَطْبُخُ؟",
+     "baca": "anta thabakht? mundzu mataa tathbukh?",
+     "id": "Kamu masak? Sejak kapan kamu bisa masak?",
+     "literal": "kamu kamu-memasak? sejak kapan kamu-memasak?"
+    },
+    {
+     "speaker": "أَحْمَد:",
+     "text": "مُنْذُ سَنَةٍ تَقْرِيبًا، وَلَمَّا يَمْرَضْ أَحَدٌ!",
+     "baca": "mundzu sanatin taqriiban, wa lammaa yamradh ahad!",
+     "id": "Sudah setahunan. Sejauh ini belum ada yang sakit!",
+     "literal": "sejak setahun kira-kira, dan belum ia-jatuh-sakit seseorang!"
+    },
+    {
+     "speaker": "بُودِي:",
+     "text": "إِذَنْ هَيَّا بِنَا قَبْلَ أَنْ تَبْرُدَ!",
+     "baca": "idzan hayyaa binaa qabla an tabrud!",
+     "id": "Kalau begitu ayo, sebelum keburu dingin!",
+     "literal": "kalau-begitu ayo dengan-kami sebelum bahwa ia-menjadi-dingin!"
+    }
+   ],
+   "notes": [
+    "**Salam untuk orang yang baru tiba.** Siapa pun yang pulang dari perjalanan disambut dengan اَلْحَمْدُ لِلّٰهِ عَلَى السَّلَامَةِ. Jawabannya tetap: اَللهُ يُسَلِّمُكَ kepada laki-laki, اَللهُ يُسَلِّمُكِ kepada perempuan.",
+    "**Kata *qad* sebelum kata kerja lampau = \"sudah, memang\".** تَأَخَّرَتْ sendirian sudah berarti \"terlambat\". Tambahan قَدْ menegaskan bahwa kejadiannya **sudah tuntas dan hasilnya terasa sekarang**: pesawatnya memang telat, itulah sebabnya Ahmad menunggu lama.",
+    "**Kata *lam* memotong ujung kata kerja.** Sesudah لَمْ, kata kerja sekarang kehilangan dhammah ujungnya dan jadi sukun — bentuk ini disebut **majzum**. Hasilnya berarti lampau: لَمْ تَصِلْ = \"ia tidak tiba\". Ini cara menyangkal masa lampau yang paling baku, jauh lebih sering di tulisan daripada مَا + kata kerja lampau.",
+    "**Sejak jam sembilan — dan masih di sini.** أَنَا هُنَا مُنْذُ التَّاسِعَةِ tidak memakai kata kerja lampau, karena Ahmad **masih** di bandara. Keadaan yang dimulai di masa lalu dan belum selesai dilihat sebagai keadaan sekarang — persis \"aku di sini dari jam sembilan\".",
+    "**Belum, tapi siapa tahu nanti.** وَلَمَّا يَمْرَضْ أَحَدٌ = \"sejauh ini belum ada yang sakit\". Kata *lammaa* + majzum menyangkal sampai detik ini dan membiarkan pintu terbuka. ⚠️ Kalau diikuti kata kerja **lampau**, *lammaa* berarti \"ketika\"."
+   ],
+   "grammars": [
+    {
+     "title": "Sudah dan tidak: qad + lampau, lam + majzum",
+     "body": [
+      "Kata *qad* memakai kata kerja **lampau**; kata *lam* memakai kata kerja **sekarang** yang dimajzumkan — maknanya tetap lampau."
+     ],
+     "table": {
+      "head": [
+       "Sudah (qad)",
+       "Cara baca",
+       "Tidak (lam)",
+       "Cara baca",
+       "Arti"
+      ],
+      "rows": [
+       [
+        "قَدْ وَصَلْتُ",
+        "qad washaltu",
+        "لَمْ أَصِلْ",
+        "lam ashil",
+        "saya (sudah/tidak) tiba"
+       ],
+       [
+        "قَدْ أَكَلْتُ",
+        "qad akaltu",
+        "لَمْ آكُلْ",
+        "lam aakul",
+        "saya makan"
+       ],
+       [
+        "قَدْ كَتَبْتِ",
+        "qad katabti",
+        "لَمْ تَكْتُبِي",
+        "lam taktubii",
+        "kamu (pr) menulis"
+       ],
+       [
+        "قَدْ وَصَلَتْ",
+        "qad washalat",
+        "لَمْ تَصِلْ",
+        "lam tashil",
+        "ia (pr) tiba"
+       ],
+       [
+        "قَدْ شَرِبْنَا",
+        "qad syaribnaa",
+        "لَمْ نَشْرَبْ",
+        "lam nasyrab",
+        "kami minum"
+       ],
+       [
+        "قَدْ فَهِمُوا",
+        "qad fahimuu",
+        "لَمْ يَفْهَمُوا",
+        "lam yafhamuu",
+        "mereka mengerti"
+       ]
+      ]
+     },
+     "after": [
+      "**Akhiran -na ikut gugur** sesudah *lam* (lihat baris kamu-perempuan dan mereka). Jadi majzum tidak selalu berupa sukun; kadang berupa nun yang hilang.",
+      "**Sukun yang bertemu al- berubah jadi kasrah**: لَمْ يَصِلِ الْقِطَارُ dibaca *lam yashilil-qithaar*. Itu bukan salah cetak."
+     ]
+    },
+    {
+     "title": "Belum dan sejak: lammaa, lam … ba'du, mundzu",
+     "table": {
+      "head": [
+       "Pola",
+       "Contoh",
+       "Cara baca",
+       "Arti"
+      ],
+      "rows": [
+       [
+        "لَمَّا + majzum",
+        "لَمَّا يَصِلِ الْقِطَارُ",
+        "lammaa yashilil-qithaar",
+        "keretanya belum datang (ditunggu)"
+       ],
+       [
+        "لَمْ … بَعْدُ",
+        "لَمْ يَصِلِ الْقِطَارُ بَعْدُ",
+        "lam yashilil-qithaaru ba'd",
+        "keretanya belum datang juga"
+       ],
+       [
+        "مُنْذُ + titik waktu",
+        "مُنْذُ الصَّبَاحِ",
+        "mundzush-shabaah",
+        "sejak pagi"
+       ],
+       [
+        "مُنْذُ + lama waktu",
+        "مُنْذُ سَنَتَيْنِ",
+        "mundzu sanatain",
+        "sejak dua tahun lalu"
+       ],
+       [
+        "مُنْذُ + kata kerja lampau",
+        "مُنْذُ وَصَلْتُ",
+        "mundzu washaltu",
+        "sejak aku tiba"
+       ],
+       [
+        "مُنْذُ مَتَى؟",
+        "مُنْذُ مَتَى تَطْبُخُ؟",
+        "mundzu mataa tathbukh?",
+        "sejak kapan kamu memasak?"
+       ]
+      ]
+     },
+     "after": [
+      "Dalam tulisan modern, *lam … ba'du* jauh lebih sering daripada *lammaa*. Untuk bicara, pakai yang pertama.",
+      "**Kata kerjanya tetap sekarang** kalau keadaannya masih berlangsung: أَسْكُنُ هُنَا مُنْذُ سَنَتَيْنِ = \"sudah dua tahun aku tinggal di sini\"."
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Dialog kedua — مُكَالَمَةٌ مِنَ الْمَطَارِ",
+   "intro": "Jumat pagi di apartemen Dokki. Telepon Ahmad berdering: petugas kantor bagasi hilang di bandara. Ahmad menyerahkan teleponnya kepada Budi.",
+   "lines": [
+    {
+     "speaker": "اَلْمُوَظَّفَةُ:",
+     "text": "صَبَاحُ الْخَيْرِ. هَلْ هٰذَا رَقْمُ السَّيِّدِ بُودِي؟",
+     "baca": "shabaahul-khair. hal haadzaa raqmus-sayyidi Buudii?",
+     "id": "Selamat pagi. Apakah ini nomor Bapak Budi?",
+     "literal": "pagi kebaikan-itu. apakah ini nomor tuan-itu Budi?"
+    },
+    {
+     "speaker": "بُودِي:",
+     "text": "نَعَمْ، أَنَا بُودِي. تَفَضَّلِي.",
+     "baca": "na'am, anaa Buudii. tafadhdhalii.",
+     "id": "Ya, saya Budi. Silakan.",
+     "literal": "ya, saya Budi. silakan-kamu-perempuan."
+    },
+    {
+     "speaker": "اَلْمُوَظَّفَةُ:",
+     "text": "أَتَّصِلُ بِكَ مِنْ مَكْتَبِ الْأَمْتِعَةِ الْمَفْقُودَةِ. قَدْ وَجَدْنَا حَقِيبَتَكَ.",
+     "baca": "attashilu bika min maktabil-amti'atil-mafquudah. qad wajadnaa haqiibatak.",
+     "id": "Saya menelepon dari kantor bagasi hilang. Koper Bapak sudah kami temukan.",
+     "literal": "saya-menghubungi dengan-kamu dari kantor barang-barang-itu yang-hilang. sungguh-telah kami-menemukan koper-kamu."
+    },
+    {
+     "speaker": "بُودِي:",
+     "text": "اَلْحَمْدُ لِلّٰهِ! أَنَا قَلِقٌ عَلَيْهَا مُنْذُ أَمْسِ. أَيْنَ كَانَتْ؟",
+     "baca": "alhamdu lillaah! anaa qaliqun 'alaihaa mundzu ams. aina kaanat?",
+     "id": "Alhamdulillah! Saya khawatir terus sejak kemarin. Di mana kopernya?",
+     "literal": "segala-puji bagi-Allah! saya khawatir atas-nya sejak kemarin. di-mana adalah-ia?"
+    },
+    {
+     "speaker": "اَلْمُوَظَّفَةُ:",
+     "text": "بَقِيَتْ فِي الدَّوْحَةِ، وَوَصَلَتْ هٰذَا الصَّبَاحَ عَلَى مَتْنِ أَوَّلِ طَائِرَةٍ.",
+     "baca": "baqiyat fid-Dauhah, wa washalat haadzash-shabaaha 'alaa matni awwali thaa'irah.",
+     "id": "Tertinggal di Doha, dan tiba pagi ini dengan pesawat pertama.",
+     "literal": "ia-tertinggal di Doha, dan ia-tiba pagi-ini di-atas punggung pertama pesawat."
+    },
+    {
+     "speaker": "اَلْمُوَظَّفَةُ:",
+     "text": "سَنُرْسِلُهَا إِلَى عُنْوَانِكَ الْيَوْمَ، لٰكِنَّنَا لَمْ نَجِدْ رَقْمَ الشَّقَّةِ فِي الِاسْتِمَارَةِ.",
+     "baca": "sanursiluhaa ilaa 'unwaanikal-yaum, laakinnanaa lam najid raqmasy-syaqqati fil-istimaarah.",
+     "id": "Kami kirim ke alamat Bapak hari ini, tapi nomor apartemennya tidak kami temukan di formulir.",
+     "literal": "akan-kami-kirim-ia ke alamat-kamu hari-ini, tetapi-kami tidak kami-menemukan nomor apartemen-itu di formulir-itu."
+    },
+    {
+     "speaker": "بُودِي:",
+     "text": "آسِفٌ، لَمْ أَنْتَبِهْ لِذٰلِكَ. رَقْمُ الشَّقَّةِ ثَمَانِيَةٌ، فِي الطَّابِقِ الرَّابِعِ.",
+     "baca": "aasif, lam antabih lidzaalik. raqmusy-syaqqati tsamaaniyah, fith-thaabiqir-raabi'.",
+     "id": "Maaf, saya tidak memperhatikan itu. Nomor apartemennya delapan, di lantai empat.",
+     "literal": "menyesal, tidak saya-memperhatikan untuk-itu. nomor apartemen-itu delapan, di lantai-itu yang-keempat."
+    },
+    {
+     "speaker": "اَلْمُوَظَّفَةُ:",
+     "text": "شُكْرًا. سَيَصِلُ الْمَنْدُوبُ قَبْلَ الْمَغْرِبِ إِنْ شَاءَ اللهُ.",
+     "baca": "syukran. sayashilul-manduubu qablal-maghribi in syaa'allaah.",
+     "id": "Terima kasih. Kurirnya akan tiba sebelum magrib, insyaallah.",
+     "literal": "terima-kasih. akan-tiba kurir-itu sebelum magrib-itu jika menghendaki Allah."
+    },
+    {
+     "speaker": "بُودِي:",
+     "text": "شُكْرًا جَزِيلًا. كُلُّ كُتُبِي فِيهَا!",
+     "baca": "syukran jaziilan. kullu kutubii fiihaa!",
+     "id": "Terima kasih banyak. Semua buku saya ada di situ!",
+     "literal": "terima-kasih banyak. semua buku-buku-saya di-dalam-nya!"
+    },
+    {
+     "speaker": "اَلْمُوَظَّفَةُ:",
+     "text": "عَفْوًا، وَنَعْتَذِرُ عَنِ التَّأْخِيرِ.",
+     "baca": "'afwan, wa na'tadziru 'anit-ta'khiir.",
+     "id": "Sama-sama, dan kami mohon maaf atas keterlambatannya.",
+     "literal": "sama-sama, dan kami-meminta-maaf dari keterlambatan-itu."
+    }
+   ],
+   "notes": [
+    "**Silakan, kepada perempuan.** تَفَضَّلْ berubah jadi تَفَضَّلِي untuk lawan bicara perempuan. Di telepon artinya \"silakan, saya mendengarkan\".",
+    "**Khawatir atas, bukan khawatir dari.** Orang Arab mengkhawatirkan sesuatu \"di atasnya\": قَلِقٌ عَلَيْهَا. Karena ada *mundzu* dan kalimatnya nominal, artinya \"sejak kemarin khawatir, dan masih\".",
+    "**Kata *lam* bertemu kata kerja berawal waw.** لَمْ نَجِدْ berasal dari وَجَدَ. Waw-nya sudah hilang di bentuk sekarang, lalu *lam* memangkas harakat ujungnya. Tinggal tiga huruf; pemula sering tak mengenalinya.",
+    "**Permintaan maaf resmi.** نَعْتَذِرُ عَنِ التَّأْخِيرِ adalah rumus bandara, stasiun, dan surel kantor. Sukun عَنْ jadi kasrah karena bertemu al-; sedangkan *min* biasanya mendapat fathah (مِنَ الْقَهْوَةِ)."
+   ],
+   "grammars": [
+    {
+     "title": "Menjawab \"sudah?\" dengan dua cara",
+     "body": [
+      "Pertanyaan \"sudah …?\" cukup memakai هَلْ + kata kerja lampau."
+     ],
+     "table": {
+      "head": [
+       "Pertanyaan",
+       "Jawaban: sudah",
+       "Jawaban: belum"
+      ],
+      "rows": [
+       [
+        "هَلْ وَصَلَتِ الْحَقِيبَةُ؟",
+        "نَعَمْ، قَدْ وَصَلَتْ.",
+        "لَا، لَمْ تَصِلْ بَعْدُ."
+       ],
+       [
+        "هَلْ أَكَلْتَ؟",
+        "نَعَمْ، قَدْ أَكَلْتُ.",
+        "لَا، لَمْ آكُلْ بَعْدُ."
+       ],
+       [
+        "هَلْ كَتَبْتِ الْعُنْوَانَ؟",
+        "نَعَمْ، قَدْ كَتَبْتُهُ.",
+        "لَا، لَمْ أَكْتُبْهُ بَعْدُ."
+       ],
+       [
+        "هَلْ وَجَدُوا الْحَقِيبَةَ؟",
+        "نَعَمْ، قَدْ وَجَدُوهَا.",
+        "لَا، لَمَّا يَجِدُوهَا."
+       ]
+      ]
+     },
+     "after": [
+      "**Kata ganti tetap menempel** pada bentuk majzum (لَمْ أَكْتُبْهُ). Alif tambahan pada bentuk mereka hilang begitu kata ganti menempel: وَجَدُوهَا."
+     ]
+    }
+   ]
+  }
+ ],
+ "sections": [
+  {
+   "title": "Tiba di bandara",
+   "blocks": [
+    {
+     "type": "tabel",
+     "head": [
+      "Arab",
+      "Cara baca",
+      "Arti",
+      "Arab",
+      "Cara baca",
+      "Arti"
+     ],
+     "rows": [
+      [
+       "صَالَةُ الْوُصُولِ",
+       "shaalatul-wushuul",
+       "ruang kedatangan",
+       "جَوَازُ السَّفَرِ",
+       "jawaazus-safar",
+       "paspor"
+      ],
+      [
+       "صَالَةُ الْمُغَادَرَةِ",
+       "shaalatul-mughaadarah",
+       "ruang keberangkatan",
+       "تَأْشِيرَة",
+       "ta'syiirah",
+       "visa"
+      ],
+      [
+       "رِحْلَة",
+       "rihlah",
+       "penerbangan, perjalanan",
+       "اَلْجَمَارِك",
+       "al-jamaarik",
+       "bea cukai"
+      ],
+      [
+       "رِحْلَةُ تَرَانْزِيت",
+       "rihlatu taraanziit",
+       "penerbangan transit",
+       "أَمْتِعَة",
+       "amti'ah",
+       "bagasi"
+      ],
+      [
+       "مَوْعِدُ الْوُصُولِ",
+       "mau'idul-wushuul",
+       "jadwal tiba",
+       "مَكْتَبُ الصِّرَافَةِ",
+       "maktabush-shiraafah",
+       "tempat penukaran uang"
+      ],
+      [
+       "مُتَأَخِّر",
+       "muta'akhkhir",
+       "terlambat",
+       "شَرِيحَة",
+       "syariihah",
+       "kartu SIM"
+      ]
+     ]
+    },
+    {
+     "type": "p",
+     "text": "Papan jadwal bandara Kairo memakai bahasa Arab dan Inggris berdampingan. Kata yang paling ditakuti di kolom status adalah مُتَأَخِّرَة — \"terlambat\", berbentuk perempuan karena yang diterangkan adalah رِحْلَة."
+    },
+    {
+     "type": "kotak",
+     "title": "Malam pertama di Kairo: tiga hal praktis",
+     "items": [
+      "**Kartu SIM** dijual di gerai operator di ruang kedatangan. Siapkan paspor: setiap nomor didaftarkan atas nama pemiliknya.",
+      "**Menukar uang** di bandara cukup untuk ongkos malam itu. Untuk jumlah besar, bank di kota biasanya memberi kurs lebih baik.",
+      "**Taksi** menunggu di depan pintu keluar, tapi banyak penduduk Kairo kini memesan mobil lewat aplikasi."
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Sejak, lalu, dan selama",
+   "blocks": [
+    {
+     "type": "tabel",
+     "head": [
+      "Arab",
+      "Cara baca",
+      "Arti"
+     ],
+     "rows": [
+      [
+       "وَصَلْتُ قَبْلَ يَوْمَيْنِ.",
+       "washaltu qabla yaumain.",
+       "Aku tiba dua hari yang lalu."
+      ],
+      [
+       "أَنَا هُنَا مُنْذُ يَوْمَيْنِ.",
+       "anaa hunaa mundzu yaumain.",
+       "Aku sudah dua hari di sini."
+      ],
+      [
+       "أَسْكُنُ فِي الدُّقِّي مُنْذُ أُسْبُوعٍ.",
+       "askunu fid-Duqqii mundzu usbuu'.",
+       "Sudah seminggu aku tinggal di Dokki."
+      ],
+      [
+       "سَكَنْتُ فِي الْقَاهِرَةِ لِمُدَّةِ سَنَةٍ.",
+       "sakantu fil-Qaahirati limuddati sanah.",
+       "Dulu aku tinggal di Kairo selama setahun."
+      ],
+      [
+       "لَمْ أَشْرَبْ قَهْوَةً مِصْرِيَّةً مُنْذُ سَنَتَيْنِ.",
+       "lam asyrab qahwatan mishriyyatan mundzu sanatain.",
+       "Sudah dua tahun aku tidak minum kopi Mesir."
+      ],
+      [
+       "مُنْذُ مَتَى تَدْرُسُ الْعَرَبِيَّةَ؟",
+       "mundzu mataa tadrusul-'arabiyyah?",
+       "Sudah berapa lama kamu belajar bahasa Arab?"
+      ]
+     ]
+    },
+    {
+     "type": "p",
+     "text": "Ketiganya bisa diterjemahkan dengan \"sudah\", jadi mudah tertukar. Pegangannya: *qabla* menunjuk titik di belakang (\"… yang lalu\"), *mundzu* menunjuk keadaan yang dimulai di belakang dan masih berjalan, *li-muddati* mengukur lamanya sesuatu yang sudah selesai."
+    },
+    {
+     "type": "kotak",
+     "title": "Jebakan kata \"sudah\"",
+     "items": [
+      "\"Aku sudah makan\" → قَدْ أَكَلْتُ. Kejadian selesai: kata kerja lampau.",
+      "\"Aku sudah tiga tahun kerja di sini\" → أَعْمَلُ هُنَا مُنْذُ ثَلَاثِ سَنَوَاتٍ. Keadaan masih berjalan: kata kerja **sekarang** + *mundzu*.",
+      "\"Belum\" paling aman diungkapkan dengan *lam … ba'du*; *lammaa* lebih jarang dan terasa resmi."
+     ]
+    }
+   ]
+  }
+ ],
+ "vocab": [
+  {
+   "ar": "قَدْ",
+   "baca": "qad",
+   "id": "sudah, sungguh (+ kata kerja lampau)"
+  },
+  {
+   "ar": "لَمْ",
+   "baca": "lam",
+   "id": "tidak (+ majzum, arti lampau)"
+  },
+  {
+   "ar": "لَمَّا",
+   "baca": "lammaa",
+   "id": "belum (+ majzum); ketika (+ lampau)"
+  },
+  {
+   "ar": "بَعْدُ",
+   "baca": "ba'du",
+   "id": "(belum) juga, sampai sekarang"
+  },
+  {
+   "ar": "مُنْذُ",
+   "baca": "mundzu",
+   "id": "sejak"
+  },
+  {
+   "ar": "مَطَار",
+   "baca": "mathaar",
+   "id": "bandara"
+  },
+  {
+   "ar": "حَقِيبَة ج حَقَائِب",
+   "baca": "haqiibah j. haqaa'ib",
+   "id": "koper, tas"
+  },
+  {
+   "ar": "أَمْتِعَة",
+   "baca": "amti'ah",
+   "id": "bagasi, barang bawaan"
+  },
+  {
+   "ar": "بَلَاغ",
+   "baca": "balaagh",
+   "id": "laporan (resmi)"
+  },
+  {
+   "ar": "اِسْتِمَارَة",
+   "baca": "istimaarah",
+   "id": "formulir"
+  },
+  {
+   "ar": "عُنْوَان ج عَنَاوِين",
+   "baca": "'unwaan j. 'anaawiin",
+   "id": "alamat"
+  },
+  {
+   "ar": "طَابِق ج طَوَابِق",
+   "baca": "thaabiq j. thawaabiq",
+   "id": "lantai, tingkat"
+  },
+  {
+   "ar": "شَقَّة ج شُقَق",
+   "baca": "syaqqah j. syuqaq",
+   "id": "apartemen"
+  },
+  {
+   "ar": "فِنْجَان ج فَنَاجِين",
+   "baca": "finjaan j. fanaajiin",
+   "id": "cangkir"
+  },
+  {
+   "ar": "تَأَخَّرَ – يَتَأَخَّرُ",
+   "baca": "ta'akhkhara – yata'akhkharu",
+   "id": "terlambat"
+  },
+  {
+   "ar": "وَجَدَ – يَجِدُ",
+   "baca": "wajada – yajidu",
+   "id": "menemukan"
+  },
+  {
+   "ar": "طَبَخَ – يَطْبُخُ",
+   "baca": "thabakha – yathbukhu",
+   "id": "memasak"
+  },
+  {
+   "ar": "مَرِضَ – يَمْرَضُ",
+   "baca": "maridha – yamradhu",
+   "id": "jatuh sakit"
+  },
+  {
+   "ar": "اِعْتَذَرَ – يَعْتَذِرُ",
+   "baca": "i'tadzara – ya'tadziru",
+   "id": "meminta maaf"
+  },
+  {
+   "ar": "قَلِق",
+   "baca": "qaliq",
+   "id": "khawatir, cemas"
+  },
+  {
+   "ar": "آسِف",
+   "baca": "aasif",
+   "id": "maaf, menyesal"
+  },
+  {
+   "ar": "اَلْحَمْدُ لِلّٰهِ عَلَى السَّلَامَةِ",
+   "baca": "alhamdu lillaahi 'alas-salaamah",
+   "id": "syukurlah sampai dengan selamat"
+  }
+ ],
+ "exercises": [
+  {
+   "prompt": "Terjemahkan ke bahasa Arab.",
+   "items": [
+    "Pesawatnya sudah tiba.",
+    "Saya belum makan apa-apa. (pakai *lam … ba'du*)",
+    "Aku menunggu sejak pagi.",
+    "Kopernya belum sampai. (pakai *lammaa*)",
+    "Sudah berapa lama kamu belajar bahasa Arab?",
+    "Mereka tidak menemukan alamatnya."
+   ]
+  },
+  {
+   "prompt": "Isi titik-titiknya sesuai petunjuk dalam kurung.",
+   "items": [
+    "أَنَا هُنَا ____ السَّاعَةِ الْعَاشِرَةِ. (sejak)",
+    "لَمْ ____ شَيْئًا مُنْذُ الظُّهْرِ. (آكُلُ)",
+    "هِيَ لَمْ ____ إِلَى الْمَكْتَبِ بَعْدُ. (تَصِلُ)",
+    "____ وَجَدْنَا حَقِيبَتَكَ. (sungguh telah)",
+    "أَنْتِ لَمْ ____ الِاسْتِمَارَةَ. (تَكْتُبِينَ)",
+    "هُمْ لَمْ ____ الدَّرْسَ. (يَفْهَمُونَ)",
+    "____ يَصِلِ الْمَنْدُوبُ، وَنَحْنُ نَنْتَظِرُهُ. (belum)"
+   ]
+  },
+  {
+   "prompt": "Ubah menjadi kalimat sangkalan dengan *lam*.",
+   "items": [
+    "قَدْ وَصَلَ الْقِطَارُ.",
+    "قَدْ شَرِبْتُ الْقَهْوَةَ.",
+    "قَدْ طَبَخْتِ الْعَشَاءَ.",
+    "قَدْ كَتَبُوا الْبَلَاغَ.",
+    "قَدْ وَجَدْنَا الشَّقَّةَ.",
+    "قَدْ تَأَخَّرَتِ الطَّائِرَةُ."
+   ]
+  },
+  {
+   "prompt": "Susun menjadi kalimat yang benar.",
+   "items": [
+    "وَصَلْتُ / قَدْ / الْقَاهِرَةِ / إِلَى",
+    "شَيْئًا / لَمْ / مُنْذُ / آكُلْ / الصَّبَاحِ",
+    "تَسْكُنُ / مُنْذُ / هُنَا / مَتَى",
+    "الْحَقِيبَةُ / تَصِلِ / بَعْدُ / لَمْ",
+    "طَبَخْتُ / مُلُوخِيَّةً / قَدْ / لَكَ"
+   ]
+  }
+ ],
+ "answers": [
+  "قَدْ وَصَلَتِ الطَّائِرَةُ. — لَمْ آكُلْ شَيْئًا بَعْدُ. — أَنْتَظِرُ مُنْذُ الصَّبَاحِ. — لَمَّا تَصِلِ الْحَقِيبَةُ. — مُنْذُ مَتَى تَدْرُسُ الْعَرَبِيَّةَ؟ — لَمْ يَجِدُوا الْعُنْوَانَ.",
+  "مُنْذُ — آكُلْ — تَصِلْ — قَدْ — تَكْتُبِي — يَفْهَمُوا — لَمَّا",
+  "لَمْ يَصِلِ الْقِطَارُ. — لَمْ أَشْرَبِ الْقَهْوَةَ. — لَمْ تَطْبُخِي الْعَشَاءَ. — لَمْ يَكْتُبُوا الْبَلَاغَ. — لَمْ نَجِدِ الشَّقَّةَ. — لَمْ تَتَأَخَّرِ الطَّائِرَةُ.",
+  "قَدْ وَصَلْتُ إِلَى الْقَاهِرَةِ. — لَمْ آكُلْ شَيْئًا مُنْذُ الصَّبَاحِ. — مُنْذُ مَتَى تَسْكُنُ هُنَا؟ — لَمْ تَصِلِ الْحَقِيبَةُ بَعْدُ. — قَدْ طَبَخْتُ لَكَ مُلُوخِيَّةً."
+ ]
+}

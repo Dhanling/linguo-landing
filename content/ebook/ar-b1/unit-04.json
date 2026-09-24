@@ -1,0 +1,573 @@
+{
+ "title": "Menerjemahkan dokumen resmi — penyambung register tulis",
+ "title_target": "لُغَةُ الْعُقُودِ",
+ "goal": "Menaikkan register terjemahan dari gaya surat ke gaya dokumen resmi dengan penyambung sebab dan tambahan: haitsu inna, idz, bimaa anna, nazharan li-, dan bil-idhaafati ilaa.",
+ "bekal": [
+  "membuka kontrak dengan rumus pertimbangan yang baku",
+  "memilih penyambung sebab menurut susunan sesudahnya: kalimat, أَنَّ, atau kata benda",
+  "membedakan penyambung lisan dan tulis untuk isi yang sama"
+ ],
+ "dialogs": [
+  {
+   "title": "Dialog — «حَيْثُ إِنَّ» لَا «لِأَنَّ»",
+   "intro": "Rabu, 28 Juli 2027. Budi menyerahkan draf terjemahan kontrak distribusi antara PT Gayo Mandiri dan importir Mesir. Karim sudah mencoretinya dengan pulpen merah.",
+   "lines": [
+    {
+     "speaker": "كَرِيم:",
+     "text": "قَرَأْتُ تَرْجَمَتَكَ لِلْعَقْدِ يَا بُودِي. اَلْمَعْنَى صَحِيحٌ، لٰكِنَّ الْأُسْلُوبَ يَحْتَاجُ إِلَى عَمَلٍ.",
+     "id": "Aku sudah baca terjemahan kontrakmu, Budi. Maknanya benar, tapi gayanya masih perlu digarap.",
+     "literal": "saya-membaca terjemahan-kamu untuk kontrak-itu wahai Budi. makna-itu benar, tetapi gaya-itu membutuhkan kepada kerja."
+    },
+    {
+     "speaker": "بُودِي:",
+     "text": "مَاذَا تَقْصِدُ؟",
+     "id": "Maksudmu?",
+     "literal": "apa kamu-maksudkan?"
+    },
+    {
+     "speaker": "كَرِيم:",
+     "text": "اُنْظُرْ إِلَى الْبِدَايَةِ: «لِأَنَّ الشَّرِكَةَ الْأُولَى تُنْتِجُ الْقَهْوَةَ…». هٰذَا أُسْلُوبُ رِسَالَةٍ، لَا أُسْلُوبُ عَقْدٍ.",
+     "id": "Lihat pembukaannya: \"Karena perusahaan pertama memproduksi kopi…\". Ini gaya surat, bukan gaya kontrak.",
+     "literal": "lihatlah kepada permulaan-itu: «karena perusahaan-itu yang-pertama memproduksi kopi-itu…». ini gaya surat, bukan gaya kontrak."
+    },
+    {
+     "speaker": "كَرِيم:",
+     "text": "اُكْتُبْ هٰكَذَا: حَيْثُ إِنَّ الطَّرَفَ الْأَوَّلَ شَرِكَةٌ مُتَخَصِّصَةٌ فِي إِنْتَاجِ الْقَهْوَةِ وَتَصْدِيرِهَا.",
+     "id": "Tulis begini: Mengingat pihak pertama adalah perusahaan yang bergerak di bidang produksi dan ekspor kopi.",
+     "literal": "tulislah begini: mengingat sesungguhnya pihak-itu yang-pertama perusahaan yang-berspesialisasi dalam produksi kopi-itu dan ekspor-nya."
+    },
+    {
+     "speaker": "بُودِي:",
+     "text": "وَلِمَاذَا «إِنَّ» بِالْكَسْرِ بَعْدَ «حَيْثُ»؟",
+     "id": "Kenapa inna berkasrah sesudah haitsu?",
+     "literal": "dan kenapa «inna» dengan kasrah sesudah «haitsu»?"
+    },
+    {
+     "speaker": "كَرِيم:",
+     "text": "لِأَنَّ «حَيْثُ» تَأْتِي بَعْدَهَا جُمْلَةٌ دَائِمًا، وَ«إِنَّ» فِي أَوَّلِ الْجُمْلَةِ مَكْسُورَةٌ.",
+     "id": "Karena sesudah haitsu selalu datang kalimat, dan inna di awal kalimat berkasrah.",
+     "literal": "karena «haitsu» datang sesudah-nya kalimat selalu, dan «inna» di awal kalimat-itu dikasrahkan."
+    },
+    {
+     "speaker": "بُودِي:",
+     "text": "فَهِمْتُ. وَالْجُمْلَةُ الثَّانِيَةُ تُصْبِحُ: وَبِمَا أَنَّ الطَّرَفَ الثَّانِيَ يَرْغَبُ فِي تَوْزِيعِ هٰذِهِ الْمُنْتَجَاتِ فِي السُّوقِ الْمِصْرِيَّةِ.",
+     "id": "Paham. Kalimat kedua jadi: Dan oleh karena pihak kedua berkeinginan mendistribusikan produk-produk tersebut di pasar Mesir.",
+     "literal": "saya-paham. dan kalimat-itu yang-kedua menjadi: dan dengan-apa bahwa pihak-itu yang-kedua berkeinginan dalam distribusi ini produk-produk-itu di pasar-itu yang-Mesir."
+    },
+    {
+     "speaker": "كَرِيم:",
+     "text": "أَحْسَنْتَ. ثُمَّ السَّبَبُ الثَّالِثُ: وَنَظَرًا لِرَغْبَةِ الطَّرَفَيْنِ فِي التَّعَاوُنِ، فَقَدِ اتَّفَقَا عَلَى مَا يَلِي.",
+     "id": "Bagus. Lalu alasan ketiga: Dan mengingat keinginan kedua pihak untuk bekerja sama, maka keduanya menyepakati hal-hal berikut.",
+     "literal": "kamu-berbuat-baik. kemudian alasan-itu yang-ketiga: dan mengingat keinginan dua-pihak-itu dalam kerja-sama-itu, maka-sungguh-telah mereka-berdua-sepakat atas apa yang-mengikuti."
+    },
+    {
+     "speaker": "بُودِي:",
+     "text": "عِبَارَةٌ جَمِيلَةٌ، لٰكِنْ أَلَيْسَ هٰذَا الْأُسْلُوبُ ثَقِيلًا عَلَى الْقَارِئِ؟",
+     "id": "Ungkapan yang indah. Tapi bukankah gaya ini berat bagi pembaca?",
+     "literal": "ungkapan indah, tetapi bukankah ini gaya-itu berat atas pembaca-itu?"
+    },
+    {
+     "speaker": "كَرِيم:",
+     "text": "فِي الْعُقُودِ لَا، إِذِ الدِّقَّةُ أَهَمُّ مِنَ السُّهُولَةِ. وَالْقَارِئُ الْحَقِيقِيُّ هُنَا هُوَ الْقَاضِي!",
+     "id": "Untuk kontrak, tidak, sebab ketelitian lebih penting daripada kemudahan. Pembaca yang sebenarnya di sini adalah hakim!",
+     "literal": "dalam kontrak-kontrak tidak, sebab ketelitian-itu lebih-penting dari kemudahan-itu. dan pembaca-itu yang-sebenarnya di-sini dia hakim-itu!"
+    },
+    {
+     "speaker": "بُودِي:",
+     "text": "وَفِي الْبَنْدِ الْخَامِسِ كَتَبْتُ: «وَأَيْضًا يَدْفَعُ الطَّرَفُ الثَّانِي تَكَالِيفَ الشَّحْنِ».",
+     "id": "Di pasal lima saya menulis: \"Dan juga pihak kedua membayar ongkos pengiriman.\"",
+     "literal": "dan pada pasal-itu yang-kelima saya-menulis: «dan juga membayar pihak-itu yang-kedua biaya-biaya pengiriman-itu»."
+    },
+    {
+     "speaker": "كَرِيم:",
+     "text": "اَلْأَفْضَلُ: وَبِالْإِضَافَةِ إِلَى ذٰلِكَ، يَتَحَمَّلُ الطَّرَفُ الثَّانِي تَكَالِيفَ الشَّحْنِ.",
+     "id": "Lebih baik: Selain itu, pihak kedua menanggung biaya pengiriman.",
+     "literal": "yang-lebih-baik: dan dengan tambahan kepada itu, menanggung pihak-itu yang-kedua biaya-biaya pengiriman-itu."
+    },
+    {
+     "speaker": "بُودِي:",
+     "text": "«يَتَحَمَّلُ» أَدَقُّ مِنْ «يَدْفَعُ» فِعْلًا. سَأُعِيدُ كِتَابَةَ الْعَقْدِ كُلِّهِ.",
+     "id": "Yatahammalu memang lebih tepat daripada yadfa'u. Saya akan menulis ulang seluruh kontraknya.",
+     "literal": "«menanggung» lebih-tepat dari «membayar» sungguh. akan-saya-mengulang penulisan kontrak-itu seluruh-nya."
+    }
+   ],
+   "notes": [
+    "**Haitsu inna di dokumen.** Makna dasar حَيْثُ adalah \"di mana\" (tempat). Di kontrak ia berarti \"mengingat, menimbang\", dan karena sesudahnya selalu kalimat, إِنَّ di situ berkasrah. ⚠️ Susunan حَيْثُ أَنَّ sering dijumpai di koran, tetapi banyak penyunting menganggapnya salah.",
+    "**Bimaa anna: sebab yang sudah diketahui.** بِمَا أَنَّ memakai أَنَّ berfathah karena didahului huruf jar. Ia menyebut alasan yang tidak diperdebatkan, dan anak kalimat sesudahnya sering dibuka dengan فَـ.",
+    "**Nazharan li- butuh kata benda.** Sesudah نَظَرًا لِـ datang kata benda atau masdar majrur, bukan kata kerja: نَظَرًا لِرَغْبَةِ الطَّرَفَيْنِ. Untuk kalimat, pakai نَظَرًا لِأَنَّ.",
+    "**Rumus kesepakatan.** فَقَدِ اتَّفَقَا عَلَى مَا يَلِي (maka keduanya menyepakati hal berikut) menutup hampir semua pembukaan kontrak Arab. Kata kerjanya dual karena pelakunya الطَّرَفَانِ.",
+    "**Menanggung, bukan membayar.** Kata يَتَحَمَّلُ adalah kolokasi hukum untuk biaya dan tanggung jawab, misalnya يَتَحَمَّلُ الْمَسْؤُولِيَّةَ (menanggung tanggung jawab). Kata يَدْفَعُ hanya menyebut perbuatan membayar."
+   ],
+   "grammars": [
+    {
+     "title": "Penyambung sebab dan tambahan di register tulis",
+     "table": {
+      "head": [
+       "Penyambung",
+       "Sesudahnya",
+       "Contoh",
+       "Arti"
+      ],
+      "rows": [
+       [
+        "حَيْثُ إِنَّ",
+        "kalimat, إِنَّ berkasrah",
+        "حَيْثُ إِنَّ الْعَقْدَ جَاهِزٌ",
+        "mengingat bahwa"
+       ],
+       [
+        "إِذْ",
+        "kalimat verbal atau nominal",
+        "إِذْ كَانَ الْوَقْتُ قَصِيرًا",
+        "sebab"
+       ],
+       [
+        "بِمَا أَنَّ",
+        "isim manshub + khabar",
+        "بِمَا أَنَّ الْعَقْدَ جَاهِزٌ",
+        "oleh karena"
+       ],
+       [
+        "نَظَرًا لِـ",
+        "kata benda majrur",
+        "نَظَرًا لِضِيقِ الْوَقْتِ",
+        "mengingat"
+       ],
+       [
+        "بِالْإِضَافَةِ إِلَى",
+        "kata benda majrur",
+        "بِالْإِضَافَةِ إِلَى الشَّحْنِ",
+        "selain, di samping"
+       ]
+      ]
+     },
+     "after": [
+      "Kolom kedua adalah kuncinya. Penyambung yang diikuti kalimat tidak mengubah harakat; yang diikuti أَنَّ membuat kata benda pertama manshub; yang diikuti huruf jar membuat kata bendanya majrur. Kesalahan paling umum: نَظَرًا لِـ + kata kerja."
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Dialog kedua — «حَيْثُ» فِي كُلِّ سَطْرٍ",
+   "intro": "Pukul sepuluh malam di apartemen Dokki. Ahmad sedang memeriksa tumpukan latihan terjemahan murid SMA-nya ketika Budi pulang.",
+   "lines": [
+    {
+     "speaker": "أَحْمَد:",
+     "text": "تَأَخَّرْتَ اللَّيْلَةَ يَا بُودِي. هَلْ كُلُّ شَيْءٍ عَلَى مَا يُرَامُ؟",
+     "id": "Kamu pulang telat malam ini, Budi. Semua baik-baik saja?",
+     "literal": "kamu-terlambat malam-ini wahai Budi. apakah semua sesuatu atas apa yang-diinginkan?"
+    },
+    {
+     "speaker": "بُودِي:",
+     "text": "نَعَمْ، لٰكِنِّي أَعَدْتُ تَرْجَمَةَ عَقْدٍ كَامِلٍ، إِذْ كَانَ أُسْلُوبِي بَسِيطًا أَكْثَرَ مِنَ اللَّازِمِ.",
+     "id": "Iya, tapi aku harus menerjemahkan ulang satu kontrak penuh, sebab gayaku terlalu sederhana.",
+     "literal": "ya, tetapi-saya saya-mengulang penerjemahan kontrak lengkap, sebab adalah gaya-saya sederhana lebih dari yang-perlu."
+    },
+    {
+     "speaker": "أَحْمَد:",
+     "text": "بَسِيطًا؟ طُلَّابِي عَكْسُكَ تَمَامًا! فِي تَمَارِينِ التَّرْجَمَةِ يَكْتُبُونَ «حَيْثُ» فِي كُلِّ سَطْرٍ.",
+     "id": "Terlalu sederhana? Murid-muridku kebalikanmu! Di latihan terjemahan mereka menulis haitsu di setiap baris.",
+     "literal": "sederhana? murid-murid-saya kebalikan-kamu sepenuhnya! dalam latihan-latihan terjemahan-itu mereka-menulis «haitsu» di setiap baris."
+    },
+    {
+     "speaker": "بُودِي:",
+     "text": "وَمَا الْمُشْكِلَةُ فِي ذٰلِكَ؟",
+     "id": "Memangnya kenapa?",
+     "literal": "dan apa masalah-itu dalam itu?"
+    },
+    {
+     "speaker": "أَحْمَد:",
+     "text": "يَسْتَعْمِلُونَهَا لِكُلِّ شَيْءٍ: لِلْمَكَانِ وَلِلسَّبَبِ وَلِلرَّبْطِ فَقَطْ، فَتَضِيعُ الْفِكْرَةُ.",
+     "id": "Mereka memakainya untuk segala hal: untuk tempat, untuk sebab, dan sekadar penyambung, sampai idenya hilang.",
+     "literal": "mereka-memakai-nya untuk setiap sesuatu: untuk tempat-itu dan untuk sebab-itu dan untuk penyambungan-itu saja, maka-hilang ide-itu."
+    },
+    {
+     "speaker": "بُودِي:",
+     "text": "قَالَ لِي كَرِيمٌ الْيَوْمَ إِنَّ لِكُلِّ رَابِطٍ مَكَانَهُ.",
+     "id": "Tadi Karim bilang padaku bahwa setiap penyambung punya tempatnya sendiri.",
+     "literal": "berkata kepada-saya Karim hari-ini sesungguhnya bagi-setiap penyambung tempat-nya."
+    },
+    {
+     "speaker": "أَحْمَد:",
+     "text": "مِثْلَ مَاذَا؟",
+     "id": "Misalnya?",
+     "literal": "seperti apa?"
+    },
+    {
+     "speaker": "بُودِي:",
+     "text": "مِثْلَ: بِمَا أَنَّكَ مُدَرِّسٌ، فَأَنْتَ تَعْرِفُ الْجَوَابَ! وَنَظَرًا لِتَأَخُّرِ الْوَقْتِ، سَأَنَامُ الْآنَ.",
+     "id": "Misalnya: Oleh karena kamu guru, kamu pasti tahu jawabannya! Dan mengingat hari sudah larut, aku tidur sekarang.",
+     "literal": "seperti: dengan-apa bahwa-kamu guru, maka-kamu kamu-mengetahui jawaban-itu! dan mengingat keterlambatan waktu-itu, akan-saya-tidur sekarang."
+    },
+    {
+     "speaker": "أَحْمَد:",
+     "text": "وَبِالْإِضَافَةِ إِلَى ذٰلِكَ، عَلَيْكَ أَنْ تَغْسِلَ الصُّحُونَ أَوَّلًا، فَهٰذَا دَوْرُكَ اللَّيْلَةَ!",
+     "id": "Selain itu, kamu harus cuci piring dulu — malam ini giliranmu!",
+     "literal": "dan dengan tambahan kepada itu, atas-kamu bahwa kamu-mencuci piring-piring-itu pertama, maka-ini giliran-kamu malam-ini!"
+    },
+    {
+     "speaker": "بُودِي:",
+     "text": "حَيْثُ إِنَّكَ صَدِيقِي، أَرْجُو تَأْجِيلَ هٰذَا الْبَنْدِ إِلَى الْغَدِ!",
+     "id": "Mengingat kamu sahabatku, kumohon butir ini ditunda sampai besok!",
+     "literal": "mengingat sesungguhnya-kamu teman-saya, saya-berharap penundaan ini butir-itu ke besok-itu!"
+    }
+   ],
+   "notes": [
+    "**Idz sebagai \"sebab\".** Dalam bahasa tulis modern, إِذْ + kalimat menjelaskan alasan dari pernyataan sebelumnya: أَعَدْتُ التَّرْجَمَةَ، إِذْ كَانَ أُسْلُوبِي بَسِيطًا. Letaknya selalu di belakang. Di teks klasik إِذْ lebih sering berarti \"ketika\"; konteks yang menentukan.",
+    "**Harakat sesudah idz.** Kalau إِذْ bertemu ال, dzalnya diberi kasrah: إِذِ الدِّقَّةُ أَهَمُّ. Kalimat sesudahnya kalimat biasa, jadi الدِّقَّةُ tetap marfu'.",
+    "**Terlalu, gaya Arab.** أَكْثَرَ مِنَ اللَّازِمِ (lebih dari yang perlu) adalah cara wajar mengatakan \"terlalu\" di bahasa tulis. Kata جِدًّا hanya berarti \"sangat\", bukan \"terlalu\".",
+    "**Penyakit haitsu.** Keluhan Ahmad nyata: di banyak tulisan sekolah dan kantor, حَيْثُ dipakai sebagai penyambung serba guna. Penyunting yang baik menggantinya dengan penyambung yang tepat, atau cukup dengan titik.",
+    "**Bercanda dengan bahasa kontrak.** Budi memakai rumus kontrak untuk urusan cuci piring. Humor semacam ini hanya berhasil kalau kedua register sudah dikuasai."
+   ],
+   "grammars": [
+    {
+     "title": "Satu alasan, lima susunan",
+     "table": {
+      "head": [
+       "Susunan",
+       "Letak",
+       "Register"
+      ],
+      "rows": [
+       [
+        "نَنَامُ لِأَنَّ الْوَقْتَ مُتَأَخِّرٌ",
+        "di belakang",
+        "netral, lisan dan tulis"
+       ],
+       [
+        "نَنَامُ، إِذِ الْوَقْتُ مُتَأَخِّرٌ",
+        "di belakang",
+        "tulis"
+       ],
+       [
+        "بِمَا أَنَّ الْوَقْتَ مُتَأَخِّرٌ، فَسَنَنَامُ",
+        "di depan",
+        "tulis, alasan sudah diketahui"
+       ],
+       [
+        "نَظَرًا لِتَأَخُّرِ الْوَقْتِ، سَنَنَامُ",
+        "di depan",
+        "resmi, dengan masdar"
+       ],
+       [
+        "حَيْثُ إِنَّ الْوَقْتَ مُتَأَخِّرٌ، …",
+        "di depan",
+        "sangat resmi, dokumen"
+       ]
+      ]
+     },
+     "after": [
+      "Semua baris berarti \"karena sudah larut, kita tidur\". Perhatikan harakat الْوَقْت: berfathah sesudah أَنَّ dan إِنَّ, berdhammah sesudah إِذْ, dan hilang ke dalam masdar sesudah نَظَرًا لِـ."
+     ]
+    }
+   ]
+  }
+ ],
+ "sections": [
+  {
+   "title": "Kerangka kontrak berbahasa Arab",
+   "blocks": [
+    {
+     "type": "tabel",
+     "head": [
+      "Bagian",
+      "Rumus",
+      "Arti"
+     ],
+     "rows": [
+      [
+       "Pembukaan",
+       "إِنَّهُ فِي يَوْمِ الْأَرْبِعَاءِ الْمُوَافِقِ …",
+       "pada hari Rabu tanggal …"
+      ],
+      [
+       "Pertimbangan",
+       "حَيْثُ إِنَّ … وَبِمَا أَنَّ …",
+       "mengingat … dan oleh karena …"
+      ],
+      [
+       "Kesepakatan",
+       "فَقَدِ اتَّفَقَ الطَّرَفَانِ عَلَى مَا يَلِي",
+       "maka kedua pihak menyepakati hal berikut"
+      ],
+      [
+       "Status pembukaan",
+       "يُعْتَبَرُ التَّمْهِيدُ السَّابِقُ جُزْءًا لَا يَتَجَزَّأُ مِنْ هٰذَا الْعَقْدِ",
+       "pembukaan di atas merupakan bagian tak terpisahkan dari kontrak ini"
+      ],
+      [
+       "Sengketa",
+       "تَخْتَصُّ مَحَاكِمُ الْقَاهِرَةِ بِنَظَرِ أَيِّ نِزَاعٍ",
+       "pengadilan Kairo berwenang memeriksa setiap sengketa"
+      ],
+      [
+       "Penutup",
+       "حُرِّرَ هٰذَا الْعَقْدُ مِنْ نُسْخَتَيْنِ، بِيَدِ كُلِّ طَرَفٍ نُسْخَةٌ",
+       "kontrak ini dibuat rangkap dua, masing-masing pihak memegang satu"
+      ]
+     ]
+    },
+    {
+     "type": "p",
+     "text": "Kontrak Arab, terutama dari Mesir, memakai rumus yang hampir tidak berubah selama puluhan tahun. Penerjemah tidak diharapkan kreatif di sini: tugasnya mengenali rumus di bahasa sumber dan memasang padanannya. \"Mengingat\" menjadi حَيْثُ إِنَّ, \"Para Pihak sepakat\" menjadi فَقَدِ اتَّفَقَ الطَّرَفَانِ."
+    },
+    {
+     "type": "kotak",
+     "title": "Tiga aturan Karim untuk dokumen resmi",
+     "items": [
+      "**Jangan mencari variasi.** Kalau di pasal satu kamu menulis الطَّرَفُ الْأَوَّلُ, sampai pasal terakhir ia tetap الطَّرَفُ الْأَوَّلُ. Di novel, pengulangan membosankan; di kontrak, variasi menimbulkan sengketa.",
+      "**Jangan menambah dan jangan mengurangi.** Kalimat yang janggal di bahasa sumber tetap diterjemahkan; penerjemah boleh memberi catatan, tapi tidak boleh memperbaikinya diam-diam."
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Dokumen pribadi yang sering diterjemahkan",
+   "blocks": [
+    {
+     "type": "tabel",
+     "head": [
+      "Indonesia",
+      "Arab",
+      "Cara baca"
+     ],
+     "rows": [
+      [
+       "akta kelahiran",
+       "شَهَادَةُ مِيلَادٍ",
+       "syahaadatu miilaad"
+      ],
+      [
+       "ijazah",
+       "شَهَادَةُ تَخَرُّجٍ",
+       "syahaadatu takharruj"
+      ],
+      [
+       "transkrip nilai",
+       "كَشْفُ الدَّرَجَاتِ",
+       "kasyfud-darajaat"
+      ],
+      [
+       "kartu keluarga",
+       "بِطَاقَةُ الْعَائِلَةِ",
+       "bithaaqatul-'aa'ilah"
+      ],
+      [
+       "SKCK",
+       "شَهَادَةُ حُسْنِ السِّيرِ وَالسُّلُوكِ",
+       "syahaadatu husnis-siiri was-suluuk"
+      ]
+     ]
+    },
+    {
+     "type": "p",
+     "text": "Nama orang ditulis ulang dengan huruf Arab, sedangkan nama lembaga diterjemahkan lalu nama aslinya dicantumkan dalam kurung dengan huruf Latin. Singkatan seperti SKCK atau KTP jangan dibiarkan telanjang: uraikan dan terjemahkan, karena pegawai kantor Mesir bisa menolak berkas yang tak mereka pahami."
+    },
+    {
+     "type": "kotak",
+     "title": "Cap penerjemah",
+     "items": [
+      "**Terjemahan resmi selalu ditutup dengan pernyataan.** Kalimat تَرْجَمَةٌ مُطَابِقَةٌ لِلْأَصْلِ (terjemahan sesuai dengan aslinya), lalu cap kantor, tanda tangan, dan tanggal. Di Dar al-Jisr cap itu disimpan Bu Huda di laci mejanya, dan hanya Karim yang boleh meminjamnya tanpa bertanya."
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Ulangan berjenjang — unit 2",
+   "blocks": [
+    {
+     "type": "p",
+     "text": "Tutup kolom Arab, baca terjemahan Indonesianya, lalu susun kembali kalimatnya dari ingatan."
+    },
+    {
+     "type": "tabel",
+     "head": [
+      "Bahasa Indonesia",
+      "العربية"
+     ],
+     "rows": [
+      [
+       "Pagi, Budi. Ada kabar baik: izin kerjamu sudah terbit.",
+       "صَبَاحُ الْخَيْرِ يَا بُودِي. عِنْدِي أَخْبَارٌ طَيِّبَةٌ: تَمَّ إِصْدَارُ تَصْرِيحِ الْعَمَلِ الْخَاصِّ بِكَ."
+      ],
+      [
+       "Justru itu saya panggil kamu. Permohonan izin tinggal yang baru harus diajukan sebelum yang lama habis.",
+       "لِهٰذَا دَعَوْتُكَ. يَجِبُ تَقْدِيمُ طَلَبِ الْإِقَامَةِ الْجَدِيدَةِ قَبْلَ انْتِهَاءِ الْقَدِيمَةِ."
+      ],
+      [
+       "Apakah saya boleh bepergian selama masa itu?",
+       "وَهَلْ يُسْمَحُ لِي بِالسَّفَرِ فِي هٰذِهِ الْفَتْرَةِ؟"
+      ],
+      [
+       "Biayanya sudah dibayar?",
+       "هَلْ تَمَّ دَفْعُ الرُّسُومِ؟"
+      ],
+      [
+       "Di loket lima. Tanda terimanya wajib dilampirkan ke berkas.",
+       "فِي الشُّبَّاكِ الْخَامِسِ. وَيَجِبُ إِرْفَاقُ الْإِيصَالِ بِالْمِلَفِّ."
+      ]
+     ]
+    }
+   ]
+  }
+ ],
+ "vocab": [
+  {
+   "ar": "حَيْثُ",
+   "baca": "haitsu",
+   "id": "di mana; (resmi) mengingat"
+  },
+  {
+   "ar": "إِذْ",
+   "baca": "idz",
+   "id": "sebab; ketika"
+  },
+  {
+   "ar": "بِمَا أَنَّ",
+   "baca": "bimaa anna",
+   "id": "oleh karena"
+  },
+  {
+   "ar": "نَظَرًا لِـ",
+   "baca": "nazharan li-",
+   "id": "mengingat"
+  },
+  {
+   "ar": "بِالْإِضَافَةِ إِلَى",
+   "baca": "bil-idhaafati ilaa",
+   "id": "selain, di samping"
+  },
+  {
+   "ar": "طَرَف ج أَطْرَاف",
+   "baca": "tharaf j. athraaf",
+   "id": "pihak; ujung"
+  },
+  {
+   "ar": "تَمْهِيد",
+   "baca": "tamhiid",
+   "id": "pembukaan, mukadimah"
+  },
+  {
+   "ar": "أُسْلُوب ج أَسَالِيب",
+   "baca": "usluub j. asaaliib",
+   "id": "gaya (bahasa)"
+  },
+  {
+   "ar": "دِقَّة",
+   "baca": "diqqah",
+   "id": "ketelitian, ketepatan"
+  },
+  {
+   "ar": "رَغِبَ – يَرْغَبُ – رَغْبَة",
+   "baca": "raghiba – yarghabu – raghbah",
+   "id": "berkeinginan (dengan فِي)"
+  },
+  {
+   "ar": "تَحَمَّلَ – يَتَحَمَّلُ",
+   "baca": "tahammala – yatahammalu",
+   "id": "menanggung"
+  },
+  {
+   "ar": "تَكَالِيف",
+   "baca": "takaaliif",
+   "id": "biaya, ongkos"
+  },
+  {
+   "ar": "شَحْن",
+   "baca": "syahn",
+   "id": "pengiriman barang"
+  },
+  {
+   "ar": "إِنْتَاج",
+   "baca": "intaaj",
+   "id": "produksi"
+  },
+  {
+   "ar": "تَصْدِير",
+   "baca": "tashdiir",
+   "id": "ekspor"
+  },
+  {
+   "ar": "اِسْتِيرَاد",
+   "baca": "istiiraad",
+   "id": "impor"
+  },
+  {
+   "ar": "مُتَخَصِّص",
+   "baca": "mutakhashshish",
+   "id": "khusus bergerak di, spesialis (dengan فِي)"
+  },
+  {
+   "ar": "مَحْكَمَة ج مَحَاكِم",
+   "baca": "mahkamah j. mahaakim",
+   "id": "pengadilan"
+  },
+  {
+   "ar": "نِزَاع",
+   "baca": "nizaa'",
+   "id": "sengketa"
+  },
+  {
+   "ar": "أَعَادَ – يُعِيدُ",
+   "baca": "a'aada – yu'iidu",
+   "id": "mengulang"
+  },
+  {
+   "ar": "رَابِط ج رَوَابِط",
+   "baca": "raabith j. rawaabith",
+   "id": "penyambung, kata sambung"
+  }
+ ],
+ "exercises": [
+  {
+   "prompt": "Terjemahkan ke bahasa Arab dengan penyambung dalam kurung.",
+   "items": [
+    "Mengingat pihak kedua adalah perusahaan Indonesia. (حَيْثُ إِنَّ)",
+    "Oleh karena kontraknya sudah siap, kita akan tanda tangan hari ini. (بِمَا أَنَّ)",
+    "Mengingat waktunya sempit, kami meminta satu minggu lagi. (نَظَرًا لِـ)",
+    "Selain katalog, kami menerjemahkan kontraknya. (بِالْإِضَافَةِ إِلَى)",
+    "Saya pulang terlambat, sebab pekerjaannya banyak. (إِذْ)",
+    "Pihak kedua menanggung biaya pengiriman."
+   ]
+  },
+  {
+   "prompt": "Isi titik-titiknya. Petunjuk ada di dalam kurung.",
+   "items": [
+    "حَيْثُ ____ الطَّرَفَ الْأَوَّلَ شَرِكَةٌ مِصْرِيَّةٌ. (إِنَّ atau أَنَّ)",
+    "بِمَا ____ الْوَقْتَ قَصِيرٌ، سَنَبْدَأُ الْآنَ. (إِنَّ atau أَنَّ)",
+    "____ لِضِيقِ الْوَقْتِ، نَعْتَذِرُ عَنِ التَّأْخِيرِ. (mengingat)",
+    "بِالْإِضَافَةِ ____ ذٰلِكَ، يَدْفَعُ الطَّرَفُ الثَّانِي الرُّسُومَ. (huruf jar)",
+    "فَقَدِ اتَّفَقَ الطَّرَفَانِ عَلَى مَا ____. (berikut)",
+    "يَتَحَمَّلُ الطَّرَفُ الْأَوَّلُ ____ الشَّحْنِ. (biaya)",
+    "رَجَعْتُ مُتَأَخِّرًا، ____ كَانَ الْعَمَلُ كَثِيرًا. (sebab, gaya tulis)"
+   ]
+  },
+  {
+   "prompt": "Tulis ulang dengan penyambung dalam kurung. Perhatikan harakat yang ikut berubah.",
+   "items": [
+    "نَطْلُبُ وَقْتًا إِضَافِيًّا لِأَنَّ الْعَقْدَ طَوِيلٌ. (بِمَا أَنَّ, di depan)",
+    "تَأَخَّرَتِ الشُّحْنَةُ لِأَنَّ الطَّقْسَ سَيِّئٌ. (نَظَرًا لِـ + kata benda)",
+    "لَمْ أُوَقِّعْ لِأَنَّ الْبَنْدَ الْخَامِسَ غَيْرُ وَاضِحٍ. (إِذْ)",
+    "تُصَدِّرُ الشَّرِكَةُ الْقَهْوَةَ، وَتُصَدِّرُ الشَّايَ أَيْضًا. (بِالْإِضَافَةِ إِلَى)",
+    "لِأَنَّ الطَّرَفَيْنِ يَرْغَبَانِ فِي التَّعَاوُنِ اتَّفَقَا عَلَى مَا يَلِي. (نَظَرًا لِـ)",
+    "يُمْكِنُنَا التَّوْقِيعُ لِأَنَّ الْعَقْدَ جَاهِزٌ. (حَيْثُ إِنَّ, di depan)"
+   ]
+  },
+  {
+   "prompt": "Susun menjadi kalimat yang benar.",
+   "items": [
+    "إِنَّ / حَيْثُ / شَرِكَةٌ / الْأَوَّلَ / الطَّرَفَ / مِصْرِيَّةٌ",
+    "يَلِي / الطَّرَفَانِ / مَا / عَلَى / اتَّفَقَ / فَقَدِ",
+    "الشَّحْنِ / الثَّانِي / تَكَالِيفَ / الطَّرَفُ / يَتَحَمَّلُ",
+    "الْوَقْتِ / لِضِيقِ / نَظَرًا / نَعْتَذِرُ",
+    "أَنَّكَ / بِمَا / فَأَنْتَ / مُدَرِّسٌ / تَعْرِفُ / الْجَوَابَ"
+   ]
+  }
+ ],
+ "answers": [
+  "حَيْثُ إِنَّ الطَّرَفَ الثَّانِيَ شَرِكَةٌ إِنْدُونِيسِيَّةٌ. — بِمَا أَنَّ الْعَقْدَ جَاهِزٌ، فَسَنُوَقِّعُ الْيَوْمَ. — نَظَرًا لِضِيقِ الْوَقْتِ، نَطْلُبُ أُسْبُوعًا آخَرَ. — بِالْإِضَافَةِ إِلَى الدَّلِيلِ، نُتَرْجِمُ الْعَقْدَ. — رَجَعْتُ مُتَأَخِّرًا، إِذْ كَانَ الْعَمَلُ كَثِيرًا. — يَتَحَمَّلُ الطَّرَفُ الثَّانِي تَكَالِيفَ الشَّحْنِ.",
+  "إِنَّ — أَنَّ — نَظَرًا — إِلَى — يَلِي — تَكَالِيفَ — إِذْ",
+  "بِمَا أَنَّ الْعَقْدَ طَوِيلٌ، نَطْلُبُ وَقْتًا إِضَافِيًّا. — تَأَخَّرَتِ الشُّحْنَةُ نَظَرًا لِسُوءِ الطَّقْسِ. — لَمْ أُوَقِّعْ، إِذِ الْبَنْدُ الْخَامِسُ غَيْرُ وَاضِحٍ. — تُصَدِّرُ الشَّرِكَةُ الشَّايَ بِالْإِضَافَةِ إِلَى الْقَهْوَةِ. — نَظَرًا لِرَغْبَةِ الطَّرَفَيْنِ فِي التَّعَاوُنِ، فَقَدِ اتَّفَقَا عَلَى مَا يَلِي. — حَيْثُ إِنَّ الْعَقْدَ جَاهِزٌ، يُمْكِنُنَا التَّوْقِيعُ.",
+  "حَيْثُ إِنَّ الطَّرَفَ الْأَوَّلَ شَرِكَةٌ مِصْرِيَّةٌ. — فَقَدِ اتَّفَقَ الطَّرَفَانِ عَلَى مَا يَلِي. — يَتَحَمَّلُ الطَّرَفُ الثَّانِي تَكَالِيفَ الشَّحْنِ. — نَظَرًا لِضِيقِ الْوَقْتِ، نَعْتَذِرُ. — بِمَا أَنَّكَ مُدَرِّسٌ، فَأَنْتَ تَعْرِفُ الْجَوَابَ."
+ ]
+}

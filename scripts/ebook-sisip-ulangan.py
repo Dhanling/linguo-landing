@@ -19,6 +19,7 @@ meta = json.load(open(f"{d}/meta.json")) if os.path.exists(f"{d}/meta.json") els
 kolom = (meta.get("vocab_columns") or [{}])[0].get("head", "Bosanski")
 label = (meta.get("cover_design") or {}).get("label", "BAHASA BOSNIA")
 nama = label.split(" ", 1)[1].title() if label.upper().startswith("BAHASA ") else label.title()
+nama = nama.split("·")[0].strip()  # "BAHASA ARAB · FUSHA" → "Arab"
 
 kunci = {}
 for n, (f, u) in units.items():
@@ -44,7 +45,9 @@ for n, (f, u) in units.items():
             "blocks": [
                 {"type": "p", "text": f"Tutup kolom {nama}, baca terjemahan Indonesianya, lalu susun kembali kalimatnya dari ingatan."},
                 {"type": "tabel", "head": ["Bahasa Indonesia", kolom],
-                 "rows": [[l["id"], f"*{l['text']}*"] for l in kunci[src]]},
+                 # Modul RTL: tanpa *miring* — tanda markdown memotong untaian Arab
+                 # jadi dua pagar dan urutannya terbalik ([ebook-rtl-arab-v1]).
+                 "rows": [[l["id"], l["text"] if meta.get("rtl") else f"*{l['text']}*"] for l in kunci[src]]},
             ],
         })
 
