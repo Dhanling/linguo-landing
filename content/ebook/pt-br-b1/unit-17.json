@@ -1,0 +1,718 @@
+{
+ "title": "Tertutup atau ditutup? — pasif keadaan, pasif proses, partisip ganda",
+ "title_target": "Está fechado ou foi fechado?",
+ "goal": "Membedakan *foi fechado* (tindakannya), *está fechado* (keadaannya), dan *ficou fechado* (hasil atau perubahannya), lalu memilih partisip yang benar untuk kata kerja yang punya dua: *tinha pago / foi pago*, *tinha entregado / foi entregue*, *tinha imprimido / foi impresso*.",
+ "bekal": [
+  "memilih *ser*, *estar*, atau *ficar* + partisip menurut apa yang ingin ditekankan",
+  "memakai partisip ganda sesuai aturan: bentuk panjang dengan *ter*, bentuk pendek dengan *ser/estar/ficar*, beserta kebiasaan lisan Brasil",
+  "membicarakan barang kiriman, gudang, dan bea cukai dalam kunjungan bisnis"
+ ],
+ "dialogs": [
+  {
+   "title": "Dialog — No armazém em Manaus",
+   "intro": "Selasa, 14 Maret 2028. Budi terbang ke Manaus untuk bertemu seu Cláudio Barreto, pemilik Barreto Distribuidora di Distrito Industrial, calon distributor produk Indonesia untuk wilayah Utara. Sampel mebel jati dan rempah dikirim langsung dari Surabaya lewat kargo udara.",
+   "lines": [
+    {
+     "speaker": "Seu Cláudio:",
+     "text": "Seja bem-vindo a Manaus, Budi! Fez boa viagem?",
+     "id": "Selamat datang di Manaus, Budi! Perjalanannya lancar?",
+     "literal": "jadilah(subj) selamat-datang ke Manaus, Budi! kamu-buat baik perjalanan?"
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Fiz, obrigado. Quatro horas de voo, mas valeu a pena. Que calor, hein!",
+     "id": "Lancar, terima kasih. Empat jam terbang, tapi sepadan. Panas banget, ya!",
+     "literal": "saya-buat, terima-kasih. empat jam dari penerbangan, tapi ia-bernilai si hukuman. betapa panas, ya!"
+    },
+    {
+     "speaker": "Seu Cláudio:",
+     "text": "Aqui é assim o ano todo. Vem, as amostras de vocês estão no armazém.",
+     "id": "Di sini begini sepanjang tahun. Ayo, sampel kalian ada di gudang.",
+     "literal": "di-sini ia-adalah begitu si tahun seluruh. datang, si-jamak sampel dari kalian ia-berada di-si gudang."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "As amostras já foram liberadas pela Receita?",
+     "id": "Sampelnya sudah dibebaskan oleh bea cukai?",
+     "literal": "si-jamak sampel sudah mereka-adalah dibebaskan oleh-si Receita?"
+    },
+    {
+     "speaker": "Seu Cláudio:",
+     "text": "Foram liberadas na sexta. Só uma caixa ficou retida dois dias, por causa da fatura.",
+     "id": "Dibebaskan hari Jumat. Cuma satu kotak yang tertahan dua hari, gara-gara faktur.",
+     "literal": "mereka-adalah dibebaskan di-si Jumat. hanya satu kotak ia-tinggal ditahan dua hari, karena dari-si faktur."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "A Fernanda me disse que a fatura tinha sido enviada por e-mail.",
+     "id": "Fernanda bilang fakturnya sudah dikirim lewat surel.",
+     "literal": "si Fernanda saya ia-katakan bahwa si faktur ia-punya ada dikirim lewat surel."
+    },
+    {
+     "speaker": "Seu Cláudio:",
+     "text": "E foi, mas ficou parada no spam. Agora tá tudo resolvido.",
+     "id": "Memang sudah, tapi nyangkut di folder spam. Sekarang semuanya beres.",
+     "literal": "dan ia-adalah, tapi ia-tinggal berhenti di-si spam. sekarang ia-berada semua diselesaikan."
+    },
+    {
+     "speaker": "Seu Cláudio:",
+     "text": "Olha: as cadeiras de teca já estão embaladas pra loja.",
+     "id": "Lihat: kursi-kursi jatinya sudah terbungkus untuk toko.",
+     "literal": "lihat: si-jamak kursi dari jati sudah mereka-berada dibungkus untuk si toko."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "E essa mesa? Ela veio montada da Indonésia?",
+     "id": "Kalau meja ini? Datang dari Indonesia sudah terpasang?",
+     "literal": "dan ini meja? ia ia-datang dirakit dari-si Indonesia?"
+    },
+    {
+     "speaker": "Seu Cláudio:",
+     "text": "Não, veio desmontada. A mesa foi montada pelo nosso marceneiro.",
+     "id": "Tidak, datangnya terurai. Mejanya dirakit oleh tukang kayu kami.",
+     "literal": "tidak, ia-datang dibongkar. si meja ia-adalah dirakit oleh-si milik-kami tukang-kayu."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Ficou perfeita. E o cravo e a noz-moscada foram bem aceitos?",
+     "id": "Hasilnya sempurna. Terus cengkih dan pala diterima dengan baik?",
+     "literal": "ia-tinggal sempurna. dan si cengkih dan si pala mereka-adalah baik diterima?"
+    },
+    {
+     "speaker": "Seu Cláudio:",
+     "text": "Muito bem aceitos. Três restaurantes daqui já pediram mais.",
+     "id": "Diterima dengan sangat baik. Tiga restoran di sini sudah pesan lagi.",
+     "literal": "sangat baik diterima. tiga restoran dari-sini sudah mereka-minta lebih."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Então a nossa proposta está aprovada?",
+     "id": "Jadi proposal kami sudah disetujui?",
+     "literal": "jadi si milik-kami proposal ia-berada disetujui?"
+    },
+    {
+     "speaker": "Seu Cláudio:",
+     "text": "Por mim, sim. A proposta está sendo analisada pelo meu sócio; ele responde até sexta.",
+     "id": "Dari saya, iya. Proposalnya sedang dipelajari mitra saya; dia jawab paling lambat Jumat.",
+     "literal": "oleh saya, ya. si proposal ia-berada sedang dianalisis oleh-si milikku mitra; ia ia-jawab sampai Jumat."
+    }
+   ],
+   "notes": [
+    "**Foram liberadas pela Receita** — pasif proses: *ser* + partisip + *por* (pelaku). Ini menjawab \"apa yang dilakukan dan oleh siapa\". *Receita* adalah singkatan lisan dari *Receita Federal*, lembaga pajak dan bea cukai Brasil. Partisipnya ikut subjek kalimat: *as amostras* → *liberad**as***.",
+    "**Estão embaladas / está aprovada** — pasif keadaan: *estar* + partisip menjelaskan hasil yang terlihat sekarang, tanpa menyebut siapa pelakunya. Bahasa Indonesia sering menandainya dengan *ter-*: *terbungkus, terpasang*. Bandingkan *di-* untuk proses: *dibungkus, dipasang*.",
+    "**Ficou retida, ficou parada, ficou perfeita** — *ficar* + partisip atau kata sifat menandai **perubahan** atau **hasil akhir**, sering yang tak disengaja: kotaknya *tertahan*, surelnya *nyangkut*, mejanya *jadi* sempurna. *Reter* (menahan) dikonjugasi seperti *ter*; partisipnya *retido*.",
+    "**Tinha sido enviada** — pasif lampau jauh: *ter* (imperfeito) + *sido* + partisip. Susunan ini lazim dalam laporan dan cerita resmi. Lisan Brasil lebih suka kalimat aktif dengan pelaku samar: *ela disse que já tinham mandado a fatura*.",
+    "**Está sendo analisada** — pasif yang sedang berlangsung: *estar sendo* + partisip. Bentuk ini sangat Brasil dan sering muncul di kantor dan berita (*o caso está sendo investigado*). Portugal akan menulis *está a ser analisada*.",
+    "**Veio montada / veio desmontada** — kata kerja gerak juga bisa diikuti partisip sebagai keterangan keadaan: *chegou quebrado* (datang dalam keadaan pecah), *saiu cansado*. **Por mim, sim** = kalau dari saya, iya."
+   ],
+   "grammars": [
+    {
+     "title": "Ser, estar, ficar + partisip",
+     "body": [
+      "Ketiganya diterjemahkan \"di-\" atau \"ter-\", tetapi yang disorot berbeda. Partisip selalu mengikuti jenis kelamin dan jumlah subjek kalimat."
+     ],
+     "table": {
+      "head": [
+       "Pola",
+       "Yang disorot",
+       "Contoh",
+       "Bahasa Indonesia"
+      ],
+      "rows": [
+       [
+        "*ser* + partisip (+ *por*)",
+        "tindakan, pelakunya",
+        "*A loja foi fechada pela prefeitura.*",
+        "Toko itu ditutup oleh pemkot."
+       ],
+       [
+        "*estar* + partisip",
+        "keadaan sekarang",
+        "*A loja está fechada.*",
+        "Tokonya (sedang) tutup."
+       ],
+       [
+        "*ficar* + partisip",
+        "perubahan, hasil, lamanya",
+        "*A loja ficou fechada uma semana.*",
+        "Tokonya tutup selama seminggu."
+       ],
+       [
+        "*estar sendo* + partisip",
+        "proses yang berlangsung",
+        "*A loja está sendo reformada.*",
+        "Tokonya sedang direnovasi."
+       ],
+       [
+        "*ser* (presente) + partisip",
+        "kebiasaan, aturan",
+        "*A loja é fechada às dez.*",
+        "Tokonya ditutup tiap jam sepuluh."
+       ]
+      ]
+     },
+     "after": [
+      "**Uji cepat:** kalau kamu bisa menambahkan \"oleh …\", pakai *ser*. Kalau kalimatnya menjawab \"bagaimana keadaannya sekarang?\", pakai *estar*. Kalau ada perubahan atau jangka waktu (\"jadi\", \"selama\"), pakai *ficar*.",
+      "⚠️ Dalam percakapan, orang Brasil jarang memakai *ser* + partisip. Mereka berkata *fecharam a loja* (\"mereka\" tak jelas siapa) atau *a loja fechou*. Pasif *ser* adalah bahasa berita, laporan, dan surel resmi."
+     ]
+    },
+    {
+     "title": "Pasif ser di berbagai kala",
+     "body": [
+      "Yang berubah hanya *ser*; partisipnya tetap."
+     ],
+     "table": {
+      "head": [
+       "Kala",
+       "Português",
+       "Bahasa Indonesia"
+      ],
+      "rows": [
+       [
+        "presente",
+        "*Os pedidos são entregues em 48 horas.*",
+        "Pesanan dikirim dalam 48 jam."
+       ],
+       [
+        "perfeito",
+        "*A mesa foi montada ontem.*",
+        "Mejanya dirakit kemarin."
+       ],
+       [
+        "imperfeito",
+        "*Antes, tudo era feito à mão.*",
+        "Dulu semuanya dibuat dengan tangan."
+       ],
+       [
+        "mais-que-perfeito",
+        "*A fatura tinha sido enviada.*",
+        "Fakturnya sudah dikirim (sebelumnya)."
+       ],
+       [
+        "futuro lisan",
+        "*O contrato vai ser assinado amanhã.*",
+        "Kontraknya akan ditandatangani besok."
+       ],
+       [
+        "subjuntivo",
+        "*Espero que a carga seja liberada logo.*",
+        "Semoga muatannya segera dibebaskan."
+       ]
+      ]
+     },
+     "after": [
+      "Susunan *tinha sido* + partisip dan *seja* + partisip akan sering kamu temui di surel logistik. Untuk tulisan sangat resmi, *será assinado* menggantikan *vai ser assinado*."
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Dialog kedua — Ligação do hotel",
+   "intro": "Malamnya, dari kamar hotel dekat Teatro Amazonas, Budi menelepon Fernanda di São Paulo. Manaus satu jam lebih lambat dari São Paulo, jadi di sana sudah hampir jam sepuluh malam.",
+   "lines": [
+    {
+     "speaker": "Fernanda:",
+     "text": "Bah, Budi! E aí, a reunião deu certo?",
+     "id": "Wah, Budi! Gimana, rapatnya berhasil?",
+     "literal": "bah, Budi! dan di-situ, si rapat ia-beri benar?"
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Deu. As amostras foram aprovadas, e a mesa de teca ficou linda.",
+     "id": "Berhasil. Sampelnya disetujui, dan meja jatinya jadi cantik.",
+     "literal": "ia-beri. si-jamak sampel mereka-adalah disetujui, dan si meja dari jati ia-tinggal cantik."
+    },
+    {
+     "speaker": "Fernanda:",
+     "text": "Tri bom! E o hotel? Deu tudo certo com a reserva?",
+     "id": "Mantap! Terus hotelnya? Reservasinya aman?",
+     "literal": "sangat bagus! dan si hotel? ia-beri semua benar dengan si reservasi?"
+    },
+    {
+     "speaker": "Budi:",
+     "text": "A agência já tinha pago o hotel.",
+     "id": "Agen perjalanannya ternyata sudah membayar hotelnya.",
+     "literal": "si agen sudah ia-punya(dulu) bayar si hotel."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Mas o recibo não foi impresso: a impressora da recepção tá quebrada.",
+     "id": "Tapi kuitansinya belum dicetak: printer resepsionis rusak.",
+     "literal": "tapi si kuitansi tidak ia-adalah dicetak: si printer dari-si resepsi ia-berada rusak."
+    },
+    {
+     "speaker": "Fernanda:",
+     "text": "E o contrato pro seu Cláudio? Tu imprimiu as duas vias?",
+     "id": "Terus kontrak buat seu Cláudio? Kamu sudah cetak dua rangkap?",
+     "literal": "dan si kontrak untuk-si tuan Cláudio? kamu ia-cetak si-jamak dua rangkap?"
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Eu tinha imprimido em São Paulo, mas as folhas ficaram molhadas com a chuva.",
+     "id": "Aku sudah cetak di São Paulo, tapi kertasnya jadi basah kena hujan.",
+     "literal": "saya saya-punya(dulu) cetak di São Paulo, tapi si-jamak lembar mereka-tinggal basah dengan si hujan."
+    },
+    {
+     "speaker": "Fernanda:",
+     "text": "Bah! Então manda o PDF pra um centro de cópias.",
+     "id": "Aduh! Kalau begitu kirim PDF-nya ke tempat fotokopi.",
+     "literal": "bah! maka kirim si PDF untuk sebuah pusat dari salinan."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Já mandei. Às oito as duas vias vão estar impressas.",
+     "id": "Sudah kukirim. Jam delapan dua rangkapnya sudah tercetak.",
+     "literal": "sudah saya-kirim. pada-si delapan si-jamak dua rangkap mereka-pergi berada dicetak."
+    },
+    {
+     "speaker": "Fernanda:",
+     "text": "Tri. E o Teatro Amazonas, tu já foi ver?",
+     "id": "Sip. Terus Teatro Amazonas, kamu sudah lihat?",
+     "literal": "sangat. dan si Teatro Amazonas, kamu sudah ia-pergi melihat?"
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Ainda não. A visita guiada de hoje foi cancelada, mas amanhã cedo ele está aberto.",
+     "id": "Belum. Tur berpemandu hari ini dibatalkan, tapi besok pagi buka.",
+     "literal": "masih tidak. si kunjungan dipandu dari hari-ini ia-adalah dibatalkan, tapi besok pagi ia ia-berada dibuka."
+    }
+   ],
+   "notes": [
+    "**Já tinha pago** — *pagar* punya dua partisip, *pagado* dan *pago*. Aturan klasik memasangkan *pagado* dengan *ter*, tetapi di Brasil sekarang *tinha pago* adalah bentuk normal, lisan maupun tulis; *tinha pagado* masih benar, hanya jarang dan terdengar kaku. *Ganho* serupa. Untuk *gastar*, *tinha gasto* dan *tinha gastado* sama-sama lazim (u11).",
+    "**Não foi impresso / tinha imprimido** — di sini aturan klasik masih berlaku: bentuk panjang *imprimido* setelah *ter*, bentuk pendek *impresso* setelah *ser/estar/ficar*. Dalam percakapan kamu akan mendengar juga *tinha impresso*, tetapi dalam tulisan pakai *tinha imprimido*.",
+    "**Tri bom!** — *tri* adalah penguat khas Rio Grande do Sul: *tri legal, tri bom*, atau sendirian *Tri!* = mantap. Di luar Selatan kata ini langsung menandai penuturnya sebagai gaúcho, sama seperti *bah*.",
+    "**Tu imprimiu, tu já foi** — Fernanda lagi-lagi memakai *tu* dengan bentuk orang ketiga. Bentuk baku *tu imprimiste, tu foste* hampir tak terdengar dalam percakapan Brasil.",
+    "**Vão estar impressas** — keadaan di masa depan: *vai estar* + partisip = \"akan sudah dalam keadaan …\". *Ficaram molhadas* = jadi basah; *molhado* adalah partisip *molhar* yang dipakai sebagai kata sifat. **A via** = rangkap dokumen: *em duas vias* = dalam dua rangkap."
+   ],
+   "grammars": [
+    {
+     "title": "Partisip ganda: ter vs ser/estar/ficar",
+     "body": [
+      "Aturan dasarnya: **bentuk panjang (-ado/-ido) dengan *ter***, **bentuk pendek dengan *ser/estar/ficar***. Lisan Brasil menggeser beberapa kata ke bentuk pendek untuk semuanya."
+     ],
+     "table": {
+      "head": [
+       "Infinitif",
+       "dengan ter",
+       "dengan ser/estar/ficar",
+       "Kebiasaan Brasil"
+      ],
+      "rows": [
+       [
+        "pagar",
+        "*tinha pago*",
+        "*foi pago*",
+        "*tinha pagado* jarang, terasa kaku"
+       ],
+       [
+        "ganhar",
+        "*tinha ganho*",
+        "*foi ganho*",
+        "*ganhado* jarang"
+       ],
+       [
+        "gastar",
+        "*tinha gasto*",
+        "*foi gasto*",
+        "*tinha gastado* juga lazim"
+       ],
+       [
+        "aceitar",
+        "*tinha aceitado*",
+        "*foi aceito*",
+        "lisan juga *tinha aceito*"
+       ],
+       [
+        "entregar",
+        "*tinha entregado*",
+        "*foi entregue*",
+        "lisan sering *tinha entregue*"
+       ],
+       [
+        "imprimir",
+        "*tinha imprimido*",
+        "*foi impresso*",
+        "lisan kadang *tinha impresso*"
+       ],
+       [
+        "acender",
+        "*tinha acendido*",
+        "*está aceso*",
+        "aturan klasik dipatuhi"
+       ],
+       [
+        "limpar",
+        "*tinha limpado*",
+        "*está limpo*",
+        "lisan kadang *tinha limpo*"
+       ],
+       [
+        "prender",
+        "*tinha prendido*",
+        "*foi preso*",
+        "aturan klasik dipatuhi"
+       ]
+      ]
+     },
+     "after": [
+      "**Strategi aman untuk ujian dan tulisan:** ikuti kolom kedua dan ketiga persis. Satu-satunya pengecualian yang tak perlu kamu takutkan: *pago, ganho, gasto* boleh dengan *ter*.",
+      "⚠️ Kata kerja yang partisipnya hanya satu tetap satu: *feito, dito, escrito, visto, aberto, posto, coberto, vindo*. Jangan membuat *fazido* atau *abrido*."
+     ]
+    }
+   ]
+  }
+ ],
+ "sections": [
+  {
+   "title": "Manaus dan Zona Franca",
+   "blocks": [
+    {
+     "type": "tabel",
+     "head": [
+      "Português",
+      "Cara baca",
+      "Arti"
+     ],
+     "rows": [
+      [
+       "a Zona Franca",
+       "a ZÔ-na FRAN-ka",
+       "kawasan perdagangan bebas"
+      ],
+      [
+       "o Polo Industrial",
+       "u PÓ-lu in-dus-tri-ÁU",
+       "kawasan industri"
+      ],
+      [
+       "o incentivo fiscal",
+       "u in-sen-TCHI-vu fis-KÁU",
+       "insentif pajak"
+      ],
+      [
+       "o desembaraço aduaneiro",
+       "u de-zen-ba-RA-su a-du-a-NÊI-ru",
+       "pengurusan bea cukai"
+      ],
+      [
+       "a carga aérea",
+       "a KAH-ga a-É-re-a",
+       "kargo udara"
+      ],
+      [
+       "a nota fiscal",
+       "a NÓ-ta fis-KÁU",
+       "faktur pajak"
+      ],
+      [
+       "o fuso horário",
+       "u FU-zu o-RA-ri-u",
+       "zona waktu"
+      ],
+      [
+       "o igarapé",
+       "u i-ga-ra-PÉ",
+       "anak sungai di hutan Amazon"
+      ]
+     ]
+    },
+    {
+     "type": "p",
+     "text": "*A Zona Franca de Manaus foi criada em 1967* — dengan pasif *ser* yang baru kamu pelajari. Kawasan ini dikelola lembaga federal Suframa dan memberi insentif pajak kepada pabrik yang berdiri di sana. Hasilnya adalah Polo Industrial de Manaus, tempat dirakitnya sebagian besar sepeda motor dan banyak barang elektronik Brasil. Manaus sendiri kota besar berpenduduk sekitar dua juta orang di tengah hutan, yang hampir semua barangnya datang lewat sungai atau udara, karena jalan darat ke kota-kota besar lain sangat terbatas."
+    },
+    {
+     "type": "kotak",
+     "title": "Pasif di plang dan layar",
+     "items": [
+      "*Carga liberada* / *Mercadoria retida* — muatan dibebaskan / barang ditahan (status di sistem bea cukai).",
+      "*Pedido entregue* / *Pagamento aprovado* — status di aplikasi belanja. Perhatikan partisip pendek: *entregue*, bukan *entregado*.",
+      "*Área monitorada por câmeras* — area dipantau kamera. *Proibida a entrada de pessoas não autorizadas* — orang tak berwenang dilarang masuk.",
+      "*Esgotado* di loket = tiket habis terjual; *Reservado* di meja restoran = sudah dipesan. Keduanya partisip yang dipakai sendirian.",
+      "Plang semacam ini membuang *ser/estar* sama sekali. Jadi kalau kamu melihat kata benda + partisip tanpa kata kerja, bacalah sebagai \"sudah di-…\"."
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Rasa dan pemandangan Amazonas",
+   "blocks": [
+    {
+     "type": "tabel",
+     "head": [
+      "Português",
+      "Cara baca",
+      "Arti"
+     ],
+     "rows": [
+      [
+       "o tacacá",
+       "u ta-ka-KA",
+       "sup panas tucupi, jambu, dan udang kering"
+      ],
+      [
+       "o tucupi",
+       "u tu-ku-PI",
+       "kaldu kuning dari singkong pahit (*mandioca brava*)"
+      ],
+      [
+       "o jambu",
+       "u zhan-BU",
+       "daun yang membuat lidah kesemutan (bukan jambu buah)"
+      ],
+      [
+       "o tambaqui",
+       "u tan-ba-KI",
+       "ikan sungai besar, enak dipanggang"
+      ],
+      [
+       "o pirarucu",
+       "u pi-ra-ru-KU",
+       "ikan air tawar raksasa"
+      ],
+      [
+       "o cupuaçu",
+       "u ku-pu-a-SU",
+       "buah kerabat kakao"
+      ],
+      [
+       "o guaraná",
+       "u gua-ra-NA",
+       "buah berkafein, asal minuman soda"
+      ],
+      [
+       "o açaí",
+       "u a-sa-I",
+       "buah palem ungu"
+      ]
+     ]
+    },
+    {
+     "type": "p",
+     "text": "*O Teatro Amazonas foi inaugurado em 1896*, pada puncak masa karet, ketika Manaus termasuk kota terkaya di Brasil. Tidak jauh dari kota, di *Encontro das Águas*, Rio Negro yang gelap dan Rio Solimões yang cokelat berpasir mengalir berdampingan sejauh beberapa kilometer tanpa langsung bercampur, karena suhu, kecepatan, dan kepadatannya berbeda. Sesudah pertemuan itu, orang Brasil menyebut sungainya Rio Amazonas."
+    },
+    {
+     "type": "kotak",
+     "title": "Tips untuk kunjungan kerja ke Utara",
+     "items": [
+      "Manaus memakai *fuso horário* satu jam lebih lambat daripada Brasília dan São Paulo. Atur jam rapat daring dengan kantor sejak awal: *às dez de Brasília* = jam sembilan di Manaus.",
+      "Panas dan lembap sepanjang tahun, dan hujan deras sering datang sore hari. Kemeja tipis dan payung kecil lebih berguna daripada jas.",
+      "Di Utara, *açaí* sering dimakan tawar dengan tepung singkong, bahkan menemani ikan goreng, bukan manis dengan granola seperti di São Paulo. Jangan kaget, dan cobalah.",
+      "Tacacá dijual sore hari di kedai kaki lima dan diminum dari mangkuk labu (*cuia*). Kesemutan di lidah itu dari *jambu*, bukan alergi."
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Ulangan berjenjang — unit 15",
+   "blocks": [
+    {
+     "type": "p",
+     "text": "Tutup kolom Portugis Brasil, baca terjemahan Indonesianya, lalu susun kembali kalimatnya dari ingatan."
+    },
+    {
+     "type": "tabel",
+     "head": [
+      "Bahasa Indonesia",
+      "Português"
+     ],
+     "rows": [
+      [
+       "Aduh… Pergelangan tanganku sakit. Kayaknya keseleo.",
+       "*Ai… Tô com dor no pulso. Acho que torci.*"
+      ],
+      [
+       "Sedikit, tapi sakit banget. Terus tiba-tiba aku pusing.",
+       "*Um pouco, mas dói muito. E me deu uma tontura agora.*"
+      ],
+      [
+       "Aku jadi malu jatuh di depan semua orang.",
+       "*Fiquei com vergonha de cair na frente de todo mundo.*"
+      ],
+      [
+       "Saya demam sejak kemarin dan tenggorokan sakit sekali.",
+       "*Tô com febre desde ontem e com muita dor de garganta.*"
+      ],
+      [
+       "Aduh, Budi, sekarang aku kedinginan. Pinjam jaketmu?",
+       "*Ai, Budi, tô com frio agora. Me dá seu casaco?*"
+      ]
+     ]
+    }
+   ]
+  }
+ ],
+ "vocab": [
+  {
+   "pt": "liberar",
+   "baca": "li-be-RAH",
+   "id": "membebaskan; mengizinkan keluar"
+  },
+  {
+   "pt": "reter / retido",
+   "baca": "he-TÊH / he-TCHI-du",
+   "id": "menahan / tertahan"
+  },
+  {
+   "pt": "embalar",
+   "baca": "en-ba-LAH",
+   "id": "membungkus; mengemas"
+  },
+  {
+   "pt": "montar / desmontar",
+   "baca": "mon-TAH / dis-mon-TAH",
+   "id": "merakit / membongkar"
+  },
+  {
+   "pt": "aprovar",
+   "baca": "a-pro-VAH",
+   "id": "menyetujui"
+  },
+  {
+   "pt": "aceito",
+   "baca": "a-SÊI-tu",
+   "id": "diterima (partisip aceitar)"
+  },
+  {
+   "pt": "entregue",
+   "baca": "en-TRÉ-gi",
+   "id": "terkirim (partisip entregar)"
+  },
+  {
+   "pt": "pago",
+   "baca": "PA-gu",
+   "id": "dibayar (partisip pagar)"
+  },
+  {
+   "pt": "impresso",
+   "baca": "in-PRÉ-su",
+   "id": "tercetak (partisip imprimir)"
+  },
+  {
+   "pt": "imprimir",
+   "baca": "in-pri-MIH",
+   "id": "mencetak"
+  },
+  {
+   "pt": "molhado",
+   "baca": "mo-LYA-du",
+   "id": "basah"
+  },
+  {
+   "pt": "a amostra",
+   "baca": "a a-MÓS-tra",
+   "id": "sampel; contoh barang"
+  },
+  {
+   "pt": "o armazém",
+   "baca": "u ah-ma-ZÉIN",
+   "id": "gudang"
+  },
+  {
+   "pt": "a Receita Federal",
+   "baca": "a he-SÊI-ta fe-de-RÁU",
+   "id": "otoritas pajak & bea cukai"
+  },
+  {
+   "pt": "a fatura",
+   "baca": "a fa-TU-ra",
+   "id": "faktur; tagihan"
+  },
+  {
+   "pt": "o recibo",
+   "baca": "u he-SI-bu",
+   "id": "kuitansi"
+  },
+  {
+   "pt": "a via",
+   "baca": "a VI-a",
+   "id": "rangkap dokumen"
+  },
+  {
+   "pt": "o marceneiro",
+   "baca": "u mah-se-NÊI-ru",
+   "id": "tukang kayu mebel"
+  },
+  {
+   "pt": "o sócio / a sócia",
+   "baca": "u SÓ-si-u / a SÓ-si-a",
+   "id": "mitra usaha"
+  },
+  {
+   "pt": "o distribuidor",
+   "baca": "u djis-tri-bui-DÔH",
+   "id": "distributor"
+  },
+  {
+   "pt": "a teca",
+   "baca": "a TÉ-ka",
+   "id": "kayu jati"
+  },
+  {
+   "pt": "o cravo-da-índia",
+   "baca": "u KRA-vu da IN-dji-a",
+   "id": "cengkih"
+  },
+  {
+   "pt": "a noz-moscada",
+   "baca": "a NÓS mos-KA-da",
+   "id": "pala"
+  },
+  {
+   "pt": "o voo",
+   "baca": "u VÔ-u",
+   "id": "penerbangan"
+  }
+ ],
+ "exercises": [
+  {
+   "prompt": "Terjemahkan ke bahasa Portugis. Pilih ser, estar, atau ficar dengan cermat.",
+   "items": [
+    "Sampelnya sudah dibebaskan oleh bea cukai.",
+    "Tokonya sedang tutup.",
+    "Kontraknya ditandatangani kemarin oleh direktur.",
+    "Satu kotak tertahan dua hari.",
+    "Waktu itu saya sudah membayar hotelnya.",
+    "Proposalnya sedang dipelajari."
+   ]
+  },
+  {
+   "prompt": "Isi dengan partisip yang tepat. Petunjuk ada di dalam kurung.",
+   "items": [
+    "A agência já tinha ____ o hotel. (pagar)",
+    "O pedido foi ____ ontem à tarde. (entregar)",
+    "Eu tinha ____ o contrato, mas perdi as folhas. (imprimir, bentuk tulis)",
+    "As cópias já estão ____ na recepção. (imprimir)",
+    "A proposta foi ____ pelo cliente. (aceitar)",
+    "Ela tinha ____ o convite, mas depois desistiu. (aceitar, bentuk tulis)",
+    "A luz da sala ficou ____ a noite toda. (acender)"
+   ]
+  },
+  {
+   "prompt": "Ubah menjadi pasif dengan ser + partisip. Pertahankan kalanya dan sebutkan pelakunya dengan por.",
+   "items": [
+    "O marceneiro montou a mesa.",
+    "A Receita liberou as amostras.",
+    "A Fernanda enviou os documentos.",
+    "O diretor vai assinar o contrato.",
+    "Os clientes aceitaram a proposta.",
+    "O hotel imprime as vias."
+   ]
+  },
+  {
+   "prompt": "Susun jadi kalimat yang benar.",
+   "items": [
+    "foram / as / liberadas / amostras / já",
+    "embaladas / cadeiras / as / estão",
+    "tinha / agência / pago / a / hotel / o",
+    "ficou / caixa / retida / uma",
+    "sendo / proposta / está / a / analisada"
+   ]
+  }
+ ],
+ "answers": [
+  "As amostras já foram liberadas pela Receita. — A loja está fechada. — O contrato foi assinado ontem pelo diretor. — Uma caixa ficou retida dois dias. — Eu já tinha pago o hotel. — A proposta está sendo analisada.",
+  "pago — entregue — imprimido — impressas — aceita — aceitado — acesa",
+  "A mesa foi montada pelo marceneiro. — As amostras foram liberadas pela Receita. — Os documentos foram enviados pela Fernanda. — O contrato vai ser assinado pelo diretor. — A proposta foi aceita pelos clientes. — As vias são impressas pelo hotel.",
+  "As amostras já foram liberadas. — As cadeiras estão embaladas. — A agência tinha pago o hotel. — Uma caixa ficou retida. — A proposta está sendo analisada."
+ ]
+}
