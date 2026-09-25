@@ -1199,8 +1199,14 @@ function MissingRenderer({ question, initialValue, onSubmit }: {
   initialValue: string | number | boolean | null;
   onSubmit: (v: string | number | boolean, isCorrect?: boolean) => void;
 }) {
+  // Template Arab/Ibrani dst: terjemahan Indonesia "(…)" di ujung dipisah ke baris
+  // sendiri — kalau ikut paragraf RTL, kurung & titiknya teracak.
+  const rtl = hasRtl(question.template);
+  const tr = rtl ? question.template.match(/^([\s\S]*?)\s*(\([^()]*\))\s*$/) : null;
+  const body = tr && !hasRtl(tr[2]) ? tr[1] : question.template;
+  const translation = tr && !hasRtl(tr[2]) ? tr[2] : null;
   // Parse template: split by "___" to get parts; blanks are between parts
-  const parts = question.template.split("___");
+  const parts = body.split("___");
   // parts[i] is text, blanks[i] is between parts[i] and parts[i+1]
   const numBlanks = question.blanks.length;
 
@@ -1230,6 +1236,13 @@ function MissingRenderer({ question, initialValue, onSubmit }: {
   };
 
   const allFilled = filled.every((v) => v !== null);
+  // Blank ke-b diisi opsi indeks berapa — dipakai layoutId supaya kata "terbang"
+  // dari bank ke blank dan balik lagi [placement-missing-anim-v1].
+  const slotOpt: (number | null)[] = [];
+  for (const v of filled) {
+    const idx = v === null ? -1 : question.options.findIndex((o, i) => o === v && usedOptions.includes(i) && !slotOpt.includes(i));
+    slotOpt.push(idx === -1 ? null : idx);
+  }
   const handleCheck = () => {
     if (!allFilled) return;
     const isCorrect = filled.every((v, i) => v === question.blanks[i]);
@@ -1240,45 +1253,65 @@ function MissingRenderer({ question, initialValue, onSubmit }: {
     <div className="space-y-4">
       {/* Template dengan inline blanks */}
       <div className="p-5 bg-slate-50 rounded-2xl border-2 border-slate-200">
-        <p dir={hasRtl(question.template) ? "rtl" : undefined} className="text-base md:text-lg text-slate-900 leading-loose">
+        <p dir={rtl ? "rtl" : undefined} className="text-base md:text-lg text-slate-900 leading-loose">
           {parts.map((part, i) => (
             <span key={i}>
               {part}
               {i < numBlanks && (
-                <button
-                  onClick={() => clearBlank(i)}
-                  disabled={!filled[i]}
-                  className={"inline-block mx-1 px-3 py-1 rounded-lg border-2 text-sm font-bold align-middle min-w-[80px] " +
-                    (filled[i]
-                      ? "bg-white border-[#1A9E9E] text-[#1A9E9E] hover:bg-[#1A9E9E]/5 cursor-pointer"
-                      : "bg-white border-dashed border-slate-400 text-slate-300")}
-                >
-                  {filled[i] || "___"}
-                </button>
+                filled[i] && slotOpt[i] !== null ? (
+                  <motion.button
+                    layoutId={`${question.id}-opt-${slotOpt[i]}`}
+                    transition={TOKEN_SPRING}
+                    onClick={() => clearBlank(i)}
+                    className="inline-block mx-1 px-3 py-1 rounded-lg border-2 text-sm font-bold align-middle min-w-[80px] bg-white border-[#1A9E9E] text-[#1A9E9E] hover:bg-[#1A9E9E]/5 cursor-pointer"
+                  >
+                    {filled[i]}
+                  </motion.button>
+                ) : (
+                  <button
+                    onClick={() => clearBlank(i)}
+                    disabled={!filled[i]}
+                    className={"inline-block mx-1 px-3 py-1 rounded-lg border-2 text-sm font-bold align-middle min-w-[80px] " +
+                      (filled[i]
+                        ? "bg-white border-[#1A9E9E] text-[#1A9E9E] hover:bg-[#1A9E9E]/5 cursor-pointer"
+                        : "bg-white border-dashed border-slate-400 text-slate-300")}
+                  >
+                    {filled[i] || "___"}
+                  </button>
+                )
               )}
             </span>
           ))}
         </p>
+        {translation && (
+          <p className="mt-2 text-sm text-slate-500 italic">{translation}</p>
+        )}
       </div>
 
       {/* Word bank */}
-      <div className="flex flex-wrap gap-2">
+      <div dir={rtl ? "rtl" : undefined} className="flex flex-wrap gap-2">
         {question.options.map((opt, i) => {
           const used = usedOptions.includes(i);
-          return (
-            <button
+          // Opsi terpakai "terbang" ke blank; di bank tinggal cetakan kosong seukuran.
+          return used ? (
+            <span key={i} aria-hidden
+              className="px-3 py-2 rounded-lg border-2 border-dashed border-slate-200 bg-slate-50 text-sm font-medium text-transparent select-none">
+              {opt}
+            </span>
+          ) : (
+            <motion.button
               key={i}
+              layoutId={`${question.id}-opt-${i}`}
+              transition={TOKEN_SPRING}
               onClick={() => pickOption(i)}
-              disabled={used || allFilled}
-              className={"px-3 py-2 rounded-lg border-2 text-sm font-medium transition-all " +
-                (used
-                  ? "bg-slate-100 border-slate-200 text-slate-300 cursor-not-allowed"
-                  : allFilled
-                    ? "bg-white border-slate-200 text-slate-400 cursor-not-allowed"
-                    : "bg-white border-slate-300 text-slate-900 hover:border-[#1A9E9E] active:scale-95")}
+              disabled={allFilled}
+              className={"px-3 py-2 rounded-lg border-2 text-sm font-medium " +
+                (allFilled
+                  ? "bg-white border-slate-200 text-slate-400 cursor-not-allowed"
+                  : "bg-white border-slate-300 text-slate-900 hover:border-[#1A9E9E] active:scale-95")}
             >
               {opt}
-            </button>
+            </motion.button>
           );
         })}
       </div>
