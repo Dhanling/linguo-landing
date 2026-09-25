@@ -1,6 +1,8 @@
 // ─────────────────────────────────────────────────────────────────────────────
-// RUSSIAN (Русский) PLACEMENT TEST — 18 soal, mixed types
-// Distribusi: A1×4 · A2×5 · B1×5 · B2×4 (max 45)
+// RUSSIAN (Русский) PLACEMENT TEST — 23 soal, mixed types (5 di antaranya listening)
+// Distribusi: A1×5 · A2×6 · B1×7 · B2×5 (max 45)
+// [placement-listening-v1] Soal ber-`audio` dibunyikan Chirp (lang "ru") lewat /api/tts;
+// transkrip sengaja cuma ada di `audio.text` + pembahasan, tidak di layar soal.
 // ─────────────────────────────────────────────────────────────────────────────
 import type { Question } from "./english";
 
@@ -41,6 +43,17 @@ export const russianPlacementTest: Question[] = [
     explanation: "'Я пью кофе'. Verba 'пить' (minum) untuk 'я' → 'пью'.",
   },
 
+  // [placement-listening-v1] Listening A1 — melengkapi (pasangan mirip студентка/студент)
+  {
+    id: "l1", difficulty: "A1", type: "fillChoice",
+    audio: { lang: "ru", text: "Здравствуйте! Меня зовут Анна. Я студентка, я учусь в университете." },
+    question: "Dengarkan audio, lalu lengkapi: 'Я ___, я учусь в университете.'",
+    context: "Pilih kata yang kamu dengar.",
+    options: ["студентка", "студент", "студенты", "учительница"],
+    correct: "студентка",
+    explanation: "Transkrip: 'Здравствуйте! Меня зовут Анна. Я студентка, я учусь в университете.' (Halo! Nama saya Anna. Saya mahasiswi, saya kuliah di universitas.) Awas pasangan mirip: 'студентка' = mahasiswi (perempuan), 'студент' = mahasiswa (laki-laki) — bedanya cuma akhiran '-ка'. 'студенты' = para mahasiswa (jamak), 'учительница' = guru perempuan.",
+  },
+
   // ═══════════════════════ A2 ═══════════════════════
   {
     id: "ru5", difficulty: "A2", type: "multiple",
@@ -79,6 +92,21 @@ export const russianPlacementTest: Question[] = [
     options: ["надо", "можно", "нельзя", "будешь"],
     correct: 0,
     explanation: "'надо' + infinitif = perlu/harus (saran). 'Тебе надо пойти к врачу'.",
+  },
+
+  // [placement-listening-v1] Listening A2 — detail informasi (jam + kendaraan)
+  {
+    id: "l2", difficulty: "A2", type: "multiple",
+    audio: { lang: "ru", text: "Обычно я встаю в семь часов, завтракаю, а в восемь тридцать еду на работу на метро, потому что на автобусе очень долго." },
+    question: "Dengarkan audio. Jam berapa dia berangkat kerja, dan naik apa?",
+    options: [
+      "Jam 07.00, naik metro",
+      "Jam 08.30, naik metro",
+      "Jam 08.30, naik bus",
+      "Jam 07.30, naik taksi",
+    ],
+    correct: 1,
+    explanation: "Transkrip: 'Обычно я встаю в семь часов, завтракаю, а в восемь тридцать еду на работу на метро, потому что на автобусе очень долго.' (Biasanya saya bangun jam tujuh, sarapan, lalu jam delapan tiga puluh berangkat kerja naik metro, karena naik bus lama sekali.) Jam 07.00 = waktu BANGUN ('встаю'), bukan berangkat. Bus ('автобус') juga disebut, tapi justru dihindari karena lama. 'в восемь тридцать' = 08.30, 'на метро' = naik metro.",
   },
 
   // ═══════════════════════ B1 ═══════════════════════
@@ -125,6 +153,31 @@ export const russianPlacementTest: Question[] = [
     explanation: "Objek langsung mask. bernyawa → akusatif = genitif 'которого'. 'человек, которого я видел'.",
   },
 
+  // [placement-listening-v1] Listening B1 — menerjemahkan (pengandaian если бы … бы)
+  {
+    id: "l3", difficulty: "B1", type: "multiple",
+    audio: { lang: "ru", text: "Если бы ты мне позвонил, я бы встретил тебя на вокзале." },
+    question: "Dengarkan audio. Pilih terjemahan yang paling tepat:",
+    options: [
+      "Kalau saja kamu meneleponku, aku pasti sudah menjemputmu di stasiun.",
+      "Kamu meneleponku, jadi aku menjemputmu di stasiun.",
+      "Kalau kamu meneleponku, aku akan menjemputmu di stasiun.",
+      "Aku meneleponmu, tapi kamu tidak datang ke stasiun.",
+    ],
+    correct: 0,
+    explanation: "Transkrip: 'Если бы ты мне позвонил, я бы встретил тебя на вокзале.' Pola 'если бы + lampau …, бы + lampau' = pengandaian yang TIDAK terjadi (nyatanya dia tidak menelepon, jadi tidak dijemput). Opsi 'kalau kamu meneleponku, aku akan menjemputmu' dalam bahasa Rusia tanpa 'бы': 'Если ты мне позвонишь, я тебя встречу' — pengandaian yang masih mungkin. 'встретить' di sini = menjemput/menyambut, 'вокзал' = stasiun.",
+  },
+  // [placement-listening-v1] Listening B1 — dikte 2 kata (pengecoh bunyi mirip)
+  {
+    id: "l4", difficulty: "B1", type: "missing",
+    audio: { lang: "ru", text: "К сожалению, наш поезд задержался из-за сильного снегопада, поэтому мы приехали в Москву только поздно ночью." },
+    question: "Dengarkan audio, lalu isi dua kata yang hilang:",
+    template: "К сожалению, наш ___ задержался из-за сильного ___, поэтому мы приехали в Москву только поздно ночью.",
+    blanks: ["поезд", "снегопада"],
+    options: ["подъезд", "снегопада", "поездка", "поезд", "водопада", "листопада"],
+    explanation: "Transkrip: 'К сожалению, наш поезд задержался из-за сильного снегопада, поэтому мы приехали в Москву только поздно ночью.' (Sayangnya kereta kami terlambat karena hujan salju lebat, jadi kami baru tiba di Moskow larut malam.) 'поезд' = kereta; 'подъезд' = pintu masuk gedung/apartemen dan 'поездка' = perjalanan — bunyinya mirip. 'снегопада' = hujan salju (genitif setelah 'из-за'); 'водопада' = air terjun, 'листопада' = musim gugur daun — mirip bunyi, tapi tidak cocok maknanya.",
+  },
+
   // ═══════════════════════ B2 ═══════════════════════
   {
     id: "ru15", difficulty: "B2", type: "multiple",
@@ -165,5 +218,19 @@ export const russianPlacementTest: Question[] = [
     ],
     correct: 1,
     explanation: "Nominalisasi: verba 'решить' → nomina 'решение'. Ciri gaya tulisan formal.",
+  },
+  // [placement-listening-v1] Listening B2 — HOTS: menyimpulkan maksud berita
+  {
+    id: "l5", difficulty: "B2", type: "multiple",
+    audio: { lang: "ru", text: "Городские власти сообщили, что в этом году число туристов выросло почти на треть. Тем не менее с первого января въезд в исторический центр на личных автомобилях будет запрещён." },
+    question: "Dengarkan potongan berita ini. Kesimpulan yang PALING masuk akal adalah:",
+    options: [
+      "Kota melarang mobil masuk pusat kota karena jumlah turis menurun.",
+      "Larangan mobil pribadi adalah kebijakan yang disengaja meski pariwisata sedang naik, bukan karena kota kehilangan pengunjung.",
+      "Jumlah turis tahun ini turun sepertiga.",
+      "Mulai 1 Januari, pusat kota bersejarah ditutup untuk semua turis.",
+    ],
+    correct: 1,
+    explanation: "Transkrip: 'Городские власти сообщили, что в этом году число туристов выросло почти на треть. Тем не менее с первого января въезд в исторический центр на личных автомобилях будет запрещён.' (Pemerintah kota mengumumkan bahwa tahun ini jumlah wisatawan naik hampir sepertiga. Meskipun demikian, mulai 1 Januari kendaraan pribadi dilarang masuk ke pusat kota bersejarah.) Kuncinya 'Тем не менее' = meskipun demikian: turis NAIK tapi mobil tetap dilarang → itu kebijakan yang disengaja, bukan akibat sepi pengunjung. 'выросло' = naik (bukan turun), 'на треть' = sepertiga. Yang dilarang hanya 'въезд … на личных автомобилях' (masuk dengan mobil pribadi), bukan kunjungan turis.",
   },
 ];

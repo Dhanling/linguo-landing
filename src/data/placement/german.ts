@@ -1,6 +1,8 @@
 // ─────────────────────────────────────────────────────────────────────────────
-// GERMAN (Deutsch) PLACEMENT TEST — 18 soal, mixed types
-// Distribusi poin sama dgn English: A1×4 · A2×5 · B1×5 · B2×4 (max 45)
+// GERMAN (Deutsch) PLACEMENT TEST — 23 soal, mixed types (5 di antaranya listening)
+// A1: 5 soal · A2: 6 soal · B1: 7 soal · B2: 5 soal (skor dinormalisasi ke skala 45)
+// [placement-listening-v1] Soal ber-`audio` dibunyikan Chirp de-DE lewat /api/tts;
+// transkrip sengaja cuma ada di `audio.text` + pembahasan, tidak di layar soal.
 // ─────────────────────────────────────────────────────────────────────────────
 import type { Question } from "./english";
 
@@ -41,6 +43,17 @@ export const germanPlacementTest: Question[] = [
     explanation: "Struktur dasar: Subjek + verba (posisi ke-2) + sisanya. 'Ich heiße Anna.'",
   },
 
+  // [placement-listening-v1] Listening A1 — melengkapi (pasangan mirip Küche/Kirche/Kuchen)
+  {
+    id: "l1", difficulty: "A1", type: "fillChoice",
+    audio: { lang: "de", text: "Hallo! Ich heiße Lena und ich wohne in Hamburg. Am Abend koche ich gern in der Küche." },
+    question: "Dengarkan audio, lalu lengkapi: 'Am Abend koche ich gern in der ___.'",
+    context: "Pilih kata yang kamu dengar.",
+    options: ["Kirche", "Küche", "Kuchen", "Kiste"],
+    correct: "Küche",
+    explanation: "Transkrip: 'Hallo! Ich heiße Lena und ich wohne in Hamburg. Am Abend koche ich gern in der Küche.' (Halo! Nama saya Lena dan saya tinggal di Hamburg. Malam hari saya suka memasak di dapur.) 'die Küche' = dapur (bunyi ü, 'ch' lembut). Awas yang mirip: 'die Kirche' = gereja (ada bunyi r), 'der Kuchen' = kue (bunyi u, bukan ü), 'die Kiste' = peti.",
+  },
+
   // ═══════════════════════ A2 ═══════════════════════
   {
     id: "de5", difficulty: "A2", type: "multiple",
@@ -79,6 +92,21 @@ export const germanPlacementTest: Question[] = [
     options: ["musst", "kannst", "solltest", "willst"],
     correct: 2,
     explanation: "'solltest' (dari sollen) dipakai untuk memberi saran, mirip 'should' di Inggris.",
+  },
+
+  // [placement-listening-v1] Listening A2 — detail informasi (jam + kendaraan)
+  {
+    id: "l2", difficulty: "A2", type: "multiple",
+    audio: { lang: "de", text: "Ich stehe jeden Tag um sechs Uhr auf. Dann frühstücke ich und um halb acht fahre ich mit der U-Bahn zur Arbeit." },
+    question: "Dengarkan audio. Jam berapa dia berangkat kerja, dan naik apa?",
+    options: [
+      "Jam 06.00, naik kereta bawah tanah",
+      "Jam 07.30, naik kereta bawah tanah",
+      "Jam 08.30, naik kereta bawah tanah",
+      "Jam 07.30, naik bus",
+    ],
+    correct: 1,
+    explanation: "Transkrip: 'Ich stehe jeden Tag um sechs Uhr auf. Dann frühstücke ich und um halb acht fahre ich mit der U-Bahn zur Arbeit.' (Saya bangun tiap hari jam enam. Lalu saya sarapan dan jam setengah delapan saya naik U-Bahn ke tempat kerja.) 'halb acht' = setengah MENUJU delapan = 07.30, bukan 08.30. Jam 06.00 = waktu BANGUN (pengecoh). 'die U-Bahn' = kereta bawah tanah, bukan bus.",
   },
 
   // ═══════════════════════ B1 ═══════════════════════
@@ -125,6 +153,31 @@ export const germanPlacementTest: Question[] = [
     explanation: "Antecedent maskulin sebagai objek langsung (Akusatif) → 'den'. ('der' = subjek, 'dem' = Dativ.)",
   },
 
+  // [placement-listening-v1] Listening B1 — menerjemahkan (nachdem + Plusquamperfekt)
+  {
+    id: "l3", difficulty: "B1", type: "multiple",
+    audio: { lang: "de", text: "Nachdem ich die Prüfung bestanden hatte, habe ich mit meinen Freunden gefeiert." },
+    question: "Dengarkan audio. Pilih terjemahan yang paling tepat:",
+    options: [
+      "Sebelum ujian, saya berpesta dulu dengan teman-teman.",
+      "Saya akan merayakan bersama teman-teman kalau lulus ujian.",
+      "Setelah saya lulus ujian, saya merayakannya bersama teman-teman.",
+      "Karena tidak lulus ujian, saya tidak ikut pesta teman-teman.",
+    ],
+    correct: 2,
+    explanation: "Transkrip: 'Nachdem ich die Prüfung bestanden hatte, habe ich mit meinen Freunden gefeiert.' Pola 'nachdem + Plusquamperfekt (hatte … bestanden)' = SETELAH suatu kejadian selesai, lalu kejadian berikutnya (Perfekt 'habe … gefeiert'). 'bestehen/bestanden' = lulus ujian. 'Sebelum' = 'bevor', dan opsi 'akan … kalau' butuh 'wenn' + bentuk kini/akan datang — keduanya tidak ada di audio.",
+  },
+  // [placement-listening-v1] Listening B1 — dikte 2 kata (pengecoh bunyi mirip)
+  {
+    id: "l4", difficulty: "B1", type: "missing",
+    audio: { lang: "de", text: "Ich freue mich schon auf den Urlaub, weil wir dieses Jahr endlich ans Meer fahren." },
+    question: "Dengarkan audio, lalu isi dua kata yang hilang:",
+    template: "Ich freue mich schon ___ den Urlaub, weil wir dieses Jahr endlich ans ___ fahren.",
+    blanks: ["auf", "Meer"],
+    options: ["über", "Meer", "aus", "mehr", "auf", "Mehl"],
+    explanation: "Transkrip: 'Ich freue mich schon auf den Urlaub, weil wir dieses Jahr endlich ans Meer fahren.' (Saya sudah tidak sabar menanti liburan, karena tahun ini kami akhirnya pergi ke laut.) 'sich freuen AUF' = menantikan sesuatu yang AKAN datang; 'sich freuen über' = senang atas sesuatu yang sudah terjadi. 'das Meer' = laut (kata benda, huruf besar, 'ans' = an das) — bunyinya sama dengan 'mehr' (lebih) tapi 'mehr' bukan kata benda; 'Mehl' = tepung.",
+  },
+
   // ═══════════════════════ B2 ═══════════════════════
   {
     id: "de15", difficulty: "B2", type: "multiple",
@@ -165,5 +218,19 @@ export const germanPlacementTest: Question[] = [
     ],
     correct: 1,
     explanation: "Nominalisasi: verba 'entscheiden' → nomina 'Entscheidung'. Ciri khas gaya tulisan akademis/formal.",
+  },
+  // [placement-listening-v1] Listening B2 — HOTS: menyimpulkan maksud pengumuman
+  {
+    id: "l5", difficulty: "B2", type: "multiple",
+    audio: { lang: "de", text: "Seit Januar ist der Eintritt in alle städtischen Museen kostenlos. Die Besucherzahlen sind jedoch kaum gestiegen. Die Stadt will deshalb nun mehr in Werbung und in Angebote für Schulen investieren." },
+    question: "Dengarkan potongan berita ini. Kesimpulan yang PALING masuk akal adalah:",
+    options: [
+      "Karena museum digratiskan, jumlah pengunjung melonjak tajam.",
+      "Program gagal, jadi kota akan memberlakukan lagi tiket masuk museum.",
+      "Tiket gratis saja belum cukup menarik pengunjung; kota menilai masalahnya ada pada promosi dan program, bukan harga.",
+      "Museum-museum kota ditutup sementara sejak Januari.",
+    ],
+    correct: 2,
+    explanation: "Transkrip: 'Seit Januar ist der Eintritt in alle städtischen Museen kostenlos. Die Besucherzahlen sind jedoch kaum gestiegen. Die Stadt will deshalb nun mehr in Werbung und in Angebote für Schulen investieren.' (Sejak Januar masuk ke semua museum kota gratis. Namun jumlah pengunjung hampir tidak naik. Karena itu kota kini ingin berinvestasi lebih banyak pada iklan dan program untuk sekolah.) Kuncinya 'jedoch' (namun) + 'kaum' (hampir tidak): gratis TIDAK membuat pengunjung melonjak, dan solusinya 'Werbung' (promosi) + program sekolah — bukan memungut tiket lagi (tidak disebut di audio).",
   },
 ];

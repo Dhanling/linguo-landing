@@ -1,6 +1,8 @@
 // ─────────────────────────────────────────────────────────────────────────────
-// FRENCH (Français) PLACEMENT TEST — 18 soal, mixed types
-// Distribusi: A1×4 · A2×5 · B1×5 · B2×4 (max 45)
+// FRENCH (Français) PLACEMENT TEST — 23 soal, mixed types (5 di antaranya listening)
+// Distribusi: A1×5 · A2×6 · B1×7 · B2×5 (skor dinormalisasi ke skala 45)
+// [placement-listening-v1] Soal ber-`audio` dibunyikan Chirp fr lewat /api/tts;
+// transkrip sengaja cuma ada di `audio.text` + pembahasan, tidak di layar soal.
 // ─────────────────────────────────────────────────────────────────────────────
 import type { Question } from "./english";
 
@@ -41,6 +43,17 @@ export const frenchPlacementTest: Question[] = [
     explanation: "'J'aime le café'. Verba 'aimer' + artikel tentu 'le' untuk menyatakan suka secara umum.",
   },
 
+  // [placement-listening-v1] Listening A1 — melengkapi (pasangan minimal deux/des)
+  {
+    id: "l1", difficulty: "A1", type: "fillChoice",
+    audio: { lang: "fr", text: "Bonjour ! Je m'appelle Julie. J'habite à Lyon et j'ai deux chats." },
+    question: "Dengarkan audio, lalu lengkapi: 'J'ai ___ chats.'",
+    context: "Pilih kata yang kamu dengar.",
+    options: ["des", "deux", "douze", "trois"],
+    correct: "deux",
+    explanation: "Transkrip: 'Bonjour ! Je m'appelle Julie. J'habite à Lyon et j'ai deux chats.' (Halo! Nama saya Julie. Saya tinggal di Lyon dan punya dua ekor kucing.) Awas pasangan mirip: 'deux' [dø] = dua, 'des' [de] = beberapa (artikel jamak) — bedanya cuma bunyi vokal 'eu' vs 'é'. 'douze' = dua belas, 'trois' = tiga.",
+  },
+
   // ═══════════════════════ A2 ═══════════════════════
   {
     id: "fr5", difficulty: "A2", type: "multiple",
@@ -79,6 +92,21 @@ export const frenchPlacementTest: Question[] = [
     options: ["dois", "devrais", "peux", "veux"],
     correct: 1,
     explanation: "'devrais' (conditionnel dari devoir) menyatakan saran, mirip 'should'.",
+  },
+
+  // [placement-listening-v1] Listening A2 — detail informasi (jam + nomor jalur)
+  {
+    id: "l2", difficulty: "A2", type: "multiple",
+    audio: { lang: "fr", text: "Mesdames et messieurs, le train pour Marseille part à dix heures quinze, voie numéro trois. Attention, le train de neuf heures est annulé." },
+    question: "Dengarkan pengumuman. Jam berapa kereta ke Marseille berangkat, dan dari jalur berapa?",
+    options: [
+      "Jam 09.00, jalur 3",
+      "Jam 10.50, jalur 3",
+      "Jam 10.15, jalur 3",
+      "Jam 10.15, jalur 13",
+    ],
+    correct: 2,
+    explanation: "Transkrip: 'Mesdames et messieurs, le train pour Marseille part à dix heures quinze, voie numéro trois. Attention, le train de neuf heures est annulé.' (Bapak-bapak dan ibu-ibu, kereta ke Marseille berangkat pukul 10.15, jalur nomor 3. Perhatian, kereta pukul 09.00 dibatalkan.) 'dix heures quinze' = 10.15 — jangan tertukar 'quinze' (15) dengan 'cinquante' (50). Jam 09.00 adalah kereta yang DIBATALKAN (pengecoh), dan 'trois' = 3, bukan 'treize' (13).",
   },
 
   // ═══════════════════════ B1 ═══════════════════════
@@ -125,6 +153,31 @@ export const frenchPlacementTest: Question[] = [
     explanation: "Setelah 'il faut que' pakai subjonctif. 'être' → que tu sois.",
   },
 
+  // [placement-listening-v1] Listening B1 — menerjemahkan (plus-que-parfait)
+  {
+    id: "l3", difficulty: "B1", type: "multiple",
+    audio: { lang: "fr", text: "Quand je suis arrivé à la gare, le train était déjà parti." },
+    question: "Dengarkan audio. Pilih terjemahan yang paling tepat:",
+    options: [
+      "Ketika saya tiba di stasiun, keretanya baru akan berangkat.",
+      "Ketika saya tiba di stasiun, keretanya sudah berangkat.",
+      "Saya tiba di stasiun tepat saat keretanya berangkat.",
+      "Ketika keretanya berangkat, saya sudah tiba di stasiun.",
+    ],
+    correct: 1,
+    explanation: "Transkrip: 'Quand je suis arrivé à la gare, le train était déjà parti.' Pola plus-que-parfait 'était parti' (imparfait être + participe passé) = kejadian yang SUDAH selesai sebelum kejadian lampau lain ('je suis arrivé'). Jadi kereta berangkat lebih dulu, baru saya tiba. Opsi 'baru akan berangkat' butuh 'allait partir', 'tepat saat' butuh 'au moment où le train partait', dan opsi terakhir membalik urutan kejadiannya.",
+  },
+  // [placement-listening-v1] Listening B1 — dikte 2 kata (pengecoh bunyi mirip/homofon)
+  {
+    id: "l4", difficulty: "B1", type: "missing",
+    audio: { lang: "fr", text: "Ils ont décidé de partir en vacances au mois d'août, mais ils n'ont pas encore réservé l'hôtel." },
+    question: "Dengarkan audio, lalu isi dua kata yang hilang:",
+    template: "Ils ___ décidé de partir en vacances au mois d'août, mais ils n'ont pas encore ___ l'hôtel.",
+    blanks: ["ont", "réservé"],
+    options: ["sont", "réserver", "ont", "réservez", "on", "réservé"],
+    explanation: "Transkrip: 'Ils ont décidé de partir en vacances au mois d'août, mais ils n'ont pas encore réservé l'hôtel.' (Mereka sudah memutuskan berlibur pada bulan Agustus, tapi mereka belum memesan hotelnya.) 'ils ont' dibaca [il-zɔ̃] (liaison bunyi z), sedangkan 'ils sont' [il-sɔ̃] (bunyi s) — lagi pula 'décider' memakai auxiliary avoir. 'réservé', 'réserver', dan 'réservez' bunyinya sama persis; setelah 'n'ont pas encore' (passé composé) wajib participe passé 'réservé'.",
+  },
+
   // ═══════════════════════ B2 ═══════════════════════
   {
     id: "fr15", difficulty: "B2", type: "multiple",
@@ -165,5 +218,20 @@ export const frenchPlacementTest: Question[] = [
     ],
     correct: 1,
     explanation: "Nominalisasi: verba 'décider' → nomina 'décision'. Ciri gaya tulisan formal/akademis.",
+  },
+
+  // [placement-listening-v1] Listening B2 — HOTS: menyimpulkan maksud pengumuman
+  {
+    id: "l5", difficulty: "B2", type: "multiple",
+    audio: { lang: "fr", text: "La mairie annonce que la piscine municipale restera ouverte tout l'été. Cependant, à cause des travaux, le grand bassin sera fermé jusqu'à fin juillet, et le petit bassin sera réservé aux enfants." },
+    question: "Dengarkan pengumuman ini. Kesimpulan yang PALING masuk akal adalah:",
+    options: [
+      "Kolam renang kota ditutup total sampai akhir Juli.",
+      "Anak-anak dilarang berenang selama musim panas karena ada renovasi.",
+      "Renovasi sudah selesai, jadi semua orang bisa berenang sepanjang musim panas.",
+      "Kolamnya tetap buka, tapi sampai akhir Juli orang dewasa praktis belum bisa berenang di sana.",
+    ],
+    correct: 3,
+    explanation: "Transkrip: 'La mairie annonce que la piscine municipale restera ouverte tout l'été. Cependant, à cause des travaux, le grand bassin sera fermé jusqu'à fin juillet, et le petit bassin sera réservé aux enfants.' (Pemkot mengumumkan kolam renang kota tetap buka sepanjang musim panas. Namun, karena ada pekerjaan renovasi, kolam besar ditutup sampai akhir Juli, dan kolam kecil khusus untuk anak-anak.) Kuncinya 'cependant' = namun: kolam secara resmi BUKA, tapi kolam besar tutup dan kolam kecil 'réservé aux enfants' → orang dewasa belum bisa berenang sampai akhir Juli. Kolam tidak ditutup total ('restera ouverte'), anak-anak justru boleh, dan renovasi ('travaux') masih berlangsung.",
   },
 ];

@@ -1,9 +1,11 @@
 import type { Question } from "./english";
 
 // ─────────────────────────────────────────────────────────────────────────────
-// MANDARIN PLACEMENT TEST (15 soal, tipe campuran)
-// A1: 4 soal · A2: 4 soal · B1: 4 soal · B2: 3 soal
+// MANDARIN PLACEMENT TEST (20 soal, tipe campuran — 5 di antaranya listening)
+// A1: 5 soal · A2: 5 soal · B1: 6 soal · B2: 4 soal
 // Level selaras HSK: A1 ≈ HSK 1, A2 ≈ HSK 2, B1 ≈ HSK 3, B2 ≈ HSK 4
+// [placement-listening-v1] Soal ber-`audio` dibunyikan Chirp zh lewat /api/tts;
+// transkrip sengaja cuma ada di `audio.text` + pembahasan, tidak di layar soal.
 // ─────────────────────────────────────────────────────────────────────────────
 export const mandarinPlacementTest: Question[] = [
   // ═══════════════════════ A1 (HSK 1) ═══════════════════════
@@ -47,6 +49,17 @@ export const mandarinPlacementTest: Question[] = [
     explanation: "Struktur dasar SVO Mandarin: Subjek (我) + Kata kerja (吃) + Objek (米饭).",
   },
 
+  // [placement-listening-v1] Listening A1 — melengkapi (pasangan nada 睡觉/水饺)
+  {
+    id: "l1", difficulty: "A1", type: "fillChoice",
+    audio: { lang: "zh", text: "你好！我叫王小明，我是学生。我很喜欢睡觉。" },
+    question: "Dengarkan audio, lalu lengkapi: '我很喜欢___。'",
+    context: "Pilih kata yang kamu dengar.",
+    options: ["水饺 (shuǐjiǎo)", "睡觉 (shuìjiào)", "水果 (shuǐguǒ)", "学校 (xuéxiào)"],
+    correct: "睡觉 (shuìjiào)",
+    explanation: "Transkrip: '你好！我叫王小明，我是学生。我很喜欢睡觉。' (Halo! Nama saya Wang Xiaoming, saya pelajar. Saya sangat suka tidur.) Awas pasangan nada: '睡觉 (shuìjiào)' = tidur (nada 4-4), '水饺 (shuǐjiǎo)' = pangsit rebus (nada 3-3) — suku katanya hampir sama, bedanya cuma nada. '水果 (shuǐguǒ)' = buah, '学校 (xuéxiào)' = sekolah.",
+  },
+
   // ═══════════════════════ A2 (HSK 2) ═══════════════════════
   {
     id: "q5", difficulty: "A2", type: "multiple",
@@ -83,6 +96,21 @@ export const mandarinPlacementTest: Question[] = [
     options: ["会", "能", "可以", "要"],
     correct: "会",
     explanation: "'会' = bisa karena sudah belajar (skill). '能' = mampu (kondisi), '可以' = boleh (izin).",
+  },
+
+  // [placement-listening-v1] Listening A2 — detail informasi (jam + tempat)
+  {
+    id: "l2", difficulty: "A2", type: "multiple",
+    audio: { lang: "zh", text: "我们明天早上八点半在火车站见面吧。火车九点十分开，别忘了！" },
+    question: "Dengarkan audio. Jam berapa dan di mana mereka akan bertemu?",
+    options: [
+      "Jam 09.10, di stasiun kereta",
+      "Jam 08.30, di stasiun kereta",
+      "Jam 08.30, di bandara",
+      "Jam 09.30, di sekolah",
+    ],
+    correct: 1,
+    explanation: "Transkrip: '我们明天早上八点半在火车站见面吧。火车九点十分开，别忘了！' (Besok pagi kita ketemu jam setengah sembilan di stasiun kereta ya. Keretanya berangkat jam sembilan lewat sepuluh, jangan lupa!) '八点半 (bā diǎn bàn)' = 08.30 = waktu BERTEMU; '九点十分 (jiǔ diǎn shí fēn)' = 09.10 = jam kereta BERANGKAT (pengecoh). '火车站 (huǒchēzhàn)' = stasiun kereta, bukan '机场 (jīchǎng)' = bandara.",
   },
 
   // ═══════════════════════ B1 (HSK 3) ═══════════════════════
@@ -126,6 +154,31 @@ export const mandarinPlacementTest: Question[] = [
     explanation: "'刚' = baru saja. '回来' = pulang (kembali ke sini) — 来 menunjukkan arah menuju pembicara.",
   },
 
+  // [placement-listening-v1] Listening B1 — menerjemahkan (pengandaian 要不是…就…)
+  {
+    id: "l3", difficulty: "B1", type: "multiple",
+    audio: { lang: "zh", text: "要不是你昨天提醒我，我就把护照忘在家里了。" },
+    question: "Dengarkan audio. Pilih terjemahan yang paling tepat:",
+    options: [
+      "Kamu tidak mengingatkanku kemarin, jadi pasporku ketinggalan di rumah.",
+      "Kalau bukan karena kamu mengingatkanku kemarin, pasporku pasti sudah ketinggalan di rumah.",
+      "Kemarin kamu lupa membawa paspor, jadi aku mengingatkanmu.",
+      "Kalau besok kamu mengingatkanku, aku tidak akan lupa membawa paspor.",
+    ],
+    correct: 1,
+    explanation: "Transkrip: '要不是你昨天提醒我，我就把护照忘在家里了。' Pola '要不是 (yàobúshì) …，就… 了' = 'kalau bukan karena …, pasti sudah …' — pengandaian yang TIDAK terjadi: nyatanya dia DIINGATKAN, jadi paspornya tidak ketinggalan. Opsi 'kamu tidak mengingatkanku…' membalik fakta; '把护照忘在家里 (bǎ hùzhào wàng zài jiā li)' = meninggalkan paspor di rumah (struktur 把).",
+  },
+  // [placement-listening-v1] Listening B1 — dikte 2 kata (pengecoh nada 联系/练习)
+  {
+    id: "l4", difficulty: "B1", type: "missing",
+    audio: { lang: "zh", text: "我们周末再联系吧，一起去图书馆练习口语。" },
+    question: "Dengarkan audio, lalu isi dua kata yang hilang:",
+    template: "我们周末再 ___ 吧，一起去图书馆 ___ 口语。",
+    blanks: ["联系 (liánxì)", "练习 (liànxí)"],
+    options: ["练习 (liànxí)", "连续 (liánxù)", "联系 (liánxì)", "学习 (xuéxí)", "历史 (lìshǐ)", "联合 (liánhé)"],
+    explanation: "Transkrip: '我们周末再联系吧，一起去图书馆练习口语。' (Akhir pekan kita kontakan lagi ya, lalu sama-sama ke perpustakaan latihan berbicara.) '联系 (liánxì, nada 2-4)' = menghubungi/kontak, '练习 (liànxí, nada 4-2)' = berlatih — suku katanya sama, urutan nadanya terbalik. '连续 (liánxù)' = berturut-turut, '学习 (xuéxí)' = belajar (bunyi beda), '历史 (lìshǐ)' = sejarah, '联合 (liánhé)' = bersatu/gabungan.",
+  },
+
   // ═══════════════════════ B2 (HSK 4) ═══════════════════════
   {
     id: "q13", difficulty: "B2", type: "multiple",
@@ -158,5 +211,19 @@ export const mandarinPlacementTest: Question[] = [
     ],
     correct: 1,
     explanation: "'入乡随俗' (harfiah 'masuk desa ikuti adatnya') = menyesuaikan diri dengan adat setempat. Chengyu penting di level lanjutan.",
+  },
+  // [placement-listening-v1] Listening B2 — HOTS: menyimpulkan maksud berita
+  {
+    id: "l5", difficulty: "B2", type: "multiple",
+    audio: { lang: "zh", text: "据报道，今年去云南旅游的人比去年增加了百分之三十。然而，当地酒店的收入却没有明显增长，因为越来越多的游客选择住民宿。" },
+    question: "Dengarkan potongan berita ini. Kesimpulan yang PALING masuk akal adalah:",
+    options: [
+      "Jumlah wisatawan ke Yunnan turun 30 persen tahun ini.",
+      "Hotel di Yunnan untung besar karena wisatawan naik 30 persen.",
+      "Kenaikan wisatawan tidak otomatis menguntungkan hotel, karena banyak yang beralih menginap di homestay.",
+      "Pemerintah melarang wisatawan menginap di homestay.",
+    ],
+    correct: 2,
+    explanation: "Transkrip: '据报道，今年去云南旅游的人比去年增加了百分之三十。然而，当地酒店的收入却没有明显增长，因为越来越多的游客选择住民宿。' (Menurut laporan, jumlah orang yang berwisata ke Yunnan tahun ini naik 30% dibanding tahun lalu. Namun, pendapatan hotel setempat tidak naik signifikan, karena makin banyak wisatawan memilih menginap di homestay.) Kuncinya '然而 (rán'ér)' = namun dan '却 (què)' = justru: wisatawan NAIK tapi pendapatan hotel TIDAK ikut naik → wisatawan pindah ke '民宿 (mínsù)' = homestay. '增加 (zēngjiā)' = bertambah (bukan turun); tidak ada larangan pemerintah.",
   },
 ];

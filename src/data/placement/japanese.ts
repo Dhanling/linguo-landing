@@ -1,8 +1,10 @@
 import type { Question } from "./english";
 
 // ─────────────────────────────────────────────────────────────────────────────
-// JAPANESE PLACEMENT TEST (15 questions, mixed types)
-// A1: 4 soal · A2: 4 soal · B1: 4 soal · B2: 3 soal
+// JAPANESE PLACEMENT TEST (20 soal, tipe campuran — 5 di antaranya listening)
+// A1: 5 soal · A2: 5 soal · B1: 6 soal · B2: 4 soal
+// [placement-listening-v1] Soal ber-`audio` dibunyikan Chirp ja-JP lewat /api/tts;
+// transkrip sengaja cuma ada di `audio.text` + pembahasan, tidak di layar soal.
 // Levels aligned with JLPT: A1 ≈ N5, A2 ≈ N4, B1 ≈ N3, B2 ≈ N2
 // ─────────────────────────────────────────────────────────────────────────────
 export const japanesePlacementTest: Question[] = [
@@ -47,6 +49,17 @@ export const japanesePlacementTest: Question[] = [
     explanation: "Struktur SOV Jepang: Subject + は + Object + を + Verb. 'を' (o) = partikel objek langsung.",
   },
 
+  // [placement-listening-v1] Listening A1 — melengkapi (pasangan minimal obāsan/obasan)
+  {
+    id: "l1", difficulty: "A1", type: "fillChoice",
+    audio: { lang: "ja", text: "はじめまして。わたしは たなかです。これは わたしの おばあさんです。" },
+    question: "Dengarkan audio, lalu lengkapi: 'これは わたしの ___ です。'",
+    context: "Pilih kata yang kamu dengar.",
+    options: ["おばさん (obasan)", "おばあさん (obāsan)", "おかあさん (okāsan)", "おじいさん (ojīsan)"],
+    correct: "おばあさん (obāsan)",
+    explanation: "Transkrip: 'はじめまして。わたしは たなかです。これは わたしの おばあさんです。' (Salam kenal. Saya Tanaka. Ini nenek saya.) Awas pasangan mirip: 'おばあさん (obāsan)' dengan vokal panjang 'baa' = nenek, sedangkan 'おばさん (obasan)' dengan vokal pendek = bibi/tante. 'おかあさん (okāsan)' = ibu, 'おじいさん (ojīsan)' = kakek.",
+  },
+
   // ═══════════════════════ A2 (JLPT N4) ═══════════════════════
   {
     id: "q5", difficulty: "A2", type: "multiple",
@@ -83,6 +96,21 @@ export const japanesePlacementTest: Question[] = [
     options: ["はなせます", "はなします", "はなれます", "はなります"],
     correct: "はなせます",
     explanation: "Verb group 1 (u-verb): -u → -eru. 'はなす' → 'はなせる' / polite 'はなせます'.",
+  },
+
+  // [placement-listening-v1] Listening A2 — detail informasi (jam + tempat)
+  {
+    id: "l2", difficulty: "A2", type: "multiple",
+    audio: { lang: "ja", text: "あしたの朝、九時に駅の前で会いましょう。映画は十時半から始まります。" },
+    question: "Dengarkan audio. Jam berapa dan di mana mereka akan bertemu?",
+    options: [
+      "Jam 10.30, di depan stasiun",
+      "Jam 09.00, di depan bioskop",
+      "Jam 09.00, di depan stasiun",
+      "Jam 10.30, di dalam bioskop",
+    ],
+    correct: 2,
+    explanation: "Transkrip: 'あしたの朝、九時に駅の前で会いましょう。映画は十時半から始まります。' (Besok pagi, ayo bertemu jam sembilan di depan stasiun. Filmnya mulai jam setengah sebelas.) '九時 (kuji)' = jam 9, '駅の前 (eki no mae)' = di depan stasiun. Jam 10.30 '十時半 (jūji han)' = waktu film MULAI (pengecoh), dan bioskop bukan tempat bertemu.",
   },
 
   // ═══════════════════════ B1 (JLPT N3) ═══════════════════════
@@ -126,6 +154,31 @@ export const japanesePlacementTest: Question[] = [
     explanation: "'〜たら' adalah conditional paling fleksibel. 'ふる' (turun/hujan) → 'ふったら'.",
   },
 
+  // [placement-listening-v1] Listening B1 — menerjemahkan (penyesalan 〜ばよかった + 〜てしまった)
+  {
+    id: "l3", difficulty: "B1", type: "multiple",
+    audio: { lang: "ja", text: "もっと早く家を出ればよかった。電車に乗り遅れてしまった。" },
+    question: "Dengarkan audio. Pilih terjemahan yang paling tepat:",
+    options: [
+      "Untung aku berangkat dari rumah lebih awal, jadi tidak ketinggalan kereta.",
+      "Seharusnya aku berangkat dari rumah lebih awal. Aku jadi ketinggalan kereta.",
+      "Kalau aku berangkat lebih awal, aku akan naik kereta.",
+      "Aku berangkat lebih awal supaya tidak ketinggalan kereta.",
+    ],
+    correct: 1,
+    explanation: "Transkrip: 'もっと早く家を出ればよかった。電車に乗り遅れてしまった。' (Seharusnya aku keluar rumah lebih awal. Aku jadi ketinggalan kereta.) Pola '〜ばよかった (-ba yokatta)' = penyesalan 'seharusnya…' (kenyataannya TIDAK dilakukan), dan '〜てしまった (-te shimatta)' = sesuatu yang disesali sudah terjadi. '乗り遅れる (noriokureru)' = ketinggalan kendaraan. Opsi 'kalau…, aku akan…' adalah pengandaian yang masih mungkin, bukan penyesalan.",
+  },
+  // [placement-listening-v1] Listening B1 — dikte 2 kata (pengecoh bunyi mirip)
+  {
+    id: "l4", difficulty: "B1", type: "missing",
+    audio: { lang: "ja", text: "来週の会議は、午後二時から始まる予定ですから、遅れないでください。" },
+    question: "Dengarkan audio, lalu isi dua kata yang hilang:",
+    template: "来週の ___ は、午後二時から始まる ___ ですから、遅れないでください。",
+    blanks: ["会議 (kaigi)", "予定 (yotei)"],
+    options: ["会期 (kaiki)", "予定 (yotei)", "会話 (kaiwa)", "会議 (kaigi)", "用意 (yōi)", "予想 (yosō)"],
+    explanation: "Transkrip: '来週の会議は、午後二時から始まる予定ですから、遅れないでください。' (Rapat minggu depan dijadwalkan mulai jam dua siang, jadi jangan terlambat.) '会議 (kaigi)' = rapat — beda bunyi tipis dengan '会期 (kaiki)' = masa sidang dan '会話 (kaiwa)' = percakapan. '予定 (yotei)' = rencana/jadwal, '〜予定です' = dijadwalkan akan…; bandingkan '用意 (yōi)' = persiapan dan '予想 (yosō)' = perkiraan.",
+  },
+
   // ═══════════════════════ B2 (JLPT N2) ═══════════════════════
   {
     id: "q13", difficulty: "B2", type: "multiple",
@@ -154,5 +207,20 @@ export const japanesePlacementTest: Question[] = [
     blanks: ["ほど", "けれど"],
     options: ["ほど", "ぐらい", "けれど", "から", "ので", "のに"],
     explanation: "'ほど' = sampai tingkat/sedemikian rupa. 'けれど' = tapi (formal dari 'けど'). Pola ini sering muncul di essay N2.",
+  },
+
+  // [placement-listening-v1] Listening B2 — HOTS: menyimpulkan maksud pengumuman
+  {
+    id: "l5", difficulty: "B2", type: "multiple",
+    audio: { lang: "ja", text: "新しい図書館は来月オープンする予定でしたが、工事の遅れにより、開館は三か月延期されることになりました。ただし、オンラインでの本の予約は予定どおり来月から始まります。" },
+    question: "Dengarkan pengumuman ini. Kesimpulan yang PALING masuk akal adalah:",
+    options: [
+      "Perpustakaan baru tetap dibuka bulan depan sesuai rencana.",
+      "Semua layanan perpustakaan, termasuk pemesanan online, ditunda tiga bulan.",
+      "Gedungnya belum bisa dikunjungi bulan depan, tetapi buku sudah bisa dipesan online mulai bulan depan.",
+      "Pembangunan perpustakaan dibatalkan dan diganti layanan online.",
+    ],
+    correct: 2,
+    explanation: "Transkrip: '新しい図書館は来月オープンする予定でしたが、工事の遅れにより、開館は三か月延期されることになりました。ただし、オンラインでの本の予約は予定どおり来月から始まります。' (Perpustakaan baru semula dijadwalkan buka bulan depan, tetapi karena keterlambatan konstruksi, pembukaannya diundur tiga bulan. Namun, pemesanan buku secara online tetap dimulai bulan depan sesuai jadwal.) Kuncinya '延期 (enki)' = ditunda dan 'ただし (tadashi)' = namun/akan tetapi, yang memberi pengecualian: gedung ditunda, layanan online TIDAK. '予定どおり (yotei-dōri)' = sesuai rencana. Tidak ada kata 中止 (chūshi = dibatalkan), jadi opsi 'dibatalkan' salah.",
   },
 ];

@@ -89,8 +89,10 @@ export type Question =
 
 
 // ─────────────────────────────────────────────────────────────────────────────
-// ENGLISH PLACEMENT TEST (v2 — 18 questions, mixed types)
-// A1: 4 soal · A2: 5 soal · B1: 5 soal · B2: 4 soal
+// ENGLISH PLACEMENT TEST (v2 — 23 soal, tipe campuran — 5 di antaranya listening)
+// A1: 5 soal · A2: 6 soal · B1: 7 soal · B2: 5 soal
+// [placement-listening-v1] Soal ber-`audio` dibunyikan Chirp (lang "en") lewat /api/tts;
+// transkrip sengaja cuma ada di `audio.text` + pembahasan, tidak di layar soal.
 // ─────────────────────────────────────────────────────────────────────────────
 export const englishPlacementTest: Question[] = [
   // ═══════════════════════ A1 ═══════════════════════
@@ -127,6 +129,17 @@ export const englishPlacementTest: Question[] = [
     tokens: ["is", "She", "teacher", "a"],
     correct: ["She", "is", "a", "teacher"],
     explanation: "Struktur dasar: Subject + be (is/am/are) + a/an + noun.",
+  },
+
+  // [placement-listening-v1] Listening A1 — melengkapi (pasangan bunyi mirip sheep/ship)
+  {
+    id: "l1", difficulty: "A1", type: "fillChoice",
+    audio: { lang: "en", text: "Good morning! My name is Lisa. I live on a farm with my family, and we have three sheep and a big brown dog." },
+    question: "Dengarkan audio, lalu lengkapi: 'We have three ___ and a big brown dog.'",
+    context: "Pilih kata yang kamu dengar.",
+    options: ["ship", "sheep", "shop", "chips"],
+    correct: "sheep",
+    explanation: "Transkrip: 'Good morning! My name is Lisa. I live on a farm with my family, and we have three sheep and a big brown dog.' (Selamat pagi! Nama saya Lisa. Saya tinggal di peternakan bersama keluarga, dan kami punya tiga ekor domba dan seekor anjing cokelat besar.) Awas pasangan bunyi mirip: 'sheep' /ʃiːp/ = domba (vokal panjang 'ii'), 'ship' /ʃɪp/ = kapal (vokal pendek). 'Shop' = toko, 'chips' = keripik — bunyinya mirip tapi tidak cocok dengan konteks peternakan.",
   },
 
   // ═══════════════════════ A2 ═══════════════════════
@@ -172,6 +185,21 @@ export const englishPlacementTest: Question[] = [
     options: ["for", "since", "from", "during"],
     correct: "for",
     explanation: "Use 'for' with a duration, 'since' with a point in time.",
+  },
+
+  // [placement-listening-v1] Listening A2 — detail informasi (jam + tempat)
+  {
+    id: "l2", difficulty: "A2", type: "multiple",
+    audio: { lang: "en", text: "Hi Sam, it's Mia. The film starts at a quarter past seven, so let's meet at seven o'clock in front of the cinema. The tickets are twelve dollars each. See you later!" },
+    question: "Dengarkan audio. Jam berapa dan di mana mereka akan bertemu?",
+    options: [
+      "Jam 07.15, di depan bioskop",
+      "Jam 07.00, di depan bioskop",
+      "Jam 07.00, di dalam kafe",
+      "Jam 12.00, di depan bioskop",
+    ],
+    correct: 1,
+    explanation: "Transkrip: 'Hi Sam, it's Mia. The film starts at a quarter past seven, so let's meet at seven o'clock in front of the cinema. The tickets are twelve dollars each. See you later!' (Hai Sam, ini Mia. Filmnya mulai jam tujuh lewat seperempat, jadi ayo ketemu jam tujuh tepat di depan bioskop. Tiketnya dua belas dolar per orang. Sampai nanti!) Jam 07.15 ('a quarter past seven') = waktu FILM MULAI, bukan waktu bertemu (pengecoh). 'Twelve' = harga tiket, bukan jam. 'In front of the cinema' = di depan bioskop.",
   },
 
   // ═══════════════════════ B1 ═══════════════════════
@@ -223,6 +251,31 @@ export const englishPlacementTest: Question[] = [
     explanation: "Present simple 'am' shifts to past simple 'was' in reported speech.",
   },
 
+  // [placement-listening-v1] Listening B1 — menerjemahkan (present perfect continuous + still)
+  {
+    id: "l3", difficulty: "B1", type: "multiple",
+    audio: { lang: "en", text: "I've been learning English for three years, but I still get nervous when I have to speak in front of a lot of people." },
+    question: "Dengarkan audio. Pilih terjemahan yang paling tepat:",
+    options: [
+      "Saya belajar bahasa Inggris tiga tahun lalu, dan sekarang saya tidak gugup lagi berbicara di depan banyak orang.",
+      "Saya akan belajar bahasa Inggris selama tiga tahun supaya tidak gugup berbicara di depan banyak orang.",
+      "Saya sudah belajar bahasa Inggris selama tiga tahun, tapi saya masih gugup kalau harus berbicara di depan banyak orang.",
+      "Sudah tiga tahun saya tidak belajar bahasa Inggris, jadi saya gugup berbicara di depan banyak orang.",
+    ],
+    correct: 2,
+    explanation: "Transkrip: 'I've been learning English for three years, but I still get nervous when I have to speak in front of a lot of people.' Pola present perfect continuous 'have been + -ing' + 'for' = kegiatan yang dimulai di masa lalu dan MASIH berlangsung sampai sekarang (sudah belajar selama tiga tahun, dan masih belajar). 'Still' = masih. Opsi 'tiga tahun lalu' salah karena itu past simple ('three years ago'); opsi 'akan belajar' = future; opsi 'tidak belajar' membalik makna.",
+  },
+  // [placement-listening-v1] Listening B1 — dikte 2 kata (pengecoh bunyi mirip)
+  {
+    id: "l4", difficulty: "B1", type: "missing",
+    audio: { lang: "en", text: "If you want to improve your English, you should listen to podcasts every day, even if it's only for ten minutes." },
+    question: "Dengarkan audio, lalu isi dua kata yang hilang:",
+    template: "If you want to ___ your English, you should ___ to podcasts every day, even if it's only for ten minutes.",
+    blanks: ["improve", "listen"],
+    options: ["approve", "listen", "improve", "lesson", "prove", "lessen"],
+    explanation: "Transkrip: 'If you want to improve your English, you should listen to podcasts every day, even if it's only for ten minutes.' (Kalau kamu ingin meningkatkan bahasa Inggrismu, kamu sebaiknya mendengarkan podcast setiap hari, meskipun cuma sepuluh menit.) 'Improve' = meningkatkan; 'approve' = menyetujui dan 'prove' = membuktikan bunyinya mirip tapi maknanya tidak cocok. 'Listen to' = mendengarkan (huruf t tidak dibaca: /ˈlɪsən/); 'lesson' = pelajaran dan 'lessen' = mengurangi berbunyi /ˈlesən/ — mirip, tapi keduanya tidak bisa diikuti 'to podcasts' setelah 'should'.",
+  },
+
   // ═══════════════════════ B2 ═══════════════════════
   {
     id: "q15", difficulty: "B2", type: "multiple",
@@ -263,6 +316,21 @@ export const englishPlacementTest: Question[] = [
     ],
     correct: 1,
     explanation: "Nominalization: verb 'decided' → noun 'decision'. Important for formal/academic writing.",
+  },
+
+  // [placement-listening-v1] Listening B2 — HOTS: menyimpulkan maksud pengumuman
+  {
+    id: "l5", difficulty: "B2", type: "multiple",
+    audio: { lang: "en", text: "Attention, passengers. Due to engineering work, there will be no trains between Riverside and Central Station this weekend. However, replacement buses will run every ten minutes, so please allow an extra thirty minutes for your journey." },
+    question: "Dengarkan pengumuman ini. Kesimpulan yang PALING masuk akal adalah:",
+    options: [
+      "Semua perjalanan antara Riverside dan Central Station dibatalkan, jadi penumpang sebaiknya tidak bepergian akhir pekan ini.",
+      "Penumpang tetap bisa bepergian dengan bus pengganti, tapi perjalanannya akan memakan waktu lebih lama.",
+      "Kereta tetap berjalan seperti biasa, hanya terlambat sekitar tiga puluh menit.",
+      "Bus pengganti hanya datang setiap tiga puluh menit karena ada perbaikan rel.",
+    ],
+    correct: 1,
+    explanation: "Transkrip: 'Attention, passengers. Due to engineering work, there will be no trains between Riverside and Central Station this weekend. However, replacement buses will run every ten minutes, so please allow an extra thirty minutes for your journey.' (Perhatian, para penumpang. Karena ada pekerjaan perbaikan teknis, tidak ada kereta antara Riverside dan Central Station akhir pekan ini. Namun, bus pengganti akan beroperasi setiap sepuluh menit, jadi mohon sediakan waktu tambahan tiga puluh menit untuk perjalanan Anda.) Kuncinya 'However' = namun: kereta memang tidak ada, TAPI perjalanan tetap bisa dilakukan dengan bus, dan 'allow an extra thirty minutes' menyiratkan waktu tempuh lebih lama. Opsi 'dibatalkan' mengabaikan kalimat setelah 'however'; opsi 'kereta berjalan biasa' bertentangan dengan 'no trains'; 'setiap tiga puluh menit' mencampur angka — busnya tiap SEPULUH menit, tiga puluh menit adalah waktu tambahan.",
   },
 ];
 
