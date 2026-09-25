@@ -69,13 +69,33 @@ function funnelLangName(slug: string): string {
   return FUNNEL_LANG_OVERRIDE[slug] || (slug.charAt(0).toUpperCase() + slug.slice(1));
 }
 
+// [placement-rtl-bidi-v1] Teks Arab/Ibrani/Persia/Urdu di dalam kalimat Indonesia (LTR):
+// blank "___" & tanda baca itu netral, jadi browser menaruhnya di sisi yang salah
+// ("___ طالبٌ" tampil blank di KIRI). Bungkus tiap potongan RTL — termasuk blank
+// dan tanda baca yang menempel — dalam <bdi dir="rtl"> supaya urutannya kanan→kiri.
+const RTL = "\u0590-\u08FF\uFB1D-\uFDFF\uFE70-\uFEFF";
+const RTL_TEST = new RegExp(`[${RTL}]`);
+const RTL_RUN = new RegExp(
+  `((?:_{2,}\\s*)?[${RTL}](?:[${RTL}\\s_،؛؟]*[${RTL}])?(?:\\s*_{2,})?[.!?؟،]*)`,
+  "g",
+);
+function hasRtl(text: string): boolean {
+  return RTL_TEST.test(text);
+}
+function bidi(text: string | null | undefined): React.ReactNode {
+  if (!text || !hasRtl(text)) return text;
+  return text.split(RTL_RUN).map((part, i) =>
+    i % 2 === 1 ? <bdi key={i} dir="rtl">{part}</bdi> : part,
+  );
+}
+
 function renderRich(text: string) {
   const parts = text.split(/(\*\*[^*]+\*\*)/g);
   return parts.map((p, i) => {
     if (p.startsWith("**") && p.endsWith("**")) {
       return <strong key={i} className="font-bold text-gray-900">{p.slice(2, -2)}</strong>;
     }
-    return <span key={i}>{p}</span>;
+    return <span key={i}>{bidi(p)}</span>;
   });
 }
 
@@ -445,9 +465,9 @@ function QuizScreen(props: {
             className="bg-white rounded-3xl border border-gray-100 shadow-sm p-6 md:p-8"
           >
             <h2 className="text-xl md:text-2xl font-bold text-gray-900 leading-snug mb-3">
-              {question.type === "dragDrop" || question.type === "matching"
+              {bidi(question.type === "dragDrop" || question.type === "matching"
                 ? (question as any).prompt
-                : (question as any).question}
+                : (question as any).question)}
             </h2>
             {question.type === "dragDrop" && (
               <p className="text-sm md:text-base text-gray-600 italic mb-5 bg-[#1A9E9E]/5 border-l-4 border-[#1A9E9E] px-4 py-3 rounded-r-xl">
@@ -456,7 +476,7 @@ function QuizScreen(props: {
               </p>
             )}
             {question.type === "fill" && (question as any).context && (
-              <p className="text-sm md:text-base text-gray-600 italic mb-5 font-mono bg-gray-50 px-4 py-3 rounded-xl">{(question as any).context}</p>
+              <p className="text-sm md:text-base text-gray-600 italic mb-5 font-mono bg-gray-50 px-4 py-3 rounded-xl">{bidi((question as any).context)}</p>
             )}
 
             <div className="space-y-2 mt-6">
@@ -473,7 +493,7 @@ function QuizScreen(props: {
                       <span className={"flex items-center justify-center w-7 h-7 rounded-full text-sm font-bold flex-shrink-0 " + (isSelected ? "bg-[#1A9E9E] text-white" : "bg-gray-100 text-gray-600")}>
                         {String.fromCharCode(65 + i)}
                       </span>
-                      <span className="text-gray-900">{opt}</span>
+                      <span className="text-gray-900">{bidi(opt)}</span>
                     </div>
                   </button>
                 );
@@ -505,7 +525,7 @@ function QuizScreen(props: {
                       <button key={i} onClick={() => onSubmit(opt)}
                         className={"w-full px-5 py-4 rounded-2xl border-2 text-center transition-all text-lg font-semibold " + cls}>
                         <div className="flex items-center justify-center gap-2">
-                          <span className="text-gray-900">{opt}</span>
+                          <span className="text-gray-900">{bidi(opt)}</span>
                         </div>
                       </button>
                     );
@@ -909,12 +929,12 @@ function ResultScreen({ score, questions, log, meta, timeElapsedSec, contact, on
                             {status === "correct" ? "Benar" : status === "skipped" ? "Dilewati" : "Salah"}
                           </span>
                           <p className="text-sm font-semibold text-gray-900 leading-snug">
-                            <span className="text-gray-400">#{i + 1}</span> {questionPrompt(q)}
+                            <span className="text-gray-400">#{i + 1}</span> {bidi(questionPrompt(q))}
                           </p>
                         </div>
                         <p className="text-xs text-gray-600 leading-relaxed pl-1">
                           <span className="font-semibold text-gray-800">Jawaban benar: </span>
-                          {correctAnswerText(q)}
+                          {bidi(correctAnswerText(q))}
                         </p>
                         <p className="text-xs text-gray-600 leading-relaxed pl-1 mt-1">{renderRich(q.explanation)}</p>
                       </div>
@@ -1058,6 +1078,9 @@ function reconstructDragIdx(val: string | number | boolean | null, shuffled: str
   return idx;
 }
 
+// Pegas animasi kata pindah bank ↔ slot jawaban [placement-dragdrop-anim-v1]
+const TOKEN_SPRING = { type: "spring", stiffness: 500, damping: 35 } as const;
+
 function DragDropRenderer({ question, initialValue, onSubmit }: {
   question: DragDropQuestion;
   initialValue: string | number | boolean | null;
@@ -1073,6 +1096,8 @@ function DragDropRenderer({ question, initialValue, onSubmit }: {
   // Urutan jawaban user (indeks ke shuffled) — dipulihkan dari jawaban tersimpan bila ada
   const [answerIdx, setAnswerIdx] = useState<number[]>(() => reconstructDragIdx(initialValue, shuffled));
   const answerTokens = answerIdx.map((i) => shuffled[i]);
+  // Kalimat Arab/Ibrani/dst disusun kanan → kiri.
+  const rtl = hasRtl(question.correct.join(" "));
 
   const pickToken = (i: number) => {
     if (answerIdx.includes(i)) return;
@@ -1096,36 +1121,43 @@ function DragDropRenderer({ question, initialValue, onSubmit }: {
         {answerTokens.length === 0 ? (
           <p className="text-center text-sm text-slate-400 italic py-4">Tap kata di bawah untuk menyusun kalimat</p>
         ) : (
-          <div className="flex flex-wrap gap-2 items-center">
-            {answerTokens.map((tok, i) => (
-              <button
-                key={i}
+          <div dir={rtl ? "rtl" : undefined} className="flex flex-wrap gap-2 items-center">
+            {answerIdx.map((tokIdx, i) => (
+              <motion.button
+                key={tokIdx}
+                layoutId={`${question.id}-tok-${tokIdx}`}
+                transition={TOKEN_SPRING}
                 onClick={() => unpickToken(i)}
-                className="px-3 py-2 rounded-lg border-2 text-sm font-medium transition-all bg-white border-slate-300 text-slate-900 hover:border-slate-500 active:scale-95"
+                className="px-3 py-2 rounded-lg border-2 text-sm font-medium bg-white border-slate-300 text-slate-900 hover:border-slate-500 active:scale-95"
               >
-                {tok}
-              </button>
+                {shuffled[tokIdx]}
+              </motion.button>
             ))}
           </div>
         )}
       </div>
 
       {/* Token bank — sumber kata */}
-      <div className="flex flex-wrap gap-2">
+      <div dir={rtl ? "rtl" : undefined} className="flex flex-wrap gap-2">
         {shuffled.map((tok, i) => {
           const used = answerIdx.includes(i);
-          return (
-            <button
+          // Kata terpakai "terbang" ke slot jawaban (layoutId sama); di bank tinggal
+          // cetakan kosong seukuran supaya kata lain tidak bergeser.
+          return used ? (
+            <span key={i} aria-hidden
+              className="px-3 py-2 rounded-lg border-2 border-dashed border-slate-200 bg-slate-50 text-sm font-medium text-transparent select-none">
+              {tok}
+            </span>
+          ) : (
+            <motion.button
               key={i}
+              layoutId={`${question.id}-tok-${i}`}
+              transition={TOKEN_SPRING}
               onClick={() => pickToken(i)}
-              disabled={used}
-              className={"px-3 py-2 rounded-lg border-2 text-sm font-medium transition-all " +
-                (used
-                  ? "bg-slate-100 border-slate-200 text-slate-300 cursor-not-allowed"
-                  : "bg-white border-slate-300 text-slate-900 hover:border-[#1A9E9E] active:scale-95 cursor-pointer")}
+              className="px-3 py-2 rounded-lg border-2 text-sm font-medium bg-white border-slate-300 text-slate-900 hover:border-[#1A9E9E] active:scale-95 cursor-pointer"
             >
               {tok}
-            </button>
+            </motion.button>
           );
         })}
       </div>
@@ -1208,7 +1240,7 @@ function MissingRenderer({ question, initialValue, onSubmit }: {
     <div className="space-y-4">
       {/* Template dengan inline blanks */}
       <div className="p-5 bg-slate-50 rounded-2xl border-2 border-slate-200">
-        <p className="text-base md:text-lg text-slate-900 leading-loose">
+        <p dir={hasRtl(question.template) ? "rtl" : undefined} className="text-base md:text-lg text-slate-900 leading-loose">
           {parts.map((part, i) => (
             <span key={i}>
               {part}
