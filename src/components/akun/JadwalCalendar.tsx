@@ -56,11 +56,15 @@ const GUTTER_PX = 48;
 export default function JadwalCalendar({
   sessions,
   regularBatches = [],
+  kelasBelumTerjadwal = [],
   studentName,
   aksesRekaman,
 }: {
   sessions: JadwalSession[];
   regularBatches?: RegularBatch[];
+  /** [jadwal-kelas-belum-terjadwal-v1] Kelas private yang masih punya sisa sesi tapi
+   *  belum punya satu pun sesi mendatang — kalender kosong dijelaskan, bukan dibiarkan. */
+  kelasBelumTerjadwal?: { id: string; label: string; sisa: number }[];
   /** Nama siswa — ikut dikirim ke room biar dia tak perlu mengetiknya lagi. */
   studentName?: string;
   /** [addon-akses-rekaman-v1] registration_id → hak rekaman. [rekaman-wajib-beli-v1]
@@ -386,6 +390,32 @@ export default function JadwalCalendar({
       {/* Jadwal Tetap kelas grup (Reguler & English Test Preparation) — batch + Zoom.
           [jadwal-batch-kalender-v1] pertemuan batch-nya sekarang juga tergambar di
           kalender di bawah; blok ini tetap jadi ringkasan "setiap hari apa, jam berapa". */}
+      {/* [jadwal-kelas-belum-terjadwal-v1] Siswa yang kalendernya kosong dulu cuma
+          melihat "Tidak ada sesi di hari ini" dan mengira webnya rusak. */}
+      {kelasBelumTerjadwal.length > 0 && (
+        <div className="rounded-2xl bg-amber-50 p-4 ring-1 ring-amber-200">
+          <h3 className="text-[13px] font-bold text-[#12172B] inline-flex items-center gap-1.5">
+            <CalendarDays className="w-4 h-4 text-amber-600" strokeWidth={2.5} /> {tt("Jadwal sesi berikutnya belum diatur")}
+          </h3>
+          <ul className="mt-1.5 space-y-0.5">
+            {kelasBelumTerjadwal.map((k) => (
+              <li key={k.id} className="text-[12.5px] text-[#374151]">
+                <span className="font-bold">{k.label}</span> — {tt("sisa")} {k.sisa} {tt("sesi")}
+              </li>
+            ))}
+          </ul>
+          <p className="mt-1.5 text-[12px] text-[#6B7280]">
+            {tt("Pengajar/admin sedang menyusun jadwalnya. Begitu diatur, sesinya otomatis muncul di kalender ini.")}
+          </p>
+          <a
+            href={`https://wa.me/6282116859493?text=${encodeURIComponent(`Halo admin Linguo${studentName ? `, saya ${studentName}` : ""}. Jadwal kelas ${kelasBelumTerjadwal.map((k) => k.label).join(", ")} saya belum muncul, boleh dibantu atur?`)}`}
+            target="_blank" rel="noopener noreferrer"
+            className="mt-2.5 inline-flex h-8 items-center rounded-lg bg-[#16796E] px-3 text-[12px] font-bold text-white transition hover:opacity-90"
+          >
+            {tt("Tanya admin")}
+          </a>
+        </div>
+      )}
       {regularBatches.length > 0 && (
         <div className="rounded-2xl bg-white p-4 ring-1 ring-slate-200">
           <h3 className="text-[13px] font-bold text-[#12172B] mb-2.5 inline-flex items-center gap-1.5">

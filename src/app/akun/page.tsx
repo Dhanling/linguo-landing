@@ -55,6 +55,7 @@ import { orMilikSaya } from "@/lib/digitalOwnership"; // [perpustakaan-akses-ema
 // [addon-akses-rekaman-v1] rekaman sesi cuma buat yang beli add-on Recording —
 // add-on tersimpan di 3 tempat, semuanya dibaca helper ini.
 import { muatAksesRekamanMap, type AksesAddon } from "@/lib/addonAccess";
+import { isDead } from "@/components/akun/jadwalShared"; // [jadwal-kelas-belum-terjadwal-v1]
 const SimulasiKatalog = dynamic(() => import('@/components/akun/SimulasiKatalog'), { ssr: false, loading: () => <div className="flex w-full items-center justify-center py-24"><div className="h-7 w-7 animate-spin rounded-full border-2 border-[#16796E] border-t-transparent" /></div> }); // [simulasi-inshell-v1] lazy
 
 // [linguo-patch:onboarding-success-lottie-v1] Lottie ceklis sukses (reuse success-anim.json).
@@ -2809,6 +2810,10 @@ export default function AkunPage() {
   // Sekarang yang disimpan SELURUH sesi (12 bulan ke belakang s/d mendatang);
   // `upcomingSchedules` jadi turunan supaya semua pemakai lama tak ikut berubah.
   const [allSchedules, setAllSchedules] = useState<Schedule[]>(() => (akunSnapshot?.schedules as Schedule[]) ?? []);
+  // [jadwal-kelas-belum-terjadwal-v1] true begitu `schedules` hasil tarikan SEGAR sudah
+  // masuk (bukan snapshot cache) — pemberitahuan "kelas belum dijadwalkan" di tab
+  // Jadwal baru boleh tampil sesudahnya, biar tak berkedip di detik pertama.
+  const [jadwalTermuat, setJadwalTermuat] = useState(false);
   // [jadwal-live-now-v1] Patokannya jam SELESAI, bukan jam mulai. Dulu `> now`
   // dipakai ke `scheduled_at`, jadi kelas yang lagi berlangsung langsung raib dari
   // Beranda begitu menit pertama lewat — persis menit siswa paling butuh tombol
@@ -3308,6 +3313,7 @@ export default function AkunPage() {
         // jadwal-riwayat-v1: endpoint sekarang mengirim `schedules` (riwayat + mendatang).
         // `upcomingSchedules` dipertahankan sebagai fallback buat respons lama.
         setAllSchedules(json.schedules || json.upcomingSchedules || []);
+        setJadwalTermuat(true); // [jadwal-kelas-belum-terjadwal-v1]
       } catch (e) {
         console.error("[preview-student]", e);
       } finally {
@@ -3766,6 +3772,7 @@ export default function AkunPage() {
       const schedData = schedRes.data || [];
       const badgeData = badgeRes.data || [];
       setAllSchedules(schedData); // jadwal-riwayat-v1
+      setJadwalTermuat(true); // [jadwal-kelas-belum-terjadwal-v1]
       setBadges(badgeData);
 
       let weekStreak = 0;
@@ -5267,7 +5274,27 @@ export default function AkunPage() {
                         scheduleTime: String(r.testPrepBatch.schedule_time || "").slice(0, 5),
                         zoomLink: null,
                       }));
-                return <JadwalCalendar sessions={[...jadwalSessions, ...jadwalBatchSessions]} regularBatches={jadwalRegulerBatches} studentName={student?.name || undefined} aksesRekaman={aksesRekamanMap} />;
+                /* [jadwal-kelas-belum-terjadwal-v1] Kelas private yang masih punya sisa sesi
+                   tapi TAK punya satu pun sesi mendatang di `schedules` (kasus 25 Sep 2026:
+                   siswa A1.3 2/16 buka Jadwal, kalendernya kosong melompong dan dia mengira
+                   webnya rusak). Kalendernya memang benar kosong — jadwalnya belum diatur
+                   pengajar/admin — jadi yang dibutuhkan penjelasan, bukan tanggal karangan.
+                   Kelas grup (batch) & produk digital dikecualikan: jadwalnya dari pola batch
+                   atau memang tak ada jadwal. */
+                const nowMs = Date.now();
+                const kelasBelumTerjadwal = !jadwalTermuat ? [] : activeRegs
+                  .filter((r: any) =>
+                    !r.batch_id && !r.test_prep_batch_id && !isProdukDigital(r.product) &&
+                    Number(r.sessions_total) > 0 && (Number(r.sessions_used) || 0) < Number(r.sessions_total) &&
+                    !allSchedules.some((s: any) =>
+                      s.registration_id === r.id && !isDead(s.status) &&
+                      new Date(s.scheduled_at).getTime() + (Number(s.duration_minutes) || 60) * 60000 > nowMs))
+                  .map((r: any) => ({
+                    id: r.id,
+                    label: [r.language, r.level].filter(Boolean).join(" · ") || "Kelas",
+                    sisa: Number(r.sessions_total) - (Number(r.sessions_used) || 0),
+                  }));
+                return <JadwalCalendar sessions={[...jadwalSessions, ...jadwalBatchSessions]} regularBatches={jadwalRegulerBatches} kelasBelumTerjadwal={kelasBelumTerjadwal} studentName={student?.name || undefined} aksesRekaman={aksesRekamanMap} />;
               })()}
             </motion.div>
           )}

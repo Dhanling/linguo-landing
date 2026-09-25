@@ -314,6 +314,8 @@ const EN: Record<string, string> = {
   "Pakai panah di atas buat lihat hari lain.": "Use the arrows above to see another day.",
   "Pakai panah di atas buat lihat minggu lain.": "Use the arrows above to see another week.",
   "Jadwal Tetap (Kelas Grup)": "Fixed Schedule (Group Class)",
+  "Jadwal sesi berikutnya belum diatur": "Your next sessions haven't been scheduled yet",
+  "Pengajar/admin sedang menyusun jadwalnya. Begitu diatur, sesinya otomatis muncul di kalender ini.": "Your teacher/admin is arranging the schedule. Once set, the sessions will appear on this calendar automatically.",
   "Jadwal tetap": "Fixed schedule",
   "Bahasa": "Language",
   "Presensi": "Attendance",
