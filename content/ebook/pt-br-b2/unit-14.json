@@ -1,0 +1,741 @@
+{
+ "title": "Rapat harga ekspor — bahasa ekonomi, angka, dan persentase",
+ "title_target": "O dólar fechou em alta",
+ "goal": "Membicarakan dan membaca berita ekonomi: naik-turun (*alta/queda, subir/cair X%*), kurs, inflasi, dan margin; menyebut angka kira-kira (*cerca de, em torno de, quase*), pecahan, persentase, dan *pontos percentuais* dengan tepat.",
+ "bekal": [
+  "melaporkan perubahan: *o dólar fechou em alta, o frete subiu 12%, a margem passou de 11% para 9%*",
+  "memberi angka kira-kira dan pecahan: *cerca de um terço, em torno de R$ 2.150, quase metade, o dobro*",
+  "membedakan *por cento* dari *pontos percentuais* dan membaca angka desimal dengan koma"
+ ],
+ "dialogs": [
+  {
+   "title": "Dialog — A tabela do segundo semestre",
+   "intro": "Senin, 2 April 2029, sehari sesudah Paskah. Ruang rapat lantai 12. Budi memimpin rapat penetapan daftar harga ekspor untuk semester II bersama Dona Márcia, Rafael, dan Fernanda. Semua angka di rapat ini adalah contoh.",
+   "lines": [
+    {
+     "speaker": "Budi:",
+     "text": "Primeiro, o câmbio: o dólar fechou em alta na quinta.",
+     "id": "Pertama, kurs: dolar ditutup menguat hari Kamis.",
+     "literal": "pertama, si kurs: si dolar ia-menutup dalam naik pada-si kamis."
+    },
+    {
+     "speaker": "Rafael:",
+     "text": "Quanto, mano?",
+     "id": "Berapa, bro?",
+     "literal": "berapa, saudara?"
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Um vírgula quatro por cento, a cinco e sessenta e dois. No mês, quase 4%.",
+     "id": "Satu koma empat persen, ke lima koma enam dua. Sebulan ini hampir 4%.",
+     "literal": "satu koma empat untuk seratus, pada lima dan enam-puluh dan dua. di-si bulan, hampir 4%."
+    },
+    {
+     "speaker": "Rafael:",
+     "text": "Da hora! Dólar subindo, a gente ganha mais, né?",
+     "id": "Mantap! Dolar naik, kita untung lebih, kan?",
+     "literal": "dari-si jam! dolar naik, kami ia-mendapat lebih, bukan?"
+    },
+    {
+     "speaker": "Fernanda:",
+     "text": "Bah, calma. O produtor também reajusta em reais: o arábica subiu cerca de 6% no mês.",
+     "id": "Aduh, sabar. Petani juga menaikkan harga dalam real: arabika naik sekitar 6% sebulan ini.",
+     "literal": "bah, tenang. si produsen juga ia-menyesuaikan dalam real: si arabika ia-naik sekitar dari 6% di-si bulan."
+    },
+    {
+     "speaker": "Dona Márcia:",
+     "text": "E o frete, Fernanda?",
+     "id": "Kalau ongkos kapal, Fernanda?",
+     "literal": "dan si ongkos-kirim, Fernanda?"
+    },
+    {
+     "speaker": "Fernanda:",
+     "text": "O frete pra Ásia subiu em torno de 12% desde janeiro.",
+     "id": "Ongkos kirim ke Asia naik sekitar 12% sejak Januari.",
+     "literal": "si ongkos-kirim untuk Asia ia-naik di sekitar dari 12% sejak januari."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Resumindo: a nossa margem caiu de 11% pra 9%.",
+     "id": "Singkatnya: margin kita turun dari 11% ke 9%.",
+     "literal": "meringkas: si milik-kami margin ia-jatuh dari 11% untuk 9%."
+    },
+    {
+     "speaker": "Rafael:",
+     "text": "Caiu dois por cento, então.",
+     "id": "Berarti turun dua persen.",
+     "literal": "ia-jatuh dua untuk seratus, jadi."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Dois pontos percentuais, Rafael. Não é a mesma coisa.",
+     "id": "Dua poin persentase, Rafael. Itu tidak sama.",
+     "literal": "dua poin persentase, Rafael. tidak ia-adalah si sama hal."
+    },
+    {
+     "speaker": "Dona Márcia:",
+     "text": "E quanto do volume do semestre já tá vendido?",
+     "id": "Lalu berapa dari volume semester ini yang sudah terjual?",
+     "literal": "dan berapa dari-si volume dari-si semester sudah ia-berada terjual?"
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Cerca de um terço já está vendido.",
+     "id": "Sekitar sepertiganya sudah terjual.",
+     "literal": "sekitar dari sebuah pertiga sudah ia-berada terjual."
+    },
+    {
+     "speaker": "Dona Márcia:",
+     "text": "Então qual é a proposta?",
+     "id": "Jadi apa usulannya?",
+     "literal": "maka yang-mana ia-adalah si usulan?"
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Reajustar a tabela em 3% e manter o preço atual pra quem fechar até maio.",
+     "id": "Menaikkan daftar harga 3% dan mempertahankan harga sekarang untuk yang sepakat sampai Mei.",
+     "literal": "menyesuaikan si tabel sebesar 3% dan mempertahankan si harga sekarang untuk siapa menutup(subj) sampai mei."
+    },
+    {
+     "speaker": "Dona Márcia:",
+     "text": "Três por cento, fechado. Manda pro Hendra ainda hoje.",
+     "id": "Tiga persen, sepakat. Kirim ke Hendra hari ini juga.",
+     "literal": "tiga untuk seratus, tertutup. kirim untuk-si Hendra masih hari-ini."
+    }
+   ],
+   "notes": [
+    "**Fechou em alta** — bahasa pasar: mata uang, saham, dan komoditas *fecham em alta* (ditutup naik) atau *em queda / em baixa* (ditutup turun). Kalimat Budi menyebut Kamis karena Jumat sebelumnya adalah Jumat Agung, dan pasar Brasil tutup.",
+    "**A cinco e sessenta e dois** — kurs dibaca tanpa kata *reais*: *cinco e sessenta e dois* = R$ 5,62. Ingat, Brasil memakai **koma** untuk desimal dan **titik** untuk ribuan, sama dengan Indonesia: *1,4%* = *um vírgula quatro por cento*; *R$ 2.150* = *dois mil cento e cinquenta reais*.",
+    "**Dólar subindo, a gente ganha** — kalimat tanpa kata sambung ini sangat lisan: \"(kalau) dolar naik, kita untung\". Fernanda meluruskannya: harga kopi di Brasil ikut bursa dunia dan kurs, jadi saat dolar naik, harga dalam real dari petani biasanya ikut naik.",
+    "**Caiu de 11% pra 9%** — *de … para* menunjukkan titik awal dan akhir. Besar perubahannya memakai *em*: *reajustar em 3%*, *reduzir em dois pontos*. Tanpa preposisi pun lazim: *subiu 12%*.",
+    "⚠️ **Pontos percentuais** — turun dari 11% ke 9% adalah turun **dua poin persentase**, tetapi turun sekitar **18 persen** dari nilai semula (2 dibagi 11). Wartawan, analis, dan atasan Brasil memperhatikan bedanya; Rafael kena tegur halus.",
+    "**Pra quem fechar até maio** — *futuro do subjuntivo* setelah *quem*: \"untuk siapa pun yang nanti sepakat\". *Fechar* di dunia dagang = menutup kesepakatan: *fechar negócio, fechar contrato*, dan *Fechado!* = deal!"
+   ],
+   "grammars": [
+    {
+     "title": "Naik, turun, dan berubah",
+     "body": [
+      "Berita ekonomi Brasil memakai sekumpulan kata kerja yang terbatas. Kuasai yang ini dan kamu bisa membaca judul berita ekonomi mana pun."
+     ],
+     "table": {
+      "head": [
+       "Ungkapan",
+       "Contoh",
+       "Arti"
+      ],
+      "rows": [
+       [
+        "*subir / aumentar* X%",
+        "*O frete subiu 12%.*",
+        "naik 12%"
+       ],
+       [
+        "*cair / recuar* X%",
+        "*O arábica recuou 2,5%.*",
+        "turun / melemah 2,5%"
+       ],
+       [
+        "*fechar em alta / em queda*",
+        "*O dólar fechou em queda.*",
+        "ditutup naik / turun"
+       ],
+       [
+        "*acumular alta de*",
+        "*No ano, acumula alta de 8%.*",
+        "secara kumulatif naik 8%"
+       ],
+       [
+        "*passar de X para Y*",
+        "*A margem passou de 11% para 9%.*",
+        "berubah dari X ke Y"
+       ],
+       [
+        "*reajustar em* X%",
+        "*Vamos reajustar em 3%.*",
+        "menyesuaikan (menaikkan) sebesar 3%"
+       ],
+       [
+        "*dobrar / cair pela metade*",
+        "*O preço dobrou.*",
+        "naik dua kali lipat / turun separuh"
+       ],
+       [
+        "*manter-se estável*",
+        "*A inflação se manteve estável.*",
+        "tetap stabil"
+       ]
+      ]
+     },
+     "after": [
+      "Judul berita suka kata yang dramatis: *dispara* (melonjak), *despenca* (anjlok), *avança* (naik), *recua* (mundur). Di laporan kantor, pilih yang netral: *sobe, cai, se mantém*."
+     ]
+    },
+    {
+     "title": "Angka kira-kira",
+     "body": [
+      "Dalam rapat, angka persis sering tidak perlu dan malah membingungkan. Orang Brasil membulatkan dengan kata-kata berikut; semuanya diletakkan **di depan** angka."
+     ],
+     "table": {
+      "head": [
+       "Ungkapan",
+       "Arti",
+       "Contoh"
+      ],
+      "rows": [
+       [
+        "*cerca de*",
+        "sekitar",
+        "*cerca de um terço*"
+       ],
+       [
+        "*em torno de*",
+        "kurang lebih",
+        "*em torno de 12%*"
+       ],
+       [
+        "*aproximadamente*",
+        "kira-kira (lebih resmi)",
+        "*aproximadamente 300 sacas*"
+       ],
+       [
+        "*quase*",
+        "hampir (sedikit di bawah)",
+        "*quase 4%*"
+       ],
+       [
+        "*pouco mais de / pouco menos de*",
+        "sedikit di atas / di bawah",
+        "*pouco mais de 9%*"
+       ],
+       [
+        "*mais de / menos de*",
+        "lebih dari / kurang dari",
+        "*mais de mil sacas*"
+       ],
+       [
+        "*entre X e Y*",
+        "antara X dan Y",
+        "*entre 5 e 6 reais*"
+       ]
+      ]
+     },
+     "after": [
+      "⚠️ *Cerca de* (sekitar) jangan tertukar dengan *acerca de* (tentang) atau *há cerca de* (kira-kira … yang lalu): *Há cerca de dois anos* = kira-kira dua tahun lalu."
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Dialog kedua — No tempo da remarcação",
+   "intro": "Sabtu, 7 April, di supermarket dekat apartemen Budi di Pinheiros. Budi dan Luana berhenti di depan rak kopi bubuk.",
+   "lines": [
+    {
+     "speaker": "Budi:",
+     "text": "Nossa, o café subiu de novo. Tá quase 20% mais caro que no ano passado.",
+     "id": "Wah, kopi naik lagi. Hampir 20% lebih mahal daripada tahun lalu.",
+     "literal": "wah, si kopi ia-naik dari baru. ia-berada hampir 20% lebih mahal dari di-si tahun lalu."
+    },
+    {
+     "speaker": "Luana:",
+     "text": "Ironia, né? Você vende café e reclama do preço.",
+     "id": "Ironis, ya? Kamu jualan kopi tapi mengeluh soal harganya.",
+     "literal": "ironi, bukan? kamu kamu-menjual kopi dan kamu-mengeluh dari-si harga."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "O café subiu cinco vezes mais que a inflação.",
+     "id": "Kopi naik lima kali lipat dari inflasi.",
+     "literal": "si kopi ia-naik lima kali lebih dari si inflasi."
+    },
+    {
+     "speaker": "Luana:",
+     "text": "Meu pai conta que os preços mudavam todo dia.",
+     "id": "Ayahku cerita, dulu harga berubah setiap hari.",
+     "literal": "milikku ayah ia-bercerita bahwa si harga mereka-berubah setiap hari."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Todo dia? Tá falando sério?",
+     "id": "Setiap hari? Serius?",
+     "literal": "setiap hari? kamu-berada berbicara serius?"
+    },
+    {
+     "speaker": "Luana:",
+     "text": "Sério. Tinha funcionário no supermercado só pra remarcar as etiquetas.",
+     "id": "Serius. Ada pegawai supermarket yang tugasnya cuma mengganti label harga.",
+     "literal": "serius. ia-punya(imperf) pegawai di-si supermarket hanya untuk menandai-ulang si label."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "E o salário? Perdia valor rápido assim?",
+     "id": "Terus gaji? Nilainya menyusut secepat itu?",
+     "literal": "dan si gaji? ia-kehilangan(imperf) nilai cepat begitu?"
+    },
+    {
+     "speaker": "Luana:",
+     "text": "Perdia. Por isso minha mãe fazia a compra do mês no dia do pagamento.",
+     "id": "Iya. Makanya ibuku belanja bulanan di hari gajian.",
+     "literal": "ia-kehilangan. untuk itu milikku ibu ia-membuat(imperf) si belanja dari-si bulan di-si hari dari-si pembayaran."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "E quando veio o Real, em 94?",
+     "id": "Terus waktu real datang, tahun 94?",
+     "literal": "dan ketika ia-datang si real, di 94?"
+    },
+    {
+     "speaker": "Luana:",
+     "text": "Em uns três anos a inflação caiu de milhares por cento pra menos de 10% ao ano.",
+     "id": "Dalam kira-kira tiga tahun inflasi turun dari ribuan persen jadi di bawah 10% setahun.",
+     "literal": "dalam sekitar tiga tahun si inflasi ia-jatuh dari ribuan untuk seratus untuk kurang dari 10% ke-si tahun."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Então esses 20% do café são só um susto pequeno.",
+     "id": "Jadi 20% kopi ini cuma kaget kecil.",
+     "literal": "maka ini 20% dari-si kopi mereka-adalah hanya sebuah kejutan kecil."
+    }
+   ],
+   "notes": [
+    "**Cinco vezes mais** — *X vezes mais que* = X kali lipat. Kopi naik 20% dan inflasi sekitar 4% (angka contoh): kenaikan kopi lima kali lebih besar. Di tulisan hati-hati; sebagian penulis membedakan *cinco vezes mais* dan *cinco vezes maior*, jadi di laporan lebih aman menulis angkanya langsung.",
+    "**Os preços mudavam todo dia** — imperfeito untuk kebiasaan masa lalu, kala yang cocok untuk kenangan tentang hiperinflasi. *Todo dia* (setiap hari) jangan tertukar dengan *o dia todo* (sepanjang hari).",
+    "**Remarcar as etiquetas** — *a remarcação* adalah kenangan kolektif generasi 1980-an dan awal 1990-an: pegawai toko berkeliling dengan alat pelabel dan menempelkan harga baru, kadang lebih dari sekali sehari. Orang membeli sebanyak mungkin sesaat setelah gajian, sebelum uangnya menyusut.",
+    "**A compra do mês** — belanja bulanan besar-besaran di supermarket. Kebiasaan ini masih hidup di banyak keluarga Brasil, meski alasannya kini lebih soal kepraktisan daripada inflasi.",
+    "**Ironia, né? / Tá falando sério?** — dua reaksi lisan yang berguna di rapat maupun di supermarket. *Tá falando sério?* (serius?) bisa berarti heran sungguhan atau tak percaya; nadanya yang menentukan. Versi lebih pendek: *Sério?* dan, di kalangan muda, *Jura?*",
+    "**Em 94, de milhares por cento** — tahun cukup disebut dua digit terakhir dalam bicara: *em 94, nos anos 80*. Inflasi Brasil tahun 1993 melampaui 2.000% setahun menurut IBGE; *real* diluncurkan 1 Juli 1994, dan pada 1996 inflasi tahunan sudah di bawah 10%."
+   ],
+   "grammars": [
+    {
+     "title": "Pecahan, persentase, dan kelipatan",
+     "body": [
+      "Pecahan Portugis memakai bilangan tingkat mulai dari *terço* dan *quarto*. Persentase selalu *por cento*, tanpa sandang kalau berdiri sendiri, tetapi dengan sandang kalau jadi pokok kalimat: *Os 20% do café assustam*."
+     ],
+     "table": {
+      "head": [
+       "Angka",
+       "Cara baca",
+       "Arti"
+      ],
+      "rows": [
+       [
+        "1/2",
+        "a me-TA-dji",
+        "setengah (*a metade*)"
+       ],
+       [
+        "1/3",
+        "un TÊH-su",
+        "sepertiga (*um terço*)"
+       ],
+       [
+        "2/3",
+        "dois TÊH-sus",
+        "dua pertiga"
+       ],
+       [
+        "1/4",
+        "un KUAH-tu",
+        "seperempat (*um quarto*)"
+       ],
+       [
+        "3/4",
+        "três KUAH-tus",
+        "tiga perempat"
+       ],
+       [
+        "1/10",
+        "un DÉ-si-mu",
+        "sepersepuluh (*um décimo*)"
+       ],
+       [
+        "1,4%",
+        "un VIH-gu-la KUA-tru poh SEN-tu",
+        "satu koma empat persen"
+       ],
+       [
+        "0,5 p.p.",
+        "MÊI-u PON-tu peh-sen-tu-ÁU",
+        "setengah poin persentase"
+       ],
+       [
+        "×2 / ×3",
+        "u DÔ-bru / u TRI-plu",
+        "dua / tiga kali lipat"
+       ]
+      ]
+     },
+     "after": [
+      "Pecahan dengan *de*: *um terço do volume, metade dos clientes, três quartos das sacas*. Di bicara, *metade* sering tanpa sandang: *metade do valor*.",
+      "⚠️ *Um bilhão* = **satu miliar** (bukan satu biliun). *Um trilhão* = satu triliun. Kesalahan ini sering muncul saat menerjemahkan berita ekonomi."
+     ]
+    }
+   ]
+  }
+ ],
+ "sections": [
+  {
+   "title": "Membaca berita ekonomi",
+   "blocks": [
+    {
+     "type": "tabel",
+     "head": [
+      "Português",
+      "Cara baca",
+      "Bahasa Indonesia"
+     ],
+     "rows": [
+      [
+       "o câmbio",
+       "u KAN-bi-u",
+       "kurs, nilai tukar"
+      ],
+      [
+       "a cotação",
+       "a ko-ta-SÁUN",
+       "harga kutipan (kurs, saham, komoditas)"
+      ],
+      [
+       "o dólar comercial",
+       "u DÓ-lah ko-meh-si-ÁU",
+       "kurs dolar antarbank"
+      ],
+      [
+       "a Bolsa",
+       "a BÔU-sa",
+       "bursa saham (B3)"
+      ],
+      [
+       "a inflação",
+       "a in-fla-SÁUN",
+       "inflasi"
+      ],
+      [
+       "o IPCA",
+       "u i-pe-se-A",
+       "indeks inflasi resmi (IBGE)"
+      ],
+      [
+       "a taxa Selic",
+       "a TA-sya SÉ-li-ki",
+       "suku bunga acuan"
+      ],
+      [
+       "os juros",
+       "us ZHU-rus",
+       "bunga"
+      ],
+      [
+       "o PIB",
+       "u PI-bi",
+       "PDB"
+      ],
+      [
+       "a balança comercial",
+       "a ba-LAN-sa ko-meh-si-ÁU",
+       "neraca perdagangan"
+      ],
+      [
+       "a safra",
+       "a SA-fra",
+       "panen, musim panen"
+      ]
+     ]
+    },
+    {
+     "type": "p",
+     "text": "Tiga angka muncul hampir tiap hari di berita Brasil. **O dólar**: kurs antarbank (*comercial*), berbeda dengan *dólar turismo* yang dibeli wisatawan dan selalu lebih mahal. **O IPCA**: inflasi resmi yang dihitung IBGE, biasanya dilaporkan sebagai *acumulado em 12 meses*. **A Selic**: suku bunga acuan yang ditetapkan komite Banco Central (Copom) beberapa kali setahun, dan menentukan bunga kredit serta tabungan."
+    },
+    {
+     "type": "p",
+     "text": "Untuk kopi, acuan harga dalam real di pasar dalam negeri adalah indikator Cepea/Esalq (per saca 60 kg), sedangkan di pasar dunia arabika diperdagangkan di bursa New York dalam sen dolar per pon. Karena itu eksportir seperti Nusantara Trading membaca tiga angka sekaligus: harga New York, kurs, dan ongkos kapal."
+    },
+    {
+     "type": "kotak",
+     "title": "Angka di unit ini, dan cara membacanya",
+     "items": [
+      "Semua kurs, harga, dan persentase di unit ini adalah **contoh** untuk berlatih, bukan data atau ramalan. Untuk angka sungguhan, lihat Banco Central, IBGE, dan Cepea.",
+      "Koma untuk desimal, titik untuk ribuan: *R$ 2.150,50* = *dois mil cento e cinquenta reais e cinquenta centavos*.",
+      "Dalam bicara, *reais* dan *centavos* sering dibuang: *custa cinco e noventa* = R$ 5,90.",
+      "*Mil* tidak memakai *um*: *mil sacas*, bukan *um mil sacas*. Tetapi *um milhão, um bilhão*."
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Dari cruzeiro ke real",
+   "blocks": [
+    {
+     "type": "tabel",
+     "head": [
+      "Tahun",
+      "Mata uang",
+      "Catatan"
+     ],
+     "rows": [
+      [
+       "1942",
+       "*cruzeiro* (Cr$)",
+       "sempat bernama *cruzeiro novo* pada 1967–1970"
+      ],
+      [
+       "1986",
+       "*cruzado* (Cz$)",
+       "tiga nol dipotong"
+      ],
+      [
+       "1989",
+       "*cruzado novo* (NCz$)",
+       "tiga nol dipotong lagi"
+      ],
+      [
+       "1990",
+       "*cruzeiro* (Cr$)",
+       "nama lama kembali"
+      ],
+      [
+       "1993",
+       "*cruzeiro real* (CR$)",
+       "tiga nol dipotong lagi"
+      ],
+      [
+       "1994",
+       "*real* (R$)",
+       "berlaku 1 Juli 1994, sesudah masa peralihan dengan satuan hitung URV"
+      ]
+     ]
+    },
+    {
+     "type": "p",
+     "text": "Dalam kurang dari sepuluh tahun Brasil berganti mata uang lima kali. Orang yang kini berusia lima puluhan ke atas masih ingat harga yang berubah dalam sehari, gaji yang harus segera dibelanjakan, dan kalkulator di setiap meja kasir. Karena itu, di Brasil, kata *inflação* membawa beban emosi yang jauh lebih besar daripada di banyak negara lain."
+    },
+    {
+     "type": "kotak",
+     "title": "Jejak masa inflasi yang masih terlihat",
+     "items": [
+      "*Parcelado em 10x sem juros* — cicilan tanpa bunga ada di hampir semua toko, dari televisi sampai sepatu. Orang Brasil terbiasa bertanya *Parcela?* sebelum bertanya harga.",
+      "*Reajuste anual* — kontrak sewa, sekolah, dan asuransi disesuaikan setiap tahun menurut indeks harga (seperti sewa apartemen Budi di Pinheiros).",
+      "*A compra do mês* — belanja bulanan di hari gajian masih jadi ritual di banyak keluarga.",
+      "*Correção monetária* — penyesuaian nilai uang menurut inflasi, istilah yang masih dipakai di pengadilan, pajak, dan kontrak."
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Ulangan berjenjang — unit 12",
+   "blocks": [
+    {
+     "type": "p",
+     "text": "Tutup kolom Portugis Brasil, baca terjemahan Indonesianya, lalu susun kembali kalimatnya dari ingatan."
+    },
+    {
+     "type": "tabel",
+     "head": [
+      "Bahasa Indonesia",
+      "Português"
+     ],
+     "rows": [
+      [
+       "Saya sudah mengajukan permohonannya lewat internet.",
+       "*Já dei entrada no pedido pela internet.*"
+      ],
+      [
+       "Saya diberi tahu fotokopi biasa sudah cukup.",
+       "*Me disseram que cópia simples era suficiente.*"
+      ],
+      [
+       "Permohonannya masih akan diperiksa dulu.",
+       "*O pedido ainda vai ser analisado.*"
+      ],
+      [
+       "Dokumen apa saja yang disyaratkan untuk menikah?",
+       "*Quais documentos são exigidos pra casar?*"
+      ],
+      [
+       "Legalisasi tanda tangan dilakukan di kantor notaris.",
+       "*Firma se reconhece no tabelionato de notas.*"
+      ]
+     ]
+    }
+   ]
+  }
+ ],
+ "vocab": [
+  {
+   "pt": "o câmbio",
+   "baca": "u KAN-bi-u",
+   "id": "kurs, nilai tukar"
+  },
+  {
+   "pt": "a cotação",
+   "baca": "a ko-ta-SÁUN",
+   "id": "harga kutipan"
+  },
+  {
+   "pt": "a alta / a queda",
+   "baca": "a ÁU-ta / a KÉ-da",
+   "id": "kenaikan / penurunan"
+  },
+  {
+   "pt": "fechar em alta",
+   "baca": "fe-SYAH éin ÁU-ta",
+   "id": "ditutup naik"
+  },
+  {
+   "pt": "subir",
+   "baca": "su-BIH",
+   "id": "naik"
+  },
+  {
+   "pt": "cair",
+   "baca": "ka-IH",
+   "id": "turun, jatuh"
+  },
+  {
+   "pt": "recuar",
+   "baca": "he-ku-AH",
+   "id": "melemah, mundur"
+  },
+  {
+   "pt": "disparar / despencar",
+   "baca": "djis-pa-RAH / djis-pen-KAH",
+   "id": "melonjak / anjlok"
+  },
+  {
+   "pt": "acumular",
+   "baca": "a-ku-mu-LAH",
+   "id": "terakumulasi"
+  },
+  {
+   "pt": "reajustar",
+   "baca": "he-a-zhus-TAH",
+   "id": "menyesuaikan (harga)"
+  },
+  {
+   "pt": "a margem",
+   "baca": "a MAH-zhéin",
+   "id": "margin"
+  },
+  {
+   "pt": "a tabela de preços",
+   "baca": "a ta-BÉ-la dji PRÊ-sus",
+   "id": "daftar harga"
+  },
+  {
+   "pt": "o frete",
+   "baca": "u FRÉ-tchi",
+   "id": "ongkos angkut"
+  },
+  {
+   "pt": "a inflação",
+   "baca": "a in-fla-SÁUN",
+   "id": "inflasi"
+  },
+  {
+   "pt": "os juros",
+   "baca": "us ZHU-rus",
+   "id": "bunga (uang)"
+  },
+  {
+   "pt": "cerca de",
+   "baca": "SÊH-ka dji",
+   "id": "sekitar"
+  },
+  {
+   "pt": "em torno de",
+   "baca": "en TÔH-nu dji",
+   "id": "kurang lebih"
+  },
+  {
+   "pt": "a metade",
+   "baca": "a me-TA-dji",
+   "id": "setengah"
+  },
+  {
+   "pt": "um terço",
+   "baca": "un TÊH-su",
+   "id": "sepertiga"
+  },
+  {
+   "pt": "o dobro",
+   "baca": "u DÔ-bru",
+   "id": "dua kali lipat"
+  },
+  {
+   "pt": "o ponto percentual",
+   "baca": "u PON-tu peh-sen-tu-ÁU",
+   "id": "poin persentase"
+  },
+  {
+   "pt": "a remarcação",
+   "baca": "a he-mah-ka-SÁUN",
+   "id": "penggantian label harga"
+  },
+  {
+   "pt": "a etiqueta",
+   "baca": "a e-tchi-KÊ-ta",
+   "id": "label"
+  },
+  {
+   "pt": "o salário",
+   "baca": "u sa-LA-ri-u",
+   "id": "gaji"
+  },
+  {
+   "pt": "a compra do mês",
+   "baca": "a KON-pra du MÊS",
+   "id": "belanja bulanan"
+  }
+ ],
+ "exercises": [
+  {
+   "prompt": "Terjemahkan ke bahasa Portugis.",
+   "items": [
+    "Dolar hari ini ditutup naik.",
+    "Ongkos angkut naik sekitar 12% (em torno de).",
+    "Sepertiga volume sudah terjual.",
+    "Margin turun dari 11% ke 9%.",
+    "Harga kopi naik dua kali lipat.",
+    "Dulu harga berubah setiap hari."
+   ]
+  },
+  {
+   "prompt": "Isi titik-titiknya. Petunjuk ada di dalam kurung.",
+   "items": [
+    "O dólar fechou ____ alta. (preposisi)",
+    "A margem caiu ____ 11% para 9%. (dari)",
+    "Vamos reajustar a tabela ____ 3%. (preposisi besaran)",
+    "50% é a ____. (pecahan)",
+    "25% é ____. (pecahan)",
+    "De 9% para 11% são dois pontos ____. (bukan por cento)",
+    "O preço passou de R$ 10 para R$ 20: ele ____. (dobrar, perfeito)"
+   ]
+  },
+  {
+   "prompt": "Tulis ulang dengan angka kira-kira sesuai petunjuk.",
+   "items": [
+    "O frete subiu 11,8%. (em torno de)",
+    "Vendemos 32% do volume. (pecahan, cerca de)",
+    "O dólar subiu 3,9% no mês. (quase)",
+    "A saca custa R$ 2.148. (cerca de)",
+    "A margem é de 9,2%. (pouco mais de)",
+    "Vendemos 49% das sacas. (quase + pecahan)"
+   ]
+  },
+  {
+   "prompt": "Susun jadi kalimat yang benar.",
+   "items": [
+    "alta / o dólar / em / fechou",
+    "em torno de / o frete / 12% / subiu",
+    "terço / já / um / está vendido / cerca de",
+    "subiu / o café / mais / cinco vezes / que a inflação",
+    "mudavam / todo dia / os preços"
+   ]
+  }
+ ],
+ "answers": [
+  "O dólar fechou em alta hoje. — O frete subiu em torno de 12%. — Um terço do volume já está vendido. — A margem caiu de 11% para 9%. — O preço do café dobrou. — Os preços mudavam todo dia.",
+  "em — de — em — metade — um quarto — percentuais — dobrou",
+  "O frete subiu em torno de 12%. — Vendemos cerca de um terço do volume. — O dólar subiu quase 4% no mês. — A saca custa cerca de R$ 2.150. — A margem é de pouco mais de 9%. — Vendemos quase metade das sacas.",
+  "O dólar fechou em alta. — O frete subiu em torno de 12%. — Cerca de um terço já está vendido. — O café subiu cinco vezes mais que a inflação. — Os preços mudavam todo dia."
+ ]
+}

@@ -1,0 +1,733 @@
+{
+ "title": "Cartório, CPF, dan RNM — pasif dan kalimat impersonal dalam birokrasi",
+ "title_target": "O pedido vai ser analisado",
+ "goal": "Menghadapi loket dan formulir Brasil: memahami *reconhecer firma, autenticar, protocolar, dar entrada, prazo, deferido/indeferido*, dan memakai pasif serta bentuk impersonal (*se* pasif, *se* impersonal, orang ketiga jamak tanpa pelaku) yang memenuhi bahasa birokrasi.",
+ "bekal": [
+  "memahami bahasa loket dan formulir: *dar entrada no pedido, o prazo vence, o pedido foi indeferido, cabe recurso*",
+  "memakai pasif lengkap: *foi protocolado, vai ser analisado, precisa ser traduzida, tem que ter sido emitido*",
+  "membedakan *vendem-se casas* (baku) dari *vende-se casas* (lisan) dan *precisa-se de* yang selalu tunggal"
+ ],
+ "dialogs": [
+  {
+   "title": "Dialog — Na Polícia Federal",
+   "intro": "Selasa, 13 Maret 2029, pukul sepuluh pagi. Izin tinggal Budi habis bulan Mei. Permohonan perpanjangannya sudah diajukan secara daring; hari ini ia datang ke kantor imigrasi Polícia Federal di São Paulo untuk menyerahkan dokumen, sidik jari, dan foto.",
+   "lines": [
+    {
+     "speaker": "Atendente:",
+     "text": "Bom dia. Senha 47? O senhor tem agendamento?",
+     "id": "Selamat pagi. Nomor antrean 47? Bapak sudah punya jadwal janji?",
+     "literal": "baik hari. nomor 47? si tuan ia-punya penjadwalan?"
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Tenho, sim, às dez. Vim fazer a renovação da minha residência.",
+     "id": "Sudah, jam sepuluh. Saya datang untuk perpanjangan izin tinggal saya.",
+     "literal": "saya-punya, ya, pada-si sepuluh. saya-datang membuat si pembaruan dari-si milikku tempat-tinggal."
+    },
+    {
+     "speaker": "Atendente:",
+     "text": "O pedido já foi cadastrado no sistema?",
+     "id": "Permohonannya sudah didaftarkan di sistem?",
+     "literal": "si permohonan sudah ia-adalah terdaftar di-si sistem?"
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Já dei entrada no pedido pela internet.",
+     "id": "Saya sudah mengajukan permohonannya lewat internet.",
+     "literal": "sudah saya-memberi masuk di-si permohonan lewat-si internet."
+    },
+    {
+     "speaker": "Atendente:",
+     "text": "Certo. Passaporte, RNM atual e o comprovante de pagamento da taxa, por favor.",
+     "id": "Baik. Paspor, RNM yang sekarang, dan bukti pembayaran biayanya, silakan.",
+     "literal": "benar. paspor, RNM sekarang dan si bukti dari pembayaran dari-si biaya, tolong."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Aqui estão. A declaração da empresa foi assinada pela minha gerente.",
+     "id": "Ini. Surat keterangan dari perusahaan sudah ditandatangani manajer saya.",
+     "literal": "di-sini mereka-berada. si pernyataan dari-si perusahaan ia-adalah ditandatangani oleh-si milikku manajer."
+    },
+    {
+     "speaker": "Atendente:",
+     "text": "Hum. Mas essa cópia do contrato não está autenticada.",
+     "id": "Hmm. Tapi fotokopi kontrak ini tidak dilegalisasi.",
+     "literal": "hmm. tapi itu salinan dari-si kontrak tidak ia-berada terlegalisasi."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Me disseram que cópia simples era suficiente.",
+     "id": "Saya diberi tahu fotokopi biasa sudah cukup.",
+     "literal": "saya mereka-berkata bahwa salinan sederhana ia-adalah cukup."
+    },
+    {
+     "speaker": "Atendente:",
+     "text": "E é, se o senhor tiver o original. Eu confiro aqui mesmo.",
+     "id": "Memang cukup, kalau Bapak bawa aslinya. Saya cocokkan di sini saja.",
+     "literal": "dan ia-adalah, jika si tuan ia-punya(subj) si asli. saya saya-memeriksa di-sini sendiri."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Ainda bem que eu trouxe o original!",
+     "id": "Untung saya bawa aslinya!",
+     "literal": "masih baik bahwa saya saya-membawa si asli!"
+    },
+    {
+     "speaker": "Atendente:",
+     "text": "Agora vamos coletar as digitais e tirar a foto. Olhe para a câmera.",
+     "id": "Sekarang kita ambil sidik jari dan foto. Lihat ke kamera.",
+     "literal": "sekarang kita-pergi mengumpulkan si sidik-jari dan mengambil si foto. lihat ke si kamera."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "E o cartão novo, quando fica pronto?",
+     "id": "Lalu kartu barunya, kapan jadi?",
+     "literal": "dan si kartu baru, kapan ia-menjadi siap?"
+    },
+    {
+     "speaker": "Atendente:",
+     "text": "O pedido ainda vai ser analisado.",
+     "id": "Permohonannya masih akan diperiksa dulu.",
+     "literal": "si permohonan masih ia-akan menjadi diperiksa."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "E se for indeferido?",
+     "id": "Kalau ditolak?",
+     "literal": "dan jika ia-menjadi(subj) ditolak?"
+    },
+    {
+     "speaker": "Atendente:",
+     "text": "Aí o senhor é notificado e pode recorrer. Guarde bem este protocolo.",
+     "id": "Nanti Bapak diberi tahu dan bisa mengajukan banding. Simpan baik-baik tanda terima ini.",
+     "literal": "lalu si tuan ia-adalah diberitahu dan ia-bisa banding. simpan baik ini tanda-terima."
+    }
+   ],
+   "notes": [
+    "**Senha, agendamento** — *a senha* di loket adalah nomor antrean (di tempat lain: kata sandi). *O agendamento* = janji temu yang dibuat lebih dulu, biasanya lewat situs resmi. Di kantor pemerintah Brasil hampir semua layanan kini dimulai dengan *agendar pelo site*.",
+    "**Dei entrada no pedido** — *dar entrada em* = memasukkan, mengajukan secara resmi (permohonan, proses, dokumen). Sinonim tulisnya *protocolar*: *protocolei o pedido*. Hasilnya adalah *o protocolo*, tanda terima bernomor yang membuktikan tanggal pengajuan; simpan sampai kartumu terbit.",
+    "**Me disseram** — orang ketiga jamak tanpa pelaku adalah cara lisan paling alami untuk \"saya diberi tahu\": *me disseram, me ligaram do banco, roubaram meu celular*. Tak perlu (dan tak bisa) disebut siapa \"mereka\". Pasif *fui informado de que* terdengar seperti surat resmi.",
+    "**Se o senhor tiver o original** — petugas memakai *futuro do subjuntivo* dari *ter*. Sejak undang-undang penyederhanaan birokrasi 2018 (Lei 13.726), kantor pemerintah pada umumnya boleh mencocokkan fotokopi dengan dokumen asli di tempat, tanpa legalisasi cartório. Bawa selalu aslinya.",
+    "**Vai ser analisado, se for indeferido** — pasif dengan *ser* bisa dipasang di kala mana pun: *foi, vai ser, será, se for, tem que ser*. Kata *deferir* (mengabulkan) dan *indeferir* (menolak) hampir hanya hidup di birokrasi dan hukum; di obrolan orang bilang *aprovaram / negaram meu pedido*.",
+    "⚠️ **Jalurnya berbeda-beda** — syarat, biaya, dan instansi yang memutus permohonan izin tinggal bergantung pada jenis izinnya (kerja, studi, keluarga, dan lain-lain) dan berubah dari waktu ke waktu. Dialog ini hanya contoh umum; periksa selalu situs resmi Polícia Federal dan gov.br."
+   ],
+   "grammars": [
+    {
+     "title": "Pasif dan impersonal di loket",
+     "body": [
+      "Bahasa birokrasi jarang menyebut siapa pelakunya: yang penting dokumennya. Bahasa Indonesia melakukannya dengan *di-*; bahasa Portugis punya beberapa jalan, dari yang paling resmi sampai yang paling lisan."
+     ],
+     "table": {
+      "head": [
+       "Bentuk",
+       "Contoh",
+       "Arti"
+      ],
+      "rows": [
+       [
+        "*ser* + partisip",
+        "*O pedido foi protocolado.*",
+        "Permohonannya sudah diajukan."
+       ],
+       [
+        "*vai ser / deve ser* + partisip",
+        "*A certidão deve ser traduzida.*",
+        "Aktanya harus diterjemahkan."
+       ],
+       [
+        "*ter sido* + partisip",
+        "*O documento tem que ter sido emitido há menos de 90 dias.*",
+        "Dokumennya harus diterbitkan kurang dari 90 hari lalu."
+       ],
+       [
+        "*estar* + partisip (keadaan)",
+        "*A cópia não está autenticada.*",
+        "Fotokopinya tidak berlegalisasi."
+       ],
+       [
+        "*se* + kata kerja",
+        "*Aqui se autenticam documentos.*",
+        "Di sini dokumen dilegalisasi."
+       ],
+       [
+        "orang ke-3 jamak tanpa pelaku",
+        "*Me disseram que era suficiente.*",
+        "Saya diberi tahu itu cukup."
+       ],
+       [
+        "*você* umum (lisan)",
+        "*Você agenda pelo site.*",
+        "Orang membuat janji lewat situs."
+       ]
+      ]
+     },
+     "after": [
+      "Partisip dalam pasif selalu menyesuaikan diri dengan pokok kalimat: *o pedido foi analisado*, *a certidão foi traduzida*, *as cópias foram autenticadas*. Di formulir, kesalahan jenis kelamin di sini langsung terlihat."
+     ]
+    },
+    {
+     "title": "Se pasif dan se impersonal di papan pengumuman",
+     "body": [
+      "Papan di depan toko dan kantor penuh bentuk *se*. Aturannya: kalau kata kerjanya langsung mengenai benda (*vender casas*), bendanya jadi pokok kalimat dan kata kerja ikut jumlahnya. Kalau kata kerjanya memakai preposisi (*precisar de*), kata kerja selalu tunggal."
+     ],
+     "table": {
+      "head": [
+       "Baku",
+       "Sering terlihat",
+       "Catatan"
+      ],
+      "rows": [
+       [
+        "*Vendem-se casas.*",
+        "*Vende-se casas.*",
+        "baku mengikuti jamak *casas*"
+       ],
+       [
+        "*Alugam-se salas.*",
+        "*Aluga-se salas.*",
+        "sama"
+       ],
+       [
+        "*Autenticam-se cópias.*",
+        "*Autentica-se cópias.*",
+        "sama"
+       ],
+       [
+        "*Precisa-se de vendedores.*",
+        "*Precisa-se de vendedores.*",
+        "ada *de*: selalu tunggal"
+       ],
+       [
+        "*Trata-se de casos urgentes.*",
+        "*Trata-se de casos urgentes.*",
+        "selalu tunggal"
+       ]
+      ]
+     },
+     "after": [
+      "Dalam bicara, bentuk *se* jarang dipakai; orang bilang *tão vendendo casa ali* atau *a gente autentica cópia aqui*. Tetapi di papan, surel resmi, dan ujian, bentuk baku kolom kiri yang dinilai benar."
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Dialog kedua — No cartório",
+   "intro": "Kamis, 15 Maret. Budi dan Luana sudah sepakat menikah; pesta pertunangannya direncanakan di BH akhir bulan. Mereka mampir ke *cartório de registro civil* di Pinheiros untuk bertanya soal dokumen, supaya tak ada kejutan nanti.",
+   "lines": [
+    {
+     "speaker": "Escrevente:",
+     "text": "Boa tarde. Em que posso ajudar?",
+     "id": "Selamat siang. Ada yang bisa saya bantu?",
+     "literal": "baik sore. dalam apa saya-bisa membantu?"
+    },
+    {
+     "speaker": "Luana:",
+     "text": "Quais documentos são exigidos pra casar?",
+     "id": "Dokumen apa saja yang disyaratkan untuk menikah?",
+     "literal": "yang-mana dokumen mereka-adalah disyaratkan untuk menikah?"
+    },
+    {
+     "speaker": "Escrevente:",
+     "text": "Parabéns! Um de vocês é estrangeiro?",
+     "id": "Selamat! Salah satu dari kalian orang asing?",
+     "literal": "selamat! satu dari kalian ia-adalah asing?"
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Sou eu, sou indonésio. Minha certidão de nascimento está em indonésio.",
+     "id": "Saya, saya orang Indonesia. Akta kelahiran saya berbahasa Indonesia.",
+     "literal": "saya-adalah saya, saya-adalah indonesia. milikku akta dari kelahiran ia-berada dalam indonesia."
+    },
+    {
+     "speaker": "Escrevente:",
+     "text": "Então ela tem que ser apostilada na Indonésia e traduzida aqui por um tradutor juramentado.",
+     "id": "Kalau begitu, aktanya harus diberi apostille di Indonesia dan diterjemahkan di sini oleh penerjemah tersumpah.",
+     "literal": "maka ia ia-punya bahwa menjadi diapostille di-si Indonesia dan diterjemahkan di-sini oleh sebuah penerjemah tersumpah."
+    },
+    {
+     "speaker": "Luana:",
+     "text": "E a gente precisa reconhecer firma de alguma coisa?",
+     "id": "Terus kami perlu melegalisasi tanda tangan untuk sesuatu?",
+     "literal": "dan kami ia-perlu mengakui tanda-tangan dari sesuatu hal?"
+    },
+    {
+     "speaker": "Escrevente:",
+     "text": "Firma se reconhece no tabelionato de notas.",
+     "id": "Legalisasi tanda tangan dilakukan di kantor notaris.",
+     "literal": "tanda-tangan diri ia-mengakui di-si kantor-notaris dari catatan."
+    },
+    {
+     "speaker": "Luana:",
+     "text": "Ah, e é aqui que a gente dá entrada na habilitação, né?",
+     "id": "Oh, dan di sini kami mengajukan izin menikahnya, ya?",
+     "literal": "ah, dan ia-adalah di-sini bahwa kami ia-memberi masuk di-si habilitasi, bukan?"
+    },
+    {
+     "speaker": "Escrevente:",
+     "text": "Isso. E não deixem pra última hora!",
+     "id": "Betul. Dan jangan tunggu sampai mepet!",
+     "literal": "itu. dan jangan kalian-tinggalkan untuk-si terakhir jam!"
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Pode deixar. Documento estrangeiro sempre dá trabalho, né?",
+     "id": "Beres. Dokumen asing selalu bikin repot, ya?",
+     "literal": "bisa tinggalkan. dokumen asing selalu ia-memberi kerja, bukan?"
+    }
+   ],
+   "notes": [
+    "**Quais documentos são exigidos** — pasif dengan *ser* di presente: \"dokumen apa yang disyaratkan\". Versi lisannya lebih pendek: *O que precisa pra casar?* dengan *precisa* tanpa pelaku.",
+    "**Apostilada** — apostille adalah cap pengesahan internasional menurut Konvensi Den Haag 1961, yang menggantikan legalisasi kedutaan yang berbelit. Brasil memakainya sejak 2016 dan Indonesia sejak 2022, jadi dokumen Indonesia diapostille **di Indonesia**, lalu diterjemahkan **di Brasil**.",
+    "**Tradutor juramentado** — penerjemah tersumpah yang terdaftar di Junta Comercial negara bagian. Untuk urusan resmi di cartório dan pengadilan, biasanya hanya terjemahannya (*a tradução juramentada*) yang diterima; terjemahan buatan sendiri, sebagus apa pun, tidak berlaku.",
+    "**Firma se reconhece** — *se* impersonal: \"tanda tangan dilegalisasi (orang)\". *Reconhecer firma* = notaris menyatakan tanda tangan itu memang milikmu. Itu tugas *tabelionato de notas* (kantor notaris), bukan *registro civil* yang mengurus kelahiran, pernikahan, dan kematian.",
+    "**Habilitação de casamento** — proses pemeriksaan dokumen sebelum pernikahan sipil, termasuk pengumuman rencana pernikahan (*os proclamas*). Daftar dokumen lengkap untuk orang asing berbeda antarkantor; selalu minta daftar tertulis (*a lista de documentos*).",
+    "**Dá trabalho** — *dar trabalho* = merepotkan, makan tenaga: *Criança dá trabalho*, *Esse relatório deu um trabalho!* Jangan tertukar dengan *dar um trabalho a alguém* (memberi pekerjaan)."
+   ],
+   "grammars": [
+    {
+     "title": "Kata kerja birokrasi dan partisipnya",
+     "body": [
+      "Di formulir dan surat, kata-kata ini hampir selalu muncul sebagai partisip, dalam pasif atau sebagai keterangan keadaan. Hafalkan pasangannya sekaligus."
+     ],
+     "table": {
+      "head": [
+       "Kata kerja",
+       "Cara baca",
+       "Di formulir",
+       "Arti"
+      ],
+      "rows": [
+       [
+        "reconhecer firma",
+        "he-ko-nye-SÊH FIH-ma",
+        "*firma reconhecida*",
+        "melegalisasi tanda tangan"
+       ],
+       [
+        "autenticar",
+        "áu-ten-tchi-KAH",
+        "*cópia autenticada*",
+        "melegalisasi fotokopi"
+       ],
+       [
+        "apostilar",
+        "a-pos-tchi-LAH",
+        "*documento apostilado*",
+        "memberi apostille"
+       ],
+       [
+        "traduzir",
+        "tra-du-ZIH",
+        "*certidão traduzida*",
+        "menerjemahkan"
+       ],
+       [
+        "protocolar",
+        "pro-to-ko-LAH",
+        "*pedido protocolado*",
+        "mengajukan resmi"
+       ],
+       [
+        "emitir",
+        "e-mi-TCHIH",
+        "*emitido em 02/03/2029*",
+        "menerbitkan"
+       ],
+       [
+        "deferir",
+        "de-fe-RIH",
+        "*pedido deferido*",
+        "mengabulkan"
+       ],
+       [
+        "indeferir",
+        "in-de-fe-RIH",
+        "*pedido indeferido*",
+        "menolak"
+       ],
+       [
+        "vencer",
+        "ven-SÊH",
+        "*documento vencido*",
+        "habis masa berlaku"
+       ]
+      ]
+     },
+     "after": [
+      "*Vencer* dipakai untuk dokumen dan tagihan: *meu RNM vence em maio*, *o boleto vence amanhã*. Jangan tertukar dengan \"menang\", arti *vencer* yang lain."
+     ]
+    }
+   ]
+  }
+ ],
+ "sections": [
+  {
+   "title": "Kamus kecil birokrasi Brasil",
+   "blocks": [
+    {
+     "type": "tabel",
+     "head": [
+      "Português",
+      "Cara baca",
+      "Bahasa Indonesia"
+     ],
+     "rows": [
+      [
+       "o cartório",
+       "u kah-TÓ-ri-u",
+       "kantor catatan resmi (notaris, catatan sipil)"
+      ],
+      [
+       "o tabelionato de notas",
+       "u ta-be-li-o-NA-tu dji NÓ-tas",
+       "kantor notaris"
+      ],
+      [
+       "o registro civil",
+       "u he-ZHIS-tru si-VIU",
+       "catatan sipil"
+      ],
+      [
+       "a firma",
+       "a FIH-ma",
+       "tanda tangan (di cartório); perusahaan"
+      ],
+      [
+       "a cópia autenticada",
+       "a KÓ-pi-a áu-ten-tchi-KA-da",
+       "fotokopi berlegalisasi"
+      ],
+      [
+       "a certidão",
+       "a seh-tchi-DÁUN",
+       "akta, surat keterangan resmi"
+      ],
+      [
+       "o protocolo",
+       "u pro-to-KÓ-lu",
+       "tanda terima bernomor"
+      ],
+      [
+       "o prazo",
+       "u PRA-zu",
+       "tenggat, jangka waktu"
+      ],
+      [
+       "a taxa",
+       "a TA-sya",
+       "biaya layanan"
+      ],
+      [
+       "o recurso",
+       "u he-KUH-su",
+       "banding, keberatan"
+      ],
+      [
+       "o comprovante de residência",
+       "u kon-pro-VAN-tchi dji he-zi-DEN-si-a",
+       "bukti alamat (tagihan listrik dsb.)"
+      ]
+     ]
+    },
+    {
+     "type": "p",
+     "text": "*Cartório* adalah lembaga yang khas Brasil: kantor swasta yang menjalankan tugas negara melalui pelimpahan. Pengelolanya lulus seleksi umum (*concurso*), dan tarifnya ditetapkan tabel resmi tiap negara bagian. Ada beberapa jenis: *tabelionato de notas* (legalisasi, akta notaris), *registro civil* (kelahiran, pernikahan, kematian), *registro de imóveis* (tanah dan bangunan), dan lain-lain."
+    },
+    {
+     "type": "p",
+     "text": "*Reconhecer firma* punya dua jenis. *Por semelhança*: petugas membandingkan tanda tanganmu dengan contoh yang sudah kamu simpan di kantor itu (untuk itu kamu harus *abrir firma* dulu, sekali saja). *Por autenticidade*: kamu menandatangani di depan petugas, dipakai misalnya untuk jual beli mobil. Untuk urusan dengan instansi pemerintah, legalisasi semacam ini kini pada umumnya tak lagi diwajibkan, kecuali undang-undang menentukan lain."
+    },
+    {
+     "type": "kotak",
+     "title": "Kiat di depan loket",
+     "items": [
+      "Bawa selalu **asli dan fotokopi** tiap dokumen; banyak masalah selesai kalau petugas bisa mencocokkan sendiri.",
+      "Tanyakan *Qual é o prazo?* (berapa lama?) dan *Tem alguma lista por escrito?* (ada daftar tertulisnya?). Jawaban lisan di loket bisa berbeda dengan jawaban loket sebelah.",
+      "Simpan *protocolo* dan bukti pembayaran; foto keduanya juga.",
+      "Biaya resmi dibayar lewat formulir atau tagihan resmi, bukan kepada perantara di depan gedung. Jasa *despachante* sah, tapi kamu yang memilihnya, bukan dia yang mendatangimu."
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Nama orang Indonesia di formulir Brasil",
+   "blocks": [
+    {
+     "type": "tabel",
+     "head": [
+      "Kolom formulir",
+      "Arti",
+      "Catatan"
+     ],
+     "rows": [
+      [
+       "*nome completo*",
+       "nama lengkap",
+       "tulis persis seperti di paspor"
+      ],
+      [
+       "*sobrenome*",
+       "nama keluarga",
+       "orang Indonesia sering tak punya"
+      ],
+      [
+       "*filiação*",
+       "nama orang tua",
+       "sering wajib, terutama *nome da mãe*"
+      ],
+      [
+       "*naturalidade*",
+       "tempat lahir",
+       "kota: *Jacarta*"
+      ],
+      [
+       "*nacionalidade*",
+       "kewarganegaraan",
+       "*indonésia* (bentuk perempuan, karena *nacionalidade*)"
+      ],
+      [
+       "*estado civil*",
+       "status perkawinan",
+       "*solteiro(a), casado(a), divorciado(a), viúvo(a)*"
+      ],
+      [
+       "*data de nascimento*",
+       "tanggal lahir",
+       "urutan DD/MM/AAAA"
+      ],
+      [
+       "*órgão emissor*",
+       "instansi penerbit",
+       "untuk RNM: *PF*"
+      ]
+     ]
+    },
+    {
+     "type": "p",
+     "text": "Sistem Brasil berasumsi setiap orang punya nama depan dan nama keluarga, dan hampir selalu meminta **nama ibu**: di Brasil, *nome da mãe* adalah salah satu data pengenal utama, sampai di bank dan rumah sakit. Budi beruntung: *Budi Santoso* muat dengan rapi di dua kolom, dan orang tuanya, Hartono dan Wati, cukup ditulis dengan nama tunggal masing-masing."
+    },
+    {
+     "type": "p",
+     "text": "Bagi yang bernama tunggal, sistem kadang mengulang nama yang sama di dua kolom atau mengisi kolom nama keluarga dengan tanda tertentu. Yang terpenting adalah **konsistensi**: CPF, RNM, rekening bank, dan kontrak kerja harus memakai ejaan yang persis sama. Perbedaan satu huruf bisa menahan transfer gaji atau permohonan izin tinggal berbulan-bulan."
+    },
+    {
+     "type": "kotak",
+     "title": "Kalimat berguna",
+     "items": [
+      "*Eu não tenho sobrenome. Meu nome é só este.* = Saya tidak punya nama keluarga. Nama saya hanya ini.",
+      "*O nome tem que ficar igual ao do passaporte.* = Namanya harus sama dengan di paspor.",
+      "*Pode conferir a grafia, por favor?* = Bisa dicek ejaannya?",
+      "*Onde eu acompanho o andamento do pedido?* = Di mana saya bisa memantau proses permohonannya?"
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Ulangan berjenjang — unit 10",
+   "blocks": [
+    {
+     "type": "p",
+     "text": "Tutup kolom Portugis Brasil, baca terjemahan Indonesianya, lalu susun kembali kalimatnya dari ingatan."
+    },
+    {
+     "type": "tabel",
+     "head": [
+      "Bahasa Indonesia",
+      "Português"
+     ],
+     "rows": [
+      [
+       "*Dissera* itu *tinha dito* versi kita.",
+       "*\"Dissera\" é o nosso \"tinha dito\".*"
+      ],
+      [
+       "*Disse-lhe* artinya *falou pra ele*, \"bilang ke dia\".",
+       "*\"Disse-lhe\" quer dizer \"falou pra ele\".*"
+      ],
+      [
+       "Sebelum kenal kamu, aku belum pernah membaca Machado.",
+       "*Antes de te conhecer, eu nunca lera Machado.*"
+      ],
+      [
+       "Jadi *dissera-me* berubah jadi *tinha me falado*.",
+       "*Então \"dissera-me\" virou \"tinha me falado\".*"
+      ],
+      [
+       "Andai saja aku bisa menulis seperti dia!",
+       "*Quem me dera escrever como ele!*"
+      ]
+     ]
+    }
+   ]
+  }
+ ],
+ "vocab": [
+  {
+   "pt": "o cartório",
+   "baca": "u kah-TÓ-ri-u",
+   "id": "kantor catatan resmi"
+  },
+  {
+   "pt": "o tabelionato de notas",
+   "baca": "u ta-be-li-o-NA-tu dji NÓ-tas",
+   "id": "kantor notaris"
+  },
+  {
+   "pt": "reconhecer firma",
+   "baca": "he-ko-nye-SÊH FIH-ma",
+   "id": "melegalisasi tanda tangan"
+  },
+  {
+   "pt": "autenticar",
+   "baca": "áu-ten-tchi-KAH",
+   "id": "melegalisasi (salinan)"
+  },
+  {
+   "pt": "dar entrada em",
+   "baca": "DAH en-TRA-da éin",
+   "id": "mengajukan secara resmi"
+  },
+  {
+   "pt": "protocolar",
+   "baca": "pro-to-ko-LAH",
+   "id": "mendaftarkan, mengajukan resmi"
+  },
+  {
+   "pt": "o protocolo",
+   "baca": "u pro-to-KÓ-lu",
+   "id": "tanda terima bernomor"
+  },
+  {
+   "pt": "o pedido",
+   "baca": "u pe-DJI-du",
+   "id": "permohonan"
+  },
+  {
+   "pt": "o prazo",
+   "baca": "u PRA-zu",
+   "id": "tenggat, jangka waktu"
+  },
+  {
+   "pt": "vencer",
+   "baca": "ven-SÊH",
+   "id": "habis masa berlaku; jatuh tempo"
+  },
+  {
+   "pt": "deferir / indeferir",
+   "baca": "de-fe-RIH / in-de-fe-RIH",
+   "id": "mengabulkan / menolak"
+  },
+  {
+   "pt": "recorrer",
+   "baca": "he-ko-HÊH",
+   "id": "mengajukan banding"
+  },
+  {
+   "pt": "o agendamento",
+   "baca": "u a-zhen-da-MEN-tu",
+   "id": "janji temu terjadwal"
+  },
+  {
+   "pt": "a senha",
+   "baca": "a SÊ-nya",
+   "id": "nomor antrean; kata sandi"
+  },
+  {
+   "pt": "a taxa",
+   "baca": "a TA-sya",
+   "id": "biaya layanan"
+  },
+  {
+   "pt": "as digitais",
+   "baca": "as dji-zhi-TÁIS",
+   "id": "sidik jari"
+  },
+  {
+   "pt": "a autorização de residência",
+   "baca": "a áu-to-ri-za-SÁUN dji he-zi-DEN-si-a",
+   "id": "izin tinggal"
+  },
+  {
+   "pt": "a certidão de nascimento",
+   "baca": "a seh-tchi-DÁUN dji na-si-MEN-tu",
+   "id": "akta kelahiran"
+  },
+  {
+   "pt": "apostilar",
+   "baca": "a-pos-tchi-LAH",
+   "id": "memberi apostille"
+  },
+  {
+   "pt": "o tradutor juramentado",
+   "baca": "u tra-du-TÔH zhu-ra-men-TA-du",
+   "id": "penerjemah tersumpah"
+  },
+  {
+   "pt": "a habilitação de casamento",
+   "baca": "a a-bi-li-ta-SÁUN dji ka-za-MEN-tu",
+   "id": "proses izin menikah sipil"
+  },
+  {
+   "pt": "o escrevente / a escrevente",
+   "baca": "u is-kre-VEN-tchi / a is-kre-VEN-tchi",
+   "id": "petugas cartório"
+  },
+  {
+   "pt": "dar trabalho",
+   "baca": "DAH tra-BA-lyu",
+   "id": "merepotkan"
+  }
+ ],
+ "exercises": [
+  {
+   "prompt": "Terjemahkan ke bahasa Portugis.",
+   "items": [
+    "Permohonannya sudah diajukan (protocolar).",
+    "Saya diberi tahu bahwa fotokopi biasa sudah cukup. (orang ke-3 jamak)",
+    "Akta kelahiran harus diterjemahkan oleh penerjemah tersumpah.",
+    "Di sini fotokopi dilegalisasi. (papan, baku)",
+    "Dicari penjual. (papan)",
+    "Kalau permohonannya ditolak, saya bisa mengajukan banding."
+   ]
+  },
+  {
+   "prompt": "Isi titik-titiknya. Petunjuk ada di dalam kurung.",
+   "items": [
+    "____ casas nesta rua. (vender + se, baku)",
+    "____ de secretária. (precisar + se)",
+    "O pedido ainda vai ser ____. (analisar)",
+    "A declaração foi ____ pela gerente. (assinar)",
+    "As cópias precisam ser ____. (autenticar)",
+    "Se o pedido for ____, o senhor pode recorrer. (lawan kata deferido)",
+    "O meu RNM ____ em maio. (habis masa berlaku, presente)"
+   ]
+  },
+  {
+   "prompt": "Ubah ke pasif dengan ser. Pertahankan kalanya.",
+   "items": [
+    "A Polícia Federal analisou o pedido.",
+    "O tradutor vai traduzir a certidão.",
+    "A diretora assinou as declarações.",
+    "O cartório autentica as cópias.",
+    "A escrevente conferiu os documentos.",
+    "O sistema cadastrou o pedido."
+   ]
+  },
+  {
+   "prompt": "Susun jadi kalimat yang benar.",
+   "items": [
+    "entrada / já / no / dei / pedido",
+    "disseram / me / suficiente / que / era / cópia simples",
+    "vai / analisado / o pedido / ser",
+    "se / firma / reconhece / no tabelionato",
+    "exigidos / quais / são / documentos / ?"
+   ]
+  }
+ ],
+ "answers": [
+  "O pedido já foi protocolado. — Me disseram que cópia simples era suficiente. — A certidão de nascimento tem que ser traduzida por um tradutor juramentado. — Autenticam-se cópias. — Precisa-se de vendedores. — Se o pedido for indeferido, eu posso recorrer.",
+  "Vendem-se — Precisa-se — analisado — assinada — autenticadas — indeferido — vence",
+  "O pedido foi analisado pela Polícia Federal. — A certidão vai ser traduzida pelo tradutor. — As declarações foram assinadas pela diretora. — As cópias são autenticadas pelo cartório. — Os documentos foram conferidos pela escrevente. — O pedido foi cadastrado pelo sistema.",
+  "Já dei entrada no pedido. — Me disseram que cópia simples era suficiente. — O pedido vai ser analisado. — Firma se reconhece no tabelionato. — Quais documentos são exigidos?"
+ ]
+}
