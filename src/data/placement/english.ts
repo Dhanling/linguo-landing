@@ -6,12 +6,22 @@
 export type QuestionType = "multiple" | "fill" | "fillChoice" | "dragDrop" | "missing" | "matching";
 export type Difficulty = "A1" | "A2" | "B1" | "B2";
 
+// ── Audio soal listening [placement-listening-v1] ───────────────────────────
+// Dibunyikan lewat /api/tts (Chirp). `text` = transkrip bahasa target (TIDAK
+// ditampilkan saat tes — taruh transkrip + artinya di `explanation`),
+// `lang` = kode bahasa /api/tts (mis. "ar"). Maks 400 karakter.
+export interface ListeningAudio {
+  text: string;
+  lang: string;
+}
+
 // ── Base interface (common fields) ──────────────────────────────────────────
 interface BaseQuestion {
   id: string;
   difficulty: Difficulty;
   explanation: string;
   tip?: string;
+  audio?: ListeningAudio; // ada = soal listening, tipe soalnya tetap salah satu di bawah
 }
 
 // ── Multiple choice (existing) ──────────────────────────────────────────────

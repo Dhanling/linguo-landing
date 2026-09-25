@@ -1,8 +1,10 @@
 import type { Question } from "./english";
 
 // ─────────────────────────────────────────────────────────────────────────────
-// ARABIC PLACEMENT TEST (15 soal, tipe campuran)
-// A1: 4 soal · A2: 4 soal · B1: 4 soal · B2: 3 soal
+// ARABIC PLACEMENT TEST (20 soal, tipe campuran — 5 di antaranya listening)
+// A1: 5 soal · A2: 5 soal · B1: 6 soal · B2: 4 soal
+// [placement-listening-v1] Soal ber-`audio` dibunyikan Chirp ar-XA lewat /api/tts;
+// transkrip sengaja cuma ada di `audio.text` + pembahasan, tidak di layar soal.
 // Fokus: Fusha (Modern Standard Arabic / MSA)
 // ─────────────────────────────────────────────────────────────────────────────
 export const arabicPlacementTest: Question[] = [
@@ -42,6 +44,17 @@ export const arabicPlacementTest: Question[] = [
     explanation: "Struktur: Subjek (أنا/ana) + Kata kerja (آكل/ākulu = makan) + Objek (الخبز/al-khubz = roti). Awalan ال (al-) = kata sandang 'itu/the'.",
   },
 
+  // [placement-listening-v1] Listening A1 — melengkapi (pasangan minimal jāmiʿa/jāmiʿ)
+  {
+    id: "l1", difficulty: "A1", type: "fillChoice",
+    audio: { lang: "ar", text: "صَبَاحَ الْخَيْرِ! اِسْمِي أَحْمَدُ، أَنَا طَالِبٌ فِي الْجَامِعَةِ." },
+    question: "Dengarkan audio, lalu lengkapi: 'أنا طالب في ___.'",
+    context: "Pilih kata yang kamu dengar.",
+    options: ["الجامعة (al-jāmiʿa)", "الجامع (al-jāmiʿ)", "المدرسة (al-madrasa)", "المكتبة (al-maktaba)"],
+    correct: "الجامعة (al-jāmiʿa)",
+    explanation: "Transkrip: 'صباح الخير! اسمي أحمد، أنا طالب في الجامعة.' (Selamat pagi! Nama saya Ahmad, saya mahasiswa di universitas.) Awas pasangan mirip: 'الجامعة (al-jāmiʿa)' = universitas, 'الجامع (al-jāmiʿ)' = masjid jami' — bedanya cuma ta marbūṭa di akhir.",
+  },
+
   // ═══════════════════════ A2 ═══════════════════════
   {
     id: "q5", difficulty: "A2", type: "multiple",
@@ -78,6 +91,21 @@ export const arabicPlacementTest: Question[] = [
     options: ["يمكنك (yumkinuka)", "يجب (yajibu)", "تريد (turīdu)", "عندك (ʿindaka)"],
     correct: "يمكنك (yumkinuka)",
     explanation: "'يمكنك (yumkinuka)' = kamu bisa. 'يجب (yajibu)' = harus, 'تريد (turīdu)' = kamu ingin, 'عندك (ʿindaka)' = kamu punya.",
+  },
+
+  // [placement-listening-v1] Listening A2 — detail informasi (jam + kendaraan)
+  {
+    id: "l2", difficulty: "A2", type: "multiple",
+    audio: { lang: "ar", text: "أَسْتَيْقِظُ كُلَّ يَوْمٍ فِي السَّاعَةِ السَّادِسَةِ، ثُمَّ أَذْهَبُ إِلَى الْعَمَلِ بِالْحَافِلَةِ فِي السَّاعَةِ السَّابِعَةِ وَالنِّصْفِ." },
+    question: "Dengarkan audio. Jam berapa dia berangkat kerja, dan naik apa?",
+    options: [
+      "Jam 06.00, naik bus",
+      "Jam 07.30, naik bus",
+      "Jam 07.30, naik mobil",
+      "Jam 06.30, naik kereta",
+    ],
+    correct: 1,
+    explanation: "Transkrip: 'أستيقظ كل يوم في الساعة السادسة، ثم أذهب إلى العمل بالحافلة في الساعة السابعة والنصف.' (Saya bangun tiap hari jam enam, lalu berangkat kerja naik bus jam setengah delapan.) Jam 06.00 = waktu BANGUN (pengecoh). 'السابعة والنصف (as-sābiʿa wa-n-niṣf)' = 07.30, 'الحافلة (al-ḥāfila)' = bus.",
   },
 
   // ═══════════════════════ B1 ═══════════════════════
@@ -121,6 +149,31 @@ export const arabicPlacementTest: Question[] = [
     explanation: "Setelah 'إذا (idhā)' lazim dipakai bentuk māḍī: 'درستَ (darasta)'. Klausa hasil pakai futur 'ستنجح (sa-tanjaḥ)' = kamu akan lulus. Pengecoh: 'نجحتَ (najaḥta)' = kamu lulus (lampau), 'فشلتَ (fashilta)' = kamu gagal.",
   },
 
+  // [placement-listening-v1] Listening B1 — menerjemahkan (pengandaian lau … la-)
+  {
+    id: "l3", difficulty: "B1", type: "multiple",
+    audio: { lang: "ar", text: "لَوْ كُنْتُ أَعْرِفُ أَنَّكَ مَرِيضٌ، لَزُرْتُكَ فِي الْمُسْتَشْفَى." },
+    question: "Dengarkan audio. Pilih terjemahan yang paling tepat:",
+    options: [
+      "Kalau saja aku tahu kamu sakit, aku pasti sudah menjengukmu di rumah sakit.",
+      "Aku tahu kamu sakit, jadi aku menjengukmu di rumah sakit.",
+      "Kalau kamu sakit, aku akan menjengukmu di rumah sakit.",
+      "Aku tidak tahu kamu sakit, tapi dokter sudah menjengukmu.",
+    ],
+    correct: 0,
+    explanation: "Transkrip: 'لو كنت أعرف أنك مريض، لزرتك في المستشفى.' Pola 'لَوْ (law) + māḍī …، لَـ (la-) + māḍī' = pengandaian yang TIDAK terjadi (nyatanya dia tidak tahu, jadi tidak menjenguk). Opsi 'kalau kamu sakit, aku akan…' pakai إذا (idhā) — pengandaian yang masih mungkin.",
+  },
+  // [placement-listening-v1] Listening B1 — dikte 2 kata (pengecoh bunyi mirip)
+  {
+    id: "l4", difficulty: "B1", type: "missing",
+    audio: { lang: "ar", text: "يَجِبُ عَلَيْنَا أَنْ نُحَافِظَ عَلَى الْبِيئَةِ، لِأَنَّ التَّلَوُّثَ يُؤَثِّرُ عَلَى صِحَّةِ الْإِنْسَانِ." },
+    question: "Dengarkan audio, lalu isi dua kata yang hilang:",
+    template: "يجب علينا أن ___ على البيئة، لأن ___ يؤثر على صحة الإنسان.",
+    blanks: ["نحافظ (nuḥāfiẓa)", "التلوث (at-talawwuth)"],
+    options: ["نحفظ (naḥfaẓa)", "التلوث (at-talawwuth)", "يحافظ (yuḥāfiẓu)", "نحافظ (nuḥāfiẓa)", "التطور (at-taṭawwur)", "التلون (at-talawwun)"],
+    explanation: "Transkrip: 'يجب علينا أن نحافظ على البيئة، لأن التلوث يؤثر على صحة الإنسان.' (Kita wajib menjaga lingkungan, karena polusi memengaruhi kesehatan manusia.) 'نُحافظ على (nuḥāfiẓu ʿalā)' = menjaga/melestarikan (awalan nu- = kita); 'نَحفظ (naḥfaẓu)' = menghafal. 'التلوّث (at-talawwuth)' = polusi, beda dengan 'التلوّن (at-talawwun)' = perubahan warna dan 'التطوّر (at-taṭawwur)' = perkembangan.",
+  },
+
   // ═══════════════════════ B2 ═══════════════════════
   {
     id: "q13", difficulty: "B2", type: "multiple",
@@ -156,5 +209,20 @@ export const arabicPlacementTest: Question[] = [
     ],
     correct: 0,
     explanation: "'Man jadda wajada' = siapa yang bersungguh-sungguh pasti berhasil — bersusah payah dahulu, menikmati hasil kemudian. Pengecoh menggambarkan orang dangkal/banyak bicara/berwawasan sempit.",
+  },
+
+  // [placement-listening-v1] Listening B2 — HOTS: menyimpulkan maksud berita
+  {
+    id: "l5", difficulty: "B2", type: "multiple",
+    audio: { lang: "ar", text: "أَعْلَنَتِ الشَّرِكَةُ أَنَّ أَرْبَاحَهَا ارْتَفَعَتْ هَذَا الْعَامَ بِنِسْبَةِ عِشْرِينَ فِي الْمِئَةِ، وَمَعَ ذَلِكَ قَرَّرَتْ إِغْلَاقَ ثَلَاثَةٍ مِنْ فُرُوعِهَا، وَتَحْوِيلَ خِدْمَاتِهَا إِلَى الْإِنْتَرْنِتِ." },
+    question: "Dengarkan potongan berita ini. Kesimpulan yang PALING masuk akal adalah:",
+    options: [
+      "Perusahaan menutup cabang karena sedang merugi.",
+      "Penutupan cabang adalah strategi pindah ke layanan online, bukan karena bisnisnya memburuk.",
+      "Keuntungan perusahaan turun 20 persen tahun ini.",
+      "Perusahaan membuka tiga cabang baru dan layanan online.",
+    ],
+    correct: 1,
+    explanation: "Transkrip: 'أعلنت الشركة أن أرباحها ارتفعت هذا العام بنسبة عشرين في المئة، ومع ذلك قررت إغلاق ثلاثة من فروعها، وتحويل خدماتها إلى الإنترنت.' (Perusahaan mengumumkan labanya naik 20% tahun ini, namun demikian memutuskan menutup tiga cabangnya dan memindahkan layanannya ke internet.) Kuncinya 'ومع ذلك (wa-maʿa dhālika)' = namun demikian: laba NAIK tapi cabang tetap ditutup → itu strategi digital, bukan karena rugi. 'ارتفعت (irtafaʿat)' = naik, 'إغلاق (ighlāq)' = penutupan.",
   },
 ];

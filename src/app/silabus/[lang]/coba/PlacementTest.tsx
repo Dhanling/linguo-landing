@@ -12,6 +12,7 @@ import { displayLangTitle } from "@/data/curriculum/languages";
 import { type Question, type DragDropQuestion, type MissingQuestion, type MatchingQuestion, type FillChoiceQuestion, DIFFICULTY_POINTS, determineLevel } from "@/data/placement/english";
 import { RectFlag, FLAG_CODE_BY_SLUG } from "@/components/RectFlag";
 import CefrLevelMap from "@/components/CefrLevelMap"; // [placement-cefr-map-v1]
+import ListeningPlayer, { siapkanAudio } from "./ListeningPlayer"; // [placement-listening-v1]
 
 // Teks jawaban benar per tipe soal — dipakai di rekap akhir (bukan saat menjawab)
 function correctAnswerText(q: Question): string {
@@ -159,6 +160,7 @@ export default function PlacementTest({ curriculum, questions }: Props) {
     startTimeRef.current = Date.now();
     setScreen("quiz"); setCurrentQ(0); setDirection(1);
     setAnswers(Array(questions.length).fill(null));
+    siapkanAudio(questions.map((q) => q.audio));
     trackEvent("placement_test_quiz_started", { language: meta?.name ?? "" });
   };
 
@@ -199,7 +201,8 @@ export default function PlacementTest({ curriculum, questions }: Props) {
     <main className="min-h-screen bg-gradient-to-b from-white via-slate-50 to-white">
       <AnimatePresence mode="wait">
         {screen === "intro" && (
-          <IntroScreen key="intro" meta={meta} total={questions.length} needContact={!fromAkun} onContact={saveContact} onStart={startTest} />
+          <IntroScreen key="intro" meta={meta} total={questions.length} listening={questions.filter((q) => q.audio).length}
+            needContact={!fromAkun} onContact={saveContact} onStart={startTest} />
         )}
         {screen === "quiz" && question && (
           <QuizScreen
@@ -237,8 +240,8 @@ export default function PlacementTest({ curriculum, questions }: Props) {
 // ================================================
 // INTRO
 // ================================================
-function IntroScreen({ meta, total, needContact, onContact, onStart }: {
-  meta: any; total: number; needContact: boolean; onContact: (c: Contact) => void; onStart: () => void;
+function IntroScreen({ meta, total, listening, needContact, onContact, onStart }: {
+  meta: any; total: number; listening: number; needContact: boolean; onContact: (c: Contact) => void; onStart: () => void;
 }) {
   // [placement-popup-biodata-tips-v1] "Mulai Test" → popup: biodata (wajib) → tips → mulai.
   const [step, setStep] = useState<null | "biodata" | "tips">(null);
@@ -294,12 +297,12 @@ function IntroScreen({ meta, total, needContact, onContact, onStart }: {
         </h1>
 
         <p className="text-lg text-gray-600 mb-8 leading-relaxed">
-          Gratis, 2 menit. Dapatkan level CEFR kamu + rekomendasi chapter yang pas untuk mulai.
+          Gratis, {listening ? "5" : "2"} menit{listening ? `, termasuk ${listening} soal listening` : ""}. Dapatkan level CEFR kamu + rekomendasi chapter yang pas untuk mulai.
         </p>
 
         <div className="grid grid-cols-3 gap-3 md:gap-4 mb-8">
           <InfoCard icon="List" value={String(total)} label="Soal" />
-          <InfoCard icon="Clock" value="~2 mnt" label="Durasi" />
+          <InfoCard icon="Clock" value={listening ? "~5 mnt" : "~2 mnt"} label="Durasi" />
           <InfoCard icon="Award" value="CEFR" label="Standard" />
         </div>
 
@@ -355,6 +358,7 @@ function IntroScreen({ meta, total, needContact, onContact, onStart }: {
                   </div>
                   <ul className="mt-4 space-y-2.5 text-sm text-gray-700">
                     {[
+                      ...(listening ? ["Siapkan headset/speaker — ada soal listening, tiap audio bisa diputar maks 3x"] : []),
                       "Klik opsi = jawaban langsung tersubmit (tanpa tombol)",
                       "Benar/salah tidak dibocorkan per soal — biar kamu fokus",
                       "Rekap lengkap + pembahasan muncul di akhir test",
@@ -469,6 +473,7 @@ function QuizScreen(props: {
                 ? (question as any).prompt
                 : (question as any).question)}
             </h2>
+            {question.audio && <ListeningPlayer key={question.id} id={question.id} audio={question.audio} />}
             {question.type === "dragDrop" && (
               <p className="text-sm md:text-base text-gray-600 italic mb-5 bg-[#1A9E9E]/5 border-l-4 border-[#1A9E9E] px-4 py-3 rounded-r-xl">
                 <span className="font-semibold text-[#1A9E9E] not-italic">Terjemahan: </span>
@@ -604,9 +609,12 @@ function ResultScreen({ score, questions, log, meta, timeElapsedSec, contact, on
   score: number; questions: Question[]; log: { correct: boolean; skipped: boolean }[]; meta: any; timeElapsedSec: number;
   contact: Contact | null; onRetake: () => void;
 }) {
-  const result = determineLevel(score);
   // Compute max score dynamically: sum of DIFFICULTY_POINTS per question
   const maxScore = questions.reduce((sum, q) => sum + DIFFICULTY_POINTS[q.difficulty], 0);
+  // [placement-listening-v1] Ambang determineLevel dikalibrasi untuk skor maks 45
+  // (bank Inggris). Bank lain maks 36 (tak pernah bisa B2) dan Arab kini 49 —
+  // skalakan dulu ke 45 supaya ambangnya adil untuk semua bank.
+  const result = determineLevel(maxScore ? Math.round((score * 45) / maxScore) : score);
   const scorePercent = (score / maxScore) * 100;
   const correctCount = log.filter((l) => l.correct).length;
   const wrongCount = log.filter((l) => !l.correct && !l.skipped).length;
