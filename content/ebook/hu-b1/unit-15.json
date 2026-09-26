@@ -1,0 +1,705 @@
+{
+ "title": "Surel resmi — keluhan dan surat kepada mitra",
+ "title_target": "Tisztelt Ügyfélszolgálat!",
+ "goal": "Menulis surel keluhan kepada penyedia layanan dan surel bisnis kepada mitra. Titik tata bahasanya: ragam resmi (*Tisztelt…!*, *Tisztelettel:*, *Önök*), permintaan dengan *kérem/kérjük* dan *szíveskedik*, serta pengandaian sopan resmi (*megköszönném, ha…*).",
+ "bekal": [
+  "menyusun surel resmi Hungaria dari salam sampai tanda tangan: *Tisztelt…!* … *Tisztelettel:*",
+  "meminta sesuatu secara resmi kepada satu orang atau lembaga: *szíveskedjen / szíveskedjenek*, *kérjük*",
+  "melunakkan permintaan dengan pengandaian: *Megköszönnénk, ha … visszaküldené*"
+ ],
+ "dialogs": [
+  {
+   "title": "Dialog — Panaszlevél",
+   "intro": "Jumat, 19 Mei 2028, jam makan siang di kantor. Sudah lima hari internet di apartemen Budi mati, dan telepon ke layanan pelanggan HálóNet Zrt. tidak membawa hasil. Réka menyarankan jalan yang lebih ampuh.",
+   "lines": [
+    {
+     "speaker": "Réka:",
+     "text": "Mi a baj? Olyan mérges vagy.",
+     "id": "Kenapa? Kamu kelihatan kesal sekali.",
+     "literal": "apa itu masalah? begitu marah kamu-ada."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Öt napja nincs internet otthon. Háromszor hívtam az ügyfélszolgálatot, semmi.",
+     "id": "Sudah lima hari nggak ada internet di rumah. Tiga kali aku telepon layanan pelanggan, hasilnya nol.",
+     "literal": "lima hari-nya tidak-ada internet di-rumah. tiga-kali saya-meneleponnya-lampau itu layanan-pelanggan-sasaran, tidak-ada-apa-apa."
+    },
+    {
+     "speaker": "Réka:",
+     "text": "Akkor írj nekik hivatalos levelet. Az írásos panasznak nagyobb súlya van.",
+     "id": "Kalau begitu tulis surat resmi ke mereka. Keluhan tertulis lebih berbobot.",
+     "literal": "kalau-begitu tulis-hendaklah bagi-mereka resmi surat-sasaran. itu tertulis keluhan-bagi lebih-besar bobot-nya ada."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Jó, de hogy kezdjem? „Kedves HálóNet”?",
+     "id": "Oke, tapi mulainya gimana? \"HálóNet yang baik\"?",
+     "literal": "baik, tetapi bagaimana saya-memulainya-hendaklah? baik HálóNet?"
+    },
+    {
+     "speaker": "Réka:",
+     "text": "Nem, ez nem baráti levél. Így kezdd: „Tisztelt Ügyfélszolgálat!”",
+     "id": "Bukan, ini bukan surat untuk teman. Mulai begini: \"Yang terhormat Layanan Pelanggan!\"",
+     "literal": "tidak, ini tidak teman-an surat. begini mulai-hendaklah-nya: yang-dihormati layanan-pelanggan!"
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Aztán: „Május 14-e óta nem működik az internet-előfizetésem.”",
+     "id": "Lalu: \"Sejak 14 Mei langganan internet saya tidak berfungsi.\"",
+     "literal": "lalu: mei keempat-belas-nya sejak tidak ia-berfungsi itu internet-langganan-ku."
+    },
+    {
+     "speaker": "Réka:",
+     "text": "Jó. Írd bele az ügyfélszámodat és a bejelentési számokat is.",
+     "id": "Bagus. Masukkan juga nomor pelangganmu dan nomor-nomor laporan gangguannya.",
+     "literal": "baik. tulis-hendaklah-nya ke-dalamnya itu nomor-pelanggan-mu-sasaran dan itu laporan-an nomor-jamak-sasaran juga."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Megvan. És hogy kérjem, hogy küldjenek ki egy szerelőt?",
+     "id": "Sudah. Terus gimana aku minta supaya mereka kirim teknisi?",
+     "literal": "ia-ada-tuntas. dan bagaimana saya-memintanya-hendaklah, bahwa mereka-mengirim-hendaklah keluar sebuah teknisi-sasaran?"
+    },
+    {
+     "speaker": "Réka:",
+     "text": "„Kérem, szíveskedjenek a hibát három munkanapon belül elhárítani.”",
+     "id": "\"Mohon kiranya gangguan tersebut diperbaiki dalam tiga hari kerja.\"",
+     "literal": "saya-memintanya, kalian-berkenan-hendaklah itu gangguan-sasaran tiga hari-kerja-di dalam pergi-menanggulangi."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "„Szíveskedjenek”? Ez nagyon régiesen hangzik.",
+     "id": "\"Berkenan\"? Kedengarannya kuno sekali.",
+     "literal": "kalian-berkenan-hendaklah? ini sangat kuno-secara ia-berbunyi."
+    },
+    {
+     "speaker": "Réka:",
+     "text": "Szóban furcsa, de hivatalos levélben teljesen normális.",
+     "id": "Kalau diucapkan memang aneh, tapi dalam surat resmi itu biasa sekali.",
+     "literal": "kata-di-dalam aneh, tetapi resmi surat-di-dalam sepenuhnya normal."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "És a pénzem? Öt napig nem kaptam semmit.",
+     "id": "Lalu uangku? Lima hari aku nggak dapat apa-apa.",
+     "literal": "dan itu uang-ku? lima hari-sampai tidak saya-menerima-lampau apa-pun-sasaran."
+    },
+    {
+     "speaker": "Réka:",
+     "text": "„Kérem továbbá, hogy a kiesett napok díját írják jóvá.”",
+     "id": "\"Saya mohon pula agar biaya untuk hari-hari yang terputus dikreditkan kembali.\"",
+     "literal": "saya-memintanya selanjutnya, bahwa itu yang-jatuh-keluar hari-jamak biaya-nya-sasaran mereka-menulisnya-hendaklah jadi-baik."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "És a végére „Üdv, Budi”?",
+     "id": "Terus di akhir \"Salam, Budi\"?",
+     "literal": "dan itu akhir-nya-ke-atas salam, Budi?"
+    },
+    {
+     "speaker": "Réka:",
+     "text": "Szó sem lehet róla! „Tisztelettel: Budi Santoso”, alatta a címed és a telefonszámod.",
+     "id": "Jangan pernah! \"Hormat saya: Budi Santoso\", di bawahnya alamat dan nomor teleponmu.",
+     "literal": "kata pun-tidak mungkin tentang-itu! hormat-dengan: Budi Santoso, di-bawahnya itu alamat-mu dan itu nomor-telepon-mu."
+    }
+   ],
+   "notes": [
+    "**Hivatalos levél, írásos panasz** — surat resmi, keluhan tertulis. Di Hungaria penyedia layanan wajib menjawab keluhan tertulis dalam tenggat yang diatur undang-undang, dan jawaban tertulis mereka bisa kamu bawa ke lembaga lain bila perlu. Itulah sebabnya Réka menyuruh Budi menulis.",
+    "**Tisztelt Ügyfélszolgálat!** — salam surat resmi Hungaria diakhiri **tanda seru**, bukan koma, lalu isi surat dimulai di baris baru dengan huruf besar. *Tisztelt* (yang terhormat) adalah partisip dari *tisztel* (menghormati). Untuk orang: *Tisztelt Kovács Úr!*, *Tisztelt Fehér Doktornő!*; bila namanya tak diketahui: *Tisztelt Hölgyem, Uram!*.",
+    "**Május 14-e óta** — tanggal ditulis dengan angka dan titik (*május 14.*); bila diberi akhiran, bentuk urutannya disambung dengan tanda hubung: *május 14-e óta* (dibaca *május tizennegyedike óta*), *május 3-a óta* (*harmadika*), *június 5-ig*, *3-án* (pada tanggal 3).",
+    "**Szíveskedjenek … elhárítani** — *szíveskedik* (berkenan) + infinitif adalah permintaan paling resmi. Bentuknya perintah orang ketiga jamak karena yang disapa lembaga (*Önök*). Dalam percakapan ia terdengar kaku, seperti \"sudilah kiranya\"; dalam surat resmi justru wajar. *Elhárít* = menanggulangi (gangguan, bahaya).",
+    "**Írják jóvá** — *jóváír* (mengkreditkan kembali ke tagihan). Dalam anak kalimat *hogy* yang berisi permintaan, kata kerjanya subjungtif dan awalan pindah ke belakang, seperti pada perintah: *hogy … írják jóvá*. *A kiesett napok* = hari-hari yang hilang, dari *kiesik* (jatuh keluar).",
+    "**Tisztelettel:** — penutup paling resmi, diikuti titik dua dan nama di baris baru. *Üdv* (dari *üdvözlet*, salam) terlalu santai untuk keluhan. Nama orang asing boleh ditulis dengan urutannya sendiri (*Budi Santoso*); urutan Hungaria, nama keluarga di depan, dipakai untuk nama Hungaria."
+   ],
+   "grammars": [
+    {
+     "title": "Anatomi surel resmi",
+     "body": [
+      "Surel resmi Hungaria punya urutan yang cukup kaku. Ikuti urutan ini dan suratmu akan terbaca rapi, bahkan kalau bahasa Hungariamu belum sempurna."
+     ],
+     "table": {
+      "head": [
+       "Bagian",
+       "Contoh",
+       "Catatan"
+      ],
+      "rows": [
+       [
+        "*Tárgy* (subjek)",
+        "*Hibabejelentés – ügyfélszám 4471 2093*",
+        "singkat dan konkret"
+       ],
+       [
+        "*Megszólítás* (salam)",
+        "*Tisztelt Ügyfélszolgálat!*",
+        "tanda seru, lalu baris baru"
+       ],
+       [
+        "*Bevezetés* (pembuka)",
+        "*Azért írok, mert…*",
+        "langsung ke pokok"
+       ],
+       [
+        "*Tényállás* (fakta)",
+        "*Május 14-e óta nem működik…*",
+        "tanggal, nomor, apa yang sudah dilakukan"
+       ],
+       [
+        "*Kérés* (permintaan)",
+        "*Kérem, szíveskedjenek…*",
+        "apa, dan sampai kapan"
+       ],
+       [
+        "*Zárás* (penutup)",
+        "*Válaszukat előre is köszönöm.*",
+        "terima kasih di muka"
+       ],
+       [
+        "*Elköszönés* (pamit)",
+        "*Tisztelettel:*",
+        "nama di baris berikutnya"
+       ]
+      ]
+     },
+     "after": [
+      "*Válaszukat* memakai akhiran milik *-uk* (\"jawaban mereka\") karena lembaga disapa dengan *Önök*, yang secara tata bahasa orang ketiga jamak. Kepada satu orang: *Válaszát előre is köszönöm*."
+     ]
+    },
+    {
+     "title": "Bentuk permintaan resmi",
+     "body": [
+      "Dari yang paling kaku sampai yang paling hangat. Semuanya memakai *Ön/Önök*, jadi kata kerjanya orang ketiga."
+     ],
+     "table": {
+      "head": [
+       "Bentuk",
+       "Arti",
+       "Catatan"
+      ],
+      "rows": [
+       [
+        "*Kérem, szíveskedjen…*",
+        "Mohon Anda berkenan…",
+        "+ infinitif; kepada satu orang"
+       ],
+       [
+        "*Kérem, szíveskedjenek…*",
+        "Mohon Bapak-Ibu berkenan…",
+        "kepada lembaga (*Önök*)"
+       ],
+       [
+        "*Kérjük, …*",
+        "Kami mohon…",
+        "atas nama perusahaan"
+       ],
+       [
+        "*Legyen szíves…*",
+        "Tolong…, silakan…",
+        "lebih lisan, tetap sopan"
+       ],
+       [
+        "*Megköszönném, ha…*",
+        "Saya akan berterima kasih jika…",
+        "pengandaian: sopan tapi tegas"
+       ],
+       [
+        "*Hálás lennék, ha…*",
+        "Saya akan sangat berterima kasih jika…",
+        "lebih hangat"
+       ]
+      ]
+     },
+     "after": [
+      "Dalam surat, *Ön, Önök, Önt, Önnek* ditulis dengan huruf besar. *Szíveskedjék* (dengan *-jék*) adalah bentuk lama *szíveskedjen* yang masih muncul di surat sangat resmi dan papan pengumuman."
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Dialog kedua — Levél Fekete úrnak",
+   "intro": "Sore harinya. Kontrak dengan Pannon Kávé Kft. sudah disetujui ahli hukum kedua pihak, dan Budi harus mengirimkannya kepada Fekete Gábor untuk ditandatangani. Ia membacakan drafnya kepada Zoltán.",
+   "lines": [
+    {
+     "speaker": "Zoltán:",
+     "text": "Megírtad már a levelet Fekete úrnak?",
+     "id": "Surat untuk Pak Fekete sudah kamu tulis?",
+     "literal": "tuntas-kamu-menulisnya-lampau sudah itu surat-sasaran Fekete tuan-bagi?"
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Igen. Így kezdtem: „Tisztelt Fekete Úr!”",
+     "id": "Sudah. Aku mulai begini: \"Yang terhormat Bapak Fekete!\"",
+     "literal": "ya. begini saya-memulainya-lampau: yang-dihormati Fekete tuan!"
+    },
+    {
+     "speaker": "Zoltán:",
+     "text": "Jó. Még nem tegeződtök, úgyhogy maradj az önözésnél.",
+     "id": "Bagus. Kalian belum ber-*te*, jadi tetap pakai *Ön*.",
+     "literal": "baik. masih tidak kalian-ber-te, jadi tinggal-hendaklah itu ber-Ön-an-di-dekat."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Mellékelten küldjük a véglegesített szerződést két példányban.",
+     "id": "Terlampir kami kirimkan kontrak final dalam dua rangkap.",
+     "literal": "secara-terlampir kami-mengirimnya itu yang-difinalkan kontrak-sasaran dua salinan-di-dalam."
+    },
+    {
+     "speaker": "Zoltán:",
+     "text": "És mit kérünk tőle?",
+     "id": "Terus kita minta apa darinya?",
+     "literal": "dan apa-sasaran kami-minta dari-dia?"
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Megköszönnénk, ha az aláírt példányt június 5-ig visszaküldené.",
+     "id": "Kami akan berterima kasih apabila salinan yang telah ditandatangani Bapak kirimkan kembali paling lambat 5 Juni.",
+     "literal": "tuntas-kami-berterima-kasih-andai, jika itu yang-ditandatangani salinan-sasaran juni 5-sampai kembali-ia-mengirimnya-andai."
+    },
+    {
+     "speaker": "Zoltán:",
+     "text": "Tökéletes. Írd hozzá, hogy kérdés esetén rendelkezésére állsz.",
+     "id": "Sempurna. Tambahkan bahwa kalau ada pertanyaan kamu siap membantu.",
+     "literal": "sempurna. tulis-hendaklah-nya ke-dekatnya, bahwa pertanyaan kasus-nya-di ketersediaan-nya-ke-atas kamu-berdiri."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Kérdés esetén szívesen állok rendelkezésére.",
+     "id": "Jika ada pertanyaan, dengan senang hati saya siap membantu.",
+     "literal": "pertanyaan kasus-nya-di dengan-senang saya-berdiri ketersediaan-nya-ke-atas."
+    },
+    {
+     "speaker": "Zoltán:",
+     "text": "És hogy köszönsz el?",
+     "id": "Terus penutupnya bagaimana?",
+     "literal": "dan bagaimana kamu-berpamitan pergi?"
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Üdvözlettel: Budi Santoso, projektkoordinátor. Jó így?",
+     "id": "Salam: Budi Santoso, koordinator proyek. Begini oke?",
+     "literal": "salam-dengan: Budi Santoso, koordinator-proyek. baik begini?"
+    },
+    {
+     "speaker": "Zoltán:",
+     "text": "Üzleti partnernek pont jó. Küldd el, és tégy engem is másolatba!",
+     "id": "Untuk mitra bisnis pas. Kirim, dan tembuskan juga ke aku!",
+     "literal": "bisnis mitra-bagi tepat baik. kirim-hendaklah-nya pergi, dan taruh-hendaklah aku-sasaran juga salinan-ke-dalam!"
+    }
+   ],
+   "notes": [
+    "**Tisztelt Fekete Úr!** — dalam salam surat, *Úr* biasa ditulis dengan huruf besar sebagai tanda hormat. Karena Budi dan Fekete belum ber-*te*, surat tetap memakai *Ön*. Sesudah akrab: *Kedves Gábor!*",
+    "**Mellékelten küldjük** — *mellékelten* (terlampir) dari *melléklet* (lampiran). *Küldjük* adalah bentuk tertentu orang pertama jamak: surel bisnis ditulis atas nama perusahaan, jadi *mi*, dan sasarannya *a szerződést*. *Véglegesített* = yang sudah difinalkan, partisip dari *véglegesít* (*végleges* + *-ít*, unit 11).",
+    "**Megköszönnénk, ha … visszaküldené** — pengandaian di kedua bagian: \"kami akan berterima kasih, apabila Anda mengirim kembali…\". *Visszaküldené* bentuk tertentu karena sasarannya *az aláírt példányt*, dan orang ketiga karena yang disapa *Ön*. Permintaan yang dibungkus pengandaian terdengar sopan tanpa terdengar lemah.",
+    "**Rendelkezésére állok** — \"saya siap membantu Anda\", harfiah \"saya berdiri di ketersediaan Anda\". Akhiran personanya mengikuti orang yang dilayani: *rendelkezésére* (*Ön*), *rendelkezésükre* (*Önök*), *rendelkezésedre* (*te*).",
+    "**Tégy engem is másolatba** — *másolatba tesz* = menaruh di tembusan (CC). Sasaran *engem* (aku) memicu bentuk tak tentu, jadi *tégy*, bukan *tedd*; bandingkan *Küldd el!* yang tertentu karena sasarannya surat itu."
+   ],
+   "grammars": [
+    {
+     "title": "Penutup surel: dari paling resmi sampai paling akrab",
+     "body": [
+      "Penutup memberi tahu penerima seberapa dekat kamu dengannya. Pilih dengan sadar."
+     ],
+     "table": {
+      "head": [
+       "Penutup",
+       "Untuk siapa",
+       "Kesan"
+      ],
+      "rows": [
+       [
+        "*Tisztelettel:*",
+        "instansi, layanan pelanggan, orang tak dikenal",
+        "paling resmi, netral"
+       ],
+       [
+        "*Tisztelettel üdvözlöm:*",
+        "mitra, atasan yang jauh",
+        "resmi dan hangat"
+       ],
+       [
+        "*Üdvözlettel:*",
+        "rekan bisnis yang sudah dikenal",
+        "paling umum di kantor"
+       ],
+       [
+        "*Szívélyes üdvözlettel:*",
+        "mitra yang akrab",
+        "hangat"
+       ],
+       [
+        "*Üdv,*",
+        "kolega dekat",
+        "santai"
+       ],
+       [
+        "*Puszi,*",
+        "teman, keluarga",
+        "\"cium\"; jangan untuk kantor!"
+       ]
+      ]
+     },
+     "after": [
+      "Penutup harus cocok dengan salam: *Tisztelt…!* berpasangan dengan *Tisztelettel:* atau *Üdvözlettel:*; *Kedves…!* dengan *Üdvözlettel:* atau *Üdv,*; *Szia…!* dengan *Üdv,* atau *Puszi,*."
+     ]
+    }
+   ]
+  }
+ ],
+ "sections": [
+  {
+   "title": "Menulis keluhan yang dijawab",
+   "blocks": [
+    {
+     "type": "tabel",
+     "head": [
+      "Unsur",
+      "Cara Hungaria",
+      "Catatan"
+     ],
+     "rows": [
+      [
+       "Tanggal",
+       "*Budapest, 2028. május 19.*",
+       "tahun – bulan – hari, dengan titik"
+      ],
+      [
+       "Alamat",
+       "*1085 Budapest, Üllői út 12. III. em. 5.*",
+       "kode pos di depan kota; lantai (*em.*) dan nomor pintu"
+      ],
+      [
+       "Nama Hungaria",
+       "*Kovács Anna*",
+       "nama keluarga di depan"
+      ],
+      [
+       "Nomor pelanggan",
+       "*Ügyfélszám: 4471 2093*",
+       "di subjek dan di isi surat"
+      ],
+      [
+       "Lampiran",
+       "*Melléklet: 2 db*",
+       "jumlah lampiran di akhir surat"
+      ],
+      [
+       "Kata sapaan",
+       "*Ön, Önök, Önnek, Önt*",
+       "huruf besar dalam surat"
+      ]
+     ]
+    },
+    {
+     "type": "p",
+     "text": "Beginilah surel Budi selengkapnya: *Tárgy: Hibabejelentés – ügyfélszám 4471 2093. Tisztelt Ügyfélszolgálat! Május 14-e óta nem működik az internet-előfizetésem. A hibát május 15-én, 16-án és 18-án telefonon is bejelentettem, de a szolgáltatás azóta sem működik. Kérem, szíveskedjenek a hibát három munkanapon belül elhárítani. Kérem továbbá, hogy a kiesett napok díját írják jóvá. Válaszukat előre is köszönöm. Tisztelettel: Budi Santoso.* Tujuh kalimat, tanpa emosi, dengan tanggal dan nomor. *Azóta sem* (sampai sekarang pun tidak) adalah ungkapan yang sangat berguna dalam keluhan."
+    },
+    {
+     "type": "kotak",
+     "title": "Kalau keluhan tidak dijawab",
+     "items": [
+      "Catat nomor laporan (*bejelentési szám*) setiap kali menelepon; tanpa nomor itu keluhanmu sulit dilacak.",
+      "Simpan jawaban tertulis penyedia layanan. Itu buktimu kalau urusannya berlanjut.",
+      "Untuk layanan telekomunikasi ada lembaga pengawas, *NMHH* (Nemzeti Média- és Hírközlési Hatóság); untuk sengketa konsumen umumnya ada *békéltető testület* (badan mediasi konsumen) di tiap provinsi.",
+      "Nada tetap tenang dan faktual: surat yang marah jarang dijawab lebih cepat."
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Frasa siap pakai",
+   "blocks": [
+    {
+     "type": "tabel",
+     "head": [
+      "Magyar",
+      "Arti",
+      "Dipakai untuk"
+     ],
+     "rows": [
+      [
+       "*Azért írok, mert…*",
+       "Saya menulis karena…",
+       "pembuka"
+      ],
+      [
+       "*Hivatkozva a május 12-i telefonbeszélgetésünkre…*",
+       "Merujuk pembicaraan telepon kita tanggal 12 Mei…",
+       "pembuka"
+      ],
+      [
+       "*Tájékoztatom, hogy…*",
+       "Dengan ini saya memberitahukan bahwa…",
+       "informasi"
+      ],
+      [
+       "*Szeretném jelezni, hogy…*",
+       "Saya ingin menyampaikan bahwa…",
+       "keluhan halus"
+      ],
+      [
+       "*Kérem, szíveskedjen…*",
+       "Mohon berkenan…",
+       "permintaan"
+      ],
+      [
+       "*Megköszönném, ha…*",
+       "Saya akan berterima kasih jika…",
+       "permintaan sopan"
+      ],
+      [
+       "*Mellékelten küldöm…*",
+       "Terlampir saya kirimkan…",
+       "lampiran"
+      ],
+      [
+       "*Sajnálattal értesítem, hogy…*",
+       "Dengan menyesal saya beritahukan bahwa…",
+       "kabar buruk"
+      ],
+      [
+       "*Elnézést kérek a késedelmes válaszért.*",
+       "Mohon maaf atas keterlambatan jawaban.",
+       "minta maaf"
+      ],
+      [
+       "*Kérdés esetén állok rendelkezésére.*",
+       "Bila ada pertanyaan, saya siap membantu.",
+       "penutup"
+      ],
+      [
+       "*Válaszát előre is köszönöm.*",
+       "Terima kasih sebelumnya atas jawaban Anda.",
+       "penutup"
+      ],
+      [
+       "*Tisztelettel: / Üdvözlettel:*",
+       "Hormat saya / Salam",
+       "pamit"
+      ]
+     ]
+    },
+    {
+     "type": "p",
+     "text": "Frasa-frasa ini memakai tiga alat yang sudah kamu kenal: pengandaian untuk melunakkan (*megköszönném*), bentuk *Ön* orang ketiga (*rendelkezésére*, *válaszát*), dan kata jadian resmi (*késedelmes*, dari *késedelem*, keterlambatan). Rangkai empat atau lima di antaranya, dan surelmu sudah terdengar seperti tulisan orang kantor Hungaria."
+    },
+    {
+     "type": "kotak",
+     "title": "Jangan mencampur ragam",
+     "items": [
+      "Ke instansi atau layanan pelanggan: *Tisztelt…!*, *Önök*, *Tisztelettel:*. Singkat, faktual, bernomor.",
+      "Ke mitra yang dikenal: *Tisztelt Fekete Úr!*, atau sesudah ber-*te* *Kedves Gábor!*; penutup *Üdvözlettel:*.",
+      "Ke kolega sekantor: *Szia Réka!* atau *Kedves Réka!*, penutup *Üdv,* dan nama depan saja.",
+      "*Tisztelt* dengan *te*, atau *Szia* dengan *Ön*, terdengar janggal di telinga orang Hungaria."
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Ulangan berjenjang — unit 13",
+   "blocks": [
+    {
+     "type": "p",
+     "text": "Tutup kolom Hungaria, baca terjemahan Indonesianya, lalu susun kembali kalimatnya dari ingatan."
+    },
+    {
+     "type": "tabel",
+     "head": [
+      "Bahasa Indonesia",
+      "Magyar"
+     ],
+     "rows": [
+      [
+       "Paham. Dan tidak ada solusi lain sebagai ganti kapal?",
+       "*Értem. És nincs más megoldás a hajó helyett?*"
+      ],
+      [
+       "Menarik. Di kalangan kafe mitra kami, minat terhadap kopi Indonesia besar.",
+       "*Ez érdekes. A partnereink körében nagy az érdeklődés az indonéz kávé iránt.*"
+      ],
+      [
+       "Tentu. Materinya besok kami kirim bersama draf kontraknya.",
+       "*Természetesen. Az anyagot a szerződéstervezettel együtt holnap elküldjük.*"
+      ],
+      [
+       "Ah, masa! Tanpa kamu nggak akan selancar ini.",
+       "*Ugyan! Nélküled nem ment volna ilyen jól.*"
+      ],
+      [
+       "Makasih kamu sudah menjawab soal kontrak menggantikanku.",
+       "*Köszönöm, hogy helyettem válaszoltál a szerződésről.*"
+      ]
+     ]
+    }
+   ]
+  }
+ ],
+ "vocab": [
+  {
+   "hu": "hivatalos",
+   "baca": "HI-vå-tå-losy",
+   "id": "resmi"
+  },
+  {
+   "hu": "panasz",
+   "baca": "PÅ-nås",
+   "id": "keluhan"
+  },
+  {
+   "hu": "ügyfélszolgálat",
+   "baca": "ÜDY-fél-sol-ga-låt",
+   "id": "layanan pelanggan"
+  },
+  {
+   "hu": "ügyfélszám",
+   "baca": "ÜDY-fél-sam",
+   "id": "nomor pelanggan"
+  },
+  {
+   "hu": "előfizetés",
+   "baca": "È-lö-fi-zè-tésy",
+   "id": "langganan"
+  },
+  {
+   "hu": "bejelentés",
+   "baca": "BÈ-yè-lèn-tésy",
+   "id": "laporan (gangguan), pemberitahuan"
+  },
+  {
+   "hu": "szerelő",
+   "baca": "SÈ-rè-lö",
+   "id": "teknisi, montir"
+  },
+  {
+   "hu": "szíveskedik",
+   "baca": "SI-vèsy-kè-dik",
+   "id": "berkenan (+ infinitif, sangat resmi)"
+  },
+  {
+   "hu": "elhárít",
+   "baca": "ÈL-ha-rit",
+   "id": "menanggulangi, memperbaiki (gangguan)"
+  },
+  {
+   "hu": "munkanap",
+   "baca": "MUN-kå-nåp",
+   "id": "hari kerja"
+  },
+  {
+   "hu": "díj",
+   "baca": "diy",
+   "id": "biaya, tarif"
+  },
+  {
+   "hu": "jóváír",
+   "baca": "YO-va-ir",
+   "id": "mengkreditkan kembali"
+  },
+  {
+   "hu": "tisztelt",
+   "baca": "TIS-tèlt",
+   "id": "yang terhormat"
+  },
+  {
+   "hu": "tisztelettel",
+   "baca": "TIS-tè-lèt-tèl",
+   "id": "hormat saya (penutup surat)"
+  },
+  {
+   "hu": "üdvözlettel",
+   "baca": "ÜD-vöz-lèt-tèl",
+   "id": "salam (penutup surat)"
+  },
+  {
+   "hu": "melléklet, mellékelten",
+   "baca": "MÈL-lék-lèt, MÈL-lé-kèl-tèn",
+   "id": "lampiran, terlampir"
+  },
+  {
+   "hu": "példány",
+   "baca": "PÉL-dany",
+   "id": "rangkap, salinan, eksemplar"
+  },
+  {
+   "hu": "végleges",
+   "baca": "VÉG-lè-gèsy",
+   "id": "final, tetap"
+  },
+  {
+   "hu": "rendelkezésére áll",
+   "baca": "RÈN-dèl-kè-zé-syé-rè all",
+   "id": "siap membantu (Anda)"
+  },
+  {
+   "hu": "másolat",
+   "baca": "MA-syo-låt",
+   "id": "salinan; tembusan (CC)"
+  },
+  {
+   "hu": "elköszön",
+   "baca": "ÈL-kö-sön",
+   "id": "berpamitan"
+  },
+  {
+   "hu": "önözés",
+   "baca": "Ö-nö-zésy",
+   "id": "menyapa dengan *Ön*"
+  },
+  {
+   "hu": "régies",
+   "baca": "RÉ-gi-èsy",
+   "id": "kuno, bergaya lama"
+  }
+ ],
+ "exercises": [
+  {
+   "prompt": "Terjemahkan ke bahasa Hungaria dengan ragam resmi.",
+   "items": [
+    "Yang terhormat Layanan Pelanggan!",
+    "Sejak 14 Mei internet saya tidak berfungsi.",
+    "Terlampir kami kirimkan kontraknya.",
+    "Mohon gangguan tersebut diperbaiki dalam tiga hari kerja. (kepada lembaga)",
+    "Jika ada pertanyaan, saya siap membantu Anda.",
+    "Hormat saya: Budi Santoso"
+   ]
+  },
+  {
+   "prompt": "Isi dengan bentuk yang tepat. Petunjuk ada di dalam kurung.",
+   "items": [
+    "____ Kovács Úr! (salam resmi)",
+    "Kérem, ____ a hibát elhárítani. (szíveskedik, Önök)",
+    "Kérem, ____ kitölteni az űrlapot. (szíveskedik, Ön)",
+    "____ küldöm az önéletrajzomat. (terlampir)",
+    "Megköszönném, ha minél előbb ____. (válaszol, Ön, pengandaian)",
+    "Kérdés esetén szívesen ____ rendelkezésükre. (áll, én)",
+    "Kérem, hogy a díjat írják ____. (awalan: mengkreditkan)"
+   ]
+  },
+  {
+   "prompt": "Ubah kalimat santai menjadi kalimat surel resmi.",
+   "items": [
+    "Szia! (kepada layanan pelanggan)",
+    "Javítsátok meg a netet!",
+    "Küldd vissza a szerződést! (kepada Ön, dengan pengandaian)",
+    "Itt van a CV-m.",
+    "Ha kérdésed van, szólj! (kepada Ön)",
+    "Üdv, Budi"
+   ]
+  },
+  {
+   "prompt": "Susun jadi kalimat yang benar.",
+   "items": [
+    "levél / ez / baráti / nem",
+    "küldjük / a / mellékelten / szerződést",
+    "napok / kérem / díját / kiesett / a / írják / hogy / jóvá",
+    "állok / kérdés / rendelkezésére / esetén / szívesen",
+    "megköszönnénk / ha / visszaküldené / június 5-ig / a példányt"
+   ]
+  }
+ ],
+ "answers": [
+  "Tisztelt Ügyfélszolgálat! — Május 14-e óta nem működik az internetem. — Mellékelten küldjük a szerződést. — Kérem, szíveskedjenek a hibát három munkanapon belül elhárítani. — Kérdés esetén állok rendelkezésére. — Tisztelettel: Budi Santoso",
+  "Tisztelt — szíveskedjenek — szíveskedjen — Mellékelten — válaszolna — állok — jóvá",
+  "Tisztelt Ügyfélszolgálat! — Kérem, szíveskedjenek a hibát elhárítani. — Megköszönném, ha visszaküldené a szerződést. — Mellékelten küldöm az önéletrajzomat. — Kérdés esetén állok rendelkezésére. — Tisztelettel: Budi Santoso",
+  "Ez nem baráti levél. — Mellékelten küldjük a szerződést. — Kérem, hogy a kiesett napok díját írják jóvá. — Kérdés esetén szívesen állok rendelkezésére. — Megköszönnénk, ha a példányt június 5-ig visszaküldené."
+ ]
+}

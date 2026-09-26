@@ -1,0 +1,676 @@
+{
+ "title": "Kalau…, maka… — kalimat syarat",
+ "title_target": "Ha ide érkezik a fizetése, a számla ingyenes",
+ "goal": "Membuka rekening bank, memahami syarat-syarat yang disebutkan petugas, dan memberi saran dengan \"kalau aku jadi kamu\". Titik tata bahasanya: kalimat *ha* yang nyata dan tak nyata, pada masa kini dan lampau, beserta *hogyha, amennyiben, feltéve, hogy* dan *akkor*.",
+ "bekal": [
+  "membedakan syarat nyata (*Ha van időd, gyere el*) dari syarat tak nyata (*Ha lenne időm, segítenék*)",
+  "memahami syarat resmi di bank dan kantor: *amennyiben*, *feltéve, hogy*, *abban az esetben, ha*",
+  "memberi saran dengan *A helyedben…* dan *Ha én lennék…* + pengandaian"
+ ],
+ "dialogs": [
+  {
+   "title": "Dialog — Számlanyitás",
+   "intro": "Awal November 2027. Bank lama Budi menaikkan biaya bulanan, jadi ia memutuskan pindah bank. Ia duduk di depan meja seorang petugas di kantor cabang dekat Kálvin tér.",
+   "lines": [
+    {
+     "speaker": "Ügyintéző:",
+     "text": "Jó napot kívánok! Miben segíthetek?",
+     "id": "Selamat siang! Ada yang bisa saya bantu?",
+     "literal": "baik hari-sasaran saya-mengharapkan! apa-di-dalam saya-membantu-bisa?"
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Jó napot! Szeretnék számlát nyitni. Bankot váltok.",
+     "id": "Selamat siang! Saya ingin membuka rekening. Saya mau pindah bank.",
+     "literal": "baik hari-sasaran! saya-ingin-andai rekening-sasaran membuka. bank-sasaran saya-menukar."
+    },
+    {
+     "speaker": "Ügyintéző:",
+     "text": "Rendben. Ha van Önnél útlevél és lakcímkártya, most rögtön megnyithatjuk a számlát.",
+     "id": "Baik. Kalau Bapak membawa paspor dan kartu alamat, rekeningnya bisa kita buka sekarang juga.",
+     "literal": "beres-di. kalau ada Anda-di-dekat paspor dan kartu-alamat, sekarang segera tuntas-kami-membukanya-bisa itu rekening-sasaran."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Mindkettő nálam van. Mennyi a számlavezetési díj?",
+     "id": "Dua-duanya saya bawa. Biaya administrasi rekeningnya berapa?",
+     "literal": "keduanya aku-di-dekat ada. berapa itu pengelolaan-rekening-yang biaya?"
+    },
+    {
+     "speaker": "Ügyintéző:",
+     "text": "Havonta ezerkétszáz forint. De ha ide érkezik a fizetése, akkor ingyenes.",
+     "id": "Seribu dua ratus forint per bulan. Tapi kalau gaji Bapak masuk ke sini, gratis.",
+     "literal": "per-bulan seribu-dua-ratus forint. tetapi kalau ke-sini ia-tiba itu gaji-nya, maka gratis."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Minden hónapban?",
+     "id": "Setiap bulan?",
+     "literal": "setiap bulan-di-dalam?"
+    },
+    {
+     "speaker": "Ügyintéző:",
+     "text": "Minden hónapban, feltéve, hogy legalább kétszázezer forint érkezik a számlára.",
+     "id": "Setiap bulan, asalkan paling sedikit dua ratus ribu forint masuk ke rekening.",
+     "literal": "setiap bulan-di-dalam, dengan-syarat, bahwa paling-sedikit dua-ratus-ribu forint ia-tiba itu rekening-ke-atas."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Az nem gond. És mi van, ha külföldön fizetek a kártyával?",
+     "id": "Itu bukan masalah. Lalu bagaimana kalau saya membayar dengan kartu di luar negeri?",
+     "literal": "itu tidak masalah. dan apa ada, kalau luar-negeri-di saya-membayar itu kartu-dengan?"
+    },
+    {
+     "speaker": "Ügyintéző:",
+     "text": "Amennyiben külföldön fizet, kis átváltási díjat számolunk fel.",
+     "id": "Jika Bapak membayar di luar negeri, kami mengenakan sedikit biaya konversi.",
+     "literal": "sejauh-mana luar-negeri-di Anda-membayar, kecil konversi-yang biaya-sasaran kami-menghitung naik."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Értem. És hogyha elveszítem a kártyát, mit csináljak?",
+     "id": "Saya mengerti. Lalu kalau kartunya hilang, saya harus bagaimana?",
+     "literal": "saya-mengertinya. dan kalau pergi-saya-menghilangkannya itu kartu-sasaran, apa-sasaran saya-berbuat-hendaklah?"
+    },
+    {
+     "speaker": "Ügyintéző:",
+     "text": "Hogyha elveszíti, azonnal hívja ezt a számot, vagy tiltsa le az alkalmazásban.",
+     "id": "Kalau hilang, segera telepon nomor ini, atau blokir di aplikasi.",
+     "literal": "kalau pergi-Anda-menghilangkannya, segera panggil-hendaklah-nya ini-sasaran itu nomor-sasaran, atau larang-hendaklah-nya turun itu aplikasi-di-dalam."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Az alkalmazásban utalni is tudok?",
+     "id": "Di aplikasi saya juga bisa transfer?",
+     "literal": "itu aplikasi-di-dalam mentransfer juga saya-bisa?"
+    },
+    {
+     "speaker": "Ügyintéző:",
+     "text": "Persze. Ha magyar számlára utal, a pénz pár másodperc alatt megérkezik.",
+     "id": "Tentu. Kalau Bapak transfer ke rekening Hungaria, uangnya sampai dalam beberapa detik.",
+     "literal": "tentu. kalau Hungaria rekening-ke-atas Anda-mentransfer, itu uang pasang detik selama tuntas-ia-tiba."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Ez nagyszerű. Akkor hol írjam alá a szerződést?",
+     "id": "Bagus sekali. Kalau begitu, di mana saya tanda tangan kontraknya?",
+     "literal": "ini hebat. kalau-begitu di-mana saya-menulisnya-hendaklah bawah itu kontrak-sasaran?"
+    }
+   ],
+   "notes": [
+    "**Bankot váltok.** *Vált* berarti menukar atau berganti: *bankot vált* (pindah bank), *pénzt vált* (menukar uang), *jegyet vált* (membeli tiket di loket). Kata bendanya *átváltás* (konversi mata uang) muncul beberapa baris kemudian.",
+    "**Ha van Önnél útlevél…** Syarat nyata: bila keadaannya benar, akibatnya pasti terjadi. Kedua bagian memakai kala biasa, bukan pengandaian. Petugas memakai *Önnél* (pada Anda), bentuk *Ön* dari *nálad*.",
+    "**Ha…, akkor…** *Akkor* (maka, kalau begitu) di awal bagian utama tidak wajib, tetapi membuat kalimat panjang lebih mudah diikuti. Di baris terakhir Budi memakai *akkor* sendirian: \"kalau begitu\", syaratnya adalah seluruh penjelasan petugas.",
+    "**Feltéve, hogy…** — \"dengan syarat bahwa\", harfiah \"diandaikan bahwa\". Ia lebih ketat daripada *ha*: tanpa syarat itu, janji di depannya batal. Di iklan bank dan kontrak, kata ini selalu layak dibaca dua kali.",
+    "**Amennyiben** dan **hogyha** — dua kerabat *ha*. *Amennyiben* (jika, sejauh) terdengar resmi dan dipakai petugas, surat, dan aturan. *Hogyha* terdengar lisan dan sedikit menekankan syaratnya. Artinya sama dengan *ha*.",
+    "**Mit csináljak?** dan **hol írjam alá?** — bentuk perintah dalam pertanyaan berarti \"sebaiknya aku…?\". Ini pola A2 yang sangat berguna di loket: *Hova menjek?* (Aku harus ke mana?), *Mit hozzak?* (Aku harus bawa apa?)."
+   ],
+   "grammars": [
+    {
+     "title": "Syarat nyata dan kata sambungnya",
+     "body": [
+      "Syarat nyata membicarakan sesuatu yang benar-benar mungkin: kala kini untuk sekarang dan masa depan, kala lampau untuk masa lalu yang kamu tidak tahu pasti. Kata sambungnya bisa berganti menurut ragam, tetapi susunan kalimatnya tetap sama."
+     ],
+     "table": {
+      "head": [
+       "Kata sambung",
+       "Ragam",
+       "Contoh"
+      ],
+      "rows": [
+       [
+        "*ha*",
+        "netral, paling sering",
+        "*Ha van időd, gyere el.*"
+       ],
+       [
+        "*hogyha*",
+        "lisan, sedikit menekankan",
+        "*Hogyha elveszíti, hívja ezt a számot.*"
+       ],
+       [
+        "*amennyiben*",
+        "resmi: bank, surat, aturan",
+        "*Amennyiben külföldön fizet, díjat számolunk fel.*"
+       ],
+       [
+        "*feltéve, hogy*",
+        "syarat ketat",
+        "*Ingyenes, feltéve, hogy ide érkezik a fizetése.*"
+       ],
+       [
+        "*abban az esetben, ha*",
+        "resmi, panjang",
+        "*Abban az esetben, ha a kártya elveszik, értesítsen minket.*"
+       ],
+       [
+        "*ha…, akkor…*",
+        "penegas",
+        "*Ha sokat utazol, akkor megéri.*"
+       ]
+      ]
+     },
+     "after": [
+      "**Masa depan cukup kala kini.** *Ha holnap esik, otthon maradok* (Kalau besok hujan, aku di rumah). Persis bahasa Indonesia: tidak ada \"akan\" di bagian *ha*. Menulis *ha fog esni* bukan salah besar, tapi terdengar asing.",
+      "**Syarat nyata di masa lalu** memakai kala lampau biasa, untuk hal yang belum kamu ketahui: *Ha Réka tegnap itt volt, biztosan látta a levelet* (Kalau kemarin Réka ke sini, pasti dia sudah lihat suratnya). Ini berbeda dari *Ha itt lett volna…*, yang berarti ia jelas tidak ke sini."
+     ]
+    },
+    {
+     "title": "Kerabat ha lainnya: hacsak nem, még ha… is",
+     "body": [
+      "Susunan-susunan kecil ini sering muncul di syarat dan ketentuan, dan juga di percakapan ketika orang ingin menegaskan bahwa sesuatu berlaku apa pun yang terjadi."
+     ],
+     "table": {
+      "head": [
+       "Susunan",
+       "Contoh",
+       "Arti"
+      ],
+      "rows": [
+       [
+        "*ha nem*",
+        "*Ha nem érkezik ide a fizetése, díjat fizet.*",
+        "kalau tidak"
+       ],
+       [
+        "*hacsak nem*",
+        "*Ingyenes, hacsak nem fizet külföldön.*",
+        "kecuali kalau"
+       ],
+       [
+        "*még ha… is*",
+        "*Még ha drága is, megéri.*",
+        "sekalipun, biarpun"
+       ],
+       [
+        "*ha… is*",
+        "*Ha késel is, várunk rád.*",
+        "biarpun (lebih ringan)"
+       ]
+      ]
+     },
+     "after": [
+      "*Is* dalam *még ha… is* menempel pada kata yang ditekankan, biasanya kata kerja atau kata sifat, bukan pada *ha*: *még ha drága is*, *még ha esik is*. Ini letak yang sama seperti *is* (juga) biasa."
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Dialog kedua — A helyedben…",
+   "intro": "Sore harinya di kantor. Réka, yang mengurus keuangan dan asuransi perusahaan, mendengar Budi berbicara tentang bank barunya dan langsung memberi nasihat.",
+   "lines": [
+    {
+     "speaker": "Réka:",
+     "text": "Na, hogy ment a bank?",
+     "id": "Nah, gimana urusan bank tadi?",
+     "literal": "nah, bagaimana ia-pergi-lampau itu bank?"
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Jól. Már van új számlám. Most utasbiztosítást akarok kötni.",
+     "id": "Lancar. Aku sudah punya rekening baru. Sekarang aku mau ambil asuransi perjalanan.",
+     "literal": "dengan-baik. sudah ada baru rekening-ku. sekarang asuransi-perjalanan-sasaran saya-ingin mengikat."
+    },
+    {
+     "speaker": "Réka:",
+     "text": "Végre! Ha októberben lett volna biztosításod, talán visszakaptad volna a módosítási díjat.",
+     "id": "Akhirnya! Kalau bulan Oktober kamu sudah punya asuransi, mungkin biaya perubahan tiketmu kembali.",
+     "literal": "akhirnya! kalau Oktober-di-dalam ada-lampau andai asuransi-mu, mungkin kembali-kamu-mendapatkannya-lampau andai itu perubahan-yang biaya-sasaran."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Tényleg? A biztosító kifizette volna a módosítást?",
+     "id": "Masa? Perusahaan asuransi bakal membayar biaya perubahannya?",
+     "literal": "sungguh? itu penjamin keluar-ia-membayarnya-lampau andai itu perubahan-sasaran?"
+    },
+    {
+     "speaker": "Réka:",
+     "text": "Nem biztos. Ha beteg lettél volna, talán igen. De elaludtál, és azt egy biztosító sem fizeti ki.",
+     "id": "Belum tentu. Kalau kamu sakit, mungkin iya. Tapi kamu ketiduran, dan itu tidak ada asuransi yang mau bayar.",
+     "literal": "tidak pasti. kalau sakit kamu-menjadi-lampau andai, mungkin ya. tetapi habis-kamu-tidur-lampau, dan itu-sasaran sebuah penjamin pun-tidak ia-membayarnya keluar."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Jaj. Ha én lennék a biztosító, én sem fizetném ki.",
+     "id": "Aduh. Kalau aku perusahaan asuransinya, aku juga nggak bakal bayar.",
+     "literal": "aduh. kalau saya saya-adalah-andai itu penjamin, saya juga-tidak saya-membayarnya-andai keluar."
+    },
+    {
+     "speaker": "Réka:",
+     "text": "Na látod. Ha évente többször utazol, akkor az éves biztosítás olcsóbb.",
+     "id": "Nah, kan. Kalau kamu bepergian beberapa kali setahun, asuransi tahunan lebih murah.",
+     "literal": "nah kamu-melihat. kalau per-tahun lebih-banyak-kali kamu-bepergian, maka itu tahunan asuransi lebih-murah."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "És ha csak egyszer utaznék?",
+     "id": "Kalau aku cuma pergi sekali?",
+     "literal": "dan kalau hanya sekali saya-bepergian-andai?"
+    },
+    {
+     "speaker": "Réka:",
+     "text": "Akkor elég egy egyszeri biztosítás. De a helyedben én az éveset választanám.",
+     "id": "Ya cukup asuransi sekali jalan. Tapi kalau aku jadi kamu, aku pilih yang tahunan.",
+     "literal": "kalau-begitu cukup sebuah sekali-yang asuransi. tetapi itu tempat-mu-di-dalam saya itu tahunan-sasaran saya-memilihnya-andai."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Miért?",
+     "id": "Kenapa?",
+     "literal": "mengapa?"
+    },
+    {
+     "speaker": "Réka:",
+     "text": "Mert ismerlek. Te még sokat fogsz utazni.",
+     "id": "Karena aku kenal kamu. Kamu masih bakal sering bepergian.",
+     "literal": "karena saya-mengenalmu. kamu masih banyak-sasaran kamu-akan bepergian."
+    }
+   ],
+   "notes": [
+    "**Utasbiztosítást köt** — \"mengambil asuransi perjalanan\", harfiah \"mengikat asuransi\". *Köt* (mengikat) adalah kata kerja resmi untuk perjanjian: *szerződést köt* (membuat kontrak), *biztosítást köt*, bahkan *házasságot köt* (menikah, bahasa resmi).",
+    "**Ha októberben lett volna biztosításod…** Syarat tak nyata lampau dari unit 2: di bulan Oktober Budi **tidak** punya asuransi, jadi kedua bagian memakai *volna*.",
+    "**Egy biztosító sem** — \"tidak satu pun perusahaan asuransi\". *Egy … sem* sama dengan *egyik … sem*. Kata kerjanya tidak memakai *nem* lagi, karena *sem* sudah menyangkal: *azt egy biztosító sem fizeti ki*.",
+    "**Ha én lennék a biztosító** — syarat tak nyata masa kini: Budi jelas bukan perusahaan asuransi. Bagian *ha* dan bagian utama sama-sama memakai pengandaian kini (*lennék… fizetném*). *Fizetném* bertanda tertentu karena sasarannya \"itu\" (biaya tadi).",
+    "**A helyedben** — \"di tempatmu\", yaitu \"kalau aku jadi kamu\". Ia selalu diikuti pengandaian: *A helyedben nem mennék el*. Versi sopannya untuk *Ön*: *Az Ön helyében…*",
+    "**Mert ismerlek** — *-lek* dari A1 (aku → kamu). Réka bercanda: ia kenal Budi, jadi ia tahu Budi akan sering bepergian, dan akan ketinggalan pesawat lagi."
+   ],
+   "grammars": [
+    {
+     "title": "Syarat tak nyata masa kini: -na/-ne di kedua bagian",
+     "body": [
+      "Kalau syaratnya bertentangan dengan kenyataan sekarang, atau hanya khayalan, kedua bagian kalimat memakai pengandaian kini. Tidak ada pilihan kala lain: bahasa Hungaria tidak punya \"would\" terpisah."
+     ],
+     "table": {
+      "head": [
+       "Kenyataan",
+       "Syarat tak nyata",
+       "Arti"
+      ],
+      "rows": [
+       [
+        "*Nem vagyok a biztosító.*",
+        "*Ha én lennék a biztosító, nem fizetném ki.*",
+        "kalau aku (jadi) perusahaan asuransi…"
+       ],
+       [
+        "*Nincs időm.*",
+        "*Ha lenne időm, segítenék.*",
+        "kalau aku punya waktu…"
+       ],
+       [
+        "*Nem vagyok gazdag.*",
+        "*Ha gazdag lennék, vennék egy házat.*",
+        "kalau aku kaya…"
+       ],
+       [
+        "*Nem tudom a címét.*",
+        "*Ha tudnám a címét, megmondanám.*",
+        "kalau aku tahu alamatnya…"
+       ],
+       [
+        "(saran)",
+        "*A helyedben az éveset választanám.*",
+        "kalau aku jadi kamu…"
+       ]
+      ]
+     },
+     "after": [
+      "**Pilihan tertentu atau tak tentu tetap berlaku:** *vennék egy házat* (tak tentu), *megmondanám* (tertentu, sasarannya alamat tadi). Kesalahan paling umum di tingkat ini adalah lupa hal itu begitu kalimat menjadi panjang.",
+      "**Urutan boleh dibalik:** *Segítenék, ha lenne időm.* Kalau bagian *ha* di belakang, *akkor* tidak dipakai. Kalimat dengan bagian utama di depan terdengar lebih santai, cocok untuk alasan: *Szívesen eljönnék, ha nem lennék ilyen fáradt.*"
+     ]
+    }
+   ]
+  }
+ ],
+ "sections": [
+  {
+   "title": "Di bank",
+   "blocks": [
+    {
+     "type": "tabel",
+     "head": [
+      "Magyar",
+      "Cara baca",
+      "Bahasa Indonesia"
+     ],
+     "rows": [
+      [
+       "bankszámla",
+       "BÅNK-sam-lå",
+       "rekening bank"
+      ],
+      [
+       "számlaszám",
+       "SAM-lå-sam",
+       "nomor rekening"
+      ],
+      [
+       "egyenleg",
+       "È-dyèn-lèg",
+       "saldo"
+      ],
+      [
+       "átutalás",
+       "A-tu-tå-lasy",
+       "transfer"
+      ],
+      [
+       "azonnali átutalás",
+       "Å-zon-nå-li A-tu-tå-lasy",
+       "transfer instan"
+      ],
+      [
+       "készpénz",
+       "KÉS-pénz",
+       "uang tunai"
+      ],
+      [
+       "pénzfelvétel",
+       "PÉNZ-fèl-vé-tèl",
+       "penarikan uang"
+      ],
+      [
+       "bankautomata",
+       "BÅN-kå-u-to-må-tå",
+       "ATM"
+      ],
+      [
+       "kamat",
+       "KÅ-måt",
+       "bunga"
+      ],
+      [
+       "számlavezetési díj",
+       "SAM-lå-vè-zè-té-syi diy",
+       "biaya administrasi bulanan"
+      ]
+     ]
+    },
+    {
+     "type": "p",
+     "text": "Nomor rekening Hungaria terdiri dari dua atau tiga kelompok delapan angka, misalnya *12345678-12345678-12345678*; untuk transfer dari luar negeri dipakai IBAN yang diawali *HU*. Sejak 2020 sebagian besar transfer forint antarbank di Hungaria berjalan secara instan, siang maupun malam, termasuk akhir pekan: itulah yang dimaksud petugas dengan *pár másodperc alatt*. Kamu juga bisa mendaftarkan nomor telepon atau surel sebagai *másodlagos számlaazonosító* (pengenal rekening kedua), sehingga teman bisa mentransfer tanpa mengetik nomor rekening yang panjang."
+    },
+    {
+     "type": "kotak",
+     "title": "Membuka rekening sebagai orang asing",
+     "items": [
+      "Bawa paspor dan *lakcímkártya* (kartu alamat). Banyak bank juga meminta *adóazonosító jel* (nomor pajak) dan izin tinggal; tanyakan dulu lewat telepon supaya tidak bolak-balik.",
+      "Bacalah *Hirdetmény* (daftar tarif resmi) sebelum menandatangani. Di situ tertulis semua *díj*: biaya bulanan, penarikan tunai, dan konversi mata uang.",
+      "Kata *ingyenes* (gratis) di iklan bank hampir selalu punya *feltéve, hogy…* di huruf kecil: gaji minimal, jumlah transaksi, atau usia.",
+      "Kartu yang hilang diblokir dengan *letilt*: *Letiltottam a kártyámat*. Di aplikasi, tombolnya biasanya berbunyi *Kártya letiltása*."
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Empat jenis kalimat ha",
+   "blocks": [
+    {
+     "type": "tabel",
+     "head": [
+      "Jenis",
+      "Bagian ha",
+      "Bagian utama",
+      "Contoh"
+     ],
+     "rows": [
+      [
+       "nyata (kini/depan)",
+       "kala kini",
+       "kala kini / perintah",
+       "*Ha van időd, gyere el.*"
+      ],
+      [
+       "tak nyata kini",
+       "pengandaian kini",
+       "pengandaian kini",
+       "*Ha lenne időm, eljönnék.*"
+      ],
+      [
+       "tak nyata lampau",
+       "lampau + *volna*",
+       "lampau + *volna*",
+       "*Ha lett volna időm, eljöttem volna.*"
+      ],
+      [
+       "campuran",
+       "lampau + *volna*",
+       "pengandaian kini",
+       "*Ha tegnap nem mentem volna el, most itthon lennék.*"
+      ]
+     ]
+    },
+    {
+     "type": "p",
+     "text": "Bahasa Indonesia sering memakai satu kata \"kalau\" untuk keempat jenis ini dan menyerahkan artinya pada konteks: \"kalau ada waktu, aku datang\" bisa berarti janji atau khayalan. Bahasa Hungaria memaksamu memilih. Tanyakan pada dirimu: apakah syaratnya masih mungkin terpenuhi? Kalau ya, kala biasa. Kalau tidak, pengandaian; lalu tentukan apakah yang tidak mungkin itu sekarang atau di masa lalu."
+    },
+    {
+     "type": "kotak",
+     "title": "Ha atau amikor?",
+     "items": [
+      "*Ha* = kalau, jika (syarat). *Amikor* = ketika, waktu (saat tertentu). Untuk masa lalu yang sudah terjadi hanya *amikor* yang benar: *Amikor megérkeztem, esett az eső.*",
+      "Untuk masa depan, *ha* sering dipakai juga dalam arti \"nanti kalau\": *Ha hazaérek, felhívlak* (Nanti kalau sudah sampai rumah, kutelepon). Kalimat ini terdengar sangat wajar, sama seperti \"kalau\" dalam bahasa Indonesia sehari-hari.",
+      "*Ha* untuk kebiasaan berarti \"setiap kali\": *Ha esik, mindig busszal megyek* (Kalau hujan, aku selalu naik bus)."
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Ulangan berjenjang — unit 1",
+   "blocks": [
+    {
+     "type": "p",
+     "text": "Tutup kolom Hungaria, baca terjemahan Indonesianya, lalu susun kembali kalimatnya dari ingatan."
+    },
+    {
+     "type": "tabel",
+     "head": [
+      "Bahasa Indonesia",
+      "Magyar"
+     ],
+     "rows": [
+      [
+       "Dia bilang mulai September akulah koordinator proyeknya.",
+       "*Azt mondta, hogy szeptembertől én leszek a projektkoordinátor.*"
+      ],
+      [
+       "Aku belum tahu dia bakal kerja bareng kami atau nggak.",
+       "*Még nem tudom, velünk dolgozik-e.*"
+      ],
+      [
+       "Ibuku tahu, tapi ke ayahku belum kuceritakan. Aku mau bilang langsung.",
+       "*Anyám tudja, de apámnak még nem mondtam el. Személyesen akarom elmondani.*"
+      ],
+      [
+       "Dia tanya apakah aku mau kerja di timmu.",
+       "*Megkérdezte, hogy szeretnék-e a csapatodban dolgozni.*"
+      ],
+      [
+       "Aku bilang masih kupikirkan. Aku mau tahu dulu seberapa banyak kerjaannya.",
+       "*Azt mondtam, hogy még gondolkodom rajta. Előbb tudni akarom, mennyi munka lesz.*"
+      ]
+     ]
+    }
+   ]
+  }
+ ],
+ "vocab": [
+  {
+   "hu": "számla",
+   "baca": "SAM-lå",
+   "id": "rekening; tagihan, faktur"
+  },
+  {
+   "hu": "számlát nyit",
+   "baca": "SAM-lat nyit",
+   "id": "membuka rekening"
+  },
+  {
+   "hu": "vált",
+   "baca": "valt",
+   "id": "menukar, berganti (*bankot vált*)"
+  },
+  {
+   "hu": "fizetés",
+   "baca": "FI-zè-tésy",
+   "id": "gaji; pembayaran"
+  },
+  {
+   "hu": "ingyenes",
+   "baca": "IN-dyè-nèsy",
+   "id": "gratis"
+  },
+  {
+   "hu": "legalább",
+   "baca": "LÈ-gå-labb",
+   "id": "paling sedikit"
+  },
+  {
+   "hu": "külföld",
+   "baca": "KÜL-föld",
+   "id": "luar negeri (*külföldön*: di luar negeri)"
+  },
+  {
+   "hu": "átváltás",
+   "baca": "AT-val-tasy",
+   "id": "konversi (mata uang)"
+  },
+  {
+   "hu": "felszámol",
+   "baca": "FÈL-sa-mol",
+   "id": "mengenakan (biaya)"
+  },
+  {
+   "hu": "elveszít",
+   "baca": "ÈL-vè-sit",
+   "id": "kehilangan"
+  },
+  {
+   "hu": "letilt",
+   "baca": "LÈ-tilt",
+   "id": "memblokir (kartu)"
+  },
+  {
+   "hu": "alkalmazás",
+   "baca": "ÅL-kål-må-zasy",
+   "id": "aplikasi"
+  },
+  {
+   "hu": "utal / átutal",
+   "baca": "U-tål / A-tu-tål",
+   "id": "mentransfer"
+  },
+  {
+   "hu": "aláír",
+   "baca": "Å-la-ir",
+   "id": "menandatangani"
+  },
+  {
+   "hu": "szerződés",
+   "baca": "SÈR-zö-désy",
+   "id": "kontrak, perjanjian"
+  },
+  {
+   "hu": "biztosítás",
+   "baca": "BIZ-to-syi-tasy",
+   "id": "asuransi"
+  },
+  {
+   "hu": "biztosító",
+   "baca": "BIZ-to-syi-to",
+   "id": "perusahaan asuransi"
+  },
+  {
+   "hu": "utasbiztosítás",
+   "baca": "U-tåsy-biz-to-syi-tasy",
+   "id": "asuransi perjalanan"
+  },
+  {
+   "hu": "köt",
+   "baca": "köt",
+   "id": "mengikat; membuat (kontrak, asuransi)"
+  },
+  {
+   "hu": "visszakap",
+   "baca": "VIS-så-kåp",
+   "id": "mendapat kembali"
+  },
+  {
+   "hu": "éves",
+   "baca": "É-vèsy",
+   "id": "tahunan"
+  },
+  {
+   "hu": "egyszeri",
+   "baca": "ÈDY-sè-ri",
+   "id": "sekali, sekali jalan"
+  },
+  {
+   "hu": "amennyiben",
+   "baca": "Å-mèny-nyi-bèn",
+   "id": "jika (resmi)"
+  },
+  {
+   "hu": "feltéve, hogy",
+   "baca": "FÈL-té-vè hody",
+   "id": "dengan syarat, asalkan"
+  },
+  {
+   "hu": "a helyedben",
+   "baca": "å HÈ-yèd-bèn",
+   "id": "kalau aku jadi kamu"
+  }
+ ],
+ "exercises": [
+  {
+   "prompt": "Terjemahkan ke bahasa Hungaria.",
+   "items": [
+    "Kalau kamu punya waktu, datanglah.",
+    "Kalau aku jadi kamu, aku pilih yang tahunan.",
+    "Kalau aku kaya, aku akan membeli rumah di Balaton.",
+    "Kalau (dulu) kamu punya asuransi, uangmu pasti kembali.",
+    "Rekeningnya gratis, asalkan gajimu masuk ke sini.",
+    "Kalau kartumu hilang, blokirlah di aplikasi."
+   ]
+  },
+  {
+   "prompt": "Isi dengan bentuk yang tepat. Petunjuk ada di dalam kurung.",
+   "items": [
+    "Ha holnap ____ az eső, otthon maradok. (esik)",
+    "Ha gazdag ____, vennék egy házat. (van, én)",
+    "Ha tegnap ____ volna időm, eljöttem volna. (van)",
+    "A helyedben én nem ____ ki. (fizet, pengandaian tertentu, én)",
+    "____, hogy van nálad útlevél, ma megnyithatjuk a számlát. (asalkan)",
+    "____ külföldön fizet, díjat számolunk fel. (jika, resmi)",
+    "Ha sokat utazol, ____ megéri az éves biztosítás. (maka)"
+   ]
+  },
+  {
+   "prompt": "Ubah syarat nyata menjadi syarat tak nyata masa kini. Contoh: *Ha van időm, segítek.* → *Ha lenne időm, segítenék.*",
+   "items": [
+    "Ha van pénzem, veszek egy autót.",
+    "Ha esik az eső, otthon maradunk.",
+    "Ha Anna itt van, segít.",
+    "Ha tudom a címet, megmondom.",
+    "Ha kéred, kifizetem.",
+    "Ha nem vagy fáradt, eljössz?"
+   ]
+  },
+  {
+   "prompt": "Susun jadi kalimat yang benar.",
+   "items": [
+    "ha / van / időd / gyere / el",
+    "ha / én / lennék / a biztosító / nem / fizetném / ki",
+    "a helyedben / választanám / az éveset / én",
+    "a számla / ingyenes / feltéve / hogy / ide / érkezik / a fizetésed",
+    "ha / lett / biztosításod / volna / visszakaptad / volna / a pénzt"
+   ]
+  }
+ ],
+ "answers": [
+  "Ha van időd, gyere el. — A helyedben az éveset választanám. — Ha gazdag lennék, vennék egy házat a Balatonnál. — Ha lett volna biztosításod, visszakaptad volna a pénzt. — A számla ingyenes, feltéve, hogy ide érkezik a fizetésed. — Ha elveszíted a kártyádat, tiltsd le az alkalmazásban.",
+  "esik — lennék — lett — fizetném — Feltéve — Amennyiben — akkor",
+  "Ha lenne pénzem, vennék egy autót. — Ha esne az eső, otthon maradnánk. — Ha Anna itt lenne, segítene. — Ha tudnám a címet, megmondanám. — Ha kérnéd, kifizetném. — Ha nem lennél fáradt, eljönnél?",
+  "Ha van időd, gyere el. — Ha én lennék a biztosító, nem fizetném ki. — A helyedben én az éveset választanám. — A számla ingyenes, feltéve, hogy ide érkezik a fizetésed. — Ha lett volna biztosításod, visszakaptad volna a pénzt."
+ ]
+}

@@ -1,0 +1,737 @@
+{
+ "title": "Per orang, per bulan — jumlah dan pembagian",
+ "title_target": "Személyenként huszonötezer forint",
+ "goal": "Berbicara tentang anggaran, harga, dan tagihan: akhiran pembagi *-nként* (*személyenként, darabonként, fejenként*), frekuensi *-nta/-nte* (*havonta, negyedévente*), akhiran *-stul/-stül* \"beserta\" (*családostul, csontostul*), serta pecahan, persen, dan angka besar.",
+ "bekal": [
+  "menyatakan harga dan biaya per satuan: *személyenként, darabonként, óránként*",
+  "memakai pecahan dan persen dalam kalimat: *a költségvetés negyede, tíz százalékkal több*",
+  "membagi tagihan di restoran dan memahami *szervizdíj* serta *borravaló*"
+ ],
+ "dialogs": [
+  {
+   "title": "Dialog — A költségvetés",
+   "intro": "Awal Februari 2028. Zoltán, Budi, dan Réka duduk di ruang rapat untuk membagi anggaran tim proyek tahun ini. Réka membawa lembar Excel yang sudah dicetak.",
+   "lines": [
+    {
+     "speaker": "Zoltán:",
+     "text": "Na, nézzük a 2028-as költségvetést. Mennyi pénzünk van idén?",
+     "id": "Nah, kita lihat anggaran 2028. Tahun ini dana kita berapa?",
+     "literal": "nah, kita-melihatnya-hendaklah itu 2028-an anggaran-sasaran. berapa uang-kami ada tahun-ini?"
+    },
+    {
+     "speaker": "Réka:",
+     "text": "Tizenkét és fél millió forint, tíz százalékkal több, mint tavaly.",
+     "id": "Dua belas setengah juta forint, sepuluh persen lebih banyak daripada tahun lalu.",
+     "literal": "dua-belas dan setengah juta forint, sepuluh persen-dengan lebih-banyak, daripada tahun-lalu."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Szuper. Ennek mekkora része megy utazásra?",
+     "id": "Mantap. Seberapa besar bagiannya untuk perjalanan?",
+     "literal": "super. ini-bagi seberapa-besar bagian-nya ia-pergi perjalanan-ke-atas?"
+    },
+    {
+     "speaker": "Réka:",
+     "text": "Körülbelül a negyede. A többi a marketingé és a rendezvényeké.",
+     "id": "Kira-kira seperempatnya. Sisanya milik pemasaran dan acara.",
+     "literal": "kira-kira itu perempat-nya. itu sisa itu pemasaran-milik dan itu acara-jamak-milik."
+    },
+    {
+     "speaker": "Zoltán:",
+     "text": "Az utazásnál mennyivel számoltál?",
+     "id": "Untuk perjalanan kamu hitung berapa?",
+     "literal": "itu perjalanan-di-dekat berapa-dengan kamu-menghitung-lampau?"
+    },
+    {
+     "speaker": "Réka:",
+     "text": "Személyenként és naponta huszonötezer forinttal: szállás, étkezés, közlekedés.",
+     "id": "Dua puluh lima ribu forint per orang per hari: penginapan, makan, transportasi.",
+     "literal": "orang-per dan hari-tiap dua-puluh-lima-ribu forint-dengan: penginapan, makan, transportasi."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Debrecenben ez bőven elég lesz.",
+     "id": "Di Debrecen itu lebih dari cukup.",
+     "literal": "Debrecen-di-dalam ini berlimpah cukup akan-ada."
+    },
+    {
+     "speaker": "Zoltán:",
+     "text": "És milyen gyakran utaztok? Havonta vagy kéthetente?",
+     "id": "Lalu seberapa sering kalian bepergian? Sebulan sekali atau dua minggu sekali?",
+     "literal": "dan seberapa sering kalian-bepergian? bulan-tiap atau dua-minggu-tiap?"
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Havonta egyszer elég. A nagy ügyfeleket negyedévente látogatjuk meg.",
+     "id": "Sebulan sekali cukup. Klien besar kami kunjungi tiap tiga bulan.",
+     "literal": "bulan-tiap sekali cukup. itu besar klien-jamak-sasaran seperempat-tahun-tiap kami-mengunjunginya tuntas."
+    },
+    {
+     "speaker": "Réka:",
+     "text": "És a prospektusok? A nyomda darabonként kétszáz forintot kér.",
+     "id": "Lalu brosurnya? Percetakan minta dua ratus forint per lembar.",
+     "literal": "dan itu brosur-jamak? itu percetakan satuan-per dua-ratus forint-sasaran ia-meminta."
+    },
+    {
+     "speaker": "Zoltán:",
+     "text": "Áfástul?",
+     "id": "Sudah termasuk PPN?",
+     "literal": "PPN-beserta?"
+    },
+    {
+     "speaker": "Réka:",
+     "text": "Nem, az nettó ár. Áfával kétszázötvennégy forint.",
+     "id": "Belum, itu harga neto. Dengan PPN dua ratus lima puluh empat forint.",
+     "literal": "tidak, itu neto harga. PPN-dengan dua-ratus-lima-puluh-empat forint."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Akkor ezret rendelünk. Az összesen kétszázötvennégyezer forint.",
+     "id": "Kalau begitu kita pesan seribu. Totalnya dua ratus lima puluh empat ribu forint.",
+     "literal": "kalau-begitu seribu-sasaran kami-memesan. itu seluruhnya dua-ratus-lima-puluh-empat-ribu forint."
+    },
+    {
+     "speaker": "Zoltán:",
+     "text": "Rendben. A pénz kétharmadát az első félévben költjük el, a többit ősszel.",
+     "id": "Baik. Dua pertiga dananya kita pakai di semester pertama, sisanya di musim gugur.",
+     "literal": "beres-di. itu uang dua-pertiga-nya-sasaran itu pertama setengah-tahun-di-dalam kami-membelanjakannya pergi, itu sisa-sasaran musim-gugur-di."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Értem. Akkor apránként költünk.",
+     "id": "Paham. Jadi kita belanjakan sedikit demi sedikit.",
+     "literal": "saya-mengerti. kalau-begitu sedikit-demi-sedikit kami-membelanjakan."
+    }
+   ],
+   "notes": [
+    "**Tizenkét és fél millió** — angka dengan pecahan dibaca \"dua belas dan setengah juta\". Ditulis *12,5 millió*: koma desimal, sama seperti di Indonesia. *Tíz százalékkal több* memakai *-val/-vel* untuk selisih: \"lebih banyak **dengan** sepuluh persen\". Pola yang sama: *két évvel idősebb* (dua tahun lebih tua).",
+    "**A negyede, kétharmadát** — pecahan adalah kata benda, dan \"seperempat dari X\" dibentuk dengan posesif: *a költségvetés negyede*, *a pénz kétharmada*. Sebagai sasaran ia menerima *-t*: *kétharmadát költjük el*.",
+    "**A marketingé** — *-é* \"milik\" dari A2 menempel juga pada kata pinjaman dan jamak: *a rendezvényeké* (milik acara-acara).",
+    "**Személyenként és naponta** — dua cara membagi. *-nként* membagi per satuan (per orang, per lembar), *-nta/-nte* menyatakan frekuensi waktu (tiap hari, tiap bulan). Bahasa Indonesia memakai \"per\" untuk keduanya.",
+    "**Áfástul?** — *-stul/-stül* berarti \"beserta, termasuk\". *Áfa* (*általános forgalmi adó*) adalah PPN Hungaria, 27 persen untuk kebanyakan barang, salah satu yang tertinggi di Uni Eropa. *Nettó* = sebelum pajak, *bruttó* = sesudah pajak.",
+    "**Apránként** — \"sedikit demi sedikit\", dari *apró* (kecil, receh) + *-nként*. Satu dari beberapa kata *-nként* yang sudah menjadi kata keterangan beku, seperti *időnként* (kadang-kadang) dan *helyenként* (di sana-sini)."
+   ],
+   "grammars": [
+    {
+     "title": "-nként: per satuan",
+     "body": [
+      "Akhiran *-nként* membagi rata sesuatu kepada setiap satuan. Sesudah vokal ia langsung menempel; sesudah konsonan muncul vokal sambung *-o-/-e-/-ö-* menurut keselarasan."
+     ],
+     "table": {
+      "head": [
+       "Kata dasar",
+       "Bentuk -nként",
+       "Arti",
+       "Contoh"
+      ],
+      "rows": [
+       [
+        "*személy*",
+        "*személyenként*",
+        "per orang",
+        "*Személyenként ötezer forint.*"
+       ],
+       [
+        "*fej*",
+        "*fejenként*",
+        "per kepala",
+        "*Fejenként háromezret fizettünk.*"
+       ],
+       [
+        "*darab*",
+        "*darabonként*",
+        "per buah",
+        "*Darabonként kétszáz forint.*"
+       ],
+       [
+        "*óra*",
+        "*óránként*",
+        "per jam; tiap jam",
+        "*A busz óránként indul.*"
+       ],
+       [
+        "*kiló*",
+        "*kilónként*",
+        "per kilo",
+        "*Az alma kilónként hatszáz forint.*"
+       ],
+       [
+        "*csoport*",
+        "*csoportonként*",
+        "per kelompok",
+        "*Csoportonként egy laptop van.*"
+       ],
+       [
+        "*lépés*",
+        "*lépésenként*",
+        "langkah demi langkah",
+        "*Lépésenként haladunk.*"
+       ]
+      ]
+     },
+     "after": [
+      "Perhatikan *óránként*: untuk waktu, *-nként* bisa berarti \"tiap\" (frekuensi). Tetapi untuk hari, minggu, bulan, dan tahun bahasa Hungaria lebih suka *-nta/-nte*: *naponta, hetente, havonta, évente*. *Naponként* dan *havonként* ada, tapi terdengar kaku.",
+      "Frekuensi yang lebih jarang dibentuk dengan angka di depan: *kéthetente* (dua minggu sekali), *negyedévente* (tiap tiga bulan), *kétévente* (dua tahun sekali)."
+     ]
+    },
+    {
+     "title": "Pecahan dan persen",
+     "body": [
+      "Pecahan dibentuk dari bilangan urutan tanpa *-ik*: *harmadik → harmad*, *negyedik → negyed*. Kecualinya *fél* (setengah), yang punya bentuk sendiri."
+     ],
+     "table": {
+      "head": [
+       "Magyar",
+       "Cara baca",
+       "Arti"
+      ],
+      "rows": [
+       [
+        "fél",
+        "fél",
+        "setengah (*a fele* = separuhnya)"
+       ],
+       [
+        "harmad",
+        "HÅR-måd",
+        "sepertiga"
+       ],
+       [
+        "negyed",
+        "NÈ-dyèd",
+        "seperempat"
+       ],
+       [
+        "ötöd",
+        "Ö-töd",
+        "seperlima"
+       ],
+       [
+        "tized",
+        "TI-zèd",
+        "sepersepuluh"
+       ],
+       [
+        "kétharmad",
+        "KÉT-hår-måd",
+        "dua pertiga"
+       ],
+       [
+        "háromnegyed",
+        "HA-rom-nè-dyèd",
+        "tiga perempat"
+       ],
+       [
+        "százalék",
+        "SA-zå-lék",
+        "persen"
+       ]
+      ]
+     },
+     "after": [
+      "\"Separuh dari\" memakai bentuk posesif *fele* (dari *fél*): *a torta fele, a bor fele*. *Fél* sendiri dipakai di depan kata benda: *fél kiló, fél óra*.",
+      "Persen dalam kalimat: *tíz százalék* (10%), *a költségek tíz százaléka* (10% dari biaya), *tíz százalékkal több* (10% lebih banyak). Tiga bentuk, tiga arti."
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Dialog kedua — Fele-fele",
+   "intro": "Sabtu malam. Budi, Anna, Kati, dan Gergő makan bersama di sebuah restoran ikan di Pest. Pelayan datang membawa tagihan.",
+   "lines": [
+    {
+     "speaker": "Pincér:",
+     "text": "Együtt vagy külön fizetnek?",
+     "id": "Bayar bersama atau sendiri-sendiri?",
+     "literal": "bersama atau terpisah Anda-sekalian-membayar?"
+    },
+    {
+     "speaker": "Anna:",
+     "text": "Külön, ha lehet. Budi, a limonádét felezzük?",
+     "id": "Sendiri-sendiri, kalau bisa. Budi, limunnya kita bagi dua?",
+     "literal": "terpisah, kalau boleh. Budi, itu limun-sasaran kita-membelahnya-dua?"
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Persze, fele-fele.",
+     "id": "Tentu, separuh-separuh.",
+     "literal": "tentu, separuh-separuh."
+    },
+    {
+     "speaker": "Kati:",
+     "text": "Mi Gergővel együtt fizetünk. A sajttálat pedig harmadoljuk.",
+     "id": "Aku dan Gergő bayar bersama. Piring kejunya kita bagi tiga.",
+     "literal": "kami Gergő-dengan bersama kami-membayar. itu keju-piring-sasaran sedangkan kita-membaginya-tiga."
+    },
+    {
+     "speaker": "Gergő:",
+     "text": "Várjatok, a számlán szervizdíj is van: tizenkét és fél százalék.",
+     "id": "Tunggu, di tagihannya ada biaya layanan juga: dua belas setengah persen.",
+     "literal": "tunggu-kalian-hendaklah, itu tagihan-di-atas biaya-layanan juga ada: dua-belas dan setengah persen."
+    },
+    {
+     "speaker": "Anna:",
+     "text": "Akkor borravalót már nem kell adni, ugye?",
+     "id": "Kalau begitu tidak perlu kasih tip lagi, kan?",
+     "literal": "kalau-begitu tip-sasaran sudah tidak harus memberi, kan?"
+    },
+    {
+     "speaker": "Kati:",
+     "text": "Nem kötelező, de fejenként hagyhatunk egy kis aprót.",
+     "id": "Tidak wajib, tapi kita bisa tinggalkan sedikit receh per orang.",
+     "literal": "tidak wajib, tapi kepala-per kita-meninggalkan-bisa sebuah kecil receh-sasaran."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Én kártyával fizetek. Mennyi az én részem?",
+     "id": "Aku bayar pakai kartu. Bagianku berapa?",
+     "literal": "saya kartu-dengan saya-membayar. berapa itu saya bagian-ku?"
+    },
+    {
+     "speaker": "Pincér:",
+     "text": "Hétezer-nyolcszáz forint, a limonádé felét is beleszámolva.",
+     "id": "Tujuh ribu delapan ratus forint, separuh limunnya sudah dihitung.",
+     "literal": "tujuh-ribu-delapan-ratus forint, itu limun separuh-nya-sasaran juga ke-dalamnya-dalam-keadaan-dihitung."
+    },
+    {
+     "speaker": "Anna:",
+     "text": "Nézzétek Gergőt! A halat csontostul megette.",
+     "id": "Lihat Gergő! Ikannya dia makan sampai tulang-tulangnya.",
+     "literal": "lihatlah-kalian-hendaklah Gergő-sasaran! itu ikan-sasaran tulang-beserta tuntas-ia-memakannya-lampau."
+    },
+    {
+     "speaker": "Gergő:",
+     "text": "Nem igaz! A fejét és a farkát meghagytam.",
+     "id": "Bohong! Kepala dan ekornya kusisakan.",
+     "literal": "tidak benar! itu kepala-nya-sasaran dan itu ekor-nya-sasaran tuntas-saya-menyisakannya-lampau."
+    }
+   ],
+   "notes": [
+    "**Együtt vagy külön?** — pertanyaan baku pelayan Hungaria sebelum membawa tagihan. Di Hungaria membayar sendiri-sendiri di meja yang sama hal yang biasa, dan pelayan akan menghitung per orang di tempat.",
+    "**Felezzük, harmadoljuk** — kata kerja dari pecahan: *felez* (membagi dua), *harmadol* (membagi tiga), *negyedel* (membagi empat). Bentuk *-juk* tertentu karena sasarannya *a limonádét*, *a sajttálat*. *Fele-fele* = separuh-separuh, jawaban singkat yang sering terdengar.",
+    "**Mi Gergővel** — harfiah \"kami dengan Gergő\", tetapi artinya \"aku dan Gergő\". Bahasa Hungaria menyebut kelompoknya (*mi*) lalu anggota lainnya dengan *-val/-vel*: *Mi Annával moziba megyünk* = Aku dan Anna pergi ke bioskop.",
+    "**Fejenként** — \"per kepala\", lebih santai daripada *személyenként*. Dipakai di meja makan dan dalam urusan patungan.",
+    "**Csontostul** — *-stul/-stül* menempel dengan vokal sambung: *csont → csontostul* (beserta tulangnya). Gergő membela diri dengan *meghagy* (menyisakan): *meghagytam a fejét*.",
+    "**Beleszámolva** — partisip *-va/-ve* dari *beleszámol* (memasukkan dalam hitungan): \"dengan sudah dihitung\". Pola *-va/-ve* sudah kamu kenal sejak A2 (*nyitva, zárva*)."
+   ],
+   "grammars": [
+    {
+     "title": "-stul/-stül: beserta",
+     "body": [
+      "*-stul/-stül* menyatakan bahwa sesuatu ikut serta, utuh, tanpa dipisahkan. Pemakaiannya terbatas dan banyak yang sudah menjadi ungkapan, jadi pelajari sebagai kata."
+     ],
+     "table": {
+      "head": [
+       "Bentuk",
+       "Arti",
+       "Contoh"
+      ],
+      "rows": [
+       [
+        "*családostul*",
+        "sekeluarga",
+        "*Családostul jöttek a lakodalomra.*"
+       ],
+       [
+        "*csontostul*",
+        "beserta tulangnya",
+        "*Csontostul megette a halat.*"
+       ],
+       [
+        "*mindenestül*",
+        "seluruhnya, semua-semuanya",
+        "*Mindenestül elfogadom.*"
+       ],
+       [
+        "*gyökerestül*",
+        "sampai ke akarnya",
+        "*Gyökerestül kitépte a gazt.*"
+       ],
+       [
+        "*ruhástul*",
+        "berpakaian lengkap",
+        "*Ruhástul ugrott a medencébe.*"
+       ],
+       [
+        "*áfástul*",
+        "termasuk PPN",
+        "*Az ár áfástul értendő.*"
+       ]
+      ]
+     },
+     "after": [
+      "Untuk hampir semua kata lain, bahasa sehari-hari memakai *-val/-vel együtt* (unit 13): *a gyerekekkel együtt*. *-stul/-stül* terdengar lebih hidup dan sering sedikit lucu, seperti \"sampai-sampai tulangnya pun dimakan\".",
+      "Vokal sambungnya mengikuti keselarasan: *csontostul, mindenestül, gyökerestül*; sesudah vokal langsung: *áfástul* (*áfa* memanjang jadi *áfá-*)."
+     ]
+    }
+   ]
+  }
+ ],
+ "sections": [
+  {
+   "title": "Angka besar dan uang",
+   "blocks": [
+    {
+     "type": "tabel",
+     "head": [
+      "Angka",
+      "Dibaca",
+      "Catatan"
+     ],
+     "rows": [
+      [
+       "*1000*",
+       "*ezer*",
+       "tanpa *egy*: *ezer forint*"
+      ],
+      [
+       "*2500*",
+       "*kétezer-ötszáz*",
+       "di atas 2000 diberi tanda hubung"
+      ],
+      [
+       "*12 500*",
+       "*tizenkétezer-ötszáz*",
+       "spasi sebagai pemisah ribuan"
+      ],
+      [
+       "*100 000*",
+       "*százezer*",
+       "ditulis satu kata"
+      ],
+      [
+       "*1 000 000*",
+       "*egymillió*",
+       "*millió* = juta"
+      ],
+      [
+       "*12,5 millió*",
+       "*tizenkét és fél millió*",
+       "koma desimal"
+      ],
+      [
+       "*1 milliárd*",
+       "*egymilliárd*",
+       "sama dengan \"miliar\""
+      ],
+      [
+       "*0,5*",
+       "*nulla egész öt tized*",
+       "harfiah: nol utuh lima persepuluh"
+      ],
+      [
+       "*27%*",
+       "*huszonhét százalék*",
+       "tarif PPN umum"
+      ],
+      [
+       "*1/3*",
+       "*egyharmad*",
+       "pecahan ditulis satu kata"
+      ]
+     ]
+    },
+    {
+     "type": "p",
+     "text": "Aturan ejaan yang perlu diingat: angka sampai dua ribu ditulis satu kata (*ezerkilencszázötven*), di atas dua ribu dipisah tanda hubung per kelompok tiga angka (*kétezer-huszonnyolc*, *hétezer-nyolcszáz*). Di toko, harga tunai dibulatkan ke 0 atau 5 forint karena koin 1 dan 2 forint sudah ditarik sejak 2008; pembayaran dengan kartu tidak dibulatkan. Dalam iklan kamu juga akan membaca singkatan *e Ft* (ribu forint) dan *M Ft* (juta forint): *200 e Ft/hó* = dua ratus ribu forint sebulan."
+    },
+    {
+     "type": "kotak",
+     "title": "Membaca harga dan tagihan",
+     "items": [
+      "*Ft* selalu ditulis sesudah angka: *2500 Ft*. Di label harga kadang ada *Ft/db* (per buah, *darab*) atau *Ft/kg*.",
+      "Label di toko sering menampilkan *egységár* (harga satuan), misalnya harga per kilo atau per liter, di bawah harga utama. Berguna untuk membandingkan kemasan.",
+      "Di tagihan restoran: *végösszeg* (total), *szervizdíj* (biaya layanan), *ÁFA-t tartalmaz* (termasuk PPN).",
+      "Di kontrak dan penawaran perhatikan *nettó* dan *bruttó*: selisihnya 27 persen, cukup besar untuk mengubah anggaran."
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Membagi tagihan",
+   "blocks": [
+    {
+     "type": "tabel",
+     "head": [
+      "Magyar",
+      "Arti",
+      "Siapa yang berkata"
+     ],
+     "rows": [
+      [
+       "*Fizetnék!* / *Kérem a számlát!*",
+       "Saya mau bayar. / Minta tagihannya.",
+       "tamu"
+      ],
+      [
+       "*Együtt vagy külön?*",
+       "Bersama atau sendiri-sendiri?",
+       "pelayan"
+      ],
+      [
+       "*Benne van a szervizdíj?*",
+       "Biaya layanannya sudah termasuk?",
+       "tamu"
+      ],
+      [
+       "*Kártyával fizetek.*",
+       "Saya bayar pakai kartu.",
+       "tamu"
+      ],
+      [
+       "*Fejenként mennyi?*",
+       "Per orang berapa?",
+       "tamu"
+      ],
+      [
+       "*Fele-fele.*",
+       "Separuh-separuh.",
+       "teman"
+      ],
+      [
+       "*Most én fizetek.*",
+       "Kali ini aku yang bayar.",
+       "teman"
+      ],
+      [
+       "*Meghívlak.*",
+       "Aku traktir kamu.",
+       "teman"
+      ],
+      [
+       "*Kerekítsük ötezerre.*",
+       "Bulatkan jadi lima ribu.",
+       "tamu"
+      ]
+     ]
+    },
+    {
+     "type": "p",
+     "text": "Baris terakhir adalah cara memberi tip yang paling Hungaria: kamu tidak meninggalkan uang di meja, tetapi menyebut jumlah yang ingin kamu bayar saat menyerahkan uang atau kartu. Kalau tagihannya 4600 forint, kamu bisa berkata *Legyen ötezer* (jadikan lima ribu) atau *Kerekítsük ötezerre*. *Meghívlak* memakai *-lak* karena sasarannya \"kamu\"; kepada dua orang atau lebih menjadi *Meghívlak titeket*."
+    },
+    {
+     "type": "kotak",
+     "title": "Tip di Hungaria",
+     "items": [
+      "*Borravaló* (harfiah \"uang untuk anggur\") yang lazim sekitar 10 persen di restoran, dan dibulatkan untuk taksi atau tukang cukur.",
+      "Banyak restoran di Budapest sudah memasukkan *szervizdíj* 10–15 persen ke tagihan. Periksa dulu; kalau sudah ada, tip tambahan tidak diharapkan.",
+      "⚠️ Hati-hati dengan *Köszönöm* saat menyerahkan uang tunai. Pelayan bisa memahaminya sebagai \"kembaliannya ambil saja\". Kalau kamu ingin kembalian, tunggu dulu, baru berterima kasih.",
+      "Membayar dengan kartu, termasuk kartu di ponsel, sudah sangat umum; pelayan membawa mesin EDC ke meja."
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Ulangan berjenjang — unit 8",
+   "blocks": [
+    {
+     "type": "p",
+     "text": "Tutup kolom Hungaria, baca terjemahan Indonesianya, lalu susun kembali kalimatnya dari ingatan."
+    },
+    {
+     "type": "tabel",
+     "head": [
+      "Bahasa Indonesia",
+      "Magyar"
+     ],
+     "rows": [
+      [
+       "Lalu di sini: \"Biaya naik, karena itu harga harus dinaikkan.\"",
+       "*És itt: „A költségek nőttek, ezért emelni kell az árakat.”*"
+      ],
+      [
+       "Tulis saja, kalau tidak Zoltán pasti menanyakannya.",
+       "*Írd bele, különben Zoltán rákérdez.*"
+      ],
+      [
+       "Nah, kan. Sementara itu aku yang bikin tabel-tabelnya.",
+       "*Na látod. Én pedig közben megcsinálom a táblázatokat.*"
+      ],
+      [
+       "Masa? Padahal aku sudah hati-hati!",
+       "*Tényleg? Pedig figyeltem rá!*"
+      ],
+      [
+       "Kan, justru buat itulah ada teman!",
+       "*Hiszen erre valók a barátok!*"
+      ]
+     ]
+    }
+   ]
+  }
+ ],
+ "vocab": [
+  {
+   "hu": "költségvetés",
+   "baca": "KÖLT-syég-vè-tésy",
+   "id": "anggaran"
+  },
+  {
+   "hu": "százalék",
+   "baca": "SA-zå-lék",
+   "id": "persen"
+  },
+  {
+   "hu": "fél (fele)",
+   "baca": "fél",
+   "id": "setengah (separuhnya)"
+  },
+  {
+   "hu": "harmad",
+   "baca": "HÅR-måd",
+   "id": "sepertiga"
+  },
+  {
+   "hu": "negyed",
+   "baca": "NÈ-dyèd",
+   "id": "seperempat"
+  },
+  {
+   "hu": "rész",
+   "baca": "rés",
+   "id": "bagian"
+  },
+  {
+   "hu": "összesen",
+   "baca": "ÖS-sè-syèn",
+   "id": "seluruhnya, total"
+  },
+  {
+   "hu": "körülbelül",
+   "baca": "KÖ-rül-bè-lül",
+   "id": "kira-kira"
+  },
+  {
+   "hu": "személyenként",
+   "baca": "SÈ-mé-yèn-ként",
+   "id": "per orang"
+  },
+  {
+   "hu": "fejenként",
+   "baca": "FÈ-yèn-ként",
+   "id": "per kepala"
+  },
+  {
+   "hu": "darabonként",
+   "baca": "DÅ-rå-bon-ként",
+   "id": "per buah"
+  },
+  {
+   "hu": "havonta",
+   "baca": "HÅ-von-tå",
+   "id": "tiap bulan"
+  },
+  {
+   "hu": "negyedévente",
+   "baca": "NÈ-dyè-dé-vèn-tè",
+   "id": "tiap tiga bulan"
+  },
+  {
+   "hu": "apránként",
+   "baca": "ÅP-ran-ként",
+   "id": "sedikit demi sedikit"
+  },
+  {
+   "hu": "nyomda",
+   "baca": "NYOM-då",
+   "id": "percetakan"
+  },
+  {
+   "hu": "áfa",
+   "baca": "A-få",
+   "id": "PPN (27%)"
+  },
+  {
+   "hu": "nettó / bruttó",
+   "baca": "NÈT-to / BRUT-to",
+   "id": "sebelum pajak / sesudah pajak"
+  },
+  {
+   "hu": "szervizdíj",
+   "baca": "SÈR-viz-diy",
+   "id": "biaya layanan"
+  },
+  {
+   "hu": "borravaló",
+   "baca": "BOR-rå-vå-lo",
+   "id": "tip"
+  },
+  {
+   "hu": "apró",
+   "baca": "ÅP-ro",
+   "id": "uang receh; kecil"
+  },
+  {
+   "hu": "felez",
+   "baca": "FÈ-lèz",
+   "id": "membagi dua"
+  },
+  {
+   "hu": "elkölt",
+   "baca": "ÈL-költ",
+   "id": "membelanjakan, menghabiskan (uang)"
+  },
+  {
+   "hu": "csontostul",
+   "baca": "CON-tosy-tul",
+   "id": "beserta tulangnya"
+  },
+  {
+   "hu": "családostul",
+   "baca": "CÅ-la-dosy-tul",
+   "id": "sekeluarga"
+  }
+ ],
+ "exercises": [
+  {
+   "prompt": "Terjemahkan ke bahasa Hungaria.",
+   "items": [
+    "Lima ribu forint per orang.",
+    "Kami bertemu klien tiap tiga bulan.",
+    "Seperempat anggaran untuk perjalanan.",
+    "Sepuluh persen lebih banyak daripada tahun lalu.",
+    "Anggurnya kita bagi dua.",
+    "Mereka datang sekeluarga."
+   ]
+  },
+  {
+   "prompt": "Isi titik-titiknya. Petunjuk ada di dalam kurung.",
+   "items": [
+    "A nyomda ____ kétszáz forintot kér. (darab, per satuan)",
+    "____ huszonötezer forinttal számolunk. (személy, per satuan)",
+    "A busz ____ indul. (óra, tiap)",
+    "Havonta egyszer, vagy ____? (hét, frekuensi)",
+    "A torta ____ már megettük. (fél, separuhnya, sasaran)",
+    "Az ár tíz ____ nőtt. (százalék + -val)",
+    "A halat ____ megette. (csont + -stul)"
+   ]
+  },
+  {
+   "prompt": "Tulis dengan huruf.",
+   "items": [
+    "2500 Ft",
+    "12,5 millió",
+    "1/4",
+    "27%",
+    "3/4",
+    "254 000 Ft"
+   ]
+  },
+  {
+   "prompt": "Susun jadi kalimat yang benar.",
+   "items": [
+    "személyenként / forint / ötezer",
+    "százalékkal / több / tíz / mint / tavaly",
+    "felezzük / bort / a",
+    "fejenként / hagyunk / aprót / egy / kis",
+    "költségvetés / a / negyede / utazásra / megy"
+   ]
+  }
+ ],
+ "answers": [
+  "Személyenként ötezer forint. — Negyedévente találkozunk az ügyfelekkel. — A költségvetés negyede utazásra megy. — Tíz százalékkal több, mint tavaly. — Felezzük a bort. — Családostul jönnek.",
+  "darabonként — Személyenként — óránként — hetente — felét — százalékkal — csontostul",
+  "kétezer-ötszáz forint — tizenkét és fél millió — egynegyed — huszonhét százalék — háromnegyed — kétszázötvennégyezer forint",
+  "Személyenként ötezer forint. — Tíz százalékkal több, mint tavaly. — Felezzük a bort. — Fejenként hagyunk egy kis aprót. — A költségvetés negyede utazásra megy."
+ ]
+}

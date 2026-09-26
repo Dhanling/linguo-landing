@@ -1,0 +1,711 @@
+{
+ "title": "Siapa harus apa — infinitif berpersona",
+ "title_target": "Neked ki kell számolnod a költségeket",
+ "goal": "Memimpin rapat kecil, membagi tugas, dan membedakan dengan tegas \"harus\", \"tidak perlu\", \"tidak boleh\", dan \"sebaiknya\". Titik tata bahasanya: infinitif berpersona (*mennem kell, nem szabad elkésned*), *lehet, hogy…*, *érdemes*, serta *kellene* dan *lehetne*.",
+ "bekal": [
+  "menambahkan akhiran orang pada bentuk dasar: *mennem, számolnod, terveznie, meghívnunk*",
+  "membedakan *nem kell* (tidak perlu) dari *nem szabad* (tidak boleh) dan memakai *tilos, muszáj, érdemes* dengan tepat",
+  "memberi saran dan meminta kelonggaran dengan halus: *Többet kellene delegálnod*, *Nem lehetne péntekig?*"
+ ],
+ "dialogs": [
+  {
+   "title": "Dialog — Ki mit csinál?",
+   "intro": "Akhir November 2027. Proyek kopi Budi baru berjalan beberapa minggu; tonggak besar pertamanya adalah acara cicip kopi (*kóstoló*) untuk pemilik kafe pada 10 Maret 2028. Budi memimpin rapat tim pertamanya bersama Réka dan Bence, sang pemagang.",
+   "lines": [
+    {
+     "speaker": "Budi:",
+     "text": "Jó reggelt! Kezdjük! Március tizedikén lesz az első kóstoló, és rengeteg a dolgunk.",
+     "id": "Selamat pagi! Kita mulai! Tanggal 10 Maret acara cicip kopi pertama, dan kerjaan kita banyak sekali.",
+     "literal": "baik pagi-sasaran! mari-kita-memulainya! Maret kesepuluh-pada akan-ada itu pertama cicipan, dan banyak-sekali itu urusan-kami."
+    },
+    {
+     "speaker": "Réka:",
+     "text": "Nekem mit kell csinálnom?",
+     "id": "Aku harus ngapain?",
+     "literal": "aku-bagi apa-sasaran harus berbuat-ku?"
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Neked ki kell számolnod a költségeket.",
+     "id": "Kamu harus menghitung biaya-biayanya.",
+     "literal": "kamu-bagi keluar harus menghitung-mu itu biaya-jamak-sasaran."
+    },
+    {
+     "speaker": "Réka:",
+     "text": "Rendben. És a kávét ki rendeli meg?",
+     "id": "Oke. Terus kopinya siapa yang pesan?",
+     "literal": "beres-di. dan itu kopi-sasaran siapa ia-memesannya tuntas?"
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Azt nekem kell megrendelnem, mert én beszélek a surabayai szállítóval.",
+     "id": "Itu aku yang harus pesan, karena aku yang berhubungan dengan pemasok di Surabaya.",
+     "literal": "itu-sasaran aku-bagi harus tuntas-memesan-ku, karena saya saya-berbicara itu Surabaya-yang pemasok-dengan."
+    },
+    {
+     "speaker": "Bence:",
+     "text": "És én? Nekem mi a feladatom?",
+     "id": "Aku? Tugasku apa?",
+     "literal": "dan saya? aku-bagi apa itu tugas-ku?"
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Te készíted a plakátot és a posztokat. Holnapig meg kellene tervezned a plakátot.",
+     "id": "Kamu yang bikin poster dan unggahan medsosnya. Sebaiknya besok posternya sudah kamu rancang.",
+     "literal": "kamu kamu-membuatnya itu poster-sasaran dan itu unggahan-jamak-sasaran. besok-sampai tuntas harus-andai merancang-mu itu poster-sasaran."
+    },
+    {
+     "speaker": "Bence:",
+     "text": "Holnapig? Az nagyon kevés idő. Nem lehetne péntekig?",
+     "id": "Besok? Itu mepet banget. Nggak bisa sampai Jumat?",
+     "literal": "besok-sampai? itu sangat sedikit waktu. tidak mungkin-andai Jumat-sampai?"
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Lehet, hogy péntek is elég. Megkérdezem a nyomdát.",
+     "id": "Mungkin Jumat juga cukup. Aku tanya percetakannya dulu.",
+     "literal": "mungkin, bahwa Jumat juga cukup. tuntas-saya-menanyakannya itu percetakan-sasaran."
+    },
+    {
+     "speaker": "Réka:",
+     "text": "A kóstolón mindenkinek ott kell lennie?",
+     "id": "Di acara cicip kopi semua orang harus hadir?",
+     "literal": "itu cicipan-di-atas setiap-orang-bagi di-sana harus ada-nya?"
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Igen, és nem szabad elkésnetek! Kilenckor nyitunk.",
+     "id": "Iya, dan kalian nggak boleh telat! Kita buka jam sembilan.",
+     "literal": "ya, dan tidak boleh terlambat-kalian! sembilan-pada-jam kami-membuka."
+    },
+    {
+     "speaker": "Bence:",
+     "text": "Érdemes lenne meghívni néhány kávés bloggert is.",
+     "id": "Ada baiknya kita undang beberapa blogger kopi juga.",
+     "literal": "layak akan-ada-andai mengundang-tuntas beberapa kopi-yang blogger-sasaran juga."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Jó ötlet! De nem kell sok embert meghívnunk, elég tizenöt vendég.",
+     "id": "Ide bagus! Tapi kita nggak perlu mengundang banyak orang, lima belas tamu cukup.",
+     "literal": "baik ide! tetapi tidak harus banyak orang-sasaran tuntas-mengundang-kami, cukup lima-belas tamu."
+    },
+    {
+     "speaker": "Réka:",
+     "text": "Akkor ma délután összeállítom a listát.",
+     "id": "Kalau begitu sore ini aku susun daftarnya.",
+     "literal": "kalau-begitu hari-ini sore bersama-saya-menyusunnya itu daftar-sasaran."
+    }
+   ],
+   "notes": [
+    "**Rengeteg a dolgunk** — \"urusan kita banyak sekali\". *Dolog* (hal, urusan) berubah batang saat diberi akhiran: *dolgom, dolgod, dolgunk*. *Sok a dolgom* adalah cara paling biasa untuk berkata \"aku sibuk\".",
+    "**Nekem mit kell csinálnom?** Pelaku kalimat *kell* diungkapkan **dua kali**: dengan *nekem* (bagiku) dan dengan akhiran *-om* pada bentuk dasar (*csinálnom*). *Nekem* boleh dihilangkan; akhirannya tidak. Réka memakai *nekem* karena ia membandingkan dirinya dengan orang lain.",
+    "**Ki kell számolnod** — tanpa fokus, awalan *ki-* lepas dari kata kerja dan pindah ke depan *kell*, persis seperti di depan kata kerja bantu lain (*ki fogom számolni*). Bandingkan dengan baris berikutnya: *Azt nekem kell megrendelnem*. Di sana *nekem* adalah fokus (\"aku lah yang harus\"), jadi fokus itu yang menempati posisi di depan *kell*, dan awalan tetap menempel: *megrendelnem*.",
+    "**Meg kellene tervezned** — *kellene* adalah pengandaian dari *kell*: \"seharusnya, sebaiknya\". Ia melunakkan perintah. Di lisan sering dipendekkan menjadi *kéne*: *Meg kéne tervezned*.",
+    "**Nem lehetne péntekig?** — *lehetne* (bisa-andai) adalah cara sopan untuk menawar tenggat atau meminta kelonggaran. Jawaban Budi, *Lehet, hogy…*, memakai *lehet* dalam arti lain: \"mungkin\". *Lehet, hogy péntek is elég* = mungkin Jumat pun cukup.",
+    "**Nem szabad elkésnetek** vs **nem kell meghívnunk** — pasangan paling penting unit ini. *Nem szabad* = tidak boleh (larangan). *Nem kell* = tidak perlu (tidak ada kewajiban). Bahasa Indonesia membedakannya dengan jelas, jadi jangan tertukar hanya karena keduanya diawali *nem*."
+   ],
+   "grammars": [
+    {
+     "title": "Infinitif berpersona",
+     "body": [
+      "Bentuk dasar *-ni* bisa diberi akhiran orang. *-i* di akhir bentuk dasar hilang, lalu diganti akhiran yang mengikuti keselarasan vokal. Kata kerja yang bentuk dasarnya *-ani/-eni* (seperti *tanítani*, *mondani*) mempertahankan vokal sambung itu."
+     ],
+     "table": {
+      "head": [
+       "Pelaku",
+       "*tanul*",
+       "*kér*",
+       "*jön*",
+       "*tanít*"
+      ],
+      "rows": [
+       [
+        "(nekem)",
+        "*tanulnom*",
+        "*kérnem*",
+        "*jönnöm*",
+        "*tanítanom*"
+       ],
+       [
+        "(neked)",
+        "*tanulnod*",
+        "*kérned*",
+        "*jönnöd*",
+        "*tanítanod*"
+       ],
+       [
+        "(neki)",
+        "*tanulnia*",
+        "*kérnie*",
+        "*jönnie*",
+        "*tanítania*"
+       ],
+       [
+        "(nekünk)",
+        "*tanulnunk*",
+        "*kérnünk*",
+        "*jönnünk*",
+        "*tanítanunk*"
+       ],
+       [
+        "(nektek)",
+        "*tanulnotok*",
+        "*kérnetek*",
+        "*jönnötök*",
+        "*tanítanotok*"
+       ],
+       [
+        "(nekik)",
+        "*tanulniuk*",
+        "*kérniük*",
+        "*jönniük*",
+        "*tanítaniuk*"
+       ]
+      ]
+     },
+     "after": [
+      "**Akhirannya mirip akhiran milik** (*-om, -od, -a, -unk, -otok, -uk*), dan itu bukan kebetulan: *mennem kell* secara harfiah berarti \"kepergianku perlu\". Karena itu pelakunya bisa ditulis dengan *-nak/-nek*: *Rékának ki kell számolnia*.",
+      "Bentuk berpersona dipakai dengan kata-kata tanpa pelaku sendiri: *kell, kellene, szabad, tilos, muszáj, lehet, érdemes, sikerül*. Dengan kata kerja biasa seperti *akar* atau *tud*, bentuk dasar tetap polos: *Menni akarok*, bukan *mennem akarok*."
+     ]
+    },
+    {
+     "title": "Letak awalan di sekitar kell",
+     "body": [
+      "*Kell* berperilaku seperti kata kerja bantu. Aturannya sama dengan *fog* dan *akar* dari A2: awalan melompat ke depan *kell* hanya jika tidak ada fokus dan tidak ada sangkalan."
+     ],
+     "table": {
+      "head": [
+       "Susunan",
+       "Contoh",
+       "Keterangan"
+      ],
+      "rows": [
+       [
+        "netral",
+        "*Ki kell számolnod a költségeket.*",
+        "awalan di depan *kell*"
+       ],
+       [
+        "fokus",
+        "*Nekem kell megrendelnem a kávét.*",
+        "fokus di depan *kell*, awalan tetap"
+       ],
+       [
+        "sangkalan",
+        "*Nem kell meghívnunk sok embert.*",
+        "*nem kell* + awalan menempel"
+       ],
+       [
+        "larangan",
+        "*Nem szabad elkésnetek.*",
+        "*nem szabad* + awalan menempel"
+       ],
+       [
+        "pengandaian",
+        "*Meg kellene terveznie.*",
+        "sama seperti *kell*"
+       ]
+      ]
+     },
+     "after": [
+      "Kalau ragu, tanyakan: apa yang paling ditekankan? Jika jawabannya kata kerja itu sendiri, awalan boleh maju. Jika ada kata lain yang ditekankan, termasuk *nem*, kata itulah yang berdiri di depan *kell*."
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Dialog kedua — Nem muszáj mindent egyedül",
+   "intro": "Beberapa hari kemudian, Jumat sore. Zoltán mampir ke meja Budi dan melihat tumpukan kertas dan tiga cangkir kopi kosong.",
+   "lines": [
+    {
+     "speaker": "Zoltán:",
+     "text": "Na, Budi, hogy halad a csapat?",
+     "id": "Nah, Budi, timnya bagaimana perkembangannya?",
+     "literal": "nah, Budi, bagaimana ia-maju itu tim?"
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Jól, de túl sok a feladatom. Úgy érzem, mindent nekem kell intéznem.",
+     "id": "Baik, tapi tugasku terlalu banyak. Rasanya semuanya aku yang harus urus.",
+     "literal": "dengan-baik, tetapi terlalu banyak itu tugas-ku. begitu saya-merasa, segala-sasaran aku-bagi harus mengurus-ku."
+    },
+    {
+     "speaker": "Zoltán:",
+     "text": "Nem muszáj mindent egyedül csinálnod. Többet kellene delegálnod.",
+     "id": "Kamu nggak harus mengerjakan semuanya sendiri. Sebaiknya kamu lebih banyak mendelegasikan.",
+     "literal": "tidak terpaksa segala-sasaran sendirian berbuat-mu. lebih-banyak-sasaran harus-andai mendelegasikan-mu."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Tudom, de Bence még új. Nem akarom túlterhelni.",
+     "id": "Aku tahu, tapi Bence masih baru. Aku nggak mau membebaninya berlebihan.",
+     "literal": "saya-mengetahuinya, tetapi Bence masih baru. tidak saya-menginginkannya terlalu-membebani."
+    },
+    {
+     "speaker": "Zoltán:",
+     "text": "Érdemes neki több felelősséget adni. Így tanul a legtöbbet.",
+     "id": "Ada gunanya memberi dia tanggung jawab lebih. Dengan begitu dia paling banyak belajar.",
+     "literal": "layak dia-bagi lebih-banyak tanggung-jawab-sasaran memberi. begini ia-belajar itu paling-banyak-sasaran."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "És ha hibázik?",
+     "id": "Kalau dia bikin salah?",
+     "literal": "dan kalau ia-berbuat-salah?"
+    },
+    {
+     "speaker": "Zoltán:",
+     "text": "Egy gyakornoknak szabad hibáznia. Te is hibáztál az első évedben.",
+     "id": "Pemagang boleh berbuat salah. Kamu juga pernah salah di tahun pertamamu.",
+     "literal": "seorang pemagang-bagi boleh berbuat-salah-nya. kamu juga kamu-berbuat-salah-lampau itu pertama tahun-mu-di-dalam."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Igazad van. Akkor jövő héttől Bence intézi a nyomdát.",
+     "id": "Kamu benar. Kalau begitu mulai minggu depan Bence yang urus percetakan.",
+     "literal": "kebenaran-mu ada. kalau-begitu depan minggu-dari-dekat Bence ia-mengurusnya itu percetakan-sasaran."
+    },
+    {
+     "speaker": "Zoltán:",
+     "text": "Helyes. És még valami: hétfőn nem kell bejönnöd. Pihenj egy kicsit!",
+     "id": "Tepat. Satu lagi: hari Senin kamu nggak perlu masuk. Istirahatlah sebentar!",
+     "literal": "tepat. dan lagi sesuatu: Senin-pada tidak harus masuk-datang-mu. beristirahat-hendaklah sebuah sedikit!"
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Komolyan? Köszönöm, Zoltán!",
+     "id": "Serius? Makasih, Zoltán!",
+     "literal": "dengan-serius? saya-berterima-kasih, Zoltán!"
+    },
+    {
+     "speaker": "Zoltán:",
+     "text": "Nincs mit. De kedden pontosan kilenckor itt kell lenned!",
+     "id": "Sama-sama. Tapi hari Selasa kamu harus sudah di sini tepat jam sembilan!",
+     "literal": "tidak-ada apa. tetapi Selasa-pada tepat sembilan-pada-jam di-sini harus ada-mu!"
+    }
+   ],
+   "notes": [
+    "**Hogy halad a csapat?** — *halad* (maju, berjalan) adalah kata kerja yang wajar untuk proyek dan pekerjaan: *Hogy halad a munka?* (Bagaimana kemajuan kerjanya?). Jawaban biasa: *Jól halad*, *Lassan halad*.",
+    "**Úgy érzem, mindent nekem kell intéznem.** *Nekem* adalah fokus di sini (\"aku yang harus\"), maka ia berdiri tepat di depan *kell*. *Intéz* (mengurus) dan *elintéz* (menyelesaikan urusan) adalah kata kerja kantor yang sangat sering: *Majd én elintézem!* = Biar aku yang bereskan!",
+    "**Nem muszáj** — \"tidak harus\", lebih lisan daripada *nem kell*. *Muszáj* sendiri berarti terpaksa, mau tidak mau. *Muszáj mennem* = aku harus pergi (mau tidak mau).",
+    "**Érdemes neki több felelősséget adni** — *érdemes* (layak, ada gunanya) bisa memakai bentuk dasar polos bila pelakunya umum atau sudah jelas. *Neki* di sini bukan pelaku, melainkan penerima: \"memberi kepadanya\". Pelaku tersiratnya Budi.",
+    "**Szabad hibáznia** — *szabad* (boleh) memakai infinitif berpersona seperti *kell*: *Egy gyakornoknak szabad hibáznia* = seorang pemagang boleh salah. Sebagai kata sifat biasa, *szabad* berarti bebas atau kosong: *Szabad ez a hely?* (Kursi ini kosong?).",
+    "**Hétfőn nem kell bejönnöd** — *bejön* (masuk ke kantor). Bentuknya *bejönnöd*: awalan tetap menempel karena ada *nem kell*. Zoltán memberi hari libur dengan kalimat \"tidak perlu\", bukan \"tidak boleh\"; pilihan kata ini yang membuatnya terdengar ramah."
+   ],
+   "grammars": [
+    {
+     "title": "Kellene, lehetne, érdemes, muszáj",
+     "body": [
+      "Di samping *kell*, ada beberapa kata yang memberi warna berbeda pada kewajiban. Semuanya bisa dipakai dengan bentuk dasar polos (umum) atau berpersona (untuk orang tertentu)."
+     ],
+     "table": {
+      "head": [
+       "Kata",
+       "Nuansa",
+       "Contoh"
+      ],
+      "rows": [
+       [
+        "*kellene* (*kéne*)",
+        "sebaiknya, seharusnya",
+        "*Többet kellene delegálnod.*"
+       ],
+       [
+        "*lehetne*",
+        "bisa saja; tawaran halus",
+        "*Nem lehetne péntekig?*"
+       ],
+       [
+        "*lehet, hogy…*",
+        "mungkin",
+        "*Lehet, hogy péntek is elég.*"
+       ],
+       [
+        "*érdemes*",
+        "layak, ada gunanya",
+        "*Érdemes lenne meghívni őket.*"
+       ],
+       [
+        "*muszáj*",
+        "terpaksa, harus (lisan)",
+        "*Muszáj ma befejeznem.*"
+       ],
+       [
+        "*nem muszáj*",
+        "tidak harus",
+        "*Nem muszáj egyedül csinálnod.*"
+       ]
+      ]
+     },
+     "after": [
+      "*Érdemes lenne* (akan layak) lebih lunak daripada *érdemes*. Bence, sebagai pemagang, memilih bentuk ini untuk mengusulkan ide kepada atasannya; dengan teman ia cukup berkata *Érdemes meghívni őket*.",
+      "⚠️ *Lehet* punya dua wajah: *Itt lehet parkolni* (boleh/bisa parkir di sini) dan *Lehet, hogy esik* (mungkin hujan). *Hogy* sesudahnya yang menandakan arti \"mungkin\"."
+     ]
+    }
+   ]
+  }
+ ],
+ "sections": [
+  {
+   "title": "Rapat dan pembagian tugas",
+   "blocks": [
+    {
+     "type": "tabel",
+     "head": [
+      "Magyar",
+      "Cara baca",
+      "Bahasa Indonesia"
+     ],
+     "rows": [
+      [
+       "megbeszélés",
+       "MÈG-bè-sé-lésy",
+       "rapat, pertemuan"
+      ],
+      [
+       "napirend",
+       "NÅ-pi-rènd",
+       "agenda"
+      ],
+      [
+       "jegyzőkönyv",
+       "YÈDY-zö-könyv",
+       "notulen"
+      ],
+      [
+       "Ki vállalja?",
+       "ki VAL-lål-yå",
+       "Siapa yang mau pegang?"
+      ],
+      [
+       "Én vállalom.",
+       "én VAL-lå-lom",
+       "Aku yang pegang."
+      ],
+      [
+       "Ki a felelős érte?",
+       "ki å FÈ-lè-lösy ÉR-tè",
+       "Siapa penanggung jawabnya?"
+      ],
+      [
+       "Mi a határidő?",
+       "mi å HÅ-ta-ri-dö",
+       "Tenggatnya kapan?"
+      ],
+      [
+       "Összefoglalom.",
+       "ÖS-sè-fog-lå-lom",
+       "Saya rangkum."
+      ],
+      [
+       "Van még kérdés?",
+       "vån még KÉR-désy",
+       "Masih ada pertanyaan?"
+      ]
+     ]
+    },
+    {
+     "type": "p",
+     "text": "Rapat kantor di Hungaria biasanya dimulai tepat waktu dan cenderung langsung ke pokok persoalan; basa-basi dilakukan sebelum rapat, sambil membuat kopi. Pembagian tugas dilakukan terang-terangan: *Ki vállalja?* (siapa yang mau mengambil?) dijawab *Én vállalom*, dan jawaban itu dianggap janji. Kalau kamu tidak sanggup, katakan saat itu juga dengan *Sajnos erre most nincs kapacitásom* (Sayangnya sekarang aku tidak punya kapasitas untuk itu); diam lalu tidak mengerjakan jauh lebih buruk di mata rekan Hungaria."
+    },
+    {
+     "type": "kotak",
+     "title": "Kalimat siap pakai untuk memimpin rapat",
+     "items": [
+      "Membuka: *Kezdjük!* (Kita mulai!) atau *Ha mindenki itt van, kezdhetjük.* (Kalau semua sudah hadir, kita bisa mulai.)",
+      "Membagi tugas dengan infinitif berpersona: *Rékának a költségvetést kell elkészítenie, Bencének a plakátot kell megterveznie.*",
+      "Menawar tenggat dengan sopan: *Nem lehetne egy nappal később?* (Tidak bisa sehari lebih lambat?)",
+      "Menutup: *Akkor mindenki tudja, mi a dolga. Köszönöm!* (Jadi semua sudah tahu tugasnya. Terima kasih!)"
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Wajib, boleh, tidak perlu, dilarang",
+   "blocks": [
+    {
+     "type": "tabel",
+     "head": [
+      "Ungkapan",
+      "Arti",
+      "Contoh"
+     ],
+     "rows": [
+      [
+       "*kell*",
+       "harus",
+       "*Holnap korán kell kelnem.*"
+      ],
+      [
+       "*nem kell*",
+       "tidak perlu",
+       "*Nem kell bejönnöd.*"
+      ],
+      [
+       "*szabad*",
+       "boleh",
+       "*Itt szabad fényképezni.*"
+      ],
+      [
+       "*nem szabad*",
+       "tidak boleh",
+       "*Nem szabad elkésnetek.*"
+      ],
+      [
+       "*tilos*",
+       "dilarang (resmi, papan)",
+       "*Tilos a dohányzás.*"
+      ],
+      [
+       "*kötelező*",
+       "wajib (resmi)",
+       "*A részvétel kötelező.*"
+      ],
+      [
+       "*nem kötelező*",
+       "tidak wajib",
+       "*A regisztráció nem kötelező.*"
+      ],
+      [
+       "*érdemes / nem érdemes*",
+       "ada gunanya / tidak ada gunanya",
+       "*Nem érdemes taxival menni, közel van.*"
+      ]
+     ]
+    },
+    {
+     "type": "p",
+     "text": "Bahasa Indonesia sudah memberimu peta yang tepat: \"harus\", \"tidak perlu\", \"boleh\", \"tidak boleh\". Pasangkan saja satu per satu: *kell, nem kell, szabad, nem szabad*. Jebakannya datang dari bahasa Inggris: pelajar yang berpikir lewat \"must not\" dan \"don't have to\" sering menerjemahkan *nem kell* sebagai larangan. Ingat Zoltán: *Hétfőn nem kell bejönnöd* adalah hadiah, bukan hukuman."
+    },
+    {
+     "type": "kotak",
+     "title": "Papan larangan dan kewajiban",
+     "items": [
+      "*Fűre lépni tilos!* (Dilarang menginjak rumput!) adalah papan klasik di taman-taman Budapest. Susunannya: bentuk dasar + *tilos*, tanpa pelaku.",
+      "*Idegeneknek belépni tilos!* = Selain yang berkepentingan dilarang masuk. Di sini pelakunya disebut dengan *-nak/-nek*.",
+      "*Kötelező haladási irány* adalah rambu lalu lintas \"arah wajib\"; *Behajtani tilos* = dilarang masuk (untuk kendaraan).",
+      "Di kantor atau sekolah kamu akan membaca *Kérjük, ne…* (Mohon jangan…): *Kérjük, ne hagyja nyitva az ajtót!* Ini larangan yang paling sopan."
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Ulangan berjenjang — unit 3",
+   "blocks": [
+    {
+     "type": "p",
+     "text": "Tutup kolom Hungaria, baca terjemahan Indonesianya, lalu susun kembali kalimatnya dari ingatan."
+    },
+    {
+     "type": "tabel",
+     "head": [
+      "Bahasa Indonesia",
+      "Magyar"
+     ],
+     "rows": [
+      [
+       "Seribu dua ratus forint per bulan. Tapi kalau gaji Bapak masuk ke sini, gratis.",
+       "*Havonta ezerkétszáz forint. De ha ide érkezik a fizetése, akkor ingyenes.*"
+      ],
+      [
+       "Setiap bulan, asalkan paling sedikit dua ratus ribu forint masuk ke rekening.",
+       "*Minden hónapban, feltéve, hogy legalább kétszázezer forint érkezik a számlára.*"
+      ],
+      [
+       "Tentu. Kalau Bapak transfer ke rekening Hungaria, uangnya sampai dalam beberapa detik.",
+       "*Persze. Ha magyar számlára utal, a pénz pár másodperc alatt megérkezik.*"
+      ],
+      [
+       "Aduh. Kalau aku perusahaan asuransinya, aku juga nggak bakal bayar.",
+       "*Jaj. Ha én lennék a biztosító, én sem fizetném ki.*"
+      ],
+      [
+       "Ya cukup asuransi sekali jalan. Tapi kalau aku jadi kamu, aku pilih yang tahunan.",
+       "*Akkor elég egy egyszeri biztosítás. De a helyedben én az éveset választanám.*"
+      ]
+     ]
+    }
+   ]
+  }
+ ],
+ "vocab": [
+  {
+   "hu": "kóstoló",
+   "baca": "KOSY-to-lo",
+   "id": "acara cicip (kopi, anggur)"
+  },
+  {
+   "hu": "feladat",
+   "baca": "FÈ-lå-dåt",
+   "id": "tugas"
+  },
+  {
+   "hu": "dolog",
+   "baca": "DO-log",
+   "id": "hal, urusan (*dolgom, dolgunk*)"
+  },
+  {
+   "hu": "költség",
+   "baca": "KÖLT-syég",
+   "id": "biaya, pengeluaran"
+  },
+  {
+   "hu": "kiszámol",
+   "baca": "KI-sa-mol",
+   "id": "menghitung"
+  },
+  {
+   "hu": "megrendel",
+   "baca": "MÈG-rèn-dèl",
+   "id": "memesan (barang)"
+  },
+  {
+   "hu": "szállító",
+   "baca": "SAL-li-to",
+   "id": "pemasok; pengantar"
+  },
+  {
+   "hu": "megtervez",
+   "baca": "MÈG-tèr-vèz",
+   "id": "merancang"
+  },
+  {
+   "hu": "nyomda",
+   "baca": "NYOM-då",
+   "id": "percetakan"
+  },
+  {
+   "hu": "szabad",
+   "baca": "SÅ-båd",
+   "id": "boleh; bebas, kosong"
+  },
+  {
+   "hu": "tilos",
+   "baca": "TI-losy",
+   "id": "dilarang"
+  },
+  {
+   "hu": "kötelező",
+   "baca": "KÖ-tè-lè-zö",
+   "id": "wajib"
+  },
+  {
+   "hu": "muszáj",
+   "baca": "MU-say",
+   "id": "terpaksa, mau tak mau harus"
+  },
+  {
+   "hu": "érdemes",
+   "baca": "ÉR-dè-mèsy",
+   "id": "layak, ada gunanya"
+  },
+  {
+   "hu": "elkésik",
+   "baca": "ÈL-ké-syik",
+   "id": "terlambat"
+  },
+  {
+   "hu": "meghív",
+   "baca": "MÈG-hiv",
+   "id": "mengundang"
+  },
+  {
+   "hu": "tulajdonos",
+   "baca": "TU-låy-do-nosy",
+   "id": "pemilik"
+  },
+  {
+   "hu": "összeállít",
+   "baca": "ÖS-sè-al-lit",
+   "id": "menyusun"
+  },
+  {
+   "hu": "halad",
+   "baca": "HÅ-låd",
+   "id": "maju, berjalan (pekerjaan)"
+  },
+  {
+   "hu": "intéz / elintéz",
+   "baca": "IN-téz / È-lin-téz",
+   "id": "mengurus / membereskan"
+  },
+  {
+   "hu": "túlterhel",
+   "baca": "TUL-tèr-hèl",
+   "id": "membebani berlebihan"
+  },
+  {
+   "hu": "felelősség",
+   "baca": "FÈ-lè-lösy-syég",
+   "id": "tanggung jawab"
+  },
+  {
+   "hu": "hibázik",
+   "baca": "HI-ba-zik",
+   "id": "berbuat salah"
+  },
+  {
+   "hu": "vállal",
+   "baca": "VAL-lål",
+   "id": "menyanggupi, mengambil (tugas)"
+  },
+  {
+   "hu": "pihen",
+   "baca": "PI-hèn",
+   "id": "beristirahat"
+  }
+ ],
+ "exercises": [
+  {
+   "prompt": "Terjemahkan ke bahasa Hungaria.",
+   "items": [
+    "Aku harus pergi.",
+    "Kamu tidak boleh terlambat.",
+    "Kita tidak perlu mengundang banyak orang.",
+    "Mungkin hari Jumat pun cukup.",
+    "Sebaiknya kamu lebih banyak mendelegasikan.",
+    "Ada gunanya mengundang pemilik-pemilik kafe."
+   ]
+  },
+  {
+   "prompt": "Isi dengan bentuk yang tepat. Petunjuk ada di dalam kurung.",
+   "items": [
+    "Holnap korán kell ____. (kel, én)",
+    "Nem szabad ____! (elkésik, ti)",
+    "Bencének meg kell ____ a plakátot. (tervez, ő)",
+    "Mit kell ____? (csinál, mi)",
+    "Pénteken nem ____ bejönnöd, pihenj! (kell atau szabad?)",
+    "Itt ____ dohányozni. (dilarang: tilos atau nem kell?)",
+    "____, hogy késik a vonat. (mungkin)"
+   ]
+  },
+  {
+   "prompt": "Ubah menjadi kalimat *kell* dengan infinitif berpersona. Perhatikan letak awalan. Contoh: *Elmegyek a boltba.* → *El kell mennem a boltba.*",
+   "items": [
+    "Megírom a jelentést.",
+    "Felhívod Zoltánt.",
+    "Réka kiszámolja a költségeket.",
+    "Korán kelünk.",
+    "Megvárjátok Bencét.",
+    "A vendégek kilenckor érkeznek."
+   ]
+  },
+  {
+   "prompt": "Susun jadi kalimat yang benar.",
+   "items": [
+    "kell / ki / számolnod / a költségeket",
+    "nekem / megrendelnem / kell / a kávét",
+    "lehet / hogy / elég / péntek is",
+    "szabad / nem / elkésnetek",
+    "kellene / többet / delegálnod"
+   ]
+  }
+ ],
+ "answers": [
+  "Mennem kell. — Nem szabad elkésned. — Nem kell sok embert meghívnunk. — Lehet, hogy péntek is elég. — Többet kellene delegálnod. — Érdemes meghívni a kávézótulajdonosokat.",
+  "kelnem — elkésnetek — terveznie — csinálnunk — kell — tilos — Lehet",
+  "Meg kell írnom a jelentést. — Fel kell hívnod Zoltánt. — Rékának ki kell számolnia a költségeket. — Korán kell kelnünk. — Meg kell várnotok Bencét. — A vendégeknek kilenckor kell érkezniük.",
+  "Ki kell számolnod a költségeket. — Nekem kell megrendelnem a kávét. — Lehet, hogy péntek is elég. — Nem szabad elkésnetek. — Többet kellene delegálnod."
+ ]
+}

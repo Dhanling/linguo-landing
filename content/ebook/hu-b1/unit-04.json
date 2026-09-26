@@ -1,0 +1,733 @@
+{
+ "title": "Birokrasi — partisip sebagai kata sifat",
+ "title_target": "Hozta a kitöltött kérelmet?",
+ "goal": "Mengurus perpanjangan izin tinggal dan membaca surat resmi tanpa panik. Titik tata bahasanya: partisip kini *-ó/-ő* (*a várakozó ügyfelek*), partisip lampau *-t/-tt* (*a kitöltött űrlap*), dan partisip masa depan *-andó/-endő* (*a fizetendő illeték*) yang dipakai sebagai kata sifat.",
+ "bekal": [
+  "memadatkan \"yang sedang…\" menjadi satu kata: *a várakozó ügyfelek, a következő ügyfél*",
+  "memakai partisip lampau untuk \"yang sudah di-…\" dan \"yang sudah…\": *a kitöltött űrlap, a lejárt útlevél*",
+  "memahami *-andó/-endő* (\"yang harus di-…\") di surat dan formulir: *benyújtandó, fizetendő, kitöltendő*"
+ ],
+ "dialogs": [
+  {
+   "title": "Dialog — Az idegenrendészeten",
+   "intro": "Pertengahan November 2027. Izin tinggal Budi berakhir bulan Desember, jadi seminggu lalu, lebih dari sebulan sebelum izinnya habis, ia mengajukan perpanjangan secara daring. Pagi ini ia datang ke kantor imigrasi untuk menyerahkan dokumen dan data biometrik.",
+   "lines": [
+    {
+     "speaker": "Ügyintéző:",
+     "text": "Jó napot! Elnézést a várakozásért. Ma sok a várakozó ügyfél.",
+     "id": "Selamat pagi! Maaf menunggu lama. Hari ini banyak klien yang menunggu.",
+     "literal": "baik hari-sasaran! maaf itu penantian-demi. hari-ini banyak itu yang-menunggu klien."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Semmi baj. A tartózkodási engedélyemet szeretném meghosszabbítani.",
+     "id": "Tidak apa-apa. Saya ingin memperpanjang izin tinggal saya.",
+     "literal": "tidak-ada masalah. itu tinggal-yang izin-ku-sasaran saya-ingin-andai-nya tuntas-memperpanjang."
+    },
+    {
+     "speaker": "Ügyintéző:",
+     "text": "A kérelmét online adta be?",
+     "id": "Permohonannya Bapak ajukan secara daring?",
+     "literal": "itu permohonan-nya-sasaran daring Anda-memberikannya-lampau masuk?"
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Igen, múlt héten. Itt van a kinyomtatott visszaigazolás is.",
+     "id": "Ya, minggu lalu. Ini juga bukti konfirmasi yang sudah dicetak.",
+     "literal": "ya, lalu minggu-pada. di-sini ada itu yang-sudah-dicetak-keluar konfirmasi juga."
+    },
+    {
+     "speaker": "Ügyintéző:",
+     "text": "Köszönöm. Kérem az útlevelét és a munkáltatójától kapott igazolást.",
+     "id": "Terima kasih. Saya minta paspor Bapak dan surat keterangan dari pemberi kerja Bapak.",
+     "literal": "saya-berterima-kasih. saya-memintanya itu paspor-nya-sasaran dan itu pemberi-kerja-nya-dari-dekat yang-sudah-diterima keterangan-sasaran."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Tessék. Az igazolást a főnököm tegnap írta alá.",
+     "id": "Silakan. Surat keterangannya kemarin ditandatangani atasan saya.",
+     "literal": "silakan. itu keterangan-sasaran itu atasan-ku kemarin ia-menulisnya-lampau bawah."
+    },
+    {
+     "speaker": "Ügyintéző:",
+     "text": "Látom. De ez a bérleti szerződés októberben lejárt. Nincs újabb?",
+     "id": "Saya lihat. Tapi kontrak sewa ini sudah habis bulan Oktober. Tidak ada yang lebih baru?",
+     "literal": "saya-melihatnya. tetapi ini itu sewa-yang kontrak Oktober-di-dalam turun-ia-berjalan-lampau. tidak-ada lebih-baru?"
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Jaj, a meghosszabbított szerződés otthon maradt.",
+     "id": "Aduh, kontrak yang sudah diperpanjang ketinggalan di rumah.",
+     "literal": "aduh, itu yang-sudah-diperpanjang kontrak di-rumah ia-tinggal-lampau."
+    },
+    {
+     "speaker": "Ügyintéző:",
+     "text": "Semmi gond. Később feltöltheti az online rendszerbe is.",
+     "id": "Tidak masalah. Nanti bisa Bapak unggah juga ke sistem daring.",
+     "literal": "tidak-ada masalah. nanti naik-Anda-mengisinya-bisa itu daring sistem-ke-dalam juga."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Remek. Van még valami?",
+     "id": "Bagus. Ada lagi yang lain?",
+     "literal": "luar-biasa. ada lagi sesuatu?"
+    },
+    {
+     "speaker": "Ügyintéző:",
+     "text": "Most ujjlenyomatot veszünk, és fényképet készítünk. Kérem, álljon a jelölt vonalra!",
+     "id": "Sekarang kami ambil sidik jari dan foto. Silakan berdiri di garis yang bertanda!",
+     "literal": "sekarang sidik-jari-sasaran kami-mengambil, dan foto-sasaran kami-membuat. saya-mohon, berdiri-hendaklah itu yang-sudah-ditandai garis-ke-atas!"
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Mikor lesz kész az új kártya?",
+     "id": "Kapan kartu barunya jadi?",
+     "literal": "kapan akan-ada siap itu baru kartu?"
+    },
+    {
+     "speaker": "Ügyintéző:",
+     "text": "Általában egy hónap múlva. Postán küldjük a megadott címre.",
+     "id": "Biasanya sebulan lagi. Kami kirim lewat pos ke alamat yang Bapak berikan.",
+     "literal": "biasanya sebuah bulan lewat. pos-di-atas kami-mengirimnya itu yang-sudah-diberikan alamat-ke-atas."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Köszönöm szépen. Viszontlátásra!",
+     "id": "Terima kasih banyak. Sampai jumpa!",
+     "literal": "saya-berterima-kasih dengan-indah. sampai-bertemu-kembali!"
+    },
+    {
+     "speaker": "Ügyintéző:",
+     "text": "Viszontlátásra! A következő ügyfelet kérem!",
+     "id": "Sampai jumpa! Klien berikutnya, silakan!",
+     "literal": "sampai-bertemu-kembali! itu yang-menyusul klien-sasaran saya-memintanya!"
+    }
+   ],
+   "notes": [
+    "**Ma sok a várakozó ügyfél.** *Várakozó* dari *várakozik* (menunggu, antre): akhiran *-ik* dibuang, lalu ditambah *-ó*. Satu kata menggantikan anak kalimat \"yang sedang menunggu\". Susunan *sok a…* (banyak …-nya) memakai kata benda **tunggal**: *sok az ügyfél*, *sok a munka*.",
+    "**A kinyomtatott visszaigazolás** — partisip lampau dari *kinyomtat* (mencetak). Untuk kata kerja yang punya sasaran, partisip lampau berarti \"yang sudah di-…\": *kinyomtatott* = yang sudah dicetak. Bentuknya hampir selalu sama dengan lampau orang ketiga tunggal: *kinyomtatott*, *kapott*, *megadott*.",
+    "**A munkáltatójától kapott igazolás** — partisip bisa membawa pelengkapnya sendiri, dan semuanya berdiri di **depan** kata benda: \"dari-pemberi-kerjanya diterima keterangan\". Urutannya terbalik dari bahasa Indonesia (\"keterangan yang diterima dari pemberi kerjanya\"). Bacalah frasa panjang seperti ini dari belakang: temukan kata bendanya dulu.",
+    "**Lejárt** — sekali sebagai kata kerja (*a szerződés lejárt* = kontraknya sudah habis), sekali sebagai partisip (*a lejárt szerződés* = kontrak yang sudah habis). *Lejár* tidak punya sasaran, jadi partisip lampaunya berarti \"yang sudah…\", bukan \"yang di-…\".",
+    "**Álljon a jelölt vonalra!** *Jelölt* (yang ditandai) dari *jelöl*. Kata yang sama juga kata benda: *jelölt* = calon (dalam pemilu). Banyak partisip hidup ganda seperti ini.",
+    "**A következő ügyfelet kérem!** *Következő* (yang menyusul, berikutnya) dari *következik*. Kalimat ini, atau cukup *Következő!*, adalah bunyi paling khas di loket mana pun di Hungaria."
+   ],
+   "grammars": [
+    {
+     "title": "Partisip kini: -ó/-ő (\"yang sedang…\")",
+     "body": [
+      "Tambahkan *-ó* pada kata kerja bervokal dalam dan *-ő* pada kata kerja bervokal depan. Kata kerja *-ik* kehilangan *-ik*-nya dulu. Hasilnya kata sifat yang bisa langsung berdiri di depan kata benda."
+     ],
+     "table": {
+      "head": [
+       "Kata kerja",
+       "Partisip kini",
+       "Dalam frasa",
+       "Juga dipakai sebagai kata benda"
+      ],
+      "rows": [
+       [
+        "*várakozik*",
+        "*várakozó*",
+        "*a várakozó ügyfelek*",
+        "—"
+       ],
+       [
+        "*következik*",
+        "*következő*",
+        "*a következő ügyfél*",
+        "—"
+       ],
+       [
+        "*dolgozik*",
+        "*dolgozó*",
+        "*a Budapesten dolgozó külföldiek*",
+        "*dolgozó* = pekerja"
+       ],
+       [
+        "*hiányzik*",
+        "*hiányzó*",
+        "*a hiányzó dokumentum*",
+        "—"
+       ],
+       [
+        "*vezet*",
+        "*vezető*",
+        "*a vezető tisztviselő*",
+        "*vezető* = pemimpin; sopir"
+       ],
+       [
+        "*elad*",
+        "*eladó*",
+        "*az eladó lakás*",
+        "*eladó* = penjual"
+       ]
+      ]
+     },
+     "after": [
+      "**Baris terakhir berarti ganda:** *eladó lakás* adalah \"apartemen yang dijual\", bukan \"apartemen yang menjual\". Partisip *-ó/-ő* dari beberapa kata kerja bersasaran bisa bermakna \"yang untuk di-…\": *eladó* (untuk dijual), *ivóvíz* (air minum). Kamu akan sering melihat papan *Eladó!* di jendela.",
+      "Partisip kini hanya menunjuk keadaan yang sedang berlangsung atau sifat tetap. Untuk \"yang sudah\", pakai partisip lampau di bawah."
+     ]
+    },
+    {
+     "title": "Partisip lampau: -t/-tt (\"yang sudah di-…\", \"yang sudah…\")",
+     "body": [
+      "Bentuknya sama dengan lampau orang ketiga tunggal tak tentu. Artinya bergantung pada kata kerjanya: kalau kata kerja punya sasaran, partisipnya pasif; kalau tidak, partisipnya aktif dan menunjuk hal yang sudah selesai."
+     ],
+     "table": {
+      "head": [
+       "Kata kerja",
+       "Partisip lampau",
+       "Contoh",
+       "Arti"
+      ],
+      "rows": [
+       [
+        "*kitölt* (bersasaran)",
+        "*kitöltött*",
+        "*a kitöltött űrlap*",
+        "formulir yang sudah diisi"
+       ],
+       [
+        "*megad* (bersasaran)",
+        "*megadott*",
+        "*a megadott cím*",
+        "alamat yang diberikan"
+       ],
+       [
+        "*meghosszabbít* (bersasaran)",
+        "*meghosszabbított*",
+        "*a meghosszabbított szerződés*",
+        "kontrak yang diperpanjang"
+       ],
+       [
+        "*lejár* (tanpa sasaran)",
+        "*lejárt*",
+        "*a lejárt útlevél*",
+        "paspor yang sudah habis berlaku"
+       ],
+       [
+        "*megérkezik* (tanpa sasaran)",
+        "*megérkezett*",
+        "*a megérkezett vendégek*",
+        "tamu yang sudah datang"
+       ]
+      ]
+     },
+     "after": [
+      "**Pelaku dalam frasa partisip** biasanya ditulis dengan *által* dalam bahasa resmi: *a főnököm által aláírt igazolás* (keterangan yang ditandatangani atasanku). Cukup kamu kenali; di percakapan orang lebih suka anak kalimat: *az igazolás, amit a főnököm aláírt*."
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Dialog kedua — A hiánypótlási felhívás",
+   "intro": "Seminggu kemudian datang surat resmi dari kantor imigrasi. Budi membawanya ke kafe tempat ia janjian dengan Anna, karena ia hanya mengerti separuh kalimat pertamanya.",
+   "lines": [
+    {
+     "speaker": "Budi:",
+     "text": "Anna, kaptam egy levelet a hivataltól. Segítenél? Alig értek belőle valamit.",
+     "id": "Anna, aku dapat surat dari kantor imigrasi. Bisa bantu? Aku hampir nggak ngerti apa-apa.",
+     "literal": "Anna, saya-menerima-lampau sebuah surat-sasaran itu kantor-dari-dekat. kamu-membantu-andai? hampir-tidak saya-mengerti itu-dari-dalam sesuatu-sasaran."
+    },
+    {
+     "speaker": "Anna:",
+     "text": "Mutasd! „Hiánypótlási felhívás.” Ez azt jelenti, hogy valami hiányzik.",
+     "id": "Coba lihat! \"Permintaan kelengkapan dokumen.\" Artinya ada yang kurang.",
+     "literal": "tunjukkan-hendaklah-nya! kekurangan-pengisian-yang seruan. ini itu-sasaran ia-berartinya, bahwa sesuatu ia-kurang."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Tudom, a bérleti szerződés. De mit jelent ez: „a benyújtandó dokumentum”?",
+     "id": "Aku tahu, kontrak sewanya. Tapi ini artinya apa: \"a benyújtandó dokumentum\"?",
+     "literal": "saya-mengetahuinya, itu sewa-yang kontrak. tetapi apa-sasaran ia-berarti ini: itu yang-harus-diserahkan-masuk dokumen?"
+    },
+    {
+     "speaker": "Anna:",
+     "text": "Azt a dokumentumot, amit be kell nyújtani. Az -andó itt azt jelenti: kell.",
+     "id": "Dokumen yang harus diserahkan. Akhiran -andó di sini berarti \"harus\".",
+     "literal": "itu-sasaran itu dokumen-sasaran, yang-sasaran masuk harus menyerahkan. itu -andó di-sini itu-sasaran ia-berartinya: harus."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Aha! És a „fizetendő illeték”?",
+     "id": "Oh! Terus \"fizetendő illeték\"?",
+     "literal": "aha! dan itu yang-harus-dibayar bea?"
+    },
+    {
+     "speaker": "Anna:",
+     "text": "Hivatali díj. De itt azt írják, hogy nincs fizetendő illeték.",
+     "id": "Biaya untuk kantor pemerintah. Tapi di sini ditulis tidak ada bea yang harus dibayar.",
+     "literal": "kantor-yang biaya. tetapi di-sini itu-sasaran mereka-menulisnya, bahwa tidak-ada yang-harus-dibayar bea."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Szerencsére. És mi a határidő?",
+     "id": "Untunglah. Terus batas waktunya kapan?",
+     "literal": "untung-ke-atas. dan apa itu batas-waktu?"
+    },
+    {
+     "speaker": "Anna:",
+     "text": "Tizenöt nap „a levél kézhezvételétől számítva”. Vagyis attól a naptól, amikor megkaptad.",
+     "id": "Lima belas hari \"terhitung sejak diterimanya surat\". Maksudnya sejak hari kamu menerimanya.",
+     "literal": "lima-belas hari itu surat tangan-ke-dekat-pengambilan-nya-dari-dekat menghitung-sambil. yaitu itu-dari-dekat itu hari-dari-dekat, ketika tuntas-kamu-menerimanya-lampau."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Ez a hivatali nyelv egy külön nyelv!",
+     "id": "Bahasa kantor ini bahasa tersendiri!",
+     "literal": "ini itu kantor-yang bahasa sebuah terpisah bahasa!"
+    },
+    {
+     "speaker": "Anna:",
+     "text": "Így van. Még a magyarok is nehezen olvassák.",
+     "id": "Betul. Orang Hungaria sendiri saja susah membacanya.",
+     "literal": "begini ada. bahkan itu orang-Hungaria-jamak juga dengan-susah mereka-membacanya."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Akkor ma este feltöltöm a hiányzó szerződést.",
+     "id": "Kalau begitu malam ini aku unggah kontrak yang kurang itu.",
+     "literal": "kalau-begitu hari-ini malam naik-saya-mengisinya itu yang-kurang kontrak-sasaran."
+    }
+   ],
+   "notes": [
+    "**Hiánypótlás** — kata khas birokrasi Hungaria: *hiány* (kekurangan) + *pótlás* (penggantian, pelengkapan). *Hiánypótlási felhívás* adalah surat yang memintamu melengkapi berkas. Tidak menakutkan; surat ini sangat umum dan hanya berarti permohonanmu belum lengkap.",
+    "**Alig értek belőle valamit** — *alig* (hampir tidak) menyangkal secara lembut; kata kerjanya tidak memakai *nem*. *Belőle* (dari dalamnya) adalah kata ganti berkasus dari A2.",
+    "**Benyújtandó** — dari *benyújt* (menyerahkan secara resmi, harfiah \"mengulurkan masuk\"). Penjelasan Anna tepat untuk bahasa surat dan formulir: di sana *-andó/-endő* hampir selalu mengandung \"harus\" (perkecualian kecil yang sudah beku: *leendő* = calon, *jövendő* = yang akan datang). *A benyújtandó dokumentum* = dokumen yang harus diserahkan.",
+    "**Illeték** bukan sembarang biaya. *Díj* adalah biaya layanan (bank, maskapai), sedangkan *illeték* adalah bea yang dipungut negara atau kantor pemerintah. Keduanya sering muncul berdampingan di formulir.",
+    "**A levél kézhezvételétől számítva** — kalimat hivatali murni. *Kézhezvétel* = \"penerimaan ke tangan\" (*kéz* tangan + *-hez* + *vétel* pengambilan). *Számítva* adalah bentuk *-va/-ve* dari *számít* (menghitung): \"dihitung sejak\". Anna menerjemahkannya ke bahasa biasa, dan itulah keterampilan yang kamu latih di unit ini.",
+    "**Még a magyarok is** — \"bahkan orang Hungaria pun\". *Még… is* membingkai kata yang ditekankan, sama seperti *még ha… is* di unit 3."
+   ],
+   "grammars": [
+    {
+     "title": "Partisip masa depan: -andó/-endő (\"yang harus di-…\")",
+     "body": [
+      "Bentuk ini dibuat dari kata kerja bersasaran: akar + *-andó* (kubu dalam) atau *-endő* (kubu depan). Artinya hampir selalu pasif dan wajib: sesuatu yang harus dikerjakan. Ia hidup terutama di surat resmi, formulir, tagihan, dan buku pelajaran."
+     ],
+     "table": {
+      "head": [
+       "Kata kerja",
+       "Partisip",
+       "Contoh",
+       "Arti"
+      ],
+      "rows": [
+       [
+        "*benyújt*",
+        "*benyújtandó*",
+        "*a benyújtandó dokumentumok*",
+        "dokumen yang harus diserahkan"
+       ],
+       [
+        "*fizet*",
+        "*fizetendő*",
+        "*a fizetendő összeg*",
+        "jumlah yang harus dibayar"
+       ],
+       [
+        "*kitölt*",
+        "*kitöltendő*",
+        "*a kitöltendő mezők*",
+        "kolom yang harus diisi"
+       ],
+       [
+        "*megold*",
+        "*megoldandó*",
+        "*a megoldandó feladat*",
+        "tugas yang harus diselesaikan"
+       ],
+       [
+        "*beküld*",
+        "*beküldendő*",
+        "*a beküldendő kérelem*",
+        "permohonan yang harus dikirim"
+       ],
+       [
+        "*aláhúz*",
+        "*aláhúzandó*",
+        "*A megfelelő rész aláhúzandó.*",
+        "Bagian yang sesuai harus digarisbawahi."
+       ]
+      ]
+     },
+     "after": [
+      "Baris terakhir memperlihatkan pemakaian kedua: *-andó/-endő* sebagai predikat, tanpa kata kerja lain. *A kérelem személyesen benyújtandó* = permohonan harus diserahkan langsung. Gaya ini sangat resmi; di percakapan orang berkata *be kell nyújtani*.",
+      "Dua bentuk sudah menjadi kata benda: *jövendő* (masa depan, puitis) dan *teendő* (hal yang harus dilakukan, dari *tesz*): *Mik a teendők?* = Apa saja yang harus dikerjakan?"
+     ]
+    }
+   ]
+  }
+ ],
+ "sections": [
+  {
+   "title": "Kosakata kantor pemerintahan",
+   "blocks": [
+    {
+     "type": "tabel",
+     "head": [
+      "Magyar",
+      "Cara baca",
+      "Bahasa Indonesia"
+     ],
+     "rows": [
+      [
+       "kormányablak",
+       "KOR-ma-nyåb-låk",
+       "kantor layanan pemerintah terpadu"
+      ],
+      [
+       "idegenrendészet",
+       "I-dè-gèn-rèn-dé-sèt",
+       "urusan imigrasi (orang asing)"
+      ],
+      [
+       "tartózkodási engedély",
+       "TÅR-toz-ko-da-syi ÈN-gè-déy",
+       "izin tinggal"
+      ],
+      [
+       "kérelem",
+       "KÉ-rè-lèm",
+       "permohonan"
+      ],
+      [
+       "ügyintézés",
+       "Ü-dyin-té-zésy",
+       "pengurusan (berkas)"
+      ],
+      [
+       "időpontfoglalás",
+       "I-dö-pont-fog-lå-lasy",
+       "pemesanan jadwal"
+      ],
+      [
+       "sorszám",
+       "SYOR-sam",
+       "nomor antrean"
+      ],
+      [
+       "igazolás",
+       "I-gå-zo-lasy",
+       "surat keterangan"
+      ],
+      [
+       "határidő",
+       "HÅ-ta-ri-dö",
+       "batas waktu"
+      ],
+      [
+       "hiánypótlás",
+       "HI-any-pot-lasy",
+       "pelengkapan dokumen"
+      ]
+     ]
+    },
+    {
+     "type": "p",
+     "text": "*Kormányablak* (\"jendela pemerintah\") adalah kantor layanan terpadu yang ada di setiap distrik Budapest dan di kota-kota besar. Di sana warga mengurus KTP (*személyi igazolvány*), paspor, SIM, dan kartu alamat. Izin tinggal warga negara non-Uni Eropa diurus oleh kantor imigrasi, yang nama resminya *Országos Idegenrendészeti Főigazgatóság* (OIF); permohonannya diajukan lewat sistem daring *Enter Hungary*, lalu pemohon datang sesuai jadwal untuk foto dan sidik jari. Informasi umum tentang layanan pemerintah bisa ditanyakan ke saluran telepon *1818*."
+    },
+    {
+     "type": "kotak",
+     "title": "Supaya urusan selesai dalam sekali datang",
+     "items": [
+      "Bawa dokumen **asli** dan fotokopinya. Kalimat yang akan sering kamu dengar: *Az eredetit is kérném* (Saya minta yang aslinya juga).",
+      "Pesan jadwal (*időpontot foglal*) sebelum datang. Tanpa jadwal kamu mengambil *sorszám* dan menunggu layar memanggil nomormu; di awal bulan dan sebelum libur antreannya panjang.",
+      "Surat resmi datang lewat pos, sering sebagai surat tercatat (*ajánlott levél*). Kalau kamu tidak di rumah, tukang pos meninggalkan *értesítő* dan kamu mengambilnya di kantor pos; batas waktu biasanya sudah mulai berjalan.",
+      "Jangan malu meminta orang Hungaria membaca surat resmimu. Seperti kata Anna, gaya *hivatali* sulit bagi semua orang."
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Membaca formulir resmi",
+   "blocks": [
+    {
+     "type": "tabel",
+     "head": [
+      "Kolom formulir",
+      "Arti",
+      "Isian Budi"
+     ],
+     "rows": [
+      [
+       "*Családi név / Vezetéknév*",
+       "nama keluarga",
+       "*Santoso*"
+      ],
+      [
+       "*Utónév*",
+       "nama depan",
+       "*Budi*"
+      ],
+      [
+       "*Születési név*",
+       "nama lahir",
+       "*Santoso Budi*"
+      ],
+      [
+       "*Anyja születési neve*",
+       "nama lahir ibu",
+       "nama ibunya"
+      ],
+      [
+       "*Születési hely, idő*",
+       "tempat, tanggal lahir",
+       "*Jakarta, 1999. 03. 14.*"
+      ],
+      [
+       "*Állampolgárság*",
+       "kewarganegaraan",
+       "*indonéz*"
+      ],
+      [
+       "*Lakóhely*",
+       "alamat tetap",
+       "alamat di distrik VIII"
+      ],
+      [
+       "*Kelt*",
+       "tempat dan tanggal penulisan",
+       "*Budapest, 2027. november 8.*"
+      ],
+      [
+       "*Aláírás*",
+       "tanda tangan",
+       "—"
+      ]
+     ]
+    },
+    {
+     "type": "p",
+     "text": "Dua hal mengejutkan orang Indonesia. Pertama, **nama ibu**: hampir setiap formulir resmi Hungaria menanyakan *anyja születési neve*, yaitu nama gadis ibumu, karena di Hungaria nama itu dipakai untuk membedakan orang yang namanya sama. Siapkan ejaan yang persis sama dengan paspormu. Kedua, **urutan tanggal**: tahun, bulan, hari, dengan titik sesudah setiap bagian (*2027. 11. 08.* atau *2027. november 8.*). Nama juga ditulis dengan nama keluarga di depan, jadi Budi menulis *Santoso Budi*."
+    },
+    {
+     "type": "kotak",
+     "title": "Petunjuk kecil di formulir",
+     "items": [
+      "*Nyomtatott nagybetűvel töltse ki!* = Isi dengan huruf cetak kapital.",
+      "*A csillaggal jelölt mezők kitöltése kötelező.* = Kolom bertanda bintang wajib diisi. Perhatikan *jelölt*: partisip lampau dari dialog pertama.",
+      "*A megfelelő rész aláhúzandó.* = Garis bawahi bagian yang sesuai. Di sinilah *-andó/-endő* paling sering kamu temui.",
+      "*Kelt* di bawah formulir bukan nama orang: artinya \"ditulis (pada tanggal)\", sekerabat dengan *keltez* (memberi tanggal). Isi dengan kota dan tanggal, lalu tanda tangan."
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Ulangan berjenjang — unit 2",
+   "blocks": [
+    {
+     "type": "p",
+     "text": "Tutup kolom Hungaria, baca terjemahan Indonesianya, lalu susun kembali kalimatnya dari ingatan."
+    },
+    {
+     "type": "tabel",
+     "head": [
+      "Bahasa Indonesia",
+      "Magyar"
+     ],
+     "rows": [
+      [
+       "Aku tahu. Kalau tadi aku berangkat lebih awal, sekarang aku sudah duduk di pesawat.",
+       "*Tudom. Ha korábban indultam volna el, most a gépen ülnék.*"
+      ],
+      [
+       "Belum. Mestinya besok pagi mereka menjemputku di bandara.",
+       "*Még nem. Holnap reggel vártak volna a repülőtéren.*"
+      ],
+      [
+       "Kamu benar. Coba tadi aku nggak ketiduran!",
+       "*Igazad van. Bárcsak ne aludtam volna el!*"
+      ],
+      [
+       "Jangan panik! Ini bisa saja terjadi pada siapa pun.",
+       "*Ne izgulj! Ez bárkivel megtörténhetett volna.*"
+      ],
+      [
+       "Kalau saya sampai sepuluh menit lebih awal, tidak akan ada masalah, ya?",
+       "*Ha tíz perccel korábban értem volna ide, nem lett volna baj, ugye?*"
+      ]
+     ]
+    }
+   ]
+  }
+ ],
+ "vocab": [
+  {
+   "hu": "tartózkodási engedély",
+   "baca": "TÅR-toz-ko-da-syi ÈN-gè-déy",
+   "id": "izin tinggal"
+  },
+  {
+   "hu": "meghosszabbít",
+   "baca": "MÈG-hos-såb-bit",
+   "id": "memperpanjang"
+  },
+  {
+   "hu": "kérelem",
+   "baca": "KÉ-rè-lèm",
+   "id": "permohonan (sasaran: *kérelmet*)"
+  },
+  {
+   "hu": "benyújt / bead",
+   "baca": "BÈ-nyuyt / BÈ-åd",
+   "id": "menyerahkan, mengajukan (resmi / biasa)"
+  },
+  {
+   "hu": "kitölt",
+   "baca": "KI-tölt",
+   "id": "mengisi (formulir)"
+  },
+  {
+   "hu": "űrlap",
+   "baca": "ÜR-låp",
+   "id": "formulir"
+  },
+  {
+   "hu": "ügyfél",
+   "baca": "ÜDY-fél",
+   "id": "klien, nasabah (jamak: *ügyfelek*)"
+  },
+  {
+   "hu": "várakozik",
+   "baca": "VA-rå-ko-zik",
+   "id": "menunggu, antre"
+  },
+  {
+   "hu": "következik",
+   "baca": "KÖ-vèt-kè-zik",
+   "id": "menyusul, tiba gilirannya"
+  },
+  {
+   "hu": "időpont",
+   "baca": "I-dö-pont",
+   "id": "jadwal temu, janji"
+  },
+  {
+   "hu": "kinyomtat",
+   "baca": "KI-nyom-tåt",
+   "id": "mencetak"
+  },
+  {
+   "hu": "visszaigazolás",
+   "baca": "VIS-så-i-gå-zo-lasy",
+   "id": "konfirmasi"
+  },
+  {
+   "hu": "munkáltató",
+   "baca": "MUN-kal-tå-to",
+   "id": "pemberi kerja"
+  },
+  {
+   "hu": "bérleti szerződés",
+   "baca": "BÉR-lè-ti SÈR-zö-désy",
+   "id": "kontrak sewa"
+  },
+  {
+   "hu": "lejár",
+   "baca": "LÈ-yar",
+   "id": "habis masa berlakunya"
+  },
+  {
+   "hu": "ujjlenyomat",
+   "baca": "UYY-lè-nyo-måt",
+   "id": "sidik jari"
+  },
+  {
+   "hu": "jelöl",
+   "baca": "YÈ-löl",
+   "id": "menandai; *jelölt*: calon"
+  },
+  {
+   "hu": "megad",
+   "baca": "MÈ-gåd",
+   "id": "memberikan (data, alamat)"
+  },
+  {
+   "hu": "hivatal",
+   "baca": "HI-vå-tål",
+   "id": "kantor pemerintah; *hivatali*: kedinasan"
+  },
+  {
+   "hu": "illeték",
+   "baca": "IL-lè-ték",
+   "id": "bea (negara)"
+  },
+  {
+   "hu": "határidő",
+   "baca": "HÅ-ta-ri-dö",
+   "id": "batas waktu"
+  },
+  {
+   "hu": "hiányzik",
+   "baca": "HI-any-zik",
+   "id": "kurang, tidak ada"
+  },
+  {
+   "hu": "feltölt",
+   "baca": "FÈL-tölt",
+   "id": "mengunggah; mengisi ulang"
+  },
+  {
+   "hu": "alig",
+   "baca": "Å-lig",
+   "id": "hampir tidak"
+  },
+  {
+   "hu": "teendő",
+   "baca": "TÈ-èn-dö",
+   "id": "hal yang harus dikerjakan"
+  }
+ ],
+ "exercises": [
+  {
+   "prompt": "Terjemahkan ke bahasa Hungaria. Pakai partisip.",
+   "items": [
+    "formulir yang sudah diisi",
+    "klien-klien yang menunggu",
+    "paspor yang sudah habis berlaku",
+    "dokumen-dokumen yang harus diserahkan",
+    "Kami kirim ke alamat yang diberikan.",
+    "Tidak ada bea yang harus dibayar."
+   ]
+  },
+  {
+   "prompt": "Isi dengan partisip yang tepat. Petunjuk ada di dalam kurung.",
+   "items": [
+    "a ____ ügyfelek (várakozik, kini)",
+    "a ____ űrlap (kitölt, lampau)",
+    "a ____ összeg (fizet, masa depan)",
+    "a ____ busz (következik, kini)",
+    "a ____ útlevél (lejár, lampau)",
+    "a ____ feladat (megold, masa depan)",
+    "a Budapesten ____ külföldiek (él, kini)"
+   ]
+  },
+  {
+   "prompt": "Padatkan anak kalimat menjadi frasa partisip. Contoh: *az ügyfelek, akik várakoznak* → *a várakozó ügyfelek*",
+   "items": [
+    "a levél, amit tegnap kaptam",
+    "a dokumentumok, amiket be kell nyújtani",
+    "az útlevél, amely lejárt",
+    "a kolléga, aki Szegeden dolgozik",
+    "a szerződés, amit tegnap aláírtam",
+    "a számla, amit ki kell fizetni"
+   ]
+  },
+  {
+   "prompt": "Susun jadi kalimat yang benar.",
+   "items": [
+    "ma / a / ügyfél / várakozó / sok",
+    "kérelmet / hozta / a / kitöltött",
+    "címre / postán / a / küldjük / megadott",
+    "illeték / nincs / fizetendő",
+    "feltöltöm / a / szerződést / ma este / hiányzó"
+   ]
+  }
+ ],
+ "answers": [
+  "a kitöltött űrlap — a várakozó ügyfelek — a lejárt útlevél — a benyújtandó dokumentumok — A megadott címre küldjük. — Nincs fizetendő illeték.",
+  "várakozó — kitöltött — fizetendő — következő — lejárt — megoldandó — élő",
+  "a tegnap kapott levél — a benyújtandó dokumentumok — a lejárt útlevél — a Szegeden dolgozó kolléga — a tegnap aláírt szerződés — a kifizetendő számla",
+  "Ma sok a várakozó ügyfél. — Hozta a kitöltött kérelmet? — Postán küldjük a megadott címre. — Nincs fizetendő illeték. — Ma este feltöltöm a hiányzó szerződést."
+ ]
+}

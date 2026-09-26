@@ -1,0 +1,776 @@
+{
+ "title": "Apa kata berita? — keadaan hasil: *le van zárva, meg lett javítva*",
+ "title_target": "Minden jegy el van adva",
+ "goal": "Membaca dan menceritakan kembali berita pendek: jalan ditutup, tiket habis, AC sudah diperbaiki. Titik tata bahasanya: **keadaan hasil** dengan *van* + *-va/-ve* (*Az út le van zárva*), kembarannya yang menceritakan kejadian, *lett* + *-va/-ve* (*meg lett javítva*), dan gaya berita — judul tanpa kata kerja serta singkatan *stb., ill., kb., pl., ún.*",
+ "bekal": [
+  "membentuk keadaan hasil dan meletakkan awalannya dengan benar: *le van zárva, nincs lezárva, csak az M1 van lezárva*",
+  "memilih antara keadaan (*meg van javítva*), kejadian (*meg lett javítva*), dan kalimat aktif yang paling baku (*megjavították*)",
+  "membaca judul berita yang tak berkata kerja dan singkatan yang muncul di setiap artikel"
+ ],
+ "dialogs": [
+  {
+   "title": "Dialog — Mi van ma a hírekben?",
+   "intro": "Senin pagi pertengahan Juni 2028, hari pertama gelombang panas. Réka datang ke kantor Nusantara Trading lebih awal dan sudah membaca portal berita di ponselnya sambil menunggu kopinya dingin.",
+   "lines": [
+    {
+     "speaker": "Réka:",
+     "text": "Láttad a híreket? Az M1-es autópálya le van zárva.",
+     "id": "Sudah lihat berita? Jalan tol M1 ditutup.",
+     "literal": "kamu-melihatnya-lampau itu berita-jamak-sasaran? itu M1-an jalan-tol turun ada dalam-keadaan-ditutup."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Hol? És miért?",
+     "id": "Di mana? Kenapa?",
+     "literal": "di-mana? dan mengapa?"
+    },
+    {
+     "speaker": "Réka:",
+     "text": "Tatabánya és Győr között, egy baleset miatt. Éjjel két kamion összeütközött, és az egyik felborult.",
+     "id": "Antara Tatabánya dan Győr, gara-gara kecelakaan. Semalam dua truk bertabrakan, dan salah satunya terguling.",
+     "literal": "Tatabánya dan Győr di-antara, sebuah kecelakaan karena. malam dua truk bersama-ia-bertabrakan-lampau, dan itu salah-satu naik-ia-terguling-lampau."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "És a buszok Győr felé? Járnak egyáltalán?",
+     "id": "Bus ke arah Győr bagaimana? Masih jalan?",
+     "literal": "dan itu bus-jamak Győr ke-arah? mereka-berjalan sama-sekali?"
+    },
+    {
+     "speaker": "Réka:",
+     "text": "Járnak, de itt azt írják, hogy kb. egyórás késésekre kell számítani.",
+     "id": "Jalan, tapi di sini ditulis bahwa kita harus siap dengan keterlambatan sekitar satu jam.",
+     "literal": "mereka-berjalan, tetapi di-sini itu-sasaran mereka-menulisnya, bahwa kira-kira satu-jam-an keterlambatan-jamak-ke-atas harus memperhitungkan."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Szerencsére ma nem kell utaznom. Mi van még?",
+     "id": "Untung hari ini aku tak perlu bepergian. Ada apa lagi?",
+     "literal": "untung-ke-atas hari-ini tidak harus bepergian-ku. apa ada lagi?"
+    },
+    {
+     "speaker": "Réka:",
+     "text": "Figyelj: „Két óra alatt elkeltek a jegyek az augusztusi Aréna-koncertre.”",
+     "id": "Dengar: \"Dalam dua jam tiket konser bulan Agustus di Aréna terjual habis.\"",
+     "literal": "perhatikan-hendaklah: dua jam di-bawah mereka-laku-habis-lampau itu tiket-jamak itu agustus-an Aréna-konser-ke-atas."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Jaj, ne! Anna is akart jegyet venni.",
+     "id": "Aduh, jangan! Anna juga mau beli tiket.",
+     "literal": "aduh, jangan! Anna juga ia-mau-lampau tiket-sasaran membeli."
+    },
+    {
+     "speaker": "Réka:",
+     "text": "Késő. Minden jegy el van adva.",
+     "id": "Terlambat. Semua tiket sudah terjual.",
+     "literal": "terlambat. setiap tiket habis ada dalam-keadaan-dijual."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "És ez a cím? „Melegrekord Budapesten.” Hol van benne az ige?",
+     "id": "Lalu judul ini? \"Rekor panas di Budapest.\" Kata kerjanya di mana?",
+     "literal": "dan ini itu judul? panas-rekor Budapest-di. di-mana ada di-dalamnya itu kata-kerja?"
+    },
+    {
+     "speaker": "Réka:",
+     "text": "Sehol. A címekben gyakran nincs ige, a lényeg a főnév.",
+     "id": "Tidak ada di mana-mana. Di judul sering tak ada kata kerja; intinya kata bendanya.",
+     "literal": "tidak-di-mana-pun. itu judul-jamak-di-dalam sering tidak-ada kata-kerja, itu inti itu kata-benda."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Az indonéz lapokban is így van.",
+     "id": "Di koran Indonesia juga begitu.",
+     "literal": "itu Indonesia koran-jamak-di-dalam juga begini ada."
+    },
+    {
+     "speaker": "Réka:",
+     "text": "Van jó hír is: a légkondi meg van javítva.",
+     "id": "Ada kabar baik juga: AC-nya sudah diperbaiki.",
+     "literal": "ada baik berita juga: itu AC tuntas ada dalam-keadaan-diperbaiki."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Tényleg? Tegnap még tűzforró volt itt.",
+     "id": "Masa? Kemarin di sini masih panas sekali.",
+     "literal": "sungguh? kemarin masih api-panas ada-lampau di-sini."
+    },
+    {
+     "speaker": "Réka:",
+     "text": "Tegnap este jött a szerelő. Most már minden rendben van.",
+     "id": "Tukangnya datang kemarin sore. Sekarang semuanya sudah beres.",
+     "literal": "kemarin malam ia-datang-lampau itu tukang. sekarang sudah semua beres-di ada."
+    }
+   ],
+   "notes": [
+    "**Le van zárva** — harfiahnya \"turun ada dalam-keadaan-ditutup\". Ini bukan kalimat tentang siapa yang menutup jalan, melainkan tentang **keadaan** jalan sekarang. Bahasa Indonesia memakai \"ditutup\" untuk keduanya; bahasa Hungaria membedakannya. Kamu sudah kenal polanya dari A2: *Az ajtó nyitva van*. Bedanya, sekarang partisipnya dibentuk dari kata kerja **berawalan**, dan awalan itu melompat ke depan *van*.",
+    "**Az M1-es autópálya** — jalan tol diberi nomor dan akhiran kata sifat *-es/-as/-os*: *az M1-es, az M7-es, a 4-es villamos*. Akhiran ditempel dengan tanda hubung dan mengikuti bunyi angkanya (*egyes, hetes, négyes*), bukan huruf M-nya.",
+    "**Itt azt írják** — \"di sini mereka menulis\" tanpa menyebut siapa \"mereka\": pasif gaya Hungaria dari unit 6. Dalam berita, pola orang ketiga jamak ini jauh lebih sering daripada konstruksi *-va/-ve* mana pun.",
+    "**Elkeltek a jegyek** vs **minden jegy el van adva** — yang pertama kejadian (*elkel*, laku habis), yang kedua keadaan yang tersisa sesudahnya. Perhatikan juga *minden jegy* bersubjek tunggal, jadi *van*; kalau *a jegyek*, kata kerjanya ikut jamak: *el vannak adva*.",
+    "**A címekben gyakran nincs ige** — judul berita Hungaria suka membuang kata kerja, terutama *van*. *Melegrekord Budapesten* = \"(Ada) rekor panas di Budapest\". Kasus tempatnya tetap ada, jadi kalimatnya tetap bisa dibaca.",
+    "**Tűzforró** — *tűz* (api) + *forró* (panas): penguat lewat kata majemuk, seperti \"panas membara\". Teman sejenisnya: *jéghideg* (dingin membeku), *hófehér* (putih salju), *koromsötét* (gelap gulita), *vadonatúj* (baru gres)."
+   ],
+   "grammars": [
+    {
+     "title": "Keadaan hasil: *van* + partisip *-va/-ve*",
+     "body": [
+      "Partisip keadaan dibentuk dengan *-va* (kata kerja bervokal belakang) atau *-ve* (bervokal depan). Ia tidak berubah menurut pelaku; yang berubah hanya *van*. Awalan kata kerja dilepas dan diletakkan di depan *van*."
+     ],
+     "table": {
+      "head": [
+       "Kata kerja",
+       "Keadaan",
+       "Arti",
+       "Sangkalan"
+      ],
+      "rows": [
+       [
+        "*lezár*",
+        "*le van zárva*",
+        "ditutup (jalan, akses)",
+        "*nincs lezárva*"
+       ],
+       [
+        "*bezár*",
+        "*be van zárva*",
+        "terkunci, tutup (toko)",
+        "*nincs bezárva*"
+       ],
+       [
+        "*elad*",
+        "*el van adva*",
+        "sudah terjual",
+        "*nincs eladva*"
+       ],
+       [
+        "*megjavít*",
+        "*meg van javítva*",
+        "sudah diperbaiki",
+        "*nincs megjavítva*"
+       ],
+       [
+        "*kifizet*",
+        "*ki van fizetve*",
+        "sudah dibayar",
+        "*nincs kifizetve*"
+       ],
+       [
+        "*aláír*",
+        "*alá van írva*",
+        "sudah ditandatangani",
+        "*nincs aláírva*"
+       ],
+       [
+        "*lefoglal*",
+        "*le van foglalva*",
+        "sudah dipesan (ruang, meja)",
+        "*nincs lefoglalva*"
+       ],
+       [
+        "*felvesz*",
+        "*fel van véve*",
+        "sudah direkam; diterima kerja",
+        "*nincs felvéve*"
+       ]
+      ]
+     },
+     "after": [
+      "**Sangkalannya *nincs*, bukan *nem van*.** Dan begitu *nincs* muncul, awalan kembali menempel ke partisip: *Az út nincs lezárva.* Jamaknya *nincsenek*: *A jegyek nincsenek eladva.*",
+      "**Beberapa kata kerja bersuku satu tak beraturan**: *tesz → téve, vesz → véve, visz → víve, eszik → evve, iszik → iva*. Selebihnya beraturan: *írva, fizetve, javítva, foglalva*."
+     ]
+    },
+    {
+     "title": "Di mana awalannya?",
+     "body": [
+      "Aturannya sama dengan kata kerja berawalan biasa dari A2 u5: awalan berdiri di depan kata kerja terkonjugasi (di sini *van*), kecuali ada sangkalan atau fokus."
+     ],
+     "table": {
+      "head": [
+       "Jenis kalimat",
+       "Contoh",
+       "Arti"
+      ],
+      "rows": [
+       [
+        "netral",
+        "*Az út le van zárva.*",
+        "Jalannya ditutup."
+       ],
+       [
+        "tanya ya/tidak",
+        "*Le van zárva az út?*",
+        "Jalannya ditutup?"
+       ],
+       [
+        "jawaban pendek",
+        "*Le van.* / *Nincs.*",
+        "Ya, ditutup. / Tidak."
+       ],
+       [
+        "sangkalan",
+        "*Az út nincs lezárva.*",
+        "Jalannya tidak ditutup."
+       ],
+       [
+        "fokus",
+        "*Csak az M1 van lezárva.*",
+        "Hanya M1 yang ditutup."
+       ],
+       [
+        "lampau",
+        "*Tegnap az út le volt zárva.*",
+        "Kemarin jalannya ditutup."
+       ],
+       [
+        "masa depan",
+        "*Holnap le lesz zárva.*",
+        "Besok akan ditutup."
+       ],
+       [
+        "dengan *is*",
+        "*Már be is van zárva.*",
+        "Bahkan sudah dikunci juga."
+       ]
+      ]
+     },
+     "after": [
+      "Jawaban pendek \"ya\" cukup awalan + *van*: *— Ki van fizetve? — Ki van.* Persis seperti *— Megcsináltad? — Meg.* di A2, hanya saja di sini *van* ikut dibawa.",
+      "Di kala lampau *nincs* menjadi *nem volt*: *Tegnap nem volt lezárva.* Di masa depan *nem lesz*: *Holnap nem lesz lezárva.*"
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Dialog kedua — Minden el van intézve?",
+   "intro": "Sore harinya. Besok pagi dua tamu dari eksportir kopi mitra mereka di Surabaya datang ke kantor, dan Budi sebagai koordinator proyek impor kopi memeriksa daftar persiapan bersama Réka.",
+   "lines": [
+    {
+     "speaker": "Budi:",
+     "text": "Réka, nézzük át a listát. A szerződés alá van írva?",
+     "id": "Réka, ayo kita periksa daftarnya. Kontraknya sudah ditandatangani?",
+     "literal": "Réka, kita-melihatnya-hendaklah seberang itu daftar-sasaran. itu kontrak ke-bawah ada dalam-keadaan-ditulis?"
+    },
+    {
+     "speaker": "Réka:",
+     "text": "Igen, Zoltán tegnap aláírta. Már be is van szkennelve.",
+     "id": "Ya, Zoltán menandatanganinya kemarin. Bahkan sudah dipindai.",
+     "literal": "ya, Zoltán kemarin ke-bawah-menulisnya-lampau. sudah masuk juga ada dalam-keadaan-dipindai."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "És a számla? Ki van fizetve?",
+     "id": "Tagihannya? Sudah dibayar?",
+     "literal": "dan itu tagihan? keluar ada dalam-keadaan-dibayar?"
+    },
+    {
+     "speaker": "Réka:",
+     "text": "Még nincs kifizetve. Holnap reggel utalom át.",
+     "id": "Belum dibayar. Besok pagi baru kutransfer.",
+     "literal": "masih tidak-ada keluar-dalam-keadaan-dibayar. besok pagi saya-mentransfernya seberang."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Rendben. A tárgyaló le van foglalva?",
+     "id": "Oke. Ruang rapatnya sudah dipesan?",
+     "literal": "beres-di. itu ruang-rapat turun ada dalam-keadaan-dipesan?"
+    },
+    {
+     "speaker": "Réka:",
+     "text": "Le van. Tíztől tizenkettőig a miénk.",
+     "id": "Sudah. Dari jam sepuluh sampai dua belas ruangan itu milik kita.",
+     "literal": "turun ada. sepuluh-dari-dekat dua-belas-sampai itu milik-kami."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "És a projektor? Múlt héten nem működött.",
+     "id": "Proyektornya? Minggu lalu tidak jalan.",
+     "literal": "dan itu proyektor? lalu minggu-di tidak ia-berfungsi-lampau."
+    },
+    {
+     "speaker": "Réka:",
+     "text": "Pénteken meg lett javítva, most már működik.",
+     "id": "Hari Jumat sudah diperbaiki, sekarang sudah jalan.",
+     "literal": "Jumat-di tuntas menjadi-lampau dalam-keadaan-diperbaiki, sekarang sudah ia-berfungsi."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Tökéletes. Akkor holnapra minden el lesz intézve.",
+     "id": "Sempurna. Jadi sampai besok semuanya akan beres.",
+     "literal": "sempurna. kalau-begitu besok-ke-atas semua habis akan-ada dalam-keadaan-diurus."
+    },
+    {
+     "speaker": "Réka:",
+     "text": "Egy dolog még nincs meg: a kávé. Az a te dolgod, koordinátor úr!",
+     "id": "Satu hal belum ada: kopinya. Itu urusanmu, Pak Koordinator!",
+     "literal": "satu hal masih tidak-ada tuntas: itu kopi. itu itu kamu urusan-mu, koordinator tuan!"
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Indonéz kávé lesz. A raktárban még van két csomag.",
+     "id": "Kopi Indonesia, dong. Di gudang masih ada dua bungkus.",
+     "literal": "Indonesia kopi akan-ada. itu gudang-di-dalam masih ada dua bungkus."
+    }
+   ],
+   "notes": [
+    "**Aláírta** lalu **be van szkennelve** — Réka memakai kalimat aktif untuk kejadian (Zoltán menandatangani kemarin) dan keadaan hasil untuk sekarang. Inilah pembagian kerja yang wajar: siapa berbuat apa → aktif; bagaimana keadaannya sekarang → *van* + *-va/-ve*.",
+    "**Már be is van szkennelve** — *is* (juga, bahkan) menyelip di antara awalan dan *van*, persis seperti *meg is csinálta*. Jangan tulis *\"be van is szkennelve\"*.",
+    "**Holnap reggel utalom át** — *átutal* (mentransfer uang) bentuk tertentu, karena sasarannya *a számla* yang sudah disebut. *Holnap reggel* adalah fokus (\"baru besok pagi\"), jadi awalan *át* pindah ke belakang kata kerja.",
+    "**Meg lett javítva** — *lett* (lampau dari *lesz*, \"menjadi\") + partisip menceritakan **kejadian**: proyektor itu berubah dari rusak menjadi baik. Ini bentuk lisan yang sangat umum. Dalam tulisan resmi pilih kalimat aktif: *Pénteken megjavították.*",
+    "**Egy dolog még nincs meg** — *megvan* berarti \"sudah ada, sudah didapat\" (awalan *meg* + *van*); sangkalannya *nincs meg*. Ungkapan sehari-hari yang sangat berguna: *Megvan a kulcs?* (Kuncinya sudah ketemu?) — *Megvan!* (Ketemu!).",
+    "**Koordinátor úr** — *úr* (tuan) di belakang jabatan biasanya resmi (*igazgató úr*). Réka memakainya untuk menggoda: Budi baru naik jabatan, dan rekan dekatnya tidak akan membiarkannya lupa."
+   ],
+   "grammars": [
+    {
+     "title": "Keadaan, kejadian, atau kalimat aktif?",
+     "body": [
+      "Satu peristiwa — proyektor diperbaiki — bisa diceritakan dengan lima cara. Pilih menurut apa yang ingin kamu tekankan dan di mana kamu menulis."
+     ],
+     "table": {
+      "head": [
+       "Bentuk",
+       "Menjawab",
+       "Contoh",
+       "Ragam"
+      ],
+      "rows": [
+       [
+        "aktif orang ketiga jamak",
+        "apa yang terjadi?",
+        "*Pénteken megjavították a projektort.*",
+        "paling baku, di mana saja"
+       ],
+       [
+        "*lett* + *-va/-ve*",
+        "apa yang terjadi?",
+        "*A projektor meg lett javítva.*",
+        "lisan; hindari di tulisan resmi"
+       ],
+       [
+        "*van* + *-va/-ve*",
+        "bagaimana keadaannya?",
+        "*A projektor meg van javítva.*",
+        "baku"
+       ],
+       [
+        "*lesz* + *-va/-ve*",
+        "bagaimana keadaannya nanti?",
+        "*Holnapra meg lesz javítva.*",
+        "baku"
+       ],
+       [
+        "kata kerja medial (u6)",
+        "terjadi dengan sendirinya",
+        "*A helyzet megjavult.*",
+        "baku"
+       ]
+      ]
+     },
+     "after": [
+      "Bahasa Hungaria **tidak punya pasif sejati** seperti \"di-\" dalam bahasa Indonesia. Pasif lama berakhiran *-atik/-etik* (*íratik*) hanya tersisa di teks kuno dan Alkitab. Karena itu penutur memakai tiga jalan pintas di atas, dan buku gaya lama sering menegur *lett* + *-va/-ve* karena dianggap kaku atau tiruan bahasa Jerman.",
+      "Pedoman praktis untukmu: dalam surel dan laporan, tulis aktif (*Kifizettük a számlát*) atau keadaan (*A számla ki van fizetve*). Simpan *ki lett fizetve* untuk obrolan."
+     ]
+    }
+   ]
+  }
+ ],
+ "sections": [
+  {
+   "title": "Bahasa berita",
+   "blocks": [
+    {
+     "type": "tabel",
+     "head": [
+      "Magyar",
+      "Cara baca",
+      "Bahasa Indonesia"
+     ],
+     "rows": [
+      [
+       "hírportál",
+       "HIR-por-tal",
+       "portal berita"
+      ],
+      [
+       "címlap",
+       "TSIM-låp",
+       "halaman depan"
+      ],
+      [
+       "rovat",
+       "RO-våt",
+       "rubrik"
+      ],
+      [
+       "belföld",
+       "BÈL-föld",
+       "dalam negeri"
+      ],
+      [
+       "külföld",
+       "KÜL-föld",
+       "luar negeri"
+      ],
+      [
+       "gazdaság",
+       "GÅZ-då-syag",
+       "ekonomi"
+      ],
+      [
+       "időjárás-jelentés",
+       "I-dö-ya-rasy YÈ-lèn-tésy",
+       "prakiraan cuaca"
+      ],
+      [
+       "a rendőrség szerint",
+       "å RÈN-dör-syég SÈ-rint",
+       "menurut polisi"
+      ],
+      [
+       "közölte",
+       "KÖ-zöl-tè",
+       "(ia) menyampaikan"
+      ],
+      [
+       "tájékoztat",
+       "TA-yé-koz-tåt",
+       "memberi informasi"
+      ],
+      [
+       "forgalomkorlátozás",
+       "FOR-gå-lom-kor-la-to-zasy",
+       "pembatasan lalu lintas"
+      ]
+     ]
+    },
+    {
+     "type": "p",
+     "text": "Di Hungaria orang membaca berita terutama di portal daring besar (misalnya Telex atau Index) dan mendengarnya di radio; bahan dasar banyak berita datang dari kantor berita nasional MTI. Kalimat berita punya kebiasaan tetap: sumber disebut dengan *szerint* atau *közölte* (*A MÁV közölte, hogy…*), pelaku yang tidak penting disembunyikan dengan orang ketiga jamak (*Lezárták az utat*), dan keadaan dilaporkan dengan *van* + *-va/-ve* (*Az út továbbra is le van zárva*, jalan masih ditutup)."
+    },
+    {
+     "type": "kotak",
+     "title": "Judul tanpa kata kerja — cara membacanya",
+     "items": [
+      "*Melegrekord Budapesten* → (Van) melegrekord Budapesten. Kata kerja yang paling sering dibuang adalah *van*.",
+      "*Új igazgató a gimnázium élén* → Új igazgató (áll) a gimnázium élén: kepala sekolah baru memimpin gimnázium.",
+      "*Dugó az M0-s autóúton reggel óta* → Sejak pagi ada kemacetan di jalan lingkar M0. *Dugó* harfiahnya \"sumbat\".",
+      "*Drágul a benzin* → judul juga suka kata kerja di **depan**, sebelum subjek: kejadiannya yang penting. Bensin naik harga.",
+      "*Elkeltek a jegyek* → kejadian yang selesai dilaporkan dengan lampau aktif, bukan *el lettek adva*."
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Singkatan yang muncul di setiap artikel",
+   "blocks": [
+    {
+     "type": "tabel",
+     "head": [
+      "Singkatan",
+      "Kepanjangan",
+      "Cara baca",
+      "Arti"
+     ],
+     "rows": [
+      [
+       "stb.",
+       "és a többi",
+       "ésy å TÖB-bi",
+       "dan lain-lain"
+      ],
+      [
+       "ill.",
+       "illetve",
+       "IL-lèt-vè",
+       "atau; serta, masing-masing"
+      ],
+      [
+       "kb.",
+       "körülbelül",
+       "KÖ-rül-bè-lül",
+       "kira-kira"
+      ],
+      [
+       "pl.",
+       "például",
+       "PÉL-da-ul",
+       "misalnya"
+      ],
+      [
+       "ún.",
+       "úgynevezett",
+       "UDY-nè-vè-zètt",
+       "yang disebut"
+      ],
+      [
+       "ti.",
+       "tudniillik",
+       "TUD-ni-il-lik",
+       "yaitu, sebab"
+      ],
+      [
+       "vö.",
+       "vesd össze",
+       "vèsyd ÖS-sè",
+       "bandingkan"
+      ],
+      [
+       "ld.",
+       "lásd",
+       "lasyd",
+       "lihat"
+      ],
+      [
+       "ker.",
+       "kerület",
+       "KÈ-rü-lèt",
+       "distrik"
+      ],
+      [
+       "Kft.",
+       "korlátolt felelősségű társaság",
+       "KOR-la-tolt FÈ-lè-lösy-syé-gü TAR-syå-syag",
+       "perseroan terbatas"
+      ]
+     ]
+    },
+    {
+     "type": "p",
+     "text": "Singkatan ini dibaca **utuh**: *kb.* dibaca *körülbelül*, bukan \"ka-bé\". Titik wajib ditulis. *Illetve* paling licin: ia bisa berarti \"atau lebih tepatnya\" (*holnap, illetve holnapután*) atau \"masing-masing\" dalam daftar (*Budapesten, ill. Debrecenben* — di Budapest dan di Debrecen). Kalau ragu, bacalah sebagai \"dan/atau\"."
+    },
+    {
+     "type": "kotak",
+     "title": "Angka dalam berita",
+     "items": [
+      "Pecahan ditulis dengan **koma**, ribuan dengan spasi atau titik: *2,5 millió* (dua setengah juta), *12 000 forint* atau *12.000 forint*. Kebalikan dari kebiasaan bahasa Inggris, dan sama dengan bahasa Indonesia.",
+      "*Mrd* = *milliárd* (miliar); *e Ft* = *ezer forint* dalam tabel keuangan. *Egymilliárd* adalah 10⁹ — jangan terjemahkan *billió* sebagai \"miliar\": *billió* Hungaria = 10¹², triliun.",
+      "Suhu: *mínusz tizennégy fok* (−14 °C); *fagypont alatt* = di bawah titik beku.",
+      "Persen: *tíz százalékkal drágult* — naik sepuluh persen. Akhiran *-val/-vel* menandai **besarnya** perubahan."
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Ulangan berjenjang — unit 14",
+   "blocks": [
+    {
+     "type": "p",
+     "text": "Tutup kolom Hungaria, baca terjemahan Indonesianya, lalu susun kembali kalimatnya dari ingatan."
+    },
+    {
+     "type": "tabel",
+     "head": [
+      "Bahasa Indonesia",
+      "Magyar"
+     ],
+     "rows": [
+      [
+       "Tari pengantin? Kukira cuma pengantin pria yang berdansa dengan pengantin wanita.",
+       "*Menyasszonytánc? Azt hittem, csak a vőlegény táncol a menyasszonnyal.*"
+      ],
+      [
+       "Pembawa acaranya sudah bilang sebelum makan malam, kamu saja yang nggak memperhatikan.",
+       "*A vőfély mondta a vacsora előtt, csak te nem figyeltél.*"
+      ],
+      [
+       "Bukan jumlahnya yang penting. Ibunya Kati juga cuma memasukkan seribu.",
+       "*Nem az összeg számít. Kati anyukája is csak egy ezrest tett be.*"
+      ],
+      [
+       "Bukan beli di toko kue; nenekku yang memanggangnya.",
+       "*Nem cukrászdában vettük, hanem a nagymamám sütötte.*"
+      ],
+      [
+       "Tengah malam nanti *töltött káposzta* juga keluar. Sampai saat itu nggak ada yang boleh pulang!",
+       "*Éjfélkor jön a töltött káposzta is. Addig senki nem mehet haza!*"
+      ]
+     ]
+    }
+   ]
+  }
+ ],
+ "vocab": [
+  {
+   "hu": "hír",
+   "baca": "hir",
+   "id": "berita, kabar (jamak: *hírek*)"
+  },
+  {
+   "hu": "cím",
+   "baca": "tsim",
+   "id": "judul; alamat"
+  },
+  {
+   "hu": "cikk",
+   "baca": "tsikk",
+   "id": "artikel"
+  },
+  {
+   "hu": "ige",
+   "baca": "I-gè",
+   "id": "kata kerja"
+  },
+  {
+   "hu": "főnév",
+   "baca": "FÖ-név",
+   "id": "kata benda"
+  },
+  {
+   "hu": "lezár",
+   "baca": "LÈ-zar",
+   "id": "menutup (jalan, akses)"
+  },
+  {
+   "hu": "bezár",
+   "baca": "BÈ-zar",
+   "id": "mengunci, menutup (toko, pintu)"
+  },
+  {
+   "hu": "elad",
+   "baca": "È-låd",
+   "id": "menjual"
+  },
+  {
+   "hu": "elkel",
+   "baca": "ÈL-kèl",
+   "id": "laku, terjual habis"
+  },
+  {
+   "hu": "megjavít",
+   "baca": "MÈG-yå-vit",
+   "id": "memperbaiki"
+  },
+  {
+   "hu": "kifizet",
+   "baca": "KI-fi-zèt",
+   "id": "melunasi, membayar"
+  },
+  {
+   "hu": "átutal",
+   "baca": "A-tu-tål",
+   "id": "mentransfer (uang)"
+  },
+  {
+   "hu": "aláír",
+   "baca": "Å-la-ir",
+   "id": "menandatangani"
+  },
+  {
+   "hu": "lefoglal",
+   "baca": "LÈ-fog-lål",
+   "id": "memesan (ruang, meja), mereservasi"
+  },
+  {
+   "hu": "elintéz",
+   "baca": "È-lin-téz",
+   "id": "mengurus sampai beres"
+  },
+  {
+   "hu": "megvan",
+   "baca": "MÈG-vån",
+   "id": "sudah ada, sudah didapat (sangkalan: *nincs meg*)"
+  },
+  {
+   "hu": "autópálya",
+   "baca": "Å-u-to-pa-yå",
+   "id": "jalan tol"
+  },
+  {
+   "hu": "baleset",
+   "baca": "BÅ-lè-syèt",
+   "id": "kecelakaan"
+  },
+  {
+   "hu": "felborul",
+   "baca": "FÈL-bo-rul",
+   "id": "terguling (kendaraan)"
+  },
+  {
+   "hu": "késés",
+   "baca": "KÉ-syésy",
+   "id": "keterlambatan"
+  },
+  {
+   "hu": "számít valamire",
+   "baca": "SA-mit VÅ-lå-mi-rè",
+   "id": "memperhitungkan, bersiap akan sesuatu"
+  },
+  {
+   "hu": "szerelő",
+   "baca": "SÈ-rè-lö",
+   "id": "tukang, montir"
+  },
+  {
+   "hu": "légkondi",
+   "baca": "LÉG-kon-di",
+   "id": "AC, pendingin ruangan (dari *légkondicionáló*)"
+  },
+  {
+   "hu": "tárgyaló",
+   "baca": "TAR-dyå-lo",
+   "id": "ruang rapat"
+  },
+  {
+   "hu": "szerződés",
+   "baca": "SÈR-zö-désy",
+   "id": "kontrak"
+  },
+  {
+   "hu": "egyáltalán",
+   "baca": "È-dyal-tå-lan",
+   "id": "sama sekali; memangnya"
+  }
+ ],
+ "exercises": [
+  {
+   "prompt": "Terjemahkan ke bahasa Hungaria. Pakai *van/volt/lesz* + *-va/-ve*.",
+   "items": [
+    "Pintunya terkunci.",
+    "Semua tiket sudah terjual.",
+    "Tagihannya belum dibayar.",
+    "Kontraknya sudah ditandatangani?",
+    "Besok jalannya akan ditutup.",
+    "Kemarin tokonya tutup."
+   ]
+  },
+  {
+   "prompt": "Isi bagian yang kosong. Petunjuk ada di dalam kurung.",
+   "items": [
+    "A jegyek el ____ adva. (van atau vannak?)",
+    "A számla még ____ kifizetve. (nem van atau nincs?)",
+    "Tegnap az út le ____ zárva. (van, lampau)",
+    "A projektor pénteken meg ____ javítva. (kejadian, lampau)",
+    "A tárgyaló le van ____. (foglal + -va atau -ve?)",
+    "A levél alá van ____. (ír + akhiran keadaan)",
+    "Holnapra minden el ____ intézve. (van, masa depan)"
+   ]
+  },
+  {
+   "prompt": "Ubah kalimat aktif menjadi keadaan hasil. Contoh: *Lezárták az utat.* → *Az út le van zárva.*",
+   "items": [
+    "Megjavították a légkondit.",
+    "Kifizettük a számlát.",
+    "Eladták a jegyeket.",
+    "Nem zárták be az ajtót.",
+    "Aláírták a szerződést?",
+    "Lefoglaltam a tárgyalót."
+   ]
+  },
+  {
+   "prompt": "Susun jadi kalimat yang benar.",
+   "items": [
+    "van / zárva / az / le / autópálya",
+    "nincs / még / kifizetve / a / számla",
+    "el / a / vannak / jegyek / adva",
+    "a / projektor / meg / lett / javítva",
+    "lesz / intézve / holnapra / minden / el"
+   ]
+  }
+ ],
+ "answers": [
+  "Az ajtó be van zárva. — Minden jegy el van adva. — A számla még nincs kifizetve. — Alá van írva a szerződés? — Holnap le lesz zárva az út. — Tegnap a bolt be volt zárva.",
+  "vannak — nincs — volt — lett — foglalva — írva — lesz",
+  "A légkondi meg van javítva. — A számla ki van fizetve. — A jegyek el vannak adva. — Az ajtó nincs bezárva. — Alá van írva a szerződés? — A tárgyaló le van foglalva.",
+  "Az autópálya le van zárva. — A számla még nincs kifizetve. — A jegyek el vannak adva. — A projektor meg lett javítva. — Holnapra minden el lesz intézve."
+ ]
+}
