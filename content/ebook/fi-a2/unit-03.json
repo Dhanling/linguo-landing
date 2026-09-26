@@ -1,0 +1,748 @@
+{
+ "title": "Menyuruh dan melarang — perintah lengkap",
+ "title_target": "Älä hyppää! Kävele hitaasti!",
+ "goal": "Memberi perintah dan larangan kepada satu orang (*tule, älä tule*) dan kepada banyak orang atau orang yang dihormati (*tulkaa, älkää tulko*), memilih bentuk objek yang tepat di dalamnya, dan mengajak dengan bentuk pasif *mennään!*",
+ "bekal": [
+  "membentuk perintah *sinä* dan *te* beserta larangannya dari keenam golongan",
+  "memakai objek bentuk dasar dalam perintah (*Ota pyyhe!*) dan bentuk bagian dalam larangan (*Älä ota pyyhettä!*)",
+  "mengajak dengan *Mennään! Leivotaan! Aloitetaan!*"
+ ],
+ "dialogs": [
+  {
+   "title": "Dialog — Avantoon!",
+   "intro": "Sabtu, 3 Oktober 2026. Laura sudah dua minggu membujuk; akhirnya Budi dan Marek ikut ke sauna umum di tepi laut di Helsinki untuk mencoba *avantouinti*, berenang di air dingin. Laura, perenang es sejak kecil, menjadi pelatih.",
+   "lines": [
+    {
+     "speaker": "Laura:",
+     "text": "Tervetuloa! Ottakaa kengät pois ja tulkaa sisään.",
+     "id": "Selamat datang! Lepas sepatu kalian dan masuk.",
+     "literal": "selamat-datang! ambillah-kalian sepatu-jamak lepas dan datanglah-kalian ke-dalam."
+    },
+    {
+     "speaker": "Marek:",
+     "text": "Laura, oletko varma? Vesi on vain yhdeksän astetta.",
+     "id": "Laura, kamu yakin? Airnya cuma sembilan derajat.",
+     "literal": "Laura, adalah-kah-kamu yakin? air adalah hanya sembilan derajat-bagian."
+    },
+    {
+     "speaker": "Laura:",
+     "text": "Juuri siksi! Menkää ensin saunaan ja lämmitelkää vähän.",
+     "id": "Justru itu! Masuk sauna dulu dan hangatkan badan sebentar.",
+     "literal": "justru karena-itu! pergilah-kalian dulu ke-sauna dan hangatkanlah-diri-kalian sedikit."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Entä sitten? Hyppäänkö suoraan veteen?",
+     "id": "Terus? Aku langsung lompat ke air?",
+     "literal": "lalu kemudian? melompat-kah-saya langsung ke-air?"
+    },
+    {
+     "speaker": "Laura:",
+     "text": "Älä hyppää! Kävele hitaasti veteen.",
+     "id": "Jangan lompat! Jalan pelan-pelan masuk ke air.",
+     "literal": "jangan-kamu melompat! berjalanlah pelan ke-air."
+    },
+    {
+     "speaker": "Marek:",
+     "text": "Entä pää? Kastanko myös pään?",
+     "id": "Kepala gimana? Kepala juga dicelup?",
+     "literal": "lalu kepala? mencelupkan-kah-saya juga kepala-sasaran?"
+    },
+    {
+     "speaker": "Laura:",
+     "text": "Älkää kastako päätä ensimmäisellä kerralla. Pitäkää pipot päässä!",
+     "id": "Jangan celupkan kepala di kali pertama. Kupluknya tetap dipakai!",
+     "literal": "jangan-kalian celupkan kepala-bagian pada-pertama pada-kali. peganglah-kalian kupluk-jamak di-kepala!"
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Kuinka kauan vedessä pitää olla?",
+     "id": "Berapa lama harus di dalam air?",
+     "literal": "berapa lama di-air harus ada?"
+    },
+    {
+     "speaker": "Laura:",
+     "text": "Kymmenen sekuntia riittää. Hengitä syvään äläkä huuda.",
+     "id": "Sepuluh detik cukup. Tarik napas dalam-dalam dan jangan teriak.",
+     "literal": "sepuluh detik-bagian cukup. bernapaslah dalam dan-jangan-kamu berteriak."
+    },
+    {
+     "speaker": "Marek:",
+     "text": "Minä huudan varmasti. Anna minulle pyyhe valmiiksi!",
+     "id": "Aku pasti teriak. Siapkan handuk buatku!",
+     "literal": "saya berteriak pasti. berilah kepada-saya handuk menjadi-siap!"
+    },
+    {
+     "speaker": "Laura:",
+     "text": "Pyyhe on tuolla. Ja muistakaa: älkää juoko alkoholia ennen uintia.",
+     "id": "Handuknya di sana. Dan ingat: jangan minum alkohol sebelum berenang.",
+     "literal": "handuk ada di-sana. dan ingatlah-kalian: jangan-kalian minum alkohol-bagian sebelum renang-bagian."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Selvä. Marek, sinä ensin!",
+     "id": "Oke. Marek, kamu duluan!",
+     "literal": "jelas. Marek, kamu dulu!"
+    },
+    {
+     "speaker": "Marek:",
+     "text": "Ei, ei. Mene sinä, olet nuorempi!",
+     "id": "Nggak, nggak. Kamu saja, kamu lebih muda!",
+     "literal": "tidak, tidak. pergilah kamu, adalah-kamu lebih-muda!"
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Aaah! Kylmää! Mutta… tämä on ihanaa!",
+     "id": "Aaah! Dingin! Tapi… ini luar biasa!",
+     "literal": "aaah! dingin-bagian! tetapi… ini adalah indah-bagian!"
+    }
+   ],
+   "notes": [
+    "**Ottakaa, tulkaa, menkää** — perintah untuk *te* (kalian, atau satu orang yang dihormati) = batang infinitif + **-kaa/-kää**: *ottaa → ottakaa*, *juoda → juokaa*, *tulla → tulkaa*, *mennä → menkää*, *hypätä → hypätkää*. Golongan 3 membuang ekor infinitifnya utuh sebelum *-kaa*: *tul-kaa*, bukan *tullkaa*.",
+    "**Kävele, hengitä, anna** — perintah *sinä* = bentuk *minä* masa kini tanpa *-n*: *kävelen → kävele*, *hengitän → hengitä*, *annan → anna*. Huruf matinya ikut bentuk *minä*: *nukun → nuku!*, *hyppään → hyppää!*",
+    "**Älä hyppää! Älkää kastako!** — larangan untuk *sinä*: *älä* + bentuk perintah *sinä* (*älä hyppää, älä huuda*). Untuk *te*: *älkää* + batang infinitif + **-ko/-kö** (*älkää kastako, älkää juoko, älkää menkö*).",
+    "**Kastako päätä — pipot päässä** — objek perintah positif memakai **bentuk dasar** (*anna pyyhe, pitäkää pipot*), tetapi larangan adalah sangkalan, jadi objeknya **bagian**: *älkää kastako päätä, älkää juoko alkoholia*. Aturan unit 2 tetap berlaku.",
+    "**Äläkä huuda** — *-kä* menempel pada *älä*: \"dan jangan\". *Istu äläkä liiku!* (Duduk dan jangan bergerak!)",
+    "**Avantouinti** — berenang di lubang es atau di laut dingin, biasanya diselingi sauna. Nasihat Laura memang aturan keselamatan dasar: masuk air perlahan, jangan minum alkohol, beberapa detik sudah cukup untuk pemula."
+   ],
+   "grammars": [
+    {
+     "title": "Perintah dan larangan",
+     "body": [
+      "Bentuk *sinä* diambil dari bentuk *minä* (buang *-n*); bentuk *te* diambil dari infinitif (buang ekor infinitif, tambah *-kaa/-kää*). Karena sumbernya berbeda, huruf matinya bisa berbeda: *ota* tetapi *ottakaa*."
+     ],
+     "table": {
+      "head": [
+       "Infinitif",
+       "sinä",
+       "älä …",
+       "te",
+       "älkää …"
+      ],
+      "rows": [
+       [
+        "*ottaa*",
+        "*ota*",
+        "*älä ota*",
+        "*ottakaa*",
+        "*älkää ottako*"
+       ],
+       [
+        "*juoda*",
+        "*juo*",
+        "*älä juo*",
+        "*juokaa*",
+        "*älkää juoko*"
+       ],
+       [
+        "*tehdä*",
+        "*tee*",
+        "*älä tee*",
+        "*tehkää*",
+        "*älkää tehkö*"
+       ],
+       [
+        "*tulla*",
+        "*tule*",
+        "*älä tule*",
+        "*tulkaa*",
+        "*älkää tulko*"
+       ],
+       [
+        "*mennä*",
+        "*mene*",
+        "*älä mene*",
+        "*menkää*",
+        "*älkää menkö*"
+       ],
+       [
+        "*olla*",
+        "*ole*",
+        "*älä ole*",
+        "*olkaa*",
+        "*älkää olko*"
+       ],
+       [
+        "*hypätä*",
+        "*hyppää*",
+        "*älä hyppää*",
+        "*hypätkää*",
+        "*älkää hypätkö*"
+       ],
+       [
+        "*häiritä*",
+        "*häiritse*",
+        "*älä häiritse*",
+        "*häiritkää*",
+        "*älkää häiritkö*"
+       ]
+      ]
+     },
+     "after": [
+      "⚠️ **Golongan 4, 5, dan 6 membuang *-a/-ä* saja, lalu menempelkan *-kaa*:** *hypätä → hypät-kää*, *avata → avat-kaa*, *häiritä → häirit-kää*. Bentuk *sinä*-nya tetap dari *minä*: *hyppään → hyppää*, *häiritsen → häiritse*."
+     ]
+    },
+    {
+     "title": "Objek di dalam perintah",
+     "body": [
+      "Empat kalimat berikut memuat seluruh aturannya."
+     ],
+     "table": {
+      "head": [
+       "Kalimat",
+       "Objek",
+       "Alasan"
+      ],
+      "rows": [
+       [
+        "*Ota pyyhe!*",
+        "dasar",
+        "perintah positif"
+       ],
+       [
+        "*Älä ota pyyhettä!*",
+        "bagian",
+        "larangan = sangkalan"
+       ],
+       [
+        "*Ota minut mukaan!*",
+        "*-t*",
+        "kata ganti orang tetap berbentuk total"
+       ],
+       [
+        "*Auta minua!*",
+        "bagian",
+        "kata kerja partitif"
+       ]
+      ]
+     }
+    }
+   ]
+  },
+  {
+   "title": "Dialog kedua — Leivotaan pullaa!",
+   "intro": "Minggu sore, 4 Oktober. Eila Virtanen, tetangga sebelah Budi yang berumur 78 tahun, mengundangnya ke apartemennya: ia mau mengajari Budi memanggang *pulla*. Sejak mereka berkenalan, Eila memintanya ber-*sinä* dan selalu memanggilnya *poika*.",
+   "lines": [
+    {
+     "speaker": "Eila:",
+     "text": "Poika, tule sisään! Pese kädet ja ota esiliina.",
+     "id": "Nak, masuk! Cuci tangan dan pakai celemek.",
+     "literal": "anak-muda, datanglah ke-dalam! cucilah tangan-jamak dan ambillah celemek."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Kiitos, Eila. Mitä leivotaan tänään?",
+     "id": "Makasih, Eila. Kita bikin apa hari ini?",
+     "literal": "terima-kasih, Eila. apa di-panggang hari-ini?"
+    },
+    {
+     "speaker": "Eila:",
+     "text": "Leivotaan pullaa! Ensin lämmitetään maito.",
+     "id": "Kita bikin pulla! Pertama, susunya dihangatkan.",
+     "literal": "di-panggang pulla-bagian! dulu di-hangatkan susu."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Kuinka paljon maitoa?",
+     "id": "Susunya berapa banyak?",
+     "literal": "berapa banyak susu-bagian?"
+    },
+    {
+     "speaker": "Eila:",
+     "text": "Viisi desilitraa. Älä keitä sitä, lämmin riittää.",
+     "id": "Lima desiliter. Jangan sampai mendidih, hangat saja cukup.",
+     "literal": "lima desiliter-bagian. jangan-kamu rebus itu-bagian, hangat cukup."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Selvä. Lisätäänkö hiiva nyt?",
+     "id": "Oke. Raginya dimasukkan sekarang?",
+     "literal": "jelas. di-tambahkan-kah ragi sekarang?"
+    },
+    {
+     "speaker": "Eila:",
+     "text": "Lisätään. Sitten sokeri, kardemumma ja jauhot. Sekoita hyvin!",
+     "id": "Iya. Lalu gula, kapulaga, dan tepung. Aduk yang rata!",
+     "literal": "di-tambahkan. lalu gula, kapulaga dan tepung-jamak. aduklah baik!"
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Kardemummaa pullassa? Äiti laittaa sitä riisiin.",
+     "id": "Kapulaga di pulla? Ibuku menaruhnya di nasi.",
+     "literal": "kapulaga-bagian di-pulla? ibu menaruh itu-bagian ke-nasi."
+    },
+    {
+     "speaker": "Eila:",
+     "text": "Täällä ilman kardemummaa ei ole pullaa. No niin, nyt vaivataan taikina.",
+     "id": "Di sini tanpa kapulaga bukan pulla namanya. Nah, sekarang adonannya diuleni.",
+     "literal": "di-sini tanpa kapulaga-bagian tidak ada pulla-bagian. nah begitu, sekarang di-uleni adonan."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Mennään! Minä vaivaan, sinä neuvot.",
+     "id": "Ayo! Aku yang menguleni, kamu yang mengarahkan.",
+     "literal": "di-pergi! saya menguleni, kamu menasihati."
+    },
+    {
+     "speaker": "Eila:",
+     "text": "Hyvä poika. Ja älä syö taikinaa, se ei ole vielä valmis!",
+     "id": "Anak pintar. Dan jangan makan adonannya, belum matang!",
+     "literal": "baik anak-muda. dan jangan-kamu makan adonan-bagian, itu tidak adalah masih siap!"
+    }
+   ],
+   "notes": [
+    "**Leivotaan! Mennään!** — \"ayo kita…\" dalam bahasa Finlandia memakai bentuk **pasif**, bukan *me*: *Mennään!* (ayo pergi), *Syödään!* (ayo makan), *Aloitetaan!* (ayo mulai). Bentuk perintah *me* yang asli, *menkäämme*, hanya hidup di pidato dan nyanyian. Cara membentuk pasif diurai di unit 6; untuk sekarang hafalkan ajakan di tabel.",
+    "**Mitä leivotaan? Lisätäänkö hiiva?** — bentuk yang sama dipakai untuk bertanya \"kita … apa?\" dan \"perlukah kita…?\". Ekor *-ko/-kö* menempel seperti biasa: *Lähdetäänkö?* (Berangkat, yuk?)",
+    "**Lämmitetään maito, vaivataan taikina** — objek pasif memakai **bentuk dasar**, sama seperti objek perintah. Hanya sangkalan yang mengubahnya jadi bagian: *ei lämmitetä maitoa*.",
+    "**Mennään!** — Budi tidak pergi ke mana-mana. *Mennään!* sering berarti \"ayo, kita mulai!\", persis seperti \"yuk!\" dalam bahasa Indonesia.",
+    "**Poika** — Eila memanggil Budi \"nak\" (harfiah: anak laki-laki). Panggilan hangat dari orang tua kepada orang muda; jangan dipakai kepada rekan kerja.",
+    "**Viisi desilitraa** — resep Finlandia mengukur dengan **desiliter** (*dl*, dalam percakapan *desi*), bukan cangkir. Gelas ukur desiliter (*desimitta*) ada di setiap dapur."
+   ],
+   "grammars": [
+    {
+     "title": "Sepuluh ajakan yang paling sering",
+     "body": [
+      "Semua bentuk ini diakhiri *-an/-än* dan hampir selalu diucapkan dengan nada riang."
+     ],
+     "table": {
+      "head": [
+       "Infinitif",
+       "Ajakan",
+       "Arti"
+      ],
+      "rows": [
+       [
+        "*mennä*",
+        "*mennään*",
+        "ayo pergi; ayo mulai"
+       ],
+       [
+        "*lähteä*",
+        "*lähdetään*",
+        "ayo berangkat"
+       ],
+       [
+        "*syödä*",
+        "*syödään*",
+        "ayo makan"
+       ],
+       [
+        "*juoda*",
+        "*juodaan*",
+        "ayo minum"
+       ],
+       [
+        "*tehdä*",
+        "*tehdään*",
+        "ayo kerjakan"
+       ],
+       [
+        "*aloittaa*",
+        "*aloitetaan*",
+        "ayo mulai"
+       ],
+       [
+        "*leipoa*",
+        "*leivotaan*",
+        "ayo memanggang"
+       ],
+       [
+        "*odottaa*",
+        "*odotetaan*",
+        "ayo tunggu"
+       ],
+       [
+        "*katsoa*",
+        "*katsotaan*",
+        "ayo lihat; nanti kita lihat"
+       ],
+       [
+        "*puhua*",
+        "*puhutaan*",
+        "ayo bicara"
+       ]
+      ]
+     },
+     "after": [
+      "Sangkalannya: *ei* + pasif tanpa *-an/-än* terakhir. *Ei mennä vielä!* (Jangan pergi dulu!), *Ei puhuta siitä.* (Nggak usah bahas itu.)"
+     ]
+    }
+   ]
+  }
+ ],
+ "sections": [
+  {
+   "title": "Tanda dan petunjuk",
+   "blocks": [
+    {
+     "type": "p",
+     "text": "Tanda di tempat umum Finlandia hampir selalu memakai perintah *sinä* — kepada semua orang, termasuk orang asing dan orang tua. Itu bukan kasar; bahasa tulis publik memang memilih bentuk terpendek."
+    },
+    {
+     "type": "tabel",
+     "head": [
+      "Tanda",
+      "Cara baca",
+      "Arti"
+     ],
+     "rows": [
+      [
+       "Vedä",
+       "VE-dè",
+       "tarik"
+      ],
+      [
+       "Työnnä",
+       "TÜÖN-nè",
+       "dorong"
+      ],
+      [
+       "Älä koske",
+       "È-lè KOS-ke",
+       "jangan sentuh"
+      ],
+      [
+       "Varo",
+       "VA-ro",
+       "awas"
+      ],
+      [
+       "Sisään",
+       "SI-sèèn",
+       "masuk"
+      ],
+      [
+       "Ulos",
+       "U-los",
+       "keluar"
+      ],
+      [
+       "Auki",
+       "AU-ki",
+       "buka"
+      ],
+      [
+       "Suljettu",
+       "SUL-yet-tu",
+       "tutup"
+      ],
+      [
+       "Pääsy kielletty",
+       "PÈÈ-sü KIEL-let-tü",
+       "dilarang masuk"
+      ],
+      [
+       "Pidä ovi kiinni",
+       "PI-dè O-vi KIIN-ni",
+       "biarkan pintu tertutup"
+      ]
+     ]
+    },
+    {
+     "type": "p",
+     "text": "*Pidä ovi kiinni* adalah contoh bagus objek perintah: *ovi* tetap bentuk dasar. Di pintu gedung apartemen kamu juga akan membaca *Muista sulkea ovi* (jangan lupa menutup pintu) dan, di tangga, *Varo liukasta lattiaa* (awas lantai licin) — *varoa* adalah kata kerja partitif, maka *lattiaa*. *Kielletty* (dilarang) dan *suljettu* (ditutup) berbentuk partisip; cukup kenali dulu sebagai kata tanda."
+    },
+    {
+     "type": "kotak",
+     "title": "Perintah yang terdengar sopan",
+     "items": [
+      "Tambahkan *vain* atau *ihan*: *Tule vain sisään!* (Silakan masuk saja!)",
+      "*Ole hyvä* / *olkaa hyvä* — harfiah \"jadilah baik\": silakan, ini dia.",
+      "Pertanyaan pengandaian dari A1 lebih halus daripada perintah: *Voisitko avata oven?* lawan *Avaa ovi!*",
+      "*Te* hormat untuk satu orang (*Tulkaa sisään, rouva Nieminen*) hanya dipakai kepada orang yang sangat tua atau dalam situasi resmi."
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Resep pulla Eila",
+   "blocks": [
+    {
+     "type": "p",
+     "text": "*Pulla* adalah roti manis beraroma kapulaga, teman wajib kopi di rumah orang Finlandia. Versi gulung kayu manisnya, *korvapuusti*, bahkan punya hari tak resmi sendiri, *korvapuustipäivä*, 4 Oktober — tepat hari Eila mengajak Budi memanggang."
+    },
+    {
+     "type": "tabel",
+     "head": [
+      "Bahan",
+      "Cara baca",
+      "Jumlah"
+     ],
+     "rows": [
+      [
+       "maito",
+       "MAI-to",
+       "5 dl"
+      ],
+      [
+       "hiiva",
+       "HII-va",
+       "50 g (ragi basah)"
+      ],
+      [
+       "sokeri",
+       "SO-ke-ri",
+       "2 dl"
+      ],
+      [
+       "kardemumma",
+       "KAR-de-mum-ma",
+       "1 sendok makan (bubuk)"
+      ],
+      [
+       "suola",
+       "SUO-la",
+       "1 sendok teh"
+      ],
+      [
+       "muna",
+       "MU-na",
+       "1 butir"
+      ],
+      [
+       "vehnäjauhot",
+       "VEH-nè-yau-hot",
+       "sekitar 14 dl"
+      ],
+      [
+       "voi",
+       "voi",
+       "150 g, lunak"
+      ]
+     ]
+    },
+    {
+     "type": "p",
+     "text": "Langkahnya, dalam perintah *sinä* seperti di buku resep: *Lämmitä maito.* (Hangatkan susu.) *Liuota hiiva maitoon.* (Larutkan ragi dalam susu.) *Lisää sokeri, suola, kardemumma ja muna.* (Tambahkan gula, garam, kapulaga, dan telur.) *Lisää jauhot vähitellen ja vaivaa taikina.* (Tambahkan tepung sedikit demi sedikit dan uleni adonannya.) *Lisää lopuksi voi.* (Terakhir tambahkan mentega.) *Anna taikinan kohota puoli tuntia.* (Biarkan adonan mengembang setengah jam.) Semua objeknya bentuk dasar. *Taikinan* bukan objek: dalam pola *anna jonkin tehdä* (biarkan sesuatu melakukan …) pelakunya berekor genitif *-n*."
+    },
+    {
+     "type": "kotak",
+     "title": "Kahvi ja pulla",
+     "items": [
+      "Kalau tamu datang, kopi dan sesuatu yang manis hampir wajib disajikan; menolak sepotong pulla terasa sedikit kurang ramah.",
+      "Taburan di atas pulla adalah *raesokeri* (gula butiran kasar) atau irisan almon, bukan gula halus.",
+      "*Korvapuusti* berarti \"tamparan telinga\" — namanya dari bentuk gulungannya.",
+      "Buku resep lama menulis *Vaivaa taikinaa*, dengan objek bagian: menguleni adalah kegiatan yang lama. Kedua bentuk bisa kamu temui."
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Ulangan berjenjang — unit 1",
+   "blocks": [
+    {
+     "type": "p",
+     "text": "Tutup kolom Finlandia, baca terjemahan Indonesianya, lalu susun kembali kalimatnya dari ingatan."
+    },
+    {
+     "type": "tabel",
+     "head": [
+      "Bahasa Indonesia",
+      "Suomi"
+     ],
+     "rows": [
+      [
+       "Sudah ketemu seluruh tim?",
+       "*Tapasitko jo koko tiimin?*"
+      ],
+      [
+       "Sepanjang sore aku membaca satu laporan lama. Yang kupahami mungkin separuhnya.",
+       "*Luin koko iltapäivän yhtä vanhaa raporttia. Ymmärsin siitä ehkä puolet.*"
+      ],
+      [
+       "Tiga cangkir! Aku ingin bersikap sopan.",
+       "*Join kolme kupillista! Halusin olla kohtelias.*"
+      ],
+      [
+       "Sama. Hari ini kami belum mengerjakan pekerjaan sungguhan apa pun.",
+       "*Niin meilläkin. Emme tehneet tänään mitään oikeaa työtä.*"
+      ],
+      [
+       "Nggak. Dia nggak banyak bicara, tapi sekali tersenyum.",
+       "*Ei ollut. Hän ei puhunut paljon, mutta hymyili kerran.*"
+      ]
+     ]
+    }
+   ]
+  }
+ ],
+ "vocab": [
+  {
+   "fi": "avanto",
+   "baca": "A-van-to",
+   "id": "lubang di es untuk berenang (gen. *avannon*)"
+  },
+  {
+   "fi": "avantouinti",
+   "baca": "A-van-tou-in-ti",
+   "id": "renang es, renang di air dingin"
+  },
+  {
+   "fi": "aste",
+   "baca": "AS-te",
+   "id": "derajat (gen. *asteen*)"
+  },
+  {
+   "fi": "lämmitellä",
+   "baca": "LÈM-mi-tel-lè",
+   "id": "menghangatkan badan, pemanasan (*lämmittelen*)"
+  },
+  {
+   "fi": "hypätä",
+   "baca": "HÜ-pè-tè",
+   "id": "melompat (*hyppään, hyppäsin*)"
+  },
+  {
+   "fi": "kävellä",
+   "baca": "KÈ-vel-lè",
+   "id": "berjalan kaki (*kävelen*)"
+  },
+  {
+   "fi": "kastaa",
+   "baca": "KAS-taa",
+   "id": "mencelupkan (*kastan, kastoin*)"
+  },
+  {
+   "fi": "pipo",
+   "baca": "PI-po",
+   "id": "kupluk, topi rajut"
+  },
+  {
+   "fi": "hengittää",
+   "baca": "HEN-git-tèè",
+   "id": "bernapas (*hengitän*)"
+  },
+  {
+   "fi": "syvään",
+   "baca": "SÜ-vèèn",
+   "id": "dalam-dalam (bernapas)"
+  },
+  {
+   "fi": "huutaa",
+   "baca": "HUU-taa",
+   "id": "berteriak (*huudan, huusin*)"
+  },
+  {
+   "fi": "pyyhe",
+   "baca": "PÜÜ-he",
+   "id": "handuk (gen. *pyyhkeen*)"
+  },
+  {
+   "fi": "valmiiksi",
+   "baca": "VAL-miik-si",
+   "id": "siap sedia, sebelumnya"
+  },
+  {
+   "fi": "muistaa",
+   "baca": "MUIS-taa",
+   "id": "ingat (*muistan, muistin*)"
+  },
+  {
+   "fi": "leipoa",
+   "baca": "LEI-po-a",
+   "id": "memanggang kue/roti (*leivon, leivoin*)"
+  },
+  {
+   "fi": "esiliina",
+   "baca": "E-si-lii-na",
+   "id": "celemek"
+  },
+  {
+   "fi": "hiiva",
+   "baca": "HII-va",
+   "id": "ragi"
+  },
+  {
+   "fi": "lisätä",
+   "baca": "LI-sè-tè",
+   "id": "menambahkan (*lisään, lisäsin*)"
+  },
+  {
+   "fi": "sekoittaa",
+   "baca": "SE-koit-taa",
+   "id": "mengaduk, mencampur (*sekoitan*)"
+  },
+  {
+   "fi": "jauhot",
+   "baca": "YAU-hot",
+   "id": "tepung (selalu jamak)"
+  },
+  {
+   "fi": "vaivata",
+   "baca": "VAI-va-ta",
+   "id": "menguleni (*vaivaan, vaivasin*)"
+  },
+  {
+   "fi": "taikina",
+   "baca": "TAI-ki-na",
+   "id": "adonan"
+  },
+  {
+   "fi": "neuvoa",
+   "baca": "NEU-vo-a",
+   "id": "menasihati, memberi petunjuk"
+  },
+  {
+   "fi": "koskea",
+   "baca": "KOS-ke-a",
+   "id": "menyentuh (*kosken*; *älä koske siihen*)"
+  },
+  {
+   "fi": "varoa",
+   "baca": "VA-ro-a",
+   "id": "berhati-hati terhadap (+ partitif)"
+  }
+ ],
+ "exercises": [
+  {
+   "prompt": "Terjemahkan ke bahasa Finlandia.",
+   "items": [
+    "Masuklah! (*sinä*)",
+    "Jangan melompat! (*sinä*)",
+    "Lepas sepatu kalian! (*te*)",
+    "Jangan minum alkohol! (*te*)",
+    "Ayo pergi!",
+    "Ambil handuk! (*sinä*)"
+   ]
+  },
+  {
+   "prompt": "Isi dengan bentuk perintah, larangan, atau ajakan dari kata kerja dalam kurung.",
+   "items": [
+    "____ hitaasti! (kävellä, sinä)",
+    "____ sisään! (tulla, te)",
+    "Älä ____ minua! (häiritä)",
+    "Älkää ____ ovea! (avata)",
+    "____ kädet! (pestä, sinä)",
+    "____ pullaa! (leipoa, ajakan)",
+    "Älä ____ taikinaa! (syödä)"
+   ]
+  },
+  {
+   "prompt": "Ubah perintah menjadi larangan (perhatikan objeknya).",
+   "items": [
+    "Ota pyyhe!",
+    "Avaa ikkuna!",
+    "Syökää pulla!",
+    "Osta auto!",
+    "Juokaa kahvi!",
+    "Mennään!"
+   ]
+  },
+  {
+   "prompt": "Susun jadi kalimat yang benar.",
+   "items": [
+    "sisään / tulkaa / ja / pois / kengät / ottakaa",
+    "hyppää / älä / veteen",
+    "taikinaa / syö / älä",
+    "pullaa / leivotaan / tänään",
+    "päätä / kastako / älkää"
+   ]
+  }
+ ],
+ "answers": [
+  "Tule sisään! — Älä hyppää! — Ottakaa kengät pois! — Älkää juoko alkoholia! — Mennään! — Ota pyyhe!",
+  "Kävele — Tulkaa — häiritse — avatko — Pese — Leivotaan — syö",
+  "Älä ota pyyhettä! — Älä avaa ikkunaa! — Älkää syökö pullaa! — Älä osta autoa! — Älkää juoko kahvia! — Ei mennä!",
+  "Ottakaa kengät pois ja tulkaa sisään. — Älä hyppää veteen! — Älä syö taikinaa! — Leivotaan tänään pullaa! — Älkää kastako päätä!"
+ ]
+}

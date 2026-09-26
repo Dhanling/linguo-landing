@@ -1,0 +1,756 @@
+{
+ "title": "Kata yang batangnya berubah — jenis-jenis kata benda",
+ "title_target": "Tässä hampaassa on reikä",
+ "goal": "Mengenali delapan jenis kata benda dari akhirannya (*nainen, huone, hammas, kallis, puhelin, vastaus, terveys, käsi*), menemukan batang yang dipakai kasus-kasus lain, dan memahami pergantian konsonan terbalik: nominatif lemah, batang kuat (*hammas → hampaan*).",
+ "bekal": [
+  "membentuk genitif dan kasus tempat dari delapan jenis kata benda: *naisen, huoneessa, hampaaseen, kalliin, puhelimen, vastauksesta, terveyden, kädessä*",
+  "mengenali pergantian terbalik lemah → kuat pada kata benda dan kata kerja: *hammas → hampaan, lääke → lääkkeen, tavata → tapaan*",
+  "menjelaskan keluhan di dokter gigi dan membeli obat bebas di apotek"
+ ],
+ "dialogs": [
+  {
+   "title": "Dialog — Hammaslääkärissä",
+   "intro": "Rabu, 21 April 2027, pukul 9.15. Budi mendapat slot batal di klinik gigi Tapiola. Kursinya empuk, lampunya terlalu terang, dan dokter giginya ramah tetapi lugas.",
+   "lines": [
+    {
+     "speaker": "Hammaslääkäri:",
+     "text": "Huomenta, Budi! Käy istumaan. Mikä hammas on kipeä?",
+     "id": "Pagi, Budi! Silakan duduk. Gigi yang mana yang sakit?",
+     "literal": "pagi-bagian, Budi! mampirlah untuk-duduk. apa gigi adalah sakit?"
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Tämä poskihammas vasemmalla alhaalla. Kipu on pahin yöllä.",
+     "id": "Geraham ini, kiri bawah. Paling sakit malam hari.",
+     "literal": "ini pipi-gigi di-kiri di-bawah. sakit adalah paling-buruk pada-malam."
+    },
+    {
+     "speaker": "Hammaslääkäri:",
+     "text": "Avaa suu, kiitos… Tässä hampaassa on iso reikä.",
+     "id": "Buka mulutnya, ya… Di gigi ini ada lubang besar.",
+     "literal": "bukalah mulut, terima-kasih… di-ini di-gigi ada besar lubang."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Reikä? Minä harjaan hampaat kaksi kertaa päivässä!",
+     "id": "Lubang? Aku sikat gigi dua kali sehari!",
+     "literal": "lubang? saya menyikat-saya gigi-jamak dua kali-bagian di-hari!"
+    },
+    {
+     "speaker": "Hammaslääkäri:",
+     "text": "Hyvä. Mutta käytätkö myös hammaslankaa?",
+     "id": "Bagus. Tapi kamu juga pakai benang gigi?",
+     "literal": "baik. tetapi memakai-kah-kamu juga gigi-benang-bagian?"
+    },
+    {
+     "speaker": "Budi:",
+     "text": "En joka päivä. Se on rehellinen vastaus.",
+     "id": "Nggak tiap hari. Itu jawaban jujur.",
+     "literal": "tidak-saya setiap hari. itu adalah jujur jawaban."
+    },
+    {
+     "speaker": "Hammaslääkäri:",
+     "text": "Kiitos rehellisestä vastauksesta. Paikkaan reiän heti.",
+     "id": "Terima kasih atas jawaban yang jujur. Lubangnya kutambal sekarang juga.",
+     "literal": "terima-kasih dari-jujur dari-jawaban. menambal-saya lubang-sasaran segera."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Nytkö? Tarvitaanko puudutusta?",
+     "id": "Sekarang? Perlu dibius?",
+     "literal": "sekarang-kah? di-perlukan-kah pembiusan-bagian?"
+    },
+    {
+     "speaker": "Hammaslääkäri:",
+     "text": "Tarvitaan. Saat pienen pistoksen ikeneen.",
+     "id": "Perlu. Kamu dapat suntikan kecil di gusi.",
+     "literal": "di-perlukan. mendapat-kamu kecil-sasaran suntikan-sasaran ke-gusi."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Hyvä on. Olen rohkea ihminen… luulen.",
+     "id": "Oke. Aku orang yang berani… kayaknya.",
+     "literal": "baik adalah. adalah-saya berani manusia… mengira-saya."
+    },
+    {
+     "speaker": "Hammaslääkäri:",
+     "text": "No niin, valmista tuli. Hammas on taas kunnossa.",
+     "id": "Nah, selesai. Giginya sudah beres lagi.",
+     "literal": "nah begitu, siap-bagian datang-lampau. gigi adalah lagi di-kondisi."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Kiitos! Huuleni tuntuu oudolta. Voinko syödä?",
+     "id": "Makasih! Bibirku rasanya aneh. Boleh makan?",
+     "literal": "terima-kasih! bibir-ku terasa dari-aneh. bisa-kah-saya makan?"
+    },
+    {
+     "speaker": "Hammaslääkäri:",
+     "text": "Älä syö kahteen tuntiin. Muuten voit purra poskeasi.",
+     "id": "Jangan makan dua jam. Nanti pipimu bisa tergigit.",
+     "literal": "jangan-kamu makan ke-dua ke-jam. kalau-tidak bisa-kamu menggigit pipi-mu-bagian."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Kahteen tuntiin? Ja lounas on kello yksitoista…",
+     "id": "Dua jam? Padahal makan siang jam sebelas…",
+     "literal": "ke-dua ke-jam? dan makan-siang adalah jam sebelas…"
+    }
+   ],
+   "notes": [
+    "**Tässä hampaassa** — *hammas* (gigi) adalah contoh paling terkenal kata yang \"membengkak\" begitu diberi akhiran: *hammas → hampaa-* → *hampaassa, hampaan, hampaat*. Dua hal terjadi sekaligus: *-s* akhir hilang dan diganti vokal panjang *-aa-*, dan *mm* berubah jadi *mp*. Kamus mencantumkan genitifnya (*hampaan*) justru karena kamu tak mungkin menebaknya.",
+    "**Harjaan hampaat** — *hampaat* adalah nominatif jamak yang dipakai sebagai objek total: semua gigi disikat sampai selesai. *Kaksi kertaa päivässä* (dua kali sehari) memakai inessif: \"dua kali **di dalam** sehari\"; begitu juga *kerran viikossa* (seminggu sekali).",
+    "**Rehellisestä vastauksesta** — *kiitos* meminta elatif untuk hal yang disyukuri: *kiitos avusta* (terima kasih atas bantuannya). Dua jenis kata berubah di sini: *rehellinen → rehellise-* (jenis *-nen*) dan *vastaus → vastaukse-* (jenis *-us*). Kata sifat ikut berkasus bersama kata bendanya.",
+    "**Paikkaan reiän** — *paikata* (menambal) adalah golongan 4 seperti *tavata*: bentuk kamus lemah, bentuk *minä* kuat — *paikkaan*. *Reikä* (lubang) berjalan ke arah biasa: *k* hilang di batang lemah, *reiän*. Satu kalimat, dua arah pergantian.",
+    "**Ikeneen, huuleni, poskeasi** — banyak kata bagian tubuh punya batang tersembunyi. *Ien* (gusi) → *ikene-* (ilatif *ikeneen*); *huuli* (bibir) → *huule-*; *poski* (pipi) → *poske-*. Kata lama berakhiran *-i* sering berganti *-e-* di batangnya: *kivi → kiven, suomi → suomen, järvi → järven*. Kata pinjaman baru tidak: *paperi → paperin, pankki → pankin*.",
+    "**Tuntuu oudolta, kahteen tuntiin** — *tuntua* (terasa) meminta ablatif: *tuntuu hyvältä* (rasanya enak), *tuntuu oudolta* (rasanya aneh; *outo → oudo-*). *Kahteen tuntiin* adalah ilatif lama waktu dalam kalimat sangkal yang kamu pelajari di unit 16: \"selama dua jam jangan\"."
+   ],
+   "grammars": [
+    {
+     "title": "Delapan jenis kata benda",
+     "body": [
+      "Kolom genitif memperlihatkan **batang vokal** yang dipakai hampir semua kasus lain (*-ssa, -sta, -lla, -n*…). Partitif tunggal sering dibentuk dari batang yang lebih pendek, jadi hafalkan juga."
+     ],
+     "table": {
+      "head": [
+       "Jenis",
+       "Nominatif",
+       "Genitif",
+       "Partitif",
+       "Kata lain"
+      ],
+      "rows": [
+       [
+        "*-nen*",
+        "*nainen*",
+        "*naisen*",
+        "*naista*",
+        "*ihminen, suomalainen, rehellinen*"
+       ],
+       [
+        "*-e*",
+        "*huone*",
+        "*huoneen*",
+        "*huonetta*",
+        "*perhe, terve, lääke (lääkkeen)*"
+       ],
+       [
+        "*-as, -äs*",
+        "*hammas*",
+        "*hampaan*",
+        "*hammasta*",
+        "*rikas (rikkaan), opas (oppaan)*"
+       ],
+       [
+        "*-is*",
+        "*kallis*",
+        "*kalliin*",
+        "*kallista*",
+        "*kaunis, valmis*"
+       ],
+       [
+        "*-in*",
+        "*puhelin*",
+        "*puhelimen*",
+        "*puhelinta*",
+        "*avain, keitin (keittimen)*"
+       ],
+       [
+        "*-us, -ys, -os*",
+        "*vastaus*",
+        "*vastauksen*",
+        "*vastausta*",
+        "*kysymys, pistos, tarjous*"
+       ],
+       [
+        "*-(e)us, -(e)ys* abstrak",
+        "*terveys*",
+        "*terveyden*",
+        "*terveyttä*",
+        "*rakkaus, ystävyys*"
+       ],
+       [
+        "*-si*",
+        "*käsi*",
+        "*käden*",
+        "*kättä*",
+        "*vesi, uusi, vuosi (vuoden)*"
+       ]
+      ]
+     },
+     "after": [
+      "⚠️ Baris *-us* dan *-(e)us* tampak sama tetapi berbeda: kata benda turunan kata kerja (*vastata → vastaus*) mendapat *-kse-*, kata benda abstrak dari kata sifat (*terve → terveys*, sehat → kesehatan) mendapat *-de-*. Kalau ragu, lihat kamus."
+     ]
+    },
+    {
+     "title": "Pergantian konsonan terbalik",
+     "body": [
+      "Di unit-unit A1 kamu belajar arah biasa: nominatif kuat, batang lemah (*kauppa → kaupassa*). Kata yang nominatifnya berakhir dengan konsonan atau *-e*, bila punya konsonan yang bisa berganti, berjalan **terbalik**: nominatif lemah, batang kuat. Kata kerja golongan 4 melakukan hal yang sama."
+     ],
+     "table": {
+      "head": [
+       "Bentuk kamus (lemah)",
+       "Batang (kuat)",
+       "Contoh"
+      ],
+      "rows": [
+       [
+        "*hammas*",
+        "*hampaa-*",
+        "*hampaassa*"
+       ],
+       [
+        "*rikas*",
+        "*rikkaa-*",
+        "*rikkaan miehen*"
+       ],
+       [
+        "*lääke*",
+        "*lääkkee-*",
+        "*lääkkeen hinta*"
+       ],
+       [
+        "*osoite*",
+        "*osoittee-*",
+        "*uuteen osoitteeseen*"
+       ],
+       [
+        "*keitin*",
+        "*keittime-*",
+        "*keittimessä*"
+       ],
+       [
+        "*ien*",
+        "*ikene-*",
+        "*ikeneen*"
+       ],
+       [
+        "*tavata*",
+        "*tapaa-*",
+        "*tapaan*"
+       ],
+       [
+        "*paikata*",
+        "*paikkaa-*",
+        "*paikkaan*"
+       ]
+      ]
+     }
+    }
+   ]
+  },
+  {
+   "title": "Dialog kedua — Apteekissa",
+   "intro": "Sore harinya, sepulang kerja, Budi mampir ke apotek di pusat Tapiola. Dokter gigi berpesan bahwa malam nanti bekas tambalannya mungkin masih nyeri.",
+   "lines": [
+    {
+     "speaker": "Farmaseutti:",
+     "text": "Hei! Miten voin auttaa?",
+     "id": "Halo! Ada yang bisa dibantu?",
+     "literal": "hai! bagaimana bisa-saya menolong?"
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Hei. Hampaani paikattiin tänään. Tarvitsen jotain kipuun.",
+     "id": "Halo. Gigiku ditambal hari ini. Aku perlu sesuatu buat nyeri.",
+     "literal": "hai. gigi-ku di-tambal-lampau hari-ini. perlu-saya sesuatu-bagian ke-sakit."
+    },
+    {
+     "speaker": "Farmaseutti:",
+     "text": "Onko sinulla allergioita tai muita lääkkeitä käytössä?",
+     "id": "Kamu punya alergi atau sedang pakai obat lain?",
+     "literal": "ada-kah pada-kamu alergi-jamak-bagian atau lain-jamak-bagian obat-jamak-bagian di-pemakaian?"
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Ei ole. Olen terve ihminen — paitsi tämä yksi hammas.",
+     "id": "Nggak ada. Aku orang sehat — kecuali satu gigi ini.",
+     "literal": "tidak-ia adalah. adalah-saya sehat manusia — kecuali ini satu gigi."
+    },
+    {
+     "speaker": "Farmaseutti:",
+     "text": "Sitten ibuprofeeni sopii. Ota yksi tabletti enintään kolme kertaa päivässä.",
+     "id": "Kalau begitu ibuprofen cocok. Minum satu tablet paling banyak tiga kali sehari.",
+     "literal": "kalau-begitu ibuprofen cocok. ambillah satu tablet paling-banyak tiga kali-bagian di-hari."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Kiitos. Onko teillä myös sähköhammasharjoja?",
+     "id": "Makasih. Di sini ada sikat gigi listrik juga?",
+     "literal": "terima-kasih. ada-kah pada-kalian juga listrik-gigi-sikat-jamak-bagian?"
+    },
+    {
+     "speaker": "Farmaseutti:",
+     "text": "On. Tämä on halvin. Kalliin harjan akku kestää kuukauden.",
+     "id": "Ada. Yang ini paling murah. Baterai sikat yang mahal tahan sebulan.",
+     "literal": "ada. ini adalah paling-murah. mahal-punya sikat-punya baterai bertahan bulan-sasaran."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Entä halvassa harjassa? Onko siinä huono akku?",
+     "id": "Kalau yang murah? Baterainya jelek?",
+     "literal": "lalu di-murah di-sikat? ada-kah di-dalamnya buruk baterai?"
+    },
+    {
+     "speaker": "Farmaseutti:",
+     "text": "Hyvä kysymys. Molemmat puhdistavat hampaat yhtä hyvin.",
+     "id": "Pertanyaan bagus. Dua-duanya membersihkan gigi sama baiknya.",
+     "literal": "baik pertanyaan. keduanya membersihkan-mereka gigi-jamak sama baik."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Sitten otan halvemman. Rahani menivät tänään jo hampaaseen.",
+     "id": "Kalau gitu aku ambil yang lebih murah. Uangku hari ini sudah habis buat gigi.",
+     "literal": "kalau-begitu mengambil-saya lebih-murah-sasaran. uang-jamak-ku pergi-lampau-mereka hari-ini sudah ke-gigi."
+    }
+   ],
+   "notes": [
+    "**Hampaani paikattiin** — pasif lampau dari unit 13. *Hampaani* di sini tunggal (\"gigiku\"): akhiran milik *-ni* menelan akhiran genitif maupun nominatif jamak, jadi *hampaani* bisa berarti \"gigiku\" atau \"gigi-gigiku\". Konteks yang memutuskan.",
+    "**Jotain kipuun** — obat \"untuk\" suatu keluhan memakai ilatif: *lääke päänsärkyyn* (obat sakit kepala), *jotain yskään* (sesuatu untuk batuk). Bahasa Indonesia berkata \"obat **untuk**\", bahasa Finlandia \"obat **ke dalam**\".",
+    "**Muita lääkkeitä käytössä** — *lääke → lääkkee-*: jenis *-e* dengan pergantian terbalik *k → kk*. Partitif jamaknya *lääkkeitä*. *Käytössä* (dalam pemakaian) adalah frasa baku apoteker: *Onko sinulla lääkkeitä käytössä?* — sedang minum obat apa?",
+    "**Kalliin harjan, halvassa harjassa** — kata sifat mengikuti kasus kata bendanya, jadi kamu harus tahu jenis keduanya: *kallis → kalliin* (jenis *-is*), *halpa → halvan, halvassa* (arah biasa, *p → v*). Superlatif *halvin* dan komparatif *halvemman* dari unit 15 muncul lagi di sini.",
+    "**Hyvä kysymys** — *kysymys → kysymykse-*: *kysymyksen, kysymyksiä*. Jenis *-ys* konkret sama dengan *vastaus → vastaukse-* di dialog pertama. Pasangan ini sering keluar bersama: *kysymys ja vastaus*.",
+    "**Rahani menivät hampaaseen** — *raha* (uang) dalam percakapan sering jamak: *rahat* = uangku semuanya. *Hampaaseen* adalah ilatif dari *hammas*: batang *hampaa-* + *-seen*, akhiran ilatif untuk batang yang berakhir vokal panjang (*huoneeseen, kalliiseen*)."
+   ],
+   "grammars": [
+    {
+     "title": "Kata sifat ikut berubah",
+     "body": [
+      "Kata sifat mengenal jenis yang sama dengan kata benda. Dalam frasa, keduanya selalu berkasus sama."
+     ],
+     "table": {
+      "head": [
+       "Nominatif",
+       "Genitif",
+       "Inessif",
+       "Arti"
+      ],
+      "rows": [
+       [
+        "*kallis*",
+        "*kalliin*",
+        "*kalliissa*",
+        "mahal"
+       ],
+       [
+        "*halpa*",
+        "*halvan*",
+        "*halvassa*",
+        "murah"
+       ],
+       [
+        "*rehellinen*",
+        "*rehellisen*",
+        "*rehellisessä*",
+        "jujur"
+       ],
+       [
+        "*terve*",
+        "*terveen*",
+        "*terveessä*",
+        "sehat"
+       ],
+       [
+        "*uusi*",
+        "*uuden*",
+        "*uudessa*",
+        "baru"
+       ],
+       [
+        "*kaunis*",
+        "*kauniin*",
+        "*kauniissa*",
+        "indah"
+       ]
+      ]
+     },
+     "after": [
+      "Latihan cepat: *kalliissa hotellissa, uudessa puhelimessa, kauniissa huoneessa, rehellisen ihmisen*. Kalau salah satunya terasa aneh diucapkan, periksa jenisnya di tabel dialog pertama."
+     ]
+    }
+   ]
+  }
+ ],
+ "sections": [
+  {
+   "title": "Satu kata, tujuh bentuk",
+   "blocks": [
+    {
+     "type": "tabel",
+     "head": [
+      "Kasus",
+      "hammas",
+      "nainen",
+      "huone",
+      "käsi"
+     ],
+     "rows": [
+      [
+       "nominatif",
+       "*hammas*",
+       "*nainen*",
+       "*huone*",
+       "*käsi*"
+      ],
+      [
+       "genitif",
+       "*hampaan*",
+       "*naisen*",
+       "*huoneen*",
+       "*käden*"
+      ],
+      [
+       "partitif",
+       "*hammasta*",
+       "*naista*",
+       "*huonetta*",
+       "*kättä*"
+      ],
+      [
+       "inessif",
+       "*hampaassa*",
+       "*naisessa*",
+       "*huoneessa*",
+       "*kädessä*"
+      ],
+      [
+       "ilatif",
+       "*hampaaseen*",
+       "*naiseen*",
+       "*huoneeseen*",
+       "*käteen*"
+      ],
+      [
+       "nominatif jamak",
+       "*hampaat*",
+       "*naiset*",
+       "*huoneet*",
+       "*kädet*"
+      ],
+      [
+       "partitif jamak",
+       "*hampaita*",
+       "*naisia*",
+       "*huoneita*",
+       "*käsiä*"
+      ]
+     ]
+    },
+    {
+     "type": "p",
+     "text": "Perhatikan pola yang berulang: partitif tunggal dibangun dari batang pendek yang mirip nominatif (*hammas-ta, nais-ta, huonet-ta, kät-tä*), sedangkan genitif, inessif, ilatif, dan bentuk jamak memakai batang vokal (*hampaa-, naise-, huonee-, käde-/käte-*). Karena itu kamus Finlandia yang baik selalu mencantumkan tiga bentuk. *Käsi* menambah kerumitan: batang vokalnya ikut pergantian konsonan *t/d* — *käden, kädessä, kädet* (lemah) tetapi *käteen* (kuat), sedangkan *kättä* dan *käsiä* memakai batang lain lagi."
+    },
+    {
+     "type": "kotak",
+     "title": "Cara menghafal kata benda baru",
+     "items": [
+      "Hafalkan tiga bentuk sekaligus: nominatif, genitif, partitif — *hammas, hampaan, hammasta*. Dengan tiga bentuk itu hampir semua kasus lain bisa kamu bentuk sendiri.",
+      "Tebak jenisnya dari akhiran: *-nen, -e, -as, -is, -in, -us, -si* hampir selalu berubah. Kata berakhiran *-a, -ä, -o, -u* dan kata pinjaman ber-*i* biasanya tenang, selain pergantian konsonan biasa (*kauppa → kaupan*).",
+      "Buat kalimat pendek dengan inessif untuk setiap kata baru: *hampaassa, puhelimessa, huoneessa*. Kalau bunyinya terasa benar, batangnya sudah menempel."
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Di dokter gigi dan apotek",
+   "blocks": [
+    {
+     "type": "tabel",
+     "head": [
+      "Suomi",
+      "Cara baca",
+      "Bahasa Indonesia"
+     ],
+     "rows": [
+      [
+       "hammaslääkäri",
+       "HAM-mas-lèè-kè-ri",
+       "dokter gigi"
+      ],
+      [
+       "suuhygienisti",
+       "SUU-hü-gi-e-nis-ti",
+       "perawat kebersihan mulut"
+      ],
+      [
+       "reikä",
+       "REI-kè",
+       "lubang (gigi berlubang)"
+      ],
+      [
+       "paikka",
+       "PAIK-ka",
+       "tambalan"
+      ],
+      [
+       "puudutus",
+       "PUU-du-tus",
+       "bius lokal"
+      ],
+      [
+       "hammaslanka",
+       "HAM-mas-lan-ka",
+       "benang gigi"
+      ],
+      [
+       "hammastahna",
+       "HAM-mas-tah-na",
+       "pasta gigi"
+      ],
+      [
+       "apteekki",
+       "AP-tèèk-ki",
+       "apotek"
+      ],
+      [
+       "resepti",
+       "RE-sep-ti",
+       "resep"
+      ],
+      [
+       "itsehoitolääke",
+       "IT-se-hoi-to-lèè-ke",
+       "obat bebas"
+      ],
+      [
+       "särkylääke",
+       "SÈR-kü-lèè-ke",
+       "obat pereda nyeri"
+      ]
+     ]
+    },
+    {
+     "type": "p",
+     "text": "Layanan kesehatan umum di Finlandia sejak 2023 diatur oleh *hyvinvointialue* (wilayah layanan kesejahteraan); Espoo termasuk *Länsi-Uudenmaan hyvinvointialue*. Perawatan gigi umum (*suun terveydenhuolto*) memungut tarif pasien yang terjangkau tetapi antreannya bisa panjang, sedangkan klinik swasta lebih cepat dan lebih mahal. Banyak kantor menyediakan *työterveyshuolto* (layanan kesehatan kerja), tetapi perawatan gigi biasanya tidak termasuk. Obat bebas seperti ibuprofen hanya dijual di apotek, bukan di supermarket. Resep dokter bersifat elektronik: kamu cukup menunjukkan kartu Kela atau kartu identitas, dan daftar resepmu bisa dilihat di *OmaKanta*."
+    },
+    {
+     "type": "kotak",
+     "title": "Kalimat siap pakai",
+     "items": [
+      "*Hammasta särkee.* — Gigiku nyeri. *Minulla on hammassärky.* — Aku sakit gigi.",
+      "*Paikka irtosi.* — Tambalannya copot. *Ikenistä vuotaa verta.* — Gusiku berdarah.",
+      "*Tarvitsen jotain kipuun / yskään / päänsärkyyn.* — Aku perlu sesuatu untuk nyeri / batuk / sakit kepala.",
+      "*Onko tämä reseptilääke?* — Apakah ini obat resep? *Kuinka monta kertaa päivässä?* — Berapa kali sehari?"
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Ulangan berjenjang — unit 16",
+   "blocks": [
+    {
+     "type": "p",
+     "text": "Tutup kolom Finlandia, baca terjemahan Indonesianya, lalu susun kembali kalimatnya dari ingatan."
+    },
+    {
+     "type": "tabel",
+     "head": [
+      "Bahasa Indonesia",
+      "Suomi"
+     ],
+     "rows": [
+      [
+       "Nggak. Aku lagi main ski di Oittaa. Cuacanya sempurna!",
+       "*En ole. Olen hiihtämässä Oittaalla. Keli on täydellinen!*"
+      ],
+      [
+       "Kalau gitu aku ikut! Aku telepon kamu begitu balik dari berenang.",
+       "*Sitten tulen! Soitan sinulle, kun tulen uimasta.*"
+      ],
+      [
+       "Oke deh. Tapi aku nggak berangkat ke mana-mana tanpa sarapan.",
+       "*Hyvä on. Mutta en lähde mihinkään syömättä aamiaista.*"
+      ],
+      [
+       "Dia meluncur turun tanpa ngerem. Lihat, deh!",
+       "*Hän tulee mäkeä alas jarruttamatta. Katsokaa!*"
+      ],
+      [
+       "Ya ampun. Laura, hari ini kamu sudah berenang?",
+       "*Voi voi. Laura, oletko jo käynyt uimassa tänään?*"
+      ]
+     ]
+    }
+   ]
+  }
+ ],
+ "vocab": [
+  {
+   "fi": "hammas",
+   "baca": "HAM-mas",
+   "id": "gigi (gen. *hampaan*)"
+  },
+  {
+   "fi": "hammaslääkäri",
+   "baca": "HAM-mas-lèè-kè-ri",
+   "id": "dokter gigi"
+  },
+  {
+   "fi": "reikä",
+   "baca": "REI-kè",
+   "id": "lubang (gen. *reiän*)"
+  },
+  {
+   "fi": "paikata",
+   "baca": "PAI-ka-ta",
+   "id": "menambal (*paikkaan*)"
+  },
+  {
+   "fi": "puudutus",
+   "baca": "PUU-du-tus",
+   "id": "bius lokal (gen. *puudutuksen*)"
+  },
+  {
+   "fi": "ien",
+   "baca": "ien",
+   "id": "gusi (gen. *ikenen*)"
+  },
+  {
+   "fi": "huuli",
+   "baca": "HUU-li",
+   "id": "bibir (gen. *huulen*)"
+  },
+  {
+   "fi": "poski",
+   "baca": "POS-ki",
+   "id": "pipi (gen. *posken*)"
+  },
+  {
+   "fi": "kipeä",
+   "baca": "KI-pe-è",
+   "id": "sakit (bagian tubuh)"
+  },
+  {
+   "fi": "kipu",
+   "baca": "KI-pu",
+   "id": "rasa sakit (gen. *kivun*)"
+  },
+  {
+   "fi": "harjata",
+   "baca": "HAR-ya-ta",
+   "id": "menyikat (*harjaan*)"
+  },
+  {
+   "fi": "hammaslanka",
+   "baca": "HAM-mas-lan-ka",
+   "id": "benang gigi (gen. *hammaslangan*)"
+  },
+  {
+   "fi": "rehellinen",
+   "baca": "RE-hel-li-nen",
+   "id": "jujur (gen. *rehellisen*)"
+  },
+  {
+   "fi": "vastaus",
+   "baca": "VAS-taus",
+   "id": "jawaban (gen. *vastauksen*)"
+  },
+  {
+   "fi": "kysymys",
+   "baca": "KÜ-sü-müs",
+   "id": "pertanyaan (gen. *kysymyksen*)"
+  },
+  {
+   "fi": "terveys",
+   "baca": "TER-veüs",
+   "id": "kesehatan (gen. *terveyden*)"
+  },
+  {
+   "fi": "tuntua",
+   "baca": "TUN-tu-a",
+   "id": "terasa (+ ablatif: *tuntuu oudolta*)"
+  },
+  {
+   "fi": "purra",
+   "baca": "PUR-ra",
+   "id": "menggigit (*puren*)"
+  },
+  {
+   "fi": "apteekki",
+   "baca": "AP-tèèk-ki",
+   "id": "apotek (gen. *apteekin*)"
+  },
+  {
+   "fi": "lääke",
+   "baca": "LÈÈ-ke",
+   "id": "obat (gen. *lääkkeen*)"
+  },
+  {
+   "fi": "kallis",
+   "baca": "KAL-lis",
+   "id": "mahal (gen. *kalliin*)"
+  },
+  {
+   "fi": "halpa",
+   "baca": "HAL-pa",
+   "id": "murah (gen. *halvan*)"
+  },
+  {
+   "fi": "terve",
+   "baca": "TER-ve",
+   "id": "sehat (gen. *terveen*)"
+  },
+  {
+   "fi": "käsi",
+   "baca": "KÈ-si",
+   "id": "tangan (gen. *käden*, part. *kättä*)"
+  },
+  {
+   "fi": "puhelin",
+   "baca": "PU-he-lin",
+   "id": "telepon (gen. *puhelimen*)"
+  }
+ ],
+ "exercises": [
+  {
+   "prompt": "Terjemahkan ke bahasa Finlandia.",
+   "items": [
+    "Di gigi ini ada lubang besar.",
+    "Terima kasih atas jawaban yang jujur.",
+    "Jangan makan selama dua jam.",
+    "Aku menyikat gigi dua kali sehari.",
+    "Obatnya ada di tasku. (*laukku*)",
+    "Kamu orang yang jujur."
+   ]
+  },
+  {
+   "prompt": "Tulis genitif kata dalam kurung.",
+   "items": [
+    "____ lääkäri (hammas)",
+    "____ nimi (nainen)",
+    "____ ikkuna (huone)",
+    "____ hinta (puhelin)",
+    "____ harjan akku (kallis)",
+    "____ vastaus (kysymys)",
+    "____ lämpötila (vesi)"
+   ]
+  },
+  {
+   "prompt": "Ubah ke inessif (*-ssa/-ssä*).",
+   "items": [
+    "hammas",
+    "huone",
+    "käsi",
+    "puhelin",
+    "kaunis kaupunki",
+    "suomalainen perhe"
+   ]
+  },
+  {
+   "prompt": "Susun jadi kalimat yang benar.",
+   "items": [
+    "hampaassa / reikä / on / tässä / iso",
+    "vastauksesta / kiitos / rehellisestä",
+    "tuntuu / huuleni / oudolta",
+    "akku / kalliin / kestää / harjan / kuukauden",
+    "syö / tuntiin / kahteen / älä"
+   ]
+  }
+ ],
+ "answers": [
+  "Tässä hampaassa on iso reikä. — Kiitos rehellisestä vastauksesta. — Älä syö kahteen tuntiin. — Harjaan hampaat kaksi kertaa päivässä. — Lääke on laukussani. — Olet rehellinen ihminen.",
+  "hampaan — naisen — huoneen — puhelimen — kalliin — kysymyksen — veden",
+  "hampaassa — huoneessa — kädessä — puhelimessa — kauniissa kaupungissa — suomalaisessa perheessä",
+  "Tässä hampaassa on iso reikä. — Kiitos rehellisestä vastauksesta. — Huuleni tuntuu oudolta. — Kalliin harjan akku kestää kuukauden. — Älä syö kahteen tuntiin."
+ ]
+}

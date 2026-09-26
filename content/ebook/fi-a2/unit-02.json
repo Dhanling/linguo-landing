@@ -1,0 +1,666 @@
+{
+ "title": "Seluruh atau sebagian? — objek total dan partitif",
+ "title_target": "Otan pöydän, mutta en osta tuolia",
+ "goal": "Memilih bentuk objek yang tepat — total (*ostan auton, osta auto!*) atau bagian (*en osta autoa, luen kirjaa*) — dengan menjawab empat pertanyaan: disangkal, tak tentu jumlahnya, belum selesai, atau kata kerjanya memang menuntut bagian.",
+ "bekal": [
+  "memakai objek total *-n*, *-t*, dan bentuk dasar dalam kalimat biasa, jamak, dan perintah",
+  "mengenali empat alasan objek memakai bentuk bagian",
+  "membedakan *luin kirjaa* (sempat membaca) dari *luin kirjan* (menamatkan)"
+ ],
+ "dialogs": [
+  {
+   "title": "Dialog — Huonekaluliikkeessä",
+   "intro": "Sabtu, 12 September 2026. Budi kini boleh bekerja dari rumah dua hari seminggu, tetapi apartemennya belum punya meja kerja. Marek ikut ke toko perabot di Espoo sebagai penasihat yang pelit.",
+   "lines": [
+    {
+     "speaker": "Myyjä:",
+     "text": "Hei! Voinko auttaa?",
+     "id": "Halo! Ada yang bisa dibantu?",
+     "literal": "halo! bisa-kah-saya membantu?"
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Kyllä kiitos. Etsin työpöytää ja hyvää tuolia.",
+     "id": "Iya, makasih. Saya cari meja kerja dan kursi yang bagus.",
+     "literal": "ya terima-kasih. mencari-saya meja-kerja-bagian dan baik-bagian kursi-bagian."
+    },
+    {
+     "speaker": "Myyjä:",
+     "text": "Tuolla on valkoinen työpöytä. Se maksaa satakaksikymmentä euroa.",
+     "id": "Di sana ada meja kerja putih. Harganya seratus dua puluh euro.",
+     "literal": "di-sana ada putih meja-kerja. itu berharga seratus-dua-puluh euro-bagian."
+    },
+    {
+     "speaker": "Marek:",
+     "text": "Satakaksikymmentä? Minä en ostaisi sitä.",
+     "id": "Seratus dua puluh? Aku sih nggak bakal beli.",
+     "literal": "seratus-dua-puluh? saya tidak-saya membeli-andai itu-bagian."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Miksi et? Tarvitsen kotiin kunnon pöydän.",
+     "id": "Kenapa nggak? Aku butuh meja yang layak di rumah.",
+     "literal": "mengapa tidak-kamu? membutuhkan-saya ke-rumah layak meja-sasaran."
+    },
+    {
+     "speaker": "Marek:",
+     "text": "Minä ostin viime vuonna samanlaisen pöydän kirpputorilta. Kolmekymmentä euroa.",
+     "id": "Tahun lalu aku beli meja yang mirip di pasar loak. Tiga puluh euro.",
+     "literal": "saya membeli-lampau lalu pada-tahun serupa-sasaran meja-sasaran dari-pasar-loak. tiga-puluh euro-bagian."
+    },
+    {
+     "speaker": "Myyjä:",
+     "text": "Tämä pöytä on uusi, ja sen korkeutta voi säätää.",
+     "id": "Meja ini baru, dan tingginya bisa disetel.",
+     "literal": "ini meja adalah baru, dan itu-punya tinggi-bagian bisa menyetel."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Hyvä. Otan pöydän. Entä tämä musta tuoli?",
+     "id": "Oke. Saya ambil mejanya. Kalau kursi hitam ini?",
+     "literal": "baik. mengambil-saya meja-sasaran. lalu ini hitam kursi?"
+    },
+    {
+     "speaker": "Myyjä:",
+     "text": "Se on hyvä selälle. Kokeile sitä!",
+     "id": "Itu bagus untuk punggung. Coba saja!",
+     "literal": "itu adalah baik kepada-punggung. cobalah itu-bagian!"
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Mukava! Mutta en osta tuolia tänään. Budjetti ei riitä.",
+     "id": "Nyaman! Tapi saya nggak beli kursi hari ini. Anggarannya nggak cukup.",
+     "literal": "nyaman! tetapi tidak-saya membeli kursi-bagian hari-ini. anggaran tidak cukup."
+    },
+    {
+     "speaker": "Marek:",
+     "text": "Osta edes lamppu. Keittiössä on pimeää kuin luolassa.",
+     "id": "Beli lampu, setidaknya. Dapurmu gelap kayak gua.",
+     "literal": "belilah setidaknya lampu. di-dapur ada gelap-bagian seperti di-gua."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Hyvä idea. Otan tämän lampun ja kaksi polttimoa.",
+     "id": "Ide bagus. Saya ambil lampu ini dan dua bohlam.",
+     "literal": "baik ide. mengambil-saya ini-sasaran lampu-sasaran dan dua bohlam-bagian."
+    },
+    {
+     "speaker": "Myyjä:",
+     "text": "Selvä. Maksatko kortilla?",
+     "id": "Baik. Bayar pakai kartu?",
+     "literal": "jelas. membayar-kah-kamu dengan-kartu?"
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Maksan. Ja tuon tuolin ostan ensi kuussa.",
+     "id": "Iya. Dan kursi itu saya beli bulan depan.",
+     "literal": "membayar-saya. dan itu-sasaran kursi-sasaran membeli-saya berikut pada-bulan."
+    }
+   ],
+   "notes": [
+    "**Otan pöydän** — kalau perbuatan menyentuh **seluruh** benda yang tertentu dan **tuntas**, objeknya berekor **-n** (bentuknya sama dengan genitif): *otan pöydän, otan tämän lampun*. Bahasa Indonesia tak membedakannya; bahasa Finlandia mewajibkannya di setiap objek.",
+    "**Etsin työpöytää** — *etsiä* (mencari) selalu memakai **bagian**, karena mencari tak punya titik selesai dalam dirinya. Sekelompok kata kerja lain bernasib sama: *odottaa, rakastaa, auttaa, kokeilla, ajatella*. Karena itu juga *Kokeile sitä!* — meskipun perintah.",
+    "**En osta tuolia** — sangkalan membuat objek jadi bagian; di tingkat A2 anggap saja ini aturan tanpa pengecualian: *ostan tuolin → en osta tuolia*; *otin sen → en ottanut sitä*. Marek pun memakai *sitä* dalam *en ostaisi sitä*.",
+    "**Osta edes lamppu!** — objek perintah positif memakai **bentuk dasar**, tanpa *-n*: *Osta lamppu! Ota pöytä! Avaa ovi!* Aneh, tapi konsisten. Larangannya — *Älä osta lamppua!* — dibahas di unit 3.",
+    "**Kaksi polttimoa** — sesudah angka dua ke atas (yang berbentuk dasar), bendanya **bagian tunggal**, entah sebagai subjek entah objek. Angka itu sendiri yang menjadi objek total: *otan kaksi polttimoa*.",
+    "**Tuon tuolin ostan ensi kuussa** — objek boleh maju ke depan untuk ditekankan; ekornya tetap. Masa kini + keterangan waktu depan = masa depan, dan objek total menjanjikan kursinya benar-benar akan terbeli."
+   ],
+   "grammars": [
+    {
+     "title": "Satu benda, tujuh situasi",
+     "body": [
+      "Yang menentukan bentuk objek bukan kata bendanya, melainkan **cerita** di balik kalimat."
+     ],
+     "table": {
+      "head": [
+       "Situasi",
+       "Bentuk",
+       "Contoh",
+       "Arti"
+      ],
+      "rows": [
+       [
+        "tuntas, tertentu",
+        "*-n*",
+        "*Ostan auton.*",
+        "Aku (akan) membeli mobil itu."
+       ],
+       [
+        "tuntas, lampau",
+        "*-n*",
+        "*Ostin auton.*",
+        "Aku sudah membeli mobil."
+       ],
+       [
+        "perintah",
+        "dasar",
+        "*Osta auto!*",
+        "Belilah mobil!"
+       ],
+       [
+        "sangkalan",
+        "bagian",
+        "*En osta autoa.*",
+        "Aku tidak membeli mobil."
+       ],
+       [
+        "jumlah tak tentu",
+        "bagian",
+        "*Ostan kahvia.*",
+        "Aku membeli kopi (sejumlah)."
+       ],
+       [
+        "belum selesai",
+        "bagian",
+        "*Luen kirjaa.*",
+        "Aku sedang membaca buku."
+       ],
+       [
+        "selesai",
+        "*-n*",
+        "*Luin kirjan.*",
+        "Aku sudah menamatkan buku itu."
+       ]
+      ]
+     }
+    },
+    {
+     "title": "Kata ganti orang sebagai objek",
+     "body": [
+      "Kata ganti orang punya bentuk total sendiri berekor **-t**: *Heikki tapasi minut aulassa* (Heikki menemuiku di lobi)."
+     ],
+     "table": {
+      "head": [
+       "Kata ganti",
+       "Total",
+       "Bagian"
+      ],
+      "rows": [
+       [
+        "*minä*",
+        "*minut*",
+        "*minua*"
+       ],
+       [
+        "*sinä*",
+        "*sinut*",
+        "*sinua*"
+       ],
+       [
+        "*hän*",
+        "*hänet*",
+        "*häntä*"
+       ],
+       [
+        "*me*",
+        "*meidät*",
+        "*meitä*"
+       ],
+       [
+        "*te*",
+        "*teidät*",
+        "*teitä*"
+       ],
+       [
+        "*he*",
+        "*heidät*",
+        "*heitä*"
+       ],
+       [
+        "*se*",
+        "*sen*",
+        "*sitä*"
+       ]
+      ]
+     },
+     "after": [
+      "Kata benda jamak sebagai objek total memakai **-t**, sama dengan subjek jamak: *ostin lamput* (aku membeli lampu-lampu itu). Bentuk bagian jamaknya (*lamppuja*) datang di unit 5."
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Dialog kedua — Ostin auton!",
+   "intro": "Minggu malam, Aino menelepon lewat video dengan kabar besar. Budi sedang berbaring di sofa dengan sebuah buku tebal di dadanya.",
+   "lines": [
+    {
+     "speaker": "Aino:",
+     "text": "Arvaa mitä! Ostin eilen auton!",
+     "id": "Tebak! Kemarin aku beli mobil!",
+     "literal": "tebaklah apa! membeli-lampau-saya kemarin mobil-sasaran!"
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Oikeasti? Keväällä sinä et tarvinnut autoa.",
+     "id": "Serius? Musim semi kemarin kamu nggak butuh mobil.",
+     "literal": "sungguh? pada-musim-semi kamu tidak-kamu membutuhkan-lampau mobil-bagian."
+    },
+    {
+     "speaker": "Aino:",
+     "text": "Nyt tarvitsen. Toimittaja ajaa joka päivä ympäri Pirkanmaata.",
+     "id": "Sekarang butuh. Wartawan nyetir tiap hari keliling Pirkanmaa.",
+     "literal": "sekarang membutuhkan-saya. wartawan mengemudi setiap hari keliling Pirkanmaa-bagian."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Millaisen auton ostit?",
+     "id": "Mobil yang kayak apa?",
+     "literal": "bagaimana-macam-sasaran mobil-sasaran membeli-lampau-kamu?"
+    },
+    {
+     "speaker": "Aino:",
+     "text": "Vanhan punaisen Toyotan. Isä korjasi jarrut ja vaihtoi renkaat.",
+     "id": "Toyota merah yang sudah tua. Ayah memperbaiki remnya dan mengganti ban-bannya.",
+     "literal": "tua-sasaran merah-sasaran Toyota-sasaran. ayah memperbaiki-lampau rem-jamak dan mengganti-lampau ban-jamak."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Hieno juttu! Minä en osta autoa ikinä. Metro riittää.",
+     "id": "Keren! Aku sih nggak akan pernah beli mobil. Metro sudah cukup.",
+     "literal": "hebat hal! saya tidak-saya membeli mobil-bagian pernah. metro cukup."
+    },
+    {
+     "speaker": "Aino:",
+     "text": "Mitä sinä teet nyt? Kuulostaa hiljaiselta.",
+     "id": "Kamu lagi ngapain? Kedengarannya sepi.",
+     "literal": "apa kamu membuat sekarang? terdengar dari-sepi."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Luen kirjaa. Marek antoi minulle Tuntemattoman sotilaan.",
+     "id": "Baca buku. Marek memberiku Tuntematon sotilas.",
+     "literal": "membaca-saya buku-bagian. Marek memberi-lampau kepada-saya tak-dikenal-sasaran prajurit-sasaran."
+    },
+    {
+     "speaker": "Aino:",
+     "text": "Linnan klassikko! Luitko sen jo loppuun?",
+     "id": "Klasik karya Linna! Sudah kamu baca sampai habis?",
+     "literal": "Linna-punya klasik! membaca-lampau-kah-kamu itu-sasaran sudah ke-akhir?"
+    },
+    {
+     "speaker": "Budi:",
+     "text": "En vielä. Luin sitä eilen kaksi tuntia ja nukahdin kesken.",
+     "id": "Belum. Kemarin kubaca dua jam, lalu ketiduran di tengah jalan.",
+     "literal": "tidak-saya masih. membaca-lampau-saya itu-bagian kemarin dua jam-bagian dan tertidur-lampau-saya di-tengah."
+    },
+    {
+     "speaker": "Aino:",
+     "text": "Tyypillistä! Kun luet sen loppuun, soita minulle.",
+     "id": "Khas! Kalau sudah kamu baca sampai habis, telepon aku.",
+     "literal": "khas-bagian! ketika membaca-kamu itu-sasaran ke-akhir, teleponlah kepada-saya."
+    }
+   ],
+   "notes": [
+    "**Ostin eilen auton** — lampau + objek total = urusannya **selesai**: mobil itu sudah milik Aino. Kalau Aino berkata *Katsoin autoja koko päivän* (seharian aku melihat-lihat mobil), belum ada mobil yang terbeli.",
+    "**Millaisen auton? — Vanhan punaisen Toyotan** — kata tanya dan kata sifat ikut ekor bendanya. Tiga kata, tiga ekor *-n*; jawaban Aino tetap berbentuk objek meski kata kerjanya tidak diulang.",
+    "**Korjasi jarrut, vaihtoi renkaat** — objek total jamak memakai **-t**: semua rem, semua ban. Ayah Aino, Timo, memang sopir trem, tetapi mobil keluarga ia perbaiki sendiri.",
+    "**Luen kirjaa — luin sen loppuun** — contoh paling jelas: sedang membaca atau sempat membaca sebagian = **bagian** (*luen kirjaa, luin sitä kaksi tuntia*); sampai tamat = **total** (*luin kirjan, luin sen loppuun*). *Loppuun* (ke ujung) menegaskan ketuntasan.",
+    "**En osta autoa ikinä** — *ikinä* dan *koskaan* (pernah) hampir selalu muncul bersama sangkalan, jadi objeknya otomatis **bagian**.",
+    "**Tuntematon sotilas** — novel perang karya Väinö Linna (1954), salah satu buku paling terkenal di Finlandia. Film versi 1955 (Edvin Laine) sudah berkali-kali diputar di televisi pada Hari Kemerdekaan, 6 Desember — hampir menjadi tradisi."
+   ],
+   "grammars": [
+    {
+     "title": "Total atau bagian? Tanya dari atas",
+     "body": [
+      "Jawab pertanyaan berikut berurutan. Pertanyaan pertama yang dijawab \"ya\" menentukan bentuknya."
+     ],
+     "table": {
+      "head": [
+       "Pertanyaan",
+       "Kalau ya",
+       "Contoh"
+      ],
+      "rows": [
+       [
+        "Kalimatnya disangkal?",
+        "bagian",
+        "*En lukenut kirjaa.*"
+       ],
+       [
+        "Kata kerjanya selalu bagian (*etsiä, odottaa…*)?",
+        "bagian",
+        "*Odotan bussia.*"
+       ],
+       [
+        "Jumlahnya tak tentu atau tak terhitung?",
+        "bagian",
+        "*Ostin maitoa.*"
+       ],
+       [
+        "Perbuatannya belum selesai?",
+        "bagian",
+        "*Luin kirjaa tunnin.*"
+       ],
+       [
+        "Semua jawaban tidak?",
+        "total",
+        "*Luin kirjan. Osta kirja!*"
+       ]
+      ]
+     },
+     "after": [
+      "⚠️ **Satu kalimat bisa memuat dua nasib:** *Ostin leivän ja maitoa.* — rotinya satu buah utuh (total), susunya tak terhitung (bagian). Setiap objek diperiksa sendiri-sendiri.",
+      "Urutan ini sengaja menaruh sangkalan paling atas: begitu ada *en, et, ei*, pertanyaan lain tak perlu dijawab lagi."
+     ]
+    }
+   ]
+  }
+ ],
+ "sections": [
+  {
+   "title": "Empat alasan memakai bentuk bagian",
+   "blocks": [
+    {
+     "type": "p",
+     "text": "Bahasa Indonesia berkata \"aku makan apel\" untuk semua keadaan. Bahasa Finlandia memaksa kamu memilih: apelnya habis atau tidak, satu buah utuh atau sebagian, jadi dimakan atau tidak. Empat alasan berikut menutup hampir semua kalimat yang akan kamu buat di A2."
+    },
+    {
+     "type": "tabel",
+     "head": [
+      "Alasan",
+      "Total",
+      "Bagian"
+     ],
+     "rows": [
+      [
+       "sangkalan",
+       "*Söin omenan.*",
+       "*En syönyt omenaa.*"
+      ],
+      [
+       "jumlah tak tentu",
+       "*Otin leivän.* (satu roti utuh)",
+       "*Otin leipää.* (sebagian roti)"
+      ],
+      [
+       "belum selesai",
+       "*Kirjoitin kirjeen.*",
+       "*Kirjoitin kirjettä koko illan.*"
+      ],
+      [
+       "kata kerja partitif",
+       "—",
+       "*Rakastan sinua. Autan äitiä.*"
+      ]
+     ]
+    },
+    {
+     "type": "p",
+     "text": "Alasan ketiga paling sulit karena bahasa Indonesia tak punya tandanya. Uji dengan pertanyaan: \"sudah jadi belum?\" *Kirjoitin kirjeen* — suratnya sudah jadi. *Kirjoitin kirjettä koko illan* — semalaman aku menulis surat, entah selesai entah tidak. Keterangan lamanya waktu (*koko illan, tunnin*) biasanya menarik objek ke bentuk bagian."
+    },
+    {
+     "type": "kotak",
+     "title": "Membeli perabot di Finlandia",
+     "items": [
+      "*Kirpputori* (pasar loak, akrab disebut *kirppis*) dan toko barang bekas adalah tempat orang Finlandia membeli perabot murah tanpa gengsi.",
+      "Perabot baru biasanya dijual terurai dalam kardus; antar ke rumah (*kotiinkuljetus*) dibayar terpisah.",
+      "Meja yang tingginya bisa disetel (*sähköpöytä*) lazim di kantor, dan banyak perusahaan meminjamkan kursi serta layar untuk *etätyö* (kerja dari rumah).",
+      "Perabot besar tak boleh ditinggal di tempat sampah biasa — bawa ke tempat daur ulang atau jual lagi."
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Kata kerja yang selalu memakai bagian",
+   "blocks": [
+    {
+     "type": "p",
+     "text": "Kata kerja berikut menuntut objek bentuk **bagian** apa pun ceritanya — selesai atau belum, positif atau negatif, bahkan dalam perintah. Hampir semuanya menggambarkan perasaan, usaha, atau kegiatan tanpa titik akhir."
+    },
+    {
+     "type": "tabel",
+     "head": [
+      "Kata kerja",
+      "Arti",
+      "Contoh"
+     ],
+     "rows": [
+      [
+       "*rakastaa*",
+       "mencintai",
+       "*Rakastan sinua.*"
+      ],
+      [
+       "*odottaa*",
+       "menunggu",
+       "*Odotin bussia.*"
+      ],
+      [
+       "*auttaa*",
+       "membantu",
+       "*Autoin Lauraa.*"
+      ],
+      [
+       "*etsiä*",
+       "mencari",
+       "*Etsin avainta.*"
+      ],
+      [
+       "*ajatella*",
+       "memikirkan",
+       "*Ajattelen sinua.*"
+      ],
+      [
+       "*kokeilla*",
+       "mencoba",
+       "*Kokeile tätä!*"
+      ],
+      [
+       "*kiittää*",
+       "berterima kasih",
+       "*Kiitän teitä.*"
+      ],
+      [
+       "*opiskella*",
+       "mempelajari",
+       "*Opiskelen suomea.*"
+      ],
+      [
+       "*soittaa*",
+       "memainkan (alat musik)",
+       "*Soitan kitaraa.*"
+      ],
+      [
+       "*pelata*",
+       "memainkan (olahraga, gim)",
+       "*Pelaan jalkapalloa.*"
+      ]
+     ]
+    },
+    {
+     "type": "p",
+     "text": "Perhatikan *Kokeile tätä!* dan *Autoin Lauraa*. Aturan \"objek perintah memakai bentuk dasar\" dan \"lampau yang tuntas memakai *-n*\" hanya berlaku untuk objek yang **bisa** menjadi total. Pada kata kerja di tabel ini objeknya tak pernah total, jadi bentuk bagian bertahan di semua kala dan semua modus: *Odota minua!* (Tunggu aku!), *Odotin sinua tunnin* (Aku menunggumu sejam). Kalau ragu, bayangkan versi Indonesianya dengan kata \"terus\": menunggu terus, mencintai terus, mencari terus — kalau masuk akal, besar kemungkinan kata kerjanya partitif."
+    },
+    {
+     "type": "kotak",
+     "title": "Jebakan untuk penutur Indonesia",
+     "items": [
+      "\"Aku menunggumu\" = *Odotan sinua*, bukan *odotan sinut*.",
+      "\"Aku membantu Aino\" = *Autan Ainoa* — nama diri pun ikut berbentuk bagian.",
+      "*Haluan kahvia* (aku mau kopi, sejumlah) lawan *Haluan tämän kahvin* (aku mau kopi yang ini).",
+      "\"Sampai habis\" bisa dipaksakan dengan *loppuun*: *Söin ruoan loppuun.* (Kuhabiskan makanannya.)"
+     ]
+    }
+   ]
+  }
+ ],
+ "vocab": [
+  {
+   "fi": "huonekalu",
+   "baca": "HUO-ne-ka-lu",
+   "id": "perabot"
+  },
+  {
+   "fi": "työpöytä",
+   "baca": "TÜÖ-pöü-tè",
+   "id": "meja kerja (gen. *työpöydän*)"
+  },
+  {
+   "fi": "tuoli",
+   "baca": "TUO-li",
+   "id": "kursi"
+  },
+  {
+   "fi": "etsiä",
+   "baca": "ET-si-è",
+   "id": "mencari (+ partitif)"
+  },
+  {
+   "fi": "maksaa",
+   "baca": "MAK-saa",
+   "id": "membayar; berharga (*maksan, maksoin*)"
+  },
+  {
+   "fi": "kirpputori",
+   "baca": "KIRP-pu-to-ri",
+   "id": "pasar loak (gen. *kirpputorin*)"
+  },
+  {
+   "fi": "samanlainen",
+   "baca": "SA-man-lai-nen",
+   "id": "serupa, mirip (gen. *samanlaisen*)"
+  },
+  {
+   "fi": "korkeus",
+   "baca": "KOR-keus",
+   "id": "tinggi, ketinggian (gen. *korkeuden*)"
+  },
+  {
+   "fi": "säätää",
+   "baca": "SÈÈ-tèè",
+   "id": "menyetel (*säädän, säädin*)"
+  },
+  {
+   "fi": "kokeilla",
+   "baca": "KO-keil-la",
+   "id": "mencoba (+ partitif; *kokeilen*)"
+  },
+  {
+   "fi": "selkä",
+   "baca": "SEL-kè",
+   "id": "punggung (gen. *selän*)"
+  },
+  {
+   "fi": "riittää",
+   "baca": "RIIT-tèè",
+   "id": "cukup (*riitän, riitin*)"
+  },
+  {
+   "fi": "lamppu",
+   "baca": "LAMP-pu",
+   "id": "lampu (gen. *lampun*)"
+  },
+  {
+   "fi": "polttimo",
+   "baca": "POLT-ti-mo",
+   "id": "bohlam"
+  },
+  {
+   "fi": "arvata",
+   "baca": "AR-va-ta",
+   "id": "menebak (*arvaan, arvasin*)"
+  },
+  {
+   "fi": "toimittaja",
+   "baca": "TOI-mit-ta-ya",
+   "id": "wartawan"
+  },
+  {
+   "fi": "ympäri",
+   "baca": "ÜM-pè-ri",
+   "id": "keliling (+ partitif: *ympäri kaupunkia*)"
+  },
+  {
+   "fi": "korjata",
+   "baca": "KOR-ya-ta",
+   "id": "memperbaiki (*korjaan, korjasin*)"
+  },
+  {
+   "fi": "jarru",
+   "baca": "YAR-ru",
+   "id": "rem"
+  },
+  {
+   "fi": "vaihtaa",
+   "baca": "VAIH-taa",
+   "id": "mengganti, menukar (*vaihdan, vaihdoin*)"
+  },
+  {
+   "fi": "rengas",
+   "baca": "REN-gas",
+   "id": "ban (gen. *renkaan*)"
+  },
+  {
+   "fi": "ikinä",
+   "baca": "I-ki-nè",
+   "id": "pernah (dengan sangkalan: tak pernah)"
+  },
+  {
+   "fi": "loppuun",
+   "baca": "LOP-puun",
+   "id": "sampai habis, sampai tamat"
+  },
+  {
+   "fi": "nukahtaa",
+   "baca": "NU-kah-taa",
+   "id": "tertidur (*nukahdan, nukahdin*)"
+  },
+  {
+   "fi": "kesken",
+   "baca": "KES-ken",
+   "id": "di tengah jalan, belum selesai"
+  }
+ ],
+ "exercises": [
+  {
+   "prompt": "Terjemahkan ke bahasa Finlandia.",
+   "items": [
+    "Aku mencari meja kerja.",
+    "Aku ambil lampu ini.",
+    "Aku tidak membeli kursi hari ini.",
+    "Belilah lampu! (*sinä*)",
+    "Aino membeli mobil kemarin.",
+    "Aku sedang membaca buku."
+   ]
+  },
+  {
+   "prompt": "Isi dengan objek dalam bentuk yang tepat.",
+   "items": [
+    "Ostin eilen uuden ____. (tuoli)",
+    "En juo ____. (kahvi)",
+    "Odotan ____ pysäkillä. (bussi)",
+    "Ota ____! (takki)",
+    "Luin ____ loppuun. (kirja)",
+    "Heikki tapasi ____ aulassa. (minä)",
+    "Rakastan ____. (sinä)"
+   ]
+  },
+  {
+   "prompt": "Ubah ke kalimat sangkal (perhatikan objeknya).",
+   "items": [
+    "Ostin auton.",
+    "Luen kirjan huomenna.",
+    "Hän söi omenan.",
+    "Me otamme taksin.",
+    "Tapasin hänet.",
+    "He maksoivat laskun."
+   ]
+  },
+  {
+   "prompt": "Susun jadi kalimat yang benar.",
+   "items": [
+    "pöydän / otan / tämän",
+    "tuolia / osta / en / tänään",
+    "bussia / odotin / tunnin",
+    "auton / ostin / eilen",
+    "sen / luin / loppuun"
+   ]
+  }
+ ],
+ "answers": [
+  "Etsin työpöytää. — Otan tämän lampun. — En osta tuolia tänään. — Osta lamppu! — Aino osti eilen auton. — Luen kirjaa.",
+  "tuolin — kahvia — bussia — takki — kirjan — minut — sinua",
+  "En ostanut autoa. — En lue kirjaa huomenna. — Hän ei syönyt omenaa. — Me emme ota taksia. — En tavannut häntä. — He eivät maksaneet laskua.",
+  "Otan tämän pöydän. — En osta tuolia tänään. — Odotin bussia tunnin. — Ostin eilen auton. — Luin sen loppuun."
+ ]
+}

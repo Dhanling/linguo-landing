@@ -1,0 +1,729 @@
+{
+ "title": "Kemarin dikerjakan — pasif lampau",
+ "title_target": "Mitä kokouksessa päätettiin?",
+ "goal": "Melaporkan apa yang sudah diputuskan, dibicarakan, dan dikerjakan tanpa perlu menyebut siapa pelakunya — dengan pasif lampau *puhuttiin, päätettiin, ei kysytty* — lalu memakai pasif perfek *on tehty* untuk hasil yang masih terasa sekarang.",
+ "bekal": [
+  "membentuk pasif lampau dari pasif kini: *puhutaan → puhuttiin, tehdään → tehtiin*, dan sangkalannya *ei puhuttu*",
+  "memilih bentuk objek dalam kalimat pasif: *Pullat syötiin*, *Kahvia juotiin*, *Sinut valittiin*",
+  "memakai pasif perfek *on aurattu, on julkaistu* dan memahami judul serta kalimat berita sederhana"
+ ],
+ "dialogs": [
+  {
+   "title": "Dialog — Mitä palaverissa päätettiin?",
+   "intro": "Kamis pagi, 28 Januari. Kemarin Budi sakit dan tidak ikut rapat tim mingguan. Laura membuka catatan rapat, dan Heikki mendengarkan dari mejanya sambil pura-pura sibuk.",
+   "lines": [
+    {
+     "speaker": "Budi:",
+     "text": "Huomenta! Olin eilen kipeänä. Mitä palaverissa päätettiin?",
+     "id": "Pagi! Kemarin aku sakit. Di rapat diputuskan apa saja?",
+     "literal": "pagi! adalah-lampau-saya kemarin sebagai-sakit. apa-bagian di-rapat di-putuskan-lampau?"
+    },
+    {
+     "speaker": "Laura:",
+     "text": "Paljon asioita. Ensin puhuttiin uudesta asiakkaasta, Espoon kaupungista.",
+     "id": "Banyak. Pertama dibahas klien baru, Kota Espoo.",
+     "literal": "banyak hal-jamak-bagian. mula-mula di-bicarakan-lampau baru-dari klien-dari, Espoo-punya dari-kota."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Espoon kaupunki? Mistä projektista on kyse?",
+     "id": "Kota Espoo? Proyek apa?",
+     "literal": "Espoo-punya kota? dari-apa dari-proyek ada perkara?"
+    },
+    {
+     "speaker": "Laura:",
+     "text": "Kolmen vanhan koulun lämmityksestä. Sinun raporttisi luettiin siellä tarkasti.",
+     "id": "Soal pemanas tiga sekolah tua. Laporanmu dibaca dengan teliti di sana.",
+     "literal": "tiga-punya tua-punya sekolah-punya dari-pemanasan. kamu-punya laporan-mu di-baca-lampau di-sana dengan-teliti."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Entä aikataulu? Sovittiinko siitä jo?",
+     "id": "Jadwalnya gimana? Sudah disepakati?",
+     "literal": "dan-bagaimana jadwal? di-sepakati-lampau-kah dari-itu sudah?"
+    },
+    {
+     "speaker": "Laura:",
+     "text": "Sovittiin. Työt aloitetaan kesäkuussa, kun koulut ovat kiinni.",
+     "id": "Sudah. Pekerjaannya dimulai bulan Juni, waktu sekolah libur.",
+     "literal": "di-sepakati-lampau. kerja-jamak di-mulai pada-Juni, ketika sekolah-jamak adalah tertutup."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Kenet valittiin projektin vetäjäksi?",
+     "id": "Siapa yang dipilih jadi pemimpin proyeknya?",
+     "literal": "siapa-sasaran di-pilih-lampau proyek-punya menjadi-pemimpin?"
+    },
+    {
+     "speaker": "Laura:",
+     "text": "Heikki. Ja sinut valittiin tiimiin!",
+     "id": "Heikki. Dan kamu dipilih masuk timnya!",
+     "literal": "Heikki. dan kamu-sasaran di-pilih-lampau ke-tim!"
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Minut? Minulta ei edes kysytty!",
+     "id": "Aku? Aku bahkan nggak ditanya!",
+     "literal": "saya-sasaran? dari-saya tidak bahkan di-tanya-lampau!"
+    },
+    {
+     "speaker": "Heikki:",
+     "text": "Ei kysytty, koska sinä et ollut paikalla. Onneksi olkoon.",
+     "id": "Nggak ditanya karena kamu nggak ada. Selamat ya.",
+     "literal": "tidak di-tanya-lampau, karena kamu tidak-kamu adalah-lampau di-tempat. menjadi-untung hendaklah-ada."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Kiitos! Mitä muuta palaverissa tehtiin?",
+     "id": "Makasih! Di rapat ngapain lagi?",
+     "literal": "terima-kasih! apa-bagian lain-bagian di-rapat di-lakukan-lampau?"
+    },
+    {
+     "speaker": "Laura:",
+     "text": "Juotiin kahvia ja syötiin Eilan pullaa. Sinä toit sitä tiistaina, muistatko?",
+     "id": "Minum kopi dan makan pulla buatan Eila. Kamu yang bawa hari Selasa, ingat?",
+     "literal": "di-minum-lampau kopi-bagian dan di-makan-lampau Eila-punya roti-manis-bagian. kamu membawa-lampau itu-bagian pada-Selasa, ingat-kah-kamu?"
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Eli kaikki pullat syötiin ilman minua?",
+     "id": "Jadi semua pulla habis dimakan tanpa aku?",
+     "literal": "jadi semua roti-manis-jamak di-makan-lampau tanpa saya-bagian?"
+    },
+    {
+     "speaker": "Heikki:",
+     "text": "Ei kaikkia. Yksi säästettiin sinulle. Se on jääkaapissa.",
+     "id": "Nggak semua. Satu disisakan buat kamu. Ada di kulkas.",
+     "literal": "tidak semua-bagian. satu di-simpan-lampau kepada-kamu. itu ada di-kulkas."
+    }
+   ],
+   "notes": [
+    "**Päätettiin, puhuttiin, sovittiin** — pasif lampau. Ia diturunkan dari pasif kini (unit 6): *puhutaan → puhuttiin, päätetään → päätettiin, syödään → syötiin*. Siapa yang memutuskan tidak disebut — semua orang di rapat, dan itu tidak penting. Persis seperti \"di-\" dalam bahasa Indonesia.",
+    "**Selalu -iin.** Ekor pasif lampau tidak berisi *a/ä*, jadi keselarasan vokal tidak berlaku: *puhuttiin* dan *päätettiin* sama-sama *-iin*. Satu hal yang tidak perlu kamu pikirkan.",
+    "**Ei kysytty** — sangkalan pasif lampau adalah *ei* + bentuk *-ttu/-tty*: *ei puhuttu, ei tehty, ei kysytty*. Kata sangkalnya selalu *ei*, tidak pernah *emme* atau *eivät*, karena pasif tidak punya pelaku.",
+    "⚠️ **Sinut valittiin, kenet valittiin?** Dalam kalimat pasif, objek biasanya berbentuk dasar (*Pullat syötiin*), tetapi **kata ganti orang tetap berekor -t**: *minut, sinut, hänet, meidät, teidät, heidät, kenet*. Nama orang tidak: *Budi valittiin tiimiin.*",
+    "**Minulta ei kysytty** — *kysyä* (bertanya) memakai ekor *-lta/-ltä* untuk orang yang ditanya: *kysyä Lauralta*, harfiah \"bertanya dari Laura\". Bahasa Indonesia berkata \"tanya **ke** Laura\"; arahnya berlawanan.",
+    "**Mistä on kyse?** — \"Soal apa ini?\" *Puhua* dan *kyse* memakai ekor \"dari\": *puhuttiin asiakkaasta, kyse on lämmityksestä*. Ungkapan *Onneksi olkoon* (selamat!) harus dihafal utuh."
+   ],
+   "grammars": [
+    {
+     "title": "Pasif lampau: -tiin / -ttiin",
+     "body": [
+      "Kolom kedua kamu kenal dari unit 6. Kolom ketiga diturunkan darinya; kolom keempat adalah sangkalannya."
+     ],
+     "table": {
+      "head": [
+       "Kamus",
+       "Pasif kini",
+       "Pasif lampau",
+       "Sangkalan lampau"
+      ],
+      "rows": [
+       [
+        "*puhua*",
+        "puhutaan",
+        "puhu**ttiin**",
+        "ei puhu**ttu**"
+       ],
+       [
+        "*sopia*",
+        "sovitaan",
+        "sovi**ttiin**",
+        "ei sovi**ttu**"
+       ],
+       [
+        "*päättää*",
+        "päätetään",
+        "päätet**tiin**",
+        "ei päätet**ty**"
+       ],
+       [
+        "*säästää*",
+        "säästetään",
+        "säästet**tiin**",
+        "ei säästet**ty**"
+       ],
+       [
+        "*syödä*",
+        "syödään",
+        "syö**tiin**",
+        "ei syö**ty**"
+       ],
+       [
+        "*juoda*",
+        "juodaan",
+        "juo**tiin**",
+        "ei juo**tu**"
+       ],
+       [
+        "*tehdä*",
+        "tehdään",
+        "teh**tiin**",
+        "ei teh**ty**"
+       ],
+       [
+        "*mennä*",
+        "mennään",
+        "men**tiin**",
+        "ei men**ty**"
+       ],
+       [
+        "*tulla*",
+        "tullaan",
+        "tul**tiin**",
+        "ei tul**tu**"
+       ],
+       [
+        "*valita*",
+        "valitaan",
+        "vali**ttiin**",
+        "ei vali**ttu**"
+       ],
+       [
+        "*tavata*",
+        "tavataan",
+        "tava**ttiin**",
+        "ei tava**ttu**"
+       ],
+       [
+        "*kysyä*",
+        "kysytään",
+        "kysy**ttiin**",
+        "ei kysy**tty**"
+       ]
+      ]
+     },
+     "after": [
+      "**Aturan praktis:** kalau sebelum *-taan/-tään* ada vokal (*puhu-taan, päätetään, tava-taan, vali-taan*), lampaunya *-ttiin* dengan *tt*. Kalau pasif kininya *-daan/-dään* (golongan 2) atau huruf mati + *-aan* (*tullaan, mennään, noustaan*; golongan 3), lampaunya *-tiin*: *syötiin, tultiin, mentiin, noustiin*.",
+      "Batang pasif golongan 1 selalu **lemah**, dan tetap lemah di masa lampau: *sopia → sovitaan → sovittiin*, *ottaa → otetaan → otettiin*."
+     ]
+    },
+    {
+     "title": "Objek dalam kalimat pasif",
+     "body": [
+      "Kalimat pasif tidak punya subjek, jadi bendanya tetap objek — dan aturan objek total atau partitif (unit 2) tetap berlaku."
+     ],
+     "table": {
+      "head": [
+       "Kalimat",
+       "Bentuk objek",
+       "Alasannya"
+      ],
+      "rows": [
+       [
+        "*Kaikki pullat syötiin.*",
+        "dasar (jamak *-t*)",
+        "habis seluruhnya"
+       ],
+       [
+        "*Kahvia juotiin.*",
+        "partitif",
+        "sebagian, jumlah tak tentu"
+       ],
+       [
+        "*Pullia ei syöty.*",
+        "partitif",
+        "sangkalan"
+       ],
+       [
+        "*Sinut valittiin.*",
+        "*-t*",
+        "kata ganti orang"
+       ],
+       [
+        "*Budi valittiin tiimiin.*",
+        "dasar",
+        "nama dan kata benda"
+       ]
+      ]
+     }
+    }
+   ]
+  },
+  {
+   "title": "Dialog kedua — Kadut on jo aurattu",
+   "intro": "Jumat malam, 29 Januari. Kemarin badai salju melanda Tampere, dan Aino menulis beritanya. Ia menelepon Budi, yang pulang kerja naik metro.",
+   "lines": [
+    {
+     "speaker": "Aino:",
+     "text": "Hei Budi! Oletko lukenut minun juttuni? Se on julkaistu tänään netissä.",
+     "id": "Hai Budi! Sudah baca beritaku? Hari ini sudah terbit online.",
+     "literal": "hai Budi! adalah-kah-kamu membaca-sudah saya-punya berita-ku-sasaran? itu adalah di-terbitkan-sudah hari-ini di-internet."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Luin sen metrossa! Tampereella satoi eilen neljäkymmentä senttiä lunta?",
+     "id": "Aku baca di metro! Di Tampere kemarin turun salju empat puluh senti?",
+     "literal": "membaca-lampau-saya itu-sasaran di-metro! di-atas-Tampere turun-lampau kemarin empat-puluh senti-bagian salju-bagian?"
+    },
+    {
+     "speaker": "Aino:",
+     "text": "Niin. Koulut suljettiin, ja ratikat pysäytettiin koko päiväksi.",
+     "id": "Iya. Sekolah-sekolah ditutup, dan trem dihentikan seharian.",
+     "literal": "begitu. sekolah-jamak di-tutup-lampau, dan trem-jamak di-hentikan-lampau seluruh menjadi-hari."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Entä tänään? Onko kadut jo aurattu?",
+     "id": "Hari ini gimana? Jalannya sudah dibersihkan dari salju?",
+     "literal": "dan-bagaimana hari-ini? adalah-kah jalan-jamak sudah di-bajak-salju-sudah?"
+    },
+    {
+     "speaker": "Aino:",
+     "text": "Keskustan kadut on jo aurattu. Ratikat on saatu taas liikkeelle.",
+     "id": "Jalan-jalan di pusat kota sudah bersih. Trem sudah jalan lagi.",
+     "literal": "pusat-kota-punya jalan-jamak adalah sudah di-bajak-salju-sudah. trem-jamak adalah di-dapat-sudah lagi ke-gerakan."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Entä isäsi? Hän ajaa ratikkaa, eikö?",
+     "id": "Ayahmu gimana? Dia masinis trem, kan?",
+     "literal": "dan-bagaimana ayah-mu? dia mengendarai trem-bagian, tidak-kah?"
+    },
+    {
+     "speaker": "Aino:",
+     "text": "Ajaa. Hän oli eilen töissä kaksitoista tuntia. Häntä on haastateltu jo kahdesti!",
+     "id": "Iya. Kemarin dia kerja dua belas jam. Dia sudah diwawancarai dua kali!",
+     "literal": "mengendarai. dia adalah-lampau kemarin di-kerja dua-belas jam-bagian. dia-bagian adalah di-wawancarai-sudah sudah dua-kali!"
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Mahtavaa! Onko sinun juttuasi luettu paljon?",
+     "id": "Keren! Beritamu banyak dibaca?",
+     "literal": "hebat-bagian! adalah-kah kamu-punya berita-mu-bagian di-baca-sudah banyak?"
+    },
+    {
+     "speaker": "Aino:",
+     "text": "On! Sitä on jaettu sosiaalisessa mediassa jo tuhat kertaa.",
+     "id": "Iya! Sudah dibagikan seribu kali di media sosial.",
+     "literal": "adalah! itu-bagian adalah di-bagikan-sudah di-sosial di-media sudah seribu kali-bagian."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Onneksi olkoon, toimittaja! Minut on myös valittu uuteen projektiin!",
+     "id": "Selamat, Bu Wartawan! Aku juga dipilih masuk proyek baru!",
+     "literal": "menjadi-untung hendaklah-ada, wartawan! saya-sasaran adalah juga di-pilih-sudah ke-baru ke-proyek!"
+    },
+    {
+     "speaker": "Aino:",
+     "text": "Mitä? Kerro heti kaikki!",
+     "id": "Apa? Ceritain semuanya sekarang juga!",
+     "literal": "apa? ceritakanlah segera semua!"
+    }
+   ],
+   "notes": [
+    "**On julkaistu, on aurattu** — pasif perfek: *on* + bentuk *-ttu/-tty*, bentuk yang sama dengan sangkalan pasif lampau. Seperti perfek biasa (unit 7), ia menyatakan hasil yang masih terasa sekarang: beritanya sudah terbit dan masih bisa dibaca, jalannya sudah bersih sekarang.",
+    "⚠️ **Kadut on aurattu**, bukan *ovat*. Dalam pasif perfek, kata kerja bantunya selalu *on*, meskipun bendanya jamak: *Ratikat on saatu liikkeelle.* Kamu akan melihat *ovat auratut* di koran, tetapi itu menggambarkan keadaan (\"jalan-jalannya dalam keadaan terbajak\"), bukan pasif.",
+    "**Häntä on haastateltu, juttuasi on luettu** — objek partitif tetap partitif di pasif: *haastatella* dan *lukea* (membaca yang belum tuntas atau berulang) meminta partitif. Pertanyaannya bukan \"berapa orang\", melainkan \"apakah perbuatannya tuntas\".",
+    "**Koko päiväksi** — translatif dari unit 12 untuk rentang waktu yang direncanakan: \"untuk seharian penuh\". Bandingkan *koko päivän* (sepanjang hari, yang sudah terjadi).",
+    "**Ratikka** — sebutan sehari-hari untuk trem (*raitiovaunu* resminya). Tampere punya trem sejak 2021, dan ayah Aino, Timo, salah satu masinisnya. *Ajaa ratikkaa* memakai partitif karena mengemudi adalah kegiatan yang berlangsung.",
+    "**Toimittaja** — wartawan. Budi memanggil Aino dengan profesinya sambil bercanda, seperti kita berkata \"Bu Wartawan\"."
+   ],
+   "grammars": [
+    {
+     "title": "Tiga kala pasif dalam satu tabel",
+     "body": [
+      "Dua kata kerja, tiga kala, positif dan sangkal. Perhatikan objek yang berubah jadi partitif di kolom sangkalan."
+     ],
+     "table": {
+      "head": [
+       "Kala",
+       "Positif",
+       "Sangkalan",
+       "Arti"
+      ],
+      "rows": [
+       [
+        "kini",
+        "*Kadut aurataan.*",
+        "*Katuja ei aurata.*",
+        "jalan (tidak) dibersihkan"
+       ],
+       [
+        "lampau",
+        "*Kadut aurattiin.*",
+        "*Katuja ei aurattu.*",
+        "jalan (tidak) dibersihkan kemarin"
+       ],
+       [
+        "perfek",
+        "*Kadut on aurattu.*",
+        "*Katuja ei ole aurattu.*",
+        "jalan sudah (belum) dibersihkan"
+       ],
+       [
+        "kini",
+        "*Työ tehdään.*",
+        "*Työtä ei tehdä.*",
+        "pekerjaan (tidak) dikerjakan"
+       ],
+       [
+        "lampau",
+        "*Työ tehtiin.*",
+        "*Työtä ei tehty.*",
+        "pekerjaan (tidak) dikerjakan dulu"
+       ],
+       [
+        "perfek",
+        "*Työ on tehty.*",
+        "*Työtä ei ole tehty.*",
+        "pekerjaan sudah (belum) dikerjakan"
+       ]
+      ]
+     },
+     "after": [
+      "Sangkalan perfek hanya menyisipkan *ole*: *ei ole tehty*. Bentuk *-ttu/-tty* dipakai di dua tempat — sangkalan lampau dan perfek — jadi sekali kamu menguasainya, kamu mendapat dua kala sekaligus."
+     ]
+    }
+   ]
+  }
+ ],
+ "sections": [
+  {
+   "title": "Bahasa berita",
+   "blocks": [
+    {
+     "type": "tabel",
+     "head": [
+      "Suomi",
+      "Cara baca",
+      "Bahasa Indonesia"
+     ],
+     "rows": [
+      [
+       "uutiset",
+       "UU-ti-set",
+       "berita (siaran, rubrik)"
+      ],
+      [
+       "uutinen",
+       "UU-ti-nen",
+       "sebuah berita"
+      ],
+      [
+       "juttu",
+       "YUT-tu",
+       "tulisan, artikel (sehari-hari)"
+      ],
+      [
+       "otsikko",
+       "OT-sik-ko",
+       "judul"
+      ],
+      [
+       "toimittaja",
+       "TOI-mit-ta-ya",
+       "wartawan, redaktur"
+      ],
+      [
+       "sanomalehti",
+       "SA-no-ma-leh-ti",
+       "surat kabar"
+      ],
+      [
+       "tiedote",
+       "TIE-do-te",
+       "siaran pers, pengumuman"
+      ],
+      [
+       "julkaista",
+       "YUL-kais-ta",
+       "menerbitkan"
+      ],
+      [
+       "haastatella",
+       "HAAS-ta-tel-la",
+       "mewawancarai"
+      ],
+      [
+       "kertoa",
+       "KER-to-a",
+       "menceritakan, melaporkan"
+      ]
+     ]
+    },
+    {
+     "type": "p",
+     "text": "Berita Finlandia penuh pasif, karena yang penting adalah kejadiannya, bukan siapa yang mengerjakan: *Tampereella suljettiin eilen kaikki koulut. Kadut on aurattu, mutta liikenne on yhä hidasta.* Judul berita punya kebiasaan sendiri: ia sering memakai **masa kini** untuk kejadian yang sudah lewat, supaya terasa hangat: *Lumimyrsky sulkee koulut Tampereella* (badai salju menutup sekolah-sekolah di Tampere). Sumber berita disebut dengan *mukaan* dari unit 11: *Poliisin mukaan kukaan ei loukkaantunut* (menurut polisi, tak seorang pun terluka)."
+    },
+    {
+     "type": "kotak",
+     "title": "Berita dalam bahasa Finlandia yang disederhanakan",
+     "items": [
+      "*Yle*, lembaga penyiaran publik Finlandia, menerbitkan *Yle Uutiset selkosuomeksi* setiap hari: berita pendek dalam *selkosuomi*, bahasa Finlandia yang sengaja disederhanakan. Bahan latihan terbaik untuk tingkat A2.",
+      "Cara memakainya: baca judulnya dulu dan tebak isinya, lalu baca beritanya dan garis bawahi setiap kata kerja pasif.",
+      "Kata kerja pelapor yang sering: *kertoa* (melaporkan), *sanoa* (berkata), *arvioida* (memperkirakan), *vahvistaa* (mengonfirmasi).",
+      "*Säätiedotus* (prakiraan cuaca) di akhir siaran berita juga latihan yang baik: kalimatnya pendek dan berulang setiap hari."
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Pasif lampau dalam percakapan",
+   "blocks": [
+    {
+     "type": "tabel",
+     "head": [
+      "Baku",
+      "Lisan (sehari-hari)",
+      "Bahasa Indonesia"
+     ],
+     "rows": [
+      [
+       "*Me menimme elokuviin.*",
+       "*Me mentiin leffaan.*",
+       "Kami pergi nonton."
+      ],
+      [
+       "*Me söimme pizzaa.*",
+       "*Me syötiin pizzaa.*",
+       "Kami makan pizza."
+      ],
+      [
+       "*Me emme tehneet mitään.*",
+       "*Me ei tehty mitään.*",
+       "Kami tidak ngapa-ngapain."
+      ],
+      [
+       "*Tapasimme kahvilassa.*",
+       "*Me tavattiin kahvilassa.*",
+       "Kami ketemu di kafe."
+      ]
+     ]
+    },
+    {
+     "type": "p",
+     "text": "Di unit 6 kamu melihat bahwa orang Finlandia dalam percakapan memakai pasif untuk \"kami\": *me mennään*. Pasif lampau bekerja sama persis: *me mentiin, me syötiin*. Dalam cerita lisan hampir semua orang berbicara begini, dan kamu akan mendengarnya dari Aino, Laura, dan Marek setiap kali mereka bercerita tentang akhir pekan. Dalam tulisan resmi, surel ke klien, atau ujian, tetap pakai bentuk baku *menimme, söimme*. Seluruh ragam lisan dibahas di unit 19."
+    },
+    {
+     "type": "kotak",
+     "title": "Membaca catatan rapat (muistio)",
+     "items": [
+      "*Kokouksessa päätettiin, että…* — Dalam rapat diputuskan bahwa…",
+      "*Asiasta keskusteltiin.* — Hal itu didiskusikan. (*keskustella* + elatif)",
+      "*Asiasta ei päätetty.* — Hal itu tidak diputuskan.",
+      "*Seuraava kokous pidetään 5.2.* — Rapat berikutnya diadakan 5 Februari. (*pitää kokous* = mengadakan rapat)",
+      "Catatan rapat Finlandia pendek dan hampir seluruhnya pasif. Kalau kamu bisa membaca satu *muistio*, kamu bisa membaca semuanya."
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Ulangan berjenjang — unit 11",
+   "blocks": [
+    {
+     "type": "p",
+     "text": "Tutup kolom Finlandia, baca terjemahan Indonesianya, lalu susun kembali kalimatnya dari ingatan."
+    },
+    {
+     "type": "tabel",
+     "head": [
+      "Bahasa Indonesia",
+      "Suomi"
+     ],
+     "rows": [
+      [
+       "Oke. Mejaku nanti di sebelah mejamu.",
+       "*Hyvä. Minun pöytäni tulee sinun pöytäsi viereen.*"
+      ],
+      [
+       "Kita pindahkan dari depan pintu. Nggak ada yang bisa masuk!",
+       "*Siirretään se pois oven edestä. Kukaan ei pääse sisään!*"
+      ],
+      [
+       "Kopinya sudah siap. Tanpa kopi aku nggak sanggup mindahin apa-apa lagi.",
+       "*Kahvi on valmis. Ilman kahvia en jaksa siirtää enää mitään.*"
+      ],
+      [
+       "Sudah. Aku juga sudah cek di bawah kasur dan di balik pintu.",
+       "*Katsoin jo. Katsoin myös sängyn alta ja oven takaa.*"
+      ],
+      [
+       "Tenang, Nak. Duduk sini di sebelahku.",
+       "*Rauhoitu, poika. Istu tähän minun viereeni.*"
+      ]
+     ]
+    }
+   ]
+  }
+ ],
+ "vocab": [
+  {
+   "fi": "palaveri",
+   "baca": "PA-la-ve-ri",
+   "id": "rapat (sehari-hari)"
+  },
+  {
+   "fi": "kokous",
+   "baca": "KO-kous",
+   "id": "rapat (gen. *kokouksen*)"
+  },
+  {
+   "fi": "päättää",
+   "baca": "PÈÈT-tèè",
+   "id": "memutuskan (*päätän, päätti*)"
+  },
+  {
+   "fi": "sopia",
+   "baca": "SO-pi-a",
+   "id": "sepakat (+ -sta: *sopia aikataulusta*; *sovin*)"
+  },
+  {
+   "fi": "asiakas",
+   "baca": "A-si-a-kas",
+   "id": "klien, pelanggan (gen. *asiakkaan*)"
+  },
+  {
+   "fi": "lämmitys",
+   "baca": "LÈM-mi-tüs",
+   "id": "pemanasan, sistem pemanas (gen. *lämmityksen*)"
+  },
+  {
+   "fi": "öljy",
+   "baca": "ÖL-yü",
+   "id": "minyak"
+  },
+  {
+   "fi": "aikataulu",
+   "baca": "AI-ka-tau-lu",
+   "id": "jadwal"
+  },
+  {
+   "fi": "valita",
+   "baca": "VA-li-ta",
+   "id": "memilih (*valitsen, valitsi*)"
+  },
+  {
+   "fi": "vetäjä",
+   "baca": "VE-tè-yè",
+   "id": "pemimpin, ketua (proyek, tim)"
+  },
+  {
+   "fi": "kysyä",
+   "baca": "KÜ-sü-è",
+   "id": "bertanya (orang + -lta: *kysyä Lauralta*)"
+  },
+  {
+   "fi": "paikalla",
+   "baca": "PAI-kal-la",
+   "id": "hadir, ada di tempat"
+  },
+  {
+   "fi": "säästää",
+   "baca": "SÈÈS-tèè",
+   "id": "menyisakan, menabung, menghemat"
+  },
+  {
+   "fi": "juttu",
+   "baca": "YUT-tu",
+   "id": "tulisan, berita; perkara (gen. *jutun*)"
+  },
+  {
+   "fi": "julkaista",
+   "baca": "YUL-kais-ta",
+   "id": "menerbitkan (*julkaisen*; pasif *julkaistaan*)"
+  },
+  {
+   "fi": "lumi",
+   "baca": "LU-mi",
+   "id": "salju (gen. *lumen*, part. *lunta*)"
+  },
+  {
+   "fi": "aurata",
+   "baca": "AU-ra-ta",
+   "id": "membersihkan salju dengan bajak (*auraan*)"
+  },
+  {
+   "fi": "ratikka",
+   "baca": "RA-tik-ka",
+   "id": "trem (sehari-hari; gen. *ratikan*)"
+  },
+  {
+   "fi": "pysäyttää",
+   "baca": "PÜ-sèüt-tèè",
+   "id": "menghentikan (*pysäytän*)"
+  },
+  {
+   "fi": "sulkea",
+   "baca": "SUL-ke-a",
+   "id": "menutup (*suljen*; pasif *suljetaan*)"
+  },
+  {
+   "fi": "haastatella",
+   "baca": "HAAS-ta-tel-la",
+   "id": "mewawancarai (+ partitif; *haastattelen*)"
+  },
+  {
+   "fi": "jakaa",
+   "baca": "YA-kaa",
+   "id": "membagikan, berbagi (*jaan, jakoi*)"
+  },
+  {
+   "fi": "toimittaja",
+   "baca": "TOI-mit-ta-ya",
+   "id": "wartawan"
+  },
+  {
+   "fi": "liikkeelle",
+   "baca": "LIIK-kèèl-le",
+   "id": "(mulai) bergerak, berjalan"
+  },
+  {
+   "fi": "kahdesti",
+   "baca": "KAH-des-ti",
+   "id": "dua kali"
+  }
+ ],
+ "exercises": [
+  {
+   "prompt": "Terjemahkan ke bahasa Finlandia.",
+   "items": [
+    "Di rapat dibicarakan soal jadwal. (palaveri)",
+    "Sekolah-sekolah ditutup kemarin.",
+    "Aku tidak ditanya.",
+    "Kamu dipilih masuk tim. (lampau)",
+    "Jalan-jalan sudah dibersihkan dari salju.",
+    "Beritanya sudah terbit. (juttu)"
+   ]
+  },
+  {
+   "prompt": "Isi dengan bentuk pasif dari kata kerja dalam kurung.",
+   "items": [
+    "Eilen ____ paljon. (puhua, lampau)",
+    "Kokouksessa ____ kahvia. (juoda, lampau)",
+    "Viikonloppuna ____ mökille. (mennä, lampau)",
+    "Mitä palaverissa ____? (päättää, lampau)",
+    "Pullia ei ____. (syödä, sangkalan lampau)",
+    "Juttu on ____ tänään. (julkaista, perfek)",
+    "____ valittiin tiimiin. (minä)"
+   ]
+  },
+  {
+   "prompt": "Ubah kalimat pasif kini menjadi pasif lampau.",
+   "items": [
+    "Kokouksessa puhutaan budjetista.",
+    "Koulut suljetaan.",
+    "Kahvia ei juoda.",
+    "Kadut aurataan.",
+    "Hänet valitaan.",
+    "Siitä sovitaan."
+   ]
+  },
+  {
+   "prompt": "Susun jadi kalimat yang benar.",
+   "items": [
+    "palaverissa / päätettiin / mitä",
+    "suljettiin / eilen / koulut",
+    "ei / minulta / kysytty",
+    "on / kadut / aurattu / jo",
+    "valittiin / sinut / tiimiin"
+   ]
+  }
+ ],
+ "answers": [
+  "Palaverissa puhuttiin aikataulusta. — Koulut suljettiin eilen. — Minulta ei kysytty. — Sinut valittiin tiimiin. — Kadut on jo aurattu. — Juttu on julkaistu.",
+  "puhuttiin — juotiin — mentiin — päätettiin — syöty — julkaistu — Minut",
+  "Kokouksessa puhuttiin budjetista. — Koulut suljettiin. — Kahvia ei juotu. — Kadut aurattiin. — Hänet valittiin. — Siitä sovittiin.",
+  "Mitä palaverissa päätettiin? — Koulut suljettiin eilen. — Minulta ei kysytty. — Kadut on jo aurattu. — Sinut valittiin tiimiin."
+ ]
+}

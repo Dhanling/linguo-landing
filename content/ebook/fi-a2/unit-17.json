@@ -1,0 +1,753 @@
+{
+ "title": "Kapan? — tanggal, jam, dan ungkapan waktu",
+ "title_target": "Toukokuun ensimmäisenä päivänä",
+ "goal": "Menjawab *milloin?* dengan kasus yang tepat untuk hari, bulan, musim, tahun, dan jam; menyebut tanggal dengan bilangan urutan berkasus; serta memakai *sitten, päästä, kuluttua, ennen, aikana, asti, lähtien* untuk menata rencana.",
+ "bekal": [
+  "memilih kasus waktu: *perjantaina, huhtikuussa, keväällä, ensi viikolla, vuonna 1998, puoli kuudelta*",
+  "menyebut tanggal dengan bilangan urutan berkasus: *toukokuun ensimmäisenä päivänä, maaliskuun kolmantenatoista*",
+  "membuat janji temu di telepon dan menyatakan jarak waktu: *kahden viikon päästä, kolme vuotta sitten, lauantaista asti*"
+ ],
+ "dialogs": [
+  {
+   "title": "Dialog — Mitä teet vappuna?",
+   "intro": "Jumat, 16 April 2027, makan siang di kantin Lämpövirta. Dua minggu lagi *vappu*, pesta musim semi terbesar di Finlandia, dan Laura sudah punya rencana untuk semua orang.",
+   "lines": [
+    {
+     "speaker": "Laura:",
+     "text": "Budi, mitä sinä teet vappuna?",
+     "id": "Budi, vappu nanti kamu ngapain?",
+     "literal": "Budi, apa-bagian kamu membuat-kamu pada-vappu?"
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Aino tulee Tampereelta perjantaina ja jää sunnuntaihin asti.",
+     "id": "Aino datang dari Tampere hari Jumat dan tinggal sampai hari Minggu.",
+     "literal": "Aino datang dari-Tampere pada-Jumat dan tinggal ke-Minggu sampai."
+    },
+    {
+     "speaker": "Heikki:",
+     "text": "Vappuaattona meillä saa lähteä kotiin jo kahdelta.",
+     "id": "Di malam vappu, di kantor kita boleh pulang dari jam dua.",
+     "literal": "pada-malam-vappu pada-kami boleh berangkat ke-rumah sudah dari-dua."
+    },
+    {
+     "speaker": "Laura:",
+     "text": "Hienoa! Kello kuusi Havis Amanda saa lakin. Tuletteko Kauppatorille?",
+     "id": "Asyik! Jam enam Havis Amanda dipakaikan topi. Kalian datang ke Kauppatori?",
+     "literal": "hebat-bagian! jam enam Havis Amanda mendapat topi-sasaran. datang-kah-kalian ke-Kauppatori?"
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Tulemme. Ainon juna saapuu puoli kuudelta, joten ehdimme juuri ja juuri.",
+     "id": "Datang. Kereta Aino tiba jam setengah enam, jadi kami pas-pasan sempat.",
+     "literal": "datang-kami. Aino-punya kereta tiba setengah dari-enam, jadi sempat-kami pas dan pas."
+    },
+    {
+     "speaker": "Laura:",
+     "text": "Ja lauantaina, toukokuun ensimmäisenä päivänä, on piknik Kaivopuistossa!",
+     "id": "Terus hari Sabtu, tanggal satu Mei, piknik di Kaivopuisto!",
+     "literal": "dan pada-Sabtu, Mei-punya pada-pertama pada-hari, ada piknik di-Kaivopuisto!"
+    },
+    {
+     "speaker": "Heikki:",
+     "text": "Muistakaa sima. Se pitää tehdä viikkoa ennen vappua.",
+     "id": "Jangan lupa *sima*. Itu harus dibuat seminggu sebelum vappu.",
+     "literal": "ingatlah-kalian sima. itu harus membuat minggu-bagian sebelum vappu-bagian."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Viikkoa ennen? Tänään on huhtikuun kuudestoista. Ehdin hyvin.",
+     "id": "Seminggu sebelumnya? Hari ini tanggal enam belas April. Masih keburu.",
+     "literal": "minggu-bagian sebelum? hari-ini adalah April-punya ke-enam-belas. sempat-saya baik."
+    },
+    {
+     "speaker": "Laura:",
+     "text": "Minulla on isoäitini simaohje. Lähetän sen sinulle illalla.",
+     "id": "Aku punya resep *sima* nenekku. Nanti malam kukirim ke kamu.",
+     "literal": "pada-saya ada nenek-ku sima-resep. mengirim-saya itu-sasaran kepada-kamu pada-malam."
+    },
+    {
+     "speaker": "Heikki:",
+     "text": "Minä vietän vappua mökillä, kuten olen tehnyt vuodesta 1998 lähtien.",
+     "id": "Aku merayakan vappu di pondok, seperti yang kulakukan sejak 1998.",
+     "literal": "saya melewatkan-saya vappu-bagian di-atas-pondok, seperti adalah-saya membuat-sudah dari-tahun 1998 mulai."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Vuodesta 1998? Minä synnyin sinä vuonna!",
+     "id": "Sejak 1998? Aku lahir tahun itu!",
+     "literal": "dari-tahun 1998? saya lahir-lampau-saya sebagai-itu sebagai-tahun!"
+    },
+    {
+     "speaker": "Heikki:",
+     "text": "Perinteeni on siis vanhempi kuin sinä.",
+     "id": "Jadi tradisiku lebih tua daripada kamu.",
+     "literal": "tradisi-ku adalah jadi lebih-tua daripada kamu."
+    },
+    {
+     "speaker": "Laura:",
+     "text": "Heikki, ensi vuonna tulet meidän kanssamme Kaivopuistoon. Se on päätetty!",
+     "id": "Heikki, tahun depan kamu ikut kami ke Kaivopuisto. Sudah diputuskan!",
+     "literal": "Heikki, berikut pada-tahun datang-kamu kami-punya bersama-kami ke-Kaivopuisto. itu adalah di-putuskan-sudah!"
+    },
+    {
+     "speaker": "Heikki:",
+     "text": "Katsotaan. Ensi vuoteen on vielä pitkä aika.",
+     "id": "Lihat nanti. Sampai tahun depan masih lama.",
+     "literal": "di-lihat. berikut ke-tahun adalah masih panjang waktu."
+    }
+   ],
+   "notes": [
+    "**Vappuna, perjantaina** — hari dan hari raya memakai esif *-na/-nä*: *maanantaina, jouluna, juhannuksena, syntymäpäivänä*. Bahasa Indonesia cukup memakai \"pada\" atau tidak apa-apa sama sekali.",
+    "**Sunnuntaihin asti** — *asti* (atau *saakka*, sedikit lebih resmi) berarti \"sampai\" bila katanya berkasus ilatif: *sunnuntaihin asti, iltaan asti, kotiin asti*. Nanti di dialog kedua kamu melihat *asti* yang sama dengan elatif, dan artinya berbalik jadi \"sejak\".",
+    "**Puoli kuudelta** — ⚠️ *puoli kuusi* adalah **pukul 5.30**, bukan 6.30: \"setengah menuju enam\". Logikanya sama persis dengan \"setengah enam\" dalam bahasa Indonesia, jadi kamu justru diuntungkan. Jam memakai ablatif: *kahdelta, puoli kuudelta* (pada pukul …); sesudah *kello* angka dasar juga benar: *kello kuusi*.",
+    "**Toukokuun ensimmäisenä päivänä** — tanggal = nama bulan dalam genitif + bilangan urutan dalam esif (+ *päivänä*, yang sering dibuang): *toukokuun ensimmäisenä* (pada tanggal 1 Mei). Kalau tanggalnya subjek atau pelengkap, pakai nominatif: *Tänään on huhtikuun kuudestoista (päivä).*",
+    "**Viikkoa ennen vappua** — *ennen* di depan kata benda meminta partitif: *ennen vappua, ennen joulua*. Jarak waktunya juga partitif dan ditaruh di depan: *viikkoa ennen vappua* (seminggu sebelum vappu), *kaksi päivää ennen joulua*.",
+    "**Vuodesta 1998 lähtien, sinä vuonna** — tahun ditulis dengan esif *vuonna*: *vuonna 1998*. \"Tahun itu\" menjadi *sinä vuonna* (esif dari *se vuosi*), \"tahun ini\" *tänä vuonna*, \"tahun lalu\" *viime vuonna*. *Lähtien* + elatif = \"sejak, mulai dari\"."
+   ],
+   "grammars": [
+    {
+     "title": "Kapan? — satu satuan waktu, satu kasus",
+     "body": [
+      "Ini tabel yang paling berguna di unit ini. Kasusnya tidak dipilih bebas: setiap satuan waktu punya kasusnya sendiri."
+     ],
+     "table": {
+      "head": [
+       "Satuan",
+       "Kasus",
+       "Contoh",
+       "Arti"
+      ],
+      "rows": [
+       [
+        "hari, hari raya",
+        "esif *-na*",
+        "*maanantaina, vappuna*",
+        "pada hari Senin, pada vappu"
+       ],
+       [
+        "bagian hari",
+        "adesif *-lla*",
+        "*aamulla, illalla, yöllä*",
+        "pagi, malam, tengah malam"
+       ],
+       [
+        "minggu",
+        "adesif *-lla*",
+        "*tällä viikolla, ensi viikolla*",
+        "minggu ini, minggu depan"
+       ],
+       [
+        "bulan",
+        "inessif *-ssa*",
+        "*huhtikuussa, tässä kuussa*",
+        "di bulan April, bulan ini"
+       ],
+       [
+        "musim",
+        "adesif *-lla*",
+        "*keväällä, kesällä, talvella*",
+        "musim semi, panas, dingin"
+       ],
+       [
+        "tahun",
+        "esif *-na*",
+        "*vuonna 2027, ensi vuonna*",
+        "tahun 2027, tahun depan"
+       ],
+       [
+        "jam",
+        "ablatif *-lta*",
+        "*kahdelta, puoli kuudelta*",
+        "pukul dua, pukul 5.30"
+       ],
+       [
+        "tanggal",
+        "genitif + esif",
+        "*toukokuun ensimmäisenä*",
+        "pada 1 Mei"
+       ]
+      ]
+     },
+     "after": [
+      "**Pengecualian penting:** bila ada *tämä, se, ensi, viime* di depannya, musim berpindah ke esif — *keväällä*, tetapi *tänä keväänä, ensi kesänä, viime talvena*. Begitu juga *päivällä* (siang hari) lawan *sinä päivänä* (pada hari itu). Bulan dan minggu tetap: *ensi kuussa, viime viikolla*."
+     ]
+    },
+    {
+     "title": "Bilangan urutan berkasus",
+     "body": [
+      "Bilangan urutan punya batang yang berubah, sama seperti kata benda di unit 18 nanti. Hafalkan tiga bentuk ini untuk tanggal: nominatif (hari ini tanggal …), genitif (sesudah tanggal …), esif (pada tanggal …)."
+     ],
+     "table": {
+      "head": [
+       "Nominatif",
+       "Genitif",
+       "Esif",
+       "Arti"
+      ],
+      "rows": [
+       [
+        "*ensimmäinen*",
+        "*ensimmäisen*",
+        "*ensimmäisenä*",
+        "pertama"
+       ],
+       [
+        "*toinen*",
+        "*toisen*",
+        "*toisena*",
+        "kedua"
+       ],
+       [
+        "*kolmas*",
+        "*kolmannen*",
+        "*kolmantena*",
+        "ketiga"
+       ],
+       [
+        "*neljäs*",
+        "*neljännen*",
+        "*neljäntenä*",
+        "keempat"
+       ],
+       [
+        "*viides*",
+        "*viidennen*",
+        "*viidentenä*",
+        "kelima"
+       ],
+       [
+        "*kymmenes*",
+        "*kymmenennen*",
+        "*kymmenentenä*",
+        "kesepuluh"
+       ],
+       [
+        "*kolmastoista*",
+        "*kolmannentoista*",
+        "*kolmantenatoista*",
+        "ketiga belas"
+       ],
+       [
+        "*kahdeskymmenes*",
+        "*kahdennenkymmenennen*",
+        "*kahdentenakymmenentenä*",
+        "kedua puluh"
+       ],
+       [
+        "*viimeinen*",
+        "*viimeisen*",
+        "*viimeisenä*",
+        "terakhir"
+       ]
+      ]
+     },
+     "after": [
+      "Ulang tahun Budi: *Synnyin maaliskuun kolmantenatoista päivänä vuonna 1998.* Bentuk panjang seperti *kahdentenakymmenentenä* memang ada dan benar; dalam percakapan orang menghindarinya dengan cara di bagian \"Tanggal lisan dan tulisan\"."
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Dialog kedua — Ajanvaraus hammaslääkärille",
+   "intro": "Senin pagi, 19 April, pukul delapan kurang sepuluh. Sejak Sabtu gigi geraham Budi berdenyut. Sebelum berangkat kerja ia menelepon klinik gigi di Tapiola.",
+   "lines": [
+    {
+     "speaker": "Hoitaja:",
+     "text": "Hammashoitola, hyvää huomenta.",
+     "id": "Klinik gigi, selamat pagi.",
+     "literal": "gigi-perawatan-tempat, baik-bagian pagi-bagian."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Huomenta. Hammastani on särkenyt lauantaista asti. Haluaisin varata ajan.",
+     "id": "Pagi. Gigiku nyeri sejak hari Sabtu. Saya mau buat janji.",
+     "literal": "pagi-bagian. gigi-ku-bagian adalah nyeri-sudah dari-Sabtu sejak. mau-andai-saya memesan waktu-sasaran."
+    },
+    {
+     "speaker": "Hoitaja:",
+     "text": "Ikävä kuulla. Seuraava vapaa aika on vasta toukokuun kolmantena päivänä.",
+     "id": "Kasihan. Jadwal kosong berikutnya baru tanggal tiga Mei.",
+     "literal": "sedih mendengar. berikut bebas waktu adalah baru Mei-punya pada-ketiga pada-hari."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Vasta kahden viikon päästä? Onko mitään aikaisemmin?",
+     "id": "Baru dua minggu lagi? Ada yang lebih cepat?",
+     "literal": "baru dua-punya minggu-punya dari-ujung? ada-kah apa-pun-bagian lebih-awal?"
+    },
+    {
+     "speaker": "Hoitaja:",
+     "text": "Hetkinen… Keskiviikkona on peruutusaika kello 9.15. Sopiiko se?",
+     "id": "Sebentar… Hari Rabu ada slot batal jam 9.15. Cocok?",
+     "literal": "sebentar… pada-Rabu ada pembatalan-waktu jam 9.15. cocok-kah itu?"
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Sopii hyvin. Keskiviikkona olen töissä vasta kymmenestä lähtien.",
+     "id": "Cocok sekali. Hari Rabu aku baru masuk kantor mulai jam sepuluh.",
+     "literal": "cocok baik. pada-Rabu adalah-saya di-kerja-jamak baru dari-sepuluh mulai."
+    },
+    {
+     "speaker": "Hoitaja:",
+     "text": "Selvä. Oletko käynyt meillä aikaisemmin?",
+     "id": "Baik. Kamu pernah ke tempat kami sebelumnya?",
+     "literal": "jelas. adalah-kah-kamu mampir-sudah pada-kami lebih-awal?"
+    },
+    {
+     "speaker": "Budi:",
+     "text": "En ole. Kävin hammaslääkärissä viimeksi Jakartassa, kolme vuotta sitten.",
+     "id": "Belum. Terakhir ke dokter gigi di Jakarta, tiga tahun lalu.",
+     "literal": "tidak-saya adalah. mampir-lampau-saya di-dokter-gigi terakhir di-Jakarta, tiga tahun-bagian lalu."
+    },
+    {
+     "speaker": "Hoitaja:",
+     "text": "Sitten tarkastetaan samalla kertaa kaikki hampaat. Käynti kestää noin tunnin.",
+     "id": "Kalau begitu sekalian semua gigi diperiksa. Kunjungannya sekitar satu jam.",
+     "literal": "kalau-begitu di-periksa pada-sama pada-kali semua gigi-jamak. kunjungan berlangsung sekitar jam-sasaran."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Tunnin? No, hyvä on. Kiitos paljon!",
+     "id": "Sejam? Ya sudah, oke. Terima kasih banyak!",
+     "literal": "jam-sasaran? nah, baik adalah. terima-kasih banyak!"
+    },
+    {
+     "speaker": "Hoitaja:",
+     "text": "Jos kipu pahenee ennen keskiviikkoa, soita heti uudelleen.",
+     "id": "Kalau sakitnya bertambah sebelum Rabu, langsung telepon lagi.",
+     "literal": "jika sakit memburuk sebelum Rabu-bagian, teleponlah segera lagi."
+    }
+   ],
+   "notes": [
+    "**Hammastani on särkenyt** — *särkeä* (nyeri, berdenyut) tidak punya subjek: bagian tubuh yang sakit ditaruh dalam **partitif** — *Päätä särkee* (kepalaku pusing), *Selkää särkee* (punggungku nyeri). Di sini *hammas* → partitif *hammasta* + *-ni* = *hammastani*. Perfek + *lauantaista asti* = \"sudah … sejak Sabtu\", persis seperti bahasa Indonesia.",
+    "**Lauantaista asti, kymmenestä lähtien** — *asti* bersama elatif berarti \"sejak\" (bandingkan *sunnuntaihin asti*, sampai Minggu, di dialog pertama). *Lähtien* hampir selalu dengan elatif dan artinya \"mulai dari\". Rentang waktu = elatif + ilatif: *kymmenestä neljään* (dari jam sepuluh sampai jam empat).",
+    "**Kahden viikon päästä** — *päästä* atau *kuluttua* + genitif = \"… lagi\" (dihitung dari sekarang): *viikon päästä, kolmen päivän kuluttua*. *Päästä* lebih lazim dalam percakapan, *kuluttua* sedikit lebih resmi. Arah sebaliknya memakai *sitten* + nominatif atau partitif, seperti bilangan biasa: *vuosi sitten, kolme vuotta sitten*.",
+    "**Käynti kestää noin tunnin** — lama waktu sesudah *kestää* (berlangsung) dan kata kerja sejenis memakai bentuk objek total: *tunnin, viikon, koko päivän*. Bandingkan *Olin siellä viikon* (aku di sana seminggu).",
+    "**Ennen keskiviikkoa** — *ennen* + partitif lagi. Kebalikannya, *jälkeen*, berdiri di belakang dan meminta genitif: *keskiviikon jälkeen, vapun jälkeen*. Satu di depan, satu di belakang — sama seperti *ilman* dan *kanssa* di unit 11.",
+    "**Sopiiko se?** — kalimat terpenting saat membuat janji. Jawabannya *Sopii* (cocok) atau *Ei valitettavasti sovi* (sayangnya tidak bisa). *Sovitaan niin!* = Kita sepakati begitu!"
+   ],
+   "grammars": [
+    {
+     "title": "Sebelum, sesudah, lagi, lalu, sejak, sampai",
+     "body": [
+      "Kata-kata penata waktu ini masing-masing meminta kasus tertentu. Bacalah kolom kedua dengan teliti."
+     ],
+     "table": {
+      "head": [
+       "Kata",
+       "Kasus",
+       "Contoh",
+       "Arti"
+      ],
+      "rows": [
+       [
+        "*sitten*",
+        "nominatif / partitif +",
+        "*kolme vuotta sitten*",
+        "tiga tahun lalu"
+       ],
+       [
+        "*päästä, kuluttua*",
+        "genitif +",
+        "*kahden viikon päästä*",
+        "dua minggu lagi"
+       ],
+       [
+        "*ennen*",
+        "+ partitif",
+        "*ennen vappua*",
+        "sebelum vappu"
+       ],
+       [
+        "*jälkeen*",
+        "genitif +",
+        "*vapun jälkeen*",
+        "sesudah vappu"
+       ],
+       [
+        "*aikana*",
+        "genitif +",
+        "*kesän aikana*",
+        "selama musim panas"
+       ],
+       [
+        "*asti, saakka*",
+        "ilatif +",
+        "*sunnuntaihin asti*",
+        "sampai hari Minggu"
+       ],
+       [
+        "*asti, saakka*",
+        "elatif +",
+        "*lauantaista asti*",
+        "sejak hari Sabtu"
+       ],
+       [
+        "*lähtien*",
+        "elatif +",
+        "*vuodesta 1998 lähtien*",
+        "sejak 1998"
+       ]
+      ]
+     },
+     "after": [
+      "*Ensi* (depan) dan *viime* (lalu) tidak pernah berubah bentuk: *ensi viikolla, viime vuonna, ensi kesänä*. Kata yang di belakangnya yang memikul kasus."
+     ]
+    }
+   ]
+  }
+ ],
+ "sections": [
+  {
+   "title": "Hari libur Finlandia",
+   "blocks": [
+    {
+     "type": "tabel",
+     "head": [
+      "Hari",
+      "Tanggal 2027",
+      "Catatan"
+     ],
+     "rows": [
+      [
+       "*pitkäperjantai*",
+       "26.3.",
+       "Jumat Agung"
+      ],
+      [
+       "*pääsiäinen*",
+       "28.–29.3.",
+       "Paskah dan Senin Paskah"
+      ],
+      [
+       "*vappu*",
+       "1.5.",
+       "hari buruh dan pesta mahasiswa"
+      ],
+      [
+       "*helatorstai*",
+       "6.5.",
+       "Kenaikan Isa Almasih"
+      ],
+      [
+       "*äitienpäivä*",
+       "9.5.",
+       "Hari Ibu, Minggu kedua Mei"
+      ],
+      [
+       "*juhannus*",
+       "25.–26.6.",
+       "pertengahan musim panas"
+      ],
+      [
+       "*itsenäisyyspäivä*",
+       "6.12.",
+       "hari kemerdekaan (sejak 1917)"
+      ],
+      [
+       "*joulu*",
+       "24.–26.12.",
+       "malam Natal, Natal, *tapaninpäivä*"
+      ]
+     ]
+    },
+    {
+     "type": "p",
+     "text": "*Vappu* dirayakan dua hari. Pada *vappuaatto* (30 April) pukul enam sore orang-orang memakai topi putih kelulusan SMA (*ylioppilaslakki*), dan di Helsinki para mahasiswa mencuci patung Havis Amanda di Kauppatori lalu memakaikan topi yang sama padanya. Keesokan harinya ribuan orang berpiknik di taman Kaivopuisto dengan balon, *sima* (minuman lemon yang difermentasi sebentar), *tippaleipä* (kue corong bergula halus), dan *munkki* (donat). Nama resmi hari benderanya *suomalaisen työn päivä*, jadi paginya ada juga acara serikat buruh. *Juhannusaatto* secara hukum bukan hari libur, tetapi hampir semua kantor tutup."
+    },
+    {
+     "type": "kotak",
+     "title": "Sima ala nenek Laura",
+     "items": [
+      "Rebus 4 liter air, larutkan 250 g gula pasir dan 250 g *fariinisokeri* (gula cokelat), tambahkan dua buah lemon yang diiris tipis.",
+      "Setelah suam-suam kuku, tambahkan ragi seujung sendok teh saja. Diamkan semalam di suhu kamar.",
+      "Saring ke dalam botol, masukkan satu sendok teh gula dan beberapa butir kismis ke tiap botol, tutup, simpan di tempat sejuk.",
+      "*Sima* siap diminum ketika kismisnya naik ke permukaan — biasanya beberapa hari sampai seminggu. Kadar alkoholnya sangat rendah, tetapi tetap ada."
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Tanggal lisan dan tulisan",
+   "blocks": [
+    {
+     "type": "tabel",
+     "head": [
+      "Tulisan",
+      "Ucapan",
+      "Arti"
+     ],
+     "rows": [
+      [
+       "3.5.2027",
+       "*kolmas toukokuuta kaksituhatta kaksikymmentäseitsemän*",
+       "3 Mei 2027"
+      ],
+      [
+       "3.5.",
+       "*kolmas viidettä* (lisan)",
+       "3 Mei"
+      ],
+      [
+       "ma 19.4.",
+       "*maanantaina yhdeksäntenätoista huhtikuuta*",
+       "pada Senin 19 April"
+      ],
+      [
+       "klo 9.15",
+       "*yhdeksän viisitoista, varttia yli yhdeksän*",
+       "pukul 9.15"
+      ],
+      [
+       "klo 17.30",
+       "*puoli kuusi, seitsemäntoista kolmekymmentä*",
+       "pukul 17.30"
+      ],
+      [
+       "vko 17",
+       "*viikko seitsemäntoista*",
+       "minggu ke-17"
+      ]
+     ]
+    },
+    {
+     "type": "p",
+     "text": "Urutan tanggal sama dengan Indonesia: hari, bulan, tahun, dipisah titik tanpa nol di depan (*3.5.2027*). Dalam ucapan, bentuk resmi *toukokuun kolmas päivä* jarang terdengar; orang lebih suka *kolmas toukokuuta* (partitif bulan) atau yang paling singkat, *kolmas viidettä* — \"ketiga dari yang kelima\". Satu kebiasaan yang mengejutkan pendatang: orang Finlandia sering menyebut **nomor minggu**. *Loma alkaa viikolla 28* (cuti mulai minggu ke-28) adalah kalimat biasa di kantor."
+    },
+    {
+     "type": "kotak",
+     "title": "Singkatan di papan jam buka",
+     "items": [
+      "*ma ti ke to pe la su* — Senin sampai Minggu. *ma–pe* = Senin–Jumat.",
+      "*ark.* (*arkisin*) — pada hari kerja; *la* — Sabtu; *su ja pyhät* — Minggu dan hari libur.",
+      "*klo* (*kello*) — pukul; *avoinna* — buka; *suljettu* — tutup.",
+      "Contoh: *Avoinna ark. 8–20, la 9–18, su suljettu.* Menjelang hari raya, periksa *poikkeukselliset aukioloajat* (jam buka khusus)."
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Ulangan berjenjang — unit 15",
+   "blocks": [
+    {
+     "type": "p",
+     "text": "Tutup kolom Finlandia, baca terjemahan Indonesianya, lalu susun kembali kalimatnya dari ingatan."
+    },
+    {
+     "type": "tabel",
+     "head": [
+      "Bahasa Indonesia",
+      "Suomi"
+     ],
+     "rows": [
+      [
+       "Nah, Budi. Kita cari apa? Mobil yang lebih besar atau lebih kecil?",
+       "*No niin, Budi. Mitä etsimme? Isompaa vai pienempää autoa?*"
+      ],
+      [
+       "Dengan yang biru kamu bisa jauh lebih jauh. Di musim dingin bedanya makin besar.",
+       "*Sinisellä pääsee paljon pidemmälle. Talvella ero on vielä suurempi.*"
+      ],
+      [
+       "Kalau cuaca dingin, baterai kerjanya lebih buruk. Makin dingin udaranya, makin pendek jaraknya.",
+       "*Kylmällä säällä akku toimii huonommin. Mitä kylmempi ilma, sitä lyhyempi matka.*"
+      ],
+      [
+       "Sepeda listrik ini sama cepatnya dengan bus, dan sudah pakai ban paku.",
+       "*Tämä sähköpyörä on yhtä nopea kuin bussi, ja siinä on nastarenkaat.*"
+      ],
+      [
+       "Dan sepuluh kali lebih murah daripada mobil!",
+       "*Ja se on kymmenen kertaa halvempi kuin auto!*"
+      ]
+     ]
+    }
+   ]
+  }
+ ],
+ "vocab": [
+  {
+   "fi": "vappu",
+   "baca": "VAP-pu",
+   "id": "vappu, pesta 1 Mei (gen. *vapun*)"
+  },
+  {
+   "fi": "vappuaatto",
+   "baca": "VAP-pu-aat-to",
+   "id": "malam vappu, 30 April"
+  },
+  {
+   "fi": "sima",
+   "baca": "SI-ma",
+   "id": "minuman lemon fermentasi khas vappu"
+  },
+  {
+   "fi": "tippaleipä",
+   "baca": "TIP-pa-lei-pè",
+   "id": "kue corong khas vappu"
+  },
+  {
+   "fi": "lakki",
+   "baca": "LAK-ki",
+   "id": "topi (gen. *lakin*)"
+  },
+  {
+   "fi": "perinne",
+   "baca": "PE-rin-ne",
+   "id": "tradisi (gen. *perinteen*)"
+  },
+  {
+   "fi": "viettää",
+   "baca": "VIET-tèè",
+   "id": "merayakan, melewatkan waktu (*vietän*; + partitif)"
+  },
+  {
+   "fi": "saapua",
+   "baca": "SAA-pu-a",
+   "id": "tiba"
+  },
+  {
+   "fi": "ehtiä",
+   "baca": "EH-ti-è",
+   "id": "sempat, keburu (*ehdin*)"
+  },
+  {
+   "fi": "syntyä",
+   "baca": "SÜN-tü-è",
+   "id": "lahir (*synnyin* = aku lahir)"
+  },
+  {
+   "fi": "päästä",
+   "baca": "PÈÈS-tè",
+   "id": "(genitif +) … lagi, dari sekarang (*viikon päästä*)"
+  },
+  {
+   "fi": "kuluttua",
+   "baca": "KU-lut-tu-a",
+   "id": "(genitif +) sesudah berlalu (*viikon kuluttua*)"
+  },
+  {
+   "fi": "sitten",
+   "baca": "SIT-ten",
+   "id": "yang lalu (*vuosi sitten*); lalu, kemudian"
+  },
+  {
+   "fi": "lähtien",
+   "baca": "LÈH-ti-en",
+   "id": "(elatif +) sejak, mulai dari"
+  },
+  {
+   "fi": "asti",
+   "baca": "AS-ti",
+   "id": "sampai (ilatif +), sejak (elatif +)"
+  },
+  {
+   "fi": "aikana",
+   "baca": "AI-ka-na",
+   "id": "(genitif +) selama"
+  },
+  {
+   "fi": "ensi",
+   "baca": "EN-si",
+   "id": "depan (*ensi viikolla*)"
+  },
+  {
+   "fi": "viime",
+   "baca": "VII-me",
+   "id": "lalu (*viime vuonna*)"
+  },
+  {
+   "fi": "ensimmäinen",
+   "baca": "EN-sim-mèi-nen",
+   "id": "pertama (gen. *ensimmäisen*)"
+  },
+  {
+   "fi": "viimeinen",
+   "baca": "VII-mei-nen",
+   "id": "terakhir (gen. *viimeisen*)"
+  },
+  {
+   "fi": "hammashoitola",
+   "baca": "HAM-mas-hoi-to-la",
+   "id": "klinik gigi"
+  },
+  {
+   "fi": "varata aika",
+   "baca": "VA-ra-ta AI-ka",
+   "id": "membuat janji temu (*varaan*)"
+  },
+  {
+   "fi": "peruutusaika",
+   "baca": "PE-ruu-tu-sai-ka",
+   "id": "slot jadwal dari pembatalan"
+  },
+  {
+   "fi": "särkeä",
+   "baca": "SÈR-ke-è",
+   "id": "nyeri, berdenyut (bagian tubuhnya partitif: *päätä särkee*)"
+  },
+  {
+   "fi": "sopia",
+   "baca": "SO-pi-a",
+   "id": "cocok; bersepakat (*sopii, sovitaan*)"
+  },
+  {
+   "fi": "paheta",
+   "baca": "PA-he-ta",
+   "id": "memburuk (*pahenee*)"
+  }
+ ],
+ "exercises": [
+  {
+   "prompt": "Terjemahkan ke bahasa Finlandia.",
+   "items": [
+    "Aino datang hari Jumat.",
+    "Aku lahir tahun 1998.",
+    "Kita bertemu dua minggu lagi. (*päästä*)",
+    "Kami merayakan vappu pada tanggal satu Mei.",
+    "Gigiku nyeri sejak hari Sabtu.",
+    "Tiga tahun lalu aku di Jakarta."
+   ]
+  },
+  {
+   "prompt": "Isi dengan bentuk waktu yang tepat.",
+   "items": [
+    "Tulen ____. (maanantai)",
+    "Lähdemme lomalle ____. (heinäkuu)",
+    "____ on kylmä. (talvi)",
+    "Tapaamme ____ viikolla. (depan)",
+    "Olen täällä ____ asti. (sunnuntai)",
+    "Sima on valmis viikon ____. (… lagi)",
+    "Synnyin maaliskuun ____ päivänä. (ke-13)"
+   ]
+  },
+  {
+   "prompt": "Jawab dengan kata dalam kurung.",
+   "items": [
+    "Milloin vappu on? (1.5.)",
+    "Milloin sinä synnyit? (1998)",
+    "Milloin Aino tulee? (perjantai, pukul 17.30)",
+    "Milloin juhannus on? (kesäkuu)",
+    "Kuinka kauan olet lomalla? (sampai 1.8.)",
+    "Milloin kävit Jakartassa? (tiga tahun lalu)"
+   ]
+  },
+  {
+   "prompt": "Susun jadi kalimat yang benar.",
+   "items": [
+    "tulee / Aino / perjantaina / Tampereelta",
+    "päästä / valmis / viikon / on / sima",
+    "vuonna / synnyin / 1998",
+    "asti / on / lauantaista / särkenyt / hammastani",
+    "lähtien / töissä / olen / kymmenestä"
+   ]
+  }
+ ],
+ "answers": [
+  "Aino tulee perjantaina. — Synnyin vuonna 1998. — Tapaamme kahden viikon päästä. — Juhlimme vappua toukokuun ensimmäisenä päivänä. — Hammastani on särkenyt lauantaista asti. — Kolme vuotta sitten olin Jakartassa.",
+  "maanantaina — heinäkuussa — Talvella — ensi — sunnuntaihin — päästä (atau kuluttua) — kolmantenatoista",
+  "Toukokuun ensimmäisenä päivänä. — Vuonna 1998. — Perjantaina puoli kuudelta. — Kesäkuussa. — Elokuun ensimmäiseen päivään asti. — Kolme vuotta sitten.",
+  "Aino tulee Tampereelta perjantaina. — Sima on valmis viikon päästä. — Synnyin vuonna 1998. — Hammastani on särkenyt lauantaista asti. — Olen töissä kymmenestä lähtien."
+ ]
+}

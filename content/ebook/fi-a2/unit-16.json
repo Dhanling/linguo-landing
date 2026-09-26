@@ -1,0 +1,732 @@
+{
+ "title": "Sedang, mau ke, baru dari — infinitif ketiga",
+ "title_target": "Olen hiihtämässä!",
+ "goal": "Menjawab \"lagi di mana, mau ke mana, baru dari mana\" untuk kegiatan, bukan hanya untuk tempat: satu bentuk kata kerja (*-ma-*) yang memakai kasus tempat yang sudah kamu kenal, ditambah *-malla* (dengan cara) dan *-matta* (tanpa).",
+ "bekal": [
+  "memakai lima bentuk infinitif III: *olen hiihtämässä, menen uimaan, tulen uimasta, opin kuuntelemalla, lähdin syömättä*",
+  "membentuk *-ma-* dari bentuk *he* dengan tingkat konsonan kuat (*ottamassa, tekemässä, tapaamassa*)",
+  "memilih antara *-maan* dan bentuk kamus sesudah kata kerja seperti *oppia, ruveta, auttaa, haluta, alkaa*"
+ ],
+ "dialogs": [
+  {
+   "title": "Dialog — Missä kaikki ovat lauantaina?",
+   "intro": "Sabtu pagi, 6 Februari 2027. Besok *laskiaissunnuntai*, dan Budi ingin mengajak teman-temannya meluncur di bukit dekat sekolah di Tapiola. Ia menelepon satu per satu.",
+   "lines": [
+    {
+     "speaker": "Budi:",
+     "text": "Hei Laura! Mitä sinä teet? Oletko kotona?",
+     "id": "Hai Laura! Lagi ngapain? Kamu di rumah?",
+     "literal": "hai Laura! apa-bagian kamu membuat-kamu? adalah-kah-kamu di-rumah?"
+    },
+    {
+     "speaker": "Laura:",
+     "text": "En ole. Olen hiihtämässä Oittaalla. Keli on täydellinen!",
+     "id": "Nggak. Aku lagi main ski di Oittaa. Cuacanya sempurna!",
+     "literal": "tidak-saya adalah. adalah-saya sedang-bermain-ski di-atas-Oittaa. cuaca adalah sempurna!"
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Hienoa! Lähdetkö huomenna laskemaan mäkeä kanssamme?",
+     "id": "Asyik! Besok ikut main luncur bareng kami?",
+     "literal": "hebat-bagian! berangkat-kah-kamu besok untuk-meluncur bukit-bagian bersama-kami?"
+    },
+    {
+     "speaker": "Laura:",
+     "text": "Ehkä. Aamulla menen ensin uimaan avantoon. Mihin te menette laskemaan?",
+     "id": "Mungkin. Paginya aku berenang dulu di lubang es. Kalian mau meluncur di mana?",
+     "literal": "mungkin. pada-pagi pergi-saya dulu untuk-berenang ke-lubang-es. ke-mana kalian pergi-kalian untuk-meluncur?"
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Koulun pulkkamäkeen tässä lähellä. Eila tulee katsomaan ja tuo laskiaispullia.",
+     "id": "Ke bukit luncur sekolah dekat sini. Eila datang menonton dan bawa roti *laskiainen*.",
+     "literal": "sekolah-punya ke-bukit-luncur di-sini dekat. Eila datang untuk-menonton dan membawa laskiainen-roti-jamak-bagian."
+    },
+    {
+     "speaker": "Laura:",
+     "text": "Sitten tulen! Soitan sinulle, kun tulen uimasta.",
+     "id": "Kalau gitu aku ikut! Aku telepon kamu begitu balik dari berenang.",
+     "literal": "kalau-begitu datang-saya! menelepon-saya kepada-kamu, ketika datang-saya dari-berenang."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Huomenta, Marek! Mitä sinä olet tekemässä?",
+     "id": "Pagi, Marek! Kamu lagi ngapain?",
+     "literal": "pagi-bagian, Marek! apa-bagian kamu adalah-kamu sedang-membuat?"
+    },
+    {
+     "speaker": "Marek:",
+     "text": "Olin nukkumassa… Kello on vasta yksitoista.",
+     "id": "Tadi aku lagi tidur… Baru jam sebelas.",
+     "literal": "adalah-lampau-saya sedang-tidur… jam adalah baru sebelas."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Vasta? Laura on ollut hiihtämässä jo kolme tuntia!",
+     "id": "Baru? Laura sudah tiga jam main ski!",
+     "literal": "baru? Laura adalah berada-sudah sedang-bermain-ski sudah tiga jam-bagian!"
+    },
+    {
+     "speaker": "Marek:",
+     "text": "Laura ei ole ihminen. No, mitä sinä haluat?",
+     "id": "Laura itu bukan manusia. Nah, ada apa?",
+     "literal": "Laura tidak-ia adalah manusia. nah, apa-bagian kamu mau-kamu?"
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Lähdetkö huomenna pulkkamäkeen? On laskiaissunnuntai.",
+     "id": "Besok ikut ke bukit luncur? Hari Minggu *laskiainen*.",
+     "literal": "berangkat-kah-kamu besok ke-bukit-luncur? adalah laskiainen-Minggu."
+    },
+    {
+     "speaker": "Marek:",
+     "text": "En ole laskenut mäkeä kymmeneen vuoteen. Osaanko vielä?",
+     "id": "Sudah sepuluh tahun aku nggak main luncur. Masih bisa nggak, ya?",
+     "literal": "tidak-saya adalah meluncur-sudah bukit-bagian ke-sepuluh ke-tahun. bisa-kah-saya masih?"
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Totta kai. Se opitaan laskemalla, ei ajattelemalla.",
+     "id": "Tentu saja. Itu dipelajari dengan meluncur, bukan dengan dipikir-pikir.",
+     "literal": "benar-bagian tentu. itu di-pelajari dengan-cara-meluncur, tidak dengan-cara-berpikir."
+    },
+    {
+     "speaker": "Marek:",
+     "text": "Hyvä on. Mutta en lähde mihinkään syömättä aamiaista.",
+     "id": "Oke deh. Tapi aku nggak berangkat ke mana-mana tanpa sarapan.",
+     "literal": "baik adalah. tetapi tidak-saya berangkat ke-mana-pun tanpa-makan sarapan-bagian."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Ehdit syödä. Tule kahdeltatoista!",
+     "id": "Masih sempat makan, kok. Datang jam dua belas!",
+     "literal": "sempat-kamu makan. datanglah dari-dua-belas (= pukul dua belas)!"
+    }
+   ],
+   "notes": [
+    "**Olen hiihtämässä** — ekor *-massa/-mässä* berarti \"sedang berada di tengah kegiatan\", persis seperti \"lagi\" dalam bahasa Indonesia. Sering ada makna tambahan: orangnya sedang **pergi** untuk kegiatan itu, tidak di rumah. *Äiti on kaupassa* (Ibu di toko) dan *Äiti on ostamassa ruokaa* (Ibu lagi belanja makanan) menjawab pertanyaan yang sama: *Missä äiti on?*",
+    "**Menen uimaan, lähdetkö laskemaan?** — ekor *-maan/-mään* sudah kamu kenal sejak A1 (*tulen katsomaan*): \"pergi untuk melakukan\". Sekarang lihat bentuknya: itu ilatif (*-an*, ke dalam) yang ditempel pada kegiatan. Maka pertanyaannya juga *mihin?* — *Mihin menet? — Uimaan.* (Ke mana? — Berenang.)",
+    "**Kun tulen uimasta** — *-masta/-mästä* adalah elatif (dari dalam) pada kegiatan: \"baru pulang dari berenang\". Bahasa Indonesia cukup berkata \"habis berenang\"; bahasa Finlandia benar-benar memperlakukan berenang sebagai tempat yang kamu tinggalkan.",
+    "**Olin nukkumassa, on ollut hiihtämässä** — *-massa* bisa dipakai bersama semua kala *olla*: *olen, olin, olen ollut, olisin*. Kalimat Budi *Laura on ollut hiihtämässä jo kolme tuntia* (Laura sudah tiga jam main ski) adalah perfek biasa dengan *-massa* di belakangnya. Perhatikan juga *kymmeneen vuoteen*: dalam kalimat sangkal, lamanya waktu \"sudah … tidak\" memakai ilatif — *en ole nähnyt häntä vuoteen* (sudah setahun aku tak melihatnya).",
+    "**Se opitaan laskemalla** — *-malla/-mällä* menjawab *miten?* (dengan cara apa?). Ekor itu memang adesif *-lla*, kasus \"dengan alat\" yang kamu pakai di *bussilla* (naik bus). Kalimat ini juga pasif (*opitaan* dari *oppia*, unit 6): \"itu dipelajari dengan meluncur\".",
+    "**Syömättä aamiaista** — *-matta/-mättä* berarti \"tanpa melakukan\". Karena maknanya sangkal, objeknya **selalu partitif** (*aamiaista*, bukan *aamiaisen*), dan kata seperti *mitään, kukaan, mihinkään* boleh muncul: *Hän lähti sanomatta mitään* (Dia pergi tanpa berkata apa-apa). Jam dengan ablatif, *kahdeltatoista* (pukul dua belas), sudah kamu temui di A1 — di sini bentuk angka belasannya ikut berubah: *kaksitoista → kahdeltatoista*."
+   ],
+   "grammars": [
+    {
+     "title": "Lima bentuk infinitif III",
+     "body": [
+      "Kelima bentuk ini punya batang yang sama (*hiihtä-mä-*); yang berubah hanya ekornya. Tiga yang pertama adalah kasus tempat biasa, jadi kamu sebenarnya sudah tahu cara bertanyanya."
+     ],
+     "table": {
+      "head": [
+       "Ekor",
+       "Menjawab",
+       "Arti",
+       "Contoh"
+      ],
+      "rows": [
+       [
+        "*-massa / -mässä*",
+        "*missä?*",
+        "sedang (di tengah kegiatan)",
+        "*Olen hiihtämässä.*"
+       ],
+       [
+        "*-maan / -mään*",
+        "*mihin?*",
+        "pergi untuk, mulai",
+        "*Menen uimaan.*"
+       ],
+       [
+        "*-masta / -mästä*",
+        "*mistä?*",
+        "baru dari (kegiatan)",
+        "*Tulen uimasta.*"
+       ],
+       [
+        "*-malla / -mällä*",
+        "*miten?*",
+        "dengan cara",
+        "*Opin suomea kuuntelemalla.*"
+       ],
+       [
+        "*-matta / -mättä*",
+        "—",
+        "tanpa (melakukan)",
+        "*Lähdin syömättä.*"
+       ]
+      ]
+     },
+     "after": [
+      "**Keselarasan vokal berlaku seperti biasa:** *uimassa* tetapi *hiihtämässä*, *laskemalla* tetapi *syömällä*. Yang menentukan adalah vokal kata kerjanya, bukan ekornya."
+     ]
+    },
+    {
+     "title": "Membentuknya dari bentuk *he*",
+     "body": [
+      "Ambil bentuk *he* (mereka), buang *-vat/-vät*, lalu tempel *-ma-/-mä-* dan ekornya. Bentuk *he* selalu memakai tingkat konsonan **kuat**, maka infinitif III juga kuat: *ottamassa* (bukan *otamassa*), *tekemässä*, *tapaamassa*."
+     ],
+     "table": {
+      "head": [
+       "Gol.",
+       "Bentuk kamus",
+       "*he*",
+       "Infinitif III"
+      ],
+      "rows": [
+       [
+        "1",
+        "*puhua*",
+        "*puhuvat*",
+        "*puhumassa*"
+       ],
+       [
+        "1",
+        "*ottaa*",
+        "*ottavat*",
+        "*ottamassa*"
+       ],
+       [
+        "1",
+        "*lukea*",
+        "*lukevat*",
+        "*lukemassa*"
+       ],
+       [
+        "2",
+        "*syödä*",
+        "*syövät*",
+        "*syömässä*"
+       ],
+       [
+        "2",
+        "*tehdä*",
+        "*tekevät*",
+        "*tekemässä*"
+       ],
+       [
+        "3",
+        "*tulla*",
+        "*tulevat*",
+        "*tulemassa*"
+       ],
+       [
+        "3",
+        "*kuunnella*",
+        "*kuuntelevat*",
+        "*kuuntelemassa*"
+       ],
+       [
+        "4",
+        "*tavata*",
+        "*tapaavat*",
+        "*tapaamassa*"
+       ],
+       [
+        "5",
+        "*tarvita*",
+        "*tarvitsevat*",
+        "*tarvitsemassa*"
+       ],
+       [
+        "6",
+        "*vanheta*",
+        "*vanhenevat*",
+        "*vanhenemassa*"
+       ]
+      ]
+     },
+     "after": [
+      "⚠️ Golongan 4 adalah jebakannya: bentuk kamus lemah (*tavata*), infinitif III kuat (*tapaamaan*). *Menen tapaamaan Ainoa* — aku pergi menemui Aino."
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Dialog kedua — Laskiaisena mäessä",
+   "intro": "Minggu siang di bukit luncur sekolah. Salju tebal, suhu minus delapan. Eila datang membawa termos dan sekeranjang roti; Laura sudah tiba langsung dari lubang es.",
+   "lines": [
+    {
+     "speaker": "Eila:",
+     "text": "Poika, tule syömään! Toin laskiaispullia ja kuumaa mehua.",
+     "id": "Nak, sini makan! Aku bawa roti *laskiainen* dan jus panas.",
+     "literal": "anak-muda, datanglah untuk-makan! membawa-lampau-saya laskiainen-roti-jamak-bagian dan panas-bagian jus-bagian."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Kiitos, Eila! Marek, tule sinäkin! Mitä sinä teet siellä?",
+     "id": "Makasih, Eila! Marek, kamu juga sini! Ngapain kamu di situ?",
+     "literal": "terima-kasih, Eila! Marek, datanglah kamu-juga! apa-bagian kamu membuat-kamu di-sana?"
+    },
+    {
+     "speaker": "Marek:",
+     "text": "Opettelen vielä jarruttamaan!",
+     "id": "Aku masih belajar ngerem!",
+     "literal": "berlatih-saya masih untuk-mengerem!"
+    },
+    {
+     "speaker": "Laura:",
+     "text": "Hän tulee mäkeä alas jarruttamatta. Katsokaa!",
+     "id": "Dia meluncur turun tanpa ngerem. Lihat, deh!",
+     "literal": "dia datang bukit-bagian ke-bawah tanpa-mengerem. lihatlah-kalian!"
+    },
+    {
+     "speaker": "Eila:",
+     "text": "Voi voi. Laura, oletko jo käynyt uimassa tänään?",
+     "id": "Ya ampun. Laura, hari ini kamu sudah berenang?",
+     "literal": "aduh aduh. Laura, adalah-kah-kamu sudah mampir-sudah sedang-berenang hari-ini?"
+    },
+    {
+     "speaker": "Laura:",
+     "text": "Olen. Kävin aamulla avannossa, ja nyt minulla on kova nälkä.",
+     "id": "Sudah. Tadi pagi aku ke lubang es, dan sekarang lapar banget.",
+     "literal": "adalah-saya. mampir-lampau-saya pada-pagi di-lubang-es, dan sekarang pada-saya ada keras lapar."
+    },
+    {
+     "speaker": "Eila:",
+     "text": "Ota pulla. Tässä on hillopullia ja mantelimassapullia.",
+     "id": "Ambil satu. Ini ada yang isi selai dan yang isi pasta almond.",
+     "literal": "ambillah roti. di-sini ada selai-roti-jamak-bagian dan almond-pasta-roti-jamak-bagian."
+    },
+    {
+     "speaker": "Marek:",
+     "text": "Kumpi on oikea laskiaispulla?",
+     "id": "Yang mana roti *laskiainen* yang asli?",
+     "literal": "yang-mana-dari-dua adalah benar laskiainen-roti?"
+    },
+    {
+     "speaker": "Eila:",
+     "text": "Siitä riidellään joka vuosi. Sen tiedät vain maistamalla.",
+     "id": "Soal itu orang ribut tiap tahun. Kamu cuma bisa tahu dengan mencicipi.",
+     "literal": "dari-itu di-bertengkar setiap tahun. itu-sasaran tahu-kamu hanya dengan-cara-mencicipi."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Minä söin jo molemmat kysymättä keneltäkään.",
+     "id": "Aku sudah makan dua-duanya tanpa tanya siapa-siapa.",
+     "literal": "saya makan-lampau-saya sudah keduanya tanpa-bertanya dari-siapa-pun."
+    }
+   ],
+   "notes": [
+    "**Tule syömään!** — *-maan* sangat sering sesudah perintah gerak: *Tule syömään! Mene nukkumaan! Lähdetään hiihtämään!* *Tulkaa syömään!* adalah panggilan makan malam di setiap rumah Finlandia.",
+    "**Opettelen jarruttamaan** — tidak ada gerak di sini, tetapi *opetella* (berlatih mempelajari) tetap meminta *-maan*. Sekelompok kata kerja belajar, mulai, membantu, dan terpaksa melakukan hal yang sama: *opin uimaan, rupesin lukemaan, autan sinua kantamaan, jouduin odottamaan*. Daftarnya ada di bagian sesudah dialog.",
+    "**Jarruttamatta** — bandingkan dua cara berkata \"tanpa\": *ilman* + partitif untuk kata benda (*ilman jarruja*, tanpa rem), *-matta* untuk kata kerja (*jarruttamatta*, tanpa mengerem). Bahasa Indonesia memakai \"tanpa\" untuk keduanya. *Mäkeä alas* (menuruni bukit) adalah partitif + kata keterangan arah: *juosta portaita ylös* (berlari menaiki tangga).",
+    "**Oletko käynyt uimassa?** — *käydä* + *-massa* berarti pergi melakukan sesuatu **lalu sudah kembali**: *Kävin uimassa* (aku tadi berenang, sekarang sudah di sini lagi). Ini padanan yang pas untuk \"habis\" atau \"sempat\" dalam bahasa Indonesia: *Kävin kaupassa* (aku habis dari toko), *Kävin syömässä* (aku habis makan di luar).",
+    "**Hillo vai mantelimassa?** — perdebatan tahunan: *laskiaispulla* diisi krim kocok dan selai atau pasta almond. Di kawasan Helsinki pasta almond lebih lazim, di banyak daerah lain selai. Eila memanggang keduanya.",
+    "**Kysymättä keneltäkään** — *kysyä* meminta ablatif untuk orang yang ditanya (*kysyn Lauralta*, aku bertanya kepada Laura), dan bentuk itu tetap sesudah *-matta*: *kysymättä keneltäkään* (tanpa bertanya kepada siapa pun). *Molemmat* (keduanya) di sini objek total jamak — Budi menghabiskan dua roti utuh."
+   ],
+   "grammars": [
+    {
+     "title": "Kegiatan diperlakukan seperti tempat",
+     "body": [
+      "Bandingkan kolom kiri dan kanan: pertanyaannya sama, kasusnya sama, hanya isinya yang berbeda — tempat atau kegiatan."
+     ],
+     "table": {
+      "head": [
+       "Tanya",
+       "Tempat",
+       "Kegiatan"
+      ],
+      "rows": [
+       [
+        "*Missä?*",
+        "*Laura on avannossa.*",
+        "*Laura on uimassa.*"
+       ],
+       [
+        "*Mihin?*",
+        "*Laura menee avantoon.*",
+        "*Laura menee uimaan.*"
+       ],
+       [
+        "*Mistä?*",
+        "*Laura tulee avannosta.*",
+        "*Laura tulee uimasta.*"
+       ],
+       [
+        "*käydä*",
+        "*Laura kävi avannossa.*",
+        "*Laura kävi uimassa.*"
+       ]
+      ]
+     },
+     "after": [
+      "Kedua kolom boleh digabung: *Laura on avannossa uimassa* (Laura di lubang es, berenang), *Menen kauppaan ostamaan maitoa* (aku ke toko untuk membeli susu). Tempat dulu, kegiatan kemudian — sama dengan urutan bahasa Indonesia."
+     ]
+    }
+   ]
+  }
+ ],
+ "sections": [
+  {
+   "title": "Kata kerja yang meminta -maan",
+   "blocks": [
+    {
+     "type": "tabel",
+     "head": [
+      "Kata kerja",
+      "Contoh",
+      "Arti"
+     ],
+     "rows": [
+      [
+       "*mennä, lähteä, tulla*",
+       "*Lähdetään hiihtämään!*",
+       "Ayo pergi main ski!"
+      ],
+      [
+       "*oppia*",
+       "*Opin uimaan vasta Suomessa.*",
+       "Aku baru bisa berenang di Finlandia."
+      ],
+      [
+       "*opetella*",
+       "*Opettelen luistelemaan.*",
+       "Aku sedang belajar berseluncur."
+      ],
+      [
+       "*ruveta*",
+       "*Rupesin opiskelemaan suomea.*",
+       "Aku mulai belajar bahasa Finlandia."
+      ],
+      [
+       "*auttaa* + partitif",
+       "*Autatko minua kantamaan pulkkaa?*",
+       "Bisa bantu aku membawa kereta luncur?"
+      ],
+      [
+       "*pyytää* + partitif",
+       "*Eila pyysi minua tulemaan.*",
+       "Eila memintaku datang."
+      ],
+      [
+       "*joutua*",
+       "*Jouduin odottamaan bussia.*",
+       "Aku terpaksa menunggu bus."
+      ],
+      [
+       "*pystyä*",
+       "*En pysty tulemaan huomenna.*",
+       "Aku tak bisa datang besok."
+      ],
+      [
+       "*jäädä*",
+       "*Jäimme juttelemaan.*",
+       "Kami jadi tinggal mengobrol."
+      ]
+     ]
+    },
+    {
+     "type": "p",
+     "text": "Kata kerja kehendak dan kemampuan memakai bentuk kamus, bukan *-maan*: *haluan uida, voin tulla, osaan hiihtää, aion lähteä, yritän jarruttaa*, juga *minun täytyy mennä*. *Pystyä* (mampu) adalah pengecualian yang menyebalkan: *en pysty tulemaan*. ⚠️ *Alkaa* (mulai) dalam bahasa baku juga memakai bentuk kamus — *Alkoi sataa lunta* (mulai turun salju), *Alan ymmärtää* (aku mulai mengerti). Dalam percakapan kamu akan sering mendengar *alkaa tekemään*; itu wajar di lisan, tetapi di tulisan resmi tulislah *alkaa tehdä*. Kalau mau \"mulai\" dengan *-maan* yang baku, pakai *ruveta*: *rupesin tekemään*."
+    },
+    {
+     "type": "kotak",
+     "title": "-matta dalam kalimat sehari-hari",
+     "items": [
+      "*Hän lähti sanomatta mitään.* — Dia pergi tanpa berkata apa-apa.",
+      "*Älä lähde syömättä!* — Jangan berangkat tanpa makan! (kalimat para ibu dan Eila)",
+      "*Ilman* untuk kata benda, *-matta* untuk kata kerja: *ilman takkia* (tanpa jaket), tetapi *lähti ottamatta takkia* (pergi tanpa mengambil jaket).",
+      "Objek sesudah *-matta* selalu partitif: *lukematta kirjaa, syömättä aamiaista, maksamatta laskua*."
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Musim dingin dan laskiainen",
+   "blocks": [
+    {
+     "type": "tabel",
+     "head": [
+      "Suomi",
+      "Cara baca",
+      "Bahasa Indonesia"
+     ],
+     "rows": [
+      [
+       "hiihtää",
+       "HIIH-tèè",
+       "main ski lintas alam"
+      ],
+      [
+       "luistella",
+       "LUIS-tel-la",
+       "berseluncur es"
+      ],
+      [
+       "laskea mäkeä",
+       "LAS-ke-a MÈ-ke-è",
+       "meluncur dari bukit"
+      ],
+      [
+       "pulkka",
+       "PULK-ka",
+       "kereta luncur plastik"
+      ],
+      [
+       "avantouinti",
+       "A-van-tou-in-ti",
+       "berenang di lubang es"
+      ],
+      [
+       "latu",
+       "LA-tu",
+       "jalur ski"
+      ],
+      [
+       "pakkanen",
+       "PAK-ka-nen",
+       "suhu di bawah nol"
+      ],
+      [
+       "heijastin",
+       "HEI-yas-tin",
+       "reflektor"
+      ],
+      [
+       "hernekeitto",
+       "HER-ne-keit-to",
+       "sup kacang polong"
+      ],
+      [
+       "laskiaispulla",
+       "LAS-ki-ais-pul-la",
+       "roti manis laskiainen"
+      ]
+     ]
+    },
+    {
+     "type": "p",
+     "text": "*Laskiainen* jatuh tujuh minggu sebelum Paskah; pada 2027 *laskiaissunnuntai* tanggal 7 Februari dan *laskiaistiistai* tanggal 9 Februari. Asalnya pesta terakhir sebelum masa puasa Prapaskah, tetapi sekarang ia hari keluarga yang santai: anak-anak dan orang dewasa pergi ke *pulkkamäki*, lalu makan *hernekeitto* (sup kacang polong) dan *laskiaispulla*. Ada kepercayaan lama dari zaman petani: makin panjang luncuranmu, makin panjang tanaman linen (*pellava*) yang akan tumbuh musim panas nanti. Hampir tak ada yang menanam linen lagi, tetapi semua orang tetap berlomba meluncur sejauh mungkin."
+    },
+    {
+     "type": "kotak",
+     "title": "Bertahan di luar saat pakkanen",
+     "items": [
+      "Berpakaianlah berlapis (*kerrospukeutuminen*): lapisan dalam dari wol atau bahan sintetis, bukan katun — katun yang basah keringat cepat membuatmu kedinginan.",
+      "Di jalan yang gelap, pejalan kaki wajib memakai *heijastin* (reflektor) menurut undang-undang lalu lintas. Gantungkan di jaket setinggi lutut.",
+      "*Latu* (jalur ski) dirawat kota dan gratis. Jangan berjalan kaki di atasnya — itu pelanggaran etiket terbesar musim dingin. Kondisinya (*latutilanne*) diumumkan di situs kota.",
+      "Berenang di lubang es jangan pernah sendirian. Banyak klub *avantouinti* punya sauna dan keanggotaan musiman; Laura bisa kamu tanyai."
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Ulangan berjenjang — unit 14",
+   "blocks": [
+    {
+     "type": "p",
+     "text": "Tutup kolom Finlandia, baca terjemahan Indonesianya, lalu susun kembali kalimatnya dari ingatan."
+    },
+    {
+     "type": "tabel",
+     "head": [
+      "Bahasa Indonesia",
+      "Suomi"
+     ],
+     "rows": [
+      [
+       "Di sana banyak buku yang belum bisa kubaca.",
+       "*Siellä on paljon kirjoja, joita en vielä osaa lukea.*"
+      ],
+      [
+       "Budi itu tetangga yang membantuku menyekop salju di musim dingin pertamanya.",
+       "*Budi on se naapuri, joka auttoi minua lumitöissä ensimmäisenä talvena.*"
+      ],
+      [
+       "Dan Eila orang yang pulla-nya paling enak se-Espoo.",
+       "*Ja Eila on ihminen, jonka pullat ovat Espoon parhaat.*"
+      ],
+      [
+       "Mau baca drafnya? Semua yang Eila bilang ada di sini.",
+       "*Luetko luonnoksen? Kaikki, mitä Eila sanoi, on tässä.*"
+      ],
+      [
+       "Ada yang mau kamu ubah?",
+       "*Onko jotain, mitä haluat muuttaa?*"
+      ]
+     ]
+    }
+   ]
+  }
+ ],
+ "vocab": [
+  {
+   "fi": "hiihtää",
+   "baca": "HIIH-tèè",
+   "id": "main ski lintas alam"
+  },
+  {
+   "fi": "luistella",
+   "baca": "LUIS-tel-la",
+   "id": "berseluncur es (*luistelen*)"
+  },
+  {
+   "fi": "laskea mäkeä",
+   "baca": "LAS-ke-a MÈ-ke-è",
+   "id": "meluncur dari bukit"
+  },
+  {
+   "fi": "pulkka",
+   "baca": "PULK-ka",
+   "id": "kereta luncur plastik (gen. *pulkan*)"
+  },
+  {
+   "fi": "pulkkamäki",
+   "baca": "PULK-ka-mè-ki",
+   "id": "bukit luncur (gen. *pulkkamäen*)"
+  },
+  {
+   "fi": "avanto",
+   "baca": "A-van-to",
+   "id": "lubang es untuk berenang (gen. *avannon*)"
+  },
+  {
+   "fi": "keli",
+   "baca": "KE-li",
+   "id": "kondisi cuaca (untuk kegiatan luar)"
+  },
+  {
+   "fi": "latu",
+   "baca": "LA-tu",
+   "id": "jalur ski (gen. *ladun*)"
+  },
+  {
+   "fi": "laskiainen",
+   "baca": "LAS-ki-ai-nen",
+   "id": "laskiainen, pesta pra-Prapaskah (gen. *laskiaisen*)"
+  },
+  {
+   "fi": "laskiaispulla",
+   "baca": "LAS-ki-ais-pul-la",
+   "id": "roti manis laskiainen berisi krim"
+  },
+  {
+   "fi": "mehu",
+   "baca": "ME-hu",
+   "id": "jus, minuman sari buah"
+  },
+  {
+   "fi": "oppia",
+   "baca": "OP-pi-a",
+   "id": "belajar, jadi bisa (*opin*; + *-maan*)"
+  },
+  {
+   "fi": "opetella",
+   "baca": "O-pe-tel-la",
+   "id": "berlatih, mempelajari (*opettelen*; + *-maan*)"
+  },
+  {
+   "fi": "ruveta",
+   "baca": "RU-ve-ta",
+   "id": "mulai (*rupean, rupesin*; + *-maan*)"
+  },
+  {
+   "fi": "joutua",
+   "baca": "YOU-tu-a",
+   "id": "terpaksa (+ *-maan*)"
+  },
+  {
+   "fi": "pystyä",
+   "baca": "PÜS-tü-è",
+   "id": "mampu (+ *-maan*)"
+  },
+  {
+   "fi": "jarruttaa",
+   "baca": "YAR-rut-taa",
+   "id": "mengerem"
+  },
+  {
+   "fi": "nukkua",
+   "baca": "NUK-ku-a",
+   "id": "tidur (*nukun*)"
+  },
+  {
+   "fi": "tanssia",
+   "baca": "TANS-si-a",
+   "id": "menari"
+  },
+  {
+   "fi": "kysyä",
+   "baca": "KÜ-sü-è",
+   "id": "bertanya (orangnya + *-lta/-ltä*)"
+  },
+  {
+   "fi": "maistaa",
+   "baca": "MAIS-taa",
+   "id": "mencicipi"
+  },
+  {
+   "fi": "riidellä",
+   "baca": "RII-del-lè",
+   "id": "bertengkar, berdebat (*riitelen*; soalnya + *-sta/-stä*)"
+  },
+  {
+   "fi": "pakkanen",
+   "baca": "PAK-ka-nen",
+   "id": "suhu di bawah nol (gen. *pakkasen*)"
+  },
+  {
+   "fi": "molemmat",
+   "baca": "MO-lem-mat",
+   "id": "keduanya"
+  },
+  {
+   "fi": "kova nälkä",
+   "baca": "KO-va NÈL-kè",
+   "id": "lapar sekali"
+  }
+ ],
+ "exercises": [
+  {
+   "prompt": "Terjemahkan ke bahasa Finlandia.",
+   "items": [
+    "Aku lagi main ski.",
+    "Laura pergi berenang ke lubang es.",
+    "Kami baru pulang dari berenang.",
+    "Aku belajar bahasa Finlandia dengan membaca koran.",
+    "Dia pergi tanpa berkata apa-apa.",
+    "Kamu tadi sudah berenang? (*käydä*)"
+   ]
+  },
+  {
+   "prompt": "Isi dengan bentuk infinitif III yang tepat.",
+   "items": [
+    "Marek on ____. (nukkua, sedang)",
+    "Lähdetkö ____? (hiihtää, pergi untuk)",
+    "Laura tulee juuri ____. (uida, baru dari)",
+    "Opin suomea ____ radiota. (kuunnella, dengan cara)",
+    "Hän lähti ____ ovea. (sulkea, tanpa)",
+    "Autatko minua ____? (siivota)",
+    "Eila on ____ pullaa. (leipoa, sedang)"
+   ]
+  },
+  {
+   "prompt": "Jawab dengan infinitif III sesuai petunjuk dalam kurung.",
+   "items": [
+    "Missä Laura on? (uida)",
+    "Mihin Budi menee? (hiihtää)",
+    "Mistä Marek tulee? (tanssia)",
+    "Miten opit suomea? (puhua)",
+    "Söitkö aamiaista? — En, lähdin … (syödä, tanpa)",
+    "Mitä Eila tekee? (leipoa pullaa, sedang)"
+   ]
+  },
+  {
+   "prompt": "Susun jadi kalimat yang benar.",
+   "items": [
+    "hiihtämässä / olen / Oittaalla",
+    "menen / avantoon / uimaan / aamulla",
+    "lähti / hän / mitään / sanomatta",
+    "opitaan / se / laskemalla",
+    "tule / syömään / poika"
+   ]
+  }
+ ],
+ "answers": [
+  "Olen hiihtämässä. — Laura menee uimaan avantoon. — Tulemme uimasta. — Opin suomea lukemalla lehtiä. — Hän lähti sanomatta mitään. — Oletko käynyt uimassa?",
+  "nukkumassa — hiihtämään — uimasta — kuuntelemalla — sulkematta — siivoamaan — leipomassa",
+  "Laura on uimassa. — Budi menee hiihtämään. — Marek tulee tanssimasta. — Opin suomea puhumalla. — En, lähdin syömättä. — Eila on leipomassa pullaa.",
+  "Olen hiihtämässä Oittaalla. — Aamulla menen uimaan avantoon. — Hän lähti sanomatta mitään. — Se opitaan laskemalla. — Poika, tule syömään!"
+ ]
+}

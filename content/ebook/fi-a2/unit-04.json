@@ -1,0 +1,732 @@
+{
+ "title": "Milikku, milikmu — akhiran milik",
+ "title_target": "Onko tämä sinun laturisi?",
+ "goal": "Menyatakan milik dengan akhiran *-ni, -si, -nsa, -mme, -nne* pada batang yang benar (*huoneeni, avaimeni, käteni*), menggabungkannya dengan ekor kasus (*taskussani, perheessämme*), dan membedakan *hänen takkinsa* dari *takkinsa* serta *oma*.",
+ "bekal": [
+  "menempelkan akhiran milik pada batang genitif, termasuk kata yang batangnya berubah",
+  "memakai akhiran milik sesudah ekor kasus: *kädessäni, talossaan, perheessämme*",
+  "membedakan milik sendiri (*Laura otti takkinsa*) dari milik orang lain (*hänen takkinsa*)"
+ ],
+ "dialogs": [
+  {
+   "title": "Dialog — Kenen laturi tämä on?",
+   "intro": "Kamis pertengahan Oktober 2026, sesudah rapat tim yang panjang. Laura membawa sekotak barang yang tertinggal di ruang rapat ke meja-meja tim; Budi membantu memilahnya, dan Heikki berdiri di dekat mereka dengan cangkir kopinya.",
+   "lines": [
+    {
+     "speaker": "Laura:",
+     "text": "Kenen laturi tämä on? Se oli neuvotteluhuoneessa.",
+     "id": "Ini pengisi daya siapa? Tadi ada di ruang rapat.",
+     "literal": "siapa-punya pengisi-daya ini adalah? itu adalah-lampau di-ruang-rapat."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Se on minun laturini. Kiitos! Etsin sitä koko aamun.",
+     "id": "Itu punyaku. Makasih! Sepagian aku mencarinya.",
+     "literal": "itu adalah saya-punya pengisi-daya-ku. terima-kasih! mencari-lampau-saya itu-bagian seluruh pagi-punya."
+    },
+    {
+     "speaker": "Laura:",
+     "text": "Entä tämä vesipullo? Onko se sinun vai Heikin?",
+     "id": "Kalau botol air ini? Punyamu atau punya Heikki?",
+     "literal": "lalu ini air-botol? adalah-kah itu kamu-punya atau Heikki-punya?"
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Ei ole minun. Minun pulloni on sininen.",
+     "id": "Bukan punyaku. Botolku biru.",
+     "literal": "tidak adalah saya-punya. saya-punya botol-ku adalah biru."
+    },
+    {
+     "speaker": "Heikki:",
+     "text": "Se on minun. Vaimoni osti sen minulle.",
+     "id": "Itu punyaku. Istriku yang membelikannya.",
+     "literal": "itu adalah saya-punya. istri-ku membeli-lampau itu-sasaran kepada-saya."
+    },
+    {
+     "speaker": "Laura:",
+     "text": "Ja nämä avaimet? Avaimenperä on pieni muumi.",
+     "id": "Terus kunci-kunci ini? Gantungannya Moomin kecil.",
+     "literal": "dan ini-jamak kunci-jamak? gantungan-kunci adalah kecil moomin."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Ne ovat minun avaimeni! Taskussani on vain lompakkoni.",
+     "id": "Itu kunciku! Di sakuku cuma ada dompet.",
+     "literal": "itu-jamak adalah saya-punya kunci-jamak-ku! di-saku-ku ada hanya dompet-ku."
+    },
+    {
+     "speaker": "Laura:",
+     "text": "Budi, sinä olet hajamielinen. Missä puhelimesi on?",
+     "id": "Budi, kamu pelupa banget. Teleponmu di mana?",
+     "literal": "Budi, kamu adalah linglung. di-mana telepon-mu ada?"
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Tässä, kädessäni. Tai… ei, tämä on sinun puhelimesi!",
+     "id": "Ini, di tanganku. Eh… bukan, ini teleponmu!",
+     "literal": "di-sini, di-tangan-ku. atau… tidak, ini adalah kamu-punya telepon-mu!"
+    },
+    {
+     "speaker": "Laura:",
+     "text": "Ha! Samanlaiset kuoret. Anna se tänne ja ota omasi pöydältä.",
+     "id": "Ha! Casingnya sama. Sini, dan ambil punyamu sendiri dari meja.",
+     "literal": "ha! serupa-jamak sarung-jamak. berilah itu ke-sini dan ambillah milik-sendiri-mu dari-meja."
+    },
+    {
+     "speaker": "Heikki:",
+     "text": "Ensi kerralla jokainen kirjoittaa oman nimensä laturiinsa.",
+     "id": "Lain kali, setiap orang menulis namanya sendiri di pengisi dayanya.",
+     "literal": "berikut pada-kali setiap-orang menulis sendiri-sasaran nama-nya ke-pengisi-daya-nya."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Hyvä idea. Mutta minun käsialani on huono.",
+     "id": "Ide bagus. Tapi tulisan tanganku jelek.",
+     "literal": "baik ide. tetapi saya-punya tulisan-tangan-ku adalah buruk."
+    },
+    {
+     "speaker": "Laura:",
+     "text": "Ei haittaa. Sinun nimesi on lyhyt, se mahtuu mihin tahansa.",
+     "id": "Nggak masalah. Namamu pendek, muat di mana saja.",
+     "literal": "tidak mengganggu. kamu-punya nama-mu adalah pendek, itu muat ke-mana saja."
+    },
+    {
+     "speaker": "Heikki:",
+     "text": "Minun sukunimeni on Laine. Sekin mahtuu.",
+     "id": "Nama keluargaku Laine. Itu juga muat.",
+     "literal": "saya-punya nama-keluarga-ku adalah Laine. itu-juga muat."
+    }
+   ],
+   "notes": [
+    "**Minun laturini** — milik ditandai dua kali: kata ganti genitif *minun* **dan** akhiran *-ni*. Kamu sudah mengenalnya di A1 (*minun äitini*). Dalam bahasa baku *minun* dan *sinun* boleh dihilangkan (*laturini, puhelimesi*), akhirannya tidak.",
+    "**Kenen? — Heikin** — \"punya siapa\" = *kenen*. Jawabannya genitif biasa **tanpa** akhiran milik: *Heikin, Lauran, Budin*. Akhiran milik hanya berpasangan dengan kata ganti orang (*minun, sinun, hänen, meidän, teidän, heidän*) atau berdiri sendiri. Untuk \"punyaku\" di akhir kalimat cukup *minun*: *Se on minun.*",
+    "**Puhelimesi, avaimeni** — akhiran menempel pada **batang genitif** (genitif tanpa *-n*): *puhelin → puhelimen → puhelime-si*; *avain → avaimen → avaime-ni*. Kalau kamu tahu genitif sebuah kata, kamu tahu batangnya.",
+    "**Lompakkoni, kädessäni** — sebelum akhiran milik, huruf mati kembali **kuat** kalau suku katanya terbuka: genitif *lompakon*, tetapi *lompakkoni* (dompetku). *Käsi* bahkan punya tiga wujud: *käden* (genitif), *käteni* (tanganku), *kädessäni* (di tanganku) — pada yang terakhir suku *-des-* tertutup, jadi lemah lagi.",
+    "**Oman nimensä laturiinsa** — akhiran *-nsa/-nsä* tanpa *hänen* berarti **milik subjeknya sendiri**. *Laura otti takkinsa* = Laura mengambil jaketnya sendiri; *Laura otti hänen takkinsa* = Laura mengambil jaket orang lain (dia). *Oma* (sendiri) menegaskan hal yang sama.",
+    "**Ota omasi** — *oma* + akhiran = \"milikmu sendiri\": *omani, omasi, omansa*. Laura menukar telepon dengan kalimat terpendek yang mungkin."
+   ],
+   "grammars": [
+    {
+     "title": "Akhiran milik",
+     "body": [
+      "Tiga kata dengan batang berbeda: *auto* (batang sama), *huone* (batang *huonee-*), *avain* (batang *avaime-*)."
+     ],
+     "table": {
+      "head": [
+       "Pemilik",
+       "Akhiran",
+       "*auto*",
+       "*huone*",
+       "*avain*"
+      ],
+      "rows": [
+       [
+        "*minun*",
+        "*-ni*",
+        "*autoni*",
+        "*huoneeni*",
+        "*avaimeni*"
+       ],
+       [
+        "*sinun*",
+        "*-si*",
+        "*autosi*",
+        "*huoneesi*",
+        "*avaimesi*"
+       ],
+       [
+        "*hänen*",
+        "*-nsa/-nsä*",
+        "*autonsa*",
+        "*huoneensa*",
+        "*avaimensa*"
+       ],
+       [
+        "*meidän*",
+        "*-mme*",
+        "*automme*",
+        "*huoneemme*",
+        "*avaimemme*"
+       ],
+       [
+        "*teidän*",
+        "*-nne*",
+        "*autonne*",
+        "*huoneenne*",
+        "*avaimenne*"
+       ],
+       [
+        "*heidän*",
+        "*-nsa/-nsä*",
+        "*autonsa*",
+        "*huoneensa*",
+        "*avaimensa*"
+       ]
+      ]
+     },
+     "after": [
+      "⚠️ **Genitif dan jamak lenyap di bawah akhiran:** *autoni* bisa berarti \"mobilku\", \"(punya) mobilku\", atau \"mobil-mobilku\". Konteks yang memilah: *Autoni on sininen* (mobilku biru), *Autoni ovat sinisiä* (mobil-mobilku biru)."
+     ]
+    },
+    {
+     "title": "Akhiran milik sesudah ekor kasus",
+     "body": [
+      "Akhiran milik datang **sesudah** ekor kasus. Untuk *hän* dan *he*, sesudah ekor kasus yang berakhir vokal, *-nsa* biasanya diganti pemanjangan vokal + *-n*: *talossaan*, bukan *talossansa*."
+     ],
+     "table": {
+      "head": [
+       "Kasus",
+       "Tanpa akhiran",
+       "minun",
+       "hänen"
+      ],
+      "rows": [
+       [
+        "inessif",
+        "*talossa*",
+        "*talossani*",
+        "*talossaan*"
+       ],
+       [
+        "elatif",
+        "*talosta*",
+        "*talostani*",
+        "*talostaan*"
+       ],
+       [
+        "ilatif",
+        "*taloon*",
+        "*talooni*",
+        "*taloonsa*"
+       ],
+       [
+        "adesif",
+        "*talolla*",
+        "*talollani*",
+        "*talollaan*"
+       ],
+       [
+        "alatif",
+        "*talolle*",
+        "*talolleni*",
+        "*talolleen*"
+       ],
+       [
+        "partitif",
+        "*taloa*",
+        "*taloani*",
+        "*taloaan*"
+       ]
+      ]
+     }
+    }
+   ]
+  },
+  {
+   "title": "Dialog kedua — Onko tämä sinun perheesi?",
+   "intro": "Keesokan harinya Budi menaruh foto berbingkai di mejanya. Heikki, yang jarang berbasa-basi, berhenti sebentar dalam perjalanan ke mesin kopi.",
+   "lines": [
+    {
+     "speaker": "Heikki:",
+     "text": "Onko tämä sinun perheesi?",
+     "id": "Ini keluargamu?",
+     "literal": "adalah-kah ini kamu-punya keluarga-mu?"
+    },
+    {
+     "speaker": "Budi:",
+     "text": "On. Tuossa ovat vanhempani, ja tuo on pikkuveljeni.",
+     "id": "Iya. Itu orang tuaku, dan itu adikku.",
+     "literal": "adalah. di-situ adalah orang-tua-jamak-ku, dan itu adalah adik-laki-laki-ku."
+    },
+    {
+     "speaker": "Heikki:",
+     "text": "Entä tämä nainen ja pieni poika?",
+     "id": "Kalau perempuan ini dan anak kecil ini?",
+     "literal": "lalu ini perempuan dan kecil anak-laki-laki?"
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Hän on isosiskoni Bandungista, ja poika on hänen lapsensa.",
+     "id": "Itu kakak perempuanku dari Bandung, dan anak itu anaknya.",
+     "literal": "dia adalah kakak-perempuan-ku dari-Bandung, dan anak-laki-laki adalah dia-punya anak-nya."
+    },
+    {
+     "speaker": "Heikki:",
+     "text": "Iloinen perhe. Minun pöydälläni on vain yksi kuva.",
+     "id": "Keluarga yang ceria. Di mejaku cuma ada satu foto.",
+     "literal": "gembira keluarga. saya-punya di-atas-meja-ku ada hanya satu gambar."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Kenen kuva se on?",
+     "id": "Foto siapa?",
+     "literal": "siapa-punya gambar itu adalah?"
+    },
+    {
+     "speaker": "Heikki:",
+     "text": "Koiramme. Rölli, kuusi vuotta.",
+     "id": "Anjing kami. Rölli, enam tahun.",
+     "literal": "anjing-kami. Rölli, enam tahun-bagian."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Kuka valitsi sen nimen?",
+     "id": "Siapa yang memilih namanya?",
+     "literal": "siapa memilih-lampau itu-punya nama-sasaran?"
+    },
+    {
+     "speaker": "Heikki:",
+     "text": "Vaimoni. Minä en saanut äänestää.",
+     "id": "Istriku. Aku nggak boleh ikut memilih.",
+     "literal": "istri-ku. saya tidak-saya boleh-lampau memberi-suara."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Meidän perheessämme äiti valitsee kaiken.",
+     "id": "Di keluarga kami, ibu yang memilih semuanya.",
+     "literal": "kami-punya di-keluarga-kami ibu memilih semua-sasaran."
+    },
+    {
+     "speaker": "Heikki:",
+     "text": "Niin meilläkin. Hyvä järjestelmä.",
+     "id": "Di rumah kami juga. Sistem yang bagus.",
+     "literal": "begitu pada-kami-juga. baik sistem."
+    }
+   ],
+   "notes": [
+    "**Vanhempani, pikkuveljeni** — bentuk *-ni* sama untuk tunggal dan jamak: *vanhempani* = orang tuaku (jamak, dari *vanhemmat*), *pikkuveljeni* = adikku. Batang *veli* adalah *velje-*: *veljeni, veljensä*.",
+    "**Hänen lapsensa** — di sini *hänen* **wajib**, karena subjek kalimatnya *poika*, bukan kakak Budi. Tanpa *hänen*, *poika on lapsensa* tak bermakna. Aturannya: *hänen* dipakai kalau pemiliknya orang lain daripada subjek.",
+    "**Minun pöydälläni** — urutan tetap: kata ganti genitif, lalu kata benda + ekor kasus + akhiran milik. *Pöydällä* (di atas meja) + *-ni* = *pöydälläni*.",
+    "**Koiramme** — *meidän* dihilangkan karena *-mme* sudah jelas. Heikki yang hemat kata memakai satu kata untuk seluruh kalimat. Hal yang sama bisa kamu lakukan dengan *-ni, -si, -mme, -nne*, tetapi tidak dengan *-nsa*.",
+    "**Meidän perheessämme** — ekor kasus dan akhiran milik bertumpuk: *perhe → perhee- → perheessä → perheessämme*. Dibaca dari belakang: kami – di dalam – keluarga.",
+    "**En saanut äänestää** — *saada* + infinitif = boleh; lampau sangkalnya *en saanut*. Humor kering khas Heikki: nada datar, tanpa senyum."
+   ],
+   "grammars": [
+    {
+     "title": "Hänen atau tidak?",
+     "body": [
+      "Untuk orang ketiga, ada atau tidaknya *hänen/heidän* mengubah arti."
+     ],
+     "table": {
+      "head": [
+       "Kalimat",
+       "Artinya",
+       "Pemilik"
+      ],
+      "rows": [
+       [
+        "*Laura otti takkinsa.*",
+        "Laura mengambil jaketnya (sendiri).",
+        "Laura"
+       ],
+       [
+        "*Laura otti hänen takkinsa.*",
+        "Laura mengambil jaket dia (orang lain).",
+        "orang lain"
+       ],
+       [
+        "*Laura otti oman takkinsa.*",
+        "Laura mengambil jaketnya sendiri (tegas).",
+        "Laura"
+       ],
+       [
+        "*He söivät eväänsä.*",
+        "Mereka memakan bekal mereka sendiri.",
+        "mereka"
+       ],
+       [
+        "*Budi soitti siskolleen.*",
+        "Budi menelepon kakaknya.",
+        "Budi"
+       ]
+      ]
+     },
+     "after": [
+      "⚠️ Untuk *minä, sinä, me, te* tak ada salah paham semacam ini, jadi kata gantinya bebas dihilangkan: *Soitin siskolleni* = *Soitin minun siskolleni*."
+     ]
+    }
+   ]
+  }
+ ],
+ "sections": [
+  {
+   "title": "Batang di bawah akhiran milik",
+   "blocks": [
+    {
+     "type": "p",
+     "text": "Setiap akhiran milik menempel pada batang yang sama dengan genitif. Kata yang batangnya berubah di genitif juga berubah di sini. Satu perbedaan: huruf mati sebelum akhiran cenderung **kuat**, karena suku katanya terbuka."
+    },
+    {
+     "type": "tabel",
+     "head": [
+      "Kata",
+      "Genitif",
+      "Dengan -ni",
+      "Arti"
+     ],
+     "rows": [
+      [
+       "*huone*",
+       "*huoneen*",
+       "*huoneeni*",
+       "kamarku"
+      ],
+      [
+       "*avain*",
+       "*avaimen*",
+       "*avaimeni*",
+       "kunciku"
+      ],
+      [
+       "*puhelin*",
+       "*puhelimen*",
+       "*puhelimeni*",
+       "teleponku"
+      ],
+      [
+       "*käsi*",
+       "*käden*",
+       "*käteni*",
+       "tanganku"
+      ],
+      [
+       "*nimi*",
+       "*nimen*",
+       "*nimeni*",
+       "namaku"
+      ],
+      [
+       "*veli*",
+       "*veljen*",
+       "*veljeni*",
+       "saudara laki-lakiku"
+      ],
+      [
+       "*mies*",
+       "*miehen*",
+       "*mieheni*",
+       "suamiku"
+      ],
+      [
+       "*lapsi*",
+       "*lapsen*",
+       "*lapseni*",
+       "anakku"
+      ],
+      [
+       "*sydän*",
+       "*sydämen*",
+       "*sydämeni*",
+       "hatiku"
+      ],
+      [
+       "*kauppa*",
+       "*kaupan*",
+       "*kauppani*",
+       "tokoku (kuat!)"
+      ]
+     ]
+    },
+    {
+     "type": "p",
+     "text": "Baris terakhir menjebak paling banyak orang: *kaupan* lemah karena *-n* menutup suku kata, tetapi *kauppani* kuat karena dalam *kaup-pa-ni* suku *pa* terbuka (berakhir vokal). Begitu ekor kasus masuk dan suku kata tertutup lagi, huruf mati kembali lemah: *kaupassani* (di tokoku), *pöydälläni* (di atas mejaku), *lompakossani* (di dalam dompetku)."
+    },
+    {
+     "type": "kotak",
+     "title": "Cara mencatat kata benda baru",
+     "items": [
+      "Catat selalu dua bentuk: dasar dan genitif (*avain, avaimen*). Dari genitif kamu mendapat batang untuk akhiran milik, kasus tempat, dan banyak bentuk lain.",
+      "Kata yang berakhir *-in* (*avain, puhelin, keitin*) hampir selalu berbatang *-ime-*.",
+      "Kata *-e* (*huone, kirje, perhe*) berbatang *-ee-*: *kirjeeni, perheeni*.",
+      "Kamus daring seperti *Wiktionary* mencantumkan tabel lengkap setiap kata benda — berguna untuk memeriksa."
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Lisan dan baku: minun autoni, mun auto",
+   "blocks": [
+    {
+     "type": "p",
+     "text": "Dalam percakapan sehari-hari orang Finlandia hampir tak pernah memakai akhiran milik. Mereka memendekkan kata gantinya dan membiarkan kata bendanya polos. Kamu harus **mengerti** keduanya, tetapi menulis dan berbicara resmi dengan bentuk baku."
+    },
+    {
+     "type": "tabel",
+     "head": [
+      "Baku",
+      "Lisan (Helsinki)",
+      "Arti"
+     ],
+     "rows": [
+      [
+       "*minun autoni*",
+       "*mun auto*",
+       "mobilku"
+      ],
+      [
+       "*sinun autosi*",
+       "*sun auto*",
+       "mobilmu"
+      ],
+      [
+       "*hänen autonsa*",
+       "*sen auto*",
+       "mobilnya"
+      ],
+      [
+       "*meidän automme*",
+       "*meidän auto*",
+       "mobil kami"
+      ],
+      [
+       "*teidän autonne*",
+       "*teidän auto*",
+       "mobil kalian"
+      ],
+      [
+       "*heidän autonsa*",
+       "*niiden auto*",
+       "mobil mereka"
+      ],
+      [
+       "*taskussani*",
+       "*mun taskussa*",
+       "di sakuku"
+      ]
+     ]
+    },
+    {
+     "type": "p",
+     "text": "Perhatikan bahwa ragam lisan memakai *se* dan *ne* (itu, mereka) untuk orang. Di bahasa baku, *se* untuk manusia terdengar kasar; di bahasa lisan, itu biasa saja. Unit 19 akan membahas ragam lisan secara lengkap."
+    },
+    {
+     "type": "kotak",
+     "title": "Kapan memakai yang mana",
+     "items": [
+      "Surel ke atasan, formulir, lamaran kerja, dan tulisan resmi: selalu bentuk baku (*minun autoni* atau *autoni*).",
+      "Obrolan dengan teman atau rekan di kantin: kamu akan mendengar *mun*, *sun*, *sen* — boleh ditiru pelan-pelan setelah telingamu terbiasa.",
+      "Bentuk campuran seperti *minun auto* (tanpa akhiran) memang terdengar dalam obrolan, tetapi di tulisan resmi terlihat seperti lupa; pilih salah satu ragam dengan konsisten.",
+      "Lagu dan iklan sering memakai ragam lisan: *Sun kaa* (bersamamu) di lirik pop berarti *sinun kanssasi*."
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Ulangan berjenjang — unit 2",
+   "blocks": [
+    {
+     "type": "p",
+     "text": "Tutup kolom Finlandia, baca terjemahan Indonesianya, lalu susun kembali kalimatnya dari ingatan."
+    },
+    {
+     "type": "tabel",
+     "head": [
+      "Bahasa Indonesia",
+      "Suomi"
+     ],
+     "rows": [
+      [
+       "Iya, makasih. Saya cari meja kerja dan kursi yang bagus.",
+       "*Kyllä kiitos. Etsin työpöytää ja hyvää tuolia.*"
+      ],
+      [
+       "Nyaman! Tapi saya nggak beli kursi hari ini. Anggarannya nggak cukup.",
+       "*Mukava! Mutta en osta tuolia tänään. Budjetti ei riitä.*"
+      ],
+      [
+       "Iya. Dan kursi itu saya beli bulan depan.",
+       "*Maksan. Ja tuon tuolin ostan ensi kuussa.*"
+      ],
+      [
+       "Tebak! Kemarin aku beli mobil!",
+       "*Arvaa mitä! Ostin eilen auton!*"
+      ],
+      [
+       "Belum. Kemarin kubaca dua jam, lalu ketiduran di tengah jalan.",
+       "*En vielä. Luin sitä eilen kaksi tuntia ja nukahdin kesken.*"
+      ]
+     ]
+    }
+   ]
+  }
+ ],
+ "vocab": [
+  {
+   "fi": "laturi",
+   "baca": "LA-tu-ri",
+   "id": "pengisi daya"
+  },
+  {
+   "fi": "neuvotteluhuone",
+   "baca": "NEU-vot-te-lu-hu-o-ne",
+   "id": "ruang rapat (gen. *neuvotteluhuoneen*)"
+  },
+  {
+   "fi": "kenen",
+   "baca": "KE-nen",
+   "id": "punya siapa (genitif *kuka*)"
+  },
+  {
+   "fi": "vesipullo",
+   "baca": "VE-si-pul-lo",
+   "id": "botol air minum"
+  },
+  {
+   "fi": "vaimo",
+   "baca": "VAI-mo",
+   "id": "istri"
+  },
+  {
+   "fi": "avain",
+   "baca": "A-vain",
+   "id": "kunci (gen. *avaimen*)"
+  },
+  {
+   "fi": "avaimenperä",
+   "baca": "A-vai-men-pe-rè",
+   "id": "gantungan kunci"
+  },
+  {
+   "fi": "tasku",
+   "baca": "TAS-ku",
+   "id": "saku"
+  },
+  {
+   "fi": "lompakko",
+   "baca": "LOM-pak-ko",
+   "id": "dompet (gen. *lompakon*)"
+  },
+  {
+   "fi": "hajamielinen",
+   "baca": "HA-ya-mi-e-li-nen",
+   "id": "pelupa, linglung (gen. *hajamielisen*)"
+  },
+  {
+   "fi": "puhelin",
+   "baca": "PU-he-lin",
+   "id": "telepon (gen. *puhelimen*)"
+  },
+  {
+   "fi": "käsi",
+   "baca": "KÈ-si",
+   "id": "tangan (gen. *käden*; *käteni*)"
+  },
+  {
+   "fi": "kuori",
+   "baca": "KUO-ri",
+   "id": "sarung, casing; kulit (buah)"
+  },
+  {
+   "fi": "oma",
+   "baca": "O-ma",
+   "id": "sendiri, milik sendiri (*omani* = milikku)"
+  },
+  {
+   "fi": "jokainen",
+   "baca": "YO-kai-nen",
+   "id": "setiap (orang) (gen. *jokaisen*)"
+  },
+  {
+   "fi": "käsiala",
+   "baca": "KÈ-si-a-la",
+   "id": "tulisan tangan"
+  },
+  {
+   "fi": "mahtua",
+   "baca": "MAH-tu-a",
+   "id": "muat (*mahdun, mahtui*)"
+  },
+  {
+   "fi": "sukunimi",
+   "baca": "SU-ku-ni-mi",
+   "id": "nama keluarga (gen. *sukunimen*)"
+  },
+  {
+   "fi": "perhe",
+   "baca": "PER-he",
+   "id": "keluarga (gen. *perheen*)"
+  },
+  {
+   "fi": "vanhemmat",
+   "baca": "VAN-hem-mat",
+   "id": "orang tua (jamak)"
+  },
+  {
+   "fi": "pikkuveli",
+   "baca": "PIK-ku-ve-li",
+   "id": "adik laki-laki (gen. *pikkuveljen*)"
+  },
+  {
+   "fi": "isosisko",
+   "baca": "I-so-sis-ko",
+   "id": "kakak perempuan"
+  },
+  {
+   "fi": "valita",
+   "baca": "VA-li-ta",
+   "id": "memilih (*valitsen, valitsin*)"
+  },
+  {
+   "fi": "äänestää",
+   "baca": "ÈÈ-nes-tèè",
+   "id": "memberi suara, memilih (dalam pemungutan suara)"
+  },
+  {
+   "fi": "järjestelmä",
+   "baca": "YÈR-yes-tel-mè",
+   "id": "sistem"
+  }
+ ],
+ "exercises": [
+  {
+   "prompt": "Terjemahkan ke bahasa Finlandia (pakai akhiran milik).",
+   "items": [
+    "Itu pengisi dayaku.",
+    "Di mana teleponmu?",
+    "Kuncinya ada di sakuku.",
+    "Ini keluargamu?",
+    "Laura mengambil jaketnya sendiri.",
+    "Di keluarga kami ibu yang memilih."
+   ]
+  },
+  {
+   "prompt": "Isi dengan kata dalam kurung, lengkap dengan akhiran milik yang cocok.",
+   "items": [
+    "Minun ____ ovat pöydällä. (avain)",
+    "Onko tämä sinun ____? (huone)",
+    "Hänen ____ on opettaja. (mies)",
+    "Meidän ____ on Keilaniemessä. (toimisto)",
+    "Teidän ____ on kaunis. (kaupunki)",
+    "Puhelin on ____. (käsi, inessif, minun)",
+    "Budi soitti ____. (sisko, alatif, miliknya sendiri)"
+   ]
+  },
+  {
+   "prompt": "Ganti *minun* dengan pemilik dalam kurung.",
+   "items": [
+    "minun autoni (sinun)",
+    "minun kirjani (hänen)",
+    "minun talossani (meidän)",
+    "minun avaimeni (teidän)",
+    "minun kädessäni (sinun)",
+    "minun nimeni (heidän)"
+   ]
+  },
+  {
+   "prompt": "Susun jadi kalimat yang benar.",
+   "items": [
+    "laturini / minun / se / on",
+    "on / puhelimesi / missä",
+    "perheesi / onko / tämä / sinun",
+    "lompakkoni / taskussani / vain / on",
+    "oman / jokainen / nimensä / kirjoittaa"
+   ]
+  }
+ ],
+ "answers": [
+  "Se on minun laturini. — Missä puhelimesi on? — Avain on taskussani. — Onko tämä sinun perheesi? — Laura otti takkinsa. — Meidän perheessämme äiti valitsee.",
+  "avaimeni — huoneesi — miehensä — toimistomme — kaupunkinne — kädessäni — siskolleen",
+  "sinun autosi — hänen kirjansa — meidän talossamme — teidän avaimenne — sinun kädessäsi — heidän nimensä",
+  "Se on minun laturini. — Missä puhelimesi on? — Onko tämä sinun perheesi? — Taskussani on vain lompakkoni. — Jokainen kirjoittaa oman nimensä."
+ ]
+}
