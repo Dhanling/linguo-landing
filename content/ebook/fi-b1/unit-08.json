@@ -1,0 +1,737 @@
+{
+ "title": "Mungkin, katanya, kiranya — modus potensial",
+ "title_target": "Hän lienee jo kuullut asiasta",
+ "goal": "Menanggapi kabar simpang siur dan menyatakan seberapa yakin kamu. Titik tata bahasanya: modus potensial (*lienee, tullee, päättänee*) dan ungkapan dugaan (*kai, varmaan, ehkä, luultavasti, tuskin, taitaa, näyttää siltä, että*).",
+ "bekal": [
+  "mengenali dan membentuk potensial dari partisip *-nut*: *tullut → tullee, päättänyt → päättänee*, dan *olla → lienee*",
+  "memilih kata dugaan yang pas dengan tingkat keyakinan, dan tidak tertukar antara *varmaan* dan *varmasti*",
+  "menyebut sumber kabar dengan *kuulemma, X:n mukaan, huhutaan, näyttää siltä, että*"
+ ],
+ "dialogs": [
+  {
+   "title": "Dialog — Huhu kahvihuoneessa",
+   "intro": "Kamis, 25 November 2027, rehat kopi pukul dua. Anggaran Kota Espoo untuk tahun 2028 sedang dirundingkan, dan Onni masuk ke dapur kantor dengan wajah cemas.",
+   "lines": [
+    {
+     "speaker": "Onni:",
+     "text": "Oletteko kuulleet? Kaupunki kuulemma leikkaa hankkeemme rahoitusta.",
+     "id": "Kalian sudah dengar? Katanya kota memotong dana proyek kita.",
+     "literal": "adalah-kalian-kah mendengar-sudah? kota katanya memotong proyek-kami-punya pendanaan-bagian."
+    },
+    {
+     "speaker": "Laura:",
+     "text": "Kuka niin sanoi?",
+     "id": "Siapa yang bilang begitu?",
+     "literal": "siapa begitu berkata-lampau?"
+    },
+    {
+     "speaker": "Onni:",
+     "text": "Kuulin sen hississä. Joku oli lukenut siitä paikallislehdestä.",
+     "id": "Aku dengar di lift. Ada yang sudah membacanya di koran lokal.",
+     "literal": "mendengar-lampau-saya itu-sasaran di-lift. seseorang adalah-lampau membaca-sudah dari-itu dari-koran-lokal."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Tuskin se pitää paikkaansa. Heikki olisi kertonut meille.",
+     "id": "Kayaknya itu nggak benar. Heikki pasti sudah cerita ke kita.",
+     "literal": "hampir-tidak itu memegang tempat-nya-bagian. Heikki adalah-andai menceritakan-sudah kepada-kami."
+    },
+    {
+     "speaker": "Laura:",
+     "text": "Ehkä ei, mutta budjettineuvottelut ovat käynnissä. Jotain leikataan varmaan.",
+     "id": "Mungkin nggak, tapi perundingan anggaran sedang berjalan. Kayaknya ada juga yang bakal dipotong.",
+     "literal": "mungkin tidak, tetapi anggaran-perundingan-jamak adalah-mereka di-jalan. sesuatu-bagian di-potong kayaknya."
+    },
+    {
+     "speaker": "Onni:",
+     "text": "Luultavasti koulujen hankkeet ovat ensimmäisinä listalla.",
+     "id": "Kemungkinan besar proyek-proyek sekolah ada di urutan pertama.",
+     "literal": "agaknya sekolah-jamak-punya proyek-jamak adalah-mereka sebagai-pertama-jamak di-atas-daftar."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "En usko. Kaupunki on sitoutunut hiilineutraaliuteen vuoteen 2030 mennessä.",
+     "id": "Aku rasa nggak. Kota sudah berkomitmen netral karbon paling lambat tahun 2030.",
+     "literal": "tidak-saya percaya. kota adalah mengikatkan-diri-sudah ke-netralitas-karbon ke-tahun 2030 hingga."
+    },
+    {
+     "speaker": "Laura:",
+     "text": "Totta. Mutta näyttää siltä, että rahaa on vähemmän kuin viime vuonna.",
+     "id": "Betul. Tapi kelihatannya uangnya lebih sedikit daripada tahun lalu.",
+     "literal": "benar. tetapi tampak dari-itu, bahwa uang-bagian ada lebih-sedikit daripada lalu pada-tahun."
+    },
+    {
+     "speaker": "Onni:",
+     "text": "Minun harjoitteluni taitaa loppua ensimmäisenä.",
+     "id": "Magangku kayaknya yang pertama berakhir.",
+     "literal": "saya-punya magang-ku tampaknya berakhir sebagai-pertama."
+    },
+    {
+     "speaker": "Laura:",
+     "text": "Tuskin. Sinä olet talon halvin työntekijä.",
+     "id": "Nggak mungkin. Kamu pegawai paling murah di sini.",
+     "literal": "hampir-tidak. kamu adalah-kamu rumah-punya termurah pekerja."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Kysyn Heikiltä. Hän lienee jo kuullut asiasta jotain.",
+     "id": "Aku tanya Heikki. Dia barangkali sudah dengar sesuatu soal itu.",
+     "literal": "bertanya-saya dari-Heikki. ia adalah-mungkin sudah mendengar-sudah dari-hal sesuatu-bagian."
+    },
+    {
+     "speaker": "Onni:",
+     "text": "Hän tullee kokouksesta takaisin kolmelta.",
+     "id": "Dia barangkali kembali dari rapat jam tiga.",
+     "literal": "ia datang-mungkin dari-rapat kembali dari-tiga."
+    },
+    {
+     "speaker": "Laura:",
+     "text": "Tullee? Puhut kuin uutistenlukija, Onni.",
+     "id": "\"Tullee\"? Kamu ngomong kayak pembaca berita, Onni.",
+     "literal": "datang-mungkin? berbicara-kamu seperti berita-jamak-punya-pembaca, Onni."
+    },
+    {
+     "speaker": "Onni:",
+     "text": "Luin sen sanan eilen Ylen uutisista. Hieno sana, eikö?",
+     "id": "Aku baca kata itu kemarin di berita Yle. Keren, kan?",
+     "literal": "membaca-lampau-saya itu-punya kata-sasaran kemarin Yle-punya dari-berita-jamak. keren kata, tidak-kah?"
+    }
+   ],
+   "notes": [
+    "**Kuulemma** — \"katanya\", dari *kuulla* (mendengar). Kata ini menandai bahwa kamu hanya meneruskan kabar tanpa menjamin kebenarannya. Letaknya bebas: *Kaupunki kuulemma leikkaa…* atau *Kuulemma kaupunki leikkaa…*",
+    "**Leikkaa rahoitusta** — objek partitif karena yang dipotong hanya sebagian dana. *Leikata rahoitus* (objek total) terdengar seperti dananya dipangkas habis. Perbedaan kecil di akhiran, perbedaan besar bagi proyek.",
+    "**Tuskin se pitää paikkaansa** — *pitää paikkansa* (harfiah \"memegang tempatnya\") = benar, sesuai fakta. *Tuskin* (\"hampir tidak\") memberi warna sangkalan, sehingga objeknya biasanya menjadi partitif: *paikkaansa*. Dalam kalimat positif: *Se pitää paikkansa*.",
+    "**Jotain leikataan varmaan** — ⚠️ *varmaan* ≠ *varmasti*. *Varmaan* = \"kayaknya, mungkin besar\" (kira-kira 80%); *varmasti* = \"pasti\". Pelajar Indonesia sering menerjemahkan *varmaan* sebagai \"pasti\" lalu terdengar jauh lebih yakin daripada maksudnya.",
+    "**Taitaa loppua** — *taitaa* + infinitif I = \"kayaknya, sepertinya\": *Taitaa sataa* (kayaknya mau hujan). Arti asli *taitaa* adalah \"mahir\", tetapi dalam arti itu kini jarang dipakai.",
+    "**Lienee, tullee** — modus potensial, bentuk kata kerja khusus untuk \"barangkali\". Laura menggoda Onni karena dalam obrolan bentuk ini terdengar kaku seperti pembaca berita; orang biasa berkata *Hän on varmaan jo kuullut* dan *Hän tulee kai kolmelta*."
+   ],
+   "grammars": [
+    {
+     "title": "Membentuk potensial -ne-",
+     "body": [
+      "Jalan termudah lewat partisip *-nut/-nyt* yang sudah kamu kuasai: buang *-ut/-yt*, lalu tambahkan *-ee* untuk orang ketiga. Asimilasi huruf mati di *-nut* ikut terbawa: *tullut → tullee, noussut → noussee*."
+     ],
+     "table": {
+      "head": [
+       "Kamus",
+       "Partisip -nut",
+       "Potensial (hän)",
+       "Sangkalan",
+       "Arti"
+      ],
+      "rows": [
+       [
+        "*puhua*",
+        "puhunut",
+        "puhunee",
+        "ei puhune",
+        "barangkali berbicara"
+       ],
+       [
+        "*tulla*",
+        "tullut",
+        "tullee",
+        "ei tulle",
+        "barangkali datang"
+       ],
+       [
+        "*mennä*",
+        "mennyt",
+        "mennee",
+        "ei menne",
+        "barangkali pergi"
+       ],
+       [
+        "*nousta*",
+        "noussut",
+        "noussee",
+        "ei nousse",
+        "barangkali naik"
+       ],
+       [
+        "*tehdä*",
+        "tehnyt",
+        "tehnee",
+        "ei tehne",
+        "barangkali membuat"
+       ],
+       [
+        "*päättää*",
+        "päättänyt",
+        "päättänee",
+        "ei päättäne",
+        "barangkali memutuskan"
+       ],
+       [
+        "*haluta*",
+        "halunnut",
+        "halunnee",
+        "ei halunne",
+        "barangkali mau"
+       ],
+       [
+        "*olla*",
+        "ollut",
+        "**lienee**",
+        "ei liene",
+        "barangkali ada/adalah"
+       ]
+      ]
+     },
+     "after": [
+      "*Olla* satu-satunya yang tak beraturan: *lienee*, bukan *ollee*. Ia juga yang paling sering, karena dipakai untuk perfek potensial: *lienee kuullut* (barangkali sudah mendengar), *ei liene tullut* (barangkali belum datang).",
+      "Sangkalan memakai batang tanpa *-e* akhir: *ei tulle, eivät tulle*, persis seperti *ei tule* di samping *tulee*."
+     ]
+    },
+    {
+     "title": "Potensial untuk semua pelaku",
+     "body": [
+      "Akhiran orangnya sama dengan masa kini biasa; yang berubah hanya sisipan *-ne-* (yang menyatu dengan huruf mati di depannya)."
+     ],
+     "table": {
+      "head": [
+       "Pelaku",
+       "*olla*",
+       "*tulla*",
+       "Sangkalan"
+      ],
+      "rows": [
+       [
+        "minä",
+        "lienen",
+        "tullen",
+        "en tulle"
+       ],
+       [
+        "sinä",
+        "lienet",
+        "tullet",
+        "et tulle"
+       ],
+       [
+        "hän",
+        "lienee",
+        "tullee",
+        "ei tulle"
+       ],
+       [
+        "me",
+        "lienemme",
+        "tullemme",
+        "emme tulle"
+       ],
+       [
+        "te",
+        "lienette",
+        "tullette",
+        "ette tulle"
+       ],
+       [
+        "he",
+        "lienevät",
+        "tullevat",
+        "eivät tulle"
+       ]
+      ]
+     },
+     "after": [
+      "Dalam praktik kamu hampir hanya akan bertemu bentuk orang ketiga (*lienee, tullee, lienevät, tullevat*), terutama di berita, laporan resmi, dan surat. Bentuk *minä* dan *sinä* nyaris tak dipakai dalam bahasa masa kini; cukup kenali saja."
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Dialog kedua — Pitääkö se paikkansa?",
+   "intro": "Pukul tiga lewat sepuluh. Heikki kembali dari rapat di balai kota. Budi mengetuk pintu ruangannya yang, seperti biasa, terbuka.",
+   "lines": [
+    {
+     "speaker": "Budi:",
+     "text": "Heikki, liikkuu huhu, että hankkeemme rahoitusta leikataan.",
+     "id": "Heikki, ada kabar burung bahwa dana proyek kita dipotong.",
+     "literal": "Heikki, bergerak desas-desus, bahwa proyek-kami-punya pendanaan-bagian di-potong."
+    },
+    {
+     "speaker": "Heikki:",
+     "text": "Huhuja liikkuu aina marraskuussa.",
+     "id": "Desas-desus selalu beredar di bulan November.",
+     "literal": "desas-desus-jamak-bagian bergerak selalu di-November."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Pitääkö se paikkansa?",
+     "id": "Apa itu benar?",
+     "literal": "memegang-kah itu tempat-nya?"
+    },
+    {
+     "speaker": "Heikki:",
+     "text": "Osittain. Valtuusto päättänee budjetista ensi maanantaina.",
+     "id": "Sebagian. Dewan kota kemungkinan memutuskan anggarannya Senin depan.",
+     "literal": "sebagian. dewan memutuskan-mungkin dari-anggaran berikut pada-Senin."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Ja mitä meille tapahtuu?",
+     "id": "Terus kita bagaimana?",
+     "literal": "dan apa-bagian kepada-kami terjadi?"
+    },
+    {
+     "speaker": "Heikki:",
+     "text": "Koulujen hankkeet eivät liene vaarassa. Leikkaukset kohdistunevat lähinnä teihin ja puistoihin.",
+     "id": "Proyek sekolah barangkali tidak terancam. Pemotongannya kemungkinan terutama menyasar jalan dan taman.",
+     "literal": "sekolah-jamak-punya proyek-jamak tidak-mereka ada-mungkin di-bahaya. pemotongan-jamak mengarah-mungkin-mereka terutama ke-jalan-jamak dan ke-taman-jamak."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Teihin? Siis meihin?",
+     "id": "Ke \"teihin\"? Maksudnya ke kita?",
+     "literal": "ke-jalan-jamak (atau ke-kalian)? jadi ke-kami?"
+    },
+    {
+     "speaker": "Heikki:",
+     "text": "Tarkoitan katuja, Budi. Te olette turvassa.",
+     "id": "Maksudku jalan raya, Budi. Kalian aman.",
+     "literal": "memaksud-saya jalan-jamak-bagian, Budi. kalian adalah-kalian di-aman."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Hyvä. Kerron Onnille, ennen kuin hän alkaa etsiä uutta harjoittelupaikkaa.",
+     "id": "Baik. Aku kasih tahu Onni, sebelum dia mulai cari tempat magang baru.",
+     "literal": "baik. menceritakan-saya kepada-Onni, sebelum daripada ia mulai mencari baru-bagian magang-tempat-bagian."
+    },
+    {
+     "speaker": "Heikki:",
+     "text": "Kerro. Ja sano, ettei huhuihin kannata uskoa.",
+     "id": "Kasih tahu. Dan bilang, desas-desus itu tak usah dipercaya.",
+     "literal": "ceritakanlah. dan katakanlah, bahwa-tidak ke-desas-desus-jamak layak percaya."
+    }
+   ],
+   "notes": [
+    "**Liikkuu huhu** — \"ada desas-desus beredar\", harfiah \"desas-desus bergerak\". Kata kerja berdiri di depan subjek karena kalimatnya memperkenalkan sesuatu yang baru. Heikki menjawab dengan partitif jamak, *huhuja liikkuu*: desas-desus yang tak tentu jumlahnya.",
+    "**Valtuusto päättänee** — Heikki memakai potensial dengan tepat: ia menyampaikan perkiraan yang cukup berdasar, bukan tebakan. *Valtuusto* (dewan kota) adalah badan terpilih yang mengesahkan anggaran kota setiap akhir tahun; *päättää* + elatif = memutuskan tentang.",
+    "**Eivät liene vaarassa** — sangkalan potensial jamak: *eivät* + *liene*. *Kohdistunevat* adalah *kohdistua* (menyasar, mengarah ke) dalam potensial jamak; kata kerja ini meminta ilatif: *kohdistua teihin ja puistoihin*.",
+    "**Teihin? Siis meihin?** — *teihin* bisa berarti \"ke jalan-jalan\" (dari *tie*) atau \"ke kalian\" (dari *te*). Budi sengaja pura-pura salah paham, dan Heikki menjawab dengan kering. Lelucon kasus seperti ini disukai orang Finlandia.",
+    "**Alkaa etsiä** — *alkaa* (mulai) memakai infinitif I: *alkaa etsiä, alkaa sataa*. Bandingkan dengan *ruveta* yang sama artinya tetapi memakai *-maan*: *ruveta etsimään*. Keduanya lazim; *alkaa* lebih netral.",
+    "**Ettei huhuihin kannata uskoa** — *ettei* = *että ei*. *Uskoa* + ilatif = percaya pada (*uskoa huhuihin*); *uskoa* + partitif = mempercayai orang atau perkataannya (*uskon sinua*). *Kannattaa* (ada gunanya) memakai infinitif tanpa subjek."
+   ],
+   "grammars": [
+    {
+     "title": "Menyebut sumber kabar",
+     "body": [
+      "Bahasa Finlandia punya beberapa cara untuk berkata \"aku tidak menjamin ini\". Pilihannya bergantung pada sumber dan seberapa resmi situasinya."
+     ],
+     "table": {
+      "head": [
+       "Ungkapan",
+       "Arti",
+       "Contoh"
+      ],
+      "rows": [
+       [
+        "*kuulemma*",
+        "katanya",
+        "*Kaupunki kuulemma leikkaa rahoitusta.*"
+       ],
+       [
+        "*huhutaan, että…*",
+        "kabarnya (desas-desus)",
+        "*Huhutaan, että kahvinkeitin vaihdetaan.*"
+       ],
+       [
+        "*X:n mukaan*",
+        "menurut X",
+        "*Heikin mukaan koulut ovat turvassa.*"
+       ],
+       [
+        "*kerrotaan, että…*",
+        "diberitakan, konon",
+        "*Kerrotaan, että budjetti on tiukka.*"
+       ],
+       [
+        "*ilmeisesti*",
+        "rupanya, tampaknya",
+        "*Hän on ilmeisesti sairas.*"
+       ],
+       [
+        "*näyttää siltä, että…*",
+        "kelihatannya",
+        "*Näyttää siltä, että rahaa on vähemmän.*"
+       ],
+       [
+        "*lienee*",
+        "barangkali (resmi)",
+        "*Syy lienee kylmä sää.*"
+       ]
+      ]
+     },
+     "after": [
+      "Perhatikan pasif *huhutaan* dan *kerrotaan*: bahasa Finlandia suka menyembunyikan sumber kabar di balik pasif, persis seperti \"konon\" atau \"kabarnya\" dalam bahasa Indonesia.",
+      "*Kuulemma* dan *ilmeisesti* berbeda nada: *kuulemma* berarti kamu mendengarnya dari orang lain, sedangkan *ilmeisesti* berarti kamu menyimpulkannya sendiri dari tanda-tanda yang terlihat (*Valot eivät pala, hän on ilmeisesti lähtenyt* — lampunya mati, rupanya dia sudah pergi)."
+     ]
+    }
+   ]
+  }
+ ],
+ "sections": [
+  {
+   "title": "Seberapa yakin kamu?",
+   "blocks": [
+    {
+     "type": "tabel",
+     "head": [
+      "Suomi",
+      "Cara baca",
+      "Keyakinan",
+      "Bahasa Indonesia"
+     ],
+     "rows": [
+      [
+       "varmasti",
+       "VAR-mas-ti",
+       "100%",
+       "pasti"
+      ],
+      [
+       "varmaan",
+       "VAR-maan",
+       "±80%",
+       "kayaknya, mungkin besar"
+      ],
+      [
+       "todennäköisesti",
+       "TO-den-nè-köi-ses-ti",
+       "±80%",
+       "kemungkinan besar"
+      ],
+      [
+       "luultavasti",
+       "LUUL-ta-vas-ti",
+       "±75%",
+       "agaknya"
+      ],
+      [
+       "kai",
+       "kai",
+       "±60%",
+       "kayaknya (lisan)"
+      ],
+      [
+       "ehkä",
+       "EH-kè",
+       "50%",
+       "mungkin"
+      ],
+      [
+       "mahdollisesti",
+       "MAH-dol-li-ses-ti",
+       "±40%",
+       "ada kemungkinan (resmi)"
+      ],
+      [
+       "tuskin",
+       "TUS-kin",
+       "±10%",
+       "hampir tidak"
+      ],
+      [
+       "ei varmasti",
+       "ei VAR-mas-ti",
+       "0%",
+       "pasti tidak"
+      ]
+     ]
+    },
+    {
+     "type": "p",
+     "text": "Bahasa Indonesia memakai \"mungkin\" untuk hampir semua tingkat; bahasa Finlandia memilahnya. Kalau atasanmu bertanya apakah laporan selesai Jumat, *varmaan* adalah janji yang lemah, *varmasti* adalah janji penuh, dan *tuskin* adalah kabar buruk yang disampaikan dengan sopan. Orang Finlandia cenderung berhati-hati dan lebih suka berjanji kurang daripada lebih, jadi *varmaan* dari mulut orang Finlandia sering ternyata benar. Angka persen di tabel hanya perkiraan untuk membantumu merasakan urutannya."
+    },
+    {
+     "type": "kotak",
+     "title": "Kata kerja dugaan",
+     "items": [
+      "*taitaa* + infinitif: *Taitaa sataa.* (Kayaknya mau hujan.)",
+      "*saattaa* + infinitif: *Hän saattaa myöhästyä.* (Dia mungkin terlambat.)",
+      "*näyttää* + ablatif: *Näyttää hyvältä.* (Kelihatannya bagus.)",
+      "*vaikuttaa* + ablatif: *Hän vaikuttaa väsyneeltä.* (Dia tampak capek.)",
+      "*kuulostaa* + ablatif: *Kuulostaa hienolta.* (Kedengarannya keren.)"
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Bahasa berita dan desas-desus",
+   "blocks": [
+    {
+     "type": "tabel",
+     "head": [
+      "Kalimat berita",
+      "Bahasa Indonesia"
+     ],
+     "rows": [
+      [
+       "*Hallitus päättänee asiasta ensi viikolla.*",
+       "Pemerintah kemungkinan memutuskan hal itu minggu depan."
+      ],
+      [
+       "*Pakkanen jatkunee koko viikon.*",
+       "Suhu beku kemungkinan berlanjut sepanjang minggu."
+      ],
+      [
+       "*Onnettomuuden syy lienee liukas tie.*",
+       "Penyebab kecelakaan barangkali jalan yang licin."
+      ],
+      [
+       "*Hinnat noussevat ensi vuonna.*",
+       "Harga-harga kemungkinan naik tahun depan."
+      ],
+      [
+       "*Poliisin mukaan kukaan ei loukkaantunut.*",
+       "Menurut polisi, tidak ada yang terluka."
+      ],
+      [
+       "*Ministeri ei liene tietoinen asiasta.*",
+       "Menteri barangkali tidak tahu soal itu."
+      ]
+     ]
+    },
+    {
+     "type": "p",
+     "text": "Potensial hidup terutama di berita dan prakiraan: *Yle*, penyiar publik Finlandia, dan surat kabar memakainya untuk perkiraan yang belum pasti, terutama dalam judul dan kalimat pembuka. Kepercayaan orang Finlandia terhadap berita termasuk yang tertinggi di dunia, dan media Finlandia terbiasa membedakan dengan cermat antara fakta (*päätti*), perkiraan (*päättänee*), dan kutipan (*X:n mukaan*). Saat membaca, perhatikan kata kerjanya: satu sisipan *-ne-* mengubah fakta menjadi dugaan."
+    },
+    {
+     "type": "kotak",
+     "title": "Menanggapi desas-desus di kantor",
+     "items": [
+      "*Mistä kuulit sen?* (Dengar dari mana?)",
+      "*Onko tämä varmaa tietoa?* (Ini informasi pasti?)",
+      "*En usko ennen kuin näen.* (Aku tidak percaya sebelum melihat sendiri.)",
+      "*Kysytään asianomaiselta.* (Kita tanya orang yang bersangkutan.)",
+      "*Huhuihin ei kannata uskoa.* (Desas-desus tak usah dipercaya.)",
+      "Kalau kamu sendiri yang menyebarkan kabar, beri tanda jujur: *En ole varma, mutta kuulin, että…* (Aku tidak yakin, tapi aku dengar bahwa…)."
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Ulangan berjenjang — unit 6",
+   "blocks": [
+    {
+     "type": "p",
+     "text": "Tutup kolom Finlandia, baca terjemahan Indonesianya, lalu susun kembali kalimatnya dari ingatan."
+    },
+    {
+     "type": "tabel",
+     "head": [
+      "Bahasa Indonesia",
+      "Suomi"
+     ],
+     "rows": [
+      [
+       "Baru makan jam tiga. Habis makan aku sadar laptopku ketinggalan di sekolah.",
+       "*Söin vasta kolmelta. Syötyäni tajusin, että läppärini oli jäänyt kouluun.*"
+      ],
+      [
+       "Setelah rapat selesai aku menulis notulennya. Dan sekarang aku di sini.",
+       "*Palaverin päätyttyä kirjoitin muistion. Ja nyt olen tässä.*"
+      ],
+      [
+       "Habis mengirimnya, matikan laptop dan lupakan kerjaan!",
+       "*Lähetettyäsi sen sulje kone ja unohda työt!*"
+      ],
+      [
+       "Ya. Begitu kota menyetujui rencananya, kita langsung dikejar waktu.",
+       "*Aloita. Kaupungin hyväksyttyä suunnitelman meillä oli kiire.*"
+      ],
+      [
+       "Setelah jadi koordinator bulan September, aku memesan pengeboran lebih dulu.",
+       "*Tultuani koordinaattoriksi syyskuussa tilasin ensin porauksen.*"
+      ]
+     ]
+    }
+   ]
+  }
+ ],
+ "vocab": [
+  {
+   "fi": "kuulemma",
+   "baca": "KUU-lem-ma",
+   "id": "katanya"
+  },
+  {
+   "fi": "huhu",
+   "baca": "HU-hu",
+   "id": "desas-desus, kabar burung"
+  },
+  {
+   "fi": "leikata",
+   "baca": "LEI-ka-ta",
+   "id": "memotong (*leikkaan, leikkasin*)"
+  },
+  {
+   "fi": "rahoitus",
+   "baca": "RA-hoi-tus",
+   "id": "pendanaan (gen. *rahoituksen*)"
+  },
+  {
+   "fi": "pitää paikkansa",
+   "baca": "PI-tèè PAIK-kan-sa",
+   "id": "benar, sesuai fakta"
+  },
+  {
+   "fi": "tuskin",
+   "baca": "TUS-kin",
+   "id": "hampir tidak"
+  },
+  {
+   "fi": "varmaan",
+   "baca": "VAR-maan",
+   "id": "kayaknya, mungkin besar"
+  },
+  {
+   "fi": "varmasti",
+   "baca": "VAR-mas-ti",
+   "id": "pasti"
+  },
+  {
+   "fi": "luultavasti",
+   "baca": "LUUL-ta-vas-ti",
+   "id": "agaknya, kemungkinan"
+  },
+  {
+   "fi": "taitaa",
+   "baca": "TAI-taa",
+   "id": "kayaknya (+ infinitif); mahir"
+  },
+  {
+   "fi": "neuvottelu",
+   "baca": "NEU-vot-te-lu",
+   "id": "perundingan"
+  },
+  {
+   "fi": "käynnissä",
+   "baca": "KÈÜN-nis-sè",
+   "id": "sedang berjalan"
+  },
+  {
+   "fi": "sitoutua",
+   "baca": "SI-tou-tu-a",
+   "id": "berkomitmen (+ ilatif)"
+  },
+  {
+   "fi": "hiilineutraali",
+   "baca": "HII-li-neut-raa-li",
+   "id": "netral karbon"
+  },
+  {
+   "fi": "harjoittelu",
+   "baca": "HAR-yoit-te-lu",
+   "id": "magang (gen. *harjoittelun*)"
+  },
+  {
+   "fi": "uutistenlukija",
+   "baca": "UU-tis-ten-lu-ki-ya",
+   "id": "pembaca berita"
+  },
+  {
+   "fi": "valtuusto",
+   "baca": "VAL-tuus-to",
+   "id": "dewan (kota)"
+  },
+  {
+   "fi": "päättää",
+   "baca": "PÈÈT-tèè",
+   "id": "memutuskan (+ elatif: *päättää asiasta*)"
+  },
+  {
+   "fi": "kohdistua",
+   "baca": "KOH-dis-tu-a",
+   "id": "menyasar, mengarah (+ ilatif)"
+  },
+  {
+   "fi": "vaara",
+   "baca": "VAA-ra",
+   "id": "bahaya; *vaarassa* terancam"
+  },
+  {
+   "fi": "turvassa",
+   "baca": "TUR-vas-sa",
+   "id": "aman"
+  },
+  {
+   "fi": "osittain",
+   "baca": "O-sit-tain",
+   "id": "sebagian"
+  },
+  {
+   "fi": "lähinnä",
+   "baca": "LÈ-hin-nè",
+   "id": "terutama, kebanyakan"
+  },
+  {
+   "fi": "katu",
+   "baca": "KA-tu",
+   "id": "jalan (kota) (gen. *kadun*)"
+  },
+  {
+   "fi": "kannattaa",
+   "baca": "KAN-nat-taa",
+   "id": "ada gunanya, layak (+ infinitif)"
+  },
+  {
+   "fi": "liikkua",
+   "baca": "LIIK-ku-a",
+   "id": "bergerak, beredar"
+  }
+ ],
+ "exercises": [
+  {
+   "prompt": "Terjemahkan ke bahasa Finlandia.",
+   "items": [
+    "Katanya besok turun salju.",
+    "Dia barangkali sudah di rumah. (potensial)",
+    "Budi kayaknya capek. (taitaa)",
+    "Itu hampir pasti tidak benar.",
+    "Kelihatannya uangnya terlalu sedikit.",
+    "Rapatnya barangkali berakhir jam tiga. (potensial)"
+   ]
+  },
+  {
+   "prompt": "Isi dengan bentuk yang tepat. Petunjuk ada di dalam kurung.",
+   "items": [
+    "Heikki ____ vielä kokouksessa. (olla, potensial)",
+    "Valtuusto ____ asiasta maanantaina. (päättää, potensial)",
+    "Hinnat ____ ensi vuonna. (nousta, potensial, jamak)",
+    "Ministeri ei ____ tilaisuuteen. (tulla, potensial)",
+    "Otan sateenvarjon, koska ____ sataa. (kayaknya: taitaa)",
+    "En ole ihan varma, mutta hän tulee ____. (varmaan atau varmasti?)",
+    "Kaupunki ____ leikkaa rahoitusta. (katanya)"
+   ]
+  },
+  {
+   "prompt": "Ubah ke modus potensial. Contoh: *Hän tulee huomenna.* → *Hän tullee huomenna.*",
+   "items": [
+    "Hän on kotona.",
+    "Juna tulee myöhässä.",
+    "He eivät tiedä asiasta.",
+    "Kokous alkaa kello yhdeksän.",
+    "Budi on jo lähtenyt.",
+    "Hinnat nousevat."
+   ]
+  },
+  {
+   "prompt": "Susun jadi kalimat yang benar.",
+   "items": [
+    "tuskin / pitää / se / paikkaansa",
+    "taitaa / sataa / huomenna / lunta",
+    "näyttää / siltä, että / rahaa / ei ole",
+    "lienee / hän / kuullut / jo",
+    "kuulemma / Heikki / kokouksessa / on"
+   ]
+  }
+ ],
+ "answers": [
+  "Kuulemma huomenna sataa lunta. — Hän lienee jo kotona. — Budi taitaa olla väsynyt. — Se tuskin pitää paikkaansa. — Näyttää siltä, että rahaa on liian vähän. — Kokous päättynee kolmelta.",
+  "lienee — päättänee — noussevat — tulle — taitaa — varmaan — kuulemma",
+  "Hän lienee kotona. — Juna tullee myöhässä. — He eivät tietäne asiasta. — Kokous alkanee kello yhdeksän. — Budi lienee jo lähtenyt. — Hinnat noussevat.",
+  "Se tuskin pitää paikkaansa. — Huomenna taitaa sataa lunta. — Näyttää siltä, että rahaa ei ole. — Hän lienee jo kuullut. — Heikki on kuulemma kokouksessa."
+ ]
+}

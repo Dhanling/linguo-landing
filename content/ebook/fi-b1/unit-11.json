@@ -1,0 +1,715 @@
+{
+ "title": "Menyuruh, berulang, terjadi sendiri — kata kerja turunan",
+ "title_target": "Haluaisin huollattaa pyöräni",
+ "goal": "Meminta jasa orang lain (servis, perbaikan, potong rambut) dan membedakan \"aku mengerjakan\", \"aku menyuruh orang mengerjakan\", dan \"terjadi dengan sendirinya\". Titik tata bahasanya: kausatif *-tta-* (*teettää, korjauttaa, huollattaa*), frekuentatif *-ele-/-ile-* (*kysellä, katsella, soitella*), dan refleksif *-u-/-utu-* (*avautua, kääntyä, muuttua*).",
+ "bekal": [
+  "memakai kausatif untuk jasa: *Teetin vara-avaimen suutarilla*, *Korjautan hanan ammattilaisella*",
+  "memberi nuansa santai dan berulang dengan *-ele-*: *kyselin, istuskelin, katselin, soitellaan*",
+  "membedakan pasangan transitif dan refleksif: *avata / avautua*, *sammuttaa / sammua*, *kääntää / kääntyä*"
+ ],
+ "dialogs": [
+  {
+   "title": "Dialog — Pyörä huoltoon",
+   "intro": "Rabu, 12 Januari 2028. Sejak Februari tahun lalu Budi bersepeda ke kantor dengan sepeda listriknya setiap hari, salju atau tidak. Garam dan salju becek akhirnya menagih ongkosnya: sepedanya harus masuk bengkel di Tapiola.",
+   "lines": [
+    {
+     "speaker": "Budi:",
+     "text": "Hei! Haluaisin huollattaa pyöräni. Vaihteet eivät enää toimi kunnolla.",
+     "id": "Halo! Aku mau servis sepedaku di sini. Gigi persnelingnya sudah nggak jalan dengan baik.",
+     "literal": "hai! mau-andai-saya servis-suruh sepeda-ku. gigi-jamak tidak-mereka lagi berfungsi dengan-layak."
+    },
+    {
+     "speaker": "Mekaanikko:",
+     "text": "Katsotaan. Ahaa, ketju on ruosteessa, eikä takajarru pidä ollenkaan.",
+     "id": "Coba kita lihat. Oh, rantainya berkarat, dan rem belakangnya sama sekali nggak mencengkeram.",
+     "literal": "di-lihat. aha, rantai adalah di-karat, dan-tidak belakang-rem menahan sama-sekali."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Suola ja sohjo ovat tehneet tehtävänsä. Ajan pyörällä töihin joka päivä, myös pakkasella.",
+     "id": "Garam dan salju becek sudah menjalankan tugasnya. Aku bersepeda ke kantor tiap hari, juga waktu suhu di bawah nol.",
+     "literal": "garam dan salju-becek adalah-mereka membuat-sudah tugas-nya. mengendarai-saya dengan-sepeda ke-kerja-jamak setiap hari, juga pada-suhu-beku."
+    },
+    {
+     "speaker": "Mekaanikko:",
+     "text": "Ketju ja jarrupalat kannattaa vaihtaa. Tarkistanko samalla myös valot?",
+     "id": "Rantai dan kampas remnya sebaiknya diganti. Sekalian aku periksa lampunya juga?",
+     "literal": "rantai dan rem-kampas-jamak layak mengganti. memeriksa-saya-kah dengan-sekalian juga lampu-jamak?"
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Kyllä, kiitos. Takavalo sammuu välillä itsestään, vaikka en koske siihen.",
+     "id": "Iya, makasih. Lampu belakangnya kadang mati sendiri, padahal nggak aku sentuh.",
+     "literal": "ya, terima-kasih. belakang-lampu padam kadang-kadang dari-dirinya-sendiri, walaupun tidak-saya menyentuh ke-itu."
+    },
+    {
+     "speaker": "Mekaanikko:",
+     "text": "Se johtuu yleensä löysästä johdosta. Milloin tarvitset pyörää?",
+     "id": "Biasanya itu gara-gara kabel yang longgar. Kapan kamu butuh sepedanya?",
+     "literal": "itu disebabkan biasanya dari-longgar dari-kabel. kapan butuh-kamu sepeda-bagian?"
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Mahdollisimman pian. Metrolla pääsee kyllä, mutta pyöräily herättää minut aamuisin.",
+     "id": "Secepat mungkin. Naik metro sih bisa, tapi bersepeda itu yang bikin aku melek tiap pagi.",
+     "literal": "se-mungkin segera. dengan-metro sampai memang, tetapi bersepeda membangunkan saya-sasaran pada-pagi-jamak."
+    },
+    {
+     "speaker": "Mekaanikko:",
+     "text": "Ymmärrän. Ehdin korjata sen torstaiksi. Soitan, kun pyörä on valmis.",
+     "id": "Paham. Paling lambat Kamis sudah kuperbaiki. Nanti kutelepon kalau sepedanya sudah siap.",
+     "literal": "mengerti-saya. sempat-saya memperbaiki itu-sasaran menjadi-Kamis. menelepon-saya, ketika sepeda adalah siap."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Kyselin kollegoilta, mikä korjaamo on paras, ja kaikki suosittelivat teitä.",
+     "id": "Aku sudah tanya-tanya ke rekan kerja bengkel mana yang paling bagus, dan semuanya merekomendasikan tempat kalian.",
+     "literal": "tanya-tanya-lampau-saya dari-rekan-jamak, apa bengkel adalah terbaik, dan semua merekomendasikan-lampau-mereka kalian-bagian."
+    },
+    {
+     "speaker": "Mekaanikko:",
+     "text": "Kiva kuulla! Talvella moni vie pyöränsä kellariin, mutta sinä olet oikea talvipyöräilijä.",
+     "id": "Senang dengarnya! Di musim dingin banyak orang menyimpan sepedanya di gudang bawah tanah, tapi kamu ini pesepeda musim dingin sejati.",
+     "literal": "senang mendengar! pada-musim-dingin banyak-orang membawa sepeda-nya ke-gudang-bawah, tetapi kamu adalah sejati musim-dingin-pesepeda."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Yritän olla. Muuten, tiedätkö, missä täällä voi teettää vara-avaimen?",
+     "id": "Aku berusaha. Omong-omong, kamu tahu di mana di sekitar sini orang bisa bikin kunci cadangan?",
+     "literal": "mencoba-saya ada. omong-omong, tahu-kah-kamu, di-mana di-sini bisa buat-suruh cadangan-kunci-sasaran?"
+    },
+    {
+     "speaker": "Mekaanikko:",
+     "text": "Kauppakeskuksen suutarilla. Minä teetin siellä juuri kaksi avainta.",
+     "id": "Di tukang sepatu di mal. Aku baru saja bikin dua kunci di sana.",
+     "literal": "mal-punya pada-tukang-sepatu. saya buat-suruh-lampau-saya di-sana baru-saja dua kunci-bagian."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Hyvä vinkki. Paljonko huolto maksaa suunnilleen?",
+     "id": "Tips bagus. Kira-kira servisnya berapa?",
+     "literal": "baik tips. berapa-banyak servis berharga kira-kira?"
+    },
+    {
+     "speaker": "Mekaanikko:",
+     "text": "Noin satakaksikymmentä euroa. Pyörä on vasta vuoden vanha, mutta talvi on sille kova.",
+     "id": "Sekitar seratus dua puluh euro. Sepedanya baru setahun, tapi musim dingin memang berat buat sepeda.",
+     "literal": "sekitar seratus-dua-puluh euro-bagian. sepeda adalah baru tahun-punya tua, tetapi musim-dingin adalah kepada-itu keras."
+    }
+   ],
+   "notes": [
+    "**Haluaisin huollattaa pyöräni** — *huoltaa* = menservis; *huollattaa* = menyuruh orang menservis. Cukup satu sisipan: *-tta-*. Perhatikan gradasinya: *lt* menjadi *ll* (*huoltaa → huollattaa*), sama seperti *ilta → illan*.",
+    "**Tarkistanko samalla myös valot?** Montirnya memakai kata kerja biasa, *tarkistaa*, karena dia sendiri yang memeriksa. Budi akan berkata *Voinko tarkistuttaa myös valot?* Pilih bentuk menurut siapa yang benar-benar bekerja.",
+    "**Takavalo sammuu itsestään** — *sammua* (padam) tidak punya objek; lampunya padam \"sendiri\". Pasangannya *sammuttaa* (memadamkan): *Sammutan valon*. *Itsestään* berarti \"dengan sendirinya\", pasangan setia kata kerja jenis ini.",
+    "**Pyöräily herättää minut** — kausatif tidak selalu berarti menyuruh tukang. *Herätä* (bangun) → *herättää* (membangunkan): sesuatu *menyebabkan* orang bangun. Begitu pula *syödä → syöttää* (menyuapi).",
+    "**Kyselin kollegoilta** — *kysyä* (bertanya) → *kysellä* (tanya-tanya, bertanya ke sana kemari). Sisipan *-ele-* memberi nuansa berulang, santai, sedikit demi sedikit, persis seperti pengulangan kata dalam bahasa Indonesia."
+   ],
+   "grammars": [
+    {
+     "title": "Kausatif -tta-: menyuruh atau menyebabkan",
+     "body": [
+      "Kausatif dibentuk dengan menyisipkan *-tta-/-ttä-* pada batang kata kerja. Kata kerja *-ata/-ätä* biasanya menjadi *-auttaa/-äyttää* (*korjata → korjauttaa*); kata kerja pendek berubah lebih jauh (*tehdä → teettää, juoda → juottaa*). Konjugasinya seperti golongan pertama, lengkap dengan gradasi: *teetän, teetti; korjautan*."
+     ],
+     "table": {
+      "head": [
+       "Kata kerja dasar",
+       "Kausatif",
+       "Contoh"
+      ],
+      "rows": [
+       [
+        "*tehdä* (membuat)",
+        "*teettää*",
+        "*Teetin vara-avaimen.*"
+       ],
+       [
+        "*huoltaa* (menservis)",
+        "*huollattaa*",
+        "*Huollatan pyörän keväällä.*"
+       ],
+       [
+        "*korjata* (memperbaiki)",
+        "*korjauttaa*",
+        "*Korjautin puhelimen.*"
+       ],
+       [
+        "*vaihtaa* (mengganti)",
+        "*vaihdattaa*",
+        "*Vaihdatin renkaat.*"
+       ],
+       [
+        "*leikata* (memotong)",
+        "*leikkauttaa*",
+        "*Leikkautin hiukset.*"
+       ],
+       [
+        "*rakentaa* (membangun)",
+        "*rakennuttaa*",
+        "*Kaupunki rakennuttaa koulun.*"
+       ],
+       [
+        "*odottaa* (menunggu)",
+        "*odotuttaa*",
+        "*Anteeksi, että odotutin!*"
+       ]
+      ]
+     },
+     "after": [
+      "**Siapa yang sebenarnya bekerja?** Orang yang disuruh ditandai dengan adesif *-lla/-llä*: *Teetin avaimen suutarilla* (aku minta tukang sepatu membuatkan kunci), *Korjautan hanan ammattilaisella*.",
+      "⚠️ Jangan memakai kausatif untuk pekerjaanmu sendiri. *Korjaan pyörän* = aku memperbaiki sepeda (dengan tanganku). *Korjautan pyörän* = sepedaku diperbaiki orang lain."
+     ]
+    },
+    {
+     "title": "Frekuentatif -ele-/-ile-: tanya-tanya, lihat-lihat",
+     "body": [
+      "Sisipan *-ele-* (sering juga *-ile-*, *-skele-*) membentuk kata kerja golongan ketiga yang berarti kegiatan berulang, santai, atau tanpa tujuan jelas. Karena bentuk kamusnya berakhiran *-lla/-llä*, suku sebelumnya tertutup dan gradasinya lemah; di bentuk berpelaku suku itu terbuka lagi dan gradasinya kembali kuat: *odotella → odottelen*."
+     ],
+     "table": {
+      "head": [
+       "Dasar",
+       "Frekuentatif",
+       "Bentuk *minä*",
+       "Nuansa"
+      ],
+      "rows": [
+       [
+        "*kysyä*",
+        "*kysellä*",
+        "*kyselen*",
+        "tanya-tanya"
+       ],
+       [
+        "*katsoa*",
+        "*katsella*",
+        "*katselen*",
+        "memandangi, menonton santai"
+       ],
+       [
+        "*soittaa*",
+        "*soitella*",
+        "*soittelen*",
+        "sesekali menelepon"
+       ],
+       [
+        "*odottaa*",
+        "*odotella*",
+        "*odottelen*",
+        "menunggu dengan santai"
+       ],
+       [
+        "*kääntää*",
+        "*käännellä*",
+        "*kääntelen*",
+        "membolak-balik"
+       ],
+       [
+        "*istua*",
+        "*istuskella*",
+        "*istuskelen*",
+        "duduk-duduk"
+       ],
+       [
+        "*lukea*",
+        "*lueskella*",
+        "*lueskelen*",
+        "baca-baca"
+       ]
+      ]
+     },
+     "after": [
+      "Ungkapan pamit *Soitellaan!* (nanti kita teleponan ya) memakai frekuentatif dalam bentuk pasif-ajakan. Ia tidak menjanjikan telepon besok pagi."
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Dialog kedua — Kahvilla Eilan luona",
+   "intro": "Sore yang sama. Budi terlambat setengah jam ke rumah Eila, tetangga sebelahnya, yang sudah menyiapkan kopi.",
+   "lines": [
+    {
+     "speaker": "Eila:",
+     "text": "Tule sisään, poika! Minulla on kahvia ja tuoretta pullaa.",
+     "id": "Masuk, Nak! Aku punya kopi dan pulla yang baru matang.",
+     "literal": "datanglah ke-dalam, nak! pada-saya ada kopi-bagian dan segar-bagian pulla-bagian."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Kiitos, Eila. Anteeksi, että odotutin sinua. Korjaamolla kesti kauan.",
+     "id": "Makasih, Eila. Maaf ya, aku bikin kamu menunggu. Di bengkel lama sekali.",
+     "literal": "terima-kasih, Eila. maaf, bahwa tunggu-suruh-lampau-saya kamu-bagian. di-bengkel memakan-waktu-lampau lama."
+    },
+    {
+     "speaker": "Eila:",
+     "text": "Ei se mitään. Istuskelin ikkunan ääressä ja katselin lintuja.",
+     "id": "Nggak apa-apa. Aku duduk-duduk di dekat jendela sambil memandangi burung.",
+     "literal": "tidak itu apa-pun-bagian. duduk-duduk-lampau-saya jendela-punya di-dekat dan memandangi-lampau-saya burung-jamak-bagian."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Näitkö ilmoituksen rappukäytävässä? Taloyhtiö teettää julkisivuremontin parin vuoden päästä.",
+     "id": "Kamu lihat pengumuman di tangga? Pengelola gedung mau merenovasi fasad dua-tiga tahun lagi.",
+     "literal": "melihat-lampau-kah-kamu pengumuman-sasaran di-lorong-tangga? perusahaan-gedung buat-suruh fasad-renovasi-sasaran pasangan-punya tahun-punya dari-ujung."
+    },
+    {
+     "speaker": "Eila:",
+     "text": "Näin on. Olen asunut tässä talossa yli viisikymmentä vuotta, ja nyt kaikki muuttuu.",
+     "id": "Begitulah. Aku sudah tinggal di gedung ini lebih dari lima puluh tahun, dan sekarang semuanya berubah.",
+     "literal": "begini adalah. adalah-saya tinggal-sudah di-ini di-rumah lebih lima-puluh tahun-bagian, dan sekarang semua berubah."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Ei kaikki. Pulla on yhtä hyvää kuin aina.",
+     "id": "Nggak semuanya. Pulla-nya tetap seenak biasanya.",
+     "literal": "tidak semua. pulla adalah sama baik-bagian seperti selalu."
+    },
+    {
+     "speaker": "Eila:",
+     "text": "Hah! Mutta tosissaan: keittiön hana ei enää sulkeudu kunnolla, ja kylpyhuoneen ovi avautuu itsestään.",
+     "id": "Hah! Tapi serius: keran dapur sudah nggak bisa tertutup rapat, dan pintu kamar mandi terbuka sendiri.",
+     "literal": "hah! tetapi dalam-kesungguhan: dapur-punya keran tidak lagi tertutup dengan-layak, dan kamar-mandi-punya pintu terbuka dari-dirinya-sendiri."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Voin katsoa niitä. Hanan saa usein kuntoon, kun vaihtaa tiivisteen.",
+     "id": "Aku bisa lihat keduanya. Keran biasanya beres kalau paking karetnya diganti.",
+     "literal": "bisa-saya melihat itu-jamak-bagian. keran-sasaran mendapat sering ke-kondisi, ketika mengganti paking-sasaran."
+    },
+    {
+     "speaker": "Eila:",
+     "text": "Kiltti poika. Mutta korjautan hanan mieluummin ammattilaisella, vakuutuksen takia.",
+     "id": "Anak baik. Tapi kerannya lebih baik kuminta tukang profesional yang perbaiki, karena urusan asuransi.",
+     "literal": "baik-hati nak. tetapi perbaiki-suruh-saya keran-sasaran lebih-senang pada-profesional, asuransi-punya karena."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Viisas päätös. Soita, jos tarvitset apua. Olen kotona koko illan.",
+     "id": "Keputusan bijak. Telepon aku ya kalau kamu butuh bantuan. Aku di rumah sepanjang malam.",
+     "literal": "bijak keputusan. teleponlah, jika butuh-kamu bantuan-bagian. adalah-saya di-rumah seluruh malam-sasaran."
+    },
+    {
+     "speaker": "Eila:",
+     "text": "Kiitos. Ota pulla mukaan. Sinua väsyttää, sen näkee silmistäsi.",
+     "id": "Makasih. Bawa pulla-nya pulang. Kamu capek, kelihatan dari matamu.",
+     "literal": "terima-kasih. ambillah pulla bersama. kamu-bagian membuat-lelah, itu-sasaran melihat dari-mata-jamak-mu."
+    }
+   ],
+   "notes": [
+    "**Anteeksi, että odotutin sinua** — *odottaa* (menunggu) → *odotuttaa* (membuat orang menunggu). Ini salah satu kalimat maaf yang lazim bagi orang yang terlambat. Objeknya tetap partitif (*sinua*), sama seperti *odottaa*: *Odotan sinua* → *Odotutin sinua*.",
+    "**Istuskelin… ja katselin lintuja** — *istuin ja katsoin* terdengar seperti laporan; *istuskelin ja katselin* seperti orang yang bercerita sambil tersenyum: \"duduk-duduk, lihat-lihat\".",
+    "**Taloyhtiö teettää julkisivuremontin** — *taloyhtiö* (perusahaan perumahan milik para pemilik apartemen) tidak memperbaiki gedungnya sendiri; ia memesan pekerjaan itu dari kontraktor, maka *teettää*. Renovasi fasad biasanya berarti perancah menutupi gedung dan balkon tak bisa dipakai berbulan-bulan. Tak heran Eila gelisah.",
+    "**ei sulkeudu / avautuu itsestään** — refleksif: bendanya bergerak \"sendiri\", tanpa pelaku. Perhatikan gradasi: hanya orang ketiga tunggal memakai *t* kuat (*sulkeutuu*); bentuk lain, termasuk sangkalan, lemah: *sulkeudun, ei sulkeudu* (bukan *ei sulkeutu*).",
+    "**Sinua väsyttää** — kausatif perasaan: tanpa subjek, orang yang merasakannya memakai partitif. Lihat keluarganya di bagian \"Satu akar, satu keluarga\"."
+   ],
+   "grammars": [
+    {
+     "title": "Refleksif: pintu terbuka sendiri",
+     "body": [
+      "Banyak kata kerja berpasangan: yang satu punya pelaku dan objek (transitif), yang lain menggambarkan kejadian tanpa pelaku (refleksif). Tanda refleksif: *-ua/-yä*, *-utua/-ytyä*; pasangan transitifnya sering *-ttaa/-ttää*."
+     ],
+     "table": {
+      "head": [
+       "Transitif (ada pelaku)",
+       "Refleksif (terjadi sendiri)",
+       "Contoh refleksif"
+      ],
+      "rows": [
+       [
+        "*avata* (membuka)",
+        "*avautua* (terbuka)",
+        "*Ovi avautuu itsestään.*"
+       ],
+       [
+        "*sulkea* (menutup)",
+        "*sulkeutua* (tertutup)",
+        "*Hana ei sulkeudu.*"
+       ],
+       [
+        "*kääntää* (memutar)",
+        "*kääntyä* (berbelok, berputar)",
+        "*Käänny vasemmalle!*"
+       ],
+       [
+        "*muuttaa* (mengubah)",
+        "*muuttua* (berubah)",
+        "*Kaikki muuttuu.*"
+       ],
+       [
+        "*sammuttaa* (memadamkan)",
+        "*sammua* (padam)",
+        "*Valo sammui.*"
+       ],
+       [
+        "*sytyttää* (menyalakan)",
+        "*syttyä* (menyala)",
+        "*Valo syttyy automaattisesti.*"
+       ],
+       [
+        "*pysäyttää* (menghentikan)",
+        "*pysähtyä* (berhenti)",
+        "*Bussi pysähtyi.*"
+       ],
+       [
+        "*rauhoittaa* (menenangkan)",
+        "*rauhoittua* (menjadi tenang)",
+        "*Rauhoitu!*"
+       ]
+      ]
+     },
+     "after": [
+      "⚠️ Gradasi tetap berlaku: *kääntyä → käännyn, en käänny; avautua → avaudun; muuttua → muutun*. Perintah *Käänny!* (belok!) dan *Rauhoitu!* (tenanglah!) adalah dua refleksif yang paling sering kamu dengar."
+     ]
+    }
+   ]
+  }
+ ],
+ "sections": [
+  {
+   "title": "Satu akar, satu keluarga",
+   "blocks": [
+    {
+     "type": "tabel",
+     "head": [
+      "Dasar",
+      "Refleksif",
+      "Kausatif",
+      "Frekuentatif"
+     ],
+     "rows": [
+      [
+       "*kääntää* (memutar; menerjemahkan)",
+       "*kääntyä* (berbelok)",
+       "*käännättää* (menyuruh menerjemahkan)",
+       "*käännellä* (membolak-balik)"
+      ],
+      [
+       "*avata* (membuka)",
+       "*avautua* (terbuka)",
+       "—",
+       "*availla* (membuka-buka)"
+      ],
+      [
+       "*korjata* (memperbaiki)",
+       "*korjaantua* (membaik, beres)",
+       "*korjauttaa* (menyuruh memperbaiki)",
+       "*korjailla* (memperbaiki sedikit-sedikit)"
+      ],
+      [
+       "*herätä* (bangun)",
+       "—",
+       "*herättää* (membangunkan)",
+       "*herätellä* (membangunkan pelan-pelan)"
+      ],
+      [
+       "*istua* (duduk)",
+       "—",
+       "*istuttaa* (mendudukkan; menanam)",
+       "*istuskella* (duduk-duduk)"
+      ],
+      [
+       "*juoda* (minum)",
+       "—",
+       "*juottaa* (memberi minum; menyolder)",
+       "—"
+      ],
+      [
+       "*nauraa* (tertawa)",
+       "—",
+       "*naurattaa* (membuat tertawa)",
+       "*naureskella* (tertawa-tawa kecil)"
+      ]
+     ]
+    },
+    {
+     "type": "p",
+     "text": "Kalau kamu mengenal satu akar, kamu sudah setengah mengenal seluruh keluarganya. Tiga penanda cukup untuk menebak: *-tta-* berarti ada orang atau hal yang *menyebabkan*, *-u-/-y-* (sering *-utu-/-yty-*) berarti sesuatu *terjadi sendiri*, dan *-ele-* berarti *berulang atau santai*. Bahasa Indonesia melakukan hal serupa dengan imbuhan (*putar, berputar, diputar-putar*); bedanya, imbuhan Finlandia selalu di belakang dan tunduk pada keselarasan vokal."
+    },
+    {
+     "type": "kotak",
+     "title": "Kausatif perasaan: tanpa subjek, orangnya partitif",
+     "items": [
+      "*Minua väsyttää.* = Aku capek atau ngantuk. Harfiahnya \"(sesuatu) melelahkanku\".",
+      "*Minua naurattaa.* = Aku jadi pengin ketawa. *Häntä itketti.* = Dia jadi ingin menangis.",
+      "*Minua jännittää huomenna.* = Aku deg-degan soal besok. Cocok sebelum presentasi atau ujian.",
+      "*Minua janottaa / nälättää / pelottaa.* = Aku haus / lapar / takut. Bentuk ini terdengar lebih halus dan lebih \"dirasakan\" daripada *olen janoinen*."
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Jasa di kota: siapa mengerjakan apa",
+   "blocks": [
+    {
+     "type": "tabel",
+     "head": [
+      "Tempat",
+      "Cara baca",
+      "Di sana kamu bisa…"
+     ],
+     "rows": [
+      [
+       "autokorjaamo",
+       "AU-to-kor-yaa-mo",
+       "*huollattaa auton, vaihdattaa renkaat*"
+      ],
+      [
+       "pyöräkorjaamo",
+       "PÜÖ-rè-kor-yaa-mo",
+       "*huollattaa pyörän, korjauttaa jarrut*"
+      ],
+      [
+       "suutari",
+       "SUU-ta-ri",
+       "*korjauttaa kengät, teettää avaimen*"
+      ],
+      [
+       "parturi-kampaamo",
+       "PAR-tu-ri KAM-paa-mo",
+       "*leikkauttaa hiukset*"
+      ],
+      [
+       "pesula",
+       "PE-su-la",
+       "*pesettää maton tai puvun*"
+      ],
+      [
+       "räätäli",
+       "RÈÈ-tè-li",
+       "*lyhennyttää housut*"
+      ],
+      [
+       "valokuvaamo",
+       "VA-lo-ku-vaa-mo",
+       "*otattaa passikuvan*"
+      ],
+      [
+       "huoltoyhtiö",
+       "HUOL-to-üh-ti-ö",
+       "*korjauttaa hanan tai oven*"
+      ]
+     ]
+    },
+    {
+     "type": "p",
+     "text": "Tenaga kerja di Finlandia mahal, jadi banyak orang memperbaiki sendiri apa yang bisa diperbaiki sendiri, dan baru *teettää* kalau memang perlu ahli. Kabar baiknya: untuk pekerjaan di rumah (bersih-bersih, renovasi kecil, perbaikan, perawatan), sebagian ongkos tenaga kerjanya bisa dikurangkan dari pajak lewat *kotitalousvähennys* di layanan daring OmaVero. Simpan kuitansi yang memisahkan ongkos kerja dari harga bahan. Perbaikan pipa dan listrik di apartemen sebaiknya diserahkan ke *huoltoyhtiö* atau tukang bersertifikat, karena asuransi bisa menolak klaim atas kerusakan akibat perbaikan amatir."
+    },
+    {
+     "type": "kotak",
+     "title": "Menelepon tukang: kalimat siap pakai",
+     "items": [
+      "*Voisitteko tulla katsomaan vuotavaa hanaa?* = Bisakah Bapak/Ibu datang melihat keran yang bocor?",
+      "*Milloin pääsette tulemaan?* = Kapan bisa datang?",
+      "*Paljonko se suunnilleen maksaa?* atau *Voitteko antaa arvion?* = Kira-kira berapa? / Bisa beri perkiraan?",
+      "*Saisinko kuitin kotitalousvähennystä varten?* = Boleh minta kuitansi untuk potongan pajak rumah tangga?"
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Ulangan berjenjang — unit 9",
+   "blocks": [
+    {
+     "type": "p",
+     "text": "Tutup kolom Finlandia, baca terjemahan Indonesianya, lalu susun kembali kalimatnya dari ingatan."
+    },
+    {
+     "type": "tabel",
+     "head": [
+      "Bahasa Indonesia",
+      "Suomi"
+     ],
+     "rows": [
+      [
+       "Sumur-sumurnya sudah dibor, dan radiator aula olahraga sudah diganti.",
+       "*Kaivot on porattu, ja liikuntasalin patterit on vaihdettu.*"
+      ],
+      [
+       "Belum. Pengukuran terakhir baru dilakukan kemarin.",
+       "*Ei ole lähetetty. Viimeiset mittaukset tehtiin vasta eilen.*"
+      ],
+      [
+       "Seandainya semuanya disiapkan bulan September, permintaan penawarannya sudah bisa dikirim bulan Oktober.",
+       "*Jos kaikki olisi valmisteltu syyskuussa, tarjouspyyntö olisi voitu lähettää jo lokakuussa.*"
+      ],
+      [
+       "Bijak belakangan itu gampang. Sekarang sebaiknya kita bagaimana?",
+       "*Jälkiviisaus on helppoa. Mitä nyt tehtäisiin?*"
+      ],
+      [
+       "Bagus. Juga diharapkan agar hubungan dengan sekolah dijaga secara teratur.",
+       "*Hyvä. Olisi myös toivottavaa, että kouluihin pidettäisiin säännöllisesti yhteyttä.*"
+      ]
+     ]
+    }
+   ]
+  }
+ ],
+ "vocab": [
+  {
+   "fi": "huoltaa",
+   "baca": "HUOL-taa",
+   "id": "menservis, merawat (*huollan, huolsi*)"
+  },
+  {
+   "fi": "huollattaa",
+   "baca": "HUOL-lat-taa",
+   "id": "menyuruh menservis (*huollatan*)"
+  },
+  {
+   "fi": "korjauttaa",
+   "baca": "KOR-yaut-taa",
+   "id": "menyuruh memperbaiki (*korjautan*)"
+  },
+  {
+   "fi": "teettää",
+   "baca": "TÈÈT-tèè",
+   "id": "menyuruh membuat, memesan pekerjaan (*teetän, teetti*)"
+  },
+  {
+   "fi": "vaihdattaa",
+   "baca": "VAIH-dat-taa",
+   "id": "menyuruh mengganti (*vaihdatan*)"
+  },
+  {
+   "fi": "odotuttaa",
+   "baca": "O-do-tut-taa",
+   "id": "membuat (orang) menunggu, + partitif"
+  },
+  {
+   "fi": "herättää",
+   "baca": "HE-rèt-tèè",
+   "id": "membangunkan (*herätän*); lawan *herätä* bangun"
+  },
+  {
+   "fi": "kysellä",
+   "baca": "KÜ-sel-lè",
+   "id": "tanya-tanya (*kyselen*)"
+  },
+  {
+   "fi": "katsella",
+   "baca": "KAT-sel-la",
+   "id": "memandangi, menonton santai (*katselen*)"
+  },
+  {
+   "fi": "istuskella",
+   "baca": "IS-tus-kel-la",
+   "id": "duduk-duduk (*istuskelen*)"
+  },
+  {
+   "fi": "soitella",
+   "baca": "SOI-tel-la",
+   "id": "sesekali menelepon (*soittelen*)"
+  },
+  {
+   "fi": "avautua",
+   "baca": "A-vau-tu-a",
+   "id": "terbuka (sendiri) (*avautuu; en avaudu*)"
+  },
+  {
+   "fi": "sulkeutua",
+   "baca": "SUL-keu-tu-a",
+   "id": "tertutup (sendiri) (*sulkeutuu; ei sulkeudu*)"
+  },
+  {
+   "fi": "kääntyä",
+   "baca": "KÈÈN-tü-è",
+   "id": "berbelok, berputar (*käännyn, kääntyi*)"
+  },
+  {
+   "fi": "sammua",
+   "baca": "SAM-mu-a",
+   "id": "padam (*sammuu, sammui*)"
+  },
+  {
+   "fi": "väsyttää",
+   "baca": "VÈ-süt-tèè",
+   "id": "membuat lelah; *minua väsyttää* aku capek"
+  },
+  {
+   "fi": "korjaamo",
+   "baca": "KOR-yaa-mo",
+   "id": "bengkel"
+  },
+  {
+   "fi": "rengas",
+   "baca": "REN-gas",
+   "id": "ban (gen. *renkaan*)"
+  },
+  {
+   "fi": "vara-avain",
+   "baca": "VA-ra A-vain",
+   "id": "kunci cadangan (gen. *vara-avaimen*)"
+  },
+  {
+   "fi": "suutari",
+   "baca": "SUU-ta-ri",
+   "id": "tukang sepatu (sering juga membuat kunci)"
+  },
+  {
+   "fi": "taloyhtiö",
+   "baca": "TA-lo-üh-ti-ö",
+   "id": "perusahaan perumahan milik penghuni gedung"
+  },
+  {
+   "fi": "ammattilainen",
+   "baca": "AM-mat-ti-lai-nen",
+   "id": "profesional, tenaga ahli (gen. *ammattilaisen*)"
+  },
+  {
+   "fi": "vakuutus",
+   "baca": "VA-kuu-tus",
+   "id": "asuransi (gen. *vakuutuksen*)"
+  }
+ ],
+ "exercises": [
+  {
+   "prompt": "Terjemahkan ke bahasa Finlandia.",
+   "items": [
+    "Aku mau servis mobilku (menyuruh orang).",
+    "Kota membangun sekolah baru (lewat kontraktor).",
+    "Pintunya terbuka sendiri.",
+    "Maaf, aku membuatmu menunggu.",
+    "Aku capek (pakai *väsyttää*).",
+    "Kemarin aku minta tukang sepatu membuatkan kunci cadangan."
+   ]
+  },
+  {
+   "prompt": "Isi dengan bentuk yang tepat.",
+   "items": [
+    "En korjaa pyörää itse, vaan ____ sen. (*korjata*, kausatif, *minä*)",
+    "Kylpyhuoneen ovi ____ itsestään. (*avata*, refleksif)",
+    "Bussi ____ pysäkillä. (*pysähtyä*, lampau)",
+    "Viime viikolla minä ____ hiukset. (*leikkauttaa*, lampau)",
+    "Eila ____ lintuja koko aamun. (*katsella*, lampau)",
+    "Minua ____, koska nukuin huonosti. (*väsyttää*)",
+    "Hana vuotaa, koska se ei ____ kunnolla. (*sulkeutua*)"
+   ]
+  },
+  {
+   "prompt": "Ubah menjadi kausatif: kamu tidak mengerjakannya sendiri. Sebut orang yang mengerjakan dengan -lla atau -llä.",
+   "items": [
+    "Korjaan auton. (*mekaanikko*)",
+    "Leikkaan hiukset. (*parturi*)",
+    "Maalaan seinät. (*maalari*)",
+    "Käännän todistuksen. (*kääntäjä*)",
+    "Teen avaimen. (*suutari*)",
+    "Vaihdan renkaat. (*Pekka*)"
+   ]
+  },
+  {
+   "prompt": "Susun menjadi kalimat.",
+   "items": [
+    "pyöräni / haluaisin / huollattaa",
+    "itsestään / sammuu / takavalo / välillä",
+    "kollegoilta / kyselin / korjaamoa / hyvää",
+    "julkisivuremontin / teettää / taloyhtiö",
+    "silmistäsi / sen / näkee"
+   ]
+  }
+ ],
+ "answers": [
+  "Haluaisin huollattaa autoni. — Kaupunki rakennuttaa uuden koulun. — Ovi avautuu itsestään. — Anteeksi, että odotutin sinua. — Minua väsyttää. — Eilen teetin vara-avaimen suutarilla.",
+  "korjautan — avautuu — pysähtyi — leikkautin — katseli — väsyttää — sulkeudu",
+  "Korjautan auton mekaanikolla. — Leikkautan hiukset parturilla. — Maalautan seinät maalarilla. — Käännätän todistuksen kääntäjällä. — Teetän avaimen suutarilla. — Vaihdatan renkaat Pekalla.",
+  "Haluaisin huollattaa pyöräni. — Takavalo sammuu välillä itsestään. — Kyselin kollegoilta hyvää korjaamoa. — Taloyhtiö teettää julkisivuremontin. — Sen näkee silmistäsi."
+ ]
+}

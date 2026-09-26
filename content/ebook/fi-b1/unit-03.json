@@ -1,0 +1,719 @@
+{
+ "title": "Renovasi sekolah — partisip pasif",
+ "title_target": "Mitä on tehty ja mitä on tehtävä?",
+ "goal": "Memeriksa renovasi gedung dan melaporkan apa yang sudah dikerjakan dan apa yang masih harus dikerjakan. Titik tata bahasanya: partisip pasif *-ttu/-tty* (*maalattu seinä*) dan *-tava/-tävä* (*tehtävä työ*), serta keharusan resmi *on + -tava*.",
+ "bekal": [
+  "membentuk *-ttu/-tty* dari pasif lampau dan *-tava/-tävä* dari *-ttu/-tty*",
+  "menyatakan keharusan dengan gaya laporan: *Kaivot on porattava ennen pakkasia*",
+  "membaca tanda dan formulir yang hanya berisi partisip: *Suljettu, Kielletty, Täytettävä*"
+ ],
+ "dialogs": [
+  {
+   "title": "Dialog — Mitä on jo tehty?",
+   "intro": "Selasa, 5 Oktober 2027. Budi dan Laura meninjau SD Mäntyrinne di Espoo, sekolah pertama dalam proyek mereka. Penjaga sekolah, Seppo, mengajak mereka berkeliling.",
+   "lines": [
+    {
+     "speaker": "Seppo:",
+     "text": "Tervetuloa Mäntyrinteen kouluun! Tämä on se kuuluisa 1960-luvulla rakennettu koulu.",
+     "id": "Selamat datang di SD Mäntyrinne! Inilah sekolah terkenal yang dibangun tahun 1960-an itu.",
+     "literal": "selamat-datang ke-Mäntyrinne-punya ke-sekolah! ini adalah itu terkenal pada-1960-an yang-dibangun sekolah."
+    },
+    {
+     "speaker": "Laura:",
+     "text": "Hieno rakennus! Onko ikkunat jo vaihdettu?",
+     "id": "Bangunannya bagus! Jendelanya sudah diganti?",
+     "literal": "bagus bangunan! adalah-kah jendela-jamak sudah yang-diganti?"
+    },
+    {
+     "speaker": "Seppo:",
+     "text": "On. Uudet ikkunat asennettiin kesällä, ja ullakko eristettiin elokuussa.",
+     "id": "Sudah. Jendela baru dipasang musim panas, dan lotengnya diisolasi bulan Agustus.",
+     "literal": "adalah. baru-jamak jendela-jamak di-pasang-lampau pada-musim-panas, dan loteng di-isolasi-lampau di-Agustus."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Hienoa. Entä tämä maalattu seinä? Se näyttää ihan uudelta.",
+     "id": "Mantap. Terus dinding yang dicat ini? Kelihatan baru banget.",
+     "literal": "bagus-bagian. lalu ini yang-dicat dinding? itu tampak sama-sekali dari-baru."
+    },
+    {
+     "speaker": "Seppo:",
+     "text": "Se maalattiin eilen. Maali on vielä märkää, älkää koskeko siihen!",
+     "id": "Itu dicat kemarin. Catnya masih basah, jangan dipegang!",
+     "literal": "itu di-cat-lampau kemarin. cat adalah masih basah-bagian, jangan-kalian menyentuh ke-itu!"
+    },
+    {
+     "speaker": "Laura:",
+     "text": "Selvä. Entä lämmitys? Onko vanha öljykattila jo poistettu?",
+     "id": "Oke. Pemanasnya gimana? Tungku minyak yang lama sudah dicopot?",
+     "literal": "jelas. lalu pemanasan? adalah-kah tua tungku-minyak sudah yang-dicopot?"
+    },
+    {
+     "speaker": "Seppo:",
+     "text": "Ei vielä. Kattila on poistettava ensi kesänä, kun maalämpöpumppu asennetaan.",
+     "id": "Belum. Tungkunya harus dicopot musim panas depan, waktu pompa kalor panas buminya dipasang.",
+     "literal": "tidak masih. tungku adalah yang-harus-dicopot depan musim-panas-sebagai, ketika pompa-panas-bumi di-pasang."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Maalämpökaivot on porattava ennen pakkasia.",
+     "id": "Sumur panas buminya harus dibor sebelum cuaca beku datang.",
+     "literal": "sumur-panas-bumi-jamak adalah yang-harus-dibor sebelum suhu-beku-jamak-bagian."
+    },
+    {
+     "speaker": "Seppo:",
+     "text": "Tässä on lista tehdyistä ja tehtävistä töistä.",
+     "id": "Ini daftar pekerjaan yang sudah dan yang masih harus dikerjakan.",
+     "literal": "di-sini adalah daftar dari-yang-dikerjakan-jamak dan dari-yang-harus-dikerjakan-jamak dari-kerja-jamak."
+    },
+    {
+     "speaker": "Laura:",
+     "text": "Kiitos. Luettavaa riittää!",
+     "id": "Makasih. Bacaannya banyak juga!",
+     "literal": "terima-kasih. yang-harus-dibaca-bagian cukup!"
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Onko jotain, mikä on korjattava heti?",
+     "id": "Ada yang harus segera diperbaiki?",
+     "literal": "adalah-kah sesuatu-bagian, apa adalah yang-harus-diperbaiki segera?"
+    },
+    {
+     "speaker": "Seppo:",
+     "text": "Liikuntasalin rikkinäiset patterit on vaihdettava ennen talvea.",
+     "id": "Radiator yang rusak di aula olahraga harus diganti sebelum musim dingin.",
+     "literal": "aula-olahraga-punya rusak-jamak radiator-jamak adalah yang-harus-diganti sebelum musim-dingin-bagian."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Selvä. Kirjoitan muistiin: korjattavat patterit, liikuntasali, kiireellinen.",
+     "id": "Oke. Aku catat: radiator yang harus diperbaiki, aula olahraga, mendesak.",
+     "literal": "jelas. menulis-saya ke-ingatan: yang-harus-diperbaiki-jamak radiator-jamak, aula-olahraga, mendesak."
+    },
+    {
+     "speaker": "Seppo:",
+     "text": "Kiitos. Olette ensimmäiset insinöörit, jotka kuuntelevat vahtimestaria.",
+     "id": "Makasih. Kalian insinyur pertama yang mau mendengarkan penjaga sekolah.",
+     "literal": "terima-kasih. adalah-kalian pertama-jamak insinyur-jamak, yang-jamak mendengarkan-mereka penjaga-sekolah-bagian."
+    }
+   ],
+   "notes": [
+    "**1960-luvulla rakennettu koulu** — partisip pasif *-ttu/-tty* berarti \"yang di-…\": *rakennettu* = yang dibangun. Seperti partisip aktif di unit 2, keterangannya berdiri di depan. Pelakunya tidak disebut, dan justru itu yang membuatnya pasif. Angkanya dibaca *tuhatyhdeksänsataakuusikymmentäluvulla*.",
+    "**Onko ikkunat jo vaihdettu?** — perfek pasif (A2 unit 13): *on* + partisip *-ttu*. Kata kerja bantunya selalu *on*, walaupun bendanya jamak: *ikkunat on vaihdettu*. Jawaban singkatnya *On* atau *Ei ole*.",
+    "**Maali on vielä märkää** — zat yang tak terhitung (cat, air, kopi) memakai predikat partitif: *Maali on märkää. Kahvi on kuumaa.* Bandingkan dengan benda utuh: *Seinä on märkä* (dindingnya basah).",
+    "**Kattila on poistettava** — *on* + partisip *-tava/-tävä* = \"harus di-…\". Lebih resmi dan tegas daripada *täytyy*; cocok untuk laporan, aturan, dan tenggat. *Ennen* meminta partitif: *ennen talvea, ennen pakkasia, ennen marraskuuta*.",
+    "**Tehdyistä ja tehtävistä töistä** — pasangan paling berguna di unit ini: *tehty* (yang sudah dikerjakan) dan *tehtävä* (yang harus dikerjakan). Di sini keduanya elatif jamak karena *lista* + *-sta* berarti \"daftar tentang\".",
+    "**Luettavaa riittää!** — partisip *-tava* dalam partitif bisa berdiri sebagai kata benda: *luettavaa* (bacaan), *syötävää* (makanan), *juotavaa* (minuman). *X riittää* = X-nya banyak, tidak akan habis."
+   ],
+   "grammars": [
+    {
+     "title": "Partisip pasif lampau -ttu/-tty",
+     "body": [
+      "Ambil pasif lampau, lalu ganti *-tiin* dengan *-tu/-ty*: *rakennettiin → rakennettu*. Hasilnya \"yang (sudah) di-…\" tanpa menyebut pelakunya."
+     ],
+     "table": {
+      "head": [
+       "Pasif kini",
+       "Pasif lampau",
+       "Partisip",
+       "Contoh"
+      ],
+      "rows": [
+       [
+        "*maalataan*",
+        "*maalattiin*",
+        "*maalattu*",
+        "*maalattu seinä*"
+       ],
+       [
+        "*tehdään*",
+        "*tehtiin*",
+        "*tehty*",
+        "*tehty työ*"
+       ],
+       [
+        "*rakennetaan*",
+        "*rakennettiin*",
+        "*rakennettu*",
+        "*1960-luvulla rakennettu koulu*"
+       ],
+       [
+        "*vaihdetaan*",
+        "*vaihdettiin*",
+        "*vaihdettu*",
+        "*vaihdetut ikkunat*"
+       ],
+       [
+        "*poistetaan*",
+        "*poistettiin*",
+        "*poistettu*",
+        "*poistettu kattila*"
+       ],
+       [
+        "*syödään*",
+        "*syötiin*",
+        "*syöty*",
+        "*syöty pulla*"
+       ]
+      ]
+     },
+     "after": [
+      "**Ketika berkasus, konsonannya melemah** bila suku kata tertutup: *tt → t*, *t → d*: *maalattu → maalatun, maalatussa; tehty → tehdyn, tehdyistä; vaihdettu → vaihdetut*. Partitif tetap kuat: *maalattua, tehtyä*.",
+      "Bentuk yang sama kamu pakai dalam perfek pasif: *Seinä on maalattu* (Dindingnya sudah dicat)."
+     ]
+    },
+    {
+     "title": "Partisip -tava/-tävä: yang harus di-",
+     "body": [
+      "Cara termudah: mulai dari partisip *-ttu/-tty*, ganti *-u/-y* dengan *-ava/-ävä*: *tehty → tehtävä, maalattu → maalattava, luettu → luettava*."
+     ],
+     "table": {
+      "head": [
+       "Partisip *-ttu*",
+       "Partisip *-tava*",
+       "Frasa",
+       "Kalimat keharusan"
+      ],
+      "rows": [
+       [
+        "*tehty*",
+        "*tehtävä*",
+        "*tehtävä työ*",
+        "*Työ on tehtävä.*"
+       ],
+       [
+        "*luettu*",
+        "*luettava*",
+        "*luettava kirja*",
+        "*Kirja on luettava.*"
+       ],
+       [
+        "*poistettu*",
+        "*poistettava*",
+        "*poistettava kattila*",
+        "*Kattila on poistettava.*"
+       ],
+       [
+        "*porattu*",
+        "*porattava*",
+        "*porattavat kaivot*",
+        "*Kaivot on porattava.*"
+       ],
+       [
+        "*vaihdettu*",
+        "*vaihdettava*",
+        "*vaihdettava patteri*",
+        "*Patterit on vaihdettava.*"
+       ],
+       [
+        "*täytetty*",
+        "*täytettävä*",
+        "*täytettävä lomake*",
+        "*Lomake on täytettävä.*"
+       ]
+      ]
+     },
+     "after": [
+      "**On + -tava = harus di-.** Seperti perfek pasif, kata kerjanya selalu *on*, dan benda yang dikenai perbuatan tetap nominatif, jamak pun: *Kaivot on porattava*.",
+      "Kalau pelakunya disebut, ia memakai genitif: *Minun on lähdettävä* = aku harus pergi. Ini versi resmi dari *minun täytyy lähteä*, dan akan sering kamu temui di formulir.",
+      "⚠️ *Tehtävä* juga kata benda biasa: tugas, soal latihan. *Tämä tehtävä on vaikea* = soal ini sulit."
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Dialog kedua — Edistymisraportti",
+   "intro": "Keesokan harinya di kantor. Onni membantu Budi mengisi laporan kemajuan untuk Kota Espoo, pemilik gedung sekolah.",
+   "lines": [
+    {
+     "speaker": "Onni:",
+     "text": "Budi, mikä tämä on? Tässä lukee: ”Täytettävä viimeistään perjantaina.”",
+     "id": "Budi, ini apa? Di sini tertulis: \"Harus diisi paling lambat hari Jumat.\"",
+     "literal": "Budi, apa ini adalah? di-sini terbaca: yang-harus-diisi paling-lambat pada-Jumat."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Se on kaupungin edistymisraportti. Siihen kirjoitetaan kaikki tehdyt työt.",
+     "id": "Itu laporan kemajuan untuk kota. Di situ ditulis semua pekerjaan yang sudah dikerjakan.",
+     "literal": "itu adalah kota-punya laporan-kemajuan. ke-itu di-tulis semua yang-dikerjakan-jamak kerja-jamak."
+    },
+    {
+     "speaker": "Onni:",
+     "text": "Selvä. Eli ikkunat: vaihdettu. Ullakko: eristetty. Seinät: maalattu?",
+     "id": "Oke. Jadi jendela: sudah diganti. Loteng: sudah diisolasi. Dinding: sudah dicat?",
+     "literal": "jelas. jadi jendela-jamak: yang-diganti. loteng: yang-diisolasi. dinding-jamak: yang-dicat?"
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Vain liikuntasalin seinät on maalattu. Luokat maalataan ensi kesänä.",
+     "id": "Baru dinding aula olahraga yang sudah dicat. Kelas-kelas dicat musim panas depan.",
+     "literal": "hanya aula-olahraga-punya dinding-jamak adalah yang-dicat. kelas-jamak di-cat depan musim-panas-sebagai."
+    },
+    {
+     "speaker": "Onni:",
+     "text": "Entä tämä kohta: ”Havaitut ongelmat”?",
+     "id": "Kalau bagian ini: \"Masalah yang ditemukan\"?",
+     "literal": "lalu ini bagian: yang-diamati-jamak masalah-jamak?"
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Kirjoita: rikkinäiset patterit, vaihdettava ennen talvea. Ja lisää kuva.",
+     "id": "Tulis: radiator rusak, harus diganti sebelum musim dingin. Terus tambahkan foto.",
+     "literal": "tulislah: rusak-jamak radiator-jamak, yang-harus-diganti sebelum musim-dingin-bagian. dan tambahkanlah gambar."
+    },
+    {
+     "speaker": "Onni:",
+     "text": "Otin kuvia, mutta ne ovat vähän epäselviä.",
+     "id": "Aku sudah ambil foto, tapi agak buram.",
+     "literal": "mengambil-lampau-saya gambar-jamak-bagian, tetapi itu-jamak adalah sedikit tak-jelas-jamak-bagian."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Ei haittaa. Seppo lähettää huomenna paremmat. Onko lomake muuten valmis?",
+     "id": "Nggak apa-apa. Besok Seppo kirim yang lebih bagus. Selain itu formulirnya sudah beres?",
+     "literal": "tidak mengganggu. Seppo mengirim besok lebih-baik-jamak. adalah-kah formulir omong-omong siap?"
+    },
+    {
+     "speaker": "Onni:",
+     "text": "Melkein. Viimeinen kohta on ”Allekirjoitus”. Pitääkö minun allekirjoittaa?",
+     "id": "Hampir. Bagian terakhir \"Tanda tangan\". Aku yang harus tanda tangan?",
+     "literal": "hampir. terakhir bagian adalah tanda-tangan. harus-kah saya-punya menandatangani?"
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Ei, koordinaattorin on allekirjoitettava se. Ja se olen valitettavasti minä.",
+     "id": "Nggak, koordinator yang harus menandatanganinya. Dan sayangnya itu aku.",
+     "literal": "tidak, koordinator-punya adalah yang-harus-ditandatangani itu. dan itu adalah-saya sayangnya saya."
+    },
+    {
+     "speaker": "Onni:",
+     "text": "Hyvä. Allekirjoitettu lomake lähtee siis perjantaina.",
+     "id": "Oke. Jadi formulir yang sudah ditandatangani dikirim hari Jumat.",
+     "literal": "baik. yang-ditandatangani formulir berangkat jadi pada-Jumat."
+    }
+   ],
+   "notes": [
+    "**Tässä lukee** — \"di sini tertulis\", harfiah \"di sini membaca\". Ini cara baku menunjuk isi tulisan: *Kyltissä lukee ”Suljettu”* (Di papan tertulis \"Tutup\").",
+    "**Täytettävä viimeistään perjantaina** — gaya formulir: *on* dibuang, tinggal partisipnya. *Viimeistään* = paling lambat; pasangannya *aikaisintaan* = paling cepat.",
+    "**Ikkunat: vaihdettu. Ullakko: eristetty.** — gaya telegram laporan: kata benda + partisip *-ttu/-tty*, tanpa *on*. Singkat, rapi, dan sangat Finlandia.",
+    "**Koordinaattorin on allekirjoitettava se** — keharusan dengan pelaku: genitif + *on* + *-tava*. Objeknya tetap nominatif: *se*, bukan *sen*. *Se olen minä* = itu aku; kata kerjanya mengikuti *minä*.",
+    "**Valitettavasti** — \"sayangnya\" berasal dari *valittaa* (mengeluh) + *-tava* + *-sti*: \"secara patut dikeluhkan\". Keluarga yang sama: *huomattavasti* (secara mencolok), *ymmärrettävästi* (bisa dimengerti)."
+   ],
+   "grammars": [
+    {
+     "title": "Partisip pasif berkasus",
+     "body": [
+      "Partisip pasif juga kata sifat biasa. Perhatikan pergantian konsonan pada *-ttu/-tty*: suku kata tertutup → lemah."
+     ],
+     "table": {
+      "head": [
+       "Kasus",
+       "*tehty*",
+       "*tehtävä*",
+       "Contoh"
+      ],
+      "rows": [
+       [
+        "nominatif",
+        "*tehty*",
+        "*tehtävä*",
+        "*tehty työ, tehtävä työ*"
+       ],
+       [
+        "genitif",
+        "*tehdyn*",
+        "*tehtävän*",
+        "*allekirjoitetun lomakkeen*"
+       ],
+       [
+        "partitif",
+        "*tehtyä*",
+        "*tehtävää*",
+        "*Luettavaa riittää.*"
+       ],
+       [
+        "inessif",
+        "*tehdyssä*",
+        "*tehtävässä*",
+        "*maalatussa huoneessa*"
+       ],
+       [
+        "jamak nominatif",
+        "*tehdyt*",
+        "*tehtävät*",
+        "*kaikki tehdyt työt*"
+       ],
+       [
+        "jamak elatif",
+        "*tehdyistä*",
+        "*tehtävistä*",
+        "*lista tehdyistä ja tehtävistä töistä*"
+       ]
+      ]
+     },
+     "after": [
+      "*-tava/-tävä* tidak mengalami pergantian konsonan: batangnya selalu sama (*tehtävä, tehtävän, tehtävässä*).",
+      "Partitif *-tava* sering berdiri sendiri sebagai kata benda: *Onko sinulla jotain luettavaa?* (Ada bacaan?) *Kotona ei ollut mitään syötävää* (Di rumah tidak ada makanan sama sekali)."
+     ]
+    }
+   ]
+  }
+ ],
+ "sections": [
+  {
+   "title": "Tanda dan formulir",
+   "blocks": [
+    {
+     "type": "tabel",
+     "head": [
+      "Suomi",
+      "Cara baca",
+      "Bahasa Indonesia"
+     ],
+     "rows": [
+      [
+       "Suljettu",
+       "SUL-yet-tu",
+       "Tutup"
+      ],
+      [
+       "Avattu",
+       "A-vat-tu",
+       "Sudah dibuka (pada kemasan)"
+      ],
+      [
+       "Varattu",
+       "VA-rat-tu",
+       "Dipesan; sedang dipakai (toilet)"
+      ],
+      [
+       "Kielletty",
+       "KIEL-let-tü",
+       "Dilarang"
+      ],
+      [
+       "Pääsy kielletty",
+       "PÈÈ-sü KIEL-let-tü",
+       "Dilarang masuk"
+      ],
+      [
+       "Tupakointi kielletty",
+       "TU-pa-koin-ti KIEL-let-tü",
+       "Dilarang merokok"
+      ],
+      [
+       "Loppuunmyyty",
+       "LOP-puun-müü-tü",
+       "Habis terjual"
+      ],
+      [
+       "Täytettävä",
+       "TÈÜ-tet-tè-vè",
+       "Harus diisi"
+      ],
+      [
+       "Pakollinen",
+       "PA-kol-li-nen",
+       "Wajib"
+      ],
+      [
+       "Palautettava viimeistään",
+       "PA-lau-tet-ta-va VII-meis-tèèn",
+       "Harus dikembalikan paling lambat"
+      ],
+      [
+       "Allekirjoitus",
+       "AL-le-kir-yoi-tus",
+       "Tanda tangan"
+      ],
+      [
+       "Liitteenä",
+       "LIIT-tèè-nè",
+       "Terlampir"
+      ]
+     ]
+    },
+    {
+     "type": "p",
+     "text": "Tanda dan formulir Finlandia hemat kata: satu partisip sudah cukup menjadi kalimat. *Suljettu* tergantung di pintu toko pada hari libur, *Varattu* di meja restoran atau pintu toilet kereta, *Kielletty* di bawah gambar yang dicoret. Di formulir, tanda bintang biasanya menandai kolom *pakollinen*, dan tenggat ditulis dengan *-tava*: *palautettava 15.10.2027 mennessä* (harus dikembalikan paling lambat 15.10.2027). Tanggal ditulis hari.bulan.tahun dengan titik."
+    }
+   ]
+  },
+  {
+   "title": "Laporan kemajuan (edistymisraportti)",
+   "blocks": [
+    {
+     "type": "tabel",
+     "head": [
+      "Judul kolom",
+      "Contoh isi",
+      "Artinya"
+     ],
+     "rows": [
+      [
+       "*Tehdyt työt*",
+       "*Ikkunat vaihdettu 7/2027.*",
+       "pekerjaan yang sudah selesai"
+      ],
+      [
+       "*Tehtävät työt*",
+       "*Öljykattila poistettava kesällä 2028.*",
+       "pekerjaan yang harus dilakukan"
+      ],
+      [
+       "*Havaitut ongelmat*",
+       "*Liikuntasalin patterit rikki.*",
+       "masalah yang ditemukan"
+      ],
+      [
+       "*Suunniteltu aikataulu*",
+       "*Poraus 11.10.–29.10.2027*",
+       "jadwal yang direncanakan"
+      ],
+      [
+       "*Arvioidut kustannukset*",
+       "*noin 180 000 euroa*",
+       "perkiraan biaya"
+      ],
+      [
+       "*Hyväksytty*",
+       "*Espoon kaupunki, 15.10.2027*",
+       "disetujui"
+      ]
+     ]
+    },
+    {
+     "type": "p",
+     "text": "Laporan Finlandia menyukai gaya partisip: *Ikkunat vaihdettu*, bukan \"Kami sudah mengganti jendela\". Pelakunya jarang disebut; yang penting apa yang sudah dan apa yang belum selesai. Kalimat lengkap disimpan untuk kolom *Havaitut ongelmat* dan *Lisätietoja* (keterangan tambahan). Bahasa Indonesia resmi juga gemar pasif (\"telah dilaksanakan\"), jadi gaya ini akan terasa akrab."
+    },
+    {
+     "type": "kotak",
+     "title": "Sekolah dan udara dalam ruangan",
+     "items": [
+      "Banyak gedung sekolah Finlandia dibangun pada tahun 1960-an dan 1970-an, dan kini tiba waktunya direnovasi besar-besaran.",
+      "Isu yang paling sering dibicarakan adalah *sisäilma* (udara dalam ruangan): lembap dan jamur (*home*) di gedung tua pernah memaksa sejumlah sekolah pindah ke gedung sementara.",
+      "Karena itu setiap renovasi diawasi ketat, dan orang tua murid membaca laporan kota dengan teliti. Laporan Budi bukan sekadar formalitas.",
+      "Penjaga sekolah (*vahtimestari*) biasanya orang yang paling mengenal gedungnya. Insinyur yang pintar mendengarkan dia lebih dulu, seperti Budi dan Laura."
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Ulangan berjenjang — unit 1",
+   "blocks": [
+    {
+     "type": "p",
+     "text": "Tutup kolom Finlandia, baca terjemahan Indonesianya, lalu susun kembali kalimatnya dari ingatan."
+    },
+    {
+     "type": "tabel",
+     "head": [
+      "Bahasa Indonesia",
+      "Suomi"
+     ],
+     "rows": [
+      [
+       "Ibu bilang aku kurusan. Bapak tanya kapan aku nikah.",
+       "*Äiti sanoi, että olen laihtunut. Isä kysyi, milloin menen naimisiin.*"
+      ],
+      [
+       "Aku telepon Bapak, dan dia bilang kesempatan kayak gini nggak datang dua kali.",
+       "*Soitin isälle, ja hän sanoi, että tällaista tilaisuutta ei tule kahdesti.*"
+      ],
+      [
+       "Selamat, Pak Koordinator! Aku sudah tahu kamu pasti bisa.",
+       "*Onneksi olkoon, koordinaattori! Tiesin, että pystyt siihen.*"
+      ],
+      [
+       "Sibuk. Hari pertama Heikki langsung tanya apakah aku sudah baca rencana proyeknya.",
+       "*Kiireinen. Heikki kysyi heti ensimmäisenä päivänä, olenko lukenut hankesuunnitelman.*"
+      ],
+      [
+       "Kamu tahu trainee-nya asalnya dari mana?",
+       "*Tiedätkö, mistä harjoittelija on kotoisin?*"
+      ]
+     ]
+    }
+   ]
+  }
+ ],
+ "vocab": [
+  {
+   "fi": "rakentaa",
+   "baca": "RA-ken-taa",
+   "id": "membangun (*rakennan*; pasif *rakennetaan*)"
+  },
+  {
+   "fi": "vaihtaa",
+   "baca": "VAIH-taa",
+   "id": "mengganti (*vaihdan*)"
+  },
+  {
+   "fi": "asentaa",
+   "baca": "A-sen-taa",
+   "id": "memasang (*asennan*)"
+  },
+  {
+   "fi": "ullakko",
+   "baca": "UL-lak-ko",
+   "id": "loteng (gen. *ullakon*)"
+  },
+  {
+   "fi": "eristää",
+   "baca": "E-ris-tèè",
+   "id": "mengisolasi (panas, suara)"
+  },
+  {
+   "fi": "maalata",
+   "baca": "MAA-la-ta",
+   "id": "mengecat (*maalaan, maalasi*)"
+  },
+  {
+   "fi": "maali",
+   "baca": "MAA-li",
+   "id": "cat"
+  },
+  {
+   "fi": "märkä",
+   "baca": "MÈR-kè",
+   "id": "basah (gen. *märän*)"
+  },
+  {
+   "fi": "koskea",
+   "baca": "KOS-ke-a",
+   "id": "menyentuh (+ ilatif: *älä koske siihen*)"
+  },
+  {
+   "fi": "lämmitys",
+   "baca": "LÈM-mi-tüs",
+   "id": "pemanasan (gen. *lämmityksen*)"
+  },
+  {
+   "fi": "öljykattila",
+   "baca": "ÖL-yü-kat-ti-la",
+   "id": "tungku minyak (gen. *öljykattilan*)"
+  },
+  {
+   "fi": "poistaa",
+   "baca": "POIS-taa",
+   "id": "menyingkirkan, mencopot"
+  },
+  {
+   "fi": "porata",
+   "baca": "PO-ra-ta",
+   "id": "mengebor (*poraan, porasi*)"
+  },
+  {
+   "fi": "kaivo",
+   "baca": "KAI-vo",
+   "id": "sumur"
+  },
+  {
+   "fi": "pakkanen",
+   "baca": "PAK-ka-nen",
+   "id": "suhu di bawah nol (gen. *pakkasen*)"
+  },
+  {
+   "fi": "riittää",
+   "baca": "RIIT-tèè",
+   "id": "cukup (*X riittää* = X-nya banyak)"
+  },
+  {
+   "fi": "liikuntasali",
+   "baca": "LII-kun-ta-sa-li",
+   "id": "aula olahraga"
+  },
+  {
+   "fi": "patteri",
+   "baca": "PAT-te-ri",
+   "id": "radiator"
+  },
+  {
+   "fi": "rikkinäinen",
+   "baca": "RIK-ki-nèi-nen",
+   "id": "rusak (gen. *rikkinäisen*)"
+  },
+  {
+   "fi": "kiireellinen",
+   "baca": "KII-rèèl-li-nen",
+   "id": "mendesak"
+  },
+  {
+   "fi": "vahtimestari",
+   "baca": "VAH-ti-mes-ta-ri",
+   "id": "penjaga sekolah/gedung"
+  },
+  {
+   "fi": "täyttää",
+   "baca": "TÈÜT-tèè",
+   "id": "mengisi (*täytän*)"
+  },
+  {
+   "fi": "havaita",
+   "baca": "HA-vai-ta",
+   "id": "mengamati, menemukan (*havaitsen*)"
+  },
+  {
+   "fi": "allekirjoittaa",
+   "baca": "AL-le-kir-yoit-taa",
+   "id": "menandatangani (*allekirjoitan*)"
+  },
+  {
+   "fi": "valitettavasti",
+   "baca": "VA-li-tet-ta-vas-ti",
+   "id": "sayangnya"
+  }
+ ],
+ "exercises": [
+  {
+   "prompt": "Terjemahkan ke bahasa Finlandia.",
+   "items": [
+    "Dinding yang dicat itu masih basah.",
+    "Tungku minyak harus dicopot musim panas depan.",
+    "Jendelanya sudah diganti.",
+    "Ini daftar pekerjaan yang harus dikerjakan.",
+    "Formulir ini harus diisi paling lambat hari Jumat.",
+    "Sekolah yang dibangun tahun 1960-an itu besar."
+   ]
+  },
+  {
+   "prompt": "Isi dengan partisip yang tepat. Petunjuk ada di dalam kurung.",
+   "items": [
+    "Tämä on 1960-luvulla ____ koulu. (rakentaa; -ttu)",
+    "Kattila on ____ ennen marraskuuta. (poistaa; -tava)",
+    "Kaikki ____ työt kirjoitetaan raporttiin. (tehdä; -ttu, jamak)",
+    "Lähetä minulle ____ lomake! (allekirjoittaa; -ttu)",
+    "Asumme äskettäin ____ talossa. (maalata; -ttu, inessif)",
+    "Onko sinulla mitään ____? (lukea; -tava, partitif)",
+    "Patterit on ____ ennen talvea. (vaihtaa; -tava)"
+   ]
+  },
+  {
+   "prompt": "Ubah menjadi kalimat keharusan resmi *on + -tava*. Contoh: *Meidän täytyy maalata seinä.* → *Seinä on maalattava.*",
+   "items": [
+    "Meidän täytyy porata kaivot.",
+    "Heidän täytyy vaihtaa patterit.",
+    "Sinun täytyy täyttää lomake.",
+    "Meidän täytyy lukea raportti.",
+    "Heidän täytyy poistaa kattila.",
+    "Minun täytyy allekirjoittaa sopimus."
+   ]
+  },
+  {
+   "prompt": "Susun jadi kalimat yang benar.",
+   "items": [
+    "on / porattava / maalämpökaivot / ennen / pakkasia",
+    "lista / tässä / tehdyistä / on / töistä",
+    "seinät / vain / on / maalattu / liikuntasalin",
+    "lomake / allekirjoitettu / perjantaina / lähtee",
+    "rikkinäiset / on / patterit / vaihdettava"
+   ]
+  }
+ ],
+ "answers": [
+  "Maalattu seinä on vielä märkä. — Öljykattila on poistettava ensi kesänä. — Ikkunat on vaihdettu. — Tässä on lista tehtävistä töistä. — Tämä lomake on täytettävä viimeistään perjantaina. — 1960-luvulla rakennettu koulu on suuri.",
+  "rakennettu — poistettava — tehdyt — allekirjoitettu — maalatussa — luettavaa — vaihdettava",
+  "Kaivot on porattava. — Patterit on vaihdettava. — Lomake on täytettävä. — Raportti on luettava. — Kattila on poistettava. — Sopimus on allekirjoitettava.",
+  "Maalämpökaivot on porattava ennen pakkasia. — Tässä on lista tehdyistä töistä. — Vain liikuntasalin seinät on maalattu. — Allekirjoitettu lomake lähtee perjantaina. — Rikkinäiset patterit on vaihdettava."
+ ]
+}

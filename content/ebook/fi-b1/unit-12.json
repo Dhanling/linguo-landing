@@ -1,0 +1,643 @@
+{
+ "title": "Keluarga kata — akhiran pembentuk kata benda & kata sifat",
+ "title_target": "Tilaaja tulee verbistä tilata",
+ "goal": "Membaca kontrak dan teks teknik tanpa membuka kamus untuk setiap kata, dengan menebak arti dari akarnya dan akhirannya. Titik tata bahasanya: akhiran pembentuk kata (*-ja, -us, -uus, -minen, -mo, -la, -sto, -ton, -llinen, -kas, -isa*) dan cara mengurai kata majemuk panjang.",
+ "bekal": [
+  "mengenali pelaku, kegiatan, hasil, dan tempat dari akhirannya: *tilaaja, lukeminen, rakennus, korjaamo*",
+  "membedakan *-us* dari kata kerja (*korvaus*) dan *-uus/-yys* dari kata sifat (*turvallisuus*), serta *-ton* (tanpa) dari *-llinen* (dengan)",
+  "mengurai kata majemuk dari belakang: *rakennus + urakka + sopimus*"
+ ],
+ "dialogs": [
+  {
+   "title": "Dialog — Mitä tämä sana tarkoittaa?",
+   "intro": "Rabu, 19 Januari 2028. Kontrak dengan perusahaan pengeboran untuk sumur panas bumi di sekolah-sekolah proyek berikutnya tiba di meja Budi (sumur di Mäntyrinne sudah dibor Oktober lalu). Sebelum Heikki menandatanganinya, Budi harus memeriksa semuanya. Ia menghampiri meja Laura.",
+   "lines": [
+    {
+     "speaker": "Budi:",
+     "text": "Laura, onko sinulla hetki? Luen porausyrityksen sopimusta, ja siinä on paljon uusia sanoja.",
+     "id": "Laura, ada waktu sebentar? Aku lagi baca kontrak perusahaan pengeboran, dan isinya banyak kata baru.",
+     "literal": "Laura, adalah-kah pada-kamu sebentar? membaca-saya pengeboran-perusahaan-punya kontrak-bagian, dan di-itu ada banyak baru-jamak-bagian kata-jamak-bagian."
+    },
+    {
+     "speaker": "Laura:",
+     "text": "Näytä. Ahaa, urakkasopimus. Tilaaja olemme me, ja urakoitsija on porausyritys.",
+     "id": "Coba lihat. Oh, kontrak borongan. Pemesannya kita, dan kontraktornya perusahaan pengeboran.",
+     "literal": "tunjukkanlah. aha, borongan-kontrak. pemesan adalah-kami kami, dan kontraktor adalah pengeboran-perusahaan."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Tilaaja tulee verbistä tilata, eikö? Se, joka tilaa jotain.",
+     "id": "*Tilaaja* berasal dari kata kerja *tilata*, kan? Orang yang memesan sesuatu.",
+     "literal": "pemesan datang dari-kata-kerja memesan, tidak-kah? itu, yang memesan sesuatu-bagian."
+    },
+    {
+     "speaker": "Laura:",
+     "text": "Juuri niin. Pääte -ja tekee verbistä tekijän: tilaaja, myyjä, kuljettaja.",
+     "id": "Tepat. Akhiran -ja membentuk pelaku dari kata kerja: pemesan, penjual, sopir.",
+     "literal": "tepat begitu. akhiran -ja membuat dari-kata-kerja pelaku-sasaran: pemesan, penjual, pengemudi."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Entä urakoitsija? Onko se se, joka tekee urakan?",
+     "id": "Kalau *urakoitsija*? Itu yang mengerjakan borongan?",
+     "literal": "lalu kontraktor? adalah-kah itu itu, yang membuat borongan-sasaran?"
+    },
+    {
+     "speaker": "Laura:",
+     "text": "On. Urakoida tarkoittaa urakan tekemistä, ja urakoitsija on sen tekijä. Pääte on vain pidempi: -ija.",
+     "id": "Iya. *Urakoida* artinya mengerjakan borongan, dan *urakoitsija* pelakunya. Akhirannya saja yang lebih panjang: -ija.",
+     "literal": "adalah. memborong berarti borongan-punya membuat-an-bagian, dan kontraktor adalah itu-punya pelaku. akhiran adalah hanya lebih-panjang: -ija."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Sitten kohta kahdeksan: viivästyminen. Viivästyä on myöhästyä, ja -minen tekee siitä substantiivin. Oikein?",
+     "id": "Lalu pasal delapan: *viivästyminen*. *Viivästyä* itu terlambat, dan -minen menjadikannya kata benda. Betul?",
+     "literal": "lalu pasal delapan: tertunda-nya. tertunda adalah terlambat, dan -minen membuat dari-itu kata-benda-sasaran. benar?"
+    },
+    {
+     "speaker": "Laura:",
+     "text": "Oikein. Jos työ viivästyy, urakoitsija maksaa meille korvauksen.",
+     "id": "Betul. Kalau pekerjaannya molor, kontraktor membayar ganti rugi kepada kita.",
+     "literal": "benar. jika kerja tertunda, kontraktor membayar kepada-kami ganti-rugi-sasaran."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Korvaus tulee verbistä korvata, niin kuin rakennus verbistä rakentaa.",
+     "id": "*Korvaus* dari kata kerja *korvata*, sama seperti *rakennus* dari *rakentaa*.",
+     "literal": "ganti-rugi datang dari-kata-kerja mengganti-rugi, begitu seperti bangunan dari-kata-kerja membangun."
+    },
+    {
+     "speaker": "Laura:",
+     "text": "Olet oikea kielitieteilijä! Mutta varo: -uus ja -yys ovat eri asia. Ne tehdään adjektiiveista: turvallinen, turvallisuus.",
+     "id": "Kamu ini ahli bahasa sungguhan! Tapi hati-hati: -uus dan -yys itu lain lagi. Keduanya dibentuk dari kata sifat: *turvallinen* (aman), *turvallisuus* (keamanan).",
+     "literal": "adalah-kamu sejati bahasa-ilmuwan! tetapi waspadalah: -uus dan -yys adalah lain hal. itu-jamak di-buat dari-kata-sifat-jamak: aman, keamanan."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Selvä. Kohdassa kaksitoista lukee: maksuton huolto takuuaikana. Maksuton on siis ilmainen?",
+     "id": "Oke. Di pasal dua belas tertulis: *maksuton huolto takuuaikana*. Jadi *maksuton* itu gratis?",
+     "literal": "jelas. di-pasal dua-belas membaca: bayar-tanpa servis sebagai-masa-garansi. bayar-tanpa adalah jadi gratis?"
+    },
+    {
+     "speaker": "Laura:",
+     "text": "Kyllä. -ton ja -tön tarkoittavat ilman: maksuton, virheetön, langaton.",
+     "id": "Ya. -ton dan -tön artinya \"tanpa\": tanpa bayar, tanpa cacat, tanpa kabel.",
+     "literal": "ya. -ton dan -tön berarti tanpa: bayar-tanpa, kesalahan-tanpa, kabel-tanpa."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Ja energiatehokas tulee sanasta teho. Pääte -kas tekee substantiivista adjektiivin.",
+     "id": "Dan *energiatehokas* dari kata *teho* (daya guna). Akhiran -kas membentuk kata sifat dari kata benda.",
+     "literal": "dan energi-daya-kaya datang dari-kata daya. akhiran -kas membuat dari-kata-benda kata-sifat-sasaran."
+    },
+    {
+     "speaker": "Laura:",
+     "text": "Täydellistä. Heikki allekirjoittaa sopimuksen, kun olet tarkistanut kaiken. Minä en jaksa lukea sopimuksia.",
+     "id": "Sempurna. Heikki tanda tangan kontraknya setelah kamu memeriksa semuanya. Aku sih nggak sanggup baca kontrak.",
+     "literal": "sempurna-bagian. Heikki menandatangani kontrak-sasaran, ketika adalah-kamu memeriksa-sudah semua-sasaran. saya tidak-saya kuat membaca kontrak-jamak-bagian."
+    }
+   ],
+   "notes": [
+    "**Tilaaja olemme me** — dalam kontrak Finlandia selalu ada dua pihak: *tilaaja* (pemesan, pemberi kerja) dan *urakoitsija* atau *toimittaja* (kontraktor, pemasok). Laura menaruh *tilaaja* di depan karena kata itulah yang sedang dibicarakan; *me* di akhir kalimat mendapat tekanan: \"pemesannya, ya kita\".",
+    "**-ja/-jä dan -ija/-ijä** — akhiran pelaku. Ia menempel pada batang kata kerja yang kuat: *tilata → tilaa- → tilaaja*, *myydä → myyjä*, *kuljettaa → kuljettaja*. Kalau batangnya berakhir *-e*, *e* itu berubah menjadi *i*, sehingga terdengar seperti *-ija/-ijä*: *luke- → lukija*, *teke- → tekijä*, *harjoittele- → harjoittelija*, *urakoitse- → urakoitsija*.",
+    "**viivästyminen** — *-minen* bisa dipasang pada hampir semua kata kerja, dan resepnya mudah: ambil bentuk *he* (*he viivästyvät, he lukevat, he tekevät*), buang *-vat/-vät*, tambahkan *-minen*: *viivästyminen, lukeminen, tekeminen*. Artinya kegiatan itu sendiri, mirip \"pe-…-an\" atau \"ke-…-an\".",
+    "**-us/-ys lawan -uus/-yys** — keduanya mirip, tetapi asalnya berbeda. *-us/-ys* dari kata kerja, artinya tindakan atau hasil: *korvaus* (ganti rugi), *rakennus* (bangunan), *korjaus* (perbaikan). *-uus/-yys* dari kata sifat, artinya sifat abstrak: *turvallisuus* (keamanan), *tehokkuus* (efisiensi). Genitifnya juga berbeda: *rakennuksen*, tetapi *turvallisuuden*.",
+    "**Kohdassa kaksitoista lukee** — *lukea* di sini berarti \"tertulis\", tanpa subjek. *Mitä siinä lukee?* = Tulisannya apa? *Ovessa lukee \"Vedä\"* = Di pintu tertulis \"Tarik\".",
+    "**-ton/-tön** menempel pada batang genitif: *maksu → maksuton*, *virhe → virhee- → virheetön*, *lanka → langa- → langaton*. Lawannya sering *-llinen*: *maksullinen* (berbayar). Di papan parkir kamu akan membaca keduanya."
+   ],
+   "grammars": [
+    {
+     "title": "Kata benda dari kata kerja",
+     "body": [
+      "Sebagian besar kata benda di kontrak dan laporan adalah turunan kata kerja. Akhirannya memberi tahu jenis maknanya: siapa, kegiatan apa, hasil apa, alat apa, atau tempat apa."
+     ],
+     "table": {
+      "head": [
+       "Akhiran",
+       "Makna",
+       "Contoh"
+      ],
+      "rows": [
+       [
+        "*-ja/-jä, -ija/-ijä*",
+        "pelaku",
+        "*tilaaja, myyjä, lukija, tekijä*"
+       ],
+       [
+        "*-minen*",
+        "kegiatan",
+        "*lukeminen, poraaminen, viivästyminen*"
+       ],
+       [
+        "*-us/-ys*",
+        "tindakan, hasil",
+        "*rakennus, korvaus, toimitus, tarjous*"
+       ],
+       [
+        "*-in*",
+        "alat",
+        "*puhelin* (dari *puhella*, turunan *puhua*), *soitin, avain*"
+       ],
+       [
+        "*-mo/-mö*",
+        "tempat kerja",
+        "*korjaamo, leipomo, kampaamo*"
+       ],
+       [
+        "*-ma/-mä*",
+        "hasil kegiatan",
+        "*suunnitelma, kokoelma*"
+       ]
+      ]
+     },
+     "after": [
+      "⚠️ Kata turunan punya batangnya sendiri. *-us* menjadi *-ukse-* (*rakennus → rakennuksessa*), *-in* menjadi *-ime-* (*puhelin → puhelimessa*). Ingat pola ini saat menambahkan kasus.",
+      "*Korjaamo* yang kamu kenal dari bengkel sepeda adalah contoh sempurna: *korjata* (memperbaiki) + *-mo* (tempat) = tempat memperbaiki."
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Dialog kedua — Suomen pisin sana",
+   "intro": "Jumat sore, rehat kopi. Onni, pemagang dari Oulu, mendengar Budi bergulat dengan kontrak dan menantangnya bermain tebak kata.",
+   "lines": [
+    {
+     "speaker": "Onni:",
+     "text": "Budi, tiedätkö, mikä on suomen kielen pisin sana?",
+     "id": "Budi, kamu tahu kata terpanjang dalam bahasa Finlandia?",
+     "literal": "Budi, tahu-kah-kamu, apa adalah Finlandia-punya bahasa-punya terpanjang kata?"
+    },
+    {
+     "speaker": "Budi:",
+     "text": "En tiedä, mutta tällä viikolla luin sanan rakennusurakkasopimus. Se tuntui tarpeeksi pitkältä.",
+     "id": "Nggak tahu, tapi minggu ini aku baca kata *rakennusurakkasopimus*. Rasanya itu sudah cukup panjang.",
+     "literal": "tidak-saya tahu, tetapi pada-minggu-ini membaca-lampau-saya kata-sasaran bangunan-borongan-kontrak. itu terasa-lampau cukup dari-panjang."
+    },
+    {
+     "speaker": "Onni:",
+     "text": "Pura se osiin. Mitä siinä on?",
+     "id": "Urai jadi bagian-bagiannya. Isinya apa saja?",
+     "literal": "bongkarlah itu ke-bagian-jamak. apa-bagian di-itu ada?"
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Rakennus, urakka ja sopimus. Kaksi niistä on johdoksia verbeistä rakentaa ja sopia.",
+     "id": "*Rakennus*, *urakka*, dan *sopimus*. Dua di antaranya kata turunan: dari *rakentaa* dan *sopia*.",
+     "literal": "bangunan, borongan dan kesepakatan. dua dari-itu-jamak adalah turunan-jamak-bagian dari-kata-kerja-jamak membangun dan bersepakat."
+    },
+    {
+     "speaker": "Onni:",
+     "text": "Hyvä. Tärkein osa on aina viimeinen: rakennusurakkasopimus on siis sopimus.",
+     "id": "Bagus. Bagian terpenting selalu yang terakhir: *rakennusurakkasopimus* itu pada dasarnya sebuah kontrak.",
+     "literal": "baik. terpenting bagian adalah selalu terakhir: bangunan-borongan-kontrak adalah jadi kontrak."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Indonesian kielessä järjestys on päinvastainen: tärkein sana tulee ensin.",
+     "id": "Dalam bahasa Indonesia urutannya terbalik: kata terpenting datang lebih dulu.",
+     "literal": "Indonesia-punya di-bahasa urutan adalah berlawanan: terpenting kata datang pertama."
+    },
+    {
+     "speaker": "Onni:",
+     "text": "Kätevää. Minun lempisanani on lumenluontiurakka. Oulussa sitä tarvitaan joka talvi.",
+     "id": "Praktis. Kata favoritku *lumenluontiurakka*, borongan menyekop salju. Di Oulu itu dibutuhkan tiap musim dingin.",
+     "literal": "praktis-bagian. saya-punya kesayangan-kata-ku adalah salju-punya-sekop-an-borongan. di-Oulu itu-bagian di-butuhkan setiap musim-dingin."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Minä pidän sanasta kaukolämpöverkko. Siitä tulee minun palkkani.",
+     "id": "Aku suka kata *kaukolämpöverkko*, jaringan pemanas distrik. Dari situlah gajiku datang.",
+     "literal": "saya suka dari-kata jauh-panas-jaringan. dari-itu datang saya-punya gaji-ku."
+    },
+    {
+     "speaker": "Onni:",
+     "text": "Ja minun palkkani tulee sanasta harjoittelija. Siinä on pääte -ija, eikö niin?",
+     "id": "Dan gajiku datang dari kata *harjoittelija*. Di situ ada akhiran -ija, kan?",
+     "literal": "dan saya-punya gaji-ku datang dari-kata pemagang. di-itu ada akhiran -ija, tidak-kah begitu?"
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Juuri niin. Ja harjoittelijasta tulee pian insinööri.",
+     "id": "Tepat. Dan tak lama lagi si pemagang jadi insinyur.",
+     "literal": "tepat begitu. dan dari-pemagang datang segera insinyur."
+    },
+    {
+     "speaker": "Onni:",
+     "text": "Toivottavasti! Entä se pisin sana? Kerron sen maanantaina. Se ei mahdu yhteen hengenvetoon.",
+     "id": "Semoga! Soal kata terpanjang itu? Senin nanti kuberi tahu. Nggak muat dalam satu tarikan napas.",
+     "literal": "semoga! lalu itu terpanjang kata? menceritakan-saya itu-sasaran pada-Senin. itu tidak muat ke-satu ke-napas-tarikan."
+    }
+   ],
+   "notes": [
+    "**Pura se osiin** — *purkaa* (membongkar) → perintah *pura!* (gradasi *rk → r*). Inilah cara terbaik membaca kata majemuk panjang: bongkar, lalu baca dari belakang.",
+    "**Tärkein osa on aina viimeinen** — kata majemuk Finlandia berkepala di akhir, persis kebalikan frasa Indonesia. *Kaukolämpöverkko* = *kauko* (jauh) + *lämpö* (panas) + *verkko* (jaringan): sebuah jaringan. Bahasa Indonesia membacanya dari depan: \"jaringan pemanas distrik\".",
+    "**lumenluontiurakka** — bagian depan kata majemuk kadang berbentuk dasar (*kaukolämpö, kirjastokortti*), kadang genitif (*lumenluonti* dari *lumi → lumen*; *kaupunginkirjasto*). Tidak ada aturan yang bisa ditebak sepenuhnya; hafalkan sebagai satu kata.",
+    "**Siitä tulee minun palkkani** — *tulla* + elatif punya dua arti: \"berasal dari\" (*palkka tulee kaukolämmöstä*) dan \"menjadi\" (*harjoittelijasta tulee insinööri*). Konteks yang menentukan, dan Budi sengaja bermain dengan keduanya.",
+    "**Toivottavasti** — keterangan dengan *-sti* dari *toivottava* (yang diharapkan). Akhiran *-sti* membentuk keterangan dari kata sifat: *huolellinen → huolellisesti*, *nopea → nopeasti*, *tehokas → tehokkaasti*."
+   ],
+   "grammars": [
+    {
+     "title": "Kata majemuk: bongkar dari belakang",
+     "body": [
+      "Bahasa Finlandia menulis kata majemuk sebagai satu kata, sepanjang apa pun. Bagian terakhir menentukan artinya, jenis katanya, dan cara ia berubah kasus; bagian depan hanya menerangkan."
+     ],
+     "table": {
+      "head": [
+       "Kata majemuk",
+       "Dibongkar",
+       "Arti"
+      ],
+      "rows": [
+       [
+        "*rakennusurakkasopimus*",
+        "*rakennus + urakka + sopimus*",
+        "kontrak borongan bangunan"
+       ],
+       [
+        "*kaukolämpöverkko*",
+        "*kauko + lämpö + verkko*",
+        "jaringan pemanas distrik"
+       ],
+       [
+        "*maalämpöpumppu*",
+        "*maa + lämpö + pumppu*",
+        "pompa panas bumi"
+       ],
+       [
+        "*oleskelulupa*",
+        "*oleskelu + lupa*",
+        "izin tinggal"
+       ],
+       [
+        "*kaupunginkirjasto*",
+        "*kaupungin + kirjasto*",
+        "perpustakaan kota"
+       ],
+       [
+        "*lumenluontiurakka*",
+        "*lumen + luonti + urakka*",
+        "borongan menyekop salju"
+       ]
+      ]
+     },
+     "after": [
+      "Kasus hanya ditempel di ujung: *rakennusurakkasopimuksessa* (di dalam kontrak itu). Bagian depan tidak ikut berubah.",
+      "⚠️ Tanda hubung dipakai kalau dua vokal yang sama bertemu di sambungan: *vara-avain, linja-auto, energia-ala*. Selain itu, tulis bersambung."
+     ]
+    }
+   ]
+  }
+ ],
+ "sections": [
+  {
+   "title": "Tebak arti dari akhiran",
+   "blocks": [
+    {
+     "type": "tabel",
+     "head": [
+      "Akhiran",
+      "Makna",
+      "Contoh"
+     ],
+     "rows": [
+      [
+       "*-uus/-yys*",
+       "sifat abstrak (dari kata sifat)",
+       "*turvallisuus, tehokkuus, ystävällisyys*"
+      ],
+      [
+       "*-ton/-tön*",
+       "tanpa",
+       "*maksuton, rahaton, virheetön*"
+      ],
+      [
+       "*-llinen*",
+       "punya, berkaitan dengan",
+       "*taloudellinen, vastuullinen, maksullinen*"
+      ],
+      [
+       "*-kas/-käs*",
+       "kaya akan",
+       "*tehokas, voimakas, älykäs*"
+      ],
+      [
+       "*-isa/-isä*",
+       "berlimpah",
+       "*kalaisa järvi, tuottoisa vuosi*"
+      ],
+      [
+       "*-inen*",
+       "terbuat dari, bersifat",
+       "*puinen, talvinen, suomalainen*"
+      ],
+      [
+       "*-la/-lä*",
+       "tempat",
+       "*ravintola, kahvila, sairaala, neuvola*"
+      ],
+      [
+       "*-sto/-stö*",
+       "kumpulan",
+       "*kirjasto, sanasto, henkilöstö, saaristo*"
+      ]
+     ]
+    },
+    {
+     "type": "p",
+     "text": "Jangan menghafal daftar ini sebagai aturan mati; pakailah sebagai alat menebak. Saat bertemu kata panjang, cari dulu akar yang kamu kenal, lalu lihat akhirannya. *Kalaisa* pasti ada hubungannya dengan ikan (*kala*) dan \"banyak\"; *saaristo* dengan pulau (*saari*) dan \"kumpulan\", jadi gugusan pulau. Tebakanmu tidak selalu tepat (*neuvola* adalah klinik ibu dan anak, bukan sembarang \"tempat nasihat\"), tetapi hampir selalu cukup untuk memahami kalimatnya. Bahasa Indonesia bekerja serupa: kalau kamu tahu *baca*, kamu bisa menebak *pembaca, bacaan*, dan *pembacaan*."
+    },
+    {
+     "type": "kotak",
+     "title": "Strategi membaca teks penuh kata baru",
+     "items": [
+      "Cari kata kerjanya dulu. Kata benda panjang biasanya subjek atau objek, dan kata kerjanya memberi tahu apa yang terjadi.",
+      "Bongkar kata majemuk dari belakang: *energiatehokkuusvaatimukset* = *vaatimukset* (tuntutan) tentang *energiatehokkuus* (efisiensi energi).",
+      "Kenali akhiran kasus sebelum akhiran turunan: *rakennuksissa* = *rakennus* + jamak + *-ssa*.",
+      "Baru buka kamus kalau tebakanmu bertentangan dengan konteks. Kamus daring yang dipakai orang Finlandia sendiri: *Kielitoimiston sanakirja*."
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Kata majemuk panjang dalam hidup sehari-hari",
+   "blocks": [
+    {
+     "type": "tabel",
+     "head": [
+      "Kata",
+      "Cara baca",
+      "Arti"
+     ],
+     "rows": [
+      [
+       "kaukolämpöverkko",
+       "KAU-ko-lèm-pö-verk-ko",
+       "jaringan pemanas distrik"
+      ],
+      [
+       "maalämpöpumppu",
+       "MAA-lèm-pö-pump-pu",
+       "pompa panas bumi"
+      ],
+      [
+       "energiatehokkuus",
+       "E-ner-gi-a-te-hok-kuus",
+       "efisiensi energi"
+      ],
+      [
+       "henkilötunnus",
+       "HEN-ki-lö-tun-nus",
+       "nomor identitas pribadi"
+      ],
+      [
+       "oleskelulupa",
+       "O-les-ke-lu-lu-pa",
+       "izin tinggal"
+      ],
+      [
+       "jäätelökioski",
+       "YÈÈ-te-lö-ki-os-ki",
+       "kios es krim"
+      ],
+      [
+       "kirjastokortti",
+       "KIR-yas-to-kort-ti",
+       "kartu perpustakaan"
+      ],
+      [
+       "pysäköintikielto",
+       "PÜ-sè-köin-ti-ki-el-to",
+       "larangan parkir"
+      ]
+     ]
+    },
+    {
+     "type": "p",
+     "text": "Di Finlandia kamu akan bertemu kata majemuk sejak turun dari pesawat: *matkatavarahihna* (ban bagasi), *henkilöllisyystodistus* (kartu identitas), *pysäköintikielto*. Kata-kata ini bukan istilah teknis; anak sekolah pun memakainya. Kabar baiknya, semakin panjang kata, semakin \"transparan\" artinya, karena setiap potongnya adalah kata yang lebih pendek. Kata pendek seperti *kuu* (bulan) atau *työ* (kerja) harus dihafal; kata panjang seperti *työttömyysturva* (tunjangan pengangguran) bisa dibongkar: *työ → työtön → työttömyys* + *turva*."
+    },
+    {
+     "type": "kotak",
+     "title": "Kata terpanjang (yang sering disebut)",
+     "items": [
+      "*Epäjärjestelmällisyys* (ketidaksistematisan) panjang tetapi bukan kata majemuk: hanya satu akar dengan imbuhan bertumpuk, *epä-* (tidak) + *järjestelmä* (sistem) + *-llinen* + *-yys*.",
+      "Untuk hiburan, orang Finlandia suka menyebut *lentokonesuihkuturbiinimoottoriapumekaanikkoaliupseerioppilas*, 61 huruf: kira-kira \"siswa bintara asisten mekanik mesin turbin jet pesawat\". Setiap potongnya kata biasa.",
+      "Karena kata majemuk bisa dibentuk bebas, secara teori tidak ada kata terpanjang. Yang ada hanyalah kata terpanjang yang masih bisa dibaca orang.",
+      "Onni menepati janjinya hari Senin berikutnya dan membacakan kata 61 huruf itu tanpa menarik napas. Budi bertepuk tangan."
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Ulangan berjenjang — unit 10",
+   "blocks": [
+    {
+     "type": "p",
+     "text": "Tutup kolom Finlandia, baca terjemahan Indonesianya, lalu susun kembali kalimatnya dari ingatan."
+    },
+    {
+     "type": "tabel",
+     "head": [
+      "Bahasa Indonesia",
+      "Suomi"
+     ],
+     "rows": [
+      [
+       "Ibuku di Jakarta. Jadi aku datang tanpa pendamping.",
+       "*Äitini on Jakartassa. Tulen siis ilman seuralaista.*"
+      ],
+      [
+       "Sekotak cokelat cukup jadi hadiah. Tak seorang pun pulang tanpa hadiah.",
+       "*Palkinnoksi riittää suklaarasia. Kukaan ei jää palkinnotta.*"
+      ],
+      [
+       "Dan ingat: jangan ada yang diabaikan.",
+       "*Ja muistakaa: ketään ei jätetä huomiotta.*"
+      ],
+      [
+       "Iya. Lihat, Heikki datang bersama istrinya.",
+       "*Niin. Katso, Heikki tulee vaimoineen.*"
+      ],
+      [
+       "Terima kasih, senang bertemu juga! Heikki tidak pernah memuji orang tanpa alasan.",
+       "*Kiitos, samoin! Heikki ei kehu ketään syyttä.*"
+      ]
+     ]
+    }
+   ]
+  }
+ ],
+ "vocab": [
+  {
+   "fi": "sopimus",
+   "baca": "SO-pi-mus",
+   "id": "kontrak, perjanjian (gen. *sopimuksen*)"
+  },
+  {
+   "fi": "urakka",
+   "baca": "U-rak-ka",
+   "id": "borongan (gen. *urakan*)"
+  },
+  {
+   "fi": "tilaaja",
+   "baca": "TI-laa-ya",
+   "id": "pemesan, pemberi kerja"
+  },
+  {
+   "fi": "urakoitsija",
+   "baca": "U-ra-koit-si-ya",
+   "id": "kontraktor"
+  },
+  {
+   "fi": "korvaus",
+   "baca": "KOR-vaus",
+   "id": "ganti rugi, kompensasi (gen. *korvauksen*)"
+  },
+  {
+   "fi": "korvata",
+   "baca": "KOR-va-ta",
+   "id": "mengganti rugi, menggantikan (*korvaan*)"
+  },
+  {
+   "fi": "viivästyä",
+   "baca": "VII-vès-tü-è",
+   "id": "tertunda, molor"
+  },
+  {
+   "fi": "rakennus",
+   "baca": "RA-ken-nus",
+   "id": "bangunan (gen. *rakennuksen*)"
+  },
+  {
+   "fi": "turvallisuus",
+   "baca": "TUR-val-li-suus",
+   "id": "keamanan, keselamatan (gen. *turvallisuuden*)"
+  },
+  {
+   "fi": "maksuton",
+   "baca": "MAK-su-ton",
+   "id": "gratis, tanpa bayar (gen. *maksuttoman*)"
+  },
+  {
+   "fi": "maksullinen",
+   "baca": "MAK-sul-li-nen",
+   "id": "berbayar"
+  },
+  {
+   "fi": "virheetön",
+   "baca": "VIR-hèè-tön",
+   "id": "tanpa cacat, sempurna (gen. *virheettömän*)"
+  },
+  {
+   "fi": "langaton",
+   "baca": "LAN-ga-ton",
+   "id": "nirkabel (gen. *langattoman*)"
+  },
+  {
+   "fi": "tehokas",
+   "baca": "TE-ho-kas",
+   "id": "efektif, efisien (gen. *tehokkaan*)"
+  },
+  {
+   "fi": "taloudellinen",
+   "baca": "TA-lou-del-li-nen",
+   "id": "ekonomis, hemat"
+  },
+  {
+   "fi": "takuu",
+   "baca": "TA-kuu",
+   "id": "garansi"
+  },
+  {
+   "fi": "allekirjoittaa",
+   "baca": "AL-le-kir-yoit-taa",
+   "id": "menandatangani (*allekirjoitan*)"
+  },
+  {
+   "fi": "pääte",
+   "baca": "PÈÈ-te",
+   "id": "akhiran (gen. *päätteen*)"
+  },
+  {
+   "fi": "johdos",
+   "baca": "YOH-dos",
+   "id": "kata turunan (gen. *johdoksen*)"
+  },
+  {
+   "fi": "yhdyssana",
+   "baca": "ÜH-düs-sa-na",
+   "id": "kata majemuk"
+  },
+  {
+   "fi": "purkaa",
+   "baca": "PUR-kaa",
+   "id": "membongkar, mengurai (*puran, purki*)"
+  },
+  {
+   "fi": "harjoittelija",
+   "baca": "HAR-yoit-te-li-ya",
+   "id": "pemagang, trainee"
+  },
+  {
+   "fi": "toivottavasti",
+   "baca": "TOI-vot-ta-vas-ti",
+   "id": "semoga, mudah-mudahan"
+  },
+  {
+   "fi": "huolellinen",
+   "baca": "HUO-lel-li-nen",
+   "id": "teliti, cermat (gen. *huolellisen*)"
+  }
+ ],
+ "exercises": [
+  {
+   "prompt": "Terjemahkan ke bahasa Finlandia.",
+   "items": [
+    "Pemesan membayar kontraktor.",
+    "Servisnya gratis.",
+    "Membaca itu menyenangkan.",
+    "Keamanan itu penting.",
+    "Gedung ini hemat energi.",
+    "Aku bekerja di toko roti."
+   ]
+  },
+  {
+   "prompt": "Isi dengan kata turunan yang tepat.",
+   "items": [
+    "Henkilö, joka lukee, on ____. (*lukea* + -ija)",
+    "Paikka, jossa korjataan autoja, on ____. (*korjata* + -mo)",
+    "Kirja, jossa ei ole virheitä, on ____. (*virhe* + -tön)",
+    "Talo, joka käyttää vähän energiaa, on energia____. (*teho* + -kas)",
+    "Paikka, jossa juodaan kahvia, on ____. (*kahvi* + -la)",
+    "Urakoitsija maksaa korvauksen, jos työn ____ johtuu hänestä. (*viivästyä* + -minen)",
+    "Tämä auto on turvallinen. Sen ____ on testattu. (*turvallinen* + -uus)"
+   ]
+  },
+  {
+   "prompt": "Bongkar kata majemuk dan tulis arti bagian terakhirnya.",
+   "items": [
+    "kirjastokortti",
+    "maalämpöpumppu",
+    "oleskelulupa",
+    "työsopimus",
+    "kaupunginkirjasto",
+    "takuuaika"
+   ]
+  },
+  {
+   "prompt": "Susun menjadi kalimat.",
+   "items": [
+    "korvauksen / urakoitsija / maksaa / meille",
+    "on / tärkein / viimeinen / osa / aina",
+    "huolto / maksuton / on / takuuaikana",
+    "tulee / tilaaja / verbistä / tilata",
+    "insinööri / harjoittelijasta / pian / tulee"
+   ]
+  }
+ ],
+ "answers": [
+  "Tilaaja maksaa urakoitsijalle. — Huolto on maksuton. — Lukeminen on hauskaa. — Turvallisuus on tärkeää. — Tämä rakennus on energiatehokas. — Olen töissä leipomossa.",
+  "lukija — korjaamo — virheetön — tehokas — kahvila — viivästyminen — turvallisuus",
+  "kirjasto + kortti: kartu — maa + lämpö + pumppu: pompa — oleskelu + lupa: izin — työ + sopimus: kontrak — kaupungin + kirjasto: perpustakaan — takuu + aika: waktu, masa",
+  "Urakoitsija maksaa meille korvauksen. — Tärkein osa on aina viimeinen. — Huolto on maksuton takuuaikana. — Tilaaja tulee verbistä tilata. — Harjoittelijasta tulee pian insinööri."
+ ]
+}

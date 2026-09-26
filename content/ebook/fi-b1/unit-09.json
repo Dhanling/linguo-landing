@@ -1,0 +1,744 @@
+{
+ "title": "Kalau saja dikerjakan — pasif lanjutan",
+ "title_target": "Tarjouspyyntö olisi voitu lähettää jo lokakuussa",
+ "goal": "Mengevaluasi pekerjaan tim tanpa menunjuk kambing hitam dan menulis usulan resmi. Titik tata bahasanya: pasif perfek dan pluperfek (*on tehty, oli tehty, ei ole tehty*) serta pasif pengandaian (*tehtäisiin, olisi tehty*).",
+ "bekal": [
+  "melaporkan apa yang sudah dan belum dikerjakan dengan *on tehty / ei ole tehty* dan *oli tehty / ei ollut tehty*",
+  "membentuk pasif pengandaian dari pasif lampau: *tehtiin → tehtäisiin, voitiin → voitaisiin*, dan pengandaian perfek *olisi jätetty*",
+  "menulis usulan resmi: *Ehdotetaan, että…, Olisi toivottavaa, että…, Olisi hyvä, jos…*"
+ ],
+ "dialogs": [
+  {
+   "title": "Dialog — Syksyn arviointi",
+   "intro": "Selasa, 30 November 2027. Kemarin dewan kota mengesahkan anggaran, dan dana proyek sekolah aman. Heikki mengumpulkan tim di ruang rapat untuk evaluasi musim gugur. Menurut rencana, permintaan penawaran (*tarjouspyyntö*) untuk pompa kalor sekolah-sekolah proyek seharusnya sudah dikirim sebelum Desember.",
+   "lines": [
+    {
+     "speaker": "Heikki:",
+     "text": "Aloitetaan. Budi, mitä syksyn aikana on tehty?",
+     "id": "Kita mulai. Budi, selama musim gugur apa saja yang sudah dikerjakan?",
+     "literal": "di-mulai. Budi, apa-bagian musim-gugur-punya selama adalah di-buat-sudah?"
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Kaivot on porattu, ja liikuntasalin patterit on vaihdettu.",
+     "id": "Sumur-sumurnya sudah dibor, dan radiator aula olahraga sudah diganti.",
+     "literal": "sumur-jamak adalah di-bor-sudah, dan aula-olahraga-punya radiator-jamak adalah di-ganti-sudah."
+    },
+    {
+     "speaker": "Laura:",
+     "text": "Entä tarjouspyyntö? Onko se jo lähetetty?",
+     "id": "Permintaan penawarannya? Sudah dikirim?",
+     "literal": "lalu penawaran-permintaan? adalah-kah itu sudah di-kirim-sudah?"
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Ei ole lähetetty. Viimeiset mittaukset tehtiin vasta eilen.",
+     "id": "Belum. Pengukuran terakhir baru dilakukan kemarin.",
+     "literal": "tidak adalah di-kirim-sudah. terakhir-jamak pengukuran-jamak di-buat-lampau baru kemarin."
+    },
+    {
+     "speaker": "Heikki:",
+     "text": "Miksi niin myöhään?",
+     "id": "Kenapa selambat itu?",
+     "literal": "mengapa begitu lambat?"
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Kun aloitimme mittaukset, kouluille ei ollut vielä ilmoitettu käynneistä.",
+     "id": "Waktu kami mulai mengukur, sekolah-sekolah belum diberi tahu soal kunjungan kami.",
+     "literal": "ketika memulai-lampau-kami pengukuran-jamak-sasaran, kepada-sekolah-jamak tidak adalah-lampau belum di-beritahu-sudah dari-kunjungan-jamak."
+    },
+    {
+     "speaker": "Onni:",
+     "text": "Ja kahden koulun avaimia ei ollut toimitettu meille ajoissa.",
+     "id": "Dan kunci dua sekolah tidak diserahkan kepada kami tepat waktu.",
+     "literal": "dan dua-punya sekolah-punya kunci-jamak-bagian tidak adalah-lampau di-serahkan-sudah kepada-kami pada-waktunya."
+    },
+    {
+     "speaker": "Heikki:",
+     "text": "Jos kaikki olisi valmisteltu syyskuussa, tarjouspyyntö olisi voitu lähettää jo lokakuussa.",
+     "id": "Seandainya semuanya disiapkan bulan September, permintaan penawarannya sudah bisa dikirim bulan Oktober.",
+     "literal": "jika semua adalah-andai di-siapkan-sudah di-September, penawaran-permintaan adalah-andai di-bisa-sudah mengirim sudah di-Oktober."
+    },
+    {
+     "speaker": "Laura:",
+     "text": "Jälkiviisaus on helppoa. Mitä nyt tehtäisiin?",
+     "id": "Bijak belakangan itu gampang. Sekarang sebaiknya kita bagaimana?",
+     "literal": "kebijaksanaan-belakangan adalah mudah-bagian. apa-bagian sekarang di-buat-andai?"
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Ehdotan, että tarjouspyyntö lähetettäisiin ennen joulua.",
+     "id": "Usulku: permintaan penawarannya kita kirim sebelum Natal.",
+     "literal": "mengusulkan-saya, bahwa penawaran-permintaan di-kirim-andai sebelum Natal."
+    },
+    {
+     "speaker": "Heikki:",
+     "text": "Hyvä. Entä koulujen väki? Onko heille kerrottu viivästyksestä?",
+     "id": "Bagus. Orang-orang sekolah? Sudah diberi tahu soal keterlambatannya?",
+     "literal": "baik. lalu sekolah-jamak-punya orang-orang? adalah-kah kepada-mereka di-ceritakan-sudah dari-keterlambatan?"
+    },
+    {
+     "speaker": "Onni:",
+     "text": "On kerrottu. Mäntyrinteen Sepon mukaan pääasia on, että liikuntasalissa on nyt lämmintä.",
+     "id": "Sudah. Menurut Seppo di Mäntyrinne, yang penting sekarang aula olahraganya hangat.",
+     "literal": "adalah di-ceritakan-sudah. Mäntyrinne-punya Seppo-punya menurut pokok-hal adalah, bahwa di-aula-olahraga ada sekarang hangat-bagian."
+    },
+    {
+     "speaker": "Heikki:",
+     "text": "Hyvä. Kirjoitetaan tästä suositukset johtoryhmälle.",
+     "id": "Bagus. Mari kita tulis rekomendasinya untuk jajaran pimpinan.",
+     "literal": "baik. di-tulis dari-ini rekomendasi-jamak kepada-kelompok-pimpinan."
+    }
+   ],
+   "notes": [
+    "**Kaivot on porattu** — ⚠️ kata bantu pasif SELALU *on*, tidak pernah *ovat*, walaupun objeknya jamak: *kaivot on porattu, patterit on vaihdettu*. Objeknya berbentuk nominatif (tanpa *-n*), sama seperti di pasif kini dan lampau yang kamu kenal dari A2.",
+    "**Ei ole lähetetty** — sangkalan perfek pasif: *ei* (selalu bentuk orang ketiga tunggal) + *ole* + partisip *-ttu/-tty*. Jawaban pendek untuk *Onko … lähetetty?* cukup *Ei ole* atau *On*, seperti jawaban Onni: *On kerrottu*.",
+    "**Kouluille ei ollut vielä ilmoitettu** — pluperfek pasif (*oli* + *-ttu*) untuk hal yang sudah atau belum terjadi SEBELUM titik lain di masa lalu: ketika pengukuran dimulai, sekolah belum diberi tahu. *Ilmoittaa* memakai alatif untuk penerima dan elatif untuk isi kabar. Di kalimat Onni objeknya partitif karena kalimatnya sangkal: *avaimia ei ollut toimitettu*.",
+    "**Olisi voitu lähettää** — kata kerja bantu seperti *voida* juga bisa dipasifkan: *voidaan → voitiin → on voitu → olisi voitu*. Kata kerja utamanya tetap infinitif: *olisi voitu lähettää* = seandainya sudah bisa dikirim. *Valmisteltu* dari *valmistella* (mempersiapkan).",
+    "**Jälkiviisaus on helppoa** — \"bijak sesudah kejadian itu gampang\", ucapan yang sering dipakai untuk menghentikan saling menyalahkan. *Helppoa* partitif karena subjeknya abstrak dan tak terhitung, seperti *Kahvi on hyvää*.",
+    "**Mitä nyt tehtäisiin?** — pengandaian pasif dalam pertanyaan terdengar seperti \"sebaiknya kita apakan sekarang?\": terbuka dan tidak menunjuk siapa pun. Budi menjawab dengan pola yang sama: *Ehdotan, että … lähetettäisiin …*."
+   ],
+   "grammars": [
+    {
+     "title": "Pasif di semua kala",
+     "body": [
+      "Semua bentuk majemuk dibangun dari satu partisip pasif saja, misalnya *tehty*, ditambah *on/oli/olisi*. Kalau kamu hafal partisipnya, kamu hafal seluruh tabel."
+     ],
+     "table": {
+      "head": [
+       "Kala",
+       "Positif",
+       "Sangkalan",
+       "Contoh"
+      ],
+      "rows": [
+       [
+        "kini",
+        "tehdään",
+        "ei tehdä",
+        "*Täällä tehdään töitä.*"
+       ],
+       [
+        "lampau",
+        "tehtiin",
+        "ei tehty",
+        "*Hakemus tehtiin marraskuussa.*"
+       ],
+       [
+        "perfek",
+        "on tehty",
+        "ei ole tehty",
+        "*Poraus on tehty.*"
+       ],
+       [
+        "pluperfek",
+        "oli tehty",
+        "ei ollut tehty",
+        "*Suunnitelmaa ei ollut tehty.*"
+       ],
+       [
+        "pengandaian",
+        "tehtäisiin",
+        "ei tehtäisi",
+        "*Mitä nyt tehtäisiin?*"
+       ],
+       [
+        "pengandaian perfek",
+        "olisi tehty",
+        "ei olisi tehty",
+        "*Se olisi tehty ajoissa.*"
+       ]
+      ]
+     },
+     "after": [
+      "Empat baris pertama sudah kamu temui di A2 dan unit-unit sebelumnya; yang baru dua baris terakhir. Perhatikan bahwa sangkalan lampau (*ei tehty*) dan sangkalan perfek (*ei ole tehty*) sama-sama memakai partisip; bedanya hanya ada atau tidaknya *ole*."
+     ]
+    },
+    {
+     "title": "Membentuk pengandaian pasif",
+     "body": [
+      "Ambil pasif lampau, buang *-iin*, lalu tambahkan *-aisiin/-äisiin*. Untuk sangkalan, buang *-n* terakhir: *ei tehtäisi*."
+     ],
+     "table": {
+      "head": [
+       "Kamus",
+       "Pasif lampau",
+       "Pengandaian pasif",
+       "Sangkalan"
+      ],
+      "rows": [
+       [
+        "*tehdä*",
+        "tehtiin",
+        "tehtäisiin",
+        "ei tehtäisi"
+       ],
+       [
+        "*puhua*",
+        "puhuttiin",
+        "puhuttaisiin",
+        "ei puhuttaisi"
+       ],
+       [
+        "*mennä*",
+        "mentiin",
+        "mentäisiin",
+        "ei mentäisi"
+       ],
+       [
+        "*lukea*",
+        "luettiin",
+        "luettaisiin",
+        "ei luettaisi"
+       ],
+       [
+        "*kysyä*",
+        "kysyttiin",
+        "kysyttäisiin",
+        "ei kysyttäisi"
+       ],
+       [
+        "*tavata*",
+        "tavattiin",
+        "tavattaisiin",
+        "ei tavattaisi"
+       ],
+       [
+        "*voida*",
+        "voitiin",
+        "voitaisiin",
+        "ei voitaisi"
+       ],
+       [
+        "*pitää*",
+        "pidettiin",
+        "pidettäisiin",
+        "ei pidettäisi"
+       ]
+      ]
+     },
+     "after": [
+      "Dalam percakapan, pengandaian pasif sering berarti ajakan halus: *Mentäisiinkö jo?* (Bagaimana kalau kita berangkat sekarang?). Ajakan ini lebih lembut daripada *Mennään!* yang kamu pelajari di A2."
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Dialog kedua — Suositukset johtoryhmälle",
+   "intro": "Rabu, 1 Desember 2027. Budi dan Laura menyusun memo rekomendasi untuk jajaran pimpinan. Laura mengetik, Budi mendikte.",
+   "lines": [
+    {
+     "speaker": "Laura:",
+     "text": "No niin. Miten suositus alkaisi?",
+     "id": "Nah. Rekomendasinya mulai bagaimana?",
+     "literal": "nah begitu. bagaimana rekomendasi mulai-andai?"
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Vaikka näin: ehdotetaan, että mittaukset valmistellaan jatkossa heti suunnittelun alussa.",
+     "id": "Misalnya begini: diusulkan agar ke depan pengukuran disiapkan sejak awal perencanaan.",
+     "literal": "misalnya begini: di-usulkan, bahwa pengukuran-jamak di-siapkan di-lanjutan segera perencanaan-punya di-awal."
+    },
+    {
+     "speaker": "Laura:",
+     "text": "Hyvä. Olisi myös toivottavaa, että kouluihin pidettäisiin säännöllisesti yhteyttä.",
+     "id": "Bagus. Juga diharapkan agar hubungan dengan sekolah dijaga secara teratur.",
+     "literal": "baik. adalah-andai juga yang-patut-di-harapkan-bagian, bahwa ke-sekolah-jamak di-pegang-andai secara-teratur kontak-bagian."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Kirjoitetaanko myös, että aikataulua ei ollut tarkistettu tarpeeksi usein?",
+     "id": "Kita tulis juga bahwa jadwalnya tidak cukup sering diperiksa?",
+     "literal": "di-tulis-kah juga, bahwa jadwal-bagian tidak adalah-lampau di-periksa-sudah cukup sering?"
+    },
+    {
+     "speaker": "Laura:",
+     "text": "Ei. Syyllisiä ei etsitä. Kerrotaan vain, mitä opittiin.",
+     "id": "Jangan. Kita tidak mencari kambing hitam. Kita tulis saja apa yang kita pelajari.",
+     "literal": "tidak. yang-bersalah-jamak-bagian tidak di-cari. di-ceritakan hanya, apa-bagian di-pelajari-lampau."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Hyvä periaate. Entä jos johtoryhmä kysyy, miksi tarjouspyyntöä ei ole lähetetty?",
+     "id": "Prinsip yang bagus. Bagaimana kalau pimpinan bertanya kenapa permintaan penawarannya belum dikirim?",
+     "literal": "baik prinsip. lalu jika kelompok-pimpinan bertanya, mengapa penawaran-permintaan-bagian tidak adalah di-kirim-sudah?"
+    },
+    {
+     "speaker": "Laura:",
+     "text": "Silloin vastataan rehellisesti: se lähetetään heti, kun tulokset on laskettu.",
+     "id": "Ya kita jawab jujur: dikirim begitu hasilnya selesai dihitung.",
+     "literal": "saat-itu di-jawab dengan-jujur: itu di-kirim segera, ketika hasil-jamak adalah di-hitung-sudah."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Entä jos laskelmia ei saada valmiiksi ennen joulua?",
+     "id": "Kalau perhitungannya tidak selesai sebelum Natal?",
+     "literal": "lalu jika perhitungan-jamak-bagian tidak di-dapat menjadi-siap sebelum Natal?"
+    },
+    {
+     "speaker": "Laura:",
+     "text": "Sitten mietitään uudestaan. Lähetetäänkö muistio jo tänään?",
+     "id": "Ya kita pikirkan lagi nanti. Memonya kita kirim hari ini?",
+     "literal": "lalu di-pikirkan lagi. di-kirim-kah memo sudah hari-ini?"
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Ei. Nukutaan yön yli ja lähetetään huomenna.",
+     "id": "Jangan. Kita diamkan semalam dulu, kirim besok.",
+     "literal": "tidak. di-tidur malam-punya melewati dan di-kirim besok."
+    }
+   ],
+   "notes": [
+    "**Ehdotetaan, että… valmistellaan** — usulan resmi hampir selalu tanpa pelaku: pasif *ehdotetaan* (diusulkan), lalu anak kalimat *että* dengan pasif kini untuk tindakan yang diusulkan. Tidak ada \"saya\" atau \"kami\", sehingga memo terdengar objektif.",
+    "**Olisi toivottavaa, että… pidettäisiin** — dua pengandaian bertumpuk membuat usulan sangat halus: \"akan diharapkan bahwa sekiranya dijaga…\". *Pitää yhteyttä* + ilatif = menjaga hubungan dengan: *pidän yhteyttä kouluihin*.",
+    "**Aikataulua ei ollut tarkistettu** — pluperfek pasif sangkal dengan objek partitif. Kalimatnya benar secara tata bahasa; Laura menolaknya karena isinya menyalahkan.",
+    "**Syyllisiä ei etsitä** — \"kita tidak mencari yang bersalah\". Budaya evaluasi di banyak tempat kerja Finlandia menekankan apa yang dipelajari (*mitä opittiin*), bukan siapa yang salah.",
+    "**Kun tulokset on laskettu** — perfek pasif dalam anak kalimat *kun* untuk hal yang baru akan selesai: \"setelah hasilnya (nanti) selesai dihitung\". Bahasa Finlandia tak punya kala masa depan, jadi perfek mengambil tugas \"sudah … nanti\".",
+    "**Nukutaan yön yli** — \"tidurkan semalam dulu\": jangan memutuskan atau mengirim hal penting dalam keadaan tergesa-gesa. Pasif di sini berarti ajakan \"kita\", seperti *Mennään!*."
+   ],
+   "grammars": [
+    {
+     "title": "Frasa usulan dan rekomendasi resmi",
+     "body": [
+      "Frasa-frasa ini membuka hampir setiap memo, notulen, dan laporan resmi. Semuanya tanpa pelaku; yang diusulkan ada di anak kalimat."
+     ],
+     "table": {
+      "head": [
+       "Ungkapan",
+       "Arti",
+       "Contoh"
+      ],
+      "rows": [
+       [
+        "*Ehdotetaan, että…*",
+        "diusulkan agar",
+        "*Ehdotetaan, että hakemus jätetään ajoissa.*"
+       ],
+       [
+        "*Suositellaan, että…*",
+        "direkomendasikan agar",
+        "*Suositellaan, että kouluille tiedotetaan kuukausittain.*"
+       ],
+       [
+        "*Olisi toivottavaa, että…*",
+        "diharapkan agar",
+        "*Olisi toivottavaa, että asiasta keskusteltaisiin.*"
+       ],
+       [
+        "*Olisi hyvä, jos…*",
+        "sebaiknya",
+        "*Olisi hyvä, jos aikataulu tarkistettaisiin.*"
+       ],
+       [
+        "*… tulisi* + infinitif",
+        "seharusnya",
+        "*Hakemus tulisi jättää ajoissa.*"
+       ],
+       [
+        "*On syytä…*",
+        "patut, perlu",
+        "*On syytä varata aikaa luvan käsittelyyn.*"
+       ]
+      ]
+     },
+     "after": [
+      "Pengandaian (*olisi toivottavaa, tarkistettaisiin*) melunakkan; indikatif (*ehdotetaan, että … jätetään*) lebih tegas. Pilih sesuai seberapa keras kamu ingin mendorong. Dalam memo, usulan biasanya diberi nomor dan ditulis satu kalimat per butir."
+     ]
+    }
+   ]
+  }
+ ],
+ "sections": [
+  {
+   "title": "Pasif lengkap untuk tujuh kata kerja",
+   "blocks": [
+    {
+     "type": "tabel",
+     "head": [
+      "Kamus",
+      "Kini",
+      "Lampau",
+      "Perfek",
+      "Pengandaian",
+      "Peng. perfek"
+     ],
+     "rows": [
+      [
+       "*tehdä*",
+       "tehdään",
+       "tehtiin",
+       "on tehty",
+       "tehtäisiin",
+       "olisi tehty"
+      ],
+      [
+       "*saada*",
+       "saadaan",
+       "saatiin",
+       "on saatu",
+       "saataisiin",
+       "olisi saatu"
+      ],
+      [
+       "*lukea*",
+       "luetaan",
+       "luettiin",
+       "on luettu",
+       "luettaisiin",
+       "olisi luettu"
+      ],
+      [
+       "*aloittaa*",
+       "aloitetaan",
+       "aloitettiin",
+       "on aloitettu",
+       "aloitettaisiin",
+       "olisi aloitettu"
+      ],
+      [
+       "*tavata*",
+       "tavataan",
+       "tavattiin",
+       "on tavattu",
+       "tavattaisiin",
+       "olisi tavattu"
+      ],
+      [
+       "*päättää*",
+       "päätetään",
+       "päätettiin",
+       "on päätetty",
+       "päätettäisiin",
+       "olisi päätetty"
+      ],
+      [
+       "*voida*",
+       "voidaan",
+       "voitiin",
+       "on voitu",
+       "voitaisiin",
+       "olisi voitu"
+      ]
+     ]
+    },
+    {
+     "type": "p",
+     "text": "Pasif Finlandia berbeda dari \"di-\" dalam bahasa Indonesia dalam satu hal penting: pelakunya selalu manusia dan biasanya tidak disebut. \"Rumah itu dibangun oleh Budi\" tidak diterjemahkan dengan pasif; katakan saja *Budi rakensi talon*. (Bentuk birokratis *Budin toimesta* memang ada, tetapi dianggap gaya yang kaku.) Sebaliknya, pasif Finlandia jauh lebih luas pemakaiannya: ia juga berarti \"orang (umumnya)\" (*Suomessa juodaan paljon kahvia*) dan \"kita\" dalam bahasa lisan (*Mennään!*). Pasangan paling berguna untuk laporan: *on tehty* (sudah dikerjakan) dan *ei ole vielä tehty* (belum dikerjakan)."
+    },
+    {
+     "type": "kotak",
+     "title": "Empat jebakan pasif",
+     "items": [
+      "Kata bantu selalu *on/oli/olisi*, tidak pernah *ovat/olivat*: *Patterit on vaihdettu.*",
+      "Objek pasif berbentuk nominatif, tanpa *-n*: *Hakemus jätettiin* (bukan *hakemuksen*). Sangkalan tetap partitif: *Hakemusta ei jätetty.*",
+      "Kata ganti orang sebagai objek memakai bentuk akusatif *-t*: *Minut kutsuttiin kokoukseen* (aku diundang ke rapat), *Heidät valittiin* (mereka dipilih).",
+      "Dalam bahasa lisan *me* + pasif menggantikan bentuk *me* baku: *me mennään* = *me menemme*. Di memo resmi, jangan."
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Rapat evaluasi dan memo",
+   "blocks": [
+    {
+     "type": "tabel",
+     "head": [
+      "Suomi",
+      "Cara baca",
+      "Bahasa Indonesia"
+     ],
+     "rows": [
+      [
+       "arviointi",
+       "AR-vi-oin-ti",
+       "evaluasi"
+      ],
+      [
+       "palaute",
+       "PA-lau-te",
+       "umpan balik"
+      ],
+      [
+       "muistio",
+       "MUIS-ti-o",
+       "memo, notulen"
+      ],
+      [
+       "pöytäkirja",
+       "PÖÜ-tè-kir-ya",
+       "notulen resmi"
+      ],
+      [
+       "johtoryhmä",
+       "YOH-to-rüh-mè",
+       "jajaran pimpinan"
+      ],
+      [
+       "suositus",
+       "SUO-si-tus",
+       "rekomendasi"
+      ],
+      [
+       "ehdotus",
+       "EH-do-tus",
+       "usulan"
+      ],
+      [
+       "päätös",
+       "PÈÈ-tös",
+       "keputusan"
+      ],
+      [
+       "viivästys",
+       "VII-vès-tüs",
+       "keterlambatan"
+      ],
+      [
+       "vastuuhenkilö",
+       "VAS-tuu-hen-ki-lö",
+       "penanggung jawab"
+      ],
+      [
+       "läsnä",
+       "LÈS-nè",
+       "hadir"
+      ]
+     ]
+    },
+    {
+     "type": "p",
+     "text": "Memo rapat Finlandia (*muistio*, atau *pöytäkirja* untuk rapat resmi) punya bentuk tetap: waktu, tempat, yang hadir (*läsnä*), lalu butir-butir bernomor berisi keputusan (*päätös*) dan penanggung jawab (*vastuuhenkilö*). Kalimatnya pendek dan hampir selalu pasif: *Päätettiin, että…* (diputuskan bahwa…), *Todettiin, että…* (dicatat bahwa…), *Sovittiin, että…* (disepakati bahwa…). Gaya ini membuat memo bisa dibaca cepat oleh orang yang tidak hadir, dan tidak ada yang merasa ditunjuk."
+    },
+    {
+     "type": "kotak",
+     "title": "Contoh memo: Syksyn arviointi 30.11.2027",
+     "items": [
+      "*Läsnä: Heikki Laine (pj.), Laura Mäkinen, Budi Santoso, Onni (harjoittelija).* (*pj.* = *puheenjohtaja*, ketua rapat)",
+      "*1. Todettiin, että kaivot on porattu ja liikuntasalin patterit on vaihdettu.*",
+      "*2. Todettiin, että tarjouspyyntöä ei ole vielä lähetetty.*",
+      "*3. Päätettiin, että tarjouspyyntö lähetetään ennen joulua. Vastuuhenkilö: Budi.*",
+      "*4. Ehdotetaan, että mittaukset valmistellaan jatkossa suunnittelun alussa.*"
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Ulangan berjenjang — unit 7",
+   "blocks": [
+    {
+     "type": "p",
+     "text": "Tutup kolom Finlandia, baca terjemahan Indonesianya, lalu susun kembali kalimatnya dari ingatan."
+    },
+    {
+     "type": "tabel",
+     "head": [
+      "Bahasa Indonesia",
+      "Suomi"
+     ],
+     "rows": [
+      [
+       "Iya. Waktu aku berangkat dari rumah, saljunya cuma sedikit.",
+       "*Tulin. Lähtiessäni kotoa satoi vain vähän lunta.*"
+      ],
+      [
+       "Waktu aku bersepeda lewat Otaniemi, mulailah badai salju beneran.",
+       "*Pyöräillessäni Otaniemen läpi alkoi kunnon lumimyrsky.*"
+      ],
+      [
+       "Bagus. Hari ini aku datang sambil lari, soalnya sepedaku lagi diservis.",
+       "*Hyvä. Minä tulin tänään juosten, koska pyöräni on huollossa.*"
+      ],
+      [
+       "Kita bisa ngobrol soal salju sambil minum kopi. Habis itu kerja!",
+       "*Kahvia juodessamme voimme puhua lumesta. Sitten töihin!*"
+      ],
+      [
+       "Pintar. Aku pernah terpeleset di es waktu pergi ke toko. Pergelangan tanganku patah.",
+       "*Viisaasti tehty. Minä liukastuin kerran jäällä kauppaan mennessäni. Ranteeni murtui.*"
+      ]
+     ]
+    }
+   ]
+  }
+ ],
+ "vocab": [
+  {
+   "fi": "arviointi",
+   "baca": "AR-vi-oin-ti",
+   "id": "evaluasi (gen. *arvioinnin*)"
+  },
+  {
+   "fi": "tarjouspyyntö",
+   "baca": "TAR-yous-püün-tö",
+   "id": "permintaan penawaran (gen. *tarjouspyynnön*)"
+  },
+  {
+   "fi": "hakemus",
+   "baca": "HA-ke-mus",
+   "id": "permohonan (gen. *hakemuksen*)"
+  },
+  {
+   "fi": "jättää hakemus",
+   "baca": "YÈT-tèè HA-ke-mus",
+   "id": "mengajukan permohonan"
+  },
+  {
+   "fi": "valmistella",
+   "baca": "VAL-mis-tel-la",
+   "id": "mempersiapkan (*valmistelen*)"
+  },
+  {
+   "fi": "ilmoittaa",
+   "baca": "IL-moit-taa",
+   "id": "memberi tahu (+ alatif untuk orang, elatif untuk hal)"
+  },
+  {
+   "fi": "toimittaa",
+   "baca": "TOI-mit-taa",
+   "id": "menyerahkan, mengirimkan"
+  },
+  {
+   "fi": "jälkiviisaus",
+   "baca": "YÈL-ki-vii-saus",
+   "id": "bijak belakangan (gen. *jälkiviisauden*)"
+  },
+  {
+   "fi": "ehdottaa",
+   "baca": "EH-dot-taa",
+   "id": "mengusulkan (*ehdotan, ehdotin*)"
+  },
+  {
+   "fi": "aikataulu",
+   "baca": "AI-ka-tau-lu",
+   "id": "jadwal"
+  },
+  {
+   "fi": "väki",
+   "baca": "VÈ-ki",
+   "id": "orang-orang, warga (gen. *väen*)"
+  },
+  {
+   "fi": "viivästys",
+   "baca": "VII-vès-tüs",
+   "id": "keterlambatan (gen. *viivästyksen*)"
+  },
+  {
+   "fi": "vahtimestari",
+   "baca": "VAH-ti-mes-ta-ri",
+   "id": "penjaga sekolah/gedung"
+  },
+  {
+   "fi": "laskelma",
+   "baca": "LAS-kel-ma",
+   "id": "perhitungan"
+  },
+  {
+   "fi": "johtoryhmä",
+   "baca": "YOH-to-rüh-mè",
+   "id": "jajaran pimpinan"
+  },
+  {
+   "fi": "suositus",
+   "baca": "SUO-si-tus",
+   "id": "rekomendasi (gen. *suosituksen*)"
+  },
+  {
+   "fi": "toivottava",
+   "baca": "TOI-vot-ta-va",
+   "id": "yang diharapkan"
+  },
+  {
+   "fi": "pitää yhteyttä",
+   "baca": "PI-tèè ÜH-teüt-tè",
+   "id": "menjaga hubungan (+ ilatif)"
+  },
+  {
+   "fi": "säännöllisesti",
+   "baca": "SÈÈN-nöl-li-ses-ti",
+   "id": "secara teratur"
+  },
+  {
+   "fi": "tarkistaa",
+   "baca": "TAR-kis-taa",
+   "id": "memeriksa"
+  },
+  {
+   "fi": "syyllinen",
+   "baca": "SÜÜL-li-nen",
+   "id": "yang bersalah (gen. *syyllisen*)"
+  },
+  {
+   "fi": "periaate",
+   "baca": "PE-ri-aa-te",
+   "id": "prinsip (gen. *periaatteen*)"
+  },
+  {
+   "fi": "rehellisesti",
+   "baca": "RE-hel-li-ses-ti",
+   "id": "dengan jujur"
+  },
+  {
+   "fi": "miettiä",
+   "baca": "MIET-ti-è",
+   "id": "memikirkan (*mietin*)"
+  },
+  {
+   "fi": "nukkua yön yli",
+   "baca": "NUK-ku-a üön Ü-li",
+   "id": "menunda keputusan semalam"
+  }
+ ],
+ "exercises": [
+  {
+   "prompt": "Terjemahkan ke bahasa Finlandia. Pakai pasif.",
+   "items": [
+    "Laporannya sudah ditulis.",
+    "Izinnya belum didapat.",
+    "Pintunya sudah dikunci ketika kami datang.",
+    "Seandainya ada uang, sekolah itu akan direnovasi.",
+    "Seandainya permohonannya diajukan lebih awal, pengeboran sudah dimulai.",
+    "Diusulkan agar rapat diadakan setiap bulan."
+   ]
+  },
+  {
+   "prompt": "Isi dengan bentuk yang tepat. Petunjuk ada di dalam kurung.",
+   "items": [
+    "Kaivot ____ porattu. (on atau ovat?)",
+    "Lupaa ei ____ vielä saatu. (olla, perfek)",
+    "Kun tulimme, ovi ____ jo lukittu. (olla, pluperfek)",
+    "Jos meillä olisi aikaa, asiasta ____ lisää. (puhua, pengandaian pasif)",
+    "Olisi hyvä, jos kouluun ____ useammin. (soittaa, pengandaian pasif)",
+    "Suunnitelmaa ei ollut ____. (hyväksyä, partisip pasif)",
+    "Ennen joulua ei enää ____ uusia hankkeita. (aloittaa, pengandaian pasif, sangkalan)"
+   ]
+  },
+  {
+   "prompt": "Ubah ke pasif. Contoh: *Budi on kirjoittanut raportin.* → *Raportti on kirjoitettu.*",
+   "items": [
+    "Laura on lähettänyt viestin.",
+    "Kukaan ei ole korjannut konetta.",
+    "Me olimme jo syöneet, kun Aino tuli.",
+    "Joku olisi voinut kertoa meille.",
+    "Me tekisimme sen huomenna.",
+    "He eivät olleet hyväksyneet suunnitelmaa."
+   ]
+  },
+  {
+   "prompt": "Susun jadi kalimat yang benar.",
+   "items": [
+    "on / kaivot / porattu",
+    "ei / lupaa / saatu / ole",
+    "tehtäisiin / mitä / nyt",
+    "että / ehdotetaan / hakemus / jätetään ajoissa",
+    "poraus / olisi / aloitettu / jo"
+   ]
+  }
+ ],
+ "answers": [
+  "Raportti on kirjoitettu. — Lupaa ei ole vielä saatu. — Ovi oli lukittu, kun tulimme. — Jos rahaa olisi, koulu remontoitaisiin. — Jos hakemus olisi jätetty aiemmin, poraus olisi aloitettu. — Ehdotetaan, että kokous pidetään joka kuukausi.",
+  "on — ole — oli — puhuttaisiin — soitettaisiin — hyväksytty — aloitettaisi",
+  "Viesti on lähetetty. — Konetta ei ole korjattu. — Oli jo syöty, kun Aino tuli. — Meille olisi voitu kertoa. — Se tehtäisiin huomenna. — Suunnitelmaa ei ollut hyväksytty.",
+  "Kaivot on porattu. — Lupaa ei ole saatu. — Mitä nyt tehtäisiin? — Ehdotetaan, että hakemus jätetään ajoissa. — Poraus olisi jo aloitettu."
+ ]
+}

@@ -1,0 +1,690 @@
+{
+ "title": "Diri sendiri & satu sama lain",
+ "title_target": "Emme puhuneet toisillemme",
+ "goal": "Menyelesaikan salah paham di tempat kerja: mengakui kesalahan, menyatakan pendapat tanpa menuduh, dan menyepakati aturan baru. Titik tata bahasanya: *itse* berkasus dengan akhiran milik (*itseäni, itselleni*), resiprokal *toisiaan* (*toisillemme, toisemme*), dan akhiran milik pada kata kerja (*käsittääkseni, mielestäni*).",
+ "bekal": [
+  "memakai *itse* dalam semua kasus yang sering: *Syytin itseäni. Pidä huolta itsestäsi!*",
+  "mengatakan \"satu sama lain\" dengan *toinen*: *Emme puhuneet toisillemme. Tunnemme toisemme.*",
+  "melunakkan pendapat dengan *käsittääkseni, tietääkseni, muistaakseni, nähdäkseni, mielestäni*"
+ ],
+ "dialogs": [
+  {
+   "title": "Dialog — Voidaanko puhua?",
+   "intro": "Kamis, 27 Januari 2028. Dalam rapat tim kemarin baru ketahuan bahwa Laura sudah mengirim jadwal proyek ke pemerintah kota Espoo tanpa memberi tahu Budi, padahal urusan dengan kota adalah tugas Budi. Sesudah rapat Budi menulis satu kalimat pendek dan dingin di Teams. Pagi ini Laura menunggunya di dapur kantor.",
+   "lines": [
+    {
+     "speaker": "Laura:",
+     "text": "Budi, voidaanko puhua? Eilinen palaveri vaivaa minua.",
+     "id": "Budi, bisa kita bicara? Rapat kemarin masih mengganjal di pikiranku.",
+     "literal": "Budi, bisa-di-kah bicara? kemarin-yang rapat mengganggu saya-bagian."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Minuakin. Kirjoitin sinulle Teamsissa liian jyrkästi. Anteeksi.",
+     "id": "Aku juga. Pesanku di Teams terlalu ketus. Maaf.",
+     "literal": "saya-bagian-juga. menulis-lampau-saya kepada-kamu di-Teams terlalu tajam. maaf."
+    },
+    {
+     "speaker": "Laura:",
+     "text": "Ei, minun pitää pyytää anteeksi. Lähetin aikataulun kaupungille kysymättä sinulta.",
+     "id": "Nggak, aku yang harus minta maaf. Aku mengirim jadwal ke pemkot tanpa tanya kamu.",
+     "literal": "tidak, saya-punya harus meminta maaf. mengirim-lampau-saya jadwal-sasaran kepada-kota tanpa-bertanya dari-kamu."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Käsittääkseni sovimme, että minä hoidan yhteydenpidon kaupunkiin.",
+     "id": "Sepemahamanku kita sudah sepakat bahwa aku yang pegang komunikasi dengan pemkot.",
+     "literal": "sepemahaman-ku bersepakat-lampau-kami, bahwa saya mengurus hubungan-jaga-sasaran ke-kota."
+    },
+    {
+     "speaker": "Laura:",
+     "text": "Sovimme, ja minä unohdin sen. Ajattelin vain itseäni ja omaa kiirettäni.",
+     "id": "Memang sepakat, dan aku lupa. Aku cuma memikirkan diriku sendiri dan kesibukanku.",
+     "literal": "bersepakat-lampau-kami, dan saya lupa-lampau-saya itu-sasaran. memikirkan-lampau-saya hanya diri-bagian-ku dan sendiri-bagian kesibukan-bagian-ku."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Minä taas syytin sinua mielessäni koko illan. Olin vihainen myös itselleni.",
+     "id": "Aku sendiri semalaman menyalahkanmu dalam hati. Aku juga kesal pada diriku sendiri.",
+     "literal": "saya sebaliknya menyalahkan-lampau-saya kamu-bagian di-pikiran-ku seluruh malam-sasaran. adalah-lampau-saya marah juga kepada-diri-ku."
+    },
+    {
+     "speaker": "Laura:",
+     "text": "Itsellesi? Miksi?",
+     "id": "Pada dirimu sendiri? Kenapa?",
+     "literal": "kepada-diri-mu? mengapa?"
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Koska en kertonut kenellekään, että kaupunki oli jo pyytänyt aikataulua minulta.",
+     "id": "Karena aku nggak bilang ke siapa pun bahwa pemkot sudah minta jadwalnya dariku.",
+     "literal": "karena tidak-saya menceritakan-lampau kepada-siapa-pun, bahwa kota adalah-lampau sudah meminta-sudah jadwal-bagian dari-saya."
+    },
+    {
+     "speaker": "Laura:",
+     "text": "Eli emme puhuneet toisillemme, vaikka istumme kahden metrin päässä toisistamme.",
+     "id": "Jadi kita nggak saling bicara, padahal duduk cuma dua meter dari satu sama lain.",
+     "literal": "jadi tidak-kami berbicara-lampau kepada-satu-sama-lain-kami, walaupun duduk-kami dua-punya meter-punya di-jarak dari-satu-sama-lain-kami."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Juuri niin. Mielestäni tarvitsemme yhteisen säännön.",
+     "id": "Tepat. Menurutku kita butuh satu aturan bersama.",
+     "literal": "tepat begitu. dari-pikiran-ku butuh-kami bersama-sasaran aturan-sasaran."
+    },
+    {
+     "speaker": "Laura:",
+     "text": "Minustakin. Mikä sinun ehdotuksesi on?",
+     "id": "Aku juga setuju. Apa usulmu?",
+     "literal": "dari-saya-juga. apa kamu-punya usul-mu adalah?"
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Kaikki kaupungille lähtevät viestit kulkevat minun kauttani. Ja kerromme toisillemme, jos jokin painaa mieltä.",
+     "id": "Semua pesan yang keluar ke pemkot lewat aku. Dan kita saling cerita kalau ada yang mengganjal.",
+     "literal": "semua kepada-kota berangkat-yang-sedang-jamak pesan-jamak berjalan-mereka saya-punya melalui-ku. dan menceritakan-kami kepada-satu-sama-lain-kami, jika sesuatu menekan pikiran-bagian."
+    },
+    {
+     "speaker": "Laura:",
+     "text": "Sopii. Ja lupaan, etten tee kaikkea itse, vaikka se tuntuu nopeammalta.",
+     "id": "Setuju. Dan aku janji nggak mengerjakan semuanya sendiri, walaupun rasanya lebih cepat.",
+     "literal": "cocok. dan berjanji-saya, bahwa-tidak-saya membuat semua-bagian sendiri, walaupun itu terasa dari-lebih-cepat."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Hyvä. Tunnemme toisemme niin hyvin, ettei yksi palaveri riko mitään.",
+     "id": "Bagus. Kita sudah cukup saling kenal; satu rapat nggak akan merusak apa-apa.",
+     "literal": "baik. mengenal-kami satu-sama-lain-sasaran-kami begitu baik, bahwa-tidak satu rapat merusak apa-pun-bagian."
+    }
+   ],
+   "notes": [
+    "**Käsittääkseni sovimme…** — *käsittää* (memahami) + *-kse-* + *-ni* = \"sepemahamanku\". Budi tidak berkata \"kita kan sudah sepakat!\", yang terdengar menuduh, melainkan \"kalau aku tidak salah paham, kita sepakat…\". Bentuk *-kse-* yang sama akan muncul lagi di unit berikut dengan arti \"supaya\".",
+    "**Ajattelin vain itseäni** — *itse* (diri) berubah kasus dan selalu membawa akhiran milik. Kasusnya ditentukan kata kerjanya: *ajatella* meminta partitif (*itseäni*), sedangkan *olla vihainen* meminta alatif (*vihainen itselleni*, marah pada diriku).",
+    "**Syytin sinua mielessäni** — *syyttää* (menyalahkan) + partitif. *Mielessäni* \"di dalam pikiranku\" adalah padanan tepat untuk \"dalam hati\"; orang Finlandia tidak menyalahkan dengan *sydän* (jantung, hati).",
+    "**toisillemme… toisistamme** — \"satu sama lain\" dibentuk dari *toinen* (yang lain) dalam bentuk jamak berkasus, ditambah akhiran milik subjeknya. Bahasa Indonesia cukup memakai \"saling\"; bahasa Finlandia menanyakan kasusnya: bicara KEPADA satu sama lain (*-lle*), jauh DARI satu sama lain (*-sta*).",
+    "**Tunnemme toisemme** — sebagai objek total, bentuknya *toisemme* (kami), *toisensa* (mereka). Dalam sangkalan objek selalu partitif: *Emme tunne toisiamme*.",
+    "**Minustakin** — *minusta* (menurutku) lebih santai daripada *mielestäni*; dengan *-kin* artinya \"menurutku juga\". Jawaban pendek seperti ini sangat khas rapat Finlandia: sepakat dengan satu kata, lalu lanjut."
+   ],
+   "grammars": [
+    {
+     "title": "Itse berkasus",
+     "body": [
+      "*Itse* tanpa kasus berarti \"sendiri\" (*Tein sen itse*) atau \"sendiri\" sebagai penegas (*Heikki itse*). Sebagai kata ganti refleksif (diriku, dirimu), ia berkasus dan selalu memakai akhiran milik. Batangnya *itse-*."
+     ],
+     "table": {
+      "head": [
+       "Kasus",
+       "(minä)",
+       "(sinä)",
+       "(hän)"
+      ],
+      "rows": [
+       [
+        "genitif / akusatif",
+        "*itseni*",
+        "*itsesi*",
+        "*itsensä*"
+       ],
+       [
+        "partitif",
+        "*itseäni*",
+        "*itseäsi*",
+        "*itseään*"
+       ],
+       [
+        "alatif *-lle*",
+        "*itselleni*",
+        "*itsellesi*",
+        "*itselleen*"
+       ],
+       [
+        "elatif *-sta*",
+        "*itsestäni*",
+        "*itsestäsi*",
+        "*itsestään*"
+       ],
+       [
+        "ilatif",
+        "*itseeni*",
+        "*itseesi*",
+        "*itseensä*"
+       ],
+       [
+        "adesif *-lla*",
+        "*itselläni*",
+        "*itselläsi*",
+        "*itsellään*"
+       ]
+      ]
+     },
+     "after": [
+      "Jamaknya memakai akhiran *me/te/he*: *itsemme, itseämme, itsellemme; itsenne; itsensä, itseään*. Contoh yang akan kamu pakai terus: *Pidä huolta itsestäsi!* (Jaga dirimu!), *Ostin itselleni uuden takin* (Aku membeli jaket baru untuk diriku sendiri)."
+     ]
+    },
+    {
+     "title": "Satu sama lain: toisiaan",
+     "body": [
+      "Resiprokal memakai jamak *toinen* (batang *toisi-*) dengan kasus yang diminta kata kerja, lalu akhiran milik subjek: *me → -mme*, *te → -nne*, *he → -an/-än* atau *-nsa*."
+     ],
+     "table": {
+      "head": [
+       "Kasus",
+       "(me)",
+       "(he)",
+       "Contoh"
+      ],
+      "rows": [
+       [
+        "partitif",
+        "*toisiamme*",
+        "*toisiaan*",
+        "*He auttavat toisiaan.*"
+       ],
+       [
+        "akusatif",
+        "*toisemme*",
+        "*toisensa*",
+        "*He tuntevat toisensa.*"
+       ],
+       [
+        "genitif",
+        "*toistemme*",
+        "*toistensa*",
+        "*He istuvat toistensa vieressä.*"
+       ],
+       [
+        "alatif",
+        "*toisillemme*",
+        "*toisilleen*",
+        "*He soittavat toisilleen.*"
+       ],
+       [
+        "elatif",
+        "*toisistamme*",
+        "*toisistaan*",
+        "*He pitävät toisistaan.*"
+       ],
+       [
+        "ilatif",
+        "*toisiimme*",
+        "*toisiinsa*",
+        "*He rakastuivat toisiinsa.*"
+       ]
+      ]
+     },
+     "after": [
+      "Dalam teks resmi kamu juga akan membaca *toinen toistaan* (*He auttavat toinen toistaan*); artinya sama, hanya lebih formal. Dalam percakapan, *toisiaan* dan kawan-kawannya sudah cukup."
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Dialog kedua — Minä mokasin",
+   "intro": "Siang harinya. Onni datang ke meja Budi dengan wajah pucat. Laporan pertamanya untuk Heikki ternyata mengandung kesalahan hitung.",
+   "lines": [
+    {
+     "speaker": "Onni:",
+     "text": "Budi, minä mokasin. Laskin koulun lämpökuorman väärin, ja raportti lähti jo Heikille.",
+     "id": "Budi, aku bikin blunder. Aku salah hitung beban panas sekolah, dan laporannya sudah terkirim ke Heikki.",
+     "literal": "Budi, saya berbuat-blunder-lampau. menghitung-lampau-saya sekolah-punya panas-beban-sasaran salah, dan laporan berangkat-lampau sudah kepada-Heikki."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Rauhoitu. Muistaakseni Heikki lukee raportit vasta perjantaina.",
+     "id": "Tenang. Seingatku Heikki baru membaca laporan hari Jumat.",
+     "literal": "tenanglah. seingat-ku Heikki membaca laporan-jamak baru pada-Jumat."
+    },
+    {
+     "speaker": "Onni:",
+     "text": "Mutta olen niin vihainen itselleni. Tarkistin kaiken itse kahteen kertaan.",
+     "id": "Tapi aku kesal banget sama diriku sendiri. Semuanya sudah kuperiksa sendiri dua kali.",
+     "literal": "tetapi adalah-saya begitu marah kepada-diri-ku. memeriksa-lampau-saya semua-sasaran sendiri ke-dua ke-kali."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Juuri siksi virhe jäi huomaamatta. Omaa tekstiään ei näe itse.",
+     "id": "Justru karena itu kesalahannya lolos. Orang susah melihat kesalahan di tulisannya sendiri.",
+     "literal": "justru karena-itu kesalahan tinggal-lampau tanpa-diperhatikan. sendiri-bagian teks-bagian-nya tidak melihat sendiri."
+    },
+    {
+     "speaker": "Onni:",
+     "text": "Mitä minun pitäisi tehdä? Kirjoitanko Heikille itse?",
+     "id": "Aku harus gimana? Aku tulis sendiri ke Heikki?",
+     "literal": "apa-bagian saya-punya harus-andai membuat? menulis-saya-kah kepada-Heikki sendiri?"
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Kirjoita. Nähdäkseni rehellisyys on aina paras vaihtoehto. Heikki arvostaa sitä.",
+     "id": "Tulis. Menurutku kejujuran selalu pilihan terbaik. Heikki menghargai itu.",
+     "literal": "tulislah. menurut-pandangan-ku kejujuran adalah selalu terbaik pilihan. Heikki menghargai itu-bagian."
+    },
+    {
+     "speaker": "Onni:",
+     "text": "Entä jos hän ajattelee, ettei harjoittelija osaa mitään?",
+     "id": "Kalau dia pikir pemagangnya nggak bisa apa-apa?",
+     "literal": "lalu jika ia berpikir, bahwa-tidak pemagang mampu apa-pun-bagian?"
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Tietääkseni Heikki teki itsekin ensimmäisenä vuonnaan virheen, josta puhutaan vieläkin.",
+     "id": "Setahuku Heikki sendiri juga pernah bikin kesalahan di tahun pertamanya, dan orang masih membicarakannya sampai sekarang.",
+     "literal": "setahu-ku Heikki membuat-lampau sendiri-juga sebagai-pertama sebagai-tahun-nya kesalahan-sasaran, dari-yang di-bicarakan masih-juga."
+    },
+    {
+     "speaker": "Onni:",
+     "text": "Oikeasti? Mikä virhe?",
+     "id": "Serius? Kesalahan apa?",
+     "literal": "benar-benar? apa kesalahan?"
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Kysy häneltä itseltään. Hän kertoo sen mielellään, kun oppii tuntemaan sinut.",
+     "id": "Tanya langsung ke orangnya. Dia senang menceritakannya kalau sudah kenal kamu.",
+     "literal": "tanyalah dari-dia dari-dirinya-sendiri. ia menceritakan itu-sasaran dengan-senang-hati, ketika belajar untuk-mengenal kamu-sasaran."
+    },
+    {
+     "speaker": "Onni:",
+     "text": "Selvä. Kiitos, Budi. Otan itseäni niskasta kiinni ja kirjoitan heti.",
+     "id": "Oke. Makasih, Budi. Aku akan menguatkan diri dan langsung menulis.",
+     "literal": "jelas. terima-kasih, Budi. mengambil-saya diri-bagian-ku dari-tengkuk pegang dan menulis-saya segera."
+    }
+   ],
+   "notes": [
+    "**Minä mokasin** — *mokata* (bikin blunder) adalah kata lisan, tetapi dipakai bahkan di kantor. Bentuk bakunya *tehdä virhe*. Perhatikan juga gaya Onni: ia langsung mengakui kesalahannya tanpa berputar-putar. Di Finlandia itu dianggap tanda profesional, bukan tanda lemah.",
+    "**Muistaakseni, nähdäkseni, tietääkseni** — tiga \"katup pengaman\" yang melembutkan klaim: seingatku, menurut pandanganku, setahuku. Akhiran miliknya mengikuti pembicara: *muistaakseen* (seingatnya), *tietääksemme* (setahu kami).",
+    "**Omaa tekstiään ei näe itse** — kalimat tanpa subjek (\"orang, siapa saja\") memakai akhiran milik orang ketiga: *omaa tekstiään*. Pola yang sama muncul di peribahasa dan nasihat umum.",
+    "**häneltä itseltään** — *itse* sebagai penegas ikut kasus kata yang ditegaskannya: *häneltä itseltään* (dari dia sendiri), *Heikille itselleen* (kepada Heikki sendiri), *minulle itselleni*.",
+    "**Otan itseäni niskasta kiinni** — harfiah \"aku memegang tengkukku sendiri\": berhenti mengeluh dan mulai bertindak. Ungkapan ini selalu memakai partitif *itseään*."
+   ],
+   "grammars": [
+    {
+     "title": "Akhiran milik pada kata kerja: sepemahamanku, setahuku",
+     "body": [
+      "Beberapa bentuk kata kerja dengan *-kse-* dan akhiran milik sudah menjadi ungkapan tetap untuk menyatakan pendapat atau ingatan. Semuanya dibentuk dari bentuk kamus: *tietää → tietääkseni*. Ungkapan pendapat *mielestäni* dibangun dari kata benda *mieli* (pikiran) dengan elatif dan akhiran milik."
+     ],
+     "table": {
+      "head": [
+       "Bentuk",
+       "Arti",
+       "Contoh"
+      ],
+      "rows": [
+       [
+        "*mielestäni*",
+        "menurutku",
+        "*Mielestäni tarvitsemme säännön.*"
+       ],
+       [
+        "*minusta*",
+        "menurutku (santai)",
+        "*Minusta se on hyvä idea.*"
+       ],
+       [
+        "*käsittääkseni*",
+        "sepemahamanku",
+        "*Käsittääkseni sovimme toisin.*"
+       ],
+       [
+        "*tietääkseni*",
+        "setahuku",
+        "*Tietääkseni hän on lomalla.*"
+       ],
+       [
+        "*muistaakseni*",
+        "seingatku",
+        "*Muistaakseni kokous on perjantaina.*"
+       ],
+       [
+        "*nähdäkseni*",
+        "menurut pandanganku",
+        "*Nähdäkseni tämä on paras vaihtoehto.*"
+       ]
+      ]
+     },
+     "after": [
+      "Akhiran milik ikut orang yang berpendapat: *hänen mielestään* (menurutnya), *meidän mielestämme* (menurut kami). Kamu sudah melihat akhiran milik menempel pada partisip di unit 5 (*Hän sanoi tulevansa*) dan unit 6 (*syötyäni*); di sini mekanismenya sama."
+     ]
+    }
+   ]
+  }
+ ],
+ "sections": [
+  {
+   "title": "Menyatakan pendapat",
+   "blocks": [
+    {
+     "type": "tabel",
+     "head": [
+      "Ungkapan",
+      "Cara baca",
+      "Nuansa"
+     ],
+     "rows": [
+      [
+       "mielestäni",
+       "MIE-les-tè-ni",
+       "menurutku (netral, paling sering)"
+      ],
+      [
+       "minusta",
+       "MI-nus-ta",
+       "menurutku (santai)"
+      ],
+      [
+       "olen sitä mieltä, että",
+       "O-len SI-tè MIEL-tè ET-tè",
+       "aku berpendapat bahwa (tegas)"
+      ],
+      [
+       "käsittääkseni",
+       "KÈ-sit-tèèk-se-ni",
+       "sepemahamanku (melunakkan)"
+      ],
+      [
+       "luulen, että",
+       "LUU-len ET-tè",
+       "kurasa (kurang yakin)"
+      ],
+      [
+       "olen samaa mieltä",
+       "O-len SA-maa MIEL-tè",
+       "aku setuju"
+      ],
+      [
+       "olen eri mieltä",
+       "O-len E-ri MIEL-tè",
+       "aku tidak setuju"
+      ],
+      [
+       "en ole varma",
+       "en O-le VAR-ma",
+       "aku tidak yakin"
+      ]
+     ]
+    },
+    {
+     "type": "p",
+     "text": "Di rapat Finlandia pendapat disampaikan terus terang dan tenang. *Olen eri mieltä* (aku tidak setuju) bukan kalimat kasar; ia justru dianggap sumbangan yang jujur. Yang dianggap kurang sopan adalah memotong pembicaraan atau berbicara terlalu lama. Orang menunggu giliran, dan jeda hening sebelum menjawab itu wajar: artinya lawan bicaramu sedang berpikir. Bagi penutur Indonesia, yang terbiasa menjaga suasana dengan basa-basi dan jawaban samar, gaya ini awalnya terasa keras. Setelah terbiasa, kebanyakan orang justru merasa lega: yang dikatakan adalah yang dimaksud."
+    },
+    {
+     "type": "kotak",
+     "title": "Setuju, tidak setuju, setengah setuju",
+     "items": [
+      "*Olen täysin samaa mieltä.* = Aku sepenuhnya setuju.",
+      "*Olen osittain samaa mieltä, mutta…* = Aku setuju sebagian, tetapi…",
+      "*Ymmärrän pointtisi, mutta näen asian toisin.* = Aku paham maksudmu, tetapi aku melihatnya lain.",
+      "*Voitko perustella?* = Bisa kamu jelaskan alasannya? Pertanyaan ini wajar di rapat dan tidak berarti meragukan orangnya."
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Menyelesaikan salah paham",
+   "blocks": [
+    {
+     "type": "tabel",
+     "head": [
+      "Langkah",
+      "Kalimat"
+     ],
+     "rows": [
+      [
+       "membuka pembicaraan",
+       "*Voidaanko puhua hetki?*"
+      ],
+      [
+       "mengakui kesalahan",
+       "*Se oli minun virheeni.*"
+      ],
+      [
+       "meminta maaf",
+       "*Pyydän anteeksi. En tarkoittanut loukata sinua.*"
+      ],
+      [
+       "menjelaskan maksud",
+       "*Tarkoitin, että…*"
+      ],
+      [
+       "mengecek pemahaman",
+       "*Ymmärsinkö oikein, että…?*"
+      ],
+      [
+       "mengusulkan jalan keluar",
+       "*Ehdotan, että jatkossa…*"
+      ],
+      [
+       "menutup",
+       "*Hyvä, että puhuttiin.*"
+      ]
+     ]
+    },
+    {
+     "type": "p",
+     "text": "Budaya kerja Finlandia memegang satu prinsip sederhana: bicarakan masalah dengan orang yang bersangkutan, bukan dengan orang lain tentang dia. Masalah dan orang dipisahkan: yang dikritik adalah jadwal yang terkirim tanpa izin, bukan Laura sebagai manusia. Setelah dibicarakan, urusannya dianggap selesai, dan tak ada yang mengungkitnya lagi di rapat berikutnya. Kalimat penutup *Hyvä, että puhuttiin* (untung kita sudah bicara) menandai bahwa hubungan kembali seperti semula."
+    },
+    {
+     "type": "kotak",
+     "title": "Empat cara meminta maaf",
+     "items": [
+      "*Anteeksi.* = Maaf, permisi. Untuk kesalahan kecil, menyenggol orang di bus, atau memanggil perhatian.",
+      "*Pyydän anteeksi.* = Aku minta maaf. Lebih sungguh-sungguh, untuk kesalahan yang nyata.",
+      "*Olen pahoillani.* = Aku menyesal atau turut prihatin. Juga dipakai saat mendengar kabar buruk.",
+      "*Pahoittelemme.* = Kami mohon maaf. Bahasa surel dan pengumuman resmi: *Pahoittelemme viivästystä.*"
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Ulangan berjenjang — unit 11",
+   "blocks": [
+    {
+     "type": "p",
+     "text": "Tutup kolom Finlandia, baca terjemahan Indonesianya, lalu susun kembali kalimatnya dari ingatan."
+    },
+    {
+     "type": "tabel",
+     "head": [
+      "Bahasa Indonesia",
+      "Suomi"
+     ],
+     "rows": [
+      [
+       "Halo! Aku mau servis sepedaku di sini. Gigi persnelingnya sudah nggak jalan dengan baik.",
+       "*Hei! Haluaisin huollattaa pyöräni. Vaihteet eivät enää toimi kunnolla.*"
+      ],
+      [
+       "Iya, makasih. Lampu belakangnya kadang mati sendiri, padahal nggak aku sentuh.",
+       "*Kyllä, kiitos. Takavalo sammuu välillä itsestään, vaikka en koske siihen.*"
+      ],
+      [
+       "Aku sudah tanya-tanya ke rekan kerja bengkel mana yang paling bagus, dan semuanya merekomendasikan tempat kalian.",
+       "*Kyselin kollegoilta, mikä korjaamo on paras, ja kaikki suosittelivat teitä.*"
+      ],
+      [
+       "Kamu lihat pengumuman di tangga? Pengelola gedung mau merenovasi fasad dua-tiga tahun lagi.",
+       "*Näitkö ilmoituksen rappukäytävässä? Taloyhtiö teettää julkisivuremontin parin vuoden päästä.*"
+      ],
+      [
+       "Makasih. Bawa pulla-nya pulang. Kamu capek, kelihatan dari matamu.",
+       "*Kiitos. Ota pulla mukaan. Sinua väsyttää, sen näkee silmistäsi.*"
+      ]
+     ]
+    }
+   ]
+  }
+ ],
+ "vocab": [
+  {
+   "fi": "itse",
+   "baca": "IT-se",
+   "id": "sendiri; diri (*itseni, itseäni, itselleni*)"
+  },
+  {
+   "fi": "toisiaan",
+   "baca": "TOI-si-aan",
+   "id": "satu sama lain (partitif; *toisilleen, toisensa*)"
+  },
+  {
+   "fi": "mielestäni",
+   "baca": "MIE-les-tè-ni",
+   "id": "menurutku"
+  },
+  {
+   "fi": "käsittääkseni",
+   "baca": "KÈ-sit-tèèk-se-ni",
+   "id": "sepemahamanku"
+  },
+  {
+   "fi": "tietääkseni",
+   "baca": "TIE-tèèk-se-ni",
+   "id": "setahuku"
+  },
+  {
+   "fi": "muistaakseni",
+   "baca": "MUIS-taak-se-ni",
+   "id": "seingatku"
+  },
+  {
+   "fi": "nähdäkseni",
+   "baca": "NÈH-dèk-se-ni",
+   "id": "menurut pandanganku"
+  },
+  {
+   "fi": "syyttää",
+   "baca": "SÜÜT-tèè",
+   "id": "menyalahkan (+ partitif; *syytän*)"
+  },
+  {
+   "fi": "vaivata",
+   "baca": "VAI-va-ta",
+   "id": "mengganggu, mengganjal (+ partitif; *vaivaa*)"
+  },
+  {
+   "fi": "jyrkkä",
+   "baca": "YÜRK-kè",
+   "id": "ketus, tajam; curam (gen. *jyrkän*)"
+  },
+  {
+   "fi": "pyytää anteeksi",
+   "baca": "PÜÜ-tèè AN-tèèk-si",
+   "id": "minta maaf (*pyydän*)"
+  },
+  {
+   "fi": "sopia",
+   "baca": "SO-pi-a",
+   "id": "bersepakat (*sovin, sopi*)"
+  },
+  {
+   "fi": "yhteydenpito",
+   "baca": "ÜH-teü-den-pi-to",
+   "id": "komunikasi, hubungan kontak (gen. *yhteydenpidon*)"
+  },
+  {
+   "fi": "ehdotus",
+   "baca": "EH-do-tus",
+   "id": "usul (gen. *ehdotuksen*)"
+  },
+  {
+   "fi": "sääntö",
+   "baca": "SÈÈN-tö",
+   "id": "aturan (gen. *säännön*)"
+  },
+  {
+   "fi": "vihainen",
+   "baca": "VI-hai-nen",
+   "id": "marah, kesal (+ *-lle*: *vihainen itselleni*)"
+  },
+  {
+   "fi": "rauhoittua",
+   "baca": "RAU-hoit-tu-a",
+   "id": "menjadi tenang (*rauhoitun*; *Rauhoitu!*)"
+  },
+  {
+   "fi": "mokata",
+   "baca": "MO-ka-ta",
+   "id": "bikin blunder, lisan (*mokaan, mokasi*)"
+  },
+  {
+   "fi": "virhe",
+   "baca": "VIR-he",
+   "id": "kesalahan (gen. *virheen*)"
+  },
+  {
+   "fi": "huomata",
+   "baca": "HUO-ma-ta",
+   "id": "menyadari, melihat (*huomaan, huomasi*)"
+  },
+  {
+   "fi": "rehellisyys",
+   "baca": "RE-hel-li-süüs",
+   "id": "kejujuran (gen. *rehellisyyden*)"
+  },
+  {
+   "fi": "arvostaa",
+   "baca": "AR-vos-taa",
+   "id": "menghargai (+ partitif)"
+  },
+  {
+   "fi": "vaihtoehto",
+   "baca": "VAIH-to-eh-to",
+   "id": "pilihan, alternatif (gen. *vaihtoehdon*)"
+  },
+  {
+   "fi": "pitää huolta",
+   "baca": "PI-tèè HUOL-ta",
+   "id": "menjaga, merawat (+ elatif: *pitää huolta itsestään*)"
+  }
+ ],
+ "exercises": [
+  {
+   "prompt": "Terjemahkan ke bahasa Finlandia.",
+   "items": [
+    "Aku menyalahkan diriku sendiri.",
+    "Mereka saling membantu.",
+    "Menurutku ini ide bagus.",
+    "Jagalah dirimu!",
+    "Setahuku rapatnya hari Jumat.",
+    "Kami sudah lama saling kenal."
+   ]
+  },
+  {
+   "prompt": "Isi dengan bentuk *itse* atau *toinen* yang tepat.",
+   "items": [
+    "Ajattelin vain ____. (*itse*, partitif, *minä*)",
+    "Olin vihainen ____. (*itse*, alatif, *minä*)",
+    "He puhuvat ____ joka päivä. (*toinen*, alatif, *he*)",
+    "Me asumme kaukana ____. (*toinen*, elatif, *me*)",
+    "Pidä huolta ____! (*itse*, elatif, *sinä*)",
+    "____ kokous alkaa kello yhdeksän. (*muistaa*, akhiran milik *minä*)",
+    "Kysy asiaa Heikiltä ____. (*itse*, ablatif, *hän*)"
+   ]
+  },
+  {
+   "prompt": "Gabungkan menjadi satu kalimat resiprokal dengan *toinen*.",
+   "items": [
+    "Laura auttaa Budia, ja Budi auttaa Lauraa.",
+    "Marek soittaa Elinalle, ja Elina soittaa Marekille.",
+    "Minä tunnen sinut, ja sinä tunnet minut. (*me*)",
+    "Aino kirjoittaa Budille, ja Budi kirjoittaa Ainolle.",
+    "Minä pidän sinusta, ja sinä pidät minusta. (*me*)",
+    "Onni ei ymmärrä Lauraa, eikä Laura ymmärrä Onnia."
+   ]
+  },
+  {
+   "prompt": "Susun menjadi kalimat.",
+   "items": [
+    "itseäni / syytin / koko illan",
+    "toisillemme / emme / puhuneet",
+    "on / nähdäkseni / paras / rehellisyys / vaihtoehto",
+    "toisemme / hyvin / tunnemme",
+    "itsestäsi / huolta / pidä"
+   ]
+  }
+ ],
+ "answers": [
+  "Syytän itseäni. — He auttavat toisiaan. — Mielestäni tämä on hyvä idea. — Pidä huolta itsestäsi! — Tietääkseni palaveri on perjantaina. — Olemme tunteneet toisemme kauan.",
+  "itseäni — itselleni — toisilleen — toisistamme — itsestäsi — Muistaakseni — itseltään",
+  "Laura ja Budi auttavat toisiaan. — Marek ja Elina soittavat toisilleen. — Me tunnemme toisemme. — Aino ja Budi kirjoittavat toisilleen. — Me pidämme toisistamme. — Onni ja Laura eivät ymmärrä toisiaan.",
+  "Syytin itseäni koko illan. — Emme puhuneet toisillemme. — Nähdäkseni rehellisyys on paras vaihtoehto. — Tunnemme toisemme hyvin. — Pidä huolta itsestäsi."
+ ]
+}
