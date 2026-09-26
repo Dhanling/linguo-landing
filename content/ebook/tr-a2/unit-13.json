@@ -1,0 +1,731 @@
+{
+ "title": "Saya potong rambut — kausatif",
+ "title_target": "Saçımı kestirmek istiyorum.",
+ "goal": "Membentuk kata kerja kausatif dengan *-dir, -t, -ir, -er, -it* untuk menyuruh orang lain mengerjakan sesuatu (*saçımı kestirdim, telefonu tamir ettirdim*) atau untuk membuat sesuatu terjadi (*düşürmek, acıtmak*), serta menyebut orang yang disuruh dengan datif.",
+ "bekal": [
+  "meminta layanan di tukang cukur dan tempat servis: *Saçımı kestirmek istiyorum*",
+  "memilih akhiran kausatif yang tepat menurut bentuk batang",
+  "membedakan *saçımı kestim* (kupotong sendiri) dari *saçımı kestirdim* (dipotongkan orang)"
+ ],
+ "dialogs": [
+  {
+   "title": "Dialog — Berberde",
+   "intro": "Jumat, 16 April 2027. Rambut Budi sudah menutupi telinga. Emre mengirimnya ke Rıza Usta, tukang cukur langganan keluarga mereka di sebuah gang di Kadıköy.",
+   "lines": [
+    {
+     "speaker": "Rıza Usta:",
+     "text": "Hoş geldin! Emre'nin arkadaşı mısın? Otur bakalım.",
+     "id": "Selamat datang! Kamu temannya Emre? Ayo, duduk.",
+     "literal": "senang datang-lampau-kamu! Emre-punya teman-nya apakah-kamu? duduk-lah coba-kita."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Evet. Saçımı kestirmek istiyorum, çok uzadı.",
+     "id": "Iya. Aku mau potong rambut, sudah panjang banget.",
+     "literal": "ya. rambut-ku-nya potong-suruh-me sedang-ingin-saya, sangat memanjang-lampau."
+    },
+    {
+     "speaker": "Rıza Usta:",
+     "text": "Nasıl keseyim? Kısa mı olsun, yoksa sadece uçlarını mı alayım?",
+     "id": "Mau dipotong gimana? Pendek, atau ujungnya aja yang kurapikan?",
+     "literal": "bagaimana potong-biar-saya? pendek apakah jadi-biar, atau hanya ujung-jamak-nya-nya apakah ambil-biar-saya?"
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Yanlar kısa olsun, üstü biraz uzun kalsın lütfen.",
+     "id": "Sampingnya pendek, atasnya biarkan agak panjang, ya.",
+     "literal": "samping-jamak pendek jadi-biar, atas-nya sedikit panjang tinggal-biar tolong."
+    },
+    {
+     "speaker": "Rıza Usta:",
+     "text": "Tamam. Sakalını da kısaltayım mı?",
+     "id": "Oke. Jenggotnya sekalian kupendekkan?",
+     "literal": "baik. jenggot-mu-nya juga pendek-kan-biar-saya apakah?"
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Olur. Jakarta'da kendim tıraş oluyordum, ilk defa sakalımı berbere kestiriyorum.",
+     "id": "Boleh. Di Jakarta aku cukur sendiri, baru kali ini jenggotku dicukurkan tukang cukur.",
+     "literal": "jadi-biasa. Jakarta-di sendiri-ku cukur sedang-jadi-lampau-saya, pertama kali jenggot-ku-nya tukang-cukur-ke sedang-potong-suruh-saya."
+    },
+    {
+     "speaker": "Rıza Usta:",
+     "text": "Bizde erkekler sakallarını hep berbere kestirir. Şu amca her sabah gelir.",
+     "id": "Di tempat kita, laki-laki selalu cukur jenggot di tukang cukur. Bapak itu datang tiap pagi.",
+     "literal": "kami-di laki-laki-jamak jenggot-jamak-nya-nya selalu tukang-cukur-ke potong-suruh-biasa. itu paman setiap pagi datang-biasa."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Her sabah mı? Pahalı olmuyor mu?",
+     "id": "Tiap pagi? Nggak jadi mahal?",
+     "literal": "setiap pagi apakah? mahal jadi-tidak-sedang apakah?"
+    },
+    {
+     "speaker": "Rıza Usta:",
+     "text": "Burada sohbet de var, çay da. Dur, sana bir çay getirteyim.",
+     "id": "Di sini ada obrolan, ada teh juga. Tunggu, kusuruh orang bawakan teh buatmu.",
+     "literal": "di-sini obrolan juga ada, teh juga. berhenti-lah, kamu-ke satu teh bawa-suruh-biar-saya."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Sağ olun. Aa, o ateş ne için?",
+     "id": "Makasih. Eh, api itu buat apa?",
+     "literal": "sehat jadi-Anda. eh, itu api apa untuk?"
+    },
+    {
+     "speaker": "Rıza Usta:",
+     "text": "Kulaklarındaki tüyleri yakacağım. Korkma, hiç acıtmaz.",
+     "id": "Mau kubakar bulu di telingamu. Jangan takut, sama sekali nggak sakit.",
+     "literal": "telinga-jamak-mu-di-yang bulu-jamak-nya akan-bakar-saya. takut-jangan, sama-sekali sakit-kan-tidak-biasa."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Emre bundan hiç bahsetmedi! Peki, size güveniyorum.",
+     "id": "Emre sama sekali nggak cerita soal ini! Ya sudah, aku percaya sama Bapak.",
+     "literal": "Emre ini-dari sama-sekali menyebut-tidak-lampau! baik, Anda-ke sedang-percaya-saya."
+    },
+    {
+     "speaker": "Rıza Usta:",
+     "text": "Bitti, aynaya bak! Saçını Kadıköy'ün en iyi berberine kestirdin.",
+     "id": "Selesai, lihat cermin! Rambutmu dipotong tukang cukur terbaik se-Kadıköy.",
+     "literal": "selesai-lampau, cermin-ke lihat-lah! rambut-mu-nya Kadıköy-punya paling baik tukang-cukur-nya-ke potong-suruh-lampau-kamu."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Çok güzel olmuş! Borcum ne kadar?",
+     "id": "Wah, bagus banget jadinya! Berapa semuanya?",
+     "literal": "sangat bagus jadi-konon! utang-ku berapa banyak?"
+    },
+    {
+     "speaker": "Rıza Usta:",
+     "text": "Saç sakal yedi yüz lira. Sıhhatler olsun!",
+     "id": "Rambut dan jenggot tujuh ratus lira. Semoga sehat, ya!",
+     "literal": "rambut jenggot tujuh ratus lira. kesehatan-jamak jadi-biar!"
+    }
+   ],
+   "notes": [
+    "**Saçımı kestirmek istiyorum** — di sini kuncinya. Orang Indonesia bilang \"aku potong rambut\" walaupun yang memotong tukang cukur. Dalam bahasa Turki *Saçımı kestim* berarti kamu memotongnya **sendiri**. Kalau orang lain yang mengerjakan, kata kerjanya harus kausatif: *kes-tir-mek* \"menyuruh memotong\". Dalam terjemahan harfiah unit ini kausatif ditulis **suruh-** atau **-kan**.",
+    "**Berbere kestiriyorum, en iyi berberine kestirdin** — orang yang disuruh mengerjakan diberi **datif**: *sakalımı berbere kestirdim* (jenggotku kucukurkan pada tukang cukur). Objeknya tetap akusatif. Kalau orangnya tak penting, cukup dihilangkan: *Saçımı kestirdim.*",
+    "**Kısaltayım** — *kısa* (pendek) → *kısalmak* (menjadi pendek) → *kısaltmak* (memendekkan). Kata kerja bersuku banyak yang berakhir vokal, *-l*, atau *-r* memakai kausatif **-t**. Sama halnya *uzamak* (memanjang) → *uzatmak* (memanjangkan).",
+    "**Getirteyim** — *getirmek* (membawa) → *getirtmek* (menyuruh orang membawa, mendatangkan). Rıza Usta tidak akan membawa teh sendiri: ia akan berteriak ke kedai teh sebelah, dan pelayannya yang datang.",
+    "**Acıtmaz** — *acımak* (terasa sakit, perih) → *acıtmak* (menyakiti, membuat sakit). *Hiç acıtmaz* = sama sekali tidak sakit. Kausatif tidak selalu berarti \"menyuruh orang\"; sering artinya \"membuat sesuatu terjadi\".",
+    "**Tıraş olmak, Sıhhatler olsun** — *tıraş olmak* = bercukur (jenggot atau rambut); *tıraş etmek* = mencukur orang lain. *Sıhhatler olsun* diucapkan kepada orang yang baru potong rambut atau mandi; jawabannya *Sağ olun*. *Olmuş* (dari *-miş*) di sini menunjukkan kekaguman atas hasil yang baru dilihat."
+   ],
+   "grammars": [
+    {
+     "title": "Membentuk kausatif",
+     "body": [
+      "Akhiran kausatif bergantung pada bentuk batang. Aturan dua baris pertama mencakup sebagian besar kata kerja; sisanya harus dihafal satu per satu."
+     ],
+     "table": {
+      "head": [
+       "Batang",
+       "Akhiran",
+       "Contoh",
+       "Arti"
+      ],
+      "rows": [
+       [
+        "bersuku banyak, berakhir vokal, *-l*, *-r*",
+        "*-t*",
+        "*beklemek → bekletmek, kısalmak → kısaltmak, getirmek → getirtmek*",
+        "membuat menunggu, memendekkan, mendatangkan"
+       ],
+       [
+        "kebanyakan batang lain",
+        "*-dir / -dır / -dur / -dür* (*-tir* sesudah *ç, f, h, k, p, s, ş, t*)",
+        "*yapmak → yaptırmak, kesmek → kestirmek, ölmek → öldürmek*",
+        "menyuruh membuat, menyuruh memotong, membunuh"
+       ],
+       [
+        "sebagian batang satu suku",
+        "*-ir / -ır / -ur / -ür*",
+        "*düşmek → düşürmek, bitmek → bitirmek, içmek → içirmek*",
+        "menjatuhkan, menyelesaikan, meminumkan"
+       ],
+       [
+        "sebagian kecil",
+        "*-er / -ar*",
+        "*çıkmak → çıkarmak, kopmak → koparmak*",
+        "mengeluarkan, memetik"
+       ],
+       [
+        "sebagian kecil",
+        "*-it / -ıt / -ut*",
+        "*korkmak → korkutmak, akmak → akıtmak*",
+        "menakut-nakuti, mengalirkan"
+       ],
+       [
+        "*etmek*",
+        "*ettirmek*",
+        "*tamir etmek → tamir ettirmek*",
+        "menyuruh memperbaiki"
+       ],
+       [
+        "tak beraturan",
+        "—",
+        "*görmek → göstermek, kalkmak → kaldırmak*",
+        "memperlihatkan, mengangkat"
+       ]
+      ]
+     },
+     "after": [
+      "Kausatif bisa ditumpuk: *yaptırmak* (menyuruh membuat) → *yaptırtmak* (menyuruh orang menyuruh). Di A2 cukup kenali saja."
+     ]
+    },
+    {
+     "title": "Siapa yang disuruh?",
+     "body": [
+      "Kalau kata kerja asalnya punya objek, orang yang disuruh diberi datif. Kalau kata kerja asalnya tanpa objek, orang yang dibuat melakukan menjadi objek akusatif."
+     ],
+     "table": {
+      "head": [
+       "Pola",
+       "Contoh",
+       "Arti"
+      ],
+      "rows": [
+       [
+        "objek + kausatif",
+        "*Saçımı kestirdim.*",
+        "Aku potong rambut (dipotongkan)."
+       ],
+       [
+        "orang yang disuruh + datif",
+        "*Saçımı berbere kestirdim.*",
+        "Rambutku kupotongkan pada tukang cukur."
+       ],
+       [
+        "orang yang disuruh + datif",
+        "*Fotoğrafları Emre'ye yedekletirim.*",
+        "Foto-foto itu nanti kusuruh Emre mencadangkan."
+       ],
+       [
+        "kata kerja tanpa objek → akusatif",
+        "*Fatma Hanım Emre'yi uyandırdı.*",
+        "Fatma Hanım membangunkan Emre."
+       ],
+       [
+        "kata kerja tanpa objek → akusatif",
+        "*Bu film beni çok güldürdü.*",
+        "Film ini bikin aku ketawa terus."
+       ],
+       [
+        "sangkalan",
+        "*Saçımı kısa kestirmedim.*",
+        "Rambutku tidak kupotong pendek."
+       ]
+      ]
+     }
+    }
+   ]
+  },
+  {
+   "title": "Dialog kedua — Ekran kırıldı",
+   "intro": "Selasa, 20 April. Pulang kerja, ponsel Budi terlepas dari tangannya di tangga dermaga Karaköy. Layarnya retak seperti sarang laba-laba. Ia mampir ke toko servis ponsel di Kadıköy.",
+   "lines": [
+    {
+     "speaker": "Budi:",
+     "text": "Merhaba, telefonumun ekranı kırıldı. Tamir ettirmek istiyorum.",
+     "id": "Halo, layar ponselku pecah. Aku mau servis.",
+     "literal": "halo, telepon-ku-punya layar-nya pecah-lampau. perbaikan lakukan-suruh-me sedang-ingin-saya."
+    },
+    {
+     "speaker": "Teknisyen:",
+     "text": "Geçmiş olsun. Nasıl oldu?",
+     "id": "Aduh, kasihan. Kenapa bisa?",
+     "literal": "berlalu-konon jadi-biar. bagaimana jadi-lampau?"
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Karaköy'de merdivende düşürdüm. Dokunmatik de çalışmıyor.",
+     "id": "Aku jatuhkan di tangga di Karaköy. Layar sentuhnya juga nggak jalan.",
+     "literal": "Karaköy-di tangga-di jatuh-kan-lampau-saya. layar-sentuh juga bekerja-tidak-sedang."
+    },
+    {
+     "speaker": "Teknisyen:",
+     "text": "Ekranı değiştirmemiz lazım. Orijinal parçayı depodan getirtiriz.",
+     "id": "Layarnya harus kami ganti. Suku cadang aslinya kami datangkan dari gudang.",
+     "literal": "layar-nya mengganti-kami-nya perlu. asli suku-cadang-nya gudang-dari bawa-suruh-biasa-kami."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Ne kadar sürer? Ben telefonsuz çalışamam.",
+     "id": "Berapa lama? Aku nggak bisa kerja tanpa ponsel.",
+     "literal": "berapa banyak berlangsung-biasa? aku telepon-tanpa bekerja-bisa-tidak-saya."
+    },
+    {
+     "speaker": "Teknisyen:",
+     "text": "Yarın öğlene kadar hazır olur. Ama önce fotoğraflarını yedekle.",
+     "id": "Besok siang sudah jadi. Tapi cadangkan dulu foto-fotomu.",
+     "literal": "besok siang-ke sampai siap jadi-biasa. tapi dulu foto-jamak-mu-nya cadangkan-lah."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Bu akşam Emre'ye yedekletirim, o bu işlerden anlar.",
+     "id": "Nanti malam kusuruh Emre mencadangkannya, dia ngerti urusan beginian.",
+     "literal": "ini malam Emre-ke cadangkan-suruh-biasa-saya, dia ini urusan-jamak-dari mengerti-biasa."
+    },
+    {
+     "speaker": "Teknisyen:",
+     "text": "Tamam. Orijinal ekran dört bin beş yüz lira, işçilik dahil.",
+     "id": "Oke. Layar asli empat ribu lima ratus lira, sudah termasuk ongkos pasang.",
+     "literal": "baik. asli layar empat ribu lima ratus lira, ongkos-kerja termasuk."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Biraz pahalı ama olsun. Bir de ekran koruyucu taktırmak istiyorum.",
+     "id": "Agak mahal, tapi ya sudah. Satu lagi, aku mau sekalian dipasangkan pelindung layar.",
+     "literal": "sedikit mahal tapi jadi-biar. satu juga layar pelindung pasang-suruh-me sedang-ingin-saya."
+    },
+    {
+     "speaker": "Teknisyen:",
+     "text": "Tabii, onu da takarız. Yarın on ikide gel. Ama bir daha düşürme!",
+     "id": "Tentu, itu juga kami pasang. Besok datang jam dua belas. Tapi jangan dijatuhkan lagi, ya!",
+     "literal": "tentu, itu-nya juga pasang-biasa-kami. besok dua-belas-di datang-lah. tapi satu lagi jatuh-kan-jangan!"
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Söz! Artık telefonu elimden hiç bırakmayacağım.",
+     "id": "Janji! Mulai sekarang ponselnya nggak bakal kulepas dari tangan.",
+     "literal": "janji! kini telepon-nya tangan-ku-dari sama-sekali lepas-tidak-akan-saya."
+    }
+   ],
+   "notes": [
+    "**Ekranı kırıldı** — *kırılmak* (pecah) adalah bentuk pasif dari *kırmak* (memecahkan). Orang Turki, seperti orang Indonesia, lebih suka bilang \"layarnya pecah\" daripada \"aku memecahkan layarnya\".",
+    "**Tamir ettirmek istiyorum** — *tamir etmek* (memperbaiki) → *tamir ettirmek* (menyuruh memperbaiki, menservis). Pola yang sama: *kontrol ettirmek* (memeriksakan), *temizletmek* (membersihkan lewat jasa orang).",
+    "**Düşürdüm** — *düşmek* (jatuh) → *düşürmek* (menjatuhkan). *Telefon düştü* = ponselnya jatuh; *Telefonu düşürdüm* = aku menjatuhkan ponsel. Larangannya: *Düşürme!* (jangan dijatuhkan!).",
+    "**Getirtiriz** — *getirtmek* sering berarti \"memesan dari tempat lain, mendatangkan\": *Parçayı Almanya'dan getirttik.* (Suku cadangnya kami datangkan dari Jerman.)",
+    "**Emre'ye yedekletirim** — *yedeklemek* (mencadangkan) berakhir vokal, jadi kausatifnya **-t**: *yedekletmek*. Emre, orang yang disuruh, diberi datif. *Bu işlerden anlar* = paham urusan begini; *-den anlamak* meminta ablatif.",
+    "**Takarız, taktırmak** — *takmak* (memasang, mengenakan: kacamata, anting, pelindung layar) → *taktırmak* (minta dipasangkan). *Geçmiş olsun* (semoga cepat berlalu) diucapkan untuk sakit maupun musibah kecil seperti ponsel pecah."
+   ],
+   "grammars": [
+    {
+     "title": "Pasangan dasar dan kausatif",
+     "body": [
+      "Banyak kata kerja sehari-hari datang berpasangan: yang satu \"terjadi sendiri\", yang lain \"membuat terjadi\". Bahasa Indonesia sering membedakannya dengan *me-…-kan*."
+     ],
+     "table": {
+      "head": [
+       "Dasar",
+       "Arti",
+       "Kausatif",
+       "Arti"
+      ],
+      "rows": [
+       [
+        "*düşmek*",
+        "jatuh",
+        "*düşürmek*",
+        "menjatuhkan"
+       ],
+       [
+        "*bitmek*",
+        "selesai",
+        "*bitirmek*",
+        "menyelesaikan"
+       ],
+       [
+        "*çalışmak*",
+        "bekerja, jalan",
+        "*çalıştırmak*",
+        "menjalankan, mempekerjakan"
+       ],
+       [
+        "*uyanmak*",
+        "bangun",
+        "*uyandırmak*",
+        "membangunkan"
+       ],
+       [
+        "*acımak*",
+        "terasa sakit",
+        "*acıtmak*",
+        "menyakiti"
+       ],
+       [
+        "*gülmek*",
+        "tertawa",
+        "*güldürmek*",
+        "membuat tertawa"
+       ],
+       [
+        "*öğrenmek*",
+        "belajar",
+        "*öğretmek*",
+        "mengajar"
+       ],
+       [
+        "*görmek*",
+        "melihat",
+        "*göstermek*",
+        "memperlihatkan"
+       ]
+      ]
+     }
+    }
+   ]
+  }
+ ],
+ "sections": [
+  {
+   "title": "Urusan yang diserahkan ke orang lain",
+   "blocks": [
+    {
+     "type": "p",
+     "text": "Hampir semua jasa sehari-hari diungkapkan dengan kausatif. Kalau kamu membayar orang untuk mengerjakannya, kata kerjanya kausatif; kalau kamu kerjakan sendiri, kata kerjanya biasa."
+    },
+    {
+     "type": "tabel",
+     "head": [
+      "Kerjakan sendiri",
+      "Serahkan ke orang",
+      "Arti"
+     ],
+     "rows": [
+      [
+       "*saçımı kestim*",
+       "*saçımı kestirdim*",
+       "potong rambut"
+      ],
+      [
+       "*arabayı yıkadım*",
+       "*arabayı yıkattım*",
+       "cuci mobil"
+      ],
+      [
+       "*elbise diktim*",
+       "*elbise diktirdim*",
+       "menjahit baju"
+      ],
+      [
+       "*evi temizledim*",
+       "*evi temizlettim*",
+       "membersihkan rumah"
+      ],
+      [
+       "*fotoğraf çektim*",
+       "*vesikalık fotoğraf çektirdim*",
+       "(ber)foto; pasfoto"
+      ],
+      [
+       "*anahtar yaptım*",
+       "*anahtar yaptırdım*",
+       "membuat (duplikat) kunci"
+      ],
+      [
+       "*kombiyi tamir ettim*",
+       "*kombiyi tamir ettirdim*",
+       "memperbaiki pemanas air"
+      ],
+      [
+       "*ayakkabımı boyadım*",
+       "*ayakkabımı boyattım*",
+       "menyemir sepatu"
+      ]
+     ]
+    },
+    {
+     "type": "p",
+     "text": "Karena bahasa Indonesia jarang membedakannya, penutur Indonesia sering bilang *Dün saçımı kestim* dan membuat lawan bicaranya heran: \"Sendiri? Pakai gunting apa?\""
+    },
+    {
+     "type": "kotak",
+     "title": "Kiat kausatif",
+     "items": [
+      "Tanyakan dirimu: siapa yang memegang gunting, kain lap, atau obengnya? Kalau bukan kamu, pakai kausatif.",
+      "Untuk layanan, pola paling sering adalah *-mek istiyorum*: *Saçımı kestirmek istiyorum, arabamı yıkatmak istiyorum.*",
+      "Di toko, pertanyaan *Nerede yaptırabilirim?* (di mana aku bisa membuatkannya?) sangat berguna.",
+      "Kausatif kadang bermakna \"membiarkan\": *Beni bekletme!* = jangan biarkan aku menunggu."
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Budaya berber",
+   "blocks": [
+    {
+     "type": "p",
+     "text": "Di Turki, *berber* (tukang cukur laki-laki) bukan sekadar tempat potong rambut. Banyak laki-laki datang tiap minggu, bahkan tiap hari, untuk bercukur, minum teh, membaca koran, dan membahas sepak bola. Salon untuk perempuan disebut *kuaför*."
+    },
+    {
+     "type": "tabel",
+     "head": [
+      "Türkçe",
+      "Cara baca",
+      "Bahasa Indonesia"
+     ],
+     "rows": [
+      [
+       "bıyık",
+       "bı-YIK",
+       "kumis"
+      ],
+      [
+       "ense",
+       "en-SE",
+       "tengkuk"
+      ],
+      [
+       "favori",
+       "fa-vo-RI",
+       "cambang"
+      ],
+      [
+       "makas",
+       "ma-KAS",
+       "gunting"
+      ],
+      [
+       "tarak",
+       "ta-RAK",
+       "sisir"
+      ],
+      [
+       "jilet",
+       "zyi-LET",
+       "silet"
+      ],
+      [
+       "kolonya",
+       "ko-lon-YA",
+       "air kolonye"
+      ],
+      [
+       "fön",
+       "fön",
+       "pengering rambut; blow"
+      ]
+     ]
+    },
+    {
+     "type": "kotak",
+     "title": "Kalau pergi ke berber",
+     "items": [
+      "Bulu telinga dibakar cepat dengan api kecil, dan bulu hidung dicabut dengan lilin; kalau tak mau, bilang *Onu istemiyorum, teşekkürler.*",
+      "Di akhir, tukang cukur menepukkan *kolonya* beraroma lemon ke wajah dan tangan.",
+      "Bilang *Ense kısa olsun* kalau ingin tengkuk dicukur pendek, *Yanlar makasla lütfen* kalau tidak mau pakai mesin.",
+      "Tip tidak wajib, tetapi membulatkan harga ke atas dianggap sopan."
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Ulangan berjenjang — unit 11",
+   "blocks": [
+    {
+     "type": "p",
+     "text": "Tutup kolom Turki, baca terjemahan Indonesianya, lalu susun kembali kalimatnya dari ingatan."
+    },
+    {
+     "type": "tabel",
+     "head": [
+      "Bahasa Indonesia",
+      "Türkçe"
+     ],
+     "rows": [
+      [
+       "Aku suka nonton bola, tapi nggak suka teriak-teriak di pertandingan.",
+       "*Futbol izlemeyi seviyorum ama maçlarda bağırmaktan hoşlanmıyorum.*"
+      ],
+      [
+       "Aku suka banget berenang. Di Jakarta tiap akhir pekan aku pergi berenang.",
+       "*Yüzmeyi çok severim. Jakarta'da her hafta sonu yüzmeye gidiyordum.*"
+      ],
+      [
+       "Sabtu malam dia datang ke rumah. Dia lagi belajar main bağlama, nanti dimainkan buat kamu juga.",
+       "*Cumartesi akşamı bize gelecek. Bağlama çalmayı öğreniyor, sana da çalar.*"
+      ],
+      [
+       "Makasih, tapi aku masih lebih suka mendengar daripada bicara.",
+       "*Sağ ol, ama ben hâlâ konuşmaktan çok dinlemeyi seviyorum.*"
+      ],
+      [
+       "Mulainya gampang, main dengan bagus itu yang susah. Aku mulai main umur lima belas.",
+       "*Başlamak kolay, iyi çalmak zor. Ben on beş yaşında çalmaya başladım.*"
+      ]
+     ]
+    }
+   ]
+  }
+ ],
+ "vocab": [
+  {
+   "tr": "saç",
+   "baca": "sac",
+   "id": "rambut (kepala)"
+  },
+  {
+   "tr": "kesmek",
+   "baca": "kes-MEK",
+   "id": "memotong"
+  },
+  {
+   "tr": "kestirmek",
+   "baca": "kes-tir-MEK",
+   "id": "menyuruh memotong, memotongkan (kausatif dari *kesmek*)"
+  },
+  {
+   "tr": "uzamak",
+   "baca": "u-za-MAK",
+   "id": "memanjang, tumbuh panjang"
+  },
+  {
+   "tr": "kısaltmak",
+   "baca": "kı-salt-MAK",
+   "id": "memendekkan (kausatif dari *kısalmak*)"
+  },
+  {
+   "tr": "sakal",
+   "baca": "sa-KAL",
+   "id": "jenggot"
+  },
+  {
+   "tr": "tıraş olmak",
+   "baca": "tı-RASY ol-MAK",
+   "id": "bercukur"
+  },
+  {
+   "tr": "berber",
+   "baca": "ber-BER",
+   "id": "tukang cukur"
+  },
+  {
+   "tr": "getirtmek",
+   "baca": "ge-tirt-MEK",
+   "id": "menyuruh membawakan, mendatangkan (kausatif dari *getirmek*)"
+  },
+  {
+   "tr": "ateş",
+   "baca": "a-TESY",
+   "id": "api; demam"
+  },
+  {
+   "tr": "tüy",
+   "baca": "tüy",
+   "id": "bulu (badan, burung)"
+  },
+  {
+   "tr": "yakmak",
+   "baca": "yak-MAK",
+   "id": "membakar; menyalakan"
+  },
+  {
+   "tr": "acıtmak",
+   "baca": "a-cıt-MAK",
+   "id": "menyakiti, membuat sakit (kausatif dari *acımak*)"
+  },
+  {
+   "tr": "-e güvenmek",
+   "baca": "gü-ven-MEK",
+   "id": "percaya pada (+ datif)"
+  },
+  {
+   "tr": "borç",
+   "baca": "borc",
+   "id": "utang (*Borcum ne kadar?* berapa semuanya?)"
+  },
+  {
+   "tr": "ekran",
+   "baca": "ek-RAN",
+   "id": "layar"
+  },
+  {
+   "tr": "kırılmak",
+   "baca": "kı-rıl-MAK",
+   "id": "pecah, patah (pasif dari *kırmak*)"
+  },
+  {
+   "tr": "tamir ettirmek",
+   "baca": "ta-MIR et-tir-MEK",
+   "id": "memperbaikkan, menservis (kausatif dari *tamir etmek*)"
+  },
+  {
+   "tr": "düşürmek",
+   "baca": "dü-syür-MEK",
+   "id": "menjatuhkan (kausatif dari *düşmek*)"
+  },
+  {
+   "tr": "parça",
+   "baca": "par-CA",
+   "id": "potongan; suku cadang"
+  },
+  {
+   "tr": "depo",
+   "baca": "de-PO",
+   "id": "gudang"
+  },
+  {
+   "tr": "işçilik",
+   "baca": "isy-ci-LIK",
+   "id": "ongkos kerja, jasa pemasangan"
+  },
+  {
+   "tr": "yedeklemek",
+   "baca": "ye-dek-le-MEK",
+   "id": "mencadangkan (data)"
+  },
+  {
+   "tr": "ekran koruyucu",
+   "baca": "ek-RAN ko-ru-yu-JU",
+   "id": "pelindung layar"
+  },
+  {
+   "tr": "takmak",
+   "baca": "tak-MAK",
+   "id": "memasang, mengenakan (kausatif *taktırmak*)"
+  }
+ ],
+ "exercises": [
+  {
+   "prompt": "Terjemahkan ke bahasa Turki. Perhatikan: siapa yang mengerjakan?",
+   "items": [
+    "Kemarin aku potong rambut di tukang cukur.",
+    "Aku mau menservis ponselku.",
+    "Budi menjatuhkan ponselnya.",
+    "Tenang, ini sama sekali tidak sakit.",
+    "Fatma Hanım membangunkan Emre.",
+    "Ayşe Hanım mengajari kami bahasa Turki."
+   ]
+  },
+  {
+   "prompt": "Isi titik-titik dengan bentuk kausatif yang tepat. Petunjuk ada di dalam kurung.",
+   "items": [
+    "Arabamı her hafta ____. (yıkamak, kausatif, aorist, saya)",
+    "Bu elbiseyi terziye ____. (dikmek, kausatif, lampau, saya)",
+    "Lütfen müşteriyi ____. (beklemek, kausatif, larangan)",
+    "Film bizi çok ____. (gülmek, kausatif, lampau)",
+    "Pasaport için vesikalık fotoğraf ____ lazım. (çekmek, kausatif, -mek)",
+    "Yeni anahtarı çilingire ____. (yapmak, kausatif, lampau, kami)",
+    "Zeynep bize yeni ofisi ____. (görmek, kausatif, lampau)"
+   ]
+  },
+  {
+   "prompt": "Ubah menjadi kausatif: pekerjaannya dikerjakan orang dalam kurung. Sebut orang itu dengan datif.",
+   "items": [
+    "Saçımı kestim. (berber)",
+    "Arabayı yıkadım. (Emre)",
+    "Telefonu tamir ettim. (teknisyen)",
+    "Mektubu yazdım. (Budi)",
+    "Pastayı yaptık. (Fatma Hanım)",
+    "Evi temizledi. (temizlikçi)"
+   ]
+  },
+  {
+   "prompt": "Susun jadi kalimat yang benar.",
+   "items": [
+    "kestirmek / saçımı / istiyorum",
+    "düşürdüm / telefonu / merdivende",
+    "tamir ettirdim / ekranı / dün",
+    "acıtmaz / hiç / korkma",
+    "getirteyim / bir / sana / çay"
+   ]
+  }
+ ],
+ "answers": [
+  "Dün saçımı berberde kestirdim. — Telefonumu tamir ettirmek istiyorum. — Budi telefonunu düşürdü. — Merak etme, bu hiç acıtmaz. — Fatma Hanım Emre'yi uyandırdı. — Ayşe Hanım bize Türkçe öğretiyor.",
+  "yıkatırım — diktirdim — bekletme — güldürdü — çektirmek — yaptırdık — gösterdi",
+  "Saçımı berbere kestirdim. — Arabayı Emre'ye yıkattım. — Telefonu teknisyene tamir ettirdim. — Mektubu Budi'ye yazdırdım. — Pastayı Fatma Hanım'a yaptırdık. — Evi temizlikçiye temizletti.",
+  "Saçımı kestirmek istiyorum. — Telefonu merdivende düşürdüm. — Dün ekranı tamir ettirdim. — Korkma, hiç acıtmaz. — Sana bir çay getirteyim."
+ ]
+}

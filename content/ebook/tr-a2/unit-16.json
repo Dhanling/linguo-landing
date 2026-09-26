@@ -1,0 +1,730 @@
+{
+ "title": "Mungkin saja — kemungkinan dengan -ebilir",
+ "title_target": "Bu sefer de uçmayabiliriz.",
+ "goal": "Menyatakan kemungkinan dan ketidakpastian dengan *-ebilir* (*olabilir*), *-emez* (*uçamaz*), *-meyebilir* (*uçmayabiliriz*), *-ebilirdi* (*uçabilirdik*), serta kata keterangan *belki, herhalde, kesin*.",
+ "bekal": [
+  "membedakan dua arti *-ebilir*: kemampuan (*Türkçe konuşabilirim*) dan kemungkinan (*Yarın yağmur yağabilir*)",
+  "memilih antara *uçamaz* (tidak bisa terbang), *uçmayabilir* (mungkin tidak terbang), dan *uçabilirdi* (sebenarnya bisa terbang, tapi tidak)",
+  "mengatur tingkat keyakinan dengan *kesin, muhtemelen, herhalde, belki* dan menanggapi kabar buruk dengan *Olamaz!*"
+ ],
+ "dialogs": [
+  {
+   "title": "Dialog — Balon kesin değil",
+   "intro": "Kamis, 15 April 2027. Di kantor Köprü Turizm di Karaköy, Zeynep dan Budi menyiapkan tur tiga hari ke Kapadokya untuk rombongan dari Surabaya. Budi pernah ke sana tahun lalu; Zeynep sudah belasan kali.",
+   "lines": [
+    {
+     "speaker": "Zeynep:",
+     "text": "Budi, cumartesi sabahı balon turu var. Ama hava rüzgârlı olabilir.",
+     "id": "Budi, Sabtu pagi ada tur balon. Tapi cuacanya bisa saja berangin.",
+     "literal": "Budi, sabtu pagi-nya balon tur-nya ada. tapi cuaca berangin bisa-jadi."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Rüzgâr olursa balonlar uçamaz mı?",
+     "id": "Kalau berangin, balonnya nggak bisa terbang?",
+     "literal": "angin kalau-ada balon-jamak tak-bisa-terbang apakah?"
+    },
+    {
+     "speaker": "Zeynep:",
+     "text": "Uçamazlar. Rüzgâr kuvvetliyse sabah izin çıkmaz.",
+     "id": "Nggak bisa. Kalau anginnya kencang, paginya izin terbang nggak keluar.",
+     "literal": "tak-bisa-terbang-mereka. angin kuat-kalau pagi izin keluar-tidak-biasa."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Peki, tur iptal edilebilir mi? Grup çok heyecanlı.",
+     "id": "Terus, turnya bisa dibatalkan? Rombongannya semangat banget.",
+     "literal": "baiklah, tur batal bisa-di-lakukan apakah? grup sangat bersemangat."
+    },
+    {
+     "speaker": "Zeynep:",
+     "text": "Edilebilir tabii. Belki cumartesi uçamayız, belki pazar uçarız.",
+     "id": "Bisa, tentu. Mungkin Sabtu kita nggak bisa terbang, mungkin Minggu kita terbang.",
+     "literal": "bisa-di-lakukan tentu. mungkin sabtu tak-bisa-terbang-kami, mungkin minggu terbang-biasa-kami."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Ama pazar öğlen uçağımız var. Daha fazla kalamayız ki.",
+     "id": "Tapi Minggu siang kita sudah ada pesawat. Kita kan nggak bisa tinggal lebih lama.",
+     "literal": "tapi minggu siang pesawat-kami ada. lebih banyak tak-bisa-tinggal-kami kan."
+    },
+    {
+     "speaker": "Zeynep:",
+     "text": "Biliyorum. O zaman pazar sabahını yedek gün yapalım. Balon şirketi bunu kabul edebilir.",
+     "id": "Aku tahu. Kalau begitu, Minggu pagi kita jadikan hari cadangan. Perusahaan balonnya mungkin mau.",
+     "literal": "sedang-tahu-saya. itu waktu minggu pagi-nya cadangan hari mari-buat. balon perusahaan-nya ini-nya terima bisa-lakukan."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "İyi fikir. Ama sabah balona binersek öğlen uçağa yetişebilir miyiz?",
+     "id": "Ide bagus. Tapi kalau paginya naik balon, siangnya kita bisa keburu pesawat?",
+     "literal": "baik ide. tapi pagi balon-ke naik-kalau-kami siang pesawat-ke bisa-keburu apakah-kami?"
+    },
+    {
+     "speaker": "Zeynep:",
+     "text": "Herhalde yetişebiliriz. Kayseri Havalimanı Göreme'ye bir saat uzaklıkta.",
+     "id": "Kayaknya bisa. Bandara Kayseri cuma sejam dari Göreme.",
+     "literal": "kayaknya bisa-keburu-kami. Kayseri bandara-nya Göreme-ke satu jam jarak-di."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Grubu şimdiden uyaralım mı? Hayal kırıklığı yaşayabilirler.",
+     "id": "Rombongannya kita ingatkan dari sekarang? Mereka bisa kecewa.",
+     "literal": "grup-nya dari-sekarang mari-peringatkan apakah? khayal pecahan-nya bisa-alami-mereka."
+    },
+    {
+     "speaker": "Zeynep:",
+     "text": "Evet, söylemeliyiz. \"Balon kesin değil, kararı hava verir\" de.",
+     "id": "Iya, harus kita bilang. Bilang saja, \"Balon belum pasti, yang memutuskan cuaca.\"",
+     "literal": "ya, harus-bilang-kami. \"balon pasti bukan, keputusan-nya cuaca beri-biasa\" katakan."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Tamam. Ben geçen yıl bindim, çok şanslıydım. Sen hiç bindin mi?",
+     "id": "Oke. Aku tahun lalu naik, beruntung banget. Kamu pernah naik?",
+     "literal": "oke. saya lalu tahun naik-lampau-saya, sangat beruntung-lampau-saya. kamu pernah naik-lampau-kamu apakah?"
+    },
+    {
+     "speaker": "Zeynep:",
+     "text": "Bir kere bindim. Üç kere denedim, iki kere uçamadık.",
+     "id": "Sekali. Aku sudah coba tiga kali, dua kali kami nggak bisa terbang.",
+     "literal": "satu kali naik-lampau-saya. tiga kali coba-lampau-saya, dua kali tak-bisa-terbang-lampau-kami."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Vay! O zaman bu sefer de uçmayabiliriz.",
+     "id": "Wah! Berarti kali ini pun kita bisa saja nggak terbang.",
+     "literal": "wah! itu waktu ini kali juga bisa-tidak-terbang-kami."
+    },
+    {
+     "speaker": "Zeynep:",
+     "text": "Uçmayabiliriz, evet. Ama Kapadokya balonsuz da çok güzel, merak etme.",
+     "id": "Bisa saja nggak, iya. Tapi Kapadokya tanpa balon juga indah banget, jangan khawatir.",
+     "literal": "bisa-tidak-terbang-kami, ya. tapi Kapadokya balon-tanpa juga sangat indah, penasaran jangan-lakukan."
+    }
+   ],
+   "notes": [
+    "**Olabilir** — *ol-abil-ir*: batang + **-ebil/-abil** (bisa) + aorist *-ir*. Selain kemampuan, bentuk ini juga menyatakan **kemungkinan**: *Hava rüzgârlı olabilir* = cuacanya mungkin berangin. Di terjemahan harfiah, *-ebil* ditulis **bisa-** di depan kata kerjanya: *olabilir* \"bisa-jadi\", *yetişebiliriz* \"bisa-keburu-kami\".",
+    "**Uçamaz mı? Uçamazlar** — sangkalan kemampuan bukan *-ebilmez*, melainkan **-eme/-ama + aorist negatif**: *uç-ama-z* \"tak bisa terbang\". Orang pertama tanpa *-z*: *uçamam, uçamayız*. Kesalahan khas pemula: *uçabilmez* — bentuk ini tidak ada.",
+    "**İptal edilebilir** — urutan akhiran selalu: batang – pasif – *-ebil* – aorist: *iptal ed-il-ebil-ir* \"bisa dibatalkan\". *İptal* serapan Arab, sama dengan \"batal\" dalam bahasa Indonesia; *etmek* berubah jadi *ed-* di depan vokal.",
+    "**Belki … belki** — *belki* (mungkin) biasanya berpasangan dengan aorist atau *-ebilir*: *Belki pazar uçarız* (mungkin Minggu kita terbang). Ulangan *belki … belki* = \"mungkin begini, mungkin begitu\".",
+    "**Uçmayabiliriz** — bedakan dua sangkalan: *uçamayız* \"kita **tidak bisa** terbang\" (pasti) dan *uç-ma-yabil-iriz* \"kita **mungkin tidak** terbang\" (belum pasti). Yang kedua memakai sangkalan biasa *-me/-ma* lalu *-yebil*; harfiahnya \"bisa-tidak-terbang\".",
+    "**Herhalde, hayal kırıklığı, merak etme** — *herhalde* (kayaknya, barangkali) aslinya *her hâlde* \"dalam segala keadaan\". *Hayal kırıklığı* harfiahnya \"pecahnya khayalan\" = kekecewaan; *hayal* serapan Arab seperti \"khayal\". *Merak etme* sehari-hari berarti \"jangan khawatir\", bukan \"jangan penasaran\"."
+   ],
+   "grammars": [
+    {
+     "title": "-ebil-: bisa dan mungkin",
+     "body": [
+      "Ekornya dua wujud: **-abil-** sesudah *a, ı, o, u* dan **-ebil-** sesudah *e, i, ö, ü*; sesudah vokal disisipi **y**: *bekle-yebil-ir*. Sisanya aorist biasa, selalu dengan *-ir*."
+     ],
+     "table": {
+      "head": [
+       "Orang",
+       "*gelmek*",
+       "*uçmak*",
+       "*beklemek*"
+      ],
+      "rows": [
+       [
+        "ben",
+        "*gelebilirim*",
+        "*uçabilirim*",
+        "*bekleyebilirim*"
+       ],
+       [
+        "sen",
+        "*gelebilirsin*",
+        "*uçabilirsin*",
+        "*bekleyebilirsin*"
+       ],
+       [
+        "o",
+        "*gelebilir*",
+        "*uçabilir*",
+        "*bekleyebilir*"
+       ],
+       [
+        "biz",
+        "*gelebiliriz*",
+        "*uçabiliriz*",
+        "*bekleyebiliriz*"
+       ],
+       [
+        "siz",
+        "*gelebilirsiniz*",
+        "*uçabilirsiniz*",
+        "*bekleyebilirsiniz*"
+       ],
+       [
+        "onlar",
+        "*gelebilirler*",
+        "*uçabilirler*",
+        "*bekleyebilirler*"
+       ]
+      ]
+     },
+     "after": [
+      "Satu bentuk, dua arti: *Türkçe konuşabilirim* (aku **bisa** berbahasa Turki — kemampuan) dan *Yarın yağmur yağabilir* (besok **mungkin** hujan — kemungkinan). Konteks yang menentukan."
+     ]
+    },
+    {
+     "title": "Sangkalan dan tanya",
+     "body": [
+      "Inilah bagian yang paling sering tertukar. Perhatikan letak *-me/-ma* dan ada-tidaknya *-bil-*."
+     ],
+     "table": {
+      "head": [
+       "Bentuk",
+       "Contoh",
+       "Arti"
+      ],
+      "rows": [
+       [
+        "*-ebil-ir*",
+        "*uçabiliriz*",
+        "kita bisa / mungkin terbang"
+       ],
+       [
+        "*-eme-z*",
+        "*uçamayız*",
+        "kita tidak bisa terbang"
+       ],
+       [
+        "*-me-yebil-ir*",
+        "*uçmayabiliriz*",
+        "kita mungkin tidak terbang"
+       ],
+       [
+        "*-eme-di*",
+        "*uçamadık*",
+        "kita tidak bisa terbang (waktu itu)"
+       ],
+       [
+        "*-ebil-ir mi?*",
+        "*uçabilir miyiz?*",
+        "bisakah kita terbang?"
+       ],
+       [
+        "*-eme-z mi?*",
+        "*uçamaz mıyız?*",
+        "masa sih kita tak bisa terbang?"
+       ]
+      ]
+     },
+     "after": [
+      "Tekanan jatuh tepat sebelum *-me/-ma*: *u-CA-ma-yız*, *UC-ma-ya-bi-li-riz*. Dengarkan bedanya — penutur Turki sering hanya membedakan keduanya dari tekanan."
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Dialog kedua — Bugün hiçbir balon kalkamaz",
+   "intro": "Sabtu, 17 April 2027, pukul 05.10. Lobi hotel gua di Göreme. Rombongan sudah bangun sejak jam empat, berjaket tebal, menunggu minibus perusahaan balon.",
+   "lines": [
+    {
+     "speaker": "Budi:",
+     "text": "Günaydın Zeynep. Minibüs hâlâ gelmedi. Bir sorun olabilir mi?",
+     "id": "Pagi, Zeynep. Minibusnya belum datang juga. Ada masalah, ya?",
+     "literal": "selamat-pagi Zeynep. minibus masih datang-tidak-lampau. satu masalah bisa-jadi apakah?"
+    },
+    {
+     "speaker": "Zeynep:",
+     "text": "Şirket az önce aradı. Maalesef rüzgâr çok kuvvetli, bugün hiçbir balon kalkamaz.",
+     "id": "Perusahaannya barusan telepon. Sayang sekali anginnya kencang banget, hari ini nggak ada satu balon pun yang bisa terbang.",
+     "literal": "perusahaan sedikit sebelum telepon-lampau. sayang-sekali angin sangat kuat, hari-ini tak-satu-pun balon tak-bisa-lepas-landas."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Olamaz! Herkes saat dörtte kalktı. Grup çok üzülecek.",
+     "id": "Nggak mungkin! Semua sudah bangun jam empat. Rombongan bakal sedih banget.",
+     "literal": "tak-bisa-jadi! semua-orang jam empat-di bangun-lampau. grup sangat akan-sedih."
+    },
+    {
+     "speaker": "Zeynep:",
+     "text": "Biliyorum. Ama pilotlar risk alamaz. Önce güvenlik.",
+     "id": "Aku tahu. Tapi pilot nggak boleh ambil risiko. Keselamatan nomor satu.",
+     "literal": "sedang-tahu-saya. tapi pilot-jamak risiko tak-bisa-ambil. dulu keselamatan."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Yarın sabah uçabilir miyiz? Uçağımız öğlen.",
+     "id": "Besok pagi kita bisa terbang? Pesawat kita kan siang.",
+     "literal": "besok pagi bisa-terbang apakah-kami? pesawat-kami siang."
+    },
+    {
+     "speaker": "Zeynep:",
+     "text": "Belki. Yarın için hava durumu daha iyi görünüyor, ama kesin bir şey söyleyemem.",
+     "id": "Mungkin. Prakiraan cuaca untuk besok kelihatan lebih baik, tapi aku nggak bisa bilang pasti.",
+     "literal": "mungkin. besok untuk cuaca keadaan-nya lebih baik sedang-tampak, tapi pasti satu hal tak-bisa-bilang-saya."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Dün hava çok güzeldi, dün uçabilirdik! Şimdi gruba ne diyeceğiz?",
+     "id": "Kemarin cuacanya bagus banget, kemarin sebenarnya kita bisa terbang! Sekarang kita bilang apa ke rombongan?",
+     "literal": "kemarin cuaca sangat indah-lampau, kemarin bisa-terbang-lampau-kami! sekarang grup-ke apa akan-bilang-kami?"
+    },
+    {
+     "speaker": "Zeynep:",
+     "text": "Kötü haberi ben veririm. Sonra tepeye çıkar, gün doğumunu izleriz.",
+     "id": "Kabar buruknya biar aku yang sampaikan. Habis itu kita naik ke bukit, nonton matahari terbit.",
+     "literal": "buruk kabar-nya saya beri-biasa. lalu bukit-ke naik-biasa, hari terbit-nya-nya tonton-biasa-kami."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "İyi fikir. Herhalde başka turistler de oraya gelir.",
+     "id": "Ide bagus. Kayaknya turis-turis lain juga datang ke sana.",
+     "literal": "baik ide. kayaknya lain turis-jamak juga sana-ke datang-biasa."
+    },
+    {
+     "speaker": "Zeynep:",
+     "text": "Yarın uçabiliriz de, uçmayabiliriz de. Ama bugün yine güzel bir gün olabilir.",
+     "id": "Besok kita bisa terbang, bisa juga nggak. Tapi hari ini tetap bisa jadi hari yang indah.",
+     "literal": "besok bisa-terbang-kami juga, bisa-tidak-terbang-kami juga. tapi hari-ini tetap indah satu hari bisa-jadi."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Haklısın. Geçen yıl balona bindim; bu sefer gökyüzünü yerden izlerim.",
+     "id": "Kamu benar. Tahun lalu aku naik balon; kali ini aku nonton langitnya dari bawah.",
+     "literal": "benar-kamu. lalu tahun balon-ke naik-lampau-saya; ini kali langit-nya tanah-dari tonton-biasa-saya."
+    }
+   ],
+   "notes": [
+    "**Hiçbir balon kalkamaz** — *hiçbir* (tak satu pun) selalu berpasangan dengan kata kerja negatif: *Hiçbir şey görmedim* (aku tak melihat apa pun). Di sini *-emez* bukan soal kemampuan pilot, melainkan **tidak boleh / tidak mungkin**: ada larangan resmi.",
+    "**Olamaz!** — seruan kaget \"nggak mungkin!\", \"masa!\". Bandingkan tiga saudaranya: *Olur* (boleh, oke), *Olmaz* (tidak boleh), *Olabilir* (bisa jadi). Keempatnya dipakai sebagai jawaban satu kata.",
+    "**Pilotlar risk alamaz** — *-emez* juga menyatakan larangan yang wajar, \"tak boleh\": *Burada park edemezsin* (kamu nggak boleh parkir di sini). Nadanya lebih lunak daripada perintah larangan *Park etme!*",
+    "**Söyleyemem** — sesudah vokal, *-eme/-ama* dan *-ebil/-abil* disisipi **y**: *söyle-yemem, bekle-yebilir, oku-yamaz*. Huruf *t* pada *gitmek, etmek* melunak jadi *d*: *gidebilir, edemez*.",
+    "**Uçabilirdik** — *-ebilir* + *-di*: \"sebenarnya bisa (tapi tidak terjadi)\" — kesempatan yang lewat. Arti kedua: dugaan tentang masa lampau, *Daha kötü olabilirdi* (bisa saja lebih buruk). Harfiahnya \"bisa-terbang-lampau-kami\".",
+    "**Uçabiliriz de, uçmayabiliriz de** — pola \"X *de*, Y *de*\" = bisa ini, bisa juga itu. *De/da* di sini kata terpisah (juga) dan ikut keselarasan vokal kata sebelumnya. **Herhalde başka turistler de gelir** — *herhalde* + aorist adalah cara paling wajar menebak."
+   ],
+   "grammars": [
+    {
+     "title": "Seberapa yakin?",
+     "body": [
+      "Dari paling yakin ke paling tidak mungkin. Kata keterangan biasanya berpasangan dengan aorist atau *-ebilir*."
+     ],
+     "table": {
+      "head": [
+       "Kata / bentuk",
+       "Contoh",
+       "Kira-kira"
+      ],
+      "rows": [
+       [
+        "*kesin*",
+        "*Kesin uçarız.*",
+        "pasti (100%)"
+       ],
+       [
+        "*muhtemelen*",
+        "*Muhtemelen uçarız.*",
+        "kemungkinan besar"
+       ],
+       [
+        "*herhalde*",
+        "*Herhalde uçarız.*",
+        "kayaknya (tebakan sendiri)"
+       ],
+       [
+        "*galiba*",
+        "*Galiba uçmuyoruz.*",
+        "kayaknya (dari tanda yang terlihat)"
+       ],
+       [
+        "*belki*",
+        "*Belki uçarız.*",
+        "mungkin (setengah-setengah)"
+       ],
+       [
+        "*-ebilir*",
+        "*Uçabiliriz.*",
+        "bisa jadi"
+       ],
+       [
+        "*-meyebilir*",
+        "*Uçmayabiliriz.*",
+        "bisa jadi tidak"
+       ],
+       [
+        "*-emez*",
+        "*Uçamayız.*",
+        "tidak mungkin"
+       ]
+      ]
+     },
+     "after": [
+      "*Olabilir* sendirian adalah jawaban paling aman kalau kamu tak yakin: *— Yarın kar yağar mı? — Olabilir.*"
+     ]
+    }
+   ]
+  }
+ ],
+ "sections": [
+  {
+   "title": "Kemungkinan dalam satu tabel",
+   "blocks": [
+    {
+     "type": "p",
+     "text": "Delapan kata kerja dalam empat bentuk orang ketiga. Baca mendatar untuk melihat pola, lalu perhatikan kata kerja yang huruf *t*-nya melunak dan yang butuh *y*."
+    },
+    {
+     "type": "tabel",
+     "head": [
+      "Kata kerja",
+      "bisa / mungkin",
+      "tidak bisa",
+      "mungkin tidak",
+      "sebenarnya bisa"
+     ],
+     "rows": [
+      [
+       "*gelmek*",
+       "*gelebilir*",
+       "*gelemez*",
+       "*gelmeyebilir*",
+       "*gelebilirdi*"
+      ],
+      [
+       "*yapmak*",
+       "*yapabilir*",
+       "*yapamaz*",
+       "*yapmayabilir*",
+       "*yapabilirdi*"
+      ],
+      [
+       "*beklemek*",
+       "*bekleyebilir*",
+       "*bekleyemez*",
+       "*beklemeyebilir*",
+       "*bekleyebilirdi*"
+      ],
+      [
+       "*okumak*",
+       "*okuyabilir*",
+       "*okuyamaz*",
+       "*okumayabilir*",
+       "*okuyabilirdi*"
+      ],
+      [
+       "*görmek*",
+       "*görebilir*",
+       "*göremez*",
+       "*görmeyebilir*",
+       "*görebilirdi*"
+      ],
+      [
+       "*gitmek*",
+       "*gidebilir*",
+       "*gidemez*",
+       "*gitmeyebilir*",
+       "*gidebilirdi*"
+      ],
+      [
+       "*etmek*",
+       "*edebilir*",
+       "*edemez*",
+       "*etmeyebilir*",
+       "*edebilirdi*"
+      ],
+      [
+       "*olmak*",
+       "*olabilir*",
+       "*olamaz*",
+       "*olmayabilir*",
+       "*olabilirdi*"
+      ]
+     ]
+    },
+    {
+     "type": "p",
+     "text": "Kolom \"mungkin tidak\" tak pernah melunakkan *t* (*gitmeyebilir*), karena di belakang batang langsung ada huruf mati *m*. Kolom lain melunakkannya karena bertemu vokal: *gid-ebilir, gid-emez*."
+    },
+    {
+     "type": "kotak",
+     "title": "Kiat: -ebil- untuk sopan santun",
+     "items": [
+      "Meminta izin: *Girebilir miyim?* (Boleh saya masuk?), *Fotoğraf çekebilir miyiz?* (Boleh kami memotret?).",
+      "Meminta tolong: *Pencereyi açabilir misiniz?* (Bisa tolong bukakan jendela?) — lebih lunak daripada *Pencereyi açın.*",
+      "Memesan: *Bir çay alabilir miyim?* terdengar lebih halus daripada *Bir çay istiyorum.*",
+      "Jawaban singkat: *Tabii, buyurun* (tentu, silakan) untuk mengizinkan; *Maalesef olmaz* (maaf, tidak bisa) untuk menolak."
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Kapadokya",
+   "blocks": [
+    {
+     "type": "p",
+     "text": "Kapadokya (Cappadocia) adalah dataran tinggi di Anatolia Tengah, sebagian besar di provinsi Nevşehir. Abu gunung berapi yang mengeras selama jutaan tahun terkikis angin dan hujan menjadi menara batu yang disebut *peri bacaları* — \"cerobong peri\". Di dalam batu lunak itu orang dulu memahat rumah, gereja, bahkan kota bawah tanah."
+    },
+    {
+     "type": "tabel",
+     "head": [
+      "Tempat",
+      "Yang terkenal",
+      "Kalimat berguna"
+     ],
+     "rows": [
+      [
+       "Göreme",
+       "desa pusat wisata, museum terbuka gereja batu",
+       "*Müzeye nasıl gidebiliriz?*"
+      ],
+      [
+       "Paşabağı",
+       "cerobong peri bertudung",
+       "*Burada fotoğraf çekebilir miyim?*"
+      ],
+      [
+       "Uçhisar",
+       "benteng batu, titik tertinggi",
+       "*Kaleye çıkabilir miyiz?*"
+      ],
+      [
+       "Derinkuyu",
+       "kota bawah tanah bertingkat",
+       "*Aşağıya inebilir miyim?*"
+      ],
+      [
+       "Avanos",
+       "kerajinan tembikar, Sungai Kızılırmak",
+       "*Ben de çömlek yapabilir miyim?*"
+      ],
+      [
+       "Ürgüp",
+       "hotel gua, kebun anggur",
+       "*Mağara otelde kalabilir miyiz?*"
+      ]
+     ]
+    },
+    {
+     "type": "kotak",
+     "title": "Naik balon: selalu \"mungkin\"",
+     "items": [
+      "Setiap subuh otoritas penerbangan sipil Turki (SHGM) menilai angin dan memberi kode warna; kalau merah, tak satu balon pun boleh terbang.",
+      "Pesan tur balon pada hari pertama kunjungan, supaya hari berikutnya bisa jadi cadangan (*yedek gün*).",
+      "Kalau penerbangan batal karena cuaca, perusahaan biasanya mengembalikan uang (*para iadesi*) atau memindahkan jadwal.",
+      "Subuh di Kapadokya dingin, bahkan di musim panas: bawa jaket. Kalimat yang akan sering kamu dengar: *Bugün uçuş yok.*"
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Ulangan berjenjang — unit 14",
+   "blocks": [
+    {
+     "type": "p",
+     "text": "Tutup kolom Turki, baca terjemahan Indonesianya, lalu susun kembali kalimatnya dari ingatan."
+    },
+    {
+     "type": "tabel",
+     "head": [
+      "Bahasa Indonesia",
+      "Türkçe"
+     ],
+     "rows": [
+      [
+       "Kalau begitu kalian baru akan berkenalan. Kita ketemu Kamis?",
+       "*O zaman ilk kez tanışacaksınız. Perşembe buluşalım mı?*"
+      ],
+      [
+       "Sepakat! Kita ketemu jam sepuluh di lobi.",
+       "*Anlaştık! Saat onda lobide buluşuruz.*"
+      ],
+      [
+       "Kamu? Tiap pagi kamu berpakaian dalam lima menit, kemejamu selalu kusut!",
+       "*Sen mi? Sen her sabah beş dakikada giyinirsin, gömleğin hep buruşuk!*"
+      ],
+      [
+       "Ibu benar, aku juga sedih. Kita baikan, yuk?",
+       "*Haklısınız, ben de üzüldüm. Barışalım mı?*"
+      ],
+      [
+       "Sepakat! Sini, kita pelukan.",
+       "*Anlaştık! Hadi, kucaklaşalım.*"
+      ]
+     ]
+    }
+   ]
+  }
+ ],
+ "vocab": [
+  {
+   "tr": "balon",
+   "baca": "ba-LON",
+   "id": "balon udara"
+  },
+  {
+   "tr": "rüzgâr",
+   "baca": "rüz-GYAR",
+   "id": "angin"
+  },
+  {
+   "tr": "rüzgârlı",
+   "baca": "rüz-gyar-LI",
+   "id": "berangin"
+  },
+  {
+   "tr": "kuvvetli",
+   "baca": "kuv-vet-LI",
+   "id": "kuat, kencang"
+  },
+  {
+   "tr": "izin",
+   "baca": "i-ZIN",
+   "id": "izin (*izin çıkmak*, izin keluar)"
+  },
+  {
+   "tr": "iptal etmek",
+   "baca": "ip-TAL et-MEK",
+   "id": "membatalkan (pasif *iptal edilmek*)"
+  },
+  {
+   "tr": "heyecanlı",
+   "baca": "he-ye-jan-LI",
+   "id": "bersemangat, deg-degan"
+  },
+  {
+   "tr": "belki",
+   "baca": "BEL-ki",
+   "id": "mungkin"
+  },
+  {
+   "tr": "herhalde",
+   "baca": "HER-hal-de",
+   "id": "kayaknya, barangkali"
+  },
+  {
+   "tr": "kesin",
+   "baca": "ke-SIN",
+   "id": "pasti"
+  },
+  {
+   "tr": "şirket",
+   "baca": "syir-KET",
+   "id": "perusahaan"
+  },
+  {
+   "tr": "yedek",
+   "baca": "ye-DEK",
+   "id": "cadangan (*yedek gün*, hari cadangan)"
+  },
+  {
+   "tr": "yetişmek",
+   "baca": "ye-tisy-MEK",
+   "id": "keburu, sempat mengejar (+ datif: *uçağa yetişmek*)"
+  },
+  {
+   "tr": "havalimanı",
+   "baca": "ha-VA-li-ma-nı",
+   "id": "bandara"
+  },
+  {
+   "tr": "uyarmak",
+   "baca": "u-yar-MAK",
+   "id": "memperingatkan (+ akusatif)"
+  },
+  {
+   "tr": "denemek",
+   "baca": "de-ne-MEK",
+   "id": "mencoba"
+  },
+  {
+   "tr": "uçmak",
+   "baca": "uc-MAK",
+   "id": "terbang (*uçar*, aorist; *uçamaz*, tak bisa terbang)"
+  },
+  {
+   "tr": "kalkmak",
+   "baca": "kalk-MAK",
+   "id": "lepas landas, berangkat; bangun tidur"
+  },
+  {
+   "tr": "güvenlik",
+   "baca": "gü-ven-LIK",
+   "id": "keselamatan, keamanan"
+  },
+  {
+   "tr": "hava durumu",
+   "baca": "ha-VA du-ru-mu",
+   "id": "keadaan cuaca, prakiraan cuaca"
+  },
+  {
+   "tr": "tepe",
+   "baca": "te-PE",
+   "id": "bukit, puncak"
+  },
+  {
+   "tr": "gökyüzü",
+   "baca": "GÖK-yü-zü",
+   "id": "langit (akusatif *gökyüzünü*)"
+  },
+  {
+   "tr": "gün doğumu",
+   "baca": "GÜN doo-u-mu",
+   "id": "matahari terbit"
+  },
+  {
+   "tr": "merak etmek",
+   "baca": "me-RAK et-MEK",
+   "id": "penasaran; khawatir (*Merak etme*, jangan khawatir)"
+  },
+  {
+   "tr": "peri bacası",
+   "baca": "pe-RI ba-ja-SI",
+   "id": "cerobong peri (jamak *peri bacaları*)"
+  }
+ ],
+ "exercises": [
+  {
+   "prompt": "Terjemahkan ke bahasa Turki.",
+   "items": [
+    "Besok mungkin hujan.",
+    "Aku nggak bisa datang hari Sabtu.",
+    "Balonnya mungkin nggak terbang.",
+    "Besok pagi kita bisa terbang?",
+    "Kayaknya dia di rumah.",
+    "Kemarin kami nggak bisa terbang."
+   ]
+  },
+  {
+   "prompt": "Isi dengan bentuk yang tepat.",
+   "items": [
+    "Rüzgâr kuvvetli, bugün balonlar ____. (uçmak, tidak bisa)",
+    "Yarın hava güzel ____. (olmak, mungkin)",
+    "Bu akşam seni ____. (aramak, bisa, saya)",
+    "Zeynep yarın ofise ____. (gelmek, mungkin tidak)",
+    "Dün hava güzeldi, dün ____! (uçmak, sebenarnya bisa, kami)",
+    "Kesin bir şey ____. (söylemek, tidak bisa, saya)",
+    "Pencereyi ____ misiniz? (açmak, bisa)"
+   ]
+  },
+  {
+   "prompt": "Ubah pernyataan pasti menjadi kemungkinan: positif dengan *-ebilir*, negatif dengan *-meyebilir*.",
+   "items": [
+    "Yarın kar yağar.",
+    "Selim Bey toplantıya gelmez.",
+    "Tur iptal edilir.",
+    "Onlar bizi beklemez.",
+    "Emre geç kalır.",
+    "Otobüs sabah gelmez."
+   ]
+  },
+  {
+   "prompt": "Susun jadi kalimat yang benar.",
+   "items": [
+    "uçmayabiliriz / bu sefer / de",
+    "olabilir / hava / rüzgârlı",
+    "kalkamaz / bugün / hiçbir balon",
+    "miyiz / uçabilir / yarın sabah",
+    "herhalde / gelir / oraya / başka turistler de"
+   ]
+  }
+ ],
+ "answers": [
+  "Yarın yağmur yağabilir. — Cumartesi gelemem. — Balon uçmayabilir. — Yarın sabah uçabilir miyiz? — Herhalde evde. — Dün uçamadık.",
+  "uçamaz — olabilir — arayabilirim — gelmeyebilir — uçabilirdik — söyleyemem — açabilir",
+  "Yarın kar yağabilir. — Selim Bey toplantıya gelmeyebilir. — Tur iptal edilebilir. — Onlar bizi beklemeyebilir. — Emre geç kalabilir. — Otobüs sabah gelmeyebilir.",
+  "Bu sefer de uçmayabiliriz. — Hava rüzgârlı olabilir. — Bugün hiçbir balon kalkamaz. — Yarın sabah uçabilir miyiz? — Herhalde başka turistler de oraya gelir."
+ ]
+}

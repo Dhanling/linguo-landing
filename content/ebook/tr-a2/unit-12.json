@@ -1,0 +1,714 @@
+{
+ "title": "Dibuat di sini — pasif",
+ "title_target": "Akşam yemekleri ayrıca ödenir.",
+ "goal": "Membentuk kata kerja pasif dengan *-il*, *-in*, dan *-n* (*yapılır, alınır, ödenir*), memakainya di semua kala, menyebut pelaku dengan *tarafından*, dan membaca aturan umum berbentuk pasif impersonal (*Burada sigara içilmez*).",
+ "bekal": [
+  "menjelaskan isi paket tur: *Kahvaltı dahil, akşam yemeği ayrıca ödenir*",
+  "memilih akhiran pasif yang tepat menurut akhir batang kata kerja",
+  "memahami papan larangan dan aturan tempat umum: *Park yapılmaz, Camide yüksek sesle konuşulmaz*"
+ ],
+ "dialogs": [
+  {
+   "title": "Dialog — Yeni broşür",
+   "intro": "Senin, 29 Maret 2027. Di kantor Köprü Turizm di Karaköy, Zeynep meletakkan setumpuk brosur baru untuk paket umrah plus İstanbul di meja Budi.",
+   "lines": [
+    {
+     "speaker": "Zeynep:",
+     "text": "Budi, yeni broşür basıldı. Endonezyaca çevirisi senin tarafından yapılacak.",
+     "id": "Budi, brosur baru sudah dicetak. Terjemahan bahasa Indonesianya akan dikerjakan olehmu.",
+     "literal": "Budi, baru brosur di-cetak-lampau. Indonesia-bahasa terjemahan-nya kamu-punya pihak-mu-dari di-buat-akan."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Tamam. Önce şunu sorayım: bu fiyata neler dahil?",
+     "id": "Oke. Aku tanya ini dulu: harga ini sudah termasuk apa saja?",
+     "literal": "baik. dulu ini-nya tanya-biar-saya: ini harga-ke apa-jamak termasuk?"
+    },
+    {
+     "speaker": "Zeynep:",
+     "text": "Uçuşlar, oteller ve kahvaltılar dahil. Akşam yemekleri ayrıca ödenir.",
+     "id": "Penerbangan, hotel, dan sarapan sudah termasuk. Makan malam dibayar terpisah.",
+     "literal": "penerbangan-jamak, hotel-jamak dan sarapan-jamak termasuk. malam makanan-jamak-nya terpisah di-bayar-biasa."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Müze girişleri de fiyata dahil mi?",
+     "id": "Tiket masuk museum juga termasuk?",
+     "literal": "museum masuk-jamak-nya juga harga-ke termasuk apakah?"
+    },
+    {
+     "speaker": "Zeynep:",
+     "text": "Topkapı dahil, ama Boğaz turu için ayrı bilet alınır.",
+     "id": "Topkapı termasuk, tapi untuk tur Bosphorus beli tiket sendiri.",
+     "literal": "Topkapı termasuk, tapi Bosphorus tur-nya untuk terpisah tiket di-beli-biasa."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Peki, burada 'Bahşişler fiyata dahil edilmez' yazıyor. Ne demek?",
+     "id": "Terus, di sini tertulis \"tip tidak dimasukkan ke dalam harga\". Maksudnya apa?",
+     "literal": "baik, di-sini 'tip-jamak harga-ke termasuk di-lakukan-tidak-biasa' sedang-tertulis. apa berarti?"
+    },
+    {
+     "speaker": "Zeynep:",
+     "text": "Yani rehbere ve şoföre bahşiş ayrıca verilir. Bu bizde bir gelenektir.",
+     "id": "Artinya, tip untuk pemandu dan sopir diberikan terpisah. Di tempat kita itu sudah tradisi.",
+     "literal": "jadi pemandu-ke dan sopir-ke tip terpisah di-beri-biasa. ini kami-di satu tradisi-lah."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Anladım. Kapaktaki fotoğraf nerede çekildi? Çok güzel.",
+     "id": "Oke. Foto di sampul itu diambil di mana? Bagus banget.",
+     "literal": "mengerti-lampau-saya. sampul-di-yang foto di-mana di-ambil-lampau? sangat indah."
+    },
+    {
+     "speaker": "Zeynep:",
+     "text": "Çamlıca'da. Oradaki cami 2019'da açıldı, Türkiye'nin en büyük camisi.",
+     "id": "Di Çamlıca. Masjid di sana dibuka tahun 2019, masjid terbesar di Turki.",
+     "literal": "Çamlıca-di. sana-di-yang masjid 2019-di di-buka-lampau, Turki-punya paling besar masjid-nya."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Müşteriler orada namaz kılabilir mi? Mutlaka soracaklar.",
+     "id": "Tamunya bisa salat di sana? Mereka pasti tanya.",
+     "literal": "pelanggan-jamak di-sana salat menunaikan-bisa-biasa apakah? pasti akan-tanya-mereka."
+    },
+    {
+     "speaker": "Zeynep:",
+     "text": "Tabii. Ama camide yüksek sesle konuşulmaz, namaz sırasında fotoğraf çekilmez.",
+     "id": "Tentu. Tapi di masjid orang nggak bicara keras-keras, dan waktu salat nggak boleh ambil foto.",
+     "literal": "tentu. tapi masjid-di tinggi suara-dengan di-bicara-tidak-biasa, salat waktu-nya-di foto di-ambil-tidak-biasa."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Bunu da broşüre yazalım. Kurallar önceden bilinirse sorun çıkmaz.",
+     "id": "Ini juga kita tulis di brosur. Kalau aturannya diketahui sebelumnya, nggak bakal ada masalah.",
+     "literal": "ini-nya juga brosur-ke tulis-mari-kita. aturan-jamak sebelumnya di-ketahui-biasa-kalau masalah keluar-tidak-biasa."
+    },
+    {
+     "speaker": "Zeynep:",
+     "text": "Aferin! Sona da şunu ekle: 'Bu program Köprü Turizm tarafından düzenlenir.'",
+     "id": "Bagus! Di akhir tambahkan juga ini: \"Program ini diselenggarakan oleh Köprü Turizm.\"",
+     "literal": "bagus! akhir-ke juga ini-nya tambahkan-lah: 'ini program Köprü Turizm pihak-nya-dari di-atur-biasa.'"
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Tamam efendim, çeviri yarın sabah teslim edilir!",
+     "id": "Siap, Bu, terjemahan akan diserahkan besok pagi!",
+     "literal": "baik tuan-ku, terjemahan besok pagi serah di-lakukan-biasa!"
+    },
+    {
+     "speaker": "Zeynep:",
+     "text": "Bak, sen de broşür gibi konuşmaya başladın!",
+     "id": "Lihat, kamu juga mulai ngomong kayak brosur!",
+     "literal": "lihat-lah, kamu juga brosur seperti berbicara-ke mulai-lampau-kamu!"
+    }
+   ],
+   "notes": [
+    "**Basıldı, yapılacak, çekildi** — pasif dibentuk dengan menyisipkan akhiran di antara batang dan kala: *bas-ıl-dı* (dicetak), *yap-ıl-acak* (akan dibuat), *çek-il-di* (diambil). Setelah itu kalanya berjalan seperti biasa. Dalam terjemahan harfiah unit ini, pasif ditulis **di-**.",
+    "**Senin tarafından, Köprü Turizm tarafından** — pelaku dalam kalimat pasif disebut dengan **tarafından** (\"dari pihak\"). Dengan kata ganti, *taraf* diberi posesif: *benim tarafımdan* (olehku), *senin tarafından* (olehmu), *onun tarafından* (olehnya). Pola ini terasa resmi; dalam obrolan orang Turki lebih suka kalimat aktif.",
+    "**Ödenir, alınır** — batang yang berakhir vokal cukup ditambah **-n** (*öde- → ödenir*), batang yang berakhir *-l* memakai **-in/-ın/-un/-ün** (*al- → alınır*). Semua batang lain memakai **-il/-ıl/-ul/-ül**.",
+    "**Dahil edilmez, teslim edilir** — kata kerja gabungan dengan *etmek* menjadi *edilmek*: huruf *t* melunak jadi *d* di depan vokal. *Dahil etmek* (memasukkan) → *dahil edilmek* (dimasukkan).",
+    "**Konuşulmaz, çekilmez** — pasif aorist sangkalan adalah bentuk baku untuk aturan dan kebiasaan umum: \"(di sini) orang tidak …\". Kalimat Indonesia seperti \"dilarang bicara keras\" paling alami diterjemahkan dengan bentuk ini.",
+    "**Açıldı, bilinirse** — *açılmak* bisa berarti \"dibuka\" (oleh seseorang) atau \"terbuka\" dengan sendirinya: *Kapı açıldı.* *Bilinirse* = *bil-in-ir-se*: pasif + aorist + kondisional dari unit 10, \"kalau diketahui\"."
+   ],
+   "grammars": [
+    {
+     "title": "Membentuk pasif",
+     "body": [
+      "Pilihan akhiran bergantung pada bunyi terakhir batang kata kerja. Vokalnya mengikuti keselarasan empat arah (*ı, i, u, ü*)."
+     ],
+     "table": {
+      "head": [
+       "Batang berakhir",
+       "Akhiran",
+       "Contoh",
+       "Arti"
+      ],
+      "rows": [
+       [
+        "huruf mati (bukan *l*)",
+        "*-il / -ıl / -ul / -ül*",
+        "*yapmak → yapılmak, içmek → içilmek, görmek → görülmek*",
+        "dibuat, diminum, dilihat"
+       ],
+       [
+        "vokal",
+        "*-n*",
+        "*ödemek → ödenmek, okumak → okunmak, beklemek → beklenmek*",
+        "dibayar, dibaca, ditunggu"
+       ],
+       [
+        "*-l*",
+        "*-in / -ın / -un / -ün*",
+        "*almak → alınmak, bilmek → bilinmek, bulmak → bulunmak*",
+        "dibeli, diketahui, ditemukan"
+       ],
+       [
+        "*etmek*",
+        "*edilmek*",
+        "*dahil etmek → dahil edilmek, teslim etmek → teslim edilmek*",
+        "dimasukkan, diserahkan"
+       ],
+       [
+        "khusus",
+        "*-n*",
+        "*yemek → yenmek, demek → denmek*",
+        "dimakan, dikatakan"
+       ],
+       [
+        "vokal batang luluh",
+        "*-il*",
+        "*çevirmek → çevrilmek*",
+        "diterjemahkan"
+       ]
+      ]
+     },
+     "after": [
+      "*Çevirmek* kehilangan vokal *i* keduanya: *çevrildi, çevrilecek*. Begitu pula *kıvırmak → kıvrılmak*."
+     ]
+    },
+    {
+     "title": "Pasif dalam semua kala",
+     "body": [
+      "Akhiran pasif selalu menempel langsung ke batang; semua akhiran kala dan pribadi datang sesudahnya."
+     ],
+     "table": {
+      "head": [
+       "Kala",
+       "Contoh",
+       "Arti"
+      ],
+      "rows": [
+       [
+        "aorist",
+        "*Akşam yemekleri ayrıca ödenir.*",
+        "Makan malam dibayar terpisah."
+       ],
+       [
+        "aorist sangkalan",
+        "*Bahşişler dahil edilmez.*",
+        "Tip tidak dimasukkan."
+       ],
+       [
+        "*-iyor*",
+        "*Yemekler şimdi hazırlanıyor.*",
+        "Makanannya sedang disiapkan."
+       ],
+       [
+        "*-di*",
+        "*Fotoğraf Çamlıca'da çekildi.*",
+        "Fotonya diambil di Çamlıca."
+       ],
+       [
+        "*-ecek*",
+        "*Çeviri Budi tarafından yapılacak.*",
+        "Terjemahan akan dikerjakan oleh Budi."
+       ],
+       [
+        "*-miş*",
+        "*Bu bina üç yüz yıl önce yapılmış.*",
+        "Konon gedung ini dibangun tiga ratus tahun lalu."
+       ],
+       [
+        "*-ebil*",
+        "*Bilet internetten alınabilir.*",
+        "Tiket bisa dibeli lewat internet."
+       ]
+      ]
+     }
+    }
+   ]
+  },
+  {
+   "title": "Dialog kedua — Hamamda",
+   "intro": "Sabtu, 3 April. Emre mengajak Budi ke sebuah hamam tua di dekat Kadıköy. Budi belum pernah masuk hamam dan tidak tahu apa yang harus dilakukan di dalam.",
+   "lines": [
+    {
+     "speaker": "Emre:",
+     "text": "İşte hamam! Bu bina üç yüz yıl önce yapılmış.",
+     "id": "Ini dia hamamnya! Katanya gedung ini dibangun tiga ratus tahun lalu.",
+     "literal": "inilah hamam! ini gedung tiga ratus tahun lalu di-buat-konon."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "İçeride ne giyilir? Ben daha önce hiç hamama gitmedim.",
+     "id": "Di dalam pakai apa? Aku belum pernah ke hamam.",
+     "literal": "dalam-di apa di-pakai-biasa? aku lagi sebelum sama-sekali hamam-ke pergi-tidak-lampau-saya."
+    },
+    {
+     "speaker": "Emre:",
+     "text": "Peştamal giyilir. Burada tamamen soyunulmaz, merak etme.",
+     "id": "Pakai kain peştamal. Di sini orang nggak telanjang bulat, tenang aja.",
+     "literal": "peştamal di-pakai-biasa. di-sini sepenuhnya di-lepas-baju-tidak-biasa, khawatir-jangan."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Oh, iyi. Sonra ne yapılır?",
+     "id": "Oh, syukurlah. Terus ngapain?",
+     "literal": "oh, baik. lalu apa di-lakukan-biasa?"
+    },
+    {
+     "speaker": "Emre:",
+     "text": "Önce göbek taşının üstünde terlenir, sonra kese yapılır.",
+     "id": "Pertama berkeringat dulu di atas batu pusar, lalu digosok dengan kese.",
+     "literal": "dulu pusar batu-nya-punya atas-nya-di di-keringat-biasa, lalu kese di-buat-biasa."
+    },
+    {
+     "speaker": "Tellak:",
+     "text": "Buyur abi, şuraya uzan. Kese biraz sert olabilir.",
+     "id": "Silakan, Mas, berbaring di sini. Gosokannya mungkin agak kasar.",
+     "literal": "silakan kakak, situ-ke berbaring-lah. kese sedikit kasar jadi-bisa-biasa."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Ay! Derim de mi soyuluyor?",
+     "id": "Aduh! Kulitku juga ikut dikupas?",
+     "literal": "aduh! kulit-ku juga apakah di-kupas-sedang?"
+    },
+    {
+     "speaker": "Tellak:",
+     "text": "Yok abi, sadece kirler çıkarılıyor. Bak, ne kadar çok!",
+     "id": "Nggak, Mas, cuma dakinya yang diangkat. Lihat, banyak banget!",
+     "literal": "tidak kakak, hanya daki-jamak di-keluarkan-sedang. lihat-lah, betapa banyak!"
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Çok utandım! Oysa her gün duş alıyorum.",
+     "id": "Malu banget aku! Padahal tiap hari aku mandi.",
+     "literal": "sangat malu-lampau-saya! padahal setiap hari pancuran sedang-ambil-saya."
+    },
+    {
+     "speaker": "Emre:",
+     "text": "Herkes öyle der! Şimdi köpük masajı yapılacak, sonra çay içilir.",
+     "id": "Semua orang juga bilang begitu! Sekarang pijat busa, habis itu minum teh.",
+     "literal": "semua-orang begitu berkata-biasa! sekarang busa pijat-nya di-buat-akan, lalu teh di-minum-biasa."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Bundan sonra her ay hamama gelinir, değil mi?",
+     "id": "Mulai sekarang kita ke hamam tiap bulan, ya?",
+     "literal": "ini-dari setelah setiap bulan hamam-ke di-datang-biasa, bukan kah?"
+    }
+   ],
+   "notes": [
+    "**Ne giyilir? Ne yapılır?** — pertanyaan dengan pasif aorist adalah cara paling wajar untuk menanyakan kebiasaan atau aturan: \"biasanya (orang) pakai apa?\". Jawabannya juga pasif: *Peştamal giyilir.*",
+    "**Soyunulmaz, terlenir, gelinir** — kata kerja tanpa objek pun bisa dipasifkan. Hasilnya **pasif impersonal**, tanpa subjek sama sekali: *terlenir* \"(orang) berkeringat\", *gelinir* \"(orang) datang\". Bahasa Indonesia biasanya memakai \"kita\" atau \"orang\" di sini.",
+    "**Soyunulmaz** — *soyunmak* (melepas pakaian) sudah berakhiran *-n* refleksif (unit 14), jadi pasifnya mendapat *-ul* lagi: *soyun-ul-maz*. Bandingkan *soyulmak* (dikupas, dirampok) di *Derim de mi soyuluyor?*",
+    "**Yapılmış** — *-miş* dari unit 2 dipakai karena Emre tidak menyaksikan pembangunannya: ia hanya tahu dari cerita. Pasif dan *-miş* sangat sering bersanding dalam kalimat sejarah.",
+    "**Kirler çıkarılıyor** — *çıkarmak* (mengeluarkan) → *çıkarılmak* (dikeluarkan). Kata *kir* (daki, kotoran) sering dijamakkan dalam percakapan. *Duş almak* = mandi dengan pancuran (\"mengambil pancuran\").",
+    "**Abi, buyur** — pegawai hamam, tukang cukur, dan pedagang menyapa pelanggan laki-laki dengan *abi* (kakak, dari *ağabey*) dan beralih ke *sen*. Untuk pelanggan perempuan: *abla*."
+   ],
+   "grammars": [
+    {
+     "title": "Pasif impersonal",
+     "body": [
+      "Dari kata kerja yang tidak punya objek, pasif menghasilkan kalimat tanpa subjek. Maknanya \"orang (biasanya) …\" atau, dalam bentuk sangkalan, sebuah larangan halus."
+     ],
+     "table": {
+      "head": [
+       "Kata kerja",
+       "Pasif impersonal",
+       "Arti"
+      ],
+      "rows": [
+       [
+        "*konuşmak*",
+        "*Camide yüksek sesle konuşulmaz.*",
+        "Di masjid orang tidak bicara keras."
+       ],
+       [
+        "*girmek*",
+        "*Buradan girilir.*",
+        "Masuknya lewat sini."
+       ],
+       [
+        "*gelmek*",
+        "*Hamama her ay gelinir.*",
+        "Ke hamam (orang) datang tiap bulan."
+       ],
+       [
+        "*terlemek*",
+        "*Önce terlenir.*",
+        "Pertama-tama (orang) berkeringat."
+       ],
+       [
+        "*soyunmak*",
+        "*Tamamen soyunulmaz.*",
+        "(Orang) tidak telanjang bulat."
+       ],
+       [
+        "*oturmak*",
+        "*Buraya oturulmaz.*",
+        "Di sini tidak boleh duduk."
+       ],
+       [
+        "*gitmek*",
+        "*Oraya vapurla gidilir.*",
+        "Ke sana (orang) naik vapur."
+       ]
+      ]
+     },
+     "after": [
+      "Sesudah akhiran pasif, kata kerja impersonal selalu berbentuk orang ketiga tunggal: *gidilir*, tidak pernah *gidilirler*."
+     ]
+    }
+   ]
+  }
+ ],
+ "sections": [
+  {
+   "title": "Membaca papan dan tanda",
+   "blocks": [
+    {
+     "type": "p",
+     "text": "Papan pengumuman di Turki penuh dengan pasif aorist. Begitu kamu mengenali akhiran *-ılır, -ilmez, -nır*, separuh tanda di jalan akan terbaca tanpa kamus."
+    },
+    {
+     "type": "tabel",
+     "head": [
+      "Tanda",
+      "Arti harfiah",
+      "Maksudnya"
+     ],
+     "rows": [
+      [
+       "*Park yapılmaz.*",
+       "parkir tidak dibuat",
+       "Dilarang parkir."
+      ],
+      [
+       "*Sigara içilmez.*",
+       "rokok tidak diminum",
+       "Dilarang merokok."
+      ],
+      [
+       "*Girilmez.*",
+       "tidak dimasuki",
+       "Dilarang masuk."
+      ],
+      [
+       "*Kredi kartı kabul edilir.*",
+       "kartu kredi diterima",
+       "Bisa bayar dengan kartu kredit."
+      ],
+      [
+       "*Paket servis yapılır.*",
+       "layanan paket dibuat",
+       "Melayani pesan antar."
+      ],
+      [
+       "*Anahtar yapılır.*",
+       "kunci dibuat",
+       "Terima duplikat kunci."
+      ],
+      [
+       "*Kapılar 09.00'da açılır.*",
+       "pintu-pintu dibuka pukul 9",
+       "Buka pukul 09.00."
+      ]
+     ]
+    },
+    {
+     "type": "p",
+     "text": "Perhatikan *sigara içmek*: dalam bahasa Turki rokok \"diminum\", bukan \"diisap\". Karena itu larangannya *Sigara içilmez*, atau yang lebih keras, *Sigara içmek yasaktır*."
+    },
+    {
+     "type": "kotak",
+     "title": "Kiat membaca tanda",
+     "items": [
+      "Cari akhiran sesudah batang: *-ıl-, -il-, -ul-, -ül-, -ın-, -in-, -n-* hampir selalu berarti pasif.",
+      "*-mez/-maz* di akhir tanda = larangan halus; *yasaktır* = larangan tegas.",
+      "Di pintu toko kamu akan melihat *İtiniz* (dorong) dan *Çekiniz* (tarik) — itu perintah sopan, bukan pasif.",
+      "Tanda *Kapalıdır* (tutup) dan *Açıktır* (buka) memakai *-dır* resmi, bukan pasif."
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Hamam",
+   "blocks": [
+    {
+     "type": "p",
+     "text": "Hamam adalah pemandian uap warisan Romawi dan Bizantium yang disempurnakan di masa Utsmani. Dulu hamam juga tempat bergaul: kaum perempuan datang seharian membawa makanan, dan calon pengantin dimandikan bersama teman-temannya."
+    },
+    {
+     "type": "tabel",
+     "head": [
+      "Türkçe",
+      "Cara baca",
+      "Bahasa Indonesia"
+     ],
+     "rows": [
+      [
+       "peştamal",
+       "pesy-ta-MAL",
+       "kain kotak-kotak untuk menutup badan"
+      ],
+      [
+       "kese",
+       "ke-SE",
+       "sarung tangan kasar untuk menggosok daki"
+      ],
+      [
+       "köpük masajı",
+       "kö-PÜK ma-sa-JI",
+       "pijat busa sabun"
+      ],
+      [
+       "göbek taşı",
+       "gö-BEK ta-SYI",
+       "batu marmer panas di tengah ruangan"
+      ],
+      [
+       "kurna",
+       "kur-NA",
+       "bak marmer tempat air mengalir"
+      ],
+      [
+       "tas",
+       "tas",
+       "mangkuk logam untuk menyiram air"
+      ],
+      [
+       "nalın",
+       "na-LIN",
+       "bakiak kayu"
+      ],
+      [
+       "tellak",
+       "tel-LAK",
+       "petugas yang menggosok dan memijat (laki-laki)"
+      ]
+     ]
+    },
+    {
+     "type": "kotak",
+     "title": "Adab di hamam",
+     "items": [
+      "Laki-laki dan perempuan mandi terpisah: di bagian yang berbeda atau pada jam yang berbeda.",
+      "Peştamal tetap dipakai sepanjang waktu; di bagian perempuan petugasnya disebut *natır*.",
+      "Kese boleh ditolak kalau kulitmu sensitif: *Kese istemiyorum, sadece köpük lütfen.*",
+      "Sesudah mandi, orang akan menyapamu *Sıhhatler olsun!* (semoga sehat); jawablah *Sağ olun!*"
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Ulangan berjenjang — unit 10",
+   "blocks": [
+    {
+     "type": "p",
+     "text": "Tutup kolom Turki, baca terjemahan Indonesianya, lalu susun kembali kalimatnya dari ingatan."
+    },
+    {
+     "type": "tabel",
+     "head": [
+      "Bahasa Indonesia",
+      "Türkçe"
+     ],
+     "rows": [
+      [
+       "Selamat hari raya, Bu Hatice. Kalau Ibu izinkan, saya cium tangan Ibu.",
+       "*Bayramınız mübarek olsun, Hatice Hanım. İzin verirseniz elinizi öpeyim.*"
+      ],
+      [
+       "Kalau sempat, lihat Ulu Cami dan Yeşil Türbe, jangan sampai nggak.",
+       "*Vaktin olursa Ulu Cami'yi ve Yeşil Türbe'yi mutlaka gör.*"
+      ],
+      [
+       "Ke Uludağ? Kalau turun salju, jalannya ditutup, hati-hati ya.",
+       "*Uludağ'a mı? Eğer kar yağarsa yollar kapanır, dikkat edin.*"
+      ],
+      [
+       "Kalau gitu besok pagi kami cek prakiraan cuaca. Kalaupun kereta gantungnya nggak jalan, kami keliling kota.",
+       "*O zaman sabah hava durumuna bakarız. Teleferik çalışmasa bile şehirde gezeriz.*"
+      ],
+      [
+       "Kalau kamu nggak bangun pagi, aku yang bangunin, kayak pas sahur.",
+       "*Erken kalkmazsan ben seni kaldırırım, sahurdaki gibi.*"
+      ]
+     ]
+    }
+   ]
+  }
+ ],
+ "vocab": [
+  {
+   "tr": "broşür",
+   "baca": "bro-SYÜR",
+   "id": "brosur"
+  },
+  {
+   "tr": "basmak",
+   "baca": "bas-MAK",
+   "id": "mencetak; menginjak (pasif *basılmak*)"
+  },
+  {
+   "tr": "çeviri",
+   "baca": "ce-vi-RI",
+   "id": "terjemahan (dari *çevirmek*)"
+  },
+  {
+   "tr": "tarafından",
+   "baca": "ta-ra-fın-DAN",
+   "id": "oleh (dalam kalimat pasif)"
+  },
+  {
+   "tr": "dahil etmek",
+   "baca": "da-HIL et-MEK",
+   "id": "memasukkan, mengikutsertakan (pasif *dahil edilmek*)"
+  },
+  {
+   "tr": "ayrıca",
+   "baca": "ay-rı-JA",
+   "id": "secara terpisah; selain itu"
+  },
+  {
+   "tr": "ödemek",
+   "baca": "ö-de-MEK",
+   "id": "membayar (pasif *ödenmek*)"
+  },
+  {
+   "tr": "giriş",
+   "baca": "gi-RISY",
+   "id": "masuk; pintu masuk; tiket masuk"
+  },
+  {
+   "tr": "bahşiş",
+   "baca": "bah-SYISY",
+   "id": "tip, uang rokok"
+  },
+  {
+   "tr": "şoför",
+   "baca": "syo-FÖR",
+   "id": "sopir"
+  },
+  {
+   "tr": "gelenek",
+   "baca": "ge-le-NEK",
+   "id": "tradisi (*geleneği*)"
+  },
+  {
+   "tr": "kapak",
+   "baca": "ka-PAK",
+   "id": "sampul; tutup (*kapağı*)"
+  },
+  {
+   "tr": "fotoğraf çekmek",
+   "baca": "fo-too-RAF cek-MEK",
+   "id": "memotret (pasif *çekilmek*)"
+  },
+  {
+   "tr": "namaz kılmak",
+   "baca": "na-MAZ kıl-MAK",
+   "id": "salat, menunaikan salat"
+  },
+  {
+   "tr": "yüksek sesle",
+   "baca": "yük-SEK ses-LE",
+   "id": "dengan suara keras"
+  },
+  {
+   "tr": "kural",
+   "baca": "ku-RAL",
+   "id": "aturan"
+  },
+  {
+   "tr": "düzenlemek",
+   "baca": "dü-zen-le-MEK",
+   "id": "mengatur, menyelenggarakan"
+  },
+  {
+   "tr": "teslim etmek",
+   "baca": "tes-LIM et-MEK",
+   "id": "menyerahkan (pasif *teslim edilmek*)"
+  },
+  {
+   "tr": "bina",
+   "baca": "bi-NA",
+   "id": "gedung, bangunan"
+  },
+  {
+   "tr": "soyunmak",
+   "baca": "so-yun-MAK",
+   "id": "melepas pakaian"
+  },
+  {
+   "tr": "terlemek",
+   "baca": "ter-le-MEK",
+   "id": "berkeringat"
+  },
+  {
+   "tr": "uzanmak",
+   "baca": "u-zan-MAK",
+   "id": "berbaring; menjulurkan badan"
+  },
+  {
+   "tr": "deri",
+   "baca": "de-RI",
+   "id": "kulit"
+  },
+  {
+   "tr": "kir",
+   "baca": "kir",
+   "id": "daki, kotoran"
+  },
+  {
+   "tr": "utanmak",
+   "baca": "u-tan-MAK",
+   "id": "malu (*-den utanmak* malu karena)"
+  }
+ ],
+ "exercises": [
+  {
+   "prompt": "Terjemahkan ke bahasa Turki dengan kalimat pasif.",
+   "items": [
+    "Makan malam dibayar terpisah.",
+    "Di sini dilarang merokok.",
+    "Foto ini diambil di Çamlıca.",
+    "Brosurnya akan diterjemahkan oleh Budi.",
+    "Di masjid orang tidak bicara keras.",
+    "Di hamam orang memakai peştamal."
+   ]
+  },
+  {
+   "prompt": "Isi titik-titik dengan bentuk pasif yang tepat. Petunjuk ada di dalam kurung.",
+   "items": [
+    "Kahvaltı fiyata dahil ____. (etmek, pasif aorist)",
+    "Bu kitap Orhan Pamuk tarafından ____. (yazmak, pasif lampau)",
+    "Boğaz turu için ayrı bilet ____. (almak, pasif aorist)",
+    "Broşürler yarın ____. (göndermek, pasif akan)",
+    "Kapılar saat dokuzda ____. (açmak, pasif aorist)",
+    "Bu mağazada Türkçe ve İngilizce ____. (konuşmak, pasif aorist)",
+    "Yemekler şimdi ____. (hazırlamak, pasif sedang)"
+   ]
+  },
+  {
+   "prompt": "Ubah kalimat aktif menjadi pasif dan hilangkan pelakunya.",
+   "items": [
+    "Rehber programı hazırladı.",
+    "Garson masaları temizliyor.",
+    "Selim Bey broşürleri yarın gönderecek.",
+    "İnsanlar burada çay içer.",
+    "Tellak keseyi yaptı.",
+    "Herkes bu kuralları bilir."
+   ]
+  },
+  {
+   "prompt": "Susun jadi kalimat yang benar.",
+   "items": [
+    "içilmez / burada / sigara",
+    "ödenir / ayrıca / yemekleri / akşam",
+    "çekildi / fotoğraf / Çamlıca'da / bu",
+    "tarafından / düzenlenir / program / Köprü Turizm",
+    "giyilir / peştamal / hamamda"
+   ]
+  }
+ ],
+ "answers": [
+  "Akşam yemekleri ayrıca ödenir. — Burada sigara içilmez. — Bu fotoğraf Çamlıca'da çekildi. — Broşür Budi tarafından çevrilecek. — Camide yüksek sesle konuşulmaz. — Hamamda peştamal giyilir.",
+  "edilir — yazıldı — alınır — gönderilecek — açılır — konuşulur — hazırlanıyor",
+  "Program hazırlandı. — Masalar temizleniyor. — Broşürler yarın gönderilecek. — Burada çay içilir. — Kese yapıldı. — Bu kurallar bilinir.",
+  "Burada sigara içilmez. — Akşam yemekleri ayrıca ödenir. — Bu fotoğraf Çamlıca'da çekildi. — Program Köprü Turizm tarafından düzenlenir. — Hamamda peştamal giyilir."
+ ]
+}

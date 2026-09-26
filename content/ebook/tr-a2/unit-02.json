@@ -1,0 +1,673 @@
+{
+ "title": "Katanya begitu — kabar tak disaksikan -miş",
+ "title_target": "Kapalıçarşı'daki Hakan evlenmiş!",
+ "goal": "Menyampaikan kabar yang hanya kamu dengar atau baca dengan *-miş* (*evlenmiş, çıkmışlar*), menyatakan rasa kaget saat baru sadar (*unutmuşum!*), bertanya dan menyangkal (*güzel miymiş?, söylememiş*), dan membedakannya dari *-di* yang kamu saksikan sendiri.",
+ "bekal": [
+  "mengonjugasikan *-miş* untuk semua orang, termasuk sangkalan *-memiş* dan tanya *-miş mi?*",
+  "memasang *-(y)mış* pada kata benda dan kata sifat: *öğretmenmiş, hızlıymış, varmış, güzel miymiş?*",
+  "memilih *-di* (aku melihatnya sendiri) atau *-miş* (katanya, ternyata) sesuai sumber informasi"
+ ],
+ "dialogs": [
+  {
+   "title": "Dialog — Hakan evlenmiş!",
+   "intro": "Kamis, 14 Januari 2027. Jam istirahat di kantin sekolah bahasa Kadıköy. Sofia dari Italia dan Yuki dari Jepang, teman sekelas baru Budi di tingkat 2, sedang minum teh ketika Sofia datang membawa kabar hangat.",
+   "lines": [
+    {
+     "speaker": "Sofia:",
+     "text": "Duydunuz mu? Kapalıçarşı'daki Hakan evlenmiş!",
+     "id": "Kalian sudah dengar? Hakan yang di Kapalıçarşı katanya menikah!",
+     "literal": "dengar-lampau-kalian apakah? Kapalıçarşı-di-yang Hakan menikah-konon!"
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Hakan mı? Atkıcı Hakan mı? Ne zaman evlenmiş?",
+     "id": "Hakan? Hakan si penjual syal? Kapan nikahnya?",
+     "literal": "Hakan apakah? syal-penjual Hakan apakah? apa waktu menikah-konon?"
+    },
+    {
+     "speaker": "Sofia:",
+     "text": "Geçen ay evlenmiş. Düğün Trabzon'da olmuş.",
+     "id": "Katanya bulan lalu. Pestanya di Trabzon.",
+     "literal": "lewat bulan menikah-konon. pesta-nikah Trabzon-di terjadi-konon."
+    },
+    {
+     "speaker": "Yuki:",
+     "text": "Kim söyledi? Sen düğüne gitmedin, değil mi?",
+     "id": "Siapa yang bilang? Kamu kan nggak datang ke pestanya?",
+     "literal": "siapa bilang-lampau? kamu pesta-nikah-ke pergi-tidak-lampau-kamu, bukan kah?"
+    },
+    {
+     "speaker": "Sofia:",
+     "text": "Gitmedim tabii. Kuzeni anlattı, o da çarşıda çalışıyor.",
+     "id": "Ya nggak lah. Sepupunya yang cerita, dia juga kerja di pasar itu.",
+     "literal": "pergi-tidak-lampau-saya tentu. sepupu-nya cerita-lampau, dia juga pasar-di sedang-bekerja."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "İnanmıyorum! Ekimde bana \"Kız arkadaşım yok\" dedi.",
+     "id": "Masa sih! Bulan Oktober dia bilang ke aku, \"Aku nggak punya pacar.\"",
+     "literal": "sedang-percaya-tidak-saya! Oktober-di saya-ke \"perempuan teman-ku tidak-ada\" kata-lampau."
+    },
+    {
+     "speaker": "Yuki:",
+     "text": "Belki o zaman yoktu. Kızla kasımda tanışmışlar.",
+     "id": "Mungkin waktu itu memang belum ada. Katanya mereka kenalan bulan November.",
+     "literal": "mungkin itu waktu tidak-ada-lampau. perempuan-dengan November-di berkenalan-konon-mereka."
+    },
+    {
+     "speaker": "Sofia:",
+     "text": "Evet, kasımda tanışmışlar, bir ay sonra da evlenmişler!",
+     "id": "Iya, kenalan bulan November, sebulan kemudian langsung nikah!",
+     "literal": "ya, November-di berkenalan-konon-mereka, satu bulan sesudah juga menikah-konon-mereka!"
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Bir ayda mı? Çok hızlıymış!",
+     "id": "Dalam sebulan? Cepat banget, ya!",
+     "literal": "satu bulan-di apakah? sangat cepat-ternyata!"
+    },
+    {
+     "speaker": "Yuki:",
+     "text": "Peki kız kim? Güzel miymiş?",
+     "id": "Terus ceweknya siapa? Katanya cantik nggak?",
+     "literal": "baiklah perempuan siapa? cantik apakah-konon?"
+    },
+    {
+     "speaker": "Sofia:",
+     "text": "Öğretmenmiş. Fotoğrafını gördüm, çok güzel.",
+     "id": "Katanya guru. Aku sudah lihat fotonya, cantik banget.",
+     "literal": "guru-konon. foto-nya-nya lihat-lampau-saya, sangat cantik."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Bende de Hakan'ın bir fotoğrafı var. Ay, telefonumu evde unutmuşum!",
+     "id": "Aku juga punya foto Hakan. Aduh, ponselku ketinggalan di rumah!",
+     "literal": "saya-di juga Hakan-punya satu foto-nya ada. aduh, telepon-ku-nya rumah-di lupa-ternyata-saya!"
+    },
+    {
+     "speaker": "Yuki:",
+     "text": "Yine mi? Sen her şeyi unutuyorsun!",
+     "id": "Lagi? Kamu tuh lupa segala hal!",
+     "literal": "lagi apakah? kamu setiap hal-nya sedang-lupa-kamu!"
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Haklısın. Neyse, cumartesi çarşıya gideceğim, Hakan'ı tebrik edeceğim.",
+     "id": "Iya, benar. Ya sudah, Sabtu aku ke pasar, mau kasih selamat ke Hakan.",
+     "literal": "benar-kamu. sudahlah, Sabtu pasar-ke akan-pergi-saya, Hakan-nya ucapan-selamat akan-lakukan-saya."
+    },
+    {
+     "speaker": "Sofia:",
+     "text": "Güzel fikir! Ama yarın sınav var, onu unutma!",
+     "id": "Ide bagus! Tapi besok ada ujian, yang itu jangan sampai lupa!",
+     "literal": "bagus ide! tapi besok ujian ada, itu-nya lupa-jangan!"
+    }
+   ],
+   "notes": [
+    "**Evlenmiş** — akhiran *-miş* menandai kabar yang **tidak kamu saksikan sendiri**: kamu mendengarnya, membacanya, atau menyimpulkannya. *Hakan evlendi* = aku tahu pasti (misalnya datang ke pestanya); *Hakan evlenmiş* = katanya Hakan menikah. Dalam terjemahan harfiah kita tulis **-konon**; kalau artinya \"ternyata\" (baru sadar), kita tulis **-ternyata**.",
+    "**Kapalıçarşı'daki Hakan** — *-ki* sesudah lokatif mengubah keterangan tempat menjadi sifat: *çarşıda* (di pasar) → *çarşıdaki* (yang di pasar). *Evdeki kedi* = kucing yang di rumah, *İstanbul'daki arkadaşım* = temanku yang di İstanbul.",
+    "**Tanışmışlar, evlenmişler** — untuk *onlar*, *-ler* dipasang sesudah *-miş*: *tanışmışlar*. Kata kerja resiprokal *tanışmak* dan *evlenmek* sama-sama memakai *ile* (-le/-la): *kızla tanışmışlar*, *Deniz'le evlenmek*.",
+    "**Öğretmenmiş. Fotoğrafını gördüm, çok güzel.** — perhatikan Sofia berganti bentuk dalam satu napas: pekerjaan si gadis ia **dengar** (*-miş*), fotonya ia **lihat sendiri** (*-di*), dan kecantikannya ia nilai sendiri sekarang (tanpa akhiran). Itulah logika *-miş*: sumber informasinya, bukan waktunya.",
+    "**Çok hızlıymış! / Güzel miymiş?** — *-miş* juga menempel pada kata sifat dan kata benda sebagai *-(y)mış*: *hızlı-y-mış*, *öğretmen-miş*. Dalam pertanyaan, *mi* berdiri sendiri dan *-ymiş* menempel padanya: *güzel miymiş?*, *orada mıymış?*",
+    "**Telefonumu evde unutmuşum!** — *-mişim* untuk diri sendiri terdengar aneh kalau artinya \"katanya\"; artinya justru **baru sadar, kaget**: \"eh, ternyata aku lupa!\" Budi tidak menyadari saat ia meninggalkan ponselnya — ia baru mendapati akibatnya sekarang. *Ay!* adalah seruan kaget sehari-hari."
+   ],
+   "grammars": [
+    {
+     "title": "Konjugasi -miş",
+     "body": [
+      "Akhiran *-miş* punya empat wujud menurut keselarasan vokal: *-mış, -miş, -muş, -müş*. Sesudahnya menyusul akhiran orang seperti pada kata sifat (*-im, -sin, -iz…*)."
+     ],
+     "table": {
+      "head": [
+       "Orang",
+       "almak",
+       "gelmek",
+       "okumak",
+       "görmek"
+      ],
+      "rows": [
+       [
+        "ben",
+        "*almışım*",
+        "*gelmişim*",
+        "*okumuşum*",
+        "*görmüşüm*"
+       ],
+       [
+        "sen",
+        "*almışsın*",
+        "*gelmişsin*",
+        "*okumuşsun*",
+        "*görmüşsün*"
+       ],
+       [
+        "o",
+        "*almış*",
+        "*gelmiş*",
+        "*okumuş*",
+        "*görmüş*"
+       ],
+       [
+        "biz",
+        "*almışız*",
+        "*gelmişiz*",
+        "*okumuşuz*",
+        "*görmüşüz*"
+       ],
+       [
+        "siz",
+        "*almışsınız*",
+        "*gelmişsiniz*",
+        "*okumuşsunuz*",
+        "*görmüşsünüz*"
+       ],
+       [
+        "onlar",
+        "*almışlar*",
+        "*gelmişler*",
+        "*okumuşlar*",
+        "*görmüşler*"
+       ]
+      ]
+     },
+     "after": [
+      "Sangkalan: *-me/-ma* sebelum *-miş*: *almamış, gelmemiş, okumamış, görmemiş*.",
+      "Tanya: *gelmiş mi?* — *gelmiş miyim, gelmiş misin, gelmiş mi, gelmiş miyiz, gelmiş misiniz, gelmişler mi?*"
+     ]
+    },
+    {
+     "title": "-(y)mış pada kata benda dan sifat",
+     "body": [
+      "Sama seperti lampau *-(y)dı*: sesudah vokal muncul *-y-*. Artinya \"katanya\" atau \"ternyata\"."
+     ],
+     "table": {
+      "head": [
+       "Dasar",
+       "Dengan -miş",
+       "Arti"
+      ],
+      "rows": [
+       [
+        "*öğretmen*",
+        "*öğretmenmiş*",
+        "katanya (dia) guru"
+       ],
+       [
+        "*hızlı*",
+        "*hızlıymış*",
+        "ternyata cepat"
+       ],
+       [
+        "*Trabzon'da*",
+        "*Trabzon'daymış*",
+        "katanya di Trabzon"
+       ],
+       [
+        "*var*",
+        "*varmış*",
+        "katanya ada"
+       ],
+       [
+        "*yok*",
+        "*yokmuş*",
+        "katanya tidak ada"
+       ],
+       [
+        "*değil*",
+        "*değilmiş*",
+        "katanya bukan"
+       ],
+       [
+        "*güzel mi?*",
+        "*güzel miymiş?*",
+        "katanya cantik tidak?"
+       ]
+      ]
+     }
+    }
+   ]
+  },
+  {
+   "title": "Dialog kedua — Boğaz'da yunuslar çıkmış",
+   "intro": "Kamis malam yang sama. Di ruang tengah rumah Fatma Hanım, Budi (yang ponselnya akhirnya ketemu di atas kulkas) membaca berita di layar sementara Fatma merajut.",
+   "lines": [
+    {
+     "speaker": "Budi:",
+     "text": "Fatma Hanım, bakın! Haberde yazıyor: Boğaz'da yunuslar çıkmış.",
+     "id": "Bu Fatma, lihat! Di berita katanya ada lumba-lumba muncul di Bosporus.",
+     "literal": "Fatma Nyonya, lihatlah! berita-di sedang-tertulis: Bosporus-di lumba-lumba-jamak muncul-konon."
+    },
+    {
+     "speaker": "Fatma:",
+     "text": "Öyle mi? Nerede çıkmışlar?",
+     "id": "Oh ya? Muncul di mana?",
+     "literal": "begitu apakah? di-mana muncul-konon-mereka?"
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Bebek'te. Bir balıkçı bu sabah videoya çekmiş.",
+     "id": "Di Bebek. Ada nelayan yang merekamnya tadi pagi.",
+     "literal": "Bebek-di. satu nelayan ini pagi video-ke tarik-konon."
+    },
+    {
+     "speaker": "Fatma:",
+     "text": "Ben gençken Boğaz'da çok yunus gördüm. Kendi gözümle!",
+     "id": "Waktu muda aku sering lihat lumba-lumba di Bosporus. Dengan mata kepalaku sendiri!",
+     "literal": "saya muda-ketika Bosporus-di banyak lumba-lumba lihat-lampau-saya. sendiri mata-ku-dengan!"
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Yani eskiden çok yunus varmış?",
+     "id": "Jadi dulu memang banyak lumba-lumba, ya?",
+     "literal": "jadi dulu banyak lumba-lumba ada-ternyata?"
+    },
+    {
+     "speaker": "Fatma:",
+     "text": "Vardı tabii! Sonra deniz kirlendi. Haberde başka ne yazıyor?",
+     "id": "Ada dong! Terus lautnya jadi kotor. Di berita tulisannya apa lagi?",
+     "literal": "ada-lampau tentu! lalu laut kotor-jadi-lampau. berita-di lain apa sedang-tertulis?"
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Bir uzman konuşmuş. Denizde artık çok balık varmış, yunuslar onun için gelmiş.",
+     "id": "Ada ahli yang bicara. Katanya sekarang di laut banyak ikan lagi, makanya lumba-lumba datang.",
+     "literal": "satu ahli bicara-konon. laut-di kini banyak ikan ada-konon, lumba-lumba-jamak itu-punya untuk datang-konon."
+    },
+    {
+     "speaker": "Fatma:",
+     "text": "İnşallah doğrudur. Ama ben internet haberlerine pek inanmam.",
+     "id": "Insyaallah benar. Tapi aku nggak terlalu percaya berita internet.",
+     "literal": "insyaallah benar-pasti. tapi saya internet berita-jamak-nya-ke terlalu percaya-tidak-biasa-saya."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Ama video var, Fatma Hanım. Balıkçı yalan söylememiş!",
+     "id": "Tapi ada videonya, Bu. Nelayannya ternyata nggak bohong!",
+     "literal": "tapi video ada, Fatma Nyonya. nelayan bohong bilang-tidak-ternyata!"
+    },
+    {
+     "speaker": "Fatma:",
+     "text": "Peki peki. Yunuslar bugün de gelmiş mi?",
+     "id": "Iya, iya. Hari ini lumba-lumbanya datang lagi nggak?",
+     "literal": "baiklah baiklah. lumba-lumba-jamak hari-ini juga datang-konon apakah?"
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Yazmıyor. Pazar sabahı Bebek'e gidelim mi?",
+     "id": "Nggak ditulis. Minggu pagi kita ke Bebek, yuk?",
+     "literal": "sedang-tertulis-tidak. Minggu pagi-nya Bebek-ke pergi-mari apakah?"
+    }
+   ],
+   "notes": [
+    "**Haberde yazıyor: … çıkmışlar** — berita adalah sumber kedua, jadi isinya diteruskan dengan *-miş*. *Haberde yazıyor* (harfiah \"di berita sedang menulis\") = di berita tertulis; bentuk *-iyor* dipakai karena tulisannya masih ada di depan mata.",
+    "**Ben gençken … gördüm. Kendi gözümle!** — Fatma **saksi mata**, jadi ia memakai *-di*. *Kendi gözümle* (dengan mataku sendiri) adalah penegasan khas saksi. *Gençken* = *genç* + *-ken*: \"ketika muda\", sama polanya dengan *oradayken* di unit 1.",
+    "**Varmış? — Vardı tabii!** — Budi menyimpulkan dari cerita Fatma, jadi *varmış* (\"ternyata ada, ya\"). Fatma, yang mengalaminya, menjawab *vardı*. Tanya-jawab ini memperlihatkan bahwa kala yang sama bisa punya dua bentuk, tergantung siapa yang bicara.",
+    "**Balıkçı yalan söylememiş** — sangkalan *-miş* = *-me/-ma* + *-miş*: *söyle-me-miş*. Di sini *-miş* adalah **simpulan dari bukti** (videonya ada), jadi artinya \"ternyata tidak bohong\". *Yalan söylemek* = berbohong, harfiahnya \"mengucapkan dusta\".",
+    "**Bebek'te, Bebek'e** — *Bebek* adalah kawasan tepi Bosporus yang terkenal dengan kafe dan tamannya; kata biasanya berarti \"bayi\". Nama diri selalu diberi apostrof sebelum akhiran: *Bebek'te, Trabzon'da, Boğaz'a*.",
+    "**İnşallah doğrudur … pek inanmam** — *-dur* pada kata sifat memberi nada dugaan kuat atau pernyataan umum (\"mestinya benar\"). *Pek* + sangkalan = \"tidak terlalu\": *pek inanmam* (aku tak terlalu percaya). *İnanmak* meminta datif: *haberlere inanmak*, *sana inanıyorum*."
+   ],
+   "grammars": [
+    {
+     "title": "-di atau -miş? Tanyakan sumbernya",
+     "body": [
+      "Waktu kejadiannya sama-sama lampau. Yang membedakan adalah **dari mana kamu tahu**."
+     ],
+     "table": {
+      "head": [
+       "Sumber informasi",
+       "Bentuk",
+       "Contoh",
+       "Arti"
+      ],
+      "rows": [
+       [
+        "melihat sendiri",
+        "*-di*",
+        "*Boğaz'da yunus gördüm.*",
+        "Aku melihat lumba-lumba di Bosporus."
+       ],
+       [
+        "mendengar dari orang",
+        "*-miş*",
+        "*Hakan evlenmiş.*",
+        "Katanya Hakan menikah."
+       ],
+       [
+        "membaca berita",
+        "*-miş*",
+        "*Yunuslar çıkmış.*",
+        "Katanya lumba-lumba muncul."
+       ],
+       [
+        "menyimpulkan dari bukti",
+        "*-miş*",
+        "*Yağmur yağmış.*",
+        "(Jalan basah →) Rupanya hujan."
+       ],
+       [
+        "baru sadar, kaget",
+        "*-miş*",
+        "*Telefonumu unutmuşum!*",
+        "Ternyata ponselku ketinggalan!"
+       ],
+       [
+        "dongeng",
+        "*-miş*",
+        "*Bir varmış, bir yokmuş…*",
+        "Alkisah, pada zaman dahulu…"
+       ]
+      ]
+     }
+    }
+   ]
+  }
+ ],
+ "sections": [
+  {
+   "title": "-di atau -miş: siapa saksinya?",
+   "blocks": [
+    {
+     "type": "p",
+     "text": "Bahasa Indonesia tidak mewajibkan kita menyebut sumber berita; cukup tambahkan \"katanya\" kalau mau. Bahasa Turki mewajibkannya lewat akhiran. Bacalah pasangan kalimat berikut dan bayangkan situasi pembicaranya."
+    },
+    {
+     "type": "tabel",
+     "head": [
+      "Dengan -di",
+      "Dengan -miş",
+      "Bedanya"
+     ],
+     "rows": [
+      [
+       "*Emre maçı kazandı.*",
+       "*Emre maçı kazanmış.*",
+       "aku di stadion / aku dengar kabarnya"
+      ],
+      [
+       "*Kar yağdı.*",
+       "*Kar yağmış.*",
+       "aku melihat salju turun / pagi ini semua putih"
+      ],
+      [
+       "*Mehmet Amca hastaydı.*",
+       "*Mehmet Amca hastaymış.*",
+       "aku menjenguknya / tetangga bercerita"
+      ],
+      [
+       "*Anahtarı unuttum.*",
+       "*Anahtarı unutmuşum!*",
+       "aku ingat lupa / baru sadar di depan pintu"
+      ],
+      [
+       "*Toplantı iptal oldu.*",
+       "*Toplantı iptal olmuş.*",
+       "aku ikut memutuskan / aku baca di grup"
+      ],
+      [
+       "*Yunuslar gelmedi.*",
+       "*Yunuslar gelmemiş.*",
+       "aku menunggu di Bebek / kata nelayan"
+      ]
+     ]
+    },
+    {
+     "type": "p",
+     "text": "Kalau ragu, tanyakan pada dirimu: \"apakah aku ada di sana dan menyadarinya saat itu terjadi?\" Kalau ya, *-di*. Kalau tidak, *-miş*. Memakai *-di* untuk gosip terdengar seolah kamu mengaku ikut menyaksikan — dan bisa membuatmu ikut bertanggung jawab atas kabar itu."
+    },
+    {
+     "type": "kotak",
+     "title": "Dongeng dimulai dengan -miş",
+     "items": [
+      "Semua dongeng Turki dibuka dengan *Bir varmış, bir yokmuş…* — \"konon ada, konon tiada\", padanan \"alkisah\" atau \"once upon a time\".",
+      "Seluruh cerita lalu berjalan dengan *-miş*: *Bir padişah varmış. Üç kızı varmış…* (Konon ada seorang raja. Ia punya tiga putri…)",
+      "Penutup tradisionalnya: *Onlar ermiş muradına, biz çıkalım kerevetine.* (Mereka tercapai cita-citanya, kita naik ke dipan mereka.)",
+      "Cerita jenaka **Nasreddin Hoca** juga selalu dikisahkan dengan *-miş*: *Hoca bir gün eşeğine ters binmiş…*"
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Dedikodu — bergosip ala Turki",
+   "blocks": [
+    {
+     "type": "p",
+     "text": "*Dedikodu* (gosip) adalah olahraga nasional di mana-mana, dan bahasa Turki punya perangkat lengkap untuk itu. Hampir semuanya berpasangan dengan *-miş*."
+    },
+    {
+     "type": "tabel",
+     "head": [
+      "Ungkapan",
+      "Arti",
+      "Contoh"
+     ],
+     "rows": [
+      [
+       "*Duydun mu?*",
+       "Sudah dengar?",
+       "*Duydun mu? Hakan evlenmiş!*"
+      ],
+      [
+       "*Aramızda kalsın…*",
+       "Antara kita saja, ya…",
+       "*Aramızda kalsın, Mehmet Amca kızmış.*"
+      ],
+      [
+       "*güya*",
+       "konon (tapi aku ragu)",
+       "*Güya hasta olmuş!*"
+      ],
+      [
+       "*galiba*",
+       "sepertinya, kayaknya",
+       "*Galiba evde değilmiş.*"
+      ],
+      [
+       "*meğer*",
+       "ternyata",
+       "*Meğer o da biliyormuş!*"
+      ],
+      [
+       "*söylenenlere göre*",
+       "menurut kabar yang beredar",
+       "*Söylenenlere göre düğün çok güzelmiş.*"
+      ],
+      [
+       "*dedikodu yapmak*",
+       "bergosip",
+       "*Dedikodu yapmayın!*"
+      ]
+     ]
+    },
+    {
+     "type": "kotak",
+     "title": "Güya, galiba, meğer",
+     "items": [
+      "*Güya* (dari bahasa Persia) mengandung **curiga**: *Güya çalışıyormuş* = katanya sih kerja (padahal aku nggak percaya).",
+      "*Galiba* (dari bahasa Arab, serumpun dengan *ghalib*) hanya menandai **dugaan** yang cukup kuat, tanpa nada sinis: *Galiba yağmur yağacak.*",
+      "*Meğer* dipakai saat fakta baru terungkap dan hampir selalu diikuti *-miş*: *Meğer Hakan evliymiş!* (Ternyata Hakan sudah menikah!)",
+      "Pepatah: *Söz gümüşse sükût altındır.* — Kalau kata-kata itu perak, diam adalah emas. Cocok untuk yang terlalu rajin bergosip."
+     ]
+    }
+   ]
+  }
+ ],
+ "vocab": [
+  {
+   "tr": "evlenmek",
+   "baca": "ev-len-MEK",
+   "id": "menikah (+ *ile*: *Deniz'le evlenmek*)"
+  },
+  {
+   "tr": "düğün",
+   "baca": "düü-ÜN",
+   "id": "pesta pernikahan"
+  },
+  {
+   "tr": "atkı",
+   "baca": "at-KI",
+   "id": "syal (*atkıcı*: penjual syal)"
+  },
+  {
+   "tr": "kuzen",
+   "baca": "ku-ZEN",
+   "id": "sepupu"
+  },
+  {
+   "tr": "inanmak",
+   "baca": "i-nan-MAK",
+   "id": "percaya (+ datif)"
+  },
+  {
+   "tr": "yalan söylemek",
+   "baca": "ya-LAN söy-le-MEK",
+   "id": "berbohong"
+  },
+  {
+   "tr": "tanışmak",
+   "baca": "ta-nısy-MAK",
+   "id": "berkenalan (+ *ile*)"
+  },
+  {
+   "tr": "hızlı",
+   "baca": "hız-LI",
+   "id": "cepat"
+  },
+  {
+   "tr": "kız arkadaş",
+   "baca": "kız ar-ka-DASY",
+   "id": "pacar (perempuan); teman perempuan"
+  },
+  {
+   "tr": "unutmak",
+   "baca": "u-nut-MAK",
+   "id": "lupa, melupakan (+ akusatif)"
+  },
+  {
+   "tr": "tebrik etmek",
+   "baca": "teb-RIK et-MEK",
+   "id": "memberi selamat (+ akusatif)"
+  },
+  {
+   "tr": "fikir",
+   "baca": "fi-KIR",
+   "id": "ide, pendapat (akusatif *fikri*)"
+  },
+  {
+   "tr": "sınav",
+   "baca": "sı-NAV",
+   "id": "ujian"
+  },
+  {
+   "tr": "haber",
+   "baca": "ha-BER",
+   "id": "berita, kabar"
+  },
+  {
+   "tr": "yunus",
+   "baca": "yu-NUS",
+   "id": "lumba-lumba"
+  },
+  {
+   "tr": "Boğaz",
+   "baca": "boo-AZ",
+   "id": "Selat Bosporus (*boğaz*: tenggorokan, selat)"
+  },
+  {
+   "tr": "çıkmak",
+   "baca": "cık-MAK",
+   "id": "keluar; muncul"
+  },
+  {
+   "tr": "balıkçı",
+   "baca": "ba-lık-CI",
+   "id": "nelayan; penjual ikan"
+  },
+  {
+   "tr": "çekmek",
+   "baca": "cek-MEK",
+   "id": "menarik; memotret, merekam (*videoya çekmek*)"
+  },
+  {
+   "tr": "genç",
+   "baca": "genc",
+   "id": "muda; anak muda (*gençken*: waktu muda)"
+  },
+  {
+   "tr": "kendi",
+   "baca": "ken-DI",
+   "id": "sendiri (*kendi gözümle*)"
+  },
+  {
+   "tr": "uzman",
+   "baca": "uz-MAN",
+   "id": "ahli, pakar"
+  },
+  {
+   "tr": "kirlenmek",
+   "baca": "kir-len-MEK",
+   "id": "menjadi kotor, tercemar"
+  },
+  {
+   "tr": "artık",
+   "baca": "ar-TIK",
+   "id": "kini, mulai sekarang; (+ sangkalan) tidak lagi"
+  },
+  {
+   "tr": "dedikodu",
+   "baca": "de-di-ko-DU",
+   "id": "gosip (*dedikodu yapmak*)"
+  }
+ ],
+ "exercises": [
+  {
+   "prompt": "Terjemahkan ke bahasa Turki.",
+   "items": [
+    "Katanya Hakan sudah menikah.",
+    "Katanya pestanya di Trabzon.",
+    "Aduh, ternyata kunciku ketinggalan!",
+    "Katanya dia guru.",
+    "Katanya cantik nggak?",
+    "Nelayan itu ternyata tidak bohong."
+   ]
+  },
+  {
+   "prompt": "Isi titik-titik dengan bentuk *-miş* yang tepat.",
+   "items": [
+    "Duydun mu? Emre dün maçta ____. (düşmek)",
+    "Hakan'ın eşi çok ____. (güzel)",
+    "Ay, cüzdanımı evde ____! (unutmak, ben)",
+    "Haberde yazıyor: Boğaz'da yunuslar ____. (görünmek)",
+    "Balıkçı yalan ____. (söylemek, sangkalan)",
+    "Yunuslar bugün de gelmiş ____? (partikel tanya)",
+    "Eskiden Boğaz'da çok yunus ____. (var)"
+   ]
+  },
+  {
+   "prompt": "Kamu tidak menyaksikannya sendiri: ubah *-di* menjadi *-miş*.",
+   "items": [
+    "Hakan evlendi.",
+    "Düğün Trabzon'da oldu.",
+    "Emre sınavı geçti.",
+    "Onlar kasımda tanıştılar.",
+    "Ayşe Hanım gelmedi.",
+    "Kız öğretmendi."
+   ]
+  },
+  {
+   "prompt": "Susun jadi kalimat yang benar.",
+   "items": [
+    "evlenmiş / Hakan / Kapalıçarşı'daki",
+    "tanışmışlar / kasımda / kızla",
+    "unutmuşum / evde / telefonumu",
+    "gördüm / çok / Boğaz'da / yunus / gençken",
+    "söylememiş / balıkçı / yalan"
+   ]
+  }
+ ],
+ "answers": [
+  "Hakan evlenmiş. — Düğün Trabzon'daymış. — Ay, anahtarımı unutmuşum! — Öğretmenmiş. — Güzel miymiş? — Balıkçı yalan söylememiş.",
+  "düşmüş — güzelmiş — unutmuşum — görünmüş — söylememiş — mi — varmış",
+  "Hakan evlenmiş. — Düğün Trabzon'da olmuş. — Emre sınavı geçmiş. — Onlar kasımda tanışmışlar. — Ayşe Hanım gelmemiş. — Kız öğretmenmiş.",
+  "Kapalıçarşı'daki Hakan evlenmiş. — Kızla kasımda tanışmışlar. — Telefonumu evde unutmuşum. — Gençken Boğaz'da çok yunus gördüm. — Balıkçı yalan söylememiş."
+ ]
+}

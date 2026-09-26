@@ -1,0 +1,707 @@
+{
+ "title": "Katanya dia… — kalimat laporan",
+ "title_target": "Oteli bugün aramanı söyledi.",
+ "goal": "Menyampaikan ucapan orang lain dengan *-diğini / -eceğini söyledi*, mengutip dengan *dedi ki* dan *diye*, meneruskan perintah dengan *-mesini söyledi*, dan menyatakan tujuan dengan *-sın diye*.",
+ "bekal": [
+  "meneruskan pesan telepon: *Yarın döneceğini söyledi*",
+  "meneruskan perintah dan permintaan: *Oteli aramanı söyledi, listeyi hazırlamanı istedi*",
+  "menjelaskan salah paham: *Kızgın olmadığını, sadece sınavı olduğunu söylüyor*"
+ ],
+ "dialogs": [
+  {
+   "title": "Dialog — Selim Bey aradı",
+   "intro": "Kamis, 13 Mei 2027, pukul lima sore. Zeynep baru kembali ke kantor sesudah seharian memandu rombongan. Selama ia keluar, Selim Bey menelepon dari Ankara dan menitipkan pesan kepada Budi.",
+   "lines": [
+    {
+     "speaker": "Zeynep:",
+     "text": "Budi, ben yokken biri aradı mı?",
+     "id": "Budi, pas aku nggak ada, ada yang telepon?",
+     "literal": "Budi, aku tidak-ada-ketika seseorang menelepon-lampau apakah?"
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Evet, Selim Bey aradı. Ankara'da olduğunu ve yarın döneceğini söyledi.",
+     "id": "Iya, Selim Bey telepon. Katanya dia lagi di Ankara dan besok kembali.",
+     "literal": "ya, Selim Tuan menelepon-lampau. Ankara-di bahwa-ada-nya dan besok bahwa-akan-kembali-nya berkata-lampau."
+    },
+    {
+     "speaker": "Zeynep:",
+     "text": "Başka bir şey dedi mi?",
+     "id": "Dia bilang hal lain?",
+     "literal": "lain satu hal berkata-lampau apakah?"
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Dedi ki: 'Hendra Bey'in grubu ekimde geliyor, otel işini Zeynep halletsin.'",
+     "id": "Dia bilang begini: \"Rombongan Pak Hendra datang bulan Oktober, urusan hotel biar Zeynep yang beresin.\"",
+     "literal": "berkata-lampau bahwa: 'Hendra Tuan-punya rombongan-nya oktober-di sedang-datang, hotel urusan-nya-nya Zeynep bereskan-biar-dia.'"
+    },
+    {
+     "speaker": "Zeynep:",
+     "text": "Yani otelle benim konuşmamı istiyor, öyle mi?",
+     "id": "Jadi dia mau aku yang bicara dengan hotel, begitu?",
+     "literal": "jadi hotel-dengan aku-punya berbicara-ku-nya sedang-ingin, begitu apakah?"
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Evet. Sultanahmet'teki oteli bugün aramanı söyledi.",
+     "id": "Iya. Dia minta kamu telepon hotel yang di Sultanahmet hari ini.",
+     "literal": "ya. Sultanahmet-di-yang hotel-nya hari-ini menelepon-mu-nya berkata-lampau."
+    },
+    {
+     "speaker": "Zeynep:",
+     "text": "Bugün mü? Saat beşi geçti bile! Başka ne dedi?",
+     "id": "Hari ini? Sudah lewat jam lima, lho! Dia bilang apa lagi?",
+     "literal": "hari-ini apakah? jam lima-nya lewat-lampau bahkan! lain apa berkata-lampau?"
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Fiyat listesini hazırlamanı da istedi. Hendra Bey fiyatları çok beğenmiş.",
+     "id": "Dia juga minta kamu siapkan daftar harga. Katanya Pak Hendra suka banget sama harganya.",
+     "literal": "harga daftar-nya-nya menyiapkan-mu-nya juga ingin-lampau. Hendra Tuan harga-jamak-nya sangat suka-konon."
+    },
+    {
+     "speaker": "Zeynep:",
+     "text": "Güzel haber! Peki, ofise ne zaman geleceğini söyledi mi?",
+     "id": "Kabar bagus! Terus, dia bilang kapan datang ke kantor?",
+     "literal": "bagus kabar! baik, kantor-ke kapan bahwa-akan-datang-nya berkata-lampau apakah?"
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Yarın öğleden sonra geleceğini söyledi. Unutmayayım diye hepsini deftere yazdım.",
+     "id": "Katanya besok siang. Supaya nggak lupa, semuanya kutulis di buku.",
+     "literal": "besok tengah-hari-dari setelah bahwa-akan-datang-nya berkata-lampau. lupa-tidak-biar-saya sambil-berkata semua-nya-nya buku-catatan-ke tulis-lampau-saya."
+    },
+    {
+     "speaker": "Zeynep:",
+     "text": "Aferin sana! Grubun kaç kişi olacağını da söyledi mi?",
+     "id": "Pintar kamu! Dia juga bilang rombongannya berapa orang?",
+     "literal": "bagus kamu-ke! rombongan-punya berapa orang bahwa-akan-jadi-nya juga berkata-lampau apakah?"
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Tam bilmediğini, ama kırk kişi civarında olacağını söyledi.",
+     "id": "Katanya dia belum tahu pasti, tapi sekitar empat puluh orang.",
+     "literal": "persis bahwa-tahu-tidak-nya, tapi empat-puluh orang sekitar-nya-di bahwa-akan-jadi-nya berkata-lampau."
+    },
+    {
+     "speaker": "Zeynep:",
+     "text": "Kırk kişi mi? Hemen oteli arıyorum, odaları başkasına vermesinler diye.",
+     "id": "Empat puluh orang? Aku telepon hotelnya sekarang juga, biar kamarnya nggak dikasih ke orang lain.",
+     "literal": "empat-puluh orang apakah? segera hotel-nya sedang-menelepon-saya, kamar-jamak-nya orang-lain-ke beri-tidak-biar-mereka sambil-berkata."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Ben ne yapayım?",
+     "id": "Aku ngapain?",
+     "literal": "aku apa lakukan-biar-saya?"
+    },
+    {
+     "speaker": "Zeynep:",
+     "text": "Sen de Selim Bey'e mesaj at: 'Zeynep oteli aradı, merak etmeyin' de.",
+     "id": "Kamu kirim pesan ke Selim Bey: bilang \"Zeynep sudah telepon hotel, Bapak jangan khawatir.\"",
+     "literal": "kamu juga Selim Tuan-ke pesan lempar-lah: 'Zeynep hotel-nya menelepon-lampau, khawatir-jangan-Anda' katakan-lah."
+    }
+   ],
+   "notes": [
+    "**Ankara'da olduğunu söyledi** — kalimat laporan dibentuk dari partisip *-dik* (unit 7) + posesif + akusatif: *ol-duğ-u-nu* \"bahwa ia ada\". Kalimat aslinya *\"Ankara'dayım\"* menjadi *Ankara'da olduğunu söyledi*. Dalam terjemahan harfiah unit ini bentuk itu ditulis **bahwa-…-nya**.",
+    "**Döneceğini, geleceğini, olacağını** — untuk masa depan, pakai *-ecek* + posesif + akusatif (unit 8): *\"Yarın döneceğim\"* → *yarın döneceğini söyledi*. Untuk kini dan lampau, keduanya memakai *-diğini*: *\"Geliyorum\"* dan *\"Geldim\"* sama-sama jadi *geldiğini*.",
+    "**Dedi ki: '…'** — cara paling mudah: kutip langsung sesudah *dedi ki* (dia berkata bahwa), seperti dalam bahasa lisan Indonesia \"dia bilang gini…\". Kata *ki* serapan dari bahasa Persia; ucapkan sebagai kata terpisah.",
+    "**Aramanı söyledi, hazırlamanı istedi** — perintah atau permintaan orang lain diteruskan dengan **-me + posesif + akusatif**, seperti *gelmeni istiyorum* di unit 11: *\"Oteli ara!\"* → *oteli aramanı söyledi* (dia menyuruhmu menelepon hotel).",
+    "**Beğenmiş** — Budi memakai *-miş* (unit 2) karena ia hanya mendengar kabar itu dari Selim Bey, bukan dari Pak Hendra sendiri. Bandingkan *beğendiğini söyledi*: sama artinya, tetapi sumbernya disebut jelas.",
+    "**Unutmayayım diye, vermesinler diye** — *diye* (\"sambil berkata\") sesudah bentuk perintah atau *-eyim* menyatakan **tujuan**: \"supaya\". *Unutmayayım diye yazdım* = aku menulisnya supaya tidak lupa; *vermesinler diye* = supaya mereka tidak memberikannya. Subjek kalimat tujuan boleh berbeda dari subjek kalimat utama."
+   ],
+   "grammars": [
+    {
+     "title": "Ujaran langsung ke tak langsung",
+     "body": [
+      "Kata kerja kutipan berubah menjadi *-diğini* (kini dan lampau) atau *-eceğini* (masa depan), dengan posesif sesuai pembicaranya. Kalimat *var*, *yok*, dan kalimat nominal memakai *olmak*."
+     ],
+     "table": {
+      "head": [
+       "Langsung",
+       "Tak langsung",
+       "Arti"
+      ],
+      "rows": [
+       [
+        "*\"Ankara'dayım.\"*",
+        "*Ankara'da olduğunu söyledi.*",
+        "Dia bilang dia di Ankara."
+       ],
+       [
+        "*\"Yarın döneceğim.\"*",
+        "*Yarın döneceğini söyledi.*",
+        "Dia bilang besok kembali."
+       ],
+       [
+        "*\"Fiyatları beğendim.\"*",
+        "*Fiyatları beğendiğini söyledi.*",
+        "Dia bilang dia suka harganya."
+       ],
+       [
+        "*\"Tam bilmiyorum.\"*",
+        "*Tam bilmediğini söyledi.*",
+        "Dia bilang dia tidak tahu pasti."
+       ],
+       [
+        "*\"Sınavım var.\"*",
+        "*Sınavı olduğunu söyledi.*",
+        "Dia bilang dia ada ujian."
+       ],
+       [
+        "*\"Kızgın değilim.\"*",
+        "*Kızgın olmadığını söyledi.*",
+        "Dia bilang dia tidak marah."
+       ],
+       [
+        "*\"Grup kırk kişi olacak.\"*",
+        "*Grubun kırk kişi olacağını söyledi.*",
+        "Dia bilang rombongannya empat puluh orang."
+       ],
+       [
+        "*\"Sen yorgunsun.\"*",
+        "*Benim yorgun olduğumu söyledi.*",
+        "Dia bilang aku capek."
+       ]
+      ]
+     },
+     "after": [
+      "Kalau subjek kalimat kutipan berbeda dari si pembicara, subjek itu diberi **genitif**: *Grubun … olacağını*, *benim yorgun olduğumu*, *Deniz'in kızgın olduğunu*."
+     ]
+    },
+    {
+     "title": "Perintah tak langsung",
+     "body": [
+      "Perintah diteruskan dengan *-me/-ma* + posesif orang yang disuruh + akusatif. Kata kerja pengantarnya *söylemek* (menyuruh) atau *istemek* (meminta)."
+     ],
+     "table": {
+      "head": [
+       "Yang disuruh",
+       "Bentuk",
+       "Contoh",
+       "Arti"
+      ],
+      "rows": [
+       [
+        "aku",
+        "*-memi*",
+        "*Oteli aramamı söyledi.*",
+        "Dia menyuruhku menelepon hotel."
+       ],
+       [
+        "kamu",
+        "*-meni*",
+        "*Oteli aramanı söyledi.*",
+        "Dia menyuruhmu menelepon hotel."
+       ],
+       [
+        "dia",
+        "*-mesini*",
+        "*Oteli aramasını söyledi.*",
+        "Dia menyuruhnya menelepon hotel."
+       ],
+       [
+        "kami",
+        "*-memizi*",
+        "*Oteli aramamızı söyledi.*",
+        "Dia menyuruh kami menelepon hotel."
+       ],
+       [
+        "kalian/Anda",
+        "*-menizi*",
+        "*Oteli aramanızı söyledi.*",
+        "Dia menyuruh kalian menelepon hotel."
+       ],
+       [
+        "mereka",
+        "*-melerini*",
+        "*Oteli aramalarını söyledi.*",
+        "Dia menyuruh mereka menelepon hotel."
+       ],
+       [
+        "larangan",
+        "*-memesini*",
+        "*Unutmamasını söyledi.*",
+        "Dia berpesan supaya dia tidak lupa."
+       ]
+      ]
+     }
+    }
+   ]
+  },
+  {
+   "title": "Dialog kedua — Deniz ne dedi?",
+   "intro": "Sabtu malam, 15 Mei. Emre mondar-mandir di kamar Budi dengan wajah kusut. Ia yakin Deniz sedang marah kepadanya, dan Budi terpaksa jadi penengah.",
+   "lines": [
+    {
+     "speaker": "Emre:",
+     "text": "Budi, Deniz bana kızgın galiba. Bu akşam görüşemeyeceğimizi söyledi.",
+     "id": "Budi, kayaknya Deniz marah sama aku. Dia bilang malam ini kita nggak bisa ketemu.",
+     "literal": "Budi, Deniz aku-ke marah rupanya. ini malam bahwa-saling-bertemu-tidak-bisa-akan-kami-nya berkata-lampau."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Tam olarak ne dedi? Kelimesi kelimesine söyle.",
+     "id": "Persisnya dia bilang apa? Ulangi kata per kata.",
+     "literal": "persis sebagai apa berkata-lampau? kata-nya kata-nya-ke katakan-lah."
+    },
+    {
+     "speaker": "Emre:",
+     "text": "'Bu akşam çalışmam lazım, yarın sınavım var' dedi, sonra telefonu kapattı.",
+     "id": "Dia bilang \"Malam ini aku harus belajar, besok aku ujian\", terus teleponnya ditutup.",
+     "literal": "'ini malam belajar-ku perlu, besok ujian-ku ada' berkata-lampau, lalu telepon-nya tutup-lampau."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Yani yarın sınavı olduğunu söyledi. Bunda kızgınlık yok ki!",
+     "id": "Berarti dia bilang besok dia ujian. Nggak ada marahnya di situ!",
+     "literal": "jadi besok ujian-nya bahwa-ada-nya berkata-lampau. ini-di kemarahan tidak-ada kok!"
+    },
+    {
+     "speaker": "Emre:",
+     "text": "Ama dün de bana 'Sen beni hiç dinlemiyorsun' dedi.",
+     "id": "Tapi kemarin dia juga bilang ke aku, \"Kamu nggak pernah dengerin aku.\"",
+     "literal": "tapi kemarin juga aku-ke 'kamu aku-nya sama-sekali mendengar-tidak-sedang-kamu' berkata-lampau."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Dur, Deniz'i arayayım. Alo Deniz? Emre senin ona kızgın olduğunu düşünüyor.",
+     "id": "Sebentar, aku telepon Deniz. Halo, Deniz? Emre mengira kamu marah sama dia.",
+     "literal": "berhenti-lah, Deniz-nya telepon-biar-saya. halo Deniz? Emre kamu-punya dia-ke bahwa-marah-ada-nya sedang-berpikir."
+    },
+    {
+     "speaker": "Deniz:",
+     "text": "Ne? Kızgın değilim! Ona sadece yarınki sınava çalıştığımı söyledim.",
+     "id": "Apa? Aku nggak marah! Aku cuma bilang ke dia kalau aku lagi belajar buat ujian besok.",
+     "literal": "apa? marah bukan-saya! dia-ke hanya besok-yang ujian-ke bahwa-belajar-ku-nya berkata-lampau-saya."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Peki, dün neden 'Beni hiç dinlemiyorsun' dedin?",
+     "id": "Terus, kemarin kenapa kamu bilang \"Kamu nggak pernah dengerin aku\"?",
+     "literal": "baik, kemarin kenapa 'aku-nya sama-sekali mendengar-tidak-sedang-kamu' berkata-lampau-kamu?"
+    },
+    {
+     "speaker": "Deniz:",
+     "text": "Sadece ben bağlama çalarken telefonuna bakmamasını söyledim, o kadar!",
+     "id": "Aku cuma bilang supaya dia nggak lihat ponsel waktu aku main bağlama, itu aja!",
+     "literal": "hanya aku bağlama memainkan-ketika telepon-nya-ke melihat-tidak-nya-nya berkata-lampau-saya, itu sebanyak!"
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Emre, duydun mu? Deniz kızgın olmadığını, sadece sınavı olduğunu söylüyor.",
+     "id": "Emre, dengar? Deniz bilang dia nggak marah, cuma ada ujian.",
+     "literal": "Emre, dengar-lampau-kamu apakah? Deniz marah bahwa-ada-tidak-nya, hanya ujian-nya bahwa-ada-nya sedang-berkata."
+    },
+    {
+     "speaker": "Emre:",
+     "text": "Oh be! O zaman yarın sınavdan sonra onu çiçekle bekleyeceğim.",
+     "id": "Fiuh! Kalau gitu besok habis ujian aku tunggu dia bawa bunga.",
+     "literal": "oh fiuh! itu waktu besok ujian-dari setelah dia-nya bunga-dengan akan-menunggu-saya."
+    }
+   ],
+   "notes": [
+    "**Görüşemeyeceğimizi söyledi** — semua akhiran bisa ditumpuk di dalam bentuk laporan: *görüş-eme-yeceğ-imiz-i* = bahwa kita tidak akan bisa bertemu. Urutannya: batang, *-eme* (tidak bisa), *-ecek*, posesif *-imiz*, akusatif *-i*.",
+    "**Kelimesi kelimesine** — kata per kata, persis. Kalau ingin kutipan persis, orang Turki biasanya memakai kutipan langsung + *dedi*; kalau cukup isinya, pakai *-diğini söyledi*.",
+    "**'…' dedi** — kutipan langsung boleh diletakkan sebelum *dedi*, tanpa *ki*: *'Sınavım var' dedi.* Ini urutan yang paling alami dalam bahasa Turki, karena kata kerja selalu di akhir.",
+    "**Senin ona kızgın olduğunu düşünüyor** — sesudah *düşünmek* (mengira), *sanmak* (menyangka), *bilmek* (tahu), dan *duymak* (mendengar), polanya sama dengan *söylemek*. Subjek kalimat laporan (*sen*) diberi genitif: *senin*.",
+    "**Bakmamasını söyledim** — larangan tak langsung: *\"Bakma!\"* → *bakmamasını söyledim* (aku bilang supaya dia tidak melihat). Pengingkar *-ma* ditambah akhiran *-ma* kata benda: *bak-ma-ma-sı-nı*.",
+    "**Yarınki, çalarken** — *-ki* mengubah keterangan waktu menjadi sifat: *yarınki sınav* (ujian besok), *dünkü maç* (pertandingan kemarin). *Çalarken* = ketika (sedang) memainkan, dari *-ken* di unit 9."
+   ],
+   "grammars": [
+    {
+     "title": "Dedi ki, diye, dan kawan-kawannya",
+     "body": [
+      "*Diye* adalah bentuk lama dari *demek* (\"sambil berkata\"). Ia merangkai kutipan dengan kata kerja lain dan juga menyatakan tujuan."
+     ],
+     "table": {
+      "head": [
+       "Pola",
+       "Contoh",
+       "Arti"
+      ],
+      "rows": [
+       [
+        "*dedi ki* + kutipan",
+        "*Dedi ki: \"Yarın gelirim.\"*",
+        "Dia bilang: \"Besok aku datang.\""
+       ],
+       [
+        "kutipan + *dedi*",
+        "*\"Sınavım var\" dedi.*",
+        "\"Aku ada ujian,\" katanya."
+       ],
+       [
+        "kutipan + *diye sordu*",
+        "*\"Kaç kişisiniz?\" diye sordu.*",
+        "Dia bertanya, \"Berapa orang?\""
+       ],
+       [
+        "*-diğini* + kata kerja lain",
+        "*Kızgın olduğunu sandım.*",
+        "Kukira dia marah."
+       ],
+       [
+        "*-sın diye* (tujuan)",
+        "*Unutmasın diye not yazdım.*",
+        "Kutulis catatan supaya dia tidak lupa."
+       ],
+       [
+        "*-eyim diye* (tujuan)",
+        "*Geç kalmayayım diye erken çıktım.*",
+        "Aku berangkat pagi supaya tidak terlambat."
+       ]
+      ]
+     }
+    }
+   ]
+  }
+ ],
+ "sections": [
+  {
+   "title": "Kata kerja pelapor",
+   "blocks": [
+    {
+     "type": "p",
+     "text": "*Söylemek* bukan satu-satunya kata kerja yang membawa kalimat *-diğini*. Semua kata kerja berikut memakai pola yang sama, jadi sekali kamu menguasai *-diğini söyledi*, kamu mendapat semuanya."
+    },
+    {
+     "type": "tabel",
+     "head": [
+      "Kata kerja",
+      "Contoh",
+      "Arti"
+     ],
+     "rows": [
+      [
+       "*söylemek*",
+       "*Geleceğini söyledi.*",
+       "Dia bilang akan datang."
+      ],
+      [
+       "*anlatmak*",
+       "*Nasıl tanıştıklarını anlattı.*",
+       "Dia menceritakan bagaimana mereka berkenalan."
+      ],
+      [
+       "*sormak*",
+       "*Ne zaman döneceğimi sordu.*",
+       "Dia menanyakan kapan aku kembali."
+      ],
+      [
+       "*duymak*",
+       "*Evlendiğini duydum.*",
+       "Aku dengar dia sudah menikah."
+      ],
+      [
+       "*bilmek*",
+       "*Haklı olduğunu biliyorum.*",
+       "Aku tahu kamu benar."
+      ],
+      [
+       "*sanmak*",
+       "*Kızgın olduğunu sandım.*",
+       "Kukira dia marah."
+      ],
+      [
+       "*düşünmek*",
+       "*Geç kalacağını düşünmedim.*",
+       "Aku tidak mengira dia akan terlambat."
+      ],
+      [
+       "*unutmak*",
+       "*Sınavım olduğunu unuttum.*",
+       "Aku lupa kalau aku ada ujian."
+      ]
+     ]
+    },
+    {
+     "type": "p",
+     "text": "Dalam kalimat tanya tak langsung, kata tanyanya tetap di tempat, dan kata kerjanya menjadi *-diğini/-eceğini*: *\"Ne zaman döneceksin?\"* → *Ne zaman döneceğimi sordu.*"
+    },
+    {
+     "type": "kotak",
+     "title": "Tiga langkah mengubah kalimat",
+     "items": [
+      "Tentukan kalanya: masa depan → *-eceğ-*, selain itu → *-diğ-*. Kalimat nominal dan *var/yok* memakai *ol-*: *olduğunu, olmadığını*.",
+      "Pasang posesif sesuai pelakunya: *-im, -in, -i, -imiz, -iniz, -leri*.",
+      "Tambahkan akusatif, lalu kata kerja pelapornya: *geleceğini söyledi, geldiğimi biliyor*.",
+      "Untuk perintah, lupakan kala: cukup *-me* + posesif + akusatif: *gelmesini söyledi*."
+     ]
+    }
+   ]
+  },
+  {
+   "title": "-miş atau -diğini?",
+   "blocks": [
+    {
+     "type": "p",
+     "text": "Di unit 2 kamu belajar *-miş* untuk kabar yang tidak kamu saksikan sendiri. Sekarang kamu punya cara kedua. Keduanya sama-sama melaporkan, tetapi bobotnya berbeda."
+    },
+    {
+     "type": "tabel",
+     "head": [
+      "Dengan -miş",
+      "Dengan -diğini",
+      "Bedanya"
+     ],
+     "rows": [
+      [
+       "*Selim Bey Ankara'daymış.*",
+       "*Selim Bey Ankara'da olduğunu söyledi.*",
+       "*-miş*: sumbernya tak disebut"
+      ],
+      [
+       "*Hendra Bey fiyatları beğenmiş.*",
+       "*Hendra Bey fiyatları beğendiğini söyledi.*",
+       "*-diğini*: jelas siapa yang bilang"
+      ],
+      [
+       "*Hakan evlenmiş.*",
+       "*Hakan'ın evlendiğini duydum.*",
+       "kabar angin vs. \"aku dengar\""
+      ],
+      [
+       "*Yarın kar yağacakmış.*",
+       "*Yarın kar yağacağını söylediler.*",
+       "ramalan cuaca, dua gaya"
+      ],
+      [
+       "*Deniz kızgın değilmiş.*",
+       "*Deniz kızgın olmadığını söyledi.*",
+       "*-miş* bisa terdengar lega atau heran"
+      ]
+     ]
+    },
+    {
+     "type": "kotak",
+     "title": "Kapan pakai yang mana",
+     "items": [
+      "Di kantor, saat meneruskan pesan telepon, pakai *-diğini söyledi*: atasanmu ingin tahu persis siapa yang berkata apa.",
+      "Dalam obrolan dan gosip, *-miş* lebih ringkas dan lebih hidup: *Evlenmiş!*",
+      "*-miş* juga bisa menandai kejutan pribadi (*Çok güzel olmuş!*), sedangkan *-diğini* selalu netral.",
+      "Menggabungkan keduanya juga lazim: *Hendra Bey gelecekmiş, Selim Bey öyle söyledi.*"
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Ulangan berjenjang — unit 13",
+   "blocks": [
+    {
+     "type": "p",
+     "text": "Tutup kolom Turki, baca terjemahan Indonesianya, lalu susun kembali kalimatnya dari ingatan."
+    },
+    {
+     "type": "tabel",
+     "head": [
+      "Bahasa Indonesia",
+      "Türkçe"
+     ],
+     "rows": [
+      [
+       "Iya. Aku mau potong rambut, sudah panjang banget.",
+       "*Evet. Saçımı kestirmek istiyorum, çok uzadı.*"
+      ],
+      [
+       "Di tempat kita, laki-laki selalu cukur jenggot di tukang cukur. Bapak itu datang tiap pagi.",
+       "*Bizde erkekler sakallarını hep berbere kestirir. Şu amca her sabah gelir.*"
+      ],
+      [
+       "Selesai, lihat cermin! Rambutmu dipotong tukang cukur terbaik se-Kadıköy.",
+       "*Bitti, aynaya bak! Saçını Kadıköy'ün en iyi berberine kestirdin.*"
+      ],
+      [
+       "Halo, layar ponselku pecah. Aku mau servis.",
+       "*Merhaba, telefonumun ekranı kırıldı. Tamir ettirmek istiyorum.*"
+      ],
+      [
+       "Aku jatuhkan di tangga di Karaköy. Layar sentuhnya juga nggak jalan.",
+       "*Karaköy'de merdivende düşürdüm. Dokunmatik de çalışmıyor.*"
+      ]
+     ]
+    }
+   ]
+  }
+ ],
+ "vocab": [
+  {
+   "tr": "aramak",
+   "baca": "a-ra-MAK",
+   "id": "menelepon; mencari"
+  },
+  {
+   "tr": "söylemek",
+   "baca": "söy-le-MEK",
+   "id": "mengatakan; menyuruh (*-mesini söylemek*)"
+  },
+  {
+   "tr": "demek",
+   "baca": "de-MEK",
+   "id": "berkata (*der, dedi*; *diye* sambil berkata, supaya)"
+  },
+  {
+   "tr": "dönmek",
+   "baca": "dön-MEK",
+   "id": "kembali, pulang; berbelok"
+  },
+  {
+   "tr": "halletmek",
+   "baca": "hal-let-MEK",
+   "id": "membereskan, menyelesaikan (urusan)"
+  },
+  {
+   "tr": "fiyat listesi",
+   "baca": "fi-YAT lis-te-SI",
+   "id": "daftar harga"
+  },
+  {
+   "tr": "beğenmek",
+   "baca": "bee-en-MEK",
+   "id": "suka, berkenan (+ akusatif)"
+  },
+  {
+   "tr": "defter",
+   "baca": "def-TER",
+   "id": "buku tulis, buku catatan"
+  },
+  {
+   "tr": "civarında",
+   "baca": "ji-va-rın-DA",
+   "id": "sekitar (*kırk kişi civarında* sekitar 40 orang)"
+  },
+  {
+   "tr": "başkası",
+   "baca": "basy-ka-SI",
+   "id": "orang lain (*başkasına* kepada orang lain)"
+  },
+  {
+   "tr": "mesaj atmak",
+   "baca": "me-SAZY at-MAK",
+   "id": "mengirim pesan"
+  },
+  {
+   "tr": "haber",
+   "baca": "ha-BER",
+   "id": "kabar, berita"
+  },
+  {
+   "tr": "kızgın",
+   "baca": "kız-GIN",
+   "id": "marah (sifat)"
+  },
+  {
+   "tr": "-e kızmak",
+   "baca": "kız-MAK",
+   "id": "marah pada (+ datif)"
+  },
+  {
+   "tr": "kelimesi kelimesine",
+   "baca": "ke-li-me-SI ke-li-me-si-NE",
+   "id": "kata per kata, persis"
+  },
+  {
+   "tr": "kapatmak",
+   "baca": "ka-pat-MAK",
+   "id": "menutup; mematikan"
+  },
+  {
+   "tr": "sınav",
+   "baca": "sı-NAV",
+   "id": "ujian"
+  },
+  {
+   "tr": "-e çalışmak",
+   "baca": "ca-lısy-MAK",
+   "id": "belajar untuk (+ datif: *sınava çalışmak*); bekerja"
+  },
+  {
+   "tr": "düşünmek",
+   "baca": "dü-syün-MEK",
+   "id": "berpikir; mengira"
+  },
+  {
+   "tr": "sanmak",
+   "baca": "san-MAK",
+   "id": "menyangka, mengira (*sanırım* kurasa)"
+  },
+  {
+   "tr": "duymak",
+   "baca": "duy-MAK",
+   "id": "mendengar"
+  },
+  {
+   "tr": "sormak",
+   "baca": "sor-MAK",
+   "id": "bertanya, menanyakan"
+  },
+  {
+   "tr": "yarınki",
+   "baca": "ya-rın-KI",
+   "id": "(yang) besok (*yarınki sınav* ujian besok)"
+  },
+  {
+   "tr": "çiçek",
+   "baca": "ci-CEK",
+   "id": "bunga"
+  },
+  {
+   "tr": "yanlış anlamak",
+   "baca": "yan-LISY an-la-MAK",
+   "id": "salah paham"
+  }
+ ],
+ "exercises": [
+  {
+   "prompt": "Terjemahkan ke bahasa Turki dengan kalimat laporan.",
+   "items": [
+    "Dia bilang dia ada di Ankara.",
+    "Selim Bey bilang besok dia akan kembali.",
+    "Dia menyuruhku menelepon hotel.",
+    "Deniz bilang dia tidak marah.",
+    "Emre mengira Deniz marah.",
+    "Aku menulis semuanya supaya tidak lupa."
+   ]
+  },
+  {
+   "prompt": "Isi titik-titik dengan bentuk yang tepat. Petunjuk ada di dalam kurung.",
+   "items": [
+    "Zeynep çok yorgun ____ söyledi. (olmak, -diğini)",
+    "Hendra Bey ekimde ____ söyledi. (gelmek, -eceğini)",
+    "Selim Bey bana raporu ____ söyledi. (yazmak, perintah tak langsung, aku)",
+    "Deniz, Emre'ye telefona ____ söyledi. (bakmak, larangan tak langsung, dia)",
+    "Ayşe Hanım sınavın zor ____ söyledi. (olmak, sangkalan, -diğini)",
+    "Emre \"Seni seviyorum\" ____. (demek, lampau)",
+    "Budi \"Kaç kişisiniz?\" ____ sordu. (demek, bentuk penghubung)"
+   ]
+  },
+  {
+   "prompt": "Ubah menjadi kalimat laporan dengan *söyledi*.",
+   "items": [
+    "Emre: \"Maça gidiyorum.\"",
+    "Zeynep: \"Yarın İzmir'e gideceğim.\"",
+    "Fatma Hanım: \"Çok yoruldum.\"",
+    "Deniz: \"Sınavım var.\"",
+    "Selim Bey (kepadaku): \"Geç kalma!\"",
+    "Ayşe Hanım (kepada kami): \"Ödevinizi getirin!\""
+   ]
+  },
+  {
+   "prompt": "Susun jadi kalimat yang benar.",
+   "items": [
+    "söyledi / döneceğini / yarın / Selim Bey",
+    "söyledi / aramamı / oteli",
+    "olmadığını / kızgın / Deniz / söyledi",
+    "diye / unutmayayım / yazdım / hepsini",
+    "sandı / olduğunu / Emre / kızgın / Deniz'in"
+   ]
+  }
+ ],
+ "answers": [
+  "Ankara'da olduğunu söyledi. — Selim Bey yarın döneceğini söyledi. — Oteli aramamı söyledi. — Deniz kızgın olmadığını söyledi. — Emre Deniz'in kızgın olduğunu sandı. — Unutmayayım diye hepsini yazdım.",
+  "olduğunu — geleceğini — yazmamı — bakmamasını — olmadığını — dedi — diye",
+  "Emre maça gittiğini söyledi. — Zeynep yarın İzmir'e gideceğini söyledi. — Fatma Hanım çok yorulduğunu söyledi. — Deniz sınavı olduğunu söyledi. — Selim Bey bana geç kalmamamı söyledi. — Ayşe Hanım ödevimizi getirmemizi söyledi.",
+  "Selim Bey yarın döneceğini söyledi. — Oteli aramamı söyledi. — Deniz kızgın olmadığını söyledi. — Unutmayayım diye hepsini yazdım. — Emre Deniz'in kızgın olduğunu sandı."
+ ]
+}

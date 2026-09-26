@@ -1,0 +1,700 @@
+{
+ "title": "Dulu sedang apa? — lampau berlangsung -iyordu",
+ "title_target": "Sen oradayken ne yapıyordun?",
+ "goal": "Menceritakan masa lampau dengan dua lapis: *-iyordu* untuk latar yang sedang berlangsung atau kebiasaan (*izliyordum, yağıyordu*), *-di* untuk kejadian yang menyela atau selesai (*aradım, gördü*), plus lampau kata benda *-(y)dı* (*uçaktaydım, yorgundum*).",
+ "bekal": [
+  "membentuk *-iyordu* untuk semua orang, termasuk sangkalan *-miyordu* dan tanya *-iyor muydun?*",
+  "memilih *-di* untuk kejadian dan *-iyordu* untuk latar dalam satu kalimat: *O sırada havai fişekleri izliyordum, telefonu duymadım.*",
+  "memakai lampau kata benda dan kata sifat: *Uçaktaydım. Çok yorgundum. İçeride başka bir sınıf vardı.*"
+ ],
+ "dialogs": [
+  {
+   "title": "Dialog — Sen oradayken ne yapıyordun?",
+   "intro": "Senin, 4 Januari 2027. Budi baru mendarat semalam dari libur tahun baru di Jakarta. Pagi ini ia sarapan di dapur Fatma Hanım, dan Emre sudah tak sabar mendengar ceritanya.",
+   "lines": [
+    {
+     "speaker": "Fatma:",
+     "text": "Hoş geldin oğlum! Seni çok özledik.",
+     "id": "Selamat datang, Nak! Kami kangen banget sama kamu.",
+     "literal": "senang datang-kamu anak-ku! kamu-nya sangat rindu-lampau-kami."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Hoş bulduk Fatma Hanım. Ben de sizi çok özledim.",
+     "id": "Terima kasih, Bu Fatma. Saya juga kangen sekali sama Ibu.",
+     "literal": "senang dapati-lampau-kami Fatma Nyonya. saya juga Anda-nya sangat rindu-lampau-saya."
+    },
+    {
+     "speaker": "Emre:",
+     "text": "Anlat bakalım! Sen oradayken ne yapıyordun?",
+     "id": "Ayo cerita! Waktu kamu di sana, kamu ngapain aja?",
+     "literal": "ceritakan mari-lihat! kamu di-sana-ketika apa sedang-lakukan-lampau-kamu?"
+    },
+    {
+     "speaker": "Budi:",
+     "text": "İlk hafta çok yorgundum. Her gün evde oturuyordum, uyuyordum.",
+     "id": "Minggu pertama aku capek banget. Tiap hari cuma duduk-duduk di rumah, tidur.",
+     "literal": "pertama minggu sangat lelah-lampau-saya. setiap hari di-rumah sedang-duduk-lampau-saya, sedang-tidur-lampau-saya."
+    },
+    {
+     "speaker": "Emre:",
+     "text": "Yılbaşı gecesi ne yapıyordun? Saat on ikide seni aradım ama açmadın.",
+     "id": "Malam tahun baru kamu lagi ngapain? Jam dua belas aku telepon, tapi nggak kamu angkat.",
+     "literal": "tahun-baru malam-nya apa sedang-lakukan-lampau-kamu? jam dua-belas-di kamu-nya telepon-lampau-saya tapi buka-tidak-lampau-kamu."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Saat on ikide mi? O sırada Monas'ta havai fişekleri izliyordum. Telefonu duymadım.",
+     "id": "Jam dua belas? Waktu itu aku lagi nonton kembang api di Monas. Teleponnya nggak kedengaran.",
+     "literal": "jam dua-belas-di apakah? itu saat-di Monas-di kembang-api-jamak-nya sedang-tonton-lampau-saya. telepon-nya dengar-tidak-lampau-saya."
+    },
+    {
+     "speaker": "Fatma:",
+     "text": "Hava nasıldı? Burada o gece kar yağıyordu.",
+     "id": "Cuacanya gimana? Di sini malam itu lagi turun salju.",
+     "literal": "udara bagaimana-lampau? di-sini itu malam salju sedang-turun-lampau."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Jakarta'da kar yağmaz ki! Orada her öğleden sonra yağmur yağıyordu.",
+     "id": "Di Jakarta mana ada salju, Bu! Di sana tiap sore hujan.",
+     "literal": "Jakarta-di salju turun-tidak-biasa kan! di-sana setiap siang-dari sesudah hujan sedang-turun-lampau."
+    },
+    {
+     "speaker": "Emre:",
+     "text": "Bir gün seni görüntülü aradım, bir şey yiyordun. Ne yiyordun öyle?",
+     "id": "Suatu hari aku video call kamu, kamu lagi makan sesuatu. Makan apa sih?",
+     "literal": "satu hari kamu-nya bergambar telepon-lampau-saya, satu sesuatu sedang-makan-lampau-kamu. apa sedang-makan-lampau-kamu begitu?"
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Nasi goreng yiyordum. Annem her sabah yapıyordu.",
+     "id": "Nasi goreng. Ibuku bikin tiap pagi.",
+     "literal": "nasi goreng sedang-makan-lampau-saya. ibu-ku setiap pagi sedang-buat-lampau."
+    },
+    {
+     "speaker": "Fatma:",
+     "text": "Annen çok sevindi mi, oğlum?",
+     "id": "Ibumu senang sekali ya, Nak?",
+     "literal": "ibu-mu sangat gembira-lampau apakah, anak-ku?"
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Çok sevindi. Havalimanında bekliyordu, beni gördü ve ağladı.",
+     "id": "Senang banget. Dia menunggu di bandara, lihat saya, terus nangis.",
+     "literal": "sangat gembira-lampau. bandara-nya-di sedang-tunggu-lampau, saya-nya lihat-lampau dan menangis-lampau."
+    },
+    {
+     "speaker": "Emre:",
+     "text": "Peki, orada Türkçe çalışıyor muydun?",
+     "id": "Terus, di sana kamu belajar bahasa Turki nggak?",
+     "literal": "baiklah, di-sana Turki sedang-belajar apakah-lampau-kamu?"
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Çalışıyordum tabii! Her akşam Türk dizisi izliyordum.",
+     "id": "Belajar dong! Tiap malam aku nonton serial Turki.",
+     "literal": "sedang-belajar-lampau-saya tentu! setiap malam Turki serial-nya sedang-tonton-lampau-saya."
+    },
+    {
+     "speaker": "Fatma:",
+     "text": "Aferin oğlum. Hadi, çayın soğuyor!",
+     "id": "Pintar, Nak. Ayo, tehmu keburu dingin!",
+     "literal": "bagus anak-ku. ayo, teh-mu sedang-dingin!"
+    }
+   ],
+   "notes": [
+    "**Ne yapıyordun?** — *-iyordu* = *-iyor* (sedang) + *-du* (lampau): sesuatu yang **sedang berlangsung pada saat itu** di masa lampau. Terjemahan harfiahnya kita tulis \"sedang-…-lampau\": *yapıyordun* \"sedang-lakukan-lampau-kamu\". Sesudah *-yor* akhirannya selalu *-du, -dum, -dun…* karena vokal *o* tidak pernah berubah.",
+    "**Sen oradayken** — *-ken* (ketika, sementara) menempel pada kata benda atau kata keterangan tempat dengan *-y-* sesudah vokal: *orada → oradayken* (ketika di sana), *evde → evdeyken* (ketika di rumah), *öğrenci → öğrenciyken* (waktu masih pelajar). *-ken* tidak ikut keselarasan vokal.",
+    "**Seni aradım ama açmadın / O sırada … izliyordum** — inilah pembagian kerja dua kala lampau: *-di* untuk **kejadian** (menelepon, tidak mengangkat, tidak mendengar), *-iyordu* untuk **latar** yang sedang berjalan (menonton kembang api). *Telefonu açmak* = mengangkat telepon, harfiahnya \"membuka telepon\".",
+    "**Annem her sabah yapıyordu** — *-iyordu* juga menyatakan **kebiasaan** di masa lampau: \"dulu ibu selalu bikin tiap pagi\". Kata *her sabah, her akşam, her gün* adalah tanda kuatnya. Begitu pula *Her akşam Türk dizisi izliyordum.*",
+    "**Çalışıyor muydun?** — kata tanya *mi* berdiri di tengah: *çalışıyor* + *mu* + *-ydun*. Deretnya: *muydum, muydun, muydu, muyduk, muydunuz, muydular*. Sangkalannya dipasang sebelum *-iyor*: *izlemiyordum* (aku tidak sedang menonton).",
+    "**Seni çok özledik** — *özlemek* (merindukan) meminta **akusatif**, bukan datif: *seni özledim, Jakarta'yı özledim*. Penutur Indonesia sering tergoda berkata \"rindu *kepada*\" lalu memakai *-e* — keliru. Jawaban baku untuk *Hoş geldin* tetap *Hoş bulduk*."
+   ],
+   "grammars": [
+    {
+     "title": "Konjugasi -iyordu",
+     "body": [
+      "Batangnya sama persis dengan *-iyor*; tinggal tambahkan *-du* dan akhiran orang. Vokal *-iyor* mengikuti vokal terakhir kata kerja (*ı, i, u, ü*), dan kata kerja berakhiran vokal kehilangan vokal itu: *izle → izliyor*, *oyna → oynuyor*."
+     ],
+     "table": {
+      "head": [
+       "Orang",
+       "yapmak",
+       "izlemek",
+       "okumak",
+       "görmek"
+      ],
+      "rows": [
+       [
+        "ben",
+        "*yapıyordum*",
+        "*izliyordum*",
+        "*okuyordum*",
+        "*görüyordum*"
+       ],
+       [
+        "sen",
+        "*yapıyordun*",
+        "*izliyordun*",
+        "*okuyordun*",
+        "*görüyordun*"
+       ],
+       [
+        "o",
+        "*yapıyordu*",
+        "*izliyordu*",
+        "*okuyordu*",
+        "*görüyordu*"
+       ],
+       [
+        "biz",
+        "*yapıyorduk*",
+        "*izliyorduk*",
+        "*okuyorduk*",
+        "*görüyorduk*"
+       ],
+       [
+        "siz",
+        "*yapıyordunuz*",
+        "*izliyordunuz*",
+        "*okuyordunuz*",
+        "*görüyordunuz*"
+       ],
+       [
+        "onlar",
+        "*yapıyorlardı*",
+        "*izliyorlardı*",
+        "*okuyorlardı*",
+        "*görüyorlardı*"
+       ]
+      ]
+     },
+     "after": [
+      "Sangkalan: *yapmıyordum, izlemiyordum, okumuyordum, görmüyordum*. Tanya: *yapıyor muydun?, izlemiyor muydun?*",
+      "Perhatikan *onlar*: *-lar* diletakkan sebelum *-dı* — *yapıyorlardı*, bukan *yapıyordular*."
+     ]
+    },
+    {
+     "title": "-di atau -iyordu?",
+     "body": [
+      "Bayangkan garis dan titik: *-iyordu* adalah garis (sedang berjalan), *-di* adalah titik yang jatuh di atas garis itu."
+     ],
+     "table": {
+      "head": [
+       "Situasi",
+       "Bentuk",
+       "Contoh",
+       "Arti"
+      ],
+      "rows": [
+       [
+        "kejadian selesai",
+        "*-di*",
+        "*Seni aradım.*",
+        "Aku meneleponmu."
+       ],
+       [
+        "latar yang sedang berjalan",
+        "*-iyordu*",
+        "*Kar yağıyordu.*",
+        "Salju sedang turun."
+       ],
+       [
+        "latar + kejadian",
+        "*-iyordu* + *-di*",
+        "*Film izliyordum, telefon çaldı.*",
+        "Aku sedang nonton film, telepon berdering."
+       ],
+       [
+        "kebiasaan dulu",
+        "*-iyordu*",
+        "*Annem her sabah yapıyordu.*",
+        "Ibu dulu membuatnya tiap pagi."
+       ],
+       [
+        "urutan kejadian",
+        "*-di, -di, -di*",
+        "*Beni gördü ve ağladı.*",
+        "Ia melihatku, lalu menangis."
+       ],
+       [
+        "jam tertentu",
+        "*-iyordu*",
+        "*Saat on ikide uyuyordum.*",
+        "Jam dua belas aku sedang tidur."
+       ]
+      ]
+     }
+    }
+   ]
+  },
+  {
+   "title": "Dialog kedua — Uçaktaydım, uyuyordum",
+   "intro": "Senin yang sama, pukul sembilan. Hari pertama kursus tingkat 2 di sekolah bahasa Kadıköy. Budi datang terlambat dan terengah-engah; Ayşe Hanım menunggunya di depan pintu kelas baru.",
+   "lines": [
+    {
+     "speaker": "Ayşe:",
+     "text": "Günaydın Budi! Dün sana mesaj attım ama cevap vermedin.",
+     "id": "Pagi, Budi! Kemarin aku kirim pesan ke kamu, tapi nggak kamu balas.",
+     "literal": "selamat-pagi Budi! kemarin kamu-ke pesan lempar-lampau-saya tapi jawaban beri-tidak-lampau-kamu."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Özür dilerim, Ayşe Hanım. Dün uçaktaydım, uyuyordum.",
+     "id": "Maaf, Bu Ayşe. Kemarin saya di pesawat, lagi tidur.",
+     "literal": "maaf minta-biasa-saya, Ayşe Nyonya. kemarin pesawat-di-lampau-saya, sedang-tidur-lampau-saya."
+    },
+    {
+     "speaker": "Ayşe:",
+     "text": "Uçakta mı? Ben saat üçte yazdım.",
+     "id": "Di pesawat? Aku nulisnya jam tiga.",
+     "literal": "pesawat-di apakah? saya jam tiga-di tulis-lampau-saya."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Evet, saat üçte Doha'dan İstanbul'a uçuyorduk. Telefonum kapalıydı.",
+     "id": "Iya, jam tiga kami lagi terbang dari Doha ke İstanbul. Ponsel saya mati.",
+     "literal": "ya, jam tiga-di Doha-dari İstanbul-ke sedang-terbang-lampau-kami. telepon-ku tertutup-lampau."
+    },
+    {
+     "speaker": "Ayşe:",
+     "text": "Peki akşam? Mesajı görmedin mi?",
+     "id": "Terus malamnya? Pesannya nggak kamu lihat?",
+     "literal": "baiklah malam? pesan-nya lihat-tidak-lampau-kamu apakah?"
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Gördüm ama çok yorgundum. Eve geldim, yemek yedim, hemen yattım.",
+     "id": "Lihat, tapi saya capek sekali. Sampai rumah, makan, langsung tidur.",
+     "literal": "lihat-lampau-saya tapi sangat lelah-lampau-saya. rumah-ke datang-lampau-saya, makanan makan-lampau-saya, segera berbaring-lampau-saya."
+    },
+    {
+     "speaker": "Ayşe:",
+     "text": "Sınıfımız üçüncü kata taşındı. Bu sabah ikinci katta ne yapıyordun?",
+     "id": "Kelas kita pindah ke lantai tiga. Tadi pagi kamu ngapain di lantai dua?",
+     "literal": "kelas-kami ketiga lantai-ke pindah-lampau. ini pagi kedua lantai-di apa sedang-lakukan-lampau-kamu?"
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Eski sınıfı arıyordum! Kapıyı açtım, içeride başka bir sınıf vardı.",
+     "id": "Saya lagi cari kelas lama! Saya buka pintunya, di dalam ada kelas lain.",
+     "literal": "lama kelas-nya sedang-cari-lampau-saya! pintu-nya buka-lampau-saya, di-dalam lain satu kelas ada-lampau."
+    },
+    {
+     "speaker": "Ayşe:",
+     "text": "Evet, orada yeni A1 grubu dersteydi. Ne dediler?",
+     "id": "Iya, kelompok A1 yang baru lagi belajar di situ. Mereka bilang apa?",
+     "literal": "ya, di-sana baru A1 kelompok-nya pelajaran-di-lampau. apa kata-lampau-mereka?"
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Hiçbir şey. Öğretmen tahtaya yazıyordu; bana baktı ve gülümsedi.",
+     "id": "Nggak ada. Gurunya lagi nulis di papan; dia melihat ke saya lalu tersenyum.",
+     "literal": "sama-sekali-tak-ada sesuatu. guru papan-ke sedang-tulis-lampau; saya-ke lihat-lampau dan tersenyum-lampau."
+    },
+    {
+     "speaker": "Ayşe:",
+     "text": "Hoş geldin, A2 öğrencisi! Hadi, derse başlıyoruz.",
+     "id": "Selamat datang, murid A2! Ayo, kita mulai pelajarannya.",
+     "literal": "senang datang-kamu, A2 murid-nya! ayo, pelajaran-ke sedang-mulai-kami."
+    }
+   ],
+   "notes": [
+    "**Uçaktaydım** — kata benda pun bisa dilampaukan: *uçak* (pesawat) → *uçakta* (di pesawat) → *uçaktaydım* (aku [waktu itu] di pesawat). Sesudah vokal muncul *-y-*: *uçakta-y-dım*, *kapalı-y-dı*, *derste-y-di*. Sesudah konsonan langsung: *yorgun-dum*.",
+    "**Uçuyorduk** — *uçmak* (terbang) → *uçuyor* → *uçuyorduk*. Jangan tertukar dengan *uçak* (pesawat) dan *uçakta* (di pesawat); ketiganya berakar sama, *uç-*.",
+    "**Mesaj attım, cevap vermedin** — bahasa chat sehari-hari: *mesaj atmak* (harfiah \"melempar pesan\") = mengirim pesan, *cevap vermek* (+ datif) = membalas: *Bana cevap ver!* Kata *cevap* serapan Arab, sama dengan *jawab*.",
+    "**Eve geldim, yemek yedim, hemen yattım** — deretan *-di* = urutan kejadian yang selesai satu per satu. *Yatmak* harfiahnya \"berbaring\", tapi sehari-hari berarti pergi tidur; *uyumak* = tidur (terlelap).",
+    "**Eski sınıfı arıyordum** — *aramak* punya dua arti: **mencari** (*sınıfı arıyordum*) dan **menelepon** (*seni aradım*). Konteks yang menentukan; objeknya sama-sama akusatif.",
+    "**İçeride başka bir sınıf vardı / Bana baktı** — *var* dan *yok* dilampaukan menjadi *vardı* dan *yoktu*. *Bakmak* (melihat ke arah) memakai datif: *bana baktı*; *görmek* (melihat, mendapati) memakai akusatif: *beni gördü*."
+   ],
+   "grammars": [
+    {
+     "title": "Lampau kata benda dan kata sifat: -(y)dı",
+     "body": [
+      "Akhirannya ikut keselarasan vokal (*-dı, -di, -du, -dü*) dan menjadi *-tı, -ti, -tu, -tü* sesudah konsonan tak bersuara (*ç, f, h, k, p, s, ş, t*)."
+     ],
+     "table": {
+      "head": [
+       "Dasar",
+       "Lampau",
+       "Arti",
+       "Catatan"
+      ],
+      "rows": [
+       [
+        "*yorgun*",
+        "*yorgundum*",
+        "aku (dulu) capek",
+        "konsonan bersuara → *-d-*"
+       ],
+       [
+        "*kapalı*",
+        "*kapalıydı*",
+        "(ia) tertutup, mati",
+        "vokal → *-y-*"
+       ],
+       [
+        "*uçakta*",
+        "*uçaktaydım*",
+        "aku di pesawat",
+        "lokatif + *-ydı*"
+       ],
+       [
+        "*derste*",
+        "*dersteydi*",
+        "(ia) sedang di kelas",
+        "vokal depan → *-di*"
+       ],
+       [
+        "*sıcak*",
+        "*sıcaktı*",
+        "(cuacanya) panas",
+        "*k* tak bersuara → *-t-*"
+       ],
+       [
+        "*mutlu*",
+        "*mutluyduk*",
+        "kami bahagia",
+        "vokal bundar → *-du*"
+       ],
+       [
+        "*var / yok*",
+        "*vardı / yoktu*",
+        "ada / tidak ada",
+        "*yok* → *-tu*"
+       ],
+       [
+        "*nasıl*",
+        "*nasıldı?*",
+        "bagaimana (tadi)?",
+        "kata tanya pun bisa"
+       ]
+      ]
+     }
+    }
+   ]
+  }
+ ],
+ "sections": [
+  {
+   "title": "Kala lampau dalam satu tabel",
+   "blocks": [
+    {
+     "type": "p",
+     "text": "Sampai sekarang kamu punya tiga cara membicarakan masa lampau. Tabel ini menjejerkannya dengan satu kata kerja, *gelmek* (datang), supaya perbedaannya terlihat."
+    },
+    {
+     "type": "tabel",
+     "head": [
+      "Bentuk",
+      "Contoh",
+      "Arti",
+      "Dipakai untuk"
+     ],
+     "rows": [
+      [
+       "*-di*",
+       "*Emre geldi.*",
+       "Emre datang.",
+       "kejadian selesai, disaksikan"
+      ],
+      [
+       "*-medi*",
+       "*Emre gelmedi.*",
+       "Emre tidak datang.",
+       "sangkalan"
+      ],
+      [
+       "*-di mi?*",
+       "*Emre geldi mi?*",
+       "Emre sudah datang?",
+       "tanya"
+      ],
+      [
+       "*-iyordu*",
+       "*Emre geliyordu.*",
+       "Emre sedang (dalam perjalanan) datang.",
+       "latar, sedang berlangsung"
+      ],
+      [
+       "*-miyordu*",
+       "*Emre gelmiyordu.*",
+       "Emre (dulu) tidak datang-datang.",
+       "sangkalan latar/kebiasaan"
+      ],
+      [
+       "*-iyor muydu?*",
+       "*Emre geliyor muydu?*",
+       "Apakah Emre (dulu) biasa datang?",
+       "tanya"
+      ],
+      [
+       "kata benda + *-ydı*",
+       "*Emre evdeydi.*",
+       "Emre (waktu itu) di rumah.",
+       "keadaan di masa lampau"
+      ]
+     ]
+    },
+    {
+     "type": "p",
+     "text": "Dalam cerita, ketiganya bekerja sama. Contoh: *Dün akşam evdeydim. Yağmur yağıyordu, ben de kitap okuyordum. Birden kapı çaldı. Emre geldi!* (Kemarin malam aku di rumah. Hujan turun, aku sedang membaca buku. Tiba-tiba pintu diketuk. Emre datang!) Keadaan dan latar lebih dulu, kejadian menyusul."
+    },
+    {
+     "type": "kotak",
+     "title": "Kiat bercerita ala Turki",
+     "items": [
+      "Buka dengan latar: *O gün hava çok soğuktu…* (Hari itu cuacanya dingin sekali…)",
+      "Tandai kejadian yang menyela dengan *birden* (tiba-tiba) atau *o sırada* (saat itu) lalu *-di*.",
+      "Pendengar yang baik menyela dengan *Eee, sonra?* (Terus, lalu?) atau *Yok artık!* (Masa sih!)",
+      "*Anlat bakalım!* adalah undangan bercerita yang paling sering kamu dengar dari teman Turki."
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Tahun baru di Turki",
+   "blocks": [
+    {
+     "type": "p",
+     "text": "Budi merayakan malam tahun baru di Monas, sementara keluarga Fatma di Kadıköy merayakannya dengan cara Turki. Di Turki, *yılbaşı* adalah perayaan sekuler yang meriah — lengkap dengan pohon hias dan hadiah — dan bukan hari raya agama."
+    },
+    {
+     "type": "tabel",
+     "head": [
+      "Türkçe",
+      "Arti"
+     ],
+     "rows": [
+      [
+       "*yılbaşı*",
+       "tahun baru, malam 31 Desember"
+      ],
+      [
+       "*yılbaşı ağacı*",
+       "pohon tahun baru (cemara hias)"
+      ],
+      [
+       "*Noel Baba*",
+       "Sinterklas"
+      ],
+      [
+       "*Milli Piyango*",
+       "Lotre Nasional"
+      ],
+      [
+       "*büyük ikramiye*",
+       "hadiah utama lotre"
+      ],
+      [
+       "*hindi*",
+       "kalkun"
+      ],
+      [
+       "*geri sayım*",
+       "hitung mundur"
+      ],
+      [
+       "*Mutlu yıllar! / İyi seneler!*",
+       "Selamat tahun baru!"
+      ]
+     ]
+    },
+    {
+     "type": "p",
+     "text": "Ucapan yang sopan untuk orang tua atau atasan: *Yeni yılınız kutlu olsun!* (Semoga tahun baru Anda berbahagia!). Setelah tanggal 1 Januari lewat, orang masih saling mengucapkan *İyi seneler* selama beberapa hari."
+    },
+    {
+     "type": "kotak",
+     "title": "Malam tahun baru di rumah Turki",
+     "items": [
+      "Undian **Milli Piyango** malam 31 Desember adalah acara wajib: satu keluarga membeli sehelai tiket bersama dan menonton pengundian di televisi.",
+      "Menu khasnya **hindi** (kalkun) panggang atau *hindi dolması* berisi nasi rempah. Uniknya, bahasa Inggris menyebut kalkun *turkey*, sedangkan bahasa Turki menyebutnya *hindi* — \"burung India\".",
+      "Sebagian orang memecahkan **buah delima** (*nar*) di depan pintu sebagai lambang rezeki yang melimpah di tahun baru.",
+      "*Noel Baba* berasal dari Santo Nikolaus dari Myra, kini kota Demre di Antalya — jadi \"Sinterklas\" sebenarnya orang Anatolia."
+     ]
+    }
+   ]
+  }
+ ],
+ "vocab": [
+  {
+   "tr": "özlemek",
+   "baca": "öz-le-MEK",
+   "id": "merindukan (+ akusatif: *seni özledim*)"
+  },
+  {
+   "tr": "yılbaşı",
+   "baca": "yıl-ba-SYI",
+   "id": "tahun baru, malam tahun baru"
+  },
+  {
+   "tr": "havai fişek",
+   "baca": "ha-va-I fi-SYEK",
+   "id": "kembang api"
+  },
+  {
+   "tr": "o sırada",
+   "baca": "o sı-ra-DA",
+   "id": "saat itu, pada waktu itu"
+  },
+  {
+   "tr": "duymak",
+   "baca": "duy-MAK",
+   "id": "mendengar"
+  },
+  {
+   "tr": "kar yağmak",
+   "baca": "kar yaa-MAK",
+   "id": "turun salju (*kar yağıyordu*)"
+  },
+  {
+   "tr": "öğleden sonra",
+   "baca": "öö-le-DEN son-RA",
+   "id": "sore, siang lewat tengah hari"
+  },
+  {
+   "tr": "görüntülü aramak",
+   "baca": "gö-rün-tü-LÜ a-ra-MAK",
+   "id": "menelepon video, video call"
+  },
+  {
+   "tr": "sevinmek",
+   "baca": "se-vin-MEK",
+   "id": "gembira, senang (atas sesuatu)"
+  },
+  {
+   "tr": "havalimanı",
+   "baca": "ha-va-li-ma-NI",
+   "id": "bandara (lokatif *havalimanında*)"
+  },
+  {
+   "tr": "beklemek",
+   "baca": "bek-le-MEK",
+   "id": "menunggu (+ akusatif)"
+  },
+  {
+   "tr": "ağlamak",
+   "baca": "aa-la-MAK",
+   "id": "menangis"
+  },
+  {
+   "tr": "dizi",
+   "baca": "di-ZI",
+   "id": "serial televisi (*Türk dizisi*)"
+  },
+  {
+   "tr": "aferin",
+   "baca": "A-fe-rin",
+   "id": "bagus, pintar (pujian)"
+  },
+  {
+   "tr": "soğumak",
+   "baca": "soo-u-MAK",
+   "id": "menjadi dingin"
+  },
+  {
+   "tr": "mesaj atmak",
+   "baca": "me-SAZY at-MAK",
+   "id": "mengirim pesan (+ datif)"
+  },
+  {
+   "tr": "cevap vermek",
+   "baca": "je-VAP ver-MEK",
+   "id": "menjawab, membalas (+ datif)"
+  },
+  {
+   "tr": "uçak",
+   "baca": "u-CAK",
+   "id": "pesawat (lokatif *uçakta*)"
+  },
+  {
+   "tr": "uçmak",
+   "baca": "uc-MAK",
+   "id": "terbang (*uçuyor*)"
+  },
+  {
+   "tr": "kapalı",
+   "baca": "ka-pa-LI",
+   "id": "tertutup; mati (ponsel)"
+  },
+  {
+   "tr": "yorgun",
+   "baca": "yor-GUN",
+   "id": "lelah, capek"
+  },
+  {
+   "tr": "yatmak",
+   "baca": "yat-MAK",
+   "id": "berbaring; pergi tidur"
+  },
+  {
+   "tr": "taşınmak",
+   "baca": "ta-syın-MAK",
+   "id": "pindah (tempat tinggal, ruangan)"
+  },
+  {
+   "tr": "tahta",
+   "baca": "tah-TA",
+   "id": "papan tulis; kayu"
+  },
+  {
+   "tr": "gülümsemek",
+   "baca": "gü-lüm-se-MEK",
+   "id": "tersenyum"
+  }
+ ],
+ "exercises": [
+  {
+   "prompt": "Terjemahkan ke bahasa Turki.",
+   "items": [
+    "Waktu itu aku sedang menonton kembang api.",
+    "Kemarin aku di pesawat, aku sedang tidur.",
+    "Kamu (tadi) sedang makan apa?",
+    "Ibuku sedang menunggu di bandara.",
+    "Aku meneleponmu, tapi kamu tidak mengangkat.",
+    "Waktu itu di sini salju sedang turun."
+   ]
+  },
+  {
+   "prompt": "Isi titik-titik dengan bentuk lampau yang tepat.",
+   "items": [
+    "Dün akşam saat sekizde televizyon ____. (izlemek, ben, -iyordu)",
+    "Sen o sırada ne ____? (yapmak, -iyordu)",
+    "Biz yemek yerken telefon ____. (çalmak, -di)",
+    "Ayşe Hanım tahtaya ____. (yazmak, -iyordu)",
+    "Dün çok ____. (yorgun, ben, lampau)",
+    "Çocuklar parkta ____. (oynamak, onlar, -iyordu)",
+    "Sen Jakarta'da Türkçe ____ muydun? (çalışmak)"
+   ]
+  },
+  {
+   "prompt": "Ubah kalimat ke lampau berlangsung (*-iyordu*).",
+   "items": [
+    "Budi kitap okuyor.",
+    "Kar yağıyor.",
+    "Biz çay içiyoruz.",
+    "Emre maç izlemiyor.",
+    "Siz ne yapıyorsunuz?",
+    "Ben seni bekliyorum."
+   ]
+  },
+  {
+   "prompt": "Susun jadi kalimat yang benar.",
+   "items": [
+    "ne / oradayken / yapıyordun / sen",
+    "uyuyordum / uçaktaydım / dün",
+    "izliyordum / havai fişekleri / sırada / o",
+    "bekliyordu / beni / havalimanında / annem",
+    "arıyordum / sınıfı / eski"
+   ]
+  }
+ ],
+ "answers": [
+  "O sırada havai fişekleri izliyordum. — Dün uçaktaydım, uyuyordum. — Ne yiyordun? — Annem havalimanında bekliyordu. — Seni aradım ama açmadın. — O sırada burada kar yağıyordu.",
+  "izliyordum — yapıyordun — çaldı — yazıyordu — yorgundum — oynuyorlardı — çalışıyor",
+  "Budi kitap okuyordu. — Kar yağıyordu. — Biz çay içiyorduk. — Emre maç izlemiyordu. — Siz ne yapıyordunuz? — Ben seni bekliyordum.",
+  "Sen oradayken ne yapıyordun? — Dün uçaktaydım, uyuyordum. — O sırada havai fişekleri izliyordum. — Annem havalimanında beni bekliyordu. — Eski sınıfı arıyordum."
+ ]
+}

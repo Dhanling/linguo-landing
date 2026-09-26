@@ -1,0 +1,708 @@
+{
+ "title": "Harus, perlu, wajib — -meli, lazım, gerek, zorunda",
+ "title_target": "Ben ne yapmalıyım?",
+ "goal": "Menyatakan keharusan dan keperluan dengan empat alat: *-meli/-malı* (*kontrol etmelisin*), *-mek zorunda* (*çevirmek zorundasın*), *lazım* dan *gerek* (*belge lazım, gerek yok*), serta mengenal pola *-me* + posesif + *lazım* (*yenilemem lazım*).",
+ "bekal": [
+  "mengonjugasikan *-meli/-malı* dalam bentuk positif, negatif (*giymemelisin*), dan tanya (*vermeli miyim?*)",
+  "memakai *-mek zorundayım* untuk kewajiban tanpa pilihan dan membedakan *zorunda değilsin* (tak wajib) dari *-memelisin* (tak boleh)",
+  "mengatakan \"perlu\" dengan *lazım* dan *gerek*: *Hangi belgeler lazım? Gerek yok. Notere gitmemiz gerekiyor.*"
+ ],
+ "dialogs": [
+  {
+   "title": "Dialog — Pazartesi bir grup geliyor",
+   "intro": "Kamis, 28 Januari 2027. Hari keempat Budi di Köprü Turizm. Selim Bey memanggilnya ke ruangannya: rombongan besar pertama yang akan Budi dampingi tiba minggu depan.",
+   "lines": [
+    {
+     "speaker": "Selim:",
+     "text": "Budi, pazartesi Bandung'dan bir grup geliyor. Otuz iki kişi, çoğu hanım.",
+     "id": "Budi, hari Senin ada rombongan dari Bandung. Tiga puluh dua orang, kebanyakan ibu-ibu.",
+     "literal": "Budi, Senin Bandung-dari satu rombongan sedang-datang. tiga-puluh dua orang, kebanyakan-nya ibu."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Biliyorum, Zeynep söyledi. Ben ne yapmalıyım?",
+     "id": "Saya tahu, Zeynep sudah cerita. Saya harus ngapain?",
+     "literal": "sedang-tahu-saya, Zeynep bilang-lampau. saya apa lakukan-harus-saya?"
+    },
+    {
+     "speaker": "Selim:",
+     "text": "Önce grubun listesini kontrol etmelisin. Her isim pasaportla aynı olmalı.",
+     "id": "Pertama, kamu harus cek daftar rombongannya. Setiap nama harus sama dengan di paspor.",
+     "literal": "dulu rombongan-punya daftar-nya-nya periksa lakukan-harus-kamu. setiap nama paspor-dengan sama jadi-harus."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Tamam. Otele de telefon etmem lazım mı?",
+     "id": "Baik. Saya perlu telepon hotel juga?",
+     "literal": "beres. hotel-ke juga telepon lakukan-an-ku perlu apakah?"
+    },
+    {
+     "speaker": "Selim:",
+     "text": "Evet, otelle konuşman lazım. Bütün odalar aynı katta olmalı.",
+     "id": "Iya, kamu perlu bicara dengan hotel. Semua kamar harus di lantai yang sama.",
+     "literal": "ya, hotel-dengan bicara-an-mu perlu. semua kamar-jamak sama lantai-di jadi-harus."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Helal yemek için restorana da haber vermeli miyim?",
+     "id": "Soal makanan halal, saya harus kabari restorannya juga?",
+     "literal": "halal makanan untuk restoran-ke juga kabar beri-harus apakah-saya?"
+    },
+    {
+     "speaker": "Selim:",
+     "text": "Gerek yok, restoranlarımızın hepsi helal. Ama namaz vakitlerini bilmen gerekiyor.",
+     "id": "Nggak perlu, semua restoran langganan kita halal. Tapi kamu perlu tahu jadwal salat.",
+     "literal": "perlu tidak-ada, restoran-jamak-kami-punya semua-nya halal. tapi salat waktu-jamak-nya-nya tahu-an-mu sedang-perlu."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Namaz vakitlerine telefondan bakarım; uygulamam var.",
+     "id": "Jadwal salat saya lihat di ponsel; saya punya aplikasinya.",
+     "literal": "salat waktu-jamak-nya-ke telepon-dari lihat-biasa-saya; aplikasi-ku ada."
+    },
+    {
+     "speaker": "Selim:",
+     "text": "Sultanahmet'te Zeynep anlatacak, sen de Endonezceye çevirmek zorundasın.",
+     "id": "Di Sultanahmet Zeynep yang menjelaskan, dan kamu wajib menerjemahkannya ke bahasa Indonesia.",
+     "literal": "Sultanahmet-di Zeynep akan-cerita, kamu juga bahasa-Indonesia-ke menerjemahkan terpaksa-dalam-kamu."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Her şeyi mi? Zeynep çok hızlı konuşuyor!",
+     "id": "Semuanya? Zeynep ngomongnya cepat banget!",
+     "literal": "setiap hal-nya apakah? Zeynep sangat cepat sedang-bicara!"
+    },
+    {
+     "speaker": "Selim:",
+     "text": "Merak etme, ona söylerim. Ama bu akşam Ayasofya'nın tarihini okumalısın.",
+     "id": "Tenang, nanti saya bilang ke dia. Tapi malam ini kamu harus baca sejarah Ayasofya.",
+     "literal": "khawatir lakukan-jangan, dia-ke bilang-biasa-saya. tapi ini malam Ayasofya-punya sejarah-nya-nya baca-harus-kamu."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Okurum. Başka bir şey var mı?",
+     "id": "Siap, saya baca. Ada lagi?",
+     "literal": "baca-biasa-saya. lain satu hal ada apakah?"
+    },
+    {
+     "speaker": "Selim:",
+     "text": "Takım elbise şart değil, ama kot pantolon giymemelisin.",
+     "id": "Jas nggak wajib, tapi kamu jangan pakai celana jins.",
+     "literal": "setelan jas syarat bukan, tapi jins celana pakai-tidak-harus-kamu."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Peki, saat kaçta otelde olmalıyım?",
+     "id": "Baik. Jam berapa saya harus sudah di hotel?",
+     "literal": "baiklah, jam berapa-di hotel-di jadi-harus-saya?"
+    },
+    {
+     "speaker": "Selim:",
+     "text": "Grup dokuzda çıkıyor; sen sekiz buçukta orada olmalısın. Sakın geç kalma!",
+     "id": "Rombongan berangkat jam sembilan; kamu harus sudah di sana jam setengah sembilan. Awas, jangan telat!",
+     "literal": "rombongan sembilan-di sedang-keluar; kamu delapan setengah-di di-sana jadi-harus-kamu. awas terlambat tinggal-jangan!"
+    }
+   ],
+   "notes": [
+    "**Ne yapmalıyım?** — *-meli/-malı* + akhiran orang = **harus**, keharusan yang lahir dari aturan, nasihat, atau akal sehat. Akhiran ini hanya punya dua wujud (*-meli* sesudah vokal depan, *-malı* sesudah vokal belakang): *yapmalıyım, etmelisin, okumalısın*. Dalam terjemahan harfiah kita tulis **harus-**.",
+    "**Her isim pasaportla aynı olmalı** — *olmalı* (harus jadi / harus ada) dipakai untuk keadaan yang disyaratkan: *Odalar aynı katta olmalı*, *Sekiz buçukta orada olmalısın*. *Aynı* + *ile* = sama dengan: *pasaportla aynı*.",
+    "**Otele telefon etmem lazım mı? / Otelle konuşman lazım** — *lazım* (serapan Arab, sama dengan *lazim*) = perlu. Dengan kata benda cukup ditaruh di belakang: *Belge lazım.* Dengan kata kerja polanya **-me + posesif + lazım**: *etmem lazım* (aku perlu), *konuşman lazım* (kamu perlu). Harfiahnya \"menelepon-ku perlu\"; pola ini dibahas penuh di tingkat B1.",
+    "**Gerek yok … bilmen gerekiyor** — *gerek* = keperluan. *Gerek yok* (nggak perlu) adalah jawaban singkat yang sangat sering. Sebagai kata kerja, *gerekmek* muncul dalam bentuk *gerekiyor* atau *gerek*: *bilmen gerekiyor* = kamu perlu tahu.",
+    "**Çevirmek zorundasın** — *-mek zorunda* + akhiran orang = **wajib, tak ada pilihan**, biasanya karena tuntutan dari luar (pekerjaan, hukum). *Zorunda* harfiahnya \"dalam keterpaksaan\" (*zor*: paksa, sulit). Bandingkan *çevirmelisin* (sebaiknya/harus kamu terjemahkan) yang lebih bernada nasihat.",
+    "**Kot pantolon giymemelisin / Sakın geç kalma!** — negatif *-memeli* = **tidak boleh**, sebaiknya jangan. *Sakın* + perintah = \"awas, jangan sampai…\", peringatan keras. *Şart değil* = bukan syarat, tidak wajib (*şart* serapan Arab)."
+   ],
+   "grammars": [
+    {
+     "title": "Konjugasi -meli / -malı",
+     "body": [
+      "Akhiran orangnya sama dengan kata sifat: *-yim, -sin, —, -yiz, -siniz, -ler*. Negatif: sisipkan *-me/-ma* sebelum *-meli*."
+     ],
+     "table": {
+      "head": [
+       "Orang",
+       "gitmek",
+       "yapmak",
+       "Negatif (*yapmamak*)"
+      ],
+      "rows": [
+       [
+        "ben",
+        "*gitmeliyim*",
+        "*yapmalıyım*",
+        "*yapmamalıyım*"
+       ],
+       [
+        "sen",
+        "*gitmelisin*",
+        "*yapmalısın*",
+        "*yapmamalısın*"
+       ],
+       [
+        "o",
+        "*gitmeli*",
+        "*yapmalı*",
+        "*yapmamalı*"
+       ],
+       [
+        "biz",
+        "*gitmeliyiz*",
+        "*yapmalıyız*",
+        "*yapmamalıyız*"
+       ],
+       [
+        "siz",
+        "*gitmelisiniz*",
+        "*yapmalısınız*",
+        "*yapmamalısınız*"
+       ],
+       [
+        "onlar",
+        "*gitmeliler*",
+        "*yapmalılar*",
+        "*yapmamalılar*"
+       ]
+      ]
+     },
+     "after": [
+      "Tanya: *gitmeli miyim?, yapmalı mısın?, olmalı mı?, vermeli miyiz?*"
+     ]
+    },
+    {
+     "title": "Empat cara berkata \"harus\"",
+     "body": [
+      "Artinya berdekatan, tetapi nuansanya berbeda. Dari yang paling \"nasihat\" sampai yang paling \"tak bisa ditawar\":"
+     ],
+     "table": {
+      "head": [
+       "Bentuk",
+       "Nuansa",
+       "Contoh",
+       "Arti"
+      ],
+      "rows": [
+       [
+        "*-meli*",
+        "harus, sebaiknya (aturan, nasihat)",
+        "*Tarihi okumalısın.*",
+        "Kamu harus baca sejarahnya."
+       ],
+       [
+        "*lazım*",
+        "perlu (sehari-hari, santai)",
+        "*Pasaport lazım.*",
+        "Perlu paspor."
+       ],
+       [
+        "*gerek(iyor)*",
+        "perlu (netral, agak resmi)",
+        "*Bilmen gerekiyor.*",
+        "Kamu perlu tahu."
+       ],
+       [
+        "*-mek zorunda*",
+        "wajib, terpaksa",
+        "*Çevirmek zorundasın.*",
+        "Kamu wajib menerjemahkan."
+       ],
+       [
+        "*şart*",
+        "syarat mutlak",
+        "*Pasaport şart.*",
+        "Paspor wajib ada."
+       ]
+      ]
+     }
+    }
+   ]
+  },
+  {
+   "title": "Dialog kedua — İkamet iznimi yenilemem lazım",
+   "intro": "Sabtu, 30 Januari 2027. Di meja makan rumah Fatma Hanım, Budi membuka laptopnya. Izin tinggalnya segera habis, dan Emre, yang sudah membantu tiga teman asing mengurus berkas yang sama, duduk di sebelahnya.",
+   "lines": [
+    {
+     "speaker": "Emre:",
+     "text": "İkamet iznin ne zaman bitiyor?",
+     "id": "Izin tinggalmu habis kapan?",
+     "literal": "tinggal izin-mu apa waktu sedang-habis?"
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Şubat sonunda. Yenilemem lazım ama her şey çok karışık!",
+     "id": "Akhir Februari. Harus kuperpanjang, tapi semuanya ribet banget!",
+     "literal": "Februari akhir-nya-di. perbarui-an-ku perlu tapi setiap hal sangat rumit!"
+    },
+    {
+     "speaker": "Emre:",
+     "text": "Karışık değil. Önce e-İkamet sitesinden başvuru yapman gerekiyor.",
+     "id": "Nggak ribet kok. Pertama kamu perlu mengajukan permohonan di situs e-İkamet.",
+     "literal": "rumit bukan. dulu e-İkamet situs-nya-dari permohonan buat-an-mu sedang-perlu."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Hangi belgeler lazım?",
+     "id": "Dokumen apa aja yang perlu?",
+     "literal": "mana dokumen-jamak perlu?"
+    },
+    {
+     "speaker": "Emre:",
+     "text": "Pasaport, dört fotoğraf, sağlık sigortası ve kira sözleşmesi.",
+     "id": "Paspor, empat foto, asuransi kesehatan, dan kontrak sewa.",
+     "literal": "paspor, empat foto, kesehatan asuransi-nya dan sewa kontrak-nya."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Kira sözleşmem yok ki. Ben sizin evinizde kalıyorum.",
+     "id": "Aku kan nggak punya kontrak sewa. Aku tinggal di rumah kalian.",
+     "literal": "sewa kontrak-ku tidak-ada kan. saya kalian-punya rumah-kalian-di sedang-tinggal-saya."
+    },
+    {
+     "speaker": "Emre:",
+     "text": "Sorun değil; annem bir taahhütname imzalamalı. Notere gitmemiz gerekiyor.",
+     "id": "Nggak masalah; ibuku tinggal tanda tangan surat pernyataan. Kita perlu ke notaris.",
+     "literal": "masalah bukan; ibu-ku satu surat-pernyataan tanda-tangan-harus. notaris-ke pergi-an-kami sedang-perlu."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Noterde para ödemek zorunda mıyız?",
+     "id": "Di notaris kita harus bayar?",
+     "literal": "notaris-di uang membayar terpaksa-dalam apakah-kami?"
+    },
+    {
+     "speaker": "Emre:",
+     "text": "Maalesef evet. Kart için de harç ödemelisin.",
+     "id": "Sayangnya iya. Untuk kartunya kamu juga harus bayar biaya.",
+     "literal": "sayangnya ya. kartu untuk juga biaya bayar-harus-kamu."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Bu kadar belge! Endonezya'da bile bu kadar bürokrasi yok.",
+     "id": "Dokumennya sebanyak ini! Di Indonesia pun birokrasinya nggak segini.",
+     "literal": "ini sebanyak dokumen! Indonesia-di bahkan ini sebanyak birokrasi tidak-ada."
+    },
+    {
+     "speaker": "Emre:",
+     "text": "Türkiye'ye hoş geldin! Randevuna zamanında gitmelisin; göç idaresi hep kalabalık.",
+     "id": "Selamat datang di Turki! Kamu harus datang tepat waktu ke janji temunya; kantor imigrasi selalu penuh.",
+     "literal": "Turki-ke senang datang-kamu! janji-temu-mu-ke waktu-nya-di pergi-harus-kamu; migrasi kantor-nya selalu ramai."
+    }
+   ],
+   "notes": [
+    "**Yenilemem lazım** — pola dari dialog pertama, kini untuk diri sendiri: *yenile-me-m lazım* = memperbarui-ku perlu → aku perlu memperpanjang. *İkamet izni* = izin tinggal; dengan posesif *ikamet iznim, iznin* (*izin* kehilangan vokal kedua: *izni*).",
+    "**Başvuru yapman gerekiyor / Hangi belgeler lazım?** — *gerekiyor* dan *lazım* sering bertukar tempat. Dalam urusan resmi, petugas lebih sering berkata *gerekiyor*; di warung dan di rumah, *lazım*. *Başvuru yapmak* = mengajukan permohonan.",
+    "**Kira sözleşmem yok ki** — *ki* di akhir kalimat memberi nada protes atau penjelasan: \"kan…\", \"lho…\". *Yok ki* = kan nggak ada. Jangan tertukar dengan *ki* penghubung atau *-ki* di *çarşıdaki*.",
+    "**Annem bir taahhütname imzalamalı** — *taahhütname* adalah surat pernyataan dari tuan rumah bahwa Budi tinggal di rumahnya, disahkan *noter* (notaris). Kata ini terdiri dari *taahhüt* (komitmen, Arab *ta'ahhud*) dan *-name* (surat, Persia *nāme*).",
+    "**Para ödemek zorunda mıyız?** — tanya: *zorunda mıyım, zorunda mısın, zorunda mı, zorunda mıyız, zorunda mısınız, zorundalar mı?* Awas: **zorunda değilsin** berarti \"kamu tidak wajib\", bukan \"kamu tidak boleh\". Untuk \"tidak boleh\" pakai *-memelisin*.",
+    "**Bu kadar belge! … Endonezya'da bile** — *bu kadar* = sebanyak ini, segini (dibahas di unit 5); *bile* = bahkan, diletakkan **sesudah** kata yang ditekankan: *Endonezya'da bile*, *Emre bile* (Emre pun). *Türkiye'ye hoş geldin!* di sini bernada canda: \"begitulah Turki\"."
+   ],
+   "grammars": [
+    {
+     "title": "-me + posesif + lazım / gerek",
+     "body": [
+      "Kata kerja dibendakan dengan *-me/-ma*, lalu diberi posesif untuk menunjuk siapa yang perlu. Untuk *gerek yok* dan *gerek var*, bendaan itu memakai datif."
+     ],
+     "table": {
+      "head": [
+       "Orang",
+       "lazım / gerekiyor",
+       "gerek yok (+ datif)",
+       "Arti"
+      ],
+      "rows": [
+       [
+        "(benim)",
+        "*gitmem lazım*",
+        "*gitmeme gerek yok*",
+        "aku perlu / tak perlu pergi"
+       ],
+       [
+        "(senin)",
+        "*gitmen lazım*",
+        "*gitmene gerek yok*",
+        "kamu perlu / tak perlu pergi"
+       ],
+       [
+        "(onun)",
+        "*gitmesi lazım*",
+        "*gitmesine gerek yok*",
+        "dia perlu / tak perlu pergi"
+       ],
+       [
+        "(bizim)",
+        "*gitmemiz gerekiyor*",
+        "*gitmemize gerek yok*",
+        "kami perlu / tak perlu pergi"
+       ],
+       [
+        "(sizin)",
+        "*gitmeniz gerekiyor*",
+        "*gitmenize gerek yok*",
+        "Anda perlu / tak perlu pergi"
+       ],
+       [
+        "(onların)",
+        "*gitmeleri lazım*",
+        "*gitmelerine gerek yok*",
+        "mereka perlu / tak perlu pergi"
+       ]
+      ]
+     },
+     "after": [
+      "Tanpa menyebut orang, pakai *-mek*: *Erken gitmek lazım.* (Harus berangkat pagi — siapa pun.)"
+     ]
+    }
+   ]
+  }
+ ],
+ "sections": [
+  {
+   "title": "Harus, perlu, tidak wajib, tidak boleh",
+   "blocks": [
+    {
+     "type": "p",
+     "text": "Dalam kalimat positif, keempat bentuk keharusan bisa saling menggantikan tanpa banyak mengubah arti. Dalam kalimat negatif, artinya bercabang tajam. Perhatikan baris-baris yang diberi tanda *tidak boleh* dan *tidak wajib*."
+    },
+    {
+     "type": "tabel",
+     "head": [
+      "Kalimat",
+      "Arti",
+      "Nuansa"
+     ],
+     "rows": [
+      [
+       "*Gitmelisin.*",
+       "Kamu harus pergi.",
+       "nasihat, aturan"
+      ],
+      [
+       "*Gitmek zorundasın.*",
+       "Kamu wajib pergi.",
+       "tak ada pilihan"
+      ],
+      [
+       "*Gitmen lazım.*",
+       "Kamu perlu pergi.",
+       "sehari-hari"
+      ],
+      [
+       "*Gitmen gerekiyor.*",
+       "Kamu perlu pergi.",
+       "netral, resmi"
+      ],
+      [
+       "*Gitmemelisin.*",
+       "Kamu tidak boleh pergi.",
+       "larangan"
+      ],
+      [
+       "*Gitmek zorunda değilsin.*",
+       "Kamu tidak wajib pergi.",
+       "boleh pergi, boleh tidak"
+      ],
+      [
+       "*Gitmene gerek yok.*",
+       "Kamu tidak perlu pergi.",
+       "tak perlu repot"
+      ],
+      [
+       "*Gitmen şart.*",
+       "Kamu mutlak harus pergi.",
+       "syarat, tak bisa ditawar"
+      ]
+     ]
+    },
+    {
+     "type": "p",
+     "text": "Salah memilih negatif bisa mengubah pesan. *Pasaport getirmek zorunda değilsiniz* berarti \"Anda tidak wajib membawa paspor\" (bawa pun tak apa), sedangkan *Pasaport getirmemelisiniz* berarti \"Anda tidak boleh membawa paspor\" — dua instruksi yang sangat berbeda bagi rombongan wisata."
+    },
+    {
+     "type": "kotak",
+     "title": "Menasihati dengan sopan",
+     "items": [
+      "*-meli* langsung bisa terdengar menggurui. Lunakkan dengan *bence* (menurutku): *Bence erken gitmelisin.*",
+      "*-sen iyi olur* (akan baik kalau kamu…) terdengar lebih halus lagi: *Erken gitsen iyi olur.* Bentuk *-se* dipelajari di unit 10.",
+      "Kepada atasan atau tamu, pilih *gerekiyor* yang netral: *Pasaportunuzu getirmeniz gerekiyor.*",
+      "*Mecbur* (terpaksa) adalah sinonim *zorunda* yang juga sering terdengar: *Gitmeye mecburum.*"
+     ]
+    }
+   ]
+  },
+  {
+   "title": "İkamet izni & e-Devlet",
+   "blocks": [
+    {
+     "type": "p",
+     "text": "Warga asing yang tinggal di Turki lebih dari 90 hari memerlukan *ikamet izni* (izin tinggal). Seluruh prosesnya dimulai secara daring, lalu diselesaikan dengan janji temu di kantor imigrasi provinsi."
+    },
+    {
+     "type": "tabel",
+     "head": [
+      "Istilah",
+      "Arti"
+     ],
+     "rows": [
+      [
+       "*kısa dönem ikamet izni*",
+       "izin tinggal jangka pendek"
+      ],
+      [
+       "*e-İkamet*",
+       "situs pengajuan izin tinggal"
+      ],
+      [
+       "*e-Devlet*",
+       "portal layanan pemerintah"
+      ],
+      [
+       "*İl Göç İdaresi*",
+       "kantor imigrasi provinsi"
+      ],
+      [
+       "*randevu*",
+       "janji temu"
+      ],
+      [
+       "*harç*",
+       "biaya administrasi negara"
+      ],
+      [
+       "*yabancı kimlik numarası*",
+       "nomor identitas warga asing"
+      ],
+      [
+       "*adres kaydı*",
+       "pendaftaran alamat"
+      ]
+     ]
+    },
+    {
+     "type": "kotak",
+     "title": "Kiat mengurus ikamet",
+     "items": [
+      "Ajukan perpanjangan **sebelum** izin lama habis; pengajuan bisa dimulai sekitar dua bulan sebelumnya. Izin yang telanjur kedaluwarsa jauh lebih repot diurus.",
+      "Nomor identitas warga asing diawali angka **99**. Dengan nomor ini dan paspor, kamu bisa mengambil kata sandi *e-Devlet* di kantor pos PTT.",
+      "Lewat *e-Devlet* kamu bisa memeriksa status ikamet, mendaftarkan alamat, bahkan melihat riwayat perjalanan keluar-masuk Turki.",
+      "Bawa semua dokumen dalam bentuk asli **dan** fotokopi; petugas hampir selalu meminta keduanya."
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Ulangan berjenjang — unit 2",
+   "blocks": [
+    {
+     "type": "p",
+     "text": "Tutup kolom Turki, baca terjemahan Indonesianya, lalu susun kembali kalimatnya dari ingatan."
+    },
+    {
+     "type": "tabel",
+     "head": [
+      "Bahasa Indonesia",
+      "Türkçe"
+     ],
+     "rows": [
+      [
+       "Kalian sudah dengar? Hakan yang di Kapalıçarşı katanya menikah!",
+       "*Duydunuz mu? Kapalıçarşı'daki Hakan evlenmiş!*"
+      ],
+      [
+       "Dalam sebulan? Cepat banget, ya!",
+       "*Bir ayda mı? Çok hızlıymış!*"
+      ],
+      [
+       "Aku juga punya foto Hakan. Aduh, ponselku ketinggalan di rumah!",
+       "*Bende de Hakan'ın bir fotoğrafı var. Ay, telefonumu evde unutmuşum!*"
+      ],
+      [
+       "Waktu muda aku sering lihat lumba-lumba di Bosporus. Dengan mata kepalaku sendiri!",
+       "*Ben gençken Boğaz'da çok yunus gördüm. Kendi gözümle!*"
+      ],
+      [
+       "Tapi ada videonya, Bu. Nelayannya ternyata nggak bohong!",
+       "*Ama video var, Fatma Hanım. Balıkçı yalan söylememiş!*"
+      ]
+     ]
+    }
+   ]
+  }
+ ],
+ "vocab": [
+  {
+   "tr": "kontrol etmek",
+   "baca": "kon-TROL et-MEK",
+   "id": "memeriksa (+ akusatif)"
+  },
+  {
+   "tr": "isim",
+   "baca": "i-SIM",
+   "id": "nama (akusatif *ismi*)"
+  },
+  {
+   "tr": "aynı",
+   "baca": "ay-NI",
+   "id": "sama (+ *ile*: *pasaportla aynı*)"
+  },
+  {
+   "tr": "lazım",
+   "baca": "la-ZIM",
+   "id": "perlu, diperlukan"
+  },
+  {
+   "tr": "gerek",
+   "baca": "ge-REK",
+   "id": "keperluan (*gerek yok*: tak perlu; *gerekiyor*: perlu)"
+  },
+  {
+   "tr": "zorunda",
+   "baca": "zo-run-DA",
+   "id": "wajib, terpaksa (*-mek zorundayım*)"
+  },
+  {
+   "tr": "helal",
+   "baca": "he-LAL",
+   "id": "halal"
+  },
+  {
+   "tr": "tarih",
+   "baca": "ta-RIH",
+   "id": "sejarah; tanggal"
+  },
+  {
+   "tr": "şart",
+   "baca": "syart",
+   "id": "syarat; wajib (*şart değil*: tidak wajib)"
+  },
+  {
+   "tr": "takım elbise",
+   "baca": "ta-KIM el-bi-SE",
+   "id": "setelan jas"
+  },
+  {
+   "tr": "kot pantolon",
+   "baca": "kot pan-to-LON",
+   "id": "celana jins"
+  },
+  {
+   "tr": "giymek",
+   "baca": "giy-MEK",
+   "id": "memakai (pakaian)"
+  },
+  {
+   "tr": "sakın",
+   "baca": "SA-kın",
+   "id": "awas, jangan sampai (+ perintah)"
+  },
+  {
+   "tr": "ikamet izni",
+   "baca": "i-ka-MET iz-NI",
+   "id": "izin tinggal (*ikamet iznim*)"
+  },
+  {
+   "tr": "bitmek",
+   "baca": "bit-MEK",
+   "id": "habis, selesai (*bitiyor*)"
+  },
+  {
+   "tr": "yenilemek",
+   "baca": "ye-ni-le-MEK",
+   "id": "memperbarui, memperpanjang"
+  },
+  {
+   "tr": "karışık",
+   "baca": "ka-rı-SYIK",
+   "id": "rumit, ruwet; campur"
+  },
+  {
+   "tr": "başvuru",
+   "baca": "basy-vu-RU",
+   "id": "permohonan, pendaftaran (*başvuru yapmak*)"
+  },
+  {
+   "tr": "belge",
+   "baca": "bel-GE",
+   "id": "dokumen, surat keterangan"
+  },
+  {
+   "tr": "sağlık sigortası",
+   "baca": "saa-LIK si-GOR-ta-sı",
+   "id": "asuransi kesehatan"
+  },
+  {
+   "tr": "kira sözleşmesi",
+   "baca": "ki-RA söz-lesy-me-SI",
+   "id": "kontrak sewa"
+  },
+  {
+   "tr": "noter",
+   "baca": "no-TER",
+   "id": "notaris (datif *notere*)"
+  },
+  {
+   "tr": "imzalamak",
+   "baca": "im-za-la-MAK",
+   "id": "menandatangani (+ akusatif)"
+  },
+  {
+   "tr": "harç",
+   "baca": "harc",
+   "id": "biaya administrasi resmi"
+  },
+  {
+   "tr": "randevu",
+   "baca": "ran-de-VU",
+   "id": "janji temu (datif *randevuya*)"
+  }
+ ],
+ "exercises": [
+  {
+   "prompt": "Terjemahkan ke bahasa Turki.",
+   "items": [
+    "Aku harus ngapain?",
+    "Kamu harus memeriksa daftarnya.",
+    "Nggak perlu.",
+    "Aku perlu memperpanjang izin tinggalku.",
+    "Kamu wajib menerjemahkannya ke bahasa Indonesia.",
+    "Kamu tidak boleh memakai celana jins."
+   ]
+  },
+  {
+   "prompt": "Isi titik-titik dengan bentuk keharusan yang tepat.",
+   "items": [
+    "Yarın erken ____. (kalkmak, ben, -meli)",
+    "Öğrenciler her gün ödev ____. (yapmak, onlar, -meli)",
+    "Pazartesi otelde ____ lazım. (olmak, benim)",
+    "Bu akşam Ayasofya'nın tarihini okumak ____. (zorunda, ben)",
+    "Noterde para ödemek zorunda ____? (biz, tanya)",
+    "Senin notere ____ gerek yok. (gitmek, sen)",
+    "Kot pantolon ____. (giymek, sen, -meli negatif)"
+   ]
+  },
+  {
+   "prompt": "Ubah *-meli* menjadi *-mek zorunda*.",
+   "items": [
+    "Pasaportu getirmelisin.",
+    "Harç ödemeliyiz.",
+    "Budi erken kalkmalı.",
+    "Randevuya gitmeliyim.",
+    "Formu imzalamalısınız.",
+    "Onlar beklemeliler."
+   ]
+  },
+  {
+   "prompt": "Susun jadi kalimat yang benar.",
+   "items": [
+    "yapmalıyım / ne / ben",
+    "zorundasın / çevirmek / Endonezceye",
+    "lazım / yenilemem / iznimi / ikamet",
+    "mıyız / zorunda / ödemek / para",
+    "olmalısın / otelde / buçukta / sekiz"
+   ]
+  }
+ ],
+ "answers": [
+  "Ne yapmalıyım? — Listeyi kontrol etmelisin. — Gerek yok. — İkamet iznimi yenilemem lazım. — Endonezceye çevirmek zorundasın. — Kot pantolon giymemelisin.",
+  "kalkmalıyım — yapmalılar — olmam — zorundayım — mıyız — gitmene — giymemelisin",
+  "Pasaportu getirmek zorundasın. — Harç ödemek zorundayız. — Budi erken kalkmak zorunda. — Randevuya gitmek zorundayım. — Formu imzalamak zorundasınız. — Onlar beklemek zorundalar.",
+  "Ben ne yapmalıyım? — Endonezceye çevirmek zorundasın. — İkamet iznimi yenilemem lazım. — Para ödemek zorunda mıyız? — Sekiz buçukta otelde olmalısın."
+ ]
+}
