@@ -5304,13 +5304,24 @@ export default function AkunPage() {
                    Kelas grup (batch) & produk digital dikecualikan: jadwalnya dari pola batch
                    atau memang tak ada jadwal. */
                 const nowMs = Date.now();
+                const punyaSesiMendatang = (regId: string) => allSchedules.some((s: any) =>
+                  s.registration_id === regId && !isDead(s.status) &&
+                  new Date(s.scheduled_at).getTime() + (Number(s.duration_minutes) || 60) * 60000 > nowMs);
+                /* [jadwal-belum-diatur-lanjutan-v1] Kelas lanjutan yang sudah dibayar (A2.1 0/16)
+                   sementara level sebelumnya di bahasa yang SAMA masih punya sesi mendatang
+                   (A1.3 #15–16) bukan "belum diatur" — jadwalnya memang menyusul setelah level
+                   lama habis (lihat jadwal-kelas-lanjutan-dulu). Kotak kuningnya bikin siswa
+                   mengira kelasnya hilang (Davin, 26 Sep 2026). */
+                const bahasaDasar = (l?: string | null) => String(l || "").split(/\s[-–]\s/)[0].trim().toLowerCase();
+                const bahasaMasihJalan = new Set(
+                  activeRegs.filter((r: any) => punyaSesiMendatang(r.id)).map((r: any) => bahasaDasar(r.language))
+                );
                 const kelasBelumTerjadwal = !jadwalTermuat ? [] : activeRegs
                   .filter((r: any) =>
                     !r.batch_id && !r.test_prep_batch_id && !isProdukDigital(r.product) &&
                     Number(r.sessions_total) > 0 && (Number(r.sessions_used) || 0) < Number(r.sessions_total) &&
-                    !allSchedules.some((s: any) =>
-                      s.registration_id === r.id && !isDead(s.status) &&
-                      new Date(s.scheduled_at).getTime() + (Number(s.duration_minutes) || 60) * 60000 > nowMs))
+                    !punyaSesiMendatang(r.id) &&
+                    !bahasaMasihJalan.has(bahasaDasar(r.language)))
                   .map((r: any) => ({
                     id: r.id,
                     label: [r.language, r.level].filter(Boolean).join(" · ") || "Kelas",

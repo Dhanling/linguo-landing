@@ -273,6 +273,12 @@ export default function JadwalCalendar({
     return h === 24 ? gridHours.start : h;
   }, [items, gridDays, gridHours]);
 
+  /** Jumlah sesi di rentang hari yang lagi digambar grid — dasar empty state. */
+  const gridCount = useMemo(() => {
+    const isos = new Set(gridDays.map(ymd));
+    return items.filter((i) => isos.has(i._iso)).length;
+  }, [items, gridDays]);
+
   // Mendarat di jam yang berisi, bukan di jam paling pagi yang kosong.
   // Dependensinya sengaja nilai PRIMITIF (bukan objek gridHours): `items` dihitung
   // ulang tiap menit karena patokan "sekarang" bergeser, dan objek baru tiap menit
@@ -282,19 +288,17 @@ export default function JadwalCalendar({
     const el = gridScrollRef.current;
     if (!el) return;
     el.scrollTop = Math.max(0, (gridFocusHour - gridHours.start - 0.5) * hourPx);
-  }, [gridFocusHour, gridHours.start, hourPx, mode, fullscreen]);
+    // [jadwal-scroll-saat-grid-muncul-v1] `gridCount` ikut: selama jadwal belum datang
+    // yang tergambar empty state (grid belum ter-mount), jadi scroll ke sesi paling
+    // pagi harus diulang begitu grid-nya muncul — dulu mendarat di tengah hari
+    // dan sesi jam 09.00 tampak "tidak ada" (Davin, 26 Sep 2026).
+  }, [gridFocusHour, gridHours.start, hourPx, mode, fullscreen, gridCount > 0]);
 
   /** Total menit sesi terjadwal di minggu yang lagi dilihat. */
   const weekMinutes = useMemo(() => {
     const isos = new Set(weekDays.map(ymd));
     return items.filter((i) => isos.has(i._iso)).reduce((a, e) => a + (e.durationMinutes || 60), 0);
   }, [items, weekDays]);
-
-  /** Jumlah sesi di rentang hari yang lagi digambar grid — dasar empty state. */
-  const gridCount = useMemo(() => {
-    const isos = new Set(gridDays.map(ymd));
-    return items.filter((i) => isos.has(i._iso)).length;
-  }, [items, gridDays]);
 
   /**
    * Susun sesi satu hari jadi jalur (lane) supaya sesi yang jamnya tabrakan tampil
@@ -719,7 +723,19 @@ export default function JadwalCalendar({
                                 return (
                                   <button
                                     key={e.id}
-                                    onClick={() => setSelected(iso)}
+                                    onClick={() => {
+                                      /* [kartu-kalender-ke-kelas-v1] Kartu sesi yang sudah masuk jendela
+                                         masuk (30 menit sebelum mulai s/d selesai) langsung membuka room
+                                         SESI ITU — sesi blok yang sedang/paling dekat jalan, sama dengan
+                                         tombol Masuk Kelas. Di luar jendela tetap membuka agenda hari itu
+                                         (di sana ada keterangan jam tombolnya dibuka / rekaman). */
+                                      const j = blok.find((s) => s._joinable && !s._past) || blok.find((s) => s._joinable);
+                                      if (j) {
+                                        window.open(j.joinUrl || classRoomUrl(j.id, { title: `Kelas ${j.language}`, name: studentName }), "_blank", "noopener,noreferrer");
+                                        return;
+                                      }
+                                      setSelected(iso);
+                                    }}
                                     // title bawaan browser dibuang: detailnya sudah dijawab panel hover
                                     aria-label={`${e._time}–${akhir} · ${e.language}${e.level ? ` ${e.level}` : ""}${e.teacher ? ` · ${e.teacher}` : ""}${blok.length > 1 ? ` · ${blok.length} ${tt("sesi")}` : ""}`}
                                     onPointerEnter={(ev) => { if (ev.pointerType === "mouse") bukaHover(blok, ev.currentTarget.getBoundingClientRect()); }}
