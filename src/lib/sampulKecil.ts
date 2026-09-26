@@ -14,6 +14,9 @@ export function sampulKecil(url: string | null | undefined, lebar: number): stri
     const u = new URL(url.replace(pub, "/storage/v1/render/image/public/"));
     u.searchParams.set("width", String(lebar));
     u.searchParams.set("quality", "70");
+    // WAJIB: mode bawaan Supabase "cover" mempertahankan tinggi asli kalau cuma
+    // width yang dikirim (800×1139 → 440×1139), jadi sampul terpotong/ter-zoom.
+    u.searchParams.set("resize", "contain");
     return u.toString();
   }
   if (url.startsWith("/") && !url.startsWith("//") && /\.(jpe?g|png|webp)$/i.test(url)) {
