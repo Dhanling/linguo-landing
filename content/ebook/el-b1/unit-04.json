@@ -1,0 +1,573 @@
+{
+ "title": "Dia bertanya apakah… — pertanyaan & perintah tak langsung",
+ "title_target": "Με ρώτησε αν…",
+ "goal": "Meneruskan pertanyaan dan instruksi orang lain tanpa salah makna: *Σε ρωτάει αν έχεις ταξιδέψει ποτέ με πλοίο. Μου είπε να στείλω τα αποτελέσματα την Παρασκευή.*",
+ "bekal": [
+  "melaporkan pertanyaan ya/tidak dengan αν dan pertanyaan kata tanya dengan πού, πότε, γιατί, τι…: *Ρωτάει γιατί θέλεις να γίνεις ναυτικός*",
+  "melaporkan perintah dan larangan dengan να / να μην: *Είπε να μην αλλάξεις τίποτα*",
+  "membedakan *είπε ότι* (kabar) dari *είπε να* (suruhan), dan *ρωτάω* (bertanya) dari *ζητάω* (meminta)"
+ ],
+ "dialogs": [
+  {
+   "title": "ΔΙΑΛΟΓΟΣ 1 — Wawancara daring",
+   "intro": "Senin, 27 September 2027, pukul sepuluh pagi di Pireas, pukul dua siang di Surabaya. Kostas dan Ana mewawancarai Rafi, lulusan akademi pelayaran berusia dua puluh tahun, lewat video. Program mensyaratkan bahasa Yunani dasar, jadi wawancaranya dalam bahasa Yunani — dan Ana sesekali membantu mengulang pertanyaan.",
+   "lines": [
+    {
+     "speaker": "Κώστας:",
+     "text": "[Καλημέρα|Ka-li-MÉ-ra], [Ράφι|RA-fi]. [Μας|Mas] [ακούς|a-KUS] [καλά|ka-LA];",
+     "id": "Selamat pagi, Rafi. Suara kami jelas?",
+     "literal": "selamat-pagi, Rafi. kami kamu-mendengar baik?"
+    },
+    {
+     "speaker": "Ράφι:",
+     "text": "[Καλημέρα|Ka-li-MÉ-ra] [σας|sas]. [Ναι|Né], [σας|sas] [ακούω|a-KU-o] [πολύ|po-LI] [καλά|ka-LA].",
+     "id": "Selamat pagi. Ya, saya dengar dengan jelas sekali.",
+     "literal": "selamat-pagi kepada-anda. ya, anda aku-mendengar sangat baik."
+    },
+    {
+     "speaker": "Κώστας:",
+     "text": "[Ωραία|O-RÉ-a]. [Πες|Pés] [μας|mas], [γιατί|ya-TI] [θέλεις|THÉ-lis] [να|na] [γίνεις|YI-nis] [ναυτικός|naf-ti-KOS];",
+     "id": "Bagus. Coba ceritakan, kenapa kamu ingin jadi pelaut?",
+     "literal": "bagus. katakanlah kepada-kami, mengapa kamu-mau untuk kamu-menjadi pelaut?"
+    },
+    {
+     "speaker": "Ράφι:",
+     "text": "[Συγγνώμη|Si-GHNO-mi], [δεν|dhén] [κατάλαβα|ka-TA-la-va]. [Μπορείτε|Bo-RI-té] [να|na] [επαναλάβετε|é-pa-na-LA-vé-té];",
+     "id": "Maaf, saya kurang paham. Bisa diulang?",
+     "literal": "maaf, tidak aku-memahami. anda-bisa untuk anda-mengulang?"
+    },
+    {
+     "speaker": "Άννα:",
+     "text": "[Ο|O] [κύριος|KI-ri-os] [Κώστας|KO-stas] [ρωτάει|ro-TA-i] [γιατί|ya-TI] [θέλεις|THÉ-lis] [να|na] [γίνεις|YI-nis] [ναυτικός|naf-ti-KOS].",
+     "id": "Pak Kostas bertanya kenapa kamu ingin jadi pelaut.",
+     "literal": "(sandang) tuan Kostas dia-bertanya mengapa kamu-mau untuk kamu-menjadi pelaut."
+    },
+    {
+     "speaker": "Ράφι:",
+     "text": "[Α|A]! [Ο|O] [πατέρας|pa-TÉ-ras] [μου|mu] [ήταν|I-tan] [ναυτικός|naf-ti-KOS]. [Θέλω|THÉ-lo] [να|na] [δω|dho] [τον|ton] [κόσμο|KO-smo], [όπως|O-pos] [εκείνος|é-KI-nos].",
+     "id": "Oh! Ayah saya dulu pelaut. Saya ingin melihat dunia, seperti dia.",
+     "literal": "ah! (sandang) ayah-ku dia-adalah-dulu pelaut. aku-mau untuk aku-melihat (sandang) dunia, seperti dia-itu."
+    },
+    {
+     "speaker": "Κώστας:",
+     "text": "[Έχεις|É-khis] [ταξιδέψει|ta-ksi-DHÉ-psi] [ποτέ|po-TÉ] [με|mé] [πλοίο|PLI-o] [για|ya] [πολλές|po-LÉS] [μέρες|MÉ-rés];",
+     "id": "Kamu pernah berlayar berhari-hari?",
+     "literal": "kamu-punya bepergian pernah dengan kapal untuk banyak hari-jamak?"
+    },
+    {
+     "speaker": "Ράφι:",
+     "text": "[Με|Mé] [πλοίο|PLI-o]… [για|ya] [πολλές|po-LÉS] [μέρες|MÉ-rés]; [Δεν|Dhén] [είμαι|I-mé] [σίγουρος|SI-ghu-ros] [τι|ti] [εννοείτε|é-no-I-té].",
+     "id": "Dengan kapal… berhari-hari? Saya kurang yakin maksud Bapak.",
+     "literal": "dengan kapal… untuk banyak hari-jamak? tidak aku-adalah yakin apa anda-maksudkan."
+    },
+    {
+     "speaker": "Άννα:",
+     "text": "[Σε|Sé] [ρωτάει|ro-TA-i] [αν|an] [έχεις|É-khis] [μείνει|MI-ni] [ποτέ|po-TÉ] [σε|sé] [πλοίο|PLI-o] [πάνω|PA-no] [από|a-PO] [μία|MI-a] [εβδομάδα|év-dho-MA-dha].",
+     "id": "Dia tanya apakah kamu pernah tinggal di kapal lebih dari seminggu.",
+     "literal": "kamu dia-bertanya apakah kamu-punya tinggal pernah di kapal di-atas dari satu minggu."
+    },
+    {
+     "speaker": "Ράφι:",
+     "text": "[Όχι|O-khi] [ακόμα|a-KO-ma]. [Μόνο|MO-no] [τρεις|tris] [μέρες|MÉ-rés], [από|a-PO] [τη|ti] [Σουραμπάγια|Su-ram-BA-ya] [στη|sti] [Μακασάρ|Ma-ka-SAR].",
+     "id": "Belum. Cuma tiga hari, dari Surabaya ke Makassar.",
+     "literal": "tidak masih. hanya tiga hari-jamak, dari (sandang) Surabaya ke-(sandang) Makassar."
+    },
+    {
+     "speaker": "Κώστας:",
+     "text": "[Καλά|Ka-LA]. [Έχεις|É-khis] [κάποια|KA-pi-a] [ερώτηση|é-RO-ti-si] [για|ya] [εμάς|é-MAS];",
+     "id": "Baik. Ada pertanyaan untuk kami?",
+     "literal": "baik. kamu-punya suatu pertanyaan untuk kami?"
+    },
+    {
+     "speaker": "Ράφι:",
+     "text": "[Ναι|Né]. [Θα|Tha] [ήθελα|I-thé-la] [να|na] [ρωτήσω|ro-TI-so] [πότε|PO-té] [ξεκινάει|ksé-ki-NA-i] [η|i] [εκπαίδευση|ék-PÉ-dhéf-si] [και|ké] [αν|an] [θα|tha] [έχουμε|É-khu-mé] [μαθήματα|ma-THI-ma-ta] [ελληνικών|é-li-ni-KON].",
+     "id": "Ya. Saya ingin bertanya kapan pelatihannya dimulai dan apakah kami akan dapat pelajaran bahasa Yunani.",
+     "literal": "ya. akan aku-ingin untuk aku-bertanya kapan ia-mulai (sandang) pelatihan dan apakah akan kami-punya pelajaran-jamak yunani-jamak-punya."
+    },
+    {
+     "speaker": "Άννα:",
+     "text": "[Ξεκινάει|Ksé-ki-NA-i] [τον|ton] [Ιανουάριο|I-a-nu-A-ri-o]. [Και|Ké] [ναι|né], [θα|tha] [έχετε|É-khé-té] [ελληνικά|é-li-ni-KA] [κάθε|KA-thé] [Τρίτη|TRI-ti] [και|ké] [Πέμπτη|PÉMB-ti].",
+     "id": "Mulainya Januari. Dan ya, kalian akan belajar bahasa Yunani tiap Selasa dan Kamis.",
+     "literal": "ia-mulai (sandang) Januari. dan ya, akan kalian-punya yunani-jamak setiap Selasa dan Kamis."
+    },
+    {
+     "speaker": "Κώστας:",
+     "text": "[Ευχαριστούμε|Éf-kha-ri-STU-mé], [Ράφι|RA-fi]. [Θα|Tha] [σου|su] [πούμε|PU-mé] [μέχρι|MÉ-khri] [την|tin] [Παρασκευή|Pa-ra-ské-VI] [αν|an] [πέρασες|PÉ-ra-sés].",
+     "id": "Terima kasih, Rafi. Paling lambat Jumat kami kabari apakah kamu lolos.",
+     "literal": "kami-berterima-kasih, Rafi. akan kepadamu kami-berkata sampai (sandang) Jumat apakah kamu-lulus."
+    }
+   ],
+   "notes": [
+    "⚠️ **Pertanyaan ya/tidak dilaporkan dengan αν.** Dalam obrolan, orang Indonesia sering membuang \"apakah\": \"Dia tanya kamu pernah naik kapal.\" Dalam bahasa Yunani **αν** wajib: *Σε ρωτάει αν έχεις μείνει ποτέ σε πλοίο*. Tanpa αν (~~*Σε ρωτάει έχεις μείνει…*~~) atau dengan ότι (~~*Σε ρωτάει ότι…*~~) kalimatnya rusak.",
+    "**Kata tanya tetap di tempatnya**, sisanya berubah menjadi kalimat berita: tanpa tanda **;** di ujung, dan orangnya menyesuaikan pelapor. *«Γιατί θέλεις…;»* → *Ρωτάει γιατί θέλεις…*. ⚠️ **Πού** dan **πώς** tetap beraksen: *Ρώτησε πού μένω, πώς λέγομαι.*",
+    "⚠️ **Ρωτάω memakai akusatif, λέω memakai genitif.** *Με ρώτησε* (dia bertanya kepadaku), *Σε ρωτάει, Τον ρώτησα* — bukan ~~*Μου ρώτησε*~~. Bandingkan *Μου είπε* (dia berkata kepadaku). Dua kata kerja yang sering berdampingan, dua kasus yang berbeda.",
+    "**Αν punya dua arti.** *Θα σου πούμε αν πέρασες* = kami kabari **apakah** kamu lolos (pertanyaan tak langsung, kala biasa). *Αν περάσεις, θα έρθεις στον Πειραιά* = **kalau** kamu lolos, kamu akan ke Pireas (syarat, υποτακτική). Lihat kala kata kerjanya.",
+    "Rafi memakai tiga kalimat penyelamat yang layak kamu hafal: *Συγγνώμη, δεν κατάλαβα.* — *Μπορείτε να επαναλάβετε;* — *Δεν είμαι σίγουρος / σίγουρη τι εννοείτε.* Dengan **εσείς**, karena Kostas lebih tua dan pewawancara. Kostas sendiri boleh ber-εσύ kepada kandidat muda.",
+    "**Μαθήματα ελληνικών** = pelajaran bahasa Yunani. Nama bahasa adalah kata sifat netral jamak: *μιλάω ελληνικά, ινδονησιακά, αγγλικά*; genitifnya *ελληνικών*. Kota asing umumnya feminin karena mengikuti *η πόλη*: *η Σουραμπάγια, η Μακασάρ*."
+   ],
+   "grammars": [
+    {
+     "title": "Pertanyaan tak langsung",
+     "body": [
+      "Pertanyaan ya/tidak mendapat **αν**. Pertanyaan dengan kata tanya mempertahankan kata tanyanya. Keduanya berakhir dengan titik, bukan ;."
+     ],
+     "table": {
+      "head": [
+       "Pertanyaan langsung",
+       "Tak langsung"
+      ],
+      "rows": [
+       [
+        "*«Γιατί θέλεις να γίνεις ναυτικός;»*",
+        "*Ρωτάει γιατί θέλεις να γίνεις ναυτικός.*"
+       ],
+       [
+        "*«Έχεις ταξιδέψει ποτέ με πλοίο;»*",
+        "*Ρωτάει αν έχεις ταξιδέψει ποτέ με πλοίο.*"
+       ],
+       [
+        "*«Πού μένεις;»*",
+        "*Με ρώτησε πού μένω.*"
+       ],
+       [
+        "*«Πότε ξεκινάει η εκπαίδευση;»*",
+        "*Ρώτησε πότε ξεκινάει η εκπαίδευση.*"
+       ],
+       [
+        "*«Πώς σε λένε;»*",
+        "*Με ρώτησε πώς με λένε.*"
+       ],
+       [
+        "*«Τι σπούδασες;»*",
+        "*Τον ρώτησαν τι σπούδασε.*"
+       ],
+       [
+        "*«Θα έχουμε μαθήματα;»*",
+        "*Ρώτησε αν θα έχουν μαθήματα.*"
+       ]
+      ]
+     },
+     "after": [
+      "Sesudah *ξέρω, θυμάμαι, καταλαβαίνω, αναρωτιέμαι, δεν είμαι σίγουρος* polanya sama: *Δεν ξέρω πότε φεύγει. Θυμάσαι τι είπε;*",
+      "Pertanyaan yang sangat sopan sering dibungkus seperti ini: *Θα ήθελα να ρωτήσω αν…* (saya ingin bertanya apakah…)."
+     ]
+    }
+   ]
+  },
+  {
+   "title": "ΔΙΑΛΟΓΟΣ 2 — Titipan instruksi",
+   "intro": "Selasa, 28 September 2027. Kostas terbang ke Chios, pulau asalnya, untuk urusan keluarga selama seminggu. Ia meninggalkan setumpuk instruksi pada Ana, dan Stavros ingin tahu bagiannya.",
+   "lines": [
+    {
+     "speaker": "Σταύρος:",
+     "text": "[Άννα|A-na], [ο|o] [Κώστας|KO-stas] [έφυγε|É-fi-yé] [για|ya] [τη|ti] [Χίο|KHI-o]. [Σου|Su] [άφησε|A-fi-sé] [οδηγίες|o-dhi-YI-és];",
+     "id": "Ana, Kostas sudah berangkat ke Chios. Dia ninggalin instruksi ke kamu?",
+     "literal": "Ana, (sandang) Kostas dia-pergi ke (sandang) Chios. kepadamu dia-meninggalkan instruksi-jamak?"
+    },
+    {
+     "speaker": "Άννα:",
+     "text": "[Ναι|Né], [πολλές|po-LÉS]. [Μου|Mu] [είπε|I-pé] [να|na] [στείλω|STI-lo] [τα|ta] [αποτελέσματα|a-po-té-LÉ-sma-ta] [των|ton] [συνεντεύξεων|si-nén-DÉF-ksé-on] [την|tin] [Παρασκευή|Pa-ra-ské-VI].",
+     "id": "Iya, banyak. Dia suruh aku mengirim hasil wawancara hari Jumat.",
+     "literal": "ya, banyak. kepadaku dia-berkata untuk aku-mengirim (sandang) hasil-jamak (sandang)-punya wawancara-jamak-punya (sandang) Jumat."
+    },
+    {
+     "speaker": "Σταύρος:",
+     "text": "[Και|Ké] [για|ya] [μένα|MÉ-na]; [Είπε|I-pé] [τίποτα|TI-po-ta];",
+     "id": "Terus buat aku? Dia bilang sesuatu?",
+     "literal": "dan untuk aku? dia-berkata sesuatu?"
+    },
+    {
+     "speaker": "Άννα:",
+     "text": "[Είπε|I-pé] [να|na] [μην|min] [αλλάξεις|a-LA-ksis] [τίποτα|TI-po-ta] [στην|stin] [πλατφόρμα|plat-FOR-ma] [πριν|prin] [γυρίσει|yi-RI-si].",
+     "id": "Katanya jangan ubah apa pun di platform sebelum dia pulang.",
+     "literal": "dia-berkata untuk jangan kamu-mengubah apa-pun di-(sandang) platform sebelum dia-kembali."
+    },
+    {
+     "speaker": "Σταύρος:",
+     "text": "[Γιατί|Ya-TI]; [Μου|Mu] [είπε|I-pé] [ότι|O-ti] [του|tu] [αρέσει|a-RÉ-si] [η|i] [καινούργια|ké-NUR-ya] [σελίδα|sé-LI-dha]!",
+     "id": "Kenapa? Dia bilang ke aku dia suka halaman barunya!",
+     "literal": "mengapa? kepadaku dia-berkata bahwa kepadanya ia-menyenangkan (sandang) baru halaman!"
+    },
+    {
+     "speaker": "Άννα:",
+     "text": "[Του|Tu] [αρέσει|a-RÉ-si]. [Αλλά|A-LA] [μου|mu] [ζήτησε|ZI-ti-sé] [να|na] [σου|su] [πω|po] [ότι|O-ti] [θέλει|THÉ-li] [να|na] [τη|ti] [δει|dhi] [πρώτα|PRO-ta].",
+     "id": "Dia memang suka. Tapi dia minta aku bilang ke kamu bahwa dia mau melihatnya dulu.",
+     "literal": "kepadanya ia-menyenangkan. tetapi kepadaku dia-meminta untuk kepadamu aku-berkata bahwa dia-mau untuk itu dia-melihat dulu."
+    },
+    {
+     "speaker": "Σταύρος:",
+     "text": "[Καλά|Ka-LA]. [Και|Ké] [στη|sti] [Δήμητρα|DHI-mi-tra] [τι|ti] [είπε|I-pé];",
+     "id": "Ya sudah. Terus ke Dhimitra dia bilang apa?",
+     "literal": "baik. dan kepada-(sandang) Dhimitra apa dia-berkata?"
+    },
+    {
+     "speaker": "Άννα:",
+     "text": "[Της|Tis] [είπε|I-pé] [να|na] [κλείσει|KLI-si] [ξενοδοχείο|ksé-no-dho-KHI-o] [για|ya] [τους|tus] [δοκίμους|dho-KI-mus] [και|ké] [να|na] [βρει|vri] [διερμηνέα|dhiér-mi-NÉ-a].",
+     "id": "Dia suruh Dhimitra memesan hotel untuk para kadet dan mencari juru bahasa.",
+     "literal": "kepadanya dia-berkata untuk dia-memesan hotel untuk (sandang) kadet-jamak dan untuk dia-menemukan juru-bahasa."
+    },
+    {
+     "speaker": "Σταύρος:",
+     "text": "[Διερμηνέα|Dhiér-mi-NÉ-a]; [Αφού|A-FU] [μιλάς|mi-LAS] [εσύ|é-SI] [ινδονησιακά|in-dho-ni-sia-KA]!",
+     "id": "Juru bahasa? Kan kamu bisa bahasa Indonesia!",
+     "literal": "juru-bahasa? toh kamu-berbicara kamu indonesia-jamak!"
+    },
+    {
+     "speaker": "Άννα:",
+     "text": "[Ακριβώς|A-kri-VOS]. [Γι|Yi]' [αυτό|af-TO] [μου|mu] [είπε|I-pé] [να|na] [μην|min] [προσφερθώ|pro-sfér-THO]. [Έχω|É-kho] [ήδη|I-dhi] [αρκετή|ar-ké-TI] [δουλειά|dhu-LIA].",
+     "id": "Persis. Makanya dia bilang aku jangan menawarkan diri. Kerjaanku sudah cukup banyak.",
+     "literal": "persis. karena itu kepadaku dia-berkata untuk jangan aku-menawarkan-diri. aku-punya sudah cukup pekerjaan."
+    }
+   ],
+   "notes": [
+    "⚠️ **Είπε να ≠ είπε ότι.** Kata \"bilang\" dalam bahasa Indonesia menampung kabar sekaligus suruhan: \"Dia bilang aku kirim hasilnya Jumat\" bisa berarti dua hal. Bahasa Yunani memisahkannya: *Μου είπε να στείλω* = dia **menyuruh** aku mengirim; *Μου είπε ότι στέλνω* = dia **memberitahuku** bahwa aku (yang) mengirim. Stavros memakai keduanya berdampingan: *Είπε να μην αλλάξεις* vs *Μου είπε ότι του αρέσει*.",
+    "**Να μην** untuk larangan yang dilaporkan: *«Μην αλλάξεις τίποτα!» → Είπε να μην αλλάξεις τίποτα.* Kata kerjanya dalam υποτακτική dan orangnya disesuaikan: *να μην προσφερθώ* (aku), *να μην αλλάξεις* (kamu).",
+    "**Ζητάω ≠ ρωτάω.** **Ρωτάω** = bertanya (ingin informasi): *Με ρώτησε αν…*. **Ζητάω** = meminta (ingin sesuatu atau tindakan): *Μου ζήτησε να σου πω…* (dia minta aku bilang ke kamu). Dengan kata benda: *Ζήτησε από την Άννα να…* — orang yang dimintai memakai **από**.",
+    "**Aspek tetap bekerja di dalam να.** *Μου είπε να στείλω* (sekali, Jumat ini) vs *Μου είπε να του γράφω κάθε μέρα* (berulang). Pilihlah seperti ketika memakai perintah langsung: *στείλε* atau *γράφε*.",
+    "**Αφού μιλάς εσύ ινδονησιακά!** — **αφού** di sini bukan \"setelah\", melainkan \"kan, toh\" untuk alasan yang sudah jelas bagi semua orang. **Γι' αυτό** = makanya, karena itu."
+   ],
+   "grammars": [
+    {
+     "title": "Perintah yang dilaporkan",
+     "body": [
+      "Perintah menjadi **να + υποτακτική**, larangan menjadi **να μην + υποτακτική**. Pelapornya biasanya *είπε, ζήτησε, πρότεινε* (mengusulkan)."
+     ],
+     "table": {
+      "head": [
+       "Perintah langsung",
+       "Dilaporkan"
+      ],
+      "rows": [
+       [
+        "*«Στείλε τα αποτελέσματα!»*",
+        "*Μου είπε να στείλω τα αποτελέσματα.*"
+       ],
+       [
+        "*«Μην αλλάξεις τίποτα!»*",
+        "*Είπε να μην αλλάξεις τίποτα.*"
+       ],
+       [
+        "*«Κλείσε ξενοδοχείο!»*",
+        "*Της είπε να κλείσει ξενοδοχείο.*"
+       ],
+       [
+        "*«Περιμένετε εδώ!»*",
+        "*Μας είπε να περιμένουμε εκεί.*"
+       ],
+       [
+        "*«Γράφε μου κάθε εβδομάδα.»*",
+        "*Μου είπε να του γράφω κάθε εβδομάδα.*"
+       ],
+       [
+        "*«Μη μου τηλεφωνείτε μετά τις δέκα.»*",
+        "*Μας ζήτησε να μην του τηλεφωνούμε μετά τις δέκα.*"
+       ]
+      ]
+     },
+     "after": [
+      "Kata ganti lemah yang dulu mengikuti perintah (*στείλε μου, γράφε μου*) pindah ke depan kata kerja sesudah να: *να μου στείλει, να του γράφω*."
+     ]
+    }
+   ]
+  }
+ ],
+ "sections": [
+  {
+   "title": "Tiga pola: ΟΤΙ, ΑΝ, ΝΑ",
+   "blocks": [
+    {
+     "type": "tabel",
+     "head": [
+      "Yang dilaporkan",
+      "Pola",
+      "Contoh"
+     ],
+     "rows": [
+      [
+       "kabar, pernyataan",
+       "*είπε ότι* + kala bebas",
+       "*Είπε ότι έρχεται.*"
+      ],
+      [
+       "pertanyaan ya/tidak",
+       "*ρώτησε αν*",
+       "*Ρώτησε αν έρχομαι.*"
+      ],
+      [
+       "pertanyaan kata tanya",
+       "*ρώτησε* + kata tanya",
+       "*Ρώτησε πότε έρχομαι.*"
+      ],
+      [
+       "perintah, permintaan",
+       "*είπε / ζήτησε να*",
+       "*Μου είπε να έρθω.*"
+      ],
+      [
+       "larangan",
+       "*είπε να μην*",
+       "*Μου είπε να μην έρθω.*"
+      ]
+     ]
+    },
+    {
+     "type": "p",
+     "text": "Sebelum melaporkan, tanyakan satu hal: kalimat aslinya **memberi tahu**, **bertanya**, atau **menyuruh**? Jawabannya langsung menentukan kata sambungnya. ⚠️ *Μου είπε ότι έρχομαι* (dia memberitahuku bahwa aku ikut datang — kabar) dan *Μου είπε να έρθω* (dia menyuruhku datang) memakai kata kerja yang sama tetapi sama sekali tidak sama artinya."
+    }
+   ]
+  },
+  {
+   "title": "Kata tanya di dalam kalimat",
+   "blocks": [
+    {
+     "type": "tabel",
+     "head": [
+      "Kata",
+      "Contoh",
+      "Arti"
+     ],
+     "rows": [
+      [
+       "ποιος / ποια / ποιο",
+       "*Δεν ξέρω ποιος ήρθε.*",
+       "Aku nggak tahu siapa yang datang."
+      ],
+      [
+       "τι",
+       "*Θυμάσαι τι είπε;*",
+       "Kamu ingat dia bilang apa?"
+      ],
+      [
+       "πού",
+       "*Ρώτησε πού είναι το λιμάνι.*",
+       "Dia tanya pelabuhannya di mana."
+      ],
+      [
+       "πότε",
+       "*Δεν μου είπε πότε φεύγει.*",
+       "Dia nggak bilang kapan berangkat."
+      ],
+      [
+       "πώς",
+       "*Εξήγησέ μου πώς λειτουργεί.*",
+       "Jelaskan padaku cara kerjanya."
+      ],
+      [
+       "γιατί",
+       "*Αναρωτιέμαι γιατί άργησε.*",
+       "Aku bertanya-tanya kenapa dia telat."
+      ],
+      [
+       "πόσο",
+       "*Ρώτησε πόσο κοστίζει.*",
+       "Dia tanya berapa harganya."
+      ],
+      [
+       "μήπως",
+       "*Αναρωτιέμαι μήπως ξέχασε.*",
+       "Aku curiga jangan-jangan dia lupa."
+      ]
+     ]
+    },
+    {
+     "type": "p",
+     "text": "**Μήπως** adalah αν yang membawa kecurigaan atau kesopanan. Dalam pertanyaan langsung ia melunakkan permintaan: *Μήπως ξέρετε πού είναι το λιμάνι;* = barangkali Anda tahu di mana pelabuhannya? Salah satu kata paling berguna untuk terdengar sopan di Yunani."
+    }
+   ]
+  },
+  {
+   "title": "Wawancara kerja dalam bahasa Yunani",
+   "blocks": [
+    {
+     "type": "p",
+     "text": "Wawancara di Yunani biasanya lebih santai daripada di Indonesia: pewawancara yang lebih tua sering langsung memakai εσύ kepada kandidat muda. Kandidat sebaiknya tetap memakai εσείς sampai dipersilakan sebaliknya."
+    },
+    {
+     "type": "kotak",
+     "title": "Kalimat siap pakai untuk kandidat",
+     "items": [
+      "*Θα ήθελα να ρωτήσω αν…* — saya ingin bertanya apakah…",
+      "*Μπορείτε να μου πείτε πότε…;* — bisakah Anda memberi tahu saya kapan…?",
+      "*Μήπως θα μπορούσατε να επαναλάβετε;* — barangkali Anda bisa mengulanginya?",
+      "*Δεν είμαι σίγουρος τι εννοείτε.* — saya kurang yakin apa maksud Anda.",
+      "*Πότε θα μάθω αν πέρασα;* — kapan saya tahu apakah saya lolos?"
+     ]
+    }
+   ]
+  }
+ ],
+ "vocab": [
+  {
+   "el": "η συνέντευξη",
+   "baca": "i si-NÉN-déf-ksi",
+   "id": "wawancara (*οι συνεντεύξεις*)"
+  },
+  {
+   "el": "ο υποψήφιος",
+   "baca": "o i-po-PSI-fios",
+   "id": "kandidat, calon (*η υποψήφια*)"
+  },
+  {
+   "el": "ρωτάω",
+   "baca": "ro-TA-o",
+   "id": "bertanya (+ akusatif: *με ρώτησε*; *ρώτησα*)"
+  },
+  {
+   "el": "ζητάω",
+   "baca": "zi-TA-o",
+   "id": "meminta (*ζήτησα*; *ζητάω από κάποιον να…*)"
+  },
+  {
+   "el": "επαναλαμβάνω",
+   "baca": "é-pa-na-lam-VA-no",
+   "id": "mengulang (*επανέλαβα, να επαναλάβω*)"
+  },
+  {
+   "el": "εννοώ",
+   "baca": "é-no-O",
+   "id": "bermaksud (*Τι εννοείτε;* = apa maksud Anda?)"
+  },
+  {
+   "el": "αναρωτιέμαι",
+   "baca": "a-na-ro-TIÉ-mé",
+   "id": "bertanya-tanya dalam hati (*αναρωτήθηκα*)"
+  },
+  {
+   "el": "γίνομαι",
+   "baca": "YI-no-mé",
+   "id": "menjadi (*έγινα, να γίνω*)"
+  },
+  {
+   "el": "ο κόσμος",
+   "baca": "o KO-smos",
+   "id": "dunia; orang-orang"
+  },
+  {
+   "el": "ταξιδεύω",
+   "baca": "ta-ksi-DHÉ-vo",
+   "id": "bepergian, berlayar (*ταξίδεψα*)"
+  },
+  {
+   "el": "πάνω από",
+   "baca": "PA-no a-PO",
+   "id": "lebih dari (*πάνω από μία εβδομάδα*)"
+  },
+  {
+   "el": "η ερώτηση",
+   "baca": "i é-RO-ti-si",
+   "id": "pertanyaan"
+  },
+  {
+   "el": "ξεκινάω",
+   "baca": "ksé-ki-NA-o",
+   "id": "mulai; berangkat (*ξεκίνησα*)"
+  },
+  {
+   "el": "η οδηγία",
+   "baca": "i o-dhi-YI-a",
+   "id": "petunjuk, instruksi (*οι οδηγίες*)"
+  },
+  {
+   "el": "αφήνω",
+   "baca": "a-FI-no",
+   "id": "meninggalkan; membiarkan (*άφησα*)"
+  },
+  {
+   "el": "το αποτέλεσμα",
+   "baca": "to a-po-TÉ-lé-sma",
+   "id": "hasil (*τα αποτελέσματα*)"
+  },
+  {
+   "el": "κλείνω",
+   "baca": "KLI-no",
+   "id": "memesan (hotel, tiket); menutup (*έκλεισα*)"
+  },
+  {
+   "el": "ο διερμηνέας",
+   "baca": "o dhiér-mi-NÉ-as",
+   "id": "juru bahasa lisan (juga *η διερμηνέας*)"
+  },
+  {
+   "el": "αφού",
+   "baca": "a-FU",
+   "id": "kan, toh; setelah"
+  },
+  {
+   "el": "προσφέρομαι",
+   "baca": "pro-SFÉ-ro-mé",
+   "id": "menawarkan diri (*προσφέρθηκα, να προσφερθώ*)"
+  },
+  {
+   "el": "η σελίδα",
+   "baca": "i sé-LI-dha",
+   "id": "halaman"
+  },
+  {
+   "el": "μήπως",
+   "baca": "MI-pos",
+   "id": "barangkali, jangan-jangan (pelembut pertanyaan)"
+  },
+  {
+   "el": "σίγουρος",
+   "baca": "SI-ghu-ros",
+   "id": "yakin, pasti (*σίγουρη, σίγουρο*)"
+  },
+  {
+   "el": "προτείνω",
+   "baca": "pro-TI-no",
+   "id": "mengusulkan (*πρότεινα*; *προτείνω να…*)"
+  }
+ ],
+ "exercises": [
+  {
+   "prompt": "Terjemahkan ke bahasa Yunani.",
+   "items": [
+    "Dia bertanya kepadaku apakah aku pernah naik kapal.",
+    "Aku nggak tahu kapan pelatihannya dimulai.",
+    "Dia menyuruhku mengirim hasilnya hari Jumat.",
+    "Dia bilang ke kamu jangan ubah apa pun.",
+    "Dia minta aku mengulang.",
+    "Aku bertanya-tanya kenapa dia terlambat."
+   ]
+  },
+  {
+   "prompt": "Isi dengan αν, ότι, να, atau kata tanya yang tepat. Petunjuk ada di dalam kurung.",
+   "items": [
+    "Ο Κώστας ρώτησε ____ έχω ταξιδέψει ποτέ με πλοίο. (pertanyaan ya/tidak)",
+    "Μου είπε ____ στείλω τα αποτελέσματα. (suruhan)",
+    "Ο Ράφι είπε ____ ο πατέρας του ήταν ναυτικός. (kabar)",
+    "Δεν ξέρω ____ ξεκινάει η εκπαίδευση. (kapan)",
+    "Της είπε ____ μην αλλάξει τίποτα. (larangan)",
+    "Με ρώτησαν ____ μένω. (di mana)",
+    "Αναρωτιέμαι ____ άργησε τόσο. (kenapa)"
+   ]
+  },
+  {
+   "prompt": "Laporkan dengan *Με ρώτησε…* (pertanyaan) atau *Μου είπε να…* (perintah). Contoh: *«Πού μένεις;»* → *Με ρώτησε πού μένω.*",
+   "items": [
+    "«Πόσο χρονών είσαι;»",
+    "«Έχεις διαβατήριο;»",
+    "«Τι σπούδασες;»",
+    "«Στείλε μου το βιογραφικό σου.»",
+    "«Μην αργήσεις!»",
+    "«Μπορείς να ξεκινήσεις τον Ιανουάριο;»"
+   ]
+  },
+  {
+   "prompt": "Susun jadi kalimat yang benar.",
+   "items": [
+    "αν / με / ταξιδέψει / ρώτησε / έχω / ποτέ",
+    "να / μου / στείλω / είπε / τα αποτελέσματα",
+    "δεν / πότε / ξέρω / φεύγει / το πλοίο",
+    "μην / είπε / να / αλλάξεις / τίποτα",
+    "ζήτησε / να / μου / επαναλάβω"
+   ]
+  }
+ ],
+ "answers": [
+  "Με ρώτησε αν έχω ταξιδέψει ποτέ με πλοίο. — Δεν ξέρω πότε ξεκινάει η εκπαίδευση. — Μου είπε να στείλω τα αποτελέσματα την Παρασκευή. — Σου είπε να μην αλλάξεις τίποτα. — Μου ζήτησε να επαναλάβω. — Αναρωτιέμαι γιατί άργησε.",
+  "αν — να — ότι — πότε — να — πού — γιατί",
+  "Με ρώτησε πόσο χρονών είμαι. — Με ρώτησε αν έχω διαβατήριο. — Με ρώτησε τι σπούδασα. — Μου είπε να του στείλω το βιογραφικό μου. — Μου είπε να μην αργήσω. — Με ρώτησε αν μπορώ να ξεκινήσω τον Ιανουάριο.",
+  "Με ρώτησε αν έχω ταξιδέψει ποτέ. — Μου είπε να στείλω τα αποτελέσματα. — Δεν ξέρω πότε φεύγει το πλοίο. — Είπε να μην αλλάξεις τίποτα. — Μου ζήτησε να επαναλάβω."
+ ]
+}

@@ -1,0 +1,559 @@
+{
+ "title": "Kabar terbaru — παρακείμενος",
+ "title_target": "Έχεις ακούσει τα νέα;",
+ "goal": "Menyampaikan dan menanyakan kabar terbaru dengan kala sempurna (παρακείμενος): *Έχεις ακούσει τα νέα; Δεν έχω δει ακόμα τις φωτογραφίες* — sekaligus tahu kapan \"sudah\" dalam bahasa Indonesia justru harus diterjemahkan dengan αόριστος (*Ήρθα χθες*).",
+ "bekal": [
+  "membentuk παρακείμενος dari έχω + bentuk -ει yang tidak pernah berubah: *έχω γράψει, έχεις δει, έχουν έρθει*",
+  "memilih παρακείμενος untuk hasil yang terasa sekarang dan pengalaman (*Έχεις πάει ποτέ…;*), dan αόριστος begitu ada waktu lampau yang jelas (*την περασμένη εβδομάδα*)",
+  "memakai ήδη, ακόμα, ποτέ, μόλις, dan εδώ και dengan kala yang tepat"
+ ],
+ "dialogs": [
+  {
+   "title": "ΔΙΑΛΟΓΟΣ 1 — Kabar di koridor",
+   "intro": "Senin, 6 September 2027, pukul sembilan pagi. Hari pertama sesudah libur musim panas di kantor Αιγαίον Ναυτιλιακή, Pireas. Ana baru melepas jaketnya ketika Dhimitra menghampirinya dengan wajah berseri. Perhatikan kapan mereka memakai έχω + -ει dan kapan tidak.",
+   "lines": [
+    {
+     "speaker": "Δήμητρα:",
+     "text": "[Καλημέρα|Ka-li-MÉ-ra], [Άννα|A-na]! [Έχεις|É-khis] [ακούσει|a-KU-si] [τα|ta] [νέα|NÉ-a];",
+     "id": "Pagi, Ana! Udah dengar kabarnya?",
+     "literal": "selamat-pagi, Ana! kamu-punya mendengar (sandang) baru-jamak?"
+    },
+    {
+     "speaker": "Άννα:",
+     "text": "[Ποια|Pia] [νέα|NÉ-a]; [Μόλις|MO-lis] [ήρθα|IR-tha], [δεν|dhén] [έχω|É-kho] [ανοίξει|a-NI-ksi] [καν|kan] [τον|ton] [υπολογιστή|i-po-lo-yi-STI].",
+     "id": "Kabar apa? Aku baru datang, komputer aja belum kunyalakan.",
+     "literal": "apa-jamak baru-jamak? baru-saja aku-datang, tidak aku-punya membuka bahkan (sandang) komputer."
+    },
+    {
+     "speaker": "Δήμητρα:",
+     "text": "[Η|I] [κυρία|ki-RI-a] [Αγγελική|An-gé-li-KI] [έχει|É-khi] [υπογράψει|i-po-GHRA-psi] [τον|ton] [διορισμό|dhio-ri-SMO] [σου|su]. [Είσαι|I-sé] [η|i] [νέα|NÉ-a] [συντονίστρια|sin-do-NI-stri-a]!",
+     "id": "Bu Angeliki sudah menandatangani pengangkatanmu. Kamu koordinator yang baru!",
+     "literal": "(sandang) nyonya Angeliki dia-punya menandatangani (sandang) pengangkatan kamu. kamu-adalah (sandang) baru koordinator!"
+    },
+    {
+     "speaker": "Άννα:",
+     "text": "[Σοβαρά|So-va-RA]; [Ποιος|Pios] [σου|su] [το|to] [είπε|I-pé];",
+     "id": "Serius? Siapa yang bilang ke kamu?",
+     "literal": "serius? siapa kepadamu itu dia-berkata?"
+    },
+    {
+     "speaker": "Δήμητρα:",
+     "text": "[Ο|O] [Σταύρος|STAV-ros]. [Έχει|É-khi] [ετοιμάσει|é-ti-MA-si] [ήδη|I-dhi] [και|ké] [την|tin] [καινούργια|ké-NUR-ya] [σου|su] [κάρτα|KAR-ta].",
+     "id": "Stavros. Dia malah sudah menyiapkan kartu pegawaimu yang baru.",
+     "literal": "(sandang) Stavros. dia-punya menyiapkan sudah juga (sandang) baru kamu kartu."
+    },
+    {
+     "speaker": "Άννα:",
+     "text": "[Δεν|Dhén] [το|to] [πιστεύω|pi-STÉ-vo]! [Ο|O] [κύριος|KI-ri-os] [Κώστας|KO-stas] [δεν|dhén] [μου|mu] [έχει|É-khi] [πει|pi] [τίποτα|TI-po-ta].",
+     "id": "Aku nggak percaya! Pak Kostas belum bilang apa-apa ke aku.",
+     "literal": "tidak itu aku-percaya! (sandang) tuan Kostas tidak kepadaku dia-punya berkata apa-pun."
+    },
+    {
+     "speaker": "Δήμητρα:",
+     "text": "[Σε|Sé] [περιμένει|pé-ri-MÉ-ni] [στο|sto] [γραφείο|ghra-FI-o] [του|tu]. [Έχει|É-khi] [φέρει|FÉ-ri] [και|ké] [γλυκά|ghli-KA]!",
+     "id": "Dia nunggu kamu di ruangannya. Bahkan sudah bawa kue!",
+     "literal": "kamu dia-menunggu di-(sandang) kantor-nya. dia-punya membawa juga manis-jamak!"
+    },
+    {
+     "speaker": "Άννα:",
+     "text": "[Θεέ|Thé-É] [μου|mu]! [Δεν|Dhén] [έχω|É-kho] [κάνει|KA-ni] [ποτέ|po-TÉ] [κάτι|KA-ti] [τέτοιο|TÉ-ti-o]. [Τι|Ti] [ακριβώς|a-kri-VOS] [κάνει|KA-ni] [μια|mia] [συντονίστρια|sin-do-NI-stri-a];",
+     "id": "Ya ampun! Aku belum pernah pegang yang begini. Koordinator itu sebenarnya ngapain aja?",
+     "literal": "tuhan-ku! tidak aku-punya melakukan pernah sesuatu seperti-itu. apa persisnya dia-melakukan seorang koordinator?"
+    },
+    {
+     "speaker": "Δήμητρα:",
+     "text": "[Οργανώνεις|Or-gha-NO-nis] [την|tin] [εκπαίδευση|ék-PÉ-dhéf-si] [των|ton] [ναυτικών|naf-ti-KON] [μας|mas] [από|a-PO] [την|tin] [Ινδονησία|In-dho-ni-SI-a]. [Το|To] [κάνεις|KA-nis] [εδώ|é-DHO] [και|ké] [έναν|É-nan] [χρόνο|KHRO-no], [απλώς|a-PLOS] [χωρίς|kho-RIS] [τίτλο|TIT-lo].",
+     "id": "Kamu mengatur pelatihan pelaut kita dari Indonesia. Itu sudah kamu kerjakan setahun ini, cuma belum ada jabatannya.",
+     "literal": "kamu-mengatur (sandang) pelatihan (sandang)-punya pelaut-jamak-punya kita dari (sandang) Indonesia. itu kamu-melakukan sejak satu tahun, hanya tanpa gelar."
+    },
+    {
+     "speaker": "Άννα:",
+     "text": "[Ναι|Né], [αλλά|a-LA] [τώρα|TO-ra] [έχω|É-kho] [την|tin] [ευθύνη|éf-THI-ni]. [Εσύ|É-SI] [έχεις|É-khis] [δουλέψει|dhu-LÉ-psi] [ποτέ|po-TÉ] [σε|sé] [τέτοια|TÉ-ti-a] [θέση|THÉ-si];",
+     "id": "Iya, tapi sekarang aku yang tanggung jawab. Kamu pernah kerja di posisi kayak gitu?",
+     "literal": "ya, tetapi sekarang aku-punya (sandang) tanggung-jawab. kamu kamu-punya bekerja pernah di seperti-itu posisi?"
+    },
+    {
+     "speaker": "Δήμητρα:",
+     "text": "[Ποτέ|Po-TÉ]. [Εγώ|É-GHO] [δεν|dhén] [έχω|É-kho] [πάρει|PA-ri] [ούτε|U-té] [μία|MI-a] [προαγωγή|pro-a-gho-YI] [σε|sé] [τρία|TRI-a] [χρόνια|KHRO-nia]! [Πλάκα|PLA-ka] [κάνω|KA-no].",
+     "id": "Belum pernah. Aku aja belum naik jabatan sekali pun dalam tiga tahun! Bercanda.",
+     "literal": "tidak-pernah. aku tidak aku-punya mengambil bahkan-tidak satu kenaikan-jabatan dalam tiga tahun! lelucon aku-membuat."
+    },
+    {
+     "speaker": "Άννα:",
+     "text": "[Έλα|É-la], [μη|mi] [λες|lés] [τέτοια|TÉ-ti-a]. [Πάω|PA-o] [στον|ston] [κύριο|KI-ri-o] [Κώστα|KO-sta].",
+     "id": "Ah, jangan ngomong gitu. Aku ke Pak Kostas dulu.",
+     "literal": "ayolah, jangan kamu-mengatakan hal-hal-begitu. aku-pergi ke-(sandang) tuan Kostas."
+    },
+    {
+     "speaker": "Κώστας:",
+     "text": "[Άννα|A-na], [επιτέλους|é-pi-TÉ-lus]! [Έχω|É-kho] [ετοιμάσει|é-ti-MA-si] [καφέ|ka-FÉ] [και|ké] [γαλακτομπούρεκο|gha-lak-tom-BU-ré-ko]. [Κάθισε|KA-thi-sé].",
+     "id": "Ana, akhirnya! Saya sudah siapkan kopi dan galaktoboureko. Duduklah.",
+     "literal": "Ana, akhirnya! aku-punya menyiapkan kopi dan galaktoboureko. duduklah."
+    },
+    {
+     "speaker": "Άννα:",
+     "text": "[Κύριε|KI-ri-é] [Κώστα|KO-sta], [δεν|dhén] [ξέρω|KSÉ-ro] [τι|ti] [να|na] [πω|po]. [Σας|Sas] [ευχαριστώ|éf-kha-ri-STO] [πολύ|po-LI].",
+     "id": "Pak Kostas, saya nggak tahu harus bilang apa. Terima kasih banyak.",
+     "literal": "tuan Kostas, tidak aku-tahu apa untuk aku-berkata. kepada-anda aku-berterima-kasih banyak."
+    }
+   ],
+   "notes": [
+    "⚠️ **\"Sudah\" tidak otomatis berarti παρακείμενος.** Kata \"sudah\" dalam bahasa Indonesia jauh lebih luas daripada έχω + -ει. Begitu ada keterangan waktu lampau yang jelas (*χθες, το πρωί, πέρσι, στις δέκα*), pakai αόριστος: *Ήρθα χθες* (aku sudah datang kemarin), bukan ~~*Έχω έρθει χθες*~~. Παρακείμενος hanya untuk kejadian tanpa waktu yang hasilnya terasa **sekarang**: *Έχει υπογράψει τον διορισμό σου* — surat itu kini sudah bertanda tangan.",
+    "**Μόλις ήρθα** = aku baru saja datang. **Μόλις** (baru saja) biasanya berpasangan dengan αόριστος, bukan dengan έχω: satu kejadian yang baru selesai. Bandingkan dengan kalimat sesudahnya, *δεν έχω ανοίξει καν τον υπολογιστή*: keadaan sampai detik ini — komputernya masih mati.",
+    "**Ποιος σου το είπε;** — Ana bertanya tentang satu kejadian tertentu (seseorang tadi memberi tahu Dhimitra), jadi αόριστος. Tiga baris kemudian ia berkata *δεν μου έχει πει τίποτα*: sampai sekarang belum ada pemberitahuan. Kata kerja yang sama, dua kala, dua makna.",
+    "⚠️ **\"Sudah setahun\" = kala kini + εδώ και.** *Το κάνεις εδώ και έναν χρόνο* = sudah setahun kamu mengerjakannya (dan masih). Untuk keadaan yang **masih berlangsung**, bahasa Yunani memakai kala kini, bukan ~~*το έχεις κάνει έναν χρόνο*~~. *Μένω στην Αθήνα εδώ και δύο χρόνια* = aku sudah dua tahun tinggal di Athena.",
+    "**Έχεις δουλέψει ποτέ…;** — παρακείμενος + **ποτέ** menanyakan pengalaman seumur hidup: \"pernah?\". Jawabannya *Ναι, έχω δουλέψει* atau *Ποτέ* / *Δεν έχω δουλέψει ποτέ*. Dengan sangkalan, **ούτε μία** berarti \"satu pun tidak\": *δεν έχω πάρει ούτε μία προαγωγή*.",
+    "**Γαλακτομπούρεκο** — kue filo berisi krim semolina bersirup, manisan klasik perayaan kantor. Biasanya orang yang naik jabatan atau berulang tahun yang **κερνάει** (mentraktir). Kostas mendahului Ana: tanda ia sungguh senang. Ucapan yang pas untuk Ana: *Συγχαρητήρια!* dan *Καλορίζικη η καινούργια θέση!*"
+   ],
+   "grammars": [
+    {
+     "title": "Membentuk kala sempurna",
+     "body": [
+      "Παρακείμενος = έχω (berubah menurut orang) + bentuk **-ει** yang beku. Bentuk -ει ini dibuat dari batang αόριστος — batang yang sama dengan υποτακτική (*να γράψω → έχω γράψει*). Hafal satu, dapat dua."
+     ],
+     "table": {
+      "head": [
+       "Kata kerja",
+       "ΑΟΡΙΣΤΟΣ (lampau)",
+       "ΠΑΡΑΚΕΙΜΕΝΟΣ"
+      ],
+      "rows": [
+       [
+        "*γράφω*",
+        "*έγραψα*",
+        "*έχω γράψει*"
+       ],
+       [
+        "*ακούω*",
+        "*άκουσα*",
+        "*έχω ακούσει*"
+       ],
+       [
+        "*τελειώνω*",
+        "*τελείωσα*",
+        "*έχω τελειώσει*"
+       ],
+       [
+        "*βλέπω*",
+        "*είδα*",
+        "*έχω δει*"
+       ],
+       [
+        "*λέω*",
+        "*είπα*",
+        "*έχω πει*"
+       ],
+       [
+        "*παίρνω*",
+        "*πήρα*",
+        "*έχω πάρει*"
+       ],
+       [
+        "*έρχομαι*",
+        "*ήρθα*",
+        "*έχω έρθει*"
+       ],
+       [
+        "*τρώω*",
+        "*έφαγα*",
+        "*έχω φάει*"
+       ]
+      ]
+     },
+     "after": [
+      "Hanya έχω yang berubah: *έχω, έχεις, έχει, έχουμε, έχετε, έχουν γράψει*. Bentuk -ει tidak pernah ikut orang, jumlah, atau jenis.",
+      "Kata kerja -ομαι memakai **-θεί**: *κουράζομαι → έχω κουραστεί*, *ανακοινώνεται → έχει ανακοινωθεί*, *γεννιέμαι → έχω γεννηθεί*."
+     ]
+    }
+   ]
+  },
+  {
+   "title": "ΔΙΑΛΟΓΟΣ 2 — Video call ke Jakarta",
+   "intro": "Senin yang sama, pukul enam sore di Athena — di Jakarta sudah pukul sepuluh malam. Ana menelepon adiknya, Rina, yang sedang menulis skripsi. Rina bicara dengan bahasa Yunani yang ia pelajari diam-diam untuk mengejutkan kakaknya.",
+   "lines": [
+    {
+     "speaker": "Ρίνα:",
+     "text": "[Άννα|A-na], [συγχαρητήρια|sin-kha-ri-TI-ri-a]! [Η|I] [μαμά|ma-MA] [το|to] [έχει|É-khi] [πει|pi] [ήδη|I-dhi] [σε|sé] [όλο|O-lo] [το|to] [σόι|SO-i].",
+     "id": "Kak Ana, selamat! Mama sudah cerita ke seluruh keluarga besar.",
+     "literal": "Ana, selamat-jamak! (sandang) mama itu dia-punya berkata sudah kepada seluruh (sandang) keluarga-besar."
+    },
+    {
+     "speaker": "Άννα:",
+     "text": "[Ωχ|Okh], [η|i] [μαμά|ma-MA]! [Εσύ|É-SI] [τι|ti] [κάνεις|KA-nis]; [Έχεις|É-khis] [τελειώσει|té-LIO-si] [την|tin] [πτυχιακή|pti-khia-KI] [σου|su];",
+     "id": "Aduh, Mama! Kamu gimana? Skripsimu sudah selesai?",
+     "literal": "aduh, (sandang) mama! kamu apa kamu-melakukan? kamu-punya menyelesaikan (sandang) skripsi kamu?"
+    },
+    {
+     "speaker": "Ρίνα:",
+     "text": "[Σχεδόν|Skhé-DHON]. [Έχω|É-kho] [γράψει|GHRA-psi] [τέσσερα|TÉ-sé-ra] [κεφάλαια|ké-FA-lé-a], [μου|mu] [μένει|MÉ-ni] [ένα|É-na].",
+     "id": "Hampir. Aku sudah nulis empat bab, tinggal satu.",
+     "literal": "hampir. aku-punya menulis empat bab-jamak, kepadaku ia-tersisa satu."
+    },
+    {
+     "speaker": "Άννα:",
+     "text": "[Μπράβο|BRA-vo]! [Και|Ké] [την|tin] [πρακτική|prak-ti-KI] [στο|sto] [υπουργείο|i-pur-YI-o]; [Έχεις|É-khis] [κάνει|KA-ni] [αίτηση|É-ti-si];",
+     "id": "Hebat! Terus magang di kementerian? Sudah daftar?",
+     "literal": "bagus! dan (sandang) magang di-(sandang) kementerian? kamu-punya membuat permohonan?"
+    },
+    {
+     "speaker": "Ρίνα:",
+     "text": "[Την|Tin] [έκανα|É-ka-na] [την|tin] [περασμένη|pé-ra-SMÉ-ni] [εβδομάδα|év-dho-MA-dha], [αλλά|a-LA] [δεν|dhén] [έχουν|É-khun] [απαντήσει|a-pan-DI-si] [ακόμα|a-KO-ma].",
+     "id": "Sudah minggu lalu, tapi mereka belum jawab.",
+     "literal": "itu aku-membuat (sandang) lalu minggu, tetapi tidak mereka-punya menjawab masih."
+    },
+    {
+     "speaker": "Άννα:",
+     "text": "[Θα|Tha] [απαντήσουν|a-pan-DI-sun]. [Έχεις|É-khis] [δει|dhi] [τις|tis] [φωτογραφίες|fo-to-ghra-FI-és] [που|pu] [σου|su] [έστειλα|É-sti-la] [από|a-PO] [τον|ton] [Πειραιά|Pi-ré-A];",
+     "id": "Pasti dijawab. Kamu sudah lihat foto-foto yang kukirim dari Pireas?",
+     "literal": "akan mereka-menjawab. kamu-punya melihat (sandang) foto-jamak yang kepadamu aku-mengirim dari (sandang) Pireas?"
+    },
+    {
+     "speaker": "Ρίνα:",
+     "text": "[Όχι|O-khi] [ακόμα|a-KO-ma]. [Περίμενε|Pé-RI-mé-né], [τις|tis] [ανοίγω|a-NI-gho] [τώρα|TO-ra]… [Ποιος|Pios] [είναι|I-né] [ο|o] [ψηλός|psi-LOS] [δίπλα|DHI-pla] [σου|su];",
+     "id": "Belum. Sebentar, kubuka sekarang… Siapa cowok tinggi di sebelahmu?",
+     "literal": "tidak masih. tunggulah, mereka aku-membuka sekarang… siapa dia-adalah (sandang) tinggi di-samping kamu?"
+    },
+    {
+     "speaker": "Άννα:",
+     "text": "[Ο|O] [Νίκος|NI-kos]. [Σου|Su] [έχω|É-kho] [μιλήσει|mi-LI-si] [γι|yi]' [αυτόν|af-TON], [θυμάσαι|thi-MA-sé];",
+     "id": "Nikos. Aku pernah cerita soal dia, ingat?",
+     "literal": "(sandang) Nikos. kepadamu aku-punya berbicara tentang dia, kamu-ingat?"
+    },
+    {
+     "speaker": "Ρίνα:",
+     "text": "[Μου|Mu] [έχεις|É-khis] [μιλήσει|mi-LI-si] [εκατό|é-ka-TO] [φορές|fo-RÉS]! [Τον|Ton] [έχεις|É-khis] [συστήσει|si-STI-si] [στη|sti] [μαμά|ma-MA];",
+     "id": "Kakak sudah cerita seratus kali! Sudah dikenalin ke Mama belum?",
+     "literal": "kepadaku kamu-punya berbicara seratus kali! dia kamu-punya memperkenalkan kepada-(sandang) mama?"
+    },
+    {
+     "speaker": "Άννα:",
+     "text": "[Όχι|O-khi] [ακόμα|a-KO-ma]! [Καληνύχτα|Ka-li-NIKH-ta], [Ρίνα|RI-na]. [Γράψε|GHRA-psé] [την|tin] [πτυχιακή|pti-khia-KI] [σου|su]!",
+     "id": "Belum! Selamat malam, Rina. Sana tulis skripsimu!",
+     "literal": "tidak masih! selamat-malam, Rina. tulislah (sandang) skripsi kamu!"
+    }
+   ],
+   "notes": [
+    "⚠️ **Την έκανα την περασμένη εβδομάδα.** Rina tidak berkata ~~*Την έχω κάνει την περασμένη εβδομάδα*~~. Pertanyaan Ana memakai παρακείμενος (*Έχεις κάνει αίτηση;* — sudah daftar?), tetapi begitu Rina menyebut **kapan**, ia wajib pindah ke αόριστος. Ini kekeliruan paling sering penutur Indonesia: menerjemahkan \"sudah\" + waktu dengan έχω.",
+    "**Όχι ακόμα / δεν … ακόμα** = belum. **Ακόμα** tanpa sangkalan berarti \"masih\" (*Είναι ακόμα εδώ* = dia masih di sini), dengan sangkalan \"belum\". Kebalikannya **ήδη** atau yang lebih santai **κιόλας** = sudah (lebih cepat dari dugaan): *Το έχει πει ήδη σε όλους*.",
+    "**Σου έχω μιλήσει γι' αυτόν.** Kata ganti lemah berdiri di depan **έχω**, tidak pernah di antara έχω dan bentuk -ει: ~~*έχω σου μιλήσει*~~. Sama dengan *Τον έχεις συστήσει;* dan *Το έχει πει*.",
+    "**Μου έχεις μιλήσει εκατό φορές!** Παρακείμενος juga cocok untuk kejadian berulang yang terkumpul sampai sekarang. Tidak ada waktu tertentu, yang penting jumlahnya hingga detik ini.",
+    "**Η πτυχιακή** (lengkapnya *η πτυχιακή εργασία*) = skripsi; **το πτυχίο** = ijazah sarjana. **Το σόι** adalah kata santai untuk seluruh keluarga besar — sepupu, paman, bibi — persis \"keluarga besar\" yang berkumpul di grup WA."
+   ],
+   "grammars": [
+    {
+     "title": "Lampau biasa atau sempurna?",
+     "body": [
+      "Tanyakan dua hal: apakah ada **waktu lampau yang jelas**? Apakah yang penting **hasilnya sekarang** atau pengalamannya? Tabel ini merangkum pilihannya."
+     ],
+     "table": {
+      "head": [
+       "Situasi",
+       "Pilih",
+       "Contoh"
+      ],
+      "rows": [
+       [
+        "Ada waktu lampau yang jelas",
+        "αόριστος",
+        "*Ήρθα χθες. Την έκανα πέρσι.*"
+       ],
+       [
+        "Urutan cerita (lalu…, lalu…)",
+        "αόριστος",
+        "*Μπήκα, κάθισα, άνοιξα τον υπολογιστή.*"
+       ],
+       [
+        "Hasil yang terasa sekarang, tanpa waktu",
+        "παρακείμενος",
+        "*Έχει υπογράψει τον διορισμό.*"
+       ],
+       [
+        "Pengalaman seumur hidup (pernah?)",
+        "παρακείμενος",
+        "*Έχεις πάει ποτέ στην Κρήτη;*"
+       ],
+       [
+        "Belum sampai sekarang",
+        "παρακείμενος",
+        "*Δεν έχουν απαντήσει ακόμα.*"
+       ],
+       [
+        "Baru saja (μόλις)",
+        "αόριστος",
+        "*Μόλις ήρθα.*"
+       ],
+       [
+        "Masih berlangsung sejak…",
+        "kala kini + εδώ και",
+        "*Μένω στην Αθήνα εδώ και έναν χρόνο.*"
+       ]
+      ]
+     },
+     "after": [
+      "Dalam percakapan sehari-hari orang Yunani memakai αόριστος jauh lebih sering daripada παρακείμενος. Kalau ragu, αόριστος lebih jarang terdengar salah: *Έφαγες;* (sudah makan?) lebih wajar daripada *Έχεις φάει;*."
+     ]
+    }
+   ]
+  }
+ ],
+ "sections": [
+  {
+   "title": "Kata keterangan yang menemani ΠΑΡΑΚΕΙΜΕΝΟΣ",
+   "blocks": [
+    {
+     "type": "tabel",
+     "head": [
+      "Kata",
+      "Arti",
+      "Contoh"
+     ],
+     "rows": [
+      [
+       "ήδη / κιόλας",
+       "sudah (lebih cepat dari dugaan)",
+       "*Έχει φύγει κιόλας!*"
+      ],
+      [
+       "δεν … ακόμα",
+       "belum",
+       "*Δεν έχω φάει ακόμα.*"
+      ],
+      [
+       "ποτέ (tanya)",
+       "pernah",
+       "*Έχεις δει ποτέ τη Σαντορίνη;*"
+      ],
+      [
+       "δεν … ποτέ",
+       "tidak pernah, belum pernah",
+       "*Δεν έχω οδηγήσει ποτέ σκάφος.*"
+      ],
+      [
+       "πολλές φορές",
+       "berkali-kali",
+       "*Το έχω ακούσει πολλές φορές.*"
+      ],
+      [
+       "μέχρι τώρα / ως τώρα",
+       "sampai sekarang",
+       "*Μέχρι τώρα έχουμε βρει δέκα δοκίμους.*"
+      ],
+      [
+       "πρόσφατα / τελευταία",
+       "belakangan ini",
+       "*Τελευταία έχω κουραστεί πολύ.*"
+      ],
+      [
+       "μόλις (+ αόριστος)",
+       "baru saja",
+       "*Μόλις τελείωσα.*"
+      ]
+     ]
+    },
+    {
+     "type": "p",
+     "text": "Letak kata keterangan cukup bebas, tetapi yang paling wajar adalah sesudah bentuk -ei atau di ujung kalimat: *Έχει φύγει ήδη*, *Δεν έχω φάει ακόμα*. *Ήδη* juga boleh di antara έχω dan -ει (*Έχει ήδη φύγει*) — satu-satunya tamu yang boleh menyela, sedangkan kata ganti lemah tidak."
+    }
+   ]
+  },
+  {
+   "title": "Kabar baik di kantor Yunani",
+   "blocks": [
+    {
+     "type": "p",
+     "text": "Orang Yunani menyambut kabar baik dengan ucapan yang hampir ritual. Mengucapkan yang tepat membuatmu terdengar hangat — dan sekaligus menunjukkan bahwa kamu tahu aturan mainnya: yang merayakan biasanya yang mentraktir."
+    },
+    {
+     "type": "kotak",
+     "title": "Ucapan untuk kabar baik",
+     "items": [
+      "*Συγχαρητήρια!* — selamat! Untuk kelulusan, pengangkatan, pernikahan. Balasannya *Ευχαριστώ!*",
+      "*Καλορίζικο!* / *Καλορίζικη η καινούργια θέση!* — semoga membawa berkah; untuk sesuatu yang baru: rumah, mobil, pekerjaan.",
+      "*Άξιος! / Άξια!* — pantas kamu dapat! (laki-laki / perempuan).",
+      "*Καλή αρχή!* — semoga awal yang baik; untuk hari pertama di posisi baru.",
+      "*Πότε κερνάς;* — kapan traktirannya? Setengah bercanda, setengah menagih."
+     ]
+    }
+   ]
+  }
+ ],
+ "vocab": [
+  {
+   "el": "τα νέα",
+   "baca": "ta NÉ-a",
+   "id": "kabar, berita (selalu jamak dalam arti ini)"
+  },
+  {
+   "el": "ο διορισμός",
+   "baca": "o dhio-ri-SMOS",
+   "id": "pengangkatan (dalam jabatan)"
+  },
+  {
+   "el": "η συντονίστρια",
+   "baca": "i sin-do-NI-stri-a",
+   "id": "koordinator perempuan (*ο συντονιστής* untuk laki-laki)"
+  },
+  {
+   "el": "υπογράφω",
+   "baca": "i-po-GHRA-fo",
+   "id": "menandatangani (*υπέγραψα, έχω υπογράψει*)"
+  },
+  {
+   "el": "ετοιμάζω",
+   "baca": "é-ti-MA-zo",
+   "id": "menyiapkan (*ετοίμασα, έχω ετοιμάσει*)"
+  },
+  {
+   "el": "ο υπολογιστής",
+   "baca": "o i-po-lo-yi-STIS",
+   "id": "komputer"
+  },
+  {
+   "el": "ανοίγω",
+   "baca": "a-NI-gho",
+   "id": "membuka; menyalakan alat (*άνοιξα, έχω ανοίξει*)"
+  },
+  {
+   "el": "η ευθύνη",
+   "baca": "i éf-THI-ni",
+   "id": "tanggung jawab"
+  },
+  {
+   "el": "η θέση",
+   "baca": "i THÉ-si",
+   "id": "posisi, jabatan; tempat duduk"
+  },
+  {
+   "el": "η προαγωγή",
+   "baca": "i pro-a-gho-YI",
+   "id": "kenaikan jabatan"
+  },
+  {
+   "el": "πλάκα κάνω",
+   "baca": "PLA-ka KA-no",
+   "id": "bercanda (*Πλάκα κάνεις;* = kamu bercanda?)"
+  },
+  {
+   "el": "το γλυκό",
+   "baca": "to ghli-KO",
+   "id": "kue manis, manisan"
+  },
+  {
+   "el": "κερνάω",
+   "baca": "kér-NA-o",
+   "id": "mentraktir (*κέρασα*)"
+  },
+  {
+   "el": "ο ναυτικός",
+   "baca": "o naf-ti-KOS",
+   "id": "pelaut"
+  },
+  {
+   "el": "η εκπαίδευση",
+   "baca": "i ék-PÉ-dhéf-si",
+   "id": "pendidikan, pelatihan"
+  },
+  {
+   "el": "ήδη",
+   "baca": "I-dhi",
+   "id": "sudah (sinonim santai: *κιόλας*)"
+  },
+  {
+   "el": "ακόμα",
+   "baca": "a-KO-ma",
+   "id": "masih; dengan *δεν*: belum"
+  },
+  {
+   "el": "μόλις",
+   "baca": "MO-lis",
+   "id": "baru saja (+ αόριστος)"
+  },
+  {
+   "el": "εδώ και",
+   "baca": "é-DHO ké",
+   "id": "sudah … (lamanya), sejak (*εδώ και έναν χρόνο*)"
+  },
+  {
+   "el": "τα συγχαρητήρια",
+   "baca": "ta sin-kha-ri-TI-ri-a",
+   "id": "ucapan selamat (*Συγχαρητήρια!*)"
+  },
+  {
+   "el": "η πτυχιακή",
+   "baca": "i pti-khia-KI",
+   "id": "skripsi (*πτυχιακή εργασία*)"
+  },
+  {
+   "el": "το κεφάλαιο",
+   "baca": "to ké-FA-lé-o",
+   "id": "bab; juga modal (uang)"
+  },
+  {
+   "el": "η αίτηση",
+   "baca": "i É-ti-si",
+   "id": "permohonan, lamaran (*κάνω αίτηση* = melamar, mendaftar)"
+  },
+  {
+   "el": "συστήνω",
+   "baca": "si-STI-no",
+   "id": "memperkenalkan; menyarankan (*σύστησα, έχω συστήσει*)"
+  },
+  {
+   "el": "το σόι",
+   "baca": "to SO-i",
+   "id": "keluarga besar (santai)"
+  }
+ ],
+ "exercises": [
+  {
+   "prompt": "Terjemahkan ke bahasa Yunani. Pikirkan dulu: παρακείμενος, αόριστος, atau kala kini?",
+   "items": [
+    "Kamu sudah dengar kabarnya?",
+    "Aku belum membaca pesannya.",
+    "Kamu pernah ke Kreta?",
+    "Aku sudah datang kemarin.",
+    "Dia sudah setahun tinggal di Pireas.",
+    "Bu Angeliki sudah menandatangani pengangkatanmu."
+   ]
+  },
+  {
+   "prompt": "Isi dengan παρακείμενος (έχω + bentuk -ει). Kata kerja dan pelakunya ada di dalam kurung.",
+   "items": [
+    "Δεν ____ ακόμα τον υπολογιστή. (ανοίγω, εγώ)",
+    "____ ποτέ μουσακά; (τρώω, εσύ)",
+    "Η Ρίνα ____ τέσσερα κεφάλαια. (γράφω)",
+    "Εμείς δεν ____ ποτέ στη Σαντορίνη. (πηγαίνω)",
+    "____ τις φωτογραφίες μου; (βλέπω, εσείς)",
+    "Οι δόκιμοι δεν ____ ακόμα. (έρχομαι)",
+    "Ο κύριος Κώστας ____ γλυκά για όλους. (φέρνω)"
+   ]
+  },
+  {
+   "prompt": "Ubah αόριστος menjadi παρακείμενος. Contoh: *Έγραψα το γράμμα.* → *Έχω γράψει το γράμμα.*",
+   "items": [
+    "Διάβασα το βιβλίο.",
+    "Πήραμε τα εισιτήρια.",
+    "Δεν είδα την ταινία.",
+    "Ο Σταύρος έφτιαξε την κάρτα.",
+    "Τελείωσες την πτυχιακή σου;",
+    "Δεν απάντησαν."
+   ]
+  },
+  {
+   "prompt": "Susun jadi kalimat yang benar.",
+   "items": [
+    "έχεις / τα / ακούσει / νέα",
+    "ακόμα / δεν / έχω / τίποτα / φάει",
+    "ποτέ / στην / πάει / έχεις / Κρήτη",
+    "έχω / γι' αυτόν / σου / μιλήσει",
+    "εδώ και / δουλεύει / στην εταιρεία / ο Κώστας / είκοσι χρόνια"
+   ]
+  }
+ ],
+ "answers": [
+  "Έχεις ακούσει τα νέα; — Δεν έχω διαβάσει ακόμα το μήνυμα. — Έχεις πάει ποτέ στην Κρήτη; — Ήρθα χθες. — Μένει στον Πειραιά εδώ και έναν χρόνο. — Η κυρία Αγγελική έχει υπογράψει τον διορισμό σου.",
+  "έχω ανοίξει — Έχεις φάει — έχει γράψει — έχουμε πάει — Έχετε δει — έχουν έρθει — έχει φέρει",
+  "Έχω διαβάσει το βιβλίο. — Έχουμε πάρει τα εισιτήρια. — Δεν έχω δει την ταινία. — Ο Σταύρος έχει φτιάξει την κάρτα. — Έχεις τελειώσει την πτυχιακή σου; — Δεν έχουν απαντήσει.",
+  "Έχεις ακούσει τα νέα; — Δεν έχω φάει τίποτα ακόμα. — Έχεις πάει ποτέ στην Κρήτη; — Σου έχω μιλήσει γι' αυτόν. — Ο Κώστας δουλεύει στην εταιρεία εδώ και είκοσι χρόνια."
+ ]
+}

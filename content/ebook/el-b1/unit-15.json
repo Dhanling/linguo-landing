@@ -1,0 +1,637 @@
+{
+ "title": "Mungkin sudah pergi — kepastian & keraguan",
+ "title_target": "Θα έφυγε ήδη",
+ "goal": "Menduga-duga tentang sekarang dan masa lalu dengan *θα* dan *πρέπει να*, lalu mengatur seberapa yakin kamu dengan *σίγουρα, μάλλον, ίσως, μπορεί να, αποκλείεται να*: *Θα κοιμάται*, *Θα έφυγε ήδη*, *Πρέπει να είναι κουρασμένος*.",
+ "bekal": [
+  "membedakan *θα* masa depan dari *θα* dugaan: *θα κοιμάται* (mungkin sedang tidur), *θα έφυγε* (mungkin sudah pergi), *θα έχει φύγει*",
+  "memakai *πρέπει να* sebagai kesimpulan, bukan kewajiban: *Πρέπει να έφυγε νωρίς*",
+  "menyusun tangga kepastian dari *σίγουρα* sampai *αποκλείεται να*, dan bertanya dengan cemas atau halus: *Λες να…; Μήπως…;*"
+ ],
+ "dialogs": [
+  {
+   "title": "ΔΙΑΛΟΓΟΣ 1 — Budi tidak mengangkat telepon",
+   "intro": "Selasa, 2 Mei 2028, pukul satu siang di kantor Pireas, sehari sesudah libur Hari Buruh. Ana harus menanyakan dokumen kepada Budi, yang kini perwira muda di sebuah kapal kontainer perusahaan. Teleponnya tidak diangkat. Perhatikan: hampir tidak ada *θα* dalam dialog ini yang berarti \"akan\".",
+   "lines": [
+    {
+     "speaker": "Άννα:",
+     "text": "[Πήρα|PI-ra] [τον|ton] [Μπούντι|BU-di] [τρεις|tris] [φορές|fo-RÉS] [και|ké] [δεν|dhén] [απαντάει|a-pan-DA-i].",
+     "id": "Aku sudah tiga kali telepon Budi dan dia nggak angkat.",
+     "literal": "(aku)-ambil (sandang) Budi tiga kali dan tidak (dia)-menjawab."
+    },
+    {
+     "speaker": "Δήμητρα:",
+     "text": "[Πού|Pu] [είναι|I-né] [τώρα|TO-ra] [το|to] [πλοίο|PLI-o] [του|tu];",
+     "id": "Kapalnya sekarang di mana?",
+     "literal": "di-mana adalah sekarang (sandang) kapal-nya?"
+    },
+    {
+     "speaker": "Άννα:",
+     "text": "[Χθες|Khthés] [ήταν|I-tan] [στη|sti] [Σιγκαπούρη|Sin-ga-PU-ri]. [Το|To] [πρόγραμμα|PRO-ghra-ma] [έλεγε|É-lé-yé] [ότι|O-ti] [φεύγει|FÉV-yi] [σήμερα|SI-mé-ra] [το|to] [πρωί|pro-I].",
+     "id": "Kemarin di Singapura. Menurut jadwal, kapalnya berangkat tadi pagi.",
+     "literal": "kemarin (dia)-adalah-dulu di-(sandang) Singapura. (sandang) jadwal (dia)-berkata-dulu bahwa (dia)-berangkat hari-ini (sandang) pagi."
+    },
+    {
+     "speaker": "Δήμητρα:",
+     "text": "[Τότε|TO-té] [θα|tha] [έφυγε|É-fi-yé] [ήδη|I-dhi]. [Στα|Sta] [ανοιχτά|a-nikh-TA] [δεν|dhén] [θα|tha] [έχει|É-khi] [σήμα|SI-ma].",
+     "id": "Berarti pasti sudah berangkat. Di laut lepas mungkin nggak ada sinyal.",
+     "literal": "kalau-begitu (mungkin) (dia)-berangkat sudah. di-(sandang) lepas tidak (mungkin) (dia)-punya sinyal."
+    },
+    {
+     "speaker": "Άννα:",
+     "text": "[Μπορεί|Bo-RI]. [Αλλά|A-LA] [συνήθως|si-NI-thos] [έχουν|É-khun] [ίντερνετ|IN-dér-nét] [στο|sto] [πλοίο|PLI-o].",
+     "id": "Bisa jadi. Tapi biasanya di kapal ada internet.",
+     "literal": "bisa. tetapi biasanya (mereka)-punya internet di-(sandang) kapal."
+    },
+    {
+     "speaker": "Δήμητρα:",
+     "text": "[Τι|Ti] [ώρα|O-ra] [είναι|I-né] [εκεί|é-KI]; [Εδώ|É-DHO] [είναι|I-né] [μία|MI-a].",
+     "id": "Di sana jam berapa? Di sini jam satu.",
+     "literal": "apa jam adalah di-sana? di-sini adalah satu."
+    },
+    {
+     "speaker": "Άννα:",
+     "text": "[Είναι|I-né] [πέντε|PÉN-dé] [ώρες|O-rés] [μπροστά|bro-STA], [δηλαδή|dhi-la-DHI] [έξι|É-ksi] [το|to] [απόγευμα|a-PO-yév-ma].",
+     "id": "Lima jam lebih cepat, jadi jam enam sore.",
+     "literal": "(itu)-adalah lima jam di-depan, yaitu enam (sandang) sore."
+    },
+    {
+     "speaker": "Δήμητρα:",
+     "text": "[Θα|Tha] [έχει|É-khi] [βάρδια|VAR-dhi-a], [λοιπόν|li-PON]. [Ή|I] [θα|tha] [κοιμάται|ki-MA-té] [μετά|mé-TA] [τη|ti] [βάρδια|VAR-dhi-a].",
+     "id": "Berarti mungkin dia lagi jaga. Atau lagi tidur habis jaga.",
+     "literal": "(mungkin) (dia)-punya giliran-jaga, jadi. atau (mungkin) (dia)-tidur sesudah (sandang) giliran-jaga."
+    },
+    {
+     "speaker": "Άννα:",
+     "text": "[Πρέπει|PRÉ-pi] [να|na] [είναι|I-né] [κουρασμένος|ku-ra-SMÉ-nos]. [Χθες|Khthés] [μου|mu] [έγραψε|É-ghra-psé] [ότι|O-ti] [φόρτωναν|FOR-to-nan] [όλη|O-li] [νύχτα|NIKH-ta].",
+     "id": "Dia pasti capek. Kemarin dia nulis ke aku kalau mereka memuat barang semalaman.",
+     "literal": "harus agar (dia)-adalah lelah. kemarin kepadaku (dia)-menulis bahwa (mereka)-memuat-dulu seluruh malam."
+    },
+    {
+     "speaker": "Δήμητρα:",
+     "text": "[Να|Na] [δεις|dhis] [που|pu] [θα|tha] [σου|su] [τηλεφωνήσει|ti-lé-fo-NI-si] [μόνος|MO-nos] [του|tu] [σε|sé] [λίγο|LI-gho].",
+     "id": "Lihat saja, sebentar lagi dia sendiri yang bakal telepon kamu.",
+     "literal": "agar (kamu)-lihat bahwa akan kepadamu (dia)-menelepon sendiri-nya dalam sedikit."
+    },
+    {
+     "speaker": "Άννα:",
+     "text": "[Ελπίζω|Él-PI-zo]. [Λες|Lés] [να|na] [του|tu] [συνέβη|si-NÉ-vi] [κάτι|KA-ti];",
+     "id": "Semoga. Jangan-jangan terjadi sesuatu padanya?",
+     "literal": "(aku)-berharap. (kamu)-bilang agar kepadanya (itu)-terjadi sesuatu?"
+    },
+    {
+     "speaker": "Δήμητρα:",
+     "text": "[Όχι|O-khi], [βρε|vré] [Άννα|A-na]! [Σίγουρα|SI-ghu-ra] [είναι|I-né] [καλά|ka-LA]. [Θα|Tha] [ξέχασε|KSÉ-kha-sé] [το|to] [κινητό|ki-ni-TO] [στην|stin] [καμπίνα|kam-BI-na].",
+     "id": "Ya enggaklah, Ana! Pasti dia baik-baik saja. Paling ponselnya ketinggalan di kabin.",
+     "literal": "tidak, hei Ana! pasti (dia)-adalah baik. (mungkin) (dia)-lupa (sandang) ponsel di-(sandang) kabin."
+    },
+    {
+     "speaker": "Άννα:",
+     "text": "[Α|A], [μήνυμα|MI-ni-ma]! «[Συγγνώμη|Si-GHNO-mi], [είχα|I-kha] [βάρδια|VAR-dhi-a] [στη|sti] [γέφυρα|YÉ-fi-ra]. [Φύγαμε|FI-gha-mé] [στις|stis] [δέκα|DHÉ-ka].»",
+     "id": "Eh, ada pesan! \"Maaf, tadi aku jaga di anjungan. Kami berangkat jam sepuluh.\"",
+     "literal": "ah, pesan! \"maaf, (aku)-punya-dulu giliran-jaga di-(sandang) anjungan. (kami)-berangkat pada-(sandang) sepuluh.\""
+    },
+    {
+     "speaker": "Δήμητρα:",
+     "text": "[Είδες|I-dhés]; [Σου|Su] [το|to] '[πα|pa]!",
+     "id": "Tuh kan? Sudah kubilang!",
+     "literal": "(kamu)-lihat? kepadamu itu (aku)-bilang!"
+    }
+   ],
+   "notes": [
+    "⚠️ **Θα έφυγε ήδη** — *θα* + αόριστος BUKAN masa depan. Artinya dugaan tentang masa lalu: \"(kurasa) sudah berangkat\". Penutur Indonesia yang menghafal *θα* = \"akan\" sering bingung di sini. Petunjuknya kata *ήδη* (sudah) dan bentuk αόριστος (*έφυγε*), yang tak mungkin dipakai untuk masa depan.",
+    "**Δεν θα έχει σήμα / Θα έχει βάρδια / Θα κοιμάται** — *θα* + bentuk kini = dugaan tentang SEKARANG: \"mungkin tidak ada sinyal\", \"mungkin sedang jaga\". Hanya konteks yang membedakannya dari masa depan: Dhimitra membicarakan keadaan saat itu juga.",
+    "**Πρέπει να είναι κουρασμένος** — *πρέπει να* di sini bukan kewajiban (\"harus capek\"), melainkan kesimpulan logis: \"pasti capek\" (karena semalaman memuat barang). Ini lebih yakin daripada *θα*.",
+    "**Λες να του συνέβη κάτι;** — *Λες να…;* (secara harfiah \"kamu bilang supaya…?\") = \"jangan-jangan…?\", pertanyaan cemas yang mengharap dibantah. *Συνέβη* adalah αόριστος dari *συμβαίνει* (terjadi).",
+    "**Να δεις που θα…** — \"lihat saja nanti, dia akan…\". Di sini *θα* memang masa depan. *Μόνος του* = atas kemauan sendiri, tanpa disuruh.",
+    "**Βάρδια, γέφυρα, καμπίνα** — di kapal, *η βάρδια* = giliran jaga (biasanya empat jam), *η γέφυρα* (\"jembatan\") = anjungan tempat kapal dikemudikan. *Σου το 'πα* = *σου το είπα* yang dipendekkan: \"sudah kubilang\"."
+   ],
+   "grammars": [
+    {
+     "title": "ΘΑ untuk menduga",
+     "body": [
+      "Bentuk kata kerja sesudah *θα* menentukan waktu yang diduga. Kalimatnya sama persis dengan kalimat biasa, hanya ditambah *θα* di depan."
+     ],
+     "table": {
+      "head": [
+       "Bentuk",
+       "Menduga tentang",
+       "Contoh",
+       "Arti"
+      ],
+      "rows": [
+       [
+        "θα + bentuk kini",
+        "sekarang",
+        "*Θα κοιμάται.*",
+        "Mungkin dia sedang tidur."
+       ],
+       [
+        "θα + έχει + -ει",
+        "sudah, sampai sekarang",
+        "*Θα έχει φύγει.*",
+        "Dia pasti sudah pergi."
+       ],
+       [
+        "θα + αόριστος",
+        "peristiwa lampau",
+        "*Θα ξέχασε το κινητό.*",
+        "Mungkin ponselnya ketinggalan."
+       ],
+       [
+        "θα + παρατατικός",
+        "keadaan lampau",
+        "*Θα ήταν κουρασμένος.*",
+        "Mungkin (waktu itu) dia capek."
+       ]
+      ]
+     },
+     "after": [
+      "*Θα ήταν* juga bisa berarti \"akan (seandainya)\" dari unit 7: *Αν ερχόταν, θα ήταν ωραία.* Konteks yang memutuskan.",
+      "Kata keterangan membantu pendengar: *θα κοιμάται τώρα*, *θα έφυγε ήδη*, *θα ήταν κουρασμένος χθες*."
+     ]
+    }
+   ]
+  },
+  {
+   "title": "ΔΙΑΛΟΓΟΣ 2 — Gosip di dapur kantor",
+   "intro": "Jumat, 5 Mei 2028, pagi hari di dapur kantor. Semalam ada pesta ulang tahun Stavros di sebuah taverna di Piraiki. Stavros belum datang. Dhimitra punya banyak dugaan.",
+   "lines": [
+    {
+     "speaker": "Δήμητρα:",
+     "text": "[Ο|O] [Σταύρος|STAV-ros] [δεν|dhén] [ήρθε|IR-thé] [ακόμα|a-KO-ma]. [Μάλλον|MA-lon] [ξενύχτησε|ksé-NIKH-ti-sé] [μετά|mé-TA] [το|to] [πάρτι|PAR-ti].",
+     "id": "Stavros belum datang. Kayaknya dia begadang habis pesta.",
+     "literal": "(sandang) Stavros tidak (dia)-datang masih. kemungkinan-besar (dia)-begadang sesudah (sandang) pesta."
+    },
+    {
+     "speaker": "Άννα:",
+     "text": "[Σίγουρα|SI-ghu-ra] [ξενύχτησε|ksé-NIKH-ti-sé]. [Όταν|O-tan] [έφυγα|É-fi-gha], [χόρευε|KHO-ré-vé] [ακόμα|a-KO-ma] [ζεϊμπέκικο|zé-im-BÉ-ki-ko].",
+     "id": "Pasti begadang. Waktu aku pulang, dia masih menari zeibekiko.",
+     "literal": "pasti (dia)-begadang. ketika (aku)-pergi, (dia)-menari-dulu masih zeibekiko."
+    },
+    {
+     "speaker": "Δήμητρα:",
+     "text": "[Εσύ|É-SI] [πάντως|PAN-dos] [έφυγες|É-fi-yés] [νωρίς|no-RIS]. [Την|Tin] [ίδια|I-dhia] [ώρα|O-ra] [με|mé] [τον|ton] [Νίκο|NI-ko]. [Μήπως|MI-pos] [δεν|dhén] [είναι|I-né] [σύμπτωση|SIMB-to-si];",
+     "id": "Kamu sih pulang cepat. Barengan sama Nikos. Jangan-jangan bukan kebetulan?",
+     "literal": "kamu bagaimanapun (kamu)-pergi awal. (sandang) sama jam dengan (sandang) Nikos. jangan-jangan tidak adalah kebetulan?"
+    },
+    {
+     "speaker": "Άννα:",
+     "text": "[Δήμητρα|DHI-mi-tra]! [Απλώς|A-PLOS] [με|mé] [πήγε|PI-yé] [σπίτι|SPI-ti]. [Μπορεί|Bo-RI] [να|na] [σου|su] [φαίνεται|FÉ-né-té] [περίεργο|pé-RI-ér-gho], [αλλά|a-LA] [δεν|dhén] [είναι|I-né].",
+     "id": "Dhimitra! Dia cuma mengantarku pulang. Mungkin kelihatannya aneh buatmu, tapi nggak kok.",
+     "literal": "Dhimitra! hanya aku (dia)-bawa rumah. bisa agar kepadamu (itu)-tampak aneh, tetapi tidak adalah."
+    },
+    {
+     "speaker": "Δήμητρα:",
+     "text": "[Καλά|Ka-LA], [καλά|ka-LA]. [Πάντως|PAN-dos] [η|i] [κυρία|ki-RI-a] [Αγγελική|An-gé-li-KI] [σίγουρα|SI-ghu-ra] [το|to] [πρόσεξε|PRO-sé-ksé].",
+     "id": "Iya, iya. Tapi Bu Angeliki pasti memperhatikannya.",
+     "literal": "baik, baik. bagaimanapun (sandang) nyonya Angeliki pasti itu (dia)-perhatikan."
+    },
+    {
+     "speaker": "Άννα:",
+     "text": "[Αποκλείεται|A-po-KLI-é-té]. [Πρέπει|PRÉ-pi] [να|na] [έφυγε|É-fi-yé] [πριν|prin] [από|a-PO] [εμάς|é-MAS].",
+     "id": "Nggak mungkin. Dia pasti sudah pulang sebelum kami.",
+     "literal": "tertutup-kemungkinan. harus agar (dia)-pergi sebelum dari kami."
+    },
+    {
+     "speaker": "Δήμητρα:",
+     "text": "[Μάλλον|MA-lon] [έχεις|É-khis] [δίκιο|DHI-kio]. [Πάντως|PAN-dos] [όλοι|O-li] [λένε|LÉ-né] [ότι|O-ti] [ταιριάζετε|té-RIA-zé-té].",
+     "id": "Mungkin kamu benar. Tapi semua orang bilang kalian cocok.",
+     "literal": "kemungkinan-besar (kamu)-punya kebenaran. bagaimanapun semua (mereka)-bilang bahwa (kalian)-cocok."
+    },
+    {
+     "speaker": "Άννα:",
+     "text": "«[Όλοι|O-li]» [ποιοι|pii]; [Εσύ|É-SI] [και|ké] [ο|o] [Σταύρος|STAV-ros];",
+     "id": "\"Semua orang\" itu siapa? Kamu sama Stavros?",
+     "literal": "\"semua\" siapa? kamu dan (sandang) Stavros?"
+    },
+    {
+     "speaker": "Σταύρος:",
+     "text": "[Καλημέρα|Ka-li-MÉ-ra]! [Κάποιος|KA-pi-os] [είπε|I-pé] [το|to] [όνομά|O-no-MA] [μου|mu];",
+     "id": "Pagi! Ada yang nyebut namaku?",
+     "literal": "selamat-pagi! seseorang (dia)-berkata (sandang) nama-ku?"
+    },
+    {
+     "speaker": "Δήμητρα:",
+     "text": "[Όχι|O-khi], [κανείς|ka-NIS]. [Θα|Tha] [σου|su] [φάνηκε|FA-ni-ké]. [Καφέ|Ka-FÉ] [θέλεις|THÉ-lis];",
+     "id": "Nggak, nggak ada. Perasaanmu aja kali. Mau kopi?",
+     "literal": "tidak, tak-seorang-pun. (mungkin) kepadamu (itu)-tampak. kopi (kamu)-mau?"
+    },
+    {
+     "speaker": "Σταύρος:",
+     "text": "[Διπλό|Dhi-PLO]. [Και|Ké] [μην|min] [κάνετε|KA-né-té] [ότι|O-ti] [δεν|dhén] [μιλούσατε|mi-LU-sa-té] [για|ya] [μένα|MÉ-na]!",
+     "id": "Dobel. Dan jangan pura-pura kalian nggak lagi ngomongin aku!",
+     "literal": "dobel. dan jangan (kalian)-buat bahwa tidak (kalian)-bicara-dulu tentang aku!"
+    }
+   ],
+   "notes": [
+    "**Μάλλον ξενύχτησε / Σίγουρα ξενύχτησε** — kata keterangan kepastian tidak mengubah bentuk kata kerja: kalimatnya tetap *ξενύχτησε*, hanya tingkat yakinnya yang bergeser. *Μάλλον* ≈ \"kayaknya\", *σίγουρα* = \"pasti\".",
+    "⚠️ **Πρέπει να έφυγε** — *πρέπει να* + αόριστος = \"pasti sudah pergi\" (kesimpulan tentang masa lalu). Bukan \"dia harus pergi\" (*πρέπει να φύγει*). Perbedaannya hanya pada bentuk kata kerja: *έφυγε* (lampau) vs *φύγει* (υποτακτική).",
+    "**Μήπως δεν είναι σύμπτωση;** — *μήπως* = \"jangan-jangan\", \"barangkali\": dugaan yang dibungkus pertanyaan. Ini cara paling halus untuk menyindir atau menawarkan sesuatu: *Μήπως θέλεις καφέ;*",
+    "**Μπορεί να σου φαίνεται** — *μπορεί να* (tanpa pelaku, tak berubah) = \"bisa jadi\". Bedakan dengan *μπορώ να* (aku bisa) yang berubah menurut orang: *μπορεί να βρέξει* = bisa jadi hujan.",
+    "**Αποκλείεται** — secara harfiah \"tertutup kemungkinannya\": \"mustahil, nggak mungkin\". Bisa berdiri sendiri atau diikuti *να*: *Αποκλείεται να το πρόσεξε.*",
+    "**Θα σου φάνηκε / μην κάνετε ότι** — \"mungkin cuma perasaanmu\" (dugaan lampau dengan *θα*). *Κάνω ότι* = pura-pura. *Ταιριάζω* = cocok, serasi."
+   ],
+   "grammars": [
+    {
+     "title": "Tangga kepastian",
+     "body": [
+      "Dari yang paling yakin ke yang paling tidak. Semua ungkapan ini bisa dipakai untuk sekarang maupun masa lalu; cukup ganti bentuk kata kerjanya."
+     ],
+     "table": {
+      "head": [
+       "Kepastian",
+       "Ungkapan",
+       "Contoh"
+      ],
+      "rows": [
+       [
+        "pasti",
+        "*σίγουρα, είμαι βέβαιος ότι*",
+        "*Σίγουρα ξενύχτησε.*"
+       ],
+       [
+        "hampir pasti",
+        "*πρέπει να*",
+        "*Πρέπει να έφυγε νωρίς.*"
+       ],
+       [
+        "kemungkinan besar",
+        "*μάλλον, λογικά, θα*",
+        "*Μάλλον θα κοιμάται.*"
+       ],
+       [
+        "mungkin",
+        "*ίσως, μπορεί να, πιθανόν*",
+        "*Μπορεί να έρθει αργότερα.*"
+       ],
+       [
+        "kecil kemungkinannya",
+        "*δεν νομίζω ότι, δύσκολα*",
+        "*Δύσκολα θα έρθει σήμερα.*"
+       ],
+       [
+        "mustahil",
+        "*αποκλείεται να, σίγουρα δεν*",
+        "*Αποκλείεται να το πρόσεξε.*"
+       ]
+      ]
+     },
+     "after": [
+      "Ungkapan boleh ditumpuk: *μάλλον θα κοιμάται*, *ίσως να έχει φύγει*. *Ίσως* bisa berdiri sendiri atau dengan *να*."
+     ]
+    }
+   ]
+  }
+ ],
+ "sections": [
+  {
+   "title": "ΘΑ: masa depan atau dugaan?",
+   "blocks": [
+    {
+     "type": "p",
+     "text": "Kata *θα* sebenarnya tidak berarti \"akan\"; ia menandai sesuatu yang belum pasti. Masa depan belum pasti, dugaan juga belum pasti. Karena itu satu kata melayani keduanya. Untuk memutuskan artinya, tanyakan: apakah pembicara membicarakan sesuatu yang sedang atau sudah terjadi?"
+    },
+    {
+     "type": "tabel",
+     "head": [
+      "Kalimat",
+      "Masa depan atau dugaan?",
+      "Arti"
+     ],
+     "rows": [
+      [
+       "*Αύριο θα είναι στο γραφείο.*",
+       "masa depan",
+       "Besok dia akan di kantor."
+      ],
+      [
+       "*Τώρα θα είναι στο γραφείο.*",
+       "dugaan (sekarang)",
+       "Sekarang mungkin dia di kantor."
+      ],
+      [
+       "*Θα φύγει στις δέκα.*",
+       "masa depan",
+       "Dia akan berangkat jam sepuluh."
+      ],
+      [
+       "*Θα έφυγε στις δέκα.*",
+       "dugaan (lampau)",
+       "Mungkin dia berangkat jam sepuluh."
+      ],
+      [
+       "*Θα έχει φάει.*",
+       "dugaan (sudah)",
+       "Dia pasti sudah makan."
+      ],
+      [
+       "*Θα έχει φάει μέχρι τις οχτώ.*",
+       "masa depan (sudah pada saat itu)",
+       "Jam delapan nanti dia sudah makan."
+      ],
+      [
+       "*Θα πεινάει, φέρ' του κάτι.*",
+       "dugaan (sekarang)",
+       "Dia pasti lapar, bawakan sesuatu."
+      ]
+     ]
+    },
+    {
+     "type": "kotak",
+     "title": "⚠️ Jangan terjemahkan dengan \"akan\"",
+     "items": [
+      "Kalau kata kerja sesudah *θα* berbentuk αόριστος (*έφυγε, ξέχασε, πρόσεξε*), artinya PASTI dugaan lampau; \"akan\" tidak mungkin.",
+      "Kalau ada *τώρα*, *ήδη*, atau *χθες*, curigai dugaan.",
+      "Dalam bahasa Indonesia, terjemahkan dengan \"mungkin\", \"pasti\", \"paling\", \"kayaknya\"."
+     ]
+    }
+   ]
+  },
+  {
+   "title": "ΠΡΕΠΕΙ ΝΑ: kewajiban atau kesimpulan?",
+   "blocks": [
+    {
+     "type": "tabel",
+     "head": [
+      "Kalimat",
+      "Jenis",
+      "Arti"
+     ],
+     "rows": [
+      [
+       "*Πρέπει να φύγει στις δέκα.*",
+       "kewajiban",
+       "Dia harus berangkat jam sepuluh."
+      ],
+      [
+       "*Πρέπει να έφυγε στις δέκα.*",
+       "kesimpulan (lampau)",
+       "Dia pasti berangkat jam sepuluh."
+      ],
+      [
+       "*Πρέπει να διαβάζει πολύ.*",
+       "bisa keduanya",
+       "Dia harus banyak belajar / pasti banyak belajar."
+      ],
+      [
+       "*Πρέπει να είναι Ινδονήσιος.*",
+       "kesimpulan (sekarang)",
+       "Dia pasti orang Indonesia."
+      ],
+      [
+       "*Πρέπει να έχει φτάσει.*",
+       "kesimpulan (sudah)",
+       "Dia pasti sudah sampai."
+      ]
+     ]
+    },
+    {
+     "type": "p",
+     "text": "Seperti *θα*, *πρέπει να* dengan αόριστος atau dengan *έχει* + *-ει* hampir selalu berupa kesimpulan. Dengan bentuk kini, konteks yang memutuskan: *Πρέπει να διαβάζει πολύ, γιατί παίρνει πάντα δέκα* jelas kesimpulan (\"pasti dia rajin belajar, nilainya selalu sepuluh\")."
+    }
+   ]
+  },
+  {
+   "title": "Hidup di atas kapal",
+   "blocks": [
+    {
+     "type": "p",
+     "text": "Budi kini perwira muda. Hari-harinya diatur oleh giliran jaga, dan keluarganya di darat harus belajar menduga: dia sedang jaga, sedang tidur, atau kapalnya di tengah laut tanpa sinyal? Kosakata di bawah ini sering muncul dalam percakapan dengan pelaut."
+    },
+    {
+     "type": "tabel",
+     "head": [
+      "Yunani",
+      "Arti"
+     ],
+     "rows": [
+      [
+       "*η βάρδια*",
+       "giliran jaga (biasanya 4 jam jaga, 8 jam istirahat)"
+      ],
+      [
+       "*η γέφυρα*",
+       "anjungan, tempat kapal dikemudikan"
+      ],
+      [
+       "*το μηχανοστάσιο*",
+       "kamar mesin"
+      ],
+      [
+       "*η καμπίνα*",
+       "kabin"
+      ],
+      [
+       "*ο καπετάνιος / ο πλοίαρχος*",
+       "kapten / nakhoda (resmi)"
+      ],
+      [
+       "*ο αξιωματικός*",
+       "perwira"
+      ],
+      [
+       "*φορτώνω / ξεφορτώνω*",
+       "memuat / membongkar muatan"
+      ],
+      [
+       "*πιάνω λιμάνι*",
+       "singgah di pelabuhan"
+      ],
+      [
+       "*στα ανοιχτά*",
+       "di laut lepas"
+      ]
+     ]
+    },
+    {
+     "type": "kotak",
+     "title": "Pelaut Indonesia di kapal Yunani",
+     "items": [
+      "Ribuan pelaut Indonesia bekerja di kapal milik perusahaan Yunani; di banyak kapal, bahasa kerja di anjungan adalah bahasa Inggris, tetapi obrolan di dapur dan ruang makan campur aduk.",
+      "Kontrak biasanya 6–9 bulan, lalu cuti pulang. Perusahaan seperti Αιγαίον Ναυτιλιακή mengatur penggantian awak (*αλλαγή πληρώματος*) di pelabuhan singgah.",
+      "Internet satelit kini umum di kapal, tetapi kuotanya terbatas; pesan singkat lebih andal daripada telepon video."
+     ]
+    }
+   ]
+  }
+ ],
+ "vocab": [
+  {
+   "el": "μάλλον",
+   "baca": "MA-lon",
+   "id": "kemungkinan besar, kayaknya"
+  },
+  {
+   "el": "σίγουρα",
+   "baca": "SI-ghu-ra",
+   "id": "pasti, tentu"
+  },
+  {
+   "el": "ίσως",
+   "baca": "I-sos",
+   "id": "mungkin"
+  },
+  {
+   "el": "μπορεί να",
+   "baca": "bo-RI na",
+   "id": "bisa jadi (tak berubah)"
+  },
+  {
+   "el": "λογικά",
+   "baca": "lo-yi-KA",
+   "id": "masuk akalnya, semestinya"
+  },
+  {
+   "el": "αποκλείεται",
+   "baca": "a-po-KLI-é-té",
+   "id": "mustahil, tidak mungkin (*αποκλείεται να*)"
+  },
+  {
+   "el": "μήπως",
+   "baca": "MI-pos",
+   "id": "jangan-jangan, barangkali"
+  },
+  {
+   "el": "λες να…;",
+   "baca": "lés na",
+   "id": "jangan-jangan…? (cemas)"
+  },
+  {
+   "el": "συμβαίνει",
+   "baca": "sim-VÉ-ni",
+   "id": "terjadi (*συνέβη*)"
+  },
+  {
+   "el": "το σήμα",
+   "baca": "to SI-ma",
+   "id": "sinyal; tanda, logo"
+  },
+  {
+   "el": "η βάρδια",
+   "baca": "i VAR-dhi-a",
+   "id": "giliran jaga, sif"
+  },
+  {
+   "el": "η γέφυρα",
+   "baca": "i YÉ-fi-ra",
+   "id": "jembatan; anjungan kapal"
+  },
+  {
+   "el": "η καμπίνα",
+   "baca": "i kam-BI-na",
+   "id": "kabin"
+  },
+  {
+   "el": "το μηχανοστάσιο",
+   "baca": "to mi-kha-no-STA-sio",
+   "id": "kamar mesin"
+  },
+  {
+   "el": "φορτώνω",
+   "baca": "for-TO-no",
+   "id": "memuat (*φόρτωσα*)"
+  },
+  {
+   "el": "στα ανοιχτά",
+   "baca": "sta a-nikh-TA",
+   "id": "di laut lepas"
+  },
+  {
+   "el": "η διαφορά ώρας",
+   "baca": "i dhia-fo-RA O-ras",
+   "id": "perbedaan waktu"
+  },
+  {
+   "el": "ξενυχτάω",
+   "baca": "ksé-nikh-TA-o",
+   "id": "begadang (*ξενύχτησα*)"
+  },
+  {
+   "el": "το ζεϊμπέκικο",
+   "baca": "to zé-im-BÉ-ki-ko",
+   "id": "zeibekiko, tarian tunggal Yunani"
+  },
+  {
+   "el": "η σύμπτωση",
+   "baca": "i SIMB-to-si",
+   "id": "kebetulan"
+  },
+  {
+   "el": "φαίνομαι",
+   "baca": "FÉ-no-mé",
+   "id": "tampak (*μου φάνηκε* = kurasa, perasaanku)"
+  },
+  {
+   "el": "προσέχω",
+   "baca": "pro-SÉ-kho",
+   "id": "memperhatikan; hati-hati (*πρόσεξα*)"
+  },
+  {
+   "el": "ταιριάζω",
+   "baca": "té-RIA-zo",
+   "id": "cocok, serasi (*ταίριαξα*)"
+  },
+  {
+   "el": "κάνω ότι",
+   "baca": "KA-no O-ti",
+   "id": "pura-pura (*κάνει ότι δεν ξέρει*)"
+  },
+  {
+   "el": "περίεργος",
+   "baca": "pé-RI-ér-ghos",
+   "id": "aneh; ingin tahu"
+  }
+ ],
+ "exercises": [
+  {
+   "prompt": "Terjemahkan ke bahasa Yunani dengan θα atau πρέπει να untuk dugaan.",
+   "items": [
+    "Sekarang dia mungkin sedang tidur.",
+    "Kapalnya pasti sudah berangkat.",
+    "Kemarin dia mungkin capek.",
+    "Jangan-jangan dia lupa?",
+    "Mustahil dia melihatnya.",
+    "Bisa jadi dia datang nanti."
+   ]
+  },
+  {
+   "prompt": "Isi dengan bentuk yang tepat. Petunjuk ada di dalam kurung.",
+   "items": [
+    "Δεν απαντάει. Θα ____ τώρα. (κοιμάμαι; dia)",
+    "Τα φώτα είναι σβηστά· θα ____ ήδη. (φεύγω; mereka)",
+    "Πρέπει να ____ πολύ χθες· έχει κόκκινα μάτια. (κλαίω; dia)",
+    "____ θα βρέξει· δες τα σύννεφα. (kemungkinan besar)",
+    "Θα ____ κουρασμένη μετά το ταξίδι. (είμαι; dia, keadaan lampau)",
+    "____ δεν σε άκουσε; (jangan-jangan)",
+    "Θα ____ φτάσει στο λιμάνι μέχρι τώρα. (έχω; kapalnya)"
+   ]
+  },
+  {
+   "prompt": "Ubah kalimat pasti menjadi dugaan dengan θα. Waktu kata kerja jangan diubah. Contoh: *Είναι στο σπίτι.* → *Θα είναι στο σπίτι.*",
+   "items": [
+    "Κοιμάται.",
+    "Ξέχασε το κινητό.",
+    "Ήταν κουρασμένος.",
+    "Έχει φύγει.",
+    "Έχουν βάρδια.",
+    "Ο Σταύρος ξενύχτησε."
+   ]
+  },
+  {
+   "prompt": "Susun jadi kalimat yang benar.",
+   "items": [
+    "έφυγε / ήδη / θα",
+    "να / κουρασμένος / πρέπει / είναι",
+    "κοιμάται / μάλλον / θα",
+    "συνέβη / λες / κάτι / να / του",
+    "πρόσεξε / αποκλείεται / το / να"
+   ]
+  }
+ ],
+ "answers": [
+  "Τώρα θα κοιμάται. — Το πλοίο πρέπει να έφυγε ήδη (atau: θα έχει φύγει ήδη). — Χθες θα ήταν κουρασμένος. — Μήπως ξέχασε; — Αποκλείεται να το είδε. — Μπορεί να έρθει αργότερα.",
+  "κοιμάται — έφυγαν — έκλαψε — Μάλλον — ήταν — Μήπως — έχει",
+  "Θα κοιμάται. — Θα ξέχασε το κινητό. — Θα ήταν κουρασμένος. — Θα έχει φύγει. — Θα έχουν βάρδια. — Ο Σταύρος θα ξενύχτησε.",
+  "Θα έφυγε ήδη. — Πρέπει να είναι κουρασμένος. — Μάλλον θα κοιμάται. — Λες να του συνέβη κάτι; — Αποκλείεται να το πρόσεξε."
+ ]
+}

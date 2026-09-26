@@ -1,0 +1,621 @@
+{
+ "title": "Angka & tren — laporan dan presentasi data",
+ "title_target": "Αύξηση κατά 12%",
+ "goal": "Membaca dan menyampaikan data dalam bahasa Yunani: angka besar yang menyesuaikan gender (*τρεις χιλιάδες, διακόσιες γυναίκες*), persen dan poin persen, selisih versus hasil akhir (*αυξήθηκε κατά 46* vs *αυξήθηκε σε 86*), serta kata kerja tren seperti *διπλασιάστηκε, μειώθηκε, κορυφώθηκε, παρέμεινε σταθερό*.",
+ "bekal": [
+  "membedakan *κατά* (selisih) dari *σε / στο* (hasil akhir) dalam kalimat naik-turun angka",
+  "membaca angka besar, pecahan, desimal, dan persen dengan gender yang tepat",
+  "menjelaskan grafik di depan rapat dengan kata kerja tren dan kata benda turunannya"
+ ],
+ "dialogs": [
+  {
+   "title": "ΔΙΑΛΟΓΟΣ 1 — Angka-angka laporan tahunan",
+   "intro": "Selasa, 13 Maret 2029, ruang rapat kecil di kantor Pireas. Ana, Kostas, dan Dhimitra memeriksa draf laporan tahunan (*ετήσια έκθεση*) Program Jembatan Aegea–Nusantara sebelum dikirim ke universitas dan ke kementerian di Jakarta. Perhatikan perdebatan kecil soal *κατά* dan *στο*.",
+   "lines": [
+    {
+     "speaker": "Κώστας:",
+     "text": "Λοιπόν, τα νούμερα της ετήσιας έκθεσης. Πόσοι δόκιμοι εκπαιδεύτηκαν φέτος;",
+     "id": "Nah, angka-angka laporan tahunan. Berapa kadet yang dilatih tahun ini?",
+     "literal": "nah, (sandang) angka-angka (sandang-milik) tahunan laporan. berapa-banyak kadet-kadet dilatih tahun-ini?"
+    },
+    {
+     "speaker": "Άννα:",
+     "text": "Ογδόντα έξι. Πέρσι ήταν σαράντα. Ο αριθμός υπερδιπλασιάστηκε.",
+     "id": "Delapan puluh enam. Tahun lalu empat puluh. Jumlahnya naik lebih dari dua kali lipat.",
+     "literal": "delapan-puluh enam. tahun-lalu adalah empat-puluh. (sandang) jumlah terlebih-dua-kali-lipatkan."
+    },
+    {
+     "speaker": "Δήμητρα:",
+     "text": "Σε ποσοστό πόσο είναι αυτό; Γράψε «αύξηση κατά 115%».",
+     "id": "Kalau dalam persen berapa itu? Tulis \"kenaikan sebesar 115%\".",
+     "literal": "dalam persentase berapa adalah itu? tulis «kenaikan sebesar 115%»."
+    },
+    {
+     "speaker": "Άννα:",
+     "text": "Κατά 115%; Εγώ είχα γράψει «αύξηση στο 115%».",
+     "id": "Sebesar 115%? Saya tadi menulis \"kenaikan menjadi 115%\".",
+     "literal": "sebesar 115%? aku aku-telah tulis «kenaikan ke-(sandang) 115%»."
+    },
+    {
+     "speaker": "Κώστας:",
+     "text": "Μεγάλη διαφορά! Το «κατά» δείχνει τη διαφορά. Το «στο» δείχνει πού φτάσαμε.",
+     "id": "Beda besar! Κατά menunjukkan selisihnya. Στο menunjukkan sampai di mana kita.",
+     "literal": "besar perbedaan! (sandang) «sebesar» ia-tunjukkan (sandang) selisih. (sandang) «ke-(sandang)» ia-tunjukkan di-mana kita-sampai."
+    },
+    {
+     "speaker": "Δήμητρα:",
+     "text": "Και οι γυναίκες; Πέρσι ήταν το 7% των δοκίμων.",
+     "id": "Terus yang perempuan? Tahun lalu 7% dari kadet.",
+     "literal": "dan (sandang) perempuan-perempuan? tahun-lalu adalah (sandang) 7% (sandang-milik) kadet-kadet."
+    },
+    {
+     "speaker": "Άννα:",
+     "text": "Φέτος είναι το 18%. Άρα αύξηση κατά 11%;",
+     "id": "Tahun ini 18%. Jadi naik 11%?",
+     "literal": "tahun-ini adalah (sandang) 18%. jadi kenaikan sebesar 11%?"
+    },
+    {
+     "speaker": "Κώστας:",
+     "text": "Όχι. Κατά έντεκα ποσοστιαίες μονάδες. Αλλιώς ο αναγνώστης θα μπερδευτεί.",
+     "id": "Bukan. Naik sebelas poin persen. Kalau tidak, pembaca bakal bingung.",
+     "literal": "tidak. sebesar sebelas persentase satuan-satuan. kalau-tidak (sandang) pembaca akan ia-bingung."
+    },
+    {
+     "speaker": "Δήμητρα:",
+     "text": "Ο προϋπολογισμός; Έχω γράψει «ένα κόμμα δύο εκατομμύρια ευρώ».",
+     "id": "Anggarannya? Saya sudah tulis \"satu koma dua juta euro\".",
+     "literal": "(sandang) anggaran? aku-sudah tulis «satu koma dua juta-juta euro»."
+    },
+    {
+     "speaker": "Άννα:",
+     "text": "Σωστά. Και το κόστος ανά δόκιμο μειώθηκε από 14.000 σε 11.500 ευρώ.",
+     "id": "Betul. Dan biaya per kadet turun dari 14.000 menjadi 11.500 euro.",
+     "literal": "benar. dan (sandang) biaya per kadet diturunkan dari 14.000 ke 11.500 euro."
+    },
+    {
+     "speaker": "Κώστας:",
+     "text": "Δηλαδή μείωση κατά σχεδόν 18%. Αυτό θα αρέσει στην κυρία Αγγελική.",
+     "id": "Berarti turun hampir 18%. Ini pasti disukai Bu Angeliki.",
+     "literal": "yaitu penurunan sebesar hampir 18%. ini akan ia-menyenangkan kepada-(sandang) nyonya Angeliki."
+    },
+    {
+     "speaker": "Δήμητρα:",
+     "text": "Και οι εγκαταλείψεις; Πέντε δόκιμοι σταμάτησαν στη μέση.",
+     "id": "Terus yang berhenti? Lima kadet berhenti di tengah jalan.",
+     "literal": "dan (sandang) pengunduran-pengunduran? lima kadet-kadet mereka-berhenti di-(sandang) tengah."
+    },
+    {
+     "speaker": "Άννα:",
+     "text": "Πέντε στους ογδόντα έξι, δηλαδή λιγότερο από 6%. Το ποσοστό έμεινε σταθερό.",
+     "id": "Lima dari delapan puluh enam, jadi kurang dari 6%. Persentasenya tetap stabil.",
+     "literal": "lima di-(sandang) delapan-puluh enam, yaitu kurang dari 6%. (sandang) persentase ia-tinggal stabil."
+    }
+   ],
+   "notes": [
+    "⚠️ **κατά vs σε / στο.** \"Naik 12%\" dalam bahasa Indonesia bisa berarti selisih atau hasil akhir; bahasa Yunani memaksa kamu memilih. *Αυξήθηκε κατά 12%* = bertambah SEBESAR 12%; *αυξήθηκε στο 12%* = naik MENJADI 12%. Salah pilih berarti angka di laporanmu salah.",
+    "**ποσοστιαίες μονάδες** — \"poin persen\". Dari 7% ke 18% itu naik 11 *ποσοστιαίες μονάδες*, tetapi kalau dihitung sebagai persen, naik sekitar 157%. Laporan resmi yang teliti selalu membedakan keduanya.",
+    "**υπερδιπλασιάστηκε** — *υπερ-* \"lebih dari\" + *διπλασιάζομαι* \"menjadi dua kali lipat\". Keluarganya: *τριπλασιάζομαι, τετραπλασιάζομαι*. Semuanya bentuk -ομαι dengan αόριστος *-άστηκε*.",
+    "**το 7% των δοκίμων** — persen dibaca *επτά τοις εκατό* (*τοις* adalah sisa datif kuno \"per\"). Kalau persen menjadi subjek atau objek, ia bersandang netral: *το 18%, στο 18%*.",
+    "**ένα κόμμα δύο εκατομμύρια** — kabar baik: seperti bahasa Indonesia, bahasa Yunani memakai koma untuk desimal (*1,2*) dan titik untuk ribuan (*14.000*). *Το εκατομμύριο* adalah kata benda netral, jadi *δύο εκατομμύρια ευρώ*, tanpa genitif.",
+    "**Πέντε στους ογδόντα έξι** — \"lima dari delapan puluh enam\" memakai *σε* + sandang, bukan *από*: *ένας στους δέκα* \"satu dari sepuluh\". *Από* di sini akan terdengar seperti \"lima orang yang berasal dari 86\"."
+   ],
+   "grammars": [
+    {
+     "title": "Κατά, σε, από… σε: selisih atau hasil?",
+     "body": [
+      "Kata kerja naik-turun dalam laporan hampir selalu diikuti salah satu dari tiga pola ini. Hafalkan dengan contoh angka dari laporan Ana: 40 → 86 kadet, 7% → 18% perempuan."
+     ],
+     "table": {
+      "head": [
+       "Kalimat",
+       "Arti"
+      ],
+      "rows": [
+       [
+        "*Ο αριθμός αυξήθηκε κατά 46.*",
+        "Jumlahnya bertambah SEBANYAK 46."
+       ],
+       [
+        "*Ο αριθμός αυξήθηκε σε 86.*",
+        "Jumlahnya naik MENJADI 86."
+       ],
+       [
+        "*Αυξήθηκε από 40 σε 86.*",
+        "Naik dari 40 menjadi 86."
+       ],
+       [
+        "*Το ποσοστό αυξήθηκε στο 18%.*",
+        "Persentasenya naik menjadi 18%."
+       ],
+       [
+        "*Αύξηση κατά 115%*",
+        "Kenaikan sebesar 115%"
+       ],
+       [
+        "*Αύξηση κατά 11 ποσοστιαίες μονάδες*",
+        "Kenaikan 11 poin persen"
+       ],
+       [
+        "*Μειώθηκε στο μισό.*",
+        "Turun menjadi separuh."
+       ]
+      ]
+     },
+     "after": [
+      "Angka tanpa persen biasanya tanpa sandang (*σε 86*); persen biasanya bersandang (*στο 18%*).",
+      "Dalam judul dan tabel, kata kerjanya sering dibuang: *Αύξηση 115% στους δοκίμους*."
+     ]
+    }
+   ]
+  },
+  {
+   "title": "ΔΙΑΛΟΓΟΣ 2 — Presentasi di depan senat universitas",
+   "intro": "Kamis, 15 Maret 2029, ruang senat Universitas Pireas. Ana mempresentasikan data program di depan Profesor Zachariou, wakil rektor bidang kerja sama, dengan Kyria Angeliki duduk di sampingnya. Di layar ada dua grafik: kurva jumlah kadet dan diagram batang biaya.",
+   "lines": [
+    {
+     "speaker": "Αγγελική:",
+     "text": "Άννα, έχετε τον λόγο. Έχουμε δέκα λεπτά.",
+     "id": "Ana, silakan. Kita punya sepuluh menit.",
+     "literal": "Ana, kalian-punya (sandang) kata. kita-punya sepuluh menit."
+    },
+    {
+     "speaker": "Άννα:",
+     "text": "Ευχαριστώ. Στο πρώτο γράφημα βλέπετε τον αριθμό των δοκίμων από το 2027 ως σήμερα.",
+     "id": "Terima kasih. Di grafik pertama Anda melihat jumlah kadet dari 2027 sampai sekarang.",
+     "literal": "terima-kasih. di-(sandang) pertama grafik kalian-lihat (sandang) jumlah (sandang-milik) kadet-kadet dari (sandang) 2027 sampai hari-ini."
+    },
+    {
+     "speaker": "Ζαχαρίου:",
+     "text": "Η καμπύλη ανεβαίνει απότομα το 2028. Τι συνέβη;",
+     "id": "Kurvanya naik tajam pada 2028. Apa yang terjadi?",
+     "literal": "(sandang) kurva ia-naik curam (sandang) 2028. apa terjadi?"
+    },
+    {
+     "speaker": "Άννα:",
+     "text": "Ξεκίνησε η συνεργασία με το πανεπιστήμιό σας. Οι αιτήσεις τριπλασιάστηκαν μέσα σε έξι μήνες.",
+     "id": "Kerja sama dengan universitas Bapak dimulai. Jumlah pendaftar naik tiga kali lipat dalam enam bulan.",
+     "literal": "dimulai (sandang) kerja-sama dengan (sandang) universitas kalian. (sandang) lamaran-lamaran ditigakalilipatkan dalam enam bulan."
+    },
+    {
+     "speaker": "Ζαχαρίου:",
+     "text": "Εντυπωσιακό. Θα διατηρηθεί όμως αυτός ο ρυθμός;",
+     "id": "Mengesankan. Tapi apakah laju ini akan bertahan?",
+     "literal": "mengesankan. akan dipertahankan tetapi ini (sandang) laju?"
+    },
+    {
+     "speaker": "Άννα:",
+     "text": "Μάλλον όχι. Προβλέπουμε σταδιακή σταθεροποίηση γύρω στους εκατό δοκίμους τον χρόνο.",
+     "id": "Mungkin tidak. Kami memperkirakan akan stabil secara bertahap di kisaran seratus kadet per tahun.",
+     "literal": "mungkin tidak. kami-perkirakan bertahap stabilisasi sekitar di-(sandang) seratus kadet-kadet (sandang) tahun."
+    },
+    {
+     "speaker": "Αγγελική:",
+     "text": "Και το ραβδόγραμμα; Τι δείχνει η γκρίζα στήλη;",
+     "id": "Lalu diagram batangnya? Batang abu-abu itu menunjukkan apa?",
+     "literal": "dan (sandang) diagram-batang? apa ia-tunjukkan (sandang) abu-abu batang?"
+    },
+    {
+     "speaker": "Άννα:",
+     "text": "Το κόστος ανά δόκιμο. Κορυφώθηκε το 2027 και από τότε μειώνεται σταθερά.",
+     "id": "Biaya per kadet. Puncaknya tahun 2027, dan sejak itu terus turun.",
+     "literal": "(sandang) biaya per kadet. memuncak (sandang) 2027 dan dari saat-itu ia-diturunkan stabil."
+    },
+    {
+     "speaker": "Ζαχαρίου:",
+     "text": "Με άλλα λόγια, κάθε ευρώ αποδίδει περισσότερο. Με πείσατε.",
+     "id": "Dengan kata lain, setiap euro memberi hasil lebih banyak. Anda berhasil meyakinkan saya.",
+     "literal": "dengan lain kata-kata, setiap euro ia-hasilkan lebih-banyak. aku kalian-yakinkan."
+    },
+    {
+     "speaker": "Άννα:",
+     "text": "Σας ευχαριστώ. Τα αναλυτικά στοιχεία θα τα βρείτε στο παράρτημα.",
+     "id": "Terima kasih. Data rincinya bisa Bapak temukan di lampiran.",
+     "literal": "kalian aku-berterima-kasih. (sandang) rinci data-data akan mereka kalian-temukan di-(sandang) lampiran."
+    }
+   ],
+   "notes": [
+    "**έχετε τον λόγο** — rumus ketua rapat untuk memberi giliran bicara: \"silakan\", harfiahnya \"Anda memegang kata\". Untuk meminta giliran: *Θα ήθελα τον λόγο.*",
+    "**ανεβαίνει απότομα** — kata keterangan kecepatan tren: *απότομα* (tajam, tiba-tiba), *ραγδαία* (sangat cepat), *σταδιακά* (bertahap), *ελαφρά* (sedikit), *σταθερά* (terus, ajek).",
+    "**μέσα σε έξι μήνες** — *μέσα σε* \"dalam kurun\": batas waktu sebuah perubahan. Bedakan dengan *σε έξι μήνες* \"enam bulan lagi\".",
+    "**Θα διατηρηθεί;** — masa depan sekali jadi dari bentuk -ομαι: *θα* + batang aorist pasif *διατηρηθ-* + *-εί*. Polanya sama dengan *θα γίνει, θα σταθεροποιηθεί, θα αυξηθεί*.",
+    "**γύρω στους εκατό** — \"sekitar seratus\": *γύρω σε* + sandang, atau lebih sederhana *περίπου εκατό*. *Τον χρόνο* (akusatif tanpa preposisi) berarti \"per tahun\", sama dengan *ετησίως* yang lebih resmi.",
+    "**Τα αναλυτικά στοιχεία θα τα βρείτε** — objek diletakkan di depan sebagai topik, lalu diulang dengan kata ganti *τα*. Pengulangan ini wajib kalau objek bersandang dipindah ke depan: *τα στοιχεία θα βρείτε* (tanpa *τα*) terdengar janggal."
+   ],
+   "grammars": [
+    {
+     "title": "Kata kerja tren dan kata bendanya",
+     "body": [
+      "Presentasi lisan memakai kata kerja; laporan tertulis dan judul grafik lebih suka kata bendanya (B1 unit 10). Kuasai keduanya berpasangan."
+     ],
+     "table": {
+      "head": [
+       "Arah",
+       "Kata kerja",
+       "Kata benda",
+       "Contoh (ΑΟΡΙΣΤΟΣ)"
+      ],
+      "rows": [
+       [
+        "naik",
+        "*αυξάνομαι, ανεβαίνω*",
+        "*η αύξηση, η άνοδος*",
+        "*Οι αιτήσεις αυξήθηκαν.*"
+       ],
+       [
+        "turun",
+        "*μειώνομαι, πέφτω*",
+        "*η μείωση, η πτώση*",
+        "*Το κόστος μειώθηκε.*"
+       ],
+       [
+        "dua kali lipat",
+        "*διπλασιάζομαι*",
+        "*ο διπλασιασμός*",
+        "*Οι δόκιμοι διπλασιάστηκαν.*"
+       ],
+       [
+        "tiga kali lipat",
+        "*τριπλασιάζομαι*",
+        "*ο τριπλασιασμός*",
+        "*Οι αιτήσεις τριπλασιάστηκαν.*"
+       ],
+       [
+        "stabil",
+        "*σταθεροποιούμαι, παραμένω σταθερός*",
+        "*η σταθεροποίηση*",
+        "*Το ποσοστό παρέμεινε σταθερό.*"
+       ],
+       [
+        "memuncak",
+        "*κορυφώνομαι*",
+        "*η κορύφωση*",
+        "*Το κόστος κορυφώθηκε το 2027.*"
+       ],
+       [
+        "anjlok",
+        "*καταρρέω*",
+        "*η κατάρρευση*",
+        "*Οι τιμές κατέρρευσαν.*"
+       ]
+      ]
+     },
+     "after": [
+      "*Ανεβαίνω* dan *πέφτω* aktif (αόρ. *ανέβηκε, έπεσε*) dan lebih lisan; *αυξάνομαι* dan *μειώνομαι* bentuk -ομαι (αόρ. *αυξήθηκε, μειώθηκε*) dan lebih resmi."
+     ]
+    }
+   ]
+  }
+ ],
+ "sections": [
+  {
+   "title": "Membaca angka besar",
+   "blocks": [
+    {
+     "type": "tabel",
+     "head": [
+      "Angka",
+      "Dibaca",
+      "Catatan"
+     ],
+     "rows": [
+      [
+       "1.000",
+       "*χίλια*",
+       "ikut gender: *χίλιοι ναυτικοί, χίλιες γυναίκες*"
+      ],
+      [
+       "2.000",
+       "*δύο χιλιάδες*",
+       "*η χιλιάδα* feminin: *τρεις χιλιάδες, τέσσερις χιλιάδες*"
+      ],
+      [
+       "5.500",
+       "*πέντε χιλιάδες πεντακόσια*",
+       "ratusan ikut gender: *πεντακόσια πλοία*"
+      ],
+      [
+       "1.000.000",
+       "*ένα εκατομμύριο*",
+       "kata benda netral"
+      ],
+      [
+       "2.500.000",
+       "*δυόμισι εκατομμύρια*",
+       "*δυόμισι* tidak berubah"
+      ],
+      [
+       "1.000.000.000",
+       "*ένα δισεκατομμύριο*",
+       "satu miliar"
+      ],
+      [
+       "3,5",
+       "*τρία κόμμα πέντε*",
+       "koma desimal, seperti bahasa Indonesia"
+      ],
+      [
+       "18%",
+       "*δεκαοκτώ τοις εκατό*",
+       "bersandang netral: *το 18%*"
+      ],
+      [
+       "1/3 · 3/4",
+       "*ένα τρίτο · τρία τέταρτα*",
+       "pecahan memakai bilangan urutan netral"
+      ]
+     ]
+    },
+    {
+     "type": "kotak",
+     "title": "⚠️ Gender merambat ke seluruh angka",
+     "items": [
+      "*τρεις χιλιάδες τριακόσιοι ναυτικοί* (maskulin), *τρεις χιλιάδες τριακόσιες γυναίκες* (feminin), *τρεις χιλιάδες τριακόσια πλοία* (netral).",
+      "*χιλιάδες* sendiri selalu feminin, tetapi ratusan dan satuan sesudahnya mengikuti benda yang dihitung: *τέσσερις χιλιάδες τρεις δόκιμοι*.",
+      "*Εκατό* (tepat seratus) tidak berubah: *εκατό ναυτικοί, εκατό γυναίκες*."
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Membandingkan dan melipatgandakan",
+   "blocks": [
+    {
+     "type": "tabel",
+     "head": [
+      "Ungkapan",
+      "Arti",
+      "Contoh"
+     ],
+     "rows": [
+      [
+       "*διπλάσιος, τριπλάσιος*",
+       "dua / tiga kali lipat (sifat)",
+       "*Το κόστος είναι διπλάσιο.*"
+      ],
+      [
+       "*δύο φορές περισσότεροι*",
+       "dua kali lebih banyak",
+       "*Φέτος ήρθαν δύο φορές περισσότεροι.*"
+      ],
+      [
+       "*ο μισός, το μισό*",
+       "separuh",
+       "*Το μισό κόστος το πληρώνει το υπουργείο.*"
+      ],
+      [
+       "*κατά μέσο όρο*",
+       "rata-rata",
+       "*Κατά μέσο όρο, ένας δόκιμος μένει δέκα μήνες.*"
+      ],
+      [
+       "*ανά*",
+       "per",
+       "*Κόστος ανά δόκιμο: 11.500 ευρώ.*"
+      ],
+      [
+       "*σε σύγκριση με*",
+       "dibandingkan dengan",
+       "*σε σύγκριση με πέρσι*"
+      ],
+      [
+       "*έναντι*",
+       "berbanding, versus (resmi)",
+       "*86 έναντι 40 το 2027*"
+      ],
+      [
+       "*το ένα τρίτο των…*",
+       "sepertiga dari…",
+       "*Το ένα τρίτο των δοκίμων είναι από τη Σουραμπάγια.*"
+      ]
+     ]
+    },
+    {
+     "type": "p",
+     "text": "Dalam laporan Yunani, perbandingan dengan tahun sebelumnya hampir selalu ditulis *σε σύγκριση με το 2027* atau, lebih ringkas dan resmi, *έναντι 40 το 2027*. Pembaca Yunani juga terbiasa melihat angka dibulatkan dengan *σχεδόν* (hampir), *πάνω από* (lebih dari), dan *λιγότερο από* (kurang dari)."
+    }
+   ]
+  },
+  {
+   "title": "Menjelaskan grafik",
+   "blocks": [
+    {
+     "type": "kotak",
+     "title": "Kosakata grafik",
+     "items": [
+      "*το γράφημα* (grafik), *το διάγραμμα* (diagram), *ο πίνακας* (tabel)",
+      "*η καμπύλη* (kurva), *ο άξονας* (sumbu): *ο οριζόντιος / ο κάθετος άξονας*",
+      "*το ραβδόγραμμα* (diagram batang), *η στήλη* (batang), *το κυκλικό διάγραμμα* (diagram lingkaran, lisan: *η πίτα*)",
+      "*το υπόμνημα* (legenda), *η πηγή* (sumber data)"
+     ]
+    },
+    {
+     "type": "p",
+     "text": "Contoh paragraf presentasi: *Στον οριζόντιο άξονα βλέπετε τα έτη και στον κάθετο τον αριθμό των δοκίμων. Η καμπύλη μένει σχεδόν σταθερή ως το 2027, ανεβαίνει απότομα το 2028 και προβλέπουμε ότι θα σταθεροποιηθεί γύρω στους εκατό.* Urutan ini (sumbu, lalu gerak kurva, lalu ramalan) adalah pola aman untuk grafik apa pun."
+    },
+    {
+     "type": "p",
+     "text": "Angka-angka Yunani yang sering muncul dalam presentasi pelayaran: armada milik pengusaha Yunani adalah yang terbesar di dunia menurut tonase, dan sebagian besar kapalnya berlayar di bawah bendera negara lain. Karena itu orang Yunani berbicara tentang *ο ελληνόκτητος στόλος* (armada milik Yunani), bukan hanya *τα ελληνικά πλοία*."
+    }
+   ]
+  }
+ ],
+ "vocab": [
+  {
+   "el": "η ετήσια έκθεση",
+   "baca": "i é-TI-sia ÉK-thé-si",
+   "id": "laporan tahunan"
+  },
+  {
+   "el": "το ποσοστό",
+   "baca": "to po-so-STO",
+   "id": "persentase"
+  },
+  {
+   "el": "τοις εκατό",
+   "baca": "tis é-ka-TO",
+   "id": "persen (%)"
+  },
+  {
+   "el": "η ποσοστιαία μονάδα",
+   "baca": "i po-so-STIÉ-a mo-NA-dha",
+   "id": "poin persen"
+  },
+  {
+   "el": "ο προϋπολογισμός",
+   "baca": "o pro-i-po-lo-yi-SMOS",
+   "id": "anggaran"
+  },
+  {
+   "el": "το κόστος",
+   "baca": "to KO-stos",
+   "id": "biaya (*γεν. του κόστους*)"
+  },
+  {
+   "el": "ανά",
+   "baca": "a-NA",
+   "id": "per"
+  },
+  {
+   "el": "η αύξηση",
+   "baca": "i AF-ksi-si",
+   "id": "kenaikan"
+  },
+  {
+   "el": "η μείωση",
+   "baca": "i MI-o-si",
+   "id": "penurunan"
+  },
+  {
+   "el": "αυξάνομαι",
+   "baca": "af-KSA-no-mé",
+   "id": "bertambah, naik (*αόρ. αυξήθηκα*)"
+  },
+  {
+   "el": "μειώνομαι",
+   "baca": "MIO-no-mé",
+   "id": "berkurang, turun (*αόρ. μειώθηκα*)"
+  },
+  {
+   "el": "διπλασιάζομαι",
+   "baca": "dhi-pla-SIA-zo-mé",
+   "id": "menjadi dua kali lipat"
+  },
+  {
+   "el": "τριπλασιάζομαι",
+   "baca": "tri-pla-SIA-zo-mé",
+   "id": "menjadi tiga kali lipat"
+  },
+  {
+   "el": "κορυφώνομαι",
+   "baca": "ko-ri-FO-no-mé",
+   "id": "memuncak, mencapai puncak"
+  },
+  {
+   "el": "σταθεροποιούμαι",
+   "baca": "sta-thé-ro-pi-U-mé",
+   "id": "menjadi stabil (*αόρ. σταθεροποιήθηκα*)"
+  },
+  {
+   "el": "το γράφημα",
+   "baca": "to GHRA-fi-ma",
+   "id": "grafik"
+  },
+  {
+   "el": "η καμπύλη",
+   "baca": "i kam-BI-li",
+   "id": "kurva"
+  },
+  {
+   "el": "το ραβδόγραμμα",
+   "baca": "to rav-DHO-ghra-ma",
+   "id": "diagram batang"
+  },
+  {
+   "el": "ο άξονας",
+   "baca": "o A-kso-nas",
+   "id": "sumbu (grafik)"
+  },
+  {
+   "el": "η χιλιάδα",
+   "baca": "i khi-LIA-dha",
+   "id": "ribuan (*δύο χιλιάδες*)"
+  },
+  {
+   "el": "το εκατομμύριο",
+   "baca": "to é-ka-to-MI-ri-o",
+   "id": "juta"
+  },
+  {
+   "el": "το δισεκατομμύριο",
+   "baca": "to dhi-sé-ka-to-MI-ri-o",
+   "id": "miliar"
+  },
+  {
+   "el": "απότομα",
+   "baca": "a-PO-to-ma",
+   "id": "tajam, tiba-tiba"
+  },
+  {
+   "el": "σταδιακά",
+   "baca": "sta-dhia-KA",
+   "id": "bertahap"
+  },
+  {
+   "el": "το παράρτημα",
+   "baca": "to pa-RAR-ti-ma",
+   "id": "lampiran; kantor cabang"
+  }
+ ],
+ "exercises": [
+  {
+   "prompt": "Terjemahkan ke bahasa Yunani.",
+   "items": [
+    "Jumlah kadet naik dari 40 menjadi 86.",
+    "Biayanya turun sebesar 18%.",
+    "Persentasenya naik sebelas poin persen.",
+    "Jumlah pendaftar naik tiga kali lipat dalam enam bulan.",
+    "Satu dari sepuluh kadet berhenti.",
+    "Anggarannya 1,2 juta euro."
+   ]
+  },
+  {
+   "prompt": "Isi dengan bentuk yang tepat. Petunjuk ada di dalam kurung.",
+   "items": [
+    "Το κόστος μειώθηκε ____ 2.500 ευρώ. (selisih)",
+    "Το ποσοστό των γυναικών αυξήθηκε ____ 18%. (menjadi, dengan sandang)",
+    "Τρεις ____ ναυτικοί πήραν μέρος. (η χιλιάδα)",
+    "____ γυναίκες εκπαιδεύτηκαν φέτος. (200)",
+    "Οι αιτήσεις ____ το 2028. (τριπλασιάζομαι, αόριστος)",
+    "Το κόστος ____ το 2027. (κορυφώνομαι, αόριστος)",
+    "Πέντε ____ ογδόντα έξι σταμάτησαν. (dari: σε + sandang)"
+   ]
+  },
+  {
+   "prompt": "Ubah kalimat menjadi frasa kata benda gaya judul laporan.",
+   "items": [
+    "Οι μισθοί αυξήθηκαν κατά 5%.",
+    "Το κόστος μειώθηκε κατά 18%.",
+    "Οι αιτήσεις διπλασιάστηκαν.",
+    "Οι τιμές έπεσαν απότομα.",
+    "Το ποσοστό σταθεροποιήθηκε.",
+    "Η ζήτηση κορυφώθηκε τον Αύγουστο."
+   ]
+  },
+  {
+   "prompt": "Susun jadi kalimat yang benar.",
+   "items": [
+    "κατά / αυξήθηκε / 12% / ο αριθμός",
+    "τον λόγο / Άννα / έχετε",
+    "σταθερό / παρέμεινε / το ποσοστό",
+    "μέσα σε / διπλασιάστηκαν / οι αιτήσεις / έναν χρόνο",
+    "στο παράρτημα / θα τα βρείτε / τα στοιχεία"
+   ]
+  }
+ ],
+ "answers": [
+  "Ο αριθμός των δοκίμων αυξήθηκε από 40 σε 86. — Το κόστος μειώθηκε κατά 18%. — Το ποσοστό αυξήθηκε κατά έντεκα ποσοστιαίες μονάδες. — Οι αιτήσεις τριπλασιάστηκαν μέσα σε έξι μήνες. — Ένας στους δέκα δοκίμους σταμάτησε. — Ο προϋπολογισμός είναι 1,2 εκατομμύρια ευρώ.",
+  "κατά — στο — χιλιάδες — Διακόσιες — τριπλασιάστηκαν — κορυφώθηκε — στους",
+  "Αύξηση των μισθών κατά 5% — Μείωση του κόστους κατά 18% — Διπλασιασμός των αιτήσεων — Απότομη πτώση των τιμών — Σταθεροποίηση του ποσοστού — Κορύφωση της ζήτησης τον Αύγουστο",
+  "Ο αριθμός αυξήθηκε κατά 12%. — Άννα, έχετε τον λόγο. — Το ποσοστό παρέμεινε σταθερό. — Οι αιτήσεις διπλασιάστηκαν μέσα σε έναν χρόνο. — Τα στοιχεία θα τα βρείτε στο παράρτημα."
+ ]
+}

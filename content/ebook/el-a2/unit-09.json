@@ -1,0 +1,650 @@
+{
+ "title": "Nanti dan terus-menerus — dua masa depan",
+ "title_target": "Θα σου γράφω κάθε μέρα",
+ "goal": "Memilih dengan sadar antara masa depan yang terus-menerus atau berulang (*θα σου γράφω κάθε μέρα*) dan masa depan yang terjadi sekali dan selesai (*θα σου γράψω αύριο*), lalu memakainya untuk berjanji dan menyusun rencana kerja.",
+ "bekal": [
+  "membentuk *θα* + batang kini untuk kebiasaan dan tugas rutin nanti: *θα σε παίρνω τηλέφωνο κάθε Κυριακή*",
+  "membentuk *θα* + batang aorist untuk satu kejadian: *θα σου στείλω μήνυμα αμέσως*, termasuk batang tak beraturan (*θα έρθω, θα δω, θα πω*)",
+  "membaca kata penunjuk waktu (*κάθε, πάντα, αμέσως, την Παρασκευή*) sebagai petunjuk memilih bentuk"
+ ],
+ "dialogs": [
+  {
+   "title": "ΔΙΑΛΟΓΟΣ 1 — Janji lewat layar",
+   "intro": "Minggu, 22 November 2026, pukul dua siang di Athena — pukul tujuh malam di Jakarta. Ana melakukan panggilan video dengan Rina, adiknya. Rina baru mulai belajar bahasa Yunani lewat aplikasi dan minta diajak bicara dalam bahasa Yunani, jadi Ana bicara pelan. Perhatikan setiap *θα*: kata kerja sesudahnya kadang berbatang kini, kadang berbatang aorist.",
+   "lines": [
+    {
+     "speaker": "Ρίνα:",
+     "text": "[Γεια|Ya] [σου|su], [Άννα|A-na]! [Με|Mé] [ακούς|a-KUS] [καλά|ka-LA];",
+     "id": "Halo, Kak Ana! Suaraku kedengaran jelas?",
+     "literal": "halo kepadamu, Ana! aku-(objek) kamu-mendengar baik?"
+    },
+    {
+     "speaker": "Άννα:",
+     "text": "[Σε|Sé] [ακούω|a-KU-o] [τέλεια|TÉ-li-a]! [Πώς|Pos] [είσαι|I-sé], [μικρή|mi-KRI] [μου|mu];",
+     "id": "Jelas banget! Apa kabar, adikku sayang?",
+     "literal": "kamu-(objek) aku-mendengar sempurna! bagaimana kamu-adalah, kecil-(pr) milikku?"
+    },
+    {
+     "speaker": "Ρίνα:",
+     "text": "[Καλά|Ka-LA], [αλλά|a-LA] [μου|mu] [λείπεις|LI-pis]. [Θα|Tha] [έρθεις|ÉR-this] [στην|stin] [Τζακάρτα|Dza-KAR-ta] [το|to] [καλοκαίρι|ka-lo-KÉ-ri];",
+     "id": "Baik, tapi aku kangen. Kakak pulang ke Jakarta musim panas nanti?",
+     "literal": "baik, tetapi kepadaku kamu-kurang. akan kamu-datang ke-(sandang) Jakarta (sandang) musim-panas?"
+    },
+    {
+     "speaker": "Άννα:",
+     "text": "[Ναι|Né], [θα|tha] [έρθω|ÉR-tho] [τον|ton] [Ιούλιο|I-U-lio], [για|ya] [δύο|DHI-o] [εβδομάδες|év-dho-MA-dhés].",
+     "id": "Iya, aku pulang bulan Juli, dua minggu.",
+     "literal": "ya, akan aku-datang (sandang) Juli, untuk dua minggu."
+    },
+    {
+     "speaker": "Ρίνα:",
+     "text": "[Τόσο|TO-so] [αργά|ar-GHA]; [Και|Ké] [μέχρι|MÉ-khri] [τότε|TO-té]; [Θα|Tha] [με|mé] [ξεχάσεις|ksé-KHA-sis]!",
+     "id": "Lama banget? Terus sampai saat itu? Nanti Kakak lupa sama aku!",
+     "literal": "begitu lambat? dan sampai saat-itu? akan aku-(objek) kamu-melupakan!"
+    },
+    {
+     "speaker": "Άννα:",
+     "text": "[Ποτέ|Po-TÉ]! [Θα|Tha] [σου|su] [γράφω|GHRA-fo] [κάθε|KA-thé] [μέρα|MÉ-ra], [το|to] [υπόσχομαι|i-PO-skho-mé].",
+     "id": "Nggak akan! Aku bakal kirim pesan tiap hari, janji.",
+     "literal": "tidak-pernah! akan kepadamu aku-menulis (terus) setiap hari, itu aku-berjanji."
+    },
+    {
+     "speaker": "Ρίνα:",
+     "text": "[Κάθε|KA-thé] [μέρα|MÉ-ra]; [Εσύ|É-SI] [δουλεύεις|dhu-LÉ-vis] [δέκα|DHÉ-ka] [ώρες|O-rés] [τη|ti] [μέρα|MÉ-ra].",
+     "id": "Tiap hari? Kakak kerja sepuluh jam sehari.",
+     "literal": "setiap hari? kamu kamu-bekerja sepuluh jam (sandang) hari."
+    },
+    {
+     "speaker": "Άννα:",
+     "text": "[Ένα|É-na] [μήνυμα|MI-ni-ma] [το|to] [πρωί|pro-I], [ένα|É-na] [το|to] [βράδυ|VRA-dhi]. [Και|Ké] [θα|tha] [σε|sé] [παίρνω|PÉR-no] [τηλέφωνο|ti-LÉ-fo-no] [κάθε|KA-thé] [Κυριακή|Ki-ria-KI].",
+     "id": "Satu pesan pagi, satu malam. Terus aku bakal meneleponmu tiap hari Minggu.",
+     "literal": "satu pesan (sandang) pagi, satu (sandang) malam. dan akan kamu-(objek) aku-mengambil (terus) telepon setiap Minggu."
+    },
+    {
+     "speaker": "Ρίνα:",
+     "text": "[Εντάξει|É-DA-ksi]. [Κι|Ki] [εγώ|é-GHO] [θα|tha] [σου|su] [στέλνω|STÉL-no] [φωτογραφίες|fo-to-ghra-FI-és] [από|a-PO] [το|to] [πανεπιστήμιο|pa-né-pi-STI-mio].",
+     "id": "Oke. Aku juga bakal kirim foto-foto dari kampus.",
+     "literal": "baiklah. dan aku akan kepadamu aku-mengirim (terus) foto-foto dari (sandang) universitas."
+    },
+    {
+     "speaker": "Άννα:",
+     "text": "[Τέλεια|TÉ-li-a]! [Πότε|PO-té] [θα|tha] [μάθεις|MA-this] [τους|tus] [βαθμούς|vath-MUS] [σου|su];",
+     "id": "Mantap! Kapan nilaimu keluar?",
+     "literal": "sempurna! kapan akan kamu-mengetahui (sekali) (sandang) nilai-nilai milikmu?"
+    },
+    {
+     "speaker": "Ρίνα:",
+     "text": "[Την|Tin] [Παρασκευή|Pa-ra-ské-VI]. [Θα|Tha] [σου|su] [στείλω|STI-lo] [μήνυμα|MI-ni-ma] [αμέσως|a-MÉ-sos].",
+     "id": "Hari Jumat. Langsung aku kabari.",
+     "literal": "(sandang) Jumat. akan kepadamu aku-mengirim (sekali) pesan segera."
+    },
+    {
+     "speaker": "Άννα:",
+     "text": "[Και|Ké] [μετά|mé-TA] [θα|tha] [γιορτάσουμε|yor-TA-su-mé] [μαζί|ma-ZI] [με|mé] [βιντεοκλήση|vin-dé-o-KLI-si]!",
+     "id": "Habis itu kita rayakan bareng lewat video call!",
+     "literal": "dan sesudah akan kita-merayakan (sekali) bersama dengan panggilan-video!"
+    },
+    {
+     "speaker": "Ρίνα:",
+     "text": "[Ναι|Né]! [Εσύ|É-SI] [θα|tha] [φτιάξεις|FTIA-ksis] [καφέ|ka-FÉ], [εγώ|é-GHO] [θα|tha] [φτιάξω|FTIA-kso] [τσάι|TSA-i].",
+     "id": "Iya! Kakak bikin kopi, aku bikin teh.",
+     "literal": "ya! kamu akan kamu-membuat (sekali) kopi, aku akan aku-membuat (sekali) teh."
+    },
+    {
+     "speaker": "Άννα:",
+     "text": "[Σύμφωνοι|SIM-fo-ni]. [Και|Ké] [θα|tha] [σου|su] [μιλάω|mi-LA-o] [πάντα|PAN-da] [ελληνικά|é-li-ni-KA], [για|ya] [να|na] [μαθαίνεις|ma-THÉ-nis] [κι|ki] [εσύ|é-SI]!",
+     "id": "Sepakat. Dan aku bakal selalu ngomong bahasa Yunani sama kamu, biar kamu juga belajar!",
+     "literal": "sepakat-(jamak). dan akan kepadamu aku-berbicara (terus) selalu bahasa-Yunani, supaya kamu-belajar (terus) juga kamu!"
+    }
+   ],
+   "notes": [
+    "⚠️ **Θα σου γράφω vs θα σου γράψω — dua-duanya \"aku akan menulis kepadamu\".** Bahasa Indonesia cukup punya satu \"akan\"; bahasa Yunani memaksa kamu memilih. **Θα + batang kini** (*γράφω*) = nanti terjadi terus-menerus atau berulang. **Θα + batang aorist** (*γράψω*) = nanti terjadi sekali, utuh, selesai. Ana berjanji menulis **setiap hari**, jadi *θα σου γράφω*. Kalau ia bilang *θα σου γράψω*, artinya \"nanti aku tulis (satu pesan)\".",
+    "**Θα σε παίρνω τηλέφωνο κάθε Κυριακή** — kata *κάθε* (setiap), *πάντα* (selalu), *συχνά* (sering), dan *συνέχεια* (terus-terusan) hampir selalu menarik batang kini. Bandingkan: *θα σε πάρω τηλέφωνο την Κυριακή* = aku meneleponmu hari Minggu nanti, sekali.",
+    "**Θα σου στείλω μήνυμα αμέσως** — satu pesan, segera, lalu selesai: batang aorist. Batang ini kamu ambil dari lampau (αόριστος) dengan membuang awalan έ-: *έστειλα → θα στείλω*, *έφτιαξα → θα φτιάξω*, *γιόρτασα → θα γιορτάσω*.",
+    "**Θα έρθω, θα μάθεις** — kata kerja yang lampaunya tak beraturan juga punya batang aorist tak beraturan: *ήρθα → θα έρθω*, *έμαθα → θα μάθω*, *είδα → θα δω*, *είπα → θα πω*. Tekanannya pindah ke tempat yang wajar karena awalan lampau sudah hilang.",
+    "**Θα με ξεχάσεις!** — kata ganti objek lemah (*με, σε, σου, τον, τα*) duduk **di antara** *θα* dan kata kerja: *θα σου γράφω, θα σε παίρνω, θα με ξεχάσεις*. Jangan menaruhnya di depan *θα*.",
+    "**Μου λείπεις** — \"aku kangen kamu\", harfiah \"kamu kurang bagiku\". Polanya sama dengan *μου αρέσει*: yang dirindukan menjadi pelaku, yang merindukan jadi *μου*. Maka *μου λείπουν οι γονείς μου* = aku kangen orang tuaku (kata kerja jamak karena orang tuanya jamak)."
+   ],
+   "grammars": [
+    {
+     "title": "Satu kata kerja, dua masa depan",
+     "body": [
+      "Kolom kedua adalah lampau (αόριστος) yang sudah kamu kenal; dari sanalah batang untuk masa depan sekali diambil. Kolom ketiga memakai batang yang sama dengan masa kini."
+     ],
+     "table": {
+      "head": [
+       "Masa kini",
+       "Lampau",
+       "Nanti, berulang",
+       "Nanti, sekali",
+       "Arti"
+      ],
+      "rows": [
+       [
+        "*γράφω*",
+        "*έγραψα*",
+        "*θα γράφω*",
+        "*θα γράψω*",
+        "menulis"
+       ],
+       [
+        "*στέλνω*",
+        "*έστειλα*",
+        "*θα στέλνω*",
+        "*θα στείλω*",
+        "mengirim"
+       ],
+       [
+        "*παίρνω*",
+        "*πήρα*",
+        "*θα παίρνω*",
+        "*θα πάρω*",
+        "mengambil"
+       ],
+       [
+        "*μιλάω*",
+        "*μίλησα*",
+        "*θα μιλάω*",
+        "*θα μιλήσω*",
+        "berbicara"
+       ],
+       [
+        "*έρχομαι*",
+        "*ήρθα*",
+        "*θα έρχομαι*",
+        "*θα έρθω*",
+        "datang"
+       ],
+       [
+        "*πηγαίνω*",
+        "*πήγα*",
+        "*θα πηγαίνω*",
+        "*θα πάω*",
+        "pergi"
+       ],
+       [
+        "*βλέπω*",
+        "*είδα*",
+        "*θα βλέπω*",
+        "*θα δω*",
+        "melihat"
+       ],
+       [
+        "*τρώω*",
+        "*έφαγα*",
+        "*θα τρώω*",
+        "*θα φάω*",
+        "makan"
+       ]
+      ]
+     },
+     "after": [
+      "⚠️ **Θα πάω ≠ θα πηγαίνω.** *Αύριο θα πάω στον Πειραιά* = besok aku ke Pireas (sekali). *Από τον Δεκέμβριο θα πηγαίνω στον Πειραιά κάθε μέρα* = mulai Desember aku akan pergi ke Pireas tiap hari.",
+      "Kalau ragu, tanyakan pada dirimu: \"berapa kali?\" Sekali dan selesai → batang aorist. Berkali-kali atau berlangsung lama → batang kini."
+     ]
+    }
+   ]
+  },
+  {
+   "title": "ΔΙΑΛΟΓΟΣ 2 — Rencana kantor untuk Desember",
+   "intro": "Senin, 23 November 2026, pukul sembilan pagi, di ruang bagian awak kapal Αιγαίον Ναυτιλιακή, Pireas. Κώστας membagi tugas kepada Ana dan Δήμητρα. Satu kata kerja muncul dua kali dengan bentuk berbeda: *θα στείλεις* dan *θα στέλνουμε*.",
+   "lines": [
+    {
+     "speaker": "Κώστας:",
+     "text": "[Καλημέρα|Ka-li-MÉ-ra]. [Από|A-PO] [τον|ton] [Δεκέμβριο|Dhé-KÉM-vri-o] [έρχονται|ÉR-khon-dé] [δέκα|DHÉ-ka] [νέοι|NÉ-i] [δόκιμοι|DHO-ki-mi] [από|a-PO] [την|tin] [Ινδονησία|In-dho-ni-SI-a].",
+     "id": "Selamat pagi. Mulai Desember datang sepuluh kadet baru dari Indonesia.",
+     "literal": "selamat-pagi. dari (sandang) Desember mereka-datang sepuluh baru-(jamak) kadet-kadet dari (sandang) Indonesia."
+    },
+    {
+     "speaker": "Δήμητρα:",
+     "text": "[Δέκα|DHÉ-ka]; [Ποιος|Pios] [θα|tha] [τους|tus] [βοηθάει|vo-i-THA-i] [με|mé] [τα|ta] [χαρτιά|khar-TIA];",
+     "id": "Sepuluh? Siapa yang bakal ngurusin dokumen mereka?",
+     "literal": "sepuluh? siapa akan mereka-(objek) dia-membantu (terus) dengan (sandang) kertas-kertas?"
+    },
+    {
+     "speaker": "Κώστας:",
+     "text": "[Η|I] [Άννα|A-na]. [Άννα|A-na], [θα|tha] [στείλεις|STI-lis] [σήμερα|SI-mé-ra] [τα|ta] [συμβόλαια|sim-VO-lé-a] [στο|sto] [πρακτορείο|prak-to-RI-o] [της|tis] [Τζακάρτας|Dza-KAR-tas];",
+     "id": "Ana. Ana, hari ini kamu kirim kontraknya ke agen di Jakarta, ya?",
+     "literal": "(sandang) Ana. Ana, akan kamu-mengirim (sekali) hari-ini (sandang) kontrak-kontrak ke-(sandang) agen milik-(sandang) Jakarta?"
+    },
+    {
+     "speaker": "Άννα:",
+     "text": "[Βεβαίως|Vé-VÉ-os]. [Θα|Tha] [τα|ta] [στείλω|STI-lo] [πριν|prin] [από|a-PO] [το|to] [μεσημέρι|mé-si-MÉ-ri].",
+     "id": "Tentu. Saya kirim sebelum tengah hari.",
+     "literal": "tentu. akan itu-semua aku-mengirim (sekali) sebelum dari (sandang) tengah-hari."
+    },
+    {
+     "speaker": "Κώστας:",
+     "text": "[Ωραία|O-RÉ-a]. [Και|Ké] [από|a-PO] [εδώ|é-DHO] [και|ké] [πέρα|PÉ-ra] [θα|tha] [στέλνουμε|STÉL-nu-mé] [στο|sto] [πρακτορείο|prak-to-RI-o] [μια|mia] [αναφορά|a-na-fo-RA] [κάθε|KA-thé] [Παρασκευή|Pa-ra-ské-VI].",
+     "id": "Bagus. Dan mulai sekarang kita kirim laporan ke agen itu setiap Jumat.",
+     "literal": "bagus. dan dari sini dan seterusnya akan kita-mengirim (terus) ke-(sandang) agen sebuah laporan setiap Jumat."
+    },
+    {
+     "speaker": "Δήμητρα:",
+     "text": "[Κάθε|KA-thé] [Παρασκευή|Pa-ra-ské-VI]; [Ποιος|Pios] [θα|tha] [τη|ti] [γράφει|GHRA-fi];",
+     "id": "Tiap Jumat? Siapa yang nulis?",
+     "literal": "setiap Jumat? siapa akan itu-(objek) dia-menulis (terus)?"
+    },
+    {
+     "speaker": "Κώστας:",
+     "text": "[Εσύ|É-SI] [θα|tha] [γράφεις|GHRA-fis] [τα|ta] [νούμερα|NU-mé-ra], [και|ké] [η|i] [Άννα|A-na] [θα|tha] [τα|ta] [μεταφράζει|mé-ta-FRA-zi].",
+     "id": "Kamu yang isi angka-angkanya, Ana yang menerjemahkan.",
+     "literal": "kamu akan kamu-menulis (terus) (sandang) angka-angka, dan (sandang) Ana akan itu-semua dia-menerjemahkan (terus)."
+    },
+    {
+     "speaker": "Άννα:",
+     "text": "[Κανένα|Ka-NÉ-na] [πρόβλημα|PRO-vli-ma]. [Την|Tin] [πρώτη|PRO-ti] [αναφορά|a-na-fo-RA] [θα|tha] [τη|ti] [γράψω|GHRA-pso] [μαζί|ma-ZI] [με|mé] [τη|ti] [Δήμητρα|DHI-mi-tra].",
+     "id": "Tidak masalah. Laporan yang pertama saya tulis bareng Dhimitra.",
+     "literal": "tak-satu-pun masalah. (sandang) pertama laporan akan itu-(objek) aku-menulis (sekali) bersama dengan (sandang) Dhimitra."
+    },
+    {
+     "speaker": "Δήμητρα:",
+     "text": "[Εντάξει|É-DA-ksi], [αλλά|a-LA] [την|tin] [Παρασκευή|Pa-ra-ské-VI] [θα|tha] [φύγω|FI-gho] [νωρίς|no-RIS]. [Έχω|É-kho] [γενέθλια|yé-NÉ-thli-a]!",
+     "id": "Oke, tapi Jumat ini aku pulang cepat. Aku ulang tahun!",
+     "literal": "baiklah, tetapi (sandang) Jumat akan aku-pergi (sekali) awal. aku-punya ulang-tahun!"
+    },
+    {
+     "speaker": "Κώστας:",
+     "text": "[Τότε|TO-té] [θα|tha] [πάρουμε|PA-ru-mé] [τούρτα|TUR-ta] [και|ké] [θα|tha] [γιορτάσουμε|yor-TA-su-mé] [εδώ|é-DHO]. [Όλοι|O-li] [μαζί|ma-ZI]!",
+     "id": "Kalau begitu kita beli kue dan rayakan di sini. Semuanya bareng!",
+     "literal": "kalau-begitu akan kita-mengambil (sekali) kue-tar dan akan kita-merayakan (sekali) di-sini. semua bersama!"
+    }
+   ],
+   "notes": [
+    "**Θα στείλεις σήμερα vs θα στέλνουμε κάθε Παρασκευή** — kata kerja yang sama, dua batang. Hari ini, sekali: *στείλ-*. Setiap Jumat, rutin: *στέλν-*. Kata waktunya yang memutuskan, bukan kata kerjanya.",
+    "**Ποιος θα τους βοηθάει;** — Δήμητρα bertanya siapa yang **bertugas** membantu selama berbulan-bulan, jadi batang kini. *Ποιος θα τους βοηθήσει;* juga benar, tetapi artinya \"siapa yang akan membantu mereka (dalam urusan itu, sekali)\". Tugas jangka panjang hampir selalu memakai batang kini.",
+    "**Από εδώ και πέρα** — \"mulai sekarang dan seterusnya\". Ungkapan ini (juga *από τώρα και στο εξής* yang lebih resmi) hampir selalu diikuti *θα* + batang kini, karena yang dijanjikan adalah kebiasaan baru.",
+    "⚠️ **Την πρώτη αναφορά θα τη γράψω** — kalau objek dipindah ke depan kalimat, bahasa Yunani **mengulangnya** dengan kata ganti lemah (*τη*). Terasa berlebihan bagi penutur Indonesia (\"laporan pertama, akan kutulis ia\"), tetapi tanpa *τη* kalimatnya terdengar janggal.",
+    "**Θα φύγω νωρίς** — Δήμητρα pulang cepat **Jumat ini**, sekali: *έφυγα → θα φύγω*. Kalau ia bilang *θα φεύγω νωρίς*, Κώστας akan mengira ia mau pulang cepat setiap hari mulai sekarang.",
+    "**Έχω γενέθλια** — \"aku berulang tahun\", harfiah \"aku punya ulang tahun\". *Τα γενέθλια* selalu jamak. Ucapannya: *Χρόνια πολλά!* (harfiah \"tahun-tahun yang banyak\")."
+   ],
+   "grammars": [
+    {
+     "title": "Kata waktu sebagai penunjuk arah",
+     "body": [
+      "Kata-kata ini bukan aturan mutlak, tetapi dalam sembilan dari sepuluh kalimat mereka menunjukkan bentuk yang benar."
+     ],
+     "table": {
+      "head": [
+       "Menarik batang kini",
+       "Arti",
+       "Menarik batang aorist",
+       "Arti"
+      ],
+      "rows": [
+       [
+        "*κάθε μέρα*",
+        "setiap hari",
+        "*αύριο*",
+        "besok"
+       ],
+       [
+        "*πάντα*",
+        "selalu",
+        "*αμέσως*",
+        "segera"
+       ],
+       [
+        "*συχνά*",
+        "sering",
+        "*μια φορά*",
+        "sekali"
+       ],
+       [
+        "*συνέχεια*",
+        "terus-terusan",
+        "*την Παρασκευή*",
+        "Jumat nanti"
+       ],
+       [
+        "*από εδώ και πέρα*",
+        "mulai sekarang",
+        "*πριν από το μεσημέρι*",
+        "sebelum tengah hari"
+       ],
+       [
+        "*όλο το καλοκαίρι*",
+        "sepanjang musim panas",
+        "*σε δύο ώρες*",
+        "dua jam lagi"
+       ]
+      ]
+     },
+     "after": [
+      "*Αύριο* bisa juga dengan batang kini kalau yang dimaksud kegiatan sepanjang hari: *αύριο θα δουλεύω όλη μέρα* (besok aku kerja seharian) vs *αύριο θα τελειώσω την αναφορά* (besok aku selesaikan laporannya)."
+     ]
+    }
+   ]
+  }
+ ],
+ "sections": [
+  {
+   "title": "Batang aorist yang tak beraturan",
+   "blocks": [
+    {
+     "type": "p",
+     "text": "Hampir semua kata kerja membentuk masa depan sekali dari lampaunya: buang awalan έ-, pakai ekor kini. Kata kerja di bawah ini perlu dihafal karena batangnya berubah total — dan justru merekalah yang paling sering dipakai."
+    },
+    {
+     "type": "tabel",
+     "head": [
+      "Masa kini",
+      "Lampau",
+      "Nanti, sekali",
+      "Arti"
+     ],
+     "rows": [
+      [
+       "*έρχομαι*",
+       "*ήρθα*",
+       "*θα έρθω*",
+       "datang"
+      ],
+      [
+       "*βλέπω*",
+       "*είδα*",
+       "*θα δω*",
+       "melihat"
+      ],
+      [
+       "*λέω*",
+       "*είπα*",
+       "*θα πω*",
+       "berkata"
+      ],
+      [
+       "*βρίσκω*",
+       "*βρήκα*",
+       "*θα βρω*",
+       "menemukan"
+      ],
+      [
+       "*τρώω*",
+       "*έφαγα*",
+       "*θα φάω*",
+       "makan"
+      ],
+      [
+       "*πίνω*",
+       "*ήπια*",
+       "*θα πιω*",
+       "minum"
+      ],
+      [
+       "*βγαίνω*",
+       "*βγήκα*",
+       "*θα βγω*",
+       "keluar"
+      ],
+      [
+       "*μπαίνω*",
+       "*μπήκα*",
+       "*θα μπω*",
+       "masuk"
+      ],
+      [
+       "*ανεβαίνω*",
+       "*ανέβηκα*",
+       "*θα ανέβω*",
+       "naik"
+      ],
+      [
+       "*μαθαίνω*",
+       "*έμαθα*",
+       "*θα μάθω*",
+       "belajar, mengetahui"
+      ]
+     ]
+    },
+    {
+     "type": "kotak",
+     "title": "Kata kerja yang hanya punya satu masa depan",
+     "items": [
+      "*είμαι → θα είμαι*, *έχω → θα έχω*, *ξέρω → θα ξέρω*: tidak punya batang aorist, jadi tidak ada yang perlu dipilih.",
+      "*κάνω* punya lampau *έκανα*, dan masa depannya *θα κάνω* untuk kedua makna. Konteks yang membedakan."
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Pergi sekali atau pergi terus?",
+   "blocks": [
+    {
+     "type": "p",
+     "text": "Pasangan *θα πάω* dan *θα πηγαίνω* sudah muncul di A1, tetapi di A2 kamu akan memakainya dalam rencana kerja, janji, dan jadwal. Pasangan lain bekerja dengan logika yang persis sama. Bacalah kolom kiri sebagai \"sekali\" dan kolom kanan sebagai \"rutin\"."
+    },
+    {
+     "type": "tabel",
+     "head": [
+      "Sekali",
+      "Rutin atau lama"
+     ],
+     "rows": [
+      [
+       "*Το Σάββατο θα πάω στη Νάξο.*",
+       "*Κάθε καλοκαίρι θα πηγαίνω στη Νάξο.*"
+      ],
+      [
+       "*Θα σε δω αύριο.*",
+       "*Θα σε βλέπω κάθε Δευτέρα στο γραφείο.*"
+      ],
+      [
+       "*Θα φάω ένα σουβλάκι τώρα.*",
+       "*Θα τρώω λιγότερο γλυκό από εδώ και πέρα.*"
+      ],
+      [
+       "*Θα πιω έναν καφέ και φεύγω.*",
+       "*Στην Ελλάδα θα πίνεις πολύ καφέ, θα δεις!*"
+      ],
+      [
+       "*Θα σου πω ένα μυστικό.*",
+       "*Θα σου λέω τα νέα κάθε βράδυ.*"
+      ]
+     ]
+    },
+    {
+     "type": "p",
+     "text": "Perhatikan *θα δεις!* di baris keempat: \"lihat saja nanti!\" — ungkapan yang sangat sering, selalu dengan batang aorist."
+    }
+   ]
+  },
+  {
+   "title": "Janji dan rencana dalam percakapan",
+   "blocks": [
+    {
+     "type": "list",
+     "items": [
+      "*Το υπόσχομαι.* — Aku janji. (Bentuk lampaunya *υποσχέθηκα*.)",
+      "*Θα σου πω.* — Nanti kukabari. Jawaban sopan kalau kamu belum bisa memutuskan.",
+      "*Θα δούμε.* — Lihat nanti. Sering berarti \"mungkin tidak\", jadi jangan terlalu berharap.",
+      "*Θα τα πούμε!* — Sampai ngobrol lagi! Harfiah \"kita akan mengatakan hal-hal itu\".",
+      "*Θα σε πάρω τηλέφωνο.* — Nanti kutelepon (sekali). *Θα σε παίρνω* = aku akan sering meneleponmu.",
+      "*Θα είμαι εκεί.* — Aku akan ada di sana. *Είμαι* hanya punya satu masa depan."
+     ]
+    },
+    {
+     "type": "kotak",
+     "title": "⚠️ Jebakan terjemahan",
+     "items": [
+      "\"Nanti\" dan \"akan\" dalam bahasa Indonesia tidak memberi tahu berapa kali sesuatu terjadi. Sebelum membuka mulut, putuskan dulu: sekali atau berulang?",
+      "*Θα τα πούμε* dan *θα δούμε* sudah beku; jangan diganti dengan batang kini."
+     ]
+    }
+   ]
+  }
+ ],
+ "vocab": [
+  {
+   "el": "υπόσχομαι",
+   "baca": "i-PO-skho-mé",
+   "id": "berjanji (*υποσχέθηκα*)"
+  },
+  {
+   "el": "λείπω",
+   "baca": "LI-po",
+   "id": "tidak ada, kurang (*μου λείπεις* = aku kangen kamu)"
+  },
+  {
+   "el": "ξεχνάω",
+   "baca": "ksé-KHNA-o",
+   "id": "lupa (*ξέχασα, θα ξεχάσω*)"
+  },
+  {
+   "el": "ο βαθμός",
+   "baca": "o vath-MOS",
+   "id": "nilai (ujian); derajat"
+  },
+  {
+   "el": "η βιντεοκλήση",
+   "baca": "i vin-dé-o-KLI-si",
+   "id": "panggilan video"
+  },
+  {
+   "el": "η οθόνη",
+   "baca": "i o-THO-ni",
+   "id": "layar"
+  },
+  {
+   "el": "γιορτάζω",
+   "baca": "yor-TA-zo",
+   "id": "merayakan (*γιόρτασα, θα γιορτάσω*)"
+  },
+  {
+   "el": "φτιάχνω",
+   "baca": "FTIA-khno",
+   "id": "membuat, membikin (*έφτιαξα, θα φτιάξω*)"
+  },
+  {
+   "el": "το μήνυμα",
+   "baca": "to MI-ni-ma",
+   "id": "pesan (jamak *τα μηνύματα*)"
+  },
+  {
+   "el": "στέλνω",
+   "baca": "STÉL-no",
+   "id": "mengirim (*έστειλα, θα στείλω*)"
+  },
+  {
+   "el": "παίρνω τηλέφωνο",
+   "baca": "PÉR-no ti-LÉ-fo-no",
+   "id": "menelepon (*θα σε πάρω τηλέφωνο*)"
+  },
+  {
+   "el": "μεταφράζω",
+   "baca": "mé-ta-FRA-zo",
+   "id": "menerjemahkan (*μετέφρασα, θα μεταφράσω*)"
+  },
+  {
+   "el": "ο δόκιμος",
+   "baca": "o DHO-ki-mos",
+   "id": "kadet (pelaut/perwira dalam pelatihan)"
+  },
+  {
+   "el": "το πρακτορείο",
+   "baca": "to prak-to-RI-o",
+   "id": "agen, kantor agen (*ναυτιλιακό πρακτορείο* = agen pelayaran)"
+  },
+  {
+   "el": "το συμβόλαιο",
+   "baca": "to sim-VO-lé-o",
+   "id": "kontrak"
+  },
+  {
+   "el": "η αναφορά",
+   "baca": "i a-na-fo-RA",
+   "id": "laporan"
+  },
+  {
+   "el": "το νούμερο",
+   "baca": "to NU-mé-ro",
+   "id": "angka, nomor (lisan)"
+  },
+  {
+   "el": "από εδώ και πέρα",
+   "baca": "a-PO é-DHO ké PÉ-ra",
+   "id": "mulai sekarang dan seterusnya"
+  },
+  {
+   "el": "αμέσως",
+   "baca": "a-MÉ-sos",
+   "id": "segera, langsung"
+  },
+  {
+   "el": "συνέχεια",
+   "baca": "si-NÉ-khi-a",
+   "id": "terus-terusan (kata keterangan)"
+  },
+  {
+   "el": "το μεσημέρι",
+   "baca": "to mé-si-MÉ-ri",
+   "id": "tengah hari, siang"
+  },
+  {
+   "el": "τα γενέθλια",
+   "baca": "ta yé-NÉ-thli-a",
+   "id": "ulang tahun (selalu jamak)"
+  },
+  {
+   "el": "η τούρτα",
+   "baca": "i TUR-ta",
+   "id": "kue tar"
+  },
+  {
+   "el": "νωρίς",
+   "baca": "no-RIS",
+   "id": "awal, pagi-pagi, cepat (waktu)"
+  }
+ ],
+ "exercises": [
+  {
+   "prompt": "Terjemahkan ke bahasa Yunani. Putuskan dulu: sekali atau berulang?",
+   "items": [
+    "Aku akan menulis surat kepadamu setiap minggu.",
+    "Besok aku akan mengirim kontraknya.",
+    "Kami akan meneleponmu setiap hari Minggu.",
+    "Kapan kamu akan datang ke Athena?",
+    "Malam ini aku akan menonton film itu.",
+    "Mulai sekarang aku akan pergi ke kantor naik metro."
+   ]
+  },
+  {
+   "prompt": "Isi dengan *θα* + bentuk yang tepat dari kata kerja dalam kurung (batang kini atau batang aorist). *Θα* sudah tertulis.",
+   "items": [
+    "Κάθε πρωί θα ____ στο γραφείο με τα πόδια. (περπατάω, εγώ)",
+    "Αύριο το πρωί θα σου ____ τα χαρτιά. (στέλνω, εγώ)",
+    "Απόψε θα ____ τη νέα ταινία στο σινεμά. (βλέπω, εμείς)",
+    "Από τον Δεκέμβριο θα ____ κάθε Σάββατο στο γυμναστήριο. (πηγαίνω, εγώ)",
+    "Μην ανησυχείς, θα σου ____ την αλήθεια. (λέω, εγώ)",
+    "Πότε θα ____ από τη δουλειά σήμερα; (φεύγω, εσύ)",
+    "Όλο το καλοκαίρι θα ____ σε ένα ξενοδοχείο στη Νάξο. (δουλεύω, αυτή)"
+   ]
+  },
+  {
+   "prompt": "Ubah janji sekali menjadi kebiasaan: tambahkan *κάθε μέρα* dan ganti ke batang kini.",
+   "items": [
+    "Θα σου γράψω.",
+    "Θα πάω στη θάλασσα.",
+    "Θα φάμε ψάρι.",
+    "Θα τη δεις.",
+    "Θα έρθουν νωρίς.",
+    "Θα πιει καφέ."
+   ]
+  },
+  {
+   "prompt": "Susun jadi kalimat yang benar.",
+   "items": [
+    "σου / κάθε / θα / γράφω / μέρα",
+    "τα / θα / στείλω / αμέσως",
+    "έρθεις / πότε / θα / Αθήνα / στην",
+    "τηλέφωνο / θα / παίρνω / σε / Κυριακή / κάθε",
+    "πούμε / τα / θα / αύριο"
+   ]
+  }
+ ],
+ "answers": [
+  "Θα σου γράφω γράμμα κάθε εβδομάδα. — Αύριο θα στείλω το συμβόλαιο. — Θα σε παίρνουμε τηλέφωνο κάθε Κυριακή. — Πότε θα έρθεις στην Αθήνα; — Απόψε θα δω την ταινία. — Από εδώ και πέρα θα πηγαίνω στο γραφείο με το μετρό.",
+  "περπατάω — στείλω — δούμε — πηγαίνω — πω — φύγεις — δουλεύει",
+  "Θα σου γράφω κάθε μέρα. — Θα πηγαίνω στη θάλασσα κάθε μέρα. — Θα τρώμε ψάρι κάθε μέρα. — Θα τη βλέπεις κάθε μέρα. — Θα έρχονται νωρίς κάθε μέρα. — Θα πίνει καφέ κάθε μέρα.",
+  "Θα σου γράφω κάθε μέρα. — Θα τα στείλω αμέσως. — Πότε θα έρθεις στην Αθήνα; — Θα σε παίρνω τηλέφωνο κάθε Κυριακή. — Θα τα πούμε αύριο."
+ ]
+}

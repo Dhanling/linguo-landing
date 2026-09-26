@@ -1,0 +1,629 @@
+{
+ "title": "Program baru — ragam resmi",
+ "title_target": "Σας ευχαριστούμε για την εμπιστοσύνη",
+ "goal": "Membuka rapat resmi, berbicara dengan pejabat, dan menulis surat resmi lengkap dengan formula bakunya, dari *Αξιότιμε κύριε Πρύτανη* sampai *Με εκτίμηση*, sambil menjaga jamak sopan (*πληθυντικός ευγενείας*) tetap konsisten sampai ke kata sifat.",
+ "bekal": [
+  "membuka dan menutup rapat resmi dengan *Επιτρέψτε μου να…*, *Σας ευχαριστούμε θερμά* dan *Είμαι στη διάθεσή σας*",
+  "menyusun surat resmi Yunani: *Προς*, *Θέμα*, salam pembuka, isi, dan salam penutup",
+  "memakai jamak sopan dengan benar: kata kerja jamak, tetapi kata sifat tetap tunggal (*Είστε έτοιμη, κυρία Αγγελική;*)"
+ ],
+ "dialogs": [
+  {
+   "title": "ΔΙΑΛΟΓΟΣ 1 — Rapat pembukaan lewat video",
+   "intro": "Senin, 4 September 2028, pukul 11.00 waktu Athena, ruang rapat Αιγαίον Ναυτιλιακή di Pireas. Kyria Angeliki, direktur perusahaan, membuka Program Jembatan Aegea–Nusantara bersama Ana. Di layar tampak Pak Hendra dari Kementerian Perhubungan di Jakarta, yang dulu kuliah S2 di Pireas dan masih fasih berbahasa Yunani. Di Jakarta sudah pukul 15.00.",
+   "lines": [
+    {
+     "speaker": "Αγγελική:",
+     "text": "Καλημέρα σας. Κύριε Χέντρα, μας ακούτε καθαρά από την Τζακάρτα;",
+     "id": "Selamat pagi. Pak Hendra, suara kami terdengar jelas dari Jakarta?",
+     "literal": "selamat-pagi kepada-anda. tuan Hendra, kami anda-mendengar dengan-jelas dari (sandang) Jakarta?"
+    },
+    {
+     "speaker": "Χέντρα:",
+     "text": "Σας ακούω πολύ καλά, κυρία Αγγελική. Καλημέρα σας, αν και εδώ είναι ήδη απόγευμα.",
+     "id": "Terdengar sangat baik, Bu Angeliki. Selamat pagi, walaupun di sini sudah sore.",
+     "literal": "anda saya-mendengar sangat baik, nyonya Angeliki. selamat-pagi kepada-anda, walaupun di-sini adalah sudah sore."
+    },
+    {
+     "speaker": "Αγγελική:",
+     "text": "Επιτρέψτε μου να ξεκινήσω με ένα μεγάλο ευχαριστώ. Σας ευχαριστούμε για την εμπιστοσύνη.",
+     "id": "Izinkan saya membuka dengan ucapan terima kasih yang besar. Kami berterima kasih atas kepercayaan Anda.",
+     "literal": "izinkan-anda kepada-saya supaya saya-mulai dengan sebuah besar terima-kasih. anda kami-berterima-kasih untuk (sandang) kepercayaan."
+    },
+    {
+     "speaker": "Χέντρα:",
+     "text": "Η τιμή είναι δική μας. Στο υπουργείο περιμένουμε πολλά από αυτή τη συνεργασία.",
+     "id": "Kehormatan ada pada kami. Di kementerian, kami menaruh harapan besar pada kerja sama ini.",
+     "literal": "(sandang) kehormatan adalah milik kami. di-(sandang) kementerian kami-menunggu banyak dari ini (sandang) kerja-sama."
+    },
+    {
+     "speaker": "Αγγελική:",
+     "text": "Όπως γνωρίζετε, την ευθύνη του προγράμματος αναλαμβάνει η συνάδελφός μας, η Άννα.",
+     "id": "Seperti Anda ketahui, tanggung jawab program ini dipegang oleh rekan kami, Ana.",
+     "literal": "seperti anda-mengetahui, (sandang) tanggung-jawab (sandang) program-milik mengambil-alih (sandang) rekan kami, (sandang) Ana."
+    },
+    {
+     "speaker": "Άννα:",
+     "text": "Κύριε Χέντρα, χαίρομαι ιδιαιτέρως που συνεργαζόμαστε ξανά. Είμαι στη διάθεσή σας.",
+     "id": "Pak Hendra, saya sungguh senang kita bekerja sama lagi. Saya siap membantu Anda.",
+     "literal": "tuan Hendra, saya-senang secara-khusus bahwa kita-bekerja-sama lagi. saya-adalah di-(sandang) kesediaan anda."
+    },
+    {
+     "speaker": "Χέντρα:",
+     "text": "Κι εγώ, κυρία Άννα. Θα μου επιτρέψετε μια ερώτηση για το χρονοδιάγραμμα;",
+     "id": "Saya juga, Bu Ana. Boleh saya bertanya soal jadwal?",
+     "literal": "dan saya, nyonya Ana. akan kepada-saya anda-mengizinkan sebuah pertanyaan tentang (sandang) jadwal-waktu?"
+    },
+    {
+     "speaker": "Άννα:",
+     "text": "Βεβαίως, σας ακούμε.",
+     "id": "Tentu, silakan.",
+     "literal": "tentu, anda kami-mendengar."
+    },
+    {
+     "speaker": "Χέντρα:",
+     "text": "Πότε προβλέπεται να φτάσει η πρώτη ομάδα σπουδαστών στον Πειραιά;",
+     "id": "Kapan rombongan pertama mahasiswa diperkirakan tiba di Pireas?",
+     "literal": "kapan diperkirakan supaya tiba (sandang) pertama rombongan mahasiswa-milik di-(sandang) Pireas?"
+    },
+    {
+     "speaker": "Άννα:",
+     "text": "Σύμφωνα με τον σχεδιασμό μας, τον Φεβρουάριο. Θα σας αποστείλουμε αναλυτικό πρόγραμμα εντός της εβδομάδας.",
+     "id": "Menurut perencanaan kami, bulan Februari. Jadwal terperincinya akan kami kirimkan kepada Anda dalam minggu ini.",
+     "literal": "sesuai dengan (sandang) perencanaan kami, (sandang) Februari. akan kepada-anda kami-mengirimkan terperinci program di-dalam (sandang) minggu-milik."
+    },
+    {
+     "speaker": "Αγγελική:",
+     "text": "Εάν έχετε οποιαδήποτε παρατήρηση, μη διστάσετε να επικοινωνήσετε μαζί μας.",
+     "id": "Jika Anda punya catatan apa pun, jangan ragu menghubungi kami.",
+     "literal": "jika anda-punya apa-pun catatan, jangan anda-ragu supaya anda-berkomunikasi bersama kami."
+    },
+    {
+     "speaker": "Χέντρα:",
+     "text": "Ευχαριστώ θερμά. Θα ήθελα επίσης να σας μεταφέρω τους χαιρετισμούς του υπουργού.",
+     "id": "Terima kasih banyak. Saya juga ingin menyampaikan salam dari Pak Menteri.",
+     "literal": "saya-berterima-kasih dengan-hangat. akan saya-ingin juga supaya kepada-anda saya-menyampaikan (sandang) salam-salam (sandang) menteri-milik."
+    },
+    {
+     "speaker": "Αγγελική:",
+     "text": "Να του μεταφέρετε κι εσείς τους δικούς μας χαιρετισμούς. Καλή συνεργασία!",
+     "id": "Tolong sampaikan juga salam kami kepada beliau. Semoga kerja sama kita lancar!",
+     "literal": "supaya kepadanya anda-menyampaikan juga anda (sandang) milik kami salam-salam. baik kerja-sama!"
+    },
+    {
+     "speaker": "Χέντρα:",
+     "text": "Επίσης, κυρία Αγγελική. Καλή σας μέρα!",
+     "id": "Begitu juga untuk Anda, Bu Angeliki. Selamat siang!",
+     "literal": "juga, nyonya Angeliki. baik anda hari!"
+    }
+   ],
+   "notes": [
+    "⚠️ **Jamak sopan berhenti di kata kerja.** Kata kerja dan kata ganti memang jamak (*μας ακούτε*, *επιτρέψτε*, *μη διστάσετε*), tetapi kata sifat dan kata benda yang menerangkan orangnya tetap **tunggal** dan mengikuti jenis kelaminnya: *Είστε έτοιμη, κυρία Αγγελική;*, *Είστε κουρασμένος, κύριε Χέντρα;*. Penutur Indonesia yang baru belajar \"Anda = jamak\" sering ikut menjamakkan kata sifatnya: *Είστε έτοιμοι;* kepada satu orang berarti kamu bertanya kepada seluruh ruangan.",
+    "**Σας ευχαριστούμε για την εμπιστοσύνη** — Angeliki berbicara atas nama perusahaan, jadi ia memakai \"kami\" (*ευχαριστούμε*), bukan \"saya\". Dalam rapat resmi, \"kami\" korporat ini jauh lebih wajar daripada dalam bahasa Indonesia sehari-hari.",
+    "**Επιτρέψτε μου να…** (izinkan saya) dan **Θα μου επιτρέψετε…;** (bolehkah saya…?) adalah dua pintu masuk sopan. Yang kedua, dengan *θα* dan nada tanya, terdengar lebih rendah hati: cocok untuk tamu yang bertanya kepada tuan rumah.",
+    "**Είμαι στη διάθεσή σας** — harfiahnya \"saya ada dalam kesediaan Anda\": saya siap membantu. Perhatikan dua tanda tekanan pada *διάθεσή σας*: kata bertekanan di suku ketiga dari belakang mendapat tekanan kedua sebelum kata ganti enklitik.",
+    "**αποστείλουμε, εντός της εβδομάδας** — ragam resmi punya kata kerja sendiri: *αποστέλλω* untuk *στέλνω*, *εντός* + genitif untuk *μέσα σε*. Keduanya warisan bahasa kuno yang akan kita bedah di unit 3.",
+    "**Η τιμή είναι δική μας** — \"kehormatan ada pada kami\", jawaban baku untuk ucapan terima kasih yang resmi. Versi sehari-harinya *Τίποτα!* atau *Παρακαλώ!* akan terdengar terlalu ringan di rapat seperti ini."
+   ],
+   "grammars": [
+    {
+     "title": "Tiga tingkat kesopanan",
+     "body": [
+      "Bahasa Yunani tidak punya kata khusus untuk \"Bapak\" atau \"Ibu\" di dalam kalimat; tingkat hormat dibangun dari jamak sopan, kata kerja yang lebih panjang, dan formula tetap. Bandingkan cara yang sama dikatakan kepada teman, kepada orang asing, dan dalam rapat resmi."
+     ],
+     "table": {
+      "head": [
+       "Fungsi",
+       "Akrab (ΕΣΥ)",
+       "Sopan (ΕΣΕΙΣ)",
+       "Resmi tinggi"
+      ],
+      "rows": [
+       [
+        "minta izin bicara",
+        "*Να πω κάτι;*",
+        "*Μπορώ να πω κάτι;*",
+        "*Επιτρέψτε μου να…*"
+       ],
+       [
+        "berterima kasih",
+        "*Ευχαριστώ!*",
+        "*Σας ευχαριστώ πολύ.*",
+        "*Σας ευχαριστούμε θερμά για…*"
+       ],
+       [
+        "menawarkan bantuan",
+        "*Ό,τι θες, πες μου.*",
+        "*Ό,τι χρειαστείτε, πείτε μου.*",
+        "*Είμαι στη διάθεσή σας.*"
+       ],
+       [
+        "mempersilakan menghubungi",
+        "*Πάρε με τηλέφωνο.*",
+        "*Τηλεφωνήστε μου.*",
+        "*Μη διστάσετε να επικοινωνήσετε μαζί μας.*"
+       ],
+       [
+        "mengirim",
+        "*Θα σου το στείλω.*",
+        "*Θα σας το στείλω.*",
+        "*Θα σας το αποστείλουμε.*"
+       ],
+       [
+        "senang",
+        "*Χαίρομαι.*",
+        "*Χαίρομαι πολύ.*",
+        "*Χαίρομαι ιδιαιτέρως.*"
+       ],
+       [
+        "bertanya",
+        "*Να σε ρωτήσω κάτι;*",
+        "*Μπορώ να σας ρωτήσω κάτι;*",
+        "*Θα μου επιτρέψετε μια ερώτηση;*"
+       ]
+      ]
+     },
+     "after": [
+      "Kolom ketiga bukan untuk rekan kerja sehari-hari. Ana dan Kostas saling ber-*εσύ*; kepada Pak Hendra dan direktur, dalam rapat, semua orang naik ke kolom ketiga.",
+      "*Μη* atau *μην*? *Μην* dipakai di depan vokal dan di depan *κ, π, τ, ξ, ψ, μπ, ντ, γκ*; di depan huruf lain cukup *μη*: *μη διστάσετε*, *μην ανησυχείτε*."
+     ]
+    }
+   ]
+  },
+  {
+   "title": "ΔΙΑΛΟΓΟΣ 2 — Surat untuk rektor",
+   "intro": "Selasa, 5 September 2028, kantor bagian awak kapal. Ana menulis surat resmi pertama program ini, ditujukan kepada rektor Universitas Pireas. Kostas membaca drafnya sambil minum kopi.",
+   "lines": [
+    {
+     "speaker": "Κώστας:",
+     "text": "Άννα, είδα το προσχέδιο της επιστολής προς τον πρύτανη. Να σου πω δύο πράγματα;",
+     "id": "Ana, saya sudah lihat draf surat untuk rektor. Boleh saya kasih dua catatan?",
+     "literal": "Ana, aku-melihat (sandang) draf (sandang) surat-milik kepada (sandang) rektor. supaya kepadamu aku-berkata dua hal?"
+    },
+    {
+     "speaker": "Άννα:",
+     "text": "Ναι, παρακαλώ. Δεν ήξερα πώς να ξεκινήσω. Έγραψα «Αγαπητέ κύριε».",
+     "id": "Ya, silakan. Aku tidak tahu harus mulai bagaimana. Aku tulis \"Bapak yang terkasih\".",
+     "literal": "ya, silakan. tidak aku-tahu bagaimana supaya aku-mulai. aku-menulis \"terkasih tuan\"."
+    },
+    {
+     "speaker": "Κώστας:",
+     "text": "Στον πρύτανη γράφουμε «Αξιότιμε κύριε Πρύτανη». Το «αγαπητέ» είναι για γνωστούς.",
+     "id": "Kepada rektor kita menulis \"Yang terhormat Bapak Rektor\". \"Terkasih\" itu untuk orang yang sudah kita kenal.",
+     "literal": "kepada-(sandang) rektor kita-menulis \"terhormat tuan rektor\". (sandang) \"terkasih\" adalah untuk kenalan-kenalan."
+    },
+    {
+     "speaker": "Άννα:",
+     "text": "Και στην αρχή; Βάζω «Προς» και «Θέμα»;",
+     "id": "Lalu di bagian atas? Aku taruh \"Kepada\" dan \"Perihal\"?",
+     "literal": "dan di-(sandang) awal? aku-menaruh \"kepada\" dan \"perihal\"?"
+    },
+    {
+     "speaker": "Κώστας:",
+     "text": "Ακριβώς. «Προς: τον Πρύτανη του Πανεπιστημίου Πειραιώς. Θέμα: Πρόταση συνεργασίας.»",
+     "id": "Betul. \"Kepada: Rektor Universitas Pireas. Perihal: Usulan kerja sama.\"",
+     "literal": "tepat. \"kepada: (sandang) rektor (sandang) universitas-milik Pireas-milik. perihal: usulan kerja-sama-milik.\""
+    },
+    {
+     "speaker": "Άννα:",
+     "text": "Εντάξει. Μετά γράφω: «Με την παρούσα επιστολή θα ήθελα να σας ενημερώσω ότι…»;",
+     "id": "Oke. Sesudah itu aku tulis: \"Dengan surat ini saya ingin memberitahukan kepada Bapak bahwa…\"?",
+     "literal": "oke. sesudah aku-menulis: \"dengan (sandang) ini surat akan saya-ingin supaya kepada-anda saya-memberitahu bahwa…\"?"
+    },
+    {
+     "speaker": "Κώστας:",
+     "text": "Πολύ σωστά. Και μην ξεχάσεις τον αριθμό πρωτοκόλλου του υπουργείου.",
+     "id": "Tepat sekali. Dan jangan lupa nomor agenda surat dari kementerian.",
+     "literal": "sangat benar. dan jangan kamu-lupa (sandang) nomor protokol-milik (sandang) kementerian-milik."
+    },
+    {
+     "speaker": "Άννα:",
+     "text": "Και για το κλείσιμο; Το «Φιλικά» μου φαίνεται λίγο ανεπίσημο.",
+     "id": "Lalu penutupnya? \"Salam hangat\" rasanya agak kurang resmi.",
+     "literal": "dan untuk (sandang) penutupan? (sandang) \"dengan-ramah\" kepadaku tampak sedikit tidak-resmi."
+    },
+    {
+     "speaker": "Κώστας:",
+     "text": "Είναι. Γράψε «Με εκτίμηση» ή, ακόμα πιο επίσημα, «Με τιμή».",
+     "id": "Memang. Tulis \"Hormat saya\" atau, yang lebih resmi lagi, \"Dengan hormat\".",
+     "literal": "memang-adalah. tulislah \"dengan penghargaan\" atau, bahkan lebih resmi, \"dengan kehormatan\"."
+    },
+    {
+     "speaker": "Άννα:",
+     "text": "Και πριν από αυτό: «Παραμένω στη διάθεσή σας για κάθε διευκρίνιση.»",
+     "id": "Dan sebelum itu: \"Saya siap memberikan penjelasan lebih lanjut bila diperlukan.\"",
+     "literal": "dan sebelum dari itu: \"saya-tetap di-(sandang) kesediaan anda untuk setiap klarifikasi.\""
+    },
+    {
+     "speaker": "Κώστας:",
+     "text": "Τέλεια. Βλέπω ότι δεν με χρειάζεσαι πια!",
+     "id": "Sempurna. Kelihatannya kamu sudah tidak butuh aku lagi!",
+     "literal": "sempurna. aku-melihat bahwa tidak aku kamu-butuh lagi!"
+    }
+   ],
+   "notes": [
+    "**Αξιότιμε κύριε Πρύτανη** — salam surat memakai bentuk panggilan (vokatif): *αξιότιμος → αξιότιμε*, *ο πρύτανης → κύριε Πρύτανη*. Untuk perempuan: *Αξιότιμη κυρία Πρύτανη*. Jabatan ditulis berhuruf besar di awal sebagai tanda hormat.",
+    "**Αγαπητέ** (terkasih) tidak semesra kedengarannya dalam bahasa Indonesia: ia salam standar untuk orang yang sudah dikenal atau rekan sejawat (*Αγαπητέ Κώστα*, *Αγαπητή Δήμητρα*). Kepada pejabat yang belum dikenal, *Αξιότιμε* lebih aman.",
+    "**Προς + akusatif** — baris alamat selalu memakai akusatif: *Προς: τον Πρύτανη*, *Προς: την κυρία Αγγελική*. Nama lembaga sering membawa genitif kuno: *Πανεπιστήμιο Πειραιώς* (bukan *του Πειραιά*), *Πανεπιστήμιο Αθηνών*.",
+    "**Με την παρούσα** — \"dengan (surat) ini\": *παρούσα* = yang sekarang ini, dan kata *επιστολή* sering dilesapkan: *Με την παρούσα σας ενημερώνω ότι…*.",
+    "**ο αριθμός πρωτοκόλλου** — setiap surat resmi di Yunani dicatat dalam buku agenda (*πρωτόκολλο*) dan mendapat nomor. Membalas surat kementerian tanpa menyebut nomornya membuat surat kamu sulit dilacak.",
+    "Ana dan Kostas saling ber-*εσύ* (*Να σου πω; Γράψε*) sambil menulis surat ber-*εσείς* kepada rektor. Berpindah register dalam satu napas seperti ini sangat biasa di kantor Yunani."
+   ],
+   "grammars": [
+    {
+     "title": "Kerangka surat resmi",
+     "body": [
+      "Surat resmi Yunani (*επίσημη επιστολή*) mengikuti urutan yang hampir tidak pernah berubah. Isi di tengah boleh bebas; bingkainya sebaiknya persis seperti ini."
+     ],
+     "table": {
+      "head": [
+       "Bagian",
+       "Formula",
+       "Arti"
+      ],
+      "rows": [
+       [
+        "tempat & tanggal",
+        "*Πειραιάς, 5 Σεπτεμβρίου 2028*",
+        "Pireas, 5 September 2028"
+       ],
+       [
+        "penerima",
+        "*Προς: τον Πρύτανη του Πανεπιστημίου Πειραιώς*",
+        "Kepada: Rektor Universitas Pireas"
+       ],
+       [
+        "perihal",
+        "*Θέμα: Πρόταση συνεργασίας*",
+        "Perihal: Usulan kerja sama"
+       ],
+       [
+        "salam pembuka",
+        "*Αξιότιμε κύριε Πρύτανη,*",
+        "Yang terhormat Bapak Rektor,"
+       ],
+       [
+        "pembuka isi",
+        "*Με την παρούσα επιστολή θα ήθελα να σας ενημερώσω ότι…*",
+        "Dengan surat ini saya ingin memberitahukan bahwa…"
+       ],
+       [
+        "rujukan",
+        "*Σε συνέχεια της τηλεδιάσκεψης της 4ης Σεπτεμβρίου…*",
+        "Menindaklanjuti telekonferensi tanggal 4 September…"
+       ],
+       [
+        "penutup isi",
+        "*Παραμένω στη διάθεσή σας για κάθε διευκρίνιση.*",
+        "Saya siap memberikan penjelasan lebih lanjut."
+       ],
+       [
+        "salam penutup",
+        "*Με εκτίμηση, / Με τιμή,*",
+        "Hormat saya, / Dengan hormat,"
+       ]
+      ]
+     },
+     "after": [
+      "Nama bulan dalam tanggal selalu genitif: *5 Σεπτεμβρίου*, *1 Μαρτίου*, *20 Ιουνίου*. Bentuk *5 Σεπτέμβριος* langsung terlihat salah.",
+      "*Με εκτίμηση* adalah pilihan aman untuk hampir semua surat kerja. *Με τιμή* lebih kaku, dipakai dalam surat dinas dan permohonan kepada instansi."
+     ]
+    }
+   ]
+  }
+ ],
+ "sections": [
+  {
+   "title": "Jamak sopan sampai tuntas",
+   "blocks": [
+    {
+     "type": "p",
+     "text": "Jamak sopan (*πληθυντικός ευγενείας*) mengubah kata kerja, kata ganti, dan perintah, tetapi tidak mengubah kenyataan bahwa lawan bicaramu satu orang. Karena itu semua yang menggambarkan orang itu sendiri (kata sifat, partisip *-μένος*, *ο ίδιος*, *μόνος*) tetap tunggal dan mengikuti jenis kelaminnya."
+    },
+    {
+     "type": "tabel",
+     "head": [
+      "Kalimat",
+      "Kepada siapa",
+      "Yang berubah"
+     ],
+     "rows": [
+      [
+       "*Είστε έτοιμος, κύριε Χέντρα;*",
+       "satu pria",
+       "kata kerja jamak, kata sifat tunggal maskulin"
+      ],
+      [
+       "*Είστε έτοιμη, κυρία Αγγελική;*",
+       "satu wanita",
+       "kata kerja jamak, kata sifat tunggal feminin"
+      ],
+      [
+       "*Είστε έτοιμοι;*",
+       "beberapa orang",
+       "semuanya jamak sungguhan"
+      ],
+      [
+       "*Είστε πολύ ευγενική.*",
+       "satu wanita",
+       "kata sifat tetap tunggal"
+      ],
+      [
+       "*Είστε ικανοποιημένος από τη συνεργασία;*",
+       "satu pria",
+       "partisip *-μένος* tetap tunggal"
+      ],
+      [
+       "*Το είπατε εσείς ο ίδιος.*",
+       "satu pria",
+       "*ο ίδιος* tunggal"
+      ],
+      [
+       "*Καθίστε, παρακαλώ.*",
+       "siapa pun",
+       "perintah jamak"
+      ],
+      [
+       "*Μην ανησυχείτε.*",
+       "siapa pun",
+       "larangan jamak"
+      ]
+     ]
+    },
+    {
+     "type": "kotak",
+     "title": "Kapan berpindah ke εσύ?",
+     "items": [
+      "Biasanya pihak yang lebih tua atau lebih tinggi jabatannya yang menawarkan: *Να μιλάμε στον ενικό;* (Bagaimana kalau kita ber-kamu saja?).",
+      "Dalam surel, perpindahan terlihat dari salamnya: dari *Αξιότιμη κυρία* menjadi *Αγαπητή Άννα*.",
+      "Sekali sudah ber-*εσύ*, kembali ke *εσείς* terdengar dingin, seolah ada yang tersinggung.",
+      "Di depan orang luar, rekan yang sehari-hari ber-*εσύ* kadang kembali ber-*εσείς* demi kepantasan, seperti Angeliki dan Ana di depan kamera."
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Kata sehari-hari dan padanan resminya",
+   "blocks": [
+    {
+     "type": "tabel",
+     "head": [
+      "Sehari-hari",
+      "Resmi",
+      "Arti"
+     ],
+     "rows": [
+      [
+       "*στέλνω*",
+       "*αποστέλλω*",
+       "mengirim"
+      ],
+      [
+       "*δίνω*",
+       "*παρέχω*",
+       "memberi, menyediakan"
+      ],
+      [
+       "*λέω*",
+       "*αναφέρω, δηλώνω*",
+       "menyebutkan, menyatakan"
+      ],
+      [
+       "*ζητάω*",
+       "*αιτούμαι*",
+       "meminta, memohon"
+      ],
+      [
+       "*το γράμμα*",
+       "*η επιστολή*",
+       "surat"
+      ],
+      [
+       "*μέσα σε μια εβδομάδα*",
+       "*εντός μιας εβδομάδας*",
+       "dalam satu minggu"
+      ],
+      [
+       "*για το θέμα*",
+       "*σχετικά με το θέμα*",
+       "mengenai masalah itu"
+      ],
+      [
+       "*τελειώνω*",
+       "*ολοκληρώνω*",
+       "menyelesaikan"
+      ],
+      [
+       "*πολύ*",
+       "*ιδιαιτέρως*",
+       "sangat, khususnya"
+      ]
+     ]
+    },
+    {
+     "type": "p",
+     "text": "Kata-kata di kolom tengah membuat surat terdengar pantas, tetapi jangan menumpuknya. Orang Yunani punya julukan sinis untuk bahasa pejabat yang kaku dan kosong: *ξύλινη γλώσσα*, \"bahasa kayu\". Surat yang baik memakai dua tiga kata resmi di tempat yang tepat, lalu bicara dengan jelas."
+    }
+   ]
+  }
+ ],
+ "vocab": [
+  {
+   "el": "η εμπιστοσύνη",
+   "baca": "i ém-bi-sto-SI-ni",
+   "id": "kepercayaan"
+  },
+  {
+   "el": "η συνεργασία",
+   "baca": "i si-nér-gha-SI-a",
+   "id": "kerja sama"
+  },
+  {
+   "el": "το υπουργείο",
+   "baca": "to i-pur-YI-o",
+   "id": "kementerian"
+  },
+  {
+   "el": "ο υπουργός",
+   "baca": "o i-pur-GHOS",
+   "id": "menteri (juga untuk wanita: *η υπουργός*)"
+  },
+  {
+   "el": "η ευθύνη",
+   "baca": "i éf-THI-ni",
+   "id": "tanggung jawab"
+  },
+  {
+   "el": "αναλαμβάνω",
+   "baca": "a-na-lam-VA-no",
+   "id": "mengambil alih, memikul (tugas) (*αόρ. ανέλαβα*)"
+  },
+  {
+   "el": "το χρονοδιάγραμμα",
+   "baca": "to khro-no-DHIA-ghra-ma",
+   "id": "jadwal waktu, linimasa"
+  },
+  {
+   "el": "ο σπουδαστής / η σπουδάστρια",
+   "baca": "o spu-dha-STIS / i spu-DHA-stri-a",
+   "id": "pelajar akademi, mahasiswa (sekolah tinggi)"
+  },
+  {
+   "el": "ο σχεδιασμός",
+   "baca": "o skhé-dhia-SMOS",
+   "id": "perencanaan"
+  },
+  {
+   "el": "αναλυτικός, -ή, -ό",
+   "baca": "a-na-li-ti-KOS, -i, -o",
+   "id": "terperinci"
+  },
+  {
+   "el": "αποστέλλω",
+   "baca": "a-po-STÉ-lo",
+   "id": "mengirimkan (resmi) (*αόρ. απέστειλα, υποτακτική να αποστείλω*)"
+  },
+  {
+   "el": "εντός",
+   "baca": "én-DOS",
+   "id": "di dalam, dalam jangka (+ genitif: *εντός της εβδομάδας*)"
+  },
+  {
+   "el": "η παρατήρηση",
+   "baca": "i pa-ra-TI-ri-si",
+   "id": "catatan, pengamatan, keberatan"
+  },
+  {
+   "el": "διστάζω",
+   "baca": "dhi-STA-zo",
+   "id": "ragu-ragu (*μη διστάσετε να…*)"
+  },
+  {
+   "el": "επικοινωνώ",
+   "baca": "é-pi-ki-no-NO",
+   "id": "berkomunikasi, menghubungi (*με + akusatif*)"
+  },
+  {
+   "el": "μεταφέρω",
+   "baca": "mé-ta-FÉ-ro",
+   "id": "menyampaikan; memindahkan"
+  },
+  {
+   "el": "ο χαιρετισμός",
+   "baca": "o khé-ré-ti-SMOS",
+   "id": "salam"
+  },
+  {
+   "el": "η διάθεση",
+   "baca": "i dhi-A-thé-si",
+   "id": "kesediaan; suasana hati (*στη διάθεσή σας*)"
+  },
+  {
+   "el": "η επιστολή",
+   "baca": "i é-pi-sto-LI",
+   "id": "surat (resmi)"
+  },
+  {
+   "el": "ο πρύτανης",
+   "baca": "o PRI-ta-nis",
+   "id": "rektor (*vok. κύριε Πρύτανη*)"
+  },
+  {
+   "el": "το προσχέδιο",
+   "baca": "to pro-SKHÉ-dhio",
+   "id": "draf, rancangan"
+  },
+  {
+   "el": "το πρωτόκολλο",
+   "baca": "to pro-TO-ko-lo",
+   "id": "buku agenda surat; protokol (*αριθμός πρωτοκόλλου*)"
+  },
+  {
+   "el": "η εκτίμηση",
+   "baca": "i ék-TI-mi-si",
+   "id": "penghargaan; perkiraan (*Με εκτίμηση* = hormat saya)"
+  },
+  {
+   "el": "αξιότιμος, -η, -ο",
+   "baca": "a-KSIO-ti-mos, -i, -o",
+   "id": "yang terhormat (salam surat)"
+  },
+  {
+   "el": "η διευκρίνιση",
+   "baca": "i dhiéf-KRI-ni-si",
+   "id": "klarifikasi, penjelasan"
+  }
+ ],
+ "exercises": [
+  {
+   "prompt": "Terjemahkan ke bahasa Yunani (ragam resmi).",
+   "items": [
+    "Kami berterima kasih atas kepercayaan Anda.",
+    "Jangan ragu menghubungi kami.",
+    "Saya siap memberikan klarifikasi apa pun.",
+    "Izinkan saya membuka dengan ucapan terima kasih.",
+    "Kami akan mengirimkan jadwal terperinci kepada Anda dalam minggu ini.",
+    "Apakah Anda sudah siap, Bu Angeliki?"
+   ]
+  },
+  {
+   "prompt": "Isi dengan bentuk yang tepat. Petunjuk ada di dalam kurung.",
+   "items": [
+    "____ κύριε Πρύτανη, (αξιότιμος, vokatif)",
+    "Είστε ____, κύριε Χέντρα; (κουρασμένος)",
+    "Μη ____ να μας τηλεφωνήσετε. (διστάζω, jamak sopan)",
+    "Θα σας ____ τα έγγραφα αύριο. (αποστέλλω, 1 jamak)",
+    "Πειραιάς, 5 ____ 2028 (ο Σεπτέμβριος)",
+    "____ μου να σας παρουσιάσω την κυρία Άννα. (επιτρέπω, perintah jamak)",
+    "Με ____, Άννα (penghargaan)"
+   ]
+  },
+  {
+   "prompt": "Ubah ke jamak sopan (εσείς). Perhatikan kata sifatnya.",
+   "items": [
+    "Στείλε μου το πρόγραμμα.",
+    "Είσαι έτοιμη, Αγγελική;",
+    "Μην ανησυχείς.",
+    "Κάθισε, παρακαλώ.",
+    "Ό,τι χρειαστείς, πες μου.",
+    "Το είπες εσύ ο ίδιος."
+   ]
+  },
+  {
+   "prompt": "Susun jadi kalimat yang benar.",
+   "items": [
+    "την / για / σας / εμπιστοσύνη / ευχαριστούμε",
+    "διάθεσή / στη / παραμένω / σας",
+    "να / μου / επιτρέψτε / ξεκινήσω",
+    "μαζί / μη / να / διστάσετε / μας / επικοινωνήσετε",
+    "της / εντός / εβδομάδας / αποστείλουμε / θα / σας / το"
+   ]
+  }
+ ],
+ "answers": [
+  "Σας ευχαριστούμε για την εμπιστοσύνη. — Μη διστάσετε να επικοινωνήσετε μαζί μας. — Είμαι στη διάθεσή σας για κάθε διευκρίνιση. — Επιτρέψτε μου να ξεκινήσω με ένα ευχαριστώ. — Θα σας αποστείλουμε αναλυτικό πρόγραμμα εντός της εβδομάδας. — Είστε έτοιμη, κυρία Αγγελική;",
+  "Αξιότιμε — κουρασμένος — διστάσετε — αποστείλουμε — Σεπτεμβρίου — Επιτρέψτε — εκτίμηση",
+  "Στείλτε μου το πρόγραμμα. — Είστε έτοιμη, κυρία Αγγελική; — Μην ανησυχείτε. — Καθίστε, παρακαλώ. — Ό,τι χρειαστείτε, πείτε μου. — Το είπατε εσείς ο ίδιος.",
+  "Σας ευχαριστούμε για την εμπιστοσύνη. — Παραμένω στη διάθεσή σας. — Επιτρέψτε μου να ξεκινήσω. — Μη διστάσετε να επικοινωνήσετε μαζί μας. — Θα σας το αποστείλουμε εντός της εβδομάδας."
+ ]
+}

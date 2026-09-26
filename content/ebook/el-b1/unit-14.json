@@ -1,0 +1,630 @@
+{
+ "title": "Menyuruh orang lain — kausatif",
+ "title_target": "Τον έβαλα να ξαναγράψει",
+ "goal": "Menyuruh, membiarkan, membuat, dan meminta orang lain melakukan sesuatu dengan kata kerja yang tepat dan orang yang tepat sesudah *να*: *Τον έβαλα να ξαναγράψει την αναφορά*, *Άφησέ τη να πάει*, *Με έκανες να γελάσω*, *Θέλω να μου αλλάξετε τα λάδια*.",
+ "bekal": [
+  "memakai *βάζω, κάνω, αφήνω, ζητάω από, αναγκάζω, πείθω* + orang + *να* dan menyesuaikan kata kerja sesudah *να* dengan orang yang disuruh",
+  "meminta layanan di bengkel, penjahit, atau tukang cukur: *θέλω να μου…*, *μου έφτιαξαν…*, *κουρεύτηκα*",
+  "menempatkan kata ganti orang yang disuruh di depan kata kerja utama, atau di belakangnya dalam kalimat perintah: *τον έβαλα*, *άφησέ τον*"
+ ],
+ "dialogs": [
+  {
+   "title": "ΔΙΑΛΟΓΟΣ 1 — Tugas untuk tim",
+   "intro": "Senin, 3 April 2028, pagi hari di ruang kerja Kostas di Pireas. Kostas sudah membaca laporan penilaian kadet yang dikirim tim Ana, dan ia tidak senang. Perhatikan: sesudah *να*, siapa yang melakukan pekerjaannya?",
+   "lines": [
+    {
+     "speaker": "Κώστας:",
+     "text": "[Άννα|A-na], [διάβασα|DHIA-va-sa] [την|tin] [αναφορά|a-na-fo-RA] [για|ya] [τους|tus] [δόκιμους|DHO-ki-mus]. [Έχει|É-khi] [πολλά|po-LA] [λάθη|LA-thi].",
+     "id": "Ana, aku sudah baca laporan tentang para kadet. Banyak salahnya.",
+     "literal": "Ana, (aku)-membaca (sandang) laporan tentang (sandang) kadet-kadet. (dia)-punya banyak kesalahan."
+    },
+    {
+     "speaker": "Άννα:",
+     "text": "[Το|To] [ξέρω|KSÉ-ro]. [Την|Tin] [έγραψε|É-ghra-psé] [ο|o] [Άρης|A-ris], [ο|o] [νέος|NÉ-os] [βοηθός|vo-i-THOS]. [Τον|Ton] [έβαλα|É-va-la] [ήδη|I-dhi] [να|na] [την|tin] [ξαναγράψει|ksa-na-GHRA-psi].",
+     "id": "Saya tahu. Yang menulis Lefteris, asisten baru. Saya sudah menyuruhnya menulis ulang.",
+     "literal": "itu (aku)-tahu. dia-(perempuan) (dia)-menulis (sandang) Lefteris, (sandang) baru asisten. dia-(laki) (aku)-taruh sudah agar dia-(perempuan) (dia)-tulis-ulang."
+    },
+    {
+     "speaker": "Κώστας:",
+     "text": "[Ωραία|O-RÉ-a]. [Αλλά|A-LA] [μην|min] [τον|ton] [αφήνεις|a-FI-nis] [να|na] [στέλνει|STÉL-ni] [κείμενα|KI-mé-na] [χωρίς|kho-RIS] [να|na] [τα|ta] [ελέγχεις|é-LÉN-khis].",
+     "id": "Bagus. Tapi jangan biarkan dia mengirim tulisan tanpa kamu periksa.",
+     "literal": "bagus. tetapi jangan dia (kamu)-biarkan agar (dia)-mengirim teks-teks tanpa agar itu-semua (kamu)-periksa."
+    },
+    {
+     "speaker": "Άννα:",
+     "text": "[Έχετε|É-khé-té] [δίκιο|DHI-kio]. [Από|A-PO] [εδώ|é-DHO] [και|ké] [πέρα|PÉ-ra] [θα|tha] [τα|ta] [κοιτάζω|ki-TA-zo] [εγώ|é-GHO] [πρώτα|PRO-ta].",
+     "id": "Bapak benar. Mulai sekarang saya yang akan memeriksanya dulu.",
+     "literal": "(Anda)-punya kebenaran. dari sini dan seterusnya akan itu-semua (aku)-melihat aku dulu."
+    },
+    {
+     "speaker": "Κώστας:",
+     "text": "[Και|Ké] [κάτι|KA-ti] [άλλο|A-lo]: [το|to] [σύστημα|SI-sti-ma] [κρατήσεων|kra-TI-sé-on] [κόλλησε|KO-li-sé] [πάλι|PA-li]. [Βάλε|VA-lé] [τον|ton] [Σταύρο|STAV-ro] [να|na] [το|to] [κοιτάξει|ki-TA-ksi] [σήμερα|SI-mé-ra].",
+     "id": "Satu lagi: sistem pemesanannya macet lagi. Suruh Stavros memeriksanya hari ini.",
+     "literal": "dan sesuatu lain: (sandang) sistem pemesanan-pemesanan-(punya) (dia)-lengket lagi. taruh (sandang) Stavros agar itu (dia)-lihat hari-ini."
+    },
+    {
+     "speaker": "Άννα:",
+     "text": "[Του|Tu] [το|to] [είπα|I-pa] [το|to] [πρωί|pro-I]. [Είπε|I-pé] [ότι|O-ti] [θα|tha] [το|to] [φτιάξει|FTIA-ksi] [μέχρι|MÉ-khri] [το|to] [μεσημέρι|mé-si-MÉ-ri].",
+     "id": "Sudah saya bilang tadi pagi. Katanya dia akan membetulkannya sebelum siang.",
+     "literal": "kepadanya itu (aku)-berkata (sandang) pagi. (dia)-berkata bahwa akan itu (dia)-betulkan sampai (sandang) siang."
+    },
+    {
+     "speaker": "Κώστας:",
+     "text": "[Ο|O] [Σταύρος|STAV-ros]; [Μέχρι|MÉ-khri] [το|to] [μεσημέρι|mé-si-MÉ-ri]; [Αυτό|Af-TO] [θα|tha] [με|mé] [κάνει|KA-ni] [να|na] [γελάσω|yé-LA-so].",
+     "id": "Stavros? Sebelum siang? Itu bakal bikin saya ketawa.",
+     "literal": "(sandang) Stavros? sampai (sandang) siang? ini akan aku (dia)-buat agar (aku)-tertawa."
+    },
+    {
+     "speaker": "Άννα:",
+     "text": "[Μην|Min] [είστε|I-sté] [κακός|ka-KOS]! [Τον|Ton] [έκανα|É-ka-na] [να|na] [μου|mu] [το|to] [υποσχεθεί|i-po-skhé-THI].",
+     "id": "Jangan jahat gitu, Pak! Saya sudah bikin dia berjanji.",
+     "literal": "jangan (Anda)-adalah jahat! dia (aku)-buat agar kepadaku itu (dia)-janjikan."
+    },
+    {
+     "speaker": "Κώστας:",
+     "text": "[Εντάξει|É-DA-ksi]. [Και|Ké] [η|i] [Δήμητρα|DHI-mi-tra]; [Θέλει|THÉ-li] [να|na] [πάει|PA-i] [στο|sto] [σεμινάριο|sé-mi-NA-ri-o] [στο|sto] [Ρότερνταμ|RO-térn-dam].",
+     "id": "Oke. Lalu Dhimitra? Dia mau ikut seminar di Rotterdam.",
+     "literal": "oke. dan (sandang) Dhimitra? (dia)-mau agar (dia)-pergi ke-(sandang) seminar di-(sandang) Rotterdam."
+    },
+    {
+     "speaker": "Άννα:",
+     "text": "[Αφήστε|A-FI-sté] [τη|ti] [να|na] [πάει|PA-i]. [Θα|Tha] [φέρει|FÉ-ri] [καινούργιες|ké-NUR-yés] [ιδέες|i-DHÉ-és] [για|ya] [το|to] [πρόγραμμα|PRO-ghra-ma].",
+     "id": "Biarkan dia pergi, Pak. Dia akan membawa ide-ide baru untuk program kita.",
+     "literal": "biarkan-(Anda) dia-(perempuan) agar (dia)-pergi. akan (dia)-bawa baru ide-ide untuk (sandang) program."
+    },
+    {
+     "speaker": "Κώστας:",
+     "text": "[Θα|Tha] [την|tin] [αφήσω|a-FI-so], [αν|an] [βρει|vri] [κάποιον|KA-pi-on] [να|na] [την|tin] [αντικαταστήσει|an-di-ka-ta-STI-si].",
+     "id": "Saya izinkan, kalau dia menemukan orang yang bisa menggantikannya.",
+     "literal": "akan dia-(perempuan) (aku)-biarkan, kalau (dia)-temukan seseorang agar dia-(perempuan) (dia)-gantikan."
+    },
+    {
+     "speaker": "Άννα:",
+     "text": "[Θα|Tha] [την|tin] [αντικαταστήσω|an-di-ka-ta-STI-so] [εγώ|é-GHO]. [Μην|Min] [ανησυχείτε|a-ni-si-KHI-té].",
+     "id": "Saya yang akan menggantikannya. Jangan khawatir.",
+     "literal": "akan dia-(perempuan) (aku)-gantikan aku. jangan (Anda)-khawatir."
+    },
+    {
+     "speaker": "Κώστας:",
+     "text": "[Με|Mé] [κάνεις|KA-nis] [πάντα|PAN-da] [να|na] [νιώθω|NIO-tho] [ήσυχος|I-si-khos]. [Εντάξει|É-DA-ksi], [ας|as] [πάει|PA-i].",
+     "id": "Kamu selalu bikin saya tenang. Ya sudah, biar dia pergi.",
+     "literal": "aku (kamu)-buat selalu agar (aku)-merasa tenang. oke, biarlah (dia)-pergi."
+    }
+   ],
+   "notes": [
+    "**Τον έβαλα να την ξαναγράψει** — *βάζω κάποιον να* = menyuruh, menugasi (secara harfiah \"menaruh seseorang supaya\"). ⚠️ Kata kerja sesudah *να* mengikuti ORANG YANG DISURUH, bukan yang menyuruh: *τον έβαλα να ξαναγράψει* (dia menulis), bukan *να ξαναγράψω*. Dalam \"aku suruh dia menulis\" kata \"menulis\" tidak berubah, jadi penutur Indonesia sering lupa mengganti orangnya.",
+    "**Τον / την di depan** — orang yang disuruh berbentuk akusatif dan, kalau berupa kata ganti, diletakkan di depan kata kerja utama: *τον έβαλα, την αφήνω*. Kalau berupa nama, letaknya di belakang: *Βάλε τον Σταύρο να…*",
+    "**Μην τον αφήνεις να στέλνει** — *αφήνω κάποιον να* = membiarkan, mengizinkan. Kostas memakai aspek kini (*αφήνεις, στέλνει*) karena yang dibicarakan kebiasaan: jangan pernah membiarkannya mengirim-kirim tulisan.",
+    "**Αυτό θα με κάνει να γελάσω / Τον έκανα να μου το υποσχεθεί** — *κάνω κάποιον να* = membuat, menyebabkan. Sering tentang perasaan atau reaksi (tertawa, menangis, berpikir). Ana memakainya dengan nada \"sampai berhasil\": ia mendesak Stavros sampai berjanji.",
+    "**Αφήστε τη να πάει** — dalam kalimat perintah, kata ganti pindah ke belakang: *Αφήστε τη* (Anda), *Άφησέ τη* (kamu, dengan tekanan kedua). Ana tetap memakai bentuk sopan jamak kepada atasannya.",
+    "**Κάποιον να την αντικαταστήσει** — *να* di sini berarti \"yang bisa\": mencari seseorang yang bisa menggantikannya. Kalimat Kostas ditutup dengan *ας πάει* dari unit lalu: biarlah dia pergi."
+   ],
+   "grammars": [
+    {
+     "title": "Satu kata \"suruh\", enam kata kerja Yunani",
+     "body": [
+      "Semua kata kerja ini membentuk pola yang sama: pelaku + kata kerja utama + ORANG (akusatif) + *να* + kata kerja yang dilakukan orang itu. Yang berbeda adalah seberapa besar tekanannya."
+     ],
+     "table": {
+      "head": [
+       "Kata kerja",
+       "Makna",
+       "Contoh"
+      ],
+      "rows": [
+       [
+        "*βάζω κάποιον να*",
+        "menyuruh, menugasi",
+        "*Τον έβαλα να ξαναγράψει.*"
+       ],
+       [
+        "*κάνω κάποιον να*",
+        "membuat, menyebabkan",
+        "*Με έκανε να γελάσω.*"
+       ],
+       [
+        "*αφήνω κάποιον να*",
+        "membiarkan, mengizinkan",
+        "*Άφησέ τη να πάει.*"
+       ],
+       [
+        "*ζητάω από κάποιον να*",
+        "meminta (sopan)",
+        "*Ζήτησα από τον Σταύρο να το φτιάξει.*"
+       ],
+       [
+        "*αναγκάζω κάποιον να*",
+        "memaksa",
+        "*Μας ανάγκασε να περιμένουμε.*"
+       ],
+       [
+        "*πείθω κάποιον να*",
+        "membujuk sampai mau",
+        "*Την έπεισα να έρθει.*"
+       ]
+      ]
+     },
+     "after": [
+      "*Ζητάω* adalah pengecualian: orangnya memakai *από* + akusatif atau kata ganti genitif: *του ζήτησα να…*",
+      "Aspek sesudah *να* dipilih seperti biasa: sekali (*να ξαναγράψει*) atau berulang (*να στέλνει*)."
+     ]
+    }
+   ]
+  },
+  {
+   "title": "ΔΙΑΛΟΓΟΣ 2 — Di bengkel",
+   "intro": "Sabtu, 8 April 2028, pagi hari di sebuah bengkel kecil di Pangrati. Nikos membawa mobilnya ke κύριος Θανάσης, montir langganannya, ditemani Ana. Remnya berbunyi sejak seminggu.",
+   "lines": [
+    {
+     "speaker": "Νίκος:",
+     "text": "[Καλημέρα|Ka-li-MÉ-ra], [κύριε|KI-ri-é] [Θανάση|Tha-NA-si]. [Θέλω|THÉ-lo] [να|na] [μου|mu] [κάνετε|KA-né-té] [σέρβις|SÉR-vis] [και|ké] [να|na] [μου|mu] [αλλάξετε|a-LA-ksé-té] [τα|ta] [λάδια|LA-dhia].",
+     "id": "Pagi, Pak Thanasis. Saya mau servis mobil dan ganti oli.",
+     "literal": "selamat-pagi, tuan Thanasis. (aku)-mau agar untukku (Anda)-buat servis dan agar untukku (Anda)-ganti (sandang) oli-oli."
+    },
+    {
+     "speaker": "Θανάσης:",
+     "text": "[Αμέσως|A-MÉ-sos]. [Τι|Ti] [άλλο|A-lo]; [Κάτι|KA-ti] [ακούγεται|a-KU-yé-té], [έτσι|É-tsi] [δεν|dhén] [είναι|I-né];",
+     "id": "Siap. Apa lagi? Ada bunyi-bunyi, kan?",
+     "literal": "segera. apa lain? sesuatu terdengar, begitu tidak adalah?"
+    },
+    {
+     "speaker": "Νίκος:",
+     "text": "[Ναι|Né], [από|a-PO] [μπροστά|bro-STA], [όταν|O-tan] [φρενάρω|fré-NA-ro]. [Με|Mé] [κάνει|KA-ni] [να|na] [ανησυχώ|a-ni-si-KHO].",
+     "id": "Iya, dari depan, waktu saya ngerem. Bikin saya khawatir.",
+     "literal": "ya, dari depan, ketika (aku)-mengerem. aku (itu)-buat agar (aku)-khawatir."
+    },
+    {
+     "speaker": "Θανάσης:",
+     "text": "[Θα|Tha] [βάλω|VA-lo] [τον|ton] [βοηθό|vo-i-THO] [μου|mu] [να|na] [ελέγξει|é-LÉN-ksi] [τα|ta] [φρένα|FRÉ-na]. [Αφήστε|A-FI-sté] [μου|mu] [τα|ta] [κλειδιά|kli-DHIA].",
+     "id": "Nanti saya suruh asisten saya cek remnya. Kuncinya tinggal di saya saja.",
+     "literal": "akan (aku)-taruh (sandang) asisten-ku agar (dia)-periksa (sandang) rem-rem. tinggalkan-(Anda) untukku (sandang) kunci-kunci."
+    },
+    {
+     "speaker": "Άννα:",
+     "text": "[Πόση|PO-si] [ώρα|O-ra] [θα|tha] [πάρει|PA-ri]; [Πρέπει|PRÉ-pi] [να|na] [είμαστε|I-ma-sté] [στον|ston] [Πειραιά|Pi-ré-A] [στις|stis] [δύο|DHI-o].",
+     "id": "Berapa lama kira-kira? Kami harus sudah di Pireas jam dua.",
+     "literal": "berapa-banyak waktu akan (itu)-ambil? harus agar (kami)-adalah di-(sandang) Pireas pada-(sandang) dua."
+    },
+    {
+     "speaker": "Θανάσης:",
+     "text": "[Δύο|DHI-o] [ώρες|O-rés] [το|to] [πολύ|po-LI]. [Αν|An] [θέλετε|THÉ-lé-té], [σας|sas] [αφήνω|a-FI-no] [να|na] [περιμένετε|pé-ri-MÉ-né-té] [στο|sto] [γραφείο|ghra-FI-o] [μου|mu].",
+     "id": "Paling lama dua jam. Kalau mau, silakan tunggu di kantor saya.",
+     "literal": "dua jam (sandang) paling-banyak. kalau (kalian)-mau, kalian (aku)-biarkan agar (kalian)-tunggu di-(sandang) kantor-ku."
+    },
+    {
+     "speaker": "Νίκος:",
+     "text": "[Όχι|O-khi], [ευχαριστούμε|éf-kha-ri-STU-mé]. [Θα|Tha] [πάμε|PA-mé] [για|ya] [καφέ|ka-FÉ]. [Να|Na] [σας|sas] [πάρω|PA-ro] [τηλέφωνο|ti-LÉ-fo-no] [αργότερα|ar-GHO-té-ra];",
+     "id": "Nggak usah, makasih. Kami mau ngopi. Nanti saya telepon Bapak?",
+     "literal": "tidak, (kami)-berterima-kasih. akan (kami)-pergi untuk kopi. agar Anda (aku)-ambil telepon nanti?"
+    },
+    {
+     "speaker": "Θανάσης:",
+     "text": "[Καλύτερα|Ka-LI-té-ra] [να|na] [σας|sas] [πάρω|PA-ro] [εγώ|é-GHO], [μόλις|MO-lis] [τελειώσουμε|té-LIO-su-mé].",
+     "id": "Lebih baik saya yang telepon, begitu kami selesai.",
+     "literal": "lebih-baik agar kalian (aku)-ambil aku, begitu (kami)-selesai."
+    },
+    {
+     "speaker": "Άννα:",
+     "text": "[Βλέπεις|VLÉ-pis]; [Σε|Sé] [έπεισα|É-pi-sa] [να|na] [το|to] [φέρεις|FÉ-ris] [επιτέλους|é-pi-TÉ-lus].",
+     "id": "Tuh kan? Akhirnya aku berhasil membujukmu membawanya.",
+     "literal": "(kamu)-lihat? kamu (aku)-bujuk agar itu (kamu)-bawa akhirnya."
+    },
+    {
+     "speaker": "Νίκος:",
+     "text": "[Ναι|Né], [ναι|né]. [Εσύ|É-SI] [με|mé] [βάζεις|VA-zis] [πάντα|PAN-da] [να|na] [κάνω|KA-no] [όσα|O-sa] [αναβάλλω|a-na-VA-lo].",
+     "id": "Iya, iya. Kamu memang selalu menyuruhku mengerjakan hal-hal yang kutunda-tunda.",
+     "literal": "ya, ya. kamu aku (kamu)-taruh selalu agar (aku)-lakukan sebanyak-yang (aku)-tunda."
+    },
+    {
+     "speaker": "Άννα:",
+     "text": "[Και|Ké] [σε|sé] [αφήνω|a-FI-no] [να|na] [με|mé] [κεράσεις|ké-RA-sis] [τον|ton] [καφέ|ka-FÉ]!",
+     "id": "Dan kuizinkan kamu mentraktirku kopi!",
+     "literal": "dan kamu (aku)-biarkan agar aku (kamu)-traktir (sandang) kopi!"
+    }
+   ],
+   "notes": [
+    "**Θέλω να μου κάνετε σέρβις** — cara paling alami meminta layanan: *θέλω να μου* + kata kerja orang yang mengerjakan (di sini *εσείς*, montirnya). Bahasa Indonesia cukup bilang \"saya mau ganti oli\", tetapi bahasa Yunani jelas memisahkan siapa yang menyuruh dan siapa yang bekerja: *να μου αλλάξετε*.",
+    "**Θα βάλω τον βοηθό μου να ελέγξει** — rantai suruhan: Nikos meminta Thanasis, Thanasis menugasi asistennya. *Ελέγξει* adalah υποτακτική aorist dari *ελέγχω* (*έλεγξα*).",
+    "**Με κάνει να ανησυχώ** — *κάνω να* + aspek kini untuk perasaan yang berlangsung: \"membuatku terus khawatir\". Pelakunya bunyi rem itu sendiri, yang tak disebut.",
+    "**Σας αφήνω να περιμένετε** — *αφήνω* di sini bernada mempersilakan. *Αφήστε μου τα κλειδιά* memakai arti dasar *αφήνω*: meninggalkan, menitipkan.",
+    "**Εσύ με βάζεις να κάνω** — karena yang disuruh adalah *με* (aku), kata kerja sesudah *να* orang pertama: *κάνω*. Bandingkan *τον βάζεις να κάνει* dan *μας βάζεις να κάνουμε*.",
+    "**Να με κεράσεις τον καφέ** — *κερνάω* memakai dua akusatif: orang yang ditraktir dan barangnya. Traktir-mentraktir kopi adalah olahraga nasional; orang Yunani sering berebut membayar."
+   ],
+   "grammars": [
+    {
+     "title": "Minta dikerjakan orang lain",
+     "body": [
+      "Bahasa Indonesia punya \"di-\" dan \"-kan\" untuk layanan: \"mobilku diservis\", \"rambutku dipotong\". Bahasa Yunani lisan biasanya memakai salah satu dari tiga cara ini."
+     ],
+     "table": {
+      "head": [
+       "Maksud",
+       "Yunani lisan",
+       "Cara"
+      ],
+      "rows": [
+       [
+        "Tolong gantikan olinya.",
+        "*Θέλω να μου αλλάξετε τα λάδια.*",
+        "θέλω να μου + orang yang bekerja"
+       ],
+       [
+        "Jas ini mau saya pendekkan.",
+        "*Θέλω να μου κοντύνετε το σακάκι.*",
+        "θέλω να μου + orang yang bekerja"
+       ],
+       [
+        "Laptopku sudah diperbaiki.",
+        "*Μου έφτιαξαν το λάπτοπ.*",
+        "orang ketiga jamak tanpa pelaku"
+       ],
+       [
+        "Rumah kami dicat tahun lalu.",
+        "*Μας έβαψαν το σπίτι πέρσι.*",
+        "orang ketiga jamak tanpa pelaku"
+       ],
+       [
+        "Kemarin aku potong rambut.",
+        "*Κουρεύτηκα χθες.*",
+        "kata kerja -ομαι"
+       ],
+       [
+        "Aku servis mobil minggu lalu.",
+        "*Έκανα σέρβις στο αυτοκίνητο.*",
+        "kata kerja aktif biasa"
+       ]
+      ]
+     },
+     "after": [
+      "Orang Yunani sering berkata *Έβαψα το σπίτι* (aku mengecat rumah) walaupun tukang yang mengecat. Dari konteks semua orang paham."
+     ]
+    }
+   ]
+  }
+ ],
+ "sections": [
+  {
+   "title": "Siapa yang bekerja? Kata kerja sesudah ΝΑ",
+   "blocks": [
+    {
+     "type": "p",
+     "text": "Dalam kalimat kausatif ada dua pelaku: yang menyuruh dan yang disuruh. Kata kerja utama mengikuti yang menyuruh, kata kerja sesudah *να* mengikuti yang disuruh. Tabel di bawah ini memakai kalimat yang sama, \"… menyuruh … menulis ulang\", dengan orang yang berganti-ganti."
+    },
+    {
+     "type": "tabel",
+     "head": [
+      "Yang menyuruh",
+      "Yang disuruh",
+      "Kalimat"
+     ],
+     "rows": [
+      [
+       "aku",
+       "dia (laki-laki)",
+       "*Τον έβαλα να ξαναγράψει.*"
+      ],
+      [
+       "aku",
+       "dia (perempuan)",
+       "*Την έβαλα να ξαναγράψει.*"
+      ],
+      [
+       "dia",
+       "aku",
+       "*Με έβαλε να ξαναγράψω.*"
+      ],
+      [
+       "kamu",
+       "kami",
+       "*Μας έβαλες να ξαναγράψουμε.*"
+      ],
+      [
+       "Kostas",
+       "kalian",
+       "*Ο Κώστας σας έβαλε να ξαναγράψετε.*"
+      ],
+      [
+       "kami",
+       "mereka",
+       "*Τους βάλαμε να ξαναγράψουν.*"
+      ],
+      [
+       "mereka",
+       "kamu",
+       "*Σε έβαλαν να ξαναγράψεις.*"
+      ]
+     ]
+    },
+    {
+     "type": "kotak",
+     "title": "⚠️ Pemeriksaan cepat",
+     "items": [
+      "Lihat kata ganti di depan kata kerja utama (*με, σε, τον, την, μας, σας, τους*). Itulah pelaku kata kerja sesudah *να*.",
+      "*Με έβαλε να ξαναγράψω* — *με* = aku, jadi *ξαναγράψω*.",
+      "Kalau pelakunya sama (\"aku mau menulis\"), itu bukan kausatif: *θέλω να γράψω*."
+     ]
+    }
+   ]
+  },
+  {
+   "title": "ΑΦΗΝΩ, ΚΑΝΩ, ΒΑΖΩ: satu kata, banyak arti",
+   "blocks": [
+    {
+     "type": "tabel",
+     "head": [
+      "Kalimat",
+      "Arti"
+     ],
+     "rows": [
+      [
+       "*Άφησα τα κλειδιά στο γραφείο.*",
+       "Kuncinya kutinggal di kantor."
+      ],
+      [
+       "*Άφησε τη δουλειά του.*",
+       "Dia berhenti dari pekerjaannya."
+      ],
+      [
+       "*Άσε με ήσυχο!*",
+       "Jangan ganggu aku!"
+      ],
+      [
+       "*Άσ' το, θα το κάνω εγώ.*",
+       "Sudah, biar aku saja."
+      ],
+      [
+       "*Κάνει ότι δεν με βλέπει.*",
+       "Dia pura-pura tidak melihatku."
+      ],
+      [
+       "*Βάζω τα ρούχα στη ντουλάπα.*",
+       "Aku menaruh baju di lemari."
+      ],
+      [
+       "*Βάλε ένα πουλόβερ, κάνει κρύο.*",
+       "Pakai sweter, dingin."
+      ]
+     ]
+    },
+    {
+     "type": "p",
+     "text": "*Άσε* dan *άσ' το* adalah bentuk pendek lisan dari *άφησε*, dan sangat sering terdengar. *Άσε…* di awal kalimat juga berarti \"jangan tanya deh\": *Άσε, μη ρωτάς!* = aduh, jangan ditanya!"
+    }
+   ]
+  },
+  {
+   "title": "Di bengkel dan di tukang",
+   "blocks": [
+    {
+     "type": "tabel",
+     "head": [
+      "Tempat",
+      "Yunani",
+      "Kalimat berguna"
+     ],
+     "rows": [
+      [
+       "bengkel mobil",
+       "*το συνεργείο*",
+       "*Πότε θα είναι έτοιμο;*"
+      ],
+      [
+       "tukang cukur",
+       "*το κουρείο*",
+       "*Λίγο κοντά στο πλάι, παρακαλώ.*"
+      ],
+      [
+       "penjahit (permak)",
+       "*η μοδίστρα*",
+       "*Μπορείτε να το κοντύνετε δύο πόντους;*"
+      ],
+      [
+       "tukang kunci",
+       "*ο κλειδαράς*",
+       "*Θέλω να μου φτιάξετε ένα αντικλείδι.*"
+      ],
+      [
+       "tukang ledeng",
+       "*ο υδραυλικός*",
+       "*Στάζει η βρύση στην κουζίνα.*"
+      ],
+      [
+       "tukang listrik",
+       "*ο ηλεκτρολόγος*",
+       "*Δεν έχουμε ρεύμα στο μπάνιο.*"
+      ]
+     ]
+    },
+    {
+     "type": "kotak",
+     "title": "Mobil di Yunani",
+     "items": [
+      "Setiap mobil wajib uji kelayakan berkala di *ΚΤΕΟ*; tanpa stikernya kamu bisa didenda.",
+      "Montir langganan disebut dengan hormat *μάστορα* atau dengan nama depan: *κύριε Θανάση*.",
+      "Tanyakan harga sebelum pekerjaan dimulai: *Πόσο θα μου κοστίσει περίπου;*",
+      "Minta kuitansi (*απόδειξη*); di Yunani ini juga penting untuk pajakmu."
+     ]
+    }
+   ]
+  }
+ ],
+ "vocab": [
+  {
+   "el": "βάζω κάποιον να",
+   "baca": "VA-zo KA-pi-on na",
+   "id": "menyuruh, menugasi seseorang (*έβαλα*)"
+  },
+  {
+   "el": "κάνω κάποιον να",
+   "baca": "KA-no KA-pi-on na",
+   "id": "membuat seseorang (*έκανα*)"
+  },
+  {
+   "el": "αφήνω",
+   "baca": "a-FI-no",
+   "id": "membiarkan; meninggalkan (*άφησα*; lisan *άσε*)"
+  },
+  {
+   "el": "ζητάω",
+   "baca": "zi-TA-o",
+   "id": "meminta (*ζήτησα από κάποιον να*)"
+  },
+  {
+   "el": "αναγκάζω",
+   "baca": "a-nan-GA-zo",
+   "id": "memaksa (*ανάγκασα*)"
+  },
+  {
+   "el": "πείθω",
+   "baca": "PI-tho",
+   "id": "membujuk, meyakinkan (*έπεισα*)"
+  },
+  {
+   "el": "η αναφορά",
+   "baca": "i a-na-fo-RA",
+   "id": "laporan"
+  },
+  {
+   "el": "ο βοηθός",
+   "baca": "o vo-i-THOS",
+   "id": "asisten (juga *η βοηθός*)"
+  },
+  {
+   "el": "ξαναγράφω",
+   "baca": "ksa-na-GHRA-fo",
+   "id": "menulis ulang (*ξανάγραψα*)"
+  },
+  {
+   "el": "ελέγχω",
+   "baca": "é-LÉN-kho",
+   "id": "memeriksa (*έλεγξα*)"
+  },
+  {
+   "el": "κολλάω",
+   "baca": "ko-LA-o",
+   "id": "lengket; macet, hang (*κόλλησε το σύστημα*)"
+  },
+  {
+   "el": "η κράτηση",
+   "baca": "i KRA-ti-si",
+   "id": "pemesanan, reservasi"
+  },
+  {
+   "el": "υπόσχομαι",
+   "baca": "i-PO-skho-mé",
+   "id": "berjanji (*υποσχέθηκα*)"
+  },
+  {
+   "el": "αντικαθιστώ",
+   "baca": "an-di-ka-thi-STO",
+   "id": "menggantikan (*αντικατέστησα*)"
+  },
+  {
+   "el": "το σεμινάριο",
+   "baca": "to sé-mi-NA-ri-o",
+   "id": "seminar, lokakarya"
+  },
+  {
+   "el": "ανησυχώ",
+   "baca": "a-ni-si-KHO",
+   "id": "khawatir (*ανησύχησα*)"
+  },
+  {
+   "el": "το συνεργείο",
+   "baca": "to si-nér-YI-o",
+   "id": "bengkel"
+  },
+  {
+   "el": "ο μηχανικός",
+   "baca": "o mi-kha-ni-KOS",
+   "id": "montir; insinyur"
+  },
+  {
+   "el": "τα λάδια",
+   "baca": "ta LA-dhia",
+   "id": "oli mesin (jamak dari *το λάδι*)"
+  },
+  {
+   "el": "τα φρένα",
+   "baca": "ta FRÉ-na",
+   "id": "rem"
+  },
+  {
+   "el": "φρενάρω",
+   "baca": "fré-NA-ro",
+   "id": "mengerem (*φρενάρισα*)"
+  },
+  {
+   "el": "το κλειδί",
+   "baca": "to kli-DHI",
+   "id": "kunci"
+  },
+  {
+   "el": "αναβάλλω",
+   "baca": "a-na-VA-lo",
+   "id": "menunda (*ανέβαλα*)"
+  },
+  {
+   "el": "κουρεύομαι",
+   "baca": "ku-RÉ-vo-mé",
+   "id": "potong rambut (*κουρεύτηκα*)"
+  },
+  {
+   "el": "επιτέλους",
+   "baca": "é-pi-TÉ-lus",
+   "id": "akhirnya (lega)"
+  }
+ ],
+ "exercises": [
+  {
+   "prompt": "Terjemahkan ke bahasa Yunani.",
+   "items": [
+    "Aku menyuruh Stavros memperbaiki sistemnya.",
+    "Biarkan dia bicara! (kamu, dia laki-laki)",
+    "Film itu membuatku menangis.",
+    "Kostas memaksa kami menunggu.",
+    "Saya mau Bapak mengganti olinya.",
+    "Aku meminta Dhimitra menelepon agennya."
+   ]
+  },
+  {
+   "prompt": "Isi dengan bentuk yang tepat. Petunjuk ada di dalam kurung.",
+   "items": [
+    "Τον έβαλα να ____ την αναφορά. (ξαναγράφω; sekali)",
+    "Η μητέρα μου με έβαζε να ____ τα πιάτα κάθε βράδυ. (πλένω; berulang)",
+    "Μην ____ αφήνεις να οδηγεί τόσο γρήγορα. (αυτός)",
+    "Τα αστεία του μας έκαναν να ____. (γελάω; sekali)",
+    "Ζήτησα ____ τον μηχανικό να ελέγξει τα φρένα. (preposisi)",
+    "Άφησε τα παιδιά να ____ λίγο ακόμα. (παίζω; berlangsung)",
+    "Την ____ να έρθει μαζί μας. (πείθω; aku, lampau)"
+   ]
+  },
+  {
+   "prompt": "Ubah menjadi kalimat kausatif dengan petunjuk dalam kurung. Contoh: *Ο Σταύρος φτιάχνει το σύστημα. (βάζω; aku, lampau)* → *Έβαλα τον Σταύρο να φτιάξει το σύστημα.*",
+   "items": [
+    "Η Δήμητρα πηγαίνει στο σεμινάριο. (αφήνω; perintah untuk Anda)",
+    "Γελάω. (κάνω; dia, lampau)",
+    "Οι δόκιμοι διαβάζουν κάθε βράδυ. (βάζω; ο Κώστας, kini)",
+    "Ο Νίκος πληρώνει τον καφέ. (αφήνω; aku, masa depan)",
+    "Περιμένουμε δύο ώρες. (αναγκάζω; ο μηχανικός, lampau)",
+    "Ο Άρης ξαναγράφει την αναφορά. (βάζω; aku, lampau)"
+   ]
+  },
+  {
+   "prompt": "Susun jadi kalimat yang benar.",
+   "items": [
+    "έβαλα / ξαναγράψει / τον / την / να",
+    "γελάσω / με / να / έκανε",
+    "πάει / άφησέ / να / τη",
+    "αλλάξετε / θέλω / μου / να / λάδια / τα",
+    "από / ζήτησα / Σταύρο / τον / φτιάξει / να / το"
+   ]
+  }
+ ],
+ "answers": [
+  "Έβαλα τον Σταύρο να φτιάξει το σύστημα. — Άφησέ τον να μιλήσει! — Η ταινία με έκανε να κλάψω. — Ο Κώστας μας ανάγκασε να περιμένουμε. — Θέλω να μου αλλάξετε τα λάδια. — Ζήτησα από τη Δήμητρα να τηλεφωνήσει στον πράκτορα.",
+  "ξαναγράψει — πλένω — τον — γελάσουμε — από — παίζουν — έπεισα",
+  "Αφήστε τη Δήμητρα να πάει στο σεμινάριο. — Με έκανε να γελάσω. — Ο Κώστας βάζει τους δόκιμους να διαβάζουν κάθε βράδυ. — Θα αφήσω τον Νίκο να πληρώσει τον καφέ. — Ο μηχανικός μας ανάγκασε να περιμένουμε δύο ώρες. — Έβαλα τον Άρη να ξαναγράψει την αναφορά.",
+  "Τον έβαλα να την ξαναγράψει. — Με έκανε να γελάσω. — Άφησέ τη να πάει. — Θέλω να μου αλλάξετε τα λάδια. — Ζήτησα από τον Σταύρο να το φτιάξει."
+ ]
+}

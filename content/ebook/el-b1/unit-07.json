@@ -1,0 +1,545 @@
+{
+ "title": "Seandainya sekarang — pengandaian kedua",
+ "title_target": "Αν είχα χρόνο, θα ερχόμουν",
+ "goal": "Menolak ajakan dengan halus, berandai-andai, dan memberi saran \"kalau aku jadi kamu\": *Αν είχα χρόνο, θα ερχόμουν*, *Τι θα έκανες αν κέρδιζες;*, *Αν ήμουν στη θέση σου…*.",
+ "bekal": [
+  "membedakan syarat yang mungkin (*αν έχω, θα έρθω*) dari khayalan tentang sekarang (*αν είχα, θα ερχόμουν*)",
+  "membentuk *θα* + παρατατικός dari tiga golongan: *θα έγραφα, θα μιλούσα, θα ερχόμουν*",
+  "memberi saran dan bertanya hipotesis: *Αν ήμουν στη θέση σου…*, *Τι θα έκανες στη θέση μου;*"
+ ],
+ "dialogs": [
+  {
+   "title": "ΔΙΑΛΟΓΟΣ 1 — Ajakan ke Meteora",
+   "intro": "Rabu, 17 November 2027, malam. Nikos menjemput Ana sepulang kerja dan mengajaknya ke Meteora akhir pekan ini. Ana ingin sekali ikut — tapi laporannya belum selesai.",
+   "lines": [
+    {
+     "speaker": "Νίκος:",
+     "text": "[Το|To] [Σαββατοκύριακο|Sa-va-to-KI-ri-a-ko] [πάω|PA-o] [στα|sta] [Μετέωρα|Mé-TÉ-o-ra] [με|mé] [το|to] [αυτοκίνητο|af-to-KI-ni-to]. [Έλα|É-la] [μαζί|ma-ZI] [μου|mu]!",
+     "id": "Akhir pekan ini aku ke Meteora naik mobil. Ikut, yuk!",
+     "literal": "(sandang) akhir-pekan aku-pergi ke-(sandang) Meteora dengan (sandang) mobil. datanglah bersama-ku!"
+    },
+    {
+     "speaker": "Άννα:",
+     "text": "[Αχ|Akh], [Νίκο|NI-ko]… [Αν|An] [είχα|I-kha] [χρόνο|KHRO-no], [θα|tha] [ερχόμουν|ér-KHO-mun] [αμέσως|a-MÉ-sos].",
+     "id": "Aduh, Nikos… Kalau aku punya waktu, aku pasti langsung ikut.",
+     "literal": "ah, Nikos… kalau aku-punya-dulu waktu, akan aku-datang-dulu segera."
+    },
+    {
+     "speaker": "Νίκος:",
+     "text": "[Και|Ké] [γιατί|ya-TI] [δεν|dhén] [έχεις|É-khis]; [Είναι|I-né] [μόνο|MO-no] [δύο|DHI-o] [μέρες|MÉ-rés].",
+     "id": "Memangnya kenapa nggak punya? Cuma dua hari.",
+     "literal": "dan kenapa tidak kamu-punya? adalah hanya dua hari."
+    },
+    {
+     "speaker": "Άννα:",
+     "text": "[Τη|Ti] [Δευτέρα|Dhéf-TÉ-ra] [παραδίδω|pa-ra-DHI-dho] [την|tin] [αναφορά|a-na-fo-RA] [του|tu] [προγράμματος|pro-GHRA-ma-tos] [στην|stin] [κυρία|ki-RI-a] [Αγγελική|An-gé-li-KI].",
+     "id": "Hari Senin aku menyerahkan laporan program ke Bu Angeliki.",
+     "literal": "(sandang) Senin aku-menyerahkan (sandang) laporan (sandang)-milik program-milik kepada-(sandang) nyonya Angeliki."
+    },
+    {
+     "speaker": "Νίκος:",
+     "text": "[Αν|An] [τη|ti] [γράφατε|GHRA-fa-té] [μαζί|ma-ZI] [με|mé] [τη|ti] [Δήμητρα|DHI-mi-tra], [θα|tha] [τελειώνατε|té-LIO-na-té] [πιο|pio] [γρήγορα|GHRI-gho-ra].",
+     "id": "Kalau kalian menulisnya bareng Dhimitra, kalian bakal lebih cepat selesai.",
+     "literal": "kalau itu kalian-menulis-dulu bersama dengan (sandang) Dhimitra, akan kalian-selesai-dulu lebih cepat."
+    },
+    {
+     "speaker": "Άννα:",
+     "text": "[Η|I] [Δήμητρα|DHI-mi-tra] [είναι|I-né] [στα|sta] [Χανιά|Kha-NIA] [όλη|O-li] [την|tin] [εβδομάδα|év-dho-MA-dha]. [Αν|An] [ήταν|I-tan] [εδώ|é-DHO], [θα|tha] [με|mé] [βοηθούσε|vo-i-THU-sé].",
+     "id": "Dhimitra di Chania seminggu penuh. Kalau dia di sini, dia pasti membantuku.",
+     "literal": "(sandang) Dhimitra adalah di-(sandang) Chania seluruh (sandang) minggu. kalau ia-adalah-dulu di-sini, akan aku ia-membantu-dulu."
+    },
+    {
+     "speaker": "Νίκος:",
+     "text": "[Κι|Ki] [αν|an] [δούλευες|DHU-lé-vés] [την|tin] [Παρασκευή|Pa-ra-ské-VI] [το|to] [βράδυ|VRA-dhi]; [Θα|Tha] [φεύγαμε|FÉV-gha-mé] [το|to] [Σάββατο|SA-va-to] [το|to] [πρωί|pro-I].",
+     "id": "Kalau kamu kerja Jumat malam? Kita berangkat Sabtu pagi.",
+     "literal": "dan kalau kamu-bekerja-dulu (sandang) Jumat (sandang) malam? akan kita-berangkat-dulu (sandang) Sabtu (sandang) pagi."
+    },
+    {
+     "speaker": "Άννα:",
+     "text": "[Θα|Tha] [μπορούσα|bo-RU-sa]… [αλλά|a-LA] [θα|tha] [ήμουν|I-mun] [πολύ|po-LI] [κουρασμένη|ku-ra-SMÉ-ni] [για|ya] [τόσα|TO-sa] [χιλιόμετρα|khi-LIO-mé-tra].",
+     "id": "Bisa sih… tapi aku bakal capek sekali untuk jarak sejauh itu.",
+     "literal": "akan aku-bisa-dulu… tetapi akan aku-adalah-dulu sangat lelah untuk sebanyak-itu kilometer-kilometer."
+    },
+    {
+     "speaker": "Νίκος:",
+     "text": "[Δεν|Dhén] [θα|tha] [οδηγούσες|o-dhi-GHU-sés] [εσύ|é-SI]. [Εσύ|É-SI] [θα|tha] [κοιμόσουν|ki-MO-sun], [κι|ki] [εγώ|é-GHO] [θα|tha] [οδηγούσα|o-dhi-GHU-sa].",
+     "id": "Bukan kamu yang menyetir. Kamu tidur, aku yang menyetir.",
+     "literal": "tidak akan kamu-menyetir-dulu kamu. kamu akan kamu-tidur-dulu, dan aku akan aku-menyetir-dulu."
+    },
+    {
+     "speaker": "Άννα:",
+     "text": "[Ωραία|O-RÉ-a] [εικόνα|i-KO-na]… [Πώς|Pos] [είναι|I-né] [εκεί|é-KI] [τέτοια|TÉ-ti-a] [εποχή|é-po-KHI];",
+     "id": "Kedengarannya indah… Seperti apa di sana musim begini?",
+     "literal": "indah gambaran… bagaimana adalah di-sana semacam-ini musim?"
+    },
+    {
+     "speaker": "Νίκος:",
+     "text": "[Βράχια|VRA-khia] [μέσα|MÉ-sa] [στην|stin] [ομίχλη|o-MI-khli], [μοναστήρια|mo-na-STI-ri-a] [στην|stin] [κορυφή|ko-ri-FI]. [Αν|An] [τα|ta] [έβλεπες|É-vlé-pés], [δεν|dhén] [θα|tha] [ήθελες|I-thé-lés] [να|na] [γυρίσεις|yi-RI-sis].",
+     "id": "Tebing batu di dalam kabut, biara di puncaknya. Kalau kamu melihatnya, kamu nggak bakal mau pulang.",
+     "literal": "batu-batu-karang di-dalam di-(sandang) kabut, biara-biara di-(sandang) puncak. kalau itu kamu-melihat-dulu, tidak akan kamu-mau-dulu supaya kamu-kembali."
+    },
+    {
+     "speaker": "Άννα:",
+     "text": "[Αυτό|Af-TO] [ακριβώς|a-kri-VOS] [φοβάμαι|fo-VA-mé]! [Πάμε|PA-mé] [την|tin] [άνοιξη|A-ni-ksi]; [Τότε|TO-té] [θα|tha] [έχω|É-kho] [λιγότερη|li-GHO-té-ri] [δουλειά|dhu-LIA].",
+     "id": "Justru itu yang kutakutkan! Kita pergi musim semi, ya? Waktu itu kerjaanku lebih sedikit.",
+     "literal": "itu tepat aku-takut! kita-pergi (sandang) musim-semi? waktu-itu akan aku-punya lebih-sedikit pekerjaan."
+    },
+    {
+     "speaker": "Νίκος:",
+     "text": "[Σύμφωνοι|SIM-fo-ni]. [Αλλά|A-LA] [αν|an] [αλλάξεις|a-LA-ksis] [γνώμη|GHNO-mi] [μέχρι|MÉ-khri] [την|tin] [Παρασκευή|Pa-ra-ské-VI], [πάρε|PA-ré] [με|mé] [τηλέφωνο|ti-LÉ-fo-no].",
+     "id": "Setuju. Tapi kalau kamu berubah pikiran sampai Jumat, telepon aku.",
+     "literal": "sepakat. tetapi kalau kamu-mengubah pendapat sampai (sandang) Jumat, ambillah aku telepon."
+    }
+   ],
+   "notes": [
+    "⚠️ **Αν είχα χρόνο, θα ερχόμουν** — bentuknya lampau (*είχα, ερχόμουν*), tapi artinya SEKARANG: \"kalau (saat ini) aku punya waktu — padahal tidak — aku akan ikut\". Bahasa Indonesia cukup bilang \"kalau aku punya waktu, aku ikut\" dan membiarkan konteks bekerja. Bahasa Yunani wajib memilih: *αν έχω, θα έρθω* (mungkin terjadi) atau *αν είχα, θα ερχόμουν* (tidak nyata). Salah pilih mengubah pesan: *Αν έχω χρόνο, θα έρθω* berarti Ana masih mungkin ikut!",
+    "**Kedua bagian memakai παρατατικός.** Anak kalimat *αν* memakai παρατατικός polos (*αν είχα, αν ήταν, αν δούλευες*); kalimat utama memakai *θα* + παρατατικός (*θα ερχόμουν, θα βοηθούσε*). Urutannya boleh dibalik: *Θα ερχόμουν, αν είχα χρόνο*.",
+    "**Θα μπορούσα… θα ήμουν…** — *θα* + παρατατικός juga berdiri sendiri tanpa *αν*, untuk menyatakan \"akan/bisa (dalam keadaan lain)\". Inilah bentuk yang sama dengan *θα ήθελα* yang sudah kamu kenal sebagai permintaan sopan.",
+    "**Θα κοιμόσουν** — παρατατικός kata kerja -μαι: *κοιμόμουν, κοιμόσουν, κοιμόταν, κοιμόμασταν, κοιμόσασταν, κοιμόντουσαν*. Tekanan selalu jatuh di suku *-ό-*. Dengan *θα* artinya \"(kalau begitu) kamu tidur\".",
+    "**Δεν θα ήθελες** — penyangkalan diletakkan sebelum *θα*: *δεν θα*, tidak pernah *θα δεν*. Sama untuk masa depan: *Δεν θα έρθω*.",
+    "**Αν αλλάξεις γνώμη, πάρε με τηλέφωνο** — di sini Nikos kembali ke syarat yang MUNGKIN: *αν* + subjungtif aorist, lalu perintah. *Παίρνω τηλέφωνο* = menelepon (harfiah \"mengambil telepon\"): *πάρε με* = telepon aku."
+   ],
+   "grammars": [
+    {
+     "title": "Tiga macam \"kalau\"",
+     "body": [
+      "Bahasa Indonesia memakai satu kata \"kalau\" untuk semuanya. Bahasa Yunani juga memakai satu *αν*, tapi bentuk kata kerja sesudahnya yang membedakan: mungkin, khayalan sekarang, atau khayalan tentang masa lalu (unit 8)."
+     ],
+     "table": {
+      "head": [
+       "Jenis",
+       "Anak kalimat ΑΝ",
+       "Kalimat utama",
+       "Contoh"
+      ],
+      "rows": [
+       [
+        "kebenaran umum",
+        "kini",
+        "kini",
+        "*Αν βρέχει, παίρνω ταξί.*"
+       ],
+       [
+        "mungkin terjadi",
+        "subjungtif aorist",
+        "*θα* + subjungtif / perintah",
+        "*Αν έχω χρόνο, θα έρθω.*"
+       ],
+       [
+        "khayalan sekarang",
+        "παρατατικός",
+        "*θα* + παρατατικός",
+        "*Αν είχα χρόνο, θα ερχόμουν.*"
+       ],
+       [
+        "khayalan masa lalu",
+        "*είχα* + bentuk *-ει*",
+        "*θα είχα* + bentuk *-ει*",
+        "*Αν είχα έρθει, θα είχα δει…* (unit 8)"
+       ]
+      ]
+     },
+     "after": [
+      "Pertanyaan kunci sebelum berbicara: \"Apakah ini masih mungkin?\" Kalau ya, pakai baris kedua. Kalau tidak (atau sangat kecil kemungkinannya), pakai baris ketiga."
+     ]
+    }
+   ]
+  },
+  {
+   "title": "ΔΙΑΛΟΓΟΣ 2 — Kalau menang lotre",
+   "intro": "Jumat, 26 November 2027. Dhimitra sudah kembali dari Chania dan membawa tiket lotre Natal. Stavros dari bagian IT ikut nimbrung di pantry kantor.",
+   "lines": [
+    {
+     "speaker": "Δήμητρα:",
+     "text": "[Άννα|A-na], [πήρα|PI-ra] [λαχείο|la-KHI-o] [για|ya] [τα|ta] [Χριστούγεννα|Khri-STU-yé-na]. [Αν|An] [κέρδιζα|KÉR-dhi-za], [ξέρεις|KSÉ-ris] [τι|ti] [θα|tha] [έκανα|É-ka-na];",
+     "id": "Ana, aku beli lotre Natal. Kalau aku menang, tahu nggak apa yang bakal kulakukan?",
+     "literal": "Anna, aku-mengambil lotre untuk (sandang) Natal. kalau aku-menang-dulu, kamu-tahu apa akan aku-lakukan-dulu?"
+    },
+    {
+     "speaker": "Άννα:",
+     "text": "[Θα|Tha] [αγόραζες|a-GHO-ra-zés] [σπίτι|SPI-ti] [στην|stin] [Κρήτη|KRI-ti];",
+     "id": "Beli rumah di Kreta?",
+     "literal": "akan kamu-membeli-dulu rumah di-(sandang) Kreta?"
+    },
+    {
+     "speaker": "Δήμητρα:",
+     "text": "[Όχι|O-khi]. [Θα|Tha] [έφευγα|É-fév-gha] [από|a-PO] [τη|ti] [δουλειά|dhu-LIA] [την|tin] [ίδια|I-dhia] [μέρα|MÉ-ra] [και|ké] [θα|tha] [ταξίδευα|ta-KSI-dhé-va] [έναν|É-nan] [χρόνο|KHRO-no].",
+     "id": "Bukan. Aku bakal keluar kerja hari itu juga dan jalan-jalan setahun.",
+     "literal": "tidak. akan aku-pergi-dulu dari (sandang) pekerjaan (sandang) sama hari dan akan aku-bepergian-dulu satu tahun."
+    },
+    {
+     "speaker": "Σταύρος:",
+     "text": "[Κι|Ki] [εμείς|é-MIS] [θα|tha] [μέναμε|MÉ-na-mé] [εδώ|é-DHO] [με|mé] [όλα|O-la] [τα|ta] [αρχεία|ar-KHI-a] [σου|su]; [Ωραία|O-RÉ-a]!",
+     "id": "Terus kami ditinggal di sini dengan semua berkasmu? Hebat!",
+     "literal": "dan kami akan kami-tinggal-dulu di-sini dengan semua (sandang) berkas-berkas milikmu? bagus!"
+    },
+    {
+     "speaker": "Δήμητρα:",
+     "text": "[Εσύ|É-SI], [Σταύρο|STAV-ro], [τι|ti] [θα|tha] [έκανες|É-ka-nés] [στη|sti] [θέση|THÉ-si] [μου|mu];",
+     "id": "Kamu sendiri, Stavros, apa yang bakal kamu lakukan kalau jadi aku?",
+     "literal": "kamu, Stavros, apa akan kamu-lakukan-dulu di-(sandang) tempat milikku?"
+    },
+    {
+     "speaker": "Σταύρος:",
+     "text": "[Θα|Tha] [αγόραζα|a-GHO-ra-za] [ένα|É-na] [σκάφος|SKA-fos] [και|ké] [θα|tha] [ψάρευα|PSA-ré-va] [κάθε|KA-thé] [πρωί|pro-I]. [Κι|Ki] [εσύ|é-SI], [Άννα|A-na];",
+     "id": "Aku bakal beli perahu dan memancing tiap pagi. Kamu, Ana?",
+     "literal": "akan aku-membeli-dulu sebuah perahu dan akan aku-memancing-dulu setiap pagi. dan kamu, Anna?"
+    },
+    {
+     "speaker": "Άννα:",
+     "text": "[Αν|An] [ήμουν|I-mun] [πλούσια|PLU-sia], [θα|tha] [έφτιαχνα|ÉF-ti-a-khna] [μια|mia] [σχολή|skho-LI] [ναυτικών|naf-ti-KON] [στη|sti] [Σουραμπάγια|Su-ram-BA-ya].",
+     "id": "Kalau aku kaya, aku bakal mendirikan sekolah pelaut di Surabaya.",
+     "literal": "kalau aku-adalah-dulu kaya, akan aku-membuat-dulu sebuah sekolah pelaut-pelaut-milik di-(sandang) Surabaya."
+    },
+    {
+     "speaker": "Δήμητρα:",
+     "text": "[Πάλι|PA-li] [για|ya] [δουλειά|dhu-LIA] [σκέφτεσαι|SKÉF-té-sé]! [Αν|An] [ήμουν|I-mun] [στη|sti] [θέση|THÉ-si] [σου|su], [θα|tha] [σκεφτόμουν|skéf-TO-mun] [λίγο|LI-gho] [και|ké] [τον|ton] [Νίκο|NI-ko].",
+     "id": "Mikirin kerjaan lagi! Kalau aku jadi kamu, aku bakal mikirin Nikos sedikit juga.",
+     "literal": "lagi tentang pekerjaan kamu-berpikir! kalau aku-adalah-dulu di-(sandang) tempat milikmu, akan aku-berpikir-dulu sedikit juga (sandang) Nikos."
+    },
+    {
+     "speaker": "Άννα:",
+     "text": "[Δήμητρα|DHI-mi-tra]! [Αν|An] [σε|sé] [άκουγε|A-ku-yé] [η|i] [κυρία|ki-RI-a] [Αγγελική|An-gé-li-KI], [θα|tha] [γελούσε|yé-LU-sé].",
+     "id": "Dhimitra! Kalau Bu Angeliki dengar kamu, dia pasti ketawa.",
+     "literal": "Dhimitra! kalau kamu ia-mendengar-dulu (sandang) nyonya Angeliki, akan ia-tertawa-dulu."
+    },
+    {
+     "speaker": "Σταύρος:",
+     "text": "[Θα|Tha] [γελούσε|yé-LU-sé], [αλλά|a-LA] [θα|tha] [συμφωνούσε|sim-fo-NU-sé] [κιόλας|KIO-las].",
+     "id": "Dia bakal ketawa, tapi juga bakal setuju.",
+     "literal": "akan ia-tertawa-dulu, tetapi akan ia-setuju-dulu juga."
+    }
+   ],
+   "notes": [
+    "⚠️ **Θα έκανα ≠ θα κάνω.** Bedanya cuma awalan dan ekor, tapi artinya jauh: *θα κάνω* = aku akan melakukannya (rencana), *θα έκανα* = aku akan melakukannya (seandainya — tapi tidak). Kalau Dhimitra berkata *θα φύγω από τη δουλειά*, Kostas perlu khawatir; *θα έφευγα* cuma mimpi.",
+    "**Αν κέρδιζα** — untuk hal yang secara teori mungkin tapi sangat kecil peluangnya (menang lotre), bahasa Yunani tetap memakai khayalan: menjaga jarak dari harapan. *Αν κερδίσω* (subjungtif) terdengar seperti orang yang yakin akan menang.",
+    "**Στη θέση μου / στη θέση σου** = \"di tempatku / di tempatmu\". *Τι θα έκανες στη θέση μου;* = Kalau jadi aku, kamu akan berbuat apa? *Αν ήμουν στη θέση σου…* = Kalau aku jadi kamu… — cara paling umum untuk memberi saran pribadi.",
+    "**Σκέφτομαι για / σκέφτομαι + akusatif** — *σκέφτεσαι για δουλειά* = kamu memikirkan (soal) pekerjaan; *σκέφτομαι τον Νίκο* = aku memikirkan Nikos. παρατατικός-nya *σκεφτόμουν*, seperti *κοιμόμουν*.",
+    "**Άκουγε, γελούσε, συμφωνούσε** — παρατατικός golongan -άω/-ώ memakai *-ούσα*: *γελάω → γελούσα*, *συμφωνώ → συμφωνούσα*. *Ακούω* punya dua bentuk yang sama-sama benar: *άκουγα* dan *άκουα*.",
+    "**Κιόλας** — kata lisan yang serba guna: \"juga, malah\" (*θα συμφωνούσε κιόλας* = malah dia bakal setuju) atau \"sudah (secepat itu)\" (*Έφυγες κιόλας;* = kamu sudah mau pergi?). Χριστουγεννιάτικο λαχείο dan Πρωτοχρονιάτικο λαχείο adalah lotre negara yang dijual di jalan-jalan menjelang akhir tahun."
+   ],
+   "grammars": [
+    {
+     "title": "Bentuk khayalan: tiga golongan",
+     "body": [
+      "Bentuk παρατατικός yang kamu pelajari di A2 dipakai utuh; cukup tambahkan *θα* di depannya. Awalan *έ-* muncul hanya kalau tekanan butuh suku tambahan (*έγραφα*, tapi *γράφαμε*)."
+     ],
+     "table": {
+      "head": [
+       "Orang",
+       "ΓΡΑΦΩ",
+       "ΜΙΛΑΩ",
+       "ΕΡΧΟΜΑΙ"
+      ],
+      "rows": [
+       [
+        "εγώ",
+        "θα έγραφα",
+        "θα μιλούσα",
+        "θα ερχόμουν"
+       ],
+       [
+        "εσύ",
+        "θα έγραφες",
+        "θα μιλούσες",
+        "θα ερχόσουν"
+       ],
+       [
+        "αυτός, αυτή",
+        "θα έγραφε",
+        "θα μιλούσε",
+        "θα ερχόταν"
+       ],
+       [
+        "εμείς",
+        "θα γράφαμε",
+        "θα μιλούσαμε",
+        "θα ερχόμασταν"
+       ],
+       [
+        "εσείς",
+        "θα γράφατε",
+        "θα μιλούσατε",
+        "θα ερχόσασταν"
+       ],
+       [
+        "αυτοί, αυτές",
+        "θα έγραφαν",
+        "θα μιλούσαν",
+        "θα έρχονταν"
+       ]
+      ]
+     },
+     "after": [
+      "Kata kerja tak beraturan tetap memakai παρατατικός-nya sendiri: *είμαι → θα ήμουν*, *έχω → θα είχα*, *ξέρω → θα ήξερα*, *λέω → θα έλεγα*, *τρώω → θα έτρωγα*."
+     ]
+    }
+   ]
+  }
+ ],
+ "sections": [
+  {
+   "title": "Mungkin atau khayalan?",
+   "blocks": [
+    {
+     "type": "p",
+     "text": "Setiap kalimat Indonesia di bawah bisa dibaca dua cara. Kolom tengah: penutur masih menganggapnya mungkin. Kolom kanan: penutur tahu itu tidak nyata (atau hampir mustahil)."
+    },
+    {
+     "type": "tabel",
+     "head": [
+      "Bahasa Indonesia",
+      "Mungkin terjadi",
+      "Khayalan sekarang"
+     ],
+     "rows": [
+      [
+       "Kalau hujan, aku di rumah.",
+       "*Αν βρέξει, θα μείνω σπίτι.*",
+       "*Αν έβρεχε, θα έμενα σπίτι.*"
+      ],
+      [
+       "Kalau aku punya uang, aku beli mobil.",
+       "*Αν έχω λεφτά, θα αγοράσω αυτοκίνητο.*",
+       "*Αν είχα λεφτά, θα αγόραζα αυτοκίνητο.*"
+      ],
+      [
+       "Kalau dia di sini, dia bantu kita.",
+       "*Αν είναι εδώ, θα μας βοηθήσει.*",
+       "*Αν ήταν εδώ, θα μας βοηθούσε.*"
+      ],
+      [
+       "Kalau kamu datang, kamu ketemu Nikos.",
+       "*Αν έρθεις, θα δεις τον Νίκο.*",
+       "*Αν ερχόσουν, θα έβλεπες τον Νίκο.*"
+      ],
+      [
+       "Kalau aku tahu, aku kasih tahu kamu.",
+       "*Αν μάθω, θα σου πω.*",
+       "*Αν ήξερα, θα σου έλεγα.*"
+      ],
+      [
+       "Kalau kita bisa, kita pergi.",
+       "*Αν μπορέσουμε, θα πάμε.*",
+       "*Αν μπορούσαμε, θα πηγαίναμε.*"
+      ]
+     ]
+    },
+    {
+     "type": "p",
+     "text": "Perhatikan baris terakhir di kolom tengah: *αν μάθω* (kalau aku nanti tahu), bukan *αν ξέρω*. Untuk masa depan, *μαθαίνω* (mengetahui, mendapat kabar) lebih wajar. Di kolom kanan *αν ήξερα* tidak punya pesaing."
+    }
+   ]
+  },
+  {
+   "title": "Berandai dan memberi saran",
+   "blocks": [
+    {
+     "type": "kotak",
+     "title": "Ungkapan siap pakai",
+     "items": [
+      "*Αν ήμουν στη θέση σου, θα…* — Kalau aku jadi kamu, aku akan…",
+      "*Στη θέση σου θα μιλούσα με τον Κώστα.* — Kalau jadi kamu, aku bicara dengan Kostas.",
+      "*Τι θα έκανες αν…;* — Apa yang akan kamu lakukan kalau…?",
+      "*Θα ήταν ωραία αν ερχόσουν κι εσύ.* — Pasti menyenangkan kalau kamu ikut juga.",
+      "*Θα μου άρεσε να…* — Aku ingin sekali… (harfiah: akan menyenangkan-ku)",
+      "*Αν μπορούσα, θα το έκανα με χαρά.* — Kalau bisa, dengan senang hati aku lakukan (penolakan halus)."
+     ]
+    },
+    {
+     "type": "p",
+     "text": "Kalimat terakhir adalah senjata penolakan yang sopan. Orang Yunani jarang menolak dengan *όχι* polos kepada teman; mereka membungkus penolakan dengan khayalan, seperti Ana: *Αν είχα χρόνο, θα ερχόμουν αμέσως.* Pendengar langsung paham bahwa jawabannya tidak — tanpa ada yang tersinggung."
+    }
+   ]
+  },
+  {
+   "title": "Meteora dalam lima fakta",
+   "blocks": [
+    {
+     "type": "list",
+     "items": [
+      "*Μετέωρα* berarti \"yang melayang di udara\" — nama untuk menara-menara batu raksasa di dekat kota Kalambaka (*Καλαμπάκα*), Thessalia, sekitar empat jam berkendara dari Athena.",
+      "Di puncak batu-batu itu berdiri biara-biara Ortodoks (*μονές* atau *μοναστήρια*) yang dibangun sejak abad ke-14; enam di antaranya masih berpenghuni.",
+      "Dulu para biarawan dan barang diangkat dengan jaring dan tali; sekarang ada tangga batu dan jalan aspal.",
+      "Pengunjung perempuan diminta memakai rok panjang dan bahu tertutup, laki-laki celana panjang. Kain penutup biasanya disediakan di pintu masuk.",
+      "Kawasan ini masuk daftar Warisan Dunia UNESCO. Kalau ke sana November, bawa jaket: kabut dan hawa dingin datang cepat."
+     ]
+    }
+   ]
+  }
+ ],
+ "vocab": [
+  {
+   "el": "το Σαββατοκύριακο",
+   "baca": "to Sa-va-to-KI-ri-a-ko",
+   "id": "akhir pekan"
+  },
+  {
+   "el": "παραδίδω",
+   "baca": "pa-ra-DHI-dho",
+   "id": "menyerahkan (*aor.* παρέδωσα)"
+  },
+  {
+   "el": "η αναφορά",
+   "baca": "i a-na-fo-RA",
+   "id": "laporan"
+  },
+  {
+   "el": "βοηθάω",
+   "baca": "vo-i-THA-o",
+   "id": "membantu (*παρατατικός* βοηθούσα)"
+  },
+  {
+   "el": "οδηγώ",
+   "baca": "o-dhi-GHO",
+   "id": "menyetir (*παρατατικός* οδηγούσα)"
+  },
+  {
+   "el": "κουρασμένος",
+   "baca": "ku-ra-SMÉ-nos",
+   "id": "lelah, capek (*κουρασμένη, κουρασμένο*)"
+  },
+  {
+   "el": "το χιλιόμετρο",
+   "baca": "to khi-LIO-mé-tro",
+   "id": "kilometer"
+  },
+  {
+   "el": "ο βράχος",
+   "baca": "o VRA-khos",
+   "id": "batu karang, tebing (*jamak* τα βράχια)"
+  },
+  {
+   "el": "η ομίχλη",
+   "baca": "i o-MI-khli",
+   "id": "kabut"
+  },
+  {
+   "el": "το μοναστήρι",
+   "baca": "to mo-na-STI-ri",
+   "id": "biara (*resmi* η μονή)"
+  },
+  {
+   "el": "η κορυφή",
+   "baca": "i ko-ri-FI",
+   "id": "puncak"
+  },
+  {
+   "el": "η εποχή",
+   "baca": "i é-po-KHI",
+   "id": "musim; zaman"
+  },
+  {
+   "el": "αλλάζω γνώμη",
+   "baca": "a-LA-zo GHNO-mi",
+   "id": "berubah pikiran"
+  },
+  {
+   "el": "σύμφωνοι",
+   "baca": "SIM-fo-ni",
+   "id": "setuju, sepakat (*harfiah* kita sepakat)"
+  },
+  {
+   "el": "το λαχείο",
+   "baca": "to la-KHI-o",
+   "id": "lotre, tiket lotre"
+  },
+  {
+   "el": "κερδίζω",
+   "baca": "kér-DHI-zo",
+   "id": "menang; mendapat untung (*παρατατικός* κέρδιζα)"
+  },
+  {
+   "el": "πλούσιος",
+   "baca": "PLU-sios",
+   "id": "kaya (*πλούσια, πλούσιο*)"
+  },
+  {
+   "el": "το σκάφος",
+   "baca": "to SKA-fos",
+   "id": "perahu, kapal kecil (*jamak* τα σκάφη)"
+  },
+  {
+   "el": "ψαρεύω",
+   "baca": "psa-RÉ-vo",
+   "id": "memancing, menangkap ikan (*παρατατικός* ψάρευα)"
+  },
+  {
+   "el": "η σχολή",
+   "baca": "i skho-LI",
+   "id": "sekolah (kejuruan), fakultas"
+  },
+  {
+   "el": "στη θέση μου",
+   "baca": "sti THÉ-si mu",
+   "id": "di tempatku, kalau jadi aku"
+  },
+  {
+   "el": "γελάω",
+   "baca": "yé-LA-o",
+   "id": "tertawa (*παρατατικός* γελούσα)"
+  },
+  {
+   "el": "συμφωνώ",
+   "baca": "sim-fo-NO",
+   "id": "setuju (*συμφωνώ με* + akusatif)"
+  },
+  {
+   "el": "κιόλας",
+   "baca": "KIO-las",
+   "id": "juga, malah; sudah (lisan)"
+  }
+ ],
+ "exercises": [
+  {
+   "prompt": "Terjemahkan ke bahasa Yunani (semua kalimat berupa khayalan tentang sekarang, kecuali nomor 6).",
+   "items": [
+    "Kalau aku punya waktu, aku akan ikut.",
+    "Kalau Dhimitra ada di sini, dia akan membantuku.",
+    "Kalau aku jadi kamu, aku akan tidur lebih awal.",
+    "Kalau kami kaya, kami akan membeli perahu.",
+    "Apa yang akan kamu lakukan kalau kamu menang lotre?",
+    "Kalau kamu berubah pikiran, telepon aku."
+   ]
+  },
+  {
+   "prompt": "Isi dengan bentuk yang tepat untuk khayalan sekarang (παρατατικός atau θα + παρατατικός).",
+   "items": [
+    "Αν ____ χρόνο, θα ερχόμουν. (έχω)",
+    "Αν ήμουν πλούσια, ____ ένα σπίτι στη θάλασσα. (αγοράζω)",
+    "Αν ο Νίκος ____ λιγότερο, θα ήταν πιο ήρεμος. (δουλεύω)",
+    "Αν μιλούσατε ελληνικά, ____ τα πάντα. (καταλαβαίνω)",
+    "Αν ____ πιο κοντά, θα σε έβλεπα πιο συχνά. (μένω, εσύ)",
+    "Αν η Δήμητρα ήταν εδώ, ____ μαζί μας. (έρχομαι)",
+    "Αν ____ τα Μετέωρα, δεν θα ήθελες να γυρίσεις. (βλέπω, εσύ)"
+   ]
+  },
+  {
+   "prompt": "Ubah syarat yang mungkin menjadi khayalan sekarang.",
+   "items": [
+    "Αν έχω λεφτά, θα ταξιδέψω.",
+    "Αν βρέξει, θα μείνουμε σπίτι.",
+    "Αν ο Σταύρος έρθει, θα γελάσουμε.",
+    "Αν μπορείς, θα με βοηθήσεις;",
+    "Αν είναι κοντά, θα πάμε με τα πόδια.",
+    "Αν ξέρω την απάντηση, θα σου την πω."
+   ]
+  },
+  {
+   "prompt": "Susun jadi kalimat yang benar.",
+   "items": [
+    "θα / αν / χρόνο / ερχόμουν / είχα",
+    "τι / έκανες / θα / στη θέση μου",
+    "ήμουν / πλούσια / αν / ταξίδευα / θα",
+    "θα / βοηθούσε / με / η Δήμητρα",
+    "δεν / γυρίσεις / θα / ήθελες / να"
+   ]
+  }
+ ],
+ "answers": [
+  "Αν είχα χρόνο, θα ερχόμουν. — Αν ήταν εδώ η Δήμητρα, θα με βοηθούσε. — Αν ήμουν στη θέση σου, θα κοιμόμουν νωρίτερα. — Αν ήμασταν πλούσιοι, θα αγοράζαμε ένα σκάφος. — Τι θα έκανες αν κέρδιζες το λαχείο; — Αν αλλάξεις γνώμη, πάρε με τηλέφωνο.",
+  "είχα — θα αγόραζα — δούλευε — θα καταλαβαίνατε — έμενες — θα ερχόταν — έβλεπες",
+  "Αν είχα λεφτά, θα ταξίδευα. — Αν έβρεχε, θα μέναμε σπίτι. — Αν ο Σταύρος ερχόταν, θα γελούσαμε. — Αν μπορούσες, θα με βοηθούσες; — Αν ήταν κοντά, θα πηγαίναμε με τα πόδια. — Αν ήξερα την απάντηση, θα σου την έλεγα.",
+  "Αν είχα χρόνο, θα ερχόμουν. — Τι θα έκανες στη θέση μου; — Αν ήμουν πλούσια, θα ταξίδευα. — Η Δήμητρα θα με βοηθούσε. — Δεν θα ήθελες να γυρίσεις."
+ ]
+}

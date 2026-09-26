@@ -1,0 +1,704 @@
+{
+ "title": "Diriku sendiri — refleksif & kebiasaan",
+ "title_target": "Φρόντισε τον εαυτό σου",
+ "goal": "Membicarakan diri sendiri dengan *τον εαυτό μου* dan *μόνος μου*, membedakan keduanya dari *ο ίδιος*, lalu menceritakan kebiasaan lama dengan *συνήθιζα να…* dan kebiasaan yang sudah berhenti dengan *δεν… πια*.",
+ "bekal": [
+  "memakai *ο εαυτός μου/σου/του…* sebagai objek dan mencocokkan kata miliknya dengan pelaku",
+  "memilih antara *μόνος μου* (tanpa bantuan, sendirian), *τον εαυτό μου* (diri sebagai sasaran) dan *ο ίδιος* (orangnya sendiri)",
+  "menceritakan kebiasaan lama dengan *συνήθιζα να* dan membedakannya dari *το συνήθισα* (aku sudah terbiasa)"
+ ],
+ "dialogs": [
+  {
+   "title": "ΔΙΑΛΟΓΟΣ 1 — Kamu bukan mesin",
+   "intro": "Sabtu, 13 Maret 2027, pukul sebelas pagi. Eleni mampir ke apartemen Ana di Pangrati membawa dua gelas *φρέντο* dan mendapati sahabatnya masih berwajah kusut. Perhatikan setiap kali kata **εαυτός** muncul — dan kata kecil apa yang menempel di belakangnya.",
+   "lines": [
+    {
+     "speaker": "Ελένη:",
+     "text": "[Άννα|A-na], [τι|ti] [ώρα|O-ra] [κοιμήθηκες|ki-MI-thi-kés] [χθες|khthés]; [Έχεις|É-khis] [μαύρους|MAV-rus] [κύκλους|KI-klus] [κάτω|KA-to] [από|a-PO] [τα|ta] [μάτια|MA-tia].",
+     "id": "Ana, semalam kamu tidur jam berapa? Ada lingkaran hitam di bawah matamu.",
+     "literal": "Ana, apa jam kamu-tidur-(lampau) kemarin? kamu-punya hitam-(jamak) lingkaran-lingkaran bawah dari (sandang) mata-mata."
+    },
+    {
+     "speaker": "Άννα:",
+     "text": "[Στις|Stis] [δύο|DHI-o]. [Έμεινα|É-mi-na] [στο|sto] [γραφείο|ghra-FI-o] [μέχρι|MÉ-khri] [τις|tis] [δέκα|DHÉ-ka] [και|ké] [μετά|mé-TA] [διάβαζα|DHIA-va-za] [έγγραφα|ÉN-gra-fa] [στο|sto] [σπίτι|SPI-ti].",
+     "id": "Jam dua. Aku di kantor sampai jam sepuluh, terus di rumah masih baca-baca dokumen.",
+     "literal": "pada-(sandang) dua. aku-tinggal-(lampau) di-(sandang) kantor sampai (sandang) sepuluh dan sesudahnya aku-sedang-membaca dokumen-dokumen di-(sandang) rumah."
+    },
+    {
+     "speaker": "Ελένη:",
+     "text": "[Κάθε|KA-thé] [μέρα|MÉ-ra] [το|to] [ίδιο|I-dhio]! [Δεν|Dhén] [σκέφτεσαι|SKÉF-té-sé] [καθόλου|ka-THO-lu] [τον|ton] [εαυτό|é-af-TO] [σου|su].",
+     "id": "Tiap hari begitu terus! Kamu sama sekali nggak mikirin dirimu sendiri.",
+     "literal": "setiap hari (sandang) sama! tidak kamu-memikirkan sama-sekali (sandang) diri milikmu."
+    },
+    {
+     "speaker": "Άννα:",
+     "text": "[Έχω|É-kho] [πολλή|po-LI] [δουλειά|dhu-LIA]. [Και|Ké] [θέλω|THÉ-lo] [να|na] [τα|ta] [κάνω|KA-no] [όλα|O-la] [μόνη|MO-ni] [μου|mu].",
+     "id": "Kerjaanku banyak. Dan aku mau mengerjakan semuanya sendiri.",
+     "literal": "aku-punya banyak kerja. dan aku-mau agar itu-semua aku-kerjakan semua sendirian-(pr) milikku."
+    },
+    {
+     "speaker": "Ελένη:",
+     "text": "[Γιατί|Ya-TI] [μόνη|MO-ni] [σου|su]; [Έχεις|É-khis] [συναδέλφους|si-na-DHÉL-fus]. [Ζήτα|ZI-ta] [βοήθεια|vo-I-thi-a]!",
+     "id": "Kenapa sendirian? Kamu punya rekan kerja. Minta tolong dong!",
+     "literal": "kenapa sendirian-(pr) milikmu? kamu-punya rekan-rekan. mintalah bantuan!"
+    },
+    {
+     "speaker": "Άννα:",
+     "text": "[Δεν|Dhén] [θέλω|THÉ-lo] [να|na] [σκεφτούν|skéf-TUN] [ότι|O-ti] [δεν|dhén] [μπορώ|bo-RO].",
+     "id": "Aku nggak mau mereka mengira aku nggak mampu.",
+     "literal": "tidak aku-mau agar mereka-berpikir bahwa tidak aku-bisa."
+    },
+    {
+     "speaker": "Ελένη:",
+     "text": "[Άννα|A-na], [ούτε|U-té] [ο|o] [ίδιος|I-dhios] [ο|o] [Κώστας|KO-stas] [τα|ta] [κάνει|KA-ni] [όλα|O-la] [μόνος|MO-nos] [του|tu]!",
+     "id": "Ana, Pak Kostas sendiri pun nggak mengerjakan semuanya sendirian!",
+     "literal": "Ana, bahkan-tidak (sandang) sama (sandang) Kostas itu-semua dia-kerjakan semua sendirian milik-dia!"
+    },
+    {
+     "speaker": "Άννα:",
+     "text": "[Έχεις|É-khis] [δίκιο|DHI-kio]. [Αλλά|A-LA] [δεν|dhén] [έχω|É-kho] [χρόνο|KHRO-no] [ούτε|U-té] [να|na] [μαγειρέψω|ma-yi-RÉ-pso].",
+     "id": "Kamu benar. Tapi masak saja aku nggak sempat.",
+     "literal": "kamu-punya kebenaran. tetapi tidak aku-punya waktu bahkan-tidak agar aku-memasak."
+    },
+    {
+     "speaker": "Ελένη:",
+     "text": "[Άκου|A-ku] [με|mé]. [Από|A-PO] [αύριο|AV-ri-o] [θα|tha] [φροντίζεις|fron-DI-zis] [τον|ton] [εαυτό|é-af-TO] [σου|su]. [Πρώτα|PRO-ta], [ύπνος|I-pnos] [πριν|prin] [από|a-PO] [τις|tis] [δώδεκα|DHO-dhé-ka].",
+     "id": "Dengar ya. Mulai besok kamu rutin merawat dirimu. Pertama, tidur sebelum jam dua belas.",
+     "literal": "dengarlah aku-(objek). dari besok akan kamu-merawat (terus) (sandang) diri milikmu. pertama, tidur sebelum dari (sandang) dua-belas."
+    },
+    {
+     "speaker": "Άννα:",
+     "text": "[Και|Ké] [μετά|mé-TA]; [Μιλάς|Mi-LAS] [σαν|san] [τη|ti] [μαμά|ma-MA] [μου|mu]!",
+     "id": "Terus? Kamu ngomong kayak ibuku!",
+     "literal": "dan sesudahnya? kamu-bicara seperti (sandang) mama milikku!"
+    },
+    {
+     "speaker": "Ελένη:",
+     "text": "[Μετά|Mé-TA], [περπάτημα|pér-PA-ti-ma] [κάθε|KA-thé] [πρωί|pro-I]. [Έλα|É-la] [μαζί|ma-ZI] [μου|mu] [στο|sto] [Άλσος|AL-sos], [είναι|I-né] [πιο|pio] [ωραία|o-RÉ-a] [με|mé] [παρέα|pa-RÉ-a].",
+     "id": "Terus, jalan kaki tiap pagi. Ikut aku ke taman Alsos, lebih asyik kalau ada teman.",
+     "literal": "sesudahnya, jalan-kaki setiap pagi. datanglah bersama aku ke-(sandang) hutan-kota, ia-adalah lebih indah dengan teman-teman."
+    },
+    {
+     "speaker": "Άννα:",
+     "text": "[Ξέρεις|KSÉ-ris]; [Χθες|Khthés] [κοιτάχτηκα|ki-TAKH-ti-ka] [στον|ston] [καθρέφτη|ka-THRÉF-ti] [και|ké] [δεν|dhén] [αναγνώρισα|a-na-GHNO-ri-sa] [τον|ton] [εαυτό|é-af-TO] [μου|mu].",
+     "id": "Tahu nggak? Kemarin aku bercermin dan nggak mengenali diriku sendiri.",
+     "literal": "kamu-tahu? kemarin aku-melihat-diri-(lampau) di-(sandang) cermin dan tidak aku-mengenali-(lampau) (sandang) diri milikku."
+    },
+    {
+     "speaker": "Ελένη:",
+     "text": "[Γι|Yi]' [αυτό|af-TO] [σου|su] [τα|ta] [λέω|LÉ-o]. [Φρόντισε|FRON-di-sé] [τον|ton] [εαυτό|é-af-TO] [σου|su], [Άννα|A-na]. [Δεν|Dhén] [είσαι|I-sé] [μηχανή|mi-kha-NI].",
+     "id": "Makanya aku bilang begini. Rawat dirimu, Ana. Kamu bukan mesin.",
+     "literal": "untuk ini kepadamu itu-semua aku-katakan. rawatlah (sandang) diri milikmu, Ana. tidak kamu-adalah mesin."
+    },
+    {
+     "speaker": "Άννα:",
+     "text": "[Εντάξει|É-DA-ksi], [το|to] [υπόσχομαι|i-PO-skho-mé]. [Στον|Ston] [εαυτό|é-af-TO] [μου|mu], [όχι|O-khi] [σε|sé] [σένα|SÉ-na]!",
+     "id": "Oke, aku janji. Pada diriku sendiri, bukan padamu!",
+     "literal": "baiklah, itu aku-berjanji. kepada-(sandang) diri milikku, bukan kepada kamu!"
+    }
+   ],
+   "notes": [
+    "**Τον εαυτό σου** — \"dirimu\". **Εαυτός** adalah kata benda maskulin biasa: selalu bersandang, berubah menurut kasus (*ο εαυτός, του εαυτού, τον εαυτό*), dan diikuti kata milik yang **mengikuti pelakunya**: *φροντίζω τον εαυτό μου, φροντίζεις τον εαυτό σου, φροντίζει τον εαυτό της*. Jenisnya tetap maskulin walaupun pelakunya perempuan — Ana tetap berkata *τον εαυτό μου*.",
+    "⚠️ **Satu kata \"sendiri\", tiga kata Yunani.** Bahasa Indonesia menumpuk semuanya pada *sendiri*; bahasa Yunani memisahkannya dengan tegas. **Μόνη μου** = tanpa bantuan, sendirian (*τα κάνω όλα μόνη μου*). **Τον εαυτό μου** = diriku sebagai sasaran perbuatan (*δεν αναγνώρισα τον εαυτό μου*). **Ο ίδιος** = orangnya sendiri, bukan orang lain (*ο ίδιος ο Κώστας*). Salah pilih langsung mengubah arti: *φροντίζω μόνη μου* berarti \"aku mengurus (sesuatu) tanpa bantuan\", bukan \"aku merawat diri\".",
+    "**Μόνος μου berubah dua kali.** Kata sifatnya ikut jenis dan jumlah pelaku (*μόνος, μόνη, μόνο; μόνοι, μόνες*), kata miliknya ikut orang (*μου, σου, του, της…*). Eleni bertanya kepada Ana *μόνη σου;*, lalu berkata tentang Kostas *μόνος του*. Tanpa kata milik, *μόνος* berarti \"sendirian, kesepian\": *Είναι μόνος.* = dia sendirian, tak punya siapa-siapa.",
+    "**Ούτε ο ίδιος ο Κώστας** — dua sandang berturut-turut bukan salah ketik. *Ο ίδιος* (harfiah \"yang sama\") ditaruh di depan nama bersandang untuk menekankan \"orangnya sendiri, bahkan dia\": *Ήρθε ο ίδιος ο διευθυντής.* = direkturnya sendiri yang datang. **Ούτε** = bahkan… pun tidak; *ούτε να μαγειρέψω* = masak pun tidak sempat.",
+    "**Κοιτάχτηκα στον καθρέφτη** — banyak kata kerja **-ομαι** sudah berarti \"melakukan pada diri sendiri\": *κοιτάζω* (melihat) → *κοιτάζομαι* (bercermin). Karena itu orang Yunani berkata *πλένομαι* (mandi, membasuh diri), bukan *πλένω τον εαυτό μου*. **Εαυτός** dipakai kalau tidak ada kata kerja -ομαι yang cocok, atau kalau \"diri\" itu sendiri yang ingin ditekankan — seperti *δεν αναγνώρισα τον εαυτό μου*.",
+    "**Θα φροντίζεις** lalu **φρόντισε** — Eleni memakai masa depan berulang (unit 9) untuk kebiasaan baru yang harus dijaga setiap hari, lalu perintah aorist *φρόντισε* sebagai seruan tegas sekali ucap. **Ζήτα** adalah perintah kini dari *ζητάω*: \"mintalah (bantuan) setiap kali perlu\"."
+   ],
+   "grammars": [
+    {
+     "title": "Kata ganti diri untuk semua orang",
+     "body": [
+      "*Εαυτός* diperlakukan seperti kata benda: sandangnya ikut kasus, kata miliknya ikut pelaku. Bentuk yang paling sering adalah akusatif (*τον εαυτό*) sebagai objek, atau sesudah kata depan: *στον εαυτό μου, με τον εαυτό μου, για τον εαυτό μου*."
+     ],
+     "table": {
+      "head": [
+       "Pelaku",
+       "Objek",
+       "Contoh",
+       "Arti"
+      ],
+      "rows": [
+       [
+        "*εγώ*",
+        "*τον εαυτό μου*",
+        "*Αγαπώ τον εαυτό μου.*",
+        "Aku menyayangi diriku."
+       ],
+       [
+        "*εσύ*",
+        "*τον εαυτό σου*",
+        "*Φρόντισε τον εαυτό σου.*",
+        "Rawat dirimu."
+       ],
+       [
+        "*αυτός*",
+        "*τον εαυτό του*",
+        "*Μιλάει στον εαυτό του.*",
+        "Dia bicara pada dirinya sendiri."
+       ],
+       [
+        "*αυτή*",
+        "*τον εαυτό της*",
+        "*Δεν σκέφτεται τον εαυτό της.*",
+        "Dia tak memikirkan dirinya."
+       ],
+       [
+        "*εμείς*",
+        "*τον εαυτό μας*",
+        "*Γνωρίζουμε τον εαυτό μας.*",
+        "Kami mengenal diri kami."
+       ],
+       [
+        "*εσείς*",
+        "*τον εαυτό σας*",
+        "*Προσέξτε τον εαυτό σας.*",
+        "Jaga diri Anda (kalian)."
+       ],
+       [
+        "*αυτοί, αυτές*",
+        "*τον εαυτό τους*",
+        "*Πιστεύουν στον εαυτό τους.*",
+        "Mereka percaya pada diri sendiri."
+       ]
+      ]
+     },
+     "after": [
+      "⚠️ Untuk pelaku jamak, bentuk tunggal *τον εαυτό μας/σας/τους* jauh lebih umum daripada jamak *τους εαυτούς μας*.",
+      "Genitif *του εαυτού μου* muncul dalam ungkapan tetap: *Είμαι κύριος του εαυτού μου.* = aku tuan atas diriku sendiri."
+     ]
+    }
+   ]
+  },
+  {
+   "title": "ΔΙΑΛΟΓΟΣ 2 — Dulu aku begadang",
+   "intro": "Minggu, 14 Maret 2027, pukul delapan pagi di Άλσος Παγκρατίου, taman kecil di dekat rumah Ana. Ana menepati janjinya pada diri sendiri — dan berpapasan dengan Nikos yang sedang lari pagi. Perhatikan *συνήθιζα* (dulu biasa) dan *συνήθισα* (sudah terbiasa): beda satu huruf, beda makna.",
+   "lines": [
+    {
+     "speaker": "Νίκος:",
+     "text": "[Εσύ|É-SI] [στο|sto] [Άλσος|AL-sos] [στις|stis] [οκτώ|ok-TO] [το|to] [πρωί|pro-I]; [Δεν|Dhén] [το|to] [πιστεύω|pi-STÉ-vo]!",
+     "id": "Kamu di taman jam delapan pagi? Nggak percaya aku!",
+     "literal": "kamu di-(sandang) hutan-kota pada-(sandang) delapan (sandang) pagi? tidak itu aku-percaya!"
+    },
+    {
+     "speaker": "Άννα:",
+     "text": "[Η|I] [Ελένη|É-LÉ-ni] [με|mé] [έπεισε|É-pi-sé]. [Εσύ|É-SI] [έρχεσαι|ÉR-khé-sé] [συχνά|si-KHNA] [εδώ|é-DHO];",
+     "id": "Eleni yang membujukku. Kamu sering ke sini?",
+     "literal": "(sandang) Eleni aku-(objek) dia-meyakinkan-(lampau). kamu kamu-datang sering di-sini?"
+    },
+    {
+     "speaker": "Νίκος:",
+     "text": "[Τώρα|TO-ra] [κάθε|KA-thé] [Κυριακή|Ki-ria-KI]. [Παλιά|Pa-LIA] [όμως|O-mos] [συνήθιζα|si-NI-thi-za] [να|na] [κοιμάμαι|ki-MA-mé] [μέχρι|MÉ-khri] [το|to] [μεσημέρι|mé-si-MÉ-ri].",
+     "id": "Sekarang tiap Minggu. Tapi dulu aku biasa tidur sampai siang.",
+     "literal": "sekarang setiap Minggu. dulu tetapi aku-biasa-(lampau berulang) agar aku-tidur sampai (sandang) tengah-hari."
+    },
+    {
+     "speaker": "Άννα:",
+     "text": "[Εσύ|É-SI]; [Αφού|A-FU] [είσαι|I-sé] [πάντα|PAN-da] [στην|stin] [ώρα|O-ra] [σου|su]!",
+     "id": "Kamu? Kan kamu selalu tepat waktu!",
+     "literal": "kamu? kan kamu-adalah selalu pada-(sandang) jam milikmu!"
+    },
+    {
+     "speaker": "Νίκος:",
+     "text": "[Όταν|O-tan] [ήμουν|I-mun] [φοιτητής|fi-ti-TIS], [ήμουν|I-mun] [άλλος|A-los] [άνθρωπος|AN-thro-pos]. [Συνήθιζα|Si-NI-thi-za] [να|na] [ξενυχτάω|ksé-nikh-TA-o] [κάθε|KA-thé] [βράδυ|VRA-dhi].",
+     "id": "Waktu masih mahasiswa, aku orang yang lain. Aku biasa begadang tiap malam.",
+     "literal": "ketika aku-adalah-(lampau) mahasiswa, aku-adalah-(lampau) lain manusia. aku-biasa-(lampau berulang) agar aku-begadang setiap malam."
+    },
+    {
+     "speaker": "Άννα:",
+     "text": "[Και|Ké] [τι|ti] [σε|sé] [άλλαξε|A-la-ksé];",
+     "id": "Terus apa yang mengubahmu?",
+     "literal": "dan apa kamu-(objek) ia-mengubah-(lampau)?"
+    },
+    {
+     "speaker": "Νίκος:",
+     "text": "[Η|I] [πρώτη|PRO-ti] [μου|mu] [δουλειά|dhu-LIA]. [Έπρεπε|É-pré-pé] [να|na] [ξυπνάω|ksi-PNA-o] [στις|stis] [έξι|É-ksi] [και|ké] [σιγά|si-GHA] [σιγά|si-GHA] [το|to] [συνήθισα|si-NI-thi-sa].",
+     "id": "Pekerjaan pertamaku. Aku harus bangun jam enam, dan pelan-pelan jadi terbiasa.",
+     "literal": "(sandang) pertama milikku kerja. harus-(lampau) agar aku-bangun (terus) pada-(sandang) enam dan pelan pelan itu aku-terbiasa-(lampau)."
+    },
+    {
+     "speaker": "Άννα:",
+     "text": "[Στην|Stin] [Ινδονησία|In-dho-ni-SI-a] [συνήθιζα|si-NI-thi-za] [να|na] [τρώω|TRO-o] [πρωινό|pro-i-NO] [με|mé] [όλη|O-li] [την|tin] [οικογένεια|i-ko-YÉ-ni-a]. [Εδώ|É-DHO] [δεν|dhén] [τρώω|TRO-o] [πια|pia].",
+     "id": "Di Indonesia aku biasa sarapan bareng seluruh keluarga. Di sini aku sudah nggak sarapan lagi.",
+     "literal": "di-(sandang) Indonesia aku-biasa-(lampau berulang) agar aku-makan sarapan dengan seluruh (sandang) keluarga. di-sini tidak aku-makan lagi."
+    },
+    {
+     "speaker": "Νίκος:",
+     "text": "[Αυτό|Af-TO] [αλλάζει|a-LA-zi] [από|a-PO] [σήμερα|SI-mé-ra]. [Πάμε|PA-mé] [για|ya] [πρωινό|pro-i-NO] [στην|stin] [πλατεία|pla-TI-a];",
+     "id": "Itu berubah mulai hari ini. Yuk sarapan di alun-alun?",
+     "literal": "ini berubah dari hari-ini. kita-pergi untuk sarapan di-(sandang) alun-alun?"
+    },
+    {
+     "speaker": "Άννα:",
+     "text": "[Μόνο|MO-no] [αν|an] [πληρώσω|pli-RO-so] [εγώ|é-GHO]. [Πέρσι|PÉR-si] [πλήρωνες|PLI-ro-nés] [πάντα|PAN-da] [εσύ|é-SI]!",
+     "id": "Asal aku yang bayar. Tahun lalu selalu kamu yang bayar!",
+     "literal": "hanya jika aku-membayar aku. tahun-lalu kamu-membayar-(lampau berulang) selalu kamu!"
+    },
+    {
+     "speaker": "Νίκος:",
+     "text": "[Εντάξει|É-DA-ksi], [πλήρωσε|PLI-ro-sé] [εσύ|é-SI]. [Αλλά|A-LA] [τον|ton] [καφέ|ka-FÉ] [τον|ton] [κερνάω|kér-NA-o] [εγώ|é-GHO]!",
+     "id": "Oke, kamu yang bayar. Tapi kopinya aku yang traktir!",
+     "literal": "baiklah, bayarlah kamu. tetapi (sandang) kopi itu-(objek) aku-mentraktir aku!"
+    }
+   ],
+   "notes": [
+    "**Συνήθιζα να + bentuk kini** = \"dulu aku biasa…\". *Συνήθιζα* sendiri adalah bentuk lampau berulang (παρατατικός) dari *συνηθίζω*; kata kerja sesudah *να* memakai batang **kini** karena kebiasaan itu berulang: *συνήθιζα να κοιμάμαι, συνήθιζα να ξενυχτάω*. Bentuk *συνήθιζα να ξενυχτήσω* dengan batang aorist terdengar salah.",
+    "⚠️ **Συνήθιζα ≠ συνήθισα.** *Συνήθιζα να…* (παρατατικός) = dulu biasa melakukan. *Το συνήθισα* (αόριστος) = aku sudah jadi terbiasa dengannya. Nikos memakai keduanya: dulu biasa begadang, lalu *σιγά σιγά το συνήθισα* — pelan-pelan terbiasa bangun pagi. Dengan kata benda dipakai *σε*: *Συνήθισα στο κρύο.* = aku sudah terbiasa dengan dingin.",
+    "**Παρατατικός saja sudah cukup.** *Πέρσι πλήρωνες πάντα εσύ* tidak membutuhkan *συνήθιζα*: bentuk lampau berulang (unit 12) sendiri sudah berarti \"dulu biasanya\". *Συνήθιζα να* hanya menambah tekanan pada kata \"kebiasaan\". Keduanya benar: *Παλιά ξενυχτούσα* = *Παλιά συνήθιζα να ξενυχτάω*.",
+    "**Δεν… πια** = \"tidak… lagi\": *Εδώ δεν τρώω πια.* ⚠️ Jangan terjemahkan \"lagi\" di sini dengan *πάλι*: *πάλι* berarti \"sekali lagi, kembali terjadi\" (*Ήρθε πάλι.* = dia datang lagi), sedangkan \"sudah tidak… lagi\" selalu *δεν… πια*.",
+    "**Αφού** di awal seruan = \"kan…!\", menunjuk hal yang sudah jelas bagi kedua pihak: *Αφού είσαι πάντα στην ώρα σου!* Di tengah kalimat artinya \"karena, toh\": *Μείνε, αφού βρέχει.* **Στην ώρα μου/σου** = tepat waktu, lagi-lagi dengan kata milik yang ikut orangnya.",
+    "**Τον καφέ τον κερνάω εγώ** — objek disebut dua kali (*τον καφέ… τον*) karena ditaruh di depan untuk penekanan: \"kalau kopinya, aku yang traktir\". **Κερνάω** = mentraktir, kata kunci budaya kafe Yunani; *Κερνάει το μαγαζί.* = gratis dari pemilik kedai."
+   ],
+   "grammars": [
+    {
+     "title": "Kebiasaan dulu dan sekarang",
+     "body": [
+      "Kata kerja *συνηθίζω* punya dua arti: \"biasa melakukan\" (dengan *να*) dan \"menjadi terbiasa\" (dengan objek atau *σε*). Kalanya yang menentukan arti mana yang dimaksud."
+     ],
+     "table": {
+      "head": [
+       "Pola",
+       "Contoh",
+       "Arti"
+      ],
+      "rows": [
+       [
+        "lampau berulang saja",
+        "*Παλιά ξενυχτούσα.*",
+        "Dulu aku (biasa) begadang."
+       ],
+       [
+        "*συνήθιζα να* + bentuk kini",
+        "*Συνήθιζα να ξενυχτάω.*",
+        "Dulu aku biasa begadang."
+       ],
+       [
+        "*δεν… πια*",
+        "*Δεν ξενυχτάω πια.*",
+        "Aku sudah tidak begadang lagi."
+       ],
+       [
+        "*συνήθισα* (αόριστος)",
+        "*Το συνήθισα.*",
+        "Aku sudah terbiasa (dengan itu)."
+       ],
+       [
+        "*συνηθίζω να* + bentuk kini",
+        "*Συνηθίζω να περπατάω.*",
+        "(Sekarang) aku biasa jalan kaki."
+       ],
+       [
+        "*συνήθως*",
+        "*Συνήθως τρώω στις δύο.*",
+        "Biasanya aku makan jam dua."
+       ]
+      ]
+     },
+     "after": [
+      "⚠️ Sesudah *συνήθιζα να* selalu bentuk kini: *να πηγαίνω, να τρώω, να γράφω* — kebiasaan itu berulang, jadi aspeknya berulang."
+     ]
+    }
+   ]
+  }
+ ],
+ "sections": [
+  {
+   "title": "Satu kata sendiri, tiga kata Yunani",
+   "blocks": [
+    {
+     "type": "p",
+     "text": "Setiap kali kamu ingin berkata \"sendiri\", tanyakan dulu: *tanpa bantuan orang lain?* → *μόνος μου*. *Diri sebagai sasaran perbuatan?* → *τον εαυτό μου*. *Orangnya langsung, bukan wakilnya?* → *ο ίδιος*. Atau jangan-jangan sudah ada kata kerja -ομαι yang memuat arti itu?"
+    },
+    {
+     "type": "tabel",
+     "head": [
+      "Bahasa Indonesia",
+      "Bahasa Yunani",
+      "Yang dipakai"
+     ],
+     "rows": [
+      [
+       "Aku tinggal sendiri.",
+       "*Μένω μόνη μου.*",
+       "*μόνος μου* — tanpa orang lain"
+      ],
+      [
+       "Aku memperbaikinya sendiri.",
+       "*Το έφτιαξα μόνος μου.*",
+       "*μόνος μου* — tanpa bantuan"
+      ],
+      [
+       "Anak itu makan sendiri.",
+       "*Το παιδί τρώει μόνο του.*",
+       "netral: *μόνο του*"
+      ],
+      [
+       "Pintunya terbuka sendiri.",
+       "*Η πόρτα άνοιξε μόνη της.*",
+       "*η πόρτα* feminin: *μόνη της*"
+      ],
+      [
+       "Jangan salahkan dirimu sendiri.",
+       "*Μην κατηγορείς τον εαυτό σου.*",
+       "*τον εαυτό σου* — sasaran"
+      ],
+      [
+       "Dia bicara pada dirinya sendiri.",
+       "*Μιλάει στον εαυτό της.*",
+       "*στον εαυτό της* — sesudah kata depan"
+      ],
+      [
+       "Menterinya sendiri yang datang.",
+       "*Ήρθε ο ίδιος ο υπουργός.*",
+       "*ο ίδιος* — orangnya langsung"
+      ],
+      [
+       "Aku sendiri tidak tahu.",
+       "*Εγώ η ίδια δεν ξέρω.*",
+       "*ο ίδιος/η ίδια* — penekanan pelaku"
+      ],
+      [
+       "Aku sudah mandi.",
+       "*Πλύθηκα.*",
+       "kata kerja *-ομαι*, tanpa *εαυτός*"
+      ]
+     ]
+    },
+    {
+     "type": "kotak",
+     "title": "Deret lengkap: sendirian",
+     "items": [
+      "*μόνος μου, μόνος σου, μόνος του* — laki-laki",
+      "*μόνη μου, μόνη σου, μόνη της* — perempuan",
+      "*μόνο του* — anak atau benda netral: *Το φως έσβησε μόνο του.* (lampunya mati sendiri)",
+      "*μόνοι μας, μόνοι σας, μόνοι τους* — jamak; kalau semuanya perempuan: *μόνες μας*"
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Kata kerja yang sudah memantul ke diri",
+   "blocks": [
+    {
+     "type": "p",
+     "text": "Kegiatan pagi hari hampir semuanya memakai kata kerja -ομαι. Kalau kamu menambahkan *τον εαυτό μου* pada kata kerja ini, kalimatnya jadi dobel dan terdengar aneh."
+    },
+    {
+     "type": "tabel",
+     "head": [
+      "Aktif",
+      "Arti",
+      "Bentuk -ΟΜΑΙ",
+      "Arti"
+     ],
+     "rows": [
+      [
+       "*πλένω*",
+       "mencuci",
+       "*πλένομαι*",
+       "mandi, membasuh diri"
+      ],
+      [
+       "*ντύνω*",
+       "memakaikan baju",
+       "*ντύνομαι*",
+       "berpakaian"
+      ],
+      [
+       "*ξυρίζω*",
+       "mencukur",
+       "*ξυρίζομαι*",
+       "bercukur"
+      ],
+      [
+       "*χτενίζω*",
+       "menyisir",
+       "*χτενίζομαι*",
+       "menyisir rambut sendiri"
+      ],
+      [
+       "*κοιτάζω*",
+       "melihat",
+       "*κοιτάζομαι*",
+       "bercermin"
+      ],
+      [
+       "*ετοιμάζω*",
+       "menyiapkan",
+       "*ετοιμάζομαι*",
+       "bersiap-siap"
+      ],
+      [
+       "*σκουπίζω*",
+       "menyapu, mengelap",
+       "*σκουπίζομαι*",
+       "mengeringkan badan"
+      ],
+      [
+       "*βάφω*",
+       "mengecat",
+       "*βάφομαι*",
+       "berdandan"
+      ]
+     ]
+    },
+    {
+     "type": "kotak",
+     "title": "Kapan kata diri tetap dipakai",
+     "items": [
+      "Kalau tidak ada bentuk -ομαι: *φροντίζω τον εαυτό μου, αγαπώ τον εαυτό μου, πιστεύω στον εαυτό μου*.",
+      "Kalau ingin menekankan diri itu: *Κοιτάζω τον εαυτό μου στον καθρέφτη* terasa lebih sadar daripada *κοιτάζομαι*.",
+      "⚠️ Jangan menggabungkan keduanya: *πλένομαι τον εαυτό μου* salah."
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Dulu dan sekarang: kata keterangan kebiasaan",
+   "blocks": [
+    {
+     "type": "p",
+     "text": "Kata-kata berikut membuat cerita kebiasaan jadi hidup. Letaknya bebas, tetapi paling sering di awal kalimat atau tepat sesudah kata kerja."
+    },
+    {
+     "type": "tabel",
+     "head": [
+      "Bahasa Yunani",
+      "Arti"
+     ],
+     "rows": [
+      [
+       "*πάντα*",
+       "selalu"
+      ],
+      [
+       "*συνήθως*",
+       "biasanya"
+      ],
+      [
+       "*συχνά*",
+       "sering"
+      ],
+      [
+       "*κάθε μέρα, κάθε Κυριακή*",
+       "setiap hari, setiap Minggu"
+      ],
+      [
+       "*καμιά φορά*",
+       "kadang-kadang"
+      ],
+      [
+       "*σπάνια*",
+       "jarang"
+      ],
+      [
+       "*ποτέ* (dengan *δεν*)",
+       "tidak pernah"
+      ],
+      [
+       "*παλιά, τότε*",
+       "dulu, waktu itu"
+      ],
+      [
+       "*δεν… πια*",
+       "tidak… lagi"
+      ],
+      [
+       "*ακόμα*",
+       "masih"
+      ]
+     ]
+    },
+    {
+     "type": "kotak",
+     "title": "Dulu begitu, sekarang begini",
+     "items": [
+      "*Παλιά ξενυχτούσα, τώρα κοιμάμαι νωρίς.* — Dulu aku begadang, sekarang tidur cepat.",
+      "*Συνήθιζα να πίνω τρεις καφέδες, τώρα πίνω έναν.* — Dulu aku biasa minum tiga kopi, sekarang satu.",
+      "*Δεν καπνίζω πια.* — Aku sudah tidak merokok lagi.",
+      "*Ακόμα μένω στο Παγκράτι.* — Aku masih tinggal di Pangrati."
+     ]
+    }
+   ]
+  }
+ ],
+ "vocab": [
+  {
+   "el": "ο εαυτός",
+   "baca": "o é-af-TOS",
+   "id": "diri (*τον εαυτό μου* = diriku)"
+  },
+  {
+   "el": "μόνος, μόνη, μόνο",
+   "baca": "MO-nos, MO-ni, MO-no",
+   "id": "sendirian (*μόνος μου* = sendiri, tanpa bantuan)"
+  },
+  {
+   "el": "ο ίδιος, η ίδια, το ίδιο",
+   "baca": "o I-dhios, i I-dhia, to I-dhio",
+   "id": "sama; (orang)nya sendiri (*ο ίδιος ο Κώστας*)"
+  },
+  {
+   "el": "φροντίζω",
+   "baca": "fron-DI-zo",
+   "id": "merawat, mengurus (*φρόντισα*)"
+  },
+  {
+   "el": "κοιμάμαι",
+   "baca": "ki-MA-mé",
+   "id": "tidur (*κοιμήθηκα*)"
+  },
+  {
+   "el": "ο κύκλος",
+   "baca": "o KI-klos",
+   "id": "lingkaran"
+  },
+  {
+   "el": "ο συνάδελφος",
+   "baca": "o si-NA-dhél-fos",
+   "id": "rekan kerja (perempuan: *η συνάδελφος*)"
+  },
+  {
+   "el": "ζητάω",
+   "baca": "zi-TA-o",
+   "id": "meminta (*ζήτησα*; perintah *ζήτα*)"
+  },
+  {
+   "el": "η βοήθεια",
+   "baca": "i vo-I-thi-a",
+   "id": "bantuan"
+  },
+  {
+   "el": "η μηχανή",
+   "baca": "i mi-kha-NI",
+   "id": "mesin; sepeda motor"
+  },
+  {
+   "el": "ο καθρέφτης",
+   "baca": "o ka-THRÉF-tis",
+   "id": "cermin"
+  },
+  {
+   "el": "κοιτάζομαι",
+   "baca": "ki-TA-zo-mé",
+   "id": "bercermin, melihat diri (*κοιτάχτηκα*)"
+  },
+  {
+   "el": "αναγνωρίζω",
+   "baca": "a-na-ghno-RI-zo",
+   "id": "mengenali (*αναγνώρισα*)"
+  },
+  {
+   "el": "υπόσχομαι",
+   "baca": "i-PO-skho-mé",
+   "id": "berjanji (*υποσχέθηκα*)"
+  },
+  {
+   "el": "το περπάτημα",
+   "baca": "to pér-PA-ti-ma",
+   "id": "jalan kaki (sebagai kegiatan)"
+  },
+  {
+   "el": "η παρέα",
+   "baca": "i pa-RÉ-a",
+   "id": "teman-teman yang berkumpul; ditemani"
+  },
+  {
+   "el": "πείθω",
+   "baca": "PI-tho",
+   "id": "meyakinkan, membujuk (*έπεισα*)"
+  },
+  {
+   "el": "συνηθίζω",
+   "baca": "si-ni-THI-zo",
+   "id": "biasa (melakukan); menjadi terbiasa (*συνήθισα*)"
+  },
+  {
+   "el": "ξενυχτάω",
+   "baca": "ksé-nikh-TA-o",
+   "id": "begadang (*ξενύχτησα*)"
+  },
+  {
+   "el": "ξυπνάω",
+   "baca": "ksi-PNA-o",
+   "id": "bangun tidur (*ξύπνησα*)"
+  },
+  {
+   "el": "το πρωινό",
+   "baca": "to pro-i-NO",
+   "id": "sarapan; pagi hari"
+  },
+  {
+   "el": "πια",
+   "baca": "pia",
+   "id": "lagi (*δεν… πια* = tidak… lagi)"
+  },
+  {
+   "el": "κερνάω",
+   "baca": "kér-NA-o",
+   "id": "mentraktir (*κέρασα*)"
+  },
+  {
+   "el": "πλένομαι",
+   "baca": "PLÉ-no-mé",
+   "id": "mandi, membasuh diri (*πλύθηκα*)"
+  },
+  {
+   "el": "ντύνομαι",
+   "baca": "DI-no-mé",
+   "id": "berpakaian (*ντύθηκα*)"
+  }
+ ],
+ "exercises": [
+  {
+   "prompt": "Terjemahkan ke bahasa Yunani.",
+   "items": [
+    "Rawat dirimu, Eleni!",
+    "Aku (Ana) mengerjakan semuanya sendiri.",
+    "Dulu aku biasa tidur sampai siang.",
+    "Aku sudah tidak begadang lagi.",
+    "Direkturnya sendiri yang datang.",
+    "Mereka tidak percaya pada diri mereka sendiri."
+   ]
+  },
+  {
+   "prompt": "Isi dengan bentuk yang tepat sesuai petunjuk dalam kurung.",
+   "items": [
+    "Η Ελένη φροντίζει τον εαυτό ____. (kata milik)",
+    "Ο Νίκος έφτιαξε το ράφι μόνος ____. (kata milik)",
+    "Εμείς τα κάναμε όλα ____ μας. (μόνος)",
+    "Η Άννα μένει ____ της στο Παγκράτι. (μόνος)",
+    "Όταν ήμουν μικρή, συνήθιζα να ____ στη θάλασσα. (κολυμπάω)",
+    "Παλιά ο Νίκος ____ κάθε βράδυ. (ξενυχτάω, lampau berulang)",
+    "Στην αρχή ήταν δύσκολο, αλλά σιγά σιγά το ____. (συνηθίζω, αόριστος)"
+   ]
+  },
+  {
+   "prompt": "Ubah kebiasaan sekarang menjadi kebiasaan lama dengan *συνήθιζα να…* (sesuaikan pelakunya).",
+   "items": [
+    "Τρώω πρωινό με την οικογένεια.",
+    "Πηγαίνουμε στη θάλασσα κάθε Κυριακή.",
+    "Ο Νίκος ξενυχτάει.",
+    "Διαβάζεις στο μετρό.",
+    "Τα παιδιά παίζουν στον δρόμο.",
+    "Η κυρία Μαρία πίνει καφέ στο μπαλκόνι."
+   ]
+  },
+  {
+   "prompt": "Susun jadi kalimat yang benar.",
+   "items": [
+    "τον / σου / φρόντισε / εαυτό",
+    "όλα / μόνη / τα / μου / κάνω",
+    "πια / ξενυχτάω / δεν",
+    "να / συνήθιζα / νωρίς / ξυπνάω",
+    "ο / Κώστας / ίδιος / ήρθε / ο"
+   ]
+  }
+ ],
+ "answers": [
+  "Φρόντισε τον εαυτό σου, Ελένη! — Τα κάνω όλα μόνη μου. — Παλιά συνήθιζα να κοιμάμαι μέχρι το μεσημέρι. — Δεν ξενυχτάω πια. — Ήρθε ο ίδιος ο διευθυντής. — Δεν πιστεύουν στον εαυτό τους.",
+  "της — του — μόνοι — μόνη — κολυμπάω — ξενυχτούσε — συνήθισα",
+  "Συνήθιζα να τρώω πρωινό με την οικογένεια. — Συνηθίζαμε να πηγαίνουμε στη θάλασσα κάθε Κυριακή. — Ο Νίκος συνήθιζε να ξενυχτάει. — Συνήθιζες να διαβάζεις στο μετρό. — Τα παιδιά συνήθιζαν να παίζουν στον δρόμο. — Η κυρία Μαρία συνήθιζε να πίνει καφέ στο μπαλκόνι.",
+  "Φρόντισε τον εαυτό σου. — Τα κάνω όλα μόνη μου. — Δεν ξενυχτάω πια. — Συνήθιζα να ξυπνάω νωρίς. — Ήρθε ο ίδιος ο Κώστας."
+ ]
+}

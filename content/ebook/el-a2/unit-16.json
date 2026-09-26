@@ -1,0 +1,638 @@
+{
+ "title": "Di dokter — kesehatan",
+ "title_target": "Τι ενοχλήσεις έχετε;",
+ "goal": "Membuat janji dengan dokter, menjelaskan gejala (*έχω πυρετό, με πονάει ο λαιμός, κρύωνα και έτρεμα*), memahami petunjuk dokter dan apoteker (*πάρτε, να παίρνετε, μετά το φαγητό*), lalu minta izin sakit di kantor.",
+ "bekal": [
+  "menyebut rasa sakit dengan susunan yang benar: *με πονάει ο λαιμός, με πονάνε τα πόδια, πού πονάτε;*",
+  "menceritakan gejala sejak kapan dan seberapa parah, termasuk *κρυώνω* dan *κρύωσα*",
+  "mengurus resep, ΑΜΚΑ, dan izin sakit (*άδεια ασθενείας*)"
+ ],
+ "dialogs": [
+  {
+   "title": "ΔΙΑΛΟΓΟΣ 1 — Telepon klinik, lalu ke dokter",
+   "intro": "Senin, 5 April 2027. Sejak Sabtu Ana demam tinggi. Pukul delapan pagi ia menelepon praktik dokter umum dekat rumahnya di Pangrati; tiga baris pertama adalah telepon itu. Pukul sebelas ia sudah duduk di depan dokter Καραγιάννη.",
+   "lines": [
+    {
+     "speaker": "Γραμματέας:",
+     "text": "[Ιατρείο|I-a-TRI-o] [Καραγιάννη|Ka-ra-YA-ni], [καλημέρα|ka-li-MÉ-ra] [σας|sas].",
+     "id": "Praktik dokter Karayanni, selamat pagi.",
+     "literal": "praktik-dokter Karayanni-(milik), selamat-pagi kepada-anda."
+    },
+    {
+     "speaker": "Άννα:",
+     "text": "[Καλημέρα|Ka-li-MÉ-ra]. [Μπορώ|Bo-RO] [να|na] [κλείσω|KLI-so] [ραντεβού|ran-dé-VU] [για|ya] [σήμερα|SI-mé-ra]; [Είμαι|I-mé] [πολύ|po-LI] [άρρωστη|A-ro-sti].",
+     "id": "Selamat pagi. Bisa saya buat janji untuk hari ini? Saya sakit sekali.",
+     "literal": "selamat-pagi. saya-bisa agar saya-tutup janji untuk hari-ini? saya-adalah sangat sakit."
+    },
+    {
+     "speaker": "Γραμματέας:",
+     "text": "[Ελάτε|É-LA-té] [στις|stis] [έντεκα|ÉN-dé-ka] [και|ké] [φέρτε|FÉR-té] [το|to] [ΑΜΚΑ|Am-ka] [σας|sas].",
+     "id": "Datang jam sebelas, bawa nomor ΑΜΚΑ Anda.",
+     "literal": "datanglah-(anda) pada-(sandang) sebelas dan bawalah-(anda) (sandang) AMKA anda."
+    },
+    {
+     "speaker": "Γιατρός:",
+     "text": "[Καθίστε|Ka-THI-sté], [παρακαλώ|pa-ra-ka-LO]. [Τι|Ti] [ενοχλήσεις|é-no-KHLI-sis] [έχετε|É-khé-té];",
+     "id": "Silakan duduk. Apa keluhannya?",
+     "literal": "duduklah-(anda), silakan. apa keluhan-keluhan anda-punya?"
+    },
+    {
+     "speaker": "Άννα:",
+     "text": "[Από|A-PO] [το|to] [Σάββατο|SA-va-to] [έχω|É-kho] [πυρετό|pi-ré-TO] [και|ké] [βήχα|VI-kha]. [Και|Ké] [με|mé] [πονάει|po-NA-i] [πολύ|po-LI] [ο|o] [λαιμός|lé-MOS].",
+     "id": "Sejak Sabtu saya demam dan batuk. Tenggorokan saya juga sakit sekali.",
+     "literal": "dari (sandang) Sabtu aku-punya demam dan batuk. dan aku menyakiti sangat (sandang) tenggorokan."
+    },
+    {
+     "speaker": "Γιατρός:",
+     "text": "[Πόσο|PO-so] [πυρετό|pi-ré-TO] [είχατε|I-kha-té];",
+     "id": "Demamnya berapa derajat?",
+     "literal": "berapa demam anda-punya-(lampau)?"
+    },
+    {
+     "speaker": "Άννα:",
+     "text": "[Χθες|Khthés] [το|to] [βράδυ|VRA-dhi] [είχα|I-kha] [τριάντα|TRIAN-da] [οχτώ|okh-TO] [και|ké] [οχτώ|okh-TO]. [Κρύωνα|KRI-o-na] [και|ké] [έτρεμα|É-tré-ma] [όλη|O-li] [νύχτα|NIKH-ta].",
+     "id": "Tadi malam 38,8. Saya kedinginan dan menggigil semalaman.",
+     "literal": "kemarin (sandang) malam aku-punya-(lampau) tiga-puluh delapan dan delapan. aku-sedang-kedinginan dan aku-sedang-gemetar seluruh malam."
+    },
+    {
+     "speaker": "Γιατρός:",
+     "text": "[Πού|Pu] [αλλού|a-LU] [πονάτε|po-NA-té]; [Σας|Sas] [πονάει|po-NA-i] [και|ké] [το|to] [κεφάλι|ké-FA-li];",
+     "id": "Di mana lagi yang sakit? Kepala Anda juga sakit?",
+     "literal": "di-mana lagi anda-kesakitan? anda menyakiti juga (sandang) kepala?"
+    },
+    {
+     "speaker": "Άννα:",
+     "text": "[Ναι|Né], [και|ké] [με|mé] [πονάνε|po-NA-né] [όλα|O-la] [τα|ta] [κόκαλα|KO-ka-la]. [Δεν|Dhén] [μπορώ|bo-RO] [να|na] [σηκωθώ|si-ko-THO] [από|a-PO] [το|to] [κρεβάτι|kré-VA-ti].",
+     "id": "Iya, dan semua tulang saya ngilu. Saya nggak bisa bangun dari tempat tidur.",
+     "literal": "ya, dan aku mereka-menyakiti semua (sandang) tulang-tulang. tidak aku-bisa agar aku-bangun dari (sandang) ranjang."
+    },
+    {
+     "speaker": "Γιατρός:",
+     "text": "[Ανοίξτε|A-NIKS-té] [το|to] [στόμα|STO-ma], [παρακαλώ|pa-ra-ka-LO]… [Ο|O] [λαιμός|lé-MOS] [σας|sas] [είναι|I-né] [κόκκινος|KO-ki-nos]. [Έχετε|É-khé-té] [και|ké] [συνάχι|si-NA-khi];",
+     "id": "Buka mulutnya, ya… Tenggorokan Anda merah. Pilek juga?",
+     "literal": "bukalah-(anda) (sandang) mulut, silakan… (sandang) tenggorokan anda adalah merah. anda-punya juga pilek?"
+    },
+    {
+     "speaker": "Άννα:",
+     "text": "[Λίγο|LI-gho]. [Είναι|I-né] [κρυολόγημα|kri-o-LO-yi-ma], [γιατρέ|ya-TRÉ];",
+     "id": "Sedikit. Apa ini selesma, Dok?",
+     "literal": "sedikit. adalah selesma, dokter?"
+    },
+    {
+     "speaker": "Γιατρός:",
+     "text": "[Όχι|O-khi], [είναι|I-né] [γρίπη|GHRI-pi]. [Κυκλοφορεί|Ki-klo-fo-RI] [πολύ|po-LI] [αυτές|af-TÉS] [τις|tis] [μέρες|MÉ-rés].",
+     "id": "Bukan, ini flu. Lagi banyak menyebar belakangan ini.",
+     "literal": "tidak, adalah flu. beredar banyak ini (sandang) hari-hari."
+    },
+    {
+     "speaker": "Άννα:",
+     "text": "[Χρειάζομαι|KHRIA-zo-mé] [αντιβίωση|an-di-VI-o-si];",
+     "id": "Saya perlu antibiotik?",
+     "literal": "aku-butuh antibiotik?"
+    },
+    {
+     "speaker": "Γιατρός:",
+     "text": "[Όχι|O-khi], [δεν|dhén] [κάνει|KA-ni] [τίποτα|TI-po-ta] [στη|sti] [γρίπη|GHRI-pi]. [Θα|Tha] [σας|sas] [γράψω|GHRA-pso] [αντιπυρετικό|an-di-pi-ré-ti-KO] [και|ké] [τρεις|tris] [μέρες|MÉ-rés] [ξεκούραση|ksé-KU-ra-si].",
+     "id": "Tidak, antibiotik nggak mempan untuk flu. Saya resepkan obat penurun panas dan istirahat tiga hari.",
+     "literal": "tidak, tidak ia-melakukan apa-pun pada-(sandang) flu. akan kepada-anda aku-tulis penurun-panas dan tiga hari istirahat."
+    }
+   ],
+   "notes": [
+    "⚠️ **Με πονάει ο λαιμός** — harfiah \"tenggorokan menyakiti aku\". Bagian tubuh yang sakit adalah **subjek**, orangnya menjadi **objek** (*με, σε, τον, την, σας*). Karena itu kata kerjanya ikut bagian tubuh: *με πονάει ο λαιμός* (tunggal), *με πονάνε τα κόκαλα* (jamak). Kesalahan paling khas penutur Indonesia adalah *πονάω το κεφάλι* — bentuk ini tidak ada.",
+    "**Πού πονάτε;** — *πονάω* tanpa objek bagian tubuh boleh, dengan orang sebagai subjek: *Πονάω.* (Aku kesakitan.) *Πού πονάτε;* (Sakitnya di mana?) Yang tidak boleh hanya mencampur kedua susunan.",
+    "**Τι ενοχλήσεις έχετε;** — pertanyaan baku dokter. *Η ενόχληση* = gangguan, keluhan. Dari kata kerja yang sama: *Σας ενοχλεί ο καπνός;* — Anda terganggu asap rokok?",
+    "**Κρύωνα και έτρεμα όλη νύχτα** — dua keadaan yang berlangsung sepanjang malam, maka παρατατικός (unit 13). ⚠️ *Κρυώνω* = **merasa** dingin; untuk \"masuk angin, kena pilek\" pakai αόριστος-nya: *κρύωσα*, atau *είμαι κρυωμένη*.",
+    "**Τριάντα οχτώ και οχτώ** — suhu tubuh dibaca dengan *και* di tempat koma: 38,8 = *τριάντα οχτώ και οχτώ*. Termometer di Yunani memakai Celsius, sama seperti di Indonesia.",
+    "**Δεν κάνει τίποτα στη γρίπη** — dokter Yunani cukup ketat soal antibiotik, dan apotek tidak boleh menjualnya tanpa resep. *Δεν κάνει τίποτα* (tidak berbuat apa-apa) = tidak mempan."
+   ],
+   "grammars": [
+    {
+     "title": "Menyebut rasa sakit dan gejala",
+     "body": [
+      "Ada tiga susunan. Pilih satu dan jangan dicampur."
+     ],
+     "table": {
+      "head": [
+       "Susunan",
+       "Contoh",
+       "Arti"
+      ],
+      "rows": [
+       [
+        "kata ganti + *πονάει* + bagian tubuh",
+        "*Με πονάει ο λαιμός.*",
+        "Tenggorokanku sakit."
+       ],
+       [
+        "kata ganti + *πονάνε* + bagian tubuh jamak",
+        "*Με πονάνε τα πόδια.*",
+        "Kakiku sakit."
+       ],
+       [
+        "*πονάει* + bagian tubuh + *μου*",
+        "*Πονάει το κεφάλι μου.*",
+        "Kepalaku sakit."
+       ],
+       [
+        "orang + *πονάω* (tanpa objek)",
+        "*Πονάω πολύ. / Πού πονάτε;*",
+        "Sakit sekali. / Sakitnya di mana?"
+       ],
+       [
+        "*έχω* + nama sakit",
+        "*Έχω πονοκέφαλο / πονόδοντο.*",
+        "Aku sakit kepala / sakit gigi."
+       ],
+       [
+        "*έχω* + gejala",
+        "*Έχω πυρετό / βήχα / συνάχι.*",
+        "Aku demam / batuk / pilek."
+       ],
+       [
+        "merasa dingin",
+        "*Κρυώνω.*",
+        "Aku kedinginan."
+       ],
+       [
+        "masuk angin",
+        "*Κρύωσα. / Είμαι κρυωμένη.*",
+        "Aku masuk angin, pilek."
+       ]
+      ]
+     },
+     "after": [
+      "⚠️ Bentuk lampau: *με πονούσε* (sedang sakit, latar) dan *με πόνεσε* (tiba-tiba terasa sakit, sekali): *Όλη μέρα με πονούσε το κεφάλι.*"
+     ]
+    }
+   ]
+  },
+  {
+   "title": "ΔΙΑΛΟΓΟΣ 2 — Apotek dan izin sakit",
+   "intro": "Senin yang sama, siang hari. Ana menebus resep di apotek di bawah praktik dokter, lalu dari bangku di luar ia menelepon Κώστας. Perhatikan: apoteker memakai *εσείς*, Κώστας memakai *εσύ* kepada Ana, tetapi Ana tetap *εσείς* kepadanya.",
+   "lines": [
+    {
+     "speaker": "Άννα:",
+     "text": "[Καλημέρα|Ka-li-MÉ-ra]. [Έχω|É-kho] [ηλεκτρονική|i-lék-tro-ni-KI] [συνταγή|sin-da-YI]. [Ορίστε|O-RI-sté] [το|to] [ΑΜΚΑ|Am-ka] [μου|mu].",
+     "id": "Selamat siang. Saya punya resep elektronik. Ini nomor ΑΜΚΑ saya.",
+     "literal": "selamat-pagi. aku-punya elektronik resep. silakan (sandang) AMKA milikku."
+    },
+    {
+     "speaker": "Φαρμακοποιός:",
+     "text": "[Μάλιστα|MA-li-sta]. [Ένα|É-na] [αντιπυρετικό|an-di-pi-ré-ti-KO]: [ένα|É-na] [χάπι|KHA-pi] [κάθε|KA-thé] [έξι|É-ksi] [ώρες|O-rés], [μόνο|MO-no] [αν|an] [έχετε|É-khé-té] [πυρετό|pi-ré-TO].",
+     "id": "Baik. Satu obat penurun panas: satu tablet tiap enam jam, hanya kalau Anda demam.",
+     "literal": "baik. sebuah penurun-panas: satu pil setiap enam jam, hanya jika anda-punya demam."
+    },
+    {
+     "speaker": "Άννα:",
+     "text": "[Πριν|Prin] [ή|i] [μετά|mé-TA] [το|to] [φαγητό|fa-yi-TO];",
+     "id": "Sebelum atau sesudah makan?",
+     "literal": "sebelum atau sesudah (sandang) makanan?"
+    },
+    {
+     "speaker": "Φαρμακοποιός:",
+     "text": "[Καλύτερα|Ka-LI-té-ra] [μετά|mé-TA] [το|to] [φαγητό|fa-yi-TO]. [Και|Ké] [να|na] [πίνετε|PI-né-té] [πολλά|po-LA] [υγρά|i-GHRA]. [Περαστικά|Pé-ra-sti-KA]!",
+     "id": "Sebaiknya sesudah makan. Dan banyak minum, ya. Semoga cepat sembuh!",
+     "literal": "lebih-baik sesudah (sandang) makanan. dan agar anda-minum banyak cairan. semoga-berlalu!"
+    },
+    {
+     "speaker": "Άννα:",
+     "text": "[Κύριε|KI-ri-é] [Κώστα|KO-sta], [καλημέρα|ka-li-MÉ-ra]. [Δυστυχώς|Dhi-sti-KHOS] [έχω|É-kho] [γρίπη|GHRI-pi] [και|ké] [δεν|dhén] [μπορώ|bo-RO] [να|na] [έρθω|ÉR-tho] [στο|sto] [γραφείο|ghra-FI-o].",
+     "id": "Pak Kostas, selamat pagi. Sayangnya saya kena flu dan tidak bisa ke kantor.",
+     "literal": "tuan Kostas, selamat-pagi. sayangnya aku-punya flu dan tidak aku-bisa agar aku-datang ke-(sandang) kantor."
+    },
+    {
+     "speaker": "Κώστας:",
+     "text": "[Περαστικά|Pé-ra-sti-KA], [Άννα|A-na]! [Μείνε|MI-né] [σπίτι|SPI-ti] [μέχρι|MÉ-khri] [να|na] [γίνεις|YI-nis] [καλά|ka-LA].",
+     "id": "Cepat sembuh, Ana! Tinggal di rumah sampai kamu pulih.",
+     "literal": "semoga-berlalu, Ana! tinggallah rumah sampai agar kamu-menjadi baik."
+    },
+    {
+     "speaker": "Άννα:",
+     "text": "[Ο|O] [γιατρός|ya-TROS] [έγραψε|É-ghra-psé] [τρεις|tris] [μέρες|MÉ-rés] [άδεια|A-dhi-a] [ασθενείας|a-sthé-NI-as]. [Τι|Ti] [πρέπει|PRÉ-pi] [να|na] [στείλω|STI-lo];",
+     "id": "Dokter memberi izin sakit tiga hari. Saya harus mengirim apa?",
+     "literal": "(sandang) dokter menulis-(lampau) tiga hari izin penyakit-(milik). apa harus agar aku-kirim?"
+    },
+    {
+     "speaker": "Κώστας:",
+     "text": "[Στείλε|STI-lé] [τη|ti] [βεβαίωση|vé-VÉ-o-si] [του|tu] [γιατρού|ya-TRU] [στο|sto] [τμήμα|TMI-ma] [προσωπικού|pro-so-pi-KU]. [Μην|Min] [ανησυχείς|a-ni-si-KHIS], [η|i] [ασφάλεια|a-SFA-li-a] [τα|ta] [καλύπτει|ka-LIP-ti] [όλα|O-la].",
+     "id": "Kirim surat keterangan dokter ke bagian personalia. Jangan khawatir, asuransi menanggung semuanya.",
+     "literal": "kirimlah (sandang) keterangan (sandang) dokter-(milik) ke-(sandang) bagian personalia-(milik). jangan kamu-khawatir, (sandang) asuransi itu-semua menanggung semua."
+    },
+    {
+     "speaker": "Άννα:",
+     "text": "[Ευχαριστώ|Éf-kha-ri-STO] [πολύ|po-LI]. [Και|Ké] [η|i] [πρόταση|PRO-ta-si] [για|ya] [τους|tus] [δόκιμους|DHO-ki-mus]; [Ήθελα|I-thé-la] [να|na] [την|tin] [τελειώσω|té-LIO-so] [ως|os] [την|tin] [Παρασκευή|Pa-ra-ské-VI].",
+     "id": "Terima kasih banyak. Lalu usulan untuk para kadet? Tadinya saya mau menyelesaikannya paling lambat Jumat.",
+     "literal": "terima-kasih banyak. dan (sandang) usulan untuk (sandang) kadet-kadet? aku-mau-(lampau) agar itu aku-selesaikan sampai (sandang) Jumat."
+    },
+    {
+     "speaker": "Κώστας:",
+     "text": "[Η|I] [πρόταση|PRO-ta-si] [μπορεί|bo-RI] [να|na] [περιμένει|pé-ri-MÉ-ni]. [Η|I] [υγεία|i-YI-a] [σου|su] [είναι|I-né] [πιο|pio] [σημαντική|si-man-di-KI].",
+     "id": "Usulannya bisa menunggu. Kesehatanmu lebih penting.",
+     "literal": "(sandang) usulan dapat agar menunggu. (sandang) kesehatan milikmu adalah lebih penting."
+    },
+    {
+     "speaker": "Άννα:",
+     "text": "[Είστε|I-sté] [πολύ|po-LI] [καλός|ka-LOS]. [Θα|Tha] [σας|sas] [τη|ti] [στείλω|STI-lo] [μόλις|MO-lis] [γίνω|YI-no] [καλά|ka-LA].",
+     "id": "Bapak baik sekali. Akan saya kirim begitu saya sembuh.",
+     "literal": "anda-adalah sangat baik. akan kepada-anda itu aku-kirim begitu aku-menjadi baik."
+    }
+   ],
+   "notes": [
+    "**Περαστικά!** — ucapan wajib kepada orang sakit, harfiah \"semoga (sakitnya) berlalu\". Jawabannya cukup *Ευχαριστώ*. Ucapkan juga kepada orang yang keluarganya sakit: *Περαστικά στη μητέρα σου.*",
+    "**Να πίνετε πολλά υγρά** — nasihat yang harus dilakukan **berulang-ulang** memakai *να* + bentuk kini (atau perintah bentuk kini *πίνετε*). Bandingkan *πάρτε ένα χάπι τώρα* — sekali, maka bentuk αόριστος. Ini pembedaan aspek dari unit 6 yang muncul lagi dalam perintah.",
+    "**Μέχρι να γίνεις καλά / μόλις γίνω καλά** — kata penghubung waktu yang menunjuk ke depan (*μέχρι να, μόλις, όταν*) diikuti **υποτακτική**, bukan *θα* (unit 10). *Γίνομαι καλά* = menjadi baik, sembuh.",
+    "**Μην ανησυχείς** — larangan dibentuk dengan **μην** + bentuk kata kerja biasa, bukan bentuk perintah: *μην ανησυχείς, μην πας, μην τρως*.",
+    "**Ήθελα να την τελειώσω** — παρατατικός *ήθελα* di sini melunakkan: \"tadinya saya bermaksud\". Rencana itu kini terhalang, dan bentuk lampau berlangsung menyiratkannya dengan halus.",
+    "**Είστε πολύ καλός** — Ana memakai *εσείς* kepada atasannya, walaupun Κώστας memakai *εσύ* kepadanya. Ketidaksimetrisan ini wajar di kantor Yunani; tunggu sampai atasan sendiri berkata *Μίλα μου στον ενικό* (panggil aku \"kamu\" saja)."
+   ],
+   "grammars": [
+    {
+     "title": "Petunjuk dokter dan apoteker",
+     "body": [
+      "Dokter dan apoteker bicara kepada pasien dengan *εσείς*. Perhatikan pilihan aspek: sekali atau berulang."
+     ],
+     "table": {
+      "head": [
+       "Ungkapan",
+       "Arti",
+       "Catatan"
+      ],
+      "rows": [
+       [
+        "*Πάρτε ένα χάπι τώρα.*",
+        "Minum satu tablet sekarang.",
+        "sekali → αόριστος"
+       ],
+       [
+        "*Να παίρνετε ένα χάπι κάθε έξι ώρες.*",
+        "Minum satu tablet tiap enam jam.",
+        "berulang → bentuk kini"
+       ],
+       [
+        "*δύο φορές τη μέρα*",
+        "dua kali sehari",
+        "frekuensi"
+       ],
+       [
+        "*πριν / μετά το φαγητό*",
+        "sebelum / sesudah makan",
+        "waktu minum"
+       ],
+       [
+        "*με άδειο στομάχι*",
+        "saat perut kosong",
+        "waktu minum"
+       ],
+       [
+        "*Αποφύγετε το αλκοόλ.*",
+        "Hindari alkohol.",
+        "perintah sopan"
+       ],
+       [
+        "*Μην πάτε στη δουλειά.*",
+        "Jangan masuk kerja.",
+        "larangan: μην + υποτακτική"
+       ]
+      ]
+     },
+     "after": [
+      "Pola perintah sopan (jamak): *κάθισε → καθίστε, άνοιξε → ανοίξτε, πάρε → πάρτε, μείνε → μείνετε, έλα → ελάτε*."
+     ]
+    }
+   ]
+  }
+ ],
+ "sections": [
+  {
+   "title": "Tubuh",
+   "blocks": [
+    {
+     "type": "tabel",
+     "head": [
+      "Kata",
+      "Jamak",
+      "Arti"
+     ],
+     "rows": [
+      [
+       "*το κεφάλι*",
+       "*τα κεφάλια*",
+       "kepala"
+      ],
+      [
+       "*ο λαιμός*",
+       "*οι λαιμοί*",
+       "leher; tenggorokan"
+      ],
+      [
+       "*το αυτί*",
+       "*τα αυτιά*",
+       "telinga"
+      ],
+      [
+       "*το δόντι*",
+       "*τα δόντια*",
+       "gigi"
+      ],
+      [
+       "*το στήθος*",
+       "*τα στήθη*",
+       "dada"
+      ],
+      [
+       "*η κοιλιά*",
+       "*οι κοιλιές*",
+       "perut"
+      ],
+      [
+       "*το στομάχι*",
+       "*τα στομάχια*",
+       "lambung"
+      ],
+      [
+       "*η πλάτη*",
+       "*οι πλάτες*",
+       "punggung"
+      ],
+      [
+       "*το χέρι*",
+       "*τα χέρια*",
+       "tangan, lengan"
+      ],
+      [
+       "*το πόδι*",
+       "*τα πόδια*",
+       "kaki, tungkai"
+      ]
+     ]
+    },
+    {
+     "type": "p",
+     "text": "⚠️ Seperti bahasa Indonesia sehari-hari, *χέρι* mencakup tangan sampai lengan dan *πόδι* mencakup telapak sampai paha. Dokter yang butuh lebih tepat akan menyebut *ο καρπός* (pergelangan tangan) atau *ο αστράγαλος* (pergelangan kaki)."
+    }
+   ]
+  },
+  {
+   "title": "Gejala dan penyakit umum",
+   "blocks": [
+    {
+     "type": "tabel",
+     "head": [
+      "Kata",
+      "Dalam kalimat",
+      "Arti"
+     ],
+     "rows": [
+      [
+       "*ο πυρετός*",
+       "*Έχω πυρετό.*",
+       "demam"
+      ],
+      [
+       "*ο βήχας*",
+       "*Έχω βήχα.*",
+       "batuk"
+      ],
+      [
+       "*το συνάχι*",
+       "*Έχω συνάχι.*",
+       "pilek, hidung tersumbat"
+      ],
+      [
+       "*ο πονοκέφαλος*",
+       "*Έχω πονοκέφαλο.*",
+       "sakit kepala"
+      ],
+      [
+       "*η γρίπη*",
+       "*Έχω γρίπη.*",
+       "flu"
+      ],
+      [
+       "*το κρυολόγημα*",
+       "*Έχω κρυολόγημα.*",
+       "selesma"
+      ],
+      [
+       "*η ναυτία*",
+       "*Έχω ναυτία.*",
+       "mual"
+      ],
+      [
+       "*ζαλίζομαι*",
+       "*Ζαλίζομαι λίγο.*",
+       "pusing, berkunang-kunang"
+      ],
+      [
+       "*η αλλεργία*",
+       "*Έχω αλλεργία στην πενικιλίνη.*",
+       "alergi"
+      ]
+     ]
+    },
+    {
+     "type": "kotak",
+     "title": "Masuk angin ala Yunani",
+     "items": [
+      "\"Masuk angin\" tidak punya padanan persis. Yang paling dekat: *κρύωσα* atau *είμαι κρυωμένος/κρυωμένη* — aku kena pilek karena udara dingin.",
+      "Orang Yunani juga percaya pada angin jahat: *το ρεύμα* (angin dari dua jendela terbuka) sering dituduh penyebab leher kaku. Kamu akan sering mendengar *Κλείσε το παράθυρο, έχει ρεύμα!*"
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Berobat di Yunani",
+   "blocks": [
+    {
+     "type": "kotak",
+     "title": "ΑΜΚΑ, resep, dan asuransi",
+     "items": [
+      "**ΑΜΚΑ** (*Αριθμός Μητρώου Κοινωνικής Ασφάλισης*) — nomor jaminan sosial 11 angka. Diminta di praktik dokter, apotek, dan kantor; simpan di ponsel.",
+      "**Η ηλεκτρονική συνταγή** — resep elektronik. Dokter mengetiknya ke sistem, kamu menerima kode lewat SMS, dan apotek mana pun bisa membacanya dengan ΑΜΚΑ-mu.",
+      "**Η ασφάλεια** — asuransi. Ada jaminan kesehatan negara, dan banyak perusahaan menambah asuransi swasta untuk karyawan. **Η άδεια ασθενείας** (izin sakit) harus disertai surat dari dokter.",
+      "Apotek malam dan hari Minggu bergiliran: carilah daftar **εφημερεύοντα φαρμακεία** yang ditempel di pintu setiap apotek. Ambulans: **166**; nomor darurat Eropa: **112**."
+     ]
+    }
+   ]
+  }
+ ],
+ "vocab": [
+  {
+   "el": "η ενόχληση",
+   "baca": "i é-NO-khli-si",
+   "id": "keluhan, gangguan (*Τι ενοχλήσεις έχετε;*)"
+  },
+  {
+   "el": "το ιατρείο",
+   "baca": "to i-a-TRI-o",
+   "id": "praktik dokter"
+  },
+  {
+   "el": "το ραντεβού",
+   "baca": "to ran-dé-VU",
+   "id": "janji temu (*κλείνω ραντεβού* = membuat janji)"
+  },
+  {
+   "el": "άρρωστος",
+   "baca": "A-ro-stos",
+   "id": "sakit (*άρρωστη, άρρωστο*)"
+  },
+  {
+   "el": "ο πυρετός",
+   "baca": "o pi-ré-TOS",
+   "id": "demam"
+  },
+  {
+   "el": "ο βήχας",
+   "baca": "o VI-khas",
+   "id": "batuk (kata kerja: *βήχω*)"
+  },
+  {
+   "el": "το συνάχι",
+   "baca": "to si-NA-khi",
+   "id": "pilek, hidung tersumbat"
+  },
+  {
+   "el": "ο λαιμός",
+   "baca": "o lé-MOS",
+   "id": "leher; tenggorokan"
+  },
+  {
+   "el": "το κόκαλο",
+   "baca": "to KO-ka-lo",
+   "id": "tulang"
+  },
+  {
+   "el": "πονάω",
+   "baca": "po-NA-o",
+   "id": "sakit, merasa sakit (*με πονάει…* = …-ku sakit)"
+  },
+  {
+   "el": "κρυώνω",
+   "baca": "kri-O-no",
+   "id": "merasa dingin (*κρύωσα* = aku masuk angin)"
+  },
+  {
+   "el": "τρέμω",
+   "baca": "TRÉ-mo",
+   "id": "gemetar, menggigil (*έτρεμα*)"
+  },
+  {
+   "el": "η γρίπη",
+   "baca": "i GHRI-pi",
+   "id": "flu"
+  },
+  {
+   "el": "το κρυολόγημα",
+   "baca": "to kri-o-LO-yi-ma",
+   "id": "selesma"
+  },
+  {
+   "el": "κυκλοφορώ",
+   "baca": "ki-klo-fo-RO",
+   "id": "beredar, menyebar (penyakit); berlalu lalang"
+  },
+  {
+   "el": "η αντιβίωση",
+   "baca": "i an-di-VI-o-si",
+   "id": "antibiotik"
+  },
+  {
+   "el": "το αντιπυρετικό",
+   "baca": "to an-di-pi-ré-ti-KO",
+   "id": "obat penurun panas"
+  },
+  {
+   "el": "το χάπι",
+   "baca": "to KHA-pi",
+   "id": "pil, tablet"
+  },
+  {
+   "el": "η συνταγή",
+   "baca": "i sin-da-YI",
+   "id": "resep (dokter maupun masakan)"
+  },
+  {
+   "el": "η άδεια ασθενείας",
+   "baca": "i A-dhi-a a-sthé-NI-as",
+   "id": "izin sakit, cuti sakit"
+  },
+  {
+   "el": "η ασφάλεια",
+   "baca": "i a-SFA-li-a",
+   "id": "asuransi; keamanan"
+  },
+  {
+   "el": "καλύπτω",
+   "baca": "ka-LIP-to",
+   "id": "menutup; menanggung biaya (*κάλυψα*)"
+  },
+  {
+   "el": "η ξεκούραση",
+   "baca": "i ksé-KU-ra-si",
+   "id": "istirahat"
+  },
+  {
+   "el": "γίνομαι καλά",
+   "baca": "YI-no-mé ka-LA",
+   "id": "sembuh (*έγινα καλά*)"
+  },
+  {
+   "el": "περαστικά",
+   "baca": "pé-ra-sti-KA",
+   "id": "semoga cepat sembuh"
+  }
+ ],
+ "exercises": [
+  {
+   "prompt": "Terjemahkan ke bahasa Yunani.",
+   "items": [
+    "Tenggorokanku sakit sekali.",
+    "Sejak hari Sabtu aku demam dan batuk.",
+    "Tadi malam aku kedinginan dan menggigil.",
+    "Bisakah saya membuat janji untuk hari ini?",
+    "Minum satu tablet tiap enam jam. (dokter kepada pasien)",
+    "Semoga cepat sembuh!"
+   ]
+  },
+  {
+   "prompt": "Isi dengan bentuk yang tepat dari kata kerja dalam kurung.",
+   "items": [
+    "Με ____ το κεφάλι. (πονάω)",
+    "Με ____ τα πόδια μου. (πονάω)",
+    "Πού ____, κυρία Άννα; (πονάω, εσείς)",
+    "Σε ____ ακόμα το δόντι; (πονάω)",
+    "Τον ____ η πλάτη του από χθες. (πονάω)",
+    "Όλη μέρα με ____ το στομάχι. (πονάω, παρατατικός)",
+    "Όταν έμενα στο παλιό διαμέρισμα, ____ συνέχεια τον χειμώνα. (κρυώνω, παρατατικός)"
+   ]
+  },
+  {
+   "prompt": "Ubah perintah ke bentuk sopan (εσείς), seperti dokter kepada pasien.",
+   "items": [
+    "Κάθισε, παρακαλώ.",
+    "Άνοιξε το στόμα.",
+    "Πάρε ένα χάπι μετά το φαγητό.",
+    "Πίνε πολλά υγρά.",
+    "Μείνε στο κρεβάτι δύο μέρες.",
+    "Έλα ξανά την Παρασκευή."
+   ]
+  },
+  {
+   "prompt": "Susun jadi kalimat yang benar.",
+   "items": [
+    "με / ο λαιμός / πονάει",
+    "ενοχλήσεις / τι / έχετε",
+    "κάθε / ένα χάπι / έξι ώρες / πάρτε",
+    "καλά / μόλις / γίνω / θα έρθω",
+    "πυρετό / από το Σάββατο / έχω"
+   ]
+  }
+ ],
+ "answers": [
+  "Με πονάει πολύ ο λαιμός. — Από το Σάββατο έχω πυρετό και βήχα. — Χθες το βράδυ κρύωνα και έτρεμα. — Μπορώ να κλείσω ραντεβού για σήμερα; — Να παίρνετε ένα χάπι κάθε έξι ώρες. — Περαστικά!",
+  "πονάει — πονάνε — πονάτε — πονάει — πονάει — πονούσε — κρύωνα",
+  "Καθίστε, παρακαλώ. — Ανοίξτε το στόμα. — Πάρτε ένα χάπι μετά το φαγητό. — Πίνετε πολλά υγρά. — Μείνετε στο κρεβάτι δύο μέρες. — Ελάτε ξανά την Παρασκευή.",
+  "Με πονάει ο λαιμός. — Τι ενοχλήσεις έχετε; — Πάρτε ένα χάπι κάθε έξι ώρες. — Θα έρθω μόλις γίνω καλά. — Έχω πυρετό από το Σάββατο."
+ ]
+}

@@ -1,0 +1,612 @@
+{
+ "title": "Meze di Chania — kata ganti objek ganda",
+ "title_target": "Μας το φέρνετε;",
+ "goal": "Memesan dan berbagi makanan di meja taverna dengan dua kata ganti sekaligus — *σας τα φέρνω, θα σου τη γράψω, δώσε μου το* — termasuk bentuk rapat lisan *στο, στα* dari *σου το, σου τα*.",
+ "bekal": [
+  "menyusun dua kata ganti lemah dalam urutan yang benar: kepada-siapa dulu, apa-nya kemudian (*σας το φέρνω*)",
+  "menaruh kata ganti di depan kata kerja biasa tetapi di belakang perintah: *μου το δίνεις* lawan *δώσε μου το*",
+  "mengenali *στο, στα* = *σου το, σου τα*, lalu memesan meze khas Kreta dan menyebut pantangan makanan"
+ ],
+ "dialogs": [
+  {
+   "title": "ΔΙΑΛΟΓΟΣ 1 — Makan malam dengan klien",
+   "intro": "Jumat, 13 November 2026, pukul sembilan malam, sebuah taverna di gang kota tua Chania. Pak Stelios Manousakis, pemilik perusahaan pemasok kapal dan klien lama Αιγαίον Ναυτιλιακή, menjamu Ana dan Budi sesudah hari pertama seminar. Tandai setiap kata ganti kecil di depan kata kerja.",
+   "lines": [
+    {
+     "speaker": "Στέλιος:",
+     "text": "[Καλώς|Ka-LOS] [ήρθατε|IR-tha-té] [στην|stin] [Κρήτη|KRI-ti]! [Εδώ|É-DHO] [τρώμε|TRO-mé] [μεζέδες|mé-ZÉ-dhés], [όχι|O-khi] [μεγάλα|mé-GHA-la] [πιάτα|PIA-ta].",
+     "id": "Selamat datang di Kreta! Di sini kita makan meze, bukan hidangan besar.",
+     "literal": "baik datang-kalian ke-(sandang) Kreta! di-sini makan-kami meze-meze, tidak besar piring-piring."
+    },
+    {
+     "speaker": "Άννα:",
+     "text": "[Τέλεια|TÉ-li-a]! [Τι|Ti] [μας|mas] [προτείνετε|pro-TI-né-té], [κύριε|KI-ri-é] [Μανουσάκη|Ma-nu-SA-ki];",
+     "id": "Asyik! Apa rekomendasi Bapak untuk kami, Pak Manousakis?",
+     "literal": "sempurna! apa kepada-kami sarankan-Anda, tuan Manousakis?"
+    },
+    {
+     "speaker": "Στέλιος:",
+     "text": "[Ντάκο|DA-ko], [χοχλιούς|kho-KHLIUS] [μπουμπουριστούς|bum-bu-ri-STUS] [και|ké] [σταμναγκάθι|sta-mnan-GA-thi]. [Θα|Tha] [σας|sas] [τα|ta] [παραγγείλω|pa-ran-GI-lo] [εγώ|é-GHO].",
+     "id": "Dakos, siput goreng bubouristi, dan stamnagathi. Biar saya yang pesankan untuk kalian.",
+     "literal": "dakos, siput bubouristi dan stamnagathi. akan kepada-kalian mereka(nt) pesan-saya saya."
+    },
+    {
+     "speaker": "Μπούντι:",
+     "text": "[Χοχλιούς|Kho-KHLIUS]; [Τι|Ti] [είναι|I-né] [αυτό|af-TO];",
+     "id": "Hokhlius? Apa itu?",
+     "literal": "hokhlius? apa adalah-ia ini?"
+    },
+    {
+     "speaker": "Στέλιος:",
+     "text": "[Σαλιγκάρια|Sa-lin-GA-ri-a] [με|mé] [ξίδι|KSI-dhi] [και|ké] [δεντρολίβανο|dhén-dro-LI-va-no]. [Θα|Tha] [τα|ta] [λατρέψεις|la-TRÉ-psis]!",
+     "id": "Siput dengan cuka dan rosmarin. Kamu pasti suka banget!",
+     "literal": "siput-siput dengan cuka dan rosmarin. akan mereka(nt) puja-kamu!"
+    },
+    {
+     "speaker": "Σερβιτόρος:",
+     "text": "[Καλησπέρα|Ka-li-SPÉ-ra] [σας|sas]. [Τι|Ti] [θα|tha] [πάρετε|PA-ré-té];",
+     "id": "Selamat malam. Mau pesan apa?",
+     "literal": "selamat-malam kepada-Anda. apa akan ambil-Anda?"
+    },
+    {
+     "speaker": "Στέλιος:",
+     "text": "[Δύο|DHI-o] [ντάκους|DA-kus], [τους|tus] [χοχλιούς|kho-KHLIUS], [ένα|É-na] [σταμναγκάθι|sta-mnan-GA-thi] [και|ké] [ένα|É-na] [καραφάκι|ka-ra-FA-ki] [ρακή|ra-KI].",
+     "id": "Dua dakos, siputnya, satu stamnagathi, dan satu karaf kecil raki.",
+     "literal": "dua dakos-jamak, (sandang) siput-jamak, satu stamnagathi dan satu karaf-kecil raki."
+    },
+    {
+     "speaker": "Σερβιτόρος:",
+     "text": "[Το|To] [ψωμί|pso-MI] [το|to] [θέλετε|THÉ-lé-té] [ζεστό|zé-STO];",
+     "id": "Rotinya mau yang hangat?",
+     "literal": "(sandang) roti ia(nt) mau-Anda hangat?"
+    },
+    {
+     "speaker": "Άννα:",
+     "text": "[Ναι|Né], [παρακαλώ|pa-ra-ka-LO]. [Και|Ké] [ένα|É-na] [μπουκάλι|bu-KA-li] [νερό|né-RO]. [Μας|Mas] [το|to] [φέρνετε|FÉR-né-té] [μαζί|ma-ZI] [με|mé] [το|to] [ψωμί|pso-MI];",
+     "id": "Ya, tolong. Dan sebotol air. Bisa dibawakan sekalian dengan rotinya?",
+     "literal": "ya, silakan. dan satu botol air. kepada-kami ia(nt) bawa-Anda bersama dengan (sandang) roti?"
+    },
+    {
+     "speaker": "Σερβιτόρος:",
+     "text": "[Βεβαίως|Vé-VÉ-os], [σας|sas] [τα|ta] [φέρνω|FÉR-no] [αμέσως|a-MÉ-sos].",
+     "id": "Tentu, saya bawakan semuanya sekarang.",
+     "literal": "tentu, kepada-Anda mereka(nt) bawa-saya segera."
+    },
+    {
+     "speaker": "Μπούντι:",
+     "text": "[Συγγνώμη|Si-GHNO-mi], [εγώ|é-GHO] [δεν|dhén] [πίνω|PI-no] [αλκοόλ|al-ko-OL]. [Θα|Tha] [ήθελα|I-thé-la] [μια|mia] [πορτοκαλάδα|por-to-ka-LA-dha], [παρακαλώ|pa-ra-ka-LO].",
+     "id": "Maaf, saya tidak minum alkohol. Saya minta satu minuman jeruk, ya.",
+     "literal": "maaf, saya tidak minum-saya alkohol. akan mau-saya satu minuman-jeruk, silakan."
+    },
+    {
+     "speaker": "Σερβιτόρος:",
+     "text": "[Κανένα|Ka-NÉ-na] [πρόβλημα|PRO-vli-ma], [σας|sas] [τη|ti] [φέρνω|FÉR-no] [αμέσως|a-MÉ-sos].",
+     "id": "Tidak masalah, saya bawakan segera.",
+     "literal": "tidak-satu masalah, kepada-Anda ia(pr) bawa-saya segera."
+    },
+    {
+     "speaker": "Στέλιος:",
+     "text": "[Στην|Stin] [Κρήτη|KRI-ti] [τον|ton] [φιλοξενούμενο|fi-lo-ksé-NU-mé-no] [τον|ton] [σεβόμαστε|sé-VO-ma-sté]. [Στην|Stin] [υγειά|i-YA] [μας|mas]!",
+     "id": "Di Kreta, tamu itu kami hormati. Bersulang!",
+     "literal": "di-(sandang) Kreta (sandang) tamu dia(lk) hormati-kami. ke-(sandang) kesehatan kita!"
+    },
+    {
+     "speaker": "Άννα:",
+     "text": "[Στην|Stin] [υγειά|i-YA] [μας|mas]! [Και|Ké] [καλή|ka-LI] [συνεργασία|si-nér-gha-SI-a]!",
+     "id": "Bersulang! Dan semoga kerja samanya lancar!",
+     "literal": "ke-(sandang) kesehatan kita! dan baik kerja-sama!"
+    }
+   ],
+   "notes": [
+    "⚠️ **Θα σας τα παραγγείλω** — dua kata ganti sekaligus: *σας* (kepada kalian) lalu *τα* (semuanya itu). Urutannya selalu **kepada-siapa dulu, apa-nya kemudian**, dan keduanya berdiri di depan kata kerja. Bahasa Indonesia berkata \"saya pesankan itu untuk kalian\"; bahasa Yunani berkata \"saya kalian-itu pesan\". Kalimat *το σας φέρνω* selalu salah.",
+    "⚠️ **Το ψωμί το θέλετε ζεστό;** — objek ditaruh di depan sebagai topik, lalu diulang dengan kata ganti *το*. Ini bukan pengulangan yang keliru: begitu objek pindah ke depan kalimat, kata ganti **wajib** hadir. *Τη θάλασσα θα τη δω* (unit 7) dan *Τον φιλοξενούμενο τον σεβόμαστε* memakai pola yang sama.",
+    "**Θα τα λατρέψεις!** — *τα* merujuk ke *σαλιγκάρια* (netral jamak), kata benda terakhir yang disebut. Kata ganti ikut jenis kelamin dan jumlah kata bendanya: *τον ντάκο → τον*, *τη ρακή → τη(ν)*, *το ψωμί → το*. *Λατρεύω* harfiah \"memuja\"; orang Yunani memakainya untuk makanan dan lagu kesukaan.",
+    "**Δεν πίνω αλκοόλ** — kalimat yang aman dan dihormati; tidak perlu menjelaskan alasannya. Tuan rumah Kreta mungkin menawarkan lagi karena keramahan (*φιλοξενία*), jadi ulangi dengan senyum: *Όχι, ευχαριστώ, είμαι εντάξει.*",
+    "**Ντάκος, χοχλιοί μπουμπουριστοί, σταμναγκάθι, ρακή** — empat ikon meja Kreta: roti jelai kering dengan tomat dan keju, siput yang digoreng terbalik dalam minyak zaitun, sayur liar yang agak pahit, dan arak anggur bening. Di Kreta ρακή juga disebut *τσικουδιά*.",
+    "**Στην υγειά μας!** — \"untuk kesehatan kita!\", ucapan bersulang; boleh diucapkan dengan gelas jus. *Καλή συνεργασία* (semoga kerja samanya lancar) adalah tambahan khas makan malam bisnis."
+   ],
+   "grammars": [
+    {
+     "title": "Dua deret kata ganti lemah",
+     "body": [
+      "Deret genitif menjawab \"kepada siapa?\", deret akusatif menjawab \"apa / siapa?\". Kalau keduanya muncul, genitif selalu di depan."
+     ],
+     "table": {
+      "head": [
+       "Pelaku",
+       "Kepada (genitif)",
+       "Objek (akusatif)"
+      ],
+      "rows": [
+       [
+        "εγώ",
+        "μου",
+        "με"
+       ],
+       [
+        "εσύ",
+        "σου",
+        "σε"
+       ],
+       [
+        "αυτός",
+        "του",
+        "τον"
+       ],
+       [
+        "αυτή",
+        "της",
+        "την / τη"
+       ],
+       [
+        "αυτό",
+        "του",
+        "το"
+       ],
+       [
+        "εμείς",
+        "μας",
+        "μας"
+       ],
+       [
+        "εσείς",
+        "σας",
+        "σας"
+       ],
+       [
+        "αυτοί / αυτές / αυτά",
+        "τους",
+        "τους / τις / τα"
+       ]
+      ]
+     },
+     "after": [
+      "**Dalam praktik, kata ganti kedua hampir selalu orang ketiga:** *μου το, σου τη, του τα, μας τους, σας τις*.",
+      "**Την atau τη?** *Την* dipakai di depan vokal dan di depan *κ, π, τ, ξ, ψ, μπ, ντ, γκ, τσ, τζ*; di depan huruf lain cukup *τη*: *θα τη δοκιμάσω*, tetapi *σου την προσφέρω*."
+     ]
+    }
+   ]
+  },
+  {
+   "title": "ΔΙΑΛΟΓΟΣ 2 — Oper rotinya, dong",
+   "intro": "Satu jam kemudian, di meja yang sama. Piring-piring berpindah tangan dan kata ganti bertebaran. Perhatikan kapan kata ganti berdiri di depan kata kerja dan kapan di belakangnya.",
+   "lines": [
+    {
+     "speaker": "Μπούντι:",
+     "text": "[Άννα|A-na], [μου|mu] [δίνεις|DHI-nis] [το|to] [ψωμί|pso-MI], [σε|sé] [παρακαλώ|pa-ra-ka-LO];",
+     "id": "Ana, boleh minta rotinya?",
+     "literal": "Ana, kepada-saya beri-kamu (sandang) roti, kamu saya-mohon?"
+    },
+    {
+     "speaker": "Άννα:",
+     "text": "[Ορίστε|O-RI-sté], [στο|sto] [δίνω|DHI-no]. [Θέλεις|THÉ-lis] [και|ké] [λάδι|LA-dhi];",
+     "id": "Nih, kuberikan. Mau minyak zaitun juga?",
+     "literal": "silakan, kepada-kamu-ia(nt) beri-saya. mau-kamu juga minyak?"
+    },
+    {
+     "speaker": "Μπούντι:",
+     "text": "[Ναι|Né], [δώσε|DHO-sé] [μου|mu] [το|to]. [Αυτό|Af-TO] [το|to] [λάδι|LA-dhi] [είναι|I-né] [απίστευτο|a-PI-stéf-to]!",
+     "id": "Mau, sini. Minyak ini luar biasa!",
+     "literal": "ya, berilah kepada-saya ia(nt). ini (sandang) minyak adalah-ia tak-masuk-akal!"
+    },
+    {
+     "speaker": "Στέλιος:",
+     "text": "[Είναι|I-né] [από|a-PO] [τις|tis] [ελιές|é-LIÉS] [του|tu] [χωριού|kho-RIU] [μου|mu]. [Θα|Tha] [σου|su] [στείλω|STI-lo] [ένα|É-na] [μπουκάλι|bu-KA-li] [στην|stin] [Αθήνα|A-THI-na].",
+     "id": "Itu dari zaitun desa saya. Nanti saya kirimi kamu sebotol ke Athena.",
+     "literal": "adalah-ia dari (sandang) zaitun-zaitun (sandang-gen) desa-gen saya. akan kepada-kamu kirim-saya satu botol ke-(sandang) Athena."
+    },
+    {
+     "speaker": "Μπούντι:",
+     "text": "[Αλήθεια|A-LI-thi-a]; [Θα|Tha] [μου|mu] [το|to] [στείλετε|STI-lé-té]; [Ευχαριστώ|Éf-kha-ri-STO] [πολύ|po-LI]!",
+     "id": "Serius? Bapak mau mengirimkannya untuk saya? Terima kasih banyak!",
+     "literal": "kebenaran? akan kepada-saya ia(nt) kirim-Anda? terima-kasih-saya banyak!"
+    },
+    {
+     "speaker": "Άννα:",
+     "text": "[Κύριε|KI-ri-é] [Μανουσάκη|Ma-nu-SA-ki], [ο|o] [ντάκος|DA-kos] [είναι|I-né] [υπέροχος|i-PÉ-ro-khos]. [Μου|Mu] [λέτε|LÉ-té] [τη|ti] [συνταγή|sin-da-YI];",
+     "id": "Pak Manousakis, dakos-nya enak sekali. Boleh saya tahu resepnya?",
+     "literal": "tuan Manousakis, (sandang) dakos adalah-ia hebat. kepada-saya katakan-Anda (sandang) resep?"
+    },
+    {
+     "speaker": "Στέλιος:",
+     "text": "[Θα|Tha] [σου|su] [τη|ti] [γράψω|GHRA-pso] [τώρα|TO-ra], [σε|sé] [μια|mia] [χαρτοπετσέτα|khar-to-pé-TSÉ-ta]!",
+     "id": "Saya tuliskan untukmu sekarang, di selembar tisu!",
+     "literal": "akan kepada-kamu ia(pr) tulis-saya sekarang, di satu tisu!"
+    },
+    {
+     "speaker": "Σερβιτόρος:",
+     "text": "[Να|Na] [σας|sas] [φέρω|FÉ-ro] [κάτι|KA-ti] [ακόμα|a-KO-ma]; [Λίγο|LI-gho] [γλυκό|ghli-KO], [κερασμένο|ké-ra-SMÉ-no] [από|a-PO] [το|to] [μαγαζί|ma-gha-ZI];",
+     "id": "Mau saya bawakan sesuatu lagi? Sedikit pencuci mulut, gratis dari kami?",
+     "literal": "supaya kepada-kalian bawa-saya sesuatu lagi? sedikit manisan, ditraktir dari (sandang) toko?"
+    },
+    {
+     "speaker": "Άννα:",
+     "text": "[Ευχαριστούμε|Éf-kha-ri-STU-mé] [πολύ|po-LI]! [Φέρτε|FÉR-té] [μας|mas] [το|to], [αλλά|a-LA] [ένα|É-na] [μικρό|mi-KRO] [κομμάτι|ko-MA-ti] [για|ya] [μένα|MÉ-na].",
+     "id": "Terima kasih banyak! Bawakan saja, tapi untuk saya potongan kecil, ya.",
+     "literal": "terima-kasih-kami banyak! bawalah-Anda kepada-kami ia(nt), tetapi satu kecil potong untuk saya."
+    },
+    {
+     "speaker": "Στέλιος:",
+     "text": "[Στην|Stin] [Κρήτη|KRI-ti] [δεν|dhén] [υπάρχει|i-PAR-khi] «[μικρό|mi-KRO] [κομμάτι|ko-MA-ti]», [Άννα|A-na] [μου|mu]!",
+     "id": "Di Kreta nggak ada yang namanya \"potongan kecil\", Ana!",
+     "literal": "di-(sandang) Kreta tidak ada-ia \"kecil potong\", Ana saya!"
+    }
+   ],
+   "notes": [
+    "⚠️ **Στο δίνω = σου το δίνω.** Dalam percakapan, *σου το* dan *σου τα* dirapatkan jadi **στο** dan **στα** (kadang ditulis *σ' το, σ' τα*). Bentuknya kebetulan sama dengan *στο* = \"ke/di (sandang)\" seperti *στο χωριό*. Pembedanya mudah: *στο* di depan **kata kerja** = \"kepadamu itu\"; di depan **kata benda** = \"ke/di\".",
+    "**Μου δίνεις… lawan δώσε μου το** — dengan kata kerja biasa, kata ganti berdiri di depan (*μου δίνεις*); dengan perintah, di belakang (*δώσε μου το, φέρτε μας το*). Dalam lisan kamu juga akan mendengar *δώσ' το μου*; keduanya benar.",
+    "**Μου δίνεις το ψωμί;** — pertanyaan bentuk kini adalah cara santai tapi sopan meminta sesuatu di meja, setara \"boleh minta rotinya?\". Kepada orang yang kamu sapa *εσείς*, ganti ekornya: *Μου λέτε τη συνταγή;*, persis seperti Ana kepada Stelios.",
+    "**Θα σου στείλω / Θα μου το στείλετε;** — Stelios memanggil Budi dan Ana dengan *εσύ* karena mereka jauh lebih muda; keduanya tetap menjawab dengan *εσείς*. Ketimpangan ini wajar dan sopan, seperti anak muda Indonesia yang tetap memanggil \"Bapak\".",
+    "**Κερασμένο** — \"traktiran\", dari *κερνάω* (mentraktir). Pencuci mulut atau segelas kecil ρακή gratis di akhir makan adalah tradisi taverna Kreta. Terimalah dengan *Ευχαριστούμε πολύ!*",
+    "**Άννα μου** — \"Ana-ku\": sapaan hangat orang yang lebih tua, bukan tanda kurang ajar. Kiria Maria memakainya juga di unit 5."
+   ],
+   "grammars": [
+    {
+     "title": "Posisi kata ganti",
+     "body": [
+      "Satu aturan besar: kata ganti lemah menempel di **depan** kata kerja — sesudah *δεν, θα, να, μη* — kecuali pada perintah, di mana ia pindah ke belakang."
+     ],
+     "table": {
+      "head": [
+       "Bentuk",
+       "Contoh",
+       "Arti"
+      ],
+      "rows": [
+       [
+        "kini",
+        "Σου το δίνω.",
+        "Aku memberikannya kepadamu."
+       ],
+       [
+        "lampau",
+        "Σου το έδωσα.",
+        "Aku sudah memberikannya kepadamu."
+       ],
+       [
+        "sangkalan",
+        "Δεν σου το δίνω.",
+        "Aku tidak memberikannya kepadamu."
+       ],
+       [
+        "masa depan",
+        "Θα σου το δώσω.",
+        "Aku akan memberikannya kepadamu."
+       ],
+       [
+        "sesudah να",
+        "Πρέπει να σου το δώσω.",
+        "Aku harus memberikannya kepadamu."
+       ],
+       [
+        "perintah",
+        "Δώσε μου το!",
+        "Berikan itu kepadaku!"
+       ],
+       [
+        "perintah sangkal",
+        "Μη μου το δώσεις!",
+        "Jangan berikan itu kepadaku!"
+       ]
+      ]
+     },
+     "after": [
+      "**Rapatan lisan** *στο, στα* hanya untuk *σου το, σου τα*. Dalam tulisan resmi, tulis lengkap: *σου το*.",
+      "Perintah sangkal memakai *μη(ν)* + bentuk sekali, bukan bentuk perintah: *Μη μου το πεις!* (Jangan bilang padaku!)."
+     ]
+    }
+   ]
+  }
+ ],
+ "sections": [
+  {
+   "title": "Meja Kreta",
+   "blocks": [
+    {
+     "type": "tabel",
+     "head": [
+      "Hidangan",
+      "Isinya"
+     ],
+     "rows": [
+      [
+       "ο ντάκος",
+       "roti jelai kering (*παξιμάδι*) dengan tomat parut, keju *μυζήθρα*, minyak zaitun"
+      ],
+      [
+       "οι χοχλιοί μπουμπουριστοί",
+       "siput digoreng terbalik dalam minyak zaitun, disiram cuka dan rosmarin"
+      ],
+      [
+       "το σταμναγκάθι",
+       "sayur liar berduri, direbus, dengan minyak zaitun dan lemon"
+      ],
+      [
+       "τα καλιτσούνια",
+       "pastel kecil isi keju lembut atau sayur"
+      ],
+      [
+       "το απάκι",
+       "⚠️ daging babi asap khas Kreta"
+      ],
+      [
+       "η γραβιέρα",
+       "keju keras Kreta"
+      ],
+      [
+       "ο γαμοπίλαφος",
+       "nasi berkaldu, hidangan pesta pernikahan"
+      ],
+      [
+       "η ρακή / η τσικουδιά",
+       "arak anggur bening, diminum dalam gelas kecil"
+      ],
+      [
+       "τα ξεροτήγανα",
+       "kue goreng bermadu, pencuci mulut"
+      ]
+     ]
+    },
+    {
+     "type": "kotak",
+     "title": "Kalau ada pantangan makanan",
+     "items": [
+      "*Δεν τρώω χοιρινό.* — Saya tidak makan daging babi.",
+      "*Έχει χοιρινό μέσα;* — Ada babinya?",
+      "*Είμαι χορτοφάγος.* — Saya vegetarian.",
+      "*Δεν πίνω αλκοόλ.* — Saya tidak minum alkohol."
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Kata ganti di meja makan",
+   "blocks": [
+    {
+     "type": "p",
+     "text": "Hampir setiap permintaan di meja makan dijawab dengan dua kata ganti. Latih pasangan ini berdua: satu orang meminta, yang lain menjawab tanpa mengulang kata bendanya."
+    },
+    {
+     "type": "tabel",
+     "head": [
+      "Permintaan",
+      "Jawaban"
+     ],
+     "rows": [
+      [
+       "Μου δίνεις το αλάτι;",
+       "Ορίστε, στο δίνω."
+      ],
+      [
+       "Μας φέρνετε τον λογαριασμό;",
+       "Αμέσως, σας τον φέρνω."
+      ],
+      [
+       "Μου λέτε τη συνταγή;",
+       "Θα σας τη γράψω."
+      ],
+      [
+       "Μου δίνεις τις πατάτες;",
+       "Ναι, σου τις δίνω."
+      ],
+      [
+       "Θέλεις το γλυκό μου;",
+       "Ναι, δώσε μου το!"
+      ],
+      [
+       "Ποιος σας το είπε;",
+       "Μας το είπε ο Στέλιος."
+      ]
+     ]
+    },
+    {
+     "type": "kotak",
+     "title": "Tiga kesalahan yang sering",
+     "items": [
+      "*Το σας φέρνω* ✗ → *Σας το φέρνω* ✓ — kepada-siapa dulu.",
+      "*Μου το δώσε* ✗ → *Δώσε μου το* ✓ — perintah tidak boleh didahului kata ganti.",
+      "*Το ψωμί θέλετε ζεστό;* ✗ → *Το ψωμί το θέλετε ζεστό;* ✓ — objek di depan wajib diulang."
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Siapa yang membayar?",
+   "blocks": [
+    {
+     "type": "p",
+     "text": "Di Yunani, tagihan jarang dibagi rata di depan pelayan. Tuan rumah — yang mengundang, atau yang paling tua — membayar semuanya, dan tamu diharapkan menawarkan diri sekali dua kali dengan sopan. Balasannya: lain kali giliranmu mentraktir. Dalam makan malam bisnis seperti ini, klienlah yang biasanya bersikeras membayar."
+    },
+    {
+     "type": "kotak",
+     "title": "Kalimat seputar tagihan",
+     "items": [
+      "*Τον λογαριασμό, παρακαλώ.* — Minta tagihannya.",
+      "*Κερνάω εγώ!* — Aku yang traktir!",
+      "*Όχι, όχι, δεν γίνεται! Την επόμενη φορά κερνάω εγώ.* — Jangan, jangan! Lain kali aku yang traktir.",
+      "*Πληρώνουμε χωριστά;* — Kita bayar sendiri-sendiri?"
+     ]
+    }
+   ]
+  }
+ ],
+ "vocab": [
+  {
+   "el": "ο μεζές",
+   "baca": "o mé-ZÉS",
+   "id": "meze, hidangan kecil untuk dibagi (*οι μεζέδες*)"
+  },
+  {
+   "el": "το πιάτο",
+   "baca": "to PIA-to",
+   "id": "piring; hidangan"
+  },
+  {
+   "el": "προτείνω",
+   "baca": "pro-TI-no",
+   "id": "menyarankan, merekomendasikan"
+  },
+  {
+   "el": "παραγγέλνω",
+   "baca": "pa-ran-GÉL-no",
+   "id": "memesan (*παρήγγειλα, να παραγγείλω*)"
+  },
+  {
+   "el": "το σαλιγκάρι",
+   "baca": "to sa-lin-GA-ri",
+   "id": "siput (di Kreta: *ο χοχλιός*)"
+  },
+  {
+   "el": "το ξίδι",
+   "baca": "to KSI-dhi",
+   "id": "cuka"
+  },
+  {
+   "el": "λατρεύω",
+   "baca": "la-TRÉ-vo",
+   "id": "memuja, sangat suka"
+  },
+  {
+   "el": "ο σερβιτόρος",
+   "baca": "o sér-vi-TO-ros",
+   "id": "pelayan restoran (*η σερβιτόρα*)"
+  },
+  {
+   "el": "το καραφάκι",
+   "baca": "to ka-ra-FA-ki",
+   "id": "karaf kecil"
+  },
+  {
+   "el": "η ρακή",
+   "baca": "i ra-KI",
+   "id": "arak anggur Kreta (*η τσικουδιά*)"
+  },
+  {
+   "el": "το ψωμί",
+   "baca": "to pso-MI",
+   "id": "roti"
+  },
+  {
+   "el": "το μπουκάλι",
+   "baca": "to bu-KA-li",
+   "id": "botol"
+  },
+  {
+   "el": "το αλκοόλ",
+   "baca": "to al-ko-OL",
+   "id": "alkohol (tak berubah)"
+  },
+  {
+   "el": "η πορτοκαλάδα",
+   "baca": "i por-to-ka-LA-dha",
+   "id": "minuman jeruk"
+  },
+  {
+   "el": "ο φιλοξενούμενος",
+   "baca": "o fi-lo-ksé-NU-mé-nos",
+   "id": "tamu (*η φιλοξενία* = keramahan pada tamu)"
+  },
+  {
+   "el": "σέβομαι",
+   "baca": "SÉ-vo-mé",
+   "id": "menghormati"
+  },
+  {
+   "el": "η υγεία",
+   "baca": "i i-YI-a",
+   "id": "kesehatan (*στην υγειά μας!* = bersulang)"
+  },
+  {
+   "el": "η συνεργασία",
+   "baca": "i si-nér-gha-SI-a",
+   "id": "kerja sama"
+  },
+  {
+   "el": "το λάδι",
+   "baca": "to LA-dhi",
+   "id": "minyak; minyak zaitun"
+  },
+  {
+   "el": "η ελιά",
+   "baca": "i é-LIA",
+   "id": "buah zaitun; pohon zaitun"
+  },
+  {
+   "el": "απίστευτος",
+   "baca": "a-PI-stéf-tos",
+   "id": "luar biasa, tak masuk akal"
+  },
+  {
+   "el": "η συνταγή",
+   "baca": "i sin-da-YI",
+   "id": "resep (masakan atau dokter)"
+  },
+  {
+   "el": "η χαρτοπετσέτα",
+   "baca": "i khar-to-pé-TSÉ-ta",
+   "id": "serbet kertas, tisu makan"
+  },
+  {
+   "el": "κερνάω",
+   "baca": "kér-NA-o",
+   "id": "mentraktir (*κερασμένο* = gratis dari rumah makan)"
+  },
+  {
+   "el": "το γλυκό",
+   "baca": "to ghli-KO",
+   "id": "manisan, pencuci mulut"
+  }
+ ],
+ "exercises": [
+  {
+   "prompt": "Terjemahkan ke bahasa Yunani (pakai kata ganti lemah).",
+   "items": [
+    "Rotinya, Anda mau yang hangat?",
+    "Aku berikan itu (*το*) kepadamu.",
+    "Berikan itu (*το*) kepadaku!",
+    "Bisa Anda bawakan itu (*το*) untuk kami?",
+    "Saya akan menuliskan resepnya untukmu.",
+    "Saya tidak minum alkohol."
+   ]
+  },
+  {
+   "prompt": "Isi dengan kata ganti lemah yang tepat (lihat petunjuk dalam kurung).",
+   "items": [
+    "Ο σερβιτόρος ____ φέρνει το νερό. (kepada kami)",
+    "Η Άννα έγραψε ένα γράμμα και ____ έστειλε στη Ρίνα. (surat itu)",
+    "Τη ρακή ____ πίνουν κρύα στην Κρήτη. (raki itu)",
+    "Θέλω τα κλειδιά. Δώσε ____ τα! (kepadaku)",
+    "Ο Στέλιος θα ____ στείλει λάδι. (kepada Budi)",
+    "Σου αρέσουν οι χοχλιοί; Θα ____ δοκιμάσω αύριο. (siput-siput itu)",
+    "Αυτά τα λουλούδια είναι για σένα. ____ τα φέρνω από τον κήπο. (kepadamu)"
+   ]
+  },
+  {
+   "prompt": "Ganti kata benda objek dengan kata ganti lemah.",
+   "items": [
+    "Σας φέρνω το νερό.",
+    "Μου δίνεις τις πατάτες;",
+    "Θα σου στείλω το λάδι.",
+    "Φέρτε μας το γλυκό!",
+    "Ο Κώστας είπε στην Άννα την ιστορία.",
+    "Δεν σου έδωσα τα κλειδιά."
+   ]
+  },
+  {
+   "prompt": "Susun jadi kalimat yang benar.",
+   "items": [
+    "το / σας / φέρνω",
+    "μου / δώσε / το",
+    "τη / γράψω / σου / θα",
+    "ζεστό / θέλετε / ψωμί / το / το",
+    "δεν / αλκοόλ / πίνω / εγώ"
+   ]
+  }
+ ],
+ "answers": [
+  "Το ψωμί το θέλετε ζεστό; — Σου το δίνω (στο δίνω). — Δώσε μου το! — Μας το φέρνετε; — Θα σου γράψω τη συνταγή. — Δεν πίνω αλκοόλ.",
+  "μας — το — την — μου — του — τους — Σου",
+  "Σας το φέρνω. — Μου τις δίνεις; — Θα σου το στείλω. — Φέρτε μας το! — Ο Κώστας της την είπε. — Δεν σου τα έδωσα.",
+  "Σας το φέρνω. — Δώσε μου το! — Θα σου τη γράψω. — Το ψωμί το θέλετε ζεστό; — Εγώ δεν πίνω αλκοόλ."
+ ]
+}

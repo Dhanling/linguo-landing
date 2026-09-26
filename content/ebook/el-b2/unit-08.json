@@ -1,0 +1,674 @@
+{
+ "title": "Kontrak — bahasa hukum",
+ "title_target": "Τα συμβαλλόμενα μέρη",
+ "goal": "Membaca dan membahas draf perjanjian kerja sama: mengenali bagian-bagiannya, membedakan kewajiban dari hak (*υποχρεούται, οφείλει, δικαιούται, δύναται*), dan mengusulkan perubahan pasal tentang pengakhiran, perpanjangan, dan keadaan kahar (*η λύση της σύμβασης, η παράταση, η ανωτέρα βία*).",
+ "bekal": [
+  "mengenali struktur kontrak Yunani dan rumusnya: *τα συμβαλλόμενα μέρη, εφεξής καλούμενη, η παρούσα*",
+  "membedakan wajib, berhak, dan dapat: *υποχρεούται να, δικαιούται να, δύναται να*",
+  "membahas perubahan pasal dengan pengacara: *καταγγελία, προειδοποίηση, αποζημίωση, παράταση, τροποποίηση*"
+ ],
+ "dialogs": [
+  {
+   "title": "ΔΙΑΛΟΓΟΣ 1 — Membaca draf perjanjian",
+   "intro": "Selasa, 9 Januari 2029, kantor hukum di Akti Miaouli, Pireas, menghadap pelabuhan. Pengacara perusahaan, Sofia Karagianni, membacakan draf perjanjian kerja sama tiga pihak bersama Ana dan Pak Kostas. Semua syarat yang disepakati di universitas bulan lalu kini harus berubah menjadi pasal.",
+   "lines": [
+    {
+     "speaker": "Καραγιάννη:",
+     "text": "Ξεκινάμε από το προοίμιο: «Στον Πειραιά σήμερα, τα κάτωθι συμβαλλόμενα μέρη συμφώνησαν τα ακόλουθα».",
+     "id": "Kita mulai dari pembukaan: \"Di Pireas pada hari ini, para pihak yang tersebut di bawah ini menyepakati hal-hal berikut.\"",
+     "literal": "kita-mulai dari (sandang) pembukaan: di-(sandang) Pireas hari-ini, (sandang) di-bawah-ini yang-berkontrak pihak-pihak menyepakati (sandang) berikut."
+    },
+    {
+     "speaker": "Άννα:",
+     "text": "«Συμβαλλόμενα μέρη» είναι όσοι υπογράφουν τη σύμβαση, σωστά;",
+     "id": "\"Para pihak yang berkontrak\" itu yang menandatangani kontrak, kan?",
+     "literal": "yang-berkontrak pihak-pihak adalah sebanyak-yang menandatangani (sandang) kontrak, betul?"
+    },
+    {
+     "speaker": "Καραγιάννη:",
+     "text": "Ακριβώς. Εδώ είναι τρία: η εταιρεία σας, το πανεπιστήμιο και το ινδονησιακό υπουργείο.",
+     "id": "Tepat. Di sini ada tiga: perusahaan Anda, universitas, dan kementerian Indonesia.",
+     "literal": "tepat. di-sini adalah tiga: (sandang) perusahaan Anda, (sandang) universitas dan (sandang) Indonesia kementerian."
+    },
+    {
+     "speaker": "Άννα:",
+     "text": "Στη δεύτερη γραμμή γράφει «εφεξής καλούμενη “η Εταιρεία”». Τι σημαίνει το «εφεξής»;",
+     "id": "Di baris kedua tertulis \"selanjutnya disebut 'Perusahaan'\". Apa arti εφεξής?",
+     "literal": "di-(sandang) kedua baris menulis-ia selanjutnya yang-disebut-(pr) (sandang) Perusahaan. apa berarti-ia (sandang) selanjutnya?"
+    },
+    {
+     "speaker": "Καραγιάννη:",
+     "text": "«Από εδώ και πέρα». Στο υπόλοιπο κείμενο δεν γράφουμε πια ολόκληρη την επωνυμία.",
+     "id": "\"Dari sini dan seterusnya.\" Di sisa naskah kita tidak lagi menulis nama resmi lengkapnya.",
+     "literal": "dari sini dan seterusnya. di-(sandang) sisa teks tidak kami-tulis lagi utuh (sandang) nama-resmi."
+    },
+    {
+     "speaker": "Κώστας:",
+     "text": "Πάμε στο άρθρο 4. Εκεί είναι οι δικές μας υποχρεώσεις.",
+     "id": "Kita ke pasal 4. Di situ kewajiban-kewajiban kita.",
+     "literal": "kita-pergi ke-(sandang) pasal 4. di-sana adalah (sandang) milik kita kewajiban-kewajiban."
+    },
+    {
+     "speaker": "Καραγιάννη:",
+     "text": "«Η Εταιρεία υποχρεούται να παρέχει πρακτική άσκηση σε δέκα δοκίμους ετησίως».",
+     "id": "\"Perusahaan wajib menyediakan praktik kerja bagi sepuluh kadet setiap tahun.\"",
+     "literal": "(sandang) Perusahaan diwajibkan untuk menyediakan-(berulang) praktis latihan kepada sepuluh kadet-kadet tiap-tahun."
+    },
+    {
+     "speaker": "Άννα:",
+     "text": "Και το πανεπιστήμιο; Έχει μόνο δικαιώματα;",
+     "id": "Lalu universitas? Apa mereka hanya punya hak?",
+     "literal": "dan (sandang) universitas? punya-ia hanya hak-hak?"
+    },
+    {
+     "speaker": "Καραγιάννη:",
+     "text": "Όχι. Το άρθρο 5 ορίζει ότι οφείλει να διαθέτει τον προσομοιωτή τετρακόσιες ώρες ετησίως.",
+     "id": "Tidak. Pasal 5 menetapkan bahwa universitas wajib menyediakan simulator empat ratus jam per tahun.",
+     "literal": "tidak. (sandang) pasal 5 menetapkan-ia bahwa wajib-ia untuk menyediakan-(berulang) (sandang) simulator empat-ratus jam tiap-tahun."
+    },
+    {
+     "speaker": "Κώστας:",
+     "text": "Κι αν γίνει απεργία ή σεισμός και σταματήσουν όλα; Φταίμε εμείς;",
+     "id": "Kalau ada pemogokan atau gempa dan semuanya berhenti? Kita yang salah?",
+     "literal": "dan jika terjadi pemogokan atau gempa dan berhenti-mereka semua? bersalah-kami kami?"
+    },
+    {
+     "speaker": "Καραγιάννη:",
+     "text": "Γι' αυτό υπάρχει η ρήτρα ανωτέρας βίας. Κανένα μέρος δεν ευθύνεται για γεγονότα εκτός του ελέγχου του.",
+     "id": "Untuk itulah ada klausul keadaan kahar. Tidak ada pihak yang bertanggung jawab atas peristiwa di luar kendalinya.",
+     "literal": "untuk itu ada (sandang) klausul lebih-tinggi-punya kekuatan-punya. tidak-satu pihak tidak bertanggung-jawab untuk peristiwa-peristiwa di-luar (sandang) kendali-punya nya."
+    },
+    {
+     "speaker": "Άννα:",
+     "text": "Και η εμπιστευτικότητα; Τα προσωπικά δεδομένα των δοκίμων είναι ευαίσθητα.",
+     "id": "Lalu kerahasiaan? Data pribadi para kadet itu sensitif.",
+     "literal": "dan (sandang) kerahasiaan? (sandang) pribadi data (sandang) kadet-kadet-punya adalah sensitif."
+    },
+    {
+     "speaker": "Καραγιάννη:",
+     "text": "Καλύπτονται στο άρθρο 9, σύμφωνα με τον Γενικό Κανονισμό Προστασίας Δεδομένων.",
+     "id": "Itu diatur di pasal 9, sesuai dengan Peraturan Umum Perlindungan Data (GDPR).",
+     "literal": "tercakup-mereka di-(sandang) pasal 9, sesuai dengan (sandang) umum peraturan perlindungan-punya data-punya."
+    },
+    {
+     "speaker": "Κώστας:",
+     "text": "Εντάξει. Στείλτε μας τις παρατηρήσεις σας γραπτώς και τις συζητάμε την Πέμπτη.",
+     "id": "Baik. Kirimkan catatan Anda secara tertulis dan kita bahas hari Kamis.",
+     "literal": "baik. kirimkan kepada-kami (sandang) catatan-catatan Anda secara-tertulis dan itu-(jamak) kita-bahas (sandang) Kamis."
+    }
+   ],
+   "notes": [
+    "**τα συμβαλλόμενα μέρη** — partisip -όμενος (unit 5) dari *συμβάλλομαι*, \"mengikatkan diri dalam perjanjian\": para pihak yang berkontrak. *Το μέρος* di sini berarti pihak, bukan tempat atau bagian; jamaknya *τα μέρη*.",
+    "**τα κάτωθι…, τα ακόλουθα** — *κάτωθι* \"di bawah ini\" adalah katharevousa yang hanya hidup dalam tulisan resmi (lisan: *παρακάτω*). *Τα ακόλουθα* atau *τα εξής* = hal-hal berikut.",
+    "**εφεξής καλούμενη «η Εταιρεία»** — \"selanjutnya disebut 'Perusahaan'\". Rumus kontrak Indonesia persis sama, jadi mudah diingat. Perhatikan partisip *καλούμενη* ikut jenis perempuan *η εταιρεία*; untuk universitas menjadi *καλούμενο*, untuk kementerian juga *καλούμενο*.",
+    "**υποχρεούται να… / οφείλει να…** — dua cara kontrak mengatakan \"wajib\". *Υποχρεούμαι* adalah pasif dari *υποχρεώνω* (mewajibkan); *οφείλω* juga berarti berutang. Kontrak hampir tidak pernah memakai *πρέπει*.",
+    "**ετησίως** — \"setiap tahun\", keterangan resmi berakhiran -ως (lisan: *τον χρόνο*). Sejenis: *μηνιαίως, εγγράφως, αμοιβαίως*. *Ορίζει ότι* = menetapkan bahwa: kata kerja khas untuk pasal.",
+    "**η ρήτρα ανωτέρας βίας** — klausul keadaan kahar (force majeure), harfiah \"kekuatan yang lebih tinggi\". Genitif kuno *ανωτέρας* bertahan dalam istilah ini, walau *ανώτερης βίας* juga ditemui. *Ευθύνομαι για* = bertanggung jawab atas."
+   ],
+   "grammars": [
+    {
+     "title": "Kewajiban, hak, dan kewenangan dalam kontrak",
+     "body": [
+      "Bahasa kontrak Yunani memakai kata kerja modal yang lebih tajam daripada bahasa sehari-hari. Masing-masing punya fungsi hukum yang berbeda, jadi jangan dipertukarkan."
+     ],
+     "table": {
+      "head": [
+       "Ungkapan",
+       "Arti",
+       "Contoh"
+      ],
+      "rows": [
+       [
+        "*υποχρεούται να*",
+        "wajib",
+        "*Η Εταιρεία υποχρεούται να παρέχει πρακτική άσκηση.*"
+       ],
+       [
+        "*οφείλει να*",
+        "wajib, harus",
+        "*Το Πανεπιστήμιο οφείλει να διαθέτει τον προσομοιωτή.*"
+       ],
+       [
+        "*δικαιούται να*",
+        "berhak",
+        "*Κάθε μέρος δικαιούται να ζητήσει αναθεώρηση.*"
+       ],
+       [
+        "*δύναται να*",
+        "dapat, boleh",
+        "*Η σύμβαση δύναται να παραταθεί.*"
+       ],
+       [
+        "*δεσμεύεται να*",
+        "mengikatkan diri, berkomitmen",
+        "*Το Υπουργείο δεσμεύεται να καλύψει τα έξοδα.*"
+       ],
+       [
+        "*απαγορεύεται*",
+        "dilarang",
+        "*Απαγορεύεται η διαβίβαση δεδομένων σε τρίτους.*"
+       ],
+       [
+        "*ευθύνεται για*",
+        "bertanggung jawab atas",
+        "*Κανένα μέρος δεν ευθύνεται για ανωτέρα βία.*"
+       ],
+       [
+        "*ορίζει ότι*",
+        "menetapkan bahwa",
+        "*Το άρθρο 5 ορίζει ότι…*"
+       ]
+      ]
+     },
+     "after": [
+      "⚠️ Kontrak berbahasa Indonesia sering memakai \"dapat\" untuk hak maupun kemungkinan. Bahasa Yunani memisahkannya: *δικαιούται* (berhak, bisa dituntut) dan *δύναται* (boleh, dimungkinkan). Tentukan dulu mana yang dimaksud sebelum menerjemahkan.",
+      "*Δύναται* adalah bentuk katharevousa dari *μπορεί*; jamaknya *δύνανται*."
+     ]
+    }
+   ]
+  },
+  {
+   "title": "ΔΙΑΛΟΓΟΣ 2 — Mengubah pasal pengakhiran",
+   "intro": "Kamis, 11 Januari 2029, panggilan video. Pak Hendra mengirim catatan dari Jakarta tentang pasal 12. Ana membahasnya dengan Sofia Karagianni sebelum draf kedua dikirim ke semua pihak.",
+   "lines": [
+    {
+     "speaker": "Άννα:",
+     "text": "Κυρία Καραγιάννη, ο κ. Χέντρα έστειλε σχόλια για το άρθρο 12, τη λύση της σύμβασης.",
+     "id": "Bu Karagianni, Pak Hendra mengirim komentar tentang pasal 12, pengakhiran kontrak.",
+     "literal": "nyonya Karagianni, (sandang) tuan Hendra mengirim komentar-komentar tentang (sandang) pasal 12, (sandang) pengakhiran (sandang) kontrak-punya."
+    },
+    {
+     "speaker": "Καραγιάννη:",
+     "text": "Σας ακούω. Τι τον ενοχλεί;",
+     "id": "Silakan. Apa yang mengganjal baginya?",
+     "literal": "Anda aku-dengar. apa dia mengganggu-ia?"
+    },
+    {
+     "speaker": "Άννα:",
+     "text": "Κάθε μέρος μπορεί να καταγγείλει τη σύμβαση με προειδοποίηση ενός μηνός. Του φαίνεται πολύ λίγο.",
+     "id": "Setiap pihak bisa memutus kontrak dengan pemberitahuan satu bulan sebelumnya. Menurut beliau itu terlalu singkat.",
+     "literal": "setiap pihak bisa untuk memutus (sandang) kontrak dengan pemberitahuan satu-punya bulan-punya. kepadanya tampak-ia sangat sedikit."
+    },
+    {
+     "speaker": "Καραγιάννη:",
+     "text": "Δικαιολογημένα. Ένα υπουργείο χρειάζεται χρόνο για να βρει άλλη λύση. Τι προτείνει;",
+     "id": "Wajar. Sebuah kementerian butuh waktu untuk mencari solusi lain. Apa usulnya?",
+     "literal": "dengan-beralasan. sebuah kementerian membutuhkan waktu untuk agar menemukan lain solusi. apa mengusulkan-ia?"
+    },
+    {
+     "speaker": "Άννα:",
+     "text": "Τρεις μήνες, και μόνο εγγράφως. Ζητάει και αποζημίωση, αν η καταγγελία γίνει χωρίς σπουδαίο λόγο.",
+     "id": "Tiga bulan, dan hanya secara tertulis. Beliau juga minta ganti rugi kalau pemutusan dilakukan tanpa alasan yang sah.",
+     "literal": "tiga bulan, dan hanya secara-tertulis. meminta-ia juga ganti-rugi, jika (sandang) pemutusan terjadi tanpa penting alasan."
+    },
+    {
+     "speaker": "Καραγιάννη:",
+     "text": "Εύλογο. Να προσθέσουμε και μια παράγραφο για την παράταση;",
+     "id": "Masuk akal. Bagaimana kalau kita tambahkan juga satu ayat tentang perpanjangan?",
+     "literal": "masuk-akal. untuk kita-tambahkan juga sebuah ayat tentang (sandang) perpanjangan?"
+    },
+    {
+     "speaker": "Άννα:",
+     "text": "Ναι. Η σύμβαση να παρατείνεται αυτόματα για ένα έτος, εκτός αν κάποιο μέρος δηλώσει το αντίθετο.",
+     "id": "Ya. Kontraknya diperpanjang otomatis satu tahun, kecuali salah satu pihak menyatakan sebaliknya.",
+     "literal": "ya. (sandang) kontrak untuk diperpanjang-(berulang) otomatis untuk satu tahun, kecuali jika suatu pihak menyatakan (sandang) sebaliknya."
+    },
+    {
+     "speaker": "Καραγιάννη:",
+     "text": "Σωστό. Και κάθε τροποποίηση γίνεται μόνο εγγράφως, με αμοιβαία συναίνεση. Αυτό υπάρχει ήδη στο άρθρο 14.",
+     "id": "Betul. Dan setiap perubahan hanya dilakukan secara tertulis, dengan persetujuan bersama. Itu sudah ada di pasal 14.",
+     "literal": "benar. dan setiap perubahan terjadi hanya secara-tertulis, dengan timbal-balik persetujuan. itu ada sudah di-(sandang) pasal 14."
+    },
+    {
+     "speaker": "Άννα:",
+     "text": "Τέλεια. Μια απορία: η «λύση» εδώ δεν σημαίνει λύση προβλήματος, έτσι;",
+     "id": "Sempurna. Satu pertanyaan: \"λύση\" di sini tidak berarti solusi masalah, kan?",
+     "literal": "sempurna. sebuah pertanyaan: (sandang) solusi di-sini tidak berarti solusi masalah-punya, begitu?"
+    },
+    {
+     "speaker": "Καραγιάννη:",
+     "text": "Όχι. Λύση της σύμβασης είναι το τέλος της. Αν και καμιά φορά είναι και η λύση του προβλήματος!",
+     "id": "Bukan. Λύση kontrak adalah berakhirnya kontrak. Walaupun kadang-kadang itu juga jalan keluar dari masalah!",
+     "literal": "tidak. pengakhiran (sandang) kontrak-punya adalah (sandang) akhir-nya. walaupun suatu kali adalah juga (sandang) solusi (sandang) masalah-punya!"
+    },
+    {
+     "speaker": "Άννα:",
+     "text": "Θα το θυμάμαι. Στέλνω τις αλλαγές στον κ. Χέντρα με παρακολούθηση αλλαγών.",
+     "id": "Akan saya ingat. Saya kirim perubahannya ke Pak Hendra dengan fitur lacak perubahan.",
+     "literal": "akan itu aku-ingat. aku-kirim (sandang) perubahan-perubahan ke-(sandang) tuan Hendra dengan pelacakan perubahan-perubahan-punya."
+    }
+   ],
+   "notes": [
+    "⚠️ **η λύση της σύμβασης** — pengakhiran kontrak, BUKAN solusi kontrak. Kata kerja kuno *λύω* berarti melepas ikatan; dari situ *λύση* punya dua makna: pemecahan masalah dan terlepasnya ikatan. Penutur Indonesia yang akrab dengan kata \"solusi\" mudah salah baca: *λύθηκε η σύμβαση* berarti kontraknya diputus, bukan masalahnya beres.",
+    "**καταγγέλλω τη σύμβαση** — memutus kontrak secara sepihak. Kata yang sama berarti juga melaporkan (ke polisi) atau mengecam. Aorist *κατήγγειλα* (augmen di tengah), subjungtif *να καταγγείλω*; kata bendanya *η καταγγελία*.",
+    "**με προειδοποίηση ενός μηνός** — genitif untuk lama waktu: *προειδοποίηση τριών μηνών, προθεσμία πέντε ημερών*. *Του φαίνεται λίγο* = menurutnya kurang (harfiah \"tampak sedikit baginya\").",
+    "**χωρίς σπουδαίο λόγο** — istilah hukum: tanpa alasan yang sah atau penting. Di luar hukum, *σπουδαίος* berarti hebat atau penting: *σπουδαίος συγγραφέας*.",
+    "**να παρατείνεται** — *να* + bentuk kini untuk ketentuan yang berlaku berulang kali: setiap tahun kontrak diperpanjang lagi. Perbandingkan *να παραταθεί* (diperpanjang sekali). Kata bendanya *η παράταση*.",
+    "**με αμοιβαία συναίνεση, εγγράφως** — dengan persetujuan bersama, secara tertulis. *Εγγράφως* dan *γραπτώς* sama artinya; yang pertama lebih resmi dan lebih disukai kontrak. *Παρακολούθηση αλλαγών* adalah nama fitur \"Track Changes\" di pengolah kata versi Yunani."
+   ],
+   "grammars": [
+    {
+     "title": "Siklus hidup sebuah kontrak",
+     "body": [
+      "Pasangan kata benda dan kata kerja berikut mengikuti kontrak dari lahir sampai berakhir. Dalam tulisan hukum, kata benda lebih sering dipakai daripada kata kerjanya (gaya nominal, B1)."
+     ],
+     "table": {
+      "head": [
+       "Tahap",
+       "Kata benda",
+       "Kata kerja"
+      ],
+      "rows": [
+       [
+        "penyusunan",
+        "*η σύνταξη*",
+        "*συντάσσω*"
+       ],
+       [
+        "penandatanganan",
+        "*η υπογραφή*",
+        "*υπογράφω*"
+       ],
+       [
+        "mulai berlaku",
+        "*η έναρξη ισχύος*",
+        "*τίθεται σε ισχύ*"
+       ],
+       [
+        "perubahan",
+        "*η τροποποίηση*",
+        "*τροποποιώ*"
+       ],
+       [
+        "perpanjangan",
+        "*η παράταση*",
+        "*παρατείνω*"
+       ],
+       [
+        "pelanggaran",
+        "*η παραβίαση*",
+        "*παραβιάζω*"
+       ],
+       [
+        "pemutusan sepihak",
+        "*η καταγγελία*",
+        "*καταγγέλλω*"
+       ],
+       [
+        "berakhir",
+        "*η λύση*",
+        "*λύεται*"
+       ]
+      ]
+     },
+     "after": [
+      "*Τίθεται σε ισχύ* (mulai berlaku) memakai kata kerja kuno *τίθεμαι* yang hanya hidup dalam frasa ini dan beberapa frasa resmi lain.",
+      "*Παρατείνω* bentuk aoristnya *παρέτεινα*, pasifnya *παρατάθηκε*."
+     ]
+    }
+   ]
+  }
+ ],
+ "sections": [
+  {
+   "title": "Anatomi kontrak Yunani",
+   "blocks": [
+    {
+     "type": "p",
+     "text": "Kontrak menyebut dirinya sendiri *η παρούσα* (yang sekarang ini) atau *η παρούσα σύμβαση*. Angka penting ditulis dua kali, dengan huruf dan dengan angka: *τρία (3) έτη*. Berikut bagian-bagian yang hampir selalu ada, dengan rumus pembukanya."
+    },
+    {
+     "type": "tabel",
+     "head": [
+      "Bagian",
+      "Isi",
+      "Rumus khas"
+     ],
+     "rows": [
+      [
+       "*Προοίμιο*",
+       "tempat, tanggal, para pihak",
+       "*Στον Πειραιά σήμερα…*"
+      ],
+      [
+       "*Αντικείμενο*",
+       "pokok perjanjian",
+       "*Αντικείμενο της παρούσας είναι…*"
+      ],
+      [
+       "*Διάρκεια*",
+       "jangka waktu",
+       "*Η παρούσα ισχύει για τρία (3) έτη.*"
+      ],
+      [
+       "*Υποχρεώσεις*",
+       "kewajiban para pihak",
+       "*…υποχρεούται να…*"
+      ],
+      [
+       "*Τίμημα*",
+       "harga, biaya",
+       "*Το συμφωνηθέν τίμημα ανέρχεται σε…*"
+      ],
+      [
+       "*Εμπιστευτικότητα*",
+       "kerahasiaan",
+       "*Τα μέρη δεσμεύονται να τηρούν εχεμύθεια.*"
+      ],
+      [
+       "*Ανωτέρα βία*",
+       "keadaan kahar",
+       "*Κανένα μέρος δεν ευθύνεται για…*"
+      ],
+      [
+       "*Λύση*",
+       "pengakhiran",
+       "*Η παρούσα λύεται…*"
+      ],
+      [
+       "*Εφαρμοστέο δίκαιο*",
+       "hukum yang berlaku",
+       "*Η παρούσα διέπεται από το ελληνικό δίκαιο.*"
+      ],
+      [
+       "*Δικαιοδοσία*",
+       "pengadilan yang berwenang",
+       "*Αρμόδια ορίζονται τα δικαστήρια του Πειραιά.*"
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Kosakata katharevousa dalam kontrak",
+   "blocks": [
+    {
+     "type": "p",
+     "text": "Bahasa hukum adalah benteng terakhir katharevousa. Kamu tidak perlu memakainya dalam obrolan, tetapi harus mengenalinya dalam sekali baca."
+    },
+    {
+     "type": "tabel",
+     "head": [
+      "Kontrak",
+      "Sehari-hari",
+      "Arti"
+     ],
+     "rows": [
+      [
+       "*η παρούσα, το παρόν*",
+       "*αυτή, αυτό*",
+       "(dokumen) ini"
+      ],
+      [
+       "*κάτωθι*",
+       "*παρακάτω*",
+       "di bawah ini"
+      ],
+      [
+       "*ανωτέρω*",
+       "*παραπάνω*",
+       "di atas"
+      ],
+      [
+       "*εφεξής*",
+       "*από εδώ και πέρα*",
+       "selanjutnya"
+      ],
+      [
+       "*δύναται*",
+       "*μπορεί*",
+       "dapat"
+      ],
+      [
+       "*εγγράφως*",
+       "*γραπτώς*",
+       "secara tertulis"
+      ],
+      [
+       "*διέπεται από*",
+       "*ρυθμίζεται από*",
+       "diatur oleh"
+      ],
+      [
+       "*ανέρχεται σε*",
+       "*φτάνει*",
+       "berjumlah"
+      ],
+      [
+       "*η εχεμύθεια*",
+       "*η μυστικότητα*",
+       "kerahasiaan"
+      ]
+     ]
+    },
+    {
+     "type": "kotak",
+     "title": "Membaca kontrak dalam bahasa kedua",
+     "items": [
+      "Baca dulu bagian definisi dan *εφεξής*: nama-nama singkat di dalamnya dipakai di seluruh naskah.",
+      "Garis bawahi setiap *υποχρεούται, δικαιούται, δύναται*. Di sanalah isi hukum kontrak berada.",
+      "Tanyakan setiap istilah yang ragu, seperti Ana dengan *λύση*. Pengacara lebih suka ditanya daripada disalahpahami.",
+      "Untuk dokumen yang diajukan ke instansi, mintalah terjemahan resmi (*επίσημη μετάφραση*), bukan terjemahanmu sendiri."
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Ulangan berjenjang — unit 5",
+   "blocks": [
+    {
+     "type": "p",
+     "text": "*Συμβαλλόμενα* adalah partisip -όμενος, keluarga yang sama dengan unit 5. Tutup kolom Yunani, lalu susun kembali kalimatnya."
+    },
+    {
+     "type": "tabel",
+     "head": [
+      "Bahasa Indonesia",
+      "ΕΛΛΗΝΙΚΑ"
+     ],
+     "rows": [
+      [
+       "Para peserta dipersilakan menempati tempat duduk.",
+       "*Οι συμμετέχοντες παρακαλούνται να λάβουν θέση.*"
+      ],
+      [
+       "Pemohon wajib menyerahkan paspor yang berlaku.",
+       "*Ο αιτών οφείλει να προσκομίσει ισχύον διαβατήριο.*"
+      ],
+      [
+       "Yang berminat dapat menghubungi Sekretariat.",
+       "*Οι ενδιαφερόμενοι μπορούν να απευθύνονται στη Γραμματεία.*"
+      ],
+      [
+       "Yang terpilih akan diberi tahu.",
+       "*Οι επιλεγέντες θα ενημερωθούν.*"
+      ],
+      [
+       "Hadirin bertepuk tangan.",
+       "*Οι παρευρισκόμενοι χειροκρότησαν.*"
+      ]
+     ]
+    }
+   ]
+  }
+ ],
+ "vocab": [
+  {
+   "el": "η σύμβαση",
+   "baca": "i SIM-va-si",
+   "id": "kontrak, perjanjian (*το συμβόλαιο* = akta notaris, polis)"
+  },
+  {
+   "el": "το σχέδιο σύμβασης",
+   "baca": "to SKHÉ-dhio SIM-va-sis",
+   "id": "draf kontrak"
+  },
+  {
+   "el": "τα συμβαλλόμενα μέρη",
+   "baca": "ta sim-va-LO-mé-na MÉ-ri",
+   "id": "para pihak (dalam kontrak)"
+  },
+  {
+   "el": "ο/η δικηγόρος",
+   "baca": "o/i dhi-ki-GHO-ros",
+   "id": "pengacara"
+  },
+  {
+   "el": "το άρθρο",
+   "baca": "to AR-thro",
+   "id": "pasal"
+  },
+  {
+   "el": "η παράγραφος",
+   "baca": "i pa-RA-ghra-fos",
+   "id": "ayat, paragraf"
+  },
+  {
+   "el": "το προοίμιο",
+   "baca": "to pro-I-mio",
+   "id": "pembukaan, mukadimah"
+  },
+  {
+   "el": "εφεξής",
+   "baca": "é-fé-KSIS",
+   "id": "selanjutnya (resmi)"
+  },
+  {
+   "el": "κάτωθι",
+   "baca": "KA-to-thi",
+   "id": "di bawah ini (resmi)"
+  },
+  {
+   "el": "υποχρεούμαι",
+   "baca": "i-po-khré-U-mé",
+   "id": "diwajibkan (*υποχρεούται να* = wajib)"
+  },
+  {
+   "el": "δικαιούμαι",
+   "baca": "dhi-ké-U-mé",
+   "id": "berhak (*δικαιούται να*)"
+  },
+  {
+   "el": "οφείλω",
+   "baca": "o-FI-lo",
+   "id": "wajib, harus; berutang"
+  },
+  {
+   "el": "η υποχρέωση",
+   "baca": "i i-po-KHRÉ-o-si",
+   "id": "kewajiban"
+  },
+  {
+   "el": "το δικαίωμα",
+   "baca": "to dhi-KÉ-o-ma",
+   "id": "hak"
+  },
+  {
+   "el": "η ανωτέρα βία",
+   "baca": "i a-no-TÉ-ra VI-a",
+   "id": "keadaan kahar, force majeure"
+  },
+  {
+   "el": "ευθύνομαι",
+   "baca": "éf-THI-no-mé",
+   "id": "bertanggung jawab (*για* + akusatif)"
+  },
+  {
+   "el": "η εμπιστευτικότητα",
+   "baca": "i ém-bi-stéf-ti-KO-ti-ta",
+   "id": "kerahasiaan"
+  },
+  {
+   "el": "τα προσωπικά δεδομένα",
+   "baca": "ta pro-so-pi-KA dhé-dho-MÉ-na",
+   "id": "data pribadi"
+  },
+  {
+   "el": "η λύση της σύμβασης",
+   "baca": "i LI-si tis SIM-va-sis",
+   "id": "pengakhiran kontrak"
+  },
+  {
+   "el": "καταγγέλλω",
+   "baca": "ka-tan-GÉ-lo",
+   "id": "memutus sepihak; melaporkan (*κατήγγειλα*)"
+  },
+  {
+   "el": "η προειδοποίηση",
+   "baca": "i pro-i-dho-PI-i-si",
+   "id": "pemberitahuan sebelumnya; peringatan"
+  },
+  {
+   "el": "η αποζημίωση",
+   "baca": "i a-po-zi-MI-o-si",
+   "id": "ganti rugi, kompensasi"
+  },
+  {
+   "el": "η παράταση",
+   "baca": "i pa-RA-ta-si",
+   "id": "perpanjangan"
+  },
+  {
+   "el": "η τροποποίηση",
+   "baca": "i tro-po-PI-i-si",
+   "id": "perubahan, amandemen"
+  },
+  {
+   "el": "εγγράφως",
+   "baca": "én-GRA-fos",
+   "id": "secara tertulis (resmi)"
+  }
+ ],
+ "exercises": [
+  {
+   "prompt": "Terjemahkan ke bahasa Yunani (ragam kontrak).",
+   "items": [
+    "Para pihak menyepakati hal-hal berikut.",
+    "Perusahaan wajib menyediakan praktik kerja bagi sepuluh kadet setiap tahun.",
+    "Setiap pihak berhak meminta peninjauan.",
+    "Tidak ada pihak yang bertanggung jawab atas keadaan kahar.",
+    "Setiap perubahan hanya dilakukan secara tertulis.",
+    "Kontrak diperpanjang otomatis satu tahun, kecuali salah satu pihak menyatakan sebaliknya."
+   ]
+  },
+  {
+   "prompt": "Isi dengan bentuk yang tepat. Petunjuk ada di dalam kurung.",
+   "items": [
+    "Η Εταιρεία ____ να παρέχει πρακτική άσκηση. (wajib, bentuk pasif)",
+    "Κάθε μέρος ____ να ζητήσει αναθεώρηση. (berhak)",
+    "Η σύμβαση ____ να παραταθεί. (dapat, ragam resmi)",
+    "Κανένα μέρος δεν ____ για ανωτέρα βία. (bertanggung jawab)",
+    "Κάθε μέρος μπορεί να ____ τη σύμβαση με προειδοποίηση τριών μηνών. (καταγγέλλω, subjungtif)",
+    "Η ρήτρα ____ βίας βρίσκεται στο άρθρο 11. (ανωτέρα, genitif)",
+    "Η Αιγαίον Ναυτιλιακή, εφεξής ____ «η Εταιρεία», … (καλούμαι, partisip perempuan)"
+   ]
+  },
+  {
+   "prompt": "Ubah ke ragam kontrak.",
+   "items": [
+    "Η εταιρεία πρέπει να πληρώσει τα έξοδα.",
+    "Η σύμβαση μπορεί να αλλάξει μόνο γραπτώς.",
+    "Το Πανεπιστήμιο Πειραιώς, που από εδώ και πέρα το λέμε «το Πανεπιστήμιο», …",
+    "Τα μέρη που υπογράφουν συμφώνησαν τα παρακάτω.",
+    "Κάθε μέρος έχει το δικαίωμα να ζητήσει αλλαγές.",
+    "Αυτή η σύμβαση ισχύει για τρία χρόνια."
+   ]
+  },
+  {
+   "prompt": "Susun jadi kalimat yang benar.",
+   "items": [
+    "τα συμβαλλόμενα μέρη / τα ακόλουθα / συμφώνησαν",
+    "ευθύνεται / δεν / κανένα μέρος / για ανωτέρα βία",
+    "εγγράφως / γίνεται / κάθε τροποποίηση / μόνο",
+    "σε ισχύ / τίθεται / η σύμβαση / την 1η Φεβρουαρίου",
+    "δικαιούται / αναθεώρηση / να / ζητήσει / κάθε μέρος"
+   ]
+  }
+ ],
+ "answers": [
+  "Τα συμβαλλόμενα μέρη συμφώνησαν τα ακόλουθα. — Η Εταιρεία υποχρεούται να παρέχει πρακτική άσκηση σε δέκα δοκίμους ετησίως. — Κάθε μέρος δικαιούται να ζητήσει αναθεώρηση. — Κανένα μέρος δεν ευθύνεται για ανωτέρα βία. — Κάθε τροποποίηση γίνεται μόνο εγγράφως. — Η σύμβαση παρατείνεται αυτόματα για ένα έτος, εκτός αν κάποιο μέρος δηλώσει το αντίθετο.",
+  "υποχρεούται — δικαιούται — δύναται — ευθύνεται — καταγγείλει — ανωτέρας — καλούμενη",
+  "Η Εταιρεία υποχρεούται να καταβάλει (να πληρώσει) τα έξοδα. — Η σύμβαση δύναται να τροποποιηθεί μόνο εγγράφως. — Το Πανεπιστήμιο Πειραιώς, εφεξής καλούμενο «το Πανεπιστήμιο», … — Τα συμβαλλόμενα μέρη συμφώνησαν τα κάτωθι. — Κάθε μέρος δικαιούται να ζητήσει τροποποιήσεις. — Η παρούσα σύμβαση ισχύει για τρία (3) έτη.",
+  "Τα συμβαλλόμενα μέρη συμφώνησαν τα ακόλουθα. — Κανένα μέρος δεν ευθύνεται για ανωτέρα βία. — Κάθε τροποποίηση γίνεται μόνο εγγράφως. — Η σύμβαση τίθεται σε ισχύ την 1η Φεβρουαρίου. — Κάθε μέρος δικαιούται να ζητήσει αναθεώρηση."
+ ]
+}

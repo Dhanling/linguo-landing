@@ -1,0 +1,606 @@
+{
+ "title": "Di hotel — permintaan sopan",
+ "title_target": "Θα μπορούσατε να μου…;",
+ "goal": "Meminta, memilih, dan mengeluh dengan sopan di hotel memakai *θα ήθελα, θα μπορούσατε να…, θα προτιμούσα* serta bentuk *εσείς* yang wajib untuk orang yang belum kamu kenal.",
+ "bekal": [
+  "melunakkan permintaan dengan *θα* + bentuk lampau berlangsung: *θα ήθελα, θα μπορούσατε, θα προτιμούσα*",
+  "mengeluhkan masalah kamar tanpa terdengar kasar: *Ο κλιματισμός δεν δουλεύει, νομίζω*",
+  "memakai *εσείς* untuk petugas dan orang asing, bahkan yang sebaya denganmu"
+ ],
+ "dialogs": [
+  {
+   "title": "ΔΙΑΛΟΓΟΣ 1 — Kamar dengan pemandangan",
+   "intro": "Kamis, 12 November 2026, pukul sebelas siang, sebuah hotel kecil di dekat pelabuhan tua Chania. Budi menunggu di lobi bersama koper; Ana melakukan check-in lalu ikut resepsionis melihat kamar. Hitung berapa kali Ana memakai *θα*.",
+   "lines": [
+    {
+     "speaker": "Υπάλληλος:",
+     "text": "[Καλώς|Ka-LOS] [ήρθατε|IR-tha-té] [στα|sta] [Χανιά|Kha-NIA]! [Πώς|Pos] [μπορώ|bo-RO] [να|na] [σας|sas] [εξυπηρετήσω|é-ksi-pi-ré-TI-so];",
+     "id": "Selamat datang di Chania! Ada yang bisa saya bantu?",
+     "literal": "baik datang-Anda ke-(sandang) Chania! bagaimana bisa-saya supaya Anda layani-saya?"
+    },
+    {
+     "speaker": "Άννα:",
+     "text": "[Καλημέρα|Ka-li-MÉ-ra] [σας|sas]. [Έχουμε|É-khu-mé] [κράτηση|KRA-ti-si] [για|ya] [δύο|DHI-o] [μονόκλινα|mo-NO-kli-na], [στο|sto] [όνομα|O-no-ma] [της|tis] [εταιρείας|é-té-RI-as] [Αιγαίον|É-YÉ-on] [Ναυτιλιακή|Naf-ti-lia-KI].",
+     "id": "Selamat pagi. Kami ada reservasi dua kamar single atas nama perusahaan Aegeon Nautiliaki.",
+     "literal": "selamat-pagi kepada-Anda. punya-kami reservasi untuk dua satu-ranjang, di-(sandang) nama (sandang-gen) perusahaan-gen Aegeon Nautiliaki."
+    },
+    {
+     "speaker": "Υπάλληλος:",
+     "text": "[Μάλιστα|MA-li-sta], [τη|ti] [βρήκα|VRI-ka]. [Θα|Tha] [μπορούσατε|bo-RU-sa-té] [να|na] [μου|mu] [δώσετε|DHO-sé-té] [τα|ta] [διαβατήριά|dhia-va-TI-RIA] [σας|sas];",
+     "id": "Baik, sudah ketemu. Boleh saya minta paspor Anda berdua?",
+     "literal": "baik, ia(pr) temukan-saya. akan bisa-Anda supaya kepada-saya berikan-Anda (sandang) paspor-paspor Anda?"
+    },
+    {
+     "speaker": "Άννα:",
+     "text": "[Ορίστε|O-RI-sté]. [Θα|Tha] [ήθελα|I-thé-la], [αν|an] [γίνεται|YI-né-té], [ένα|É-na] [δωμάτιο|dho-MA-tio] [με|mé] [θέα|THÉ-a] [στη|sti] [θάλασσα|THA-la-sa].",
+     "id": "Ini. Kalau bisa, saya ingin kamar dengan pemandangan laut.",
+     "literal": "silakan. akan mau-saya, kalau terjadi-ia, satu kamar dengan pemandangan ke-(sandang) laut."
+    },
+    {
+     "speaker": "Υπάλληλος:",
+     "text": "[Έχω|É-kho] [το|to] [τριακόσια|tri-a-KO-sia] [πέντε|PÉN-dé], [με|mé] [θέα|THÉ-a] [στο|sto] [παλιό|pa-LIO] [λιμάνι|li-MA-ni]. [Θα|Tha] [θέλατε|THÉ-la-té] [να|na] [το|to] [δείτε|DHI-té] [πρώτα|PRO-ta];",
+     "id": "Ada kamar 305, menghadap pelabuhan tua. Mau lihat dulu?",
+     "literal": "punya-saya (sandang) tiga-ratus lima, dengan pemandangan ke-(sandang) tua pelabuhan. akan mau-Anda supaya ia(nt) lihat-Anda dulu?"
+    },
+    {
+     "speaker": "Άννα:",
+     "text": "[Ναι|Né], [ευχαριστώ|éf-kha-ri-STO]. [Ο|O] [συνάδελφός|si-NA-dhél-FOS] [μου|mu] [θα|tha] [περιμένει|pé-ri-MÉ-ni] [εδώ|é-DHO].",
+     "id": "Ya, terima kasih. Rekan saya akan menunggu di sini.",
+     "literal": "ya, terima-kasih-saya. (sandang) rekan saya akan tunggu-ia di-sini."
+    },
+    {
+     "speaker": "Υπάλληλος:",
+     "text": "[Ορίστε|O-RI-sté], [περάστε|pé-RA-sté]. [Το|To] [δωμάτιο|dho-MA-tio] [έχει|É-khi] [μπαλκόνι|bal-KO-ni] [και|ké] [ψυγείο|psi-YI-o].",
+     "id": "Silakan masuk. Kamarnya ada balkon dan kulkas.",
+     "literal": "silakan, lewatlah-Anda. (sandang) kamar punya-ia balkon dan kulkas."
+    },
+    {
+     "speaker": "Άννα:",
+     "text": "[Είναι|I-né] [πολύ|po-LI] [όμορφο|O-mor-fo]. [Όμως|O-mos] [ο|o] [κλιματισμός|kli-ma-ti-SMOS] [δεν|dhén] [δουλεύει|dhu-LÉ-vi], [νομίζω|no-MI-zo].",
+     "id": "Bagus sekali. Tapi AC-nya sepertinya tidak jalan.",
+     "literal": "adalah-ia sangat indah. tetapi (sandang) AC tidak bekerja-ia, kira-saya."
+    },
+    {
+     "speaker": "Υπάλληλος:",
+     "text": "[Α|A], [συγγνώμη|si-GHNO-mi]! [Θα|Tha] [στείλω|STI-lo] [αμέσως|a-MÉ-sos] [τον|ton] [τεχνικό|té-khni-KO].",
+     "id": "Aduh, maaf! Saya kirim teknisi sekarang juga.",
+     "literal": "ah, maaf! akan kirim-saya segera (sandang) teknisi."
+    },
+    {
+     "speaker": "Άννα:",
+     "text": "[Και|Ké] [θα|tha] [μπορούσατε|bo-RU-sa-té] [να|na] [μου|mu] [φέρετε|FÉ-ré-té] [μια|mia] [πετσέτα|pé-TSÉ-ta] [ακόμα|a-KO-ma]; [Λείπει|LI-pi] [μία|MI-a].",
+     "id": "Dan bisakah Anda bawakan satu handuk lagi? Kurang satu.",
+     "literal": "dan akan bisa-Anda supaya kepada-saya bawa-Anda satu handuk lagi? kurang-ia satu."
+    },
+    {
+     "speaker": "Υπάλληλος:",
+     "text": "[Φυσικά|Fi-si-KA]. [Θέλετε|THÉ-lé-té] [κάτι|KA-ti] [άλλο|A-lo];",
+     "id": "Tentu. Ada lagi?",
+     "literal": "tentu. mau-Anda sesuatu lain?"
+    },
+    {
+     "speaker": "Άννα:",
+     "text": "[Μια|Mia] [ερώτηση|é-RO-ti-si]: [το|to] [μπαρ|bar] [από|a-PO] [κάτω|KA-to] [έχει|É-khi] [μουσική|mu-si-KI] [και|ké] [το|to] [βράδυ|VRA-dhi];",
+     "id": "Satu pertanyaan: bar di bawah juga pasang musik malam hari?",
+     "literal": "satu pertanyaan: (sandang) bar dari bawah punya-ia musik juga (sandang) malam?"
+    },
+    {
+     "speaker": "Υπάλληλος:",
+     "text": "[Μέχρι|MÉ-khri] [τις|tis] [δώδεκα|DHO-dhé-ka], [δυστυχώς|dhi-sti-KHOS]. [Αν|An] [θέλετε|THÉ-lé-té], [σας|sas] [δίνω|DHI-no] [το|to] [τετρακόσια|té-tra-KO-sia] [δύο|DHI-o], [στην|stin] [πίσω|PI-so] [πλευρά|plév-RA].",
+     "id": "Sampai jam dua belas, sayangnya. Kalau mau, saya beri kamar 402, di sisi belakang.",
+     "literal": "sampai (sandang) dua-belas, sayangnya. kalau mau-Anda, kepada-Anda beri-saya (sandang) empat-ratus dua, di-(sandang) belakang sisi."
+    },
+    {
+     "speaker": "Άννα:",
+     "text": "[Θα|Tha] [προτιμούσα|pro-ti-MU-sa] [το|to] [ήσυχο|I-si-kho]. [Τη|Ti] [θάλασσα|THA-la-sa] [θα|tha] [τη|ti] [δω|dho] [το|to] [πρωί|pro-I]!",
+     "id": "Saya lebih suka yang tenang. Lautnya bisa saya lihat pagi-pagi!",
+     "literal": "akan lebih-suka-saya (sandang) tenang. (sandang) laut akan ia(pr) lihat-saya (sandang) pagi!"
+    }
+   ],
+   "notes": [
+    "⚠️ **Εσείς untuk orang asing — wajib, bukan pilihan.** Resepsionis itu mungkin sebaya Ana, tetapi keduanya memakai bentuk jamak: *θα μπορούσατε, θα θέλατε, σας δίνω*. Pelajar Indonesia sering tergelincir ke *εσύ* karena merasa akrab (seperti memanggil \"Mbak\"), padahal bagi orang Yunani *εσύ* kepada petugas yang belum dikenal terdengar meremehkan. Tunggu sampai lawan bicaramu sendiri yang menawarkan: *Μιλάμε στον ενικό;* (pakai \"kamu\" saja?).",
+    "**Θα ήθελα** = \"saya ingin\" versi sopan: *θα* + lampau berlangsung (παρατατικός) dari *θέλω*. Artinya bukan lampau, melainkan \"saya akan ingin, seandainya boleh\". ⚠️ *Θέλω ένα δωμάτιο* tidak salah tata bahasanya, tetapi kepada resepsionis terdengar seperti tuntutan. *Αν γίνεται* (kalau bisa) melunakkannya lagi.",
+    "**Θα μπορούσατε να μου δώσετε…;** — rumus permintaan paling serbaguna: *θα μπορούσατε* + *να* + bentuk sekali dari unit 6. Kata ganti *μου* (kepada saya) berdiri di antara *να* dan kata kerja.",
+    "**Θα προτιμούσα** = saya lebih suka (sopan), dari *προτιμώ*. *Θα προτιμούσα το ήσυχο* — kata sifat netral berdiri sendiri karena *δωμάτιο* sudah jelas dari konteks, persis seperti \"yang tenang\" dalam bahasa Indonesia.",
+    "**Μονόκλινο, δίκλινο** — kamar dengan satu dan dua tempat tidur (harfiah \"satu-ranjang\", \"dua-ranjang\"). Nomor kamar dibaca sebagai bilangan utuh dengan sandang netral karena *δωμάτιο*: *το τριακόσια πέντε* (305), *το τετρακόσια δύο* (402).",
+    "**Τη θάλασσα θα τη δω** — objek ditaruh di depan untuk ditonjolkan, lalu diulang dengan kata ganti *τη*. Pola ini wajib dan akan dibedah di unit 8. Perhatikan juga *λείπει μία*: menyebut \"kurang satu\" jauh lebih halus daripada \"kalian lupa handuk\"."
+   ],
+   "grammars": [
+    {
+     "title": "Tiga kata kerja kesopanan",
+     "body": [
+      "Ketiganya dibentuk dari *θα* + lampau berlangsung. Hafalkan bentuk *εγώ* dan *εσείς* lebih dulu — dua itulah yang paling sering kamu pakai."
+     ],
+     "table": {
+      "head": [
+       "Pelaku",
+       "ingin",
+       "bisa",
+       "lebih suka"
+      ],
+      "rows": [
+       [
+        "εγώ",
+        "θα ήθελα",
+        "θα μπορούσα",
+        "θα προτιμούσα"
+       ],
+       [
+        "εσύ",
+        "θα ήθελες",
+        "θα μπορούσες",
+        "θα προτιμούσες"
+       ],
+       [
+        "αυτός / αυτή",
+        "θα ήθελε",
+        "θα μπορούσε",
+        "θα προτιμούσε"
+       ],
+       [
+        "εμείς",
+        "θα θέλαμε",
+        "θα μπορούσαμε",
+        "θα προτιμούσαμε"
+       ],
+       [
+        "εσείς",
+        "θα θέλατε",
+        "θα μπορούσατε",
+        "θα προτιμούσατε"
+       ],
+       [
+        "αυτοί / αυτές",
+        "θα ήθελαν",
+        "θα μπορούσαν",
+        "θα προτιμούσαν"
+       ]
+      ]
+     },
+     "after": [
+      "⚠️ **Awalan ή- hilang pada θέλαμε, θέλατε:** tekanan sudah maju ke *θέ-*, jadi awalan tak diperlukan lagi — aturan tekanan yang sama dengan αόριστος di unit 1.",
+      "Pola ini juga dipakai untuk menawarkan: *Θα θέλατε έναν καφέ;* (Mau kopi, Pak/Bu?)."
+     ]
+    }
+   ]
+  },
+  {
+   "title": "ΔΙΑΛΟΓΟΣ 2 — Budi menelepon resepsionis",
+   "intro": "Jumat, 13 November 2026, pukul 07.30. Ana mengetuk kamar Budi untuk sarapan bersama sebelum hari pertama seminar. Budi belum siap — dan ia punya keluhan. Ana memakainya sebagai kesempatan latihan.",
+   "lines": [
+    {
+     "speaker": "Άννα:",
+     "text": "[Καλημέρα|Ka-li-MÉ-ra], [Μπούντι|BU-di]! [Έτοιμος|É-ti-mos] [για|ya] [πρωινό|pro-i-NO];",
+     "id": "Pagi, Budi! Siap sarapan?",
+     "literal": "selamat-pagi, Budi! siap untuk sarapan?"
+    },
+    {
+     "speaker": "Μπούντι:",
+     "text": "[Όχι|O-khi] [ακόμα|a-KO-ma]. [Δεν|Dhén] [έχει|É-khi] [ζεστό|zé-STO] [νερό|né-RO] [στο|sto] [μπάνιο|BA-nio]! [Και|Ké] [το|to] [ίντερνετ|IN-dér-nét] [δεν|dhén] [δουλεύει|dhu-LÉ-vi].",
+     "id": "Belum. Di kamar mandi nggak ada air panas! Internetnya juga mati.",
+     "literal": "tidak masih. tidak punya-ia panas air di-(sandang) kamar-mandi! dan (sandang) internet tidak bekerja-ia."
+    },
+    {
+     "speaker": "Άννα:",
+     "text": "[Πάρε|PA-ré] [τηλέφωνο|ti-LÉ-fo-no] [τη|ti] [ρεσεψιόν|ré-sé-PSION]. [Είναι|I-né] [καλή|ka-LI] [εξάσκηση|é-KSA-ski-si].",
+     "id": "Telepon resepsionis. Itu latihan yang bagus.",
+     "literal": "ambillah telepon (sandang) resepsi. adalah-ia baik latihan."
+    },
+    {
+     "speaker": "Μπούντι:",
+     "text": "[Εντάξει|É-DA-ksi]. [Θα|Tha] [πω|po]: «[Θέλω|THÉ-lo] [ζεστό|zé-STO] [νερό|né-RO], [τώρα|TO-ra]!»",
+     "id": "Oke. Saya bilang: \"Saya mau air panas, sekarang!\"",
+     "literal": "beres. akan bilang-saya: \"mau-saya panas air, sekarang!\""
+    },
+    {
+     "speaker": "Άννα:",
+     "text": "[Όχι|O-khi] [έτσι|É-tsi]! [Πες|Pés]: «[Θα|Tha] [μπορούσατε|bo-RU-sa-té] [να|na] [στείλετε|STI-lé-té] [κάποιον|KA-pi-on];» [Είναι|I-né] [πιο|pio] [ευγενικό|év-yé-ni-KO].",
+     "id": "Jangan begitu! Bilang: \"Bisakah Anda mengirim seseorang?\" Lebih sopan.",
+     "literal": "tidak begini! katakanlah: \"akan bisa-Anda supaya kirim-Anda seseorang?\" adalah-ia lebih sopan."
+    },
+    {
+     "speaker": "Υπάλληλος:",
+     "text": "[Ρεσεψιόν|Ré-sé-PSION], [καλημέρα|ka-li-MÉ-ra] [σας|sas].",
+     "id": "Resepsionis, selamat pagi.",
+     "literal": "resepsi, selamat-pagi kepada-Anda."
+    },
+    {
+     "speaker": "Μπούντι:",
+     "text": "[Καλημέρα|Ka-li-MÉ-ra]. [Είμαι|I-mé] [στο|sto] [τριακόσια|tri-a-KO-sia] [έξι|É-ksi]. [Δεν|Dhén] [έχει|É-khi] [ζεστό|zé-STO] [νερό|né-RO]. [Θα|Tha] [μπορούσατε|bo-RU-sa-té] [να|na] [στείλετε|STI-lé-té] [κάποιον|KA-pi-on];",
+     "id": "Selamat pagi. Saya di kamar 306. Tidak ada air panas. Bisakah Anda mengirim seseorang?",
+     "literal": "selamat-pagi. adalah-saya di-(sandang) tiga-ratus enam. tidak punya-ia panas air. akan bisa-Anda supaya kirim-Anda seseorang?"
+    },
+    {
+     "speaker": "Υπάλληλος:",
+     "text": "[Βεβαίως|Vé-VÉ-os], [σε|sé] [δέκα|DHÉ-ka] [λεπτά|lép-TA]. [Θα|Tha] [θέλατε|THÉ-la-té] [κάτι|KA-ti] [άλλο|A-lo];",
+     "id": "Tentu, dalam sepuluh menit. Ada lagi yang Anda perlukan?",
+     "literal": "tentu, dalam sepuluh menit. akan mau-Anda sesuatu lain?"
+    },
+    {
+     "speaker": "Μπούντι:",
+     "text": "[Ναι|Né], [θα|tha] [ήθελα|I-thé-la] [τον|ton] [κωδικό|ko-dhi-KO] [του|tu] [ίντερνετ|IN-dér-nét], [παρακαλώ|pa-ra-ka-LO].",
+     "id": "Ya, saya minta kata sandi internetnya.",
+     "literal": "ya, akan mau-saya (sandang) kode (sandang-gen) internet, silakan."
+    },
+    {
+     "speaker": "Υπάλληλος:",
+     "text": "[Είναι|I-né] [πάνω|PA-no] [στην|stin] [κάρτα|KAR-ta] [του|tu] [δωματίου|dho-ma-TI-u] [σας|sas]. [Καλή|Ka-LI] [σας|sas] [μέρα|MÉ-ra]!",
+     "id": "Tertulis di kartu kamar Anda. Semoga hari Anda menyenangkan!",
+     "literal": "adalah-ia atas di-(sandang) kartu (sandang-gen) kamar-gen Anda. baik Anda hari!"
+    },
+    {
+     "speaker": "Άννα:",
+     "text": "[Μπράβο|BRA-vo]! [Μίλησες|MI-li-sés] [σαν|san] [αληθινός|a-li-thi-NOS] [Έλληνας|É-li-nas].",
+     "id": "Hebat! Kamu bicara seperti orang Yunani asli.",
+     "literal": "bravo! bicara-kamu seperti sejati orang-Yunani."
+    }
+   ],
+   "notes": [
+    "**Δεν έχει ζεστό νερό** — *έχει* tanpa pelaku berarti \"ada\": *Έχει κόσμο σήμερα* (hari ini ramai), *Δεν έχει ψωμί* (rotinya habis). Ini versi lisan dari *δεν υπάρχει* dan sangat umum dalam keluhan.",
+    "**Πάρε τηλέφωνο τη ρεσεψιόν** — \"telepon resepsionis\": *παίρνω τηλέφωνο* + akusatif orang atau tempatnya. Lebih lisan daripada *τηλεφωνώ στη ρεσεψιόν*. Perintahnya *πάρε* (kamu) dan *πάρτε* (Anda).",
+    "⚠️ **«Θέλω… τώρα!»** Budi berlatih kalimat yang benar tata bahasanya tetapi keliru secara sosial. Kepada orang asing, naiklah paling tidak ke *μπορείτε να…;*, lebih baik lagi *θα μπορούσατε να…;*. Tangga kesopanan di bawah menunjukkan jaraknya.",
+    "**Κάποιον** — \"seseorang\", akusatif dari *κάποιος*. *Θα μπορούσατε να στείλετε κάποιον;* adalah rumus serbaguna untuk segala kerusakan kamar: AC, keran, lampu, kunci.",
+    "**Ο κωδικός του ίντερνετ** — genitif dari unit 5; kata pinjaman *το ίντερνετ* tidak berubah. *Ο κωδικός* juga dipakai untuk PIN (*ο κωδικός της κάρτας*) dan kata sandi.",
+    "**Καλή σας μέρα!** — *καλημέρα* yang dipecah dan disisipi *σας*: \"hari yang baik untuk Anda\", dipakai sebagai salam perpisahan pagi atau siang. Serupa: *καλό σας βράδυ, καλό σας ταξίδι*."
+   ],
+   "grammars": [
+    {
+     "title": "Tangga kesopanan",
+     "body": [
+      "Dari atas ke bawah makin sopan. Untuk petugas hotel, restoran, dan kantor, mulailah dari baris ketiga."
+     ],
+     "table": {
+      "head": [
+       "Kalimat",
+       "Kesan",
+       "Kapan"
+      ],
+      "rows": [
+       [
+        "Θέλω νερό.",
+        "langsung, bisa terdengar kasar",
+        "keluarga, sahabat dekat"
+       ],
+       [
+        "Θέλω νερό, παρακαλώ.",
+        "wajar tapi datar",
+        "kios, bar yang ramai"
+       ],
+       [
+        "Μπορείτε να μου φέρετε νερό;",
+        "sopan",
+        "pelayan, petugas"
+       ],
+       [
+        "Θα μπορούσατε να μου φέρετε νερό;",
+        "sangat sopan",
+        "resepsionis, orang asing"
+       ],
+       [
+        "Θα ήθελα λίγο νερό, αν γίνεται.",
+        "sopan dan lembut",
+        "permintaan kecil di mana saja"
+       ]
+      ]
+     },
+     "after": [
+      "⚠️ Kata *παρακαλώ* saja tidak menyelamatkan kalimat yang terlalu langsung; bentuk kata kerjanyalah yang paling menentukan nada."
+     ]
+    }
+   ]
+  }
+ ],
+ "sections": [
+  {
+   "title": "Kata-kata hotel",
+   "blocks": [
+    {
+     "type": "tabel",
+     "head": [
+      "Yunani",
+      "Indonesia"
+     ],
+     "rows": [
+      [
+       "η κράτηση",
+       "reservasi, pemesanan"
+      ],
+      [
+       "το μονόκλινο / το δίκλινο",
+       "kamar single / kamar double"
+      ],
+      [
+       "η ρεσεψιόν",
+       "resepsionis, meja depan"
+      ],
+      [
+       "το κλειδί / η κάρτα",
+       "kunci / kartu kamar"
+      ],
+      [
+       "το πρωινό",
+       "sarapan"
+      ],
+      [
+       "ο κλιματισμός",
+       "AC, pendingin udara"
+      ],
+      [
+       "η πετσέτα",
+       "handuk"
+      ],
+      [
+       "το σεντόνι",
+       "seprai"
+      ],
+      [
+       "η θέα",
+       "pemandangan"
+      ],
+      [
+       "η αναχώρηση",
+       "check-out; keberangkatan"
+      ]
+     ]
+    },
+    {
+     "type": "kotak",
+     "title": "Pertanyaan praktis",
+     "items": [
+      "*Το πρωινό συμπεριλαμβάνεται;* — Sarapan sudah termasuk?",
+      "*Μέχρι τι ώρα πρέπει να αφήσουμε το δωμάτιο;* — Sampai jam berapa kami harus meninggalkan kamar?",
+      "*Θα μπορούσαμε να αφήσουμε τις βαλίτσες εδώ;* — Boleh kami titip koper di sini?"
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Mengeluh tanpa kasar",
+   "blocks": [
+    {
+     "type": "p",
+     "text": "Keluhan yang berhasil dalam bahasa Yunani punya tiga langkah: sapa dulu, sebut masalahnya secara netral (tanpa menyalahkan siapa pun), lalu minta tindakan dengan *θα μπορούσατε*."
+    },
+    {
+     "type": "tabel",
+     "head": [
+      "Masalah",
+      "Permintaan"
+     ],
+     "rows": [
+      [
+       "Ο κλιματισμός δεν δουλεύει.",
+       "Θα μπορούσατε να στείλετε τον τεχνικό;"
+      ],
+      [
+       "Δεν έχει ζεστό νερό.",
+       "Θα μπορούσατε να το ελέγξετε;"
+      ],
+      [
+       "Το δωμάτιο έχει πολύ θόρυβο.",
+       "Θα προτιμούσα ένα πιο ήσυχο δωμάτιο."
+      ],
+      [
+       "Λείπει μια πετσέτα.",
+       "Θα μπορούσατε να μου φέρετε μία;"
+      ],
+      [
+       "Το ίντερνετ δεν δουλεύει.",
+       "Θα ήθελα τον σωστό κωδικό, παρακαλώ."
+      ],
+      [
+       "Το δωμάτιο δεν είναι καθαρό.",
+       "Θα μπορούσατε να το καθαρίσετε ξανά;"
+      ]
+     ]
+    },
+    {
+     "type": "kotak",
+     "title": "Kata pelunak",
+     "items": [
+      "*νομίζω* (saya kira): *Ο κλιματισμός δεν δουλεύει, νομίζω.*",
+      "*μήπως* (barangkali): *Μήπως έχετε ένα άλλο δωμάτιο;* — Barangkali Anda punya kamar lain?",
+      "*αν γίνεται, αν δεν σας κάνει κόπο* — kalau bisa, kalau tidak merepotkan."
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Chania: pelabuhan Venesia",
+   "blocks": [
+    {
+     "type": "p",
+     "text": "Kota tua Chania memeluk sebuah pelabuhan yang dibangun orang Venesia, yang menguasai Kreta lebih dari empat abad sampai 1669. Di ujung pemecah ombaknya berdiri mercusuar (*ο φάρος*) yang dibangun ulang pada abad ke-19. Di sepanjang dermaga berjajar kafe dan taverna — tempat yang pas untuk berlatih *θα ήθελα*."
+    },
+    {
+     "type": "kotak",
+     "title": "Kalimat untuk jalan-jalan",
+     "items": [
+      "*Θα θέλαμε να δούμε τον φάρο. Από πού πάμε;* — Kami ingin melihat mercusuar. Lewat mana?",
+      "*Θα μπορούσατε να μας βγάλετε μια φωτογραφία;* — Bisa tolong fotokan kami?",
+      "*Θα προτιμούσαμε ένα τραπέζι έξω.* — Kami lebih suka meja di luar."
+     ]
+    }
+   ]
+  }
+ ],
+ "vocab": [
+  {
+   "el": "εξυπηρετώ",
+   "baca": "é-ksi-pi-ré-TO",
+   "id": "melayani (*Πώς μπορώ να σας εξυπηρετήσω;*)"
+  },
+  {
+   "el": "η κράτηση",
+   "baca": "i KRA-ti-si",
+   "id": "reservasi, pemesanan"
+  },
+  {
+   "el": "το μονόκλινο",
+   "baca": "to mo-NO-kli-no",
+   "id": "kamar single"
+  },
+  {
+   "el": "το δίκλινο",
+   "baca": "to DHI-kli-no",
+   "id": "kamar double atau twin"
+  },
+  {
+   "el": "θα ήθελα",
+   "baca": "tha I-thé-la",
+   "id": "saya ingin (sopan)"
+  },
+  {
+   "el": "θα μπορούσα",
+   "baca": "tha bo-RU-sa",
+   "id": "saya bisa (sopan) (*θα μπορούσατε;* = bisakah Anda?)"
+  },
+  {
+   "el": "προτιμώ",
+   "baca": "pro-ti-MO",
+   "id": "lebih suka (*θα προτιμούσα*)"
+  },
+  {
+   "el": "αν γίνεται",
+   "baca": "an YI-né-té",
+   "id": "kalau bisa"
+  },
+  {
+   "el": "η θέα",
+   "baca": "i THÉ-a",
+   "id": "pemandangan"
+  },
+  {
+   "el": "το λιμάνι",
+   "baca": "to li-MA-ni",
+   "id": "pelabuhan"
+  },
+  {
+   "el": "ο συνάδελφος",
+   "baca": "o si-NA-dhél-fos",
+   "id": "rekan kerja (*ο συνάδελφός μου*)"
+  },
+  {
+   "el": "το μπαλκόνι",
+   "baca": "to bal-KO-ni",
+   "id": "balkon"
+  },
+  {
+   "el": "ο κλιματισμός",
+   "baca": "o kli-ma-ti-SMOS",
+   "id": "AC, pendingin udara"
+  },
+  {
+   "el": "ο τεχνικός",
+   "baca": "o té-khni-KOS",
+   "id": "teknisi"
+  },
+  {
+   "el": "η πετσέτα",
+   "baca": "i pé-TSÉ-ta",
+   "id": "handuk"
+  },
+  {
+   "el": "λείπω",
+   "baca": "LI-po",
+   "id": "tidak ada, kurang (*λείπει μία* = kurang satu)"
+  },
+  {
+   "el": "η πλευρά",
+   "baca": "i plév-RA",
+   "id": "sisi"
+  },
+  {
+   "el": "ήσυχος",
+   "baca": "I-si-khos",
+   "id": "tenang (*ήσυχη, ήσυχο*)"
+  },
+  {
+   "el": "δυστυχώς",
+   "baca": "dhi-sti-KHOS",
+   "id": "sayangnya"
+  },
+  {
+   "el": "η ρεσεψιόν",
+   "baca": "i ré-sé-PSION",
+   "id": "resepsionis, meja depan"
+  },
+  {
+   "el": "το μπάνιο",
+   "baca": "to BA-nio",
+   "id": "kamar mandi; mandi, berenang"
+  },
+  {
+   "el": "ζεστός",
+   "baca": "zé-STOS",
+   "id": "panas, hangat (*ζεστό νερό*)"
+  },
+  {
+   "el": "η εξάσκηση",
+   "baca": "i é-KSA-ski-si",
+   "id": "latihan"
+  },
+  {
+   "el": "ευγενικός",
+   "baca": "év-yé-ni-KOS",
+   "id": "sopan, ramah"
+  },
+  {
+   "el": "ο κωδικός",
+   "baca": "o ko-dhi-KOS",
+   "id": "kode, kata sandi, PIN"
+  }
+ ],
+ "exercises": [
+  {
+   "prompt": "Terjemahkan ke bahasa Yunani (pakai bentuk sopan).",
+   "items": [
+    "Saya ingin kamar dengan pemandangan laut.",
+    "Bisakah Anda memberi saya satu handuk lagi?",
+    "AC-nya tidak berfungsi.",
+    "Kami lebih suka kamar yang tenang.",
+    "Tidak ada air panas.",
+    "Anda mau kopi?"
+   ]
+  },
+  {
+   "prompt": "Isi dengan bentuk sopan (*θα* + …) dari kata kerja dalam kurung.",
+   "items": [
+    "____ ένα δίκλινο για δύο νύχτες. (θέλω, εγώ)",
+    "____ να μου φέρετε τον λογαριασμό; (μπορώ, εσείς)",
+    "Εμείς ____ ένα τραπέζι έξω. (προτιμώ)",
+    "Ο κύριος Κώστας ____ να σας μιλήσει. (θέλω)",
+    "Εσύ τι ____, τσάι ή καφέ; (προτιμώ)",
+    "Οι πελάτες ____ να δουν το λιμάνι. (θέλω)",
+    "____ να αφήσουμε τις βαλίτσες εδώ; (μπορώ, εμείς)"
+   ]
+  },
+  {
+   "prompt": "Ubah jadi permintaan yang sopan dengan *θα μπορούσατε να…;* atau *θα ήθελα…*.",
+   "items": [
+    "Φέρε μου νερό!",
+    "Θέλω τον κωδικό.",
+    "Άλλαξε το δωμάτιο!",
+    "Κλείσε το παράθυρο!",
+    "Θέλω ένα ταξί για το αεροδρόμιο.",
+    "Στείλε τον τεχνικό!"
+   ]
+  },
+  {
+   "prompt": "Susun jadi kalimat yang benar.",
+   "items": [
+    "ήθελα / ένα / θα / δωμάτιο / ήσυχο",
+    "κλειδί / το / μου / δώσετε / να / μπορούσατε / θα",
+    "νερό / έχει / δεν / ζεστό",
+    "θα / θέα / θάλασσα / στη / προτιμούσα",
+    "σας / μέρα / καλή"
+   ]
+  }
+ ],
+ "answers": [
+  "Θα ήθελα ένα δωμάτιο με θέα στη θάλασσα. — Θα μπορούσατε να μου δώσετε μια πετσέτα ακόμα; — Ο κλιματισμός δεν δουλεύει. — Θα προτιμούσαμε ένα ήσυχο δωμάτιο. — Δεν έχει ζεστό νερό. — Θα θέλατε έναν καφέ;",
+  "Θα ήθελα — Θα μπορούσατε — θα προτιμούσαμε — θα ήθελε — θα προτιμούσες — θα ήθελαν — Θα μπορούσαμε",
+  "Θα μπορούσατε να μου φέρετε νερό; — Θα ήθελα τον κωδικό, παρακαλώ. — Θα μπορούσατε να αλλάξετε το δωμάτιο; — Θα μπορούσατε να κλείσετε το παράθυρο; — Θα ήθελα ένα ταξί για το αεροδρόμιο. — Θα μπορούσατε να στείλετε τον τεχνικό;",
+  "Θα ήθελα ένα ήσυχο δωμάτιο. — Θα μπορούσατε να μου δώσετε το κλειδί; — Δεν έχει ζεστό νερό. — Θα προτιμούσα θέα στη θάλασσα. — Καλή σας μέρα!"
+ ]
+}

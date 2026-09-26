@@ -1,0 +1,623 @@
+{
+ "title": "Menulis email kantor — ragam resmi",
+ "title_target": "Αγαπητέ κύριε…",
+ "goal": "Menulis email kerja dan menelepon kantor resmi dengan sapaan, permintaan, dan penutup yang pantas — *Αγαπητέ κύριε Γεωργίου*, *θα μπορούσατε να μας στείλετε…;*, *με εκτίμηση* — tanpa tergelincir ke bentuk akrab *εσύ*.",
+ "bekal": [
+  "menyusun email resmi dari salam pembuka sampai penutup, dengan sapaan (κλητική) yang benar",
+  "meminta dengan sopan memakai perintah jamak (*στείλτε, ενημερώστε, περιμένετε*) dan *θα μπορούσατε να…*",
+  "menjaga *εσείς* tetap konsisten di kata kerja, kata ganti, dan perintah"
+ ],
+ "dialogs": [
+  {
+   "title": "ΔΙΑΛΟΓΟΣ 1 — Email pertama Ana",
+   "intro": "Selasa, 12 Januari 2027, pukul sepuluh pagi, di kantor Pireas. Ana menulis email pertamanya kepada Pak Georgiou, manajer di galangan kapal di Perama. Sebelum terkirim, Κώστας membaca drafnya dan memanggil Ana ke mejanya.",
+   "lines": [
+    {
+     "speaker": "Κώστας:",
+     "text": "[Άννα|A-na], [διάβασα|DHIA-va-sa] [το|to] [μήνυμά|MI-ni-MA] [σου|su] [για|ya] [τον|ton] [κύριο|KI-ri-o] [Γεωργίου|Yé-or-YI-u]. [Έλα|É-la] [λίγο|LI-gho].",
+     "id": "Ana, saya sudah baca emailmu untuk Pak Georgiou. Sini sebentar.",
+     "literal": "Ana, aku-membaca (sandang) pesan milikmu untuk (sandang) tuan Georgiou. datanglah sedikit."
+    },
+    {
+     "speaker": "Άννα:",
+     "text": "[Υπάρχει|I-PAR-khi] [πρόβλημα|PRO-vli-ma];",
+     "id": "Ada masalah?",
+     "literal": "ada masalah?"
+    },
+    {
+     "speaker": "Κώστας:",
+     "text": "[Μικρό|Mi-KRO]. [Γράφεις|GHRA-fis] «[Γεια|Ya] [σου|su], [Σπύρο|SPI-ro]». [Τον|Ton] [ξέρεις|KSÉ-ris] [προσωπικά|pro-so-pi-KA];",
+     "id": "Kecil. Kamu tulis \"Hai, Spiros\". Kamu kenal dia secara pribadi?",
+     "literal": "kecil. kamu-menulis «halo kepadamu, Spiro». dia-(objek) kamu-kenal secara-pribadi?"
+    },
+    {
+     "speaker": "Άννα:",
+     "text": "[Όχι|O-khi]… [Τον|Ton] [είδα|I-dha] [μόνο|MO-no] [μία|MI-a] [φορά|fo-RA] [σε|sé] [μια|mia] [σύσκεψη|SI-ské-psi].",
+     "id": "Nggak… Saya cuma pernah ketemu sekali di rapat.",
+     "literal": "tidak… dia-(objek) aku-melihat hanya satu kali di sebuah rapat."
+    },
+    {
+     "speaker": "Κώστας:",
+     "text": "[Τότε|TO-té] [γράφουμε|GHRA-fu-mé] «[Αγαπητέ|A-gha-pi-TÉ] [κύριε|KI-ri-é] [Γεωργίου|Yé-or-YI-u]». [Και|Ké] [πληθυντικό|pli-thin-di-KO], [πάντα|PAN-da].",
+     "id": "Kalau begitu kita tulis \"Yth. Bapak Georgiou\". Dan pakai bentuk jamak, selalu.",
+     "literal": "kalau-begitu kita-menulis «terkasih tuan Georgiou». dan jamak, selalu."
+    },
+    {
+     "speaker": "Άννα:",
+     "text": "[Κατάλαβα|Ka-TA-la-va]. [Και|Ké] [εδώ|é-DHO] [γράφω|GHRA-fo] «[μπορείς|bo-RIS] [να|na] [μου|mu] [στείλεις|STI-lis] [τα|ta] [χαρτιά|khar-TIA];»",
+     "id": "Paham. Terus di sini saya tulis \"bisa kirimin aku kertas-kertasnya?\"",
+     "literal": "aku-mengerti. dan di-sini aku-menulis «kamu-bisa supaya kepadaku kamu-mengirim (sandang) kertas-kertas?»"
+    },
+    {
+     "speaker": "Κώστας:",
+     "text": "[Πολύ|Po-LI] [φιλικό|fi-li-KO]. [Καλύτερα|Ka-LI-té-ra]: «[Θα|Tha] [μπορούσατε|bo-RU-sa-té] [να|na] [μας|mas] [στείλετε|STI-lé-té] [τα|ta] [έγγραφα|ÉN-gra-fa];»",
+     "id": "Terlalu akrab. Lebih baik: \"Apakah Bapak berkenan mengirimkan dokumennya kepada kami?\"",
+     "literal": "sangat ramah. lebih-baik: «akan kalian-bisa (lampau) supaya kepada-kami kalian-mengirim (sandang) dokumen-dokumen?»"
+    },
+    {
+     "speaker": "Άννα:",
+     "text": "[Ή|I] [πιο|pio] [σύντομα|SIN-do-ma]: «[Παρακαλώ|Pa-ra-ka-LO], [στείλτε|STIL-té] [μας|mas] [τα|ta] [έγγραφα|ÉN-gra-fa]».",
+     "id": "Atau lebih singkat: \"Mohon kirimkan dokumennya kepada kami.\"",
+     "literal": "atau lebih singkat: «aku-mohon, kirimlah-(jamak) kepada-kami (sandang) dokumen-dokumen»."
+    },
+    {
+     "speaker": "Κώστας:",
+     "text": "[Ακριβώς|A-kri-VOS]! [Και|Ké] [στο|sto] [τέλος|TÉ-los], [μη|mi] [γράφεις|GHRA-fis] «[Φιλιά|Fi-LIA]».",
+     "id": "Tepat! Dan di akhir, jangan tulis \"Peluk cium\".",
+     "literal": "tepat! dan di-(sandang) akhir, jangan kamu-menulis «ciuman-ciuman»."
+    },
+    {
+     "speaker": "Άννα:",
+     "text": "[Ωχ|Okh]! [Έτσι|É-tsi] [γράφω|GHRA-fo] [πάντα|PAN-da] [στην|stin] [Ελένη|É-LÉ-ni]. [Τι|Ti] [γράφω|GHRA-fo] [τότε|TO-té];",
+     "id": "Aduh! Saya selalu nulis begitu ke Eleni. Terus saya tulis apa?",
+     "literal": "aduh! begitu aku-menulis selalu ke-(sandang) Eleni. apa aku-menulis kalau-begitu?"
+    },
+    {
+     "speaker": "Κώστας:",
+     "text": "«[Με|Mé] [εκτίμηση|ék-TI-mi-si]» [ή|i] «[Με|Mé] [φιλικούς|fi-li-KUS] [χαιρετισμούς|khé-ré-ti-SMUS]», [και|ké] [το|to] [όνομά|O-no-MA] [σου|su].",
+     "id": "\"Hormat saya\" atau \"Salam hangat\", lalu namamu.",
+     "literal": "«dengan penghargaan» atau «dengan ramah-(jamak) salam-salam», dan (sandang) nama milikmu."
+    },
+    {
+     "speaker": "Άννα:",
+     "text": "[Και|Ké] [μετά|mé-TA] [το|to] «[Αγαπητέ|A-gha-pi-TÉ] [κύριε|KI-ri-é] [Γεωργίου|Yé-or-YI-u]», [πώς|pos] [ξεκινάω|ksé-ki-NA-o];",
+     "id": "Terus sesudah \"Yth. Bapak Georgiou\", saya mulai bagaimana?",
+     "literal": "dan sesudah (sandang) «terkasih tuan Georgiou», bagaimana aku-memulai?"
+    },
+    {
+     "speaker": "Κώστας:",
+     "text": "[Κόμμα|KO-ma], [και|ké] [μετά|mé-TA]: «[Σας|Sas] [ευχαριστώ|éf-kha-ri-STO] [για|ya] [το|to] [μήνυμά|MI-ni-MA] [σας|sas]». [Απλό|A-PLO] [και|ké] [ευγενικό|év-yé-ni-KO].",
+     "id": "Koma, lalu: \"Terima kasih atas pesan Bapak.\" Sederhana dan sopan.",
+     "literal": "koma, dan sesudah: «kalian-(objek) aku-berterima-kasih untuk (sandang) pesan milik-kalian». sederhana dan sopan."
+    }
+   ],
+   "notes": [
+    "⚠️ **Kepada klien, mitra, dan orang yang belum akrab: selalu εσείς.** Bahasa Indonesia bisa sopan hanya dengan \"Bapak\" di depan kalimat santai. Bahasa Yunani tidak: begitu kamu menulis *μπορείς* atau *γεια σου*, seluruh kalimat terdengar akrab — bagi orang yang baru sekali bertemu, bahkan agak kurang ajar. Pertahankan *εσείς* sampai ia sendiri menawarkan *Να μιλάμε στον ενικό;* (kita pakai \"kamu\" saja?).",
+    "**Αγαπητέ κύριε Γεωργίου** — dalam sapaan, ekor *-ος* menjadi *-ε*: *αγαπητός → αγαπητέ*, *κύριος → κύριε*. Nama keluarga berekor *-ου* seperti *Γεωργίου* tidak berubah. Untuk perempuan tidak ada perubahan: *Αγαπητή κυρία Λαμπράκη*. *Αγαπητέ* di email kerja setara \"Yth.\", bukan \"sayang\".",
+    "**Θα μπορούσατε να μας στείλετε…;** — bentuk permintaan paling halus, dari unit 7. **Στείλτε μας…** adalah perintah jamak; didahului *παρακαλώ*, ia tetap sopan dan lazim di email. Keduanya benar; yang pertama lebih lembut.",
+    "**Τα έγγραφα vs τα χαρτιά** — keduanya \"dokumen\", tetapi *τα χαρτιά* (harfiah \"kertas-kertas\") adalah bahasa lisan. Di email resmi pilih *τα έγγραφα*.",
+    "**Μη γράφεις** — larangan dibentuk dengan *μη(ν)* + bentuk masa kini: *μη γράφεις, μην ανησυχείς*. *Μην* dipakai di depan vokal dan huruf *κ, π, τ, ξ, ψ, μπ, ντ, γκ*; di depan huruf lain cukup *μη*.",
+    "**Το μήνυμά σας, το όνομά σου** — kata bertekanan di suku ketiga dari belakang mendapat **tekanan kedua** di suku terakhir kalau diikuti *μου, σου, σας*. Dalam tulisan, ini wajib: *το μήνυμά σας*, bukan *το μήνυμα σας*."
+   ],
+   "grammars": [
+    {
+     "title": "Kerangka email: tiga tingkat",
+     "body": [
+      "Kolom tengah adalah pilihan aman untuk rekan kerja di perusahaan lain yang sudah beberapa kali berkirim email denganmu."
+     ],
+     "table": {
+      "head": [
+       "Bagian",
+       "Resmi",
+       "Setengah resmi",
+       "Akrab"
+      ],
+      "rows": [
+       [
+        "Salam pembuka",
+        "*Αγαπητέ κύριε Γεωργίου,*",
+        "*Καλημέρα σας, κύριε Σπύρο,*",
+        "*Γεια σου, Ελένη!*"
+       ],
+       [
+        "Kalimat pertama",
+        "*Σας ευχαριστώ για το μήνυμά σας.*",
+        "*Ευχαριστώ για το μήνυμα.*",
+        "*Τι γίνεται;*"
+       ],
+       [
+        "Permintaan",
+        "*Θα μπορούσατε να μας στείλετε…;*",
+        "*Μπορείτε να μας στείλετε…;*",
+        "*Μου στέλνεις…;*"
+       ],
+       [
+        "Lampiran",
+        "*Σας επισυνάπτω το έγγραφο.*",
+        "*Σας στέλνω το αρχείο.*",
+        "*Σου στέλνω το αρχείο.*"
+       ],
+       [
+        "Kalimat penutup",
+        "*Παραμένω στη διάθεσή σας.*",
+        "*Είμαι στη διάθεσή σας για ερωτήσεις.*",
+        "*Τα λέμε!*"
+       ],
+       [
+        "Salam penutup",
+        "*Με εκτίμηση,*",
+        "*Με φιλικούς χαιρετισμούς,*",
+        "*Φιλιά,*"
+       ]
+      ]
+     },
+     "after": [
+      "Sesudah salam pembuka ditulis koma, dan kalimat berikutnya boleh dimulai dengan huruf kecil: *Αγαπητέ κύριε Γεωργίου, σας ευχαριστώ για…*",
+      "*Κύριε* + nama depan (*κύριε Σπύρο, κύριε Κώστα*) lazim di kantor Yunani: hormat, tetapi hangat."
+     ]
+    }
+   ]
+  },
+  {
+   "title": "ΔΙΑΛΟΓΟΣ 2 — Telepon ke kantor syahbandar",
+   "intro": "Rabu, 13 Januari 2027, pukul setengah sembilan pagi. Ana menelepon Λιμεναρχείο (kantor syahbandar) Pireas untuk mengurus pergantian awak di kapal «Αστέρι του Αιγαίου». Yang mengangkat adalah seorang pegawai perempuan. Hitung berapa perintah jamak yang ia pakai.",
+   "lines": [
+    {
+     "speaker": "Υπάλληλος:",
+     "text": "[Λιμεναρχείο|Li-mé-nar-KHI-o] [Πειραιά|Pi-ré-A], [καλημέρα|ka-li-MÉ-ra] [σας|sas].",
+     "id": "Kantor Syahbandar Pireas, selamat pagi.",
+     "literal": "kantor-syahbandar milik-Pireas, selamat-pagi kepada-kalian."
+    },
+    {
+     "speaker": "Άννα:",
+     "text": "[Καλημέρα|Ka-li-MÉ-ra] [σας|sas]. [Λέγομαι|LÉ-gho-mé] [Άννα|A-na] [και|ké] [τηλεφωνώ|ti-lé-fo-NO] [από|a-PO] [την|tin] [Αιγαίον|É-YÉ-on] [Ναυτιλιακή|Naf-ti-lia-KI].",
+     "id": "Selamat pagi. Saya Ana, dari Aegeon Nautiliaki.",
+     "literal": "selamat-pagi kepada-kalian. aku-dinamai Ana dan aku-menelepon dari (sandang) Aegeon Nautiliaki."
+    },
+    {
+     "speaker": "Υπάλληλος:",
+     "text": "[Μάλιστα|MA-li-sta]. [Πώς|Pos] [μπορώ|bo-RO] [να|na] [σας|sas] [βοηθήσω|vo-i-THI-so];",
+     "id": "Baik. Ada yang bisa saya bantu?",
+     "literal": "baiklah. bagaimana aku-bisa supaya kalian-(objek) aku-membantu?"
+    },
+    {
+     "speaker": "Άννα:",
+     "text": "[Θέλουμε|THÉ-lu-mé] [να|na] [αλλάξουμε|a-LA-ksu-mé] [πλήρωμα|PLI-ro-ma] [στο|sto] «[Αστέρι|A-STÉ-ri] [του|tu] [Αιγαίου|É-YÉ-u]» [την|tin] [Πέμπτη|PÉMB-ti]. [Τι|Ti] [χρειάζεται|KHRIA-zé-té];",
+     "id": "Kami mau ganti awak di kapal \"Bintang Aegea\" hari Kamis. Apa saja yang diperlukan?",
+     "literal": "kami-mau supaya kami-mengganti awak di-(sandang) «bintang milik-(sandang) Aegea» (sandang) Kamis. apa diperlukan?"
+    },
+    {
+     "speaker": "Υπάλληλος:",
+     "text": "[Στείλτε|STIL-té] [μας|mas] [τη|ti] [λίστα|LI-sta] [του|tu] [πληρώματος|pli-RO-ma-tos] [και|ké] [τα|ta] [διαβατήρια|dhia-va-TI-ri-a] [μέχρι|MÉ-khri] [αύριο|AV-ri-o].",
+     "id": "Kirimkan kepada kami daftar awak dan paspor-paspornya paling lambat besok.",
+     "literal": "kirimlah-(jamak) kepada-kami (sandang) daftar milik-(sandang) awak dan (sandang) paspor-paspor sampai besok."
+    },
+    {
+     "speaker": "Άννα:",
+     "text": "[Σε|Sé] [ποια|pia] [ηλεκτρονική|i-lék-tro-ni-KI] [διεύθυνση|DHIÉF-thin-si], [παρακαλώ|pa-ra-ka-LO];",
+     "id": "Ke alamat email yang mana, Bu?",
+     "literal": "ke mana-(pr) elektronik alamat, aku-mohon?"
+    },
+    {
+     "speaker": "Υπάλληλος:",
+     "text": "[Θα|Tha] [σας|sas] [τη|ti] [στείλω|STI-lo] [με|mé] [μήνυμα|MI-ni-ma] [αμέσως|a-MÉ-sos]. [Περιμένετε|Pé-ri-MÉ-né-té] [ένα|É-na] [λεπτό|lép-TO].",
+     "id": "Saya kirimkan lewat pesan sekarang. Tunggu sebentar.",
+     "literal": "akan kepada-kalian itu-(objek) aku-mengirim dengan pesan segera. tunggulah-(jamak) satu menit."
+    },
+    {
+     "speaker": "Άννα:",
+     "text": "[Ευχαριστώ|Éf-kha-ri-STO] [πολύ|po-LI]. [Κι|Ki] [αν|an] [αλλάξει|a-LA-ksi] [η|i] [ώρα|O-ra] [του|tu] [πλοίου|PLI-u];",
+     "id": "Terima kasih banyak. Kalau jam kapalnya berubah bagaimana?",
+     "literal": "terima-kasih banyak. dan kalau ia-berubah (sandang) jam milik-(sandang) kapal?"
+    },
+    {
+     "speaker": "Υπάλληλος:",
+     "text": "[Ενημερώστε|É-ni-mé-RO-sté] [μας|mas] [τουλάχιστον|tu-LA-khi-ston] [μία|MI-a] [μέρα|MÉ-ra] [πριν|prin]. [Και|Ké] [κρατήστε|kra-TI-sté] [τον|ton] [αριθμό|a-rith-MO] [πρωτοκόλλου|pro-to-KO-lu].",
+     "id": "Kabari kami paling tidak sehari sebelumnya. Dan simpan nomor registrasinya.",
+     "literal": "kabarilah-(jamak) kami paling-tidak satu hari sebelum. dan simpanlah-(jamak) (sandang) nomor milik-protokol."
+    },
+    {
+     "speaker": "Άννα:",
+     "text": "[Βεβαίως|Vé-VÉ-os]. [Μπορείτε|Bo-RI-té] [να|na] [μου|mu] [πείτε|PI-té] [και|ké] [το|to] [όνομά|O-no-MA] [σας|sas];",
+     "id": "Tentu. Boleh saya tahu juga nama Ibu?",
+     "literal": "tentu. kalian-bisa supaya kepadaku kalian-berkata juga (sandang) nama milik-kalian?"
+    },
+    {
+     "speaker": "Υπάλληλος:",
+     "text": "[Καραγιάννη|Ka-ra-YA-ni]. [Καλή|Ka-LI] [συνέχεια|si-NÉ-khi-a]!",
+     "id": "Karayanni. Selamat melanjutkan hari!",
+     "literal": "Karayanni. baik kelanjutan!"
+    }
+   ],
+   "notes": [
+    "**Στείλτε, περιμένετε, ενημερώστε, κρατήστε** — empat perintah jamak dalam satu telepon, dan tak satu pun terdengar kasar. Di kantor Yunani, perintah jamak adalah cara normal memberi petunjuk. Bentuknya: batang aorist + *-(σ)τε* (*στείλ-τε, ενημερώσ-τε*), atau bentuk *εσείς* masa kini untuk kata kerja seperti *περιμένετε*.",
+    "⚠️ **Sekali εσείς, seluruhnya εσείς.** Ana menjaga semuanya jamak: *μπορείτε να μου πείτε… το όνομά σας*. Kesalahan khas: mulai dengan *καλημέρα σας* lalu tergelincir ke *μπορείς* atau *το όνομά σου* di tengah kalimat. Periksa tiga tempat: kata kerja, kata ganti (*σας*), dan perintah.",
+    "**Λέγομαι Άννα και τηλεφωνώ από…** — pembuka telepon kerja yang baku: nama, lalu dari mana. **Μάλιστα** bukan sekadar \"ya\"; ia berarti \"baik, saya dengar\" dan terdengar lebih resmi daripada *ναι*.",
+    "**Θα σας τη στείλω** — dua kata ganti lemah berurutan: penerima dulu (*σας*), lalu benda (*τη*, merujuk *τη διεύθυνση*). Urutan yang sama seperti *μας το φέρνετε* di unit 8.",
+    "**Ο αριθμός πρωτοκόλλου** — hampir setiap surat dan berkas di kantor pemerintah Yunani mendapat nomor registrasi. Catat nomor ini; tanpa nomor itu, berkasmu \"tidak ada\".",
+    "**Καλή συνέχεια!** — salam penutup yang sangat lazim di telepon dan toko: \"semoga sisa harimu lancar\". Balasannya: *Επίσης!* (sama-sama, begitu juga Anda)."
+   ],
+   "grammars": [
+    {
+     "title": "Perintah untuk εσύ dan εσείς",
+     "body": [
+      "Perintah sekali dibentuk dari batang aorist. Kata kerja yang lampaunya tak beraturan, perintahnya pun tak beraturan."
+     ],
+     "table": {
+      "head": [
+       "Masa kini",
+       "Lampau",
+       "Perintah ΕΣΥ",
+       "Perintah ΕΣΕΙΣ"
+      ],
+      "rows": [
+       [
+        "*στέλνω*",
+        "*έστειλα*",
+        "*στείλε*",
+        "*στείλτε*"
+       ],
+       [
+        "*γράφω*",
+        "*έγραψα*",
+        "*γράψε*",
+        "*γράψτε*"
+       ],
+       [
+        "*ενημερώνω*",
+        "*ενημέρωσα*",
+        "*ενημέρωσε*",
+        "*ενημερώστε*"
+       ],
+       [
+        "*κρατάω*",
+        "*κράτησα*",
+        "*κράτησε*",
+        "*κρατήστε*"
+       ],
+       [
+        "*κάνω*",
+        "*έκανα*",
+        "*κάνε*",
+        "*κάντε*"
+       ],
+       [
+        "*περιμένω*",
+        "*περίμενα*",
+        "*περίμενε*",
+        "*περιμένετε*"
+       ],
+       [
+        "*λέω*",
+        "*είπα*",
+        "*πες*",
+        "*πείτε*"
+       ],
+       [
+        "*έρχομαι*",
+        "*ήρθα*",
+        "*έλα*",
+        "*ελάτε*"
+       ]
+      ]
+     },
+     "after": [
+      "Larangan tidak memakai bentuk ini, melainkan *μη(ν)* + masa kini atau subjungtif: *μη στέλνετε, μην ανησυχείτε*.",
+      "Di email, perintah jamak paling sering muncul bersama *παρακαλώ* atau *παρακαλούμε*: *Παρακαλούμε, ενημερώστε μας.*"
+     ]
+    }
+   ]
+  }
+ ],
+ "sections": [
+  {
+   "title": "Menyapa orang: bentuk sapaan (ΚΛΗΤΙΚΗ)",
+   "blocks": [
+    {
+     "type": "p",
+     "text": "Saat kamu memanggil atau menyapa seseorang, kata benda maskulin berekor *-ος* dan *-ης/-ας* berubah. Kata feminin dan nama keluarga berekor *-ου* tidak berubah. Ini berlaku di email, di telepon, dan di jalan."
+    },
+    {
+     "type": "tabel",
+     "head": [
+      "Menyebut orangnya",
+      "Menyapanya",
+      "Catatan"
+     ],
+     "rows": [
+      [
+       "*ο κύριος Παπαδόπουλος*",
+       "*κύριε Παπαδόπουλε*",
+       "*-ος → -ε*"
+      ],
+      [
+       "*ο κύριος Γεωργίου*",
+       "*κύριε Γεωργίου*",
+       "nama *-ου* tetap"
+      ],
+      [
+       "*ο κύριος Κώστας*",
+       "*κύριε Κώστα*",
+       "*-ας → -α*"
+      ],
+      [
+       "*ο Γιάννης*",
+       "*Γιάννη*",
+       "*-ης → -η*"
+      ],
+      [
+       "*ο Νίκος*",
+       "*Νίκο*",
+       "nama dua suku: *-ος → -ο*"
+      ],
+      [
+       "*η κυρία Λαμπράκη*",
+       "*κυρία Λαμπράκη*",
+       "feminin tetap"
+      ],
+      [
+       "*οι συνάδελφοι*",
+       "*Αγαπητοί συνάδελφοι,*",
+       "jamak tetap"
+      ]
+     ]
+    },
+    {
+     "type": "kotak",
+     "title": "⚠️ Νίκο, bukan Νίκε",
+     "items": [
+      "Nama depan dua suku seperti *Νίκος, Πέτρος, Σπύρος* memakai *-ο*: *Νίκο, Πέτρο, Σπύρο*. Nama keluarga yang panjang memakai *-ε*: *Παπαδόπουλε*.",
+      "Kalau ragu soal nama keluarga, *κύριε* + nama depan atau *Αγαπητέ κύριε* + nama keluarga berekor *-ου/-ης* adalah jalan aman."
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Contoh email lengkap",
+   "blocks": [
+    {
+     "type": "p",
+     "text": "Ini email yang akhirnya dikirim Ana setelah dikoreksi Κώστας. Baca kolom Yunani dengan suara keras, lalu tutup kolom kanan dan coba terjemahkan."
+    },
+    {
+     "type": "tabel",
+     "head": [
+      "Yunani",
+      "Bahasa Indonesia"
+     ],
+     "rows": [
+      [
+       "*Θέμα: Αλλαγή πληρώματος στο «Αστέρι του Αιγαίου»*",
+       "Perihal: Pergantian awak kapal \"Bintang Aegea\""
+      ],
+      [
+       "*Αγαπητέ κύριε Γεωργίου,*",
+       "Yth. Bapak Georgiou,"
+      ],
+      [
+       "*σας ευχαριστώ για το μήνυμά σας.*",
+       "terima kasih atas pesan Bapak."
+      ],
+      [
+       "*Σας επισυνάπτω τη λίστα του νέου πληρώματος.*",
+       "Bersama ini saya lampirkan daftar awak yang baru."
+      ],
+      [
+       "*Θα μπορούσατε να μας ενημερώσετε για την ώρα άφιξης του πλοίου;*",
+       "Apakah Bapak berkenan memberi tahu kami jam kedatangan kapal?"
+      ],
+      [
+       "*Παραμένω στη διάθεσή σας για κάθε διευκρίνιση.*",
+       "Saya siap membantu bila ada yang perlu dijelaskan."
+      ],
+      [
+       "*Με εκτίμηση,*",
+       "Hormat saya,"
+      ],
+      [
+       "*Άννα, Τμήμα Πληρωμάτων, Αιγαίον Ναυτιλιακή*",
+       "Ana, Bagian Awak Kapal, Aegeon Nautiliaki"
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "title": "ΕΣΥ atau ΕΣΕΙΣ?",
+   "blocks": [
+    {
+     "type": "p",
+     "text": "Orang Yunani cepat beralih ke *εσύ* dalam suasana santai — di kafe, di antara teman sebaya, bahkan dengan rekan kerja yang seumur. Tetapi di dunia kerja resmi ada garis yang jelas."
+    },
+    {
+     "type": "list",
+     "items": [
+      "**Selalu εσείς:** klien, mitra perusahaan lain, pejabat, pegawai kantor pemerintah, dokter, orang yang jauh lebih tua, siapa pun yang baru kamu kenal.",
+      "**Biasanya εσύ:** rekan satu tim yang sebaya, teman, keluarga, anak-anak.",
+      "**Tunggu tawaran:** atasan atau orang lebih tua boleh memakai *εσύ* kepadamu lebih dulu (seperti Κώστας kepada Ana). Itu bukan izin otomatis bagimu untuk membalas dengan *εσύ*.",
+      "**Kalimat pemindah:** *Να μιλάμε στον ενικό;* — kita pakai \"kamu\" saja? Jawaban yang hangat: *Ναι, βέβαια!*"
+     ]
+    }
+   ]
+  }
+ ],
+ "vocab": [
+  {
+   "el": "αγαπητός, -ή, -ό",
+   "baca": "a-gha-pi-TOS, -i, -o",
+   "id": "terkasih; di surat: Yth. (*Αγαπητέ κύριε…*)"
+  },
+  {
+   "el": "ο χαιρετισμός",
+   "baca": "o khé-ré-ti-SMOS",
+   "id": "salam (*με φιλικούς χαιρετισμούς* = salam hangat)"
+  },
+  {
+   "el": "η εκτίμηση",
+   "baca": "i ék-TI-mi-si",
+   "id": "penghargaan, hormat (*με εκτίμηση* = hormat saya)"
+  },
+  {
+   "el": "η σύσκεψη",
+   "baca": "i SI-ské-psi",
+   "id": "rapat"
+  },
+  {
+   "el": "ο πληθυντικός",
+   "baca": "o pli-thin-di-KOS",
+   "id": "bentuk jamak; bentuk hormat *εσείς*"
+  },
+  {
+   "el": "ο ενικός",
+   "baca": "o é-ni-KOS",
+   "id": "bentuk tunggal (*να μιλάμε στον ενικό;*)"
+  },
+  {
+   "el": "το έγγραφο",
+   "baca": "to ÉN-gra-fo",
+   "id": "dokumen (resmi)"
+  },
+  {
+   "el": "το αρχείο",
+   "baca": "to ar-KHI-o",
+   "id": "berkas, file; arsip"
+  },
+  {
+   "el": "επισυνάπτω",
+   "baca": "é-pi-si-NAP-to",
+   "id": "melampirkan (*επισύναψα*)"
+  },
+  {
+   "el": "η διάθεση",
+   "baca": "i dhi-A-thé-si",
+   "id": "kesediaan; suasana hati (*στη διάθεσή σας* = siap membantu Anda)"
+  },
+  {
+   "el": "ενημερώνω",
+   "baca": "é-ni-mé-RO-no",
+   "id": "memberi tahu, mengabari (*ενημέρωσα, ενημερώστε*)"
+  },
+  {
+   "el": "το λιμεναρχείο",
+   "baca": "to li-mé-nar-KHI-o",
+   "id": "kantor syahbandar"
+  },
+  {
+   "el": "το πλήρωμα",
+   "baca": "to PLI-ro-ma",
+   "id": "awak kapal (jamak *τα πληρώματα*)"
+  },
+  {
+   "el": "το διαβατήριο",
+   "baca": "to dhia-va-TI-ri-o",
+   "id": "paspor"
+  },
+  {
+   "el": "η διεύθυνση",
+   "baca": "i DHIÉF-thin-si",
+   "id": "alamat; direksi (*ηλεκτρονική διεύθυνση* = alamat email)"
+  },
+  {
+   "el": "κρατάω",
+   "baca": "kra-TA-o",
+   "id": "memegang, menyimpan (*κράτησα, κρατήστε*)"
+  },
+  {
+   "el": "ο αριθμός πρωτοκόλλου",
+   "baca": "o a-rith-MOS pro-to-KO-lu",
+   "id": "nomor registrasi (surat/berkas resmi)"
+  },
+  {
+   "el": "μάλιστα",
+   "baca": "MA-li-sta",
+   "id": "baik, ya (resmi)"
+  },
+  {
+   "el": "τουλάχιστον",
+   "baca": "tu-LA-khi-ston",
+   "id": "paling tidak, sekurang-kurangnya"
+  },
+  {
+   "el": "ευγενικός, -ή, -ό",
+   "baca": "év-yé-ni-KOS, -i, -o",
+   "id": "sopan, ramah"
+  },
+  {
+   "el": "φιλικός, -ή, -ό",
+   "baca": "fi-li-KOS, -i, -o",
+   "id": "bersahabat, akrab"
+  },
+  {
+   "el": "ο/η υπάλληλος",
+   "baca": "o/i i-PA-li-los",
+   "id": "pegawai (sandang ikut jenis kelamin orangnya)"
+  },
+  {
+   "el": "το θέμα",
+   "baca": "to THÉ-ma",
+   "id": "perihal, topik (jamak *τα θέματα*)"
+  },
+  {
+   "el": "η άφιξη",
+   "baca": "i A-fi-ksi",
+   "id": "kedatangan (lawannya *η αναχώρηση*)"
+  },
+  {
+   "el": "ο/η συνάδελφος",
+   "baca": "o/i si-NA-dhél-fos",
+   "id": "rekan kerja"
+  }
+ ],
+ "exercises": [
+  {
+   "prompt": "Terjemahkan ke bahasa Yunani (ragam resmi, εσείς).",
+   "items": [
+    "Terima kasih atas pesan Bapak.",
+    "Apakah Bapak berkenan mengirimkan dokumennya kepada kami?",
+    "Bersama ini saya lampirkan daftar awak kapal.",
+    "Mohon kabari kami sebelum hari Kamis.",
+    "Saya siap membantu bila ada pertanyaan.",
+    "Hormat saya, Ana."
+   ]
+  },
+  {
+   "prompt": "Isi dengan bentuk yang tepat dari kata dalam kurung.",
+   "items": [
+    "____ κύριε Γεωργίου, (αγαπητός)",
+    "Παρακαλώ, ____ μας τα διαβατήρια. (στέλνω, εσείς, perintah)",
+    "____ μας μέχρι την Παρασκευή. (ενημερώνω, εσείς, perintah)",
+    "Θα ____ να μου πείτε την ώρα; (μπορώ, εσείς)",
+    "Σας ευχαριστώ για το ____ σας. (μήνυμα)",
+    "Καλημέρα σας, κύριε ____! (Παπαδόπουλος)",
+    "Μπορείτε να μου ____ το όνομά σας; (λέω, εσείς)"
+   ]
+  },
+  {
+   "prompt": "Ubah ke ragam resmi (εσείς).",
+   "items": [
+    "Μπορείς να μου στείλεις τα χαρτιά;",
+    "Στείλε μου τη λίστα.",
+    "Περίμενε λίγο, σε παρακαλώ.",
+    "Ευχαριστώ για το μήνυμά σου.",
+    "Πες μου το όνομά σου.",
+    "Έλα στο γραφείο μου αύριο."
+   ]
+  },
+  {
+   "prompt": "Susun jadi kalimat yang benar.",
+   "items": [
+    "σας / για / ευχαριστώ / μήνυμά / το / σας",
+    "στείλτε / τα / μας / διαβατήρια",
+    "να / θα / μας / μπορούσατε / ενημερώσετε",
+    "διάθεσή / στη / παραμένω / σας",
+    "επισυνάπτω / σας / λίστα / τη"
+   ]
+  }
+ ],
+ "answers": [
+  "Σας ευχαριστώ για το μήνυμά σας. — Θα μπορούσατε να μας στείλετε τα έγγραφα; — Σας επισυνάπτω τη λίστα του πληρώματος. — Παρακαλώ, ενημερώστε μας πριν από την Πέμπτη. — Παραμένω στη διάθεσή σας για κάθε ερώτηση. — Με εκτίμηση, Άννα.",
+  "Αγαπητέ — στείλτε — Ενημερώστε — μπορούσατε — μήνυμά — Παπαδόπουλε — πείτε",
+  "Μπορείτε να μου στείλετε τα έγγραφα; — Στείλτε μου τη λίστα. — Περιμένετε λίγο, σας παρακαλώ. — Σας ευχαριστώ για το μήνυμά σας. — Πείτε μου το όνομά σας. — Ελάτε στο γραφείο μου αύριο.",
+  "Σας ευχαριστώ για το μήνυμά σας. — Στείλτε μας τα διαβατήρια. — Θα μπορούσατε να μας ενημερώσετε; — Παραμένω στη διάθεσή σας. — Σας επισυνάπτω τη λίστα."
+ ]
+}

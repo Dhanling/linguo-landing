@@ -1,0 +1,649 @@
+{
+ "title": "Dengan syarat — negosiasi",
+ "title_target": "Εφόσον…",
+ "goal": "Bernegosiasi dengan syarat yang bertingkat, dari yang paling longgar sampai yang paling mengikat (*αρκεί να, εφόσον, με την προϋπόθεση ότι, υπό τον όρο ότι, εκτός αν, σε περίπτωση που, ακόμη κι αν*), lalu merumuskan kompromi: *Δεχόμαστε, με την προϋπόθεση ότι…*",
+ "bekal": [
+  "mengajukan syarat dengan *με την προϋπόθεση ότι, υπό τον όρο ότι, αρκεί να*",
+  "memakai subjungtif tanpa *θα* sesudah *εκτός αν, σε περίπτωση που, αρκεί να*",
+  "menawar balik dan menutup kompromi: *σε αντάλλαγμα, μια μέση λύση, διαφορετικά*"
+ ],
+ "dialogs": [
+  {
+   "title": "ΔΙΑΛΟΓΟΣ 1 — Rapat anggaran di universitas",
+   "intro": "Selasa, 5 Desember 2028, ruang rapat Universitas Pireas. Ana dan Pak Kostas bernegosiasi dengan Profesor Lambros Mavridis, dekan Fakultas Pelayaran, dan Eftychia Rousou dari bagian keuangan. Pokok soalnya: harga jam simulator anjungan kapal, asrama, dan jaminan bila pembayaran dari Jakarta terlambat.",
+   "lines": [
+    {
+     "speaker": "Μαυρίδης:",
+     "text": "Ας περάσουμε στον προϋπολογισμό. Ο προσομοιωτής γέφυρας κοστίζει τετρακόσια ευρώ την ώρα.",
+     "id": "Mari kita masuk ke anggaran. Simulator anjungan harganya empat ratus euro per jam.",
+     "literal": "biar kita-lewat ke-(sandang) anggaran. (sandang) simulator anjungan-punya berharga-ia empat-ratus euro (sandang) jam."
+    },
+    {
+     "speaker": "Άννα:",
+     "text": "Το καταλαβαίνουμε. Εφόσον όμως οι δόκιμοι θα τον χρησιμοποιούν δύο χρόνια, ζητάμε ειδική τιμή.",
+     "id": "Kami memahaminya. Tapi karena para kadet akan memakainya selama dua tahun, kami minta harga khusus.",
+     "literal": "itu kami-pahami. karena namun (sandang) kadet-kadet akan dia-(lk) memakai-(berulang) dua tahun, kami-minta khusus harga."
+    },
+    {
+     "speaker": "Ρούσου:",
+     "text": "Μπορούμε, με την προϋπόθεση ότι θα κλείσετε τουλάχιστον εξακόσιες ώρες τον χρόνο.",
+     "id": "Bisa, dengan syarat Anda memesan paling sedikit enam ratus jam per tahun.",
+     "literal": "kami-bisa, dengan (sandang) prasyarat bahwa akan Anda-kunci paling-sedikit enam-ratus jam (sandang) tahun."
+    },
+    {
+     "speaker": "Κώστας:",
+     "text": "Εξακόσιες είναι πολλές για την πρώτη χρονιά. Τι λέτε για τετρακόσιες;",
+     "id": "Enam ratus terlalu banyak untuk tahun pertama. Bagaimana kalau empat ratus?",
+     "literal": "enam-ratus adalah banyak untuk (sandang) pertama tahun. apa Anda-katakan tentang empat-ratus?"
+    },
+    {
+     "speaker": "Μαυρίδης:",
+     "text": "Τετρακόσιες, αλλά υπό τον όρο ότι η συνεργασία θα είναι τριετής.",
+     "id": "Empat ratus, tetapi dengan syarat kerja samanya berlangsung tiga tahun.",
+     "literal": "empat-ratus, tetapi di-bawah (sandang) syarat bahwa (sandang) kerja-sama akan adalah tiga-tahunan."
+    },
+    {
+     "speaker": "Άννα:",
+     "text": "Τριετής συνεργασία, σύμφωνοι. Εκτός αν αλλάξει την πολιτική του το υπουργείο.",
+     "id": "Kerja sama tiga tahun, setuju. Kecuali kalau kementerian mengubah kebijakannya.",
+     "literal": "tiga-tahunan kerja-sama, sepakat. kecuali jika mengubah (sandang) kebijakan-nya (sandang) kementerian."
+    },
+    {
+     "speaker": "Ρούσου:",
+     "text": "Σε περίπτωση που αλλάξει κάτι, θα χρειαστεί νέα διαπραγμάτευση.",
+     "id": "Seandainya ada yang berubah, perlu negosiasi baru.",
+     "literal": "dalam kasus yang berubah sesuatu, akan diperlukan baru negosiasi."
+    },
+    {
+     "speaker": "Κώστας:",
+     "text": "Λογικό. Και η στέγαση; Υπάρχουν διαθέσιμα δωμάτια στις φοιτητικές εστίες;",
+     "id": "Masuk akal. Lalu tempat tinggal? Ada kamar kosong di asrama mahasiswa?",
+     "literal": "logis. dan (sandang) perumahan? ada-mereka tersedia kamar-kamar di-(sandang) mahasiswa asrama-asrama?"
+    },
+    {
+     "speaker": "Μαυρίδης:",
+     "text": "Θα βρούμε, αρκεί να μας δώσετε τα ονόματα έως τον Μάρτιο.",
+     "id": "Akan kami carikan, asal Anda memberi kami nama-namanya paling lambat Maret.",
+     "literal": "akan kami-temukan, cukup untuk kepada-kami Anda-beri (sandang) nama-nama sampai (sandang) Maret."
+    },
+    {
+     "speaker": "Άννα:",
+     "text": "Θα τα έχετε νωρίτερα. Μπορούμε να το γράψουμε και στο πρακτικό;",
+     "id": "Anda akan menerimanya lebih awal. Boleh kita catat juga di notulen?",
+     "literal": "akan itu-(jamak) Anda-punya lebih-awal. kami-bisa untuk itu menulis juga di-(sandang) notulen?"
+    },
+    {
+     "speaker": "Ρούσου:",
+     "text": "Βεβαίως. Εφόσον συμφωνούμε σε όλα, θα στείλω το πρακτικό αύριο.",
+     "id": "Tentu. Asalkan kita sepakat soal semuanya, notulennya saya kirim besok.",
+     "literal": "tentu. asalkan kita-sepakat pada semua, akan aku-kirim (sandang) notulen besok."
+    },
+    {
+     "speaker": "Κώστας:",
+     "text": "Μια τελευταία λεπτομέρεια. Ακόμη κι αν καθυστερήσει η πληρωμή από την Τζακάρτα, τα μαθήματα αρχίζουν κανονικά;",
+     "id": "Satu detail terakhir. Sekalipun pembayaran dari Jakarta terlambat, kuliah tetap dimulai seperti biasa?",
+     "literal": "sebuah terakhir detail. bahkan dan jika terlambat (sandang) pembayaran dari (sandang) Jakarta, (sandang) pelajaran-pelajaran mulai-mereka secara-normal?"
+    },
+    {
+     "speaker": "Μαυρίδης:",
+     "text": "Κανονικά. Έχουμε εμπιστοσύνη ο ένας στον άλλον, κύριε Κώστα.",
+     "id": "Seperti biasa. Kita saling percaya, Pak Kostas.",
+     "literal": "secara-normal. kami-punya kepercayaan (sandang) yang-satu ke-(sandang) yang-lain, tuan Kostas."
+    },
+    {
+     "speaker": "Άννα:",
+     "text": "Τότε, κύριε καθηγητά, νομίζω ότι έχουμε συμφωνία.",
+     "id": "Kalau begitu, Profesor, saya rasa kita sudah sepakat.",
+     "literal": "kalau-begitu, tuan profesor, aku-kira bahwa kami-punya kesepakatan."
+    }
+   ],
+   "notes": [
+    "**ο προσομοιωτής γέφυρας** — simulator anjungan kapal. *Η γέφυρα* berarti jembatan dan juga anjungan kapal, tempat nakhoda memimpin; nama program Ana, Γέφυρα, sengaja bermain dengan kedua makna ini.",
+    "**Εφόσον** — dua wajah dalam satu dialog. Pada kalimat Ana isinya sudah pasti (kadet memang akan memakai simulator), jadi artinya \"karena, mengingat\". Pada kalimat Rousou isinya belum pasti, jadi artinya \"asalkan, jika\". Kuncinya: apakah isi klausanya sudah fakta atau masih syarat.",
+    "**με την προϋπόθεση ότι / υπό τον όρο ότι** — \"dengan prasyarat bahwa\" dan \"dengan syarat bahwa\". Keduanya diikuti *ότι* + indikatif (sering dengan *θα*) atau *να* + subjungtif. *Υπό* (+ akusatif) adalah sisa katharevousa, jadi *υπό τον όρο* terdengar lebih resmi, cocok untuk kontrak.",
+    "**Τι λέτε για τετρακόσιες;** — tawaran balik yang halus: \"bagaimana pendapat Anda tentang empat ratus?\". Jauh lebih lunak daripada *Όχι, τετρακόσιες.*",
+    "⚠️ **εκτός αν αλλάξει, σε περίπτωση που αλλάξει, αρκεί να δώσετε** — sesudah penanda syarat, hal yang belum terjadi dinyatakan dengan subjungtif TANPA *θα*, sama seperti *όταν έρθεις* (A2). Penutur Indonesia cenderung menambahkan *θα* karena maknanya \"nanti\": *εκτός αν θα αλλάξει* salah.",
+    "**ακόμη κι αν** — \"sekalipun\": syarat yang tidak mengubah hasil. *Ο ένας στον άλλον* = saling (harfiah \"yang satu kepada yang lain\"); *κύριε καθηγητά* memakai vokatif tradisional *-ά*."
+   ],
+   "grammars": [
+    {
+     "title": "Penanda syarat, dari yang lisan sampai yang resmi",
+     "body": [
+      "Semua penanda di bawah ini bisa diikuti subjungtif (untuk hal yang belum terjadi) atau indikatif (untuk fakta atau kebiasaan). *Με την προϋπόθεση* dan *υπό τον όρο* memakai *ότι* + indikatif atau *να* + subjungtif."
+     ],
+     "table": {
+      "head": [
+       "Penanda",
+       "Nuansa",
+       "Contoh"
+      ],
+      "rows": [
+       [
+        "*αν / εάν*",
+        "umum; *εάν* lebih resmi",
+        "*Αν αλλάξει κάτι, θα σας ενημερώσουμε.*"
+       ],
+       [
+        "*εφόσον*",
+        "asalkan (resmi); juga: karena",
+        "*Εφόσον συμφωνούμε, προχωράμε.*"
+       ],
+       [
+        "*αρκεί να*",
+        "asal saja: syarat yang cukup",
+        "*Αρκεί να μας δώσετε τα ονόματα.*"
+       ],
+       [
+        "*με την προϋπόθεση ότι / να*",
+        "prasyarat yang tegas",
+        "*…με την προϋπόθεση ότι θα κλείσετε 400 ώρες.*"
+       ],
+       [
+        "*υπό τον όρο ότι / να*",
+        "sangat resmi, bahasa kontrak",
+        "*…υπό τον όρο ότι η συνεργασία θα είναι τριετής.*"
+       ],
+       [
+        "*σε περίπτωση που*",
+        "seandainya, kalau-kalau",
+        "*Σε περίπτωση που αλλάξει κάτι…*"
+       ],
+       [
+        "*εκτός αν / εκτός εάν*",
+        "kecuali jika",
+        "*…εκτός αν αλλάξει η πολιτική.*"
+       ],
+       [
+        "*ακόμη κι αν*",
+        "sekalipun, biarpun",
+        "*Ακόμη κι αν καθυστερήσει η πληρωμή…*"
+       ]
+      ]
+     },
+     "after": [
+      "⚠️ *Εκτός αν* (+ klausa) tidak sama dengan *εκτός από* (+ kata benda): *Ήρθαν όλοι εκτός από τον Κώστα* = semua datang kecuali Kostas.",
+      "Setelah *με την προϋπόθεση ότι* dan *υπό τον όρο ότι*, *θα* justru wajar karena *ότι* diikuti indikatif: *ότι θα κλείσετε*."
+     ]
+    }
+   ]
+  },
+  {
+   "title": "ΔΙΑΛΟΓΟΣ 2 — Mencari jalan tengah",
+   "intro": "Kamis, 7 Desember 2028, ruang kerja Bu Angeliki di kantor Aegeon Nautiliaki. Ana melaporkan hasil rapat di universitas dan mengusulkan tawaran balik sebelum notulen resmi ditandatangani.",
+   "lines": [
+    {
+     "speaker": "Αγγελική:",
+     "text": "Λοιπόν, Άννα, πώς πήγε στο πανεπιστήμιο; Πέτυχες έκπτωση;",
+     "id": "Jadi, Ana, bagaimana di universitas? Dapat potongan harga?",
+     "literal": "jadi, Ana, bagaimana pergi-ia di-(sandang) universitas? kamu-berhasil potongan?"
+    },
+    {
+     "speaker": "Άννα:",
+     "text": "Ναι, αλλά με όρους. Θέλουν τριετή συνεργασία και τα ονόματα έως τον Μάρτιο.",
+     "id": "Ya, tapi dengan syarat. Mereka mau kerja sama tiga tahun dan nama-nama kadet paling lambat Maret.",
+     "literal": "ya, tetapi dengan syarat-syarat. mereka-mau tiga-tahunan kerja-sama dan (sandang) nama-nama sampai (sandang) Maret."
+    },
+    {
+     "speaker": "Αγγελική:",
+     "text": "Τα ονόματα δεν είναι πρόβλημα. Η τριετία με ανησυχεί λίγο.",
+     "id": "Nama-nama itu bukan masalah. Jangka tiga tahun itu yang sedikit membuat saya khawatir.",
+     "literal": "(sandang) nama-nama tidak adalah masalah. (sandang) masa-tiga-tahun aku menggelisahkan-ia sedikit."
+    },
+    {
+     "speaker": "Άννα:",
+     "text": "Μπορούμε να δεχτούμε, με την προϋπόθεση ότι θα υπάρχει ρήτρα αναθεώρησης κάθε χρόνο.",
+     "id": "Kita bisa menerimanya, dengan syarat ada klausul peninjauan setiap tahun.",
+     "literal": "kita-bisa untuk menerima, dengan (sandang) prasyarat bahwa akan ada klausul peninjauan-punya setiap tahun."
+    },
+    {
+     "speaker": "Αγγελική:",
+     "text": "Έξυπνο. Και σε αντάλλαγμα τι τους δίνουμε;",
+     "id": "Cerdik. Lalu sebagai imbalannya, apa yang kita berikan kepada mereka?",
+     "literal": "cerdik. dan dalam imbalan apa kepada-mereka kita-beri?"
+    },
+    {
+     "speaker": "Άννα:",
+     "text": "Πρακτική άσκηση για δέκα φοιτητές τους στα πλοία μας. Εφόσον βέβαια συμφωνείτε.",
+     "id": "Praktik kerja untuk sepuluh mahasiswa mereka di kapal-kapal kita. Tentu saja kalau Ibu setuju.",
+     "literal": "praktis latihan untuk sepuluh mahasiswa-mahasiswa mereka di-(sandang) kapal-kapal kita. asalkan tentu Anda-setuju."
+    },
+    {
+     "speaker": "Αγγελική:",
+     "text": "Συμφωνώ, αρκεί να μην είναι όλοι την ίδια περίοδο. Τα πλοία δεν είναι ξενοδοχεία.",
+     "id": "Saya setuju, asal tidak semuanya pada periode yang sama. Kapal itu bukan hotel.",
+     "literal": "aku-setuju, cukup untuk tidak adalah semua (sandang) sama periode. (sandang) kapal-kapal tidak adalah hotel-hotel."
+    },
+    {
+     "speaker": "Άννα:",
+     "text": "Κατανοητό. Θα προτείνω δύο ομάδες των πέντε, τον Ιούλιο και τον Σεπτέμβριο.",
+     "id": "Dimengerti. Saya akan mengusulkan dua kelompok masing-masing lima orang, bulan Juli dan September.",
+     "literal": "dapat-dimengerti. akan aku-usulkan dua kelompok-kelompok (sandang) lima-punya, (sandang) Juli dan (sandang) September."
+    },
+    {
+     "speaker": "Αγγελική:",
+     "text": "Μια χαρά μέση λύση. Διαφορετικά θα χάναμε μήνες σε διαπραγματεύσεις.",
+     "id": "Jalan tengah yang pas sekali. Kalau tidak, kita bisa buang berbulan-bulan untuk negosiasi.",
+     "literal": "sebuah kegembiraan tengah solusi. kalau-tidak akan kita-kehilangan bulan-bulan dalam negosiasi-negosiasi."
+    },
+    {
+     "speaker": "Άννα:",
+     "text": "Να στείλω την αντιπρόταση στον καθηγητή Μαυρίδη σήμερα;",
+     "id": "Apa saya kirim tawaran baliknya ke Profesor Mavridis hari ini?",
+     "literal": "untuk aku-kirim (sandang) tawaran-balik ke-(sandang) profesor Mavridis hari-ini?"
+    },
+    {
+     "speaker": "Αγγελική:",
+     "text": "Στείλ' τη, εκτός αν θέλει ο Κώστας να τη δει πρώτα. Ρώτα τον.",
+     "id": "Kirim saja, kecuali Kostas ingin melihatnya dulu. Tanyakan dia.",
+     "literal": "kirim itu-(pr), kecuali jika ingin-ia (sandang) Kostas untuk itu-(pr) melihat dulu. tanya dia."
+    }
+   ],
+   "notes": [
+    "**με όρους** — \"dengan syarat-syarat\". *Ο όρος* = syarat, ketentuan; jamaknya muncul di mana-mana: *όροι χρήσης* (ketentuan penggunaan), *όροι της σύμβασης* (ketentuan kontrak). *Τριετή συνεργασία* adalah akusatif perempuan dari *τριετής*.",
+    "**η τριετία** — kurun tiga tahun; sejenis dengan *διετία, πενταετία, δεκαετία*. *Με ανησυχεί* = membuat saya khawatir: yang khawatir menjadi objek, seperti *με πονάει* (A2).",
+    "**ρήτρα αναθεώρησης** — klausul peninjauan: pintu keluar yang membuat komitmen panjang terasa aman. *Η ρήτρα* akan menjadi kata kunci unit berikutnya.",
+    "**σε αντάλλαγμα** — \"sebagai imbalan\". Inti kompromi Yunani: *δίνω και παίρνω*, memberi dan menerima. *Εφόσον βέβαια συμφωνείτε* di akhir kalimat adalah kesopanan kepada atasan: Ana tidak memutuskan sendiri.",
+    "**Μια χαρά μέση λύση** — *μια χαρά* (harfiah \"sebuah kegembiraan\") = baik sekali, pas; *μέση λύση* = jalan tengah. *Διαφορετικά* atau *αλλιώς* = \"kalau tidak begitu\", lalu *θα* + παρατατικός untuk akibat yang dibayangkan (B1).",
+    "**Στείλ' τη… Ρώτα τον** — perintah + kata ganti objek di belakang. *Να στείλω…;* adalah cara biasa menawarkan diri atau meminta izin: \"Apa saya kirim…?\""
+   ],
+   "grammars": [
+    {
+     "title": "Bahasa kompromi",
+     "body": [
+      "Kompromi yang baik terdiri atas beberapa langkah: menerima dengan syarat, meminta imbalan, mengalah sebagian, dan menyebut batas. Kondisional *θα* (θα θέλαμε, θα προτείναμε) melunakkan semuanya."
+     ],
+     "table": {
+      "head": [
+       "Langkah",
+       "Ungkapan",
+       "Arti"
+      ],
+      "rows": [
+       [
+        "menerima bersyarat",
+        "*Δεχόμαστε, με την προϋπόθεση ότι…*",
+        "Kami terima, dengan syarat…"
+       ],
+       [
+        "meminta imbalan",
+        "*Σε αντάλλαγμα, θα θέλαμε…*",
+        "Sebagai imbalan, kami ingin…"
+       ],
+       [
+        "mengalah sebagian",
+        "*Μπορούμε να υποχωρήσουμε σε αυτό το σημείο.*",
+        "Kami bisa mengalah di poin ini."
+       ],
+       [
+        "tawaran balik",
+        "*Θα προτείναμε μια αντιπρόταση.*",
+        "Kami ingin mengajukan tawaran balik."
+       ],
+       [
+        "jalan tengah",
+        "*Ας βρούμε μια μέση λύση.*",
+        "Mari kita cari jalan tengah."
+       ],
+       [
+        "batas",
+        "*Κάτω από αυτό δεν μπορούμε να πάμε.*",
+        "Di bawah itu kami tidak bisa."
+       ],
+       [
+        "akibat",
+        "*Διαφορετικά θα πρέπει να το ξανασκεφτούμε.*",
+        "Kalau tidak, kami harus memikirkannya lagi."
+       ]
+      ]
+     },
+     "after": [
+      "*Υποχωρώ* (mundur, mengalah) adalah istilah negosiasi yang netral, tidak memalukan: *Και οι δύο πλευρές υποχώρησαν.*"
+     ]
+    }
+   ]
+  }
+ ],
+ "sections": [
+  {
+   "title": "Kosakata meja perundingan",
+   "blocks": [
+    {
+     "type": "tabel",
+     "head": [
+      "Istilah",
+      "Arti",
+      "Contoh"
+     ],
+     "rows": [
+      [
+       "*η διαπραγμάτευση*",
+       "negosiasi",
+       "*Η διαπραγμάτευση κράτησε τρεις ώρες.*"
+      ],
+      [
+       "*η πρόταση / η αντιπρόταση*",
+       "usulan / tawaran balik",
+       "*Περιμένουμε την αντιπρότασή τους.*"
+      ],
+      [
+       "*ο συμβιβασμός*",
+       "kompromi",
+       "*Καταλήξαμε σε συμβιβασμό.*"
+      ],
+      [
+       "*το περιθώριο*",
+       "ruang gerak, kelonggaran",
+       "*Δεν έχουμε μεγάλο περιθώριο.*"
+      ],
+      [
+       "*η προθεσμία*",
+       "tenggat",
+       "*Η προθεσμία λήγει τον Μάρτιο.*"
+      ],
+      [
+       "*το πρακτικό*",
+       "notulen",
+       "*Θα το γράψουμε στο πρακτικό.*"
+      ],
+      [
+       "*υποχωρώ*",
+       "mengalah",
+       "*Υποχωρήσαμε στην τιμή.*"
+      ],
+      [
+       "*καταλήγω σε*",
+       "sampai pada (kesepakatan)",
+       "*Καταλήξαμε σε συμφωνία.*"
+      ]
+     ]
+    },
+    {
+     "type": "kotak",
+     "title": "Gaya negosiasi Yunani",
+     "items": [
+      "Hubungan dulu, angka kemudian. Kopi dan obrolan pembuka bukan buang waktu.",
+      "Tawar-menawar itu wajar dan diharapkan. Menerima tawaran pertama bisa dianggap kurang serius.",
+      "*Θα το δούμε* (\"nanti kita lihat\") sering berarti tidak, atau belum.",
+      "Kesepakatan lisan bernilai, tetapi selalu mintalah konfirmasi tertulis: *γραπτώς, στο πρακτικό*."
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Syarat dalam ragam resmi dan lisan",
+   "blocks": [
+    {
+     "type": "p",
+     "text": "Di meja rapat dan dalam surat, penanda syarat yang panjang terdengar hati-hati dan profesional. Di telepon dengan rekan, cukup *αν* atau *αρκεί να*. *Αν τυχόν* (\"kalau-kalau\") adalah padanan lisan yang ramah untuk *σε περίπτωση που*."
+    },
+    {
+     "type": "tabel",
+     "head": [
+      "Resmi",
+      "Lisan",
+      "Arti"
+     ],
+     "rows": [
+      [
+       "*Υπό τον όρο ότι θα πληρώσετε…*",
+       "*Αν πληρώσετε…*",
+       "Dengan syarat Anda membayar…"
+      ],
+      [
+       "*Εφόσον το επιθυμείτε…*",
+       "*Αν θέλετε…*",
+       "Jika Anda menghendaki…"
+      ],
+      [
+       "*Σε περίπτωση που καθυστερήσει…*",
+       "*Αν τυχόν αργήσει…*",
+       "Kalau-kalau terlambat…"
+      ],
+      [
+       "*Εκτός εάν ορίζεται διαφορετικά…*",
+       "*Εκτός αν λέει κάτι άλλο…*",
+       "Kecuali ditentukan lain…"
+      ],
+      [
+       "*Με την προϋπόθεση να…*",
+       "*Αρκεί να…*",
+       "Asalkan…"
+      ],
+      [
+       "*Ακόμη και εάν…*",
+       "*Ακόμα κι αν…*",
+       "Sekalipun…"
+      ]
+     ]
+    },
+    {
+     "type": "kotak",
+     "title": "⚠️ Tanpa θα sesudah penanda syarat",
+     "items": [
+      "Salah: *εκτός αν θα αλλάξει*. Benar: *εκτός αν αλλάξει*.",
+      "Salah: *σε περίπτωση που θα καθυστερήσει*. Benar: *σε περίπτωση που καθυστερήσει*.",
+      "Salah: *αρκεί να θα δώσετε*. Benar: *αρκεί να δώσετε*.",
+      "Ingat, *θα* muncul di klausa hasil: *Αν αλλάξει κάτι, θα σας πω.*"
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Ulangan berjenjang — unit 4",
+   "blocks": [
+    {
+     "type": "p",
+     "text": "Negosiasi adalah debat yang berujung pada kesepakatan. Ulangi penanda argumen dari unit 4: tutup kolom Yunani, lalu susun kembali kalimatnya."
+    },
+    {
+     "type": "tabel",
+     "head": [
+      "Bahasa Indonesia",
+      "ΕΛΛΗΝΙΚΑ"
+     ],
+     "rows": [
+      [
+       "Menurut saya, otomasi tidak akan menggantikan pelaut.",
+       "*Κατά τη γνώμη μου, η αυτοματοποίηση δεν θα αντικαταστήσει τους ναυτικούς.*"
+      ],
+      [
+       "Memang teknologi membantu, tetapi kapal selalu butuh manusia.",
+       "*Ναι μεν η τεχνολογία βοηθάει, αλλά το πλοίο χρειάζεται πάντα ανθρώπους.*"
+      ],
+      [
+       "Di satu sisi biayanya turun, di sisi lain risikonya naik.",
+       "*Αφενός μειώνεται το κόστος, αφετέρου αυξάνεται ο κίνδυνος.*"
+      ],
+      [
+       "Saya setuju sebagian dengan Anda.",
+       "*Συμφωνώ εν μέρει μαζί σας.*"
+      ],
+      [
+       "Izinkan saya menanggapi.",
+       "*Επιτρέψτε μου να απαντήσω.*"
+      ]
+     ]
+    }
+   ]
+  }
+ ],
+ "vocab": [
+  {
+   "el": "η διαπραγμάτευση",
+   "baca": "i dhia-pragh-MA-téf-si",
+   "id": "negosiasi, perundingan"
+  },
+  {
+   "el": "ο προϋπολογισμός",
+   "baca": "o pro-i-po-lo-yi-SMOS",
+   "id": "anggaran"
+  },
+  {
+   "el": "ο προσομοιωτής",
+   "baca": "o pro-so-mi-o-TIS",
+   "id": "simulator"
+  },
+  {
+   "el": "η γέφυρα",
+   "baca": "i YÉ-fi-ra",
+   "id": "jembatan; anjungan kapal"
+  },
+  {
+   "el": "εφόσον",
+   "baca": "é-FO-son",
+   "id": "asalkan, jika (resmi); karena, mengingat"
+  },
+  {
+   "el": "η προϋπόθεση",
+   "baca": "i pro-i-PO-thé-si",
+   "id": "prasyarat (*με την προϋπόθεση ότι/να*)"
+  },
+  {
+   "el": "ο όρος",
+   "baca": "o O-ros",
+   "id": "syarat, ketentuan (*υπό τον όρο ότι*)"
+  },
+  {
+   "el": "αρκεί να",
+   "baca": "ar-KI na",
+   "id": "asal saja, cukup asal"
+  },
+  {
+   "el": "σε περίπτωση που",
+   "baca": "sé pé-RIP-to-si pu",
+   "id": "seandainya, kalau-kalau"
+  },
+  {
+   "el": "εκτός αν",
+   "baca": "ék-TOS an",
+   "id": "kecuali jika (+ klausa)"
+  },
+  {
+   "el": "ακόμη κι αν",
+   "baca": "a-KO-mi ki an",
+   "id": "sekalipun, biarpun"
+  },
+  {
+   "el": "τριετής, τριετές",
+   "baca": "tri-é-TIS, tri-é-TÉS",
+   "id": "tiga tahun, bertahun tiga (kata sifat)"
+  },
+  {
+   "el": "η τριετία",
+   "baca": "i tri-é-TI-a",
+   "id": "kurun tiga tahun"
+  },
+  {
+   "el": "η στέγαση",
+   "baca": "i STÉ-gha-si",
+   "id": "tempat tinggal, akomodasi"
+  },
+  {
+   "el": "η φοιτητική εστία",
+   "baca": "i fi-ti-ti-KI é-STI-a",
+   "id": "asrama mahasiswa"
+  },
+  {
+   "el": "το πρακτικό",
+   "baca": "to prak-ti-KO",
+   "id": "notulen"
+  },
+  {
+   "el": "γραπτώς",
+   "baca": "ghrap-TOS",
+   "id": "secara tertulis"
+  },
+  {
+   "el": "η ρήτρα",
+   "baca": "i RI-tra",
+   "id": "klausul"
+  },
+  {
+   "el": "η αναθεώρηση",
+   "baca": "i a-na-thé-O-ri-si",
+   "id": "peninjauan, revisi"
+  },
+  {
+   "el": "η αντιπρόταση",
+   "baca": "i an-di-PRO-ta-si",
+   "id": "tawaran balik, usulan tandingan"
+  },
+  {
+   "el": "σε αντάλλαγμα",
+   "baca": "sé an-DA-lagh-ma",
+   "id": "sebagai imbalan"
+  },
+  {
+   "el": "η πρακτική άσκηση",
+   "baca": "i prak-ti-KI A-ski-si",
+   "id": "praktik kerja, magang"
+  },
+  {
+   "el": "ο συμβιβασμός",
+   "baca": "o sim-vi-va-SMOS",
+   "id": "kompromi"
+  },
+  {
+   "el": "η μέση λύση",
+   "baca": "i MÉ-si LI-si",
+   "id": "jalan tengah"
+  },
+  {
+   "el": "υποχωρώ",
+   "baca": "i-po-kho-RO",
+   "id": "mengalah, mundur (*υποχώρησα*)"
+  }
+ ],
+ "exercises": [
+  {
+   "prompt": "Terjemahkan ke bahasa Yunani.",
+   "items": [
+    "Kami bisa memberi harga khusus, dengan syarat Anda memesan paling sedikit empat ratus jam per tahun.",
+    "Kami akan mencarikan kamar, asal Anda memberi kami nama-namanya paling lambat Maret.",
+    "Seandainya ada yang berubah, perlu negosiasi baru.",
+    "Sekalipun pembayarannya terlambat, kuliah dimulai seperti biasa.",
+    "Sebagai imbalan, kami menawarkan praktik kerja di kapal-kapal kami.",
+    "Kirim usulannya, kecuali Kostas ingin melihatnya dulu."
+   ]
+  },
+  {
+   "prompt": "Isi dengan bentuk yang tepat. Petunjuk ada di dalam kurung.",
+   "items": [
+    "Θα βρούμε δωμάτια, ____ να μας δώσετε τα ονόματα. (asal saja)",
+    "Ήρθαν όλοι ____ τον Κώστα. (kecuali, + kata benda)",
+    "Θα υπογράψουμε, εκτός αν ____ κάτι. (αλλάζω, subjungtif)",
+    "Σε περίπτωση που ____ η πληρωμή, θα σας ενημερώσουμε. (καθυστερώ, subjungtif)",
+    "Δεχόμαστε, υπό τον ____ ότι η συνεργασία θα είναι τριετής. (syarat)",
+    "Θέλουν μια ____ συνεργασία. (τριετής, akusatif perempuan)",
+    "____ θα χάναμε μήνες σε διαπραγματεύσεις. (kalau tidak)"
+   ]
+  },
+  {
+   "prompt": "Ubah kalimat syarat dengan penanda di dalam kurung.",
+   "items": [
+    "Αν μας δώσετε τα ονόματα, θα βρούμε δωμάτια. (αρκεί να)",
+    "Αν αλλάξει κάτι, θα σας τηλεφωνήσουμε. (σε περίπτωση που)",
+    "Θα υπογράψουμε. Αν όμως αλλάξει η πολιτική, δεν θα υπογράψουμε. (εκτός αν)",
+    "Αν κλείσετε τετρακόσιες ώρες, θα έχετε ειδική τιμή. (με την προϋπόθεση ότι)",
+    "Καθυστερεί η πληρωμή, αλλά τα μαθήματα αρχίζουν. (ακόμη κι αν)",
+    "Αν συμφωνείτε, προχωράμε. (εφόσον)"
+   ]
+  },
+  {
+   "prompt": "Susun jadi kalimat yang benar.",
+   "items": [
+    "να / αρκεί / τα ονόματα / μας δώσετε",
+    "λύση / μια / ας / μέση / βρούμε",
+    "στο πρακτικό / το / σημειώσουμε / ας",
+    "προχωράμε, / εφόσον / συμφωνούμε",
+    "αντάλλαγμα / τι / σε / δίνουμε / τους"
+   ]
+  }
+ ],
+ "answers": [
+  "Μπορούμε να δώσουμε ειδική τιμή, με την προϋπόθεση ότι θα κλείσετε τουλάχιστον τετρακόσιες ώρες τον χρόνο. — Θα βρούμε δωμάτια, αρκεί να μας δώσετε τα ονόματα έως τον Μάρτιο. — Σε περίπτωση που αλλάξει κάτι, θα χρειαστεί νέα διαπραγμάτευση. — Ακόμη κι αν καθυστερήσει η πληρωμή, τα μαθήματα αρχίζουν κανονικά. — Σε αντάλλαγμα, προσφέρουμε πρακτική άσκηση στα πλοία μας. — Στείλε την πρόταση, εκτός αν θέλει ο Κώστας να τη δει πρώτα.",
+  "αρκεί — εκτός από — αλλάξει — καθυστερήσει — όρο — τριετή — Διαφορετικά",
+  "Θα βρούμε δωμάτια, αρκεί να μας δώσετε τα ονόματα. — Σε περίπτωση που αλλάξει κάτι, θα σας τηλεφωνήσουμε. — Θα υπογράψουμε, εκτός αν αλλάξει η πολιτική. — Θα έχετε ειδική τιμή, με την προϋπόθεση ότι θα κλείσετε τετρακόσιες ώρες. — Ακόμη κι αν καθυστερήσει η πληρωμή, τα μαθήματα αρχίζουν. — Εφόσον συμφωνείτε, προχωράμε.",
+  "Αρκεί να μας δώσετε τα ονόματα. — Ας βρούμε μια μέση λύση. — Ας το σημειώσουμε στο πρακτικό. — Προχωράμε, εφόσον συμφωνούμε. — Σε αντάλλαγμα τι τους δίνουμε;"
+ ]
+}

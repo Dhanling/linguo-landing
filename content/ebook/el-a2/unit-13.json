@@ -1,0 +1,668 @@
+{
+ "title": "Sedang terjadi ketika — παρατατικός vs αόριστος",
+ "title_target": "Ενώ περίμενα, χτύπησε το τηλέφωνο",
+ "goal": "Menceritakan sebuah kejadian dengan memisahkan latar yang sedang berlangsung (*στεκόμουν, διάβαζα, ήταν γεμάτο*) dari peristiwa yang menyela (*με έσπρωξε, έκλεισαν οι πόρτες*), dirangkai dengan *ενώ, καθώς, όταν, μόλις*.",
+ "bekal": [
+  "memilih παρατατικός untuk latar dan αόριστος untuk peristiwa: *Ενώ διάβαζα, κάποιος με έσπρωξε.*",
+  "merangkai cerita lampau dengan *ενώ, καθώς, όταν, μόλις, ξαφνικά*",
+  "melaporkan barang yang hilang atau dicuri: *Μου έκλεψαν το πορτοφόλι.*"
+ ],
+ "dialogs": [
+  {
+   "title": "ΔΙΑΛΟΓΟΣ 1 — Di kantor polisi",
+   "intro": "Selasa, 23 Februari 2027, pukul setengah delapan malam. Dalam perjalanan pulang dari Pireas, dompet Ana dicuri di metro jalur 1. Ia turun dan melapor ke kantor polisi terdekat. Perhatikan: setiap kali Ana menggambarkan suasana, kata kerjanya lain bentuknya dibanding saat ia menyebut kejadiannya.",
+   "lines": [
+    {
+     "speaker": "Αστυνομικός:",
+     "text": "[Καλησπέρα|Ka-li-SPÉ-ra]. [Πώς|Pos] [μπορώ|bo-RO] [να|na] [σας|sas] [βοηθήσω|vo-i-THI-so];",
+     "id": "Selamat malam. Ada yang bisa saya bantu?",
+     "literal": "selamat-malam. bagaimana saya-bisa agar anda saya-bantu?"
+    },
+    {
+     "speaker": "Άννα:",
+     "text": "[Καλησπέρα|Ka-li-SPÉ-ra]. [Μου|Mu] [έκλεψαν|É-klé-psan] [το|to] [πορτοφόλι|por-to-FO-li] [στο|sto] [μετρό|mé-TRO].",
+     "id": "Selamat malam. Dompet saya dicuri di metro.",
+     "literal": "selamat-malam. dari-saya mereka-mencuri (sandang) dompet di-(sandang) metro."
+    },
+    {
+     "speaker": "Αστυνομικός:",
+     "text": "[Λυπάμαι|Li-PA-mé]. [Πότε|PO-té] [έγινε|É-yi-né] [αυτό|af-TO];",
+     "id": "Saya turut menyesal. Kapan kejadiannya?",
+     "literal": "saya-menyesal. kapan terjadi-(lampau) ini?"
+    },
+    {
+     "speaker": "Άννα:",
+     "text": "[Γύρω|YI-ro] [στις|stis] [έξι|É-ksi]. [Ερχόμουν|Ér-KHO-mun] [από|a-PO] [τον|ton] [Πειραιά|Pi-ré-A] [με|mé] [τη|ti] [γραμμή|ghra-MI] 1.",
+     "id": "Sekitar jam enam. Saya sedang dalam perjalanan dari Pireas naik jalur 1.",
+     "literal": "sekitar pada-(sandang) enam. saya-sedang-datang dari (sandang) Pireas dengan (sandang) jalur 1."
+    },
+    {
+     "speaker": "Αστυνομικός:",
+     "text": "[Είχε|I-khé] [πολύ|po-LI] [κόσμο|KO-smo] [στο|sto] [βαγόνι|va-GHO-ni];",
+     "id": "Gerbongnya ramai?",
+     "literal": "ia-punya-(lampau) banyak orang-banyak di-(sandang) gerbong?"
+    },
+    {
+     "speaker": "Άννα:",
+     "text": "[Ναι|Né], [ήταν|I-tan] [γεμάτο|yé-MA-to]. [Στεκόμουν|Sté-KO-mun] [δίπλα|DHI-pla] [στην|stin] [πόρτα|POR-ta] [και|ké] [διάβαζα|DHIA-va-za] [στο|sto] [κινητό|ki-ni-TO] [μου|mu].",
+     "id": "Iya, penuh sesak. Saya berdiri di dekat pintu sambil membaca di ponsel.",
+     "literal": "ya, ia-adalah-(lampau) penuh. saya-sedang-berdiri samping pada-(sandang) pintu dan saya-sedang-membaca di-(sandang) ponsel saya."
+    },
+    {
+     "speaker": "Αστυνομικός:",
+     "text": "[Είδατε|I-dha-té] [κάποιον|KA-pi-on] [ύποπτο|I-pop-to];",
+     "id": "Anda melihat orang yang mencurigakan?",
+     "literal": "anda-melihat-(lampau) seseorang mencurigakan?"
+    },
+    {
+     "speaker": "Άννα:",
+     "text": "[Ενώ|É-NO] [έμπαινε|ÉM-bé-né] [κόσμος|KO-smos] [στο|sto] [Μοναστηράκι|Mo-na-sti-RA-ki], [ένας|É-nas] [νεαρός|né-a-ROS] [με|mé] [έσπρωξε|É-spro-ksé].",
+     "id": "Waktu orang-orang sedang naik di Monastiraki, seorang pemuda mendorong saya.",
+     "literal": "selagi sedang-masuk orang-banyak di-(sandang) Monastiraki, seorang pemuda saya mendorong-(lampau)."
+    },
+    {
+     "speaker": "Αστυνομικός:",
+     "text": "[Πότε|PO-té] [καταλάβατε|ka-ta-LA-va-té] [ότι|O-ti] [έλειπε|É-li-pé] [το|to] [πορτοφόλι|por-to-FO-li];",
+     "id": "Kapan Anda sadar dompetnya tidak ada?",
+     "literal": "kapan anda-menyadari-(lampau) bahwa sedang-tidak-ada (sandang) dompet?"
+    },
+    {
+     "speaker": "Άννα:",
+     "text": "[Μόλις|MO-lis] [έκλεισαν|É-kli-san] [οι|i] [πόρτες|POR-tés]. [Η|I] [τσάντα|TSAN-da] [ήταν|I-tan] [ανοιχτή|a-nikh-TI] [και|ké] [το|to] [πορτοφόλι|por-to-FO-li] [δεν|dhén] [ήταν|I-tan] [πια|pia] [εκεί|é-KI].",
+     "id": "Begitu pintunya tertutup. Tas saya terbuka dan dompetnya sudah tidak ada.",
+     "literal": "begitu tertutup-(lampau) (sandang) pintu-pintu. (sandang) tas ia-adalah-(lampau) terbuka dan (sandang) dompet tidak ia-adalah-(lampau) lagi di-sana."
+    },
+    {
+     "speaker": "Αστυνομικός:",
+     "text": "[Τι|Ti] [είχε|I-khé] [μέσα|MÉ-sa];",
+     "id": "Isinya apa saja?",
+     "literal": "apa ia-punya-(lampau) di-dalam?"
+    },
+    {
+     "speaker": "Άννα:",
+     "text": "[Την|Tin] [άδεια|A-dhi-a] [διαμονής|dhia-mo-NIS], [δύο|DHI-o] [κάρτες|KAR-tés] [και|ké] [σαράντα|sa-RAN-da] [ευρώ|év-RO]. [Τις|Tis] [κάρτες|KAR-tés] [τις|tis] [ακύρωσα|a-KI-ro-sa] [ήδη|I-dhi].",
+     "id": "Izin tinggal, dua kartu, dan empat puluh euro. Kartunya sudah saya blokir.",
+     "literal": "(sandang) izin tinggal-(milik), dua kartu dan empat-puluh euro. (sandang) kartu-kartu mereka saya-batalkan-(lampau) sudah."
+    },
+    {
+     "speaker": "Αστυνομικός:",
+     "text": "[Πολύ|Po-LI] [σωστά|so-STA]. [Συμπληρώστε|Sim-bli-RO-sté] [αυτή|af-TI] [τη|ti] [δήλωση|DHI-lo-si] [και|ké] [θα|tha] [σας|sas] [δώσω|DHO-so] [βεβαίωση|vé-VÉ-o-si].",
+     "id": "Tepat sekali. Silakan isi laporan ini, nanti saya berikan surat keterangan.",
+     "literal": "sangat benar. isilah-(anda) ini (sandang) pernyataan dan akan kepada-anda saya-beri surat-keterangan."
+    },
+    {
+     "speaker": "Άννα:",
+     "text": "[Ευχαριστώ|Éf-kha-ri-STO]. [Τη|Ti] [χρειάζομαι|KHRIA-zo-mé] [για|ya] [καινούργια|ké-NUR-ya] [άδεια|A-dhi-a] [διαμονής|dhia-mo-NIS].",
+     "id": "Terima kasih. Saya perlu itu untuk izin tinggal yang baru.",
+     "literal": "terima-kasih. itu saya-butuh untuk baru izin tinggal-(milik)."
+    }
+   ],
+   "notes": [
+    "⚠️ **Ερχόμουν, στεκόμουν, διάβαζα — lalu έσπρωξε, έκλεισαν.** Bahasa Indonesia cukup berkata \"saya datang, saya berdiri, dia mendorong\" dan membiarkan konteks bekerja; paling-paling kita menambah \"sedang\", itu pun sering dilewati. Bahasa Yunani **tidak memberi pilihan**: setiap kata kerja lampau harus memilih apakah ia latar yang sedang berlangsung (παρατατικός) atau peristiwa yang terjadi dan selesai (αόριστος). Salah pilih bukan sekadar kurang indah — ceritanya berubah arti.",
+    "**Μου έκλεψαν το πορτοφόλι** — harfiah \"mereka mencuri dompet dariku\". Pelakunya tak dikenal, jadi dipakai bentuk *mereka* tanpa subjek, dan korbannya duduk sebagai **μου**. Beginilah cara lisan menyatakan \"dicuri\"; bentuk pasif *κλάπηκε* ada, tetapi terdengar seperti berita koran.",
+    "**Είχε πολύ κόσμο** — \"ada banyak orang\". *Έχει* tanpa subjek berarti *ada* (*έχει κίνηση* = macet), lampaunya *είχε*. **Ο κόσμος** (dunia, orang banyak) selalu **tunggal**: *πολύς κόσμος*, bukan *πολλοί κόσμοι*. Karena itu juga *έμπαινε κόσμος* — kata kerjanya tunggal.",
+    "**Ενώ έμπαινε κόσμος…, ένας νεαρός με έσπρωξε** — inilah pola utama unit ini. Anak kalimat dengan **ενώ** memasang panggung (παρατατικός), kalimat induknya menjatuhkan peristiwa di atas panggung itu (αόριστος).",
+    "**Μόλις έκλεισαν οι πόρτες** — **μόλις** (begitu, segera setelah) menunjuk satu titik waktu, jadi hampir selalu disusul αόριστος. *Κλείνω* juga bisa tanpa objek: *οι πόρτες έκλεισαν* = pintunya tertutup.",
+    "**Τις κάρτες τις ακύρωσα** — kalau objek yang sudah jelas (*τις κάρτες*) dipindah ke depan untuk ditonjolkan, kata ganti **τις** wajib diulang di depan kata kerja. Tanpa *τις* kalimatnya terdengar janggal."
+   ],
+   "grammars": [
+    {
+     "title": "Latar atau peristiwa?",
+     "body": [
+      "Bayangkan cerita sebagai film. Παρατατικός adalah kamera lebar yang memperlihatkan suasana dan kegiatan yang sedang berjalan; αόριστος adalah potongan adegan: sesuatu terjadi, lalu selesai."
+     ],
+     "table": {
+      "head": [
+       "Fungsi",
+       "Kala",
+       "Contoh",
+       "Arti"
+      ],
+      "rows": [
+       [
+        "suasana, cuaca",
+        "παρατατικός",
+        "*Έβρεχε και έκανε κρύο.*",
+        "Sedang hujan dan dingin."
+       ],
+       [
+        "kegiatan yang sedang berjalan",
+        "παρατατικός",
+        "*Διάβαζα στο κινητό μου.*",
+        "Aku sedang membaca di ponsel."
+       ],
+       [
+        "keadaan",
+        "παρατατικός",
+        "*Η τσάντα ήταν ανοιχτή.*",
+        "Tasnya terbuka."
+       ],
+       [
+        "peristiwa yang menyela",
+        "αόριστος",
+        "*Ένας νεαρός με έσπρωξε.*",
+        "Seorang pemuda mendorongku."
+       ],
+       [
+        "rangkaian peristiwa",
+        "αόριστος",
+        "*Κατέβηκα και πήγα στην αστυνομία.*",
+        "Aku turun lalu pergi ke polisi."
+       ],
+       [
+        "kebiasaan dulu",
+        "παρατατικός",
+        "*Κάθε μέρα έπαιρνα το μετρό.*",
+        "Tiap hari aku naik metro."
+       ],
+       [
+        "kegiatan dengan batas waktu jelas",
+        "αόριστος",
+        "*Δούλεψα δέκα χρόνια εκεί.*",
+        "Aku bekerja di sana sepuluh tahun."
+       ]
+      ]
+     },
+     "after": [
+      "**Είμαι** dan **έχω** hanya punya satu bentuk lampau (*ήμουν, ήταν; είχα, είχε*) — dipakai untuk latar maupun peristiwa.",
+      "⚠️ Lamanya tidak menentukan. *Δούλεψα δέκα χρόνια* memakai αόριστος karena sepuluh tahun itu dilihat sebagai satu paket yang sudah tutup."
+     ]
+    }
+   ]
+  },
+  {
+   "title": "ΔΙΑΛΟΓΟΣ 2 — Cerita untuk Dhimitra",
+   "intro": "Rabu, 24 Februari 2027, pagi di kantor Αιγαίον Ναυτιλιακή. Kabar sudah menyebar lewat Stavros. Dhimitra mendatangi meja Ana. Perhatikan kata-kata penghubung waktu: *καθώς, όταν, ενώ, μόλις*.",
+   "lines": [
+    {
+     "speaker": "Δήμητρα:",
+     "text": "[Άννα|A-na], [τι|ti] [έγινε|É-yi-né]; [Ο|O] [Σταύρος|STAV-ros] [μου|mu] [είπε|I-pé] [ότι|O-ti] [σε|sé] [έκλεψαν|É-klé-psan]!",
+     "id": "Ana, ada apa? Kata Stavros kamu kecopetan!",
+     "literal": "Ana, apa terjadi-(lampau)? (sandang) Stavros kepada-saya berkata-(lampau) bahwa kamu mereka-merampok-(lampau)!"
+    },
+    {
+     "speaker": "Άννα:",
+     "text": "[Ναι|Né], [χθες|khthés] [στον|ston] [ηλεκτρικό|i-lék-tri-KO]. [Καθώς|Ka-THOS] [έμπαινε|ÉM-bé-né] [κόσμος|KO-smos], [κάποιος|KA-pi-os] [μου|mu] [πήρε|PI-ré] [το|to] [πορτοφόλι|por-to-FO-li].",
+     "id": "Iya, kemarin di kereta jalur 1. Pas orang-orang lagi naik, ada yang ngambil dompetku.",
+     "literal": "ya, kemarin di-(sandang) listrik. seiring sedang-masuk orang-banyak, seseorang dari-saya mengambil-(lampau) (sandang) dompet."
+    },
+    {
+     "speaker": "Δήμητρα:",
+     "text": "[Απίστευτο|A-PI-stéf-to]! [Και|Ké] [δεν|dhén] [κατάλαβες|ka-TA-la-vés] [τίποτα|TI-po-ta];",
+     "id": "Gila! Terus kamu nggak sadar sama sekali?",
+     "literal": "tak-dapat-dipercaya! dan tidak kamu-menyadari-(lampau) apa-pun?"
+    },
+    {
+     "speaker": "Άννα:",
+     "text": "[Τίποτα|TI-po-ta]. [Όταν|O-tan] [το|to] [κατάλαβα|ka-TA-la-va], [οι|i] [πόρτες|POR-tés] [ήταν|I-tan] [ήδη|I-dhi] [κλειστές|kli-STÉS] [και|ké] [το|to] [τρένο|TRÉ-no] [έφευγε|É-fév-yé].",
+     "id": "Sama sekali. Waktu aku sadar, pintunya sudah tertutup dan keretanya sedang berangkat.",
+     "literal": "apa-pun. ketika itu saya-sadari-(lampau), (sandang) pintu-pintu adalah-(lampau) sudah tertutup dan (sandang) kereta sedang-berangkat."
+    },
+    {
+     "speaker": "Δήμητρα:",
+     "text": "[Κι|Ki] [εμένα|é-MÉ-na] [μου|mu] [έγινε|É-yi-né] [το|to] [ίδιο|I-dhio] [πέρσι|PÉR-si]. [Ενώ|É-NO] [μιλούσα|mi-LU-sa] [στο|sto] [τηλέφωνο|ti-LÉ-fo-no], [μου|mu] [πήραν|PI-ran] [την|tin] [τσάντα|TSAN-da].",
+     "id": "Aku juga pernah ngalamin tahun lalu. Lagi ngobrol di telepon, tasku diambil orang.",
+     "literal": "dan saya kepada-saya terjadi-(lampau) (sandang) sama tahun-lalu. selagi saya-sedang-bicara di-(sandang) telepon, dari-saya mereka-mengambil-(lampau) (sandang) tas."
+    },
+    {
+     "speaker": "Άννα:",
+     "text": "[Αλήθεια|A-LI-thi-a]; [Και|Ké] [τη|ti] [βρήκες|VRI-kés];",
+     "id": "Serius? Terus ketemu?",
+     "literal": "kebenaran? dan itu kamu-menemukan-(lampau)?"
+    },
+    {
+     "speaker": "Δήμητρα:",
+     "text": "[Ναι|Né]! [Μια|Mia] [κυρία|ki-RI-a] [τη|ti] [βρήκε|VRI-ké] [σε|sé] [έναν|É-nan] [κάδο|KA-dho], [ενώ|é-NO] [έβγαζε|ÉV-gha-zé] [βόλτα|VOL-ta] [τον|ton] [σκύλο|SKI-lo] [της|tis].",
+     "id": "Ketemu! Seorang ibu menemukannya di tong sampah waktu lagi ngajak anjingnya jalan-jalan.",
+     "literal": "ya! seorang nyonya itu menemukan-(lampau) di sebuah tong, selagi sedang-mengeluarkan jalan-jalan (sandang) anjing miliknya."
+    },
+    {
+     "speaker": "Άννα:",
+     "text": "[Τι|Ti] [τύχη|TI-khi]! [Εγώ|É-GHO], [μόλις|MO-lis] [βγήκα|VYI-ka] [από|a-PO] [το|to] [τμήμα|TMI-ma], [πήγα|PI-gha] [κατευθείαν|ka-téf-THI-an] [στον|ston] [Νίκο|NI-ko].",
+     "id": "Beruntung banget! Aku sih, begitu keluar dari kantor polisi, langsung ke tempat Nikos.",
+     "literal": "apa keberuntungan! saya, begitu keluar-(lampau) dari (sandang) kantor, pergi-(lampau) langsung ke-(sandang) Nikos."
+    },
+    {
+     "speaker": "Δήμητρα:",
+     "text": "[Καλά|Ka-LA] [έκανες|É-ka-nés]. [Και|Ké] [τώρα|TO-ra]; [Έχεις|É-khis] [καθόλου|ka-THO-lu] [λεφτά|léf-TA];",
+     "id": "Bagus. Terus sekarang? Kamu masih pegang uang?",
+     "literal": "baik kamu-melakukan-(lampau). dan sekarang? kamu-punya sama-sekali uang?"
+    },
+    {
+     "speaker": "Άννα:",
+     "text": "[Ο|O] [Νίκος|NI-kos] [μου|mu] [δάνεισε|DHA-ni-sé] [πενήντα|pé-NIN-da] [ευρώ|év-RO]. [Κι|Ki] [ενώ|é-NO] [τρώγαμε|TRO-gha-mé], [μου|mu] [έλεγε|É-lé-yé] [συνέχεια|si-NÉ-khi-a] [αστεία|a-STI-a].",
+     "id": "Nikos minjemin aku lima puluh euro. Terus selama kami makan, dia ngelawak terus.",
+     "literal": "(sandang) Nikos kepada-saya meminjamkan-(lampau) lima-puluh euro. dan selagi kami-sedang-makan, kepada-saya dia-sedang-berkata terus-menerus lelucon-lelucon."
+    },
+    {
+     "speaker": "Δήμητρα:",
+     "text": "[Α|A], [ο|o] [Νίκος|NI-kos]… [Κάτι|KA-ti] [μου|mu] [λέει|LÉ-i] [ότι|O-ti] [το|to] [πορτοφόλι|por-to-FO-li] [δεν|dhén] [σου|su] [λείπει|LI-pi] [και|ké] [πολύ|po-LI]!",
+     "id": "Oh, Nikos… Firasatku sih kamu nggak terlalu kehilangan dompet itu!",
+     "literal": "ah, (sandang) Nikos… sesuatu kepada-saya berkata bahwa (sandang) dompet tidak kepada-kamu ia-kurang juga banyak!"
+    }
+   ],
+   "notes": [
+    "**Καθώς έμπαινε κόσμος** — **καθώς** (selagi, seiring dengan) hampir sama dengan *ενώ*, sedikit lebih bernuansa bercerita. Dalam cerita lampau, keduanya hampir selalu diikuti παρατατικός.",
+    "**Όταν το κατάλαβα, οι πόρτες ήταν ήδη κλειστές** — **όταν** tidak memihak: *όταν + αόριστος* = pada saat satu kejadian (*όταν το κατάλαβα*); *όταν + παρατατικός* = selama / setiap kali (*όταν ήμουν μικρή*, unit 12). Klausa sebelahnya tetap diputuskan sendiri: keadaan pintu dan kereta yang sedang berangkat = latar.",
+    "**Ενώ τρώγαμε, μου έλεγε αστεία** — dua kegiatan yang berjalan **bersamaan** → keduanya παρατατικός. Tidak ada yang menyela, jadi tidak ada αόριστος. *Τρώω* punya παρατατικός dengan γ: *έτρωγα, τρώγαμε*; *λέω → έλεγα*.",
+    "**Κι εμένα μου έγινε το ίδιο** — *εμένα* ditambahkan di depan *μου* sebagai penekanan: \"aku juga\". *Γίνεται* (terjadi) → lampaunya *έγινε*: *Τι έγινε;* = Ada apa? / Apa yang terjadi?",
+    "⚠️ **Δεν σου λείπει** — *λείπω* berarti *tidak ada, kurang*. Dengan kata ganti μου/σου ia menjadi \"rindu\", dan arahnya **terbalik** dari bahasa Indonesia: yang dirindukan menjadi subjek. *Μου λείπεις* = aku rindu kamu (harfiah: kamu kurang bagiku). *Μου λείπει η Ρίνα* = aku rindu Rina.",
+    "**Σε έκλεψαν / μου πήραν την τσάντα** — *κλέβω κάποιον* = merampok/mencopet seseorang; *κλέβω κάτι* = mencuri barang, dan korbannya jadi *μου*. Keduanya lazim."
+   ],
+   "grammars": [
+    {
+     "title": "Kata penghubung waktu dalam cerita",
+     "body": [
+      "Pasangan kata penghubung dan kala di bawah ini adalah kebiasaan yang paling sering, bukan hukum mati — tetapi kalau ragu, ikuti kolom ketiga."
+     ],
+     "table": {
+      "head": [
+       "Kata",
+       "Arti",
+       "Biasanya diikuti",
+       "Contoh"
+      ],
+      "rows": [
+       [
+        "*ενώ*",
+        "sementara, selagi",
+        "παρατατικός",
+        "*Ενώ περίμενα, χτύπησε το τηλέφωνο.*"
+       ],
+       [
+        "*καθώς*",
+        "selagi, seiring",
+        "παρατατικός",
+        "*Καθώς έβγαινα, είδα τον Νίκο.*"
+       ],
+       [
+        "*όταν*",
+        "ketika",
+        "keduanya",
+        "*Όταν έφτασα, έβρεχε.*"
+       ],
+       [
+        "*μόλις*",
+        "begitu, segera setelah",
+        "αόριστος",
+        "*Μόλις έφτασα, σε πήρα τηλέφωνο.*"
+       ],
+       [
+        "*αφού*",
+        "sesudah",
+        "αόριστος",
+        "*Αφού φάγαμε, βγήκαμε βόλτα.*"
+       ],
+       [
+        "*ξαφνικά*",
+        "tiba-tiba",
+        "αόριστος",
+        "*Ξαφνικά έσβησαν τα φώτα.*"
+       ]
+      ]
+     },
+     "after": [
+      "⚠️ **ενώ** juga berarti *padahal*: *Ενώ το ήξερε, δεν είπε τίποτα.* — Padahal dia tahu, dia diam saja. Begitu juga **αφού** bisa berarti *karena, toh*: *Αφού το ξέρεις!* — Kan kamu sudah tahu!"
+     ]
+    }
+   ]
+  }
+ ],
+ "sections": [
+  {
+   "title": "Dua bentuk lampau berdampingan",
+   "blocks": [
+    {
+     "type": "p",
+     "text": "Παρατατικός dibentuk dari batang **masa kini**, αόριστος dari batang **lampau**. Hafalkan kata kerja yang sering dipakai bercerita sebagai pasangan tiga bentuk, seperti di bawah ini."
+    },
+    {
+     "type": "tabel",
+     "head": [
+      "Kini",
+      "Lampau berlangsung",
+      "Lampau selesai",
+      "Arti"
+     ],
+     "rows": [
+      [
+       "*γράφω*",
+       "*έγραφα*",
+       "*έγραψα*",
+       "menulis"
+      ],
+      [
+       "*διαβάζω*",
+       "*διάβαζα*",
+       "*διάβασα*",
+       "membaca"
+      ],
+      [
+       "*μπαίνω*",
+       "*έμπαινα*",
+       "*μπήκα*",
+       "masuk, naik (kendaraan)"
+      ],
+      [
+       "*βγαίνω*",
+       "*έβγαινα*",
+       "*βγήκα*",
+       "keluar"
+      ],
+      [
+       "*κατεβαίνω*",
+       "*κατέβαινα*",
+       "*κατέβηκα*",
+       "turun"
+      ],
+      [
+       "*τρώω*",
+       "*έτρωγα*",
+       "*έφαγα*",
+       "makan"
+      ],
+      [
+       "*λέω*",
+       "*έλεγα*",
+       "*είπα*",
+       "berkata"
+      ],
+      [
+       "*βλέπω*",
+       "*έβλεπα*",
+       "*είδα*",
+       "melihat"
+      ],
+      [
+       "*μιλάω*",
+       "*μιλούσα*",
+       "*μίλησα*",
+       "berbicara"
+      ],
+      [
+       "*στέκομαι*",
+       "*στεκόμουν*",
+       "*στάθηκα*",
+       "berdiri"
+      ]
+     ]
+    },
+    {
+     "type": "kotak",
+     "title": "Kasus istimewa",
+     "items": [
+      "*περιμένω → περίμενα* untuk **keduanya**. Dalam *Ενώ περίμενα, χτύπησε το τηλέφωνο* bentuknya kembar; yang memberi tahu kita bahwa itu latar adalah **ενώ**.",
+      "*ξέρω* hanya punya satu bentuk lampau: *ήξερα* (aku tahu). Tidak ada αόριστος.",
+      "*είμαι → ήμουν* dan *έχω → είχα* juga hanya satu bentuk — lihat kotak dialog 1."
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Membedah cerita Ana",
+   "blocks": [
+    {
+     "type": "p",
+     "text": "Inilah laporan Ana, kalimat demi kalimat. Tutup kolom kedua dan tebak dulu sebelum melihat."
+    },
+    {
+     "type": "tabel",
+     "head": [
+      "Kalimat",
+      "Latar atau peristiwa?",
+      "Alasannya"
+     ],
+     "rows": [
+      [
+       "*Ερχόμουν από τον Πειραιά.*",
+       "latar",
+       "perjalanan sedang berlangsung"
+      ],
+      [
+       "*Το βαγόνι ήταν γεμάτο.*",
+       "latar",
+       "keadaan"
+      ],
+      [
+       "*Στεκόμουν δίπλα στην πόρτα.*",
+       "latar",
+       "posisi yang sedang berlangsung"
+      ],
+      [
+       "*Διάβαζα στο κινητό μου.*",
+       "latar",
+       "kegiatan yang sedang berjalan"
+      ],
+      [
+       "*Ένας νεαρός με έσπρωξε.*",
+       "peristiwa",
+       "sekali, menyela latar"
+      ],
+      [
+       "*Έκλεισαν οι πόρτες.*",
+       "peristiwa",
+       "sekali, selesai"
+      ],
+      [
+       "*Έψαξα την τσάντα.*",
+       "peristiwa",
+       "langkah berikutnya dalam rangkaian"
+      ],
+      [
+       "*Το πορτοφόλι δεν ήταν πια εκεί.*",
+       "latar",
+       "keadaan yang ditemukan"
+      ]
+     ]
+    },
+    {
+     "type": "p",
+     "text": "Sekarang ceritakan dengan cara yang sama kejadian kecil dari minggu lalu: dua sampai tiga kalimat latar, lalu dua peristiwa. Mulailah dengan *Ήταν Παρασκευή βράδυ και…*"
+    }
+   ]
+  },
+  {
+   "title": "Kalau kehilangan barang di Yunani",
+   "blocks": [
+    {
+     "type": "kotak",
+     "title": "Yang perlu kamu tahu",
+     "items": [
+      "**112** adalah nomor darurat Eropa (dilayani juga dalam bahasa Inggris); **100** langsung ke polisi.",
+      "Laporan disebut **δήλωση**: *δήλωση κλοπής* (pencurian) atau *δήλωση απώλειας* (kehilangan). Surat keterangan dari polisi — **βεβαίωση** — dibutuhkan untuk mengurus izin tinggal atau paspor baru.",
+      "Di gerbong yang ramai sering terdengar peringatan tentang **πορτοφολάδες** (pencopet). Jalur 1 (*ο ηλεκτρικός*) antara Pireas dan Monastiraki terkenal rawan.",
+      "Kartu bank diblokir dengan menelepon bank: *Θέλω να μπλοκάρω την κάρτα μου.* Kata *ακυρώνω* (membatalkan) juga dipakai."
+     ]
+    },
+    {
+     "type": "list",
+     "items": [
+      "*Μου έκλεψαν το κινητό.* — Ponselku dicuri.",
+      "*Έχασα τα κλειδιά μου.* — Aku kehilangan kunci.",
+      "*Πού είναι το πιο κοντινό αστυνομικό τμήμα;* — Di mana kantor polisi terdekat?",
+      "*Χρειάζομαι βεβαίωση για την πρεσβεία.* — Saya perlu surat keterangan untuk kedutaan."
+     ]
+    }
+   ]
+  }
+ ],
+ "vocab": [
+  {
+   "el": "το πορτοφόλι",
+   "baca": "to por-to-FO-li",
+   "id": "dompet"
+  },
+  {
+   "el": "ο πορτοφολάς",
+   "baca": "o por-to-fo-LAS",
+   "id": "pencopet (jamak *οι πορτοφολάδες*)"
+  },
+  {
+   "el": "κλέβω",
+   "baca": "KLÉ-vo",
+   "id": "mencuri (*έκλεψα*); *μου έκλεψαν…* = …-ku dicuri"
+  },
+  {
+   "el": "η αστυνομία",
+   "baca": "i a-sti-no-MI-a",
+   "id": "polisi (lembaga)"
+  },
+  {
+   "el": "ο αστυνομικός",
+   "baca": "o a-sti-no-mi-KOS",
+   "id": "polisi (orangnya); perempuan: *η αστυνομικός*"
+  },
+  {
+   "el": "το τμήμα",
+   "baca": "to TMI-ma",
+   "id": "kantor polisi, bagian (*αστυνομικό τμήμα*)"
+  },
+  {
+   "el": "το βαγόνι",
+   "baca": "to va-GHO-ni",
+   "id": "gerbong"
+  },
+  {
+   "el": "ο ηλεκτρικός",
+   "baca": "o i-lék-tri-KOS",
+   "id": "kereta jalur 1 Pireas–Kifisia"
+  },
+  {
+   "el": "γεμάτος",
+   "baca": "yé-MA-tos",
+   "id": "penuh (*γεμάτη, γεμάτο*)"
+  },
+  {
+   "el": "στέκομαι",
+   "baca": "STÉ-ko-mé",
+   "id": "berdiri (*στεκόμουν, στάθηκα*)"
+  },
+  {
+   "el": "σπρώχνω",
+   "baca": "SPRO-khno",
+   "id": "mendorong (*έσπρωξα*)"
+  },
+  {
+   "el": "ο νεαρός",
+   "baca": "o né-a-ROS",
+   "id": "pemuda"
+  },
+  {
+   "el": "ύποπτος",
+   "baca": "I-pop-tos",
+   "id": "mencurigakan (*ύποπτη, ύποπτο*)"
+  },
+  {
+   "el": "ανοιχτός",
+   "baca": "a-nikh-TOS",
+   "id": "terbuka (*ανοιχτή, ανοιχτό*); lawannya *κλειστός*"
+  },
+  {
+   "el": "ακυρώνω",
+   "baca": "a-ki-RO-no",
+   "id": "membatalkan, memblokir kartu (*ακύρωσα*)"
+  },
+  {
+   "el": "η δήλωση",
+   "baca": "i DHI-lo-si",
+   "id": "laporan, pernyataan (*δήλωση κλοπής*)"
+  },
+  {
+   "el": "η βεβαίωση",
+   "baca": "i vé-VÉ-o-si",
+   "id": "surat keterangan"
+  },
+  {
+   "el": "η άδεια διαμονής",
+   "baca": "i A-dhi-a dhia-mo-NIS",
+   "id": "izin tinggal"
+  },
+  {
+   "el": "ενώ",
+   "baca": "é-NO",
+   "id": "sementara, selagi; padahal"
+  },
+  {
+   "el": "καθώς",
+   "baca": "ka-THOS",
+   "id": "selagi, seiring dengan"
+  },
+  {
+   "el": "μόλις",
+   "baca": "MO-lis",
+   "id": "begitu, segera setelah"
+  },
+  {
+   "el": "ξαφνικά",
+   "baca": "ksaf-ni-KA",
+   "id": "tiba-tiba"
+  },
+  {
+   "el": "καταλαβαίνω",
+   "baca": "ka-ta-la-VÉ-no",
+   "id": "mengerti; menyadari (*κατάλαβα*)"
+  },
+  {
+   "el": "δανείζω",
+   "baca": "dha-NI-zo",
+   "id": "meminjamkan (*δάνεισα*)"
+  },
+  {
+   "el": "λείπω",
+   "baca": "LI-po",
+   "id": "tidak ada; *μου λείπεις* = aku rindu kamu"
+  }
+ ],
+ "exercises": [
+  {
+   "prompt": "Terjemahkan ke bahasa Yunani.",
+   "items": [
+    "Aku sedang membaca ketika teleponnya berdering.",
+    "Dompetku dicuri di metro.",
+    "Gerbongnya penuh dan aku berdiri di dekat pintu.",
+    "Begitu pintunya tertutup, aku memeriksa tas.",
+    "Selama kami makan, Nikos terus bercerita lelucon.",
+    "Aku rindu kamu. (kepada Rina)"
+   ]
+  },
+  {
+   "prompt": "Isi dengan παρατατικός atau αόριστος kata kerja dalam kurung.",
+   "items": [
+    "Ενώ ____ στο κινητό, κάποιος με έσπρωξε. (διαβάζω)",
+    "Ενώ περπατούσα στο πάρκο, ξαφνικά ____ να βρέχει. (αρχίζω)",
+    "Όταν ____ μικρή, έμενα στην Ινδονησία. (είμαι)",
+    "Μόλις ____ στο σπίτι, πήρα τηλέφωνο τη Ρίνα. (φτάνω)",
+    "Κάθε πρωί ____ το μετρό για τον Πειραιά. (παίρνω)",
+    "Καθώς ____ από το τρένο, είδα τον Νίκο. (βγαίνω)",
+    "Χθες ____ δύο ώρες στο αστυνομικό τμήμα. (περιμένω)"
+   ]
+  },
+  {
+   "prompt": "Gabungkan dengan ενώ: kalimat pertama jadi latar (παρατατικός), kalimat kedua jadi peristiwa (αόριστος).",
+   "items": [
+    "Τρώω. Χτυπάει το τηλέφωνο.",
+    "Η Άννα διαβάζει. Ο Κώστας μπαίνει στο γραφείο.",
+    "Περπατάμε στην Πλάκα. Βλέπουμε τον Γιάννη.",
+    "Μιλάς στο τηλέφωνο. Χάνεις το λεωφορείο.",
+    "Βρέχει. Φεύγουν από το γραφείο.",
+    "Γράφω το email. Κλείνει ο υπολογιστής."
+   ]
+  },
+  {
+   "prompt": "Susun jadi kalimat yang benar.",
+   "items": [
+    "περίμενα / ενώ / χτύπησε / το τηλέφωνο",
+    "μου / το πορτοφόλι / έκλεψαν",
+    "γεμάτο / ήταν / το βαγόνι",
+    "έκλεισαν / μόλις / οι πόρτες / έψαξα / την τσάντα",
+    "σου / δεν / λείπει / το πορτοφόλι"
+   ]
+  }
+ ],
+ "answers": [
+  "Διάβαζα όταν χτύπησε το τηλέφωνο. — Μου έκλεψαν το πορτοφόλι στο μετρό. — Το βαγόνι ήταν γεμάτο και στεκόμουν δίπλα στην πόρτα. — Μόλις έκλεισαν οι πόρτες, έψαξα την τσάντα. — Ενώ τρώγαμε, ο Νίκος έλεγε συνέχεια αστεία. — Μου λείπεις.",
+  "διάβαζα — άρχισε — ήμουν — έφτασα — έπαιρνα — έβγαινα — περίμενα",
+  "Ενώ έτρωγα, χτύπησε το τηλέφωνο. — Ενώ η Άννα διάβαζε, ο Κώστας μπήκε στο γραφείο. — Ενώ περπατούσαμε στην Πλάκα, είδαμε τον Γιάννη. — Ενώ μιλούσες στο τηλέφωνο, έχασες το λεωφορείο. — Ενώ έβρεχε, έφυγαν από το γραφείο. — Ενώ έγραφα το email, έκλεισε ο υπολογιστής.",
+  "Ενώ περίμενα, χτύπησε το τηλέφωνο. — Μου έκλεψαν το πορτοφόλι. — Το βαγόνι ήταν γεμάτο. — Μόλις έκλεισαν οι πόρτες, έψαξα την τσάντα. — Το πορτοφόλι δεν σου λείπει."
+ ]
+}

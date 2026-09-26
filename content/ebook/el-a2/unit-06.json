@@ -1,0 +1,640 @@
+{
+ "title": "Tugas ke Kreta — υποτακτική dua aspek",
+ "title_target": "Πρέπει να κλείσω εισιτήρια",
+ "goal": "Memilih bentuk yang tepat sesudah *να* — sekali dan tuntas (*να κλείσω, να στείλω, να πάω*) atau berulang dan berlangsung (*να γράφω, να συνοδεύεις*) — untuk menerima tugas, memesan tiket, dan melewati bandara.",
+ "bekal": [
+  "membentuk υποτακτική \"sekali\" dari batang αόριστος tanpa awalan έ-: *έγραψα → να γράψω*",
+  "memilih *να γράψω* (sekali) atau *να γράφω* (berulang) menurut maksudmu, bukan menurut kebiasaan",
+  "menyelesaikan check-in dan memahami kata-kata bandara: *πύλη, επιβίβαση, αποσκευές*"
+ ],
+ "dialogs": [
+  {
+   "title": "ΔΙΑΛΟΓΟΣ 1 — Tugas pertama",
+   "intro": "Senin, 9 November 2026, pukul sembilan pagi, kantor Αιγαίον Ναυτιλιακή di Pireas. Kostas memanggil Ana ke ruangannya. Perhatikan setiap kata kerja sesudah *να*: kadang batangnya batang lampau, kadang batang kini.",
+   "lines": [
+    {
+     "speaker": "Κώστας:",
+     "text": "[Άννα|A-na], [έλα|É-la] [λίγο|LI-gho] [στο|sto] [γραφείο|ghra-FI-o] [μου|mu]. [Έχω|É-kho] [μια|mia] [δουλειά|dhu-LIA] [για|ya] [σένα|SÉ-na].",
+     "id": "Ana, ke ruangan saya sebentar. Ada tugas untukmu.",
+     "literal": "Ana, datanglah sedikit ke-(sandang) kantor saya. punya-saya satu pekerjaan untuk kamu."
+    },
+    {
+     "speaker": "Άννα:",
+     "text": "[Αμέσως|A-MÉ-sos], [κύριε|KI-ri-é] [Κώστα|KO-sta]. [Τι|Ti] [πρέπει|PRÉ-pi] [να|na] [κάνω|KA-no];",
+     "id": "Segera, Pak Kostas. Apa yang harus saya kerjakan?",
+     "literal": "segera, tuan Kostas. apa harus supaya lakukan-saya?"
+    },
+    {
+     "speaker": "Κώστας:",
+     "text": "[Την|Tin] [Πέμπτη|PÉMB-ti] [πρέπει|PRÉ-pi] [να|na] [πας|pas] [στα|sta] [Χανιά|Kha-NIA] [με|mé] [τον|ton] [Μπούντι|BU-di].",
+     "id": "Kamis ini kamu harus ke Chania bersama Budi.",
+     "literal": "(sandang) Kamis harus supaya pergi-kamu ke-(sandang) Chania dengan (sandang) Budi."
+    },
+    {
+     "speaker": "Άννα:",
+     "text": "[Στα|Sta] [Χανιά|Kha-NIA]; [Για|Ya] [ποιο|pio] [λόγο|LO-gho];",
+     "id": "Ke Chania? Untuk apa?",
+     "literal": "ke-(sandang) Chania? untuk yang-mana alasan?"
+    },
+    {
+     "speaker": "Κώστας:",
+     "text": "[Ο|O] [Μπούντι|BU-di] [πρέπει|PRÉ-pi] [να|na] [παρακολουθήσει|pa-ra-ko-lu-THI-si] [ένα|É-na] [σεμινάριο|sé-mi-NA-ri-o] [στην|stin] [Ακαδημία|A-ka-dhi-MI-a] [Εμπορικού|Ém-bo-ri-KU] [Ναυτικού|Naf-ti-KU].",
+     "id": "Budi harus ikut seminar di Akademi Pelayaran Niaga.",
+     "literal": "(sandang) Budi harus supaya ikuti-ia satu seminar di-(sandang) Akademi Niaga-gen Pelayaran-gen."
+    },
+    {
+     "speaker": "Άννα:",
+     "text": "[Κατάλαβα|Ka-TA-la-va]. [Θέλετε|THÉ-lé-té] [να|na] [κλείσω|KLI-so] [εισιτήρια|i-si-TI-ri-a] [σήμερα|SI-mé-ra] [κιόλας|KIO-las];",
+     "id": "Baik. Bapak mau saya pesan tiketnya hari ini juga?",
+     "literal": "mengerti-saya. mau-Anda supaya pesan-saya tiket-tiket hari-ini sudah?"
+    },
+    {
+     "speaker": "Κώστας:",
+     "text": "[Ναι|Né]. [Πρέπει|PRÉ-pi] [να|na] [κλείσεις|KLI-sis] [δύο|DHI-o] [εισιτήρια|i-si-TI-ri-a] [και|ké] [ένα|É-na] [ξενοδοχείο|ksé-no-dho-KHI-o] [για|ya] [δύο|DHI-o] [νύχτες|NIKH-tés].",
+     "id": "Ya. Kamu harus memesan dua tiket dan satu hotel untuk dua malam.",
+     "literal": "ya. harus supaya pesan-kamu dua tiket-tiket dan satu hotel untuk dua malam-malam."
+    },
+    {
+     "speaker": "Άννα:",
+     "text": "[Με|Mé] [αεροπλάνο|a-é-ro-PLA-no] [ή|i] [με|mé] [το|to] [πλοίο|PLI-o] [από|a-PO] [τον|ton] [Πειραιά|Pi-ré-A];",
+     "id": "Naik pesawat, atau kapal dari Pireas?",
+     "literal": "dengan pesawat atau dengan (sandang) kapal dari (sandang) Pireas?"
+    },
+    {
+     "speaker": "Κώστας:",
+     "text": "[Με|Mé] [αεροπλάνο|a-é-ro-PLA-no]. [Το|To] [πλοίο|PLI-o] [θέλει|THÉ-li] [όλη|O-li] [τη|ti] [νύχτα|NIKH-ta].",
+     "id": "Pesawat. Kapal makan waktu semalaman.",
+     "literal": "dengan pesawat. (sandang) kapal mau-ia seluruh (sandang) malam."
+    },
+    {
+     "speaker": "Άννα:",
+     "text": "[Και|Ké] [εκεί|é-KI]; [Τι|Ti] [πρέπει|PRÉ-pi] [να|na] [κάνω|KA-no] [εγώ|é-GHO];",
+     "id": "Lalu di sana? Saya harus ngapain?",
+     "literal": "dan di-sana? apa harus supaya lakukan-saya saya?"
+    },
+    {
+     "speaker": "Κώστας:",
+     "text": "[Να|Na] [συνοδεύεις|si-no-DHÉ-vis] [τον|ton] [Μπούντι|BU-di] [και|ké] [να|na] [μου|mu] [γράφεις|GHRA-fis] [κάθε|KA-thé] [βράδυ|VRA-dhi].",
+     "id": "Mendampingi Budi, dan mengabari saya setiap malam.",
+     "literal": "supaya dampingi-kamu (sandang) Budi dan supaya kepada-saya tulis-kamu setiap malam."
+    },
+    {
+     "speaker": "Άννα:",
+     "text": "[Κάθε|KA-thé] [βράδυ|VRA-dhi]; [Δεν|Dhén] [μπορώ|bo-RO] [να|na] [σας|sas] [γράψω|GHRA-pso] [μια|mia] [φορά|fo-RA], [στο|sto] [τέλος|TÉ-los];",
+     "id": "Setiap malam? Tidak bisa saya tulis sekali saja, di akhir?",
+     "literal": "setiap malam? tidak bisa-saya supaya kepada-Anda tulis-saya satu kali, di-(sandang) akhir?"
+    },
+    {
+     "speaker": "Κώστας:",
+     "text": "[Όχι|O-khi]. [Θέλω|THÉ-lo] [να|na] [ξέρω|KSÉ-ro] [τι|ti] [γίνεται|YI-né-té] [κάθε|KA-thé] [μέρα|MÉ-ra]. [Είναι|I-né] [η|i] [πρώτη|PRO-ti] [σου|su] [αποστολή|a-po-sto-LI]!",
+     "id": "Tidak. Saya mau tahu apa yang terjadi setiap hari. Ini tugas lapangan pertamamu!",
+     "literal": "tidak. mau-saya supaya tahu-saya apa terjadi-ia setiap hari. adalah-ia (sandang) pertama kamu misi!"
+    },
+    {
+     "speaker": "Άννα:",
+     "text": "[Τότε|TO-té] [πρέπει|PRÉ-pi] [να|na] [κλείσω|KLI-so] [τα|ta] [εισιτήρια|i-si-TI-ri-a] [αμέσως|a-MÉ-sos], [πριν|prin] [ανέβουν|a-NÉ-vun] [οι|i] [τιμές|ti-MÉS]!",
+     "id": "Kalau begitu saya harus pesan tiketnya sekarang juga, sebelum harganya naik!",
+     "literal": "kalau-begitu harus supaya pesan-saya (sandang) tiket-tiket segera, sebelum naik-mereka (sandang) harga-harga!"
+    }
+   ],
+   "notes": [
+    "⚠️ **Να κλείσω atau να κλείνω?** Bahasa Indonesia cukup berkata \"harus memesan\". Bahasa Yunani memaksamu memilih: **να κλείσω** = memesan satu kali sampai beres; **να κλείνω** = memesan berulang-ulang, sebagai kebiasaan (*Στη δουλειά μου πρέπει να κλείνω εισιτήρια κάθε εβδομάδα*). Tanyakan pada dirimu: apakah ini satu tindakan yang selesai? Kalau ya, pakai bentuk sekali — dan itu yang paling sering.",
+    "**Bentuk sekali = batang αόριστος tanpa awalan έ- + ekor masa kini.** *έκλεισα → να κλείσω*, *έγραψα → να γράψω*, *έστειλα → να στείλω*, *παρακολούθησα → να παρακολουθήσω*. Awalan *έ-* hanya milik masa lampau; begitu masuk *να*, ia hilang dan tekanan kembali ke batang.",
+    "**Να συνοδεύεις, να μου γράφεις — tugas yang berulang.** Kostas memakai bentuk kini karena Ana harus melakukannya setiap hari. Ana menawar dengan bentuk sekali: *να σας γράψω μια φορά*. Pasangan *κάθε βράδυ* / *μια φορά* adalah petunjuk terbaik untuk memilih.",
+    "**Θέλετε να κλείσω;** — bahasa Yunani tidak punya infinitif, jadi kata kerja sesudah *να* dikonjugasikan untuk pelakunya sendiri. *Θέλω να κλείσω* (saya mau memesan) lawan *Θέλω να κλείσεις* (saya mau kamu memesan). Bahasa Indonesia perlu \"saya mau kamu…\"; bahasa Yunani cukup mengganti ekornya.",
+    "**Να ξέρω** — beberapa kata kerja tidak punya bentuk sekali karena tidak punya αόριστος yang biasa: *ξέρω, είμαι, έχω*. Sesudah *να* mereka tetap: *να ξέρω, να είμαι, να έχω*.",
+    "**Πριν ανέβουν οι τιμές** — *πριν* (sebelum) juga diikuti υποτακτική, dengan atau tanpa *να*: *πριν (να) φύγεις*. *Ανέβω* adalah bentuk sekali dari *ανεβαίνω* (naik; lampau *ανέβηκα*). Pola ini dibahas lengkap di unit 10."
+   ],
+   "grammars": [
+    {
+     "title": "Dua bentuk sesudah να",
+     "body": [
+      "Kolom kedua dan keempat sama-sama υποτακτική (subjungtif). Bedanya hanya aspek: berulang atau sekali. Bentuk sekali selalu bisa kamu turunkan dari kolom ketiga."
+     ],
+     "table": {
+      "head": [
+       "Kini",
+       "Berulang / berlangsung",
+       "Lampau (ΑΟΡΙΣΤΟΣ)",
+       "Sekali / tuntas"
+      ],
+      "rows": [
+       [
+        "γράφω",
+        "να γράφω",
+        "έγραψα",
+        "να γράψω"
+       ],
+       [
+        "κλείνω",
+        "να κλείνω",
+        "έκλεισα",
+        "να κλείσω"
+       ],
+       [
+        "στέλνω",
+        "να στέλνω",
+        "έστειλα",
+        "να στείλω"
+       ],
+       [
+        "διαβάζω",
+        "να διαβάζω",
+        "διάβασα",
+        "να διαβάσω"
+       ],
+       [
+        "πληρώνω",
+        "να πληρώνω",
+        "πλήρωσα",
+        "να πληρώσω"
+       ],
+       [
+        "αγοράζω",
+        "να αγοράζω",
+        "αγόρασα",
+        "να αγοράσω"
+       ],
+       [
+        "μιλάω",
+        "να μιλάω",
+        "μίλησα",
+        "να μιλήσω"
+       ],
+       [
+        "τηλεφωνώ",
+        "να τηλεφωνώ",
+        "τηλεφώνησα",
+        "να τηλεφωνήσω"
+       ]
+      ]
+     },
+     "after": [
+      "**Ekor υποτακτική = ekor masa kini:** *να γράψω, να γράψεις, να γράψει, να γράψουμε, να γράψετε, να γράψουν*. Tidak ada ekor baru yang perlu dihafal.",
+      "⚠️ **Sangkalan sesudah να adalah μην, bukan δεν:** *Πρέπει να μην αργήσεις* (kamu tidak boleh telat). *Να δεν* selalu salah."
+     ]
+    }
+   ]
+  },
+  {
+   "title": "ΔΙΑΛΟΓΟΣ 2 — Di konter check-in",
+   "intro": "Kamis, 12 November 2026, pukul 06.40, Bandara Internasional Athena Eleftherios Venizelos. Ana dan Budi antre di konter check-in penerbangan ke Chania. Budi membawa koper besar dan ransel penuh buku.",
+   "lines": [
+    {
+     "speaker": "Υπάλληλος:",
+     "text": "[Καλημέρα|Ka-li-MÉ-ra] [σας|sas]. [Τα|Ta] [διαβατήριά|dhia-va-TI-RIA] [σας|sas], [παρακαλώ|pa-ra-ka-LO].",
+     "id": "Selamat pagi. Paspornya, silakan.",
+     "literal": "selamat-pagi kepada-Anda. (sandang) paspor-paspor Anda, silakan."
+    },
+    {
+     "speaker": "Άννα:",
+     "text": "[Ορίστε|O-RI-sté]. [Πετάμε|Pé-TA-mé] [για|ya] [Χανιά|Kha-NIA], [με|mé] [την|tin] [πτήση|PTI-si] [των|ton] [οκτώ|ok-TO].",
+     "id": "Ini. Kami terbang ke Chania, penerbangan jam delapan.",
+     "literal": "silakan. terbang-kami untuk Chania, dengan (sandang) penerbangan (sandang-gen-jamak) delapan."
+    },
+    {
+     "speaker": "Υπάλληλος:",
+     "text": "[Έχετε|É-khé-té] [βαλίτσα|va-LI-tsa] [να|na] [παραδώσετε|pa-ra-DHO-sé-té];",
+     "id": "Ada koper yang mau masuk bagasi?",
+     "literal": "punya-Anda koper supaya serahkan-Anda?"
+    },
+    {
+     "speaker": "Μπούντι:",
+     "text": "[Ναι|Né], [αυτή|af-TI] [τη|ti] [μεγάλη|mé-GHA-li]. [Μπορώ|Bo-RO] [να|na] [κρατήσω|kra-TI-so] [το|to] [σακίδιο|sa-KI-dhio] [μαζί|ma-ZI] [μου|mu];",
+     "id": "Ya, yang besar ini. Ranselnya boleh saya bawa ke kabin?",
+     "literal": "ya, ini (sandang) besar. bisa-saya supaya pegang-saya (sandang) ransel bersama saya?"
+    },
+    {
+     "speaker": "Υπάλληλος:",
+     "text": "[Βεβαίως|Vé-VÉ-os]. [Βάλτε|VAL-té] [τη|ti] [βαλίτσα|va-LI-tsa] [στη|sti] [ζυγαριά|zi-gha-RIA], [παρακαλώ|pa-ra-ka-LO].",
+     "id": "Tentu. Taruh kopernya di timbangan, ya.",
+     "literal": "tentu. taruhlah-Anda (sandang) koper di-(sandang) timbangan, silakan."
+    },
+    {
+     "speaker": "Μπούντι:",
+     "text": "[Είναι|I-né] [είκοσι|I-ko-si] [τρία|TRI-a] [κιλά|ki-LA]. [Είναι|I-né] [εντάξει|é-DA-ksi];",
+     "id": "Dua puluh tiga kilo. Masih boleh?",
+     "literal": "adalah-ia dua-puluh tiga kilo. adalah-ia beres?"
+    },
+    {
+     "speaker": "Υπάλληλος:",
+     "text": "[Ακριβώς|A-kri-VOS] [στο|sto] [όριο|O-ri-o]! [Πύλη|PI-li] [δεκατέσσερα|dhé-ka-TÉ-sé-ra]. [Η|I] [επιβίβαση|é-pi-VI-va-si] [αρχίζει|ar-KHI-zi] [στις|stis] [εφτά|éf-TA] [και|ké] [μισή|mi-SI].",
+     "id": "Pas di batas! Gerbang empat belas. Boarding mulai jam setengah delapan.",
+     "literal": "tepat di-(sandang) batas! gerbang empat-belas. (sandang) naik-pesawat mulai-ia pada-(sandang) tujuh dan setengah."
+    },
+    {
+     "speaker": "Άννα:",
+     "text": "[Ευχαριστούμε|Éf-kha-ri-STU-mé]. [Μπούντι|BU-di], [πρέπει|PRÉ-pi] [να|na] [περάσουμε|pé-RA-su-mé] [τώρα|TO-ra] [από|a-PO] [τον|ton] [έλεγχο|É-lén-kho].",
+     "id": "Terima kasih. Budi, kita harus lewat pemeriksaan keamanan sekarang.",
+     "literal": "berterima-kasih-kami. Budi, harus supaya lewat-kita sekarang dari (sandang) pemeriksaan."
+    },
+    {
+     "speaker": "Μπούντι:",
+     "text": "[Μπορούμε|Bo-RU-mé] [πρώτα|PRO-ta] [να|na] [πιούμε|PIU-mé] [έναν|É-nan] [καφέ|ka-FÉ];",
+     "id": "Boleh ngopi dulu?",
+     "literal": "bisa-kita dulu supaya minum-kita satu kopi?"
+    },
+    {
+     "speaker": "Άννα:",
+     "text": "[Μετά|Mé-TA] [τον|ton] [έλεγχο|É-lén-kho]. [Και|Ké] [στο|sto] [αεροπλάνο|a-é-ro-PLA-no] [πρέπει|PRÉ-pi] [να|na] [διαβάζεις|dhia-VA-zis] [τις|tis] [σημειώσεις|si-MIO-sis] [του|tu] [σεμιναρίου|sé-mi-na-RI-u]!",
+     "id": "Sesudah pemeriksaan. Dan di pesawat kamu harus membaca catatan seminarnya!",
+     "literal": "sesudah (sandang) pemeriksaan. dan di-(sandang) pesawat harus supaya baca-kamu (sandang) catatan-catatan (sandang-gen) seminar-gen!"
+    },
+    {
+     "speaker": "Μπούντι:",
+     "text": "[Εντάξει|É-DA-ksi], [αρχηγέ|ar-khi-YÉ]. [Θα|Tha] [τις|tis] [διαβάσω|dhia-VA-so] [όλες|O-lés]!",
+     "id": "Siap, bos. Semuanya akan saya baca!",
+     "literal": "beres, ketua. akan mereka(pr) baca-saya semua!"
+    }
+   ],
+   "notes": [
+    "**Έχετε βαλίτσα να παραδώσετε;** — *να* sesudah kata benda berarti \"untuk\" atau \"yang perlu\": *έχω δουλειά να κάνω* (aku punya kerjaan yang harus dikerjakan), *δεν έχω τίποτα να πω* (aku tak punya apa-apa untuk dikatakan). Bentuk sekali dipakai karena kopernya diserahkan satu kali.",
+    "**Να πιούμε** — kata kerja yang αόριστος-nya tak beraturan membawa ketakberaturannya ke υποτακτική: *ήπια → να πιω*, *είδα → να δω*. Banyak di antaranya bertekanan di suku terakhir: *να πιω, να δω, να πω, να βρω*. Lihat kotak di bawah.",
+    "**Πρέπει να διαβάζεις** lawan **θα τις διαβάσω όλες** — Ana meminta kegiatan yang berlangsung sepanjang penerbangan (bentuk kini); Budi menjanjikan hasil yang tuntas: semua catatan selesai dibaca (bentuk sekali). Bentuk sesudah *θα* sama persis dengan bentuk sesudah *να*.",
+    "**Τα διαβατήριά σας** — tekanan kedua lagi: *δια-βα-τή-ρι-α* bertekanan di suku ketiga dari belakang, jadi *σας* memaksanya bertanda dua. Warga Uni Eropa boleh terbang domestik dengan KTP, jadi kamu juga akan mendengar *τις ταυτότητές σας*.",
+    "**Η πτήση των οκτώ** — \"penerbangan jam delapan\", harfiahnya \"penerbangan (milik) pukul delapan\". Jam memakai sandang genitif jamak karena kata *ώρες* tersembunyi: *το τρένο των πέντε, το μάθημα των δέκα*. Genitif dari unit 5 terus bekerja.",
+    "**Αρχηγέ!** — bentuk panggilan dari *ο αρχηγός* (ketua, pemimpin rombongan). Budi bercanda: ditujukan ke rekan, sebutan ini terdengar akrab dan sedikit menggoda, seperti \"siap, Bos!\"."
+   ],
+   "grammars": [
+    {
+     "title": "Bentuk να yang tak beraturan",
+     "body": [
+      "Delapan kata kerja ini muncul setiap hari. Hafalkan lampau dan bentuk sekalinya berpasangan — bentuk kedua ini juga yang dipakai sesudah *θα*."
+     ],
+     "table": {
+      "head": [
+       "Kini",
+       "Lampau",
+       "Sesudah ΝΑ / ΘΑ",
+       "Arti"
+      ],
+      "rows": [
+       [
+        "έρχομαι",
+        "ήρθα",
+        "να έρθω",
+        "datang"
+       ],
+       [
+        "πηγαίνω / πάω",
+        "πήγα",
+        "να πάω",
+        "pergi"
+       ],
+       [
+        "βλέπω",
+        "είδα",
+        "να δω",
+        "melihat"
+       ],
+       [
+        "λέω",
+        "είπα",
+        "να πω",
+        "berkata"
+       ],
+       [
+        "βρίσκω",
+        "βρήκα",
+        "να βρω",
+        "menemukan"
+       ],
+       [
+        "πίνω",
+        "ήπια",
+        "να πιω",
+        "minum"
+       ],
+       [
+        "βγαίνω",
+        "βγήκα",
+        "να βγω",
+        "keluar"
+       ],
+       [
+        "τρώω",
+        "έφαγα",
+        "να φάω",
+        "makan"
+       ]
+      ]
+     },
+     "after": [
+      "**Ekor bentuk bertekanan akhir:** *να δω, να δεις, να δει, να δούμε, να δείτε, να δουν*. Pola yang sama untuk *να πω, να βρω, να πιω, να βγω*.",
+      "⚠️ **Να πάω lawan να πηγαίνω:** *Πρέπει να πάω στα Χανιά* (sekali, perjalanan ini) — *Πρέπει να πηγαίνω στο γραφείο κάθε μέρα* (rutin)."
+     ]
+    }
+   ]
+  }
+ ],
+ "sections": [
+  {
+   "title": "Sekali atau berulang: petunjuk dalam kalimat",
+   "blocks": [
+    {
+     "type": "p",
+     "text": "Kata keterangan di sekitar *να* biasanya sudah memberi tahu bentuk mana yang dibutuhkan. Baca setiap pasangan dan rasakan bedanya: kolom kiri tentang kebiasaan atau proses, kolom kanan tentang satu tindakan yang selesai."
+    },
+    {
+     "type": "tabel",
+     "head": [
+      "Berulang / berlangsung",
+      "Sekali / tuntas"
+     ],
+     "rows": [
+      [
+       "Πρέπει να πίνεις νερό κάθε μέρα.",
+       "Πρέπει να πιεις αυτό το φάρμακο τώρα."
+      ],
+      [
+       "Θέλω να μαθαίνω μια λέξη κάθε πρωί.",
+       "Θέλω να μάθω ελληνικά μέχρι το καλοκαίρι."
+      ],
+      [
+       "Μπορείς να μου τηλεφωνείς όποτε θέλεις.",
+       "Μπορείς να μου τηλεφωνήσεις αύριο;"
+      ],
+      [
+       "Πρέπει να στέλνουμε αναφορά κάθε Παρασκευή.",
+       "Πρέπει να στείλουμε την αναφορά σήμερα."
+      ],
+      [
+       "Μου αρέσει να διαβάζω στο πλοίο.",
+       "Θέλω να διαβάσω αυτό το βιβλίο."
+      ]
+     ]
+    },
+    {
+     "type": "kotak",
+     "title": "Kata petunjuk",
+     "items": [
+      "**Berulang / berlangsung:** *κάθε μέρα, κάθε βράδυ, πάντα, συνήθως, συχνά, συνέχεια, όλη τη μέρα*.",
+      "**Sekali / tuntas:** *αύριο, σήμερα, τώρα, αμέσως, μια φορά, μέχρι την Παρασκευή, όλο* (semuanya, sampai habis).",
+      "Sesudah *μου αρέσει να* biasanya bentuk kini, karena yang disukai adalah kegiatannya: *Μου αρέσει να κολυμπάω.*"
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Di bandara",
+   "blocks": [
+    {
+     "type": "tabel",
+     "head": [
+      "Yunani",
+      "Indonesia"
+     ],
+     "rows": [
+      [
+       "η πτήση",
+       "penerbangan"
+      ],
+      [
+       "η πύλη",
+       "gerbang"
+      ],
+      [
+       "η επιβίβαση",
+       "naik pesawat (boarding)"
+      ],
+      [
+       "η κάρτα επιβίβασης",
+       "boarding pass"
+      ],
+      [
+       "οι αποσκευές",
+       "bagasi"
+      ],
+      [
+       "η χειραποσκευή",
+       "bagasi kabin"
+      ],
+      [
+       "ο έλεγχος ασφαλείας",
+       "pemeriksaan keamanan"
+      ],
+      [
+       "η καθυστέρηση",
+       "keterlambatan"
+      ],
+      [
+       "η αναχώρηση / η άφιξη",
+       "keberangkatan / kedatangan"
+      ],
+      [
+       "η ακύρωση",
+       "pembatalan"
+      ]
+     ]
+    },
+    {
+     "type": "kotak",
+     "title": "Pengumuman yang perlu kamu tangkap",
+     "items": [
+      "*Η πτήση για Χανιά έχει καθυστέρηση μισή ώρα.* — Penerbangan ke Chania tertunda setengah jam.",
+      "*Παρακαλούνται οι επιβάτες να προσέλθουν στην πύλη 14.* — Para penumpang dimohon menuju gerbang 14. (bahasa resmi; cukup dikenali)",
+      "*Τελευταία κλήση για την πτήση…* — Panggilan terakhir untuk penerbangan…",
+      "⚠️ *Ασφαλείας* adalah genitif gaya lama dari *η ασφάλεια*. Dalam ungkapan beku ia tetap bentuk lama: *έλεγχος ασφαλείας, ζώνη ασφαλείας* (sabuk pengaman)."
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Chania dan para kadet",
+   "blocks": [
+    {
+     "type": "p",
+     "text": "Chania (*τα Χανιά*, selalu netral jamak) adalah kota terbesar kedua di Kreta dan bekas ibu kotanya. Kota ini juga punya akademi pelayaran niaga negeri (*Ακαδημία Εμπορικού Ναυτικού*, disingkat ΑΕΝ). Akademi-akademi semacam ini mendidik perwira dek dan mesin untuk armada niaga Yunani — salah satu yang terbesar di dunia — dan sering menerima kadet asing untuk pelatihan singkat."
+    },
+    {
+     "type": "kotak",
+     "title": "Τα Χανιά itu jamak",
+     "items": [
+      "*Πάω στα Χανιά, μένω στα Χανιά, τα Χανιά είναι όμορφα* — kata kerja dan kata sifatnya ikut jamak.",
+      "Nama tempat lain yang jamak: *τα Ιωάννινα, οι Σέρρες, οι Δελφοί* — sedangkan *η Αθήνα* tunggal.",
+      "Orang Chania disebut *Χανιώτες*; mereka bangga pada pelabuhan Venesia dan mercusuarnya."
+     ]
+    }
+   ]
+  }
+ ],
+ "vocab": [
+  {
+   "el": "η υποτακτική",
+   "baca": "i i-po-tak-ti-KI",
+   "id": "subjungtif (bentuk sesudah *να*)"
+  },
+  {
+   "el": "η δουλειά",
+   "baca": "i dhu-LIA",
+   "id": "pekerjaan, tugas"
+  },
+  {
+   "el": "κλείνω",
+   "baca": "KLI-no",
+   "id": "menutup; memesan (tiket, meja) (*έκλεισα, να κλείσω*)"
+  },
+  {
+   "el": "το εισιτήριο",
+   "baca": "to i-si-TI-ri-o",
+   "id": "tiket"
+  },
+  {
+   "el": "το σεμινάριο",
+   "baca": "to sé-mi-NA-ri-o",
+   "id": "seminar, pelatihan singkat"
+  },
+  {
+   "el": "παρακολουθώ",
+   "baca": "pa-ra-ko-lu-THO",
+   "id": "mengikuti (kelas), menonton (*να παρακολουθήσω*)"
+  },
+  {
+   "el": "η ακαδημία",
+   "baca": "i a-ka-dhi-MI-a",
+   "id": "akademi"
+  },
+  {
+   "el": "το ξενοδοχείο",
+   "baca": "to ksé-no-dho-KHI-o",
+   "id": "hotel"
+  },
+  {
+   "el": "συνοδεύω",
+   "baca": "si-no-DHÉ-vo",
+   "id": "mendampingi"
+  },
+  {
+   "el": "η αποστολή",
+   "baca": "i a-po-sto-LI",
+   "id": "misi, tugas; pengiriman"
+  },
+  {
+   "el": "η τιμή",
+   "baca": "i ti-MI",
+   "id": "harga; kehormatan"
+  },
+  {
+   "el": "ανεβαίνω",
+   "baca": "a-né-VÉ-no",
+   "id": "naik (*ανέβηκα, να ανέβω*)"
+  },
+  {
+   "el": "το διαβατήριο",
+   "baca": "to dhia-va-TI-ri-o",
+   "id": "paspor"
+  },
+  {
+   "el": "η ταυτότητα",
+   "baca": "i taf-TO-ti-ta",
+   "id": "kartu identitas, KTP"
+  },
+  {
+   "el": "η βαλίτσα",
+   "baca": "i va-LI-tsa",
+   "id": "koper"
+  },
+  {
+   "el": "παραδίδω",
+   "baca": "pa-ra-DHI-dho",
+   "id": "menyerahkan (*παρέδωσα, να παραδώσω*)"
+  },
+  {
+   "el": "το σακίδιο",
+   "baca": "to sa-KI-dhio",
+   "id": "ransel"
+  },
+  {
+   "el": "η ζυγαριά",
+   "baca": "i zi-gha-RIA",
+   "id": "timbangan"
+  },
+  {
+   "el": "το όριο",
+   "baca": "to O-ri-o",
+   "id": "batas"
+  },
+  {
+   "el": "η πύλη",
+   "baca": "i PI-li",
+   "id": "gerbang"
+  },
+  {
+   "el": "η επιβίβαση",
+   "baca": "i é-pi-VI-va-si",
+   "id": "naik ke pesawat atau kapal, boarding"
+  },
+  {
+   "el": "ο έλεγχος",
+   "baca": "o É-lén-khos",
+   "id": "pemeriksaan (*ο έλεγχος ασφαλείας*)"
+  },
+  {
+   "el": "η πτήση",
+   "baca": "i PTI-si",
+   "id": "penerbangan"
+  },
+  {
+   "el": "ο αρχηγός",
+   "baca": "o ar-khi-GHOS",
+   "id": "ketua, pemimpin (*αρχηγέ!*)"
+  },
+  {
+   "el": "η σημείωση",
+   "baca": "i si-MI-o-si",
+   "id": "catatan"
+  }
+ ],
+ "exercises": [
+  {
+   "prompt": "Terjemahkan ke bahasa Yunani (pilih bentuk sekali atau berulang dengan sadar).",
+   "items": [
+    "Saya harus memesan tiket hari ini.",
+    "Kamu harus menulis kepada saya setiap malam.",
+    "Bolehkah saya membawa ransel ini ke kabin?",
+    "Kami mau minum kopi dulu.",
+    "Budi harus mengikuti seminar di Chania.",
+    "Saya mau kamu melihat foto ini."
+   ]
+  },
+  {
+   "prompt": "Isi dengan bentuk yang tepat (sekali atau berulang) dari kata kerja dalam kurung.",
+   "items": [
+    "Αύριο πρέπει να ____ στον Κώστα. (τηλεφωνώ)",
+    "Κάθε πρωί θέλω να ____ τις ειδήσεις. (διαβάζω)",
+    "Μπορείς να ____ την πόρτα, σε παρακαλώ; (κλείνω)",
+    "Πρέπει να ____ πολύ νερό κάθε μέρα. (πίνω, εσύ)",
+    "Θέλουμε να ____ την Ακρόπολη το Σάββατο. (βλέπω)",
+    "Ο Μπούντι πρέπει να ____ στις εφτά. (έρχομαι)",
+    "Δεν μπορώ να ____ τίποτα τώρα. (λέω)"
+   ]
+  },
+  {
+   "prompt": "Ubah dari kebiasaan menjadi satu kali: ganti *κάθε μέρα* dengan *αύριο* dan pakai bentuk sekali.",
+   "items": [
+    "Πρέπει να γράφω μήνυμα στον Κώστα κάθε μέρα.",
+    "Θέλω να πηγαίνω στη θάλασσα κάθε μέρα.",
+    "Μπορείς να μου στέλνεις τις φωτογραφίες κάθε μέρα;",
+    "Πρέπει να αγοράζουμε ψωμί κάθε μέρα.",
+    "Θέλει να βλέπει τη γιαγιά του κάθε μέρα.",
+    "Πρέπει να τρώτε φρούτα κάθε μέρα."
+   ]
+  },
+  {
+   "prompt": "Susun jadi kalimat yang benar.",
+   "items": [
+    "να / εισιτήρια / πρέπει / κλείσω",
+    "μου / κάθε / να / γράφεις / βράδυ",
+    "πιούμε / να / καφέ / μπορούμε / έναν",
+    "βαλίτσα / να / έχετε / παραδώσετε",
+    "η / αρχίζει / επιβίβαση / στις / εφτά"
+   ]
+  }
+ ],
+ "answers": [
+  "Πρέπει να κλείσω εισιτήρια σήμερα. — Πρέπει να μου γράφεις κάθε βράδυ. — Μπορώ να κρατήσω αυτό το σακίδιο μαζί μου; — Θέλουμε πρώτα να πιούμε έναν καφέ. — Ο Μπούντι πρέπει να παρακολουθήσει ένα σεμινάριο στα Χανιά. — Θέλω να δεις αυτή τη φωτογραφία.",
+  "τηλεφωνήσω — διαβάζω — κλείσεις — πίνεις — δούμε — έρθει — πω",
+  "Πρέπει να γράψω μήνυμα στον Κώστα αύριο. — Θέλω να πάω στη θάλασσα αύριο. — Μπορείς να μου στείλεις τις φωτογραφίες αύριο; — Πρέπει να αγοράσουμε ψωμί αύριο. — Θέλει να δει τη γιαγιά του αύριο. — Πρέπει να φάτε φρούτα αύριο.",
+  "Πρέπει να κλείσω εισιτήρια. — Να μου γράφεις κάθε βράδυ. — Μπορούμε να πιούμε έναν καφέ; — Έχετε βαλίτσα να παραδώσετε; — Η επιβίβαση αρχίζει στις εφτά."
+ ]
+}

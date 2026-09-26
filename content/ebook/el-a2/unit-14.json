@@ -1,0 +1,602 @@
+{
+ "title": "Orang yang…, tempat di mana… — που & ο οποίος",
+ "title_target": "Ο φίλος που σου έλεγα",
+ "goal": "Menyambung dua kalimat menjadi satu dengan kata penghubung *yang*: **που** yang tak pernah berubah (*ο φίλος που σου έλεγα*) untuk bicara sehari-hari, **ο οποίος** yang ikut berubah (*για τον οποίο, στην οποία*) untuk bahasa resmi, ditambah *όπου, ό,τι, όποιος*.",
+ "bekal": [
+  "menerangkan orang, barang, dan tempat dengan **που**: *η ταβέρνα που έχει μπλε τραπέζια*",
+  "mengenali dan memakai **ο οποίος** sesudah kata depan: *ο δόκιμος για τον οποίο σου μίλησα*",
+  "membedakan *που* dari *πού*, dan *ό,τι* dari *ότι*"
+ ],
+ "dialogs": [
+  {
+   "title": "ΔΙΑΛΟΓΟΣ 1 — Nikos datang ke kantor",
+   "intro": "Jumat, 5 Maret 2027, pukul lima sore. Nikos menjemput Ana di kantor Αιγαίον Ναυτιλιακή di Pireas. Ini pertama kalinya rekan-rekan Ana bertemu dengannya — dan semua sudah pernah mendengar namanya. Hitung berapa kali kata **που** muncul.",
+   "lines": [
+    {
+     "speaker": "Δήμητρα:",
+     "text": "[Άννα|A-na], [ποιος|pios] [είναι|I-né] [αυτός|af-TOS] [που|pu] [περιμένει|pé-ri-MÉ-ni] [στην|stin] [είσοδο|I-so-dho];",
+     "id": "Ana, siapa itu yang nunggu di pintu masuk?",
+     "literal": "Ana, siapa adalah dia yang menunggu di-(sandang) pintu-masuk?"
+    },
+    {
+     "speaker": "Άννα:",
+     "text": "[Α|A], [ήρθε|IR-thé] [κιόλας|KIO-las]! [Είναι|I-né] [ο|o] [Νίκος|NI-kos], [ο|o] [φίλος|FI-los] [που|pu] [σου|su] [έλεγα|É-lé-gha].",
+     "id": "Oh, sudah datang! Itu Nikos, teman yang pernah kuceritakan.",
+     "literal": "ah, datang-(lampau) sudah! adalah (sandang) Nikos, (sandang) teman yang kepada-kamu aku-sedang-berkata."
+    },
+    {
+     "speaker": "Δήμητρα:",
+     "text": "[Ο|O] [Νίκος|NI-kos] [που|pu] [σου|su] [δάνεισε|DHA-ni-sé] [λεφτά|léf-TA] [όταν|O-tan] [σε|sé] [έκλεψαν|É-klé-psan];",
+     "id": "Nikos yang minjemin kamu uang waktu kamu kecopetan?",
+     "literal": "(sandang) Nikos yang kepada-kamu meminjamkan-(lampau) uang ketika kamu mereka-merampok-(lampau)?"
+    },
+    {
+     "speaker": "Άννα:",
+     "text": "[Αυτός|Af-TOS]! [Νίκο|NI-ko], [έλα|É-la] [να|na] [σου|su] [γνωρίσω|ghno-RI-so] [τη|ti] [Δήμητρα|DHI-mi-tra].",
+     "id": "Dia! Nikos, sini, kukenalkan ke Dhimitra.",
+     "literal": "dia! Nikos, datanglah agar kepada-kamu aku-kenalkan (sandang) Dhimitra."
+    },
+    {
+     "speaker": "Νίκος:",
+     "text": "[Χάρηκα|KHA-ri-ka], [Δήμητρα|DHI-mi-tra]. [Η|I] [Άννα|A-na] [μιλάει|mi-LA-i] [συνέχεια|si-NÉ-khi-a] [για|ya] [σένα|SÉ-na].",
+     "id": "Senang berkenalan, Dhimitra. Ana cerita tentang kamu terus.",
+     "literal": "aku-senang-(lampau), Dhimitra. (sandang) Ana berbicara terus-menerus tentang kamu."
+    },
+    {
+     "speaker": "Δήμητρα:",
+     "text": "[Ελπίζω|Él-PI-zo] [μόνο|MO-no] [καλά|ka-LA] [πράγματα|PRAGH-ma-ta]! [Εσύ|É-SI] [είσαι|I-sé] [αυτός|af-TOS] [που|pu] [διδάσκει|dhi-DHA-ski] [σε|sé] [λύκειο|LI-ki-o];",
+     "id": "Semoga yang baik-baik saja! Kamu yang ngajar di SMA itu?",
+     "literal": "aku-berharap hanya baik hal-hal! kamu adalah dia yang mengajar di SMA?"
+    },
+    {
+     "speaker": "Νίκος:",
+     "text": "[Ναι|Né], [είμαι|I-mé] [καθηγητής|ka-thi-yi-TIS] [ιστορίας|i-sto-RI-as] [σε|sé] [ένα|É-na] [λύκειο|LI-ki-o] [στην|stin] [Κυψέλη|Ki-PSÉ-li].",
+     "id": "Iya, aku guru sejarah di sebuah SMA di Kypseli.",
+     "literal": "ya, aku-adalah guru sejarah-(milik) di sebuah SMA di-(sandang) Kypseli."
+    },
+    {
+     "speaker": "Σταύρος:",
+     "text": "[Α|A], [ο|o] [περίφημος|pé-RI-fi-mos] [Νίκος|NI-kos]! [Αυτός|Af-TOS] [που|pu] [ξέρει|KSÉ-ri] [όλα|O-la] [τα|ta] [καλά|ka-LA] [μεζεδοπωλεία|mé-zé-dho-po-LI-a] [της|tis] [Αθήνας|A-THI-nas];",
+     "id": "Wah, Nikos yang terkenal itu! Yang tahu semua kedai meze enak di Athena?",
+     "literal": "ah, (sandang) terkenal Nikos! dia yang tahu semua (sandang) baik kedai-meze (sandang) Athena-(milik)?"
+    },
+    {
+     "speaker": "Νίκος:",
+     "text": "[Όχι|O-khi] [όλα|O-la]. [Μόνο|MO-no] [αυτά|af-TA] [που|pu] [έχουν|É-khun] [καλή|ka-LI] [ρετσίνα|ré-TSI-na]!",
+     "id": "Nggak semua. Cuma yang retsina-nya enak!",
+     "literal": "tidak semua. hanya itu-itu yang punya baik retsina!"
+    },
+    {
+     "speaker": "Άννα:",
+     "text": "[Και|Ké] [αυτός|af-TOS] [είναι|I-né] [ο|o] [κύριος|KI-ri-os] [Κώστας|KO-stas], [ο|o] [προϊστάμενος|pro-i-STA-mé-nos] [που|pu] [μου|mu] [έμαθε|É-ma-thé] [τα|ta] [πάντα|PAN-da] [εδώ|é-DHO].",
+     "id": "Dan ini Pak Kostas, atasan yang mengajari aku segalanya di sini.",
+     "literal": "dan dia adalah (sandang) tuan Kostas, (sandang) atasan yang kepada-saya mengajarkan-(lampau) (sandang) segalanya di-sini."
+    },
+    {
+     "speaker": "Κώστας:",
+     "text": "[Χαίρω|KHÉ-ro] [πολύ|po-LI]. [Εσείς|É-SIS] [είστε|I-sté] [ο|o] [κύριος|KI-ri-os] [που|pu] [μας|mas] [κλέβει|KLÉ-vi] [την|tin] [Άννα|A-na] [κάθε|KA-thé] [Παρασκευή|Pa-ra-ské-VI];",
+     "id": "Senang berkenalan. Anda ini yang tiap Jumat \"mencuri\" Ana dari kami?",
+     "literal": "aku-senang banyak. anda adalah (sandang) tuan yang dari-kami mencuri (sandang) Ana setiap Jumat?"
+    },
+    {
+     "speaker": "Νίκος:",
+     "text": "[Ένοχος|É-no-khos]! [Αλλά|A-LA] [σας|sas] [τη|ti] [φέρνω|FÉR-no] [πίσω|PI-so] [κάθε|KA-thé] [Δευτέρα|Dhéf-TÉ-ra].",
+     "id": "Saya mengaku salah! Tapi tiap Senin saya kembalikan dia ke Anda.",
+     "literal": "bersalah! tetapi kepada-anda dia aku-bawa kembali setiap Senin."
+    },
+    {
+     "speaker": "Κώστας:",
+     "text": "[Καλά|Ka-LA]. [Να|Na] [πάτε|PA-té] [στην|stin] [ταβέρνα|ta-VÉR-na] [που|pu] [σου|su] [έλεγα|É-lé-gha], [Άννα|A-na], [δίπλα|DHI-pla] [στο|sto] [λιμάνι|li-MA-ni].",
+     "id": "Baiklah. Pergilah ke taverna yang kuceritakan itu, Ana, di sebelah pelabuhan.",
+     "literal": "baik. agar kalian-pergi ke-(sandang) taverna yang kepada-kamu aku-sedang-berkata, Ana, samping pada-(sandang) pelabuhan."
+    },
+    {
+     "speaker": "Άννα:",
+     "text": "[Την|Tin] [ξέρω|KSÉ-ro]! [Αυτή|Af-TI] [που|pu] [έχει|É-khi] [τα|ta] [μπλε|blé] [τραπέζια|tra-PÉ-zia]; [Καλό|Ka-LO] [Σαββατοκύριακο|Sa-va-to-KI-ri-a-ko]!",
+     "id": "Aku tahu! Yang mejanya biru-biru itu? Selamat berakhir pekan!",
+     "literal": "itu aku-tahu! itu yang punya (sandang) biru meja-meja? baik akhir-pekan!"
+    }
+   ],
+   "notes": [
+    "⚠️ **που ≠ πού.** Bunyinya sama persis; dalam tulisan, hanya tanda tekanan yang membedakan. **Πού;** (bertekanan) = *di mana?* — kata tanya. **Που** (tanpa tekanan) = *yang* — penyambung kalimat. Penutur Indonesia sering menulis *το γραφείο πού δουλεύω* karena terbawa \"kantor di mana aku bekerja\". Yunani tidak memakai kata tanya sebagai penyambung: tulis *το γραφείο **που** δουλεύω* atau *το γραφείο **όπου** δουλεύω*.",
+    "**Που tidak pernah berubah.** *Ο φίλος που, η ταβέρνα που, τα μεζεδοπωλεία που* — tidak peduli laki-laki, perempuan, jamak, subjek atau objek. Persis seperti *yang* dalam bahasa Indonesia, dan karena itu kata ini paling sering dipakai dalam percakapan.",
+    "**Ο φίλος που σου έλεγα** — harfiah \"teman yang aku ceritakan kepadamu\". Kata depan *για* (tentang) diam-diam dilesapkan; ini lazim dalam bahasa lisan. Dalam tulisan resmi kalimat yang sama menjadi *ο φίλος **για τον οποίο** σου μιλούσα* — lihat dialog 2.",
+    "⚠️ **Αυτός που, αυτή που, αυτά που** — *yang* tanpa kata benda (\"yang mengajar itu\", \"yang retsina-nya enak\") butuh kata ganti di depannya: *Εσύ είσαι **αυτός που** διδάσκει;* Jangan meniru bahasa Indonesia dengan *Εσύ είσαι που…* — itu tidak berterima.",
+    "**Έλα να σου γνωρίσω τη Δήμητρα** — *γνωρίζω* berarti *mengenal*, dan dengan orang ketiga berarti *memperkenalkan*: *σου γνωρίζω τη Δήμητρα* = kukenalkan Dhimitra kepadamu. Jawaban yang lazim: *Χάρηκα* (santai) atau *Χαίρω πολύ* (lebih resmi, seperti pilihan Κώστας).",
+    "**Σας τη φέρνω πίσω** — dua kata ganti lemah berurutan (unit 8): penerima dulu (*σας*), lalu benda/orangnya (*τη*). *Τη* tanpa *ν* karena disusul *φ*."
+   ],
+   "grammars": [
+    {
+     "title": "Που: satu kata untuk semua peran",
+     "body": [
+      "Yang berubah hanya peran *που* di dalam anak kalimatnya; bentuknya sendiri tetap."
+     ],
+     "table": {
+      "head": [
+       "Peran dalam anak kalimat",
+       "Contoh",
+       "Arti"
+      ],
+      "rows": [
+       [
+        "subjek",
+        "*ο φίλος που περιμένει*",
+        "teman yang menunggu"
+       ],
+       [
+        "objek",
+        "*η ταβέρνα που ξέρω*",
+        "taverna yang kukenal"
+       ],
+       [
+        "jamak",
+        "*τα τραπέζια που είναι μπλε*",
+        "meja-meja yang berwarna biru"
+       ],
+       [
+        "tempat",
+        "*το γραφείο που δουλεύω*",
+        "kantor tempat aku bekerja"
+       ],
+       [
+        "waktu",
+        "*τη μέρα που ήρθα*",
+        "hari ketika aku datang"
+       ],
+       [
+        "penerima (+ kata ganti)",
+        "*ο δόκιμος που του έστειλα email*",
+        "kadet yang kukirimi email"
+       ]
+      ]
+     },
+     "after": [
+      "Kalau *που* berperan sebagai penerima atau pemilik, bahasa lisan menambahkan kata ganti lemah di anak kalimatnya: *ο φίλος που **του** δάνεισα λεφτά* (teman yang kupinjami uang)."
+     ]
+    }
+   ]
+  },
+  {
+   "title": "ΔΙΑΛΟΓΟΣ 2 — Pengumuman dari direksi",
+   "intro": "Senin, 8 Maret 2027. Direksi mengirim pengumuman resmi (ανακοίνωση) tentang program pelatihan kadet Indonesia. Ana membacakannya untuk Stavros. Kalimat dalam tanda petik adalah bahasa tulis resmi — perhatikan **ο οποίος** yang berubah-ubah bentuknya.",
+   "lines": [
+    {
+     "speaker": "Σταύρος:",
+     "text": "[Διάβασες|DHIA-va-sés] [την|tin] [ανακοίνωση|a-na-KI-no-si] [που|pu] [έστειλε|É-sti-lé] [η|i] [διεύθυνση|DHIÉF-thin-si];",
+     "id": "Sudah baca pengumuman dari direksi?",
+     "literal": "kamu-membaca-(lampau) (sandang) pengumuman yang mengirim-(lampau) (sandang) direksi?"
+    },
+    {
+     "speaker": "Άννα:",
+     "text": "[Τη|Ti] [διαβάζω|dhia-VA-zo] [τώρα|TO-ra]. «[Το|To] [εκπαιδευτικό|ék-pé-dhéf-ti-KO] [πρόγραμμα|PRO-ghra-ma], [το|to] [οποίο|o-PI-o] [ξεκινά|ksé-ki-NA] [τον|ton] [Μάιο|MA-i-o], [αφορά|a-fo-RA] [δόκιμους|DHO-ki-mus] [από|a-PO] [την|tin] [Ινδονησία|In-dho-ni-SI-a].»",
+     "id": "Lagi kubaca. \"Program pelatihan, yang dimulai bulan Mei, ditujukan bagi kadet dari Indonesia.\"",
+     "literal": "itu aku-baca sekarang. (sandang) pendidikan program, (sandang) yang dimulai (sandang) Mei, menyangkut kadet-kadet dari (sandang) Indonesia."
+    },
+    {
+     "speaker": "Σταύρος:",
+     "text": "[Άρα|A-ra] [και|ké] [τον|ton] [Μπούντι|BU-di], [τον|ton] [δόκιμο|DHO-ki-mo] [για|ya] [τον|ton] [οποίο|o-PI-o] [μου|mu] [μίλησες|MI-li-sés].",
+     "id": "Berarti termasuk Budi, kadet yang kamu ceritakan ke aku.",
+     "literal": "jadi juga (sandang) Budi, (sandang) kadet tentang (sandang) yang kepada-saya kamu-bicara-(lampau)."
+    },
+    {
+     "speaker": "Άννα:",
+     "text": "[Ακριβώς|A-kri-VOS]. «[Τα|Ta] [μαθήματα|ma-THI-ma-ta] [θα|tha] [γίνονται|YI-non-dé] [στην|stin] [Ακτή|Ak-TI] [Μιαούλη|Mia-U-li], [όπου|O-pu] [βρίσκονται|VRI-skon-dé] [και|ké] [τα|ta] [γραφεία|ghra-FI-a] [μας|mas].»",
+     "id": "Tepat. \"Pelajaran akan diadakan di Akti Miaouli, tempat kantor kami juga berada.\"",
+     "literal": "tepat. (sandang) pelajaran-pelajaran akan diadakan di-(sandang) Akti Miaouli, di-mana berada juga (sandang) kantor-kantor kami."
+    },
+    {
+     "speaker": "Σταύρος:",
+     "text": "[Τότε|TO-té] [εγώ|é-GHO] [θα|tha] [ετοιμάσω|é-ti-MA-so] [τους|tus] [υπολογιστές|i-po-lo-yi-STÉS] [στους|stus] [οποίους|o-PI-us] [θα|tha] [δουλεύουν|dhu-LÉ-vun].",
+     "id": "Kalau begitu aku yang siapkan komputer yang akan mereka pakai.",
+     "literal": "kalau-begitu saya akan menyiapkan (sandang) komputer-komputer pada-(sandang) yang akan mereka-bekerja."
+    },
+    {
+     "speaker": "Άννα:",
+     "text": "«[Όποιος|O-pi-os] [ενδιαφέρεται|én-dhi-a-FÉ-ré-té] [να|na] [διδάξει|dhi-DHA-ksi], [μπορεί|bo-RI] [να|na] [επικοινωνήσει|é-pi-ki-no-NI-si] [με|mé] [το|to] [τμήμα|TMI-ma] [πληρωμάτων|pli-ro-MA-ton].»",
+     "id": "\"Siapa pun yang berminat mengajar dapat menghubungi bagian awak kapal.\"",
+     "literal": "siapa-pun-yang tertarik agar mengajar, dapat agar menghubungi dengan (sandang) bagian awak-awak-(milik)."
+    },
+    {
+     "speaker": "Σταύρος:",
+     "text": "[Όποιος|O-pi-os] [θέλει|THÉ-li]; [Τότε|TO-té] [θα|tha] [διδάξω|dhi-DHA-kso] [κι|ki] [εγώ|é-GHO] [πληροφορική|pli-ro-fo-ri-KI]!",
+     "id": "Siapa pun? Kalau gitu aku juga mau ngajar informatika!",
+     "literal": "siapa-pun-yang mau? kalau-begitu akan mengajar juga saya informatika!"
+    },
+    {
+     "speaker": "Άννα:",
+     "text": "[Γιατί|Ya-TI] [όχι|O-khi]; [Κάνε|KA-né] [ό|o],[τι|ti] [θέλεις|THÉ-lis], [αρκεί|ar-KI] [να|na] [μην|min] [τους|tus] [μάθεις|MA-this] [τα|ta] [αστεία|a-STI-a] [σου|su]!",
+     "id": "Kenapa nggak? Lakukan apa pun maumu, asal jangan ajari mereka lawakanmu!",
+     "literal": "mengapa tidak? lakukanlah apa-pun-yang kamu-mau, cukup agar jangan kepada-mereka kamu-ajarkan (sandang) lelucon-lelucon milikmu!"
+    },
+    {
+     "speaker": "Σταύρος:",
+     "text": "[Τα|Ta] [αστεία|a-STI-a] [μου|mu] [είναι|I-né] [το|to] [καλύτερο|ka-LI-té-ro] [μάθημα|MA-thi-ma] [που|pu] [υπάρχει|i-PAR-khi]!",
+     "id": "Lawakanku itu pelajaran terbaik yang ada!",
+     "literal": "(sandang) lelucon-lelucon milikku adalah (sandang) terbaik pelajaran yang ada!"
+    },
+    {
+     "speaker": "Άννα:",
+     "text": "[Θα|Tha] [το|to] [γράψω|GHRA-pso] [στην|stin] [αναφορά|a-na-fo-RA], [την|tin] [οποία|o-PI-a] [θα|tha] [διαβάσει|dhia-VA-si] [ο|o] [κύριος|KI-ri-os] [Κώστας|KO-stas].",
+     "id": "Nanti kutulis di laporan, yang akan dibaca Pak Kostas.",
+     "literal": "akan itu aku-tulis di-(sandang) laporan, (sandang) yang akan membaca (sandang) tuan Kostas."
+    },
+    {
+     "speaker": "Σταύρος:",
+     "text": "[Εντάξει|É-DA-ksi], [εντάξει|é-DA-ksi]… [Ό|O],[τι|ti] [πεις|pis], [κυρία|ki-RI-a] [Άννα|A-na]!",
+     "id": "Oke, oke… Terserah kamu, Bu Ana!",
+     "literal": "baik, baik… apa-pun-yang kamu-katakan, nyonya Ana!"
+    }
+   ],
+   "notes": [
+    "**Ο οποίος berubah dua arah sekaligus.** Jenis dan jumlahnya **ikut kata yang diterangkan** (*το πρόγραμμα → το οποίο*, *την αναφορά → την οποία*); kasusnya **ikut perannya di anak kalimat** (*για τον οποίο* karena sesudah kata depan). Sandangnya selalu ikut dan tekanan selalu di *-ποί-*.",
+    "**Για τον οποίο, στους οποίους** — sesudah kata depan, *ο οποίος* adalah pilihan yang paling rapi. *Που* di posisi ini hanya bisa dengan akal-akalan lisan (kata depan dilesapkan, seperti *ο φίλος που σου έλεγα*).",
+    "**Το πρόγραμμα, το οποίο ξεκινά…** — dalam tulisan, *ο οποίος* sering diapit koma sebagai keterangan tambahan. Di obrolan sehari-hari kalimat yang sama cukup *το πρόγραμμα που ξεκινά τον Μάιο*.",
+    "**Όπου** = *di mana* (penyambung tempat), tanpa kata tanya: *στην Ακτή Μιαούλη, όπου βρίσκονται τα γραφεία μας*. Boleh diganti *που* di bahasa lisan, tetapi **tidak** dengan *πού*.",
+    "⚠️ **Ό,τι vs ότι.** *Ό,τι* (dengan koma dan tekanan) = *apa pun yang*: *Κάνε ό,τι θέλεις.* *Ότι* (tanpa koma) = *bahwa*: *Ξέρω ότι θέλεις.* Koma kecil itu satu-satunya penanda dalam tulisan — jangan dihapus.",
+    "**Όποιος ενδιαφέρεται…** — *όποιος* = *siapa pun yang*, berubah seperti kata sifat (*όποια, όποιο, όποιοι*). *Ό,τι πεις* (apa pun yang kamu bilang) adalah cara santai berkata \"terserah kamu\"."
+   ],
+   "grammars": [
+    {
+     "title": "Bentuk lengkap ο οποίος",
+     "body": [
+      "Bagian *ο/η/το* berubah persis seperti sandang, bagian *οποί-* berubah seperti kata sifat *-ος, -α, -ο*."
+     ],
+     "table": {
+      "head": [
+       "Bentuk",
+       "Laki-laki",
+       "Perempuan",
+       "Netral"
+      ],
+      "rows": [
+       [
+        "tunggal, subjek",
+        "*ο οποίος*",
+        "*η οποία*",
+        "*το οποίο*"
+       ],
+       [
+        "tunggal, objek / sesudah kata depan",
+        "*τον οποίο*",
+        "*την οποία*",
+        "*το οποίο*"
+       ],
+       [
+        "tunggal, pemilik",
+        "*του οποίου*",
+        "*της οποίας*",
+        "*του οποίου*"
+       ],
+       [
+        "jamak, subjek",
+        "*οι οποίοι*",
+        "*οι οποίες*",
+        "*τα οποία*"
+       ],
+       [
+        "jamak, objek / sesudah kata depan",
+        "*τους οποίους*",
+        "*τις οποίες*",
+        "*τα οποία*"
+       ],
+       [
+        "jamak, pemilik",
+        "*των οποίων*",
+        "*των οποίων*",
+        "*των οποίων*"
+       ]
+      ]
+     },
+     "after": [
+      "*Σε + τον οποίο → στον οποίο*, *σε + την οποία → στην οποία*: kata depan *σε* melebur dengan sandang seperti biasa.",
+      "Bentuk pemilik letaknya di **belakang** kata benda, seperti genitif di unit 5: *ο συνάδελφος, το γραφείο **του οποίου** είναι δίπλα μου*."
+     ]
+    }
+   ]
+  }
+ ],
+ "sections": [
+  {
+   "title": "Penyambung relatif lainnya",
+   "blocks": [
+    {
+     "type": "p",
+     "text": "Selain *που* dan *ο οποίος*, ada sekeluarga kata berawalan **ό-** yang semuanya bermakna \"… yang mana pun\". Bentuknya mirip kata tanya, tetapi **tanpa tanda tanya** dan dengan tekanan pada *ό-*."
+    },
+    {
+     "type": "tabel",
+     "head": [
+      "Kata",
+      "Arti",
+      "Contoh",
+      "Terjemahan"
+     ],
+     "rows": [
+      [
+       "*όπου*",
+       "di mana (pun)",
+       "*Πήγαινε όπου θέλεις.*",
+       "Pergilah ke mana pun kamu mau."
+      ],
+      [
+       "*ό,τι*",
+       "apa pun yang",
+       "*Ό,τι χρειαστείς, πες μου.*",
+       "Apa pun yang kamu perlukan, bilang saja."
+      ],
+      [
+       "*όποιος, όποια, όποιο*",
+       "siapa pun yang",
+       "*Όποιος θέλει, μπορεί να έρθει.*",
+       "Siapa pun yang mau boleh datang."
+      ],
+      [
+       "*όποτε*",
+       "kapan pun",
+       "*Έλα όποτε θέλεις.*",
+       "Datanglah kapan pun kamu mau."
+      ],
+      [
+       "*όπως*",
+       "seperti, sebagaimana",
+       "*Κάν' το όπως σου είπα.*",
+       "Kerjakan seperti yang kubilang."
+      ],
+      [
+       "*όσος, όση, όσο*",
+       "sebanyak yang",
+       "*Πάρε όσο θέλεις.*",
+       "Ambil sebanyak yang kamu mau."
+      ]
+     ]
+    },
+    {
+     "type": "kotak",
+     "title": "Pasangan yang sering tertukar",
+     "items": [
+      "⚠️ *πού; → που / όπου* — kata tanya vs penyambung.",
+      "⚠️ *τι; → ό,τι* — *Τι θέλεις;* (Kamu mau apa?) vs *Ό,τι θέλεις.* (Apa pun maumu.)",
+      "⚠️ *ό,τι ≠ ότι* — *apa pun yang* vs *bahwa*."
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Dua kalimat jadi satu",
+   "blocks": [
+    {
+     "type": "p",
+     "text": "Latihan paling berguna untuk unit ini: ambil dua kalimat pendek yang membicarakan hal yang sama, lalu gabungkan. Lajur tengah untuk obrolan, lajur kanan untuk surat dan laporan."
+    },
+    {
+     "type": "tabel",
+     "head": [
+      "Dua kalimat",
+      "Dengan ΠΟΥ",
+      "Dengan Ο ΟΠΟΙΟΣ"
+     ],
+     "rows": [
+      [
+       "*Έχω έναν φίλο. Ο φίλος μένει στο Κολωνάκι.*",
+       "*Έχω έναν φίλο που μένει στο Κολωνάκι.*",
+       "*…έναν φίλο, ο οποίος μένει στο Κολωνάκι.*"
+      ],
+      [
+       "*Διάβασα την ανακοίνωση. Τη στείλατε χθες.*",
+       "*Διάβασα την ανακοίνωση που στείλατε χθες.*",
+       "*…την ανακοίνωση, την οποία στείλατε χθες.*"
+      ],
+      [
+       "*Αυτό είναι το πλοίο. Ο Μπούντι θα δουλέψει σε αυτό.*",
+       "*Αυτό είναι το πλοίο που θα δουλέψει ο Μπούντι.*",
+       "*…το πλοίο στο οποίο θα δουλέψει ο Μπούντι.*"
+      ],
+      [
+       "*Γνώρισα τους δόκιμους. Θα τους διδάξω.*",
+       "*Γνώρισα τους δόκιμους που θα διδάξω.*",
+       "*…τους δόκιμους, τους οποίους θα διδάξω.*"
+      ],
+      [
+       "*Αυτή είναι η συνάδελφος. Σου μίλησα για αυτήν.*",
+       "*Αυτή είναι η συνάδελφος που σου μίλησα.*",
+       "*…η συνάδελφος για την οποία σου μίλησα.*"
+      ]
+     ]
+    },
+    {
+     "type": "p",
+     "text": "Baris ketiga dan kelima memperlihatkan kenapa *ο οποίος* disukai dalam tulisan: kata depan (*σε, για*) tetap terlihat, jadi maknanya tidak perlu ditebak."
+    }
+   ]
+  },
+  {
+   "title": "Pireas, kota pelabuhan",
+   "blocks": [
+    {
+     "type": "kotak",
+     "title": "Mengenal tempat kerja Ana",
+     "items": [
+      "**Ο Πειραιάς** adalah pelabuhan penumpang terbesar di Yunani dan salah satu yang tersibuk di Eropa: *το λιμάνι από το οποίο φεύγουν τα πλοία για τα νησιά*.",
+      "**Η Ακτή Μιαούλη** — jalan tepi dermaga yang dipenuhi kantor perusahaan pelayaran; nama ini hampir menjadi julukan bagi dunia pelayaran Yunani itu sendiri.",
+      "**Το Μικρολίμανο** — pelabuhan kecil berisi perahu layar dan deretan taverna ikan, tempat orang Pireas makan malam di akhir pekan.",
+      "Warga Pireas punya kebanggaan sendiri: mereka menyebut diri **Πειραιώτες**, bukan orang Athena, walaupun kedua kota sudah menyatu."
+     ]
+    }
+   ]
+  }
+ ],
+ "vocab": [
+  {
+   "el": "που",
+   "baca": "pu",
+   "id": "yang (penyambung, tak berubah); bedakan dari *πού;* = di mana?"
+  },
+  {
+   "el": "ο οποίος",
+   "baca": "o o-PI-os",
+   "id": "yang (resmi; *η οποία, το οποίο*)"
+  },
+  {
+   "el": "όπου",
+   "baca": "O-pu",
+   "id": "di mana, tempat (penyambung)"
+  },
+  {
+   "el": "ό,τι",
+   "baca": "o,ti",
+   "id": "apa pun yang; bedakan dari *ότι* = bahwa"
+  },
+  {
+   "el": "όποιος",
+   "baca": "O-pi-os",
+   "id": "siapa pun yang (*όποια, όποιο*)"
+  },
+  {
+   "el": "η είσοδος",
+   "baca": "i I-so-dhos",
+   "id": "pintu masuk (perempuan walau berakhiran *-ος*)"
+  },
+  {
+   "el": "κιόλας",
+   "baca": "KIO-las",
+   "id": "sudah (secepat itu)"
+  },
+  {
+   "el": "γνωρίζω",
+   "baca": "ghno-RI-zo",
+   "id": "mengenal; memperkenalkan (*γνώρισα*)"
+  },
+  {
+   "el": "χάρηκα",
+   "baca": "KHA-ri-ka",
+   "id": "senang berkenalan (harfiah: aku senang)"
+  },
+  {
+   "el": "ο καθηγητής",
+   "baca": "o ka-thi-yi-TIS",
+   "id": "guru sekolah menengah, dosen (*η καθηγήτρια*)"
+  },
+  {
+   "el": "το λύκειο",
+   "baca": "to LI-ki-o",
+   "id": "SMA"
+  },
+  {
+   "el": "διδάσκω",
+   "baca": "dhi-DHA-sko",
+   "id": "mengajar (*δίδαξα*)"
+  },
+  {
+   "el": "το μεζεδοπωλείο",
+   "baca": "to mé-zé-dho-po-LI-o",
+   "id": "kedai meze"
+  },
+  {
+   "el": "περίφημος",
+   "baca": "pé-RI-fi-mos",
+   "id": "terkenal, termasyhur"
+  },
+  {
+   "el": "ο προϊστάμενος",
+   "baca": "o pro-i-STA-mé-nos",
+   "id": "atasan (*η προϊσταμένη*)"
+  },
+  {
+   "el": "ένοχος",
+   "baca": "É-no-khos",
+   "id": "bersalah"
+  },
+  {
+   "el": "η ανακοίνωση",
+   "baca": "i a-na-KI-no-si",
+   "id": "pengumuman"
+  },
+  {
+   "el": "η διεύθυνση",
+   "baca": "i DHIÉF-thin-si",
+   "id": "direksi; alamat"
+  },
+  {
+   "el": "ο δόκιμος",
+   "baca": "o DHO-ki-mos",
+   "id": "kadet (pelaut/perwira)"
+  },
+  {
+   "el": "το πλήρωμα",
+   "baca": "to PLI-ro-ma",
+   "id": "awak kapal (*τα πληρώματα*)"
+  },
+  {
+   "el": "αφορώ",
+   "baca": "a-fo-RO",
+   "id": "menyangkut (biasanya *αφορά*)"
+  },
+  {
+   "el": "ενδιαφέρομαι",
+   "baca": "én-dhi-a-FÉ-ro-mé",
+   "id": "berminat, tertarik (*για*)"
+  },
+  {
+   "el": "επικοινωνώ",
+   "baca": "é-pi-ki-no-NO",
+   "id": "menghubungi (*με*; *επικοινώνησα*)"
+  },
+  {
+   "el": "η αναφορά",
+   "baca": "i a-na-fo-RA",
+   "id": "laporan"
+  }
+ ],
+ "exercises": [
+  {
+   "prompt": "Terjemahkan ke bahasa Yunani.",
+   "items": [
+    "Itu Nikos, teman yang pernah kuceritakan.",
+    "Taverna yang punya meja biru ada di dekat pelabuhan.",
+    "Kamu yang mengajar di SMA itu?",
+    "Siapa pun yang berminat bisa menghubungi kami.",
+    "Lakukan apa pun yang kamu mau.",
+    "Ini kantor tempat aku bekerja."
+   ]
+  },
+  {
+   "prompt": "Isi dengan bentuk ο οποίος yang tepat (perhatikan jenis, jumlah, dan kasus).",
+   "items": [
+    "Η ανακοίνωση, ____ έστειλε η διεύθυνση, είναι μεγάλη. (ο οποίος)",
+    "Ο φίλος για ____ σου μίλησα είναι καθηγητής. (ο οποίος)",
+    "Τα πλοία, ____ βλέπεις στο λιμάνι, είναι της εταιρείας μας. (ο οποίος)",
+    "Η εταιρεία στην ____ δουλεύω είναι στον Πειραιά. (ο οποίος, tanpa sandang)",
+    "Οι δόκιμοι, ____ έρχονται τον Μάιο, είναι είκοσι. (ο οποίος)",
+    "Ο κύριος Κώστας, το γραφείο ____ είναι δίπλα μου, είναι από τη Χίο. (ο οποίος, pemilik)",
+    "Οι υπολογιστές στους ____ θα δουλεύουν είναι καινούργιοι. (ο οποίος, tanpa sandang)"
+   ]
+  },
+  {
+   "prompt": "Gabungkan dua kalimat dengan που.",
+   "items": [
+    "Έχω έναν φίλο. Ο φίλος μένει στο Κολωνάκι.",
+    "Διάβασα την ανακοίνωση. Η διεύθυνση έστειλε την ανακοίνωση.",
+    "Γνώρισα τον δόκιμο. Ο δόκιμος έρχεται από την Ινδονησία.",
+    "Θυμάσαι τη μέρα; Ήρθα στην Αθήνα εκείνη τη μέρα.",
+    "Αυτός είναι ο συνάδελφος. Του έστειλα email.",
+    "Αυτή είναι η ταβέρνα. Η ταβέρνα έχει μπλε τραπέζια."
+   ]
+  },
+  {
+   "prompt": "Susun jadi kalimat yang benar.",
+   "items": [
+    "που / ο φίλος / σου / έλεγα / είναι / αυτός",
+    "θέλεις / κάνε / ό,τι",
+    "μπορεί / όποιος / να έρθει / θέλει",
+    "δουλεύω / όπου / το γραφείο / αυτό είναι",
+    "ξέρω / που / την ταβέρνα / στο λιμάνι / είναι"
+   ]
+  }
+ ],
+ "answers": [
+  "Αυτός είναι ο Νίκος, ο φίλος που σου έλεγα. — Η ταβέρνα που έχει μπλε τραπέζια είναι κοντά στο λιμάνι. — Εσύ είσαι αυτός που διδάσκει σε λύκειο; — Όποιος ενδιαφέρεται μπορεί να επικοινωνήσει μαζί μας. — Κάνε ό,τι θέλεις. — Αυτό είναι το γραφείο όπου (που) δουλεύω.",
+  "την οποία — τον οποίο — τα οποία — οποία — οι οποίοι — του οποίου — οποίους",
+  "Έχω έναν φίλο που μένει στο Κολωνάκι. — Διάβασα την ανακοίνωση που έστειλε η διεύθυνση. — Γνώρισα τον δόκιμο που έρχεται από την Ινδονησία. — Θυμάσαι τη μέρα που ήρθα στην Αθήνα; — Αυτός είναι ο συνάδελφος που του έστειλα email. — Αυτή είναι η ταβέρνα που έχει μπλε τραπέζια.",
+  "Αυτός είναι ο φίλος που σου έλεγα. — Κάνε ό,τι θέλεις. — Όποιος θέλει μπορεί να έρθει. — Αυτό είναι το γραφείο όπου δουλεύω. — Ξέρω την ταβέρνα που είναι στο λιμάνι."
+ ]
+}

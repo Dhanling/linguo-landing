@@ -1,0 +1,615 @@
+{
+ "title": "Mencari apartemen — lebih & paling",
+ "title_target": "Το πιο φωτεινό διαμέρισμα",
+ "goal": "Membandingkan dua hal atau lebih dengan *πιο* dan *-τερος*, menyebut yang paling dengan sandang (*το πιο φωτεινό*), dan memakai bentuk tak beraturan yang sering dipakai saat menawar: *καλύτερος, χειρότερος, περισσότερος, λιγότερος*.",
+ "bekal": [
+  "membentuk \"lebih\" dengan dua cara yang setara: *πιο μικρό* = *μικρότερο*, dan menyebut pembandingnya dengan *από*",
+  "menyatakan \"paling\" dengan sandang + *πιο*: *ο πιο ήσυχος δρόμος, η καλύτερη γειτόνισσα*",
+  "memakai bentuk tak beraturan dan *-τατος* (sangat) saat menawar harga sewa"
+ ],
+ "dialogs": [
+  {
+   "title": "ΔΙΑΛΟΓΟΣ 1 — Dua apartemen",
+   "intro": "Sabtu, 19 September 2026, pukul sebelas siang. Ana dan Nikos baru saja melihat dua apartemen sewaan di Pangrati: satu di lantai dasar dekat alun-alun Varnavas, satu lagi di lantai empat gedung lama Ana — gedung Kiria Maria. Mereka membandingkan sambil minum kopi.",
+   "lines": [
+    {
+     "speaker": "Νίκος:",
+     "text": "[Λοιπόν|Li-PON], [ποιο|pio] [σου|su] [άρεσε|A-ré-sé] [περισσότερο|pé-ri-SO-té-ro];",
+     "id": "Jadi, yang mana yang lebih kamu suka?",
+     "literal": "jadi, yang-mana kepadamu menyenangkan-ia lebih-banyak?"
+    },
+    {
+     "speaker": "Άννα:",
+     "text": "[Δεν|Dhén] [ξέρω|KSÉ-ro]. [Το|To] [πρώτο|PRO-to] [είναι|I-né] [πιο|pio] [μεγάλο|mé-GHA-lo], [αλλά|a-LA] [το|to] [δεύτερο|DHÉF-té-ro] [είναι|I-né] [πιο|pio] [φωτεινό|fo-ti-NO].",
+     "id": "Nggak tahu. Yang pertama lebih besar, tapi yang kedua lebih terang.",
+     "literal": "tidak tahu-aku. (sandang) pertama adalah lebih besar, tetapi (sandang) kedua adalah lebih terang."
+    },
+    {
+     "speaker": "Νίκος:",
+     "text": "[Το|To] [πρώτο|PRO-to] [είναι|I-né] [και|ké] [πιο|pio] [κοντά|kon-DA] [στην|stin] [πλατεία|pla-TI-a] [Βαρνάβα|Var-NA-va].",
+     "id": "Yang pertama juga lebih dekat ke alun-alun Varnavas.",
+     "literal": "(sandang) pertama adalah juga lebih dekat ke-(sandang) alun-alun Varnavas."
+    },
+    {
+     "speaker": "Άννα:",
+     "text": "[Ναι|Né], [αλλά|a-LA] [είναι|I-né] [στο|sto] [ισόγειο|i-SO-yo]. [Είναι|I-né] [πιο|pio] [σκοτεινό|sko-ti-NO] [και|ké] [έχει|É-khi] [περισσότερο|pé-ri-SO-té-ro] [θόρυβο|THO-ri-vo].",
+     "id": "Iya, tapi di lantai dasar. Lebih gelap dan lebih bising.",
+     "literal": "ya, tetapi adalah di-(sandang) lantai-dasar. adalah lebih gelap dan punya-ia lebih-banyak kebisingan."
+    },
+    {
+     "speaker": "Νίκος:",
+     "text": "[Και|Ké] [το|to] [δεύτερο|DHÉF-té-ro]; [Είναι|I-né] [στον|ston] [τέταρτο|TÉ-tar-to] [όροφο|O-ro-fo], [έτσι|É-tsi];",
+     "id": "Kalau yang kedua? Di lantai empat, kan?",
+     "literal": "dan (sandang) kedua? adalah di-(sandang) keempat lantai, begitu?"
+    },
+    {
+     "speaker": "Άννα:",
+     "text": "[Ναι|Né], [στην|stin] [ίδια|I-dhia] [πολυκατοικία|po-li-ka-ti-KI-a] [με|mé] [την|tin] [κυρία|ki-RI-a] [Μαρία|Ma-RI-a]! [Έχει|É-khi] [το|to] [πιο|pio] [ωραίο|o-RÉ-o] [μπαλκόνι|bal-KO-ni].",
+     "id": "Iya, di gedung yang sama dengan Bu Maria! Balkonnya paling bagus.",
+     "literal": "ya, di-(sandang) sama gedung-apartemen dengan (sandang) nyonya Maria! punya-ia (sandang) paling indah balkon."
+    },
+    {
+     "speaker": "Νίκος:",
+     "text": "[Αλλά|A-LA] [είναι|I-né] [πιο|pio] [μικρό|mi-KRO] [από|a-PO] [το|to] [πρώτο|PRO-to]. [Και|Ké] [πιο|pio] [ακριβό|a-kri-VO].",
+     "id": "Tapi lebih kecil daripada yang pertama. Dan lebih mahal.",
+     "literal": "tetapi adalah lebih kecil dari (sandang) pertama. dan lebih mahal."
+    },
+    {
+     "speaker": "Άννα:",
+     "text": "[Μόνο|MO-no] [πενήντα|pé-NIN-da] [ευρώ|év-RO] [πιο|pio] [ακριβό|a-kri-VO]. [Και|Ké] [η|i] [κουζίνα|ku-ZI-na] [του|tu] [είναι|I-né] [καλύτερη|ka-LI-té-ri].",
+     "id": "Cuma lima puluh euro lebih mahal. Dan dapurnya lebih bagus.",
+     "literal": "hanya lima-puluh euro lebih mahal. dan (sandang) dapur-nya adalah lebih-baik."
+    },
+    {
+     "speaker": "Νίκος:",
+     "text": "[Καλύτερη|Ka-LI-té-ri]; [Είναι|I-né] [μικρότερη|mi-KRO-té-ri] [από|a-PO] [την|tin] [κουζίνα|ku-ZI-na] [της|tis] [μητέρας|mi-TÉ-ras] [μου|mu]!",
+     "id": "Lebih bagus? Lebih kecil daripada dapur ibuku!",
+     "literal": "lebih-baik? adalah lebih-kecil dari (sandang) dapur (sandang)-dari ibu-ku!"
+    },
+    {
+     "speaker": "Άννα:",
+     "text": "[Δεν|Dhén] [μαγειρεύω|ma-yi-RÉ-vo] [πολύ|po-LI]. [Για|Ya] [μένα|MÉ-na] [το|to] [φως|fos] [είναι|I-né] [πιο|pio] [σημαντικό|si-man-di-KO] [από|a-PO] [την|tin] [κουζίνα|ku-ZI-na].",
+     "id": "Aku jarang masak. Buatku cahaya lebih penting daripada dapur.",
+     "literal": "tidak memasak-aku banyak. untuk aku (sandang) cahaya adalah lebih penting dari (sandang) dapur."
+    },
+    {
+     "speaker": "Νίκος:",
+     "text": "[Πάντως|PAN-dos] [ο|o] [δρόμος|DHRO-mos] [του|tu] [δεύτερου|DHÉF-té-ru] [είναι|I-né] [ο|o] [πιο|pio] [ήσυχος|I-si-khos] [στη|sti] [γειτονιά|yi-to-NIA].",
+     "id": "Memang sih, jalan yang kedua paling tenang di lingkungan itu.",
+     "literal": "bagaimanapun (sandang) jalan (sandang)-dari kedua adalah (sandang) paling tenang di-(sandang) lingkungan."
+    },
+    {
+     "speaker": "Άννα:",
+     "text": "[Βλέπεις|VLÉ-pis]; [Είναι|I-né] [ησυχότερο|i-si-KHO-té-ro], [φωτεινότερο|fo-ti-NO-té-ro] [και|ké] [η|i] [κυρία|ki-RI-a] [Μαρία|Ma-RI-a] [είναι|I-né] [από|a-PO] [κάτω|KA-to]!",
+     "id": "Tuh, kan? Lebih tenang, lebih terang, dan Bu Maria ada di bawah!",
+     "literal": "melihat-kamu? adalah lebih-tenang, lebih-terang dan (sandang) nyonya Maria adalah dari bawah!"
+    },
+    {
+     "speaker": "Νίκος:",
+     "text": "[Άρα|A-ra] [το|to] [αποφάσισες|a-po-FA-si-sés] [ήδη|I-dhi]. [Γιατί|Ya-TI] [με|mé] [έφερες|É-fé-rés] [μαζί|ma-ZI] [σου|su];",
+     "id": "Berarti kamu sudah memutuskan. Terus kenapa aku diajak?",
+     "literal": "jadi itu memutuskan-kamu sudah. kenapa aku(objek) membawa-kamu bersama kamu?"
+    },
+    {
+     "speaker": "Άννα:",
+     "text": "[Για|Ya] [να|na] [μου|mu] [πεις|pis] [ότι|O-ti] [έχω|É-kho] [δίκιο|DHI-kio], [φυσικά|fi-si-KA]!",
+     "id": "Supaya kamu bilang aku benar, dong!",
+     "literal": "untuk supaya kepadaku mengatakan-kamu bahwa punya-aku kebenaran, tentu!"
+    }
+   ],
+   "notes": [
+    "**Πιο μεγάλο, πιο φωτεινό** — \"lebih\" = **πιο** + kata sifat. ⚠️ Kata sifatnya tetap harus cocok dengan bendanya: *το πιο μικρό διαμέρισμα*, *η πιο μικρή κουζίνα*, *ο πιο μικρός δρόμος*. Bahasa Indonesia tidak mengubah *kecil*, jadi pelajar sering lupa bahwa di sini *πιο* tidak mengurus kesesuaian — kata sifatnya yang mengurus.",
+    "**Μικρότερη, ησυχότερο, φωτεινότερο** — cara kedua: ekor **-ότερος, -ότερη, -ότερο** menggantikan *-ος*. Artinya sama persis dengan *πιο*. ⚠️ Jangan gabungkan keduanya: *πιο μικρότερη* salah, seperti \"lebih lebih kecil\".",
+    "**Από + akusatif** memperkenalkan pembanding: *πιο μικρό από το πρώτο*, *πιο σημαντικό από την κουζίνα*. Dengan kata ganti pakai bentuk panjang: *από μένα, από σένα, από αυτόν*.",
+    "⚠️ **Ο πιο ήσυχος = yang paling tenang.** Bedanya dengan \"lebih\" hanya **sandang**: *πιο ήσυχος* (lebih tenang), *ο πιο ήσυχος* (paling tenang). Kalau sandangnya hilang, maknanya ikut hilang. Lingkupnya dengan *σε*: *ο πιο ήσυχος στη γειτονιά*.",
+    "**Καλύτερη** — *καλός* tidak punya *πιο καλύτερος*; bentuk lebihnya tak beraturan: **καλύτερος** (lebih baik), dan paling baik = *ο καλύτερος*. Jumlah selisih diletakkan di depan: *πενήντα ευρώ πιο ακριβό* (lima puluh euro lebih mahal).",
+    "**Έχω δίκιο** — \"aku benar\", harfiah \"aku punya kebenaran\". Tidak ada *είμαι σωστή* dalam arti ini; ungkapan ini dibahas di unit 15. **Από κάτω** = di lantai bawah, persis di bawah."
+   ],
+   "grammars": [
+    {
+     "title": "Dua cara berkata lebih",
+     "body": [
+      "Kolom (1) memakai *πιο* dan selalu aman. Kolom (2) memakai ekor *-τερος*: lebih ringkas dan lebih sering di tulisan, tetapi tidak semua kata sifat memilikinya."
+     ],
+     "table": {
+      "head": [
+       "Kata dasar",
+       "Lebih (1)",
+       "Lebih (2)",
+       "Arti"
+      ],
+      "rows": [
+       [
+        "*μεγάλος*",
+        "*πιο μεγάλος*",
+        "*μεγαλύτερος*",
+        "besar"
+       ],
+       [
+        "*μικρός*",
+        "*πιο μικρός*",
+        "*μικρότερος*",
+        "kecil"
+       ],
+       [
+        "*φωτεινός*",
+        "*πιο φωτεινός*",
+        "*φωτεινότερος*",
+        "terang"
+       ],
+       [
+        "*σκοτεινός*",
+        "*πιο σκοτεινός*",
+        "*σκοτεινότερος*",
+        "gelap"
+       ],
+       [
+        "*ήσυχος*",
+        "*πιο ήσυχος*",
+        "*ησυχότερος*",
+        "tenang"
+       ],
+       [
+        "*ακριβός*",
+        "*πιο ακριβός*",
+        "*ακριβότερος*",
+        "mahal"
+       ],
+       [
+        "*φτηνός*",
+        "*πιο φτηνός*",
+        "*φτηνότερος*",
+        "murah"
+       ],
+       [
+        "*ωραίος*",
+        "*πιο ωραίος*",
+        "*ωραιότερος*",
+        "indah, bagus"
+       ]
+      ]
+     },
+     "after": [
+      "Tekanan bentuk (2) selalu jatuh pada *-ό-* atau *-ύ-*: *μικρότερος, ησυχότερος*, dan satu yang istimewa *μεγαλύτερος* (dengan *-ύ-*).",
+      "Kalau ragu apakah bentuk (2) ada, pakai *πιο*. Tidak ada orang Yunani yang akan mengoreksi *πιο καινούργιος*."
+     ]
+    }
+   ]
+  },
+  {
+   "title": "ΔΙΑΛΟΓΟΣ 2 — Menawar sewa",
+   "intro": "Sore harinya, pukul lima. Ana kembali ke apartemen lantai empat untuk bicara dengan pemiliknya, Kirios Lambros, pensiunan guru berumur tujuh puluhan yang masih memanggil perempuan muda *δεσποινίς*. Perhatikan bentuk-bentuk \"lebih\" yang tak beraturan.",
+   "lines": [
+    {
+     "speaker": "Κ. Λάμπρος:",
+     "text": "[Λοιπόν|Li-PON], [δεσποινίς|dhé-spi-NIS], [σας|sas] [άρεσε|A-ré-sé];",
+     "id": "Nah, Nona, suka?",
+     "literal": "jadi, nona, kepada-anda menyenangkan-ia?"
+    },
+    {
+     "speaker": "Άννα:",
+     "text": "[Πολύ|Po-LI]! [Είναι|I-né] [το|to] [πιο|pio] [φωτεινό|fo-ti-NO] [διαμέρισμα|dhia-MÉ-ri-sma] [που|pu] [είδα|I-dha]. [Αλλά|A-LA] [το|to] [ενοίκιο|é-NI-kio] [είναι|I-né] [λίγο|LI-gho] [ακριβό|a-kri-VO].",
+     "id": "Suka sekali! Ini apartemen paling terang yang saya lihat. Tapi sewanya agak mahal.",
+     "literal": "sangat! adalah (sandang) paling terang apartemen yang melihat-saya. tetapi (sandang) sewa adalah sedikit mahal."
+    },
+    {
+     "speaker": "Κ. Λάμπρος:",
+     "text": "[Ακριβό|A-kri-VO]; [Είναι|I-né] [φτηνότερο|fti-NO-té-ro] [από|a-PO] [τα|ta] [περισσότερα|pé-ri-SO-té-ra] [διαμερίσματα|dhia-mé-RI-sma-ta] [στο|sto] [Παγκράτι|Pan-GRA-ti]!",
+     "id": "Mahal? Ini lebih murah daripada kebanyakan apartemen di Pangrati!",
+     "literal": "mahal? adalah lebih-murah dari (sandang) lebih-banyak apartemen-apartemen di-(sandang) Pangrati!"
+    },
+    {
+     "speaker": "Άννα:",
+     "text": "[Ίσως|I-sos], [αλλά|a-LA] [το|to] [άλλο|A-lo] [που|pu] [είδα|I-dha] [σήμερα|SI-mé-ra] [ήταν|I-tan] [πενήντα|pé-NIN-da] [ευρώ|év-RO] [φτηνότερο|fti-NO-té-ro].",
+     "id": "Mungkin, tapi yang satu lagi yang saya lihat tadi lima puluh euro lebih murah.",
+     "literal": "mungkin, tetapi (sandang) lain yang melihat-saya hari-ini adalah-dulu lima-puluh euro lebih-murah."
+    },
+    {
+     "speaker": "Κ. Λάμπρος:",
+     "text": "[Εκείνο|É-KI-no] [είναι|I-né] [στο|sto] [ισόγειο|i-SO-yo]. [Αυτό|Af-TO] [είναι|I-né] [πολύ|po-LI] [καλύτερο|ka-LI-té-ro], [το|to] [ξέρετε|KSÉ-ré-té].",
+     "id": "Yang itu di lantai dasar. Yang ini jauh lebih bagus, Nona tahu itu.",
+     "literal": "itu adalah di-(sandang) lantai-dasar. ini adalah sangat lebih-baik, itu tahu-anda."
+    },
+    {
+     "speaker": "Άννα:",
+     "text": "[Το|To] [ξέρω|KSÉ-ro]. [Μπορείτε|Bo-RI-té] [να|na] [κάνετε|KA-né-té] [μια|mia] [μικρή|mi-KRI] [έκπτωση|ÉKP-to-si]; [Θα|Tha] [μείνω|MI-no] [τουλάχιστον|tu-LA-khi-ston] [ένα|É-na] [χρόνο|KHRO-no].",
+     "id": "Saya tahu. Bisa kasih potongan sedikit? Saya akan tinggal setidaknya setahun.",
+     "literal": "itu tahu-saya. bisa-anda supaya membuat-anda sebuah kecil potongan? akan tinggal-saya setidaknya satu tahun."
+    },
+    {
+     "speaker": "Κ. Λάμπρος:",
+     "text": "[Έχετε|É-khé-té] [σταθερή|sta-thé-RI] [δουλειά|dhu-LIA];",
+     "id": "Anda punya pekerjaan tetap?",
+     "literal": "punya-anda tetap pekerjaan?"
+    },
+    {
+     "speaker": "Άννα:",
+     "text": "[Ναι|Né], [σε|sé] [ναυτιλιακή|naf-ti-lia-KI] [εταιρεία|é-té-RI-a] [στον|ston] [Πειραιά|Pi-ré-A]. [Και|Ké] [η|i] [κυρία|ki-RI-a] [Μαρία|Ma-RI-a] [με|mé] [ξέρει|KSÉ-ri] [καλά|ka-LA].",
+     "id": "Ya, di perusahaan pelayaran di Pireas. Dan Bu Maria kenal saya dengan baik.",
+     "literal": "ya, di pelayaran perusahaan di-(sandang) Pireas. dan (sandang) nyonya Maria aku(objek) tahu-ia baik."
+    },
+    {
+     "speaker": "Κ. Λάμπρος:",
+     "text": "[Η|I] [κυρία|ki-RI-a] [Μαρία|Ma-RI-a] [είναι|I-né] [η|i] [καλύτερη|ka-LI-té-ri] [γειτόνισσα|yi-TO-ni-sa] [στον|ston] [κόσμο|KO-smo]! [Εντάξει|É-DA-ksi], [τριάντα|TRIAN-da] [ευρώ|év-RO] [λιγότερα|li-GHO-té-ra].",
+     "id": "Bu Maria itu tetangga terbaik sedunia! Baiklah, tiga puluh euro lebih murah.",
+     "literal": "(sandang) nyonya Maria adalah (sandang) terbaik tetangga di-(sandang) dunia! baiklah, tiga-puluh euro lebih-sedikit."
+    },
+    {
+     "speaker": "Άννα:",
+     "text": "[Σαράντα|Sa-RAN-da], [και|ké] [σας|sas] [φέρνω|FÉR-no] [καφέ|ka-FÉ] [από|a-PO] [την|tin] [Ινδονησία|In-dho-ni-SI-a].",
+     "id": "Empat puluh, dan saya bawakan kopi dari Indonesia.",
+     "literal": "empat-puluh, dan kepada-anda membawa-saya kopi dari (sandang) Indonesia."
+    },
+    {
+     "speaker": "Κ. Λάμπρος:",
+     "text": "[Είστε|I-sté] [η|i] [πιο|pio] [σκληρή|skli-RI] [πελάτισσα|pé-LA-ti-sa] [της|tis] [χρονιάς|khro-NIAS]! [Εντάξει|É-DA-ksi], [σαράντα|sa-RAN-da].",
+     "id": "Anda penyewa paling alot tahun ini! Ya sudah, empat puluh.",
+     "literal": "adalah-anda (sandang) paling keras pelanggan-pr (sandang)-dari tahun! baiklah, empat-puluh."
+    }
+   ],
+   "notes": [
+    "**Τα περισσότερα διαμερίσματα** — *πολύς* (banyak) → **περισσότερος** (lebih banyak). Dengan sandang jamak artinya **kebanyakan**: *οι περισσότεροι Έλληνες* = kebanyakan orang Yunani. Ana memakainya juga sebagai kata keterangan: *ποιο σου άρεσε περισσότερο;* (mana yang lebih kamu suka?).",
+    "**Πολύ καλύτερο** — \"jauh lebih baik\": *πολύ* di depan bentuk lebih. ⚠️ Jangan terjemahkan \"jauh\" dengan *μακριά*; itu jarak. *Λίγο φτηνότερο* = sedikit lebih murah.",
+    "**Η καλύτερη γειτόνισσα στον κόσμο** — \"paling\" dari bentuk tak beraturan cukup ditambah sandang: *ο καλύτερος, ο χειρότερος*. Lingkupnya dengan *σε* (*στον κόσμο, στη γειτονιά*) atau genitif (*της χρονιάς* = tahun ini).",
+    "**Τριάντα ευρώ λιγότερα** — *λίγος* (sedikit) → **λιγότερος**. Kata *ευρώ* netral dan tak berubah, maka kata sifatnya netral jamak: *λιγότερα*. Kebalikannya: *τριάντα ευρώ περισσότερα*.",
+    "**Δεσποινίς** — \"nona\", sapaan lama untuk perempuan belum menikah. Generasi Kirios Lambros masih memakainya; orang muda tidak lagi, dan kamu cukup memakai *κυρία* untuk semua perempuan dewasa.",
+    "**Menawar sewa** itu wajar di Yunani, apalagi kalau kamu menawarkan jaminan: kontrak panjang (*τουλάχιστον ένα χρόνο*), pekerjaan tetap, atau rekomendasi tetangga. Menawar harga di toko, sebaliknya, jarang dilakukan."
+   ],
+   "grammars": [
+    {
+     "title": "Tak beraturan, paling, dan sangat",
+     "body": [
+      "Kolom terakhir adalah bentuk **-τατος** (atau bentuk kuno) yang berarti **sangat**, bukan paling. Kamu lebih sering membacanya daripada mengucapkannya."
+     ],
+     "table": {
+      "head": [
+       "Dasar",
+       "Lebih",
+       "Paling",
+       "Sangat"
+      ],
+      "rows": [
+       [
+        "*καλός*",
+        "*καλύτερος*",
+        "*ο καλύτερος*",
+        "*άριστος*"
+       ],
+       [
+        "*κακός*",
+        "*χειρότερος*",
+        "*ο χειρότερος*",
+        "*χείριστος* (jarang)"
+       ],
+       [
+        "*πολύς*",
+        "*περισσότερος*",
+        "*ο περισσότερος*",
+        "*πάρα πολύς*"
+       ],
+       [
+        "*λίγος*",
+        "*λιγότερος*",
+        "*ο λιγότερος*",
+        "*ελάχιστος*"
+       ],
+       [
+        "*μεγάλος*",
+        "*μεγαλύτερος*",
+        "*ο μεγαλύτερος*",
+        "*μέγιστος*"
+       ],
+       [
+        "*μικρός*",
+        "*μικρότερος*",
+        "*ο μικρότερος*",
+        "*ελάχιστος*"
+       ],
+       [
+        "*ωραίος*",
+        "*ωραιότερος*",
+        "*ο πιο ωραίος*",
+        "*ωραιότατος*"
+       ],
+       [
+        "*ακριβός*",
+        "*ακριβότερος*",
+        "*ο πιο ακριβός*",
+        "*ακριβότατος*"
+       ]
+      ]
+     },
+     "after": [
+      "⚠️ *Ωραιότατος* = sangat indah, **bukan** paling indah. \"Paling\" selalu butuh sandang: *ο πιο ωραίος*.",
+      "Dalam percakapan, \"sangat\" lebih sering *πάρα πολύ*: *πάρα πολύ ακριβό* = mahal banget."
+     ]
+    }
+   ]
+  }
+ ],
+ "sections": [
+  {
+   "title": "Membaca iklan sewa",
+   "blocks": [
+    {
+     "type": "p",
+     "text": "Iklan sewa Yunani (di situs seperti *xe.gr* atau di kertas yang ditempel di tiang listrik) memakai kosakata dan singkatan yang padat. Kenali sepuluh ini dan kamu bisa menyaring iklan dalam lima detik."
+    },
+    {
+     "type": "tabel",
+     "head": [
+      "Istilah",
+      "Arti"
+     ],
+     "rows": [
+      [
+       "*Ενοικιάζεται*",
+       "disewakan"
+      ],
+      [
+       "*γκαρσονιέρα*",
+       "studio, satu ruang"
+      ],
+      [
+       "*δυάρι / τριάρι*",
+       "apartemen dua / tiga ruang (kamar + ruang tamu)"
+      ],
+      [
+       "*τ.μ.*",
+       "meter persegi (*τετραγωνικά μέτρα*)"
+      ],
+      [
+       "*ισόγειο*",
+       "lantai dasar"
+      ],
+      [
+       "*ρετιρέ*",
+       "lantai teratas dengan teras lebar"
+      ],
+      [
+       "*ημιυπόγειο*",
+       "setengah bawah tanah — murah tapi gelap"
+      ],
+      [
+       "*επιπλωμένο*",
+       "berperabot"
+      ],
+      [
+       "*κοινόχρηστα*",
+       "iuran bersama gedung (pemanas, lift, kebersihan)"
+      ],
+      [
+       "*αυτόνομη θέρμανση*",
+       "pemanas sendiri, bukan pemanas gedung"
+      ]
+     ]
+    },
+    {
+     "type": "kotak",
+     "title": "Contoh iklan",
+     "items": [
+      "*Ενοικιάζεται δυάρι 55 τ.μ., 4ος όροφος, Παγκράτι, πολύ φωτεινό, με μεγάλο μπαλκόνι, 520 €.*",
+      "*Ενοικιάζεται γκαρσονιέρα 30 τ.μ., ισόγειο, κοντά στο μετρό, επιπλωμένη, 380 € + κοινόχρηστα.*",
+      "Mana yang lebih besar? Mana yang lebih murah? Mana yang lebih terang? Jawab dengan kalimat lengkap: *Το δυάρι είναι μεγαλύτερο από τη γκαρσονιέρα.*"
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Sama, lebih, paling",
+   "blocks": [
+    {
+     "type": "p",
+     "text": "Untuk menyatakan kesamaan, bahasa Yunani memakai pasangan **τόσο … όσο** (se… seperti) atau cukup **σαν** dan **όσο**. Untuk \"dari semuanya\", pakai **απ' όλους / απ' όλες / απ' όλα** sesuai jenis kelamin yang dibandingkan."
+    },
+    {
+     "type": "list",
+     "items": [
+      "*Το δεύτερο είναι τόσο ακριβό όσο το πρώτο.* — Yang kedua semahal yang pertama.",
+      "*Δεν είναι τόσο μεγάλο όσο νομίζεις.* — Tidak sebesar yang kamu kira.",
+      "*Ο Νίκος είναι ο πιο ψηλός απ' όλους.* — Nikos yang paling tinggi dari semuanya.",
+      "*Αυτό το μπαλκόνι είναι το καλύτερο απ' όλα.* — Balkon ini yang terbaik dari semuanya.",
+      "*Η Αθήνα είναι μεγαλύτερη από τη Θεσσαλονίκη.* — Athena lebih besar daripada Thessaloniki."
+     ]
+    },
+    {
+     "type": "p",
+     "text": "⚠️ Kata *από* sebelum sandang sering dipendekkan dalam percakapan: *απ' το πρώτο, απ' την κουζίνα*. Dalam tulisan kedua bentuk sama-sama benar."
+    }
+   ]
+  },
+  {
+   "title": "Tinggal di gedung apartemen",
+   "blocks": [
+    {
+     "type": "p",
+     "text": "Sebagian besar warga Athena tinggal di **πολυκατοικία**: gedung beton lima sampai tujuh lantai dari tahun 1960–1980-an, dengan balkon di setiap lantai dan toko di lantai dasar. Semakin tinggi lantainya, semakin terang, semakin tenang — dan biasanya semakin mahal."
+    },
+    {
+     "type": "kotak",
+     "title": "Yang perlu kamu tahu sebelum menandatangani",
+     "items": [
+      "Uang jaminan (*η εγγύηση*) biasanya satu sampai dua bulan sewa, dibayar di muka bersama sewa bulan pertama.",
+      "Sewa dibayar bulanan, sering lewat transfer bank; kontrak didaftarkan pemilik secara daring ke kantor pajak.",
+      "*Κοινόχρηστα* ditagih terpisah setiap bulan dan melonjak di musim dingin kalau gedung memakai pemanas bersama.",
+      "Tetangga lama seperti Kiria Maria adalah aset: mereka tahu tukang ledeng terbaik, jadwal sampah, dan kapan air panas mati."
+     ]
+    }
+   ]
+  }
+ ],
+ "vocab": [
+  {
+   "el": "το διαμέρισμα",
+   "baca": "to dhia-MÉ-ri-sma",
+   "id": "apartemen (jamak *τα διαμερίσματα*)"
+  },
+  {
+   "el": "η πολυκατοικία",
+   "baca": "i po-li-ka-ti-KI-a",
+   "id": "gedung apartemen"
+  },
+  {
+   "el": "το ενοίκιο",
+   "baca": "to é-NI-kio",
+   "id": "uang sewa"
+  },
+  {
+   "el": "ο ιδιοκτήτης",
+   "baca": "o i-dhiok-TI-tis",
+   "id": "pemilik (*η ιδιοκτήτρια*)"
+  },
+  {
+   "el": "η έκπτωση",
+   "baca": "i ÉKP-to-si",
+   "id": "potongan harga, diskon"
+  },
+  {
+   "el": "το μπαλκόνι",
+   "baca": "to bal-KO-ni",
+   "id": "balkon"
+  },
+  {
+   "el": "το ισόγειο",
+   "baca": "to i-SO-yo",
+   "id": "lantai dasar"
+  },
+  {
+   "el": "η γειτονιά",
+   "baca": "i yi-to-NIA",
+   "id": "lingkungan tempat tinggal"
+  },
+  {
+   "el": "η γειτόνισσα",
+   "baca": "i yi-TO-ni-sa",
+   "id": "tetangga perempuan (*ο γείτονας*)"
+  },
+  {
+   "el": "το φως",
+   "baca": "to fos",
+   "id": "cahaya (jamak *τα φώτα* = lampu)"
+  },
+  {
+   "el": "ο θόρυβος",
+   "baca": "o THO-ri-vos",
+   "id": "kebisingan"
+  },
+  {
+   "el": "φωτεινός",
+   "baca": "fo-ti-NOS",
+   "id": "terang (*-ή, -ό*)"
+  },
+  {
+   "el": "σκοτεινός",
+   "baca": "sko-ti-NOS",
+   "id": "gelap (*-ή, -ό*)"
+  },
+  {
+   "el": "ήσυχος",
+   "baca": "I-si-khos",
+   "id": "tenang (*-η, -ο*; lebih: *ησυχότερος*)"
+  },
+  {
+   "el": "ακριβός",
+   "baca": "a-kri-VOS",
+   "id": "mahal (*-ή, -ό*)"
+  },
+  {
+   "el": "φτηνός",
+   "baca": "fti-NOS",
+   "id": "murah (*-ή, -ό*)"
+  },
+  {
+   "el": "σημαντικός",
+   "baca": "si-man-di-KOS",
+   "id": "penting (*-ή, -ό*)"
+  },
+  {
+   "el": "σταθερός",
+   "baca": "sta-thé-ROS",
+   "id": "tetap, stabil (*-ή, -ό*)"
+  },
+  {
+   "el": "καλύτερος",
+   "baca": "ka-LI-té-ros",
+   "id": "lebih baik (*ο καλύτερος* = terbaik)"
+  },
+  {
+   "el": "χειρότερος",
+   "baca": "khi-RO-té-ros",
+   "id": "lebih buruk (*ο χειρότερος* = terburuk)"
+  },
+  {
+   "el": "περισσότερος",
+   "baca": "pé-ri-SO-té-ros",
+   "id": "lebih banyak (*οι περισσότεροι* = kebanyakan)"
+  },
+  {
+   "el": "λιγότερος",
+   "baca": "li-GHO-té-ros",
+   "id": "lebih sedikit"
+  },
+  {
+   "el": "τουλάχιστον",
+   "baca": "tu-LA-khi-ston",
+   "id": "setidaknya, paling sedikit"
+  },
+  {
+   "el": "αποφασίζω",
+   "baca": "a-po-fa-SI-zo",
+   "id": "memutuskan (*αποφάσισα*)"
+  }
+ ],
+ "exercises": [
+  {
+   "prompt": "Terjemahkan ke bahasa Yunani.",
+   "items": [
+    "Apartemen ini lebih terang daripada yang itu.",
+    "Dapurnya lebih kecil.",
+    "Ini jalan paling tenang di lingkungan ini.",
+    "Kopi Indonesia lebih enak.",
+    "Bu Maria tetangga terbaik.",
+    "Sewanya lima puluh euro lebih murah."
+   ]
+  },
+  {
+   "prompt": "Isi dengan bentuk yang tepat.",
+   "items": [
+    "Η Αθήνα είναι ____ από τη Θεσσαλονίκη. (μεγάλος, bentuk -τερος)",
+    "Αυτή η κουζίνα είναι ____ από την άλλη. (καλός)",
+    "Ο Νίκος είναι ο ____ ψηλός στην παρέα. (kata untuk paling)",
+    "Σήμερα ο καιρός είναι ____ από χθες. (κακός)",
+    "Το δεύτερο διαμέρισμα έχει ____ φως. (πολύς)",
+    "Αυτό το μπαλκόνι είναι το πιο ____. (ωραίος)",
+    "Το Παγκράτι είναι ____ από το κέντρο. (ήσυχος, bentuk -τερος)"
+   ]
+  },
+  {
+   "prompt": "Ubah bentuk πιο menjadi bentuk -τερος, atau sebaliknya.",
+   "items": [
+    "Είναι πιο μικρό.",
+    "Είναι πιο φτηνή.",
+    "Είναι πιο καλός.",
+    "Είναι μεγαλύτερο.",
+    "Είναι πιο ήσυχοι.",
+    "Είναι χειρότερη."
+   ]
+  },
+  {
+   "prompt": "Susun jadi kalimat yang benar.",
+   "items": [
+    "πιο / είναι / φωτεινό / το δεύτερο",
+    "από / μικρότερη / την άλλη / είναι",
+    "ο πιο / δρόμος / ήσυχος / αυτός / είναι",
+    "έκπτωση / μπορείτε / μια / να κάνετε",
+    "πολύ / καλύτερο / αυτό / είναι"
+   ]
+  }
+ ],
+ "answers": [
+  "Αυτό το διαμέρισμα είναι πιο φωτεινό από εκείνο. — Η κουζίνα είναι πιο μικρή (μικρότερη). — Αυτός είναι ο πιο ήσυχος δρόμος στη γειτονιά. — Ο ινδονησιακός καφές είναι πιο νόστιμος. — Η κυρία Μαρία είναι η καλύτερη γειτόνισσα. — Το ενοίκιο είναι πενήντα ευρώ πιο φτηνό (φτηνότερο).",
+  "μεγαλύτερη — καλύτερη — πιο — χειρότερος — περισσότερο — ωραίο — ησυχότερο",
+  "Είναι μικρότερο. — Είναι φτηνότερη. — Είναι καλύτερος. — Είναι πιο μεγάλο. — Είναι ησυχότεροι. — Είναι πιο κακή.",
+  "Το δεύτερο είναι πιο φωτεινό. — Είναι μικρότερη από την άλλη. — Αυτός είναι ο πιο ήσυχος δρόμος. — Μπορείτε να κάνετε μια έκπτωση; — Αυτό είναι πολύ καλύτερο."
+ ]
+}

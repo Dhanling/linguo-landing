@@ -1,0 +1,643 @@
+{
+ "title": "Debat panel — berargumen",
+ "title_target": "Κατά τη γνώμη μου…",
+ "goal": "Berargumen di depan umum: menyatakan posisi, mengakui poin lawan lalu membaliknya, meminta dan memberi bukti, dan menutup dengan kesimpulan, memakai pasangan penghubung (*ναι μεν… αλλά*, *αφενός… αφετέρου*) serta penekanan dengan objek di depan (*Τη θάλασσα τη διαβάζει ο άνθρωπος*).",
+ "bekal": [
+  "membuka, mengurutkan, dan menutup argumen: *Κατά τη γνώμη μου… Πρώτον… Δεύτερον… Συνεπώς…*",
+  "mengakui lalu membantah dengan *ναι μεν… αλλά*, *αφενός… αφετέρου*, *δεν το αμφισβητώ, ωστόσο…*",
+  "memberi penekanan dengan memindahkan objek ke depan dan mengulangnya dengan kata ganti"
+ ],
+ "dialogs": [
+  {
+   "title": "ΔΙΑΛΟΓΟΣ 1 — Pelaut atau mesin?",
+   "intro": "Rabu malam, 27 September 2028, auditorium Universitas Pireas. Diskusi panel terbuka bertema \"Pelaut masa depan: manusia atau mesin?\". Di panggung: Profesor Mavridis, pakar teknologi kapal otonom, dan Ana, koordinator program pendidikan pelaut Indonesia–Yunani. Seorang wartawati menjadi moderator.",
+   "lines": [
+    {
+     "speaker": "Συντονίστρια:",
+     "text": "Καλησπέρα σας. Το ερώτημα της βραδιάς: θα χρειαζόμαστε ναυτικούς σε είκοσι χρόνια; Κύριε Μαυρίδη;",
+     "id": "Selamat malam. Pertanyaan malam ini: apakah dua puluh tahun lagi kita masih butuh pelaut? Profesor Mavridis?",
+     "literal": "selamat-malam kepada-anda. (sandang) pertanyaan (sandang) malam-milik: akan kita-membutuhkan pelaut-pelaut dalam dua-puluh tahun? tuan Mavridis?"
+    },
+    {
+     "speaker": "Μαυρίδης:",
+     "text": "Κατά τη γνώμη μου, όλο και λιγότερους. Τα αυτόνομα πλοία δεν είναι πια επιστημονική φαντασία.",
+     "id": "Menurut saya, makin lama makin sedikit. Kapal otonom bukan lagi fiksi ilmiah.",
+     "literal": "menurut (sandang) pendapat saya, semua dan lebih-sedikit. (sandang) otonom kapal-kapal tidak adalah lagi ilmiah fantasi."
+    },
+    {
+     "speaker": "Συντονίστρια:",
+     "text": "Κυρία Άννα, συμφωνείτε;",
+     "id": "Bu Ana, Anda setuju?",
+     "literal": "nyonya Ana, anda-setuju?"
+    },
+    {
+     "speaker": "Άννα:",
+     "text": "Εν μέρει. Είναι γεγονός ότι η τεχνολογία προχωράει γρήγορα. Ωστόσο, η θάλασσα δεν είναι εργαστήριο.",
+     "id": "Sebagian. Memang benar teknologi maju dengan cepat. Namun laut bukan laboratorium.",
+     "literal": "dalam bagian. adalah fakta bahwa (sandang) teknologi maju cepat. namun, (sandang) laut tidak adalah laboratorium."
+    },
+    {
+     "speaker": "Μαυρίδης:",
+     "text": "Κι όμως, τα περισσότερα ατυχήματα οφείλονται σε ανθρώπινο λάθος.",
+     "id": "Tetapi sebagian besar kecelakaan disebabkan oleh kesalahan manusia.",
+     "literal": "namun-demikian, (sandang) lebih-banyak kecelakaan-kecelakaan disebabkan pada manusiawi kesalahan."
+    },
+    {
+     "speaker": "Άννα:",
+     "text": "Αυτό ισχύει, δεν το αμφισβητώ. Το ερώτημα όμως είναι ποιος θα διορθώνει τα λάθη της μηχανής.",
+     "id": "Itu benar, saya tidak membantahnya. Tetapi pertanyaannya: siapa yang akan membetulkan kesalahan mesin?",
+     "literal": "ini berlaku, tidak itu saya-membantah. (sandang) pertanyaan tetapi adalah siapa akan membetulkan (sandang) kesalahan-kesalahan (sandang) mesin-milik."
+    },
+    {
+     "speaker": "Συντονίστρια:",
+     "text": "Μπορείτε να το τεκμηριώσετε;",
+     "id": "Bisa Anda dukung dengan bukti?",
+     "literal": "anda-bisa supaya itu anda-membuktikan?"
+    },
+    {
+     "speaker": "Άννα:",
+     "text": "Βεβαίως. Πρώτον, κανένα αυτόνομο σύστημα δεν έχει δοκιμαστεί σε τυφώνα. Δεύτερον, ποιος επισκευάζει εν πλω;",
+     "id": "Tentu. Pertama, belum ada satu pun sistem otonom yang pernah diuji dalam topan. Kedua, siapa yang memperbaiki kerusakan di tengah pelayaran?",
+     "literal": "tentu. pertama, tak-satu-pun otonom sistem tidak ia-punya diuji dalam topan. kedua, siapa memperbaiki dalam pelayaran?"
+    },
+    {
+     "speaker": "Μαυρίδης:",
+     "text": "Επιτρέψτε μου να διαφωνήσω. Οι επισκευές μπορούν να γίνονται από απόσταση.",
+     "id": "Izinkan saya tidak sependapat. Perbaikan bisa dilakukan dari jarak jauh.",
+     "literal": "izinkan-anda kepada-saya supaya saya-tidak-setuju. (sandang) perbaikan-perbaikan bisa supaya dilakukan dari jarak."
+    },
+    {
+     "speaker": "Άννα:",
+     "text": "Κι αν κοπεί η δορυφορική σύνδεση; Εκεί ακριβώς χρειάζεται ο άνθρωπος.",
+     "id": "Lalu kalau sambungan satelitnya putus? Justru di situlah manusia dibutuhkan.",
+     "literal": "dan jika terputus (sandang) satelit sambungan? di-situ tepat dibutuhkan (sandang) manusia."
+    },
+    {
+     "speaker": "Συντονίστρια:",
+     "text": "Καλό επιχείρημα. Κύριε Μαυρίδη, σύντομα, γιατί ο χρόνος μας τελειώνει.",
+     "id": "Argumen yang bagus. Profesor Mavridis, singkat saja, karena waktu kita hampir habis.",
+     "literal": "bagus argumen. tuan Mavridis, singkat, karena (sandang) waktu kita habis."
+    },
+    {
+     "speaker": "Μαυρίδης:",
+     "text": "Θα πω μόνο ότι τα ίδια λέγαμε κάποτε και για τον αυτόματο πιλότο.",
+     "id": "Saya hanya akan bilang bahwa dulu kita juga mengatakan hal yang sama tentang pilot otomatis.",
+     "literal": "akan saya-berkata hanya bahwa (sandang) sama-sama kita-dulu-berkata dulu juga tentang (sandang) otomatis pilot."
+    },
+    {
+     "speaker": "Άννα:",
+     "text": "Κι όμως, κύριε καθηγητά, στα αεροπλάνα κάθονται ακόμα δύο πιλότοι.",
+     "id": "Namun, Pak Profesor, di pesawat masih tetap duduk dua pilot.",
+     "literal": "namun-demikian, tuan profesor, di-(sandang) pesawat-pesawat duduk masih dua pilot."
+    },
+    {
+     "speaker": "Συντονίστρια:",
+     "text": "Με αυτή την ατάκα κλείνουμε. Σας ευχαριστούμε και τους δύο!",
+     "id": "Dengan celetukan itu kita tutup. Terima kasih untuk Anda berdua!",
+     "literal": "dengan ini (sandang) celetukan kita-menutup. anda kami-berterima-kasih dan (sandang) dua!"
+    }
+   ],
+   "notes": [
+    "**Κατά τη γνώμη μου** — pembuka pendapat yang paling netral. Variasinya: *κατά την άποψή μου*, *κατ' εμέ* (lebih resmi), *πιστεύω ότι*, *θεωρώ ότι*. Dalam debat, hindari *νομίζω* berulang-ulang: kedengarannya ragu.",
+    "**Εν μέρει. Είναι γεγονός ότι… Ωστόσο…** — pola tiga langkah Ana: setuju sebagian, akui fakta lawan, lalu balikkan. *Ωστόσο* (namun) lebih kuat dan lebih resmi daripada *αλλά*.",
+    "**οφείλονται σε** — \"disebabkan oleh\", kata kerja kunci dalam argumen sebab-akibat. *Οφείλω* sendiri berarti \"berutang\": kecelakaan \"berutang\" pada kesalahan manusia.",
+    "**Αυτό ισχύει, δεν το αμφισβητώ** — \"itu benar, saya tidak membantahnya\": pengakuan yang memberi kesan adil sebelum serangan balik. *Ισχύει* = berlaku, benar adanya.",
+    "**Πρώτον… Δεύτερον…** — kata keterangan urutan berakhiran kuno *-ον*: *πρώτον, δεύτερον, τρίτον*, dan penutupnya *τέλος* (akhirnya). *Εν πλω* (sedang berlayar) adalah ungkapan katharevousa dari unit 3 yang masih dipakai para pelaut.",
+    "**κύριε καθηγητά** — vokatif resmi dari *ο καθηγητής* dengan akhiran lama *-ά*. Kepada dosen perempuan: *κυρία καθηγήτρια*. *Η ατάκα* = celetukan jitu, kalimat pamungkas."
+   ],
+   "grammars": [
+    {
+     "title": "Kerangka argumen dalam debat",
+     "body": [
+      "Argumen yang meyakinkan dalam bahasa Yunani hampir selalu diberi rambu. Ungkapan di bawah memberi tahu pendengar apa fungsi kalimatmu berikutnya."
+     ],
+     "table": {
+      "head": [
+       "Fungsi",
+       "Ungkapan",
+       "Contoh"
+      ],
+      "rows": [
+       [
+        "menyatakan posisi",
+        "*Κατά τη γνώμη μου / Θεωρώ ότι*",
+        "*Θεωρώ ότι ο ναυτικός θα παραμείνει απαραίτητος.*"
+       ],
+       [
+        "mengakui",
+        "*Είναι γεγονός ότι / Δεν αμφισβητώ ότι*",
+        "*Δεν αμφισβητώ ότι η τεχνολογία προχωράει.*"
+       ],
+       [
+        "membalik",
+        "*Ωστόσο / Κι όμως / Παρ' όλα αυτά*",
+        "*Ωστόσο, η θάλασσα δεν είναι εργαστήριο.*"
+       ],
+       [
+        "mengurutkan",
+        "*Πρώτον… Δεύτερον… Τέλος…*",
+        "*Πρώτον, το κόστος. Δεύτερον, η ασφάλεια.*"
+       ],
+       [
+        "menambah",
+        "*Επιπλέον / Εξάλλου*",
+        "*Επιπλέον, η συντήρηση απαιτεί ανθρώπους.*"
+       ],
+       [
+        "menyimpulkan",
+        "*Συνεπώς / Επομένως*",
+        "*Συνεπώς, ο άνθρωπος παραμένει απαραίτητος.*"
+       ],
+       [
+        "tidak setuju dengan sopan",
+        "*Επιτρέψτε μου να διαφωνήσω.*",
+        "*Επιτρέψτε μου να διαφωνήσω σε ένα σημείο.*"
+       ],
+       [
+        "meminta bukti",
+        "*Μπορείτε να το τεκμηριώσετε;*",
+        "*Σε ποια στοιχεία στηρίζεστε;*"
+       ]
+      ]
+     },
+     "after": [
+      "*Διαφωνώ* (tidak setuju) dan *συμφωνώ* (setuju) sama-sama memakai *με* untuk orang dan *σε* untuk hal: *Διαφωνώ μαζί σας σε αυτό το σημείο.*"
+     ]
+    }
+   ]
+  },
+  {
+   "title": "ΔΙΑΛΟΓΟΣ 2 — Pagi sesudah debat",
+   "intro": "Kamis pagi, 28 September 2028, pantry kantor. Dhimitra menonton siaran langsung debat semalam dan, seperti biasa, punya komentar sendiri. Ana sedang menyiapkan artikel untuk majalah pelayaran.",
+   "lines": [
+    {
+     "speaker": "Δήμητρα:",
+     "text": "Σε είδα χθες στη ζωντανή μετάδοση. Τον έβαλες στη θέση του τον καθηγητή!",
+     "id": "Aku nonton kamu kemarin di siaran langsung. Profesor itu kamu buat mati kutu!",
+     "literal": "kamu aku-melihat kemarin di-(sandang) langsung siaran. dia kamu-menaruh di-(sandang) tempat-nya (sandang) profesor!"
+    },
+    {
+     "speaker": "Άννα:",
+     "text": "Όχι δα. Κι ο Μαυρίδης είχε ισχυρά επιχειρήματα.",
+     "id": "Ah, nggak juga. Mavridis juga punya argumen yang kuat.",
+     "literal": "tidak lah. juga (sandang) Mavridis punya kuat argumen-argumen."
+    },
+    {
+     "speaker": "Δήμητρα:",
+     "text": "Ναι μεν είχε επιχειρήματα, αλλά εσύ είχες παραδείγματα από τη ζωή.",
+     "id": "Memang dia punya argumen, tapi kamu punya contoh dari kehidupan nyata.",
+     "literal": "ya memang dia-punya argumen-argumen, tetapi kamu kamu-punya contoh-contoh dari (sandang) kehidupan."
+    },
+    {
+     "speaker": "Άννα:",
+     "text": "Στο άρθρο μου θέλω αφενός να αναγνωρίσω την τεχνολογία, αφετέρου να υπερασπιστώ τους ναυτικούς.",
+     "id": "Di artikelku, di satu sisi aku ingin mengakui teknologi, di sisi lain membela para pelaut.",
+     "literal": "di-(sandang) artikel-ku aku-ingin di-satu-sisi supaya aku-mengakui (sandang) teknologi, di-sisi-lain supaya aku-membela (sandang) pelaut-pelaut."
+    },
+    {
+     "speaker": "Δήμητρα:",
+     "text": "Πρόσεξε μόνο να μη γίνει «ναι μεν, αλλά» κάθε παράγραφος. Κουράζει.",
+     "id": "Cuma hati-hati, jangan sampai tiap paragraf jadi \"memang, tapi\". Bikin capek.",
+     "literal": "hati-hatilah hanya supaya tidak menjadi \"ya memang, tetapi\" setiap paragraf. melelahkan."
+    },
+    {
+     "speaker": "Άννα:",
+     "text": "Σωστό. Και πώς να κλείσω; Με ερώτηση ή με συμπέρασμα;",
+     "id": "Betul. Lalu bagaimana aku menutupnya? Dengan pertanyaan atau dengan kesimpulan?",
+     "literal": "benar. dan bagaimana supaya aku-menutup? dengan pertanyaan atau dengan kesimpulan?"
+    },
+    {
+     "speaker": "Δήμητρα:",
+     "text": "Με συμπέρασμα. Κάτι σαν: «Όσο έξυπνο κι αν είναι ένα πλοίο, τη θάλασσα τη διαβάζει ο άνθρωπος.»",
+     "id": "Dengan kesimpulan. Semacam: \"Secerdas apa pun sebuah kapal, yang membaca laut tetaplah manusia.\"",
+     "literal": "dengan kesimpulan. sesuatu seperti: \"sebanyak cerdas walaupun adalah sebuah kapal, (sandang) laut ia membaca (sandang) manusia.\""
+    },
+    {
+     "speaker": "Άννα:",
+     "text": "Ωραίο! Μήπως να το γράψεις εσύ;",
+     "id": "Bagus! Gimana kalau kamu saja yang menulisnya?",
+     "literal": "indah! jangan-jangan supaya itu kamu-menulis kamu?"
+    },
+    {
+     "speaker": "Δήμητρα:",
+     "text": "Εγώ; Μα εσύ είσαι η ειδικός! Εγώ απλώς ξέρω να μαλώνω.",
+     "id": "Aku? Kan kamu ahlinya! Aku cuma jago bertengkar.",
+     "literal": "aku? tetapi kamu adalah (sandang) ahli! aku sekadar tahu supaya bertengkar."
+    },
+    {
+     "speaker": "Άννα:",
+     "text": "Ε, αυτό κι αν είναι ταλέντο. Θα ήθελα να το μάθω κι εγώ.",
+     "id": "Nah, itu baru bakat. Aku juga ingin belajar itu.",
+     "literal": "eh, ini dan jika adalah bakat. akan aku-ingin supaya itu aku-mempelajari juga aku."
+    }
+   ],
+   "notes": [
+    "⚠️ **Ναι μεν… αλλά dan αφενός… αφετέρου harus selalu berpasangan.** Bahasa Indonesia santai sering berhenti di \"di satu sisi…\" tanpa pernah sampai ke \"di sisi lain\"; dalam bahasa Yunani itu kesalahan yang langsung terdengar. *Μεν* tidak pernah berdiri sendiri, tidak pernah membuka kalimat, dan selalu diletakkan sesudah kata pertama: *Ναι μεν…, αλλά…*, *Η τεχνολογία μεν…, ο άνθρωπος όμως…*. *Αφενός* wajib dijawab *αφετέρου*.",
+    "**Τον έβαλες στη θέση του τον καθηγητή** — ungkapan \"menaruh orang di tempatnya\" = membuatnya tak berkutik. Perhatikan *τον… τον καθηγητή*: objek yang disebut di belakang juga didahului kata ganti, memberi nada emosional.",
+    "**Όχι δα** — penyangkalan rendah hati, \"ah, nggak juga\". *Δα* adalah partikel penegas lisan: *Έλα δα!* (ayolah!).",
+    "**Όσο έξυπνο κι αν είναι** — *όσο* + kata sifat + *κι αν* = \"se-… apa pun\": *όσο δύσκολο κι αν είναι* (sesulit apa pun), *όσο κι αν προσπαθήσω* (sekeras apa pun aku mencoba).",
+    "**τη θάλασσα τη διαβάζει ο άνθρωπος** — objek dipindah ke depan dan diulang dengan kata ganti (*τη*), subjek diletakkan paling akhir. Dalam bahasa Yunani, posisi terakhir adalah posisi informasi baru dan terpenting: yang ditekankan adalah *ο άνθρωπος*.",
+    "**η ειδικός** — beberapa kata benda berakhiran *-ός* dipakai untuk kedua jenis kelamin, hanya sandangnya yang berubah: *ο/η ειδικός* (ahli), *ο/η γιατρός*, *ο/η δικηγόρος*. **Αυτό κι αν είναι…** = \"itu baru namanya…\"."
+   ],
+   "grammars": [
+    {
+     "title": "Penekanan: objek di depan, kata ganti mengulang",
+     "body": [
+      "Susunan kata Yunani longgar, dan kelonggaran itu dipakai untuk menekankan. Kalau objek tertentu (bersandang) dipindah ke depan, kata ganti objek (*τον, τη, το, τους, τις, τα*) WAJIB mengulangnya di depan kata kerja."
+     ],
+     "table": {
+      "head": [
+       "Netral",
+       "Dengan penekanan",
+       "Yang ditonjolkan"
+      ],
+      "rows": [
+       [
+        "*Ο άνθρωπος διαβάζει τη θάλασσα.*",
+        "*Τη θάλασσα τη διαβάζει ο άνθρωπος.*",
+        "manusia, bukan mesin"
+       ],
+       [
+        "*Εγώ έγραψα το άρθρο.*",
+        "*Το άρθρο το έγραψα εγώ.*",
+        "saya, bukan orang lain"
+       ],
+       [
+        "*Είδα τον Μαυρίδη χθες.*",
+        "*Τον Μαυρίδη τον είδα χθες.*",
+        "Mavridis sebagai topik"
+       ],
+       [
+        "*Δεν ξέρω την απάντηση.*",
+        "*Την απάντηση δεν την ξέρω.*",
+        "kontras: yang lain saya tahu"
+       ],
+       [
+        "*Αυτό είναι ταλέντο.*",
+        "*Αυτό κι αν είναι ταλέντο!*",
+        "intensitas"
+       ],
+       [
+        "*Να το γράψεις.*",
+        "*Εσύ να το γράψεις, όχι εγώ.*",
+        "kontras subjek"
+       ]
+      ]
+     },
+     "after": [
+      "Tanpa kata ganti pengulang, *Τη θάλασσα διαβάζει ο άνθρωπος* terdengar seperti judul puisi atau kalimat terjemahan yang kaku. Dalam bicara dan tulisan sehari-hari, pengulang itu hampir wajib."
+     ]
+    }
+   ]
+  }
+ ],
+ "sections": [
+  {
+   "title": "Pasangan penghubung argumen",
+   "blocks": [
+    {
+     "type": "tabel",
+     "head": [
+      "Pasangan",
+      "Arti",
+      "Contoh"
+     ],
+     "rows": [
+      [
+       "*ναι μεν… αλλά*",
+       "memang…, tetapi",
+       "*Ναι μεν είναι ακριβό, αλλά αξίζει.*"
+      ],
+      [
+       "*αφενός… αφετέρου*",
+       "di satu sisi…, di sisi lain",
+       "*Αφενός μειώνει το κόστος, αφετέρου αυξάνει τον κίνδυνο.*"
+      ],
+      [
+       "*όχι μόνο… αλλά και*",
+       "tidak hanya…, tetapi juga",
+       "*Όχι μόνο ναυτικούς, αλλά και μηχανικούς.*"
+      ],
+      [
+       "*είτε… είτε*",
+       "entah…, entah",
+       "*Είτε με άνθρωπο είτε με μηχανή, το πλοίο πρέπει να φτάσει.*"
+      ],
+      [
+       "*ούτε… ούτε*",
+       "baik… maupun… tidak",
+       "*Δεν είναι ούτε φθηνό ούτε ασφαλές.*"
+      ],
+      [
+       "*… μεν, … δε*",
+       "(tulis) …, sedangkan …",
+       "*Η τεχνολογία μεν προχωράει, η νομοθεσία δε καθυστερεί.*"
+      ],
+      [
+       "*όσο… κι αν*",
+       "se-… apa pun",
+       "*Όσο κι αν προσπαθήσουμε, θα υπάρχουν λάθη.*"
+      ]
+     ]
+    },
+    {
+     "type": "p",
+     "text": "Pasangan *μεν… δε* adalah warisan bahasa kuno dan hidup dalam tulisan resmi dan esai. Kedua partikelnya menempel di belakang kata pertama tiap bagian kalimat, bukan di depannya. Dalam percakapan, yang terdengar hampir selalu *ναι μεν… αλλά* atau *…, ενώ…*."
+    }
+   ]
+  },
+  {
+   "title": "Menyela, bertahan, dan menanggapi",
+   "blocks": [
+    {
+     "type": "tabel",
+     "head": [
+      "Situasi",
+      "Ungkapan",
+      "Arti"
+     ],
+     "rows": [
+      [
+       "meminta giliran",
+       "*Θα ήθελα να προσθέσω κάτι.*",
+       "Saya ingin menambahkan sesuatu."
+      ],
+      [
+       "menyela dengan sopan",
+       "*Συγγνώμη που σας διακόπτω, αλλά…*",
+       "Maaf menyela, tetapi…"
+      ],
+      [
+       "mempertahankan giliran",
+       "*Αφήστε με να τελειώσω, παρακαλώ.*",
+       "Biarkan saya menyelesaikan kalimat saya."
+      ],
+      [
+       "memastikan maksud",
+       "*Αν κατάλαβα καλά, λέτε ότι…*",
+       "Kalau saya tidak salah tangkap, Anda mengatakan bahwa…"
+      ],
+      [
+       "setuju sebagian",
+       "*Συμφωνώ μέχρι ενός σημείου.*",
+       "Saya setuju sampai batas tertentu."
+      ],
+      [
+       "menolak klaim",
+       "*Αυτό δεν ευσταθεί.*",
+       "Itu tidak berdasar."
+      ],
+      [
+       "kembali ke pokok",
+       "*Ας επιστρέψουμε στο θέμα μας.*",
+       "Mari kembali ke pokok bahasan."
+      ],
+      [
+       "meringkas",
+       "*Με λίγα λόγια…*",
+       "Singkatnya…"
+      ]
+     ]
+    },
+    {
+     "type": "kotak",
+     "title": "Debat gaya Yunani",
+     "items": [
+      "Menyela itu biasa, bahkan di televisi (layar dibagi menjadi *παράθυρα*, \"jendela-jendela\", dan semua bicara bersamaan). Nada tinggi belum tentu marah; sering hanya tanda terlibat.",
+      "Tetapi di panel akademik atau rapat resmi, aturannya mirip di Indonesia: tunggu giliran, atau minta dengan *Θα μου επιτρέψετε…;*.",
+      "Mengakui poin lawan (*έχετε δίκιο σε αυτό*) tidak dianggap kalah, justru menaikkan kredibilitasmu.",
+      "Humor tajam (*ατάκα*) di akhir debat sangat dihargai, asal tidak menyerang pribadi."
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Kerangka teks argumentatif",
+   "blocks": [
+    {
+     "type": "p",
+     "text": "Setiap siswa SMA Yunani berlatih menulis *επιχειρηματολογικό κείμενο* (teks argumentatif) untuk ujian masuk perguruan tinggi, Panhellenic. Kerangkanya hampir sama dengan debat lisan Ana, dan artikel majalahnya akan mengikuti langkah-langkah ini."
+    },
+    {
+     "type": "tabel",
+     "head": [
+      "Bagian",
+      "Isi",
+      "Ungkapan khas"
+     ],
+     "rows": [
+      [
+       "*Πρόλογος*",
+       "pengantar dan pokok persoalan",
+       "*Τα τελευταία χρόνια συζητείται έντονα…*"
+      ],
+      [
+       "*Θέση*",
+       "posisi penulis",
+       "*Κατά τη γνώμη μου…*"
+      ],
+      [
+       "*Επιχειρήματα*",
+       "alasan dan bukti",
+       "*Πρώτον… Επιπλέον… Χαρακτηριστικό παράδειγμα είναι…*"
+      ],
+      [
+       "*Αντίλογος*",
+       "pandangan pihak lain",
+       "*Υποστηρίζεται βέβαια ότι…*"
+      ],
+      [
+       "*Αντίκρουση*",
+       "bantahan",
+       "*Ωστόσο, το επιχείρημα αυτό δεν ευσταθεί, διότι…*"
+      ],
+      [
+       "*Επίλογος*",
+       "kesimpulan",
+       "*Συνεπώς… / Εν κατακλείδι…*"
+      ]
+     ]
+    }
+   ]
+  }
+ ],
+ "vocab": [
+  {
+   "el": "η γνώμη",
+   "baca": "i GHNO-mi",
+   "id": "pendapat (*κατά τη γνώμη μου* = menurut saya)"
+  },
+  {
+   "el": "η άποψη",
+   "baca": "i A-po-psi",
+   "id": "pandangan, sudut pandang"
+  },
+  {
+   "el": "το επιχείρημα",
+   "baca": "to é-pi-KHI-ri-ma",
+   "id": "argumen (*jamak τα επιχειρήματα*)"
+  },
+  {
+   "el": "το ερώτημα",
+   "baca": "to é-RO-ti-ma",
+   "id": "pertanyaan (besar), persoalan"
+  },
+  {
+   "el": "ο ναυτικός",
+   "baca": "o naf-ti-KOS",
+   "id": "pelaut (juga kata sifat: bahari)"
+  },
+  {
+   "el": "αυτόνομος, -η, -ο",
+   "baca": "af-TO-no-mos, -i, -o",
+   "id": "otonom, mandiri"
+  },
+  {
+   "el": "εν μέρει",
+   "baca": "én MÉ-ri",
+   "id": "sebagian"
+  },
+  {
+   "el": "το γεγονός",
+   "baca": "to yé-gho-NOS",
+   "id": "fakta; peristiwa (*είναι γεγονός ότι* = memang benar bahwa)"
+  },
+  {
+   "el": "ωστόσο",
+   "baca": "o-STO-so",
+   "id": "namun, meskipun demikian"
+  },
+  {
+   "el": "το ατύχημα",
+   "baca": "to a-TI-khi-ma",
+   "id": "kecelakaan"
+  },
+  {
+   "el": "οφείλομαι σε",
+   "baca": "o-FI-lo-mé sé",
+   "id": "disebabkan oleh (*οφείλω* = berutang)"
+  },
+  {
+   "el": "ισχύω",
+   "baca": "i-SKHI-o",
+   "id": "berlaku, benar adanya"
+  },
+  {
+   "el": "αμφισβητώ",
+   "baca": "am-fi-svi-TO",
+   "id": "membantah, meragukan"
+  },
+  {
+   "el": "τεκμηριώνω",
+   "baca": "ték-mi-RIO-no",
+   "id": "mendukung dengan bukti, mendokumentasikan"
+  },
+  {
+   "el": "διαφωνώ",
+   "baca": "dhia-fo-NO",
+   "id": "tidak setuju (*με* orang, *σε* hal)"
+  },
+  {
+   "el": "η επισκευή",
+   "baca": "i é-pi-ské-VI",
+   "id": "perbaikan, reparasi"
+  },
+  {
+   "el": "η σύνδεση",
+   "baca": "i SIN-dhé-si",
+   "id": "sambungan, koneksi"
+  },
+  {
+   "el": "δορυφορικός, -ή, -ό",
+   "baca": "dho-ri-fo-ri-KOS, -i, -o",
+   "id": "satelit (kata sifat)"
+  },
+  {
+   "el": "ο συντονιστής / η συντονίστρια",
+   "baca": "o sin-do-ni-STIS / i sin-do-NI-stri-a",
+   "id": "moderator, koordinator"
+  },
+  {
+   "el": "η ατάκα",
+   "baca": "i a-TA-ka",
+   "id": "celetukan jitu, kalimat pamungkas"
+  },
+  {
+   "el": "αφενός… αφετέρου",
+   "baca": "a-fé-NOS a-fé-TÉ-ru",
+   "id": "di satu sisi… di sisi lain"
+  },
+  {
+   "el": "ναι μεν… αλλά",
+   "baca": "né mén a-LA",
+   "id": "memang…, tetapi"
+  },
+  {
+   "el": "υπερασπίζομαι",
+   "baca": "i-pé-ra-SPI-zo-mé",
+   "id": "membela (*αόρ. υπερασπίστηκα, να υπερασπιστώ*)"
+  },
+  {
+   "el": "το συμπέρασμα",
+   "baca": "to sim-BÉ-ra-sma",
+   "id": "kesimpulan"
+  },
+  {
+   "el": "μαλώνω",
+   "baca": "ma-LO-no",
+   "id": "bertengkar; memarahi"
+  }
+ ],
+ "exercises": [
+  {
+   "prompt": "Terjemahkan ke bahasa Yunani.",
+   "items": [
+    "Menurut saya, kita masih membutuhkan pelaut.",
+    "Sebagian besar kecelakaan disebabkan oleh kesalahan manusia.",
+    "Izinkan saya tidak sependapat.",
+    "Memang dia punya argumen, tetapi kamu punya contoh dari kehidupan nyata. (ναι μεν)",
+    "Bisakah Anda mendukungnya dengan bukti?",
+    "Lautlah yang dibaca manusia. (objek di depan)"
+   ]
+  },
+  {
+   "prompt": "Isi dengan kata yang tepat. Petunjuk ada di dalam kurung.",
+   "items": [
+    "Ναι ____ έχετε δίκιο, αλλά το κόστος είναι μεγάλο. (partikel pasangan)",
+    "Αφενός η τεχνολογία βοηθάει, ____ δημιουργεί νέους κινδύνους. (di sisi lain)",
+    "Τα ατυχήματα ____ σε ανθρώπινο λάθος. (οφείλομαι, 3 jamak)",
+    "Επιτρέψτε μου να ____. (διαφωνώ, υποτακτική)",
+    "Το άρθρο ____ έγραψα εγώ. (kata ganti pengulang)",
+    "Όσο έξυπνο ____ είναι ένα πλοίο, χρειάζεται τον άνθρωπο. (konsesif, dua kata)",
+    "Συμφωνώ μέχρι ____ σημείου. (ένα, genitif)"
+   ]
+  },
+  {
+   "prompt": "Pindahkan objek ke depan untuk penekanan. Jangan lupa kata ganti pengulang.",
+   "items": [
+    "Ο άνθρωπος διαβάζει τη θάλασσα.",
+    "Εγώ έγραψα το άρθρο.",
+    "Δεν ξέρω την απάντηση.",
+    "Είδαμε τον καθηγητή στο πανεπιστήμιο.",
+    "Η Δήμητρα θα γράψει τα συμπεράσματα.",
+    "Όλοι ξέρουν αυτό το πρόβλημα."
+   ]
+  },
+  {
+   "prompt": "Susun jadi kalimat yang benar.",
+   "items": [
+    "γνώμη / κατά / μου / τη",
+    "να / επιτρέψτε / διαφωνήσω / μου",
+    "αμφισβητώ / το / δεν / αυτό",
+    "σημείου / μέχρι / συμφωνώ / ενός",
+    "είναι / κι αν / ταλέντο / αυτό"
+   ]
+  }
+ ],
+ "answers": [
+  "Κατά τη γνώμη μου, χρειαζόμαστε ακόμα ναυτικούς. — Τα περισσότερα ατυχήματα οφείλονται σε ανθρώπινο λάθος. — Επιτρέψτε μου να διαφωνήσω. — Ναι μεν έχει επιχειρήματα, αλλά εσύ έχεις παραδείγματα από τη ζωή. — Μπορείτε να το τεκμηριώσετε; — Τη θάλασσα τη διαβάζει ο άνθρωπος.",
+  "μεν — αφετέρου — οφείλονται — διαφωνήσω — το — κι αν — ενός",
+  "Τη θάλασσα τη διαβάζει ο άνθρωπος. — Το άρθρο το έγραψα εγώ. — Την απάντηση δεν την ξέρω. — Τον καθηγητή τον είδαμε στο πανεπιστήμιο. — Τα συμπεράσματα θα τα γράψει η Δήμητρα. — Αυτό το πρόβλημα το ξέρουν όλοι.",
+  "Κατά τη γνώμη μου. — Επιτρέψτε μου να διαφωνήσω. — Αυτό δεν το αμφισβητώ. — Συμφωνώ μέχρι ενός σημείου. — Αυτό κι αν είναι ταλέντο."
+ ]
+}

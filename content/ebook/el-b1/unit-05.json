@@ -1,0 +1,624 @@
+{
+ "title": "Dibuat di mana? — pasif kini",
+ "title_target": "Τα πλοία επισκευάζονται εδώ",
+ "goal": "Menjelaskan apa yang dikerjakan di sebuah tempat dan aturan apa yang berlaku, tanpa harus menyebut siapa pelakunya: *Εδώ επισκευάζονται πλοία*, *Χρειάζονται διαβατήρια*, *Απαγορεύεται το κάπνισμα*.",
+ "bekal": [
+  "membentuk pasif kini dari kata kerja -ω dan -ώ: *βάφεται, ελέγχονται, αφαιρούνται, αγαπιέται*",
+  "menyebut pelaku dengan *από* + akusatif: *αποφασίζονται από την εταιρεία*",
+  "membedakan pasif sejati dari kata kerja -μαι yang aktif artinya (*έρχονται, εξαρτάται*) dan memakai *γίνεται, χρειάζεται, απαγορεύεται* untuk prosedur"
+ ],
+ "dialogs": [
+  {
+   "title": "ΔΙΑΛΟΓΟΣ 1 — Di galangan kapal Perama",
+   "intro": "Kamis, 14 Oktober 2027. Ana dan Kostas membawa rombongan kadet Indonesia ke zona galangan di Perama, di seberang selat Salamina. Insinyur galangan, Θανάσης, menjadi pemandu. Hitung berapa kata kerja -νται yang berarti \"di-\" — dan satu yang tidak.",
+   "lines": [
+    {
+     "speaker": "Θανάσης:",
+     "text": "[Καλώς|Ka-LOS] [ήρθατε|IR-tha-té] [στο|sto] [Πέραμα|PÉ-ra-ma]! [Εδώ|É-DHO] [επισκευάζονται|é-pi-ské-VA-zon-dé] [πλοία|PLI-a] [από|a-PO] [όλο|O-lo] [τον|ton] [κόσμο|KO-smo].",
+     "id": "Selamat datang di Perama! Di sini kapal-kapal dari seluruh dunia diperbaiki.",
+     "literal": "selamat kalian-datang ke-(sandang) Perama! di-sini diperbaiki-mereka kapal-kapal dari seluruh (sandang) dunia."
+    },
+    {
+     "speaker": "Άννα:",
+     "text": "[Ευχαριστούμε|Éf-kha-ri-STU-mé] [πολύ|po-LI]. [Οι|I] [δόκιμοι|DHO-ki-mi] [ρωτούν|ro-TUN] [ήδη|I-dhi]: [πόσα|PO-sa] [πλοία|PLI-a] [επισκευάζονται|é-pi-ské-VA-zon-dé] [κάθε|KA-thé] [χρόνο|KHRO-no];",
+     "id": "Terima kasih banyak. Para kadet sudah bertanya: berapa kapal yang diperbaiki tiap tahun?",
+     "literal": "kami-berterima-kasih banyak. (sandang) kadet-kadet bertanya-mereka sudah: berapa kapal diperbaiki-mereka setiap tahun?"
+    },
+    {
+     "speaker": "Θανάσης:",
+     "text": "[Περίπου|Pé-RI-pu] [τριακόσια|tri-a-KO-sia]. [Τα|Ta] [μεγάλα|mé-GHA-la] [μπαίνουν|BÉ-nun] [στη|sti] [δεξαμενή|dhé-ksa-mé-NI], [και|ké] [εκεί|é-KI] [καθαρίζεται|ka-tha-RI-zé-té] [και|ké] [βάφεται|VA-fé-té] [η|i] [γάστρα|GHA-stra].",
+     "id": "Sekitar tiga ratus. Yang besar masuk dok apung, dan di sana lambungnya dibersihkan dan dicat.",
+     "literal": "kira-kira tiga-ratus. (sandang) besar-besar masuk-mereka ke-(sandang) dok, dan di-sana dibersihkan-ia dan dicat-ia (sandang) lambung."
+    },
+    {
+     "speaker": "Κώστας:",
+     "text": "[Και|Ké] [πόσο|PO-so] [κρατάει|kra-TA-i] [μια|mia] [τέτοια|TÉ-ti-a] [δουλειά|dhu-LIA];",
+     "id": "Pekerjaan seperti itu makan waktu berapa lama?",
+     "literal": "dan berapa-lama bertahan-ia sebuah semacam-itu pekerjaan?"
+    },
+    {
+     "speaker": "Θανάσης:",
+     "text": "[Εξαρτάται|É-ksar-TA-té]. [Ένα|É-na] [φορτηγό|for-ti-GHO] [πλοίο|PLI-o] [συνήθως|si-NI-thos] [ελέγχεται|é-LÉN-khé-té] [και|ké] [βάφεται|VA-fé-té] [σε|sé] [δύο|DHI-o] [εβδομάδες|év-dho-MA-dhés].",
+     "id": "Tergantung. Kapal kargo biasanya diperiksa dan dicat dalam dua minggu.",
+     "literal": "tergantung-ia. sebuah barang-angkut kapal biasanya diperiksa-ia dan dicat-ia dalam dua minggu."
+    },
+    {
+     "speaker": "Άννα:",
+     "text": "[Και|Ké] [ποιος|pios] [αποφασίζει|a-po-fa-SI-zi] [τι|ti] [θα|tha] [γίνει|YI-ni]; [Οι|I] [εργασίες|ér-gha-SI-és] [αποφασίζονται|a-po-fa-SI-zon-dé] [από|a-PO] [τον|ton] [καπετάνιο|ka-pé-TA-nio];",
+     "id": "Lalu siapa yang menentukan apa yang dikerjakan? Pekerjaannya diputuskan oleh kapten?",
+     "literal": "dan siapa memutuskan-ia apa akan terjadi? (sandang) pekerjaan-pekerjaan diputuskan-mereka oleh (sandang) kapten?"
+    },
+    {
+     "speaker": "Θανάσης:",
+     "text": "[Όχι|O-khi]. [Αποφασίζονται|A-po-fa-SI-zon-dé] [από|a-PO] [την|tin] [εταιρεία|é-té-RI-a] [και|ké] [τον|ton] [νηογνώμονα|ni-o-GHNO-mo-na], [μετά|mé-TA] [από|a-PO] [επιθεώρηση|é-pi-thé-O-ri-si].",
+     "id": "Bukan. Diputuskan oleh perusahaan dan biro klasifikasi, sesudah inspeksi.",
+     "literal": "tidak. diputuskan-mereka oleh (sandang) perusahaan dan (sandang) biro-klasifikasi, sesudah dari inspeksi."
+    },
+    {
+     "speaker": "Κώστας:",
+     "text": "[Ο|O] [νηογνώμονας|ni-o-GHNO-mo-nas] [είναι|I-né] [σαν|san] [γιατρός|ya-TROS] [του|tu] [πλοίου|PLI-u]. [Χωρίς|Kho-RIS] [πιστοποιητικό|pi-sto-pi-i-ti-KO], [το|to] [πλοίο|PLI-o] [δεν|dhén] [ταξιδεύει|ta-ksi-DHÉ-vi].",
+     "id": "Biro klasifikasi itu seperti dokternya kapal. Tanpa sertifikat, kapal tidak boleh berlayar.",
+     "literal": "(sandang) biro-klasifikasi adalah seperti dokter (sandang)-milik kapal-milik. tanpa sertifikat, (sandang) kapal tidak berlayar-ia."
+    },
+    {
+     "speaker": "Άννα:",
+     "text": "[Κι|Ki] [οι|i] [έλικες|É-li-kés]; [Φτιάχνονται|FTIA-khnon-dé] [εδώ|é-DHO] [στο|sto] [Πέραμα|PÉ-ra-ma];",
+     "id": "Kalau baling-balingnya? Dibuat di sini, di Perama?",
+     "literal": "dan (sandang) baling-baling-jamak? dibuat-mereka di-sini di-(sandang) Perama?"
+    },
+    {
+     "speaker": "Θανάσης:",
+     "text": "[Επισκευάζονται|É-pi-ské-VA-zon-dé] [εδώ|é-DHO], [αλλά|a-LA] [δεν|dhén] [κατασκευάζονται|ka-ta-ské-VA-zon-dé]. [Οι|I] [καινούργιοι|ké-NUR-yi] [έρχονται|ÉR-khon-dé] [από|a-PO] [την|tin] [Κορέα|Ko-RÉ-a].",
+     "id": "Diperbaiki di sini, tapi tidak dibuat di sini. Yang baru datang dari Korea.",
+     "literal": "diperbaiki-mereka di-sini, tetapi tidak dibuat-mereka. (sandang) baru-baru datang-mereka dari (sandang) Korea."
+    },
+    {
+     "speaker": "Άννα:",
+     "text": "[Τι|Ti] [είναι|I-né] [εκείνος|é-KI-nos] [ο|o] [θόρυβος|THO-ri-vos];",
+     "id": "Suara berisik itu apa?",
+     "literal": "apa adalah itu (sandang) bising?"
+    },
+    {
+     "speaker": "Θανάσης:",
+     "text": "[Αφαιρούνται|A-fé-RUN-dé] [τα|ta] [όστρακα|O-stra-ka] [από|a-PO] [τη|ti] [γάστρα|GHA-stra], [με|mé] [νερό|né-RO] [υψηλής|i-psi-LIS] [πίεσης|PI-é-sis].",
+     "id": "Kerang-kerang sedang dibuang dari lambung kapal, pakai air bertekanan tinggi.",
+     "literal": "dibuang-mereka (sandang) kerang-kerang dari (sandang) lambung, dengan air tinggi-milik tekanan-milik."
+    },
+    {
+     "speaker": "Άννα:",
+     "text": "[Πολύ|Po-LI] [ενδιαφέρον|én-dhi-a-FÉ-ron]. [Μπορούν|Bo-RUN] [τα|ta] [παιδιά|pé-DHIA] [να|na] [βγάλουν|VGHA-lun] [φωτογραφίες|fo-to-ghra-FI-és];",
+     "id": "Menarik sekali. Anak-anak boleh ambil foto?",
+     "literal": "sangat menarik. bisa-mereka (sandang) anak-anak supaya mengeluarkan-mereka foto-foto?"
+    },
+    {
+     "speaker": "Θανάσης:",
+     "text": "[Φυσικά|Fi-si-KA]. [Αλλά|A-LA] [οι|i] [εργάτες|ér-GHA-tés] [δεν|dhén] [φωτογραφίζονται|fo-to-ghra-FI-zon-dé] [χωρίς|kho-RIS] [άδεια|A-dhi-a].",
+     "id": "Tentu. Tapi para pekerja tidak difoto tanpa izin.",
+     "literal": "tentu. tetapi (sandang) pekerja-pekerja tidak difoto-mereka tanpa izin."
+    }
+   ],
+   "notes": [
+    "⚠️ **Tidak semua kata kerja -μαι itu pasif.** *Επισκευάζονται* (diperbaiki), *κατασκευάζονται* (dibuat), *φτιάχνονται* (dibuat) memang pasif — ada pasangan aktifnya dan bisa ditambah \"oleh…\". Tapi *οι καινούργιοι **έρχονται** από την Κορέα* berarti \"yang baru datang dari Korea\", bukan \"didatangkan\". Uji cepat: kalau kamu bisa menambahkan *από* + pelaku dan kalimatnya masuk akal, itu pasif.",
+    "**Εδώ επισκευάζονται πλοία** — kata kerja pasif sering berdiri DI DEPAN subjeknya, apalagi kalau subjeknya baru disebut: *Αφαιρούνται τα όστρακα*. Ekornya tetap mengikuti subjek: *η γάστρα βάφεται* (tunggal), *τα πλοία βάφονται* (jamak).",
+    "**Από τον καπετάνιο, από την εταιρεία** — pelaku kalimat pasif ditandai *από* + akusatif, sama dengan \"oleh\". Tapi bahasa Yunani lisan jauh lebih jarang menyebut pelaku daripada bahasa Indonesia; kalau pelakunya penting, orang biasanya memakai kalimat aktif: *Η εταιρεία αποφασίζει*.",
+    "**Αφαιρούνται** berasal dari *αφαιρώ* (membuang, melepas), golongan -ώ. Pasif golongan ini bertekanan di ekor: *αφαιρείται, αφαιρούνται*. Golongan *αγαπώ/αγαπάω* punya pola lain lagi: *αγαπιέται, αγαπιούνται*.",
+    "**Εξαρτάται** (tergantung) hanya punya bentuk -μαι, seperti *κοιμάμαι*. Lengkapnya *εξαρτάται από* + akusatif: *Εξαρτάται από τον καιρό* (tergantung cuaca). Jawaban satu kata *Εξαρτάται.* sangat sering terdengar.",
+    "**Ο νηογνώμονας** adalah biro klasifikasi kapal (seperti Lloyd's Register atau BKI di Indonesia) yang memeriksa dan memberi *πιστοποιητικό* (sertifikat). *Πόσο κρατάει;* = berapa lama (makan waktu)? — *κρατάω* di sini berarti \"berlangsung\", bukan \"memegang\"."
+   ],
+   "grammars": [
+    {
+     "title": "Pasif kini: tiga pola",
+     "body": [
+      "Pasif kini dibentuk dari batang kata kerja kini + ekor -μαι. Kata kerja -ω biasa memakai *-εται/-ονται*; golongan -ώ seperti *αφαιρώ* memakai *-είται/-ούνται*; golongan -άω seperti *αγαπάω* memakai *-ιέται/-ιούνται*."
+     ],
+     "table": {
+      "head": [
+       "Aktif",
+       "Pasif (ia)",
+       "Pasif (mereka)",
+       "Arti pasif"
+      ],
+      "rows": [
+       [
+        "επισκευάζω",
+        "επισκευάζεται",
+        "επισκευάζονται",
+        "diperbaiki"
+       ],
+       [
+        "βάφω",
+        "βάφεται",
+        "βάφονται",
+        "dicat"
+       ],
+       [
+        "ελέγχω",
+        "ελέγχεται",
+        "ελέγχονται",
+        "diperiksa"
+       ],
+       [
+        "καθαρίζω",
+        "καθαρίζεται",
+        "καθαρίζονται",
+        "dibersihkan"
+       ],
+       [
+        "φτιάχνω",
+        "φτιάχνεται",
+        "φτιάχνονται",
+        "dibuat"
+       ],
+       [
+        "αποφασίζω",
+        "αποφασίζεται",
+        "αποφασίζονται",
+        "diputuskan"
+       ],
+       [
+        "αφαιρώ",
+        "αφαιρείται",
+        "αφαιρούνται",
+        "dibuang, dilepas"
+       ],
+       [
+        "αγαπάω",
+        "αγαπιέται",
+        "αγαπιούνται",
+        "dicintai"
+       ]
+      ]
+     },
+     "after": [
+      "Pasif kini menyatakan dua hal: sesuatu yang sedang dikerjakan (*Η γάστρα βάφεται τώρα*) atau yang biasa dikerjakan (*Τα πλοία ελέγχονται κάθε χρόνο*).",
+      "⚠️ Tidak semua kata kerja punya pasif yang wajar. *Φτάνω, πηγαίνω, κοιμάμαι* tidak punya objek, jadi tidak bisa dipasifkan."
+     ]
+    }
+   ]
+  },
+  {
+   "title": "ΔΙΑΛΟΓΟΣ 2 — Aturan main galangan",
+   "intro": "Hari yang sama, di kantin galangan. Ana bertanya pada petugas keselamatan, Σοφία, bagaimana caranya mengirim kadet untuk magang musim panas. Perhatikan kata kerja \"prosedur\" yang selalu berbentuk orang ketiga.",
+   "lines": [
+    {
+     "speaker": "Άννα:",
+     "text": "[Κυρία|Ki-RI-a] [Σοφία|So-FI-a], [θέλουμε|THÉ-lu-mé] [να|na] [στείλουμε|STI-lu-mé] [δόκιμους|DHO-ki-mus] [για|ya] [πρακτική|prak-ti-KI] [εδώ|é-DHO] [το|to] [καλοκαίρι|ka-lo-KÉ-ri]. [Πώς|Pos] [γίνεται|YI-né-té];",
+     "id": "Bu Sofia, kami ingin mengirim kadet untuk magang di sini musim panas nanti. Bagaimana caranya?",
+     "literal": "nyonya Sofia, ingin-kami supaya mengirim-kami kadet-kadet untuk praktik di-sini (sandang) musim-panas. bagaimana terjadi-ia?"
+    },
+    {
+     "speaker": "Σοφία:",
+     "text": "[Γίνεται|YI-né-té], [αλλά|a-LA] [χρειάζεται|KHRIA-zé-té] [χρόνος|KHRO-nos]. [Πρώτα|PRO-ta] [υποβάλλεται|i-po-VA-lé-té] [μια|mia] [αίτηση|É-ti-si] [από|a-PO] [την|tin] [εταιρεία|é-té-RI-a] [σας|sas].",
+     "id": "Bisa, tapi butuh waktu. Pertama, perusahaanmu mengajukan permohonan.",
+     "literal": "terjadi-ia, tetapi diperlukan-ia waktu. pertama diajukan-ia sebuah permohonan oleh (sandang) perusahaan milik-kalian."
+    },
+    {
+     "speaker": "Άννα:",
+     "text": "[Τι|Ti] [χαρτιά|khar-TIA] [χρειάζονται|KHRIA-zon-dé];",
+     "id": "Dokumen apa saja yang diperlukan?",
+     "literal": "apa kertas-kertas diperlukan-mereka?"
+    },
+    {
+     "speaker": "Σοφία:",
+     "text": "[Χρειάζονται|KHRIA-zon-dé] [διαβατήρια|dhia-va-TI-ri-a], [ασφάλιση|a-SFA-li-si] [και|ké] [ιατρική|i-a-tri-KI] [βεβαίωση|vé-VÉ-o-si]. [Όλα|O-la] [μεταφράζονται|mé-ta-FRA-zon-dé] [στα|sta] [αγγλικά|an-gli-KA] [ή|i] [στα|sta] [ελληνικά|é-li-ni-KA].",
+     "id": "Perlu paspor, asuransi, dan surat keterangan dokter. Semuanya diterjemahkan ke bahasa Inggris atau Yunani.",
+     "literal": "diperlukan-mereka paspor-paspor, asuransi dan medis keterangan. semua diterjemahkan-mereka ke-(sandang) Inggris atau ke-(sandang) Yunani."
+    },
+    {
+     "speaker": "Άννα:",
+     "text": "[Μεταφράζονται|Mé-ta-FRA-zon-dé] [από|a-PO] [εμάς|é-MAS] [ή|i] [από|a-PO] [εσάς|é-SAS];",
+     "id": "Diterjemahkan oleh kami atau oleh pihak Ibu?",
+     "literal": "diterjemahkan-mereka oleh kami atau oleh kalian?"
+    },
+    {
+     "speaker": "Σοφία:",
+     "text": "[Από|A-PO] [εσάς|é-SAS]. [Και|Ké] [προσοχή|pro-so-KHI]: [στην|stin] [αυλή|av-LI] [απαγορεύεται|a-pa-gho-RÉ-vé-té] [η|i] [είσοδος|I-so-dhos] [χωρίς|kho-RIS] [κράνος|KRA-nos] [και|ké] [παπούτσια|pa-PU-tsia] [ασφαλείας|a-sfa-LI-as].",
+     "id": "Oleh kalian. Dan perhatian: di area galangan dilarang masuk tanpa helm dan sepatu keselamatan.",
+     "literal": "oleh kalian. dan perhatian: di-(sandang) halaman dilarang-ia (sandang) masuknya tanpa helm dan sepatu-sepatu keselamatan-milik."
+    },
+    {
+     "speaker": "Άννα:",
+     "text": "[Τα|Ta] [παπούτσια|pa-PU-tsia] [δίνονται|DHI-non-dé] [από|a-PO] [το|to] [ναυπηγείο|naf-pi-YI-o];",
+     "id": "Sepatunya diberikan oleh galangan?",
+     "literal": "(sandang) sepatu-sepatu diberikan-mereka oleh (sandang) galangan?"
+    },
+    {
+     "speaker": "Σοφία:",
+     "text": "[Τα|Ta] [κράνη|KRA-ni] [ναι|né]. [Τα|Ta] [παπούτσια|pa-PU-tsia] [τα|ta] [αγοράζει|a-gho-RA-zi] [ο|o] [καθένας|ka-THÉ-nas] [μόνος|MO-nos] [του|tu].",
+     "id": "Helm ya. Sepatu dibeli masing-masing sendiri.",
+     "literal": "(sandang) helm-helm ya. (sandang) sepatu-sepatu mereka membeli-ia (sandang) setiap-orang sendiri miliknya."
+    },
+    {
+     "speaker": "Άννα:",
+     "text": "[Κατάλαβα|Ka-TA-la-va]. [Κι|Ki] [αν|an] [κάποιος|KA-pi-os] [αρρωστήσει|a-ro-STI-si];",
+     "id": "Mengerti. Kalau ada yang sakit?",
+     "literal": "aku-mengerti. dan kalau seseorang jatuh-sakit?"
+    },
+    {
+     "speaker": "Σοφία:",
+     "text": "[Υπάρχει|I-PAR-khi] [γιατρός|ya-TROS] [εδώ|é-DHO]. [Και|Ké] [το|to] [κάπνισμα|KA-pni-sma] [απαγορεύεται|a-pa-gho-RÉ-vé-té] [παντού|pan-DU], [ακόμα|a-KO-ma] [και|ké] [στο|sto] [διάλειμμα|DHIA-li-ma]!",
+     "id": "Ada dokter di sini. Dan merokok dilarang di mana-mana, bahkan waktu istirahat!",
+     "literal": "ada dokter di-sini. dan (sandang) merokok dilarang-ia di-mana-mana, bahkan juga di-(sandang) istirahat!"
+    },
+    {
+     "speaker": "Άννα:",
+     "text": "[Αυτό|Af-TO] [θα|tha] [το|to] [πω|po] [δύο|DHI-o] [φορές|fo-RÉS]. [Οι|I] [ναυτικοί|naf-ti-KI] [μας|mas] [καπνίζουν|ka-PNI-zun] [πολύ|po-LI].",
+     "id": "Yang ini akan kusampaikan dua kali. Pelaut-pelaut kami banyak yang merokok.",
+     "literal": "itu akan itu aku-katakan dua kali. (sandang) pelaut-pelaut milik-kami merokok-mereka banyak."
+    }
+   ],
+   "notes": [
+    "**Πώς γίνεται;** — *γίνεται* berarti \"terjadi, dilakukan\", dan *Πώς γίνεται;* = \"bagaimana caranya?\". Jawaban *Γίνεται* sendirian berarti \"bisa\". Lawannya *Δεν γίνεται* = \"tidak bisa, tidak mungkin\" — kalimat yang akan sering kamu dengar di loket.",
+    "⚠️ **Χρειάζεται χρόνος · Χρειάζονται διαβατήρια.** Kata Indonesia \"perlu\" tidak pernah berubah, tapi *χρειάζομαι* menyesuaikan diri dengan benda yang diperlukan: tunggal *χρειάζεται*, jamak *χρειάζονται*. Benda yang diperlukan itu subjeknya, jadi berbentuk nominatif.",
+    "**Απαγορεύεται η είσοδος · Απαγορεύεται το κάπνισμα** — bahasa papan larangan. Kata bendanya bersandang dan nominatif. Dengan kata kerja pakai *να*: *Απαγορεύεται να καπνίζετε εδώ*. Lawannya *επιτρέπεται* (diizinkan): *Δεν επιτρέπεται η στάθμευση* (dilarang parkir).",
+    "**Υποβάλλεται μια αίτηση** — gaya kantor. Dalam obrolan orang cukup bilang *Κάνετε μια αίτηση* (kalian buat permohonan). Pasif kini sangat disukai di surat edaran dan formulir karena terdengar netral.",
+    "**Τα παπούτσια τα αγοράζει ο καθένας μόνος του** — cara lain untuk \"di-\": objek ditaruh di depan, lalu diulang dengan kata ganti *τα*. Bahasa Yunani lisan sering memilih cara ini daripada pasif, terutama kalau pelakunya tetap disebut.",
+    "**Ναυτικός** (pelaut) di sini kata benda: *οι ναυτικοί μας*. Sebagai kata sifat ia berarti \"bahari\": *ναυτική σχολή* (sekolah pelayaran). Jangan tertukar dengan *ναύτης* (kelasi, pangkat terendah awak dek)."
+   ],
+   "grammars": [
+    {
+     "title": "Kata kerja prosedur",
+     "body": [
+      "Beberapa kata kerja -μαι hampir selalu muncul dalam bentuk orang ketiga untuk menyatakan aturan, kebutuhan, dan kemungkinan. Subjeknya benda atau anak kalimat *να*."
+     ],
+     "table": {
+      "head": [
+       "Kata kerja",
+       "Arti",
+       "Contoh"
+      ],
+      "rows": [
+       [
+        "γίνεται",
+        "bisa; dilakukan",
+        "*Δεν γίνεται αύριο.*"
+       ],
+       [
+        "χρειάζεται / χρειάζονται",
+        "diperlukan",
+        "*Χρειάζονται δύο φωτογραφίες.*"
+       ],
+       [
+        "απαγορεύεται",
+        "dilarang",
+        "*Απαγορεύεται η είσοδος.*"
+       ],
+       [
+        "επιτρέπεται",
+        "diizinkan",
+        "*Επιτρέπεται να μπείτε με σκύλο;*"
+       ],
+       [
+        "συνιστάται",
+        "dianjurkan",
+        "*Συνιστάται κράνος.*"
+       ],
+       [
+        "λέγεται",
+        "disebut; konon",
+        "*Πώς λέγεται αυτό στα ελληνικά;*"
+       ],
+       [
+        "φαίνεται",
+        "kelihatan, tampaknya",
+        "*Φαίνεται ότι θα βρέξει.*"
+       ]
+      ]
+     },
+     "after": [
+      "Kalau yang diperlukan/dilarang itu jamak, ekornya ikut jamak: *απαγορεύονται τα σκυλιά* (anjing dilarang masuk)."
+     ]
+    }
+   ]
+  }
+ ],
+ "sections": [
+  {
+   "title": "Pasif kini lengkap",
+   "blocks": [
+    {
+     "type": "tabel",
+     "head": [
+      "Orang",
+      "Golongan -Ω (dicat)",
+      "Golongan -ΑΩ (dicintai)",
+      "Golongan -Ω (dilepas)"
+     ],
+     "rows": [
+      [
+       "εγώ",
+       "βάφομαι",
+       "αγαπιέμαι",
+       "αφαιρούμαι"
+      ],
+      [
+       "εσύ",
+       "βάφεσαι",
+       "αγαπιέσαι",
+       "αφαιρείσαι"
+      ],
+      [
+       "αυτός, αυτή, αυτό",
+       "βάφεται",
+       "αγαπιέται",
+       "αφαιρείται"
+      ],
+      [
+       "εμείς",
+       "βαφόμαστε",
+       "αγαπιόμαστε",
+       "αφαιρούμαστε"
+      ],
+      [
+       "εσείς",
+       "βάφεστε",
+       "αγαπιέστε",
+       "αφαιρείστε"
+      ],
+      [
+       "αυτοί, αυτές, αυτά",
+       "βάφονται",
+       "αγαπιούνται",
+       "αφαιρούνται"
+      ]
+     ]
+    },
+    {
+     "type": "p",
+     "text": "Perhatikan tekanan kolom pertama: pada *εμείς* ia pindah ke depan ekor (*βαφόμαστε, ελεγχόμαστε, πληρωνόμαστε*), karena tekanan Yunani tak boleh mundur lebih dari tiga suku kata dari ujung. Dalam praktik, yang paling sering kamu pakai adalah dua bentuk orang ketiga: *-ται* dan *-νται*. Orang pertama dan kedua lebih sering muncul pada kata kerja yang artinya bukan pasif murni: *πληρώνομαι* (aku digaji), *ενδιαφέρομαι* (aku tertarik)."
+    }
+   ]
+  },
+  {
+   "title": "Tiga cara berkata \"di-\"",
+   "blocks": [
+    {
+     "type": "p",
+     "text": "Bahasa Indonesia memakai *di-* di mana-mana: \"kopinya dibuat Dhimitra\", \"rapatnya diundur\", \"di sini dijual pulsa\". ⚠️ Kalau semua itu kamu terjemahkan dengan pasif -μαι, bahasa Yunanimu akan terdengar seperti surat edaran. Pilih cara yang paling wajar."
+    },
+    {
+     "type": "tabel",
+     "head": [
+      "Bahasa Indonesia",
+      "Yunani yang wajar",
+      "Cara"
+     ],
+     "rows": [
+      [
+       "Kopinya dibuat Dhimitra tiap pagi.",
+       "*Τον καφέ τον φτιάχνει η Δήμητρα κάθε πρωί.*",
+       "objek di depan + kata ganti"
+      ],
+      [
+       "Di sini dijual kartu SIM.",
+       "*Εδώ πουλάνε κάρτες SIM.*",
+       "aktif jamak tanpa subjek"
+      ],
+      [
+       "Di sini diperbaiki kapal dari seluruh dunia.",
+       "*Εδώ επισκευάζονται πλοία από όλο τον κόσμο.*",
+       "pasif (gaya informasi)"
+      ],
+      [
+       "Dilarang merokok.",
+       "*Απαγορεύεται το κάπνισμα.*",
+       "pasif (aturan)"
+      ],
+      [
+       "Namanya disebut apa?",
+       "*Πώς το λένε;* atau *Πώς λέγεται;*",
+       "aktif jamak atau pasif"
+      ],
+      [
+       "Rapatnya diundur.",
+       "*Η σύσκεψη αναβάλλεται.*",
+       "pasif (pengumuman)"
+      ]
+     ]
+    },
+    {
+     "type": "kotak",
+     "title": "Rumus cepat",
+     "items": [
+      "Pengumuman, aturan, papan, formulir, penjelasan teknis → pasif -μαι.",
+      "Obrolan tentang orang yang tak penting disebut → aktif jamak: *Λένε ότι…* (orang bilang…), *Εδώ πουλάνε…*.",
+      "Obrolan tentang pelaku yang diketahui → aktif biasa, objek boleh di depan dengan kata ganti."
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Perama dan zona galangan",
+   "blocks": [
+    {
+     "type": "p",
+     "text": "Perama terletak di barat Pireas, menghadap Pulau Salamina. Selama beberapa generasi pantai ini penuh bengkel kayu tempat *καΐκια* (perahu kayu tradisional) dibangun, lalu berkembang menjadi zona perbaikan kapal (*ναυπηγοεπισκευαστική ζώνη*) dengan dok apung (*πλωτές δεξαμενές*) untuk kapal kargo dan kapal penumpang. Bagi perusahaan pelayaran Yunani, dekat dengan galangan seperti ini berarti kapal cepat kembali berlayar."
+    },
+    {
+     "type": "kotak",
+     "title": "Kata-kata di pagar galangan",
+     "items": [
+      "*ΑΠΑΓΟΡΕΥΕΤΑΙ Η ΕΙΣΟΔΟΣ ΣΕ ΜΗ ΕΞΟΥΣΙΟΔΟΤΗΜΕΝΑ ΑΤΟΜΑ* — dilarang masuk bagi yang tidak berwenang. Ingat: huruf besar Yunani tidak diberi aksen.",
+      "*ΥΠΟΧΡΕΩΤΙΚΗ ΧΡΗΣΗ ΚΡΑΝΟΥΣ* — wajib memakai helm (gaya kata benda: \"pemakaian helm wajib\").",
+      "*ΚΙΝΔΥΝΟΣ* — bahaya. *ΠΡΟΣΟΧΗ* — awas.",
+      "*Ζητούνται ηλεκτρολόγοι* — dicari tukang listrik: iklan lowongan juga memakai pasif kini."
+     ]
+    }
+   ]
+  }
+ ],
+ "vocab": [
+  {
+   "el": "το ναυπηγείο",
+   "baca": "to naf-pi-YI-o",
+   "id": "galangan kapal"
+  },
+  {
+   "el": "επισκευάζω",
+   "baca": "é-pi-ské-VA-zo",
+   "id": "memperbaiki (*pas.* επισκευάζομαι)"
+  },
+  {
+   "el": "κατασκευάζω",
+   "baca": "ka-ta-ské-VA-zo",
+   "id": "membuat, membangun (pabrik, konstruksi)"
+  },
+  {
+   "el": "η δεξαμενή",
+   "baca": "i dhé-ksa-mé-NI",
+   "id": "dok (kapal); tangki"
+  },
+  {
+   "el": "η γάστρα",
+   "baca": "i GHA-stra",
+   "id": "lambung kapal"
+  },
+  {
+   "el": "βάφω",
+   "baca": "VA-fo",
+   "id": "mengecat (*pas.* βάφομαι)"
+  },
+  {
+   "el": "ελέγχω",
+   "baca": "é-LÉN-kho",
+   "id": "memeriksa, mengontrol (*pas.* ελέγχομαι)"
+  },
+  {
+   "el": "καθαρίζω",
+   "baca": "ka-tha-RI-zo",
+   "id": "membersihkan"
+  },
+  {
+   "el": "αφαιρώ",
+   "baca": "a-fé-RO",
+   "id": "membuang, melepas (*pas.* αφαιρείται)"
+  },
+  {
+   "el": "εξαρτάται",
+   "baca": "é-ksar-TA-té",
+   "id": "tergantung (*εξαρτάται από* + akusatif)"
+  },
+  {
+   "el": "ο νηογνώμονας",
+   "baca": "o ni-o-GHNO-mo-nas",
+   "id": "biro klasifikasi kapal"
+  },
+  {
+   "el": "το πιστοποιητικό",
+   "baca": "to pi-sto-pi-i-ti-KO",
+   "id": "sertifikat"
+  },
+  {
+   "el": "η επιθεώρηση",
+   "baca": "i é-pi-thé-O-ri-si",
+   "id": "inspeksi, pemeriksaan resmi"
+  },
+  {
+   "el": "ο έλικας",
+   "baca": "o É-li-kas",
+   "id": "baling-baling (*jamak* οι έλικες)"
+  },
+  {
+   "el": "ο θόρυβος",
+   "baca": "o THO-ri-vos",
+   "id": "bunyi bising, keributan"
+  },
+  {
+   "el": "ο εργάτης",
+   "baca": "o ér-GHA-tis",
+   "id": "pekerja, buruh (*f.* η εργάτρια)"
+  },
+  {
+   "el": "ο δόκιμος",
+   "baca": "o DHO-ki-mos",
+   "id": "kadet (pelaut/perwira)"
+  },
+  {
+   "el": "η πρακτική",
+   "baca": "i prak-ti-KI",
+   "id": "magang, praktik kerja"
+  },
+  {
+   "el": "η αίτηση",
+   "baca": "i É-ti-si",
+   "id": "permohonan, lamaran"
+  },
+  {
+   "el": "υποβάλλω",
+   "baca": "i-po-VA-lo",
+   "id": "mengajukan (resmi) (*pas.* υποβάλλεται)"
+  },
+  {
+   "el": "χρειάζεται",
+   "baca": "KHRIA-zé-té",
+   "id": "diperlukan (*jamak* χρειάζονται)"
+  },
+  {
+   "el": "απαγορεύεται",
+   "baca": "a-pa-gho-RÉ-vé-té",
+   "id": "dilarang (*lawan* επιτρέπεται)"
+  },
+  {
+   "el": "το κράνος",
+   "baca": "to KRA-nos",
+   "id": "helm (*jamak* τα κράνη)"
+  },
+  {
+   "el": "το κάπνισμα",
+   "baca": "to KA-pni-sma",
+   "id": "(kegiatan) merokok"
+  }
+ ],
+ "exercises": [
+  {
+   "prompt": "Terjemahkan ke bahasa Yunani.",
+   "items": [
+    "Kapal-kapal itu diperbaiki di Perama.",
+    "Lambung kapal dicat setiap dua tahun.",
+    "Di sini dilarang merokok.",
+    "Diperlukan paspor dan asuransi.",
+    "Baling-baling yang baru datang dari Korea.",
+    "Pekerjaannya diputuskan oleh perusahaan."
+   ]
+  },
+  {
+   "prompt": "Isi dengan bentuk pasif kini dari kata kerja dalam kurung.",
+   "items": [
+    "Τα πλοία ____ στο Πέραμα. (επισκευάζω)",
+    "Η γάστρα ____ με ειδική μπογιά. (βάφω)",
+    "Τα όστρακα ____ με νερό υψηλής πίεσης. (αφαιρώ)",
+    "____ διαβατήρια και ασφάλιση. (χρειάζεται)",
+    "Εμείς ____ από γιατρό κάθε χρόνο. (ελέγχω)",
+    "Ο Νίκος ____ από όλους στη γειτονιά. (αγαπάω)",
+    "Εσύ ____ καλά στη νέα δουλειά; (πληρώνω)"
+   ]
+  },
+  {
+   "prompt": "Ubah kalimat aktif menjadi pasif; sebut pelakunya dengan από.",
+   "items": [
+    "Η εταιρεία πληρώνει τους δόκιμους.",
+    "Ο νηογνώμονας ελέγχει το πλοίο.",
+    "Οι εργάτες βάφουν τη γάστρα.",
+    "Η Άννα οργανώνει την εκδρομή.",
+    "Ο Σταύρος διορθώνει τους υπολογιστές.",
+    "Η Δήμητρα μεταφράζει τα έγγραφα."
+   ]
+  },
+  {
+   "prompt": "Susun jadi kalimat yang benar.",
+   "items": [
+    "εδώ / πλοία / επισκευάζονται / τα",
+    "απαγορεύεται / το / παντού / κάπνισμα",
+    "τι / χρειάζονται / χαρτιά",
+    "από / αποφασίζονται / την / εταιρεία / οι εργασίες",
+    "γίνεται / πώς / η / αίτηση"
+   ]
+  }
+ ],
+ "answers": [
+  "Τα πλοία επισκευάζονται στο Πέραμα. — Η γάστρα βάφεται κάθε δύο χρόνια. — Εδώ απαγορεύεται το κάπνισμα. — Χρειάζονται διαβατήρια και ασφάλιση. — Οι καινούργιοι έλικες έρχονται από την Κορέα. — Οι εργασίες αποφασίζονται από την εταιρεία.",
+  "επισκευάζονται — βάφεται — αφαιρούνται — Χρειάζονται — ελεγχόμαστε — αγαπιέται — πληρώνεσαι",
+  "Οι δόκιμοι πληρώνονται από την εταιρεία. — Το πλοίο ελέγχεται από τον νηογνώμονα. — Η γάστρα βάφεται από τους εργάτες. — Η εκδρομή οργανώνεται από την Άννα. — Οι υπολογιστές διορθώνονται από τον Σταύρο. — Τα έγγραφα μεταφράζονται από τη Δήμητρα.",
+  "Τα πλοία επισκευάζονται εδώ. — Το κάπνισμα απαγορεύεται παντού. — Τι χαρτιά χρειάζονται; — Οι εργασίες αποφασίζονται από την εταιρεία. — Πώς γίνεται η αίτηση;"
+ ]
+}

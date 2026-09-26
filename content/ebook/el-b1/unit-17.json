@@ -1,0 +1,582 @@
+{
+ "title": "Masukan & kritik yang santun — pelunakan",
+ "title_target": "Θα μπορούσαμε ίσως…",
+ "goal": "Memberi dan menerima masukan di kantor tanpa terdengar kasar maupun berbelit-belit, dengan pelunak Yunani seperti *θα μπορούσαμε ίσως*, *μήπως είναι λίγο…;* dan *δεν θα ήταν καλύτερα να…;*.",
+ "bekal": [
+  "melunakkan usul dengan kondisional (θα + παρατατικός): *θα πρότεινα, θα μπορούσες, θα ήταν καλό να…*",
+  "mengajukan kritik sebagai pertanyaan dengan *μήπως* dan *δεν θα ήταν καλύτερα να…;*",
+  "menerima kritik dengan tenang dan profesional: *έχετε δίκιο, δεν το είχα σκεφτεί, θα το διορθώσω*"
+ ],
+ "dialogs": [
+  {
+   "title": "ΔΙΑΛΟΓΟΣ 1 — Presentasi Dhimitra",
+   "intro": "Selasa, 2 Mei 2028, kantor Αιγαίον Ναυτιλιακή di Pireas. Dhimitra menyiapkan presentasi keselamatan kerja untuk kelompok kadet baru dari Indonesia dan meminta pendapat Ana. Perhatikan: Ana tidak sekali pun berkata *αυτό είναι λάθος*, tetapi pesannya tetap sampai.",
+   "lines": [
+    {
+     "speaker": "Δήμητρα:",
+     "text": "[Άννα|A-na], [έχεις|É-khis] [πέντε|PÉN-dé] [λεπτά|lép-TA]; [Θέλω|THÉ-lo] [τη|ti] [γνώμη|GHNO-mi] [σου|su] [για|ya] [την|tin] [παρουσίαση|pa-ru-SI-a-si].",
+     "id": "Ana, ada waktu lima menit? Aku mau minta pendapatmu soal presentasiku.",
+     "literal": "Ana, kamu-punya lima menit? aku-ingin (sandang) pendapat kamu untuk (sandang) presentasi?"
+    },
+    {
+     "speaker": "Άννα:",
+     "text": "[Φυσικά|Fi-si-KA]. [Την|Tin] [είδα|I-dha] [χθες|khthés] [το|to] [βράδυ|VRA-dhi]. [Είναι|I-né] [πολύ|po-LI] [καλή|ka-LI] [δουλειά|dhu-LIA].",
+     "id": "Tentu. Sudah kulihat semalam. Kerjamu bagus sekali.",
+     "literal": "tentu. dia aku-melihat kemarin (sandang) malam. dia-adalah sangat bagus pekerjaan."
+    },
+    {
+     "speaker": "Δήμητρα:",
+     "text": "[Αλλά|A-LA]; [Σε|Sé] [ξέρω|KSÉ-ro]. [Κάτι|KA-ti] [δεν|dhén] [σου|su] [αρέσει|a-RÉ-si].",
+     "id": "Tapi? Aku kenal kamu. Ada yang nggak kamu suka.",
+     "literal": "tetapi? kamu aku-kenal. sesuatu tidak kepadamu ia-menyenangkan."
+    },
+    {
+     "speaker": "Άννα:",
+     "text": "[Όχι|O-khi] [ακριβώς|a-kri-VOS]. [Απλώς|A-PLOS] [θα|tha] [πρότεινα|PRO-ti-na] [κάποιες|KA-pi-és] [μικρές|mi-KRÉS] [αλλαγές|a-la-YÉS].",
+     "id": "Bukan begitu juga. Aku cuma mau mengusulkan beberapa perubahan kecil.",
+     "literal": "tidak persis. hanya akan aku-mengusulkan-lampau beberapa kecil-jamak perubahan-jamak."
+    },
+    {
+     "speaker": "Δήμητρα:",
+     "text": "[Πες|Pés] [μου|mu] [ελεύθερα|é-LÉF-thé-ra]. [Εμείς|É-MIS] [οι|i] [Κρητικοί|Kri-ti-KI] [δεν|dhén] [θυμώνουμε|thi-MO-nu-mé] [εύκολα|ÉF-ko-la].",
+     "id": "Bilang aja terus terang. Kami orang Kreta nggak gampang marah.",
+     "literal": "katakanlah kepadaku bebas. kami (sandang) orang-Kreta tidak kami-marah mudah."
+    },
+    {
+     "speaker": "Άννα:",
+     "text": "[Οι|I] [διαφάνειες|dhia-FA-ni-és] [είναι|I-né] [σαράντα|sa-RAN-da]. [Μήπως|MI-pos] [είναι|I-né] [λίγο|LI-gho] [πολλές|po-LÉS] [για|ya] [μία|MI-a] [ώρα|O-ra];",
+     "id": "Slide-nya ada empat puluh. Jangan-jangan agak kebanyakan untuk satu jam?",
+     "literal": "(sandang) slide-jamak mereka-adalah empat-puluh. jangan-jangan mereka-adalah sedikit banyak untuk satu jam?"
+    },
+    {
+     "speaker": "Δήμητρα:",
+     "text": "[Χμ|Khm], [μπορεί|bo-RI]. [Και|Ké] [τι|ti] [θα|tha] [έκοβες|É-ko-vés] [εσύ|é-SI];",
+     "id": "Hmm, bisa jadi. Terus, kalau kamu, yang mana yang kamu buang?",
+     "literal": "hmm, mungkin. dan apa akan kamu-memotong-lampau kamu?"
+    },
+    {
+     "speaker": "Άννα:",
+     "text": "[Θα|Tha] [μπορούσαμε|bo-RU-sa-mé] [ίσως|I-sos] [να|na] [ενώσουμε|é-NO-su-mé] [τους|tus] [κανόνες|ka-NO-nés] [σε|sé] [μία|MI-a] [διαφάνεια|dhia-FA-ni-a].",
+     "id": "Mungkin kita bisa menggabungkan aturan-aturannya dalam satu slide.",
+     "literal": "akan kami-bisa-lampau mungkin (untuk) kami-menggabungkan (sandang) aturan-jamak dalam satu slide."
+    },
+    {
+     "speaker": "Δήμητρα:",
+     "text": "[Καλή|Ka-LI] [ιδέα|i-DHÉ-a]. [Κάτι|KA-ti] [άλλο|A-lo];",
+     "id": "Ide bagus. Ada lagi?",
+     "literal": "bagus ide. sesuatu lain?"
+    },
+    {
+     "speaker": "Άννα:",
+     "text": "[Τα|Ta] [κείμενα|KI-mé-na] [είναι|I-né] [μόνο|MO-no] [στα|sta] [ελληνικά|é-li-ni-KA]. [Δεν|Dhén] [θα|tha] [ήταν|I-tan] [καλύτερα|ka-LI-té-ra] [να|na] [είναι|I-né] [και|ké] [στα|sta] [αγγλικά|an-gli-KA];",
+     "id": "Teksnya cuma dalam bahasa Yunani. Bukankah lebih baik kalau ada bahasa Inggrisnya juga?",
+     "literal": "(sandang) teks-jamak mereka-adalah hanya dalam-(sandang) Yunani-jamak. tidak akan ia-adalah-lampau lebih-baik (untuk) mereka-adalah juga dalam-(sandang) Inggris-jamak?"
+    },
+    {
+     "speaker": "Δήμητρα:",
+     "text": "[Έχεις|É-khis] [δίκιο|DHI-kio], [οι|i] [δόκιμοι|DHO-ki-mi] [δεν|dhén] [θα|tha] [καταλάβουν|ka-ta-LA-vun] [τίποτα|TI-po-ta]! [Πώς|Pos] [δεν|dhén] [το|to] [σκέφτηκα|SKÉF-ti-ka];",
+     "id": "Kamu benar, kadet-kadetnya nggak bakal paham apa-apa! Kok aku nggak kepikiran?",
+     "literal": "kamu-punya kebenaran, (sandang) kadet-jamak tidak akan mereka-mengerti apa-pun! bagaimana tidak itu aku-memikirkan?"
+    },
+    {
+     "speaker": "Άννα:",
+     "text": "[Και|Ké] [κάτι|KA-ti] [τελευταίο|té-léf-TÉ-o]: [θα|tha] [ήταν|I-tan] [καλό|ka-LO] [να|na] [βάλεις|VA-lis] [περισσότερες|pé-ri-SO-té-rés] [φωτογραφίες|fo-to-ghra-FI-és] [από|a-PO] [το|to] [πλοίο|PLI-o].",
+     "id": "Satu lagi, yang terakhir: bagus kalau kamu tambahkan lebih banyak foto dari kapal.",
+     "literal": "dan sesuatu terakhir: akan ia-adalah-lampau baik (untuk) kamu-menaruh lebih-banyak foto-jamak dari (sandang) kapal."
+    },
+    {
+     "speaker": "Δήμητρα:",
+     "text": "[Ωραία|O-RÉ-a]. [Πάντως|PAN-dos], [για|ya] [να|na] [ξέρεις|KSÉ-ris]: [μπορείς|bo-RIS] [να|na] [μου|mu] [λες|lés] «[αυτό|af-TO] [είναι|I-né] [λάθος|LA-thos]». [Δεν|Dhén] [είναι|I-né] [αγένεια|a-YÉ-ni-a].",
+     "id": "Oke. Omong-omong, biar kamu tahu: kamu boleh bilang ke aku \"ini salah\". Itu bukan tidak sopan.",
+     "literal": "bagus. bagaimanapun, supaya kamu-tahu: kamu-bisa (untuk) kepadaku kamu-mengatakan «ini ia-adalah salah». tidak ia-adalah ketidaksopanan."
+    },
+    {
+     "speaker": "Άννα:",
+     "text": "[Το|To] [ξέρω|KSÉ-ro]. [Αλλά|A-LA] [εγώ|é-GHO] [είμαι|I-mé] [από|a-PO] [την|tin] [Ιάβα|I-A-va]. [Εκεί|É-KI] [τα|ta] [λέμε|LÉ-mé] [πιο|pio] [μαλακά|ma-la-KA]!",
+     "id": "Aku tahu. Tapi aku orang Jawa. Di sana kami ngomongnya lebih halus!",
+     "literal": "itu aku-tahu. tetapi aku aku-adalah dari (sandang) Jawa. di-sana itu-jamak kami-mengatakan lebih lembut!"
+    }
+   ],
+   "notes": [
+    "⚠️ **Terus terang ala Yunani bukan kekasaran.** Dhimitra sendiri bilang *Πες μου ελεύθερα* dan *μπορείς να μου λες «αυτό είναι λάθος»*. Di kantor Yunani, kritik langsung terhadap PEKERJAAN tidak dianggap serangan terhadap ORANGNYA. Sebaliknya, kalau kamu berbelit-belit ala Jawa, rekan Yunani bisa tidak sadar bahwa kamu sedang mengkritik.",
+    "**Θα πρότεινα** = saya usul (harfiah: saya akan mengusulkan). Bentuknya θα + παρατατικός, sama dengan pengandaian di unit 7, tetapi di sini fungsinya hanya melunakkan. Satu keluarga dengan *θα ήθελα* yang sudah kamu kenal sejak A2.",
+    "**Μήπως** membuka pertanyaan hati-hati yang sebenarnya sudah condong ke jawaban \"ya\": *Μήπως είναι λίγο πολλές;* = jangan-jangan agak kebanyakan? Kata **λίγο** (sedikit) menambah lapisan pelunak kedua.",
+    "**Θα μπορούσαμε ίσως να…** — tiga pelunak sekaligus: kondisional *θα μπορούσαμε*, kata **ίσως** (mungkin), dan subjek \"kita\", bukan \"kamu\". Dengan \"kita\", usul terasa seperti kerja bersama, bukan perintah.",
+    "**Δεν θα ήταν καλύτερα να…;** = bukankah lebih baik kalau…? Kalimat tanya negatif ini adalah USUL, bukan sangkalan. Jawaban yang biasa: *Ναι, έχεις δίκιο* atau *Ίσως, θα το σκεφτώ*.",
+    "**Πώς δεν το σκέφτηκα;** = kok aku nggak kepikiran? Cara paling sehari-hari untuk menerima masukan dengan lapang. **Τα λέμε πιο μαλακά** — *τα* jamak netral merujuk \"hal-hal\" secara umum; *μαλακά* (lembut) adalah kata keterangan dari *μαλακός*."
+   ],
+   "grammars": [
+    {
+     "title": "Tangga pelunakan",
+     "body": [
+      "Dari yang paling langsung sampai yang paling lunak. Semuanya benar secara tata bahasa; pilih sesuai hubunganmu dengan lawan bicara dan beratnya masalah."
+     ],
+     "table": {
+      "head": [
+       "Tingkat",
+       "Yunani",
+       "Indonesia"
+      ],
+      "rows": [
+       [
+        "1 · perintah",
+        "Κόψε μερικές διαφάνειες.",
+        "Buang beberapa slide."
+       ],
+       [
+        "2 · πρέπει",
+        "Πρέπει να κόψεις μερικές διαφάνειες.",
+        "Kamu harus membuang beberapa slide."
+       ],
+       [
+        "3 · kondisional",
+        "Εγώ θα έκοβα μερικές διαφάνειες.",
+        "Kalau aku, aku buang beberapa slide."
+       ],
+       [
+        "4 · θα μπορούσες",
+        "Θα μπορούσες να κόψεις μερικές.",
+        "Kamu bisa saja membuang beberapa."
+       ],
+       [
+        "5 · θα πρότεινα",
+        "Θα πρότεινα να κόψουμε μερικές.",
+        "Aku usul kita buang beberapa."
+       ],
+       [
+        "6 · μήπως",
+        "Μήπως είναι λίγο πολλές;",
+        "Jangan-jangan agak kebanyakan?"
+       ],
+       [
+        "7 · tanya negatif",
+        "Δεν θα ήταν καλύτερα να είναι λιγότερες;",
+        "Bukankah lebih baik kalau lebih sedikit?"
+       ]
+      ]
+     },
+     "after": [
+      "⚠️ Tingkat 1–2 wajar di antara rekan akrab dan TIDAK kasar dalam bahasa Yunani. Kepada atasan atau klien, mulailah dari tingkat 4 ke atas dan pakai Εσείς: *Θα μπορούσατε να…*",
+      "Kondisional = θα + παρατατικός: *θα έκοβα, θα μπορούσα, θα πρότεινα, θα ήταν*. Bentuknya persis sama dengan pengandaian kedua (unit 7)."
+     ]
+    }
+   ]
+  },
+  {
+   "title": "ΔΙΑΛΟΓΟΣ 2 — Kritik dari direktur",
+   "intro": "Kamis, 4 Mei 2028. Κυρία Αγγελική, direktur perusahaan, memanggil Ana ke ruangannya sesudah membaca laporan triwulan program pelatihan. Perhatikan bagaimana kritik dari atasan disampaikan, dan bagaimana Ana menjawabnya.",
+   "lines": [
+    {
+     "speaker": "Αγγελική:",
+     "text": "[Κάθισε|KA-thi-sé], [Άννα|A-na]. [Διάβασα|DHIA-va-sa] [την|tin] [αναφορά|a-na-fo-RA] [σου|su]. [Έχω|É-kho] [μερικές|mé-ri-KÉS] [παρατηρήσεις|pa-ra-ti-RI-sis].",
+     "id": "Duduk, Ana. Saya sudah baca laporanmu. Ada beberapa catatan.",
+     "literal": "duduklah, Ana. aku-membaca (sandang) laporan kamu. aku-punya beberapa catatan-jamak."
+    },
+    {
+     "speaker": "Άννα:",
+     "text": "[Βεβαίως|Vé-VÉ-os], [κυρία|ki-RI-a] [Αγγελική|An-gé-li-KI]. [Σας|Sas] [ακούω|a-KU-o].",
+     "id": "Tentu, Bu Aggeliki. Saya mendengarkan.",
+     "literal": "tentu, nyonya Angeliki. Anda aku-mendengar."
+    },
+    {
+     "speaker": "Αγγελική:",
+     "text": "[Το|To] [περιεχόμενο|pé-ri-é-KHO-mé-no] [είναι|I-né] [εξαιρετικό|é-ksé-ré-ti-KO]. [Όμως|O-mos] [είναι|I-né] [είκοσι|I-ko-si] [σελίδες|sé-LI-dhés]. [Θα|Tha] [μπορούσες|bo-RU-sés] [να|na] [το|to] [κάνεις|KA-nis] [πιο|pio] [σύντομο|SIN-do-mo];",
+     "id": "Isinya sangat bagus. Tapi panjangnya dua puluh halaman. Bisakah kamu membuatnya lebih ringkas?",
+     "literal": "(sandang) isi ia-adalah luar-biasa. namun ia-adalah dua-puluh halaman-jamak. akan kamu-bisa-lampau (untuk) itu kamu-membuat lebih ringkas?"
+    },
+    {
+     "speaker": "Άννα:",
+     "text": "[Έχετε|É-khé-té] [δίκιο|DHI-kio]. [Ήθελα|I-thé-la] [να|na] [μην|min] [ξεχάσω|ksé-KHA-so] [τίποτα|TI-po-ta].",
+     "id": "Ibu benar. Saya ingin tidak ada yang terlewat.",
+     "literal": "Anda-punya kebenaran. aku-ingin-lampau (untuk) jangan aku-lupa apa-pun."
+    },
+    {
+     "speaker": "Αγγελική:",
+     "text": "[Το|To] [καταλαβαίνω|ka-ta-la-VÉ-no]. [Όμως|O-mos] [το|to] [συμβούλιο|sim-VU-lio] [διαβάζει|dhia-VA-zi] [μόνο|MO-no] [την|tin] [πρώτη|PRO-ti] [σελίδα|sé-LI-dha], [πίστεψέ|PI-sté-PSÉ] [με|mé].",
+     "id": "Saya paham. Tapi dewan direksi cuma membaca halaman pertama, percayalah.",
+     "literal": "itu aku-mengerti. namun (sandang) dewan ia-membaca hanya (sandang) pertama halaman, percayalah aku."
+    },
+    {
+     "speaker": "Άννα:",
+     "text": "[Δηλαδή|Dhi-la-DHI] [να|na] [βάλω|VA-lo] [μια|mia] [περίληψη|pé-RI-li-psi] [στην|stin] [αρχή|ar-KHI];",
+     "id": "Jadi sebaiknya saya taruh ringkasan di awal?",
+     "literal": "artinya (untuk) aku-menaruh sebuah ringkasan di-(sandang) awal?"
+    },
+    {
+     "speaker": "Αγγελική:",
+     "text": "[Ακριβώς|A-kri-VOS]. [Και|Ké] [κάτι|KA-ti] [ακόμα|a-KO-ma]: [λείπουν|LI-pun] [οι|i] [αριθμοί|a-rith-MI]. [Πόσοι|PO-si] [δόκιμοι|DHO-ki-mi] [πέρασαν|PÉ-ra-san] [τις|tis] [εξετάσεις|é-ksé-TA-sis];",
+     "id": "Tepat. Dan satu hal lagi: angka-angkanya tidak ada. Berapa kadet yang lulus ujian?",
+     "literal": "tepat. dan sesuatu lagi: mereka-kurang (sandang) angka-jamak. berapa-jamak kadet-jamak mereka-melewati (sandang) ujian-jamak?"
+    },
+    {
+     "speaker": "Άννα:",
+     "text": "[Τριάντα|TRIAN-da] [έξι|É-ksi] [από|a-PO] [τους|tus] [σαράντα|sa-RAN-da]. [Συγγνώμη|Si-GHNO-mi], [δεν|dhén] [το|to] [είχα|I-kha] [σκεφτεί|skéf-TI].",
+     "id": "Tiga puluh enam dari empat puluh. Maaf, saya tidak terpikir soal itu.",
+     "literal": "tiga-puluh enam dari (sandang) empat-puluh. maaf, tidak itu aku-sudah-punya-lampau memikirkan."
+    },
+    {
+     "speaker": "Αγγελική:",
+     "text": "[Μη|Mi] [ζητάς|zi-TAS] [συγγνώμη|si-GHNO-mi]. [Είναι|I-né] [εξαιρετικό|é-ksé-ré-ti-KO] [αποτέλεσμα|a-po-TÉ-lé-sma]! [Γράψε|GHRA-psé] [το|to] [στην|stin] [πρώτη|PRO-ti] [σελίδα|sé-LI-dha].",
+     "id": "Jangan minta maaf. Itu hasil yang luar biasa! Tulis di halaman pertama.",
+     "literal": "jangan kamu-meminta maaf. ia-adalah luar-biasa hasil! tulislah itu di-(sandang) pertama halaman."
+    },
+    {
+     "speaker": "Άννα:",
+     "text": "[Θα|Tha] [το|to] [διορθώσω|dhior-THO-so] [μέχρι|MÉ-khri] [τη|ti] [Δευτέρα|Dhéf-TÉ-ra]. [Ευχαριστώ|Éf-kha-ri-STO] [για|ya] [τα|ta] [σχόλιά|SKHO-LIA] [σας|sas].",
+     "id": "Saya perbaiki paling lambat Senin. Terima kasih atas masukan Ibu.",
+     "literal": "akan itu aku-memperbaiki sampai (sandang) Senin. aku-berterima-kasih untuk (sandang) komentar-jamak Anda."
+    },
+    {
+     "speaker": "Αγγελική:",
+     "text": "[Εγώ|É-GHO] [ευχαριστώ|éf-kha-ri-STO]. [Και|Ké] [Άννα|A-na]… [η|i] [κριτική|kri-ti-KI] [είναι|I-né] [για|ya] [το|to] [κείμενο|KI-mé-no], [όχι|O-khi] [για|ya] [σένα|SÉ-na].",
+     "id": "Saya yang berterima kasih. Dan Ana… kritiknya untuk teksnya, bukan untuk kamu.",
+     "literal": "aku aku-berterima-kasih. dan Ana… (sandang) kritik ia-adalah untuk (sandang) teks, bukan untuk kamu."
+    }
+   ],
+   "notes": [
+    "**Έχω μερικές παρατηρήσεις** — pembuka kritik yang netral dan resmi (*η παρατήρηση* = catatan, pengamatan). Perhatikan urutannya: pujian dulu (*Το περιεχόμενο είναι εξαιρετικό*), lalu **όμως**, lalu usul. Pola \"roti lapis\" ini juga dipakai di kantor Yunani.",
+    "Αγγελική memakai **εσύ** kepada Ana, sedangkan Ana memakai **Εσείς** kepada direktur. Hubungan tak setara ini wajar di kantor Yunani. ⚠️ Jangan ikut ber-εσύ kepada atasan sebelum ia sendiri menawarkan: *Μίλα μου στον ενικό* (panggil aku \"kamu\" saja).",
+    "**Έχετε δίκιο** dan **δεν το είχα σκεφτεί** (saya belum terpikir soal itu) adalah dua jawaban terbaik saat dikritik. *Δεν το είχα σκεφτεί* memakai υπερσυντέλικος (unit 2): sebelum Anda bilang, saya belum memikirkannya.",
+    "**Δηλαδή να βάλω…;** — *να* + υποτακτική dalam pertanyaan = \"jadi sebaiknya saya…?\". Cara cepat memastikan kamu paham usul atasan tanpa terkesan membantah.",
+    "⚠️ **Μη ζητάς συγγνώμη.** Penutur Indonesia sering minta maaf berulang-ulang saat dikritik. Di Yunani, *συγγνώμη* yang berlebihan terdengar kurang percaya diri. Cukup terima, perbaiki, dan ucapkan terima kasih: *Ευχαριστώ για τα σχόλια.*",
+    "**Τα σχόλιά σας** — kata benda yang tekanannya di suku ketiga dari belakang (*σχόλια*) mendapat aksen kedua di depan enklitik: *τα σχόλιά σας, το κείμενό μου, η παρουσίασή σου*. **Πίστεψέ με** mengikuti aturan yang sama."
+   ],
+   "grammars": [
+    {
+     "title": "Menjawab kritik dengan profesional",
+     "body": [
+      "Enam langkah jawaban yang terdengar dewasa dalam bahasa Yunani. Tidak semuanya harus dipakai sekaligus."
+     ],
+     "table": {
+      "head": [
+       "Langkah",
+       "Yunani",
+       "Indonesia"
+      ],
+      "rows": [
+       [
+        "mengakui",
+        "Έχετε δίκιο. / Σωστά.",
+        "Anda benar. / Betul."
+       ],
+       [
+        "menjelaskan singkat",
+        "Ήθελα να μην ξεχάσω τίποτα.",
+        "Saya ingin tidak ada yang terlewat."
+       ],
+       [
+        "mengaku belum terpikir",
+        "Δεν το είχα σκεφτεί.",
+        "Saya belum terpikir soal itu."
+       ],
+       [
+        "memastikan",
+        "Δηλαδή να…;",
+        "Jadi sebaiknya saya…?"
+       ],
+       [
+        "berjanji",
+        "Θα το διορθώσω μέχρι τη Δευτέρα.",
+        "Saya perbaiki paling lambat Senin."
+       ],
+       [
+        "berterima kasih",
+        "Ευχαριστώ για τα σχόλια.",
+        "Terima kasih atas masukannya."
+       ],
+       [
+        "tidak setuju dengan sopan",
+        "Μου επιτρέπετε να διαφωνήσω λίγο;",
+        "Boleh saya sedikit tidak setuju?"
+       ]
+      ]
+     },
+     "after": [
+      "Tidak setuju juga boleh, asal dengan alasan: *Καταλαβαίνω, όμως…* (Saya paham, tapi…). Diam saja lalu tidak mengubah apa-apa justru dianggap tidak profesional."
+     ]
+    }
+   ]
+  }
+ ],
+ "sections": [
+  {
+   "title": "Kata-kata pelunak",
+   "blocks": [
+    {
+     "type": "p",
+     "text": "Bahasa Yunani punya sederet kata kecil yang membuat kalimat tegas terdengar lebih ramah. Dua atau tiga pelunak dalam satu kalimat sudah cukup; lebih dari itu, kalimatmu malah terdengar ragu-ragu."
+    },
+    {
+     "type": "tabel",
+     "head": [
+      "Pelunak",
+      "Arti",
+      "Contoh"
+     ],
+     "rows": [
+      [
+       "ίσως",
+       "mungkin",
+       "Ίσως πρέπει να το ξαναδούμε."
+      ],
+      [
+       "λίγο",
+       "sedikit, agak",
+       "Είναι λίγο μεγάλο."
+      ],
+      [
+       "κάπως",
+       "agak, sedikit banyak",
+       "Το κείμενο είναι κάπως δύσκολο."
+      ],
+      [
+       "μήπως",
+       "jangan-jangan, apakah mungkin",
+       "Μήπως ξεχάσαμε κάτι;"
+      ],
+      [
+       "νομίζω ότι",
+       "menurutku",
+       "Νομίζω ότι λείπει ένας πίνακας."
+      ],
+      [
+       "αν δεν κάνω λάθος",
+       "kalau saya tidak salah",
+       "Αν δεν κάνω λάθος, η ημερομηνία είναι άλλη."
+      ],
+      [
+       "ας πούμε",
+       "katakanlah",
+       "Θα μπορούσαμε, ας πούμε, να το κόψουμε."
+      ],
+      [
+       "με όλο τον σεβασμό",
+       "dengan segala hormat",
+       "Με όλο τον σεβασμό, διαφωνώ."
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Dari perintah menjadi usul",
+   "blocks": [
+    {
+     "type": "p",
+     "text": "Resep praktis: ambil perintahmu, ubah kata kerjanya menjadi *να* + υποτακτική, lalu taruh pembuka pelunak di depannya. Isi pesannya tidak berubah sama sekali, hanya nadanya."
+    },
+    {
+     "type": "kotak",
+     "title": "Satu pesan, tiga nada",
+     "items": [
+      "*Στείλε μου την αναφορά.* → *Θα μπορούσες να μου στείλεις την αναφορά;* → *Θα ήταν καλό να μου στείλεις την αναφορά μέχρι αύριο.*",
+      "*Άλλαξε τον τίτλο.* → *Μήπως να αλλάξουμε τον τίτλο;* → *Δεν θα ήταν καλύτερα να αλλάξουμε τον τίτλο;*",
+      "*Αυτό είναι λάθος.* → *Νομίζω ότι εδώ υπάρχει ένα λάθος.* → *Αν δεν κάνω λάθος, εδώ κάτι δεν ταιριάζει.*"
+     ]
+    },
+    {
+     "type": "p",
+     "text": "Perhatikan *Μήπως να αλλάξουμε…;* — *μήπως* + *να* tanpa kata kerja utama sama sekali. Ini cara usul yang sangat lazim dalam rapat: *Μήπως να κάνουμε ένα διάλειμμα;* (Bagaimana kalau kita istirahat sebentar?)."
+    }
+   ]
+  },
+  {
+   "title": "Budaya kritik di kantor Yunani",
+   "blocks": [
+    {
+     "type": "p",
+     "text": "Orang Yunani suka berdebat, dan debat yang panas di rapat tidak berarti hubungan rusak. Suara yang meninggi, interupsi, dan *Όχι, όχι, άκου…* adalah bagian biasa dari diskusi. Sesudah rapat, semua bisa minum kopi bersama seolah tidak terjadi apa-apa."
+    },
+    {
+     "type": "kotak",
+     "title": "⚠️ Hal yang perlu diingat penutur Indonesia",
+     "items": [
+      "Diam bukan tanda setuju. Kalau kamu tidak setuju dan diam saja, orang Yunani akan menganggap kamu setuju.",
+      "Senyum sambil menolak bisa membingungkan. Katakan penolakanmu dengan kata-kata: *Δυστυχώς, δεν συμφωνώ.*",
+      "Kritik yang terlalu halus bisa tidak tertangkap. Sebutkan masalahnya dengan jelas, lalu lunakkan nadanya, bukan isinya.",
+      "Pujian dulu, kritik kemudian, usul di akhir: pola ini aman di mana saja, termasuk di Pireas."
+     ]
+    }
+   ]
+  }
+ ],
+ "vocab": [
+  {
+   "el": "η παρατήρηση",
+   "baca": "i pa-ra-TI-ri-si",
+   "id": "catatan, pengamatan; teguran"
+  },
+  {
+   "el": "το σχόλιο",
+   "baca": "to SKHO-lio",
+   "id": "komentar, masukan (*τα σχόλια*)"
+  },
+  {
+   "el": "η κριτική",
+   "baca": "i kri-ti-KI",
+   "id": "kritik; ulasan"
+  },
+  {
+   "el": "η γνώμη",
+   "baca": "i GHNO-mi",
+   "id": "pendapat (*κατά τη γνώμη μου* = menurut saya)"
+  },
+  {
+   "el": "προτείνω",
+   "baca": "pro-TI-no",
+   "id": "mengusulkan (*πρότεινα*, *θα πρότεινα*)"
+  },
+  {
+   "el": "η πρόταση",
+   "baca": "i PRO-ta-si",
+   "id": "usul; juga: kalimat"
+  },
+  {
+   "el": "η παρουσίαση",
+   "baca": "i pa-ru-SI-a-si",
+   "id": "presentasi"
+  },
+  {
+   "el": "η διαφάνεια",
+   "baca": "i dhia-FA-ni-a",
+   "id": "slide presentasi (harfiah: transparansi)"
+  },
+  {
+   "el": "ο δόκιμος",
+   "baca": "o DHO-ki-mos",
+   "id": "kadet (*η δόκιμος* untuk perempuan)"
+  },
+  {
+   "el": "ο κανόνας",
+   "baca": "o ka-NO-nas",
+   "id": "aturan (*οι κανόνες*)"
+  },
+  {
+   "el": "ενώνω",
+   "baca": "é-NO-no",
+   "id": "menggabungkan (*ένωσα*, *να ενώσουμε*)"
+  },
+  {
+   "el": "κόβω",
+   "baca": "KO-vo",
+   "id": "memotong, membuang (*έκοψα*, *θα έκοβα*)"
+  },
+  {
+   "el": "η αναφορά",
+   "baca": "i a-na-fo-RA",
+   "id": "laporan"
+  },
+  {
+   "el": "η περίληψη",
+   "baca": "i pé-RI-li-psi",
+   "id": "ringkasan"
+  },
+  {
+   "el": "το περιεχόμενο",
+   "baca": "to pé-ri-é-KHO-mé-no",
+   "id": "isi"
+  },
+  {
+   "el": "σύντομος",
+   "baca": "SIN-do-mos",
+   "id": "ringkas, singkat (*σύντομη, σύντομο*)"
+  },
+  {
+   "el": "εξαιρετικός",
+   "baca": "é-ksé-ré-ti-KOS",
+   "id": "luar biasa, sangat bagus"
+  },
+  {
+   "el": "το αποτέλεσμα",
+   "baca": "to a-po-TÉ-lé-sma",
+   "id": "hasil"
+  },
+  {
+   "el": "το συμβούλιο",
+   "baca": "to sim-VU-lio",
+   "id": "dewan (*διοικητικό συμβούλιο* = dewan direksi)"
+  },
+  {
+   "el": "λείπω",
+   "baca": "LI-po",
+   "id": "tidak ada, kurang (*λείπουν οι αριθμοί*)"
+  },
+  {
+   "el": "διορθώνω",
+   "baca": "dhior-THO-no",
+   "id": "memperbaiki, mengoreksi (*διόρθωσα*)"
+  },
+  {
+   "el": "διαφωνώ",
+   "baca": "dhia-fo-NO",
+   "id": "tidak setuju (lawan: *συμφωνώ*)"
+  },
+  {
+   "el": "η αγένεια",
+   "baca": "i a-YÉ-ni-a",
+   "id": "ketidaksopanan (lawan: *η ευγένεια*)"
+  },
+  {
+   "el": "ελεύθερα",
+   "baca": "é-LÉF-thé-ra",
+   "id": "dengan bebas, terus terang"
+  },
+  {
+   "el": "μήπως",
+   "baca": "MI-pos",
+   "id": "jangan-jangan, apakah mungkin (pelunak pertanyaan)"
+  }
+ ],
+ "exercises": [
+  {
+   "prompt": "Terjemahkan ke bahasa Yunani. Pakai pelunak yang diminta atau yang paling cocok.",
+   "items": [
+    "Aku mau mengusulkan beberapa perubahan kecil.",
+    "Mungkin kita bisa menggabungkan dua slide ini.",
+    "Bukankah lebih baik kalau teksnya lebih ringkas?",
+    "Anda benar, saya belum terpikir soal itu.",
+    "Jangan minta maaf! (kepada teman)",
+    "Terima kasih atas masukan Anda."
+   ]
+  },
+  {
+   "prompt": "Isi dengan bentuk kondisional (θα + παρατατικός) yang tepat. Kata kerja dan pelakunya ada di dalam kurung.",
+   "items": [
+    "Θα ____ κάποιες αλλαγές. (προτείνω, εγώ)",
+    "Θα ____ να το κάνεις πιο σύντομο; (μπορώ, εσύ)",
+    "Δεν θα ____ καλύτερα να είναι και στα αγγλικά; (είμαι, αυτό)",
+    "Εγώ θα ____ τις μισές διαφάνειες. (κόβω)",
+    "Θα ____ ίσως να ενώσουμε τους κανόνες. (μπορώ, εμείς)",
+    "Θα ____ να σας ρωτήσω κάτι. (θέλω, εγώ)",
+    "Θα ____ να μου στείλετε την αναφορά; (μπορώ, εσείς)"
+   ]
+  },
+  {
+   "prompt": "Lunakkan kalimat langsung ini dengan alat di dalam kurung. Contoh: *Κόψε διαφάνειες.* (θα μπορούσες) → *Θα μπορούσες να κόψεις διαφάνειες.*",
+   "items": [
+    "Γράψε μια περίληψη. (θα μπορούσες)",
+    "Οι διαφάνειες είναι πολλές. (μήπως + λίγο)",
+    "Βάλε φωτογραφίες. (θα ήταν καλό)",
+    "Αλλάξτε τον τίτλο. (θα μπορούσατε)",
+    "Πρέπει να το γράψουμε στα αγγλικά. (δεν θα ήταν καλύτερα)",
+    "Κόβουμε τους κανόνες. (θα πρότεινα)"
+   ]
+  },
+  {
+   "prompt": "Susun jadi kalimat yang benar.",
+   "items": [
+    "θα / ίσως / μπορούσαμε / να / ενώσουμε / τους κανόνες",
+    "μήπως / λίγο / είναι / πολλές;",
+    "το / δεν / σκεφτεί / είχα",
+    "η κριτική / για το κείμενο / είναι / όχι για σένα",
+    "θα / να / καλό / ήταν / βάλεις / περισσότερες / φωτογραφίες"
+   ]
+  }
+ ],
+ "answers": [
+  "Θα πρότεινα κάποιες μικρές αλλαγές. — Θα μπορούσαμε ίσως να ενώσουμε αυτές τις δύο διαφάνειες. — Δεν θα ήταν καλύτερα να είναι το κείμενο πιο σύντομο; — Έχετε δίκιο, δεν το είχα σκεφτεί. — Μη ζητάς συγγνώμη! — Ευχαριστώ για τα σχόλιά σας.",
+  "πρότεινα — μπορούσες — ήταν — έκοβα — μπορούσαμε — ήθελα — μπορούσατε",
+  "Θα μπορούσες να γράψεις μια περίληψη. — Μήπως οι διαφάνειες είναι λίγο πολλές; — Θα ήταν καλό να βάλεις φωτογραφίες. — Θα μπορούσατε να αλλάξετε τον τίτλο. — Δεν θα ήταν καλύτερα να το γράψουμε στα αγγλικά; — Θα πρότεινα να κόψουμε τους κανόνες.",
+  "Θα μπορούσαμε ίσως να ενώσουμε τους κανόνες. — Μήπως είναι λίγο πολλές; — Δεν το είχα σκεφτεί. — Η κριτική είναι για το κείμενο, όχι για σένα. — Θα ήταν καλό να βάλεις περισσότερες φωτογραφίες."
+ ]
+}
