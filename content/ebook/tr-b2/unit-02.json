@@ -1,0 +1,658 @@
+{
+ "title": "Rantai partisip dalam dokumen",
+ "title_target": "Bulunduğu düşünülen mektup",
+ "goal": "Membaca dan menulis frasa partisip panjang khas dokumen resmi (*gönderilmiş olan mektup, katılacak olan öğrenciler, arşivde bulunduğu tespit edilen belge*), membongkarnya dari belakang, dan memilih kata kerja yang jujur soal tingkat kepastian (*tespit edilen, bilinen, düşünülen*).",
+ "bekal": [
+  "memakai partisip dengan *olan*: *-mış olan* (yang telah), *-ecek olan* (yang akan), *-mekte olan* (yang sedang), *-memiş olan* (yang belum)",
+  "merangkai *-diği* dengan partisip pasif untuk menyatakan \"yang diketahui/diduga/dipastikan bahwa …\": *bulunduğu tespit edilen, olduğu bilinen, yazıldığı düşünülen*",
+  "membaca frasa bertingkat dari kata benda inti ke kiri, lalu memecah kalimat yang terlalu panjang tanpa mengubah maknanya"
+ ],
+ "dialogs": [
+  {
+   "title": "Dialog — Proje taslağı",
+   "intro": "Selasa, 19 September 2028, ruang kerja Elif di Boğaziçi. Seperti dijanjikan, Elif membawa daftar arsip dan Budi membawa jadwal program. Di meja ada draf proposal yang ditulis Can semalaman.",
+   "lines": [
+    {
+     "speaker": "Elif:",
+     "text": "Can'ın hazırladığı taslağı okudum. İçerik güzel ama cümleler çok uzun.",
+     "id": "Aku sudah baca draf buatan Can. Isinya bagus, tapi kalimatnya panjang-panjang banget.",
+     "literal": "Can-punya siapkan-yang-nya draf-nya baca-lampau-saya. isi bagus tetapi kalimat-jamak sangat panjang."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Bence de. Şu cümleyi üç kez okudum, hâlâ öznesini bulamadım.",
+     "id": "Aku juga merasa begitu. Kalimat ini sudah kubaca tiga kali, subjeknya masih belum ketemu.",
+     "literal": "menurut-saya juga. itu kalimat-nya tiga kali baca-lampau-saya, masih subjek-nya-nya tidak-bisa-temukan-lampau-saya."
+    },
+    {
+     "speaker": "Elif:",
+     "text": "Hangisi? Oku bakalım.",
+     "id": "Yang mana? Coba bacakan.",
+     "literal": "yang-mana? baca mari-lihat."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "\"1566 yılında Aceh Sultanı tarafından Kanuni Sultan Süleyman'a gönderilmiş olan ve bir kopyasının bugün Osmanlı arşivinde bulunduğu tespit edilen mektup sergide tanıtılacaktır.\"",
+     "id": "\"Surat yang dikirim oleh Sultan Aceh kepada Sultan Süleyman Kanuni pada tahun 1566, yang salinannya dipastikan kini berada di arsip Utsmani, akan diperkenalkan dalam pameran.\"",
+     "literal": "\"1566 tahun-nya-di Aceh Sultan-nya oleh Kanuni Sultan Süleyman-ke di-kirim-konon yang-ada dan satu salinan-nya-punya hari-ini Utsmani arsip-nya-di berada-yang-nya dipastikan-yang surat pameran-di akan-di-perkenalkan-resmi.\""
+    },
+    {
+     "speaker": "Elif:",
+     "text": "Dilbilgisi aslında doğru. Ama \"tespit edilen\" diyemeyiz; kopyayı henüz görmedik.",
+     "id": "Tata bahasanya sebenarnya benar. Tapi kita nggak bisa bilang \"dipastikan\"; salinannya belum kita lihat.",
+     "literal": "tata-bahasa sebenarnya benar. tetapi \"dipastikan-yang\" tidak-bisa-bilang-kami; salinan-nya belum tidak-lihat-lampau-kami."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "O zaman \"bulunduğu düşünülen\" mi yazalım?",
+     "id": "Kalau begitu, kita tulis \"yang diduga berada\"?",
+     "literal": "itu waktu \"berada-yang-nya di-pikir-yang\" apakah mari-tulis-kami?"
+    },
+    {
+     "speaker": "Elif:",
+     "text": "Evet, daha dürüst olur. Kopyayı bulursak \"tespit edilen\"e geri döneriz.",
+     "id": "Ya, itu lebih jujur. Kalau salinannya ketemu, kita kembali ke \"dipastikan\".",
+     "literal": "ya, lebih jujur jadi-biasa. salinan-nya kalau-temukan-kami \"dipastikan-yang\"-ke kembali pulang-biasa-kami."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Peki \"gönderilmiş olan\" yerine sadece \"gönderilen\" yetmez mi?",
+     "id": "Terus, daripada \"yang telah dikirim\", apa cukup \"yang dikirim\" saja?",
+     "literal": "baik \"di-kirim-konon yang-ada\" tempat-nya-ke hanya \"di-kirim-yang\" tidak-cukup-biasa apakah?"
+    },
+    {
+     "speaker": "Elif:",
+     "text": "Yeter. \"-mış olan\" olayın tamamlandığını vurgular; resmi metinlerde sevilir ama her yerde gerekmez.",
+     "id": "Cukup. \"-mış olan\" menekankan bahwa peristiwanya sudah tuntas; disukai di teks resmi, tapi tidak wajib di mana-mana.",
+     "literal": "cukup-biasa. \"-mış olan\" peristiwa-punya di-selesaikan-yang-nya-nya tekankan-biasa; resmi teks-jamak-di di-sukai-biasa tetapi setiap tempat-di tidak-perlu-biasa."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Sonraki paragrafta da \"programa katılacak olan öğrenciler\" var.",
+     "id": "Di paragraf berikutnya juga ada \"mahasiswa yang akan ikut program\".",
+     "literal": "berikutnya paragraf-di juga \"program-ke akan-ikut yang-ada mahasiswa-jamak\" ada."
+    },
+    {
+     "speaker": "Elif:",
+     "text": "O da doğru; \"katılacak öğrenciler\" de denebilir. \"Olan\" metni biraz daha resmileştirir.",
+     "id": "Itu juga benar; bisa juga \"mahasiswa yang akan ikut\". Kata \"olan\" membuat teksnya sedikit lebih resmi.",
+     "literal": "itu juga benar; \"akan-ikut mahasiswa-jamak\" juga bisa-di-bilang. \"yang-ada\" teks-nya sedikit lebih jadikan-resmi-biasa."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Bunları Can'a söyleyelim mi? Belki alınır.",
+     "id": "Perlu kita sampaikan ke Can? Jangan-jangan dia tersinggung.",
+     "literal": "ini-jamak-nya Can-ke mari-bilang-kami apakah? mungkin tersinggung-biasa."
+    },
+    {
+     "speaker": "Elif:",
+     "text": "Alınmaz. Uzun cümle kurmayı sevdiğini kendisi de kabul ediyor.",
+     "id": "Nggak bakal. Dia sendiri juga mengakui kalau dia suka bikin kalimat panjang.",
+     "literal": "tidak-tersinggung-biasa. panjang kalimat membangun-nya suka-yang-nya-nya dia-sendiri juga terima sedang-buat."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "O zaman ben cümleyi ikiye bölüp ona göndereyim.",
+     "id": "Kalau begitu biar aku yang memecah kalimatnya jadi dua lalu mengirimkannya ke dia.",
+     "literal": "itu waktu saya kalimat-nya dua-ke bagi-lalu dia-ke mari-kirim-saya."
+    },
+    {
+     "speaker": "Elif:",
+     "text": "Güzel. Ama anlamı değiştirmeden, sadece yapısını sadeleştirerek.",
+     "id": "Bagus. Tapi tanpa mengubah maknanya, cukup dengan menyederhanakan strukturnya.",
+     "literal": "bagus. tetapi makna-nya tanpa-ubah, hanya struktur-nya-nya dengan-sederhanakan."
+    }
+   ],
+   "notes": [
+    "**gönderilmiş olan** — *-mış olan* berarti \"yang telah …\": partisip *-mış* ditambah *olan* (yang ada, yang menjadi). Bentuk ini menekankan bahwa peristiwanya sudah tuntas dan sangat disukai dokumen resmi. Dalam bahasa lisan cukup *gönderilen mektup*.",
+    "**Aceh Sultanı tarafından** — *tarafından* adalah \"oleh\" untuk pelaku kalimat pasif. Nama gelar dibentuk sebagai izafet: *Aceh Sultanı* (Sultan Aceh), *Osmanlı arşivi* (arsip Utsmani).",
+    "**bir kopyasının … bulunduğu** — subjek dalam kalimat benda *-diği* wajib bergenitif: *kopyasının bulunduğu* (bahwa salinannya berada). Penutur Indonesia sering lupa *-nın* karena bahasa kita tak punya penanda apa pun di situ.",
+    "**bulunduğu tespit edilen / düşünülen** — rantai khas dokumen: *-diği* (\"bahwa ia berada\") lalu partisip pasif (\"yang dipastikan\"). Harfiahnya \"surat yang keberadaannya dipastikan\". Ganti kata kerja kedua, berubah pula tingkat kepastiannya; Elif memilih *düşünülen* karena mereka belum melihat salinannya.",
+    "**tanıtılacaktır** — *-ecektir* adalah bentuk masa depan resmi (B1). Kalimat Can memadukan tiga partisip dan satu pasif; tata bahasanya benar, hanya berat dibaca.",
+    "**değiştirmeden, sadeleştirerek** — Elif menutup dengan *-meden* (tanpa) dan *-erek* (dengan cara), sebuah rumus nasihat penyuntingan yang padat: \"tanpa mengubah makna, dengan menyederhanakan struktur\"."
+   ],
+   "grammars": [
+    {
+     "title": "Partisip dengan olan",
+     "body": [
+      "*Olan* adalah partisip dari *olmak*. Diletakkan sesudah bentuk kala, ia mengubah bentuk itu menjadi keterangan kata benda dengan aspek yang lebih jelas: sudah, akan, sedang, atau belum."
+     ],
+     "table": {
+      "head": [
+       "Bentuk",
+       "Contoh",
+       "Arti"
+      ],
+      "rows": [
+       [
+        "*-en* (biasa)",
+        "*gönderilen mektup*",
+        "surat yang dikirim"
+       ],
+       [
+        "*-miş olan*",
+        "*gönderilmiş olan mektup*",
+        "surat yang telah dikirim"
+       ],
+       [
+        "*-memiş olan*",
+        "*onaylanmamış olan katılımcılar*",
+        "peserta yang belum disetujui"
+       ],
+       [
+        "*-ecek olan*",
+        "*katılacak olan öğrenciler*",
+        "mahasiswa yang akan ikut"
+       ],
+       [
+        "*-mekte olan*",
+        "*devam etmekte olan proje*",
+        "proyek yang sedang berjalan"
+       ],
+       [
+        "*-diği*",
+        "*okuduğum taslak*",
+        "draf yang saya baca"
+       ],
+       [
+        "*-eceği*",
+        "*kullanacağımız vitrinler*",
+        "lemari pajang yang akan kita pakai"
+       ]
+      ]
+     },
+     "after": [
+      "*Olan* juga dipakai sesudah kata sifat dan keterangan tempat: *yaşlı olan adam* (lelaki yang tua), *masada olan belgeler* (dokumen yang ada di meja)."
+     ]
+    },
+    {
+     "title": "Seberapa pasti? -diği + partisip pasif",
+     "body": [
+      "Pola *[subjek-genitif] … -diği + kata kerja pasif -en* berarti \"yang di-… bahwa …\". Kata kerja kedua itulah yang menentukan seberapa yakin penulisnya."
+     ],
+     "table": {
+      "head": [
+       "Rantai",
+       "Contoh",
+       "Tingkat kepastian"
+      ],
+      "rows": [
+       [
+        "*-diği tespit edilen*",
+        "*arşivde bulunduğu tespit edilen belge*",
+        "sudah dipastikan"
+       ],
+       [
+        "*-diği bilinen*",
+        "*1566'da yazıldığı bilinen mektup*",
+        "diketahui umum"
+       ],
+       [
+        "*-diği düşünülen*",
+        "*arşivde bulunduğu düşünülen kopya*",
+        "diduga kuat"
+       ],
+       [
+        "*-diği tahmin edilen*",
+        "*16. yüzyıla ait olduğu tahmin edilen harita*",
+        "diperkirakan"
+       ],
+       [
+        "*-diği sanılan*",
+        "*kaybolduğu sanılan belge*",
+        "disangka (bisa keliru)"
+       ],
+       [
+        "*-diği iddia edilen*",
+        "*sultana ait olduğu iddia edilen mühür*",
+        "diklaim, belum terbukti"
+       ]
+      ]
+     },
+     "after": [
+      "Dalam tulisan sejarah, pilihan ini soal integritas: jangan menulis *tespit edilen* untuk sesuatu yang baru *düşünülen*."
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Dialog kedua — Bütçe tablosu",
+   "intro": "Kamis, 21 September, kantor Köprü Turizm di Karaköy. Kerem dari bagian penjualan membantu Budi mengisi tabel anggaran program. Di layar terbuka lembar kerja berjudul *Anadolu–Nusantara Köprüsü — Bütçe 2028–2029*.",
+   "lines": [
+    {
+     "speaker": "Kerem:",
+     "text": "Bütçe tablosunu açtım. İlk satır: \"Aceh'ten gelecek olan heyetin konaklama giderleri.\"",
+     "id": "Tabel anggarannya sudah kubuka. Baris pertama: \"Biaya penginapan delegasi yang akan datang dari Aceh.\"",
+     "literal": "anggaran tabel-nya-nya buka-lampau-saya. pertama baris: \"Aceh-dari akan-datang yang-ada delegasi-punya penginapan biaya-jamak-nya.\""
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Heyet kaç kişi? Geçen hafta konuştuğumuz rakam on ikiydi.",
+     "id": "Delegasinya berapa orang? Angka yang kita bahas minggu lalu dua belas.",
+     "literal": "delegasi berapa orang? lalu minggu bicara-yang-kami angka dua-belas-lampau."
+    },
+    {
+     "speaker": "Kerem:",
+     "text": "On iki, ama gelmesi henüz kesinleşmemiş olan iki kişi daha var.",
+     "id": "Dua belas, tapi masih ada dua orang lagi yang kedatangannya belum pasti.",
+     "literal": "dua-belas, tetapi datang-nya belum menjadi-pasti-belum yang-ada dua orang lagi ada."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "O ikisini ayrı bir satıra yazalım: \"Katılımı onaylanmamış olan katılımcılar.\"",
+     "id": "Dua orang itu kita tulis di baris terpisah: \"Peserta yang keikutsertaannya belum disetujui.\"",
+     "literal": "itu dua-nya-nya terpisah satu baris-ke mari-tulis-kami: \"keikutsertaan-nya di-setujui-belum yang-ada peserta-jamak.\""
+    },
+    {
+     "speaker": "Kerem:",
+     "text": "Tamam. Sonra sergi için kiralanacak olan vitrinler var; fiyatı Trabzonlu bir tanıdıktan aldım.",
+     "id": "Oke. Lalu ada lemari pajang yang akan disewa untuk pameran; harganya kudapat dari seorang kenalan asal Trabzon.",
+     "literal": "oke. lalu pameran untuk akan-di-sewa yang-ada vitrin-jamak ada; harga-nya Trabzon-asal satu kenalan-dari ambil-lampau-saya."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Tanıdık fiyatı mı, piyasa fiyatı mı? Denetimde mutlaka sorulur.",
+     "id": "Harga kenalan atau harga pasar? Waktu audit pasti ditanyakan.",
+     "literal": "kenalan harga-nya apakah, pasar harga-nya apakah? audit-di pasti di-tanya-biasa."
+    },
+    {
+     "speaker": "Kerem:",
+     "text": "Piyasa fiyatı, merak etme. Geçen yıl başka bir projede güvenilir olduğu kanıtlanmış bir firma.",
+     "id": "Harga pasar, tenang saja. Itu firma yang tahun lalu sudah terbukti terpercaya di proyek lain.",
+     "literal": "pasar harga-nya, penasaran jangan-buat. lalu tahun lain satu proyek-di terpercaya jadi-yang-nya di-buktikan-konon satu firma."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Güzel. Son satırda \"karşılanması beklenen giderler\" yazıyor; bunlar ne?",
+     "id": "Bagus. Di baris terakhir tertulis \"biaya yang diharapkan ditanggung\"; ini apa?",
+     "literal": "bagus. terakhir baris-di \"di-tanggung-nya di-harapkan-yang biaya-jamak\" sedang-tulis; ini-jamak apa?"
+    },
+    {
+     "speaker": "Kerem:",
+     "text": "Kalkınma Ajansı'nın karşılayacağını umduğumuz masraflar. Hibe başvurusunu yakında yapacağız.",
+     "id": "Biaya yang kita harap akan ditanggung Badan Pembangunan. Permohonan hibahnya segera kita ajukan.",
+     "literal": "Pembangunan Badan-nya-punya akan-tanggung-yang-nya-nya harap-yang-kami biaya-jamak. hibah permohonan-nya-nya segera akan-lakukan-kami."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "O zaman başlığı daha açık yazalım: \"Ajans tarafından karşılanacağı öngörülen giderler.\"",
+     "id": "Kalau begitu judulnya kita tulis lebih jelas: \"Biaya yang diproyeksikan akan ditanggung oleh Badan.\"",
+     "literal": "itu waktu judul-nya lebih jelas mari-tulis-kami: \"Badan oleh akan-di-tanggung-yang-nya di-perkirakan-yang biaya-jamak.\""
+    },
+    {
+     "speaker": "Kerem:",
+     "text": "Vay, sen benden daha bürokrat olmuşsun! Bizim oralarda böyle konuşana \"memur\" derler.",
+     "id": "Wah, ternyata kamu lebih birokrat daripada aku! Di kampungku, orang yang ngomong begitu dipanggil \"pegawai negeri\".",
+     "literal": "wah, kamu saya-dari lebih birokrat jadi-konon-kamu! kami-punya sana-jamak-di begini bicara-yang-ke \"pegawai\" bilang-biasa-mereka."
+    }
+   ],
+   "notes": [
+    "**Aceh'ten gelecek olan heyetin konaklama giderleri** — frasa partisip bisa menempel pada kata benda yang sendirinya masih bagian dari izafet: [*Aceh'ten gelecek olan heyet*]-*in* + *konaklama giderleri*. Genitif *-in* jatuh di ujung seluruh frasa, bukan di tengah.",
+    "**gelmesi henüz kesinleşmemiş olan** — di dalam partisip ada kalimat benda: *gelmesi* (kedatangannya) menjadi subjek *kesinleşmemiş olan* (yang belum menjadi pasti). Bahasa Indonesia cukup berkata \"yang kedatangannya belum pasti\" dengan urutan terbalik.",
+    "**güvenilir olduğu kanıtlanmış** — kata sifat tak bisa langsung diberi *-diği*; ia butuh *olmak*: *güvenilir olduğu* (bahwa ia terpercaya). Lalu *kanıtlanmış* (yang telah dibuktikan) menempel. Pola ini sangat sering: *doğru olduğu anlaşılan, eksik olduğu görülen*.",
+    "**karşılayacağını umduğumuz** — dua partisip bertumpuk: *-eceğini* (bahwa ia akan menanggung, akusatif sebagai objek *ummak*) di dalam *-diğimiz* (yang kami harapkan). Harfiahnya \"biaya yang kami harap bahwa Badan akan menanggungnya\".",
+    "**öngörülen** — *öngörmek* (memperkirakan, memproyeksikan) adalah kata kunci anggaran dan perencanaan: *öngörülen gider* (biaya yang diproyeksikan), *öngörülemeyen durum* (keadaan tak terduga).",
+    "**bürokrat olmuşsun** — *-miş* di sini bukan kabar dari orang lain, melainkan kejutan atas sesuatu yang baru disadari: \"ternyata kamu sudah jadi birokrat!\" *Bizim oralarda* (di daerah kami sana) adalah cara Kerem menyebut Trabzon."
+   ],
+   "grammars": [
+    {
+     "title": "Membongkar frasa partisip dari belakang",
+     "body": [
+      "Frasa benda Turki dibangun dari kanan ke kiri: kata benda inti selalu di paling akhir, semua keterangan menumpuk di depannya. Cara membacanya: temukan intinya dulu, lalu mundur selangkah demi selangkah."
+     ],
+     "table": {
+      "head": [
+       "Langkah",
+       "Frasa",
+       "Arti"
+      ],
+      "rows": [
+       [
+        "1 (inti)",
+        "*giderler*",
+        "biaya"
+       ],
+       [
+        "2",
+        "*öngörülen giderler*",
+        "biaya yang diproyeksikan"
+       ],
+       [
+        "3",
+        "*karşılanacağı öngörülen giderler*",
+        "biaya yang diproyeksikan akan ditanggung"
+       ],
+       [
+        "4",
+        "*Ajans tarafından karşılanacağı öngörülen giderler*",
+        "… akan ditanggung oleh Badan"
+       ],
+       [
+        "5",
+        "*2029'da Ajans tarafından karşılanacağı öngörülen giderler*",
+        "… pada tahun 2029"
+       ]
+      ]
+     },
+     "after": [
+      "Terjemahan Indonesia berjalan berlawanan arah: mulai dari inti (\"biaya\"), lalu \"yang …\" berderet ke kanan. Kalau hasilnya terlalu panjang, pecah menjadi dua kalimat."
+     ]
+    }
+   ]
+  }
+ ],
+ "sections": [
+  {
+   "title": "Frasa partisip baku dalam dokumen",
+   "blocks": [
+    {
+     "type": "p",
+     "text": "Surat, proposal, dan kontrak Turki penuh frasa partisip siap pakai. Banyak di antaranya punya padanan persis dalam bahasa surat Indonesia, jadi mudah diingat berpasangan."
+    },
+    {
+     "type": "tabel",
+     "head": [
+      "Frasa",
+      "Padanan dalam surat Indonesia"
+     ],
+     "rows": [
+      [
+       "*aşağıda imzası bulunan*",
+       "yang bertanda tangan di bawah ini"
+      ],
+      [
+       "*yukarıda belirtilen*",
+       "tersebut di atas"
+      ],
+      [
+       "*adı geçen*",
+       "yang disebut, tersebut"
+      ],
+      [
+       "*ekte sunulan*",
+       "terlampir"
+      ],
+      [
+       "*yürürlükte olan*",
+       "yang berlaku"
+      ],
+      [
+       "*daha önce kararlaştırılmış olan*",
+       "yang telah disepakati sebelumnya"
+      ],
+      [
+       "*hazırlanmakta olan*",
+       "yang sedang disusun"
+      ],
+      [
+       "*ilgili kurumlar*",
+       "instansi terkait"
+      ]
+     ]
+    },
+    {
+     "type": "p",
+     "text": "Paragraf Can setelah disunting Budi: *1566 yılında Aceh Sultanı, Kanuni Sultan Süleyman'a bir mektup göndermiştir. Bu mektubun bir kopyasının bugün Osmanlı arşivinde bulunduğu düşünülmektedir. Mektup, sergide tanıtılacaktır.* Satu kalimat berat menjadi tiga kalimat pendek; tiap kalimat punya satu subjek yang jelas, dan tingkat kepastiannya kini jujur."
+    },
+    {
+     "type": "kotak",
+     "title": "Kiat membaca kalimat dokumen yang panjang",
+     "items": [
+      "Cari dulu kata kerja utama di ujung kalimat (*tanıtılacaktır*); semua yang di depannya adalah keterangan.",
+      "Kata benda tepat sebelum kata kerja utama biasanya subjek atau objeknya (*mektup*).",
+      "Setiap *-en, -diği, -ecek* menandai awal sebuah \"yang …\" dalam terjemahan.",
+      "Genitif (*-nın*) di tengah frasa sering menandai subjek sebuah anak kalimat, bukan pemilik."
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Menyusun anggaran",
+   "blocks": [
+    {
+     "type": "tabel",
+     "head": [
+      "Türkçe",
+      "Cara baca",
+      "Bahasa Indonesia"
+     ],
+     "rows": [
+      [
+       "bütçe kalemi",
+       "büt-CE ka-le-MI",
+       "pos anggaran"
+      ],
+      [
+       "gider / gelir",
+       "gi-DER / ge-LIR",
+       "pengeluaran / pemasukan"
+      ],
+      [
+       "konaklama",
+       "ko-nak-la-MA",
+       "penginapan"
+      ],
+      [
+       "ulaşım",
+       "u-la-SYIM",
+       "transportasi"
+      ],
+      [
+       "birim fiyat",
+       "bi-RIM fi-YAT",
+       "harga satuan"
+      ],
+      [
+       "toplam",
+       "top-LAM",
+       "jumlah"
+      ],
+      [
+       "KDV dahil / hariç",
+       "ka-de-VE da-HIL / ha-RIC",
+       "termasuk / belum termasuk PPN"
+      ],
+      [
+       "fatura",
+       "fa-TU-ra",
+       "faktur, tagihan"
+      ]
+     ]
+    },
+    {
+     "type": "p",
+     "text": "Judul kolom dalam tabel anggaran Turki biasanya berbentuk frasa partisip atau kalimat benda yang dipadatkan: *Talep edilen tutar* (jumlah yang diminta), *Kurum tarafından karşılanacak tutar* (jumlah yang ditanggung lembaga), *Gerçekleşen harcama* (belanja yang terealisasi)."
+    },
+    {
+     "type": "kotak",
+     "title": "Anggaran dan audit di Turki",
+     "items": [
+      "*KDV* (Katma Değer Vergisi) adalah padanan PPN; selalu tulis apakah harga *KDV dahil* atau *KDV hariç*.",
+      "Proyek berhibah wajib menyimpan *fatura* asli; kuitansi tulisan tangan jarang diterima.",
+      "*Tanıdık* (kenalan) memang membantu dalam bisnis Turki, tetapi di anggaran publik yang dihitung tetap *piyasa fiyatı*.",
+      "Angka ditulis dengan titik ribuan dan koma desimal, sama seperti di Indonesia: *12.500,00 TL*."
+     ]
+    }
+   ]
+  }
+ ],
+ "vocab": [
+  {
+   "tr": "belge",
+   "baca": "bel-GE",
+   "id": "dokumen"
+  },
+  {
+   "tr": "kopya",
+   "baca": "kop-YA",
+   "id": "salinan"
+  },
+  {
+   "tr": "tespit etmek",
+   "baca": "tes-PIT et-MEK",
+   "id": "memastikan, menetapkan; *tespit edilen* yang dipastikan"
+  },
+  {
+   "tr": "tarafından",
+   "baca": "ta-ra-fın-DAN",
+   "id": "oleh (pelaku pasif)"
+  },
+  {
+   "tr": "sergilemek",
+   "baca": "ser-gi-le-MEK",
+   "id": "memamerkan"
+  },
+  {
+   "tr": "tanıtmak",
+   "baca": "ta-nıt-MAK",
+   "id": "memperkenalkan; *tanıtılacaktır* akan diperkenalkan"
+  },
+  {
+   "tr": "vurgulamak",
+   "baca": "vur-gu-la-MAK",
+   "id": "menekankan"
+  },
+  {
+   "tr": "sadeleştirmek",
+   "baca": "sa-de-lesy-tir-MEK",
+   "id": "menyederhanakan"
+  },
+  {
+   "tr": "bölmek",
+   "baca": "böl-MEK",
+   "id": "membagi, memecah (*ikiye bölmek* memecah jadi dua)"
+  },
+  {
+   "tr": "-e katılmak",
+   "baca": "ka-tıl-MAK",
+   "id": "ikut serta (+ datif: *programa katılmak*)"
+  },
+  {
+   "tr": "-e alınmak",
+   "baca": "a-lın-MAK",
+   "id": "tersinggung (+ datif: *buna alındı*)"
+  },
+  {
+   "tr": "heyet",
+   "baca": "he-YET",
+   "id": "delegasi, rombongan resmi"
+  },
+  {
+   "tr": "bütçe",
+   "baca": "büt-CE",
+   "id": "anggaran"
+  },
+  {
+   "tr": "gider",
+   "baca": "gi-DER",
+   "id": "biaya, pengeluaran (jamak *giderler*)"
+  },
+  {
+   "tr": "masraf",
+   "baca": "mas-RAF",
+   "id": "ongkos, biaya"
+  },
+  {
+   "tr": "kesinleşmek",
+   "baca": "ke-sin-lesy-MEK",
+   "id": "menjadi pasti"
+  },
+  {
+   "tr": "onaylamak",
+   "baca": "o-nay-la-MAK",
+   "id": "menyetujui; *onaylanmamış* belum disetujui"
+  },
+  {
+   "tr": "kiralamak",
+   "baca": "ki-ra-la-MAK",
+   "id": "menyewa"
+  },
+  {
+   "tr": "tanıdık",
+   "baca": "ta-nı-DIK",
+   "id": "kenalan"
+  },
+  {
+   "tr": "piyasa fiyatı",
+   "baca": "pi-ya-SA fi-ya-TI",
+   "id": "harga pasar"
+  },
+  {
+   "tr": "denetim",
+   "baca": "de-ne-TIM",
+   "id": "audit, pemeriksaan"
+  },
+  {
+   "tr": "kanıtlamak",
+   "baca": "ka-nıt-la-MAK",
+   "id": "membuktikan; *kanıtlanmış* telah terbukti"
+  },
+  {
+   "tr": "karşılamak",
+   "baca": "kar-syı-la-MAK",
+   "id": "menanggung (biaya); juga menyambut"
+  },
+  {
+   "tr": "öngörmek",
+   "baca": "ön-gör-MEK",
+   "id": "memperkirakan, memproyeksikan; *öngörülen* yang diproyeksikan"
+  },
+  {
+   "tr": "ummak",
+   "baca": "um-MAK",
+   "id": "berharap (*umarım* semoga; *umduğumuz* yang kami harapkan)"
+  }
+ ],
+ "exercises": [
+  {
+   "prompt": "Terjemahkan ke bahasa Turki. Pakai partisip dengan *olan* bila ada kata \"telah\", \"akan\", \"sedang\", atau \"belum\".",
+   "items": [
+    "Surat yang telah dikirim dari Aceh akan dipamerkan.",
+    "Mahasiswa yang akan ikut program sudah dipilih.",
+    "dokumen yang diduga berada di arsip",
+    "Ada dua orang yang kedatangannya belum pasti.",
+    "biaya penginapan delegasi yang akan datang dari Aceh",
+    "proyek yang sedang berjalan"
+   ]
+  },
+  {
+   "prompt": "Isi titik-titik dengan bentuk yang tepat. Petunjuk ada di dalam kurung.",
+   "items": [
+    "1566'da ____ olan mektup (göndermek, pasif, -miş)",
+    "Programa ____ olan öğrenciler (katılmak, -ecek)",
+    "Arşivde ____ tespit edilen belgeler (bulunmak, -diği)",
+    "Henüz ____ olan katılımcılar (onaylanmak, -mamış)",
+    "Aceh Sultanı ____ gönderilen mektup (oleh)",
+    "Güvenilir ____ kanıtlanmış bir firma (olmak, -diği)",
+    "Ajansın ____ umduğumuz masraflar (karşılamak, -eceği + akusatif)"
+   ]
+  },
+  {
+   "prompt": "Ubah kalimat menjadi frasa benda berpartisip dengan kata benda dalam kurung sebagai inti. Pakai *olan* bila kalimatnya berkala *-mişti, -ecek, -mekte*, atau ingkar.",
+   "items": [
+    "Mektup 1566'da gönderilmişti. (mektup)",
+    "Öğrenciler programa katılacak. (öğrenciler)",
+    "Proje devam etmektedir. (proje)",
+    "Belgenin arşivde bulunduğu tespit edildi. (belge)",
+    "Firmanın güvenilir olduğu biliniyor. (firma)",
+    "Katılımcılar henüz onaylanmadı. (katılımcılar)"
+   ]
+  },
+  {
+   "prompt": "Susun jadi kalimat yang benar.",
+   "items": [
+    "sergilenecek / olan / gönderilmiş / mektup / Aceh'ten",
+    "inceledik / arşivde / bulunduğu / belgeyi / bilinen",
+    "var / iki kişi / kesinleşmemiş olan / gelmesi",
+    "kiralanacak / sergi için / vitrinler / olan / pahalı",
+    "gönderelim / ikiye / cümleyi / ona / bölüp"
+   ]
+  }
+ ],
+ "answers": [
+  "Aceh'ten gönderilmiş olan mektup sergilenecek. — Programa katılacak olan öğrenciler seçildi. — Arşivde bulunduğu düşünülen belge. — Gelmesi kesinleşmemiş olan iki kişi var. — Aceh'ten gelecek olan heyetin konaklama giderleri. — Devam etmekte olan proje.",
+  "gönderilmiş — katılacak — bulunduğu — onaylanmamış — tarafından — olduğu — karşılayacağını",
+  "1566'da gönderilmiş olan mektup — programa katılacak olan öğrenciler — devam etmekte olan proje — arşivde bulunduğu tespit edilen belge — güvenilir olduğu bilinen firma — henüz onaylanmamış olan katılımcılar",
+  "Aceh'ten gönderilmiş olan mektup sergilenecek. — Arşivde bulunduğu bilinen belgeyi inceledik. — Gelmesi kesinleşmemiş olan iki kişi var. — Sergi için kiralanacak olan vitrinler pahalı. — Cümleyi ikiye bölüp ona gönderelim."
+ ]
+}

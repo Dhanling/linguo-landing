@@ -1,0 +1,687 @@
+{
+ "title": "Bahasa berita — judul ringkas dan kata kerja pelapor",
+ "title_target": "Asırlık dostluk yeniden canlanıyor",
+ "goal": "Membaca dan menanggapi berita Turki: memahami judul ringkas tanpa kopula (*Aceh heyeti İstanbul'da*, *artış bekleniyor*, *düzenlenecek*), melaporkan ucapan dengan *-dığını / -eceğini söyledi, belirtti, açıkladı*, dan membedakan sumber resmi dari *öğrenildi* dan *iddia edildi*.",
+ "bekal": [
+  "mengurai judul berita: tanpa kopula, *-iyor* untuk kabar baru, *-dı* untuk yang selesai, *-ecek* untuk rencana",
+  "mengubah ucapan langsung menjadi laporan: *“Yüzde yirmi artış bekliyoruz.” → artış beklediklerini açıkladı*",
+  "menilai sumber berita (*açıkladı, öğrenildi, iddia edildi*) dan meminta ralat dengan sopan: *alıntının düzeltilmesini rica ederim*"
+ ],
+ "dialogs": [
+  {
+   "title": "Dialog — Röportaj",
+   "intro": "Senin, 11 Desember 2028, kantor Köprü Turizm di Karaköy. Aslı Demir, wartawan portal berita *Boğaz Postası*, mewawancarai Budi tentang program \"Anadolu–Nusantara Köprüsü\". Perekam suara menyala di meja.",
+   "lines": [
+    {
+     "speaker": "Aslı:",
+     "text": "Budi Bey, vakit ayırdığınız için teşekkürler. Programınızı kısaca anlatır mısınız?",
+     "id": "Pak Budi, terima kasih sudah meluangkan waktu. Bisa jelaskan program Anda secara singkat?",
+     "literal": "Budi Bey, waktu sisihkan-yang-Anda untuk terima-kasih-jamak. program-Anda-nya singkat ceritakan-biasa apakah-Anda?"
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Tabii. “Anadolu–Nusantara Köprüsü”, Türkiye ile Endonezya arasında kültür ve turizm alanında bir iş birliği programı.",
+     "id": "Tentu. \"Anadolu–Nusantara Köprüsü\" adalah program kerja sama bidang budaya dan pariwisata antara Türkiye dan Indonesia.",
+     "literal": "tentu. 'Anadolu–Nusantara Köprüsü', Türkiye dengan Indonesia antara-nya-di budaya dan pariwisata bidang-nya-di satu kerja sama program-nya."
+    },
+    {
+     "speaker": "Aslı:",
+     "text": "Program ne zaman başladı ve kimler yer alıyor?",
+     "id": "Program ini mulai kapan, dan siapa saja yang terlibat?",
+     "literal": "program kapan mulai-lampau dan siapa-jamak tempat sedang-ambil?"
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Eylülde başladı. Köprü Turizm'in yanı sıra Boğaziçi Üniversitesinden Dr. Elif Aydın da ekipte yer alıyor.",
+     "id": "Mulai bulan September. Selain Köprü Turizm, Dr. Elif Aydın dari Universitas Boğaziçi juga ada dalam tim.",
+     "literal": "September-di mulai-lampau. Köprü Turizm-punya sisi-nya berdampingan Boğaziçi Universitas-nya-dari Dr. Elif Aydın juga tim-di tempat sedang-ambil."
+    },
+    {
+     "speaker": "Aslı:",
+     "text": "Okurlarımız rakamları sever. Bu yıl kaç Endonezyalı turist bekliyorsunuz?",
+     "id": "Pembaca kami suka angka. Tahun ini Anda menunggu berapa turis Indonesia?",
+     "literal": "pembaca-jamak-kami angka-jamak-nya suka-biasa. ini tahun berapa Indonesia-an turis sedang-menunggu-Anda?"
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Kesin bir rakam vermek zor. Ama geçen yıla göre yüzde yirmi civarında bir artış öngörüyoruz.",
+     "id": "Sulit memberi angka pasti. Tapi dibanding tahun lalu, kami memperkirakan kenaikan sekitar dua puluh persen.",
+     "literal": "pasti satu angka memberi sulit. tapi lewat tahun-ke menurut persen dua-puluh sekitar-nya-di satu kenaikan sedang-perkirakan-kami."
+    },
+    {
+     "speaker": "Aslı:",
+     "text": "Tarihî bir boyutu da var, değil mi? Aceh ile Osmanlı arasındaki mektuplardan söz ediliyor.",
+     "id": "Ada dimensi sejarahnya juga, kan? Katanya ada surat-menyurat antara Aceh dan Utsmani.",
+     "literal": "bersejarah satu dimensi-nya juga ada, bukan apakah? Aceh dengan Utsmani antara-di-yang surat-jamak-dari sebutan di-lakukan-sedang."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Evet. Arşiv kayıtlarına göre Aceh Sultanı 1566 tarihli bir mektupla Osmanlı'dan yardım istemiş.",
+     "id": "Ya. Menurut catatan arsip, Sultan Aceh meminta bantuan kepada Utsmani lewat surat bertanggal 1566.",
+     "literal": "ya. arsip catatan-jamak-nya-ke menurut Aceh sultan-nya 1566 bertanggal satu surat-dengan Utsmani-dari bantuan minta-konon."
+    },
+    {
+     "speaker": "Aslı:",
+     "text": "Bunu “Budi Bey, Osmanlı'nın Aceh'i kurtardığını söyledi” diye yazabilir miyim?",
+     "id": "Boleh saya tulis, \"Budi Bey mengatakan bahwa Utsmani menyelamatkan Aceh\"?",
+     "literal": "ini-nya 'Budi Bey, Utsmani-punya Aceh-nya selamatkan-yang-nya-nya berkata-lampau' begitu tulis-bisa-biasa apakah-saya?"
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Hayır, lütfen öyle yazmayın. Yardımın ne kadarının Aceh'e ulaştığı, tarihçiler arasında hâlâ tartışmalı.",
+     "id": "Jangan, tolong jangan tulis begitu. Seberapa banyak bantuan itu yang benar-benar sampai ke Aceh masih diperdebatkan para sejarawan.",
+     "literal": "tidak, tolong begitu jangan-tulis-Anda. bantuan-punya berapa banyak-nya-punya Aceh-ke sampai-yang-nya, sejarawan-jamak antara-di masih diperdebatkan."
+    },
+    {
+     "speaker": "Aslı:",
+     "text": "Anlaşıldı. O zaman “Budi Bey, iki ülke arasındaki tarihî bağın önemine dikkat çekti” yazarım.",
+     "id": "Baik, saya paham. Kalau begitu saya tulis, \"Budi Bey menyoroti pentingnya ikatan sejarah antara kedua negara\".",
+     "literal": "di-pahami-lampau. itu waktu 'Budi Bey, dua negara antara-di-yang bersejarah ikatan-punya penting-nya-ke perhatian tarik-lampau' tulis-biasa-saya."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Bu çok daha doğru. Bir de şunu belirtmek isterim: program yalnızca turizmi değil, eğitimi de kapsıyor.",
+     "id": "Itu jauh lebih tepat. Satu lagi yang ingin saya sampaikan: program ini tidak hanya mencakup pariwisata, tapi juga pendidikan.",
+     "literal": "ini sangat lebih benar. satu juga ini-nya menyatakan ingin-biasa-saya: program hanya pariwisata-nya bukan, pendidikan-nya juga sedang-mencakup."
+    },
+    {
+     "speaker": "Aslı:",
+     "text": "Son olarak, gelecek yıl için bir müjdeniz var mı?",
+     "id": "Terakhir, ada kabar gembira untuk tahun depan?",
+     "literal": "terakhir sebagai, datang-yang tahun untuk satu kabar-gembira-Anda ada apakah?"
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Henüz resmî değil, ama baharda Banda Aceh'te bir Türk kültür haftası düzenlemeyi planlıyoruz.",
+     "id": "Belum resmi, tapi kami berencana mengadakan pekan budaya Turki di Banda Aceh musim semi nanti.",
+     "literal": "belum resmi bukan, tapi musim-semi-di Banda Aceh-di satu Turki budaya pekan-nya mengadakan-nya sedang-rencanakan-kami."
+    },
+    {
+     "speaker": "Aslı:",
+     "text": "Harika. Haber cuma günü sitemizde yayımlanacak.",
+     "id": "Bagus. Beritanya akan terbit di situs kami hari Jumat.",
+     "literal": "hebat. berita Jumat hari-nya situs-kami-di akan-di-terbitkan."
+    }
+   ],
+   "notes": [
+    "**vakit ayırdığınız için** — \"karena Anda menyisihkan waktu\": pembuka baku wawancara dan rapat. *-dığınız için* (karena Anda …) adalah partisip *-dık* + *için*; di akhir wawancara diulang dengan *Vakit ayırdığınız için tekrar teşekkürler*.",
+    "**yer alıyor** — \"mengambil tempat\" berarti ikut serta, terlibat, atau terdapat: *Ekipte Elif Aydın yer alıyor*, *Haberde üç fotoğraf yer alıyor*. Frasa ini sangat sering dalam berita dan laporan.",
+    "**yüzde yirmi civarında … öngörüyoruz** — *civarında* (sekitar) dan *öngörmek* (memperkirakan, memproyeksikan) membuat angka terdengar hati-hati. Budi belajar dari Elif: jangan beri wartawan angka yang terlalu pasti.",
+    "**söz ediliyor** — pasif impersonal dari *söz etmek* (menyebut): \"disebut-sebut\". Wartawan memakainya untuk membuka topik tanpa menyebut siapa sumbernya.",
+    "**kurtardığını söyledi ↔ dikkat çekti** — laporan ujaran memakai *-dığını* + kata kerja pelapor. Aslı menawarkan kalimat yang dramatis; Budi menolaknya, dan Aslı menggantinya dengan *dikkat çekti* (menyoroti), yang lebih setia pada ucapan Budi.",
+    "**müjde, yayımlanacak** — *müjde* (kabar gembira) dari bahasa Persia. *Yayımlamak* berarti menerbitkan tulisan, sedangkan *yayınlamak* dipakai untuk siaran radio dan televisi; dalam praktik keduanya sering tertukar, tetapi redaksi yang teliti membedakannya."
+   ],
+   "grammars": [
+    {
+     "title": "Kata kerja pelapor dalam berita",
+     "body": [
+      "Berita Turki jarang mengulang *söyledi*. Pilihan kata kerja pelapor sekaligus memberi tahu pembaca seberapa resmi dan seberapa kuat pernyataannya."
+     ],
+     "table": {
+      "head": [
+       "Kata kerja",
+       "Arti",
+       "Nuansa"
+      ],
+      "rows": [
+       [
+        "*söyledi*",
+        "mengatakan",
+        "netral"
+       ],
+       [
+        "*açıkladı*",
+        "mengumumkan",
+        "resmi, informasi baru"
+       ],
+       [
+        "*belirtti*",
+        "menyatakan",
+        "netral, sedikit resmi"
+       ],
+       [
+        "*ifade etti*",
+        "mengungkapkan",
+        "resmi"
+       ],
+       [
+        "*vurguladı*",
+        "menekankan",
+        "pernyataan penting"
+       ],
+       [
+        "*dikkat çekti*",
+        "menyoroti",
+        "menarik perhatian pada suatu hal"
+       ],
+       [
+        "*kaydetti*",
+        "mencatat, menyatakan",
+        "gaya kantor berita"
+       ],
+       [
+        "*iddia etti*",
+        "mengklaim",
+        "belum terbukti, wartawan menjaga jarak"
+       ]
+      ]
+     },
+     "after": [
+      "Pola kalimatnya: **pelapor + koma + isi laporan (-dığını / -eceğini) + kata kerja pelapor**: *Budi Bey, programın eylülde başladığını belirtti.*"
+     ]
+    },
+    {
+     "title": "Dari ucapan langsung ke laporan berita",
+     "body": [
+      "Ucapan langsung diubah menjadi frasa nominal: *-dığını* untuk kini dan lampau, *-eceğini* untuk masa depan, *olduğunu* untuk kalimat benda. Orang pertama berubah menjadi orang ketiga."
+     ],
+     "table": {
+      "head": [
+       "Ucapan langsung",
+       "Laporan berita"
+      ],
+      "rows": [
+       [
+        "“Program eylülde başladı.”",
+        "*Budi Bey, programın eylülde başladığını belirtti.*"
+       ],
+       [
+        "“Yüzde yirmi artış bekliyoruz.”",
+        "*Budi Bey, yüzde yirmi artış beklediklerini söyledi.*"
+       ],
+       [
+        "“Baharda bir hafta düzenleyeceğiz.”",
+        "*Budi Bey, baharda bir hafta düzenleyeceklerini açıkladı.*"
+       ],
+       [
+        "“Program eğitimi de kapsıyor.”",
+        "*Budi Bey, programın eğitimi de kapsadığını vurguladı.*"
+       ],
+       [
+        "“Rakam vermek zor.”",
+        "*Budi Bey, rakam vermenin zor olduğunu ifade etti.*"
+       ]
+      ]
+     },
+     "after": [
+      "Perhatikan *bekliyoruz* (kami) menjadi *beklediklerini* (bahwa mereka): orang ketiga jamak, karena Budi berbicara atas nama lembaganya."
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Dialog kedua — Yanlış alıntı",
+   "intro": "Jumat pagi, 15 Desember, kantor Köprü Turizm. Berita Aslı sudah terbit. Zeynep membacakannya keras-keras dari ponselnya, sementara Budi dan Selim Bey mendengarkan sambil minum teh.",
+   "lines": [
+    {
+     "speaker": "Zeynep:",
+     "text": "Budi, haber yayımlandı! Başlık şöyle: “Asırlık dostluk yeniden canlanıyor”.",
+     "id": "Budi, beritanya sudah terbit! Judulnya begini: \"Persahabatan berabad-abad hidup kembali\".",
+     "literal": "Budi, berita di-terbitkan-lampau! judul begini: 'berabad persahabatan kembali sedang-hidup'."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Güzel başlık. Fiil de şimdiki zamanda; sanki olay şu an oluyor.",
+     "id": "Judul yang bagus. Kata kerjanya juga kala kini; seakan-akan peristiwanya sedang terjadi sekarang.",
+     "literal": "bagus judul. kata-kerja juga kini waktu-di; seakan peristiwa ini saat sedang-terjadi."
+    },
+    {
+     "speaker": "Zeynep:",
+     "text": "Haber dili böyle. Alt başlık da var: “Endonezyalı turist sayısında yüzde 20 artış bekleniyor”.",
+     "id": "Bahasa berita memang begitu. Ada subjudulnya juga: \"Jumlah turis Indonesia diperkirakan naik 20 persen\".",
+     "literal": "berita bahasa-nya begini. bawah judul juga ada: 'Indonesia-an turis jumlah-nya-di persen 20 kenaikan di-tunggu-sedang'."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Doğru, öyle söyledim. Devamını oku lütfen.",
+     "id": "Betul, aku memang bilang begitu. Lanjutkan bacanya, tolong.",
+     "literal": "benar, begitu berkata-lampau-saya. lanjutan-nya-nya baca tolong."
+    },
+    {
+     "speaker": "Zeynep:",
+     "text": "“Budi Bey, Endonezyalıların Türkiye'yi Avrupa'dan daha çok sevdiğini belirtti.”",
+     "id": "\"Budi Bey menyatakan bahwa orang Indonesia lebih menyukai Türkiye daripada Eropa.\"",
+     "literal": "'Budi Bey, orang-Indonesia-jamak-punya Türkiye-nya Eropa-dari lebih banyak suka-yang-nya-nya menyatakan-lampau.'"
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Ne? Ben öyle bir şey demedim! Sadece Türkiye'nin Endonezyalılara yakın gelen bir kültür olduğunu söyledim.",
+     "id": "Apa? Aku nggak pernah bilang begitu! Aku cuma bilang Türkiye itu budaya yang terasa dekat bagi orang Indonesia.",
+     "literal": "apa? saya begitu satu hal tidak-bilang-lampau-saya! hanya Türkiye-punya orang-Indonesia-jamak-ke dekat datang-yang satu budaya ada-yang-nya-nya berkata-lampau-saya."
+    },
+    {
+     "speaker": "Selim:",
+     "text": "Sakin ol. Gazeteciler bazen cümleyi kısaltırken anlamı da değiştirir.",
+     "id": "Tenang. Wartawan kadang mengubah makna waktu memendekkan kalimat.",
+     "literal": "tenang jadilah. wartawan-jamak kadang kalimat-nya pendekkan-sambil makna-nya juga ubah-biasa."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Bir de şu var: “Programın Aceh'te bir kültür haftası düzenleyeceği öğrenildi.” Henüz resmî değil demiştim.",
+     "id": "Ada satu lagi: \"Diketahui bahwa program ini akan mengadakan pekan budaya di Aceh.\" Padahal aku sudah bilang itu belum resmi.",
+     "literal": "satu juga ini ada: 'program-punya Aceh-di satu budaya pekan-nya akan-adakan-yang-nya di-ketahui-lampau.' belum resmi bukan bilang-sudah-lampau-saya."
+    },
+    {
+     "speaker": "Zeynep:",
+     "text": "Ama bak, “açıkladı” değil, “öğrenildi” yazmışlar. Yani resmî bir açıklama gibi sunmamışlar.",
+     "id": "Tapi lihat, mereka menulis \"öğrenildi\", bukan \"açıkladı\". Artinya mereka tidak menyajikannya sebagai pengumuman resmi.",
+     "literal": "tapi lihat, 'mengumumkan-lampau' bukan, 'di-ketahui-lampau' tulis-konon-mereka. jadi resmi satu pengumuman seperti tidak-sajikan-konon-mereka."
+    },
+    {
+     "speaker": "Selim:",
+     "text": "Yine de bir düzeltme isteyelim. Muhabire kibar bir e-posta yaz, sözlerinin aynen aktarılmasını rica et.",
+     "id": "Tetap saja, mari kita minta ralat. Tulis surel yang sopan ke wartawannya, minta agar ucapanmu dikutip persis.",
+     "literal": "tetap juga satu ralat minta-mari. wartawan-ke sopan satu surel tulis, ucapan-jamak-mu-punya persis di-sampaikan-nya-nya minta lakukan."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Hemen yazıyorum: “Haberdeki ikinci alıntının düzeltilmesini rica ederim.”",
+     "id": "Langsung kutulis: \"Mohon kutipan kedua dalam berita tersebut diralat.\"",
+     "literal": "segera sedang-tulis-saya: 'berita-di-yang kedua kutipan-punya di-perbaiki-nya-nya permohonan lakukan-biasa-saya.'"
+    }
+   ],
+   "notes": [
+    "**Asırlık dostluk yeniden canlanıyor** — judul berita memakai *-iyor* untuk kabar yang baru atau sedang berkembang, tanpa kata sandang dan sering tanpa subjek lengkap. *Asırlık* (berabad-abad) dibentuk dari *asır* (abad, Arab \"ashr\") + *-lık*.",
+    "**artış bekleniyor** — pasif tanpa pelaku adalah kesukaan judul: yang penting kabarnya, bukan siapa yang memperkirakannya. Dalam kalimat lengkap: *Turist sayısının yüzde 20 artması bekleniyor*.",
+    "**sevdiğini belirtti** — inilah kutipan keliru: laporan *-diğini belirtti* membuat seolah Budi mengucapkan perbandingan dengan Eropa. Satu partisip yang salah bisa mengubah seluruh pesan.",
+    "**yakın gelen bir kültür olduğunu söyledim** — kalimat benda (*Türkiye yakın bir kültür*) dilaporkan dengan *olduğunu*. *Yakın gelmek* (terasa dekat) lebih halus daripada *yakın olmak*.",
+    "**düzenleyeceği öğrenildi** — *-eceği / -diği öğrenildi* (diketahui bahwa …) dipakai wartawan untuk informasi dari sumber tak resmi. Zeynep benar: bentuk ini tidak mengklaim ada pengumuman, berbeda dengan *açıkladı*. Yang lebih berjarak lagi adalah *iddia edildi* (diklaim).",
+    "**düzeltilmesini rica ederim** — permintaan resmi: kata kerja pasif + *-mesini* + *rica ederim* (\"saya mohon agar … di…\"). Kata bendanya *düzeltme* (ralat); hak jawab resmi menurut undang-undang pers disebut *tekzip*."
+   ],
+   "grammars": [
+    {
+     "title": "Penanda sumber dalam berita",
+     "body": [
+      "Pembaca berita Turki yang cermat selalu memperhatikan kata kerja di akhir kalimat, karena di situlah wartawan memberi tahu seberapa pasti informasinya."
+     ],
+     "table": {
+      "head": [
+       "Ungkapan",
+       "Artinya bagi pembaca",
+       "Contoh"
+      ],
+      "rows": [
+       [
+        "*… açıkladı*",
+        "pengumuman resmi dari sumber yang disebut",
+        "*Bakanlık yeni rakamları açıkladı.*"
+       ],
+       [
+        "*yetkililer doğruladı*",
+        "dikonfirmasi pejabat",
+        "*Haberi yetkililer doğruladı.*"
+       ],
+       [
+        "*-diği belirtildi*",
+        "disampaikan, sumber tak disebut",
+        "*Uçuşların arttığı belirtildi.*"
+       ],
+       [
+        "*-eceği öğrenildi*",
+        "diketahui dari sumber tak resmi",
+        "*Bir hafta düzenleneceği öğrenildi.*"
+       ],
+       [
+        "*kulislere göre*",
+        "menurut kabar di balik layar",
+        "*Kulislere göre anlaşma yakın.*"
+       ],
+       [
+        "*-diği iddia edildi*",
+        "diklaim, belum terbukti",
+        "*Bütçede usulsüzlük olduğu iddia edildi.*"
+       ],
+       [
+        "*-diği ileri sürüldü*",
+        "dikemukakan (sering tuduhan)",
+        "*Rakamların şişirildiği ileri sürüldü.*"
+       ]
+      ]
+     }
+    }
+   ]
+  }
+ ],
+ "sections": [
+  {
+   "title": "Judul berita: ringkas tanpa kopula",
+   "blocks": [
+    {
+     "type": "p",
+     "text": "Judul berita Turki membuang semua yang bisa dibuang: kopula *-dır*, kata kerja *olmak*, bahkan kadang kata kerjanya sendiri. Kala dipilih dengan sengaja: *-iyor* untuk kabar baru atau yang sedang berjalan, *-dı* untuk peristiwa yang sudah selesai, *-ecek* untuk rencana. Untuk memahaminya, \"kembalikan\" judul menjadi kalimat lengkap."
+    },
+    {
+     "type": "tabel",
+     "head": [
+      "Judul",
+      "Kalimat lengkap",
+      "Catatan"
+     ],
+     "rows": [
+      [
+       "*Asırlık dostluk yeniden canlanıyor*",
+       "*İki ülke arasındaki asırlık dostluk yeniden canlanıyor.*",
+       "*-iyor*: kabar baru"
+      ],
+      [
+       "*Turist sayısında yüzde 20 artış bekleniyor*",
+       "*Turist sayısının yüzde 20 artması bekleniyor.*",
+       "pasif tanpa pelaku"
+      ],
+      [
+       "*Aceh heyeti İstanbul'da*",
+       "*Aceh heyeti şu anda İstanbul'da bulunuyor.*",
+       "tanpa kopula"
+      ],
+      [
+       "*Topkapı'ya yoğun ilgi*",
+       "*Topkapı Sarayı'na yoğun ilgi gösterildi.*",
+       "tanpa kata kerja"
+      ],
+      [
+       "*Kadıköy'de aşırı turizm tartışıldı*",
+       "*Kadıköy'de aşırı turizm konusu tartışıldı.*",
+       "*-dı*: sudah selesai"
+      ],
+      [
+       "*Banda Aceh'te Türk kültür haftası düzenlenecek*",
+       "*Banda Aceh'te bir Türk kültür haftası düzenlenecek.*",
+       "*-ecek*: rencana"
+      ],
+      [
+       "*Bakan: “Turizmde hedef büyük”*",
+       "*Bakan, turizmdeki hedeflerin büyük olduğunu söyledi.*",
+       "titik dua = kutipan"
+      ]
+     ]
+    },
+    {
+     "type": "kotak",
+     "title": "Membaca portal berita Turki",
+     "items": [
+      "Singkatan yang sering muncul: *AA* (Anadolu Ajansı, kantor berita negara), *TBMM* (parlemen), *AB* (Uni Eropa), *ABD* (Amerika Serikat).",
+      "Paragraf pertama biasanya menjawab *5N1K*: *ne, nerede, ne zaman, nasıl, neden, kim* (apa, di mana, kapan, bagaimana, mengapa, siapa).",
+      "Kolom opini (*köşe yazısı*) memakai bahasa jauh lebih bebas daripada berita; jangan jadikan contoh gaya netral.",
+      "Judul yang diakhiri tanda tanya sering berarti wartawan belum punya konfirmasi."
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Menulis rilis pers dan meminta ralat",
+   "blocks": [
+    {
+     "type": "p",
+     "text": "Sesudah kejadian kutipan keliru, Köprü Turizm memutuskan menyiapkan rilis pers (*basın bülteni*) untuk setiap kegiatan. Rilis pers ditulis dalam orang ketiga dan memakai kata kerja pelapor yang sama dengan berita, sehingga wartawan bisa mengutipnya tanpa mengubah makna."
+    },
+    {
+     "type": "tabel",
+     "head": [
+      "Bagian",
+      "Contoh kalimat",
+      "Arti"
+     ],
+     "rows": [
+      [
+       "judul",
+       "*Anadolu–Nusantara Köprüsü'nden yeni adım*",
+       "Langkah baru dari Anadolu–Nusantara Köprüsü"
+      ],
+      [
+       "paragraf pembuka",
+       "*Köprü Turizm, Banda Aceh'te bir kültür haftası düzenleyeceğini açıkladı.*",
+       "Köprü Turizm mengumumkan akan mengadakan pekan budaya di Banda Aceh."
+      ],
+      [
+       "kutipan",
+       "*Program Koordinatörü Budi, “…” dedi.*",
+       "Koordinator Program Budi mengatakan \"…\"."
+      ],
+      [
+       "latar",
+       "*Program, Eylül 2028'de başlamıştı.*",
+       "Program ini dimulai pada September 2028."
+      ],
+      [
+       "kontak",
+       "*Ayrıntılı bilgi için: basin@…*",
+       "Informasi lebih lanjut: …"
+      ],
+      [
+       "permintaan ralat",
+       "*Haberdeki alıntının düzeltilmesini rica ederiz.*",
+       "Kami mohon kutipan dalam berita diralat."
+      ]
+     ]
+    },
+    {
+     "type": "kotak",
+     "title": "Kiat berhadapan dengan wartawan",
+     "items": [
+      "Beri angka dalam rentang atau dengan *civarında*; angka pasti mudah berubah menjadi judul.",
+      "Kalau wartawan menawarkan kalimat, dengarkan kata kerja pelapornya: *dikkat çekti* aman, *iddia etti* menjauhkanmu dari ucapanmu sendiri.",
+      "Minta ralat dengan sopan dan spesifik: sebut kalimat mana yang keliru dan bagaimana bunyi yang benar.",
+      "Rencana yang belum resmi lebih baik tidak disebut sama sekali."
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Ulangan berjenjang — unit 7",
+   "blocks": [
+    {
+     "type": "p",
+     "text": "Tutup kolom Turki, baca terjemahan Indonesianya, lalu susun kembali kalimatnya dari ingatan."
+    },
+    {
+     "type": "tabel",
+     "head": [
+      "Bahasa Indonesia",
+      "Türkçe"
+     ],
+     "rows": [
+      [
+       "Tahun 1453 Fatih Sultan Mehmet menaklukkan İstanbul. Beberapa tahun kemudian ia mulai membangun istana ini.",
+       "*1453'te Fatih Sultan Mehmet İstanbul'u fetheder. Birkaç yıl sonra da bu sarayın yapımına başlar.*"
+      ],
+      [
+       "Kemungkinan besar. Menurut catatan, para utusan melewati Babüssaade, lalu menghadap padisyah di Arz Odası.",
+       "*Muhtemelen. Kayıtlara göre elçiler Babüssaade'den geçer, Arz Odası'nda padişahın huzuruna çıkarlardı.*"
+      ],
+      [
+       "Kira-kira empat ratus tahun. Tahun 1856 Abdülmecit pindah ke Dolmabahçe, dan tahun 1924 Topkapı menjadi museum.",
+       "*Yaklaşık dört yüz yıl. 1856'da Abdülmecit Dolmabahçe'ye taşındı, 1924'te de Topkapı müze oldu.*"
+      ],
+      [
+       "Tahun 1560-an. Sultan Aceh, Alauddin, mencari sekutu yang kuat untuk melawan armada Portugis dan mengirim seorang utusan ke İstanbul.",
+       "*1560'lı yıllar. Aceh Sultanı Alaaddin, Portekiz donanmasına karşı güçlü bir müttefik arar ve İstanbul'a bir elçi gönderir.*"
+      ],
+      [
+       "Di situ aku pindah ke \"-mış\": \"Menurut riwayat, di tangan para utusan tinggal satu cupak lada.\"",
+       "*Orada “-mış”a geçeceğim: “Rivayete göre elçilerin elinde bir ölçek biber kalmış.”*"
+      ]
+     ]
+    }
+   ]
+  }
+ ],
+ "vocab": [
+  {
+   "tr": "gazeteci",
+   "baca": "ga-ze-te-JI",
+   "id": "wartawan"
+  },
+  {
+   "tr": "muhabir",
+   "baca": "mu-ha-BIR",
+   "id": "reporter, koresponden"
+  },
+  {
+   "tr": "röportaj",
+   "baca": "rö-por-TAZY",
+   "id": "wawancara (media)"
+  },
+  {
+   "tr": "haber",
+   "baca": "ha-BER",
+   "id": "berita, kabar"
+  },
+  {
+   "tr": "başlık",
+   "baca": "basy-LIK",
+   "id": "judul (*alt başlık*: subjudul)"
+  },
+  {
+   "tr": "okur",
+   "baca": "o-KUR",
+   "id": "pembaca"
+  },
+  {
+   "tr": "yayımlamak",
+   "baca": "ya-yım-la-MAK",
+   "id": "menerbitkan (*yayımlanmak*: diterbitkan)"
+  },
+  {
+   "tr": "açıklamak",
+   "baca": "a-cık-la-MAK",
+   "id": "mengumumkan; menjelaskan (*açıklama*: pernyataan)"
+  },
+  {
+   "tr": "belirtmek",
+   "baca": "be-lirt-MEK",
+   "id": "menyatakan"
+  },
+  {
+   "tr": "vurgulamak",
+   "baca": "vur-gu-la-MAK",
+   "id": "menekankan"
+  },
+  {
+   "tr": "dikkat çekmek",
+   "baca": "dik-KAT cek-MEK",
+   "id": "menyoroti (*-e dikkat çekmek*)"
+  },
+  {
+   "tr": "iddia etmek",
+   "baca": "id-di-A et-MEK",
+   "id": "mengklaim (*iddia edildi*: diklaim)"
+  },
+  {
+   "tr": "öğrenilmek",
+   "baca": "öö-re-nil-MEK",
+   "id": "diketahui (pasif dari *öğrenmek*)"
+  },
+  {
+   "tr": "kaynak",
+   "baca": "kay-NAK",
+   "id": "sumber"
+  },
+  {
+   "tr": "alıntı",
+   "baca": "a-lın-TI",
+   "id": "kutipan"
+  },
+  {
+   "tr": "düzeltme",
+   "baca": "dü-zelt-ME",
+   "id": "ralat, koreksi"
+  },
+  {
+   "tr": "öngörmek",
+   "baca": "ön-gör-MEK",
+   "id": "memperkirakan, memproyeksikan"
+  },
+  {
+   "tr": "artış",
+   "baca": "ar-TISY",
+   "id": "kenaikan (lawan: *düşüş*)"
+  },
+  {
+   "tr": "rakam",
+   "baca": "ra-KAM",
+   "id": "angka"
+  },
+  {
+   "tr": "civarında",
+   "baca": "ji-va-rın-DA",
+   "id": "sekitar (*yüzde yirmi civarında*)"
+  },
+  {
+   "tr": "müjde",
+   "baca": "müzy-DE",
+   "id": "kabar gembira"
+  },
+  {
+   "tr": "tartışmalı",
+   "baca": "tar-tısy-ma-LI",
+   "id": "diperdebatkan, kontroversial"
+  },
+  {
+   "tr": "yer almak",
+   "baca": "yer al-MAK",
+   "id": "ikut serta, terdapat (*-de yer almak*)"
+  },
+  {
+   "tr": "canlanmak",
+   "baca": "jan-lan-MAK",
+   "id": "hidup kembali, bergairah"
+  },
+  {
+   "tr": "asırlık",
+   "baca": "a-sır-LIK",
+   "id": "berabad-abad (*asır*: abad)"
+  }
+ ],
+ "exercises": [
+  {
+   "prompt": "Terjemahkan ke bahasa Turki.",
+   "items": [
+    "Terima kasih sudah meluangkan waktu.",
+    "Kami memperkirakan kenaikan sekitar dua puluh persen.",
+    "Hal ini masih diperdebatkan di antara para sejarawan.",
+    "Budi Bey menyoroti pentingnya ikatan sejarah antara kedua negara.",
+    "Aku tidak pernah bilang begitu!",
+    "Berita itu akan diterbitkan hari Jumat."
+   ]
+  },
+  {
+   "prompt": "Isi titik-titik. Petunjuk ada di dalam kurung.",
+   "items": [
+    "Budi Bey, programın eylülde ____ söyledi. (başlamak, -dığını)",
+    "Bakan, yeni uçuşların baharda ____ açıkladı. (başlamak, -eceğini)",
+    "Programın Aceh'te bir hafta düzenleyeceği ____. (öğrenmek, pasif -di)",
+    "Turist sayısında yüzde 20 artış ____. (beklemek, pasif -iyor)",
+    "Aslı Hanım, haberin cuma günü ____ belirtti. (yayımlanmak, -eceğini)",
+    "Haberdeki alıntının ____ rica ederim. (düzeltilmek, -mesini)",
+    "Ekipte Dr. Elif Aydın da yer ____. (almak, -iyor)"
+   ]
+  },
+  {
+   "prompt": "Ubah ucapan langsung menjadi kalimat berita dengan kata kerja pelapor di dalam kurung.",
+   "items": [
+    "Budi: “Program eylülde başladı.” (belirtti)",
+    "Selim: “Yüzde yirmi artış bekliyoruz.” (açıkladı)",
+    "Elif: “Bu mektup çok önemli.” (vurguladı)",
+    "Budi: “Baharda bir kültür haftası düzenleyeceğiz.” (söyledi)",
+    "Can: “Arşivde yeni bir belge buldum.” (ifade etti)",
+    "Zeynep: “Program eğitimi de kapsıyor.” (belirtti)"
+   ]
+  },
+  {
+   "prompt": "Susun jadi judul atau kalimat berita yang benar.",
+   "items": [
+    "canlanıyor / dostluk / asırlık / yeniden",
+    "bekleniyor / artış / yüzde 20 / turist sayısında",
+    "Budi Bey / tarihî bağın / dikkat çekti / önemine",
+    "öğrenildi / düzenleyeceği / programın / bir kültür haftası",
+    "yayımlanacak / cuma günü / haber / sitede"
+   ]
+  }
+ ],
+ "answers": [
+  "Vakit ayırdığınız için teşekkürler. — Yüzde yirmi civarında bir artış öngörüyoruz. — Bu, tarihçiler arasında hâlâ tartışmalı. — Budi Bey, iki ülke arasındaki tarihî bağın önemine dikkat çekti. — Ben öyle bir şey demedim! — Haber cuma günü yayımlanacak.",
+  "başladığını — başlayacağını — öğrenildi — bekleniyor — yayımlanacağını — düzeltilmesini — alıyor",
+  "Budi, programın eylülde başladığını belirtti. — Selim, yüzde yirmi artış beklediklerini açıkladı. — Elif, bu mektubun çok önemli olduğunu vurguladı. — Budi, baharda bir kültür haftası düzenleyeceklerini söyledi. — Can, arşivde yeni bir belge bulduğunu ifade etti. — Zeynep, programın eğitimi de kapsadığını belirtti.",
+  "Asırlık dostluk yeniden canlanıyor. — Turist sayısında yüzde 20 artış bekleniyor. — Budi Bey tarihî bağın önemine dikkat çekti. — Programın bir kültür haftası düzenleyeceği öğrenildi. — Haber cuma günü sitede yayımlanacak."
+ ]
+}

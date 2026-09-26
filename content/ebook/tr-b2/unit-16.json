@@ -1,0 +1,718 @@
+{
+ "title": "Angka dan tren — laporan tahunan",
+ "title_target": "Misafir sayımız tam iki katına çıktı",
+ "goal": "Memaparkan dan membahas angka dalam laporan resmi: persen (*yüzde 74 arttı*), kelipatan (*iki katına çıktı*), pecahan (*üçte ikisi*), perbandingan (*bir önceki yıla oranla*), serta kata benda tren (*artış/düşüş göstermek*), lalu menjawab pertanyaan kritis dewan direksi dengan perkiraan yang hati-hati.",
+ "bekal": [
+  "membaca dan menulis persen, pecahan, dan angka besar dengan akhiran yang tepat: *%7'ye* (yediye), *%4'ten* (dörtten), *6.400'e* (altı bin dört yüze)",
+  "memilih kata kerja tren dengan kasus yang benar: *-den -e yükselmek*, *-e ulaşmak*, *iki katına çıkmak*, *yarıya inmek*, *artış göstermek*",
+  "membedakan poin persentase dari persen relatif dan menyampaikan perkiraan: *üç puanlık bir artış*, *yüzde 30 civarında*, *yüzde 20 ile 25 arasında*"
+ ],
+ "dialogs": [
+  {
+   "title": "Dialog — Yıllık rapor",
+   "intro": "Kamis, 15 Maret 2029, ruang rapat Köprü Turizm di Karaköy. Budi memaparkan laporan tahunan 2028 di depan dewan direksi (*yönetim kurulu*). Selim Bey memandu sesi dan sesekali menyela dengan pertanyaan.",
+   "lines": [
+    {
+     "speaker": "Selim Bey:",
+     "text": "Budi, söz sende. Kurul üyeleri rakamları merak ediyor.",
+     "id": "Budi, silakan. Para anggota dewan penasaran dengan angka-angkanya.",
+     "literal": "Budi, kata kamu-di. dewan anggota-jamak-nya angka-jamak-nya sedang-penasaran."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Teşekkürler Selim Bey. 2028 yılında Endonezya'dan gelen misafir sayımız 6.400'e ulaştı.",
+     "id": "Terima kasih, Selim Bey. Pada tahun 2028 jumlah tamu kita dari Indonesia mencapai 6.400 orang.",
+     "literal": "terima-kasih Selim Bey. 2028 tahun-nya-di Indonesia-dari yang-datang tamu jumlah-kami 6.400-ke capai-lampau."
+    },
+    {
+     "speaker": "Selim Bey:",
+     "text": "Bir önceki yıla oranla ne kadar arttı?",
+     "id": "Dibandingkan tahun sebelumnya, naik berapa?",
+     "literal": "satu sebelum tahun-ke banding-dengan berapa naik-lampau?"
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Tam iki katına çıktı. 2027'de 3.200 misafir ağırlamıştık.",
+     "id": "Tepat dua kali lipat. Tahun 2027 kita menjamu 3.200 tamu.",
+     "literal": "tepat dua lipat-nya-ke naik-lampau. 2027-di 3.200 tamu jamu-sudah-lampau-kami."
+    },
+    {
+     "speaker": "Selim Bey:",
+     "text": "Güzel. Peki gelirde durum ne?",
+     "id": "Bagus. Lalu bagaimana dengan pendapatan?",
+     "literal": "bagus. lalu pendapatan-di keadaan apa?"
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Gelirimiz yüzde 74 arttı. Bu artış, misafir sayısındaki artıştan biraz daha düşük.",
+     "id": "Pendapatan kita naik 74 persen. Kenaikan ini sedikit lebih rendah daripada kenaikan jumlah tamu.",
+     "literal": "pendapatan-kami persen 74 naik-lampau. ini kenaikan, tamu jumlah-nya-di-yang kenaikan-dari sedikit lebih rendah."
+    },
+    {
+     "speaker": "Selim Bey:",
+     "text": "Neden? Misafir başına gelir düştü mü?",
+     "id": "Kenapa? Pendapatan per tamu turun?",
+     "literal": "kenapa? tamu kepala-nya-ke pendapatan turun-lampau apakah?"
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Evet, yaklaşık yüzde 13 düştü. Çünkü yeni misafirlerin üçte ikisi öğrenci ve kısa programları tercih ediyor.",
+     "id": "Ya, turun sekitar 13 persen. Soalnya dua pertiga tamu baru adalah pelajar, dan mereka memilih program yang pendek.",
+     "literal": "ya, kira-kira persen 13 turun-lampau. karena baru tamu-jamak-punya tiga-di dua-nya pelajar dan pendek program-jamak-nya pilihan sedang-lakukan."
+    },
+    {
+     "speaker": "Selim Bey:",
+     "text": "Anlıyorum. Asıl merak ettiğim, Anadolu–Nusantara Köprüsü programının etkisi.",
+     "id": "Aku paham. Yang sebenarnya ingin kuketahui adalah dampak program Anadolu–Nusantara Köprüsü.",
+     "literal": "sedang-paham-saya. sebenarnya penasaran-yang-ku, Anadolu–Nusantara jembatan-nya program-nya-punya dampak-nya."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Programın başladığı Eylül'den bu yana kültür turlarına katılım dörtte bir oranında arttı.",
+     "id": "Sejak September, waktu program dimulai, partisipasi dalam tur budaya naik seperempat.",
+     "literal": "program-punya mulai-yang-nya September-dari ini-ke-sisi budaya tur-jamak-nya-ke partisipasi empat-di satu rasio-nya-di naik-lampau."
+    },
+    {
+     "speaker": "Selim Bey:",
+     "text": "Peki olumsuz bir tablo var mı? Kurul her şeyi duymak ister.",
+     "id": "Lalu adakah gambaran yang negatif? Dewan ingin mendengar semuanya.",
+     "literal": "lalu negatif satu gambaran ada apakah? dewan setiap hal-nya mendengar ingin-biasa."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Var. İptal oranı yüzde 4'ten yüzde 7'ye yükseldi; yani üç puanlık bir artış söz konusu.",
+     "id": "Ada. Tingkat pembatalan naik dari 4 persen ke 7 persen; artinya ada kenaikan tiga poin.",
+     "literal": "ada. pembatalan rasio-nya persen 4-dari persen 7-ke naik-lampau; yaitu tiga poin-yang satu kenaikan kata perihal-nya."
+    },
+    {
+     "speaker": "Selim Bey:",
+     "text": "Bunu \"yüzde 75 arttı\" diye de söyleyebilirdin.",
+     "id": "Kamu juga bisa menyebutnya \"naik 75 persen\", lho.",
+     "literal": "ini-nya \"persen 75 naik-lampau\" begitu juga katakan-bisa-biasa-lampau-kamu."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Söyleyebilirdim, ama o zaman kurul paniğe kapılırdı.",
+     "id": "Bisa saja, tapi nanti dewan malah panik.",
+     "literal": "katakan-bisa-biasa-lampau-saya, tetapi itu waktu dewan panik-ke tertangkap-biasa-lampau."
+    },
+    {
+     "speaker": "Selim Bey:",
+     "text": "Haklısın. Ama dürüst ol: iki rakamı da slayta koy.",
+     "id": "Kamu benar. Tapi jujurlah: taruh dua-duanya di slide.",
+     "literal": "benar-kamu. tetapi jujur jadilah: dua angka-nya juga slide-ke taruh."
+    }
+   ],
+   "notes": [
+    "**6.400'e ulaştı** — *ulaşmak* (mencapai) meminta datif. Akhiran sesudah angka ditulis dengan apostrof dan mengikuti **bunyi angka yang dibaca**: *6.400* = *altı bin dört yüz*, jadi *6.400'e* (yüze). Bahasa Turki memakai titik untuk ribuan dan koma untuk desimal, sama seperti bahasa Indonesia.",
+    "**iki katına çıktı** — \"naik menjadi dua kali lipat\": *kat* (lipat) + posesif + datif + *çıkmak*. Begitu juga *üç katına çıktı* (tiga kali lipat). Lawannya *yarıya indi* atau *yarı yarıya azaldı* (turun separuh).",
+    "**bir önceki yıla oranla** — \"dibandingkan dengan tahun sebelumnya\". *-e oranla*, *-e göre*, dan *-e kıyasla* sama-sama meminta datif. *Bir önceki* (yang tepat sebelumnya) lebih tepat dalam laporan daripada *geçen* bila periodenya bukan tahun berjalan.",
+    "**yüzde 74 arttı** — *yüzde* (per seratus) diletakkan **sebelum** angka, dan tertulis *%74*, juga dengan tanda persen di depan. Jangan tambahkan kata lain di belakang: *yüzde 74* sudah berarti \"74 persen\". Dalam berita sering diperpanjang: *yüzde 74 oranında arttı*.",
+    "**üçte ikisi, dörtte bir** — pecahan dibentuk dengan **penyebut berlokatif + pembilang**: *üçte iki* = \"dari tiga, dua\" = dua pertiga. Bila merujuk bagian dari sesuatu, pembilang mendapat posesif: *misafirlerin üçte ikisi* (dua pertiga dari para tamu).",
+    "**üç puanlık bir artış** — dari 4 % ke 7 % adalah kenaikan **tiga poin** (*puan*), tetapi secara relatif **75 persen**. Selim benar bahwa keduanya sah; Budi benar bahwa pilihan kata memengaruhi kesan. Akhiran *-lık* menjadikan angka kata sifat: *üç puanlık*, *yüzde 40'lık bir artış*."
+   ],
+   "grammars": [
+    {
+     "title": "Naik, turun, mencapai: kata kerja tren",
+     "body": [
+      "Laporan Turki memakai sekumpulan kecil kata kerja tren. Yang penting adalah kasusnya: titik awal dengan ablatif (*-den*), titik akhir dengan datif (*-e*), dan besarnya perubahan tanpa akhiran apa pun (*yüzde 12 düştü*)."
+     ],
+     "table": {
+      "head": [
+       "Ungkapan",
+       "Arti",
+       "Contoh laporan"
+      ],
+      "rows": [
+       [
+        "*artmak* / *azalmak*",
+        "bertambah / berkurang",
+        "*Gelir yüzde 74 arttı.*"
+       ],
+       [
+        "*-den -e yükselmek*",
+        "naik dari … ke …",
+        "*%4'ten %7'ye yükseldi.*"
+       ],
+       [
+        "*-den -e düşmek*",
+        "turun dari … ke …",
+        "*%12'den %9'a düştü.*"
+       ],
+       [
+        "*-e ulaşmak*",
+        "mencapai",
+        "*6.400'e ulaştı.*"
+       ],
+       [
+        "*iki katına çıkmak*",
+        "naik dua kali lipat",
+        "*Misafir sayısı iki katına çıktı.*"
+       ],
+       [
+        "*yarıya inmek*",
+        "turun separuh",
+        "*Bekleme süresi yarıya indi.*"
+       ],
+       [
+        "*sabit kalmak*",
+        "tetap, stabil",
+        "*Fiyatlar sabit kaldı.*"
+       ],
+       [
+        "*artış / düşüş göstermek*",
+        "menunjukkan kenaikan / penurunan",
+        "*Satışlar %12 düşüş gösterdi.*"
+       ]
+      ]
+     },
+     "after": [
+      "*Artmak* dan *azalmak* menyangkut jumlah; *yükselmek* dan *düşmek* terasa seperti garis di grafik yang naik-turun. Dalam praktik keduanya sering dipertukarkan, tetapi *yükselmek* lebih cocok untuk tingkat, suhu, dan harga."
+     ]
+    },
+    {
+     "title": "Persen, pecahan, dan cara membacanya",
+     "body": [
+      "Menulis angka mudah; yang menjebak adalah akhiran sesudahnya, karena akhiran mengikuti bunyi kata bilangan terakhir, bukan bentuk tulisannya."
+     ],
+     "table": {
+      "head": [
+       "Tulisan",
+       "Dibaca",
+       "Arti"
+      ],
+      "rows": [
+       [
+        "*%18*",
+        "*yüzde on sekiz*",
+        "18 persen"
+       ],
+       [
+        "*%4'ten %7'ye*",
+        "*yüzde dörtten yüzde yediye*",
+        "dari 4 ke 7 persen"
+       ],
+       [
+        "*%40'lık*",
+        "*yüzde kırklık*",
+        "sebesar 40 persen"
+       ],
+       [
+        "*1/2*",
+        "*yarım*, *yarısı*",
+        "setengah, separuhnya"
+       ],
+       [
+        "*1/3*",
+        "*üçte bir*",
+        "sepertiga"
+       ],
+       [
+        "*2/3*",
+        "*üçte iki*",
+        "dua pertiga"
+       ],
+       [
+        "*1/4*",
+        "*dörtte bir*, *çeyrek*",
+        "seperempat"
+       ],
+       [
+        "*3,5*",
+        "*üç virgül beş*",
+        "tiga koma lima"
+       ]
+      ]
+     },
+     "after": [
+      "*Çeyrek* juga berarti kuartal dan \"seperempat jam\": *ilk çeyrek* (kuartal pertama), *üçü çeyrek geçiyor* (jam tiga lewat seperempat)."
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Dialog kedua — Kurulun soruları",
+   "intro": "Masih di ruang rapat, sesudah presentasi. Dua anggota dewan mengajukan pertanyaan: Oya Hanım, ahli keuangan yang teliti, dan Turgut Bey, pemegang saham tertua yang dulu ikut mendirikan Köprü Turizm bersama Selim Bey.",
+   "lines": [
+    {
+     "speaker": "Oya Hanım:",
+     "text": "Sunumunuz için teşekkürler. Pazarlama giderleri ne kadar arttı?",
+     "id": "Terima kasih atas presentasi Anda. Biaya pemasaran naik berapa?",
+     "literal": "presentasi-Anda untuk terima-kasih. pemasaran biaya-jamak-nya berapa naik-lampau?"
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Yüzde 30 civarında, Oya Hanım. Gelirdeki artışa oranla oldukça düşük.",
+     "id": "Sekitar 30 persen, Oya Hanım. Dibanding kenaikan pendapatan, itu cukup rendah.",
+     "literal": "persen 30 sekitar-nya-di, Oya Hanım. pendapatan-di-yang kenaikan-ke banding-dengan cukup rendah."
+    },
+    {
+     "speaker": "Oya Hanım:",
+     "text": "Yani reklama harcanan her lira daha fazla gelir getirmiş.",
+     "id": "Jadi rupanya setiap lira yang dikeluarkan untuk iklan mendatangkan pendapatan lebih banyak.",
+     "literal": "yaitu iklan-ke yang-di-belanjakan setiap lira lebih banyak pendapatan bawa-konon."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Kesinlikle. Sosyal medya kampanyası tek başına yeni müşterilerin beşte birini getirdi.",
+     "id": "Betul sekali. Kampanye media sosial saja sudah mendatangkan seperlima pelanggan baru.",
+     "literal": "pasti. sosial media kampanye-nya satu kepala-nya-ke baru pelanggan-jamak-punya lima-di satu-nya-nya bawa-lampau."
+    },
+    {
+     "speaker": "Turgut Bey:",
+     "text": "Ben rakamlara pek güvenmem, evladım. Gelecek yıl için tahminin ne?",
+     "id": "Aku tidak terlalu percaya angka, Nak. Apa perkiraanmu untuk tahun depan?",
+     "literal": "saya angka-jamak-ke terlalu percaya-tidak-biasa-saya, anak-ku. akan-datang tahun untuk perkiraan-mu apa?"
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Temkinli bir tahminle misafir sayısının yüzde 20 ile 25 arasında artmasını bekliyoruz.",
+     "id": "Dengan perkiraan yang hati-hati, kami memperkirakan jumlah tamu naik antara 20 dan 25 persen.",
+     "literal": "hati-hati satu perkiraan-dengan tamu jumlah-nya-punya persen 20 dan 25 antara-nya-di naik-nya-nya sedang-harap-kami."
+    },
+    {
+     "speaker": "Turgut Bey:",
+     "text": "Neden geçen yılki gibi iki katı değil?",
+     "id": "Kenapa tidak dua kali lipat seperti tahun lalu?",
+     "literal": "kenapa lalu tahun-yang seperti dua lipat-nya bukan?"
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Çünkü küçük bir tabandan başladık. Taban büyüdükçe büyüme hızı doğal olarak yavaşlar.",
+     "id": "Karena kita mulai dari basis yang kecil. Makin besar basisnya, laju pertumbuhan dengan sendirinya melambat.",
+     "literal": "karena kecil satu basis-dari mulai-lampau-kami. basis besar-makin pertumbuhan laju-nya alami sebagai melambat-biasa."
+    },
+    {
+     "speaker": "Oya Hanım:",
+     "text": "Mantıklı. Peki kur riski? Rupi değer kaybederse ne olur?",
+     "id": "Masuk akal. Lalu risiko kurs? Kalau rupiah melemah, bagaimana?",
+     "literal": "logis. lalu kurs risiko-nya? rupiah nilai kehilangan-biasa-kalau apa terjadi-biasa?"
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Fiyatlarımız avro cinsinden. Rupi yüzde 10 değer kaybederse talebin yaklaşık yüzde 5 düşeceğini hesapladık.",
+     "id": "Harga kita dalam euro. Kami sudah menghitung: kalau rupiah melemah 10 persen, permintaan akan turun sekitar 5 persen.",
+     "literal": "harga-jamak-kami euro jenis-nya-dari. rupiah persen 10 nilai kehilangan-biasa-kalau permintaan-punya kira-kira persen 5 turun-akan-yang-nya-nya hitung-lampau-kami."
+    },
+    {
+     "speaker": "Turgut Bey:",
+     "text": "Tamam. Rakamlara güvenmem ama sana güveniyorum.",
+     "id": "Baiklah. Aku tidak percaya angka, tapi aku percaya padamu.",
+     "literal": "baik. angka-jamak-ke percaya-tidak-biasa-saya tetapi kamu-ke sedang-percaya-saya."
+    }
+   ],
+   "notes": [
+    "**Sunumunuz için teşekkürler** — anggota dewan memakai *siz* dan *Oya Hanım/Budi Bey* dalam rapat, walaupun di luar rapat mungkin akrab. *Sunum* (presentasi) dari *sunmak* (menyajikan); *sunum yapmak* = memberi presentasi.",
+    "**yüzde 30 civarında** — cara menyatakan perkiraan: *civarında* (sekitar), *yaklaşık* (kira-kira, di depan angka), *-e yakın* (hampir), *-i aşkın* (lebih dari: *6 bini aşkın misafir*). Dalam laporan, perkiraan jujur lebih dipercaya daripada angka yang terlalu bulat.",
+    "**daha fazla gelir getirmiş** — *-miş* di sini bukan \"konon\" dari orang lain, melainkan **kesimpulan** Oya sendiri dari angka yang baru ia lihat: \"ternyata, rupanya\". Pemakaian ini sudah kamu kenal sejak A2.",
+    "**beşte birini** — pecahan bisa diberi kasus seperti kata benda biasa: *beşte biri* (seperlimanya) + akusatif = *beşte birini* karena menjadi objek *getirdi*.",
+    "**yüzde 20 ile 25 arasında artmasını bekliyoruz** — *X ile Y arasında* = antara X dan Y. Yang diharapkan berupa kalimat benda *-mesini* (bekal B1): *misafir sayısının artmasını bekliyoruz* = kami mengharapkan jumlah tamu naik.",
+    "**büyüdükçe … yavaşlar** — *-dikçe* (makin…) dari B1, cocok untuk menjelaskan tren. Aorist *yavaşlar* menyatakan kecenderungan umum, bukan peristiwa tertentu: \"memang begitulah biasanya\"."
+   ],
+   "grammars": [
+    {
+     "title": "Memperkirakan dan membandingkan angka",
+     "body": [
+      "Saat tanya-jawab, jarang ada angka pasti. Ungkapan berikut membuat jawabanmu tetap tepat tanpa terdengar mengelak."
+     ],
+     "table": {
+      "head": [
+       "Ungkapan",
+       "Arti",
+       "Contoh"
+      ],
+      "rows": [
+       [
+        "*yaklaşık*",
+        "kira-kira",
+        "*yaklaşık yüzde 13*"
+       ],
+       [
+        "*… civarında*",
+        "sekitar …",
+        "*yüzde 30 civarında*"
+       ],
+       [
+        "*…-e yakın*",
+        "hampir …",
+        "*7 bine yakın misafir*"
+       ],
+       [
+        "*…-i aşkın*",
+        "lebih dari …",
+        "*6 bini aşkın misafir*"
+       ],
+       [
+        "*X ile Y arasında*",
+        "antara X dan Y",
+        "*yüzde 20 ile 25 arasında*"
+       ],
+       [
+        "*en az / en fazla*",
+        "paling sedikit / paling banyak",
+        "*en az yüzde 15*"
+       ],
+       [
+        "*…-e kıyasla*",
+        "dibandingkan dengan …",
+        "*2027'ye kıyasla*"
+       ]
+      ]
+     },
+     "after": [
+      "Perhatikan kasusnya: *yakın* meminta datif (*7 bine*), *aşkın* meminta akusatif (*6 bini*)."
+     ]
+    }
+   ]
+  }
+ ],
+ "sections": [
+  {
+   "title": "Kosakata statistik",
+   "blocks": [
+    {
+     "type": "tabel",
+     "head": [
+      "Türkçe",
+      "Cara baca",
+      "Bahasa Indonesia"
+     ],
+     "rows": [
+      [
+       "istatistik",
+       "is-ta-tis-TIK",
+       "statistik"
+      ],
+      [
+       "veri",
+       "ve-RI",
+       "data"
+      ],
+      [
+       "grafik",
+       "gra-FIK",
+       "grafik"
+      ],
+      [
+       "toplam",
+       "top-LAM",
+       "jumlah total"
+      ],
+      [
+       "pay",
+       "pay",
+       "bagian, pangsa (*pazar payı*)"
+      ],
+      [
+       "dönem",
+       "dö-NEM",
+       "periode"
+      ],
+      [
+       "çeyrek",
+       "cey-REK",
+       "kuartal; seperempat"
+      ],
+      [
+       "büyüme",
+       "bü-yü-ME",
+       "pertumbuhan"
+      ],
+      [
+       "rekor kırmak",
+       "re-KOR kır-MAK",
+       "memecahkan rekor"
+      ]
+     ]
+    },
+    {
+     "type": "p",
+     "text": "Angka resmi Turki diterbitkan oleh TÜİK (*Türkiye İstatistik Kurumu*), sedangkan data wisatawan asing diumumkan Kementerian Kebudayaan dan Pariwisata setiap bulan. Pada pertengahan 2020-an Türkiye menerima lebih dari 50 juta wisatawan asing per tahun, dan judul berita tentangnya hampir selalu berbentuk sama: *Turist sayısı yüzde 8 arttı*, *Turizm geliri rekor kırdı*. Kalau kamu menguasai pola itu, halaman ekonomi koran Turki mendadak jauh lebih mudah dibaca."
+    },
+    {
+     "type": "kotak",
+     "title": "Menulis dan membaca angka",
+     "items": [
+      "Titik untuk ribuan, koma untuk desimal: *6.400*, *3,5* (*üç virgül beş*).",
+      "Tanda persen di depan angka: *%18*, dibaca *yüzde on sekiz*. Akhiran mengikuti bunyi: *%7'ye* (yediye), *%4'ten* (dörtten).",
+      "*Bin* tanpa *bir*: *bin dokuz yüz* (1.900). Satuan besar: *milyon*, *milyar* (ejaan Turki, bukan *miliar*).",
+      "Tahun dibaca sebagai bilangan biasa: *2029* = *iki bin yirmi dokuz*; *2029'da* = pada tahun 2029."
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Presentasi di depan dewan",
+   "blocks": [
+    {
+     "type": "p",
+     "text": "Presentasi laporan di perusahaan Turki biasanya dibuka dengan salam resmi, lalu langsung ke angka utama. Dewan menghargai urutan yang jelas: hasil, penyebab, risiko, perkiraan. Ungkapan berikut membantu menyambung slide yang satu ke slide berikutnya."
+    },
+    {
+     "type": "tabel",
+     "head": [
+      "Ungkapan",
+      "Arti"
+     ],
+     "rows": [
+      [
+       "*Sunumuma … ile başlamak istiyorum.*",
+       "Saya ingin membuka presentasi dengan …"
+      ],
+      [
+       "*Grafikte görüldüğü gibi …*",
+       "Seperti terlihat pada grafik …"
+      ],
+      [
+       "*Bir önceki yılla karşılaştırıldığında …*",
+       "Bila dibandingkan dengan tahun sebelumnya …"
+      ],
+      [
+       "*Dikkat çekici olan nokta şu: …*",
+       "Hal yang menarik perhatian adalah ini: …"
+      ],
+      [
+       "*Bu artışın başlıca nedeni …*",
+       "Penyebab utama kenaikan ini adalah …"
+      ],
+      [
+       "*Özetle …*",
+       "Singkatnya …"
+      ],
+      [
+       "*Sorularınızı almaktan memnuniyet duyarım.*",
+       "Dengan senang hati saya menerima pertanyaan Anda."
+      ]
+     ]
+    },
+    {
+     "type": "kotak",
+     "title": "Kiat menyajikan angka dalam bahasa Turki",
+     "items": [
+      "Sebut angka mutlak dan persennya sekaligus: *6.400 misafir, yani yüzde 100 artış*.",
+      "Bedakan *puan* (poin persentase) dari *yüzde* (persen relatif), terutama untuk angka yang buruk.",
+      "Bulatkan dengan jujur: *yaklaşık*, *civarında*, *-e yakın*. Angka yang terlalu tepat di slide sering memancing pertanyaan \"dari mana datanya?\".",
+      "Jawab pemegang saham yang lebih tua dengan hormat walaupun ia menyapamu *evladım*: tetap pakai *efendim* dan *siz*."
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Ulangan berjenjang — unit 14",
+   "blocks": [
+    {
+     "type": "p",
+     "text": "Tutup kolom Turki, baca terjemahan Indonesianya, lalu susun kembali kalimatnya dari ingatan."
+    },
+    {
+     "type": "tabel",
+     "head": [
+      "Bahasa Indonesia",
+      "Türkçe"
+     ],
+     "rows": [
+      [
+       "Terus terang saja: aku agak sakit hati sama kamu.",
+       "*Açık konuşayım: sana biraz kırıldım.*"
+      ],
+      [
+       "Lagi pula, semua surat-menyurat lagi-lagi kamu serahkan padaku. Aku nggak mau mengomel, tapi hatiku perih.",
+       "*Üstelik bütün yazışmaları yine bana bıraktın. Sitem etmek istemiyorum ama içim burkuldu.*"
+      ],
+      [
+       "Aku sungguh minta maaf sudah menyakiti hatimu. Seharusnya aku menyadarinya.",
+       "*Seni kırdığım için gerçekten özür dilerim. Bunu fark etmem gerekirdi.*"
+      ],
+      [
+       "Makasih. Jangan salah paham, aku nggak ngambek sama kamu; cuma agak tersinggung.",
+       "*Sağ ol. Yanlış anlama, sana darılmadım; sadece biraz alındım.*"
+      ],
+      [
+       "Keras apanya! Kamu jujur. Aku cuma ingin menghibur hatimu.",
+       "*Ne sertliği! Dürüst davrandın. Ben de sadece gönlünü almak istedim.*"
+      ]
+     ]
+    }
+   ]
+  }
+ ],
+ "vocab": [
+  {
+   "tr": "yıllık rapor",
+   "baca": "yıl-LIK ra-POR",
+   "id": "laporan tahunan"
+  },
+  {
+   "tr": "yönetim kurulu",
+   "baca": "yö-ne-TIM ku-ru-LU",
+   "id": "dewan direksi (*kurul* = dewan)"
+  },
+  {
+   "tr": "sunum",
+   "baca": "su-NUM",
+   "id": "presentasi (*sunum yapmak*)"
+  },
+  {
+   "tr": "rakam",
+   "baca": "ra-KAM",
+   "id": "angka"
+  },
+  {
+   "tr": "oran",
+   "baca": "o-RAN",
+   "id": "rasio, tingkat (*iptal oranı* = tingkat pembatalan)"
+  },
+  {
+   "tr": "yüzde",
+   "baca": "yüz-DE",
+   "id": "persen (*yüzde 18* = %18)"
+  },
+  {
+   "tr": "artmak",
+   "baca": "art-MAK",
+   "id": "bertambah, naik (*artar*)"
+  },
+  {
+   "tr": "azalmak",
+   "baca": "a-zal-MAK",
+   "id": "berkurang (*azalır*)"
+  },
+  {
+   "tr": "yükselmek",
+   "baca": "yük-sel-MEK",
+   "id": "naik (*-den -e yükselmek*)"
+  },
+  {
+   "tr": "düşmek",
+   "baca": "düsy-MEK",
+   "id": "turun, jatuh (*düşer*)"
+  },
+  {
+   "tr": "artış",
+   "baca": "ar-TISY",
+   "id": "kenaikan (*artış göstermek*)"
+  },
+  {
+   "tr": "düşüş",
+   "baca": "dü-SYÜSY",
+   "id": "penurunan (*düşüş göstermek*)"
+  },
+  {
+   "tr": "ulaşmak",
+   "baca": "u-lasy-MAK",
+   "id": "mencapai, sampai (+ datif: *6.400'e ulaşmak*)"
+  },
+  {
+   "tr": "iki katına çıkmak",
+   "baca": "i-KI ka-tı-NA cık-MAK",
+   "id": "naik menjadi dua kali lipat"
+  },
+  {
+   "tr": "yarıya inmek",
+   "baca": "ya-rı-YA in-MEK",
+   "id": "turun separuh"
+  },
+  {
+   "tr": "-e oranla",
+   "baca": "o-ran-LA",
+   "id": "dibandingkan dengan (+ datif)"
+  },
+  {
+   "tr": "üçte bir",
+   "baca": "üc-TE bir",
+   "id": "sepertiga (*üçte iki* = dua pertiga)"
+  },
+  {
+   "tr": "dörtte bir",
+   "baca": "dört-TE bir",
+   "id": "seperempat"
+  },
+  {
+   "tr": "puan",
+   "baca": "pu-AN",
+   "id": "poin (persentase); nilai"
+  },
+  {
+   "tr": "gelir",
+   "baca": "ge-LIR",
+   "id": "pendapatan"
+  },
+  {
+   "tr": "gider",
+   "baca": "gi-DER",
+   "id": "biaya, pengeluaran"
+  },
+  {
+   "tr": "ortalama",
+   "baca": "or-ta-la-MA",
+   "id": "rata-rata"
+  },
+  {
+   "tr": "tahmin",
+   "baca": "tah-MIN",
+   "id": "perkiraan (*tahmin etmek* = memperkirakan)"
+  },
+  {
+   "tr": "civarında",
+   "baca": "ji-va-rın-DA",
+   "id": "sekitar (sesudah angka: *yüzde 30 civarında*)"
+  },
+  {
+   "tr": "değer kaybetmek",
+   "baca": "de-ER kay-bet-MEK",
+   "id": "kehilangan nilai, melemah (mata uang)"
+  }
+ ],
+ "exercises": [
+  {
+   "prompt": "Terjemahkan ke bahasa Turki.",
+   "items": [
+    "Jumlah tamu kami naik menjadi dua kali lipat.",
+    "Pendapatan naik 74 persen.",
+    "Tingkat pembatalan naik dari 4 persen ke 7 persen.",
+    "Dua pertiga tamu baru adalah pelajar.",
+    "Dibandingkan tahun sebelumnya, biaya pemasaran naik sekitar 30 persen.",
+    "Kami mengharapkan jumlah tamu naik 20 persen."
+   ]
+  },
+  {
+   "prompt": "Isi titik-titik dengan satu kata. Petunjuk ada di dalam kurung.",
+   "items": [
+    "Misafir sayımız 6.400'e ____. (ulaşmak, lampau)",
+    "Gelir iki ____ çıktı. (kat + posesif + datif)",
+    "Bir önceki yıla ____ gelir arttı. (dibandingkan dengan)",
+    "Yeni müşterilerin beşte ____ sosyal medyadan geldi. (satu + posesif)",
+    "İptal oranı yüzde 4'ten yüzde 7'ye ____. (yükselmek, lampau)",
+    "Satışlar yüzde 12 ____ gösterdi. (penurunan)",
+    "Misafir sayısının yüzde 20 ile 25 ____ artmasını bekliyoruz. (antara)"
+   ]
+  },
+  {
+   "prompt": "Tulis ulang kalimat berikut dengan ungkapan yang diminta di dalam kurung.",
+   "items": [
+    "Gelir yüzde 74 arttı. (artış göstermek)",
+    "Misafir sayısı 3.200'den 6.400'e çıktı. (iki katına çıkmak)",
+    "Giderler 100 bin liradan 50 bin liraya indi. (yarıya inmek)",
+    "Katılım yüzde 25 arttı. (dörtte bir oranında)",
+    "Satışlar yüzde 12 düştü. (düşüş göstermek)",
+    "Bu yıl geçen yıla göre daha fazla misafir geldi. (-e oranla)"
+   ]
+  },
+  {
+   "prompt": "Susun jadi kalimat yang benar.",
+   "items": [
+    "katına / sayısı / iki / misafir / çıktı",
+    "yüzde 74 / gelir / arttı",
+    "üçte / öğrenci / misafirlerin / ikisi / yeni",
+    "oranla / yıla / önceki / bir / giderler / arttı",
+    "düşüş / satışlar / gösterdi / yüzde 12"
+   ]
+  }
+ ],
+ "answers": [
+  "Misafir sayımız iki katına çıktı. — Gelir yüzde 74 arttı. — İptal oranı yüzde 4'ten yüzde 7'ye yükseldi. — Yeni misafirlerin üçte ikisi öğrenci. — Bir önceki yıla oranla pazarlama giderleri yüzde 30 civarında arttı. — Misafir sayısının yüzde 20 artmasını bekliyoruz.",
+  "ulaştı — katına — oranla — biri — yükseldi — düşüş — arasında",
+  "Gelir yüzde 74 artış gösterdi. — Misafir sayısı iki katına çıktı. — Giderler yarıya indi. — Katılım dörtte bir oranında arttı. — Satışlar yüzde 12 düşüş gösterdi. — Bu yıl geçen yıla oranla daha fazla misafir geldi.",
+  "Misafir sayısı iki katına çıktı. — Gelir yüzde 74 arttı. — Yeni misafirlerin üçte ikisi öğrenci. — Bir önceki yıla oranla giderler arttı. — Satışlar yüzde 12 düşüş gösterdi."
+ ]
+}

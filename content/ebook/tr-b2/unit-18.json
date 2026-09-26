@@ -1,0 +1,693 @@
+{
+ "title": "Hukum dan birokrasi — izin tinggal dan surat kuasa",
+ "title_target": "Vekâletname olmadığı takdirde kimse sizin adınıza imza atamaz",
+ "goal": "Berkonsultasi dengan pengacara dan menyelesaikan urusan di notaris: memahami istilah *vatandaşlık, uzun dönem ikamet, noter, vekâlet*, keharusan resmi (*yenilenmesi gerekmektedir*, *ikamet etmiş olmanız gerekmektedir*), syarat resmi (*-dığı takdirde*), dan bentuk *-dır/-mıştır* dalam teks dokumen (*yetkilidir, verilmemiştir*).",
+ "bekal": [
+  "menanyakan dan memahami syarat izin tinggal dan kewarganegaraan: *sekiz yıl kesintisiz ikamet*, *genel yoldan vatandaşlık*, *çifte vatandaşlık*",
+  "mengubah keharusan dan syarat sehari-hari ke ragam hukum: *yenilemeniz lazım → yenilenmesi gerekmektedir*, *dolarsa → dolduğu takdirde*",
+  "memberi dan memahami surat kuasa: *noterden vekâlet vermek*, *vekil … yetkilidir*, *azledinceye kadar geçerlidir*"
+ ],
+ "dialogs": [
+  {
+   "title": "Dialog — Avukatla görüşme",
+   "intro": "Selasa, 8 Mei 2029, kantor pengacara Orhan Yıldız di Moda. Musim panas nanti Budi akan berada di Jakarta beberapa minggu untuk program, sementara izin kerjanya habis bulan Agustus dan kontrak sewa apartemennya juga harus diperbarui. Ia datang dengan daftar pertanyaan.",
+   "lines": [
+    {
+     "speaker": "Orhan Bey:",
+     "text": "Buyurun Budi Bey, oturun. Sorunuzu telefonda kısaca anlatmıştınız.",
+     "id": "Silakan, Pak Budi, duduk. Di telepon Anda sudah menjelaskan pertanyaan Anda secara singkat.",
+     "literal": "silakan Budi Bey, duduklah-Anda. pertanyaan-Anda-nya telepon-di secara-singkat cerita-sudah-lampau-Anda."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Evet. Uzun dönem ikamet iznine başvurup başvuramayacağımı öğrenmek istiyorum.",
+     "id": "Ya. Saya ingin tahu apakah saya bisa mengajukan izin tinggal jangka panjang atau tidak.",
+     "literal": "ya. panjang periode tinggal izin-nya-ke melamar-lalu melamar-tidak-bisa-akan-yang-ku-nya tahu ingin-sedang-saya."
+    },
+    {
+     "speaker": "Orhan Bey:",
+     "text": "Bunun için Türkiye'de sekiz yıl kesintisiz ikamet etmiş olmanız gerekmektedir.",
+     "id": "Untuk itu Anda harus sudah tinggal di Türkiye delapan tahun tanpa putus.",
+     "literal": "ini-punya untuk Türkiye-di delapan tahun tanpa-putus tinggal sudah-lakukan jadi-nya-Anda perlu-adalah."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Sekiz yıl mı? Ben Eylül 2026'dan beri buradayım; daha üç yıl bile olmadı.",
+     "id": "Delapan tahun? Saya di sini sejak September 2026; tiga tahun pun belum.",
+     "literal": "delapan tahun apakah? saya September 2026-dari sejak di-sini-saya; masih tiga tahun bahkan jadi-tidak-lampau."
+    },
+    {
+     "speaker": "Orhan Bey:",
+     "text": "Vatandaşlık ise ayrı bir konu. Genel yoldan vatandaşlık için beş yıl kesintisiz ikamet şartı aranır.",
+     "id": "Kalau kewarganegaraan, itu soal lain. Untuk kewarganegaraan jalur umum disyaratkan tinggal lima tahun tanpa putus.",
+     "literal": "kewarganegaraan adapun terpisah satu soal. umum jalan-dari kewarganegaraan untuk lima tahun tanpa-putus tinggal syarat-nya di-cari-biasa."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Vatandaş olmayı düşünmüyorum. Endonezya çifte vatandaşlığı kabul etmiyor.",
+     "id": "Saya tidak berpikir untuk jadi warga negara. Indonesia tidak menerima kewarganegaraan ganda.",
+     "literal": "warga-negara jadi-nya sedang-pikir-tidak-saya. Indonesia ganda kewarganegaraan-nya terima sedang-lakukan-tidak."
+    },
+    {
+     "speaker": "Orhan Bey:",
+     "text": "Doğru, Türk vatandaşı olursanız Endonezya vatandaşlığınızı kaybedersiniz. O halde çalışma izninizin süresi dolmadan yenilenmesi gerekmektedir.",
+     "id": "Betul, kalau Anda menjadi warga negara Turki, Anda kehilangan kewarganegaraan Indonesia. Kalau begitu, izin kerja Anda perlu diperpanjang sebelum masa berlakunya habis.",
+     "literal": "benar, Turki warga-negara-nya jadi-biasa-kalau-Anda Indonesia kewarganegaraan-Anda-nya kehilangan-biasa-Anda. itu keadaan-di kerja izin-Anda-punya masa-nya penuh-tanpa di-perbarui-nya perlu-adalah."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "İznim Ağustos'ta bitiyor. Başvuruyu şirket yapacak, ama ben o sırada Cakarta'da olacağım.",
+     "id": "Izin saya habis bulan Agustus. Permohonannya akan diajukan perusahaan, tapi waktu itu saya ada di Jakarta.",
+     "literal": "izin-ku Agustus-di sedang-berakhir. permohonan-nya perusahaan akan-lakukan, tetapi saya itu saat-di Jakarta-di akan-jadi-saya."
+    },
+    {
+     "speaker": "Orhan Bey:",
+     "text": "Başvuru süre dolmadan yapıldığı takdirde yurt dışında olmanız genellikle sorun teşkil etmez.",
+     "id": "Jika permohonan diajukan sebelum masa berlakunya habis, keberadaan Anda di luar negeri biasanya tidak menjadi masalah.",
+     "literal": "permohonan masa penuh-tanpa di-lakukan-yang-nya penilaian-nya-di negeri luar-nya-di jadi-nya-Anda umumnya masalah bentuk lakukan-tidak-biasa."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Evimin kira sözleşmesi de Temmuz'da yenilenecek. Onu kim imzalayacak?",
+     "id": "Kontrak sewa rumahku juga akan diperbarui bulan Juli. Siapa yang akan menandatanganinya?",
+     "literal": "rumah-ku-punya sewa kontrak-nya juga Juli-di akan-di-perbarui. itu-nya siapa akan-tanda-tangan?"
+    },
+    {
+     "speaker": "Orhan Bey:",
+     "text": "Güvendiğiniz birine noterden vekâlet vermeniz gerekir. Vekâletname olmadığı takdirde kimse sizin adınıza imza atamaz.",
+     "id": "Anda perlu memberi kuasa lewat notaris kepada orang yang Anda percaya. Tanpa surat kuasa, tak seorang pun boleh tanda tangan atas nama Anda.",
+     "literal": "percaya-yang-Anda seseorang-ke notaris-dari kuasa beri-nya-Anda perlu-biasa. surat-kuasa ada-tidak-yang-nya penilaian-nya-di siapa-pun Anda-punya nama-Anda-ke tanda-tangan lempar-tidak-bisa."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Arkadaşım Emre'ye vekâlet verebilirim. Noterde nelere dikkat etmeliyim?",
+     "id": "Saya bisa memberi kuasa kepada teman saya, Emre. Di notaris saya harus memperhatikan apa saja?",
+     "literal": "teman-ku Emre-ke kuasa beri-bisa-biasa-saya. notaris-di apa-jamak-ke perhatian harus-lakukan-saya?"
+    },
+    {
+     "speaker": "Orhan Bey:",
+     "text": "Pasaportunuzu ve yabancı kimlik numaranızı götürün. Vekâletin kapsamının da açıkça yazılması gerekmektedir.",
+     "id": "Bawa paspor dan nomor identitas asing Anda. Cakupan kuasanya juga harus ditulis dengan jelas.",
+     "literal": "paspor-Anda-nya dan asing identitas nomor-Anda-nya bawalah-Anda. kuasa-punya cakupan-nya-punya juga dengan-jelas di-tulis-nya perlu-adalah."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Türkçem yeterli görülmezse tercüman istenir mi?",
+     "id": "Kalau bahasa Turki saya dianggap tidak cukup, apakah diminta penerjemah?",
+     "literal": "Turki-ku cukup di-lihat-tidak-kalau penerjemah di-minta-biasa apakah?"
+    },
+    {
+     "speaker": "Orhan Bey:",
+     "text": "Noter, Türkçeyi anlamadığınızı düşündüğü takdirde yeminli tercüman ister. Ama sizin Türkçenizle buna gerek kalacağını sanmam.",
+     "id": "Kalau notaris menilai Anda tidak memahami bahasa Turki, ia akan meminta penerjemah tersumpah. Tapi dengan bahasa Turki Anda, saya kira itu tak perlu.",
+     "literal": "notaris, Turki-nya mengerti-tidak-yang-Anda-nya berpikir-yang-nya penilaian-nya-di bersumpah penerjemah minta-biasa. tetapi Anda-punya Turki-Anda-dengan ini-ke perlu tinggal-akan-yang-nya-nya kira-tidak-biasa-saya."
+    }
+   ],
+   "notes": [
+    "**başvurup başvuramayacağımı** — pola \"apakah … atau tidak\" dari B1: *-ip* + bentuk negatif berpartisip. *Başvurmak* meminta datif: *iznine başvurmak* (mengajukan izin). Kata bendanya *başvuru* (permohonan).",
+    "**ikamet etmiş olmanız gerekmektedir** — *-miş olmak* dijadikan kata benda (*-miş olmanız*) untuk syarat yang harus **sudah terpenuhi**: \"Anda harus sudah tinggal\". *Gerekmektedir* (dari *gerek-mekte-dir*) adalah versi resmi *gerekiyor*; pengacara, notaris, dan surat instansi hampir selalu memakainya.",
+    "**Genel yoldan vatandaşlık … şartı aranır** — *aranmak* (harfiah \"dicari\") berarti \"disyaratkan\". *Genel yoldan* (jalur umum) berlawanan dengan *istisnai yoldan* (jalur khusus, misalnya lewat investasi). Angka lima dan delapan tahun adalah ketentuan yang berlaku dalam cerita ini; aturan bisa berubah, jadi selalu periksa laman resmi *Göç İdaresi*.",
+    "**süresi dolmadan yenilenmesi** — *süresi dolmak* (harfiah \"masanya penuh\") = habis masa berlaku. *-meden* (sebelum/tanpa) sudah kamu kenal; di sini digabung dengan *-ilmesi gerekmektedir* sehingga tak perlu menyebut siapa yang memperpanjang. Perhatikan juga ejaan Turki untuk Jakarta: *Cakarta* (c = j).",
+    "**yapıldığı takdirde … sorun teşkil etmez** — *-dığı takdirde* (dalam hal …, jika …) adalah \"kalau\" versi hukum; negatifnya *olmadığı takdirde*. *Sorun teşkil etmek* (menjadi masalah) adalah padanan resmi *sorun olmak*. Pengacara berhati-hati dengan *genellikle*: dalam hukum jarang ada \"pasti\".",
+    "**noterden vekâlet vermek, imza atmak** — surat kuasa di Turki dibuat di notaris (*noter*), bukan cukup di atas meterai. *Vekâlet* = kuasa, *vekâletname* = dokumennya, *vekil* = penerima kuasa; semuanya serapan Arab yang juga kita kenal (*wakil*). *İmza atmak* (harfiah \"melempar tanda tangan\") = menandatangani."
+   ],
+   "grammars": [
+    {
+     "title": "Keharusan dalam ragam hukum",
+     "body": [
+      "Teks hukum menghindari \"Anda harus…\" yang langsung. Tindakan dijadikan kata benda (sering pasif), lalu diberi *gerekmektedir*, *zorunludur*, atau *şarttır*."
+     ],
+     "table": {
+      "head": [
+       "Ragam biasa",
+       "Ragam hukum",
+       "Arti"
+      ],
+      "rows": [
+       [
+        "*İzninizi yenilemeniz lazım.*",
+        "*İzninizin yenilenmesi gerekmektedir.*",
+        "Izin Anda perlu diperpanjang."
+       ],
+       [
+        "*Formu doldurmalısınız.*",
+        "*Formun doldurulması zorunludur.*",
+        "Formulir wajib diisi."
+       ],
+       [
+        "*Pasaportunuzu gösterin.*",
+        "*Pasaportun ibraz edilmesi gerekmektedir.*",
+        "Paspor harus ditunjukkan."
+       ],
+       [
+        "*Sekiz yıl kalmış olmalısınız.*",
+        "*Sekiz yıl ikamet etmiş olmanız gerekmektedir.*",
+        "Anda harus sudah tinggal delapan tahun."
+       ],
+       [
+        "*Beş yıl kalmak lazım.*",
+        "*Beş yıllık ikamet şartı aranır.*",
+        "Disyaratkan tinggal lima tahun."
+       ],
+       [
+        "*Buraya imza atabilirsiniz.*",
+        "*İmza yetkisi size aittir.*",
+        "Wewenang tanda tangan ada pada Anda."
+       ]
+      ]
+     },
+     "after": [
+      "*İbraz etmek* (menunjukkan dokumen) dan *tebliğ etmek* (menyampaikan secara resmi) hampir hanya muncul di surat instansi. Kenali saat membaca, tetapi dalam percakapan cukup *göstermek* dan *bildirmek*."
+     ]
+    },
+    {
+     "title": "Syarat resmi: -dığı takdirde dan kerabatnya",
+     "body": [
+      "*Takdir* berarti penilaian; *-dığı takdirde* harfiah \"dalam penilaian bahwa …\", yaitu \"jika\". Semakin resmi teksnya, semakin jarang *-se* biasa dipakai."
+     ],
+     "table": {
+      "head": [
+       "Bentuk",
+       "Ragam",
+       "Contoh"
+      ],
+      "rows": [
+       [
+        "*-se / -sa*",
+        "sehari-hari",
+        "*Süre dolarsa başvuru kabul edilmez.*"
+       ],
+       [
+        "*-dığı takdirde*",
+        "resmi, hukum",
+        "*Süre dolduğu takdirde başvuru kabul edilmez.*"
+       ],
+       [
+        "*-madığı takdirde*",
+        "resmi, negatif",
+        "*Vekâletname olmadığı takdirde imza atılamaz.*"
+       ],
+       [
+        "*-mesi halinde*",
+        "birokrasi",
+        "*Belgelerin eksik olması halinde …*"
+       ],
+       [
+        "*-dığı sürece*",
+        "selama",
+        "*İzniniz geçerli olduğu sürece …*"
+       ],
+       [
+        "*aksi takdirde*",
+        "jika tidak demikian",
+        "*Belgeleri getirin; aksi takdirde işlem yapılamaz.*"
+       ]
+      ]
+     },
+     "after": [
+      "*Aksi takdirde* berdiri sendiri di awal kalimat kedua, seperti \"jika tidak\" dalam surat resmi berbahasa Indonesia."
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Dialog kedua — Noterde",
+   "intro": "Jumat, 11 Mei 2029, sebuah kantor notaris di Kadıköy. Budi datang bersama Emre, yang akan menjadi penerima kuasa. Notaris Gülay Hanım membacakan draf surat kuasa sebelum ditandatangani.",
+   "lines": [
+    {
+     "speaker": "Gülay Hanım:",
+     "text": "Budi Bey, vekâletnameyi size okuyacağım. Anlamadığınız bir yer olursa lütfen durdurun.",
+     "id": "Pak Budi, saya akan membacakan surat kuasanya untuk Anda. Kalau ada bagian yang tidak Anda pahami, silakan hentikan saya.",
+     "literal": "Budi Bey, surat-kuasa-nya Anda-ke akan-baca-saya. mengerti-tidak-yang-Anda satu tempat ada-biasa-kalau tolong hentikan-Anda."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Tabii. Emre Bey'in benim adıma kira sözleşmesini imzalamasını istiyorum.",
+     "id": "Tentu. Saya ingin Pak Emre menandatangani kontrak sewa atas nama saya.",
+     "literal": "tentu. Emre Bey-punya saya-punya nama-ku-ke sewa kontrak-nya-nya tanda-tangan-nya-nya ingin-sedang-saya."
+    },
+    {
+     "speaker": "Gülay Hanım:",
+     "text": "Metinde şöyle yazıyor: \"Vekil, vekâlet veren adına kira sözleşmesi imzalamaya ve abonelik işlemlerini yürütmeye yetkilidir.\"",
+     "id": "Di teks tertulis begini: \"Penerima kuasa berwenang menandatangani kontrak sewa dan mengurus langganan atas nama pemberi kuasa.\"",
+     "literal": "teks-di begini sedang-tertulis: \"wakil, kuasa yang-memberi nama-nya-ke sewa kontrak-nya tanda-tangan-ke dan langganan urusan-jamak-nya-nya jalankan-ke berwenang-adalah.\""
+    },
+    {
+     "speaker": "Emre:",
+     "text": "Abonelik derken elektrik ve doğalgaz, değil mi?",
+     "id": "Yang dimaksud langganan itu listrik dan gas, kan?",
+     "literal": "langganan berkata-ketika listrik dan gas-alam, bukan apakah?"
+    },
+    {
+     "speaker": "Gülay Hanım:",
+     "text": "Elektrik, su ve doğalgaz. Satış yetkisi ise verilmemiştir; o yetkinin ayrıca belirtilmesi gerekir.",
+     "id": "Listrik, air, dan gas. Adapun wewenang menjual tidak diberikan; wewenang itu harus dicantumkan tersendiri.",
+     "literal": "listrik, air dan gas-alam. penjualan wewenang-nya adapun di-beri-tidak-sudah-adalah; itu wewenang-punya secara-terpisah di-sebut-nya perlu-biasa."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Satmak istediğim bir şey yok zaten. Bu vekâlet ne kadar süre geçerli?",
+     "id": "Memang tidak ada yang ingin saya jual. Kuasa ini berlaku berapa lama?",
+     "literal": "menjual ingin-yang-ku satu hal tidak-ada memang. ini kuasa berapa lama masa berlaku?"
+    },
+    {
+     "speaker": "Gülay Hanım:",
+     "text": "Süre belirtilmediği takdirde vekâlet, siz azledinceye kadar geçerlidir.",
+     "id": "Jika jangka waktunya tidak disebutkan, kuasa berlaku sampai Anda mencabutnya.",
+     "literal": "masa di-sebut-tidak-yang-nya penilaian-nya-di kuasa, Anda mencabut-sampai hingga berlaku-adalah."
+    },
+    {
+     "speaker": "Emre:",
+     "text": "Yani Budi beni istediği zaman azledebilir. Dikkatli olayım o zaman!",
+     "id": "Jadi Budi bisa memecatku kapan saja dia mau. Aku harus hati-hati, nih!",
+     "literal": "yaitu Budi saya-nya ingin-yang-nya waktu mencabut-bisa-biasa. hati-hati biar-jadi-saya itu waktu!"
+    },
+    {
+     "speaker": "Gülay Hanım:",
+     "text": "Şimdi Türkçeyi anlayıp anlamadığınızı tespit etmem gerekiyor. Metni kendi cümlelerinizle özetler misiniz?",
+     "id": "Sekarang saya perlu memastikan apakah Anda memahami bahasa Turki atau tidak. Bisakah Anda meringkas teksnya dengan kalimat Anda sendiri?",
+     "literal": "sekarang Turki-nya mengerti-lalu mengerti-tidak-yang-Anda-nya penetapan lakukan-nya-ku perlu-sedang. teks-nya sendiri kalimat-jamak-Anda-dengan ringkas-biasa apakah-Anda?"
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Emre'ye, kira sözleşmemi imzalaması ve faturalarımı halletmesi için yetki veriyorum; satış yetkisi vermiyorum.",
+     "id": "Saya memberi wewenang kepada Emre untuk menandatangani kontrak sewa saya dan mengurus tagihan saya; wewenang menjual tidak saya berikan.",
+     "literal": "Emre-ke, sewa kontrak-ku-nya tanda-tangan-nya dan tagihan-jamak-ku-nya selesaikan-nya untuk wewenang sedang-beri-saya; penjualan wewenang-nya sedang-beri-tidak-saya."
+    },
+    {
+     "speaker": "Gülay Hanım:",
+     "text": "Çok güzel özetlediniz, tercümana gerek yok. Lütfen şuraya imzanızı atın; ücreti kasada ödeyebilirsiniz.",
+     "id": "Ringkasan Anda bagus sekali, tidak perlu penerjemah. Silakan tanda tangan di sini; biayanya bisa dibayar di kasir.",
+     "literal": "sangat bagus ringkas-lampau-Anda, penerjemah-ke perlu tidak-ada. tolong situ-ke tanda-tangan-Anda-nya lemparlah-Anda; biaya-nya kasir-di bayar-bisa-biasa-Anda."
+    }
+   ],
+   "notes": [
+    "**vekâletnameyi size okuyacağım** — notaris wajib membacakan isi dokumen sebelum ditandatangani. *-name* (serapan Persia, \"surat, catatan\") membentuk nama dokumen: *vekâletname* (surat kuasa), *nikâhname* (surat nikah), *seyahatname* (catatan perjalanan), *beyanname* (surat pernyataan, SPT).",
+    "**vekâlet veren adına … yetkilidir** — dokumen hukum memakai *-dır/-dir* sebagai penanda kepastian: *yetkilidir* (berwenang), *geçerlidir* (berlaku). Dalam percakapan *-dır* sering berarti dugaan (bekal B1); dalam teks resmi artinya tegas.",
+    "**Abonelik derken** — *X derken* (\"ketika bilang X\") dipakai untuk meminta kejelasan: \"yang dimaksud X itu …?\" Pertanyaan Emre persis yang harus diajukan sebelum menandatangani apa pun.",
+    "**Satış yetkisi ise verilmemiştir** — *-mıştır* adalah bentuk resmi yang menyatakan keadaan hasil: \"tidak diberikan (dan memang demikian adanya)\". *İse* menandai kontras: \"sedangkan wewenang menjual …\".",
+    "**azledinceye kadar** — *azletmek* (mencabut kuasa, memberhentikan) dari Arab *azl*. *-inceye kadar* (sampai …) adalah versi tertulis *-ene kadar*: *siz azledene kadar* dalam percakapan. Emre bercanda memakai arti lainnya, \"memecat\".",
+    "**anlayıp anlamadığınızı tespit etmem gerekiyor** — notaris menilai sendiri apakah penanda tangan memahami bahasa Turki; bila tidak, didatangkan *yeminli tercüman* (penerjemah tersumpah). Meminta Budi meringkas dengan kata-katanya sendiri adalah cara praktis untuk mengujinya."
+   ],
+   "grammars": [
+    {
+     "title": "Bentuk kala dalam teks dokumen",
+     "body": [
+      "Dokumen hukum Turki memakai beberapa bentuk yang jarang terdengar dalam percakapan. Semuanya berakhiran *-dır* atau berbentuk pasif, karena dokumen berbicara tentang kewenangan dan keadaan, bukan tentang orang yang berbicara."
+     ],
+     "table": {
+      "head": [
+       "Bentuk",
+       "Contoh dokumen",
+       "Arti"
+      ],
+      "rows": [
+       [
+        "*-dır* (kepastian)",
+        "*Vekil yetkilidir.*",
+        "Penerima kuasa berwenang."
+       ],
+       [
+        "*-mıştır* (hasil)",
+        "*Satış yetkisi verilmemiştir.*",
+        "Wewenang menjual tidak diberikan."
+       ],
+       [
+        "*-ir* pasif (aturan)",
+        "*Ücret kasada ödenir.*",
+        "Biaya dibayar di kasir."
+       ],
+       [
+        "*-ecektir* (ketentuan)",
+        "*Sözleşme bir yıl geçerli olacaktır.*",
+        "Kontrak akan berlaku satu tahun."
+       ],
+       [
+        "*-meye yetkilidir*",
+        "*İmzalamaya yetkilidir.*",
+        "Berwenang menandatangani."
+       ],
+       [
+        "*-mekle yükümlüdür*",
+        "*Vekil hesap vermekle yükümlüdür.*",
+        "Penerima kuasa wajib memberi pertanggungjawaban."
+       ]
+      ]
+     },
+     "after": [
+      "*Yetkili* (berwenang) meminta datif kata benda kata kerja (*imzalamaya*), sedangkan *yükümlü* (wajib) meminta *-mekle*. Hafalkan sebagai pasangan tetap."
+     ]
+    }
+   ]
+  }
+ ],
+ "sections": [
+  {
+   "title": "Urusan resmi orang asing di Türkiye",
+   "blocks": [
+    {
+     "type": "tabel",
+     "head": [
+      "Türkçe",
+      "Cara baca",
+      "Bahasa Indonesia"
+     ],
+     "rows": [
+      [
+       "çalışma izni",
+       "ca-lısy-MA iz-NI",
+       "izin kerja"
+      ],
+      [
+       "kısa dönem ikamet",
+       "kı-SA dö-NEM i-ka-MET",
+       "izin tinggal jangka pendek"
+      ],
+      [
+       "Göç İdaresi",
+       "göc i-da-re-SI",
+       "Direktorat Imigrasi"
+      ],
+      [
+       "yabancı kimlik numarası",
+       "ya-ban-JI kim-LIK nu-ma-ra-SI",
+       "nomor identitas orang asing (diawali 99)"
+      ],
+      [
+       "randevu",
+       "ran-de-VU",
+       "janji temu"
+      ],
+      [
+       "dilekçe",
+       "di-lek-CE",
+       "surat permohonan"
+      ],
+      [
+       "onaylı suret",
+       "o-nay-LI su-RET",
+       "salinan yang dilegalisasi"
+      ],
+      [
+       "harç",
+       "harc",
+       "bea, biaya resmi"
+      ],
+      [
+       "tapu",
+       "ta-PU",
+       "sertifikat tanah/rumah"
+      ]
+     ]
+    },
+    {
+     "type": "p",
+     "text": "Orang asing di Türkiye berurusan terutama dengan *Göç İdaresi* (izin tinggal) dan Kementerian Tenaga Kerja (izin kerja). Setiap orang asing yang berizin mendapat *yabancı kimlik numarası* sebelas digit yang diawali 99; nomor ini dipakai untuk rumah sakit, bank, langganan listrik, sampai kontrak sewa. Banyak urusan kini dimulai lewat *e-Devlet*, portal layanan pemerintah, tetapi surat kuasa dan legalisasi tetap harus dilakukan langsung di notaris."
+    },
+    {
+     "type": "kotak",
+     "title": "Kiat berurusan dengan kantor resmi",
+     "items": [
+      "Ajukan perpanjangan jauh sebelum masa berlaku habis; tanggal di kartu izin adalah batas, bukan pengingat.",
+      "Bawa dokumen asli dan fotokopinya; di Türkiye fotokopi paspor hampir selalu diminta.",
+      "Aturan izin tinggal cukup sering berubah. Periksa laman resmi atau tanyakan kepada pengacara, jangan hanya grup media sosial.",
+      "Di notaris, baca atau dengarkan seluruh isi dokumen; tanyakan *X derken ne kastediliyor?* bila ada yang kabur."
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Membaca kontrak dan dokumen",
+   "blocks": [
+    {
+     "type": "p",
+     "text": "Kontrak sewa (*kira sözleşmesi*) dan dokumen notaris memakai kosakata yang sebagian besar serapan Arab. Pembaca Indonesia sering diuntungkan di sini: *akit* (akad), *taraf* (pihak), *hak*, *hüküm* (hukum, ketentuan), *mahkeme* (mahkamah)."
+    },
+    {
+     "type": "tabel",
+     "head": [
+      "Ungkapan dokumen",
+      "Arti"
+     ],
+     "rows": [
+      [
+       "*işbu sözleşme*",
+       "perjanjian ini"
+      ],
+      [
+       "*taraflar*",
+       "para pihak"
+      ],
+      [
+       "*kiraya veren / kiracı*",
+       "pihak yang menyewakan / penyewa"
+      ],
+      [
+       "*imza tarihinde yürürlüğe girer*",
+       "berlaku sejak tanggal penandatanganan"
+      ],
+      [
+       "*sözleşmeyi feshetmek*",
+       "membatalkan (memutus) perjanjian"
+      ],
+      [
+       "*yazılı olarak bildirmek*",
+       "memberitahukan secara tertulis"
+      ],
+      [
+       "*uyuşmazlık halinde İstanbul mahkemeleri yetkilidir*",
+       "jika terjadi sengketa, pengadilan İstanbul yang berwenang"
+      ]
+     ]
+    },
+    {
+     "type": "kotak",
+     "title": "Serapan yang menjebak",
+     "items": [
+      "*Mahkeme* = pengadilan, bukan hanya mahkamah agung.",
+      "*Hüküm* = ketentuan pasal atau putusan hakim; *hükümet* = pemerintah.",
+      "*Vekil* = penerima kuasa; tidak ada hubungannya dengan \"wakil ketua\" (*başkan yardımcısı*).",
+      "*Müvekkil* = klien pengacara; *vekâlet ücreti* = honor pengacara."
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Ulangan berjenjang — unit 16",
+   "blocks": [
+    {
+     "type": "p",
+     "text": "Tutup kolom Turki, baca terjemahan Indonesianya, lalu susun kembali kalimatnya dari ingatan."
+    },
+    {
+     "type": "tabel",
+     "head": [
+      "Bahasa Indonesia",
+      "Türkçe"
+     ],
+     "rows": [
+      [
+       "Tepat dua kali lipat. Tahun 2027 kita menjamu 3.200 tamu.",
+       "*Tam iki katına çıktı. 2027'de 3.200 misafir ağırlamıştık.*"
+      ],
+      [
+       "Pendapatan kita naik 74 persen. Kenaikan ini sedikit lebih rendah daripada kenaikan jumlah tamu.",
+       "*Gelirimiz yüzde 74 arttı. Bu artış, misafir sayısındaki artıştan biraz daha düşük.*"
+      ],
+      [
+       "Ada. Tingkat pembatalan naik dari 4 persen ke 7 persen; artinya ada kenaikan tiga poin.",
+       "*Var. İptal oranı yüzde 4'ten yüzde 7'ye yükseldi; yani üç puanlık bir artış söz konusu.*"
+      ],
+      [
+       "Betul sekali. Kampanye media sosial saja sudah mendatangkan seperlima pelanggan baru.",
+       "*Kesinlikle. Sosyal medya kampanyası tek başına yeni müşterilerin beşte birini getirdi.*"
+      ],
+      [
+       "Dengan perkiraan yang hati-hati, kami memperkirakan jumlah tamu naik antara 20 dan 25 persen.",
+       "*Temkinli bir tahminle misafir sayısının yüzde 20 ile 25 arasında artmasını bekliyoruz.*"
+      ]
+     ]
+    }
+   ]
+  }
+ ],
+ "vocab": [
+  {
+   "tr": "avukat",
+   "baca": "a-vu-KAT",
+   "id": "pengacara"
+  },
+  {
+   "tr": "vatandaşlık",
+   "baca": "va-tan-dasy-LIK",
+   "id": "kewarganegaraan (*vatandaş* = warga negara)"
+  },
+  {
+   "tr": "çifte vatandaşlık",
+   "baca": "cif-TE va-tan-dasy-LIK",
+   "id": "kewarganegaraan ganda"
+  },
+  {
+   "tr": "ikamet izni",
+   "baca": "i-ka-MET iz-NI",
+   "id": "izin tinggal (*uzun dönem* = jangka panjang)"
+  },
+  {
+   "tr": "ikamet etmek",
+   "baca": "i-ka-MET et-MEK",
+   "id": "bertempat tinggal (resmi)"
+  },
+  {
+   "tr": "kesintisiz",
+   "baca": "ke-sin-ti-SIZ",
+   "id": "tanpa putus, berturut-turut"
+  },
+  {
+   "tr": "başvurmak",
+   "baca": "basy-vur-MAK",
+   "id": "mengajukan permohonan (+ datif: *izne başvurmak*)"
+  },
+  {
+   "tr": "başvuru",
+   "baca": "basy-vu-RU",
+   "id": "permohonan"
+  },
+  {
+   "tr": "süresi dolmak",
+   "baca": "sü-re-SI dol-MAK",
+   "id": "habis masa berlakunya"
+  },
+  {
+   "tr": "yenilemek",
+   "baca": "ye-ni-le-MEK",
+   "id": "memperbarui, memperpanjang (pasif *yenilenmek*)"
+  },
+  {
+   "tr": "noter",
+   "baca": "no-TER",
+   "id": "notaris (*noterlik* = kantor notaris)"
+  },
+  {
+   "tr": "vekâlet",
+   "baca": "ve-kya-LET",
+   "id": "kuasa (*vekâlet vermek* = memberi kuasa)"
+  },
+  {
+   "tr": "vekâletname",
+   "baca": "ve-kya-let-na-ME",
+   "id": "surat kuasa"
+  },
+  {
+   "tr": "vekil",
+   "baca": "ve-KIL",
+   "id": "penerima kuasa"
+  },
+  {
+   "tr": "yetki",
+   "baca": "yet-KI",
+   "id": "wewenang (*yetkili* = berwenang, + *-meye*)"
+  },
+  {
+   "tr": "azletmek",
+   "baca": "az-let-MEK",
+   "id": "mencabut kuasa; memberhentikan"
+  },
+  {
+   "tr": "imza atmak",
+   "baca": "im-ZA at-MAK",
+   "id": "menandatangani"
+  },
+  {
+   "tr": "yeminli tercüman",
+   "baca": "ye-min-LI ter-cü-MAN",
+   "id": "penerjemah tersumpah"
+  },
+  {
+   "tr": "kira sözleşmesi",
+   "baca": "ki-RA söz-lesy-me-SI",
+   "id": "kontrak sewa"
+  },
+  {
+   "tr": "abonelik",
+   "baca": "a-bo-ne-LIK",
+   "id": "langganan (listrik, air, gas, internet)"
+  },
+  {
+   "tr": "fatura",
+   "baca": "fa-TU-ra",
+   "id": "tagihan"
+  },
+  {
+   "tr": "-dığı takdirde",
+   "baca": "tak-dir-DE",
+   "id": "jika, dalam hal (resmi; *aksi takdirde* = jika tidak)"
+  },
+  {
+   "tr": "gerekmektedir",
+   "baca": "ge-rek-mek-te-DIR",
+   "id": "perlu, harus (resmi; = *gerekiyor*)"
+  },
+  {
+   "tr": "teşkil etmek",
+   "baca": "tesy-KIL et-MEK",
+   "id": "membentuk, merupakan (*sorun teşkil etmek* = menjadi masalah)"
+  },
+  {
+   "tr": "tespit etmek",
+   "baca": "tes-PIT et-MEK",
+   "id": "menetapkan, memastikan"
+  }
+ ],
+ "exercises": [
+  {
+   "prompt": "Terjemahkan ke bahasa Turki dengan ragam resmi.",
+   "items": [
+    "Untuk itu Anda harus sudah tinggal delapan tahun tanpa putus.",
+    "Izin kerja harus diperpanjang sebelum masa berlakunya habis.",
+    "Saya memberi kuasa kepada Emre.",
+    "Tanpa surat kuasa, tak seorang pun bisa menandatangani atas nama Anda.",
+    "Indonesia tidak menerima kewarganegaraan ganda.",
+    "Kuasa ini berlaku sampai Anda mencabutnya."
+   ]
+  },
+  {
+   "prompt": "Isi titik-titik dengan satu kata. Petunjuk ada di dalam kurung.",
+   "items": [
+    "Başvuru süre dolmadan yapıldığı ____ sorun olmaz. (jika, ragam hukum)",
+    "İzninizin yenilenmesi ____. (perlu, ragam resmi)",
+    "Noterden Emre'ye ____ verdim. (kuasa)",
+    "Vekil, kira sözleşmesi imzalamaya ____. (berwenang + -dir)",
+    "Satış yetkisi ____. (vermek, pasif, negatif, -mıştır)",
+    "Noter, Türkçe bilmediğinizi düşündüğü takdirde yeminli ____ ister. (penerjemah)",
+    "Uzun dönem ikamet iznine başvurup ____ öğrenmek istiyorum. (başvurmak, tidak bisa, akan, -ğımı)"
+   ]
+  },
+  {
+   "prompt": "Ubah ke ragam hukum dengan *-mesi gerekmektedir* atau *-dığı takdirde*.",
+   "items": [
+    "İzninizi yenilemeniz lazım.",
+    "Pasaportunuzu getirmelisiniz.",
+    "Süre dolarsa başvuru kabul edilmez.",
+    "Vekâletname yoksa imza atılamaz.",
+    "Formu doldurmalısınız.",
+    "Türkçe bilmezseniz tercüman gerekir."
+   ]
+  },
+  {
+   "prompt": "Susun jadi kalimat yang benar.",
+   "items": [
+    "gerekmektedir / yenilenmesi / izninizin",
+    "vekâlet / Emre'ye / verdim / noterden",
+    "takdirde / olmadığı / vekâletname / imza atılamaz",
+    "geçerlidir / azledinceye kadar / vekâlet",
+    "kabul etmiyor / Endonezya / vatandaşlığı / çifte"
+   ]
+  }
+ ],
+ "answers": [
+  "Bunun için sekiz yıl kesintisiz ikamet etmiş olmanız gerekmektedir. — Çalışma izninin süresi dolmadan yenilenmesi gerekmektedir. — Emre'ye vekâlet veriyorum. — Vekâletname olmadığı takdirde kimse sizin adınıza imza atamaz. — Endonezya çifte vatandaşlığı kabul etmiyor. — Bu vekâlet, siz azledinceye kadar geçerlidir.",
+  "takdirde — gerekmektedir — vekâlet — yetkilidir — verilmemiştir — tercüman — başvuramayacağımı",
+  "İzninizin yenilenmesi gerekmektedir. — Pasaportunuzu getirmeniz gerekmektedir. — Süre dolduğu takdirde başvuru kabul edilmez. — Vekâletname olmadığı takdirde imza atılamaz. — Formun doldurulması gerekmektedir. — Türkçe bilmediğiniz takdirde tercüman gerekir.",
+  "İzninizin yenilenmesi gerekmektedir. — Noterden Emre'ye vekâlet verdim. — Vekâletname olmadığı takdirde imza atılamaz. — Vekâlet azledinceye kadar geçerlidir. — Endonezya çifte vatandaşlığı kabul etmiyor."
+ ]
+}
