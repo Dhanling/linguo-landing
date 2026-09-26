@@ -1,0 +1,724 @@
+{
+ "title": "Kami minta dicat — kausatif ganda & pasif-kausatif",
+ "title_target": "Duvarlar açık maviye boyatılacak.",
+ "goal": "Menceritakan siapa menyuruh siapa mengerjakan apa, di tengah renovasi kantor dan persiapan pameran: *Selim Bey bana ofisi boyattırıyor*, *Duvarlar boyatılacak*, *Firmaya ceza ödetilecek*. Titik tata bahasanya: kausatif ganda (*-t + -tır*, *-dır + -t*) dan pasif dari kausatif (*-tıl-, -tırıl-*).",
+ "bekal": [
+  "menyusun rantai perintah dengan kausatif ganda dan menandai orang yang disuruh dengan datif: *Selim Bey bana ofisi boyattırıyor*",
+  "memakai pasif-kausatif untuk pekerjaan yang dipesankan tanpa menyebut pelakunya: *Broşürler İngilizceye çevirtildi*",
+  "memilih akhiran kausatif yang tepat (*-t, -dır, -ir, -ar, -it*) dan bertanya *kime yaptırıyorsun?*"
+ ],
+ "dialogs": [
+  {
+   "title": "Dialog — Ofiste tadilat",
+   "intro": "Senin, 6 Maret 2028. Kantor Köprü Turizm di Karaköy penuh debu, plastik, dan kaleng cat. Zeynep baru pulang dari tur dan kaget melihat mejanya tertutup koran.",
+   "lines": [
+    {
+     "speaker": "Zeynep:",
+     "text": "Budi, bu ne toz! Ofisi kim boyatıyor?",
+     "id": "Budi, debu apa ini! Siapa yang nyuruh ngecat kantor?",
+     "literal": "Budi, ini apa debu! kantor-nya siapa cat-suruh-sedang?"
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Selim Bey. Daha doğrusu, Selim Bey bana boyattırıyor; boyacıyı ben buldum.",
+     "id": "Selim Bey. Tepatnya, Selim Bey nyuruh aku yang ngurus pengecatannya; tukang catnya aku yang cari.",
+     "literal": "Selim Bey. lebih benar-nya, Selim Bey saya-ke cat-suruh-suruh-sedang; tukang-cat-nya saya temukan-lampau."
+    },
+    {
+     "speaker": "Zeynep:",
+     "text": "Yani sen boyacıya boyatıyorsun, Selim Bey de sana boyattırıyor. Ne zincir ama!",
+     "id": "Jadi kamu nyuruh tukang cat, Selim Bey nyuruh kamu. Rantai komando banget!",
+     "literal": "jadi kamu tukang-cat-ke cat-suruh-sedang-kamu, Selim Bey juga kamu-ke cat-suruh-suruh-sedang. apa rantai tapi!"
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Duvarlar açık maviye boyatılacak, eski halılar da değiştirilecek.",
+     "id": "Dindingnya bakal dicat biru muda, karpet-karpet lama juga diganti.",
+     "literal": "dinding-jamak terang biru-ke cat-suruh-di-akan, lama karpet-jamak juga ganti-di-akan."
+    },
+    {
+     "speaker": "Zeynep:",
+     "text": "Peki eski dolaplar ne olacak? Onlar çok ağır.",
+     "id": "Terus lemari-lemari lama gimana? Itu berat banget.",
+     "literal": "lalu lama lemari-jamak apa akan-jadi? mereka sangat berat."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Onları hamallara taşıtacağız. Yarın sabah depoya götürülecekler.",
+     "id": "Kita suruh kuli angkut. Besok pagi dibawa ke gudang.",
+     "literal": "mereka-nya kuli-jamak-ke angkut-suruh-akan-kami. besok pagi gudang-ke bawa-di-akan-mereka."
+    },
+    {
+     "speaker": "Zeynep:",
+     "text": "Benim masama kimse dokunmasın ama. Çekmecelerde önemli dosyalar var.",
+     "id": "Tapi mejaku jangan ada yang sentuh ya. Di lacinya ada berkas penting.",
+     "literal": "saya-punya meja-ku-ke siapa-pun sentuh-jangan-biar tapi. laci-jamak-di penting berkas-jamak ada."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Merak etme. Dosyalarını dün Kerem'e kutulara koydurdum.",
+     "id": "Tenang. Berkas-berkasmu kemarin sudah kusuruh Kerem masukkan ke kardus.",
+     "literal": "khawatir-jangan. berkas-jamak-mu-nya kemarin Kerem-ke kotak-jamak-ke taruh-suruh-lampau-saya."
+    },
+    {
+     "speaker": "Zeynep:",
+     "text": "Kerem'e mi? Kesin o dosyaları karıştırmıştır!",
+     "id": "Ke Kerem? Pasti berkasnya sudah dia acak-acak!",
+     "literal": "Kerem-ke apakah? pasti itu berkas-jamak-nya campur-sudah-pasti!"
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Karıştırmadı, söz. Her kutunun üstüne içinde ne olduğunu yazdırdım.",
+     "id": "Nggak kok, janji. Di atas tiap kardus sudah kusuruh tulis isinya apa.",
+     "literal": "campur-tidak-lampau, janji. setiap kotak-punya atas-nya-ke dalam-nya-di apa ada-yang-nya-nya tulis-suruh-lampau-saya."
+    },
+    {
+     "speaker": "Zeynep:",
+     "text": "Peki bu tadilatın masrafını kim ödüyor? Şirket mi?",
+     "id": "Terus biaya renovasi ini siapa yang bayar? Perusahaan?",
+     "literal": "lalu ini renovasi-punya biaya-nya-nya siapa sedang-bayar? perusahaan apakah?"
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Hayır, binanın sahibi. Selim Bey masrafı ona ödetti.",
+     "id": "Bukan, pemilik gedung. Selim Bey berhasil bikin dia yang bayar.",
+     "literal": "tidak, gedung-punya pemilik-nya. Selim Bey biaya-nya dia-ke bayar-suruh-lampau."
+    },
+    {
+     "speaker": "Zeynep:",
+     "text": "Vay be! Selim Bey herkese her şeyi yaptırır.",
+     "id": "Wah! Selim Bey memang bisa bikin siapa aja ngerjain apa aja.",
+     "literal": "wah! Selim Bey semua-orang-ke semua hal-nya buat-suruh-biasa."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Doğru. Bana da her sabah kahve yaptırıyor.",
+     "id": "Betul. Aku juga tiap pagi disuruh bikinin kopi.",
+     "literal": "benar. saya-ke juga setiap pagi kopi buat-suruh-sedang."
+    },
+    {
+     "speaker": "Zeynep:",
+     "text": "Sen de kahveyi çay ocağındaki Hasan Abi'ye yaptırsana!",
+     "id": "Ya kamu suruh aja Hasan Abi di pantry yang bikin!",
+     "literal": "kamu juga kopi-nya dapur-teh-di-yang Hasan Abi-ke buat-suruh-dong!"
+    }
+   ],
+   "notes": [
+    "**Ofisi kim boyatıyor?** — *boyamak* = mengecat sendiri, *boyatmak* = menyuruh orang mengecat. Bahasa Indonesia cukup bilang \"kantornya dicat\"; bahasa Turki senang menjadikan orang yang menyuruh sebagai subjek. Selim Bey tentu tidak memegang kuas sendiri.",
+    "**Selim Bey bana boyattırıyor** — kausatif ganda: *boya-* → *boyat-* → *boyattır-*. Rantainya tiga orang: Selim menyuruh Budi, Budi menyuruh tukang cat. Orang yang disuruh langsung oleh subjek (*bana*) masuk datif. Zeynep merangkumnya di baris berikut: *sen boyacıya boyatıyorsun, Selim Bey de sana boyattırıyor*.",
+    "**Duvarlar açık maviye boyatılacak** — pasif dari kausatif: *boyat-* + *-ıl-* + *-acak*. Dindingnya \"akan dicatkan\": ada pihak yang memesan, ada tukang yang mengerjakan, dan keduanya tidak disebut. Warna tujuan memakai datif: *maviye boyamak* (mengecat jadi biru).",
+    "**Onları hamallara taşıtacağız** — *taşımak* (mengangkut) → *taşıtmak*. Objek tetap akusatif (*onları*), yang disuruh datif (*hamallara*). *Hamal* (kuli angkut) dari bahasa Arab *ḥammāl*; di İstanbul lama mereka memikul barang dengan pelana punggung khusus, *semer*.",
+    "**Dosyalarını Kerem'e kutulara koydurdum** — dua datif dalam satu kalimat: *Kerem'e* (orang yang disuruh) dan *kutulara* (tempat tujuan). Artinya jelas dari konteks. Perhatikan kausatif *koymak* → *koydurmak*, bukan *koytmak*: sesudah konsonan *y*, akhirannya *-dur*.",
+    "**Selim Bey masrafı ona ödetti** — *ödetmek* = membuat orang lain membayar. *Herkese her şeyi yaptırır* memakai aorist untuk sifat yang sudah dikenal. Terakhir, **yaptırsana** = *yaptır* + *-sana*, ajakan santai \"suruh aja dong\" yang sangat sering di obrolan."
+   ],
+   "grammars": [
+    {
+     "title": "Kausatif: satu langkah dan dua langkah",
+     "body": [
+      "Akhiran kausatif bisa ditumpuk. Aturannya: sesudah *-t* datang *-tır/-dır*, sesudah *-tır/-dır* datang *-t*. Setiap tumpukan menambah satu orang dalam rantai perintah."
+     ],
+     "table": {
+      "head": [
+       "Dasar",
+       "Kausatif",
+       "Kausatif ganda",
+       "Arti rantai"
+      ],
+      "rows": [
+       [
+        "*boyamak*",
+        "*boyatmak*",
+        "*boyattırmak*",
+        "mengecat → suruh mengecat → suruh (orang) menyuruh mengecat"
+       ],
+       [
+        "*yapmak*",
+        "*yaptırmak*",
+        "*yaptırtmak*",
+        "membuat → suruh membuat → suruh menyuruh membuat"
+       ],
+       [
+        "*temizlemek*",
+        "*temizletmek*",
+        "*temizlettirmek*",
+        "membersihkan → suruh membersihkan → …"
+       ],
+       [
+        "*yazmak*",
+        "*yazdırmak*",
+        "*yazdırtmak*",
+        "menulis → suruh menulis → …"
+       ],
+       [
+        "*taşımak*",
+        "*taşıtmak*",
+        "*taşıttırmak*",
+        "mengangkut → suruh mengangkut → …"
+       ],
+       [
+        "*ödemek*",
+        "*ödetmek*",
+        "*ödettirmek*",
+        "membayar → suruh membayar → …"
+       ],
+       [
+        "*kesmek*",
+        "*kestirmek*",
+        "*kestirtmek*",
+        "memotong → suruh memotong → …"
+       ]
+      ]
+     },
+     "after": [
+      "Dalam obrolan, kausatif ganda sering diganti kausatif tunggal walau ada perantara: *Selim Bey ofisi boyattı* sudah cukup. Bentuk ganda dipakai kalau rantainya memang mau ditonjolkan.",
+      "Kata kerja tak transitif menandai orang yang disuruh dengan akusatif (*bebeği uyuttu*); kata kerja transitif memakai datif (*duvarı boyacıya boyattı*)."
+     ]
+    },
+    {
+     "title": "Pasif dari kausatif",
+     "body": [
+      "Kausatif + pasif *-ıl/-il/-ul/-ül* menghasilkan \"di-…-kan oleh orang yang disuruh\". Bentuk ini sangat sering dalam laporan kerja, pengumuman, dan kontrak."
+     ],
+     "table": {
+      "head": [
+       "Kausatif",
+       "Pasif-kausatif",
+       "Contoh"
+      ],
+      "rows": [
+       [
+        "*boyatmak*",
+        "*boyatılmak*",
+        "*Duvarlar açık maviye boyatılacak.*"
+       ],
+       [
+        "*yaptırmak*",
+        "*yaptırılmak*",
+        "*Ofis 2010'da yeniden yaptırıldı.*"
+       ],
+       [
+        "*değiştirmek*",
+        "*değiştirilmek*",
+        "*Eski halılar değiştirilecek.*"
+       ],
+       [
+        "*taşıtmak*",
+        "*taşıtılmak*",
+        "*Dolaplar depoya taşıtıldı.*"
+       ],
+       [
+        "*çevirtmek*",
+        "*çevirtilmek*",
+        "*Broşürler İngilizceye çevirtildi.*"
+       ],
+       [
+        "*ödetmek*",
+        "*ödetilmek*",
+        "*Firmaya ceza ödetilecek.*"
+       ],
+       [
+        "*getirtmek*",
+        "*getirtilmek*",
+        "*Lokumlar Karaköy'den getirtilecek.*"
+       ]
+      ]
+     },
+     "after": [
+      "Bandingkan: *Duvarlar boyandı* (dindingnya dicat) hanya melaporkan hasil; *Duvarlar boyatıldı* menyiratkan ada yang memesan pekerjaan itu. Laporan Budi kepada Selim Bey tentu memakai bentuk kedua."
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Dialog kedua — Fuar hazırlığı",
+   "intro": "Rabu, 8 Maret 2028. Dua minggu lagi Köprü Turizm membuka stan di pameran pariwisata EMITT. Selim Bey memeriksa daftar persiapan bersama Budi di ruang rapat yang catnya masih basah.",
+   "lines": [
+    {
+     "speaker": "Selim Bey:",
+     "text": "Budi, EMITT'e iki hafta kaldı. Afişleri bastırdın mı?",
+     "id": "Budi, EMITT tinggal dua minggu lagi. Posternya sudah kamu cetakkan?",
+     "literal": "Budi, EMITT-ke dua minggu tersisa-lampau. poster-jamak-nya cetak-suruh-lampau-kamu apakah?"
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Bastırdım, Selim Bey. Broşürler de İngilizceye ve Arapçaya çevirtildi.",
+     "id": "Sudah, Selim Bey. Brosurnya juga sudah diterjemahkan ke bahasa Inggris dan Arab.",
+     "literal": "cetak-suruh-lampau-saya, Selim Bey. brosur-jamak juga Inggris-ke dan Arab-ke terjemah-suruh-di-lampau."
+    },
+    {
+     "speaker": "Selim Bey:",
+     "text": "Güzel. Standı kime kurduruyoruz? Geçen yılki firma çok geç kalmıştı.",
+     "id": "Bagus. Standnya kita suruh siapa yang pasang? Firma tahun lalu telat banget.",
+     "literal": "bagus. stan-nya siapa-ke pasang-suruh-sedang-kita? lalu tahun-yang firma sangat terlambat-sudah-lampau."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Bu yıl başka bir firmaya kurduruyoruz. Sözleşmeyi de avukata hazırlattım.",
+     "id": "Tahun ini kita pakai firma lain. Kontraknya juga sudah kusuruh pengacara yang siapkan.",
+     "literal": "ini tahun lain satu firma-ke pasang-suruh-sedang-kami. kontrak-nya juga pengacara-ke siap-suruh-lampau-saya."
+    },
+    {
+     "speaker": "Selim Bey:",
+     "text": "Avukata mı? Bu kadar resmiyete gerek var mıydı?",
+     "id": "Pengacara? Memangnya perlu seresmi itu?",
+     "literal": "pengacara-ke apakah? ini sebanyak keresmian-ke perlu ada apakah-lampau?"
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Geçen yıldan sonra, evet. Standı geç kurarlarsa firmaya ceza ödetilecek.",
+     "id": "Setelah kejadian tahun lalu, iya. Kalau standnya telat dipasang, firma itu kena denda.",
+     "literal": "lalu tahun-dari sesudah, ya. stan-nya terlambat pasang-biasa-mereka-kalau firma-ke denda bayar-suruh-di-akan."
+    },
+    {
+     "speaker": "Selim Bey:",
+     "text": "Aferin. Peki ziyaretçilere ne ikram edeceğiz?",
+     "id": "Pinter. Terus pengunjung kita suguhi apa?",
+     "literal": "bagus. lalu pengunjung-jamak-ke apa suguhan akan-buat-kita?"
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Türk kahvesi ve lokum. Kahveyi standda bir ustaya pişirteceğiz, lokumlar da Karaköy'deki bir dükkândan getirtilecek.",
+     "id": "Kopi Turki dan lokum. Kopinya kita suruh seorang ahli masak di stan, lokumnya dipesan dari toko di Karaköy.",
+     "literal": "Turki kopi-nya dan lokum. kopi-nya stan-di satu ahli-ke masak-suruh-akan-kami, lokum-jamak juga Karaköy-di-yang satu toko-dari bawa-suruh-di-akan."
+    },
+    {
+     "speaker": "Selim Bey:",
+     "text": "Endonezya kahvesi de olsun. Böylece senin ülken de tanıtılır.",
+     "id": "Kopi Indonesia juga harus ada. Sekalian negaramu ikut dipromosikan.",
+     "literal": "Indonesia kopi-nya juga ada-biar. begini-lah kamu-punya negara-mu juga kenal-kan-di-biasa."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Harika fikir! Anneme Gayo kahvesi göndertirim, kargoyla bir haftada gelir.",
+     "id": "Ide bagus! Aku minta Ibu kirimin kopi Gayo, lewat kargo seminggu juga sampai.",
+     "literal": "hebat ide! ibu-ku-ke Gayo kopi-nya kirim-suruh-biasa-saya, kargo-dengan satu minggu-di datang-biasa."
+    },
+    {
+     "speaker": "Selim Bey:",
+     "text": "Tamam. Ama o kahveyi sen pişirme, ustaya pişirt! Geçen sefer bütün ofisi dumana boğmuştun.",
+     "id": "Oke. Tapi kopi itu jangan kamu yang masak, suruh ahlinya! Terakhir kali kamu bikin satu kantor penuh asap.",
+     "literal": "oke. tapi itu kopi-nya kamu masak-jangan, ahli-ke masak-suruh! lalu kali seluruh kantor-nya asap-ke tenggelam-kan-sudah-lampau-kamu."
+    }
+   ],
+   "notes": [
+    "**Afişleri bastırdın mı?** — *basmak* berarti mencetak (juga menginjak); *bastırmak* = memesan cetakan ke percetakan (*matbaa*, dari bahasa Arab *maṭbaʿa*). Kantor tidak mencetak poster sendiri, jadi kausatiflah yang wajar.",
+    "**Broşürler İngilizceye ve Arapçaya çevirtildi** — *çevirmek* (menerjemahkan) → *çevirtmek* (menyuruh menerjemahkan) → *çevirtilmek*. Nama bahasa + datif = \"ke dalam bahasa…\": *Türkçeye, Endonezceye*.",
+    "**Standı kime kurduruyoruz?** — karena orang yang disuruh masuk datif, kata tanyanya *kime?* (kepada siapa). Pola ini berguna sekali: *Saçını kime kestiriyorsun?* (Rambutmu kamu potongkan di siapa?), *Evi kime boyattınız?*",
+    "**Firmaya ceza ödetilecek** — pasif-kausatif dengan orang yang disuruh tetap datif. Pelakunya (panitia, Köprü Turizm) sengaja tidak disebut; bunyinya seperti pasal kontrak. *Ceza* (denda, hukuman) berasal dari bahasa Arab *jazāʾ*.",
+    "**Karaköy'deki bir dükkândan getirtilecek** — *getirmek* (membawa) → *getirtmek* = memesan barang supaya didatangkan. *-deki* mengubah keterangan tempat menjadi sifat: *Karaköy'deki dükkân* (toko yang di Karaköy). Tanda sirkumfleks di *dükkân* menandai *k* yang dilafalkan halus.",
+    "**Sen pişirme, ustaya pişirt!** — *pişmek* (matang) → *pişirmek* (memasak) → *pişirtmek* (menyuruh orang memasak). Selim Bey menutup dengan *-mıştın*: *dumana boğmuştun* = dulu kamu sudah (sempat) menenggelamkan kantor dalam asap, ungkapan untuk \"bikin penuh asap\"."
+   ],
+   "grammars": [
+    {
+     "title": "Siapa yang disuruh? Penandanya",
+     "body": [
+      "Dalam kalimat kausatif, penanda orang yang disuruh bergantung pada kata kerja dasarnya. Perantara dalam rantai panjang juga bisa disebut dengan *aracılığıyla* (melalui): *Selim Bey duvarı Budi aracılığıyla boyattı*."
+     ],
+     "table": {
+      "head": [
+       "Kalimat dasar",
+       "Kalimat kausatif",
+       "Yang disuruh"
+      ],
+      "rows": [
+       [
+        "*Bebek uyudu.*",
+        "*Deniz bebeği uyuttu.*",
+        "akusatif (dasar tak transitif)"
+       ],
+       [
+        "*Misafirler bekledi.*",
+        "*Selim Bey misafirleri bekletti.*",
+        "akusatif (dasar tak transitif)"
+       ],
+       [
+        "*Boyacı duvarı boyadı.*",
+        "*Budi duvarı boyacıya boyattı.*",
+        "datif (dasar transitif)"
+       ],
+       [
+        "*Usta kahveyi pişirdi.*",
+        "*Budi kahveyi ustaya pişirtti.*",
+        "datif (dasar transitif)"
+       ],
+       [
+        "*Annem kahve gönderdi.*",
+        "*Budi annesine kahve göndertti.*",
+        "datif (dasar transitif)"
+       ],
+       [
+        "*Boyacı duvarı boyadı.*",
+        "*Selim Bey duvarı Budi'ye boyattırdı.*",
+        "datif untuk perantara (kausatif ganda)"
+       ]
+      ]
+     },
+     "after": [
+      "Kausatif dari kata kerja tak transitif sering menjadi kata kerja tersendiri dalam kamus: *uyumak → uyutmak* (menidurkan), *beklemek → bekletmek* (membuat menunggu), *ölmek → öldürmek* (membunuh)."
+     ]
+    }
+   ]
+  }
+ ],
+ "sections": [
+  {
+   "title": "Akhiran kausatif: pilih yang mana?",
+   "blocks": [
+    {
+     "type": "p",
+     "text": "Sebelum menumpuk kausatif, kamu harus tahu akhiran pertamanya. Kebanyakan kata kerja mengikuti dua aturan besar (*-t* dan *-dır*); sekelompok kecil kata kerja bersuku satu memakai akhiran lama yang harus dihafal satu per satu."
+    },
+    {
+     "type": "tabel",
+     "head": [
+      "Akhiran",
+      "Kapan dipakai",
+      "Contoh"
+     ],
+     "rows": [
+      [
+       "*-t*",
+       "batang berakhir vokal",
+       "*boya- → boyat-, oku- → okut-, temizle- → temizlet-*"
+      ],
+      [
+       "*-t*",
+       "batang bersuku banyak berakhir *r* atau *l*",
+       "*otur- → oturt-, kısal- → kısalt-*"
+      ],
+      [
+       "*-dır/-dir/-dur/-dür*",
+       "batang berakhir konsonan bersuara lainnya",
+       "*kur- → kurdur-, koy- → koydur-, bil- → bildir-*"
+      ],
+      [
+       "*-tır/-tir/-tur/-tür*",
+       "batang berakhir konsonan tak bersuara",
+       "*yap- → yaptır-, kes- → kestir-, bas- → bastır-*"
+      ],
+      [
+       "*-ir/-ır/-ur/-ür*",
+       "sebagian kata bersuku satu",
+       "*piş- → pişir-, bit- → bitir-, düş- → düşür-, iç- → içir-*"
+      ],
+      [
+       "*-ar/-er*",
+       "segelintir kata",
+       "*çık- → çıkar-, kop- → kopar-*"
+      ],
+      [
+       "*-it/-ıt/-ut*",
+       "segelintir kata",
+       "*kork- → korkut-, ak- → akıt-*"
+      ],
+      [
+       "tak beraturan",
+       "hafalkan",
+       "*gel- → getir-, gör- → göster-*"
+      ]
+     ]
+    },
+    {
+     "type": "p",
+     "text": "Untuk kausatif kedua, aturannya sederhana: batang yang sudah berakhir *-t* mendapat *-tır* (*boyat- → boyattır-*), batang yang berakhir *-r* dari akhiran *-dır/-ir/-ar* mendapat *-t* (*yaptır- → yaptırt-, pişir- → pişirt-, çıkar- → çıkart-*). Hasil akhirnya lalu bisa dipasifkan: *pişirtildi, yaptırtıldı*."
+    },
+    {
+     "type": "kotak",
+     "title": "Menyuruh tukang di Turki",
+     "items": [
+      "Tukang cat, montir, dan tukang bangunan disapa *Usta*; asistennya yang muda sering dipanggil *Abi* atau namanya saja.",
+      "Saat masuk ke tempat orang bekerja, ucapkan *Kolay gelsin!* (semoga pekerjaanmu mudah). Jawabannya: *Sağ ol!*",
+      "Minta *fiyat teklifi* (penawaran harga) sebelum kerja dimulai. *Anahtar teslim* berarti borongan beres sampai kunci diserahkan.",
+      "Menyuguhkan teh kepada tukang yang bekerja di rumah atau kantor adalah sopan santun yang hampir wajib."
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Berjaga di stan pameran",
+   "blocks": [
+    {
+     "type": "p",
+     "text": "EMITT adalah pameran pariwisata tahunan besar di İstanbul. Biro perjalanan, hotel, maskapai, dan kantor pariwisata dari banyak negara membuka stan; hari-hari awal biasanya untuk pelaku bisnis, lalu pameran dibuka untuk umum. Bagi biro kecil seperti Köprü Turizm, empat hari di pameran bisa menentukan kontrak setahun."
+    },
+    {
+     "type": "tabel",
+     "head": [
+      "Türkçe",
+      "Cara baca",
+      "Bahasa Indonesia"
+     ],
+     "rows": [
+      [
+       "fuar alanı",
+       "fu-AR a-la-NI",
+       "area pameran"
+      ],
+      [
+       "katılımcı",
+       "ka-tı-lım-CI",
+       "peserta pameran"
+      ],
+      [
+       "ziyaretçi",
+       "zi-ya-ret-CI",
+       "pengunjung"
+      ],
+      [
+       "tanıtım",
+       "ta-nı-TIM",
+       "promosi, perkenalan"
+      ],
+      [
+       "kartvizit",
+       "kart-vi-ZIT",
+       "kartu nama"
+      ],
+      [
+       "katalog",
+       "ka-ta-LOG",
+       "katalog"
+      ],
+      [
+       "stant görevlisi",
+       "stant gö-rev-li-SI",
+       "petugas stan"
+      ],
+      [
+       "iş bağlantısı",
+       "isy baa-lan-tı-SI",
+       "kontak bisnis"
+      ]
+     ]
+    },
+    {
+     "type": "kotak",
+     "title": "Kiat berjaga di stan",
+     "items": [
+      "Sapa dengan nama + gelar begitu melihat kartu nama: *Hoş geldiniz, Ahmet Bey!* Orang Turki senang disapa begitu.",
+      "Tanyakan dulu kebutuhan tamu: *Nasıl yardımcı olabilirim? Hangi bölgeyle ilgileniyorsunuz?*",
+      "Suguhan kecil membuka obrolan: kopi Turki, lokum, atau semprotan *kolonya* di tangan tamu.",
+      "Malam harinya, kirim surel tindak lanjut selagi tamu masih ingat: *Fuarda tanıştığımız için memnun oldum.*"
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Ulangan berjenjang — unit 9",
+   "blocks": [
+    {
+     "type": "p",
+     "text": "Tutup kolom Turki, baca terjemahan Indonesianya, lalu susun kembali kalimatnya dari ingatan."
+    },
+    {
+     "type": "tabel",
+     "head": [
+      "Bahasa Indonesia",
+      "Türkçe"
+     ],
+     "rows": [
+      [
+       "Sudah, Pak Selim. Terus terang, meskipun paketnya bagus, harga ini terlalu tinggi untuk pasar Indonesia.",
+       "*Gördüm, Selim Bey. Açıkçası paket güzel olmasına rağmen bu fiyat Endonezya pazarı için çok yüksek.*"
+      ],
+      [
+       "Betul, tapi meskipun semua puas, penjualannya nggak sebanyak yang kita harapkan.",
+       "*Doğru, ama herkes memnun olduğu halde satışlar beklediğimiz kadar olmadı.*"
+      ],
+      [
+       "Tahun ini harga hotel naik dua puluh persen. Biarpun penjualan agak turun, kita nggak bisa menurunkan harga.",
+       "*Bu yıl otel fiyatları yüzde yirmi arttı. Satışlar biraz düşse de fiyatı indiremeyiz.*"
+      ],
+      [
+       "Hotel mereka di luar kota, padahal punya kita di jantung Sultanahmet.",
+       "*Onların otelleri şehir dışında, oysa bizimkiler Sultanahmet'in göbeğinde.*"
+      ],
+      [
+       "Sepakat! Meskipun masih muda, kalian pintar sekali menawar. Semoga membawa berkah!",
+       "*Anlaştık! Siz genç olduğunuz halde çok iyi pazarlık ediyorsunuz. Hayırlı olsun!*"
+      ]
+     ]
+    }
+   ]
+  }
+ ],
+ "vocab": [
+  {
+   "tr": "boyatmak",
+   "baca": "bo-yat-MAK",
+   "id": "menyuruh mengecat (kausatif dari *boyamak*; yang disuruh + datif)"
+  },
+  {
+   "tr": "boyacı",
+   "baca": "bo-ya-CI",
+   "id": "tukang cat"
+  },
+  {
+   "tr": "tadilat",
+   "baca": "ta-di-LAT",
+   "id": "renovasi (serapan Arab)"
+  },
+  {
+   "tr": "toz",
+   "baca": "toz",
+   "id": "debu"
+  },
+  {
+   "tr": "değiştirmek",
+   "baca": "dee-isy-tir-MEK",
+   "id": "mengganti (kausatif dari *değişmek*, berubah)"
+  },
+  {
+   "tr": "hamal",
+   "baca": "ha-MAL",
+   "id": "kuli angkut"
+  },
+  {
+   "tr": "taşıtmak",
+   "baca": "ta-syıt-MAK",
+   "id": "menyuruh mengangkut (dari *taşımak*)"
+  },
+  {
+   "tr": "çekmece",
+   "baca": "cek-me-JE",
+   "id": "laci"
+  },
+  {
+   "tr": "koydurmak",
+   "baca": "koy-dur-MAK",
+   "id": "menyuruh menaruh (dari *koymak*)"
+  },
+  {
+   "tr": "karıştırmak",
+   "baca": "ka-rısy-tır-MAK",
+   "id": "mengacak-acak; mencampur"
+  },
+  {
+   "tr": "yazdırmak",
+   "baca": "yaz-dır-MAK",
+   "id": "menyuruh menulis; mencetak dengan printer"
+  },
+  {
+   "tr": "masraf",
+   "baca": "mas-RAF",
+   "id": "biaya, ongkos"
+  },
+  {
+   "tr": "ödetmek",
+   "baca": "ö-det-MEK",
+   "id": "membuat (orang) membayar (+ datif orangnya)"
+  },
+  {
+   "tr": "fuar",
+   "baca": "fu-AR",
+   "id": "pameran dagang"
+  },
+  {
+   "tr": "stant",
+   "baca": "stant",
+   "id": "stan pameran (akusatif *standı*)"
+  },
+  {
+   "tr": "afiş",
+   "baca": "a-FISY",
+   "id": "poster"
+  },
+  {
+   "tr": "bastırmak",
+   "baca": "bas-tır-MAK",
+   "id": "mencetakkan di percetakan (dari *basmak*)"
+  },
+  {
+   "tr": "çevirtmek",
+   "baca": "ce-virt-MEK",
+   "id": "menyuruh menerjemahkan (dari *çevirmek*)"
+  },
+  {
+   "tr": "kurdurmak",
+   "baca": "kur-dur-MAK",
+   "id": "menyuruh memasang, mendirikan (dari *kurmak*)"
+  },
+  {
+   "tr": "sözleşme",
+   "baca": "söz-lesy-ME",
+   "id": "kontrak, perjanjian"
+  },
+  {
+   "tr": "hazırlatmak",
+   "baca": "ha-zır-lat-MAK",
+   "id": "menyuruh menyiapkan (dari *hazırlamak*)"
+  },
+  {
+   "tr": "ceza",
+   "baca": "je-ZA",
+   "id": "denda; hukuman"
+  },
+  {
+   "tr": "ikram etmek",
+   "baca": "ik-RAM et-MEK",
+   "id": "menyuguhkan (+ datif tamunya)"
+  },
+  {
+   "tr": "pişirtmek",
+   "baca": "pi-syirt-MEK",
+   "id": "menyuruh memasak (dari *pişirmek*)"
+  },
+  {
+   "tr": "getirtmek",
+   "baca": "ge-tirt-MEK",
+   "id": "memesan, mendatangkan (dari *getirmek*)"
+  }
+ ],
+ "exercises": [
+  {
+   "prompt": "Terjemahkan ke bahasa Turki dengan bentuk kausatif atau pasif-kausatif.",
+   "items": [
+    "Kami menyuruh tukang cat mengecat kantor.",
+    "Selim Bey menyuruh aku mengurus pengecatan kantor.",
+    "Karpet-karpet lama akan diganti.",
+    "Kami menyuruh kuli mengangkut lemari-lemari lama.",
+    "Brosurnya sudah diterjemahkan ke bahasa Inggris.",
+    "Kopinya jangan kamu masak sendiri, suruh ahlinya!"
+   ]
+  },
+  {
+   "prompt": "Isi dengan bentuk yang tepat. Petunjuk ada di dalam kurung.",
+   "items": [
+    "Afişleri matbaaya ____. (basmak; kausatif, lampau, biz)",
+    "Selim Bey masrafı mal sahibine ____. (ödemek; kausatif, lampau, o)",
+    "Duvarlar yarın açık maviye ____. (boyamak; pasif-kausatif, akan)",
+    "Dosyaları Kerem'e kutulara ____. (koymak; kausatif, lampau, ben)",
+    "Standı bu yıl başka bir firmaya ____. (kurmak; kausatif, sedang, biz)",
+    "Lokumlar Karaköy'deki bir dükkândan ____. (getirmek; pasif-kausatif, akan)",
+    "Standı geç kurarlarsa firmaya ceza ____. (ödemek; pasif-kausatif, akan)"
+   ]
+  },
+  {
+   "prompt": "Ubah menjadi pasif-kausatif dan hilangkan pelakunya. Contoh: *Selim Bey afişleri bastırdı.* → *Afişler bastırıldı.*",
+   "items": [
+    "Budi ofisi boyattı.",
+    "Biz eski dolapları taşıttık.",
+    "Zeynep broşürleri çevirtti.",
+    "Selim Bey yeni halılar aldırdı.",
+    "Kerem kutuların üstüne etiket yazdırdı.",
+    "Firma standı kurduracak."
+   ]
+  },
+  {
+   "prompt": "Susun jadi kalimat yang benar.",
+   "items": [
+    "ofisi / Selim Bey / boyattırıyor / bana",
+    "açık maviye / duvarlar / boyatılacak",
+    "hamallara / eski dolapları / taşıtacağız",
+    "İngilizceye / broşürler / çevirtildi / de",
+    "kime / standı / kurduruyoruz"
+   ]
+  }
+ ],
+ "answers": [
+  "Ofisi boyacıya boyattık. — Selim Bey bana ofisi boyattırdı. — Eski halılar değiştirilecek. — Eski dolapları hamallara taşıttık. — Broşürler İngilizceye çevirtildi. — Kahveyi sen pişirme, ustaya pişirt!",
+  "bastırdık — ödetti — boyatılacak — koydurdum — kurduruyoruz — getirtilecek — ödetilecek",
+  "Ofis boyatıldı. — Eski dolaplar taşıtıldı. — Broşürler çevirtildi. — Yeni halılar aldırıldı. — Kutuların üstüne etiket yazdırıldı. — Stant kurdurulacak.",
+  "Selim Bey bana ofisi boyattırıyor. — Duvarlar açık maviye boyatılacak. — Eski dolapları hamallara taşıtacağız. — Broşürler de İngilizceye çevirtildi. — Standı kime kurduruyoruz?"
+ ]
+}

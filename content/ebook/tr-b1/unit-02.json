@@ -1,0 +1,674 @@
+{
+ "title": "Andai kita berangkat lebih awal — kondisional tak nyata",
+ "title_target": "Otelden bir saat erken çıksaydık, yetişirdik.",
+ "goal": "Menyesali yang sudah terjadi, membayangkan keadaan yang tidak nyata, dan memberi nasihat dengan halus: *Erken çıksaydık, yetişirdik*, *Ben müşteri olsam, kızardım*, *Keşke trafiğe baksaydım*.",
+ "bekal": [
+  "membangun pengandaian masa lampau *-seydi … -irdi / -mezdi*: *Kazayı bilseydim, o kadar rahat konuşmazdım*",
+  "membedakan kondisional nyata (*Yer varsa, bilet alırız*) dari tak nyata masa kini (*Selim Bey burada olsa ne yapardı?*)",
+  "menyatakan penyesalan dan harapan dengan *keşke*, serta memberi nasihat dengan *Ben senin yerinde olsam …*"
+ ],
+ "dialogs": [
+  {
+   "title": "Dialog — Kaçan uçak",
+   "intro": "Selasa, 12 Oktober 2027, Bandara Sabiha Gökçen. Rombongan Indonesia berangkat terlambat dari hotel di Sultanahmet, terjebak macet di jembatan, dan tiba di gerbang tepat ketika pintunya ditutup.",
+   "lines": [
+    {
+     "speaker": "Zeynep:",
+     "text": "Kapı kapandı, Budi. Uçak kalkıyor.",
+     "id": "Gerbangnya sudah ditutup, Budi. Pesawatnya mau lepas landas.",
+     "literal": "gerbang tertutup-lampau, Budi. pesawat sedang-lepas-landas."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "İnanamıyorum! Otelden bir saat erken çıksaydık, yetişirdik.",
+     "id": "Nggak percaya! Coba kita berangkat dari hotel sejam lebih awal, pasti keburu.",
+     "literal": "sedang-tak-bisa-percaya-saya! hotel-dari satu jam awal kalau-keluar-lampau-kami, andai-keburu-kami."
+    },
+    {
+     "speaker": "Zeynep:",
+     "text": "Grup kahvaltıda oyalanmasaydı, erken çıkardık zaten.",
+     "id": "Kalau rombongannya nggak berlama-lama di sarapan, kita memang bakal berangkat lebih awal.",
+     "literal": "grup sarapan-di kalau-berlama-lama-tidak-lampau, awal andai-keluar-kami memang."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Ama sen herkese acele etmemelerini söyledin!",
+     "id": "Tapi kamu sendiri yang bilang ke semua orang supaya nggak buru-buru!",
+     "literal": "tapi kamu semua-ke buru-buru lakukan-tidak-mereka-nya bilang-lampau-kamu!"
+    },
+    {
+     "speaker": "Zeynep:",
+     "text": "Köprüdeki kazayı bilseydim, o kadar rahat konuşmazdım.",
+     "id": "Kalau aku tahu ada kecelakaan di jembatan, aku nggak bakal ngomong sesantai itu.",
+     "literal": "jembatan-di-yang kecelakaan-nya kalau-tahu-lampau-saya, itu sebanyak santai andai-bicara-tidak-saya."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Ben de bilmiyordum. Keşke yola çıkmadan önce trafiğe baksaydım.",
+     "id": "Aku juga nggak tahu. Coba tadi aku cek lalu lintas sebelum berangkat.",
+     "literal": "saya juga sedang-tahu-tidak-lampau-saya. andai-saja jalan-ke keluar-sebelum lalu-lintas-ke kalau-lihat-lampau-saya."
+    },
+    {
+     "speaker": "Zeynep:",
+     "text": "Keşke! Şimdi kırk kişiye ne diyeceğiz?",
+     "id": "Iya, coba! Sekarang kita mau bilang apa ke empat puluh orang itu?",
+     "literal": "andai-saja! sekarang empat-puluh orang-ke apa akan-bilang-kita?"
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Bir sonraki uçak kaçta? Yer varsa, hemen bilet alırız.",
+     "id": "Pesawat berikutnya jam berapa? Kalau ada kursi, kita langsung beli tiket.",
+     "literal": "satu berikut-nya pesawat berapa-di? tempat ada-kalau, segera tiket beli-biasa-kita."
+    },
+    {
+     "speaker": "Zeynep:",
+     "text": "Akşam altıda, ama sadece yirmi boş yer var. Grup daha küçük olsaydı, sorun olmazdı.",
+     "id": "Jam enam sore, tapi kursi kosongnya cuma dua puluh. Coba rombongannya lebih kecil, pasti nggak masalah.",
+     "literal": "sore enam-di, tapi hanya dua-puluh kosong tempat ada. grup lebih kecil kalau-jadi-lampau, masalah andai-jadi-tidak."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "O zaman yirmi kişi uçakla gitsin, geri kalanı otobüsle götürelim.",
+     "id": "Kalau begitu dua puluh orang naik pesawat, sisanya kita bawa naik bus.",
+     "literal": "itu waktu dua-puluh orang pesawat-dengan pergi-biar, sisa-nya bus-dengan bawa-mari-kita."
+    },
+    {
+     "speaker": "Zeynep:",
+     "text": "Otobüsle yedi saat sürer! Ben müşteri olsam, çok kızardım.",
+     "id": "Naik bus itu tujuh jam! Kalau aku jadi klien, aku pasti marah besar.",
+     "literal": "bus-dengan tujuh jam makan-waktu-biasa! saya klien kalau-jadi-saya, sangat andai-marah-saya."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Haklısın. Peki, Selim Bey burada olsa ne yapardı?",
+     "id": "Kamu benar. Terus, kalau Pak Selim ada di sini, dia bakal ngapain?",
+     "literal": "benar-kamu. baiklah, Selim tuan di-sini kalau-ada apa andai-lakukan?"
+    },
+    {
+     "speaker": "Zeynep:",
+     "text": "Önce ikimize bağırırdı, sonra havayolunu arayıp ek sefer isterdi.",
+     "id": "Pertama dia bakal ngomelin kita berdua, lalu telepon maskapai dan minta penerbangan tambahan.",
+     "literal": "dulu dua-kita-ke andai-teriak, lalu maskapai-nya telepon-lalu tambahan penerbangan andai-minta."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "O zaman bağırma kısmını atlayalım. Havayolu ofisine gidiyorum.",
+     "id": "Ya sudah, bagian ngomelnya kita lewati saja. Aku ke kantor maskapai.",
+     "literal": "itu waktu teriak bagian-nya lompati-mari-kita. maskapai kantor-nya-ke sedang-pergi-saya."
+    },
+    {
+     "speaker": "Zeynep:",
+     "text": "Bekle, ben de geliyorum. Birbirimizi suçlamasaydık, yarım saat kazanırdık.",
+     "id": "Tunggu, aku ikut. Coba tadi kita nggak saling menyalahkan, kita hemat setengah jam.",
+     "literal": "tunggu, saya juga sedang-datang-saya. satu-sama-lain-kita-nya kalau-salahkan-tidak-lampau-kami, setengah jam andai-dapat-kami."
+    }
+   ],
+   "notes": [
+    "**Çıksaydık, yetişirdik** — pengandaian tentang masa lampau yang tidak terjadi: syarat *-seydi* (kalau dulu …) + hasil *-irdi* (pasti akan …). Kenyataannya: mereka tidak berangkat awal dan tidak keburu. Dalam harfiah, *-se* ditulis **kalau-**, *-seydi* **kalau-…-lampau**, dan hasil *-irdi* **andai-**.",
+    "**Oyalanmasaydı … konuşmazdım** — negatif syarat: *-ma/-me* sebelum *-sa/-se* (*oyalanmasaydı, suçlamasaydık*). Negatif hasil memakai aorist negatif *-mez/-maz* + *-di*: *konuşmazdım, olmazdı, kızmazlardı*.",
+    "**Keşke … baksaydım** — *keşke* + *-seydi* = menyesal: \"coba tadi aku …\". Kata ini dari bahasa Persia; Zeynep bahkan menjawab dengan satu kata saja, *Keşke!*, seperti kita bilang \"Iya, coba!\". *Yola çıkmadan önce* = sebelum berangkat (*-meden önce*, A2).",
+    "**Yer varsa, hemen bilet alırız** — ini kondisional **nyata** dari A2: kursinya mungkin memang ada, jadi hasilnya aorist biasa (*alırız*) tanpa *-di*. Bandingkan dengan *Grup daha küçük olsaydı, sorun olmazdı*: rombongannya sudah pasti tidak kecil.",
+    "**Ben müşteri olsam, çok kızardım** — *-se* (tanpa *-ydı*) + *-irdi* = pengandaian **masa kini**: aku bukan klien, tapi seandainya iya. Pola yang sama: *Selim Bey burada olsa ne yapardı?* (dia tidak di sini sekarang).",
+    "**Yirmi kişi uçakla gitsin** — *-sin* adalah perintah untuk orang ketiga: \"biar dua puluh orang naik pesawat\". *Götürelim* = mari kita bawa (*götürmek* = membawa pergi; *getirmek* = membawa ke sini). *Geri kalan* = sisanya."
+   ],
+   "grammars": [
+    {
+     "title": "-seydi … -irdi: andai dulu",
+     "body": [
+      "Syarat: akar + *-sa/-se* + *-ydı/-ydi* + orang. Hasil: aorist + *-dı/-di* + orang. Keduanya ikut keselarasan vokal biasa."
+     ],
+     "table": {
+      "head": [
+       "Pelaku",
+       "Syarat *-seydi*",
+       "Hasil *-irdi*",
+       "Hasil negatif *-mezdi*"
+      ],
+      "rows": [
+       [
+        "ben",
+        "*bilseydim*",
+        "*bilirdim*",
+        "*bilmezdim*"
+       ],
+       [
+        "sen",
+        "*bilseydin*",
+        "*bilirdin*",
+        "*bilmezdin*"
+       ],
+       [
+        "o",
+        "*bilseydi*",
+        "*bilirdi*",
+        "*bilmezdi*"
+       ],
+       [
+        "biz",
+        "*bilseydik*",
+        "*bilirdik*",
+        "*bilmezdik*"
+       ],
+       [
+        "siz",
+        "*bilseydiniz*",
+        "*bilirdiniz*",
+        "*bilmezdiniz*"
+       ],
+       [
+        "onlar",
+        "*bilselerdi*",
+        "*bilirlerdi*",
+        "*bilmezlerdi*"
+       ]
+      ]
+     },
+     "after": [
+      "Aorist harus benar dulu, karena hasilnya dibangun dari situ: *çıkar → çıkardık*, *yetişir → yetişirdik*, *kazanır → kazanırdık*, *ister → isterdi*, *olur → olmazdı*.",
+      "Dalam obrolan cepat, syarat masa lampau kadang cukup memakai *-sa/-se* bila konteksnya jelas: *Erken çıksak yetişirdik*. Untuk menulis, pakailah *-seydi*."
+     ]
+    },
+    {
+     "title": "Nyata atau tidak nyata?",
+     "body": [
+      "Yang membedakan adalah kenyataan di balik kalimat. Kalau hasilnya masih mungkin, pakai *-se* + aorist/*-ecek*. Kalau tidak mungkin, hasilnya selalu *-irdi*."
+     ],
+     "table": {
+      "head": [
+       "Kalimat",
+       "Jenis",
+       "Kenyataannya"
+      ],
+      "rows": [
+       [
+        "*Yer varsa, bilet alırız.*",
+        "nyata",
+        "mungkin ada kursi, belum tahu"
+       ],
+       [
+        "*Yer olsa, bilet alırdık.*",
+        "tak nyata, sekarang",
+        "sekarang tidak ada kursi"
+       ],
+       [
+        "*Yer olsaydı, bilet alırdık.*",
+        "tak nyata, dulu",
+        "tadi tidak ada kursi"
+       ],
+       [
+        "*Ben müşteri olsam, kızardım.*",
+        "tak nyata, sekarang",
+        "aku bukan klien"
+       ],
+       [
+        "*Selim Bey burada olsa ne yapardı?*",
+        "tak nyata, sekarang",
+        "Selim tidak ada di sini"
+       ],
+       [
+        "*Kazayı bilseydim, rahat konuşmazdım.*",
+        "tak nyata, dulu",
+        "aku tidak tahu soal kecelakaan"
+       ]
+      ]
+     }
+    }
+   ]
+  },
+  {
+   "title": "Dialog kedua — Ben senin yerinde olsam",
+   "intro": "Rabu malam, 13 Oktober 2027. Seluruh rombongan akhirnya tiba di İzmir. Budi dan Zeynep duduk di bangku tepi laut di Kordon, masing-masing memegang segelas teh.",
+   "lines": [
+    {
+     "speaker": "Zeynep:",
+     "text": "Dün çok gerildin, Budi. Sana bir şey söyleyebilir miyim?",
+     "id": "Kemarin kamu tegang banget, Budi. Boleh aku bilang sesuatu?",
+     "literal": "kemarin sangat tegang-jadi-lampau-kamu, Budi. ke-kamu satu hal bilang-bisa-biasa apakah-saya?"
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Tabii. Artık kızgın değilim, merak etme.",
+     "id": "Tentu. Aku sudah nggak marah, tenang saja.",
+     "literal": "tentu. sekarang marah bukan-saya, penasaran jangan."
+    },
+    {
+     "speaker": "Zeynep:",
+     "text": "Ben senin yerinde olsam, gruba çıkış saatini her sabah yarım saat erken söylerdim.",
+     "id": "Kalau aku jadi kamu, tiap pagi aku bakal bilang ke rombongan jam berangkatnya setengah jam lebih awal.",
+     "literal": "saya kamu-punya tempat-mu-di kalau-ada-saya, grup-ke keluar jam-nya-nya setiap pagi setengah jam awal andai-bilang-saya."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Yani onlara yalan mı söyleyeyim?",
+     "id": "Maksudnya, aku harus bohong ke mereka?",
+     "literal": "artinya ke-mereka bohong apakah bilang-lah-saya?"
+    },
+    {
+     "speaker": "Zeynep:",
+     "text": "Yalan değil, rehber taktiği! Ben de ilk yılımda bunu bilseydim, o kadar çok uçak kaçırmazdım.",
+     "id": "Bukan bohong, taktik pemandu! Coba dulu di tahun pertamaku aku tahu ini, aku nggak bakal sering ketinggalan pesawat.",
+     "literal": "bohong bukan, pemandu taktik-nya! saya juga pertama tahun-ku-di ini-nya kalau-tahu-lampau-saya, itu sebanyak sangat pesawat andai-lepaskan-tidak-saya."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Sen de mi uçak kaçırdın? Hiç tahmin etmezdim.",
+     "id": "Kamu juga pernah ketinggalan pesawat? Nggak nyangka sama sekali.",
+     "literal": "kamu juga apakah pesawat lepaskan-lampau-kamu? sama-sekali tebak andai-lakukan-tidak-saya."
+    },
+    {
+     "speaker": "Zeynep:",
+     "text": "Üç kere! Keşke biri o zaman bana bu tavsiyeyi verseydi.",
+     "id": "Tiga kali! Coba dulu ada orang yang kasih nasihat ini ke aku.",
+     "literal": "tiga kali! andai-saja seseorang itu waktu ke-saya ini nasihat-nya kalau-beri-lampau."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Benim yerimde olsan, başka ne yapardın?",
+     "id": "Kalau kamu jadi aku, apa lagi yang bakal kamu lakukan?",
+     "literal": "saya-punya tempat-ku-di kalau-ada-kamu, lain apa andai-lakukan-kamu?"
+    },
+    {
+     "speaker": "Zeynep:",
+     "text": "Her grup için bir mesajlaşma grubu açardım. Oraya yazarsan, herkes aynı anda görür.",
+     "id": "Aku bakal bikin grup obrolan untuk tiap rombongan. Kalau kamu tulis di sana, semua orang lihat bersamaan.",
+     "literal": "setiap grup untuk satu perpesanan grup-nya andai-buka-saya. sana-ke tulis-biasa-kalau-kamu, semua-orang sama saat-di lihat-biasa."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Harika fikir. Keşke bu konuşmayı dün sabah yapsaydık!",
+     "id": "Ide bagus. Coba obrolan ini kita lakukan kemarin pagi!",
+     "literal": "hebat ide. andai-saja ini obrolan-nya kemarin pagi kalau-lakukan-lampau-kami!"
+    },
+    {
+     "speaker": "Zeynep:",
+     "text": "Dün sabah yapsaydık, sen beni dinlemezdin. Şimdi dinliyorsun işte.",
+     "id": "Kalau kita ngobrol kemarin pagi, kamu nggak bakal dengerin aku. Sekarang kamu dengerin, kan.",
+     "literal": "kemarin pagi kalau-lakukan-lampau-kami, kamu saya-nya andai-dengar-tidak-kamu. sekarang sedang-dengar-kamu nah."
+    }
+   ],
+   "notes": [
+    "**Ben senin yerinde olsam** — ungkapan tetap untuk memberi nasihat: \"kalau aku di posisimu\". Bentuk pendeknya *Senin yerinde olsam* atau *Yerinde olsam*. Hasilnya selalu *-irdi* (*söylerdim, yapardım*), karena aku memang bukan kamu.",
+    "**Yalan mı söyleyeyim?** — optatif *-eyim* dengan *mı* terdengar seperti protes: \"masa aku harus bohong?\". *Yalan söylemek* = berbohong; *doğruyu söylemek* = berkata jujur.",
+    "**Bilseydim, o kadar çok uçak kaçırmazdım** — penyesalan Zeynep tentang tahun pertamanya. *Uçak kaçırmak* = ketinggalan pesawat (harfiah: meloloskan pesawat); *kaçan uçak* = pesawat yang sudah lolos.",
+    "**Hiç tahmin etmezdim** — *-mezdi* tanpa syarat yang diucapkan. Syaratnya tersirat: \"(kalau kamu tidak cerita) aku tidak akan pernah menduga\". Pola ini sering dipakai untuk kaget dan untuk menolak dengan sopan: *Ben olsam yapmazdım* (kalau aku, aku nggak bakal).",
+    "**Keşke biri bana bu tavsiyeyi verseydi** — *keşke* juga bisa berpelaku orang lain: \"coba ada orang yang …\". *Tavsiye* (nasihat, rekomendasi) adalah serapan Arab, satu keluarga dengan kata Indonesia *wasiat*.",
+    "**Oraya yazarsan, herkes görür** — di tengah pengandaian, Zeynep beralih ke kondisional nyata (*-se* sesudah aorist: *yazarsan*) karena ia bicara tentang kebiasaan yang selalu berlaku. *İşte* di akhir kalimat terakhir = \"nah, kan\" (partikel ini dibahas di unit 14)."
+   ],
+   "grammars": [
+    {
+     "title": "keşke: menyesal dan berharap",
+     "body": [
+      "*Keşke* selalu diikuti bentuk *-se*. Dengan *-seydi* ia menyesali masa lampau; dengan *-se* ia berharap tentang sekarang atau nanti, sesuatu yang kecil kemungkinannya."
+     ],
+     "table": {
+      "head": [
+       "Pola",
+       "Contoh",
+       "Arti"
+      ],
+      "rows": [
+       [
+        "*keşke* + *-seydi*",
+        "*Keşke trafiğe baksaydım.*",
+        "Coba tadi aku cek lalu lintas."
+       ],
+       [
+        "*keşke* + *-meseydi*",
+        "*Keşke uçağı kaçırmasaydık.*",
+        "Coba kita nggak ketinggalan pesawat."
+       ],
+       [
+        "*keşke* + *-se*",
+        "*Keşke daha çok vaktim olsa.*",
+        "Andai aku punya lebih banyak waktu."
+       ],
+       [
+        "*keşke* + *-se* (nanti)",
+        "*Keşke yarın yağmur yağmasa.*",
+        "Semoga besok nggak hujan (tapi kayaknya hujan)."
+       ],
+       [
+        "*keşke* + orang lain",
+        "*Keşke biri bana söyleseydi.*",
+        "Coba ada orang yang bilang padaku."
+       ],
+       [
+        "*keşke* sendirian",
+        "*Keşke!*",
+        "Andai saja! Iya, coba!"
+       ]
+      ]
+     },
+     "after": [
+      "Jangan tertukar dengan *belki* (mungkin). *Keşke gelse* = andai dia datang (aku ingin, tapi ragu); *Belki gelir* = mungkin dia datang."
+     ]
+    }
+   ]
+  }
+ ],
+ "sections": [
+  {
+   "title": "Tiga jenis kondisional",
+   "blocks": [
+    {
+     "type": "p",
+     "text": "Di A2 kamu sudah memakai *-se* untuk syarat yang nyata. Sekarang lengkapi dengan dua jenis pengandaian. Kuncinya ada di bentuk hasil: *-irdi* muncul setiap kali kita membicarakan dunia yang tidak nyata, baik sekarang maupun dulu."
+    },
+    {
+     "type": "tabel",
+     "head": [
+      "Jenis",
+      "Syarat",
+      "Hasil",
+      "Contoh"
+     ],
+     "rows": [
+      [
+       "nyata (mungkin terjadi)",
+       "*-se*",
+       "aorist, *-ecek*, perintah",
+       "*Yer varsa, bilet alırız.*"
+      ],
+      [
+       "kebiasaan umum",
+       "aorist + *-se*",
+       "aorist",
+       "*Oraya yazarsan, herkes görür.*"
+      ],
+      [
+       "tak nyata, sekarang",
+       "*-se*",
+       "*-irdi*",
+       "*Ben müşteri olsam, kızardım.*"
+      ],
+      [
+       "tak nyata, dulu",
+       "*-seydi*",
+       "*-irdi*",
+       "*Erken çıksaydık, yetişirdik.*"
+      ],
+      [
+       "penyesalan",
+       "*keşke* + *-seydi*",
+       "—",
+       "*Keşke trafiğe baksaydım.*"
+      ],
+      [
+       "nasihat",
+       "*senin yerinde olsam*",
+       "*-irdi*",
+       "*Senin yerinde olsam, erken söylerdim.*"
+      ]
+     ]
+    },
+    {
+     "type": "p",
+     "text": "Perhatikan bahwa bahasa Indonesia sering memakai kata yang sama (\"kalau\") untuk semuanya dan mengandalkan konteks. Bahasa Turki lebih teliti: dari bentuk kata kerjanya saja, pendengar sudah tahu apakah kamu membicarakan rencana nyata atau khayalan."
+    },
+    {
+     "type": "kotak",
+     "title": "Memberi nasihat tanpa menggurui",
+     "items": [
+      "*Ben senin yerinde olsam, …-irdim.* Paling umum dan terdengar bersahabat.",
+      "*Bence …-sen iyi olur.* (Menurutku sebaiknya kamu …): *Bence erken çıksan iyi olur.*",
+      "*İstersen …-ebilirsin.* (Kalau mau, kamu bisa …) Paling halus, cocok untuk atasan atau klien.",
+      "Hindari *-melisin* (kamu harus) kepada rekan yang sedang kesal; kedengarannya seperti perintah."
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Bepergian di dalam Turki",
+   "blocks": [
+    {
+     "type": "p",
+     "text": "İstanbul punya dua bandara besar: İstanbul Havalimanı di sisi Eropa dan Sabiha Gökçen di sisi Asia, dekat Kadıköy. Penerbangan domestik ke İzmir hanya sekitar satu jam, tetapi perjalanan dari Sultanahmet ke Sabiha Gökçen bisa memakan waktu lebih lama daripada terbangnya, apalagi kalau ada kecelakaan di jembatan."
+    },
+    {
+     "type": "tabel",
+     "head": [
+      "Türkçe",
+      "Cara baca",
+      "Bahasa Indonesia"
+     ],
+     "rows": [
+      [
+       "havalimanı",
+       "ha-VA-li-ma-nı",
+       "bandara"
+      ],
+      [
+       "uçuş",
+       "u-CUSY",
+       "penerbangan"
+      ],
+      [
+       "kalkış / iniş",
+       "kal-KISY / i-NISY",
+       "keberangkatan / pendaratan"
+      ],
+      [
+       "biniş kartı",
+       "bi-NISY kar-TI",
+       "pas naik pesawat"
+      ],
+      [
+       "rötar",
+       "rö-TAR",
+       "keterlambatan"
+      ],
+      [
+       "aktarma",
+       "ak-tar-MA",
+       "transit, pindah pesawat"
+      ],
+      [
+       "bagaj",
+       "ba-GAZY",
+       "bagasi"
+      ],
+      [
+       "otogar",
+       "o-to-GAR",
+       "terminal bus antarkota"
+      ],
+      [
+       "sefer",
+       "se-FER",
+       "jadwal perjalanan, trip"
+      ]
+     ]
+    },
+    {
+     "type": "kotak",
+     "title": "Naik bus antarkota di Turki",
+     "items": [
+      "Bus antarkota Turki terkenal nyaman: kursi lebar, layar pribadi, dan sering lebih murah daripada pesawat.",
+      "*Muavin* (kondektur) berkeliling membagikan teh, kopi, camilan, dan menyemprotkan *kolonya* lemon ke tangan penumpang.",
+      "Penumpang perempuan biasanya tidak didudukkan di sebelah laki-laki asing; saat membeli tiket, jenis kelamin penumpang ditanyakan.",
+      "Bus malam adalah pilihan hemat untuk jarak jauh: berangkat malam, tiba pagi, tanpa bayar hotel."
+     ]
+    }
+   ]
+  }
+ ],
+ "vocab": [
+  {
+   "tr": "kapanmak",
+   "baca": "ka-pan-MAK",
+   "id": "tertutup, ditutup"
+  },
+  {
+   "tr": "uçak kaçırmak",
+   "baca": "u-CAK ka-cır-MAK",
+   "id": "ketinggalan pesawat"
+  },
+  {
+   "tr": "-e yetişmek",
+   "baca": "ye-tisy-MEK",
+   "id": "keburu, sempat mengejar (*uçağa yetişmek*)"
+  },
+  {
+   "tr": "oyalanmak",
+   "baca": "o-ya-lan-MAK",
+   "id": "berlama-lama, buang waktu"
+  },
+  {
+   "tr": "zaten",
+   "baca": "ZA-ten",
+   "id": "memang, lagi pula"
+  },
+  {
+   "tr": "acele etmek",
+   "baca": "a-je-LE et-MEK",
+   "id": "buru-buru"
+  },
+  {
+   "tr": "kaza",
+   "baca": "ka-ZA",
+   "id": "kecelakaan"
+  },
+  {
+   "tr": "keşke",
+   "baca": "KESY-ke",
+   "id": "andai saja, coba (+ *-se/-seydi*)"
+  },
+  {
+   "tr": "trafik",
+   "baca": "tra-FIK",
+   "id": "lalu lintas (*trafiğe bakmak* = cek lalu lintas)"
+  },
+  {
+   "tr": "boş yer",
+   "baca": "bosy yer",
+   "id": "kursi kosong, tempat kosong"
+  },
+  {
+   "tr": "sorun",
+   "baca": "so-RUN",
+   "id": "masalah"
+  },
+  {
+   "tr": "-e kızmak",
+   "baca": "kız-MAK",
+   "id": "marah kepada (*kızar*, aorist)"
+  },
+  {
+   "tr": "havayolu",
+   "baca": "ha-VA-yo-lu",
+   "id": "maskapai penerbangan"
+  },
+  {
+   "tr": "ek sefer",
+   "baca": "ek se-FER",
+   "id": "penerbangan/trip tambahan"
+  },
+  {
+   "tr": "götürmek",
+   "baca": "gö-tür-MEK",
+   "id": "membawa (pergi), mengantar"
+  },
+  {
+   "tr": "-e bağırmak",
+   "baca": "ba-ır-MAK",
+   "id": "berteriak kepada, ngomeli"
+  },
+  {
+   "tr": "suçlamak",
+   "baca": "suc-la-MAK",
+   "id": "menyalahkan (*birbirini suçlamak* = saling menyalahkan)"
+  },
+  {
+   "tr": "kazanmak",
+   "baca": "ka-zan-MAK",
+   "id": "mendapat, menang; menghemat (waktu)"
+  },
+  {
+   "tr": "geri kalan",
+   "baca": "ge-RI ka-LAN",
+   "id": "sisanya, yang tersisa"
+  },
+  {
+   "tr": "gerilmek",
+   "baca": "ge-ril-MEK",
+   "id": "menjadi tegang"
+  },
+  {
+   "tr": "yalan söylemek",
+   "baca": "ya-LAN söy-le-MEK",
+   "id": "berbohong"
+  },
+  {
+   "tr": "tavsiye",
+   "baca": "tav-si-YE",
+   "id": "nasihat, rekomendasi (*tavsiye etmek*)"
+  },
+  {
+   "tr": "yerinde olmak",
+   "baca": "ye-rin-DE ol-MAK",
+   "id": "berada di posisi (seseorang): *senin yerinde olsam*"
+  },
+  {
+   "tr": "aynı anda",
+   "baca": "ay-NI an-DA",
+   "id": "pada saat yang sama, bersamaan"
+  },
+  {
+   "tr": "çıkış saati",
+   "baca": "cı-KISY sa-a-TI",
+   "id": "jam berangkat, jam keluar"
+  }
+ ],
+ "exercises": [
+  {
+   "prompt": "Terjemahkan ke bahasa Turki.",
+   "items": [
+    "Coba kita berangkat dari hotel sejam lebih awal, pasti keburu.",
+    "Coba tadi aku cek lalu lintas.",
+    "Kalau aku jadi klien, aku pasti marah.",
+    "Kalau aku jadi kamu, aku bakal bilang jam berangkatnya setengah jam lebih awal.",
+    "Kalau aku tahu soal kecelakaan itu, aku nggak bakal ngomong sesantai itu.",
+    "Kalau ada kursi, kita langsung beli tiket."
+   ]
+  },
+  {
+   "prompt": "Isi titik-titik dengan bentuk kondisional yang tepat. Petunjuk ada di dalam kurung.",
+   "items": [
+    "Grup kahvaltıda oyalanmasaydı, erken ____. (çıkmak, -irdi, biz)",
+    "Keşke uçağı ____. (kaçırmamak, -seydi, biz)",
+    "Selim Bey burada olsa, havayolunu ____. (aramak, -irdi, o)",
+    "Trafiği ____, erken çıkardım. (bilmek, -seydi, ben)",
+    "Birbirimizi suçlamasaydık, yarım saat ____. (kazanmak, -irdi, biz)",
+    "Sen benim yerimde olsan ne ____? (yapmak, -irdi, sen)",
+    "Yol daha kısa olsaydı, müşteriler ____. (kızmamak, -irdi, onlar)"
+   ]
+  },
+  {
+   "prompt": "Ubah kalimat fakta menjadi pengandaian masa lampau. Contoh: *Erken çıkmadık, yetişmedik.* → *Erken çıksaydık, yetişirdik.*",
+   "items": [
+    "Trafiğe bakmadım, geç kaldım.",
+    "Grup kahvaltıda oyalandı, uçağı kaçırdık.",
+    "Kazayı bilmiyordum, rahat konuştum.",
+    "Selim Bey burada değildi, sorunu çözmedi.",
+    "Uçakta yer yoktu, bilet almadık.",
+    "Birbirimizi suçladık, vakit kaybettik."
+   ]
+  },
+  {
+   "prompt": "Susun jadi kalimat yang benar.",
+   "items": [
+    "çıksaydık / erken / yetişirdik / otelden",
+    "baksaydım / keşke / trafiğe",
+    "olsam / kızardım / müşteri / ben / çok",
+    "yerinde / senin / söylerdim / olsam / erken",
+    "yapsaydık / dinlemezdin / sabah / sen"
+   ]
+  }
+ ],
+ "answers": [
+  "Otelden bir saat erken çıksaydık, yetişirdik. — Keşke trafiğe baksaydım. — Ben müşteri olsam, kızardım. — Senin yerinde olsam, çıkış saatini yarım saat erken söylerdim. — Kazayı bilseydim, o kadar rahat konuşmazdım. — Yer varsa, hemen bilet alırız.",
+  "çıkardık — kaçırmasaydık — arardı — bilseydim — kazanırdık — yapardın — kızmazlardı",
+  "Trafiğe baksaydım, geç kalmazdım. — Grup kahvaltıda oyalanmasaydı, uçağı kaçırmazdık. — Kazayı bilseydim, rahat konuşmazdım. — Selim Bey burada olsaydı, sorunu çözerdi. — Uçakta yer olsaydı, bilet alırdık. — Birbirimizi suçlamasaydık, vakit kaybetmezdik.",
+  "Otelden erken çıksaydık, yetişirdik. — Keşke trafiğe baksaydım. — Ben müşteri olsam, çok kızardım. — Senin yerinde olsam, erken söylerdim. — Sabah yapsaydık, sen dinlemezdin."
+ ]
+}

@@ -1,0 +1,708 @@
+{
+ "title": "Berdering terus — kata kerja bantu aspek",
+ "title_target": "Telefonun sabahtan beri çalıp duruyor.",
+ "goal": "Memberi warna pada tindakan: terus-menerus, tak sengaja, cepat-cepat, sementara itu, hampir, dan sejak dulu: *çalıp duruyor, uyuyakaldı, bakıverir misin, içedur, düşeyazdım, süregelen*. Titik tata bahasanya: kata kerja bantu aspek *-ip durmak, -e kalmak, -ivermek, -edurmak, -eyazmak, -e gelmek*.",
+ "bekal": [
+  "mengeluh tentang sesuatu yang terjadi terus-menerus dengan *-ip durmak*: *Telefon çalıp duruyor*",
+  "menawarkan dan meminta bantuan kecil dengan *-ivermek*, serta mempersilakan orang meneruskan kegiatannya dengan *-edurmak*",
+  "menceritakan kejadian nyaris dengan *-eyazmak* atau *az kalsın … -iyordum*, dan keadaan terpaku dengan *bakakalmak, donakalmak*"
+ ],
+ "dialogs": [
+  {
+   "title": "Dialog — Susmayan telefon",
+   "intro": "Senin sore, 3 April 2028. Budi dan Emre duduk di kedai teh tepi laut di Moda. Dua minggu lagi keluarga Emre akan datang melamar Deniz secara resmi, dan ponsel Emre tak mau diam.",
+   "lines": [
+    {
+     "speaker": "Budi:",
+     "text": "Emre, telefonun sabahtan beri çalıp duruyor. Açmayacak mısın?",
+     "id": "Emre, HP-mu bunyi terus dari pagi. Nggak mau diangkat?",
+     "literal": "Emre, telepon-mu pagi-dari sejak bunyi-lalu berdiri-sedang. buka-tidak-akan apakah-kamu?"
+    },
+    {
+     "speaker": "Emre:",
+     "text": "Açsam ne olacak? Hepsi aynı şeyi soruyor: \"Düğün ne zaman?\"",
+     "id": "Kalau diangkat terus kenapa? Semuanya nanya hal yang sama: \"Nikahnya kapan?\"",
+     "literal": "buka-kalau-saya apa akan-jadi? semua-nya sama hal-nya sedang-tanya: \"pesta-nikah kapan?\""
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Merak etmeleri normal. Kız istemeye daha iki hafta var, değil mi?",
+     "id": "Wajar mereka penasaran. Lamaran resminya masih dua minggu lagi, kan?",
+     "literal": "penasaran-buat-tidak-nya-mereka normal. gadis minta-ke masih dua minggu ada, bukan apakah?"
+    },
+    {
+     "speaker": "Emre:",
+     "text": "Evet, ama teyzem şimdiden takı bakmaya gitti. Annem de her akşam davetli listesi yazıp duruyor.",
+     "id": "Iya, tapi bibiku sudah pergi lihat-lihat perhiasan. Ibuku juga tiap malam nulis daftar undangan terus.",
+     "literal": "ya, tapi bibi-ku sekarang-dari perhiasan lihat-ke pergi-lampau. ibu-ku juga setiap malam undangan-yang daftar-nya tulis-lalu berdiri-sedang."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Dün akşam size uğradım. Fatma Hanım listenin başında uyuyakalmıştı.",
+     "id": "Semalam aku mampir ke rumah kalian. Fatma Hanım ketiduran di depan daftarnya.",
+     "literal": "kemarin malam kalian-ke mampir-lampau-saya. Fatma Hanım daftar-punya kepala-nya-di tidur-sampai-tertinggal-sudah-lampau."
+    },
+    {
+     "speaker": "Emre:",
+     "text": "Gördün demek! Kalem elinde, kâğıt yanağının altında. Ben de kapıda bakakaldım.",
+     "id": "Kamu lihat juga, ya! Pulpen di tangan, kertas di bawah pipi. Aku sampai bengong di pintu.",
+     "literal": "lihat-lampau-kamu berarti! pulpen tangan-nya-di, kertas pipi-nya-punya bawah-nya-di. saya juga pintu-di lihat-sampai-tertinggal-lampau-saya."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Bak, yine çalıyor! Telefona ben bakıvereyim mi?",
+     "id": "Tuh, bunyi lagi! Mau aku angkatin sebentar?",
+     "literal": "lihat, lagi sedang-bunyi! telepon-ke saya lihat-beri-biar-saya apakah?"
+    },
+    {
+     "speaker": "Emre:",
+     "text": "Bakıver lütfen. Kim olursa olsun, \"Emre toplantıda\" de.",
+     "id": "Tolong angkatin. Siapa pun itu, bilang \"Emre lagi rapat\".",
+     "literal": "lihat-beri tolong. siapa jadi-biasa-kalau jadi-biar, \"Emre rapat-di\" katakan."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Arayan Deniz'di! Neyse ki sesini tanıdım, yoksa ona da yalan söyleyecektim.",
+     "id": "Yang nelpon Deniz! Untung aku kenal suaranya, kalau nggak aku bakal bohong juga ke dia.",
+     "literal": "yang-menelepon Deniz-lampau! untung suara-nya-nya kenal-lampau-saya, kalau-tidak dia-ke juga bohong akan-berkata-lampau-saya."
+    },
+    {
+     "speaker": "Emre:",
+     "text": "Eyvah! Ne dedi peki?",
+     "id": "Waduh! Terus dia bilang apa?",
+     "literal": "waduh! apa berkata-lampau lalu?"
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Ona hemen bir mesaj atıvermeni istiyor. Salon için bir fikri varmış.",
+     "id": "Dia minta kamu cepat-cepat kirimin pesan. Katanya dia punya ide soal gedung.",
+     "literal": "dia-ke segera satu pesan lempar-beri-mu-nya sedang-mau. gedung untuk satu ide-nya ada-konon."
+    },
+    {
+     "speaker": "Emre:",
+     "text": "Tamam, hemen yazıveririm. Sen de çayını içedur, beş dakikaya dönerim.",
+     "id": "Oke, aku tulis sebentar. Kamu minum teh aja dulu, lima menit lagi aku balik.",
+     "literal": "oke, segera tulis-beri-biasa-saya. kamu juga teh-mu-nya minum-terus, lima menit-ke kembali-biasa-saya."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Acele etme. Bu telefonlar düğüne kadar böyle çalıp duracak zaten.",
+     "id": "Santai. Telepon-telepon ini memang bakal bunyi begini terus sampai hari nikah.",
+     "literal": "tergesa-gesa buat-jangan. ini telepon-jamak pesta-nikah-ke sampai begini bunyi-lalu akan-berdiri memang."
+    },
+    {
+     "speaker": "Emre:",
+     "text": "Biliyorum. Düğünden önce herkesin işe karışması, bizim ailede yüzyıllardır süregelen bir gelenek!",
+     "id": "Aku tahu. Semua orang ikut campur sebelum nikah itu tradisi keluarga kami yang sudah berabad-abad!",
+     "literal": "sedang-tahu-saya. pesta-nikah-dari sebelum semua-orang-punya urusan-ke campur-nya, kami-punya keluarga-di abad-jamak-selama berlangsung-datang-yang satu tradisi!"
+    },
+    {
+     "speaker": "Budi:",
+     "text": "O zaman sabret, damat bey!",
+     "id": "Kalau gitu sabar ya, Tuan Calon Pengantin!",
+     "literal": "itu waktu sabar-buat, pengantin-laki tuan!"
+    }
+   ],
+   "notes": [
+    "**Telefonun çalıp duruyor** — *-ip durmak* = terus-menerus, berulang-ulang, sering dengan nada kesal. Di sini *durmak* tidak berarti \"berhenti\", melainkan \"tetap (dalam keadaan)\". *Annem liste yazıp duruyor* juga bernada gemas: ibunya menulis daftar tanpa henti.",
+    "**Uyuyakalmıştı** dan **bakakaldım** — *-(y)a/-(y)e kalmak* = terlanjur masuk ke suatu keadaan dan tertahan di situ tanpa sengaja. *Uyuyakalmak* = ketiduran, *bakakalmak* = terpaku menatap, bengong. Hanya dipakai dengan segelintir kata kerja dan selalu ditulis sambung.",
+    "**Telefona ben bakıvereyim mi?** — *-(y)ıvermek* memberi kesan cepat, ringan, tidak repot. Menawarkan bantuan dengan *-ıver-* terdengar ramah: \"biar aku yang angkat sebentar\". *Telefona bakmak* (harfiah: melihat ke telepon) = mengangkat telepon.",
+    "**Bir mesaj atıvermeni istiyor** — *-mesini istemek* dari unit 4, dengan *atıver-* di dalamnya: Deniz minta \"kirimin pesan bentar aja\". *Mesaj atmak* (harfiah: melempar pesan) = mengirim pesan, sangat sehari-hari.",
+    "**Sen de çayını içedur** — *-(y)adurmak/-(y)edurmak* = teruskan saja kegiatanmu selagi aku pergi. Bedakan dengan *-ip durmak*: *içedur* adalah persilaan yang ramah, *içip duruyor* adalah keluhan (dia minum terus).",
+    "**Yüzyıllardır süregelen bir gelenek** — *-(y)a/-(y)e gelmek* = sudah berlangsung sejak lama sampai sekarang: *sür-* (berlangsung) + *-e gel-*. Bentuk ini hampir selalu muncul dalam partisip dan gaya tulis: *süregelen, yapılagelen, olagelen*. *Damat* (pengantin pria, juga menantu laki-laki) dari bahasa Persia *dāmād*."
+   ],
+   "grammars": [
+    {
+     "title": "Enam kata kerja bantu aspek",
+     "body": [
+      "Semua bentuk ini dibuat dari kata kerja utama + penghubung (*-ip*, *-(y)a/-(y)e*, *-(y)ı*) + kata kerja bantu yang kehilangan arti aslinya. Konjugasi hanya pada kata kerja bantu."
+     ],
+     "table": {
+      "head": [
+       "Bentuk",
+       "Makna",
+       "Contoh",
+       "Arti"
+      ],
+      "rows": [
+       [
+        "*-ip durmak*",
+        "terus-menerus, berulang (sering kesal)",
+        "*Telefon çalıp duruyor.*",
+        "Teleponnya bunyi terus."
+       ],
+       [
+        "*-(y)a kalmak*",
+        "terlanjur, tertahan dalam keadaan",
+        "*Masada uyuyakalmış.*",
+        "Dia ketiduran di meja."
+       ],
+       [
+        "*-(y)ıvermek*",
+        "cepat, gampang, sebentar",
+        "*Bakıverir misin?*",
+        "Bisa tolong lihat sebentar?"
+       ],
+       [
+        "*-(y)adurmak*",
+        "teruskan saja (sementara)",
+        "*Sen çayını içedur.*",
+        "Kamu minum teh aja dulu."
+       ],
+       [
+        "*-(y)ayazmak*",
+        "hampir (tapi tidak jadi)",
+        "*Düşeyazdım.*",
+        "Aku hampir jatuh."
+       ],
+       [
+        "*-(y)agelmek*",
+        "berlangsung sejak dulu",
+        "*süregelen bir gelenek*",
+        "tradisi yang turun-temurun"
+       ]
+      ]
+     },
+     "after": [
+      "Harmoni: *-a/-e* dua arah (*içedur, bakadur, düşeyaz, kaçırayaz*), *-ı/-i/-u/-ü* empat arah (*bakıver, geliver, okuyuver, görüver*). Sesudah vokal muncul *y*: *uyu-ya-kal, okuyuver, bekleyedur*."
+     ]
+    },
+    {
+     "title": "Harmoni -(y)ıver-",
+     "body": [
+      "*-ıvermek* adalah bentuk yang paling sering dari keenamnya. Akhiran penghubungnya mengikuti vokal terakhir kata kerja utama; *ver-* sendiri tidak berubah."
+     ],
+     "table": {
+      "head": [
+       "Kata kerja",
+       "+ *-(y)ıver-*",
+       "Contoh"
+      ],
+      "rows": [
+       [
+        "*atmak*",
+        "*atıver-*",
+        "*Bir mesaj atıver!*"
+       ],
+       [
+        "*yazmak*",
+        "*yazıver-*",
+        "*Hemen yazıveririm.*"
+       ],
+       [
+        "*gelmek*",
+        "*geliver-*",
+        "*Bir akşam geliverin.*"
+       ],
+       [
+        "*görmek*",
+        "*görüver-*",
+        "*Şu evrakı bir görüver.*"
+       ],
+       [
+        "*okumak*",
+        "*okuyuver-*",
+        "*Şu mesajı okuyuver.*"
+       ],
+       [
+        "*söylemek*",
+        "*söyleyiver-*",
+        "*Ona söyleyiver, olsun bitsin.*"
+       ]
+      ]
+     },
+     "after": [
+      "Dalam permintaan, *-ıver-* melunakkan: *Kapıyı açar mısın?* netral, *Kapıyı açıverir misin?* seperti \"bukain pintunya bentar, ya?\".",
+      "Dalam cerita, *-ıver-* bisa berarti mendadak: *Kapı açılıverdi* (pintunya tiba-tiba terbuka)."
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Dialog kedua — Kamondo Merdivenleri",
+   "intro": "Rabu malam, 5 April 2028, gerimis. Sepulang kantor, Budi dan Kerem naik ke Galata lewat Tangga Kamondo untuk makan malam. Kerem, yang besar di Trabzon, terbiasa dengan jalan menanjak; Budi tidak.",
+   "lines": [
+    {
+     "speaker": "Kerem:",
+     "text": "Budi, dikkat et! Bu basamaklar yağmurda çok kaygan olur.",
+     "id": "Budi, hati-hati! Anak tangga ini licin banget kalau hujan.",
+     "literal": "Budi, perhatian buat! ini anak-tangga-jamak hujan-di sangat licin jadi-biasa."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Merak etme, ben… Ay! Düşeyazdım!",
+     "id": "Tenang aja, aku… Aduh! Hampir jatuh!",
+     "literal": "khawatir-jangan, saya… aduh! jatuh-hampir-lampau-saya!"
+    },
+    {
+     "speaker": "Kerem:",
+     "text": "Tuttum seni! Bir an olduğum yerde donakaldım, inan.",
+     "id": "Aku pegang kamu! Sesaat aku sampai membeku di tempat, sumpah.",
+     "literal": "pegang-lampau-saya kamu-nya! satu saat ada-yang-ku tempat-di beku-sampai-tertinggal-lampau-saya, percaya."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Sağ ol. Az kalsın aşağıya kadar yuvarlanıyordum.",
+     "id": "Makasih. Hampir saja aku terguling sampai bawah.",
+     "literal": "sehat jadi. sedikit tersisa-biar bawah-ke sampai terguling-sedang-lampau-saya."
+    },
+    {
+     "speaker": "Kerem:",
+     "text": "Bu merdivenleri kim yaptırmış, biliyor musun? Kamondo diye bir bankerin ailesi.",
+     "id": "Kamu tahu siapa yang membangun tangga ini? Keluarga seorang bankir bernama Kamondo.",
+     "literal": "ini tangga-jamak-nya siapa buat-suruh-konon, sedang-tahu apakah-kamu? Kamondo begitu satu bankir-punya keluarga-nya."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Sen bana tarih anlatıp duruyorsun, ben ayakta zor duruyorum!",
+     "id": "Kamu ceramah sejarah terus, aku berdiri aja susah!",
+     "literal": "kamu saya-ke sejarah cerita-lalu berdiri-sedang-kamu, saya kaki-di susah berdiri-sedang-saya!"
+    },
+    {
+     "speaker": "Kerem:",
+     "text": "Haklısın, pardon. Ver elini, seni yukarıya kadar çıkarıvereyim.",
+     "id": "Iya, maaf. Sini tanganmu, aku antar kamu sampai atas.",
+     "literal": "benar-kamu, maaf. beri tangan-mu-nya, kamu-nya atas-ke sampai naik-kan-beri-biar-saya."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Ben çocuk muyum? Ama… tamam, ver. Dizim biraz ağrıyor.",
+     "id": "Emangnya aku anak kecil? Tapi… ya udah, sini. Lututku agak sakit.",
+     "literal": "saya anak apakah-saya? tapi… oke, beri. lutut-ku sedikit sedang-sakit."
+    },
+    {
+     "speaker": "Kerem:",
+     "text": "Kulenin yanında bir eczane var. Oradan bir krem alıverelim.",
+     "id": "Di dekat menara ada apotek. Kita beli krem sebentar di sana.",
+     "literal": "menara-punya samping-nya-di satu apotek ada. sana-dari satu krim beli-beri-biar-kita."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Olur. Ama önce şu manzaranın fotoğrafını çekeyim; ışıklara bakakaldım.",
+     "id": "Boleh. Tapi aku foto pemandangan ini dulu; aku terpana lihat lampu-lampunya.",
+     "literal": "jadi-biasa. tapi dulu itu pemandangan-punya foto-nya-nya tarik-biar-saya; cahaya-jamak-ke lihat-sampai-tertinggal-lampau-saya."
+    },
+    {
+     "speaker": "Kerem:",
+     "text": "Sen fotoğraf çekedur, ben de Zeynep'e yazayım: \"Budi yine düşeyazdı!\"",
+     "id": "Kamu foto-foto aja dulu, aku kirim pesan ke Zeynep: \"Budi hampir jatuh lagi!\"",
+     "literal": "kamu foto tarik-terus, saya juga Zeynep-ke tulis-biar-saya: \"Budi lagi jatuh-hampir-lampau!\""
+    }
+   ],
+   "notes": [
+    "**Düşeyazdım!** — *-(y)ayazmak/-(y)eyazmak* = hampir melakukan, tetapi tidak jadi. Hampir selalu dalam kala lampau: *düşeyazdım, kaçırayazdık, ölüyazdım* (hampir mati, bercanda). Ditulis sambung.",
+    "**Olduğum yerde donakaldım** — *donmak* (membeku) + *-a kal-* = membeku di tempat karena kaget. *Olduğum yerde* (di tempat aku berada) adalah pelengkap yang sering menyertainya. Keluarga yang sama: *şaşakalmak* (tercengang).",
+    "**Az kalsın aşağıya kadar yuvarlanıyordum** — cara lisan paling umum untuk \"hampir\": *az kalsın* atau *az daha* + *-iyordu*. Kala *-iyordu* di sini tidak berarti \"sedang\", melainkan kejadian yang sudah di ambang terjadi.",
+    "**Kim yaptırmış?** — kausatif dari unit 11 plus *-miş* kabar: keluarga Kamondo tentu tidak memasang batu sendiri. *Kamondo diye bir banker* = seorang bankir bernama Kamondo; *diye* di sini memperkenalkan nama.",
+    "**Anlatıp duruyorsun, ayakta zor duruyorum** — permainan kata Budi: *-ip durmak* (terus-terusan) bertemu *ayakta durmak* (berdiri tegak). Kerem langsung menawarkan *çıkarıvereyim* — *çıkarmak* (menaikkan, membawa naik) + *-ıver-*: \"biar kuantar naik sebentar\".",
+    "**Sen fotoğraf çekedur** — persilaan *-edur*: silakan terus memotret sementara Kerem mengetik. *Fotoğraf çekmek* (harfiah: menarik foto) = memotret. Lalu Kerem menggoda dengan *düşeyazdı*: satu kata sudah cukup untuk menceritakan seluruh kejadian kepada Zeynep."
+   ],
+   "grammars": [
+    {
+     "title": "Hampir: lima cara",
+     "body": [
+      "*-eyazmak* ringkas dan agak bergaya; dalam obrolan, *az kalsın* dan *neredeyse* lebih sering terdengar. Perhatikan kala yang menyertainya."
+     ],
+     "table": {
+      "head": [
+       "Bentuk",
+       "Contoh",
+       "Catatan"
+      ],
+      "rows": [
+       [
+        "*-(y)eyazmak*",
+        "*Merdivende düşeyazdım.*",
+        "satu kata, selalu lampau"
+       ],
+       [
+        "*az kalsın + -iyordu*",
+        "*Az kalsın düşüyordum.*",
+        "paling lisan"
+       ],
+       [
+        "*az daha + -iyordu*",
+        "*Az daha treni kaçırıyorduk.*",
+        "sama dengan *az kalsın*"
+       ],
+       [
+        "*neredeyse + -di*",
+        "*Neredeyse düştüm.*",
+        "juga untuk jumlah: *neredeyse yüz kişi*"
+       ],
+       [
+        "*ucu ucuna*",
+        "*Treni ucu ucuna yakaladım.*",
+        "kebalikannya: berhasil, tapi nyaris gagal"
+       ]
+      ]
+     },
+     "after": [
+      "Sesudah *az kalsın* dan *az daha*, pakai *-iyordu* atau *-ecekti*: *Az kalsın düşüyordum / düşecektim.* Kala *-dı* biasa lebih cocok dengan *neredeyse*."
+     ]
+    }
+   ]
+  }
+ ],
+ "sections": [
+  {
+   "title": "Aspek yang sudah jadi kata",
+   "blocks": [
+    {
+     "type": "p",
+     "text": "Beberapa gabungan aspek begitu sering dipakai sampai terasa seperti kata kerja tersendiri. Pelajari sebagai satu kosakata, karena tidak semua kata kerja bisa digabung bebas dengan *-a kalmak* atau *-a gelmek*."
+    },
+    {
+     "type": "tabel",
+     "head": [
+      "Türkçe",
+      "Cara baca",
+      "Bahasa Indonesia"
+     ],
+     "rows": [
+      [
+       "uyuyakalmak",
+       "u-yu-ya-kal-MAK",
+       "ketiduran"
+      ],
+      [
+       "bakakalmak",
+       "ba-ka-kal-MAK",
+       "terpaku menatap"
+      ],
+      [
+       "donakalmak",
+       "do-na-kal-MAK",
+       "membeku di tempat"
+      ],
+      [
+       "şaşakalmak",
+       "sya-sya-kal-MAK",
+       "tercengang"
+      ],
+      [
+       "süregelmek",
+       "sü-re-gel-MEK",
+       "berlangsung sejak dulu"
+      ],
+      [
+       "olagelmek",
+       "o-la-gel-MEK",
+       "terjadi sejak dulu (lazim)"
+      ],
+      [
+       "yapılagelmek",
+       "ya-pı-la-gel-MEK",
+       "dilakukan turun-temurun"
+      ],
+      [
+       "gidedurmak",
+       "gi-de-dur-MAK",
+       "berjalan duluan, terus pergi"
+      ]
+     ]
+    },
+    {
+     "type": "p",
+     "text": "Sebaliknya, *-ip durmak*, *-ıvermek*, dan *-eyazmak* cukup produktif: kamu bisa membentuk *konuşup duruyor, söyleyiveririm, kaçırayazdık* dengan kata kerja apa saja yang maknanya cocok."
+    },
+    {
+     "type": "kotak",
+     "title": "Nada -ıvermek",
+     "items": [
+      "Menawarkan bantuan: *Ben hallediveririm* (biar aku yang beresin) terdengar ringan dan murah hati.",
+      "Meminta tolong: *Şunu bir bakıverir misin?* lebih halus daripada *Şuna bak.*",
+      "Hati-hati di rapat resmi: *Raporu yazıverdim* bisa terdengar seolah pekerjaannya sepele. Untuk atasan, cukup *Raporu hazırladım.*",
+      "Dalam cerita, *-ıver-* menandai kejadian mendadak: *Kapı birden açılıverdi.*"
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Galata dari bawah ke atas",
+   "blocks": [
+    {
+     "type": "p",
+     "text": "Karaköy di tepi Tanduk Emas dan menara Galata di atasnya hanya berjarak beberapa ratus meter, tetapi tanjakannya curam. Orang naik lewat gang berundak, lewat Tangga Kamondo yang meliuk (dibangun akhir abad ke-19 atas biaya keluarga bankir Camondo), atau naik *Tünel*, kereta bawah tanah pendek dari tahun 1875 yang termasuk salah satu yang tertua di dunia."
+    },
+    {
+     "type": "tabel",
+     "head": [
+      "Türkçe",
+      "Cara baca",
+      "Bahasa Indonesia"
+     ],
+     "rows": [
+      [
+       "yokuş",
+       "yo-KUSY",
+       "tanjakan"
+      ],
+      [
+       "basamak",
+       "ba-sa-MAK",
+       "anak tangga"
+      ],
+      [
+       "kaygan",
+       "kay-GAN",
+       "licin"
+      ],
+      [
+       "kaymak",
+       "kay-MAK",
+       "tergelincir"
+      ],
+      [
+       "tökezlemek",
+       "tö-kez-le-MEK",
+       "tersandung"
+      ],
+      [
+       "ayağını burkmak",
+       "a-yaa-ı-NI burk-MAK",
+       "keseleo (pergelangan kaki)"
+      ],
+      [
+       "dizini çarpmak",
+       "di-zi-NI carp-MAK",
+       "lututnya terbentur"
+      ],
+      [
+       "tırabzan",
+       "tı-rab-ZAN",
+       "pegangan tangga"
+      ]
+     ]
+    },
+    {
+     "type": "kotak",
+     "title": "Kiat menjelajah Galata",
+     "items": [
+      "Pakai sepatu bersol karet: batu jalan (*arnavut kaldırımı*) licin sekali saat hujan.",
+      "Menara Galata dibangun orang Genova pada abad ke-14; antre paling pendek biasanya pagi hari.",
+      "Kalau lutut sudah menyerah, naik *Tünel* dari Karaköy ke Beyoğlu hanya beberapa menit.",
+      "Malam hari, dari kaki menara kamu bisa melihat lampu-lampu Tanduk Emas dan Kota Tua; banyak orang *bakakalır* di sini."
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Ulangan berjenjang — unit 10",
+   "blocks": [
+    {
+     "type": "p",
+     "text": "Tutup kolom Turki, baca terjemahan Indonesianya, lalu susun kembali kalimatnya dari ingatan."
+    },
+    {
+     "type": "tabel",
+     "head": [
+      "Bahasa Indonesia",
+      "Türkçe"
+     ],
+     "rows": [
+      [
+       "Ada surel dari Bu Wati. Menurut yang dia tulis, hotel di Kapadokya itu benar-benar bencana.",
+       "*Wati Hanım'dan bir e-posta geldi. Yazdığına göre Kapadokya'daki otel tam bir felaketmiş.*"
+      ],
+      [
+       "Bisa jadi. Tapi menurut Bu Wati, pemandunya sama sekali nggak bilang soal itu, dan rombongan menunggu setengah hari di hotel.",
+       "*Olabilir. Ama Wati Hanım'a göre rehber bunu hiç söylememiş, grup da yarım gün otelde beklemiş.*"
+      ],
+      [
+       "Pemandunya Mustafa, kan? Sejauh yang aku tahu, dia orangnya teliti banget.",
+       "*Rehber Mustafa'ydı, değil mi? Benim bildiğim kadarıyla o çok dikkatli biridir.*"
+      ],
+      [
+       "Aku juga tahunya begitu. Rupanya hotel juga nggak kasih kabar ke dia.",
+       "*Ben de öyle biliyorum. Anlaşılan otel ona da haber vermemiş.*"
+      ],
+      [
+       "Sejauh yang saya dengar, petugas malam sudah menelepon pemandu Anda, tapi nggak tersambung.",
+       "*Duyduğum kadarıyla gece görevlisi rehberinizi aramış ama ulaşamamış.*"
+      ]
+     ]
+    }
+   ]
+  }
+ ],
+ "vocab": [
+  {
+   "tr": "çalmak",
+   "baca": "cal-MAK",
+   "id": "berbunyi, berdering (telepon, bel); memainkan (musik); mencuri"
+  },
+  {
+   "tr": "-ip durmak",
+   "baca": "ip dur-MAK",
+   "id": "terus-menerus melakukan (*çalıp duruyor*)"
+  },
+  {
+   "tr": "takı",
+   "baca": "ta-KI",
+   "id": "perhiasan (terutama hadiah pernikahan)"
+  },
+  {
+   "tr": "davetli",
+   "baca": "da-vet-LI",
+   "id": "tamu undangan"
+  },
+  {
+   "tr": "damat",
+   "baca": "da-MAT",
+   "id": "pengantin pria; menantu laki-laki"
+  },
+  {
+   "tr": "uyuyakalmak",
+   "baca": "u-yu-ya-kal-MAK",
+   "id": "ketiduran tanpa sengaja"
+  },
+  {
+   "tr": "bakakalmak",
+   "baca": "ba-ka-kal-MAK",
+   "id": "terpaku menatap, bengong (+ datif)"
+  },
+  {
+   "tr": "yanak",
+   "baca": "ya-NAK",
+   "id": "pipi (akusatif *yanağı*)"
+  },
+  {
+   "tr": "telefona bakmak",
+   "baca": "te-le-fo-NA bak-MAK",
+   "id": "mengangkat telepon"
+  },
+  {
+   "tr": "mesaj atmak",
+   "baca": "me-SAZY at-MAK",
+   "id": "mengirim pesan (+ datif)"
+  },
+  {
+   "tr": "yalan söylemek",
+   "baca": "ya-LAN söy-le-MEK",
+   "id": "berbohong (+ datif)"
+  },
+  {
+   "tr": "eyvah",
+   "baca": "ey-VAH",
+   "id": "waduh, celaka"
+  },
+  {
+   "tr": "acele etmek",
+   "baca": "a-je-LE et-MEK",
+   "id": "terburu-buru"
+  },
+  {
+   "tr": "işe karışmak",
+   "baca": "i-SYE ka-rısy-MAK",
+   "id": "ikut campur urusan"
+  },
+  {
+   "tr": "süregelmek",
+   "baca": "sü-re-gel-MEK",
+   "id": "berlangsung sejak dulu (*süregelen*)"
+  },
+  {
+   "tr": "gelenek",
+   "baca": "ge-le-NEK",
+   "id": "tradisi (akusatif *geleneği*)"
+  },
+  {
+   "tr": "sabretmek",
+   "baca": "sab-ret-MEK",
+   "id": "bersabar (dari *sabır*, serapan Arab)"
+  },
+  {
+   "tr": "düşeyazmak",
+   "baca": "dü-sye-yaz-MAK",
+   "id": "hampir jatuh"
+  },
+  {
+   "tr": "donakalmak",
+   "baca": "do-na-kal-MAK",
+   "id": "membeku di tempat (karena kaget)"
+  },
+  {
+   "tr": "az kalsın",
+   "baca": "az kal-SIN",
+   "id": "hampir saja (+ *-iyordu*)"
+  },
+  {
+   "tr": "yuvarlanmak",
+   "baca": "yu-var-lan-MAK",
+   "id": "terguling"
+  },
+  {
+   "tr": "banker",
+   "baca": "ban-KER",
+   "id": "bankir"
+  },
+  {
+   "tr": "diz",
+   "baca": "diz",
+   "id": "lutut (*dizim ağrıyor*)"
+  },
+  {
+   "tr": "ağrımak",
+   "baca": "aa-rı-MAK",
+   "id": "sakit, nyeri (*başım ağrıyor*)"
+  },
+  {
+   "tr": "manzara",
+   "baca": "man-za-RA",
+   "id": "pemandangan"
+  }
+ ],
+ "exercises": [
+  {
+   "prompt": "Terjemahkan ke bahasa Turki dengan kata kerja bantu aspek.",
+   "items": [
+    "Teleponku bunyi terus dari pagi.",
+    "Ibuku ketiduran di meja.",
+    "Aku hampir jatuh di tangga.",
+    "Bisa tolong angkat teleponnya sebentar?",
+    "Kamu minum teh aja dulu, lima menit lagi aku balik.",
+    "Ini tradisi yang sudah berlangsung berabad-abad."
+   ]
+  },
+  {
+   "prompt": "Isi dengan bentuk yang tepat. Petunjuk ada di dalam kurung.",
+   "items": [
+    "Kerem bütün gün bana soru sorup ____. (durmak; sedang, o)",
+    "Film çok sıkıcıydı, koltukta ____. (uyumak + kalmak; lampau, ben)",
+    "Galata'dan manzaraya ____. (bakmak + kalmak; lampau, biz)",
+    "Şu kutuyu bana ____ misin? (vermek + -ıver-; aorist, sen)",
+    "Buzda ____, Kerem beni tuttu. (düşmek + -eyaz-; lampau, ben)",
+    "Siz yemeğinizi ____, ben hemen geliyorum. (yemek + -edur-; perintah, siz)",
+    "Bu köyde yüzyıllardır ____ bir düğün geleneği var. (sürmek + gelmek; partisip *-en*)"
+   ]
+  },
+  {
+   "prompt": "Ubah dengan bentuk aspek dalam kurung. Contoh: *Telefon durmadan çalıyor.* (-ip durmak) → *Telefon çalıp duruyor.*",
+   "items": [
+    "Kerem durmadan konuşuyor. (-ip durmak)",
+    "Az kalsın merdivende düşüyordum. (-eyazmak)",
+    "Hemen bir mesaj at! (-ıvermek)",
+    "Çok şaşırdım ve öylece kaldım. (şaşmak + -a kalmak)",
+    "Sen beklemeye devam et, ben geliyorum. (-edurmak)",
+    "Az kalsın treni kaçırıyorduk. (-ayazmak)"
+   ]
+  },
+  {
+   "prompt": "Susun jadi kalimat yang benar.",
+   "items": [
+    "sabahtan beri / telefonun / çalıp / duruyor",
+    "uyuyakalmıştı / Fatma Hanım / masada",
+    "bakıvereyim mi / ben / telefona",
+    "içedur / çayını / sen",
+    "merdivende / az kalsın / düşüyordum"
+   ]
+  }
+ ],
+ "answers": [
+  "Telefonum sabahtan beri çalıp duruyor. — Annem masada uyuyakaldı. — Merdivende düşeyazdım. — Telefona bakıverir misin? — Sen çayını içedur, beş dakikaya dönerim. — Bu, yüzyıllardır süregelen bir gelenek.",
+  "duruyor — uyuyakaldım — bakakaldık — veriverir — düşeyazdım — yiyedurun — süregelen",
+  "Kerem konuşup duruyor. — Merdivende düşeyazdım. — Hemen bir mesaj atıver! — Şaşakaldım. — Sen bekleyedur, ben geliyorum. — Treni kaçırayazdık.",
+  "Telefonun sabahtan beri çalıp duruyor. — Fatma Hanım masada uyuyakalmıştı. — Telefona ben bakıvereyim mi? — Sen çayını içedur. — Az kalsın merdivende düşüyordum."
+ ]
+}

@@ -1,0 +1,702 @@
+{
+ "title": "Menurut yang saya dengar — -e göre, -diği kadarıyla, anlaşılan",
+ "title_target": "Yazdığına göre Kapadokya'daki otel tam bir felaketmiş.",
+ "goal": "Menelaah keluhan klien dan menyampaikan kabar dari pihak lain tanpa menuduh: \"menurut yang dia tulis\", \"sejauh yang saya tahu\", \"rupanya hotelnya nggak memberi kabar\". Titik tata bahasanya: sumber informasi (*-e göre, -diğine göre, -diği kadarıyla*), kesimpulan (*anlaşılan, demek ki*), dan *-miş* dalam laporan.",
+ "bekal": [
+  "menyebut sumber kabar dengan *-e göre* dan *-diğine göre*: *Wati Hanım'a göre*, *yazdığına göre*, *raporuna göre*",
+  "membatasi klaim dengan *-diği kadarıyla*: *bildiğim kadarıyla*, *duyduğum kadarıyla*, *gördüğüm kadarıyla*",
+  "melaporkan kejadian yang tidak disaksikan dengan *-miş, -iyormuş, -ecekmiş* dan menarik kesimpulan dengan *anlaşılan, demek ki*"
+ ],
+ "dialogs": [
+  {
+   "title": "Dialog — Şikâyet e-postası",
+   "intro": "Senin, 27 Maret 2028. Budi baru membuka surel pagi di kantor Karaköy. Bu Wati, ketua rombongan guru dari Makassar yang pekan lalu ke Kapadokya, mengirim keluhan panjang. Zeynep mampir ke meja Budi.",
+   "lines": [
+    {
+     "speaker": "Zeynep:",
+     "text": "Budi, sabah sabah yüzün asık. Ne oldu?",
+     "id": "Budi, pagi-pagi mukamu sudah cemberut. Ada apa?",
+     "literal": "Budi, pagi pagi wajah-mu tertekuk. apa jadi-lampau?"
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Wati Hanım'dan bir e-posta geldi. Yazdığına göre Kapadokya'daki otel tam bir felaketmiş.",
+     "id": "Ada surel dari Bu Wati. Menurut yang dia tulis, hotel di Kapadokya itu benar-benar bencana.",
+     "literal": "Wati Hanım-dari satu surel datang-lampau. tulis-yang-nya-ke menurut Kapadokya-di-yang hotel penuh satu bencana-konon."
+    },
+    {
+     "speaker": "Zeynep:",
+     "text": "Felaket mi? Oku bakalım, neler yazmış?",
+     "id": "Bencana? Coba bacakan, dia nulis apa saja?",
+     "literal": "bencana apakah? baca coba-lihat-kita, apa-jamak tulis-konon?"
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Anlattığına göre ilk gece odalarda kalorifer çalışmıyormuş, grup sabaha kadar üşümüş.",
+     "id": "Menurut ceritanya, malam pertama pemanas di kamar-kamar nggak nyala, rombongan kedinginan sampai pagi.",
+     "literal": "cerita-yang-nya-ke menurut pertama malam kamar-jamak-di pemanas berfungsi-tidak-sedang-konon, rombongan pagi-ke sampai kedinginan-konon."
+    },
+    {
+     "speaker": "Zeynep:",
+     "text": "Martta Kapadokya'da geceler hâlâ soğuk. Başka?",
+     "id": "Bulan Maret malam di Kapadokya masih dingin. Terus apa lagi?",
+     "literal": "Maret-di Kapadokya-di malam-jamak masih dingin. lainnya?"
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Kahvaltı bir saat geç verilmiş. Balon turu da iptal olmuş, ama kimse sebebini açıklamamış.",
+     "id": "Sarapannya disajikan telat sejam. Tur balonnya juga batal, tapi nggak ada yang menjelaskan alasannya.",
+     "literal": "sarapan satu jam telat di-beri-konon. balon tur-nya juga batal jadi-konon, tapi siapa-pun alasan-nya-nya jelaskan-tidak-konon."
+    },
+    {
+     "speaker": "Zeynep:",
+     "text": "Balon turu iptal olduysa sebebi rüzgârdır. O havada uçuşlara izin verilmez.",
+     "id": "Kalau tur balon batal, pasti karena angin. Dalam cuaca begitu penerbangan nggak diizinkan.",
+     "literal": "balon tur-nya batal jadi-lampau-kalau alasan-nya angin-pasti. itu udara-di penerbangan-jamak-ke izin di-beri-tidak-biasa."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Olabilir. Ama Wati Hanım'a göre rehber bunu hiç söylememiş, grup da yarım gün otelde beklemiş.",
+     "id": "Bisa jadi. Tapi menurut Bu Wati, pemandunya sama sekali nggak bilang soal itu, dan rombongan menunggu setengah hari di hotel.",
+     "literal": "jadi-bisa-biasa. tapi Wati Hanım-ke menurut pemandu ini-nya sama-sekali ucap-tidak-konon, rombongan juga setengah hari hotel-di tunggu-konon."
+    },
+    {
+     "speaker": "Zeynep:",
+     "text": "Rehber Mustafa'ydı, değil mi? Benim bildiğim kadarıyla o çok dikkatli biridir.",
+     "id": "Pemandunya Mustafa, kan? Sejauh yang aku tahu, dia orangnya teliti banget.",
+     "literal": "pemandu Mustafa-adalah-lampau, bukan apakah? saya-punya tahu-yang-ku sebatas-nya dia sangat teliti seseorang-adalah."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Ben de öyle biliyorum. Anlaşılan otel ona da haber vermemiş.",
+     "id": "Aku juga tahunya begitu. Rupanya hotel juga nggak kasih kabar ke dia.",
+     "literal": "saya juga begitu sedang-tahu-saya. rupanya hotel dia-ke juga kabar beri-tidak-konon."
+    },
+    {
+     "speaker": "Zeynep:",
+     "text": "Önce iki tarafı da dinleyelim. Mustafa'nın raporuna göre ne olmuş, bakalım.",
+     "id": "Kita dengar dua pihak dulu. Coba lihat, menurut laporan Mustafa apa yang terjadi.",
+     "literal": "dulu dua pihak-nya juga dengar-mari. Mustafa-punya laporan-nya-ke menurut apa jadi-konon, lihat-mari."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Raporu açtım. Yazdığına göre kalorifer kazanı bozulmuş, tamirci ancak öğlen gelebilmiş.",
+     "id": "Laporannya sudah kubuka. Katanya ketel pemanasnya rusak, dan tukangnya baru bisa datang siang.",
+     "literal": "laporan-nya buka-lampau-saya. tulis-yang-nya-ke menurut pemanas ketel-nya rusak-konon, tukang baru siang datang-bisa-konon."
+    },
+    {
+     "speaker": "Zeynep:",
+     "text": "Demek ki müşteri haklı, ama suç tamamen bizim değil.",
+     "id": "Berarti kliennya benar, tapi kesalahannya bukan sepenuhnya di kita.",
+     "literal": "berarti klien benar, tapi kesalahan sepenuhnya kita-punya bukan."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Evet. Hemen otel müdürünü arayayım. Wati Hanım Şikâyetvar'a yazmadan önce bir çözüm bulmalıyız.",
+     "id": "Iya. Aku telepon manajer hotelnya sekarang. Kita harus cari jalan keluar sebelum Bu Wati nulis di Şikâyetvar.",
+     "literal": "ya. segera hotel manajer-nya-nya telepon-biar-saya. Wati Hanım Şikâyetvar-ke tulis-sebelum dulu satu solusi temukan-harus-kami."
+    },
+    {
+     "speaker": "Zeynep:",
+     "text": "İyi fikir. Ama telefonda sakin ol; öfkeyle konuşursan hiçbir şey elde edemezsin.",
+     "id": "Ide bagus. Tapi di telepon tenang, ya; kalau ngomong sambil marah, kamu nggak bakal dapat apa-apa.",
+     "literal": "baik ide. tapi telepon-di tenang jadi; marah-dengan bicara-kalau-kamu tak-satu-pun hal tangan-di lakukan-bisa-tidak-biasa-kamu."
+    }
+   ],
+   "notes": [
+    "**Yazdığına göre … felaketmiş** — *-diği* + posesif + datif + *göre* = menurut yang (dia) …: *yazdığına göre* (menurut tulisannya), *anlattığına göre* (menurut ceritanya), *dediğine göre* (menurut katanya). Kata kerja kalimat utamanya tetap memakai *-miş*, karena Budi tidak menyaksikan sendiri: *felaketmiş*, *üşümüş*.",
+    "**Çalışmıyormuş** — *-iyormuş* = kabarnya sedang …; untuk keadaan yang berlangsung dalam kejadian yang dilaporkan. Bandingkan: *çalışmıyordu* (aku sendiri tahu pemanasnya mati) dan *çalışmıyormuş* (katanya mati).",
+    "**Kahvaltı geç verilmiş** — pasif + *-miş*: rangkaian khas surel keluhan dan berita. *Kimse … açıklamamış* = tidak seorang pun menjelaskan; *kimse* selalu berpasangan dengan kata kerja sangkal.",
+    "**Wati Hanım'a göre** — *-e göre* sesudah nama atau kata benda = menurut. *Bana göre* = menurutku (pendapat), *rapora göre* = menurut laporan (sumber). ⚠️ *Göre* menuntut datif, jadi *Mustafa'ya göre*, bukan *Mustafa göre*.",
+    "**Bildiğim kadarıyla** — *-diği kadarıyla* = sejauh yang …: *bildiğim kadarıyla* (sejauh yang kutahu), *gördüğüm kadarıyla* (sejauh yang kulihat). Pola ini membatasi klaim, jadi Zeynep membela Mustafa tanpa terdengar pasti. *Biridir* memakai *-dir* kepastian dari unit 1.",
+    "**Anlaşılan** / **Demek ki** — *anlaşılan* (rupanya, dari *anlaşılmak* \"dipahami\") menarik kesimpulan dari bukti yang ada dan hampir selalu disusul *-miş*. *Demek ki* = berarti, jadi; kesimpulan logis dari apa yang baru dikatakan. *Elde etmek* = memperoleh, harfiah \"membuatnya di tangan\"."
+   ],
+   "grammars": [
+    {
+     "title": "Menyebut sumber: -e göre, -diğine göre, -diği kadarıyla",
+     "body": [
+      "Sumber berupa orang atau dokumen cukup diberi datif + *göre*. Sumber berupa tindakan (menulis, bercerita, mendengar) memakai partisip *-diği* + posesif."
+     ],
+     "table": {
+      "head": [
+       "Pola",
+       "Contoh",
+       "Arti"
+      ],
+      "rows": [
+       [
+        "orang + *-e göre*",
+        "*Wati Hanım'a göre grup üşümüş.*",
+        "Menurut Bu Wati, rombongan kedinginan."
+       ],
+       [
+        "dokumen + *-e göre*",
+        "*Rapora göre kazan bozulmuş.*",
+        "Menurut laporan, ketelnya rusak."
+       ],
+       [
+        "*bana / sana göre*",
+        "*Bana göre suç otelde.*",
+        "Menurutku salahnya di hotel."
+       ],
+       [
+        "*-diğine göre*",
+        "*Yazdığına göre otel felaketmiş.*",
+        "Menurut tulisannya, hotelnya bencana."
+       ],
+       [
+        "*dediğine göre*",
+        "*Mustafa'nın dediğine göre kimse aramamış.*",
+        "Kata Mustafa, nggak ada yang menelepon."
+       ],
+       [
+        "*-diği kadarıyla*",
+        "*Bildiğim kadarıyla o çok dikkatli.*",
+        "Sejauh yang kutahu, dia teliti sekali."
+       ],
+       [
+        "*gördüğüm kadarıyla*",
+        "*Gördüğüm kadarıyla odalar temiz.*",
+        "Sejauh yang kulihat, kamarnya bersih."
+       ]
+      ]
+     },
+     "after": [
+      "*Duyduğuma göre* (menurut yang kudengar) dan *duyduğum kadarıyla* (sejauh yang kudengar) hampir sama; yang kedua lebih berhati-hati.",
+      "*-e göre* juga berarti \"sesuai dengan\": *kurallara göre* (sesuai aturan), *geçen yıla göre* (dibanding tahun lalu)."
+     ]
+    },
+    {
+     "title": "-miş dalam laporan",
+     "body": [
+      "Begitu kita melaporkan kejadian dari surel, telepon, atau cerita orang, semua kala berganti ke bentuk *-miş*. Bentuk *-di* hanya untuk yang kita saksikan sendiri."
+     ],
+     "table": {
+      "head": [
+       "Disaksikan sendiri",
+       "Dilaporkan",
+       "Arti"
+      ],
+      "rows": [
+       [
+        "*Grup üşüdü.*",
+        "*Grup üşümüş.*",
+        "Rombongan kedinginan."
+       ],
+       [
+        "*Kalorifer çalışmıyordu.*",
+        "*Kalorifer çalışmıyormuş.*",
+        "Pemanasnya nggak nyala."
+       ],
+       [
+        "*Kahvaltı geç verildi.*",
+        "*Kahvaltı geç verilmiş.*",
+        "Sarapan disajikan telat."
+       ],
+       [
+        "*Otel para iade edecek.*",
+        "*Otel para iade edecekmiş.*",
+        "Hotel akan mengembalikan uang."
+       ],
+       [
+        "*Otel pahalıydı.*",
+        "*Otel pahalıymış.*",
+        "Hotelnya mahal."
+       ],
+       [
+        "*Tamirci öğlen gelebildi.*",
+        "*Tamirci öğlen gelebilmiş.*",
+        "Tukangnya baru bisa datang siang."
+       ]
+      ]
+     },
+     "after": [
+      "Sumber (*-e göre*) dan *-miş* boleh muncul bersama; itu bukan pemborosan, melainkan kebiasaan. Tanpa *-miş*, kalimat *Wati Hanım'a göre grup üşüdü* terdengar seolah kamu ikut membenarkan."
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Dialog kedua — Otel müdürüyle telefonda",
+   "intro": "Senin siang, 27 Maret 2028. Budi menelepon hotel di Göreme dan tersambung dengan manajernya, Hülya Hanım.",
+   "lines": [
+    {
+     "speaker": "Hülya Hanım:",
+     "text": "Peri Bacası Otel, ben Hülya, buyurun.",
+     "id": "Hotel Peri Bacası, dengan Hülya, silakan.",
+     "literal": "Peri Bacası Otel, saya Hülya, silakan."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Merhaba Hülya Hanım, ben Köprü Turizm'den Budi. Geçen hafta sizde kalan Endonezya grubu için arıyorum.",
+     "id": "Halo Bu Hülya, saya Budi dari Köprü Turizm. Saya telepon soal rombongan Indonesia yang pekan lalu menginap di tempat Ibu.",
+     "literal": "halo Hülya Hanım, saya Köprü Turizm-dari Budi. lalu minggu anda-pada menginap-yang Indonesia rombongan-nya untuk sedang-telepon-saya."
+    },
+    {
+     "speaker": "Hülya Hanım:",
+     "text": "Ah, evet. Tahmin ediyorum, kalorifer meselesi. Gerçekten çok üzgünüz.",
+     "id": "Ah, iya. Saya bisa tebak, soal pemanas. Kami sungguh menyesal.",
+     "literal": "ah, ya. tebakan sedang-lakukan-saya, pemanas masalah-nya. sungguh sangat sedih-kami."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Müşterimizin dediğine göre grup bütün gece üşümüş. Rehberimize de kimse haber vermemiş.",
+     "id": "Kata klien kami, rombongan kedinginan semalaman. Dan nggak ada yang mengabari pemandu kami.",
+     "literal": "klien-kami-punya kata-yang-nya-ke menurut rombongan seluruh malam kedinginan-konon. pemandu-kami-ke juga siapa-pun kabar beri-tidak-konon."
+    },
+    {
+     "speaker": "Hülya Hanım:",
+     "text": "Duyduğum kadarıyla gece görevlisi rehberinizi aramış ama ulaşamamış.",
+     "id": "Sejauh yang saya dengar, petugas malam sudah menelepon pemandu Anda, tapi nggak tersambung.",
+     "literal": "dengar-yang-ku sebatas-nya malam petugas-nya pemandu-anda-nya telepon-konon tapi mencapai-bisa-tidak-konon."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Mustafa'ya sordum. Ona göre telefonuna hiç arama gelmemiş.",
+     "id": "Saya sudah tanya Mustafa. Menurut dia, nggak ada satu pun panggilan masuk ke ponselnya.",
+     "literal": "Mustafa-ke tanya-lampau-saya. dia-ke menurut telepon-nya-ke sama-sekali panggilan datang-tidak-konon."
+    },
+    {
+     "speaker": "Hülya Hanım:",
+     "text": "Anlaşılan bir yanlış anlaşılma var. Kayıtlara bakacağım. Ama kazanın bozulduğu doğru, bunu inkâr etmiyorum.",
+     "id": "Rupanya ada salah paham. Saya akan cek catatannya. Tapi memang benar ketelnya rusak, itu nggak saya sangkal.",
+     "literal": "rupanya satu salah pemahaman ada. catatan-jamak-ke lihat-akan-saya. tapi ketel-punya rusak-yang-nya benar, ini-nya sangkal lakukan-tidak-sedang-saya."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Teşekkür ederim. Müşterimiz bir gecelik ücretin iadesini istiyor. Ne dersiniz?",
+     "id": "Terima kasih. Klien kami minta biaya satu malam dikembalikan. Bagaimana menurut Ibu?",
+     "literal": "terima-kasih lakukan-biasa-saya. klien-kami satu malam-an biaya-punya pengembalian-nya-nya sedang-mau. apa kata-biasa-anda?"
+    },
+    {
+     "speaker": "Hülya Hanım:",
+     "text": "Kurallarımıza göre normalde yüzde elli iade ediyoruz. Ama sizin için bir gecenin tamamını iade edelim.",
+     "id": "Sesuai aturan kami, biasanya kami kembalikan lima puluh persen. Tapi untuk Anda, kami kembalikan penuh satu malam.",
+     "literal": "aturan-jamak-kami-ke sesuai biasanya persen lima-puluh pengembalian sedang-lakukan-kami. tapi anda-punya untuk satu malam-punya seluruh-nya-nya pengembalian lakukan-mari."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Çok naziksiniz. Wati Hanım'a hemen yazayım; eminim içi rahatlayacak.",
+     "id": "Ibu baik sekali. Saya langsung kabari Bu Wati; pasti dia lega.",
+     "literal": "sangat baik-hati-anda. Wati Hanım-ke segera tulis-biar-saya; yakin-saya dalam-nya lega-akan."
+    },
+    {
+     "speaker": "Hülya Hanım:",
+     "text": "Rica ederim. Bir dahaki grubunuza da balon turundan önce bizden sıcak salep ikramı olsun.",
+     "id": "Sama-sama. Rombongan Anda berikutnya juga kami suguhi salep hangat sebelum tur balon, ya.",
+     "literal": "permohonan lakukan-biasa-saya. satu berikut rombongan-anda-ke juga balon tur-nya-dari sebelum kami-dari hangat salep suguhan-nya jadi-biar."
+    }
+   ],
+   "notes": [
+    "**Ben Hülya, buyurun** — cara baku mengangkat telepon kantor: nama tempat, lalu *ben* + nama, lalu *buyurun* (silakan). Budi membalas dengan pola yang sama: *ben Köprü Turizm'den Budi*.",
+    "**Tahmin ediyorum** — \"saya bisa tebak\". Hülya mendahului keluhan dan langsung meminta maaf (*çok üzgünüz*), taktik yang meredakan suasana. *Mesele* (serapan Arab *mas'alah*) = masalah, urusan.",
+    "**Duyduğum kadarıyla … aramış** — Hülya sendiri tidak ada di hotel malam itu, jadi ia membatasi klaim dengan *-diği kadarıyla* dan memakai *-miş*. *Ulaşamamış* = tidak berhasil menghubungi; *-e ulaşmak* = mencapai, menghubungi.",
+    "**Ona göre** — *o* + datif = *ona*; *ona göre* bisa berarti \"menurut dia\" atau \"sesuai dengan itu\". Budi mengadu dua sumber dengan tenang, tanpa menuduh siapa yang bohong.",
+    "**Anlaşılan bir yanlış anlaşılma var** — permainan kata: *anlaşılan* (rupanya) dan *yanlış anlaşılma* (salah paham) berasal dari akar yang sama, *anlamak* (memahami). *Kazanın bozulduğu doğru* = benar bahwa ketelnya rusak; *-diği doğru* untuk mengakui fakta.",
+    "**Kurallarımıza göre** / **içi rahatlayacak** — *-e göre* di sini berarti \"sesuai\". *İçi rahatlamak* = hatinya lega (harfiah \"dalamnya menjadi nyaman\"). *İkram* (serapan Arab) = suguhan gratis untuk tamu; di Turki hotel dan restoran sering meredakan keluhan dengan *ikram*."
+   ],
+   "grammars": [
+    {
+     "title": "Menarik kesimpulan dan meneruskan kabar",
+     "body": [
+      "Ungkapan-ungkapan ini membuka kalimat dan memberi tahu pendengar seberapa yakin kita, serta dari mana kita tahu."
+     ],
+     "table": {
+      "head": [
+       "Ungkapan",
+       "Contoh",
+       "Arti"
+      ],
+      "rows": [
+       [
+        "*anlaşılan*",
+        "*Anlaşılan otel haber vermemiş.*",
+        "Rupanya hotel nggak memberi kabar."
+       ],
+       [
+        "*demek ki*",
+        "*Demek ki müşteri haklı.*",
+        "Berarti kliennya benar."
+       ],
+       [
+        "*görünüşe göre*",
+        "*Görünüşe göre sorun çözüldü.*",
+        "Kelihatannya masalahnya sudah beres."
+       ],
+       [
+        "*belli ki*",
+        "*Belli ki çok yorulmuşlar.*",
+        "Jelas mereka capek sekali."
+       ],
+       [
+        "*duyduğuma göre*",
+        "*Duyduğuma göre otel el değiştirmiş.*",
+        "Dari yang kudengar, hotelnya ganti pemilik."
+       ],
+       [
+        "*söylendiğine göre*",
+        "*Söylendiğine göre yeni müdür çok sıkı.*",
+        "Konon manajer barunya ketat sekali."
+       ],
+       [
+        "*iddiaya göre*",
+        "*İddiaya göre kimse aramamış.*",
+        "Menurut klaimnya, nggak ada yang menelepon."
+       ]
+      ]
+     },
+     "after": [
+      "*İddiaya göre* memberi jarak paling jauh: kita meneruskan klaim tanpa menjamin kebenarannya. Wartawan dan pengacara sangat menyukainya."
+     ]
+    }
+   ]
+  }
+ ],
+ "sections": [
+  {
+   "title": "Dari mana kamu tahu?",
+   "blocks": [
+    {
+     "type": "p",
+     "text": "Bahasa Turki \"memaksa\" penuturnya menunjukkan sumber informasi. Kejadian yang sama, tur balon yang batal, berbunyi berbeda tergantung apakah kita melihatnya sendiri, mendengarnya, menyimpulkannya, atau membacanya di berita."
+    },
+    {
+     "type": "tabel",
+     "head": [
+      "Sumber",
+      "Türkçe",
+      "Bahasa Indonesia"
+     ],
+     "rows": [
+      [
+       "melihat sendiri",
+       "*Balon turu iptal oldu.*",
+       "Tur balonnya batal."
+      ],
+      [
+       "mendengar/membaca",
+       "*Balon turu iptal olmuş.*",
+       "Katanya tur balonnya batal."
+      ],
+      [
+       "orang tertentu",
+       "*Rehbere göre balon turu iptal olmuş.*",
+       "Menurut pemandu, tur balonnya batal."
+      ],
+      [
+       "tulisan orang",
+       "*Wati Hanım'ın yazdığına göre tur iptal olmuş.*",
+       "Menurut tulisan Bu Wati, turnya batal."
+      ],
+      [
+       "kesimpulan dari bukti",
+       "*Anlaşılan tur iptal olmuş.*",
+       "Rupanya turnya batal."
+      ],
+      [
+       "dugaan kuat",
+       "*Tur iptal olmuş olmalı.*",
+       "Turnya pasti sudah batal."
+      ],
+      [
+       "bahasa berita",
+       "*Balon turlarının iptal edildiği bildirildi.*",
+       "Dilaporkan bahwa tur balon dibatalkan."
+      ]
+     ]
+    },
+    {
+     "type": "p",
+     "text": "Dalam percakapan, penutur Turki berganti-ganti antara *-di* dan *-miş* hampir tanpa sadar, dan pendengar menangkap sinyal itu. Kalau kamu bercerita tentang liburan orang lain dengan *-di*, pendengar akan bertanya, \"Kamu ikut juga?\""
+    },
+    {
+     "type": "kotak",
+     "title": "Kosakata berita",
+     "items": [
+      "*… bildirildi* (dilaporkan), *… açıklandı* (diumumkan), *… öğrenildi* (diketahui), *… belirtildi* (dinyatakan): pasif lampau yang selalu mengakhiri kalimat berita.",
+      "*Edinilen bilgiye göre* = menurut informasi yang diperoleh; *yetkililerin açıklamasına göre* = menurut keterangan pihak berwenang.",
+      "*İddiaya göre* dan *iddia edildi* dipakai untuk tuduhan yang belum terbukti.",
+      "Judul berita sering memakai *-miş* tanpa sumber: *Ünlü şarkıcı evlenmiş!* (Penyanyi terkenal itu ternyata menikah!)."
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Budaya keluhan di Turki",
+   "blocks": [
+    {
+     "type": "p",
+     "text": "Konsumen Turki terbiasa menyuarakan keluhan secara terbuka. Situs *Şikâyetvar* (\"ada keluhan\") memuat jutaan keluhan terhadap perusahaan, dan banyak merek menjawab langsung di sana karena reputasi mereka dipertaruhkan. Untuk sengketa konsumen yang lebih serius ada *Tüketici Hakem Heyeti* (badan arbitrase konsumen)."
+    },
+    {
+     "type": "tabel",
+     "head": [
+      "Türkçe",
+      "Bahasa Indonesia"
+     ],
+     "rows": [
+      [
+       "*… hakkında şikâyette bulunmak istiyorum.*",
+       "Saya ingin menyampaikan keluhan tentang …"
+      ],
+      [
+       "*Yaşadığımız sorun şudur:*",
+       "Masalah yang kami alami adalah sebagai berikut:"
+      ],
+      [
+       "*Ücret iadesi talep ediyoruz.*",
+       "Kami menuntut pengembalian biaya."
+      ],
+      [
+       "*Mağduriyetimizin giderilmesini rica ederiz.*",
+       "Kami mohon kerugian kami diganti."
+      ],
+      [
+       "*Yaşanan aksaklık için özür dileriz.*",
+       "Kami mohon maaf atas gangguan yang terjadi."
+      ],
+      [
+       "*Konuyu inceleyip size dönüş yapacağız.*",
+       "Kami akan menelaah masalahnya dan menghubungi Anda kembali."
+      ],
+      [
+       "*Anlayışınız için teşekkür ederiz.*",
+       "Terima kasih atas pengertian Anda."
+      ]
+     ]
+    },
+    {
+     "type": "p",
+     "text": "Surel keluhan dalam bahasa Turki cenderung panjang dan emosional di awal, lalu ditutup dengan permintaan yang jelas. Jawaban perusahaan sebaliknya: dibuka dengan permintaan maaf, lalu kronologi dalam bentuk *-miş* atau pasif, dan diakhiri tawaran konkret."
+    },
+    {
+     "type": "kotak",
+     "title": "Kiat menangani keluhan",
+     "items": [
+      "Jawab di hari yang sama. Diam dianggap tidak peduli, dan keluhan bisa pindah ke Şikâyetvar atau media sosial.",
+      "Dengarkan dua pihak dulu. Laporkan versi masing-masing dengan *-e göre* dan *-miş* sebelum menyimpulkan.",
+      "Hindari *Siz yanlış anlamışsınız* (Anda salah paham). Lebih aman: *Anlaşılan bir yanlış anlaşılma olmuş*.",
+      "Tawaran kecil yang tulus (*ikram*, potongan harga, kamar lebih baik) sering lebih ampuh daripada penjelasan panjang."
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Ulangan berjenjang — unit 8",
+   "blocks": [
+    {
+     "type": "p",
+     "text": "Tutup kolom Turki, baca terjemahan Indonesianya, lalu susun kembali kalimatnya dari ingatan."
+    },
+    {
+     "type": "tabel",
+     "head": [
+      "Bahasa Indonesia",
+      "Türkçe"
+     ],
+     "rows": [
+      [
+       "Katmer? Kalau begitu hati-hati. Di Antep, makin makan kalian makin lapar!",
+       "*Katmer mi? O zaman dikkat edin. Antep'te yedikçe acıkırsınız!*"
+      ],
+      [
+       "Tapi lihat Pak Hendra: makin lapar makin makan, makin makan makin lapar!",
+       "*Hendra Bey'e bakın ama: acıktıkça yiyor, yedikçe acıkıyor!*"
+      ],
+      [
+       "Aku nggak tahu itu. Makin lama di sini, aku makin cinta masakan ini.",
+       "*Bunu bilmiyordum. Burada kaldıkça bu mutfağı daha çok seviyorum.*"
+      ],
+      [
+       "Rahasia baklava ada di lembaran adonannya. Makin digiling, lembarannya makin tipis; makin tipis, baklavanya makin enak.",
+       "*Baklavanın sırrı yufkadadır. Hamuru açtıkça yufka incelir, inceldikçe baklava güzelleşir.*"
+      ],
+      [
+       "Soalnya Anda menekan. Gilingnya sambil diputar-putar, pelan-pelan.",
+       "*Çünkü bastırıyorsunuz. Oklavayı çevire çevire, nazikçe açın.*"
+      ]
+     ]
+    }
+   ]
+  }
+ ],
+ "vocab": [
+  {
+   "tr": "e-posta",
+   "baca": "e-pos-TA",
+   "id": "surel, email"
+  },
+  {
+   "tr": "yüzü asık",
+   "baca": "yü-ZÜ a-SIK",
+   "id": "mukanya cemberut (*yüzün asık*)"
+  },
+  {
+   "tr": "felaket",
+   "baca": "fe-la-KET",
+   "id": "bencana"
+  },
+  {
+   "tr": "kalorifer",
+   "baca": "ka-lo-ri-FER",
+   "id": "pemanas ruangan (radiator sentral)"
+  },
+  {
+   "tr": "üşümek",
+   "baca": "ü-syü-MEK",
+   "id": "kedinginan"
+  },
+  {
+   "tr": "açıklamak",
+   "baca": "a-cık-la-MAK",
+   "id": "menjelaskan, mengumumkan"
+  },
+  {
+   "tr": "sebep",
+   "baca": "se-BEP",
+   "id": "alasan, sebab (posesif *sebebi*)"
+  },
+  {
+   "tr": "-e izin vermek",
+   "baca": "i-ZIN ver-MEK",
+   "id": "mengizinkan"
+  },
+  {
+   "tr": "-e göre",
+   "baca": "gö-RE",
+   "id": "menurut; sesuai dengan"
+  },
+  {
+   "tr": "-diği kadarıyla",
+   "baca": "ka-da-rıy-LA",
+   "id": "sejauh yang … (*bildiğim kadarıyla*)"
+  },
+  {
+   "tr": "anlaşılan",
+   "baca": "an-la-syı-LAN",
+   "id": "rupanya (kesimpulan dari bukti)"
+  },
+  {
+   "tr": "demek ki",
+   "baca": "de-MEK ki",
+   "id": "berarti, jadi"
+  },
+  {
+   "tr": "dikkatli",
+   "baca": "dik-kat-LI",
+   "id": "teliti, hati-hati"
+  },
+  {
+   "tr": "taraf",
+   "baca": "ta-RAF",
+   "id": "pihak, sisi"
+  },
+  {
+   "tr": "kazan",
+   "baca": "ka-ZAN",
+   "id": "ketel, boiler; kuali besar"
+  },
+  {
+   "tr": "tamirci",
+   "baca": "ta-mir-JI",
+   "id": "tukang servis, montir"
+  },
+  {
+   "tr": "suç",
+   "baca": "suc",
+   "id": "kesalahan; kejahatan"
+  },
+  {
+   "tr": "çözüm",
+   "baca": "cö-ZÜM",
+   "id": "solusi, jalan keluar"
+  },
+  {
+   "tr": "elde etmek",
+   "baca": "el-DE et-MEK",
+   "id": "memperoleh, mendapatkan"
+  },
+  {
+   "tr": "mesele",
+   "baca": "me-se-LE",
+   "id": "masalah, urusan"
+  },
+  {
+   "tr": "-e ulaşmak",
+   "baca": "u-lasy-MAK",
+   "id": "mencapai; berhasil menghubungi"
+  },
+  {
+   "tr": "yanlış anlaşılma",
+   "baca": "yan-LISY an-la-syıl-MA",
+   "id": "salah paham"
+  },
+  {
+   "tr": "inkâr etmek",
+   "baca": "in-KYAR et-MEK",
+   "id": "menyangkal"
+  },
+  {
+   "tr": "iade",
+   "baca": "i-a-DE",
+   "id": "pengembalian (*iade etmek* = mengembalikan)"
+  },
+  {
+   "tr": "ikram",
+   "baca": "ik-RAM",
+   "id": "suguhan gratis untuk tamu (*ikram etmek*)"
+  }
+ ],
+ "exercises": [
+  {
+   "prompt": "Terjemahkan ke bahasa Turki. Pakai *-miş* untuk kabar yang tidak kamu saksikan sendiri.",
+   "items": [
+    "Menurut yang dia tulis, hotelnya dingin.",
+    "Sejauh yang aku tahu, Mustafa pemandu yang teliti.",
+    "Menurut laporan, ketelnya rusak.",
+    "Rupanya hotel tidak memberi kabar.",
+    "Menurut prakiraan cuaca, besok akan berangin.",
+    "Dari yang kudengar, tur balonnya dibatalkan."
+   ]
+  },
+  {
+   "prompt": "Isi titik-titik. Petunjuk bentuknya ada di dalam kurung.",
+   "items": [
+    "Wati Hanım'ın ____ göre grup üşümüş. (yazmak + -dığı + datif)",
+    "Benim ____ kadarıyla o çok dikkatli. (bilmek + -diğim)",
+    "____ göre ona hiç arama gelmemiş. (Mustafa + datif)",
+    "Kahvaltı bir saat geç ____. (vermek, pasif + -miş)",
+    "____ otel rehbere haber vermemiş. (rupanya)",
+    "İlk gece kalorifer ____. (çalışmamak, -iyormuş)",
+    "____ kadarıyla gece görevlisi rehberi aramış. (duymak + -duğum)"
+   ]
+  },
+  {
+   "prompt": "Ubah menjadi laporan dengan sumber dalam kurung. Contoh: *Otel soğuktu.* (Wati Hanım) → *Wati Hanım'a göre otel soğukmuş.*",
+   "items": [
+    "Kalorifer çalışmıyordu. (müşteri)",
+    "Tamirci öğlen geldi. (Mustafa'nın raporu)",
+    "Balon turu iptal edildi. (rehber)",
+    "Yarın kar yağacak. (hava durumu)",
+    "Otel ücreti iade edecek. (Hülya Hanım)",
+    "Grup yarım gün bekledi. (Wati Hanım'ın yazdığı, pakai -diğine göre)"
+   ]
+  },
+  {
+   "prompt": "Susun jadi kalimat yang benar.",
+   "items": [
+    "göre / yazdığına / felaketmiş / otel",
+    "kadarıyla / bildiğim / biridir / dikkatli / o / çok",
+    "anlaşılan / vermemiş / haber / otel",
+    "göre / Wati Hanım'a / üşümüş / grup",
+    "kadarıyla / duyduğum / aramış / rehberi / gece görevlisi"
+   ]
+  }
+ ],
+ "answers": [
+  "Yazdığına göre otel soğukmuş. — Bildiğim kadarıyla Mustafa dikkatli bir rehberdir. — Rapora göre kazan bozulmuş. — Anlaşılan otel haber vermemiş. — Hava durumuna göre yarın rüzgârlı olacakmış. — Duyduğuma göre balon turu iptal edilmiş.",
+  "yazdığına — bildiğim — Mustafa'ya — verilmiş — Anlaşılan — çalışmıyormuş — Duyduğum",
+  "Müşteriye göre kalorifer çalışmıyormuş. — Mustafa'nın raporuna göre tamirci öğlen gelmiş. — Rehbere göre balon turu iptal edilmiş. — Hava durumuna göre yarın kar yağacakmış. — Hülya Hanım'a göre otel ücreti iade edecekmiş. — Wati Hanım'ın yazdığına göre grup yarım gün beklemiş.",
+  "Yazdığına göre otel felaketmiş. — Bildiğim kadarıyla o çok dikkatli biridir. — Anlaşılan otel haber vermemiş. — Wati Hanım'a göre grup üşümüş. — Duyduğum kadarıyla gece görevlisi rehberi aramış."
+ ]
+}

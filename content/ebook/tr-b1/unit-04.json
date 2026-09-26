@@ -1,0 +1,727 @@
+{
+ "title": "Saya mau kamu … — kalimat benda",
+ "title_target": "Ankara turunun raporunu cumaya kadar bitirmeni istiyorum.",
+ "goal": "Menyampaikan keinginan, harapan, dan kabar tentang orang lain dengan kalimat benda: *Raporu bitirmeni istiyorum*, *Toplantının iyi geçtiğini duydum*, *Otelin cevap vereceğini sanıyorum*.",
+ "bekal": [
+  "memakai *-me/-ma* + posesif untuk keinginan, harapan, dan permintaan terhadap orang lain: *Kerem'in de projede olmasını istiyorum*, *Öğlen aramanızı bekliyorum*",
+  "memakai *-dik/-dığı* + posesif untuk fakta yang diketahui, didengar, atau dilupakan, dan *-ecek/-eceği* untuk yang akan terjadi: *Kerem'in gelmediğini biliyorum*, *Grubun göndereceğini sanıyorum*",
+  "memilih kasus yang dituntut kata kerja utama: *-mesini istemek*, *-mesine dikkat etmek*, *-eceğine söz vermek*, *-mesi şart*"
+ ],
+ "dialogs": [
+  {
+   "title": "Dialog — Rapor cumaya kadar",
+   "intro": "Senin, 22 November 2027, kantor Köprü Turizm di Karaköy. Selim Bey memanggil Budi ke ruangannya sesudah rapat pagi.",
+   "lines": [
+    {
+     "speaker": "Selim:",
+     "text": "Budi, bir dakika gelir misin? Ankara turunun raporunu cumaya kadar bitirmeni istiyorum.",
+     "id": "Budi, bisa ke sini sebentar? Saya mau kamu menyelesaikan laporan tur Ankara sampai hari Jumat.",
+     "literal": "Budi, satu menit datang-biasa apakah-kamu? Ankara tur-nya-punya laporan-nya-nya Jumat-ke sampai selesaikan-an-mu-nya sedang-ingin-saya."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Cumaya kadar mı? Pazartesi teslim etmemi beklediğinizi sanıyordum.",
+     "id": "Sampai Jumat? Saya kira Bapak mengharapkan saya menyerahkannya hari Senin.",
+     "literal": "Jumat-ke sampai apakah? Senin serah lakukan-an-ku-nya tunggu-yang-Anda-nya sedang-kira-lampau-saya."
+    },
+    {
+     "speaker": "Selim:",
+     "text": "Bakanlıktaki toplantının çok iyi geçtiğini duydum. Bu yüzden raporu erken okumak istiyorum.",
+     "id": "Saya dengar rapat di kementerian berjalan sangat baik. Makanya saya ingin baca laporannya lebih cepat.",
+     "literal": "kementerian-di-yang rapat-nya-punya sangat baik lewat-yang-nya-nya dengar-lampau-saya. ini wajah-dari laporan-nya awal membaca sedang-ingin-saya."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Kimden duydunuz? Henüz kimseye anlatmadım.",
+     "id": "Bapak dengar dari siapa? Saya belum cerita ke siapa-siapa.",
+     "literal": "siapa-dari dengar-lampau-Anda? belum siapa-pun-ke ceritakan-tidak-lampau-saya."
+    },
+    {
+     "speaker": "Selim:",
+     "text": "Aydın Bey dün beni aradı. Senin broşürlerin çevirisine yardım edeceğini söyledi.",
+     "id": "Kemarin Pak Aydın telepon saya. Katanya kamu mau bantu terjemahan brosurnya.",
+     "literal": "Aydın tuan kemarin saya-nya telepon-lampau. kamu-punya brosur-jamak-punya terjemahan-nya-ke bantuan akan-lakukan-yang-mu-nya bilang-lampau."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Evet, çeviriye yardım etmemizi istediler. Umarım bir sakıncası yoktur.",
+     "id": "Iya, mereka minta kami bantu terjemahannya. Semoga nggak masalah, Pak.",
+     "literal": "ya, terjemahan-ke bantuan lakukan-an-kami-nya ingin-lampau-mereka. harap-biasa-saya satu keberatan-nya tidak-ada-pasti."
+    },
+    {
+     "speaker": "Selim:",
+     "text": "Ne sakıncası? Harika! Yalnız Kerem'in de bu projede olmasını istiyorum.",
+     "id": "Masalah apa? Bagus sekali! Cuma, saya mau Kerem juga ikut di proyek ini.",
+     "literal": "apa keberatan-nya? hebat! hanya Kerem-punya juga ini proyek-di ada-an-nya-nya sedang-ingin-saya."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Kerem'in Ankara'ya gelmediğini biliyorsunuz, değil mi?",
+     "id": "Bapak tahu kan Kerem nggak ikut ke Ankara?",
+     "literal": "Kerem-punya Ankara-ke datang-tidak-yang-nya-nya sedang-tahu-Anda, bukan apakah?"
+    },
+    {
+     "speaker": "Selim:",
+     "text": "Biliyorum. Ama satış rakamlarını onun hazırlamasını istiyorum.",
+     "id": "Tahu. Tapi saya mau dia yang menyiapkan angka penjualannya.",
+     "literal": "sedang-tahu-saya. tapi penjualan angka-jamak-nya-nya dia-punya siapkan-an-nya-nya sedang-ingin-saya."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Anladım. Raporda başka neler olmasını istersiniz?",
+     "id": "Baik. Selain itu, Bapak mau apa saja ada di laporan?",
+     "literal": "paham-lampau-saya. laporan-di lain apa-jamak ada-an-nya-nya ingin-biasa-Anda?"
+    },
+    {
+     "speaker": "Selim:",
+     "text": "Misafirlerin ne düşündüğünü yaz. Anketleri de eklemeni bekliyorum.",
+     "id": "Tulis pendapat para tamu. Saya juga berharap kamu lampirkan angketnya.",
+     "literal": "tamu-jamak-punya apa pikir-yang-nya-nya tulis. angket-jamak-nya juga tambahkan-an-mu-nya sedang-tunggu-saya."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Anketlerin yarısı hâlâ gelmedi. Grubun onları e-postayla göndereceğini sanıyorum.",
+     "id": "Separuh angketnya belum masuk. Saya kira rombongan akan mengirimnya lewat surel.",
+     "literal": "angket-jamak-punya separuh-nya masih datang-tidak-lampau. grup-punya mereka-nya surel-dengan akan-kirim-yang-nya-nya sedang-kira-saya."
+    },
+    {
+     "speaker": "Selim:",
+     "text": "O zaman Ratna Hanım'ı ara, gruba hatırlatmasını rica et.",
+     "id": "Kalau begitu telepon Bu Ratna, minta dia mengingatkan rombongan.",
+     "literal": "itu waktu Ratna nyonya-nya telepon, grup-ke ingatkan-an-nya-nya permohonan lakukan."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Tamam. Cuma öğleden sonra raporun masanızda olacağına söz veriyorum.",
+     "id": "Oke. Saya janji laporannya sudah di meja Bapak Jumat sore.",
+     "literal": "oke. Jumat siang-dari sesudah laporan-punya meja-Anda-di akan-ada-yang-nya-ke janji sedang-beri-saya."
+    },
+    {
+     "speaker": "Selim:",
+     "text": "Güzel. Çıkarken çaycıya iki çay söyle, benimki açık olsun.",
+     "id": "Bagus. Waktu keluar, pesan dua teh ke tukang teh; punya saya yang encer.",
+     "literal": "bagus. keluar-sambil tukang-teh-ke dua teh bilang, saya-punya-yang encer jadi-biar."
+    }
+   ],
+   "notes": [
+    "**Bitirmeni istiyorum** — akar + *-me/-ma* (kata benda dari kata kerja) + posesif pelaku (*-n* = kamu) + akusatif *-i*: \"aku ingin kamu menyelesaikan\". Kalau pelakunya sama, cukup bentuk kamus: *Raporu bitirmek istiyorum* (aku ingin menyelesaikan). Dalam harfiah, *-me* ditulis **-an**: *bitirmeni* = selesaikan-an-mu-nya.",
+    "**Teslim etmemi beklediğinizi sanıyordum** — dua kalimat benda bertumpuk: *etmemi* (aku menyerahkan) ada di dalam *beklediğinizi* (bahwa Anda mengharapkan), dan keduanya bergantung pada *sanıyordum*. Bacalah dari kata kerja paling belakang ke depan.",
+    "**Toplantının çok iyi geçtiğini duydum** — *-dik* + posesif + akusatif adalah \"bahwa\" untuk fakta: sesuatu yang benar terjadi, diketahui, atau didengar. Pelakunya masuk genitif (*toplantının*). *İyi geçmek* = berjalan baik (tentang acara, rapat, ujian).",
+    "**Senin … yardım edeceğini söyledi** — *-ecek* + posesif untuk hal yang akan terjadi. *Edeceğini* bisa berarti \"bahwa kamu akan\" atau \"bahwa dia akan\"; karena itu Selim menambahkan *senin* supaya jelas.",
+    "**Kerem'in de bu projede olmasını istiyorum** — keinginan terhadap orang lain selalu memakai *-mesini*, dan orang itu masuk genitif: *Kerem'in olmasını, onun hazırlamasını*. Jangan menerjemahkan \"saya mau Kerem ikut\" kata per kata menjadi *Kerem istiyorum*, artinya jadi \"saya mau Kerem (sebagai barang)\".",
+    "**Masanızda olacağına söz veriyorum** — kasusnya ditentukan kata kerja utama: *söz vermek* (berjanji) menuntut datif, jadi *-eceğine*; *istemek* dan *beklemek* menuntut akusatif, jadi *-mesini*. *Açık çay* = teh encer; kebalikannya *demli* (pekat)."
+   ],
+   "grammars": [
+    {
+     "title": "-me + posesif: keinginan dan permintaan",
+     "body": [
+      "Pelaku kalimat benda ditunjukkan dua kali: dengan genitif di depan (boleh dihilangkan untuk *ben, sen, biz, siz*) dan dengan akhiran posesif pada kata kerja."
+     ],
+     "table": {
+      "head": [
+       "Pelaku",
+       "Bentuk",
+       "Contoh",
+       "Arti"
+      ],
+      "rows": [
+       [
+        "ben",
+        "*-memi*",
+        "*Teslim etmemi bekliyor.*",
+        "Dia menunggu aku menyerahkan."
+       ],
+       [
+        "sen",
+        "*-meni*",
+        "*Bitirmeni istiyorum.*",
+        "Aku mau kamu menyelesaikan."
+       ],
+       [
+        "o",
+        "*-mesini*",
+        "*Kerem'in olmasını istiyorum.*",
+        "Aku mau Kerem ikut."
+       ],
+       [
+        "biz",
+        "*-memizi*",
+        "*Yardım etmemizi istediler.*",
+        "Mereka minta kami membantu."
+       ],
+       [
+        "siz",
+        "*-menizi*",
+        "*Aramanızı bekliyorum.*",
+        "Saya menunggu Anda menelepon."
+       ],
+       [
+        "onlar",
+        "*-melerini*",
+        "*Anketleri göndermelerini rica ettik.*",
+        "Kami minta mereka mengirim angketnya."
+       ]
+      ]
+     },
+     "after": [
+      "Sesudah vokal, posesif orang ketiga memakai *-s-*: *olma-sı-nı, hazırlama-sı-nı*. Negatifnya *-meme-*: *Geç kalmamanı istiyorum* (aku mau kamu tidak terlambat)."
+     ]
+    },
+    {
+     "title": "-dik dan -ecek + posesif: bahwa …",
+     "body": [
+      "*-dik* untuk yang sedang atau sudah terjadi, *-ecek* untuk yang akan terjadi. Huruf *k* melunak menjadi *ğ* di depan vokal; sesudah konsonan tak bersuara, *d* menjadi *t*."
+     ],
+     "table": {
+      "head": [
+       "Pelaku",
+       "sekarang/lampau",
+       "nanti"
+      ],
+      "rows": [
+       [
+        "ben",
+        "*geldiğimi*",
+        "*geleceğimi*"
+       ],
+       [
+        "sen",
+        "*geldiğini*",
+        "*geleceğini*"
+       ],
+       [
+        "o",
+        "*geldiğini*",
+        "*geleceğini*"
+       ],
+       [
+        "biz",
+        "*geldiğimizi*",
+        "*geleceğimizi*"
+       ],
+       [
+        "siz",
+        "*geldiğinizi*",
+        "*geleceğinizi*"
+       ],
+       [
+        "onlar",
+        "*geldiklerini*",
+        "*geleceklerini*"
+       ],
+       [
+        "negatif (o)",
+        "*gelmediğini*",
+        "*gelmeyeceğini*"
+       ],
+       [
+        "sesudah konsonan tak bersuara",
+        "*gittiğini, geçtiğini*",
+        "*gideceğini*"
+       ]
+      ]
+     },
+     "after": [
+      "*-dik* tidak membedakan sekarang dan lampau: *Kerem'in Ankara'da olduğunu biliyorum* bisa berarti ia sedang atau pernah di Ankara. Konteks yang menentukan."
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Dialog kedua — Titiz bir müşteri",
+   "intro": "Rabu, 24 November 2027, pukul 08.40. Sebelum Budi sempat melepas mantel, telepon kantornya berdering. Di ujung sana Sevgi Hanım, manajer sebuah perusahaan tekstil yang memesan tur untuk mitra bisnisnya dari Indonesia.",
+   "lines": [
+    {
+     "speaker": "Sevgi:",
+     "text": "Budi Bey, otelin bize denize bakan odalar vermesini istemiştim. Neden hâlâ onay gelmedi?",
+     "id": "Pak Budi, saya kan sudah minta hotel kasih kami kamar yang menghadap laut. Kenapa belum ada konfirmasi juga?",
+     "literal": "Budi tuan, hotel-punya ke-kami laut-ke yang-menghadap kamar-jamak beri-an-nya-nya ingin-sudah-lampau-saya. kenapa masih konfirmasi datang-tidak-lampau?"
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Sevgi Hanım, otelin bugün cevap vereceğini sanıyorum. Sabah tekrar yazdım.",
+     "id": "Bu Sevgi, saya kira hotel akan menjawab hari ini. Tadi pagi saya sudah menulis lagi.",
+     "literal": "Sevgi nyonya, hotel-punya hari-ini jawaban akan-beri-yang-nya-nya sedang-kira-saya. pagi lagi tulis-lampau-saya."
+    },
+    {
+     "speaker": "Sevgi:",
+     "text": "Sanıyorum demek yetmez! Misafirlerimin her şeyden memnun kalmasını istiyorum.",
+     "id": "Bilang \"saya kira\" saja nggak cukup! Saya mau tamu-tamu saya puas dengan semuanya.",
+     "literal": "sedang-kira-saya berkata cukup-tidak-biasa! tamu-jamak-ku-punya semua hal-dari puas tinggal-an-nya-nya sedang-ingin-saya."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Haklısınız. Öğlene kadar size kesin bilgi vermemi ister misiniz?",
+     "id": "Ibu benar. Mau saya kabari kepastiannya sebelum siang?",
+     "literal": "benar-Anda. siang-ke sampai ke-Anda pasti informasi beri-an-ku-nya ingin-biasa apakah-Anda?"
+    },
+    {
+     "speaker": "Sevgi:",
+     "text": "Evet. Bir de rehberin Endonezyaca bilmesi şart.",
+     "id": "Ya. Satu lagi, pemandunya wajib bisa bahasa Indonesia.",
+     "literal": "ya. satu juga pemandu-punya Indonesia-bahasa tahu-an-nya syarat."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Biliyorum. Rehberin ben olacağımı söylemiştim, hatırlıyor musunuz?",
+     "id": "Saya tahu. Saya sudah bilang kan, pemandunya saya sendiri. Ibu ingat?",
+     "literal": "sedang-tahu-saya. pemandu-punya saya akan-jadi-yang-ku-nya bilang-sudah-lampau-saya, sedang-ingat apakah-Anda?"
+    },
+    {
+     "speaker": "Sevgi:",
+     "text": "Ah, doğru! Söylediğinizi unutmuşum.",
+     "id": "Oh, iya! Ternyata saya lupa Bapak pernah bilang.",
+     "literal": "ah, benar! bilang-yang-Anda-nya lupa-konon-saya."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Önemli değil. Başka bir isteğiniz var mı?",
+     "id": "Nggak apa-apa. Ada permintaan lain, Bu?",
+     "literal": "penting bukan. lain satu permintaan-Anda ada apakah?"
+    },
+    {
+     "speaker": "Sevgi:",
+     "text": "Yemeklerin helal olmasına dikkat etmenizi rica ediyorum.",
+     "id": "Saya minta Bapak memperhatikan agar makanannya halal.",
+     "literal": "makanan-jamak-punya halal jadi-an-nya-ke perhatian lakukan-an-Anda-nya permohonan sedang-lakukan-saya."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Bütün restoranların helal sertifikası olduğunu kontrol ettim. İçiniz rahat olsun.",
+     "id": "Saya sudah cek bahwa semua restorannya punya sertifikat halal. Ibu tenang saja.",
+     "literal": "semua restoran-jamak-punya halal sertifikat-nya ada-yang-nya-nya periksa lakukan-lampau-saya. dalam-Anda tenang jadi-biar."
+    },
+    {
+     "speaker": "Sevgi:",
+     "text": "Peki, size güveniyorum. Ama öğlen aramanızı bekliyorum!",
+     "id": "Baiklah, saya percaya Bapak. Tapi saya tunggu telepon Bapak siang nanti!",
+     "literal": "baiklah, ke-Anda sedang-percaya-saya. tapi siang telepon-an-Anda-nya sedang-tunggu-saya!"
+    }
+   ],
+   "notes": [
+    "**Vermesini istemiştim** — kalimat benda + *-mişti* dari unit 3: \"saya sudah minta (sebelumnya)\". Nada *-mişti* di sini menegur: permintaannya sudah lama, tapi belum dipenuhi. *Denize bakan oda* = kamar menghadap laut (*-e bakmak* = menghadap, melihat ke).",
+    "**Sanıyorum demek yetmez!** — Sevgi mengutip kata Budi dan menolaknya. *Yetmek* = cukup; *yetmez* = tidak cukup. Klien Turki yang *titiz* (teliti, cerewet) menghargai jawaban pasti: jam, nama, angka.",
+    "**Rehberin Endonezyaca bilmesi şart** — *-mesi* tanpa akusatif, karena ia subjek dari *şart* (syarat, wajib). Pola yang sama: *-mesi lazım, -mesi gerek* (perlu), *-mesi önemli* (penting).",
+    "**Rehberin ben olacağımı söylemiştim** — *-eceğimi* dengan posesif orang pertama: \"bahwa saya yang akan menjadi\". *Söylediğinizi unutmuşum* = \"ternyata saya lupa bahwa Anda sudah bilang\": *-mış* di sini menandai kesadaran yang baru muncul.",
+    "**Helal olmasına dikkat etmenizi rica ediyorum** — dua kalimat benda dengan dua kasus: *dikkat etmek* menuntut datif (*olmasına*), *rica etmek* menuntut akusatif (*etmenizi*). *Rica etmek* adalah cara resmi dan sopan untuk meminta.",
+    "**İçiniz rahat olsun** — harfiah \"semoga bagian dalam Anda tenang\": ungkapan baku untuk menenangkan klien, artinya \"tenang saja, semuanya beres\". Ungkapan perasaan dengan anggota tubuh dibahas di unit 19."
+   ],
+   "grammars": [
+    {
+     "title": "Kata kerja utama menentukan kasus",
+     "body": [
+      "Kalimat benda berperilaku seperti kata benda biasa: ia mengambil kasus yang dituntut kata kerja utamanya."
+     ],
+     "table": {
+      "head": [
+       "Kata kerja utama",
+       "Kasus",
+       "Contoh"
+      ],
+      "rows": [
+       [
+        "*istemek, beklemek, rica etmek*",
+        "akusatif",
+        "*Aramanızı bekliyorum.*"
+       ],
+       [
+        "*bilmek, duymak, unutmak*",
+        "akusatif",
+        "*Söylediğinizi unutmuşum.*"
+       ],
+       [
+        "*sanmak, düşünmek, söylemek*",
+        "akusatif",
+        "*Cevap vereceğini sanıyorum.*"
+       ],
+       [
+        "*dikkat etmek, sevinmek*",
+        "datif",
+        "*Helal olmasına dikkat edin.*"
+       ],
+       [
+        "*söz vermek, inanmak*",
+        "datif",
+        "*Masanızda olacağına söz veriyorum.*"
+       ],
+       [
+        "*şart, lazım, gerek, önemli*",
+        "nominatif",
+        "*Rehberin Endonezyaca bilmesi şart.*"
+       ],
+       [
+        "*-den korkmak, -den emin olmak*",
+        "ablatif",
+        "*Geç kalmasından korkuyorum.*"
+       ]
+      ]
+     },
+     "after": [
+      "Kalau ragu, ganti kalimat bendanya dengan *bunu, buna, bundan*: *Bunu bekliyorum → aramanızı bekliyorum*; *Buna söz veriyorum → olacağına söz veriyorum*."
+     ]
+    }
+   ]
+  }
+ ],
+ "sections": [
+  {
+   "title": "-me atau -dik?",
+   "blocks": [
+    {
+     "type": "p",
+     "text": "Dua bentuk ini sama-sama mengubah kalimat menjadi kata benda, tetapi tugasnya berbeda. *-me* membicarakan tindakan sebagai sesuatu yang diinginkan, diminta, atau dinilai; *-dik* dan *-ecek* membicarakan fakta: sesuatu yang benar terjadi atau akan terjadi."
+    },
+    {
+     "type": "tabel",
+     "head": [
+      "Kata kerja atau ungkapan utama",
+      "Bentuk",
+      "Contoh"
+     ],
+     "rows": [
+      [
+       "ingin, berharap, meminta",
+       "*-me*",
+       "*Raporu bitirmeni istiyorum.*"
+      ],
+      [
+       "wajib, perlu, penting",
+       "*-me*",
+       "*Rehberin Endonezyaca bilmesi şart.*"
+      ],
+      [
+       "menilai (bagus, sayang)",
+       "*-me*",
+       "*Erken gelmen iyi oldu.*"
+      ],
+      [
+       "tahu, dengar, lihat",
+       "*-dik*",
+       "*Kerem'in gelmediğini biliyorum.*"
+      ],
+      [
+       "berkata, menulis",
+       "*-dik / -ecek*",
+       "*Yardım edeceğini söyledi.*"
+      ],
+      [
+       "mengira, berpikir",
+       "*-dik / -ecek*",
+       "*Otelin cevap vereceğini sanıyorum.*"
+      ],
+      [
+       "lupa bahwa …",
+       "*-dik*",
+       "*Söylediğinizi unutmuşum.*"
+      ],
+      [
+       "lupa melakukan …",
+       "*-me*",
+       "*Anketleri eklemeyi unuttum.*"
+      ]
+     ]
+    },
+    {
+     "type": "p",
+     "text": "Dua baris terakhir menunjukkan bedanya dengan jelas: *unutmak* dengan *-dik* berarti lupa sebuah fakta, sedangkan dengan *-me* berarti lupa mengerjakan sesuatu. Hal yang sama berlaku untuk *hatırlamak*: *Geldiğini hatırlıyorum* (aku ingat bahwa dia datang) lawan *Aramayı hatırla!* (ingat untuk menelepon!)."
+    },
+    {
+     "type": "kotak",
+     "title": "Membaca kalimat benda bertumpuk",
+     "items": [
+      "Mulailah dari kata kerja paling belakang: itu kalimat utamanya (*sanıyordum* = aku kira).",
+      "Bergeraklah ke kiri: setiap kata berakhiran *-diğini, -mesini, -eceğini* membuka satu lapis \"bahwa …\".",
+      "Genitif di depan (*Kerem'in, otelin, toplantının*) memberi tahu siapa pelaku di lapis itu.",
+      "Dalam bahasa lisan, lapis kedua sering dipecah dengan *ki* atau kalimat baru; dalam tulisan kantor, tumpukan dua lapis sangat biasa."
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Budaya kantor di Turki",
+   "blocks": [
+    {
+     "type": "p",
+     "text": "Kantor Turki berjalan di atas teh. Hampir setiap kantor punya *çay ocağı*, dapur kecil tempat teh diseduh sepanjang hari, dan sering juga seorang *çaycı* yang mengantar gelas-gelas teh di atas nampan ke setiap meja. Memesan teh cukup dengan *İki çay söyler misin?*"
+    },
+    {
+     "type": "tabel",
+     "head": [
+      "Türkçe",
+      "Cara baca",
+      "Bahasa Indonesia"
+     ],
+     "rows": [
+      [
+       "mesai",
+       "me-sa-I",
+       "jam kerja"
+      ],
+      [
+       "fazla mesai",
+       "faz-LA me-sa-I",
+       "lembur"
+      ],
+      [
+       "öğle arası",
+       "öö-LE a-ra-SI",
+       "istirahat siang"
+      ],
+      [
+       "izin",
+       "i-ZIN",
+       "cuti, izin"
+      ],
+      [
+       "müdür",
+       "mü-DÜR",
+       "manajer, direktur"
+      ],
+      [
+       "çay ocağı",
+       "cay o-ja-I",
+       "dapur teh kantor"
+      ],
+      [
+       "demli / açık",
+       "dem-LI / a-CIK",
+       "(teh) pekat / encer"
+      ],
+      [
+       "teslim tarihi",
+       "tes-LIM ta-ri-HI",
+       "tenggat"
+      ]
+     ]
+    },
+    {
+     "type": "kotak",
+     "title": "Sopan santun kantor",
+     "items": [
+      "Masuk ke ruangan orang yang sedang bekerja, ucapkan *Kolay gelsin* (semoga lancar). Saat pulang, *İyi çalışmalar* kepada yang masih bekerja.",
+      "Atasan dipanggil dengan nama depan + *Bey/Hanım* (*Selim Bey*), bukan nama keluarga. Rekan sebaya boleh dipanggil nama saja.",
+      "Jam kerja umumnya 09.00–18.00 dengan istirahat siang satu jam; di sektor pariwisata, akhir pekan sering tetap bekerja.",
+      "Permintaan kepada atasan dibuat lunak dengan *-ebilir miyim* dan *acaba* (kira-kira): *Cuma günü izin alabilir miyim acaba?*"
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Ulangan berjenjang — unit 2",
+   "blocks": [
+    {
+     "type": "p",
+     "text": "Tutup kolom Turki, baca terjemahan Indonesianya, lalu susun kembali kalimatnya dari ingatan."
+    },
+    {
+     "type": "tabel",
+     "head": [
+      "Bahasa Indonesia",
+      "Türkçe"
+     ],
+     "rows": [
+      [
+       "Nggak percaya! Coba kita berangkat dari hotel sejam lebih awal, pasti keburu.",
+       "*İnanamıyorum! Otelden bir saat erken çıksaydık, yetişirdik.*"
+      ],
+      [
+       "Aku juga nggak tahu. Coba tadi aku cek lalu lintas sebelum berangkat.",
+       "*Ben de bilmiyordum. Keşke yola çıkmadan önce trafiğe baksaydım.*"
+      ],
+      [
+       "Naik bus itu tujuh jam! Kalau aku jadi klien, aku pasti marah besar.",
+       "*Otobüsle yedi saat sürer! Ben müşteri olsam, çok kızardım.*"
+      ],
+      [
+       "Kalau aku jadi kamu, tiap pagi aku bakal bilang ke rombongan jam berangkatnya setengah jam lebih awal.",
+       "*Ben senin yerinde olsam, gruba çıkış saatini her sabah yarım saat erken söylerdim.*"
+      ],
+      [
+       "Kalau kita ngobrol kemarin pagi, kamu nggak bakal dengerin aku. Sekarang kamu dengerin, kan.",
+       "*Dün sabah yapsaydık, sen beni dinlemezdin. Şimdi dinliyorsun işte.*"
+      ]
+     ]
+    }
+   ]
+  }
+ ],
+ "vocab": [
+  {
+   "tr": "teslim etmek",
+   "baca": "tes-LIM et-MEK",
+   "id": "menyerahkan (*teslim tarihi* = tenggat)"
+  },
+  {
+   "tr": "sanmak",
+   "baca": "san-MAK",
+   "id": "mengira (*-eceğini sanmak*)"
+  },
+  {
+   "tr": "duymak",
+   "baca": "duy-MAK",
+   "id": "mendengar (*-diğini duymak*)"
+  },
+  {
+   "tr": "iyi geçmek",
+   "baca": "i-YI gec-MEK",
+   "id": "berjalan baik (acara, rapat)"
+  },
+  {
+   "tr": "henüz",
+   "baca": "HE-nüz",
+   "id": "belum (dalam kalimat negatif); baru saja"
+  },
+  {
+   "tr": "sakınca",
+   "baca": "sa-kın-JA",
+   "id": "keberatan, halangan (*sakıncası yok* = tidak masalah)"
+  },
+  {
+   "tr": "proje",
+   "baca": "pro-ZYE",
+   "id": "proyek"
+  },
+  {
+   "tr": "rakam",
+   "baca": "ra-KAM",
+   "id": "angka"
+  },
+  {
+   "tr": "anket",
+   "baca": "an-KET",
+   "id": "angket, kuesioner"
+  },
+  {
+   "tr": "eklemek",
+   "baca": "ek-le-MEK",
+   "id": "menambahkan, melampirkan"
+  },
+  {
+   "tr": "-e hatırlatmak",
+   "baca": "ha-tır-lat-MAK",
+   "id": "mengingatkan (kausatif dari *hatırlamak*)"
+  },
+  {
+   "tr": "rica etmek",
+   "baca": "ri-JA et-MEK",
+   "id": "meminta dengan sopan (*-mesini rica etmek*)"
+  },
+  {
+   "tr": "-e söz vermek",
+   "baca": "söz ver-MEK",
+   "id": "berjanji"
+  },
+  {
+   "tr": "çaycı",
+   "baca": "cay-JI",
+   "id": "tukang teh (di kantor, pasar)"
+  },
+  {
+   "tr": "onay",
+   "baca": "o-NAY",
+   "id": "konfirmasi, persetujuan"
+  },
+  {
+   "tr": "denize bakan",
+   "baca": "de-ni-ZE ba-KAN",
+   "id": "yang menghadap laut"
+  },
+  {
+   "tr": "-den memnun kalmak",
+   "baca": "mem-NUN kal-MAK",
+   "id": "merasa puas dengan"
+  },
+  {
+   "tr": "kesin",
+   "baca": "ke-SIN",
+   "id": "pasti, tegas (*kesin bilgi* = informasi pasti)"
+  },
+  {
+   "tr": "şart",
+   "baca": "syart",
+   "id": "syarat; wajib (*-mesi şart*)"
+  },
+  {
+   "tr": "istek",
+   "baca": "is-TEK",
+   "id": "permintaan, keinginan (*isteğiniz*)"
+  },
+  {
+   "tr": "-e dikkat etmek",
+   "baca": "dik-KAT et-MEK",
+   "id": "memperhatikan, berhati-hati"
+  },
+  {
+   "tr": "helal",
+   "baca": "he-LAL",
+   "id": "halal"
+  },
+  {
+   "tr": "sertifika",
+   "baca": "ser-ti-fi-KA",
+   "id": "sertifikat"
+  },
+  {
+   "tr": "-e güvenmek",
+   "baca": "gü-ven-MEK",
+   "id": "percaya kepada, mengandalkan"
+  },
+  {
+   "tr": "titiz",
+   "baca": "ti-TIZ",
+   "id": "teliti, cerewet soal detail"
+  }
+ ],
+ "exercises": [
+  {
+   "prompt": "Terjemahkan ke bahasa Turki dengan kalimat benda.",
+   "items": [
+    "Saya mau kamu menyelesaikan laporannya sampai hari Jumat.",
+    "Saya dengar rapatnya berjalan baik.",
+    "Bapak tahu Kerem nggak ikut ke Ankara?",
+    "Saya kira rombongan akan mengirim angketnya lewat surel.",
+    "Saya mau tamu-tamu saya puas.",
+    "Saya tunggu telepon Bapak siang nanti."
+   ]
+  },
+  {
+   "prompt": "Isi titik-titik dengan kalimat benda yang tepat. Petunjuk ada di dalam kurung.",
+   "items": [
+    "Selim Bey raporu cumaya kadar ____ istiyor. (bitirmek, sen)",
+    "Kerem'in de projede ____ istiyorum. (olmak, o)",
+    "Misafirlerin ne ____ yaz. (düşünmek, -dik)",
+    "Otelin bugün cevap ____ sanıyorum. (vermek, -ecek)",
+    "Rehberin Endonezyaca ____ şart. (bilmek, o)",
+    "Yemeklerin helal ____ dikkat edin. (olmak, -me + datif)",
+    "Raporun cuma günü masanızda ____ söz veriyorum. (olmak, -ecek + datif)"
+   ]
+  },
+  {
+   "prompt": "Gabungkan dua kalimat menjadi satu kalimat benda. Contoh: *Toplantı iyi geçti. Bunu duydum.* → *Toplantının iyi geçtiğini duydum.*",
+   "items": [
+    "Kerem Ankara'ya gelmedi. Bunu biliyorum.",
+    "Grup anketleri gönderecek. Bunu sanıyorum.",
+    "Budi rehber olacak. Bunu unuttum.",
+    "Restoranların sertifikası var. Bunu kontrol ettim.",
+    "Raporu bitir. Bunu istiyorum.",
+    "Otel cevap versin. Bunu bekliyoruz."
+   ]
+  },
+  {
+   "prompt": "Susun jadi kalimat yang benar.",
+   "items": [
+    "bitirmeni / cumaya kadar / istiyorum / raporu",
+    "geçtiğini / toplantının / duydum / iyi",
+    "sanıyorum / cevap / otelin / vereceğini / bugün",
+    "olmasını / Kerem'in / istiyorum / projede",
+    "aramanızı / öğlen / bekliyorum"
+   ]
+  }
+ ],
+ "answers": [
+  "Raporu cumaya kadar bitirmeni istiyorum. — Toplantının iyi geçtiğini duydum. — Kerem'in Ankara'ya gelmediğini biliyor musunuz? — Grubun anketleri e-postayla göndereceğini sanıyorum. — Misafirlerimin memnun kalmasını istiyorum. — Öğlen aramanızı bekliyorum.",
+  "bitirmeni — olmasını — düşündüğünü — vereceğini — bilmesi — olmasına — olacağına",
+  "Kerem'in Ankara'ya gelmediğini biliyorum. — Grubun anketleri göndereceğini sanıyorum. — Budi'nin rehber olacağını unuttum. — Restoranların sertifikası olduğunu kontrol ettim. — Raporu bitirmeni istiyorum. — Otelin cevap vermesini bekliyoruz.",
+  "Raporu cumaya kadar bitirmeni istiyorum. — Toplantının iyi geçtiğini duydum. — Otelin bugün cevap vereceğini sanıyorum. — Kerem'in projede olmasını istiyorum. — Öğlen aramanızı bekliyorum."
+ ]
+}

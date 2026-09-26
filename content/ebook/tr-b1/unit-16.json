@@ -1,0 +1,745 @@
+{
+ "title": "Kata dari kata — pembentukan kata",
+ "title_target": "Tecrübesiz ve hevesli adaylara da kapımız açık.",
+ "goal": "Membaca dan membuat kata baru dari kata yang sudah kamu kenal untuk menulis iklan lowongan dan mengobrol di pameran buku: *tecrübeli, tecrübesiz, sorumluluk, meslektaş, şiirsel, defalarca*. Pokoknya delapan imbuhan pembentuk kata: *-lik, -ci, -li, -siz, -ce, -sel, -daş, -ca*.",
+ "bekal": [
+  "memakai pasangan *-li / -siz* untuk \"punya\" dan \"tanpa\": *sabırlı* (sabar), *sabırsız* (tidak sabaran)",
+  "membentuk benda, profesi, dan sifat dengan *-lik, -ci, -sel, -daş*: *sorumluluk, kitapçı, kişisel, meslektaş*",
+  "memakai *-ce/-ca* untuk bahasa, cara, pendapat, dan jumlah besar: *Endonezyaca, sakince, bence, defalarca*"
+ ],
+ "dialogs": [
+  {
+   "title": "Dialog — Yeni iş ilanı",
+   "intro": "Senin, 22 Mei 2028, sehari setelah Budi dan Kerem pulang dari Laut Hitam. Kantor Köprü Turizm di Karaköy. Selim Bey meminta Budi dan Kerem menyusun iklan lowongan untuk posisi baru di tim pasar Indonesia.",
+   "lines": [
+    {
+     "speaker": "Kerem:",
+     "text": "Budi, Selim Bey yeni iş ilanını bugün istiyor. Başlığa ne yazalım?",
+     "id": "Budi, Pak Selim minta iklan lowongan barunya hari ini. Judulnya kita tulis apa?",
+     "literal": "Budi, Selim Pak baru kerja iklan-nya-nya hari-ini sedang-mau. judul-ke apa tulis-mari-kita?"
+    },
+    {
+     "speaker": "Budi:",
+     "text": "“Endonezya Pazarı Operasyon Sorumlusu” yazalım. Sorumluluk kelimesi ciddi duruyor.",
+     "id": "Tulis saja \"Penanggung Jawab Operasional Pasar Indonesia\". Kata tanggung jawab itu kelihatan serius.",
+     "literal": "Indonesia pasar-nya operasi ber-tanggung-jawab-nya tulis-mari-kita. ber-tanggung-jawab-an kata-nya serius sedang-berdiri."
+    },
+    {
+     "speaker": "Kerem:",
+     "text": "Peki adayda ne arıyoruz? Tecrübeli biri mi, yoksa yeni mezun mu?",
+     "id": "Terus, kita cari calon yang seperti apa? Yang berpengalaman, atau lulusan baru?",
+     "literal": "lalu calon-di apa sedang-cari-kita? ber-pengalaman seseorang apakah, atau baru lulusan apakah?"
+    },
+    {
+     "speaker": "Budi:",
+     "text": "İki yıllık tecrübe iyi olur ama tecrübesiz ve hevesli adaylara da kapımız açık.",
+     "id": "Pengalaman dua tahun bagus, tapi calon yang belum berpengalaman dan bersemangat juga kami terima.",
+     "literal": "dua tahun-an pengalaman baik jadi-biasa tapi tanpa-pengalaman dan ber-semangat calon-jamak-ke juga pintu-kami terbuka."
+    },
+    {
+     "speaker": "Kerem:",
+     "text": "Dil konusu önemli. Endonezyaca bilmek şart mı?",
+     "id": "Soal bahasa penting. Wajib bisa bahasa Indonesia nggak?",
+     "literal": "bahasa topik-nya penting. Indonesia-bahasa tahu-mek syarat apakah?"
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Şart değil ama büyük bir artı. Türkçesi ve İngilizcesi ise mutlaka iyi olmalı.",
+     "id": "Nggak wajib, tapi nilai plus besar. Kalau bahasa Turki dan Inggrisnya sih harus bagus.",
+     "literal": "syarat bukan tapi besar satu plus. Turki-bahasa-nya dan Inggris-bahasa-nya adapun pasti baik harus-jadi."
+    },
+    {
+     "speaker": "Kerem:",
+     "text": "Kişisel özellikler kısmına ne yazalım? Ben “sabırlı, güler yüzlü ve düzenli” yazdım.",
+     "id": "Di bagian sifat pribadi kita tulis apa? Aku sudah tulis \"sabar, ramah, dan rapi\".",
+     "literal": "orang-wi sifat-jamak bagian-nya-ke apa tulis-mari-kita? saya \"ber-sabar, tertawa-biasa ber-wajah dan ber-teratur\" tulis-lampau-saya."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Bir de “sorunları sakince çözebilen” ekle. Turizmde kriz hiç bitmez, biliyorsun.",
+     "id": "Tambahkan juga \"bisa menyelesaikan masalah dengan tenang\". Di dunia wisata krisis nggak pernah habis, kamu tahu sendiri.",
+     "literal": "satu juga \"masalah-jamak-nya secara-tenang yang-bisa-selesaikan\" tambahkan. wisata-di krisis sama-sekali tidak-habis-biasa, sedang-tahu-kamu."
+    },
+    {
+     "speaker": "Kerem:",
+     "text": "Biliyorum. Havalimanında pasaportsuz kalan o müşteriyi hâlâ unutmadım.",
+     "id": "Tahu. Aku masih ingat klien yang kelupaan paspor di bandara itu.",
+     "literal": "sedang-tahu-saya. bandara-nya-di tanpa-paspor yang-tinggal itu klien-nya masih tidak-lupa-lampau-saya."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Aman, hatırlatma! O gün bütün yolcular bize kızgındı.",
+     "id": "Aduh, jangan diingatkan! Hari itu semua penumpang marah sama kita.",
+     "literal": "aduh, jangan-ingatkan! itu hari semua penumpang-jamak kami-ke marah-lampau."
+    },
+    {
+     "speaker": "Kerem:",
+     "text": "Maaşı da yazalım mı? Satışçı olarak ben açık rakamları severim.",
+     "id": "Gajinya kita cantumkan juga? Sebagai orang sales, aku suka angka yang jelas.",
+     "literal": "gaji-nya juga tulis-mari-kita apakah? tukang-jual sebagai saya terbuka angka-jamak-nya suka-biasa-saya."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Maaşı Selim Bey'le konuşalım. Şimdilik “yemek kartı ve yıllık izin” yazalım.",
+     "id": "Soal gaji kita bicarakan dengan Pak Selim. Untuk sementara tulis \"kartu makan dan cuti tahunan\".",
+     "literal": "gaji-nya Selim Pak-dengan bicara-mari-kita. sekarang-an \"makan kartu-nya dan tahun-an cuti\" tulis-mari-kita."
+    },
+    {
+     "speaker": "Kerem:",
+     "text": "Bir de “meslektaşlarıyla uyumlu çalışabilen” ekleyelim. Sonuçta Zeynep'le çalışacak.",
+     "id": "Tambahkan juga \"bisa bekerja selaras dengan rekan kerja\". Toh dia bakal kerja bareng Zeynep.",
+     "literal": "satu juga \"sesama-profesi-jamak-nya-dengan ber-selaras yang-bisa-bekerja\" tambah-mari-kita. akhir-nya-di Zeynep-dengan akan-bekerja."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Ha ha, çok doğru! Zeynep'le anlaşabilen herkesle anlaşır.",
+     "id": "Haha, betul banget! Yang bisa akur sama Zeynep pasti akur sama siapa saja.",
+     "literal": "ha ha, sangat benar! Zeynep-dengan yang-bisa-akur semua-orang-dengan akur-biasa."
+    },
+    {
+     "speaker": "Kerem:",
+     "text": "Tamam, ilan hazır. Bence harika oldu. Sence?",
+     "id": "Oke, iklannya siap. Menurutku keren. Menurutmu?",
+     "literal": "oke, iklan siap. saya-menurut hebat jadi-lampau. kamu-menurut?"
+    }
+   ],
+   "notes": [
+    "**Sorumlu, sorumluluk** — imbuhan bisa ditumpuk: *sorum* (tanggungan) + *-lu* = *sorumlu* (yang bertanggung jawab; juga \"penanggung jawab\"), lalu + *-luk* = *sorumluluk* (tanggung jawab). Dalam terjemahan harfiah unit ini, *-li* ditulis **ber-**, *-siz* **tanpa-**, *-lik* **-an**, *-ci* **tukang-**, *-sel/-sal* **-wi** (seperti *duniawi*), *-daş* **sesama-**. Kata turunan yang sudah jadi kata baku (*yolcu, sözlük*) langsung diterjemahkan.",
+    "**Tecrübeli / tecrübesiz** — pasangan paling berguna: *-li* \"punya\", *-siz* \"tanpa\". *Tecrübe* serapan Arab (*tajribah*), sama akarnya dengan \"eksperimen\" dalam bahasa Arab. Iklan lowongan Turki penuh pasangan ini: *deneyimli* (sinonim modern *tecrübeli*), *ehliyetli* (punya SIM), *askerliğini yapmış* (sudah wajib militer).",
+    "**Endonezyaca, Türkçesi ve İngilizcesi** — *-ce/-ca* membuat nama bahasa: *Türkçe, İngilizce, Almanca, Japonca, Endonezyaca*. Setelah konsonan tak bersuara, *c* menjadi *ç* (*Türk-çe*). Dengan akhiran milik, *Türkçesi* = \"bahasa Turkinya\" (milik si calon).",
+    "**Kişisel özellikler** — *-sel/-sal* membuat kata sifat yang terdengar agak ilmiah atau resmi: *kişi → kişisel* (pribadi), *tarih → tarihsel* (historis), *duygu → duygusal* (emosional). Keselarasannya hanya dua arah: *-sel* setelah vokal depan, *-sal* setelah vokal belakang.",
+    "**Sakince, bence, sence** — *-ce* yang sama bisa bermakna \"dengan cara\" (*sakin → sakince*, dengan tenang) dan \"menurut\" (*ben → bence*, menurutku; *siz → sizce*, menurut Anda). *Sence?* di akhir kalimat adalah cara santai meminta pendapat lawan bicara.",
+    "**Yolcu, satışçı, meslektaş** — *-ci* membuat pelaku atau pedagang (*yol → yolcu* penumpang, *satış → satışçı* orang sales, *kitap → kitapçı* toko/penjual buku). *-daş/-taş* membuat \"sesama\": *meslek → meslektaş* (rekan seprofesi), *vatan → vatandaş* (warga negara, sesama tanah air)."
+   ],
+   "grammars": [
+    {
+     "title": "-li dan -siz: punya dan tanpa",
+     "body": [
+      "*-li* (*-lı/-lu/-lü*) berarti \"punya, ber-\", *-siz* (*-sız/-suz/-süz*) berarti \"tanpa\". Keduanya mengikuti keselarasan vokal empat arah dan menempel pada kata benda."
+     ],
+     "table": {
+      "head": [
+       "Kata dasar",
+       "+ -li",
+       "+ -siz",
+       "Arti dasar"
+      ],
+      "rows": [
+       [
+        "*tecrübe*",
+        "*tecrübeli* (berpengalaman)",
+        "*tecrübesiz* (belum berpengalaman)",
+        "pengalaman"
+       ],
+       [
+        "*sabır*",
+        "*sabırlı* (sabar)",
+        "*sabırsız* (tidak sabaran)",
+        "kesabaran"
+       ],
+       [
+        "*heves*",
+        "*hevesli* (bersemangat)",
+        "*hevessiz* (ogah-ogahan)",
+        "semangat"
+       ],
+       [
+        "*uyum*",
+        "*uyumlu* (selaras)",
+        "*uyumsuz* (tak cocok)",
+        "keselarasan"
+       ],
+       [
+        "*şeker*",
+        "*şekerli* (bergula)",
+        "*şekersiz* (tanpa gula)",
+        "gula"
+       ],
+       [
+        "*para*",
+        "*paralı* (berbayar)",
+        "*parasız* (gratis; tak punya uang)",
+        "uang"
+       ],
+       [
+        "*pasaport*",
+        "*pasaportlu*",
+        "*pasaportsuz* (tanpa paspor)",
+        "paspor"
+       ]
+      ]
+     },
+     "after": [
+      "*-li* juga menyatakan asal: *Trabzonlu* (orang Trabzon), *İstanbullu*, *Endonezyalı*.",
+      "⚠️ *-siz* hanya untuk kata benda. \"Tanpa melakukan\" memakai *-meden* dari A2: *kahvaltı yapmadan* (tanpa sarapan)."
+     ]
+    },
+    {
+     "title": "-lik: satu imbuhan, banyak makna",
+     "body": [
+      "*-lik* (*-lık/-luk/-lük*) mengubah kata menjadi benda abstrak, alat, tempat, atau ukuran waktu. *k* di akhirnya melunak menjadi *ğ* sebelum vokal: *kitaplık → kitaplığa*."
+     ],
+     "table": {
+      "head": [
+       "Dasar",
+       "Turunan",
+       "Arti",
+       "Makna -lik"
+      ],
+      "rows": [
+       [
+        "*sorumlu*",
+        "*sorumluluk*",
+        "tanggung jawab",
+        "sifat abstrak"
+       ],
+       [
+        "*arkadaş*",
+        "*arkadaşlık*",
+        "persahabatan",
+        "hubungan"
+       ],
+       [
+        "*göz*",
+        "*gözlük*",
+        "kacamata",
+        "alat untuk…"
+       ],
+       [
+        "*söz*",
+        "*sözlük*",
+        "kamus",
+        "kumpulan"
+       ],
+       [
+        "*kitap*",
+        "*kitaplık*",
+        "rak buku",
+        "tempat, wadah"
+       ],
+       [
+        "*yıl*",
+        "*yıllık*",
+        "tahunan",
+        "ukuran waktu"
+       ],
+       [
+        "*şimdi*",
+        "*şimdilik*",
+        "untuk sementara",
+        "keterangan"
+       ],
+       [
+        "*gazeteci*",
+        "*gazetecilik*",
+        "jurnalisme",
+        "profesi"
+       ]
+      ]
+     },
+     "after": [
+      "Perhatikan urutan pada *gazetecilik*: *gazete* (koran) + *-ci* (orangnya) + *-lik* (profesinya). Kata Turki dibaca dari akar ke kanan, satu lapis demi satu lapis."
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Dialog kedua — Kitap fuarında",
+   "intro": "Sabtu, 27 Mei 2028. Budi menemani Nermin Teyze ke pameran buku di gedung pameran TÜYAP, Büyükçekmece. Nermin Teyze membawa daftar belanja buku sepanjang lengan.",
+   "lines": [
+    {
+     "speaker": "Nermin:",
+     "text": "Budi, bu kalabalıkta sakın kaybolma! Bu fuara her yıl binlerce kitapsever gelir.",
+     "id": "Budi, jangan sampai hilang di keramaian ini ya! Tiap tahun ribuan pencinta buku datang ke pameran ini.",
+     "literal": "Budi, ini keramaian-di awas jangan-hilang! ini pameran-ke setiap tahun ribu-an buku-pencinta datang-biasa."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Kaybolmam, Teyze. Önce sözlüklere bakacağım, iyi bir Türkçe–Endonezyaca sözlük arıyorum.",
+     "id": "Nggak bakal hilang, Tante. Aku mau lihat kamus dulu, lagi cari kamus Turki–Indonesia yang bagus.",
+     "literal": "tidak-hilang-biasa-saya, Tante. dulu kamus-jamak-ke akan-lihat-saya, baik satu Turki-bahasa–Indonesia-bahasa kamus sedang-cari-saya."
+    },
+    {
+     "speaker": "Nermin:",
+     "text": "Sözlükten önce roman oku, evladım! Sabahattin Ali'nin Kürk Mantolu Madonna'sını okudun mu?",
+     "id": "Sebelum kamus, baca novel dulu, Nak! Sudah baca *Kürk Mantolu Madonna*-nya Sabahattin Ali?",
+     "literal": "kamus-dari sebelum novel baca, anak-ku! Sabahattin Ali-punya bulu ber-mantel Madonna-nya-nya baca-lampau-kamu apakah?"
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Okumadım. Adı çok ilginç: kürk mantolu, yani kürk mantosu olan bir kadın mı?",
+     "id": "Belum. Judulnya menarik banget: *kürk mantolu*, maksudnya perempuan yang punya mantel bulu?",
+     "literal": "tidak-baca-lampau-saya. nama-nya sangat menarik: bulu ber-mantel, yaitu bulu mantel-nya yang-ada satu perempuan apakah?"
+    },
+    {
+     "speaker": "Nermin:",
+     "text": "Aynen öyle. Çok duygusal, çok şiirsel bir kitap. Ben gençken defalarca okudum.",
+     "id": "Persis. Bukunya sangat menyentuh dan puitis. Waktu muda aku membacanya berkali-kali.",
+     "literal": "persis begitu. sangat perasaan-wi, sangat syair-wi satu buku. saya muda-ketika kali-jamak-an baca-lampau-saya."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Tamam, alıyorum. Yeğenim için de resimli bir çocuk kitabı lazım.",
+     "id": "Oke, aku beli. Buat keponakanku juga perlu buku anak yang bergambar.",
+     "literal": "oke, sedang-beli-saya. keponakan-ku untuk juga ber-gambar satu anak buku-nya perlu."
+    },
+    {
+     "speaker": "Nermin:",
+     "text": "Şu yayınevinin standında resimli masallar var. Görsel sözlükler de satıyorlar.",
+     "id": "Di stan penerbit itu ada dongeng bergambar. Mereka juga jual kamus bergambar.",
+     "literal": "itu penerbit-punya stan-nya-di ber-gambar dongeng-jamak ada. lihat-wi kamus-jamak juga sedang-jual-mereka."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Bakın, yazarın imza günü var! Kitabı imzalı alırsam daha değerli olur.",
+     "id": "Lihat, ada sesi tanda tangan penulis! Kalau bukunya kubeli bertanda tangan, jadi lebih berharga.",
+     "literal": "lihat-Anda, penulis-punya tanda-tangan hari-nya ada! buku-nya ber-tanda-tangan beli-biasa-kalau-saya lebih ber-nilai jadi-biasa."
+    },
+    {
+     "speaker": "Nermin:",
+     "text": "Ama kuyruk çok uzun. Sabırsız biri için zor iş.",
+     "id": "Tapi antreannya panjang banget. Berat buat orang yang nggak sabaran.",
+     "literal": "tapi antrean sangat panjang. tanpa-sabar seseorang untuk sulit pekerjaan."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Ben artık sabırlı biriyim, Teyze. İstanbul trafiği bana sabır öğretti.",
+     "id": "Aku sekarang sudah jadi orang sabar, Tante. Lalu lintas İstanbul yang mengajariku sabar.",
+     "literal": "saya sekarang ber-sabar seseorang-saya, Tante. İstanbul lalu-lintas-nya saya-ke sabar ajar-lampau."
+    },
+    {
+     "speaker": "Nermin:",
+     "text": "Ha ha! O zaman sen kuyruğa gir, ben de çaycıyı bulayım. Kitapsız ve çaysız fuar olmaz!",
+     "id": "Haha! Kalau begitu kamu antre, aku cari penjual teh. Pameran tanpa buku dan tanpa teh itu nggak afdal!",
+     "literal": "ha ha! itu waktu kamu antrean-ke masuk, saya juga tukang-teh-nya cari-mari-saya. tanpa-buku dan tanpa-teh pameran tidak-jadi-biasa!"
+    }
+   ],
+   "notes": [
+    "**Binlerce kitapsever** — *-ce/-ca* pada bilangan jamak berarti \"ber-…-an\": *yüzlerce* (ratusan), *binlerce* (ribuan), *yıllarca* (bertahun-tahun), *saatlerce* (berjam-jam). *Kitapsever* dibentuk dari *kitap* + *sever* (aorist *sevmek*): \"pencinta buku\"; begitu juga *hayvansever* (pencinta hewan), *sanatsever* (pencinta seni).",
+    "**Kürk Mantolu Madonna** — *-lu* bisa menempel pada frasa utuh: *kürk manto* (mantel bulu) + *-lu* = \"yang bermantel bulu\". Budi menguraikannya dengan tepat: *kürk mantosu olan* (yang punya mantel bulu). Setiap *X-li* bisa dibuka menjadi *X-i olan*.",
+    "**Duygusal, şiirsel** — *duygu* (perasaan) + *-sal*, *şiir* (puisi, Arab *syi'r*) + *-sel*. Kata-kata ini dibuat para ahli bahasa Republik pada abad ke-20 untuk menggantikan kata sifat Arab-Persia lama; sekarang terdengar biasa.",
+    "**Defalarca okudum** — *defa* (kali, Arab *daf'ah*) + *-lar* + *-ca* = berkali-kali. Sinonimnya *birçok kez* atau *pek çok kere*.",
+    "**Resimli, imzalı, değerli** — tiga contoh *-li*: *resim → resimli* (bergambar), *imza → imzalı* (bertanda tangan), *değer → değerli* (berharga). Pembeli buku di Turki suka *imzalı kitap*; antrean *imza günü* (sesi tanda tangan) bisa berjam-jam.",
+    "**Kitapsız ve çaysız fuar olmaz!** — pola *X-siz Y olmaz* = \"Y tanpa X itu tidak mungkin/tidak lengkap\": *Çaysız sabah olmaz* (Pagi tanpa teh bukan pagi). *Çaycı* = orang yang menjual atau menyajikan teh, sosok wajib di setiap kantor dan pameran di Turki."
+   ],
+   "grammars": [
+    {
+     "title": "-ce/-ca: empat tugas",
+     "body": [
+      "Imbuhan *-ce/-ca* (*-çe/-ça* setelah konsonan tak bersuara) tidak mengubah kata menjadi kata sifat, melainkan menjadi keterangan atau nama bahasa. Maknanya ditentukan oleh kata dasarnya."
+     ],
+     "table": {
+      "head": [
+       "Tugas",
+       "Contoh",
+       "Arti"
+      ],
+      "rows": [
+       [
+        "nama bahasa",
+        "*Türkçe, Endonezyaca, İngilizce*",
+        "bahasa Turki, Indonesia, Inggris"
+       ],
+       [
+        "cara",
+        "*sakince, yavaşça, dostça*",
+        "dengan tenang, pelan-pelan, secara bersahabat"
+       ],
+       [
+        "pendapat",
+        "*bence, sence, sizce*",
+        "menurutku, menurutmu, menurut Anda"
+       ],
+       [
+        "jumlah besar",
+        "*binlerce, yıllarca, defalarca*",
+        "ribuan, bertahun-tahun, berkali-kali"
+       ],
+       [
+        "\"seperti, layaknya\"",
+        "*çocukça, insanca*",
+        "kekanak-kanakan, manusiawi"
+       ]
+      ]
+     },
+     "after": [
+      "Pada nama bahasa, *-ce* juga membentuk kata keterangan \"dalam bahasa…\": *Bunu Türkçe söyle* (Katakan ini dalam bahasa Turki)."
+     ]
+    }
+   ]
+  }
+ ],
+ "sections": [
+  {
+   "title": "Delapan imbuhan, delapan tugas",
+   "blocks": [
+    {
+     "type": "p",
+     "text": "Bahasa Turki membuat kata baru dengan menempelkan imbuhan di belakang akar, persis seperti akhiran tata bahasa yang sudah kamu kenal. Bedanya, imbuhan pembentuk kata datang lebih dulu, lebih dekat ke akar, dan akhiran kasus atau milik menyusul di belakangnya: *meslek-taş-lar-ı-yla*."
+    },
+    {
+     "type": "tabel",
+     "head": [
+      "Imbuhan",
+      "Varian",
+      "Tugas",
+      "Contoh"
+     ],
+     "rows": [
+      [
+       "*-lik*",
+       "*-lik, -lık, -luk, -lük*",
+       "benda abstrak, alat, tempat, waktu",
+       "*sorumluluk, sözlük, kitaplık*"
+      ],
+      [
+       "*-ci*",
+       "*-ci, -cı, -cu, -cü, -çi, -çı, -çu, -çü*",
+       "pelaku, penjual, profesi",
+       "*kitapçı, yolcu, işçi*"
+      ],
+      [
+       "*-li*",
+       "*-li, -lı, -lu, -lü*",
+       "punya, ber-, asal",
+       "*resimli, sabırlı, Trabzonlu*"
+      ],
+      [
+       "*-siz*",
+       "*-siz, -sız, -suz, -süz*",
+       "tanpa",
+       "*tecrübesiz, işsiz, sütsüz*"
+      ],
+      [
+       "*-ce/-ca*",
+       "*-ce, -ca, -çe, -ça*",
+       "bahasa, cara, pendapat, jumlah",
+       "*Türkçe, sakince, bence*"
+      ],
+      [
+       "*-sel/-sal*",
+       "*-sel, -sal*",
+       "kata sifat ilmiah/resmi",
+       "*kişisel, tarihsel, toplumsal*"
+      ],
+      [
+       "*-daş/-taş*",
+       "*-daş, -taş* (jarang *-deş*)",
+       "sesama, rekan",
+       "*meslektaş, vatandaş, sırdaş*"
+      ]
+     ]
+    },
+    {
+     "type": "p",
+     "text": "Dua aturan bunyi berlaku di sini seperti di mana-mana: vokal imbuhan mengikuti vokal terakhir akar, dan *c/d* menjadi *ç/t* setelah konsonan tak bersuara (*kitap-çı, meslek-taş*). *k* di akhir kata turunan melunak menjadi *ğ* sebelum vokal: *sorumluluğu, gözlüğüm*."
+    },
+    {
+     "type": "kotak",
+     "title": "Kiat: kupas kata panjang dari belakang",
+     "items": [
+      "*sorumsuzluklarından* = *sorum-suz-luk-lar-ı-n-dan*: \"dari ketidakbertanggungjawaban-mereka\". Buang akhiran kasus dan milik dulu, lalu jamak, baru imbuhan pembentuk kata.",
+      "*gözlükçüler* = *göz-lük-çü-ler*: mata → kacamata → penjual kacamata → para penjual kacamata (toko optik).",
+      "Banyak kata \"modern\" Turki dibuat Lembaga Bahasa Turki (TDK) dengan imbuhan ini: *bilgisayar* (komputer), *öğretmen* (guru), *uygarlık* (peradaban).",
+      "Kalau bertemu kata baru, cari akarnya di kamus. Sering kali artinya bisa ditebak tanpa membuka entri turunannya."
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Satu akar, banyak cabang",
+   "blocks": [
+    {
+     "type": "p",
+     "text": "Cara terbaik menghafal imbuhan adalah melihat satu akar bercabang ke segala arah. Dua keluarga kata berikut sering muncul di kantor dan di jalan."
+    },
+    {
+     "type": "tabel",
+     "head": [
+      "Türkçe",
+      "Cara baca",
+      "Bahasa Indonesia"
+     ],
+     "rows": [
+      [
+       "göz",
+       "göz",
+       "mata"
+      ],
+      [
+       "gözlük",
+       "göz-LÜK",
+       "kacamata"
+      ],
+      [
+       "gözlükçü",
+       "göz-lük-CÜ",
+       "toko optik, penjual kacamata"
+      ],
+      [
+       "gözlüklü",
+       "göz-lük-LÜ",
+       "berkacamata"
+      ],
+      [
+       "iş",
+       "isy",
+       "kerja, pekerjaan"
+      ],
+      [
+       "işçi",
+       "isy-CI",
+       "buruh, pekerja"
+      ],
+      [
+       "işsiz",
+       "isy-SIZ",
+       "penganggur"
+      ],
+      [
+       "işsizlik",
+       "isy-siz-LIK",
+       "pengangguran"
+      ],
+      [
+       "iş yeri",
+       "isy ye-RI",
+       "tempat kerja, kantor"
+      ]
+     ]
+    },
+    {
+     "type": "p",
+     "text": "Perhatikan *işsizlik*: *-siz* membuat kata sifat (tanpa kerja), lalu *-lik* mengubahnya kembali menjadi benda abstrak (keadaan tanpa kerja). Pola *-siz-lik* sangat produktif: *uykusuzluk* (kurang tidur), *sabırsızlık* (ketidaksabaran), *haksızlık* (ketidakadilan)."
+    },
+    {
+     "type": "kotak",
+     "title": "Buku dan pembaca di Turki",
+     "items": [
+      "Pameran buku TÜYAP di Büyükçekmece adalah salah satu yang terbesar di kawasan ini; ratusan penerbit datang, dan *imza günü* dengan penulis favorit selalu penuh.",
+      "*Sahaflar Çarşısı* dekat Beyazıt adalah pasar buku bekas sejak zaman Utsmani. Di sisi Asia, Kadıköy dan Moda penuh toko buku kecil yang merangkap kafe.",
+      "*Kürk Mantolu Madonna* (1943) karya Sabahattin Ali nyaris terlupakan selama puluhan tahun, lalu tiba-tiba menjadi buku terlaris di tahun 2010-an berkat pembaca muda.",
+      "Orang Turki suka menghadiahkan buku dengan tulisan tangan di halaman pertama. Kalau kamu diberi buku, baca dulu halaman itu."
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Ulangan berjenjang — unit 14",
+   "blocks": [
+    {
+     "type": "p",
+     "text": "Tutup kolom Turki, baca terjemahan Indonesianya, lalu susun kembali kalimatnya dari ingatan."
+    },
+    {
+     "type": "tabel",
+     "head": [
+      "Bahasa Indonesia",
+      "Türkçe"
+     ],
+     "rows": [
+      [
+       "Budi, kamu juga datang? Kukira malam inai khusus perempuan.",
+       "*Budi, sen de mi geldin? Kına gecesi kadınlara özel sanıyordum.*"
+      ],
+      [
+       "Katanya kamu pemalu? Lihat, tanganmu sampai dipakaikan inai!",
+       "*Hani sen utangaçtın? Bak, eline kına bile yaktırmışsın!*"
+      ],
+      [
+       "Cantik banget! Kalau Emre lihat, dia bisa hilang akal.",
+       "*Güzel mi güzel! Emre görse aklı başından gider.*"
+      ],
+      [
+       "Ya kamu lah yang dipanggil! Ayo, sana!",
+       "*Seni çağırıyor ya! Hadi, git işte!*"
+      ],
+      [
+       "Horon aku bisa, halay juga bisa. Pesta nikah itu ya memang begini!",
+       "*Horon da oynarım, halay da çekerim. Düğün dediğin işte böyle olur!*"
+      ]
+     ]
+    }
+   ]
+  }
+ ],
+ "vocab": [
+  {
+   "tr": "iş ilanı",
+   "baca": "isy i-la-NI",
+   "id": "iklan lowongan kerja"
+  },
+  {
+   "tr": "sorumlu",
+   "baca": "so-rum-LU",
+   "id": "bertanggung jawab; penanggung jawab (*sorum* + *-lu*)"
+  },
+  {
+   "tr": "sorumluluk",
+   "baca": "so-rum-lu-LUK",
+   "id": "tanggung jawab (*sorumluluğu*)"
+  },
+  {
+   "tr": "aday",
+   "baca": "a-DAY",
+   "id": "calon, kandidat"
+  },
+  {
+   "tr": "tecrübe",
+   "baca": "tej-rü-BE",
+   "id": "pengalaman (Arab *tajribah*); *tecrübeli, tecrübesiz*"
+  },
+  {
+   "tr": "mezun",
+   "baca": "me-ZUN",
+   "id": "lulusan (*-den mezun olmak*: lulus dari)"
+  },
+  {
+   "tr": "hevesli",
+   "baca": "he-ves-LI",
+   "id": "bersemangat (*heves* + *-li*)"
+  },
+  {
+   "tr": "şart",
+   "baca": "syart",
+   "id": "syarat; wajib (*şart değil*: tidak wajib)"
+  },
+  {
+   "tr": "kişisel",
+   "baca": "ki-syi-SEL",
+   "id": "pribadi (*kişi* + *-sel*)"
+  },
+  {
+   "tr": "özellik",
+   "baca": "ö-zel-LIK",
+   "id": "sifat, ciri (*özel* + *-lik*)"
+  },
+  {
+   "tr": "güler yüzlü",
+   "baca": "gü-LER yüz-LÜ",
+   "id": "ramah, murah senyum"
+  },
+  {
+   "tr": "düzenli",
+   "baca": "dü-zen-LI",
+   "id": "rapi, teratur (*düzen* + *-li*)"
+  },
+  {
+   "tr": "sakince",
+   "baca": "sa-kin-JE",
+   "id": "dengan tenang (*sakin* + *-ce*)"
+  },
+  {
+   "tr": "yolcu",
+   "baca": "yol-JU",
+   "id": "penumpang (*yol* + *-cu*)"
+  },
+  {
+   "tr": "satışçı",
+   "baca": "sa-tısy-CI",
+   "id": "orang sales (cakapan; resmi: *satış temsilcisi*)"
+  },
+  {
+   "tr": "yıllık izin",
+   "baca": "yıl-LIK i-ZIN",
+   "id": "cuti tahunan"
+  },
+  {
+   "tr": "meslektaş",
+   "baca": "mes-lek-TASY",
+   "id": "rekan seprofesi (*meslek* + *-taş*)"
+  },
+  {
+   "tr": "uyumlu",
+   "baca": "u-yum-LU",
+   "id": "selaras, cocok (*uyum* + *-lu*)"
+  },
+  {
+   "tr": "kitapsever",
+   "baca": "ki-tap-se-VER",
+   "id": "pencinta buku"
+  },
+  {
+   "tr": "sözlük",
+   "baca": "söz-LÜK",
+   "id": "kamus (*söz* + *-lük*)"
+  },
+  {
+   "tr": "şiirsel",
+   "baca": "syi-ir-SEL",
+   "id": "puitis (*şiir* + *-sel*)"
+  },
+  {
+   "tr": "duygusal",
+   "baca": "duy-gu-SAL",
+   "id": "emosional, menyentuh (*duygu* + *-sal*)"
+  },
+  {
+   "tr": "resimli",
+   "baca": "re-sim-LI",
+   "id": "bergambar (*resim* + *-li*)"
+  },
+  {
+   "tr": "imzalı",
+   "baca": "im-za-LI",
+   "id": "bertanda tangan (*imza* + *-lı*)"
+  },
+  {
+   "tr": "defalarca",
+   "baca": "de-fa-lar-JA",
+   "id": "berkali-kali (*defa* + *-lar* + *-ca*)"
+  }
+ ],
+ "exercises": [
+  {
+   "prompt": "Terjemahkan ke bahasa Turki.",
+   "items": [
+    "Kami mencari calon yang berpengalaman dan sabar.",
+    "Bisa bahasa Indonesia bukan syarat, tapi nilai plus besar.",
+    "Menurutku iklan ini bagus sekali.",
+    "Dia rekan seprofesi saya.",
+    "Saya membeli buku bergambar untuk keponakan saya.",
+    "Pameran tanpa buku dan tanpa teh tidak mungkin."
+   ]
+  },
+  {
+   "prompt": "Isi titik-titik dengan kata turunan yang tepat. Petunjuk ada di dalam kurung.",
+   "items": [
+    "Bu çocuk çok ____, hiç beklemek istemiyor. (sabır + tanpa)",
+    "Kerem ____, yani Trabzon'dan geliyor. (Trabzon + asal)",
+    "Babam otuz yıl ____ yaptı. (gazete + pelaku + profesi)",
+    "Yeni kitapları ____ koydum. (kitap + tempat; datif)",
+    "Nermin Teyze bu romanı ____ okumuş. (defa + jamak + -ca)",
+    "Bu ____ bir roman, Osmanlı döneminde geçiyor. (tarih + -sel)",
+    "Sokakta ____ bir kedi yiyecek arıyordu. (ev + tanpa)"
+   ]
+  },
+  {
+   "prompt": "Ringkas frasa dengan *-li* atau *-siz*. Contoh: *parası olmayan bir öğrenci* → *parasız bir öğrenci*.",
+   "items": [
+    "tecrübesi olan bir rehber",
+    "şekeri olmayan bir çay",
+    "resimleri olan bir kitap",
+    "işi olmayan bir genç",
+    "bahçesi olan bir ev",
+    "sabrı olmayan bir müşteri"
+   ]
+  },
+  {
+   "prompt": "Susun jadi kalimat yang benar.",
+   "items": [
+    "tecrübesiz / adaylara / açık / da / kapımız",
+    "bence / oldu / harika / ilan",
+    "meslektaşlarıyla / arıyoruz / uyumlu / biri / çalışabilen",
+    "Kürk Mantolu Madonna'yı / okudum / gençken / defalarca",
+    "fuar / kitapsız / olmaz / çaysız / ve"
+   ]
+  }
+ ],
+ "answers": [
+  "Tecrübeli ve sabırlı bir aday arıyoruz. — Endonezyaca bilmek şart değil ama büyük bir artı. — Bence bu ilan çok güzel. — O benim meslektaşım. — Yeğenim için resimli bir kitap aldım. — Kitapsız ve çaysız fuar olmaz.",
+  "sabırsız — Trabzonlu — gazetecilik — kitaplığa — defalarca — tarihsel — evsiz",
+  "tecrübeli bir rehber — şekersiz bir çay — resimli bir kitap — işsiz bir genç — bahçeli bir ev — sabırsız bir müşteri",
+  "Tecrübesiz adaylara da kapımız açık. — Bence ilan harika oldu. — Meslektaşlarıyla uyumlu çalışabilen biri arıyoruz. — Gençken Kürk Mantolu Madonna'yı defalarca okudum. — Kitapsız ve çaysız fuar olmaz."
+ ]
+}

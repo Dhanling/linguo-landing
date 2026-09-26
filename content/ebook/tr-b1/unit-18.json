@@ -1,0 +1,706 @@
+{
+ "title": "Mungkin sudah mendarat — dugaan menurut waktu",
+ "title_target": "Belki de çoktan inmiş olabilir.",
+ "goal": "Menebak apa yang sudah, sedang, atau akan terjadi ketika kamu tidak bisa melihatnya sendiri, misalnya saat menunggu rombongan di bandara: *inmiş olabilir, geçiyor olmalılar, çıkacak olmalılar, yerleşmiş olacaklar*. Pokoknya *-miş olabilir*, *-iyor olmalı*, *-ecek olmalı*, dan *-miş olacak*.",
+ "bekal": [
+  "menyatakan dugaan tentang masa lalu dengan *-miş olmalı* (pasti sudah) dan *-miş olabilir* (mungkin sudah)",
+  "menduga yang sedang atau akan terjadi dengan *-iyor olmalı / olabilir* dan *-ecek olmalı*",
+  "membayangkan keadaan yang sudah selesai pada titik waktu mendatang dengan *-miş olacak*: *Öğleye kadar yerleşmiş olacaklar*"
+ ],
+ "dialogs": [
+  {
+   "title": "Dialog — Gecikmeli uçak",
+   "intro": "Rabu, 7 Juni 2028, pukul 09.30. Aula kedatangan Bandara İstanbul. Budi dan Zeynep menunggu rombongan VIP dua belas orang dari sebuah bank di Jakarta.",
+   "lines": [
+    {
+     "speaker": "Zeynep:",
+     "text": "Budi, ekrana bak! Cakarta uçağı hâlâ “rötarlı” görünüyor.",
+     "id": "Budi, lihat layar! Pesawat dari Jakarta masih tertulis \"terlambat\".",
+     "literal": "Budi, layar-ke lihat! Jakarta pesawat-nya masih \"ber-keterlambatan\" sedang-tampak."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Garip. Kalkıştan önce kaptan “zamanında ineceğiz” demiş. Bir sorun olmuş olabilir.",
+     "id": "Aneh. Katanya sebelum berangkat kaptennya bilang \"kita mendarat tepat waktu\". Mungkin ada masalah.",
+     "literal": "aneh. keberangkatan-dari sebelum kapten \"waktu-nya-di akan-mendarat-kita\" berkata-konon. satu masalah jadi-sudah jadi-bisa-biasa."
+    },
+    {
+     "speaker": "Zeynep:",
+     "text": "Belki de çoktan inmiş olabilir. Bu ekranlar hep geç güncellenir.",
+     "id": "Bisa jadi malah sudah mendarat dari tadi. Layar-layar ini selalu telat diperbarui.",
+     "literal": "mungkin juga sudah-lama mendarat-sudah jadi-bisa-biasa. ini layar-jamak selalu telat di-perbarui-biasa."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Uygulamaya bakayım... Evet! On dakika önce inmiş. Ekran yanlışmış.",
+     "id": "Aku cek aplikasinya... Iya! Ternyata sudah mendarat sepuluh menit lalu. Layarnya yang salah.",
+     "literal": "aplikasi-ke lihat-mari-saya... ya! sepuluh menit sebelum mendarat-ternyata. layar salah-ternyata."
+    },
+    {
+     "speaker": "Zeynep:",
+     "text": "Oh be! O zaman şu anda pasaport kontrolünden geçiyor olmalılar.",
+     "id": "Fiuh! Kalau begitu sekarang mereka pasti sedang lewat pemeriksaan paspor.",
+     "literal": "oh ya! itu waktu ini saat-di paspor pemeriksaan-nya-dari sedang-lewat jadi-harus-mereka."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Ama VIP'ler için ayrı bir kapı var. Belki bagajlarını bekliyor olabilirler.",
+     "id": "Tapi untuk VIP ada pintu terpisah. Mungkin mereka lagi nunggu bagasi.",
+     "literal": "tapi VIP-jamak untuk terpisah satu pintu ada. mungkin bagasi-mereka-nya sedang-tunggu jadi-bisa-biasa-mereka."
+    },
+    {
+     "speaker": "Zeynep:",
+     "text": "Olabilir. Kaç kişiydiler? Listeyi sen almıştın, değil mi?",
+     "id": "Bisa jadi. Mereka berapa orang? Daftarnya kamu yang pegang, kan?",
+     "literal": "jadi-bisa-biasa. berapa orang-lampau-mereka? daftar-nya kamu ambil-sudah-lampau-kamu, bukan apakah?"
+    },
+    {
+     "speaker": "Budi:",
+     "text": "On iki kişi. Başkanları Pak Hartono, bankanın genel müdürü. Çok titiz biriymiş.",
+     "id": "Dua belas orang. Ketuanya Pak Hartono, direktur utama banknya. Katanya orangnya teliti banget.",
+     "literal": "dua-belas orang. ketua-mereka Pak Hartono, bank-punya umum direktur-nya. sangat teliti seseorang-konon."
+    },
+    {
+     "speaker": "Selim:",
+     "text": "Budi, neredesiniz? Misafirler inmiş, bana mesaj attılar!",
+     "id": "Budi, kalian di mana? Tamunya sudah mendarat, mereka kirim pesan ke saya!",
+     "literal": "Budi, di-mana-kalian? tamu-jamak mendarat-konon, saya-ke pesan lempar-lampau-mereka!"
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Gelen yolcu salonundayız, Selim Bey. Birazdan çıkacak olmalılar.",
+     "id": "Kami di aula kedatangan, Pak Selim. Sebentar lagi mereka pasti keluar.",
+     "literal": "yang-datang penumpang aula-nya-di-kami, Selim Pak. sebentar-lagi akan-keluar jadi-harus-mereka."
+    },
+    {
+     "speaker": "Selim:",
+     "text": "Tamam. Öğleye kadar otele yerleşmiş olacaklar, değil mi? Saat üçte Topkapı randevusu var.",
+     "id": "Oke. Sampai siang mereka sudah check-in di hotel, kan? Jam tiga ada janji di Topkapı.",
+     "literal": "oke. siang-ke sampai hotel-ke menetap-sudah akan-jadi-mereka, bukan apakah? jam tiga-di Topkapı janji-nya ada."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Merak etmeyin. Üçe kadar herkes yemeğini yemiş ve dinlenmiş olacak.",
+     "id": "Jangan khawatir. Sebelum jam tiga semua orang sudah makan dan istirahat.",
+     "literal": "rasa-ingin-tahu jangan-buat-Anda. tiga-ke sampai semua-orang makanan-nya-nya makan-sudah dan istirahat-sudah akan-jadi."
+    },
+    {
+     "speaker": "Zeynep:",
+     "text": "Bak, kapı açıldı! Takım elbiseli şu bey Pak Hartono olmalı.",
+     "id": "Lihat, pintunya terbuka! Bapak berjas itu pasti Pak Hartono.",
+     "literal": "lihat, pintu di-buka-lampau! setelan ber-pakaian itu tuan Pak Hartono jadi-harus."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Evet, o! Hiç yorgun görünmüyor. Uçakta iyi uyumuş olmalı.",
+     "id": "Iya, itu dia! Sama sekali nggak kelihatan capek. Pasti di pesawat tidurnya nyenyak.",
+     "literal": "ya, dia! sama-sekali capek tidak-sedang-tampak. pesawat-di baik tidur-sudah jadi-harus."
+    },
+    {
+     "speaker": "Zeynep:",
+     "text": "Ya da yorgunluğunu saklıyordur. Hadi, gülümse ve tabelayı kaldır!",
+     "id": "Atau mungkin dia menyembunyikan capeknya. Ayo, senyum dan angkat papan namanya!",
+     "literal": "atau juga kelelahan-nya-nya sedang-sembunyikan-lah. ayo, senyum dan papan-nya angkat!"
+    }
+   ],
+   "notes": [
+    "**Rötarlı görünüyor** — *rötar* (dari bahasa Prancis *retard*) = keterlambatan jadwal; *rötarlı* = terlambat. Ungkapan lain: *Uçak rötar yaptı* (Pesawatnya delay). Di papan bandara kamu akan melihat *Rötarlı, İptal* (dibatalkan), *İndi* (sudah mendarat), *Kapıya gidiniz* (menuju gerbang).",
+    "**Kaptan demiş — bir sorun olmuş olabilir** — bandingkan dua *-miş*. *Demiş* sendirian = kabar dari orang lain (katanya). Dalam *olmuş olabilir*, *-miş* berfungsi sebagai partisip \"sudah\", lalu *olabilir* menambahkan \"mungkin\". Dalam terjemahan harfiah unit ini, *-miş* dalam bentuk majemuk ditulis **-sudah**, *olabilir* **jadi-bisa-biasa**, *olmalı* **jadi-harus**, *olacak* **akan-jadi**.",
+    "**Belki de çoktan inmiş olabilir** — *belki* dan *-ebilir* sama-sama berarti \"mungkin\", dan dalam bahasa Turki keduanya boleh dipakai bersamaan tanpa terdengar berlebihan. *Çoktan* = sudah dari tadi, sudah lama: *Çoktan gitti* (Dia sudah pergi dari tadi).",
+    "**On dakika önce inmiş. Ekran yanlışmış.** — *-miş* ketiga: kejutan atau penemuan (\"ternyata\"). Budi tidak menyaksikan pesawatnya mendarat; ia baru tahu dari aplikasi. Dalam harfiah ditulis **-ternyata**.",
+    "**Geçiyor olmalılar, bekliyor olabilirler, çıkacak olmalılar** — kala utama tetap di kata kerja pertama (*-iyor* sedang, *-ecek* akan), sementara dugaan dan pelaku pindah ke *olmak*: *olmalı-lar, olabilir-ler*. *-ecek olmalı* = \"pasti sebentar lagi\", sering ditemani *birazdan* atau *neredeyse*.",
+    "**Yerleşmiş olacaklar, yemiş ve dinlenmiş olacak** — *-miş olacak* = sudah selesai pada titik waktu mendatang (future perfect): sampai siang, check-in sudah beres. Dua kata kerja boleh berbagi satu *olacak*. Lalu *saklıyordur* di akhir dialog memakai *-dır* dugaan dari unit 1: \"barangkali sedang menyembunyikan\"."
+   ],
+   "grammars": [
+    {
+     "title": "Dugaan menurut waktu",
+     "body": [
+      "Pilih kala kata kerja utama sesuai waktu kejadian, lalu tambahkan *olmalı* (pasti) atau *olabilir* (mungkin). Akhiran pelaku menempel pada *olmak*."
+     ],
+     "table": {
+      "head": [
+       "Waktu kejadian",
+       "Pasti (*olmalı*)",
+       "Mungkin (*olabilir*)",
+       "Arti"
+      ],
+      "rows": [
+       [
+        "sudah terjadi",
+        "*inmiş olmalı*",
+        "*inmiş olabilir*",
+        "pasti / mungkin sudah mendarat"
+       ],
+       [
+        "sedang terjadi",
+        "*geçiyor olmalılar*",
+        "*geçiyor olabilirler*",
+        "pasti / mungkin sedang lewat"
+       ],
+       [
+        "akan terjadi",
+        "*çıkacak olmalılar*",
+        "*çıkabilirler*",
+        "pasti / mungkin sebentar lagi keluar"
+       ],
+       [
+        "keadaan sekarang",
+        "*yorgun olmalı*",
+        "*yorgun olabilir*",
+        "pasti / mungkin capek"
+       ],
+       [
+        "sudah (orang kedua)",
+        "*uyumuş olmalısın*",
+        "*uyumuş olabilirsin*",
+        "kamu pasti / mungkin sudah tidur"
+       ]
+      ]
+     },
+     "after": [
+      "Untuk \"mungkin akan\", bahasa Turki cukup memakai *-ebilir*: *Yağmur yağabilir* (Mungkin akan hujan). Bentuk *-ecek olabilir* jarang dipakai.",
+      "Dugaan dengan *-dır* (unit 1) sedikit lebih lemah dan lebih santai: *yorgundur, saklıyordur, inmiştir*."
+     ]
+    },
+    {
+     "title": "-miş olacak: sudah selesai pada saatnya",
+     "body": [
+      "*-miş olacak* menempatkan diri di titik waktu mendatang dan melihat ke belakang: \"pada saat itu, hal ini sudah selesai\". Penanda waktunya biasanya *-e kadar* atau *-de*."
+     ],
+     "table": {
+      "head": [
+       "Kalimat",
+       "Arti"
+      ],
+      "rows": [
+       [
+        "*Öğleye kadar otele yerleşmiş olacaklar.*",
+        "Sampai siang mereka sudah check-in di hotel."
+       ],
+       [
+        "*Saat beşte travertenlere varmış olacağız.*",
+        "Jam lima kita sudah sampai di travertin."
+       ],
+       [
+        "*Haziran'da bir yılımı doldurmuş olacağım.*",
+        "Bulan Juni aku sudah genap setahun."
+       ],
+       [
+        "*Sen döndüğünde raporu bitirmiş olacağım.*",
+        "Saat kamu kembali, laporannya sudah selesai kutulis."
+       ],
+       [
+        "*Akşama kadar herkes yorulmuş olacak.*",
+        "Sampai malam semua orang sudah capek."
+       ]
+      ]
+     },
+     "after": [
+      "Bandingkan dengan *-iyor olacak* dari unit 3: *Yarın bu saatte yüzüyor olacak* = besok jam segini dia sedang berenang (masih berlangsung)."
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Dialog kedua — Efes'ten Pamukkale'ye",
+   "intro": "Jumat, 9 Juni 2028. Rombongan Pak Hartono terbang ke İzmir untuk tur dua hari. Pagi ini Budi dan Zeynep berdiri di depan Perpustakaan Celsus, Efes, sementara tamu-tamu tersebar di antara reruntuhan.",
+   "lines": [
+    {
+     "speaker": "Zeynep:",
+     "text": "İşte Celsus Kütüphanesi! Burada bir zamanlar on iki bin tomar saklanıyormuş.",
+     "id": "Inilah Perpustakaan Celsus! Konon dulu di sini tersimpan dua belas ribu gulungan naskah.",
+     "literal": "inilah Celsus perpustakaan-nya! sini-di satu waktu-jamak sepuluh dua ribu gulungan di-simpan-sedang-konon."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "İnanılmaz! Eskiden burada çok öğrenci ders çalışmış olmalı.",
+     "id": "Luar biasa! Dulu pasti banyak pelajar belajar di sini.",
+     "literal": "tak-bisa-dipercaya! dulu sini-di banyak pelajar pelajaran belajar-sudah jadi-harus."
+    },
+    {
+     "speaker": "Zeynep:",
+     "text": "Kesinlikle. Şu yazıtı görüyor musun? Kütüphaneyi Celsus'un oğlu yaptırmış.",
+     "id": "Pasti. Lihat prasasti itu? Perpustakaan ini dibangun atas perintah putra Celsus.",
+     "literal": "pasti-an. itu prasasti-nya sedang-lihat-kamu apakah? perpustakaan-nya Celsus-punya putra-nya buat-suruh-konon."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Misafirler nerede? Pak Hartono tiyatroya gitmiş olabilir, onu bir süredir görmedim.",
+     "id": "Tamunya di mana? Pak Hartono mungkin sudah ke teater, sudah agak lama aku nggak lihat dia.",
+     "literal": "tamu-jamak di-mana? Pak Hartono teater-ke pergi-sudah jadi-bisa-biasa, dia-nya satu waktu-lah tidak-lihat-lampau-saya."
+    },
+    {
+     "speaker": "Zeynep:",
+     "text": "Merak etme, Büyük Tiyatro'da fotoğraf çekiyor olmalılar. Rehber Onur da onlarla.",
+     "id": "Tenang, mereka pasti lagi foto-foto di Teater Besar. Onur, pemandu lokalnya, juga bareng mereka.",
+     "literal": "rasa-ingin-tahu jangan-buat, Besar Teater-di foto sedang-ambil jadi-harus-mereka. pemandu Onur juga mereka-dengan."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Öğleden sonra Pamukkale'ye geçiyoruz. Yol üç saat kadar sürer, değil mi?",
+     "id": "Siang nanti kita pindah ke Pamukkale. Perjalanannya sekitar tiga jam, kan?",
+     "literal": "siang-dari sesudah Pamukkale-ke sedang-pindah-kita. jalan tiga jam kira-kira berlangsung-biasa, bukan apakah?"
+    },
+    {
+     "speaker": "Zeynep:",
+     "text": "Aşağı yukarı. Saat beşte travertenlere varmış olacağız.",
+     "id": "Kurang lebih. Jam lima kita sudah sampai di travertin.",
+     "literal": "bawah atas. jam lima-di travertin-jamak-ke sampai-sudah akan-jadi-kita."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Harika. Beyaz travertenler gün batımında pembe görünüyormuş.",
+     "id": "Keren. Katanya travertin putih itu kelihatan merah muda waktu matahari terbenam.",
+     "literal": "hebat. putih travertin-jamak hari terbenam-nya-di merah-muda sedang-tampak-konon."
+    },
+    {
+     "speaker": "Zeynep:",
+     "text": "Doğru. Ama travertenlerde ayakkabıyla yürümek yasak, misafirlere şimdiden söyle.",
+     "id": "Betul. Tapi di travertin dilarang jalan pakai sepatu, bilang ke tamu dari sekarang.",
+     "literal": "benar. tapi travertin-jamak-di sepatu-dengan jalan-mek terlarang, tamu-jamak-ke sekarang-dari katakan."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Söylerim. Pak Hartono yarın sabah Antik Havuz'da yüzüyor olacak, yüzmeye bayılıyormuş.",
+     "id": "Nanti kubilang. Besok pagi Pak Hartono pasti sedang berenang di Kolam Kuno, katanya dia suka banget berenang.",
+     "literal": "katakan-biasa-saya. Pak Hartono besok pagi Kuno Kolam-di sedang-berenang akan-jadi, berenang-ke sedang-tergila-gila-konon."
+    },
+    {
+     "speaker": "Zeynep:",
+     "text": "Bu programla herkes akşama kadar çok yorulmuş olacak. Otelde erken yatarız.",
+     "id": "Dengan jadwal begini, sampai malam semua orang sudah capek banget. Di hotel kita tidur cepat.",
+     "literal": "ini program-dengan semua-orang malam-ke sampai sangat lelah-sudah akan-jadi. hotel-di awal tidur-biasa-kita."
+    }
+   ],
+   "notes": [
+    "**Saklanıyormuş** — *-iyormuş* = \"konon dulu sedang/biasa…\": gaya bercerita pemandu tentang masa lalu yang tidak mereka saksikan. Bandingkan *saklanıyordu* (disimpan, sebagai fakta yang diketahui) dengan *saklanıyormuş* (konon disimpan, menurut sumber).",
+    "**Ders çalışmış olmalı** — *-miş olmalı* juga dipakai untuk kesimpulan logis tentang masa lalu yang jauh: dari bentuk gedungnya, Budi menyimpulkan banyak orang belajar di sana. *Ders çalışmak* = belajar (mengulang pelajaran), beda dengan *öğrenmek* (mempelajari sesuatu yang baru).",
+    "**Celsus'un oğlu yaptırmış** — kausatif (*yap-tır*) + *-miş*: putranya yang menyuruh membangun, para tukang yang bekerja. Perpustakaan ini dibangun sekitar tahun 110–135 M sebagai makam dan monumen untuk ayahnya, gubernur Romawi Celsus.",
+    "**Gitmiş olabilir — bir süredir görmedim** — *-miş olabilir* untuk kemungkinan, lalu alasannya dengan *-dır* durasi dari unit 6: *bir süredir* = sudah beberapa lama. Alasan dan dugaan sering datang berpasangan seperti ini.",
+    "**Fotoğraf çekiyor olmalılar** — Zeynep yakin karena Teater Besar adalah tempat favorit untuk foto: 25 ribu kursi batu menghadap bekas pelabuhan. *Fotoğraf çekmek* = memotret (harfiah \"menarik foto\").",
+    "**Varmış olacağız, yüzüyor olacak** — dua bentuk masa depan majemuk berdampingan: *-miş olacak* (sudah selesai pada saat itu) dan *-iyor olacak* (sedang berlangsung pada saat itu, unit 3). *-e bayılmak* = sangat suka, tergila-gila: *Yüzmeye bayılıyor*."
+   ],
+   "grammars": [
+    {
+     "title": "Tangga keyakinan",
+     "body": [
+      "Dari saksi mata sampai mustahil: bahasa Turki punya satu anak tangga untuk setiap tingkat keyakinan tentang peristiwa yang sudah terjadi."
+     ],
+     "table": {
+      "head": [
+       "Bentuk",
+       "Tingkat keyakinan",
+       "Contoh"
+      ],
+      "rows": [
+       [
+        "*-di*",
+        "melihat sendiri",
+        "*Uçak indi.* (Pesawatnya mendarat, aku lihat.)"
+       ],
+       [
+        "*-miş*",
+        "kabar atau penemuan",
+        "*Uçak inmiş.* (Katanya/ternyata sudah mendarat.)"
+       ],
+       [
+        "*-miş olmalı*",
+        "hampir pasti",
+        "*Uçak inmiş olmalı.* (Pasti sudah mendarat.)"
+       ],
+       [
+        "*-miştir* (dugaan)",
+        "cukup yakin",
+        "*Uçak inmiştir.* (Barangkali sudah mendarat.)"
+       ],
+       [
+        "*-miş olabilir*",
+        "mungkin",
+        "*Uçak inmiş olabilir.* (Mungkin sudah mendarat.)"
+       ],
+       [
+        "*-miş olamaz*",
+        "mustahil",
+        "*Uçak inmiş olamaz.* (Nggak mungkin sudah mendarat.)"
+       ]
+      ]
+     },
+     "after": [
+      "⚠️ *-miştir* bisa berarti dugaan (dalam obrolan) atau kepastian resmi (dalam berita, unit 17). Konteks yang menentukan."
+     ]
+    }
+   ]
+  }
+ ],
+ "sections": [
+  {
+   "title": "Menebak dengan kala",
+   "blocks": [
+    {
+     "type": "p",
+     "text": "Pemandu wisata, koordinator, dan siapa pun yang bekerja dengan jadwal orang lain terus-menerus menebak: pesawat sudah mendarat belum, rombongan sedang di mana, kapan mereka tiba. Tabel berikut merangkum semua bentuk dugaan yang sudah kamu pelajari, dari yang paling sering sampai yang paling jarang."
+    },
+    {
+     "type": "tabel",
+     "head": [
+      "Bentuk",
+      "Contoh",
+      "Arti"
+     ],
+     "rows": [
+      [
+       "*-meli*",
+       "*Yorgun olmalı.*",
+       "Dia pasti capek."
+      ],
+      [
+       "*-dır*",
+       "*Yorgundur.*",
+       "Barangkali dia capek."
+      ],
+      [
+       "*-miş olmalı*",
+       "*Uyumuş olmalı.*",
+       "Dia pasti sudah tidur."
+      ],
+      [
+       "*-miş olabilir*",
+       "*Uyumuş olabilir.*",
+       "Dia mungkin sudah tidur."
+      ],
+      [
+       "*-iyor olmalı*",
+       "*Bekliyor olmalı.*",
+       "Dia pasti sedang menunggu."
+      ],
+      [
+       "*-iyor olabilir*",
+       "*Bekliyor olabilir.*",
+       "Dia mungkin sedang menunggu."
+      ],
+      [
+       "*-ecek olmalı*",
+       "*Birazdan çıkacak olmalı.*",
+       "Dia pasti sebentar lagi keluar."
+      ],
+      [
+       "*-miş olacak*",
+       "*Öğleye kadar varmış olacak.*",
+       "Sampai siang dia sudah tiba."
+      ],
+      [
+       "*-iyor olacak*",
+       "*Yarın bu saatte yüzüyor olacak.*",
+       "Besok jam segini dia sedang berenang."
+      ]
+     ]
+    },
+    {
+     "type": "p",
+     "text": "Susunannya selalu sama: kata kerja utama membawa waktunya, *olmak* membawa sikap (pasti, mungkin, akan) dan pelakunya. Kalau ragu, pecah kalimatnya menjadi dua bagian di depan *ol-*: *geçiyor | olmalılar* = sedang lewat | pasti mereka."
+    },
+    {
+     "type": "kotak",
+     "title": "Kiat: dugaan tanpa tata bahasa",
+     "items": [
+      "*Galiba* dan *herhalde* (barangkali) adalah cara tercepat: *Galiba uçak indi.*",
+      "*Sanırım* (kukira) dan *bence* (menurutku) memberi dugaan pribadi: *Sanırım bagaj bekliyorlar.*",
+      "*Muhtemelen* dan *büyük ihtimalle* (kemungkinan besar) terdengar lebih resmi, cocok untuk laporan ke atasan.",
+      "Orang Turki sering menggabungkan keduanya: *Herhalde yorulmuş olmalı* terdengar wajar, bukan berlebihan."
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Efes dan Pamukkale",
+   "blocks": [
+    {
+     "type": "p",
+     "text": "Efes (Efesus) dan Pamukkale adalah pasangan klasik tur Aegea. Keduanya berada di daftar Warisan Dunia UNESCO dan bisa dikunjungi dalam dua hari dari İzmir: Efes di pagi hari sebelum panas, Pamukkale menjelang matahari terbenam."
+    },
+    {
+     "type": "tabel",
+     "head": [
+      "Türkçe",
+      "Cara baca",
+      "Bahasa Indonesia"
+     ],
+     "rows": [
+      [
+       "antik kent",
+       "an-TIK kent",
+       "kota kuno"
+      ],
+      [
+       "harabe",
+       "ha-ra-BE",
+       "reruntuhan"
+      ],
+      [
+       "sütun",
+       "sü-TUN",
+       "tiang, pilar"
+      ],
+      [
+       "yazıt",
+       "ya-ZIT",
+       "prasasti"
+      ],
+      [
+       "tomar",
+       "to-MAR",
+       "gulungan naskah"
+      ],
+      [
+       "tapınak",
+       "ta-pı-NAK",
+       "kuil"
+      ],
+      [
+       "traverten",
+       "tra-ver-TEN",
+       "travertin, teras kapur"
+      ],
+      [
+       "kaplıca",
+       "kap-lı-JA",
+       "pemandian air panas"
+      ],
+      [
+       "ören yeri",
+       "ö-REN ye-RI",
+       "situs arkeologi"
+      ]
+     ]
+    },
+    {
+     "type": "kotak",
+     "title": "Efes, kota para dewi dan pedagang",
+     "items": [
+      "Efes adalah salah satu kota terbesar Romawi di Asia Kecil. Teater Besarnya menampung sekitar 25 ribu penonton.",
+      "Kuil Artemis di dekatnya pernah masuk Tujuh Keajaiban Dunia Kuno; kini hanya tersisa satu tiang.",
+      "Di bukit dekat Selçuk ada *Meryem Ana Evi*, rumah yang diyakini tempat tinggal terakhir Maria, dikunjungi peziarah Kristen dan Muslim.",
+      "Di Pamukkale, kota kuno Hierapolis berdiri tepat di atas teras travertin; *Antik Havuz* memungkinkan orang berenang di antara pilar Romawi yang runtuh."
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Ulangan berjenjang — unit 16",
+   "blocks": [
+    {
+     "type": "p",
+     "text": "Tutup kolom Turki, baca terjemahan Indonesianya, lalu susun kembali kalimatnya dari ingatan."
+    },
+    {
+     "type": "tabel",
+     "head": [
+      "Bahasa Indonesia",
+      "Türkçe"
+     ],
+     "rows": [
+      [
+       "Pengalaman dua tahun bagus, tapi calon yang belum berpengalaman dan bersemangat juga kami terima.",
+       "*İki yıllık tecrübe iyi olur ama tecrübesiz ve hevesli adaylara da kapımız açık.*"
+      ],
+      [
+       "Di bagian sifat pribadi kita tulis apa? Aku sudah tulis \"sabar, ramah, dan rapi\".",
+       "*Kişisel özellikler kısmına ne yazalım? Ben “sabırlı, güler yüzlü ve düzenli” yazdım.*"
+      ],
+      [
+       "Tambahkan juga \"bisa bekerja selaras dengan rekan kerja\". Toh dia bakal kerja bareng Zeynep.",
+       "*Bir de “meslektaşlarıyla uyumlu çalışabilen” ekleyelim. Sonuçta Zeynep'le çalışacak.*"
+      ],
+      [
+       "Belum. Judulnya menarik banget: *kürk mantolu*, maksudnya perempuan yang punya mantel bulu?",
+       "*Okumadım. Adı çok ilginç: kürk mantolu, yani kürk mantosu olan bir kadın mı?*"
+      ],
+      [
+       "Persis. Bukunya sangat menyentuh dan puitis. Waktu muda aku membacanya berkali-kali.",
+       "*Aynen öyle. Çok duygusal, çok şiirsel bir kitap. Ben gençken defalarca okudum.*"
+      ]
+     ]
+    }
+   ]
+  }
+ ],
+ "vocab": [
+  {
+   "tr": "rötar",
+   "baca": "rö-TAR",
+   "id": "keterlambatan (*rötarlı*: terlambat)"
+  },
+  {
+   "tr": "ekran",
+   "baca": "ek-RAN",
+   "id": "layar"
+  },
+  {
+   "tr": "kalkış",
+   "baca": "kal-KISY",
+   "id": "keberangkatan, lepas landas"
+  },
+  {
+   "tr": "inmek",
+   "baca": "in-MEK",
+   "id": "mendarat; turun (*-e inmek*)"
+  },
+  {
+   "tr": "çoktan",
+   "baca": "cok-TAN",
+   "id": "sudah dari tadi, sejak lama"
+  },
+  {
+   "tr": "güncellemek",
+   "baca": "gün-jel-le-MEK",
+   "id": "memperbarui (pasif *güncellenmek*)"
+  },
+  {
+   "tr": "pasaport kontrolü",
+   "baca": "pa-sa-PORT kon-tro-LÜ",
+   "id": "pemeriksaan paspor"
+  },
+  {
+   "tr": "bagaj",
+   "baca": "ba-GAZY",
+   "id": "bagasi"
+  },
+  {
+   "tr": "gelen yolcu salonu",
+   "baca": "ge-LEN yol-JU sa-lo-NU",
+   "id": "aula kedatangan"
+  },
+  {
+   "tr": "genel müdür",
+   "baca": "ge-NEL mü-DÜR",
+   "id": "direktur utama"
+  },
+  {
+   "tr": "titiz",
+   "baca": "ti-TIZ",
+   "id": "teliti, cerewet soal detail"
+  },
+  {
+   "tr": "yerleşmek",
+   "baca": "yer-lesy-MEK",
+   "id": "menempati, check-in (*-e yerleşmek*)"
+  },
+  {
+   "tr": "takım elbise",
+   "baca": "ta-KIM el-bi-SE",
+   "id": "setelan jas"
+  },
+  {
+   "tr": "tabela",
+   "baca": "ta-be-LA",
+   "id": "papan nama, papan penunjuk"
+  },
+  {
+   "tr": "saklamak",
+   "baca": "sak-la-MAK",
+   "id": "menyembunyikan; menyimpan (pasif *saklanmak*)"
+  },
+  {
+   "tr": "yorgunluk",
+   "baca": "yor-gun-LUK",
+   "id": "kelelahan (*yorgunluğu*)"
+  },
+  {
+   "tr": "kütüphane",
+   "baca": "kü-tüp-ha-NE",
+   "id": "perpustakaan"
+  },
+  {
+   "tr": "yazıt",
+   "baca": "ya-ZIT",
+   "id": "prasasti"
+  },
+  {
+   "tr": "tiyatro",
+   "baca": "ti-yat-RO",
+   "id": "teater"
+  },
+  {
+   "tr": "ders çalışmak",
+   "baca": "ders ca-lısy-MAK",
+   "id": "belajar, mengulang pelajaran"
+  },
+  {
+   "tr": "traverten",
+   "baca": "tra-ver-TEN",
+   "id": "travertin, teras kapur"
+  },
+  {
+   "tr": "gün batımı",
+   "baca": "gün ba-tı-MI",
+   "id": "matahari terbenam"
+  },
+  {
+   "tr": "yasak",
+   "baca": "ya-SAK",
+   "id": "terlarang, dilarang"
+  },
+  {
+   "tr": "-e bayılmak",
+   "baca": "e ba-yıl-MAK",
+   "id": "sangat suka, tergila-gila; pingsan"
+  },
+  {
+   "tr": "herhalde",
+   "baca": "her-HAL-de",
+   "id": "barangkali, mungkin"
+  }
+ ],
+ "exercises": [
+  {
+   "prompt": "Terjemahkan ke bahasa Turki.",
+   "items": [
+    "Pesawatnya mungkin sudah mendarat.",
+    "Mereka pasti sedang menunggu bagasi.",
+    "Sampai malam semua orang sudah capek.",
+    "Dia pasti tidur nyenyak di pesawat.",
+    "Mungkin mereka sedang memotret di teater.",
+    "Jam lima kita sudah sampai di travertin."
+   ]
+  },
+  {
+   "prompt": "Isi titik-titik dengan bentuk yang tepat. Petunjuk ada di dalam kurung.",
+   "items": [
+    "Ekran yanlış; uçak çoktan ____ olabilir. (inmek; -miş)",
+    "Telefonu açmıyor; şu anda araba ____ olmalı. (kullanmak; -iyor)",
+    "Işıklar kapalı; herkes ____ olmalı. (uyumak; -miş)",
+    "Yarın bu saatte İzmir'e ____ olacağız. (varmak; -miş)",
+    "Kapı açıldı; misafirler birazdan ____ olmalı. (çıkmak; -ecek)",
+    "Anahtarımı bulamıyorum, evde ____ olabilirim. (unutmak; -miş)",
+    "Pak Hartono tiyatroya gitmiş ____. (mungkin)"
+   ]
+  },
+  {
+   "prompt": "Ubah kalimat dengan *belki* (mungkin) atau *kesin* (pasti) menjadi bentuk dugaan dengan *olabilir* atau *olmalı*. Contoh: *Belki uçak indi.* → *Uçak inmiş olabilir.*",
+   "items": [
+    "Belki bagajlarını bekliyorlar.",
+    "Kesin çok yoruldun.",
+    "Belki Zeynep yolu kaybetti.",
+    "Kesin şu anda yemek yiyorlar.",
+    "Belki Onur onlarla.",
+    "Kesin misafirler otele yerleşti."
+   ]
+  },
+  {
+   "prompt": "Susun jadi kalimat yang benar.",
+   "items": [
+    "inmiş / çoktan / olabilir / uçak",
+    "geçiyor / pasaport kontrolünden / olmalılar / şu anda",
+    "yerleşmiş / öğleye kadar / olacaklar / otele",
+    "gitmiş / tiyatroya / olabilir / Pak Hartono",
+    "uyumuş / uçakta / olmalı / iyi"
+   ]
+  }
+ ],
+ "answers": [
+  "Uçak inmiş olabilir. — Bagajlarını bekliyor olmalılar. — Akşama kadar herkes yorulmuş olacak. — Uçakta iyi uyumuş olmalı. — Tiyatroda fotoğraf çekiyor olabilirler. — Saat beşte travertenlere varmış olacağız.",
+  "inmiş — kullanıyor — uyumuş — varmış — çıkacak — unutmuş — olabilir",
+  "Bagajlarını bekliyor olabilirler. — Çok yorulmuş olmalısın. — Zeynep yolu kaybetmiş olabilir. — Şu anda yemek yiyor olmalılar. — Onur onlarla olabilir. — Misafirler otele yerleşmiş olmalı.",
+  "Uçak çoktan inmiş olabilir. — Şu anda pasaport kontrolünden geçiyor olmalılar. — Öğleye kadar otele yerleşmiş olacaklar. — Pak Hartono tiyatroya gitmiş olabilir. — Uçakta iyi uyumuş olmalı."
+ ]
+}
