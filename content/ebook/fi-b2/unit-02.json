@@ -1,0 +1,617 @@
+{
+ "title": "Membaca dokumen proyek — frasa partisip panjang",
+ "title_target": "Espoon kouluissa vuonna 2027 aloitettu hanke",
+ "goal": "Mengurai frasa partisip bertingkat yang khas dokumen resmi, seperti *Espoon kouluissa vuonna 2027 aloitettu ja kaupungin rahoittama hanke*, dengan membacanya dari kata benda induk ke kiri, lalu mengubahnya menjadi klausa *joka* yang lebih ringan bila tulisan harus mudah dibaca.",
+ "bekal": [
+  "mengurai frasa partisip bertingkat mulai dari kata benda induknya, lalu bergerak ke kiri",
+  "mengubah frasa partisip menjadi klausa *joka* dan sebaliknya tanpa salah kasus",
+  "membedakan *virkakieli* yang padat, bahasa resmi yang jelas, dan *selkokieli* untuk pembaca yang kesulitan"
+ ],
+ "dialogs": [
+  {
+   "title": "Dialog — Hankesuunnitelman ensimmäinen sivu",
+   "intro": "Rabu, 13 September 2028, ruang rapat kecil di Lämpövirta. Kelompok riset Kaisa mengirim draf rencana program (*hankesuunnitelma*) setebal empat puluh halaman. Budi dan Laura mencoba memahami halaman pertamanya sambil minum kopi.",
+   "lines": [
+    {
+     "speaker": "Laura:",
+     "text": "Neljäkymmentä sivua. Kuka tämän on kirjoittanut?",
+     "id": "Empat puluh halaman. Siapa yang menulis ini?",
+     "literal": "empat-puluh halaman-bagian. siapa ini-sasaran adalah menulis-sudah?"
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Kaisan tutkimusryhmä. Kuuntele ensimmäistä lausetta.",
+     "id": "Kelompok riset Kaisa. Dengarkan kalimat pertamanya.",
+     "literal": "Kaisa-punya kelompok-riset. dengarkanlah pertama-bagian kalimat-bagian."
+    },
+    {
+     "speaker": "Laura:",
+     "text": "Lue vain.",
+     "id": "Bacakan saja.",
+     "literal": "bacalah saja."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "”Ohjelma perustuu Espoon kouluissa vuonna 2027 aloitettuun ja kaupungin rahoittamaan maalämpöhankkeeseen.”",
+     "id": "\"Program ini berlandaskan proyek panas bumi dangkal yang dimulai tahun 2027 di sekolah-sekolah Espoo dan dibiayai oleh kota.\"",
+     "literal": "\"program berdasar-ia Espoo-punya di-sekolah-jamak pada-tahun 2027 ke-yang-di-mulai dan kota-punya ke-yang-dibiayai-oleh ke-proyek-panas-tanah.\""
+    },
+    {
+     "speaker": "Laura:",
+     "text": "Sehän on meidän hankkeemme! Miksi se kuulostaa niin vieraalta?",
+     "id": "Itu kan proyek kita! Kenapa kedengarannya asing sekali?",
+     "literal": "itu-kan adalah kami-punya proyek-kami! kenapa itu terdengar begitu dari-asing?"
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Kaikki on ahdettu yhteen lauseeseen. Luetaan oikealta vasemmalle.",
+     "id": "Semuanya dijejalkan ke satu kalimat. Ayo baca dari kanan ke kiri.",
+     "literal": "semua adalah di-jejalkan-sudah ke-satu ke-kalimat. di-baca dari-kanan ke-kiri."
+    },
+    {
+     "speaker": "Laura:",
+     "text": "Ensin pääsana: maalämpöhanke. Millainen hanke?",
+     "id": "Pertama kata induknya: proyek panas bumi dangkal. Proyek yang bagaimana?",
+     "literal": "pertama kata-utama: proyek-panas-tanah. seperti-apa proyek?"
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Kaupungin rahoittama. Ja sitä ennen: vuonna 2027 aloitettu.",
+     "id": "Yang dibiayai kota. Dan sebelum itu: yang dimulai tahun 2027.",
+     "literal": "kota-punya yang-dibiayai-oleh. dan itu-bagian sebelum: pada-tahun 2027 yang-di-mulai."
+    },
+    {
+     "speaker": "Laura:",
+     "text": "Ja missä se aloitettiin? Espoon kouluissa. Selvä, nyt ymmärrän.",
+     "id": "Dan di mana dimulainya? Di sekolah-sekolah Espoo. Oke, sekarang aku paham.",
+     "literal": "dan di-mana itu di-mulai-lampau? Espoo-punya di-sekolah-jamak. jelas, sekarang memahami-saya."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Seuraava on vielä pidempi: ”Hankkeessa saatuja kokemuksia hyödynnetään Indonesiassa toteutettavissa pilottikohteissa.”",
+     "id": "Yang berikutnya lebih panjang lagi: \"Pengalaman yang diperoleh dalam proyek dimanfaatkan di lokasi-lokasi percontohan yang akan dilaksanakan di Indonesia.\"",
+     "literal": "berikut adalah masih lebih-panjang: \"di-proyek yang-di-peroleh-jamak-bagian pengalaman-jamak-bagian di-manfaatkan di-Indonesia di-yang-akan-di-laksanakan-jamak di-lokasi-percontohan-jamak.\""
+    },
+    {
+     "speaker": "Laura:",
+     "text": "Toteutettavissa? Siis kohteissa, jotka toteutetaan myöhemmin.",
+     "id": "*Toteutettavissa*? Maksudnya di lokasi yang nanti akan dilaksanakan.",
+     "literal": "di-yang-akan-di-laksanakan-jamak? jadi di-lokasi-jamak, yang-jamak di-laksanakan nanti."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Juuri niin. Tava-partisiippi katsoo tulevaisuuteen, ttu-partisiippi menneisyyteen.",
+     "id": "Tepat. Partisip *-tava* memandang ke masa depan, partisip *-ttu* ke masa lalu.",
+     "literal": "tepat begitu. tava-partisip memandang ke-masa-depan, ttu-partisip ke-masa-lalu."
+    },
+    {
+     "speaker": "Laura:",
+     "text": "Suomalainen virkakieli on kuin maatuska: lause lauseen sisällä.",
+     "id": "Bahasa birokrasi Finlandia itu seperti boneka matryoshka: kalimat di dalam kalimat.",
+     "literal": "Finlandia bahasa-birokrasi adalah seperti matryoshka: kalimat kalimat-punya di-dalam."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Kaisa sanoi kirjoittaneensa sen yöllä. Se selittää paljon.",
+     "id": "Kaisa bilang dia menulisnya malam-malam. Itu menjelaskan banyak hal.",
+     "literal": "Kaisa berkata-lampau menulis-sudah-nya itu-sasaran pada-malam. itu menjelaskan banyak."
+    }
+   ],
+   "notes": [
+    "**Neljäkymmentä sivua** — sesudah bilangan berbentuk dasar (kecuali *yksi*) kata benda berbentuk partitif tunggal, betapa pun besar angkanya: *neljäkymmentä sivua, sata opettajaa*. Dalam kasus lain keduanya berkasus sama: *neljässäkymmenessä sivussa*.",
+    "**perustuu … hankkeeseen** — *perustua* meminta ilatif (\"berdasar ke\"). Kasus kata benda induk *menular* ke kata sifat dan partisip di depannya, jadi kedua partisip ikut ilatif: *aloitettuun ja rahoittamaan*. Kalau kamu salah menebak kasus induknya, seluruh frasa akan salah.",
+    "**aloitettu ja rahoittama** — dua partisip berbeda yang disambung *ja*: *aloitettu* partisip pasif (tanpa pelaku), *rahoittama* partisip agen dengan pelaku genitif tepat di depannya (*kaupungin*). Dua-duanya menerangkan kata yang sama.",
+    "**ahdettu** — dari *ahtaa* \"menjejalkan\". Pasif dan partisip pasif memakai batang lemah: *ahdetaan, ahdettu* (t → d), seperti *tietää → tiedetään, tiedetty* dan *ottaa → otetaan, otettu*.",
+    "**Luetaan oikealta vasemmalle** — pasif sebagai ajakan. Ungkapan arah *oikealta vasemmalle* memakai ablatif \"dari\" dan alatif \"ke\".",
+    "**Kaisa sanoi kirjoittaneensa** — konstruksi referatif lampau dari B1 u5: \"Kaisa bilang bahwa ia (sudah) menulis\". Frasa partisip dan referatif berasal dari keluarga yang sama: partisip yang dipakai untuk memadatkan kalimat."
+   ],
+   "grammars": [
+    {
+     "title": "Mengurai dari kanan ke kiri",
+     "body": [
+      "Frasa partisip bahasa Finlandia berkembang ke kiri: kata benda induk selalu di ujung kanan, dan semakin jauh ke kiri, semakin dalam keterangannya. Bahasa Indonesia justru berkembang ke kanan (\"proyek yang dimulai tahun 2027 di sekolah Espoo\"), jadi urutan membacamu harus dibalik."
+     ],
+     "table": {
+      "head": [
+       "Langkah",
+       "Yang dibaca",
+       "Arti"
+      ],
+      "rows": [
+       [
+        "1",
+        "*maalämpöhankkeeseen*",
+        "ke proyek panas bumi dangkal (induk + kasusnya)"
+       ],
+       [
+        "2",
+        "*kaupungin rahoittamaan*",
+        "yang dibiayai kota"
+       ],
+       [
+        "3",
+        "*ja*",
+        "dan"
+       ],
+       [
+        "4",
+        "*vuonna 2027 aloitettuun*",
+        "yang dimulai tahun 2027"
+       ],
+       [
+        "5",
+        "*Espoon kouluissa*",
+        "di sekolah-sekolah Espoo (keterangan tempat untuk *aloitettuun*)"
+       ]
+      ]
+     },
+     "after": [
+      "Aturan praktis: (1) cari kata benda induk, biasanya kata terakhir frasa; (2) cari partisip-partisipnya, yang berkasus sama dengan induk; (3) semua yang ada di kiri sebuah partisip adalah keterangannya: waktu, tempat, objek, atau pelaku. Pelaku partisip *-ma/-mä* selalu genitif tepat di depannya: *kaupungin rahoittama*, *Kaisan kirjoittama*."
+     ]
+    },
+    {
+     "title": "Lima partisip dalam dokumen",
+     "body": [
+      "Semua partisip dari B1 muncul dalam dokumen proyek. Masing-masing bisa diurai menjadi klausa *joka*."
+     ],
+     "table": {
+      "head": [
+       "Partisip",
+       "Waktu",
+       "Contoh",
+       "Klausa *joka*"
+      ],
+      "rows": [
+       [
+        "*-va/-vä*",
+        "bersamaan",
+        "*hankkeeseen osallistuvat koulut*",
+        "*koulut, jotka osallistuvat hankkeeseen*"
+       ],
+       [
+        "*-nut/-nyt*",
+        "sudah (aktif)",
+        "*hankkeessa työskennellyt insinööri*",
+        "*insinööri, joka on työskennellyt hankkeessa*"
+       ],
+       [
+        "*-ttu/-tty*",
+        "sudah (pasif)",
+        "*vuonna 2027 aloitettu hanke*",
+        "*hanke, joka aloitettiin vuonna 2027*"
+       ],
+       [
+        "*-tava/-tävä*",
+        "akan atau harus (pasif)",
+        "*Indonesiassa toteutettavat kohteet*",
+        "*kohteet, jotka toteutetaan Indonesiassa*"
+       ],
+       [
+        "*-ma/-mä*",
+        "pelaku disebut",
+        "*kaupungin rahoittama hanke*",
+        "*hanke, jonka kaupunki rahoittaa*"
+       ]
+      ]
+     },
+     "after": [
+      "⚠️ *Työskennellyt*: partisip *-nut/-nyt* dari kata kerja golongan 3 berakhiran *-lla/-llä* berubah menjadi *-llut/-llyt*: *työskennellä → työskennellyt, opiskella → opiskellut*."
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Dialog kedua — Virkakieltä ja selkokieltä",
+   "intro": "Kamis malam, 14 September 2028. Budi menelepon Aino dan membacakan satu kalimat dari rencana program. Aino, yang setiap hari menyunting teks berita di Tampere, tertawa sebelum kalimatnya selesai.",
+   "lines": [
+    {
+     "speaker": "Budi:",
+     "text": "Kuuntele: ”Ohjelmaan osallistuvien, energia-alalla toimivien oppilaitosten opettajille järjestetään koulutusta.”",
+     "id": "Dengar: \"Bagi guru-guru di lembaga pendidikan yang bergerak di bidang energi dan ikut serta dalam program, diselenggarakan pelatihan.\"",
+     "literal": "dengarlah: \"ke-program yang-ikut-serta-jamak-punya, pada-bidang-energi yang-bergerak-jamak-punya lembaga-pendidikan-jamak-punya kepada-guru-jamak di-selenggarakan pelatihan-bagian.\""
+    },
+    {
+     "speaker": "Aino:",
+     "text": "Apua. Meidän lehdessämme tuo ei menisi läpi.",
+     "id": "Tolong. Di koran kami, kalimat itu tidak akan lolos.",
+     "literal": "tolong. kami-punya di-koran-kami itu tidak-ia pergi-andai tembus."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Miten sinä kirjoittaisit sen?",
+     "id": "Kalau kamu, bagaimana menulisnya?",
+     "literal": "bagaimana kamu menulis-andai-kamu itu-sasaran?"
+    },
+    {
+     "speaker": "Aino:",
+     "text": "Aloita tekijästä ja teosta. Järjestämme koulutusta opettajille.",
+     "id": "Mulai dari pelaku dan tindakannya. \"Kami menyelenggarakan pelatihan untuk guru.\"",
+     "literal": "mulailah dari-pelaku dan dari-tindakan. menyelenggarakan-kami pelatihan-bagian kepada-guru-jamak."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Entä ne osallistuvat oppilaitokset?",
+     "id": "Lalu lembaga-lembaga yang ikut serta itu?",
+     "literal": "lalu itu-jamak yang-ikut-serta-jamak lembaga-pendidikan-jamak?"
+    },
+    {
+     "speaker": "Aino:",
+     "text": "Opettajat tulevat oppilaitoksista, jotka ovat mukana ohjelmassa.",
+     "id": "\"Para guru berasal dari lembaga pendidikan yang ikut dalam program.\"",
+     "literal": "guru-jamak datang-mereka dari-lembaga-pendidikan-jamak, yang-jamak adalah-mereka ikut di-program."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Kaksi lyhyttä lausetta yhden pitkän sijaan. Onko tuo selkokieltä?",
+     "id": "Dua kalimat pendek sebagai ganti satu kalimat panjang. Itu yang namanya *selkokieli*?",
+     "literal": "dua pendek-bagian kalimat-bagian satu-punya panjang-punya sebagai-ganti. adalah-kah itu bahasa-mudah-bagian?"
+    },
+    {
+     "speaker": "Aino:",
+     "text": "Ei vielä. Selkokieli on tarkoitettu lukijoille, joille suomen lukeminen on vaikeaa.",
+     "id": "Belum. *Selkokieli* ditujukan bagi pembaca yang kesulitan membaca bahasa Finlandia.",
+     "literal": "tidak masih. bahasa-mudah adalah di-maksudkan-sudah kepada-pembaca-jamak, kepada-yang-jamak Finlandia-punya pembacaan adalah sulit-bagian."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Eli minä olin selkokielen lukija muutama vuosi sitten.",
+     "id": "Jadi beberapa tahun lalu aku ini pembaca *selkokieli*.",
+     "literal": "jadi saya adalah-lampau-saya bahasa-mudah-punya pembaca beberapa tahun yang-lalu."
+    },
+    {
+     "speaker": "Aino:",
+     "text": "Ja nyt luet hankesuunnitelmia. Se on selvää kehitystä.",
+     "id": "Dan sekarang kamu membaca rencana proyek. Itu jelas kemajuan.",
+     "literal": "dan sekarang membaca-kamu rencana-proyek-jamak-bagian. itu adalah jelas-bagian perkembangan-bagian."
+    }
+   ],
+   "notes": [
+    "**osallistuvien, … toimivien oppilaitosten opettajille** — dua frasa partisip bertumpuk. Induk terdekatnya *oppilaitosten* (genitif jamak), jadi kedua partisip ikut genitif jamak *-vien*. Genitif itu lalu menerangkan *opettajille*: \"kepada guru-guru (milik) lembaga yang…\".",
+    "**Meidän lehdessämme** — dalam ragam baku, *meidän* + kata benda wajib disertai akhiran milik *-mme*. Di lisan orang berkata *meidän lehdessä* atau *meiän lehessä*; dalam tulisan, akhiran itu harus ada.",
+    "**Aloita tekijästä ja teosta** — nasihat klasik penyunting Finlandia: sebut dulu siapa melakukan apa. *Teko* \"perbuatan\" berganti batang menjadi *teon, teosta* (k → hilang).",
+    "**jotka ovat mukana** — *olla mukana* \"ikut serta, terlibat\" adalah cara verbal yang lebih ringan untuk *osallistuva*. Kata ganti *jotka* jamak karena merujuk *oppilaitoksista*.",
+    "**yhden pitkän sijaan** — *jonkin sijaan* \"sebagai ganti sesuatu\" memakai genitif: *kahvin sijaan teetä*.",
+    "**selvää kehitystä** — Aino bermain kata: *selvä* (jelas) terdengar sekeluarga dengan *selko-* (terang, mudah). Kata benda tak terhitung sebagai predikat berbentuk partitif: *Se on kehitystä.*"
+   ],
+   "grammars": [
+    {
+     "title": "Dari frasa partisip ke klausa *joka*",
+     "body": [
+      "Mengubah frasa partisip menjadi klausa *joka* adalah alat utama untuk menulis ulang *virkakieli* menjadi bahasa yang jelas. Yang perlu dijaga adalah kasusnya."
+     ],
+     "table": {
+      "head": [
+       "Frasa partisip",
+       "Klausa *joka*",
+       "Catatan"
+      ],
+      "rows": [
+       [
+        "*ohjelmaan osallistuvat oppilaitokset*",
+        "*oppilaitokset, jotka osallistuvat ohjelmaan*",
+        "*-va* → kala kini"
+       ],
+       [
+        "*ohjelmaan osallistuvien oppilaitosten opettajat*",
+        "*niiden oppilaitosten opettajat, jotka osallistuvat ohjelmaan*",
+        "kasus induk (genitif jamak) pindah ke *niiden*"
+       ],
+       [
+        "*hankkeessa saadut kokemukset*",
+        "*kokemukset, jotka hankkeessa saatiin*",
+        "*-ttu* → pasif lampau"
+       ],
+       [
+        "*Kaisan kirjoittama suunnitelma*",
+        "*suunnitelma, jonka Kaisa kirjoitti*",
+        "*-ma* → pelaku jadi subjek"
+       ],
+       [
+        "*Indonesiassa toteutettavat kohteet*",
+        "*kohteet, jotka toteutetaan Indonesiassa*",
+        "*-tava* → pasif kini atau akan"
+       ]
+      ]
+     },
+     "after": [
+      "⚠️ Dalam frasa partisip, partisip mengikuti kasus kata benda induk (*osallistuvien oppilaitosten*). Dalam klausa *joka*, kata *joka* mengikuti perannya **di dalam klausa**: *jonka Kaisa kirjoitti* (objek total), *joissa opiskellaan* (tempat), *jotka osallistuvat* (subjek)."
+     ]
+    }
+   ]
+  }
+ ],
+ "sections": [
+  {
+   "title": "Latihan mengurai",
+   "blocks": [
+    {
+     "type": "tabel",
+     "head": [
+      "Frasa",
+      "Kata induk",
+      "Arti"
+     ],
+     "rows": [
+      [
+       "*eilen Helsingistä saapunut vieras*",
+       "*vieras*",
+       "tamu yang kemarin tiba dari Helsinki"
+      ],
+      [
+       "*kaikille avoin maksuton luento*",
+       "*luento*",
+       "kuliah gratis yang terbuka untuk semua orang"
+      ],
+      [
+       "*hakemukseen liitettävät asiakirjat*",
+       "*asiakirjat*",
+       "dokumen yang harus dilampirkan pada permohonan"
+      ],
+      [
+       "*opettajien itse suunnittelemat tehtävät*",
+       "*tehtävät*",
+       "tugas yang dirancang sendiri oleh para guru"
+      ],
+      [
+       "*vuonna 2029 päättyvä ja kahteen maahan ulottuva ohjelma*",
+       "*ohjelma*",
+       "program yang berakhir tahun 2029 dan menjangkau dua negara"
+      ],
+      [
+       "*sähkön hinnan noususta huolestuneet asukkaat*",
+       "*asukkaat*",
+       "penduduk yang khawatir akan kenaikan harga listrik"
+      ]
+     ]
+    },
+    {
+     "type": "p",
+     "text": "Cara paling cepat mengurai frasa panjang adalah dengan pensil. Garis bawahi kata benda induk di ujung kanan, lingkari setiap partisip, lalu beri kurung pada keterangan milik setiap partisip. Pada contoh terakhir, *asukkaat* adalah induk, *huolestuneet* partisipnya, dan *sähkön hinnan noususta* keterangannya (khawatir **tentang** kenaikan harga listrik, karena *huolestua* meminta elatif). Frasa semacam ini bisa memuat sepuluh kata atau lebih. Bahasa Indonesia biasanya memecahnya menjadi beberapa \"yang\", dan itu juga cara terbaik untuk menerjemahkannya."
+    },
+    {
+     "type": "kotak",
+     "title": "Tips membaca dokumen resmi",
+     "items": [
+      "Jangan membaca kata demi kata dari kiri. Loncat dulu ke kata benda terakhir sebelum kata kerja utama kalimat.",
+      "Partisip dan induknya selalu berkasus sama. Kalau kasusnya berbeda, kata itu bukan bagian dari frasa yang sama.",
+      "Genitif tepat di depan partisip *-ma/-mä* adalah pelakunya: *kaupungin rahoittama* = yang dibiayai kota.",
+      "*-tava/-tävä* hampir selalu berarti \"yang akan\" atau \"yang harus\" dilakukan: *palautettava lomake* = formulir yang harus dikembalikan."
+     ]
+    }
+   ]
+  },
+  {
+   "title": "*Virkakieli*, bahasa resmi yang jelas, dan *selkokieli*",
+   "blocks": [
+    {
+     "type": "tabel",
+     "head": [
+      "*Virkakieli*",
+      "Bahasa jelas",
+      "Arti"
+     ],
+     "rows": [
+      [
+       "*Hakemuksen käsittely on aloitettu.*",
+       "*Olemme alkaneet käsitellä hakemustasi.*",
+       "Permohonanmu mulai kami proses."
+      ],
+      [
+       "*Asiakkaan tulee toimittaa liitteet.*",
+       "*Lähetä liitteet meille.*",
+       "Kirimkan lampirannya kepada kami."
+      ],
+      [
+       "*Päätöksen tekeminen edellyttää lisäselvitystä.*",
+       "*Tarvitsemme lisätietoja, ennen kuin päätämme.*",
+       "Kami butuh informasi tambahan sebelum memutuskan."
+      ],
+      [
+       "*Maksu suoritetaan eräpäivään mennessä.*",
+       "*Maksa viimeistään eräpäivänä.*",
+       "Bayar paling lambat pada tanggal jatuh tempo."
+      ],
+      [
+       "*Asiasta tiedotetaan erikseen.*",
+       "*Kerromme asiasta myöhemmin.*",
+       "Kami akan mengabarkannya nanti."
+      ]
+     ]
+    },
+    {
+     "type": "p",
+     "text": "*Virkakieli* (bahasa birokrasi) adalah julukan untuk bahasa instansi yang padat: banyak kata benda, pasif, dan frasa partisip. Finlandia sudah lama berusaha melawannya. Pusat Bahasa-Bahasa Nasional (*Kotimaisten kielten keskus*, Kotus) memberi nasihat bahasa resmi yang jelas, dan pada 2014 menerbitkan program aksi *Hyvän virkakielen toimintaohjelma*. Perlu dibedakan dua hal. **Bahasa resmi yang jelas** (*selkeä virkakieli*) ditujukan kepada semua warga: kalimat aktif, sapaan langsung, tanpa istilah yang tak perlu. **Selkokieli** jauh lebih sederhana lagi: kosakata umum, kalimat pendek, dan penjelasan untuk pembaca yang kesulitan membaca, termasuk pelajar bahasa Finlandia. Yle menyiarkan berita harian dalam *selkokieli* dengan nama *Selkouutiset*."
+    },
+    {
+     "type": "kotak",
+     "title": "Tiga ragam, tiga pembaca",
+     "items": [
+      "**Virkakieli**: dokumen proyek, keputusan instansi, peraturan. Kamu harus bisa **membacanya**, tetapi jarang perlu menulisnya.",
+      "**Selkeä virkakieli**: surel resmi, surat kepada warga, laporan untuk umum. Inilah ragam yang sebaiknya kamu **tulis**.",
+      "**Selkokieli**: berita *Selkouutiset*, brosur untuk pendatang baru, buku bacaan mudah. Bagus untuk berlatih membaca cepat.",
+      "Uji sederhana ala Aino: bisakah kalimatmu dibacakan lewat telepon dan dipahami sekali dengar?"
+     ]
+    }
+   ]
+  }
+ ],
+ "vocab": [
+  {
+   "fi": "hankesuunnitelma",
+   "baca": "HAN-ke-suun-ni-tel-ma",
+   "id": "rencana proyek"
+  },
+  {
+   "fi": "hanke",
+   "baca": "HAN-ke",
+   "id": "proyek (gen. *hankkeen*)"
+  },
+  {
+   "fi": "perustua",
+   "baca": "PE-rus-tu-a",
+   "id": "berdasar pada (+ ilatif: *perustua hankkeeseen*)"
+  },
+  {
+   "fi": "rahoittaa",
+   "baca": "RA-hoit-taa",
+   "id": "membiayai (*rahoitan*)"
+  },
+  {
+   "fi": "ahtaa",
+   "baca": "AH-taa",
+   "id": "menjejalkan (*ahdan*; pasif *ahdetaan*)"
+  },
+  {
+   "fi": "pääsana",
+   "baca": "PÈÈ-sa-na",
+   "id": "kata induk, kata utama"
+  },
+  {
+   "fi": "kokemus",
+   "baca": "KO-ke-mus",
+   "id": "pengalaman (gen. *kokemuksen*)"
+  },
+  {
+   "fi": "hyödyntää",
+   "baca": "HÜÖ-dün-tèè",
+   "id": "memanfaatkan (*hyödynnän*)"
+  },
+  {
+   "fi": "toteuttaa",
+   "baca": "TO-teut-taa",
+   "id": "melaksanakan, mewujudkan (*toteutan*)"
+  },
+  {
+   "fi": "pilottikohde",
+   "baca": "PI-lot-ti-koh-de",
+   "id": "lokasi percontohan (gen. *pilottikohteen*)"
+  },
+  {
+   "fi": "tutkimusryhmä",
+   "baca": "TUT-ki-mus-rüh-mè",
+   "id": "kelompok riset"
+  },
+  {
+   "fi": "virkakieli",
+   "baca": "VIR-ka-ki-e-li",
+   "id": "bahasa birokrasi (gen. *virkakielen*)"
+  },
+  {
+   "fi": "selkokieli",
+   "baca": "SEL-ko-ki-e-li",
+   "id": "bahasa mudah untuk pembaca yang kesulitan"
+  },
+  {
+   "fi": "oppilaitos",
+   "baca": "OP-pi-lai-tos",
+   "id": "lembaga pendidikan (gen. *oppilaitoksen*)"
+  },
+  {
+   "fi": "osallistua",
+   "baca": "O-sal-lis-tu-a",
+   "id": "ikut serta (+ ilatif: *osallistua ohjelmaan*)"
+  },
+  {
+   "fi": "toimia",
+   "baca": "TOI-mi-a",
+   "id": "bekerja, bergerak di bidang (*toimia energia-alalla*)"
+  },
+  {
+   "fi": "koulutus",
+   "baca": "KOU-lu-tus",
+   "id": "pelatihan; pendidikan (gen. *koulutuksen*)"
+  },
+  {
+   "fi": "tekijä",
+   "baca": "TE-ki-yè",
+   "id": "pelaku; pembuat"
+  },
+  {
+   "fi": "teko",
+   "baca": "TE-ko",
+   "id": "tindakan, perbuatan (gen. *teon*)"
+  },
+  {
+   "fi": "olla mukana",
+   "baca": "OL-la MU-ka-na",
+   "id": "ikut serta, terlibat"
+  },
+  {
+   "fi": "sijaan",
+   "baca": "SI-yaan",
+   "id": "sebagai ganti (+ genitif: *pitkän sijaan*)"
+  },
+  {
+   "fi": "tarkoittaa",
+   "baca": "TAR-koit-taa",
+   "id": "bermaksud, berarti (*olla tarkoitettu* + alatif = ditujukan bagi)"
+  },
+  {
+   "fi": "lukija",
+   "baca": "LU-ki-ya",
+   "id": "pembaca"
+  },
+  {
+   "fi": "kehitys",
+   "baca": "KE-hi-tüs",
+   "id": "perkembangan, kemajuan (gen. *kehityksen*)"
+  },
+  {
+   "fi": "maatuska",
+   "baca": "MAA-tus-ka",
+   "id": "boneka matryoshka"
+  }
+ ],
+ "exercises": [
+  {
+   "prompt": "Terjemahkan ke bahasa Finlandia. Pakai frasa partisip.",
+   "items": [
+    "proyek yang dimulai tahun 2027",
+    "rencana yang ditulis Kaisa",
+    "sekolah-sekolah yang ikut serta dalam program",
+    "lokasi-lokasi yang akan dilaksanakan di Indonesia",
+    "Program ini berdasar pada proyek yang dibiayai kota.",
+    "Ayo baca dari kanan ke kiri."
+   ]
+  },
+  {
+   "prompt": "Isi dengan bentuk yang tepat. Petunjuk ada di dalam kurung.",
+   "items": [
+    "Ohjelma perustuu vuonna 2027 ____ hankkeeseen. (aloittaa, partisip pasif, ilatif)",
+    "Tämä on kaupungin ____ hanke. (rahoittaa, partisip agen)",
+    "Hankkeessa ____ kokemuksia hyödynnetään. (saada, partisip pasif, partitif jamak)",
+    "Kokemuksia hyödynnetään Indonesiassa ____ kohteissa. (toteuttaa, *-tava*, inesif jamak)",
+    "Ohjelmaan ____ koulut ovat Espoossa. (osallistua, *-va*, jamak)",
+    "Kaikki on ____ yhteen lauseeseen. (ahtaa, partisip pasif)",
+    "Kaisa sanoi ____ sen yöllä. (kirjoittaa, referatif lampau, dia)"
+   ]
+  },
+  {
+   "prompt": "Ubah frasa 1–3 menjadi klausa *joka*, lalu klausa 4–6 menjadi frasa partisip.",
+   "items": [
+    "Kaisan kirjoittama suunnitelma",
+    "hankkeeseen osallistuvat koulut",
+    "eilen saapunut vieras",
+    "hanke, joka aloitettiin vuonna 2027",
+    "asiakirjat, jotka on liitettävä hakemukseen",
+    "hanke, jonka kaupunki rahoittaa"
+   ]
+  },
+  {
+   "prompt": "Susun jadi kalimat yang benar.",
+   "items": [
+    "perustuu / ohjelma / hankkeeseen / aloitettuun / vuonna 2027",
+    "oikealta / luetaan / vasemmalle",
+    "virkakieli / kuin / on / maatuska / suomalainen",
+    "opettajille / järjestämme / koulutusta",
+    "kirjoittama / hyvä / on / Kaisan / suunnitelma"
+   ]
+  }
+ ],
+ "answers": [
+  "vuonna 2027 aloitettu hanke — Kaisan kirjoittama suunnitelma — ohjelmaan osallistuvat koulut — Indonesiassa toteutettavat kohteet — Ohjelma perustuu kaupungin rahoittamaan hankkeeseen. — Luetaan oikealta vasemmalle.",
+  "aloitettuun — rahoittama — saatuja — toteutettavissa — osallistuvat — ahdettu — kirjoittaneensa",
+  "suunnitelma, jonka Kaisa kirjoitti — koulut, jotka osallistuvat hankkeeseen — vieras, joka saapui eilen — vuonna 2027 aloitettu hanke — hakemukseen liitettävät asiakirjat — kaupungin rahoittama hanke",
+  "Ohjelma perustuu vuonna 2027 aloitettuun hankkeeseen. — Luetaan oikealta vasemmalle. — Suomalainen virkakieli on kuin maatuska. — Järjestämme koulutusta opettajille. — Kaisan kirjoittama suunnitelma on hyvä."
+ ]
+}

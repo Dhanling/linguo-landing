@@ -1,0 +1,670 @@
+{
+ "title": "Izin tetap atau kewarganegaraan? — bahasa birokrasi",
+ "title_target": "Hakijan on osoitettava kielitaitonsa",
+ "goal": "Membicarakan izin tinggal tetap, kewarganegaraan dan ujian bahasa YKI, serta memahami formulir resmi. Titik tata bahasanya: kata kerja birokrasi dengan kasusnya (*hakea* + bagian, *liittää* + ke-dalam, *luopua* + dari-dalam) dan *olla* + partisip *-tava* sebagai kewajiban (*hakijan on osoitettava*).",
+ "bekal": [
+  "memakai kata kerja birokrasi dengan kasus yang tepat: *hakea oleskelulupaa*, *täyttää edellytykset*, *liittää hakemukseen*, *ilmoittautua testiin*, *luopua kansalaisuudesta*",
+  "menyatakan kewajiban resmi dengan *olla* + *-tava* (*minun on tarkistettava*, *hakemukseen on liitettävä passi*) dan kebalikannya *ei tarvitse*",
+  "membaca formulir dan petunjuk resmi (*liitettävät asiakirjat, täytä tekstaten, pakollinen kenttä*) serta tahu garis besar syarat YKI dan kewarganegaraan"
+ ],
+ "dialogs": [
+  {
+   "title": "Dialog — Syntymäpäivä ja suuri kysymys",
+   "intro": "Selasa, 13 Maret 2029: Budi berulang tahun ke-31. Di kantin Lämpövirta, Laura membawakan sepotong kue dengan satu lilin. Pagi tadi ibu Budi menelepon dari Jakarta.",
+   "lines": [
+    {
+     "speaker": "Laura:",
+     "text": "Hyvää syntymäpäivää! Kolmekymmentäyksi — alat olla jo vanha mies.",
+     "id": "Selamat ulang tahun! Tiga puluh satu — kamu mulai jadi pria tua.",
+     "literal": "baik-bagian hari-lahir-bagian! tiga-puluh-satu — mulai-kamu ada sudah tua pria."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Kiitos. Äiti soitti aamulla Jakartasta ja kysyi taas, aionko jäädä Suomeen pysyvästi.",
+     "id": "Makasih. Ibu menelepon tadi pagi dari Jakarta dan bertanya lagi apakah aku berniat menetap di Finlandia.",
+     "literal": "terima-kasih. ibu menelepon-lampau pada-pagi dari-Jakarta dan bertanya-lampau lagi, berniat-kah-saya tinggal ke-Finlandia secara-tetap."
+    },
+    {
+     "speaker": "Laura:",
+     "text": "No, aiotko? Voisit hakea Suomen kansalaisuutta.",
+     "id": "Nah, berniat nggak? Kamu bisa mengajukan kewarganegaraan Finlandia.",
+     "literal": "nah, berniat-kah-kamu? bisa-andai-kamu melamar Finlandia-punya kewarganegaraan-bagian."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Kansalaisuutta voi hakea vasta, kun on asunut Suomessa kahdeksan vuotta.",
+     "id": "Kewarganegaraan baru bisa diajukan kalau sudah tinggal di Finlandia delapan tahun.",
+     "literal": "kewarganegaraan-bagian bisa melamar baru, ketika adalah tinggal-sudah di-Finlandia delapan tahun-bagian."
+    },
+    {
+     "speaker": "Laura:",
+     "text": "Kahdeksan? Luulin, että viisi vuotta riittää.",
+     "id": "Delapan? Kukira lima tahun cukup.",
+     "literal": "delapan? mengira-lampau-saya, bahwa lima tahun-bagian cukup."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Ennen riittikin. Laki muuttui lokakuussa 2024, samana vuonna, kun tulin Suomeen.",
+     "id": "Dulu memang cukup. Undang-undangnya berubah Oktober 2024, tahun yang sama waktu aku datang ke Finlandia.",
+     "literal": "dulu cukup-lampau-memang. undang-undang berubah-lampau di-Oktober 2024, sebagai-sama sebagai-tahun, ketika datang-lampau-saya ke-Finlandia."
+    },
+    {
+     "speaker": "Laura:",
+     "text": "Entä pysyvä oleskelulupa? Sen edellytykset saatat täyttää aikaisemmin.",
+     "id": "Kalau izin tinggal tetap? Syaratnya mungkin bisa kamu penuhi lebih cepat.",
+     "literal": "bagaimana tetap izin-tinggal? itu-punya prasyarat-jamak mungkin-kamu memenuhi lebih-awal."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Mahdollisesti. Säännöt ovat kuitenkin muuttuneet monta kertaa, joten minun on tarkistettava ne itse Migrin sivuilta.",
+     "id": "Mungkin. Tapi aturannya sudah berkali-kali berubah, jadi aku harus mengeceknya sendiri di situs Migri.",
+     "literal": "mungkin. aturan-jamak adalah-mereka namun berubah-sudah-jamak banyak kali-bagian, jadi saya-punya adalah yang-harus-dicek itu-jamak sendiri Migri-punya dari-halaman-jamak."
+    },
+    {
+     "speaker": "Laura:",
+     "text": "Entä jos haet joskus kansalaisuutta? Joudutko silloin luopumaan Indonesian kansalaisuudesta?",
+     "id": "Kalau suatu hari kamu mengajukan kewarganegaraan? Apa kamu terpaksa melepaskan kewarganegaraan Indonesia?",
+     "literal": "bagaimana jika melamar-kamu suatu-saat kewarganegaraan-bagian? terpaksa-kah-kamu saat-itu untuk-melepaskan Indonesia-punya dari-kewarganegaraan?"
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Joudun. Suomi sallii kaksoiskansalaisuuden, mutta Indonesia ei salli sitä aikuisille.",
+     "id": "Terpaksa. Finlandia mengizinkan kewarganegaraan ganda, tapi Indonesia tidak mengizinkannya untuk orang dewasa.",
+     "literal": "terpaksa-saya. Finlandia mengizinkan kewarganegaraan-ganda-sasaran, tetapi Indonesia tidak-ia mengizinkan itu-bagian kepada-dewasa-jamak."
+    },
+    {
+     "speaker": "Laura:",
+     "text": "Se on iso päätös. Ei ihme, että äitisi kysyy.",
+     "id": "Itu keputusan besar. Pantas saja ibumu bertanya.",
+     "literal": "itu adalah besar keputusan. tidak heran, bahwa ibu-mu bertanya."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Aloitan kielestä: hakijan on osoitettava kielitaitonsa esimerkiksi YKI-testillä.",
+     "id": "Aku mulai dari bahasa: pemohon wajib membuktikan kemampuan bahasanya, misalnya dengan tes YKI.",
+     "literal": "memulai-saya dari-bahasa: pemohon-punya adalah yang-harus-dibuktikan kemampuan-bahasa-nya misalnya dengan-tes-YKI."
+    },
+    {
+     "speaker": "Laura:",
+     "text": "Sinähän puhut jo paremmin kuin puolet toimistosta!",
+     "id": "Kamu kan sudah bicara lebih bagus daripada separuh kantor!",
+     "literal": "kamu-kan berbicara-kamu sudah lebih-baik daripada separuh-jamak dari-kantor!"
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Puhuminen ei riitä. Myös kirjoittamisen on oltava hyvällä tasolla.",
+     "id": "Bicara saja tidak cukup. Menulis juga harus di tingkat yang baik.",
+     "literal": "berbicara tidak-ia cukup. juga menulis-punya adalah yang-harus-ada pada-baik pada-tingkat."
+    }
+   ],
+   "notes": [
+    "**Hakea kansalaisuutta** — *hakea* \"mengajukan, melamar\" meminta bentuk **bagian**, karena hasilnya belum pasti: *hakea työpaikkaa, oleskelulupaa, apurahaa*. Dengan objek total artinya lain: *haen lapsen päiväkodista* = aku menjemput anak dari penitipan.",
+    "**Laki muuttui lokakuussa 2024** — sejak 1 Oktober 2024 syarat masa tinggal untuk kewarganegaraan Finlandia naik dari lima menjadi delapan tahun. Budi datang untuk kuliah Agustus 2024, jadi syarat itu baru bisa ia penuhi paling cepat 2032 (cara menghitung masa tinggal, misalnya masa studi, punya aturan sendiri). Syarat lain antara lain: identitas jelas, catatan bersih, penghidupan terjamin, dan kemampuan bahasa Finlandia atau Swedia.",
+    "**Minun on tarkistettava** — *olla* + partisip *-tava* adalah *täytyy* versi resmi: \"aku wajib mengecek\". Pelakunya genitif (*minun, hakijan*), kata kerjanya selalu *on*.",
+    "**Joudutko luopumaan** — *joutua* + *-maan* (infinitif III, A2 unit 16) = terpaksa, dan *luopua* meminta dari-dalam: *luopua kansalaisuudesta, passista, tavoitteesta*.",
+    "**Kaksoiskansalaisuus** — Finlandia mengizinkan kewarganegaraan ganda sejak 2003. Indonesia tidak mengizinkannya bagi orang dewasa (UU No. 12/2006); anak hasil perkawinan campur boleh berkewarganegaraan ganda terbatas sampai dewasa, lalu harus memilih."
+   ],
+   "grammars": [
+    {
+     "title": "*Olla* + *-tava*: kewajiban dalam bahasa resmi",
+     "body": [
+      "Di B1 unit 3 kamu mengenal *-tava* sebagai sifat (*täytettävä lomake*, formulir yang harus diisi). Dengan *on* di depannya, ia menjadi predikat \"harus\". Bentuk ini memenuhi surat Migri, Kela, dan kantor pajak."
+     ],
+     "table": {
+      "head": [
+       "Kalimat",
+       "Pelaku",
+       "Arti"
+      ],
+      "rows": [
+       [
+        "*Hakijan on osoitettava kielitaitonsa.*",
+        "genitif",
+        "Pemohon wajib membuktikan kemampuan bahasanya."
+       ],
+       [
+        "*Minun on tarkistettava säännöt.*",
+        "genitif",
+        "Aku harus mengecek aturannya."
+       ],
+       [
+        "*Hakemukseen on liitettävä passi.*",
+        "tanpa pelaku",
+        "Paspor wajib dilampirkan pada permohonan."
+       ],
+       [
+        "*Lomake on palautettava maaliskuun loppuun mennessä.*",
+        "tanpa pelaku",
+        "Formulir harus dikembalikan paling lambat akhir Maret."
+       ],
+       [
+        "*Kirjoittamisen on oltava hyvällä tasolla.*",
+        "genitif + *olla*",
+        "Kemampuan menulis harus pada tingkat yang baik."
+       ],
+       [
+        "*Lomaketta ei tarvitse tulostaa.*",
+        "sangkalan",
+        "Formulirnya tidak perlu dicetak."
+       ]
+      ]
+     },
+     "after": [
+      "Objek total berbentuk dasar, dengan maupun tanpa pelaku (*passi, lomake, säännöt*) — sama seperti sesudah *täytyy*. Untuk sangkalan, bahasa resmi pun lebih suka *ei tarvitse* + bentuk bagian daripada *ei ole …-tava*.",
+      "*Täytyy* dan *on …-tava* sama artinya. Di rapat dan obrolan pakai *täytyy*; dalam surel resmi, petunjuk dan formulir, *on …-tava* terdengar lebih tepat."
+     ]
+    },
+    {
+     "title": "Kata kerja birokrasi dan kasusnya",
+     "body": [
+      "Rektion dari B1 unit 17 kini masuk kantor. Hafalkan bersama kasusnya, karena formulir tidak akan memaafkan kasus yang salah."
+     ],
+     "table": {
+      "head": [
+       "Kata kerja",
+       "Kasus",
+       "Contoh"
+      ],
+      "rows": [
+       [
+        "*hakea*",
+        "bagian",
+        "*hakea oleskelulupaa, kansalaisuutta*"
+       ],
+       [
+        "*täyttää*",
+        "objek total",
+        "*täyttää lomake, täyttää edellytykset*"
+       ],
+       [
+        "*liittää*",
+        "objek + ke-dalam",
+        "*liittää todistus hakemukseen*"
+       ],
+       [
+        "*ilmoittautua*",
+        "ke-dalam",
+        "*ilmoittautua YKI-testiin*"
+       ],
+       [
+        "*osallistua*",
+        "ke-dalam",
+        "*osallistua kokeeseen*"
+       ],
+       [
+        "*luopua*",
+        "dari-dalam",
+        "*luopua kansalaisuudesta*"
+       ],
+       [
+        "*perustua*",
+        "ke-dalam",
+        "*Lupa perustuu työhön.*"
+       ]
+      ]
+     }
+    }
+   ]
+  },
+  {
+   "title": "Dialog kedua — Tandem Oodissa",
+   "intro": "Sabtu, 17 Maret 2029, perpustakaan Oodi di pusat Helsinki. Dua minggu sekali Budi dan Veera bertemu untuk tandem bahasa: separuh waktu bahasa Indonesia, separuh bahasa Finlandia.",
+   "lines": [
+    {
+     "speaker": "Veera:",
+     "text": "Selamat siang, Budi! Sovitaanko taas näin: ensin puoli tuntia indonesiaa, sitten suomea?",
+     "id": "Selamat siang, Budi! Seperti biasa ya: setengah jam bahasa Indonesia dulu, lalu bahasa Finlandia?",
+     "literal": "selamat siang, Budi! di-sepakati-kah lagi begini: pertama setengah jam-bagian Indonesia-bagian, lalu Finlandia-bagian?"
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Käy. Mutta tarvitsen ensin apuasi: ilmoittautuminen YKI-testiin alkaa maanantaina kello yhdeksän.",
+     "id": "Oke. Tapi aku butuh bantuanmu dulu: pendaftaran tes YKI dibuka Senin jam sembilan.",
+     "literal": "jalan. tetapi butuh-saya pertama bantuan-bagian-mu: pendaftaran ke-tes-YKI mulai sebagai-Senin jam sembilan."
+    },
+    {
+     "speaker": "Veera:",
+     "text": "Paikat loppuvat usein muutamassa minuutissa. Onko sinulla kaikki tiedot valmiina?",
+     "id": "Kursinya sering habis dalam beberapa menit. Semua datamu sudah siap?",
+     "literal": "tempat-jamak habis-mereka sering di-beberapa di-menit. ada-kah pada-kamu semua data-jamak sebagai-siap?"
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Luulen niin. Lomakkeeseen on merkittävä henkilötunnus, osoite ja testin taso.",
+     "id": "Kurasa sudah. Di formulir harus dicantumkan nomor identitas, alamat dan tingkat tesnya.",
+     "literal": "mengira-saya begitu. ke-formulir adalah yang-harus-dicantumkan nomor-identitas, alamat dan tes-punya tingkat."
+    },
+    {
+     "speaker": "Veera:",
+     "text": "Minkä tason valitset? Keskitason testistä voi saada tason kolme tai neljä.",
+     "id": "Tingkat mana yang kamu pilih? Dari tes tingkat menengah kamu bisa dapat level tiga atau empat.",
+     "literal": "apa-sasaran tingkat-sasaran memilih-kamu? tingkat-menengah-punya dari-tes bisa mendapat tingkat-sasaran tiga atau empat."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Kansalaisuutta varten riittää taso kolme, mutta tavoittelen nelosta.",
+     "id": "Untuk kewarganegaraan cukup level tiga, tapi aku mengincar level empat.",
+     "literal": "kewarganegaraan-bagian untuk cukup tingkat tiga, tetapi mengincar-saya angka-empat-bagian."
+    },
+    {
+     "speaker": "Veera:",
+     "text": "Harjoitellaan sitten puhumista. Kuvittele, että olet testissä, ja kerro kotikaupungistasi.",
+     "id": "Kalau begitu kita latihan bicara. Bayangkan kamu sedang ujian, lalu ceritakan tentang kota asalmu.",
+     "literal": "di-latih lalu berbicara-bagian. bayangkanlah, bahwa adalah-kamu di-tes, dan ceritakanlah dari-kota-asal-mu."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Jakarta on valtava kaupunki, jossa asuu yli kymmenen miljoonaa ihmistä. Liikenne on siellä aivan toista kuin Espoossa.",
+     "id": "Jakarta adalah kota raksasa yang dihuni lebih dari sepuluh juta orang. Lalu lintasnya sama sekali lain daripada di Espoo.",
+     "literal": "Jakarta adalah raksasa kota, yang-di-dalam tinggal lebih sepuluh juta-bagian orang-bagian. lalu-lintas adalah di-sana sungguh lain-bagian daripada di-Espoo."
+    },
+    {
+     "speaker": "Veera:",
+     "text": "Hyvä! Muista, että testissä vastaukset nauhoitetaan, joten puhu rauhallisesti ja selkeästi.",
+     "id": "Bagus! Ingat, di tes jawabanmu direkam, jadi bicaralah dengan tenang dan jelas.",
+     "literal": "baik! ingatlah, bahwa di-tes jawaban-jamak di-rekam, jadi bicaralah dengan-tenang dan dengan-jelas."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Kiitos, opettaja. Ja nyt sinun vuorosi: kerro indonesiaksi, mitä teit eilen.",
+     "id": "Terima kasih, Bu Guru. Sekarang giliranmu: ceritakan dalam bahasa Indonesia apa yang kamu lakukan kemarin.",
+     "literal": "terima-kasih, guru. dan sekarang kamu-punya giliran-mu: ceritakanlah menjadi-bahasa-Indonesia, apa membuat-lampau-kamu kemarin."
+    },
+    {
+     "speaker": "Veera:",
+     "text": "Kemarin saya… Onneksi indonesiassa verbejä ei tarvitse taivuttaa menneeseen aikaan!",
+     "id": "Kemarin saya… Untung dalam bahasa Indonesia kata kerja tidak perlu diubah ke bentuk lampau!",
+     "literal": "kemarin saya… untungnya di-bahasa-Indonesia kata-kerja-jamak-bagian tidak perlu mengubah ke-lampau ke-waktu!"
+    }
+   ],
+   "notes": [
+    "**Ilmoittautuminen YKI-testiin** — *ilmoittautua* (mendaftar) meminta ke-dalam, begitu pula kata bendanya: *ilmoittautuminen kurssille, testiin*. Kursi tes YKI terbatas dan sering habis dalam hitungan menit sejak pendaftaran dibuka; siapkan data dan alat pembayaran sebelumnya.",
+    "**Lomakkeeseen on merkittävä** — *merkitä* (mencantumkan, menandai) + ke-dalam. Sebelumnya Veera memakai *valmiina* (esif, A2 unit 12): \"dalam keadaan siap\".",
+    "**Tavoittelen nelosta** — angka bisa menjadi kata benda: *ykkönen, kakkonen, kolmonen, nelonen* (nilai satu, dua, tiga, empat; juga nomor bus atau trem). *Tavoitella* (mengincar) meminta bentuk bagian, karena hasilnya belum tercapai.",
+    "**Kerro kotikaupungistasi** — *kertoa* + dari-dalam = bercerita tentang. \"Ceritakan tentang…\" adalah tugas klasik bagian lisan YKI; bagian itu memang direkam (*nauhoitetaan*) lalu dinilai belakangan.",
+    "**Verbejä ei tarvitse taivuttaa** — lelucon Veera ada benarnya: kata kerja bahasa Indonesia tidak berubah menurut waktu atau orang. Bagi orang Finlandia itu terasa seperti liburan; bagi Budi, 15 kasus terasa sebaliknya."
+   ],
+   "grammars": [
+    {
+     "title": "*-tava* di formulir: \"yang harus…\"",
+     "body": [
+      "Sebagai sifat, *-tava* menempel pada kata benda dan ikut berkasus. Di formulir ia sering berdiri sendiri sebagai judul kolom atau petunjuk singkat."
+     ],
+     "table": {
+      "head": [
+       "Di formulir",
+       "Arti"
+      ],
+      "rows": [
+       [
+        "*liitettävät asiakirjat*",
+        "dokumen yang harus dilampirkan"
+       ],
+       [
+        "*maksettava käsittelymaksu*",
+        "biaya pemrosesan yang harus dibayar"
+       ],
+       [
+        "*täytettävä kohta*",
+        "bagian yang harus diisi"
+       ],
+       [
+        "*palautettava viimeistään 31.3.*",
+        "harus dikembalikan paling lambat 31.3."
+       ],
+       [
+        "*huomioitavaa*",
+        "hal yang perlu diperhatikan"
+       ],
+       [
+        "*ei tarvitse täyttää*",
+        "tidak perlu diisi"
+       ]
+      ]
+     },
+     "after": [
+      "*Huomioitavaa* adalah bentuk bagian dari *huomioitava* yang dipakai sebagai kata benda: \"sesuatu yang perlu diperhatikan\". Pola yang sama: *Onko kysyttävää?* (ada yang ingin ditanyakan?), *Ei mitään tullattavaa* (tak ada yang perlu dilaporkan ke bea cukai)."
+     ]
+    }
+   ]
+  }
+ ],
+ "sections": [
+  {
+   "title": "YKI-tutkinto: ujian bahasa resmi",
+   "blocks": [
+    {
+     "type": "tabel",
+     "head": [
+      "Tingkat ujian",
+      "Nilai",
+      "Kira-kira",
+      "Dipakai untuk"
+     ],
+     "rows": [
+      [
+       "*perustaso*",
+       "1–2",
+       "A1–A2",
+       "urusan sehari-hari yang sederhana"
+      ],
+      [
+       "*keskitaso*",
+       "3–4",
+       "B1–B2",
+       "kerja, studi; nilai 3 memenuhi syarat kewarganegaraan"
+      ],
+      [
+       "*ylin taso*",
+       "5–6",
+       "C1–C2",
+       "pekerjaan yang menuntut bahasa tingkat tinggi"
+      ]
+     ]
+    },
+    {
+     "type": "p",
+     "text": "*Yleiset kielitutkinnot* (YKI) adalah ujian bahasa resmi negara yang diatur oleh Badan Pendidikan Nasional (*Opetushallitus*) dan diselenggarakan di pusat-pusat ujian di berbagai kota. Setiap tingkat terdiri atas empat bagian: memahami teks (*tekstin ymmärtäminen*), menulis (*kirjoittaminen*), memahami ujaran (*puheen ymmärtäminen*) dan berbicara (*puhuminen*); tiap bagian dinilai tersendiri. Untuk kewarganegaraan, kemampuan bahasa Finlandia atau Swedia minimal tingkat 3 harus dibuktikan dalam kombinasi keterampilan lisan dan tulis tertentu. Kamu yang sudah sampai B2 di buku ini sedang membidik *keskitaso* dengan nilai 4."
+    },
+    {
+     "type": "kotak",
+     "title": "Syarat kewarganegaraan Finlandia — garis besar",
+     "items": [
+      "**Masa tinggal**: delapan tahun (sejak 1 Oktober 2024; sebelumnya lima).",
+      "**Bahasa**: Finlandia atau Swedia, minimal tingkat 3, misalnya dengan sertifikat YKI.",
+      "**Lain-lain**: identitas jelas, catatan bersih (*nuhteettomuus*), penghidupan terjamin (*toimeentulo*).",
+      "**Cara**: permohonan daring lewat *Enter Finland*, lalu identitas dibuktikan di kantor layanan Migri.",
+      "⚠️ Aturan izin tinggal dan kewarganegaraan beberapa kali berubah. Angka pasti selalu cek di *migri.fi* sebelum mengajukan."
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Membaca formulir resmi",
+   "blocks": [
+    {
+     "type": "tabel",
+     "head": [
+      "Suomi",
+      "Cara baca",
+      "Bahasa Indonesia"
+     ],
+     "rows": [
+      [
+       "hakija",
+       "HA-ki-ya",
+       "pemohon"
+      ],
+      [
+       "hakemus",
+       "HA-ke-mus",
+       "permohonan"
+      ],
+      [
+       "liite",
+       "LII-te",
+       "lampiran"
+      ],
+      [
+       "henkilötunnus",
+       "HEN-ki-lö-tun-nus",
+       "nomor identitas pribadi"
+      ],
+      [
+       "syntymäaika",
+       "SÜN-tü-mè-ai-ka",
+       "tanggal lahir"
+      ],
+      [
+       "pakollinen kenttä",
+       "PA-kol-li-nen KENT-tè",
+       "kolom wajib"
+      ],
+      [
+       "täytä tekstaten",
+       "TÈÜ-tè TEKS-ta-ten",
+       "isi dengan huruf cetak"
+      ],
+      [
+       "merkitse rasti ruutuun",
+       "MER-kit-se RAS-ti RUU-tuun",
+       "beri tanda silang di kotak"
+      ],
+      [
+       "tarpeeton yliviivataan",
+       "TAR-pèè-ton Ü-li-vii-va-taan",
+       "coret yang tidak perlu"
+      ],
+      [
+       "päivämäärä ja allekirjoitus",
+       "PÈI-vè-mèè-rè ya AL-le-kir-yoi-tus",
+       "tanggal dan tanda tangan"
+      ]
+     ]
+    },
+    {
+     "type": "p",
+     "text": "Hampir semua urusan resmi di Finlandia kini dikerjakan daring. Untuk masuk ke layanan Migri, Kela, kantor pajak (*Verohallinto*) atau DVV, kamu memakai identifikasi kuat (*vahva tunnistautuminen*): kode bank daring atau sertifikat ponsel (*mobiilivarmenne*). Formulir kertas masih ada, dan bahasanya sama: pendek, pasif, penuh partisip. Kalau kamu bisa mengurai *on liitettävä* dan *ei tarvitse täyttää*, separuh petunjuknya sudah terbaca."
+    },
+    {
+     "type": "kotak",
+     "title": "Kalimat surat resmi yang sering muncul",
+     "items": [
+      "*Hakemuksenne on vastaanotettu.* — Permohonan Anda telah diterima.",
+      "*Hakemukseen on liitettävä seuraavat asiakirjat.* — Dokumen berikut wajib dilampirkan pada permohonan.",
+      "*Asian käsittely on kesken.* — Perkara sedang diproses.",
+      "*Pyydämme teitä toimittamaan lisäselvityksen.* — Kami meminta Anda menyerahkan keterangan tambahan.",
+      "*Päätös lähetetään teille postitse tai sähköisesti.* — Keputusan dikirim kepada Anda lewat pos atau secara elektronik."
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Ulangan berjenjang — unit 11",
+   "blocks": [
+    {
+     "type": "p",
+     "text": "Tutup kolom Finlandia, baca terjemahan Indonesianya, lalu susun kembali kalimatnya dari ingatan."
+    },
+    {
+     "type": "tabel",
+     "head": [
+      "Bahasa Indonesia",
+      "Suomi"
+     ],
+     "rows": [
+      [
+       "Kami mengerti. Kami menerima publikasinya, dengan prasyarat data sekolah-sekolah dianonimkan.",
+       "*Ymmärrämme sen. Hyväksymme julkaisemisen edellyttäen, että koulujen tiedot anonymisoidaan.*"
+      ],
+      [
+       "Seharusnya kami mengirim drafnya lebih awal. Saya akui itu.",
+       "*Meidän olisi pitänyt lähettää luonnos aikaisemmin. Myönnän sen.*"
+      ],
+      [
+       "Baiklah. Kami tanda tangan dengan syarat perubahannya dikerjakan minggu depan.",
+       "*Hyvä on. Allekirjoitamme sillä ehdolla, että muutokset tehdään ensi viikolla.*"
+      ],
+      [
+       "Ada satu hal yang bikin aku kesal. Soal data klien seharusnya sudah dibicarakan sejak musim gugur.",
+       "*Minua harmittaa yksi asia. Asiakastiedot olisi pitänyt ottaa puheeksi jo syksyllä.*"
+      ],
+      [
+       "Hari ini aku belajar satu hal: seharusnya aku bersiap lebih baik.",
+       "*Opin tänään yhden asian: minun olisi pitänyt valmistautua paremmin.*"
+      ]
+     ]
+    }
+   ]
+  }
+ ],
+ "vocab": [
+  {
+   "fi": "kansalaisuus",
+   "baca": "KAN-sa-lai-suus",
+   "id": "kewarganegaraan (gen. *kansalaisuuden*)"
+  },
+  {
+   "fi": "kaksoiskansalaisuus",
+   "baca": "KAK-sois-kan-sa-lai-suus",
+   "id": "kewarganegaraan ganda"
+  },
+  {
+   "fi": "oleskelulupa",
+   "baca": "O-les-ke-lu-lu-pa",
+   "id": "izin tinggal (gen. *oleskeluluvan*); *pysyvä oleskelulupa* = izin tinggal tetap"
+  },
+  {
+   "fi": "pysyvästi",
+   "baca": "PÜ-sü-vès-ti",
+   "id": "secara tetap, untuk seterusnya"
+  },
+  {
+   "fi": "hakea",
+   "baca": "HA-ke-a",
+   "id": "mengajukan, melamar (+ partitif: *hakea lupaa*; *haen*); menjemput (+ objek total)"
+  },
+  {
+   "fi": "hakemus",
+   "baca": "HA-ke-mus",
+   "id": "permohonan (gen. *hakemuksen*)"
+  },
+  {
+   "fi": "hakija",
+   "baca": "HA-ki-ya",
+   "id": "pemohon, pelamar"
+  },
+  {
+   "fi": "täyttää",
+   "baca": "TÈÜT-tèè",
+   "id": "mengisi; memenuhi (*täytän*); *täyttää edellytykset*"
+  },
+  {
+   "fi": "liittää",
+   "baca": "LIIT-tèè",
+   "id": "melampirkan (objek + ke-dalam; *liitän*)"
+  },
+  {
+   "fi": "osoittaa",
+   "baca": "O-soit-taa",
+   "id": "membuktikan; menunjukkan (*osoitan*)"
+  },
+  {
+   "fi": "kielitaito",
+   "baca": "KIE-li-tai-to",
+   "id": "kemampuan bahasa (gen. *kielitaidon*)"
+  },
+  {
+   "fi": "todistus",
+   "baca": "TO-dis-tus",
+   "id": "sertifikat, surat keterangan (gen. *todistuksen*)"
+  },
+  {
+   "fi": "ilmoittautua",
+   "baca": "IL-moit-tau-tu-a",
+   "id": "mendaftar (+ ke-dalam; *ilmoittaudun*)"
+  },
+  {
+   "fi": "joutua",
+   "baca": "YOU-tu-a",
+   "id": "terpaksa (+ -maan/-mään; *joudun*)"
+  },
+  {
+   "fi": "sallia",
+   "baca": "SAL-li-a",
+   "id": "mengizinkan (*sallin*)"
+  },
+  {
+   "fi": "laki",
+   "baca": "LA-ki",
+   "id": "undang-undang, hukum (gen. *lain*)"
+  },
+  {
+   "fi": "aikuinen",
+   "baca": "AI-kui-nen",
+   "id": "orang dewasa (gen. *aikuisen*)"
+  },
+  {
+   "fi": "taso",
+   "baca": "TA-so",
+   "id": "tingkat, level"
+  },
+  {
+   "fi": "keskitaso",
+   "baca": "KES-ki-ta-so",
+   "id": "tingkat menengah"
+  },
+  {
+   "fi": "tavoitella",
+   "baca": "TA-voi-tel-la",
+   "id": "mengincar, membidik (+ partitif; *tavoittelen*)"
+  },
+  {
+   "fi": "merkitä",
+   "baca": "MER-ki-tè",
+   "id": "mencantumkan, menandai (*merkitsen, merkitsi*)"
+  },
+  {
+   "fi": "nauhoittaa",
+   "baca": "NAU-hoit-taa",
+   "id": "merekam (*nauhoitan*)"
+  },
+  {
+   "fi": "taivuttaa",
+   "baca": "TAI-vut-taa",
+   "id": "menginfleksikan, mengubah bentuk kata (*taivutan*)"
+  }
+ ],
+ "exercises": [
+  {
+   "prompt": "Terjemahkan ke bahasa Finlandia.",
+   "items": [
+    "Aku mengajukan izin tinggal tetap.",
+    "Pemohon wajib membuktikan kemampuan bahasanya. (pakai *on -tava*)",
+    "Paspor wajib dilampirkan pada permohonan. (pakai *on -tava*)",
+    "Aku mendaftar ke tes YKI besok.",
+    "Apakah kamu terpaksa melepaskan kewarganegaraanmu?",
+    "Formulirnya tidak perlu dicetak."
+   ]
+  },
+  {
+   "prompt": "Isi dengan bentuk yang tepat. Petunjuk ada di dalam kurung.",
+   "items": [
+    "Budi hakee pysyvää ____. (oleskelulupa)",
+    "Todistus on liitettävä ____. (hakemus, ke dalam)",
+    "____ on osoitettava kielitaitonsa. (hakija)",
+    "Ilmoittaudun ____ ensi viikolla. (koe, ke dalam)",
+    "Lomake on ____ maaliskuun loppuun mennessä. (palauttaa, bentuk -tava)",
+    "Täytätkö kaikki ____? (edellytys, jamak)",
+    "Minun ____ tarkistettava säännöt. (olla)"
+   ]
+  },
+  {
+   "prompt": "Ubah *täytyy* menjadi *on …-tava* (1–4), lalu ubah kewajiban menjadi *ei tarvitse* (5–6).",
+   "items": [
+    "Minun täytyy tarkistaa säännöt.",
+    "Hakijan täytyy maksaa käsittelymaksu.",
+    "Passi täytyy liittää hakemukseen.",
+    "Sinun täytyy ilmoittautua ajoissa.",
+    "Lomake on tulostettava.",
+    "Todistus on käännettävä englanniksi."
+   ]
+  },
+  {
+   "prompt": "Susun jadi kalimat yang benar.",
+   "items": [
+    "hakea / voi / kansalaisuutta / vasta / myöhemmin",
+    "on / hakijan / kielitaitonsa / osoitettava",
+    "hakemukseen / passi / liitettävä / on",
+    "ilmoittautuminen / huomenna / alkaa / testiin",
+    "riittää / taso / kansalaisuutta varten / kolme"
+   ]
+  }
+ ],
+ "answers": [
+  "Haen pysyvää oleskelulupaa. — Hakijan on osoitettava kielitaitonsa. — Hakemukseen on liitettävä passi. — Ilmoittaudun YKI-testiin huomenna. — Joudutko luopumaan kansalaisuudestasi? — Lomaketta ei tarvitse tulostaa.",
+  "oleskelulupaa — hakemukseen — Hakijan — kokeeseen — palautettava — edellytykset — on",
+  "Minun on tarkistettava säännöt. — Hakijan on maksettava käsittelymaksu. — Passi on liitettävä hakemukseen. — Sinun on ilmoittauduttava ajoissa. — Lomaketta ei tarvitse tulostaa. — Todistusta ei tarvitse kääntää englanniksi.",
+  "Kansalaisuutta voi hakea vasta myöhemmin. — Hakijan on osoitettava kielitaitonsa. — Hakemukseen on liitettävä passi. — Ilmoittautuminen testiin alkaa huomenna. — Kansalaisuutta varten riittää taso kolme."
+ ]
+}

@@ -1,0 +1,665 @@
+{
+ "title": "Laporan teknis — kata kerja turunan lanjutan",
+ "title_target": "Energiankulutus on vähentynyt",
+ "goal": "Menulis dan membicarakan laporan teknis dengan kata kerja perubahan keadaan (*vanheta, lämmetä, kallistua, vähentyä, tasaantua*), membedakan \"menyebabkan\" dari \"terjadi sendiri\" (*vähentää ↔ vähentyä*), lalu memakai kata kerja momentan dan kontinuatif (*naksahtaa, vilkkua, katsella*) untuk menggambarkan bunyi dan gerak mesin dengan tepat.",
+ "bekal": [
+  "memakai kata kerja \"menjadi lebih…\" dari kata sifat: *-eta/-etä* (*vanhenee, lämpenee, kylmenee*), *-stua/-styä* (*kallistua, hidastua, tehostua*), *-ntua/-ntyä* (*vähentyä, heikentyä, lisääntyä*)",
+  "memilih pasangan yang tepat: *Pumppu vähentää kulutusta* (ada pelaku) lawan *Kulutus vähentyi* (terjadi sendiri), serta kata kerja pinjaman *-oida* (*analysoida, dokumentoida*)",
+  "membedakan kejadian sekali (*naksahtaa, välähtää, kolahtaa*) dari yang berulang atau santai (*naksuttaa, vilkkua, istuskella, katsella*)"
+ ],
+ "dialogs": [
+  {
+   "title": "Dialog — Väliraportti",
+   "intro": "Selasa, 28 November 2028, kantor Lämpövirta di Keilaniemi. Budi dan Laura menyusun laporan antara tentang musim gugur pertama pompa kalor di dua belas sekolah Espoo. Laporan itu akan dikirim ke Kaisa Hirvonen dan ke mitra di Jakarta.",
+   "lines": [
+    {
+     "speaker": "Laura:",
+     "text": "No niin, väliraportti. Mitä ensimmäinen syksy osoitti?",
+     "id": "Nah, laporan antara. Apa yang ditunjukkan musim gugur pertama?",
+     "literal": "nah begitu, laporan-antara. apa-bagian pertama musim-gugur menunjukkan-lampau?"
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Energiankulutus on vähentynyt kahdessatoista koulussa keskimäärin kahdeksantoista prosenttia.",
+     "id": "Konsumsi energi di dua belas sekolah sudah turun rata-rata delapan belas persen.",
+     "literal": "konsumsi-energi adalah-ia berkurang-sudah di-dua-belas sekolah rata-rata delapan-belas persen-bagian."
+    },
+    {
+     "speaker": "Laura:",
+     "text": "Hienoa. Kirjoita se ylös, ennen kuin sähkö taas kallistuu.",
+     "id": "Hebat. Catat itu sebelum listrik jadi mahal lagi.",
+     "literal": "hebat. tulislah itu ke-atas, sebelum listrik lagi menjadi-mahal-ia."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Sähkö kallistui jo lokakuussa, mutta kustannukset laskivat silti.",
+     "id": "Listrik sudah naik harganya bulan Oktober, tapi biayanya tetap turun.",
+     "literal": "listrik menjadi-mahal-lampau sudah di-Oktober, tetapi biaya-jamak turun-lampau-mereka tetap."
+    },
+    {
+     "speaker": "Laura:",
+     "text": "Entä sisälämpötila? Rehtorit valittivat viime talvena, että luokat kylmenivät iltapäivisin.",
+     "id": "Lalu suhu dalam ruangan? Musim dingin lalu para kepala sekolah mengeluh bahwa kelas-kelas jadi dingin setiap sore.",
+     "literal": "lalu suhu-dalam? kepala-sekolah-jamak mengeluh-lampau-mereka lalu sebagai-musim-dingin, bahwa kelas-jamak menjadi-dingin-lampau-mereka pada-sore-sore."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Nyt lämpötila on tasaantunut. Luokat lämpenevät aamulla nopeammin kuin ennen.",
+     "id": "Sekarang suhunya sudah stabil. Kelas-kelas menjadi hangat di pagi hari lebih cepat daripada dulu.",
+     "literal": "sekarang suhu adalah-ia menjadi-rata-sudah. kelas-jamak menjadi-hangat-mereka pada-pagi lebih-cepat daripada dulu."
+    },
+    {
+     "speaker": "Laura:",
+     "text": "Kirjoita ”lämpötila tasaantui”, älä ”lämpötila tasattiin”. Kukaan ei tehnyt sitä käsin.",
+     "id": "Tulis \"suhunya menjadi stabil\", jangan \"suhunya distabilkan\". Tidak ada yang melakukannya dengan tangan.",
+     "literal": "tulislah \"suhu menjadi-rata-lampau\", jangan-kamu \"suhu di-ratakan-lampau\". siapa-pun tidak-ia membuat-lampau itu-bagian dengan-tangan."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Selvä. Entä vanhat ilmanvaihtokoneet? Ne vanhenevat nopeasti ja heikentävät tuloksia.",
+     "id": "Oke. Lalu mesin ventilasi yang tua? Mesin-mesin itu cepat menua dan melemahkan hasil.",
+     "literal": "jelas. lalu tua-jamak mesin-ventilasi-jamak? itu-jamak menjadi-tua-mereka dengan-cepat dan melemahkan-mereka hasil-jamak-bagian."
+    },
+    {
+     "speaker": "Laura:",
+     "text": "Juuri niin. Kolmessa koulussa ilmanvaihdon teho on heikentynyt selvästi.",
+     "id": "Tepat. Di tiga sekolah daya ventilasinya jelas sudah melemah.",
+     "literal": "tepat begitu. di-tiga sekolah ventilasi-punya daya adalah-ia melemah-sudah dengan-jelas."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Pitäisikö meidän analysoida ne kolme koulua erikseen?",
+     "id": "Apa sebaiknya kita menganalisis tiga sekolah itu secara terpisah?",
+     "literal": "harus-andai-kah kami-punya menganalisis itu tiga sekolah-bagian secara-terpisah?"
+    },
+    {
+     "speaker": "Laura:",
+     "text": "Kyllä. Ja dokumentoi mittaukset tarkasti, ettei kukaan voi kyseenalaistaa lukuja.",
+     "id": "Ya. Dan dokumentasikan pengukurannya dengan teliti, supaya tidak ada yang meragukan angkanya.",
+     "literal": "ya. dan dokumentasikanlah pengukuran-jamak dengan-teliti, bahwa-tidak siapa-pun bisa mempertanyakan angka-jamak-bagian."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Kaisa kiinnostui tuloksista heti. Hän haluaa esitellä ne Jakartassa.",
+     "id": "Kaisa langsung tertarik pada hasilnya. Ia ingin memaparkannya di Jakarta.",
+     "literal": "Kaisa menjadi-tertarik-lampau dari-hasil-jamak segera. dia ingin-ia memaparkan itu-jamak di-Jakarta."
+    },
+    {
+     "speaker": "Laura:",
+     "text": "Tietysti. Mutta luvut eivät kaunistu käännettäessä, vaikka kuinka yrittäisit.",
+     "id": "Tentu. Tapi angka tidak jadi lebih cantik waktu diterjemahkan, seberapa pun kamu berusaha.",
+     "literal": "tentu. tetapi angka-jamak tidak-mereka menjadi-cantik ketika-di-terjemahkan, walaupun bagaimana berusaha-andai-kamu."
+    }
+   ],
+   "notes": [
+    "**on vähentynyt … kahdeksantoista prosenttia** — besarnya perubahan memakai partitif sesudah angka (*prosenttia*), tanpa kata depan. \"Turun sebanyak 18 %\" = *väheni 18 prosenttia*; \"turun menjadi 18 %\" = *väheni 18 prosenttiin* (ilatif).",
+    "**sähkö kallistuu** — satu kata kerja menggantikan \"menjadi lebih mahal\". Bahasa Indonesia memakai \"menjadi\" + kata sifat; bahasa Finlandia punya kata kerja sendiri untuk hampir setiap perubahan keadaan. *Tuli kalliimmaksi* tidak salah, tetapi dalam laporan terasa kaku.",
+    "**luokat kylmenivät, lämpenevät** — kata kerja golongan 6 (*kylmetä, lämmetä*): bila akarnya bergradasi, infinitifnya berkonsonan lemah dan bentuk berorangnya kuat, selalu dengan *-ne-*: *lämmetä → lämpenee, lämpenivät*. Pola yang sama: *heiketä → heikkenee*, *halveta → halpenee*.",
+    "**tasaantui, ei tasattiin** — Laura mengoreksi pilihan kata: *tasata* (meratakan) butuh pelaku; *tasaantua* (menjadi rata) terjadi sendiri. Dalam laporan teknis, salah pilih berarti mengklaim ada orang yang bertindak padahal sistemlah yang bekerja.",
+    "**analysoida, dokumentoida** — kata kerja pinjaman internasional masuk bahasa Finlandia dengan *-oida/-öidä* dan berkonjugasi seperti golongan 2: *analysoin, analysoi, analysoitiin*. Yang berakhiran *-ita* seperti *merkitä* dan *hallita* menyisipkan *-itse-*: *Tulos merkitsee säästöä*.",
+    "**eivät kaunistu käännettäessä** — *kaunistua* (menjadi cantik) dari *kaunis*. Laura memakai infinitif II pasif (*käännettäessä* = ketika diterjemahkan) dari B1: gaya ceplas-ceplosnya tetap rapi secara tata bahasa."
+   ],
+   "grammars": [
+    {
+     "title": "Menjadi lebih…: kata kerja perubahan keadaan",
+     "body": [
+      "Dari kata sifat, bahasa Finlandia membentuk kata kerja yang berarti \"menjadi (lebih)…\". Tiga akhiran paling sering: *-eta/-etä* untuk kata sifat pendek dan lama, *-stua/-styä*, dan *-ntua/-ntyä* (sering pasangan dari kata kerja kausatif *-ntaa*)."
+     ],
+     "table": {
+      "head": [
+       "Dasar",
+       "Kata kerja",
+       "Contoh laporan"
+      ],
+      "rows": [
+       [
+        "*vanha* tua",
+        "*vanheta* (*vanhenee*)",
+        "*Laitteet vanhenevat.*"
+       ],
+       [
+        "*lämmin* hangat",
+        "*lämmetä* (*lämpenee*)",
+        "*Luokka lämpenee nopeasti.*"
+       ],
+       [
+        "*heikko* lemah",
+        "*heiketä* (*heikkenee*)",
+        "*Teho heikkenee talvella.*"
+       ],
+       [
+        "*kallis* mahal",
+        "*kallistua*",
+        "*Sähkö kallistui.*"
+       ],
+       [
+        "*hidas* lambat",
+        "*hidastua*",
+        "*Kasvu hidastui.*"
+       ],
+       [
+        "*tehokas* efisien",
+        "*tehostua*",
+        "*Lämmitys tehostui.*"
+       ],
+       [
+        "*tasainen* rata",
+        "*tasaantua*",
+        "*Lämpötila tasaantui.*"
+       ],
+       [
+        "*vähä* sedikit",
+        "*vähentyä* (juga *vähetä*)",
+        "*Kulutus vähentyi.*"
+       ]
+      ]
+     },
+     "after": [
+      "Kata kerja ini **tak pernah punya objek**: sesuatu berubah dengan sendirinya. Karena itu kalimatnya pendek dan cocok untuk judul grafik: *Päästöt vähenivät* (emisi berkurang)."
+     ]
+    },
+    {
+     "title": "Menyebabkan atau terjadi sendiri?",
+     "body": [
+      "Banyak kata kerja datang berpasangan: yang satu punya pelaku dan objek (kausatif, sering *-ttaa, -ntaa*), yang lain menggambarkan perubahan tanpa pelaku (*-ua, -tua, -ntua*). Pilih menurut pertanyaan: adakah yang melakukannya?"
+     ],
+     "table": {
+      "head": [
+       "Ada pelaku (+ objek)",
+       "Terjadi sendiri",
+       "Contoh pasangan"
+      ],
+      "rows": [
+       [
+        "*vähentää*",
+        "*vähentyä*",
+        "*Pumppu vähentää kulutusta.* / *Kulutus vähentyy.*"
+       ],
+       [
+        "*heikentää*",
+        "*heikentyä*",
+        "*Pöly heikentää tehoa.* / *Teho heikentyy.*"
+       ],
+       [
+        "*lisätä*",
+        "*lisääntyä*",
+        "*Koulut lisäävät seurantaa.* / *Kysyntä lisääntyy.*"
+       ],
+       [
+        "*lämmittää*",
+        "*lämmetä*",
+        "*Pumppu lämmittää luokan.* / *Luokka lämpenee.*"
+       ],
+       [
+        "*parantaa*",
+        "*parantua*",
+        "*Uusi säätö parantaa tulosta.* / *Tulos parantuu.*"
+       ],
+       [
+        "*muuttaa*",
+        "*muuttua*",
+        "*Muutimme asetuksia.* / *Asetukset muuttuivat.*"
+       ]
+      ]
+     },
+     "after": [
+      "Perhatikan objek di kolom pertama: berkurang sebagian → partitif (*vähentää kulutusta*); dihangatkan sampai selesai → objek total (*lämmittää luokan*)."
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Dialog kedua — Pumppu naksahtaa",
+   "intro": "Kamis, 30 November. Budi dan Laura datang ke ruang teknik sebuah sekolah di Leppävaara, salah satu dari dua belas sekolah itu. Raimo, petugas pemeliharaan gedung yang sudah bekerja di sana hampir tiga puluh tahun, menunggu mereka.",
+   "lines": [
+    {
+     "speaker": "Raimo:",
+     "text": "Kuunnelkaa. Pumppu naksahtaa aina, ennen kuin se käynnistyy.",
+     "id": "Dengarkan. Pompanya selalu berbunyi \"klik\" sebelum menyala.",
+     "literal": "dengarkanlah-kalian. pompa berbunyi-klik-sekali-ia selalu, sebelum itu menyala-ia."
+    },
+    {
+     "speaker": "Laura:",
+     "text": "Naksahtaako se kerran vai naksuttaako se koko ajan?",
+     "id": "Klik sekali saja, atau berklik-klik terus?",
+     "literal": "berbunyi-klik-sekali-kah itu sekali atau berbunyi-klik-berulang-kah itu seluruh waktu-sasaran?"
+    },
+    {
+     "speaker": "Raimo:",
+     "text": "Kerran. Mutta yöllä se alkoi hurista, ja merkkivalo vilkkui punaisena.",
+     "id": "Sekali. Tapi malam-malam pompa itu mulai mendengung, dan lampu indikatornya berkedip merah.",
+     "literal": "sekali. tetapi pada-malam itu mulai-lampau mendengung, dan lampu-tanda berkedip-lampau sebagai-merah."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Välähtikö valo vain kerran, vai vilkkuiko se pitkään?",
+     "id": "Lampunya menyala sekilas sekali saja, atau berkedip lama?",
+     "literal": "berkilat-sekali-lampau-kah lampu hanya sekali, atau berkedip-lampau-kah itu dengan-lama?"
+    },
+    {
+     "speaker": "Raimo:",
+     "text": "Se vilkkui koko yön. Ja säikähdin, kun aamulla jokin kolahti putkessa.",
+     "id": "Berkedip semalaman. Dan aku kaget waktu pagi-pagi ada yang berbunyi \"duk\" di pipa.",
+     "literal": "itu berkedip-lampau seluruh malam-sasaran. dan terkejut-sekali-lampau-saya, ketika pada-pagi sesuatu berbunyi-duk-lampau di-pipa."
+    },
+    {
+     "speaker": "Laura:",
+     "text": "Kolahdus putkessa tarkoittaa yleensä ilmaa. Budi, katsele vähän painemittaria.",
+     "id": "Bunyi \"duk\" di pipa biasanya berarti ada udara. Budi, coba lihat-lihat pengukur tekanannya.",
+     "literal": "bunyi-duk di-pipa berarti-ia biasanya udara-bagian. Budi, lihat-lihatlah sedikit pengukur-tekanan-bagian."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Paine on laskenut hieman. Järjestelmään on luultavasti päässyt ilmaa.",
+     "id": "Tekanannya turun sedikit. Kemungkinan udara sudah masuk ke sistem.",
+     "literal": "tekanan adalah-ia turun-sudah sedikit. ke-sistem adalah-ia kemungkinan masuk-sudah udara-bagian."
+    },
+    {
+     "speaker": "Raimo:",
+     "text": "Minä vain istuskelin täällä ja odottelin teitä.",
+     "id": "Aku cuma duduk-duduk di sini menunggu kalian.",
+     "literal": "saya hanya duduk-duduk-lampau-saya di-sini dan menunggu-nunggu-lampau-saya kalian-bagian."
+    },
+    {
+     "speaker": "Laura:",
+     "text": "Hyvä, ettet alkanut korjailla sitä itse.",
+     "id": "Untung kamu tidak mulai mengutak-atik sendiri.",
+     "literal": "baik, bahwa-tidak-kamu mulai-lampau memperbaiki-baiki itu-bagian sendiri."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Ilmaan järjestelmän nyt, niin pumppu lakkaa kolisemasta.",
+     "id": "Kubuang udara dari sistemnya sekarang, supaya pompanya berhenti berderak.",
+     "literal": "membuang-udara-saya sistem-sasaran sekarang, maka pompa berhenti-ia dari-berderak."
+    }
+   ],
+   "notes": [
+    "**naksahtaa ↔ naksuttaa** — akhiran *-ahtaa/-ähtää* menyatakan kejadian **sekali dan tiba-tiba** (momentan): *naksahtaa* = klik sekali. Akhiran *-uttaa/-yttää* atau *-ella/-ellä* menyatakan **berulang atau berlangsung** (kontinuatif): *naksuttaa* = berklik-klik terus. Laura bertanya persis soal perbedaan itu, karena artinya bagi mesin berbeda.",
+    "**hurista, vilkkua, kolista** — bahasa Finlandia kaya kata kerja bunyi dan cahaya. Kata kerja *-ista/-istä* sering meniru bunyi yang berlangsung: *hurista* (mendengung), *kolista* (berderak), *surista* (berdengung seperti nyamuk), *kohista* (berdesir).",
+    "**välähtää ↔ vilkkua** — cahaya sekali (*välähtää*, berkilat) lawan cahaya berulang (*vilkkua*, berkedip). Dalam laporan kerusakan, perbedaan ini menentukan apakah ada gangguan sesaat atau alarm yang terus aktif.",
+    "**säikähdin** — *säikähtää* (kaget sesaat) juga momentan; bandingkan *pelätä* (takut, berlangsung). Pergantian konsonan tetap berlaku: *säikähtää → säikähdän, säikähdin*.",
+    "**katsele vähän, istuskelin, odottelin, korjailla** — *-ella/-ellä* dan *-skella/-skellä* membuat kegiatan terdengar santai, tanpa tujuan pasti, atau \"sambil lalu\". *Katsele vähän* lebih lunak daripada *katso*; *istuskelin* terdengar seperti \"cuma duduk-duduk\"; *korjailla* = mengutak-atik, bukan memperbaiki sungguhan.",
+    "**lakkaa kolisemasta** — *lakata* (berhenti) meminta infinitif III elatif *-masta*: *lakata satamasta* (berhenti hujan), *lakata tupakoimasta* (berhenti merokok)."
+   ],
+   "grammars": [
+    {
+     "title": "Momentan dan kontinuatif",
+     "body": [
+      "Dari satu akar, bahasa Finlandia bisa membuat versi \"sekali, sebentar\" dan versi \"berulang, santai\". Bahasa Indonesia sering memakai pengulangan kata (*lihat-lihat, duduk-duduk*) untuk yang kedua."
+     ],
+     "table": {
+      "head": [
+       "Dasar",
+       "Momentan (sekali)",
+       "Kontinuatif (berulang, santai)"
+      ],
+      "rows": [
+       [
+        "*nauraa* tertawa",
+        "*naurahtaa* tertawa sebentar",
+        "*naureskella* tertawa-tawa"
+       ],
+       [
+        "*kysyä* bertanya",
+        "*kysäistä* bertanya sekilas",
+        "*kysellä* bertanya-tanya"
+       ],
+       [
+        "*huutaa* berteriak",
+        "*huudahtaa* berseru",
+        "*huudella* berteriak-teriak"
+       ],
+       [
+        "*istua* duduk",
+        "*istahtaa* duduk sebentar",
+        "*istuskella* duduk-duduk"
+       ],
+       [
+        "*katsoa* melihat",
+        "*katsahtaa* melirik",
+        "*katsella* melihat-lihat"
+       ],
+       [
+        "*kolista* berderak",
+        "*kolahtaa* berbunyi duk",
+        "*kolistella* membuat berisik"
+       ]
+      ]
+     },
+     "after": [
+      "Momentan paling sering berakhiran *-ahtaa/-ähtää* dan *-aista/-äistä*; kontinuatif berakhiran *-ella/-ellä*, *-illa/-illä*, dan *-skella/-skellä*. Tidak semua kombinasi ada, jadi pelajari yang umum sebagai kata tersendiri."
+     ]
+    }
+   ]
+  }
+ ],
+ "sections": [
+  {
+   "title": "Kosakata teknik energi",
+   "blocks": [
+    {
+     "type": "tabel",
+     "head": [
+      "Suomi",
+      "Cara baca",
+      "Bahasa Indonesia"
+     ],
+     "rows": [
+      [
+       "kaukolämpö",
+       "KAU-ko-lèm-pö",
+       "pemanas distrik"
+      ],
+      [
+       "maalämpö",
+       "MAA-lèm-pö",
+       "panas bumi dangkal"
+      ],
+      [
+       "ilmanvaihto",
+       "IL-man-vaih-to",
+       "ventilasi"
+      ],
+      [
+       "hyötysuhde",
+       "HÜÖ-tü-suh-de",
+       "efisiensi (rasio keluaran)"
+      ],
+      [
+       "kilowattitunti",
+       "KI-lo-vat-ti-tun-ti",
+       "kilowatt-jam"
+      ],
+      [
+       "huipputeho",
+       "HUIP-pu-te-ho",
+       "daya puncak"
+      ],
+      [
+       "päästöt",
+       "PÈÈS-töt",
+       "emisi"
+      ],
+      [
+       "säätö",
+       "SÈÈ-tö",
+       "pengaturan, penyetelan"
+      ]
+     ]
+    },
+    {
+     "type": "p",
+     "text": "Di Finlandia, hampir separuh kebutuhan pemanasan gedung dipenuhi oleh pemanas distrik (*kaukolämpö*): air panas dialirkan lewat pipa bawah tanah dari pembangkit ke rumah dan sekolah. Jumlah pompa kalor sudah melampaui satu juta, dari pompa udara kecil di rumah keluarga sampai pompa panas bumi di gedung sekolah. Laporan teknis Finlandia memakai banyak kata kerja perubahan keadaan dan pasif, karena yang penting adalah apa yang terjadi pada sistem, bukan siapa yang mengukurnya."
+    },
+    {
+     "type": "kotak",
+     "title": "Menulis laporan teknis dalam bahasa Finlandia",
+     "items": [
+      "Hasil ditulis dengan perfek: *Kulutus on vähentynyt*, *Lämpötila on tasaantunut*.",
+      "Metode ditulis dengan pasif lampau: *Mittaukset tehtiin marraskuussa*.",
+      "Ganti *tuli kalliimmaksi* dengan *kallistui*, *tuli paremmaksi* dengan *parani*.",
+      "Tulis angka dengan satuan dan spasi: *18 %*, *42 kWh*, *21,5 °C*."
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Membaca abstrak ilmiah",
+   "blocks": [
+    {
+     "type": "tabel",
+     "head": [
+      "Ungkapan abstrak",
+      "Arti"
+     ],
+     "rows": [
+      [
+       "*Tutkimuksessa selvitettiin, …*",
+       "Penelitian ini menyelidiki …"
+      ],
+      [
+       "*Aineisto kerättiin …*",
+       "Data dikumpulkan …"
+      ],
+      [
+       "*Tulokset osoittavat, että …*",
+       "Hasil menunjukkan bahwa …"
+      ],
+      [
+       "*… lisääntyi merkittävästi*",
+       "… meningkat secara signifikan"
+      ],
+      [
+       "*… ei muuttunut merkittävästi*",
+       "… tidak berubah secara signifikan"
+      ],
+      [
+       "*Jatkotutkimusta tarvitaan.*",
+       "Penelitian lanjutan diperlukan."
+      ]
+     ]
+    },
+    {
+     "type": "p",
+     "text": "Contoh abstrak laporan Budi: *Tutkimuksessa selvitettiin, miten lämpöpumppujen käyttöönotto vaikutti kahdentoista espoolaisen koulun energiankulutukseen. Syksyn 2028 aikana kulutus väheni keskimäärin 18 prosenttia, ja sisälämpötila tasaantui. Kolmessa koulussa ilmanvaihdon teho heikkeni; syy selvitetään kevään aikana.* Perhatikan: metode dengan pasif (*selvitettiin*), hasil dengan kata kerja perubahan keadaan (*väheni, tasaantui, heikkeni*), rencana dengan pasif masa kini (*selvitetään*)."
+    },
+    {
+     "type": "kotak",
+     "title": "Cara membaca abstrak dengan cepat",
+     "items": [
+      "Cari dulu kata kerja utamanya: *selvitettiin* (apa yang diteliti), *osoittavat* (apa hasilnya).",
+      "Kata kerja perubahan keadaan menunjukkan arah: *väheni, kasvoi, heikkeni, parani*.",
+      "*Merkittävästi* dalam abstrak biasanya berarti signifikan secara statistik, bukan sekadar \"lumayan\"."
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Ulangan berjenjang — unit 5",
+   "blocks": [
+    {
+     "type": "p",
+     "text": "Tutup kolom Finlandia, baca terjemahan Indonesianya, lalu susun kembali kalimatnya dari ingatan."
+    },
+    {
+     "type": "tabel",
+     "head": [
+      "Bahasa Indonesia",
+      "Suomi"
+     ],
+     "rows": [
+      [
+       "Terima kasih, Eila. Tadi aku sendiri sudah hampir memesannya.",
+       "*Kiitos, Eila. Olin jo tilaamaisillani sen itse.*"
+      ],
+      [
+       "Paspornya sudah di saku. Hampir saja tertinggal di Finlandia.",
+       "*Passi on taskussa. Olin vähällä jättää sen Suomeen.*"
+      ],
+      [
+       "Sempat, tapi di detik terakhir. Gerbangnya sudah hampir ditutup waktu aku berlari sampai.",
+       "*Ehdin, mutta viime hetkellä. Portti oli sulkeutumaisillaan, kun juoksin paikalle.*"
+      ],
+      [
+       "Sepanjang penerbangan aku membaca laporan Kaisa, tapi tidak sampai selesai.",
+       "*Luin Kaisan raporttia koko lennon ajan, mutta en lukenut sitä loppuun.*"
+      ],
+      [
+       "Ya. Aku berniat tinggal di Bandung sampai akhir pekan.",
+       "*Näen. Olen aikeissa jäädä Bandungiin viikonlopuksi.*"
+      ]
+     ]
+    }
+   ]
+  }
+ ],
+ "vocab": [
+  {
+   "fi": "väliraportti",
+   "baca": "VÈ-li-ra-port-ti",
+   "id": "laporan antara (gen. *väliraportin*)"
+  },
+  {
+   "fi": "energiankulutus",
+   "baca": "E-ner-gi-an-ku-lu-tus",
+   "id": "konsumsi energi (gen. *energiankulutuksen*)"
+  },
+  {
+   "fi": "vähentyä",
+   "baca": "VÈ-hen-tü-è",
+   "id": "berkurang (*vähentyy, vähentyi*)"
+  },
+  {
+   "fi": "vähentää",
+   "baca": "VÈ-hen-tèè",
+   "id": "mengurangi (+ partitif: *vähentää kulutusta*)"
+  },
+  {
+   "fi": "lisääntyä",
+   "baca": "LI-sèèn-tü-è",
+   "id": "bertambah (*lisääntyy*)"
+  },
+  {
+   "fi": "heikentyä",
+   "baca": "HEI-ken-tü-è",
+   "id": "melemah (*heikentyy*; juga *heiketä, heikkenee*)"
+  },
+  {
+   "fi": "vanheta",
+   "baca": "VAN-he-ta",
+   "id": "menjadi tua, usang (*vanhenee, vanheni*)"
+  },
+  {
+   "fi": "lämmetä",
+   "baca": "LÈM-me-tè",
+   "id": "menjadi hangat (*lämpenee, lämpeni*)"
+  },
+  {
+   "fi": "kylmetä",
+   "baca": "KÜL-me-tè",
+   "id": "menjadi dingin (*kylmenee, kylmeni*)"
+  },
+  {
+   "fi": "kallistua",
+   "baca": "KAL-lis-tu-a",
+   "id": "menjadi mahal (*kallistuu*)"
+  },
+  {
+   "fi": "tasaantua",
+   "baca": "TA-saan-tu-a",
+   "id": "menjadi stabil, rata (*tasaantuu*)"
+  },
+  {
+   "fi": "kiinnostua",
+   "baca": "KIIN-nos-tu-a",
+   "id": "menjadi tertarik (+ elatif: *kiinnostua tuloksista*)"
+  },
+  {
+   "fi": "analysoida",
+   "baca": "A-na-lü-soi-da",
+   "id": "menganalisis (*analysoin, analysoi*)"
+  },
+  {
+   "fi": "dokumentoida",
+   "baca": "DO-ku-men-toi-da",
+   "id": "mendokumentasikan (*dokumentoin*)"
+  },
+  {
+   "fi": "mittaus",
+   "baca": "MIT-taus",
+   "id": "pengukuran (gen. *mittauksen*)"
+  },
+  {
+   "fi": "teho",
+   "baca": "TE-ho",
+   "id": "daya, efektivitas"
+  },
+  {
+   "fi": "paine",
+   "baca": "PAI-ne",
+   "id": "tekanan (gen. *paineen*)"
+  },
+  {
+   "fi": "putki",
+   "baca": "PUT-ki",
+   "id": "pipa (gen. *putken*)"
+  },
+  {
+   "fi": "naksahtaa",
+   "baca": "NAK-sah-taa",
+   "id": "berbunyi klik sekali (*naksahtaa, naksahti*)"
+  },
+  {
+   "fi": "vilkkua",
+   "baca": "VILK-ku-a",
+   "id": "berkedip-kedip (*vilkkuu, vilkkui*)"
+  },
+  {
+   "fi": "katsella",
+   "baca": "KAT-sel-la",
+   "id": "melihat-lihat (*katselen*)"
+  },
+  {
+   "fi": "lakata",
+   "baca": "LA-ka-ta",
+   "id": "berhenti (*lakkaan*; + *-masta*: *lakata kolisemasta*)"
+  },
+  {
+   "fi": "kiinteistönhoitaja",
+   "baca": "KIIN-teis-tön-hoi-ta-ya",
+   "id": "petugas pemeliharaan gedung"
+  }
+ ],
+ "exercises": [
+  {
+   "prompt": "Terjemahkan ke bahasa Finlandia. Pakai kata kerja perubahan keadaan atau kata kerja momentan/kontinuatif.",
+   "items": [
+    "Konsumsi energi sudah berkurang delapan belas persen.",
+    "Listrik menjadi mahal pada bulan Oktober.",
+    "Kelas-kelas menjadi hangat lebih cepat.",
+    "Mesin-mesin itu cepat menua.",
+    "Kaisa langsung tertarik pada hasilnya.",
+    "Lampunya berkedip sepanjang malam."
+   ]
+  },
+  {
+   "prompt": "Isi dengan bentuk yang tepat. Petunjuk ada di dalam kurung.",
+   "items": [
+    "Syksyllä ilma ____. (kylmetä, kini)",
+    "Laitteet ____ vuosi vuodelta. (vanheta, kini, jamak)",
+    "Ilmanvaihdon teho on ____. (heikentyä, perfek)",
+    "Uusi pumppu ____ lämmityskustannuksia. (vähentää atau vähentyä? kini)",
+    "Lämmityskustannukset ____ viime vuonna. (vähentää atau vähentyä? lampau)",
+    "Tutkijat ____ aineiston huolellisesti. (analysoida, lampau)",
+    "Pumppu ____ kerran ja käynnistyi. (naksahtaa, lampau)"
+   ]
+  },
+  {
+   "prompt": "Ganti *tuli* + translatif dengan satu kata kerja perubahan keadaan (kala lampau).",
+   "items": [
+    "Sähkö tuli kalliimmaksi.",
+    "Ilma tuli kylmemmäksi.",
+    "Luokka tuli lämpimämmäksi.",
+    "Kasvu tuli hitaammaksi.",
+    "Lämmitys tuli tehokkaammaksi.",
+    "Laite tuli vanhaksi."
+   ]
+  },
+  {
+   "prompt": "Susun jadi kalimat yang benar.",
+   "items": [
+    "on / energiankulutus / vähentynyt / selvästi",
+    "lämpenevät / luokat / nopeammin / aamulla",
+    "kiinnostui / Kaisa / tuloksista / heti",
+    "valo / koko / vilkkui / yön",
+    "pumppu / kolisemasta / lakkasi"
+   ]
+  }
+ ],
+ "answers": [
+  "Energiankulutus on vähentynyt kahdeksantoista prosenttia. — Sähkö kallistui lokakuussa. — Luokat lämpenevät nopeammin. — Laitteet vanhenevat nopeasti. — Kaisa kiinnostui tuloksista heti. — Valo vilkkui koko yön.",
+  "kylmenee — vanhenevat — heikentynyt — vähentää — vähentyivät — analysoivat — naksahti",
+  "Sähkö kallistui. — Ilma kylmeni. — Luokka lämpeni. — Kasvu hidastui. — Lämmitys tehostui. — Laite vanheni.",
+  "Energiankulutus on vähentynyt selvästi. — Luokat lämpenevät aamulla nopeammin. — Kaisa kiinnostui tuloksista heti. — Valo vilkkui koko yön. — Pumppu lakkasi kolisemasta."
+ ]
+}
