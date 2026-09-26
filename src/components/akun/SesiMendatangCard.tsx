@@ -326,6 +326,15 @@ function SesiItem({ b, studentName, onClick, today = false, now }: {
           <Video className="h-3.5 w-3.5" strokeWidth={2.2} /> {t("Masuk Kelas")}
         </a>
       )}
+      {/* [masuk-kelas-dibuka-jam-v1] Sebelum jendela 30 menit tombolnya dulu tak ada
+          sama sekali — siswa yang cek lebih awal (kasus Davin, 26 Sep 08.18 untuk
+          kelas 09.00) mengira kelasnya "belum ada di web". Sekarang kelihatan
+          tombolnya ada, cuma belum dibuka, lengkap dengan jamnya. */}
+      {!b.join && today && (
+        <div className="mt-2.5 inline-flex w-full items-center justify-center gap-1.5 rounded-xl bg-slate-200/70 px-3 py-2 text-[12px] font-bold text-[#6B7280]">
+          <Video className="h-3.5 w-3.5" strokeWidth={2.2} /> {t("Masuk Kelas dibuka")} {fmtTime(new Date(b._d.getTime() - 30 * 60_000))}
+        </div>
+      )}
     </div>
   );
 }

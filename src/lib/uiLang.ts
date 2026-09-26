@@ -299,6 +299,7 @@ const EN: Record<string, string> = {
   "Ringkas": "Collapse",
   "Lihat semua": "See all",
   "Masuk Kelas": "Join Class",
+  "Masuk Kelas dibuka": "Join opens at", // [masuk-kelas-dibuka-jam-v1]
 
   /* ── Halaman Jadwal ─────────────────────────────────────────────────────── */
   "Jadwal Kelas": "Class Schedule",

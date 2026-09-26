@@ -1064,6 +1064,13 @@ function SessionCard({ e, now, studentName, aksesRekaman }: { e: NormSession; no
               <Video className="h-3.5 w-3.5" strokeWidth={2.2} /> {tt("Masuk Kelas")}
             </a>
           )}
+          {/* [masuk-kelas-dibuka-jam-v1] sesi hari ini yang belum masuk jendela 30 menit */}
+          {!e._joinable && !e._past && !isDead(e.status) && (!e.isBatch || !!e.joinUrl) &&
+            e._d.toDateString() === new Date(now).toDateString() && (
+            <span className="inline-flex items-center gap-1.5 rounded-xl bg-slate-200/70 px-3.5 py-2 text-[12.5px] font-bold text-[#6B7280]">
+              <Video className="h-3.5 w-3.5" strokeWidth={2.2} /> {tt("Masuk Kelas dibuka")} {fmtTime(new Date(e._d.getTime() - 30 * 60_000))}
+            </span>
+          )}
           {/* [addon-akses-rekaman-v1] rekamannya ada, paketnya tidak mencakup */}
           {e.recordingUrl && rekamanDikunci && (
             <span

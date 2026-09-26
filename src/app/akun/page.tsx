@@ -3734,9 +3734,39 @@ export default function AkunPage() {
       setDataLoading(false);
 
       // Schedules + badges + streak — PARALEL (dulu berurutan = 3x round-trip).
-      const [schedRes, badgeRes, streakRes] = await Promise.all([
-        regIds.length > 0
-          ? supabase
+      /* [akun-jadwal-server-v1] Jadwal ditarik lewat /api/akun-jadwal (service role,
+         sesudah token diverifikasi). Query langsung lewat RLS bisa ±4 detik dan kena
+         statement_timeout — errornya dulu ditelan jadi kalender "0 sesi" (Davin,
+         26 Sep 2026). Query langsung di bawah tinggal jadi cadangan kalau route gagal. */
+      const tarikJadwalServer = async (): Promise<any[] | null> => {
+        try {
+          const { data: { session } } = await supabase.auth.getSession();
+          if (!session?.access_token) return null;
+          const res = await fetch("/api/akun-jadwal", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({ accessToken: session.access_token }),
+            cache: "no-store",
+          });
+          if (!res.ok) return null;
+          const j = await res.json();
+          return Array.isArray(j?.schedules) ? j.schedules : null;
+        } catch {
+          return null;
+        }
+      };
+      const [jadwalServer, badgeRes] = await Promise.all([
+        regIds.length > 0 ? tarikJadwalServer() : Promise.resolve([] as any[]),
+        supabase
+          .from("student_badges")
+          .select("*")
+          .eq("student_id", studentData.id)
+          .order("earned_at", { ascending: false }),
+      ]);
+      const schedRes: { data: any[] | null; error?: any } = jadwalServer
+        ? { data: jadwalServer }
+        : regIds.length > 0
+          ? await supabase
               .from("schedules")
               // jadwal-recurring-materi-v1: nomor pertemuan + materi ikut ditarik
               // jadwal-riwayat-v1: + presensi & rekaman, dan TANPA saringan
@@ -3753,30 +3783,22 @@ export default function AkunPage() {
               .select("id, registration_id, scheduled_at, duration_minutes, status, session_number, session_title, material_notes, material_links, attendance_status, recording_url, notes, quiz_score, quiz_max, quiz_source, quiz_submission_id, homework")
               .in("registration_id", regIds)
               .order("scheduled_at", { ascending: true })
-          : Promise.resolve({ data: null } as any),
-        supabase
-          .from("student_badges")
-          .select("*")
-          .eq("student_id", studentData.id)
-          .order("earned_at", { ascending: false }),
-        regIds.length > 0
-          ? supabase
-              .from("schedules")
-              .select("scheduled_at")
-              .in("registration_id", regIds)
-              .eq("status", "completed")
-              .order("scheduled_at", { ascending: false })
-          : Promise.resolve({ data: null } as any),
-      ]);
+          : { data: null };
+      if (schedRes.error) console.error("[akun] schedules gagal dimuat", schedRes.error);
 
       const schedData = schedRes.data || [];
       const badgeData = badgeRes.data || [];
-      setAllSchedules(schedData); // jadwal-riwayat-v1
-      setJadwalTermuat(true); // [jadwal-kelas-belum-terjadwal-v1]
+      // [akun-jadwal-server-v1] Gagal muat ≠ tak punya jadwal: snapshot cache dibiarkan,
+      // dan kotak kuning "belum dijadwalkan" tak boleh menyala dari data yang tak pernah datang.
+      if (!schedRes.error) {
+        setAllSchedules(schedData); // jadwal-riwayat-v1
+        setJadwalTermuat(true); // [jadwal-kelas-belum-terjadwal-v1]
+      }
       setBadges(badgeData);
 
       let weekStreak = 0;
-      const streakData = streakRes.data;
+      // Dulu query ketiga ke `schedules` (kena RLS lambat yang sama) — cukup saring dari schedData.
+      const streakData = schedData.filter((s: any) => s.status === "completed");
       if (streakData && streakData.length > 0) {
         const getWeekNum = (d: Date) => {
           const start = new Date(d.getFullYear(), 0, 1);
