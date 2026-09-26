@@ -1,0 +1,724 @@
+{
+ "title": "Ke dokter — fáj a fejem, akhiran -ért, dan kata kerja -ik",
+ "title_target": "Fáj a torkom",
+ "goal": "Menjelaskan keluhan kepada dokter, memahami perintahnya, dan mengurus obat di apotek, dengan pola *fáj a fejem*, akhiran *-ért*, serta lampau dan perintah kata kerja *-ik* (*evett, aludt, egyél, igyál, feküdj le*).",
+ "bekal": [
+  "mengatakan bagian tubuh mana yang sakit dan sejak kapan: *Két napja fáj a fejem.*",
+  "memakai *-ért* untuk \"pergi mengambil\", harga, dan orang yang dikhawatirkan: *elmegyek a gyógyszerért, aggódom érted*",
+  "membentuk lampau dan perintah *eszik, iszik, alszik, fekszik*: *ettem, ivott, egyél, igyon, aludj, feküdjön le*"
+ ],
+ "dialogs": [
+  {
+   "title": "Dialog — A háziorvosnál",
+   "intro": "Akhir Januari. Sudah dua hari Budi demam, jadi pagi ini ia tidak ke kantor dan pergi ke tempat praktik dokter umumnya, Dr. Fehér Márta, di distrik VIII. Ini kunjungan pertamanya.",
+   "lines": [
+    {
+     "speaker": "Asszisztens:",
+     "text": "Jó napot kívánok! A TAJ-kártyáját kérem.",
+     "id": "Selamat siang! Kartu TAJ-nya, Pak.",
+     "literal": "baik hari-sasaran saya-doakan! itu TAJ-kartu-Anda-sasaran saya-memintanya."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Tessék. Most vagyok itt először.",
+     "id": "Ini. Saya baru pertama kali ke sini.",
+     "literal": "silakan. sekarang saya-ada di-sini pertama-kali."
+    },
+    {
+     "speaker": "Asszisztens:",
+     "text": "Köszönöm. Üljön le, a doktornő mindjárt behívja.",
+     "id": "Terima kasih. Silakan duduk, sebentar lagi Bu Dokter memanggil Bapak masuk.",
+     "literal": "saya-berterima-kasih. Anda-duduk-hendaklah turun, itu dokter-perempuan sebentar-lagi masuk-ia-memanggilnya."
+    },
+    {
+     "speaker": "Dr. Fehér:",
+     "text": "Jó napot, Santoso úr! Mi a panasza?",
+     "id": "Selamat siang, Pak Santoso! Apa keluhannya?",
+     "literal": "baik hari-sasaran, Santoso tuan! apa itu keluhan-Anda?"
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Két napja fáj a fejem és a torkom.",
+     "id": "Sudah dua hari kepala dan tenggorokan saya sakit.",
+     "literal": "dua hari-nya sakit itu kepala-ku dan itu tenggorokan-ku."
+    },
+    {
+     "speaker": "Dr. Fehér:",
+     "text": "Köhög is? Van láza?",
+     "id": "Batuk juga? Demam?",
+     "literal": "Anda-batuk juga? ada demam-Anda?"
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Igen, sokat köhögök. Tegnap este majdnem harminckilenc fokos lázam volt.",
+     "id": "Ya, saya sering batuk. Tadi malam demam saya hampir 39 derajat.",
+     "literal": "ya, banyak-sasaran saya-batuk. kemarin malam hampir tiga-puluh-sembilan derajat-an demam-ku ada-lampau."
+    },
+    {
+     "speaker": "Dr. Fehér:",
+     "text": "Nyissa ki a száját, és mondja, hogy á! … A torka nagyon piros.",
+     "id": "Buka mulutnya, lalu bilang \"aaa\"! … Tenggorokannya merah sekali.",
+     "literal": "Anda-membuka-hendaklah-nya keluar itu mulut-Anda-sasaran, dan Anda-mengatakan-hendaklah-nya, bahwa á! … itu tenggorokan-Anda sangat merah."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Influenzám van?",
+     "id": "Saya kena flu?",
+     "literal": "flu-ku ada?"
+    },
+    {
+     "speaker": "Dr. Fehér:",
+     "text": "Valószínűleg igen. Egy hétig maradjon otthon, és pihenjen.",
+     "id": "Kemungkinan besar ya. Seminggu di rumah saja dan istirahat.",
+     "literal": "kemungkinan-besar ya. sebuah minggu-sampai Anda-tinggal-hendaklah di-rumah, dan Anda-beristirahat-hendaklah."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Egy hétig? És mit mondok a munkahelyemen?",
+     "id": "Seminggu? Terus saya bilang apa ke kantor?",
+     "literal": "sebuah minggu-sampai? dan apa-sasaran saya-berkata itu tempat-kerja-ku-di-atas?"
+    },
+    {
+     "speaker": "Dr. Fehér:",
+     "text": "Adok orvosi igazolást. És felírok egy lázcsillapítót meg egy köhögés elleni szirupot.",
+     "id": "Saya beri surat keterangan dokter. Saya resepkan juga obat penurun panas dan sirup obat batuk.",
+     "literal": "saya-memberi dokter-an keterangan-sasaran. dan naik-saya-menulis sebuah demam-penurun-sasaran dan sebuah batuk melawan sirup-sasaran."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Köszönöm a segítséget, doktornő. Hol kapom meg a gyógyszereket?",
+     "id": "Terima kasih atas bantuannya, Dok. Obatnya saya ambil di mana?",
+     "literal": "saya-berterima-kasihnya itu bantuan-sasaran, dokter-perempuan. di-mana saya-mendapatnya tuntas itu obat-jamak-sasaran?"
+    },
+    {
+     "speaker": "Dr. Fehér:",
+     "text": "A recept elektronikus. A patikában mutassa meg a TAJ-kártyáját. Jobbulást!",
+     "id": "Resepnya elektronik. Di apotek tunjukkan saja kartu TAJ Bapak. Lekas sembuh!",
+     "literal": "itu resep elektronik. itu apotek-di-dalam Anda-menunjukkan-hendaklah-nya tuntas itu TAJ-kartu-Anda-sasaran. perbaikan-sasaran!"
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Köszönöm! Akkor most elmegyek a gyógyszerekért.",
+     "id": "Terima kasih! Kalau begitu sekarang saya ambil obatnya.",
+     "literal": "saya-berterima-kasih! kalau-begitu sekarang pergi-saya-pergi itu obat-jamak-demi."
+    }
+   ],
+   "notes": [
+    "**Fáj a fejem** — bahasa Indonesia berkata \"saya sakit kepala\", dengan saya sebagai pelaku. Bahasa Hungaria membaliknya: yang menjadi pelaku adalah **anggota tubuhnya**, lengkap dengan akhiran milik, dan kata kerja *fáj* (sakit, nyeri) mengikutinya. Harfiahnya \"sakit kepalaku\". Jadi jangan menulis *fájok*: yang sakit bukan kamu, tetapi kepalamu.",
+    "**Két napja** — \"sudah dua hari\": satuan waktu + akhiran milik orang ketiga (*napja, hete, éve*). Kalimatnya tetap masa kini karena sakitnya masih berlangsung. Pola lengkapnya (bersama *óta*) menyusul di unit 17.",
+    "**Santoso úr, doktornő** — orang Hungaria menyapa dengan **nama keluarga** + *úr*: Budi menjadi *Santoso úr*, bukan *Budi úr*. Dokter perempuan cukup disapa *doktornő*, dokter laki-laki *doktor úr*.",
+    "**Nyissa ki, mondja, maradjon, pihenjen, mutassa meg** — semua perintah dokter memakai bentuk *Ön* (unit 3). Kalau sasarannya tertentu (*a száját, a TAJ-kártyáját*), perintah *Ön* pun memakai bentuk tertentu: *nyissa ki*, bukan *nyisson ki*. Dan awalannya berpindah ke belakang, seperti pada semua perintah: *mutassa meg*.",
+    "**Köszönöm a segítséget** — *köszön* langsung mengambil sasaran *-t*. Karena bahasa Indonesia berkata \"terima kasih **atas**\", pelajar sering menulis *köszönöm a segítségért*; bentuk itu terdengar di jalan, tetapi ragam baku memakai *-t*. *-ért* tepat sesudah kata benda: *Köszönet a segítségért.*",
+    "**Elmegyek a gyógyszerekért** — *-ért* sesudah kata kerja gerak berarti \"pergi **untuk mengambil**\": *elmegyek a gyógyszerért* (saya pergi mengambil obat), *jövök a csomagért* (saya datang mengambil paket). Bahasa Indonesia butuh kata kerja kedua; bahasa Hungaria cukup satu akhiran."
+   ],
+   "grammars": [
+    {
+     "title": "Fáj a …-m: tubuh sebagai pelaku",
+     "body": [
+      "Semua keluhan di bawah ini memakai anggota tubuh + akhiran milik. Ganti akhirannya untuk orang lain: *fáj a fejed* (kepalamu), *fáj a feje* (kepalanya), *fáj a fejünk* (kepala kami)."
+     ],
+     "table": {
+      "head": [
+       "Magyar",
+       "Bahasa Indonesia",
+       "Harfiah"
+      ],
+      "rows": [
+       [
+        "*Fáj a fejem.*",
+        "Kepala saya sakit.",
+        "sakit itu kepala-ku"
+       ],
+       [
+        "*Fáj a torkom.*",
+        "Tenggorokan saya sakit.",
+        "sakit itu tenggorokan-ku"
+       ],
+       [
+        "*Fáj a hasam.*",
+        "Perut saya sakit.",
+        "sakit itu perut-ku"
+       ],
+       [
+        "*Fáj a fogam.*",
+        "Gigi saya sakit.",
+        "sakit itu gigi-ku"
+       ],
+       [
+        "*Fáj a szemem.*",
+        "Mata saya sakit.",
+        "sakit itu mata-ku"
+       ],
+       [
+        "*Lázam van.*",
+        "Saya demam.",
+        "demam-ku ada"
+       ],
+       [
+        "*Náthás vagyok.*",
+        "Saya pilek.",
+        "pilek-an saya-ada"
+       ],
+       [
+        "*Köhögök.*",
+        "Saya batuk.",
+        "saya-batuk"
+       ],
+       [
+        "*Hányingerem van.*",
+        "Saya mual.",
+        "muntah-keinginan-ku ada"
+       ]
+      ]
+     },
+     "after": [
+      "**Batang yang berubah.** Beberapa anggota tubuh mengubah batangnya begitu diberi akhiran milik: *torok → torkom*, *száj → szám, szája*, *kéz → kezem*. Hafalkan bersama bentuk *-m*-nya, karena bentuk itulah yang paling sering kamu ucapkan.",
+      "**Pasangan tubuh ditulis tunggal.** *Fáj a szemem* berarti \"mataku sakit\" — bisa satu atau keduanya. Bahasa Hungaria memperlakukan mata, telinga, tangan, dan kaki sebagai satu kesatuan: *Fáj a lábam* (kakiku sakit). Kalau hanya satu sisi, sebut sisinya: *Fáj a bal szemem* (mata kiriku sakit), *Fáj az egyik fülem* (salah satu telingaku sakit).",
+      "**Lampau cukup dengan *fájt*:** *Tegnap fájt a fejem.* Dua pertanyaan dokter yang pasti kamu dengar: *Hol fáj?* (Sakitnya di mana?) dan *Mióta fáj?* (Sejak kapan?)."
+     ]
+    },
+    {
+     "title": "Akhiran -ért: mengambil, harga, dan demi",
+     "body": [
+      "*-ért* hanya punya satu bentuk — tidak ikut keselarasan vokal — dan menempel seperti akhiran kasus lain (*alma → almáért*). Tugasnya tiga."
+     ],
+     "table": {
+      "head": [
+       "Tugas",
+       "Contoh",
+       "Arti"
+      ],
+      "rows": [
+       [
+        "pergi/datang **mengambil**",
+        "*Elmegyek a gyógyszerért.*",
+        "Saya pergi mengambil obat."
+       ],
+       [
+        "**harga** (ditukar dengan)",
+        "*Ezer forintért vettem.*",
+        "Saya membelinya seharga seribu forint."
+       ],
+       [
+        "**demi**, untuk kepentingan",
+        "*Aggódom érted.*",
+        "Saya khawatir padamu."
+       ],
+       [
+        "**atas** (sesudah kata benda)",
+        "*Bocsánat a késésért.*",
+        "Maaf atas keterlambatannya."
+       ],
+       [
+        "",
+        "*Köszönet a segítségért.*",
+        "Terima kasih atas bantuannya."
+       ]
+      ]
+     },
+     "after": [
+      "Seperti kata ganti berkasus di unit 9, *-ért* pun punya deret dengan akhiran milik: *értem, érted, érte, értünk, értetek, értük*. *Ne aggódj értem* = jangan khawatirkan aku. Ingat, *értem* juga berarti \"saya mengerti\" — konteks yang memisahkannya.",
+      "Kata kerja *köszön* adalah pengecualian yang menjebak: ia mengambil **-t**, bukan *-ért*. *Köszönöm a segítséget. Köszönöm a levest.* Bandingkan dengan *Köszönöm, hogy segítettél* — terima kasih bahwa kamu sudah membantu."
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Dialog kedua — Feküdj le, és aludj!",
+   "intro": "Keesokan sorenya. Anna mampir ke apartemen Budi di distrik VIII sepulang kerja, membawa sepanci sup.",
+   "lines": [
+    {
+     "speaker": "Anna:",
+     "text": "Szia! Hoztam neked húslevest. Hogy vagy?",
+     "id": "Hai! Aku bawakan sup kaldu. Gimana keadaanmu?",
+     "literal": "hai! saya-membawa-lampau bagimu daging-sup-sasaran. bagaimana kamu-ada?"
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Elég rosszul. Egész nap feküdtem, de alig aludtam.",
+     "id": "Lumayan parah. Seharian aku berbaring, tapi hampir nggak bisa tidur.",
+     "literal": "cukup buruk-secara. seluruh hari saya-berbaring-lampau, tetapi nyaris saya-tidur-lampau."
+    },
+    {
+     "speaker": "Anna:",
+     "text": "Ettél ma valamit?",
+     "id": "Hari ini kamu sudah makan sesuatu?",
+     "literal": "kamu-makan-lampau hari-ini sesuatu-sasaran?"
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Csak egy kis kenyeret ettem, és ittam két teát.",
+     "id": "Cuma roti sedikit, sama minum dua gelas teh.",
+     "literal": "hanya sebuah kecil roti-sasaran saya-makan-lampau, dan saya-minum-lampau dua teh-sasaran."
+    },
+    {
+     "speaker": "Anna:",
+     "text": "Az kevés. Ülj le, és egyél egy tányér levest!",
+     "id": "Itu kurang. Duduk, terus makan semangkuk sup!",
+     "literal": "itu sedikit. duduk-hendaklah turun, dan makan-hendaklah sebuah piring sup-sasaran!"
+    },
+    {
+     "speaker": "Budi:",
+     "text": "A lázcsillapítót megkaptam, de a szirup elfogyott. Holnapra hozzák.",
+     "id": "Obat penurun panasnya sudah dapat, tapi sirupnya habis. Besok baru datang.",
+     "literal": "itu demam-penurun-sasaran tuntas-saya-mendapatnya-lampau, tetapi itu sirup habis-berkurang-lampau. besok-ke-atas mereka-membawanya."
+    },
+    {
+     "speaker": "Anna:",
+     "text": "Semmi baj, holnap munka után elmegyek érte.",
+     "id": "Nggak apa-apa, besok pulang kerja aku ambilkan.",
+     "literal": "tidak-ada masalah, besok kerja sesudah pergi-saya-pergi demi-itu."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Köszönöm, nagyon kedves vagy. De nem akarlak megfertőzni.",
+     "id": "Makasih, kamu baik banget. Tapi aku nggak mau menulari kamu.",
+     "literal": "saya-berterima-kasih, sangat baik-hati kamu-ada. tetapi tidak saya-mau-kamu tuntas-menulari."
+    },
+    {
+     "speaker": "Anna:",
+     "text": "Ne aggódj értem, erős vagyok. Inkább feküdj le, és aludj!",
+     "id": "Jangan khawatirkan aku, aku kuat. Mending kamu berbaring dan tidur!",
+     "literal": "jangan khawatir-hendaklah demi-aku, kuat saya-ada. lebih-baik berbaring-hendaklah turun, dan tidur-hendaklah!"
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Igenis, doktornő!",
+     "id": "Siap, Bu Dokter!",
+     "literal": "ya-siap, dokter-perempuan!"
+    },
+    {
+     "speaker": "Anna:",
+     "text": "És igyál sok teát mézzel és citrommal!",
+     "id": "Dan minum teh yang banyak pakai madu dan lemon!",
+     "literal": "dan minum-hendaklah banyak teh-sasaran madu-dengan dan lemon-dengan!"
+    }
+   ],
+   "notes": [
+    "**Húsleves** — sup kaldu (biasanya ayam) dengan wortel dan mi halus, obat flu versi nenek Hungaria. Membawakannya untuk teman yang sakit setara dengan membawakan bubur ayam di Indonesia.",
+    "**Feküdtem, aludtam** — *fekszik* (berbaring) dan *alszik* (tidur) punya batang lain di luar masa kini: *-sz-* berganti *-d-*. Lampau: *feküdtem, aludtam*; perintah: *feküdj, aludj*. Batang *d* ini sama di kedua bentuk, jadi satu kali hafal cukup untuk dua.",
+    "**Ettél, ettem, ittam** — lampau *eszik* dan *iszik* memakai batang pendek *ett-* dan *itt-* untuk hampir semua pelaku, kecuali orang ketiga tunggal bentuk tak tentu yang memanjang: *evett, ivott* (bentuk tertentunya tetap pendek: *(meg)ette, (meg)itta*). Jadi: *Mit ettél? — Levest ettem. Anna mit evett?*",
+    "**Egyél, igyál** — perintah *te* dari *eszik* dan *iszik* dibentuk dari batang *egy-* dan *igy-*. Ujung *-ál/-él* di sini wajib — bentuk yang lebih pendek tidak ada, jadi hafalkan utuh. Untuk sasaran tertentu pakai *edd meg* dan *idd meg*: *Edd meg a levest!* (Habiskan supnya!)",
+    "**Ne aggódj értem** — *aggódik* (khawatir) meminta *-ért*. Larangan cukup *ne* + perintah: *ne aggódj, ne egyél, ne igyál hideget.*"
+   ],
+   "grammars": [
+    {
+     "title": "Kata kerja -ik: lampau dan perintah",
+     "body": [
+      "Enam kata kerja *-ik* yang sering muncul di kamar orang sakit. Kolom lampau memberi bentuk *én* dan *ő*, karena di situlah batangnya paling sering berubah."
+     ],
+     "table": {
+      "head": [
+       "Kamus",
+       "Lampau (én / ő)",
+       "Perintah te",
+       "Perintah Ön",
+       "Perintah tertentu"
+      ],
+      "rows": [
+       [
+        "*eszik* (makan)",
+        "*ettem / evett*",
+        "*egyél*",
+        "*egyen*",
+        "*edd meg*"
+       ],
+       [
+        "*iszik* (minum)",
+        "*ittam / ivott*",
+        "*igyál*",
+        "*igyon*",
+        "*idd meg*"
+       ],
+       [
+        "*alszik* (tidur)",
+        "*aludtam / aludt*",
+        "*aludj*",
+        "*aludjon*",
+        "—"
+       ],
+       [
+        "*fekszik* (berbaring)",
+        "*feküdtem / feküdt*",
+        "*feküdj le*",
+        "*feküdjön le*",
+        "—"
+       ],
+       [
+        "*dolgozik* (bekerja)",
+        "*dolgoztam / dolgozott*",
+        "*dolgozz*",
+        "*dolgozzon*",
+        "—"
+       ],
+       [
+        "*aggódik* (khawatir)",
+        "*aggódtam / aggódott*",
+        "*ne aggódj*",
+        "*ne aggódjon*",
+        "—"
+       ]
+      ]
+     },
+     "after": [
+      "Dua baris terakhir tak punya kejutan: akhiran *-ik* dibuang, lalu akhiran lampau dan perintah biasa ditempelkan. Yang harus dihafal hanya empat kata kerja pertama — dan keempatnya muncul setiap hari.",
+      "Dalam percakapan kamu juga mendengar bentuk panjang *aludjál, feküdjél, dolgozzál* — sah dan sedikit lebih akrab."
+     ]
+    }
+   ]
+  }
+ ],
+ "sections": [
+  {
+   "title": "Tubuh dan keluhan",
+   "blocks": [
+    {
+     "type": "tabel",
+     "head": [
+      "Magyar",
+      "Cara baca",
+      "Bahasa Indonesia"
+     ],
+     "rows": [
+      [
+       "fej",
+       "fèy",
+       "kepala"
+      ],
+      [
+       "torok (torkom)",
+       "TO-rok",
+       "tenggorokan"
+      ],
+      [
+       "fül",
+       "fül",
+       "telinga"
+      ],
+      [
+       "száj (szám)",
+       "say",
+       "mulut"
+      ],
+      [
+       "hát",
+       "hat",
+       "punggung"
+      ],
+      [
+       "has",
+       "håsy",
+       "perut"
+      ],
+      [
+       "derék (derekam)",
+       "DÈ-rék",
+       "pinggang"
+      ],
+      [
+       "kéz (kezem)",
+       "kéz",
+       "tangan"
+      ],
+      [
+       "láb",
+       "lab",
+       "kaki (seluruhnya)"
+      ],
+      [
+       "térd",
+       "térd",
+       "lutut"
+      ],
+      [
+       "tüdő",
+       "TÜ-dö",
+       "paru-paru"
+      ]
+     ]
+    },
+    {
+     "type": "p",
+     "text": "Dua kata lebih luas daripada padanan Indonesianya: *láb* mencakup seluruh kaki dari paha sampai telapak, dan *kéz* sering dipakai untuk tangan sampai lengan (yang tepat: *kar*). *Hát* juga berarti \"nah\" di awal kalimat (*Hát, nem tudom…*). Dan bedakan *Rosszul vagyok* (badan saya nggak enak, sekarang) dengan *Beteg vagyok* (saya sedang sakit)."
+    },
+    {
+     "type": "kotak",
+     "title": "Ke dokter di Hungaria: yang perlu disiapkan",
+     "items": [
+      "**TAJ-kártya** adalah kartu jaminan kesehatan. Pekerja yang dibayar di Hungaria, seperti Budi, didaftarkan oleh pemberi kerjanya, lalu kartunya diterbitkan kantor pemerintah; nomornya diminta di hampir setiap urusan medis.",
+      "**Háziorvos** (dokter umum) adalah pintu pertama: setiap alamat punya dokter umum wilayah. Spesialis biasanya didatangi dengan rujukan (*beutaló*).",
+      "**Rendelési idő** — jam praktik ditempel di pintu; banyak dokter praktik pagi di hari tertentu dan sore di hari lain. Kalau malam atau akhir pekan, ada **ügyelet** (layanan jaga).",
+      "Nomor darurat umum **112**, ambulans **104**. Untuk keperluan kantor, mintalah **orvosi igazolás** (surat keterangan dokter), seperti yang ditawarkan Dr. Fehér."
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Di apotek",
+   "blocks": [
+    {
+     "type": "tabel",
+     "head": [
+      "Magyar",
+      "Bahasa Indonesia"
+     ],
+     "rows": [
+      [
+       "*Receptem van.*",
+       "Saya punya resep."
+      ],
+      [
+       "*Vény nélkül kapható?*",
+       "Bisa dibeli tanpa resep?"
+      ],
+      [
+       "*Valamit szeretnék torokfájásra.*",
+       "Saya mau obat untuk sakit tenggorokan."
+      ],
+      [
+       "*Van valami köhögés ellen?*",
+       "Ada obat batuk?"
+      ],
+      [
+       "*Naponta háromszor egyet.*",
+       "Sehari tiga kali, satu (tablet)."
+      ],
+      [
+       "*Étkezés után vegye be.*",
+       "Diminum sesudah makan."
+      ],
+      [
+       "*Reggel és este két tablettát.*",
+       "Pagi dan malam dua tablet."
+      ],
+      [
+       "*Mennyit fizetek?*",
+       "Berapa yang harus saya bayar?"
+      ]
+     ]
+    },
+    {
+     "type": "p",
+     "text": "Aturan pakai obat di Hungaria disusun dengan urutan yang sama seperti di Indonesia: *naponta háromszor egyet* — sehari tiga kali, satu. *Naponta* (tiap hari) dan *hetente* (tiap minggu) akan kamu pakai lagi di unit berikutnya. Kata kerja untuk minum obat bukan *iszik*, melainkan *bevesz* (\"mengambil masuk\"): *Vegye be a gyógyszert!* Sirup pun di-*bevesz*, walau diminum. Dan perhatikan *torokfájásra*: \"untuk\" suatu keluhan memakai *-ra/-re*, bukan *-ért*."
+    },
+    {
+     "type": "kotak",
+     "title": "Patika atau gyógyszertár?",
+     "items": [
+      "Keduanya berarti apotek. *Gyógyszertár* tertulis di papan nama; *patika* adalah kata sehari-hari yang dipakai semua orang.",
+      "Resep sekarang umumnya elektronik (*e-recept*). Di apotek kamu cukup menunjukkan *TAJ-kártya* dan kartu identitas, lalu apoteker membuka resepnya di sistem.",
+      "Obat resep mendapat potongan dari jaminan kesehatan; obat bebas (*vény nélkül kapható*) dibayar penuh.",
+      "Malam hari atau hari libur, cari **ügyeletes gyógyszertár** (apotek jaga). Daftarnya biasanya ditempel di pintu apotek terdekat."
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Ulangan berjenjang — unit 9",
+   "blocks": [
+    {
+     "type": "p",
+     "text": "Tutup kolom Hungaria, baca terjemahan Indonesianya, lalu susun kembali kalimatnya dari ingatan."
+    },
+    {
+     "type": "tabel",
+     "head": [
+      "Bahasa Indonesia",
+      "Magyar"
+     ],
+     "rows": [
+      [
+       "Selamat datang di rumah kami, Budi! Ayo cepat masuk, di luar dingin sekali.",
+       "*Isten hozott nálunk, Budi! Gyere be gyorsan, kint nagyon hideg van.*"
+      ],
+      [
+       "Lho, saya bagaimana? Saya tidak dikenalkan, Annácska?",
+       "*És velem mi lesz? Engem nem mutatsz be, Annácska?*"
+      ],
+      [
+       "Sini, dekat saya, Nak, biar saya lihat kamu!",
+       "*Gyere ide hozzám, fiam, hadd nézzelek meg!*"
+      ],
+      [
+       "Luar biasa. Orang tuamu baik banget sama aku.",
+       "*Csodálatos. A szüleid nagyon kedvesek voltak velem.*"
+      ],
+      [
+       "Tadi pagi kutelepon. Mereka banyak bertanya tentang kalian.",
+       "*Reggel felhívtam őket. Sokat kérdeztek rólatok.*"
+      ]
+     ]
+    }
+   ]
+  }
+ ],
+ "vocab": [
+  {
+   "hu": "háziorvos",
+   "baca": "HA-zi-or-vosy",
+   "id": "dokter umum keluarga"
+  },
+  {
+   "hu": "doktornő",
+   "baca": "DOK-tor-nö",
+   "id": "dokter (perempuan; juga sapaan)"
+  },
+  {
+   "hu": "rendelő",
+   "baca": "RÈN-dè-lö",
+   "id": "tempat praktik dokter"
+  },
+  {
+   "hu": "panasz",
+   "baca": "PÅ-nås",
+   "id": "keluhan"
+  },
+  {
+   "hu": "fáj",
+   "baca": "fay",
+   "id": "sakit, nyeri (*fáj a fejem*)"
+  },
+  {
+   "hu": "torok",
+   "baca": "TO-rok",
+   "id": "tenggorokan (*torkom*)"
+  },
+  {
+   "hu": "láz",
+   "baca": "laz",
+   "id": "demam (*lázam van*)"
+  },
+  {
+   "hu": "köhög",
+   "baca": "KÖ-hög",
+   "id": "batuk"
+  },
+  {
+   "hu": "náthás",
+   "baca": "NAT-hasy",
+   "id": "pilek"
+  },
+  {
+   "hu": "beteg",
+   "baca": "BÈ-tèg",
+   "id": "sakit; orang sakit"
+  },
+  {
+   "hu": "pihen",
+   "baca": "PI-hèn",
+   "id": "beristirahat"
+  },
+  {
+   "hu": "fekszik / lefekszik",
+   "baca": "FÈK-sik / LÈ-fèk-sik",
+   "id": "berbaring / pergi berbaring (lampau *feküdt*, perintah *feküdj le*)"
+  },
+  {
+   "hu": "alszik",
+   "baca": "ÅL-sik",
+   "id": "tidur (lampau *aludt*, perintah *aludj*)"
+  },
+  {
+   "hu": "aggódik",
+   "baca": "ÅG-go-dik",
+   "id": "khawatir (*-ért*: *aggódom érted*)"
+  },
+  {
+   "hu": "gyógyszer",
+   "baca": "DYODY-sèr",
+   "id": "obat"
+  },
+  {
+   "hu": "lázcsillapító",
+   "baca": "LAZ-cil-lå-pi-to",
+   "id": "obat penurun panas"
+  },
+  {
+   "hu": "szirup",
+   "baca": "SI-rup",
+   "id": "sirup (obat)"
+  },
+  {
+   "hu": "recept (vény)",
+   "baca": "RÈ-tsèpt",
+   "id": "resep dokter (*vény* lebih resmi)"
+  },
+  {
+   "hu": "patika",
+   "baca": "PÅ-ti-kå",
+   "id": "apotek (resmi: *gyógyszertár*)"
+  },
+  {
+   "hu": "bevesz",
+   "baca": "BÈ-vès",
+   "id": "meminum (obat)"
+  },
+  {
+   "hu": "igazolás",
+   "baca": "I-gå-zo-lasy",
+   "id": "surat keterangan"
+  },
+  {
+   "hu": "húsleves",
+   "baca": "HUSY-lè-vèsy",
+   "id": "sup kaldu daging/ayam"
+  },
+  {
+   "hu": "Jobbulást!",
+   "baca": "YOB-bu-lasyt",
+   "id": "Lekas sembuh!"
+  }
+ ],
+ "exercises": [
+  {
+   "prompt": "Terjemahkan ke bahasa Hungaria.",
+   "items": [
+    "Sudah dua hari kepala dan tenggorokanku sakit.",
+    "Sekarang saya pergi mengambil obat.",
+    "Kamu sudah makan sesuatu hari ini?",
+    "Berbaringlah dan tidurlah! (kepada teman)",
+    "Silakan tinggal di rumah seminggu. (kepada pasien, *Ön*)",
+    "Jangan khawatirkan aku!"
+   ]
+  },
+  {
+   "prompt": "Isi dengan bentuk yang tepat.",
+   "items": [
+    "Fáj a ____. (fog, milik saya)",
+    "Hol fáj a ____? (hát, milik kamu)",
+    "Tegnap semmit nem ____. (eszik, én, lampau)",
+    "Budi két teát ____. (iszik, ő, lampau)",
+    "____ le, és pihenj! (fekszik, perintah te)",
+    "Kérem, ____ sok vizet! (iszik, perintah Ön)",
+    "Elmegyek a ____. (kenyér + -ért)"
+   ]
+  },
+  {
+   "prompt": "Ubah sesuai petunjuk dalam kurung.",
+   "items": [
+    "Feküdj le! (ke bentuk *Ön*)",
+    "Egyél levest! (ke bentuk *Ön*)",
+    "Aludj sokat! (ke bentuk *Ön*)",
+    "Rosszul alszom. (ke lampau)",
+    "Anna aggódik értem. (ke lampau)",
+    "Köszönöm a segítségért. (betulkan ke ragam baku)"
+   ]
+  },
+  {
+   "prompt": "Susun jadi kalimat yang benar.",
+   "items": [
+    "fáj / a / nagyon / torkom",
+    "gyógyszerért / a / patikába / megyek / a",
+    "le / feküdj / és / aludj",
+    "értem / aggódj / ne",
+    "a / köszönöm / segítséget"
+   ]
+  }
+ ],
+ "answers": [
+  "Két napja fáj a fejem és a torkom. — Most elmegyek a gyógyszerért. — Ettél ma valamit? — Feküdj le, és aludj! — Egy hétig maradjon otthon. — Ne aggódj értem!",
+  "fogam — hátad — ettem — ivott — Feküdj — igyon — kenyérért",
+  "Feküdjön le! — Egyen levest! — Aludjon sokat! — Rosszul aludtam. — Anna aggódott értem. — Köszönöm a segítséget.",
+  "Nagyon fáj a torkom. — A patikába megyek a gyógyszerért. — Feküdj le, és aludj! — Ne aggódj értem! — Köszönöm a segítséget."
+ ]
+}

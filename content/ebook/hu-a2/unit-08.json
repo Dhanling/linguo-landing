@@ -1,0 +1,749 @@
+{
+ "title": "Untuk siapa? — kata kerja yang meminta -nak/-nek",
+ "title_target": "Mit vegyek Anna szüleinek?",
+ "goal": "Memilih dan mengirim hadiah: menanyakan untuk siapa, mengatakan siapa suka apa, siapa gembira karena apa, dan siapa yang dirindukan. Titik tata bahasanya: kata kerja yang meminta *-nak/-nek* (*segít, tetszik, örül, kell, hiányzik, telefonál, köszön*) dan kata ganti *nekem, neked, neki…*",
+ "bekal": [
+  "memakai *-nak/-nek* untuk penerima: *Küldök egy csomagot a húgomnak*",
+  "menyusun kalimat terbalik dengan *tetszik, kell, hiányzik*: *Nekem tetszik*, *Hiányzik a húgom*",
+  "tidak lagi berkata *segítek téged*, melainkan *segítek neked*"
+ ],
+ "dialogs": [
+  {
+   "title": "Dialog — A karácsonyi vásáron",
+   "intro": "Sabtu awal Desember di pasar Natal Vörösmarty tér. Budi akan merayakan Natal di Szeged bersama keluarga Anna, dan ia minta Kati, sahabat Anna, membantunya memilih hadiah.",
+   "lines": [
+    {
+     "speaker": "Budi:",
+     "text": "Kati, köszönöm, hogy segítesz nekem.",
+     "id": "Kati, makasih ya kamu mau bantu aku.",
+     "literal": "Kati, saya-berterima-kasih, bahwa kamu-membantu saya-bagi."
+    },
+    {
+     "speaker": "Kati:",
+     "text": "Szívesen! Kinek akarsz ajándékot venni?",
+     "id": "Sama-sama! Kamu mau beli hadiah buat siapa?",
+     "literal": "hati-dengan! siapa-bagi kamu-mau hadiah-sasaran membeli?"
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Anna szüleinek és a nagymamájának. Karácsonyra Szegedre megyek.",
+     "id": "Buat orang tua Anna dan neneknya. Natal nanti aku ke Szeged.",
+     "literal": "Anna orang-tua-jamak-nya-bagi dan itu nenek-nya-bagi. Natal-ke-atas Szeged-ke saya-pergi."
+    },
+    {
+     "speaker": "Kati:",
+     "text": "Nézd ezt a kék selyemsálat! Neked tetszik?",
+     "id": "Lihat syal sutra biru ini! Kamu suka?",
+     "literal": "lihat-hendaklah-nya ini-sasaran itu biru sutra-syal-sasaran! kamu-bagi ia-berkenan?"
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Nekem nagyon tetszik. Szerinted Éva néninek is tetszeni fog?",
+     "id": "Aku suka banget. Menurutmu Tante Éva juga bakal suka?",
+     "literal": "saya-bagi sangat ia-berkenan. menurut-kamu Éva bibi-bagi juga berkenan ia-akan?"
+    },
+    {
+     "speaker": "Kati:",
+     "text": "Biztosan. Anna anyukája imádja a kéket.",
+     "id": "Pasti. Ibunya Anna tergila-gila sama warna biru.",
+     "literal": "pasti. Anna mama-nya ia-memujanya itu biru-sasaran."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "És Péter bácsinak mit vegyek? Neki mindene megvan.",
+     "id": "Terus buat Om Péter aku beli apa? Dia sudah punya segalanya.",
+     "literal": "dan Péter paman-bagi apa-sasaran saya-membeli-hendaklah? ia-bagi segala-nya tuntas-ada."
+    },
+    {
+     "speaker": "Kati:",
+     "text": "Szereti a jó bort. Egy üveg tokajinak mindig örül.",
+     "id": "Dia suka anggur yang enak. Dia selalu senang dapat sebotol Tokaji.",
+     "literal": "ia-menyukainya itu baik anggur-sasaran. sebuah botol Tokaji-bagi selalu ia-gembira."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Jó ötlet. És Irén mamának?",
+     "id": "Ide bagus. Kalau Mama Irén?",
+     "literal": "baik ide. dan Irén mama-bagi?"
+    },
+    {
+     "speaker": "Kati:",
+     "text": "Vigyél neki valamit Indonéziából! Az mindenkinek tetszik.",
+     "id": "Bawakan dia sesuatu dari Indonesia! Itu semua orang pasti suka.",
+     "literal": "bawa-hendaklah ia-bagi sesuatu-sasaran Indonesia-dari-dalam! itu semua-orang-bagi ia-berkenan."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Van otthon egy batikolt asztalterítőm. Az jó lesz neki?",
+     "id": "Di rumah aku punya taplak meja batik. Itu cocok buat dia?",
+     "literal": "ada rumah-di sebuah ber-batik taplak-meja-ku. itu baik akan-ada ia-bagi?"
+    },
+    {
+     "speaker": "Kati:",
+     "text": "Tökéletes, annak nagyon fog örülni! És Annának mit veszel?",
+     "id": "Sempurna, dia pasti senang banget sama itu! Terus buat Anna kamu beli apa?",
+     "literal": "sempurna, itu-bagi sangat ia-akan gembira! dan Anna-bagi apa-sasaran kamu-membeli?"
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Az titok! Neked sem mondom meg. De meghívlak egy forralt borra.",
+     "id": "Itu rahasia! Ke kamu pun nggak kukasih tahu. Tapi aku traktir kamu segelas anggur panas.",
+     "literal": "itu rahasia! kamu-bagi juga-tidak saya-mengatakannya tuntas. tetapi tuntas-saya-mengundangmu sebuah direbus anggur-ke-atas."
+    },
+    {
+     "speaker": "Kati:",
+     "text": "Na, ez tetszik! Egy forralt bor most pont kell nekem.",
+     "id": "Nah, itu aku suka! Anggur panas memang pas banget buat aku sekarang.",
+     "literal": "nah, ini ia-berkenan! sebuah direbus anggur sekarang tepat harus saya-bagi."
+    }
+   ],
+   "notes": [
+    "**Segítesz nekem** — *segít* (membantu) meminta *-nak/-nek*, bukan akhiran sasaran *-t*. Bahasa Indonesia berkata \"membantu **aku**\" dengan objek langsung, jadi otak kita mendorong ke *segítek téged*. Bentuk itu salah; yang benar *segítek neked* — harfiahnya \"aku memberi bantuan **kepadamu**\".",
+    "**Neked tetszik?** — di A1 kamu sudah bertemu *Tetszett a film*. Sekarang lengkapnya: yang disukai menjadi pelaku, orang yang suka masuk *-nak/-nek*. *Nekem tetszik a sál* (aku suka syal itu), *Neki tetszenek a sálak* (dia suka syal-syal itu) — kata kerjanya jamak karena **syalnya** jamak. *Tetszik* untuk kesan saat melihat; *szeret* untuk kesukaan yang tetap.",
+    "**Egy üveg tokajinak örül** — *örül* (gembira) juga meminta *-nak/-nek*: gembira **atas** sesuatu atau **karena** seseorang. *Örülök neked* = aku senang kamu ada di sini. *Tokaji* adalah anggur dari daerah Tokaj di timur laut Hungaria; yang paling terkenal *tokaji aszú* yang manis.",
+    "**Neki mindene megvan** — \"dia sudah punya segalanya\", mimpi buruk setiap pembeli hadiah. *Megvan* berarti \"ada di tangan, sudah didapat\": *Megvan a kulcs!* = kuncinya ketemu!",
+    "**Mit vegyek? Vigyél neki valamit!** — bentuk perintah orang pertama (*vegyek* = sebaiknya kubeli) dipakai untuk minta saran: *Mit vegyek? Hova menjek?* *Vesz* dan *visz* sama-sama berubah: *vegyek, vegyél*; *vigyek, vigyél*.",
+    "**Meghívlak egy forralt borra** — *meghív valakit valamire*: \"mengundang/mentraktir seseorang untuk sesuatu\". *Forralt bor* (anggur merah yang dipanaskan dengan kayu manis dan cengkih) adalah minuman wajib di pasar Natal Hungaria."
+   ],
+   "grammars": [
+    {
+     "title": "Kata kerja yang meminta -nak/-nek",
+     "body": [
+      "Pada semua kata kerja ini, **orang yang menerima, merasakan, atau dibantu** masuk *-nak/-nek*. Hafalkan kata kerjanya bersama akhirannya, sebagai satu paket."
+     ],
+     "table": {
+      "head": [
+       "Kata kerja",
+       "Arti",
+       "Contoh"
+      ],
+      "rows": [
+       [
+        "*ad valakinek*",
+        "memberi kepada",
+        "*Adok Katinak egy sálat.*"
+       ],
+       [
+        "*küld valakinek*",
+        "mengirim kepada",
+        "*Küldök a húgomnak egy csomagot.*"
+       ],
+       [
+        "*segít valakinek*",
+        "membantu",
+        "*Segítek neked.*"
+       ],
+       [
+        "*telefonál valakinek*",
+        "menelepon",
+        "*Telefonálok a szüleimnek.*"
+       ],
+       [
+        "*tetszik valakinek*",
+        "disukai oleh",
+        "*Annának tetszik a sál.*"
+       ],
+       [
+        "*kell valakinek*",
+        "dibutuhkan oleh",
+        "*Nekem kell egy új töltő.*"
+       ],
+       [
+        "*hiányzik valakinek*",
+        "dirindukan oleh",
+        "*Hiányzik nekem a családom.*"
+       ],
+       [
+        "*örül valaminek*",
+        "gembira atas",
+        "*Örülök az ajándéknak.*"
+       ],
+       [
+        "*köszön valakinek*",
+        "menyapa, memberi salam",
+        "*Köszönt a szomszédnak.*"
+       ]
+      ]
+     },
+     "after": [
+      "**Tiga kata kerja terbalik:** *tetszik, kell, hiányzik*. Pelakunya adalah **benda atau orang yang disukai, dibutuhkan, dirindukan**, dan kata kerjanya mengikuti dia: *Hiányzol* (kamu dirindukan = aku rindu kamu), *Hiányoznak a barátaim* (aku rindu teman-temanku).",
+      "Kata tanyanya *kinek?* (untuk/kepada siapa) dan *minek?* (atas apa): *Kinek telefonálsz?* — *Minek örülsz?*"
+     ]
+    },
+    {
+     "title": "Nekem, neked, neki — deret -nak untuk orang",
+     "body": [
+      "Deret ini sudah kamu pakai untuk \"punya\" di unit 7. Kini ia bekerja untuk semua kata kerja di atas."
+     ],
+     "table": {
+      "head": [
+       "Pelaku",
+       "Bentuk",
+       "Contoh",
+       "Arti"
+      ],
+      "rows": [
+       [
+        "én",
+        "nekem",
+        "*Nekem tetszik.*",
+        "Aku suka."
+       ],
+       [
+        "te",
+        "neked",
+        "*Segítek neked.*",
+        "Aku bantu kamu."
+       ],
+       [
+        "ő",
+        "neki",
+        "*Vigyél neki valamit!*",
+        "Bawakan dia sesuatu!"
+       ],
+       [
+        "Ön",
+        "Önnek",
+        "*Önnek is boldog karácsonyt!*",
+        "Selamat Natal juga untuk Anda!"
+       ],
+       [
+        "mi",
+        "nekünk",
+        "*Nekünk ez kell.*",
+        "Kami butuh ini."
+       ],
+       [
+        "ti",
+        "nektek",
+        "*Telefonálok nektek.*",
+        "Aku telepon kalian."
+       ],
+       [
+        "ők",
+        "nekik",
+        "*Írok nekik.*",
+        "Aku tulis surat ke mereka."
+       ]
+      ]
+     },
+     "after": [
+      "Untuk benda, pakai kata tunjuk: *ennek, annak* (atas ini, atas itu), jamaknya *ezeknek, azoknak*. Kati berkata *Annak nagyon fog örülni* — \"atas **itu** (taplak batik) ia akan sangat gembira\". *Neki* hanya untuk orang."
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Dialog kedua — A postán",
+   "intro": "Senin siang di kantor pos dekat Blaha Lujza tér. Budi mengirim paket ke Jakarta untuk adiknya, Sari.",
+   "lines": [
+    {
+     "speaker": "Ügyintéző:",
+     "text": "Jó napot kívánok! Mit szeretne?",
+     "id": "Selamat siang! Ada yang bisa dibantu?",
+     "literal": "baik hari-sasaran saya-mengharapkan! apa-sasaran ia-ingin-andai?"
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Ezt a csomagot szeretném feladni Indonéziába.",
+     "id": "Saya ingin mengirim paket ini ke Indonesia.",
+     "literal": "ini-sasaran itu paket-sasaran saya-menginginkannya-andai naik-memberi Indonesia-ke-dalam."
+    },
+    {
+     "speaker": "Ügyintéző:",
+     "text": "Kinek küldi?",
+     "id": "Dikirim untuk siapa?",
+     "literal": "siapa-bagi ia-mengirimnya?"
+    },
+    {
+     "speaker": "Budi:",
+     "text": "A húgomnak. Messze van, nagyon hiányzik.",
+     "id": "Untuk adik perempuan saya. Dia jauh, saya rindu sekali.",
+     "literal": "itu adik-perempuan-ku-bagi. jauh ia-ada, sangat ia-kurang."
+    },
+    {
+     "speaker": "Ügyintéző:",
+     "text": "Mi van a csomagban? Ehhez vámnyilatkozat is kell.",
+     "id": "Isi paketnya apa? Untuk ini perlu formulir bea cukai juga.",
+     "literal": "apa ada itu paket-di-dalam? ini-ke-dekat pernyataan-bea juga harus."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Szaloncukor és egy Rubik-kocka. Ezeknek biztosan örülni fog.",
+     "id": "Permen Natal dan kubus Rubik. Dia pasti senang dengan ini.",
+     "literal": "permen-salon dan sebuah Rubik-kubus. ini-jamak-bagi pasti gembira ia-akan."
+    },
+    {
+     "speaker": "Ügyintéző:",
+     "text": "Rendben. Légipostával küldi?",
+     "id": "Baik. Dikirim lewat pos udara?",
+     "literal": "tertib-di-dalam. pos-udara-dengan ia-mengirimnya?"
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Igen, légipostával. Mennyibe kerül?",
+     "id": "Ya, pos udara. Berapa biayanya?",
+     "literal": "ya, pos-udara-dengan. berapa-ke-dalam ia-berharga?"
+    },
+    {
+     "speaker": "Ügyintéző:",
+     "text": "Tizenhétezer forint. Kártyával fizet?",
+     "id": "Tujuh belas ribu forint. Bayar pakai kartu?",
+     "literal": "tujuh-belas-ribu forint. kartu-dengan ia-membayar?"
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Igen. Köszönöm a segítségét!",
+     "id": "Ya. Terima kasih atas bantuannya!",
+     "literal": "ya. saya-berterima-kasih itu bantuan-nya-sasaran!"
+    },
+    {
+     "speaker": "Ügyintéző:",
+     "text": "Szívesen. Remélem, a húgának tetszeni fog!",
+     "id": "Sama-sama. Semoga adik Anda suka!",
+     "literal": "hati-dengan. saya-berharap, itu adik-perempuan-nya-bagi berkenan ia-akan!"
+    }
+   ],
+   "notes": [
+    "**Kinek küldi?** — *küld* (mengirim) memakai dua kasus sekaligus: penerimanya *-nak/-nek*, barangnya *-t*. Petugas memakai bentuk tertentu (*küldi*) karena barangnya jelas: paket yang ada di depannya. *Felad* (menyerahkan ke pos, mengeposkan) adalah kata kerja resmi di loket.",
+    "**Nagyon hiányzik** — *hiányzik* harfiahnya \"kurang, hilang\". Orang yang dirindukan menjadi pelaku: *Hiányzik a húgom* (adikku \"kurang\" bagiku = aku rindu adikku). Budi tak perlu menyebut *nekem*; yang merindukan sudah jelas. Kalimat rindu yang paling pendek dalam bahasa Hungaria: *Hiányzol.*",
+    "**Ezeknek örülni fog** — kata tunjuk jamak + *-nak*: *ezeknek* (atas barang-barang ini). *Szaloncukor* adalah permen fondan berbungkus kertas timah berumbai yang digantung di pohon Natal Hungaria. Kubus Rubik ditemukan oleh orang Hungaria, Rubik Ernő, pada 1974 — oleh-oleh yang pas.",
+    "⚠️ **Köszönöm a segítségét** — hati-hati, *köszön* punya dua wajah. Berterima kasih **atas sesuatu**: benda itu masuk *-t* (*köszönöm a segítséget, köszönöm az ajándékot*). Tetapi *köszön valakinek* berarti **menyapa**, memberi salam: *Köszönt a szomszédnak* = ia menyapa tetangganya.",
+    "**A húgának tetszeni fog** — *húgának* = *húg* + *-a* (milik \"Anda\", bentuk *Ön*) + *-nak*. Akhiran bertumpuk dengan urutan tetap: kata, milik, kasus. Sama seperti *Anna szüleinek* di dialog pertama: orang tua-nya-bagi."
+   ],
+   "grammars": [
+    {
+     "title": "Orang di -nak, barang di -t",
+     "body": [
+      "Kata kerja memberi, mengirim, menunjukkan, dan mengatakan membawa dua pelengkap. Bahasa Indonesia memakai \"kepada\" atau akhiran *-kan*; bahasa Hungaria memakai dua akhiran."
+     ],
+     "table": {
+      "head": [
+       "Kalimat",
+       "Penerima (-nak)",
+       "Benda (-t)"
+      ],
+      "rows": [
+       [
+        "*Küldök a húgomnak egy csomagot.*",
+        "a húgomnak",
+        "egy csomagot"
+       ],
+       [
+        "*Adok Péter bácsinak egy bort.*",
+        "Péter bácsinak",
+        "egy bort"
+       ],
+       [
+        "*Megmutatom Annának a képeket.*",
+        "Annának",
+        "a képeket"
+       ],
+       [
+        "*Megírom Rékának az e-mailt.*",
+        "Rékának",
+        "az e-mailt"
+       ],
+       [
+        "*Veszek Irén mamának egy terítőt.*",
+        "Irén mamának",
+        "egy terítőt"
+       ],
+       [
+        "*Nem mondom meg neked a titkot.*",
+        "neked",
+        "a titkot"
+       ]
+      ]
+     },
+     "after": [
+      "Bentuk kata kerjanya ditentukan oleh **benda** (*-t*), bukan oleh penerimanya: *Küldök egy csomagot* (tak tentu), *Megmutatom a képeket* (tertentu). Penerima *-nak/-nek* tidak memengaruhi pilihan itu sama sekali.",
+      "Urutan penerima dan benda bebas; yang ditekankan diletakkan tepat sebelum kata kerja: *A húgomnak küldöm a csomagot* = paketnya kukirim **untuk adikku** (bukan untuk orang lain)."
+     ]
+    }
+   ]
+  }
+ ],
+ "sections": [
+  {
+   "title": "Hadiah dan bungkus",
+   "blocks": [
+    {
+     "type": "tabel",
+     "head": [
+      "Magyar",
+      "Arti"
+     ],
+     "rows": [
+      [
+       "*Ajándékba lesz.*",
+       "Ini untuk hadiah."
+      ],
+      [
+       "*Be tudná csomagolni?*",
+       "Bisa tolong dibungkus?"
+      ],
+      [
+       "*Kérek hozzá egy ajándéktasakot.*",
+       "Minta satu tas kado juga."
+      ],
+      [
+       "*Le tudná venni az árcédulát?*",
+       "Bisa label harganya dilepas?"
+      ],
+      [
+       "*Kérem a blokkot, hátha cserélni kell.*",
+       "Minta struknya, siapa tahu perlu ditukar."
+      ],
+      [
+       "*Meddig lehet visszahozni?*",
+       "Sampai kapan bisa dikembalikan?"
+      ],
+      [
+       "*Van ez kisebb méretben?*",
+       "Ada ukuran yang lebih kecil?"
+      ],
+      [
+       "*Ez neked szól!*",
+       "Ini untukmu!"
+      ],
+      [
+       "*Remélem, tetszik.*",
+       "Semoga kamu suka."
+      ]
+     ]
+    },
+    {
+     "type": "p",
+     "text": "Toko besar dan banyak kios pasar Natal mau membungkuskan barang yang dibeli sebagai hadiah; cukup katakan *ajándékba lesz*. Simpan *blokk* (struk) baik-baik: tanpa struk, penukaran barang sering ditolak. Ungkapan *Ez neked szól* (ini untukmu) memakai *szól* yang biasanya berarti \"berbunyi\"; di sini ia berarti \"ditujukan kepada\" — tentu dengan *-nak/-nek*."
+    },
+    {
+     "type": "kotak",
+     "title": "Bertamu dengan buah tangan",
+     "items": [
+      "Tamu di rumah orang Hungaria jarang datang dengan tangan kosong: sekotak cokelat (*bonbon*), sebotol anggur, atau bunga sudah cukup.",
+      "Tuan rumah hampir pasti berkata *Jaj, nem kellett volna!* (aduh, tidak usah repot-repot). Itu basa-basi; jawab ringan saja: *Semmiség!* (cuma hal kecil).",
+      "Hadiah biasanya dibuka langsung di depan pemberinya, lalu dipuji: *Nagyon szép, köszönöm!*",
+      "Oleh-oleh dari negeri asal — kopi, batik, kerajinan kecil — hampir selalu diterima dengan senang, karena ada ceritanya."
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Kata kerja + kasus yang wajib dihafal",
+   "blocks": [
+    {
+     "type": "p",
+     "text": "Banyak kata kerja Hungaria tidak memakai sasaran *-t* seperti yang ditebak penutur bahasa Indonesia, melainkan kasus lain. Tabel ini memuat lima belas yang paling sering. Hafalkan dengan *valaki* (seseorang) atau *valami* (sesuatu) yang sudah diberi akhirannya: *segít valakinek*, *gondol valamire*."
+    },
+    {
+     "type": "tabel",
+     "head": [
+      "Kata kerja + kasus",
+      "Arti",
+      "Contoh"
+     ],
+     "rows": [
+      [
+       "*segít valakinek*",
+       "membantu",
+       "*Segítek Rékának.*"
+      ],
+      [
+       "*tetszik valakinek*",
+       "disukai",
+       "*Tetszik neked?*"
+      ],
+      [
+       "*örül valaminek*",
+       "gembira atas",
+       "*Örülök neked!*"
+      ],
+      [
+       "*hiányzik valakinek*",
+       "dirindukan",
+       "*Hiányzol.*"
+      ],
+      [
+       "*telefonál valakinek*",
+       "menelepon",
+       "*Telefonálj anyának!*"
+      ],
+      [
+       "*gratulál valakinek*",
+       "memberi selamat",
+       "*Gratulálok Ilona néninek.*"
+      ],
+      [
+       "*hisz valakinek*",
+       "memercayai",
+       "*Hiszek neked.*"
+      ],
+      [
+       "*köszön valakinek*",
+       "menyapa",
+       "*Mindig köszön a szomszédoknak.*"
+      ],
+      [
+       "*gondol valamire*",
+       "memikirkan",
+       "*Rád gondolok.*"
+      ],
+      [
+       "*vigyáz valamire*",
+       "menjaga",
+       "*Vigyázz magadra!*"
+      ],
+      [
+       "*emlékszik valamire*",
+       "ingat",
+       "*Emlékszel a nevére?*"
+      ],
+      [
+       "*kérdez valakitől*",
+       "bertanya kepada",
+       "*Kérdezd meg Annától!*"
+      ],
+      [
+       "*fél valamitől*",
+       "takut akan",
+       "*Félek a kutyáktól.*"
+      ],
+      [
+       "*találkozik valakivel*",
+       "bertemu",
+       "*Találkozom Katival.*"
+      ],
+      [
+       "*beszél valamiről*",
+       "berbicara tentang",
+       "*Miről beszéltek?*"
+      ]
+     ]
+    },
+    {
+     "type": "kotak",
+     "title": "Jebakan bagi penutur bahasa Indonesia",
+     "items": [
+      "\"Membantu **dia**\" → *segítek **neki***, bukan *segítek őt*.",
+      "\"Menelepon **ibu**\" → *telefonálok **anyának***, bukan *anyát*. (Tetapi *felhívom anyát* — *felhív* memakai *-t*! Dua kata kerja, arti sama, kasus berbeda.)",
+      "\"Bertanya **kepada** Anna\" → *Megkérdezem Annától*: orang yang ditanya dianggap sumber, jadi *-tól/-től*.",
+      "\"Bertemu **dengan** Kati\" → *Katival találkozom*: bahasa Indonesia dan Hungaria kali ini sepakat."
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Ulangan berjenjang — unit 6",
+   "blocks": [
+    {
+     "type": "p",
+     "text": "Tutup kolom Hungaria, baca terjemahan Indonesianya, lalu susun kembali kalimatnya dari ingatan."
+    },
+    {
+     "type": "tabel",
+     "head": [
+      "Bahasa Indonesia",
+      "Magyar"
+     ],
+     "rows": [
+      [
+       "Charger putih ini punyamu?",
+       "*Ez a fehér töltő a tiéd?*"
+      ],
+      [
+       "Bukan, punyaku hitam. Ini punya Zoltán.",
+       "*Nem, az enyém fekete. Ez Zoltáné.*"
+      ],
+      [
+       "Itu pulpen-pulpenku. Selalu kulupakan di sini.",
+       "*Azok az én tollaim. Mindig itt felejtem őket.*"
+      ],
+      [
+       "Wah, banyak banget yang ketinggalan! Syal merah ini punya siapa?",
+       "*Hű, mennyi minden maradt itt! Kié ez a piros sál?*"
+      ],
+      [
+       "Bukan, ini piring-piring Ilona néni. Beliau meminjamkannya untuk makan malam.",
+       "*Nem, ezek Ilona néni tányérjai. Kölcsönadta őket a vacsorára.*"
+      ]
+     ]
+    }
+   ]
+  }
+ ],
+ "vocab": [
+  {
+   "hu": "ajándék",
+   "baca": "Å-yan-dék",
+   "id": "hadiah"
+  },
+  {
+   "hu": "segít",
+   "baca": "SYÈ-git",
+   "id": "membantu (+ *-nak/-nek*)"
+  },
+  {
+   "hu": "tetszik",
+   "baca": "TÈT-sik",
+   "id": "disukai (+ *-nak/-nek*)"
+  },
+  {
+   "hu": "örül",
+   "baca": "Ö-rül",
+   "id": "gembira atas (+ *-nak/-nek*)"
+  },
+  {
+   "hu": "hiányzik",
+   "baca": "HI-any-zik",
+   "id": "dirindukan; kurang (+ *-nak/-nek*)"
+  },
+  {
+   "hu": "telefonál",
+   "baca": "TÈ-lè-fo-nal",
+   "id": "menelepon (+ *-nak/-nek*)"
+  },
+  {
+   "hu": "köszön",
+   "baca": "KÖ-sön",
+   "id": "berterima kasih atas (+ *-t*); menyapa (+ *-nak/-nek*)"
+  },
+  {
+   "hu": "küld",
+   "baca": "küld",
+   "id": "mengirim"
+  },
+  {
+   "hu": "felad",
+   "baca": "FÈ-låd",
+   "id": "mengeposkan"
+  },
+  {
+   "hu": "imád",
+   "baca": "I-mad",
+   "id": "memuja, sangat suka"
+  },
+  {
+   "hu": "megvan",
+   "baca": "MÈG-vån",
+   "id": "sudah ada, sudah didapat"
+  },
+  {
+   "hu": "selyem",
+   "baca": "SYÈ-yèm",
+   "id": "sutra (*selyemsál* = syal sutra)"
+  },
+  {
+   "hu": "üveg",
+   "baca": "Ü-vèg",
+   "id": "botol; kaca"
+  },
+  {
+   "hu": "asztalterítő",
+   "baca": "ÅS-tål-tè-ri-tö",
+   "id": "taplak meja"
+  },
+  {
+   "hu": "titok",
+   "baca": "TI-tok",
+   "id": "rahasia (jamak: *titkok*)"
+  },
+  {
+   "hu": "forralt bor",
+   "baca": "FOR-rålt bor",
+   "id": "anggur merah panas berbumbu"
+  },
+  {
+   "hu": "vásár",
+   "baca": "VA-syar",
+   "id": "pasar; bazar (*karácsonyi vásár* = pasar Natal)"
+  },
+  {
+   "hu": "csomag",
+   "baca": "CO-måg",
+   "id": "paket"
+  },
+  {
+   "hu": "posta",
+   "baca": "POSY-tå",
+   "id": "kantor pos"
+  },
+  {
+   "hu": "vámnyilatkozat",
+   "baca": "VAM-nyi-låt-ko-zåt",
+   "id": "formulir pernyataan bea cukai"
+  },
+  {
+   "hu": "légiposta",
+   "baca": "LÉ-gi-posy-tå",
+   "id": "pos udara"
+  },
+  {
+   "hu": "szaloncukor",
+   "baca": "SÅ-lon-tsu-kor",
+   "id": "permen hiasan pohon Natal"
+  },
+  {
+   "hu": "remél",
+   "baca": "RÈ-mél",
+   "id": "berharap"
+  },
+  {
+   "hu": "becsomagol",
+   "baca": "BÈ-co-må-gol",
+   "id": "membungkus"
+  }
+ ],
+ "exercises": [
+  {
+   "prompt": "Terjemahkan ke bahasa Hungaria.",
+   "items": [
+    "Makasih ya kamu mau bantu aku.",
+    "Kamu suka syal ini?",
+    "Dia selalu senang dapat sebotol Tokaji.",
+    "Saya rindu adik perempuan saya.",
+    "Saya mengirim sebuah paket untuk adik perempuan saya.",
+    "Om Péter sudah punya segalanya."
+   ]
+  },
+  {
+   "prompt": "Isi dengan bentuk yang tepat.",
+   "items": [
+    "Segítek ____. (kamu)",
+    "____ tetszik ez a film? (dia)",
+    "Anna nagyon ____ az ajándéknak. (örül, masa kini)",
+    "Telefonálok a szüleim____. (-nak atau -nek?)",
+    "Nagyon ____ nekem. (hiányzik, pelakunya kamu)",
+    "____ kell ez a könyv? (siapa)",
+    "Köszönöm ____ ajándékot. (kata sandang)"
+   ]
+  },
+  {
+   "prompt": "Ganti bagian yang berakhiran -nak/-nek dengan kata ganti.",
+   "items": [
+    "Segítek Annának.",
+    "Telefonálok a szüleimnek.",
+    "Tetszik Katinak a sál.",
+    "Adok Zoltánnak egy tollat.",
+    "Ez a könyv Rékának és nekem kell.",
+    "Küldök neked és Sarinak egy csomagot."
+   ]
+  },
+  {
+   "prompt": "Susun jadi kalimat yang benar.",
+   "items": [
+    "nekem / segítesz / hogy / köszönöm",
+    "tetszik / neked / sál / a",
+    "mindene / neki / megvan",
+    "a / küldöm / húgomnak / csomagot / a",
+    "örülni / annak / fog / nagyon"
+   ]
+  }
+ ],
+ "answers": [
+  "Köszönöm, hogy segítesz nekem. — Tetszik neked ez a sál? — Egy üveg tokajinak mindig örül. — Hiányzik a húgom. — Küldök egy csomagot a húgomnak. — Péter bácsinak mindene megvan.",
+  "neked — Neki — örül — nek — hiányzol — Kinek — az",
+  "Segítek neki. — Telefonálok nekik. — Tetszik neki a sál. — Adok neki egy tollat. — Ez a könyv nekünk kell. — Küldök nektek egy csomagot.",
+  "Köszönöm, hogy segítesz nekem. — Neked tetszik a sál? — Neki mindene megvan. — A csomagot a húgomnak küldöm. — Annak nagyon fog örülni."
+ ]
+}

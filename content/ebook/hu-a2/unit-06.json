@@ -1,0 +1,730 @@
+{
+ "title": "Punya siapa? — milik jamak dan penanda -é",
+ "title_target": "Kié ez a töltő?",
+ "goal": "Menyortir barang yang tertukar di kantor dan tertinggal di rumah: menanyakan pemiliknya, menjawab \"punya Anna\" atau \"punyaku\", dan menyebut benda milik yang jumlahnya banyak. Titik tata bahasanya: milik jamak (*tollaim, barátaid, kollégái*), penanda *-é* (*Kié? Annáé.*), serta *az enyém, a tiéd, az övé*.",
+ "bekal": [
+  "menyusun milik jamak untuk enam pemilik, dari *könyveim* sampai *könyveik*",
+  "menjawab *Kié?* dengan nama + *-é* atau dengan *az enyém, a tiéd, az övé*",
+  "membedakan *kollégája* (seorang rekannya) dari *kollégái* (rekan-rekannya)"
+ ],
+ "dialogs": [
+  {
+   "title": "Dialog — Kié ez a töltő?",
+   "intro": "Senin pagi di ruang rapat Nusantara Trading Kft. Sejak rapat dengan tamu hari Jumat, mejanya penuh barang tanpa pemilik. Réka dan Budi menyortirnya.",
+   "lines": [
+    {
+     "speaker": "Réka:",
+     "text": "Jó reggelt! Nézd ezt az asztalt. Kié ez a sok holmi?",
+     "id": "Pagi! Lihat meja ini. Punya siapa barang sebanyak ini?",
+     "literal": "baik pagi-sasaran! lihat-hendaklah-nya ini-sasaran itu meja-sasaran. siapa-milik ini itu banyak barang?"
+    },
+    {
+     "speaker": "Budi:",
+     "text": "A pénteki megbeszélés után itt maradt.",
+     "id": "Ketinggalan di sini sesudah rapat hari Jumat.",
+     "literal": "itu Jumat-an rapat sesudah di-sini ia-tinggal-lampau."
+    },
+    {
+     "speaker": "Réka:",
+     "text": "Ez a fehér töltő a tiéd?",
+     "id": "Charger putih ini punyamu?",
+     "literal": "ini itu putih charger itu milikmu?"
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Nem, az enyém fekete. Ez Zoltáné.",
+     "id": "Bukan, punyaku hitam. Ini punya Zoltán.",
+     "literal": "tidak, itu milikku hitam. ini Zoltán-milik."
+    },
+    {
+     "speaker": "Réka:",
+     "text": "És ezek a tollak?",
+     "id": "Kalau pulpen-pulpen ini?",
+     "literal": "dan ini-jamak itu pulpen-jamak?"
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Azok az én tollaim. Mindig itt felejtem őket.",
+     "id": "Itu pulpen-pulpenku. Selalu kulupakan di sini.",
+     "literal": "itu-jamak itu saya pulpen-jamak-ku. selalu di-sini saya-melupakannya mereka-sasaran."
+    },
+    {
+     "speaker": "Réka:",
+     "text": "Ó, ez a szemüveg az enyém! Tegnap egész nap kerestem.",
+     "id": "Oh, kacamata ini punyaku! Kemarin seharian kucari.",
+     "literal": "oh, ini itu kacamata itu milikku! kemarin seluruh hari saya-mencarinya-lampau."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "És ez a kék esernyő? Kié lehet?",
+     "id": "Terus payung biru ini? Punya siapa, ya?",
+     "literal": "dan ini itu biru payung? siapa-milik mungkin?"
+    },
+    {
+     "speaker": "Réka:",
+     "text": "Szerintem a vendégeinké. Pénteken itt felejtették.",
+     "id": "Kayaknya punya tamu-tamu kita. Hari Jumat mereka lupa membawanya.",
+     "literal": "menurut-saya itu tamu-jamak-kami-milik. Jumat-pada di-sini mereka-melupakannya-lampau."
+    },
+    {
+     "speaker": "Zoltán:",
+     "text": "Jó reggelt! Nem látta valaki a töltőmet?",
+     "id": "Selamat pagi! Ada yang lihat charger saya?",
+     "literal": "baik pagi-sasaran! tidak ia-melihatnya-lampau seseorang itu charger-ku-sasaran?"
+    },
+    {
+     "speaker": "Budi:",
+     "text": "De igen, itt van. Ez az Öné, ugye?",
+     "id": "Ada, Pak, ini dia. Ini punya Bapak, kan?",
+     "literal": "tetapi ya, di-sini ada. ini itu Anda-milik, bukan?"
+    },
+    {
+     "speaker": "Zoltán:",
+     "text": "Igen, az enyém, köszönöm! De az esernyő nem az enyém.",
+     "id": "Ya, punya saya, terima kasih! Tapi payungnya bukan punya saya.",
+     "literal": "ya, itu milikku, saya-berterima-kasih! tetapi itu payung tidak itu milikku."
+    },
+    {
+     "speaker": "Réka:",
+     "text": "Akkor tényleg a vendégeinké. Írok nekik egy e-mailt.",
+     "id": "Berarti memang punya tamu-tamu kita. Aku kirimi mereka surel.",
+     "literal": "kalau-begitu sungguh itu tamu-jamak-kami-milik. saya-menulis bagi-mereka sebuah surel-sasaran."
+    },
+    {
+     "speaker": "Zoltán:",
+     "text": "Rendben. Budi, a mappái is itt vannak. Ezek a jegyzetei, ugye?",
+     "id": "Baik. Budi, map-map Anda juga ada di sini. Ini catatan-catatan Anda, kan?",
+     "literal": "tertib-di-dalam. Budi, itu map-jamak-nya juga di-sini mereka-ada. ini-jamak itu catatan-jamak-nya, bukan?"
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Igen, ezek az enyéim. Köszönöm szépen!",
+     "id": "Ya, itu semua punya saya. Terima kasih banyak, Pak!",
+     "literal": "ya, ini-jamak itu milikku-jamak. saya-berterima-kasih indah-secara!"
+    }
+   ],
+   "notes": [
+    "**Kié ez a sok holmi?** — *kié* berarti \"punya siapa\": kata tanya *ki* ditambah penanda *-é*. Jawabannya cukup nama pemilik + *-é*, tanpa mengulang bendanya: *Zoltáné* (punya Zoltán), *Annáé*, *Rékáé*. Bahasa Indonesia menaruh \"punya\" di depan nama; bahasa Hungaria menempelkannya di belakang.",
+    "**Az enyém fekete** — *az enyém* adalah \"punyaku\" yang berdiri sendiri, tanpa bendanya. Bandingkan *a töltőm* (charger-ku, bendanya disebut) dengan *az enyém* (punyaku, bendanya sudah jelas). Kata sandang *az/a* wajib: *az enyém*, *a tiéd*, *az övé* — tanpa kata sandang, kalimatnya terdengar patah.",
+    "**Az én tollaim** — lihat baik-baik: *toll* → *tollak* (pulpen-pulpen) → *tollaim* (pulpen-pulpenku). Penanda jamak *-k* **hilang**, digantikan *-i-* sebelum akhiran pemilik. Bentuk seperti *tollakom* tidak ada. Kata *én* di depannya menambah tekanan: \"itu pulpen-pulpen **aku**\".",
+    "**A vendégeinké** — akhiran bisa bertumpuk: *vendég* (tamu) → *vendégeink* (tamu-tamu kita) → *vendégeinké* (punya tamu-tamu kita). Baca dari dalam ke luar. Penanda *-é* bisa menempel di belakang kata benda apa pun, termasuk yang sudah membawa akhiran milik.",
+    "**Nem látta valaki…? — De igen.** Untuk membenarkan pertanyaan yang memakai *nem*, orang Hungaria menjawab *de igen* (atau cukup *de*), bukan *igen* saja. Rasanya seperti \"ada **kok**\" dalam bahasa Indonesia. *Látta* memakai bentuk tertentu karena sasarannya *a töltőmet* — benda milik selalu tertentu.",
+    "**Az Öné, a mappái, a jegyzetei** — Budi dan Zoltán masih saling ber-*Ön*. Untuk *Ön*, akhiran miliknya sama dengan orang ketiga: *a mappái* bisa berarti \"map-mapnya\" atau \"map-map Anda\", tergantung lawan bicara. Sapaan *Ön* dibahas tuntas di unit 10."
+   ],
+   "grammars": [
+    {
+     "title": "Milik jamak — satu -i- menggantikan -k",
+     "body": [
+      "Di A1 kamu memakai *a könyvem* (bukuku). Kalau bukunya banyak, masukkan *-i-* di antara kata dan akhiran pemilik. Tiga kata, tiga jenis ujung:"
+     ],
+     "table": {
+      "head": [
+       "Pemilik",
+       "*toll* (dalam)",
+       "*könyv* (depan)",
+       "*kolléga* (huruf hidup)"
+      ],
+      "rows": [
+       [
+        "én",
+        "toll**aim**",
+        "könyv**eim**",
+        "kollég**áim**"
+       ],
+       [
+        "te",
+        "toll**aid**",
+        "könyv**eid**",
+        "kollég**áid**"
+       ],
+       [
+        "ő / Ön",
+        "toll**ai**",
+        "könyv**ei**",
+        "kollég**ái**"
+       ],
+       [
+        "mi",
+        "toll**aink**",
+        "könyv**eink**",
+        "kollég**áink**"
+       ],
+       [
+        "ti",
+        "toll**aitok**",
+        "könyv**eitek**",
+        "kollég**áitok**"
+       ],
+       [
+        "ők",
+        "toll**aik**",
+        "könyv**eik**",
+        "kollég**áik**"
+       ]
+      ]
+     },
+     "after": [
+      "**Resep paling cepat:** ambil bentuk \"dia\" tunggal yang sudah kamu kenal (*tolla, könyve, kertje, tányérja*), tambahkan *-i* → *tollai, könyvei, kertjei, tányérjai*. Lalu tempelkan pelakunya: *-m, -d*, (kosong), *-nk, -tok/-tek, -k*. Kata yang di bentuk \"dia\" memakai *j* tetap membawanya: *kertjeim*, *tányérjaid*.",
+      "**Kata berakhiran huruf hidup** cukup memanjangkan *a/e* lalu menambah *-i*: *kolléga* → *kollégái*, *kávé* → *kávéim*. Jangan *kollégájai*.",
+      "⚠️ **Satu huruf, dua arti.** *a kollégája* = seorang rekannya; *a kollégái* = rekan-rekannya. *a könyve* = bukunya; *a könyvei* = buku-bukunya. Dengarkan ujungnya baik-baik.",
+      "**Yang membangkang, hafal langsung:** *szülő* → *szüleim* (orang tuaku), *fiú* → *fiaim* (anak-anak lelakiku), *ló* → *lovaim*, *dolog* → *dolgaim* (barang-barangku)."
+     ]
+    },
+    {
+     "title": "Kié? — penanda -é",
+     "body": [
+      "*-é* menjawab \"punya siapa\" dan menempel pada pemiliknya. Kalau pemiliknya berakhiran *a* atau *e*, vokal itu memanjang, sama seperti di depan akhiran lain."
+     ],
+     "table": {
+      "head": [
+       "Magyar",
+       "Cara baca",
+       "Bahasa Indonesia"
+      ],
+      "rows": [
+       [
+        "Kié ez?",
+        "KI-é èz",
+        "Ini punya siapa?"
+       ],
+       [
+        "Annáé.",
+        "ÅN-na-é",
+        "Punya Anna."
+       ],
+       [
+        "Rékáé.",
+        "RÉ-ka-é",
+        "Punya Réka."
+       ],
+       [
+        "Katié.",
+        "KÅ-ti-é",
+        "Punya Kati."
+       ],
+       [
+        "A főnöké.",
+        "å FÖ-nö-ké",
+        "Punya bos."
+       ],
+       [
+        "A szomszédé.",
+        "å SOM-sé-dé",
+        "Punya tetangga."
+       ],
+       [
+        "Az Öné?",
+        "åz Ö-né",
+        "Punya Anda?"
+       ],
+       [
+        "A vendégeinké.",
+        "å VÈN-dé-gè-in-ké",
+        "Punya tamu-tamu kita."
+       ]
+      ]
+     },
+     "after": [
+      "Kalau bendanya ingin disebut, pemiliknya tidak diberi *-é*. Pemilik berdiri telanjang di depan, dan bendanya membawa akhiran \"dia\": *Zoltán töltője* (charger Zoltán), *Anna könyve* (buku Anna), *Ilona néni tányérjai* (piring-piring Ilona néni). Jadi: *Ez Zoltán töltője* = *Ez a töltő Zoltáné*.",
+      "Untuk beberapa benda sekaligus ada bentuk *-éi*: *Ezek a tollak Annáéi*. Bentuk ini benar tetapi jarang terdengar; orang lebih suka menyebut bendanya: *Ezek Anna tollai*."
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Dialog kedua — A vacsora után",
+   "intro": "Minggu pagi awal November di apartemen Budi di distrik VIII. Semalam Budi mengundang teman-temannya makan malam masakan Indonesia. Anna datang membantu beres-beres, dan di mana-mana ada barang tamu yang tertinggal.",
+   "lines": [
+    {
+     "speaker": "Anna:",
+     "text": "Hű, mennyi minden maradt itt! Kié ez a piros sál?",
+     "id": "Wah, banyak banget yang ketinggalan! Syal merah ini punya siapa?",
+     "literal": "wah, berapa-banyak segala ia-tinggal-lampau di-sini! siapa-milik ini itu merah syal?"
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Katié. A fekete kesztyű pedig Gergőé.",
+     "id": "Punya Kati. Kalau sarung tangan hitam itu punya Gergő.",
+     "literal": "Kati-milik. itu hitam sarung-tangan sedangkan Gergő-milik."
+    },
+    {
+     "speaker": "Anna:",
+     "text": "És ezek a szép tányérok? Ezek nem a te tányérjaid.",
+     "id": "Terus piring-piring cantik ini? Ini bukan piring-piringmu.",
+     "literal": "dan ini-jamak itu indah piring-jamak? ini-jamak tidak itu kamu piring-jamak-mu."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Nem, ezek Ilona néni tányérjai. Kölcsönadta őket a vacsorára.",
+     "id": "Bukan, ini piring-piring Ilona néni. Beliau meminjamkannya untuk makan malam.",
+     "literal": "tidak, ini-jamak Ilona bibi piring-jamak-nya. pinjam-memberinya-lampau mereka-sasaran itu makan-malam-ke-atas."
+    },
+    {
+     "speaker": "Anna:",
+     "text": "Akkor délután visszavisszük őket. És ki van ezen a fényképen?",
+     "id": "Kalau begitu sore nanti kita kembalikan. Terus siapa yang di foto ini?",
+     "literal": "kalau-begitu siang-sesudah kembali-kita-membawanya mereka-sasaran. dan siapa ada ini-di-atas itu foto-di-atas?"
+    },
+    {
+     "speaker": "Budi:",
+     "text": "A szüleim és a húgom, Sari. Jakartában készült.",
+     "id": "Orang tuaku dan adikku, Sari. Diambil di Jakarta.",
+     "literal": "itu orang-tua-jamak-ku dan itu adik-perempuan-ku, Sari. Jakarta-di-dalam ia-dibuat-lampau."
+    },
+    {
+     "speaker": "Anna:",
+     "text": "A húgod nagyon hasonlít rád.",
+     "id": "Adikmu mirip banget sama kamu.",
+     "literal": "itu adik-perempuan-mu sangat ia-mirip kamu-ke-atas."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Igen, mindenki ezt mondja.",
+     "id": "Iya, semua orang bilang begitu.",
+     "literal": "ya, semua-orang ini-sasaran ia-mengatakannya."
+    },
+    {
+     "speaker": "Anna:",
+     "text": "Nézd, itt van egy kulcs is. Nem a tiéd?",
+     "id": "Lihat, ada kunci juga di sini. Bukan punyamu?",
+     "literal": "lihat-hendaklah-nya, di-sini ada sebuah kunci juga. tidak itu milikmu?"
+    },
+    {
+     "speaker": "Budi:",
+     "text": "De igen, az enyém! A pince kulcsa. Egész reggel kerestem.",
+     "id": "Iya, punyaku! Kunci gudang bawah tanah. Kucari sepanjang pagi.",
+     "literal": "tetapi ya, itu milikku! itu gudang-bawah kunci-nya. seluruh pagi saya-mencarinya-lampau."
+    },
+    {
+     "speaker": "Anna:",
+     "text": "Látod? A dolgaid mindig előkerülnek.",
+     "id": "Tuh kan? Barang-barangmu selalu muncul lagi.",
+     "literal": "kamu-melihatnya? itu barang-jamak-mu selalu depan-muncul-mereka."
+    }
+   ],
+   "notes": [
+    "**Katié, Gergőé** — sesudah *i* dan *ő*, *-é* menempel begitu saja. Hanya *a* dan *e* di ujung yang memanjang: *Anna* → *Annáé*, *Réka* → *Rékáé*, *Ilona néni* → *Ilona nénié*.",
+    "**A fekete kesztyű** — sepasang sarung tangan ditulis **tunggal**: *kesztyű*. Benda yang datang berpasangan (sarung tangan, sepatu, kaus kaki) dan bagian tubuh yang berpasangan (mata, telinga, tangan) biasanya tunggal: *a kesztyűm* = sepasang sarung tanganku, *fáj a szemem* = mataku sakit. Bentuk jamak *kesztyűk* berarti beberapa pasang.",
+    "**Nem a te tányérjaid** — *tányér* di bentuk \"dia\" memakai *j* (*tányérja*), jadi jamaknya pun membawa *j*: *tányérjaim, tányérjaid, tányérjai*. Kata *te* ditambahkan untuk penekanan: \"bukan piring **kamu**\".",
+    "**Ilona néni tányérjai** — pemilik diletakkan di depan tanpa akhiran apa pun, bendanya membawa akhiran \"dia\" jamak *-i*. Bandingkan *Ilona néni tányérja* (sebuah piring Ilona néni) dengan *Ilona néni tányérjai* (piring-piringnya). Susunannya persis seperti \"piring Ilona néni\" dalam bahasa Indonesia, hanya urutannya terbalik.",
+    "**A szüleim** — *szülő* (orang tua) membangkang: vokal *ő* berubah jadi *e* di bentuk milik jamak: *szüleim, szüleid, szülei*. Karena orang tua hampir selalu jamak, *a szüleim* adalah salah satu bentuk milik jamak yang paling sering kamu ucapkan.",
+    "**A dolgaid** — *dolog* (barang, urusan) kehilangan vokal keduanya begitu diberi akhiran: *dolgok, dolgom, dolgaid*. Kenali saja polanya kalau bertemu lagi."
+   ],
+   "grammars": [
+    {
+     "title": "Az enyém, a tiéd… — punya, tanpa menyebut bendanya",
+     "body": [
+      "Deret ini menggantikan seluruh frasa \"benda + milik\". Kolom kedua untuk satu benda, kolom ketiga untuk banyak benda."
+     ],
+     "table": {
+      "head": [
+       "Pemilik",
+       "Satu benda",
+       "Banyak benda",
+       "Contoh"
+      ],
+      "rows": [
+       [
+        "én",
+        "az enyém",
+        "az enyéim",
+        "*A kulcs az enyém.*"
+       ],
+       [
+        "te",
+        "a tiéd",
+        "a tieid",
+        "*Ez a sál a tiéd?*"
+       ],
+       [
+        "ő",
+        "az övé",
+        "az övéi",
+        "*A kesztyű az övé.*"
+       ],
+       [
+        "Ön",
+        "az Öné",
+        "az Önéi",
+        "*Ez az esernyő az Öné?*"
+       ],
+       [
+        "mi",
+        "a miénk",
+        "a mieink",
+        "*A lakás a miénk.*"
+       ],
+       [
+        "ti",
+        "a tiétek",
+        "a tieitek",
+        "*A tányérok a tieitek?*"
+       ],
+       [
+        "ők",
+        "az övék",
+        "az övéik",
+        "*A bicikli az övék.*"
+       ]
+      ]
+     },
+     "after": [
+      "Perhatikan kemiripannya dengan *-é*: *az övé* (punya dia) berjalan sejajar dengan *Annáé* (punya Anna). Keduanya menjawab *Kié?*.",
+      "Kolom \"banyak benda\" dipakai (*Igen, ezek az enyéim* di dialog pertama), tetapi ejaannya licin: *tieid, mieink, tieitek* memakai *i* dan *e* pendek. Kalau ragu, sebut saja bendanya: *Ezek az én jegyzeteim.*"
+     ]
+    }
+   ]
+  }
+ ],
+ "sections": [
+  {
+   "title": "Tabel milik lengkap: satu benda, banyak benda, tanpa benda",
+   "blocks": [
+    {
+     "type": "p",
+     "text": "Tiga kolom ini adalah seluruh sistem milik bahasa Hungaria tingkat A2. Kata contohnya *lakás* (apartemen). Baca per baris, dari kiri ke kanan: \"apartemenku, apartemen-apartemenku, punyaku\"."
+    },
+    {
+     "type": "tabel",
+     "head": [
+      "Pemilik",
+      "Satu benda",
+      "Banyak benda",
+      "Tanpa benda"
+     ],
+     "rows": [
+      [
+       "én",
+       "a lakásom",
+       "a lakásaim",
+       "az enyém"
+      ],
+      [
+       "te",
+       "a lakásod",
+       "a lakásaid",
+       "a tiéd"
+      ],
+      [
+       "ő / Ön",
+       "a lakása",
+       "a lakásai",
+       "az övé / az Öné"
+      ],
+      [
+       "mi",
+       "a lakásunk",
+       "a lakásaink",
+       "a miénk"
+      ],
+      [
+       "ti",
+       "a lakásotok",
+       "a lakásaitok",
+       "a tiétek"
+      ],
+      [
+       "ők",
+       "a lakásuk",
+       "a lakásaik",
+       "az övék"
+      ]
+     ]
+    },
+    {
+     "type": "p",
+     "text": "Kolom tengah paling mudah dikenali dari *-i-* yang muncul di setiap baris. Sisanya sama dengan kolom kiri, kecuali baris *ti* yang vokal sambungnya ikut *-i-*: *lakásotok* → *lakásaitok*. Kalau kamu sudah lancar di kolom kiri sejak A1, kolom tengah sebenarnya cuma satu huruf tambahan."
+    },
+    {
+     "type": "kotak",
+     "title": "Empat jebakan yang paling sering",
+     "items": [
+      "**Jamak + milik tidak memakai -k.** *a tollaim*, bukan *a tollakom*; *a barátaid*, bukan *a barátokod*.",
+      "**Ujung -a dan -ai.** *a kollégája* (seorang rekannya) lain dengan *a kollégái* (rekan-rekannya). Satu huruf menentukan jumlah.",
+      "**-uk dan -aik.** *a lakásuk* = apartemen mereka (satu); *a lakásaik* = apartemen-apartemen mereka.",
+      "**Pemilik jamak, benda tetap tunggal.** \"Anjing para tetangga\" adalah *a szomszédok kutyája*, bukan *kutyájuk*: kalau pemiliknya disebut sebagai kata benda, jamaknya cukup di pemilik."
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Punya siapa di apartemen sewaan?",
+   "blocks": [
+    {
+     "type": "p",
+     "text": "Apartemen baru Budi di Józsefváros disewa lengkap dengan perabot. Pada hari serah terima, pemilik apartemen (*a tulajdonos*) dan penyewa berjalan dari ruang ke ruang dan mencatat mana milik siapa. Kalimat-kalimat yang terdengar hari itu:"
+    },
+    {
+     "type": "tabel",
+     "head": [
+      "Magyar",
+      "Cara baca",
+      "Bahasa Indonesia"
+     ],
+     "rows": [
+      [
+       "A bútorok a tulajdonoséi.",
+       "å BU-to-rok å TU-låy-do-no-syé-i",
+       "Perabotnya milik pemilik apartemen."
+      ],
+      [
+       "A mosógép is a tulajdonosé.",
+       "å MO-syo-gép isy å TU-låy-do-no-syé",
+       "Mesin cucinya juga milik pemilik."
+      ],
+      [
+       "A függönyök az enyéim.",
+       "å FÜG-gö-nyök åz È-nyé-im",
+       "Gorden-gordennya punya saya."
+      ],
+      [
+       "A lépcsőházban álló bicikli a szomszédé.",
+       "å LÉP-cö-haz-bån AL-lo BI-tsik-li å SOM-sé-dé",
+       "Sepeda yang berdiri di tangga gedung itu punya tetangga."
+      ],
+      [
+       "A pince a házé, nem a lakásé.",
+       "å PIN-tsè å HA-zé nèm å LÅ-ka-syé",
+       "Gudang bawah tanah milik gedung, bukan milik apartemen."
+      ],
+      [
+       "Kiéi ezek a dobozok?",
+       "KI-é-i È-zèk å DO-bo-zok",
+       "Kardus-kardus ini punya siapa?"
+      ],
+      [
+       "Az előző lakóé.",
+       "åz È-lö-zö LÅ-ko-é",
+       "Punya penghuni sebelumnya."
+      ]
+     ]
+    },
+    {
+     "type": "p",
+     "text": "*A házé* dan *a lakásé* layak dicatat: *ház* sering berarti seluruh gedung apartemen, dan hal-hal bersama (tangga, loteng, gudang, halaman dalam) disebut milik *a ház*. Apartemen perseorangan adalah *lakás*."
+    },
+    {
+     "type": "kotak",
+     "title": "Serah terima apartemen sewaan",
+     "items": [
+      "Saat masuk, penyewa dan pemilik biasanya menandatangani berita acara serah terima (*átadás-átvételi jegyzőkönyv*): daftar perabot dan keadaannya.",
+      "Angka meteran dicatat hari itu juga: listrik (*villanyóra*), gas (*gázóra*), air (*vízóra*). Potret dengan ponsel supaya tak ada perdebatan saat pindah keluar.",
+      "Uang jaminan (*kaució*) lazimnya sebesar sewa satu sampai dua bulan dan dikembalikan saat kontrak berakhir bila tak ada kerusakan."
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Ulangan berjenjang — unit 4",
+   "blocks": [
+    {
+     "type": "p",
+     "text": "Tutup kolom Hungaria, baca terjemahan Indonesianya, lalu susun kembali kalimatnya dari ingatan."
+    },
+    {
+     "type": "tabel",
+     "head": [
+      "Bahasa Indonesia",
+      "Magyar"
+     ],
+     "rows": [
+      [
+       "Hai, Anna! Sabtu aku bikin syukuran rumah baru, dan aku mau kamu datang!",
+       "*Szia, Anna! Szombaton házavatót tartok, és azt akarom, hogy gyere!*"
+      ],
+      [
+       "Iya. Bilang ke dia supaya ajak Gergő juga!",
+       "*Igen. Mondd meg neki, hogy hozza el Gergőt is!*"
+      ],
+      [
+       "Ide bagus. Aku tempel catatan di tangga gedung, biar mereka nggak marah.",
+       "*Jó ötlet. Kiteszek egy cetlit a lépcsőházba, hogy ne haragudjanak.*"
+      ],
+      [
+       "Bawa gelas-gelasnya ke ruang tamu, habis itu buka anggurnya.",
+       "*Vidd át a poharakat a nappaliba, aztán nyisd ki a bort.*"
+      ],
+      [
+       "Hadiah yang pas! Kalau gitu Sabtu depan rakit bareng aku, ya!",
+       "*Tökéletes ajándék! Akkor jövő szombaton szereld össze velem!*"
+      ]
+     ]
+    }
+   ]
+  }
+ ],
+ "vocab": [
+  {
+   "hu": "kié?",
+   "baca": "KI-é",
+   "id": "punya siapa?"
+  },
+  {
+   "hu": "az enyém",
+   "baca": "åz È-nyém",
+   "id": "punyaku"
+  },
+  {
+   "hu": "a tiéd",
+   "baca": "å TI-éd",
+   "id": "punyamu"
+  },
+  {
+   "hu": "az övé",
+   "baca": "åz Ö-vé",
+   "id": "punyanya"
+  },
+  {
+   "hu": "holmi",
+   "baca": "HOL-mi",
+   "id": "barang-barang (pribadi)"
+  },
+  {
+   "hu": "töltő",
+   "baca": "TÖL-tö",
+   "id": "pengisi daya, charger"
+  },
+  {
+   "hu": "toll",
+   "baca": "toll",
+   "id": "pulpen (jamak: *tollak*; milik: *tollam, tollaim*)"
+  },
+  {
+   "hu": "szemüveg",
+   "baca": "SÈ-mü-vèg",
+   "id": "kacamata"
+  },
+  {
+   "hu": "esernyő",
+   "baca": "È-syèr-nyö",
+   "id": "payung"
+  },
+  {
+   "hu": "vendég",
+   "baca": "VÈN-dég",
+   "id": "tamu"
+  },
+  {
+   "hu": "megbeszélés",
+   "baca": "MÈG-bè-sé-lésy",
+   "id": "rapat, pertemuan"
+  },
+  {
+   "hu": "jegyzet",
+   "baca": "YÈDY-zèt",
+   "id": "catatan"
+  },
+  {
+   "hu": "felejt",
+   "baca": "FÈ-lèyt",
+   "id": "lupa (membawa); *ottfelejt* = tertinggal di sana"
+  },
+  {
+   "hu": "sál",
+   "baca": "syal",
+   "id": "syal"
+  },
+  {
+   "hu": "kesztyű",
+   "baca": "KÈS-tyü",
+   "id": "sarung tangan (sepasang = tunggal)"
+  },
+  {
+   "hu": "tányér",
+   "baca": "TA-nyér",
+   "id": "piring (milik: *tányérja, tányérjai*)"
+  },
+  {
+   "hu": "kölcsönad",
+   "baca": "KÖL-cö-nåd",
+   "id": "meminjamkan"
+  },
+  {
+   "hu": "fénykép",
+   "baca": "FÉNY-kép",
+   "id": "foto"
+  },
+  {
+   "hu": "szülő",
+   "baca": "SÜ-lö",
+   "id": "orang tua (milik jamak: *szüleim*)"
+  },
+  {
+   "hu": "hasonlít",
+   "baca": "HÅ-syon-lit",
+   "id": "mirip (+ *-ra/-re*)"
+  },
+  {
+   "hu": "pince",
+   "baca": "PIN-tsè",
+   "id": "gudang bawah tanah"
+  },
+  {
+   "hu": "dolog",
+   "baca": "DO-log",
+   "id": "barang; urusan (jamak: *dolgok*; milik: *dolgaim*)"
+  },
+  {
+   "hu": "előkerül",
+   "baca": "È-lö-kè-rül",
+   "id": "muncul lagi, ketemu kembali"
+  },
+  {
+   "hu": "tulajdonos",
+   "baca": "TU-låy-do-nosy",
+   "id": "pemilik"
+  }
+ ],
+ "exercises": [
+  {
+   "prompt": "Terjemahkan ke bahasa Hungaria.",
+   "items": [
+    "Charger putih ini punyamu?",
+    "Bukan, punyaku hitam.",
+    "Itu (yang di sana) pulpen-pulpenku.",
+    "Payung biru ini punya siapa?",
+    "Syal merah itu punya Kati.",
+    "Ini piring-piring Ilona néni."
+   ]
+  },
+  {
+   "prompt": "Isi dengan bentuk yang tepat.",
+   "items": [
+    "Ezek a ____. (könyv, milik saya, banyak)",
+    "Hol vannak a ____? (barát, milik kamu, banyak)",
+    "Ez a kabát ____. (Réka + -é)",
+    "A kulcs nem az enyém, hanem ____. (punya dia)",
+    "Ők a mi ____. (kolléga, milik kami, banyak)",
+    "____ ez a táska? (punya siapa)",
+    "A ____ Jakartában élnek. (szülő, milik saya)"
+   ]
+  },
+  {
+   "prompt": "Ubah seperti contoh. *Ez az én töltőm.* → *Ez a töltő az enyém.*",
+   "items": [
+    "Ez a te kulcsod.",
+    "Ez az ő sálja.",
+    "Ez a mi lakásunk.",
+    "Ez a ti kutyátok.",
+    "Ez az ő biciklijük.",
+    "Ez Anna esernyője. (pakai -é)"
+   ]
+  },
+  {
+   "prompt": "Susun jadi kalimat yang benar.",
+   "items": [
+    "az / tollaim / azok / én",
+    "sál / kié / piros / ez / a",
+    "Zoltáné / töltő / a / fehér",
+    "tányérjai / néni / ezek / Ilona",
+    "enyém / igen / az"
+   ]
+  }
+ ],
+ "answers": [
+  "Ez a fehér töltő a tiéd? — Nem, az enyém fekete. — Azok az én tollaim. — Kié ez a kék esernyő? — A piros sál Katié. — Ezek Ilona néni tányérjai.",
+  "könyveim — barátaid — Rékáé — az övé — kollégáink — Kié — szüleim",
+  "Ez a kulcs a tiéd. — Ez a sál az övé. — Ez a lakás a miénk. — Ez a kutya a tiétek. — Ez a bicikli az övék. — Ez az esernyő Annáé.",
+  "Azok az én tollaim. — Kié ez a piros sál? — A fehér töltő Zoltáné. — Ezek Ilona néni tányérjai. — Igen, az enyém."
+ ]
+}

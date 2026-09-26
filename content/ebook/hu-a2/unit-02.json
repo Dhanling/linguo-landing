@@ -1,0 +1,662 @@
+{
+ "title": "Minta tolong dengan sopan — pengandaian masa kini",
+ "title_target": "Megnéznéd, mielőtt elküldöm?",
+ "goal": "Meminta bantuan, menawar, dan menolak dengan halus memakai bentuk pengandaian (*-na / -ne*): *tudnál, kérnék, segítenél, megnéznéd, lenne*. Di dialog kedua kamu membedakan *szeretnék* (aku ingin melakukan) dari *szeretném, ha…* (aku ingin orang lain melakukan).",
+ "bekal": [
+  "menyusun pengandaian masa kini tak tentu dan tertentu untuk semua pelaku, termasuk *meghívnálak*",
+  "melunakkan permintaan, koreksi, dan penolakan seperti orang Hungaria di kantor",
+  "memakai *szeretném, ha…* dengan kata kerja pengandaian di anak kalimatnya"
+ ],
+ "dialogs": [
+  {
+   "title": "Dialog — Még egy kérésem lenne",
+   "intro": "Kantor Nusantara Trading Kft., Rabu siang. Budi harus mengirim penawaran harga kepada calon klien Hungaria, dan untuk pertama kalinya ia menulisnya sendiri dalam bahasa Hungaria.",
+   "lines": [
+    {
+     "speaker": "Budi:",
+     "text": "Réka, ráérsz egy percre?",
+     "id": "Réka, ada waktu sebentar?",
+     "literal": "Réka, ke-atasnya-kamu-sempat sebuah menit-ke-atas?"
+    },
+    {
+     "speaker": "Réka:",
+     "text": "Persze. Mi a helyzet?",
+     "id": "Tentu. Ada apa?",
+     "literal": "tentu. apa itu situasi?"
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Írtam egy e-mailt egy új ügyfélnek. Megnéznéd, mielőtt elküldöm?",
+     "id": "Aku nulis surel ke klien baru. Bisa kamu lihat dulu sebelum kukirim?",
+     "literal": "saya-menulis-lampau sebuah surel-sasaran sebuah baru klien-bagi. tuntas-kamu-melihatnya-andai, sebelum pergi-saya-mengirimnya?"
+    },
+    {
+     "speaker": "Réka:",
+     "text": "Szívesen. A szöveg jó, de én hivatalosabban kezdeném.",
+     "id": "Boleh. Isinya bagus, tapi kalau aku, pembukaannya kubuat lebih resmi.",
+     "literal": "hati-dengan. itu teks bagus, tapi saya lebih-resmi-secara saya-memulainya-andai."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Hogyan? „Kedves Papp úr”?",
+     "id": "Gimana? \"Pak Papp yang baik\"?",
+     "literal": "bagaimana? „terkasih Papp tuan”?"
+    },
+    {
+     "speaker": "Réka:",
+     "text": "Inkább „Tisztelt Papp Úr!”. Egy új ügyfélnek így illene.",
+     "id": "Mending \"Yang terhormat Bapak Papp\". Untuk klien baru, begitu yang pantas.",
+     "literal": "lebih-baik „yang-dihormati Papp Tuan!”. sebuah baru klien-bagi begini ia-pantas-andai."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Értem. Az árakat is ellenőriznéd?",
+     "id": "Oke. Harga-harganya juga bisa kamu cek?",
+     "literal": "saya-mengertinya. itu harga-jamak-sasaran juga kamu-memeriksanya-andai?"
+    },
+    {
+     "speaker": "Réka:",
+     "text": "Várj… itt nem negyvenezer, hanem négyszázezer forint lenne.",
+     "id": "Tunggu… di sini mestinya bukan empat puluh ribu, tapi empat ratus ribu forint.",
+     "literal": "tunggu-hendaklah… di-sini bukan empat-puluh-ribu, melainkan empat-ratus-ribu forint ada-andai."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Jaj, ez nagy hiba lenne! Még egy kérésem lenne.",
+     "id": "Aduh, bisa gawat itu! Aku masih ada satu permintaan lagi.",
+     "literal": "aduh, ini besar kesalahan ada-andai! masih satu permintaan-ku ada-andai."
+    },
+    {
+     "speaker": "Réka:",
+     "text": "Na, mi az?",
+     "id": "Nah, apa?",
+     "literal": "nah, apa itu?"
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Segítenél holnap a prezentációban?",
+     "id": "Besok kamu mau bantu aku di presentasi?",
+     "literal": "kamu-membantu-andai besok itu presentasi-di-dalam?"
+    },
+    {
+     "speaker": "Réka:",
+     "text": "Délelőtt nem érek rá, de délután szívesen.",
+     "id": "Pagi aku nggak sempat, tapi siang boleh.",
+     "literal": "pagi tidak saya-sempat ke-atasnya, tapi siang hati-dengan."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Tökéletes. Cserébe meghívnálak egy kávéra.",
+     "id": "Sempurna. Sebagai gantinya, kutraktir kamu kopi.",
+     "literal": "sempurna. tukar-ke-dalam tuntas-saya-mengundangmu-andai sebuah kopi-ke-atas."
+    },
+    {
+     "speaker": "Réka:",
+     "text": "Na, ezt nem utasítanám vissza!",
+     "id": "Nah, yang ini nggak bakal kutolak!",
+     "literal": "nah, ini-sasaran tidak saya-menolaknya-andai kembali!"
+    }
+   ],
+   "notes": [
+    "**Megnéznéd…?** — pertanyaan dengan pengandaian adalah cara paling biasa untuk meminta tolong di antara teman. *Megnézed?* (kamu lihat?) terdengar seperti menanyakan fakta; *megnéznéd?* (kamu mau melihatnya?) terdengar seperti permintaan. Bentuknya **tertentu** karena sasarannya jelas: surel yang baru saja disebut, walau tidak diulang.",
+    "**Én hivatalosabban kezdeném** — \"kalau aku, aku akan memulainya lebih resmi\". Orang Hungaria sering mengoreksi dengan cara ini: bukan \"ini salah\", tetapi \"aku sih akan…\". Pola *én … -nám / -ném* layak kamu tiru ketika memberi saran kepada rekan kerja.",
+    "**Négyszázezer forint lenne** — *lenne* (akan ada, seharusnya) melunakkan koreksi. Réka tidak berkata \"ini 400 ribu\"; ia berkata \"mestinya 400 ribu\". *Lenne* juga yang membuat *Még egy kérésem lenne* terdengar sopan: harfiahnya \"aku akan punya satu permintaan lagi\".",
+    "**Így illene** — *illik* (pantas) hampir selalu muncul dalam pengandaian ketika memberi nasihat: *Illene felhívni.* = mestinya kamu meneleponnya. Surat resmi Hungaria dibuka dengan *Tisztelt* + nama keluarga + *Úr!* (untuk perempuan biasanya nama lengkap: *Tisztelt Kovács Anna!*), diakhiri tanda seru, bukan koma.",
+    "**Meghívnálak** — bentuk *-lak / -lek* juga hidup di pengandaian: *-nálak / -nélek*. *Meghívnálak* = aku akan mentraktirmu, *segítenélek* = aku akan membantumu. Hanya dipakai untuk \"aku → kamu\", persis seperti di masa kini dan lampau.",
+    "**Nem utasítanám vissza** — awalan *vissza-* terpisah dan pindah ke belakang karena *nem*, sama seperti *nem vetted fel* di unit 1. *Ezt* memicu bentuk tertentu. Kalimat ini jawaban baku yang setengah bercanda untuk tawaran yang menyenangkan."
+   ],
+   "grammars": [
+    {
+     "title": "Pengandaian masa kini — -na / -ne",
+     "body": [
+      "Penandanya *-na* (kubu dalam) atau *-ne* (kubu depan), lalu akhiran pelaku. Kedua rangkaian — tak tentu dan tertentu — tetap berlaku."
+     ],
+     "table": {
+      "head": [
+       "Pelaku",
+       "*tud* tak tentu",
+       "*tud* tertentu",
+       "*kér* tak tentu",
+       "*kér* tertentu"
+      ],
+      "rows": [
+       [
+        "én",
+        "tud**nék**",
+        "tud**nám**",
+        "kér**nék**",
+        "kér**ném**"
+       ],
+       [
+        "te",
+        "tud**nál**",
+        "tud**nád**",
+        "kér**nél**",
+        "kér**néd**"
+       ],
+       [
+        "ő / Ön",
+        "tud**na**",
+        "tud**ná**",
+        "kér**ne**",
+        "kér**né**"
+       ],
+       [
+        "mi",
+        "tud**nánk**",
+        "tud**nánk**",
+        "kér**nénk**",
+        "kér**nénk**"
+       ],
+       [
+        "ti",
+        "tud**nátok**",
+        "tud**nátok**",
+        "kér**nétek**",
+        "kér**nétek**"
+       ],
+       [
+        "ők / Önök",
+        "tud**nának**",
+        "tud**nák**",
+        "kér**nének**",
+        "kér**nék**"
+       ],
+       [
+        "én → téged",
+        "tud**nálak**",
+        "—",
+        "kér**nélek**",
+        "—"
+       ]
+      ]
+     },
+     "after": [
+      "**Satu-satunya pelanggar keselarasan vokal:** *én* tak tentu selalu *-nék*, juga di kata kerja kubu dalam: *tudnék, adnék, mennék*. Bukan *tudnák* — itu bentuk tertentu \"mereka\".",
+      "**Baris *mi* dan *ti* sama di kedua rangkaian.** Jadi yang benar-benar perlu dipilih hanya *én, te, ő, ők*. Dan awas kembar: *kérnék* bisa \"aku minta\" (tak tentu) atau \"mereka memintanya\" (tertentu)."
+     ]
+    },
+    {
+     "title": "Batang yang berubah",
+     "body": [
+      "Kata kerja yang tak beraturan di masa kini juga tak beraturan di sini, tetapi polanya jelas: batang pendek + *-nne*."
+     ],
+     "table": {
+      "head": [
+       "Dasar",
+       "ő (andai)",
+       "te (andai)",
+       "Catatan"
+      ],
+      "rows": [
+       [
+        "*van*",
+        "*lenne*",
+        "*lennél*",
+        "dari *lesz*"
+       ],
+       [
+        "*megy / jön*",
+        "*menne / jönne*",
+        "*mennél / jönnél*",
+        "batang *men-, jön-*"
+       ],
+       [
+        "*eszik / iszik*",
+        "*enne / inna*",
+        "*ennél / innál*",
+        "*-ik* hilang"
+       ],
+       [
+        "*vesz / visz / tesz*",
+        "*venne / vinne / tenne*",
+        "*vennél / vinnél / tennél*",
+        "batang *ven-, vin-, ten-*"
+       ],
+       [
+        "*segít*",
+        "*segítene*",
+        "*segítenél*",
+        "*-ít* → vokal sambung"
+       ],
+       [
+        "*mond / küld*",
+        "*mondana / küldene*",
+        "*mondanál / küldenél*",
+        "dua huruf mati → vokal sambung"
+       ]
+      ]
+     },
+     "after": [
+      "**Vokal sambung *-a- / -e-*** muncul kalau batang berakhiran *-ít* atau dua huruf mati: *segítene, mondana, értene, tartana*. Mirip kelompok C masa lampau di unit 1, tetapi tidak persis sama: *mond, küld* memakai vokal sambung di sini (*mondana*) walau lampaunya *mondtam*, sedangkan *lát, fut* tidak (*látna, futna*)."
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Dialog kedua — Szeretném, ha ott lenne",
+   "intro": "Kamis pagi. Budi mengetuk pintu ruang Horváth Zoltán, kepala kantor. Keduanya masih saling memakai *Ön*.",
+   "lines": [
+    {
+     "speaker": "Budi:",
+     "text": "Elnézést, Horváth úr, lenne egy perce?",
+     "id": "Permisi, Pak Horváth, ada waktu sebentar?",
+     "literal": "maaf-sasaran, Horváth tuan, ada-andai sebuah menit-nya?"
+    },
+    {
+     "speaker": "Zoltán:",
+     "text": "Persze, Budi. Miről van szó?",
+     "id": "Tentu, Budi. Soal apa?",
+     "literal": "tentu, Budi. apa-tentang ada kata?"
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Pénteken költözöm. Szeretnék kivenni egy szabadnapot.",
+     "id": "Hari Jumat saya pindahan. Saya ingin ambil cuti sehari.",
+     "literal": "Jumat-pada saya-pindah. saya-ingin-andai keluar-mengambil sebuah hari-bebas-sasaran."
+    },
+    {
+     "speaker": "Zoltán:",
+     "text": "De pénteken megbeszélés van. Szeretném, ha ott lenne.",
+     "id": "Tapi Jumat ada rapat. Saya ingin Anda hadir.",
+     "literal": "tapi Jumat-pada rapat ada. saya-menginginkannya-andai, jika di-sana ia-ada-andai."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Réka szívesen helyettesítene. Már beszéltem vele.",
+     "id": "Réka bersedia menggantikan saya. Saya sudah bicara dengannya.",
+     "literal": "Réka hati-dengan ia-menggantikan-andai. sudah saya-berbicara-lampau dia-dengan."
+    },
+    {
+     "speaker": "Zoltán:",
+     "text": "Jó. Akkor szeretném, ha előtte megírná az összefoglalót.",
+     "id": "Baik. Kalau begitu saya ingin Anda menulis ringkasannya lebih dulu.",
+     "literal": "baik. kalau-begitu saya-menginginkannya-andai, jika sebelumnya tuntas-ia-menulisnya-andai itu ringkasan-sasaran."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Természetesen. Csütörtök estig elküldöm.",
+     "id": "Tentu. Kamis malam paling lambat saya kirim.",
+     "literal": "tentu-saja. Kamis malam-sampai pergi-saya-mengirimnya."
+    },
+    {
+     "speaker": "Zoltán:",
+     "text": "Kitűnő. És hova költözik?",
+     "id": "Bagus. Anda pindah ke mana?",
+     "literal": "istimewa. dan ke-mana ia-pindah?"
+    },
+    {
+     "speaker": "Budi:",
+     "text": "A nyolcadik kerületbe, közel a Corvin-negyedhez. Nagyobb lakás, és olcsóbb is.",
+     "id": "Ke distrik delapan, dekat Corvin-negyed. Apartemennya lebih besar, lebih murah pula.",
+     "literal": "itu kedelapan distrik-ke-dalam, dekat itu Corvin-kawasan-ke-dekat. lebih-besar apartemen, dan lebih-murah juga."
+    },
+    {
+     "speaker": "Zoltán:",
+     "text": "Jó környék. Ha kellene valami, szóljon nyugodtan.",
+     "id": "Lingkungan yang bagus. Kalau perlu apa-apa, bilang saja.",
+     "literal": "bagus lingkungan. jika harus-andai sesuatu, ia-bersuara-hendaklah tenang-secara."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Köszönöm szépen, nagyon kedves.",
+     "id": "Terima kasih banyak, Bapak baik sekali.",
+     "literal": "saya-berterima-kasih indah-secara, sangat baik-hati."
+    }
+   ],
+   "notes": [
+    "**Lenne egy perce?** — kepada *Ön*, kata kerjanya orang ketiga tunggal (*lenne*) dan akhiran miliknya juga orang ketiga (*perce* = menitnya). Kalau ke Réka, Budi akan berkata *Lenne egy perced?* Tiga tingkat sapaan dibahas lengkap di unit 10.",
+    "**Szeretnék kivenni… lawan szeretném, ha…** — kalau yang ingin dan yang melakukan orangnya **sama**, pakai *szeretnék* + *-ni*. Kalau **berbeda** (Zoltán ingin, Budi yang hadir), pakai *szeretném, ha* + pengandaian. Bahasa Indonesia memakai \"ingin\" untuk keduanya, jadi di sinilah pelajar Indonesia paling sering tergelincir.",
+    "**Szeretném, bukan szeretnék** — anak kalimat *ha…* diperlakukan seperti sasaran tertentu, jadi *szeret* memakai bentuk **tertentu**. Anggap *ha…* sebagai \"hal itu\": \"aku menginginkan **hal itu**, bahwa Anda hadir\".",
+    "**Megírná az összefoglalót** — di dalam anak kalimat, kata kerjanya **tetap pengandaian**, dan tetap memilih rangkaian menurut sasarannya sendiri: *az összefoglalót* → tertentu *megírná*. Bahasa Indonesia tidak menandai apa pun di sini; bahasa Hungaria menandai dua kali.",
+    "**Ha kellene valami** — *ha* + pengandaian juga dipakai untuk tawaran yang sopan: \"seandainya Anda perlu sesuatu\". *Szóljon nyugodtan* = bilang saja, jangan sungkan. Bentuk perintah *Ön* seperti *szóljon* dipelajari di unit 3."
+   ],
+   "grammars": [
+    {
+     "title": "Szeretnék atau szeretném, ha…?",
+     "body": [
+      "Pertanyaan kuncinya satu: siapa yang akan melakukan?"
+     ],
+     "table": {
+      "head": [
+       "Kalimat",
+       "Yang ingin",
+       "Yang melakukan",
+       "Arti"
+      ],
+      "rows": [
+       [
+        "*Szeretnék fizetni.*",
+        "aku",
+        "aku",
+        "Aku ingin membayar."
+       ],
+       [
+        "*Szeretném kifizetni a számlát.*",
+        "aku",
+        "aku",
+        "Aku ingin melunasi tagihannya."
+       ],
+       [
+        "*Szeretném, ha fizetnél.*",
+        "aku",
+        "kamu",
+        "Aku ingin kamu yang bayar."
+       ],
+       [
+        "*Szeretném, ha Réka segítene.*",
+        "aku",
+        "Réka",
+        "Aku ingin Réka membantu."
+       ],
+       [
+        "*Szeretnénk, ha eljönnétek.*",
+        "kami",
+        "kalian",
+        "Kami ingin kalian datang."
+       ]
+      ]
+     },
+     "after": [
+      "Perhatikan baris kedua: sasaran si *-ni* (*a számlát*) membuat *szeretném* tertentu. Baris terakhir: *szeretnénk* bisa dua-duanya karena bentuk *mi* sama di kedua rangkaian."
+     ]
+    }
+   ]
+  }
+ ],
+ "sections": [
+  {
+   "title": "Tangga kesopanan",
+   "blocks": [
+    {
+     "type": "tabel",
+     "head": [
+      "Magyar",
+      "Arti",
+      "Kepada siapa"
+     ],
+     "rows": [
+      [
+       "*Adj egy tollat!*",
+       "Kasih aku pulpen!",
+       "teman dekat, keluarga"
+      ],
+      [
+       "*Adsz egy tollat?*",
+       "Kamu kasih aku pulpen?",
+       "teman, santai"
+      ],
+      [
+       "*Adnál egy tollat?*",
+       "Bisa kasih aku pulpen?",
+       "teman, sopan"
+      ],
+      [
+       "*Adna egy tollat?*",
+       "Bisa Anda beri saya pulpen?",
+       "*Ön*, sopan"
+      ],
+      [
+       "*Lenne szíves adni egy tollat?*",
+       "Sudikah Anda memberi saya pulpen?",
+       "*Ön*, sangat sopan"
+      ],
+      [
+       "*Legyen szíves, adjon egy tollat.*",
+       "Tolong beri saya pulpen.",
+       "*Ön*, loket dan kantor"
+      ]
+     ]
+    },
+    {
+     "type": "p",
+     "text": "Anak tangga ketiga (*Adnál…?*) adalah yang paling sering kamu dengar di antara rekan kerja yang saling ber-*te*: sopan tanpa terdengar kaku. Anak tangga kelima (*Lenne szíves…?*) harfiahnya \"apakah Anda akan berbaik hati…\" — pakai kepada orang yang jauh lebih tua atau dalam surat resmi. Bentuk perintah di baris pertama dan terakhir tidak kasar kalau nadanya ramah; bahasa Hungaria tidak menganggap perintah itu sendiri sebagai ketidaksopanan."
+    },
+    {
+     "type": "kotak",
+     "title": "Menolak tanpa menyakiti",
+     "items": [
+      "*Szívesen segítenék, de…* — aku sih mau bantu, tapi… Pengandaian di sini memberi tahu bahwa jawabannya \"tidak\" sebelum kata *de* diucapkan.",
+      "*Most sajnos nem érek rá.* — sayangnya sekarang aku tidak sempat.",
+      "*Máskor szívesen!* — lain kali dengan senang hati. Pendek, hangat, dan menutup pembicaraan.",
+      "*Nem utasítanám vissza.* — aku tak akan menolaknya. Cara setengah bercanda untuk berkata \"ya\"."
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Pengandaian di toko dan restoran",
+   "blocks": [
+    {
+     "type": "tabel",
+     "head": [
+      "Magyar",
+      "Arti"
+     ],
+     "rows": [
+      [
+       "*Kérnék egy kávét.*",
+       "Saya mau pesan satu kopi."
+      ],
+      [
+       "*Mit ajánlana?*",
+       "Apa yang Anda sarankan?"
+      ],
+      [
+       "*Lenne egy asztal két főre?*",
+       "Ada meja untuk dua orang?"
+      ],
+      [
+       "*Ezt kérném.*",
+       "Saya mau yang ini."
+      ],
+      [
+       "*Megnézném azt a kabátot.*",
+       "Saya mau lihat mantel itu."
+      ],
+      [
+       "*Mennyi lenne összesen?*",
+       "Jadi berapa semuanya?"
+      ],
+      [
+       "*Szeretnék fizetni.*",
+       "Saya mau bayar."
+      ],
+      [
+       "*Kártyával fizetnék.*",
+       "Saya bayar pakai kartu."
+      ]
+     ]
+    },
+    {
+     "type": "p",
+     "text": "*Kérek egy kávét* dan *kérnék egy kávét* sama-sama sopan di kafe Hungaria; yang kedua sedikit lebih halus, dan kamu akan mendengar keduanya di belakang meja kasir mana pun. Yang tidak lazim justru terlalu banyak basa-basi: *Lenne szíves adni egy kávét?* terdengar seperti orang yang sedang menulis surat kepada pejabat. Di restoran, pelayan membuka dengan *Tessék?* atau *Mit hozhatok?* (apa yang bisa saya bawakan?), dan kamu cukup menjawab dengan *Kérnék…*."
+    },
+    {
+     "type": "kotak",
+     "title": "Tagihan dan tip",
+     "items": [
+      "Minta tagihan: *Szeretnék fizetni* atau *A számlát kérném*. Pelayan jarang membawa tagihan sebelum diminta.",
+      "Banyak restoran di Budapest sudah memasukkan *szervizdíj* (biaya layanan) ke tagihan. Periksa dulu sebelum memberi tip.",
+      "Kalau belum ada *szervizdíj*, tip sekitar sepuluh persen lazim. Sebut jumlah yang ingin kamu bayar saat menyerahkan uang, jangan tinggalkan di meja.",
+      "*Köszönöm* saat menyerahkan uang tunai bisa berarti \"kembaliannya ambil saja\". Kalau masih ingin kembalian, jangan ucapkan dulu."
+     ]
+    }
+   ]
+  }
+ ],
+ "vocab": [
+  {
+   "hu": "ráér",
+   "baca": "RA-ér",
+   "id": "sempat, punya waktu"
+  },
+  {
+   "hu": "helyzet",
+   "baca": "HÈY-zèt",
+   "id": "situasi, keadaan"
+  },
+  {
+   "hu": "ügyfél",
+   "baca": "ÜDY-fél",
+   "id": "klien, nasabah (jamak: *ügyfelek*)"
+  },
+  {
+   "hu": "megnéz",
+   "baca": "MÈG-néz",
+   "id": "melihat, memeriksa (sampai tuntas)"
+  },
+  {
+   "hu": "elküld",
+   "baca": "ÈL-küld",
+   "id": "mengirim"
+  },
+  {
+   "hu": "hivatalos",
+   "baca": "HI-vå-tå-losy",
+   "id": "resmi"
+  },
+  {
+   "hu": "tisztelt",
+   "baca": "TIS-tèlt",
+   "id": "yang terhormat (pembuka surat)"
+  },
+  {
+   "hu": "illik",
+   "baca": "IL-lik",
+   "id": "pantas, sepatutnya (*illene* = seharusnya)"
+  },
+  {
+   "hu": "ellenőriz",
+   "baca": "ÈL-lè-nö-riz",
+   "id": "memeriksa, mengecek"
+  },
+  {
+   "hu": "ár",
+   "baca": "ar",
+   "id": "harga"
+  },
+  {
+   "hu": "hiba",
+   "baca": "HI-bå",
+   "id": "kesalahan"
+  },
+  {
+   "hu": "kérés",
+   "baca": "KÉ-résy",
+   "id": "permintaan"
+  },
+  {
+   "hu": "cserébe",
+   "baca": "CÈ-ré-bè",
+   "id": "sebagai gantinya"
+  },
+  {
+   "hu": "meghív",
+   "baca": "MÈG-hiv",
+   "id": "mengundang; mentraktir"
+  },
+  {
+   "hu": "visszautasít",
+   "baca": "VIS-så-u-tå-syit",
+   "id": "menolak"
+  },
+  {
+   "hu": "szabadnap",
+   "baca": "SÅ-båd-nåp",
+   "id": "hari libur (cuti sehari)"
+  },
+  {
+   "hu": "kivesz",
+   "baca": "KI-vès",
+   "id": "mengambil (cuti); mengeluarkan"
+  },
+  {
+   "hu": "megbeszélés",
+   "baca": "MÈG-bè-sé-lésy",
+   "id": "rapat, pembicaraan"
+  },
+  {
+   "hu": "helyettesít",
+   "baca": "HÈ-yèt-tè-syit",
+   "id": "menggantikan (sementara)"
+  },
+  {
+   "hu": "összefoglaló",
+   "baca": "ÖS-sè-fog-lå-lo",
+   "id": "ringkasan"
+  },
+  {
+   "hu": "költözik",
+   "baca": "KÖL-tö-zik",
+   "id": "pindah (rumah)"
+  },
+  {
+   "hu": "környék",
+   "baca": "KÖR-nyék",
+   "id": "lingkungan, sekitar"
+  },
+  {
+   "hu": "szól",
+   "baca": "sol",
+   "id": "bilang, memberi tahu; berbunyi"
+  },
+  {
+   "hu": "nyugodtan",
+   "baca": "NYU-god-tån",
+   "id": "tenang saja, jangan sungkan"
+  }
+ ],
+ "exercises": [
+  {
+   "prompt": "Terjemahkan ke bahasa Hungaria. Pakai pengandaian.",
+   "items": [
+    "Bisa bantu aku? (te)",
+    "Bisa kamu lihat surelku? (te, tertentu)",
+    "Itu bakal jadi kesalahan besar.",
+    "Saya ingin ambil cuti sehari.",
+    "Saya ingin Anda hadir di sana. (Ön)",
+    "Sebagai gantinya, kutraktir kamu kopi."
+   ]
+  },
+  {
+   "prompt": "Isi dengan bentuk pengandaian yang tepat.",
+   "items": [
+    "____ egy teát. (kér, én)",
+    "____ a számlát? (hoz, Ön, tertentu)",
+    "____ nekem holnap? (segít, te)",
+    "Szívesen ____ moziba. (megy, mi)",
+    "Jó ____, ha eljönnél. (van)",
+    "____ a levelet? (megír, te, tertentu)",
+    "Nem ____ egy pohár vizet? (iszik, te)"
+   ]
+  },
+  {
+   "prompt": "Ubah jadi lebih sopan dengan pengandaian.",
+   "items": [
+    "Segítesz?",
+    "Megnézed az e-mailt?",
+    "Kérek egy kávét.",
+    "Ideadja a sót? (Ön)",
+    "Tudsz holnap jönni?",
+    "Van egy kérésem."
+   ]
+  },
+  {
+   "prompt": "Susun jadi kalimat yang benar.",
+   "items": [
+    "ha / szeretném, / ott lenne",
+    "egy / kérnék / kávét",
+    "nem / vissza / utasítanám / ezt",
+    "segíteni / tudnál / holnap / ?",
+    "egy / lenne / kérésem / még"
+   ]
+  }
+ ],
+ "answers": [
+  "Tudnál segíteni? — Megnéznéd az e-mailemet? — Ez nagy hiba lenne. — Szeretnék kivenni egy szabadnapot. — Szeretném, ha ott lenne. — Cserébe meghívnálak egy kávéra.",
+  "Kérnék — Hozná — Segítenél — mennénk — lenne — Megírnád — innál",
+  "Segítenél? — Megnéznéd az e-mailt? — Kérnék egy kávét. — Ideadná a sót? — Tudnál holnap jönni? — Lenne egy kérésem.",
+  "Szeretném, ha ott lenne. — Kérnék egy kávét. — Ezt nem utasítanám vissza. — Tudnál holnap segíteni? — Még egy kérésem lenne."
+ ]
+}

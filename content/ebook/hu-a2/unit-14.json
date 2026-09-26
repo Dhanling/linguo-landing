@@ -1,0 +1,673 @@
+{
+ "title": "Di mana letaknya? — postposisi dan tiga arahnya",
+ "title_target": "Hol a kulcsom?",
+ "goal": "Menunjukkan letak barang dan orang dengan postposisi (*alatt, mögött, mellett, között*), membedakan tiga arahnya (*mellett — mellé — mellől*), dan memakainya dengan orang: *mellettem, mögötted, közöttünk*.",
+ "bekal": [
+  "menyebut letak dengan postposisi di belakang kata benda: *az asztal alatt, a kanapé mögött*",
+  "memilih arah yang tepat: di mana (*alatt*), ke mana (*alá*), dari mana (*alól*)",
+  "memakai postposisi berakhiran orang: *Ülj mellém! Ki ül mellettem?*"
+ ],
+ "dialogs": [
+  {
+   "title": "Dialog — Hol a kulcsom?",
+   "intro": "Sabtu pagi awal Maret. Anna menjemput Budi untuk ke pasar, tetapi Budi masih mondar-mandir di apartemennya di distrik VIII.",
+   "lines": [
+    {
+     "speaker": "Anna:",
+     "text": "Budi, indulunk? Már tíz perce várok.",
+     "id": "Budi, jadi berangkat? Aku sudah nunggu sepuluh menit.",
+     "literal": "Budi, kita-berangkat? sudah sepuluh menit-nya saya-menunggu."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Egy pillanat! Nem találom a kulcsomat.",
+     "id": "Sebentar! Kunciku nggak ketemu.",
+     "literal": "sebuah saat! tidak saya-menemukannya itu kunci-ku-sasaran."
+    },
+    {
+     "speaker": "Anna:",
+     "text": "Megnézted az asztal alatt?",
+     "id": "Sudah kamu cek di bawah meja?",
+     "literal": "tuntas-kamu-melihatnya-lampau itu meja bawah-di?"
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Igen, az asztal alatt és a kanapé mögött is. Sehol semmi.",
+     "id": "Sudah, di bawah meja dan di belakang sofa juga. Nggak ada di mana-mana.",
+     "literal": "ya, itu meja bawah-di dan itu sofa belakang-di juga. tidak-di-mana-pun tidak-ada-apa-apa."
+    },
+    {
+     "speaker": "Anna:",
+     "text": "És a kabátod zsebében? Vagy a könyvek között, a polcon?",
+     "id": "Di saku jaketmu? Atau di antara buku-buku di rak?",
+     "literal": "dan itu jaket-mu saku-nya-di-dalam? atau itu buku-jamak antara-di, itu rak-di-atas?"
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Ott sincs. Tegnap este a táskámat a szék mellé tettem.",
+     "id": "Di situ juga nggak ada. Tadi malam tasku kutaruh di samping kursi.",
+     "literal": "di-sana juga-tidak-ada. kemarin malam itu tas-ku-sasaran itu kursi samping-ke saya-menaruhnya-lampau."
+    },
+    {
+     "speaker": "Anna:",
+     "text": "Akkor vedd fel a táskát a szék mellől, és nézz bele!",
+     "id": "Ya sudah, ambil tas dari samping kursi, terus lihat isinya!",
+     "literal": "kalau-begitu ambil-hendaklah-nya naik itu tas-sasaran itu kursi samping-dari, dan lihat-hendaklah ke-dalamnya!"
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Abban sincs. Talán leesett, és a szekrény alá gurult?",
+     "id": "Di situ juga nggak ada. Mungkin jatuh terus menggelinding ke bawah lemari?",
+     "literal": "itu-di-dalam juga-tidak-ada. mungkin turun-jatuh-lampau, dan itu lemari bawah-ke ia-menggelinding-lampau?"
+    },
+    {
+     "speaker": "Ilona néni:",
+     "text": "Jó reggelt, Budi! Nem ezt keresed? Kint volt a zárban.",
+     "id": "Pagi, Budi! Bukan ini yang kamu cari? Tadi nyantol di lubang kunci luar.",
+     "literal": "baik pagi-sasaran, Budi! tidak ini-sasaran kamu-mencarinya? di-luar ada-lampau itu kunci-pintu-di-dalam."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Jaj, Ilona néni! Mióta van ott?",
+     "id": "Aduh, Ilona néni! Sejak kapan di situ?",
+     "literal": "aduh, Ilona bibi! sejak-kapan ada di-sana?"
+    },
+    {
+     "speaker": "Ilona néni:",
+     "text": "Nem tudom. Én reggel vettem észre.",
+     "id": "Nggak tahu. Aku lihatnya tadi pagi.",
+     "literal": "tidak saya-tahu. saya pagi saya-mengambil-lampau-nya perhatian-ke."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Köszönöm szépen! Ilona néni az én őrangyalom.",
+     "id": "Terima kasih banyak! Ilona néni ini malaikat pelindung saya.",
+     "literal": "saya-berterima-kasih indah-secara! Ilona bibi itu saya malaikat-penjaga-ku."
+    },
+    {
+     "speaker": "Ilona néni:",
+     "text": "Ugyan! Legközelebb tedd a kulcsot az ajtó mellé.",
+     "id": "Ah, sudahlah! Lain kali taruh kuncinya di samping pintu.",
+     "literal": "ah! paling-dekat-kali taruh-hendaklah-nya itu kunci-sasaran itu pintu samping-ke."
+    },
+    {
+     "speaker": "Anna:",
+     "text": "Látod? Egész idő alatt ott volt az orrod előtt!",
+     "id": "Tuh kan? Selama ini ada di depan hidungmu!",
+     "literal": "kamu-melihatnya? seluruh waktu bawah-di di-sana ada-lampau itu hidung-mu depan-di!"
+    }
+   ],
+   "notes": [
+    "**Az asztal alatt** — postposisi adalah \"kata depan\" yang berdiri **di belakang** kata benda: \"meja bawah-di\". Kata bendanya tetap polos, tanpa akhiran kasus, dan kata sandangnya tetap di depan. Cara berpikirnya sama dengan akhiran *-ban*, hanya saja ia ditulis sebagai kata terpisah.",
+    "**A szék mellé tettem** — ini jebakan terbesar unit ini. Bahasa Indonesia berkata \"kutaruh **di** samping kursi\", tetapi bagi bahasa Hungaria menaruh adalah gerakan **ke** suatu tempat, jadi yang dipakai *mellé* (ke samping), bukan *mellett* (di samping). Sama seperti *a táskába teszem*, bukan *a táskában teszem*.",
+    "**A szék mellől** — mengambil sesuatu dari suatu tempat memakai arah \"dari\": *mellől*. Tiga bentuk *mellett — mellé — mellől* bekerja persis seperti *-ban — -ba — -ból*.",
+    "**Ott sincs, abban sincs** — *sincs* = \"juga tidak ada\", gabungan *sem* + *nincs*. *Sehol semmi* (tak ada apa-apa di mana pun) memakai sangkalan ganda yang sudah kamu kenal.",
+    "**Ilona néni az én őrangyalom** — kepada orang tua yang dipanggil *néni* atau *bácsi*, orang Hungaria sering memakai **nama + orang ketiga** alih-alih \"Anda\". Budi tidak berkata \"Anda malaikat pelindung saya\", tetapi *Ilona néni az én őrangyalom* — seperti bahasa Indonesia \"Ibu ini malaikat saya\". Ilona néni sendiri memakai *te* kepada Budi.",
+    "**Egész idő alatt, az orrod előtt** — postposisi juga dipakai untuk waktu: *alatt* = selama (*egy hét alatt*), *előtt* = sebelum (*vacsora előtt*). *Az orra előtt* (di depan hidungnya) adalah ungkapan Hungaria untuk sesuatu yang jelas-jelas terlihat."
+   ],
+   "grammars": [
+    {
+     "title": "Postposisi dan tiga arahnya",
+     "body": [
+      "Setiap postposisi tempat punya tiga bentuk, persis seperti akhiran kasus. Baris terakhir tak punya bentuk \"dari\" yang lazim."
+     ],
+     "table": {
+      "head": [
+       "Arti",
+       "Hol? (di mana)",
+       "Hova? (ke mana)",
+       "Honnan? (dari mana)"
+      ],
+      "rows": [
+       [
+        "bawah",
+        "*alatt*",
+        "*alá*",
+        "*alól*"
+       ],
+       [
+        "atas (tidak menyentuh)",
+        "*fölött*",
+        "*fölé*",
+        "*fölül*"
+       ],
+       [
+        "depan",
+        "*előtt*",
+        "*elé*",
+        "*elől*"
+       ],
+       [
+        "belakang",
+        "*mögött*",
+        "*mögé*",
+        "*mögül*"
+       ],
+       [
+        "samping",
+        "*mellett*",
+        "*mellé*",
+        "*mellől*"
+       ],
+       [
+        "antara",
+        "*között*",
+        "*közé*",
+        "*közül*"
+       ],
+       [
+        "sekeliling",
+        "*körül*",
+        "*köré*",
+        "—"
+       ]
+      ]
+     },
+     "after": [
+      "**Pola huruf yang menolong:** bentuk \"di\" berakhiran *-tt* (atau *-l* pada *körül*), bentuk \"ke\" berakhiran vokal panjang *-á/-é*, bentuk \"dari\" berakhiran *-ól/-ől/-ül*. Kalau lupa satu bentuk, tebak dari pola ini — biasanya benar.",
+      "*Fölött* (di atas, tanpa menyentuh) berbeda dari akhiran *-on/-en/-ön* (di atas permukaan): *a lámpa az asztal fölött lóg* (lampu tergantung di atas meja), tetapi *a könyv az asztalon van* (buku di atas meja). Bentuk *felett* juga benar dan sama artinya."
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Dialog kedua — Ülj mellém!",
+   "intro": "Jumat sore di kantor. Zoltán memutuskan bagian keuangan dan pemasaran duduk berdekatan, dan semua orang sibuk memindahkan barang.",
+   "lines": [
+    {
+     "speaker": "Zoltán:",
+     "text": "Na, kollégák! Mostantól Réka Budi mellett ül.",
+     "id": "Nah, teman-teman! Mulai sekarang Réka duduk di samping Budi.",
+     "literal": "nah, rekan-jamak! sekarang-dari Réka Budi samping-di ia-duduk."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Remek! Réka, gyere, ülj mellém!",
+     "id": "Mantap! Réka, sini, duduk di sampingku!",
+     "literal": "hebat! Réka, datang-hendaklah, duduk-hendaklah samping-ke-ku!"
+    },
+    {
+     "speaker": "Réka:",
+     "text": "Jövök. De a nagy nyomtató pont közöttünk áll.",
+     "id": "Oke. Tapi printer besar itu pas di antara kita.",
+     "literal": "saya-datang. tetapi itu besar printer tepat antara-di-kami ia-berdiri."
+    },
+    {
+     "speaker": "Zoltán:",
+     "text": "Tegyétek az ablak alá! Ott senkit sem zavar.",
+     "id": "Taruh di bawah jendela! Di situ nggak mengganggu siapa pun.",
+     "literal": "taruh-hendaklah-kalian-nya itu jendela bawah-ke! di-sana siapa-pun-sasaran tidak ia-mengganggu."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "És a naptárt hova tegyük?",
+     "id": "Terus kalendernya kita taruh di mana?",
+     "literal": "dan itu kalender-sasaran ke-mana kita-menaruh-hendaklah-nya?"
+    },
+    {
+     "speaker": "Réka:",
+     "text": "Akaszd fel a falra, a monitorod fölé!",
+     "id": "Gantung di dinding, di atas monitormu!",
+     "literal": "gantung-hendaklah-nya naik itu dinding-ke-atas, itu monitor-mu atas-ke!"
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Jó ötlet. Réka, a széked mögött van még egy doboz. A tiéd?",
+     "id": "Ide bagus. Réka, di belakang kursimu masih ada satu kardus. Punyamu?",
+     "literal": "baik ide. Réka, itu kursi-mu belakang-di ada masih sebuah kotak. itu milikmu?"
+    },
+    {
+     "speaker": "Réka:",
+     "text": "Nem, az Zoltáné. Zoltán, elviszed a dobozodat mögülem?",
+     "id": "Bukan, itu punya Zoltán. Zoltán, kardusmu bisa diambil dari belakangku?",
+     "literal": "tidak, itu Zoltán-punya. Zoltán, pergi-kamu-membawanya itu kotak-mu-sasaran belakang-dari-ku?"
+    },
+    {
+     "speaker": "Zoltán:",
+     "text": "Persze, bocs! Már viszem is.",
+     "id": "Tentu, sori! Langsung kuangkat.",
+     "literal": "tentu, maaf! sudah saya-membawanya juga."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Kész! Na, milyen az új hely?",
+     "id": "Beres! Nah, gimana tempat barunya?",
+     "literal": "selesai! nah, seperti-apa itu baru tempat?"
+    },
+    {
+     "speaker": "Réka:",
+     "text": "Tökéletes. Előttem az ablak, mögöttem a fal, mellettem egy jó kolléga.",
+     "id": "Sempurna. Di depanku jendela, di belakangku tembok, di sampingku rekan kerja yang baik.",
+     "literal": "sempurna. depan-di-ku itu jendela, belakang-di-ku itu dinding, samping-di-ku sebuah baik rekan."
+    }
+   ],
+   "notes": [
+    "**Ülj mellém!** — duduk adalah gerakan menuju suatu tempat, jadi dipakai bentuk \"ke\": *mellém* (ke sampingku). Begitu sudah duduk, keadaannya memakai bentuk \"di\": *Réka mellettem ül.* Bahasa Indonesia memakai \"di\" untuk keduanya.",
+    "**Közöttünk** — postposisi dengan orang memakai **akhiran milik**, bukan kata ganti terpisah: \"antara-kami\". Dalam percakapan sering dipendekkan: *köztünk, köztetek, köztük*. Karena artinya \"di antara\", bentuk ini hanya masuk akal untuk jamak.",
+    "**Tegyétek, akaszd fel** — kata kerja menaruh dan menggantung (*tesz, rak, akaszt*) selalu meminta arah \"ke\": *az ablak alá, a falra, a monitor fölé*. Perintah *tegyétek* adalah bentuk *ti* tertentu dari *tesz*, karena sasarannya (printer itu) jelas.",
+    "**Mögülem** — \"dari belakangku\": bentuk \"dari\" pun menerima akhiran orang. *Menj el előlem!* (minggir dari depanku!) adalah kalimat yang lumayan sering terdengar di trem yang penuh.",
+    "**Előttem az ablak** — dalam kalimat daftar seperti ini, *van* boleh dihilangkan. Rasanya sama dengan bahasa Indonesia yang tak butuh \"ada\": \"di depanku jendela\".",
+    "**Már viszem is** — \"langsung kubawa\": *már … is* dengan masa kini berarti perbuatan itu sudah dimulai saat itu juga. *Már megyek is!* = aku berangkat sekarang juga! Jawaban yang sopan dan cepat ketika seseorang memintamu melakukan sesuatu."
+   ],
+   "grammars": [
+    {
+     "title": "Postposisi dengan orang",
+     "body": [
+      "Postposisi + akhiran milik. Tak ada *én mellett*; yang benar *mellettem*. Bentuk orang ketiga (*mellette*) juga berarti \"di sampingnya\" untuk benda."
+     ],
+     "table": {
+      "head": [
+       "",
+       "mellett (di)",
+       "mellé (ke)",
+       "mögött",
+       "előtt",
+       "alatt"
+      ],
+      "rows": [
+       [
+        "én",
+        "*mellettem*",
+        "*mellém*",
+        "*mögöttem*",
+        "*előttem*",
+        "*alattam*"
+       ],
+       [
+        "te",
+        "*melletted*",
+        "*melléd*",
+        "*mögötted*",
+        "*előtted*",
+        "*alattad*"
+       ],
+       [
+        "ő",
+        "*mellette*",
+        "*mellé*",
+        "*mögötte*",
+        "*előtte*",
+        "*alatta*"
+       ],
+       [
+        "mi",
+        "*mellettünk*",
+        "*mellénk*",
+        "*mögöttünk*",
+        "*előttünk*",
+        "*alattunk*"
+       ],
+       [
+        "ti",
+        "*mellettetek*",
+        "*mellétek*",
+        "*mögöttetek*",
+        "*előttetek*",
+        "*alattatok*"
+       ],
+       [
+        "ők",
+        "*mellettük*",
+        "*melléjük*",
+        "*mögöttük*",
+        "*előttük*",
+        "*alattuk*"
+       ]
+      ]
+     },
+     "after": [
+      "Bentuk \"dari\" mengikuti pola yang sama: *mellőlem, mögülem, előlem, alólam*. Untuk penekanan, tambahkan kata ganti di depan — ditulis **bersambung**: *Énmellettem ül, nem temelletted.*",
+      "*Alattunk* di gedung apartemen berarti \"di lantai bawah kita\", dan selisih lantai memakai *-val/-vel* dari unit 13: *Ilona néni két emelettel alattam lakik.* Dan *fölöttünk* = di lantai atas kita. Dua kata yang langsung berguna kalau tetangga berisik."
+     ]
+    }
+   ]
+  }
+ ],
+ "sections": [
+  {
+   "title": "Tiga arah dalam kalimat",
+   "blocks": [
+    {
+     "type": "tabel",
+     "head": [
+      "Hol?",
+      "Hova?",
+      "Honnan?"
+     ],
+     "rows": [
+      [
+       "*A macska az ágy alatt alszik.*",
+       "*A macska az ágy alá bújt.*",
+       "*A macska előjött az ágy alól.*"
+      ],
+      [
+       "*A kép a kanapé fölött lóg.*",
+       "*Akaszd a képet a kanapé fölé!*",
+       "*Vedd le a képet a kanapé fölül!*"
+      ],
+      [
+       "*Az autó a ház előtt áll.*",
+       "*Állj a ház elé!*",
+       "*Menj el az ajtó elől!*"
+      ],
+      [
+       "*Anna Kati mögött ül.*",
+       "*Anna Kati mögé ült.*",
+       "*Anna felállt Kati mögül.*"
+      ],
+      [
+       "*A könyvek között van.*",
+       "*A könyvek közé tettem.*",
+       "*Kivettem a könyvek közül.*"
+      ]
+     ]
+    },
+    {
+     "type": "p",
+     "text": "Baca tiap baris dari kiri ke kanan: kucing tidur **di** bawah ranjang, bersembunyi **ke** bawah ranjang, keluar **dari** bawah ranjang. Satu jebakan kecil: *fölé* (ke atas sesuatu) jangan tertukar dengan *felé* (ke arah): *a ház felé megyek* = aku berjalan ke arah rumah. Dan *közül* juga berarti \"dari antara\" dalam arti memilih: *Melyiket kéred ezek közül?* = yang mana yang kamu mau dari antara ini?"
+    },
+    {
+     "type": "kotak",
+     "title": "Postposisi untuk waktu",
+     "items": [
+      "*előtt* = sebelum: *vacsora előtt, két nappal előtte*.",
+      "*után* = sesudah: *munka után, az ünnepek után*. (Untuk tempat, *után* berarti \"di belakang, menyusul\".)",
+      "*alatt* = selama, dalam jangka: *egy hét alatt megtanulta* (ia mempelajarinya dalam seminggu).",
+      "*körül* = sekitar: *fél öt körül, karácsony körül*."
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Menata kamar",
+   "blocks": [
+    {
+     "type": "tabel",
+     "head": [
+      "Magyar",
+      "Cara baca",
+      "Bahasa Indonesia"
+     ],
+     "rows": [
+      [
+       "ágy",
+       "ady",
+       "tempat tidur"
+      ],
+      [
+       "szekrény",
+       "SÈK-rény",
+       "lemari"
+      ],
+      [
+       "polc",
+       "polts",
+       "rak"
+      ],
+      [
+       "íróasztal",
+       "I-ro-ås-tål",
+       "meja tulis"
+      ],
+      [
+       "fotel",
+       "FO-tèl",
+       "kursi berlengan"
+      ],
+      [
+       "szőnyeg",
+       "SÖ-nyèg",
+       "karpet"
+      ],
+      [
+       "függöny",
+       "FÜG-göny",
+       "gorden"
+      ],
+      [
+       "tükör (tükröt)",
+       "TÜ-kör",
+       "cermin"
+      ],
+      [
+       "fiók",
+       "FI-ok",
+       "laci"
+      ],
+      [
+       "sarok (sarokban)",
+       "SYÅ-rok",
+       "sudut"
+      ]
+     ]
+    },
+    {
+     "type": "p",
+     "text": "Beginilah Budi menggambarkan kamarnya lewat video kepada Sari, adiknya yang mulai belajar bahasa Hungaria: *Az ágy az ablak alatt van, mellette egy kis szekrény. Az íróasztal a sarokban áll, fölötte egy polc a könyveimmel. A szőnyeg az ágy előtt van, a fotel pedig az ajtó mögött.* Perhatikan *mellette* dan *fölötte*: \"di sampingnya\", \"di atasnya\" — merujuk ke barang yang baru disebut, tanpa perlu mengulang kata bendanya."
+    },
+    {
+     "type": "kotak",
+     "title": "Rumah bergang di Józsefváros",
+     "items": [
+      "Banyak gedung apartemen tua di distrik VIII dan VII adalah *gangos ház* (resminya *függőfolyosós ház*): gedung mengelilingi halaman dalam (*udvar*), dan pintu tiap apartemen menghadap lorong terbuka (*gang*) yang menggantung di sisi halaman.",
+      "Karena semua pintu berjajar di lorong yang sama, tetangga saling melihat siapa datang dan pergi — kunci yang tertinggal di pintu, seperti milik Budi, cepat ketahuan.",
+      "Lantai dasar disebut *földszint* (disingkat *fsz.*), lalu *első emelet* (lantai satu) dan seterusnya. Jadi \"lantai 2\" versi Indonesia adalah *első emelet* di Hungaria.",
+      "Kalau ingin menanyakan letak apartemen: *Hányadik emeleten laksz?* (Kamu tinggal di lantai berapa?) — jawabannya *a másodikon* (di lantai dua versi Hungaria)."
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Ulangan berjenjang — unit 12",
+   "blocks": [
+    {
+     "type": "p",
+     "text": "Tutup kolom Hungaria, baca terjemahan Indonesianya, lalu susun kembali kalimatnya dari ingatan."
+    },
+    {
+     "type": "tabel",
+     "head": [
+      "Bahasa Indonesia",
+      "Magyar"
+     ],
+     "rows": [
+      [
+       "Nggak masalah. Mula-mula kita lari pelan, lalu sedikit lebih cepat.",
+       "*Semmi gond. Először lassan futunk, aztán kicsit gyorsabban.*"
+      ],
+      [
+       "Sedikit lebih dari lima kilometer. Aku lari di sini tiga kali seminggu.",
+       "*Kicsit több, mint öt kilométer. Én hetente háromszor futok itt.*"
+      ],
+      [
+       "Berat nih… Kamu larinya kecepatan!",
+       "*Nehezen megy… Túl gyorsan futsz!*"
+      ],
+      [
+       "Kalau aku, sarapannya cuma segelas kopi.",
+       "*Én reggeliként csak egy kávét iszom.*"
+      ],
+      [
+       "Bangun sepuluh menit lebih awal! Ini aku bilang sebagai teman, bukan sebagai rekan kerja.",
+       "*Kelj fel tíz perccel korábban! Ezt barátként mondom, nem kollégaként.*"
+      ]
+     ]
+    }
+   ]
+  }
+ ],
+ "vocab": [
+  {
+   "hu": "kulcs",
+   "baca": "kulc",
+   "id": "kunci"
+  },
+  {
+   "hu": "zár",
+   "baca": "zar",
+   "id": "kunci pintu (mekanismenya), lubang kunci"
+  },
+  {
+   "hu": "alatt / alá / alól",
+   "baca": "Å-lått / Å-la / Å-lol",
+   "id": "di bawah / ke bawah / dari bawah"
+  },
+  {
+   "hu": "fölött / fölé / fölül",
+   "baca": "FÖ-lött / FÖ-lé / FÖ-lül",
+   "id": "di atas / ke atas / dari atas"
+  },
+  {
+   "hu": "előtt / elé / elől",
+   "baca": "È-lött / È-lé / È-löl",
+   "id": "di depan / ke depan / dari depan"
+  },
+  {
+   "hu": "mögött / mögé / mögül",
+   "baca": "MÖ-gött / MÖ-gé / MÖ-gül",
+   "id": "di belakang / ke belakang / dari belakang"
+  },
+  {
+   "hu": "mellett / mellé / mellől",
+   "baca": "MÈL-lètt / MÈL-lé / MÈL-löl",
+   "id": "di samping / ke samping / dari samping"
+  },
+  {
+   "hu": "között / közé / közül",
+   "baca": "KÖ-zött / KÖ-zé / KÖ-zül",
+   "id": "di antara / ke antara / dari antara"
+  },
+  {
+   "hu": "körül",
+   "baca": "KÖ-rül",
+   "id": "di sekeliling; sekitar"
+  },
+  {
+   "hu": "kanapé",
+   "baca": "KÅ-nå-pé",
+   "id": "sofa"
+  },
+  {
+   "hu": "szék",
+   "baca": "sék",
+   "id": "kursi"
+  },
+  {
+   "hu": "kabát",
+   "baca": "KÅ-bat",
+   "id": "mantel, jaket"
+  },
+  {
+   "hu": "tesz",
+   "baca": "tès",
+   "id": "menaruh (perintah *tegyél, tedd*)"
+  },
+  {
+   "hu": "akaszt / felakaszt",
+   "baca": "Å-kåst / FÈ-lå-kåst",
+   "id": "menggantung"
+  },
+  {
+   "hu": "gurul",
+   "baca": "GU-rul",
+   "id": "menggelinding"
+  },
+  {
+   "hu": "észrevesz",
+   "baca": "ÉS-rè-vès",
+   "id": "melihat, memperhatikan (*észrevettem*)"
+  },
+  {
+   "hu": "nyomtató",
+   "baca": "NYOM-tå-to",
+   "id": "printer"
+  },
+  {
+   "hu": "naptár",
+   "baca": "NÅP-tar",
+   "id": "kalender"
+  },
+  {
+   "hu": "doboz",
+   "baca": "DO-boz",
+   "id": "kotak, kardus"
+  },
+  {
+   "hu": "fal",
+   "baca": "fål",
+   "id": "dinding"
+  },
+  {
+   "hu": "zavar",
+   "baca": "ZÅ-vår",
+   "id": "mengganggu"
+  },
+  {
+   "hu": "őrangyal",
+   "baca": "Ö-rån-dyål",
+   "id": "malaikat pelindung"
+  },
+  {
+   "hu": "mostantól",
+   "baca": "MOSY-tån-tol",
+   "id": "mulai sekarang"
+  },
+  {
+   "hu": "sarok",
+   "baca": "SYÅ-rok",
+   "id": "sudut, pojok (*a sarokban*)"
+  }
+ ],
+ "exercises": [
+  {
+   "prompt": "Terjemahkan ke bahasa Hungaria.",
+   "items": [
+    "Kuncinya ada di bawah meja.",
+    "Taruh tasnya di samping kursi! (kepada teman)",
+    "Siapa yang duduk di sampingku?",
+    "Sini, duduk di sampingku!",
+    "Buku-bukunya ada di antara lampu dan jam.",
+    "Kucingnya keluar dari bawah tempat tidur."
+   ]
+  },
+  {
+   "prompt": "Isi dengan postposisi yang tepat.",
+   "items": [
+    "A macska az ágy ____ alszik. (di bawah)",
+    "Tedd a könyvet a lámpa ____! (ke samping)",
+    "Vidd el a dobozt az ajtó ____! (dari depan)",
+    "A kép a kanapé ____ lóg. (di atas)",
+    "Réka ____ ül. (di samping saya)",
+    "Gyere, állj ____! (ke depan saya)",
+    "A kutya előjött a szék ____. (dari belakang)"
+   ]
+  },
+  {
+   "prompt": "Ganti kata benda yang dicetak miring dengan bentuk berakhiran orang.",
+   "items": [
+    "Réka *Budi* mellett ül.",
+    "A nyomtató *Budi és Réka* között áll.",
+    "Anna *a ház* előtt vár.",
+    "Gyere, ülj *Anna* mellé!",
+    "Egy busz áll *az autók* mögött.",
+    "A macska kijött *az ágy* alól."
+   ]
+  },
+  {
+   "prompt": "Susun jadi kalimat yang benar.",
+   "items": [
+    "az / alatt / kulcs / asztal / a / van",
+    "ülj / mellém / gyere",
+    "tedd / az ajtó / mellé / a kulcsot",
+    "mellettem / ki / ül",
+    "előttem / ablak / az"
+   ]
+  }
+ ],
+ "answers": [
+  "A kulcs az asztal alatt van. — Tedd a táskát a szék mellé! — Ki ül mellettem? — Gyere, ülj mellém! — A könyvek a lámpa és az óra között vannak. — A macska kijött az ágy alól.",
+  "alatt — mellé — elől — fölött — mellettem — elém — mögül",
+  "Réka mellette ül. — A nyomtató közöttük áll. — Anna előtte vár. — Gyere, ülj mellé! — Egy busz áll mögöttük. — A macska kijött alóla.",
+  "A kulcs az asztal alatt van. — Gyere, ülj mellém! — Tedd a kulcsot az ajtó mellé! — Ki ül mellettem? — Előttem az ablak."
+ ]
+}

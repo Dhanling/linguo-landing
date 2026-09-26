@@ -1,0 +1,693 @@
+{
+ "title": "Ke Balaton — kata kerja gerak berawalan",
+ "title_target": "Menjünk ki a peronra!",
+ "goal": "Bepergian naik kereta ke Balaton: mencari jalur, memahami pengumuman keterlambatan, berganti kendaraan, lalu bergerak masuk, keluar, dan menyeberang di tempat tujuan. Titik tata bahasanya: kata kerja gerak berawalan (*bemegy, kijön, átmegy, visszajön, hazamegy, elindul, megérkezik*) beserta kasus arahnya, dan ringkasan sembilan kasus tempat.",
+ "bekal": [
+  "memasangkan awalan dengan kasus yang cocok: *bemegy a vízbe, kijön a vízből*",
+  "memindahkan awalan dengan benar dalam kalimat negatif, perintah, dan pertanyaan",
+  "membeli tiket, mencari *vágány*, dan memahami *késik, átszállás*"
+ ],
+ "dialogs": [
+  {
+   "title": "Dialog — A Déli pályaudvaron",
+   "intro": "Sabtu pagi awal Juni 2027, stasiun Déli pályaudvar. Anna dan Kati sudah menunggu; Budi baru keluar dari metro. Rencananya: akhir pekan di Tihany.",
+   "lines": [
+    {
+     "speaker": "Anna:",
+     "text": "Budi, hol vagy? A vonat húsz perc múlva indul!",
+     "id": "Budi, kamu di mana? Keretanya dua puluh menit lagi berangkat!",
+     "literal": "Budi, di-mana kamu-ada? itu kereta dua-puluh menit lagi ia-berangkat!"
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Már itt vagyok, most jövök ki a metróból.",
+     "id": "Aku sudah di sini, baru keluar dari metro.",
+     "literal": "sudah di-sini saya-ada, sekarang saya-datang keluar itu metro-dari-dalam."
+    },
+    {
+     "speaker": "Kati:",
+     "text": "Mi a pénztár előtt állunk. Gyere át hozzánk!",
+     "id": "Kami berdiri di depan loket. Sini, nyeberang ke tempat kami!",
+     "literal": "kami itu loket depan kami-berdiri. datang-hendaklah seberang kami-ke-dekat!"
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Megvan, látlak titeket!",
+     "id": "Ketemu, aku lihat kalian!",
+     "literal": "ada-tuntas, saya-melihatmu kalian-sasaran!"
+    },
+    {
+     "speaker": "Anna:",
+     "text": "A jegyeket már megvettem. Füredig vonattal megyünk, onnan busszal Tihanyba.",
+     "id": "Tiketnya sudah kubeli. Sampai Füred naik kereta, dari sana naik bus ke Tihany.",
+     "literal": "itu tiket-jamak-sasaran sudah tuntas-saya-membelinya-lampau. Füred-sampai kereta-dengan kami-pergi, dari-sana bus-dengan Tihany-ke-dalam."
+    },
+    {
+     "speaker": "Kati:",
+     "text": "A hetes vágányról indulunk. Menjünk ki a peronra!",
+     "id": "Kita berangkat dari jalur tujuh. Ayo keluar ke peron!",
+     "literal": "itu tujuh-an jalur-dari-atas kami-berangkat. pergi-hendaklah-kita keluar itu peron-ke-atas!"
+    },
+    {
+     "speaker": "Bemondó:",
+     "text": "Figyelem! A Balatonfüredre induló vonat tíz percet késik.",
+     "id": "Perhatian! Kereta tujuan Balatonfüred terlambat sepuluh menit.",
+     "literal": "perhatian! itu Balatonfüred-ke yang-berangkat kereta sepuluh menit-sasaran ia-terlambat."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Tíz percet? Akkor visszamegyek a pékséghez, és veszek pogácsát.",
+     "id": "Sepuluh menit? Kalau begitu aku balik ke toko roti, beli pogácsa.",
+     "literal": "sepuluh menit-sasaran? kalau-begitu kembali-saya-pergi itu toko-roti-ke-dekat, dan saya-membeli pogácsa-sasaran."
+    },
+    {
+     "speaker": "Anna:",
+     "text": "Jó, de ne menj messzire!",
+     "id": "Oke, tapi jangan jauh-jauh!",
+     "literal": "baik, tetapi jangan pergi-hendaklah jauh-ke!"
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Öt perc múlva visszajövök, ígérem!",
+     "id": "Lima menit lagi aku balik, janji!",
+     "literal": "lima menit lagi kembali-saya-datang, saya-berjanji!"
+    },
+    {
+     "speaker": "Kati:",
+     "text": "Na, végre beszálltunk. Mikor érkezünk meg Füredre?",
+     "id": "Nah, akhirnya naik juga. Kapan kita sampai di Füred?",
+     "literal": "nah, akhirnya masuk-kami-naik-lampau. kapan kami-tiba tuntas Füred-ke?"
+    },
+    {
+     "speaker": "Anna:",
+     "text": "Tizenegy körül. Délre odaérünk Tihanyba.",
+     "id": "Sekitar jam sebelas. Tengah hari kita sudah sampai di Tihany.",
+     "literal": "sebelas sekitar. tengah-hari-ke-atas ke-sana-kami-sampai Tihany-ke-dalam."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "És vasárnap hánykor indulunk haza?",
+     "id": "Terus hari Minggu kita pulang jam berapa?",
+     "literal": "dan Minggu jam-berapa-pada kami-berangkat pulang?"
+    },
+    {
+     "speaker": "Kati:",
+     "text": "Délután négykor. Addig strandolunk, felmegyünk az apátsághoz, és rengeteg lángost eszünk!",
+     "id": "Jam empat sore. Sampai saat itu kita ke pantai, naik ke biara, dan makan lángos sebanyak-banyaknya!",
+     "literal": "sore empat-pada-jam. sampai-itu kami-berpantai, naik-kami-pergi itu biara-ke-dekat, dan banyak-sekali lángos-sasaran kami-makan!"
+    }
+   ],
+   "notes": [
+    "**Jövök ki, gyere át, menjünk ki** — awalan memberi **arah**, sedangkan *jön* dan *megy* hanya memberi gerak. Dalam kalimat netral awalan menempel di depan (*kijövök*); dalam perintah ia pindah ke belakang (*gyere át, menjünk ki*); dan kalau ada kata yang ditekankan tepat sebelum kata kerja — di sini *most* — awalannya juga ke belakang: *most jövök ki*.",
+    "**Jön atau megy?** — *jön* bergerak **ke arah** pembicara atau lawan bicara, *megy* **menjauh**. Kati berkata *Gyere át hozzánk* (ke tempat kami); Budi berkata kepada Anna *visszajövök* (aku kembali ke tempatmu), tetapi *visszamegyek a pékséghez* (aku kembali ke toko roti, menjauh darimu).",
+    "**Füredig, onnan busszal Tihanyba** — *-ig* berarti \"sampai\", *onnan* \"dari sana\". *Füred* adalah sebutan sehari-hari untuk Balatonfüred. Rel kereta tidak masuk ke semenanjung Tihany, jadi perjalanan terakhir memakai bus.",
+    "**A Balatonfüredre induló vonat** — gaya pengumuman stasiun: *induló* (yang berangkat) berdiri di depan kata benda seperti kata sifat. Hafalkan sebagai ungkapan dulu. *Tíz percet késik* — lamanya terlambat memakai *-t*, seperti sasaran.",
+    "**Hánykor indulunk haza?** — kata tanya selalu menempati posisi fokus, jadi awalan *haza-* pindah ke belakang kata kerja. Bandingkan kalimat netral: *Vasárnap hazaindulunk.*"
+   ],
+   "grammars": [
+    {
+     "title": "Kata kerja gerak berawalan dan kasus pasangannya",
+     "body": [
+      "Awalan memberi arah, akhiran kasus memberi tujuan — dan keduanya harus cocok. Bahasa Indonesia menaruh arah sekali (\"**masuk** ke air\"); bahasa Hungaria menaruhnya dua kali (*bemegy a vízbe*)."
+     ],
+     "table": {
+      "head": [
+       "Kata kerja",
+       "Arti",
+       "Kasus pasangan",
+       "Contoh"
+      ],
+      "rows": [
+       [
+        "*bemegy, bejön*",
+        "masuk",
+        "*-ba/-be*",
+        "*Bemegyek a vízbe.*"
+       ],
+       [
+        "*kimegy, kijön*",
+        "keluar",
+        "*-ból/-ből*; ke luar menuju: *-ra/-re*",
+        "*Kijövök a metróból.*"
+       ],
+       [
+        "*átmegy, átjön*",
+        "menyeberang; mampir",
+        "*-ra/-re, -hoz/-hez*",
+        "*Átmegyünk Szántódra.*"
+       ],
+       [
+        "*visszamegy, visszajön*",
+        "kembali",
+        "*-ba, -ra, -hoz*",
+        "*Visszamegyek a pékséghez.*"
+       ],
+       [
+        "*felmegy*",
+        "naik",
+        "*-ra/-re, -hoz/-hez*",
+        "*Felmegyünk az apátsághoz.*"
+       ],
+       [
+        "*hazamegy, hazajön*",
+        "pulang",
+        "tanpa kasus",
+        "*Vasárnap hazamegyünk.*"
+       ],
+       [
+        "*elindul*",
+        "berangkat",
+        "dari: *-ból, -ról, -tól*",
+        "*Kilenckor elindulunk.*"
+       ],
+       [
+        "*megérkezik*",
+        "tiba",
+        "*-ba/-be, -ra/-re, -hoz*",
+        "*Megérkeztünk Tihanyba.*"
+       ]
+      ]
+     },
+     "after": [
+      "*Haza* sendiri sudah berarti \"ke rumah\", jadi *hazamegy* tidak butuh kasus lagi. Jangan menulis *hazamegyek az otthonba*.",
+      "*Megérkezik* memakai kasus **arah ke** (*Tihanyba*), bukan kasus \"di\". Bahasa Hungaria berpikir: aku tiba **ke dalam** Tihany. Kesalahan paling sering pelajar Indonesia adalah *megérkeztem Tihanyban*."
+     ]
+    },
+    {
+     "title": "Letak awalan dalam perjalanan",
+     "body": [
+      "Aturan dari unit 5, kini dengan kata kerja gerak. Satu kalimat, enam susunan."
+     ],
+     "table": {
+      "head": [
+       "Susunan",
+       "Contoh",
+       "Arti"
+      ],
+      "rows": [
+       [
+        "netral",
+        "*Bemegyek a vízbe.*",
+        "Aku masuk ke air."
+       ],
+       [
+        "negatif",
+        "*Nem megyek be a vízbe.*",
+        "Aku tidak masuk ke air."
+       ],
+       [
+        "perintah",
+        "*Menj be a vízbe!*",
+        "Masuklah ke air!"
+       ],
+       [
+        "larangan",
+        "*Ne menj be a vízbe!*",
+        "Jangan masuk ke air!"
+       ],
+       [
+        "pertanyaan",
+        "*Ki megy be a vízbe?*",
+        "Siapa yang masuk ke air?"
+       ],
+       [
+        "kata kerja bantu",
+        "*Be akarok menni a vízbe.*",
+        "Aku mau masuk ke air."
+       ]
+      ]
+     }
+    }
+   ]
+  },
+  {
+   "title": "Dialog kedua — Gyere ki a vízből!",
+   "intro": "Sabtu siang di pantai umum Tihany. Airnya masih segar, dan antrean di kios lángos sudah panjang.",
+   "lines": [
+    {
+     "speaker": "Kati:",
+     "text": "Ki jön be velem a vízbe?",
+     "id": "Siapa yang mau masuk ke air bareng aku?",
+     "literal": "siapa ia-datang masuk aku-dengan itu air-ke-dalam?"
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Én! Hideg a víz?",
+     "id": "Aku! Airnya dingin?",
+     "literal": "saya! dingin itu air?"
+    },
+    {
+     "speaker": "Kati:",
+     "text": "Dehogy, huszonkét fokos. Gyere be bátran!",
+     "id": "Nggak kok, dua puluh dua derajat. Masuk aja, jangan takut!",
+     "literal": "ah-tidak, dua-puluh-dua derajat-an. datang-hendaklah masuk dengan-berani!"
+    },
+    {
+     "speaker": "Anna:",
+     "text": "Én kimegyek a büféhez, és hozok lángost. Kértek?",
+     "id": "Aku ke kios, beli lángos. Kalian mau?",
+     "literal": "saya keluar-saya-pergi itu kios-ke-dekat, dan saya-membawa lángos-sasaran. kalian-minta?"
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Igen, egy sajtos-tejfölöset kérek!",
+     "id": "Mau, satu yang keju dan krim asam!",
+     "literal": "ya, sebuah yang-berkeju-yang-berkrim-asam-sasaran saya-minta!"
+    },
+    {
+     "speaker": "Anna:",
+     "text": "Budi, gyere ki a vízből, kihűl a lángos!",
+     "id": "Budi, keluar dari air, lángosnya keburu dingin!",
+     "literal": "Budi, datang-hendaklah keluar itu air-dari-dalam, keluar-ia-mendingin itu lángos!"
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Megyek már!",
+     "id": "Iya, iya, ke situ!",
+     "literal": "saya-pergi sudah!"
+    },
+    {
+     "speaker": "Kati:",
+     "text": "Holnap reggel átmegyünk komppal Szántódra?",
+     "id": "Besok pagi kita nyeberang naik feri ke Szántód?",
+     "literal": "besok pagi seberang-kami-pergi feri-dengan Szántód-ke?"
+    },
+    {
+     "speaker": "Anna:",
+     "text": "Jó ötlet, de négykor indul haza a vonatunk Füredről.",
+     "id": "Ide bagus, tapi kereta pulang kita berangkat dari Füred jam empat.",
+     "literal": "bagus ide, tetapi empat-pada-jam ia-berangkat pulang itu kereta-kami Füred-dari."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Akkor reggel átmegyünk, délben visszajövünk, és még egyszer bemegyünk a vízbe!",
+     "id": "Jadi pagi kita nyeberang, siang balik, terus sekali lagi masuk ke air!",
+     "literal": "kalau-begitu pagi seberang-kami-pergi, siang-di-dalam kembali-kami-datang, dan masih sekali masuk-kami-pergi itu air-ke-dalam!"
+    }
+   ],
+   "notes": [
+    "**Ki jön be?** — *ki* di awal kalimat adalah kata tanya \"siapa\", sedangkan *ki-* sebagai awalan berarti \"keluar\". *Ki jön ki?* (siapa yang keluar?) adalah kalimat sah, dan orang Hungaria pun kadang tersenyum mendengarnya. Karena *ki* (siapa) mengambil posisi fokus, awalan *be* pindah ke belakang.",
+    "**Gyere be — gyere ki** — dua perintah untuk satu Budi. Kati di dalam air berkata *gyere be* (masuk ke tempatku); Anna di pantai berkata *gyere ki* (keluar ke tempatku). Arah *jön* selalu dilihat dari tempat pembicara.",
+    "**Megyek már!** — dipanggil seseorang, orang Hungaria menjawab *Megyek!* (aku pergi), bukan *Jövök!*, walaupun ia bergerak ke arah pemanggil. Padanannya \"Iya, ke sana!\". Di sini kebiasaan mengalahkan logika *jön/megy* di atas (*Jövök!* juga terdengar, tetapi *Megyek!* lebih lazim).",
+    "**Kihűl a lángos** — *ki-* di sini bukan \"keluar\", melainkan \"sampai habis\": panasnya habis, lángosnya jadi dingin. Awalan punya arti \"tuntas\" seperti di unit 5 — bandingkan *kitakarít* (membersihkan sampai tuntas).",
+    "**Komppal Szántódra** — *komp + -val* → *komppal*: huruf mati akhir berlipat, *v* menghilang. Feri Tihany–Szántód adalah jalan pintas menyeberangi danau di titik tersempitnya."
+   ],
+   "grammars": [
+    {
+     "title": "Sembilan kasus tempat dalam satu tabel",
+     "body": [
+      "Semua kasus tempat yang kamu pelajari sejak A1, disusun menurut dua pertanyaan: di mana posisinya (dalam, permukaan, dekat) dan ke mana arahnya (ke, di, dari)."
+     ],
+     "table": {
+      "head": [
+       "Posisi",
+       "Hová? (ke)",
+       "Hol? (di)",
+       "Honnan? (dari)"
+      ],
+      "rows": [
+       [
+        "dalam",
+        "*-ba/-be*: *a vízbe*",
+        "*-ban/-ben*: *a vízben*",
+        "*-ból/-ből*: *a vízből*"
+       ],
+       [
+        "permukaan, kota Hungaria",
+        "*-ra/-re*: *a peronra, Füredre*",
+        "*-n/-on/-en/-ön*: *a peronon, Füreden*",
+        "*-ról/-ről*: *a peronról, Füredről*"
+       ],
+       [
+        "dekat, orang",
+        "*-hoz/-hez/-höz*: *a büféhez*",
+        "*-nál/-nél*: *a büfénél*",
+        "*-tól/-től*: *a büfétől*"
+       ]
+      ]
+     },
+     "after": [
+      "Kota di Hungaria umumnya memakai baris kedua (*Budapesten, Szegeden, Füreden*), kota di luar negeri baris pertama (*Jakartában, Bécsben*). Pengecualiannya harus dihafal satu per satu: *Tihanyban, Győrben, Egerben*.",
+      "Kata kerja gerak berawalan tinggal memilih kolom: *be-* ke kolom pertama, *ki-* ke kolom ketiga, *megérkezik* ke kolom pertama. Kolom tengah hanya untuk diam di tempat."
+     ]
+    }
+   ]
+  }
+ ],
+ "sections": [
+  {
+   "title": "Naik kereta MÁV",
+   "blocks": [
+    {
+     "type": "tabel",
+     "head": [
+      "Magyar",
+      "Cara baca",
+      "Bahasa Indonesia"
+     ],
+     "rows": [
+      [
+       "pályaudvar",
+       "PA-yå-ud-vår",
+       "stasiun besar"
+      ],
+      [
+       "vágány",
+       "VA-gany",
+       "jalur rel (nomor jalur)"
+      ],
+      [
+       "peron",
+       "PÈ-ron",
+       "peron"
+      ],
+      [
+       "menetrend",
+       "MÈ-nèt-rènd",
+       "jadwal perjalanan"
+      ],
+      [
+       "retúrjegy",
+       "RÈ-tur-yèdy",
+       "tiket pulang-pergi"
+      ],
+      [
+       "átszállás",
+       "AT-sal-lasy",
+       "ganti kendaraan"
+      ],
+      [
+       "késés",
+       "KÉ-syésy",
+       "keterlambatan"
+      ],
+      [
+       "indulás",
+       "IN-du-lasy",
+       "keberangkatan"
+      ],
+      [
+       "érkezés",
+       "ÉR-kè-zésy",
+       "kedatangan"
+      ],
+      [
+       "pénztár",
+       "PÉNZ-tar",
+       "loket"
+      ],
+      [
+       "kalauz",
+       "KÅ-lå-uz",
+       "kondektur"
+      ],
+      [
+       "pótlóbusz",
+       "POT-lo-bus",
+       "bus pengganti"
+      ]
+     ]
+    },
+    {
+     "type": "p",
+     "text": "Kereta ke Balaton umumnya berangkat dari Déli pályaudvar atau singgah di Kelenföld. Tiket bisa dibeli lewat aplikasi MÁV atau di loket (*pénztár*); simpan tiket digitalnya di ponsel, karena *kalauz* akan memeriksanya di dalam kereta. Di papan keberangkatan cari tiga hal: tujuan, jam (*indulás*), dan *vágány*. Kalau ada kata *késik* di sebelahnya, kamu masih punya waktu untuk pogácsa."
+    },
+    {
+     "type": "kotak",
+     "title": "Pengumuman di stasiun",
+     "items": [
+      "*… percet késik.* — Terlambat … menit.",
+      "*A vonat a … vágányra érkezik.* — Kereta tiba di jalur …",
+      "*Átszállás Székesfehérváron.* — Ganti kereta di Székesfehérvár.",
+      "*Pótlóbusz közlekedik.* — Ada bus pengganti, biasanya karena perbaikan rel.",
+      "*Vágány* adalah jalurnya, *peron* tempat kamu berdiri. Pengumuman hampir selalu menyebut *vágány*."
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Balaton, laut Hungaria",
+   "blocks": [
+    {
+     "type": "tabel",
+     "head": [
+      "Tempat",
+      "Yang terkenal"
+     ],
+     "rows": [
+      [
+       "Tihany",
+       "semenanjung, biara Benediktin (didirikan 1055), ladang lavender"
+      ],
+      [
+       "Balatonfüred",
+       "kota tepi danau, promenade dan pelabuhan kapal"
+      ],
+      [
+       "Badacsony",
+       "bukit bekas gunung api, kebun anggur"
+      ],
+      [
+       "Siófok",
+       "pantai selatan yang ramai, pesta musim panas"
+      ],
+      [
+       "Keszthely",
+       "Istana Festetics"
+      ],
+      [
+       "Hévíz",
+       "danau air panas di dekat ujung barat Balaton"
+      ]
+     ]
+    },
+    {
+     "type": "p",
+     "text": "Balaton adalah danau terbesar di Eropa Tengah — panjangnya sekitar 77 km — tetapi dangkal: rata-rata hanya sekitar tiga meter, sehingga airnya cepat hangat di musim panas. Orang Hungaria menyebutnya bercanda *a magyar tenger*, laut Hungaria. Pantai selatan landai dan berpasir; pantai utara lebih dalam dan berbukit. Satu fakta untuk pencinta bahasa: piagam pendirian biara Tihany tahun 1055 memuat kata-kata Hungaria tertulis tertua yang masih tersimpan."
+    },
+    {
+     "type": "kotak",
+     "title": "Di pantai Balaton",
+     "items": [
+      "*Lángos* — adonan goreng bundar; klasiknya *sajtos-tejfölös* (keju dan krim asam), sering dengan bawang putih (*fokhagymás*).",
+      "*Hekk* — ikan goreng tepung, menu wajib kios pantai.",
+      "Sebagian *strand* memungut tiket masuk (*belépő*), sebagian gratis (*szabadstrand*). Tanyakan: *Mennyibe kerül a belépő?*",
+      "Cuaca di danau bisa berubah cepat. Kalau lampu peringatan badai (*viharjelző*) di tepi danau berkedip, keluarlah dari air: *Gyere ki a vízből!*"
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Ulangan berjenjang — unit 17",
+   "blocks": [
+    {
+     "type": "p",
+     "text": "Tutup kolom Hungaria, baca terjemahan Indonesianya, lalu susun kembali kalimatnya dari ingatan."
+    },
+    {
+     "type": "tabel",
+     "head": [
+      "Bahasa Indonesia",
+      "Magyar"
+     ],
+     "rows": [
+      [
+       "Duduklah. Mau makan sedikit ham dengan telur dan lobak pedas?",
+       "*Ülj le. Eszel egy kis sonkát tojással és tormával?*"
+      ],
+      [
+       "Kopi saja. Ibu tahu kan, saya tidak minum alkohol.",
+       "*Csak kávét kérek. Tudja, nem iszom alkoholt.*"
+      ],
+      [
+       "Ibu sudah empat puluh tahun tinggal di gedung ini; tremnya sampai tak terdengar lagi.",
+       "*Én negyven éve lakom ebben a házban, a villamost meg sem hallom.*"
+      ],
+      [
+       "Di sini juga sama. Dari Jumat kerjaanku cuma makan dan tidur.",
+       "*Nálam is ugyanez. Péntek óta csak eszem és alszom.*"
+      ],
+      [
+       "Kamis, tanggal satu April. Keretaku berangkat jam tujuh pagi.",
+       "*Csütörtökön, április elsején. A vonatom reggel hétkor indul.*"
+      ]
+     ]
+    }
+   ]
+  }
+ ],
+ "vocab": [
+  {
+   "hu": "állomás",
+   "baca": "AL-lo-masy",
+   "id": "stasiun"
+  },
+  {
+   "hu": "vágány",
+   "baca": "VA-gany",
+   "id": "jalur rel"
+  },
+  {
+   "hu": "jegy",
+   "baca": "yèdy",
+   "id": "tiket"
+  },
+  {
+   "hu": "késik",
+   "baca": "KÉ-syik",
+   "id": "terlambat"
+  },
+  {
+   "hu": "indul",
+   "baca": "IN-dul",
+   "id": "berangkat"
+  },
+  {
+   "hu": "elindul",
+   "baca": "È-lin-dul",
+   "id": "berangkat, mulai jalan"
+  },
+  {
+   "hu": "megérkezik (-ba/-be, -ra/-re)",
+   "baca": "MÈ-gér-kè-zik",
+   "id": "tiba (di)"
+  },
+  {
+   "hu": "bemegy",
+   "baca": "BÈ-mèdy",
+   "id": "masuk (menjauh)"
+  },
+  {
+   "hu": "kijön",
+   "baca": "KI-yön",
+   "id": "keluar (mendekat)"
+  },
+  {
+   "hu": "átmegy",
+   "baca": "AT-mèdy",
+   "id": "menyeberang; mampir"
+  },
+  {
+   "hu": "visszajön",
+   "baca": "VIS-så-yön",
+   "id": "kembali (ke sini)"
+  },
+  {
+   "hu": "hazamegy",
+   "baca": "HÅ-zå-mèdy",
+   "id": "pulang"
+  },
+  {
+   "hu": "felmegy",
+   "baca": "FÈL-mèdy",
+   "id": "naik (ke atas)"
+  },
+  {
+   "hu": "odaér",
+   "baca": "O-då-ér",
+   "id": "tiba di sana"
+  },
+  {
+   "hu": "beszáll",
+   "baca": "BÈ-sall",
+   "id": "naik (kendaraan)"
+  },
+  {
+   "hu": "átszáll",
+   "baca": "AT-sall",
+   "id": "ganti kendaraan"
+  },
+  {
+   "hu": "komp",
+   "baca": "komp",
+   "id": "feri (*komppal*)"
+  },
+  {
+   "hu": "strand",
+   "baca": "sytrånd",
+   "id": "pantai umum, tempat mandi"
+  },
+  {
+   "hu": "lángos",
+   "baca": "LAN-gosy",
+   "id": "roti goreng khas"
+  },
+  {
+   "hu": "tejföl",
+   "baca": "TÈY-föl",
+   "id": "krim asam"
+  },
+  {
+   "hu": "apátság",
+   "baca": "Å-pat-syag",
+   "id": "biara"
+  },
+  {
+   "hu": "kihűl",
+   "baca": "KI-hül",
+   "id": "menjadi dingin"
+  },
+  {
+   "hu": "pékség",
+   "baca": "PÉK-syég",
+   "id": "toko roti"
+  },
+  {
+   "hu": "messze",
+   "baca": "MÈS-sè",
+   "id": "jauh"
+  }
+ ],
+ "exercises": [
+  {
+   "prompt": "Terjemahkan ke bahasa Hungaria.",
+   "items": [
+    "Keretanya terlambat sepuluh menit.",
+    "Aku keluar dari metro. (mendekat ke lawan bicara)",
+    "Ayo keluar ke peron!",
+    "Aku masuk ke air. (menjauh)",
+    "Hari Minggu kami pulang.",
+    "Kapan kita tiba di Tihany?"
+   ]
+  },
+  {
+   "prompt": "Isi dengan akhiran atau awalan yang tepat.",
+   "items": [
+    "Bemegyek a víz____. (-ba atau -be?)",
+    "Kijöttem a bolt____. (-ból atau -ből?)",
+    "Átmegyünk Szántód____. (-ra atau -re?)",
+    "Megérkeztünk Tihany____. (-ba atau -ban?)",
+    "Visszamegyek a pékség____. (-hoz, -hez atau -höz?)",
+    "Anna a büfé____ vár. (-nál atau -nél?)",
+    "Mikor jössz ____ Budapestre? (awalan: kembali)"
+   ]
+  },
+  {
+   "prompt": "Ubah menjadi kalimat negatif. Perhatikan letak awalan.",
+   "items": [
+    "Bemegyek a vízbe.",
+    "Hazamegyünk.",
+    "Kati visszajön.",
+    "Átmentek a hídon.",
+    "Elindul a vonat.",
+    "Kijöttem a vízből."
+   ]
+  },
+  {
+   "prompt": "Susun menjadi kalimat yang benar.",
+   "items": [
+    "ki / Menjünk / peronra / a",
+    "a / Bemegyek / vízbe",
+    "percet / tíz / késik / vonat / A",
+    "át / Gyere / hozzánk",
+    "Tihanyba / busszal / megyünk / Onnan"
+   ]
+  }
+ ],
+ "answers": [
+  "A vonat tíz percet késik. — Kijövök a metróból. — Menjünk ki a peronra! — Bemegyek a vízbe. — Vasárnap hazamegyünk. — Mikor érkezünk meg Tihanyba?",
+  "be — ból — ra — ba — hez — nél — vissza",
+  "Nem megyek be a vízbe. — Nem megyünk haza. — Kati nem jön vissza. — Nem mentek át a hídon. — Nem indul el a vonat. — Nem jöttem ki a vízből.",
+  "Menjünk ki a peronra! — Bemegyek a vízbe. — A vonat tíz percet késik. — Gyere át hozzánk! — Onnan busszal megyünk Tihanyba."
+ ]
+}
