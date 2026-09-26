@@ -46,6 +46,7 @@ import { kunciJejak } from "@/lib/jejakPemilik";
 import { siapkanTabPembayaran } from "@/lib/bukaTabPembayaran";
 import KolomWaPembeli, { useWaPembeli } from "@/components/akun/KolomWaPembeli"; // [wa-wajib-digital-v1]
 import { KODE_WA_WAJIB } from "@/lib/waPembeli";
+import { sampulKecil } from "@/lib/sampulKecil"; // [pustaka-sampul-kecil-v1]
 // [pustaka-keranjang-v1] beli beberapa produk sekaligus → satu invoice
 import {
   useKeranjang, tambahKeKeranjang, hapusDariKeranjang, kosongkanKeranjang,
@@ -1238,7 +1239,7 @@ export default function LibraryView({ userId, supabase, previewStudentId = null,
                     >
                       {sampul ? (
                         /* eslint-disable-next-line @next/next/no-img-element */
-                        <img src={sampul} alt="" loading="lazy" className={`h-full w-full object-cover${jangkarSampul(prod)}`} />
+                        <img src={sampulKecil(sampul, 128)} alt="" loading="lazy" decoding="async" className={`h-full w-full object-cover${jangkarSampul(prod)}`} />
                       ) : (
                         <span className="absolute inset-0 grid place-items-center text-[13px] font-black text-white/80">
                           {glyphFor(prod)}
@@ -1659,8 +1660,10 @@ function ShelfCover({
         <>
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img
-            src={foto}
+            src={sampulKecil(foto, 440)}
             alt={p.title}
+            loading="lazy"
+            decoding="async"
             className={`absolute inset-0 h-full w-full object-cover${jangkarSampul(p)}`}
             onError={(e) => { (e.currentTarget as HTMLImageElement).style.display = "none"; }}
           />
@@ -1878,8 +1881,10 @@ function ProductRow({
         {fotoSampul(prod) ? (
           // eslint-disable-next-line @next/next/no-img-element
           <img
-            src={fotoSampul(prod) as string}
+            src={sampulKecil(fotoSampul(prod), 256)}
             alt={prod.title}
+            loading="lazy"
+            decoding="async"
             className="absolute inset-0 h-full w-full object-cover"
             onError={(e) => { (e.currentTarget as HTMLImageElement).style.display = "none"; }}
           />
@@ -2544,7 +2549,9 @@ function CartModal({
                   {(x.coverUrl || getLangPhoto(x.language)) && (
                     /* eslint-disable-next-line @next/next/no-img-element */
                     <img
-                      src={x.coverUrl || getLangPhoto(x.language) || ""}
+                      src={sampulKecil(x.coverUrl || getLangPhoto(x.language), 128)}
+                      loading="lazy"
+                      decoding="async"
                       alt=""
                       className={`h-full w-full object-cover${x.coverUrl ? " object-top" : ""}`}
                       onError={(e) => { (e.currentTarget as HTMLImageElement).style.display = "none"; }}
