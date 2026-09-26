@@ -1,0 +1,694 @@
+{
+ "title": "Ilmu dan teknologi — nominalisasi berlapis",
+ "title_target": "Karikó Katalin kutatásai lehetővé tették az mRNS-vakcinák kifejlesztését",
+ "goal": "Membaca teks ilmiah populer yang padat kata benda, lalu membongkarnya: sufiks yang bertumpuk (*megvalósít → megvalósítható → megvalósíthatóság*), rantai posesif (*a vakcinák kifejlesztésének lehetővé tétele*), dan kata kerja pembungkus (*sor kerül valamire, megtörténik, végez*). Sasarannya: kamu mengerti gaya benda, tetapi menulis dengan gaya kerja kalau pembacamu bukan ilmuwan.",
+ "bekal": [
+  "mengurai kata bersufiks berlapis dan menebak artinya dari lapisan-lapisannya",
+  "mengubah frasa benda berposesif menjadi kalimat dengan kata kerja (dan sebaliknya)",
+  "mengenali kata kerja pembungkus *sor kerül, megtörténik, bekövetkezik* dan menggantinya dengan kata kerja hidup"
+ ],
+ "dialogs": [
+  {
+   "title": "Dialog — Főnév főnév hátán",
+   "intro": "Akhir Maret 2029. Program kerja sama menyiapkan pameran kecil \"Ilmuwan Hungaria\" yang akan dikirim ke universitas mitra di Jakarta. Dr. Balogh Tamás menulis teks pamerannya dalam bahasa Hungaria, dan Budi harus meringkasnya untuk brosur dwibahasa. Ia datang ke ruang Balogh di ELTE. Mereka tetap memakai *Ön*; Budi menyapanya *tanár úr*.",
+   "lines": [
+    {
+     "speaker": "Balogh:",
+     "text": "Elolvasta már a szöveget, amit küldtem?",
+     "id": "Sudah Anda baca teks yang saya kirim?",
+     "literal": "habis-Anda-membacanya-lampau sudah itu teks-sasaran, yang-sasaran saya-mengirim-lampau?"
+    },
+    {
+     "speaker": "Budi:",
+     "text": "El, tanár úr, de ennél a mondatnál elakadtam: „Karikó Katalin kutatásai hozzájárultak az mRNS-alapú vakcinák kifejlesztésének lehetővé tételéhez.”",
+     "id": "Sudah, Pak, tapi saya tersangkut di kalimat ini: \"Penelitian Karikó Katalin berkontribusi pada dimungkinkannya pengembangan vaksin berbasis mRNA.\"",
+     "literal": "habis, guru tuan, tapi ini-di-dekat itu kalimat-di-dekat pergi-saya-tersangkut-lampau: Karikó Katalin penelitian-jamak-nya ke-dekat-mereka-menyumbang-lampau itu mRNA-berbasis vaksin-jamak pengembangan-nya-bagi mungkin-menjadi penaruhan-nya-ke-dekat."
+    },
+    {
+     "speaker": "Balogh:",
+     "text": "Tipikus tudományos stílus: főnév főnév hátán.",
+     "id": "Gaya ilmiah yang khas: kata benda bertumpuk di atas kata benda.",
+     "literal": "khas ilmiah gaya: kata-benda kata-benda punggung-nya-di-atas."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Hogyan lehetne ezt egyszerűbben mondani?",
+     "id": "Bagaimana ini bisa dikatakan lebih sederhana?",
+     "literal": "bagaimana mungkin-andai ini-sasaran lebih-sederhana-secara mengatakan?"
+    },
+    {
+     "speaker": "Balogh:",
+     "text": "Bontsuk ki! Mit tettek lehetővé a kutatásai?",
+     "id": "Mari kita bongkar! Penelitiannya memungkinkan apa?",
+     "literal": "kita-membukanya-hendaklah keluar! apa-sasaran mereka-membuat-lampau mungkin-menjadi itu penelitian-jamak-nya?"
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Azt, hogy ki lehessen fejleszteni a vakcinákat.",
+     "id": "Bahwa vaksin-vaksin itu bisa dikembangkan.",
+     "literal": "itu-sasaran, bahwa keluar mungkin-hendaklah mengembangkan itu vaksin-jamak-sasaran."
+    },
+    {
+     "speaker": "Balogh:",
+     "text": "Karikó Katalin kutatásai lehetővé tették az mRNS-vakcinák kifejlesztését.",
+     "id": "Penelitian Karikó Katalin memungkinkan pengembangan vaksin mRNA.",
+     "literal": "Karikó Katalin penelitian-jamak-nya mungkin-menjadi mereka-membuatnya-lampau itu mRNA-vaksin-jamak pengembangan-nya-sasaran."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Így már érthető. De miért szeretik a tudósok a nehezebb változatot?",
+     "id": "Begini sudah bisa dipahami. Tapi mengapa para ilmuwan suka versi yang lebih sulit?",
+     "literal": "begini sudah yang-bisa-dipahami. tapi mengapa mereka-menyukainya itu ilmuwan-jamak itu lebih-sulit versi-sasaran?"
+    },
+    {
+     "speaker": "Balogh:",
+     "text": "Mert tömör és személytelen. A cselekvő helyett a folyamat áll a középpontban.",
+     "id": "Karena padat dan tidak personal. Yang menjadi pusat adalah prosesnya, bukan pelakunya.",
+     "literal": "karena padat dan tanpa-pribadi. itu pelaku sebagai-ganti itu proses ia-berdiri itu titik-tengah-di-dalam."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Ezért van annyi „-ás, -és” és „-ság, -ség”? Mint a „megvalósíthatóság”?",
+     "id": "Karena itu ada begitu banyak \"-ás, -és\" dan \"-ság, -ség\"? Seperti \"megvalósíthatóság\"?",
+     "literal": "karena-itu ada sebanyak-itu -ás -és dan -ság -ség? seperti itu kelayakan?"
+    },
+    {
+     "speaker": "Balogh:",
+     "text": "Igen. Megvalósít, megvalósítható, megvalósíthatóság: minden réteg új jelentést ad.",
+     "id": "Ya. Mewujudkan, bisa diwujudkan, kelayakan: setiap lapisan menambah arti baru.",
+     "literal": "ya. tuntas-mewujudkan, yang-bisa-diwujudkan, keadaan-bisa-diwujudkan: setiap lapisan baru arti-sasaran ia-memberi."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Mint a hagyma! És Karikó munkáját mindig elismerték?",
+     "id": "Seperti bawang! Lalu, apakah karya Karikó selalu diakui?",
+     "literal": "seperti itu bawang! dan Karikó karya-nya-sasaran selalu pergi-mereka-mengakuinya-lampau?"
+    },
+    {
+     "speaker": "Balogh:",
+     "text": "Eredményeinek elismerése sokáig váratott magára.",
+     "id": "Pengakuan atas hasil-hasilnya lama sekali tertunda.",
+     "literal": "hasil-jamak-nya-bagi pengakuan-nya lama menyuruh-menunggu-lampau diri-nya-ke-atas."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Végül 2023-ban megkapta a Nobel-díjat Drew Weissmannal együtt. Micsoda történet!",
+     "id": "Akhirnya pada 2023 ia menerima Hadiah Nobel bersama Drew Weissman. Kisah yang luar biasa!",
+     "literal": "akhirnya 2023-di-dalam tuntas-ia-menerimanya itu Nobel-hadiah-sasaran Drew Weissman-dengan bersama. betapa kisah!"
+    },
+    {
+     "speaker": "Balogh:",
+     "text": "A kitartás a tudomány egyik legfontosabb feltétele.",
+     "id": "Ketekunan adalah salah satu syarat terpenting ilmu pengetahuan.",
+     "literal": "itu ketekunan itu ilmu salah-satu paling-penting syarat-nya."
+    }
+   ],
+   "notes": [
+    "**Tanár úr** — sapaan hormat untuk guru dan dosen laki-laki, juga di universitas (untuk perempuan: *tanárnő*). Lebih hangat daripada *professzor úr*, dan tetap dipakai bersama *Ön*. Jawaban Budi *El* cukup mengulang awalan dari pertanyaan *Elolvasta?*: cara Hungaria menjawab \"sudah\".",
+    "**főnév főnév hátán** — \"kata benda di atas punggung kata benda\", dari ungkapan *egymás hátán* (bertumpuk-tumpuk). Kalimat yang membuat Budi tersangkut punya tiga kata benda turunan berantai: *kutatásai… kifejlesztésének… lehetővé tételéhez*.",
+    "**lehetővé tesz valamit** — \"membuat sesuatu menjadi mungkin\" (*lehető* + *-vé*, B1). Sasarannya *-t*: *lehetővé tették a kifejlesztést*. Versi bendanya *lehetővé tétel*, dan di situlah kalimat pertama menjadi berat.",
+    "**Bontsuk ki!** — *kibont* = membongkar, membuka bungkus. Teknik Balogh: tanyakan \"siapa melakukan apa\" dari setiap kata benda turunan, lalu kembalikan menjadi kata kerja.",
+    "**személytelen** — tanpa pribadi: *személy* (orang) + *-telen* (tanpa, B1 unit 12). Gaya ilmiah menyembunyikan pelaku; teks populer justru menampilkannya kembali: *Karikó Katalin fedezte fel…*",
+    "**váratott magára** — *várat magára* (harfiah \"membuat orang menunggu dirinya\") = lama tak kunjung datang. Ungkapan tetap yang sangat sering untuk pengakuan, hasil, atau musim semi: *Idén váratott magára a tavasz.*"
+   ],
+   "grammars": [
+    {
+     "title": "Satu akar, banyak lapisan",
+     "body": [
+      "Sufiks Hungaria bisa ditumpuk seperti balok. Pola ilmiah yang paling produktif: kata kerja → *-ható/-hető* (bisa di-…) → *-ság/-ség* (keadaan bisa di-…). Kalau kamu kenal kata kerjanya, kata raksasa di kolom ketiga tidak lagi menakutkan."
+     ],
+     "table": {
+      "head": [
+       "Kata kerja",
+       "*-ható/-hető*",
+       "*-ság/-ség*",
+       "Arti akhir"
+      ],
+      "rows": [
+       [
+        "*megvalósít* (mewujudkan)",
+        "*megvalósítható*",
+        "*megvalósíthatóság*",
+        "kelayakan (bisa-tidaknya diwujudkan)"
+       ],
+       [
+        "*fenntart* (mempertahankan)",
+        "*fenntartható*",
+        "*fenntarthatóság*",
+        "keberlanjutan"
+       ],
+       [
+        "*alkalmaz* (menerapkan)",
+        "*alkalmazható*",
+        "*alkalmazhatóság*",
+        "keterterapan"
+       ],
+       [
+        "*összehasonlít* (membandingkan)",
+        "*összehasonlítható*",
+        "*összehasonlíthatóság*",
+        "keterbandingan"
+       ],
+       [
+        "*elér* (mencapai)",
+        "*elérhető*",
+        "*elérhetőség*",
+        "keterjangkauan; juga: kontak (alamat, nomor)"
+       ],
+       [
+        "*felel* (bertanggung jawab)",
+        "*felelős* (-s)",
+        "*felelősség*",
+        "tanggung jawab; → *felelősségvállalás*"
+       ]
+      ]
+     },
+     "after": [
+      "Baris terakhir menunjukkan bahwa lapisannya tidak selalu *-ható*: *felel → felelős → felelősség → felelősségvállalás* (pengambilan tanggung jawab: *felelősség* + *vállal* + *-ás*). Kata majemuk ditambah sufiks adalah dua mesin utama bahasa ilmiah Hungaria.",
+      "Hati-hati dengan *elérhetőség*. Di formulir, *Elérhetőségei* berarti \"kontak Anda\" (telepon, surel), bukan \"keterjangkauan Anda\"."
+     ]
+    },
+    {
+     "title": "Membongkar rantai posesif",
+     "body": [
+      "Dalam frasa benda, **sasaran kata kerja berubah menjadi pemilik**: *kifejlesztik a vakcinákat* → *a vakcinák kifejlesztése*. Kalau rantainya lebih panjang, pemilik tengah memakai *-nak/-nek*: *a vakcinák kifejlesztésének lehetővé tétele*."
+     ],
+     "table": {
+      "head": [
+       "Gaya benda (ilmiah)",
+       "Gaya kerja (populer)",
+       "Arti"
+      ],
+      "rows": [
+       [
+        "*a vakcinák kifejlesztése*",
+        "*kifejlesztik a vakcinákat*",
+        "pengembangan vaksin"
+       ],
+       [
+        "*az eredmények elismerése*",
+        "*elismerik az eredményeket*",
+        "pengakuan hasil"
+       ],
+       [
+        "*a C-vitamin előállítása paprikából*",
+        "*paprikából állítják elő a C-vitamint*",
+        "pembuatan vitamin C dari paprika"
+       ],
+       [
+        "*a kutatás finanszírozásának hiánya*",
+        "*nem finanszírozták a kutatást*",
+        "ketiadaan pendanaan riset"
+       ],
+       [
+        "*a kísérletek kutatók általi elvégzése*",
+        "*a kutatók elvégzik a kísérleteket*",
+        "pelaksanaan percobaan oleh peneliti"
+       ]
+      ]
+     },
+     "after": [
+      "Baris terakhir sengaja jelek: *által* (oleh) memasukkan pelaku ke frasa benda, dan hasilnya kaku. Penyunting Hungaria sendiri sering mencoretnya. Kalau pelakunya penting, kembalikan ke kalimat biasa."
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Dialog kedua — A bűvös kocka",
+   "intro": "Rabu sore itu Budi bertemu Lili di kafe dekat ELTE untuk sesi tandem mingguan mereka. Lili memutar kubus Rubik sambil menunggu. Budi membawa teks pameran bagian Rubik Ernő dan minta tolong membuatnya lebih enak dibaca.",
+   "lines": [
+    {
+     "speaker": "Lili:",
+     "text": "Kész! Negyven másodperc alatt kiraktam.",
+     "id": "Selesai! Kususun dalam empat puluh detik.",
+     "literal": "selesai! empat-puluh detik selama keluar-saya-menyusunnya-lampau."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Hihetetlen. Én még egy oldalt sem tudok kirakni.",
+     "id": "Luar biasa. Aku satu sisi pun belum bisa.",
+     "literal": "tak-bisa-dipercaya. saya masih satu sisi-sasaran juga-tidak saya-bisa keluar-menyusun."
+    },
+    {
+     "speaker": "Lili:",
+     "text": "Gyakorlás kérdése. Mit olvasol?",
+     "id": "Soal latihan saja. Kamu baca apa?",
+     "literal": "latihan pertanyaan-nya. apa-sasaran kamu-membaca?"
+    },
+    {
+     "speaker": "Budi:",
+     "text": "A kiállítás szövegét: „A bűvös kocka feltalálására 1974-ben került sor.”",
+     "id": "Teks pameran: \"Penemuan kubus ajaib terjadi pada 1974.\"",
+     "literal": "itu pameran teks-nya-sasaran: itu ajaib kubus penemuan-nya-ke-atas 1974-di-dalam ia-sampai-lampau giliran."
+    },
+    {
+     "speaker": "Lili:",
+     "text": "Rubik Ernő 1974-ben találta fel a bűvös kockát.",
+     "id": "Rubik Ernő menemukan kubus ajaib pada 1974.",
+     "literal": "Rubik Ernő 1974-di-dalam ia-menemukannya-lampau naik itu ajaib kubus-sasaran."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Ennyi? És mi a baj a „sor került” szerkezettel?",
+     "id": "Segitu saja? Terus apa salahnya susunan \"sor került\"?",
+     "literal": "sebanyak-ini? dan apa itu masalah itu giliran ia-sampai-lampau susunan-dengan?"
+    },
+    {
+     "speaker": "Lili:",
+     "text": "Semmi, csak hosszú, és eltűnik belőle a feltaláló. Hivatalos levélben jó, egy kiállításon unalmas.",
+     "id": "Tidak ada, cuma panjang, dan penemunya hilang dari kalimat. Di surat resmi bagus, di pameran membosankan.",
+     "literal": "tidak-ada-apa-apa, hanya panjang, dan pergi-ia-menghilang ia-dari-dalam itu penemu. resmi surat-di-dalam baik, sebuah pameran-di-atas membosankan."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Akkor a következő: „A kocka világszerte való elterjedése a nyolcvanas években következett be.”",
+     "id": "Kalau begitu yang berikut: \"Penyebaran kubus itu ke seluruh dunia terjadi pada tahun delapan puluhan.\"",
+     "literal": "kalau-begitu itu berikut: itu kubus seluruh-dunia yang-ada penyebaran-nya itu delapan-puluhan tahun-jamak-di-dalam ia-terjadi-lampau masuk."
+    },
+    {
+     "speaker": "Lili:",
+     "text": "A nyolcvanas években az egész világon elterjedt.",
+     "id": "Pada tahun delapan puluhan ia menyebar ke seluruh dunia.",
+     "literal": "itu delapan-puluhan tahun-jamak-di-dalam itu seluruh dunia-di-atas pergi-ia-menyebar-lampau."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Te jobb szerkesztő vagy, mint én!",
+     "id": "Kamu penyunting yang lebih baik daripada aku!",
+     "literal": "kamu lebih-baik penyunting kamu-adalah, daripada saya!"
+    },
+    {
+     "speaker": "Lili:",
+     "text": "Csak a kockában. Na jó, a mondatokban is.",
+     "id": "Cuma soal kubus. Ya sudah, soal kalimat juga.",
+     "literal": "hanya itu kubus-di-dalam. nah baik, itu kalimat-jamak-di-dalam juga."
+    }
+   ],
+   "notes": [
+    "**kirak** — \"menyusun\" (harfiah menaruh keluar); untuk kubus Rubik dan puzzle (*kirakós* = puzzle jigsaw). *Negyven másodperc alatt* = dalam empat puluh detik; *alatt* di sini waktu, bukan tempat.",
+    "**sor kerül valamire** — \"tiba giliran untuk sesuatu\" = sesuatu dilaksanakan. Kata kerja pembungkus paling khas ragam resmi: *A megbeszélésre kedden kerül sor* (rapat diadakan hari Selasa). Benar secara tata bahasa, hanya berat.",
+    "**találta fel** — *feltalál* = menemukan (menciptakan barang baru). Beda dengan *felfedez* = menemukan (yang sudah ada di alam): *Szent-Györgyi felfedezte…, Rubik feltalálta…* Fokus *1974-ben* membuat awalan *fel* pindah ke belakang.",
+    "**világszerte való elterjedése** — *való* adalah \"lem\" yang memungkinkan keterangan (*világszerte*, di seluruh dunia) menempel pada kata benda. Hampir selalu tanda bahwa kalimatnya bisa ditulis lebih ringan.",
+    "**következett be** — *bekövetkezik* = terjadi (biasanya hal yang sudah diperkirakan atau buruk). Dalam teks populer cukup kata kerja utamanya: *elterjedt*.",
+    "**Na jó** — \"ya sudah, baiklah\" untuk mengakui sesuatu setengah bercanda. Lili sedang memakai humor Hungaria yang khas: merendah, lalu langsung menarik kembali kerendahannya."
+   ],
+   "grammars": [
+    {
+     "title": "Kata kerja pembungkus dan penggantinya",
+     "body": [
+      "Ragam resmi suka membungkus tindakan dalam kata benda lalu menambahkan kata kerja \"kosong\": *sor kerül, történik, megtörténik, bekövetkezik, végez, tesz*. Untuk teks populer, lepaskan bungkusnya."
+     ],
+     "table": {
+      "head": [
+       "Gaya kaku",
+       "Gaya hidup",
+       "Arti"
+      ],
+      "rows": [
+       [
+        "*A bemutatásra 1977-ben került sor.*",
+        "*1977-ben mutatták be.*",
+        "Diperkenalkan pada 1977."
+       ],
+       [
+        "*A vizsgálat elvégzése megtörtént.*",
+        "*Elvégezték a vizsgálatot.*",
+        "Pemeriksaan sudah dilakukan."
+       ],
+       [
+        "*Kísérleteket végeztek.*",
+        "*Kísérleteztek.*",
+        "Mereka bereksperimen."
+       ],
+       [
+        "*Döntés született.*",
+        "*Döntöttek.*",
+        "Keputusan sudah diambil."
+       ],
+       [
+        "*Javaslatot tett.*",
+        "*Javasolta.*",
+        "Ia mengusulkan."
+       ],
+       [
+        "*Az elterjedés bekövetkezett.*",
+        "*Elterjedt.*",
+        "Ia menyebar."
+       ]
+      ]
+     },
+     "after": [
+      "Gaya kaku tidak salah. Di kontrak (unit 3), notulen, dan laporan resmi ia justru diharapkan. Yang dituntut di tingkat B2 adalah memilih: siapa pembacamu, dan apakah ia perlu tahu siapa pelakunya."
+     ]
+    }
+   ]
+  }
+ ],
+ "sections": [
+  {
+   "title": "Penemu dan ilmuwan Hungaria",
+   "blocks": [
+    {
+     "type": "tabel",
+     "head": [
+      "Nama",
+      "Bidang",
+      "Dikenal karena"
+     ],
+     "rows": [
+      [
+       "Semmelweis Ignác",
+       "kedokteran",
+       "memperkenalkan cuci tangan dengan larutan klorin untuk mencegah demam nifas (1847); dijuluki *az anyák megmentője*, penyelamat para ibu"
+      ],
+      [
+       "Szent-Györgyi Albert",
+       "biokimia",
+       "penelitian vitamin C di Szeged; Hadiah Nobel Kedokteran 1937"
+      ],
+      [
+       "Neumann János",
+       "matematika",
+       "dasar arsitektur komputer modern (dikenal di dunia sebagai John von Neumann)"
+      ],
+      [
+       "Gábor Dénes",
+       "fisika",
+       "holografi; Hadiah Nobel Fisika 1971"
+      ],
+      [
+       "Rubik Ernő",
+       "desain, arsitektur",
+       "*bűvös kocka* (kubus Rubik), 1974"
+      ],
+      [
+       "Karikó Katalin",
+       "biokimia",
+       "modifikasi mRNA; Hadiah Nobel Kedokteran 2023 bersama Drew Weissman"
+      ],
+      [
+       "Krausz Ferenc",
+       "fisika",
+       "pulsa cahaya attodetik; Hadiah Nobel Fisika 2023"
+      ]
+     ]
+    },
+    {
+     "type": "p",
+     "text": "Banyak ilmuwan Hungaria abad ke-20 berkarier di luar negeri, terutama di Amerika Serikat. Sekelompok fisikawan dan matematikawan kelahiran Budapest, di antaranya Neumann János, Wigner Jenő, Szilárd Leó, dan Teller Ede, dijuluki rekan-rekannya secara bercanda sebagai *a marslakók* (\"orang Mars\"): konon karena begitu cerdas dan berbicara dalam bahasa yang tak dimengerti siapa pun. Julukan itu masih populer di Hungaria, dan kamu akan menemukannya di buku, museum, dan kuis televisi."
+    },
+    {
+     "type": "kotak",
+     "title": "Szeged, kota para peraih Nobel",
+     "items": [
+      "Szent-Györgyi Albert bekerja di universitas Szeged sejak akhir 1920-an. Paprika Szeged ternyata kaya vitamin C, sehingga ia bisa memperoleh zat itu dalam jumlah besar untuk penelitiannya.",
+      "Karikó Katalin tumbuh besar di Kisújszállás dan belajar biologi di universitas Szeged. Sebagian besar kariernya ia jalani di Amerika Serikat.",
+      "Namanya melekat pada pendidikan kedokteran di Szeged: universitas kedokteran kota itu pernah bernama *Szent-Györgyi Albert Orvostudományi Egyetem*. Anna tentu bangga, dan tidak lupa menyebutnya setiap ada kesempatan.",
+      "Rubik Ernő bukan ilmuwan: ia arsitek dan dosen desain. Kubusnya lahir sebagai alat peraga untuk mengajarkan ruang tiga dimensi."
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Gaya teks ilmiah populer",
+   "blocks": [
+    {
+     "type": "tabel",
+     "head": [
+      "Magyar",
+      "Arti",
+      "Catatan"
+     ],
+     "rows": [
+      [
+       "*A kutatás során…*",
+       "selama penelitian…",
+       "*során* = dalam proses"
+      ],
+      [
+       "*Kimutatták, hogy…*",
+       "ditunjukkan bahwa…",
+       "orang ketiga jamak tanpa pelaku"
+      ],
+      [
+       "*…-ra irányuló kutatás*",
+       "penelitian yang ditujukan pada…",
+       "*a rák gyógyítására irányuló kutatás*"
+      ],
+      [
+       "*…-val kapcsolatos*",
+       "yang berkaitan dengan…",
+       "*a vakcinával kapcsolatos kérdések*"
+      ],
+      [
+       "*…-t követően*",
+       "sesudah…",
+       "resmi untuk *után*"
+      ],
+      [
+       "*a témával foglalkozó szakemberek*",
+       "para ahli yang menekuni tema ini",
+       "partisip + kasus"
+      ],
+      [
+       "*jelenlegi ismereteink szerint*",
+       "menurut pengetahuan kita saat ini",
+       "pengaman kalimat"
+      ],
+      [
+       "*Ez azt jelenti, hogy…*",
+       "artinya…",
+       "jembatan ke pembaca awam"
+      ]
+     ]
+    },
+    {
+     "type": "p",
+     "text": "Teks ilmiah populer yang baik dalam bahasa Hungaria menyeimbangkan dua dunia: istilah dan nominalisasi untuk ketepatan, kata kerja dan pelaku untuk kehidupan. Majalah *Élet és Tudomány* (Kehidupan dan Ilmu Pengetahuan), yang terbit sejak 1946, adalah contoh klasiknya. Satu trik sederhana: sesudah kalimat benda yang padat, tambahkan kalimat penjelas yang dimulai dengan *Ez azt jelenti, hogy…*"
+    },
+    {
+     "type": "kotak",
+     "title": "Tiga langkah meringankan kalimat benda",
+     "items": [
+      "**Cari kata benda turunan** (*-ás/-és, -ság/-ség*) dan tanyakan: tindakan siapa? *a vakcinák kifejlesztése* → siapa mengembangkan apa?",
+      "**Kembalikan menjadi kata kerja** dengan pelaku atau dengan orang ketiga jamak: *kifejlesztették a vakcinákat*.",
+      "**Buang kata kerja pembungkus**: *sor került rá, megtörtént, bekövetkezett* hampir selalu bisa diganti kata kerja utama.",
+      "Baca ulang dengan suara keras. Kalau kamu kehabisan napas sebelum titik, kalimatnya masih terlalu berat."
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Ulangan berjenjang — unit 12",
+   "blocks": [
+    {
+     "type": "p",
+     "text": "Tutup kolom Hungaria, baca terjemahan Indonesianya, lalu susun kembali kalimatnya dari ingatan."
+    },
+    {
+     "type": "tabel",
+     "head": [
+      "Bahasa Indonesia",
+      "Magyar"
+     ],
+     "rows": [
+      [
+       "Tidakkah mungkin sedikit lebih rendah?",
+       "*Nem lehetne esetleg valamivel kevesebb?*"
+      ],
+      [
+       "Delapan persen, dua tahun, jumlah ganda. Ini bersedia kami pertimbangkan.",
+       "*Nyolc százalék, két év, dupla mennyiség. Ezt hajlandók lennénk megfontolni.*"
+      ],
+      [
+       "Kami akan sangat berterima kasih kalau Bapak mengirimkannya paling lambat awal minggu depan.",
+       "*Megköszönnénk, ha a jövő hét elejéig elküldené.*"
+      ],
+      [
+       "Yah, walaupun delapan persen itu bukan enam, menurutku kita untung.",
+       "*Hát, bár a nyolc százalék nem hat, szerintem jól jártunk.*"
+      ],
+      [
+       "Semoga. Andai saja aku tahu bagaimana inflasi tahun depan!",
+       "*Remélem. Bár tudnám, hogyan alakul jövőre az infláció!*"
+      ]
+     ]
+    }
+   ]
+  }
+ ],
+ "vocab": [
+  {
+   "hu": "tudomány",
+   "baca": "TU-do-many",
+   "id": "ilmu pengetahuan; *tudományos* = ilmiah"
+  },
+  {
+   "hu": "tudós",
+   "baca": "TU-dosy",
+   "id": "ilmuwan"
+  },
+  {
+   "hu": "kutatás",
+   "baca": "KU-tå-tasy",
+   "id": "penelitian; *kutató* = peneliti"
+  },
+  {
+   "hu": "felfedez",
+   "baca": "FÈL-fè-dèz",
+   "id": "menemukan (yang ada di alam); *felfedezés* = penemuan"
+  },
+  {
+   "hu": "feltalál",
+   "baca": "FÈL-tå-lal",
+   "id": "menemukan, mencipta (alat); *találmány* = temuan"
+  },
+  {
+   "hu": "kifejleszt",
+   "baca": "KI-fèy-lèst",
+   "id": "mengembangkan; *kifejlesztés* = pengembangan"
+  },
+  {
+   "hu": "lehetővé tesz",
+   "baca": "LÈ-hè-tö-vé tès",
+   "id": "memungkinkan (*valamit*)"
+  },
+  {
+   "hu": "hozzájárul",
+   "baca": "HOZ-za-ya-rul",
+   "id": "berkontribusi (*valamihez*)"
+  },
+  {
+   "hu": "elismer",
+   "baca": "È-lisy-mèr",
+   "id": "mengakui; *elismerés* = pengakuan"
+  },
+  {
+   "hu": "megvalósíthatóság",
+   "baca": "MÈG-vå-lo-syit-hå-to-syag",
+   "id": "kelayakan"
+  },
+  {
+   "hu": "fenntarthatóság",
+   "baca": "FÈNN-tårt-hå-to-syag",
+   "id": "keberlanjutan"
+  },
+  {
+   "hu": "felelősség",
+   "baca": "FÈ-lè-lösy-syég",
+   "id": "tanggung jawab"
+  },
+  {
+   "hu": "személytelen",
+   "baca": "SÈ-méy-tè-lèn",
+   "id": "tidak personal, tanpa pelaku"
+  },
+  {
+   "hu": "tömör",
+   "baca": "TÖ-mör",
+   "id": "padat, ringkas"
+  },
+  {
+   "hu": "folyamat",
+   "baca": "FO-yå-måt",
+   "id": "proses"
+  },
+  {
+   "hu": "réteg",
+   "baca": "RÉ-tèg",
+   "id": "lapisan"
+  },
+  {
+   "hu": "kitartás",
+   "baca": "KI-tår-tasy",
+   "id": "ketekunan"
+  },
+  {
+   "hu": "elakad",
+   "baca": "È-lå-kåd",
+   "id": "tersangkut, macet"
+  },
+  {
+   "hu": "kibont",
+   "baca": "KI-bont",
+   "id": "membongkar, membuka bungkus"
+  },
+  {
+   "hu": "várat magára",
+   "baca": "VA-råt MÅ-ga-rå",
+   "id": "lama tak kunjung datang"
+  },
+  {
+   "hu": "sor kerül",
+   "baca": "syor KÈ-rül",
+   "id": "dilaksanakan (*valamire*)"
+  },
+  {
+   "hu": "elterjed",
+   "baca": "ÈL-tèr-yèd",
+   "id": "menyebar, menjadi umum"
+  },
+  {
+   "hu": "bűvös kocka",
+   "baca": "BÜ-vösy KOTS-kå",
+   "id": "kubus Rubik (harfiah: kubus ajaib)"
+  },
+  {
+   "hu": "kirak",
+   "baca": "KI-råk",
+   "id": "menyusun (kubus, puzzle)"
+  }
+ ],
+ "exercises": [
+  {
+   "prompt": "Terjemahkan ke bahasa Hungaria.",
+   "items": [
+    "Penelitian Karikó Katalin memungkinkan pengembangan vaksin mRNA.",
+    "Rubik Ernő menemukan kubus ajaib pada 1974.",
+    "Pengakuan atas hasil-hasilnya lama tertunda.",
+    "Ketekunan adalah salah satu syarat terpenting ilmu pengetahuan.",
+    "Pada tahun delapan puluhan ia menyebar ke seluruh dunia.",
+    "keberlanjutan (satu kata)"
+   ]
+  },
+  {
+   "prompt": "Isi titik-titiknya. Petunjuk ada di dalam kurung.",
+   "items": [
+    "megvalósít → megvalósít____ (bisa diwujudkan)",
+    "megvalósítható → megvalósítható____ (kelayakan)",
+    "fenntart → ____ (keberlanjutan, satu kata)",
+    "A vakcinák kifejleszté____ sokáig tartott. (posesif)",
+    "Az eredmények elismerés____ váratott magára. (posesif)",
+    "A bemutatás____ 1977-ben került sor. (akhiran untuk *sor kerül*)",
+    "A kutatás ____ kimutatták, hogy a módszer működik. (selama)"
+   ]
+  },
+  {
+   "prompt": "Ubah gaya benda menjadi gaya kerja.",
+   "items": [
+    "A kocka feltalálására 1974-ben került sor.",
+    "A vizsgálat elvégzése megtörtént.",
+    "Döntés született.",
+    "Az eredmények elismerése késett.",
+    "A C-vitamin előállítása paprikából történt.",
+    "A kutatók kísérleteket végeztek."
+   ]
+  },
+  {
+   "prompt": "Susun jadi kalimat yang benar.",
+   "items": [
+    "tették / kutatásai / lehetővé / kifejlesztését / a / vakcinák / Karikó Katalin",
+    "váratott / elismerése / magára / eredményeinek / sokáig",
+    "feltétele / a / tudomány / kitartás / a / legfontosabb / egyik",
+    "találta / fel / Rubik Ernő / 1974-ben / kockát / a / bűvös",
+    "elterjedt / az / egész / világon / nyolcvanas / években / a"
+   ]
+  }
+ ],
+ "answers": [
+  "Karikó Katalin kutatásai lehetővé tették az mRNS-vakcinák kifejlesztését. — Rubik Ernő 1974-ben találta fel a bűvös kockát. — Eredményeinek elismerése sokáig váratott magára. — A kitartás a tudomány egyik legfontosabb feltétele. — A nyolcvanas években az egész világon elterjedt. — fenntarthatóság",
+  "ható — ság — fenntarthatóság — se — e — ra — során",
+  "1974-ben találták fel a kockát. — Elvégezték a vizsgálatot. — Döntöttek. — Későn ismerték el az eredményeket. — Paprikából állították elő a C-vitamint. — A kutatók kísérleteztek.",
+  "Karikó Katalin kutatásai lehetővé tették a vakcinák kifejlesztését. — Eredményeinek elismerése sokáig váratott magára. — A kitartás a tudomány egyik legfontosabb feltétele. — Rubik Ernő 1974-ben találta fel a bűvös kockát. — A nyolcvanas években az egész világon elterjedt."
+ ]
+}

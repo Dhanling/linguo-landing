@@ -1,0 +1,728 @@
+{
+ "title": "Kesehatan lanjut — *vajon*, *-e*, dan keadaan hasil",
+ "title_target": "Vajon mi baja lehet a térdemnek?",
+ "goal": "Menceritakan keluhan yang lebih rumit kepada dokter, menimbang pilihan dengan hati-hati, dan memahami jalur sistem kesehatan Hungaria. Titik tata bahasanya: pertanyaan yang menimbang dengan *vajon* dan pertanyaan tak langsung *-e* (*Nem tudom, megsérült-e*), keadaan hasil lanjutan dengan *van, volt, lesz, legyen* + *-va/-ve* (*be van dagadva, ki van állítva, elő legyen készítve*), serta kalimat bertingkat yang panjang.",
+ "bekal": [
+  "menanyakan kemungkinan dengan *vajon* dan melaporkan keraguan dengan *-e*: *Vajon eltört valami? Nem tudom, érdemes-e várni.*",
+  "menggambarkan keadaan tubuh dan urusan dengan *van* + *-va/-ve* dalam berbagai kala dan pelaku: *be vagyok oltva, ki lesz állítva*",
+  "menyusun kalimat bertingkat tiga lapis tanpa tersesat: kalimat utama, anak kalimat *hogy*, dan sisipan *aki* atau *amíg*"
+ ],
+ "dialogs": [
+  {
+   "title": "Dialog — A háziorvosnál, két év után",
+   "intro": "Awal November 2028. Sudah dua minggu lutut kanan Budi sakit sejak lari jauh di Margit-sziget. Program kerja sama sedang sibuk-sibuknya, tetapi pagi ini ia akhirnya datang ke praktik dokter umumnya, Dr. Fehér Márta, di distrik VIII.",
+   "lines": [
+    {
+     "speaker": "Dr. Fehér:",
+     "text": "Jó napot, Santoso úr! Régen láttam. Mi szél hozta?",
+     "id": "Selamat siang, Pak Santoso! Sudah lama tidak ketemu. Ada angin apa?",
+     "literal": "baik hari-sasaran, Santoso tuan! lama saya-melihat-lampau-nya. apa angin ia-membawa-lampau-nya?"
+    },
+    {
+     "speaker": "Budi:",
+     "text": "A jobb térdem két hete fáj, főleg amikor lefelé megyek a lépcsőn.",
+     "id": "Lutut kanan saya sudah dua minggu sakit, terutama waktu turun tangga.",
+     "literal": "itu kanan lutut-ku dua minggu-nya ia-sakit, terutama ketika ke-bawah saya-pergi itu tangga-di-atas."
+    },
+    {
+     "speaker": "Dr. Fehér:",
+     "text": "Történt valami baleset, vagy magától kezdett fájni?",
+     "id": "Ada kecelakaan, atau sakitnya muncul begitu saja?",
+     "literal": "terjadi-lampau sesuatu kecelakaan, atau diri-nya-dari-dekat ia-mulai-lampau sakit?"
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Nem estem el. Egy hosszú futás után kezdődött, és azóta sem múlik.",
+     "id": "Saya tidak jatuh. Mulainya sesudah lari jauh, dan sejak itu tidak hilang-hilang.",
+     "literal": "tidak saya-jatuh-lampau pergi. sebuah panjang lari sesudah ia-dimulai-lampau, dan sejak-itu pun-tidak ia-berlalu."
+    },
+    {
+     "speaker": "Dr. Fehér:",
+     "text": "Hadd nézzem meg. A térde kicsit be van dagadva.",
+     "id": "Coba saya lihat. Lutut Anda agak bengkak.",
+     "literal": "biarlah saya-melihat-hendaklah-nya tuntas. itu lutut-nya sedikit masuk ada membengkak-dalam-keadaan."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Au! Vajon eltört valami?",
+     "id": "Aduh! Jangan-jangan ada yang patah?",
+     "literal": "aduh! gerangan pergi-patah-lampau sesuatu?"
+    },
+    {
+     "speaker": "Dr. Fehér:",
+     "text": "Szerintem nem tört el semmi, de azt nem tudom megmondani, hogy megsérült-e a szalag.",
+     "id": "Menurut saya tidak ada yang patah, tapi saya tidak bisa memastikan apakah ligamennya cedera.",
+     "literal": "menurut-saya tidak patah-lampau pergi apa-pun, tapi itu-sasaran tidak saya-bisa-nya tuntas-mengatakan, bahwa tuntas-cedera-lampau-kah itu ligamen."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Akkor mit javasol? Abba kell hagynom a futást?",
+     "id": "Lalu apa saran Ibu? Saya harus berhenti lari?",
+     "literal": "kalau-begitu apa-sasaran Anda-menyarankan? itu-ke-dalam harus saya-membiarkan itu lari-sasaran?"
+    },
+    {
+     "speaker": "Dr. Fehér:",
+     "text": "Egyelőre igen. Felírok egy gyulladáscsökkentő krémet, és szeretném, ha egy ortopéd szakorvos is megnézné.",
+     "id": "Untuk sementara, ya. Saya resepkan krim antiradang, dan saya ingin dokter spesialis ortopedi juga memeriksanya.",
+     "literal": "untuk-sementara ya. naik-saya-menulis sebuah radang-pengurang krim-sasaran, dan saya-ingin-andai-nya, kalau sebuah ortopedi spesialis juga tuntas-ia-melihat-andai-nya."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Ahhoz beutaló kell, ugye?",
+     "id": "Untuk itu perlu surat rujukan, kan?",
+     "literal": "itu-ke-dekat rujukan harus, bukan?"
+    },
+    {
+     "speaker": "Dr. Fehér:",
+     "text": "A beutaló már ki van állítva, és fel van töltve a rendszerbe.",
+     "id": "Rujukannya sudah dibuat dan sudah diunggah ke sistem.",
+     "literal": "itu rujukan sudah keluar ada diterbitkan-dalam-keadaan, dan naik ada diunggah-dalam-keadaan itu sistem-ke-dalam."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "És mennyit kell várni egy időpontra a szakrendelőben?",
+     "id": "Berapa lama harus menunggu jadwal di poliklinik spesialis?",
+     "literal": "dan berapa-banyak-sasaran harus menunggu sebuah waktu-janji-ke-atas itu poliklinik-spesialis-di-dalam?"
+    },
+    {
+     "speaker": "Dr. Fehér:",
+     "text": "Az attól függ, hogy melyik rendelőt választja, és hogy mennyire sürgős az eset. Lehet, hogy hetekig.",
+     "id": "Itu tergantung klinik mana yang Anda pilih dan seberapa mendesak kasusnya. Bisa berminggu-minggu.",
+     "literal": "itu itu-dari-dekat ia-bergantung, bahwa yang-mana klinik-sasaran Anda-memilih-nya, dan bahwa seberapa mendesak itu kasus. mungkin, bahwa minggu-jamak-sampai."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Azon gondolkodom, vajon nem lenne-e gyorsabb, ha magánrendelésre mennék.",
+     "id": "Saya sedang menimbang, jangan-jangan lebih cepat kalau saya ke praktik swasta.",
+     "literal": "itu-di-atas saya-berpikir, gerangan tidak ada-andai-kah lebih-cepat, kalau swasta-praktik-ke-atas saya-pergi-andai."
+    },
+    {
+     "speaker": "Dr. Fehér:",
+     "text": "Gyorsabb lenne, de akkor Önnek kell fizetnie. Ez az Ön döntése.",
+     "id": "Memang lebih cepat, tapi Anda harus membayar sendiri. Itu keputusan Anda.",
+     "literal": "lebih-cepat ada-andai, tapi kalau-begitu Anda-bagi harus membayar-nya. ini itu Anda keputusan-nya."
+    }
+   ],
+   "notes": [
+    "**Mi szél hozta?** — \"angin apa yang membawa Anda?\" Sapaan akrab-sopan untuk tamu yang lama tak datang, persis \"ada angin apa\" dalam bahasa Indonesia. Kepada teman: *Mi szél hozott?* Dr. Fehér tetap ber-*Ön* dan memanggil *Santoso úr*, sama seperti di kunjungan pertama dua tahun lalu.",
+    "**Két hete fáj** — sakitnya masih berlangsung, jadi kata kerjanya **masa kini**, bukan lampau. Bahasa Indonesia berkata \"sudah dua minggu sakit\"; bahasa Hungaria tak butuh \"sudah\" maupun kala lampau. Pola yang sama: *Három éve lakom itt.*",
+    "**Be van dagadva** — *bedagad* (membengkak) adalah kata kerja tanpa sasaran, tetapi hasilnya tetap bisa jadi keadaan: *A térde be van dagadva* = lututnya (dalam keadaan) bengkak. Tubuh penuh dengan pola ini: *meg vagyok fázva* (aku masuk angin), *be van gyulladva* (meradang), *ki van ficamodva* (terkilir).",
+    "**Vajon eltört valami?** — *vajon* menandai pertanyaan yang **ditimbang**, bukan sekadar ditanyakan: \"jangan-jangan…?\", \"kira-kira… ya?\". Budi tidak menuntut jawaban pasti; ia menyuarakan kekhawatirannya.",
+    "**Megsérült-e a szalag** — pertanyaan ya/tidak yang dimasukkan ke dalam kalimat lain memakai *-e* yang ditempel dengan tanda hubung pada kata kerja. Awalan tetap di depan: *megsérült-e*, *eljön-e*, bukan *sérült-e meg*.",
+    "**Abba kell hagynom** — *abbahagy* (menghentikan) terpisah karena *kell*: awalan *abba-* maju ke depan *kell*, infinitifnya berpersona (*hagynom*, B1). Harfiah \"meninggalkan ke dalam itu\"; hafalkan sebagai satu kata."
+   ],
+   "grammars": [
+    {
+     "title": "*Vajon* dan *-e*: bertanya sambil menimbang",
+     "body": [
+      "Bahasa Indonesia punya *apakah*, *jangan-jangan*, dan *kira-kira… ya?*. Bahasa Hungaria membaginya ke dua alat: *vajon* (sikap menimbang) dan *-e* (penanda pertanyaan ya/tidak di dalam kalimat lain). Keduanya boleh muncul bersama."
+     ],
+     "table": {
+      "head": [
+       "Jenis",
+       "Contoh",
+       "Arti"
+      ],
+      "rows": [
+       [
+        "langsung, netral",
+        "*Eltört valami?*",
+        "Ada yang patah?"
+       ],
+       [
+        "langsung, menimbang",
+        "*Vajon eltört valami?*",
+        "Jangan-jangan ada yang patah?"
+       ],
+       [
+        "tak langsung",
+        "*Nem tudom, eltört-e valami.*",
+        "Aku tidak tahu apakah ada yang patah."
+       ],
+       [
+        "tak langsung + *vajon*",
+        "*Azon gondolkodom, vajon eltört-e.*",
+        "Aku menimbang-nimbang, jangan-jangan patah."
+       ],
+       [
+        "kata tanya + *vajon*",
+        "*Vajon mi baja lehet?*",
+        "Kira-kira dia kenapa, ya?"
+       ],
+       [
+        "negatif + *-e*",
+        "*Nem lenne-e gyorsabb?*",
+        "Bukankah akan lebih cepat?"
+       ],
+       [
+        "perintah bertanya",
+        "*Kérdezd meg, van-e időpont!*",
+        "Tanyakan apakah ada jadwal!"
+       ]
+      ]
+     },
+     "after": [
+      "**Dua aturan besi.** (1) *-e* hanya untuk pertanyaan ya/tidak. Kalau ada kata tanya (*mi, hol, mikor, melyik*), *-e* dilarang: *Nem tudom, mikor jön* (bukan *jön-e*). (2) *-e* menempel dengan tanda hubung pada predikat, biasanya kata kerja berkala: *van-e, kell-e, tudja-e, megérkezett-e*; kalau predikatnya kata seperti *érdemes* atau *szabad*, ia menempel di situ: *érdemes-e, szabad-e*.",
+      "*Vajon* **tidak mengubah** susunan kalimat dan tidak butuh jawaban. Tempatnya biasanya di awal kalimat; di akhir (*Eljön vajon?*) ia jarang dan terdengar seperti orang yang berpikir keras."
+     ]
+    },
+    {
+     "title": "Keadaan hasil: lima kata kerja bantu",
+     "body": [
+      "Di B1 kamu mengenal *van + -va/-ve* (keadaan) dan *lett + -va/-ve* (kejadian). Di B2 polanya meluas ke semua kala, semua pelaku, dan bentuk *-j* (subjungtif)."
+     ],
+     "table": {
+      "head": [
+       "Bantu",
+       "Contoh",
+       "Arti"
+      ],
+      "rows": [
+       [
+        "*van* (kini)",
+        "*A beutaló ki van állítva.*",
+        "Rujukannya sudah dibuat."
+       ],
+       [
+        "*volt* (lampau)",
+        "*Tegnap még nem volt bedagadva.*",
+        "Kemarin belum bengkak."
+       ],
+       [
+        "*lesz* (depan)",
+        "*Péntekre ki lesz értékelve a lelet.*",
+        "Hasilnya akan sudah dinilai hari Jumat."
+       ],
+       [
+        "*lett* (kejadian)",
+        "*Tegnap fel lett töltve a rendszerbe.*",
+        "Kemarin diunggah ke sistem."
+       ],
+       [
+        "*legyen* (supaya)",
+        "*Minden elő legyen készítve.*",
+        "Semuanya hendaknya sudah disiapkan."
+       ],
+       [
+        "dengan pelaku",
+        "*Be vagy oltva? Meg vagyok fázva.*",
+        "Kamu sudah divaksin? Aku masuk angin."
+       ]
+      ]
+     },
+     "after": [
+      "**Letak awalan** mengikuti aturan A2: dalam kalimat netral awalan berdiri di depan kata kerja bantu (*ki van állítva*); kalau ada *nem*, kata tanya, atau fokus, awalan kembali menempel ke partisip (*nincs kiállítva, nem volt bedagadva, mikor lesz kiállítva?*).",
+      "⚠️ Pelakunya ada di kata kerja bantu, bukan di partisip: *be vagyok oltva, be vagy oltva, be vagyunk oltva*. Partisipnya tidak pernah berubah."
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Dialog kedua — Várjak, vagy ne várjak?",
+   "intro": "Seminggu kemudian. Budi mendapat jadwal di szakrendelő negeri, tetapi baru awal Desember. Sore itu Anna mampir ke apartemennya membawa kabar dari ibunya, perawat di Szeged.",
+   "lines": [
+    {
+     "speaker": "Anna:",
+     "text": "Na, kaptál időpontot a szakrendelőben?",
+     "id": "Nah, dapat jadwal di poliklinik spesialis?",
+     "literal": "nah, kamu-mendapat-lampau waktu-janji-sasaran itu poliklinik-spesialis-di-dalam?"
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Kaptam, de csak december elejére. Addig vajon mit csináljak?",
+     "id": "Dapat, tapi baru untuk awal Desember. Kira-kira sampai saat itu aku harus bagaimana?",
+     "literal": "saya-mendapat-lampau, tapi hanya Desember awal-nya-ke-atas. sampai-itu gerangan apa-sasaran saya-berbuat-hendaklah?"
+    },
+    {
+     "speaker": "Anna:",
+     "text": "Felhívtam anyut, aki, mint tudod, harminc éve ápoló, és azt mondta, hogy amíg nem vagy megvizsgálva, ne terheld a lábadat.",
+     "id": "Aku menelepon ibuku, yang seperti kamu tahu sudah tiga puluh tahun jadi perawat, dan katanya selama kamu belum diperiksa, jangan bebani kakimu.",
+     "literal": "naik-saya-menelepon-lampau-nya ibu-sasaran, yang, seperti kamu-tahu, tiga-puluh tahun-nya perawat, dan itu-sasaran ia-mengatakan-lampau-nya, bahwa selama tidak kamu-ada diperiksa-dalam-keadaan, jangan kamu-membebani-hendaklah-nya itu kaki-mu-sasaran."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Kérdezted tőle, hogy érdemes-e magánorvoshoz mennem?",
+     "id": "Kamu tanya dia apakah sebaiknya aku ke dokter swasta?",
+     "literal": "kamu-bertanya-lampau-nya dia-dari-dekat, bahwa layak-kah swasta-dokter-ke-dekat pergi-ku?"
+    },
+    {
+     "speaker": "Anna:",
+     "text": "Kérdeztem. Azt mondta, hogy ha erősödik a fájdalom, vagy jobban bedagad a térded, ne várj, hanem menj az ügyeletre.",
+     "id": "Sudah. Katanya kalau sakitnya makin parah atau lututmu makin bengkak, jangan menunggu, langsung ke klinik jaga.",
+     "literal": "saya-bertanya-lampau. itu-sasaran ia-mengatakan-lampau-nya, bahwa kalau ia-menguat itu rasa-sakit, atau lebih-baik masuk-ia-membengkak itu lutut-mu, jangan kamu-menunggu-hendaklah, melainkan pergi-hendaklah itu klinik-jaga-ke-atas."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "És ha nem erősödik?",
+     "id": "Kalau tidak makin parah?",
+     "literal": "dan kalau tidak ia-menguat?"
+    },
+    {
+     "speaker": "Anna:",
+     "text": "Akkor nyugodtan várhatsz. A szakrendelés TAJ-kártyával ingyenes, a magánrendelés viszont nem olcsó.",
+     "id": "Kalau begitu kamu bisa tenang menunggu. Poliklinik spesialis gratis dengan kartu TAJ, sedangkan praktik swasta tidak murah.",
+     "literal": "kalau-begitu tenang-secara kamu-menunggu-bisa. itu layanan-spesialis TAJ-kartu-dengan gratis, itu praktik-swasta sebaliknya tidak murah."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Rendben. Addig összeírom a kérdéseimet, hogy a vizsgálatra minden elő legyen készítve.",
+     "id": "Oke. Sampai saat itu aku tulis semua pertanyaanku, supaya untuk pemeriksaannya semuanya sudah siap.",
+     "literal": "tertib-di-dalam. sampai-itu bersama-saya-menulis-nya itu pertanyaan-jamak-ku-sasaran, bahwa itu pemeriksaan-ke-atas semua depan ada-hendaklah disiapkan-dalam-keadaan."
+    },
+    {
+     "speaker": "Anna:",
+     "text": "Jó ötlet. Most pedig ülj le, és tedd fel a lábadat a székre!",
+     "id": "Ide bagus. Sekarang duduk, dan taruh kakimu di atas kursi!",
+     "literal": "baik ide. sekarang adapun duduk-hendaklah turun, dan taruh-hendaklah-nya naik itu kaki-mu-sasaran itu kursi-ke-atas!"
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Igenis! Nézd, a futócipőm már el is van rakva a szekrénybe.",
+     "id": "Siap! Lihat, sepatu lariku bahkan sudah kusimpan di lemari.",
+     "literal": "siap! lihat-hendaklah-nya, itu lari-sepatu-ku sudah pergi juga ada disimpan-dalam-keadaan itu lemari-ke-dalam."
+    }
+   ],
+   "notes": [
+    "**Anyu** — panggilan akrab untuk ibu (*anya* → *anyu*, *anyuka*, *anyukám*); ayah: *apu*. Anna bercerita kepada sahabat, jadi ia tidak memakai *édesanyám* yang lebih resmi.",
+    "**Amíg nem vagy megvizsgálva** — *amíg* + *nem* berarti \"selama belum\", yaitu \"sebelum\". Bahasa Indonesia juga bisa berkata \"selama belum diperiksa\"; jadi jangan terkecoh oleh *nem*: kalimat ini tidak menyangkal apa pun. Perhatikan juga awalan *meg-* yang menempel lagi ke partisip karena ada *nem*.",
+    "**Érdemes-e mennem** — *érdemes* (layak, sebaiknya) + infinitif berpersona dari B1, lalu seluruhnya dijadikan pertanyaan tak langsung: *-e* menempel pada *érdemes* karena di sinilah predikatnya.",
+    "**Ügyelet** — layanan dokter jaga di malam hari, akhir pekan, dan hari libur, ketika *háziorvos* tutup. Untuk keadaan gawat, yang dituju *sürgősségi osztály* di rumah sakit atau ambulans *(mentő)*.",
+    "**Elő legyen készítve** — keadaan hasil dalam bentuk *-j*, karena ia berada dalam anak kalimat tujuan *hogy…*. Ini puncak pola *van + -va*: keadaan yang **diharapkan** sudah terjadi."
+   ],
+   "grammars": [
+    {
+     "title": "Kalimat bertingkat: membangun tiga lapis",
+     "body": [
+      "Kalimat panjang Anna kelihatan menakutkan, tetapi ia dibangun dari potongan sederhana. Bangun kalimatmu sendiri dengan urutan yang sama: inti dulu, lalu isi, lalu syarat, terakhir sisipan."
+     ],
+     "table": {
+      "head": [
+       "Langkah",
+       "Kalimat",
+       "Yang ditambahkan"
+      ],
+      "rows": [
+       [
+        "1",
+        "*Anyu azt mondta.*",
+        "inti dengan penunjuk *azt*"
+       ],
+       [
+        "2",
+        "*Anyu azt mondta, hogy ne terheld a lábadat.*",
+        "isi: perintah tak langsung"
+       ],
+       [
+        "3",
+        "*…, hogy amíg nem vagy megvizsgálva, ne terheld a lábadat.*",
+        "syarat waktu di dalam isi"
+       ],
+       [
+        "4",
+        "*Anyu, aki harminc éve ápoló, azt mondta, hogy…*",
+        "sisipan *aki* tentang subjek"
+       ],
+       [
+        "5",
+        "*Az attól függ, hogy melyiket választja, és hogy mennyire sürgős.*",
+        "dua anak kalimat sejajar"
+       ]
+      ]
+     },
+     "after": [
+      "**Koma wajib** di depan setiap kata sambung anak kalimat (*hogy, aki, amíg, ha, mert, amikor*) dan di ujung sisipan, meski bahasa Indonesia sering melewatkannya. Koma inilah yang membuat kalimat panjang bisa dibaca.",
+      "**Kata penunjuk di kalimat utama** (*azt, attól, azon, ahhoz*) membawa kasus yang diminta kata kerjanya: *függ valamitől → attól függ, hogy…*; *gondolkodik valamin → azon gondolkodom, hogy…*. Bahasa Indonesia cukup berkata \"tergantung apakah…\"; bahasa Hungaria menyiapkan \"wadah\" dulu."
+     ]
+    }
+   ]
+  }
+ ],
+ "sections": [
+  {
+   "title": "Jalur sistem kesehatan Hungaria",
+   "blocks": [
+    {
+     "type": "tabel",
+     "head": [
+      "Magyar",
+      "Cara baca",
+      "Arti & fungsi"
+     ],
+     "rows": [
+      [
+       "háziorvos",
+       "HA-zi-or-vosy",
+       "dokter umum keluarga; pintu pertama"
+      ],
+      [
+       "körzet",
+       "KÖR-zèt",
+       "wilayah layanan dokter menurut alamat"
+      ],
+      [
+       "beutaló",
+       "BÈ-u-tå-lo",
+       "surat rujukan (kini umumnya elektronik)"
+      ],
+      [
+       "szakrendelő",
+       "SÅK-rèn-dè-lö",
+       "poliklinik spesialis rawat jalan"
+      ],
+      [
+       "szakorvos",
+       "SÅ-kor-vosy",
+       "dokter spesialis"
+      ],
+      [
+       "kórház",
+       "KOR-haz",
+       "rumah sakit"
+      ],
+      [
+       "ügyelet",
+       "Ü-dyè-lèt",
+       "dokter jaga malam & hari libur"
+      ],
+      [
+       "sürgősségi osztály",
+       "SYÜR-gösy-syé-gi OS-tay",
+       "unit gawat darurat"
+      ],
+      [
+       "mentő",
+       "MÈN-tö",
+       "ambulans (nomor 104 atau 112)"
+      ],
+      [
+       "magánrendelés",
+       "MÅ-gan-rèn-dè-lésy",
+       "praktik swasta, dibayar sendiri"
+      ],
+      [
+       "várólista",
+       "VA-ro-lisy-tå",
+       "daftar tunggu"
+      ],
+      [
+       "lelet",
+       "LÈ-lèt",
+       "hasil pemeriksaan tertulis"
+      ]
+     ]
+    },
+    {
+     "type": "p",
+     "text": "Layanan kesehatan negeri dibiayai asuransi wajib dan dikelola badan nasional (NEAK). Nomor asuransimu tercantum di *TAJ-kártya*. Jalurnya berjenjang: kamu mendaftar pada *háziorvos* sesuai *körzet* tempat tinggalmu, dan untuk banyak spesialis ia membuat *beutaló* yang tersimpan di sistem elektronik nasional (EESZT). Di *szakrendelő* negeri pemeriksaan dengan TAJ tidak dipungut biaya, tetapi jadwalnya kadang harus ditunggu. Di samping itu ada *magánrendelés*: lebih cepat, dibayar sendiri atau dengan asuransi tambahan. Banyak orang memakai keduanya menurut keperluan; kamu tak perlu memihak, cukup tahu jalurnya."
+    },
+    {
+     "type": "kotak",
+     "title": "Praktis: kalau kamu sakit di Hungaria",
+     "items": [
+      "Bawa *TAJ-kártya* dan kartu identitas ke setiap kunjungan. Resep elektronik (*e-recept*) diambil di apotek cukup dengan TAJ.",
+      "Malam hari atau akhir pekan, cari *ügyelet* terdekat; untuk keadaan gawat, telepon *mentő* (104) atau nomor darurat umum 112.",
+      "Mahasiswa asing dari luar Uni Eropa butuh asuransi kesehatan yang sah selama tinggal. Inilah yang harus Budi pastikan untuk peserta program pertukaran dari Indonesia.",
+      "Ucapan untuk orang sakit: *Jobbulást!* (lekas membaik) atau *Gyógyulj meg hamar!* (lekas sembuh)."
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Dari keluhan ke keadaan: kosakata medis",
+   "blocks": [
+    {
+     "type": "tabel",
+     "head": [
+      "Magyar",
+      "Cara baca",
+      "Arti"
+     ],
+     "rows": [
+      [
+       "be van dagadva",
+       "bè vån DÅ-gåd-vå",
+       "bengkak"
+      ],
+      [
+       "be van gyulladva",
+       "bè vån DYUL-låd-vå",
+       "meradang"
+      ],
+      [
+       "ki van ficamodva",
+       "ki vån FI-tså-mod-vå",
+       "terkilir"
+      ],
+      [
+       "el van törve",
+       "èl vån TÖR-vè",
+       "patah"
+      ],
+      [
+       "meg vagyok fázva",
+       "mèg VÅ-dyok FAZ-vå",
+       "aku masuk angin, pilek"
+      ],
+      [
+       "be vagyok oltva",
+       "bè VÅ-dyok OLT-vå",
+       "aku sudah divaksin"
+      ],
+      [
+       "be van kötve",
+       "bè vån KÖT-vè",
+       "dibalut, diperban"
+      ],
+      [
+       "torokgyulladás",
+       "TO-rok-dyul-lå-dasy",
+       "radang tenggorokan"
+      ],
+      [
+       "tüdőgyulladás",
+       "TÜ-dö-dyul-lå-dasy",
+       "radang paru-paru"
+      ],
+      [
+       "vakbélgyulladás",
+       "VÅK-bél-dyul-lå-dasy",
+       "radang usus buntu"
+      ]
+     ]
+    },
+    {
+     "type": "p",
+     "text": "Separuh atas tabel adalah keadaan hasil dari unit ini: kamu tidak menceritakan kejadian (lututku membengkak), melainkan keadaan sekarang (lututku bengkak). Separuh bawah menunjukkan cara bahasa Hungaria menamai penyakit: bagian tubuh + *gyulladás* (radang), ditulis sebagai satu kata. Bahasa Indonesia menaruh \"radang\" di depan; bahasa Hungaria di belakang. Dengan pola ini kamu bisa menebak *fülgyulladás* (radang telinga) dan *ínhüvelygyulladás* (radang selubung tendon) tanpa kamus."
+    },
+    {
+     "type": "kotak",
+     "title": "Pertanyaan dokter yang pasti kamu dengar",
+     "items": [
+      "*Mióta tart?* — Sudah sejak kapan?",
+      "*Hol fáj pontosan? Így fáj?* — Di mana persisnya sakit? Kalau begini sakit?",
+      "*Szed valamilyen gyógyszert?* — Apakah Anda sedang minum obat?",
+      "*Allergiás valamire?* — Apakah Anda alergi terhadap sesuatu?",
+      "Jawaban ragu yang sopan: *Nem vagyok benne biztos, hogy összefügg-e a futással.* (Saya tidak yakin apakah ini berhubungan dengan lari.)"
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Ulangan berjenjang — unit 4",
+   "blocks": [
+    {
+     "type": "p",
+     "text": "Tutup kolom Hungaria, baca terjemahan Indonesianya, lalu susun kembali kalimatnya dari ingatan."
+    },
+    {
+     "type": "tabel",
+     "head": [
+      "Bahasa Indonesia",
+      "Magyar"
+     ],
+     "rows": [
+      [
+       "Kemarin aku mengerjakan PR, tapi belum selesai.",
+       "*Tegnap írtam a házi feladatot, de nem írtam meg.*"
+      ],
+      [
+       "Tunggu… Baru sekarang aku sadar kenapa guruku selalu mengoreksiku!",
+       "*Várj… Most jöttem rá, miért javít ki mindig a tanárom!*"
+      ],
+      [
+       "Kurasa kita bakal cocok satu sama lain.",
+       "*Azt hiszem, jól ki fogunk jönni egymással.*"
+      ],
+      [
+       "Budi, sudah jam tujuh! Kamu kerja kebablasan.",
+       "*Budi, hét óra van! Agyondolgozod magad.*"
+      ],
+      [
+       "Ide bagus. Aku bakal menghabiskan satu pizza utuh sendirian.",
+       "*Jó ötlet. Az egész pizzát egyedül meg fogom enni.*"
+      ]
+     ]
+    }
+   ]
+  }
+ ],
+ "vocab": [
+  {
+   "hu": "vajon",
+   "baca": "VÅ-yon",
+   "id": "gerangan, jangan-jangan, kira-kira (menimbang)"
+  },
+  {
+   "hu": "térd",
+   "baca": "térd",
+   "id": "lutut (*térdem*, *térde*)"
+  },
+  {
+   "hu": "bedagad",
+   "baca": "BÈ-då-gåd",
+   "id": "membengkak"
+  },
+  {
+   "hu": "eltörik",
+   "baca": "ÈL-tö-rik",
+   "id": "patah (*törés* = patah tulang)"
+  },
+  {
+   "hu": "megsérül",
+   "baca": "MÈG-syé-rül",
+   "id": "cedera, terluka"
+  },
+  {
+   "hu": "szalag",
+   "baca": "SÅ-låg",
+   "id": "ligamen; pita"
+  },
+  {
+   "hu": "gyulladás",
+   "baca": "DYUL-lå-dasy",
+   "id": "radang"
+  },
+  {
+   "hu": "gyulladáscsökkentő",
+   "baca": "DYUL-lå-dasy-cök-kèn-tö",
+   "id": "antiradang (obat)"
+  },
+  {
+   "hu": "fájdalom",
+   "baca": "FAY-då-lom",
+   "id": "rasa sakit (jamak: *fájdalmak*)"
+  },
+  {
+   "hu": "erősödik",
+   "baca": "È-rö-syö-dik",
+   "id": "menguat, makin parah"
+  },
+  {
+   "hu": "abbahagy",
+   "baca": "ÅB-bå-hådy",
+   "id": "menghentikan"
+  },
+  {
+   "hu": "szakorvos",
+   "baca": "SÅ-kor-vosy",
+   "id": "dokter spesialis"
+  },
+  {
+   "hu": "szakrendelő",
+   "baca": "SÅK-rèn-dè-lö",
+   "id": "poliklinik spesialis"
+  },
+  {
+   "hu": "beutaló",
+   "baca": "BÈ-u-tå-lo",
+   "id": "surat rujukan"
+  },
+  {
+   "hu": "kiállít",
+   "baca": "KI-al-lit",
+   "id": "menerbitkan (dokumen); memamerkan"
+  },
+  {
+   "hu": "feltölt",
+   "baca": "FÈL-tölt",
+   "id": "mengunggah; mengisi penuh"
+  },
+  {
+   "hu": "időpont",
+   "baca": "I-dö-pont",
+   "id": "jadwal janji temu"
+  },
+  {
+   "hu": "függ (-tól)",
+   "baca": "függ",
+   "id": "bergantung pada"
+  },
+  {
+   "hu": "sürgős",
+   "baca": "SYÜR-gösy",
+   "id": "mendesak, darurat"
+  },
+  {
+   "hu": "magánrendelés",
+   "baca": "MÅ-gan-rèn-dè-lésy",
+   "id": "praktik dokter swasta"
+  },
+  {
+   "hu": "ügyelet",
+   "baca": "Ü-dyè-lèt",
+   "id": "dokter jaga, klinik jaga"
+  },
+  {
+   "hu": "ápoló",
+   "baca": "A-po-lo",
+   "id": "perawat"
+  },
+  {
+   "hu": "megvizsgál",
+   "baca": "MÈG-vizh-gal",
+   "id": "memeriksa (*vizsgálat* = pemeriksaan)"
+  },
+  {
+   "hu": "terhel",
+   "baca": "TÈR-hèl",
+   "id": "membebani"
+  },
+  {
+   "hu": "beolt",
+   "baca": "BÈ-olt",
+   "id": "memvaksin (*be van oltva* = sudah divaksin)"
+  }
+ ],
+ "exercises": [
+  {
+   "prompt": "Terjemahkan ke bahasa Hungaria.",
+   "items": [
+    "Lututku bengkak.",
+    "Jangan-jangan ada yang patah?",
+    "Aku tidak tahu apakah dia punya waktu.",
+    "Rujukannya sudah dibuat.",
+    "Kamu sudah divaksin?",
+    "Itu tergantung pada dokternya."
+   ]
+  },
+  {
+   "prompt": "Isi titik-titiknya. Petunjuk ada di dalam kurung.",
+   "items": [
+    "Nem tudom, ____ valami. (eltörik, lampau + -e)",
+    "Kérdezd meg, ____ szabad időpont! (van + -e)",
+    "Az ablak tegnap is ki ____ nyitva. (van, lampau)",
+    "Péntekre minden elő ____ készítve. (van, masa depan)",
+    "Még nem vagyok ____ influenza ellen. (beolt + -va)",
+    "____ mi baja lehet a térdemnek? (penanda menimbang)",
+    "Anyu azt mondta, hogy ne ____ a lábadat. (terhel, te, perintah tertentu)"
+   ]
+  },
+  {
+   "prompt": "Ubah jadi pertanyaan tak langsung yang diawali *Nem tudom, …* (tanpa *hogy*). Awas: tidak semua butuh *-e*.",
+   "items": [
+    "Eltört a lába?",
+    "Mikor van szabad időpont?",
+    "Van láza?",
+    "Hol fáj pontosan?",
+    "Megsérült a szalag?",
+    "Kell beutaló?"
+   ]
+  },
+  {
+   "prompt": "Susun jadi kalimat yang benar.",
+   "items": [
+    "van / a / be / térdem / dagadva",
+    "eltört / vajon / valami / ?",
+    "ki / a beutaló / állítva / van / már",
+    "nem tudom, / érdemes-e / várni",
+    "az orvostól / függ / az"
+   ]
+  }
+ ],
+ "answers": [
+  "Be van dagadva a térdem. — Vajon eltört valami? — Nem tudom, van-e ideje. — A beutaló már ki van állítva. — Be vagy oltva? — Az az orvostól függ.",
+  "eltört-e — van-e — volt — lesz — beoltva — Vajon — terheld",
+  "Nem tudom, eltört-e a lába. — Nem tudom, mikor van szabad időpont. — Nem tudom, van-e láza. — Nem tudom, hol fáj pontosan. — Nem tudom, megsérült-e a szalag. — Nem tudom, kell-e beutaló.",
+  "A térdem be van dagadva. — Vajon eltört valami? — A beutaló már ki van állítva. — Nem tudom, érdemes-e várni. — Az az orvostól függ."
+ ]
+}

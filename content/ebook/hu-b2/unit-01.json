@@ -1,0 +1,651 @@
+{
+ "title": "Program baru — ragam rapat resmi dan nominalisasi",
+ "title_target": "A mai megbeszélés célja a program elindítása",
+ "goal": "Mengikuti dan membuka rapat resmi, menyapa hadirin dengan *Önök*, dan memahami gaya \"kata benda\" yang disukai rapat dan surat Hungaria. Titik tata bahasanya: nominalisasi (*a program elindítása, a döntés meghozatala*) dan cara mengembalikannya ke bahasa sehari-hari.",
+ "bekal": [
+  "membentuk frasa benda dari kalimat: *elindítjuk a programot* → *a program elindítása*",
+  "berbicara kepada sekelompok orang dengan *Önök*: *Engedjék meg…, küldjék el…, van kérdésük?*",
+  "memindahkan gaya rapat yang kaku ke gaya obrolan, dan sebaliknya"
+ ],
+ "dialogs": [
+  {
+   "title": "Dialog — A nyitó megbeszélés",
+   "intro": "Pertengahan September 2028, ruang rapat Fakultas Humaniora ELTE di Múzeum körút. Budi kini memimpin program kerja sama perdagangan dan pendidikan Indonesia–Hungaria. Bersama Zoltán ia bertemu mitra universitasnya, Dr. Balogh Tamás, dosen linguistik. Dengan Dr. Balogh semua memakai *Ön*; Budi dan Zoltán sendiri sudah lama ber-*te*.",
+   "lines": [
+    {
+     "speaker": "Balogh:",
+     "text": "Jó reggelt kívánok! Köszönöm, hogy eljöttek. Engedjék meg, hogy megnyissam a megbeszélést.",
+     "id": "Selamat pagi! Terima kasih Bapak-bapak sudah datang. Izinkan saya membuka rapat ini.",
+     "literal": "baik pagi-sasaran saya-mengharapkan! saya-berterima-kasih-nya, bahwa pergi-kalian-datang-lampau. izinkan-hendaklah-kalian-nya tuntas, bahwa tuntas-saya-membuka-hendaklah-nya itu pertemuan-sasaran."
+    },
+    {
+     "speaker": "Zoltán:",
+     "text": "Köszönjük a meghívást, tanár úr. Cégünket ketten képviseljük: jómagam és Budi Santoso kollégám.",
+     "id": "Terima kasih atas undangannya, Pak. Perusahaan kami diwakili dua orang: saya sendiri dan rekan saya, Budi Santoso.",
+     "literal": "kami-berterima-kasih-nya itu undangan-sasaran, guru tuan. perusahaan-kami-sasaran berdua kami-mewakilinya: saya-sendiri dan Budi Santoso rekan-ku."
+    },
+    {
+     "speaker": "Balogh:",
+     "text": "Santoso úr, örülök, hogy végre személyesen is találkozunk.",
+     "id": "Pak Santoso, saya senang akhirnya kita bertemu langsung juga.",
+     "literal": "Santoso tuan, saya-gembira, bahwa akhirnya secara-pribadi juga kita-bertemu."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Részemről a szerencse, tanár úr.",
+     "id": "Suatu kehormatan bagi saya, Pak.",
+     "literal": "bagian-ku-dari-atas itu keberuntungan, guru tuan."
+    },
+    {
+     "speaker": "Balogh:",
+     "text": "A mai megbeszélés célja a program elindítása. Átadom Önnek a szót.",
+     "id": "Tujuan rapat hari ini adalah peluncuran program. Saya persilakan Bapak berbicara.",
+     "literal": "itu hari-ini pertemuan tujuan-nya itu program pergi-memulai-an-nya. seberang-saya-memberikannya Anda-bagi itu kata-sasaran."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Köszönöm. A program három részből áll: hallgatócsere, szakmai gyakorlat és üzleti szeminárium.",
+     "id": "Terima kasih. Program ini terdiri dari tiga bagian: pertukaran mahasiswa, magang profesi, dan seminar bisnis.",
+     "literal": "saya-berterima-kasih-nya. itu program tiga bagian-dari-dalam ia-berdiri: mahasiswa-pertukaran, profesi-yang latihan dan bisnis-yang seminar."
+    },
+    {
+     "speaker": "Balogh:",
+     "text": "És mi lenne az első lépés?",
+     "id": "Lalu apa kira-kira langkah pertamanya?",
+     "literal": "dan apa ada-andai itu pertama langkah?"
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Az első lépés a hallgatók kiválasztása. Tavasszal öt magyar hallgató utazik Jakartába.",
+     "id": "Langkah pertama adalah seleksi mahasiswa. Musim semi nanti lima mahasiswa Hungaria berangkat ke Jakarta.",
+     "literal": "itu pertama langkah itu mahasiswa-jamak keluar-memilih-an-nya. musim-semi-dengan lima Hungaria mahasiswa ia-bepergian Jakarta-ke-dalam."
+    },
+    {
+     "speaker": "Balogh:",
+     "text": "A kiválasztást mi végezzük. A pályázatot még októberben kiírjuk.",
+     "id": "Seleksinya kami yang lakukan. Pengumuman pendaftarannya kami buka bulan Oktober ini juga.",
+     "literal": "itu keluar-memilih-an-sasaran kami kami-mengerjakannya. itu pendaftaran-sasaran masih Oktober-di-dalam keluar-kami-menulisnya."
+    },
+    {
+     "speaker": "Zoltán:",
+     "text": "És hogyan osztjuk meg a költségeket?",
+     "id": "Lalu bagaimana kita membagi biayanya?",
+     "literal": "dan bagaimana kita-membaginya tuntas itu biaya-jamak-sasaran?"
+    },
+    {
+     "speaker": "Balogh:",
+     "text": "Erről még nem született döntés. A döntés meghozatala a dékán hatáskörébe tartozik.",
+     "id": "Soal itu belum ada keputusan. Pengambilan keputusannya wewenang dekan.",
+     "literal": "ini-dari-atas masih tidak ia-lahir-lampau keputusan. itu keputusan tuntas-bawa-an-nya itu dekan wewenang-nya-ke-dalam ia-termasuk."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Megkérdezhetem, mikorra várható a döntés?",
+     "id": "Boleh saya bertanya, kapan kira-kira keputusannya keluar?",
+     "literal": "tuntas-saya-menanyakannya-bisa, kapan-paling-lambat yang-bisa-ditunggu itu keputusan?"
+    },
+    {
+     "speaker": "Balogh:",
+     "text": "Legkésőbb október végéig. Addig is kérem, küldjék el a költségvetés tervezetét.",
+     "id": "Paling lambat akhir Oktober. Sementara itu, mohon kirimkan rancangan anggarannya.",
+     "literal": "paling-lambat Oktober akhir-nya-sampai. sampai-itu juga saya-memintanya, kirim-hendaklah-kalian-nya pergi itu anggaran rancangan-nya-sasaran."
+    },
+    {
+     "speaker": "Zoltán:",
+     "text": "Természetesen. A tervezet elkészítését Budi kollégám vállalja.",
+     "id": "Tentu saja. Penyusunan rancangannya menjadi tanggung jawab rekan saya, Budi.",
+     "literal": "tentu-saja. itu rancangan pergi-membuat-an-nya-sasaran Budi rekan-ku ia-menyanggupinya."
+    },
+    {
+     "speaker": "Balogh:",
+     "text": "Ha nincs több kérdés, köszönöm mindenkinek a részvételt.",
+     "id": "Kalau tidak ada pertanyaan lagi, terima kasih kepada semuanya atas kehadirannya.",
+     "literal": "kalau tidak-ada lebih-banyak pertanyaan, saya-berterima-kasih-nya semua-orang-bagi itu partisipasi-sasaran."
+    }
+   ],
+   "notes": [
+    "**Engedjék meg, hogy…** — \"izinkan saya…\", pembuka rapat yang paling baku. *Engedjék* adalah perintah bentuk *Önök* (orang ketiga jamak) dan bertanda tertentu, karena sasarannya seluruh anak kalimat *hogy…*. Sesudahnya *hogy* + subjungtif: *hogy megnyissam* (supaya aku membuka).",
+    "**Tanár úr** — di universitas Hungaria, dosen disapa *tanár úr* atau *tanárnő*, apa pun gelarnya. Sebaliknya ia menyapa Budi *Santoso úr*: *úr* (tuan) selalu di belakang nama keluarga. Budi menjawab dengan ungkapan sopan klasik *Részemről a szerencse* (\"kehormatan ada di pihak saya\").",
+    "**A mai megbeszélés célja a program elindítása.** Kalimat benda tanpa kata kerja: bahasa Hungaria tidak memakai *van* untuk \"adalah\" pada orang ketiga masa kini (lampaunya tetap memakai *volt*: *A cél a program elindítása volt.*). Susunannya persis \"Tujuan rapat hari ini (adalah) peluncuran program\". Keduanya bahasa rapat: satu kalimat penuh dipadatkan menjadi frasa benda.",
+    "**Nem született döntés** — \"belum lahir keputusan\", ungkapan resmi yang sangat sering di berita dan notulen. Keputusan itu sendiri *meghozzák* (\"dibawa\"): *döntést hoz*, sedangkan bahasa Indonesia \"mengambil\" keputusan. Frasa bendanya *a döntés meghozatala* (pengambilan keputusan).",
+    "**Mikorra várható…?** — \"paling lambat kapan bisa diharapkan…?\" *Mikorra* menanyakan batas waktu, berbeda dari *mikor* (kapan). Lalu *köszönöm mindenkinek a részvételt*: orangnya dengan *-nak/-nek*, hal yang disyukuri dengan *-t*, tanpa kata depan \"atas\"."
+   ],
+   "grammars": [
+    {
+     "title": "Nominalisasi: dari kalimat ke frasa benda",
+     "body": [
+      "Bahasa Indonesia memadatkan kalimat dengan *pe-an* dan *ke-an*: \"kami meluncurkan program\" → \"peluncuran program\". Bahasa Hungaria melakukan hal yang sama dengan *-ás/-és* (kadang *-at/-et*). Ada tiga langkah: kata kerja mendapat *-ás/-és*, sasarannya kehilangan *-t* dan menjadi pemilik di depan, lalu kata benda baru itu mendapat akhiran posesif *-a/-e*. Awalan tetap menempel."
+     ],
+     "table": {
+      "head": [
+       "Kalimat biasa",
+       "Frasa benda",
+       "Arti"
+      ],
+      "rows": [
+       [
+        "*Elindítjuk a programot.*",
+        "*a program elindítása*",
+        "peluncuran program"
+       ],
+       [
+        "*Kiválasztjuk a hallgatókat.*",
+        "*a hallgatók kiválasztása*",
+        "seleksi mahasiswa"
+       ],
+       [
+        "*Megosztjuk a költségeket.*",
+        "*a költségek megosztása*",
+        "pembagian biaya"
+       ],
+       [
+        "*Aláírjuk a szerződést.*",
+        "*a szerződés aláírása*",
+        "penandatanganan kontrak"
+       ],
+       [
+        "*Elkészítjük a tervezetet.*",
+        "*a tervezet elkészítése*",
+        "penyusunan rancangan"
+       ],
+       [
+        "*Meghozzuk a döntést.*",
+        "*a döntés meghozatala*",
+        "pengambilan keputusan"
+       ],
+       [
+        "*Részt veszünk.*",
+        "*a részvétel*",
+        "keikutsertaan"
+       ]
+      ]
+     },
+     "after": [
+      "**Frasa benda itu berperilaku seperti kata benda biasa** dan menerima semua akhiran: *a program elindításáról* (tentang peluncuran program), *a döntés meghozataláig* (sampai keputusan diambil), *a tervezet elkészítését vállalja* (ia menyanggupi penyusunan rancangan).",
+      "⚠️ **Beberapa kata benda tak beraturan** dan harus dihafal: *hoz* → *meghozatal*, *vesz* → *vétel* (*részvétel, felvétel*), *tesz* → *tétel* (*feltétel*: syarat). Untuk keputusan, bentuk yang lazim hanya *a döntés meghozatala*; jangan membuat sendiri *meghozás*."
+     ]
+    },
+    {
+     "title": "Ön dan Önök di ruang rapat",
+     "body": [
+      "Di rapat resmi, hadirin disapa sekaligus dengan *Önök*. Secara tata bahasa *Önök* adalah orang ketiga jamak: kata kerjanya sama dengan \"mereka\", akhiran posesifnya *-uk/-ük*. Perintah sopannya pun bentuk orang ketiga jamak."
+     ],
+     "table": {
+      "head": [
+       "te",
+       "Ön",
+       "Önök"
+      ],
+      "rows": [
+       [
+        "*Engedd meg!*",
+        "*Engedje meg!*",
+        "*Engedjék meg!*"
+       ],
+       [
+        "*Küldd el a tervezetet!*",
+        "*Küldje el…*",
+        "*Küldjék el…*"
+       ],
+       [
+        "*Van kérdésed?*",
+        "*Van kérdése?*",
+        "*Van kérdésük?*"
+       ],
+       [
+        "*Köszönöm, hogy eljöttél.*",
+        "*…hogy eljött.*",
+        "*…hogy eljöttek.*"
+       ]
+      ]
+     },
+     "after": [
+      "Sapaan pembuka yang lengkap: *Tisztelt Hölgyeim és Uraim!* (Bapak-bapak dan Ibu-ibu yang terhormat). Di rapat kecil cukup *Tisztelt Kollégák!* atau langsung *Jó reggelt kívánok!*"
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Dialog kedua — Mondd emberi nyelven!",
+   "intro": "Siang harinya Budi kembali ke kantor Nusantara Trading di Blaha Lujza tér. Réka, yang mengurus keuangan, sudah menunggu kabar. Mereka memakai *te*.",
+   "lines": [
+    {
+     "speaker": "Réka:",
+     "text": "Na, megjöttél! Milyen volt az egyetemen?",
+     "id": "Nah, sudah balik! Gimana di kampus?",
+     "literal": "nah, tuntas-kamu-datang-lampau! seperti-apa ada-lampau itu universitas-di?"
+    },
+    {
+     "speaker": "Budi:",
+     "text": "A megbeszélés eredményesen zajlott. A program elindítása megtörtént.",
+     "id": "Rapat berlangsung dengan hasil yang baik. Peluncuran program telah terlaksana.",
+     "literal": "itu pertemuan secara-berhasil ia-berlangsung-lampau. itu program pergi-memulai-an-nya tuntas-ia-terjadi-lampau."
+    },
+    {
+     "speaker": "Réka:",
+     "text": "Budi, most nem a dékánnal beszélsz. Mondd emberi nyelven!",
+     "id": "Budi, kamu sekarang nggak lagi ngomong sama dekan. Pakai bahasa manusia, dong!",
+     "literal": "Budi, sekarang tidak itu dekan-dengan kamu-berbicara. katakan-hendaklah-nya manusia-yang bahasa-di-atas!"
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Jó, bocs. Szóval elindítottuk a programot. Tavasszal öt egyetemista megy Jakartába.",
+     "id": "Oke, maaf. Jadi programnya sudah kita mulai. Musim semi nanti lima mahasiswa berangkat ke Jakarta.",
+     "literal": "baik, maaf. jadi pergi-kami-memulainya-lampau itu program-sasaran. musim-semi-dengan lima mahasiswa ia-pergi Jakarta-ke-dalam."
+    },
+    {
+     "speaker": "Réka:",
+     "text": "Szuper. És ki fizeti? Engem ez érdekel a legjobban.",
+     "id": "Keren. Terus siapa yang bayar? Itu yang paling aku pedulikan.",
+     "literal": "super. dan siapa ia-membayarnya? aku-sasaran ini ia-menarik-minat itu paling-baik-secara."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Még nem döntötték el. A dékán dönt, legkésőbb október végéig.",
+     "id": "Belum diputuskan. Dekan yang memutuskan, paling lambat akhir Oktober.",
+     "literal": "masih tidak mereka-memutuskannya-lampau pergi. itu dekan ia-memutuskan, paling-lambat Oktober akhir-nya-sampai."
+    },
+    {
+     "speaker": "Réka:",
+     "text": "És addig nekünk mi a dolgunk?",
+     "id": "Terus sampai saat itu tugas kita apa?",
+     "literal": "dan sampai-itu kita-bagi apa itu urusan-kami?"
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Jövő hét elejéig el kell készítenünk a költségvetés tervezetét.",
+     "id": "Sampai awal minggu depan kita harus menyelesaikan rancangan anggaran.",
+     "literal": "depan minggu awal-nya-sampai pergi harus kita-membuat itu anggaran rancangan-nya-sasaran."
+    },
+    {
+     "speaker": "Réka:",
+     "text": "Nekünk? Úgy érted, nekem. A számokat mindig én csinálom.",
+     "id": "Kita? Maksudmu, aku. Yang ngurus angka kan selalu aku.",
+     "literal": "kita-bagi? begitu kamu-memaksudkannya, aku-bagi. itu angka-jamak-sasaran selalu aku saya-membuatnya."
+    },
+    {
+     "speaker": "Budi:",
+     "text": "Zoltán megígérte a tanár úrnak, hogy én megcsinálom. De te segítesz, ugye?",
+     "id": "Zoltán sudah janji ke Pak Dosen bahwa aku yang mengerjakannya. Tapi kamu bantu, kan?",
+     "literal": "Zoltán tuntas-ia-menjanjikannya-lampau itu guru tuan-bagi, bahwa aku tuntas-saya-membuatnya. tetapi kamu kamu-membantu, bukan?"
+    },
+    {
+     "speaker": "Réka:",
+     "text": "Segítek. De a kávét te hozod: ezt a döntést már meghoztam.",
+     "id": "Aku bantu. Tapi kopinya kamu yang bawa: keputusan ini sudah kuambil.",
+     "literal": "saya-membantu. tetapi itu kopi-sasaran kamu kamu-membawanya: ini-sasaran itu keputusan-sasaran sudah tuntas-saya-membawanya-lampau."
+    }
+   ],
+   "notes": [
+    "**Eredményesen zajlott** — \"berlangsung dengan hasil baik\". *Zajlik* (berlangsung) adalah kata kerja kesayangan notulen dan berita: *Az ülés zárt ajtók mögött zajlott.* Dalam obrolan orang cukup berkata *Jól ment.*",
+    "**Megtörtént** — \"telah terjadi, telah terlaksana\". Gabungan *frasa benda + megtörtént* adalah ciri khas laporan resmi: *A szerződés aláírása megtörtént.* Persis seperti bahasa pejabat Indonesia \"telah dilakukan penandatanganan\". Di mulut teman, kalimat ini terdengar lucu, dan Réka langsung menegurnya.",
+    "**Mondd emberi nyelven!** — \"katakan dalam bahasa manusia!\", teguran akrab untuk orang yang bicara terlalu resmi atau terlalu teknis. Mirip \"pakai bahasa manusia, dong\". Jangan dipakai kepada atasan.",
+    "**Még nem döntötték el** — orang ketiga jamak tanpa pelaku dari B1 unit 6: \"belum mereka putuskan\" = \"belum diputuskan\". Inilah padanan sehari-hari dari *nem született döntés*.",
+    "**Ezt a döntést már meghoztam.** Réka sengaja memakai ungkapan rapat untuk urusan kopi. Humor semacam ini (gaya tinggi untuk hal remeh) sangat disukai orang Hungaria, dan hanya bisa kamu nikmati kalau mengenal kedua ragamnya."
+   ],
+   "grammars": [
+    {
+     "title": "Dari gaya rapat ke gaya obrolan",
+     "body": [
+      "Frasa benda membuat kalimat pendek, padat, dan impersonal: tidak jelas siapa yang berbuat. Karena itu ia cocok untuk notulen, surat, dan papan pengumuman. Dalam percakapan, orang Hungaria mengembalikannya menjadi kata kerja dengan pelaku yang jelas."
+     ],
+     "table": {
+      "head": [
+       "Gaya rapat (benda)",
+       "Gaya obrolan (kata kerja)",
+       "Arti"
+      ],
+      "rows": [
+       [
+        "*A megbeszélés eredményesen zajlott.*",
+        "*Jól ment a megbeszélés.*",
+        "rapatnya lancar"
+       ],
+       [
+        "*A program elindítása megtörtént.*",
+        "*Elindítottuk a programot.*",
+        "program sudah dimulai"
+       ],
+       [
+        "*Még nem született döntés.*",
+        "*Még nem döntötték el.*",
+        "belum diputuskan"
+       ],
+       [
+        "*A tervezet elkészítését vállaltuk.*",
+        "*Megígértük, hogy megcsináljuk a tervezetet.*",
+        "kami janji membuat rancangannya"
+       ],
+       [
+        "*Kérjük a mielőbbi visszajelzésüket.*",
+        "*Szóljatok, amint tudtok!*",
+        "kabari secepatnya"
+       ]
+      ]
+     },
+     "after": [
+      "**Ujiannya sederhana:** kalau kalimat Indonesiamu cocok diawali \"Telah dilakukan…\", versi Hungarianya kemungkinan besar memakai frasa benda. Kalau kamu sedang mengobrol, ubah ke kata kerja."
+     ]
+    }
+   ]
+  }
+ ],
+ "sections": [
+  {
+   "title": "Kilas balik B1 dalam delapan kalimat",
+   "blocks": [
+    {
+     "type": "tabel",
+     "head": [
+      "Magyar",
+      "Bahasa Indonesia",
+      "Pokok B1"
+     ],
+     "rows": [
+      [
+       "*Nem tudom, eljön-e Anna.*",
+       "Aku tidak tahu apakah Anna datang.",
+       "*-e* tanya tak langsung"
+      ],
+      [
+       "*Ha korábban indultam volna, elértem volna a gépet.*",
+       "Kalau aku berangkat lebih awal, aku tak akan ketinggalan pesawat.",
+       "pengandaian lampau"
+      ],
+      [
+       "*Amennyiben külföldön fizet, díjat számolunk fel.*",
+       "Jika Anda membayar di luar negeri, kami kenakan biaya.",
+       "syarat resmi"
+      ],
+      [
+       "*A kitöltött űrlapot a pultnál kell leadni.*",
+       "Formulir yang sudah diisi diserahkan di loket.",
+       "partisip sebagai kata sifat"
+      ],
+      [
+       "*Holnap korán kell kelnem.*",
+       "Besok aku harus bangun pagi.",
+       "infinitif berpersona"
+      ],
+      [
+       "*Az ajtó magától kinyílt.*",
+       "Pintunya terbuka sendiri.",
+       "kata kerja medial"
+      ],
+      [
+       "*Olyan lakást keresek, amilyen a tiéd.*",
+       "Aku mencari apartemen seperti punyamu.",
+       "korelatif"
+      ],
+      [
+       "*Nem az összeg számít, hanem a szándék.*",
+       "Yang penting bukan jumlahnya, melainkan niatnya.",
+       "fokus"
+      ]
+     ]
+    },
+    {
+     "type": "p",
+     "text": "Tutup kolom tengah, terjemahkan, lalu balik arah. Kalau satu baris membuatmu ragu lebih dari lima detik, buka lagi unit B1-nya: B2 tidak lagi mengajarkan bentuk-bentuk ini, melainkan memakainya dalam kalimat yang lebih panjang. Yang baru di B2 adalah **ragam**: kapan sebuah kalimat terdengar pas di rapat, di surat, di radio, atau di meja makan. Unit pertama ini langsung membuka pintu itu dengan ragam rapat."
+    },
+    {
+     "type": "kotak",
+     "title": "Tiga kebiasaan pelajar B2",
+     "items": [
+      "Baca atau dengarkan satu berita pendek bahasa Hungaria setiap hari, dan catat satu ungkapan resmi beserta padanan sehari-harinya.",
+      "Kalau belajar kata benda bentukan, tulis juga kalimat asalnya: *a szerződés aláírása* ← *aláírják a szerződést*.",
+      "Latih pergantian ragam dengan sengaja: ceritakan satu rapat dua kali, sekali untuk notulen, sekali untuk sahabatmu."
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Kosakata rapat resmi",
+   "blocks": [
+    {
+     "type": "tabel",
+     "head": [
+      "Magyar",
+      "Cara baca",
+      "Bahasa Indonesia"
+     ],
+     "rows": [
+      [
+       "napirend",
+       "NÅ-pi-rènd",
+       "agenda (acara rapat)"
+      ],
+      [
+       "napirendi pont",
+       "NÅ-pi-rèn-di pont",
+       "butir agenda"
+      ],
+      [
+       "jegyzőkönyv",
+       "YÈDY-zö-könyv",
+       "notulen, berita acara"
+      ],
+      [
+       "határozat",
+       "HÅ-ta-ro-zåt",
+       "keputusan resmi, resolusi"
+      ],
+      [
+       "szavazás",
+       "SÅ-vå-zasy",
+       "pemungutan suara"
+      ],
+      [
+       "javaslat",
+       "YÅ-våsy-låt",
+       "usulan"
+      ],
+      [
+       "hozzászólás",
+       "HOZ-za-so-lasy",
+       "tanggapan dalam rapat"
+      ],
+      [
+       "résztvevő",
+       "RÉST-vè-vö",
+       "peserta"
+      ],
+      [
+       "elnököl",
+       "ÈL-nö-köl",
+       "memimpin rapat"
+      ],
+      [
+       "egyebek",
+       "È-dyè-bèk",
+       "lain-lain (butir terakhir agenda)"
+      ]
+     ]
+    },
+    {
+     "type": "p",
+     "text": "Rapat resmi di Hungaria biasanya dimulai tepat waktu, dan *napirend* dikirim beberapa hari sebelumnya. Pemimpin rapat membuka (*megnyitja*), memberi kesempatan bicara (*szót ad*), lalu menutup (*lezárja*) rapat; butir terakhir hampir selalu *egyebek*. *Jegyzőkönyv* yang menyusul ditulis penuh frasa benda: *A résztvevők egyhangúlag elfogadták a javaslatot.*"
+    },
+    {
+     "type": "kotak",
+     "title": "Frasa siap pakai di rapat",
+     "items": [
+      "*Szót kérhetek?* — Boleh saya bicara? Lebih halus lagi: *Hadd tegyek hozzá valamit.* (Izinkan saya menambahkan sesuatu.)",
+      "*Térjünk vissza a napirendhez!* — Mari kembali ke agenda. Dipakai pemimpin rapat ketika pembicaraan melantur.",
+      "*Ezt a kérdést a következő ülésen tárgyaljuk meg.* — Masalah ini kita bahas di rapat berikutnya.",
+      "*Összefoglalnám az elhangzottakat.* — Saya rangkum apa yang sudah disampaikan."
+     ]
+    }
+   ]
+  }
+ ],
+ "vocab": [
+  {
+   "hu": "megbeszélés",
+   "baca": "MÈG-bè-sé-lésy",
+   "id": "rapat, pertemuan (kerja)"
+  },
+  {
+   "hu": "ülés",
+   "baca": "Ü-lésy",
+   "id": "sidang, rapat resmi; juga: tempat duduk"
+  },
+  {
+   "hu": "cél",
+   "baca": "tsél",
+   "id": "tujuan (*célja*: tujuannya)"
+  },
+  {
+   "hu": "elindít",
+   "baca": "È-lin-dit",
+   "id": "memulai, meluncurkan"
+  },
+  {
+   "hu": "kiválaszt",
+   "baca": "KI-va-låst",
+   "id": "memilih, menyeleksi"
+  },
+  {
+   "hu": "döntés",
+   "baca": "DÖN-tésy",
+   "id": "keputusan"
+  },
+  {
+   "hu": "döntést hoz (meghoz)",
+   "baca": "DÖN-tésyt hoz",
+   "id": "mengambil keputusan"
+  },
+  {
+   "hu": "meghozatal",
+   "baca": "MÈG-ho-zå-tål",
+   "id": "pengambilan (keputusan)"
+  },
+  {
+   "hu": "hatáskör",
+   "baca": "HÅ-tasy-kör",
+   "id": "wewenang (*hatáskörébe tartozik*: termasuk wewenangnya)"
+  },
+  {
+   "hu": "megoszt",
+   "baca": "MÈ-gost",
+   "id": "membagi"
+  },
+  {
+   "hu": "költség",
+   "baca": "KÖLT-syég",
+   "id": "biaya"
+  },
+  {
+   "hu": "költségvetés",
+   "baca": "KÖLT-syég-vè-tésy",
+   "id": "anggaran"
+  },
+  {
+   "hu": "tervezet",
+   "baca": "TÈR-vè-zèt",
+   "id": "rancangan, draf"
+  },
+  {
+   "hu": "pályázat",
+   "baca": "PA-ya-zåt",
+   "id": "pendaftaran terbuka, hibah; lamaran"
+  },
+  {
+   "hu": "kiír",
+   "baca": "KI-ir",
+   "id": "mengumumkan (lowongan, pendaftaran, pemilu)"
+  },
+  {
+   "hu": "vállal",
+   "baca": "VAL-lål",
+   "id": "menyanggupi, mengambil (tugas)"
+  },
+  {
+   "hu": "részvétel",
+   "baca": "RÉS-vé-tèl",
+   "id": "keikutsertaan, kehadiran (*részt vesz*: ikut serta)"
+  },
+  {
+   "hu": "képvisel",
+   "baca": "KÉP-vi-syèl",
+   "id": "mewakili"
+  },
+  {
+   "hu": "hallgató",
+   "baca": "HÅLL-gå-to",
+   "id": "mahasiswa (juga: pendengar)"
+  },
+  {
+   "hu": "hallgatócsere",
+   "baca": "HÅLL-gå-to-cè-rè",
+   "id": "pertukaran mahasiswa"
+  },
+  {
+   "hu": "szakmai gyakorlat",
+   "baca": "SÅK-må-i DYÅ-kor-låt",
+   "id": "magang profesi"
+  },
+  {
+   "hu": "zajlik",
+   "baca": "ZÅY-lik",
+   "id": "berlangsung"
+  },
+  {
+   "hu": "eredményesen",
+   "baca": "È-rèd-mé-nyè-syèn",
+   "id": "dengan hasil baik"
+  }
+ ],
+ "exercises": [
+  {
+   "prompt": "Terjemahkan ke bahasa Hungaria. Pakai *Önök* bila menyapa hadirin.",
+   "items": [
+    "Tujuan rapat hari ini adalah peluncuran program.",
+    "Izinkan saya membuka rapat.",
+    "Belum ada keputusan.",
+    "Terima kasih kepada semuanya atas kehadirannya.",
+    "Mohon kirimkan rancangan anggarannya.",
+    "Langkah pertama adalah seleksi mahasiswa."
+   ]
+  },
+  {
+   "prompt": "Isi dengan bentuk yang tepat. Petunjuk ada di dalam kurung.",
+   "items": [
+    "A mai ülés célja a szerződés ____. (aláír, frasa benda)",
+    "A hallgatók ____ októberben kezdődik. (kiválaszt, frasa benda)",
+    "A döntés ____ a dékán feladata. (meghoz, frasa benda)",
+    "Köszönjük a ____. (részt vesz, frasa benda + sasaran)",
+    "A költségek ____ még nincs döntés. (megoszt, frasa benda + tentang)",
+    "Hölgyeim és Uraim, kérem, ____ be! (jön, Önök)",
+    "Van még ____? (kérdés, milik Önök)"
+   ]
+  },
+  {
+   "prompt": "Ubah kalimat notulen menjadi gaya obrolan dengan kata kerja *mi*. Contoh: *A program elindítása megtörtént.* → *Elindítottuk a programot.*",
+   "items": [
+    "A szerződés aláírása megtörtént.",
+    "A hallgatók kiválasztása megtörtént.",
+    "A költségvetés elkészítése megtörtént.",
+    "A pályázat kiírása megtörtént.",
+    "A döntés meghozatala megtörtént.",
+    "A vendégek fogadása megtörtént."
+   ]
+  },
+  {
+   "prompt": "Susun jadi kalimat yang benar.",
+   "items": [
+    "a mai / célja / a program / elindítása / megbeszélés",
+    "engedjék / hogy / megnyissam / meg / az ülést",
+    "a költségek / még / döntés / megosztásáról / nem / született",
+    "a dékán / tartozik / a döntés / hatáskörébe / meghozatala",
+    "mindenkinek / köszönöm / a részvételt"
+   ]
+  }
+ ],
+ "answers": [
+  "A mai megbeszélés célja a program elindítása. — Engedjék meg, hogy megnyissam a megbeszélést. — Még nem született döntés. — Köszönöm mindenkinek a részvételt. — Kérem, küldjék el a költségvetés tervezetét. — Az első lépés a hallgatók kiválasztása.",
+  "aláírása — kiválasztása — meghozatala — részvételt — megosztásáról — jöjjenek — kérdésük",
+  "Aláírtuk a szerződést. — Kiválasztottuk a hallgatókat. — Elkészítettük a költségvetést. — Kiírtuk a pályázatot. — Meghoztuk a döntést. — Fogadtuk a vendégeket.",
+  "A mai megbeszélés célja a program elindítása. — Engedjék meg, hogy megnyissam az ülést. — A költségek megosztásáról még nem született döntés. — A döntés meghozatala a dékán hatáskörébe tartozik. — Köszönöm mindenkinek a részvételt."
+ ]
+}
