@@ -1,0 +1,671 @@
+{
+ "title": "Kyiv dan Jakarta — lebih besar, paling dalam",
+ "title_target": "Київ і Джакарта: що більше?",
+ "goal": "Membandingkan kota, benda, dan orang dengan tingkat lebih (*більший, старіший, тепліше*) dan paling (*найвищий, найглибша*), memakai *ніж* dan *за* + akusatif, menyebut selisih dengan *на* dan *утричі*, serta menyamakan dengan *так само … як*.",
+ "bekal": [
+  "kamu bisa membentuk tingkat lebih beraturan dan tak beraturan: *старіший, тепліший; більший, кращий, вищий*",
+  "kamu bisa membandingkan dengan *ніж* + nominatif atau *за* + akusatif: *більша, ніж Київ; молодша за Київ*",
+  "kamu bisa membentuk tingkat paling dengan *най-* dan menyusun presentasi pendek"
+ ],
+ "dialogs": [
+  {
+   "title": "Діалог 1 — Proyek sekolah Taras",
+   "intro": "Sabtu, 10 April 2027, pukul empat sore, di meja dapur pani Halyna. Taras mendapat tugas dari sekolah: membandingkan Kyiv dengan kota lain di dunia. Ia tentu memilih kota asal Ani. Perhatikan ekor **-іший / -ший** dan kata *ніж* serta *за*.",
+   "lines": [
+    {
+     "speaker": "Тарас:",
+     "text": "[Ані|A-ni], [у|u] [нас|nas] [у|u] [школі|SHKO-li] [проєкт|pro-YEKT]: [порівняти|po-riv-NYA-ty] [Київ|KY-yiv] [з|z] [іншим|IN-shym] [містом|MIS-tom]. [Я|Ya] [вибрав|VY-brav] [Джакарту|Dzha-KAR-tu]!",
+     "id": "Ani, di sekolah ada proyek: membandingkan Kyiv dengan kota lain. Aku pilih Jakarta!",
+     "literal": "Ani, pada kami di sekolah (lok.) proyek: membandingkan ‹selesai› Kyiv dengan lain (ins.) kota (ins.). saya memilih Jakarta (ak.)!"
+    },
+    {
+     "speaker": "Ані:",
+     "text": "[Чудовий|Chu-DO-vyy] [вибір|VY-bir]! [Що|Shcho] [ти|ty] [вже|vzhe] [знаєш|ZNA-yesh] [про|pro] [Джакарту|Dzha-KAR-tu]?",
+     "id": "Pilihan bagus! Apa yang sudah kamu tahu tentang Jakarta?",
+     "literal": "indah pilihan! apa kamu sudah tahu tentang Jakarta (ak.)?"
+    },
+    {
+     "speaker": "Тарас:",
+     "text": "[Що|Shcho] [Джакарта|Dzha-KAR-ta] [більша|BIL'-sha], [ніж|nizh] [Київ|KY-yiv]. [Дуже|DU-zhe] [більша|BIL'-sha]?",
+     "id": "Bahwa Jakarta lebih besar daripada Kyiv. Jauh lebih besar?",
+     "literal": "bahwa Jakarta lebih-besar, daripada Kyiv. sangat lebih-besar?"
+    },
+    {
+     "speaker": "Ані:",
+     "text": "[Набагато|Na-ba-HA-to]. [У|U] [Києві|KY-ye-vi] [десь|des'] [три|try] [мільйони|mil'-YO-ny] [людей|lyu-DEY], [а|a] [в|v] [Джакарті|Dzha-KAR-ti] [більше|BIL'-she], [ніж|nizh] [десять|DE-syat'].",
+     "id": "Jauh. Di Kyiv kira-kira tiga juta orang, di Jakarta lebih dari sepuluh.",
+     "literal": "jauh-lebih. di Kyiv (lok.) kira-kira tiga juta orang (gen. jamak), dan di Jakarta (lok.) lebih, daripada sepuluh."
+    },
+    {
+     "speaker": "Тарас:",
+     "text": "[Ого|O-HO]! [А|A] [де|de] [тепліше|te-PLI-she]?",
+     "id": "Wah! Terus di mana yang lebih hangat?",
+     "literal": "wah! dan di-mana lebih-hangat?"
+    },
+    {
+     "speaker": "Ані:",
+     "text": "[У|U] [Джакарті|Dzha-KAR-ti], [звичайно|zvy-CHAY-no]. [У|U] [січні|SICH-ni] [там|tam] [на|na] [тридцять|TRYD-tsyat'] [градусів|HRA-du-siv] [тепліше|te-PLI-she].",
+     "id": "Di Jakarta, jelas. Di bulan Januari di sana tiga puluh derajat lebih hangat.",
+     "literal": "di Jakarta (lok.), tentu. di Januari (lok.) di-sana pada tiga-puluh derajat (gen. jamak) lebih-hangat."
+    },
+    {
+     "speaker": "Тарас:",
+     "text": "[А|A] [яке|ya-KE] [місто|MIS-to] [старіше|sta-RI-she]?",
+     "id": "Kota mana yang lebih tua?",
+     "literal": "dan yang-mana kota lebih-tua?"
+    },
+    {
+     "speaker": "Ані:",
+     "text": "[Київ|KY-yiv]. [Джакарта|Dzha-KAR-ta] [набагато|na-ba-HA-to] [молодша|mo-LOD-sha] [за|za] [нього|NYO-ho].",
+     "id": "Kyiv. Jakarta jauh lebih muda daripada Kyiv.",
+     "literal": "Kyiv. Jakarta jauh-lebih lebih-muda (pr) daripada dia (ak.)."
+    },
+    {
+     "speaker": "Тарас:",
+     "text": "[А|A] [яка|ya-KA] [найвища|nay-VY-shcha] [будівля|bu-DI-vlya]?",
+     "id": "Terus gedung paling tinggi yang mana?",
+     "literal": "dan yang-mana paling-tinggi bangunan?"
+    },
+    {
+     "speaker": "Ані:",
+     "text": "[У|U] [Джакарті|Dzha-KAR-ti] [хмарочоси|khma-ro-CHO-sy] [вищі|VY-shchi], [ніж|nizh] [будь|bud']-[яка|ya-KA] [будівля|bu-DI-vlya] [в|v] [Києві|KY-ye-vi].",
+     "id": "Gedung pencakar langit di Jakarta lebih tinggi daripada gedung mana pun di Kyiv.",
+     "literal": "di Jakarta (lok.) pencakar-awan-pencakar-awan lebih-tinggi, daripada mana-pun bangunan di Kyiv (lok.)."
+    },
+    {
+     "speaker": "Тарас:",
+     "text": "[Зате|Za-TE] [в|v] [Києві|KY-ye-vi] [найглибша|nay-HLYB-sha] [станція|STAN-tsi-ya] [метро|me-TRO] [у|u] [світі|SVI-ti]!",
+     "id": "Tapi di Kyiv ada stasiun metro terdalam di dunia!",
+     "literal": "sebagai-gantinya di Kyiv (lok.) paling-dalam stasiun metro di dunia (lok.)!"
+    },
+    {
+     "speaker": "Ані:",
+     "text": "[Правда|PRAV-da]! «[Арсенальна|Ar-se-NAL'-na]». [Ти|Ty] [вже|vzhe] [справжній|SPRAV-zhniy] [експерт|ek-SPERT].",
+     "id": "Betul! Arsenalna. Kamu sudah jadi ahli sungguhan.",
+     "literal": "benar! Arsenalna. kamu sudah sungguhan ahli."
+    },
+    {
+     "speaker": "Тарас:",
+     "text": "[А|A] [яке|ya-KE] [місто|MIS-to] [краще|KRA-shche], [Київ|KY-yiv] [чи|chy] [Джакарта|Dzha-KAR-ta]?",
+     "id": "Terus kota mana yang lebih bagus, Kyiv atau Jakarta?",
+     "literal": "dan yang-mana kota lebih-baik, Kyiv atau Jakarta?"
+    },
+    {
+     "speaker": "Ані:",
+     "text": "[Обидва|O-BYD-va]! [Джакарта|Dzha-KAR-ta] [для|dlya] [мене|ME-ne] [рідніша|rid-NI-sha], [але|a-LE] [Київ|KY-yiv] [тепер|te-PER] [теж|tezh] [рідний|RID-nyy].",
+     "id": "Dua-duanya! Jakarta lebih dekat di hati, tapi Kyiv sekarang juga sudah seperti rumah sendiri.",
+     "literal": "kedua-duanya! Jakarta untuk saya (gen.) lebih-dekat-hati, tetapi Kyiv sekarang juga dekat-hati."
+    }
+   ],
+   "notes": [
+    "**Більша, ніж Київ.** Cara pertama membandingkan: **ніж** + nominatif, sama dengan \"daripada\". Koma sebelum *ніж* wajib dalam tulisan. *Більший* adalah bentuk tak beraturan dari *великий*; tidak ada *великіший*. Kata sifat perbandingan juga berubah menurut jenis: *більший, більша, більше, більші*.",
+    "**Набагато.** Untuk mengatakan \"jauh lebih\", pakai *набагато* atau *значно*: *набагато більша, значно тепліше*. \"Sedikit lebih\" adalah *трохи*: *трохи дешевший*. Jangan memakai *дуже* dengan bentuk perbandingan; *дуже більша* terdengar salah, dan Ani dengan halus membetulkan pertanyaan Taras.",
+    "**На тридцять градусів тепліше.** Selisih disebut dengan **на** + akusatif: *на три роки старший* (tiga tahun lebih tua), *на сто гривень дешевше*. *Тепліше* di sini adverbia, karena menjawab *де?* dan tidak menerangkan kata benda: *Там тепліше.*",
+    "**Молодша за нього.** Cara kedua membandingkan: **за** + akusatif. Artinya sama dengan *ніж*, tetapi lebih ringkas dan sangat Ukraina: *Джакарта молодша за Київ*. Kata ganti memakai bentuk dengan *н-* sesudah preposisi: *за нього, за неї, за них*. Dalam bahasa Rusia padanannya genitif tanpa preposisi; di Ukraina pola itu tidak baku.",
+    "**Найвища, найглибша.** Tingkat paling dibentuk dengan awalan **най-** pada bentuk perbandingan: *вищий* → *найвищий*, *глибший* → *найглибший*, *кращий* → *найкращий*. \"Di dunia, di kota\" memakai *у* + lokatif: *найглибша станція метро у світі*. Stasiun Arsenalna di Kyiv memang sekitar 105 meter di bawah tanah.",
+    "**Зате, рідніша.** *Зате* (tapi sebagai gantinya, tapi di sisi lain) menandingkan satu keunggulan dengan yang lain. *Рідний* berarti kandung, asal, dekat di hati: *рідне місто* (kota asal), *рідна мова* (bahasa ibu). Bentuk *рідніший* menunjukkan bahwa kata sifat perasaan pun bisa dibandingkan."
+   ],
+   "grammars": [
+    {
+     "title": "Membentuk tingkat lebih",
+     "body": [
+      "Kebanyakan kata sifat menambah **-іш-** sebelum ekor: *старий* → *старіший*, *теплий* → *тепліший*. Sebagian yang pendek memakai **-ш-** dan sering mengubah konsonan di batangnya. Beberapa yang sangat umum sepenuhnya tak beraturan."
+     ],
+     "table": {
+      "head": [
+       "Kata sifat",
+       "Tingkat lebih",
+       "Tingkat paling",
+       "Indonesia"
+      ],
+      "rows": [
+       [
+        "старий",
+        "старіший (старший: orang)",
+        "найстаріший",
+        "tua"
+       ],
+       [
+        "теплий",
+        "тепліший",
+        "найтепліший",
+        "hangat"
+       ],
+       [
+        "молодий",
+        "молодший",
+        "наймолодший",
+        "muda"
+       ],
+       [
+        "високий",
+        "вищий",
+        "найвищий",
+        "tinggi"
+       ],
+       [
+        "глибокий",
+        "глибший",
+        "найглибший",
+        "dalam"
+       ],
+       [
+        "дорогий",
+        "дорожчий",
+        "найдорожчий",
+        "mahal"
+       ],
+       [
+        "великий, малий",
+        "більший, менший",
+        "найбільший, найменший",
+        "besar, kecil"
+       ],
+       [
+        "добрий, поганий",
+        "кращий, гірший",
+        "найкращий, найгірший",
+        "baik, buruk"
+       ]
+      ]
+     },
+     "after": [
+      "Untuk orang, *старший* berarti lebih tua usianya (*старший брат*), sedangkan *старіший* dipakai untuk benda dan kota: *Київ старіший за Джакарту*."
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Діалог 2 — Latihan presentasi",
+   "intro": "Minggu malam, 11 April. Taras berdiri di depan rak buku dengan kertas di tangan, berlatih presentasi untuk hari Senin. Ani dan neneknya menjadi penonton. Perhatikan bentuk *утричі більша* dan perbandingan kesetaraan *так само … як*.",
+   "lines": [
+    {
+     "speaker": "Тарас:",
+     "text": "[Бабусю|Ba-BU-syu], [Ані|A-ni], [слухайте|SLU-khay-te]! [Моя|Mo-YA] [презентація|pre-zen-TA-tsi-ya] [називається|na-zy-VA-ye-tsya] «[Київ|KY-yiv] [і|i] [Джакарта|Dzha-KAR-ta]».",
+     "id": "Nek, Ani, dengarkan! Presentasiku judulnya \"Kyiv dan Jakarta\".",
+     "literal": "nenek (panggilan), Ani, dengarkanlah! saya-punya presentasi bernama Kyiv dan Jakarta."
+    },
+    {
+     "speaker": "Галина:",
+     "text": "[Слухаємо|SLU-kha-ye-mo], [пане|PA-ne] [доповідачу|do-po-vi-DA-chu]!",
+     "id": "Kami dengarkan, Tuan Pembicara!",
+     "literal": "kami-mendengarkan, tuan pembicara (panggilan)!"
+    },
+    {
+     "speaker": "Тарас:",
+     "text": "[За|Za] [кількістю|KIL'-kis-tyu] [людей|lyu-DEY] [Джакарта|Dzha-KAR-ta] [втричі|VTRY-chi] [більша|BIL'-sha] [за|za] [Київ|KY-yiv].",
+     "id": "Menurut jumlah penduduk, Jakarta tiga kali lebih besar daripada Kyiv.",
+     "literal": "menurut jumlah (ins.) orang (gen. jamak) Jakarta tiga-kali lebih-besar daripada Kyiv (ak.)."
+    },
+    {
+     "speaker": "Ані:",
+     "text": "[Дуже|DU-zhe] [добре|DO-bre]! [Тільки|TIL'-ky] [кажи|ka-ZHY] [повільніше|po-VIL'-ni-she], [будь|bud'] [ласка|LAS-ka].",
+     "id": "Bagus sekali! Cuma bicaranya lebih pelan, ya.",
+     "literal": "sangat baik! hanya katakanlah lebih-lambat, tolong."
+    },
+    {
+     "speaker": "Тарас:",
+     "text": "[Добре|DO-bre]. [Ані|A-ni] [каже|KA-zhe], [що|shcho] [суп|sup] [сото|SO-to] [смачніший|smach-NI-shyy] [за|za] [борщ|borshch]!",
+     "id": "Oke. Ani bilang sup soto lebih enak daripada borsch!",
+     "literal": "baik. Ani berkata, bahwa sup soto lebih-enak daripada borsch (ak.)!"
+    },
+    {
+     "speaker": "Галина:",
+     "text": "[Що|Shcho]? [Смачніший|Smach-NI-shyy] [за|za] [мій|miy] [борщ|borshch]? [Ніколи|Ni-KO-ly]!",
+     "id": "Apa? Lebih enak daripada borsch buatanku? Mustahil!",
+     "literal": "apa? lebih-enak daripada saya-punya borsch (ak.)? tidak-pernah!"
+    },
+    {
+     "speaker": "Ані:",
+     "text": "[Пані|PA-ni] [Галино|Ha-LY-no], [я|ya] [казала|ka-ZA-la], [що|shcho] [він|vin] [так|tak] [само|SA-mo] [смачний|smach-NYY], [як|yak] [ваш|vash] [борщ|borshch]!",
+     "id": "Bu Halyna, saya bilang soto sama enaknya dengan borsch Ibu!",
+     "literal": "nyonya Halyna, saya berkata (pr), bahwa dia begitu sama enak, seperti Anda-punya borsch!"
+    },
+    {
+     "speaker": "Тарас:",
+     "text": "[Ой|Oy]. [Тоді|To-DI] [напишу|na-py-SHU]: «[Суп|Sup] [сото|SO-to] [не|ne] [гірший|HIR-shyy] [за|za] [борщ|borshch]».",
+     "id": "Aduh. Kalau begitu kutulis: \"Soto tidak kalah dari borsch\".",
+     "literal": "oh. kalau-begitu akan-menulis: sup soto tidak lebih-buruk daripada borsch (ak.)."
+    },
+    {
+     "speaker": "Галина:",
+     "text": "[Оце|O-TSE] [дипломатія|dy-plo-MA-ti-ya]! [Тарасе|Ta-RA-se], [ти|ty] [будеш|BU-desh] [найкращим|nay-KRA-shchym] [у|u] [класі|KLA-si].",
+     "id": "Nah, itu baru diplomasi! Taras, kamu bakal jadi yang terbaik di kelas.",
+     "literal": "inilah diplomasi! Taras (panggilan), kamu akan-menjadi paling-baik (ins.) di kelas (lok.)."
+    },
+    {
+     "speaker": "Тарас:",
+     "text": "[А|A] [вчителька|VCHY-tel'-ka] [каже|KA-zhe]: [чим|chym] [коротше|ko-ROT-she], [тим|tym] [краще|KRA-shche].",
+     "id": "Tapi bu guru bilang: makin pendek, makin bagus.",
+     "literal": "dan guru-perempuan berkata: dengan-apa lebih-pendek, dengan-itu lebih-baik."
+    },
+    {
+     "speaker": "Ані:",
+     "text": "[Мудра|MU-dra] [вчителька|VCHY-tel'-ka]! [Тоді|To-DI] [закінчуй|za-KIN-chuy], [і|i] [ходімо|kho-DI-mo] [пити|PY-ty] [чай|chay].",
+     "id": "Guru yang bijak! Kalau begitu selesaikan, lalu kita minum teh.",
+     "literal": "bijak guru-perempuan! kalau-begitu selesaikanlah, dan ayo-kita-pergi minum teh."
+    }
+   ],
+   "notes": [
+    "**Пане доповідачу.** Halyna bercanda dengan memanggil cucunya seperti pembicara di konferensi: *пан доповідач* dalam bentuk panggilan *пане доповідачу*. Kata benda berakhiran *-ач* berekor *-у* di bentuk panggilan: *читачу, слухачу*.",
+    "**Втричі більша.** Kelipatan disebut dengan *удвічі / вдвічі* (dua kali), *утричі / втричі* (tiga kali), *учетверо* (empat kali), atau *у п'ять разів* (lima kali) dan seterusnya. *За кількістю людей* berarti \"menurut jumlah orang\": *за* + instrumental di sini bermakna \"berdasarkan\".",
+    "**Кажи повільніше.** Adverbia perbandingan berekor **-іше / -ше**: *повільно* → *повільніше*, *швидко* → *швидше*, *добре* → *краще*, *погано* → *гірше*. Bentuk ini sama dengan netral kata sifat perbandingan: *краще, тепліше*.",
+    "**Так само смачний, як.** Untuk kesetaraan, pakai **так само … як** atau **такий самий … як**: *Суп сото так само смачний, як борщ.* Kata *як* (seperti) dan *ніж* (daripada) jangan tertukar: *як* menyamakan, *ніж* membedakan. Perhatikan bahwa Ani memakai *він* untuk *суп сото*, karena *суп* laki-laki.",
+    "**Не гірший за борщ.** *Гірший* (lebih buruk) dari *поганий* sepenuhnya tak beraturan. *Не гірший за* adalah cara halus untuk memuji tanpa merendahkan pihak lain, persis \"tidak kalah dari\". *Найкращим* di kalimat Halyna berada di instrumental karena mengikuti *бути* di masa depan: *ти будеш найкращим*.",
+    "**Чим коротше, тим краще.** Pola **чим … тим** sama dengan \"makin … makin\": *Чим більше практики, тим краще.* Kedua bagian memakai bentuk perbandingan. Nasihat guru Taras ini juga berlaku untuk presentasi bahasa Ukraina pertamamu."
+   ],
+   "grammars": [
+    {
+     "title": "Pola-pola perbandingan",
+     "body": [
+      "Setelah bisa membentuk *більший* dan *найбільший*, pola berikut membuat perbandinganmu terdengar wajar."
+     ],
+     "table": {
+      "head": [
+       "Pola",
+       "Contoh",
+       "Indonesia"
+      ],
+      "rows": [
+       [
+        "ніж + nominatif",
+        "*Джакарта більша, ніж Київ.*",
+        "Jakarta lebih besar daripada Kyiv."
+       ],
+       [
+        "за + akusatif",
+        "*Джакарта молодша за Київ.*",
+        "Jakarta lebih muda daripada Kyiv."
+       ],
+       [
+        "на + selisih",
+        "*на тридцять градусів тепліше*",
+        "tiga puluh derajat lebih hangat"
+       ],
+       [
+        "удвічі, утричі",
+        "*утричі більша*",
+        "tiga kali lebih besar"
+       ],
+       [
+        "най- + tingkat lebih",
+        "*найглибша станція у світі*",
+        "stasiun terdalam di dunia"
+       ],
+       [
+        "так само … як",
+        "*так само смачний, як борщ*",
+        "sama enaknya dengan borsch"
+       ],
+       [
+        "чим … тим",
+        "*чим коротше, тим краще*",
+        "makin pendek makin bagus"
+       ],
+       [
+        "якнай- + tingkat lebih",
+        "*якнайшвидше*",
+        "secepat mungkin"
+       ]
+      ]
+     },
+     "after": [
+      "Tingkat lebih juga bisa dibentuk secara analitis: *більш цікавий* (lebih menarik), *найбільш цікавий* (paling menarik). Bentuk ini lazim untuk kata sifat panjang."
+     ]
+    }
+   ]
+  }
+ ],
+ "sections": [
+  {
+   "title": "Kyiv dan Jakarta dalam angka",
+   "blocks": [
+    {
+     "type": "p",
+     "text": "Tabel berikut adalah bahan presentasi Taras. Bacalah setiap baris, lalu ucapkan satu kalimat perbandingan, misalnya *Дніпро ширший, ніж Чилівунг* atau *У Джакарті більше людей, ніж у Києві*. Angka dibulatkan, seperti dalam presentasi sekolah."
+    },
+    {
+     "type": "tabel",
+     "head": [
+      "",
+      "Київ",
+      "Джакарта"
+     ],
+     "rows": [
+      [
+       "kira-kira penduduk",
+       "3 мільйони",
+       "понад 10 мільйонів"
+      ],
+      [
+       "usia kota",
+       "майже 1500 років",
+       "приблизно 500 років"
+      ],
+      [
+       "suhu Januari",
+       "близько 0 градусів",
+       "близько 27 градусів"
+      ],
+      [
+       "sungai",
+       "Дніпро (широкий)",
+       "Чилівунг (вузький)"
+      ],
+      [
+       "transportasi bawah tanah",
+       "метро з 1960 року",
+       "MRT з 2019 року"
+      ],
+      [
+       "jumlah musim",
+       "чотири пори року",
+       "дві: сухий і дощовий сезон"
+      ],
+      [
+       "simbol",
+       "каштан",
+       "Монас"
+      ]
+     ]
+    },
+    {
+     "type": "kotak",
+     "title": "Kalimat untuk presentasi",
+     "items": [
+      "*Моя презентація про …* (Presentasi saya tentang …)",
+      "*По-перше, … По-друге, … Нарешті, …* (Pertama, … Kedua, … Akhirnya, …)",
+      "*Подивіться на цю таблицю.* (Lihatlah tabel ini.)",
+      "*Отже, …* (Jadi, …)",
+      "*Дякую за увагу! Чи є запитання?* (Terima kasih atas perhatiannya! Ada pertanyaan?)"
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Sekolah di Ukraina dan nilai dua belas",
+   "blocks": [
+    {
+     "type": "p",
+     "text": "Taras duduk di kelas empat, tahun terakhir sekolah dasar. Sekolah di Ukraina berlangsung dua belas tahun dalam program *Нова українська школа* (Sekolah Ukraina Baru), dengan penekanan pada proyek dan kerja kelompok, seperti tugas Taras. Nilai diberikan dalam skala 1 sampai 12, jadi \"dua belas\" di Ukraina sama artinya dengan \"seratus\" di rapor Indonesia."
+    },
+    {
+     "type": "tabel",
+     "head": [
+      "Nilai",
+      "Tingkat",
+      "Indonesia"
+     ],
+     "rows": [
+      [
+       "10, 11, 12",
+       "високий рівень",
+       "tingkat tinggi, sangat baik"
+      ],
+      [
+       "7, 8, 9",
+       "достатній рівень",
+       "tingkat cukup, baik"
+      ],
+      [
+       "4, 5, 6",
+       "середній рівень",
+       "tingkat sedang"
+      ],
+      [
+       "1, 2, 3",
+       "початковий рівень",
+       "tingkat awal, kurang"
+      ],
+      [
+       "початкова школа",
+       "kelas 1 sampai 4",
+       "sekolah dasar"
+      ],
+      [
+       "базова школа",
+       "kelas 5 sampai 9",
+       "sekolah menengah pertama"
+      ],
+      [
+       "профільна школа",
+       "kelas 10 sampai 12",
+       "sekolah menengah atas"
+      ]
+     ]
+    },
+    {
+     "type": "list",
+     "items": [
+      "*Я отримав дванадцять!* (Aku dapat dua belas!) adalah kalimat paling membahagiakan bagi murid Ukraina.",
+      "Guru kelas di sekolah dasar disapa dengan nama dan nama ayah, misalnya *Олено Іванівно*.",
+      "*Домашнє завдання* (PR) biasanya lebih sedikit di kelas-kelas awal."
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Ulangan berjenjang — unit 8",
+   "blocks": [
+    {
+     "type": "p",
+     "text": "Tutup kolom Ukraina, baca terjemahan Indonesianya, lalu susun kembali kalimatnya dari ingatan."
+    },
+    {
+     "type": "tabel",
+     "head": [
+      "Bahasa Indonesia",
+      "Українська",
+      "Baca"
+     ],
+     "rows": [
+      [
+       "Andriy, ini pertama kalinya aku naik kereta keliling Ukraina!",
+       "Андрію, я вперше їду потягом по Україні!",
+       "*An-DRI-yu ya VPER-she YI-du PO-tya-hom po U-kra-YI-ni*"
+      ],
+      [
+       "Kami punya tujuh belas ribu pulau. Antarpulau kami naik pesawat atau kapal feri.",
+       "У нас сімнадцять тисяч островів. На островах ми літаємо або пливемо поромом.",
+       "*U nas sim-NAD-tsyat' TY-syach os-tro-VIV Na os-tro-VAKH my li-TA-ye-mo a-BO ply-ve-MO po-RO-mom*"
+      ],
+      [
+       "Intercity ini cuma berhenti di stasiun-stasiun besar.",
+       "Цей Інтерсіті зупиняється тільки на великих станціях.",
+       "*Tsey In-ter-SI-ti zu-py-NYA-ye-tsya TIL'-ky na ve-LY-kykh STAN-tsi-yakh*"
+      ],
+      [
+       "Menyenangkan! Gerbongnya bersih dan hangat.",
+       "Чудово! У вагонах чисто і тепло.",
+       "*Chu-DO-vo U va-HO-nakh CHYS-to i te-PLO*"
+      ],
+      [
+       "Ani, di Jakarta stasiun-stasiunnya juga sedingin ini?",
+       "Ані, а в Джакарті на вокзалах теж так холодно?",
+       "*A-ni a v Dzha-KAR-ti na vok-ZA-lakh tezh tak KHO-lod-no*"
+      ]
+     ]
+    }
+   ]
+  }
+ ],
+ "vocab": [
+  {
+   "uk": "порівня́ти / порі́внювати",
+   "baca": "po-riv-NYA-ty / po-RIV-nyu-va-ty",
+   "id": "membandingkan"
+  },
+  {
+   "uk": "бі́льший",
+   "baca": "BIL'-shyy",
+   "id": "lebih besar (dari *великий*)"
+  },
+  {
+   "uk": "ме́нший",
+   "baca": "MEN-shyy",
+   "id": "lebih kecil (dari *малий*)"
+  },
+  {
+   "uk": "кра́щий",
+   "baca": "KRA-shchyy",
+   "id": "lebih baik (dari *добрий*)"
+  },
+  {
+   "uk": "гі́рший",
+   "baca": "HIR-shyy",
+   "id": "lebih buruk (dari *поганий*)"
+  },
+  {
+   "uk": "ви́щий",
+   "baca": "VY-shchyy",
+   "id": "lebih tinggi (dari *високий*)"
+  },
+  {
+   "uk": "моло́дший",
+   "baca": "mo-LOD-shyy",
+   "id": "lebih muda"
+  },
+  {
+   "uk": "старі́ший",
+   "baca": "sta-RI-shyy",
+   "id": "lebih tua (benda, kota)"
+  },
+  {
+   "uk": "найгли́бший",
+   "baca": "nay-HLYB-shyy",
+   "id": "paling dalam"
+  },
+  {
+   "uk": "ніж",
+   "baca": "nizh",
+   "id": "daripada (+ nom.)"
+  },
+  {
+   "uk": "набага́то",
+   "baca": "na-ba-HA-to",
+   "id": "jauh (lebih)"
+  },
+  {
+   "uk": "втри́чі",
+   "baca": "VTRY-chi",
+   "id": "tiga kali lipat (*вдвічі* = dua kali)"
+  },
+  {
+   "uk": "зате́",
+   "baca": "za-TE",
+   "id": "tapi sebagai gantinya"
+  },
+  {
+   "uk": "проє́кт",
+   "baca": "pro-YEKT",
+   "id": "proyek"
+  },
+  {
+   "uk": "презента́ція",
+   "baca": "pre-zen-TA-tsi-ya",
+   "id": "presentasi"
+  },
+  {
+   "uk": "доповіда́ч",
+   "baca": "do-po-vi-DACH",
+   "id": "pembicara, penyaji"
+  },
+  {
+   "uk": "ви́бір",
+   "baca": "VY-bir",
+   "id": "pilihan"
+  },
+  {
+   "uk": "ви́брати / вибира́ти",
+   "baca": "VY-bra-ty / vy-by-RA-ty",
+   "id": "memilih"
+  },
+  {
+   "uk": "мільйо́н",
+   "baca": "mil'-YON",
+   "id": "juta"
+  },
+  {
+   "uk": "кі́лькість",
+   "baca": "KIL'-kist'",
+   "id": "jumlah, kuantitas"
+  },
+  {
+   "uk": "буді́вля",
+   "baca": "bu-DI-vlya",
+   "id": "gedung, bangunan"
+  },
+  {
+   "uk": "хмарочо́с",
+   "baca": "khma-ro-CHOS",
+   "id": "pencakar langit"
+  },
+  {
+   "uk": "спра́вжній",
+   "baca": "SPRAV-zhniy",
+   "id": "sungguhan, asli"
+  },
+  {
+   "uk": "рі́дний",
+   "baca": "RID-nyy",
+   "id": "kandung, asal, dekat di hati"
+  },
+  {
+   "uk": "му́дрий",
+   "baca": "MU-dryy",
+   "id": "bijak"
+  }
+ ],
+ "exercises": [
+  {
+   "prompt": "Terjemahkan ke bahasa Ukraina.",
+   "items": [
+    "Jakarta lebih besar daripada Kyiv.",
+    "Di Jakarta lebih hangat.",
+    "Kyiv lebih tua daripada Jakarta.",
+    "Ini gedung paling tinggi di kota.",
+    "Tolong bicara lebih pelan.",
+    "Makin pendek, makin bagus."
+   ]
+  },
+  {
+   "prompt": "Isi titik-titik dengan bentuk perbandingan kata dalam kurung.",
+   "items": [
+    "Київ ____ за Джакарту. (старий)",
+    "Тарас ____ за Катю. (молодий)",
+    "Цей квиток ____, ніж той. (дорогий)",
+    "Метро в Києві ____, ніж у Джакарті. (глибокий)",
+    "Суп сото не ____ за борщ. (поганий)",
+    "Це ____ кав'ярня на Подолі. (добрий, tingkat paling)",
+    "Хмарочоси в Джакарті ____. (високий)"
+   ]
+  },
+  {
+   "prompt": "Ubah perbandingan dengan ніж menjadi perbandingan dengan за.",
+   "items": [
+    "Джакарта більша, ніж Київ.",
+    "Андрій вищий, ніж Ані.",
+    "Кава смачніша, ніж чай.",
+    "Київ старіший, ніж Джакарта.",
+    "Соломія молодша, ніж Максим.",
+    "Потяг швидший, ніж автобус."
+   ]
+  },
+  {
+   "prompt": "Susun jadi kalimat yang benar.",
+   "items": [
+    "Джакарта / ніж / більша / Київ",
+    "молодша / нього / Джакарта / за",
+    "найвища / будівля / яка",
+    "втричі / Джакарта / за / більша / Київ",
+    "смачніший / суп / сото / борщ / за"
+   ]
+  }
+ ],
+ "answers": [
+  "Джакарта більша, ніж Київ. — У Джакарті тепліше. — Київ старіший за Джакарту. — Це найвища будівля в місті. — Говоріть повільніше, будь ласка. — Чим коротше, тим краще.",
+  "старіший — молодший — дорожчий — глибше — гірший — найкраща — вищі",
+  "Джакарта більша за Київ. — Андрій вищий за Ані. — Кава смачніша за чай. — Київ старіший за Джакарту. — Соломія молодша за Максима. — Потяг швидший за автобус.",
+  "Джакарта більша, ніж Київ. — Джакарта молодша за нього. — Яка найвища будівля? — Джакарта втричі більша за Київ. — Суп сото смачніший за борщ."
+ ]
+}

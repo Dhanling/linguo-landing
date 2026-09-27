@@ -1,0 +1,664 @@
+{
+ "title": "Supaya kota mau membantu — щоб, для того щоб, аби",
+ "title_target": "Ми подаємо заявку, щоб купити новий ростер.",
+ "goal": "Menyatakan tujuan dan harapan dengan tepat: *щоб* + infinitif bila pelakunya sama (*щоб купити*), *щоб* + bentuk lampau bila pelakunya lain (*щоб ви підписали*), serta *для того щоб* dan *аби* sesuai suasana.",
+ "bekal": [
+  "kamu bisa menjelaskan untuk apa kamu melakukan sesuatu: *Я телефоную, щоб уточнити кілька питань*",
+  "kamu bisa meminta atau berharap orang lain berbuat sesuatu: *Стеж, щоб ми не пропустили терміну*",
+  "kamu bisa mengisi formulir sederhana dan bertanya soal dokumen di kantor pelayanan kota"
+ ],
+ "dialogs": [
+  {
+   "title": "Діалог 1 — Formulir hibah kota",
+   "intro": "Senin, 20 Maret 2028, kantor kecil di atas ruang sangrai «Ява». Dewan kota Lviv membuka program hibah untuk usaha kecil, dan пан Богдан ingin mencoba. Perhatikan kapan *щоб* diikuti infinitif dan kapan diikuti bentuk lampau.",
+   "lines": [
+    {
+     "speaker": "Богдан:",
+     "text": "[Ані|A-ni], [ти|ty] [бачила|BA-chy-la] [оголошення|o-ho-LO-shen-nya] [міської|mis'-KO-yi] [ради|RA-dy]? [Місто|MIS-to] [дає|da-YE] [гранти|HRAN-ty] [малим|ma-LYM] [підприємствам|pid-pry-YEM-stvam].",
+     "id": "Ani, kamu sudah lihat pengumuman dewan kota? Kota memberi hibah untuk usaha kecil.",
+     "literal": "Ani, kamu melihat pengumuman kota-an (gen.) dewan (gen.)? kota memberi hibah-hibah kecil (dat.) usaha (dat.)."
+    },
+    {
+     "speaker": "Ані:",
+     "text": "[Бачила|BA-chy-la]. [Думаю|DU-ma-yu], [нам|nam] [варто|VAR-to] [подати|po-DA-ty] [заявку|za-YAV-ku], [щоб|shchob] [купити|ku-PY-ty] [новий|no-VYY] [ростер|ROS-ter].",
+     "id": "Sudah. Menurut saya kita pantas mengajukan permohonan supaya bisa beli mesin sangrai baru.",
+     "literal": "melihat. berpikir-saya, kepada-kita pantas mengajukan permohonan (ak.), supaya membeli baru mesin-sangrai."
+    },
+    {
+     "speaker": "Богдан:",
+     "text": "[Дуже|DU-zhe] [добре|DO-bre]. [Але|A-LE] [для|dlya] [того|TO-ho] [щоб|shchob] [отримати|o-TRY-ma-ty] [гроші|HRO-shi], [треба|TRE-ba] [заповнити|za-POV-ny-ty] [цілу|TSI-lu] [анкету|an-KE-tu].",
+     "id": "Bagus sekali. Tapi untuk mendapat uangnya, kita harus mengisi satu formulir penuh.",
+     "literal": "sangat baik. tapi untuk itu (gen.) supaya menerima uang, perlu mengisi ‹selesai› seluruh formulir (ak.)."
+    },
+    {
+     "speaker": "Ані:",
+     "text": "[Я|Ya] [вже|vzhe] [відкрила|vid-KRY-la] [її|yi-YI]. [Перше|PER-she] [питання|py-TAN-nya]: [яка|ya-KA] [мета|me-TA] [проєкту|pro-YEK-tu]?",
+     "id": "Sudah saya buka. Pertanyaan pertama: apa tujuan proyeknya?",
+     "literal": "saya sudah membuka ‹selesai› dia (ak.). pertama pertanyaan: yang-mana tujuan proyek (gen.)?"
+    },
+    {
+     "speaker": "Богдан:",
+     "text": "[Пиши|Py-SHY] [чесно|CHES-no]: [нам|nam] [потрібна|po-TRIB-na] [нова|no-VA] [машина|ma-SHY-na], [щоб|shchob] [обсмажувати|ob-SMA-zhu-va-ty] [більше|BIL'-she] [кави|KA-vy] [й|y] [витрачати|vy-tra-CHA-ty] [менше|MEN-she] [газу|HA-zu].",
+     "id": "Tulis jujur saja: kita butuh mesin baru supaya bisa menyangrai lebih banyak kopi dan memakai lebih sedikit gas.",
+     "literal": "tulislah jujur: kepada-kita diperlukan baru mesin, supaya menyangrai lebih-banyak kopi (gen.) dan memakai lebih-sedikit gas (gen.)."
+    },
+    {
+     "speaker": "Ані:",
+     "text": "[А|A] [можна|MOZH-na] [написати|na-py-SA-ty] [ще|shche] [й|y] [про|pro] [людей|lyu-DEY]? [Ми|My] [хочемо|KHO-che-mo] [взяти|VZYA-ty] [двох|dvokh] [нових|no-VYKH] [працівників|pra-tsiv-ny-KIV].",
+     "id": "Boleh juga menulis soal orang? Kita mau menerima dua pegawai baru.",
+     "literal": "dan boleh menulis juga dan tentang orang-orang (ak.)? kami ingin mengambil dua baru pegawai (ak.)."
+    },
+    {
+     "speaker": "Богдан:",
+     "text": "[Обов'язково|O-bo-vyaz-KO-vo]. [Місто|MIS-to] [дає|da-YE] [гроші|HRO-shi] [саме|SA-me] [для|dlya] [того|TO-ho], [щоб|shchob] [з'являлися|zya-VLYA-ly-sya] [нові|no-VI] [робочі|ro-BO-chi] [місця|mis-TSYA].",
+     "id": "Wajib. Kota memberi uang justru supaya muncul lapangan kerja baru.",
+     "literal": "wajib. kota memberi uang justru untuk itu (gen.), supaya muncul-lampau baru kerja-an tempat-tempat."
+    },
+    {
+     "speaker": "Ані:",
+     "text": "[Тоді|To-DI] [я|ya] [напишу|na-py-SHU] [так|tak]: «[Ми|My] [плануємо|PLA-nu-ye-mo] [навчати|nav-CHA-ty] [молодих|mo-lo-DYKH] [барист|ba-RYST], [аби|a-BY] [вони|vo-NY] [знали|ZNA-ly] [все|vse] [про|pro] [каву|KA-vu]».",
+     "id": "Kalau begitu saya tulis begini: \"Kami berencana melatih barista muda agar mereka tahu segala hal tentang kopi.\"",
+     "literal": "kalau-begitu saya akan-menulis begini: kami merencanakan melatih muda (ak.) barista (ak.), agar mereka tahu-lampau semua tentang kopi (ak.)."
+    },
+    {
+     "speaker": "Богдан:",
+     "text": "[Гарно|HAR-no]. [Тільки|TIL'-ky] [в|v] [діловому|di-lo-VO-mu] [тексті|TEK-sti] [краще|KRA-shche] «[для|dlya] [того|TO-ho] [щоб|shchob]», [а|a] [не|ne] «[аби|a-BY]».",
+     "id": "Bagus. Cuma di teks resmi lebih baik pakai \"для того щоб\", bukan \"аби\".",
+     "literal": "bagus. hanya di resmi (lok.) teks (lok.) lebih-baik untuk itu supaya, dan bukan agar."
+    },
+    {
+     "speaker": "Ані:",
+     "text": "[Зрозуміла|Zro-zu-MI-la]. [Ось|Os'] [ще|shche] [поле|PO-le] «[Кошторис|Kosh-TO-rys]». [Скільки|SKIL'-ky] [коштує|KOSH-tu-ye] [ростер|ROS-ter]?",
+     "id": "Paham. Ini ada kolom \"Anggaran\" lagi. Berapa harga mesin sangrainya?",
+     "literal": "mengerti ‹selesai›. ini lagi kolom anggaran. berapa harganya mesin-sangrai?"
+    },
+    {
+     "speaker": "Богдан:",
+     "text": "[Вісімсот|Vi-sim-SOT] [тисяч|TY-syach] [гривень|HRY-ven']. [Місто|MIS-to] [покриє|po-KRY-ye] [половину|po-lo-VY-nu], [якщо|yak-SHCHO] [нас|nas] [оберуть|o-be-RUT'].",
+     "id": "Delapan ratus ribu hryvnia. Kota menanggung separuhnya kalau kita terpilih.",
+     "literal": "delapan-ratus ribu (gen.) hryvnia (gen.). kota akan-menutup separuh (ak.), jika kami (ak.) akan-memilih-mereka."
+    },
+    {
+     "speaker": "Ані:",
+     "text": "[Щоб|Shchob] [нас|nas] [обрали|o-BRA-ly], [потрібні|po-TRIB-ni] [ще|shche] [три|try] [документи|do-ku-MEN-ty] [й|y] [ваш|vash] [підпис|PID-pys].",
+     "id": "Supaya kita terpilih, masih perlu tiga dokumen lagi dan tanda tangan Bapak.",
+     "literal": "supaya kami (ak.) memilih-lampau-mereka, diperlukan masih tiga dokumen dan Anda-punya tanda-tangan."
+    },
+    {
+     "speaker": "Богдан:",
+     "text": "[Підпишу|Pid-py-SHU] [сьогодні|syo-HOD-ni] [ж|zh]. [Тільки|TIL'-ky] [стеж|stezh], [щоб|shchob] [ми|my] [не|ne] [пропустили|pro-pus-TY-ly] [терміну|TER-mi-nu].",
+     "id": "Hari ini juga saya tanda tangani. Kamu cuma perlu jaga supaya kita tidak melewatkan tenggatnya.",
+     "literal": "akan-menandatangani hari-ini juga. hanya awasilah, supaya kami tidak melewatkan-lampau tenggat (gen.)."
+    },
+    {
+     "speaker": "Ані:",
+     "text": "[Не|Ne] [пропустимо|pro-PUS-ty-mo]: [тридцять|TRYD-tsyat'] [перше|PER-she] [березня|BE-rez-nya]. [Я|Ya] [виставлю|VYS-ta-vlyu] [нагадування|na-ha-DU-van-nya], [щоб|shchob] [не|ne] [забути|za-BU-ty].",
+     "id": "Tidak akan terlewat: tiga puluh satu Maret. Saya pasang pengingat supaya tidak lupa.",
+     "literal": "tidak akan-melewatkan-kami: tiga-puluh pertama Maret (gen.). saya akan-memasang pengingat, supaya tidak lupa ‹selesai›."
+    }
+   ],
+   "notes": [
+    "**Щоб купити: pelakunya sama.** Yang mengajukan permohonan dan yang membeli adalah orang yang sama (kita), jadi sesudah *щоб* cukup **infinitif**: *нам варто подати заявку, щоб купити новий ростер*. Persis seperti \"supaya bisa beli\" dalam bahasa Indonesia, tanpa perlu menyebut pelaku lagi.",
+    "**Щоб з'являлися: pelakunya lain, kata kerjanya lampau.** Kota memberi uang, tetapi yang \"muncul\" adalah lapangan kerja. Begitu pelakunya berganti, *щоб* diikuti **bentuk lampau**: *щоб з'являлися нові робочі місця*, *щоб нас обрали*. Bentuk lampau ini tidak berarti \"sudah\"; ia hanya bentuk wajib sesudah *щоб*. Kesalahan khas penutur Indonesia adalah memakai masa depan: *щоб з'являться* salah.",
+    "**Для того щоб: lebih tegas dan lebih resmi.** Artinya sama dengan *щоб*, tetapi terdengar lebih rapi dan menekankan tujuan: \"untuk itu, yaitu supaya …\". Koma boleh diletakkan sebelum seluruh rangkaian (*…, для того щоб отримати*) atau di tengahnya bila *для того* ingin ditonjolkan: *саме для того, щоб з'являлися…*.",
+    "**Аби: sinonim yang lebih lisan.** *Аби вони знали все про каву* = supaya mereka tahu. Di Galicia, termasuk Lviv, *аби* sangat sering terdengar dan sama sekali tidak salah. Namun dalam teks dinas пан Богдан benar: *для того щоб* atau *з метою* lebih aman. Bahasa Rusia tak punya padanan sehari-hari yang sama, jadi *аби* terasa sangat \"Ukraina\".",
+    "**Не пропустили терміну: genitif sesudah negasi.** Sesudah kata kerja yang disangkal, objek sering pindah ke **genitif**: *пропустити термін* → *не пропустити терміну*. Akusatif (*не пропустили термін*) juga diterima dalam bahasa lisan, tetapi genitif terdengar lebih rapi. *Проєкт* sekarang ditulis dengan **є** sesuai ejaan 2019; bentuk *проект* sudah usang.",
+    "**Тридцять перше березня: tanggal = urutan netral + bulan genitif.** Ukraina tidak berkata \"tiga puluh satu Maret\" melainkan \"(hari) yang ketiga puluh satu dari Maret\": *тридцять перше березня*, dibaca *TRY-dtsyat' PER-she BE-rez-nya*. Untuk \"pada tanggal\" kasusnya berubah ke genitif: *до тридцять першого березня* = paling lambat 31 Maret."
+   ],
+   "grammars": [
+    {
+     "title": "Щоб + infinitif atau щоб + lampau",
+     "body": [
+      "Tanyakan satu hal saja: apakah pelaku kalimat utama sama dengan pelaku tujuan? Jika sama, pakai infinitif. Jika berbeda, pakai bentuk lampau yang menyesuaikan diri dengan pelaku baru (jenis dan jumlahnya)."
+     ],
+     "table": {
+      "head": [
+       "Pelaku",
+       "Pola",
+       "Contoh",
+       "Arti"
+      ],
+      "rows": [
+       [
+        "sama",
+        "щоб + infinitif",
+        "*Я телефоную, щоб уточнити деталі.*",
+        "Saya menelepon untuk memastikan rinciannya."
+       ],
+       [
+        "sama, negatif",
+        "щоб не + infinitif",
+        "*Я поставлю нагадування, щоб не забути.*",
+        "Saya pasang pengingat supaya tidak lupa."
+       ],
+       [
+        "lain (dia lk.)",
+        "щоб + lampau -в",
+        "*Треба, щоб пан Богдан підписав заявку.*",
+        "Pak Bohdan perlu menandatangani permohonannya."
+       ],
+       [
+        "lain (dia pr.)",
+        "щоб + lampau -ла",
+        "*Я хочу, щоб Соломія прочитала текст.*",
+        "Saya ingin Solomiya membaca teksnya."
+       ],
+       [
+        "lain (jamak)",
+        "щоб + lampau -ли",
+        "*Місто дає гроші, щоб з'являлися робочі місця.*",
+        "Kota memberi uang supaya muncul lapangan kerja."
+       ],
+       [
+        "lain (ви)",
+        "щоб ви + lampau -ли",
+        "*Прошу, щоб ви надіслали витяг.*",
+        "Saya mohon Anda mengirimkan ekstraknya."
+       ]
+      ]
+     },
+     "after": [
+      "Salah satu jebakan: *Я хочу купити* (saya ingin membeli) memakai infinitif biasa tanpa *щоб*, tetapi *Я хочу, щоб ти купив* (saya ingin kamu membeli) wajib memakai *щоб* + lampau. Penutur Indonesia sering tergoda menulis *Я хочу ти купити*, yang tidak mungkin dalam bahasa Ukraina."
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Діалог 2 — Menelepon kantor pelayanan usaha",
+   "intro": "Selasa, 21 Maret 2028. Ani menelepon Pusat Dukungan Pengusaha milik kota untuk memastikan beberapa hal tentang dokumen. Perhatikan kata-kata yang memanggil *щоб*: *головне, щоб…*, *для того щоб…*.",
+   "lines": [
+    {
+     "speaker": "Консультантка:",
+     "text": "[Центр|Tsentr] [підтримки|pid-TRYM-ky] [підприємців|pid-pry-YEM-tsiv], [добрий|DO-bryy] [день|den']. [Слухаю|SLU-kha-yu] [вас|vas].",
+     "id": "Pusat Dukungan Pengusaha, selamat siang. Silakan.",
+     "literal": "pusat dukungan (gen.) pengusaha (gen. jmk.), baik hari. mendengarkan-saya Anda (ak.)."
+    },
+    {
+     "speaker": "Ані:",
+     "text": "[Добрий|DO-bryy] [день|den']. [Я|Ya] [телефоную|te-le-fo-NU-yu] [з|z] [компанії|kom-PA-ni-yi] «[Ява|YA-va]», [щоб|shchob] [уточнити|u-toch-NY-ty] [кілька|KIL'-ka] [питань|py-TAN'] [щодо|shcho-DO] [гранту|HRAN-tu].",
+     "id": "Selamat siang. Saya menelepon dari perusahaan Yava untuk memastikan beberapa hal soal hibah.",
+     "literal": "baik hari. saya menelepon dari perusahaan (gen.) Yava, supaya memastikan beberapa pertanyaan (gen. jmk.) mengenai hibah (gen.)."
+    },
+    {
+     "speaker": "Консультантка:",
+     "text": "[Звичайно|Zvy-CHAY-no]. [Що|Shcho] [саме|SA-me] [вас|vas] [цікавить|tsi-KA-vyt']?",
+     "id": "Tentu. Apa tepatnya yang ingin Anda ketahui?",
+     "literal": "tentu. apa tepatnya Anda (ak.) menarik-minat?"
+    },
+    {
+     "speaker": "Ані:",
+     "text": "[Чи|Chy] [треба|TRE-ba] [додавати|do-da-VA-ty] [витяг|VY-tyah] [з|z] [реєстру|re-YES-tru], [щоб|shchob] [підтвердити|pidt-VER-dy-ty], [що|shcho] [фірма|FIR-ma] [існує|is-NU-ye]?",
+     "id": "Apakah perlu melampirkan ekstrak dari daftar resmi untuk membuktikan bahwa perusahaannya ada?",
+     "literal": "apakah perlu melampirkan ekstrak dari daftar-resmi (gen.), supaya membuktikan, bahwa firma ada?"
+    },
+    {
+     "speaker": "Консультантка:",
+     "text": "[Так|Tak], [витяг|VY-tyah] [обов'язковий|o-bo-vyaz-KO-vyy]. [Головне|Ho-lov-NE], [щоб|shchob] [він|vin] [був|buv] [не|ne] [старіший|sta-RI-shyy] [за|za] [місяць|MI-syats'].",
+     "id": "Ya, ekstraknya wajib. Yang penting umurnya tidak lebih dari sebulan.",
+     "literal": "ya, ekstrak wajib. yang-utama, supaya dia adalah-lampau tidak lebih-tua dari bulan (ak.)."
+    },
+    {
+     "speaker": "Ані:",
+     "text": "[Зрозуміло|Zro-zu-MI-lo]. [А|A] [ціни|TSI-ny] [в|v] [кошторисі|kosh-TO-ry-si] [писати|py-SA-ty] [в|v] [гривнях|HRYV-nyakh] [чи|chy] [в|v] [доларах|do-LA-rakh]? [Постачальник|Pos-ta-CHAL'-nyk] [з|z] [Туреччини|Tu-RECH-chy-ny] [рахує|ra-KHU-ye] [в|v] [доларах|do-LA-rakh].",
+     "id": "Baik. Lalu harga di anggaran ditulis dalam hryvnia atau dolar? Pemasoknya dari Turki menghitung dalam dolar.",
+     "literal": "jelas. dan harga-harga di anggaran (lok.) menulis di hryvnia (lok. jmk.) atau di dolar (lok. jmk.)? pemasok dari Turki (gen.) menghitung di dolar."
+    },
+    {
+     "speaker": "Консультантка:",
+     "text": "[Лише|Ly-SHE] [в|v] [гривнях|HRYV-nyakh], [за|za] [курсом|KUR-som] [Національного|Na-tsi-o-NAL'-no-ho] [банку|BAN-ku] [на|na] [день|den'] [подачі|po-DA-chi].",
+     "id": "Hanya dalam hryvnia, dengan kurs Bank Nasional pada hari pengajuan.",
+     "literal": "hanya di hryvnia, menurut kurs (ins.) Nasional (gen.) bank (gen.) pada hari pengajuan (gen.)."
+    },
+    {
+     "speaker": "Ані:",
+     "text": "[Добре|DO-bre]. [І|I] [останнє|os-TAN-nye]: [навіщо|na-VI-shcho] [вам|vam] [лист|lyst] [підтримки|pid-TRYM-ky] [від|vid] [партнерів|part-NE-riv]?",
+     "id": "Baik. Dan yang terakhir: untuk apa Anda perlu surat dukungan dari mitra?",
+     "literal": "baik. dan yang-terakhir: untuk-apa kepada-Anda surat dukungan (gen.) dari mitra (gen. jmk.)?"
+    },
+    {
+     "speaker": "Консультантка:",
+     "text": "[Для|Dlya] [того|TO-ho] [щоб|shchob] [комісія|ko-MI-si-ya] [бачила|BA-chy-la], [що|shcho] [ваша|VA-sha] [кава|KA-va] [потрібна|po-TRIB-na] [місту|MIS-tu]. [Лист|Lyst] [може|MO-zhe] [написати|na-py-SA-ty], [наприклад|na-PRY-klad], [кав'ярня|ka-VYAR-nya] [чи|chy] [готель|ho-TEL'].",
+     "id": "Supaya panitia melihat bahwa kopi Anda dibutuhkan kota. Suratnya bisa ditulis, misalnya, oleh kafe atau hotel.",
+     "literal": "untuk itu supaya komisi melihat-lampau, bahwa Anda-punya kopi dibutuhkan kota (dat.). surat bisa menulis, misalnya, kafe atau hotel."
+    },
+    {
+     "speaker": "Ані:",
+     "text": "[Чудово|Chu-DO-vo], [я|ya] [попрошу|po-pro-SHU] [друзів|DRU-ziv] [з|z] [кав'ярні|ka-VYAR-ni] [на|na] [Ринку|RYN-ku]. [Дякую|DYA-ku-yu], [ви|vy] [дуже|DU-zhe] [допомогли|do-po-mo-HLY]!",
+     "id": "Bagus, saya akan minta teman-teman dari kafe di Alun-alun Rynok. Terima kasih, Anda sangat membantu!",
+     "literal": "bagus, saya akan-meminta teman-teman (ak.) dari kafe (gen.) di Rynok (lok.). terima-kasih, Anda sangat membantu-lampau!"
+    },
+    {
+     "speaker": "Консультантка:",
+     "text": "[Прошу|PRO-shu]. [Пишіть|Py-SHIT'], [якщо|yak-SHCHO] [будуть|BU-dut'] [питання|py-TAN-nya]. [Удачі|U-DA-chi] [із|iz] [заявкою|za-YAV-ko-yu]!",
+     "id": "Sama-sama. Silakan kirim pesan kalau ada pertanyaan. Semoga sukses dengan permohonannya!",
+     "literal": "silakan. tulislah, jika akan-ada pertanyaan-pertanyaan. keberuntungan (gen.) dengan permohonan (ins.)!"
+    }
+   ],
+   "notes": [
+    "**Я телефоную, щоб уточнити.** Pembukaan telepon resmi yang paling rapi: siapa, dari mana, untuk apa. *Уточнити* = memastikan, memperjelas; lebih sopan daripada *запитати* karena terdengar seperti kamu hanya ingin mencocokkan hal yang sudah kamu ketahui.",
+    "**Головне, щоб він був…** Kata penilai seperti *головне* (yang penting), *важливо*, *треба*, *бажано* memanggil *щоб* + lampau: *Головне, щоб витяг був свіжий*. Bahasa Indonesia cukup berkata \"yang penting umurnya…\", tanpa kata penghubung; bahasa Ukraina wajib memakai *щоб*.",
+    "**Не старіший за місяць.** Pembanding dengan *за* + akusatif (lihat A2 unit 10): *старіший за місяць* = lebih tua dari sebulan. Dalam dokumen resmi kamu juga akan membaca *не пізніше ніж за місяць* atau *давністю не більше місяця*.",
+    "**Навіщо вам…?** \"Untuk apa (bagi) Anda…?\" Datif *вам* menunjukkan siapa yang membutuhkan. Jawaban yang alami langsung dimulai dengan *Для того щоб…* atau *Щоб…*, persis seperti konsultan menjawab Ani, tanpa mengulang kata kerja.",
+    "**Прошу: \"sama-sama\" ala Lviv.** Di seluruh Ukraina orang membalas *дякую* dengan *будь ласка*. Di Galicia, *прошу* (*PRO-shu*) sangat umum untuk \"silakan\" dan \"sama-sama\", bahkan *Прошу?* untuk \"Maaf, bagaimana?\" di telepon. Ani sudah setengah tahun di Lviv, jadi telinganya terbiasa.",
+    "**Удачі із заявкою!** Ucapan harapan berbentuk genitif karena dasarnya *бажаю (вам) удачі*. Perhatikan *із*: sebelum kata yang berawal *з* atau gugus konsonan, *з* berubah menjadi *із* supaya enak diucapkan, sama seperti *у/в* di A1."
+   ],
+   "grammars": [
+    {
+     "title": "Kata-kata yang memanggil щоб",
+     "body": [
+      "Sejumlah kata kerja keinginan, permintaan, dan penilaian hampir selalu disusul *щоб* bila yang diharapkan adalah tindakan orang lain. Hafalkan sebagai paket."
+     ],
+     "table": {
+      "head": [
+       "Pemanggil",
+       "Contoh",
+       "Arti"
+      ],
+      "rows": [
+       [
+        "*хотіти, щоб*",
+        "*Я хочу, щоб ти прийшов.*",
+        "Aku ingin kamu datang."
+       ],
+       [
+        "*просити, щоб*",
+        "*Попроси, щоб вони написали лист.*",
+        "Minta mereka menulis surat."
+       ],
+       [
+        "*треба / потрібно, щоб*",
+        "*Треба, щоб ви підписали.*",
+        "Anda perlu menandatangani."
+       ],
+       [
+        "*головне / важливо, щоб*",
+        "*Головне, щоб ніхто не спізнився.*",
+        "Yang penting tak ada yang telat."
+       ],
+       [
+        "*стежити, щоб*",
+        "*Стеж, щоб кава не перегрілася.*",
+        "Jaga supaya kopinya tidak kepanasan."
+       ],
+       [
+        "*бажати, щоб*",
+        "*Бажаю, щоб усе вдалося.*",
+        "Semoga semuanya berhasil."
+       ],
+       [
+        "*сказати, щоб* (= menyuruh)",
+        "*Скажи Юркові, щоб зачекав.*",
+        "Suruh Yurko menunggu."
+       ]
+      ]
+     },
+     "after": [
+      "Bandingkan: *Скажи, що він чекає* = katakan bahwa dia sedang menunggu (menyampaikan fakta), sedangkan *Скажи, щоб він чекав* = suruh dia menunggu (perintah). Satu huruf *б* mengubah laporan menjadi perintah."
+     ]
+    }
+   ]
+  }
+ ],
+ "sections": [
+  {
+   "title": "Empat cara menyatakan tujuan",
+   "blocks": [
+    {
+     "type": "p",
+     "text": "Bahasa Indonesia punya \"supaya\", \"agar\", \"untuk\", dan \"demi\". Bahasa Ukraina juga punya beberapa pilihan, yang berbeda terutama dalam register: dari obrolan di dapur sampai formulir dewan kota. Semua pilihan *щоб*-an mengikuti aturan yang sama (infinitif untuk pelaku sama, lampau untuk pelaku lain); *з метою* justru diikuti kata benda atau infinitif."
+    },
+    {
+     "type": "tabel",
+     "head": [
+      "Bentuk",
+      "Register",
+      "Contoh",
+      "Arti"
+     ],
+     "rows": [
+      [
+       "*щоб*",
+       "netral, di mana saja",
+       "*Я прийшла, щоб допомогти.*",
+       "Aku datang untuk membantu."
+      ],
+      [
+       "*аби*",
+       "lisan, sastra, khas Galicia",
+       "*Говори голосніше, аби всі чули.*",
+       "Bicara lebih keras supaya semua dengar."
+      ],
+      [
+       "*для того щоб*",
+       "menekankan tujuan, rapi",
+       "*Ми працюємо для того, щоб люди пили добру каву.*",
+       "Kami bekerja supaya orang minum kopi yang enak."
+      ],
+      [
+       "*з метою* + gen.",
+       "dinas, tertulis",
+       "*з метою створення робочих місць*",
+       "dengan tujuan menciptakan lapangan kerja"
+      ],
+      [
+       "*з метою* + infinitif",
+       "dinas, tertulis",
+       "*з метою розширити виробництво*",
+       "dengan tujuan memperluas produksi"
+      ],
+      [
+       "*щоб не*",
+       "tujuan negatif",
+       "*Візьми парасолю, щоб не змокнути.*",
+       "Bawa payung supaya tidak basah."
+      ],
+      [
+       "*аби не*",
+       "\"asal jangan\", lisan",
+       "*Аби тільки не запізнитися!*",
+       "Asal jangan terlambat saja!"
+      ]
+     ]
+    },
+    {
+     "type": "kotak",
+     "title": "Ingat",
+     "items": [
+      "*Щоб* ditulis serangkai. *Що б* (dua kata) artinya lain: *Що б ти хотіла?* = apa yang kamu inginkan?",
+      "Sebelum *щоб*, *аби*, dan *для того щоб* selalu ada koma.",
+      "Sesudah *щоб* tidak pernah ada bentuk masa kini atau masa depan: *щоб він прийшов*, bukan *щоб він прийде*."
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Lviv, kota kopi dan usaha kecil",
+   "blocks": [
+    {
+     "type": "p",
+     "text": "Lviv sering disebut ibu kota kopi Ukraina. Warga kota suka bercerita tentang Юрій Кульчицький, lelaki dari daerah dekat Sambir yang menurut legenda membuka salah satu kedai kopi pertama di Wina pada tahun 1683. Benar tidaknya legenda itu, kafe di pusat kota tua memang ada di setiap sudut, dari *Віденська кав'ярня* yang berdiri sejak zaman Austria sampai kedai-kedai kecil pemilik sangrai sendiri seperti «Ява». Kota ini juga rajin mendukung usaha kecil lewat hibah dan pusat konsultasi, sehingga kosakata formulir berikut berguna bagi siapa pun yang bekerja di sana."
+    },
+    {
+     "type": "tabel",
+     "head": [
+      "Ukraina",
+      "Indonesia"
+     ],
+     "rows": [
+      [
+       "заявка",
+       "permohonan, aplikasi"
+      ],
+      [
+       "анкета",
+       "formulir isian"
+      ],
+      [
+       "кошторис",
+       "anggaran rinci"
+      ],
+      [
+       "витяг з реєстру",
+       "ekstrak dari daftar resmi usaha"
+      ],
+      [
+       "лист підтримки",
+       "surat dukungan"
+      ],
+      [
+       "кінцевий термін",
+       "tenggat, batas waktu"
+      ],
+      [
+       "підпис і печатка",
+       "tanda tangan dan stempel"
+      ],
+      [
+       "грантова комісія",
+       "panitia penilai hibah"
+      ],
+      [
+       "співфінансування",
+       "pembiayaan bersama"
+      ],
+      [
+       "звіт про використання коштів",
+       "laporan penggunaan dana"
+      ]
+     ]
+    },
+    {
+     "type": "list",
+     "items": [
+      "Di formulir resmi, *мета* (tujuan) biasanya ditulis dengan kata benda: *мета проєкту: розширення виробництва*.",
+      "*Кошти* (dana) hampir selalu jamak dalam bahasa dinas: *власні кошти* = dana sendiri.",
+      "Hibah kota biasanya menuntut *співфінансування*: usaha menanggung sebagian biaya sendiri."
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Ulangan berjenjang — unit 14",
+   "blocks": [
+    {
+     "type": "p",
+     "text": "Tutup kolom Ukraina, baca terjemahan Indonesianya, lalu susun kembali kalimatnya dari ingatan."
+    },
+    {
+     "type": "tabel",
+     "head": [
+      "Bahasa Indonesia",
+      "Українська",
+      "Baca"
+     ],
+     "rows": [
+      [
+       "Di Hari Valentine? Memangnya boleh begitu?",
+       "У День закоханих? Хіба так можна?",
+       "*U Den' za-KO-kha-nykh Khi-BA tak MOZH-na*"
+      ],
+      [
+       "Ternyata boleh. Padahal aku kan merajut sweter untuknya dua bulan!",
+       "Виявляється, можна. А я ж йому два місяці светр плела!",
+       "*VY-ya-vlya-ye-tsya MOZH-na A ya zh yo-MU dva MI-sya-tsi svetr ple-LA*"
+      ],
+      [
+       "Nah, kan! Berarti kamu lebih kuat daripada yang kamu kira.",
+       "От бачиш! Значить, ти сильніша, ніж думаєш.",
+       "*Ot BA-chysh ZNA-chyt' ty syl'-NI-sha nizh DU-ma-yesh*"
+      ],
+      [
+       "Memangnya saya pernah berbohong?",
+       "Хіба я колись казала неправду?",
+       "*Khi-BA ya ko-LYS' ka-ZA-la ne-PRAV-du*"
+      ],
+      [
+       "Kalian berdua akhirnya berhasil juga membuat saya tertawa.",
+       "Ви обидві мене таки розсмішили.",
+       "*Vy o-BYD-vi me-NE ta-KY roz-smi-SHY-ly*"
+      ]
+     ]
+    }
+   ]
+  }
+ ],
+ "vocab": [
+  {
+   "uk": "зая́вка",
+   "baca": "za-YAV-ka",
+   "id": "permohonan, aplikasi (*подати заявку* = mengajukan permohonan)"
+  },
+  {
+   "uk": "грант",
+   "baca": "hrant",
+   "id": "hibah"
+  },
+  {
+   "uk": "анке́та",
+   "baca": "an-KE-ta",
+   "id": "formulir isian, kuesioner"
+  },
+  {
+   "uk": "запо́внювати / запо́внити",
+   "baca": "za-POV-nyu-va-ty / za-POV-ny-ty",
+   "id": "mengisi (formulir)"
+  },
+  {
+   "uk": "мета́ (gen. мети́)",
+   "baca": "me-TA",
+   "id": "tujuan (*з метою* = dengan tujuan)"
+  },
+  {
+   "uk": "проє́кт",
+   "baca": "pro-YEKT",
+   "id": "proyek (ejaan 2019 dengan є)"
+  },
+  {
+   "uk": "підприє́мство",
+   "baca": "pid-pry-YEM-stvo",
+   "id": "perusahaan, badan usaha"
+  },
+  {
+   "uk": "підприє́мець",
+   "baca": "pid-pry-YE-mets'",
+   "id": "pengusaha"
+  },
+  {
+   "uk": "підтри́мка",
+   "baca": "pid-TRYM-ka",
+   "id": "dukungan"
+  },
+  {
+   "uk": "міська́ ра́да",
+   "baca": "mis'-KA RA-da",
+   "id": "dewan kota, pemerintah kota"
+  },
+  {
+   "uk": "кошто́рис",
+   "baca": "kosh-TO-rys",
+   "id": "anggaran rinci"
+  },
+  {
+   "uk": "ро́стер",
+   "baca": "ROS-ter",
+   "id": "mesin sangrai kopi; juga penyangrai (orang)"
+  },
+  {
+   "uk": "обсма́жувати / обсма́жити",
+   "baca": "ob-SMA-zhu-va-ty / ob-SMA-zhy-ty",
+   "id": "menyangrai"
+  },
+  {
+   "uk": "витрача́ти / ви́тратити",
+   "baca": "vy-tra-CHA-ty / VY-tra-ty-ty",
+   "id": "menghabiskan, memakai (uang, gas, waktu)"
+  },
+  {
+   "uk": "працівни́к",
+   "baca": "pra-tsiv-NYK",
+   "id": "pegawai, pekerja"
+  },
+  {
+   "uk": "робо́че мі́сце",
+   "baca": "ro-BO-che MIS-tse",
+   "id": "lapangan kerja, posisi kerja"
+  },
+  {
+   "uk": "те́рмін",
+   "baca": "TER-min",
+   "id": "tenggat, jangka waktu (*кінцевий термін*)"
+  },
+  {
+   "uk": "пі́дпис",
+   "baca": "PID-pys",
+   "id": "tanda tangan"
+  },
+  {
+   "uk": "підпи́сувати / підписа́ти",
+   "baca": "pid-PY-su-va-ty / pid-py-SA-ty",
+   "id": "menandatangani"
+  },
+  {
+   "uk": "ви́тяг",
+   "baca": "VY-tyah",
+   "id": "ekstrak, kutipan resmi (*витяг з реєстру*)"
+  },
+  {
+   "uk": "уточня́ти / уточни́ти",
+   "baca": "u-toch-NYA-ty / u-toch-NY-ty",
+   "id": "memastikan, memperjelas"
+  },
+  {
+   "uk": "постача́льник",
+   "baca": "pos-ta-CHAL'-nyk",
+   "id": "pemasok"
+  },
+  {
+   "uk": "стежи́ти, щоб",
+   "baca": "ste-ZHY-ty, shchob",
+   "id": "menjaga supaya, mengawasi agar"
+  },
+  {
+   "uk": "аби́",
+   "baca": "a-BY",
+   "id": "supaya, agar (lisan); asal"
+  },
+  {
+   "uk": "нагаду́вання",
+   "baca": "na-ha-DU-van-nya",
+   "id": "pengingat"
+  }
+ ],
+ "exercises": [
+  {
+   "prompt": "Terjemahkan ke bahasa Ukraina.",
+   "items": [
+    "Kami mengajukan permohonan untuk membeli mesin sangrai baru.",
+    "Saya menelepon untuk memastikan beberapa pertanyaan.",
+    "Pak Bohdan perlu menandatangani permohonannya.",
+    "Kota memberi uang supaya muncul lapangan kerja baru.",
+    "Saya pasang pengingat supaya tidak lupa.",
+    "Yang penting ekstraknya tidak lebih tua dari sebulan."
+   ]
+  },
+  {
+   "prompt": "Isi titik-titik dengan bentuk yang tepat. Petunjuk ada di dalam kurung.",
+   "items": [
+    "Ми подаємо заявку, щоб ____ новий ростер. (купити)",
+    "Треба, щоб пан Богдан ____ документи. (підписати)",
+    "Я хочу, щоб Соломія ____ наш текст. (прочитати)",
+    "Місто дає гроші, щоб ____ нові робочі місця. (з'являтися)",
+    "Візьми парасолю, щоб не ____. (змокнути)",
+    "Головне, щоб ми не ____ терміну. (пропустити)",
+    "Ми навчаємо барист, ____ вони знали все про каву. (supaya, lisan)"
+   ]
+  },
+  {
+   "prompt": "Gabungkan dua kalimat dengan *щоб*. Perhatikan apakah pelakunya sama. Contoh: *Я телефоную. Я хочу уточнити деталі.* → *Я телефоную, щоб уточнити деталі.*",
+   "items": [
+    "Ми купуємо ростер. Ми хочемо обсмажувати більше кави.",
+    "Я пишу лист. Кав'ярня має підтримати нашу заявку.",
+    "Ані ставить нагадування. Вона не хоче забути про термін.",
+    "Пан Богдан просить Юрка. Юрко має перевірити машину.",
+    "Ми беремо нових працівників. Ми хочемо відкрити другу кав'ярню.",
+    "Консультантка пояснює все детально. Ані має все зрозуміти."
+   ]
+  },
+  {
+   "prompt": "Susun jadi kalimat yang benar.",
+   "items": [
+    "щоб / купити / ми подаємо / новий ростер / заявку",
+    "треба / пан Богдан / щоб / підписав / заявку",
+    "для того щоб / комісія бачила / потрібен лист / що наша кава / потрібна місту",
+    "головне / не старіший / щоб / витяг був / за місяць",
+    "я виставлю / щоб / нагадування / не забути"
+   ]
+  }
+ ],
+ "answers": [
+  "Ми подаємо заявку, щоб купити новий ростер. — Я телефоную, щоб уточнити кілька питань. — Треба, щоб пан Богдан підписав заявку. — Місто дає гроші, щоб з'являлися нові робочі місця. — Я виставлю нагадування, щоб не забути. — Головне, щоб витяг був не старіший за місяць.",
+  "купити — підписав — прочитала — з'являлися — змокнути — пропустили — аби",
+  "Ми купуємо ростер, щоб обсмажувати більше кави. — Я пишу лист, щоб кав'ярня підтримала нашу заявку. — Ані ставить нагадування, щоб не забути про термін. — Пан Богдан просить Юрка, щоб він перевірив машину. — Ми беремо нових працівників, щоб відкрити другу кав'ярню. — Консультантка пояснює все детально, щоб Ані все зрозуміла.",
+  "Ми подаємо заявку, щоб купити новий ростер. — Треба, щоб пан Богдан підписав заявку. — Потрібен лист, для того щоб комісія бачила, що наша кава потрібна місту. — Головне, щоб витяг був не старіший за місяць. — Я виставлю нагадування, щоб не забути."
+ ]
+}

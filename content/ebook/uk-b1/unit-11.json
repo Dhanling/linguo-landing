@@ -1,0 +1,681 @@
+{
+ "title": "Dua belas hidangan Святвечір — bertanya apakah, kapan, dan bagaimana secara tak langsung",
+ "title_target": "Скажіть, будь ласка, скільки страв ми готуємо?",
+ "goal": "Menanyakan sesuatu dengan halus dan melaporkan pertanyaan orang lain lewat kalimat tak langsung: *Я не впевнена, чи це правда*, *Розкажіть, як ви варите кутю*, *Ти зрозуміла, про що вони співали?*",
+ "bekal": [
+  "kamu bisa menyelipkan pertanyaan ke dalam kalimat lain dengan *чи, що, як, коли, чому, скільки* tanpa mengubah urutan kata",
+  "kamu bisa melaporkan pertanyaan orang lain: *Пані Ірина питала, чи ти їв кутю*",
+  "kamu bisa bercerita tentang Святвечір: dua belas hidangan, кутя, bintang pertama, dan колядки"
+ ],
+ "dialogs": [
+  {
+   "title": "Діалог 1 — Menunggu bintang pertama",
+   "intro": "Jumat, 24 Desember 2027, pukul empat sore, dapur apartemen tua pani Iryna di Lviv. Ani merayakan Святвечір pertamanya bersama induk semangnya, sementara Мурчик mengawasi ikan di meja. Perhatikan bagaimana setiap pertanyaan Ani dibungkus: *скажіть, скільки…*, *я не впевнена, чи…*, *ви не пам'ятаєте, коли…*",
+   "lines": [
+    {
+     "speaker": "Ані:",
+     "text": "[Пані|PA-ni] [Ірино|I-RY-no], [скажіть|ska-ZHIT'], [будь|bud'] [ласка|LAS-ka], [скільки|SKIL'-ky] [страв|strav] [ми|my] [готуємо|ho-TU-ye-mo] [сьогодні|syo-HOD-ni]?",
+     "id": "Pani Iryna, tolong beri tahu, berapa hidangan yang kita masak hari ini?",
+     "literal": "nyonya Iryna (vok.), katakan (Anda), mohon, berapa hidangan (gen. jmk) kami memasak hari-ini?"
+    },
+    {
+     "speaker": "Ірина:",
+     "text": "[Дванадцять|Dva-NAD-tsyat'], [як|yak] [і|i] [в|v] [кожній|KOZH-niy] [українській|u-kra-YIN-s'kiy] [родині|ro-DY-ni]. [А|A] [ти|ty] [знаєш|ZNA-yesh], [чому|cho-MU] [саме|SA-me] [дванадцять|dva-NAD-tsyat']?",
+     "id": "Dua belas, seperti di setiap keluarga Ukraina. Kamu tahu kenapa harus dua belas?",
+     "literal": "dua-belas, seperti juga di setiap Ukraina-an keluarga (lok.). dan kamu tahu, mengapa tepat dua-belas?"
+    },
+    {
+     "speaker": "Ані:",
+     "text": "[Андрій|An-DRIY] [казав|ka-ZAV], [що|shcho] [це|tse] [дванадцять|dva-NAD-tsyat'] [апостолів|a-POS-to-liv]. [Але|A-LE] [я|ya] [не|ne] [впевнена|VPEV-ne-na], [чи|chy] [це|tse] [правда|PRAV-da].",
+     "id": "Kata Andriy, itu dua belas rasul. Tapi saya tidak yakin apakah itu benar.",
+     "literal": "Andriy berkata, bahwa ini dua-belas rasul (gen. jmk). tapi saya tidak yakin, apakah ini benar."
+    },
+    {
+     "speaker": "Ірина:",
+     "text": "[Так|Tak] [кажуть|KA-zhut']. [А|A] [ще|shche] [кажуть|KA-zhut'], [що|shcho] [це|tse] [дванадцять|dva-NAD-tsyat'] [місяців|MI-sya-tsiv] [року|RO-ku]. [Обидва|O-BYD-va] [пояснення|po-YAS-nen-nya] [добрі|DO-bri].",
+     "id": "Orang bilang begitu. Ada juga yang bilang itu dua belas bulan dalam setahun. Dua-duanya penjelasan yang bagus.",
+     "literal": "begitu (mereka)-berkata. dan lagi (mereka)-berkata, bahwa ini dua-belas bulan (gen. jmk) tahun (gen.). kedua penjelasan baik."
+    },
+    {
+     "speaker": "Ані:",
+     "text": "[А|A] [м'ясо|MYA-so] [буде|BU-de]? [Я|Ya] [не|ne] [зрозуміла|zro-zu-MI-la], [чому|cho-MU] [на|na] [столі|sto-LI] [тільки|TIL'-ky] [риба|RY-ba].",
+     "id": "Daging ada? Saya tidak mengerti kenapa di meja cuma ada ikan.",
+     "literal": "dan daging akan-ada? saya tidak mengerti‹selesai›, mengapa di meja (lok.) hanya ikan."
+    },
+    {
+     "speaker": "Ірина:",
+     "text": "[Бо|Bo] [сьогодні|syo-HOD-ni] [ще|shche] [піст|pist]. [Усі|U-SI] [страви|STRA-vy] [пісні|pis-NI]: [без|bez] [м'яса|MYA-sa], [без|bez] [молока|mo-lo-KA], [без|bez] [яєць|YA-yets'].",
+     "id": "Karena hari ini masih masa puasa. Semua hidangannya tanpa bahan hewani: tanpa daging, tanpa susu, tanpa telur.",
+     "literal": "karena hari-ini masih puasa. semua hidangan puasa-an: tanpa daging (gen.), tanpa susu (gen.), tanpa telur (gen. jmk)."
+    },
+    {
+     "speaker": "Ані:",
+     "text": "[Тоді|To-DI] [розкажіть|roz-ka-ZHIT'], [як|yak] [ви|vy] [варите|VA-ry-te] [кутю|ku-TYU].",
+     "id": "Kalau begitu ceritakan bagaimana Anda memasak kutya.",
+     "literal": "kalau-begitu ceritakan (Anda), bagaimana Anda merebus kutya (ak.)."
+    },
+    {
+     "speaker": "Ірина:",
+     "text": "[Просто|PROS-to]. [Варимо|VA-ry-mo] [пшеницю|pshe-NY-tsyu], [а|a] [потім|PO-tim] [додаємо|do-da-YE-mo] [мак|mak], [мед|med], [горіхи|ho-RI-khy] [й|y] [родзинки|ro-DZYN-ky].",
+     "id": "Gampang. Kita rebus gandum, lalu tambahkan biji poppy, madu, kacang, dan kismis.",
+     "literal": "sederhana. (kami)-merebus gandum (ak.), dan lalu (kami)-menambahkan poppy, madu, kacang-kacang dan kismis."
+    },
+    {
+     "speaker": "Ані:",
+     "text": "[А|A] [ви|vy] [не|ne] [пам'ятаєте|pa-mya-TA-ye-te], [коли|ko-LY] [ми|my] [сядемо|SYA-de-mo] [за|za] [стіл|stil]?",
+     "id": "Anda ingat kapan kita akan duduk makan?",
+     "literal": "dan Anda tidak ingat, kapan kami akan-duduk‹selesai› ke meja?"
+    },
+    {
+     "speaker": "Ірина:",
+     "text": "[Коли|Ko-LY] [на|na] [небі|NE-bi] [з'явиться|ZYA-vy-tsya] [перша|PER-sha] [зірка|ZIR-ka]. [Подивися|Po-dy-VY-sya] [у|u] [вікно|vik-NO] [і|i] [скажи|ska-ZHY] [мені|me-NI], [чи|chy] [вона|vo-NA] [вже|vzhe] [є|ye].",
+     "id": "Kalau bintang pertama sudah muncul di langit. Lihat ke jendela dan bilang ke saya apakah sudah ada.",
+     "literal": "ketika di langit (lok.) akan-muncul pertama bintang. lihatlah ke jendela dan katakan aku (dat.), apakah ia sudah ada."
+    },
+    {
+     "speaker": "Ані:",
+     "text": "[Ще|Shche] [ні|ni], [надворі|nad-VO-ri] [дуже|DU-zhe] [хмарно|KHMAR-no]. [Цікаво|Tsi-KA-vo], [що|shcho] [ми|my] [робитимемо|ro-BY-ty-me-mo], [якщо|yak-SHCHO] [зірки|ZIR-ky] [взагалі|vza-ha-LI] [не|ne] [буде|BU-de] [видно|VYD-no].",
+     "id": "Belum, di luar mendung sekali. Saya penasaran apa yang akan kita lakukan kalau bintangnya sama sekali tidak kelihatan.",
+     "literal": "masih tidak, di-luar sangat mendung. menarik, apa kami akan-melakukan, kalau bintang (gen.) sama-sekali tidak akan-ada terlihat."
+    },
+    {
+     "speaker": "Ірина:",
+     "text": "[Тоді|To-DI] [почекаємо|po-CHE-ka-ye-mo] [до|do] [шостої|SHOS-to-yi] [й|y] [сядемо|SYA-de-mo] [без|bez] [зірки|ZIR-ky]. [Бог|Boh] [простить|PROS-tyt'].",
+     "id": "Kalau begitu kita tunggu sampai jam enam, lalu duduk tanpa bintang. Tuhan akan memaafkan.",
+     "literal": "kalau-begitu (kami)-akan-menunggu sampai keenam (gen.) dan (kami)-akan-duduk tanpa bintang (gen.). Tuhan akan-memaafkan."
+    },
+    {
+     "speaker": "Ані:",
+     "text": "[Добре|DO-bre]. [І|I] [ще|shche] [одне|od-NE]: [ви|vy] [не|ne] [знаєте|ZNA-ye-te], [чи|chy] [прийдуть|pryy-DUT'] [сьогодні|syo-HOD-ni] [колядники|ko-lyad-ny-KY]?",
+     "id": "Baik. Satu lagi: Anda tahu apakah para pengidung kolyadka akan datang malam ini?",
+     "literal": "baik. dan lagi satu: Anda tidak tahu, apakah akan-datang hari-ini pengidung-kolyadka (jmk)?"
+    },
+    {
+     "speaker": "Ірина:",
+     "text": "[Прийдуть|Pryy-DUT'], [аякже|a-YAK-zhe]! [Сусідські|Su-SID-s'ki] [діти|DI-ty] [щороку|shcho-RO-ku] [питають|py-TA-yut'], [чи|chy] [можна|MOZH-na] [в|v] [нас|nas] [заколядувати|za-ko-lya-du-VA-ty].",
+     "id": "Pasti datang, tentu saja! Anak-anak tetangga tiap tahun bertanya apakah boleh berkolyadka di rumah kita.",
+     "literal": "akan-datang, tentu-saja! tetangga-an anak-anak tiap-tahun bertanya, apakah boleh di kami (gen.) berkolyadka‹selesai›."
+    }
+   ],
+   "notes": [
+    "**Скажіть, скільки страв ми готуємо.** Pertanyaan tak langsung dalam bahasa Ukraina sangat mudah: ambil pertanyaan langsungnya, taruh di belakang kata kerja seperti *скажіть, знаєш, не пам'ятаю*, beri koma, selesai. Urutan kata tidak berubah dan tidak ada kata tambahan. Bandingkan dengan bahasa Inggris yang harus membalik urutan (*how many dishes we cook*).",
+    "**Я не впевнена, чи це правда.** Untuk pertanyaan ya-tidak, kata penghubungnya **чи** = apakah. Dalam obrolan Indonesia kata *apakah* sering hilang (*aku nggak tahu itu benar atau nggak*), tapi dalam bahasa Ukraina *чи* tidak boleh dibuang. Jebakan kedua: jangan memakai *якщо* (jika) untuk arti *apakah*, meskipun bahasa Inggris memakai *if* untuk keduanya.",
+    "**Коли ми сядемо за стіл?** Kala di dalam pertanyaan tak langsung mengikuti kenyataan, bukan kalimat induknya. Jadi *Вона запитала, коли ми сядемо* (dia bertanya kapan kita akan duduk), bukan bentuk lampau seperti di bahasa Inggris. Ini justru sama dengan bahasa Indonesia. *Сісти за стіл* = duduk ke meja, yaitu mulai makan bersama.",
+    "**Піст, пісні страви.** Святвечір jatuh di akhir masa puasa Natal, jadi keduabelas hidangan dibuat tanpa daging, susu, dan telur; ikan boleh. Kata sifatnya **пісний** (*pis-NY-y*): *пісний борщ* = borsch tanpa daging. Sejak 2023 Ukraina merayakan Natal pada 25 Desember, jadi Святвечір adalah malam 24 Desember.",
+    "**Перша зірка.** Menurut tradisi, keluarga baru duduk makan ketika bintang pertama muncul, pengingat bintang Betlehem. Kalau langit mendung, orang tidak kehilangan akal: *Бог простить* (Tuhan akan memaafkan) adalah kelakar khas orang tua yang santai soal aturan.",
+    "**Прийдуть, аякже!** *Аякже* (*a-YAK-zhe*) = tentu saja, mana mungkin tidak; lebih hangat dan lebih lisan daripada *звичайно*. **Колядники** adalah anak-anak atau pemuda yang berkeliling dari rumah ke rumah menyanyikan **колядки** (lagu Natal). Kata kerjanya *колядувати*, dan bentuk sempurnanya *заколядувати* = menyanyikan kolyadka di satu rumah."
+   ],
+   "grammars": [
+    {
+     "title": "Pertanyaan langsung menjadi tak langsung",
+     "body": [
+      "Pertanyaan asli dipindahkan utuh ke belakang kalimat induk, dipisah koma. Kata tanya tetap, urutan kata tetap, kala tetap. Hanya pertanyaan ya-tidak yang butuh kata tambahan: *чи*."
+     ],
+     "table": {
+      "head": [
+       "Kata tanya",
+       "Pertanyaan langsung",
+       "Kalimat tak langsung",
+       "Arti"
+      ],
+      "rows": [
+       [
+        "чи",
+        "Це правда?",
+        "Я не впевнена, чи це правда.",
+        "Aku tidak yakin apakah itu benar."
+       ],
+       [
+        "скільки",
+        "Скільки страв ми готуємо?",
+        "Скажіть, скільки страв ми готуємо.",
+        "Katakan berapa hidangan yang kita masak."
+       ],
+       [
+        "як",
+        "Як ви варите кутю?",
+        "Розкажіть, як ви варите кутю.",
+        "Ceritakan bagaimana Anda memasak kutya."
+       ],
+       [
+        "коли",
+        "Коли ми сядемо за стіл?",
+        "Ви не пам'ятаєте, коли ми сядемо за стіл?",
+        "Anda ingat kapan kita duduk makan?"
+       ],
+       [
+        "чому",
+        "Чому саме дванадцять?",
+        "Ти знаєш, чому саме дванадцять?",
+        "Kamu tahu kenapa harus dua belas?"
+       ],
+       [
+        "що",
+        "Що ми робитимемо?",
+        "Цікаво, що ми робитимемо.",
+        "Penasaran apa yang akan kita lakukan."
+       ],
+       [
+        "де",
+        "Де зірка?",
+        "Подивися, де зірка.",
+        "Lihat di mana bintangnya."
+       ]
+      ]
+     },
+     "after": [
+      "Dalam bahasa Rusia, pertanyaan ya-tidak tak langsung memakai partikel *ли* di belakang kata pertama. Bahasa Ukraina tidak: cukup *чи* di depan, lalu kalimat biasa."
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Діалог 2 — Telepon dari Poltava",
+   "intro": "Malam yang sama, pukul sembilan. Makan malam sudah selesai, para колядники sudah pulang membawa permen. Andriy, yang merayakan Святвечір bersama keluarganya di Poltava, menelepon lewat video. Perhatikan cara Ani melaporkan pertanyaan pani Iryna: *Пані Ірина питала, чи ти…*",
+   "lines": [
+    {
+     "speaker": "Андрій:",
+     "text": "[Христос|Khrys-TOS] [народився|na-ro-DYV-sya], [Анечко|A-nech-ko]! [Ну|Nu], [розкажи|roz-ka-ZHY], [як|yak] [пройшов|proy-SHOV] [твій|tviy] [перший|PER-shyy] [Святвечір|Svyat-VE-chir]?",
+     "id": "Kristus lahir, Anechka! Nah, ceritakan, bagaimana Святвечір pertamamu?",
+     "literal": "Kristus lahir, Anechka (vok.)! nah, ceritakan, bagaimana berlalu milikmu pertama Malam-Suci?"
+    },
+    {
+     "speaker": "Ані:",
+     "text": "[Славімо|SLA-vi-mo] [Його|Yo-HO]! [Чудово|Chu-DO-vo]. [Пані|PA-ni] [Ірина|I-RY-na] [питала|py-TA-la], [чи|chy] [ти|ty] [теж|tezh] [їв|yiv] [сьогодні|syo-HOD-ni] [кутю|ku-TYU].",
+     "id": "Mari memuliakan-Nya! Luar biasa. Pani Iryna tanya apakah kamu juga makan kutya hari ini.",
+     "literal": "marilah-memuliakan Dia! luar-biasa. nyonya Iryna bertanya, apakah kamu juga makan hari-ini kutya (ak.)."
+    },
+    {
+     "speaker": "Андрій:",
+     "text": "[Звичайно|Zvy-CHAY-no]! [Скажи|Ska-ZHY] [їй|yiy], [що|shcho] [мама|MA-ma] [варить|VA-ryt'] [кутю|ku-TYU] [за|za] [рецептом|re-TSEP-tom] [баби|BA-by] [Ганни|HAN-ny].",
+     "id": "Tentu saja! Bilang ke beliau, ibuku memasak kutya pakai resep Nenek Hanna.",
+     "literal": "tentu! katakan dia (dat.), bahwa ibu merebus kutya menurut resep (ins.) nenek Hanna (gen.)."
+    },
+    {
+     "speaker": "Ані:",
+     "text": "[Скажу|Ska-ZHU]. [А|A] [я|ya] [й|y] [не|ne] [знала|ZNA-la], [що|shcho] [колядники|ko-lyad-ny-KY] [ходять|KHO-dyat'] [із|iz] [зіркою|ZIR-ko-yu]. [Вони|Vo-NY] [співали|spi-VA-ly] «[Бог|Boh] [предвічний|pred-VICH-nyy]».",
+     "id": "Nanti kusampaikan. Aku malah tidak tahu kalau pengidung kolyadka berkeliling membawa bintang. Mereka menyanyikan «Бог предвічний».",
+     "literal": "(aku)-akan-bilang. dan aku bahkan tidak tahu, bahwa pengidung-kolyadka berjalan dengan bintang (ins.). mereka menyanyi «Tuhan kekal»."
+    },
+    {
+     "speaker": "Андрій:",
+     "text": "[А|A] [ти|ty] [зрозуміла|zro-zu-MI-la], [про|pro] [що|shcho] [вони|vo-NY] [співали|spi-VA-ly]?",
+     "id": "Kamu mengerti mereka menyanyi tentang apa?",
+     "literal": "dan kamu mengerti‹selesai›, tentang apa mereka menyanyi?"
+    },
+    {
+     "speaker": "Ані:",
+     "text": "[Не|Ne] [все|vse]. [Я|Ya] [запитала|za-py-TA-la] [пані|PA-ni] [Ірину|I-RY-nu], [що|shcho] [означає|oz-na-CHA-ye] «[предвічний|pred-VICH-nyy]», [і|i] [вона|vo-NA] [пояснила|po-yas-NY-la]: [той|toy], [хто|khto] [існує|is-NU-ye] [завжди|zav-ZHDY].",
+     "id": "Tidak semuanya. Aku tanya pani Iryna apa arti «предвічний», dan beliau menjelaskan: yang ada sejak selama-lamanya.",
+     "literal": "tidak semua. aku bertanya nyonya Iryna (ak.), apa berarti «kekal», dan dia menjelaskan: itu, siapa ada selalu."
+    },
+    {
+     "speaker": "Андрій:",
+     "text": "[Ти|Ty] [вже|vzhe] [говориш|ho-VO-rysh], [як|yak] [справжня|SPRAV-zhnya] [львів'янка|l'vi-VYAN-ka].",
+     "id": "Kamu sudah bicara seperti orang Lviv asli.",
+     "literal": "kamu sudah berbicara, seperti sejati perempuan-Lviv."
+    },
+    {
+     "speaker": "Ані:",
+     "text": "[Ще|Shche] [ні|ni]. [Але|A-LE] [скажи|ska-ZHY] [мені|me-NI] [чесно|CHES-no]: [коли|ko-LY] [ти|ty] [приїдеш|pry-YI-desh] [до|do] [Львова|L'VO-va]?",
+     "id": "Belum. Tapi bilang jujur: kapan kamu datang ke Lviv?",
+     "literal": "masih tidak. tapi katakan aku (dat.) jujur: kapan kamu akan-datang ke Lviv (gen.)?"
+    },
+    {
+     "speaker": "Андрій:",
+     "text": "[Ще|Shche] [не|ne] [знаю|ZNA-yu], [чи|chy] [дадуть|da-DUT'] [мені|me-NI] [відпустку|vid-PUST-ku] [в|v] [січні|SICH-ni].",
+     "id": "Aku belum tahu apakah aku akan dapat cuti bulan Januari.",
+     "literal": "masih tidak (aku)-tahu, apakah (mereka)-akan-memberi aku (dat.) cuti (ak.) di Januari (lok.)."
+    },
+    {
+     "speaker": "Ані:",
+     "text": "[Тоді|To-DI] [запитай|za-py-TAY] [свого|svo-HO] [керівника|ke-riv-ny-KA], [коли|ko-LY] [можна|MOZH-na] [взяти|VZYA-ty] [хоч|khoch] [кілька|KIL'-ka] [днів|dniv].",
+     "id": "Kalau begitu tanya atasanmu kapan kamu bisa ambil cuti walau beberapa hari.",
+     "literal": "kalau-begitu tanyakan milik-sendiri pimpinan (ak.), kapan boleh mengambil walau beberapa hari (gen. jmk)."
+    },
+    {
+     "speaker": "Андрій:",
+     "text": "[Обов'язково|O-bo-vyaz-KO-vo] [запитаю|za-py-TA-yu]. [А|A] [тепер|te-PER] [передай|pe-re-DAY] [пані|PA-ni] [Ірині|I-RY-ni] [вітання|VI-tan-nya] [від|vid] [нашої|NA-sho-yi] [родини|ro-DY-ny]!",
+     "id": "Pasti kutanyakan. Sekarang sampaikan salam dari keluarga kami untuk pani Iryna!",
+     "literal": "pasti (aku)-akan-bertanya. dan sekarang sampaikan nyonya Iryna (dat.) salam dari kami-punya keluarga (gen.)!"
+    }
+   ],
+   "notes": [
+    "**Христос народився! Славімо Його!** Salam Natal yang wajib dibalas dengan pasangan tetapnya, seperti salam dan jawabannya dalam bahasa Arab. Dipakai sejak Святвечір sampai Водохреще (6 Januari). Versi yang lebih netral: *З Різдвом Христовим!* atau *Веселих свят!*",
+    "**Анечко.** Bentuk manja *Анечка* dalam kasus panggilan. Nama asing yang tak berubah seperti *Ані* tetap bisa diberi akhiran sayang Ukraina, dan begitulah Andriy memanggil pacarnya sejak Oktober.",
+    "**Пані Ірина питала, чи ти теж їв кутю.** Melaporkan pertanyaan orang lain: *питати* atau *запитати* + koma + pertanyaan tak langsung. Orang yang ditanya masuk akusatif tanpa preposisi: *запитати пані Ірину*, *запитай свого керівника*. Hindari rusisme *спросити*; pakai *запитати* atau *спитати*.",
+    "**Про що вони співали?** Kalau kata tanya punya preposisi, preposisinya ikut pindah ke depan: *про що, з ким, до кого, у кого*. Dalam bahasa Indonesia preposisi sering ditaruh di belakang (*mereka menyanyi tentang apa?*), tapi dalam kalimat Ukraina preposisi selalu menempel di depan kata tanyanya.",
+    "**«Бог предвічний»** adalah kolyadka paling terkenal, dinyanyikan di hampir setiap rumah dan gereja. *Предвічний* = yang ada sebelum segala waktu, kekal. Penjelasan pani Iryna, *той, хто існує завжди*, adalah pola definisi yang berguna: *той, хто…* = orang yang…, *те, що…* = hal yang…",
+    "**Чи дадуть мені відпустку.** Kata kerja jamak orang ketiga tanpa subjek (*дадуть* = mereka akan memberi) berarti *aku akan diberi*; pola ini dibahas lebih dalam di unit berikutnya. **Відпустка** = cuti kerja, sedangkan *канікули* = libur sekolah atau kuliah."
+   ],
+   "grammars": [
+    {
+     "title": "Preposisi ikut pindah bersama kata tanya",
+     "body": [
+      "Kata tanya berubah bentuk menurut kasus yang dituntut kata kerja atau preposisinya, lalu seluruh gugus itu dipindah ke awal anak kalimat."
+     ],
+     "table": {
+      "head": [
+       "Gugus tanya",
+       "Contoh",
+       "Arti"
+      ],
+      "rows": [
+       [
+        "про що",
+        "Ти зрозуміла, про що вони співали?",
+        "Kamu mengerti mereka menyanyi tentang apa?"
+       ],
+       [
+        "з ким",
+        "Мама питає, з ким ти святкуєш.",
+        "Ibu tanya kamu merayakan dengan siapa."
+       ],
+       [
+        "до кого",
+        "Я не знаю, до кого прийдуть колядники.",
+        "Aku tak tahu ke rumah siapa mereka akan datang."
+       ],
+       [
+        "у кого",
+        "Скажи, у кого ти будеш на Різдво.",
+        "Bilang, kamu akan di rumah siapa saat Natal."
+       ],
+       [
+        "звідки",
+        "Цікаво, звідки ця колядка.",
+        "Penasaran lagu ini dari mana."
+       ],
+       [
+        "навіщо",
+        "Поясніть, навіщо сіно під скатертиною.",
+        "Jelaskan untuk apa jerami di bawah taplak."
+       ],
+       [
+        "який",
+        "Я забула, яка страва перша.",
+        "Aku lupa hidangan mana yang pertama."
+       ]
+      ]
+     },
+     "after": [
+      "Satu-satunya kata yang tidak pernah muncul di sini adalah *якщо*. Kalau artinya *apakah*, selalu *чи*."
+     ]
+    }
+   ]
+  }
+ ],
+ "sections": [
+  {
+   "title": "Святвечір: dua belas hidangan tanpa daging",
+   "blocks": [
+    {
+     "type": "p",
+     "text": "Malam 24 Desember adalah malam keluarga paling penting dalam setahun. Rumah dibersihkan, meja ditutup taplak bersulam, dan di bawah taplak diselipkan sedikit jerami untuk mengenang palungan. Di sudut ruangan berdiri *дідух*, ikatan batang gandum yang melambangkan panen dan arwah leluhur. Begitu bintang pertama muncul, keluarga berdoa lalu makan dimulai dengan sesendok *кутя*. Hidangan harus dua belas dan semuanya tanpa bahan hewani selain ikan."
+    },
+    {
+     "type": "tabel",
+     "head": [
+      "Hidangan",
+      "Apa itu",
+      "Catatan"
+     ],
+     "rows": [
+      [
+       "кутя",
+       "rebusan gandum dengan poppy, madu, kacang",
+       "selalu yang pertama"
+      ],
+      [
+       "узвар",
+       "minuman rebusan buah kering",
+       "diminum sepanjang malam"
+      ],
+      [
+       "вареники з капустою",
+       "pangsit isi kubis asam",
+       "tanpa krim asam malam ini"
+      ],
+      [
+       "вареники з картоплею",
+       "pangsit isi kentang",
+       "dengan bawang goreng"
+      ],
+      [
+       "голубці",
+       "gulungan daun kubis isi nasi",
+       "versi puasa tanpa daging"
+      ],
+      [
+       "борщ з вушками",
+       "borsch bening dengan pangsit mungil isi jamur",
+       "khas Galicia"
+      ],
+      [
+       "смажена риба",
+       "ikan goreng",
+       "sering ikan mas"
+      ],
+      [
+       "гриби",
+       "jamur tumis atau acar",
+       "jamur kering dari hutan"
+      ],
+      [
+       "квасоля",
+       "kacang merah atau putih",
+       "dengan bawang dan minyak"
+      ],
+      [
+       "пампушки",
+       "roti goreng isi selai",
+       "untuk penutup"
+      ]
+     ]
+    },
+    {
+     "type": "kotak",
+     "title": "Etiket di meja Святвечір",
+     "items": [
+      "Cicipi semua dua belas hidangan, walau sesendok saja; itu tanda tahun depan akan berkecukupan.",
+      "Di beberapa keluarga disiapkan piring kosong untuk anggota keluarga yang sudah meninggal atau yang jauh.",
+      "Jangan bangun dari meja sebelum makan selesai, kecuali untuk membuka pintu bagi колядники.",
+      "Bawa sedikit permen atau uang receh: колядники yang bernyanyi di depan pintu biasanya diberi hadiah."
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Колядки dan щедрівки",
+   "blocks": [
+    {
+     "type": "p",
+     "text": "Dari Святвечір sampai Водохреще, jalanan Lviv dipenuhi nyanyian. *Колядки* bercerita tentang kelahiran Yesus dan dinyanyikan saat Natal; *щедрівки* dinyanyikan pada *Щедрий вечір*, malam 31 Desember, dan berisi doa untuk panen dan kemakmuran. Щедрівка paling terkenal di dunia, «Щедрик» gubahan Mykola Leontovych, dikenal di negara berbahasa Inggris sebagai *Carol of the Bells*."
+    },
+    {
+     "type": "tabel",
+     "head": [
+      "Kata",
+      "Arti",
+      "Contoh"
+     ],
+     "rows": [
+      [
+       "колядка",
+       "lagu Natal",
+       "Заспіваймо колядку!"
+      ],
+      [
+       "колядувати",
+       "menyanyikan kolyadka keliling",
+       "Діти ходять колядувати."
+      ],
+      [
+       "колядник",
+       "pengidung kolyadka",
+       "Колядники прийшли із зіркою."
+      ],
+      [
+       "зірка",
+       "bintang, juga bintang kertas yang dibawa колядники",
+       "Хлопчик несе зірку."
+      ],
+      [
+       "вертеп",
+       "teater boneka atau drama kelahiran Yesus",
+       "У школі ставлять вертеп."
+      ],
+      [
+       "щедрівка",
+       "lagu Malam Tahun Baru",
+       "Вони співають щедрівку."
+      ],
+      [
+       "Щедрий вечір",
+       "malam 31 Desember",
+       "На Щедрий вечір печуть пироги."
+      ],
+      [
+       "Водохреще",
+       "hari Pembaptisan Yesus, 6 Januari",
+       "На Водохреще святять воду."
+      ]
+     ]
+    },
+    {
+     "type": "kotak",
+     "title": "Salam musim Natal",
+     "items": [
+      "*Христос народився!* dijawab *Славімо Його!*",
+      "*З Різдвом Христовим!* = Selamat Natal.",
+      "*Веселих свят!* = Selamat berlibur, netral untuk siapa saja.",
+      "*Щедрий вечір, добрий вечір, добрим людям на здоров'я!* = refrein щедрівка yang sering diucapkan sebagai salam pada 31 Desember."
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Ulangan berjenjang — unit 9",
+   "blocks": [
+    {
+     "type": "p",
+     "text": "Tutup kolom Ukraina, baca terjemahan Indonesianya, lalu susun kembali kalimatnya dari ingatan."
+    },
+    {
+     "type": "tabel",
+     "head": [
+      "Bahasa Indonesia",
+      "Українська",
+      "Baca"
+     ],
+     "rows": [
+      [
+       "Iya, kubawa. Dulu di «Зерно» tiap hari aku mengangkut karung kopi.",
+       "Несу, несу. У «Зерні» я щодня носила мішки з кавою.",
+       "*Ne-SU ne-SU U ZER-ni ya shchod-NYA no-SY-la mish-KY z KA-vo-yu*"
+      ],
+      [
+       "Aku. Tiap tahun aku yang membawa peralatan kita ke festival.",
+       "Я. Я щороку вожу наше обладнання на фестиваль.",
+       "*Ya Ya shcho-RO-ku vo-ZHU NA-she o-BLAD-nan-nya na fes-ty-VAL'*"
+      ],
+      [
+       "Wah, dia juga jadi pemandu tur!",
+       "Ого, він ще й екскурсії водить!",
+       "*O-HO vin shche y ek-SKUR-si-yi VO-dyt'*"
+      ],
+      [
+       "Akhirnya! Aku sudah menunggu sejam. Kalian bawa apa saja?",
+       "Нарешті! Я вже годину чекаю. Що ви привезли?",
+       "*Na-RESH-ti Ya vzhe ho-DY-nu che-KA-yu Shcho vy pry-vez-LY*"
+      ],
+      [
+       "Lihat, Pak Bohdan sedang mengantar tamu ke kita!",
+       "Дивіться, пан Богдан веде до нас гостей!",
+       "*Dy-VI-tsya pan Boh-DAN ve-DE do nas hos-TEY*"
+      ]
+     ]
+    }
+   ]
+  }
+ ],
+ "vocab": [
+  {
+   "uk": "Святве́чір",
+   "baca": "Svyat-VE-chir",
+   "id": "Malam Suci, malam 24 Desember"
+  },
+  {
+   "uk": "Різдво́",
+   "baca": "Rizd-VO",
+   "id": "Natal (*на Різдво* = saat Natal)"
+  },
+  {
+   "uk": "кутя́",
+   "baca": "ku-TYA",
+   "id": "kutya, rebusan gandum dengan poppy dan madu"
+  },
+  {
+   "uk": "узва́р",
+   "baca": "uz-VAR",
+   "id": "minuman rebusan buah kering"
+  },
+  {
+   "uk": "стра́ва",
+   "baca": "STRA-va",
+   "id": "hidangan, masakan"
+  },
+  {
+   "uk": "пісни́й",
+   "baca": "pis-NYY",
+   "id": "tanpa bahan hewani, untuk masa puasa (*пісні страви*)"
+  },
+  {
+   "uk": "піст (gen. посту)",
+   "baca": "pist",
+   "id": "masa puasa"
+  },
+  {
+   "uk": "пшени́ця",
+   "baca": "pshe-NY-tsya",
+   "id": "gandum"
+  },
+  {
+   "uk": "горі́х",
+   "baca": "ho-RIKH",
+   "id": "kacang, kenari"
+  },
+  {
+   "uk": "родзи́нки",
+   "baca": "ro-DZYN-ky",
+   "id": "kismis"
+  },
+  {
+   "uk": "зі́рка",
+   "baca": "ZIR-ka",
+   "id": "bintang (*перша зірка*)"
+  },
+  {
+   "uk": "хма́рно",
+   "baca": "KHMAR-no",
+   "id": "mendung"
+  },
+  {
+   "uk": "надво́рі",
+   "baca": "nad-VO-ri",
+   "id": "di luar rumah"
+  },
+  {
+   "uk": "коля́дка",
+   "baca": "ko-LYAD-ka",
+   "id": "lagu Natal"
+  },
+  {
+   "uk": "колядува́ти / заколядува́ти",
+   "baca": "ko-lya-du-VA-ty / za-ko-lya-du-VA-ty",
+   "id": "menyanyikan kolyadka dari rumah ke rumah"
+  },
+  {
+   "uk": "колядни́к",
+   "baca": "ko-lyad-NYK",
+   "id": "pengidung kolyadka"
+  },
+  {
+   "uk": "ді́дух",
+   "baca": "DI-dukh",
+   "id": "ikatan gandum hiasan Natal"
+  },
+  {
+   "uk": "впе́внений",
+   "baca": "VPEV-ne-nyy",
+   "id": "yakin (*я не впевнена, чи…*)"
+  },
+  {
+   "uk": "поя́снення",
+   "baca": "po-YAS-nen-nya",
+   "id": "penjelasan"
+  },
+  {
+   "uk": "пита́ти / запита́ти",
+   "baca": "py-TA-ty / za-py-TA-ty",
+   "id": "bertanya (*запитати когось* = menanyai seseorang)"
+  },
+  {
+   "uk": "предві́чний",
+   "baca": "pred-VICH-nyy",
+   "id": "kekal, ada sebelum segala waktu"
+  },
+  {
+   "uk": "відпу́стка",
+   "baca": "vid-PUST-ka",
+   "id": "cuti kerja"
+  },
+  {
+   "uk": "керівни́к",
+   "baca": "ke-riv-NYK",
+   "id": "atasan, pimpinan"
+  },
+  {
+   "uk": "щоро́ку",
+   "baca": "shcho-RO-ku",
+   "id": "setiap tahun"
+  },
+  {
+   "uk": "ая́кже",
+   "baca": "a-YAK-zhe",
+   "id": "tentu saja, masa tidak (lisan)"
+  }
+ ],
+ "exercises": [
+  {
+   "prompt": "Terjemahkan ke bahasa Ukraina.",
+   "items": [
+    "Tolong katakan berapa hidangan yang kita masak hari ini.",
+    "Saya (perempuan) tidak yakin apakah itu benar.",
+    "Anda ingat kapan kita akan duduk makan?",
+    "Lihat ke jendela dan katakan apakah bintangnya sudah ada.",
+    "Kamu (perempuan) mengerti mereka menyanyi tentang apa?",
+    "Aku belum tahu apakah aku akan dapat cuti bulan Januari."
+   ]
+  },
+  {
+   "prompt": "Isi titik-titik dengan kata tanya atau penghubung yang tepat. Petunjuk ada di dalam kurung.",
+   "items": [
+    "Я не знаю, ____ прийдуть колядники. (apakah)",
+    "Поясніть, будь ласка, ____ ви варите кутю. (bagaimana)",
+    "Цікаво, ____ саме дванадцять страв. (mengapa)",
+    "Ти пам'ятаєш, ____ ми сядемо за стіл? (kapan)",
+    "Я запитала, ____ означає слово «предвічний». (apa)",
+    "Я не знаю, ____ прийшли ці колядники. (dari mana)",
+    "Ти зрозуміла, ____ вони співали? (tentang apa)"
+   ]
+  },
+  {
+   "prompt": "Ubah pertanyaan langsung menjadi kalimat tak langsung dengan awalan dalam kurung. Contoh: «Де зірка?» (Подивися, …) → Подивися, де зірка.",
+   "items": [
+    "«Скільки страв на столі?» (Я не знаю, …)",
+    "«Чи є вже зірка?» (Скажи мені, …)",
+    "«Ти їв кутю?» (Пані Ірина питала, …)",
+    "«Коли прийдуть колядники?» (Ви не знаєте, …?)",
+    "«Як варять узвар?» (Поясніть, будь ласка, …)",
+    "«Про що ця колядка?» (Я не зрозуміла, …)"
+   ]
+  },
+  {
+   "prompt": "Susun jadi kalimat yang benar.",
+   "items": [
+    "чи / не впевнена / я / це правда",
+    "ви варите / розкажіть / як / кутю",
+    "коли / ми сядемо / за стіл / ви не пам'ятаєте",
+    "про що / вони співали / ти зрозуміла",
+    "дадуть мені / чи / ще не знаю / відпустку"
+   ]
+  }
+ ],
+ "answers": [
+  "Скажіть, будь ласка, скільки страв ми готуємо сьогодні. — Я не впевнена, чи це правда. — Ви пам'ятаєте, коли ми сядемо за стіл? — Подивися у вікно і скажи, чи вже є зірка. — Ти зрозуміла, про що вони співали? — Я ще не знаю, чи дадуть мені відпустку в січні.",
+  "чи — як — чому — коли — що — звідки — про що",
+  "Я не знаю, скільки страв на столі. — Скажи мені, чи є вже зірка. — Пані Ірина питала, чи ти їв кутю. — Ви не знаєте, коли прийдуть колядники? — Поясніть, будь ласка, як варять узвар. — Я не зрозуміла, про що ця колядка.",
+  "Я не впевнена, чи це правда. — Розкажіть, як ви варите кутю. — Ви не пам'ятаєте, коли ми сядемо за стіл? — Ти зрозуміла, про що вони співали? — Ще не знаю, чи дадуть мені відпустку."
+ ]
+}

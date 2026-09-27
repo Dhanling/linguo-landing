@@ -1,0 +1,683 @@
+{
+ "title": "Selamat ulang tahun, Bu Halyna — kepada siapa?",
+ "title_target": "З днем народження, пані Галино!",
+ "goal": "Mengucapkan selamat dan harapan dengan *бажаю вам здоров'я*, lalu menyebut kepada siapa sesuatu diberikan, diucapkan, atau dibantu memakai kasus datif (*давальний відмінок*): *мамі, Тарасові, бабусі, бабусям, дітям*.",
+ "bekal": [
+  "kamu bisa memberi selamat ulang tahun dan menyusun harapan dengan *бажаю + datif + genitif*: *Бажаю вам здоров'я і щастя*",
+  "kamu bisa membentuk datif tunggal dan jamak: *мамі, Тарасові, вікну; бабусям, друзям, дітям*",
+  "kamu bisa memakai kata kerja yang menuntut datif: *дякувати, допомагати, телефонувати, подобатися, дарувати*"
+ ],
+ "dialogs": [
+  {
+   "title": "Діалог 1 — Pagi yang istimewa",
+   "intro": "Rabu, 3 Maret 2027, pukul tujuh pagi, di dapur apartemen di Podil. Hari ini pani Halyna berulang tahun, dan Ani bangun lebih pagi supaya menjadi orang pertama yang mengucapkan selamat. Perhatikan kata-kata kecil *вам, мамі, Тарасові*: semuanya menjawab pertanyaan *кому?* (kepada siapa?).",
+   "lines": [
+    {
+     "speaker": "Ані:",
+     "text": "[Добрий|DO-bryy] [ранок|RA-nok], [пані|PA-ni] [Галино|Ha-LY-no]! [З|Z] [днем|dnem] [народження|na-RO-dzhen-nya]!",
+     "id": "Selamat pagi, Bu Halyna! Selamat ulang tahun!",
+     "literal": "baik pagi, nyonya Halyna (panggilan)! dengan hari (ins.) kelahiran (gen.)!"
+    },
+    {
+     "speaker": "Галина:",
+     "text": "[Ой|Oy], [дякую|DYA-ku-yu], [Ані|A-ni]! [Ти|Ty] [пам'ятаєш|pa-mya-TA-yesh]?",
+     "id": "Aduh, terima kasih, Ani! Kamu ingat?",
+     "literal": "oh, terima-kasih, Ani! kamu ingat?"
+    },
+    {
+     "speaker": "Ані:",
+     "text": "[Звичайно|Zvy-CHAY-no]! [Бажаю|Ba-ZHA-yu] [вам|vam] [здоров'я|zdo-RO-vya], [щастя|SHCHAS-tya] [і|i] [багато|ba-HA-to] [радості|RA-dos-ti].",
+     "id": "Tentu saja! Saya doakan Ibu sehat, bahagia, dan banyak sukacita.",
+     "literal": "tentu! (saya)-mengharapkan kepada-Anda (dat.) kesehatan (gen.), kebahagiaan (gen.) dan banyak sukacita (gen.)."
+    },
+    {
+     "speaker": "Галина:",
+     "text": "[Дякую|DYA-ku-yu], [дитино|dy-TY-no]. [Мені|Me-NI] [дуже|DU-zhe] [приємно|pry-YEM-no].",
+     "id": "Terima kasih, Nak. Saya senang sekali.",
+     "literal": "terima-kasih, anak (panggilan). kepada-saya (dat.) sangat menyenangkan."
+    },
+    {
+     "speaker": "Ані:",
+     "text": "[Це|Tse] [вам|vam], [пані|PA-ni] [Галино|Ha-LY-no]. [Маленький|Ma-LEN'-kyy] [подарунок|po-da-RU-nok] [з|z] [Індонезії|In-do-NE-zi-yi].",
+     "id": "Ini untuk Ibu, Bu Halyna. Hadiah kecil dari Indonesia.",
+     "literal": "ini kepada-Anda (dat.), nyonya Halyna. kecil hadiah dari Indonesia (gen.)."
+    },
+    {
+     "speaker": "Галина:",
+     "text": "[Яка|Ya-KA] [краса|kra-SA]! [Це|Tse] [батик|BA-tyk]?",
+     "id": "Cantik sekali! Ini batik?",
+     "literal": "betapa keindahan! ini batik?"
+    },
+    {
+     "speaker": "Ані:",
+     "text": "[Так|Tak], [шарф|sharf] [із|iz] [батику|BA-ty-ku]. [Моя|Mo-YA] [мама|MA-ma] [передала|pe-re-da-LA] [його|yo-HO] [вам|vam].",
+     "id": "Iya, syal batik. Ibu saya titip ini untuk Ibu.",
+     "literal": "ya, syal dari batik (gen.). saya-punya ibu menyerahkan ‹selesai› dia (ak.) kepada-Anda (dat.)."
+    },
+    {
+     "speaker": "Галина:",
+     "text": "[Подякуй|Po-DYA-kuy] [мамі|MA-mi] [від|vid] [мене|ME-ne]! [Я|Ya] [їй|yiy] [напишу|na-py-SHU] [листівку|lys-TIV-ku].",
+     "id": "Sampaikan terima kasih saya kepada ibumu! Nanti saya tulis kartu untuknya.",
+     "literal": "berterima-kasih-lah ‹selesai› kepada-ibu (dat.) dari saya (gen.)! saya kepada-dia (dat.) akan-menulis kartu (ak.)."
+    },
+    {
+     "speaker": "Ані:",
+     "text": "[А|A] [хто|khto] [прийде|PRYY-de] [ввечері|VVE-che-ri]?",
+     "id": "Nanti malam siapa saja yang datang?",
+     "literal": "dan siapa akan-datang malam-hari?"
+    },
+    {
+     "speaker": "Галина:",
+     "text": "[Син|Syn] [із|iz] [невісткою|ne-VIST-ko-yu], [Тарас|Ta-RAS] [і|i] [сусідка|su-SID-ka]. [Торт|Tort] [я|ya] [вже|vzhe] [купила|ku-PY-la].",
+     "id": "Anak laki-laki saya dengan istrinya, Taras, dan tetangga. Kuenya sudah saya beli.",
+     "literal": "putra dengan menantu-perempuan (ins.), Taras dan tetangga-perempuan. kue saya sudah membeli."
+    },
+    {
+     "speaker": "Ані:",
+     "text": "[Можна|MOZH-na], [я|ya] [допоможу|do-po-mo-ZHU] [вам|vam] [на|na] [кухні|KUKH-ni]?",
+     "id": "Boleh saya bantu Ibu di dapur?",
+     "literal": "boleh, saya akan-membantu kepada-Anda (dat.) di dapur (lok.)?"
+    },
+    {
+     "speaker": "Галина:",
+     "text": "[Буду|BU-du] [вдячна|VDYACH-na]. [І|I] [зателефонуй|za-te-le-fo-NUY], [будь|bud'] [ласка|LAS-ka], [Тарасові|Ta-RA-so-vi]. [Він|Vin] [просив|PRO-syv].",
+     "id": "Saya akan berterima kasih. Oh, dan tolong telepon Taras. Dia minta begitu.",
+     "literal": "akan-(saya) berterima-kasih (pr). dan teleponlah ‹selesai›, tolong, kepada-Taras (dat.). dia meminta."
+    },
+    {
+     "speaker": "Ані:",
+     "text": "[Добре|DO-bre]. [А|A] [вам|vam], [пані|PA-ni] [Галино|Ha-LY-no], [що|shcho] [подобається|po-DO-ba-ye-tsya]? [Квіти|KVI-ty]? [Цукерки|Tsu-KER-ky]?",
+     "id": "Baik. Kalau Ibu sendiri, Bu Halyna, sukanya apa? Bunga? Cokelat?",
+     "literal": "baik. dan kepada-Anda (dat.), nyonya Halyna, apa berkenan? bunga? permen?"
+    },
+    {
+     "speaker": "Галина:",
+     "text": "[Мені|Me-NI] [нічого|ni-CHO-ho] [не|ne] [треба|TRE-ba]. [Головне|Ho-lov-NE], [щоб|shchob] [усі|u-SI] [були|bu-LY] [разом|RA-zom].",
+     "id": "Saya tidak perlu apa-apa. Yang penting semuanya berkumpul.",
+     "literal": "kepada-saya (dat.) tidak-apa-pun (gen.) tidak perlu. yang-utama, supaya semua ada (lampau) bersama."
+    }
+   ],
+   "notes": [
+    "**З днем народження! Бажаю вам здоров'я.** Ucapan ulang tahun memakai *з* + instrumental: *з днем народження*, *з Новим роком*, *зі святом*. Harapannya disusun dengan **бажати + kepada siapa (datif) + apa (genitif)**: *бажаю вам здоров'я, щастя, радості*. Bandingkan dengan bahasa Indonesia yang cukup berkata \"semoga sehat\": di sini orangnya disebut dalam datif dan hal yang diharapkan dalam genitif.",
+    "**Це вам.** Dua kata yang sangat berguna saat menyerahkan hadiah: \"ini untuk Anda\". Tidak perlu *для* (untuk); datif sendiri sudah berarti \"kepada, untuk\". Kepada teman: *Це тобі.* Kepada ibu: *Це мамі.*",
+    "**Передала його вам.** Kalimat Ukraina sering menaruh dua objek sekaligus: benda dalam akusatif (*його*, *листівку*) dan penerima dalam datif (*вам*, *їй*). Urutannya bebas, tetapi kata ganti pendek cenderung maju. Penutur Indonesia sering lupa bahwa *їй* (kepadanya) berbeda dari *її* (dia, miliknya).",
+    "**Подякуй мамі.** *Дякувати* menuntut datif: *дякую вам*, *дякую мамі*. Bagi penutur Indonesia ini terasa wajar (berterima kasih *kepada* ibu). Sebaliknya dalam bahasa Rusia kata padanannya memakai akusatif, jadi *дякую вас* adalah salah yang khas pengaruh Rusia. Yang benar selalu **дякую вам**.",
+    "**Тарасові.** Nama dan kata benda laki-laki punya dua ekor datif: **-ові/-еві** dan **-у/-ю**. Untuk orang, bentuk **-ові** lebih lazim dan terdengar lebih Ukraina: *Тарасові, Андрієві, татові, братові*. Kalau dua kata laki-laki berderet, orang Ukraina senang memvariasikannya: *пану Богданові*.",
+    "**Мені приємно. Мені нічого не треба.** Banyak perasaan dan kebutuhan diungkapkan dengan orang dalam datif, tanpa \"saya\" sebagai pelaku: *мені приємно* (saya senang), *мені треба* (saya perlu), *мені холодно* (saya kedinginan). Dan *дитино* adalah bentuk panggilan dari *дитина*, sapaan sayang dari orang tua kepada yang jauh lebih muda."
+   ],
+   "grammars": [
+    {
+     "title": "Datif tunggal: кому? чому?",
+     "body": [
+      "Datif menjawab *кому?* (kepada siapa?) dan *чому?* (kepada apa?). Ekornya ditentukan oleh jenis dan akhiran kata di bentuk kamus."
+     ],
+     "table": {
+      "head": [
+       "Jenis kata",
+       "Bentuk kamus",
+       "Datif",
+       "Contoh"
+      ],
+      "rows": [
+       [
+        "lk, konsonan keras",
+        "брат, Тарас",
+        "братові / брату, Тарасові",
+        "*Я телефоную братові.*"
+       ],
+       [
+        "lk, konsonan lunak / -й",
+        "вчитель, Андрій",
+        "вчителеві / вчителю, Андрієві",
+        "*Дякую вчителеві.*"
+       ],
+       [
+        "lk, -о",
+        "тато, Петро",
+        "татові, Петрові",
+        "*Купи татові чай.*"
+       ],
+       [
+        "pr, -а",
+        "мама, Галина",
+        "мамі, Галині",
+        "*Подякуй мамі.*"
+       ],
+       [
+        "pr, -я",
+        "бабуся, Наталія",
+        "бабусі, Наталії",
+        "*Це бабусі.*"
+       ],
+       [
+        "pr, konsonan lunak",
+        "ніч, осінь",
+        "ночі, осені",
+        "*Я радію осені.*"
+       ],
+       [
+        "netral, -о / -е",
+        "вікно, море",
+        "вікну, морю",
+        "*Вікну потрібен ремонт.*"
+       ],
+       [
+        "netral, -я",
+        "життя, ім'я",
+        "життю, імені",
+        "*Дякую життю.*"
+       ]
+      ]
+     },
+     "after": [
+      "Kata perempuan berakhiran *-га, -ка, -ха* melunakkan konsonannya di datif: *подруга* → *подрузі*, *дочка* → *дочці*, *Ольга* → *Ользі*. Ini sama dengan perubahan di lokatif yang sudah kamu kenal (*на руці*)."
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Діалог 2 — Hadiah untuk nenek",
+   "intro": "Sore hari yang sama. Sepulang sekolah Taras menyeret Ani ke kios bunga di dekat Kontraktova Ploshcha. Uangnya terbatas, dan ia belum tahu harus membeli apa. Perhatikan *бабусям* (kepada nenek-nenek): datif jamak berekor sama untuk semua jenis kata.",
+   "lines": [
+    {
+     "speaker": "Тарас:",
+     "text": "[Ані|A-ni], [я|ya] [не|ne] [знаю|ZNA-yu], [що|shcho] [подарувати|po-da-ru-VA-ty] [бабусі|ba-BU-si].",
+     "id": "Ani, aku nggak tahu mau kasih hadiah apa ke nenek.",
+     "literal": "Ani, saya tidak tahu, apa menghadiahkan ‹selesai› kepada-nenek (dat.)."
+    },
+    {
+     "speaker": "Ані:",
+     "text": "[Давай|Da-VAY] [подумаємо|po-DU-ma-ye-mo]. [Що|Shcho] [бабуся|ba-BU-sya] [любить|LYU-byt']?",
+     "id": "Ayo kita pikirkan. Nenek sukanya apa?",
+     "literal": "ayo kita-pikirkan ‹selesai›. apa nenek suka?"
+    },
+    {
+     "speaker": "Тарас:",
+     "text": "[Квіти|KVI-ty], [чай|chay] [і|i] [кросворди|kros-VOR-dy].",
+     "id": "Bunga, teh, dan teka-teki silang.",
+     "literal": "bunga-bunga, teh dan teka-teki-silang."
+    },
+    {
+     "speaker": "Продавчиня:",
+     "text": "[Добрий|DO-bryy] [день|den']! [Чим|Chym] [вам|vam] [допомогти|do-po-moh-TY]?",
+     "id": "Selamat siang! Ada yang bisa saya bantu?",
+     "literal": "baik hari! dengan-apa (ins.) kepada-kalian (dat.) membantu ‹selesai›?"
+    },
+    {
+     "speaker": "Тарас:",
+     "text": "[Ми|My] [шукаємо|shu-KA-ye-mo] [подарунок|po-da-RU-nok] [бабусі|ba-BU-si] [на|na] [день|den'] [народження|na-RO-dzhen-nya].",
+     "id": "Kami cari hadiah ulang tahun buat nenek.",
+     "literal": "kami mencari hadiah kepada-nenek (dat.) untuk hari kelahiran (gen.)."
+    },
+    {
+     "speaker": "Продавчиня:",
+     "text": "[Бабусям|Ba-BU-syam] [зазвичай|zaz-vy-CHAY] [подобаються|po-DO-ba-yu-tsya] [тюльпани|tyul'-PA-ny]. [Ось|Os'], [дуже|DU-zhe] [свіжі|SVI-zhi].",
+     "id": "Nenek-nenek biasanya suka tulip. Ini, segar sekali.",
+     "literal": "kepada-nenek-nenek (dat. jamak) biasanya berkenan tulip-tulip. ini, sangat segar."
+    },
+    {
+     "speaker": "Ані:",
+     "text": "[Скільки|SKIL'-ky] [коштує|KOSH-tu-ye] [букет|bu-KET] [із|iz] [семи|se-MY] [тюльпанів|tyul'-PA-niv]?",
+     "id": "Berapa harga buket tujuh tangkai tulip?",
+     "literal": "berapa harganya buket dari tujuh (gen.) tulip (gen. jamak)?"
+    },
+    {
+     "speaker": "Продавчиня:",
+     "text": "[Триста|TRYS-ta] [п'ятдесят|pyat-de-SYAT] [гривень|HRY-ven']. [Листівка|Lys-TIV-ka] [безкоштовно|bez-kosh-TOV-no].",
+     "id": "Tiga ratus lima puluh hryvnia. Kartunya gratis.",
+     "literal": "tiga-ratus lima-puluh hryvnia (gen. jamak). kartu gratis."
+    },
+    {
+     "speaker": "Тарас:",
+     "text": "[У|U] [мене|ME-ne] [тільки|TIL'-ky] [двісті|DVIS-ti]. [Ані|A-ni], [позичиш|po-ZY-chysh] [мені|me-NI] [сто|sto] [п'ятдесят|pyat-de-SYAT]?",
+     "id": "Aku cuma punya dua ratus. Ani, pinjami aku seratus lima puluh?",
+     "literal": "pada saya (gen.) hanya dua-ratus. Ani, akan-meminjamkan kepada-saya (dat.) seratus lima-puluh?"
+    },
+    {
+     "speaker": "Ані:",
+     "text": "[Не|Ne] [треба|TRE-ba] [позичати|po-ZY-cha-ty]. [Подаруємо|Po-da-RU-ye-mo] [бабусі|ba-BU-si] [разом|RA-zom], [від|vid] [нас|nas] [обох|o-BOKH].",
+     "id": "Nggak usah pinjam. Kita kasih nenek bareng-bareng, dari kita berdua.",
+     "literal": "tidak perlu meminjamkan ‹proses›. kita-akan-menghadiahkan kepada-nenek (dat.) bersama, dari kami kedua (gen.)."
+    },
+    {
+     "speaker": "Тарас:",
+     "text": "[Супер|SU-per]! [А|A] [на|na] [листівці|lys-TIV-tsi] [напишемо|na-PY-she-mo]: «[Найкращій|Nay-KRA-shchiy] [бабусі|ba-BU-si] [у|u] [світі|SVI-ti]»!",
+     "id": "Keren! Terus di kartunya kita tulis: \"Untuk nenek terbaik sedunia\"!",
+     "literal": "super! dan pada kartu (lok.) kita-akan-menulis: terbaik (dat.) kepada-nenek (dat.) di dunia (lok.)!"
+    }
+   ],
+   "notes": [
+    "**Що подарувати бабусі?** *Дарувати / подарувати* bekerja seperti bahasa Indonesia \"memberi\": benda dalam akusatif, penerima dalam datif. *Подарувати бабусі квіти* = memberi nenek bunga. Kata bendanya, *подарунок*, sering muncul bersama *на*: *подарунок на день народження* (hadiah untuk ulang tahun).",
+    "**Чим вам допомогти?** Kalimat baku para penjual dan pegawai: harfiahnya \"dengan apa membantu kepada Anda?\". *Допомагати / допомогти* selalu memakai datif, padahal dalam bahasa Indonesia \"membantu Anda\" terasa seperti objek langsung. Jadi **допоможіть мені**, bukan *допоможіть мене*.",
+    "**Бабусям подобаються тюльпани.** Datif jamak adalah hadiah bagi pelajar: ekornya hanya **-ам** atau **-ям**, untuk laki-laki, perempuan, maupun netral: *бабусям, студентам, друзям, містам*. Karena *подобатися* membalik kalimat (yang suka dalam datif, yang disukai sebagai subjek), kata kerjanya ikut *тюльпани*: *подобаються*.",
+    "**Букет із семи тюльпанів.** Di Ukraina, bunga untuk ulang tahun dan kunjungan selalu berjumlah ganjil: 3, 5, 7, 9. Jumlah genap dianggap untuk upacara duka, jadi penjual bunga akan dengan sopan mengingatkanmu. Angka sesudah *з* masuk genitif: *з семи*, *з п'яти*.",
+    "**Позичиш мені?** *Позичати / позичити* berarti meminjamkan (kepada seseorang, datif) dan juga meminjam (dari seseorang, *у кого*). *Позич мені сто гривень* = pinjami aku seratus hryvnia; *Я позичив у брата* = aku pinjam dari kakak. Konteks yang membedakan, persis seperti \"pinjam\" dalam bahasa Indonesia sehari-hari.",
+    "**Найкращій бабусі.** Kata sifat perempuan di datif berekor **-ій**: *найкращій бабусі, моїй мамі, новій сусідці*. Laki-laki dan netral berekor **-ому**: *найкращому другові*. Dan *від нас обох* (dari kami berdua) memakai genitif sesudah *від*, bentuk yang lazim di bawah tanda tangan kartu ucapan."
+   ],
+   "grammars": [
+    {
+     "title": "Datif jamak dan kata ganti",
+     "body": [
+      "Semua kata benda jamak berekor **-ам** (sesudah konsonan keras) atau **-ям** (sesudah konsonan lunak dan vokal). Beberapa kata jamak tak beraturan tetap mengikuti ekor ini dari batang jamaknya."
+     ],
+     "table": {
+      "head": [
+       "Tunggal",
+       "Jamak (nom.)",
+       "Datif jamak",
+       "Kata ganti"
+      ],
+      "rows": [
+       [
+        "студент",
+        "студенти",
+        "студентам",
+        "я → мені"
+       ],
+       [
+        "бабуся",
+        "бабусі",
+        "бабусям",
+        "ти → тобі"
+       ],
+       [
+        "друг",
+        "друзі",
+        "друзям",
+        "він, воно → йому"
+       ],
+       [
+        "місто",
+        "міста",
+        "містам",
+        "вона → їй"
+       ],
+       [
+        "дитина",
+        "діти",
+        "дітям",
+        "ми → нам"
+       ],
+       [
+        "людина",
+        "люди",
+        "людям",
+        "ви → вам"
+       ],
+       [
+        "батько",
+        "батьки",
+        "батькам",
+        "вони → їм"
+       ]
+      ]
+     },
+     "after": [
+      "Kata sifat dan kata ganti milik di datif jamak berekor **-им** / **-ім**: *новим сусідам, моїм друзям, синім вікнам*."
+     ]
+    }
+   ]
+  }
+ ],
+ "sections": [
+  {
+   "title": "Ulang tahun ala Ukraina",
+   "blocks": [
+    {
+     "type": "p",
+     "text": "Di Ukraina, yang berulang tahun biasanya justru menjamu tamu: ia yang memasak atau membeli kue, dan ia yang membawa permen ke kantor atau kelas. Tamu datang dengan bunga berjumlah ganjil dan hadiah kecil. Setiap orang bergiliran mengangkat gelas dan mengucapkan harapan panjang, jadi sedikit hafalan harapan sangat berguna. Lagu yang dinyanyikan bukan hanya versi Ukraina dari lagu ulang tahun internasional, tetapi juga lagu lama *Многая літа* (panjang umur)."
+    },
+    {
+     "type": "tabel",
+     "head": [
+      "Бажаю тобі / вам …",
+      "Indonesia"
+     ],
+     "rows": [
+      [
+       "здоров'я",
+       "sehat"
+      ],
+      [
+       "щастя",
+       "bahagia"
+      ],
+      [
+       "радості",
+       "sukacita"
+      ],
+      [
+       "успіхів",
+       "sukses (banyak keberhasilan)"
+      ],
+      [
+       "кохання",
+       "cinta (romantis)"
+      ],
+      [
+       "терпіння",
+       "kesabaran"
+      ],
+      [
+       "довгих років життя",
+       "panjang umur"
+      ],
+      [
+       "усього найкращого",
+       "semua yang terbaik"
+      ],
+      [
+       "щоб усі мрії здійснилися",
+       "semoga semua impian terwujud"
+      ]
+     ]
+    },
+    {
+     "type": "kotak",
+     "title": "Menulis di kartu ucapan",
+     "items": [
+      "*Дорогій пані Галині* (untuk Bu Halyna yang terkasih): penerima di baris pertama ditulis dalam datif.",
+      "*Від Тараса і Ані* (dari Taras dan Ani): pengirim memakai *від* + genitif.",
+      "*Щиро вітаю з днем народження!* (dengan tulus saya ucapkan selamat ulang tahun!)",
+      "Ucapan diakhiri *Обіймаю!* (peluk!) untuk yang akrab, atau *З повагою* (dengan hormat) untuk yang resmi."
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Kata kerja yang meminta datif",
+   "blocks": [
+    {
+     "type": "p",
+     "text": "Sebagian kata kerja Ukraina tidak memakai objek akusatif melainkan datif. Hafalkan bersama kata ganti *кому?*, karena dari luar mereka tampak seperti kata kerja biasa. Beberapa di antaranya justru terasa alami bagi penutur Indonesia (\"berterima kasih kepada\", \"menelepon ke\"), sementara yang lain perlu dilatih."
+    },
+    {
+     "type": "tabel",
+     "head": [
+      "Kata kerja",
+      "Contoh",
+      "Indonesia"
+     ],
+     "rows": [
+      [
+       "дякувати / подякувати",
+       "*Дякую вам за допомогу.*",
+       "Terima kasih atas bantuan Anda."
+      ],
+      [
+       "допомагати / допомогти",
+       "*Я допомагаю бабусі.*",
+       "Saya membantu nenek."
+      ],
+      [
+       "телефонувати / зателефонувати",
+       "*Зателефонуй Тарасові.*",
+       "Telepon Taras."
+      ],
+      [
+       "дарувати / подарувати",
+       "*Що подарувати мамі?*",
+       "Hadiah apa untuk ibu?"
+      ],
+      [
+       "подобатися / сподобатися",
+       "*Мені подобається Київ.*",
+       "Saya suka Kyiv."
+      ],
+      [
+       "радити / порадити",
+       "*Порадьте мені книжку.*",
+       "Sarankan saya sebuah buku."
+      ],
+      [
+       "відповідати / відповісти",
+       "*Він не відповів учительці.*",
+       "Dia tidak menjawab bu guru."
+      ],
+      [
+       "заважати / завадити",
+       "*Музика мені не заважає.*",
+       "Musiknya tidak mengganggu saya."
+      ],
+      [
+       "вірити / повірити",
+       "*Повір мені!*",
+       "Percayalah padaku!"
+      ]
+     ]
+    },
+    {
+     "type": "list",
+     "items": [
+      "*Бажати* memakai dua kasus sekaligus: *бажаю вам* (datif) *щастя* (genitif).",
+      "Ungkapan keadaan tanpa pelaku: *мені холодно, тобі сумно, йому двадцять років, нам треба йти*.",
+      "Datif juga muncul sesudah preposisi *завдяки* (berkat) dan *всупереч* (bertentangan dengan): *завдяки вам*."
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Ulangan berjenjang — unit 4",
+   "blocks": [
+    {
+     "type": "p",
+     "text": "Tutup kolom Ukraina, baca terjemahan Indonesianya, lalu susun kembali kalimatnya dari ingatan."
+    },
+    {
+     "type": "tabel",
+     "head": [
+      "Bahasa Indonesia",
+      "Українська",
+      "Baca"
+     ],
+     "rows": [
+      [
+       "Oke! Hari ini aku akan ngapain?",
+       "Давай! Що я сьогодні буду робити?",
+       "*Da-VAY Shcho ya syo-HOD-ni BU-du ro-BY-ty*"
+      ],
+      [
+       "Aku bakal hafal dalam dua hari!",
+       "Я вивчу його за два дні!",
+       "*Ya VYV-chu yo-HO za dva dni*"
+      ],
+      [
+       "Cappuccino dan croissant. Hari ini kamu bakal jual seratus cangkir, nggak kurang!",
+       "Капучино й круасани. Сьогодні ти продаси сто чашок, не менше!",
+       "*Ka-pu-CHY-no y kru-a-SA-ny Syo-HOD-ni ty pro-DA-sy sto CHA-shok ne MEN-she*"
+      ],
+      [
+       "Coba lihat! Aku kerja kapan saja?",
+       "Покажи! Коли я працюватиму?",
+       "*Po-ka-ZHY Ko-LY ya pra-tsyu-VA-ty-mu*"
+      ],
+      [
+       "Nggak ngapa-ngapain! Tidur sampai siang terus nonton serial.",
+       "Нічого! Буду спати до обіду й дивитися серіали.",
+       "*Ni-CHO-ho BU-du SPA-ty do o-BI-du y dy-VY-ty-sya se-RI-a-ly*"
+      ]
+     ]
+    }
+   ]
+  }
+ ],
+ "vocab": [
+  {
+   "uk": "день наро́дження",
+   "baca": "den' na-RO-dzhen-nya",
+   "id": "ulang tahun (*З днем народження!*)"
+  },
+  {
+   "uk": "бажа́ти / побажа́ти",
+   "baca": "ba-ZHA-ty / po-ba-ZHA-ty",
+   "id": "mengharapkan, mendoakan (+ dat. + gen.)"
+  },
+  {
+   "uk": "здоро́в'я",
+   "baca": "zdo-RO-vya",
+   "id": "kesehatan"
+  },
+  {
+   "uk": "ща́стя",
+   "baca": "SHCHAS-tya",
+   "id": "kebahagiaan"
+  },
+  {
+   "uk": "ра́дість",
+   "baca": "RA-dist'",
+   "id": "sukacita (gen. *радості*)"
+  },
+  {
+   "uk": "подару́нок",
+   "baca": "po-da-RU-nok",
+   "id": "hadiah"
+  },
+  {
+   "uk": "дарува́ти / подарува́ти",
+   "baca": "da-ru-VA-ty / po-da-ru-VA-ty",
+   "id": "memberi hadiah (+ dat.)"
+  },
+  {
+   "uk": "дя́кувати / подя́кувати",
+   "baca": "DYA-ku-va-ty / po-DYA-ku-va-ty",
+   "id": "berterima kasih (+ dat.)"
+  },
+  {
+   "uk": "допомага́ти / допомогти́",
+   "baca": "do-po-ma-HA-ty / do-po-moh-TY",
+   "id": "membantu (+ dat.)"
+  },
+  {
+   "uk": "телефонува́ти / зателефонува́ти",
+   "baca": "te-le-fo-nu-VA-ty / za-te-le-fo-nu-VA-ty",
+   "id": "menelepon (+ dat.)"
+  },
+  {
+   "uk": "подо́батися / сподо́батися",
+   "baca": "po-DO-ba-ty-sya / spo-DO-ba-ty-sya",
+   "id": "disukai (*мені подобається* = saya suka)"
+  },
+  {
+   "uk": "пози́чати / пози́чити",
+   "baca": "po-ZY-cha-ty / po-ZY-chy-ty",
+   "id": "meminjamkan (+ dat.), meminjam (*у кого*)"
+  },
+  {
+   "uk": "листі́вка",
+   "baca": "lys-TIV-ka",
+   "id": "kartu ucapan, kartu pos"
+  },
+  {
+   "uk": "бабу́ся",
+   "baca": "ba-BU-sya",
+   "id": "nenek (sapaan sayang)"
+  },
+  {
+   "uk": "ону́к / ону́ка",
+   "baca": "o-NUK / o-NU-ka",
+   "id": "cucu (lk / pr)"
+  },
+  {
+   "uk": "неві́стка",
+   "baca": "ne-VIST-ka",
+   "id": "menantu perempuan"
+  },
+  {
+   "uk": "сусі́д / сусі́дка",
+   "baca": "su-SID / su-SID-ka",
+   "id": "tetangga (lk / pr)"
+  },
+  {
+   "uk": "кві́тка",
+   "baca": "KVIT-ka",
+   "id": "bunga (jamak *квіти*)"
+  },
+  {
+   "uk": "тюльпа́н",
+   "baca": "tyul'-PAN",
+   "id": "tulip"
+  },
+  {
+   "uk": "буке́т",
+   "baca": "bu-KET",
+   "id": "buket"
+  },
+  {
+   "uk": "цуке́рки",
+   "baca": "tsu-KER-ky",
+   "id": "permen, cokelat (jamak)"
+  },
+  {
+   "uk": "безкошто́вно",
+   "baca": "bez-kosh-TOV-no",
+   "id": "gratis"
+  },
+  {
+   "uk": "вдя́чний",
+   "baca": "VDYACH-nyy",
+   "id": "berterima kasih, bersyukur (*я вдячна*)"
+  },
+  {
+   "uk": "приє́мно",
+   "baca": "pry-YEM-no",
+   "id": "menyenangkan (*мені приємно* = saya senang)"
+  },
+  {
+   "uk": "ра́зом",
+   "baca": "RA-zom",
+   "id": "bersama-sama"
+  }
+ ],
+ "exercises": [
+  {
+   "prompt": "Terjemahkan ke bahasa Ukraina.",
+   "items": [
+    "Selamat ulang tahun, Bu Halyna!",
+    "Saya doakan kamu sehat dan bahagia.",
+    "Ini untuk Anda.",
+    "Sampaikan terima kasih kepada ibumu.",
+    "Saya mau menelepon Taras.",
+    "Hadiah apa untuk nenek?"
+   ]
+  },
+  {
+   "prompt": "Isi titik-titik dengan bentuk datif kata dalam kurung.",
+   "items": [
+    "Я дякую ____ за допомогу. (вчителька)",
+    "Зателефонуй, будь ласка, ____. (Андрій)",
+    "Що ти подаруєш ____? (тато)",
+    "Бабусі подобаються квіти, а ____ подобаються цукерки. (діти)",
+    "Ми допомагаємо ____ на кухні. (пані Галина)",
+    "Я купила листівку ____. (подруга)",
+    "Бажаю ____ успіхів! (ви)"
+   ]
+  },
+  {
+   "prompt": "Ubah kata dalam kurung ke datif jamak dan tulis kalimatnya utuh.",
+   "items": [
+    "Я пишу листівки (друзі).",
+    "Учителька дякує (студенти).",
+    "Продавчиня допомагає (бабусі).",
+    "Ці книжки подобаються (діти).",
+    "Мама телефонує (сусіди).",
+    "Ми даруємо квіти (вчительки)."
+   ]
+  },
+  {
+   "prompt": "Susun jadi kalimat yang benar.",
+   "items": [
+    "здоров'я / вам / бажаю",
+    "мамі / подякуй / від / мене",
+    "подарувати / що / бабусі",
+    "подобаються / тюльпани / бабусям",
+    "допоможу / я / на / вам / кухні"
+   ]
+  }
+ ],
+ "answers": [
+  "З днем народження, пані Галино! — Бажаю тобі здоров'я і щастя. — Це вам. — Подякуй мамі. — Я хочу зателефонувати Тарасові. — Що подарувати бабусі?",
+  "вчительці — Андрієві — татові — дітям — пані Галині — подрузі — вам",
+  "Я пишу листівки друзям. — Учителька дякує студентам. — Продавчиня допомагає бабусям. — Ці книжки подобаються дітям. — Мама телефонує сусідам. — Ми даруємо квіти вчителькам.",
+  "Бажаю вам здоров'я. — Подякуй мамі від мене. — Що подарувати бабусі? — Бабусям подобаються тюльпани. — Я допоможу вам на кухні."
+ ]
+}

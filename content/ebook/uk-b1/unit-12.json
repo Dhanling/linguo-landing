@@ -1,0 +1,674 @@
+{
+ "title": "Juro patah kaki di Bukovel — bentuk pasif dan kalimat tanpa pelaku",
+ "title_target": "Знімок уже зроблено, гіпс наклали зранку",
+ "goal": "Melaporkan apa yang sudah dilakukan tanpa menyebut siapa pelakunya, seperti di rumah sakit dan kantor asuransi: *Його було госпіталізовано*, *Йому наклали гіпс*, *Заяву подано*, *Рахунок буде оплачено*.",
+ "bekal": [
+  "kamu bisa memakai kata kerja jamak tanpa subjek untuk arti *di-*: *Його випишуть завтра*",
+  "kamu bisa melaporkan hasil dengan bentuk *-но/-то* dan tahu bahwa objeknya tetap akusatif: *Заяву подано*",
+  "kamu bisa mengurus rumah sakit dan asuransi: знімок, виписка, страховий поліс, рахунок"
+ ],
+ "dialogs": [
+  {
+   "title": "Діалог 1 — Di bagian penerimaan rumah sakit",
+   "intro": "Kamis, 20 Januari 2028, rumah sakit daerah di Ivano-Frankivsk. Semalam Yurko jatuh saat bermain ski di Буковель dan dibawa ambulans ke sini. Keluarganya jauh di Verkhovyna, jadi pan Bohdan mengutus Ani. Perhatikan betapa jarang dokter menyebut siapa yang melakukan sesuatu: *привезли, зроблено, наклали, випишуть*.",
+   "lines": [
+    {
+     "speaker": "Ані:",
+     "text": "[Добридень|Do-BRY-den']. [Я|Ya] [шукаю|shu-KA-yu] [нашого|NA-sho-ho] [працівника|pra-tsiv-ny-KA], [Юрка|Yur-KA]. [Його|Yo-HO] [привезли|pry-vez-LY] [вчора|VCHO-ra] [з|z] [Буковелю|Bu-ko-VE-lyu].",
+     "id": "Selamat siang. Saya mencari karyawan kami, Yurko. Kemarin dia dibawa ke sini dari Bukovel.",
+     "literal": "selamat-siang. saya mencari kami-punya karyawan (ak.), Yurko (ak.). dia (ak.) (mereka)-membawa kemarin dari Bukovel (gen.)."
+    },
+    {
+     "speaker": "Лікарка:",
+     "text": "[Так|Tak], [його|yo-HO] [було|bu-LO] [госпіталізовано|hos-pi-ta-li-ZO-va-no] [вчора|VCHO-ra] [о|o] [дев'ятій|de-VYA-tiy] [вечора|VE-cho-ra]. [Ви|Vy] [родичка|ro-DYCH-ka]?",
+     "id": "Ya, dia dirawat inap kemarin pukul sembilan malam. Anda kerabatnya?",
+     "literal": "ya, dia (ak.) telah dirawat-inap-kan kemarin pada kesembilan (lok.) malam (gen.). Anda kerabat (pr)?"
+    },
+    {
+     "speaker": "Ані:",
+     "text": "[Ні|Ni], [я|ya] [колега|ko-LE-ha]. [Його|Yo-HO] [родина|ro-DY-na] [живе|zhy-VE] [у|u] [Верховині|Ver-kho-VY-ni], [тому|to-MU] [мене|me-NE] [попросили|po-pro-SY-ly] [все|vse] [організувати|or-ha-ni-zu-VA-ty].",
+     "id": "Bukan, saya rekan kerjanya. Keluarganya tinggal di Verkhovyna, jadi saya diminta mengurus semuanya.",
+     "literal": "tidak, saya rekan. dia-punya keluarga tinggal di Verkhovyna (lok.), karena-itu saya (ak.) (mereka)-meminta semua mengatur."
+    },
+    {
+     "speaker": "Лікарка:",
+     "text": "[Зрозуміло|Zro-zu-MI-lo]. [У|U] [нього|NYO-ho] [перелом|pe-re-LOM] [лівої|LI-vo-yi] [ноги|no-HY]. [Знімок|ZNI-mok] [уже|u-ZHE] [зроблено|ZRO-ble-no], [гіпс|hips] [наклали|na-KLA-ly] [зранку|ZRAN-ku].",
+     "id": "Baik. Kaki kirinya patah. Rontgennya sudah dibuat, gipsnya dipasang tadi pagi.",
+     "literal": "dimengerti. pada dia (gen.) patah kiri (gen.) kaki (gen.). foto sudah dibuat, gips (mereka)-memasang pagi-pagi."
+    },
+    {
+     "speaker": "Ані:",
+     "text": "[А|A] [операція|o-pe-RA-tsi-ya] [потрібна|po-TRIB-na], [чи|chy] [вистачить|VYS-ta-chyt'] [гіпсу|HIP-su]?",
+     "id": "Perlu operasi, atau cukup dengan gips?",
+     "literal": "dan operasi perlu, atau akan-cukup gips (gen.)?"
+    },
+    {
+     "speaker": "Лікарка:",
+     "text": "[На|Na] [щастя|SHCHAS-tya], [ні|ni]. [Перелом|Pe-re-LOM] [без|bez] [зміщення|ZMI-shchen-nya], [тому|to-MU] [гіпс|hips] [буде|BU-de] [тільки|TIL'-ky] [на|na] [шість|shist'] [тижнів|TYZH-niv].",
+     "id": "Untungnya tidak. Patahnya tidak bergeser, jadi gipsnya hanya enam minggu.",
+     "literal": "untung-nya, tidak. patah tanpa pergeseran (gen.), karena-itu gips akan-ada hanya untuk enam minggu (gen. jmk)."
+    },
+    {
+     "speaker": "Ані:",
+     "text": "[Шість|Shist'] [тижнів|TYZH-niv]! [А|A] [коли|ko-LY] [його|yo-HO] [випишуть|VY-py-shut']?",
+     "id": "Enam minggu! Lalu kapan dia boleh pulang?",
+     "literal": "enam minggu (gen. jmk)! dan kapan dia (ak.) (mereka)-akan-mengeluarkan‹selesai›?"
+    },
+    {
+     "speaker": "Лікарка:",
+     "text": "[Завтра|ZAV-tra], [якщо|yak-SHCHO] [не|ne] [буде|BU-de] [ускладнень|us-KLAD-nen']. [Виписку|VY-pys-ku] [буде|BU-de] [підготовлено|pid-ho-TO-vle-no] [до|do] [обіду|o-BI-du].",
+     "id": "Besok, kalau tidak ada komplikasi. Surat keluarnya akan disiapkan sebelum makan siang.",
+     "literal": "besok, jika tidak akan-ada komplikasi (gen. jmk). surat-keluar (ak.) akan-ada disiapkan sampai makan-siang (gen.)."
+    },
+    {
+     "speaker": "Ані:",
+     "text": "[Добре|DO-bre]. [У|U] [нього|NYO-ho] [є|ye] [страховий|stra-kho-VYY] [поліс|PO-lis] [від|vid] [роботи|ro-BO-ty]. [Які|Ya-KI] [документи|do-ku-MEN-ty] [потрібні|po-TRIB-ni] [для|dlya] [страхової|stra-kho-VO-yi]?",
+     "id": "Baik. Dia punya polis asuransi dari kantor. Dokumen apa yang dibutuhkan untuk perusahaan asuransinya?",
+     "literal": "baik. pada dia (gen.) ada asuransi-an polis dari kerja (gen.). yang-mana dokumen perlu untuk asuransi-an (gen.)?"
+    },
+    {
+     "speaker": "Лікарка:",
+     "text": "[Виписка|VY-pys-ka] [з|z] [діагнозом|di-AH-no-zom], [знімок|ZNI-mok] [і|i] [рахунок|ra-KHU-nok]. [Усе|U-SE] [це|tse] [вам|vam] [видадуть|VY-da-dut'] [у|u] [реєстратурі|re-yes-tra-TU-ri].",
+     "id": "Surat keluar dengan diagnosis, foto rontgen, dan tagihan. Semua itu akan diberikan kepada Anda di bagian pendaftaran.",
+     "literal": "surat-keluar dengan diagnosis (ins.), foto dan tagihan. semua ini Anda (dat.) (mereka)-akan-menyerahkan di pendaftaran (lok.)."
+    },
+    {
+     "speaker": "Ані:",
+     "text": "[А|A] [рахунок|ra-KHU-nok] [треба|TRE-ba] [оплатити|o-pla-TY-ty] [одразу|o-DRA-zu]?",
+     "id": "Tagihannya harus dibayar langsung?",
+     "literal": "dan tagihan perlu membayar‹selesai› segera?"
+    },
+    {
+     "speaker": "Лікарка:",
+     "text": "[Ні|Ni]. [Якщо|Yak-SHCHO] [страхова|stra-kho-VA] [компанія|kom-PA-ni-ya] [підтвердить|pidt-VER-dyt'] [випадок|VY-pa-dok], [його|yo-HO] [буде|BU-de] [оплачено|o-PLA-che-no] [напряму|na-prya-MU].",
+     "id": "Tidak. Kalau perusahaan asuransi mengakui klaimnya, tagihan itu akan dibayar langsung oleh mereka.",
+     "literal": "tidak. jika asuransi-an perusahaan akan-mengonfirmasi kasus, dia (ak.) akan-ada dibayar langsung."
+    },
+    {
+     "speaker": "Ані:",
+     "text": "[Чудово|Chu-DO-vo]. [А|A] [можна|MOZH-na] [його|yo-HO] [зараз|ZA-raz] [побачити|po-BA-chy-ty]?",
+     "id": "Bagus. Boleh saya menemuinya sekarang?",
+     "literal": "bagus. dan boleh dia (ak.) sekarang melihat‹selesai›?"
+    },
+    {
+     "speaker": "Лікарка:",
+     "text": "[Можна|MOZH-na], [палата|pa-LA-ta] [сімнадцять|sim-NAD-tsyat'] [на|na] [другому|DRU-ho-mu] [поверсі|PO-ver-si]. [Тільки|TIL'-ky] [не|ne] [дозволяйте|doz-vo-LYAY-te] [йому|yo-MU] [вставати|vsta-VA-ty]!",
+     "id": "Boleh, kamar tujuh belas di lantai dua. Tapi jangan biarkan dia bangun!",
+     "literal": "boleh, bangsal tujuh-belas di kedua lantai (lok.). hanya jangan izinkan (Anda) dia (dat.) bangun!"
+    }
+   ],
+   "notes": [
+    "**Його привезли, мене попросили.** Kata kerja jamak orang ketiga tanpa subjek adalah cara paling alami untuk arti *di-* dalam bahasa lisan. Tidak ada kata *вони*: begitu kata ganti itu muncul, artinya berubah menjadi *mereka* yang tertentu. Objeknya tetap akusatif (*його, мене*), jadi *Його привезли* = dia dibawa (ke sini).",
+    "**Його було госпіталізовано.** Bentuk **-но/-то** (*госпіталізовано, зроблено, підготовлено*) adalah bentuk tanpa pelaku yang khas bahasa Ukraina, disukai dalam laporan dan bahasa resmi. Untuk lampau ditambah *було*, untuk nanti *буде*, untuk sekarang tanpa apa-apa: *Знімок зроблено* = rontgennya sudah dibuat.",
+    "**Перелом лівої ноги.** Tekanan pada *pe-re-LOM*. *Перелом без зміщення* = patah tanpa pergeseran tulang. *Нога* dalam bahasa Ukraina mencakup seluruh tungkai dari paha sampai telapak, jadi bisa berarti kaki atau tungkai.",
+    "**Коли його випишуть?** *Виписати з лікарні* = mengeluarkan dari rumah sakit, yaitu pasien boleh pulang. Dokumennya disebut **виписка**. Awalan *ви-* pada kata kerja sempurna selalu bertekanan: *VY-py-shut'*, *VY-pys-ka*, *VY-da-dut'*.",
+    "**Для страхової.** Dalam obrolan, *страхова компанія* sering disingkat menjadi kata sifat saja: *страхова* (perusahaan asuransi), seperti orang Indonesia bilang *asuransinya*. Kata *страховка* juga sering terdengar, tetapi dalam dokumen yang baku adalah **страховий поліс**.",
+    "**Не дозволяйте йому вставати.** Larangan sopan dengan imperatif tak sempurna, seperti di unit 1. *Дозволяти* menuntut datif (orang yang diberi izin): *йому*, *мені*. Dokter memakai *ви* kepada Ani, bentuk yang wajar kepada orang dewasa yang belum dikenal."
+   ],
+   "grammars": [
+    {
+     "title": "Lima cara berkata di- dalam bahasa Ukraina",
+     "body": [
+      "Bahasa Indonesia cukup dengan awalan *di-*. Bahasa Ukraina punya beberapa pilihan, masing-masing dengan nada sendiri."
+     ],
+     "table": {
+      "head": [
+       "Bentuk",
+       "Contoh",
+       "Arti",
+       "Nada"
+      ],
+      "rows": [
+       [
+        "jamak ke-3 tanpa subjek",
+        "Йому наклали гіпс.",
+        "Dia dipasangi gips.",
+        "lisan, paling lazim"
+       ],
+       [
+        "-но, -то (sekarang)",
+        "Знімок зроблено.",
+        "Rontgennya sudah dibuat.",
+        "laporan, hasil"
+       ],
+       [
+        "було + -но",
+        "Його було госпіталізовано.",
+        "Dia dirawat inap.",
+        "resmi, lampau"
+       ],
+       [
+        "буде + -но",
+        "Рахунок буде оплачено.",
+        "Tagihan akan dibayar.",
+        "resmi, nanti"
+       ],
+       [
+        "бути + partisip",
+        "Він був госпіталізований.",
+        "Dia dalam keadaan dirawat inap.",
+        "keadaan subjek"
+       ],
+       [
+        "-ся (tak sempurna)",
+        "Такі переломи лікуються гіпсом.",
+        "Patah seperti ini diobati dengan gips.",
+        "umum, tanpa pelaku"
+       ]
+      ]
+     },
+     "after": [
+      "Bentuk *-ся* dan partisip sebaiknya tidak dipasangi pelaku dalam instrumental (*лікарем, фірмою*). Kalau pelakunya penting, pakai kalimat aktif biasa: *Лікар наклав гіпс*."
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Діалог 2 — Di bangsal nomor tujuh belas",
+   "intro": "Setengah jam kemudian. Yurko terbaring dengan kaki bergips dan, seperti biasa, tidak kehilangan selera humornya. Ani sudah menelepon perusahaan asuransi dan pan Bohdan. Perhatikan bentuk *подано, замовлено*: benda yang dikenai tindakan tetap dalam akusatif.",
+   "lines": [
+    {
+     "speaker": "Юрко:",
+     "text": "[О|O], [Ані|A-ni]! [Не|Ne] [думав|DU-mav], [що|shcho] [мене|me-NE] [так|tak] [швидко|SHVYD-ko] [відвідають|vid-VI-da-yut'].",
+     "id": "Oh, Ani! Aku tidak menyangka akan dijenguk secepat ini.",
+     "literal": "oh, Ani! tidak (aku)-berpikir, bahwa aku (ak.) begitu cepat (mereka)-akan-menjenguk."
+    },
+    {
+     "speaker": "Ані:",
+     "text": "[Пан|Pan] [Богдан|Boh-DAN] [дуже|DU-zhe] [хвилюється|khvy-LYU-ye-tsya]. [Як|Yak] [ти|ty] [почуваєшся|po-chu-VA-yesh-sya], [Юрку|YUR-ku]?",
+     "id": "Pan Bohdan cemas sekali. Bagaimana perasaanmu, Yurko?",
+     "literal": "tuan Bohdan sangat cemas. bagaimana kamu merasa-diri, Yurko (vok.)?"
+    },
+    {
+     "speaker": "Юрко:",
+     "text": "[Та|Ta] [файно|FAY-no], [лиш|lysh] [нога|no-HA] [важка|vazh-KA], [як|yak] [колода|ko-LO-da].",
+     "id": "Ya baik-baik saja, cuma kakinya berat seperti batang kayu.",
+     "literal": "ya baik, hanya kaki berat, seperti batang-kayu."
+    },
+    {
+     "speaker": "Ані:",
+     "text": "[Я|Ya] [все|vse] [з'ясувала|zya-su-VA-la]. [Заяву|Za-YA-vu] [до|do] [страхової|stra-kho-VO-yi] [вже|vzhe] [подано|PO-da-no], [а|a] [тебе|te-BE] [випишуть|VY-py-shut'] [завтра|ZAV-tra].",
+     "id": "Aku sudah mengurus semuanya. Klaim ke asuransi sudah diajukan, dan kamu boleh pulang besok.",
+     "literal": "aku semua menjelaskan‹selesai›. permohonan (ak.) ke asuransi (gen.) sudah diajukan, dan kamu (ak.) (mereka)-akan-mengeluarkan besok."
+    },
+    {
+     "speaker": "Юрко:",
+     "text": "[А|A] [хто|khto] [мене|me-NE] [відвезе|vid-ve-ZE] [додому|do-DO-mu]? [За|Za] [кермо|ker-MO] [я|ya] [тепер|te-PER] [не|ne] [сяду|SYA-du].",
+     "id": "Lalu siapa yang mengantarku pulang? Aku tidak bisa menyetir sekarang.",
+     "literal": "dan siapa aku (ak.) akan-mengantar pulang? ke kemudi aku sekarang tidak akan-duduk."
+    },
+    {
+     "speaker": "Ані:",
+     "text": "[Не|Ne] [хвилюйся|khvy-LYUY-sya]. [Для|Dlya] [тебе|te-BE] [вже|vzhe] [замовлено|za-MO-vle-no] [таксі|tak-SI] [до|do] [Верховини|Ver-kho-VY-ny].",
+     "id": "Jangan khawatir. Taksi ke Verkhovyna sudah dipesan untukmu.",
+     "literal": "jangan cemas. untuk kamu (gen.) sudah dipesan taksi sampai Verkhovyna (gen.)."
+    },
+    {
+     "speaker": "Юрко:",
+     "text": "[Таксі|Tak-SI] [аж|azh] [до|do] [Верховини|Ver-kho-VY-ny]? [То|To] [ж|zh] [ціле|TSI-le] [багатство|ba-HAT-stvo]!",
+     "id": "Taksi sampai Verkhovyna? Itu kan mahal sekali!",
+     "literal": "taksi sampai-sejauh ke Verkhovyna (gen.)? itu kan utuh kekayaan!"
+    },
+    {
+     "speaker": "Ані:",
+     "text": "[Пан|Pan] [Богдан|Boh-DAN] [сказав|ska-ZAV], [що|shcho] [за|za] [таксі|tak-SI] [заплатить|za-PLA-tyt'] [фірма|FIR-ma].",
+     "id": "Pan Bohdan bilang, taksinya dibayar perusahaan.",
+     "literal": "tuan Bohdan berkata, bahwa untuk taksi akan-membayar perusahaan."
+    },
+    {
+     "speaker": "Юрко:",
+     "text": "[Ну|Nu], [тоді|to-DI] [перекажи|pe-re-ka-ZHY] [йому|yo-MU] [щиру|SHCHY-ru] [дяку|DYA-ku]. [А|A] [лижі|LY-zhi], [до|do] [речі|RE-chi], [цілі|TSI-li]!",
+     "id": "Ya sudah, sampaikan terima kasihku yang tulus kepadanya. Omong-omong, papan skinya utuh!",
+     "literal": "nah, kalau-begitu sampaikan dia (dat.) tulus terima-kasih (ak.). dan ski (jmk), omong-omong, utuh!"
+    },
+    {
+     "speaker": "Ані:",
+     "text": "[Юрку|YUR-ku], [ти|ty] [невиправний|ne-vy-PRAV-nyy]! [Лижі|LY-zhi] [цілі|TSI-li], [а|a] [нога|no-HA] [в|v] [гіпсі|HIP-si].",
+     "id": "Yurko, kamu memang tak tertolong! Skinya utuh, tapi kakimu digips.",
+     "literal": "Yurko (vok.), kamu tak-dapat-diperbaiki! ski utuh, sedangkan kaki di gips (lok.)."
+    },
+    {
+     "speaker": "Юрко:",
+     "text": "[Нога|No-HA] [зроститься|zros-TY-tsya], [а|a] [нові|no-VI] [лижі|LY-zhi] [дорого|DO-ro-ho] [коштують|KOSH-tu-yut']!",
+     "id": "Kaki bisa menyambung sendiri, sedangkan ski baru itu mahal!",
+     "literal": "kaki akan-menyatu-sendiri, sedangkan baru ski mahal berharga!"
+    }
+   ],
+   "notes": [
+    "**Та файно, лиш…** Yurko berbicara dengan warna Karpatia dan Galicia. **Файно** (dari bahasa Jerman *fein*) = bagus, baik, sangat umum di Lviv dan pegunungan; dalam bahasa baku *добре* atau *гарно*. **Лиш** adalah versi pendek *лише* = hanya.",
+    "**Заяву подано.** Inilah kekhasan bentuk *-но/-то*: benda yang dikenai tindakan tetap dalam **akusatif**, bukan nominatif. Jadi *заяву подано*, *виписку підготовлено*, bukan *заява подано*. Kalimat ini tak punya subjek sama sekali, mirip *Заяву подали*, hanya lebih resmi.",
+    "**Для тебе вже замовлено таксі.** Kata *таксі* tidak pernah berubah bentuk, jadi akusatifnya tak terlihat, tapi polanya sama. Perhatikan urutan kata: hal baru (*таксі до Верховини*) ditaruh di akhir, tempat tekanan informasi dalam kalimat Ukraina.",
+    "**За таксі заплатить фірма.** Ani tidak berkata *таксі буде оплачено фірмою*. Pasif dengan pelaku dalam instrumental terasa kaku dan meniru bahasa birokrasi Rusia. Kalau pelakunya disebut, kalimat aktif lebih luwes. *Платити за що* = membayar untuk sesuatu, *оплатити що* = melunasi sesuatu (tanpa *за*).",
+    "**То ж ціле багатство!** *Ціле багатство* = seluruh kekayaan, yaitu mahal sekali. Partikel **ж** di sini berarti *kan* atau *toh*; partikel-partikel lisan seperti ini akan dibahas tuntas di unit 14. *Аж до* = sampai sejauh, menekankan jarak yang jauh.",
+    "**Нога зроститься.** *Зростися* = menyatu kembali (tulang yang patah). Ini bukan pasif, walau berakhiran *-ся*: tulang itu menyatu dengan sendirinya. *Ти невиправний* = kamu tak bisa diperbaiki, gurauan sayang untuk orang yang keras kepala dengan kebiasaannya."
+   ],
+   "grammars": [
+    {
+     "title": "Bentuk -но/-то: objek tetap akusatif",
+     "body": [
+      "Bentuk ini dibuat dari partisip pasif (unit 3) dengan mengganti akhiran *-ий* menjadi *-о*: *зроблений → зроблено*, *взятий → взято*. Tidak berubah menurut jenis atau jumlah."
+     ],
+     "table": {
+      "head": [
+       "Kalimat aktif",
+       "Bentuk -но/-то",
+       "Arti"
+      ],
+      "rows": [
+       [
+        "Ані подала заяву.",
+        "Заяву подано.",
+        "Klaimnya sudah diajukan."
+       ],
+       [
+        "Ми замовили таксі.",
+        "Таксі замовлено.",
+        "Taksinya sudah dipesan."
+       ],
+       [
+        "Медсестра підготувала виписку.",
+        "Виписку підготовлено.",
+        "Surat keluarnya sudah disiapkan."
+       ],
+       [
+        "Лікар підписав документи.",
+        "Документи підписано.",
+        "Dokumennya sudah ditandatangani."
+       ],
+       [
+        "Хтось відчинив вікно.",
+        "Вікно відчинено.",
+        "Jendelanya dibuka."
+       ],
+       [
+        "Вони взяли кров на аналіз.",
+        "Кров на аналіз взято.",
+        "Darah sudah diambil untuk diperiksa."
+       ],
+       [
+        "Фірма оплатить рахунок.",
+        "Рахунок буде оплачено.",
+        "Tagihannya akan dibayar."
+       ],
+       [
+        "Ми подали заяву вчора.",
+        "Заяву було подано вчора.",
+        "Klaimnya diajukan kemarin."
+       ]
+      ]
+     },
+     "after": [
+      "Bentuk *-но/-то* hampir selalu dari kata kerja sempurna, karena ia melaporkan hasil yang sudah tercapai."
+     ]
+    }
+   ]
+  }
+ ],
+ "sections": [
+  {
+   "title": "Di rumah sakit dan kantor asuransi",
+   "blocks": [
+    {
+     "type": "p",
+     "text": "Di Ukraina, urusan kesehatan sehari-hari dimulai dari *сімейний лікар* (dokter keluarga) yang didaftar lewat aplikasi. Untuk kecelakaan, orang menelepon *103* (ambulans) atau *112* (nomor darurat umum), dan pasien dibawa ke *приймальне відділення*, bagian penerimaan gawat darurat. Pekerja yang sakit mendapat *лікарняний*, surat keterangan sakit elektronik untuk kantor. Kalau punya asuransi dari kantor, simpan semua dokumen: tanpa *виписка* dan *рахунок*, klaim tidak akan diproses."
+    },
+    {
+     "type": "tabel",
+     "head": [
+      "Kata",
+      "Arti",
+      "Contoh"
+     ],
+     "rows": [
+      [
+       "приймальне відділення",
+       "UGD, bagian penerimaan",
+       "Його привезли в приймальне відділення."
+      ],
+      [
+       "травматологія",
+       "bagian trauma dan ortopedi",
+       "Він лежить у травматології."
+      ],
+      [
+       "палата",
+       "bangsal, kamar rawat",
+       "Палата номер сімнадцять."
+      ],
+      [
+       "знімок, рентген",
+       "foto rontgen",
+       "Знімок уже зроблено."
+      ],
+      [
+       "гіпс",
+       "gips",
+       "Йому наклали гіпс."
+      ],
+      [
+       "милиці",
+       "kruk, tongkat ketiak",
+       "Шість тижнів на милицях."
+      ],
+      [
+       "виписка",
+       "surat keluar rumah sakit",
+       "Виписку видадуть у реєстратурі."
+      ],
+      [
+       "лікарняний",
+       "surat sakit untuk kantor",
+       "Лікар відкрив лікарняний."
+      ],
+      [
+       "страховий поліс",
+       "polis asuransi",
+       "У нього є страховий поліс."
+      ],
+      [
+       "страховий випадок",
+       "kejadian yang ditanggung asuransi",
+       "Компанія визнала страховий випадок."
+      ]
+     ]
+    },
+    {
+     "type": "kotak",
+     "title": "Kalimat penting di rumah sakit",
+     "items": [
+      "*Де приймальне відділення?* = Di mana UGD-nya?",
+      "*Коли можна відвідати хворого?* = Kapan pasien boleh dijenguk?",
+      "*Які документи потрібні для страхової?* = Dokumen apa yang diperlukan untuk asuransi?",
+      "*Чи покриває поліс лікування?* = Apakah polis menanggung pengobatannya?",
+      "*Мені потрібен перекладач.* = Saya perlu penerjemah."
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Pasif yang luwes, bukan yang kaku",
+   "blocks": [
+    {
+     "type": "p",
+     "text": "Buku gaya bahasa Ukraina berulang kali mengingatkan: jangan menumpuk pasif dengan pelaku dalam instrumental, karena itu terdengar seperti terjemahan kaku dari birokrasi Rusia. Kalau pelakunya penting, pakai kalimat aktif. Kalau pelakunya tidak penting, pakai jamak ketiga tanpa subjek atau bentuk *-но/-то*."
+    },
+    {
+     "type": "tabel",
+     "head": [
+      "Kaku",
+      "Luwes",
+      "Arti"
+     ],
+     "rows": [
+      [
+       "Заява подається клієнтом.",
+       "Клієнт подає заяву.",
+       "Nasabah mengajukan klaim."
+      ],
+      [
+       "Рахунок був оплачений фірмою.",
+       "Фірма оплатила рахунок.",
+       "Perusahaan membayar tagihannya."
+      ],
+      [
+       "Нами було прийнято рішення.",
+       "Ми ухвалили рішення.",
+       "Kami mengambil keputusan."
+      ],
+      [
+       "Документи підписуються лікарем.",
+       "Лікар підписує документи.",
+       "Dokter menandatangani dokumen."
+      ],
+      [
+       "Гіпс накладається на шість тижнів.",
+       "Гіпс накладають на шість тижнів.",
+       "Gips dipasang selama enam minggu."
+      ],
+      [
+       "Пацієнт являється застрахованим.",
+       "Пацієнт має страховий поліс.",
+       "Pasien punya asuransi."
+      ],
+      [
+       "Лікування проводиться безкоштовно.",
+       "Лікують безкоштовно.",
+       "Pengobatannya gratis."
+      ]
+     ]
+    },
+    {
+     "type": "list",
+     "items": [
+      "*Являтися* dalam arti *adalah* merupakan rusisme; cukup *бути* atau tanpa kata kerja.",
+      "*Ухвалити рішення* lebih baku daripada *прийняти рішення*, walau yang kedua juga sering terdengar.",
+      "Bentuk *-но/-то* tidak boleh diberi pelaku dalam instrumental: bukan *заяву подано клієнтом*."
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Ulangan berjenjang — unit 10",
+   "blocks": [
+    {
+     "type": "p",
+     "text": "Tutup kolom Ukraina, baca terjemahan Indonesianya, lalu susun kembali kalimatnya dari ingatan."
+    },
+    {
+     "type": "tabel",
+     "head": [
+      "Bahasa Indonesia",
+      "Українська",
+      "Baca"
+     ],
+     "rows": [
+      [
+       "Bagus. Jadi berapa banyak kopi yang kita jual pada tahun 2027?",
+       "Добре. То скільки кави ми продали в дві тисячі двадцять сьомому році?",
+       "*DO-bre To SKIL'-ky KA-vy my pro-DA-ly v dvi TY-sya-chi DVAD-tsyat' SYO-mo-mu RO-tsi*"
+      ],
+      [
+       "Hotel dan kafe. Di tempat kedua toko online, di tempat ketiga kedai «Ява» kita sendiri.",
+       "Готелі й кав'ярні. На другому місці інтернет-магазин, на третьому наша «Ява».",
+       "*Ho-TE-li y ka-VYAR-ni Na DRU-ho-mu MIS-tsi in-ter-NET ma-ha-ZYN na TRE-tyo-mu NA-sha YA-va*"
+      ],
+      [
+       "Setuju. Lalu Yurko dan Solomiya tahun ini dua-duanya bekerja tanpa cuti.",
+       "Згода. А Юрко й Соломія цього року обоє працювали без відпустки.",
+       "*ZHO-da A Yur-KO y So-lo-MI-ya tsyo-HO RO-ku o-BO-ye pra-tsyu-VA-ly bez vid-PUST-ky*"
+      ],
+      [
+       "Di slide ketujuh. Ada foto kalian berdua berdiri di dekat mesin sangrai.",
+       "На сьомому. Там фото, де ви обоє стоїте біля ростера.",
+       "*Na SYO-mo-mu Tam FO-to de vy o-BO-ye sto-YI-te BI-lya ROS-te-ra*"
+      ],
+      [
+       "Tanggal dua puluh dua November, seminggu sebelum festival.",
+       "Двадцять другого листопада, за тиждень до фестивалю.",
+       "*DVAD-tsyat' DRU-ho-ho lys-to-PA-da za TYZH-den' do fes-ty-VA-lyu*"
+      ]
+     ]
+    }
+   ]
+  }
+ ],
+ "vocab": [
+  {
+   "uk": "госпіталізува́ти",
+   "baca": "hos-pi-ta-li-zu-VA-ty",
+   "id": "merawat inapkan (*його госпіталізували*)"
+  },
+  {
+   "uk": "перело́м",
+   "baca": "pe-re-LOM",
+   "id": "patah tulang"
+  },
+  {
+   "uk": "кі́стка",
+   "baca": "KIST-ka",
+   "id": "tulang"
+  },
+  {
+   "uk": "змі́щення",
+   "baca": "ZMI-shchen-nya",
+   "id": "pergeseran (*без зміщення*)"
+  },
+  {
+   "uk": "зні́мок",
+   "baca": "ZNI-mok",
+   "id": "foto rontgen; juga foto biasa"
+  },
+  {
+   "uk": "наклада́ти / накла́сти гіпс",
+   "baca": "na-kla-DA-ty / na-KLAS-ty hips",
+   "id": "memasang gips"
+  },
+  {
+   "uk": "опера́ція",
+   "baca": "o-pe-RA-tsi-ya",
+   "id": "operasi"
+  },
+  {
+   "uk": "випи́сувати / ви́писати",
+   "baca": "vy-PY-su-va-ty / VY-py-sa-ty",
+   "id": "memulangkan pasien; menulis resep"
+  },
+  {
+   "uk": "ви́писка",
+   "baca": "VY-pys-ka",
+   "id": "surat keluar rumah sakit"
+  },
+  {
+   "uk": "ускла́днення",
+   "baca": "us-KLAD-nen-nya",
+   "id": "komplikasi"
+  },
+  {
+   "uk": "страхови́й по́ліс",
+   "baca": "stra-kho-VYY PO-lis",
+   "id": "polis asuransi"
+  },
+  {
+   "uk": "страхова́ компа́нія",
+   "baca": "stra-kho-VA kom-PA-ni-ya",
+   "id": "perusahaan asuransi (lisan: *страхова*)"
+  },
+  {
+   "uk": "ви́падок",
+   "baca": "VY-pa-dok",
+   "id": "kejadian, kasus (*страховий випадок*)"
+  },
+  {
+   "uk": "раху́нок",
+   "baca": "ra-KHU-nok",
+   "id": "tagihan; rekening"
+  },
+  {
+   "uk": "опла́чувати / оплати́ти",
+   "baca": "o-PLA-chu-va-ty / o-pla-TY-ty",
+   "id": "membayar, melunasi (tanpa *за*)"
+  },
+  {
+   "uk": "напряму́",
+   "baca": "na-prya-MU",
+   "id": "langsung, tanpa perantara"
+  },
+  {
+   "uk": "реєстрату́ра",
+   "baca": "re-yes-tra-TU-ra",
+   "id": "bagian pendaftaran"
+  },
+  {
+   "uk": "пала́та",
+   "baca": "pa-LA-ta",
+   "id": "bangsal, kamar rawat"
+  },
+  {
+   "uk": "зая́ва",
+   "baca": "za-YA-va",
+   "id": "permohonan, klaim tertulis"
+  },
+  {
+   "uk": "подава́ти / пода́ти",
+   "baca": "po-da-VA-ty / po-DA-ty",
+   "id": "mengajukan (*подати заяву*)"
+  },
+  {
+   "uk": "замовля́ти / замо́вити",
+   "baca": "za-mo-VLYA-ty / za-MO-vy-ty",
+   "id": "memesan"
+  },
+  {
+   "uk": "відві́дувати / відві́дати",
+   "baca": "vid-VI-du-va-ty / vid-VI-da-ty",
+   "id": "menjenguk, mengunjungi"
+  },
+  {
+   "uk": "ли́жі",
+   "baca": "LY-zhi",
+   "id": "ski (selalu jamak)"
+  },
+  {
+   "uk": "зроста́тися / зрости́ся",
+   "baca": "zros-TA-ty-sya / zros-TY-sya",
+   "id": "menyatu kembali (tulang)"
+  },
+  {
+   "uk": "фа́йно",
+   "baca": "FAY-no",
+   "id": "bagus, baik (dialek Barat)"
+  }
+ ],
+ "exercises": [
+  {
+   "prompt": "Terjemahkan ke bahasa Ukraina.",
+   "items": [
+    "Dia dirawat inap kemarin malam.",
+    "Rontgennya sudah dibuat, gipsnya dipasang tadi pagi.",
+    "Kapan dia boleh pulang dari rumah sakit?",
+    "Surat keluarnya akan disiapkan sebelum makan siang.",
+    "Klaim ke asuransi sudah diajukan.",
+    "Taksi untukmu sudah dipesan."
+   ]
+  },
+  {
+   "prompt": "Isi titik-titik dengan bentuk yang tepat. Petunjuk ada di dalam kurung.",
+   "items": [
+    "Знімок уже ____. (зробити, bentuk -но)",
+    "Йому ____ гіпс зранку. (накласти, lampau jamak tanpa subjek)",
+    "Заяву ____ вчора. (подати, bentuk -но)",
+    "Його ____ завтра. (виписати, nanti, jamak tanpa subjek)",
+    "Рахунок буде ____ напряму. (оплатити, bentuk -но)",
+    "Пацієнт був ____ вчора ввечері. (госпіталізувати, partisip maskulin)",
+    "Для тебе вже ____ таксі. (замовити, bentuk -но)"
+   ]
+  },
+  {
+   "prompt": "Ubah menjadi bentuk -но/-то tanpa pelaku. Contoh: Лікарі зробили знімок. → Знімок зроблено.",
+   "items": [
+    "Медсестра підготувала виписку.",
+    "Ані подала заяву.",
+    "Фірма оплатила рахунок.",
+    "Ми замовили таксі.",
+    "Лікар підписав документи.",
+    "Хтось відчинив вікно в палаті."
+   ]
+  },
+  {
+   "prompt": "Susun jadi kalimat yang benar.",
+   "items": [
+    "зроблено / знімок / уже",
+    "його / завтра / випишуть",
+    "подано / до страхової / заяву / вже",
+    "буде / рахунок / оплачено / напряму",
+    "наклали / йому / зранку / гіпс"
+   ]
+  }
+ ],
+ "answers": [
+  "Його було госпіталізовано вчора ввечері. — Знімок уже зроблено, гіпс наклали зранку. — Коли його випишуть з лікарні? — Виписку буде підготовлено до обіду. — Заяву до страхової вже подано. — Для тебе вже замовлено таксі.",
+  "зроблено — наклали — подано — випишуть — оплачено — госпіталізований — замовлено",
+  "Виписку підготовлено. — Заяву подано. — Рахунок оплачено. — Таксі замовлено. — Документи підписано. — Вікно в палаті відчинено.",
+  "Знімок уже зроблено. — Його випишуть завтра. — Заяву до страхової вже подано. — Рахунок буде оплачено напряму. — Йому наклали гіпс зранку."
+ ]
+}

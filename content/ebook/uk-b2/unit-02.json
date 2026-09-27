@@ -1,0 +1,627 @@
+{
+ "title": "Memo dan surat resmi — keluar dari jerat канцелярит",
+ "title_target": "Службова записка і діловий лист",
+ "goal": "Menulis memo dan surat resmi yang jernih: mengenali канцелярит (rantai kata benda verbal seperti *з метою здійснення проведення*), menggantinya dengan kata kerja hidup (*щоб провести*), dan memakai formula surat bisnis Ukraina modern (*Пишемо Вам, щоб…*, *Просимо розглянути можливість…*, *З повагою*).",
+ "bekal": [
+  "kamu bisa memangkas rantai kata benda verbal menjadi satu kata kerja yang tepat",
+  "kamu bisa menyusun surat resmi dari sapaan *Шановна пані…!* sampai *З повагою*",
+  "kamu bisa menghindari rusisme kantor yang paling sering: *приймати участь*, *на протязі*, *слідуючий*, *являтися*"
+ ],
+ "dialogs": [
+  {
+   "title": "Діалог 1 — Memo yang terlalu resmi",
+   "intro": "12 Februari 2029, ruang direktur. Ani menyerahkan memo pertamanya: permintaan izin menyelenggarakan presentasi program. Olena Vasylivna membaca sambil tersenyum. Perhatikan setiap kali ia mengganti kata benda panjang dengan satu kata kerja.",
+   "lines": [
+    {
+     "speaker": "Олена Василівна:",
+     "text": "Ані, я прочитала вашу службову записку. Змістовно, але важкувато.",
+     "id": "Ani, saya sudah membaca memo Anda. Isinya padat, tapi agak berat.",
+     "literal": "Ani, saya membaca‹selesai› Anda-punya dinas catatan (ak.). berisi, tetapi agak-berat."
+    },
+    {
+     "speaker": "Ані:",
+     "text": "Важкувато? Я намагалася писати якомога офіційніше.",
+     "id": "Agak berat? Saya berusaha menulis seresmi mungkin.",
+     "literal": "agak-berat? saya berusaha menulis se-mungkin lebih-resmi."
+    },
+    {
+     "speaker": "Олена Василівна:",
+     "text": "У цьому й проблема. Ось: «з метою здійснення проведення презентації». Що ви хотіли сказати?",
+     "id": "Justru di situ masalahnya. Ini: «dalam rangka pelaksanaan penyelenggaraan presentasi». Apa yang mau Anda katakan?",
+     "literal": "di ini (lok.) justru masalah. ini: «dengan tujuan (ins.) pelaksanaan (gen.) penyelenggaraan (gen.) presentasi (gen.)». apa Anda ingin mengatakan?"
+    },
+    {
+     "speaker": "Ані:",
+     "text": "Що ми хочемо провести презентацію.",
+     "id": "Bahwa kami ingin mengadakan presentasi.",
+     "literal": "bahwa kami ingin mengadakan‹selesai› presentasi (ak.)."
+    },
+    {
+     "speaker": "Олена Василівна:",
+     "text": "То так і напишіть: «щоб провести презентацію». Три слова замість п'яти.",
+     "id": "Ya tulis saja begitu: «untuk mengadakan presentasi». Tiga kata, bukan lima.",
+     "literal": "ya begitu juga tulislah-Anda: «supaya mengadakan presentasi». tiga kata (gen.) ganti lima (gen.)."
+    },
+    {
+     "speaker": "Ані:",
+     "text": "Але хіба віддієслівні іменники не звучать солідніше?",
+     "id": "Tapi bukankah kata benda verbal terdengar lebih berbobot?",
+     "literal": "tetapi masakan dari-kata-kerja kata-benda tidak berbunyi lebih-berwibawa?"
+    },
+    {
+     "speaker": "Олена Василівна:",
+     "text": "Вони звучать як канцелярит. Дієслово живе, а «здійснення» лише займає місце.",
+     "id": "Kedengarannya seperti bahasa birokrat. Kata kerja itu hidup, sedangkan «pelaksanaan» cuma makan tempat.",
+     "literal": "mereka berbunyi seperti kanceliaryt. kata-kerja hidup, sedangkan «pelaksanaan» hanya menempati tempat."
+    },
+    {
+     "speaker": "Ані:",
+     "text": "А «проведення наради»? Це теж погано?",
+     "id": "Kalau «penyelenggaraan rapat»? Itu juga jelek?",
+     "literal": "dan «penyelenggaraan rapat (gen.)»? ini juga buruk?"
+    },
+    {
+     "speaker": "Олена Василівна:",
+     "text": "Не завжди. Інколи іменник потрібен, але не нанизуйте їх один на одного.",
+     "id": "Tidak selalu. Kadang kata benda memang perlu, tapi jangan dirangkai bertumpuk-tumpuk.",
+     "literal": "tidak selalu. kadang kata-benda diperlukan, tetapi jangan merangkai-Anda mereka satu pada satu (ak.)."
+    },
+    {
+     "speaker": "Ані:",
+     "text": "Зрозуміла. Тоді «надаємо вам інформацію» краще замінити на «повідомляємо»?",
+     "id": "Saya paham. Jadi «kami memberikan informasi kepada Anda» lebih baik diganti «kami memberitahukan»?",
+     "literal": "mengerti-(saya pr.). lalu «memberikan-kami Anda (dat.) informasi (ak.)» lebih-baik mengganti pada «memberitahu-kami»?"
+    },
+    {
+     "speaker": "Олена Василівна:",
+     "text": "Саме так. Одне точне дієслово краще за три слова.",
+     "id": "Tepat sekali. Satu kata kerja yang tepat lebih baik daripada tiga kata.",
+     "literal": "persis begitu. satu tepat kata-kerja lebih-baik daripada tiga kata (ak.)."
+    },
+    {
+     "speaker": "Ані:",
+     "text": "А що робити з фразою «у зв'язку з вищевикладеним»?",
+     "id": "Lalu frasa «sehubungan dengan hal-hal tersebut di atas» diapakan?",
+     "literal": "dan apa berbuat dengan frasa (ins.) «di hubungan (lok.) dengan yang-di-atas-dipaparkan (ins.)»?"
+    },
+    {
+     "speaker": "Олена Василівна:",
+     "text": "Викресліть сміливо. «Тому» каже те саме, і його дочитують до кінця.",
+     "id": "Coret saja tanpa ragu. «Karena itu» artinya sama, dan orang membacanya sampai habis.",
+     "literal": "coretlah‹selesai›-Anda berani. «karena-itu» mengatakan itu sama, dan dia (ak.) membaca-sampai-habis-(mereka) sampai akhir."
+    },
+    {
+     "speaker": "Ані:",
+     "text": "Добре, перепишу й надішлю вам до обіду.",
+     "id": "Baik, akan saya tulis ulang dan kirim ke Ibu sebelum makan siang.",
+     "literal": "baik, tulis-ulang‹selesai›-saya dan kirim‹selesai›-saya Anda (dat.) sampai makan-siang (gen.)."
+    }
+   ],
+   "notes": [
+    "**Службова записка.** Memo internal, ditujukan kepada atasan di lembaga yang sama. Ada juga *доповідна записка* (laporan kepada atasan tentang suatu kejadian) dan *пояснювальна записка* (surat penjelasan, misalnya mengapa terlambat). Semuanya bergenus perempuan karena *записка*.",
+    "**З метою здійснення проведення.** Inilah *канцелярит*: rantai kata benda verbal dalam genitif yang bertumpuk. Padanannya persis dalam birokrasi Indonesia: \"dalam rangka pelaksanaan penyelenggaraan\". Istilah *канцелярит* dibuat dengan akhiran penyakit *-ит* (seperti *бронхіт*), jadi maknanya \"penyakit bahasa kantor\".",
+    "**Щоб провести.** Tujuan paling jernih dinyatakan dengan *щоб* + infinitif, bukan *з метою* + genitif. Aturan praktis: kalau sesudah *з метою* muncul kata berakhiran *-ння*, hampir pasti kalimat bisa ditulis ulang dengan *щоб* dan kata kerja.",
+    "**Важкувато.** Akhiran **-уват- / -оват-** berarti \"agak\": *важкий → важкуватий* (agak berat), *солодкий → солодкуватий*, *синій → синюватий*. Kritik yang dilunakkan dengan akhiran ini adalah cara khas orang Ukraina berbicara santun kepada bawahan.",
+    "**Не нанизуйте.** *Нанизувати* berarti merangkai manik-manik pada tali. Perintah negatif memakai aspek tidak sempurna (*не нанизуйте*), karena yang dilarang adalah kebiasaan, bukan satu tindakan. Bandingkan dengan *Викресліть сміливо*: perintah positif satu kali, aspek sempurna.",
+    "**У зв'язку з вищевикладеним → тому.** Frasa pembuka laporan yang sangat umum ini hampir selalu bisa diganti *тому*, *отже*, atau *тож*. Kata *дочитують* memakai awalan **до-** yang berarti \"sampai selesai\": *дочитати книжку*, *допити каву*, *дописати лист*."
+   ],
+   "grammars": [
+    {
+     "title": "Dari канцелярит ke kalimat hidup",
+     "body": [
+      "Sebagian besar канцелярит berupa kata kerja lemah (*здійснювати, проводити, надавати*) plus kata benda verbal. Ganti pasangan itu dengan satu kata kerja. Tiga baris terakhir sekaligus rusisme yang harus dihindari."
+     ],
+     "table": {
+      "head": [
+       "Канцелярит",
+       "Lebih baik",
+       "Arti"
+      ],
+      "rows": [
+       [
+        "з метою проведення",
+        "щоб провести",
+        "untuk mengadakan"
+       ],
+       [
+        "здійснювати контроль",
+        "контролювати",
+        "mengawasi"
+       ],
+       [
+        "надавати допомогу",
+        "допомагати",
+        "membantu"
+       ],
+       [
+        "проводити аналіз",
+        "аналізувати",
+        "menganalisis"
+       ],
+       [
+        "у зв'язку з вищевикладеним",
+        "тому",
+        "karena itu"
+       ],
+       [
+        "приймати участь",
+        "брати участь",
+        "ikut serta"
+       ],
+       [
+        "на протязі тижня",
+        "протягом тижня",
+        "selama seminggu"
+       ],
+       [
+        "являється партнером",
+        "є партнером",
+        "adalah mitra"
+       ]
+      ]
+     },
+     "after": [
+      "Kata benda verbal tidak terlarang. *Проведення наради* sah sebagai judul agenda. Yang dihindari adalah rantai dua, tiga, atau empat kata seperti itu dalam satu kalimat."
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Діалог 2 — Surat untuk museum",
+   "intro": "Sore harinya. Ani menyiapkan surat kepada direktur sebuah museum seni rakyat di Kyiv untuk menawarkan pameran batik dan pysanka. Ia minta Roman membacanya. Perhatikan formula pembuka dan penutup, serta *Вам* dengan huruf besar.",
+   "lines": [
+    {
+     "speaker": "Ані:",
+     "text": "Романе, глянь, будь ласка, на лист до музею. Початок нормальний?",
+     "id": "Roman, tolong lihat surat untuk museum ini. Pembukaannya sudah oke?",
+     "literal": "Roman (vok.), lihatlah‹selesai›, silakan, pada surat ke museum (gen.). awal normal?"
+    },
+    {
+     "speaker": "Роман:",
+     "text": "«Шановна пані директорко!» Добре. А далі «Доводимо до Вашого відома»... Ой, ні.",
+     "id": "«Yth. Ibu Direktur!» Bagus. Lalu «Bersama ini kami beritahukan kepada Anda»... Aduh, jangan.",
+     "literal": "«terhormat nyonya direktur (vok.)!» baik. dan selanjutnya «membawa-kami sampai Anda-punya pengetahuan (gen.)»... aduh, tidak."
+    },
+    {
+     "speaker": "Ані:",
+     "text": "Що не так? Так пишуть у всіх зразках, які я знайшла.",
+     "id": "Apanya yang salah? Semua contoh yang saya temukan ditulis begitu.",
+     "literal": "apa tidak begitu? begitu menulis-(mereka) di semua contoh (lok. jmk.), yang saya menemukan."
+    },
+    {
+     "speaker": "Роман:",
+     "text": "У старих зразках. Сучасний діловий стиль простіший: «Пишемо Вам, щоб запропонувати співпрацю».",
+     "id": "Contoh-contoh lama. Gaya bisnis modern lebih sederhana: «Kami menulis kepada Anda untuk menawarkan kerja sama».",
+     "literal": "di lama contoh (lok. jmk.). modern bisnis gaya lebih-sederhana: «menulis-kami Anda (dat.), supaya menawarkan kerja-sama (ak.)»."
+    },
+    {
+     "speaker": "Ані:",
+     "text": "А «Вам» з великої літери? У звичайному тексті я пишу з малої.",
+     "id": "Lalu «Anda» pakai huruf besar? Di teks biasa aku menulisnya dengan huruf kecil.",
+     "literal": "dan «Anda (dat.)» dari besar huruf (gen.)? di biasa teks (lok.) saya menulis dari kecil (gen.)."
+    },
+    {
+     "speaker": "Роман:",
+     "text": "У листі до однієї людини з великої, це знак поваги. До групи людей пишемо з малої.",
+     "id": "Dalam surat untuk satu orang, pakai huruf besar, itu tanda hormat. Untuk sekelompok orang, huruf kecil.",
+     "literal": "di surat ke satu orang (gen.) dari besar, ini tanda hormat (gen.). ke kelompok orang (gen. jmk.) menulis-kami dari kecil."
+    },
+    {
+     "speaker": "Ані:",
+     "text": "Зрозуміло. А як попросити про зустріч, щоб не звучало як наказ?",
+     "id": "Paham. Lalu bagaimana minta pertemuan supaya tidak terdengar seperti perintah?",
+     "literal": "dimengerti. dan bagaimana meminta‹selesai› tentang pertemuan (ak.), supaya tidak berbunyi seperti perintah?"
+    },
+    {
+     "speaker": "Роман:",
+     "text": "«Просимо розглянути можливість зустрічі» або простіше: «Чи могли б ми зустрітися?»",
+     "id": "«Mohon dipertimbangkan kemungkinan pertemuan» atau lebih sederhana: «Apakah kita bisa bertemu?»",
+     "literal": "«meminta-kami menimbang‹selesai› kemungkinan (ak.) pertemuan (gen.)» atau lebih-sederhana: «apakah bisa-(lampau) (pengandaian) kami bertemu?»"
+    },
+    {
+     "speaker": "Ані:",
+     "text": "Друге мені подобається більше. А в кінці «З повагою» і моя посада?",
+     "id": "Yang kedua lebih aku suka. Lalu di akhir «Hormat saya» dan jabatanku?",
+     "literal": "kedua saya (dat.) menyenangkan lebih. dan di akhir «dengan hormat (ins.)» dan saya-punya jabatan?"
+    },
+    {
+     "speaker": "Роман:",
+     "text": "Так: «З повагою, Ані Лестарі, координаторка програми». І телефон не забудь.",
+     "id": "Ya: «Hormat saya, Ani Lestari, koordinator program». Dan jangan lupa nomor telepon.",
+     "literal": "ya: «dengan hormat (ins.), Ani Lestari, koordinator (pr.) program (gen.)». dan telepon jangan lupa‹selesai›."
+    },
+    {
+     "speaker": "Ані:",
+     "text": "Дякую, Романе! З мене кава.",
+     "id": "Makasih, Roman! Aku traktir kopi.",
+     "literal": "terima-kasih, Roman (vok.)! dari saya (gen.) kopi."
+    }
+   ],
+   "notes": [
+    "**Шановна пані директорко!** Sapaan surat diakhiri tanda seru, lalu isi surat mulai di paragraf baru dengan huruf besar. Nama jabatan perempuan (*директорка, координаторка, перекладачка*) sudah menjadi bentuk baku dalam ejaan 2019, dan dalam kličnyj *-ка* menjadi *-ко*.",
+    "**Доводимо до Вашого відома.** Formula lama \"bersama ini kami beritahukan\". Tidak salah, tetapi berbau kantor zaman dulu dan terdengar dingin. Surat modern langsung ke pokok: *Пишемо Вам, щоб…*, *Звертаємося до Вас із пропозицією…*.",
+    "**Вам dengan huruf besar.** Dalam surat kepada **satu** orang, *Ви, Вас, Вам, Ваш* boleh ditulis dengan huruf besar sebagai tanda hormat. Kepada kelompok atau di teks biasa, huruf kecil. Aturan ini hanya untuk korespondensi, bukan untuk artikel atau dialog.",
+    "**Щоб не звучало як наказ.** *Щоб* di sini bermakna \"supaya\", dan kata kerja sesudahnya berbentuk lampau netral (*звучало*) karena subjeknya tidak disebut: \"supaya (itu) tidak terdengar\". *Звучати як* = terdengar seperti; dalam lisan juga *звучати наче*.",
+    "**Просимо розглянути можливість…** Formula permintaan resmi yang masih wajar dan tidak dianggap канцелярит, karena hanya satu kata benda. Versi yang lebih hangat: *Чи могли б ми…?* dengan pengandaian *би*. Keduanya jauh lebih santun daripada *Прошу зустрітися* yang terdengar seperti perintah.",
+    "**З мене кава.** Ungkapan lisan \"(utangnya) dari saya: kopi\", artinya \"aku traktir kopi sebagai balasan\". Kebalikannya *З тебе кава!* (kamu yang traktir). Jangan tertukar, karena artinya jadi menagih."
+   ],
+   "grammars": [
+    {
+     "title": "Kerangka surat resmi Ukraina",
+     "body": [
+      "Surat bisnis Ukraina modern pendek: satu paragraf konteks, satu paragraf permintaan, satu kalimat penutup. Ini urutan dan formula yang aman."
+     ],
+     "table": {
+      "head": [
+       "Bagian",
+       "Formula",
+       "Arti"
+      ],
+      "rows": [
+       [
+        "sapaan",
+        "Шановна пані …! / Шановний пане …!",
+        "Yth. Ibu … / Bapak …"
+       ],
+       [
+        "pembuka",
+        "Пишемо Вам, щоб…",
+        "Kami menulis kepada Anda untuk…"
+       ],
+       [
+        "konteks",
+        "Фонд «Міст культур» реалізує програму…",
+        "Yayasan … sedang menjalankan program…"
+       ],
+       [
+        "permintaan",
+        "Просимо розглянути можливість…",
+        "Mohon dipertimbangkan kemungkinan…"
+       ],
+       [
+        "tawaran",
+        "Будемо раді обговорити деталі.",
+        "Kami senang membahas rinciannya."
+       ],
+       [
+        "penutup",
+        "Заздалегідь дякуємо за відповідь.",
+        "Terima kasih sebelumnya atas jawaban Anda."
+       ],
+       [
+        "salam",
+        "З повагою,",
+        "Hormat kami/saya,"
+       ],
+       [
+        "tanda tangan",
+        "ім'я, посада, телефон",
+        "nama, jabatan, telepon"
+       ]
+      ]
+     },
+     "after": [
+      "Sesudah *З повагою* ada koma, lalu nama di baris baru. Tanpa titik di akhir nama."
+     ]
+    }
+   ]
+  }
+ ],
+ "sections": [
+  {
+   "title": "Rusisme yang paling sering di surat kantor",
+   "blocks": [
+    {
+     "type": "p",
+     "text": "Bahasa kantor Ukraina lama banyak menyerap kalke dari bahasa Rusia. Editor dan penerjemah Ukraina sekarang sangat peka terhadapnya, jadi satu rusisme di surat resmi langsung mengurangi wibawa penulisnya. Tabel ini memuat yang paling sering muncul."
+    },
+    {
+     "type": "tabel",
+     "head": [
+      "Hindari",
+      "Pakai",
+      "Arti"
+     ],
+     "rows": [
+      [
+       "приймати участь",
+       "брати участь",
+       "ikut serta"
+      ],
+      [
+       "на протязі",
+       "протягом",
+       "selama"
+      ],
+      [
+       "слідуючий",
+       "наступний",
+       "berikutnya"
+      ],
+      [
+       "співпадати",
+       "збігатися",
+       "bertepatan, cocok"
+      ],
+      [
+       "являтися",
+       "бути",
+       "adalah"
+      ],
+      [
+       "вибачаюсь",
+       "перепрошую, вибачте",
+       "maaf"
+      ],
+      [
+       "згідно наказу",
+       "згідно з наказом, відповідно до наказу",
+       "sesuai perintah"
+      ],
+      [
+       "міроприємство",
+       "захід",
+       "acara, kegiatan"
+      ],
+      [
+       "у якості перекладача",
+       "як перекладач",
+       "sebagai penerjemah"
+      ],
+      [
+       "задавати питання",
+       "ставити запитання",
+       "mengajukan pertanyaan"
+      ]
+     ]
+    },
+    {
+     "type": "kotak",
+     "title": "Питання atau запитання?",
+     "items": [
+      "*Запитання* = pertanyaan yang meminta jawaban: *У мене є запитання.*",
+      "*Питання* = masalah, persoalan, isu: *питання бюджету*, *це складне питання*.",
+      "Dalam bahasa lisan keduanya sering tercampur, tetapi dalam surat resmi bedanya dijaga."
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Contoh memo yang baik",
+   "blocks": [
+    {
+     "type": "p",
+     "text": "Inilah memo Ani sesudah ditulis ulang. Pendek, satu permintaan, semua kata kerja aktif. Kepala memo mengikuti urutan baku: kepada siapa (datif), dari siapa (genitif), tanggal, perihal."
+    },
+    {
+     "type": "tabel",
+     "head": [
+      "Bagian",
+      "Isi"
+     ],
+     "rows": [
+      [
+       "Кому",
+       "Директорці фонду «Міст культур» О. В. Мельник"
+      ],
+      [
+       "Від кого",
+       "координаторки програми А. Лестарі"
+      ],
+      [
+       "Дата",
+       "12.02.2029"
+      ],
+      [
+       "Тема",
+       "Презентація програми для партнерів"
+      ],
+      [
+       "Текст (1)",
+       "Прошу дозволу провести презентацію програми 20 березня о 15:00 у великій залі."
+      ],
+      [
+       "Текст (2)",
+       "Ми запросимо тридцять гостей: партнерів, журналістів і представників посольства Індонезії."
+      ],
+      [
+       "Текст (3)",
+       "Для презентації потрібні проєктор, мікрофон і сорок стільців."
+      ],
+      [
+       "Підпис",
+       "А. Лестарі"
+      ]
+     ]
+    },
+    {
+     "type": "list",
+     "items": [
+      "*Проєктор* dan *проєкт* ditulis dengan **є** sejak ejaan 2019.",
+      "*Директорці* adalah datif dari *директорка*: *-ка → -ці*. *Координаторки* adalah genitif.",
+      "Sebelum mengirim, baca dengan suara keras. Kalimat yang membuatmu kehabisan napas hampir pasti канцелярит."
+     ]
+    }
+   ]
+  }
+ ],
+ "vocab": [
+  {
+   "uk": "службо́ва запи́ска",
+   "baca": "sluzh-BO-va za-PYS-ka",
+   "id": "memo internal"
+  },
+  {
+   "uk": "канцеляри́т",
+   "baca": "kan-tse-lya-RYT",
+   "id": "bahasa birokrat yang berbelit"
+  },
+  {
+   "uk": "віддієслі́вний і́менник",
+   "baca": "vid-di-yes-LIV-nyy I-men-nyk",
+   "id": "kata benda verbal (*проведення, здійснення*)"
+  },
+  {
+   "uk": "зді́йснення",
+   "baca": "ZDIY-snen-nya",
+   "id": "pelaksanaan"
+  },
+  {
+   "uk": "прове́дення",
+   "baca": "pro-VE-den-nya",
+   "id": "penyelenggaraan (acara, rapat)"
+  },
+  {
+   "uk": "мета́",
+   "baca": "me-TA",
+   "id": "tujuan (*з метою* = dengan tujuan)"
+  },
+  {
+   "uk": "зразо́к",
+   "baca": "zra-ZOK",
+   "id": "contoh, templat"
+  },
+  {
+   "uk": "діло́вий",
+   "baca": "di-LO-vyy",
+   "id": "bisnis, resmi (*діловий лист*)"
+  },
+  {
+   "uk": "проха́ння",
+   "baca": "pro-KHAN-nya",
+   "id": "permohonan, permintaan"
+  },
+  {
+   "uk": "розгляда́ти / розгля́нути",
+   "baca": "roz-hlya-DA-ty / roz-HLYA-nu-ty",
+   "id": "mempertimbangkan, meninjau"
+  },
+  {
+   "uk": "можли́вість",
+   "baca": "mozh-LY-vist'",
+   "id": "kemungkinan, kesempatan"
+  },
+  {
+   "uk": "співпра́ця",
+   "baca": "spiv-PRA-tsya",
+   "id": "kerja sama"
+  },
+  {
+   "uk": "по́вага",
+   "baca": "PO-va-ha",
+   "id": "hormat (*з повагою* = hormat saya)"
+  },
+  {
+   "uk": "поса́да",
+   "baca": "po-SA-da",
+   "id": "jabatan"
+  },
+  {
+   "uk": "заздалегі́дь",
+   "baca": "zaz-da-le-HID'",
+   "id": "sebelumnya, lebih dulu"
+  },
+  {
+   "uk": "викре́слювати / ви́креслити",
+   "baca": "vy-KRES-lyu-va-ty / VY-kres-ly-ty",
+   "id": "mencoret"
+  },
+  {
+   "uk": "перепи́сувати / переписа́ти",
+   "baca": "pe-re-PY-su-va-ty / pe-re-py-SA-ty",
+   "id": "menulis ulang"
+  },
+  {
+   "uk": "черне́тка",
+   "baca": "cher-NET-ka",
+   "id": "draf, konsep"
+  },
+  {
+   "uk": "ви́сновок",
+   "baca": "VYS-no-vok",
+   "id": "kesimpulan"
+  },
+  {
+   "uk": "захі́д",
+   "baca": "za-KHID",
+   "id": "acara, kegiatan (*gen.* заходу)"
+  },
+  {
+   "uk": "повідомля́ти / повідо́мити",
+   "baca": "po-vi-dom-LYA-ty / po-vi-DO-my-ty",
+   "id": "memberitahukan"
+  },
+  {
+   "uk": "надава́ти / нада́ти",
+   "baca": "na-da-VA-ty / na-DA-ty",
+   "id": "memberikan, menyediakan"
+  },
+  {
+   "uk": "сти́слий",
+   "baca": "STYS-lyy",
+   "id": "ringkas, padat"
+  },
+  {
+   "uk": "зрозумі́лий",
+   "baca": "zro-zu-MI-lyy",
+   "id": "jelas, mudah dipahami"
+  },
+  {
+   "uk": "бра́ти у́часть",
+   "baca": "BRA-ty U-chast'",
+   "id": "ikut serta (bukan *приймати участь*)"
+  }
+ ],
+ "exercises": [
+  {
+   "prompt": "Terjemahkan ke bahasa Ukraina (ragam surat resmi).",
+   "items": [
+    "Kami menulis kepada Anda untuk menawarkan kerja sama.",
+    "Mohon dipertimbangkan kemungkinan pertemuan pada bulan Maret.",
+    "Terima kasih sebelumnya atas jawaban Anda.",
+    "Yayasan kami ikut serta dalam festival.",
+    "Selama seminggu kami menyiapkan presentasi.",
+    "Hormat saya, Ani Lestari, koordinator program."
+   ]
+  },
+  {
+   "prompt": "Isi titik-titik dengan pilihan yang bukan rusisme.",
+   "items": [
+    "Фонд ____ участь у виставці. (бере, приймає)",
+    "Презентація триватиме ____ двох годин. (на протязі, протягом)",
+    "____ зустріч відбудеться у вівторок. (Слідуюча, Наступна)",
+    "Наші дати, на щастя, ____. (співпадають, збігаються)",
+    "____, я запізнилася. (Вибачаюсь, Перепрошую)",
+    "Пан Ігор ____ юристом фонду. (є, являється)",
+    "Ми діяли згідно з ____. (наказу, наказом)"
+   ]
+  },
+  {
+   "prompt": "Tulis ulang tanpa канцелярит: ganti kata benda verbal dengan kata kerja.",
+   "items": [
+    "З метою проведення презентації ми орендували залу.",
+    "Фонд здійснює контроль за виконанням програми.",
+    "Ми надаємо допомогу студентам.",
+    "Нами було здійснено аналіз анкет.",
+    "У зв'язку з вищевикладеним просимо перенести зустріч.",
+    "Нами було прийнято рішення відкласти захід."
+   ]
+  },
+  {
+   "prompt": "Susun jadi kalimat yang benar.",
+   "items": [
+    "Вам / щоб / пишемо / співпрацю / запропонувати",
+    "відповідь / дякуємо / за / заздалегідь",
+    "можливість / розглянути / зустрічі / просимо",
+    "участь / фонд / у / бере / фестивалі",
+    "сміливо / зайві / викресліть / слова"
+   ]
+  }
+ ],
+ "answers": [
+  "Пишемо Вам, щоб запропонувати співпрацю. — Просимо розглянути можливість зустрічі в березні. — Заздалегідь дякуємо за відповідь. — Наш фонд бере участь у фестивалі. — Протягом тижня ми готували презентацію. — З повагою, Ані Лестарі, координаторка програми.",
+  "бере — протягом — Наступна — збігаються — Перепрошую — є — наказом",
+  "Щоб провести презентацію, ми орендували залу. — Фонд контролює виконання програми. — Ми допомагаємо студентам. — Ми проаналізували анкети. — Тому просимо перенести зустріч. — Ми вирішили відкласти захід.",
+  "Пишемо Вам, щоб запропонувати співпрацю. — Заздалегідь дякуємо за відповідь. — Просимо розглянути можливість зустрічі. — Фонд бере участь у фестивалі. — Сміливо викресліть зайві слова."
+ ]
+}

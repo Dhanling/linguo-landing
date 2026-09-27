@@ -1,0 +1,642 @@
+{
+ "title": "Liburan sudah lewat — jamak untuk segala hal",
+ "title_target": "Як пройшли свята?",
+ "goal": "Menceritakan liburan Natal dan Tahun Baru sambil menyebut benda, orang, dan tempat dalam bentuk jamak: *студенти, книжки, міста, вогні, друзі, люди* — termasuk kata sifat dan kata ganti yang ikut menjamak (*нові, мої, ці*).",
+ "bekal": [
+  "kamu bisa membentuk jamak nominatif kata benda dari ketiga jenis: *подарунок → подарунки, книжка → книжки, місто → міста*",
+  "kamu bisa memakai jamak tak beraturan yang paling sering muncul: *друзі, люди, діти*",
+  "kamu bisa menceritakan liburan dan mengucapkan selamat hari raya: *З Новим роком! Як пройшли свята?*"
+ ],
+ "dialogs": [
+  {
+   "title": "Діалог 1 — Cerita liburan di kafe",
+   "intro": "Sabtu, 9 Januari 2027, sore hari di kafe tempat Andriy bekerja. Liburan panjang baru selesai, dan dua sahabat ini saling bertukar cerita. Perhatikan betapa banyak kata yang muncul dalam bentuk jamak: *вогні, люди, колядки, подарунки, родичі*.",
+   "lines": [
+    {
+     "speaker": "Андрій:",
+     "text": "[Ані|A-ni], [привіт|pry-VIT]! [З|Z] [Новим|No-VYM] [роком|RO-kom]! [Як|Yak] [пройшли|proy-SHLY] [свята|SVYA-ta]?",
+     "id": "Ani, hai! Selamat Tahun Baru! Gimana liburannya?",
+     "literal": "Ani, hai! dengan Baru (ins.) tahun (ins.)! bagaimana berlalu hari-raya (jamak)?"
+    },
+    {
+     "speaker": "Ані:",
+     "text": "[Привіт|Pry-VIT], [Андрію|An-DRI-yu]! [Чудово|Chu-DO-vo]. [На|Na] [Різдво|Rizd-VO] [ми|my] [з|z] [друзями|DRU-zya-my] [ходили|kho-DY-ly] [на|na] [Софійську|So-FIY-s'ku] [площу|PLO-shchu].",
+     "id": "Hai, Andriy! Seru banget. Waktu Natal aku dan teman-teman ke Alun-alun Sofiyska.",
+     "literal": "hai, Andriy (panggilan)! bagus-sekali. pada Natal kami dengan teman-teman (ins.) pergi ke Sofiyska (ak.) alun-alun (ak.)."
+    },
+    {
+     "speaker": "Андрій:",
+     "text": "[Там|Tam] [стояла|sto-YA-la] [велика|ve-LY-ka] [ялинка|ya-LYN-ka], [так|tak]?",
+     "id": "Di sana ada pohon Natal besar, kan?",
+     "literal": "di-sana berdiri besar pohon-cemara, ya?"
+    },
+    {
+     "speaker": "Ані:",
+     "text": "[Так|Tak]! [Всюди|VSYU-dy] [вогні|voh-NI], [а|a] [люди|LYU-dy] [співали|spi-VA-ly] [колядки|ko-LYAD-ky].",
+     "id": "Iya! Lampu di mana-mana, dan orang-orang menyanyikan kolyadka.",
+     "literal": "ya! di-mana-mana lampu-lampu, dan orang-orang menyanyikan lagu-Natal (jamak)."
+    },
+    {
+     "speaker": "Андрій:",
+     "text": "[А|A] [подарунки|po-DA-run-ky]? [Хто|Khto] [тобі|to-BI] [щось|shchos'] [подарував|po-da-ru-VAV]?",
+     "id": "Terus hadiah? Siapa yang kasih kamu sesuatu?",
+     "literal": "dan hadiah-hadiah? siapa kepadamu sesuatu menghadiahkan‹selesai›?"
+    },
+    {
+     "speaker": "Ані:",
+     "text": "[Діна|DI-na] [надіслала|na-dis-LA-la] [з|z] [Джакарти|Dzha-KAR-ty] [дві|dvi] [книжки|KNYZH-ky] [й|y] [листівки|lys-TIV-ky].",
+     "id": "Dina mengirim dua buku dan kartu-kartu dari Jakarta.",
+     "literal": "Dina mengirim‹selesai› dari Jakarta (gen.) dua buku dan kartu-kartu."
+    },
+    {
+     "speaker": "Андрій:",
+     "text": "[Молодець|Mo-lo-DETS'] [Діна|DI-na]! [А|A] [я|ya] [на|na] [свята|SVYA-ta] [їздив|YIZ-dyv] [додому|do-DO-mu], [у|u] [Полтаву|Pol-TA-vu].",
+     "id": "Dina hebat! Kalau aku pas liburan pulang ke rumah, ke Poltava.",
+     "literal": "hebat Dina! dan saya pada hari-raya pergi-berkendara ke-rumah, ke Poltava (ak.)."
+    },
+    {
+     "speaker": "Ані:",
+     "text": "[Як|Yak] [там|tam] [батьки|bat'-KY] [й|y] [Катя|KA-tya]?",
+     "id": "Gimana kabar orang tuamu dan Katya?",
+     "literal": "bagaimana di-sana orang-tua dan Katya?"
+    },
+    {
+     "speaker": "Андрій:",
+     "text": "[Усі|U-SI] [здорові|zdo-RO-vi]. [Ми|My] [святкували|svyat-ku-VA-ly] [разом|RA-zom], [приходили|pry-KHO-dy-ly] [всі|vsi] [родичі|RO-dy-chi].",
+     "id": "Semua sehat. Kami merayakan bersama, semua kerabat datang.",
+     "literal": "semua sehat (jamak). kami merayakan bersama, datang semua kerabat."
+    },
+    {
+     "speaker": "Ані:",
+     "text": "[А|A] [що|shcho] [ви|vy] [їли|YI-ly]?",
+     "id": "Terus kalian makan apa?",
+     "literal": "dan apa kalian makan?"
+    },
+    {
+     "speaker": "Андрій:",
+     "text": "[Мама|MA-ma] [приготувала|pry-ho-tu-VA-la] [дванадцять|dva-NAD-tsyat'] [страв|strav]: [кутю|ku-TYU], [вареники|va-RE-ny-ky], [пироги|py-ro-HY].",
+     "id": "Ibu masak dua belas hidangan: kutya, varenyky, pyrohy.",
+     "literal": "ibu memasak‹selesai› dua-belas hidangan (gen. jamak): kutya (ak.), varenyky, pai-pai."
+    },
+    {
+     "speaker": "Ані:",
+     "text": "[Дванадцять|Dva-NAD-tsyat']! [А|A] [Новий|No-VYY] [рік|rik] [де|de] [зустрічав|zus-tri-CHAV]?",
+     "id": "Dua belas! Terus Tahun Baru kamu rayakan di mana?",
+     "literal": "dua-belas! dan Baru tahun di-mana menyambut‹proses›?"
+    },
+    {
+     "speaker": "Андрій:",
+     "text": "[У|U] [Києві|KY-ye-vi], [з|z] [друзями|DRU-zya-my]. [Ми|My] [дивилися|dy-VY-ly-sya] [феєрверки|fe-yer-VER-ky] [на|na] [Подолі|Po-DO-li].",
+     "id": "Di Kyiv, sama teman-teman. Kami nonton kembang api di Podil.",
+     "literal": "di Kyiv (lok.), dengan teman-teman (ins.). kami menonton kembang-api (jamak) di Podil (lok.)."
+    },
+    {
+     "speaker": "Ані:",
+     "text": "[А|A] [в|v] [мене|ME-ne] [новина|no-VY-na]: [наступного|nas-TUP-no-ho] [тижня|TYZH-nya] [я|ya] [переїжджаю|pe-re-yizh-DZHA-yu] [на|na] [Поділ|Po-DIL]!",
+     "id": "Aku punya kabar: minggu depan aku pindah ke Podil!",
+     "literal": "dan pada saya kabar-baru: berikutnya (gen.) minggu (gen.) saya pindah ke Podil (ak.)!"
+    }
+   ],
+   "notes": [
+    "**З Новим роком!** Ucapan ini memakai kasus instrumental: harfiahnya \"(aku menyapamu) dengan tahun baru\". Polanya sama untuk hari raya lain: *З Різдвом!* (Selamat Natal!), *З днем народження!* (Selamat ulang tahun!). Jawabannya cukup *Навзаєм!* (Kamu juga!).",
+    "**Як пройшли свята?** Kata *свята* adalah jamak dari *свято* (hari raya), dan dalam bentuk jamak ia berarti seluruh musim liburan akhir tahun, dari Natal sampai awal Januari. Kata kerjanya ikut jamak: *пройшли* (berlalu), bukan *пройшло*.",
+    "**Вогні, люди, колядки** memperlihatkan tiga jalan menuju jamak dalam satu kalimat. *Вогонь* (api, lampu) kehilangan -о- dan mendapat -і: **вогні**. *Колядка* berganti -а menjadi -и: **колядки**. Lalu *людина* (orang) punya jamak yang benar-benar lain: **люди**. Seperti bahasa Indonesia memakai \"orang-orang\", bahasa Ukraina tidak bisa menjamakkan *людина* dengan akhiran biasa.",
+    "**Подарунки, вареники, пироги.** Kata laki-laki yang berakhir dengan konsonan keras mendapat **-и**: *подарунок → подарунки* (lagi-lagi -о- hilang), *пиріг → пироги*. Dalam *пироги* ada dua perubahan sekaligus: і kembali menjadi о, dan tekanan pindah ke ujung: *py-ro-HY*. Penutur bahasa Rusia mengucapkannya *pi-ra-GI*, orang Ukraina *py-ro-HY*, dengan и yang dalam.",
+    "**Всі родичі.** Kata yang berakhir dengan ж, ч, ш, щ membentuk jamak dengan **-і**, bukan -и: *родич → родичі*, *товариш → товариші*, *ніж → ножі*. *Усі / всі* sendiri adalah jamak dari *весь* (seluruh); pilih *усі* sesudah konsonan dan *всі* sesudah vokal, seperti pasangan у / в.",
+    "**На Поділ, на Подолі.** Nama kawasan Podil memakai *на*, bukan *в*. Perhatikan juga perubahan vokalnya: *Поділ* (ke Podil) tetapi **на Подолі** (di Podil). Bunyi і di suku tertutup kembali menjadi о begitu kata itu memanjang, sama seperti *Львів → Львова* dan *пиріг → пироги*. Kalimat terakhir juga memakai bentuk kini *переїжджаю* untuk rencana yang sudah pasti, persis \"minggu depan aku pindah\"."
+   ],
+   "grammars": [
+    {
+     "title": "Jamak nominatif kata benda",
+     "body": [
+      "Hampir semua kata benda Ukraina menjamak dengan -и, -і, atau -а/-я. Yang menentukan adalah jenis kata dan huruf terakhirnya: keras atau lunak."
+     ],
+     "table": {
+      "head": [
+       "Kelompok",
+       "Tunggal",
+       "Jamak",
+       "Ekor"
+      ],
+      "rows": [
+       [
+        "lk, konsonan keras",
+        "*студент, подарунок*",
+        "*студенти, подарунки*",
+        "-и"
+       ],
+       [
+        "lk, -ь / -й / -р lunak",
+        "*вогонь, музей, лікар*",
+        "*вогні, музеї, лікарі*",
+        "-і / -ї"
+       ],
+       [
+        "lk, ж / ч / ш / щ",
+        "*родич, товариш*",
+        "*родичі, товариші*",
+        "-і"
+       ],
+       [
+        "pr, -а",
+        "*книжка, листівка*",
+        "*книжки, листівки*",
+        "-и"
+       ],
+       [
+        "pr, -я / -ь",
+        "*пісня, кав'ярня, ніч*",
+        "*пісні, кав'ярні, ночі*",
+        "-і"
+       ],
+       [
+        "ntr, -о",
+        "*місто, свято, вікно*",
+        "*міста, свята, вікна*",
+        "-а"
+       ],
+       [
+        "ntr, -е / -я",
+        "*море, поле, завдання*",
+        "*моря, поля, завдання*",
+        "-я"
+       ],
+       [
+        "tak beraturan",
+        "*людина, дитина, друг, око*",
+        "*люди, діти, друзі, очі*",
+        "hafalkan"
+       ]
+      ]
+     },
+     "after": [
+      "Ingat dua kebiasaan kecil: -о- atau -е- yang \"tersisip\" di suku terakhir sering hilang (*подарунок → подарунки, вогонь → вогні*), dan і di suku tertutup kembali menjadi о (*пиріг → пироги, ніч → ночі*)."
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Діалог 2 — Hari pertama semester",
+   "intro": "Senin, 11 Januari 2027, pukul sembilan pagi. Semester kedua kursus dimulai dan kelas pani Oksana kedatangan wajah baru. Perhatikan kata sifat dan kata ganti: dalam jamak semuanya berakhir -і, apa pun jenis katanya (*нові студенти, нові книжки, ваші історії*).",
+   "lines": [
+    {
+     "speaker": "Оксана:",
+     "text": "[Добридень|Do-BRY-den'], [друзі|DRU-zi]! [Рада|RA-da] [вас|vas] [бачити|BA-chy-ty]. [Як|Yak] [ваші|VA-shi] [канікули|ka-NI-ku-ly]?",
+     "id": "Selamat pagi, teman-teman! Senang bertemu kalian. Gimana liburan kalian?",
+     "literal": "selamat-siang, teman-teman! senang (pr) kalian melihat. bagaimana kalian-punya liburan?"
+    },
+    {
+     "speaker": "Ані:",
+     "text": "[Чудові|Chu-DO-vi], [пані|PA-ni] [Оксано|Ok-SA-no]! [Але|A-LE] [ми|my] [трохи|TRO-khy] [все|vse] [забули|za-BU-ly].",
+     "id": "Menyenangkan, Bu Oksana! Tapi kami agak lupa semuanya.",
+     "literal": "indah (jamak), nyonya Oksana (panggilan)! tapi kami sedikit semua melupakan‹selesai›."
+    },
+    {
+     "speaker": "Оксана:",
+     "text": "[Нічого|Ni-CHO-ho], [згадаємо|zha-DA-ye-mo]. [Сьогодні|Syo-HOD-ni] [в|v] [нас|nas] [нові|no-VI] [студенти|stu-DEN-ty].",
+     "id": "Nggak apa-apa, nanti kita ingat lagi. Hari ini kita kedatangan mahasiswa baru.",
+     "literal": "tidak-apa, mengingat‹selesai› (kita). hari-ini pada kita baru (jamak) mahasiswa-mahasiswa."
+    },
+    {
+     "speaker": "Андрій:",
+     "text": "[Скільки|SKIL'-ky] [їх|yikh]? [І|I] [звідки|ZVID-ky] [вони|vo-NY]?",
+     "id": "Berapa orang? Dari mana mereka?",
+     "literal": "berapa mereka (gen.)? dan dari-mana mereka?"
+    },
+    {
+     "speaker": "Оксана:",
+     "text": "[Дві|Dvi] [студентки|stu-DENT-ky] [з|z] [Польщі|POL'-shchi] [й|y] [один|o-DYN] [студент|stu-DENT] [з|z] [Японії|Ya-PO-ni-yi].",
+     "id": "Dua mahasiswi dari Polandia dan satu mahasiswa dari Jepang.",
+     "literal": "dua mahasiswi dari Polandia (gen.) dan satu mahasiswa dari Jepang (gen.)."
+    },
+    {
+     "speaker": "Ані:",
+     "text": "[Як|Yak] [цікаво|tsi-KA-vo]! [А|A] [підручники|pi-DRUCH-ny-ky] [тепер|te-PER] [нові|no-VI]?",
+     "id": "Seru! Terus buku pelajarannya sekarang baru?",
+     "literal": "betapa menarik! dan buku-buku-pelajaran sekarang baru (jamak)?"
+    },
+    {
+     "speaker": "Оксана:",
+     "text": "[Так|Tak]. [Ось|Os'] [нові|no-VI] [книжки|KNYZH-ky], [зошити|ZO-shy-ty] [й|y] [словники|slov-ny-KY].",
+     "id": "Iya. Ini buku-buku baru, buku tulis, dan kamus.",
+     "literal": "ya. ini baru (jamak) buku-buku, buku-tulis (jamak) dan kamus (jamak)."
+    },
+    {
+     "speaker": "Андрій:",
+     "text": "[Словники|Slov-ny-KY] [паперові|pa-pe-RO-vi]? [У|U] [нас|nas] [є|ye] [телефони|te-le-FO-ny]!",
+     "id": "Kamusnya dari kertas? Kan kita punya ponsel!",
+     "literal": "kamus-kamus kertas (jamak)? pada kita ada telepon-telepon!"
+    },
+    {
+     "speaker": "Оксана:",
+     "text": "[На|Na] [уроках|u-RO-kakh] [телефони|te-le-FO-ny] [відпочивають|vid-po-chy-VA-yut'].",
+     "id": "Selama pelajaran ponsel istirahat.",
+     "literal": "pada pelajaran (lok. jamak) telepon-telepon beristirahat."
+    },
+    {
+     "speaker": "Ані:",
+     "text": "[А|A] [які|ya-KI] [теми|TE-my] [цього|tsyo-HO] [семестру|se-MES-tru]?",
+     "id": "Terus topik semester ini apa saja?",
+     "literal": "dan yang-mana (jamak) topik-topik ini (gen.) semester (gen.)?"
+    },
+    {
+     "speaker": "Оксана:",
+     "text": "[Міста|Mis-TA], [свята|SVYA-ta], [магазини|ma-ha-ZY-ny], [лікарі|LI-ka-ri]. [І|I], [звичайно|zvy-CHAY-no], [ваші|VA-shi] [історії|is-TO-ri-yi]!",
+     "id": "Kota, hari raya, toko, dokter. Dan tentu saja, cerita-cerita kalian!",
+     "literal": "kota-kota, hari-raya (jamak), toko-toko, dokter-dokter. dan, tentu, kalian-punya cerita-cerita!"
+    }
+   ],
+   "notes": [
+    "**Добридень, друзі!** Untuk jamak, bentuk memanggil sama dengan nominatif: *друзі!*, *діти!*, *студенти!*. Kličnyj yang berubah bentuk hanya ada di tunggal (*Оксано, Андрію*). Ani tetap memakainya dengan rapi: **пані Оксано**.",
+    "**Канікули** hanya punya bentuk jamak, seperti \"celana\" dalam bahasa Inggris. Kata lain yang selalu jamak: *гроші* (uang), *двері* (pintu), *окуляри* (kacamata), *вихідні* (akhir pekan). Kata sifatnya pun selalu jamak: *мої канікули, нові двері*.",
+    "**Нові студенти, нові книжки.** Kabar gembira dari unit ini: dalam jamak kata sifat tidak lagi membedakan jenis. *Новий, нова, нове* semuanya menjadi **нові**. Begitu pula kata ganti milik: *ваш, ваша, ваше → ваші*.",
+    "**Дві студентки й один студент.** Sesudah *два, три, чотири* kata benda tampak seperti jamak nominatif: *дві книжки, три студенти*. Tetapi sesudah *п'ять* dan seterusnya bentuknya lain lagi (*п'ять студентів*); itu bahan Unit 2. Perhatikan juga *один студент* tetap tunggal, dan *дві* adalah bentuk perempuan dari *два*.",
+    "**Словники** diucapkan *slov-ny-KY*: tekanan pindah ke ekor. Banyak kata laki-laki pendek melakukan hal yang sama: *стіл → столи*, *син → сини*, *батько → батьки*. Tanda akut di dialog akan menuntunmu; di luar buku, dengarkan baik-baik bagaimana orang Kyiv mengucapkannya.",
+    "**Зошити й словники.** Kata sambung *і* berubah menjadi *й* bila diapit vokal: *книжки, зошити й словники* (sesudah vokal -и). Ini soal enak-diucap, sama seperti pasangan *у / в*. Salah memilih tidak akan membuat orang salah paham, tetapi memilih dengan benar membuat bahasamu mengalir."
+   ],
+   "grammars": [
+    {
+     "title": "Kata sifat dan kata ganti dalam jamak",
+     "body": [
+      "Dalam jamak ketiga jenis melebur menjadi satu bentuk. Ekornya hampir selalu -і (sesudah vokal -ї)."
+     ],
+     "table": {
+      "head": [
+       "Tunggal (lk / pr / ntr)",
+       "Jamak",
+       "Contoh"
+      ],
+      "rows": [
+       [
+        "*новий / нова / нове*",
+        "*нові*",
+        "*нові студенти*"
+       ],
+       [
+        "*синій / синя / синє*",
+        "*сині*",
+        "*сині зошити*"
+       ],
+       [
+        "*мій / моя / моє*",
+        "*мої*",
+        "*мої друзі*"
+       ],
+       [
+        "*наш / наша / наше*",
+        "*наші*",
+        "*наші книжки*"
+       ],
+       [
+        "*ваш / ваша / ваше*",
+        "*ваші*",
+        "*ваші історії*"
+       ],
+       [
+        "*цей / ця / це*",
+        "*ці*",
+        "*ці міста*"
+       ],
+       [
+        "*той / та / те*",
+        "*ті*",
+        "*ті люди*"
+       ],
+       [
+        "*який / яка / яке*",
+        "*які*",
+        "*Які теми?*"
+       ]
+      ]
+     },
+     "after": [
+      "*Весь / вся / все* (seluruh) menjadi *усі* atau *всі*: *усі студенти, всі родичі*."
+     ]
+    }
+   ]
+  }
+ ],
+ "sections": [
+  {
+   "title": "Musim liburan di Ukraina",
+   "blocks": [
+    {
+     "type": "p",
+     "text": "Bagi orang Ukraina, *свята* berarti rangkaian hari raya yang panjang. Kini kebanyakan keluarga merayakan Natal pada 25 Desember; malam sebelumnya, *Святвечір*, keluarga berkumpul untuk makan dua belas hidangan tanpa daging. Seminggu kemudian datang Tahun Baru, dan liburan baru benar-benar usai sesudah *Водохреще* pada 6 Januari. Selama itu kota-kota dihiasi lampu, pasar Natal buka di alun-alun, dan anak-anak berkeliling menyanyikan *колядки*."
+    },
+    {
+     "type": "tabel",
+     "head": [
+      "Ukraina",
+      "Indonesia"
+     ],
+     "rows": [
+      [
+       "*Святвечір*",
+       "malam Natal, 24 Desember, makan malam dua belas hidangan"
+      ],
+      [
+       "*кутя*",
+       "hidangan utama Святвечір: gandum rebus dengan madu, biji opium, dan kacang"
+      ],
+      [
+       "*колядка, колядувати*",
+       "lagu Natal tradisional; bernyanyi dari rumah ke rumah"
+      ],
+      [
+       "*Різдво*",
+       "Natal, 25 Desember"
+      ],
+      [
+       "*Щедрий вечір*",
+       "malam 31 Desember, malam lagu *щедрівки*"
+      ],
+      [
+       "*Новий рік*",
+       "Tahun Baru, 1 Januari"
+      ],
+      [
+       "*Водохреще*",
+       "Pembaptisan Tuhan, 6 Januari, penutup musim liburan"
+      ],
+      [
+       "*ялинка*",
+       "pohon Natal (harfiah: cemara kecil)"
+      ],
+      [
+       "*вертеп*",
+       "teater boneka atau drama keliling tentang kelahiran Yesus"
+      ]
+     ]
+    },
+    {
+     "type": "kotak",
+     "title": "Ucapan musim liburan",
+     "items": [
+      "*З Різдвом Христовим!* Selamat Natal!",
+      "*Христос народився!* dijawab *Славімо Його!* Salam tradisional di hari Natal.",
+      "*З Новим роком!* atau *Щасливого Нового року!* Selamat Tahun Baru!",
+      "*Веселих свят!* Selamat berlibur! (untuk seluruh musim)",
+      "*Навзаєм!* Kamu juga! / Sama-sama!"
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Jamak yang perlu dihafal",
+   "blocks": [
+    {
+     "type": "p",
+     "text": "Sebagian besar jamak bisa ditebak dari tabel di Dialog 1. Namun beberapa kata sehari-hari punya jamak yang tak bisa ditebak. Kabar baiknya, jumlahnya sedikit dan kamu akan terlalu sering mendengarnya untuk bisa lupa. Perhatikan juga kata berakhiran *-ин* yang menunjuk asal: akhiran itu hilang dalam jamak."
+    },
+    {
+     "type": "tabel",
+     "head": [
+      "Tunggal",
+      "Jamak",
+      "Arti"
+     ],
+     "rows": [
+      [
+       "*людина*",
+       "*люди*",
+       "orang"
+      ],
+      [
+       "*дитина*",
+       "*діти*",
+       "anak"
+      ],
+      [
+       "*друг*",
+       "*друзі*",
+       "teman"
+      ],
+      [
+       "*око*",
+       "*очі*",
+       "mata"
+      ],
+      [
+       "*вухо*",
+       "*вуха*",
+       "telinga"
+      ],
+      [
+       "*ім'я*",
+       "*імена*",
+       "nama"
+      ],
+      [
+       "*киянин*",
+       "*кияни*",
+       "orang Kyiv"
+      ],
+      [
+       "*громадянин*",
+       "*громадяни*",
+       "warga negara"
+      ],
+      [
+       "*брат*",
+       "*брати*",
+       "saudara laki-laki"
+      ],
+      [
+       "*господар*",
+       "*господарі*",
+       "tuan rumah"
+      ]
+     ]
+    },
+    {
+     "type": "list",
+     "items": [
+      "Hanya jamak: *гроші* (uang), *двері* (pintu), *окуляри* (kacamata), *канікули* (liburan), *вихідні* (akhir pekan), *ножиці* (gunting), *штани* (celana).",
+      "*Батьки* bisa berarti \"ayah-ayah\", tetapi hampir selalu berarti \"orang tua\": *мої батьки* = ayah dan ibuku.",
+      "Nama kota yang jamak juga ada: *Черкаси, Суми, Чернівці*. Kata kerjanya ikut jamak: *Суми гарні*."
+     ]
+    }
+   ]
+  }
+ ],
+ "vocab": [
+  {
+   "uk": "свя́то (pl. свя́та)",
+   "baca": "SVYA-to",
+   "id": "hari raya; jamaknya juga berarti musim liburan"
+  },
+  {
+   "uk": "Різдво́",
+   "baca": "Rizd-VO",
+   "id": "Natal"
+  },
+  {
+   "uk": "Святве́чір",
+   "baca": "Svyat-VE-chir",
+   "id": "malam Natal (24 Desember)"
+  },
+  {
+   "uk": "яли́нка",
+   "baca": "ya-LYN-ka",
+   "id": "pohon cemara, pohon Natal"
+  },
+  {
+   "uk": "коля́дка",
+   "baca": "ko-LYAD-ka",
+   "id": "lagu Natal tradisional"
+  },
+  {
+   "uk": "пода́рунок (pl. пода́рунки)",
+   "baca": "po-DA-ru-nok",
+   "id": "hadiah"
+  },
+  {
+   "uk": "листі́вка",
+   "baca": "lys-TIV-ka",
+   "id": "kartu pos, kartu ucapan"
+  },
+  {
+   "uk": "ро́дичі",
+   "baca": "RO-dy-chi",
+   "id": "kerabat, sanak saudara"
+  },
+  {
+   "uk": "кутя́",
+   "baca": "ku-TYA",
+   "id": "kutya, hidangan gandum madu khas Святвечір"
+  },
+  {
+   "uk": "варе́ники",
+   "baca": "va-RE-ny-ky",
+   "id": "varenyky, pangsit rebus berisi"
+  },
+  {
+   "uk": "пирі́г (pl. пироги́)",
+   "baca": "py-RIH",
+   "id": "pai, roti isi"
+  },
+  {
+   "uk": "феєрве́рк",
+   "baca": "fe-yer-VERK",
+   "id": "kembang api"
+  },
+  {
+   "uk": "вого́нь (pl. вогні́)",
+   "baca": "vo-HON'",
+   "id": "api; lampu (dalam jamak: *вогні міста*)"
+  },
+  {
+   "uk": "кані́кули",
+   "baca": "ka-NI-ku-ly",
+   "id": "liburan sekolah atau kuliah (hanya jamak)"
+  },
+  {
+   "uk": "семе́стр",
+   "baca": "se-MESTR",
+   "id": "semester"
+  },
+  {
+   "uk": "підру́чник",
+   "baca": "pi-DRUCH-nyk",
+   "id": "buku pelajaran"
+  },
+  {
+   "uk": "зо́шит",
+   "baca": "ZO-shyt",
+   "id": "buku tulis"
+  },
+  {
+   "uk": "словни́к (pl. словники́)",
+   "baca": "slov-NYK",
+   "id": "kamus"
+  },
+  {
+   "uk": "друг (pl. дру́зі)",
+   "baca": "druh",
+   "id": "teman, sahabat"
+  },
+  {
+   "uk": "люди́на (pl. лю́ди)",
+   "baca": "lyu-DY-na",
+   "id": "orang, manusia"
+  },
+  {
+   "uk": "дити́на (pl. ді́ти)",
+   "baca": "dy-TY-na",
+   "id": "anak"
+  },
+  {
+   "uk": "зустріча́ти / зустрі́ти",
+   "baca": "zus-tri-CHA-ty / zus-TRI-ty",
+   "id": "menjemput, bertemu; *зустрічати Новий рік* = merayakan malam Tahun Baru"
+  },
+  {
+   "uk": "святкува́ти / відсвяткува́ти",
+   "baca": "svyat-ku-VA-ty / vid-svyat-ku-VA-ty",
+   "id": "merayakan"
+  },
+  {
+   "uk": "надсила́ти / надісла́ти",
+   "baca": "nad-sy-LA-ty / na-dis-LA-ty",
+   "id": "mengirim"
+  },
+  {
+   "uk": "переїжджа́ти / переї́хати",
+   "baca": "pe-re-yizh-DZHA-ty / pe-re-YI-kha-ty",
+   "id": "pindah (rumah, kota)"
+  }
+ ],
+ "exercises": [
+  {
+   "prompt": "Terjemahkan ke bahasa Ukraina.",
+   "items": [
+    "Gimana liburannya?",
+    "Buku-buku ini baru.",
+    "Semua kerabat datang.",
+    "Teman-temanku menyanyikan lagu Natal.",
+    "Hari ini kita kedatangan mahasiswa baru.",
+    "Anak-anak suka hadiah."
+   ]
+  },
+  {
+   "prompt": "Isi titik-titik dengan bentuk jamak kata dalam kurung.",
+   "items": [
+    "Це мої ____. (друг)",
+    "На столі нові ____. (книжка)",
+    "У Києві гарні ____. (музей)",
+    "Ці ____ дуже старі. (місто)",
+    "Наші ____ з Польщі. (студентка)",
+    "Де мої ____? (зошит)",
+    "На вулиці гуляють ____. (людина)"
+   ]
+  },
+  {
+   "prompt": "Ubah seluruh kalimat ke bentuk jamak.",
+   "items": [
+    "Це новий словник.",
+    "Мій брат студент.",
+    "Ця дитина співає.",
+    "Твоє вікно велике.",
+    "Наша кав'ярня гарна.",
+    "Цей лікар добрий."
+   ]
+  },
+  {
+   "prompt": "Susun jadi kalimat yang benar.",
+   "items": [
+    "свята / пройшли / як",
+    "нові / у / студенти / нас / сьогодні",
+    "співали / колядки / люди",
+    "дві / надіслала / книжки / Діна",
+    "словники / паперові / наші"
+   ]
+  }
+ ],
+ "answers": [
+  "Як пройшли свята? — Ці книжки нові. — Прийшли всі родичі. — Мої друзі співали колядки. — Сьогодні в нас нові студенти. — Діти люблять подарунки.",
+  "друзі — книжки — музеї — міста — студентки — зошити — люди",
+  "Це нові словники. — Мої брати студенти. — Ці діти співають. — Твої вікна великі. — Наші кав'ярні гарні. — Ці лікарі добрі.",
+  "Як пройшли свята? — Сьогодні у нас нові студенти. — Люди співали колядки. — Діна надіслала дві книжки. — Наші словники паперові."
+ ]
+}

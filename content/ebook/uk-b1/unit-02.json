@@ -1,0 +1,649 @@
+{
+ "title": "Aturan rumah Pani Iryna — boleh, perlu, dilarang, sudah dibayar",
+ "title_target": "Правила в домі пані Ірини",
+ "goal": "Menyatakan izin, keharusan, dan larangan tanpa subjek (*можна, треба, слід, заборонено*) dan melaporkan hal yang sudah beres dengan bentuk *-но / -то*: *Двері зачинено*, *За вересень уже заплачено*.",
+ "bekal": [
+  "kamu bisa menanyakan dan menjelaskan aturan rumah dengan *можна, не можна, треба, слід, заборонено*",
+  "kamu bisa membedakan *не можна відчиняти* (tidak boleh) dari *не можна відчинити* (tidak bisa)",
+  "kamu bisa memakai bentuk impersonal *-но / -то* dengan objek akusatif: *Кота вже нагодовано*"
+ ],
+ "dialogs": [
+  {
+   "title": "Діалог 1 — Rumah tua zaman Austria",
+   "intro": "Jumat, 10 September 2027, sore hari, sebuah кам'яниця berlangit-langit tinggi di dekat pusat kota Lviv. Solomiya mengantar Ani menemui Pani Iryna, pemilik apartemen yang menyewakan satu kamar. Perhatikan kalimat-kalimat tanpa subjek: *треба знімати*, *слід поводитися*, *заборонено*.",
+   "lines": [
+    {
+     "speaker": "Ірина:",
+     "text": "[Прошу|Pro-SHU], [заходьте|za-KHOD'-te]! [Ви|Vy], [мабуть|MA-but'], [Ані|A-ni]? [Соломія|So-lo-MI-ya] [мені|me-NI] [про|pro] [вас|vas] [телефонувала|te-le-fo-nu-VA-la].",
+     "id": "Silakan, masuk! Anda pasti Ani, ya? Solomiya sudah menelepon saya soal Anda.",
+     "literal": "silakan, masuklah (Anda)! Anda, barangkali, Ani? Solomiya saya (dat.) tentang Anda menelepon‹proses›."
+    },
+    {
+     "speaker": "Ані:",
+     "text": "[Так|Tak], [добрий|DO-bryy] [день|den'], [пані|PA-ni] [Ірино|I-RY-no]! [Який|Ya-KYY] [гарний|HAR-nyy] [будинок|bu-DY-nok]!",
+     "id": "Betul, selamat siang, Pani Iryna! Rumahnya indah sekali!",
+     "literal": "ya, baik hari, nyonya Iryna (vok.)! alangkah indah gedung!"
+    },
+    {
+     "speaker": "Соломія:",
+     "text": "[Це|Tse] [кам'яниця|ka-mya-NY-tsya] [ще|shche] [з|z] [австрійських|avs-TRIY-s'kykh] [часів|cha-SIV]. [Тут|Tut] [кожна|KOZH-na] [стіна|STI-na] [має|MA-ye] [історію|is-TO-ri-yu].",
+     "id": "Ini rumah batu dari zaman Austria. Di sini setiap dinding punya cerita.",
+     "literal": "ini rumah-batu masih dari Austria (gen. jamak) masa (gen. jamak). di-sini setiap dinding punya sejarah."
+    },
+    {
+     "speaker": "Ірина:",
+     "text": "[Має|MA-ye], [має|MA-ye]. [Але|A-LE] [й|y] [правила|PRA-vy-la] [тут|tut] [є|ye]. [Ходімо|Kho-DI-mo], [я|ya] [вам|vam] [усе|u-SE] [покажу|po-ka-ZHU].",
+     "id": "Betul, betul. Tapi aturannya juga ada. Mari, saya tunjukkan semuanya.",
+     "literal": "punya, punya. tapi juga aturan-aturan di-sini ada. mari-pergi, saya Anda (dat.) semua akan-tunjukkan‹selesai›."
+    },
+    {
+     "speaker": "Ані:",
+     "text": "[Звичайно|Zvy-CHAY-no]. [Що|Shcho] [треба|TRE-ba] [знати|ZNA-ty] [насамперед|na-sam-pe-RED]?",
+     "id": "Tentu. Apa yang perlu saya ketahui lebih dulu?",
+     "literal": "tentu. apa perlu mengetahui pertama-tama?"
+    },
+    {
+     "speaker": "Ірина:",
+     "text": "[Взуття|Vzut-TYA] [треба|TRE-ba] [знімати|zni-MA-ty] [біля|BI-lya] [дверей|dve-REY]. [А|A] [після|PIS-lya] [десятої|de-SYA-to-yi] [вечора|VE-cho-ra] [слід|slid] [поводитися|po-VO-dy-ty-sya] [тихо|TY-kho].",
+     "id": "Sepatu harus dilepas di dekat pintu. Dan sesudah jam sepuluh malam sebaiknya tidak berisik.",
+     "literal": "alas-kaki perlu melepas‹proses› dekat pintu (gen.). dan sesudah kesepuluh (gen.) malam (gen.) seharusnya berperilaku tenang."
+    },
+    {
+     "speaker": "Ані:",
+     "text": "[Зрозуміло|Zro-zu-MI-lo]. [А|A] [готувати|ho-tu-VA-ty] [на|na] [кухні|KUKH-ni] [можна|MOZH-na]?",
+     "id": "Mengerti. Kalau memasak di dapur, boleh?",
+     "literal": "dimengerti. dan memasak di dapur (lok.) boleh?"
+    },
+    {
+     "speaker": "Ірина:",
+     "text": "[Можна|MOZH-na]. [Тільки|TIL'-ky] [посуд|PO-sud] [треба|TRE-ba] [мити|MY-ty] [одразу|o-DRA-zu], [а|a] [не|ne] [зранку|ZRAN-ku].",
+     "id": "Boleh. Cuma piringnya harus langsung dicuci, jangan ditunda sampai pagi.",
+     "literal": "boleh. hanya piring-piring perlu mencuci segera, dan bukan besok-paginya."
+    },
+    {
+     "speaker": "Соломія:",
+     "text": "[А|A] [палити|pa-LY-ty] [в|v] [квартирі|kvar-TY-ri], [звичайно|zvy-CHAY-no], [заборонено|za-bo-RO-ne-no].",
+     "id": "Dan merokok di apartemen tentu saja dilarang.",
+     "literal": "dan merokok di apartemen (lok.), tentu, dilarang."
+    },
+    {
+     "speaker": "Ірина:",
+     "text": "[Суворо|Su-VO-ro] [заборонено|za-bo-RO-ne-no]! [І|I] [на|na] [балконі|bal-KO-ni] [теж|tezh]. [Мурчик|MUR-chyk] [цього|tsyo-HO] [не|ne] [любить|LYU-byt'].",
+     "id": "Dilarang keras! Di balkon juga. Murchyk tidak suka.",
+     "literal": "keras dilarang! dan di balkon (lok.) juga. Murchyk ini (gen.) tidak suka."
+    },
+    {
+     "speaker": "Ані:",
+     "text": "[Мурчик|MUR-chyk]? [Хто|Khto] [це|tse]?",
+     "id": "Murchyk? Siapa itu?",
+     "literal": "Murchyk? siapa ini?"
+    },
+    {
+     "speaker": "Ірина:",
+     "text": "[Мій|Miy] [кіт|kit]. [Він|Vin] [тут|tut] [головний|ho-lov-NYY]. [Його|Yo-HO] [не|ne] [можна|MOZH-na] [випускати|vy-pus-KA-ty] [на|na] [сходи|SKHO-dy].",
+     "id": "Kucing saya. Dialah yang berkuasa di sini. Dia tidak boleh dibiarkan keluar ke tangga.",
+     "literal": "saya-punya kucing. dia di-sini utama. dia (ak.) tidak boleh melepas-keluar‹proses› ke tangga."
+    },
+    {
+     "speaker": "Ані:",
+     "text": "[Я|Ya] [люблю|lyu-BLYU] [котів|ko-TIV]! [А|A] [годувати|ho-du-VA-ty] [його|yo-HO] [мені|me-NI] [можна|MOZH-na]?",
+     "id": "Saya suka kucing! Boleh saya memberinya makan?",
+     "literal": "saya suka kucing-kucing (ak. jamak)! dan memberi-makan dia (ak.) saya (dat.) boleh?"
+    },
+    {
+     "speaker": "Ірина:",
+     "text": "[Можна|MOZH-na], [але|a-LE] [тільки|TIL'-ky] [сухим|su-KHYM] [кормом|KOR-mom], [не|ne] [ковбасою|kov-ba-SO-yu]! [Він|Vin] [уже|u-ZHE] [й|y] [так|tak] [товстенький|tov-STEN'-kyy].",
+     "id": "Boleh, tapi hanya dengan makanan kering, jangan sosis! Dia sudah cukup gendut.",
+     "literal": "boleh, tapi hanya kering (ins.) pakan (ins.), bukan sosis (ins.)! dia sudah juga begitu gendut-kecil."
+    }
+   ],
+   "notes": [
+    "**Прошу, заходьте!** Di Lviv, *прошу* (harfiah \"saya mohon\") dipakai sebagai \"silakan\" saat mempersilakan masuk, menyerahkan sesuatu, atau menjawab *дякую*. Di Kyiv orang lebih sering bilang *будь ласка*. Ini salah satu warna khas Galicia yang akan sering kamu dengar dari Pani Iryna.",
+    "**Кам'яниця** adalah rumah kota bertingkat dari batu, khas pusat Lviv. Banyak dibangun ketika Galicia berada di bawah Austria (1772–1918): langit-langit tinggi, tangga batu, pintu kayu besar. Orang Lviv menyebut masa itu *австрійські часи* atau *за Австрії*.",
+    "**Що треба знати насамперед?** *Треба* + infinitif = perlu, harus. Kalimatnya tak punya subjek; kalau mau menyebut siapa yang harus, pakai datif: *мені треба*, *вам треба*. Mirip sekali dengan bahasa Indonesia \"perlu tahu apa?\" yang juga bisa tanpa subjek. Pertanyaan *А готувати на кухні можна?* cukup dengan intonasi naik, dan *можна* di akhir terdengar paling alami.",
+    "**Слід поводитися тихо.** *Слід* = sebaiknya, seharusnya, sedikit lebih resmi dan normatif daripada *треба*. Kamu akan melihatnya di aturan tertulis dan petunjuk. *Не слід* = sebaiknya jangan. Kata *слід* sendiri aslinya berarti \"jejak\".",
+    "**Суворо заборонено.** *Заборонено* = dilarang, bentuk impersonal yang sering ada di papan larangan: *Паління заборонено*. Aktivitasnya boleh berupa infinitif (*палити заборонено*) atau kata benda (*паління заборонено*). *Суворо* = keras, ketat.",
+    "**Його не можна випускати.** *Не можна* + **imperfektif** = tidak boleh (larangan). *Не можна* + **perfektif** = tidak bisa, mustahil: *Вікно не можна відчинити* = jendelanya tidak bisa dibuka (macet). Bahasa Indonesia membedakannya dengan dua kata, bahasa Ukraina dengan aspek."
+   ],
+   "grammars": [
+    {
+     "title": "Predikat tanpa subjek",
+     "body": [
+      "Kata-kata ini berdiri sebagai predikat, diikuti infinitif. Pelakunya, kalau disebut, masuk datif: *Мені можна?* *Вам треба відпочити.*"
+     ],
+     "table": {
+      "head": [
+       "Kata",
+       "Arti",
+       "Contoh",
+       "Terjemahan"
+      ],
+      "rows": [
+       [
+        "*можна*",
+        "boleh, bisa",
+        "*Тут можна готувати.*",
+        "Di sini boleh memasak."
+       ],
+       [
+        "*не можна* + imperfektif",
+        "tidak boleh",
+        "*Кота не можна випускати.*",
+        "Kucing tak boleh dilepas keluar."
+       ],
+       [
+        "*не можна* + perfektif",
+        "tidak bisa",
+        "*Вікно не можна відчинити.*",
+        "Jendelanya tak bisa dibuka."
+       ],
+       [
+        "*треба, потрібно*",
+        "perlu, harus",
+        "*Посуд треба мити одразу.*",
+        "Piring harus langsung dicuci."
+       ],
+       [
+        "*слід, не слід*",
+        "sebaiknya, sebaiknya jangan",
+        "*Слід поводитися тихо.*",
+        "Sebaiknya tidak berisik."
+       ],
+       [
+        "*варто*",
+        "layak, ada gunanya",
+        "*Варто подивитися.*",
+        "Layak dilihat."
+       ],
+       [
+        "*заборонено*",
+        "dilarang",
+        "*Палити заборонено.*",
+        "Dilarang merokok."
+       ],
+       [
+        "*дозволено*",
+        "diizinkan",
+        "*Тут дозволено паркуватися.*",
+        "Di sini boleh parkir."
+       ]
+      ]
+     },
+     "after": [
+      "Untuk lampau dan masa depan tambahkan *було* dan *буде*: *Треба було зателефонувати.* *Можна буде прийти завтра.*"
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Діалог 2 — Malam pertama dan Murchyk",
+   "intro": "Malam yang sama, pukul sebelas kurang. Ani sudah memindahkan barang-barangnya. Pani Iryna mengetuk pintu kamarnya. Perhatikan bentuk yang berakhiran *-но*: *заплачено, зачинено, відчинено, нагодовано*.",
+   "lines": [
+    {
+     "speaker": "Ірина:",
+     "text": "[Ані|A-ni], [ви|vy] [ще|shche] [не|ne] [спите|SPY-te]? [Хотіла|Kho-TI-la] [сказати|ska-ZA-ty]: [за|za] [вересень|VE-re-sen'] [уже|u-ZHE] [заплачено|za-PLA-che-no], [гроші|HRO-shi] [прийшли|pryy-SHLY].",
+     "id": "Ani, belum tidur? Saya mau bilang: untuk bulan September sudah lunas, uangnya sudah masuk.",
+     "literal": "Ani, Anda masih tidak tidur? (saya)-ingin berkata‹selesai›: untuk September sudah dibayar, uang datang‹selesai›."
+    },
+    {
+     "speaker": "Ані:",
+     "text": "[Чудово|Chu-DO-vo], [дякую|DYA-ku-yu]! [А|A] [вхідні|vkhid-NI] [двері|DVE-ri] [вже|vzhe] [зачинено|za-CHY-ne-no]? [Я|Ya] [не|ne] [пам'ятаю|pa-mya-TA-yu], [чи|chy] [замкнула|zamk-NU-la].",
+     "id": "Bagus, terima kasih! Pintu depan sudah ditutup? Saya lupa apakah tadi sudah saya kunci.",
+     "literal": "bagus, terima-kasih! dan depan pintu sudah ditutup? saya tidak ingat, apakah (aku)-mengunci‹selesai› (pr.)."
+    },
+    {
+     "speaker": "Ірина:",
+     "text": "[Зачинено|Za-CHY-ne-no], [я|ya] [вже|vzhe] [перевірила|pe-re-VI-ry-la]. [Я|Ya] [це|tse] [роблю|RO-blyu] [щовечора|shcho-VE-cho-ra].",
+     "id": "Sudah ditutup, saya sudah cek. Saya melakukannya setiap malam.",
+     "literal": "ditutup, saya sudah memeriksa‹selesai›. saya ini melakukan‹proses› setiap-malam."
+    },
+    {
+     "speaker": "Ані:",
+     "text": "[А|A] [вікно|vik-NO] [у|u] [ванній|VAN-niy] [відчинено|vid-CHY-ne-no]. [Так|Tak] [і|i] [треба|TRE-ba]?",
+     "id": "Tapi jendela di kamar mandi terbuka. Memang begitu seharusnya?",
+     "literal": "tapi jendela di kamar-mandi (lok.) dibuka. begitu dan perlu?"
+    },
+    {
+     "speaker": "Ірина:",
+     "text": "[Так|Tak], [там|tam] [слід|slid] [провітрювати|pro-VI-tryu-va-ty], [бо|bo] [волого|vo-LO-ho]. [Але|A-LE] [на|na] [ніч|nich] [його|yo-HO] [треба|TRE-ba] [зачиняти|za-chy-NYA-ty].",
+     "id": "Ya, di sana harus sering diangin-anginkan karena lembap. Tapi kalau malam harus ditutup.",
+     "literal": "ya, di-sana seharusnya mengangin-anginkan‹proses›, karena lembap. tapi untuk malam dia (ak.) perlu menutup‹proses›."
+    },
+    {
+     "speaker": "Ані:",
+     "text": "[Бо|Bo] [Мурчик|MUR-chyk] [може|MO-zhe] [вистрибнути|VYS-tryb-nu-ty]?",
+     "id": "Karena Murchyk bisa melompat keluar?",
+     "literal": "karena Murchyk bisa melompat-keluar‹selesai›?"
+    },
+    {
+     "speaker": "Ірина:",
+     "text": "[Саме|SA-me] [так|tak]. [Минулої|My-NU-lo-yi] [зими|zy-MY] [він|vin] [уже|u-ZHE] [гуляв|hu-LYAV] [по|po] [даху|DA-khu].",
+     "id": "Persis. Musim dingin lalu dia sampai jalan-jalan di atap.",
+     "literal": "tepat begitu. lalu (gen.) musim-dingin (gen.) dia sudah berjalan-jalan‹proses› di atap (lok.)."
+    },
+    {
+     "speaker": "Ані:",
+     "text": "[Ой|Oy]! [А|A] [він|vin] [уже|u-ZHE] [сидить|sy-DYT'] [біля|BI-lya] [миски|MYS-ky]. [Можна|MOZH-na] [його|yo-HO] [погодувати|po-ho-du-VA-ty]?",
+     "id": "Aduh! Dia sudah duduk di dekat mangkuknya. Boleh saya beri makan?",
+     "literal": "aduh! dan dia sudah duduk dekat mangkuk (gen.). boleh dia (ak.) memberi-makan‹selesai›?"
+    },
+    {
+     "speaker": "Ірина:",
+     "text": "[Не|Ne] [слід|slid]. [Його|Yo-HO] [вже|vzhe] [нагодовано|na-ho-DO-va-no], [аж|azh] [двічі|DVI-chi]!",
+     "id": "Jangan. Dia sudah diberi makan, malah dua kali!",
+     "literal": "tidak seharusnya. dia (ak.) sudah diberi-makan, sampai dua-kali!"
+    },
+    {
+     "speaker": "Ані:",
+     "text": "[Хитрий|KHY-tryy] [кіт|kit]! [Доброї|DO-bro-yi] [ночі|NO-chi], [пані|PA-ni] [Ірино|I-RY-no].",
+     "id": "Kucing licik! Selamat malam, Pani Iryna.",
+     "literal": "licik kucing! baik (gen.) malam (gen.), nyonya Iryna (vok.)."
+    },
+    {
+     "speaker": "Ірина:",
+     "text": "[На|Na] [добраніч|do-BRA-nich], [Ані|A-ni]. [Ранок|RA-nok] [вечора|VE-cho-ra] [мудріший|mu-DRI-shyy], [а|a] [завтра|ZAV-tra] [вже|vzhe] [субота|su-BO-ta]!",
+     "id": "Selamat tidur, Ani. Pagi lebih bijak daripada malam, lagi pula besok sudah Sabtu!",
+     "literal": "untuk selamat-malam, Ani. pagi malam (gen.) lebih-bijak, dan besok sudah Sabtu!"
+    }
+   ],
+   "notes": [
+    "**За вересень уже заплачено.** Bentuk **-но / -то** adalah predikat impersonal dari partisip pasif: *заплачений → заплачено*. Tak ada subjek, tak ada pelaku, dan bentuknya tak pernah berubah. Rasanya seperti bahasa Indonesia \"sudah dibayar\" tanpa menyebut siapa yang membayar. Bentuk ini hanya untuk lampau atau hasil; bahasa Rusia tak punya padanannya yang sehidup ini.",
+    "**Двері вже зачинено?** Bandingkan dua cara: *Двері зачинені* (partisip sebagai kata sifat, cocok dengan *двері* jamak) dan *Двері зачинено* (bentuk -но, tetap). Keduanya benar. Bentuk -но menekankan tindakannya sudah dilakukan, sedangkan partisip menggambarkan keadaan.",
+    "**Я не пам'ятаю, чи замкнула.** *Зачинити* = menutup, *замкнути* = mengunci. Penutur Indonesia sering memakai satu kata \"tutup\" untuk keduanya, padahal pintu yang *зачинені* belum tentu *замкнені*. *Чи* di tengah kalimat = \"apakah\"; kita bahas lebih jauh di Unit 11.",
+    "**Слід провітрювати, бо волого.** *Провітрювати* = membiarkan udara segar masuk, kebiasaan penting di rumah-rumah Ukraina, bahkan di musim dingin: jendela dibuka lebar beberapa menit, lalu ditutup lagi. *Волого* adalah predikat keadaan (lembap), sejenis dengan *холодно, тепло, прохолодно*.",
+    "**Його вже нагодовано, аж двічі!** Kalau kata kerjanya punya objek, objek itu tetap **akusatif** di depan bentuk -но: *кота нагодовано, роботу зроблено, каву зварено*. Jangan menulis *кіт нагодовано*. *Аж* menambahkan rasa \"sampai-sampai\": *аж двічі* = malah dua kali.",
+    "**Ранок вечора мудріший.** Peribahasa pertama dari Pani Iryna (bakal ada banyak!): pagi lebih bijak dari malam, jadi tidurlah dulu sebelum memutuskan. *На добраніч* diucapkan menjelang tidur; *доброї ночі* juga dipakai sebagai salam perpisahan di malam hari."
+   ],
+   "grammars": [
+    {
+     "title": "Bentuk impersonal -но / -то",
+     "body": [
+      "Ambil partisip pasif, ganti akhiran *-ний* menjadi *-но*, atau *-тий* menjadi *-то*. Objeknya tetap akusatif."
+     ],
+     "table": {
+      "head": [
+       "Kata kerja",
+       "Partisip",
+       "Bentuk -но / -то",
+       "Contoh"
+      ],
+      "rows": [
+       [
+        "*зачинити*",
+        "*зачинений*",
+        "*зачинено*",
+        "*Двері зачинено.*"
+       ],
+       [
+        "*відчинити*",
+        "*відчинений*",
+        "*відчинено*",
+        "*Вікно відчинено.*"
+       ],
+       [
+        "*заплатити*",
+        "*заплачений*",
+        "*заплачено*",
+        "*За вересень заплачено.*"
+       ],
+       [
+        "*зробити*",
+        "*зроблений*",
+        "*зроблено*",
+        "*Роботу зроблено.*"
+       ],
+       [
+        "*заборонити*",
+        "*заборонений*",
+        "*заборонено*",
+        "*Палити заборонено.*"
+       ],
+       [
+        "*нагодувати*",
+        "*нагодований*",
+        "*нагодовано*",
+        "*Кота нагодовано.*"
+       ],
+       [
+        "*закрити*",
+        "*закритий*",
+        "*закрито*",
+        "*Магазин закрито.*"
+       ],
+       [
+        "*вимити*",
+        "*вимитий*",
+        "*вимито*",
+        "*Посуд вимито.*"
+       ]
+      ]
+     },
+     "after": [
+      "Pelaku biasanya tidak disebut. Kalau perlu, pakai instrumental dengan hati-hati (*зроблено мною*); dalam percakapan lebih wajar kalimat aktif: *Я зробила роботу.*"
+     ]
+    }
+   ]
+  }
+ ],
+ "sections": [
+  {
+   "title": "Membaca papan dan pengumuman",
+   "blocks": [
+    {
+     "type": "p",
+     "text": "Papan larangan dan pengumuman di Ukraina memakai tiga pola: bentuk -но (*Зачинено*), infinitif sebagai perintah (*Не палити*), dan kata benda (*Вхід вільний*). Infinitif di papan terdengar tegas dan netral, tanpa *ти* atau *ви*. Di pintu kedai, gerbang halaman, dan tangga kam'yanytsya kamu akan membaca semuanya."
+    },
+    {
+     "type": "tabel",
+     "head": [
+      "Tulisan",
+      "Pola",
+      "Arti"
+     ],
+     "rows": [
+      [
+       "*Відчинено*",
+       "-но",
+       "Buka"
+      ],
+      [
+       "*Зачинено*",
+       "-но",
+       "Tutup"
+      ],
+      [
+       "*Вхід заборонено*",
+       "-но",
+       "Dilarang masuk"
+      ],
+      [
+       "*Паління заборонено*",
+       "-но",
+       "Dilarang merokok"
+      ],
+      [
+       "*Не палити*",
+       "infinitif",
+       "Jangan merokok"
+      ],
+      [
+       "*Не турбувати*",
+       "infinitif",
+       "Jangan diganggu"
+      ],
+      [
+       "*Зберігати в сухому місці*",
+       "infinitif",
+       "Simpan di tempat kering"
+      ],
+      [
+       "*Вхід вільний*",
+       "kata benda",
+       "Masuk gratis"
+      ],
+      [
+       "*Від себе / До себе*",
+       "frasa",
+       "Dorong / Tarik"
+      ]
+     ]
+    },
+    {
+     "type": "kotak",
+     "title": "Kenapa infinitif?",
+     "items": [
+      "Infinitif di papan tidak memilih *ти* atau *ви*, jadi cocok untuk semua orang.",
+      "Negatifnya hampir selalu imperfektif: *не палити, не заходити, не торкатися*.",
+      "*Зберігати в сухому місці* ada di setiap karung kopi di gudang «Ява»."
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Menyewa kamar di Lviv",
+   "blocks": [
+    {
+     "type": "p",
+     "text": "Banyak pendatang di Lviv menyewa kamar di apartemen milik pensiunan yang tinggal sendiri, seperti Pani Iryna. Biaya sewa biasanya dibayar per bulan di muka, kadang ditambah uang jaminan. Listrik, air, dan gas disebut *комунальні послуги*, atau dalam obrolan cukup *комуналка*. Pemanas sentral di kam'yanytsya tua biasanya menyala sekitar pertengahan Oktober, jadi September dan awal Oktober bisa terasa dingin di dalam rumah."
+    },
+    {
+     "type": "tabel",
+     "head": [
+      "Українська",
+      "Cara baca",
+      "Bahasa Indonesia"
+     ],
+     "rows": [
+      [
+       "оренда",
+       "o-REN-da",
+       "sewa"
+      ],
+      [
+       "орендувати",
+       "o-ren-du-VA-ty",
+       "menyewa"
+      ],
+      [
+       "господиня",
+       "hos-po-DY-nya",
+       "pemilik rumah (pr.), nyonya rumah"
+      ],
+      [
+       "договір",
+       "do-ho-VIR",
+       "perjanjian, kontrak"
+      ],
+      [
+       "застава",
+       "zas-TA-va",
+       "uang jaminan"
+      ],
+      [
+       "комуналка",
+       "ko-mu-NAL-ka",
+       "biaya listrik, air, gas (lisan)"
+      ],
+      [
+       "опалення",
+       "o-PA-len-nya",
+       "pemanas"
+      ],
+      [
+       "сусіди",
+       "su-SI-dy",
+       "tetangga"
+      ]
+     ]
+    },
+    {
+     "type": "list",
+     "items": [
+      "*Комуналка входить у ціну?* = Biaya listrik dan air sudah termasuk?",
+      "*Коли треба платити?* = Kapan harus membayar?",
+      "*Чи можна запрошувати гостей?* = Boleh mengundang tamu?"
+     ]
+    }
+   ]
+  }
+ ],
+ "vocab": [
+  {
+   "uk": "кам'яни́ця",
+   "baca": "ka-mya-NY-tsya",
+   "id": "rumah kota dari batu (khas Lviv)"
+  },
+  {
+   "uk": "господи́ня",
+   "baca": "hos-po-DY-nya",
+   "id": "pemilik rumah (pr.), nyonya rumah"
+  },
+  {
+   "uk": "орендува́ти",
+   "baca": "o-ren-du-VA-ty",
+   "id": "menyewa"
+  },
+  {
+   "uk": "взуття́",
+   "baca": "vzut-TYA",
+   "id": "alas kaki, sepatu"
+  },
+  {
+   "uk": "зніма́ти / зня́ти",
+   "baca": "zni-MA-ty / ZNYA-ty",
+   "id": "melepas (sepatu, jaket)"
+  },
+  {
+   "uk": "пово́дитися",
+   "baca": "po-VO-dy-ty-sya",
+   "id": "berperilaku, bersikap"
+  },
+  {
+   "uk": "ти́хо",
+   "baca": "TY-kho",
+   "id": "tenang, pelan, tidak berisik"
+  },
+  {
+   "uk": "мо́жна / не мо́жна",
+   "baca": "MOZH-na / ne MOZH-na",
+   "id": "boleh / tidak boleh (tidak bisa + perfektif)"
+  },
+  {
+   "uk": "тре́ба",
+   "baca": "TRE-ba",
+   "id": "perlu, harus (+ dat.)"
+  },
+  {
+   "uk": "слід / не слід",
+   "baca": "slid / ne slid",
+   "id": "sebaiknya / sebaiknya jangan"
+  },
+  {
+   "uk": "заборо́нено",
+   "baca": "za-bo-RO-ne-no",
+   "id": "dilarang"
+  },
+  {
+   "uk": "дозво́лено",
+   "baca": "doz-VO-le-no",
+   "id": "diizinkan"
+  },
+  {
+   "uk": "пали́ти",
+   "baca": "pa-LY-ty",
+   "id": "merokok"
+  },
+  {
+   "uk": "по́суд",
+   "baca": "PO-sud",
+   "id": "piring-piring, perabot makan (kolektif)"
+  },
+  {
+   "uk": "ми́ти / поми́ти",
+   "baca": "MY-ty / po-MY-ty",
+   "id": "mencuci"
+  },
+  {
+   "uk": "годува́ти / нагодува́ти",
+   "baca": "ho-du-VA-ty / na-ho-du-VA-ty",
+   "id": "memberi makan"
+  },
+  {
+   "uk": "ми́ска",
+   "baca": "MYS-ka",
+   "id": "mangkuk"
+  },
+  {
+   "uk": "корм",
+   "baca": "korm",
+   "id": "pakan hewan (*сухий корм*)"
+  },
+  {
+   "uk": "прові́трювати / прові́трити",
+   "baca": "pro-VI-tryu-va-ty / pro-VI-try-ty",
+   "id": "mengangin-anginkan ruangan"
+  },
+  {
+   "uk": "вхідні́ две́рі",
+   "baca": "vkhid-NI DVE-ri",
+   "id": "pintu depan (masuk)"
+  },
+  {
+   "uk": "замика́ти / замкну́ти",
+   "baca": "za-my-KA-ty / zamk-NU-ty",
+   "id": "mengunci"
+  },
+  {
+   "uk": "плати́ти / заплати́ти",
+   "baca": "pla-TY-ty / za-pla-TY-ty",
+   "id": "membayar (*за* + ak.)"
+  },
+  {
+   "uk": "хи́трий",
+   "baca": "KHY-tryy",
+   "id": "licik, cerdik"
+  },
+  {
+   "uk": "дах (gen. да́ху)",
+   "baca": "dakh",
+   "id": "atap (*на даху*)"
+  },
+  {
+   "uk": "насампере́д",
+   "baca": "na-sam-pe-RED",
+   "id": "pertama-tama, terutama"
+  }
+ ],
+ "exercises": [
+  {
+   "prompt": "Terjemahkan ke bahasa Ukraina.",
+   "items": [
+    "Sepatu harus dilepas di dekat pintu.",
+    "Merokok di apartemen dilarang.",
+    "Boleh memasak di dapur?",
+    "Kucingnya tidak boleh dilepas ke tangga.",
+    "Untuk bulan September sudah dibayar.",
+    "Pintu depan sudah ditutup."
+   ]
+  },
+  {
+   "prompt": "Isi titik-titik dengan kata yang tepat. Petunjuk ada di dalam kurung.",
+   "items": [
+    "Після десятої вечора ____ поводитися тихо. (sebaiknya: слід, можна)",
+    "Мурчика не ____ випускати на сходи. (можна, треба)",
+    "Палити на балконі суворо ____. (заборонити, bentuk -но)",
+    "За вересень уже ____. (заплатити, bentuk -но)",
+    "Вікно у ванній ____. (відчинити, bentuk -но)",
+    "Кота вже ____, аж двічі! (нагодувати, bentuk -но)",
+    "Посуд ____ мити одразу. (harus: треба, можна)"
+   ]
+  },
+  {
+   "prompt": "Ubah partisip menjadi bentuk -но / -то. Ingat: subjeknya berubah jadi objek akusatif. Contoh: *Двері зачинені.* → *Двері зачинено.*",
+   "items": [
+    "Вікно відчинене.",
+    "Робота зроблена.",
+    "Посуд вимитий.",
+    "Кава зварена.",
+    "Магазин закритий.",
+    "Кіт нагодований."
+   ]
+  },
+  {
+   "prompt": "Susun jadi kalimat yang benar.",
+   "items": [
+    "треба / взуття / знімати / біля дверей",
+    "заборонено / в квартирі / палити",
+    "не можна / його / на сходи / випускати",
+    "уже / за вересень / заплачено",
+    "нагодовано / його / аж двічі / вже"
+   ]
+  }
+ ],
+ "answers": [
+  "Взуття треба знімати біля дверей. — Палити в квартирі заборонено. — Чи можна готувати на кухні? — Кота не можна випускати на сходи. — За вересень уже заплачено. — Вхідні двері вже зачинено.",
+  "слід — можна — заборонено — заплачено — відчинено — нагодовано — треба",
+  "Вікно відчинено. — Роботу зроблено. — Посуд вимито. — Каву зварено. — Магазин закрито. — Кота нагодовано.",
+  "Взуття треба знімати біля дверей. — Палити в квартирі заборонено. — Його не можна випускати на сходи. — За вересень уже заплачено. — Його вже нагодовано, аж двічі."
+ ]
+}

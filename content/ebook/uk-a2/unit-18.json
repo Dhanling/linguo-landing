@@ -1,0 +1,648 @@
+{
+ "title": "Dia bilang akan ada badai — ujaran tak langsung",
+ "title_target": "Він сказав, що після третьої буде гроза.",
+ "goal": "Menyampaikan ulang kata-kata orang lain: pernyataan dengan *сказав, що…*, pertanyaan dengan *запитала, чи…* atau kata tanya, dan permintaan dengan *попросив, щоб…* + bentuk lampau.",
+ "bekal": [
+  "kamu bisa melaporkan pernyataan tanpa mengubah kala: *Він сказав, що буде гроза.*",
+  "kamu bisa melaporkan pertanyaan ya/tidak dengan *чи*: *Я запитала, чи далеко до вершини.*",
+  "kamu bisa melaporkan permintaan dengan *щоб* + lampau: *Він попросив, щоб ми не забули воду.*"
+ ],
+ "dialogs": [
+  {
+   "title": "Діалог 1 — Mendaki Говерла",
+   "intro": "Senin, 12 Juli 2027, pukul tujuh pagi di pos Заросляк, titik awal pendakian ke Hoverla, gunung tertinggi di Ukraina. Ani, Solomiya, dan Andriy menginap di Яремче dan naik minibus ke sini sebelum subuh. Petugas penyelamat gunung mencatat para pendaki. Perhatikan bagaimana Ani dan Solomiya meneruskan kata-kata petugas itu kepada Andriy.",
+   "lines": [
+    {
+     "speaker": "Рятувальник:",
+     "text": "[Добрий|DO-bryy] [ранок|RA-nok]! [Куди|Ku-DY] [йдете|yde-TE]?",
+     "id": "Selamat pagi! Mau ke mana?",
+     "literal": "baik pagi! ke-mana kalian-pergi?"
+    },
+    {
+     "speaker": "Соломія:",
+     "text": "[На|Na] [Говерлу|Ho-VER-lu]. [Нас|Nas] [троє|TRO-ye].",
+     "id": "Ke Hoverla. Kami bertiga.",
+     "literal": "ke Hoverla (ak.). kami (gen.) bertiga."
+    },
+    {
+     "speaker": "Рятувальник:",
+     "text": "[Запишіться|Za-py-SHI-tsya], [будь|bud'] [ласка|LAS-ka], [в|v] [журнал|zhur-NAL]. [Після|PIS-lya] [третьої|TRE-tyo-yi] [буде|BU-de] [гроза|hro-ZA].",
+     "id": "Tolong catat nama di buku daftar. Sesudah jam tiga akan ada badai petir.",
+     "literal": "catatkanlah-diri, jadilah baik, ke buku-catatan (ak.). sesudah ketiga (gen.) akan-ada badai-petir."
+    },
+    {
+     "speaker": "Ані:",
+     "text": "[А|A] [скільки|SKIL'-ky] [годин|ho-DYN] [іти|i-TY] [до|do] [вершини|ver-SHY-ny]?",
+     "id": "Ke puncak jalan kaki berapa jam?",
+     "literal": "dan berapa jam (gen. jamak) berjalan sampai puncak (gen.)?"
+    },
+    {
+     "speaker": "Рятувальник:",
+     "text": "[Три|Try]-[чотири|cho-TY-ry] [години|ho-DY-ny]. [І|I] [не|ne] [забудьте|za-BUD'-te] [воду|VO-du]!",
+     "id": "Tiga-empat jam. Dan jangan lupa bawa air!",
+     "literal": "tiga-empat jam (jamak). dan jangan lupakan ‹selesai› air (ak.)!"
+    },
+    {
+     "speaker": "Андрій:",
+     "text": "[Ані|A-ni], [що|shcho] [він|vin] [сказав|ska-ZAV]? [Я|Ya] [не|ne] [почув|po-CHUV].",
+     "id": "Ani, dia bilang apa? Aku nggak dengar.",
+     "literal": "Ani, apa dia berkata ‹selesai›? aku tidak mendengar ‹selesai›."
+    },
+    {
+     "speaker": "Ані:",
+     "text": "[Він|Vin] [сказав|ska-ZAV], [що|shcho] [після|PIS-lya] [третьої|TRE-tyo-yi] [буде|BU-de] [гроза|hro-ZA].",
+     "id": "Dia bilang sesudah jam tiga akan ada badai petir.",
+     "literal": "dia berkata ‹selesai›, bahwa sesudah ketiga (gen.) akan-ada badai-petir."
+    },
+    {
+     "speaker": "Соломія:",
+     "text": "[А|A] [ще|shche] [попросив|po-pro-SYV], [щоб|shchob] [ми|my] [не|ne] [забули|za-BU-ly] [воду|VO-du].",
+     "id": "Terus dia minta supaya kita jangan lupa air.",
+     "literal": "dan lagi meminta ‹selesai›, supaya kami tidak melupakan ‹selesai› (lampau) air (ak.)."
+    },
+    {
+     "speaker": "Андрій:",
+     "text": "[Вода|Vo-DA] [є|ye]. [А|A] [про|pro] [що|shcho] [ти|ty] [його|yo-HO] [питала|py-TA-la]?",
+     "id": "Air ada. Kamu tadi tanya apa ke dia?",
+     "literal": "air ada. dan tentang apa kamu dia (ak.) bertanya?"
+    },
+    {
+     "speaker": "Ані:",
+     "text": "[Я|Ya] [запитала|za-py-TA-la], [чи|chy] [далеко|da-LE-ko] [до|do] [вершини|ver-SHY-ny].",
+     "id": "Aku tanya apakah puncaknya jauh.",
+     "literal": "aku bertanya ‹selesai›, apakah jauh sampai puncak (gen.)."
+    },
+    {
+     "speaker": "Андрій:",
+     "text": "[Тоді|To-DI] [ходімо|kho-DI-mo] [швидше|SHVYD-she]!",
+     "id": "Kalau begitu ayo jalan lebih cepat!",
+     "literal": "kalau-begitu mari-berjalan lebih-cepat!"
+    },
+    {
+     "speaker": "Соломія:",
+     "text": "[Ані|A-ni], [ти|ty] [казала|ka-ZA-la], [що|shcho] [в|v] [Індонезії|In-do-NE-zi-yi] [теж|tezh] [є|ye] [високі|vy-SO-ki] [гори|HO-ry]?",
+     "id": "Ani, katamu di Indonesia juga ada gunung tinggi?",
+     "literal": "Ani, kamu berkata, bahwa di Indonesia (lok.) juga ada tinggi (jamak) gunung (jamak)?"
+    },
+    {
+     "speaker": "Ані:",
+     "text": "[Так|Tak], [але|a-LE] [я|ya] [ніколи|ni-KO-ly] [не|ne] [піднімалася|pid-ni-MA-la-sya] [так|tak] [високо|vy-SO-ko].",
+     "id": "Iya, tapi aku belum pernah naik setinggi ini.",
+     "literal": "ya, tapi aku tidak-pernah tidak naik ‹proses› begitu tinggi."
+    },
+    {
+     "speaker": "Андрій:",
+     "text": "[Ось|Os'] [вона|vo-NA], [вершина|ver-SHY-na]! [Дві|Dvi] [тисячі|TY-sya-chi] [шістдесят|shist-de-SYAT] [один|o-DYN] [метр|metr]!",
+     "id": "Ini dia puncaknya! Dua ribu enam puluh satu meter!",
+     "literal": "ini dia, puncak! dua ribu (jamak) enam-puluh satu meter!"
+    }
+   ],
+   "notes": [
+    "**Нас троє** = kami bertiga (harfiah: dari kami ada tiga). *Троє* adalah angka kolektif untuk kelompok orang; kamu akan mempelajarinya lebih jauh di B1. Untuk sekarang cukup hafal *нас двоє, нас троє*.",
+    "**Запишіться в журнал** — di pos pendakian Karpatia, pendaki mencatatkan nama pada petugas *рятувальна служба* (tim penyelamat). *Журнал* di sini bukan majalah melainkan buku catatan. *Записатися* = mendaftarkan diri.",
+    "**Він сказав, що після третьої буде гроза** — ujaran tak langsung untuk pernyataan memakai *що*. Kalanya TIDAK bergeser: petugas berkata *буде гроза*, dan Ani meneruskannya tetap dengan *буде*. Ini sama dengan bahasa Indonesia dan berbeda dengan bahasa Inggris (*he said there would be*).",
+    "**Попросив, щоб ми не забули воду** — permintaan dan perintah dilaporkan dengan *щоб* + kata kerja **bentuk lampau**, walaupun maksudnya ke depan. Perintah *Не забудьте воду!* menjadi *щоб ми не забули воду*. Ini titik jegal terbesar unit ini: sesudah *щоб* jangan memakai bentuk masa kini.",
+    "**Я запитала, чи далеко до вершини** — pertanyaan ya/tidak dilaporkan dengan *чи* (apakah). Pertanyaan dengan kata tanya cukup mempertahankan kata tanyanya: *Він запитав, куди ми йдемо.* Jangan pakai *що* dan *чи* bersamaan.",
+    "**Ти казала, що…? / Я ніколи не піднімалася так високо** — *казати* (proses) dipakai ketika mengingat sesuatu yang pernah dikatakan, tanpa menekankan satu momen. Kalimat Ani memakai dua kata negatif, *ніколи не*, yang wajib dalam bahasa Ukraina. Hoverla tingginya 2.061 meter."
+   ],
+   "grammars": [
+    {
+     "title": "Dari ujaran langsung ke tak langsung",
+     "body": [
+      "Kalanya tetap, yang berubah hanya kata ganti dan sudut pandang. Pilihan kata penghubung ditentukan jenis ujarannya: pernyataan, pertanyaan, atau permintaan."
+     ],
+     "table": {
+      "head": [
+       "Ujaran langsung",
+       "Ujaran tak langsung",
+       "Penghubung"
+      ],
+      "rows": [
+       [
+        "«Буде гроза.»",
+        "Він сказав, що буде гроза.",
+        "що (pernyataan)"
+       ],
+       [
+        "«Далеко до вершини?»",
+        "Я запитала, чи далеко до вершини.",
+        "чи (ya/tidak)"
+       ],
+       [
+        "«Куди ви йдете?»",
+        "Він запитав, куди ми йдемо.",
+        "kata tanya tetap"
+       ],
+       [
+        "«Не забудьте воду!»",
+        "Він попросив, щоб ми не забули воду.",
+        "щоб + lampau"
+       ],
+       [
+        "«Запишіться.»",
+        "Він сказав, щоб ми записалися.",
+        "щоб + lampau"
+       ],
+       [
+        "«Я зателефоную о шостій.»",
+        "Ти обіцяла, що зателефонуєш о шостій.",
+        "що, kala tetap"
+       ]
+      ]
+     },
+     "after": [
+      "Perhatikan baris kelima: *сказати* bisa diikuti *що* (menyampaikan fakta) atau *щоб* (menyampaikan perintah). *Він сказав, що ми записалися* berarti kami sudah mendaftar; *Він сказав, щоб ми записалися* berarti dia menyuruh kami mendaftar."
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Діалог 2 — Laporan malam ke Kyiv",
+   "intro": "Malam yang sama, pukul sembilan, di wisma kayu di Яремче. Sinyal kembali, dan Ani segera menelepon video pani Halyna; Taras sedang menginap di rumah neneknya dan ikut nimbrung. Perhatikan bagaimana setiap kabar diteruskan dari mulut orang lain.",
+   "lines": [
+    {
+     "speaker": "Галина:",
+     "text": "[Ані|A-ni], [ну|nu] [як|yak]? [Ви|Vy] [вийшли|VYY-shly] [на|na] [вершину|ver-SHY-nu]?",
+     "id": "Ani, gimana? Kalian sampai puncak?",
+     "literal": "Ani, nah bagaimana? kalian keluar ‹selesai› ke puncak (ak.)?"
+    },
+    {
+     "speaker": "Ані:",
+     "text": "[Так|Tak], [пані|PA-ni] [Галино|Ha-LY-no]! [Андрій|An-DRIY] [сказав|ska-ZAV], [що|shcho] [це|tse] [найкращий|nay-KRA-shchyy] [день|den'] [літа|LI-ta].",
+     "id": "Sampai, Bu Halyna! Kata Andriy ini hari terbaik musim panas.",
+     "literal": "ya, nyonya Halyna (vok.)! Andriy berkata ‹selesai›, bahwa ini terbaik hari musim-panas (gen.)."
+    },
+    {
+     "speaker": "Тарас:",
+     "text": "[А|A] [ви|vy] [бачили|BA-chy-ly] [ведмедя|ved-ME-dya]?",
+     "id": "Kalian lihat beruang?",
+     "literal": "dan kalian melihat beruang (ak.)?"
+    },
+    {
+     "speaker": "Ані:",
+     "text": "[Ні|Ni], [Тарасе|Ta-RA-se]. [Але|A-LE] [рятувальник|rya-tu-VAL'-nyk] [сказав|ska-ZAV], [що|shcho] [ведмеді|ved-ME-di] [там|tam] [є|ye].",
+     "id": "Nggak, Taras. Tapi petugas penyelamat bilang di sana ada beruang.",
+     "literal": "tidak, Taras (vok.). tapi penyelamat berkata ‹selesai›, bahwa beruang (jamak) di-sana ada."
+    },
+    {
+     "speaker": "Галина:",
+     "text": "[А|A] [я|ya] [хвилювалася|khvy-lyu-VA-la-sya]! [Ти|Ty] [ж|zh] [обіцяла|o-bi-TSYA-la], [що|shcho] [зателефонуєш|za-te-le-fo-NU-yesh] [о|o] [шостій|SHOS-tiy].",
+     "id": "Aku sudah khawatir! Kamu kan janji mau telepon jam enam.",
+     "literal": "dan aku khawatir! kamu kan berjanji, bahwa akan-menelepon pada keenam (lok.)."
+    },
+    {
+     "speaker": "Ані:",
+     "text": "[Вибачте|VY-bach-te]! [Там|Tam] [не|ne] [було|bu-LO] [зв'язку|zvyaz-KU].",
+     "id": "Maaf! Di sana nggak ada sinyal.",
+     "literal": "maafkan! di-sana tidak ada (lampau) sinyal (gen.)."
+    },
+    {
+     "speaker": "Тарас:",
+     "text": "[А|A] [Соломія|So-lo-MI-ya] [ще|shche] [там|tam]? [Запитай|Za-py-TAY] [її|yi-YI], [чи|chy] [вона|vo-NA] [бачила|BA-chy-la] [орла|or-LA]!",
+     "id": "Solomiya masih di situ? Tanya dia apakah dia lihat elang!",
+     "literal": "dan Solomiya masih di-sana? tanyalah dia (ak.), apakah dia melihat elang (ak.)!"
+    },
+    {
+     "speaker": "Ані:",
+     "text": "[Соломія|So-lo-MI-ya] [каже|KA-zhe], [що|shcho] [бачила|BA-chy-la] [двох|dvokh] [орлів|or-LIV]!",
+     "id": "Kata Solomiya dia lihat dua ekor elang!",
+     "literal": "Solomiya berkata, bahwa melihat dua (ak.) elang (ak. jamak)!"
+    },
+    {
+     "speaker": "Галина:",
+     "text": "[Молодці|MO-lod-tsi]! [Попроси|Po-pro-SY] [Андрія|An-DRI-ya], [щоб|shchob] [ви|vy] [завтра|ZAV-tra] [не|ne] [запізнилися|za-piz-NY-ly-sya] [на|na] [потяг|PO-tyah].",
+     "id": "Hebat kalian! Minta Andriy supaya besok kalian jangan ketinggalan kereta.",
+     "literal": "hebat (jamak)! mintalah Andriy (ak.), supaya kalian besok tidak terlambat ‹selesai› (lampau) ke kereta (ak.)."
+    },
+    {
+     "speaker": "Ані:",
+     "text": "[Добре|DO-bre], [я|ya] [йому|yo-MU] [передам|pe-re-DAM]. [На|Na] [добраніч|do-BRA-nich], [пані|PA-ni] [Галино|Ha-LY-no]!",
+     "id": "Baik, nanti aku sampaikan ke dia. Selamat malam, Bu Halyna!",
+     "literal": "baik, aku kepadanya (dat.) menyampaikan ‹selesai›. pada selamat-malam, nyonya Halyna (vok.)!"
+    },
+    {
+     "speaker": "Тарас:",
+     "text": "[На|Na] [добраніч|do-BRA-nich]! [Привезіть|Pry-ve-ZIT'] [мені|me-NI] [камінь|KA-min'] [з|z] [Говерли|Ho-VER-ly]!",
+     "id": "Selamat malam! Bawakan aku batu dari Hoverla!",
+     "literal": "pada selamat-malam! bawakanlah kepadaku batu dari Hoverla (gen.)!"
+    }
+   ],
+   "notes": [
+    "**Ви вийшли на вершину?** — untuk mencapai puncak orang Ukraina berkata *вийти на вершину* (harfiah: keluar ke puncak). Ingat, awalan *ви-* pada kata kerja perfektif selalu bertekanan: *VY-yshly*.",
+    "**Андрій сказав, що це найкращий день літа** — melaporkan pernyataan dengan *що*, lalu kalimat aslinya utuh. *Найкращий* adalah superlatif dari *добрий / гарний* (Unit 10), dan *літа* adalah genitif: hari terbaik (dari) musim panas.",
+    "**Ти ж обіцяла, що зателефонуєш** — partikel *ж* memberi nada \"kan\": *ти ж обіцяла* = kamu kan sudah janji. Janji itu dulu berbentuk masa depan (*зателефоную*), dan dalam ujaran tak langsung tetap masa depan, hanya orangnya berganti menjadi *ти*.",
+    "**Там не було зв'язку** — *зв'язок* berarti koneksi atau sinyal telepon. Kalimat \"tidak ada\" di masa lampau memakai *не було* + genitif, bentuk netral yang tak pernah berubah: *не було зв'язку, не було води, не було людей*.",
+    "**Запитай її, чи вона бачила орла / бачила двох орлів** — *орел* adalah kata benda bernyawa, jadi akusatifnya sama dengan genitif: *орла*, dan dengan angka *двох орлів* (Unit 5). Ani cukup berkata *Соломія каже, що…* dengan masa kini karena Solomiya baru saja mengatakannya.",
+    "**Попроси Андрія, щоб ви не запізнилися на потяг** — lagi-lagi *щоб* + lampau untuk permintaan. *Запізнитися на потяг* = ketinggalan kereta (harfiah: terlambat ke kereta), dengan *на* + akusatif. *Молодці!* adalah pujian hangat: hebat, pintar."
+   ],
+   "grammars": [
+    {
+     "title": "Kata kerja pelapor dan pola sesudahnya",
+     "body": [
+      "Setiap kata kerja pelapor punya kasus sendiri untuk orang yang diajak bicara: *сказати кому* (datif), tetapi *запитати кого* dan *попросити кого* (akusatif)."
+     ],
+     "table": {
+      "head": [
+       "Kata kerja",
+       "Orangnya",
+       "Sambungan",
+       "Contoh"
+      ],
+      "rows": [
+       [
+        "казати / сказати",
+        "кому (dat.)",
+        "що, щоб",
+        "Він сказав мені, що буде гроза."
+       ],
+       [
+        "питати / запитати",
+        "кого (ak.)",
+        "чи, де, куди, коли",
+        "Я запитала його, чи далеко."
+       ],
+       [
+        "просити / попросити",
+        "кого (ak.)",
+        "щоб + lampau",
+        "Попроси Андрія, щоб він подзвонив."
+       ],
+       [
+        "обіцяти / пообіцяти",
+        "кому (dat.)",
+        "що",
+        "Я пообіцяла їй, що зателефоную."
+       ],
+       [
+        "відповідати / відповісти",
+        "кому (dat.)",
+        "що",
+        "Він відповів, що не знає."
+       ],
+       [
+        "радити / порадити",
+        "кому (dat.)",
+        "щоб + lampau",
+        "Лікарка порадила, щоб я відпочила."
+       ]
+      ]
+     },
+     "after": [
+      "Di percakapan santai, *каже* (masa kini) sering dipakai untuk meneruskan kata-kata yang baru saja diucapkan: *Соломія каже, що…* = kata Solomiya…"
+     ]
+    }
+   ]
+  }
+ ],
+ "sections": [
+  {
+   "title": "Говерла dan pegunungan Karpatia",
+   "blocks": [
+    {
+     "type": "p",
+     "text": "Hoverla (2.061 m) adalah puncak tertinggi Ukraina, terletak di punggung gunung Чорногора di Karpatia bagian timur. Kebanyakan pendaki berangkat dari pos Заросляк di ketinggian sekitar 1.100 meter. Ada dua jalur: yang hijau lebih curam dan singkat, yang biru lebih landai dan panjang. Pada musim panas badai petir sering datang sesudah tengah hari, karena itu pendaki berangkat pagi-pagi sekali."
+    },
+    {
+     "type": "tabel",
+     "head": [
+      "Ukraina",
+      "Indonesia"
+     ],
+     "rows": [
+      [
+       "гора, гори",
+       "gunung, pegunungan"
+      ],
+      [
+       "вершина",
+       "puncak"
+      ],
+      [
+       "стежка",
+       "jalan setapak"
+      ],
+      [
+       "маршрут",
+       "rute, jalur"
+      ],
+      [
+       "схил",
+       "lereng"
+      ],
+      [
+       "полонина",
+       "padang rumput di pegunungan"
+      ],
+      [
+       "водоспад",
+       "air terjun"
+      ],
+      [
+       "рюкзак",
+       "ransel"
+      ],
+      [
+       "дощовик",
+       "jas hujan"
+      ],
+      [
+       "гроза",
+       "badai petir"
+      ]
+     ]
+    },
+    {
+     "type": "kotak",
+     "title": "Sebelum mendaki",
+     "items": [
+      "Catatkan rutemu pada petugas penyelamat: *Ми йдемо на Говерлу, повернемося о п'ятій.*",
+      "Berangkat sebelum pukul delapan dan turunlah sebelum pukul dua.",
+      "Bawa air, jas hujan, dan jaket: di puncak bisa sepuluh derajat lebih dingin daripada di bawah.",
+      "Nomor darurat Ukraina: *112*."
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Makan malam di Яремче",
+   "blocks": [
+    {
+     "type": "p",
+     "text": "Яремче adalah kota wisata kecil di lembah Sungai Prut, terkenal dengan air terjun *Пробій* dan pasar suvenir Hutsul. Sesudah mendaki, orang makan di *колиба*, rumah makan kayu berperapian. Menu khasnya berat dan hangat, cocok untuk kaki yang pegal."
+    },
+    {
+     "type": "tabel",
+     "head": [
+      "Hidangan",
+      "Apa itu"
+     ],
+     "rows": [
+      [
+       "бануш",
+       "bubur jagung yang dimasak dengan krim asam"
+      ],
+      [
+       "бринза",
+       "keju domba asin"
+      ],
+      [
+       "гриби, білі гриби",
+       "jamur, jamur porcini"
+      ],
+      [
+       "шкварки",
+       "potongan lemak babi goreng renyah"
+      ],
+      [
+       "деруни",
+       "panekuk kentang"
+      ],
+      [
+       "форель",
+       "ikan trout dari sungai gunung"
+      ],
+      [
+       "чай з чебрецем",
+       "teh dengan daun timi liar"
+      ],
+      [
+       "узвар",
+       "minuman rebusan buah kering"
+      ]
+     ]
+    },
+    {
+     "type": "list",
+     "items": [
+      "*Що ви порадите?* Anda sarankan apa?",
+      "*Бануш без шкварок, будь ласка.* Banush tanpa kerupuk lemak, ya.",
+      "*Офіціант сказав, що форель свіжа.* Pelayan bilang troutnya segar."
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Ulangan berjenjang — unit 16",
+   "blocks": [
+    {
+     "type": "p",
+     "text": "Tutup kolom Ukraina, baca terjemahan Indonesianya, lalu susun kembali kalimatnya dari ingatan."
+    },
+    {
+     "type": "tabel",
+     "head": [
+      "Bahasa Indonesia",
+      "Українська",
+      "Baca"
+     ],
+     "rows": [
+      [
+       "Sembilan hari lagi adikku datang dari Jakarta.",
+       "Через дев'ять днів до мене приїжджає сестра з Джакарти.",
+       "*CHE-rez DE-vyat' dniv do ME-ne pry-yizh-DZHA-ye ses-TRA z Dzha-KAR-ty*"
+      ],
+      [
+       "Dua minggu, dari tanggal sembilan belas Juni sampai tiga Juli.",
+       "На два тижні, з дев'ятнадцятого червня до третього липня.",
+       "*Na dva TYZH-ni z de-vyat-NAD-tsya-to-ho CHERV-nya do TRE-tyo-ho LYP-nya*"
+      ],
+      [
+       "Kalau begitu beli sekarang. Kursi yang bagus habis dalam sehari.",
+       "Тоді купуй зараз. Хороші місця зникають за один день.",
+       "*To-DI ku-PUY ZA-raz Kho-RO-shi mis-TSYA zny-KA-yut' za o-DYN den'*"
+      ],
+      [
+       "Sudah! Aku belinya seminggu yang lalu.",
+       "Так! Я купила його тиждень тому.",
+       "*Tak Ya ku-PY-la yo-HO TYZH-den' to-MU*"
+      ],
+      [
+       "Tanggal sembilan belas Juni jam satu dini hari. Aku terbang lewat Istanbul.",
+       "Дев'ятнадцятого червня о першій ночі. Лечу через Стамбул.",
+       "*De-vyat-NAD-tsya-to-ho CHERV-nya o PER-shiy NO-chi Le-CHU CHE-rez Stam-BUL*"
+      ]
+     ]
+    }
+   ]
+  }
+ ],
+ "vocab": [
+  {
+   "uk": "гора́ (jamak го́ри)",
+   "baca": "ho-RA",
+   "id": "gunung"
+  },
+  {
+   "uk": "верши́на",
+   "baca": "ver-SHY-na",
+   "id": "puncak (*вийти на вершину*)"
+  },
+  {
+   "uk": "сте́жка",
+   "baca": "STEZH-ka",
+   "id": "jalan setapak"
+  },
+  {
+   "uk": "маршру́т",
+   "baca": "mar-SHRUT",
+   "id": "rute, jalur"
+  },
+  {
+   "uk": "рятува́льник",
+   "baca": "rya-tu-VAL'-nyk",
+   "id": "petugas penyelamat"
+  },
+  {
+   "uk": "гроза́",
+   "baca": "hro-ZA",
+   "id": "badai petir"
+  },
+  {
+   "uk": "журна́л",
+   "baca": "zhur-NAL",
+   "id": "buku catatan, daftar; majalah"
+  },
+  {
+   "uk": "запи́суватися / записа́тися",
+   "baca": "za-PY-su-va-ty-sya / za-py-SA-ty-sya",
+   "id": "mendaftarkan diri, mencatatkan nama"
+  },
+  {
+   "uk": "забува́ти / забу́ти",
+   "baca": "za-bu-VA-ty / za-BU-ty",
+   "id": "lupa, melupakan"
+  },
+  {
+   "uk": "каза́ти / сказа́ти",
+   "baca": "ka-ZA-ty / ska-ZA-ty",
+   "id": "berkata (*кому? що…, щоб…*)"
+  },
+  {
+   "uk": "пита́ти / запита́ти",
+   "baca": "py-TA-ty / za-py-TA-ty",
+   "id": "bertanya (*кого? чи…*)"
+  },
+  {
+   "uk": "проси́ти / попроси́ти",
+   "baca": "pro-SY-ty / po-pro-SY-ty",
+   "id": "meminta (*кого? щоб…*)"
+  },
+  {
+   "uk": "обіця́ти / пообіця́ти",
+   "baca": "o-bi-TSYA-ty / po-o-bi-TSYA-ty",
+   "id": "berjanji"
+  },
+  {
+   "uk": "чи",
+   "baca": "chy",
+   "id": "apakah (penghubung pertanyaan tak langsung)"
+  },
+  {
+   "uk": "дале́ко",
+   "baca": "da-LE-ko",
+   "id": "jauh (*далеко до вершини*)"
+  },
+  {
+   "uk": "висо́ко",
+   "baca": "vy-SO-ko",
+   "id": "tinggi (keterangan)"
+  },
+  {
+   "uk": "підніма́тися / підня́тися",
+   "baca": "pid-ni-MA-ty-sya / pid-NYA-ty-sya",
+   "id": "naik, mendaki"
+  },
+  {
+   "uk": "ведмі́дь (gen. ведме́дя)",
+   "baca": "ved-MID'",
+   "id": "beruang"
+  },
+  {
+   "uk": "оре́л (gen. орла́)",
+   "baca": "o-REL",
+   "id": "elang"
+  },
+  {
+   "uk": "зв'язо́к (gen. зв'язку́)",
+   "baca": "zvya-ZOK",
+   "id": "sinyal, koneksi, hubungan"
+  },
+  {
+   "uk": "запізни́тися",
+   "baca": "za-piz-NY-ty-sya",
+   "id": "terlambat (*запізнитися на потяг*: ketinggalan kereta)"
+  },
+  {
+   "uk": "мо́лодець (jamak мо́лодці)",
+   "baca": "MO-lo-dets'",
+   "id": "hebat!, anak pintar (pujian)"
+  },
+  {
+   "uk": "ка́мінь",
+   "baca": "KA-min'",
+   "id": "batu"
+  },
+  {
+   "uk": "відпочива́ти / відпочи́ти",
+   "baca": "vid-po-chy-VA-ty / vid-po-CHY-ty",
+   "id": "beristirahat"
+  },
+  {
+   "uk": "вода́ (ak. во́ду)",
+   "baca": "vo-DA",
+   "id": "air"
+  }
+ ],
+ "exercises": [
+  {
+   "prompt": "Terjemahkan ke bahasa Ukraina. Yang berbicara perempuan.",
+   "items": [
+    "Dia (laki-laki) bilang sesudah jam tiga akan ada badai petir.",
+    "Aku bertanya apakah puncaknya jauh.",
+    "Dia (laki-laki) minta supaya kami jangan lupa air.",
+    "Taras bertanya apakah kami melihat beruang.",
+    "Kamu (perempuan) sudah janji akan menelepon jam enam.",
+    "Minta Andriy supaya kalian jangan ketinggalan kereta."
+   ]
+  },
+  {
+   "prompt": "Isi titik-titik dengan penghubung atau bentuk kata kerja yang tepat.",
+   "items": [
+    "Рятувальник сказав, ____ буде гроза. (що, чи, щоб)",
+    "Ані запитала, ____ далеко до вершини. (що, чи, щоб)",
+    "Він попросив, ____ ми записалися. (що, чи, щоб)",
+    "Тарас хоче, щоб Ані ____ йому камінь. (привезти)",
+    "Галина попросила, щоб Ані ____ о шостій. (зателефонувати)",
+    "Андрій запитав, ____ ми йдемо. (ke mana)",
+    "Соломія каже, що ____ бачила двох орлів. (dia sendiri)"
+   ]
+  },
+  {
+   "prompt": "Ubah menjadi ujaran tak langsung dengan сказав/сказала, запитав/запитала, atau попросив/попросила.",
+   "items": [
+    "Рятувальник: «Буде гроза.»",
+    "Ані: «Далеко до вершини?»",
+    "Галина: «Ані, зателефонуй мені!»",
+    "Тарас: «Ви бачили ведмедя?»",
+    "Андрій: «Я втомився.»",
+    "Соломія: «Де моя вода?»"
+   ]
+  },
+  {
+   "prompt": "Susun jadi kalimat yang benar.",
+   "items": [
+    "гроза / сказав / буде / він / що",
+    "чи / запитала / далеко / я / вершини / до",
+    "щоб / попросив / не / ми / воду / він / забули",
+    "ведмедя / Тарас / чи / бачили / запитав / ми",
+    "найкращий / Андрій / день / що / сказав / це / літа"
+   ]
+  }
+ ],
+ "answers": [
+  "Він сказав, що після третьої буде гроза. — Я запитала, чи далеко до вершини. — Він попросив, щоб ми не забули воду. — Тарас запитав, чи ми бачили ведмедя. — Ти обіцяла, що зателефонуєш о шостій. — Попроси Андрія, щоб ви не запізнилися на потяг.",
+  "що — чи — щоб — привезла — зателефонувала — куди — вона",
+  "Рятувальник сказав, що буде гроза. — Ані запитала, чи далеко до вершини. — Галина попросила, щоб Ані їй зателефонувала. — Тарас запитав, чи вони бачили ведмедя. — Андрій сказав, що він втомився. — Соломія запитала, де її вода.",
+  "Він сказав, що буде гроза. — Я запитала, чи далеко до вершини. — Він попросив, щоб ми не забули воду. — Тарас запитав, чи ми бачили ведмедя. — Андрій сказав, що це найкращий день літа."
+ ]
+}

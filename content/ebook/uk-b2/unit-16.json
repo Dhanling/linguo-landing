@@ -1,0 +1,677 @@
+{
+ "title": "Tidak setuju tanpa bertengkar — emosi & diplomasi",
+ "title_target": "Дозвольте з вами не погодитися",
+ "goal": "Menyatakan kesal, cemas, kecewa, dan menyesal dengan pola kalimat yang tepat (*мене дратує*, *мені прикро*, *я хвилююся за*), lalu membantah dan berdamai secara diplomatis (*дозвольте не погодитися*, *боюся, що так не вийде*, *дякую, що пішли назустріч*).",
+ "bekal": [
+  "kamu bisa memilih pola emosi yang benar: *я хвилююся*, *мене дратує*, *мені прикро*",
+  "kamu bisa melunakkan penolakan dan kritik tanpa kehilangan ketegasan",
+  "kamu bisa meminta maaf, menawarkan kompromi, dan menutup konflik dengan baik"
+ ],
+ "dialogs": [
+  {
+   "title": "Діалог 1 — Kontrak yang belum siap",
+   "intro": "Senin, 3 September 2029, pukul 09.15, kantor Фонд «Міст культур» di Kyiv. Rombongan penari dari Solo harus membeli tiket minggu ini, tetapi kontraknya masih di meja Ігор. Perhatikan bagaimana ketegangan naik, lalu turun lagi: siapa yang memakai *мене*, siapa yang memakai *мені*, dan kalimat mana yang meredakan suasana.",
+   "lines": [
+    {
+     "speaker": "Ані:",
+     "text": "Ігорю, доброго ранку. Ви вже переглянули договір з танцювальним колективом із Соло?",
+     "id": "Igor, selamat pagi. Anda sudah memeriksa kontrak dengan kelompok tari dari Solo?",
+     "literal": "Igor (vok.) baik (gen.) pagi (gen.). Anda sudah ‹selesai›-periksa kontrak dengan tari (adj., ins.) kelompok (ins.) dari Solo?"
+    },
+    {
+     "speaker": "Ігор:",
+     "text": "Доброго ранку. Ще ні. Там є кілька пунктів, які мене непокоять, тож мені потрібен ще тиждень.",
+     "id": "Selamat pagi. Belum. Ada beberapa pasal yang membuat saya khawatir, jadi saya perlu seminggu lagi.",
+     "literal": "baik (gen.) pagi (gen.). masih tidak. di-sana ada beberapa pasal (gen. jmk.), yang saya (ak.) meresahkan, jadi bagi-saya perlu lagi minggu."
+    },
+    {
+     "speaker": "Ані:",
+     "text": "Тиждень? Але ж ми домовлялися, що договір буде готовий до середи! Квитки треба купити цього тижня.",
+     "id": "Seminggu? Tapi kita kan sudah sepakat kontraknya siap paling lambat Rabu! Tiketnya harus dibeli minggu ini.",
+     "literal": "minggu? tetapi kan kami bersepakat, bahwa kontrak akan-jadi siap sampai Rabu (gen.)! tiket perlu ‹selesai›-beli ini (gen.) minggu (gen.)."
+    },
+    {
+     "speaker": "Ігор:",
+     "text": "Я пам'ятаю. Проте я не можу підписати документ, у якому не впевнений. Це моя відповідальність.",
+     "id": "Saya ingat. Namun saya tidak bisa menandatangani dokumen yang isinya belum saya yakini. Itu tanggung jawab saya.",
+     "literal": "saya ingat. namun saya tidak bisa ‹selesai›-tanda-tangani dokumen, di yang (lok.) tidak yakin. ini saya-punya tanggung-jawab."
+    },
+    {
+     "speaker": "Ані:",
+     "text": "Я розумію, але мене, чесно кажучи, дратує, що я дізнаюся про це лише сьогодні.",
+     "id": "Saya mengerti, tapi terus terang saya kesal karena baru tahu soal ini hari ini.",
+     "literal": "saya mengerti, tetapi saya (ak.), jujur berkata, membuat-kesal, bahwa saya mengetahui tentang ini hanya hari-ini."
+    },
+    {
+     "speaker": "Ігор:",
+     "text": "Перепрошую, а хіба я мав звітувати вам щодня? Ви підвищуєте голос, Ані.",
+     "id": "Maaf, memangnya saya harus melapor kepada Anda setiap hari? Anda menaikkan suara, Ani.",
+     "literal": "maaf, dan masa saya harus melapor kepada-Anda setiap-hari? Anda menaikkan suara, Ani."
+    },
+    {
+     "speaker": "Ані:",
+     "text": "Ви маєте рацію. Вибачте, я не хотіла вас образити.",
+     "id": "Anda benar. Maaf, saya tidak bermaksud menyinggung Anda.",
+     "literal": "Anda punya kebenaran. maafkan, saya tidak ingin (lmp., pr.) Anda (ak.) ‹selesai›-menyinggung."
+    },
+    {
+     "speaker": "Ігор:",
+     "text": "Я теж не хотів здатися байдужим. Давайте спокійно подивимося, що можна зробити.",
+     "id": "Saya juga tidak ingin terkesan acuh. Mari kita lihat dengan tenang apa yang bisa dilakukan.",
+     "literal": "saya juga tidak ingin (lmp.) tampak acuh (ins.). mari tenang ‹selesai›-melihat-kita, apa bisa ‹selesai›-buat."
+    },
+    {
+     "speaker": "Ані:",
+     "text": "Дозвольте запропонувати компроміс: спершу ви перевіряєте найважливіші пункти, а решту ми доопрацюємо пізніше.",
+     "id": "Izinkan saya menawarkan jalan tengah: Anda periksa dulu pasal-pasal yang paling penting, sisanya kita sempurnakan belakangan.",
+     "literal": "izinkan ‹selesai›-menawarkan kompromi: pertama-tama Anda memeriksa paling-penting pasal, dan sisa (ak.) kami ‹selesai›-sempurnakan lebih-lambat."
+    },
+    {
+     "speaker": "Ігор:",
+     "text": "Боюся, що так не вийде. Страхування та відповідальність сторін не можна відкладати.",
+     "id": "Sepertinya itu tidak bisa. Asuransi dan tanggung jawab para pihak tidak boleh ditunda.",
+     "literal": "saya-takut, bahwa begitu tidak akan-keluar. asuransi dan tanggung-jawab pihak (gen. jmk.) tidak boleh menunda."
+    },
+    {
+     "speaker": "Ані:",
+     "text": "Гаразд. А що, як я попрошу колектив надіслати документи, яких бракує, ще сьогодні?",
+     "id": "Baiklah. Bagaimana kalau saya minta kelompok itu mengirim dokumen yang masih kurang hari ini juga?",
+     "literal": "baiklah. dan apa, kalau saya ‹selesai›-minta kelompok ‹selesai›-kirim dokumen, yang (gen.) kurang, masih hari-ini?"
+    },
+    {
+     "speaker": "Ігор:",
+     "text": "Це змінює справу. Якщо вони будуть у мене до вечора, я впораюся до четверга.",
+     "id": "Itu lain soal. Kalau dokumennya ada di tangan saya sebelum malam, saya bisa beres sebelum Kamis.",
+     "literal": "ini mengubah perkara. jika mereka akan-ada pada saya sampai malam (gen.), saya ‹selesai›-mampu-beres sampai Kamis (gen.)."
+    },
+    {
+     "speaker": "Ані:",
+     "text": "Четвер мене цілком влаштовує. Дякую, що пішли назустріч.",
+     "id": "Kamis sangat cocok buat saya. Terima kasih sudah mau berkompromi.",
+     "literal": "Kamis saya (ak.) sepenuhnya memuaskan. terima-kasih, bahwa pergi (lmp.) ke-arah-temu."
+    },
+    {
+     "speaker": "Ігор:",
+     "text": "Нема за що. І мені прикро, що розмова почалася так напружено.",
+     "id": "Sama-sama. Dan saya menyesal percakapan ini dimulai dengan begitu tegang.",
+     "literal": "tidak-ada untuk apa. dan bagi-saya menyesalkan, bahwa percakapan dimulai (lmp.) begitu tegang."
+    }
+   ],
+   "notes": [
+    "**Мене непокоять, мене дратує, мені прикро.** Bahasa Ukraina sering menjadikan *perasaannya* subjek dan orangnya objek: harfiahnya \"pasal-pasal itu meresahkan saya\", \"hal itu mengesalkan saya\". Orangnya masuk akusatif (**мене**, *тебе*, *його*, *її*). Bandingkan dengan *мені прикро*, di mana orangnya datif karena *прикро* bukan kata kerja melainkan kata predikatif. Salah pilih (*мені дратує*) adalah kekeliruan paling umum penutur Indonesia di tahap ini.",
+    "**Але ж ми домовлялися!** Partikel *ж* setelah *але* memberi nada \"tapi kan…\": mengingatkan sesuatu yang semestinya sudah diketahui lawan bicara. Di rapat, *але ж* terdengar menegur; kalau ingin netral, cukup *але ми домовлялися…* atau lebih halus lagi *наскільки я пам'ятаю, ми домовлялися…*",
+    "**Перепрошую, а хіба…?** *Перепрошую* biasanya berarti \"maaf\", tetapi di sini Ігор memakainya sebagai protes halus, seperti \"maaf ya, tapi…\" dalam bahasa Indonesia. *Хіба* membuat pertanyaan retoris: jawabannya jelas \"tidak\". Nada ini dingin, bukan kasar; justru karena itu Ani sadar dirinya kelewatan.",
+    "**Ви маєте рацію.** Inilah cara baku berkata \"Anda benar\": *мати рацію*, harfiahnya \"punya kebenaran\". Bentuk *ви праві* adalah rusisme yang sangat sering terdengar; hindari di kantor. Lawannya: *ви помиляєтеся* atau yang lebih lunak *тут я з вами не зовсім згодна*.",
+    "**Документи, яких бракує.** Ani tidak berkata *бракуючі документи*. Partisip aktif berakhiran *-уючий/-ючий* adalah kalke dari bahasa Rusia (dibahas di Unit 3); bahasa Ukraina yang baik memakai klausa *який*: *документи, яких бракує* (dokumen yang kurang). Perhatikan *бракує* menuntut genitif, maka *яких*, bukan *які*.",
+    "**Дякую, що пішли назустріч.** *Піти назустріч* (harfiahnya \"berjalan untuk menjemput\") berarti mau mengalah atau mengakomodasi permintaan orang lain. Bersama *це змінює справу* (\"itu lain soal\") dan *мене цілком влаштовує* (\"itu cocok buat saya\"), inilah tiga ungkapan yang menandai konflik sudah selesai."
+   ],
+   "grammars": [
+    {
+     "title": "Siapa yang merasakan? Lima pola kalimat emosi",
+     "body": [
+      "Dalam bahasa Indonesia hampir semua perasaan dimulai dengan *saya*: saya kesal, saya malu, saya cemas. Bahasa Ukraina punya beberapa pola, dan kasus orang yang merasakan ikut berubah. Hafalkan kata-katanya bersama polanya, bukan terpisah."
+     ],
+     "table": {
+      "head": [
+       "Pola",
+       "Contoh",
+       "Indonesia"
+      ],
+      "rows": [
+       [
+        "я + kata kerja -ся",
+        "Я хвилююся за терміни.",
+        "Saya cemas soal tenggat."
+       ],
+       [
+        "я + kata sifat",
+        "Я засмучена. Він роздратований.",
+        "Saya sedih. Dia kesal."
+       ],
+       [
+        "мене (ak.) + kata kerja",
+        "Мене дратує ця ситуація.",
+        "Situasi ini membuat saya kesal."
+       ],
+       [
+        "мене + kata kerja + що",
+        "Мене засмучує, що ніхто не попередив.",
+        "Saya sedih karena tak ada yang memberi tahu."
+       ],
+       [
+        "мені (dat.) + kata predikatif",
+        "Мені прикро. Мені соромно. Мені шкода.",
+        "Saya menyesal. Saya malu. Sayang sekali."
+       ],
+       [
+        "мені (dat.) + подобається",
+        "Мені не подобається, що ми поспішаємо.",
+        "Saya tidak suka kita terburu-buru."
+       ],
+       [
+        "на + ak.",
+        "сердитися на колегу, ображатися на нього",
+        "marah pada rekan, tersinggung padanya"
+       ],
+       [
+        "за + ak.",
+        "хвилюватися за проєкт, соромитися за себе",
+        "cemas akan proyek, malu akan diri sendiri"
+       ]
+      ]
+     },
+     "after": [
+      "Pola *мене* dan *мені* terdengar lebih halus daripada *я* karena perasaannya seolah \"datang sendiri\", bukan sikap yang dipilih. Karena itu, dalam konflik kantor, *мене трохи непокоїть…* lebih diplomatis daripada *я незадоволена…*"
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Діалог 2 — Kopi perdamaian",
+   "intro": "Selasa, 4 September 2029, pukul 08.50, dapur kecil di kantor yayasan. Ігор datang lebih pagi dengan dua gelas kopi. Perhatikan bagaimana keduanya mengakui kesalahan sendiri memakai *бути* + instrumental (*була різкою*, *надто сухим*) dan membuat kesepakatan baru dengan kala depan.",
+   "lines": [
+    {
+     "speaker": "Ігор:",
+     "text": "Ані, це вам. Капучино з корицею, якщо я правильно запам'ятав.",
+     "id": "Ani, ini untuk Anda. Cappuccino dengan kayu manis, kalau saya tidak salah ingat.",
+     "literal": "Ani, ini untuk-Anda. cappuccino dengan kayu-manis (ins.), jika saya benar ‹selesai›-mengingat."
+    },
+    {
+     "speaker": "Ані:",
+     "text": "Правильно! Дякую, Ігорю. Це що, мирова угода?",
+     "id": "Betul! Terima kasih, Igor. Ini apa, akta perdamaian?",
+     "literal": "benar! terima-kasih, Igor (vok.). ini apa, damai (adj.) perjanjian?"
+    },
+    {
+     "speaker": "Ігор:",
+     "text": "Можна й так сказати. Документи від колективу надійшли вчора о шостій, і я вже все переглянув.",
+     "id": "Boleh dibilang begitu. Dokumen dari kelompok tari masuk kemarin pukul enam, dan saya sudah memeriksa semuanya.",
+     "literal": "boleh juga begitu ‹selesai›-berkata. dokumen dari kelompok tiba (lmp.) kemarin pada keenam (lok.), dan saya sudah semua ‹selesai›-periksa."
+    },
+    {
+     "speaker": "Ані:",
+     "text": "Чудово! Знаєте, я вчора ввечері довго думала про нашу розмову. Я була надто різкою.",
+     "id": "Hebat! Tahu tidak, semalam saya lama memikirkan percakapan kita. Saya terlalu ketus.",
+     "literal": "bagus-sekali! tahukah-Anda, saya kemarin malam lama berpikir tentang kita-punya percakapan. saya dulu terlalu ketus (ins.)."
+    },
+    {
+     "speaker": "Ігор:",
+     "text": "А я надто сухим. Колеги кажуть, що часом я звучу так, ніби зачитую вирок.",
+     "id": "Dan saya terlalu kaku. Rekan-rekan bilang kadang saya terdengar seperti sedang membacakan vonis.",
+     "literal": "dan saya terlalu kering (ins.). rekan-rekan berkata, bahwa kadang saya terdengar begitu, seolah membacakan vonis."
+    },
+    {
+     "speaker": "Ані:",
+     "text": "Ну, вирок ви не зачитували, але ваше «ще тиждень» прозвучало як грім серед ясного неба.",
+     "id": "Yah, vonis sih tidak, tapi *seminggu lagi* Anda itu terdengar seperti petir di siang bolong.",
+     "literal": "yah, vonis Anda tidak membacakan (lmp.), tetapi Anda-punya «masih minggu» ‹selesai›-terdengar seperti guntur di-tengah cerah (gen.) langit (gen.)."
+    },
+    {
+     "speaker": "Ігор:",
+     "text": "Згоден. Надалі я попереджатиму заздалегідь, якщо бачитиму ризики.",
+     "id": "Setuju. Mulai sekarang saya akan memberi tahu jauh-jauh hari kalau melihat risiko.",
+     "literal": "setuju. selanjutnya saya akan-memperingatkan sebelumnya, jika akan-melihat risiko."
+    },
+    {
+     "speaker": "Ані:",
+     "text": "А я не встановлюватиму термінів, не порадившись із вами. Домовилися?",
+     "id": "Dan saya tidak akan menetapkan tenggat tanpa berunding dengan Anda. Sepakat?",
+     "literal": "dan saya tidak akan-menetapkan tenggat (gen. jmk.), tidak ‹selesai›-berunding-sambil dengan Anda. sudah-sepakat?"
+    },
+    {
+     "speaker": "Ігор:",
+     "text": "Домовилися. До речі, в одному пункті я таки знайшов помилку: дату виступу вказано неправильно.",
+     "id": "Sepakat. Omong-omong, di satu pasal saya ternyata memang menemukan kesalahan: tanggal pertunjukannya ditulis salah.",
+     "literal": "sudah-sepakat. omong-omong, di satu pasal (lok.) saya memang ‹selesai›-temukan kesalahan: tanggal pertunjukan (gen.) tertulis salah."
+    },
+    {
+     "speaker": "Ані:",
+     "text": "Серйозно? Отже, ваш тиждень був не такий уже й зайвий. Мені навіть трохи соромно.",
+     "id": "Serius? Jadi seminggu Anda itu ternyata tidak sia-sia. Saya jadi agak malu.",
+     "literal": "serius? jadi, Anda-punya minggu dulu tidak begitu sudah juga berlebih. bagi-saya bahkan sedikit memalukan."
+    },
+    {
+     "speaker": "Ігор:",
+     "text": "Не треба соромитися. Ми ж одна команда, просто кожен дивиться на справу зі свого боку.",
+     "id": "Tak perlu malu. Kita kan satu tim, hanya saja masing-masing melihat perkara dari sisinya sendiri.",
+     "literal": "tidak perlu malu. kami kan satu tim, hanya setiap melihat pada perkara dari sendiri-punya sisi (gen.)."
+    }
+   ],
+   "notes": [
+    "**Це що, мирова угода?** *Мирова угода* adalah istilah hukum: perjanjian damai antara para pihak yang bersengketa. Ani sengaja memakai istilah dunia Ігор untuk bercanda, dan Ігор menerimanya (*можна й так сказати*). Humor ringan yang menyinggung bidang lawan bicara adalah cara Ukraina yang sangat lazim untuk mencairkan suasana.",
+    "**Я була надто різкою. А я надто сухим.** Sesudah *бути* di kala lampau, kata sifat yang menggambarkan keadaan sementara biasanya masuk **instrumental**: *була різкою*, *був сухим*. Ігор bahkan menghilangkan kata kerjanya (*а я надто сухим*) karena sudah jelas dari kalimat Ani. Bentuk nominatif (*була різка*) juga benar, tetapi terdengar lebih seperti sifat tetap.",
+    "**Звучу так, ніби зачитую вирок.** *Ніби*, *наче*, dan *мов* berarti \"seolah-olah\". Pasangan *так, ніби* (\"begitu rupa, seolah…\") sangat umum dalam ucapan tentang kesan: *ти говориш так, ніби сердишся*. Sesudah *ніби* kata kerjanya indikatif biasa, tanpa *би*.",
+    "**Як грім серед ясного неба.** Peribahasa ini persis padanan \"bagai petir di siang bolong\": kabar buruk yang datang tiba-tiba. Perhatikan Ani mengkritik dengan gambar dan humor, bukan dengan tuduhan; kritiknya tetap sampai.",
+    "**Не порадившись із вами.** Дієприслівник dengan *не* (Unit 9) sering paling tepat diterjemahkan \"tanpa …\": *не порадившись* = tanpa berunding lebih dulu, *не попередивши* = tanpa memberi tahu. Ini cara ringkas dan elegan untuk menjanjikan perubahan sikap.",
+    "**Ви таки знайшли, ваш тиждень був не такий уже й зайвий.** Partikel *таки* berarti \"memang, ternyata benar\"; *не такий уже й* melunakkan penilaian (\"ternyata tidak se-… itu\"). Keduanya dipakai untuk mengakui bahwa lawan bicara benar tanpa berlebihan. *Ми ж одна команда* menutup dengan *ж* yang kini bernada hangat, bukan menegur."
+   ],
+   "grammars": [
+    {
+     "title": "Tangga diplomasi: dari keras ke halus",
+     "body": [
+      "Isi keberatannya boleh sama; yang berubah hanya bungkusnya. Kolom tengah bukan basa-basi kosong, melainkan standar rapat kerja di kantor Ukraina."
+     ],
+     "table": {
+      "head": [
+       "Terlalu keras",
+       "Diplomatis",
+       "Indonesia"
+      ],
+      "rows": [
+       [
+        "Ви неправі.",
+        "Дозвольте з вами не погодитися.",
+        "Izinkan saya tidak sependapat."
+       ],
+       [
+        "Це погана ідея.",
+        "Не впевнена, що це найкращий варіант.",
+        "Saya kurang yakin ini pilihan terbaik."
+       ],
+       [
+        "Ви мене не слухаєте.",
+        "Можливо, я недостатньо чітко пояснила.",
+        "Mungkin penjelasan saya kurang jelas."
+       ],
+       [
+        "Зробіть це до середи!",
+        "Чи могли б ви встигнути до середи?",
+        "Bisakah Anda menyelesaikannya sebelum Rabu?"
+       ],
+       [
+        "Так не можна.",
+        "Боюся, що так не вийде.",
+        "Sepertinya itu tidak bisa."
+       ],
+       [
+        "Ви сказали про це запізно.",
+        "Було б краще, якби ми дізналися раніше.",
+        "Lebih baik kalau kita tahu lebih awal."
+       ],
+       [
+        "Я проти.",
+        "Я бачу це трохи інакше.",
+        "Saya melihatnya agak berbeda."
+       ],
+       [
+        "Ви помиляєтеся.",
+        "У чомусь ви маєте рацію, проте…",
+        "Dalam hal tertentu Anda benar, tetapi…"
+       ]
+      ]
+     }
+    }
+   ]
+  }
+ ],
+ "sections": [
+  {
+   "title": "Kosakata perasaan di tempat kerja",
+   "blocks": [
+    {
+     "type": "p",
+     "text": "Banyak kata perasaan datang berpasangan: kata kerja yang \"membuat merasa\" (*дратувати* = mengesalkan) dan kata sifat partisip untuk orang yang merasakannya (*роздратований* = kesal). Kalau kamu tahu salah satunya, kamu bisa menebak yang lain."
+    },
+    {
+     "type": "tabel",
+     "head": [
+      "Membuat merasa",
+      "Yang merasakan",
+      "Indonesia"
+     ],
+     "rows": [
+      [
+       "дратувати",
+       "роздратований",
+       "mengesalkan / kesal"
+      ],
+      [
+       "засмучувати",
+       "засмучений",
+       "menyedihkan / sedih"
+      ],
+      [
+       "розчаровувати",
+       "розчарований",
+       "mengecewakan / kecewa"
+      ],
+      [
+       "ображати",
+       "ображений",
+       "menyinggung / tersinggung"
+      ],
+      [
+       "обурювати",
+       "обурений",
+       "membuat geram / geram"
+      ],
+      [
+       "бентежити",
+       "збентежений",
+       "membuat canggung / canggung"
+      ],
+      [
+       "непокоїти",
+       "занепокоєний",
+       "meresahkan / resah"
+      ],
+      [
+       "тішити",
+       "втішений",
+       "menyenangkan / senang"
+      ],
+      [
+       "заспокоювати",
+       "заспокоєний",
+       "menenangkan / tenang"
+      ],
+      [
+       "напружувати",
+       "напружений",
+       "menegangkan / tegang"
+      ]
+     ]
+    },
+    {
+     "type": "kotak",
+     "title": "Rusisme yang suka muncul saat emosi naik",
+     "items": [
+      "**вибачаюсь** → *перепрошую*, *вибачте*: bentuk *-сь* \"memaafkan diri sendiri\" dianggap salah dan agak tidak sopan.",
+      "**ви праві** → *ви маєте рацію*.",
+      "**мені обідно** → *мені прикро*, *мене це образило*.",
+      "**нервнічати** → *нервувати*, *хвилюватися*.",
+      "**бракуючі документи** → *документи, яких бракує*."
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Meminta maaf dan berdamai",
+   "blocks": [
+    {
+     "type": "p",
+     "text": "Bahasa Ukraina punya beberapa kata maaf dengan fungsi berbeda. Yang untuk menyela orang di jalan tidak sama dengan yang untuk mengakui kesalahan besar. Setelah konflik, orang Ukraina biasanya menutupnya dengan satu kalimat pendek dan tidak mengungkitnya lagi."
+    },
+    {
+     "type": "tabel",
+     "head": [
+      "Ungkapan",
+      "Kapan dipakai",
+      "Indonesia"
+     ],
+     "rows": [
+      [
+       "Перепрошую.",
+       "menyela, lewat, minta perhatian; juga protes halus",
+       "Permisi / maaf"
+      ],
+      [
+       "Вибачте.",
+       "kesalahan kecil sampai sedang",
+       "Maaf"
+      ],
+      [
+       "Пробачте мені.",
+       "kesalahan yang terasa pribadi",
+       "Maafkan saya"
+      ],
+      [
+       "Даруйте.",
+       "sopan, agak sastrawi",
+       "Mohon maaf"
+      ],
+      [
+       "Прошу вибачення.",
+       "resmi, surat, rapat",
+       "Saya mohon maaf"
+      ],
+      [
+       "Мені шкода, що…",
+       "menyesal atas akibat",
+       "Saya menyesal bahwa…"
+      ],
+      [
+       "Не ображайтеся.",
+       "sebelum kritik atau sesudah candaan",
+       "Jangan tersinggung"
+      ],
+      [
+       "Забудьмо про це.",
+       "menutup konflik",
+       "Sudahlah, kita lupakan"
+      ],
+      [
+       "Без образ?",
+       "memastikan tidak ada dendam, lisan",
+       "Nggak marah, kan?"
+      ]
+     ]
+    },
+    {
+     "type": "list",
+     "items": [
+      "Jawaban atas permintaan maaf: *Нічого страшного* (tidak apa-apa), *Та нічого* (santai), *Усе гаразд* (semuanya baik), *Я не ображаюся* (saya tidak tersinggung).",
+      "Pilihan kala: *Я не хотіла вас образити* (lampau, niatnya) jauh lebih wajar daripada *Я не хочу вас образити* yang terdengar seperti pembuka kritik baru."
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Ulangan berjenjang — unit 14",
+   "blocks": [
+    {
+     "type": "p",
+     "text": "Tutup kolom Ukraina, baca terjemahan Indonesianya, lalu susun kembali kalimatnya dari ingatan."
+    },
+    {
+     "type": "tabel",
+     "head": [
+      "Bahasa Indonesia",
+      "Українська"
+     ],
+     "rows": [
+      [
+       "Dua ribu lima ratus. Artinya target terlampaui dua puluh persen.",
+       "*Дві тисячі п'ятсот. Тобто план перевиконано на двадцять відсотків.*"
+      ],
+      [
+       "Naik dari delapan ratus menjadi seribu enam ratus orang, artinya dua kali lipat.",
+       "*Вона зросла з восьмисот до тисячі шестисот осіб, тобто удвічі.*"
+      ],
+      [
+       "Empat puluh dua persen dari anggaran tahunan, jadi sedikit kurang dari separuh.",
+       "*Сорок два відсотки річного бюджету, тобто трохи менше за половину.*"
+      ],
+      [
+       "Ya, biaya itu mencapai dua puluh satu persen dari seluruh pengeluaran dan tetap stabil.",
+       "*Так, вони становлять двадцять один відсоток усіх витрат і залишаються стабільними.*"
+      ],
+      [
+       "Jumlah acara naik tiga kali lipat.",
+       "*Кількість заходів зросла втричі.*"
+      ]
+     ]
+    }
+   ]
+  }
+ ],
+ "vocab": [
+  {
+   "uk": "конфлі́кт",
+   "baca": "kon-FLIKT",
+   "id": "konflik"
+  },
+  {
+   "uk": "компромі́с",
+   "baca": "kom-pro-MIS",
+   "id": "kompromi, jalan tengah"
+  },
+  {
+   "uk": "те́рмін",
+   "baca": "TER-min",
+   "id": "tenggat, batas waktu; juga istilah (jamak *терміни*)"
+  },
+  {
+   "uk": "відповіда́льність",
+   "baca": "vid-po-vi-DAL'-nist'",
+   "id": "tanggung jawab"
+  },
+  {
+   "uk": "дратува́ти / роздратува́ти",
+   "baca": "dra-tu-VA-ty / roz-dra-tu-VA-ty",
+   "id": "mengesalkan (*мене дратує*)"
+  },
+  {
+   "uk": "непоко́їти",
+   "baca": "ne-po-KO-yi-ty",
+   "id": "meresahkan, membuat khawatir"
+  },
+  {
+   "uk": "засму́чувати / засмути́ти",
+   "baca": "zas-MU-chu-va-ty / zas-mu-TY-ty",
+   "id": "membuat sedih"
+  },
+  {
+   "uk": "обража́ти / обра́зити",
+   "baca": "o-bra-ZHA-ty / o-BRA-zy-ty",
+   "id": "menyinggung perasaan"
+  },
+  {
+   "uk": "обража́тися на",
+   "baca": "o-bra-ZHA-ty-sya na",
+   "id": "tersinggung pada (+ ak.)"
+  },
+  {
+   "uk": "мені́ при́кро",
+   "baca": "me-NI PRY-kro",
+   "id": "saya menyesal, saya sedih (atas sesuatu)"
+  },
+  {
+   "uk": "со́ромно",
+   "baca": "SO-rom-no",
+   "id": "malu (*мені соромно*)"
+  },
+  {
+   "uk": "хвилюва́тися за",
+   "baca": "khvy-lyu-VA-ty-sya za",
+   "id": "cemas akan (+ ak.)"
+  },
+  {
+   "uk": "різки́й",
+   "baca": "riz-KYY",
+   "id": "ketus, tajam"
+  },
+  {
+   "uk": "напру́жений",
+   "baca": "na-PRU-zhe-nyy",
+   "id": "tegang"
+  },
+  {
+   "uk": "байду́жий",
+   "baca": "bay-DU-zhyy",
+   "id": "acuh, tak peduli"
+  },
+  {
+   "uk": "ма́ти ра́цію",
+   "baca": "MA-ty RA-tsi-yu",
+   "id": "benar (*ви маєте рацію*)"
+  },
+  {
+   "uk": "піти́ назу́стріч",
+   "baca": "pi-TY na-ZUS-trich",
+   "id": "mau mengalah, mengakomodasi"
+  },
+  {
+   "uk": "влашто́вувати",
+   "baca": "vlash-TO-vu-va-ty",
+   "id": "cocok bagi (*мене влаштовує*)"
+  },
+  {
+   "uk": "попере́джати / попере́дити",
+   "baca": "po-pe-RE-dzha-ty / po-pe-RE-dy-ty",
+   "id": "memberi tahu sebelumnya, memperingatkan"
+  },
+  {
+   "uk": "заздалегі́дь",
+   "baca": "zaz-da-le-HID'",
+   "id": "jauh-jauh hari, sebelumnya"
+  },
+  {
+   "uk": "ри́зик",
+   "baca": "RY-zyk",
+   "id": "risiko"
+  },
+  {
+   "uk": "перепро́шувати",
+   "baca": "pe-re-PRO-shu-va-ty",
+   "id": "meminta maaf (*перепрошую*)"
+  },
+  {
+   "uk": "пого́джуватися / пого́дитися з",
+   "baca": "po-HO-dzhu-va-ty-sya / po-HO-dy-ty-sya z",
+   "id": "setuju dengan (+ ins.)"
+  },
+  {
+   "uk": "порозумі́ння",
+   "baca": "po-ro-zu-MIN-nya",
+   "id": "saling pengertian"
+  },
+  {
+   "uk": "як грім се́ред я́сного не́ба",
+   "baca": "yak hrim SE-red YAS-no-ho NE-ba",
+   "id": "bagai petir di siang bolong"
+  }
+ ],
+ "exercises": [
+  {
+   "prompt": "Terjemahkan ke bahasa Ukraina.",
+   "items": [
+    "Saya mengerti posisi Anda, tetapi izinkan saya tidak sependapat.",
+    "Maaf, saya tidak bermaksud menyinggung Anda. (Ani yang berbicara)",
+    "Saya kesal karena baru tahu soal ini hari ini.",
+    "Anda benar, saya terlalu ketus. (Ani yang berbicara)",
+    "Terima kasih sudah mau berkompromi.",
+    "Mulai sekarang saya akan memberi tahu jauh-jauh hari."
+   ]
+  },
+  {
+   "prompt": "Isi titik-titik dengan bentuk yang tepat.",
+   "items": [
+    "____ дратує, що договір досі не готовий. (я)",
+    "____ дуже прикро, що так сталося. (я)",
+    "Вона образилася ____ колегу. (на, за)",
+    "Я дуже хвилююся ____ терміни. (за, про)",
+    "Ви маєте ____, я поспішила з висновками. (рація)",
+    "Чи не ____ б ви надіслати документи сьогодні? (могти)",
+    "Боюся, що так не ____. (вийти, піти)"
+   ]
+  },
+  {
+   "prompt": "Ubah kalimat yang terlalu keras ini menjadi diplomatis.",
+   "items": [
+    "Ви неправі.",
+    "Це погана ідея.",
+    "Зробіть це до середи!",
+    "Так не можна.",
+    "Я проти.",
+    "Ви мене не слухаєте."
+   ]
+  },
+  {
+   "prompt": "Susun jadi kalimat yang benar.",
+   "items": [
+    "з / дозвольте / вами / не / погодитися",
+    "мене / четвер / влаштовує / цілком",
+    "що / прикро / мені / так / сталося",
+    "назустріч / що / пішли / дякую",
+    "не / вас / образити / хотіла / я"
+   ]
+  }
+ ],
+ "answers": [
+  "Я розумію вашу позицію, але дозвольте з вами не погодитися. — Вибачте, я не хотіла вас образити. — Мене дратує, що я дізналася про це лише сьогодні. — Ви маєте рацію, я була надто різкою. — Дякую, що пішли назустріч. — Надалі я попереджатиму заздалегідь.",
+  "Мене — Мені — на — за — рацію — могли — вийде",
+  "Дозвольте з вами не погодитися. — Не впевнена, що це найкращий варіант. — Чи могли б ви встигнути до середи? — Боюся, що так не вийде. — Я бачу це трохи інакше. — Можливо, я недостатньо чітко пояснила.",
+  "Дозвольте з вами не погодитися. — Четвер мене цілком влаштовує. — Мені прикро, що так сталося. — Дякую, що пішли назустріч. — Я не хотіла вас образити."
+ ]
+}

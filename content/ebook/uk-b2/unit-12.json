@@ -1,0 +1,640 @@
+{
+ "title": "Di ЦНАП — bahasa birokrasi lisan dan formulir",
+ "title_target": "У ЦНАПі",
+ "goal": "Mengurus dokumen di loket pemerintahan: memahami pasif kantor (*заповнюється, видається, сплачується*), bertanya soal syarat dan jangka waktu, membaca singkatan resmi (*ЦНАП, ДМС, ПІБ, РНОКПП*), dan mengisi formulir dengan rumus *за наявності, потрібне підкреслити*.",
+ "bekal": [
+  "kamu bisa memahami dan memakai pasif *-ся* khas loket: *Анкета заповнюється на місці*",
+  "kamu bisa membaca singkatan resmi dan alamat di formulir: *ПІБ, м., вул., буд., кв.*",
+  "kamu bisa bertanya soal jangka waktu dan biaya dengan sopan: *У які строки видається…?*"
+ ],
+ "dialogs": [
+  {
+   "title": "Діалог 1 — Di loket ЦНАП",
+   "intro": "Senin, 2 Juli 2029, pukul sembilan pagi, ЦНАП (pusat layanan administrasi) di Podil. Tiga minggu lalu Ani menerima izin imigrasi lewat kuota tokoh budaya; hari ini ia mengajukan *посвідка на постійне проживання*, kartu izin tinggal tetap. Ігор menemaninya sambil membawa map dokumen. Perhatikan bentuk *-ся* tanpa pelaku (*заповнюється, видається, сплачується*) yang menjadi napas bahasa kantor.",
+   "lines": [
+    {
+     "speaker": "Адміністраторка:",
+     "text": "Доброго ранку. Талон сорок сім, це ви? Слухаю вас.",
+     "id": "Selamat pagi. Nomor empat puluh tujuh, Anda? Silakan.",
+     "literal": "baik (gen.) pagi (gen.). tiket empat-puluh tujuh, ini anda? mendengarkan-(saya) anda."
+    },
+    {
+     "speaker": "Ані:",
+     "text": "Так, це я. Я хочу оформити посвідку на постійне проживання.",
+     "id": "Ya, saya. Saya ingin mengurus kartu izin tinggal tetap.",
+     "literal": "ya, ini saya. saya ingin mengurus ‹selesai› kartu-izin pada tetap tinggal (ak.)."
+    },
+    {
+     "speaker": "Адміністраторка:",
+     "text": "Дозвіл на імміграцію у вас є? Покажіть, будь ласка, оригінал.",
+     "id": "Izin imigrasinya ada? Tolong tunjukkan yang asli.",
+     "literal": "izin pada imigrasi (ak.) pada anda ada? tunjukkan ‹selesai›, silakan, asli."
+    },
+    {
+     "speaker": "Ігор:",
+     "text": "Ось рішення про надання дозволу, а ось паспорт пані Лестарі з нотаріально засвідченим перекладом.",
+     "id": "Ini keputusan pemberian izinnya, dan ini paspor Ibu Lestari beserta terjemahan yang dilegalisasi notaris.",
+     "literal": "ini keputusan tentang pemberian (ak.) izin (gen.), dan ini paspor nyonya Lestari dengan secara-notaris disahkan-(ins.) terjemahan-(ins.)."
+    },
+    {
+     "speaker": "Адміністраторка:",
+     "text": "Дякую. Заява-анкета заповнюється тут, на місці, за вашими документами.",
+     "id": "Terima kasih. Formulir permohonan diisi di sini, di tempat, berdasarkan dokumen Anda.",
+     "literal": "terima-kasih. permohonan-formulir mengisi-diri di-sini, di tempat (lok.), menurut anda-punya (ins.) dokumen-dokumen (ins.)."
+    },
+    {
+     "speaker": "Ані:",
+     "text": "А фотографії потрібні? Я принесла чотири, про всяк випадок.",
+     "id": "Fotonya perlu? Saya bawa empat, untuk berjaga-jaga.",
+     "literal": "dan foto-foto diperlukan? saya membawa ‹selesai› empat, untuk setiap kejadian."
+    },
+    {
+     "speaker": "Адміністраторка:",
+     "text": "Не потрібні. Фото й підпис робляться в нас, на спеціальному обладнанні.",
+     "id": "Tidak perlu. Foto dan tanda tangan diambil di tempat kami, dengan alat khusus.",
+     "literal": "tidak diperlukan. foto dan tanda-tangan membuat-diri pada kami, pada khusus peralatan (lok.)."
+    },
+    {
+     "speaker": "Ігор:",
+     "text": "Скажіть, будь ласка, адміністративний збір сплачується до чи після подання?",
+     "id": "Mohon tanya, biaya administrasinya dibayar sebelum atau sesudah pengajuan?",
+     "literal": "katakan ‹selesai›, silakan, administratif biaya membayar-diri sebelum atau sesudah pengajuan (gen.)?"
+    },
+    {
+     "speaker": "Адміністраторка:",
+     "text": "До подання. Реквізити на стенді, а оплатити можна через термінал у холі.",
+     "id": "Sebelum pengajuan. Rincian rekeningnya ada di papan, dan bisa dibayar lewat terminal di lobi.",
+     "literal": "sebelum pengajuan (gen.). rincian-rekening di papan (lok.), dan membayar ‹selesai› boleh melalui terminal di lobi (lok.)."
+    },
+    {
+     "speaker": "Ані:",
+     "text": "Добре. І ще одне питання: мені потрібен РНОКПП?",
+     "id": "Baik. Satu pertanyaan lagi: apakah saya perlu nomor wajib pajak?",
+     "literal": "baik. dan lagi satu pertanyaan: kepada-saya diperlukan nomor-pajak?"
+    },
+    {
+     "speaker": "Адміністраторка:",
+     "text": "Бажано. Якщо його немає, графа залишається порожньою, це не перешкода.",
+     "id": "Sebaiknya ada. Kalau belum punya, kolomnya dibiarkan kosong, itu bukan halangan.",
+     "literal": "diharapkan. jika ia (gen.) tidak-ada, kolom tetap kosong-(ins.), ini bukan halangan."
+    },
+    {
+     "speaker": "Ігор:",
+     "text": "А в які строки видається посвідка?",
+     "id": "Dalam jangka waktu berapa kartunya diterbitkan?",
+     "literal": "dan dalam yang-mana jangka-waktu (ak. jamak) menerbitkan-diri kartu-izin?"
+    },
+    {
+     "speaker": "Адміністраторка:",
+     "text": "Протягом п'ятнадцяти робочих днів. Про готовність вам надійде повідомлення.",
+     "id": "Dalam lima belas hari kerja. Kalau sudah jadi, Anda akan menerima pemberitahuan.",
+     "literal": "selama lima-belas (gen.) kerja-(adj. gen. jamak) hari (gen. jamak). tentang kesiapan (ak.) kepada-anda akan-datang pemberitahuan."
+    },
+    {
+     "speaker": "Ані:",
+     "text": "Чудово. Тоді дозвольте, я одразу сплачу збір, щоб не стояти в черзі вдруге.",
+     "id": "Bagus. Kalau begitu izinkan saya langsung membayar biayanya, supaya tidak antre dua kali.",
+     "literal": "bagus. kalau-begitu izinkanlah, saya segera membayar ‹selesai› biaya, supaya tidak berdiri di antrean (lok.) kedua-kalinya."
+    }
+   ],
+   "notes": [
+    "**Слухаю вас.** Pembuka baku petugas loket dan resepsionis, harfiahnya \"saya mendengarkan Anda\". Padanan Indonesianya \"Silakan, ada yang bisa dibantu?\". Nomor antrean disebut *талон* (tiket) karena dicetak dari mesin *електронна черга*.",
+    "**Посвідка, bukan посвідчення.** *Посвідчення* adalah kartu identitas umum (*посвідчення водія* = SIM), sedangkan *посвідка* dipakai khusus untuk izin tinggal orang asing: *посвідка на тимчасове / постійне проживання*. *Оформити* = mengurus sampai jadi; kata kerja favorit di dunia dokumen.",
+    "**Нотаріально засвідчений переклад.** Kata keterangan + partisip pasif, seperti \"yang dilegalisasi notaris\". Hindari *заверений*: itu Rusia (*заверенный*). Bentuk Ukrainanya *засвідчений*, dari *засвідчити*.",
+    "**Заповнюється, видається, сплачується.** Kata kerja ber-*ся* tanpa pelaku adalah pasif khas bahasa kantor, mirip awalan di- dalam \"formulir diisi di tempat\". Petugas tidak berkata siapa yang mengisi; yang penting prosesnya.",
+    "**Про всяк випадок.** \"Untuk berjaga-jaga\". Bentuk ini baku; *на всякий випадок* adalah pinjaman dari Rusia *на всякий случай* dan masih sering terdengar, termasuk di kantor.",
+    "**Строки, протягом.** Dalam bahasa hukum *строк* adalah jangka waktu (*у які строки?* = dalam berapa lama?), sedangkan *термін* lebih ke batas tanggal atau istilah. Lalu *протягом п'ятнадцяти днів*, bukan *на протязі*."
+   ],
+   "grammars": [
+    {
+     "title": "Pasif -ся: suara loket",
+     "body": [
+      "Bahasa Ukraina membentuk pasif proses dengan menambahkan *-ся* pada kata kerja tak sempurna. Pelaku biasanya disembunyikan. Bandingkan kalimat aktif biasa dengan versi yang terdengar di loket."
+     ],
+     "table": {
+      "head": [
+       "Aktif (ada pelaku)",
+       "Bahasa loket (-ся)",
+       "Arti"
+      ],
+      "rows": [
+       [
+        "Ми видаємо посвідки.",
+        "*Посвідки видаються.*",
+        "Kartu diterbitkan."
+       ],
+       [
+        "Ви заповнюєте анкету.",
+        "*Анкета заповнюється.*",
+        "Formulir diisi."
+       ],
+       [
+        "Збір сплачують до подання.",
+        "*Збір сплачується до подання.*",
+        "Biaya dibayar sebelum pengajuan."
+       ],
+       [
+        "Документи приймають щодня.",
+        "*Документи приймаються щодня.*",
+        "Dokumen diterima setiap hari."
+       ],
+       [
+        "Фото роблять на місці.",
+        "*Фото робиться на місці.*",
+        "Foto diambil di tempat."
+       ],
+       [
+        "Рішення ухвалюють за місяць.",
+        "*Рішення ухвалюється за місяць.*",
+        "Keputusan diambil dalam sebulan."
+       ]
+      ]
+     },
+     "after": [
+      "Bentuk ini hanya untuk aspek tak sempurna. Untuk hasil selesai, bahasa kantor memakai *-но/-то*: *посвідку видано*, *збір сплачено*.",
+      "Dalam teks hukum pelaku kadang ditambahkan dengan instrumental (*видається територіальним органом*), tapi di loket bentuk itu terdengar terlalu kaku."
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Діалог 2 — Formulir di meja kafe",
+   "intro": "Sore harinya di kafe dekat stasiun metro Kontraktova Ploshcha. Andriy menemani Ani mengisi formulir berikutnya: deklarasi tempat tinggal. Perhatikan singkatan dan rumus formulir: *ПІБ, за наявності, потрібне підкреслити*.",
+   "lines": [
+    {
+     "speaker": "Андрій:",
+     "text": "Ну що, як пройшло? Бюрократія тебе не з'їла?",
+     "id": "Jadi, bagaimana tadi? Kamu nggak dimakan birokrasi?",
+     "literal": "nah apa, bagaimana berlalu? birokrasi kamu tidak memakan-habis?"
+    },
+    {
+     "speaker": "Ані:",
+     "text": "Ледве вижила. Але документи прийняли. Тепер ще треба задекларувати місце проживання.",
+     "id": "Nyaris tak selamat. Tapi dokumennya diterima. Sekarang aku masih harus mendeklarasikan tempat tinggal.",
+     "literal": "nyaris bertahan-hidup-(pr.). tetapi dokumen-dokumen menerima-(mereka). sekarang lagi perlu mendeklarasikan tempat tinggal (gen.)."
+    },
+    {
+     "speaker": "Андрій:",
+     "text": "Я своє декларував у Дії. Десять хвилин, і жодних черг.",
+     "id": "Aku dulu mendeklarasikan punyaku lewat Diia. Sepuluh menit, tanpa antre sama sekali.",
+     "literal": "saya milikku mendeklarasikan di Diia (lok.). sepuluh menit (gen. jamak), dan tak-satu-pun antrean (gen. jamak)."
+    },
+    {
+     "speaker": "Ані:",
+     "text": "Щасливчик. А мені, мабуть, знову в ЦНАП з папірцями.",
+     "id": "Beruntung sekali kamu. Kalau aku, mungkin balik lagi ke ЦНАП bawa kertas-kertas.",
+     "literal": "si-beruntung. dan kepada-saya, mungkin, lagi ke ЦНАП dengan kertas-kertas-kecil (ins.)."
+    },
+    {
+     "speaker": "Андрій:",
+     "text": "Давай хоч бланк заповнимо заздалегідь. Що тут незрозуміло?",
+     "id": "Ayo setidaknya isi formulirnya dari sekarang. Bagian mana yang tidak jelas?",
+     "literal": "ayo setidaknya formulir kita-isi ‹selesai› sebelumnya. apa di-sini tidak-jelas?"
+    },
+    {
+     "speaker": "Ані:",
+     "text": "Ось: «ПІБ». І чому біля слова «стать» написано «потрібне підкреслити»?",
+     "id": "Ini: \"ПІБ\". Dan kenapa di samping kata \"jenis kelamin\" tertulis \"yang perlu digarisbawahi\"?",
+     "literal": "ini: ПІБ. dan mengapa dekat kata (gen.) jenis-kelamin tertulis yang-perlu menggarisbawahi ‹selesai›?"
+    },
+    {
+     "speaker": "Андрій:",
+     "text": "ПІБ означає прізвище, ім'я, по батькові. А там просто підкреслюєш потрібний варіант.",
+     "id": "ПІБ artinya nama keluarga, nama depan, nama patronimik. Yang di sana, kamu tinggal garis bawahi pilihan yang sesuai.",
+     "literal": "ПІБ berarti nama-keluarga, nama, menurut ayah (dat.). dan di-sana cukup menggarisbawahi-(kamu) yang-diperlukan pilihan."
+    },
+    {
+     "speaker": "Ані:",
+     "text": "А по батькові в мене немає. Що писати?",
+     "id": "Tapi aku nggak punya patronimik. Harus tulis apa?",
+     "literal": "tapi menurut ayah (dat.) pada saya tidak-ada. apa menulis?"
+    },
+    {
+     "speaker": "Андрій:",
+     "text": "Нічого. Бачиш дрібним шрифтом: «за наявності». Немає, то й залишаєш порожнім.",
+     "id": "Tidak usah apa-apa. Lihat, dengan huruf kecil: \"jika ada\". Kalau tidak ada, ya biarkan kosong.",
+     "literal": "tidak-apa-apa. melihat-(kamu) kecil-(ins.) huruf-(ins.): menurut keberadaan (lok.). tidak-ada, maka pun membiarkan-(kamu) kosong-(ins.)."
+    },
+    {
+     "speaker": "Ані:",
+     "text": "Зрозуміла. А дата заповнення пишеться цифрами чи словами?",
+     "id": "Paham. Lalu tanggal pengisian ditulis dengan angka atau kata?",
+     "literal": "paham-(pr.). dan tanggal pengisian (gen.) menulis-diri angka-angka (ins.) atau kata-kata (ins.)?"
+    },
+    {
+     "speaker": "Андрій:",
+     "text": "Цифрами, через крапку: 02.07.2029. І не забудь підпис заявника внизу.",
+     "id": "Dengan angka, dipisah titik: 02.07.2029. Dan jangan lupa tanda tangan pemohon di bawah.",
+     "literal": "angka-angka (ins.), melalui titik: 02.07.2029. dan jangan lupa ‹selesai› tanda-tangan pemohon (gen.) di-bawah."
+    }
+   ],
+   "notes": [
+    "**Бюрократія тебе не з'їла?** Gurauan sehari-hari; *з'їсти* (memakan habis) dipakai kiasan seperti \"dimakan waktu\". Apostrof di *з'їла* memisahkan *з* dari *ї* supaya dibaca *z-YI-la*.",
+    "**Задекларувати місце проживання.** Istilah resmi sekarang untuk mencatatkan alamat. Kata lama *прописка* berasal dari zaman Soviet; masih terdengar di obrolan, tapi tidak di formulir.",
+    "**ПІБ dibaca pe-i-be.** Singkatan dari *прізвище, ім'я, по батькові*. Urutannya selalu nama keluarga dulu, kebalikan dari kebiasaan menulis nama di Indonesia.",
+    "**Потрібне підкреслити.** \"Garis bawahi yang perlu\"; *потрібне* adalah kata sifat netral yang berfungsi sebagai kata benda (\"yang perlu\"). Formulir Indonesia justru meminta \"coret yang tidak perlu\", jadi hati-hati: di sini kamu menandai yang benar, bukan mencoret yang salah.",
+    "**За наявності.** \"Jika ada\". Rumus ini muncul di samping kolom yang tak wajib, seperti patronimik untuk orang asing. *При наявності* adalah kalke Rusia yang dianjurkan untuk dihindari.",
+    "**Дата пишеться цифрами.** Format Ukraina: hari, bulan, tahun, dipisah titik (*дд.мм.рррр*). *Через крапку* = \"dipisah titik\". *Заявник* (pemohon) muncul di hampir setiap formulir: *підпис заявника*."
+   ],
+   "grammars": [
+    {
+     "title": "Kolom-kolom formulir",
+     "body": [
+      "Hampir semua formulir Ukraina memakai kata-kata berikut. Kolomnya ditulis dalam nominatif, tapi isiannya mengikuti kasus yang diminta kalimat pengantar."
+     ],
+     "table": {
+      "head": [
+       "Di formulir",
+       "Arti",
+       "Cara mengisi"
+      ],
+      "rows": [
+       [
+        "ПІБ",
+        "nama lengkap",
+        "nama keluarga, nama, patronimik"
+       ],
+       [
+        "Дата народження",
+        "tanggal lahir",
+        "*14.03.2004*"
+       ],
+       [
+        "Громадянство",
+        "kewarganegaraan",
+        "*Індонезія*"
+       ],
+       [
+        "Стать (чоловіча / жіноча)",
+        "jenis kelamin",
+        "garis bawahi yang sesuai"
+       ],
+       [
+        "Місце проживання",
+        "alamat tempat tinggal",
+        "*м. Київ, вул. …, буд. …, кв. …*"
+       ],
+       [
+        "За наявності",
+        "jika ada",
+        "boleh dikosongkan"
+       ],
+       [
+        "Потрібне підкреслити",
+        "garis bawahi yang perlu",
+        "tandai satu pilihan"
+       ],
+       [
+        "Підпис заявника",
+        "tanda tangan pemohon",
+        "tanda tangan, bukan nama cetak"
+       ]
+      ]
+     }
+    }
+   ]
+  }
+ ],
+ "sections": [
+  {
+   "title": "Singkatan yang wajib dikenal",
+   "blocks": [
+    {
+     "type": "p",
+     "text": "Singkatan Ukraina dibaca dengan dua cara. Kalau bisa diucapkan sebagai kata, ia dibaca sebagai kata dan bahkan berubah menurut kasus: *ЦНАП* dibaca *TSNAP*, *у ЦНАПі*. Kalau tidak, huruf-hurufnya dieja dengan nama hurufnya: *ДМС* = *de-em-ES*, *ПІБ* = *pe-i-BE*."
+    },
+    {
+     "type": "tabel",
+     "head": [
+      "Singkatan",
+      "Kepanjangan",
+      "Arti",
+      "Dibaca"
+     ],
+     "rows": [
+      [
+       "ЦНАП",
+       "Центр надання адміністративних послуг",
+       "pusat layanan administrasi",
+       "sebagai kata"
+      ],
+      [
+       "ДМС",
+       "Державна міграційна служба",
+       "Dinas Migrasi Negara",
+       "de-em-es"
+      ],
+      [
+       "РНОКПП",
+       "реєстраційний номер облікової картки платника податків",
+       "nomor wajib pajak",
+       "er-en-o-ka-pe-pe"
+      ],
+      [
+       "ПІБ",
+       "прізвище, ім'я, по батькові",
+       "nama lengkap",
+       "pe-i-be"
+      ],
+      [
+       "УНЗР",
+       "унікальний номер запису в реєстрі",
+       "nomor unik catatan registri",
+       "u-en-ze-er"
+      ],
+      [
+       "ID-картка",
+       "паспорт у формі картки",
+       "paspor berbentuk kartu",
+       "ai-di kartka"
+      ]
+     ]
+    },
+    {
+     "type": "kotak",
+     "title": "Alamat di formulir",
+     "items": [
+      "**м.** = *місто* (kota), **обл.** = *область* (provinsi), **р-н** = *район* (distrik).",
+      "**вул.** = *вулиця* (jalan), **просп.** = *проспект* (jalan raya), **пл.** = *площа* (alun-alun).",
+      "**буд.** = *будинок* (nomor gedung), **кв.** = *квартира* (nomor apartemen).",
+      "Urutannya dari yang terbesar ke yang terkecil: *м. Київ, вул. Сагайдачного, буд. 12, кв. 5*."
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Kalimat yang sering terdengar di loket",
+   "blocks": [
+    {
+     "type": "p",
+     "text": "Petugas loket berbicara dengan rumus. Kalau kamu mengenali rumusnya, kamu tak perlu memahami setiap kata. Kebanyakan berbentuk imperatif sopan atau pasif *-ся*."
+    },
+    {
+     "type": "tabel",
+     "head": [
+      "Ukraina",
+      "Arti"
+     ],
+     "rows": [
+      [
+       "Наступний!",
+       "Berikutnya!"
+      ],
+      [
+       "Підійдіть до вікна номер три.",
+       "Silakan ke loket nomor tiga."
+      ],
+      [
+       "Документи приймаються за попереднім записом.",
+       "Dokumen diterima dengan janji temu."
+      ],
+      [
+       "Вам потрібно донести довідку.",
+       "Anda perlu menyusulkan surat keterangan."
+      ],
+      [
+       "Ознайомтеся і підпишіть.",
+       "Silakan baca lalu tanda tangani."
+      ],
+      [
+       "Зачекайте, будь ласка, система зависла.",
+       "Mohon tunggu, sistemnya macet."
+      ],
+      [
+       "Прийом документів на сьогодні завершено.",
+       "Penerimaan dokumen hari ini sudah ditutup."
+      ],
+      [
+       "Результат можна перевірити онлайн.",
+       "Hasilnya bisa diperiksa secara daring."
+      ]
+     ]
+    },
+    {
+     "type": "list",
+     "items": [
+      "Untuk bertanya dengan sopan: **Підкажіть, будь ласка…** (tolong beri tahu…), **Уточніть, будь ласка…** (tolong perjelas…), **Чи можна…?** (bolehkah…?).",
+      "Untuk memastikan: **Я правильно розумію, що…?** (apakah saya benar memahami bahwa…?)."
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Ulangan berjenjang — unit 10",
+   "blocks": [
+    {
+     "type": "p",
+     "text": "Tutup kolom Ukraina, baca terjemahan Indonesianya, lalu susun kembali kalimatnya dari ingatan."
+    },
+    {
+     "type": "tabel",
+     "head": [
+      "Bahasa Indonesia",
+      "Українська"
+     ],
+     "rows": [
+      [
+       "Jadi katedral ini dibangun sudah pada masa Yaroslav yang Bijaksana?",
+       "*Тобто собор збудовано ще за Ярослава Мудрого?*"
+      ],
+      [
+       "Mozaiknya besar sekali! Dibuat dari apa?",
+       "*Мозаїка величезна! З чого її зроблено?*"
+      ],
+      [
+       "Saya catat: katedral ini dimasukkan ke daftar UNESCO pada 1990.",
+       "*Записую: собор внесено до списку ЮНЕСКО 1990 року.*"
+      ],
+      [
+       "Apakah ini sarkofagus marmer? Yaroslav sendiri dimakamkan di sini?",
+       "*А це мармуровий саркофаг? Тут поховано самого Ярослава?*"
+      ],
+      [
+       "Anna Yaroslavna dinikahkan dengan raja Prancis, bukan?",
+       "*Анну Ярославну видали заміж за французького короля, так?*"
+      ]
+     ]
+    }
+   ]
+  }
+ ],
+ "vocab": [
+  {
+   "uk": "ЦНАП",
+   "baca": "TSNAP",
+   "id": "pusat layanan administrasi"
+  },
+  {
+   "uk": "посві́дка на пості́йне прожива́ння",
+   "baca": "pos-VID-ka na pos-TIY-ne pro-zhy-VAN-nya",
+   "id": "kartu izin tinggal tetap"
+  },
+  {
+   "uk": "до́звіл на іммігра́цію",
+   "baca": "DOZ-vil na im-mi-HRA-tsi-yu",
+   "id": "izin imigrasi"
+  },
+  {
+   "uk": "зая́ва-анке́та",
+   "baca": "za-YA-va-an-KE-ta",
+   "id": "formulir permohonan"
+  },
+  {
+   "uk": "заповню́вати / запо́внити",
+   "baca": "za-pov-NYU-va-ty / za-POV-ny-ty",
+   "id": "mengisi (formulir)"
+  },
+  {
+   "uk": "адміністрати́вний збір",
+   "baca": "ad-mi-nis-tra-TYV-nyy zbir",
+   "id": "biaya administrasi"
+  },
+  {
+   "uk": "спла́чувати / сплати́ти",
+   "baca": "SPLA-chu-va-ty / spla-TY-ty",
+   "id": "membayar (biaya, pajak)"
+  },
+  {
+   "uk": "реквізи́ти",
+   "baca": "rek-vi-ZY-ty",
+   "id": "rincian rekening pembayaran"
+  },
+  {
+   "uk": "нотаріа́льно засві́дчений",
+   "baca": "no-ta-ri-AL'-no zas-VID-che-nyy",
+   "id": "dilegalisasi notaris"
+  },
+  {
+   "uk": "пере́клад",
+   "baca": "pe-RE-klad",
+   "id": "terjemahan"
+  },
+  {
+   "uk": "відби́тки па́льців",
+   "baca": "vid-BYT-ky PAL'-tsiv",
+   "id": "sidik jari"
+  },
+  {
+   "uk": "строк",
+   "baca": "strok",
+   "id": "jangka waktu (hukum)"
+  },
+  {
+   "uk": "про́тягом",
+   "baca": "PRO-tya-hom",
+   "id": "selama, dalam kurun (+ gen.)"
+  },
+  {
+   "uk": "видава́ти / ви́дати",
+   "baca": "vy-da-VA-ty / VY-da-ty",
+   "id": "menerbitkan (dokumen)"
+  },
+  {
+   "uk": "пода́ння",
+   "baca": "po-DAN-nya",
+   "id": "pengajuan"
+  },
+  {
+   "uk": "черга́",
+   "baca": "cher-HA",
+   "id": "antrean (*у черзі*)"
+  },
+  {
+   "uk": "ПІБ",
+   "baca": "PIB",
+   "id": "nama lengkap (nama keluarga, nama, patronimik)"
+  },
+  {
+   "uk": "прі́звище",
+   "baca": "PRIZ-vy-shche",
+   "id": "nama keluarga"
+  },
+  {
+   "uk": "по ба́тькові",
+   "baca": "po BAT'-ko-vi",
+   "id": "patronimik"
+  },
+  {
+   "uk": "грома́дянство",
+   "baca": "hro-MA-dyan-stvo",
+   "id": "kewarganegaraan"
+  },
+  {
+   "uk": "стать",
+   "baca": "stat'",
+   "id": "jenis kelamin"
+  },
+  {
+   "uk": "за на́явності",
+   "baca": "za NA-yav-nos-ti",
+   "id": "jika ada"
+  },
+  {
+   "uk": "підкре́слювати / підкре́слити",
+   "baca": "pid-KRES-lyu-va-ty / pid-KRES-ly-ty",
+   "id": "menggarisbawahi"
+  },
+  {
+   "uk": "задекларува́ти мі́сце прожива́ння",
+   "baca": "za-de-kla-ru-VA-ty MIS-tse pro-zhy-VAN-nya",
+   "id": "mendeklarasikan tempat tinggal"
+  },
+  {
+   "uk": "пі́дпис",
+   "baca": "PID-pys",
+   "id": "tanda tangan"
+  }
+ ],
+ "exercises": [
+  {
+   "prompt": "Terjemahkan ke bahasa Ukraina dengan gaya loket (pasif -ся bila bisa).",
+   "items": [
+    "Formulir diisi di tempat.",
+    "Biaya administrasi dibayar sebelum pengajuan.",
+    "Kartu izin tinggal diterbitkan dalam lima belas hari kerja.",
+    "Saya ingin mengurus kartu izin tinggal tetap.",
+    "Saya membawa foto untuk berjaga-jaga.",
+    "Tuliskan patronimik jika ada."
+   ]
+  },
+  {
+   "prompt": "Isi titik-titik dengan bentuk yang tepat. Petunjuk ada di dalam kurung.",
+   "items": [
+    "Документи ____ щодня з дев'ятої до шістнадцятої. (приймати)",
+    "Збір ____ через термінал у холі. (сплачувати)",
+    "Посвідка видається ____ п'ятнадцяти робочих днів. (протягом, на протязі)",
+    "Я взяла копії про ____ випадок. (всяк, всякий)",
+    "____ наявності вкажіть РНОКПП. (За, При)",
+    "Переклад має бути нотаріально ____. (засвідчити, partisip)",
+    "У якому вікні ____ посвідки? (видавати)"
+   ]
+  },
+  {
+   "prompt": "Ubah kalimat aktif menjadi bahasa loket dengan -ся.",
+   "items": [
+    "Документи приймають щопонеділка.",
+    "Анкету заповнюють на місці.",
+    "Посвідку видають за п'ятнадцять днів.",
+    "Відбитки пальців знімають у кабінеті номер два.",
+    "Збір сплачують до подання.",
+    "Фото роблять тут."
+   ]
+  },
+  {
+   "prompt": "Susun jadi kalimat yang benar.",
+   "items": [
+    "заповнюється / на / анкета / місці",
+    "строки / в / посвідка / які / видається",
+    "до / сплачується / збір / подання",
+    "підпис / забудь / внизу / не / заявника",
+    "наявності / батькові / за / по / зазначте"
+   ]
+  }
+ ],
+ "answers": [
+  "Анкета заповнюється на місці. — Адміністративний збір сплачується до подання. — Посвідка видається протягом п'ятнадцяти робочих днів. — Я хочу оформити посвідку на постійне проживання. — Я принесла фото про всяк випадок. — Зазначте по батькові за наявності.",
+  "приймаються — сплачується — протягом — всяк — За — засвідчений — видаються",
+  "Документи приймаються щопонеділка. — Анкета заповнюється на місці. — Посвідка видається за п'ятнадцять днів. — Відбитки пальців знімаються в кабінеті номер два. — Збір сплачується до подання. — Фото робиться тут.",
+  "Анкета заповнюється на місці. — В які строки видається посвідка? — Збір сплачується до подання. — Не забудь підпис заявника внизу. — Зазначте по батькові за наявності."
+ ]
+}

@@ -1,0 +1,674 @@
+{
+ "title": "Seandainya ada waktu — rencana musim panas dengan би dan якби",
+ "title_target": "Якби я мала час, я б поїхала в Карпати",
+ "goal": "Berandai-andai dan menyatakan keinginan dengan kondisional *би / б* + bentuk lampau (*я б поїхала, було б весело*), menyusun kalimat pengandaian dengan *якби* (*якби я мала час, то…*), membedakannya dari syarat nyata *якщо*, serta meminta dengan sopan: *ти не міг би…?*",
+ "bekal": [
+  "kamu bisa berkata apa yang ingin atau akan kamu lakukan: *Я б хотіла побачити Карпати.*",
+  "kamu bisa membuat pengandaian: *Якби я мала час, я б поїхала хоч завтра.*",
+  "kamu bisa memilih antara *якщо* (mungkin terjadi) dan *якби* (andai saja)"
+ ],
+ "dialogs": [
+  {
+   "title": "Діалог 1 — Hari pertama musim panas di teras",
+   "intro": "Selasa, 1 Juni 2027, pukul enam sore, di teras «Зерно» yang baru dibuka untuk musim panas. Shift sudah selesai; Ani, Solomiya, dan Andriy duduk dengan es kopi dan membicarakan liburan. Perhatikan partikel kecil *б* dan *би* yang muncul di hampir setiap kalimat: itulah tanda pengandaian.",
+   "lines": [
+    {
+     "speaker": "Соломія:",
+     "text": "[Перше|PER-she] [червня|CHERV-nya]! [Літо|LI-to] [почалося|po-cha-LO-sya]. [Які|Ya-KI] [у|u] [вас|vas] [плани|PLA-ny]?",
+     "id": "Satu Juni! Musim panas sudah mulai. Apa rencana kalian?",
+     "literal": "pertama Juni (gen.)! musim-panas mulai. apa pada kalian (gen.) rencana-rencana?"
+    },
+    {
+     "speaker": "Андрій:",
+     "text": "[Я|Ya] [б|b] [поїхав|po-YI-khav] [на|na] [море|MO-re], [але|a-LE] [маю|MA-yu] [багато|BA-ha-to] [роботи|ro-BO-ty].",
+     "id": "Aku sih pengin ke laut, tapi kerjaanku banyak.",
+     "literal": "saya akan pergi ‹selesai› (lk) ke laut (ak.), tapi punya banyak pekerjaan (gen.)."
+    },
+    {
+     "speaker": "Ані:",
+     "text": "[А|A] [я|ya] [б|b] [хотіла|kho-TI-la] [побачити|po-BA-chy-ty] [Карпати|Kar-PA-ty]. [Я|Ya] [там|tam] [ще|shche] [не|ne] [була|bu-LA].",
+     "id": "Kalau aku pengin lihat Karpatia. Aku belum pernah ke sana.",
+     "literal": "dan saya akan ingin (pr) melihat ‹selesai› Karpatia. saya sana belum ada (pr)."
+    },
+    {
+     "speaker": "Соломія:",
+     "text": "[Якби|Yak-BY] [ти|ty] [поїхала|po-YI-kha-la] [в|v] [Карпати|Kar-PA-ty], [я|ya] [б|b] [показала|po-ka-ZA-la] [тобі|to-BI] [Говерлу|Ho-VER-lu]!",
+     "id": "Kalau kamu ke Karpatia, aku bakal tunjukkan Hoverla ke kamu!",
+     "literal": "seandainya kamu pergi ‹selesai› (pr) ke Karpatia, saya akan menunjukkan ‹selesai› kepadamu (dat.) Hoverla!"
+    },
+    {
+     "speaker": "Ані:",
+     "text": "[Якби|Yak-BY] [я|ya] [мала|MA-la] [час|chas], [то|to] [поїхала|po-YI-kha-la] [б|b] [хоч|khoch] [завтра|ZAV-tra].",
+     "id": "Seandainya aku punya waktu, besok pun aku berangkat.",
+     "literal": "seandainya saya punya (pr) waktu, maka pergi ‹selesai› (pr) akan bahkan besok."
+    },
+    {
+     "speaker": "Андрій:",
+     "text": "[Ти|Ty] [ж|zh] [працюєш|pra-TSYU-yesh] [шість|shist'] [днів|dniv] [на|na] [тиждень|TYZH-den'].",
+     "id": "Kamu kan kerja enam hari seminggu.",
+     "literal": "kamu kan bekerja enam hari (gen. jm) per minggu (ak.)."
+    },
+    {
+     "speaker": "Соломія:",
+     "text": "[Тому|To-MU] [треба|TRE-ba] [попросити|po-pro-SY-ty] [Максима|Mak-SY-ma]. [Якби|Yak-BY] [ми|my] [взяли|vzya-LY] [відпустку|vid-PUST-ku] [разом|RA-zom], [було|bu-LO] [б|b] [весело|VE-se-lo].",
+     "id": "Makanya kita harus minta ke Maksym. Kalau kita cuti bareng, pasti seru.",
+     "literal": "karena-itu perlu meminta ‹selesai› Maksym (ak.). seandainya kami mengambil ‹selesai› cuti bersama, ada (netral) akan menyenangkan."
+    },
+    {
+     "speaker": "Ані:",
+     "text": "[А|A] [хто|khto] [б|b] [тоді|to-DI] [працював|pra-tsyu-VAV] [у|u] [кав'ярні|ka-VYAR-ni]?",
+     "id": "Terus siapa yang kerja di kedai?",
+     "literal": "dan siapa akan lalu bekerja (lk) di kedai-kopi (lok.)?"
+    },
+    {
+     "speaker": "Андрій:",
+     "text": "[Максим|Mak-SYM] [сам|sam]. [Уяви|U-ya-VY], [як|yak] [він|vin] [бігає|BI-ha-ye] [між|mizh] [столиками|STO-ly-ka-my]!",
+     "id": "Maksym sendirian. Bayangin dia lari-lari di antara meja!",
+     "literal": "Maksym sendiri. bayangkan ‹selesai›, bagaimana dia berlari di-antara meja-meja (ins.)!"
+    },
+    {
+     "speaker": "Соломія:",
+     "text": "[Ха|Kha]! [Він|Vin] [би|by] [нас|nas] [звільнив|zvil'-NYV] [за|za] [день|den'].",
+     "id": "Ha! Dia bakal memecat kita dalam sehari.",
+     "literal": "ha! dia akan kami (ak.) memecat ‹selesai› dalam hari (ak.)."
+    },
+    {
+     "speaker": "Ані:",
+     "text": "[Моя|Mo-YA] [сестра|ses-TRA] [Діна|DI-na] [теж|tezh] [хоче|KHO-che] [приїхати|pry-YI-kha-ty] [сюди|syu-DY] [влітку|VLIT-ku].",
+     "id": "Adikku Dina juga pengin datang ke sini musim panas ini.",
+     "literal": "saya-punya adik-perempuan Dina juga ingin tiba ‹selesai› ke-sini pada-musim-panas."
+    },
+    {
+     "speaker": "Андрій:",
+     "text": "[Було|Bu-LO] [б|b] [чудово|chu-DO-vo]! [Я|Ya] [б|b] [повіз|po-VIZ] [вас|vas] [до|do] [Полтави|Pol-TA-vy], [до|do] [баби|BA-by] [Ганни|HAN-ny].",
+     "id": "Keren banget! Aku bakal bawa kalian ke Poltava, ke Nenek Hanna.",
+     "literal": "ada (netral) akan luar-biasa! saya akan membawa-berkendara ‹selesai› kalian (ak.) ke Poltava (gen.), ke nenek Hanna (gen.)."
+    },
+    {
+     "speaker": "Соломія:",
+     "text": "[А|A] [я|ya] [б|b] [навчила|nav-CHY-la] [її|yi-YI] [варити|va-RY-ty] [каву|KA-vu] [по|po]-[львівськи|L'VIV-s'ky].",
+     "id": "Kalau aku bakal mengajari dia menyeduh kopi ala Lviv.",
+     "literal": "dan saya akan mengajari ‹selesai› dia (ak.) menyeduh kopi (ak.) cara-Lviv."
+    },
+    {
+     "speaker": "Ані:",
+     "text": "[Ви|Vy] [такі|ta-KI] [добрі|DO-bri]! [Якби|Yak-BY] [не|ne] [ви|vy], [я|ya] [б|b] [тут|tut] [сумувала|su-mu-VA-la].",
+     "id": "Kalian baik banget! Kalau nggak ada kalian, aku pasti kesepian di sini.",
+     "literal": "kalian begitu baik! seandainya bukan kalian, saya akan sini bersedih (pr)."
+    }
+   ],
+   "notes": [
+    "**Перше червня.** Tanggal diucapkan dengan bilangan urutan netral (karena kata *число*, tanggal, tersirat) + nama bulan dalam genitif: *перше червня, п'яте травня, двадцять перше червня*. Bulan-bulan musim panas: *червень, липень, серпень*. Unit 16 akan membahas tanggal lebih lengkap.",
+    "**Я б поїхав на море.** Kondisional dibentuk sangat sederhana: **bentuk lampau + би/б**. Tidak ada bentuk khusus untuk kini atau lampau, jadi *я б поїхав* bisa berarti \"aku akan pergi\" atau \"aku akan pergi (dulu)\", tergantung konteks. Bentuk lampau tetap mengikuti jenis kelamin: Andriy berkata *поїхав*, Ani berkata *поїхала*.",
+    "**Якби ти поїхала … я б показала.** *Якби* adalah \"seandainya\" dan sudah mengandung *би* di dalamnya, jadi di anak kalimat yang sama *би* tidak diulang: *якби ти поїхала*, bukan *якби ти б поїхала*. Di induk kalimat, *б* wajib muncul lagi: *я б показала*.",
+    "**Якби я мала час, то…** Kata *то* (maka) di awal induk kalimat boleh dipakai atau dihilangkan. *Хоч завтра* = besok pun, \"kapan saja\". Kalimat Ani adalah pola yang paling sering kamu butuhkan di A2: **якби + lampau, (то) … + lampau + б**.",
+    "**Хто б тоді працював?** *Би* bisa berdiri di berbagai tempat, biasanya sesudah kata pertama yang ditekankan: *хто б тоді працював, він би нас звільнив, я б поїхав*. Sesudah vokal pakai **б** (*хто б, я б*), sesudah konsonan pakai **би** (*він би, міг би*). Aturan ini soal enak diucapkan, bukan soal benar-salah yang kaku.",
+    "**Якби не ви.** Ungkapan tetap \"kalau bukan karena kalian\": *якби не ти, якби не дощ, якби не Максим*. Kata kerja tidak diperlukan. *Сумувати* berarti bersedih atau kesepian; dengan *за* + instrumental berarti merindukan: *сумую за домом*."
+   ],
+   "grammars": [
+    {
+     "title": "Kondisional: lampau + би",
+     "body": [
+      "Ambil bentuk lampau kata kerja (yang mengikuti jenis kelamin dan jumlah), lalu tambahkan *би* atau *б*. Itu saja; tidak ada konjugasi baru."
+     ],
+     "table": {
+      "head": [
+       "Kata kerja",
+       "я (lk)",
+       "я (pr)",
+       "ми / ви / вони"
+      ],
+      "rows": [
+       [
+        "поїхати",
+        "я б поїхав",
+        "я б поїхала",
+        "ми б поїхали"
+       ],
+       [
+        "мати",
+        "я б мав",
+        "я б мала",
+        "ви б мали"
+       ],
+       [
+        "могти",
+        "я міг би",
+        "я могла б",
+        "вони могли б"
+       ],
+       [
+        "хотіти",
+        "я б хотів",
+        "я б хотіла",
+        "ми б хотіли"
+       ],
+       [
+        "бути",
+        "я був би",
+        "я була б",
+        "ви були б"
+       ],
+       [
+        "показати",
+        "я б показав",
+        "я б показала",
+        "ми б показали"
+       ],
+       [
+        "працювати",
+        "я б працював",
+        "я б працювала",
+        "вони б працювали"
+       ],
+       [
+        "(impersonal)",
+        "було б весело",
+        "було б добре",
+        "було б чудово"
+       ]
+      ]
+     },
+     "after": [
+      "*Було б* + kata keterangan adalah cara termudah untuk berkomentar tentang suatu rencana: *Було б чудово!* (Pasti keren!), *Було б краще завтра* (Lebih baik besok)."
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Діалог 2 — Minta cuti kepada Maksym",
+   "intro": "Beberapa menit kemudian, Maksym keluar ke teras membawa tiga cangkir. Solomiya memutuskan inilah saat yang tepat. Perhatikan bagaimana permintaan dibuat lebih halus dengan *би*: *ти не міг би…?*, dan bagaimana Maksym membedakan pengandaian (*якби*) dari syarat yang nyata.",
+   "lines": [
+    {
+     "speaker": "Максим:",
+     "text": "[Про|Pro] [що|shcho] [це|tse] [ви|vy] [тут|tut] [розмовляєте|roz-mo-VLYA-ye-te]?",
+     "id": "Kalian lagi ngomongin apa di sini?",
+     "literal": "tentang apa ini kalian sini bercakap?"
+    },
+    {
+     "speaker": "Соломія:",
+     "text": "[Максиме|Mak-SY-me], [ти|ty] [не|ne] [міг|mih] [би|by] [дати|DA-ty] [нам|nam] [відпустку|vid-PUST-ku] [в|v] [липні|LYP-ni]?",
+     "id": "Maksym, bisa nggak kamu kasih kami cuti bulan Juli?",
+     "literal": "Maksym (panggilan), kamu tidak bisa (lk) akan memberi ‹selesai› kepada-kami (dat.) cuti (ak.) di Juli (lok.)?"
+    },
+    {
+     "speaker": "Максим:",
+     "text": "[Вам|Vam] [обом|o-BOM]? [Одночасно|Od-no-CHAS-no]? [А|A] [хто|khto] [б|b] [варив|va-RYV] [каву|KA-vu]?",
+     "id": "Kalian berdua? Bersamaan? Terus siapa yang bikin kopi?",
+     "literal": "kepada-kalian (dat.) berdua (dat.)? bersamaan? dan siapa akan menyeduh (lk) kopi (ak.)?"
+    },
+    {
+     "speaker": "Ані:",
+     "text": "[Я|Ya] [б|b] [могла|mo-HLA] [попрацювати|po-pra-tsyu-VA-ty] [більше|BIL'-she] [в|v] [серпні|SERP-ni], [замість|ZA-mist'] [липня|LYP-nya].",
+     "id": "Aku bisa kerja lebih banyak di bulan Agustus, sebagai ganti Juli.",
+     "literal": "saya akan bisa (pr) bekerja-sebentar ‹selesai› lebih di Agustus (lok.), sebagai-ganti Juli (gen.)."
+    },
+    {
+     "speaker": "Максим:",
+     "text": "[Гм|Hm]. [Якби|Yak-BY] [ви|vy] [попросили|po-pro-SY-ly] [раніше|RA-ni-she], [було|bu-LO] [б|b] [легше|LEH-she].",
+     "id": "Hmm. Seandainya kalian minta lebih awal, pasti lebih gampang.",
+     "literal": "hmm. seandainya kalian meminta ‹selesai› lebih-awal, ada (netral) akan lebih-mudah."
+    },
+    {
+     "speaker": "Соломія:",
+     "text": "[Ми|My] [просимо|PRO-sy-mo] [зараз|ZA-raz]! [Ну|Nu] [будь|bud'] [ласка|LAS-ka], [лише|ly-SHE] [тиждень|TYZH-den'].",
+     "id": "Kami minta sekarang! Ayolah, seminggu saja.",
+     "literal": "kami meminta sekarang! nah tolong, hanya minggu."
+    },
+    {
+     "speaker": "Максим:",
+     "text": "[Я|Ya] [б|b] [дав|dav] [вам|vam] [два|dva] [тижні|TYZH-ni], [якби|yak-BY] [мав|mav] [ще|shche] [одного|od-NO-ho] [баристу|ba-RYS-tu].",
+     "id": "Aku bakal kasih kalian dua minggu, seandainya aku punya satu barista lagi.",
+     "literal": "saya akan memberi ‹selesai› kepada-kalian (dat.) dua minggu, seandainya punya (lk) lagi satu (ak.) barista (ak.)."
+    },
+    {
+     "speaker": "Ані:",
+     "text": "[А|A] [якщо|yak-SHCHO] [я|ya] [попрошу|po-pro-SHU] [Андрія|An-DRI-ya]? [Він|Vin] [має|MA-ye] [досвід|DOS-vid] [у|u] [кафе|ka-FE].",
+     "id": "Gimana kalau aku minta Andriy? Dia punya pengalaman kerja di kafe.",
+     "literal": "dan jika saya meminta ‹selesai› Andriy (ak.)? dia punya pengalaman di kafe."
+    },
+    {
+     "speaker": "Максим:",
+     "text": "[Якби|Yak-BY] [він|vin] [погодився|po-HO-dyv-sya], [я|ya] [б|b] [теж|tezh] [не|ne] [заперечував|za-pe-RE-chu-vav].",
+     "id": "Kalau dia mau, aku juga nggak keberatan.",
+     "literal": "seandainya dia setuju ‹selesai›, saya akan juga tidak keberatan (lk)."
+    },
+    {
+     "speaker": "Соломія:",
+     "text": "[Ура|U-RA]! [Ані|A-ni], [дзвони|dzvo-NY] [йому|yo-MU] [негайно|ne-HAY-no]!",
+     "id": "Hore! Ani, telepon dia sekarang juga!",
+     "literal": "hore! Ani, teleponlah kepadanya (dat.) segera!"
+    },
+    {
+     "speaker": "Максим:",
+     "text": "[Спочатку|Spo-CHAT-ku] [допийте|do-PYY-te] [каву|KA-vu], [бо|bo] [охолоне|o-kho-LO-ne].",
+     "id": "Habiskan dulu kopinya, nanti keburu dingin.",
+     "literal": "pertama-tama habiskan-minum ‹selesai› (jm) kopi (ak.), karena menjadi-dingin ‹selesai›."
+    }
+   ],
+   "notes": [
+    "**Ти не міг би…?** Permintaan dengan kondisional terdengar jauh lebih halus daripada imperatif: *ти не міг би дати* ≈ \"bisa nggak kamu kasih\". Kepada perempuan: *ти не могла б*; kepada orang yang dihormati: *ви не могли б*. Versi paling sopan, *Чи не могли б ви…?*, akan kamu pelajari di B1.",
+    "**Вам обом?** *Обидва* (lk) dan *обидві* (pr) = keduanya, berdua. Dalam datif keduanya menjadi *обом*: *вам обом, нам обом*. Maksym terkejut karena dua barista sekaligus minta cuti di bulan yang sama.",
+    "**В серпні, замість липня.** Nama bulan dalam lokatif menjawab \"kapan?\": *у червні, в липні, в серпні*. *Замість* + genitif = sebagai ganti: *замість липня, замість кави чай*. *Попрацювати* dengan awalan *по-* berarti bekerja untuk sementara waktu.",
+    "**Якби ви попросили раніше.** Bahasa Ukraina tidak membedakan pengandaian masa kini (\"kalau kalian minta sekarang\") dan masa lampau (\"kalau dulu kalian minta\"): bentuknya sama, konteks yang menentukan. Di sini *раніше* menunjukkan bahwa kesempatan itu sudah lewat. Bahasa Indonesia juga tidak membedakannya, jadi kamu tidak perlu menghafal apa-apa.",
+    "**А якщо я попрошу Андрія?** Perhatikan perpindahan dari *якби* ke **якщо**. Ani tidak berandai-andai; ia mengusulkan sesuatu yang benar-benar bisa terjadi, jadi ia memakai *якщо* + masa depan. Maksym menjawab dengan *якби*, karena ia masih ragu Andriy akan setuju.",
+    "**Я б теж не заперечував.** *Не заперечувати* = tidak keberatan; dalam kondisional ini cara sopan untuk berkata \"boleh saja\". *Погодитися* (setuju, mau) bertekanan *po-HO-dy-ty-sya*. Maksym menutup dengan imperatif jamak *допийте* (habiskan), dari *допити*: awalan *до-* berarti sampai habis."
+   ],
+   "grammars": [
+    {
+     "title": "Якщо atau якби?",
+     "body": [
+      "*Якщо* dipakai untuk syarat yang nyata atau mungkin terjadi, dengan kata kerja kini atau masa depan. *Якби* dipakai untuk pengandaian yang tidak nyata atau belum pasti, selalu dengan bentuk lampau, dan induk kalimatnya memakai *б/би*."
+     ],
+     "table": {
+      "head": [
+       "Jenis",
+       "Pola",
+       "Contoh",
+       "Arti"
+      ],
+      "rows": [
+       [
+        "syarat nyata",
+        "якщо + masa depan",
+        "Якщо Андрій погодиться, Максим дасть відпустку.",
+        "Kalau Andriy mau, Maksym akan memberi cuti."
+       ],
+       [
+        "andai (kini)",
+        "якби + lampau, … б",
+        "Якби я мала час, я б поїхала.",
+        "Seandainya aku punya waktu, aku akan pergi."
+       ],
+       [
+        "andai (lampau)",
+        "якби + lampau, … б",
+        "Якби ви попросили раніше, було б легше.",
+        "Seandainya dulu kalian minta, pasti lebih mudah."
+       ],
+       [
+        "keinginan sopan",
+        "я б хотів / хотіла",
+        "Я б хотіла кави.",
+        "Saya mau kopi."
+       ],
+       [
+        "permintaan halus",
+        "ти не міг би / не могла б",
+        "Ти не могла б мені допомогти?",
+        "Bisa bantu aku?"
+       ],
+       [
+        "saran",
+        "я б на твоєму місці …",
+        "Я б на твоєму місці відпочила.",
+        "Kalau aku jadi kamu, aku istirahat."
+       ],
+       [
+        "harapan",
+        "якби ж то …",
+        "Якби ж то літо було весь рік!",
+        "Andai musim panas sepanjang tahun!"
+       ]
+      ]
+     },
+     "after": [
+      "Kesalahan yang sering: *якщо б*. Bentuk itu memang ada dalam bahasa lama, tetapi dalam percakapan sehari-hari pakailah *якби*."
+     ]
+    }
+   ]
+  }
+ ],
+ "sections": [
+  {
+   "title": "Musim panas di Ukraina: ke mana?",
+   "blocks": [
+    {
+     "type": "p",
+     "text": "Musim panas Ukraina panjang dan hangat, dengan hari yang terang sampai hampir pukul sepuluh malam di bulan Juni. Orang Kyiv berenang di pantai-pantai sungai Dnipro, berakhir pekan di *дача* (rumah kebun di pinggir kota), dan mengambil *відпустка* (cuti) dua sampai tiga minggu, biasanya di bulan Juli atau Agustus. Sekolah libur dari akhir Mei sampai 1 September: libur sekolah dan kuliah disebut *канікули*, bukan *відпустка*."
+    },
+    {
+     "type": "tabel",
+     "head": [
+      "Tujuan",
+      "Ukraina",
+      "Kenapa ke sana"
+     ],
+     "rows": [
+      [
+       "Pegunungan Karpatia",
+       "Карпати, Яремче, Говерла",
+       "mendaki, air terjun, udara sejuk"
+      ],
+      [
+       "Lviv",
+       "Львів",
+       "kota tua, kedai kopi, cokelat"
+      ],
+      [
+       "Kamianets-Podilskyi",
+       "Кам'янець-Подільський",
+       "benteng batu di atas ngarai"
+      ],
+      [
+       "Uman",
+       "Умань, парк «Софіївка»",
+       "taman lanskap abad ke-18"
+      ],
+      [
+       "Danau Shatsk",
+       "Шацькі озера",
+       "danau jernih dan hutan pinus"
+      ],
+      [
+       "Poltava",
+       "Полтава",
+       "galushky, desa, ladang bunga matahari"
+      ],
+      [
+       "Laut",
+       "море",
+       "pantai, berenang, berjemur"
+      ],
+      [
+       "Sungai Dnipro",
+       "Дніпро, пляж",
+       "berenang tanpa keluar kota"
+      ]
+     ]
+    },
+    {
+     "type": "kotak",
+     "title": "Ungkapan musim panas",
+     "items": [
+      "*Піти у відпустку* = mengambil cuti; *бути у відпустці* = sedang cuti.",
+      "*Поїхати на море / в гори / на дачу* = pergi ke laut / gunung / rumah kebun.",
+      "*Засмагати* = berjemur; *купатися* = berenang, mandi di sungai atau laut.",
+      "*Гарного літа! Гарної відпустки!* = Selamat berlibur!"
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Andai aku… — bercerita dengan якби",
+   "blocks": [
+    {
+     "type": "p",
+     "text": "Pengandaian adalah alat yang bagus untuk berlatih bicara, karena kamu bisa membicarakan apa saja: impian, penyesalan kecil, saran untuk teman. Baca contoh di bawah, lalu ganti bagian keduanya dengan impianmu sendiri. Ingat: jenis kelamin kata kerja lampau mengikuti pembicara."
+    },
+    {
+     "type": "tabel",
+     "head": [
+      "Ukraina",
+      "Indonesia"
+     ],
+     "rows": [
+      [
+       "Якби я мала гроші, я б купила квартиру на Подолі.",
+       "Seandainya aku punya uang, aku akan beli apartemen di Podil."
+      ],
+      [
+       "Якби я жив у Львові, я б пив каву щодня.",
+       "Seandainya aku tinggal di Lviv, aku akan minum kopi setiap hari."
+      ],
+      [
+       "Якби не дощ, ми б пішли на пляж.",
+       "Kalau tidak hujan, kita sudah ke pantai."
+      ],
+      [
+       "Якби Діна приїхала, я б показала їй Лавру.",
+       "Seandainya Dina datang, aku akan tunjukkan Lavra padanya."
+      ],
+      [
+       "Я б на твоєму місці не поспішав.",
+       "Kalau aku jadi kamu, aku tidak akan terburu-buru."
+      ],
+      [
+       "Було б добре поїхати разом.",
+       "Pasti asyik kalau pergi bareng."
+      ],
+      [
+       "Якби ж то я вміла плавати!",
+       "Andai saja aku bisa berenang!"
+      ],
+      [
+       "Ти б хотів поїхати в Карпати?",
+       "Kamu mau ke Karpatia?"
+      ]
+     ]
+    },
+    {
+     "type": "list",
+     "items": [
+      "Jangan menaruh *би* dua kali di anak kalimat *якби*: *якби я мала час*, bukan *якби я б мала час*.",
+      "*Б* sesudah vokal (*я б, було б*), *би* sesudah konsonan (*він би, міг би*).",
+      "Untuk rencana yang benar-benar akan terjadi, kembali ke *якщо* + masa depan: *Якщо буде тепло, підемо на пляж.*"
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Ulangan berjenjang — unit 12",
+   "blocks": [
+    {
+     "type": "p",
+     "text": "Tutup kolom Ukraina, baca terjemahan Indonesianya, lalu susun kembali kalimatnya dari ingatan."
+    },
+    {
+     "type": "tabel",
+     "head": [
+      "Bahasa Indonesia",
+      "Українська",
+      "Baca"
+     ],
+     "rows": [
+      [
+       "Iya. Ani, ambil gelas tinggi dan masukkan es ke dalamnya.",
+       "Так. Ані, візьми високу склянку і поклади туди лід.",
+       "*Tak A-ni viz'-MY vy-SO-ku SKLYAN-ku i po-kla-DY tu-DY lid*"
+      ],
+      [
+       "Tapi tuangnya pelan-pelan, jangan buru-buru.",
+       "Тільки наливай повільно, не поспішай.",
+       "*TIL'-ky na-ly-VAY po-VIL'-no ne pos-pi-SHAY*"
+      ],
+      [
+       "Tambahkan satu sendok, jangan lebih. Sekarang bikin espreso.",
+       "Додай одну ложку, не більше. А тепер зроби еспресо.",
+       "*Do-DAY od-NU LOZH-ku ne BIL'-she A te-PER zro-BY es-PRE-so*"
+      ],
+      [
+       "Pertama, matikan mesinnya. Bukan, bukan tombol itu! Yang ini, yang merah.",
+       "Спершу вимкни машину. Ні, не цю кнопку! Ось цю, червону.",
+       "*SPER-shu VYMK-ny ma-SHY-nu Ni ne tsyu KNOP-ku Os' tsyu cher-VO-nu*"
+      ],
+      [
+       "Pakai lap basah. Lap setiap habis bikin kapucino, jangan lupa.",
+       "Вологою ганчіркою. Протирай її після кожного капучино, не забувай.",
+       "*Vo-LO-ho-yu han-CHIR-ko-yu Pro-ty-RAY yi-YI PIS-lya KOZH-no-ho ka-pu-CHY-no ne za-bu-VAY*"
+      ]
+     ]
+    }
+   ]
+  }
+ ],
+ "vocab": [
+  {
+   "uk": "лі́то",
+   "baca": "LI-to",
+   "id": "musim panas"
+  },
+  {
+   "uk": "влі́тку",
+   "baca": "VLIT-ku",
+   "id": "pada musim panas"
+  },
+  {
+   "uk": "че́рвень (gen. че́рвня)",
+   "baca": "CHER-ven'",
+   "id": "Juni"
+  },
+  {
+   "uk": "ли́пень (gen. ли́пня)",
+   "baca": "LY-pen'",
+   "id": "Juli"
+  },
+  {
+   "uk": "се́рпень (gen. се́рпня)",
+   "baca": "SER-pen'",
+   "id": "Agustus"
+  },
+  {
+   "uk": "відпу́стка",
+   "baca": "vid-PUST-ka",
+   "id": "cuti (kerja)"
+  },
+  {
+   "uk": "кані́кули",
+   "baca": "ka-NI-ku-ly",
+   "id": "libur (sekolah, kuliah)"
+  },
+  {
+   "uk": "мо́ре",
+   "baca": "MO-re",
+   "id": "laut (*на море*)"
+  },
+  {
+   "uk": "го́ри (sg. гора́)",
+   "baca": "HO-ry",
+   "id": "pegunungan (*в гори, в горах*)"
+  },
+  {
+   "uk": "Карпа́ти",
+   "baca": "Kar-PA-ty",
+   "id": "Pegunungan Karpatia"
+  },
+  {
+   "uk": "тера́са",
+   "baca": "te-RA-sa",
+   "id": "teras"
+  },
+  {
+   "uk": "якби́",
+   "baca": "yak-BY",
+   "id": "seandainya, andai"
+  },
+  {
+   "uk": "би, б",
+   "baca": "by, b",
+   "id": "partikel pengandaian (*я б поїхала*)"
+  },
+  {
+   "uk": "могти́ / змогти́",
+   "baca": "moh-TY / zmoh-TY",
+   "id": "bisa, dapat (*міг, могла*)"
+  },
+  {
+   "uk": "хоті́ти / захоті́ти",
+   "baca": "kho-TI-ty / za-kho-TI-ty",
+   "id": "ingin, mau"
+  },
+  {
+   "uk": "пого́джуватися / пого́дитися",
+   "baca": "po-HO-dzhu-va-ty-sya / po-HO-dy-ty-sya",
+   "id": "setuju, mau"
+  },
+  {
+   "uk": "запере́чувати",
+   "baca": "za-pe-RE-chu-va-ty",
+   "id": "keberatan, membantah (*не заперечую*)"
+  },
+  {
+   "uk": "звільня́ти / звільни́ти",
+   "baca": "zvil'-NYA-ty / zvil'-NY-ty",
+   "id": "memecat; membebaskan"
+  },
+  {
+   "uk": "сумува́ти",
+   "baca": "su-mu-VA-ty",
+   "id": "bersedih; rindu (*за* + ins.)"
+  },
+  {
+   "uk": "ве́село",
+   "baca": "VE-se-lo",
+   "id": "seru, menyenangkan"
+  },
+  {
+   "uk": "одноча́сно",
+   "baca": "od-no-CHAS-no",
+   "id": "bersamaan, sekaligus"
+  },
+  {
+   "uk": "за́мість",
+   "baca": "ZA-mist'",
+   "id": "sebagai ganti (+ gen.)"
+  },
+  {
+   "uk": "ра́ніше",
+   "baca": "RA-ni-she",
+   "id": "lebih awal; dulu"
+  },
+  {
+   "uk": "нега́йно",
+   "baca": "ne-HAY-no",
+   "id": "segera, sekarang juga"
+  },
+  {
+   "uk": "до́свід",
+   "baca": "DOS-vid",
+   "id": "pengalaman"
+  }
+ ],
+ "exercises": [
+  {
+   "prompt": "Terjemahkan ke bahasa Ukraina. Pembicaranya Ani (perempuan).",
+   "items": [
+    "Aku pengin ke laut.",
+    "Seandainya aku punya waktu, aku akan pergi ke Karpatia.",
+    "Maksym, bisa nggak kamu kasih kami cuti bulan Juli?",
+    "Pasti seru sekali!",
+    "Seandainya kalian minta lebih awal, pasti lebih mudah.",
+    "Kalau Andriy setuju, Maksym akan memberi cuti."
+   ]
+  },
+  {
+   "prompt": "Isi titik-titik dengan bentuk yang tepat.",
+   "items": [
+    "Якби я ____ гроші, я б купила квиток. (мати, Ані)",
+    "Андрій ____ б на море. (поїхати)",
+    "____ ти поїхала в Карпати, я б показала тобі Говерлу. (якщо, якби)",
+    "____ завтра буде сонце, ми підемо в парк. (якщо, якби)",
+    "Соломіє, ти не ____ б мені допомогти? (могти)",
+    "Я ____ хотіла кави, будь ласка. (би, б)",
+    "Він ____ поїхав, якби мав час. (би, б)"
+   ]
+  },
+  {
+   "prompt": "Ubah syarat nyata (*якщо*) menjadi pengandaian (*якби*).",
+   "items": [
+    "Якщо Ані матиме час, вона поїде в Карпати.",
+    "Якщо Андрій погодиться, Максим дасть відпустку.",
+    "Якщо Діна приїде, ми поїдемо до Полтави.",
+    "Якщо буде тепло, ми підемо на терасу.",
+    "Якщо Соломія попросить, Максим погодиться.",
+    "Якщо Тарас прийде, пані Галина спече пиріг."
+   ]
+  },
+  {
+   "prompt": "Susun jadi kalimat yang benar.",
+   "items": [
+    "б / я / на / поїхала / море",
+    "було / весело / б / дуже",
+    "не / би / ти / міг / допомогти",
+    "хотіла / б / кави / я",
+    "Карпати / б / Ані / побачити / хотіла"
+   ]
+  }
+ ],
+ "answers": [
+  "Я б поїхала на море. — Якби я мала час, я б поїхала в Карпати. — Максиме, ти не міг би дати нам відпустку в липні? — Було б дуже весело! — Якби ви попросили раніше, було б легше. — Якщо Андрій погодиться, Максим дасть відпустку.",
+  "мала — поїхав — Якби — Якщо — могла — б — би",
+  "Якби Ані мала час, вона б поїхала в Карпати. — Якби Андрій погодився, Максим дав би відпустку. — Якби Діна приїхала, ми б поїхали до Полтави. — Якби було тепло, ми б пішли на терасу. — Якби Соломія попросила, Максим би погодився. — Якби Тарас прийшов, пані Галина спекла б пиріг.",
+  "Я б поїхала на море. — Було б дуже весело. — Ти не міг би допомогти? — Я б хотіла кави. — Ані б хотіла побачити Карпати."
+ ]
+}

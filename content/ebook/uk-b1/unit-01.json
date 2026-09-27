@@ -1,0 +1,637 @@
+{
+ "title": "Hari pertama di «Ява» — kebiasaan, sekali jadi, dan larangan",
+ "title_target": "Перший день у «Яві»",
+ "goal": "Membedakan kebiasaan dari kejadian sekali dengan tepat (*щоранку відчиняю* vs *сьогодні відчинив*) dan memberi larangan yang pas: aturan umum *не відчиняй*, peringatan jaga-jaga *не впусти*.",
+ "bekal": [
+  "kamu bisa menceritakan rutinitas kerja dengan imperfektif dan kejadian sekali dengan perfektif",
+  "kamu bisa memberi larangan umum dengan *не* + imperatif imperfektif: *Ніколи не відчиняй мішки без мене*",
+  "kamu bisa memperingatkan orang supaya tidak celaka atau lupa dengan *не* + imperatif perfektif: *Дивися, не впусти!*, *Не забудь!*"
+ ],
+ "dialogs": [
+  {
+   "title": "Діалог 1 — Selamat datang di «Ява»",
+   "intro": "Senin, 6 September 2027, pukul setengah delapan pagi, usaha sangrai kopi «Ява» di sebuah halaman tua di Lviv. Ani memulai kerja penuh waktunya. Pan Bohdan menyambutnya dan memperkenalkan Yurko, penyangrai asal Verkhovyna. Perhatikan kapan orang memakai *відчиняю* dan kapan *відчинив*.",
+   "lines": [
+    {
+     "speaker": "Богдан:",
+     "text": "[Добрий|DO-bryy] [ранок|RA-nok], [Ані|A-ni]! [Ласкаво|LAS-ka-vo] [просимо|PRO-sy-mo] [до|do] «[Яви|YA-vy]». [Як|Yak] [ти|ty] [доїхала|do-yi-KHA-la]?",
+     "id": "Selamat pagi, Ani! Selamat datang di «Ява». Bagaimana perjalananmu tadi?",
+     "literal": "baik pagi, Ani! dengan-ramah (kami)-mohon ke «Ява» (gen.). bagaimana kamu sampai‹selesai›?"
+    },
+    {
+     "speaker": "Ані:",
+     "text": "[Добрий|DO-bryy] [ранок|RA-nok], [пане|PA-ne] [Богдане|Boh-DA-ne]! [Дякую|DYA-ku-yu], [усе|u-SE] [добре|DO-bre]. [Я|Ya] [прийшла|pryy-SHLA] [пішки|PISH-ky], [це|tse] [лише|ly-SHE] [двадцять|DVAD-tsyat'] [хвилин|khvy-LYN].",
+     "id": "Selamat pagi, Pan Bohdan! Terima kasih, semuanya lancar. Saya jalan kaki, cuma dua puluh menit.",
+     "literal": "baik pagi, tuan Bohdan (vok.)! terima-kasih, semua baik. saya datang‹selesai› jalan-kaki, ini hanya dua-puluh menit (gen. jamak)."
+    },
+    {
+     "speaker": "Богдан:",
+     "text": "[Чудово|Chu-DO-vo]. [Знайомся|Zna-YOM-sya]: [це|tse] [Юрко|Yur-KO], [він|vin] [обсмажує|ob-SMA-zhu-ye] [в|v] [нас|nas] [каву|KA-vu] [вже|vzhe] [вісім|VI-sim] [років|RO-kiv].",
+     "id": "Bagus. Kenalkan, ini Yurko. Dia sudah delapan tahun menyangrai kopi di tempat kami.",
+     "literal": "bagus. berkenalan-lah: ini Yurko, dia menyangrai‹proses› di kami kopi sudah delapan tahun (gen. jamak)."
+    },
+    {
+     "speaker": "Юрко:",
+     "text": "[Привіт|Pry-VIT], [Ані|A-ni]! [Соломія|So-lo-MI-ya] [багато|ba-HA-to] [про|pro] [тебе|TE-be] [розповідала|roz-po-vi-DA-la]. [Давай|Da-VAY] [одразу|o-DRA-zu] [на|na] «[ти|ty]».",
+     "id": "Hai, Ani! Solomiya sudah banyak cerita soal kamu. Langsung pakai «ти» saja, ya.",
+     "literal": "hai, Ani! Solomiya banyak tentang kamu bercerita‹proses›. ayo langsung ke «ти»."
+    },
+    {
+     "speaker": "Ані:",
+     "text": "[Із|Iz] [задоволенням|za-do-VO-len-nyam]! [А|A] [що|shcho] [я|ya] [робитиму|ro-BY-ty-mu] [сьогодні|syo-HOD-ni], [пане|PA-ne] [Богдане|Boh-DA-ne]?",
+     "id": "Dengan senang hati! Lalu, hari ini saya akan mengerjakan apa, Pan Bohdan?",
+     "literal": "dengan senang-hati! lalu apa saya akan-mengerjakan‹proses› hari-ini, tuan Bohdan (vok.)?"
+    },
+    {
+     "speaker": "Богдан:",
+     "text": "[Сьогодні|Syo-HOD-ni] [ти|ty] [тільки|TIL'-ky] [дивишся|DY-vysh-sya] [й|y] [запитуєш|za-PY-tu-yesh]. [А|A] [завтра|ZAV-tra] [вже|vzhe] [сама|sa-MA] [відкриєш|vid-KRY-yesh] [склад|sklad].",
+     "id": "Hari ini kamu cukup melihat dan bertanya. Besok kamu sudah membuka gudang sendiri.",
+     "literal": "hari-ini kamu hanya melihat dan bertanya. dan besok sudah sendiri akan-membuka‹selesai› gudang."
+    },
+    {
+     "speaker": "Ані:",
+     "text": "[А|A] [хто|khto] [зазвичай|zaz-VY-chay] [відчиняє|vid-chy-NYA-ye] [склад|sklad] [уранці|u-RAN-tsi]?",
+     "id": "Biasanya siapa yang membuka gudang pagi-pagi?",
+     "literal": "dan siapa biasanya membuka‹proses› gudang di-pagi?"
+    },
+    {
+     "speaker": "Юрко:",
+     "text": "[Я|Ya]. [Щоранку|Shcho-RAN-ku] [о|o] [сьомій|SYO-miy] [я|ya] [відчиняю|vid-chy-NYA-yu] [склад|sklad] [і|i] [перевіряю|pe-re-VI-rya-yu] [температуру|tem-pe-ra-TU-ru].",
+     "id": "Aku. Setiap pagi jam tujuh aku membuka gudang dan mengecek suhunya.",
+     "literal": "saya. setiap-pagi pada ketujuh (lok.) saya membuka‹proses› gudang dan memeriksa‹proses› suhu."
+    },
+    {
+     "speaker": "Богдан:",
+     "text": "[А|A] [сьогодні|syo-HOD-ni] [він|vin] [відчинив|vid-chy-NYV] [його|yo-HO] [о|o] [шостій|SHOS-tiy], [бо|bo] [прийшла|pryy-SHLA] [нова|no-VA] [партія|PAR-ti-ya] [із|iz] [Суматри|Su-MA-try].",
+     "id": "Tapi hari ini dia membukanya jam enam, karena datang kiriman baru dari Sumatra.",
+     "literal": "tapi hari-ini dia membuka‹selesai› dia (ak.) pada keenam (lok.), karena datang‹selesai› baru kiriman dari Sumatra (gen.)."
+    },
+    {
+     "speaker": "Ані:",
+     "text": "[Із|Iz] [Суматри|Su-MA-try]? [Це|Tse] [Ґайо|GA-yo]? [Можна|MOZH-na] [подивитися|po-DY-vy-ty-sya] [на|na] [мішки|mish-KY]?",
+     "id": "Dari Sumatra? Itu Gayo? Boleh saya lihat karung-karungnya?",
+     "literal": "dari Sumatra (gen.)? ini Gayo? boleh melihat‹selesai› pada karung-karung?"
+    },
+    {
+     "speaker": "Юрко:",
+     "text": "[Можна|MOZH-na], [але|a-LE] [одне|od-NE] [правило|PRA-vy-lo]: [ніколи|ni-KO-ly] [не|ne] [відчиняй|vid-chy-NYAY] [мішки|mish-KY] [без|bez] [мене|ME-ne].",
+     "id": "Boleh, tapi satu aturan: jangan pernah membuka karung tanpa aku.",
+     "literal": "boleh, tapi satu aturan: tidak-pernah jangan buka‹proses› karung-karung tanpa aku (gen.)."
+    },
+    {
+     "speaker": "Ані:",
+     "text": "[Зрозуміло|Zro-zu-MI-lo]. [А|A] [чому|cho-MU] [це|tse] [так|tak] [важливо|vazh-LY-vo]?",
+     "id": "Mengerti. Tapi kenapa itu begitu penting?",
+     "literal": "dimengerti. tapi kenapa ini begitu penting?"
+    },
+    {
+     "speaker": "Юрко:",
+     "text": "[Бо|Bo] [кожен|KO-zhen] [мішок|mi-SHOK] [спочатку|spo-CHAT-ku] [треба|TRE-ba] [зважити|ZVA-zhy-ty]. [І|I] [дивися|dy-VY-sya], [не|ne] [впусти|vpus-TY] [його|yo-HO] [собі|so-BI] [на|na] [ногу|NO-hu]!",
+     "id": "Karena setiap karung harus ditimbang dulu. Dan hati-hati, jangan sampai kamu menjatuhkannya ke kakimu sendiri!",
+     "literal": "karena setiap karung mula-mula perlu menimbang‹selesai›. dan lihat-lah, jangan jatuhkan‹selesai› dia (ak.) diri-sendiri (dat.) ke kaki!"
+    },
+    {
+     "speaker": "Богдан:",
+     "text": "[Він|Vin] [жартує|zhar-TU-ye], [але|a-LE] [мішок|mi-SHOK] [важить|VA-zhyt'] [шістдесят|shist-de-SYAT] [кілограмів|ki-lo-HRA-miv]. [Тож|Tozh] [будь|bud'] [обережна|o-be-REZH-na]!",
+     "id": "Dia bercanda, tapi satu karung beratnya enam puluh kilo. Jadi hati-hati, ya!",
+     "literal": "dia bercanda, tapi karung berbobot enam-puluh kilogram (gen. jamak). jadi jadilah berhati-hati (pr.)!"
+    }
+   ],
+   "notes": [
+    "**Ласкаво просимо до «Яви».** Ungkapan selamat datang ini diikuti *до* + genitif: *до Львова, до нас, до «Яви»*. Perhatikan bahwa nama usaha dalam tanda kutip tetap berubah bentuk seperti kata biasa: *«Ява» → до «Яви» → у «Яві»*. Dalam bahasa Indonesia nama merek tak pernah berubah, jadi ini mudah terlewat.",
+    "**Знайомся** adalah imperatif *ти* dari *знайомитися* (berkenalan). Pan Bohdan memakai *ти* kepada Ani karena ia lebih tua, atasannya, dan paman sahabat Ani. Ani tetap memakai *Ви* dan bentuk panggilan **пане Богдане**. Hubungan yang tak simetris seperti ini wajar di tempat kerja kecil.",
+    "**Він обсмажує в нас каву вже вісім років.** Bahasa Ukraina tak punya bentuk \"sudah … selama\" tersendiri: cukup kata kerja **kini imperfektif** + *вже* + lamanya. Persis seperti bahasa Indonesia \"dia sudah delapan tahun menyangrai\". Jangan tergoda memakai lampau: *він обсмажував вісім років* berarti ia sudah berhenti.",
+    "**Щоранку … відчиняю / сьогодні … відчинив.** Ini inti unit. Kebiasaan (setiap pagi, biasanya, sering) memakai **imperfektif**: *відчиняю*. Satu kejadian utuh yang selesai memakai **perfektif**: *відчинив*. Kata keterangan waktu adalah petunjuk terbaikmu: *щоранку, зазвичай, завжди* hampir selalu menarik imperfektif.",
+    "**Ніколи не відчиняй мішки без мене.** Larangan umum atau aturan tetap memakai *не* + imperatif **imperfektif**. *Не відчини* di sini terdengar salah, seperti bahasa Indonesia yang terbalik logikanya. Ingat: aturan = imperfektif.",
+    "**Дивися, не впусти його собі на ногу!** Kebalikannya: *не* + imperatif **perfektif** adalah peringatan \"jangan sampai …\" terhadap kecelakaan yang tak disengaja. Biasanya didahului *дивися* atau *гляди* (hati-hati). *Собі на ногу* = ke kakimu sendiri; datif *собі* menunjukkan siapa yang kena akibatnya. Bahasa Rusia punya pola yang sama (*смотри, не урони*)."
+   ],
+   "grammars": [
+    {
+     "title": "Kebiasaan vs sekali jadi",
+     "body": [
+      "Pilih aspek dengan bertanya: apakah ini berulang atau proses, atau satu kejadian utuh dengan hasil? Kata keterangan waktu sering langsung memberi jawabannya."
+     ],
+     "table": {
+      "head": [
+       "Situasi",
+       "Aspek",
+       "Contoh",
+       "Arti"
+      ],
+      "rows": [
+       [
+        "kebiasaan kini",
+        "imperfektif",
+        "*Щоранку я відчиняю склад.*",
+        "Setiap pagi aku membuka gudang."
+       ],
+       [
+        "satu kejadian lampau",
+        "perfektif",
+        "*Сьогодні він відчинив склад о шостій.*",
+        "Hari ini dia membuka gudang jam enam."
+       ],
+       [
+        "kebiasaan lampau",
+        "imperfektif",
+        "*Раніше я часто помилявся.*",
+        "Dulu aku sering keliru."
+       ],
+       [
+        "satu kejadian lampau",
+        "perfektif",
+        "*Одного разу я помилився.*",
+        "Suatu kali aku keliru."
+       ],
+       [
+        "rencana sekali, nanti",
+        "perfektif",
+        "*Завтра ти сама відкриєш склад.*",
+        "Besok kamu membuka gudang sendiri."
+       ],
+       [
+        "kegiatan nanti, berlangsung",
+        "imperfektif",
+        "*Що я робитиму сьогодні?*",
+        "Hari ini aku akan mengerjakan apa?"
+       ],
+       [
+        "sudah berlangsung sampai kini",
+        "imperfektif kini + вже",
+        "*Він обсмажує каву вже вісім років.*",
+        "Dia sudah delapan tahun menyangrai kopi."
+       ]
+      ]
+     },
+     "after": [
+      "Perfektif tak punya bentuk kini. *Відкриєш* bentuknya mirip kini, tapi artinya selalu masa depan: \"akan membuka (sampai tuntas)\"."
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Діалог 2 — Tur gudang",
+   "intro": "Masih pagi yang sama, di gudang «Ява» yang sejuk. Yurko mengajak Ani berkeliling di antara tumpukan karung goni. Perhatikan beda *не відчиняй* dengan *не забудь*.",
+   "lines": [
+    {
+     "speaker": "Юрко:",
+     "text": "[Ось|Os'] [наш|nash] [склад|sklad]. [Тут|Tut] [ми|my] [тримаємо|try-MA-ye-mo] [зелене|ze-LE-ne] [зерно|zer-NO] [з|z] [усього|u-SYO-ho] [світу|SVI-tu].",
+     "id": "Nah, ini gudang kita. Di sini kita menyimpan biji kopi hijau dari seluruh dunia.",
+     "literal": "nah kami-punya gudang. di-sini kami menyimpan hijau biji dari seluruh dunia (gen.)."
+    },
+    {
+     "speaker": "Ані:",
+     "text": "[Тут|Tut] [так|tak] [прохолодно|pro-kho-LOD-no]! [Ви|Vy] [завжди|ZAV-zhdy] [зачиняєте|za-chy-NYA-ye-te] [двері|DVE-ri]?",
+     "id": "Di sini sejuk sekali! Kalian selalu menutup pintunya?",
+     "literal": "di-sini begitu sejuk! kalian selalu menutup‹proses› pintu?"
+    },
+    {
+     "speaker": "Юрко:",
+     "text": "[Завжди|ZAV-zhdy], [бо|bo] [волога|vo-LO-ha] [шкодить|SHKO-dyt'] [зерну|zer-NU]. [І|I] [ніколи|ni-KO-ly] [не|ne] [відчиняй|vid-chy-NYAY] [тут|tut] [вікно|vik-NO].",
+     "id": "Selalu, karena kelembapan merusak biji kopi. Dan jangan pernah membuka jendela di sini.",
+     "literal": "selalu, karena kelembapan merugikan biji (dat.). dan tidak-pernah jangan buka‹proses› di-sini jendela."
+    },
+    {
+     "speaker": "Ані:",
+     "text": "[Зрозуміла|Zro-zu-MI-la]. [А|A] [що|shcho] [це|tse] [за|za] [табличка|ta-BLYCH-ka] [на|na] [дверях|DVE-ryakh]?",
+     "id": "Paham. Lalu, papan kecil di pintu itu apa?",
+     "literal": "(aku)-paham (pr.). lalu apa ini untuk papan-kecil di pintu (lok.)?"
+    },
+    {
+     "speaker": "Юрко:",
+     "text": "[Це|Tse] [графік|HRA-fik]. [Щоп'ятниці|Shcho-PYAT-ny-tsi] [ми|my] [миємо|MY-ye-mo] [підлогу|pi-DLO-hu] [й|y] [рахуємо|ra-KHU-ye-mo] [мішки|mish-KY].",
+     "id": "Itu jadwal. Setiap Jumat kita mengepel lantai dan menghitung karung.",
+     "literal": "ini jadwal. setiap-Jumat kami mencuci lantai dan menghitung‹proses› karung-karung."
+    },
+    {
+     "speaker": "Ані:",
+     "text": "[А|A] [цієї|tsi-YE-yi] [п'ятниці|PYAT-ny-tsi] [я|ya] [можу|MO-zhu] [порахувати|po-ra-khu-VA-ty] [мішки|mish-KY] [сама|sa-MA]?",
+     "id": "Kalau Jumat ini, boleh aku sendiri yang menghitung karungnya?",
+     "literal": "dan ini (gen.) Jumat (gen.) saya bisa menghitung‹selesai› karung-karung sendiri (pr.)?"
+    },
+    {
+     "speaker": "Юрко:",
+     "text": "[Звичайно|Zvy-CHAY-no]. [Тільки|TIL'-ky] [не|ne] [забудь|za-BUD'] [записати|za-py-SA-ty] [все|vse] [в|v] [таблицю|ta-BLY-tsyu].",
+     "id": "Tentu. Asal jangan lupa mencatat semuanya ke tabel.",
+     "literal": "tentu. hanya jangan lupa‹selesai› mencatat‹selesai› semua ke tabel (ak.)."
+    },
+    {
+     "speaker": "Ані:",
+     "text": "[Не|Ne] [забуду|za-BU-du]. [А|A] [ти|ty] [колись|ko-LYS'] [помилявся|po-my-LYAV-sya] [з|z] [мішками|mish-KA-my]?",
+     "id": "Nggak akan lupa. Kamu sendiri pernah salah dengan karung-karung ini?",
+     "literal": "tidak akan-lupa‹selesai›. dan kamu pernah keliru‹proses› dengan karung-karung (ins.)?"
+    },
+    {
+     "speaker": "Юрко:",
+     "text": "[Часто|CHAS-to] [помилявся|po-my-LYAV-sya], [коли|ko-LY] [був|buv] [новий|no-VYY]. [А|A] [одного|od-NO-ho] [разу|RA-zu] [переплутав|pe-re-PLU-tav] [Тораджу|To-RA-dzhu] [з|z] [Кенією|KE-ni-ye-yu]!",
+     "id": "Sering, waktu aku masih baru. Malah suatu kali aku tertukar antara Toraja dan Kenya!",
+     "literal": "sering keliru‹proses›, ketika (aku)-adalah baru. dan satu (gen.) kali (gen.) tertukar‹selesai› Toraja (ak.) dengan Kenya (ins.)!"
+    },
+    {
+     "speaker": "Ані:",
+     "text": "[Ой|Oy]! [І|I] [що|shcho] [тобі|to-BI] [сказав|ska-ZAV] [пан|pan] [Богдан|Boh-DAN]?",
+     "id": "Aduh! Terus Pan Bohdan bilang apa ke kamu?",
+     "literal": "aduh! dan apa kamu (dat.) berkata‹selesai› tuan Bohdan?"
+    },
+    {
+     "speaker": "Юрко:",
+     "text": "[Сказав|Ska-ZAV]: «[Раз|Raz] [можна|MOZH-na] [помилитися|po-my-LY-ty-sya], [але|a-LE] [не|ne] [помиляйся|po-my-LYAY-sya] [щодня|shchod-NYA]». [Я|Ya] [запам'ятав|za-PA-mya-tav] [назавжди|na-ZAV-zhdy].",
+     "id": "Dia bilang: «Keliru sekali boleh, tapi jangan keliru setiap hari». Aku ingat itu sampai sekarang.",
+     "literal": "berkata‹selesai›: «sekali boleh keliru‹selesai›, tapi jangan keliru‹proses› setiap-hari». saya mengingat‹selesai› selamanya."
+    }
+   ],
+   "notes": [
+    "**Зелене зерно.** Biji kopi mentah yang belum disangrai disebut \"hijau\", sama seperti di dunia kopi Indonesia (*green bean*). *Зерно* di sini tunggal tapi bermakna kolektif, seperti \"beras\" yang tak perlu dijamakkan. Kalau menghitung butir: *зерна*.",
+    "**Ви завжди зачиняєте двері?** *Ви* di sini bukan sapaan hormat, melainkan \"kalian\" (seluruh tim). Kepada Yurko sendiri Ani sudah memakai *ти*. *Двері* hanya punya bentuk jamak, seperti *штани* (celana) dan *окуляри* (kacamata): *на дверях* (lok.), *двері зачинені*.",
+    "**Щоп'ятниці.** Awalan *що-* + nama hari = \"setiap …\": *щопонеділка, щовівторка, щосереди, щочетверга, щоп'ятниці, щосуботи, щонеділі*. Bentuknya ditulis sambung, dan bentuk seperti ini otomatis menuntut imperfektif: *щоп'ятниці ми рахуємо*.",
+    "**Цієї п'ятниці + порахувати.** Waktu yang merujuk satu hari tertentu ditaruh di genitif: *цієї п'ятниці* (Jumat ini), *наступного тижня* (minggu depan). Karena Ani bicara tentang satu kali menghitung sampai selesai, ia memilih perfektif *порахувати*.",
+    "**Не забудь** memakai perfektif, dan itu bukan kesalahan. Peringatan tentang hal yang bisa terjadi tanpa sengaja (lupa, hilang, terlambat) selalu perfektif: *не забудь, не загуби, не спізнися*. Jawaban Ani *Не забуду* juga perfektif: masa depan sederhana, \"nggak akan lupa\".",
+    "**Раз можна помилитися, але не помиляйся щодня.** Kalimat Pan Bohdan ini merangkum unit dengan rapi: *раз* (sekali) + perfektif *помилитися*, lalu *щодня* (setiap hari) + larangan imperfektif *не помиляйся*. *Одного разу* (genitif) berarti \"suatu kali\", pembuka cerita yang sangat lazim."
+   ],
+   "grammars": [
+    {
+     "title": "Dua jenis larangan",
+     "body": [
+      "Imperatif negatif hampir selalu imperfektif. Perfektif muncul hanya untuk peringatan \"jangan sampai\" terhadap hal yang tak disengaja."
+     ],
+     "table": {
+      "head": [
+       "Jenis",
+       "Bentuk",
+       "Contoh",
+       "Arti"
+      ],
+      "rows": [
+       [
+        "aturan, larangan umum",
+        "не + imperfektif",
+        "*Не відчиняй вікно.*",
+        "Jangan buka jendela."
+       ],
+       [
+        "aturan, larangan umum",
+        "не + imperfektif",
+        "*Не помиляйся щодня.*",
+        "Jangan keliru tiap hari."
+       ],
+       [
+        "saran berhenti",
+        "не + imperfektif",
+        "*Не хвилюйся!*",
+        "Jangan khawatir!"
+       ],
+       [
+        "peringatan tak sengaja",
+        "не + perfektif",
+        "*Дивися, не впусти мішок!*",
+        "Awas, jangan sampai menjatuhkan karung!"
+       ],
+       [
+        "peringatan tak sengaja",
+        "не + perfektif",
+        "*Не забудь записати!*",
+        "Jangan lupa mencatat!"
+       ],
+       [
+        "peringatan tak sengaja",
+        "не + perfektif",
+        "*Гляди, не спізнися!*",
+        "Awas, jangan sampai terlambat!"
+       ],
+       [
+        "perintah positif sekali",
+        "perfektif",
+        "*Відчини, будь ласка, двері.*",
+        "Tolong bukakan pintunya."
+       ]
+      ]
+     },
+     "after": [
+      "Kalau ragu, pakai imperfektif untuk larangan. Kesalahan ke arah itu jauh lebih jarang terdengar aneh."
+     ]
+    }
+   ]
+  }
+ ],
+ "sections": [
+  {
+   "title": "Penanda waktu: petunjuk memilih aspek",
+   "blocks": [
+    {
+     "type": "p",
+     "text": "Di tingkat B1 kamu sudah tahu bahwa hampir setiap kata kerja punya pasangan aspek. Tantangannya sekarang adalah memilih dengan cepat saat bicara. Kabar baiknya: banyak kata keterangan waktu sudah \"memilihkan\" aspek untukmu. Hafalkan kata-kata di bawah ini sebagai satu paket dengan aspeknya."
+    },
+    {
+     "type": "tabel",
+     "head": [
+      "Kata keterangan",
+      "Arti",
+      "Aspek yang biasa menyertai"
+     ],
+     "rows": [
+      [
+       "*щодня, щоранку, щотижня*",
+       "setiap hari, setiap pagi, setiap minggu",
+       "imperfektif"
+      ],
+      [
+       "*зазвичай*",
+       "biasanya",
+       "imperfektif"
+      ],
+      [
+       "*часто, іноді, рідко*",
+       "sering, kadang, jarang",
+       "imperfektif"
+      ],
+      [
+       "*завжди, ніколи*",
+       "selalu, tidak pernah",
+       "imperfektif"
+      ],
+      [
+       "*довго, цілий день*",
+       "lama, seharian",
+       "imperfektif"
+      ],
+      [
+       "*одного разу*",
+       "suatu kali",
+       "perfektif"
+      ],
+      [
+       "*раптом*",
+       "tiba-tiba",
+       "perfektif"
+      ],
+      [
+       "*нарешті*",
+       "akhirnya",
+       "perfektif"
+      ],
+      [
+       "*уже, щойно*",
+       "sudah, barusan",
+       "perfektif (hasil)"
+      ]
+     ]
+    },
+    {
+     "type": "kotak",
+     "title": "Awas jebakan",
+     "items": [
+      "*Ніколи* + imperatif tetap imperfektif: *ніколи не відчиняй*.",
+      "*Уже* bisa juga dengan imperfektif kini untuk lama waktu: *вже вісім років обсмажує*.",
+      "*Коли-небудь, колись* dalam pertanyaan \"pernah?\" lazim dengan imperfektif lampau: *Ти колись помилявся?*"
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Lviv, kota kopi",
+   "blocks": [
+    {
+     "type": "p",
+     "text": "Lviv menyebut dirinya ibu kota kopi Ukraina. Kota tua ini penuh kedai kecil di halaman-halaman bangunan zaman Austria, dan orang Lviv senang duduk lama di depan secangkir kopi. Sebuah legenda kota bercerita tentang Yuriy Kulchytskyi, pria dari daerah Lviv yang konon membuka salah satu kedai kopi pertama di Wina pada abad ke-17. Benar atau tidak, legenda itu dicintai, dan patungnya bisa kamu temukan di pusat kota. Di dunia seperti inilah Ani kini bekerja, membawa kopi dari Gayo, Toraja, Kintamani, dan Jawa."
+    },
+    {
+     "type": "tabel",
+     "head": [
+      "Українська",
+      "Cara baca",
+      "Bahasa Indonesia"
+     ],
+     "rows": [
+      [
+       "кав'ярня",
+       "ka-VYAR-nya",
+       "kedai kopi"
+      ],
+      [
+       "обсмажування",
+       "ob-SMA-zhu-van-nya",
+       "penyangraian"
+      ],
+      [
+       "зелене зерно",
+       "ze-LE-ne zer-NO",
+       "biji kopi hijau (mentah)"
+      ],
+      [
+       "мішок кави",
+       "mi-SHOK KA-vy",
+       "sekarung kopi"
+      ],
+      [
+       "партія",
+       "PAR-ti-ya",
+       "kiriman, satu angkatan barang"
+      ],
+      [
+       "постачальник",
+       "pos-ta-CHAL'-nyk",
+       "pemasok"
+      ],
+      [
+       "кава по-віденськи",
+       "KA-va po-VI-den-s'ky",
+       "kopi ala Wina (dengan krim)"
+      ],
+      [
+       "кава з кардамоном",
+       "KA-va z kar-da-MO-nom",
+       "kopi dengan kapulaga"
+      ]
+     ]
+    },
+    {
+     "type": "list",
+     "items": [
+      "*Ходімо на каву!* = Yuk ngopi! (ajakan paling umum di Lviv)",
+      "*Каву з собою?* = Kopinya dibawa?",
+      "*Мені як завжди.* = Saya seperti biasa."
+     ]
+    }
+   ]
+  }
+ ],
+ "vocab": [
+  {
+   "uk": "обсма́жувати / обсма́жити",
+   "baca": "ob-SMA-zhu-va-ty / ob-SMA-zhy-ty",
+   "id": "menyangrai (kopi)"
+  },
+  {
+   "uk": "зеле́не зерно́",
+   "baca": "ze-LE-ne zer-NO",
+   "id": "biji kopi hijau, mentah"
+  },
+  {
+   "uk": "склад",
+   "baca": "sklad",
+   "id": "gudang (*на складі*)"
+  },
+  {
+   "uk": "мішо́к (gen. мішка́)",
+   "baca": "mi-SHOK",
+   "id": "karung"
+  },
+  {
+   "uk": "па́ртія",
+   "baca": "PAR-ti-ya",
+   "id": "kiriman, satu angkatan barang"
+  },
+  {
+   "uk": "зва́жувати / зва́жити",
+   "baca": "ZVA-zhu-va-ty / ZVA-zhy-ty",
+   "id": "menimbang"
+  },
+  {
+   "uk": "ва́жити",
+   "baca": "VA-zhy-ty",
+   "id": "berbobot (*мішок важить 60 кг*)"
+  },
+  {
+   "uk": "відчиня́ти / відчини́ти",
+   "baca": "vid-chy-NYA-ty / vid-chy-NY-ty",
+   "id": "membuka (pintu, jendela, gudang)"
+  },
+  {
+   "uk": "зачиня́ти / зачини́ти",
+   "baca": "za-chy-NYA-ty / za-chy-NY-ty",
+   "id": "menutup"
+  },
+  {
+   "uk": "перевіря́ти / переві́рити",
+   "baca": "pe-re-vi-RYA-ty / pe-re-VI-ry-ty",
+   "id": "memeriksa, mengecek"
+  },
+  {
+   "uk": "помиля́тися / помили́тися",
+   "baca": "po-my-LYA-ty-sya / po-my-LY-ty-sya",
+   "id": "keliru, salah"
+  },
+  {
+   "uk": "впуска́ти / впусти́ти",
+   "baca": "vpus-KA-ty / vpus-TY-ty",
+   "id": "menjatuhkan (tak sengaja)"
+  },
+  {
+   "uk": "забува́ти / забу́ти",
+   "baca": "za-bu-VA-ty / za-BU-ty",
+   "id": "lupa (*не забудь!*)"
+  },
+  {
+   "uk": "рахува́ти / порахува́ти",
+   "baca": "ra-khu-VA-ty / po-ra-khu-VA-ty",
+   "id": "menghitung"
+  },
+  {
+   "uk": "переплу́тувати / переплу́тати",
+   "baca": "pe-re-PLU-tu-va-ty / pe-re-PLU-ta-ty",
+   "id": "tertukar, keliru mencampur"
+  },
+  {
+   "uk": "щора́нку",
+   "baca": "shcho-RAN-ku",
+   "id": "setiap pagi"
+  },
+  {
+   "uk": "щоп'я́тниці",
+   "baca": "shcho-PYAT-ny-tsi",
+   "id": "setiap Jumat"
+  },
+  {
+   "uk": "зазви́чай",
+   "baca": "zaz-VY-chay",
+   "id": "biasanya"
+  },
+  {
+   "uk": "одно́го ра́зу",
+   "baca": "od-NO-ho RA-zu",
+   "id": "suatu kali"
+  },
+  {
+   "uk": "пра́вило",
+   "baca": "PRA-vy-lo",
+   "id": "aturan"
+  },
+  {
+   "uk": "гра́фік",
+   "baca": "HRA-fik",
+   "id": "jadwal (kerja, piket)"
+  },
+  {
+   "uk": "табли́ця",
+   "baca": "ta-BLY-tsya",
+   "id": "tabel"
+  },
+  {
+   "uk": "воло́га",
+   "baca": "vo-LO-ha",
+   "id": "kelembapan"
+  },
+  {
+   "uk": "обере́жний",
+   "baca": "o-be-REZH-nyy",
+   "id": "hati-hati, cermat (*будь обережна!*)"
+  },
+  {
+   "uk": "ла́скаво про́симо",
+   "baca": "LAS-ka-vo PRO-sy-mo",
+   "id": "selamat datang (*до* + gen.)"
+  }
+ ],
+ "exercises": [
+  {
+   "prompt": "Terjemahkan ke bahasa Ukraina.",
+   "items": [
+    "Setiap pagi Yurko membuka gudang pukul tujuh.",
+    "Hari ini dia membukanya pukul enam.",
+    "Jangan pernah membuka karung tanpa aku.",
+    "Awas, jangan sampai menjatuhkan karung itu!",
+    "Jangan lupa mencatat semuanya ke tabel.",
+    "Setiap Jumat kami mengepel lantai."
+   ]
+  },
+  {
+   "prompt": "Isi titik-titik dengan aspek yang tepat. Petunjuk ada di dalam kurung.",
+   "items": [
+    "Зазвичай я ____ склад о сьомій. (відчиняти, відчинити)",
+    "Сьогодні Юрко ____ склад о шостій. (відчиняти, відчинити; lampau)",
+    "Ніколи не ____ вікно на складі! (відчиняти, відчинити; ти)",
+    "Дивися, не ____ мішок! (впускати, впустити; ти)",
+    "Щоп'ятниці ми ____ мішки. (рахувати, порахувати)",
+    "Цієї п'ятниці я сама ____ мішки. (рахувати, порахувати; masa depan)",
+    "Раз можна помилитися, але не ____ щодня. (помилятися, помилитися; ти)"
+   ]
+  },
+  {
+   "prompt": "Ubah kejadian sekali menjadi kebiasaan dengan kata dalam kurung. Contoh: *Сьогодні я відчинила склад.* (щоранку) → *Щоранку я відчиняю склад.*",
+   "items": [
+    "Сьогодні Юрко перевірив температуру. (щоранку)",
+    "Учора ми зважили мішки. (щодня)",
+    "Сьогодні я записала все в таблицю. (завжди)",
+    "Учора пан Богдан зачинив двері. (щовечора)",
+    "Сьогодні ти порахувала мішки. (щоп'ятниці)",
+    "Одного разу я помилився. (часто)"
+   ]
+  },
+  {
+   "prompt": "Susun jadi kalimat yang benar.",
+   "items": [
+    "о сьомій / щоранку / я / відчиняю склад",
+    "не відчиняй / без мене / ніколи / мішки",
+    "не впусти / дивися / мішок",
+    "записати / не забудь / все / в таблицю",
+    "помилитися / раз можна / але / не помиляйся щодня"
+   ]
+  }
+ ],
+ "answers": [
+  "Щоранку Юрко відчиняє склад о сьомій. — Сьогодні він відчинив його о шостій. — Ніколи не відчиняй мішки без мене. — Дивися, не впусти мішок! — Не забудь записати все в таблицю. — Щоп'ятниці ми миємо підлогу.",
+  "відчиняю — відчинив — відчиняй — впусти — рахуємо — порахую — помиляйся",
+  "Щоранку Юрко перевіряє температуру. — Щодня ми зважуємо мішки. — Я завжди записую все в таблицю. — Щовечора пан Богдан зачиняє двері. — Щоп'ятниці ти рахуєш мішки. — Я часто помиляюся.",
+  "Щоранку о сьомій я відчиняю склад. — Ніколи не відчиняй мішки без мене. — Дивися, не впусти мішок! — Не забудь записати все в таблицю. — Раз можна помилитися, але не помиляйся щодня."
+ ]
+}

@@ -1,0 +1,615 @@
+{
+ "title": "Kamar baru di Podil — berapa banyak, berapa buah",
+ "title_target": "Скільки тут кімнат?",
+ "goal": "Menanyakan dan menyebut jumlah dengan genitif jamak sesudah *скільки, багато, мало, немає* dan angka lima ke atas: *багато кімнат, сім вікон, немає братів, п'ять уроків*.",
+ "bekal": [
+  "kamu bisa membentuk genitif jamak ketiga jenis kata: *студентів, кімнат, вікон, гривень, речей*",
+  "kamu bisa memilih bentuk kata benda sesudah angka: *одна кімната, чотири кімнати, сім кімнат*",
+  "kamu bisa melihat dan menyewa kamar: menanyakan harga, tetangga, dan apa saja yang ada di sekitar"
+ ],
+ "dialogs": [
+  {
+   "title": "Діалог 1 — Melihat kamar pani Halyna",
+   "intro": "Sabtu, 16 Januari 2027, siang hari. Ani datang ke apartemen tua di Podil milik pani Halyna Petrivna, pensiunan apoteker berusia 68 tahun yang menyewakan satu kamarnya. Perhatikan setiap kata sesudah *скільки, багато, немає* dan sesudah angka *сім* atau *сорок*: semuanya dalam genitif jamak.",
+   "lines": [
+    {
+     "speaker": "Галина:",
+     "text": "[Заходьте|Za-KHOD'-te], [Ані|A-ni]! [Ось|Os'] [моя|mo-YA] [квартира|kvar-TY-ra].",
+     "id": "Silakan masuk, Ani! Ini apartemen saya.",
+     "literal": "masuklah (hormat), Ani! ini milik-saya apartemen."
+    },
+    {
+     "speaker": "Ані:",
+     "text": "[Яка|Ya-KA] [велика|ve-LY-ka]! [Скільки|SKIL'-ky] [тут|tut] [кімнат|kim-NAT]?",
+     "id": "Luas sekali! Ada berapa kamar di sini?",
+     "literal": "betapa besar! berapa di-sini kamar (gen. jamak)?"
+    },
+    {
+     "speaker": "Галина:",
+     "text": "[Чотири|Cho-TY-ry] [кімнати|kim-NA-ty], [кухня|KUKH-nya] [і|i] [ванна|VAN-na]. [Ваша|VA-sha] [кімната|kim-NA-ta] [ось|os'] [тут|tut], [біля|BI-lya] [кухні|KUKH-ni].",
+     "id": "Empat kamar, dapur, dan kamar mandi. Kamar Anda di sini, dekat dapur.",
+     "literal": "empat kamar (nom. jamak), dapur dan kamar-mandi. milik-Anda kamar ini di-sini, dekat dapur (gen.)."
+    },
+    {
+     "speaker": "Ані:",
+     "text": "[Тут|Tut] [так|tak] [світло|SVI-tlo]! [Скільки|SKIL'-ky] [вікон|VI-kon]!",
+     "id": "Terang sekali di sini! Banyak sekali jendelanya!",
+     "literal": "di-sini begitu terang! berapa jendela (gen. jamak)!"
+    },
+    {
+     "speaker": "Галина:",
+     "text": "[У|U] [квартирі|kvar-TY-ri] [сім|sim] [вікон|VI-kon]. [Два|Dva] [з|z] [них|nykh] [ваші|VA-shi].",
+     "id": "Di apartemen ada tujuh jendela. Dua di antaranya milik Anda.",
+     "literal": "di apartemen (lok.) tujuh jendela (gen. jamak). dua dari mereka (gen.) milik-Anda."
+    },
+    {
+     "speaker": "Ані:",
+     "text": "[А|A] [книжок|KNY-zhok] [у|u] [вас|vas] [багато|ba-HA-to]! [Це|Tse] [все|vse] [ваші|VA-shi]?",
+     "id": "Buku Ibu banyak sekali! Ini punya Ibu semua?",
+     "literal": "dan buku (gen. jamak) pada Anda banyak! ini semua milik-Anda?"
+    },
+    {
+     "speaker": "Галина:",
+     "text": "[Так|Tak], [про|pro] [ліки|LI-ky] [й|y] [рослини|ros-LY-ny]. [Я|Ya] [сорок|SO-rok] [років|RO-kiv] [працювала|pra-tsyu-VA-la] [в|v] [аптеці|ap-TE-tsi].",
+     "id": "Iya, tentang obat dan tanaman. Saya empat puluh tahun kerja di apotek.",
+     "literal": "ya, tentang obat-obatan dan tanaman (jamak). saya empat-puluh tahun (gen. jamak) bekerja di apotek (lok.)."
+    },
+    {
+     "speaker": "Ані:",
+     "text": "[Сорок|SO-rok] [років|RO-kiv]! [А|A] [сусіди|su-SI-dy] [тут|tut] [тихі|TY-khi]?",
+     "id": "Empat puluh tahun! Terus tetangganya di sini tenang?",
+     "literal": "empat-puluh tahun (gen. jamak)! dan tetangga-tetangga di-sini tenang (jamak)?"
+    },
+    {
+     "speaker": "Галина:",
+     "text": "[Дуже|DU-zhe]. [У|U] [нас|nas] [немає|ne-MA-ye] [ні|ni] [собак|so-BAK], [ні|ni] [вечірок|ve-CHI-rok].",
+     "id": "Tenang sekali. Di sini nggak ada anjing, nggak ada pesta.",
+     "literal": "sangat. pada kami tidak-ada baik anjing (gen. jamak), maupun pesta (gen. jamak)."
+    },
+    {
+     "speaker": "Ані:",
+     "text": "[Не|Ne] [хвилюйтеся|khvy-LYUY-te-sya], [я|ya] [дуже|DU-zhe] [тиха|TY-kha].",
+     "id": "Jangan khawatir, saya orangnya pendiam.",
+     "literal": "jangan khawatir (hormat), saya sangat tenang (pr)."
+    },
+    {
+     "speaker": "Галина:",
+     "text": "[А|A] [ще|shche] [тут|tut] [недалеко|ne-da-LE-ko] [багато|ba-HA-to] [кав'ярень|ka-VYA-ren'] [і|i] [музеїв|mu-ZE-yiv].",
+     "id": "Dan dekat sini banyak kedai kopi dan museum.",
+     "literal": "dan lagi di-sini tidak-jauh banyak kedai-kopi (gen. jamak) dan museum (gen. jamak)."
+    },
+    {
+     "speaker": "Ані:",
+     "text": "[Чудово|Chu-DO-vo]! [Скільки|SKIL'-ky] [коштує|KOSH-tu-ye] [кімната|kim-NA-ta] [на|na] [місяць|MI-syats']?",
+     "id": "Asyik! Berapa harga kamarnya per bulan?",
+     "literal": "bagus-sekali! berapa berharga kamar untuk bulan?"
+    },
+    {
+     "speaker": "Галина:",
+     "text": "[Сім|Sim] [тисяч|TY-syach] [гривень|HRY-ven'], [разом|RA-zom] [з|z] [комунальними|ko-mu-NAL'-ny-my].",
+     "id": "Tujuh ribu hryvnia, sudah termasuk listrik, air, dan gas.",
+     "literal": "tujuh ribu (gen. jamak) hryvnia (gen. jamak), bersama dengan komunal (ins. jamak)."
+    },
+    {
+     "speaker": "Ані:",
+     "text": "[Домовилися|Do-MO-vy-ly-sya], [пані|PA-ni] [Галино|Ha-LY-no]! [Речей|Re-CHEY] [у|u] [мене|ME-ne] [небагато|ne-ba-HA-to].",
+     "id": "Sepakat, Bu Halyna! Barang saya nggak banyak.",
+     "literal": "sudah-bersepakat, nyonya Halyna (panggilan)! barang (gen. jamak) pada saya tidak-banyak."
+    }
+   ],
+   "notes": [
+    "**Скільки тут кімнат?** Sesudah *скільки* (berapa), *багато* (banyak), *мало* (sedikit), dan *небагато* (tidak banyak), kata benda yang bisa dihitung masuk **genitif jamak**. Kata perempuan berakhiran -а cukup membuang -а: *кімната → кімнат*. Ekornya nol, jadi kata itu justru terdengar paling pendek.",
+    "**Чотири кімнати, сім вікон.** Dua, tiga, empat memakai jamak nominatif (*чотири кімнати*), mulai lima memakai genitif jamak (*сім вікон*). Dalam *вікно → вікон* ada bunyi **-о-** yang disisipkan supaya dua konsonan di ujung tidak bertumpuk. Hal yang sama terjadi pada *книжка → книжок*, *сестра → сестер*.",
+    "**Сорок років.** Kata laki-laki umumnya mendapat **-ів** (sesudah vokal **-їв**): *рік → років*, *студент → студентів*, *музей → музеїв*. Ini ekor genitif jamak yang paling sering kamu dengar. Tanda tanyanya bisa langsung dicoba: *Скільки тобі років?* (umurmu berapa?).",
+    "**Немає ні собак, ні вечірок.** *Немає* (tidak ada) selalu diikuti genitif, dan untuk barang yang bisa dihitung biasanya genitif jamak. Pasangan *ні … ні …* berarti \"tidak … maupun …\". Kata *собака* berakhiran -а tetapi berjenis laki-laki: *великий собака*. Genitif jamaknya *собак*.",
+    "**Не хвилюйтеся.** Ani memakai *ви* kepada pemilik apartemen yang jauh lebih tua. Perintah hormat berakhiran **-йте / -іть**: *заходьте, хвилюйтеся, сідайте*. Pani Halyna pun memakai *ви* kepada penyewa barunya; dalam beberapa minggu mungkin saja ia beralih ke *ти*, dan perubahan itu biasanya ditawarkan oleh yang lebih tua.",
+    "**Сім тисяч гривень, речей небагато.** *Гривня* (mata uang Ukraina) menjadi **гривень**, dengan -е- sisipan. *Тисяча* menjadi *тисяч*. Lalu *річ* (barang), kata perempuan berakhiran konsonan, mendapat **-ей**: *речей*. Ekor -ей juga muncul pada *люди → людей* dan *діти → дітей*."
+   ],
+   "grammars": [
+    {
+     "title": "Genitif jamak: tiga ekor utama",
+     "body": [
+      "Hafalkan tiga ekor ini: **-ів/-їв** (kebanyakan kata laki-laki), **nol** (kebanyakan kata perempuan -а dan netral -о), dan **-ей** (beberapa kata berakhiran konsonan lunak dan kata tak beraturan)."
+     ],
+     "table": {
+      "head": [
+       "Kelompok",
+       "Nominatif tunggal",
+       "Genitif jamak",
+       "Ekor"
+      ],
+      "rows": [
+       [
+        "lk, konsonan keras",
+        "*студент, рік*",
+        "*студентів, років*",
+        "-ів"
+       ],
+       [
+        "lk, -й / -ь",
+        "*музей, день*",
+        "*музеїв, днів*",
+        "-їв / -ів"
+       ],
+       [
+        "pr, -а",
+        "*кімната, мавпа*",
+        "*кімнат, мавп*",
+        "nol"
+       ],
+       [
+        "pr, -а, dua konsonan",
+        "*книжка, сестра, вечірка*",
+        "*книжок, сестер, вечірок*",
+        "nol, sisip -о- / -е-"
+       ],
+       [
+        "pr, -я",
+        "*гривня, кав'ярня, пісня*",
+        "*гривень, кав'ярень, пісень*",
+        "nol, sisip -е-"
+       ],
+       [
+        "ntr, -о",
+        "*вікно, місто*",
+        "*вікон, міст*",
+        "nol"
+       ],
+       [
+        "ntr, -ння",
+        "*завдання, питання*",
+        "*завдань, питань*",
+        "-нь"
+       ],
+       [
+        "-ей",
+        "*річ, ніч, люди, діти*",
+        "*речей, ночей, людей, дітей*",
+        "-ей"
+       ]
+      ]
+     },
+     "after": [
+      "Bila ragu, ingat bahwa jamak Ukraina paling sering terdengar dalam genitif: di toko, di pasar, di kelas, hampir setiap kali orang menghitung sesuatu."
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Діалог 2 — Taras datang sepulang sekolah",
+   "intro": "Sore yang sama, pukul setengah tiga. Taras, cucu pani Halyna yang duduk di kelas empat, mampir sepulang sekolah seperti biasa dan kaget melihat ada orang baru. Perhatikan bagaimana Taras dan Ani saling menghitung: *вулканів, мавп, людей, братів, сестер, уроків*.",
+   "lines": [
+    {
+     "speaker": "Тарас:",
+     "text": "[Бабусю|BA-bu-syu], [я|ya] [вдома|VDO-ma]! [Ой|Oy], [а|a] [хто|khto] [це|tse]?",
+     "id": "Nenek, aku pulang! Eh, ini siapa?",
+     "literal": "nenek (panggilan), saya di-rumah! oh, dan siapa ini?"
+    },
+    {
+     "speaker": "Галина:",
+     "text": "[Це|Tse] [Ані|A-ni], [наша|NA-sha] [нова|no-VA] [квартирантка|kvar-ty-RANT-ka]. [Вона|Vo-NA] [з|z] [Індонезії|In-do-NE-zi-yi].",
+     "id": "Ini Ani, penyewa baru kita. Dia dari Indonesia.",
+     "literal": "ini Ani, milik-kami baru penyewa (pr). dia dari Indonesia (gen.)."
+    },
+    {
+     "speaker": "Тарас:",
+     "text": "[Привіт|Pry-VIT]! [А|A] [в|v] [Індонезії|In-do-NE-zi-yi] [є|ye] [тигри|TY-hry]?",
+     "id": "Halo! Di Indonesia ada harimau?",
+     "literal": "hai! dan di Indonesia (lok.) ada harimau-harimau?"
+    },
+    {
+     "speaker": "Ані:",
+     "text": "[Є|Ye], [але|a-LE] [дуже|DU-zhe] [мало|MA-lo]. [Зате|Za-TE] [багато|ba-HA-to] [вулканів|vul-KA-niv] [і|i] [мавп|mavp].",
+     "id": "Ada, tapi sedikit sekali. Tapi gunung berapi dan monyetnya banyak.",
+     "literal": "ada, tapi sangat sedikit. sebaliknya banyak gunung-berapi (gen. jamak) dan monyet (gen. jamak)."
+    },
+    {
+     "speaker": "Тарас:",
+     "text": "[Ого|O-HO]! [А|A] [скільки|SKIL'-ky] [людей|lyu-DEY] [живе|zhy-VE] [в|v] [Джакарті|Dzha-KAR-ti]?",
+     "id": "Wah! Terus berapa orang yang tinggal di Jakarta?",
+     "literal": "wah! dan berapa orang (gen. jamak) tinggal di Jakarta (lok.)?"
+    },
+    {
+     "speaker": "Ані:",
+     "text": "[Більше|BIL'-she] [десяти|de-sya-TY] [мільйонів|mil'-YO-niv].",
+     "id": "Lebih dari sepuluh juta.",
+     "literal": "lebih sepuluh (gen.) juta (gen. jamak)."
+    },
+    {
+     "speaker": "Тарас:",
+     "text": "[Це|Tse] [більше|BIL'-she], [ніж|nizh] [у|u] [Києві|KY-ye-vi]! [А|A] [в|v] [тебе|TE-be] [є|ye] [брати|bra-TY] [чи|chy] [сестри|SES-try]?",
+     "id": "Lebih banyak dari Kyiv! Kamu punya kakak atau adik?",
+     "literal": "ini lebih, daripada di Kyiv (lok.)! dan pada kamu ada saudara-laki-laki atau saudara-perempuan (jamak)?"
+    },
+    {
+     "speaker": "Ані:",
+     "text": "[Одна|Od-NA] [сестра|ses-TRA], [Діна|DI-na]. [Братів|Bra-TIV] [немає|ne-MA-ye].",
+     "id": "Satu adik perempuan, Dina. Saudara laki-laki nggak ada.",
+     "literal": "satu (pr) saudara-perempuan, Dina. saudara-laki-laki (gen. jamak) tidak-ada."
+    },
+    {
+     "speaker": "Тарас:",
+     "text": "[А|A] [в|v] [мене|ME-ne] [немає|ne-MA-ye] [ні|ni] [братів|bra-TIV], [ні|ni] [сестер|ses-TER]. [Але|A-LE] [є|ye] [три|try] [коти|ko-TY]!",
+     "id": "Aku nggak punya kakak ataupun adik. Tapi aku punya tiga kucing!",
+     "literal": "dan pada saya tidak-ada baik saudara-laki-laki (gen. jamak), maupun saudara-perempuan (gen. jamak). tapi ada tiga kucing!"
+    },
+    {
+     "speaker": "Галина:",
+     "text": "[Тарасе|Ta-RA-se], [а|a] [скільки|SKIL'-ky] [в|v] [тебе|TE-be] [уроків|u-RO-kiv] [завтра|ZAV-tra]?",
+     "id": "Taras, besok kamu ada berapa pelajaran?",
+     "literal": "Taras (panggilan), dan berapa pada kamu pelajaran (gen. jamak) besok?"
+    },
+    {
+     "speaker": "Тарас:",
+     "text": "[П'ять|Pyat'] [уроків|u-RO-kiv]. [І|I] [дуже|DU-zhe] [багато|ba-HA-to] [завдань|zav-DAN']!",
+     "id": "Lima pelajaran. Dan PR-nya banyak banget!",
+     "literal": "lima pelajaran (gen. jamak). dan sangat banyak tugas (gen. jamak)!"
+    }
+   ],
+   "notes": [
+    "**Бабусю!** Kata sayang untuk nenek adalah *бабуся*, dan bentuk memanggilnya **бабусю**, sama seperti *Катя → Катю*. Pani Halyna pun memanggil cucunya dengan kličnyj: *Тарас → Тарасе*. Anak-anak di Ukraina hampir tak pernah memanggil nama tanpa bentuk ini.",
+    "**Квартирантка** adalah penyewa perempuan (laki-laki: *квартирант*), dari *квартира* (apartemen). Yang menyewakan disebut *господиня* atau *господар*. Dalam iklan kamu juga akan membaca *орендувати* (menyewa) dan *оренда* (sewa).",
+    "**Багато вулканів і мавп.** Satu kata *багато* memerintah dua kata benda sekaligus, dan masing-masing mengikuti aturannya sendiri: *вулкан* (lk) → **вулканів**, *мавпа* (pr) → **мавп**. *Зате* berarti \"tapi sebagai gantinya\": ia menyodorkan sisi baik sesudah sisi yang kurang.",
+    "**Скільки людей живе?** Jamak *люди* mendapat genitif **людей**. Perhatikan kata kerjanya: sesudah *скільки, багато*, atau angka lima ke atas, kata kerja biasanya berbentuk tunggal (*живе*, lampau *жило*), karena yang menjadi subjek adalah \"jumlah\" itu sendiri.",
+    "**Більше десяти мільйонів.** *Більше* (lebih banyak) di sini diikuti genitif: *більше десяти мільйонів* = lebih dari sepuluh juta. Taras kemudian membandingkan dengan *більше, ніж у Києві*. Perbandingan akan dibahas tuntas di Unit 10; untuk sekarang cukup kenali *ніж* = daripada.",
+    "**Ні братів, ні сестер.** *Брат → братів* (tekanan di ujung: *bra-TIV*), *сестра → сестер* dengan -е- sisipan. Di baris yang sama Taras berkata *три коти*: sesudah tiga, bentuknya jamak nominatif, bukan genitif. Dalam bahasa Indonesia *kakak* dan *adik* dibedakan menurut umur, bahasa Ukraina menurut jenis kelamin: *брат, сестра*; umur ditambahkan bila perlu: *старший брат, молодша сестра*."
+   ],
+   "grammars": [
+    {
+     "title": "Angka dan kata benda",
+     "body": [
+      "Angka menentukan bentuk kata benda sesudahnya. Yang menentukan adalah angka terakhir: *двадцять один* ikut *один*, *двадцять два* ikut *два*."
+     ],
+     "table": {
+      "head": [
+       "Angka / kata",
+       "Bentuk",
+       "Contoh"
+      ],
+      "rows": [
+       [
+        "1, 21, 31 …",
+        "nominatif tunggal",
+        "*один урок, одна сестра, двадцять одна гривня*"
+       ],
+       [
+        "2, 3, 4 (22, 33 …)",
+        "nominatif jamak",
+        "*два уроки, три коти, чотири кімнати*"
+       ],
+       [
+        "5–20, 25–30 …",
+        "genitif jamak",
+        "*п'ять уроків, сім вікон, одинадцять гривень*"
+       ],
+       [
+        "*багато, мало, небагато*",
+        "genitif jamak",
+        "*багато книжок, мало людей*"
+       ],
+       [
+        "*скільки, кілька*",
+        "genitif jamak",
+        "*Скільки кімнат? кілька днів*"
+       ],
+       [
+        "*немає*",
+        "genitif",
+        "*немає братів, немає сестер*"
+       ],
+       [
+        "*тисяча, мільйон*",
+        "genitif jamak",
+        "*сім тисяч гривень, десять мільйонів людей*"
+       ]
+      ]
+     },
+     "after": [
+      "Benda yang tak bisa dihitung tetap tunggal walau sesudah *багато*: *багато води* (banyak air), *мало часу* (sedikit waktu)."
+     ]
+    }
+   ]
+  }
+ ],
+ "sections": [
+  {
+   "title": "Podil, kota bawah Kyiv",
+   "blocks": [
+    {
+     "type": "p",
+     "text": "*Поділ* berarti \"tanah bawah\": kawasan datar di tepi Sungai Dnipro, di kaki bukit tempat berdirinya kota atas. Sejak berabad-abad lalu Podil adalah kota para pedagang dan tukang, dengan pelabuhan sungai dan pasar besar. Kini jalan-jalannya penuh kedai kopi, galeri kecil, dan bangunan abad ke-19 yang berwarna-warni, dan banyak mahasiswa tinggal di sini karena ada universitas tertua di Kyiv."
+    },
+    {
+     "type": "tabel",
+     "head": [
+      "Tempat",
+      "Keterangan"
+     ],
+     "rows": [
+      [
+       "*Контрактова площа*",
+       "alun-alun utama Podil, dulu tempat pekan raya dagang tahunan"
+      ],
+      [
+       "*Києво-Могилянська академія*",
+       "universitas tertua di Kyiv, berdiri tahun 1615"
+      ],
+      [
+       "*Поштова площа*",
+       "alun-alun di tepi sungai, dekat dermaga kapal"
+      ],
+      [
+       "*фунікулер*",
+       "kereta kabel dari Podil ke kota atas, beroperasi sejak 1905"
+      ],
+      [
+       "*Андріївський узвіз*",
+       "jalan menanjak berbatu yang menghubungkan Podil dengan kota atas"
+      ],
+      [
+       "*набережна*",
+       "jalan di tepi Dnipro untuk berjalan-jalan"
+      ],
+      [
+       "*Житній ринок*",
+       "pasar besar Podil: sayur, daging, keju, madu"
+      ]
+     ]
+    },
+    {
+     "type": "kotak",
+     "title": "Kata-kata menyewa kamar",
+     "items": [
+      "*орендувати кімнату / квартиру* menyewa kamar / apartemen",
+      "*господиня, господар* pemilik yang menyewakan",
+      "*квартирант, квартирантка* penyewa",
+      "*комунальні (послуги)* listrik, air, gas, pemanas; sehari-hari disebut *комуналка*",
+      "*застава* uang jaminan; *договір оренди* perjanjian sewa",
+      "*Скільки коштує кімната на місяць?* Berapa harga kamar per bulan?"
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Menghitung sehari-hari",
+   "blocks": [
+    {
+     "type": "p",
+     "text": "Genitif jamak bukan bentuk yang langka. Setiap kali kamu membayar, menanyakan waktu, atau menyebut umur, ia muncul. Latih ungkapan di bawah ini sampai keluar tanpa berpikir; begitu telingamu terbiasa, ekor *-ів* dan ekor nol akan terasa wajar."
+    },
+    {
+     "type": "tabel",
+     "head": [
+      "Ukraina",
+      "Indonesia"
+     ],
+     "rows": [
+      [
+       "*п'ять хвилин*",
+       "lima menit"
+      ],
+      [
+       "*десять гривень*",
+       "sepuluh hryvnia"
+      ],
+      [
+       "*двадцять років*",
+       "dua puluh tahun"
+      ],
+      [
+       "*кілька днів*",
+       "beberapa hari"
+      ],
+      [
+       "*багато друзів*",
+       "banyak teman"
+      ],
+      [
+       "*мало людей*",
+       "sedikit orang"
+      ],
+      [
+       "*Скільки тобі років?*",
+       "Umurmu berapa?"
+      ],
+      [
+       "*У мене немає грошей.*",
+       "Aku nggak punya uang."
+      ],
+      [
+       "*Скільки у вас дітей?*",
+       "Anda punya berapa anak?"
+      ]
+     ]
+    },
+    {
+     "type": "list",
+     "items": [
+      "Satuan waktu: *година → годин*, *хвилина → хвилин*, *тиждень → тижнів*, *місяць → місяців*: *дві години, але п'ять годин*.",
+      "*Гроші* hanya jamak, genitifnya *грошей*: *немає грошей, багато грошей*.",
+      "Tanya umur selalu dengan dativ dan *років*: *Скільки вам років?* Jawabannya ikut aturan angka: *Мені двадцять два роки*, tetapi *Мені двадцять п'ять років*."
+     ]
+    }
+   ]
+  }
+ ],
+ "vocab": [
+  {
+   "uk": "кварти́ра",
+   "baca": "kvar-TY-ra",
+   "id": "apartemen, flat"
+  },
+  {
+   "uk": "кімна́та (gen. pl. кімна́т)",
+   "baca": "kim-NA-ta",
+   "id": "kamar, ruangan"
+  },
+  {
+   "uk": "вікно́ (gen. pl. ві́кон)",
+   "baca": "vik-NO",
+   "id": "jendela"
+  },
+  {
+   "uk": "ку́хня",
+   "baca": "KUKH-nya",
+   "id": "dapur"
+  },
+  {
+   "uk": "ва́нна",
+   "baca": "VAN-na",
+   "id": "bak mandi; kamar mandi (*ванна кімната*)"
+  },
+  {
+   "uk": "сусі́д / сусі́дка",
+   "baca": "su-SID / su-SID-ka",
+   "id": "tetangga (lk / pr)"
+  },
+  {
+   "uk": "по́верх",
+   "baca": "PO-verkh",
+   "id": "lantai, tingkat (*на третьому поверсі*)"
+  },
+  {
+   "uk": "квартира́нт / квартира́нтка",
+   "baca": "kvar-ty-RANT / kvar-ty-RANT-ka",
+   "id": "penyewa (lk / pr)"
+  },
+  {
+   "uk": "господи́ня",
+   "baca": "hos-po-DY-nya",
+   "id": "pemilik rumah (pr); nyonya rumah"
+  },
+  {
+   "uk": "орендува́ти",
+   "baca": "o-ren-du-VA-ty",
+   "id": "menyewa"
+  },
+  {
+   "uk": "бага́то",
+   "baca": "ba-HA-to",
+   "id": "banyak (dengan gen.)"
+  },
+  {
+   "uk": "ма́ло / небага́то",
+   "baca": "MA-lo / ne-ba-HA-to",
+   "id": "sedikit / tidak banyak (dengan gen.)"
+  },
+  {
+   "uk": "скі́льки",
+   "baca": "SKIL'-ky",
+   "id": "berapa (dengan gen.)"
+  },
+  {
+   "uk": "кі́лька",
+   "baca": "KIL'-ka",
+   "id": "beberapa (dengan gen. jamak)"
+  },
+  {
+   "uk": "нема́є",
+   "baca": "ne-MA-ye",
+   "id": "tidak ada (dengan gen.)"
+  },
+  {
+   "uk": "ти́сяча",
+   "baca": "TY-sya-cha",
+   "id": "ribu"
+  },
+  {
+   "uk": "гри́вня (gen. pl. гри́вень)",
+   "baca": "HRYV-nya",
+   "id": "hryvnia, mata uang Ukraina"
+  },
+  {
+   "uk": "лі́ки",
+   "baca": "LI-ky",
+   "id": "obat (hanya jamak)"
+  },
+  {
+   "uk": "апте́ка",
+   "baca": "ap-TE-ka",
+   "id": "apotek"
+  },
+  {
+   "uk": "росли́на",
+   "baca": "ros-LY-na",
+   "id": "tanaman"
+  },
+  {
+   "uk": "річ (gen. pl. рече́й)",
+   "baca": "rich",
+   "id": "barang, benda"
+  },
+  {
+   "uk": "вулка́н",
+   "baca": "vul-KAN",
+   "id": "gunung berapi"
+  },
+  {
+   "uk": "ма́впа",
+   "baca": "MAV-pa",
+   "id": "monyet"
+  },
+  {
+   "uk": "уро́к",
+   "baca": "u-ROK",
+   "id": "pelajaran, jam pelajaran"
+  },
+  {
+   "uk": "завда́ння",
+   "baca": "zav-DAN-nya",
+   "id": "tugas; *домашнє завдання* = PR"
+  }
+ ],
+ "exercises": [
+  {
+   "prompt": "Terjemahkan ke bahasa Ukraina.",
+   "items": [
+    "Ada berapa kamar di sini?",
+    "Di apartemen ada tujuh jendela.",
+    "Saya tidak punya saudara laki-laki.",
+    "Di dekat sini banyak kedai kopi.",
+    "Kamarnya seharga tujuh ribu hryvnia.",
+    "Besok Taras ada lima pelajaran."
+   ]
+  },
+  {
+   "prompt": "Isi titik-titik dengan genitif jamak kata dalam kurung.",
+   "items": [
+    "У Києві багато ____. (музей)",
+    "На столі п'ять ____. (книжка)",
+    "У мене немає ____. (сестра)",
+    "Скільки ____ у класі? (студент)",
+    "Тарас має багато ____. (завдання)",
+    "Кімната коштує сім тисяч ____. (гривня)",
+    "На Подолі багато ____. (кав'ярня)"
+   ]
+  },
+  {
+   "prompt": "Jawab pertanyaan dengan angka dalam kurung. Perhatikan bentuk kata bendanya.",
+   "items": [
+    "Скільки в квартирі кімнат? (4)",
+    "Скільки в квартирі вікон? (7)",
+    "Скільки в Тараса котів? (3)",
+    "Скільки в Тараса завтра уроків? (5)",
+    "Скільки років пані Галина працювала в аптеці? (40)",
+    "Скільки в Ані сестер? (1)"
+   ]
+  },
+  {
+   "prompt": "Susun jadi kalimat yang benar.",
+   "items": [
+    "кімнат / тут / скільки",
+    "немає / у / братів / мене",
+    "вікон / квартирі / у / сім",
+    "небагато / у / речей / мене",
+    "уроків / п'ять / завтра / Тараса / в"
+   ]
+  }
+ ],
+ "answers": [
+  "Скільки тут кімнат? — У квартирі сім вікон. — У мене немає братів. — Тут недалеко багато кав'ярень. — Кімната коштує сім тисяч гривень. — Завтра в Тараса п'ять уроків.",
+  "музеїв — книжок — сестер — студентів — завдань — гривень — кав'ярень",
+  "У квартирі чотири кімнати. — У квартирі сім вікон. — У Тараса три коти. — Завтра в Тараса п'ять уроків. — Вона працювала в аптеці сорок років. — У Ані одна сестра.",
+  "Скільки тут кімнат? — У мене немає братів. — У квартирі сім вікон. — Речей у мене небагато. — Завтра в Тараса п'ять уроків."
+ ]
+}

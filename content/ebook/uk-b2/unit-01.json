@@ -1,0 +1,640 @@
+{
+ "title": "Hari pertama di yayasan — sapaan resmi dan etiket kantor",
+ "title_target": "Перший день у фонді",
+ "goal": "Menyapa atasan dan rekan kerja dengan register yang tepat: nama dan patronim dalam bentuk kličnyj (*Олено Василівно*, *пане Ігорю*), memilih *ти* atau *ви*, dan membuka surat resmi dengan *Шановний пане* / *Шановна пані*.",
+ "bekal": [
+  "kamu bisa menyapa direktur dengan nama dan patronim dalam bentuk kličnyj tanpa salah ekor",
+  "kamu bisa menilai kapan tetap memakai *ви* dan kapan boleh meminta *Можна на «ти»?*",
+  "kamu bisa membentuk patronim dari nama ayah dan menyapa orang dengan *пане / пані* secara benar"
+ ],
+ "dialogs": [
+  {
+   "title": "Діалог 1 — Menghadap direktur",
+   "intro": "4 Februari 2029, kantor Фонд «Міст культур» di sebuah gedung tua dekat Золоті ворота, Kyiv. Hari pertama Ani sebagai koordinator program «Київ — Джакарта: мости культури». Perhatikan bagaimana Ani menyapa direkturnya dengan nama dan patronim yang keduanya berubah bentuk, dan aturan kantor tentang *ти* dan *ви*.",
+   "lines": [
+    {
+     "speaker": "Олена Василівна:",
+     "text": "Доброго ранку, Ані! Раді вітати вас у фонді «Міст культур».",
+     "id": "Selamat pagi, Ani! Kami senang menyambut Anda di Yayasan «Jembatan Budaya».",
+     "literal": "selamat (gen.) pagi (gen.), Ani! senang (jmk.) menyambut Anda (ak.) di yayasan (lok.) «jembatan budaya (gen. jmk.)»."
+    },
+    {
+     "speaker": "Ані:",
+     "text": "Доброго ранку, Олено Василівно! Дякую, я дуже чекала на цей день.",
+     "id": "Selamat pagi, Bu Olena! Terima kasih, saya sudah lama menantikan hari ini.",
+     "literal": "selamat (gen.) pagi (gen.), Olena Vasylivna (vok.)! terima-kasih, saya sangat menunggu‹proses› pada ini hari."
+    },
+    {
+     "speaker": "Олена Василівна:",
+     "text": "Сідайте, будь ласка. Кави чи чаю?",
+     "id": "Silakan duduk. Mau kopi atau teh?",
+     "literal": "duduklah-Anda, silakan. kopi (gen.) atau teh (gen.)?"
+    },
+    {
+     "speaker": "Ані:",
+     "text": "Чаю, якщо можна. Каву я сьогодні вже пила, а хвилююся й без неї.",
+     "id": "Teh saja, kalau boleh. Kopi sudah saya minum tadi, dan tanpa kopi pun saya sudah deg-degan.",
+     "literal": "teh (gen.), jika boleh. kopi (ak.) saya hari-ini sudah minum, dan gugup-(diri) juga tanpa dia (gen.)."
+    },
+    {
+     "speaker": "Олена Василівна:",
+     "text": "Не хвилюйтеся. Спершу кілька слів про наші правила, добре?",
+     "id": "Tenang saja. Pertama, beberapa kata tentang aturan kita, ya?",
+     "literal": "jangan gugup-Anda. pertama-tama beberapa kata (gen. jmk.) tentang kami-punya aturan (ak. jmk.), baik?"
+    },
+    {
+     "speaker": "Ані:",
+     "text": "Звісно. Як мені звертатися до колег?",
+     "id": "Tentu. Bagaimana sebaiknya saya menyapa rekan-rekan?",
+     "literal": "tentu. bagaimana saya (dat.) menyapa ke rekan (gen. jmk.)?"
+    },
+    {
+     "speaker": "Олена Василівна:",
+     "text": "У нас прийнято так: до керівництва звертаються на ім'я та по батькові, а між собою колеги здебільшого на «ти».",
+     "id": "Kebiasaan kami begini: pimpinan disapa dengan nama dan patronim, sedangkan sesama rekan kebanyakan ber-aku-kamu.",
+     "literal": "di kami lazim begini: ke pimpinan (gen.) menyapa-(mereka) dengan nama dan menurut ayah (lok.), sedangkan antara diri (ins.) rekan-rekan kebanyakan pada «ti»."
+    },
+    {
+     "speaker": "Ані:",
+     "text": "А до пана Ігоря? Мені розповідали, що він людина сувора.",
+     "id": "Kalau ke Pak Ihor? Kata orang, beliau orangnya galak.",
+     "literal": "dan ke tuan (gen.) Ihor (gen.)? saya (dat.) bercerita-(mereka), bahwa dia orang galak."
+    },
+    {
+     "speaker": "Олена Василівна:",
+     "text": "Ігор не суворий, а точний. З ним краще на «ви», поки він сам не запропонує перейти на «ти».",
+     "id": "Ihor bukan galak, tapi cermat. Dengannya lebih baik pakai «Anda», sampai ia sendiri menawarkan beralih ke «kamu».",
+     "literal": "Ihor bukan galak, melainkan cermat. dengan dia (ins.) lebih-baik pada «vy», selama dia sendiri tidak menawarkan‹selesai› beralih pada «ti»."
+    },
+    {
+     "speaker": "Ані:",
+     "text": "Зрозуміло. А як починати листи? «Шановна Олено Василівно» чи просто «Добрий день»?",
+     "id": "Mengerti. Lalu surat dibuka bagaimana? «Yth. Ibu Olena Vasylivna» atau cukup «Selamat siang»?",
+     "literal": "dimengerti. dan bagaimana memulai surat-surat? «terhormat Olena Vasylivna (vok.)» atau sekadar «baik hari»?"
+    },
+    {
+     "speaker": "Олена Василівна:",
+     "text": "Партнерам пишемо «Шановний пане» чи «Шановна пані» з ім'ям. Усередині фонду досить «Добрий день».",
+     "id": "Kepada mitra kami menulis «Yth. Bapak» atau «Yth. Ibu» ditambah nama. Di dalam yayasan cukup «Selamat siang».",
+     "literal": "mitra (dat. jmk.) menulis-kami «terhormat tuan (vok.)» atau «terhormat nyonya» dengan nama (ins.). di-dalam yayasan (gen.) cukup «baik hari»."
+    },
+    {
+     "speaker": "Ані:",
+     "text": "А робочий день у вас починається о дев'ятій?",
+     "id": "Jam kerja di sini mulai pukul sembilan?",
+     "literal": "dan kerja hari di Anda (gen.) mulai-(diri) pada kesembilan (lok.)?"
+    },
+    {
+     "speaker": "Олена Василівна:",
+     "text": "О пів на десяту. А щопонеділка о десятій нарада, і на неї краще не запізнюватися.",
+     "id": "Pukul setengah sepuluh. Tiap Senin pukul sepuluh ada rapat, dan untuk rapat itu sebaiknya jangan terlambat.",
+     "literal": "pada setengah ke kesepuluh. dan tiap-Senin pada kesepuluh rapat, dan pada dia (ak.) lebih-baik tidak terlambat‹proses›."
+    },
+    {
+     "speaker": "Ані:",
+     "text": "Не запізнюся, обіцяю. Дякую вам за довіру, Олено Василівно.",
+     "id": "Saya tidak akan terlambat, janji. Terima kasih atas kepercayaan Ibu, Bu Olena.",
+     "literal": "tidak terlambat‹selesai›-saya, janji-saya. terima-kasih Anda (dat.) atas kepercayaan (ak.), Olena Vasylivna (vok.)."
+    }
+   ],
+   "notes": [
+    "**Олено Василівно.** Di kantor Ukraina, atasan yang lebih tua disapa dengan nama diri plus patronim (*ім'я по батькові*, \"nama menurut ayah\"). Saat menyapa, **keduanya** masuk bentuk kličnyj: *Олена → Олено*, *Василівна → Василівно*. Bahasa Rusia sehari-hari memakai bentuk dasar (*Елена Васильевна!*), jadi penutur yang belajar lewat bahasa Rusia sering lupa. Padanan rasa Indonesianya kira-kira \"Bu Olena\" yang santun.",
+    "**Раді вітати вас.** *Радий / рада / раді* adalah kata sifat pendek yang hanya dipakai sebagai predikat: *Я рада*, *Ми раді*. Olena Vasylivna berbicara atas nama lembaga, maka bentuknya jamak *раді* walau ia sendirian. Ini \"kami\" institusi, seperti \"kami dari pihak yayasan\".",
+    "**Кави чи чаю?** Tawaran minum memakai genitif: \"(sedikit) kopi atau teh?\". Genitif di sini bermakna \"sebagian dari\", sama dengan *Налити води?* (Mau dituangkan air?). Jawaban Ani ikut genitif: *Чаю, якщо можна.* Menjawab *Чай* tidak salah fatal, tapi terdengar seperti pelajar.",
+    "**Звертатися до кого? на «ви», на «ти».** *Звертатися до + genitif* = menyapa atau menghubungi seseorang. Sapaannya ditulis dengan *на*: *бути на «ти»* (sudah ber-aku-kamu), *перейти на «ти»* (beralih ke aku-kamu). Beda dengan \"Anda/kamu\" di Indonesia, di sini pilihan *ви* juga mengubah bentuk kata kerja dan perintah: *сідай* lawan *сідайте*.",
+    "**Не суворий, а точний.** Pola *не X, а Y* (bukan X, melainkan Y) sangat sering dipakai untuk meluruskan penilaian dengan halus. Perhatikan juga *поки він сам не запропонує*: sesudah *поки* bermakna \"sampai\", bahasa Ukraina memasang *не* yang dalam bahasa Indonesia tidak diterjemahkan. Hafalkan sebagai paket: *поки не* + perfektif = sampai.",
+    "**Шановний пане / Шановна пані.** Surat resmi dibuka dengan *Шановний* (terhormat) + *пане* atau *пані* + nama dalam kličnyj: *Шановний пане Ігорю!*, *Шановна пані Олено!*. Ingat bahwa *пан* juga berubah: *пане*, sedangkan *пані* tidak berubah. Menulis *Шановний пан Ігор* adalah kesalahan yang langsung terlihat."
+   ],
+   "grammars": [
+    {
+     "title": "Kličnyj untuk nama, patronim, dan gelar",
+     "body": [
+      "Saat menyapa langsung, nama, patronim, *пан*, dan sebutan jabatan semuanya masuk bentuk kličnyj. Patronim perempuan *-івна* menjadi *-івно*, patronim laki-laki *-ович* menjadi *-овичу*."
+     ],
+     "table": {
+      "head": [
+       "Bentuk dasar",
+       "Kličnyj",
+       "Aturan"
+      ],
+      "rows": [
+       [
+        "Олена Василівна",
+        "Олено Василівно",
+        "-а → -о, -івна → -івно"
+       ],
+       [
+        "Богдан Петрович",
+        "Богдане Петровичу",
+        "konsonan keras → -е, -ович → -овичу"
+       ],
+       [
+        "Ігор",
+        "Ігорю",
+        "-р lunak → -ю"
+       ],
+       [
+        "Роман",
+        "Романе",
+        "konsonan keras → -е"
+       ],
+       [
+        "Андрій",
+        "Андрію",
+        "-й → -ю"
+       ],
+       [
+        "Наталія",
+        "Наталіє",
+        "-ія → -іє"
+       ],
+       [
+        "пан директор",
+        "пане директоре",
+        "keduanya berubah"
+       ],
+       [
+        "пані професорка",
+        "пані професорко",
+        "пані tetap, -ка → -ко"
+       ]
+      ]
+     },
+     "after": [
+      "Nama asing berakhiran vokal selain -а, seperti *Ані*, tidak berubah: *Дякую, Ані!*"
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Діалог 2 — Rekan dari Kharkiv",
+   "intro": "Siang harinya di dapur kecil kantor. Roman, penerjemah yayasan yang berasal dari Харків, mengajak Ani berkeliling. Perhatikan bagaimana ia langsung menawarkan *ти*, dan bagaimana ia menirukan sapaan resmi *пане Ігорю*.",
+   "lines": [
+    {
+     "speaker": "Роман:",
+     "text": "Привіт! Ти Ані, так? Я Роман, перекладач. Можна на «ти»?",
+     "id": "Halo! Kamu Ani, kan? Aku Roman, penerjemah. Boleh ber-aku-kamu?",
+     "literal": "halo! kamu Ani, ya? saya Roman, penerjemah. boleh pada «ti»?"
+    },
+    {
+     "speaker": "Ані:",
+     "text": "Привіт, Романе! Звісно можна, я тільки за.",
+     "id": "Halo, Roman! Tentu boleh, aku malah senang.",
+     "literal": "halo, Roman (vok.)! tentu boleh, saya hanya untuk."
+    },
+    {
+     "speaker": "Роман:",
+     "text": "Чудово. Тоді покажу тобі, що де. Ось кухня, а кава тут, чесно кажучи, так собі.",
+     "id": "Bagus. Kalau begitu kutunjukkan apa ada di mana. Ini dapurnya, dan kopinya, terus terang, biasa saja.",
+     "literal": "bagus. lalu tunjukkan‹selesai›-saya kamu (dat.), apa di-mana. ini dapur, dan kopi di-sini, jujur berkata, begitu (untuk) diri."
+    },
+    {
+     "speaker": "Ані:",
+     "text": "Нічого, я носитиму свою. Я майже рік працювала з кавою у Львові.",
+     "id": "Nggak apa-apa, aku bawa sendiri. Hampir setahun aku kerja dengan kopi di Lviv.",
+     "literal": "tidak-apa, saya akan-membawa (bolak-balik) milik-sendiri. saya hampir setahun bekerja dengan kopi (ins.) di Lviv (lok.)."
+    },
+    {
+     "speaker": "Роман:",
+     "text": "То ти та сама Ані з «Яви»? Олена Василівна про тебе розповідала.",
+     "id": "Jadi kamu Ani yang dari «Java» itu? Bu Olena pernah cerita tentang kamu.",
+     "literal": "jadi kamu itu sama Ani dari «Java» (gen.)? Olena Vasylivna tentang kamu (ak.) bercerita."
+    },
+    {
+     "speaker": "Ані:",
+     "text": "Та сама. А скажи, як тут звертаються до Ігоря? «Пане Ігорю»?",
+     "id": "Ya, yang itu. Eh, di sini Ihor disapa bagaimana? «Pak Ihor»?",
+     "literal": "itu sama. dan katakan, bagaimana di-sini menyapa-(mereka) ke Ihor (gen.)? «tuan (vok.) Ihor (vok.)»?"
+    },
+    {
+     "speaker": "Роман:",
+     "text": "Так, «пане Ігорю» і на «ви». Мене він два роки називав «пане Романе».",
+     "id": "Ya, «Pak Ihor» dan pakai «Anda». Aku saja dua tahun dipanggilnya «Pak Roman».",
+     "literal": "ya, «tuan (vok.) Ihor (vok.)» dan pada «vy». saya (ak.) dia dua tahun memanggil «tuan (vok.) Roman (vok.)»."
+    },
+    {
+     "speaker": "Ані:",
+     "text": "Два роки? А що було потім?",
+     "id": "Dua tahun? Lalu apa yang terjadi?",
+     "literal": "dua tahun? dan apa terjadi kemudian?"
+    },
+    {
+     "speaker": "Роман:",
+     "text": "Потім ми разом переклали договір на сорок сторінок, і він сказав: «Романе, давай на „ти“».",
+     "id": "Lalu kami berdua menerjemahkan kontrak empat puluh halaman, dan dia bilang: «Roman, kita ber-aku-kamu saja».",
+     "literal": "kemudian kami bersama menerjemahkan‹selesai› kontrak atas empat-puluh halaman (gen. jmk.), dan dia berkata: «Roman (vok.), ayo pada „ti“»."
+    },
+    {
+     "speaker": "Ані:",
+     "text": "Отже, мені потрібен довгий договір.",
+     "id": "Jadi, aku butuh kontrak yang panjang.",
+     "literal": "jadi, saya (dat.) diperlukan panjang kontrak."
+    },
+    {
+     "speaker": "Роман:",
+     "text": "Не хвилюйся, договорів тут вистачить на всіх.",
+     "id": "Tenang, kontrak di sini cukup untuk semua orang.",
+     "literal": "jangan khawatir-kamu, kontrak (gen. jmk.) di-sini akan-cukup untuk semua (ak.)."
+    }
+   ],
+   "notes": [
+    "**Можна на «ти»?** Kalimat paling ringkas untuk menawarkan aku-kamu. Menurut etiket, yang **lebih tua atau lebih tinggi jabatannya** yang menawarkan; di antara rekan sebaya siapa saja boleh. Jawaban wajar: *Звісно!*, *З радістю!*, atau santai seperti Ani: *Я тільки за* (aku setuju banget).",
+    "**Романе, Ігорю.** Dua pola kličnyj untuk nama laki-laki: konsonan keras mendapat **-е** (*Роман → Романе*, *Богдан → Богдане*), konsonan lunak dan *-й* mendapat **-ю** (*Ігор → Ігорю*, *Андрій → Андрію*). *Ігор* termasuk lunak walau tak terlihat, karena genitifnya *Ігоря*.",
+    "**Так собі.** \"Begitu-begitu saja, biasa saja.\" Ungkapan lisan yang sangat umum untuk menilai sesuatu yang tidak bagus tapi juga tidak buruk: *Як фільм? Так собі.* Di depan atasan lebih aman memakai *непогано*.",
+    "**Я носитиму свою.** *Носити* (membawa bolak-balik, berulang) dipilih karena Ani akan membawa kopinya setiap hari; *принесу* hanya sekali. Ini sisa pelajaran kata kerja gerak di B1: arah tunggal *нести*, berulang *носити*.",
+    "**Та сама.** *Той самий / та сама / те саме* = \"yang itu juga, yang sama\". Jangan pakai *та ж сама* ala Rusia (*та же самая*); bentuk Ukraina cukup *та сама*. Roman memakai *То ти…?* di awal: *то* lisan berarti \"jadi, kalau begitu\".",
+    "**Давай на „ти“.** Formula santai untuk beralih ke aku-kamu; versi resmi dan jamak *Давайте перейдемо на «ти»* atau *Переходьмо на «ти»*. Perhatikan tanda kutip bersarang: di dalam «…» bahasa Ukraina memakai „…“."
+   ],
+   "grammars": [
+    {
+     "title": "Ти atau ви: peta sapaan di kantor Ukraina",
+     "body": [
+      "Pilihan *ти* dan *ви* ditentukan oleh jarak, bukan hanya usia. Di kantor muda seperti yayasan Ani, sesama rekan cepat ber-*ти*, tetapi pimpinan, mitra luar, dan orang yang memilih jarak tetap di-*ви*."
+     ],
+     "table": {
+      "head": [
+       "Kepada siapa",
+       "Bentuk",
+       "Contoh"
+      ],
+      "rows": [
+       [
+        "direktur, pimpinan senior",
+        "ви + nama + patronim",
+        "Олено Василівно, ви вже бачили звіт?"
+       ],
+       [
+        "rekan yang menjaga jarak",
+        "ви + пане/пані + nama",
+        "Пане Ігорю, можна вас на хвилинку?"
+       ],
+       [
+        "rekan sebaya",
+        "ти + nama",
+        "Романе, ти обідав?"
+       ],
+       [
+        "mitra dalam surat",
+        "Шановний пане / Шановна пані + nama",
+        "Шановна пані Ірино!"
+       ],
+       [
+        "seluruh ruangan",
+        "Шановні колеги",
+        "Шановні колеги, починаймо."
+       ],
+       [
+        "orang asing di jalan",
+        "ви + пане/пані",
+        "Пані, перепрошую, де тут метро?"
+       ],
+       [
+        "anak, kerabat muda",
+        "ти + nama kecil",
+        "Тарасику, ходи сюди!"
+       ]
+      ]
+     },
+     "after": [
+      "Beralih kembali dari *ти* ke *ви* terasa seperti teguran keras. Karena itu orang Ukraina tidak terburu-buru menawarkan *ти* kepada atasan."
+     ]
+    }
+   ]
+  }
+ ],
+ "sections": [
+  {
+   "title": "Ім'я по батькові: membentuk patronim",
+   "blocks": [
+    {
+     "type": "p",
+     "text": "Patronim dibentuk dari nama ayah. Anak laki-laki mendapat **-ович / -йович**, anak perempuan **-івна / -ївна**. Olena Vasylivna berarti Olena, putri Vasyl. Dalam dokumen resmi urutannya: nama keluarga, nama diri, patronim (*Мельник Олена Василівна*); dalam sapaan cukup nama diri dan patronim."
+    },
+    {
+     "type": "tabel",
+     "head": [
+      "Nama ayah",
+      "Putra",
+      "Putri"
+     ],
+     "rows": [
+      [
+       "Василь",
+       "Васильович",
+       "Василівна"
+      ],
+      [
+       "Петро",
+       "Петрович",
+       "Петрівна"
+      ],
+      [
+       "Іван",
+       "Іванович",
+       "Іванівна"
+      ],
+      [
+       "Микола",
+       "Миколайович",
+       "Миколаївна"
+      ],
+      [
+       "Андрій",
+       "Андрійович",
+       "Андріївна"
+      ],
+      [
+       "Сергій",
+       "Сергійович",
+       "Сергіївна"
+      ],
+      [
+       "Ігор",
+       "Ігорович",
+       "Ігорівна"
+      ],
+      [
+       "Богдан",
+       "Богданович",
+       "Богданівна"
+      ],
+      [
+       "Олександр",
+       "Олександрович",
+       "Олександрівна"
+      ],
+      [
+       "Григорій",
+       "Григорович",
+       "Григорівна"
+      ]
+     ]
+    },
+    {
+     "type": "kotak",
+     "title": "Yang sering terlupa",
+     "items": [
+      "Kličnyj patronim: *-ович → -овичу* (*Петре Івановичу*), *-івна → -івно* (*Галино Петрівно*).",
+      "Orang asing tanpa patronim, seperti Ani, disapa *пані Ані* atau cukup *Ані*. Tidak perlu mengarang patronim.",
+      "Dalam tulisan resmi singkat, inisial ditulis sesudah nama keluarga: *О. В. Мельник* atau *Мельник О. В.*"
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Etiket kantor dalam sepuluh ungkapan",
+   "blocks": [
+    {
+     "type": "p",
+     "text": "Kantor Ukraina cenderung santai dalam gaya berpakaian, tetapi rapi dalam salam. Datang dan pergi selalu disertai salam, makan disertai *Смачного!*, dan ulang tahun rekan hampir pasti dirayakan dengan kue di dapur."
+    },
+    {
+     "type": "tabel",
+     "head": [
+      "Situasi",
+      "Ungkapan",
+      "Arti"
+     ],
+     "rows": [
+      [
+       "datang pagi",
+       "Доброго ранку! / Добрий день!",
+       "Selamat pagi! / Selamat siang!"
+      ],
+      [
+       "pulang",
+       "До побачення, гарного вечора!",
+       "Sampai jumpa, selamat sore!"
+      ],
+      [
+       "masuk ruangan orang",
+       "Можна? / Дозвольте?",
+       "Boleh (masuk)?"
+      ],
+      [
+       "memulai rapat",
+       "Шановні колеги, починаймо.",
+       "Rekan-rekan, mari kita mulai."
+      ],
+      [
+       "terlambat",
+       "Перепрошую за запізнення.",
+       "Mohon maaf atas keterlambatan."
+      ],
+      [
+       "makan bersama",
+       "Смачного!",
+       "Selamat makan!"
+      ],
+      [
+       "ulang tahun rekan",
+       "Вітаємо з днем народження!",
+       "Selamat ulang tahun!"
+      ],
+      [
+       "menolak halus",
+       "На жаль, сьогодні не вийде.",
+       "Sayang sekali, hari ini tidak bisa."
+      ],
+      [
+       "berterima kasih resmi",
+       "Щиро дякую за допомогу.",
+       "Terima kasih banyak atas bantuannya."
+      ],
+      [
+       "meminta waktu",
+       "Можна вас на хвилинку?",
+       "Boleh minta waktunya sebentar?"
+      ]
+     ]
+    },
+    {
+     "type": "list",
+     "items": [
+      "*Перепрошую* lebih sopan dan lebih Ukraina daripada *вибачаюсь*, yang dianggap rusisme.",
+      "*Можна вас на хвилинку?* memakai akusatif *вас* tanpa kata kerja: \"boleh (saya ambil) Anda sebentar?\"."
+     ]
+    }
+   ]
+  }
+ ],
+ "vocab": [
+  {
+   "uk": "фонд",
+   "baca": "fond",
+   "id": "yayasan; dana"
+  },
+  {
+   "uk": "дире́кторка",
+   "baca": "dy-REK-tor-ka",
+   "id": "direktur (perempuan)"
+  },
+  {
+   "uk": "ім'я́ по ба́тькові",
+   "baca": "i-MYA po BAT'-ko-vi",
+   "id": "nama dan patronim; patronim"
+  },
+  {
+   "uk": "зверта́тися / зверну́тися",
+   "baca": "zver-TA-ty-sya / zver-NU-ty-sya",
+   "id": "menyapa, menghubungi (*до кого*)"
+  },
+  {
+   "uk": "зверта́ння",
+   "baca": "zver-TAN-nya",
+   "id": "sapaan"
+  },
+  {
+   "uk": "перейти́ на «ти»",
+   "baca": "pe-rey-TY na ty",
+   "id": "beralih ke aku-kamu"
+  },
+  {
+   "uk": "коле́га",
+   "baca": "ko-LE-ha",
+   "id": "rekan kerja"
+  },
+  {
+   "uk": "керівни́цтво",
+   "baca": "ke-riv-NYTST-vo",
+   "id": "pimpinan, manajemen"
+  },
+  {
+   "uk": "нара́да",
+   "baca": "na-RA-da",
+   "id": "rapat kerja"
+  },
+  {
+   "uk": "щопонеді́лка",
+   "baca": "shcho-po-ne-DIL-ka",
+   "id": "setiap Senin"
+  },
+  {
+   "uk": "юри́ст",
+   "baca": "yu-RYST",
+   "id": "ahli hukum, pengacara"
+  },
+  {
+   "uk": "перекла́дач",
+   "baca": "pe-re-KLA-dach",
+   "id": "penerjemah"
+  },
+  {
+   "uk": "суво́рий",
+   "baca": "su-VO-ryy",
+   "id": "keras, galak, tegas"
+  },
+  {
+   "uk": "то́чний",
+   "baca": "TOCH-nyy",
+   "id": "cermat, tepat"
+  },
+  {
+   "uk": "шано́вний",
+   "baca": "sha-NOV-nyy",
+   "id": "terhormat (*Шановна пані…*)"
+  },
+  {
+   "uk": "зо́внішній",
+   "baca": "ZOV-nish-niy",
+   "id": "luar, eksternal"
+  },
+  {
+   "uk": "вну́трішній",
+   "baca": "VNU-trish-niy",
+   "id": "dalam, internal"
+  },
+  {
+   "uk": "прийня́то",
+   "baca": "pryy-NYA-to",
+   "id": "lazim, sudah menjadi kebiasaan (*у нас прийнято…*)"
+  },
+  {
+   "uk": "запі́знюватися / запізни́тися",
+   "baca": "za-PIZ-nyu-va-ty-sya / za-piz-NY-ty-sya",
+   "id": "terlambat"
+  },
+  {
+   "uk": "хвилюва́тися",
+   "baca": "khvy-lyu-VA-ty-sya",
+   "id": "gugup, cemas"
+  },
+  {
+   "uk": "дові́ра",
+   "baca": "do-VI-ra",
+   "id": "kepercayaan"
+  },
+  {
+   "uk": "вдя́чний",
+   "baca": "VDYACH-nyy",
+   "id": "berterima kasih (*я вдячна вам за…*)"
+  },
+  {
+   "uk": "обіця́ти / пообіця́ти",
+   "baca": "o-bi-TSYA-ty / po-o-bi-TSYA-ty",
+   "id": "berjanji"
+  },
+  {
+   "uk": "пере́пустка",
+   "baca": "pe-RE-pust-ka",
+   "id": "kartu masuk, pas"
+  },
+  {
+   "uk": "робо́чий день",
+   "baca": "ro-BO-chyy den'",
+   "id": "hari kerja; jam kerja"
+  }
+ ],
+ "exercises": [
+  {
+   "prompt": "Terjemahkan ke bahasa Ukraina (ragam kantor).",
+   "items": [
+    "Selamat pagi, Bu Olena Vasylivna!",
+    "Pak Ihor, boleh saya bertanya?",
+    "Di kantor kami, pimpinan disapa dengan nama dan patronim.",
+    "Roman menawarkan untuk beralih ke aku-kamu.",
+    "Mohon maaf atas keterlambatan.",
+    "Saya berterima kasih kepada Anda atas kepercayaan ini (Ani yang berbicara)."
+   ]
+  },
+  {
+   "prompt": "Isi dengan bentuk kličnyj. Bentuk dasarnya ada di dalam kurung.",
+   "items": [
+    "Доброго дня, ____! (Олена Василівна)",
+    "Дякую, пане ____! (Ігор)",
+    "____, ти вже обідав? (Роман)",
+    "Шановна пані ____! (Наталія)",
+    "Перепрошую, пане ____! (Богдан Петрович)",
+    "____, я вже йду додому! (Андрій)",
+    "Пане ____, ось документи. (директор)"
+   ]
+  },
+  {
+   "prompt": "Ubah dari ти ke ви (ragam resmi).",
+   "items": [
+    "Сідай, будь ласка.",
+    "Ти хочеш кави?",
+    "Не хвилюйся.",
+    "Покажи мені договір.",
+    "Ти вже прочитав листа?",
+    "Дякую тобі за допомогу."
+   ]
+  },
+  {
+   "prompt": "Susun jadi kalimat yang benar.",
+   "items": [
+    "на / можна / «ти» / перейти",
+    "до / звертаються / колег / як / тут",
+    "о / нарада / щопонеділка / десятій",
+    "за / вам / довіру / вдячна / я",
+    "не / він / а / суворий / точний"
+   ]
+  }
+ ],
+ "answers": [
+  "Доброго ранку, Олено Василівно! — Пане Ігорю, можна запитати? — У нашому офісі до керівництва звертаються на ім'я та по батькові. — Роман запропонував перейти на «ти». — Перепрошую за запізнення. — Я вдячна вам за довіру.",
+  "Олено Василівно — Ігорю — Романе — Наталіє — Богдане Петровичу — Андрію — директоре",
+  "Сідайте, будь ласка. — Ви хочете кави? — Не хвилюйтеся. — Покажіть мені договір. — Ви вже прочитали листа? — Дякую вам за допомогу.",
+  "Можна перейти на «ти»? — Як тут звертаються до колег? — Щопонеділка о десятій нарада. — Я вдячна вам за довіру. — Він не суворий, а точний."
+ ]
+}

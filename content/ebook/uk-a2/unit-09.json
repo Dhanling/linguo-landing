@@ -1,0 +1,664 @@
+{
+ "title": "Makan malam di Poltava — kata sifat ikut berubah",
+ "title_target": "Вечеря в родині Андрія",
+ "goal": "Memuji dan menanyakan makanan sambil mencocokkan kata sifat dengan kata bendanya di semua kasus: *без червоного борщу, домашнього, з часниковими пампушками, з далекої країни, з теплою водою*.",
+ "bekal": [
+  "kamu bisa mengubah kata sifat laki-laki dan netral di kasus miring: *червоного, червоному, червоним*",
+  "kamu bisa mengubah kata sifat perempuan dan jamak: *далекої, теплою, часниковими*",
+  "kamu bisa menjadi tamu yang sopan di meja makan Ukraina: *Дякую, все дуже смачно! Я вже не можу!*"
+ ],
+ "dialogs": [
+  {
+   "title": "Діалог 1 — Di meja keluarga Bondarenko",
+   "intro": "Selasa, 30 Maret 2027, pukul tujuh malam, di rumah orang tua Andriy di Poltava. Ibu Andriy, Nataliya, sudah memasak sejak siang, dan nenek Hanna datang dari desa. Perhatikan kata sifat yang ekornya ikut berubah bersama kata bendanya: *червоного борщу, з часниковими пампушками*.",
+   "lines": [
+    {
+     "speaker": "Наталія:",
+     "text": "[Сідайте|Si-DAY-te], [діти|DI-ty]! [Ані|A-ni], [пригощайся|pry-ho-SHCHAY-sya]: [полтавські|pol-TAV-s'ki] [галушки|ha-LUSH-ky] [зі|zi] [смаженою|SMA-zhe-no-yu] [цибулею|tsy-BU-le-yu].",
+     "id": "Ayo duduk, anak-anak! Ani, silakan: galushky Poltava dengan bawang goreng.",
+     "literal": "duduklah, anak-anak! Ani, jamulah-dirimu: Poltava galushky dengan goreng (ins. pr) bawang (ins.)."
+    },
+    {
+     "speaker": "Ані:",
+     "text": "[Дякую|DYA-ku-yu], [пані|PA-ni] [Наталіє|Na-TA-li-ye]! [Як|Yak] [гарно|HAR-no] [пахне|PAKH-ne]!",
+     "id": "Terima kasih, Bu Nataliya! Harum sekali!",
+     "literal": "terima-kasih, nyonya Nataliya (panggilan)! betapa bagus berbau!"
+    },
+    {
+     "speaker": "Петро:",
+     "text": "[А|A] [це|tse] [борщ|borshch]. [Без|Bez] [червоного|cher-VO-no-ho] [борщу|bor-SHCHU] [у|u] [нас|nas] [свята|SVYA-ta] [немає|ne-MA-ye].",
+     "id": "Dan ini borsch. Tanpa borsch merah, bagi kami bukan pesta namanya.",
+     "literal": "dan ini borsch. tanpa merah (gen.) borsch (gen.) pada kami pesta (gen.) tidak-ada."
+    },
+    {
+     "speaker": "Ані:",
+     "text": "[Я|Ya] [вже|vzhe] [куштувала|kush-tu-VA-la] [борщ|borshch] [у|u] [Києві|KY-ye-vi], [але|a-LE] [домашнього|do-MASH-nyo-ho] [ще|shche] [ні|ni].",
+     "id": "Saya sudah pernah coba borsch di Kyiv, tapi yang buatan rumah belum.",
+     "literal": "saya sudah mencicipi (pr) borsch di Kyiv (lok.), tetapi rumahan (gen.) masih tidak."
+    },
+    {
+     "speaker": "Наталія:",
+     "text": "[Тоді|To-DI] [їж|yizh] [зі|zi] [сметаною|sme-TA-no-yu] [і|i] [з|z] [часниковими|chas-ny-KO-vy-my] [пампушками|pam-PUSH-ka-my].",
+     "id": "Kalau begitu makan dengan smetana dan roti bawang putih.",
+     "literal": "kalau-begitu makanlah dengan smetana (ins.) dan dengan bawang-putih (ins. jamak) pampushky (ins.)."
+    },
+    {
+     "speaker": "Катя:",
+     "text": "[Ані|A-ni], [а|a] [в|v] [Індонезії|In-do-NE-zi-yi] [є|ye] [щось|shchos'] [схоже|SKHO-zhe] [на|na] [борщ|borshch]?",
+     "id": "Ani, di Indonesia ada yang mirip borsch?",
+     "literal": "Ani, dan di Indonesia (lok.) ada sesuatu mirip pada borsch (ak.)?"
+    },
+    {
+     "speaker": "Ані:",
+     "text": "[Є|Ye] [суп|sup] [сото|SO-to], [з|z] [курятиною|ku-RYA-ty-no-yu] [і|i] [смачним|smach-NYM] [бульйоном|bul'-YO-nom].",
+     "id": "Ada sup soto, dengan daging ayam dan kaldu yang enak.",
+     "literal": "ada sup soto, dengan daging-ayam (ins.) dan enak (ins.) kaldu (ins.)."
+    },
+    {
+     "speaker": "Андрій:",
+     "text": "[Мамо|MA-mo], [Ані|A-ni] [варить|VA-ryt'] [дуже|DU-zhe] [смачний|smach-NYY] [суп|sup] [сото|SO-to]. [Я|Ya] [куштував|kush-tu-VAV]!",
+     "id": "Bu, Ani masak soto yang enak banget. Aku pernah coba!",
+     "literal": "ibu (panggilan), Ani merebus sangat enak sup soto. saya mencicipi (lk)!"
+    },
+    {
+     "speaker": "Наталія:",
+     "text": "[Справді|SPRAV-di]? [Тоді|To-DI] [наступного|nas-TUP-no-ho] [разу|RA-zu] [ти|ty] [нас|nas] [пригостиш|pry-hos-TYSH]!",
+     "id": "Oh ya? Kalau begitu lain kali kamu yang menjamu kami!",
+     "literal": "sungguh? kalau-begitu berikutnya (gen.) kali (gen.) kamu kami (ak.) akan-menjamu!"
+    },
+    {
+     "speaker": "Петро:",
+     "text": "[А|A] [тепер|te-PER] [десерт|de-SERT]: [вареники|va-RE-ny-ky] [з|z] [вишнями|VYSH-nya-my]!",
+     "id": "Dan sekarang pencuci mulut: varenyky isi ceri!",
+     "literal": "dan sekarang hidangan-penutup: varenyky dengan ceri-ceri (ins.)!"
+    },
+    {
+     "speaker": "Ані:",
+     "text": "[З|Z] [вишнями|VYSH-nya-my]? [Я|Ya] [думала|DU-ma-la], [що|shcho] [вареники|va-RE-ny-ky] [бувають|bu-VA-yut'] [тільки|TIL'-ky] [з|z] [картоплею|kar-TO-ple-yu].",
+     "id": "Isi ceri? Saya kira varenyky cuma ada yang isi kentang.",
+     "literal": "dengan ceri-ceri (ins.)? saya mengira (pr), bahwa varenyky ada-biasanya hanya dengan kentang (ins.)."
+    },
+    {
+     "speaker": "Катя:",
+     "text": "[Ні|Ni]! [А|A] [мої|mo-YI] [улюблені|u-LYU-ble-ni] [з|z] [солодким|so-LOD-kym] [сиром|SY-rom].",
+     "id": "Nggak! Favoritku yang isi keju manis.",
+     "literal": "tidak! dan saya-punya kesayangan dengan manis (ins.) keju (ins.)."
+    },
+    {
+     "speaker": "Наталія:",
+     "text": "[Ані|A-ni], [ще|shche] [один|o-DYN]? [Не|Ne] [соромся|so-ROM-sya]!",
+     "id": "Ani, satu lagi? Jangan malu-malu!",
+     "literal": "Ani, lagi satu? jangan malu!"
+    },
+    {
+     "speaker": "Ані:",
+     "text": "[Дякую|DYA-ku-yu], [але|a-LE] [я|ya] [вже|vzhe] [не|ne] [можу|MO-zhu]! [Усе|U-SE] [було|bu-LO] [дуже|DU-zhe] [смачно|SMACH-no].",
+     "id": "Terima kasih, tapi saya sudah nggak kuat! Semuanya enak sekali.",
+     "literal": "terima-kasih, tetapi saya sudah tidak bisa! semua ada (lampau) sangat enak."
+    }
+   ],
+   "notes": [
+    "**Пригощайся!** Kata tuan rumah Ukraina yang paling sering didengar tamu: \"silakan, ambil sendiri\". Kepada satu orang akrab *пригощайся*, kepada beberapa orang atau secara sopan *пригощайтеся*. Nataliya langsung memakai *ти* kepada Ani: tanda bahwa ia disambut sebagai bagian dari keluarga.",
+    "**Без червоного борщу.** *Без* meminta genitif, dan kata sifatnya ikut: **-ого** untuk laki-laki dan netral berbatang keras. *Борщ* di genitif berekor *-у* (*борщу*), seperti banyak nama makanan dan bahan: *сиру, чаю, цукру*. Kalimat Petro adalah ungkapan bangga yang lazim: tidak ada pesta tanpa borsch.",
+    "**Домашнього ще ні.** Kata sifat berbatang lunak (berakhiran *-ній*) memakai ekor **-ього** di genitif: *домашній* → *домашнього*, *синій* → *синього*, *літній* → *літнього*. Di sini kata *борщу* tidak diulang; kata sifatnya cukup, seperti \"yang buatan rumah\" dalam bahasa Indonesia.",
+    "**З часниковими пампушками.** *Пампушки* adalah roti bulat kecil yang disiram minyak dengan bawang putih, teman wajib borsch. Kata sifat di instrumental jamak berekor **-ими**. Bandingkan dengan *зі сметаною*: *з* menjadi *зі* sebelum gugus konsonan *см*, supaya lidah tidak tersandung.",
+    "**Схоже на борщ.** *Схожий на* + akusatif berarti \"mirip dengan\": *Катя схожа на маму* (Katya mirip ibunya). Penutur Indonesia cenderung memakai *з* (\"mirip dengan\"), tetapi dalam bahasa Ukraina yang benar *на*.",
+    "**Не соромся! Я вже не можу!** Menurut adat, tuan rumah terus menawarkan tambahan dan tamu menolak dengan halus beberapa kali. *Я вже не можу* (saya sudah tidak kuat) dan *Усе було дуже смачно* adalah cara paling sopan untuk berhenti makan tanpa menyinggung. *Смачно* adalah adverbia; kata sifatnya *смачний*."
+   ],
+   "grammars": [
+    {
+     "title": "Kata sifat laki-laki dan netral di semua kasus",
+     "body": [
+      "Kata sifat berbatang keras (*-ий*) dan lunak (*-ій*) punya ekor yang sejajar. Netral sama dengan laki-laki, kecuali nominatif dan akusatif (*червоне вино*)."
+     ],
+     "table": {
+      "head": [
+       "Kasus",
+       "Keras: червоний борщ",
+       "Lunak: домашній сир",
+       "Pertanyaan"
+      ],
+      "rows": [
+       [
+        "nominatif",
+        "червоний борщ",
+        "домашній сир",
+        "який?"
+       ],
+       [
+        "genitif",
+        "червоного борщу",
+        "домашнього сиру",
+        "якого?"
+       ],
+       [
+        "datif",
+        "червоному борщу",
+        "домашньому сиру",
+        "якому?"
+       ],
+       [
+        "akusatif (benda)",
+        "червоний борщ",
+        "домашній сир",
+        "який?"
+       ],
+       [
+        "akusatif (makhluk)",
+        "старого друга",
+        "літнього гостя",
+        "якого?"
+       ],
+       [
+        "instrumental",
+        "червоним борщем",
+        "домашнім сиром",
+        "яким?"
+       ],
+       [
+        "lokatif",
+        "у червоному борщі",
+        "у домашньому сирі",
+        "у якому?"
+       ]
+      ]
+     },
+     "after": [
+      "Lokatif tunggal laki-laki dan netral juga punya bentuk pendek *-ім*: *у червонім борщі*. Bentuk ini terdengar puitis atau kedaerahan; dalam percakapan pakailah *-ому*."
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Діалог 2 — Bersama nenek Hanna",
+   "intro": "Sesudah makan, yang lain membereskan meja, dan nenek Hanna mengajak Ani duduk di sofa. Ia berbicara pelan, dengan logat desa Poltava. Perhatikan kata sifat perempuan: *з далекої країни, біля старої верби, з теплою водою*.",
+   "lines": [
+    {
+     "speaker": "Баба Ганна:",
+     "text": "[Ані|A-ni], [доню|DO-nyu], [сідай|si-DAY] [біля|BI-lya] [мене|ME-ne]. [Ти|Ty] [з|z] [далекої|da-LE-ko-yi] [країни|kra-YI-ny], [так|tak]?",
+     "id": "Ani, Nak, duduk di dekat nenek. Kamu dari negeri jauh, ya?",
+     "literal": "Ani, putri (panggilan), duduklah dekat saya (gen.). kamu dari jauh (gen. pr) negeri (gen.), ya?"
+    },
+    {
+     "speaker": "Ані:",
+     "text": "[Так|Tak], [бабо|BA-bo] [Ганно|HAN-no]. [З|Z] [Індонезії|In-do-NE-zi-yi], [з|z] [великого|ve-LY-ko-ho] [міста|MIS-ta] [Джакарти|Dzha-KAR-ty].",
+     "id": "Iya, Nek Hanna. Dari Indonesia, dari kota besar Jakarta.",
+     "literal": "ya, nenek Hanna (panggilan). dari Indonesia (gen.), dari besar (gen.) kota (gen.) Jakarta (gen.)."
+    },
+    {
+     "speaker": "Баба Ганна:",
+     "text": "[А|A] [я|ya] [живу|zhy-VU] [в|v] [маленькому|ma-LEN'-ko-mu] [селі|se-LI], [біля|BI-lya] [старої|sta-RO-yi] [верби|VER-by].",
+     "id": "Nenek tinggal di desa kecil, dekat pohon dedalu tua.",
+     "literal": "dan saya tinggal di kecil (lok.) desa (lok.), dekat tua (gen. pr) dedalu (gen.)."
+    },
+    {
+     "speaker": "Ані:",
+     "text": "[Андрій|An-DRIY] [розповідав|roz-po-vi-DAV]. [У|U] [вас|vas] [великий|ve-LY-kyy] [город|ho-ROD], [правда|PRAV-da]?",
+     "id": "Andriy sudah cerita. Nenek punya kebun sayur yang besar, kan?",
+     "literal": "Andriy bercerita. pada Anda besar kebun-sayur, benar?"
+    },
+    {
+     "speaker": "Баба Ганна:",
+     "text": "[Великий|Ve-LY-kyy]! [Картопля|Kar-TO-plya], [капуста|ka-PUS-ta], [буряки|bu-rya-KY] [для|dlya] [червоного|cher-VO-no-ho] [борщу|bor-SHCHU].",
+     "id": "Besar! Kentang, kubis, bit untuk borsch merah.",
+     "literal": "besar! kentang, kubis, bit-bit untuk merah (gen.) borsch (gen.)."
+    },
+    {
+     "speaker": "Ані:",
+     "text": "[Отже|OT-zhe], [сьогоднішній|syo-HOD-nish-niy] [борщ|borshch] [з|z] [вашими|VA-shy-my] [буряками|bu-rya-KA-my]?",
+     "id": "Jadi, borsch hari ini pakai bit dari kebun Nenek?",
+     "literal": "jadi, hari-ini-punya borsch dengan Anda-punya (ins. jamak) bit-bit (ins.)?"
+    },
+    {
+     "speaker": "Баба Ганна:",
+     "text": "[Аякже|A-YAK-zhe]! [І|I] [сметана|sme-TA-na] [від|vid] [нашої|NA-sho-yi] [корови|ko-RO-vy] [Зірки|ZIR-ky].",
+     "id": "Tentu saja! Smetananya juga dari sapi kami, si Zirka.",
+     "literal": "tentu-saja! dan smetana dari kami-punya (gen. pr) sapi (gen.) Zirka (gen.)."
+    },
+    {
+     "speaker": "Ані:",
+     "text": "[А|A] [ви|vy] [мене|me-NE] [навчите|nav-CHY-te] [ліпити|li-PY-ty] [вареники|va-RE-ny-ky]?",
+     "id": "Nenek mau ajari saya membuat varenyky?",
+     "literal": "dan Anda saya (ak.) akan-mengajari membentuk varenyky?"
+    },
+    {
+     "speaker": "Баба Ганна:",
+     "text": "[Навчу|Nav-CHU]! [Приїжджай|Pry-yizh-DZHAY] [улітку|u-LIT-ku], [на|na] [свіжі|SVI-zhi] [вишні|VYSH-ni].",
+     "id": "Nenek ajari! Datanglah musim panas, pas ceri segar.",
+     "literal": "akan-mengajari! datanglah di-musim-panas, untuk segar (ak. jamak) ceri-ceri (ak.)."
+    },
+    {
+     "speaker": "Ані:",
+     "text": "[Дуже|DU-zhe] [хочу|KHO-chu]! [А|A] [тісто|TIS-to] [роблять|RO-blyat'] [з|z] [теплою|TE-plo-yu] [водою|vo-DO-yu]?",
+     "id": "Mau banget! Adonannya dibuat pakai air hangat?",
+     "literal": "sangat mau! dan adonan (mereka)-membuat dengan hangat (ins. pr) air (ins.)?"
+    },
+    {
+     "speaker": "Баба Ганна:",
+     "text": "[З|Z] [кефіром|ke-FI-rom]! [Але|A-LE] [це|tse] [мій|miy] [секрет|se-KRET]. [Приїдеш|Pry-YI-desh], [то|to] [розкажу|roz-ka-ZHU].",
+     "id": "Pakai kefir! Tapi itu rahasia Nenek. Kalau kamu datang, Nenek ceritakan.",
+     "literal": "dengan kefir (ins.)! tetapi ini saya-punya rahasia. akan-datang, maka akan-menceritakan."
+    }
+   ],
+   "notes": [
+    "**Доню, бабо Ганно.** *Доня* (putri, anak perempuan) dalam bentuk panggilan *доню* adalah sapaan sayang orang tua kepada gadis muda, bahkan yang bukan anaknya. Ani memanggil *бабо Ганно*: *баба* → *бабо*, *Ганна* → *Ганно*. Di desa Poltava, *баба* bukan kata kasar melainkan sebutan biasa untuk nenek; di kota lebih lazim *бабуся*.",
+    "**З далекої країни.** Kata sifat perempuan di genitif berekor **-ої** (keras) atau **-ьої** (lunak): *далекої, старої, нашої*; *синьої, літньої*. Ekor ini juga dipakai kata ganti milik: *моєї, твоєї, нашої*. Bandingkan dengan *великого міста*: kata netral mengikuti ekor laki-laki.",
+    "**У маленькому селі.** Lokatif kata sifat laki-laki dan netral berekor **-ому**: *у маленькому селі, у великому місті*. Kata *село* sendiri berekor *-і* dan tekanannya pindah ke akhir: *se-LI*.",
+    "**З вашими буряками.** Instrumental jamak kata ganti milik: *моїми, твоїми, нашими, вашими*. *Буряк* (bit merah) adalah jantung borsch; warnanya berasal dari bit, bukan dari tomat. *Отже* (jadi, dengan demikian) lebih baik daripada *значить*, yang dalam fungsi ini dianggap pengaruh Rusia.",
+    "**Навчите ліпити вареники?** *Ліпити* berarti membentuk dengan tangan, seperti membentuk tanah liat; kata kerja inilah yang dipakai untuk varenyky dan pelmeni. *Навчити кого* (akusatif) *чого* (genitif) atau + infinitif: *навчи мене ліпити*.",
+    "**З теплою водою.** Kata sifat perempuan di instrumental berekor **-ою** (keras) atau **-ьою** (lunak): *теплою, свіжою, синьою*. Tekanan *теплий* jatuh di suku pertama (*TEP-lyy*), sedangkan adverbianya *тепло* bertekanan di akhir (*tep-LO*): *Вода тепла. Сьогодні тепло.*"
+   ],
+   "grammars": [
+    {
+     "title": "Kata sifat perempuan dan jamak di semua kasus",
+     "body": [
+      "Kata sifat perempuan punya ekor sendiri; jamak memakai satu set ekor untuk semua jenis kata."
+     ],
+     "table": {
+      "head": [
+       "Kasus",
+       "Perempuan: тепла вода",
+       "Jamak: свіжі вишні",
+       "Pertanyaan"
+      ],
+      "rows": [
+       [
+        "nominatif",
+        "тепла вода",
+        "свіжі вишні",
+        "яка? які?"
+       ],
+       [
+        "genitif",
+        "теплої води",
+        "свіжих вишень",
+        "якої? яких?"
+       ],
+       [
+        "datif",
+        "теплій воді",
+        "свіжим вишням",
+        "якій? яким?"
+       ],
+       [
+        "akusatif",
+        "теплу воду",
+        "свіжі вишні (benda)",
+        "яку? які?"
+       ],
+       [
+        "akusatif (makhluk)",
+        "стару корову",
+        "старих бабусь",
+        "яку? яких?"
+       ],
+       [
+        "instrumental",
+        "теплою водою",
+        "свіжими вишнями",
+        "якою? якими?"
+       ],
+       [
+        "lokatif",
+        "у теплій воді",
+        "у свіжих вишнях",
+        "у якій? у яких?"
+       ]
+      ]
+     },
+     "after": [
+      "Batang lunak menambahkan tanda lunak atau memakai *і*: *синя сукня* → *синьої сукні, синій сукні, синьою сукнею*."
+     ]
+    }
+   ]
+  }
+ ],
+ "sections": [
+  {
+   "title": "Meja makan Poltava",
+   "blocks": [
+    {
+     "type": "p",
+     "text": "Kawasan Poltava dikenal sebagai lumbung masakan Ukraina. *Полтавські галушки* berbeda dari galushky di tempat lain: ukurannya besar, dari adonan gandum, direbus dalam kaldu dan disajikan dengan bawang goreng, smetana, atau lemak babi. Dalam karya Hohol, galushky bahkan melompat sendiri ke mulut seorang tokohnya. Tamu Muslim atau vegetarian boleh dengan sopan bertanya: *Тут є м'ясо?* (Apakah ini ada dagingnya?)."
+    },
+    {
+     "type": "tabel",
+     "head": [
+      "Страва",
+      "Keterangan"
+     ],
+     "rows": [
+      [
+       "борщ",
+       "sup bit merah dengan kubis, kentang, dan daging atau tanpa daging"
+      ],
+      [
+       "пампушки з часником",
+       "roti kecil dengan saus bawang putih"
+      ],
+      [
+       "галушки",
+       "gumpalan adonan rebus"
+      ],
+      [
+       "вареники з картоплею",
+       "pangsit isi kentang"
+      ],
+      [
+       "вареники з вишнями",
+       "pangsit isi ceri, disiram madu atau smetana"
+      ],
+      [
+       "вареники з сиром",
+       "pangsit isi keju cottage manis atau asin"
+      ],
+      [
+       "голубці",
+       "gulungan kubis isi nasi dan daging"
+      ],
+      [
+       "деруни",
+       "panekuk kentang parut"
+      ],
+      [
+       "узвар",
+       "minuman rebusan buah kering"
+      ]
+     ]
+    },
+    {
+     "type": "kotak",
+     "title": "Sopan santun di meja",
+     "items": [
+      "Tunggu tuan rumah berkata *Смачного!* (selamat makan) atau *Пригощайтеся!* sebelum mulai.",
+      "Roti tidak diletakkan terbalik dan tidak dibuang; roti dihormati.",
+      "Menolak tambahan pertama kali adalah wajar; tuan rumah biasanya menawarkan lagi.",
+      "Pujian paling hangat: *Усе дуже смачно! Дасте рецепт?* (Semuanya enak sekali! Boleh minta resepnya?)"
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Rasa dan tekstur: kata sifat di dapur",
+   "blocks": [
+    {
+     "type": "p",
+     "text": "Untuk memuji atau menanyakan makanan, kamu memerlukan kata sifat. Latih setiap kata bersama kata benda dalam kasus yang berbeda, misalnya *з гострим соусом* (dengan saus pedas) atau *без солодкого чаю* (tanpa teh manis)."
+    },
+    {
+     "type": "tabel",
+     "head": [
+      "Kata sifat",
+      "Contoh dalam kasus miring",
+      "Indonesia"
+     ],
+     "rows": [
+      [
+       "смачний",
+       "*Дякую за смачну вечерю!*",
+       "Terima kasih atas makan malam yang enak!"
+      ],
+      [
+       "гарячий",
+       "*Обережно з гарячим борщем.*",
+       "Hati-hati dengan borsch yang panas."
+      ],
+      [
+       "гострий",
+       "*Я не їм гострої їжі.*",
+       "Saya tidak makan makanan pedas."
+      ],
+      [
+       "солодкий",
+       "*вареники з солодким сиром*",
+       "varenyky dengan keju manis"
+      ],
+      [
+       "кислий",
+       "*суп з кислою капустою*",
+       "sup dengan kubis asam"
+      ],
+      [
+       "свіжий",
+       "*хліб зі свіжим маслом*",
+       "roti dengan mentega segar"
+      ],
+      [
+       "домашній",
+       "*Я люблю смак домашньої їжі.*",
+       "Saya suka rasa masakan rumah."
+      ],
+      [
+       "смажений",
+       "*галушки зі смаженою цибулею*",
+       "galushky dengan bawang goreng"
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Ulangan berjenjang — unit 7",
+   "blocks": [
+    {
+     "type": "p",
+     "text": "Tutup kolom Ukraina, baca terjemahan Indonesianya, lalu susun kembali kalimatnya dari ingatan."
+    },
+    {
+     "type": "tabel",
+     "head": [
+      "Bahasa Indonesia",
+      "Українська",
+      "Baca"
+     ],
+     "rows": [
+      [
+       "Apakah Anda bertemu dengan orang-orang yang sakit?",
+       "Ви спілкувалися з хворими людьми?",
+       "*Vy spil-ku-VA-ly-sya z KHVO-ry-my lyud'-MY*"
+      ],
+      [
+       "Mungkin di tempat kerja. Saya kerja di kedai kopi dan setiap hari mengobrol dengan pelanggan.",
+       "Може, на роботі. Я працюю в кав'ярні і щодня розмовляю з клієнтами.",
+       "*MO-zhe na ro-BO-ti Ya pra-TSYU-yu v ka-VYAR-ni i shchod-NYA roz-mo-VLYA-yu z kli-YEN-ta-my*"
+      ],
+      [
+       "Ini flu? Saya nggak mau kena flu!",
+       "Це грип? Я не хочу хворіти на грип!",
+       "*Tse hryp Ya ne KHO-chu khvo-RI-ty na hryp*"
+      ],
+      [
+       "Sirup lebih baik. Saya empat puluh tahun bekerja dengan obat-obatan, percayalah.",
+       "Сироп краще. Я сорок років працювала з ліками, повір мені.",
+       "*Sy-ROP KRA-shche Ya SO-rok RO-kiv pra-tsyu-VA-la z LI-ka-my po-VIR me-NI*"
+      ],
+      [
+       "Dulu. Sekarang saya pensiun, sibuk dengan bunga dan teka-teki silang.",
+       "Була. Тепер я на пенсії, займаюся квітами й кросвордами.",
+       "*Bu-LA Te-PER ya na PEN-si-yi zay-MA-yu-sya KVI-ta-my y kros-VOR-da-my*"
+      ]
+     ]
+    }
+   ]
+  }
+ ],
+ "vocab": [
+  {
+   "uk": "вече́ря",
+   "baca": "ve-CHE-rya",
+   "id": "makan malam"
+  },
+  {
+   "uk": "борщ",
+   "baca": "borshch",
+   "id": "borsch (gen. *борщу*)"
+  },
+  {
+   "uk": "галу́шки",
+   "baca": "ha-LUSH-ky",
+   "id": "galushky, gumpalan adonan rebus"
+  },
+  {
+   "uk": "варе́ники",
+   "baca": "va-RE-ny-ky",
+   "id": "varenyky, pangsit rebus"
+  },
+  {
+   "uk": "пампу́шки",
+   "baca": "pam-PUSH-ky",
+   "id": "roti bulat kecil (untuk borsch)"
+  },
+  {
+   "uk": "смета́на",
+   "baca": "sme-TA-na",
+   "id": "krim asam, smetana"
+  },
+  {
+   "uk": "часни́к",
+   "baca": "chas-NYK",
+   "id": "bawang putih (*часниковий*)"
+  },
+  {
+   "uk": "цибу́ля",
+   "baca": "tsy-BU-lya",
+   "id": "bawang bombai"
+  },
+  {
+   "uk": "буря́к",
+   "baca": "bu-RYAK",
+   "id": "bit merah"
+  },
+  {
+   "uk": "карто́пля",
+   "baca": "kar-TO-plya",
+   "id": "kentang"
+  },
+  {
+   "uk": "капу́ста",
+   "baca": "ka-PUS-ta",
+   "id": "kubis"
+  },
+  {
+   "uk": "ви́шня",
+   "baca": "VYSH-nya",
+   "id": "ceri asam (jamak *вишні*)"
+  },
+  {
+   "uk": "сир",
+   "baca": "syr",
+   "id": "keju; keju cottage (gen. *сиру*)"
+  },
+  {
+   "uk": "ті́сто",
+   "baca": "TIS-to",
+   "id": "adonan"
+  },
+  {
+   "uk": "куря́тина",
+   "baca": "ku-RYA-ty-na",
+   "id": "daging ayam"
+  },
+  {
+   "uk": "бульйо́н",
+   "baca": "bul'-YON",
+   "id": "kaldu"
+  },
+  {
+   "uk": "горо́д",
+   "baca": "ho-ROD",
+   "id": "kebun sayur"
+  },
+  {
+   "uk": "коро́ва",
+   "baca": "ko-RO-va",
+   "id": "sapi (betina)"
+  },
+  {
+   "uk": "пригоща́тися",
+   "baca": "pry-ho-SHCHA-ty-sya",
+   "id": "menikmati hidangan (*Пригощайся!*)"
+  },
+  {
+   "uk": "пригоща́ти / пригости́ти",
+   "baca": "pry-ho-SHCHA-ty / pry-hos-TY-ty",
+   "id": "menjamu"
+  },
+  {
+   "uk": "куштува́ти / скуштува́ти",
+   "baca": "kush-tu-VA-ty / skush-tu-VA-ty",
+   "id": "mencicipi"
+  },
+  {
+   "uk": "ліпи́ти / зліпи́ти",
+   "baca": "li-PY-ty / zli-PY-ty",
+   "id": "membentuk dengan tangan (varenyky)"
+  },
+  {
+   "uk": "смачни́й",
+   "baca": "smach-NYY",
+   "id": "enak (*смачно* = dengan enak)"
+  },
+  {
+   "uk": "дома́шній",
+   "baca": "do-MASH-niy",
+   "id": "buatan rumah, rumahan"
+  },
+  {
+   "uk": "схо́жий на",
+   "baca": "SKHO-zhyy na",
+   "id": "mirip dengan (+ ak.)"
+  }
+ ],
+ "exercises": [
+  {
+   "prompt": "Terjemahkan ke bahasa Ukraina.",
+   "items": [
+    "Tanpa borsch merah bukan pesta.",
+    "Saya belum pernah mencicipi borsch buatan rumah.",
+    "Makanlah dengan smetana dan pampushky bawang putih.",
+    "Favorit saya varenyky dengan ceri.",
+    "Kamu dari negeri yang jauh?",
+    "Terima kasih, semuanya enak sekali!"
+   ]
+  },
+  {
+   "prompt": "Isi titik-titik dengan bentuk kata sifat yang tepat.",
+   "items": [
+    "Я не можу жити без ____ кави. (смачний)",
+    "Вареники з ____ сиром. (солодкий)",
+    "Баба Ганна живе в ____ селі. (маленький)",
+    "Тісто роблять з ____ водою. (теплий)",
+    "Ані приїхала з ____ країни. (далекий)",
+    "Я п'ю чай з ____ медом. (домашній)",
+    "Ми гуляли по ____ вулицях. (старий)"
+   ]
+  },
+  {
+   "prompt": "Tambahkan kata sifat dalam kurung dalam bentuk yang tepat, lalu tulis kalimatnya utuh.",
+   "items": [
+    "Я люблю борщ з пампушками. (часниковий)",
+    "Дай мені склянку води. (холодний)",
+    "Ми говоримо про вечерю. (смачний)",
+    "Бабуся живе біля річки. (старий)",
+    "Катя допомагає сестрі. (молодший)",
+    "Андрій приїхав з друзями. (новий)"
+   ]
+  },
+  {
+   "prompt": "Susun jadi kalimat yang benar.",
+   "items": [
+    "червоного / без / борщу / свята / немає",
+    "пампушками / з / їж / часниковими",
+    "далекої / ти / з / країни",
+    "з / теплою / тісто / водою / роблять",
+    "було / смачно / дуже / усе"
+   ]
+  }
+ ],
+ "answers": [
+  "Без червоного борщу немає свята. — Я ще не куштувала домашнього борщу. — Їж зі сметаною і з часниковими пампушками. — Мої улюблені вареники з вишнями. — Ти з далекої країни? — Дякую, усе дуже смачно!",
+  "смачної — солодким — маленькому — теплою — далекої — домашнім — старих",
+  "Я люблю борщ з часниковими пампушками. — Дай мені склянку холодної води. — Ми говоримо про смачну вечерю. — Бабуся живе біля старої річки. — Катя допомагає молодшій сестрі. — Андрій приїхав з новими друзями.",
+  "Без червоного борщу немає свята. — Їж з часниковими пампушками. — Ти з далекої країни? — Тісто роблять з теплою водою. — Усе було дуже смачно."
+ ]
+}

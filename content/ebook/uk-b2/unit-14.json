@@ -1,0 +1,675 @@
+{
+ "title": "Bahasa angka — persen, tren, dan kelipatan",
+ "title_target": "Мова цифр",
+ "goal": "Mempresentasikan statistik dengan lancar: membaca angka dalam kasus (*з восьмисот до тисячі шестисот*), memakai *відсоток* dengan bentuk yang benar, dan membedakan tren *зріс на* (selisih) dari *зріс до* (hasil), plus *удвічі, втричі, на третину*.",
+ "bekal": [
+  "kamu bisa membaca angka besar dan pecahan dalam kasus yang dituntut kalimat",
+  "kamu bisa menyatakan tren dengan *на / до / з* tanpa tertukar",
+  "kamu bisa membuka, menghubungkan, dan menutup presentasi data dengan rumus baku"
+ ],
+ "dialogs": [
+  {
+   "title": "Діалог 1 — Presentasi di depan dewan yayasan",
+   "intro": "Senin, 6 Agustus 2029, pukul sebelas, ruang rapat besar. Ani mempresentasikan statistik setengah tahun program di depan dewan yayasan. Olena Vasylivna memimpin, Ihor bertanya soal setiap angka. Perhatikan beda *зросла на* dan *зросла до*, dan bagaimana angka berubah bentuk mengikuti kasus.",
+   "lines": [
+    {
+     "speaker": "Олена Василівна:",
+     "text": "Ані, прошу. У вас десять хвилин і, як я бачу, дуже багато цифр.",
+     "id": "Ani, silakan. Anda punya sepuluh menit dan, sejauh saya lihat, banyak sekali angka.",
+     "literal": "Ani, silakan. pada anda sepuluh menit (gen. jamak) dan, seperti saya melihat, sangat banyak angka (gen. jamak)."
+    },
+    {
+     "speaker": "Ані:",
+     "text": "Дякую. За пів року програма охопила понад три тисячі учасників у дванадцяти містах.",
+     "id": "Terima kasih. Dalam setengah tahun, program ini menjangkau lebih dari tiga ribu peserta di dua belas kota.",
+     "literal": "terima-kasih. dalam setengah tahun (gen.) program menjangkau ‹selesai› lebih-dari tiga ribu peserta (gen. jamak) di dua-belas (lok.) kota (lok. jamak)."
+    },
+    {
+     "speaker": "Ігор:",
+     "text": "Перепрошую, а скільки було в плані?",
+     "id": "Maaf, berapa yang direncanakan?",
+     "literal": "mohon-maaf, dan berapa ada di rencana (lok.)?"
+    },
+    {
+     "speaker": "Ані:",
+     "text": "Дві тисячі п'ятсот. Тобто план перевиконано на двадцять відсотків.",
+     "id": "Dua ribu lima ratus. Artinya target terlampaui dua puluh persen.",
+     "literal": "dua ribu lima-ratus. artinya rencana dilampaui-(-но) sebanyak dua-puluh persen (gen. jamak)."
+    },
+    {
+     "speaker": "Олена Василівна:",
+     "text": "Добре. А як змінилася аудиторія наших заходів у Києві?",
+     "id": "Baik. Lalu bagaimana perubahan jumlah penonton acara kita di Kyiv?",
+     "literal": "baik. dan bagaimana berubah ‹selesai› audiens kami-punya acara-acara (gen.) di Kyiv (lok.)?"
+    },
+    {
+     "speaker": "Ані:",
+     "text": "Вона зросла з восьмисот до тисячі шестисот осіб, тобто удвічі.",
+     "id": "Naik dari delapan ratus menjadi seribu enam ratus orang, artinya dua kali lipat.",
+     "literal": "ia tumbuh ‹selesai› dari delapan-ratus (gen.) sampai seribu (gen.) enam-ratus (gen.) orang (gen. jamak), artinya dua-kali-lipat."
+    },
+    {
+     "speaker": "Ігор:",
+     "text": "А онлайн-трансляції? Минулого разу ви казали, що інтерес падає.",
+     "id": "Lalu siaran daringnya? Terakhir kali Anda bilang minatnya turun.",
+     "literal": "dan siaran-daring? lalu (gen.) kali (gen.) anda berkata, bahwa minat jatuh."
+    },
+    {
+     "speaker": "Ані:",
+     "text": "Так. Частка онлайн-глядачів знизилася з сорока п'яти до тридцяти відсотків.",
+     "id": "Ya. Porsi penonton daring turun dari empat puluh lima menjadi tiga puluh persen.",
+     "literal": "ya. porsi penonton-daring (gen. jamak) turun ‹selesai› dari empat-puluh lima (gen.) sampai tiga-puluh (gen.) persen (gen. jamak)."
+    },
+    {
+     "speaker": "Ігор:",
+     "text": "Тобто на п'ятнадцять відсотків?",
+     "id": "Jadi turun lima belas persen?",
+     "literal": "artinya sebanyak lima-belas persen (gen. jamak)?"
+    },
+    {
+     "speaker": "Ані:",
+     "text": "На п'ятнадцять відсоткових пунктів. А відносно це падіння на третину.",
+     "id": "Lima belas poin persentase. Secara relatif, itu penurunan sepertiga.",
+     "literal": "sebanyak lima-belas persentase-(adj.) poin (gen. jamak). dan secara-relatif ini penurunan sebanyak sepertiga (ak.)."
+    },
+    {
+     "speaker": "Олена Василівна:",
+     "text": "Слушне уточнення. А бюджет? Скільки ми вже витратили?",
+     "id": "Klarifikasi yang tepat. Bagaimana anggarannya? Berapa yang sudah kita belanjakan?",
+     "literal": "tepat klarifikasi. dan anggaran? berapa kami sudah membelanjakan ‹selesai›?"
+    },
+    {
+     "speaker": "Ані:",
+     "text": "Сорок два відсотки річного бюджету, тобто трохи менше за половину.",
+     "id": "Empat puluh dua persen dari anggaran tahunan, jadi sedikit kurang dari separuh.",
+     "literal": "empat-puluh dua persen (nom. jamak) tahunan (gen.) anggaran (gen.), artinya sedikit kurang daripada separuh (ak.)."
+    },
+    {
+     "speaker": "Ігор:",
+     "text": "А витрати на переклад? Вони, здається, найбільша стаття після оренди.",
+     "id": "Lalu biaya penerjemahan? Tampaknya itu pos terbesar setelah sewa.",
+     "literal": "dan pengeluaran pada terjemahan (ak.)? mereka, tampaknya, terbesar pos sesudah sewa (gen.)."
+    },
+    {
+     "speaker": "Ані:",
+     "text": "Так, вони становлять двадцять один відсоток усіх витрат і залишаються стабільними.",
+     "id": "Ya, biaya itu mencapai dua puluh satu persen dari seluruh pengeluaran dan tetap stabil.",
+     "literal": "ya, mereka membentuk dua-puluh satu persen (nom. tunggal) semua (gen.) pengeluaran (gen.) dan tetap stabil-(ins. jamak)."
+    }
+   ],
+   "notes": [
+    "**Понад три тисячі учасників.** *Понад* (lebih dari) diikuti akusatif, dan karena angkanya benda mati, akusatif sama dengan nominatif: *три тисячі*. Sesudah *три* muncul *тисячі* (bentuk untuk 2–4), lalu *учасників* dalam genitif jamak karena mengikuti *тисяча*. *Охопити* (merangkul) di sini berarti menjangkau.",
+    "**План перевиконано на двадцять відсотків.** Bentuk *-но/-то* tanpa pelaku (*перевиконано*) adalah ciri laporan resmi: hasil ditekankan, bukan pelakunya. *На* + akusatif menyatakan besarnya selisih: \"terlampaui sebanyak dua puluh persen\".",
+    "**З восьмисот до тисячі шестисот.** *З* dan *до* sama-sama menuntut genitif, dan dalam bahasa Ukraina setiap bagian angka ikut berubah: *вісімсот* → *восьмисот*, *тисяча шістсот* → *тисячі шестисот*. Bahasa Indonesia tidak pernah mengubah angka, jadi ini perlu dilatih sampai otomatis.",
+    "**Удвічі, втричі.** Kata keterangan kelipatan yang ringkas: *удвічі* (dua kali lipat), *утричі/втричі* (tiga kali), *учетверо* (empat kali). *У два рази* juga benar, tapi dalam laporan bentuk satu kata lebih disukai.",
+    "**Відсоткових пунктів.** Dari 45 % ke 30 % turun lima belas **poin persentase**, tapi secara relatif turun sepertiga. Ihor menguji Ani di sini, dan Ani lulus. Bahasa Indonesia punya istilah yang sama persis: \"poin persentase\".",
+    "**Становлять, bukan складають.** Untuk \"berjumlah, mencapai\", bentuk baku adalah *становити*: *витрати становлять 21 відсоток*. *Складати* dalam arti ini adalah kalke Rusia *составлять*. Satu lagi: *менше за половину* (kurang dari separuh) memakai *за* + akusatif atau *від* + genitif, bukan genitif telanjang."
+   ],
+   "grammars": [
+    {
+     "title": "Kata kerja tren: на, до, з",
+     "body": [
+      "Hampir semua kata kerja tren berpasangan dengan tiga preposisi: *з* (dari titik awal, genitif), *до* (sampai titik akhir, genitif), *на* (sebanyak selisih, akusatif). Ganti preposisinya, dan artinya berubah total."
+     ],
+     "table": {
+      "head": [
+       "Kata kerja (sempurna)",
+       "Arti",
+       "Contoh"
+      ],
+      "rows": [
+       [
+        "зрости (зріс, зросла)",
+        "tumbuh, naik",
+        "*зріс на 10 %* = naik 10 %"
+       ],
+       [
+        "збільшитися",
+        "bertambah",
+        "*збільшився до 500* = naik menjadi 500"
+       ],
+       [
+        "зменшитися",
+        "berkurang",
+        "*зменшився з 80 до 60*"
+       ],
+       [
+        "знизитися",
+        "turun (tingkat, harga)",
+        "*знизилася на третину*"
+       ],
+       [
+        "скоротитися",
+        "menyusut",
+        "*скоротився вдвічі*"
+       ],
+       [
+        "подвоїтися / потроїтися",
+        "berlipat dua / tiga",
+        "*кількість подвоїлася*"
+       ],
+       [
+        "залишитися незмінним",
+        "tetap, tak berubah",
+        "*бюджет залишився незмінним*"
+       ],
+       [
+        "коливатися",
+        "berfluktuasi (tak sempurna)",
+        "*коливається в межах 5 %*"
+       ]
+      ]
+     },
+     "after": [
+      "Bentuk lampau *зрости* tidak beraturan: *зріс, зросла, зросло, зросли*. Kata kerja tak sempurnanya *зростати* dipakai untuk tren yang sedang berlangsung: *кількість зростає*."
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Діалог 2 — Gladi membaca angka",
+   "intro": "Pagi harinya, sejam sebelum presentasi, di ruang penerjemah. Roman membantu Ani berlatih membaca angka keras-keras. Perhatikan persen sesudah pecahan, tahun dalam lokatif, dan beda *на* dan *до* sekali lagi.",
+   "lines": [
+    {
+     "speaker": "Роман:",
+     "text": "Прочитай мені цей рядок уголос, як на презентації.",
+     "id": "Bacakan baris ini keras-keras, seperti di presentasi nanti.",
+     "literal": "bacalah ‹selesai› kepadaku ini baris keras, seperti pada presentasi (lok.)."
+    },
+    {
+     "speaker": "Ані:",
+     "text": "«Кількість заходів зросла з сорока трьох до ста двадцяти дев'яти».",
+     "id": "\"Jumlah acara naik dari empat puluh tiga menjadi seratus dua puluh sembilan.\"",
+     "literal": "jumlah acara-acara (gen.) tumbuh ‹selesai› dari empat-puluh tiga (gen.) sampai seratus dua-puluh sembilan (gen.)."
+    },
+    {
+     "speaker": "Роман:",
+     "text": "Правильно. А тепер скажи те саме коротше.",
+     "id": "Benar. Sekarang katakan hal yang sama dengan lebih singkat.",
+     "literal": "benar. dan sekarang katakan ‹selesai› itu sama lebih-pendek."
+    },
+    {
+     "speaker": "Ані:",
+     "text": "Кількість заходів зросла втричі.",
+     "id": "Jumlah acara naik tiga kali lipat.",
+     "literal": "jumlah acara-acara (gen.) tumbuh ‹selesai› tiga-kali-lipat."
+    },
+    {
+     "speaker": "Роман:",
+     "text": "Молодець. А тут написано «0,5 %». Як ти це прочитаєш?",
+     "id": "Pintar. Di sini tertulis \"0,5 %\". Bagaimana kamu membacanya?",
+     "literal": "hebat. dan di-sini tertulis 0,5 %. bagaimana kamu ini akan-membaca ‹selesai›?"
+    },
+    {
+     "speaker": "Ані:",
+     "text": "Нуль цілих п'ять десятих відсотків?",
+     "id": "Nol koma lima persen? (dengan bentuk jamak)",
+     "literal": "nol utuh (gen. jamak) lima persepuluh (gen. jamak) persen (gen. jamak)?"
+    },
+    {
+     "speaker": "Роман:",
+     "text": "Майже. Після дробу завжди «відсотка»: нуль цілих п'ять десятих відсотка. Або просто «пів відсотка».",
+     "id": "Hampir. Sesudah pecahan selalu \"відсотка\": nol koma lima persen. Atau cukup \"setengah persen\".",
+     "literal": "hampir. sesudah pecahan (gen.) selalu відсотка: nol utuh lima persepuluh persen (gen. tunggal). atau sekadar setengah persen (gen. tunggal)."
+    },
+    {
+     "speaker": "Ані:",
+     "text": "Ох, ці відмінки. А «у 2029 році» я читаю «у дві тисячі двадцять дев'ятому році», так?",
+     "id": "Aduh, kasus-kasus ini. Lalu \"у 2029 році\" kubaca \"у дві тисячі двадцять дев'ятому році\", begitu?",
+     "literal": "oh, ini kasus-kasus. dan di 2029 tahun (lok.) saya membaca di dua ribu dua-puluh kesembilan (lok.) tahun (lok.), ya?"
+    },
+    {
+     "speaker": "Роман:",
+     "text": "Так, змінюється тільки останнє слово. І ще: не кажи «складає сорок відсотків».",
+     "id": "Ya, yang berubah cuma kata terakhir. Satu lagi: jangan bilang \"складає сорок відсотків\".",
+     "literal": "ya, berubah-diri hanya terakhir kata. dan lagi: jangan katakan menyusun empat-puluh persen (gen. jamak)."
+    },
+    {
+     "speaker": "Ані:",
+     "text": "Знаю, правильно «становить». А «зріс на» і «зріс до» справді так відрізняються?",
+     "id": "Aku tahu, yang benar \"становить\". Tapi apakah \"зріс на\" dan \"зріс до\" memang sebeda itu?",
+     "literal": "tahu-(aku), benar становить. dan зріс на dan зріс до sungguh begitu berbeda-diri?"
+    },
+    {
+     "speaker": "Роман:",
+     "text": "Ще й як! «Зріс на сто» додає сто, а «зріс до ста» називає результат.",
+     "id": "Beda banget! \"Зріс на сто\" menambahkan seratus, sedangkan \"зріс до ста\" menyebut hasil akhirnya.",
+     "literal": "masih pula bagaimana! tumbuh sebanyak seratus menambah seratus, dan tumbuh sampai seratus (gen.) menyebut hasil."
+    }
+   ],
+   "notes": [
+    "**З сорока трьох до ста двадцяти дев'яти.** *Сорок* dan *сто* hanya punya satu bentuk miring: *сорока* dan *ста*, dipakai di semua kasus selain nominatif dan akusatif. *Дев'ять* menjadi *дев'яти*, *три* menjadi *трьох*. Setiap bagian angka majemuk berubah.",
+    "**Кількість зросла втричі.** 43 × 3 = 129, jadi Ani benar. Dalam lisan, kalimat pendek dengan kata kelipatan jauh lebih mudah ditangkap pendengar daripada dua angka panjang. Presentasi yang baik memakai keduanya: angka di slide, kelipatan di mulut.",
+    "**Нуль цілих п'ять десятих відсотка.** Pecahan desimal dibaca dengan *цілих* (bagian utuh) dan *десятих / сотих* (persepuluh / perseratus). Sesudah pecahan, kata benda selalu dalam genitif tunggal: *відсотка*, bukan *відсотків*. Kesalahan Ani adalah kesalahan paling umum, bahkan di kalangan penutur asli.",
+    "**Пів відсотка, півтора відсотка.** *Пів* dan *півтора* (satu setengah) juga menuntut genitif tunggal. Ini cara lisan yang paling alami untuk 0,5 % dan 1,5 %.",
+    "**У дві тисячі двадцять дев'ятому році.** Pada tahun, hanya kata terakhir yang berubah dan menjadi bilangan tingkat: *двадцять дев'ятому* (kedua puluh sembilan, lokatif). Bagian depan *дві тисячі* tetap. Bandingkan dengan angka pokok di dialog 1 yang berubah seluruhnya.",
+    "**Ще й як!** \"Masih pula bagaimana!\" = sangat, beda sekali. Tanggapan lisan yang menguatkan persetujuan atau perbedaan. *Молодець* (pintar, hebat) dipakai untuk memuji siapa saja, laki-laki atau perempuan, tanpa berubah bentuk."
+   ],
+   "grammars": [
+    {
+     "title": "Angka dalam kasus",
+     "body": [
+      "Angka pokok Ukraina berubah menurut kasus seperti kata sifat. Tabel ini memuat bentuk yang paling sering muncul di laporan. Akusatif untuk benda mati sama dengan nominatif."
+     ],
+     "table": {
+      "head": [
+       "Kasus",
+       "2",
+       "5",
+       "40",
+       "100",
+       "200",
+       "1000"
+      ],
+      "rows": [
+       [
+        "nominatif",
+        "два, дві",
+        "п'ять",
+        "сорок",
+        "сто",
+        "двісті",
+        "тисяча"
+       ],
+       [
+        "genitif",
+        "двох",
+        "п'яти / п'ятьох",
+        "сорока",
+        "ста",
+        "двохсот",
+        "тисячі"
+       ],
+       [
+        "datif",
+        "двом",
+        "п'яти / п'ятьом",
+        "сорока",
+        "ста",
+        "двомстам",
+        "тисячі"
+       ],
+       [
+        "instrumental",
+        "двома",
+        "п'ятьма / п'ятьома",
+        "сорока",
+        "ста",
+        "двомастами",
+        "тисячею"
+       ],
+       [
+        "lokatif",
+        "(у) двох",
+        "(у) п'яти / п'ятьох",
+        "(у) сорока",
+        "(у) ста",
+        "(у) двохстах",
+        "(у) тисячі"
+       ]
+      ]
+     },
+     "after": [
+      "Angka majemuk mengubah setiap bagiannya: *з тисячі шестисот сорока*, *у двохстах п'ятдесяти школах*.",
+      "Sesudah 2, 3, 4 kata benda dalam nominatif jamak (*два відсотки*), sesudah 5 ke atas dalam genitif jamak (*п'ять відсотків*); tetapi angka yang berakhir dengan 1 memakai tunggal (*двадцять один відсоток*)."
+     ]
+    }
+   ]
+  }
+ ],
+ "sections": [
+  {
+   "title": "Persen: 1, 2–4, 5 ke atas, dan pecahan",
+   "blocks": [
+    {
+     "type": "p",
+     "text": "Kata *відсоток* (persen) mengikuti aturan angka biasa, dan justru karena sering dipakai, kesalahannya cepat terdengar. Ingat empat pola: akhiran 1 memakai tunggal, akhiran 2–4 memakai nominatif jamak, sisanya genitif jamak, dan pecahan selalu genitif tunggal."
+    },
+    {
+     "type": "tabel",
+     "head": [
+      "Angka",
+      "Dibaca",
+      "Pola"
+     ],
+     "rows": [
+      [
+       "1 %",
+       "один відсоток",
+       "tunggal"
+      ],
+      [
+       "2 %",
+       "два відсотки",
+       "2–4: nominatif jamak"
+      ],
+      [
+       "4 %",
+       "чотири відсотки",
+       "2–4: nominatif jamak"
+      ],
+      [
+       "5 %",
+       "п'ять відсотків",
+       "5 ke atas: genitif jamak"
+      ],
+      [
+       "11 %",
+       "одинадцять відсотків",
+       "11–14 selalu genitif jamak"
+      ],
+      [
+       "21 %",
+       "двадцять один відсоток",
+       "berakhir 1: tunggal"
+      ],
+      [
+       "42 %",
+       "сорок два відсотки",
+       "berakhir 2: nominatif jamak"
+      ],
+      [
+       "0,5 %",
+       "нуль цілих п'ять десятих відсотка",
+       "pecahan: genitif tunggal"
+      ],
+      [
+       "1,5 %",
+       "півтора відсотка",
+       "pecahan: genitif tunggal"
+      ],
+      [
+       "100 %",
+       "сто відсотків",
+       "genitif jamak"
+      ]
+     ]
+    },
+    {
+     "type": "kotak",
+     "title": "Kata-kata perbandingan",
+     "items": [
+      "**половина** = separuh, **третина** = sepertiga, **чверть** = seperempat.",
+      "**удвічі / втричі / учетверо** = dua / tiga / empat kali lipat; **у півтора раза** = satu setengah kali.",
+      "**на третину** = sebanyak sepertiga (selisih); **до третини** = menjadi sepertiga (hasil)."
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Bahasa grafik di presentasi",
+   "blocks": [
+    {
+     "type": "p",
+     "text": "Presentasi statistik dalam bahasa Ukraina punya rumus pembuka, penghubung, dan penutup yang cukup tetap. Pakailah rumus ini dan pendengarmu akan mengikuti alur, meski angkanya banyak."
+    },
+    {
+     "type": "tabel",
+     "head": [
+      "Ukraina",
+      "Arti"
+     ],
+     "rows": [
+      [
+       "Як бачимо на графіку, …",
+       "Seperti terlihat pada grafik, …"
+      ],
+      [
+       "На слайді показано …",
+       "Pada slide ditunjukkan …"
+      ],
+      [
+       "Порівняно з минулим роком …",
+       "Dibandingkan dengan tahun lalu …"
+      ],
+      [
+       "Найвищий показник зафіксовано в червні.",
+       "Angka tertinggi tercatat pada bulan Juni."
+      ],
+      [
+       "Спостерігається тенденція до зростання.",
+       "Terlihat kecenderungan naik."
+      ],
+      [
+       "Відбулося різке падіння.",
+       "Terjadi penurunan tajam."
+      ],
+      [
+       "Показник залишився стабільним.",
+       "Angkanya tetap stabil."
+      ],
+      [
+       "Підсумовуючи, …",
+       "Sebagai kesimpulan, …"
+      ]
+     ]
+    },
+    {
+     "type": "list",
+     "items": [
+      "**становить**, bukan *складає*, untuk \"berjumlah\".",
+      "**порівняно з**, lebih disukai daripada *у порівнянні з*.",
+      "**протягом року**, bukan *на протязі року*."
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Ulangan berjenjang — unit 12",
+   "blocks": [
+    {
+     "type": "p",
+     "text": "Tutup kolom Ukraina, baca terjemahan Indonesianya, lalu susun kembali kalimatnya dari ingatan."
+    },
+    {
+     "type": "tabel",
+     "head": [
+      "Bahasa Indonesia",
+      "Українська"
+     ],
+     "rows": [
+      [
+       "Terima kasih. Formulir permohonan diisi di sini, di tempat, berdasarkan dokumen Anda.",
+       "*Дякую. Заява-анкета заповнюється тут, на місці, за вашими документами.*"
+      ],
+      [
+       "Tidak perlu. Foto dan tanda tangan diambil di tempat kami, dengan alat khusus.",
+       "*Не потрібні. Фото й підпис робляться в нас, на спеціальному обладнанні.*"
+      ],
+      [
+       "Mohon tanya, biaya administrasinya dibayar sebelum atau sesudah pengajuan?",
+       "*Скажіть, будь ласка, адміністративний збір сплачується до чи після подання?*"
+      ],
+      [
+       "Dalam jangka waktu berapa kartunya diterbitkan?",
+       "*А в які строки видається посвідка?*"
+      ],
+      [
+       "Paham. Lalu tanggal pengisian ditulis dengan angka atau kata?",
+       "*Зрозуміла. А дата заповнення пишеться цифрами чи словами?*"
+      ]
+     ]
+    }
+   ]
+  }
+ ],
+ "vocab": [
+  {
+   "uk": "відсо́ток",
+   "baca": "vid-SO-tok",
+   "id": "persen"
+  },
+  {
+   "uk": "стабі́льний",
+   "baca": "sta-BIL'-nyy",
+   "id": "stabil"
+  },
+  {
+   "uk": "ча́стка",
+   "baca": "CHAST-ka",
+   "id": "porsi, bagian (dari keseluruhan)"
+  },
+  {
+   "uk": "показни́к",
+   "baca": "po-kaz-NYK",
+   "id": "angka, indikator"
+  },
+  {
+   "uk": "зроста́ти / зрости́",
+   "baca": "zros-TA-ty / zros-TY",
+   "id": "tumbuh, naik"
+  },
+  {
+   "uk": "збі́льшуватися / збі́льшитися",
+   "baca": "ZBIL'-shu-va-ty-sya / ZBIL'-shy-ty-sya",
+   "id": "bertambah"
+  },
+  {
+   "uk": "зме́ншуватися / зме́ншитися",
+   "baca": "ZMEN-shu-va-ty-sya / ZMEN-shy-ty-sya",
+   "id": "berkurang"
+  },
+  {
+   "uk": "зни́жуватися / зни́зитися",
+   "baca": "ZNY-zhu-va-ty-sya / ZNY-zy-ty-sya",
+   "id": "turun"
+  },
+  {
+   "uk": "скоро́чуватися / скороти́тися",
+   "baca": "sko-RO-chu-va-ty-sya / sko-ro-TY-ty-sya",
+   "id": "menyusut"
+  },
+  {
+   "uk": "подво́юватися / подво́їтися",
+   "baca": "pod-VO-yu-va-ty-sya / pod-VO-yi-ty-sya",
+   "id": "berlipat dua"
+  },
+  {
+   "uk": "удві́чі",
+   "baca": "ud-VI-chi",
+   "id": "dua kali lipat"
+  },
+  {
+   "uk": "втри́чі",
+   "baca": "VTRY-chi",
+   "id": "tiga kali lipat"
+  },
+  {
+   "uk": "полови́на",
+   "baca": "po-lo-VY-na",
+   "id": "separuh"
+  },
+  {
+   "uk": "трети́на",
+   "baca": "tre-TY-na",
+   "id": "sepertiga"
+  },
+  {
+   "uk": "чверть",
+   "baca": "chvert'",
+   "id": "seperempat"
+  },
+  {
+   "uk": "стано́вити",
+   "baca": "sta-NO-vy-ty",
+   "id": "berjumlah, mencapai (angka)"
+  },
+  {
+   "uk": "охо́плювати / охопи́ти",
+   "baca": "o-KHO-plyu-va-ty / o-kho-PY-ty",
+   "id": "menjangkau, mencakup"
+  },
+  {
+   "uk": "учасни́к",
+   "baca": "u-chas-NYK",
+   "id": "peserta"
+  },
+  {
+   "uk": "ви́трати",
+   "baca": "VY-tra-ty",
+   "id": "pengeluaran, biaya"
+  },
+  {
+   "uk": "бюдже́т",
+   "baca": "byu-DZHET",
+   "id": "anggaran"
+  },
+  {
+   "uk": "перевико́нувати / перевико́нати",
+   "baca": "pe-re-vy-KO-nu-va-ty / pe-re-vy-KO-na-ty",
+   "id": "melampaui (target)"
+  },
+  {
+   "uk": "тенде́нція",
+   "baca": "ten-DEN-tsi-ya",
+   "id": "kecenderungan, tren"
+  },
+  {
+   "uk": "порі́вняно з",
+   "baca": "po-RIV-nya-no z",
+   "id": "dibandingkan dengan (+ ins.)"
+  },
+  {
+   "uk": "пі́втора",
+   "baca": "PIV-to-ra",
+   "id": "satu setengah (+ gen. tunggal)"
+  },
+  {
+   "uk": "гра́фік",
+   "baca": "HRA-fik",
+   "id": "grafik; jadwal"
+  }
+ ],
+ "exercises": [
+  {
+   "prompt": "Terjemahkan ke bahasa Ukraina. Tulis angka dengan huruf.",
+   "items": [
+    "Jumlah peserta naik dua kali lipat.",
+    "Biaya penerjemahan mencapai dua puluh satu persen.",
+    "Jumlah pengunjung naik dari lima ratus menjadi seribu.",
+    "Porsi penonton daring turun menjadi tiga puluh persen.",
+    "Kami sudah membelanjakan sedikit kurang dari separuh anggaran.",
+    "Dibandingkan dengan tahun lalu, jumlah acara naik tiga kali lipat."
+   ]
+  },
+  {
+   "prompt": "Isi titik-titik dengan bentuk yang tepat. Petunjuk ada di dalam kurung.",
+   "items": [
+    "Кількість учасників зросла з двохсот до ____. (п'ятсот)",
+    "Бюджет становить сорок два ____. (відсоток)",
+    "Ціна зросла на пів ____. (відсоток)",
+    "Витрати становлять п'ять ____. (відсоток)",
+    "Частка скоротилася ____ третину. (на, до)",
+    "Ми працюємо у ____ містах. (дванадцять, lokatif)",
+    "Показник ____ з двадцяти до сорока відсотків. (подвоїтися, lampau)"
+   ]
+  },
+  {
+   "prompt": "Tulis angkanya dengan huruf dalam bentuk yang tepat.",
+   "items": [
+    "з 800 до 1600 осіб",
+    "21 %",
+    "0,5 %",
+    "у 2029 році",
+    "понад 3000 учасників",
+    "1,5 %"
+   ]
+  },
+  {
+   "prompt": "Susun jadi kalimat yang benar.",
+   "items": [
+    "удвічі / учасників / зросла / кількість",
+    "відсотків / становлять / витрати / двадцять / п'ять",
+    "на / частка / третину / знизилася",
+    "порівняно / роком / минулим / з / зросли / витрати",
+    "план / відсотків / перевиконано / двадцять / на"
+   ]
+  }
+ ],
+ "answers": [
+  "Кількість учасників зросла удвічі. — Витрати на переклад становлять двадцять один відсоток. — Кількість відвідувачів зросла з п'ятисот до тисячі. — Частка онлайн-глядачів знизилася до тридцяти відсотків. — Ми витратили трохи менше за половину бюджету. — Порівняно з минулим роком кількість заходів зросла втричі.",
+  "п'ятисот — відсотки — відсотка — відсотків — на — дванадцяти — подвоївся",
+  "з восьмисот до тисячі шестисот осіб — двадцять один відсоток — нуль цілих п'ять десятих відсотка — у дві тисячі двадцять дев'ятому році — понад три тисячі учасників — півтора відсотка",
+  "Кількість учасників зросла удвічі. — Витрати становлять двадцять п'ять відсотків. — Частка знизилася на третину. — Порівняно з минулим роком витрати зросли. — План перевиконано на двадцять відсотків."
+ ]
+}

@@ -1,0 +1,679 @@
+{
+ "title": "Hari lamaran — adat, rushnyk, dan harapan",
+ "title_target": "У вас товар, у нас купець",
+ "goal": "Mengucapkan harapan dan doa dengan bentuk yang tepat (*хай/нехай* + kala depan atau kini, *щоб* + lampau, *бажаю* + genitif, imperatif *-мо*: *піднімімо*, *спитаймо*), serta memahami bahasa dan simbol upacara *сватання* Ukraina.",
+ "bekal": [
+  "kamu bisa melamar dan menjawab lamaran: *вийти заміж за*, *одружитися з*",
+  "kamu bisa mendoakan orang dengan *хай*, *нехай*, *щоб були*, *бажаю вам*",
+  "kamu bisa mengikuti upacara *сватання* dan mengerti rumus-rumus kiasannya"
+ ],
+ "dialogs": [
+  {
+   "title": "Діалог 1 — Di Volodymyrska Hirka",
+   "intro": "Kamis, 20 September 2029, pukul 19.40, taman Володимирська гірка di atas Sungai Dnipro. Andriy mengajak Ani berjalan-jalan sepulang kerja, tapi sejak tadi ia gelisah. Perhatikan cara Andriy melamar, jawaban Ani, dan tiga bentuk harapan: *хай*, *нехай*, *щоб*.",
+   "lines": [
+    {
+     "speaker": "Андрій:",
+     "text": "Пам'ятаєш, як ми вперше гуляли тут? Ти тоді ще плутала «дякую» і «будь ласка».",
+     "id": "Ingat waktu kita pertama kali jalan-jalan di sini? Kamu dulu masih tertukar antara *terima kasih* dan *silakan*.",
+     "literal": "ingatkah-kamu, bagaimana kami pertama-kali berjalan-jalan di-sini? kamu waktu-itu masih mengacaukan «terima-kasih» dan «silakan»."
+    },
+    {
+     "speaker": "Ані:",
+     "text": "Не вигадуй! Хоча, може, трохи й плутала. Це ж був жовтень двадцять шостого року.",
+     "id": "Jangan mengarang! Walaupun, yah, mungkin memang sedikit tertukar. Itu kan Oktober tahun dua puluh enam.",
+     "literal": "jangan mengarang! walaupun, mungkin, sedikit juga mengacaukan (lmp.). ini kan adalah Oktober dua-puluh keenam (gen.) tahun (gen.)."
+    },
+    {
+     "speaker": "Андрій:",
+     "text": "Три роки. Київ, Львів, знову Київ. І весь цей час ти була поруч.",
+     "id": "Tiga tahun. Kyiv, Lviv, lalu Kyiv lagi. Dan selama itu kamu selalu ada di dekatku.",
+     "literal": "tiga tahun. Kyiv, Lviv, lagi Kyiv. dan seluruh ini waktu kamu ada (lmp.) di-dekat."
+    },
+    {
+     "speaker": "Ані:",
+     "text": "Андрію, ти сьогодні якийсь дивний. Щось сталося?",
+     "id": "Andriy, kamu hari ini agak aneh. Ada apa?",
+     "literal": "Andriy (vok.), kamu hari-ini semacam aneh. sesuatu ‹selesai›-terjadi?"
+    },
+    {
+     "speaker": "Андрій:",
+     "text": "Сталося. Я дуже хвилююся, тому скажу просто, як умію.",
+     "id": "Ada. Aku gugup sekali, jadi aku akan bilang langsung saja, sebisaku.",
+     "literal": "terjadi. saya sangat cemas, karena-itu ‹selesai›-akan-berkata sederhana, seperti bisa-saya."
+    },
+    {
+     "speaker": "Ані:",
+     "text": "Ти мене лякаєш. Кажи вже!",
+     "id": "Kamu bikin aku takut. Ayo bilang!",
+     "literal": "kamu saya (ak.) menakuti. katakan sudah!"
+    },
+    {
+     "speaker": "Андрій:",
+     "text": "Ані, я хочу, щоб кожен мій ранок починався з тобою. Ти вийдеш за мене заміж?",
+     "id": "Ani, aku ingin setiap pagiku dimulai bersamamu. Maukah kamu menikah denganku?",
+     "literal": "Ani, saya ingin, supaya setiap saya-punya pagi dimulai (lmp.) dengan kamu (ins.). kamu ‹selesai›-akan-keluar untuk saya (ak.) ke-belakang-suami?"
+    },
+    {
+     "speaker": "Ані:",
+     "text": "Ой, Андрію... Ти серйозно? Це каблучка твоєї бабусі?",
+     "id": "Aduh, Andriy... Kamu serius? Ini cincin nenekmu?",
+     "literal": "oh, Andriy (vok.)... kamu serius? ini cincin kamu-punya (gen.) nenek (gen.)?"
+    },
+    {
+     "speaker": "Андрій:",
+     "text": "Баба Ганна сама мені її дала. Сказала: «Хай вона принесе вам щастя».",
+     "id": "Baba Hanna sendiri yang memberikannya padaku. Katanya: *Semoga cincin ini membawa kebahagiaan untuk kalian*.",
+     "literal": "nenek Hanna sendiri kepada-saya dia (ak.) memberi. berkata: «biar dia ‹selesai›-akan-membawa kepada-kalian kebahagiaan»"
+    },
+    {
+     "speaker": "Ані:",
+     "text": "Так! Так, звичайно, вийду! Нехай увесь Київ чує!",
+     "id": "Ya! Ya, tentu saja aku mau! Biar seluruh Kyiv dengar!",
+     "literal": "ya! ya, tentu, ‹selesai›-akan-keluar! biarlah seluruh Kyiv mendengar!"
+    },
+    {
+     "speaker": "Андрій:",
+     "text": "Тоді за звичаєм мої батьки мають прийти до тебе на сватання. Ти не проти?",
+     "id": "Kalau begitu, menurut adat, orang tuaku harus datang ke tempatmu untuk lamaran resmi. Kamu tidak keberatan?",
+     "literal": "kalau-begitu menurut adat (ins.) saya-punya orang-tua harus ‹selesai›-datang ke kamu (gen.) untuk lamaran. kamu tidak menentang?"
+    },
+    {
+     "speaker": "Ані:",
+     "text": "Не проти, але ж мої батьки в Джакарті. Хто зустріне сватів?",
+     "id": "Tidak, tapi orang tuaku kan di Jakarta. Siapa yang akan menyambut para utusanmu?",
+     "literal": "tidak menentang, tetapi kan saya-punya orang-tua di Jakarta (lok.). siapa ‹selesai›-akan-menyambut utusan-pelamar (ak. jmk.)?"
+    },
+    {
+     "speaker": "Андрій:",
+     "text": "Я думав про це. Може, пані Галина погодиться бути тобі за маму на один вечір?",
+     "id": "Aku sudah memikirkannya. Mungkin Bu Halyna mau jadi ibumu untuk satu malam?",
+     "literal": "saya berpikir (lmp.) tentang ini. mungkin, nyonya Halyna ‹selesai›-akan-setuju menjadi bagi-kamu sebagai ibu untuk satu malam?"
+    },
+    {
+     "speaker": "Ані:",
+     "text": "Вона розплачеться від радості, от побачиш. Щоб тільки в мене руки перестали тремтіти!",
+     "id": "Dia pasti menangis saking bahagianya, lihat saja nanti. Semoga saja tanganku berhenti gemetar!",
+     "literal": "dia ‹selesai›-akan-menangis dari kegembiraan (gen.), nah ‹selesai›-akan-lihat-kamu. supaya hanya pada saya tangan ‹selesai›-berhenti (lmp.) gemetar!"
+    }
+   ],
+   "notes": [
+    "**Ти вийдеш за мене заміж?** Bahasa Ukraina membedakan siapa yang menikahi siapa. Perempuan *виходить заміж за* + akusatif (harfiahnya \"keluar ke belakang suami\"): *Ані вийде заміж за Андрія*. Laki-laki *одружується з* + instrumental: *Андрій одружиться з Ані*. Untuk keduanya sekaligus: *вони одружуються* atau *вони беруть шлюб*. Karena itu Ani cukup menjawab **вийду**, bukan *одружуся*.",
+    "**Хай вона принесе вам щастя.** *Хай* + kala depan perfektif menyatakan harapan untuk orang ketiga: \"semoga (cincin itu) membawa…\". Kata *вона* merujuk pada *каблучка* yang berjenis perempuan. Pola ini sangat sering muncul dalam ucapan selamat: *Хай усе вийде!* (semoga semuanya lancar), *Хай щастить!* (semoga beruntung).",
+    "**Нехай увесь Київ чує!** *Нехай* dan *хай* sama artinya; *нехай* sedikit lebih penuh dan khidmat, *хай* lebih ringkas dan lisan. Di sini maknanya bukan doa melainkan \"biarlah\": Ani tak peduli siapa pun mendengar. Dengan kala kini (*чує*) nadanya membiarkan, dengan kala depan perfektif (*почує*) nadanya berharap.",
+    "**Щоб тільки руки перестали тремтіти!** *Щоб* + bentuk lampau di awal kalimat bukan menceritakan masa lalu, melainkan harapan: \"semoga saja…\". Inilah bentuk inti doa-doa Ukraina: *Щоб ви були здорові!* Penutur Indonesia sering bingung melihat *були*: ingat saja bahwa sesudah *щоб* kata kerja selalu memakai bentuk lampau jika subjeknya berbeda.",
+    "**Сватання, свати.** *Сватання* adalah kunjungan resmi keluarga pihak laki-laki ke rumah perempuan untuk meminang. Utusannya disebut *свати* atau *старости*, biasanya ayah, paman, atau kerabat yang pandai bicara. Di kota modern upacaranya dipersingkat, tetapi banyak keluarga, terutama di Poltava dan desa-desa, masih memeliharanya dengan senang hati.",
+    "**Бути тобі за маму.** *Бути за* + akusatif berarti \"berperan sebagai\": *бути за старшого* (jadi yang memimpin), *бути за перекладача* (jadi penerjemah). Datif *тобі* menunjukkan untuk siapa perannya. Ungkapan ini lisan dan hangat, cocok untuk permintaan pribadi seperti ini."
+   ],
+   "grammars": [
+    {
+     "title": "Harapan dan doa: хай, нехай, щоб, бажаю",
+     "body": [
+      "Bahasa Indonesia cukup dengan *semoga*. Bahasa Ukraina punya beberapa pola, dan masing-masing menuntut bentuk kata kerja tertentu. Kolom kedua adalah rumus yang harus dihafal."
+     ],
+     "table": {
+      "head": [
+       "Pola",
+       "Contoh",
+       "Indonesia"
+      ],
+      "rows": [
+       [
+        "хай + depan perfektif",
+        "Хай вона принесе вам щастя.",
+        "Semoga cincin ini membawa kebahagiaan."
+       ],
+       [
+        "нехай + kini",
+        "Нехай увесь Київ чує!",
+        "Biar seluruh Kyiv dengar!"
+       ],
+       [
+        "хай + kini (izin)",
+        "Хай діти граються.",
+        "Biarkan anak-anak bermain."
+       ],
+       [
+        "щоб + lampau",
+        "Щоб ви були здорові!",
+        "Semoga Anda sehat!"
+       ],
+       [
+        "щоб тільки + lampau",
+        "Щоб тільки не було дощу!",
+        "Semoga saja tidak hujan!"
+       ],
+       [
+        "бажаю + gen.",
+        "Бажаю вам щастя й успіхів!",
+        "Saya doakan kalian bahagia dan sukses!"
+       ],
+       [
+        "бажаю + inf.",
+        "Бажаю вам ніколи не сумувати.",
+        "Semoga kalian tak pernah bersedih."
+       ],
+       [
+        "imperatif -мо",
+        "Випиймо за молодих!",
+        "Mari kita minum untuk pengantin!"
+       ]
+      ]
+     },
+     "after": [
+      "Sesudah *бажаю* kata bendanya genitif: *щастя*, *здоров'я*, *любові*, *успіхів*, *миру*. Bentuk *бажаю вам щастя* adalah formula paling umum di kartu ucapan."
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Діалог 2 — Сватання di Podil",
+   "intro": "Sabtu, 29 September 2029, pukul 17.00, apartemen пані Галина di Podil. Orang tua Andriy datang dari Poltava membawa roti *коровай*; Bu Halyna menjadi \"ibu\" Ani untuk malam ini. Petro memainkan peran *сват* dengan bahasa kiasan tradisional. Perhatikan rumus-rumus upacaranya dan imperatif *спитаймо*, *піднімімо*.",
+   "lines": [
+    {
+     "speaker": "Петро:",
+     "text": "Добрий вечір у вашу хату! Ми люди нетутешні, мисливці. Ішли слідом за куницею, і слід привів до ваших дверей.",
+     "id": "Selamat malam untuk rumah Anda! Kami orang jauh, para pemburu. Kami mengikuti jejak seekor marten, dan jejak itu membawa kami ke pintu Anda.",
+     "literal": "baik malam ke Anda-punya rumah (ak.)! kami orang bukan-dari-sini, pemburu. berjalan (lmp.) mengikuti marten (ins.), dan jejak membawa (lmp.) ke Anda-punya pintu (gen.)."
+    },
+    {
+     "speaker": "Галина:",
+     "text": "Добрий вечір, гості дорогі! Та яка ж у нас куниця? Живемо тихо, нікого не ховаємо.",
+     "id": "Selamat malam, tamu-tamu tercinta! Marten apa pula di rumah kami? Kami hidup tenang, tidak menyembunyikan siapa pun.",
+     "literal": "baik malam, tamu tercinta! lho apa kan pada kami marten? hidup-kami tenang, tak-seorang-pun tidak menyembunyikan."
+    },
+    {
+     "speaker": "Петро:",
+     "text": "Кажуть, у вас є красна дівчина, а в нас є добрий молодець. У вас товар, у нас купець!",
+     "id": "Kata orang, di sini ada gadis jelita, dan kami punya pemuda yang baik. Anda punya barang, kami punya pembeli!",
+     "literal": "berkata-orang, pada Anda ada jelita gadis, dan pada kami ada baik pemuda. pada Anda barang, pada kami saudagar!"
+    },
+    {
+     "speaker": "Галина:",
+     "text": "Ну, коли так, то спитаймо саму дівчину. Ані, дитино, вийди до гостей.",
+     "id": "Nah, kalau begitu, mari kita tanyakan kepada gadisnya sendiri. Ani, Nak, keluarlah menemui tamu.",
+     "literal": "nah, kalau begitu, maka mari-‹selesai›-tanya sendiri (ak.) gadis (ak.). Ani, anak (vok.), keluarlah ke tamu (gen. jmk.)."
+    },
+    {
+     "speaker": "Ані:",
+     "text": "Добрий вечір. Я чула, про що ви говорите, і я згодна.",
+     "id": "Selamat malam. Saya sudah dengar apa yang Bapak bicarakan, dan saya bersedia.",
+     "literal": "baik malam. saya mendengar (lmp.), tentang apa Anda berbicara, dan saya setuju."
+    },
+    {
+     "speaker": "Наталія:",
+     "text": "Ой, а рушники? За звичаєм ти маєш перев'язати сватів рушниками!",
+     "id": "Eh, rushnyk-nya mana? Menurut adat kamu harus mengikatkan rushnyk ke para utusan!",
+     "literal": "oh, dan rushnyk (jmk.)? menurut adat (ins.) kamu harus ‹selesai›-ikat utusan (ak. jmk.) rushnyk (ins. jmk.)!"
+    },
+    {
+     "speaker": "Ані:",
+     "text": "Пані Галина мені все пояснила. Ось вони, я сама купила їх на ярмарку в Полтаві.",
+     "id": "Bu Halyna sudah menjelaskan semuanya. Ini dia, saya sendiri yang membelinya di pasar raya di Poltava.",
+     "literal": "nyonya Halyna kepada-saya semua ‹selesai›-jelaskan. ini mereka, saya sendiri ‹selesai›-beli mereka di pasar-raya (lok.) di Poltava (lok.)."
+    },
+    {
+     "speaker": "Петро:",
+     "text": "Бачиш, Наталю, рушники є, гарбуза немає. Отже, справа вирішена!",
+     "id": "Lihat, Natalya, rushnyk ada, labu tidak ada. Jadi, urusannya beres!",
+     "literal": "lihatlah, Natalya (vok.), rushnyk ada, labu (gen.) tidak-ada. jadi, perkara diputuskan!"
+    },
+    {
+     "speaker": "Галина:",
+     "text": "Прошу до столу! Нехай у вашій хаті завжди будуть хліб і достаток.",
+     "id": "Silakan ke meja! Semoga di rumah kalian selalu ada roti dan kecukupan.",
+     "literal": "silakan ke meja (gen.)! biarlah di kalian-punya rumah (lok.) selalu akan-ada roti dan kecukupan."
+    },
+    {
+     "speaker": "Наталія:",
+     "text": "Дякуємо, пані Галино. А тобі, Ані, бажаю терпіння: наш Андрій буває впертий, як батько.",
+     "id": "Terima kasih, Bu Halyna. Dan untukmu, Ani, saya doakan kesabaran: Andriy kami kadang keras kepala, seperti ayahnya.",
+     "literal": "terima-kasih-kami, nyonya Halyna (vok.). dan kepadamu, Ani, mendoakan-saya kesabaran (gen.): kami-punya Andriy kadang-adalah keras-kepala, seperti ayah."
+    },
+    {
+     "speaker": "Петро:",
+     "text": "Ну що ж, піднімімо чарки! Щоб молодим жилося в любові та злагоді!",
+     "id": "Nah, mari kita angkat gelas! Semoga kedua mempelai hidup dalam cinta dan kerukunan!",
+     "literal": "nah apa kan, mari-‹selesai›-angkat gelas-kecil! supaya kepada-pengantin (dat.) hidup-rasanya (lmp.) dalam cinta (lok.) dan kerukunan (lok.)!"
+    }
+   ],
+   "notes": [
+    "**Добрий вечір у вашу хату!** Salam upacara ini memakai *у* + akusatif (arah): kebaikan \"masuk ke\" rumah tuan rumah. Rumus sejenis: *Мир вашому дому!* Di luar upacara salam ini terdengar ramah dan kedesaan; di kantor tentu cukup *добрий вечір*.",
+    "**Мисливці, куниця.** Kiasan klasik *сватання*: para utusan menyamar sebagai pemburu yang mengikuti jejak *куниця* (marten, sejenis musang berbulu indah), yaitu si gadis. Tuan rumah pura-pura tidak mengerti (*та яка ж у нас куниця?*). Permainan pura-pura ini bagian dari kesopanan: tak ada yang langsung menyebut niatnya.",
+    "**У вас товар, у нас купець.** Kiasan kedua berasal dari bahasa dagang: pihak perempuan punya \"barang\", pihak laki-laki membawa \"saudagar\". Hari ini kalimat ini diucapkan sambil tertawa dan tidak dianggap merendahkan; semua orang tahu itu rumus tua. *Красна дівчина* dan *добрий молодець* juga ungkapan dongeng rakyat.",
+    "**Перев'язати сватів рушниками.** Tanda setuju dari si gadis adalah memberikan *рушники* (kain tenun bersulam) dan mengikatkannya menyilang di bahu para *свати*; calon suami biasanya menerima *хустка* (saputangan). *Перев'язати* + ak. + ins.: *перев'язати сватів рушниками* = mengikat para utusan dengan rushnyk.",
+    "**Гарбуза немає.** Kalau gadis menolak, dahulu ia memberi utusan sebuah *гарбуз* (labu). Dari situlah idiom *дати гарбуза* = menolak lamaran, dan *отримати гарбуза* = ditolak. Petro bercanda dengan dua bentuk: *рушники є* (nominatif) lawan *гарбуза немає* (genitif karena ingkar keberadaan).",
+    "**Спитаймо, піднімімо.** Imperatif orang pertama jamak berarti \"mari kita\": *спитаймо* (mari kita tanyakan), *піднімімо чарки* (mari kita angkat gelas). Bentuk ini lebih luhur daripada *давайте спитаємо* dan sangat khas pidato serta upacara. *Щоб молодим жилося* memakai kata kerja impersonal *житися* + datif: \"supaya bagi mempelai hidup terasa…\"."
+   ],
+   "grammars": [
+    {
+     "title": "Imperatif \"mari kita\": -ймо, -імо, -ьмо",
+     "body": [
+      "Ambil imperatif orang kedua tunggal, lalu tambahkan *-мо*. Kalau imperatifnya berakhir *-й*, hasilnya *-ймо*; kalau *-и*, hasilnya *-імо*; kalau *-ь*, hasilnya *-ьмо*. Tekanan mengikuti bentuk *ти*."
+     ],
+     "table": {
+      "head": [
+       "Infinitif",
+       "Imperatif ти",
+       "Mari kita",
+       "Contoh"
+      ],
+      "rows": [
+       [
+        "спитати",
+        "спитай",
+        "спитаймо",
+        "Спитаймо саму дівчину."
+       ],
+       [
+        "підняти",
+        "підніми",
+        "піднімімо",
+        "Піднімімо чарки!"
+       ],
+       [
+        "випити",
+        "випий",
+        "випиймо",
+        "Випиймо за молодих!"
+       ],
+       [
+        "сісти",
+        "сядь",
+        "сядьмо",
+        "Сядьмо до столу."
+       ],
+       [
+        "заспівати",
+        "заспівай",
+        "заспіваймо",
+        "Заспіваймо разом!"
+       ],
+       [
+        "побажати",
+        "побажай",
+        "побажаймо",
+        "Побажаймо їм щастя."
+       ],
+       [
+        "іти",
+        "іди",
+        "ходімо",
+        "Ходімо до столу! (bentuk khusus)"
+       ],
+       [
+        "lisan: давайте",
+        "",
+        "давайте + depan",
+        "Давайте вип'ємо!"
+       ]
+      ]
+     },
+     "after": [
+      "Dalam percakapan santai orang lebih sering berkata *давай* (kepada satu orang) atau *давайте* + kala depan. Bentuk *-мо* terdengar rapi dan meriah, jadi paling cocok untuk bersulang, pidato, dan upacara."
+     ]
+    }
+   ]
+  }
+ ],
+ "sections": [
+  {
+   "title": "Dari сватання sampai весілля",
+   "blocks": [
+    {
+     "type": "p",
+     "text": "Perkawinan Ukraina tradisional adalah rangkaian tahap, dan hampir tiap tahap punya nama sendiri. Pasangan kota masa kini melewati sebagian saja, tetapi nama-namanya tetap hidup dalam percakapan keluarga."
+    },
+    {
+     "type": "tabel",
+     "head": [
+      "Tahap",
+      "Apa yang terjadi",
+      "Indonesia"
+     ],
+     "rows": [
+      [
+       "сватання",
+       "keluarga pria datang meminang, rushnyk sebagai tanda setuju",
+       "lamaran"
+      ],
+      [
+       "оглядини",
+       "keluarga perempuan melihat rumah dan keluarga pria",
+       "kunjungan balasan"
+      ],
+      [
+       "заручини",
+       "pertunangan resmi, tukar cincin, tanggal ditetapkan",
+       "pertunangan"
+      ],
+      [
+       "дівич-вечір",
+       "malam para gadis sebelum pernikahan, merangkai вінок",
+       "malam lajang"
+      ],
+      [
+       "благословення",
+       "orang tua merestui dengan ikon dan roti",
+       "restu orang tua"
+      ],
+      [
+       "реєстрація шлюбу",
+       "pencatatan sipil di ДРАЦС",
+       "akad sipil"
+      ],
+      [
+       "вінчання",
+       "pemberkatan di gereja, pasangan berdiri di atas rushnyk",
+       "pemberkatan"
+      ],
+      [
+       "весілля",
+       "pesta dengan коровай, lagu, dan tari",
+       "resepsi"
+      ],
+      [
+       "коровай",
+       "roti besar berhias, dibagi kepada tamu",
+       "roti pengantin"
+      ]
+     ]
+    },
+    {
+     "type": "kotak",
+     "title": "Idiom seputar perkawinan",
+     "items": [
+      "**стати на рушник** — menikah (dari berdiri di atas rushnyk saat pemberkatan).",
+      "**дати гарбуза** — menolak lamaran; **отримати гарбуза** — ditolak.",
+      "**засилати сватів** — mengutus pelamar; juga bercanda untuk \"serius mendekati\".",
+      "**Гірко!** — seruan tamu di resepsi, meminta pengantin berciuman.",
+      "**Любові та злагоди!** — ucapan paling aman untuk kartu pernikahan."
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Rushnyk: kain yang berbicara",
+   "blocks": [
+    {
+     "type": "p",
+     "text": "*Рушник* adalah kain linen panjang bersulam yang menemani orang Ukraina dari lahir sampai mati: untuk menyambut tamu dengan roti dan garam, menghias ikon, mengikat para *свати*, dan menjadi alas kaki pengantin. Motifnya dibaca seperti bahasa. Tiap daerah punya gaya sendiri; rushnyk Poltava terkenal dengan sulaman putih di atas putih yang halus."
+    },
+    {
+     "type": "tabel",
+     "head": [
+      "Motif",
+      "Makna",
+      "Catatan"
+     ],
+     "rows": [
+      [
+       "червоний колір",
+       "cinta, kehidupan",
+       "warna paling umum di rushnyk pernikahan"
+      ],
+      [
+       "чорний колір",
+       "tanah, kesuburan",
+       "bukan duka dalam sulaman tradisional"
+      ],
+      [
+       "дерево життя",
+       "garis keturunan, keluarga",
+       "biasanya di tengah"
+      ],
+      [
+       "калина",
+       "keindahan, tanah kelahiran",
+       "buah merah khas lagu rakyat"
+      ],
+      [
+       "два голуби",
+       "pasangan setia",
+       "khas rushnyk pengantin"
+      ],
+      [
+       "виноград",
+       "kemakmuran keluarga",
+       "sering di tepi kain"
+      ],
+      [
+       "хміль",
+       "cinta muda, kesuburan",
+       "tanaman merambat"
+      ],
+      [
+       "ромб з крапкою",
+       "ladang yang ditanami",
+       "simbol tertua"
+      ]
+     ]
+    },
+    {
+     "type": "list",
+     "items": [
+      "Rushnyk tidak dijadikan lap tangan sehari-hari; untuk itu ada *рушник для рук* biasa atau *полотенце* dalam ragam Rusia yang sebaiknya dihindari.",
+      "Memberi rushnyk kepada tamu asing adalah tanda hormat besar; cara menerimanya: dengan dua tangan, lalu mengucapkan *Щиро дякую!*"
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Ulangan berjenjang — unit 15",
+   "blocks": [
+    {
+     "type": "p",
+     "text": "Tutup kolom Ukraina, baca terjemahan Indonesianya, lalu susun kembali kalimatnya dari ingatan."
+    },
+    {
+     "type": "tabel",
+     "head": [
+      "Bahasa Indonesia",
+      "Українська"
+     ],
+     "rows": [
+      [
+       "*Hvyntokryl* terdiri dari dua akar: *hvynt* (baling-baling) dan *krylo* (sayap).",
+       "*«Гвинтокрил» складається з двох коренів: «гвинт» і «крило».*"
+      ],
+      [
+       "Kami juga. Tapi kadang yang kami pinjam bukan katanya, melainkan susunannya. Itulah kalke.",
+       "*Ми теж. Але іноді позичаємо не слово, а будову. Це калька.*"
+      ],
+      [
+       "Jadi kalke tidak selalu buruk. Yang penting, ia terdengar seperti bahasa Ukraina.",
+       "*Отже, калька не завжди погана. Головне, щоб вона звучала по-українськи.*"
+      ],
+      [
+       "*Miropryyemstvo* itu kalke dari bahasa Rusia. Dalam bahasa Ukraina cukup dikatakan *zakhid*.",
+       "*«Міроприємство» є калькою з російської. Українською кажуть просто «захід».*"
+      ],
+      [
+       "Partisipasi itu diambil, bukan diterima. Peserta akan ikut serta dalam lokakarya.",
+       "*Участь беруть, а не приймають. Учасники братимуть участь у майстер-класах.*"
+      ]
+     ]
+    }
+   ]
+  }
+ ],
+ "vocab": [
+  {
+   "uk": "сва́тання",
+   "baca": "SVA-tan-nya",
+   "id": "lamaran adat"
+  },
+  {
+   "uk": "сват",
+   "baca": "svat",
+   "id": "utusan pihak pelamar (jamak *свати*)"
+  },
+  {
+   "uk": "заручи́ни",
+   "baca": "za-ru-CHY-ny",
+   "id": "pertunangan"
+  },
+  {
+   "uk": "наре́чений / наре́чена",
+   "baca": "na-RE-che-nyy / na-RE-che-na",
+   "id": "calon suami / calon istri, tunangan"
+  },
+  {
+   "uk": "ви́йти за́між за",
+   "baca": "VYY-ty ZA-mizh za",
+   "id": "menikah dengan (perempuan; + ak.)"
+  },
+  {
+   "uk": "одружи́тися з",
+   "baca": "o-dru-ZHY-ty-sya z",
+   "id": "menikah dengan (laki-laki; + ins.)"
+  },
+  {
+   "uk": "каблу́чка",
+   "baca": "ka-BLUCH-ka",
+   "id": "cincin"
+  },
+  {
+   "uk": "рушни́к",
+   "baca": "rush-NYK",
+   "id": "kain tenun bersulam, rushnyk"
+  },
+  {
+   "uk": "гарбу́з",
+   "baca": "har-BUZ",
+   "id": "labu (*дати гарбуза* = menolak lamaran)"
+  },
+  {
+   "uk": "зви́чай",
+   "baca": "ZVY-chay",
+   "id": "adat (*за звичаєм* = menurut adat)"
+  },
+  {
+   "uk": "весі́лля",
+   "baca": "ve-SIL-lya",
+   "id": "pesta pernikahan"
+  },
+  {
+   "uk": "молоді́",
+   "baca": "mo-lo-DI",
+   "id": "kedua mempelai (*молодий*, *молода*)"
+  },
+  {
+   "uk": "благослові́ння",
+   "baca": "bla-hos-lo-VIN-nya",
+   "id": "restu, berkat"
+  },
+  {
+   "uk": "зла́года",
+   "baca": "ZLA-ho-da",
+   "id": "kerukunan"
+  },
+  {
+   "uk": "доста́ток",
+   "baca": "dos-TA-tok",
+   "id": "kecukupan, kemakmuran"
+  },
+  {
+   "uk": "бажа́ти",
+   "baca": "ba-ZHA-ty",
+   "id": "mendoakan, mengharapkan (+ dat. + gen.)"
+  },
+  {
+   "uk": "хай, неха́й",
+   "baca": "khay, ne-KHAY",
+   "id": "semoga, biarlah"
+  },
+  {
+   "uk": "ща́стя",
+   "baca": "SHCHAS-tya",
+   "id": "kebahagiaan"
+  },
+  {
+   "uk": "ча́рка",
+   "baca": "CHAR-ka",
+   "id": "gelas kecil untuk bersulang"
+  },
+  {
+   "uk": "тремті́ти",
+   "baca": "trem-TI-ty",
+   "id": "gemetar"
+  },
+  {
+   "uk": "куни́ця",
+   "baca": "ku-NY-tsya",
+   "id": "marten (kiasan untuk gadis dalam сватання)"
+  },
+  {
+   "uk": "ми́сливець",
+   "baca": "MYS-ly-vets'",
+   "id": "pemburu"
+  },
+  {
+   "uk": "купе́ць",
+   "baca": "ku-PETS'",
+   "id": "saudagar, pembeli"
+  },
+  {
+   "uk": "ста́ти на рушни́к",
+   "baca": "STA-ty na rush-NYK",
+   "id": "menikah (idiom)"
+  },
+  {
+   "uk": "розпла́катися",
+   "baca": "roz-PLA-ka-ty-sya",
+   "id": "menangis tersedu, pecah tangis"
+  }
+ ],
+ "exercises": [
+  {
+   "prompt": "Terjemahkan ke bahasa Ukraina.",
+   "items": [
+    "Maukah kamu menikah denganku? (Andriy kepada Ani)",
+    "Semoga cincin ini membawa kebahagiaan untuk kalian.",
+    "Semoga Anda sehat!",
+    "Saya doakan kalian cinta dan kerukunan.",
+    "Mari kita angkat gelas untuk kedua mempelai!",
+    "Menurut adat, orang tua calon suami datang untuk lamaran."
+   ]
+  },
+  {
+   "prompt": "Isi titik-titik dengan bentuk yang tepat.",
+   "items": [
+    "____ вона принесе вам щастя. (хай, щоб)",
+    "____ ви були здорові! (хай, щоб)",
+    "Бажаю вам великих ____! (успіх)",
+    "Вона вийшла заміж ____ Андрія. (за, з)",
+    "Він одружився ____ Ані. (за, з)",
+    "____ до столу! (сісти, mari kita)",
+    "Дівчина дала йому ____, тобто відмовила. (гарбуз)"
+   ]
+  },
+  {
+   "prompt": "Ubah menjadi harapan dengan щоб + bentuk lampau.",
+   "items": [
+    "Ви будете щасливі.",
+    "Вам буде легко.",
+    "Молоді житимуть у злагоді.",
+    "Дощу не буде.",
+    "Усе вийде.",
+    "Діти ростуть здоровими."
+   ]
+  },
+  {
+   "prompt": "Susun jadi kalimat yang benar.",
+   "items": [
+    "заміж / вийдеш / мене / ти / за",
+    "щастя / принесе / хай / вам / вона",
+    "чарки / за / піднімімо / молодих",
+    "вас / товар / у / нас / у / купець",
+    "любові / бажаю / злагоди / вам / та"
+   ]
+  }
+ ],
+ "answers": [
+  "Ти вийдеш за мене заміж? — Хай ця каблучка принесе вам щастя. — Щоб ви були здорові! — Бажаю вам любові та злагоди. — Піднімімо чарки за молодих! — За звичаєм батьки нареченого приходять на сватання.",
+  "Хай — Щоб — успіхів — за — з — Сядьмо — гарбуза",
+  "Щоб ви були щасливі! — Щоб вам було легко! — Щоб молоді жили в злагоді! — Щоб не було дощу! — Щоб усе вийшло! — Щоб діти росли здоровими!",
+  "Ти вийдеш за мене заміж? — Хай вона принесе вам щастя. — Піднімімо чарки за молодих! — У вас товар, у нас купець. — Бажаю вам любові та злагоди."
+ ]
+}

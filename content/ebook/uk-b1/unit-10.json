@@ -1,0 +1,687 @@
+{
+ "title": "Laporan akhir tahun — bilangan kolektif, ordinal, dan tahun",
+ "title_target": "Річний звіт",
+ "goal": "Membacakan angka laporan dengan lancar: tahun dibaca lengkap (*у дві тисячі двадцять сьомому році*), ordinal dalam berbagai kasus (*на третьому місці*, *двадцять другого листопада*), serta bilangan kolektif *двоє, троє, шестеро, обоє* untuk orang dan kelompok.",
+ "bekal": [
+  "kamu bisa membaca tahun dan tanggal lengkap dengan kata-kata, hanya mengubah kata terakhir",
+  "kamu bisa memakai *двоє, троє, четверо… обоє* dan membedakan *обоє* dari *обидва / обидві*",
+  "kamu bisa menyampaikan hasil penjualan: *на третину більше*, *на другому місці*, *найкращий місяць*"
+ ],
+ "dialogs": [
+  {
+   "title": "Діалог 1 — Angka sebelas bulan",
+   "intro": "Rabu, 8 Desember 2027, kantor kecil di lantai atas gudang «Ява». Ani baru selesai menghitung penjualan sebelas bulan, dan pan Bohdan ingin melihat hasilnya. Perhatikan cara tahun dibaca lengkap, serta kata *троє, шестеро, обоє*.",
+   "lines": [
+    {
+     "speaker": "Богдан:",
+     "text": "[Ані|A-ni], [звіт|zvit] [за|za] [рік|rik] [готовий|ho-TO-vyy]? [Завтра|ZAV-tra] [я|ya] [маю|MA-yu] [показати|po-ka-ZA-ty] [його|yo-HO] [бухгалтерці|bukh-HAL-ter-tsi].",
+     "id": "Ani, laporan tahunannya sudah siap? Besok aku harus menunjukkannya ke akuntan.",
+     "literal": "Ani, laporan untuk tahun siap? besok saya harus menunjukkan‹selesai› dia (ak.) akuntan-perempuan (dat.)."
+    },
+    {
+     "speaker": "Ані:",
+     "text": "[Майже|MAY-zhe]. [Бракує|Bra-KU-ye] [лише|ly-SHE] [грудня|HRUD-nya], [але|a-LE] [одинадцять|o-dy-NAD-tsyat'] [місяців|MI-sya-tsiv] [я|ya] [вже|vzhe] [порахувала|po-ra-KHU-va-la].",
+     "id": "Hampir. Tinggal Desember saja, tapi sebelas bulan sudah kuhitung.",
+     "literal": "hampir. kurang hanya Desember (gen.), tetapi sebelas bulan (gen. jamak) saya sudah menghitung‹selesai› (pr.)."
+    },
+    {
+     "speaker": "Богдан:",
+     "text": "[Добре|DO-bre]. [То|To] [скільки|SKIL'-ky] [кави|KA-vy] [ми|my] [продали|pro-DA-ly] [в|v] [дві|dvi] [тисячі|TY-sya-chi] [двадцять|DVAD-tsyat'] [сьомому|SYO-mo-mu] [році|RO-tsi]?",
+     "id": "Bagus. Jadi berapa banyak kopi yang kita jual pada tahun 2027?",
+     "literal": "baik. jadi berapa-banyak kopi (gen.) kami menjual‹selesai› di dua ribu dua-puluh ketujuh (lok.) tahun (lok.)?"
+    },
+    {
+     "speaker": "Ані:",
+     "text": "[Вісім|VI-sim] [тонн|tonn] [сімсот|sim-SOT] [кілограмів|ki-lo-HRA-miv]. [Це|Tse] [на|na] [третину|TRE-ty-nu] [більше|BIL'-she], [ніж|nizh] [у|u] [дві|dvi] [тисячі|TY-sya-chi] [двадцять|DVAD-tsyat'] [шостому|SHOS-to-mu].",
+     "id": "Delapan ton tujuh ratus kilogram. Itu sepertiga lebih banyak daripada tahun 2026.",
+     "literal": "delapan ton (gen. jamak) tujuh-ratus kilogram (gen. jamak). ini pada sepertiga (ak.) lebih-banyak, daripada di dua ribu dua-puluh keenam (lok.)."
+    },
+    {
+     "speaker": "Богдан:",
+     "text": "[Непогано|Ne-po-HA-no]! [А|A] [який|ya-KYY] [місяць|MI-syats'] [був|buv] [найкращим|nay-KRA-shchym]?",
+     "id": "Lumayan! Bulan apa yang paling bagus?",
+     "literal": "tidak-buruk! dan yang-mana bulan adalah-lampau paling-baik (ins.)?"
+    },
+    {
+     "speaker": "Ані:",
+     "text": "[Листопад|Lys-to-PAD]. [За|Za] [два|dva] [дні|dni] [фестивалю|fes-ty-VA-lyu] [ми|my] [продали|pro-DA-ly] [більше|BIL'-she], [ніж|nizh] [за|za] [цілий|TSI-lyy] [січень|SI-chen'].",
+     "id": "November. Dalam dua hari festival kita menjual lebih banyak daripada selama satu Januari penuh.",
+     "literal": "November. dalam dua hari festival (gen.) kami menjual‹selesai› lebih-banyak, daripada dalam seluruh Januari (ak.)."
+    },
+    {
+     "speaker": "Богдан:",
+     "text": "[А|A] [хто|khto] [в|v] [нас|nas] [купує|ku-PU-ye] [найбільше|nay-BIL'-she]?",
+     "id": "Siapa yang paling banyak membeli dari kita?",
+     "literal": "dan siapa pada kami membeli paling-banyak?"
+    },
+    {
+     "speaker": "Ані:",
+     "text": "[Готелі|Ho-TE-li] [й|y] [кав'ярні|ka-VYAR-ni]. [На|Na] [другому|DRU-ho-mu] [місці|MIS-tsi] [інтернет|in-ter-NET]-[магазин|ma-ha-ZYN], [на|na] [третьому|TRE-tyo-mu] [наша|NA-sha] «[Ява|YA-va]».",
+     "id": "Hotel dan kafe. Di tempat kedua toko online, di tempat ketiga kedai «Ява» kita sendiri.",
+     "literal": "hotel-hotel dan kafe-kafe. di kedua (lok.) tempat (lok.) toko-internet, di ketiga (lok.) kami-punya «Ява»."
+    },
+    {
+     "speaker": "Богдан:",
+     "text": "[А|A] [скільки|SKIL'-ky] [в|v] [нас|nas] [тепер|te-PER] [постійних|pos-TIY-nykh] [клієнтів|kli-YEN-tiv]?",
+     "id": "Sekarang berapa pelanggan tetap kita?",
+     "literal": "dan berapa-banyak pada kami sekarang tetap (gen. jamak) klien (gen. jamak)?"
+    },
+    {
+     "speaker": "Ані:",
+     "text": "[Двадцять|DVAD-tsyat'] [три|try]. [Із|Iz] [них|nykh] [троє|TRO-ye] [нових|no-VYKH], [вони|vo-NY] [з'явилися|zya-VY-ly-sya] [після|PIS-lya] [фестивалю|fes-ty-VA-lyu].",
+     "id": "Dua puluh tiga. Tiga di antaranya baru, mereka muncul sesudah festival.",
+     "literal": "dua-puluh tiga. dari mereka (gen.) bertiga baru (gen. jamak), mereka muncul‹selesai› sesudah festival (gen.)."
+    },
+    {
+     "speaker": "Богдан:",
+     "text": "[Чудово|Chu-DO-vo]. [А|A] [що|shcho] [з|z] [командою|ko-MAN-do-yu]? [Наступного|Nas-TUP-no-ho] [року|RO-ku] [нам|nam] [потрібні|po-TRIB-ni] [нові|no-VI] [люди|LYU-dy].",
+     "id": "Bagus sekali. Lalu bagaimana dengan tim? Tahun depan kita butuh orang baru.",
+     "literal": "bagus-sekali. dan apa dengan tim (ins.)? berikutnya (gen.) tahun (gen.) kami (dat.) diperlukan baru orang-orang."
+    },
+    {
+     "speaker": "Ані:",
+     "text": "[Нас|Nas] [шестеро|SHES-te-ro] [разом|RA-zom] [із|iz] [двома|dvo-MA] [баристами|ba-RYS-ta-my]. [А|A] [на|na] [вихідні|VY-khid-ni] [Соломії|So-lo-MI-yi] [потрібно|po-TRIB-no] [ще|shche] [двоє|DVO-ye] [студентів|stu-DEN-tiv].",
+     "id": "Kita berenam, termasuk dua barista. Tapi untuk akhir pekan Solomiya butuh dua mahasiswa lagi.",
+     "literal": "kami (gen.) berenam bersama dengan dua (ins.) barista (ins.). dan untuk akhir-pekan Solomiya (dat.) perlu lagi berdua mahasiswa (gen. jamak)."
+    },
+    {
+     "speaker": "Богдан:",
+     "text": "[Згода|ZHO-da]. [А|A] [Юрко|Yur-KO] [й|y] [Соломія|So-lo-MI-ya] [цього|tsyo-HO] [року|RO-ku] [обоє|o-BO-ye] [працювали|pra-tsyu-VA-ly] [без|bez] [відпустки|vid-PUST-ky].",
+     "id": "Setuju. Lalu Yurko dan Solomiya tahun ini dua-duanya bekerja tanpa cuti.",
+     "literal": "setuju. dan Yurko dan Solomiya ini (gen.) tahun (gen.) keduanya bekerja (jamak) tanpa cuti (gen.)."
+    },
+    {
+     "speaker": "Ані:",
+     "text": "[Тоді|To-DI] [запишу|za-py-SHU] [в|v] [план|plan] [на|na] [дві|dvi] [тисячі|TY-sya-chi] [двадцять|DVAD-tsyat'] [восьмий|VOS'-myy] [рік|rik]: [відпустка|vid-PUST-ka] [для|dlya] [обох|o-BOKH]!",
+     "id": "Kalau begitu aku tulis di rencana tahun 2028: cuti untuk mereka berdua!",
+     "literal": "kalau-begitu akan-menulis‹selesai› ke rencana untuk dua ribu dua-puluh kedelapan tahun: cuti untuk keduanya (gen.)!"
+    }
+   ],
+   "notes": [
+    "**Звіт за рік. Бракує лише грудня.** *За* + akusatif menyebut periode yang dilaporkan: *звіт за рік*, *за листопад*, *за квартал*. *Бракує* + genitif = kurang, belum ada: bulan Desember belum selesai, jadi laporannya baru sebelas bulan. *Бухгалтерка* adalah bentuk feminin dari *бухгалтер*; bentuk feminin nama profesi seperti ini lazim dalam bahasa Ukraina modern.",
+    "**У дві тисячі двадцять сьомому році.** Tahun dibaca sebagai ordinal: \"tahun yang ke-2027\". Hanya **kata terakhir** yang menjadi ordinal dan ikut kasus (di sini lokatif sesudah *у*); *дві тисячі двадцять* tidak berubah. Dalam tulisan cukup *у 2027 році* atau *у 2027 р.*, tetapi saat dibaca harus lengkap. Bahasa Indonesia memakai bilangan biasa (\"tahun dua ribu dua puluh tujuh\"), jadi bagian ini perlu dilatih keras-keras.",
+    "**Вісім тонн сімсот кілограмів. На третину більше.** Sesudah angka 5 ke atas kata benda masuk genitif jamak: *вісім тонн*, *сімсот кілограмів*. Selisih dinyatakan dengan *на* + akusatif: *на третину більше* = lebih banyak sepertiga, *на сто кілограмів менше* = kurang seratus kilo. *Ніж у 2026* = daripada tahun 2026; kata *році* boleh dilesapkan karena sudah jelas.",
+    "**На другому місці, на третьому.** Ordinal berubah seperti kata sifat: *другий → на другому місці*. *Третій* berakhiran lunak, jadi lokatifnya *третьому* (bukan *третому*). Kata *місці* di bagian kedua dilesapkan, sama seperti kita bilang \"di tempat kedua toko online, ketiga «Ява»\".",
+    "**Троє нових. Нас шестеро.** Inilah bilangan kolektif: *двоє, троє, четверо, п'ятеро, шестеро…*. Kata sesudahnya selalu genitif jamak (*троє нових*, *двоє студентів*). Kabar baik untuk penutur Indonesia: *Нас шестеро* persis sama dengan \"kami berenam\", *Їх троє* = \"mereka bertiga\". Awalan *ber-* + bilangan dalam bahasa Indonesia adalah padanan yang hampir sempurna.",
+    "**Обоє, для обох.** *Обоє* = keduanya untuk pasangan laki-laki dan perempuan: Yurko (lk.) dan Solomiya (pr.) → *обоє*. Untuk dua hal sejenis pakai *обидва* (maskulin/netral) atau *обидві* (feminin): *обидва готелі*, *обидві кав'ярні*. Dalam kasus lain semuanya menjadi *обох, обом, обома*: *відпустка для обох*."
+   ],
+   "grammars": [
+    {
+     "title": "Bilangan kolektif: двоє, троє, четверо… обоє",
+     "body": [
+      "Bilangan kolektif menghitung orang dan kelompok sebagai satu kesatuan. Kata benda sesudahnya selalu genitif jamak."
+     ],
+     "table": {
+      "head": [
+       "Bentuk",
+       "Dipakai dengan",
+       "Contoh",
+       "Arti"
+      ],
+      "rows": [
+       [
+        "*двоє, троє*",
+        "laki-laki atau kelompok campuran",
+        "*двоє студентів, троє друзів*",
+        "dua mahasiswa, tiga teman"
+       ],
+       [
+        "*четверо, п'ятеро*",
+        "anak-anak, cucu",
+        "*четверо дітей, п'ятеро онуків*",
+        "empat anak, lima cucu"
+       ],
+       [
+        "*шестеро, семеро*",
+        "kata ganti orang",
+        "*Нас шестеро. Їх семеро.*",
+        "Kami berenam. Mereka bertujuh."
+       ],
+       [
+        "*двоє, троє*",
+        "anak hewan (*-ята*)",
+        "*двоє кошенят*",
+        "dua anak kucing"
+       ],
+       [
+        "*двоє, троє*",
+        "benda yang hanya jamak",
+        "*двоє дверей, троє ножиць*",
+        "dua pintu, tiga gunting"
+       ],
+       [
+        "*обоє*",
+        "pasangan laki-laki dan perempuan",
+        "*Юрко й Соломія обоє…*",
+        "keduanya (campuran)"
+       ],
+       [
+        "*обидва / обидві*",
+        "dua orang atau benda sejenis",
+        "*обидва готелі, обидві кав'ярні*",
+        "kedua hotel, kedua kafe"
+       ],
+       [
+        "*двох, двома, обох*",
+        "kasus lain (sama dengan *два*)",
+        "*з двома баристами, для обох*",
+        "dengan dua barista, untuk keduanya"
+       ]
+      ]
+     },
+     "after": [
+      "Kalau bilangan kolektif menjadi subjek, kata kerja lampau boleh netral tunggal atau jamak: *Прийшло двоє студентів* atau *Прийшли двоє студентів*."
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Діалог 2 — Slide untuk hari Jumat",
+   "intro": "Malam yang sama, pukul sembilan, di kedai «Ява» sesudah tutup. Ani masih menyiapkan slide untuk rapat tim hari Jumat; Solomiya dan Yurko ikut melihat dari balik bahunya. Perhatikan ordinal dalam berbagai kasus: *на сьомому слайді*, *п'ятнадцятого вересня*, *тисяча першим*.",
+   "lines": [
+    {
+     "speaker": "Соломія:",
+     "text": "[Ані|A-ni], [ти|ty] [все|vse] [ще|shche] [над|nad] [цифрами|TSY-fra-my]? [Уже|U-ZHE] [дев'ята|de-VYA-ta] [година|ho-DY-na]!",
+     "id": "Ani, kamu masih berkutat dengan angka? Sudah jam sembilan!",
+     "literal": "Ani, kamu masih di-atas angka-angka (ins.)? sudah kesembilan jam!"
+    },
+    {
+     "speaker": "Ані:",
+     "text": "[Ще|Shche] [п'ять|pyat'] [хвилин|khvy-LYN]. [Пан|Pan] [Богдан|Boh-DAN] [хоче|KHO-che] [показати|po-ka-ZA-ty] [звіт|zvit] [усій|u-SIY] [команді|ko-MAN-di] [в|v] [п'ятницю|PYAT-ny-tsyu].",
+     "id": "Lima menit lagi. Pan Bohdan mau menunjukkan laporannya ke seluruh tim hari Jumat.",
+     "literal": "lagi lima menit (gen. jamak). tuan Bohdan ingin menunjukkan‹selesai› laporan seluruh (dat.) tim (dat.) pada Jumat (ak.)."
+    },
+    {
+     "speaker": "Юрко:",
+     "text": "[А|A] [я|ya] [там|tam] [є|ye]? [На|Na] [якому|ya-KO-mu] [я|ya] [слайді|SLAY-di]?",
+     "id": "Aku ada di situ? Aku di slide yang mana?",
+     "literal": "dan saya di-sana ada? di yang-mana (lok.) saya slide (lok.)?"
+    },
+    {
+     "speaker": "Ані:",
+     "text": "[На|Na] [сьомому|SYO-mo-mu]. [Там|Tam] [фото|FO-to], [де|de] [ви|vy] [обоє|o-BO-ye] [стоїте|sto-YI-te] [біля|BI-lya] [ростера|ROS-te-ra].",
+     "id": "Di slide ketujuh. Ada foto kalian berdua berdiri di dekat mesin sangrai.",
+     "literal": "di ketujuh (lok.). di-sana foto, di-mana kalian keduanya berdiri dekat mesin-sangrai (gen.)."
+    },
+    {
+     "speaker": "Соломія:",
+     "text": "[Те|Te], [що|shcho] [зробили|ZRO-by-ly] [п'ятнадцятого|pyat-NAD-tsya-to-ho] [вересня|VE-res-nya]? [Я|Ya] [там|tam] [заплющила|za-PLYU-shchy-la] [очі|O-chi]!",
+     "id": "Yang diambil tanggal lima belas September? Di situ mataku terpejam!",
+     "literal": "itu, yang (mereka)-membuat‹selesai› kelima-belas (gen.) September (gen.)? saya di-sana memejamkan‹selesai› (pr.) mata!"
+    },
+    {
+     "speaker": "Ані:",
+     "text": "[Нічого|Ni-CHO-ho], [ви|vy] [обоє|o-BO-ye] [там|tam] [усміхаєтеся|us-mi-KHA-ye-te-sya]. [А|A] [на|na] [восьмому|VOS'-mo-mu] [слайді|SLAY-di] [наша|NA-sha] [тисячна|TY-syach-na] [пачка|PACH-ka].",
+     "id": "Nggak apa-apa, kalian berdua tersenyum di situ. Lalu di slide kedelapan ada pak kopi kita yang keseribu.",
+     "literal": "tidak-apa, kalian keduanya di-sana tersenyum. dan di kedelapan (lok.) slide (lok.) kami-punya keseribu bungkus."
+    },
+    {
+     "speaker": "Юрко:",
+     "text": "[Тисячна|TY-syach-na]? [Коли|Ko-LY] [ж|zh] [ми|my] [продали|pro-DA-ly] [тисячну|TY-syach-nu]?",
+     "id": "Keseribu? Kapan kita menjual yang keseribu?",
+     "literal": "keseribu? kapan (penegas) kami menjual‹selesai› keseribu (ak.)?"
+    },
+    {
+     "speaker": "Ані:",
+     "text": "[Двадцять|DVAD-tsyat'] [другого|DRU-ho-ho] [листопада|lys-to-PA-da], [за|za] [тиждень|TYZH-den'] [до|do] [фестивалю|fes-ty-VA-lyu].",
+     "id": "Tanggal dua puluh dua November, seminggu sebelum festival.",
+     "literal": "dua-puluh kedua (gen.) November (gen.), dalam minggu (ak.) sebelum festival (gen.)."
+    },
+    {
+     "speaker": "Соломія:",
+     "text": "[Пам'ятаю|Pa-mya-TA-yu]! [Ту|Tu] [пачку|PACH-ku] [купила|ku-PY-la] [жінка|ZHIN-ka], [а|a] [з|z] [нею|NE-yu] [було|bu-LO] [двоє|DVO-ye] [близнюків|blyz-nyu-KIV].",
+     "id": "Aku ingat! Bungkus itu dibeli seorang ibu, dan bersamanya ada dua anak kembar.",
+     "literal": "(aku)-ingat! itu (ak.) bungkus (ak.) membeli‹selesai› perempuan, dan dengan dia (ins.) ada-lampau (n.) berdua anak-kembar (gen. jamak)."
+    },
+    {
+     "speaker": "Юрко:",
+     "text": "[А|A] [я|ya] [думав|DU-mav], [що|shcho] [тисячним|TY-syach-nym] [покупцем|po-kup-TSEM] [був|buv] [я|ya]!",
+     "id": "Padahal kukira pembeli keseribu itu aku!",
+     "literal": "dan saya berpikir (lk.), bahwa keseribu (ins.) pembeli (ins.) adalah-lampau saya!"
+    },
+    {
+     "speaker": "Ані:",
+     "text": "[Ти|Ty], [Юрку|YUR-ku], [був|buv] [тисяча|TY-sya-cha] [першим|PER-shym]. [Тебе|Te-BE] [я|ya] [теж|tezh] [поставлю|pos-TA-vlyu] [на|na] [слайд|slayd].",
+     "id": "Kamu, Yurko, yang keseribu satu. Kamu juga akan kutaruh di slide.",
+     "literal": "kamu, Yurko (vok.), adalah-lampau seribu pertama (ins.). kamu (ak.) saya juga akan-menaruh‹selesai› pada slide (ak.)."
+    }
+   ],
+   "notes": [
+    "**Уже дев'ята година.** Jam dinyatakan dengan ordinal feminin, karena *година* feminin: *перша, друга, дев'ята година*. \"Pada jam sembilan\" = *о дев'ятій* (lokatif). *Над цифрами* = berkutat dengan angka; *працювати над чимось* = mengerjakan sesuatu dengan tekun.",
+    "**На якому слайді? На сьомому.** Pertanyaan *який* ikut kasus yang sama dengan jawabannya: *на якому? на сьомому*. *Сьомий* dan *восьмий* berubah seperti kata sifat keras: *на сьомому, на восьмому*. Kata *слайд* sering dilesapkan dalam jawaban, cukup ordinalnya saja.",
+    "**Ви обоє стоїте.** *Обоє* bisa melekat pada kata ganti: *ви обоє*, *ми обоє*, *вони обоє*. Kata kerjanya tetap mengikuti kata ganti (*стоїте*, *усміхаєтеся*). Ani berbicara kepada Solomiya dan tentang Yurko sekaligus, jadi *ви обоє* = \"kalian berdua\".",
+    "**П'ятнадцятого вересня. Двадцять другого листопада.** Untuk menjawab \"kapan?\", tanggal memakai **genitif ordinal tanpa kata depan**: *п'ятнадцятого вересня* = pada tanggal lima belas September. Pada ordinal bertingkat, hanya kata terakhir yang berubah: *двадцять другого*, bukan *двадцятого другого*. Bulan selalu genitif: *вересня, листопада*.",
+    "**З нею було двоє близнюків.** Sesudah bilangan kolektif sebagai subjek, kata kerja lampau sering berbentuk netral tunggal: *було двоє*, *прийшло троє*. Dalam kasus lain *двоє* berubah seperti *два*: *з двома дітьми*, *для двох близнюків*. *Близнюки* = anak kembar; satu anak kembar disebut *близнюк* (lk.) atau *близнючка* (pr.).",
+    "**Тисячний, тисяча першим.** Ordinal dari *тисяча* adalah *тисячний*. \"Keseribu satu\" = *тисяча перший*: lagi-lagi hanya kata terakhir yang ordinal. Sesudah *був* ordinal masuk instrumental: *був тисячним покупцем*, *був тисяча першим*. *Юрку* adalah bentuk panggilan (kličnyj) dari *Юрко*, dengan tekanan pindah ke depan: *YUR-ku*."
+   ],
+   "grammars": [
+    {
+     "title": "Ordinal dalam kasus",
+     "body": [
+      "Ordinal berubah seperti kata sifat. *Третій* satu-satunya yang berakhiran lunak; semua ordinal lain keras seperti *перший*."
+     ],
+     "table": {
+      "head": [
+       "Kasus",
+       "перший (m./n.)",
+       "третій (m./n.)",
+       "перша (f.)",
+       "Contoh"
+      ],
+      "rows": [
+       [
+        "nominatif",
+        "перший",
+        "третій",
+        "перша",
+        "*Сьогодні восьме грудня.*"
+       ],
+       [
+        "genitif",
+        "першого",
+        "третього",
+        "першої",
+        "*п'ятнадцятого вересня*"
+       ],
+       [
+        "datif",
+        "першому",
+        "третьому",
+        "першій",
+        "*третьому покупцеві*"
+       ],
+       [
+        "akusatif (tak bernyawa)",
+        "перший",
+        "третій",
+        "першу",
+        "*продали тисячну пачку*"
+       ],
+       [
+        "instrumental",
+        "першим",
+        "третім",
+        "першою",
+        "*був тисяча першим*"
+       ],
+       [
+        "lokatif",
+        "(на) першому",
+        "(на) третьому",
+        "(на) першій",
+        "*на сьомому слайді*"
+       ]
+      ]
+     },
+     "after": [
+      "Pada bilangan bertingkat hanya kata terakhir yang menjadi ordinal: *двадцять другого*, *тисяча першим*, *у дві тисячі двадцять сьомому році*."
+     ]
+    }
+   ]
+  }
+ ],
+ "sections": [
+  {
+   "title": "Membaca tahun dan tanggal",
+   "blocks": [
+    {
+     "type": "p",
+     "text": "Dalam tulisan orang Ukraina memakai angka: *у 2027 р.*, *22.11.2027*. Tetapi saat dibacakan, di rapat, di radio, atau di ujian lisan, seluruh angka harus diucapkan, dan hanya kata terakhir yang berubah menjadi ordinal dalam kasus yang dibutuhkan. Bahasa Indonesia cukup menyebut \"tahun dua ribu dua puluh tujuh\"; bahasa Ukraina mengatakan \"tahun yang kedua ribu dua puluh tujuh\"."
+    },
+    {
+     "type": "tabel",
+     "head": [
+      "Ditulis",
+      "Dibaca",
+      "Arti"
+     ],
+     "rows": [
+      [
+       "*у 2027 році*",
+       "*у дві тисячі двадцять сьомому році*",
+       "pada tahun 2027"
+      ],
+      [
+       "*2028 рік*",
+       "*дві тисячі двадцять восьмий рік*",
+       "tahun 2028"
+      ],
+      [
+       "*з 2020 року*",
+       "*з дві тисячі двадцятого року*",
+       "sejak tahun 2020"
+      ],
+      [
+       "*до 2030 року*",
+       "*до дві тисячі тридцятого року*",
+       "sampai tahun 2030"
+      ],
+      [
+       "*22 листопада*",
+       "*двадцять другого листопада*",
+       "pada 22 November"
+      ],
+      [
+       "*Сьогодні 8 грудня.*",
+       "*Сьогодні восьме грудня.*",
+       "Hari ini 8 Desember."
+      ],
+      [
+       "*1 січня*",
+       "*першого січня*",
+       "pada 1 Januari"
+      ],
+      [
+       "*у XXI столітті*",
+       "*у двадцять першому столітті*",
+       "pada abad ke-21"
+      ],
+      [
+       "*у 1990-х роках*",
+       "*у дев'яностих роках*",
+       "pada tahun 1990-an"
+      ]
+     ]
+    },
+    {
+     "type": "kotak",
+     "title": "Tiga jebakan",
+     "items": [
+      "Untuk \"tanggal berapa?\" pakai nominatif netral (*число* tersirat): *Сьогодні восьме грудня.* Untuk \"kapan?\" pakai genitif tanpa kata depan: *восьмого грудня*.",
+      "Bulan sesudah tanggal selalu genitif: *восьме грудня*, bukan *восьме грудень*.",
+      "Jangan ubah bagian depan tahun: *у дві тисячі двадцять сьомому році*, bukan *у двох тисячах…*."
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Bahasa laporan penjualan",
+   "blocks": [
+    {
+     "type": "p",
+     "text": "Laporan tahunan (*річний звіт*) punya kosakatanya sendiri: angka naik dan turun, dibandingkan dengan tahun lalu, lalu dinyatakan dengan pecahan, kelipatan, atau persen. Kata depan *на* menunjukkan selisih, *до* menunjukkan angka akhir, dan *удвічі* atau *у … рази* menunjukkan kelipatan."
+    },
+    {
+     "type": "tabel",
+     "head": [
+      "Українська",
+      "Bahasa Indonesia"
+     ],
+     "rows": [
+      [
+       "*річний звіт*",
+       "laporan tahunan"
+      ],
+      [
+       "*виторг*",
+       "omzet, pendapatan kotor"
+      ],
+      [
+       "*продажі зросли на третину*",
+       "penjualan naik sepertiga"
+      ],
+      [
+       "*виторг зріс до мільйона гривень*",
+       "omzet naik menjadi satu juta hryvnia"
+      ],
+      [
+       "*удвічі більше*",
+       "dua kali lipat"
+      ],
+      [
+       "*у три рази менше*",
+       "sepertiganya saja"
+      ],
+      [
+       "*на двадцять відсотків*",
+       "sebesar dua puluh persen"
+      ],
+      [
+       "*порівняно з минулим роком*",
+       "dibandingkan dengan tahun lalu"
+      ],
+      [
+       "*у середньому*",
+       "rata-rata"
+      ],
+      [
+       "*найкращий місяць року*",
+       "bulan terbaik dalam setahun"
+      ]
+     ]
+    },
+    {
+     "type": "list",
+     "items": [
+      "*Ми продали на третину більше, ніж у 2026 році.* = Kami menjual sepertiga lebih banyak daripada tahun 2026.",
+      "*У листопаді виторг зріс удвічі.* = Pada bulan November omzet naik dua kali lipat.",
+      "*У середньому ми продаємо майже вісімсот кілограмів на місяць.* = Rata-rata kami menjual hampir delapan ratus kilogram per bulan."
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Ulangan berjenjang — unit 8",
+   "blocks": [
+    {
+     "type": "p",
+     "text": "Tutup kolom Ukraina, baca terjemahan Indonesianya, lalu susun kembali kalimatnya dari ingatan."
+    },
+    {
+     "type": "tabel",
+     "head": [
+      "Bahasa Indonesia",
+      "Українська",
+      "Baca"
+     ],
+     "rows": [
+      [
+       "«Meskipun harga kami sedikit lebih tinggi, mutu bijinya jauh lebih baik».",
+       "«Хоча наші ціни трохи вищі, якість зерна набагато краща».",
+       "*Kho-CHA NA-shi TSI-ny TRO-khy VY-shchi YA-kist' zer-NA na-ba-HA-to KRA-shcha*"
+      ],
+      [
+       "Jadi, kita usulkan pertemuan di Kyiv awal Desember?",
+       "Отже, пропонуємо зустріч у Києві на початку грудня?",
+       "*OT-zhe pro-po-NU-ye-mo ZUS-trich u KY-ye-vi na po-CHAT-ku HRUD-nya*"
+      ],
+      [
+       "Ya. Dan jangan lupa: di akhir bukan «Dah», tapi «Hormat saya».",
+       "Так. І не забудь: наприкінці не «Бувай», а «З повагою».",
+       "*Tak I ne za-BUD' na-PRY-kin-tsi ne Bu-VAY a Z po-VA-ho-yu*"
+      ],
+      [
+       "Tawaran Anda menarik, meskipun kami sudah punya pemasok.",
+       "Ваша пропозиція цікава, хоча ми вже маємо постачальника.",
+       "*VA-sha pro-po-ZY-tsi-ya tsi-KA-va kho-CHA my vzhe MA-ye-mo pos-ta-CHAL'-ny-ka*"
+      ],
+      [
+       "Justru karena itu saya menelepon. Apakah Anda bisa mengirimkan sampel?",
+       "Саме тому я й дзвоню. Чи не могли б ви надіслати зразки?",
+       "*SA-me to-MU ya y dzvo-NYU Chy ne mo-HLY b vy na-dis-LA-ty zraz-KY*"
+      ]
+     ]
+    }
+   ]
+  }
+ ],
+ "vocab": [
+  {
+   "uk": "звіт",
+   "baca": "zvit",
+   "id": "laporan (*звіт за рік*)"
+  },
+  {
+   "uk": "бухга́лтер / бухга́лтерка",
+   "baca": "bukh-HAL-ter / bukh-HAL-ter-ka",
+   "id": "akuntan (lk. / pr.)"
+  },
+  {
+   "uk": "продава́ти / прода́ти",
+   "baca": "pro-da-VA-ty / pro-DA-ty",
+   "id": "menjual"
+  },
+  {
+   "uk": "браку́вати",
+   "baca": "bra-KU-va-ty",
+   "id": "kurang, belum ada (+ gen.: *бракує грудня*)"
+  },
+  {
+   "uk": "рахува́ти / пораху́вати",
+   "baca": "ra-khu-VA-ty / po-ra-KHU-va-ty",
+   "id": "menghitung"
+  },
+  {
+   "uk": "тре́тина",
+   "baca": "TRE-ty-na",
+   "id": "sepertiga (*на третину більше*)"
+  },
+  {
+   "uk": "ви́торг",
+   "baca": "VY-torh",
+   "id": "omzet, pendapatan kotor"
+  },
+  {
+   "uk": "зроста́ти / зрости́",
+   "baca": "zros-TA-ty / zros-TY",
+   "id": "naik, tumbuh (*зріс, зросла*)"
+  },
+  {
+   "uk": "найкра́щий",
+   "baca": "nay-KRA-shchyy",
+   "id": "terbaik, paling bagus"
+  },
+  {
+   "uk": "пості́йний",
+   "baca": "pos-TIY-nyy",
+   "id": "tetap (*постійний клієнт*)"
+  },
+  {
+   "uk": "покупе́ць (gen. покупця́)",
+   "baca": "po-ku-PETS'",
+   "id": "pembeli"
+  },
+  {
+   "uk": "інтерне́т-магази́н",
+   "baca": "in-ter-NET-ma-ha-ZYN",
+   "id": "toko online"
+  },
+  {
+   "uk": "дво́є",
+   "baca": "DVO-ye",
+   "id": "berdua, dua (orang)"
+  },
+  {
+   "uk": "тро́є",
+   "baca": "TRO-ye",
+   "id": "bertiga, tiga (orang)"
+  },
+  {
+   "uk": "че́тверо",
+   "baca": "CHET-ve-ro",
+   "id": "berempat, empat (orang)"
+  },
+  {
+   "uk": "ше́стеро",
+   "baca": "SHES-te-ro",
+   "id": "berenam (*нас шестеро*)"
+  },
+  {
+   "uk": "обо́є",
+   "baca": "o-BO-ye",
+   "id": "keduanya (laki-laki dan perempuan)"
+  },
+  {
+   "uk": "оби́два / оби́дві",
+   "baca": "o-BYD-va / o-BYD-vi",
+   "id": "kedua, keduanya (sejenis; m.n. / f.)"
+  },
+  {
+   "uk": "близнюки́",
+   "baca": "blyz-nyu-KY",
+   "id": "anak kembar (*двоє близнюків*)"
+  },
+  {
+   "uk": "відпу́стка",
+   "baca": "vid-PUST-ka",
+   "id": "cuti (*без відпустки*)"
+  },
+  {
+   "uk": "насту́пний",
+   "baca": "nas-TUP-nyy",
+   "id": "berikutnya (*наступного року*)"
+  },
+  {
+   "uk": "ти́сячний",
+   "baca": "TY-syach-nyy",
+   "id": "keseribu"
+  },
+  {
+   "uk": "тре́тій (gen. тре́тього)",
+   "baca": "TRE-tiy",
+   "id": "ketiga (ordinal lunak)"
+  },
+  {
+   "uk": "у … ро́ці",
+   "baca": "u RO-tsi",
+   "id": "pada tahun … (*у 2027 році*)"
+  },
+  {
+   "uk": "кома́нда",
+   "baca": "ko-MAN-da",
+   "id": "tim"
+  }
+ ],
+ "exercises": [
+  {
+   "prompt": "Terjemahkan ke bahasa Ukraina. Tulis tahun dan tanggal dengan kata-kata.",
+   "items": [
+    "Berapa banyak kopi yang kita jual pada tahun 2027?",
+    "Kami berenam.",
+    "Di tempat kedua ada toko online.",
+    "Yurko dan Solomiya dua-duanya bekerja tanpa cuti.",
+    "Itu sepertiga lebih banyak daripada tahun 2026.",
+    "Kami menjual pak yang keseribu pada tanggal 22 November."
+   ]
+  },
+  {
+   "prompt": "Isi titik-titik dengan bentuk yang tepat. Petunjuk ada di dalam kurung.",
+   "items": [
+    "У нас ____ нових клієнтів. (3, kolektif)",
+    "Нас ____: пан Богдан, Соломія, Юрко, Ані і два баристи. (6, kolektif)",
+    "Юрко й Соломія ____ працювали без відпустки. (обидва, обоє)",
+    "Ані й Соломія ____ живуть у Львові. (обидві, обоє)",
+    "Твоє фото на ____ слайді. (7, ordinal)",
+    "Ми продали тисячну пачку ____ листопада. (22)",
+    "Звіт майже готовий, бракує лише ____. (грудень)"
+   ]
+  },
+  {
+   "prompt": "Tulis dengan kata-kata, seperti saat dibacakan keras-keras.",
+   "items": [
+    "у 2027 році",
+    "план на 2028 рік",
+    "Це сталося 15 вересня.",
+    "до 1 січня",
+    "з 2020 року",
+    "у XXI столітті"
+   ]
+  },
+  {
+   "prompt": "Susun jadi kalimat yang benar.",
+   "items": [
+    "у дві тисячі двадцять сьомому році / ми продали / скільки кави",
+    "інтернет-магазин / на другому місці / наша «Ява» / на третьому",
+    "обоє / без відпустки / Юрко й Соломія / працювали",
+    "шестеро / нас / разом із двома баристами",
+    "був / Юрку / тисяча першим / ти"
+   ]
+  }
+ ],
+ "answers": [
+  "Скільки кави ми продали в дві тисячі двадцять сьомому році? — Нас шестеро. — На другому місці інтернет-магазин. — Юрко й Соломія обоє працювали без відпустки. — Це на третину більше, ніж у дві тисячі двадцять шостому році. — Ми продали тисячну пачку двадцять другого листопада.",
+  "троє — шестеро — обоє — обидві — сьомому — двадцять другого — грудня",
+  "у дві тисячі двадцять сьомому році — план на дві тисячі двадцять восьмий рік — Це сталося п'ятнадцятого вересня. — до першого січня — з дві тисячі двадцятого року — у двадцять першому столітті",
+  "Скільки кави ми продали у дві тисячі двадцять сьомому році? — На другому місці інтернет-магазин, на третьому наша «Ява». — Юрко й Соломія обоє працювали без відпустки. — Нас шестеро разом із двома баристами. — Ти, Юрку, був тисяча першим."
+ ]
+}

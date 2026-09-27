@@ -1,0 +1,693 @@
+{
+ "title": "Wawancara di «Зерно» — sedang dikerjakan atau sudah jadi",
+ "title_target": "Що ви робили раніше?",
+ "goal": "Menceritakan pengalaman kerja dan kejadian lampau dengan memilih aspek yang tepat: *робила* untuk proses, kebiasaan, dan lamanya waktu; *зробила* untuk satu hasil yang sudah tuntas.",
+ "bekal": [
+  "kamu bisa membedakan lampau proses dan lampau hasil: *Я два роки працювала в кав'ярні. Нарешті я зробила лебедя!*",
+  "kamu bisa mengenali kata penanda aspek: *довго, часто, колись* lawan *вже, щойно, нарешті*",
+  "kamu bisa menjawab pertanyaan wawancara kerja: pengalaman, keterampilan, dan kapan bisa mulai"
+ ],
+ "dialogs": [
+  {
+   "title": "Діалог 1 — Wawancara dengan Maksym",
+   "intro": "Selasa, 2 Februari 2027, pukul sepuluh pagi, di kedai kopi «Зерно» di Podil. Ani melamar kerja paruh waktu dan pemiliknya, Maksym, mewawancarainya. Perhatikan pasangan kata kerja: *робили* dan *зробила*, *вчу* dan *вивчила*. Yang satu bercerita tentang proses, yang lain tentang hasil.",
+   "lines": [
+    {
+     "speaker": "Максим:",
+     "text": "[Добридень|Do-BRY-den']! [Ви|Vy] [Ані|A-ni]? [Проходьте|Pro-KHOD'-te], [сідайте|si-DAY-te].",
+     "id": "Selamat siang! Anda Ani? Silakan masuk, silakan duduk.",
+     "literal": "selamat-siang! Anda Ani? masuklah (hormat), duduklah (hormat)."
+    },
+    {
+     "speaker": "Ані:",
+     "text": "[Добридень|Do-BRY-den']! [Так|Tak], [я|ya] [Ані|A-ni]. [Дякую|DYA-ku-yu], [що|shcho] [запросили|za-pro-SY-ly].",
+     "id": "Selamat siang! Iya, saya Ani. Terima kasih sudah mengundang saya.",
+     "literal": "selamat-siang! ya, saya Ani. terima-kasih, bahwa mengundang‹selesai› (Anda)."
+    },
+    {
+     "speaker": "Максим:",
+     "text": "[Розкажіть|Roz-ka-ZHIT'] [трохи|TRO-khy] [про|pro] [себе|SE-be]. [Де|De] [ви|vy] [працювали|pra-tsyu-VA-ly] [раніше|RA-ni-she]?",
+     "id": "Ceritakan sedikit tentang diri Anda. Dulu Anda kerja di mana?",
+     "literal": "ceritakanlah‹selesai› sedikit tentang diri. di-mana Anda bekerja‹proses› dulu?"
+    },
+    {
+     "speaker": "Ані:",
+     "text": "[У|U] [Джакарті|Dzha-KAR-ti] [я|ya] [два|dva] [роки|RO-ky] [працювала|pra-tsyu-VA-la] [в|v] [кав'ярні|ka-VYAR-ni] [біля|BI-lya] [університету|u-ni-ver-sy-TE-tu].",
+     "id": "Di Jakarta saya dua tahun kerja di kedai kopi dekat kampus.",
+     "literal": "di Jakarta (lok.) saya dua tahun bekerja‹proses› di kedai-kopi (lok.) dekat universitas (gen.)."
+    },
+    {
+     "speaker": "Максим:",
+     "text": "[А|A] [що|shcho] [ви|vy] [там|tam] [робили|ro-BY-ly]?",
+     "id": "Terus di sana Anda ngapain saja?",
+     "literal": "dan apa Anda di-sana melakukan‹proses›?"
+    },
+    {
+     "speaker": "Ані:",
+     "text": "[Готовила|Ho-TO-vy-la] [каву|KA-vu], [приймала|pryy-MA-la] [замовлення|za-MO-vlen-nya], [часом|CHA-som] [пекла|pe-KLA] [тистечка|TYS-tech-ka].",
+     "id": "Bikin kopi, terima pesanan, kadang-kadang bikin kue.",
+     "literal": "membuat‹proses› kopi (ak.), menerima‹proses› pesanan, kadang memanggang‹proses› kue-kue."
+    },
+    {
+     "speaker": "Максим:",
+     "text": "[А|A] [ви|vy] [колись|ko-LYS'] [робили|ro-BY-ly] [малюнки|ma-LYUN-ky] [на|na] [каві|KA-vi]?",
+     "id": "Anda pernah bikin gambar di atas kopi?",
+     "literal": "dan Anda pernah membuat‹proses› gambar-gambar di kopi (lok.)?"
+    },
+    {
+     "speaker": "Ані:",
+     "text": "[Так|Tak], [я|ya] [довго|DOV-ho] [вчилася|VCHY-la-sya]. [А|A] [минулого|my-NU-lo-ho] [місяця|MI-sya-tsya] [нарешті|na-RESH-ti] [зробила|zro-BY-la] [лебедя|LE-be-dya]!",
+     "id": "Iya, saya lama belajarnya. Dan bulan lalu akhirnya saya bisa bikin angsa!",
+     "literal": "ya, saya lama belajar‹proses›. dan lalu (gen.) bulan (gen.) akhirnya membuat‹selesai› angsa (ak.)!"
+    },
+    {
+     "speaker": "Максим:",
+     "text": "[Лебедя|LE-be-dya]! [А|A] [українську|u-kra-YIN-s'ku] [ви|vy] [де|de] [вивчили|VYV-chy-ly]?",
+     "id": "Angsa! Terus bahasa Ukraina Anda pelajari di mana?",
+     "literal": "angsa! dan Ukraina (ak.) Anda di-mana mempelajari‹selesai›?"
+    },
+    {
+     "speaker": "Ані:",
+     "text": "[Я|Ya] [вчу|vchu] [її|yi-YI] [з|z] [вересня|VE-res-nya], [на|na] [курсах|KUR-sakh] [у|u] [Києві|KY-ye-vi]. [Ще|Shche] [не|ne] [вивчила|VYV-chy-la], [але|a-LE] [стараюся|sta-RA-yu-sya].",
+     "id": "Saya belajar sejak September, di kursus di Kyiv. Belum kuasai, tapi saya berusaha.",
+     "literal": "saya belajar dia (ak.) sejak September (gen.), di kursus (lok. jamak) di Kyiv (lok.). masih tidak mempelajari‹selesai›, tapi berusaha."
+    },
+    {
+     "speaker": "Максим:",
+     "text": "[Ви|Vy] [добре|DO-bre] [говорите|ho-vo-RY-te]. [Коли|Ko-LY] [можете|MO-zhe-te] [почати|po-CHA-ty]?",
+     "id": "Bahasa Ukraina Anda bagus. Kapan bisa mulai?",
+     "literal": "Anda baik berbicara. kapan bisa mulai‹selesai›?"
+    },
+    {
+     "speaker": "Ані:",
+     "text": "[Хоч|Khoch] [завтра|ZAV-tra]! [Я|Ya] [вже|vzhe] [прочитала|pro-chy-TA-la] [ваше|VA-she] [меню|me-NYU] [на|na] [сайті|SAY-ti].",
+     "id": "Besok juga bisa! Saya sudah baca menu Anda di situs.",
+     "literal": "bahkan besok! saya sudah membaca‹selesai› milik-Anda menu di situs (lok.)."
+    },
+    {
+     "speaker": "Максим:",
+     "text": "[О|O], [ви|vy] [підготувалися|pid-ho-tu-VA-ly-sya]! [Тоді|To-DI] [починаєте|po-chy-NA-ye-te] [в|v] [понеділок|po-ne-DI-lok], [восьмого|VOS'-mo-ho] [лютого|LYU-to-ho].",
+     "id": "Wah, Anda sudah siap! Kalau begitu mulai Senin, tanggal delapan Februari.",
+     "literal": "oh, Anda sudah-bersiap‹selesai›! kalau-begitu mulai pada Senin, kedelapan (gen.) Februari (gen.)."
+    },
+    {
+     "speaker": "Ані:",
+     "text": "[Дякую|DYA-ku-yu], [Максиме|Mak-SY-me]! [Я|Ya] [дуже|DU-zhe] [рада|RA-da].",
+     "id": "Terima kasih, Maksym! Saya senang sekali.",
+     "literal": "terima-kasih, Maksym (panggilan)! saya sangat senang (pr)."
+    }
+   ],
+   "notes": [
+    "**Проходьте, сідайте.** Dua perintah hormat yang pasti kamu dengar setiap kali masuk kantor atau ruang periksa. *Проходьте* (silakan masuk, silakan lewat) dan *сідайте* (silakan duduk). Jawabannya cukup *Дякую*. Di baris berikut Ani berkata *Дякую, що запросили*: terima kasih (karena) sudah mengundang. Pola *дякую, що …* sangat berguna.",
+    "**Два роки працювала.** Kalau lamanya waktu disebut (*два роки, довго, цілий день*), kata kerja hampir selalu **aspek tidak sempurna** (недоконаний вид). Pertanyaan Maksym *Що ви там робили?* juga memakai aspek ini, karena ia menanyakan kegiatan, bukan satu hasil.",
+    "**Готувала, приймала, пекла.** Deretan kegiatan yang berulang dan menjadi kebiasaan selalu memakai aspek tidak sempurna. Dalam bahasa Indonesia kita cukup berkata \"bikin kopi, terima pesanan\"; bahasa Ukraina memaksamu memilih, dan untuk kebiasaan pilihannya jelas. *Пекти* (memanggang) punya lampau tak beraturan: *він пік, вона пекла, вони пекли*.",
+    "**Робили малюнки? Нарешті зробила лебедя!** Maksym bertanya tentang pengalaman (*колись робили* = pernah melakukan), maka aspek tidak sempurna. Ani menjawab dengan satu keberhasilan yang tuntas: **зробила** (aspek sempurna). Kata *нарешті* (akhirnya) hampir selalu menarik aspek sempurna, karena akhir selalu berarti hasil.",
+    "**Вчу, але ще не вивчила.** *Вчити* adalah proses belajar, *вивчити* berarti menguasai sampai tuntas. Awalan **ви-** pada kata kerja sempurna selalu menyedot tekanan: *VY-vchy-la*, *VY-py-ty*, *VY-yty*. *Ще не вивчила* berarti \"belum selesai menguasai\", kalimat rendah hati yang sangat pas di wawancara.",
+    "**Прочитала, підготувалися.** Dua kata kerja sempurna yang menunjukkan hasil yang masih terasa sekarang: menunya sudah dibaca, orangnya sudah siap. Bahasa Indonesia memakai \"sudah\" untuk ini; bahasa Ukraina memakai aspek sempurna, dan *вже* (sudah) sering ikut menemani."
+   ],
+   "grammars": [
+    {
+     "title": "Aspek di waktu lampau: proses atau hasil",
+     "body": [
+      "Hampir setiap kata kerja Ukraina punya pasangan. Yang **tidak sempurna** menceritakan kegiatan, kebiasaan, atau lamanya waktu. Yang **sempurna** menyatakan satu tindakan yang selesai dengan hasil. Bentuk lampau keduanya dibuat dengan cara yang sama: *-в, -ла, -ло, -ли*."
+     ],
+     "table": {
+      "head": [
+       "Tidak sempurna (proses)",
+       "Sempurna (hasil)",
+       "Arti",
+       "Contoh hasil"
+      ],
+      "rows": [
+       [
+        "*робити*",
+        "*зробити*",
+        "membuat, melakukan",
+        "*Я зробила лебедя.*"
+       ],
+       [
+        "*читати*",
+        "*прочитати*",
+        "membaca",
+        "*Я прочитала меню.*"
+       ],
+       [
+        "*вчити*",
+        "*вивчити*",
+        "mempelajari, menguasai",
+        "*Він вивчив слова.*"
+       ],
+       [
+        "*готувати*",
+        "*приготувати*",
+        "memasak, menyiapkan",
+        "*Мама приготувала борщ.*"
+       ],
+       [
+        "*мити*",
+        "*помити*",
+        "mencuci",
+        "*Я помила посуд.*"
+       ],
+       [
+        "*приймати*",
+        "*прийняти*",
+        "menerima",
+        "*Він прийняв замовлення.*"
+       ],
+       [
+        "*брати*",
+        "*взяти*",
+        "mengambil",
+        "*Максим взяв мене на роботу.*"
+       ],
+       [
+        "*казати*",
+        "*сказати*",
+        "berkata",
+        "*Що вона сказала?*"
+       ]
+      ]
+     },
+     "after": [
+      "Pertanyaan \"kamu ngapain kemarin?\" selalu memakai aspek tidak sempurna: *Що ти робила вчора?* Jawabannya boleh campur: *Я читала, а потім написала лист.*"
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Діалог 2 — Solomiya dan dapur kedai",
+   "intro": "Pagi yang sama, sesudah wawancara. Maksym memperkenalkan Ani kepada Solomiya, barista berumur 24 tahun asal Lviv yang ceplas-ceplos. Solomiya langsung memakai *ти*. Perhatikan bagaimana ia membedakan kegiatan yang makan waktu (*прибирала дві години*) dan hasil yang belum tercapai (*ще не помила*).",
+   "lines": [
+    {
+     "speaker": "Соломія:",
+     "text": "[Привіт|Pry-VIT], [я|ya] [Соломія|So-lo-MI-ya]! [То|To] [ти|ty] [наша|NA-sha] [нова|no-VA] [бариста|ba-RYS-ta]?",
+     "id": "Hai, aku Solomiya! Jadi kamu barista baru kita?",
+     "literal": "hai, saya Solomiya! jadi kamu milik-kami baru barista?"
+    },
+    {
+     "speaker": "Ані:",
+     "text": "[Так|Tak]! [Максим|Mak-SYM] [щойно|SHCHOY-no] [взяв|vzyav] [мене|me-NE] [на|na] [роботу|ro-BO-tu].",
+     "id": "Iya! Maksym barusan menerima aku kerja.",
+     "literal": "ya! Maksym barusan mengambil‹selesai› saya ke pekerjaan (ak.)."
+    },
+    {
+     "speaker": "Соломія:",
+     "text": "[Вітаю|Vi-TA-yu]! [Ходи|Kho-DY] [сюди|syu-DY], [я|ya] [покажу|po-ka-ZHU] [кухню|KUKH-nyu].",
+     "id": "Selamat! Sini, aku tunjukkan dapurnya.",
+     "literal": "menyambut! ayo ke-sini, saya menunjukkan‹selesai› dapur (ak.)."
+    },
+    {
+     "speaker": "Ані:",
+     "text": "[Ого|O-HO], [яка|ya-KA] [чиста|CHYS-ta]! [Ти|Ty] [сьогодні|syo-HOD-ni] [прибирала|pry-by-RA-la]?",
+     "id": "Wah, bersih banget! Kamu tadi beres-beres?",
+     "literal": "wah, betapa bersih (pr)! kamu hari-ini membersihkan‹proses›?"
+    },
+    {
+     "speaker": "Соломія:",
+     "text": "[Прибирала|Pry-by-RA-la] [вранці|VRAN-tsi] [дві|dvi] [години|ho-DY-ny]. [А|A] [ось|os'] [посуд|PO-sud] [ще|shche] [не|ne] [помила|po-MY-la].",
+     "id": "Tadi pagi beres-beres dua jam. Tapi piringnya belum kucuci.",
+     "literal": "membersihkan‹proses› pagi dua jam. dan ini piring-piring masih tidak mencuci‹selesai›."
+    },
+    {
+     "speaker": "Ані:",
+     "text": "[Давай|Da-VAY] [я|ya] [помию|po-MY-yu]!",
+     "id": "Sini, biar aku yang cuci!",
+     "literal": "ayo saya mencuci‹selesai›!"
+    },
+    {
+     "speaker": "Соломія:",
+     "text": "[Не|Ne] [поспішай|pos-pi-SHAY]. [Ти|Ty] [вже|vzhe] [бачила|BA-chy-la] [таку|ta-KU] [кавомашину|ka-vo-ma-SHY-nu]?",
+     "id": "Santai dulu. Kamu pernah lihat mesin kopi kayak gini?",
+     "literal": "jangan buru-buru. kamu sudah melihat seperti-ini (ak.) mesin-kopi (ak.)?"
+    },
+    {
+     "speaker": "Ані:",
+     "text": "[Бачила|BA-chy-la], [але|a-LE] [ніколи|ni-KO-ly] [на|na] [ній|niy] [не|ne] [працювала|pra-tsyu-VA-la].",
+     "id": "Pernah lihat, tapi belum pernah pakai.",
+     "literal": "melihat, tapi tidak-pernah pada dia (lok.) tidak bekerja‹proses›."
+    },
+    {
+     "speaker": "Соломія:",
+     "text": "[Нічого|Ni-CHO-ho]. [Я|Ya] [теж|tezh] [спершу|SPER-shu] [розбивала|roz-by-VA-la] [чашки|CHASH-ky] [й|y] [розливала|roz-ly-VA-la] [молоко|mo-lo-KO]. [А|A] [потім|PO-tim] [навчилася|nav-CHY-la-sya]!",
+     "id": "Nggak apa-apa. Aku juga awalnya sering mecahin cangkir dan numpahin susu. Terus akhirnya bisa!",
+     "literal": "tidak-apa. saya juga mula-mula memecahkan‹proses› cangkir-cangkir dan menumpahkan‹proses› susu. dan kemudian berhasil-belajar‹selesai›!"
+    },
+    {
+     "speaker": "Ані:",
+     "text": "[А|A] [хто|khto] [тебе|te-BE] [навчив|nav-CHYV]?",
+     "id": "Siapa yang ngajarin kamu?",
+     "literal": "dan siapa kamu (ak.) mengajari‹selesai›?"
+    },
+    {
+     "speaker": "Соломія:",
+     "text": "[Мій|Miy] [дядько|DYAD'-ko] [Богдан|Boh-DAN] [зі|zi] [Львова|L'VO-va]. [Він|Vin] [за|za] [один|o-DYN] [день|den'] [навчив|nav-CHYV] [мене|me-NE] [всього|vsyo-HO]!",
+     "id": "Pamanku, Bohdan, dari Lviv. Dalam sehari dia ngajarin aku semuanya!",
+     "literal": "milik-saya paman Bohdan dari Lviv (gen.). dia dalam satu hari mengajari‹selesai› saya semua (gen.)!"
+    }
+   ],
+   "notes": [
+    "**То ти наша нова бариста?** *То* di awal kalimat berarti \"jadi\", sering dipakai untuk memastikan sesuatu. Kata *бариста* sama untuk laki-laki dan perempuan. Solomiya langsung memakai *ти*: di antara rekan kerja muda, *ви* terasa terlalu kaku.",
+    "**Щойно взяв мене на роботу.** *Взяти на роботу* adalah ungkapan tetap untuk \"menerima kerja, merekrut\". *Брати / взяти* adalah pasangan aspek dengan akar yang sama sekali berbeda, seperti *go / went* dalam bahasa Inggris. *Щойно* (barusan) hampir selalu membawa aspek sempurna.",
+    "**Я покажу кухню.** Bentuk kini dari kata kerja sempurna berarti **masa depan**: *покажу* = akan (segera) kutunjukkan. Itulah sebabnya kata kerja sempurna tidak punya \"masa kini\" sungguhan. Soal ini dibahas penuh di Unit 4.",
+    "**Прибирала дві години, а посуд ще не помила.** Dua jam membersihkan: lamanya disebut, jadi aspek tidak sempurna. *Ще не помила* (sempurna yang disangkal) berarti hasilnya belum tercapai: piringnya masih kotor. Bandingkan *Я не мила посуд* (tidak sempurna): aku sama sekali tidak mencuci piring.",
+    "**Бачила, але ніколи не працювала.** Ukraina memakai negasi ganda: *ніколи не* (tidak pernah), *нічого не* (tidak apa pun), *ніхто не* (tidak seorang pun). Menghilangkan *не* adalah kesalahan paling khas penutur Indonesia dan Inggris. Pengalaman \"tidak pernah\" hampir selalu memakai aspek tidak sempurna.",
+    "**Розбивала … навчилася.** Memecahkan cangkir berkali-kali: kejadian berulang, aspek tidak sempurna. Lalu satu hasil akhir: **навчилася** (berhasil belajar, jadi bisa). *Навчити когось* berarti mengajari seseorang sampai bisa; *навчитися* berarti belajar sampai bisa. *За один день* (dalam satu hari) menyebut waktu yang dibutuhkan untuk sebuah hasil, jadi selalu dengan aspek sempurna."
+   ],
+   "grammars": [
+    {
+     "title": "Kata penanda aspek",
+     "body": [
+      "Kata keterangan di sekitar kata kerja sering sudah menentukan aspeknya. Pelajari kedua kelompok ini sebagai satu paket dengan kata kerjanya."
+     ],
+     "table": {
+      "head": [
+       "Tidak sempurna",
+       "Contoh",
+       "Sempurna",
+       "Contoh"
+      ],
+      "rows": [
+       [
+        "*довго, дві години*",
+        "*Я довго вчилася.*",
+        "*за годину, за один день*",
+        "*Він за день навчив мене.*"
+       ],
+       [
+        "*часто, завжди, щодня*",
+        "*Я часто пекла тістечка.*",
+        "*нарешті*",
+        "*Нарешті зробила!*"
+       ],
+       [
+        "*колись* (pernah)",
+        "*Ви колись робили це?*",
+        "*щойно*",
+        "*Він щойно взяв мене.*"
+       ],
+       [
+        "*ніколи не*",
+        "*Я ніколи не працювала тут.*",
+        "*вже*",
+        "*Я вже прочитала.*"
+       ],
+       [
+        "*не* (tidak sama sekali)",
+        "*Я не мила посуд.*",
+        "*ще не* (belum tuntas)",
+        "*Я ще не помила посуд.*"
+       ],
+       [
+        "*Що ти робила?*",
+        "tanya kegiatan",
+        "*Що ти зробила?*",
+        "tanya hasil"
+       ]
+      ]
+     },
+     "after": [
+      "*Вже* juga bisa muncul dengan aspek tidak sempurna bila artinya \"sudah mulai\": *Я вже працюю* (aku sudah bekerja). Penanda adalah kecenderungan, bukan hukum besi."
+     ]
+    }
+   ]
+  }
+ ],
+ "sections": [
+  {
+   "title": "Minum kopi di Kyiv",
+   "blocks": [
+    {
+     "type": "p",
+     "text": "Kyiv adalah kota kedai kopi. Hampir di setiap sudut Podil ada *кав'ярня* kecil, dan di halte atau taman sering berdiri *кавовий фургончик*, mobil kopi mungil. Tradisi kopi Ukraina tertua sebenarnya ada di Lviv, yang terkenal dengan kopi berempah dan legenda Yuriy Kulchytskyi, tetapi generasi baru barista Kyiv menyukai *спешелті*, kopi single origin, dan biji dari Afrika, Amerika Latin, dan tentu Indonesia."
+    },
+    {
+     "type": "tabel",
+     "head": [
+      "Ukraina",
+      "Indonesia"
+     ],
+     "rows": [
+      [
+       "*еспресо*",
+       "espresso"
+      ],
+      [
+       "*американо*",
+       "americano"
+      ],
+      [
+       "*капучино*",
+       "cappuccino"
+      ],
+      [
+       "*лате*",
+       "latte"
+      ],
+      [
+       "*флет вайт*",
+       "flat white"
+      ],
+      [
+       "*какао*",
+       "cokelat panas"
+      ],
+      [
+       "*з собою / тут*",
+       "dibawa pulang / minum di sini"
+      ],
+      [
+       "*на вівсяному молоці*",
+       "dengan susu gandum"
+      ],
+      [
+       "*без цукру*",
+       "tanpa gula"
+      ]
+     ]
+    },
+    {
+     "type": "kotak",
+     "title": "Memesan di kedai kopi",
+     "items": [
+      "*Можна мені капучино, будь ласка?* Boleh saya pesan cappuccino?",
+      "*Мені лате з собою.* Saya latte, dibawa.",
+      "*Великий чи маленький?* Besar atau kecil?",
+      "*Можна оплатити карткою?* Bisa bayar pakai kartu?",
+      "*Смачної кави!* Selamat menikmati kopinya!"
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Bagaimana pasangan aspek dibentuk",
+   "blocks": [
+    {
+     "type": "p",
+     "text": "Pasangan aspek terbentuk dengan tiga cara. Cara paling umum adalah menambah awalan pada kata kerja tidak sempurna. Cara kedua mengubah akhiran: kata kerja tidak sempurna biasanya lebih panjang (*-ува-, -ва-, -а-*). Cara ketiga jarang tetapi penting: akar yang sama sekali lain. Kamus selalu menuliskan keduanya; hafalkan pasangan, bukan kata kerja tunggal."
+    },
+    {
+     "type": "tabel",
+     "head": [
+      "Cara",
+      "Tidak sempurna",
+      "Sempurna",
+      "Arti"
+     ],
+     "rows": [
+      [
+       "awalan *з-/с-*",
+       "*робити*",
+       "*зробити*",
+       "membuat"
+      ],
+      [
+       "awalan *на-*",
+       "*писати*",
+       "*написати*",
+       "menulis"
+      ],
+      [
+       "awalan *про-*",
+       "*читати*",
+       "*прочитати*",
+       "membaca"
+      ],
+      [
+       "awalan *по-*",
+       "*мити*",
+       "*помити*",
+       "mencuci"
+      ],
+      [
+       "awalan *ви-*",
+       "*вчити*",
+       "*вивчити*",
+       "mempelajari"
+      ],
+      [
+       "akhiran berubah",
+       "*розбивати*",
+       "*розбити*",
+       "memecahkan"
+      ],
+      [
+       "akhiran berubah",
+       "*починати*",
+       "*почати*",
+       "memulai"
+      ],
+      [
+       "akhiran berubah",
+       "*прибирати*",
+       "*прибрати*",
+       "membereskan"
+      ],
+      [
+       "akar lain",
+       "*брати*",
+       "*взяти*",
+       "mengambil"
+      ],
+      [
+       "akar lain",
+       "*казати / говорити*",
+       "*сказати*",
+       "berkata"
+      ]
+     ]
+    },
+    {
+     "type": "list",
+     "items": [
+      "Awalan kadang mengubah arti, bukan hanya aspek: *писати* (menulis) tetapi *переписати* (menyalin ulang) dan *підписати* (menandatangani). Kata kerja baru itu lalu punya pasangan tidak sempurna sendiri: *переписувати, підписувати*.",
+      "Dalam kamus, pasangan biasanya ditulis dengan garis miring: *робити / зробити*. Buku ini memakai cara yang sama di daftar kosakata."
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Ulangan berjenjang — unit 1",
+   "blocks": [
+    {
+     "type": "p",
+     "text": "Tutup kolom Ukraina, baca terjemahan Indonesianya, lalu susun kembali kalimatnya dari ingatan."
+    },
+    {
+     "type": "tabel",
+     "head": [
+      "Bahasa Indonesia",
+      "Українська",
+      "Baca"
+     ],
+     "rows": [
+      [
+       "Iya! Lampu di mana-mana, dan orang-orang menyanyikan kolyadka.",
+       "Так! Всюди вогні, а люди співали колядки.",
+       "*Tak VSYU-dy voh-NI a LYU-dy spi-VA-ly ko-LYAD-ky*"
+      ],
+      [
+       "Semua sehat. Kami merayakan bersama, semua kerabat datang.",
+       "Усі здорові. Ми святкували разом, приходили всі родичі.",
+       "*U-SI zdo-RO-vi My svyat-ku-VA-ly RA-zom pry-KHO-dy-ly vsi RO-dy-chi*"
+      ],
+      [
+       "Nggak apa-apa, nanti kita ingat lagi. Hari ini kita kedatangan mahasiswa baru.",
+       "Нічого, згадаємо. Сьогодні в нас нові студенти.",
+       "*Ni-CHO-ho zha-DA-ye-mo Syo-HOD-ni v nas no-VI stu-DEN-ty*"
+      ],
+      [
+       "Iya. Ini buku-buku baru, buku tulis, dan kamus.",
+       "Так. Ось нові книжки, зошити й словники.",
+       "*Tak Os' no-VI KNYZH-ky ZO-shy-ty y slov-ny-KY*"
+      ],
+      [
+       "Selama pelajaran ponsel istirahat.",
+       "На уроках телефони відпочивають.",
+       "*Na u-RO-kakh te-le-FO-ny vid-po-chy-VA-yut'*"
+      ]
+     ]
+    }
+   ]
+  }
+ ],
+ "vocab": [
+  {
+   "uk": "співбе́сіда",
+   "baca": "spiv-BE-si-da",
+   "id": "wawancara kerja"
+  },
+  {
+   "uk": "резюме́",
+   "baca": "re-zyu-ME",
+   "id": "CV, daftar riwayat hidup"
+  },
+  {
+   "uk": "до́свід",
+   "baca": "DOS-vid",
+   "id": "pengalaman (*досвід роботи*)"
+  },
+  {
+   "uk": "кав'я́рня",
+   "baca": "ka-VYAR-nya",
+   "id": "kedai kopi"
+  },
+  {
+   "uk": "бари́ста",
+   "baca": "ba-RYS-ta",
+   "id": "barista (lk dan pr)"
+  },
+  {
+   "uk": "замо́влення",
+   "baca": "za-MO-vlen-nya",
+   "id": "pesanan"
+  },
+  {
+   "uk": "ти́стечко",
+   "baca": "TYS-tech-ko",
+   "id": "kue kecil, pastri"
+  },
+  {
+   "uk": "кавомаши́на",
+   "baca": "ka-vo-ma-SHY-na",
+   "id": "mesin kopi"
+  },
+  {
+   "uk": "по́суд",
+   "baca": "PO-sud",
+   "id": "piring-piring, perabot makan"
+  },
+  {
+   "uk": "ча́шка",
+   "baca": "CHASH-ka",
+   "id": "cangkir"
+  },
+  {
+   "uk": "молоко́",
+   "baca": "mo-lo-KO",
+   "id": "susu"
+  },
+  {
+   "uk": "роби́ти / зроби́ти",
+   "baca": "ro-BY-ty / zro-BY-ty",
+   "id": "membuat, melakukan"
+  },
+  {
+   "uk": "вчи́ти / ви́вчити",
+   "baca": "VCHY-ty / VYV-chy-ty",
+   "id": "mempelajari / menguasai"
+  },
+  {
+   "uk": "готува́ти / приготува́ти",
+   "baca": "ho-tu-VA-ty / pry-ho-tu-VA-ty",
+   "id": "memasak, menyiapkan"
+  },
+  {
+   "uk": "прийма́ти / прийня́ти",
+   "baca": "pryy-MA-ty / pryy-NYA-ty",
+   "id": "menerima (*приймати замовлення*)"
+  },
+  {
+   "uk": "прибира́ти / прибра́ти",
+   "baca": "pry-by-RA-ty / pry-BRA-ty",
+   "id": "membereskan, membersihkan"
+  },
+  {
+   "uk": "ми́ти / поми́ти",
+   "baca": "MY-ty / po-MY-ty",
+   "id": "mencuci"
+  },
+  {
+   "uk": "розбива́ти / розби́ти",
+   "baca": "roz-by-VA-ty / roz-BY-ty",
+   "id": "memecahkan"
+  },
+  {
+   "uk": "навча́тися / навчи́тися",
+   "baca": "nav-CHA-ty-sya / nav-CHY-ty-sya",
+   "id": "belajar sampai bisa"
+  },
+  {
+   "uk": "почина́ти / поча́ти",
+   "baca": "po-chy-NA-ty / po-CHA-ty",
+   "id": "memulai, mulai"
+  },
+  {
+   "uk": "бра́ти / взя́ти",
+   "baca": "BRA-ty / VZYA-ty",
+   "id": "mengambil; *взяти на роботу* = menerima kerja"
+  },
+  {
+   "uk": "що́йно",
+   "baca": "SHCHOY-no",
+   "id": "barusan, baru saja"
+  },
+  {
+   "uk": "наре́шті",
+   "baca": "na-RESH-ti",
+   "id": "akhirnya"
+  },
+  {
+   "uk": "ніко́ли",
+   "baca": "ni-KO-ly",
+   "id": "tidak pernah (dengan *не*: *ніколи не працювала*)"
+  },
+  {
+   "uk": "дя́дько",
+   "baca": "DYAD'-ko",
+   "id": "paman"
+  }
+ ],
+ "exercises": [
+  {
+   "prompt": "Terjemahkan ke bahasa Ukraina. Yang berbicara perempuan.",
+   "items": [
+    "Dulu Anda bekerja di mana?",
+    "Saya dua tahun bekerja di kedai kopi.",
+    "Akhirnya saya membuat angsa!",
+    "Saya sudah membaca menu Anda.",
+    "Saya belum mencuci piring.",
+    "Siapa yang mengajarimu?"
+   ]
+  },
+  {
+   "prompt": "Isi titik-titik dengan aspek yang tepat.",
+   "items": [
+    "Учора я довго ____ лист. (писала, написала)",
+    "Я ____ лист і пішла на пошту. (писала, написала)",
+    "У Джакарті я часто ____ тістечка. (пекла, спекла)",
+    "Соломія ____ кухню дві години. (прибирала, прибрала)",
+    "Ти вже ____ меню? (читав, прочитав)",
+    "Максим щойно ____ мене на роботу. (брав, взяв)",
+    "Я ніколи не ____ на такій машині. (працювала, попрацювала)"
+   ]
+  },
+  {
+   "prompt": "Ubah ke aspek sempurna dan tambahkan вже (уже).",
+   "items": [
+    "Я читала книжку.",
+    "Ми готували вечерю.",
+    "Він мив посуд.",
+    "Вона вчила слова.",
+    "Ти робив завдання?",
+    "Вони прибирали кухню."
+   ]
+  },
+  {
+   "prompt": "Susun jadi kalimat yang benar.",
+   "items": [
+    "роки / два / працювала / я / кав'ярні / в",
+    "зробила / я / лебедя / нарешті",
+    "не / ще / посуд / помила / я",
+    "роботу / взяв / мене / на / Максим",
+    "тебе / навчив / хто"
+   ]
+  }
+ ],
+ "answers": [
+  "Де ви працювали раніше? — Я два роки працювала в кав'ярні. — Нарешті я зробила лебедя! — Я вже прочитала ваше меню. — Я ще не помила посуд. — Хто тебе навчив?",
+  "писала — написала — пекла — прибирала — прочитав — взяв — працювала",
+  "Я вже прочитала книжку. — Ми вже приготували вечерю. — Він уже помив посуд. — Вона вже вивчила слова. — Ти вже зробив завдання? — Вони вже прибрали кухню.",
+  "Я два роки працювала в кав'ярні. — Нарешті я зробила лебедя. — Я ще не помила посуд. — Максим взяв мене на роботу. — Хто тебе навчив?"
+ ]
+}

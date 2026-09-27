@@ -1,0 +1,684 @@
+{
+ "title": "Pondok kecil di bawah hutan — pengecil dan pembesar",
+ "title_target": "Невеличка дерев'яна хатинка під лісом",
+ "goal": "Bercerita dengan hangat memakai kata pengecil dan pembesar: *сніжок*, *хатинка*, *баночка*, *маленький*, *тепленько*, *шматище*, serta mengenal budaya Hutsul di Karpatia: *трембіта*, *бринза*, *полонина*.",
+ "bekal": [
+  "kamu bisa membentuk kata benda pengecil dengan *-ок, -ик, -инка, -очка/-ечка, -уся*",
+  "kamu bisa memperhalus kata sifat dan keterangan dengan *-еньк-*: *маленький, тепленько*",
+  "kamu bisa mengenali pembesar *-ище* dan perubahan bunyi *г/ж, к/ч* di dalamnya"
+ ],
+ "dialogs": [
+  {
+   "title": "Діалог 1 — Istirahat kopi di ruang sangrai",
+   "intro": "Senin, 1 November 2027, pagi berkabut. Mesin sangrai sedang mendingin, dan Yurko duduk diam memandangi jendela. Ani mengajaknya bercerita tentang kampungnya di Верховина, di jantung Karpatia. Perhatikan betapa banyak kata pengecil dalam cerita Yurko.",
+   "lines": [
+    {
+     "speaker": "Ані:",
+     "text": "[Юрку|YUR-ku], [ти|ty] [сьогодні|syo-HOD-ni] [якийсь|ya-KYYS'] [задумливий|za-DUM-ly-vyy]. [Сумуєш|Su-MU-yesh] [за|za] [домом|DO-mom]?",
+     "id": "Yurko, kamu hari ini kok melamun. Kangen rumah?",
+     "literal": "Yurko (panggilan), kamu hari-ini entah-bagaimana termenung. rindu di-belakang rumah (ins.)?"
+    },
+    {
+     "speaker": "Юрко:",
+     "text": "[Трохи|TRO-khy]. [У|U] [нас|nas] [у|u] [Верховині|Ver-kho-VY-ni] [вже|vzhe] [сніжок|sni-ZHOK] [на|na] [горах|ho-RAKH] [лежить|le-ZHYT'].",
+     "id": "Sedikit. Di kampung kami, di Verkhovyna, salju tipis sudah turun di gunung.",
+     "literal": "sedikit. pada kami di Verkhovyna (lok.) sudah salju-kecil di gunung-gunung (lok.) terbaring."
+    },
+    {
+     "speaker": "Ані:",
+     "text": "[Сніжок|Sni-ZHOK]? [Звучить|Zvu-CHYT'] [так|tak] [ніжно|NIZH-no]. [А|A] [яка|ya-KA] [у|u] [вас|vas] [там|tam] [хата|KHA-ta]?",
+     "id": "Salju kecil? Kedengarannya lembut sekali. Rumah kalian di sana seperti apa?",
+     "literal": "salju-kecil? terdengar begitu lembut. dan yang-mana pada kalian di-sana rumah?"
+    },
+    {
+     "speaker": "Юрко:",
+     "text": "[Невеличка|Ne-ve-LYCH-ka] [дерев'яна|de-re-VYA-na] [хатинка|kha-TYN-ka] [під|pid] [лісом|LI-som]. [Там|Tam] [живе|zhy-VE] [моя|mo-YA] [бабуся|ba-BU-sya].",
+     "id": "Pondok kayu kecil di kaki hutan. Di sana nenekku tinggal.",
+     "literal": "kecil-mungil dari-kayu rumah-kecil di-bawah hutan (ins.). di-sana tinggal milikku nenek-kecil."
+    },
+    {
+     "speaker": "Ані:",
+     "text": "[Бабуся|Ba-BU-sya]? [Розкажи|Roz-ka-ZHY] [про|pro] [неї|NE-yi]!",
+     "id": "Nenekmu? Ceritakan tentang dia!",
+     "literal": "nenek-kecil? ceritakan tentang dia (ak.)!"
+    },
+    {
+     "speaker": "Юрко:",
+     "text": "[Моя|Mo-YA] [бабця|BAB-tsya] [ще|shche] [й|y] [сьогодні|syo-HOD-ni] [пасе|pa-SE] [овець|o-VETS'] [і|i] [робить|RO-byt'] [бринзу|BRYN-zu].",
+     "id": "Nenekku sampai sekarang masih menggembala domba dan membuat keju brynza.",
+     "literal": "milikku nenek masih juga hari-ini menggembala domba (gen. jmk.) dan membuat brynza (ak.)."
+    },
+    {
+     "speaker": "Ані:",
+     "text": "[Сама|Sa-MA]? [У|U] [такому|ta-KO-mu] [віці|VI-tsi]?",
+     "id": "Sendirian? Di usia segitu?",
+     "literal": "sendiri (pr.)? di begitu usia (lok.)?"
+    },
+    {
+     "speaker": "Юрко:",
+     "text": "[Ого|O-HO]! [Ти|Ty] [не|ne] [знаєш|ZNA-yesh] [гуцульських|hu-TSUL'-s'kykh] [бабусь|ba-BUS']. [Вона|Vo-NA] [маленька|ma-LEN'-ka], [але|a-LE] [сильна|SYL'-na], [як|yak] [смерека|sme-RE-ka].",
+     "id": "Wah! Kamu belum kenal nenek-nenek Hutsul. Badannya kecil, tapi kuat seperti pohon cemara.",
+     "literal": "wah! kamu tidak tahu Hutsul (gen. jmk.) nenek-nenek (gen. jmk.). dia kecil-mungil, tapi kuat, seperti cemara."
+    },
+    {
+     "speaker": "Ані:",
+     "text": "[А|A] [ти|ty] [мені|me-NI] [обіцяв|o-bi-TSYAV] [розказати|roz-ka-ZA-ty] [про|pro] [трембіту|trem-BI-tu]. [Що|Shcho] [це|tse] [таке|ta-KE]?",
+     "id": "Kamu juga janji mau cerita soal trembita. Itu apa?",
+     "literal": "dan kamu kepadaku berjanji menceritakan tentang trembita (ak.). apa ini seperti-itu?"
+    },
+    {
+     "speaker": "Юрко:",
+     "text": "[Трембіту|Trem-BI-tu] [роблять|RO-blyat'] [зі|zi] [смереки|sme-RE-ky]. [Вона|Vo-NA] [завдовжки|zav-DOV-zhky] [до|do] [трьох|tryokh] [метрів|ME-triv]!",
+     "id": "Trembita dibuat dari kayu cemara. Panjangnya sampai tiga meter!",
+     "literal": "trembita (ak.) membuat-mereka dari cemara (gen.). dia panjangnya sampai tiga (gen.) meter (gen. jmk.)!"
+    },
+    {
+     "speaker": "Ані:",
+     "text": "[Три|Try] [метри|ME-try]? [А|A] [як|yak] [на|na] [ній|niy] [грають|HRA-yut']?",
+     "id": "Tiga meter? Terus cara memainkannya bagaimana?",
+     "literal": "tiga meter? dan bagaimana pada dia (lok.) bermain-mereka?"
+    },
+    {
+     "speaker": "Юрко:",
+     "text": "[Треба|TRE-ba] [мати|MA-ty] [сильні|SYL'-ni] [груди|HRU-dy]. [Мій|Miy] [дідусь|di-DUS'] [грав|hrav] [так|tak], [що|shcho] [було|bu-LO] [чути|CHU-ty] [за|za] [п'ять|pyat'] [кілометрів|ki-lo-ME-triv].",
+     "id": "Harus punya dada yang kuat. Kakekku dulu meniupnya sampai terdengar dari lima kilometer.",
+     "literal": "perlu punya kuat dada. milikku kakek-kecil bermain begitu, bahwa adalah terdengar sejauh lima kilometer (gen. jmk.)."
+    },
+    {
+     "speaker": "Ані:",
+     "text": "[Неймовірно|Ney-mo-VIR-no]! [А|A] [зараз|ZA-raz] [ще|shche] [грають|HRA-yut']?",
+     "id": "Luar biasa! Sekarang masih ada yang main?",
+     "literal": "tak-dapat-dipercaya! dan sekarang masih bermain-mereka?"
+    },
+    {
+     "speaker": "Юрко:",
+     "text": "[Грають|HRA-yut'] [на|na] [свята|SVYA-ta] [і|i] [весілля|ve-SIL-lya]. [Приїдь|Pry-YID'] [до|do] [нас|nas] [улітку|u-LIT-ku], [сама|sa-MA] [почуєш|po-CHU-yesh].",
+     "id": "Masih, waktu hari raya dan pernikahan. Datanglah ke tempat kami musim panas nanti, kamu dengar sendiri.",
+     "literal": "bermain-mereka pada hari-raya (ak. jmk.) dan pernikahan (ak. jmk.). datanglah ke kami di-musim-panas, sendiri akan-mendengar."
+    }
+   ],
+   "notes": [
+    "**Сніжок.** Dari *сніг* (salju) lahir *сніжок*: salju tipis, salju yang manis. Akhiran **-ок** meminta perubahan bunyi: *г* → *ж*, *к* → *ч*, *х* → *ш*. *Пиріг* → *пиріжок*, *бік* → *бічок*. Dalam bahasa Indonesia kita cukup menambah kata \"kecil\"; dalam bahasa Ukraina akhiran ini sekaligus membawa rasa sayang.",
+    "**Хатинка.** *Хата* (rumah desa) → **хатинка** (pondok kecil) dengan akhiran *-инка*. Yurko juga berkata *невеличка*, bentuk kecil dari *невеликий*: bukan hanya kecil, tapi mungil dan akrab. Pengecil berlapis seperti ini khas cerita tentang kampung halaman.",
+    "**Бабуся, бабця, дідусь.** *Баба* terdengar kasar kalau dipakai untuk nenek sendiri; yang wajar adalah **бабуся** atau, di Galicia dan Karpatia, **бабця**. Kakek: *дід* → **дідусь**. Akhiran *-уся/-усь* hampir selalu penuh kasih.",
+    "**Маленька, але сильна.** Akhiran **-еньк-** melembutkan kata sifat: *малий* → *маленький*, *теплий* → *тепленький*. Tekanannya selalu pada *е* pertama akhiran: *ma-LEN'-ka*. Bentuk ini jauh lebih sering dipakai daripada *мала* dalam percakapan sehari-hari.",
+    "**Пасе овець.** *Вівця* (domba) punya genitif jamak tak beraturan: **овець**, dengan *о* di depan. Kata kerja *пасти* (menggembala) berpola *пасу, пасеш, пасе*. Kalimat ini berbentuk genitif karena objeknya tak terbatas jumlahnya, seperti \"menggembala domba\" secara umum.",
+    "**Трембіту роблять.** Kalimat tanpa subjek dengan kata kerja jamak orang ketiga (*роблять, грають*) berarti \"orang membuat\", sama dengan \"dibuat\" dalam bahasa Indonesia. *Завдовжки* = panjangnya; pasangannya *завширшки* (lebarnya) dan *заввишки* (tingginya)."
+   ],
+   "grammars": [
+    {
+     "title": "Akhiran pengecil kata benda",
+     "body": [
+      "Pengecil (*зменшувальні суфікси*) menyatakan ukuran kecil, tetapi lebih sering rasa sayang dan keakraban. Akhiran mengikuti jenis kata: laki-laki biasanya *-ок, -ик, -чик*; perempuan *-ка, -очка/-ечка, -инка*; netral *-ко, -ечко, -ятко*."
+     ],
+     "table": {
+      "head": [
+       "Akhiran",
+       "Kata dasar",
+       "Pengecil",
+       "Catatan"
+      ],
+      "rows": [
+       [
+        "*-ок*",
+        "*сніг*, *пиріг*",
+        "*сніжок*, *пиріжок*",
+        "*г* → *ж*"
+       ],
+       [
+        "*-ик*",
+        "*кіт*, *дім*",
+        "*котик*, *домик*",
+        "*і* kembali jadi *о*"
+       ],
+       [
+        "*-чик*",
+        "*хліб*",
+        "*хлібчик*",
+        "sesudah *б, п, в*"
+       ],
+       [
+        "*-инка*",
+        "*хата*",
+        "*хатинка*",
+        "kata perempuan"
+       ],
+       [
+        "*-очка / -ечка*",
+        "*банка*, *чашка*",
+        "*баночка*, *чашечка*",
+        "*к* → *ч*"
+       ],
+       [
+        "*-уся / -усь*",
+        "*баба*, *дід*",
+        "*бабуся*, *дідусь*",
+        "untuk keluarga"
+       ],
+       [
+        "*-ечко*",
+        "*сонце*, *серце*",
+        "*сонечко*, *сердечко*",
+        "kata netral"
+       ],
+       [
+        "*-ятко*",
+        "*кошеня*",
+        "*кошенятко*",
+        "anak kucing mungil"
+       ]
+      ]
+     },
+     "after": [
+      "Pengecil tidak selalu berarti kecil. *Ручка* adalah pena, bukan tangan kecil; *ложечка* adalah sendok teh. Artinya sudah menetap sebagai kata baru."
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Діалог 2 — Brynza dari Верховина",
+   "intro": "Sore harinya Yurko membuka bungkusan kiriman ibunya dari Verkhovyna. Pan Bohdan kebetulan masuk ke ruang sangrai. Perhatikan pembesar *-ище* dan akhiran *-еньк-* pada kata sifat dan keterangan.",
+   "lines": [
+    {
+     "speaker": "Юрко:",
+     "text": "[Пане|PA-ne] [Богдане|Boh-DA-ne], [Ані|A-ni], [запрошую|za-PRO-shu-yu] [до|do] [столу|sto-LU]! [Мама|MA-ma] [передала|pe-re-DA-la] [гостинець|hos-TY-nets'] [з|z] [Верховини|Ver-kho-VY-ny].",
+     "id": "Pak Bohdan, Ani, silakan ke meja! Ibu mengirim oleh-oleh dari Verkhovyna.",
+     "literal": "tuan Bohdan (panggilan), Ani, mengundang-saya ke meja (gen.)! ibu mengirimkan oleh-oleh dari Verkhovyna (gen.)."
+    },
+    {
+     "speaker": "Богдан:",
+     "text": "[О|O], [то|to] [це|tse] [бринза|BRYN-za]! [Ну|Nu] [й|y] [шматище|shma-TY-shche], [Юрку|YUR-ku]!",
+     "id": "Wah, ternyata brynza! Potongannya besar sekali, Yurko!",
+     "literal": "oh, jadi ini brynza! nah dan potongan-raksasa, Yurko (panggilan)!"
+    },
+    {
+     "speaker": "Юрко:",
+     "text": "[Це|Tse] [ще|shche] [маленький|ma-LEN'-kyy] [шматочок|shma-TO-chok]! [У|U] [бабці|BAB-tsi] [вдома|VDO-ma] [є|ye] [головки|ho-LOV-ky] [сиру|sy-RU] [по|po] [десять|DE-syat'] [кілограмів|ki-lo-HRA-miv].",
+     "id": "Ini masih potongan kecil! Di rumah nenek ada bongkahan keju yang masing-masing sepuluh kilo.",
+     "literal": "ini masih kecil-mungil potongan-kecil! pada nenek (gen.) di-rumah ada kepala-kecil keju (gen.) masing-masing sepuluh kilogram (gen. jmk.)."
+    },
+    {
+     "speaker": "Ані:",
+     "text": "[Десять|DE-syat'] [кілограмів|ki-lo-HRA-miv]? [А|A] [як|yak] [її|yi-YI] [їсти|YIS-ty], [цю|tsyu] [бринзу|BRYN-zu]?",
+     "id": "Sepuluh kilo? Terus brynza ini dimakan dengan apa?",
+     "literal": "sepuluh kilogram (gen. jmk.)? dan bagaimana dia (ak.) makan, ini brynza (ak.)?"
+    },
+    {
+     "speaker": "Юрко:",
+     "text": "[Найкраще|Nay-KRA-shche] [з|z] [гаряченькою|ha-rya-CHEN'-ko-yu] [картопелькою|kar-TO-pel'-ko-yu] [і|i] [сметаною|sme-TA-no-yu].",
+     "id": "Paling enak dengan kentang panas-panas dan krim asam.",
+     "literal": "paling-baik dengan panas-kecil (ins.) kentang-kecil (ins.) dan krim-asam (ins.)."
+    },
+    {
+     "speaker": "Богдан:",
+     "text": "[Ти|Ty] [так|tak] [смачно|SMACH-no] [розповідаєш|roz-po-vi-DA-yesh], [що|shcho] [я|ya] [вже|vzhe] [голодний|ho-LOD-nyy] [як|yak] [вовк|vovk].",
+     "id": "Caramu bercerita bikin ngiler, aku sudah lapar seperti serigala.",
+     "literal": "kamu begitu enak bercerita, bahwa aku sudah lapar seperti serigala."
+    },
+    {
+     "speaker": "Ані:",
+     "text": "[А|A] [хлібчик|KHLIB-chyk] [у|u] [нас|nas] [є|ye]? [Я|Ya] [можу|MO-zhu] [нарізати|na-RI-za-ty].",
+     "id": "Kita punya roti? Aku bisa mengirisnya.",
+     "literal": "dan roti-kecil pada kami ada? aku bisa mengiris-‹selesai›."
+    },
+    {
+     "speaker": "Юрко:",
+     "text": "[Є|Ye]. [І|I] [ще|shche] [мама|MA-ma] [поклала|po-KLA-la] [баночку|BA-noch-ku] [меду|me-DU] [з|z] [полонини|po-lo-NY-ny].",
+     "id": "Ada. Ibu juga menaruh sebotol kecil madu dari padang gunung.",
+     "literal": "ada. dan lagi ibu menaruh stoples-kecil (ak.) madu (gen.) dari padang-gunung (gen.)."
+    },
+    {
+     "speaker": "Богдан:",
+     "text": "[Юрку|YUR-ku], [передай|pe-re-DAY] [мамі|MA-mi] [велике|ve-LY-ke] [дякую|DYA-ku-yu] [від|vid] [усієї|u-SI-ye-yi] «[Яви|YA-vy]».",
+     "id": "Yurko, sampaikan terima kasih besar ke ibumu dari seluruh «Ява».",
+     "literal": "Yurko (panggilan), sampaikan kepada-ibu (dat.) besar terima-kasih dari seluruh (gen.) «Java» (gen.)."
+    },
+    {
+     "speaker": "Юрко:",
+     "text": "[Обов'язково|O-bo-vyaz-KO-vo]. [Вона|Vo-NA] [ще|shche] [питала|py-TA-la], [чи|chy] [не|ne] [мерзне|MER-zne] [у|u] [Львові|L'VO-vi] [наша|NA-sha] [дівчинка|div-CHYN-ka] [з|z] [Індонезії|In-do-NE-zi-yi].",
+     "id": "Pasti. Ibu juga tanya, apakah gadis kecil kita dari Indonesia tidak kedinginan di Lviv.",
+     "literal": "pasti. dia juga bertanya, apakah tidak kedinginan di Lviv (lok.) kita-punya gadis-kecil dari Indonesia (gen.)."
+    },
+    {
+     "speaker": "Ані:",
+     "text": "[Скажи|Ska-ZHY] [їй|yiy], [що|shcho] [з|z] [такими|ta-KY-my] [гостинцями|hos-TYN-tsya-my] [мені|me-NI] [тепленько|te-PLEN'-ko]!",
+     "id": "Bilang ke beliau, dengan oleh-oleh begini aku hangat-hangat saja!",
+     "literal": "katakan kepadanya, bahwa dengan begitu (ins. jmk.) oleh-oleh (ins. jmk.) kepadaku hangat-kecil!"
+    }
+   ],
+   "notes": [
+    "**Шматище.** Akhiran pembesar **-ище** membuat benda jadi raksasa, sering dengan nada kagum atau bercanda: *шмат* → *шматище*, *вовк* → *вовчище*, *рука* → *ручище*. Tekanannya jatuh pada *и*: *shma-TY-shche*. Lawannya ada di baris berikut: *шматок* → *шматочок*.",
+    "**Шматочок, картопелька.** Pengecil bisa ditumpuk: *шмат* → *шматок* → **шматочок**. Makanan dalam mulut orang Ukraina hampir selalu dikecilkan: *картопелька*, *хлібчик*, *кавочка*, *водичка*. Ini bukan soal ukuran, tapi soal kehangatan, seperti kita berkata \"makan dulu, yuk\".",
+    "**Гаряченькою.** *-еньк-* juga bekerja pada kata sifat apa saja: *гарячий* → **гаряченький** (panas-panas, baru matang). Sufiks ini membuat kata sifat terasa seperti belaian.",
+    "**Голодний як вовк.** Perbandingan tetap dengan *як*: lapar seperti serigala. Yang lain: *здоровий як бик* (sehat seperti sapi jantan), *хитрий як лис* (licik seperti rubah). Pan Bohdan memakai *ти* kepada Yurko, sedangkan Yurko memakai *пане Богдане* dan *ви*.",
+    "**Меду з полонини.** *Полонина* adalah padang rumput di punggung gunung Karpatia, tempat domba digembalakan sepanjang musim panas. Madu dan brynza dari *полонина* dianggap yang terbaik. Genitif *меду* bertekanan di akhir: *me-DU*.",
+    "**Тепленько.** Keterangan pun bisa dikecilkan: *тепло* → **тепленько**, *рано* → *раненько*, *тихо* → *тихенько*. *Мені тепленько* = aku merasa hangat dan nyaman. Pola datif *мені* + keterangan sudah kamu kenal dari *мені холодно*."
+   ],
+   "grammars": [
+    {
+     "title": "Pembesar -ище dan pelembut -еньк-",
+     "body": [
+      "Akhiran *-ище* membesarkan benda; *-еньк-* dan *-ісіньк-* melembutkan atau menguatkan kata sifat dan keterangan. Keduanya sangat hidup dalam bahasa lisan."
+     ],
+     "table": {
+      "head": [
+       "Kata dasar",
+       "Bentuk baru",
+       "Rasa",
+       "Arti"
+      ],
+      "rows": [
+       [
+        "*шмат*",
+        "*шматище*",
+        "besar sekali",
+        "potongan raksasa"
+       ],
+       [
+        "*вовк*",
+        "*вовчище*",
+        "menyeramkan, lucu",
+        "serigala besar"
+       ],
+       [
+        "*рука*",
+        "*ручище*",
+        "besar dan kasar",
+        "tangan besar"
+       ],
+       [
+        "*малий*",
+        "*маленький*",
+        "lembut",
+        "kecil mungil"
+       ],
+       [
+        "*гарячий*",
+        "*гаряченький*",
+        "hangat, sayang",
+        "panas-panas"
+       ],
+       [
+        "*гарний*",
+        "*гарненький*",
+        "manis",
+        "cantik, imut"
+       ],
+       [
+        "*тепло*",
+        "*тепленько*",
+        "nyaman",
+        "hangat"
+       ],
+       [
+        "*білий*",
+        "*білісінький*",
+        "sangat",
+        "putih bersih sekali"
+       ]
+      ]
+     },
+     "after": [
+      "Perubahan bunyi yang sama muncul lagi: *вовк* → *вовчище* (*к* → *ч*), *рука* → *ручище*. Kalau ragu, ingat pasangan *рука* → *ручка*."
+     ]
+    }
+   ]
+  }
+ ],
+ "sections": [
+  {
+   "title": "Гуцульщина: orang Hutsul di Karpatia",
+   "blocks": [
+    {
+     "type": "p",
+     "text": "Hutsul (*гуцули*) adalah masyarakat pegunungan di Karpatia Ukraina, sekitar Верховина, Косів, dan Яремче. Mereka dikenal dengan kerajinan kayu berukir, kain tenun berwarna cerah, rumah kayu berpagar (*ґражда*), musik trembita, dan dialek yang lucu di telinga orang kota. Kehidupan tradisionalnya berputar di sekitar domba: musim panas di *полонина*, musim dingin di lembah."
+    },
+    {
+     "type": "tabel",
+     "head": [
+      "Kata",
+      "Arti",
+      "Catatan"
+     ],
+     "rows": [
+      [
+       "*трембіта*",
+       "terompet kayu panjang",
+       "sampai 3 meter, dari cemara"
+      ],
+      [
+       "*бринза*",
+       "keju domba asin",
+       "dibuat di *полонина*"
+      ],
+      [
+       "*полонина*",
+       "padang rumput gunung",
+       "tempat menggembala musim panas"
+      ],
+      [
+       "*вівчар*",
+       "gembala domba",
+       "pekerjaan turun-temurun"
+      ],
+      [
+       "*ґражда*",
+       "rumah berpagar tertutup",
+       "rumah khas Hutsul"
+      ],
+      [
+       "*кептар*",
+       "rompi kulit bersulam",
+       "pakaian tradisional"
+      ],
+      [
+       "*топірець*",
+       "kapak kecil berhias",
+       "tongkat jalan pria Hutsul"
+      ],
+      [
+       "*смерека*",
+       "pohon cemara",
+       "hutan Karpatia"
+      ]
+     ]
+    },
+    {
+     "type": "kotak",
+     "title": "Sedikit kata dialek Hutsul dari Yurko",
+     "items": [
+      "*ґазда* = tuan rumah, *ґаздиня* = nyonya rumah.",
+      "*файно* = bagus, indah (Galicia dan Karpatia); baku: *гарно*.",
+      "*хижа* = rumah; baku: *хата*.",
+      "Dalam tulisan baku kamu tetap memakai bentuk baku; dialek cukup dikenali."
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Pengecil dalam percakapan sehari-hari",
+   "blocks": [
+    {
+     "type": "p",
+     "text": "Masuklah ke kedai kopi di Lviv, dan kamu akan mendengar *кавочка*, *горнятко*, *хвилинку*. Pengecil adalah cara bersikap ramah. Pramusaji yang berkata *Ваша кавочка!* tidak sedang bilang kopimu kecil; ia sedang tersenyum lewat bahasa."
+    },
+    {
+     "type": "tabel",
+     "head": [
+      "Biasa",
+      "Pengecil",
+      "Dipakai dalam"
+     ],
+     "rows": [
+      [
+       "*кава*",
+       "*кавочка*",
+       "kedai kopi"
+      ],
+      [
+       "*чай*",
+       "*чайок*",
+       "obrolan santai"
+      ],
+      [
+       "*вода*",
+       "*водичка*",
+       "menawarkan minum"
+      ],
+      [
+       "*хліб*",
+       "*хлібчик*",
+       "meja makan"
+      ],
+      [
+       "*хвилина*",
+       "*хвилинка*",
+       "*Хвилинку!* = Sebentar!"
+      ],
+      [
+       "*пиріг*",
+       "*пиріжок*",
+       "kue isi kecil"
+      ],
+      [
+       "*цукор*",
+       "*цукерка*",
+       "permen (arti baru)"
+      ]
+     ]
+    },
+    {
+     "type": "list",
+     "items": [
+      "Pakai pengecil dengan teman, anak-anak, dan di warung.",
+      "Dalam surat resmi dan rapat, hindari pengecil.",
+      "Terlalu banyak pengecil dari orang asing bisa terdengar lucu; mulailah dari *хвилинку* dan *кавочка*."
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Ulangan berjenjang — unit 5",
+   "blocks": [
+    {
+     "type": "p",
+     "text": "Tutup kolom Ukraina, baca terjemahan Indonesianya, lalu susun kembali kalimatnya dari ingatan."
+    },
+    {
+     "type": "tabel",
+     "head": [
+      "Bahasa Indonesia",
+      "Українська",
+      "Baca"
+     ],
+     "rows": [
+      [
+       "Saya mengerti. Lalu, kiranya Bapak bisa menyebutkan harga per kilogram biji hijau?",
+       "Зрозуміло. А чи не могли б ви назвати ціну за кілограм зеленого зерна?",
+       "*Zro-zu-MI-lo A chy ne mo-HLY b vy naz-VA-ty tsi-NU za ki-lo-HRAM ze-LE-no-ho zer-NA*"
+      ],
+      [
+       "Lima ton terlalu banyak untuk kami. Kalau kami ambil dua, berapa harganya?",
+       "П'ять тонн для нас забагато. Якщо ми візьмемо дві, то якою буде ціна?",
+       "*Pyat' tonn dlya nas za-BA-ha-to Yak-SHCHO my VIZ'-me-mo dvi to ya-KO-yu BU-de tsi-NA*"
+      ],
+      [
+       "Dengan senang hati! Kalau semuanya lancar, bulan Maret kami terbang ke tempatnya.",
+       "Із задоволенням! Якщо все буде добре, то в березні ми полетимо до нього.",
+       "*Iz za-do-VO-len-nyam Yak-SHCHO vse BU-de DO-bre to v BE-rez-ni my po-le-TY-mo do NYO-ho*"
+      ],
+      [
+       "Lumayan. Tapi kalau bijinya lembap, aku nggak mau menyangrainya.",
+       "Непогано. Але якщо зерно буде вологе, то я його не смажитиму.",
+       "*Ne-po-HA-no A-LE yak-SHCHO zer-NO BU-de vo-LO-he to ya yo-HO ne SMA-zhy-ty-mu*"
+      ],
+      [
+       "Jangan khawatir. Kalau kamu tidak suka sampelnya, kita tidak akan memesan apa pun.",
+       "Не хвилюйся. Якщо зразки тобі не сподобаються, ми нічого не замовимо.",
+       "*Ne khvy-LYUY-sya Yak-SHCHO zraz-KY to-BI ne spo-DO-ba-yu-tsya my ni-CHO-ho ne za-MO-vy-mo*"
+      ]
+     ]
+    }
+   ]
+  }
+ ],
+ "vocab": [
+  {
+   "uk": "гуцу́л / гуцу́лка",
+   "baca": "hu-TSUL / hu-TSUL-ka",
+   "id": "orang Hutsul (pria / wanita)"
+  },
+  {
+   "uk": "трембі́та",
+   "baca": "trem-BI-ta",
+   "id": "trembita, terompet kayu panjang"
+  },
+  {
+   "uk": "бри́нза",
+   "baca": "BRYN-za",
+   "id": "keju domba asin"
+  },
+  {
+   "uk": "полони́на",
+   "baca": "po-lo-NY-na",
+   "id": "padang rumput gunung"
+  },
+  {
+   "uk": "вівця́ (gen. jmk. ове́ць)",
+   "baca": "viv-TSYA",
+   "id": "domba"
+  },
+  {
+   "uk": "смере́ка",
+   "baca": "sme-RE-ka",
+   "id": "pohon cemara Karpatia"
+  },
+  {
+   "uk": "хати́нка",
+   "baca": "kha-TYN-ka",
+   "id": "pondok kecil"
+  },
+  {
+   "uk": "сніжо́к",
+   "baca": "sni-ZHOK",
+   "id": "salju tipis; bola salju"
+  },
+  {
+   "uk": "ба́бця",
+   "baca": "BAB-tsya",
+   "id": "nenek (Galicia, Karpatia)"
+  },
+  {
+   "uk": "діду́сь",
+   "baca": "di-DUS'",
+   "id": "kakek"
+  },
+  {
+   "uk": "шмати́ще",
+   "baca": "shma-TY-shche",
+   "id": "potongan raksasa"
+  },
+  {
+   "uk": "голо́вка сиру́",
+   "baca": "ho-LOV-ka sy-RU",
+   "id": "bongkahan (bulat) keju"
+  },
+  {
+   "uk": "ба́ночка",
+   "baca": "BA-noch-ka",
+   "id": "stoples kecil"
+  },
+  {
+   "uk": "хлі́бчик",
+   "baca": "KHLIB-chyk",
+   "id": "roti (pengecil)"
+  },
+  {
+   "uk": "мале́нький",
+   "baca": "ma-LEN'-kyy",
+   "id": "kecil mungil"
+  },
+  {
+   "uk": "тепле́нький",
+   "baca": "te-PLEN'-kyy",
+   "id": "hangat-hangat (*мені тепленько*)"
+  },
+  {
+   "uk": "гаряче́нький",
+   "baca": "ha-rya-CHEN'-kyy",
+   "id": "panas-panas, baru matang"
+  },
+  {
+   "uk": "невели́чкий",
+   "baca": "ne-ve-LYCH-kyy",
+   "id": "agak kecil, mungil"
+  },
+  {
+   "uk": "дерев'я́ний",
+   "baca": "de-re-VYA-nyy",
+   "id": "dari kayu"
+  },
+  {
+   "uk": "заду́мливий",
+   "baca": "za-DUM-ly-vyy",
+   "id": "termenung, melamun"
+  },
+  {
+   "uk": "завдо́вжки",
+   "baca": "zav-DOV-zhky",
+   "id": "panjangnya (*завдовжки три метри*)"
+  },
+  {
+   "uk": "неймові́рно",
+   "baca": "ney-mo-VIR-no",
+   "id": "luar biasa, tak dapat dipercaya"
+  },
+  {
+   "uk": "гости́нець (gen. гости́нця)",
+   "baca": "hos-TY-nets'",
+   "id": "oleh-oleh"
+  },
+  {
+   "uk": "передава́ти / переда́ти",
+   "baca": "pe-re-da-VA-ty / pe-re-DA-ty",
+   "id": "menyampaikan, mengirimkan"
+  },
+  {
+   "uk": "ме́рзнути / зме́рзнути",
+   "baca": "MER-znu-ty / ZMER-znu-ty",
+   "id": "kedinginan"
+  }
+ ],
+ "exercises": [
+  {
+   "prompt": "Terjemahkan ke bahasa Ukraina. Pakai pengecil bila cocok.",
+   "items": [
+    "Nenekku tinggal di pondok kecil dekat hutan.",
+    "Di gunung sudah ada salju tipis.",
+    "Panjang trembita sampai tiga meter.",
+    "Wah, potongannya besar sekali!",
+    "Ibu mengirim oleh-oleh dari Verkhovyna.",
+    "Nenekku kecil, tapi kuat."
+   ]
+  },
+  {
+   "prompt": "Isi titik-titik dengan pengecil atau pembesar. Petunjuk ada di dalam kurung.",
+   "items": [
+    "На горах уже лежить ____. (сніг, pengecil)",
+    "Бабуся живе в невеличкій ____. (хата, pengecil, lokatif)",
+    "Дай мені, будь ласка, ____ меду. (банка, pengecil, akusatif)",
+    "Ну й ____, Юрку! (шмат, pembesar)",
+    "Моя бабця ____, але сильна. (малий, -еньк-)",
+    "Мені тут ____. (тепло, -еньк-)",
+    "Хочеш ____ кави? (чашка, pengecil, akusatif)"
+   ]
+  },
+  {
+   "prompt": "Tulis bentuk pengecil dari kata berikut.",
+   "items": [
+    "сонце",
+    "кіт",
+    "рука",
+    "пиріг",
+    "вода",
+    "хліб"
+   ]
+  },
+  {
+   "prompt": "Susun jadi kalimat yang benar.",
+   "items": [
+    "живе / у / бабуся / хатинці / маленькій",
+    "лежить / на / сніжок / горах / вже",
+    "шматище / й / ну",
+    "мені / тепленько / тут",
+    "гостинець / мама / передала / з Верховини"
+   ]
+  }
+ ],
+ "answers": [
+  "Моя бабуся живе в хатинці біля лісу. — На горах уже лежить сніжок. — Трембіта завдовжки до трьох метрів. — Ну й шматище! — Мама передала гостинець з Верховини. — Моя бабця маленька, але сильна.",
+  "сніжок — хатинці — баночку — шматище — маленька — тепленько — чашечку",
+  "сонечко — котик — ручка — пиріжок — водичка — хлібчик",
+  "Бабуся живе у маленькій хатинці. — На горах вже лежить сніжок. — Ну й шматище! — Мені тут тепленько. — Мама передала гостинець з Верховини."
+ ]
+}

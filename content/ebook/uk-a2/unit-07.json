@@ -1,0 +1,670 @@
+{
+ "title": "Di dokter keluarga — sakit, obat, dan orang-orang di sekitar kita",
+ "title_target": "Я захворіла: у сімейної лікарки",
+ "goal": "Menceritakan gejala dan penyakit dengan *хворіти на* (*хворіти на грип*), lalu menyebut dengan siapa dan dengan apa sesuatu terjadi memakai instrumental jamak: *з хворими людьми, з клієнтами, між прийомами їжі, з ліками*.",
+ "bekal": [
+  "kamu bisa menjelaskan keluhanmu kepada dokter: *У мене болить горло, у мене температура*",
+  "kamu bisa memakai *хворіти на* + akusatif dan *з* + instrumental jamak: *хворіти на грип, з колегами, з друзями*",
+  "kamu bisa membeli obat di apotek dan memahami petunjuk minumnya"
+ ],
+ "dialogs": [
+  {
+   "title": "Діалог 1 — Di ruang dokter keluarga",
+   "intro": "Senin, 15 Maret 2027, pukul sepuluh pagi, di klinik dekat Kontraktova Ploshcha. Sejak Sabtu Ani demam dan tenggorokannya sakit. Semalam ia membuat janji dengan dokter keluarganya lewat aplikasi di ponsel. Perhatikan ekor **-ами / -ями / -ьми**: itulah instrumental jamak.",
+   "lines": [
+    {
+     "speaker": "Лікарка:",
+     "text": "[Добрий|DO-bryy] [день|den']. [Сідайте|Si-DAY-te]. [Що|Shcho] [вас|vas] [турбує|tur-BU-ye]?",
+     "id": "Selamat pagi. Silakan duduk. Apa keluhannya?",
+     "literal": "baik hari. duduklah. apa Anda (ak.) mengganggu?"
+    },
+    {
+     "speaker": "Ані:",
+     "text": "[Добрий|DO-bryy] [день|den']. [У|U] [мене|ME-ne] [температура|tem-pe-ra-TU-ra] [і|i] [болить|bo-LYT'] [горло|HOR-lo].",
+     "id": "Selamat pagi. Saya demam dan tenggorokan saya sakit.",
+     "literal": "baik hari. pada saya (gen.) suhu dan sakit tenggorokan."
+    },
+    {
+     "speaker": "Лікарка:",
+     "text": "[Скільки|SKIL'-ky] [днів|dniv] [ви|vy] [вже|vzhe] [хворієте|khvo-RI-ye-te]?",
+     "id": "Sudah berapa hari Anda sakit?",
+     "literal": "berapa hari (gen. jamak) Anda sudah sakit?"
+    },
+    {
+     "speaker": "Ані:",
+     "text": "[Третій|TRE-tiy] [день|den']. [Спочатку|Spo-CHAT-ku] [я|ya] [думала|DU-ma-la], [що|shcho] [це|tse] [просто|PROS-to] [застуда|zas-TU-da].",
+     "id": "Hari ketiga. Awalnya saya kira ini cuma masuk angin.",
+     "literal": "ketiga hari. mula-mula saya mengira (pr), bahwa ini hanya pilek."
+    },
+    {
+     "speaker": "Лікарка:",
+     "text": "[Ви|Vy] [спілкувалися|spil-ku-VA-ly-sya] [з|z] [хворими|KHVO-ry-my] [людьми|lyud'-MY]?",
+     "id": "Apakah Anda bertemu dengan orang-orang yang sakit?",
+     "literal": "Anda bergaul dengan sakit (ins. jamak) orang-orang (ins.)?"
+    },
+    {
+     "speaker": "Ані:",
+     "text": "[Може|MO-zhe], [на|na] [роботі|ro-BO-ti]. [Я|Ya] [працюю|pra-TSYU-yu] [в|v] [кав'ярні|ka-VYAR-ni] [і|i] [щодня|shchod-NYA] [розмовляю|roz-mo-VLYA-yu] [з|z] [клієнтами|kli-YEN-ta-my].",
+     "id": "Mungkin di tempat kerja. Saya kerja di kedai kopi dan setiap hari mengobrol dengan pelanggan.",
+     "literal": "mungkin, di kerja (lok.). saya bekerja di kedai-kopi (lok.) dan setiap-hari berbicara dengan pelanggan-pelanggan (ins.)."
+    },
+    {
+     "speaker": "Лікарка:",
+     "text": "[Зрозуміло|Zro-zu-MI-lo]. [Відкрийте|Vid-KRYY-te] [рот|rot], [будь|bud'] [ласка|LAS-ka]. [Так|Tak], [горло|HOR-lo] [червоне|cher-VO-ne].",
+     "id": "Mengerti. Tolong buka mulutnya. Ya, tenggorokannya merah.",
+     "literal": "dimengerti. bukalah mulut, tolong. ya, tenggorokan merah."
+    },
+    {
+     "speaker": "Ані:",
+     "text": "[Це|Tse] [грип|hryp]? [Я|Ya] [не|ne] [хочу|KHO-chu] [хворіти|khvo-RI-ty] [на|na] [грип|hryp]!",
+     "id": "Ini flu? Saya nggak mau kena flu!",
+     "literal": "ini flu? saya tidak mau sakit pada flu (ak.)!"
+    },
+    {
+     "speaker": "Лікарка:",
+     "text": "[Ні|Ni], [схоже|SKHO-zhe] [на|na] [звичайну|zvy-CHAY-nu] [застуду|zas-TU-du]. [А|A] [температура|tem-pe-ra-TU-ra] [яка|ya-KA]?",
+     "id": "Bukan, sepertinya pilek biasa. Suhunya berapa?",
+     "literal": "tidak, mirip pada biasa (ak.) pilek (ak.). dan suhu yang-mana?"
+    },
+    {
+     "speaker": "Ані:",
+     "text": "[Учора|U-CHO-ra] [ввечері|VVE-che-ri] [було|bu-LO] [тридцять|TRYD-tsyat'] [вісім|VI-sim] [і|i] [два|dva].",
+     "id": "Kemarin malam tiga puluh delapan koma dua.",
+     "literal": "kemarin malam-hari ada (lampau) tiga-puluh delapan dan dua."
+    },
+    {
+     "speaker": "Лікарка:",
+     "text": "[Вам|Vam] [треба|TRE-ba] [три|try] [дні|dni] [лежати|le-ZHA-ty] [вдома|VDO-ma]. [Пийте|PYY-te] [багато|ba-HA-to] [чаю|CHA-yu] [з|z] [лимоном|ly-MO-nom] [і|i] [медом|ME-dom].",
+     "id": "Anda perlu istirahat di rumah tiga hari. Minum banyak teh dengan lemon dan madu.",
+     "literal": "kepada-Anda (dat.) perlu tiga hari berbaring di-rumah. minumlah banyak teh (gen.) dengan lemon (ins.) dan madu (ins.)."
+    },
+    {
+     "speaker": "Ані:",
+     "text": "[А|A] [ліки|LI-ky]? [І|I] [мені|me-NI] [потрібна|po-TRIB-na] [довідка|DO-vid-ka] [для|dlya] [роботи|ro-BO-ty].",
+     "id": "Obatnya? Saya juga perlu surat keterangan untuk kantor.",
+     "literal": "dan obat? dan kepada-saya (dat.) diperlukan surat-keterangan untuk kerja (gen.)."
+    },
+    {
+     "speaker": "Лікарка:",
+     "text": "[Ось|Os'] [рецепт|re-TSEPT] [і|i] [довідка|DO-vid-ka]. [Таблетки|Ta-BLET-ky] [приймайте|pryy-MAY-te] [між|mizh] [прийомами|pry-YO-ma-my] [їжі|YI-zhi].",
+     "id": "Ini resep dan surat keterangannya. Tabletnya diminum di antara waktu makan.",
+     "literal": "ini resep dan surat-keterangan. tablet-tablet terimalah di-antara penerimaan (ins. jamak) makanan (gen.)."
+    },
+    {
+     "speaker": "Ані:",
+     "text": "[Дякую|DYA-ku-yu], [лікарко|LI-kar-ko]. [Буду|BU-du] [вдома|VDO-ma] [з|z] [чаєм|CHA-yem] [і|i] [книжками|KNYZH-ka-my].",
+     "id": "Terima kasih, Dok. Saya di rumah saja dengan teh dan buku-buku.",
+     "literal": "terima-kasih, dokter (panggilan pr). akan-(saya) di-rumah dengan teh (ins.) dan buku-buku (ins.)."
+    }
+   ],
+   "notes": [
+    "**Що вас турбує?** Pertanyaan pembuka baku dokter: harfiahnya \"apa yang mengganggu Anda?\". Jawabannya bisa berupa *У мене болить …* (sakit di …) untuk satu bagian tubuh, atau *У мене болять …* untuk yang jamak: *болять ноги*. Keluhan lain memakai *у мене* + nominatif: *у мене температура, у мене нежить, у мене кашель*.",
+    "**З хворими людьми.** Inilah instrumental jamak: kata benda berekor **-ами / -ями**, kata sifat **-ими / -іми**. Kata *люди* dan *діти* punya ekor lama **-ьми**: *з людьми, з дітьми*. Penutur Indonesia sering berhenti di *з люди*; ingat bahwa sesudah *з* (bersama) selalu datang instrumental.",
+    "**З клієнтами.** *Розмовляти з кимось* (berbicara dengan seseorang), *спілкуватися з кимось* (bergaul, berkomunikasi dengan), *працювати з кимось* (bekerja dengan). Pola ini sama dengan \"dengan\" dalam bahasa Indonesia, jadi mudah dipakai, asal ekornya benar: *з клієнтами, з колегами, з друзями*. Tekanan *клієнт* jatuh di *e*: *kli-YENT*.",
+    "**Хворіти на грип.** Nama penyakit datang sesudah **на + akusatif**: *хворіти на грип, на ангіну, на COVID*. Bentuk *боліти* lain lagi: yang sakit adalah bagian tubuh dan bagian itu menjadi subjek (*болить горло*). Dalam bahasa Rusia penyakit memakai *чем* (instrumental); di Ukraina bentuk itu dianggap tidak baku.",
+    "**Застуда vs грип.** *Застуда* adalah pilek, masuk angin, flu ringan; *грип* adalah influenza sungguhan. Suhu badan disebut dengan angka dan *і* untuk desimal dalam percakapan: *тридцять вісім і два* (38,2). Secara resmi: *тридцять вісім цілих дві десятих*, tetapi dokter pun jarang berkata sepanjang itu.",
+    "**Довідка dan лікарко.** *Довідка* adalah surat keterangan (sakit, domisili, dari kampus). Untuk kerja, di Ukraina kini ada surat sakit elektronik, *електронний лікарняний*, yang dikirim langsung ke sistem. Bentuk panggilan *лікарко* dari *лікарка* (dokter perempuan) adalah sapaan sopan yang wajar; kepada dokter laki-laki: *лікарю*."
+   ],
+   "grammars": [
+    {
+     "title": "Instrumental jamak: з ким? з чим?",
+     "body": [
+      "Hampir semua kata benda jamak berekor **-ами** (batang keras) atau **-ями** (batang lunak dan vokal). Kata sifat dan kata ganti milik berekor **-ими** / **-іми**."
+     ],
+     "table": {
+      "head": [
+       "Tunggal",
+       "Instrumental jamak",
+       "Contoh"
+      ],
+      "rows": [
+       [
+        "клієнт",
+        "клієнтами",
+        "*Я розмовляю з клієнтами.*"
+       ],
+       [
+        "колега",
+        "колегами",
+        "*Він обідає з колегами.*"
+       ],
+       [
+        "друг",
+        "друзями",
+        "*Ми гуляємо з друзями.*"
+       ],
+       [
+        "таблетка",
+        "таблетками",
+        "*Не жартуй з таблетками.*"
+       ],
+       [
+        "ліки (jamak saja)",
+        "ліками",
+        "*Шафа з ліками.*"
+       ],
+       [
+        "людина",
+        "людьми",
+        "*з хворими людьми*"
+       ],
+       [
+        "дитина",
+        "дітьми",
+        "*з маленькими дітьми*"
+       ],
+       [
+        "кінь",
+        "кіньми",
+        "*з кіньми*"
+       ]
+      ]
+     },
+     "after": [
+      "Bentuk *-ьми* hanya bertahan pada segelintir kata: *людьми, дітьми, кіньми, гістьми* (juga *гостями*). Selebihnya cukup *-ами / -ями*."
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Діалог 2 — Di apotek bersama pani Halyna",
+   "intro": "Setengah jam kemudian, di apotek di lantai dasar gedung sebelah. Pani Halyna, pensiunan apoteker, tidak membiarkan Ani pergi sendirian. Perhatikan *займатися* (menyibukkan diri dengan): kata kerja ini selalu diikuti instrumental.",
+   "lines": [
+    {
+     "speaker": "Галина:",
+     "text": "[Ані|A-ni], [навіщо|na-VI-shcho] [ти|ty] [вийшла|VYY-shla] [з|z] [дому|DO-mu]? [Я|Ya] [могла|mo-HLA] [сама|sa-MA] [сходити|SKHO-dy-ty] [в|v] [аптеку|ap-TE-ku]!",
+     "id": "Ani, ngapain kamu keluar rumah? Saya bisa ke apotek sendiri!",
+     "literal": "Ani, untuk-apa kamu keluar (pr) dari rumah (gen.)? saya bisa (pr) sendiri pergi ‹selesai› ke apotek (ak.)!"
+    },
+    {
+     "speaker": "Ані:",
+     "text": "[Мені|Me-NI] [вже|vzhe] [краще|KRA-shche], [пані|PA-ni] [Галино|Ha-LY-no]. [І|I] [з|z] [вами|VA-my] [мені|me-NI] [не|ne] [страшно|STRASH-no].",
+     "id": "Saya sudah lebih baik, Bu Halyna. Lagi pula kalau sama Ibu saya nggak takut.",
+     "literal": "kepada-saya (dat.) sudah lebih-baik, nyonya Halyna. dan dengan Anda (ins.) kepada-saya (dat.) tidak menakutkan."
+    },
+    {
+     "speaker": "Фармацевтка:",
+     "text": "[Добрий|DO-bryy] [день|den']! [Що|Shcho] [для|dlya] [вас|vas]?",
+     "id": "Selamat siang! Ada yang bisa dibantu?",
+     "literal": "baik hari! apa untuk Anda (gen.)?"
+    },
+    {
+     "speaker": "Ані:",
+     "text": "[Ось|Os'] [рецепт|re-TSEPT]. [І|I] [ще|shche] [щось|shchos'] [від|vid] [кашлю|KASH-lyu], [будь|bud'] [ласка|LAS-ka].",
+     "id": "Ini resepnya. Dan tolong sesuatu untuk batuk.",
+     "literal": "ini resep. dan lagi sesuatu dari batuk (gen.), tolong."
+    },
+    {
+     "speaker": "Фармацевтка:",
+     "text": "[Є|Ye] [сироп|sy-ROP] [і|i] [є|ye] [пастилки|pas-TYL-ky] [з|z] [медом|ME-dom] [і|i] [лимоном|ly-MO-nom].",
+     "id": "Ada sirup, ada juga tablet isap madu lemon.",
+     "literal": "ada sirup dan ada pastiles dengan madu (ins.) dan lemon (ins.)."
+    },
+    {
+     "speaker": "Галина:",
+     "text": "[Сироп|Sy-ROP] [краще|KRA-shche]. [Я|Ya] [сорок|SO-rok] [років|RO-kiv] [працювала|pra-tsyu-VA-la] [з|z] [ліками|LI-ka-my], [повір|po-VIR] [мені|me-NI].",
+     "id": "Sirup lebih baik. Saya empat puluh tahun bekerja dengan obat-obatan, percayalah.",
+     "literal": "sirup lebih-baik. saya empat-puluh tahun (gen. jamak) bekerja (pr) dengan obat-obat (ins.), percayalah kepada-saya (dat.)."
+    },
+    {
+     "speaker": "Фармацевтка:",
+     "text": "[Ви|Vy] [теж|tezh] [фармацевт|far-ma-TSEVT]?",
+     "id": "Ibu juga apoteker?",
+     "literal": "Anda juga apoteker?"
+    },
+    {
+     "speaker": "Галина:",
+     "text": "[Була|Bu-LA]. [Тепер|Te-PER] [я|ya] [на|na] [пенсії|PEN-si-yi], [займаюся|zay-MA-yu-sya] [квітами|KVI-ta-my] [й|y] [кросвордами|kros-VOR-da-my].",
+     "id": "Dulu. Sekarang saya pensiun, sibuk dengan bunga dan teka-teki silang.",
+     "literal": "dulu-adalah (pr). sekarang saya pada pensiun (lok.), menyibukkan-diri bunga-bunga (ins.) dan teka-teki-silang (ins.)."
+    },
+    {
+     "speaker": "Фармацевтка:",
+     "text": "[Ось|Os'] [сироп|sy-ROP]. [Три|Try] [рази|RA-zy] [на|na] [день|den'], [після|PIS-lya] [їжі|YI-zhi]. [Разом|RA-zom] [чотириста|cho-TY-rys-ta] [десять|DE-syat'] [гривень|HRY-ven'].",
+     "id": "Ini sirupnya. Tiga kali sehari, sesudah makan. Semuanya empat ratus sepuluh hryvnia.",
+     "literal": "ini sirup. tiga kali pada hari, sesudah makanan (gen.). bersama empat-ratus sepuluh hryvnia (gen. jamak)."
+    },
+    {
+     "speaker": "Ані:",
+     "text": "[Можна|MOZH-na] [карткою|KART-ko-yu]?",
+     "id": "Bisa bayar pakai kartu?",
+     "literal": "boleh kartu (ins.)?"
+    },
+    {
+     "speaker": "Фармацевтка:",
+     "text": "[Звичайно|Zvy-CHAY-no]. [Одужуйте|O-DU-zhuy-te]!",
+     "id": "Tentu. Semoga lekas sembuh!",
+     "literal": "tentu. sembuhlah!"
+    }
+   ],
+   "notes": [
+    "**Навіщо ти вийшла з дому?** *Навіщо* menanyakan tujuan (untuk apa), sedangkan *чому* menanyakan sebab (mengapa). Nada Halyna seperti ibu yang memarahi dengan sayang. *Вийти* berawalan *ви-* yang perfektif, dan awalan ini selalu menarik tekanan: *VY-yshla*.",
+    "**З вами мені не страшно.** Kata ganti juga punya instrumental: *зі мною, з тобою, з ним, з нею, з нами, з вами, з ними*. Perhatikan *зі мною*: sebelum gugus konsonan *мн*, *з* berubah menjadi *зі* supaya mudah diucapkan.",
+    "**Щось від кашлю.** Obat \"untuk\" suatu penyakit memakai *від* + genitif: *від кашлю* (untuk batuk), *від головного болю* (untuk sakit kepala), *від температури*. Penutur Indonesia sering memakai *для*, padahal *для* dipakai untuk tujuan positif: *вітаміни для імунітету*.",
+    "**Працювала з ліками.** *Ліки* (obat) adalah kata yang hanya punya bentuk jamak, seperti *гроші* (uang) dan *окуляри* (kacamata). Jadi \"obat ini\" pun *ці ліки*, dengan kata kerja jamak: *ці ліки допомагають*. Satu tablet disebut *таблетка*.",
+    "**Займаюся квітами й кросвордами.** *Займатися* (menekuni, mengurus, berolahraga) selalu diikuti instrumental: *займатися спортом, займатися дітьми, займатися музикою*. *Й* adalah varian *і* sesudah vokal, dipakai agar kalimat mengalir: *квітами й кросвордами*.",
+    "**Можна карткою? Одужуйте!** Cara membayar juga memakai instrumental tanpa preposisi: *карткою* (dengan kartu), *готівкою* (tunai), *телефоном*. Dan *Одужуйте!* (semoga lekas sembuh) adalah ucapan wajib kepada orang sakit; kepada teman: *Одужуй!*"
+   ],
+   "grammars": [
+    {
+     "title": "Preposisi yang meminta instrumental",
+     "body": [
+      "Selain *з* (bersama), lima preposisi tempat selalu diikuti instrumental. Semuanya berlaku untuk tunggal maupun jamak."
+     ],
+     "table": {
+      "head": [
+       "Preposisi",
+       "Arti",
+       "Contoh",
+       "Indonesia"
+      ],
+      "rows": [
+       [
+        "з / із / зі",
+        "bersama, dengan",
+        "*чай з медом, з друзями*",
+        "teh dengan madu, bersama teman"
+       ],
+       [
+        "між",
+        "di antara",
+        "*між прийомами їжі*",
+        "di antara waktu makan"
+       ],
+       [
+        "перед",
+        "di depan, sebelum",
+        "*перед сніданком*",
+        "sebelum sarapan"
+       ],
+       [
+        "за",
+        "di belakang, di balik",
+        "*за аптекою*",
+        "di belakang apotek"
+       ],
+       [
+        "над",
+        "di atas (tidak menempel)",
+        "*над ліжком*",
+        "di atas tempat tidur"
+       ],
+       [
+        "під",
+        "di bawah",
+        "*під ковдрою*",
+        "di bawah selimut"
+       ],
+       [
+        "поруч із",
+        "di samping",
+        "*поруч із клінікою*",
+        "di samping klinik"
+       ]
+      ]
+     },
+     "after": [
+      "*Між* bisa juga dipakai dengan dua benda yang disebut satu per satu: *між аптекою і банком* (di antara apotek dan bank)."
+     ]
+    }
+   ]
+  }
+ ],
+ "sections": [
+  {
+   "title": "Dokter keluarga dan aplikasi kesehatan",
+   "blocks": [
+    {
+     "type": "p",
+     "text": "Di Ukraina, setiap penduduk memilih seorang *сімейний лікар* (dokter keluarga) dan menandatangani *декларація* (deklarasi) dengannya, termasuk warga asing yang tinggal resmi. Janji temu dibuat lewat aplikasi atau situs kesehatan, resep dikirim sebagai kode di ponsel (*електронний рецепт*), dan apotek membacanya langsung. Untuk dokter spesialis, dokter keluarga memberi *направлення* (rujukan)."
+    },
+    {
+     "type": "tabel",
+     "head": [
+      "Українська",
+      "Indonesia"
+     ],
+     "rows": [
+      [
+       "записатися до лікаря",
+       "membuat janji dengan dokter"
+      ],
+      [
+       "сімейний лікар",
+       "dokter keluarga"
+      ],
+      [
+       "поліклініка",
+       "poliklinik, klinik umum"
+      ],
+      [
+       "рецепт, електронний рецепт",
+       "resep, resep elektronik"
+      ],
+      [
+       "направлення",
+       "surat rujukan"
+      ],
+      [
+       "аналіз крові",
+       "tes darah"
+      ],
+      [
+       "лікарняний",
+       "cuti sakit, surat sakit"
+      ],
+      [
+       "швидка допомога (103)",
+       "ambulans (103)"
+      ],
+      [
+       "черговий лікар",
+       "dokter jaga"
+      ]
+     ]
+    },
+    {
+     "type": "kotak",
+     "title": "Kalimat untuk menjelaskan keluhan",
+     "items": [
+      "*У мене болить голова / горло / живіт / зуб.* (Sakit kepala / tenggorokan / perut / gigi.)",
+      "*У мене болять ноги.* (Kaki saya sakit.)",
+      "*У мене нежить, кашель і температура.* (Saya pilek, batuk, dan demam.)",
+      "*Мені погано. Мені холодно. Мене нудить.* (Saya tidak enak badan. Saya kedinginan. Saya mual.)",
+      "*У мене алергія на пеніцилін.* (Saya alergi penisilin.)"
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Хворіти на, боліти, займатися: tiga pola yang sering tertukar",
+   "blocks": [
+    {
+     "type": "p",
+     "text": "Tiga kata kerja di bawah ini sama-sama muncul saat membicarakan tubuh dan kesehatan, tetapi masing-masing meminta bentuk yang berbeda. Kuncinya: siapa yang menjadi subjek, dan kasus apa yang datang sesudahnya."
+    },
+    {
+     "type": "tabel",
+     "head": [
+      "Pola",
+      "Contoh",
+      "Indonesia"
+     ],
+     "rows": [
+      [
+       "хворіти на + ak.",
+       "*Тарас хворіє на ангіну.*",
+       "Taras sakit radang tenggorokan."
+      ],
+      [
+       "захворіти на + ak.",
+       "*Я захворіла на грип.*",
+       "Saya jatuh sakit flu."
+      ],
+      [
+       "у мене болить + nom.",
+       "*У мене болить зуб.*",
+       "Gigi saya sakit."
+      ],
+      [
+       "у мене болять + nom. jamak",
+       "*У мене болять очі.*",
+       "Mata saya sakit."
+      ],
+      [
+       "займатися + ins.",
+       "*Я займаюся йогою.*",
+       "Saya berlatih yoga."
+      ],
+      [
+       "лікуватися + ins.",
+       "*Бабуся лікується травами.*",
+       "Nenek berobat dengan herbal."
+      ],
+      [
+       "одужувати / одужати",
+       "*Ані швидко одужала.*",
+       "Ani cepat sembuh."
+      ],
+      [
+       "почуватися + adverbia",
+       "*Я почуваюся краще.*",
+       "Saya merasa lebih baik."
+      ]
+     ]
+    },
+    {
+     "type": "list",
+     "items": [
+      "*Хворий* (sakit) juga kata benda: *хворий, хвора* = pasien.",
+      "*Здоровий* berarti sehat; *Будь здоровий!* diucapkan ketika seseorang bersin.",
+      "Jangan pakai *чувствувати себе* (rusisme); yang benar *почуватися*."
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Ulangan berjenjang — unit 5",
+   "blocks": [
+    {
+     "type": "p",
+     "text": "Tutup kolom Ukraina, baca terjemahan Indonesianya, lalu susun kembali kalimatnya dari ingatan."
+    },
+    {
+     "type": "tabel",
+     "head": [
+      "Bahasa Indonesia",
+      "Українська",
+      "Baca"
+     ],
+     "rows": [
+      [
+       "Oh! Jadi aku lihat sapi, kuda, dan bebek?",
+       "Ой! То я бачу корів, коней і качок?",
+       "*Oy To ya BA-chu ko-RIV ko-NEY i KA-chok*"
+      ],
+      [
+       "Nggak, itu bukan makhluk hidup. Aku lihat traktor, pohon, dan bunga matahari.",
+       "Ні, вони неживі. Я бачу трактор, дерева й соняшники.",
+       "*Ni vo-NY ne-zhy-VI Ya BA-chu TRAK-tor de-RE-va y so-NYASH-ny-ky*"
+      ],
+      [
+       "Berarti kamu lihat kucing jantan dan kucing betina. Pintar!",
+       "Значить, ти бачиш котів і кішок. Молодець!",
+       "*ZNA-chyt' ty BA-chysh ko-TIV i KI-shok Mo-lo-DETS'*"
+      ],
+      [
+       "Lihat, Ani! Aku kenal anak-anak itu, mereka teman sekelasku.",
+       "Диви, Ані! Я знаю тих хлопців, це мої однокласники.",
+       "*Dy-VY A-ni Ya ZNA-yu tykh KHLOP-tsiv tse mo-YI od-no-KLAS-ny-ky*"
+      ],
+      [
+       "Nggak kenal. Eh, kamu lihat anjing-anjing besar itu?",
+       "Ні, не знаю. Ой, а ти бачиш тих великих собак?",
+       "*Ni ne ZNA-yu Oy a ty BA-chysh tykh ve-LY-kykh so-BAK*"
+      ]
+     ]
+    }
+   ]
+  }
+ ],
+ "vocab": [
+  {
+   "uk": "хворі́ти / захворі́ти",
+   "baca": "khvo-RI-ty / zakh-vo-RI-ty",
+   "id": "sakit / jatuh sakit (*на* + ak.)"
+  },
+  {
+   "uk": "боли́ть",
+   "baca": "bo-LYT'",
+   "id": "sakit (bagian tubuh; *у мене болить горло*)"
+  },
+  {
+   "uk": "засту́да",
+   "baca": "zas-TU-da",
+   "id": "pilek, masuk angin"
+  },
+  {
+   "uk": "грип",
+   "baca": "hryp",
+   "id": "flu, influenza"
+  },
+  {
+   "uk": "температу́ра",
+   "baca": "tem-pe-ra-TU-ra",
+   "id": "suhu badan, demam"
+  },
+  {
+   "uk": "ка́шель",
+   "baca": "KA-shel'",
+   "id": "batuk (gen. *кашлю*)"
+  },
+  {
+   "uk": "не́жить",
+   "baca": "NE-zhyt'",
+   "id": "pilek, ingus"
+  },
+  {
+   "uk": "го́рло",
+   "baca": "HOR-lo",
+   "id": "tenggorokan"
+  },
+  {
+   "uk": "сіме́йний лі́кар",
+   "baca": "si-MEY-nyy LI-kar",
+   "id": "dokter keluarga"
+  },
+  {
+   "uk": "лі́карка",
+   "baca": "LI-kar-ka",
+   "id": "dokter perempuan (panggilan *лікарко*)"
+  },
+  {
+   "uk": "апте́ка",
+   "baca": "ap-TE-ka",
+   "id": "apotek"
+  },
+  {
+   "uk": "фармаце́вт",
+   "baca": "far-ma-TSEVT",
+   "id": "apoteker"
+  },
+  {
+   "uk": "лі́ки",
+   "baca": "LI-ky",
+   "id": "obat (jamak saja; ins. *ліками*)"
+  },
+  {
+   "uk": "табле́тка",
+   "baca": "ta-BLET-ka",
+   "id": "tablet, pil"
+  },
+  {
+   "uk": "сиро́п",
+   "baca": "sy-ROP",
+   "id": "sirup obat"
+  },
+  {
+   "uk": "реце́пт",
+   "baca": "re-TSEPT",
+   "id": "resep"
+  },
+  {
+   "uk": "до́відка",
+   "baca": "DO-vid-ka",
+   "id": "surat keterangan"
+  },
+  {
+   "uk": "прийма́ти / прийня́ти",
+   "baca": "pryy-MA-ty / pryy-NYA-ty",
+   "id": "menerima; meminum (obat)"
+  },
+  {
+   "uk": "оду́жувати / оду́жати",
+   "baca": "o-DU-zhu-va-ty / o-DU-zha-ty",
+   "id": "sembuh (*Одужуйте!*)"
+  },
+  {
+   "uk": "спілкува́тися",
+   "baca": "spil-ku-VA-ty-sya",
+   "id": "berkomunikasi, bergaul (*з* + ins.)"
+  },
+  {
+   "uk": "займа́тися",
+   "baca": "zay-MA-ty-sya",
+   "id": "menekuni, berlatih (+ ins.)"
+  },
+  {
+   "uk": "кліє́нт",
+   "baca": "kli-YENT",
+   "id": "pelanggan, klien"
+  },
+  {
+   "uk": "пе́нсія",
+   "baca": "PEN-si-ya",
+   "id": "pensiun (*на пенсії*)"
+  },
+  {
+   "uk": "пі́сля ї́жі",
+   "baca": "PIS-lya YI-zhi",
+   "id": "sesudah makan"
+  },
+  {
+   "uk": "ка́рткою",
+   "baca": "KART-ko-yu",
+   "id": "dengan kartu (membayar)"
+  }
+ ],
+ "exercises": [
+  {
+   "prompt": "Terjemahkan ke bahasa Ukraina. Yang berbicara perempuan.",
+   "items": [
+    "Tenggorokan saya sakit dan saya demam.",
+    "Saya sakit flu.",
+    "Setiap hari saya mengobrol dengan pelanggan.",
+    "Minum teh dengan lemon dan madu.",
+    "Tabletnya diminum sesudah makan.",
+    "Semoga lekas sembuh!"
+   ]
+  },
+  {
+   "prompt": "Isi titik-titik dengan bentuk instrumental jamak kata dalam kurung.",
+   "items": [
+    "Андрій гуляє з ____. (друзі)",
+    "Я працюю з ____. (клієнти)",
+    "Лікарка розмовляє з ____. (хворі люди)",
+    "Бабуся займається ____. (квіти)",
+    "Приймайте ліки між ____ їжі. (прийоми)",
+    "Учителька працює з ____. (маленькі діти)",
+    "Соломія обідає з ____. (колеги)"
+   ]
+  },
+  {
+   "prompt": "Jawab pertanyaan dengan kata dalam kurung.",
+   "items": [
+    "На що хворіє Тарас? (ангіна)",
+    "З ким ти ходиш у кіно? (подруги)",
+    "Чим займається пані Галина? (кросворди)",
+    "Що в тебе болить? (голова)",
+    "Як ви платите? (картка)",
+    "З чим ти п'єш чай? (лимон і мед)"
+   ]
+  },
+  {
+   "prompt": "Susun jadi kalimat yang benar.",
+   "items": [
+    "людьми / хворими / ви / з / спілкувалися",
+    "не / хворіти / хочу / я / грип / на",
+    "клієнтами / щодня / розмовляю / з / я",
+    "займаюся / квітами / я / кросвордами / й",
+    "між / приймайте / їжі / прийомами / таблетки"
+   ]
+  }
+ ],
+ "answers": [
+  "У мене болить горло, і в мене температура. — Я хворію на грип. — Щодня я розмовляю з клієнтами. — Пийте чай з лимоном і медом. — Таблетки приймайте після їжі. — Одужуйте!",
+  "друзями — клієнтами — хворими людьми — квітами — прийомами — маленькими дітьми — колегами",
+  "Тарас хворіє на ангіну. — Я ходжу в кіно з подругами. — Пані Галина займається кросвордами. — У мене болить голова. — Ми платимо карткою. — Я п'ю чай з лимоном і медом.",
+  "Ви спілкувалися з хворими людьми? — Я не хочу хворіти на грип. — Щодня я розмовляю з клієнтами. — Я займаюся квітами й кросвордами. — Таблетки приймайте між прийомами їжі."
+ ]
+}

@@ -1,0 +1,666 @@
+{
+ "title": "Naik kereta ke Poltava — di mana-mana, di tempat-tempat",
+ "title_target": "Потягом до Полтави",
+ "goal": "Bercerita tentang perjalanan dengan kereta (*їхати потягом*), menyebut tempat dalam lokatif jamak (*у вагонах, на станціях, на островах, у селах*), dan memilih dengan yakin antara *в* dan *на* untuk tempat.",
+ "bekal": [
+  "kamu bisa membentuk lokatif jamak kata benda dan kata sifat: *у великих містах, на старих вулицях*",
+  "kamu bisa menyebut alat transportasi dengan instrumental: *їхати потягом, летіти літаком*",
+  "kamu bisa memilih *в* atau *на* untuk tempat: *на вокзалі, на пероні, у вагоні, у Полтаві*"
+ ],
+ "dialogs": [
+  {
+   "title": "Діалог 1 — Di dalam kereta Intercity",
+   "intro": "Senin, 29 Maret 2027, pukul setengah delapan pagi. Ani dan Andriy naik kereta Intercity dari stasiun pusat Kyiv menuju Poltava. Andriy mengajak Ani menginap beberapa hari di rumah orang tuanya selama libur kursus. Perhatikan ekor **-ах / -ях** sesudah *в* dan *на*: itulah lokatif jamak.",
+   "lines": [
+    {
+     "speaker": "Провідниця:",
+     "text": "[Доброго|DO-bro-ho] [ранку|RAN-ku]! [Ваші|VA-shi] [квитки|kvyt-KY], [будь|bud'] [ласка|LAS-ka].",
+     "id": "Selamat pagi! Tiketnya, silakan.",
+     "literal": "baik (gen.) pagi (gen.)! Anda-punya tiket-tiket, tolong."
+    },
+    {
+     "speaker": "Андрій:",
+     "text": "[Ось|Os'], [у|u] [телефоні|te-le-FO-ni]. [Два|Dva] [квитки|kvyt-KY], [ми|my] [разом|RA-zom].",
+     "id": "Ini, di ponsel. Dua tiket, kami berdua.",
+     "literal": "ini, di telepon (lok.). dua tiket, kami bersama."
+    },
+    {
+     "speaker": "Провідниця:",
+     "text": "[Дякую|DYA-ku-yu]. [Чай|Chay] [і|i] [каву|KA-vu] [розносимо|roz-NO-sy-mo] [через|CHE-rez] [пів|piv] [години|ho-DY-ny].",
+     "id": "Terima kasih. Teh dan kopi kami antar setengah jam lagi.",
+     "literal": "terima-kasih. teh dan kopi (ak.) kami-antar-keliling lewat setengah jam (gen.)."
+    },
+    {
+     "speaker": "Ані:",
+     "text": "[Андрію|An-DRI-yu], [я|ya] [вперше|VPER-she] [їду|YI-du] [потягом|PO-tya-hom] [по|po] [Україні|U-kra-YI-ni]!",
+     "id": "Andriy, ini pertama kalinya aku naik kereta keliling Ukraina!",
+     "literal": "Andriy (panggilan), saya pertama-kali pergi kereta (ins.) melalui Ukraina (lok.)!"
+    },
+    {
+     "speaker": "Андрій:",
+     "text": "[Серйозно|Ser-YOZ-no]? [А|A] [як|yak] [ви|vy] [подорожуєте|po-do-ro-ZHU-ye-te] [в|v] [Індонезії|In-do-NE-zi-yi]?",
+     "id": "Serius? Terus di Indonesia kalian bepergian pakai apa?",
+     "literal": "serius? dan bagaimana kalian bepergian di Indonesia (lok.)?"
+    },
+    {
+     "speaker": "Ані:",
+     "text": "[У|U] [нас|nas] [сімнадцять|sim-NAD-tsyat'] [тисяч|TY-syach] [островів|os-tro-VIV]. [На|Na] [островах|os-tro-VAKH] [ми|my] [літаємо|li-TA-ye-mo] [або|a-BO] [пливемо|ply-ve-MO] [поромом|po-RO-mom].",
+     "id": "Kami punya tujuh belas ribu pulau. Antarpulau kami naik pesawat atau kapal feri.",
+     "literal": "pada kami tujuh-belas ribu (gen. jamak) pulau (gen. jamak). di pulau-pulau (lok.) kami terbang atau berlayar feri (ins.)."
+    },
+    {
+     "speaker": "Андрій:",
+     "text": "[А|A] [потяги|PO-tya-hy] [у|u] [вас|vas] [є|ye]?",
+     "id": "Kalau kereta, ada?",
+     "literal": "dan kereta-kereta pada kalian ada?"
+    },
+    {
+     "speaker": "Ані:",
+     "text": "[Є|Ye], [на|na] [Яві|YA-vi] [й|y] [на|na] [Суматрі|Su-MA-tri]. [Швидкі|Shvyd-KI] [потяги|PO-tya-hy] [ходять|KHO-dyat'] [між|mizh] [великими|ve-LY-ky-my] [містами|mis-TA-my].",
+     "id": "Ada, di Jawa dan di Sumatra. Kereta cepat jalan antarkota besar.",
+     "literal": "ada, di Jawa (lok.) dan di Sumatra (lok.). cepat kereta-kereta berjalan di-antara besar (ins. jamak) kota-kota (ins.)."
+    },
+    {
+     "speaker": "Андрій:",
+     "text": "[Цей|Tsey] [Інтерсіті|In-ter-SI-ti] [зупиняється|zu-py-NYA-ye-tsya] [тільки|TIL'-ky] [на|na] [великих|ve-LY-kykh] [станціях|STAN-tsi-yakh].",
+     "id": "Intercity ini cuma berhenti di stasiun-stasiun besar.",
+     "literal": "ini Intercity berhenti hanya di besar (lok. jamak) stasiun-stasiun (lok.)."
+    },
+    {
+     "speaker": "Ані:",
+     "text": "[А|A] [що|shcho] [ми|my] [будемо|BU-de-mo] [робити|ro-BY-ty] [в|v] [Полтаві|Pol-TA-vi]?",
+     "id": "Terus nanti di Poltava kita ngapain?",
+     "literal": "dan apa kami akan berbuat di Poltava (lok.)?"
+    },
+    {
+     "speaker": "Андрій:",
+     "text": "[Сьогодні|Syo-HOD-ni] [погуляємо|po-hu-LYA-ye-mo] [в|v] [парках|PAR-kakh], [а|a] [завтра|ZAV-tra] [мама|MA-ma] [готує|ho-TU-ye] [велику|ve-LY-ku] [вечерю|ve-CHE-ryu].",
+     "id": "Hari ini kita jalan-jalan di taman, dan besok ibuku masak makan malam besar.",
+     "literal": "hari-ini kita-akan-berjalan-jalan di taman-taman (lok.), dan besok ibu memasak besar makan-malam (ak.)."
+    },
+    {
+     "speaker": "Ані:",
+     "text": "[Я|Ya] [трохи|TRO-khy] [хвилююся|khvy-LYU-yu-sya]. [Твої|Tvo-YI] [батьки|bat'-KY] [говорять|ho-VO-ryat'] [тільки|TIL'-ky] [українською|u-kra-YIN-s'ko-yu]?",
+     "id": "Aku agak deg-degan. Orang tuamu cuma bisa bahasa Ukraina?",
+     "literal": "saya sedikit cemas. kamu-punya orang-tua berbicara hanya bahasa-Ukraina (ins.)?"
+    },
+    {
+     "speaker": "Андрій:",
+     "text": "[Так|Tak]. [А|A] [баба|BA-ba] [Ганна|HAN-na] [говорить|ho-VO-ryt'], [як|yak] [говорять|ho-VO-ryat'] [у|u] [селах|SE-lakh].",
+     "id": "Iya. Kalau nenek Hanna ngomongnya kayak orang-orang di desa.",
+     "literal": "ya. dan nenek Hanna berbicara, seperti (orang) berbicara di desa-desa (lok.)."
+    },
+    {
+     "speaker": "Ані:",
+     "text": "[Нічого|Ni-CHO-ho], [я|ya] [все|vse] [зрозумію|zro-zu-MI-yu]. [Дивись|Dy-VYS'], [за|za] [вікном|vik-NOM] [уже|u-ZHE] [поля|po-LYA] [і|i] [річки|RICH-ky]!",
+     "id": "Nggak apa-apa, aku pasti paham. Lihat, di luar jendela sudah ladang dan sungai!",
+     "literal": "tidak-apa, saya semua akan-mengerti. lihatlah, di-balik jendela (ins.) sudah ladang-ladang dan sungai-sungai!"
+    }
+   ],
+   "notes": [
+    "**Їду потягом.** Alat transportasi disebut dengan instrumental tanpa preposisi: *їхати потягом, автобусом, метро, машиною*; *летіти літаком*; *пливти поромом*. Bentuk *на потязі* juga terdengar dalam percakapan, tetapi instrumental adalah pilihan baku. *По Україні* (keliling Ukraina) memakai *по* + lokatif.",
+    "**На островах.** Lokatif jamak: semua jenis kata berekor **-ах** (batang keras) atau **-ях** (batang lunak). *Острів* mengubah vokal batangnya di bentuk lain: *острів* → *острова, островах*. Perubahan *і* menjadi *о* dalam suku tertutup seperti ini sangat khas bahasa Ukraina: *кінь* → *коня*, *стіл* → *стола*.",
+    "**Сімнадцять тисяч островів.** Angka lima ke atas diikuti genitif jamak: *тисяч* (dari *тисяча*) dan *островів*. Ani sengaja menyebut angka ini dengan bangga, dan hampir semua orang Ukraina terkejut mendengarnya. Kata *пливти / плисти* (berlayar, berenang) punya dua ejaan yang sama-sama baku.",
+    "**Між великими містами.** *Між* meminta instrumental, jadi di sini kita melihat kembali instrumental jamak dari Unit 7. Bedakan dengan *у великих містах* (di kota-kota besar), yang lokatif. Dua kasus ini sama-sama menjawab pertanyaan tempat, tetapi preposisinyalah yang memutuskan.",
+    "**На великих станціях.** Kata sifat di lokatif jamak berekor **-их** (keras) atau **-іх** (lunak): *на великих станціях, у синіх вагонах*. Ekor ini sama persis dengan genitif jamak (*великих станцій*), jadi kamu mendapat dua kasus sekaligus.",
+    "**Як говорять у селах.** Nenek Andriy berbicara dengan dialek Poltava yang kental. Ironisnya, bahasa Ukraina baku justru disusun terutama berdasarkan dialek kawasan Poltava dan sekitar sungai Dnipro tengah, jadi Ani akan lebih banyak mengerti daripada yang ia takutkan. *Нічого* di sini berarti \"tidak apa-apa\"."
+   ],
+   "grammars": [
+    {
+     "title": "Lokatif jamak: де? у чому? на чому?",
+     "body": [
+      "Lokatif jamak adalah salah satu kasus paling teratur: kata benda **-ах / -ях**, kata sifat dan kata ganti milik **-их / -іх**. Lokatif selalu memakai preposisi, biasanya *в / у, на, по, при*."
+     ],
+     "table": {
+      "head": [
+       "Tunggal",
+       "Nominatif jamak",
+       "Lokatif jamak",
+       "Contoh"
+      ],
+      "rows": [
+       [
+        "вагон",
+        "вагони",
+        "у вагонах",
+        "*У вагонах чисто.*"
+       ],
+       [
+        "станція",
+        "станції",
+        "на станціях",
+        "*на великих станціях*"
+       ],
+       [
+        "місто",
+        "міста",
+        "у містах",
+        "*у старих містах*"
+       ],
+       [
+        "село",
+        "села",
+        "у селах",
+        "*у полтавських селах*"
+       ],
+       [
+        "острів",
+        "острови",
+        "на островах",
+        "*на наших островах*"
+       ],
+       [
+        "парк",
+        "парки",
+        "у парках",
+        "*у київських парках*"
+       ],
+       [
+        "гора",
+        "гори",
+        "у горах",
+        "*у Карпатських горах*"
+       ],
+       [
+        "поле",
+        "поля",
+        "на полях",
+        "*на полях біля Полтави*"
+       ]
+      ]
+     },
+     "after": [
+      "Kata yang hanya punya bentuk jamak ikut aturan yang sama: *гроші* → *у грошах*, *двері* → *у дверях*, *Карпати* → *у Карпатах*."
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Діалог 2 — Disambut di stasiun Poltava",
+   "intro": "Pukul sebelas kurang sedikit, di peron stasiun Poltava-Pivdenna. Ayah Andriy, Petro, dan adiknya, Katya, sudah menunggu. Ini pertama kalinya Ani bertemu keluarga Andriy. Perhatikan pilihan antara *в* dan *на*: *на пероні, на вокзалах*, tetapi *у вагонах, у Полтаві*.",
+   "lines": [
+    {
+     "speaker": "Катя:",
+     "text": "[Андрію|An-DRI-yu]! [Ані|A-ni]! [Ми|My] [тут|tut], [на|na] [пероні|pe-RO-ni]!",
+     "id": "Andriy! Ani! Kami di sini, di peron!",
+     "literal": "Andriy (panggilan)! Ani! kami di-sini, di peron (lok.)!"
+    },
+    {
+     "speaker": "Андрій:",
+     "text": "[Привіт|Pry-VIT], [Катю|KA-tyu]! [Тату|TA-tu], [ти|ty] [теж|tezh] [приїхав|pry-YI-khav]?",
+     "id": "Hai, Katya! Ayah, Ayah juga datang?",
+     "literal": "halo, Katya (panggilan)! ayah (panggilan), kamu juga datang?"
+    },
+    {
+     "speaker": "Петро:",
+     "text": "[Аякже|A-YAK-zhe]! [Ані|A-ni], [ласкаво|las-KA-vo] [просимо|PRO-sy-mo] [до|do] [Полтави|Pol-TA-vy]!",
+     "id": "Tentu saja! Ani, selamat datang di Poltava!",
+     "literal": "tentu-saja! Ani, dengan-ramah kami-mohon ke Poltava (gen.)!"
+    },
+    {
+     "speaker": "Ані:",
+     "text": "[Дякую|DYA-ku-yu], [пане|PA-ne] [Петре|PE-tre]! [Дуже|DU-zhe] [приємно|pry-YEM-no] [познайомитися|poz-na-YO-my-ty-sya].",
+     "id": "Terima kasih, Pak Petro! Senang sekali berkenalan.",
+     "literal": "terima-kasih, tuan Petro (panggilan)! sangat menyenangkan berkenalan."
+    },
+    {
+     "speaker": "Петро:",
+     "text": "[Як|Yak] [доїхали|do-YI-kha-ly]?",
+     "id": "Bagaimana perjalanannya?",
+     "literal": "bagaimana sampai (jamak)?"
+    },
+    {
+     "speaker": "Ані:",
+     "text": "[Чудово|Chu-DO-vo]! [У|U] [вагонах|va-HO-nakh] [чисто|CHYS-to] [і|i] [тепло|te-PLO].",
+     "id": "Menyenangkan! Gerbongnya bersih dan hangat.",
+     "literal": "indah! di gerbong-gerbong (lok.) bersih dan hangat."
+    },
+    {
+     "speaker": "Катя:",
+     "text": "[Ані|A-ni], [а|a] [в|v] [Джакарті|Dzha-KAR-ti] [на|na] [вокзалах|vok-ZA-lakh] [теж|tezh] [так|tak] [холодно|KHO-lod-no]?",
+     "id": "Ani, di Jakarta stasiun-stasiunnya juga sedingin ini?",
+     "literal": "Ani, dan di Jakarta (lok.) di stasiun-stasiun (lok.) juga begitu dingin?"
+    },
+    {
+     "speaker": "Ані:",
+     "text": "[Ні|Ni], [у|u] [нас|nas] [завжди|zav-ZHDY] [тепло|te-PLO]. [Навіть|NA-vit'] [уночі|u-no-CHI] [двадцять|DVAD-tsyat'] [вісім|VI-sim] [градусів|HRA-du-siv].",
+     "id": "Nggak, di tempat kami selalu hangat. Malam hari pun dua puluh delapan derajat.",
+     "literal": "tidak, pada kami selalu hangat. bahkan di-malam dua-puluh delapan derajat (gen. jamak)."
+    },
+    {
+     "speaker": "Петро:",
+     "text": "[Ого|O-HO]! [Тоді|To-DI] [ходімо|kho-DI-mo] [швидше|SHVYD-she] [до|do] [машини|ma-SHY-ny]. [Мама|MA-ma] [чекає|che-KA-ye] [на|na] [нас|nas] [удома|u-DO-ma].",
+     "id": "Wah! Kalau begitu ayo cepat ke mobil. Ibu menunggu kita di rumah.",
+     "literal": "wah! kalau-begitu ayo-kita-pergi lebih-cepat ke mobil (gen.). ibu menunggu pada kami (ak.) di-rumah."
+    },
+    {
+     "speaker": "Андрій:",
+     "text": "[Тату|TA-tu], [а|a] [можна|MOZH-na] [по|po] [дорозі|do-RO-zi] [показати|po-ka-ZA-ty] [Ані|A-ni] [Круглу|KRU-hlu] [площу|PLO-shchu]?",
+     "id": "Yah, boleh sekalian di jalan tunjukkan Ani Alun-alun Bundar?",
+     "literal": "ayah (panggilan), dan boleh di jalan (lok.) menunjukkan kepada-Ani (dat.) Bundar (ak.) Lapangan (ak.)?"
+    },
+    {
+     "speaker": "Петро:",
+     "text": "[Звичайно|Zvy-CHAY-no]! [У|U] [нашій|NA-shiy] [Полтаві|Pol-TA-vi] [все|vse] [поруч|PO-ruch].",
+     "id": "Tentu! Di Poltava kita ini semuanya dekat.",
+     "literal": "tentu! di kami-punya (lok.) Poltava (lok.) semua berdekatan."
+    }
+   ],
+   "notes": [
+    "**На пероні, на вокзалі, на станції.** Tempat terbuka, permukaan, dan tempat acara memakai *на*: *на пероні* (di peron), *на вокзалі* (di stasiun), *на площі* (di alun-alun), *на роботі, на концерті*. Ruang tertutup, kota, dan negara memakai *в / у*: *у вагоні, у Полтаві, в Україні*.",
+    "**Тату, Катю, пане Петре.** Tiga bentuk panggilan sekaligus. *Тато* → *тату*, *Катя* → *Катю*, *Петро* → *Петре*. Perhatikan bahwa pada *Петре* tekanan pindah ke suku pertama: *PE-tre*, bukan *pe-TRO*. Ani memanggil ayah Andriy *пане Петре*, sopan tetapi tidak kaku.",
+    "**Аякже! Ласкаво просимо!** *Аякже* (tentu saja, masa tidak) adalah seruan hangat khas percakapan. *Ласкаво просимо* adalah \"selamat datang\" yang baku; tempat tujuan memakai *до* + genitif: *до Полтави, до Києва, до нас*.",
+    "**Як доїхали?** Pertanyaan wajib untuk tamu yang baru sampai, harfiahnya \"bagaimana sampainya?\". Awalan *до-* berarti sampai ke tujuan: *доїхати* (sampai dengan kendaraan), *дійти* (sampai dengan jalan kaki). Jawaban singkat yang lazim: *Добре, дякую!* atau *Чудово!*",
+    "**На вокзалах, у вагонах.** Dua contoh lokatif jamak dengan dua preposisi yang berbeda. *Вокзал* adalah bangunan stasiun besar untuk kereta jarak jauh; *станція* bisa stasiun kecil atau stasiun metro. Kyiv menyebut stasiun pusatnya *Центральний вокзал*.",
+    "**Чекає на нас.** *Чекати* (menunggu) biasanya memakai *на* + akusatif: *чекати на нас, чекати на автобус*. Bentuk tanpa *на* (*чекати автобуса*, dengan genitif) juga baku. Dan *по дорозі* berarti \"sambil lewat di jalan\", memakai *по* + lokatif, sama dengan *по Україні*."
+   ],
+   "grammars": [
+    {
+     "title": "В atau на? Tempat dalam lokatif",
+     "body": [
+      "Tidak ada aturan yang sempurna; sebagian harus dihafal bersama katanya. Pegangan kasar: *в / у* untuk ruang di dalam sesuatu, *на* untuk permukaan, ruang terbuka, dan kegiatan."
+     ],
+     "table": {
+      "head": [
+       "в / у + lokatif",
+       "Indonesia",
+       "на + lokatif",
+       "Indonesia"
+      ],
+      "rows": [
+       [
+        "у місті, у селі",
+        "di kota, di desa",
+        "на вулиці, на площі",
+        "di jalan, di alun-alun"
+       ],
+       [
+        "у вагоні, у потязі",
+        "di gerbong, di kereta",
+        "на вокзалі, на пероні",
+        "di stasiun, di peron"
+       ],
+       [
+        "в Україні, у Полтаві",
+        "di Ukraina, di Poltava",
+        "на Яві, на островах",
+        "di Jawa, di pulau-pulau"
+       ],
+       [
+        "у парку, у лісі",
+        "di taman, di hutan",
+        "на полі, на річці",
+        "di ladang, di sungai"
+       ],
+       [
+        "в університеті, у школі",
+        "di universitas, di sekolah",
+        "на лекції, на уроці",
+        "di kuliah, di pelajaran"
+       ],
+       [
+        "у кав'ярні, в аптеці",
+        "di kafe, di apotek",
+        "на роботі, на пошті",
+        "di kantor, di kantor pos"
+       ],
+       [
+        "у горах, у Карпатах",
+        "di pegunungan",
+        "на Говерлі, на горі",
+        "di puncak Hoverla, di gunung"
+       ]
+      ]
+     },
+     "after": [
+      "Pulau memakai *на*: *на Яві, на Балі, на Суматрі*. Tetapi negara kepulauan tetap *в*: *в Індонезії*."
+     ]
+    }
+   ]
+  }
+ ],
+ "sections": [
+  {
+   "title": "Naik kereta Ukrzaliznytsia",
+   "blocks": [
+    {
+     "type": "p",
+     "text": "Kereta api adalah cara paling populer untuk bepergian antarkota di Ukraina. Perusahaan negara *Укрзалізниця* menjual tiket lewat aplikasi dan situsnya; tiket cukup ditunjukkan di ponsel. Di setiap gerbong ada *провідник* atau *провідниця* (kondektur) yang memeriksa tiket, mengantar teh dalam gelas bergagang logam (*підсклянник*), dan membangunkan penumpang sebelum stasiun tujuan."
+    },
+    {
+     "type": "tabel",
+     "head": [
+      "Українська",
+      "Indonesia"
+     ],
+     "rows": [
+      [
+       "Інтерсіті+",
+       "kereta cepat siang, kursi duduk"
+      ],
+      [
+       "нічний потяг",
+       "kereta malam"
+      ],
+      [
+       "купе",
+       "kompartemen empat tempat tidur"
+      ],
+      [
+       "плацкарт",
+       "gerbong tempat tidur terbuka"
+      ],
+      [
+       "СВ (спальний вагон)",
+       "kompartemen dua tempat tidur"
+      ],
+      [
+       "вагон, місце",
+       "gerbong, nomor kursi"
+      ],
+      [
+       "верхня / нижня полиця",
+       "tempat tidur atas / bawah"
+      ],
+      [
+       "перон, колія",
+       "peron, jalur"
+      ],
+      [
+       "відправлення, прибуття",
+       "keberangkatan, kedatangan"
+      ]
+     ]
+    },
+    {
+     "type": "kotak",
+     "title": "Kalimat di kereta",
+     "items": [
+      "*Котрий у мене вагон?* (Gerbong saya nomor berapa?)",
+      "*Це ваше місце? Здається, це моє.* (Ini kursi Anda? Sepertinya ini punya saya.)",
+      "*Можна мені чаю, будь ласка?* (Boleh saya minta teh?)",
+      "*Скільки ще їхати до Полтави?* (Berapa lama lagi ke Poltava?)",
+      "*Розбудіть мене, будь ласка, за пів години до прибуття.* (Tolong bangunkan saya setengah jam sebelum tiba.)"
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Poltava: kota kecil dengan nama besar",
+   "blocks": [
+    {
+     "type": "p",
+     "text": "Poltava terletak kira-kira 340 kilometer di timur Kyiv. Kota ini terkenal dengan *Кругла площа* (Alun-alun Bundar) yang dikelilingi bangunan klasik, dengan pemandangan dari bukit di atas sungai Vorskla, dan dengan tokoh sastranya: Ivan Kotliarevskyi, penulis karya pertama dalam bahasa Ukraina modern, dan Mykola Hohol (Gogol) yang lahir di desa dekat Poltava. Kota ini juga punya monumen untuk makanan khasnya, *галушка*."
+    },
+    {
+     "type": "tabel",
+     "head": [
+      "Tempat",
+      "Keterangan"
+     ],
+     "rows": [
+      [
+       "Кругла площа",
+       "alun-alun bundar di pusat kota, dari abad ke-19"
+      ],
+      [
+       "Корпусний сад",
+       "taman di tengah Alun-alun Bundar"
+      ],
+      [
+       "Біла альтанка",
+       "gazebo putih di bukit, pemandangan kota"
+      ],
+      [
+       "Хрестовоздвиженський монастир",
+       "biara dengan gereja berkubah hijau"
+      ],
+      [
+       "Садиба Котляревського",
+       "rumah-museum Ivan Kotliarevskyi"
+      ],
+      [
+       "Пам'ятник галушці",
+       "monumen galushka di dekat sungai"
+      ],
+      [
+       "річка Ворскла",
+       "sungai yang melintasi kota"
+      ]
+     ]
+    },
+    {
+     "type": "list",
+     "items": [
+      "*Наталка Полтавка* karya Kotliarevskyi adalah salah satu drama musikal Ukraina paling awal dan masih dipentaskan.",
+      "Orang Poltava dijuluki suka makan dan pandai bercerita.",
+      "Ucapan orang desa Poltava terdengar sangat dekat dengan bahasa baku, dengan beberapa kata khas."
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Ulangan berjenjang — unit 6",
+   "blocks": [
+    {
+     "type": "p",
+     "text": "Tutup kolom Ukraina, baca terjemahan Indonesianya, lalu susun kembali kalimatnya dari ingatan."
+    },
+    {
+     "type": "tabel",
+     "head": [
+      "Bahasa Indonesia",
+      "Українська",
+      "Baca"
+     ],
+     "rows": [
+      [
+       "Tentu saja! Saya doakan Ibu sehat, bahagia, dan banyak sukacita.",
+       "Звичайно! Бажаю вам здоров'я, щастя і багато радості.",
+       "*Zvy-CHAY-no Ba-ZHA-yu vam zdo-RO-vya SHCHAS-tya i ba-HA-to RA-dos-ti*"
+      ],
+      [
+       "Sampaikan terima kasih saya kepada ibumu! Nanti saya tulis kartu untuknya.",
+       "Подякуй мамі від мене! Я їй напишу листівку.",
+       "*Po-DYA-kuy MA-mi vid ME-ne Ya yiy na-py-SHU lys-TIV-ku*"
+      ],
+      [
+       "Ani, aku nggak tahu mau kasih hadiah apa ke nenek.",
+       "Ані, я не знаю, що подарувати бабусі.",
+       "*A-ni ya ne ZNA-yu shcho po-da-ru-VA-ty ba-BU-si*"
+      ],
+      [
+       "Nenek-nenek biasanya suka tulip. Ini, segar sekali.",
+       "Бабусям зазвичай подобаються тюльпани. Ось, дуже свіжі.",
+       "*Ba-BU-syam zaz-vy-CHAY po-DO-ba-yu-tsya tyul'-PA-ny Os' DU-zhe SVI-zhi*"
+      ],
+      [
+       "Nggak usah pinjam. Kita kasih nenek bareng-bareng, dari kita berdua.",
+       "Не треба позичати. Подаруємо бабусі разом, від нас обох.",
+       "*Ne TRE-ba po-ZY-cha-ty Po-da-RU-ye-mo ba-BU-si RA-zom vid nas o-BOKH*"
+      ]
+     ]
+    }
+   ]
+  }
+ ],
+ "vocab": [
+  {
+   "uk": "по́тяг",
+   "baca": "PO-tyah",
+   "id": "kereta (*їхати потягом*)"
+  },
+  {
+   "uk": "ваго́н",
+   "baca": "va-HON",
+   "id": "gerbong"
+  },
+  {
+   "uk": "вокза́л",
+   "baca": "vok-ZAL",
+   "id": "stasiun besar (*на вокзалі*)"
+  },
+  {
+   "uk": "ста́нція",
+   "baca": "STAN-tsi-ya",
+   "id": "stasiun, perhentian (*на станції*)"
+  },
+  {
+   "uk": "перо́н",
+   "baca": "pe-RON",
+   "id": "peron"
+  },
+  {
+   "uk": "квито́к",
+   "baca": "kvy-TOK",
+   "id": "tiket (jamak *квитки*)"
+  },
+  {
+   "uk": "провідни́ця",
+   "baca": "pro-vid-NY-tsya",
+   "id": "kondektur kereta (pr)"
+  },
+  {
+   "uk": "подорожува́ти",
+   "baca": "po-do-ro-zhu-VA-ty",
+   "id": "bepergian, berwisata"
+  },
+  {
+   "uk": "ї́хати / пої́хати",
+   "baca": "YI-kha-ty / po-YI-kha-ty",
+   "id": "pergi (berkendara)"
+  },
+  {
+   "uk": "дої́хати",
+   "baca": "do-YI-kha-ty",
+   "id": "sampai (berkendara; *Як доїхали?*)"
+  },
+  {
+   "uk": "приї́хати",
+   "baca": "pry-YI-kha-ty",
+   "id": "tiba, datang (berkendara)"
+  },
+  {
+   "uk": "зупиня́тися / зупини́тися",
+   "baca": "zu-py-NYA-ty-sya / zu-py-NY-ty-sya",
+   "id": "berhenti"
+  },
+  {
+   "uk": "о́стрів",
+   "baca": "OS-triv",
+   "id": "pulau (jamak *острови*, lok. *на островах*)"
+  },
+  {
+   "uk": "поро́м",
+   "baca": "po-ROM",
+   "id": "kapal feri"
+  },
+  {
+   "uk": "лі́так",
+   "baca": "LI-tak",
+   "id": "pesawat (*летіти літаком*)"
+  },
+  {
+   "uk": "село́",
+   "baca": "se-LO",
+   "id": "desa (jamak *села*)"
+  },
+  {
+   "uk": "по́ле",
+   "baca": "PO-le",
+   "id": "ladang (jamak *поля*)"
+  },
+  {
+   "uk": "рі́чка",
+   "baca": "RICH-ka",
+   "id": "sungai"
+  },
+  {
+   "uk": "пло́ща",
+   "baca": "PLO-shcha",
+   "id": "alun-alun, lapangan"
+  },
+  {
+   "uk": "впе́рше",
+   "baca": "VPER-she",
+   "id": "untuk pertama kali"
+  },
+  {
+   "uk": "хвилюва́тися",
+   "baca": "khvy-lyu-VA-ty-sya",
+   "id": "cemas, gugup (*Не хвилюйся!*)"
+  },
+  {
+   "uk": "ласка́во про́симо",
+   "baca": "las-KA-vo PRO-sy-mo",
+   "id": "selamat datang"
+  },
+  {
+   "uk": "познайо́митися",
+   "baca": "poz-na-YO-my-ty-sya",
+   "id": "berkenalan"
+  },
+  {
+   "uk": "чека́ти",
+   "baca": "che-KA-ty",
+   "id": "menunggu (*на* + ak.)"
+  },
+  {
+   "uk": "по́руч",
+   "baca": "PO-ruch",
+   "id": "dekat, berdampingan"
+  }
+ ],
+ "exercises": [
+  {
+   "prompt": "Terjemahkan ke bahasa Ukraina. Yang berbicara perempuan.",
+   "items": [
+    "Saya pertama kali naik kereta.",
+    "Kereta ini hanya berhenti di stasiun-stasiun besar.",
+    "Di gerbong-gerbong bersih dan hangat.",
+    "Kami menunggu di peron.",
+    "Bagaimana perjalanannya?",
+    "Selamat datang di Poltava!"
+   ]
+  },
+  {
+   "prompt": "Isi titik-titik dengan lokatif jamak kata dalam kurung.",
+   "items": [
+    "Ми гуляли в ____. (парки)",
+    "Баба Ганна жила в ____. (села)",
+    "В Індонезії люди живуть на ____. (острови)",
+    "Потяг зупиняється на ____. (великі станції)",
+    "У ____ чисто. (вагони)",
+    "Туристи фотографуються на ____. (старі вулиці)",
+    "Соломія любить відпочивати в ____. (Карпати)"
+   ]
+  },
+  {
+   "prompt": "Jawab dengan в atau на dan lokatif tunggal kata dalam kurung.",
+   "items": [
+    "Де ти чекаєш? (перон)",
+    "Де працює Ані? (кав'ярня)",
+    "Де живуть батьки Андрія? (Полтава)",
+    "Де ти купила квиток? (вокзал)",
+    "Де зараз Максим? (робота)",
+    "Де ви відпочивали? (Балі)"
+   ]
+  },
+  {
+   "prompt": "Susun jadi kalimat yang benar.",
+   "items": [
+    "потягом / їду / я / вперше / по / Україні",
+    "живуть / на / люди / островах",
+    "зупиняється / на / станціях / тільки / великих / потяг",
+    "чисто / вагонах / у",
+    "вокзалах / на / Джакарті / в / холодно / так / теж"
+   ]
+  }
+ ],
+ "answers": [
+  "Я вперше їду потягом. — Цей потяг зупиняється тільки на великих станціях. — У вагонах чисто і тепло. — Ми чекаємо на пероні. — Як доїхали? — Ласкаво просимо до Полтави!",
+  "парках — селах — островах — великих станціях — вагонах — старих вулицях — Карпатах",
+  "Я чекаю на пероні. — Ані працює в кав'ярні. — Батьки Андрія живуть у Полтаві. — Я купила квиток на вокзалі. — Максим зараз на роботі. — Ми відпочивали на Балі.",
+  "Я вперше їду потягом по Україні. — Люди живуть на островах. — Потяг зупиняється тільки на великих станціях. — У вагонах чисто. — У Джакарті на вокзалах теж так холодно?"
+ ]
+}

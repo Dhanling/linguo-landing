@@ -1,0 +1,671 @@
+{
+ "title": "Minggu pertama di kedai — tiga jalan ke masa depan",
+ "title_target": "Що я буду робити?",
+ "goal": "Membicarakan rencana dan jadwal kerja dengan tiga bentuk masa depan: *буду робити* dan *робитиму* untuk kegiatan, *зроблю* untuk hasil yang pasti tercapai.",
+ "bekal": [
+  "kamu bisa membentuk masa depan tidak sempurna dengan dua cara: *буду працювати = працюватиму*",
+  "kamu bisa memakai masa depan sempurna untuk hasil dan janji: *Я вивчу меню за два дні. Побачимо!*",
+  "kamu bisa membaca jadwal kerja dan menyebut hari serta jam: *у вівторок, з восьми до другої, о третій*"
+ ],
+ "dialogs": [
+  {
+   "title": "Діалог 1 — Hari pertama bersama Maksym",
+   "intro": "Senin, 8 Februari 2027, pukul setengah delapan pagi. Hari pertama Ani di «Зерно». Maksym menjelaskan apa yang akan ia kerjakan. Perhatikan tiga cara berbicara tentang masa depan: *буду робити*, *робитиму*, dan *вивчу*.",
+   "lines": [
+    {
+     "speaker": "Максим:",
+     "text": "[Доброго|DO-bro-ho] [ранку|RAN-ku], [Ані|A-ni]! [Давай|Da-VAY] [на|na] [ти|ty], [у|u] [нас|nas] [так|tak] [прийнято|PRYY-nya-to].",
+     "id": "Selamat pagi, Ani! Pakai \"kamu\" saja ya, di sini memang begitu.",
+     "literal": "selamat (gen.) pagi (gen.), Ani! ayo pada kamu, pada kami begitu diterima."
+    },
+    {
+     "speaker": "Ані:",
+     "text": "[Давай|Da-VAY]! [Що|Shcho] [я|ya] [сьогодні|syo-HOD-ni] [буду|BU-du] [робити|ro-BY-ty]?",
+     "id": "Oke! Hari ini aku akan ngapain?",
+     "literal": "ayo! apa saya hari-ini akan melakukan‹proses›?"
+    },
+    {
+     "speaker": "Максим:",
+     "text": "[Спершу|SPER-shu] [будеш|BU-desh] [працювати|pra-tsyu-VA-ty] [на|na] [касі|KA-si].",
+     "id": "Awalnya kamu jaga kasir dulu.",
+     "literal": "mula-mula akan bekerja‹proses› di kasir (lok.)."
+    },
+    {
+     "speaker": "Ані:",
+     "text": "[А|A] [каву|KA-vu] [коли|ko-LY] [буду|BU-du] [готувати|ho-tu-VA-ty]?",
+     "id": "Terus kapan aku bikin kopi?",
+     "literal": "dan kopi (ak.) kapan akan membuat‹proses›?"
+    },
+    {
+     "speaker": "Максим:",
+     "text": "[У|U] [середу|SE-re-du]. [Соломія|So-lo-MI-ya] [все|vse] [тобі|to-BI] [покаже|po-KA-zhe].",
+     "id": "Hari Rabu. Solomiya nanti tunjukkan semuanya ke kamu.",
+     "literal": "pada Rabu (ak.). Solomiya semua kepadamu menunjukkan‹selesai›."
+    },
+    {
+     "speaker": "Ані:",
+     "text": "[А|A] [малюнки|ma-LYUN-ky] [на|na] [лате|LA-te] [коли|ko-LY] [робитиму|ro-BY-ty-mu]?",
+     "id": "Terus gambar di latte kapan aku bikin?",
+     "literal": "dan gambar-gambar di latte kapan akan-membuat‹proses›?"
+    },
+    {
+     "speaker": "Максим:",
+     "text": "[Коли|Ko-LY] [вивчиш|VYV-chysh] [наше|NA-she] [меню|me-NYU]. [Це|Tse] [буде|BU-de] [скоро|SKO-ro], [я|ya] [думаю|DU-ma-yu].",
+     "id": "Kalau kamu sudah hafal menu kita. Pasti sebentar lagi, kayaknya.",
+     "literal": "kapan mempelajari‹selesai› milik-kami menu. ini akan-ada segera, saya berpikir."
+    },
+    {
+     "speaker": "Ані:",
+     "text": "[Я|Ya] [вивчу|VYV-chu] [його|yo-HO] [за|za] [два|dva] [дні|dni]!",
+     "id": "Aku bakal hafal dalam dua hari!",
+     "literal": "saya mempelajari‹selesai› dia (ak.) dalam dua hari!"
+    },
+    {
+     "speaker": "Максим:",
+     "text": "[Не|Ne] [поспішай|pos-pi-SHAY]. [О|O] [дев'ятій|de-VYA-tiy] [прийдуть|pryy-DUT'] [перші|PER-shi] [гості|HOS-ti].",
+     "id": "Santai. Jam sembilan tamu pertama datang.",
+     "literal": "jangan buru-buru. pada kesembilan (lok.) datang‹selesai› pertama (jamak) tamu-tamu."
+    },
+    {
+     "speaker": "Ані:",
+     "text": "[А|A] [що|shcho] [вони|vo-NY] [зазвичай|zaz-vy-CHAY] [замовляють|za-mo-VLYA-yut']?",
+     "id": "Biasanya mereka pesan apa?",
+     "literal": "dan apa mereka biasanya memesan‹proses›?"
+    },
+    {
+     "speaker": "Максим:",
+     "text": "[Капучино|Ka-pu-CHY-no] [й|y] [круасани|kru-a-SA-ny]. [Сьогодні|Syo-HOD-ni] [ти|ty] [продаси|pro-DA-sy] [сто|sto] [чашок|CHA-shok], [не|ne] [менше|MEN-she]!",
+     "id": "Cappuccino dan croissant. Hari ini kamu bakal jual seratus cangkir, nggak kurang!",
+     "literal": "cappuccino dan croissant-croissant. hari-ini kamu menjual‹selesai› seratus cangkir (gen. jamak), tidak kurang!"
+    },
+    {
+     "speaker": "Ані:",
+     "text": "[Сто|Sto]! [То|To] [я|ya] [буду|BU-du] [дуже|DU-zhe] [зайнята|zay-NYA-ta].",
+     "id": "Seratus! Berarti aku bakal sibuk banget.",
+     "literal": "seratus! jadi saya akan-ada sangat sibuk (pr)."
+    },
+    {
+     "speaker": "Максим:",
+     "text": "[Так|Tak]. [Але|A-LE] [о|o] [третій|TRE-tiy] [ми|my] [разом|RA-zom] [пообідаємо|po-o-BI-da-ye-mo].",
+     "id": "Iya. Tapi jam tiga kita makan siang bareng.",
+     "literal": "ya. tapi pada ketiga (lok.) kami bersama makan-siang‹selesai›."
+    },
+    {
+     "speaker": "Ані:",
+     "text": "[Чудово|Chu-DO-vo]! [Тоді|To-DI] [я|ya] [зараз|za-RAZ] [вимию|VY-my-yu] [руки|RU-ky] [й|y] [почну|poch-NU].",
+     "id": "Asyik! Kalau gitu aku cuci tangan sekarang terus mulai.",
+     "literal": "bagus-sekali! kalau-begitu saya sekarang mencuci‹selesai› tangan-tangan dan memulai‹selesai›."
+    }
+   ],
+   "notes": [
+    "**Давай на ти.** Ajakan untuk beralih dari *ви* ke *ти*. Yang mengusulkan biasanya yang lebih tua atau lebih tinggi kedudukannya, jadi Ani cukup menjawab *Давай!* *У нас так прийнято* berarti \"di tempat kami memang begitu kebiasaannya\". Di kafe muda Kyiv, bos dan karyawan hampir selalu saling ber-*ти*.",
+    "**Що я буду робити?** Cara pertama: **бути** dalam bentuk depan + infinitif tidak sempurna. *Я буду, ти будеш, він буде, ми будемо, ви будете, вони будуть*. Bentuk *буду* sendiri juga berarti \"aku akan ada / akan berada\": *Я буду зайнята*, *У понеділок я буду на курсах*.",
+    "**Робитиму.** Cara kedua, khas bahasa Ukraina: infinitif + **-му, -меш, -ме, -мемо, -мете, -муть**. *Робитиму* sama persis artinya dengan *буду робити*. Bahasa Rusia tidak punya bentuk ini, jadi memakainya membuat bahasa Ukrainamu terdengar sangat Ukraina.",
+    "**Вивчиш, вивчу.** Cara ketiga: kata kerja **sempurna** yang dikonjugasikan seperti kata kerja kini otomatis berarti masa depan. *Я вивчу* = aku akan menguasai (sampai tuntas). Kesalahan paling umum pelajar adalah menggabungkan *буду* dengan kata kerja sempurna. *Буду вивчити* tidak ada; pilih *вивчу* (hasil) atau *буду вчити* (proses).",
+    "**О дев'ятій, о третій.** Jam dinyatakan dengan **о** + bilangan bertingkat perempuan dalam lokatif, karena kata *година* (jam) disembunyikan: *о дев'ятій (годині)*. Untuk jam satu dan tiga: *о першій, о третій*; untuk sebelas: *об одинадцятій*, dengan *об* sebelum vokal.",
+    "**Продаси сто чашок, вимию руки.** *Продати* (menjual, sempurna) punya konjugasi tak beraturan: *продам, продаси, продасть, продамо, продасте, продадуть*. *Вимити* (mencuci bersih) lagi-lagi membawa awalan *ви-* yang bertekanan: *VY-my-yu*. Dua kata kerja sempurna berurutan, *вимию й почну*, menggambarkan langkah-langkah yang satu selesai lalu yang lain dimulai."
+   ],
+   "grammars": [
+    {
+     "title": "Tiga bentuk masa depan",
+     "body": [
+      "Dua kolom pertama sama artinya (proses, kegiatan). Kolom ketiga adalah aspek sempurna: satu hasil di masa depan."
+     ],
+     "table": {
+      "head": [
+       "Orang",
+       "буду + infinitif",
+       "Bentuk menyatu",
+       "Sempurna (зробити)"
+      ],
+      "rows": [
+       [
+        "*я*",
+        "*буду робити*",
+        "*робитиму*",
+        "*зроблю*"
+       ],
+       [
+        "*ти*",
+        "*будеш робити*",
+        "*робитимеш*",
+        "*зробиш*"
+       ],
+       [
+        "*він, вона*",
+        "*буде робити*",
+        "*робитиме*",
+        "*зробить*"
+       ],
+       [
+        "*ми*",
+        "*будемо робити*",
+        "*робитимемо*",
+        "*зробимо*"
+       ],
+       [
+        "*ви*",
+        "*будете робити*",
+        "*робитимете*",
+        "*зробите*"
+       ],
+       [
+        "*вони*",
+        "*будуть робити*",
+        "*робитимуть*",
+        "*зроблять*"
+       ]
+      ]
+     },
+     "after": [
+      "Pada kata kerja berakhiran *-ся*, bentuk menyatunya menaruh *-ся* di paling ujung: *вчитимуся, дивитимешся, займатимемося*."
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Діалог 2 — Jadwal shift minggu depan",
+   "intro": "Senin yang sama, pukul tiga sore, saat istirahat makan siang. Solomiya menempelkan jadwal shift minggu depan di dinding dapur. Perhatikan bentuk menyatu *працюватиму, відпочиватиме, робитимеш* dan satu kata sempurna yang sangat sering diucapkan orang Ukraina: *Побачимо!*",
+   "lines": [
+    {
+     "speaker": "Соломія:",
+     "text": "[Ані|A-ni], [ось|os'] [графік|HRA-fik] [змін|zmin] [на|na] [наступний|nas-TUP-nyy] [тиждень|TYZH-den'].",
+     "id": "Ani, ini jadwal shift buat minggu depan.",
+     "literal": "Ani, ini jadwal shift (gen. jamak) untuk berikutnya minggu (ak.)."
+    },
+    {
+     "speaker": "Ані:",
+     "text": "[Покажи|Po-ka-ZHY]! [Коли|Ko-LY] [я|ya] [працюватиму|pra-tsyu-VA-ty-mu]?",
+     "id": "Coba lihat! Aku kerja kapan saja?",
+     "literal": "tunjukkan‹selesai›! kapan saya akan-bekerja?"
+    },
+    {
+     "speaker": "Соломія:",
+     "text": "[У|U] [вівторок|viv-TO-rok], [четвер|chet-VER] [і|i] [суботу|su-BO-tu], [з|z] [восьми|vos'-MY] [до|do] [другої|DRU-ho-yi].",
+     "id": "Selasa, Kamis, dan Sabtu, dari jam delapan sampai jam dua.",
+     "literal": "pada Selasa, Kamis dan Sabtu (ak.), dari delapan (gen.) sampai kedua (gen.)."
+    },
+    {
+     "speaker": "Ані:",
+     "text": "[А|A] [в|v] [понеділок|po-ne-DI-lok] [я|ya] [буду|BU-du] [на|na] [курсах|KUR-sakh].",
+     "id": "Kalau Senin aku di kursus.",
+     "literal": "dan pada Senin saya akan-ada di kursus (lok. jamak)."
+    },
+    {
+     "speaker": "Соломія:",
+     "text": "[Знаю|ZNA-yu], [тому|to-MU] [в|v] [понеділок|po-ne-DI-lok] [буде|BU-de] [Максим|Mak-SYM]. [А|A] [я|ya] [відпочиватиму|vid-po-chy-VA-ty-mu]!",
+     "id": "Tahu, makanya hari Senin ada Maksym. Aku libur!",
+     "literal": "tahu, karena-itu pada Senin akan-ada Maksym. dan saya akan-beristirahat!"
+    },
+    {
+     "speaker": "Ані:",
+     "text": "[Що|Shcho] [ти|ty] [робитимеш|ro-BY-ty-mesh]?",
+     "id": "Kamu mau ngapain?",
+     "literal": "apa kamu akan-melakukan?"
+    },
+    {
+     "speaker": "Соломія:",
+     "text": "[Нічого|Ni-CHO-ho]! [Буду|BU-du] [спати|SPA-ty] [до|do] [обіду|o-BI-du] [й|y] [дивитися|dy-VY-ty-sya] [серіали|se-RI-a-ly].",
+     "id": "Nggak ngapa-ngapain! Tidur sampai siang terus nonton serial.",
+     "literal": "tidak-apa-pun! akan tidur sampai makan-siang (gen.) dan menonton serial-serial."
+    },
+    {
+     "speaker": "Ані:",
+     "text": "[А|A] [я|ya] [після|PIS-lya] [зміни|ZMI-ny] [в|v] [суботу|su-BO-tu] [зустрінуся|zus-TRI-nu-sya] [з|z] [другом|DRU-hom].",
+     "id": "Kalau aku, habis shift hari Sabtu mau ketemu teman.",
+     "literal": "dan saya sesudah shift (gen.) pada Sabtu bertemu‹selesai› dengan teman (ins.)."
+    },
+    {
+     "speaker": "Соломія:",
+     "text": "[З|Z] [Андрієм|An-DRI-yem]? [Ти|Ty] [про|pro] [нього|NYO-ho] [вже|vzhe] [три|try] [рази|RA-zy] [розповідала|roz-po-vi-DA-la]!",
+     "id": "Sama Andriy? Kamu udah tiga kali cerita soal dia!",
+     "literal": "dengan Andriy (ins.)? kamu tentang dia sudah tiga kali bercerita‹proses›!"
+    },
+    {
+     "speaker": "Ані:",
+     "text": "[Він|Vin] [просто|PROS-to] [друг|druh]! [Ми|My] [будемо|BU-de-mo] [вчити|VCHY-ty] [граматику|hra-MA-ty-ku].",
+     "id": "Dia cuma teman! Kami mau belajar tata bahasa.",
+     "literal": "dia hanya teman! kami akan mempelajari‹proses› tata-bahasa (ak.)."
+    },
+    {
+     "speaker": "Соломія:",
+     "text": "[Ну|Nu] [звісно|ZVIS-no]. [Побачимо|Po-BA-chy-mo]!",
+     "id": "Ya, ya, tentu. Kita lihat saja nanti!",
+     "literal": "nah tentu. melihat‹selesai› (kita)!"
+    }
+   ],
+   "notes": [
+    "**Графік змін.** *Зміна* berarti shift kerja (juga \"perubahan\"). Genitif jamaknya *змін*, berekor nol seperti yang kamu pelajari di Unit 2. *Працювати на зміні* = bekerja saat shift; *після зміни* = sesudah shift; *денна / вечірня зміна* = shift siang / malam.",
+    "**Коли я працюватиму?** Bentuk menyatu dari *працювати*: cukup tambahkan *-му* ke infinitif utuh. Tidak ada bagian yang meluruh seperti di masa kini (*працюю*): *працюватиму, працюватимеш, працюватиме*.",
+    "**З восьми до другої.** Rentang waktu: **з** + genitif … **до** + genitif. Jam delapan dan jam dua di sini berbentuk genitif: *вісім → восьми*, *друга (година) → другої*. Dalam percakapan orang sering menyingkat: *з восьмої до другої*. Keduanya benar.",
+    "**Буду спати й дивитися.** Satu *буду* cukup untuk beberapa infinitif sekaligus: *буду спати, читати й дивитися серіали*. Dengan bentuk menyatu, setiap kata kerja harus diubah sendiri: *спатиму й дивитимуся*.",
+    "**Три рази розповідала.** *Раз* (kali) mengikuti aturan angka: *один раз, три рази, п'ять разів*. Solomiya memakai aspek tidak sempurna *розповідала* karena yang ia hitung adalah kejadian berulang. Andriy akan sering muncul di obrolan mereka.",
+    "**Ну звісно. Побачимо!** *Звісно* = tentu saja; dengan *ну* di depannya dan nada yang tepat, ia terdengar menggoda: \"ya, ya, tentu\". *Побачимо* (bentuk sempurna, jadi masa depan) = kita lihat nanti. Ungkapan ini dipakai orang Ukraina untuk menunda keputusan atau, seperti di sini, menyimpan senyum."
+   ],
+   "grammars": [
+    {
+     "title": "Memilih bentuk masa depan",
+     "body": [
+      "Pertanyaannya sama seperti di Unit 3: kegiatan atau hasil? Untuk kegiatan, *буду робити* dan *робитиму* bisa dipertukarkan dengan bebas."
+     ],
+     "table": {
+      "head": [
+       "Situasi",
+       "Bentuk",
+       "Contoh"
+      ],
+      "rows": [
+       [
+        "kegiatan berulang",
+        "tidak sempurna",
+        "*Я працюватиму по суботах.*"
+       ],
+       [
+        "kegiatan yang makan waktu",
+        "tidak sempurna",
+        "*Я буду спати до обіду.*"
+       ],
+       [
+        "satu hasil",
+        "sempurna",
+        "*Я вивчу меню за два дні.*"
+       ],
+       [
+        "mulai atau selesai",
+        "sempurna",
+        "*Я почну о восьмій.*"
+       ],
+       [
+        "janji singkat",
+        "sempurna",
+        "*Я тобі подзвоню.*"
+       ],
+       [
+        "keadaan",
+        "*буду* + kata sifat / tempat",
+        "*Я буду зайнята. Я буду на курсах.*"
+       ],
+       [
+        "salah",
+        "*буду* + sempurna",
+        "bukan *буду вивчити*, tetapi *вивчу*"
+       ],
+       [
+        "salah",
+        "*буду* + bentuk menyatu",
+        "bukan *буду робитиму*, tetapi *робитиму*"
+       ]
+      ]
+     }
+    }
+   ]
+  }
+ ],
+ "sections": [
+  {
+   "title": "Hari dan jam kerja",
+   "blocks": [
+    {
+     "type": "p",
+     "text": "Hari-hari dalam seminggu memakai *у / в* + akusatif (sudah kamu kenal dari A1): *у понеділок, у середу*. Untuk kebiasaan, orang memakai *по* + lokatif jamak: *по понеділках* (setiap Senin), *по суботах* (setiap Sabtu). Jam kerja ditulis dengan rentang *з … до …*, dan di pintu toko kamu sering membaca *Вихідний: неділя* (hari libur: Minggu)."
+    },
+    {
+     "type": "tabel",
+     "head": [
+      "Hari",
+      "Kapan? (у + ak.)",
+      "Setiap … (по + lok. jamak)"
+     ],
+     "rows": [
+      [
+       "*понеділок*",
+       "*у понеділок*",
+       "*по понеділках*"
+      ],
+      [
+       "*вівторок*",
+       "*у вівторок*",
+       "*по вівторках*"
+      ],
+      [
+       "*середа*",
+       "*у середу*",
+       "*по середах*"
+      ],
+      [
+       "*четвер*",
+       "*у четвер*",
+       "*по четвергах*"
+      ],
+      [
+       "*п'ятниця*",
+       "*у п'ятницю*",
+       "*по п'ятницях*"
+      ],
+      [
+       "*субота*",
+       "*у суботу*",
+       "*по суботах*"
+      ],
+      [
+       "*неділя*",
+       "*у неділю*",
+       "*по неділях*"
+      ]
+     ]
+    },
+    {
+     "type": "kotak",
+     "title": "Ungkapan waktu di tempat kerja",
+     "items": [
+      "*о восьмій, о пів на дев'яту* jam delapan, setengah sembilan",
+      "*з восьми до другої* dari jam delapan sampai jam dua",
+      "*до обіду, після обіду* sebelum siang, sesudah siang",
+      "*перерва на обід* istirahat makan siang",
+      "*вихідний (день)* hari libur; *у мене вихідний* aku libur",
+      "*Я сьогодні на зміні.* Hari ini aku kerja (sedang dapat shift)."
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Bentuk depan menyatu",
+   "blocks": [
+    {
+     "type": "p",
+     "text": "Bentuk *робитиму* lahir dari gabungan infinitif dengan kata kerja kuno *яти* (mengambil, memegang): kira-kira \"aku memegang (tugas) melakukan\". Lama-kelamaan kedua kata itu melebur. Bahasa Rusia kehilangan bentuk ini, bahasa Ukraina mempertahankannya, dan kini keduanya hidup berdampingan dengan *буду робити*. Dalam tulisan, bentuk menyatu terasa sedikit lebih rapi; dalam percakapan keduanya sama wajarnya."
+    },
+    {
+     "type": "tabel",
+     "head": [
+      "Infinitif",
+      "я",
+      "ти",
+      "вони"
+     ],
+     "rows": [
+      [
+       "*читати*",
+       "*читатиму*",
+       "*читатимеш*",
+       "*читатимуть*"
+      ],
+      [
+       "*писати*",
+       "*писатиму*",
+       "*писатимеш*",
+       "*писатимуть*"
+      ],
+      [
+       "*працювати*",
+       "*працюватиму*",
+       "*працюватимеш*",
+       "*працюватимуть*"
+      ],
+      [
+       "*відпочивати*",
+       "*відпочиватиму*",
+       "*відпочиватимеш*",
+       "*відпочиватимуть*"
+      ],
+      [
+       "*жити*",
+       "*житиму*",
+       "*житимеш*",
+       "*житимуть*"
+      ],
+      [
+       "*говорити*",
+       "*говоритиму*",
+       "*говоритимеш*",
+       "*говоритимуть*"
+      ],
+      [
+       "*пити*",
+       "*питиму*",
+       "*питимеш*",
+       "*питимуть*"
+      ],
+      [
+       "*вчитися*",
+       "*вчитимуся*",
+       "*вчитимешся*",
+       "*вчитимуться*"
+      ]
+     ]
+    },
+    {
+     "type": "list",
+     "items": [
+      "Bentuk menyatu hanya untuk aspek tidak sempurna. *Зробитиму* tidak ada.",
+      "Tekanan tetap di tempat yang sama dengan infinitif: *ro-BY-ty* → *ro-BY-ty-mu*, *pra-tsyu-VA-ty* → *pra-tsyu-VA-ty-mu*.",
+      "Pada *-ся*, ujung *-мусь* juga dipakai dalam percakapan: *вчитимусь*."
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Ulangan berjenjang — unit 2",
+   "blocks": [
+    {
+     "type": "p",
+     "text": "Tutup kolom Ukraina, baca terjemahan Indonesianya, lalu susun kembali kalimatnya dari ingatan."
+    },
+    {
+     "type": "tabel",
+     "head": [
+      "Bahasa Indonesia",
+      "Українська",
+      "Baca"
+     ],
+     "rows": [
+      [
+       "Luas sekali! Ada berapa kamar di sini?",
+       "Яка велика! Скільки тут кімнат?",
+       "*Ya-KA ve-LY-ka SKIL'-ky tut kim-NAT*"
+      ],
+      [
+       "Di apartemen ada tujuh jendela. Dua di antaranya milik Anda.",
+       "У квартирі сім вікон. Два з них ваші.",
+       "*U kvar-TY-ri sim VI-kon Dva z nykh VA-shi*"
+      ],
+      [
+       "Tenang sekali. Di sini nggak ada anjing, nggak ada pesta.",
+       "Дуже. У нас немає ні собак, ні вечірок.",
+       "*DU-zhe U nas ne-MA-ye ni so-BAK ni ve-CHI-rok*"
+      ],
+      [
+       "Satu adik perempuan, Dina. Saudara laki-laki nggak ada.",
+       "Одна сестра, Діна. Братів немає.",
+       "*Od-NA ses-TRA DI-na Bra-TIV ne-MA-ye*"
+      ],
+      [
+       "Lima pelajaran. Dan PR-nya banyak banget!",
+       "П'ять уроків. І дуже багато завдань!",
+       "*Pyat' u-RO-kiv I DU-zhe ba-HA-to zav-DAN'*"
+      ]
+     ]
+    }
+   ]
+  }
+ ],
+ "vocab": [
+  {
+   "uk": "змі́на",
+   "baca": "ZMI-na",
+   "id": "shift kerja; perubahan"
+  },
+  {
+   "uk": "гра́фік",
+   "baca": "HRA-fik",
+   "id": "jadwal (*графік змін* = jadwal shift)"
+  },
+  {
+   "uk": "ка́са",
+   "baca": "KA-sa",
+   "id": "kasir (tempat membayar)"
+  },
+  {
+   "uk": "каси́р / каси́рка",
+   "baca": "ka-SYR / ka-SYR-ka",
+   "id": "kasir (orang, lk / pr)"
+  },
+  {
+   "uk": "гість (pl. го́сті)",
+   "baca": "hist'",
+   "id": "tamu"
+  },
+  {
+   "uk": "круаса́н",
+   "baca": "kru-a-SAN",
+   "id": "croissant"
+  },
+  {
+   "uk": "зайня́тий",
+   "baca": "zay-NYA-tyy",
+   "id": "sibuk"
+  },
+  {
+   "uk": "ти́ждень",
+   "baca": "TYZH-den'",
+   "id": "minggu (tujuh hari)"
+  },
+  {
+   "uk": "вихідни́й",
+   "baca": "vy-khid-NYY",
+   "id": "hari libur (*вихідний день*); *вихідні* = akhir pekan"
+  },
+  {
+   "uk": "відпочива́ти / відпочи́ти",
+   "baca": "vid-po-chy-VA-ty / vid-po-CHY-ty",
+   "id": "beristirahat, berlibur"
+  },
+  {
+   "uk": "продава́ти / прода́ти",
+   "baca": "pro-da-VA-ty / pro-DA-ty",
+   "id": "menjual"
+  },
+  {
+   "uk": "замовля́ти / замо́вити",
+   "baca": "za-mo-VLYA-ty / za-MO-vy-ty",
+   "id": "memesan"
+  },
+  {
+   "uk": "обі́дати / пообі́дати",
+   "baca": "o-BI-da-ty / po-o-BI-da-ty",
+   "id": "makan siang"
+  },
+  {
+   "uk": "закі́нчувати / закі́нчити",
+   "baca": "za-KIN-chu-va-ty / za-KIN-chy-ty",
+   "id": "menyelesaikan"
+  },
+  {
+   "uk": "прихо́дити / прийти́",
+   "baca": "pry-KHO-dy-ty / pryy-TY",
+   "id": "datang (berjalan kaki)"
+  },
+  {
+   "uk": "дзвони́ти / подзвони́ти",
+   "baca": "dzvo-NY-ty / podz-vo-NY-ty",
+   "id": "menelepon"
+  },
+  {
+   "uk": "ба́чити / поба́чити",
+   "baca": "BA-chy-ty / po-BA-chy-ty",
+   "id": "melihat; *Побачимо!* = kita lihat nanti"
+  },
+  {
+   "uk": "розповіда́ти / розповісти́",
+   "baca": "roz-po-vi-DA-ty / roz-po-vis-TY",
+   "id": "bercerita"
+  },
+  {
+   "uk": "вівто́рок",
+   "baca": "viv-TO-rok",
+   "id": "Selasa"
+  },
+  {
+   "uk": "четве́р",
+   "baca": "chet-VER",
+   "id": "Kamis"
+  },
+  {
+   "uk": "субо́та",
+   "baca": "su-BO-ta",
+   "id": "Sabtu"
+  },
+  {
+   "uk": "зазвича́й",
+   "baca": "zaz-vy-CHAY",
+   "id": "biasanya"
+  },
+  {
+   "uk": "ско́ро",
+   "baca": "SKO-ro",
+   "id": "segera, sebentar lagi"
+  },
+  {
+   "uk": "обі́д",
+   "baca": "o-BID",
+   "id": "makan siang; *до обіду* = sampai siang"
+  },
+  {
+   "uk": "сері́ал",
+   "baca": "se-RI-al",
+   "id": "serial televisi"
+  }
+ ],
+ "exercises": [
+  {
+   "prompt": "Terjemahkan ke bahasa Ukraina.",
+   "items": [
+    "Hari ini aku akan ngapain? (pakai буду)",
+    "Aku kerja kapan? (pakai bentuk menyatu)",
+    "Aku akan menguasai menu dalam dua hari.",
+    "Hari Senin aku di kursus.",
+    "Kamu mau ngapain? (pakai bentuk menyatu)",
+    "Kita lihat saja nanti!"
+   ]
+  },
+  {
+   "prompt": "Isi titik-titik dengan bentuk depan menyatu dari kata kerja dalam kurung.",
+   "items": [
+    "Завтра я ____ на касі. (працювати)",
+    "Що ти ____ ввечері? (робити)",
+    "Соломія в понеділок ____. (відпочивати)",
+    "Ми ____ граматику. (вчити)",
+    "Ви ____ каву? (пити)",
+    "Гості ____ капучино. (замовляти)",
+    "Я ____ серіали. (дивитися)"
+   ]
+  },
+  {
+   "prompt": "Ubah ke masa depan sempurna (satu hasil).",
+   "items": [
+    "Я пишу лист.",
+    "Ми читаємо книжку.",
+    "Він готує вечерю.",
+    "Вона миє посуд.",
+    "Ти робиш каву?",
+    "Вони продають круасани."
+   ]
+  },
+  {
+   "prompt": "Susun jadi kalimat yang benar.",
+   "items": [
+    "робити / сьогодні / буду / що / я",
+    "вивчу / за / я / два / дні / його",
+    "до / обіду / спатиму / я",
+    "разом / о / пообідаємо / третій / ми",
+    "працюватиму / я / коли"
+   ]
+  }
+ ],
+ "answers": [
+  "Що я сьогодні буду робити? — Коли я працюватиму? — Я вивчу меню за два дні. — У понеділок я буду на курсах. — Що ти робитимеш? — Побачимо!",
+  "працюватиму — робитимеш — відпочиватиме — вчитимемо — питимете — замовлятимуть — дивитимуся",
+  "Я напишу лист. — Ми прочитаємо книжку. — Він приготує вечерю. — Вона помиє посуд. — Ти зробиш каву? — Вони продадуть круасани.",
+  "Що я буду робити сьогодні? — Я вивчу його за два дні. — Я спатиму до обіду. — О третій ми разом пообідаємо. — Коли я працюватиму?"
+ ]
+}

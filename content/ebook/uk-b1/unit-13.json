@@ -1,0 +1,665 @@
+{
+ "title": "Buka kafe kedua? — berpendapat, menimbang, dan membantah dengan sopan",
+ "title_target": "На мою думку, час настав",
+ "goal": "Menyampaikan pendapat, menyusun argumen, dan tidak setuju tanpa menyinggung: *На мою думку…*, *По-перше, по-друге*, *З одного боку… з іншого*, *Дозвольте заперечити*, *Ти маєш рацію щодо…*",
+ "bekal": [
+  "kamu bisa menyatakan pendapat dengan *на мою думку, як на мене, я вважаю, що*",
+  "kamu bisa menyusun dan menimbang argumen: *по-перше, по-друге, з одного боку… з іншого*",
+  "kamu bisa setuju sebagian atau membantah dengan sopan: *маєш рацію, але…*, *навпаки*, *дозвольте заперечити*"
+ ],
+ "dialogs": [
+  {
+   "title": "Діалог 1 — Rapat hari Selasa",
+   "intro": "Selasa, 8 Februari 2028, ruang belakang gudang sangrai «Ява». Pan Bohdan mengumpulkan timnya untuk satu pertanyaan besar: membuka kafe kedua atau belum. Yurko baru kembali bekerja dengan kaki masih bergips. Perhatikan bagaimana setiap orang membuka pendapatnya: *на мою думку*, *я вважаю*, *як на мене*.",
+   "lines": [
+    {
+     "speaker": "Богдан:",
+     "text": "[Отже|OT-zhe], [колеги|ko-LE-hy], [питання|py-TAN-nya] [одне|od-NE]: [відкриваємо|vid-kry-VA-ye-mo] [другу|DRU-hu] [кав'ярню|ka-VYAR-nyu] [чи|chy] [ні|ni]? [Хочу|KHO-chu] [почути|po-CHU-ty] [кожного|KOZH-no-ho].",
+     "id": "Jadi, rekan-rekan, pertanyaannya satu: kita buka kafe kedua atau tidak? Saya mau dengar pendapat semua.",
+     "literal": "jadi, rekan-rekan, pertanyaan satu: (kami)-membuka kedua kafe (ak.) atau tidak? (aku)-mau mendengar setiap (gen.)."
+    },
+    {
+     "speaker": "Соломія:",
+     "text": "[На|Na] [мою|mo-YU] [думку|DUM-ku], [час|chas] [настав|nas-TAV]. [Біля|BI-lya] «[Яви|YA-vy]» [щодня|shchod-NYA] [черги|CHER-hy], [люди|LYU-dy] [стоять|sto-YAT'] [на|na] [вулиці|VU-ly-tsi] [навіть|NA-vit'] [у|u] [мороз|mo-ROZ].",
+     "id": "Menurut saya, sudah waktunya. Setiap hari ada antrean di depan «Ява», orang berdiri di jalan bahkan saat udara beku.",
+     "literal": "pada saya-punya pendapat (ak.), waktu tiba. dekat «Ява» (gen.) tiap-hari antrean, orang berdiri di jalan (lok.) bahkan dalam beku."
+    },
+    {
+     "speaker": "Юрко:",
+     "text": "[А|A] [я|ya] [вважаю|vva-ZHA-yu], [що|shcho] [поспішати|pos-pi-SHA-ty] [не|ne] [треба|TRE-ba]. [По|Po]-[перше|PER-she], [ми|my] [ледве|LED-ve] [встигаємо|vsty-HA-ye-mo] [смажити|SMA-zhy-ty] [каву|KA-vu] [для|dlya] [однієї|od-ni-YE-yi] [кав'ярні|ka-VYAR-ni].",
+     "id": "Kalau saya, menurut saya tidak perlu buru-buru. Pertama, kita saja sudah susah payah menyangrai kopi untuk satu kafe.",
+     "literal": "dan aku menganggap, bahwa terburu-buru tidak perlu. pertama, kami nyaris sempat menyangrai kopi untuk satu (gen.) kafe (gen.)."
+    },
+    {
+     "speaker": "Богдан:",
+     "text": "[Слушно|SLUSH-no]. [А|A] [по|po]-[друге|DRU-he]?",
+     "id": "Masuk akal. Lalu yang kedua?",
+     "literal": "tepat. dan kedua?"
+    },
+    {
+     "speaker": "Юрко:",
+     "text": "[По|Po]-[друге|DRU-he], [нова|no-VA] [оренда|o-REN-da] [в|v] [центрі|TSEN-tri] [коштує|KOSH-tu-ye] [шалених|SHA-le-nykh] [грошей|HRO-shey].",
+     "id": "Kedua, sewa tempat baru di pusat kota harganya gila-gilaan.",
+     "literal": "kedua, baru sewa di pusat (lok.) berharga gila (gen. jmk) uang (gen.)."
+    },
+    {
+     "speaker": "Ані:",
+     "text": "[Дозвольте|Doz-VOL'-te] [заперечити|za-pe-RE-chy-ty]. [Не|Ne] [обов'язково|o-bo-vyaz-KO-vo] [шукати|shu-KA-ty] [приміщення|pry-MI-shchen-nya] [в|v] [центрі|TSEN-tri]. [Можна|MOZH-na], [скажімо|ska-ZHI-mo], [біля|BI-lya] [Стрийського|STRYY-s'ko-ho] [парку|PAR-ku].",
+     "id": "Izinkan saya membantah. Kita tidak harus mencari tempat di pusat kota. Bisa, misalnya, di dekat Taman Stryiskyi.",
+     "literal": "izinkan membantah. tidak wajib mencari ruangan di pusat (lok.). boleh, katakanlah, dekat Stryi-an taman (gen.)."
+    },
+    {
+     "speaker": "Соломія:",
+     "text": "[З|Z] [одного|od-no-HO] [боку|BO-ku], [там|tam] [менше|MEN-she] [туристів|tu-RYS-tiv]. [З|Z] [іншого|IN-sho-ho], [більше|BIL'-she] [постійних|pos-TIY-nykh] [клієнтів|kli-YEN-tiv]: [студенти|stu-DEN-ty], [мами|MA-my] [з|z] [візками|viz-KA-my].",
+     "id": "Di satu sisi, di sana turisnya lebih sedikit. Di sisi lain, pelanggan tetapnya lebih banyak: mahasiswa, ibu-ibu dengan kereta bayi.",
+     "literal": "dari satu (gen.) sisi (gen.), di-sana lebih-sedikit turis (gen. jmk). dari lain (gen.), lebih-banyak tetap (gen. jmk) pelanggan (gen. jmk): mahasiswa, ibu dengan kereta-bayi (ins. jmk)."
+    },
+    {
+     "speaker": "Богдан:",
+     "text": "[Цікава|Tsi-KA-va] [думка|DUM-ka]. [Але|A-LE] [хто|khto] [там|tam] [працюватиме|pra-tsyu-VA-ty-me]? [Соломія|So-lo-MI-ya] [не|ne] [може|MO-zhe] [бути|BU-ty] [у|u] [двох|dvokh] [місцях|mis-TSYAKH] [одночасно|od-NO-chas-no].",
+     "id": "Ide yang menarik. Tapi siapa yang akan bekerja di sana? Solomiya tidak bisa berada di dua tempat sekaligus.",
+     "literal": "menarik pikiran. tapi siapa di-sana akan-bekerja? Solomiya tidak bisa berada di dua (lok.) tempat (lok. jmk) sekaligus."
+    },
+    {
+     "speaker": "Соломія:",
+     "text": "[Я|Ya] [маю|MA-yu] [на|na] [приметі|pry-ME-ti] [двох|dvokh] [добрих|DO-brykh] [барист|ba-RYST]. [Їх|Yikh] [можна|MOZH-na] [навчити|nav-CHY-ty] [за|za] [місяць|MI-syats'].",
+     "id": "Saya sudah punya incaran dua barista yang bagus. Mereka bisa dilatih dalam sebulan.",
+     "literal": "aku punya dalam catatan (lok.) dua (ak.) baik (ak. jmk) barista (ak. jmk). mereka (ak.) boleh melatih dalam sebulan."
+    },
+    {
+     "speaker": "Юрко:",
+     "text": "[Можливо|MOZH-ly-vo]. [Але|A-LE] [я|ya] [все|vse] [одно|od-NO] [проти|PRO-ty], [принаймні|PRY-naym-ni] [до|do] [літа|LI-ta].",
+     "id": "Mungkin. Tapi saya tetap tidak setuju, setidaknya sampai musim panas.",
+     "literal": "mungkin. tapi aku semua sama melawan, setidaknya sampai musim-panas (gen.)."
+    },
+    {
+     "speaker": "Ані:",
+     "text": "[А|A] [як|yak] [на|na] [мене|me-NE], [саме|SA-me] [до|do] [літа|LI-ta] [й|y] [треба|TRE-ba] [все|vse] [підготувати|pid-ho-tu-VA-ty].",
+     "id": "Kalau menurut saya, justru sampai musim panas itulah kita harus menyiapkan semuanya.",
+     "literal": "dan sebagaimana pada aku (ak.), tepat sampai musim-panas (gen.) justru perlu semua menyiapkan‹selesai›."
+    },
+    {
+     "speaker": "Богдан:",
+     "text": "[Тобто|TOB-to] [ви|vy] [пропонуєте|pro-po-NU-ye-te] [відкритися|vid-KRY-ty-sya] [влітку|VLIT-ku]?",
+     "id": "Maksudnya, kalian mengusulkan buka pada musim panas?",
+     "literal": "artinya kalian mengusulkan membuka-diri di-musim-panas?"
+    },
+    {
+     "speaker": "Ані:",
+     "text": "[Так|Tak]. [Я|Ya] [можу|MO-zhu] [підготувати|pid-ho-tu-VA-ty] [розрахунки|roz-ra-KHUN-ky]: [оренда|o-REN-da], [обладнання|o-BLAD-nan-nya], [зарплати|zar-PLA-ty].",
+     "id": "Ya. Saya bisa menyiapkan perhitungannya: sewa, peralatan, gaji.",
+     "literal": "ya. aku bisa menyiapkan‹selesai› perhitungan (jmk): sewa, peralatan, gaji (jmk)."
+    },
+    {
+     "speaker": "Богдан:",
+     "text": "[Добре|DO-bre], [домовилися|do-MO-vy-ly-sya]. [Ані|A-ni] [рахує|ra-KHU-ye], [а|a] [в|v] [понеділок|po-ne-DI-lok] [вирішимо|VY-ri-shy-mo] [остаточно|os-ta-TOCH-no].",
+     "id": "Baik, sepakat. Ani yang menghitung, dan hari Senin kita putuskan final.",
+     "literal": "baik, (kami)-sepakat. Ani menghitung, dan pada Senin (ak.) (kami)-akan-memutuskan akhirnya."
+    }
+   ],
+   "notes": [
+    "**На мою думку / Я вважаю, що / Як на мене.** Tiga pembuka pendapat dari yang paling netral ke yang paling santai. *На мою думку* aman di mana saja. *Я вважаю, що* terdengar tegas. *Як на мене* (*yak na me-NE*) lisan dan akrab, seperti *kalau aku sih*. Hindari *я считаю* yang merupakan rusisme; dalam bahasa Ukraina *вважати*.",
+    "**По-перше, по-друге.** Penanda urutan argumen, selalu dengan tanda hubung dan diikuti koma. Pan Bohdan cukup bertanya *А по-друге?* untuk meminta argumen berikutnya. Untuk menutup deretan: *і нарешті* atau *зрештою*.",
+    "**Слушно.** = tepat, masuk akal. Cara pemimpin rapat menghargai pendapat tanpa langsung menyetujuinya. Kata sifatnya *слушний*: *слушна думка*, *слушне зауваження*.",
+    "**Дозвольте заперечити.** Pembantah yang sangat sopan: izinkan saya membantah. Cocok untuk rapat dengan atasan. Dalam situasi yang lebih santai cukup *А я не згодна* atau *Не зовсім так*.",
+    "**З одного боку… з іншого (боку).** Menimbang dua sisi. Kata *боку* yang kedua sering dibuang. Perhatikan bahwa Solomiya memakai pola ini untuk mendukung usul Ani, bukan untuk ragu: sisi lemah disebut dulu, sisi kuat di akhir.",
+    "**Я все одно проти, принаймні до літа.** *Все одно* = tetap saja. *Бути проти* = tidak setuju, menentang; lawannya *бути за*: *Хто за? Хто проти?* *Принаймні* = setidaknya. **Тобто** = maksudnya, yaitu, dipakai untuk memastikan pemahaman."
+   ],
+   "grammars": [
+    {
+     "title": "Berpendapat, mengurutkan, menimbang",
+     "body": [
+      "Ungkapan-ungkapan ini adalah kerangka setiap diskusi. Semuanya diikuti koma kalau berada di awal kalimat."
+     ],
+     "table": {
+      "head": [
+       "Ungkapan",
+       "Fungsi",
+       "Contoh"
+      ],
+      "rows": [
+       [
+        "На мою думку, …",
+        "pendapat, netral",
+        "На мою думку, час настав."
+       ],
+       [
+        "Я вважаю, що …",
+        "pendapat, tegas",
+        "Я вважаю, що поспішати не треба."
+       ],
+       [
+        "Як на мене, …",
+        "pendapat, santai",
+        "Як на мене, це дорого."
+       ],
+       [
+        "По-перше, по-друге, …",
+        "mengurutkan argumen",
+        "По-перше, ми не встигаємо."
+       ],
+       [
+        "З одного боку, … з іншого, …",
+        "menimbang dua sisi",
+        "З одного боку, це дорого, з іншого, вигідно."
+       ],
+       [
+        "Слушно.",
+        "menghargai pendapat",
+        "Слушно. А по-друге?"
+       ],
+       [
+        "Дозвольте заперечити.",
+        "membantah dengan sopan",
+        "Дозвольте заперечити: є інший варіант."
+       ],
+       [
+        "Я все одно проти.",
+        "tetap tidak setuju",
+        "Я все одно проти, принаймні до літа."
+       ]
+      ]
+     }
+    }
+   ]
+  },
+  {
+   "title": "Діалог 2 — Sesudah rapat",
+   "intro": "Sore yang sama, di balik meja bar «Ява» sebelum tutup. Solomiya dan Ani melanjutkan diskusi sambil mengelap cangkir. Perhatikan cara mereka setuju sebagian: *маєш рацію щодо…, але не щодо…*",
+   "lines": [
+    {
+     "speaker": "Соломія:",
+     "text": "[Ну|Nu] [що|shcho], [Ані|A-ni], [ти|ty] [справді|SPRAV-di] [думаєш|DU-ma-yesh], [що|shcho] [Юрко|Yur-KO] [помиляється|po-my-LYA-ye-tsya]?",
+     "id": "Jadi, Ani, kamu benar-benar menganggap Yurko keliru?",
+     "literal": "nah apa, Ani, kamu sungguh berpikir, bahwa Yurko keliru?"
+    },
+    {
+     "speaker": "Ані:",
+     "text": "[Не|Ne] [зовсім|ZOV-sim]. [Він|Vin] [має|MA-ye] [рацію|RA-tsi-yu] [щодо|SHCHO-do] [оренди|o-REN-dy], [але|a-LE] [не|ne] [щодо|SHCHO-do] [часу|CHA-su].",
+     "id": "Tidak sepenuhnya. Dia benar soal sewa, tapi tidak soal waktunya.",
+     "literal": "tidak sepenuhnya. dia punya kebenaran (ak.) mengenai sewa (gen.), tapi tidak mengenai waktu (gen.)."
+    },
+    {
+     "speaker": "Соломія:",
+     "text": "[Я|Ya] [з|z] [тобою|to-BO-yu] [згодна|ZHOD-na]. [Хоча|Kho-CHA] [мене|me-NE] [турбує|tur-BU-ye] [інше|IN-she]: [чи|chy] [не|ne] [втратимо|VTRA-ty-mo] [ми|my] [атмосферу|at-mos-FE-ru]?",
+     "id": "Aku setuju denganmu. Tapi yang membuatku khawatir hal lain: jangan-jangan kita kehilangan suasananya?",
+     "literal": "aku dengan kamu (ins.) setuju. walaupun aku (ak.) merisaukan lain: apakah tidak (kami)-akan-kehilangan kami suasana (ak.)?"
+    },
+    {
+     "speaker": "Ані:",
+     "text": "[Що|Shcho] [ти|ty] [маєш|MA-yesh] [на|na] [увазі|u-VA-zi]?",
+     "id": "Maksudmu apa?",
+     "literal": "apa kamu punya dalam perhatian (lok.)?"
+    },
+    {
+     "speaker": "Соломія:",
+     "text": "[Тепер|Te-PER] «[Ява|YA-va]» [маленька|ma-LEN'-ka] [й|y] [затишна|ZA-tysh-na], [усі|u-SI] [одне|od-NE] [одного|OD-no-ho] [знають|ZNA-yut']. [Друга|DRU-ha] [кав'ярня|ka-VYAR-nya] [може|MO-zhe] [зробити|zro-BY-ty] [з|z] [нас|nas] [мережу|me-RE-zhu].",
+     "id": "Sekarang «Ява» kecil dan nyaman, semua saling kenal. Kafe kedua bisa mengubah kita jadi jaringan waralaba.",
+     "literal": "sekarang «Ява» kecil dan nyaman, semua satu satu (gen.) kenal. kedua kafe bisa membuat dari kami (gen.) jaringan (ak.)."
+    },
+    {
+     "speaker": "Ані:",
+     "text": "[Навпаки|Nav-pa-KY], [дві|dvi] [затишні|ZA-tysh-ni] [кав'ярні|ka-VYAR-ni] [ще|shche] [не|ne] [мережа|me-RE-zha]. [Усе|U-SE] [залежить|za-LE-zhyt'] [від|vid] [людей|lyu-DEY].",
+     "id": "Justru sebaliknya, dua kafe yang nyaman belum jadi jaringan. Semuanya tergantung orangnya.",
+     "literal": "sebaliknya, dua nyaman kafe masih bukan jaringan. semua bergantung dari orang (gen. jmk)."
+    },
+    {
+     "speaker": "Соломія:",
+     "text": "[Може|MO-zhe], [й|y] [так|tak]. [Але|A-LE] [я|ya] [бачила|BA-chy-la], [як|yak] [мережі|me-RE-zhi] [вбивають|vby-VA-yut'] [затишок|ZA-ty-shok].",
+     "id": "Mungkin juga begitu. Tapi aku sudah pernah lihat bagaimana jaringan membunuh kehangatan.",
+     "literal": "mungkin, juga begitu. tapi aku melihat, bagaimana jaringan (jmk) membunuh kenyamanan."
+    },
+    {
+     "speaker": "Ані:",
+     "text": "[Тоді|To-DI] [запропонуймо|za-pro-po-NUY-mo] [правило|PRA-vy-lo]: [однакова|od-NA-ko-va] [кава|KA-va], [але|a-LE] [різні|RIZ-ni] [інтер'єри|in-te-RYE-ry] [й|y] [свої|svo-YI] [баристи|ba-RYS-ty].",
+     "id": "Kalau begitu mari usulkan aturan: kopinya sama, tapi interiornya berbeda dan baristanya masing-masing.",
+     "literal": "kalau-begitu mari-usulkan aturan: sama kopi, tapi berbeda interior (jmk) dan sendiri-punya barista (jmk)."
+    },
+    {
+     "speaker": "Соломія:",
+     "text": "[О|O], [це|tse] [вже|vzhe] [інша|IN-sha] [розмова|roz-MO-va]! [Такий|Ta-KYY] [компроміс|kom-pro-MIS] [я|ya] [підтримую|pid-TRY-mu-yu].",
+     "id": "Nah, kalau begitu lain ceritanya! Kompromi seperti itu aku dukung.",
+     "literal": "oh, ini sudah lain percakapan! seperti-itu kompromi aku mendukung."
+    },
+    {
+     "speaker": "Ані:",
+     "text": "[Тоді|To-DI] [в|v] [понеділок|po-ne-DI-lok] [ти|ty] [скажеш|SKA-zhesh] [це|tse] [панові|PA-no-vi] [Богданові|Boh-DA-no-vi]?",
+     "id": "Jadi hari Senin kamu yang bilang ini ke pan Bohdan?",
+     "literal": "kalau-begitu pada Senin (ak.) kamu akan-bilang ini tuan (dat.) Bohdan (dat.)?"
+    },
+    {
+     "speaker": "Соломія:",
+     "text": "[Скажу|Ska-ZHU], [але|a-LE] [ти|ty] [скажеш|SKA-zhesh] [першою|PER-sho-yu]. [Твої|Tvo-YI] [цифри|TSY-fry] [переконують|pe-re-KO-nu-yut'] [краще|KRA-shche], [ніж|nizh] [мої|mo-YI] [емоції|e-MO-tsi-yi].",
+     "id": "Aku bilang, tapi kamu yang bicara duluan. Angka-angkamu lebih meyakinkan daripada perasaanku.",
+     "literal": "(aku)-akan-bilang, tapi kamu akan-bilang pertama (ins.). kamu-punya angka (jmk) meyakinkan lebih-baik, daripada aku-punya emosi (jmk)."
+    }
+   ],
+   "notes": [
+    "**Ти справді думаєш, що…?** Membuka diskusi dengan menanyakan pendapat orang lain. *Помилятися* = keliru, salah (tentang orang). Jangan dicampur dengan *помилка* = kesalahan (*PO-myl-ka*).",
+    "**Він має рацію щодо оренди.** *Мати рацію* = benar (tentang pendapat seseorang), harfiahnya *punya kebenaran*. Rusisme yang harus dihindari: *він правий*. **Щодо** (*SHCHO-do*) + genitif = mengenai, soal; cara tercepat untuk setuju sebagian: *щодо X так, щодо Y ні*.",
+    "**Я з тобою згодна.** *Згоден* (lk) dan *згодна* (pr) = setuju; bentuk *згідний, згідна* juga baku. Konstruksinya *згоден з ким* (dengan siapa) dan *згоден з чим* atau *на що* (dengan apa). Solomiya langsung menambahkan *хоча* untuk memasukkan keberatan baru.",
+    "**Що ти маєш на увазі?** = Maksudmu apa? Harfiahnya *apa yang kamu punya dalam perhatian*. Sangat berguna ketika kamu ingin penjelasan tanpa terdengar menantang. Versi sopan: *Що ви маєте на увазі?*",
+    "**Навпаки.** = justru sebaliknya. Membantah dengan tegas tapi tidak kasar, apalagi kalau langsung diikuti alasan. *Усе залежить від людей* = semua tergantung orangnya; *залежати від* + genitif.",
+    "**Це вже інша розмова!** = Nah, itu baru lain ceritanya! Tanda bahwa lawan bicara sudah bergeser dari tidak setuju menjadi setuju. *Запропонуймо* adalah imperatif kita (mari usulkan) dari *запропонувати*. *Одне одного* = satu sama lain, sudah kamu kenal dari A2."
+   ],
+   "grammars": [
+    {
+     "title": "Dari setuju penuh sampai menolak",
+     "body": [
+      "Dalam diskusi Ukraina, orang biasanya tidak langsung berkata *ні*. Yang lazim adalah setuju sebagian lalu menambahkan *але*."
+     ],
+     "table": {
+      "head": [
+       "Tingkat",
+       "Ungkapan",
+       "Arti"
+      ],
+      "rows": [
+       [
+        "setuju penuh",
+        "Цілком згодна. Маєш рацію.",
+        "Setuju sekali. Kamu benar."
+       ],
+       [
+        "setuju, dengan syarat",
+        "Згоден, але …",
+        "Setuju, tapi …"
+       ],
+       [
+        "setuju sebagian",
+        "Ти маєш рацію щодо X, але не щодо Y.",
+        "Kamu benar soal X, tapi tidak soal Y."
+       ],
+       [
+        "ragu",
+        "Не зовсім. Може, й так.",
+        "Tidak sepenuhnya. Mungkin juga."
+       ],
+       [
+        "tidak setuju, halus",
+        "Я б так не сказала.",
+        "Aku tidak akan bilang begitu."
+       ],
+       [
+        "tidak setuju, tegas",
+        "Навпаки! Я категорично проти.",
+        "Justru sebaliknya! Aku sama sekali tidak setuju."
+       ],
+       [
+        "berubah pikiran",
+        "Це вже інша розмова.",
+        "Nah, itu lain ceritanya."
+       ]
+      ]
+     },
+     "after": [
+      "*Я б так не сказала* memakai bentuk pengandaian *би*: pembantah paling halus, cocok untuk berbicara dengan atasan atau orang yang lebih tua."
+     ]
+    }
+   ]
+  }
+ ],
+ "sections": [
+  {
+   "title": "Menata argumen: kata penghubung",
+   "blocks": [
+    {
+     "type": "p",
+     "text": "Argumen yang meyakinkan bukan hanya soal isi, tetapi juga soal urutan. Kata penghubung di bawah ini membuat pendapatmu mudah diikuti, baik dalam rapat maupun dalam surel. Semuanya dipisah koma dari sisa kalimat kalau berada di awal."
+    },
+    {
+     "type": "tabel",
+     "head": [
+      "Penghubung",
+      "Fungsi",
+      "Contoh"
+     ],
+     "rows": [
+      [
+       "по-перше, по-друге, по-третє",
+       "mengurutkan",
+       "По-перше, оренда дорога."
+      ],
+      [
+       "крім того, до того ж",
+       "menambah",
+       "Крім того, бракує людей."
+      ],
+      [
+       "з одного боку, з іншого боку",
+       "menimbang",
+       "З одного боку, це ризик."
+      ],
+      [
+       "проте, однак",
+       "membantah",
+       "Проте клієнтів більше."
+      ],
+      [
+       "натомість",
+       "sebagai gantinya",
+       "Натомість ми зекономимо на рекламі."
+      ],
+      [
+       "наприклад, скажімо",
+       "memberi contoh",
+       "Скажімо, біля Стрийського парку."
+      ],
+      [
+       "отже, таким чином",
+       "menyimpulkan",
+       "Отже, відкриваємося влітку."
+      ],
+      [
+       "зрештою, нарешті",
+       "menutup deretan",
+       "Зрештою, це наше рішення."
+      ],
+      [
+       "тобто",
+       "memperjelas",
+       "Тобто ви пропонуєте почекати?"
+      ]
+     ]
+    },
+    {
+     "type": "kotak",
+     "title": "Rusisme yang sering muncul dalam diskusi",
+     "items": [
+      "*я считаю* → **я вважаю**",
+      "*ти прав* → **ти маєш рацію**",
+      "*я согласна* → **я згодна** atau **я згідна**",
+      "*являтися* (adalah) → **бути**",
+      "*приймати участь* → **брати участь**",
+      "*вірно* (benar, tepat) → **правильно**"
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Bahasa rapat",
+   "blocks": [
+    {
+     "type": "p",
+     "text": "Rapat di kantor Ukraina cenderung terus terang: orang biasa menyatakan tidak setuju secara terbuka, dan itu tidak dianggap tidak sopan selama nadanya tenang. Pemimpin rapat memakai ungkapan tetap untuk membuka, memberi giliran bicara, dan menutup. Di perusahaan kecil seperti «Ява» suasananya santai, tetapi kalimat-kalimat ini tetap terdengar."
+    },
+    {
+     "type": "tabel",
+     "head": [
+      "Ungkapan",
+      "Arti"
+     ],
+     "rows": [
+      [
+       "Пропоную почати.",
+       "Saya usulkan kita mulai."
+      ],
+      [
+       "Перше питання порядку денного …",
+       "Pokok bahasan pertama …"
+      ],
+      [
+       "Слово має пані Соломія.",
+       "Silakan, Bu Solomiya."
+      ],
+      [
+       "Можна я додам?",
+       "Boleh saya menambahkan?"
+      ],
+      [
+       "Хто за? Хто проти? Хто утримався?",
+       "Siapa setuju? Siapa menolak? Siapa abstain?"
+      ],
+      [
+       "Рішення ухвалено одноголосно.",
+       "Keputusan diambil dengan suara bulat."
+      ],
+      [
+       "Перейдімо до наступного питання.",
+       "Mari kita lanjut ke pokok berikutnya."
+      ],
+      [
+       "Підсумуймо.",
+       "Mari kita simpulkan."
+      ],
+      [
+       "Нараду закрито.",
+       "Rapat ditutup."
+      ]
+     ]
+    },
+    {
+     "type": "list",
+     "items": [
+      "*Нарада* = rapat kerja; *збори* (selalu jamak) = rapat umum atau anggota; *засідання* = sidang resmi.",
+      "*Порядок денний* = agenda rapat, harfiahnya *urutan harian*.",
+      "Menyela orang lain dengan sopan: *Перепрошую, що перебиваю, але …*"
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Ulangan berjenjang — unit 11",
+   "blocks": [
+    {
+     "type": "p",
+     "text": "Tutup kolom Ukraina, baca terjemahan Indonesianya, lalu susun kembali kalimatnya dari ingatan."
+    },
+    {
+     "type": "tabel",
+     "head": [
+      "Bahasa Indonesia",
+      "Українська",
+      "Baca"
+     ],
+     "rows": [
+      [
+       "Kalau begitu ceritakan bagaimana Anda memasak kutya.",
+       "Тоді розкажіть, як ви варите кутю.",
+       "*To-DI roz-ka-ZHIT' yak vy VA-ry-te ku-TYU*"
+      ],
+      [
+       "Anda ingat kapan kita akan duduk makan?",
+       "А ви не пам'ятаєте, коли ми сядемо за стіл?",
+       "*A vy ne pa-mya-TA-ye-te ko-LY my SYA-de-mo za stil*"
+      ],
+      [
+       "Baik. Satu lagi: Anda tahu apakah para pengidung kolyadka akan datang malam ini?",
+       "Добре. І ще одне: ви не знаєте, чи прийдуть сьогодні колядники?",
+       "*DO-bre I shche od-NE vy ne ZNA-ye-te chy pryy-DUT' syo-HOD-ni ko-lyad-ny-KY*"
+      ],
+      [
+       "Mari memuliakan-Nya! Luar biasa. Pani Iryna tanya apakah kamu juga makan kutya hari ini.",
+       "Славімо Його! Чудово. Пані Ірина питала, чи ти теж їв сьогодні кутю.",
+       "*SLA-vi-mo Yo-HO Chu-DO-vo PA-ni I-RY-na py-TA-la chy ty tezh yiv syo-HOD-ni ku-TYU*"
+      ],
+      [
+       "Kamu mengerti mereka menyanyi tentang apa?",
+       "А ти зрозуміла, про що вони співали?",
+       "*A ty zro-zu-MI-la pro shcho vo-NY spi-VA-ly*"
+      ]
+     ]
+    }
+   ]
+  }
+ ],
+ "vocab": [
+  {
+   "uk": "ду́мка",
+   "baca": "DUM-ka",
+   "id": "pendapat; pikiran (*на мою думку*)"
+  },
+  {
+   "uk": "вважа́ти",
+   "baca": "vva-ZHA-ty",
+   "id": "berpendapat, menganggap"
+  },
+  {
+   "uk": "пого́джуватися / пого́дитися",
+   "baca": "po-HO-dzhu-va-ty-sya / po-HO-dy-ty-sya",
+   "id": "setuju (*з ким, з чим*)"
+  },
+  {
+   "uk": "зго́ден, зго́дна",
+   "baca": "ZHO-den, ZHOD-na",
+   "id": "setuju (lk, pr)"
+  },
+  {
+   "uk": "запере́чувати / запере́чити",
+   "baca": "za-pe-RE-chu-va-ty / za-pe-RE-chy-ty",
+   "id": "membantah, menyanggah"
+  },
+  {
+   "uk": "ма́ти ра́цію",
+   "baca": "MA-ty RA-tsi-yu",
+   "id": "benar (tentang pendapat)"
+  },
+  {
+   "uk": "слу́шно",
+   "baca": "SLUSH-no",
+   "id": "tepat, masuk akal"
+  },
+  {
+   "uk": "по-пе́рше, по-дру́ге",
+   "baca": "po-PER-she, po-DRU-he",
+   "id": "pertama, kedua"
+  },
+  {
+   "uk": "з одного́ бо́ку",
+   "baca": "z od-no-HO BO-ku",
+   "id": "di satu sisi"
+  },
+  {
+   "uk": "при́наймні",
+   "baca": "PRY-naym-ni",
+   "id": "setidaknya"
+  },
+  {
+   "uk": "все одно́",
+   "baca": "vse od-NO",
+   "id": "tetap saja"
+  },
+  {
+   "uk": "що́до",
+   "baca": "SHCHO-do",
+   "id": "mengenai, soal (+ gen.)"
+  },
+  {
+   "uk": "навпаки́",
+   "baca": "nav-pa-KY",
+   "id": "sebaliknya, justru"
+  },
+  {
+   "uk": "ма́ти на ува́зі",
+   "baca": "MA-ty na u-VA-zi",
+   "id": "memaksudkan (*що ти маєш на увазі?*)"
+  },
+  {
+   "uk": "помиля́тися / помили́тися",
+   "baca": "po-my-LYA-ty-sya / po-my-LY-ty-sya",
+   "id": "keliru, salah"
+  },
+  {
+   "uk": "оре́нда",
+   "baca": "o-REN-da",
+   "id": "sewa"
+  },
+  {
+   "uk": "примі́щення",
+   "baca": "pry-MI-shchen-nya",
+   "id": "ruangan, tempat usaha"
+  },
+  {
+   "uk": "обла́днання",
+   "baca": "o-BLAD-nan-nya",
+   "id": "peralatan"
+  },
+  {
+   "uk": "розраху́нок",
+   "baca": "roz-ra-KHU-nok",
+   "id": "perhitungan"
+  },
+  {
+   "uk": "зарпла́та",
+   "baca": "zar-PLA-ta",
+   "id": "gaji"
+  },
+  {
+   "uk": "пості́йний кліє́нт",
+   "baca": "pos-TIY-nyy kli-YENT",
+   "id": "pelanggan tetap"
+  },
+  {
+   "uk": "мере́жа",
+   "baca": "me-RE-zha",
+   "id": "jaringan (usaha)"
+  },
+  {
+   "uk": "одно́часно",
+   "baca": "od-NO-chas-no",
+   "id": "sekaligus, bersamaan"
+  },
+  {
+   "uk": "компромі́с",
+   "baca": "kom-pro-MIS",
+   "id": "kompromi"
+  },
+  {
+   "uk": "підтри́мувати / підтри́мати",
+   "baca": "pid-TRY-mu-va-ty / pid-TRY-ma-ty",
+   "id": "mendukung"
+  }
+ ],
+ "exercises": [
+  {
+   "prompt": "Terjemahkan ke bahasa Ukraina.",
+   "items": [
+    "Menurut saya, sudah waktunya.",
+    "Saya berpendapat tidak perlu terburu-buru.",
+    "Di satu sisi, di sana turisnya lebih sedikit; di sisi lain, pelanggan tetapnya lebih banyak.",
+    "Izinkan saya membantah.",
+    "Dia benar soal sewa, tapi tidak soal waktunya.",
+    "Maksudmu apa?"
+   ]
+  },
+  {
+   "prompt": "Isi titik-titik dengan kata yang tepat. Petunjuk ada di dalam kurung.",
+   "items": [
+    "____ мою думку, час настав. (menurut)",
+    "По-перше, ми ледве встигаємо. ____, оренда дорога. (kedua)",
+    "З одного боку, це дорого. З ____ боку, це вигідно. (lain)",
+    "Він має ____ щодо оренди. (kebenaran)",
+    "Я з тобою ____. (setuju, perempuan)",
+    "Як на ____, треба почекати. (aku)",
+    "Я все одно ____, принаймні до літа. (menentang)"
+   ]
+  },
+  {
+   "prompt": "Perbaiki rusisme dalam kalimat berikut dengan bentuk Ukraina yang baku.",
+   "items": [
+    "Я считаю, що треба почекати.",
+    "Ти прав, це дорого.",
+    "Я согласна з тобою.",
+    "Оренда являється головною проблемою.",
+    "Ми приймемо участь у нараді.",
+    "Вірно, треба все порахувати."
+   ]
+  },
+  {
+   "prompt": "Susun jadi kalimat yang benar.",
+   "items": [
+    "думку / на / час настав / мою",
+    "що / поспішати / я вважаю / не треба",
+    "з одного боку / там менше / туристів",
+    "все одно / я / проти / принаймні до літа",
+    "має рацію / він / щодо оренди"
+   ]
+  }
+ ],
+ "answers": [
+  "На мою думку, час настав. — Я вважаю, що поспішати не треба. — З одного боку, там менше туристів; з іншого, більше постійних клієнтів. — Дозвольте заперечити. — Він має рацію щодо оренди, але не щодо часу. — Що ти маєш на увазі?",
+  "На — По-друге — іншого — рацію — згодна — мене — проти",
+  "Я вважаю, що треба почекати. — Ти маєш рацію, це дорого. — Я згодна з тобою. — Оренда є головною проблемою. — Ми візьмемо участь у нараді. — Правильно, треба все порахувати.",
+  "На мою думку, час настав. — Я вважаю, що поспішати не треба. — З одного боку, там менше туристів. — Я все одно проти, принаймні до літа. — Він має рацію щодо оренди."
+ ]
+}

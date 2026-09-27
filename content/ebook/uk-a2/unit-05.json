@@ -1,0 +1,682 @@
+{
+ "title": "PR Taras dan taman bermain — sapi, kucing, dan teman sekelas",
+ "title_target": "Кого ти бачиш на фермі?",
+ "goal": "Menyebut makhluk hidup dalam jamak sebagai objek dengan akusatif bernyawa (*бачу корів, люблю котів, знаю тих хлопців*) dan membedakannya dari benda (*бачу трактори, книжки*).",
+ "bekal": [
+  "kamu bisa bertanya *кого?* untuk manusia dan hewan, *що?* untuk benda",
+  "kamu bisa memakai akusatif jamak bernyawa yang sama dengan genitif jamak: *бачу корів, коней, качок*",
+  "kamu bisa menyesuaikan kata sifat dan penunjuk: *тих великих собак* tetapi *ті великі дерева*"
+ ],
+ "dialogs": [
+  {
+   "title": "Діалог 1 — Pekerjaan rumah Taras",
+   "intro": "Sabtu, 20 Februari 2027, pukul dua siang, di meja dapur pani Halyna. Taras mendapat tugas bahasa Ukraina: mendeskripsikan gambar sebuah peternakan. Ia minta tolong Ani, yang baru saja pulang dari shift pagi. Perhatikan pertanyaan *кого?* dan apa yang terjadi pada nama-nama hewan sesudah *бачу*.",
+   "lines": [
+    {
+     "speaker": "Тарас:",
+     "text": "[Ані|A-ni], [допоможи|do-po-mo-ZHY] [мені|me-NI], [будь|bud'] [ласка|LAS-ka]! [У|U] [мене|ME-ne] [завдання|zav-DAN-nya] [з|z] [української|u-kra-YIN-s'ko-yi].",
+     "id": "Ani, tolong bantu aku dong! Aku ada PR bahasa Ukraina.",
+     "literal": "Ani, bantulah‹selesai› aku (dat.), silakan! pada aku tugas dari bahasa-Ukraina (gen.)."
+    },
+    {
+     "speaker": "Ані:",
+     "text": "[Звичайно|Zvy-CHAY-no], [Тарасе|Ta-RA-se]. [Що|Shcho] [треба|TRE-ba] [робити|ro-BY-ty]?",
+     "id": "Tentu, Taras. Harus ngapain?",
+     "literal": "tentu, Taras (vok.). apa perlu melakukan‹proses›?"
+    },
+    {
+     "speaker": "Тарас:",
+     "text": "[Описати|O-py-SA-ty] [картинку|kar-TYN-ku]. [Питання|Py-TAN-nya] [таке|ta-KE]: «[Кого|Ko-HO] [ти|ty] [бачиш|BA-chysh] [на|na] [фермі|FER-mi]?»",
+     "id": "Mendeskripsikan gambar. Pertanyaannya begini: \"Siapa saja yang kamu lihat di peternakan?\"",
+     "literal": "mendeskripsikan‹selesai› gambar (ak.). pertanyaan begini: siapa (ak.) kamu melihat di peternakan (lok.)?"
+    },
+    {
+     "speaker": "Ані:",
+     "text": "[Давай|Da-VAY] [разом|RA-zom]. [Кого|Ko-HO] [ти|ty] [бачиш|BA-chysh]?",
+     "id": "Ayo kita kerjakan bareng. Kamu lihat siapa saja?",
+     "literal": "ayo bersama. siapa (ak.) kamu melihat?"
+    },
+    {
+     "speaker": "Тарас:",
+     "text": "[Я|Ya] [бачу|BA-chu] [корови|ko-RO-vy], [коні|KO-ni] [й|y] [качки|KACH-ky].",
+     "id": "Aku lihat sapi, kuda, dan bebek.",
+     "literal": "saya melihat sapi-sapi (nom.) kuda-kuda (nom.) dan bebek-bebek (nom.)."
+    },
+    {
+     "speaker": "Ані:",
+     "text": "[Майже|MAY-zhe] [правильно|PRA-vyl'-no]. [Але|A-LE] [корови|ko-RO-vy] [живі|zhy-VI], [тому|to-MU] [кажемо|KA-zhe-mo] «[корів|ko-RIV]».",
+     "id": "Hampir benar. Tapi sapi itu makhluk hidup, jadi kita bilang \"корів\".",
+     "literal": "hampir benar. tapi sapi-sapi hidup (jamak), karena-itu kita-berkata корів (ak.)."
+    },
+    {
+     "speaker": "Тарас:",
+     "text": "[Ой|Oy]! [То|To] [я|ya] [бачу|BA-chu] [корів|ko-RIV], [коней|ko-NEY] [і|i] [качок|KA-chok]?",
+     "id": "Oh! Jadi aku lihat sapi, kuda, dan bebek?",
+     "literal": "oh! jadi saya melihat sapi-sapi (ak.) kuda-kuda (ak.) dan bebek-bebek (ak.)?"
+    },
+    {
+     "speaker": "Ані:",
+     "text": "[Так|Tak], [правильно|PRA-vyl'-no]! [А|A] [що|shcho] [ще|shche] [є|ye] [на|na] [картинці|kar-TYN-tsi]?",
+     "id": "Iya, benar! Terus apa lagi yang ada di gambar?",
+     "literal": "ya, benar! dan apa lagi ada di gambar (lok.)?"
+    },
+    {
+     "speaker": "Тарас:",
+     "text": "[Трактор|TRAK-tor], [дерева|de-RE-va] [й|y] [соняшники|so-NYASH-ny-ky]. [Їх|Yikh] [також|ta-KOZH] [треба|TRE-ba] [міняти|mi-NYA-ty]?",
+     "id": "Traktor, pohon-pohon, dan bunga matahari. Itu juga harus diubah?",
+     "literal": "traktor, pohon-pohon dan bunga-matahari (jamak). mereka (ak.) juga perlu mengubah‹proses›?"
+    },
+    {
+     "speaker": "Ані:",
+     "text": "[Ні|Ni], [вони|vo-NY] [неживі|ne-zhy-VI]. [Я|Ya] [бачу|BA-chu] [трактор|TRAK-tor], [дерева|de-RE-va] [й|y] [соняшники|so-NYASH-ny-ky].",
+     "id": "Nggak, itu bukan makhluk hidup. Aku lihat traktor, pohon, dan bunga matahari.",
+     "literal": "tidak, mereka tak-bernyawa. saya melihat traktor (ak.) pohon-pohon (ak.) dan bunga-matahari (ak.)."
+    },
+    {
+     "speaker": "Тарас:",
+     "text": "[А|A] [на|na] [даху|DA-khu] [сидять|sy-DYAT'] [коти|ko-TY] [й|y] [кішки|KISH-ky].",
+     "id": "Terus di atap ada kucing-kucing jantan dan betina.",
+     "literal": "dan di atap (lok.) duduk kucing-jantan (jamak) dan kucing-betina (jamak)."
+    },
+    {
+     "speaker": "Ані:",
+     "text": "[Значить|ZNA-chyt'], [ти|ty] [бачиш|BA-chysh] [котів|ko-TIV] [і|i] [кішок|KI-shok]. [Молодець|Mo-lo-DETS']!",
+     "id": "Berarti kamu lihat kucing jantan dan kucing betina. Pintar!",
+     "literal": "berarti, kamu melihat kucing-jantan (ak. jamak) dan kucing-betina (ak. jamak). anak-pintar!"
+    },
+    {
+     "speaker": "Тарас:",
+     "text": "[Ура|U-RA]! [А|A] [тепер|te-PER] [ходімо|kho-DI-mo] [на|na] [дитячий|dy-TYA-chyy] [майданчик|may-DAN-chyk]?",
+     "id": "Hore! Sekarang kita ke taman bermain, yuk?",
+     "literal": "hore! dan sekarang mari-pergi ke anak-anak (sifat) lapangan-kecil (ak.)?"
+    },
+    {
+     "speaker": "Ані:",
+     "text": "[Спершу|SPER-shu] [допиши|do-py-SHY] [речення|RE-chen-nya], [а|a] [потім|PO-tim] [ходімо|kho-DI-mo].",
+     "id": "Selesaikan dulu kalimatnya, habis itu kita pergi.",
+     "literal": "mula-mula tulis-sampai-habis‹selesai› kalimat-kalimat, dan kemudian mari-pergi."
+    }
+   ],
+   "notes": [
+    "**Завдання з української.** *Завдання* berarti tugas; PR lengkapnya *домашнє завдання*. *З української* adalah kependekan dari *з української мови*: pelajaran bahasa Ukraina. Mata pelajaran selalu memakai *з* + genitif: *завдання з математики, урок з історії*. Kata *задача* khusus untuk soal hitungan.",
+    "**Кого ти бачиш?** Kata tanya *кого* (siapa, akusatif) dipakai untuk semua makhluk hidup, termasuk hewan: *Кого ти бачиш? Корів.* Untuk benda dipakai *що*: *Що ти бачиш? Трактор.* Bahasa Indonesia cukup bertanya \"lihat apa?\" untuk sapi maupun traktor, jadi penutur Indonesia sering keliru memakai *що* untuk hewan.",
+    "**Бачу корів, коней і качок.** Inilah inti unit ini. Dalam jamak, kata benda bernyawa (manusia DAN hewan) memakai akusatif yang bentuknya sama persis dengan genitif jamak: *корови → корів, коні → коней, качки → качок*. Kamu sudah kenal bentuk-bentuk ini dari Unit 2 (*багато кімнат, немає сусідів*); kini bentuk yang sama muncul sesudah *бачу, люблю, знаю, чекаю*.",
+    "**Вони неживі.** *Живий* = hidup, *неживий* = tak bernyawa. Untuk benda, akusatif jamak sama dengan nominatif: *бачу трактори, дерева, соняшники*. Jadi pertanyaan kuncinya selalu: hidup atau tidak? Tumbuhan dianggap tak bernyawa secara tata bahasa, jadi *бачу соняшники*, bukan *соняшників*.",
+    "**Коти й кішки.** *Кіт* adalah kucing jantan atau kucing secara umum, *кішка* kucing betina. Akusatif jamaknya *котів* dan *кішок*. *Кіт* termasuk kata dengan pergantian vokal *і → о*: *кіт, кота, коти*, sama seperti *кінь, коня, коні*. Akhiran *-ів* pada *котів* dibaca *ko-TIV*, dengan tekanan di akhir.",
+    "**Допиши речення.** Awalan *до-* pada *дописати* berarti menuntaskan sampai habis: tulis sampai selesai. *Молодець!* (pintar, hebat) adalah pujian paling umum untuk anak, dan bentuknya tidak berubah untuk laki-laki maupun perempuan: Taras *молодець*, Dina juga *молодець*. *Ходімо* = ayo kita pergi."
+   ],
+   "grammars": [
+    {
+     "title": "Akusatif jamak: hidup atau tidak?",
+     "body": [
+      "Sebelum memilih bentuk akusatif jamak, tanyakan satu hal: apakah kata ini menunjuk makhluk hidup? Kalau ya, pakai bentuk genitif jamak. Kalau tidak, pakai bentuk nominatif jamak. Aturan ini berlaku untuk semua jenis kelamin."
+     ],
+     "table": {
+      "head": [
+       "Nominatif jamak",
+       "Akusatif jamak",
+       "Jenis"
+      ],
+      "rows": [
+       [
+        "корови",
+        "(бачу) корів",
+        "bernyawa"
+       ],
+       [
+        "коні",
+        "(бачу) коней",
+        "bernyawa"
+       ],
+       [
+        "качки",
+        "(бачу) качок",
+        "bernyawa"
+       ],
+       [
+        "студенти",
+        "(бачу) студентів",
+        "bernyawa"
+       ],
+       [
+        "люди",
+        "(бачу) людей",
+        "bernyawa"
+       ],
+       [
+        "трактори",
+        "(бачу) трактори",
+        "tak bernyawa"
+       ],
+       [
+        "книжки",
+        "(бачу) книжки",
+        "tak bernyawa"
+       ],
+       [
+        "дерева",
+        "(бачу) дерева",
+        "tak bernyawa"
+       ]
+      ]
+     },
+     "after": [
+      "Pada tunggal, aturan bernyawa hanya berlaku untuk maskulin: *бачу брата, кота*, tetapi *бачу маму, корову* dengan ekor *-у/-ю*. Pada jamak aturannya berlaku untuk maskulin, feminin, dan netral sekaligus."
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Діалог 2 — Di taman bermain",
+   "intro": "Pukul empat sore di hari yang sama, di taman bermain dekat rumah pani Halyna. Salju sudah mencair sebagian, dan anak-anak sekolah ramai bermain. Perhatikan kata penunjuk dan kata sifat di depan kata benda bernyawa: *тих хлопців, тих великих собак, моїх друзів*.",
+   "lines": [
+    {
+     "speaker": "Тарас:",
+     "text": "[Диви|Dy-VY], [Ані|A-ni]! [Я|Ya] [знаю|ZNA-yu] [тих|tykh] [хлопців|KHLOP-tsiv], [це|tse] [мої|mo-YI] [однокласники|od-no-KLAS-ny-ky].",
+     "id": "Lihat, Ani! Aku kenal anak-anak itu, mereka teman sekelasku.",
+     "literal": "lihat, Ani! saya mengenal itu (ak. jamak) anak-laki-laki (ak. jamak), ini milikku (jamak) teman-sekelas."
+    },
+    {
+     "speaker": "Ані:",
+     "text": "[А|A] [тих|tykh] [дівчат|div-CHAT] [біля|BI-lya] [гойдалок|hoy-DA-lok] [ти|ty] [теж|tezh] [знаєш|ZNA-yesh]?",
+     "id": "Terus anak-anak perempuan di dekat ayunan itu kamu kenal juga?",
+     "literal": "dan itu (ak. jamak) anak-perempuan (ak. jamak) dekat ayunan-ayunan (gen.) kamu juga mengenal?"
+    },
+    {
+     "speaker": "Тарас:",
+     "text": "[Ні|Ni], [не|ne] [знаю|ZNA-yu]. [Ой|Oy], [а|a] [ти|ty] [бачиш|BA-chysh] [тих|tykh] [великих|ve-LY-kykh] [собак|so-BAK]?",
+     "id": "Nggak kenal. Eh, kamu lihat anjing-anjing besar itu?",
+     "literal": "tidak, tidak mengenal. oh, dan kamu melihat itu (ak. jamak) besar (ak. jamak) anjing-anjing (ak.)?"
+    },
+    {
+     "speaker": "Ані:",
+     "text": "[Бачу|BA-chu]. [Не|Ne] [бійся|BIY-sya], [вони|vo-NY] [з|z] [господарями|hos-po-da-RYA-my].",
+     "id": "Lihat. Jangan takut, mereka bersama pemiliknya.",
+     "literal": "melihat. jangan takut, mereka dengan pemilik-pemilik (ins.)."
+    },
+    {
+     "speaker": "Тарас:",
+     "text": "[Я|Ya] [не|ne] [боюся|bo-YU-sya]! [Я|Ya] [люблю|lyu-BLYU] [собак|so-BAK]. [І|I] [котів|ko-TIV], [і|i] [голубів|ho-lu-BIV].",
+     "id": "Aku nggak takut! Aku suka anjing. Kucing juga, merpati juga.",
+     "literal": "saya tidak takut! saya mencintai anjing-anjing (ak.). dan kucing-kucing (ak.), dan merpati-merpati (ak.)."
+    },
+    {
+     "speaker": "Ані:",
+     "text": "[Тоді|To-DI] [ходімо|kho-DI-mo] [годувати|ho-DU-va-ty] [голубів|ho-lu-BIV]. [У|U] [мене|ME-ne] [є|ye] [насіння|na-SIN-nya].",
+     "id": "Kalau gitu ayo kasih makan merpati. Aku punya biji-bijian.",
+     "literal": "kalau-begitu mari-pergi memberi-makan‹proses› merpati-merpati (ak.). pada aku ada biji-bijian."
+    },
+    {
+     "speaker": "Тарас:",
+     "text": "[Класно|KLAS-no]! [А|A] [можна|MOZH-na] [покликати|po-KLY-ka-ty] [моїх|mo-YIKH] [друзів|DRU-ziv]?",
+     "id": "Asyik! Boleh aku panggil teman-temanku?",
+     "literal": "keren! dan boleh memanggil‹selesai› milikku (ak. jamak) teman-teman (ak.)?"
+    },
+    {
+     "speaker": "Ані:",
+     "text": "[Звичайно|Zvy-CHAY-no], [клич|klych] [усіх|u-SIKH]!",
+     "id": "Tentu, panggil semuanya!",
+     "literal": "tentu, panggillah semua (ak. jamak)!"
+    },
+    {
+     "speaker": "Тарас:",
+     "text": "[Хлопці|KHLOP-tsi], [сюди|syu-DY]! [Ми|My] [годуємо|ho-DU-ye-mo] [голубів|ho-lu-BIV]!",
+     "id": "Teman-teman, sini! Kita kasih makan merpati!",
+     "literal": "anak-anak-laki-laki, ke-sini! kami memberi-makan merpati-merpati (ak.)!"
+    },
+    {
+     "speaker": "Ані:",
+     "text": "[Ой|Oy], [скільки|SKIL'-ky] [голубів|ho-lu-BIV]! [Тільки|TIL'-ky] [не|ne] [лякай|lya-KAY] [птахів|pta-KHIV], [Тарасе|Ta-RA-se].",
+     "id": "Wah, banyak sekali merpatinya! Tapi jangan bikin burung-burungnya kaget, Taras.",
+     "literal": "oh, berapa-banyak merpati-merpati (gen.)! hanya jangan menakuti‹proses› burung-burung (ak.), Taras (vok.)."
+    },
+    {
+     "speaker": "Тарас:",
+     "text": "[Не|Ne] [буду|BU-du]! [Сфотографуй|Sfo-to-hra-FUY] [нас|nas] [і|i] [птахів|pta-KHIV] [для|dlya] [бабусі|ba-BU-si]!",
+     "id": "Nggak akan! Fotoin kami dan burung-burungnya buat nenek!",
+     "literal": "tidak akan! potretlah‹selesai› kami (ak.) dan burung-burung (ak.) untuk nenek (gen.)!"
+    }
+   ],
+   "notes": [
+    "**Диви!** Bentuk lisan pendek dari *дивись* (lihat!). Anak-anak dan teman akrab memakainya terus-menerus. Dalam *Я знаю тих хлопців*, bentuk nominatif *ті хлопці* berubah menjadi *тих хлопців*: kata penunjuk *той / та / те* ikut memakai bentuk genitif jamak di depan kata benda bernyawa.",
+    "**Однокласники.** Teman sekelas di sekolah (*однокласник, однокласниця*). Untuk teman sekelompok di kursus atau kampus orang biasanya berkata *одногрупник*. Awalan *одно-* berarti satu, sama: *одно + клас*, persis seperti \"se-\" dalam \"sekelas\".",
+    "**Тих дівчат біля гойдалок.** *Дівчата* (anak-anak perempuan) punya akusatif *дівчат*; *діти* punya *дітей*. *Біля* selalu diikuti genitif: *біля гойдалок* (gen. jamak dari *гойдалка*). Jadi dalam satu kalimat ada dua bentuk genitif jamak, tetapi alasannya berbeda: yang satu karena bernyawa, yang lain karena kata depan.",
+    "**Тих великих собак.** Kata sifat juga ikut aturan hidup / tak hidup: *бачу великих собак*, tetapi *бачу великі дерева*. Perhatikan: *собака* dalam bahasa Ukraina maskulin (*великий собака*) walaupun berakhir -а. Pelajar yang pernah belajar bahasa Rusia sering terjebak, karena di sana kata ini feminin.",
+    "**Я люблю собак. І котів, і голубів.** *Любити* + akusatif. Kalau berbicara tentang hewan secara umum, orang Ukraina memakai jamak: *я люблю котів* (aku suka kucing). Bahasa Indonesia tidak menandai jamak di sini, jadi kamu harus ingat dua hal sekaligus: menjamakkan DAN memakai akusatif bernyawa. *І … і* berarti \"baik … maupun\".",
+    "**Не лякай птахів.** Larangan memakai aspek tak sempurna, seperti yang akan kamu pelajari lebih dalam di Unit 12. *Птах* (burung) jamaknya *птахи*, akusatifnya *птахів*. Dalam *Сфотографуй нас* ada *нас*: kata ganti orang punya akusatifnya sendiri (*мене, тебе, його, її, нас, вас, їх*), dan untuk jamak *їх* dipakai baik untuk orang maupun benda."
+   ],
+   "grammars": [
+    {
+     "title": "Penunjuk dan kata sifat di akusatif jamak",
+     "body": [
+      "Kata yang menemani kata benda ikut aturan yang sama: di depan kata benda bernyawa ia memakai ekor genitif jamak *-их / -іх*, di depan benda ia tetap seperti nominatif."
+     ],
+     "table": {
+      "head": [
+       "Kata",
+       "Bernyawa",
+       "Tak bernyawa"
+      ],
+      "rows": [
+       [
+        "той, та, те",
+        "тих хлопців",
+        "ті гойдалки"
+       ],
+       [
+        "цей, ця, це",
+        "цих дівчат",
+        "ці книжки"
+       ],
+       [
+        "мій, моя, моє",
+        "моїх друзів",
+        "мої м'ячі"
+       ],
+       [
+        "великий",
+        "великих собак",
+        "великі дерева"
+       ],
+       [
+        "новий",
+        "нових учнів",
+        "нові зошити"
+       ],
+       [
+        "весь, вся, все",
+        "усіх дітей",
+        "усі уроки"
+       ]
+      ]
+     },
+     "after": [
+      "Ekor *-их / -іх* ini sama dengan genitif jamak kata sifat dan sama untuk semua jenis kelamin. Satu bentuk, tiga jenis: itulah kabar baiknya."
+     ]
+    }
+   ]
+  }
+ ],
+ "sections": [
+  {
+   "title": "Sekolah Taras: початкова школа",
+   "blocks": [
+    {
+     "type": "p",
+     "text": "Anak-anak Ukraina bersekolah mulai umur enam tahun. Kelas 1 sampai 4 disebut *початкова школа* (sekolah dasar), dan sejak 2018 memakai program *Нова українська школа* (НУШ) yang lebih banyak bermain, berdiskusi, dan bekerja berkelompok. Taras duduk di kelas 4, tahun terakhir sekolah dasarnya. Di kelas-kelas awal penilaian lebih banyak berupa komentar; mulai kelas 5 dipakai skala nilai 1 sampai 12, dengan 12 sebagai nilai tertinggi. Kosakata berikut sering terdengar di dapur pani Halyna setiap sore."
+    },
+    {
+     "type": "tabel",
+     "head": [
+      "Ukraina",
+      "Indonesia"
+     ],
+     "rows": [
+      [
+       "урок",
+       "jam pelajaran"
+      ],
+      [
+       "перерва",
+       "istirahat (di antara pelajaran)"
+      ],
+      [
+       "домашнє завдання",
+       "pekerjaan rumah, PR"
+      ],
+      [
+       "зошит",
+       "buku tulis"
+      ],
+      [
+       "підручник",
+       "buku pelajaran"
+      ],
+      [
+       "щоденник",
+       "buku harian sekolah, buku penghubung"
+      ],
+      [
+       "вчителька / вчитель",
+       "guru (pr / lk)"
+      ],
+      [
+       "оцінка",
+       "nilai"
+      ],
+      [
+       "канікули",
+       "libur sekolah"
+      ],
+      [
+       "дзвоник",
+       "bel sekolah"
+      ]
+     ]
+    },
+    {
+     "type": "kotak",
+     "title": "Mata pelajaran Taras",
+     "items": [
+      "*українська мова* (bahasa Ukraina) dan *літературне читання* (membaca sastra)",
+      "*математика* dan *англійська мова*",
+      "*Я досліджую світ* (\"Aku menjelajahi dunia\"), pelajaran terpadu tentang alam dan masyarakat",
+      "*фізкультура* (olahraga), *мистецтво* (seni)"
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Hewan di desa dan di halaman",
+   "blocks": [
+    {
+     "type": "p",
+     "text": "Gambar peternakan di PR Taras bukan kebetulan: banyak keluarga di Kyiv masih punya kakek-nenek di desa, dan anak-anak menghabiskan musim panas di sana di antara sapi dan bebek. Tabel ini memperlihatkan hewan-hewan paling umum dalam tiga bentuk. Kolom terakhir adalah bentuk yang kamu pakai sesudah *бачу, люблю, годую*. Beberapa di antaranya tidak beraturan, jadi layak dihafal."
+    },
+    {
+     "type": "tabel",
+     "head": [
+      "Tunggal",
+      "Jamak",
+      "Akusatif jamak",
+      "Indonesia"
+     ],
+     "rows": [
+      [
+       "корова",
+       "корови",
+       "корів",
+       "sapi"
+      ],
+      [
+       "кінь",
+       "коні",
+       "коней",
+       "kuda"
+      ],
+      [
+       "свиня",
+       "свині",
+       "свиней",
+       "babi"
+      ],
+      [
+       "вівця",
+       "вівці",
+       "овець",
+       "domba"
+      ],
+      [
+       "коза",
+       "кози",
+       "кіз",
+       "kambing"
+      ],
+      [
+       "качка",
+       "качки",
+       "качок",
+       "bebek"
+      ],
+      [
+       "гуска",
+       "гуси",
+       "гусей",
+       "angsa (ternak)"
+      ],
+      [
+       "собака",
+       "собаки",
+       "собак",
+       "anjing"
+      ],
+      [
+       "кіт",
+       "коти",
+       "котів",
+       "kucing"
+      ],
+      [
+       "птах",
+       "птахи",
+       "птахів",
+       "burung"
+      ]
+     ]
+    },
+    {
+     "type": "kotak",
+     "title": "Suara hewan dalam bahasa Ukraina",
+     "items": [
+      "*Гав-гав!* anjing, *Няв!* kucing, *Му-у!* sapi",
+      "*Кукуріку!* ayam jantan, *Кря-кря!* bebek, *Іго-го!* kuda",
+      "Kata kerjanya: *собака гавкає, кішка нявкає, корова мукає*"
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Ulangan berjenjang — unit 3",
+   "blocks": [
+    {
+     "type": "p",
+     "text": "Tutup kolom Ukraina, baca terjemahan Indonesianya, lalu susun kembali kalimatnya dari ingatan."
+    },
+    {
+     "type": "tabel",
+     "head": [
+      "Bahasa Indonesia",
+      "Українська",
+      "Baca"
+     ],
+     "rows": [
+      [
+       "Bikin kopi, terima pesanan, kadang-kadang bikin kue.",
+       "Готовила каву, приймала замовлення, часом пекла тистечка.",
+       "*Ho-TO-vy-la KA-vu pryy-MA-la za-MO-vlen-nya CHA-som pe-KLA TYS-tech-ka*"
+      ],
+      [
+       "Besok juga bisa! Saya sudah baca menu Anda di situs.",
+       "Хоч завтра! Я вже прочитала ваше меню на сайті.",
+       "*Khoch ZAV-tra Ya vzhe pro-chy-TA-la VA-she me-NYU na SAY-ti*"
+      ],
+      [
+       "Iya! Maksym barusan menerima aku kerja.",
+       "Так! Максим щойно взяв мене на роботу.",
+       "*Tak Mak-SYM SHCHOY-no vzyav me-NE na ro-BO-tu*"
+      ],
+      [
+       "Tadi pagi beres-beres dua jam. Tapi piringnya belum kucuci.",
+       "Прибирала вранці дві години. А ось посуд ще не помила.",
+       "*Pry-by-RA-la VRAN-tsi dvi ho-DY-ny A os' PO-sud shche ne po-MY-la*"
+      ],
+      [
+       "Nggak apa-apa. Aku juga awalnya sering mecahin cangkir dan numpahin susu. Terus akhirnya bisa!",
+       "Нічого. Я теж спершу розбивала чашки й розливала молоко. А потім навчилася!",
+       "*Ni-CHO-ho Ya tezh SPER-shu roz-by-VA-la CHASH-ky y roz-ly-VA-la mo-lo-KO A PO-tim nav-CHY-la-sya*"
+      ]
+     ]
+    }
+   ]
+  }
+ ],
+ "vocab": [
+  {
+   "uk": "завда́ння",
+   "baca": "zav-DAN-nya",
+   "id": "tugas; *домашнє завдання* = PR"
+  },
+  {
+   "uk": "карти́нка",
+   "baca": "kar-TYN-ka",
+   "id": "gambar"
+  },
+  {
+   "uk": "фе́рма",
+   "baca": "FER-ma",
+   "id": "peternakan, pertanian"
+  },
+  {
+   "uk": "коро́ва",
+   "baca": "ko-RO-va",
+   "id": "sapi (ak. jamak *корів*)"
+  },
+  {
+   "uk": "кінь (pl. ко́ні)",
+   "baca": "kin'",
+   "id": "kuda (ak. jamak *коней*)"
+  },
+  {
+   "uk": "ка́чка",
+   "baca": "KACH-ka",
+   "id": "bebek"
+  },
+  {
+   "uk": "кіт / кі́шка",
+   "baca": "kit / KISH-ka",
+   "id": "kucing (jantan / betina)"
+  },
+  {
+   "uk": "соба́ка",
+   "baca": "so-BA-ka",
+   "id": "anjing (maskulin!)"
+  },
+  {
+   "uk": "го́луб",
+   "baca": "HO-lub",
+   "id": "merpati"
+  },
+  {
+   "uk": "птах (pl. птахи́)",
+   "baca": "ptakh",
+   "id": "burung"
+  },
+  {
+   "uk": "соня́шник",
+   "baca": "so-NYASH-nyk",
+   "id": "bunga matahari"
+  },
+  {
+   "uk": "тра́ктор",
+   "baca": "TRAK-tor",
+   "id": "traktor"
+  },
+  {
+   "uk": "живи́й",
+   "baca": "zhy-VYY",
+   "id": "hidup, bernyawa"
+  },
+  {
+   "uk": "неживи́й",
+   "baca": "ne-zhy-VYY",
+   "id": "tak bernyawa"
+  },
+  {
+   "uk": "однокла́сник / однокла́сниця",
+   "baca": "od-no-KLAS-nyk / od-no-KLAS-ny-tsya",
+   "id": "teman sekelas (lk / pr)"
+  },
+  {
+   "uk": "дитя́чий майда́нчик",
+   "baca": "dy-TYA-chyy may-DAN-chyk",
+   "id": "taman bermain anak"
+  },
+  {
+   "uk": "гойда́лка",
+   "baca": "hoy-DAL-ka",
+   "id": "ayunan"
+  },
+  {
+   "uk": "ре́чення",
+   "baca": "RE-chen-nya",
+   "id": "kalimat"
+  },
+  {
+   "uk": "насі́ння",
+   "baca": "na-SIN-nya",
+   "id": "biji-bijian (untuk ditabur, dimakan burung)"
+  },
+  {
+   "uk": "господа́р",
+   "baca": "hos-po-DAR",
+   "id": "pemilik, tuan rumah"
+  },
+  {
+   "uk": "опи́сувати / описа́ти",
+   "baca": "o-PY-su-va-ty / o-py-SA-ty",
+   "id": "mendeskripsikan"
+  },
+  {
+   "uk": "году́вати / нагодува́ти",
+   "baca": "ho-DU-va-ty / na-ho-du-VA-ty",
+   "id": "memberi makan"
+  },
+  {
+   "uk": "ляка́ти / наляка́ти",
+   "baca": "lya-KA-ty / na-lya-KA-ty",
+   "id": "menakuti, membuat kaget"
+  },
+  {
+   "uk": "кли́кати / покли́кати",
+   "baca": "KLY-ka-ty / po-KLY-ka-ty",
+   "id": "memanggil"
+  },
+  {
+   "uk": "боя́тися",
+   "baca": "bo-YA-ty-sya",
+   "id": "takut (*не бійся* = jangan takut)"
+  }
+ ],
+ "exercises": [
+  {
+   "prompt": "Terjemahkan ke bahasa Ukraina.",
+   "items": [
+    "Aku lihat sapi dan kuda.",
+    "Aku kenal anak-anak laki-laki itu.",
+    "Kamu lihat anjing-anjing besar itu?",
+    "Aku suka kucing.",
+    "Ayo kita kasih makan merpati.",
+    "Aku lihat traktor dan pohon-pohon."
+   ]
+  },
+  {
+   "prompt": "Isi titik-titik dengan akusatif jamak dari kata dalam kurung.",
+   "items": [
+    "Тарас бачить ____ на фермі. (корови)",
+    "Я люблю ____. (собаки)",
+    "Ми годуємо ____. (голуби)",
+    "Ані купила ____. (книжки)",
+    "Ти знаєш ____? (ці дівчата)",
+    "Бабуся запросила ____. (мої друзі)",
+    "Я бачу ____ на дереві. (птахи)"
+   ]
+  },
+  {
+   "prompt": "Jawab pertanyaan dengan kata dalam kurung.",
+   "items": [
+    "Кого ти бачиш? (коні)",
+    "Що ти бачиш? (трактори)",
+    "Кого ти любиш? (коти)",
+    "Кого ти знаєш? (ці хлопці)",
+    "Що ти читаєш? (казки)",
+    "Кого ти годуєш? (качки)"
+   ]
+  },
+  {
+   "prompt": "Susun jadi kalimat yang benar.",
+   "items": [
+    "бачу / корів / я / коней / і",
+    "знаю / тих / я / хлопців",
+    "годувати / ходімо / голубів",
+    "бачиш / великих / ти / тих / собак",
+    "птахів / не / лякай"
+   ]
+  }
+ ],
+ "answers": [
+  "Я бачу корів і коней. — Я знаю тих хлопців. — Ти бачиш тих великих собак? — Я люблю котів. — Ходімо годувати голубів. — Я бачу трактори й дерева.",
+  "корів — собак — голубів — книжки — цих дівчат — моїх друзів — птахів",
+  "Я бачу коней. — Я бачу трактори. — Я люблю котів. — Я знаю цих хлопців. — Я читаю казки. — Я годую качок.",
+  "Я бачу корів і коней. — Я знаю тих хлопців. — Ходімо годувати голубів. — Ти бачиш тих великих собак? — Не лякай птахів."
+ ]
+}
