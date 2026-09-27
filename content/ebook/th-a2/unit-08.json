@@ -1,0 +1,661 @@
+{
+ "title": "Menyuruh, membiarkan, melakukan untuk orang lain — ให้",
+ "title_target": "ให้ — Hâi",
+ "goal": "Memakai ให้ untuk menyuruh, meminta, dan membiarkan orang lain berbuat sesuatu, lalu untuk mengerjakan sesuatu bagi orang lain — dua kegunaan yang letaknya berbeda di dalam kalimat.",
+ "bekal": [
+  "memakai ให้ + orang + kata kerja: menyuruh atau membiarkan",
+  "membedakan สั่งให้, บอกให้, ขอให้, อยากให้, ปล่อยให้",
+  "memakai kata kerja + ให้ + orang: mengerjakan sesuatu untuk orang lain",
+  "meminta tolong dengan ช่วย…ให้หน่อย"
+ ],
+ "dialogs": [
+  {
+   "title": "บทสนทนา — Hari pertama di atap",
+   "intro": "Senin, 23 November 2026. Dua panel contoh yang tiba minggu lalu bersandar di pojok ruang tim; pemasangan sesungguhnya baru dimulai kalau rancangan sistem disetujui. Hari ini Budi harus naik ke atap untuk mengukur, dan Khun Wichai memperkenalkan teknisi baru tim, Klaa. Perhatikan *ให้* yang berdiri **di depan orang** yang disuruh: *ให้น้องดู, สั่งให้เราใส่, ขอให้ทุกคนลงมา*.",
+   "lines": [
+    {
+     "speaker": "คุณวิชัย:",
+     "text": "[คุณ|Khun][บูดี|Buu-dii][ครับ|khráp] [นี่|Nîi][น้อง|náwng][กล้า|Klâa][ช่าง|châang][ใหม่|mài][ของ|khǎawng][ทีม|thiim][เรา|rao] [ผม|Phǒm][อยาก|yàak][ให้|hâi][คุณ|khun][สอน|sǎawn][งาน|ngaan][เขา|khǎo][ครับ|khráp]",
+     "id": "Khun Budi, ini Nong Klaa, teknisi baru tim kita. Saya ingin Anda membimbingnya.",
+     "literal": "(hormat) — Budi — (sopan). ini — adik — Klaa — teknisi — baru — milik — tim — kita. saya — ingin — (suruh) — Anda — ajar — kerja — dia — (sopan)."
+    },
+    {
+     "speaker": "บูดี:",
+     "text": "[ครับผม|Khráp-phǒm] [น้อง|Náwng][กล้า|Klâa][เคย|khoei][ทำงาน|tham-ngaan][บน|bon][หลังคา|lǎng-khaa][ไหม|mǎi][ครับ|khráp]",
+     "id": "Siap, Pak. Nong Klaa pernah kerja di atas atap?",
+     "literal": "siap-pak. adik — Klaa — pernah — bekerja — di-atas — atap — kah — (sopan)?"
+    },
+    {
+     "speaker": "กล้า:",
+     "text": "[ไม่|Mâi][เคย|khoei][ครับ|khráp] [เพิ่ง|Phôeng][เรียน|rian][จบ|jòp][สาย|sǎai][ช่าง|châang][ไฟฟ้า|fai-fáa][ครับ|khráp]",
+     "id": "Belum pernah. Saya baru lulus sekolah kejuruan listrik.",
+     "literal": "tidak — pernah — (sopan). baru-saja — belajar — selesai — jalur — teknisi — listrik — (sopan)."
+    },
+    {
+     "speaker": "บูดี:",
+     "text": "[ไม่เป็นไร|Mâi pen rai][ครับ|khráp] [วันนี้|Wan-níi][พี่|phîi][จะ|jà][ให้|hâi][น้อง|náwng][ดู|duu][ก่อน|kàwn] [ยัง|Yang][ไม่|mâi][ต้อง|tâwng][ทำ|tham][อะไร|à-rai][ครับ|khráp]",
+     "id": "Tidak apa-apa. Hari ini aku suruh kamu melihat dulu. Belum perlu mengerjakan apa-apa.",
+     "literal": "tidak-apa-apa — (sopan). hari-ini — kakak — akan — (suruh) — adik — lihat — dulu. masih — tidak — perlu — kerjakan — apa — (sopan)."
+    },
+    {
+     "speaker": "กล้า:",
+     "text": "[ต้อง|Tâwng][เตรียม|triam][อะไร|à-rai][บ้าง|bâang][ครับ|khráp]",
+     "id": "Harus menyiapkan apa saja?",
+     "literal": "harus — siapkan — apa — saja — (sopan)?"
+    },
+    {
+     "speaker": "บูดี:",
+     "text": "[คุณ|Khun][วิชัย|Wí-chai][สั่ง|sàng][ให้|hâi][เรา|rao][ใส่|sài][หมวก|mùak][นิรภัย|ní-rá-phai][กับ|kàp][เข็มขัด|khěm-khàt][นิรภัย|ní-rá-phai][ครับ|khráp]",
+     "id": "Khun Wichai menyuruh kita memakai helm dan sabuk pengaman.",
+     "literal": "(hormat) — Wichai — perintah — (suruh) — kita — pakai — topi — pengaman — dan — sabuk — pengaman — (sopan)."
+    },
+    {
+     "speaker": "กล้า:",
+     "text": "[ขึ้น|Khûen][ไป|pai][แล้ว|láaeo][ต้อง|tâwng][ทำ|tham][อะไร|à-rai][ก่อน|kàwn][ครับ|khráp]",
+     "id": "Sesudah naik, harus melakukan apa dulu?",
+     "literal": "naik — pergi — sudah — harus — lakukan — apa — dulu — (sopan)?"
+    },
+    {
+     "speaker": "บูดี:",
+     "text": "[เกี่ยว|Kìao][ตะขอ|tà-khǎw][ก่อน|kàwn][เลย|loei][ครับ|khráp] [แล้ว|Láaeo][พี่|phîi][จะ|jà][บอก|bàwk][ให้|hâi][ทำ|tham][อะไร|à-rai][ต่อ|tàw][ครับ|khráp]",
+     "id": "Kaitkan pengaitnya dulu. Nanti aku beri tahu apa yang dikerjakan selanjutnya.",
+     "literal": "kaitkan — pengait — dulu — langsung — (sopan). lalu — kakak — akan — beri-tahu — (suruh) — kerjakan — apa — lanjut — (sopan)."
+    },
+    {
+     "speaker": "กล้า:",
+     "text": "[ถ้า|Thâa][ฝน|fǒn][ตก|tòk][ล่ะ|lâ][ครับ|khráp]",
+     "id": "Kalau hujan, bagaimana?",
+     "literal": "kalau — hujan — turun — kalau — (sopan)?"
+    },
+    {
+     "speaker": "บูดี:",
+     "text": "[ถ้า|Thâa][ฝน|fǒn][ตก|tòk][หรือ|rǔue][ลม|lom][แรง|raaeng] [พี่|phîi][จะ|jà][ขอ|khǎaw][ให้|hâi][ทุก|thúk][คน|khon][ลง|long][มา|maa][ก่อน|kàwn][ครับ|khráp]",
+     "id": "Kalau hujan atau angin kencang, aku minta semua orang turun dulu.",
+     "literal": "kalau — hujan — turun — atau — angin — kencang — kakak — akan — minta — (suruh) — semua — orang — turun — datang — dulu — (sopan)."
+    },
+    {
+     "speaker": "กล้า:",
+     "text": "[แผง|Phǎaeng][โซลาร์เซลล์|soo-laa-sen][หนัก|nàk][ไหม|mǎi][ครับ|khráp]",
+     "id": "Panel suryanya berat tidak?",
+     "literal": "panel — sel-surya — berat — kah — (sopan)?"
+    },
+    {
+     "speaker": "บูดี:",
+     "text": "[แผง|Phǎaeng][หนึ่ง|nùeng][ยี่สิบ|yîi-sìp][กว่า|kwàa][กิโล|kì-loo][ครับ|khráp] [ตอน|Tawn][ติดตั้ง|tìt-tâng][อย่า|yàa][ยก|yók][คน|khon][เดียว|diao][นะ|ná][ครับ|khráp] [ให้|Hâi][เพื่อน|phûean][ช่วย|chûai][ด้วย|dûai][ครับ|khráp]",
+     "id": "Satu panel dua puluh kilo lebih. Waktu pemasangan nanti, jangan angkat sendirian ya. Minta teman membantu.",
+     "literal": "panel — satu — dua-puluh — lebih — kilo — (sopan). waktu — pasang — jangan — angkat — orang — satu-saja — ya — (sopan). (suruh) — teman — bantu — juga — (sopan)."
+    },
+    {
+     "speaker": "คุณวิชัย:",
+     "text": "[ดี|Dii][มาก|mâak][ครับ|khráp] [อย่า|Yàa][ปล่อย|plàwy][ให้|hâi][น้อง|náwng][ทำงาน|tham-ngaan][คน|khon][เดียว|diao][นะ|ná][ครับ|khráp]",
+     "id": "Bagus sekali. Jangan biarkan dia bekerja sendirian, ya.",
+     "literal": "baik — sangat — (sopan). jangan — lepaskan — (suruh) — adik — bekerja — orang — satu-saja — ya — (sopan)."
+    }
+   ],
+   "notes": [
+    "**ให้ + orang + kata kerja = menyuruh atau membiarkan.** *ให้น้องดูก่อน* = menyuruh (membiarkan) adik melihat dulu. Bahasa Thai tidak membedakan \"menyuruh\" dan \"membiarkan\" di sini — keadaanlah yang menentukan. Bandingkan dengan bahasa Jawa *kon* (\"dikon ndelok\"): sama-sama satu kata kecil di depan orangnya.",
+    "**อยากให้ — \"ingin (orang lain) …\".** ⚠️ Kesalahan paling umum penutur Indonesia: *ผมอยากคุณสอน*. Itu salah. Kalau yang berbuat orang lain, *ให้* wajib masuk: *ผมอยากให้คุณสอน* (saya ingin Anda mengajar). *อยาก* tanpa *ให้* hanya untuk keinginan diri sendiri.",
+    "**Kata kerja di depan ให้ menentukan nadanya.** *สั่งให้* memerintah (atasan ke bawahan), *บอกให้* menyuruh biasa, *ขอให้* meminta dengan sopan, *ปล่อยให้* membiarkan. Budi memakai *ขอให้* kepada tim meski ia senior — perintah yang dibungkus permintaan lebih mudah dituruti.",
+    "**Budi kini jadi \"พี่\".** Kepada Klaa (23) ia menyebut dirinya *พี่* dan memanggil Klaa *น้อง* — persis seperti Ton kepadanya. Bedanya, Budi tetap memakai *ครับ*: senior yang sopan tidak kehilangan wibawa.",
+    "**นิรภัย ní-rá-phai = aman, pengaman.** Dari Sanskerta *nirbhaya* \"tanpa takut, tanpa bahaya\" — kerabat *nir-* (nirlaba) dan *bahaya* kita, satu lagi kata kembar seperti di unit 6. *หมวกนิรภัย* (helm), *เข็มขัดนิรภัย* (sabuk pengaman), *ตู้นิรภัย* (brankas). Dan *ครับผม khráp-phǒm*, jawaban Budi kepada Khun Wichai, adalah \"siap, Pak\" yang paling hormat."
+   ],
+   "grammars": [
+    {
+     "title": "Keluarga ให้ yang menyuruh",
+     "body": [
+      "Polanya selalu sama: **orang A + kata kerja + ให้ + orang B + perbuatan**. Yang berganti hanya kata kerja di depan *ให้*."
+     ],
+     "table": {
+      "head": [
+       "Kata",
+       "Baca",
+       "Rasanya",
+       "Contoh"
+      ],
+      "rows": [
+       [
+        "ให้",
+        "*hâi*",
+        "menyuruh / membiarkan",
+        "ให้น้องดูก่อน"
+       ],
+       [
+        "สั่งให้",
+        "*sàng hâi*",
+        "memerintah, dari atas",
+        "หัวหน้าสั่งให้ใส่หมวก"
+       ],
+       [
+        "บอกให้",
+        "*bàwk hâi*",
+        "menyuruh, memberi tahu",
+        "พี่บอกให้รอ"
+       ],
+       [
+        "ขอให้",
+        "*khǎaw hâi*",
+        "meminta dengan sopan",
+        "ขอให้ทุกคนลงมา"
+       ],
+       [
+        "อยากให้",
+        "*yàak hâi*",
+        "ingin orang lain berbuat",
+        "อยากให้คุณสอน"
+       ],
+       [
+        "ปล่อยให้",
+        "*plàwy hâi*",
+        "membiarkan (sering negatif)",
+        "อย่าปล่อยให้เด็กเล่นไฟ"
+       ],
+       [
+        "ชวนให้",
+        "*chuan hâi*",
+        "mengajak, membujuk",
+        "นกชวนให้ไปลอยกระทง"
+       ]
+      ]
+     },
+     "after": [
+      "**Orang B boleh dihilangkan kalau sudah jelas:** *พี่จะบอกให้ทำอะไรต่อ* (aku akan menyuruh [kamu] melakukan apa selanjutnya). Tetapi *ให้*-nya tidak boleh hilang."
+     ]
+    }
+   ]
+  },
+  {
+   "title": "บทสนทนาที่สอง — Tolong tanda tangani",
+   "intro": "Sore harinya, Nok datang ke meja Budi membawa formulir untuk Klaa. Perhatikan bahwa kini *ให้* pindah tempat: ia berdiri **sesudah kata kerja**, dan artinya \"untuk\" — *เซ็นให้, ทำให้, ถ่ายรูปให้*.",
+   "lines": [
+    {
+     "speaker": "นก:",
+     "text": "[พี่|Phîi][บูดี|Buu-dii][คะ|khá] [ช่วย|Chûai][เซ็น|sen][เอกสาร|èek-kà-sǎan][ให้|hâi][น้อง|náwng][กล้า|Klâa][หน่อย|nàwy][ได้|dâai][ไหม|mǎi][คะ|khá]",
+     "id": "Phi Budi, bisa tolong tanda tangani dokumen untuk Nong Klaa?",
+     "literal": "kakak — Budi — (sopan)? tolong — tanda-tangan — dokumen — untuk — adik — Klaa — sedikit — bisa — kah — (sopan)?"
+    },
+    {
+     "speaker": "บูดี:",
+     "text": "[เอกสาร|Èek-kà-sǎan][อะไร|à-rai][ครับ|khráp]",
+     "id": "Dokumen apa?",
+     "literal": "dokumen — apa — (sopan)?"
+    },
+    {
+     "speaker": "นก:",
+     "text": "[แบบฟอร์ม|Bàaep-faawm][อบรม|òp-rom][ความ|khwaam][ปลอดภัย|plàwt-phai][ค่ะ|khâ] [พี่|Phîi][เป็น|pen][คน|khon][สอน|sǎawn][นี่|nîi][คะ|khá]",
+     "id": "Formulir pelatihan keselamatan. Phi kan yang mengajar.",
+     "literal": "formulir — pelatihan — ke- — aman-an — (sopan). kakak — adalah — orang — ajar — kan — (sopan)."
+    },
+    {
+     "speaker": "บูดี:",
+     "text": "[ได้|Dâai][ครับ|khráp] [เดี๋ยว|Dǐao][เซ็น|sen][ให้|hâi][เลย|loei][ครับ|khráp] [เอา|Ao][ปากกา|pàak-kaa][มา|maa][ให้|hâi][หน่อย|nàwy][ได้|dâai][ไหม|mǎi][ครับ|khráp]",
+     "id": "Bisa. Saya tanda tangani sekarang juga. Bisa ambilkan pulpennya?",
+     "literal": "bisa — (sopan). sebentar — tanda-tangan — untuk — langsung — (sopan). ambil — pulpen — datang — untuk — sedikit — bisa — kah — (sopan)?"
+    },
+    {
+     "speaker": "นก:",
+     "text": "[นี่|Nîi][ค่ะ|khâ] [อ้อ|Âw] [พรุ่งนี้|phrûng-níi][วัน|wan][ลอยกระทง|Laawy-krà-thong][นะ|ná][คะ|khá] [พี่|Phîi][เคย|khoei][ลอย|laawy][ไหม|mǎi][คะ|khá]",
+     "id": "Ini. Oh iya, besok hari Loy Krathong, lho. Phi pernah melarung?",
+     "literal": "ini — (sopan). oh — besok — hari — Loy-Krathong — lho — (sopan). kakak — pernah — melarung — kah — (sopan)?"
+    },
+    {
+     "speaker": "บูดี:",
+     "text": "[ยัง|Yang][ไม่|mâi][เคย|khoei][ครับ|khráp] [ปี|Pii][ที่แล้ว|thîi-láaeo][ยัง|yang][ไม่|mâi][รู้จัก|rúu-jàk][ใคร|khrai][เลย|loei][ครับ|khráp]",
+     "id": "Belum pernah. Tahun lalu saya belum kenal siapa-siapa.",
+     "literal": "masih — tidak — pernah — (sopan). tahun — lalu — masih — tidak — kenal — siapa — sama-sekali — (sopan)."
+    },
+    {
+     "speaker": "นก:",
+     "text": "[งั้น|Ngán][ปี|pii][นี้|níi][ไป|pai][ด้วย|dûai][กัน|kan][นะ|ná][คะ|khá] [ถ้า|Thâa][พี่|phîi][ทำ|tham][กระทง|krà-thong][ไม่|mâi][เป็น|pen] [นก|Nók][ทำ|tham][ให้|hâi][ค่ะ|khâ]",
+     "id": "Kalau begitu tahun ini pergi bareng ya. Kalau Phi tidak bisa bikin krathong, Nok bikinkan.",
+     "literal": "kalau-begitu — tahun — ini — pergi — bersama — sama — ya — (sopan). kalau — kakak — buat — krathong — tidak — bisa — Nok — buat — untuk — (sopan)."
+    },
+    {
+     "speaker": "บูดี:",
+     "text": "[ขอบคุณ|Khàwp-khun][ครับ|khráp] [งั้น|Ngán][ผม|phǒm][ซื้อ|súue][ข้าว|khâao][เย็น|yen][ให้|hâi][นะ|ná][ครับ|khráp]",
+     "id": "Terima kasih. Kalau begitu saya belikan makan malam, ya.",
+     "literal": "terima-kasih — (sopan). kalau-begitu — saya — beli — nasi — sore — untuk — ya — (sopan)."
+    },
+    {
+     "speaker": "นก:",
+     "text": "[ไม่|Mâi][ต้อง|tâwng][ค่ะ|khâ] [แต่|Tàae][ช่วย|chûai][ถ่าย|thàai][รูป|rûup][ให้|hâi][นก|Nók][หน่อย|nàwy][นะ|ná][คะ|khá]",
+     "id": "Tidak usah. Tapi tolong fotokan Nok, ya.",
+     "literal": "tidak — perlu — (sopan). tetapi — tolong — potret — gambar — untuk — Nok — sedikit — ya — (sopan)."
+    },
+    {
+     "speaker": "บูดี:",
+     "text": "[ได้|Dâai][เลย|loei][ครับ|khráp] [จะ|Jà][ถ่าย|thàai][ให้|hâi][สวย|sǔai][ที่สุด|thîi-sùt][เลย|loei][ครับ|khráp]",
+     "id": "Siap. Akan saya potret supaya secantik mungkin.",
+     "literal": "bisa — langsung — (sopan). akan — potret — supaya — cantik — paling — sungguh — (sopan)."
+    }
+   ],
+   "notes": [
+    "**Kata kerja + ให้ + orang = mengerjakan untuk orang itu.** *เซ็นให้น้องกล้า* (menandatangani untuk Klaa), *ซื้อข้าวเย็นให้* (membelikan makan malam). Bahasa Indonesia memakai akhiran *-kan*; bahasa Thai memakai *ให้* di belakang kata kerjanya. Orangnya boleh hilang kalau jelas: *นกทำให้* (Nok bikinkan).",
+    "**Letak ให้ mengubah segalanya.** *ให้นกทำ* = menyuruh Nok membuat; *ทำให้นก* = membuat untuk Nok. Satu kata, dua arti, dan yang menentukan hanya urutannya.",
+    "**ช่วย…ให้หน่อย = \"tolong …-kan\".** Rumus permintaan paling berguna di unit ini: *ช่วย* + kata kerja + *ให้* + *หน่อย* (+ *ได้ไหม* untuk lebih sopan). *ช่วยถ่ายรูปให้หน่อย* (tolong fotokan), *ช่วยแปลให้หน่อยได้ไหม* (bisakah tolong terjemahkan).",
+    "**เอา…มาให้ = \"ambilkan, bawakan (ke sini)\".** *เอาปากกามาให้หน่อย*. Arahnya ikut *มา* (ke pembicara); kalau ke orang lain: *เอาไปให้พี่ต้น* (bawakan ke Phi Ton).",
+    "**ถ่ายให้สวย — ให้ yang berarti \"supaya\".** Sesudah kata kerja, *ให้* + kata sifat berarti \"sampai / supaya jadi…\": *พูดให้ช้าหน่อย* (bicaralah supaya pelan), *ทำให้เสร็จ* (kerjakan sampai selesai)."
+   ],
+   "grammars": [
+    {
+     "title": "ให้ di depan orang, ให้ di belakang kata kerja",
+     "body": [
+      "Inilah perbandingan yang perlu kamu tempel di dinding."
+     ],
+     "table": {
+      "head": [
+       "Susunan",
+       "Contoh",
+       "Artinya"
+      ],
+      "rows": [
+       [
+        "ให้ + orang + kerja",
+        "ให้นกทำกระทง",
+        "menyuruh Nok membuat krathong"
+       ],
+       [
+        "kerja + ให้ + orang",
+        "ทำกระทงให้นก",
+        "membuat krathong untuk Nok"
+       ],
+       [
+        "ช่วย + kerja + ให้ + หน่อย",
+        "ช่วยถ่ายรูปให้หน่อย",
+        "tolong fotokan"
+       ],
+       [
+        "เอา + barang + มาให้",
+        "เอาปากกามาให้",
+        "ambilkan pulpen"
+       ],
+       [
+        "kerja + ให้ + sifat",
+        "ถ่ายให้สวย",
+        "memotret supaya cantik"
+       ]
+      ]
+     },
+     "after": [
+      "⚠️ **Jangan menerjemahkan \"-kan\" dengan ให้ di depan.** \"Belikan saya kopi\" = *ซื้อกาแฟให้ผมหน่อย*, bukan *ให้ผมซื้อกาแฟ* — yang terakhir berarti \"suruh saya membeli kopi\"."
+     ]
+    }
+   ]
+  }
+ ],
+ "sections": [
+  {
+   "title": "Empat wajah ให้",
+   "blocks": [
+    {
+     "type": "p",
+     "text": "Hanya sedikit kata Thai yang bekerja sekeras *ให้ hâi*. Kamu sudah mengenalnya sebagai \"memberi\" sejak A1; unit ini menambahkan tiga wajah lagi. Semuanya ditulis dan dibunyikan sama persis."
+    },
+    {
+     "type": "tabel",
+     "head": [
+      "Wajah",
+      "Letak",
+      "Contoh",
+      "Artinya"
+     ],
+     "rows": [
+      [
+       "memberi",
+       "kata kerja utama",
+       "ให้ของขวัญแม่",
+       "memberi hadiah kepada Ibu"
+      ],
+      [
+       "menyuruh, membiarkan",
+       "di depan orang + kerja",
+       "ให้เขาไปก่อน",
+       "biarkan dia pergi duluan"
+      ],
+      [
+       "untuk",
+       "sesudah kata kerja + orang",
+       "ซื้อให้แม่",
+       "membelikan untuk Ibu"
+      ],
+      [
+       "supaya, sampai",
+       "sesudah kata kerja + sifat",
+       "เขียนให้ชัด",
+       "tulis supaya jelas"
+      ]
+     ]
+    },
+    {
+     "type": "p",
+     "text": "Ada satu wajah lagi yang sudah kamu temui di unit 3: *ทำให้* = menyebabkan (*ฝนตกทำให้รถติด*). Jadi *ทำให้* bisa berarti \"membuat untuk\" (*ทำให้นก*) atau \"menyebabkan\" (*ทำให้ร้อน*). Yang di belakangnya orang, artinya \"untuk\"; yang di belakangnya keadaan, artinya \"menyebabkan\"."
+    },
+    {
+     "type": "kotak",
+     "title": "ให้ dalam ucapan sehari-hari",
+     "items": [
+      "*ขอให้โชคดี khǎaw hâi chôok-dii* — semoga beruntung. *ขอให้…* adalah awal hampir semua ucapan selamat.",
+      "*ให้ผมช่วยไหม* — mau saya bantu? (harfiah: biarkan saya membantu?).",
+      "*ไม่ให้* — tidak mengizinkan: *แม่ไม่ให้ไป* (Ibu tidak mengizinkan pergi)."
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Instruksi kerja dan keselamatan",
+   "blocks": [
+    {
+     "type": "p",
+     "text": "Di lokasi proyek, papan dan pengarahan keselamatan memakai kosakata yang sama di mana-mana. Kalimat perintahnya pendek, sering diawali *ห้าม* (dilarang), *กรุณา* (mohon), atau *โปรด* (harap)."
+    },
+    {
+     "type": "tabel",
+     "head": [
+      "Thai",
+      "Baca",
+      "Artinya"
+     ],
+     "rows": [
+      [
+       "ระวัง",
+       "*rá-wang*",
+       "awas, hati-hati"
+      ],
+      [
+       "อันตราย",
+       "*an-tà-raai*",
+       "berbahaya"
+      ],
+      [
+       "ห้ามเข้า",
+       "*hâam khâo*",
+       "dilarang masuk"
+      ],
+      [
+       "เฉพาะเจ้าหน้าที่",
+       "*chà-phó jâo-nâa-thîi*",
+       "khusus petugas"
+      ],
+      [
+       "สวมหมวกนิรภัย",
+       "*sǔam mùak ní-rá-phai*",
+       "pakailah helm"
+      ],
+      [
+       "ไฟฟ้าแรงสูง",
+       "*fai-fáa raaeng-sǔung*",
+       "listrik tegangan tinggi"
+      ],
+      [
+       "พื้นลื่น",
+       "*phúuen lûuen*",
+       "lantai licin"
+      ],
+      [
+       "ทางหนีไฟ",
+       "*thaang-nǐi-fai*",
+       "jalur evakuasi kebakaran"
+      ],
+      [
+       "ถังดับเพลิง",
+       "*thǎng-dàp-phloeng*",
+       "alat pemadam api"
+      ],
+      [
+       "ห้ามสูบบุหรี่",
+       "*hâam sùup bù-rìi*",
+       "dilarang merokok"
+      ]
+     ]
+    },
+    {
+     "type": "kotak",
+     "title": "Memberi perintah tanpa membuat orang kehilangan muka",
+     "items": [
+      "Atasan Thai jarang membentak. Perintah dibungkus: *ช่วย…หน่อยนะ*, *ขอให้…*, atau diakhiri *นะ* yang melunakkan.",
+      "Menegur di depan orang banyak dianggap mempermalukan. Kalau Klaa salah, Budi sebaiknya menegurnya berdua saja.",
+      "Tetapi untuk urusan nyawa — tali pengaman, listrik — tak ada kelunakan: *ห้าม* dan *ต้อง* dipakai lugas, dan orang Thai pun menganggapnya wajar."
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Ulangan berjenjang — unit 6",
+   "blocks": [
+    {
+     "type": "p",
+     "text": "Tutup kolom Thai, baca terjemahan Indonesianya, lalu susun kembali kalimatnya dari ingatan."
+    },
+    {
+     "type": "tabel",
+     "head": [
+      "Bahasa Indonesia",
+      "ภาษาไทย",
+      "Baca"
+     ],
+     "rows": [
+      [
+       "Musim dingin di Bangkok juga tidak begitu dingin. Cuma sejuk nyaman.",
+       "หน้าหนาวที่กรุงเทพฯก็ไม่ค่อยหนาวค่ะ แค่เย็นสบายค่ะ",
+       "*Nâa-nǎao thîi Krung-thêep kâw mâi-khâwy nǎao khâ Khâae yen sà-baai khâ*"
+      ],
+      [
+       "Tapi orangnya tidak sebanyak di Bangkok. Surabaya jauh lebih kecil.",
+       "แต่คนไม่เยอะเท่ากรุงเทพฯนะครับ สุราบายาเล็กกว่าเยอะครับ",
+       "*Tàae khon mâi yóe thâo Krung-thêep ná khráp Sù-raa-baa-yaa lék kwàa yóe khráp*"
+      ],
+      [
+       "Sama sekali tidak sama. Tapi ada kata-kata yang mirip.",
+       "ไม่เหมือนกันเลยครับ แต่มีคำที่คล้ายกันครับ",
+       "*Mâi mǔuean kan loei khráp Tàae mii kham thîi khláai kan khráp*"
+      ],
+      [
+       "Phi Ton hebat banget. Saya sendiri cuma kuat sedikit.",
+       "พี่ต้นเก่งจังครับ ผมกินได้นิดหน่อยเองครับ",
+       "*Phîi Tôn kèng jang khráp Phǒm kin dâai nít-nàwy eeng khráp*"
+      ],
+      [
+       "Ibu saya agak kebanyakan memasukkan cabai.",
+       "แม่ผมใส่พริกเยอะเกินไปนิดหน่อยครับ",
+       "*Mâae phǒm sài phrík yóe koen-pai nít-nàwy khráp*"
+      ]
+     ]
+    }
+   ]
+  }
+ ],
+ "vocab": [
+  {
+   "th": "ให้",
+   "baca": "hâi",
+   "id": "memberi; menyuruh; untuk; supaya"
+  },
+  {
+   "th": "สั่งให้",
+   "baca": "sàng hâi",
+   "id": "memerintahkan (*สั่งให้ใส่หมวก*)"
+  },
+  {
+   "th": "บอกให้",
+   "baca": "bàwk hâi",
+   "id": "menyuruh (*บอกให้รอ*)"
+  },
+  {
+   "th": "ขอให้",
+   "baca": "khǎaw hâi",
+   "id": "meminta (orang lain); semoga"
+  },
+  {
+   "th": "อยากให้",
+   "baca": "yàak hâi",
+   "id": "ingin (orang lain) … (*อยากให้คุณสอน*)"
+  },
+  {
+   "th": "ปล่อยให้",
+   "baca": "plàwy hâi",
+   "id": "membiarkan"
+  },
+  {
+   "th": "ชวน",
+   "baca": "chuan",
+   "id": "mengajak (*ชวนให้ไป*)"
+  },
+  {
+   "th": "สอนงาน",
+   "baca": "sǎawn ngaan",
+   "id": "membimbing kerja"
+  },
+  {
+   "th": "ช่าง",
+   "baca": "châang",
+   "id": "teknisi, tukang (kb. *คน*)"
+  },
+  {
+   "th": "ช่างไฟฟ้า",
+   "baca": "châang fai-fáa",
+   "id": "teknisi listrik (kb. *คน*)"
+  },
+  {
+   "th": "หลังคา",
+   "baca": "lǎng-khaa",
+   "id": "atap"
+  },
+  {
+   "th": "หมวกนิรภัย",
+   "baca": "mùak ní-rá-phai",
+   "id": "helm (kb. *ใบ*)"
+  },
+  {
+   "th": "เข็มขัดนิรภัย",
+   "baca": "khěm-khàt ní-rá-phai",
+   "id": "sabuk pengaman (kb. *เส้น*)"
+  },
+  {
+   "th": "เกี่ยว",
+   "baca": "kìao",
+   "id": "mengaitkan"
+  },
+  {
+   "th": "ตะขอ",
+   "baca": "tà-khǎw",
+   "id": "pengait (kb. *อัน*)"
+  },
+  {
+   "th": "แผงโซลาร์เซลล์",
+   "baca": "phǎaeng soo-laa-sen",
+   "id": "panel surya (kb. *แผง*)"
+  },
+  {
+   "th": "ยก",
+   "baca": "yók",
+   "id": "mengangkat"
+  },
+  {
+   "th": "หนัก",
+   "baca": "nàk",
+   "id": "berat"
+  },
+  {
+   "th": "ลมแรง",
+   "baca": "lom raaeng",
+   "id": "angin kencang"
+  },
+  {
+   "th": "เตรียม",
+   "baca": "triam",
+   "id": "menyiapkan"
+  },
+  {
+   "th": "เซ็น",
+   "baca": "sen",
+   "id": "menandatangani"
+  },
+  {
+   "th": "เอกสาร",
+   "baca": "èek-kà-sǎan",
+   "id": "dokumen (kb. *ฉบับ*, *แผ่น*)"
+  },
+  {
+   "th": "อบรม",
+   "baca": "òp-rom",
+   "id": "pelatihan; melatih"
+  },
+  {
+   "th": "ความปลอดภัย",
+   "baca": "khwaam plàwt-phai",
+   "id": "keselamatan"
+  },
+  {
+   "th": "กระทง",
+   "baca": "krà-thong",
+   "id": "wadah sesaji terapung (kb. *ใบ*)"
+  },
+  {
+   "th": "รู้จัก",
+   "baca": "rúu-jàk",
+   "id": "kenal"
+  },
+  {
+   "th": "ครับผม",
+   "baca": "khráp-phǒm",
+   "id": "siap, Pak (sangat hormat)"
+  },
+  {
+   "th": "ติดตั้ง",
+   "baca": "tìt-tâng",
+   "id": "memasang (panel, AC)"
+  }
+ ],
+ "exercises": [
+  {
+   "prompt": "Terjemahkan ke bahasa Thai. Bayangkan kamu laki-laki.",
+   "items": [
+    "Saya ingin Anda mengajari dia.",
+    "Bos menyuruh kita memakai helm.",
+    "Jangan biarkan anak-anak bermain di atap.",
+    "Tolong fotokan saya.",
+    "Saya belikan kopi untuk Phi Ton.",
+    "Bisa ambilkan pulpen?"
+   ]
+  },
+  {
+   "prompt": "Isi titik-titiknya sesuai petunjuk dalam kurung.",
+   "items": [
+    "หัวหน้า____ให้ทุกคนใส่หมวกนิรภัย (memerintah)",
+    "ผมอยาก____คุณมาด้วย (penanda: orang lain yang berbuat)",
+    "อย่า____ให้น้องทำงานคนเดียว (membiarkan)",
+    "ช่วยเซ็น____ผมหน่อยครับ (untuk)",
+    "นก____ให้พี่บูดีไปลอยกระทง (mengajak)",
+    "เอาน้ำ____ให้หน่อย (ke sini)",
+    "พูด____ช้าหน่อยได้ไหมคะ (supaya)"
+   ]
+  },
+  {
+   "prompt": "Ubah makna kalimat dengan memindahkan ให้, lalu tulis artinya dalam bahasa Indonesia.",
+   "items": [
+    "ให้นกทำกระทง → (ubah jadi \"untuk Nok\")",
+    "ซื้อกาแฟให้พี่ต้น → (ubah jadi \"menyuruh Phi Ton\")",
+    "ผมอยากไป → (ubah jadi \"saya ingin kamu pergi\")",
+    "ถ่ายรูป (tambahkan \"tolong … -kan\" yang sopan)",
+    "หัวหน้าพูดว่า \"ใส่หมวกนะ\" (ringkas pakai สั่งให้)",
+    "แม่พูดว่า \"อย่าไปนะ\" (ringkas pakai ไม่ให้)"
+   ]
+  },
+  {
+   "prompt": "Susun jadi kalimat yang benar.",
+   "items": [
+    "ครับ / สอนงาน / ให้ / อยาก / คุณ / ผม",
+    "ค่ะ / ให้ / ช่วย / หน่อย / ถ่ายรูป",
+    "ครับ / ให้ / น้อง / ดูก่อน / พี่จะ",
+    "นะคะ / ให้ / อย่า / ปล่อย / ทำงานคนเดียว / เขา",
+    "ครับ / ให้ / ข้าวเย็น / ซื้อ / ผม"
+   ]
+  }
+ ],
+ "answers": [
+  "ผมอยากให้คุณสอนเขาครับ — หัวหน้าสั่งให้เราใส่หมวกนิรภัยครับ — อย่าปล่อยให้เด็กๆเล่นบนหลังคานะครับ — ช่วยถ่ายรูปให้ผมหน่อยครับ — ผมซื้อกาแฟให้พี่ต้นครับ — เอาปากกามาให้หน่อยได้ไหมครับ",
+  "สั่ง — ให้ — ปล่อย — ให้ — ชวน — มา — ให้",
+  "ทำกระทงให้นก (membuat krathong untuk Nok) — ให้พี่ต้นซื้อกาแฟ (menyuruh Phi Ton membeli kopi) — ผมอยากให้คุณไป (saya ingin kamu pergi) — ช่วยถ่ายรูปให้หน่อยได้ไหม (bisakah tolong fotokan) — หัวหน้าสั่งให้ใส่หมวก (bos menyuruh memakai helm) — แม่ไม่ให้ไป (Ibu tidak mengizinkan pergi)",
+  "ผมอยากให้คุณสอนงานครับ — ช่วยถ่ายรูปให้หน่อยค่ะ — พี่จะให้น้องดูก่อนครับ — อย่าปล่อยให้เขาทำงานคนเดียวนะคะ — ผมซื้อข้าวเย็นให้ครับ"
+ ],
+ "wave": "Ulangi unit 6: tutup bahasa Thainya, lalu bandingkan kotamu dengan Bangkok dalam lima kalimat — pakai เหมือน, คล้าย, ต่างกัน, dan ไม่…เท่า."
+}

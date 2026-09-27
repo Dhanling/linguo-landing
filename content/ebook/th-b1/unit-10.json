@@ -1,0 +1,731 @@
+{
+ "title": "Pasti, mungkin, sepertinya — modalitas",
+ "title_target": "น่าจะถึงต้นเดือนธันวา — Nâa-jà thǔeng tôn-duean than-waa",
+ "goal": "Memperkirakan jadwal ketika tak ada yang pasti: memilih antara แน่นอน, คง, น่าจะ, อาจจะ, มั้ง, ท่าจะ, dan ดูเหมือนว่า menurut seberapa yakin kamu, lalu menyampaikan ketidakpastian dengan ไม่แน่ dan เป็นไปได้ว่า.",
+ "bekal": [
+  "mengurutkan kata kepastian dari แน่นอน sampai ไม่…แน่ๆ",
+  "memakai คง, น่าจะ, อาจจะ sebelum kata kerja dan มั้ง di ujung kalimat",
+  "menyampaikan kesan dengan ดูเหมือนว่า dan ท่าจะ",
+  "menyampaikan kabar yang belum pasti dengan ไม่แน่ dan เป็นไปได้ว่า"
+ ],
+ "dialogs": [
+  {
+   "title": "บทสนทนา — Panelnya tertahan di pelabuhan",
+   "intro": "Senin, 15 November 2027. Pemasangan di SD Ban Non Thong dijadwalkan Senin depan, tetapi panel surya belum juga tiba. Budi menelepon Khun May, bagian penjualan pemasok panel. Perhatikan betapa hati-hatinya Khun May memilih kata: hampir tak ada yang ia katakan dengan pasti.",
+   "lines": [
+    {
+     "speaker": "บูดี:",
+     "text": "[สวัสดี|Sà-wàt-dii][ครับ|khráp][คุณ|khun][เมย์|Mee] [ผม|Phǒm][บูดี|Buu-dii][จาก|jàak][เจ้าพระยา|Jâo-phrá-yaa][เอ็นจิเนียริ่ง|En-jì-nia-rîng][ครับ|khráp] [เรื่อง|Rûueang][แผง|phǎaeng][โซลาร์|soo-laa][ที่|thîi][สั่ง|sàng][ไว้|wái][ครับ|khráp]",
+     "id": "Halo, Khun May. Saya Budi dari Chao Phraya Engineering. Soal panel surya yang kami pesan.",
+     "literal": "halo — (sopan) — Nona — May. saya — Budi — dari — Chao-Phraya — Engineering — (sopan). soal — panel — surya — yang — pesan — simpan — (sopan)."
+    },
+    {
+     "speaker": "เมย์:",
+     "text": "[สวัสดี|Sà-wàt-dii][ค่ะ|khâ] [ขอโทษ|Khǎaw-thôot][จริงๆ|jing-jing][ค่ะ|khâ] [ดูเหมือนว่า|Duu-mǔuean-wâa][ตู้|tûu][คอนเทนเนอร์|khawn-then-nôe][จะ|jà][ติด|tìt][อยู่|yùu][ที่|thîi][ท่าเรือ|thâa-ruea][แหลมฉบัง|Lǎaem-chà-bang][ค่ะ|khâ]",
+     "id": "Halo. Mohon maaf sekali. Sepertinya kontainernya tertahan di pelabuhan Laem Chabang.",
+     "literal": "halo — (sopan). maaf — sungguh — (sopan). tampaknya — lemari — kontainer — akan — tersangkut — sedang — di — pelabuhan — Laem-Chabang — (sopan)."
+    },
+    {
+     "speaker": "บูดี:",
+     "text": "[ติด|Tìt][อยู่|yùu][เพราะ|phráw][อะไร|à-rai][ครับ|khráp]",
+     "id": "Tertahan karena apa?",
+     "literal": "tersangkut — sedang — karena — apa — (sopan)?"
+    },
+    {
+     "speaker": "เมย์:",
+     "text": "[เอกสาร|Èek-kà-sǎan][ศุลกากร|sǔn-lá-kaa-kawn][น่าจะ|nâa-jà][ยัง|yang][ไม่|mâi][ครบ|khróp][ค่ะ|khâ] [ทาง|Thaang][เรา|rao][อาจจะ|àat-jà][ต้อง|tâwng][ส่ง|sòng][เอกสาร|èek-kà-sǎan][เพิ่ม|phôoem]",
+     "id": "Dokumen bea cukainya sepertinya belum lengkap. Pihak kami mungkin harus mengirim dokumen tambahan.",
+     "literal": "dokumen — bea-cukai — sepertinya — masih — tidak — lengkap — (sopan). pihak — kami — mungkin — harus — kirim — dokumen — tambah."
+    },
+    {
+     "speaker": "บูดี:",
+     "text": "[แล้ว|Láaeo][แผง|phǎaeng][จะ|jà][ถึง|thǔeng][ขอนแก่น|Khǎawn-kàen][เมื่อไร|mûuea-rai][ครับ|khráp] [วันที่|Wan-thîi][ยี่สิบสอง|yîi-sìp-sǎawng][ทัน|than][ไหม|mǎi][ครับ|khráp]",
+     "id": "Lalu panelnya sampai di Khon Kaen kapan? Tanggal 22 keburu?",
+     "literal": "lalu — panel — akan — sampai — Khon-Kaen — kapan — (sopan)? tanggal — dua-puluh-dua — keburu — kah — (sopan)?"
+    },
+    {
+     "speaker": "เมย์:",
+     "text": "[วันที่|Wan-thîi][ยี่สิบสอง|yîi-sìp-sǎawng][คง|khong][ไม่|mâi][ทัน|than][แน่ๆ|nâae-nâae][ค่ะ|khâ]",
+     "id": "Tanggal 22 jelas tidak akan keburu.",
+     "literal": "tanggal — dua-puluh-dua — mungkin — tidak — keburu — pasti-pasti — (sopan)."
+    },
+    {
+     "speaker": "บูดี:",
+     "text": "[คุณ|Khun][เมย์|Mee][คิด|khít][ว่า|wâa][น่าจะ|nâa-jà][ได้|dâai][ประมาณ|prà-maan][วัน|wan][ไหน|nǎi][ครับ|khráp]",
+     "id": "Menurut Khun May, kira-kira bisa dapat tanggal berapa?",
+     "literal": "Nona — May — pikir — bahwa — sepertinya — dapat — kira-kira — hari — mana — (sopan)?"
+    },
+    {
+     "speaker": "เมย์:",
+     "text": "[ถ้า|Thâa][เอกสาร|èek-kà-sǎan][ผ่าน|phàan][ภายใน|phaai-nai][สัปดาห์|sàp-daa][นี้|níi] [ก็|kâw][น่าจะ|nâa-jà][ถึง|thǔeng][ต้นเดือน|tôn-duean][ธันวา|than-waa][ค่ะ|khâ]",
+     "id": "Kalau dokumennya lolos minggu ini, kemungkinan besar sampai awal Desember.",
+     "literal": "kalau — dokumen — lolos — dalam — minggu — ini — maka — sepertinya — sampai — awal-bulan — Desember — (sopan)."
+    },
+    {
+     "speaker": "บูดี:",
+     "text": "[ต้นเดือน|Tôn-duean][ธันวา|than-waa][แน่นอน|nâae-naawn][ใช่|châi][ไหม|mǎi][ครับ|khráp]",
+     "id": "Awal Desember, pasti ya?",
+     "literal": "awal-bulan — Desember — pasti — benar — kah — (sopan)?"
+    },
+    {
+     "speaker": "เมย์:",
+     "text": "[ยัง|Yang][พูด|phûut][ว่า|wâa][แน่นอน|nâae-naawn][ไม่|mâi][ได้|dâai][ค่ะ|khâ] [แต่|Tàae][ส่วนใหญ่|sùan-yài][ก็|kâw][คง|khong][ประมาณ|prà-maan][นั้น|nán][ค่ะ|khâ]",
+     "id": "Belum bisa saya bilang pasti. Tapi biasanya kira-kira segitu.",
+     "literal": "masih — berkata — bahwa — pasti — tidak — bisa — (sopan). tetapi — sebagian-besar — ya — mungkin — kira-kira — itu — (sopan)."
+    },
+    {
+     "speaker": "บูดี:",
+     "text": "[ครับ|Khráp] [ที่|Thîi][ขอนแก่น|Khǎawn-kàen][ฝน|fǒn][ก็|kâw][ท่าจะ|thâa-jà][หมด|mòt][แล้ว|láaeo] [ถ้า|Thâa][แผง|phǎaeng][มา|maa][ถึง|thǔeng][ก็|kâw][ติดตั้ง|tìt-tâng][ได้|dâai][เลย|loei][ครับ|khráp]",
+     "id": "Baik. Di Khon Kaen hujan juga tampaknya sudah mau habis. Kalau panelnya sampai, bisa langsung dipasang.",
+     "literal": "ya. di — Khon-Kaen — hujan — juga — tampaknya-akan — habis — sudah. kalau — panel — datang — sampai — maka — pasang — bisa — langsung — (sopan)."
+    },
+    {
+     "speaker": "เมย์:",
+     "text": "[ค่ะ|Khâ] [เมย์|Mee][จะ|jà][รีบ|rîip][ติดตาม|tìt-taam][ให้|hâi][นะ|ná][คะ|khá] [ได้|Dâai][ข่าว|khàao][แล้ว|láaeo][จะ|jà][โทร|thoo][แจ้ง|jâaeng][ทันที|than-thii][ค่ะ|khâ]",
+     "id": "Baik. May akan segera menindaklanjuti. Begitu ada kabar, langsung May telepon.",
+     "literal": "ya. May — akan — segera — ikuti — untuk — ya — (sopan). dapat — kabar — sudah — akan — telepon — beri-tahu — segera — (sopan)."
+    }
+   ],
+   "notes": [
+    "**คง *khong* dan น่าจะ *nâa-jà* hampir sama yakinnya**, sekitar 70–80 persen. *คง* lebih condong ke dugaan pribadi (\"mungkin, barangkali\"), *น่าจะ* ke perkiraan yang masuk akal (\"semestinya, kemungkinan besar\"). Keduanya diletakkan **sebelum** kata kerja: *คงไม่ทัน*, *น่าจะถึง*.",
+    "**อาจ(จะ) *àat(-jà)* = mungkin, sekitar 50 persen.** Ia membuka pintu, bukan meramal: *อาจจะต้องส่งเอกสารเพิ่ม* (mungkin harus mengirim dokumen tambahan — mungkin juga tidak). Dalam tulisan sering cukup *อาจ*.",
+    "**ดูเหมือน(ว่า) *duu-mǔuean(-wâa)* = tampaknya, kelihatannya**, berdasarkan apa yang terlihat atau terdengar. Khun May belum melihat kontainernya sendiri; ia menyampaikan kesan dari laporan. Kata ini melindungi pembicara: kalau ternyata keliru, ia tidak berbohong.",
+    "**คง…แน่ๆ = hampir pasti.** *แน่ๆ nâae-nâae* di ujung kalimat menaikkan kepastian: *คงไม่ทันแน่ๆ* (jelas tidak keburu). Bandingkan dengan *แน่นอน* (pasti, tanpa ragu), yang lebih kaku dan jarang diucapkan pemasok tentang jadwal.",
+    "**ท่าจะ *thâa-jà* = tampaknya akan**, dari tanda-tanda yang terlihat sekarang: *ฝนท่าจะตก* (tampaknya mau hujan — langit mendung), *ฝนท่าจะหมดแล้ว* (hujan tampaknya sudah mau habis). Lebih lisan daripada ดูเหมือนว่า."
+   ],
+   "grammars": [
+    {
+     "title": "Di mana kata kepastian diletakkan",
+     "body": [
+      "Kebanyakan kata kepastian berdiri **sebelum kata kerja**, dan negasinya menyusul sesudahnya. Hanya sedikit yang berdiri di ujung kalimat."
+     ],
+     "table": {
+      "head": [
+       "Letak",
+       "Kata",
+       "Contoh",
+       "Artinya"
+      ],
+      "rows": [
+       [
+        "sebelum kk",
+        "คง(จะ)",
+        "แผงคงไม่ทัน",
+        "panelnya mungkin tak keburu"
+       ],
+       [
+        "sebelum kk",
+        "น่าจะ",
+        "น่าจะถึงต้นเดือน",
+        "kemungkinan besar sampai awal bulan"
+       ],
+       [
+        "sebelum kk",
+        "อาจ(จะ)",
+        "อาจจะช้ากว่านั้น",
+        "mungkin lebih lambat dari itu"
+       ],
+       [
+        "sebelum kk",
+        "ท่าจะ",
+        "ฝนท่าจะหยุด",
+        "hujan tampaknya akan berhenti"
+       ],
+       [
+        "awal kalimat",
+        "ดูเหมือน(ว่า)",
+        "ดูเหมือนว่าตู้จะติดอยู่",
+        "tampaknya kontainernya tertahan"
+       ],
+       [
+        "ujung kalimat",
+        "แน่ๆ",
+        "ไม่ทันแน่ๆ",
+        "jelas tak keburu"
+       ],
+       [
+        "ujung kalimat",
+        "มั้ง",
+        "พรุ่งนี้มั้ง",
+        "besok, mungkin (santai)"
+       ]
+      ]
+     },
+     "after": [
+      "⚠️ Urutan dengan negasi: kata kepastian dulu, baru *ไม่*. *คงไม่มา* (mungkin tidak datang), *อาจจะไม่ทัน* (mungkin tak keburu). *ไม่น่าจะ* adalah pengecualian yang sudah beku: *ไม่น่าจะทัน* (sepertinya tak keburu)."
+     ]
+    },
+    {
+     "title": "แน่นอน, แน่ๆ, dan ไม่แน่",
+     "table": {
+      "head": [
+       "Thai",
+       "Baca",
+       "Artinya",
+       "Contoh"
+      ],
+      "rows": [
+       [
+        "แน่นอน",
+        "*nâae-naawn*",
+        "pasti, tentu (kaku)",
+        "ผมจะไปแน่นอน — saya pasti datang"
+       ],
+       [
+        "แน่ๆ",
+        "*nâae-nâae*",
+        "pasti (lisan)",
+        "เขาลืมแน่ๆ — dia pasti lupa"
+       ],
+       [
+        "แน่ใจ",
+        "*nâae-jai*",
+        "yakin",
+        "แน่ใจไหม — yakin?"
+       ],
+       [
+        "ไม่แน่",
+        "*mâi nâae*",
+        "belum tentu",
+        "ไม่แน่ อาจจะเร็วกว่านั้น — belum tentu, bisa lebih cepat"
+       ],
+       [
+        "ไม่แน่ใจ",
+        "*mâi nâae-jai*",
+        "tidak yakin",
+        "ยังไม่แน่ใจครับ — belum yakin"
+       ]
+      ]
+     },
+     "after": [
+      "Jawaban *แน่นอนครับ!* untuk ajakan (*ไปด้วยกันไหม*) terdengar hangat dan antusias. Untuk jadwal kerja, justru terdengar terlalu berani; orang Thai lebih suka *น่าจะ* dan *คง*."
+     ]
+    }
+   ]
+  },
+  {
+   "title": "บทสนทนาที่สอง — Kabar untuk Beem",
+   "intro": "Sore harinya Budi menelepon Beem, yang harus menyampaikan kabar itu kepada kepala sekolah SD Ban Non Thong. Perhatikan ไม่แน่ dan เป็นไปได้ว่า: cara menyampaikan kabar buruk yang belum pasti tanpa berjanji terlalu banyak.",
+   "lines": [
+    {
+     "speaker": "บูดี:",
+     "text": "[บีม|Biim] [ข่าว|khàao][ไม่|mâi][ค่อย|khâwy][ดี|dii][นะ|ná] [แผง|Phǎaeng][คง|khong][มา|maa][ไม่|mâi][ทัน|than][วันที่|wan-thîi][ยี่สิบสอง|yîi-sìp-sǎawng]",
+     "id": "Beem, kabarnya kurang baik. Panelnya kayaknya nggak keburu datang tanggal 22.",
+     "literal": "Beem — kabar — tidak — begitu — baik — ya. panel — mungkin — datang — tidak — keburu — tanggal — dua-puluh-dua."
+    },
+    {
+     "speaker": "บีม:",
+     "text": "[โห|Hǒo] [แล้ว|láaeo][จะ|jà][มา|maa][เมื่อไร|mûuea-rai][ครับ|khráp][พี่|phîi]",
+     "id": "Waduh. Terus datangnya kapan, Kak?",
+     "literal": "waduh — lalu — akan — datang — kapan — (sopan) — kakak?"
+    },
+    {
+     "speaker": "บูดี:",
+     "text": "[ยัง|Yang][ไม่|mâi][แน่|nâae] [อาจจะ|Àat-jà][ต้นเดือน|tôn-duean][ธันวา|than-waa] [หรือ|rǔue][ช้า|cháa][กว่า|kwàa][นั้น|nán][ก็|kâw][ได้|dâai]",
+     "id": "Belum pasti. Mungkin awal Desember, atau bisa juga lebih lambat.",
+     "literal": "masih — tidak — pasti. mungkin — awal-bulan — Desember — atau — lambat — lebih — itu — pun — bisa."
+    },
+    {
+     "speaker": "บีม:",
+     "text": "[งั้น|Ngán][ผม|phǒm][ต้อง|tâwng][บอก|bàwk][ผอ.|phǎw-aw][ว่า|wâa][เลื่อน|lûuean][ใช่|châi][ไหม|mǎi][ครับ|khráp] [เด็กๆ|Dèk-dèk][คง|khong][ผิดหวัง|phìt-wǎng][มั้ง|máng]",
+     "id": "Jadi saya harus bilang ke kepala sekolah bahwa diundur, ya? Anak-anak mungkin kecewa, deh.",
+     "literal": "kalau-begitu — saya — harus — beri-tahu — kepala-sekolah — bahwa — diundur — benar — kah — (sopan)? anak-anak — mungkin — kecewa — kali."
+    },
+    {
+     "speaker": "บูดี:",
+     "text": "[ใช่|Châi] [บอก|Bàwk][ท่าน|thân][ว่า|wâa][เป็นไปได้|pen-pai-dâai][ว่า|wâa][จะ|jà][เลื่อน|lûuean][ไป|pai][สอง|sǎawng][สัปดาห์|sàp-daa]",
+     "id": "Ya. Bilang ke beliau bahwa ada kemungkinan diundur dua minggu.",
+     "literal": "benar. beri-tahu — beliau — bahwa — mungkin-terjadi — bahwa — akan — undur — pergi — dua — minggu."
+    },
+    {
+     "speaker": "บีม:",
+     "text": "[ครับ|Khráp] [ท่าน|Thân][น่าจะ|nâa-jà][เข้าใจ|khâo-jai][ครับ|khráp] [ท่าน|Thân][ใจดี|jai-dii][มาก|mâak]",
+     "id": "Baik. Beliau semestinya mengerti. Beliau baik sekali.",
+     "literal": "ya. beliau — sepertinya — mengerti — (sopan). beliau — baik-hati — sangat."
+    },
+    {
+     "speaker": "บูดี:",
+     "text": "[ระหว่าง|Rá-wàang][รอ|raw][แผง|phǎaeng] [เรา|rao][เตรียม|triam][โครง|khroong][กับ|kàp][สายไฟ|sǎai-fai][ไว้|wái][ก่อน|kàwn][ได้|dâai][ไหม|mǎi]",
+     "id": "Sambil menunggu panel, kita bisa siapkan rangka dan kabelnya dulu?",
+     "literal": "selama — tunggu — panel — kita — siapkan — rangka — dan — kabel-listrik — simpan — dulu — bisa — kah?"
+    },
+    {
+     "speaker": "บีม:",
+     "text": "[ได้|Dâai][ครับ|khráp] [คุณ|Khun][เกียรติ|Kìat][บอก|bàwk][ว่า|wâa][อาทิตย์|aa-thít][หน้า|nâa][ทีม|thiim][ว่าง|wâang][พอดี|phaw-dii][ครับ|khráp]",
+     "id": "Bisa. Pak Kiat bilang minggu depan timnya kebetulan kosong.",
+     "literal": "bisa — (sopan). Tuan — Kiat — berkata — bahwa — minggu — depan — tim — luang — kebetulan — (sopan)."
+    },
+    {
+     "speaker": "บูดี:",
+     "text": "[ดี|Dii][เลย|loei] [ไม่|Mâi][แน่|nâae][นะ|ná] [ถ้า|thâa][เตรียม|triam][ไว้|wái][ดีๆ|dii-dii] [เรา|rao][อาจจะ|àat-jà][ติดตั้ง|tìt-tâng][เสร็จ|sèt][เร็ว|reo][กว่า|kwàa][ที่|thîi][คิด|khít][ก็|kâw][ได้|dâai]",
+     "id": "Bagus. Belum tentu juga, lho: kalau disiapkan baik-baik, kita malah bisa selesai lebih cepat dari perkiraan.",
+     "literal": "bagus — betul. tidak — pasti — ya — kalau — siapkan — simpan — baik-baik — kita — mungkin — pasang — selesai — cepat — lebih — yang — pikir — pun — bisa."
+    },
+    {
+     "speaker": "บีม:",
+     "text": "[หวัง|Wǎng][ว่า|wâa][จะ|jà][เป็น|pen][อย่าง|yàang][นั้น|nán][ครับ|khráp]",
+     "id": "Semoga begitu.",
+     "literal": "berharap — bahwa — akan — menjadi — seperti — itu — (sopan)."
+    }
+   ],
+   "notes": [
+    "**ไม่แน่ *mâi nâae* = belum tentu.** Ia bisa membawa kabar buruk (*ยังไม่แน่* — belum pasti datang) atau harapan (*ไม่แน่นะ อาจจะเสร็จเร็วกว่าเดิม* — siapa tahu, bisa lebih cepat). Budi memakai keduanya dalam satu percakapan.",
+    "**เป็นไปได้ว่า *pen-pai-dâai wâa* = ada kemungkinan bahwa.** Terdengar resmi dan netral, cocok untuk menyampaikan kabar kepada orang yang dihormati, seperti kepala sekolah. Dalam laporan: *มีความเป็นไปได้ว่า…* (terdapat kemungkinan bahwa…) — perhatikan *ความ* dari unit 8.",
+    "**มั้ง *máng* = kali, deh, mungkin** — di ujung kalimat, santai, sering dengan sedikit mengangkat bahu: *เด็กๆ คงผิดหวังมั้ง*. Jangan dipakai dengan atasan atau pelanggan: di mulut pemasok, *พรุ่งนี้มั้งคะ* terdengar tidak bertanggung jawab.",
+    "**…ก็ได้ di ujung = \"bisa juga\"**: *หรือช้ากว่านั้นก็ได้* (atau bisa juga lebih lambat), *เราอาจจะเสร็จเร็วกว่าที่คิดก็ได้* (kita malah bisa selesai lebih cepat dari perkiraan). Ia menambah rasa kemungkinan terbuka — pasangan alami *อาจจะ*.",
+    "**ผอ. *phǎw-aw*** — singkatan *ผู้อำนวยการ* yang dipakai semua orang di sekolah Thai, seperti \"Pak/Bu Kepsek\". Beem dan Budi menyebut beliau dengan kata ganti hormat *ท่าน thân*."
+   ],
+   "grammars": [
+    {
+     "title": "Menyampaikan kabar yang belum pasti",
+     "table": {
+      "head": [
+       "Kepada",
+       "Kalimat",
+       "Artinya"
+      ],
+      "rows": [
+       [
+        "teman, junior",
+        "แผงคงมาไม่ทันมั้ง",
+        "panelnya kayaknya nggak keburu, deh"
+       ],
+       [
+        "rekan kerja",
+        "แผงน่าจะมาไม่ทันครับ",
+        "panelnya kemungkinan besar tidak keburu"
+       ],
+       [
+        "atasan, klien",
+        "เป็นไปได้ว่าจะต้องเลื่อนครับ",
+        "ada kemungkinan harus diundur"
+       ],
+       [
+        "surat, laporan",
+        "มีความเป็นไปได้ว่าการติดตั้งจะล่าช้า",
+        "terdapat kemungkinan pemasangan terlambat"
+       ],
+       [
+        "harapan",
+        "ไม่แน่ อาจจะเร็วกว่านั้นก็ได้",
+        "siapa tahu, bisa juga lebih cepat"
+       ]
+      ]
+     },
+     "after": [
+      "Kabar buruk di Thailand hampir selalu disampaikan dengan pelunak: kata kepastian yang rendah, *ครับ/ค่ะ*, dan tawaran jalan keluar (*ระหว่างรอ เราเตรียม…ไว้ก่อน*). Budi melakukan ketiganya."
+     ]
+    }
+   ]
+  }
+ ],
+ "sections": [
+  {
+   "title": "Skala kepastian",
+   "blocks": [
+    {
+     "type": "tabel",
+     "head": [
+      "Kira-kira",
+      "Thai",
+      "Baca",
+      "Contoh"
+     ],
+     "rows": [
+      [
+       "100 %",
+       "แน่นอน / …แน่ๆ",
+       "*nâae-naawn / nâae-nâae*",
+       "ถึงวันศุกร์แน่นอน — pasti sampai Jumat"
+      ],
+      [
+       "80 %",
+       "คง(จะ)",
+       "*khong (jà)*",
+       "คงถึงวันศุกร์ — mungkin sampai Jumat"
+      ],
+      [
+       "75 %",
+       "น่าจะ",
+       "*nâa-jà*",
+       "น่าจะถึงวันศุกร์ — kemungkinan besar Jumat"
+      ],
+      [
+       "65 %",
+       "ดูเหมือนว่า / ท่าจะ",
+       "*duu-mǔuean-wâa / thâa-jà*",
+       "ดูเหมือนว่าจะถึงวันศุกร์ — tampaknya Jumat"
+      ],
+      [
+       "50 %",
+       "อาจ(จะ)",
+       "*àat (jà)*",
+       "อาจจะถึงวันศุกร์ — mungkin Jumat"
+      ],
+      [
+       "40 %",
+       "…มั้ง",
+       "*máng*",
+       "วันศุกร์มั้ง — Jumat, kali"
+      ],
+      [
+       "?",
+       "ไม่แน่ / เป็นไปได้ว่า",
+       "*mâi nâae / pen-pai-dâai wâa*",
+       "ไม่แน่ อาจจะวันศุกร์ — belum tentu, mungkin Jumat"
+      ],
+      [
+       "25 %",
+       "ไม่น่าจะ",
+       "*mâi nâa-jà*",
+       "ไม่น่าจะถึงวันศุกร์ — sepertinya tak sampai Jumat"
+      ],
+      [
+       "15 %",
+       "คงไม่",
+       "*khong mâi*",
+       "คงไม่ถึงวันศุกร์ — mungkin tak sampai Jumat"
+      ],
+      [
+       "0 %",
+       "ไม่…แน่นอน",
+       "*mâi … nâae-naawn*",
+       "ไม่ถึงวันศุกร์แน่นอน — pasti tak sampai Jumat"
+      ]
+     ]
+    },
+    {
+     "type": "p",
+     "text": "Angka di kolom pertama hanyalah pegangan kasar, bukan hukum. Yang lebih penting adalah kebiasaannya: orang Thai jarang memakai ujung-ujung skala. Menjawab *แน่นอนครับ* tentang jadwal yang tak sepenuhnya di tanganmu terdengar gegabah, dan kalau meleset, kamu kehilangan muka. Menjawab *น่าจะ…ครับ* tidak mengurangi wibawa sedikit pun; justru itu jawaban seorang profesional."
+    },
+    {
+     "type": "kotak",
+     "title": "Kata kepastian dan kesopanan",
+     "items": [
+      "**Menolak dengan lembut**: *คงไม่สะดวกครับ* (sepertinya kurang memungkinkan) jauh lebih halus daripada *ไม่ได้ครับ*.",
+      "**Menyalahkan tanpa menuduh**: *ดูเหมือนว่าเอกสารจะยังไม่ครบ* — dokumennya \"tampaknya\" belum lengkap, bukan \"kamu lupa\".",
+      "**Janji yang bisa ditepati**: *น่าจะส่งได้ภายในวันศุกร์ครับ* — kalau selesai Kamis, kamu terlihat hebat; kalau Jumat, kamu tepat janji."
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Logistik dan pengiriman",
+   "blocks": [
+    {
+     "type": "tabel",
+     "head": [
+      "Thai",
+      "Baca",
+      "Artinya"
+     ],
+     "rows": [
+      [
+       "สั่งของ",
+       "*sàng khǎawng*",
+       "memesan barang"
+      ],
+      [
+       "ผู้ผลิต",
+       "*phûu-phà-lìt*",
+       "produsen"
+      ],
+      [
+       "จัดส่ง",
+       "*jàt-sòng*",
+       "mengirim (layanan pengiriman)"
+      ],
+      [
+       "ขนส่ง",
+       "*khǒn-sòng*",
+       "mengangkut; transportasi"
+      ],
+      [
+       "ตู้คอนเทนเนอร์",
+       "*tûu khawn-then-nôe*",
+       "kontainer (kb. *ตู้*)"
+      ],
+      [
+       "ท่าเรือ",
+       "*thâa-ruea*",
+       "pelabuhan"
+      ],
+      [
+       "ศุลกากร",
+       "*sǔn-lá-kaa-kawn*",
+       "bea cukai"
+      ],
+      [
+       "รถบรรทุก",
+       "*rót ban-thúk*",
+       "truk (kb. *คัน*)"
+      ],
+      [
+       "คลังสินค้า",
+       "*khlang sǐn-kháa*",
+       "gudang"
+      ],
+      [
+       "เลขพัสดุ",
+       "*lêek phát-sà-dù*",
+       "nomor resi"
+      ],
+      [
+       "ติดตาม",
+       "*tìt-taam*",
+       "melacak; menindaklanjuti"
+      ],
+      [
+       "ส่งถึง",
+       "*sòng thǔeng*",
+       "tiba di tujuan"
+      ]
+     ]
+    },
+    {
+     "type": "p",
+     "text": "Sebagian besar barang impor tiba di Thailand melalui **Laem Chabang** (แหลมฉบัง) di provinsi Chonburi, pelabuhan peti kemas terbesar di negeri itu. Dari sana, truk membawanya ke seluruh negeri; ke Khon Kaen perjalanannya sekitar satu hari. Keterlambatan paling sering terjadi di dua tempat: di bea cukai, ketika dokumen belum lengkap, dan di gudang, ketika jadwal truk penuh menjelang akhir tahun."
+    },
+    {
+     "type": "kotak",
+     "title": "Menelepon pemasok: kalimat siap pakai",
+     "items": [
+      "*รบกวนเช็กสถานะการจัดส่งให้หน่อยได้ไหมครับ* — boleh tolong cek status pengirimannya?",
+      "*ตอนนี้ของอยู่ที่ไหนแล้วครับ* — barangnya sekarang sudah di mana?",
+      "*ช่วยส่งเลขพัสดุมาทางอีเมลได้ไหมครับ* — bisa kirim nomor resinya lewat surel?",
+      "*ถ้ามีความคืบหน้า รบกวนแจ้งด้วยนะครับ* — kalau ada perkembangan, tolong kabari, ya."
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Ulangan berjenjang — unit 8",
+   "blocks": [
+    {
+     "type": "p",
+     "text": "Tutup kolom Thai, baca terjemahan Indonesianya, lalu susun kembali kalimatnya dari ingatan."
+    },
+    {
+     "type": "tabel",
+     "head": [
+      "Bahasa Indonesia",
+      "ภาษาไทย",
+      "Baca"
+     ],
+     "rows": [
+      [
+       "Rapat dengan sekolah berjalan dengan baik.",
+       "การประชุมกับโรงเรียนเป็นไปด้วยดีค่ะ",
+       "*Kaan prà-chum kàp roong-rian pen-pai dûai-dii khâ*"
+      ],
+      [
+       "Kalau begitu saya tulis \"keselamatan murid adalah yang terpenting\". Benar?",
+       "งั้นผมเขียนว่า ความปลอดภัยของนักเรียนสำคัญที่สุด ถูกไหมครับ",
+       "*Ngán phǒm khǐan wâa khwaam plàwt-phai khǎawng nák-rian sǎm-khan thîi-sùt Thùuk mǎi khráp*"
+      ],
+      [
+       "Kalau begitu, penutupnya \"terima kasih kepada semua pihak atas kerja samanya\"?",
+       "ถ้าอย่างนั้นปิดท้ายว่า ขอขอบคุณทุกฝ่ายสำหรับความร่วมมือ ดีไหมครับ",
+       "*Thâa yàang-nán pìt tháai wâa khǎaw-khàwp-khun thúk fàai sǎm-ràp khwaam-rûam-muue Dii mǎi khráp*"
+      ],
+      [
+       "Jadi tim Pak Kiat tukang listrik, Pak Kiat mandor kontraktornya.",
+       "งั้นทีมคุณเกียรติเป็นช่างไฟ ส่วนคุณเกียรติเป็นหัวหน้าช่างของผู้รับเหมา",
+       "*Ngán thiim khun Kìat pen châang-fai Sùan khun Kìat pen hǔa-nâa châang khǎawng phûu-ráp-mǎo*"
+      ],
+      [
+       "Tepat. Oh ya, wartawan lokal minta datang memotret pada hari pemasangan.",
+       "ถูกต้องครับ อ้อ นักข่าวท้องถิ่นขอมาถ่ายรูปวันติดตั้งด้วยครับ",
+       "*Thùuk-tâwng khráp Âw nák-khàao tháawng-thìn khǎaw maa thàai-rûup wan tìt-tâng dûai khráp*"
+      ]
+     ]
+    }
+   ]
+  }
+ ],
+ "vocab": [
+  {
+   "th": "แน่นอน",
+   "baca": "nâae-naawn",
+   "id": "pasti, tentu"
+  },
+  {
+   "th": "แน่ๆ",
+   "baca": "nâae-nâae",
+   "id": "pasti (lisan, di ujung kalimat)"
+  },
+  {
+   "th": "ไม่แน่",
+   "baca": "mâi nâae",
+   "id": "belum tentu"
+  },
+  {
+   "th": "แน่ใจ",
+   "baca": "nâae-jai",
+   "id": "yakin"
+  },
+  {
+   "th": "คง",
+   "baca": "khong",
+   "id": "mungkin, barangkali (*คงจะ*)"
+  },
+  {
+   "th": "อาจจะ",
+   "baca": "àat-jà",
+   "id": "mungkin (tulis: *อาจ*)"
+  },
+  {
+   "th": "ดูเหมือนว่า",
+   "baca": "duu-mǔuean-wâa",
+   "id": "tampaknya, kelihatannya"
+  },
+  {
+   "th": "ท่าจะ",
+   "baca": "thâa-jà",
+   "id": "tampaknya akan (*ฝนท่าจะตก*)"
+  },
+  {
+   "th": "มั้ง",
+   "baca": "máng",
+   "id": "kali, deh (santai, di ujung kalimat)"
+  },
+  {
+   "th": "เป็นไปได้ว่า",
+   "baca": "pen-pai-dâai wâa",
+   "id": "ada kemungkinan bahwa"
+  },
+  {
+   "th": "สั่ง",
+   "baca": "sàng",
+   "id": "memesan (*สั่งของ*); memerintah (*สั่งให้*)"
+  },
+  {
+   "th": "ตู้คอนเทนเนอร์",
+   "baca": "tûu khawn-then-nôe",
+   "id": "kontainer (kb. *ตู้*)"
+  },
+  {
+   "th": "ท่าเรือ",
+   "baca": "thâa-ruea",
+   "id": "pelabuhan (kb. *แห่ง*)"
+  },
+  {
+   "th": "ศุลกากร",
+   "baca": "sǔn-lá-kaa-kawn",
+   "id": "bea cukai"
+  },
+  {
+   "th": "ครบ",
+   "baca": "khróp",
+   "id": "lengkap (*เอกสารครบ*)"
+  },
+  {
+   "th": "ทัน",
+   "baca": "than",
+   "id": "keburu, sempat (*ไม่ทัน* = tak keburu)"
+  },
+  {
+   "th": "ต้นเดือน",
+   "baca": "tôn-duean",
+   "id": "awal bulan (*ปลายเดือน* = akhir bulan)"
+  },
+  {
+   "th": "ส่วนใหญ่",
+   "baca": "sùan-yài",
+   "id": "sebagian besar; biasanya"
+  },
+  {
+   "th": "ติดตาม",
+   "baca": "tìt-taam",
+   "id": "menindaklanjuti, melacak"
+  },
+  {
+   "th": "ทันที",
+   "baca": "than-thii",
+   "id": "segera, seketika"
+  },
+  {
+   "th": "เลื่อน",
+   "baca": "lûuean",
+   "id": "mengundur, menggeser (*เลื่อนไป…*)"
+  },
+  {
+   "th": "ผิดหวัง",
+   "baca": "phìt-wǎng",
+   "id": "kecewa"
+  },
+  {
+   "th": "โครง",
+   "baca": "khroong",
+   "id": "rangka (*โครงหลังคา*)"
+  },
+  {
+   "th": "สายไฟ",
+   "baca": "sǎai-fai",
+   "id": "kabel listrik (kb. *เส้น*)"
+  },
+  {
+   "th": "ว่าง",
+   "baca": "wâang",
+   "id": "luang, kosong"
+  },
+  {
+   "th": "หวังว่า",
+   "baca": "wǎng wâa",
+   "id": "berharap bahwa (*หวังว่าจะเป็นอย่างนั้น* = semoga begitu)"
+  }
+ ],
+ "exercises": [
+  {
+   "prompt": "Terjemahkan ke bahasa Thai. Bayangkan kamu laki-laki.",
+   "items": [
+    "Sepertinya kontainernya tertahan di pelabuhan.",
+    "Tanggal 22 jelas tidak akan keburu.",
+    "Kemungkinan besar sampai awal Desember.",
+    "Belum pasti. Mungkin awal Desember.",
+    "Ada kemungkinan diundur dua minggu.",
+    "Semoga begitu."
+   ]
+  },
+  {
+   "prompt": "Isi dengan คง, น่าจะ, อาจจะ, แน่ๆ, มั้ง, ท่าจะ, atau แน่นอน.",
+   "items": [
+    "ผมจะไปงานแต่งพี่ต้น____ครับ (pasti, tanpa ragu)",
+    "ฟ้ามืดแล้ว ฝน____ตก (tampaknya akan, dari tanda-tanda)",
+    "เขา____ลืม ไม่เป็นไร (mungkin, dugaan pribadi)",
+    "ถ้าเอกสารผ่าน แผง____ถึงวันศุกร์ (kemungkinan besar)",
+    "พรุ่งนี้____ ไม่แน่ใจ (kali, santai)",
+    "วันนี้ไม่ทัน____ (jelas, di ujung kalimat)",
+    "เรา____ต้องเลื่อนงาน (mungkin, 50 persen)"
+   ]
+  },
+  {
+   "prompt": "Turunkan kepastiannya: ubah kalimat pasti menjadi kalimat dengan kata dalam kurung.",
+   "items": [
+    "แผงถึงวันศุกร์ (น่าจะ)",
+    "เขาไม่มา (คง)",
+    "ตู้ติดอยู่ที่ท่าเรือ (ดูเหมือนว่า)",
+    "เราต้องส่งเอกสารเพิ่ม (อาจจะ)",
+    "การติดตั้งจะเลื่อน (เป็นไปได้ว่า)",
+    "แผงไม่ทันวันที่ยี่สิบสอง (ไม่น่าจะ)"
+   ]
+  },
+  {
+   "prompt": "Susun jadi kalimat yang benar.",
+   "items": [
+    "จะ / ติดอยู่ / ดูเหมือนว่า / ที่ท่าเรือ / ตู้",
+    "แน่ๆ / คง / ไม่ทัน / วันที่ยี่สิบสอง",
+    "ต้นเดือนธันวา / ถึง / น่าจะ / แผง",
+    "ก็ได้ / อาจจะ / เร็วกว่าเดิม / เสร็จ",
+    "จะ / เลื่อน / ว่า / เป็นไปได้"
+   ]
+  }
+ ],
+ "answers": [
+  "ดูเหมือนว่าตู้คอนเทนเนอร์จะติดอยู่ที่ท่าเรือครับ — วันที่ยี่สิบสองคงไม่ทันแน่ๆครับ — น่าจะถึงต้นเดือนธันวาครับ — ยังไม่แน่ครับอาจจะต้นเดือนธันวา — เป็นไปได้ว่าจะเลื่อนไปสองสัปดาห์ครับ — หวังว่าจะเป็นอย่างนั้นครับ",
+  "แน่นอน — ท่าจะ — คง — น่าจะ — มั้ง — แน่ๆ — อาจจะ",
+  "แผงน่าจะถึงวันศุกร์ — เขาคงไม่มา — ดูเหมือนว่าตู้จะติดอยู่ที่ท่าเรือ — เราอาจจะต้องส่งเอกสารเพิ่ม — เป็นไปได้ว่าการติดตั้งจะเลื่อน — แผงไม่น่าจะทันวันที่ยี่สิบสอง",
+  "ดูเหมือนว่าตู้จะติดอยู่ที่ท่าเรือ — วันที่ยี่สิบสองคงไม่ทันแน่ๆ — แผงน่าจะถึงต้นเดือนธันวา — อาจจะเสร็จเร็วกว่าเดิมก็ได้ — เป็นไปได้ว่าจะเลื่อน"
+ ],
+ "wave": "Ulangi unit 8: ambil laporan kemajuan Budi, lalu ubah lima kalimat lisan menjadi kalimat laporan dengan การ dan ความ."
+}

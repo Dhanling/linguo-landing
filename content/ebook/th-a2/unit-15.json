@@ -1,0 +1,871 @@
+{
+ "title": "Semua, masing-masing, beberapa — ทุก, แต่ละ, บาง, …ละ",
+ "title_target": "ทุกคน แต่ละคน คนละ — Thúk khon, tàae-lá khon, khon lá",
+ "goal": "Membagi dan menghitung dengan tepat: semua orang, setiap hari, sebagian, masing-masing dua pasang, empat jam sehari — lalu memakai ๆ untuk mengulang kata dan mengubah rasanya.",
+ "bekal": [
+  "memakai ทุก, แต่ละ, บาง, หลาย di depan kata benda atau kata bantu bilangan",
+  "memakai ทั้ง… untuk \"seluruh\" dan …ละ untuk \"per\" (คนละ, วันละ)",
+  "memilih kata bantu bilangan yang tepat untuk barang sehari-hari",
+  "memakai ๆ (เด็กๆ, ช้าๆ, ใกล้ๆ, ค่อยๆ) dan menangkap perubahan artinya"
+ ],
+ "dialogs": [
+  {
+   "title": "บทสนทนา — Daftar belanja tim teknisi",
+   "intro": "Senin, 1 Maret 2027. Rancangan Budi sudah disetujui, dan pemasangan panel di atap dimulai bulan ini. Ton, yang memimpin proyek, meminta Budi menyiapkan perlengkapan keselamatan dan membagi tugas enam teknisi. Perhatikan kata-kata yang membagi kelompok: *ทุก, บาง, แต่ละ, ทั้ง*, dan *…ละ*.",
+   "lines": [
+    {
+     "speaker": "ต้น:",
+     "text": "[บูดี|Buu-dii] [สั่ง|sàng][ของ|khǎawng][ให้|hâi][ทีม|thiim][ช่าง|châang][หรือยัง|rǔue-yang]",
+     "id": "Budi, barang untuk tim teknisi sudah dipesan belum?",
+     "literal": "Budi — pesan — barang — untuk — tim — teknisi — sudah-belum?"
+    },
+    {
+     "speaker": "บูดี:",
+     "text": "[กำลัง|Kam-lang][ทำ|tham][อยู่|yùu][ครับ|khráp] [ทีม|Thiim][เรา|rao][มี|mii][ช่าง|châang][หก|hòk][คน|khon][ครับ|khráp]",
+     "id": "Sedang saya kerjakan. Tim kita punya enam teknisi.",
+     "literal": "sedang — kerjakan — (berlangsung) — (sopan). tim — kita — punya — teknisi — enam — orang — (sopan)."
+    },
+    {
+     "speaker": "ต้น:",
+     "text": "[หมวก|Mùak][นิรภัย|ní-rá-phai][มี|mii][พอ|phaw][ไหม|mǎi]",
+     "id": "Helm pengamannya cukup?",
+     "literal": "topi — pengaman — ada — cukup — kah?"
+    },
+    {
+     "speaker": "บูดี:",
+     "text": "[ช่าง|Châang][ทุก|thúk][คน|khon][ต้อง|tâwng][มี|mii][หมวก|mùak][นิรภัย|ní-rá-phai] [แต่|Tàae][บาง|baang][คน|khon][มี|mii][แล้ว|láaeo][ครับ|khráp]",
+     "id": "Semua teknisi harus punya helm, tapi sebagian sudah punya.",
+     "literal": "teknisi — setiap — orang — harus — punya — topi — pengaman. tetapi — sebagian — orang — punya — sudah — (sopan)."
+    },
+    {
+     "speaker": "ต้น:",
+     "text": "[งั้น|Ngán][ต้อง|tâwng][สั่ง|sàng][เพิ่ม|phôoem][กี่|kìi][ใบ|bai]",
+     "id": "Jadi harus pesan tambahan berapa buah?",
+     "literal": "kalau-begitu — harus — pesan — tambah — berapa — (kata bantu)?"
+    },
+    {
+     "speaker": "บูดี:",
+     "text": "[สาม|Sǎam][ใบ|bai][ครับ|khráp] [แล้ว|Láaeo][ก็|kâw][ถุงมือ|thǔng-muue][คนละ|khon-lá][สอง|sǎawng][คู่|khûu][ครับ|khráp]",
+     "id": "Tiga buah. Lalu sarung tangan, masing-masing dua pasang.",
+     "literal": "tiga — (kata bantu) — (sopan). lalu — juga — sarung-tangan — orang-per — dua — pasang — (sopan)."
+    },
+    {
+     "speaker": "ต้น:",
+     "text": "[ถุงมือ|Thǔng-muue][มี|mii][หลาย|lǎai][แบบ|bàaep][นะ|ná] [แต่ละ|Tàae-lá][แบบ|bàaep][ราคา|raa-khaa][ไม่|mâi][เท่ากัน|thâo-kan]",
+     "id": "Sarung tangan banyak jenisnya lho. Harga tiap jenis beda-beda.",
+     "literal": "sarung-tangan — ada — banyak — jenis — lho. masing-masing — jenis — harga — tidak — sama."
+    },
+    {
+     "speaker": "บูดี:",
+     "text": "[ผม|Phǒm][เลือก|lûueak][แบบ|bàaep][กัน|kan][ไฟฟ้า|fai-fáa][ครับ|khráp] [เพราะ|Phráw][ทุก|thúk][วัน|wan][ต้อง|tâwng][ทำงาน|tham-ngaan][กับ|kàp][สายไฟ|sǎai-fai]",
+     "id": "Saya pilih yang tahan listrik, karena tiap hari kerja dengan kabel.",
+     "literal": "saya — pilih — jenis — tahan — listrik — (sopan). karena — setiap — hari — harus — bekerja — dengan — kabel."
+    },
+    {
+     "speaker": "ต้น:",
+     "text": "[ดี|Dii] [แล้ว|Láaeo][แบ่ง|bàeng][งาน|ngaan][ยังไง|yang-ngai]",
+     "id": "Bagus. Terus pembagian kerjanya gimana?",
+     "literal": "bagus. lalu — bagi — kerja — bagaimana?"
+    },
+    {
+     "speaker": "บูดี:",
+     "text": "[แต่ละ|Tàae-lá][วัน|wan][ขึ้น|khûen][หลังคา|lǎng-khaa][ได้|dâai][แค่|khâae][สาม|sǎam][คน|khon][ครับ|khráp]",
+     "id": "Setiap hari hanya tiga orang yang boleh naik ke atap.",
+     "literal": "masing-masing — hari — naik — atap — boleh — hanya — tiga — orang — (sopan)."
+    },
+    {
+     "speaker": "ต้น:",
+     "text": "[ทำไม|Tham-mai][ไม่|mâi][ขึ้น|khûen][ไป|pai][ทั้ง|tháng][ทีม|thiim][เลย|loei]",
+     "id": "Kenapa nggak naik satu tim sekaligus?",
+     "literal": "mengapa — tidak — naik — pergi — seluruh — tim — sekalian?"
+    },
+    {
+     "speaker": "บูดี:",
+     "text": "[หลังคา|Lǎng-khaa][ร้อน|ráwn][มาก|mâak][ครับ|khráp] [ทำงาน|Tham-ngaan][ได้|dâai][วันละ|wan-lá][ไม่|mâi][เกิน|kooen][สี่|sìi][ชั่วโมง|chûa-moong] [แล้ว|Láaeo][สลับ|sà-làp][กัน|kan][ครับ|khráp]",
+     "id": "Atapnya panas sekali. Paling lama empat jam sehari, lalu bergantian.",
+     "literal": "atap — panas — sangat — (sopan). bekerja — bisa — hari-per — tidak — lebih — empat — jam. lalu — tukar — bersama — (sopan)."
+    },
+    {
+     "speaker": "ต้น:",
+     "text": "[คิด|Khít][มา|maa][ดี|dii][มาก|mâak] [ส่ง|Sòng][รายการ|raai-kaan][มา|maa][ให้|hâi][พี่|phîi][ดู|duu][ก่อน|kàwn][นะ|ná]",
+     "id": "Sudah dipikir matang. Kirim daftarnya ke aku dulu ya.",
+     "literal": "pikir — datang — baik — sangat. kirim — daftar — datang — untuk — kakak — lihat — dulu — ya."
+    }
+   ],
+   "notes": [
+    "**ทุก = setiap/semua, dan selalu di DEPAN kata bantu atau kata benda.** *ทุกคน* (semua orang), *ทุกวัน* (setiap hari), *ช่างทุกคน* (semua teknisi). Susunannya terbalik dari urutan hitungan biasa (*ช่างหกคน*): angka di belakang, *ทุก* di depan kata bantu.",
+    "**บาง = sebagian, beberapa.** *บางคน* (sebagian orang), *บางวัน* (kadang-kadang, pada hari tertentu), *บางที* (kadang, barangkali). Ia juga selalu membutuhkan kata bantu atau kata benda sesudahnya: tidak ada *บาง* \"sebagian\" yang berdiri sendiri. (Sebagai kata sifat, *บาง* berarti \"tipis\": *กระดาษบาง krà-dàat baang*.)",
+    "**แต่ละ = masing-masing, satu per satu.** *แต่ละแบบราคาไม่เท่ากัน* (tiap jenis harganya beda). Bedanya dengan *ทุก*: *ทุก* melihat kelompok sebagai satu kesatuan (semuanya sama), *แต่ละ* melihat anggotanya satu-satu (masing-masing berbeda).",
+    "**…ละ = per.** *คนละสองคู่* (dua pasang per orang), *วันละสี่ชั่วโมง* (empat jam per hari). Satuannya di depan *ละ*, jumlahnya di belakang — kebalikan dari bahasa Indonesia \"dua pasang seorang\". Pedagang memakainya terus: *กิโลละห้าสิบ* (lima puluh sekilo).",
+    "**ทั้ง + kata benda = seluruh, satu … penuh.** *ทั้งทีม* (seluruh tim), *ทั้งวัน* (sepanjang hari), *ทั้งหมด* (semuanya, total). Ton bertanya kenapa tidak *ทั้งทีม*; Budi menjawab dengan aturan keselamatan kerja di atap yang panas."
+   ],
+   "grammars": [
+    {
+     "title": "Membagi kelompok: ทุก, บาง, หลาย, แต่ละ, ทั้ง",
+     "body": [
+      "Kelimanya — juga *กี่* (berapa) — diletakkan di **depan** kata bantu bilangan (atau kata benda yang sekaligus menjadi kata bantu, seperti *วัน, ปี, ครั้ง*)."
+     ],
+     "table": {
+      "head": [
+       "Kata",
+       "Baca",
+       "Artinya",
+       "Contoh",
+       "Arti contoh"
+      ],
+      "rows": [
+       [
+        "ทุก",
+        "*thúk*",
+        "setiap, semua",
+        "ทุกคน",
+        "semua orang"
+       ],
+       [
+        "บาง",
+        "*baang*",
+        "sebagian, beberapa",
+        "บางคน",
+        "sebagian orang"
+       ],
+       [
+        "หลาย",
+        "*lǎai*",
+        "banyak (beberapa)",
+        "หลายแบบ",
+        "banyak jenis"
+       ],
+       [
+        "แต่ละ",
+        "*tàae-lá*",
+        "masing-masing",
+        "แต่ละวัน",
+        "setiap hari (satu per satu)"
+       ],
+       [
+        "ทั้ง",
+        "*tháng*",
+        "seluruh",
+        "ทั้งทีม",
+        "seluruh tim"
+       ],
+       [
+        "กี่",
+        "*kìi*",
+        "berapa",
+        "กี่ใบ",
+        "berapa buah"
+       ]
+      ]
+     },
+     "after": [
+      "⚠️ Dengan benda yang bukan orang, kata bantunya tetap wajib: *หมวกทุกใบ* (semua helm), *บางอัน* (sebagian barang), *หลายเครื่อง* (banyak mesin). *ทุกหมวก* salah."
+     ]
+    },
+    {
+     "title": "…ละ: per satuan",
+     "body": [
+      "Susunan: satuan + *ละ* + jumlah. Bisa dipakai untuk orang, waktu, berat, maupun harga."
+     ],
+     "table": {
+      "head": [
+       "Thai",
+       "Baca",
+       "Artinya"
+      ],
+      "rows": [
+       [
+        "คนละสองคู่",
+        "*khon lá sǎawng khûu*",
+        "dua pasang per orang"
+       ],
+       [
+        "วันละสี่ชั่วโมง",
+        "*wan lá sìi chûa-moong*",
+        "empat jam per hari"
+       ],
+       [
+        "เดือนละสองกิโล",
+        "*duuean lá sǎawng kì-loo*",
+        "dua kilo per bulan"
+       ],
+       [
+        "กิโลละห้าสิบบาท",
+        "*kì-loo lá hâa-sìp bàat*",
+        "lima puluh baht sekilo"
+       ],
+       [
+        "อาทิตย์ละสามครั้ง",
+        "*aa-thít lá sǎam khráng*",
+        "tiga kali seminggu"
+       ],
+       [
+        "คนละครึ่ง",
+        "*khon lá khrûeng*",
+        "separuh-separuh, patungan"
+       ]
+      ]
+     },
+     "after": [
+      "*คนละครึ่ง* juga ungkapan sehari-hari untuk \"bayar patungan separuh-separuh\" — ajakan wajar di antara teman sebaya."
+     ]
+    }
+   ]
+  },
+  {
+   "title": "บทสนทนาที่สอง — Warung Pa Somsri",
+   "intro": "Malam harinya, Budi pulang terlambat dan mampir ke warung Pa Somsri di mulut gang kondominiumnya. Perhatikan tanda *ๆ* yang bertebaran di kalimat Pa Somsri: kata yang diulang, dan artinya ikut bergeser.",
+   "lines": [
+    {
+     "speaker": "ป้าสมศรี:",
+     "text": "[อ้าว|Âao] [พ่อหนุ่ม|phâw-nùm] [วันนี้|Wan-níi][กลับ|klàp][ดึก|dùek][นะ|ná] [เอา|Ao][อะไร|à-rai][ดี|dii][จ๊ะ|já]",
+     "id": "Lho, anak muda. Hari ini pulangnya malam ya. Mau apa?",
+     "literal": "lho — anak-muda. hari-ini — pulang — larut — ya. ambil — apa — baik — (akrab)?"
+    },
+    {
+     "speaker": "บูดี:",
+     "text": "[ส้มตำ|Sôm-tam][ไทย|thai][จาน|jaan][หนึ่ง|nùeng] [ไก่ย่าง|Kài-yâang][ครึ่ง|khrûeng][ตัว|tua] [ข้าวเหนียว|Khâao-nǐao][สอง|sǎawng][ห่อ|hàw][ครับ|khráp]",
+     "id": "Som tam Thai sepiring, ayam bakar setengah ekor, ketan dua bungkus.",
+     "literal": "som-tam — Thai — piring — satu. ayam-bakar — setengah — ekor. ketan — dua — bungkus — (sopan)."
+    },
+    {
+     "speaker": "ป้าสมศรี:",
+     "text": "[ได้|Dâai][จ้ะ|jâ] [เผ็ด|Phèt][เท่าไหร่|thâo-rài][ดี|dii][จ๊ะ|já]",
+     "id": "Bisa. Pedasnya seberapa?",
+     "literal": "bisa — (akrab). pedas — berapa — baik — (akrab)?"
+    },
+    {
+     "speaker": "บูดี:",
+     "text": "[เผ็ด|Phèt][น้อยๆ|náwy-náwy][นะ|ná][ครับ|khráp][ป้า|pâa]",
+     "id": "Pedasnya sedikit saja ya, Pa.",
+     "literal": "pedas — sedikit-sedikit — ya — (sopan) — bibi."
+    },
+    {
+     "speaker": "ป้าสมศรี:",
+     "text": "[นั่ง|Nâng][รอ|raw][ใกล้ๆ|klâi-klâi][พัดลม|phát-lom][ก่อน|kàwn][นะ|ná] [โต๊ะ|Tó][นั้น|nán][เด็กๆ|dèk-dèk][เพิ่ง|phôeng][กิน|kin][เสร็จ|sèt]",
+     "id": "Duduk tunggu dekat-dekat kipas dulu. Meja itu anak-anak baru selesai makan.",
+     "literal": "duduk — tunggu — dekat-dekat — kipas-angin — dulu — ya. meja — itu — anak-anak — baru-saja — makan — selesai."
+    },
+    {
+     "speaker": "บูดี:",
+     "text": "[ขอบคุณ|Khàwp-khun][ครับ|khráp] [ช่วงนี้|Chûang-níi][งาน|ngaan][ยุ่ง|yûng][มาก|mâak][ครับ|khráp] [ต้อง|Tâwng][สั่ง|sàng][ของ|khǎawng][หลาย|lǎai][อย่าง|yàang]",
+     "id": "Terima kasih. Belakangan kerjaan sibuk sekali. Harus pesan banyak macam barang.",
+     "literal": "terima-kasih — (sopan). masa-ini — kerja — sibuk — sangat — (sopan). harus — pesan — barang — banyak — macam."
+    },
+    {
+     "speaker": "ป้าสมศรี:",
+     "text": "[ทำงาน|Tham-ngaan][หนัก|nàk][ก็|kâw][ต้อง|tâwng][กิน|kin][เยอะๆ|yóe-yóe][นะ|ná][หนู|nǔu] [ช่วงนี้|Chûang-níi][ผอม|phǎawm][ลง|long][ไป|pai][เยอะ|yóe]",
+     "id": "Kerja berat ya harus makan banyak, Nak. Belakangan kamu kurus sekali.",
+     "literal": "bekerja — berat — pun — harus — makan — banyak-banyak — ya — nak. masa-ini — kurus — turun — pergi — banyak."
+    },
+    {
+     "speaker": "บูดี:",
+     "text": "[ผม|Phǒm][ค่อยๆ|khâwy-khâwy][ลด|lót][น้ำหนัก|nám-nàk][ครับ|khráp] [เดือน|Duuean][ละ|lá][สอง|sǎawng][กิโล|kì-loo]",
+     "id": "Saya menurunkan berat pelan-pelan. Dua kilo sebulan.",
+     "literal": "saya — pelan-pelan — kurangi — berat-badan — (sopan). bulan — per — dua — kilo."
+    },
+    {
+     "speaker": "ป้าสมศรี:",
+     "text": "[นี่|Nîi][จ้ะ|jâ] [ร้อนๆ|Ráwn-ráwn][แซ่บๆ|sâep-sâep] [กิน|Kin][ช้าๆ|cháa-cháa][นะ|ná] [ทั้งหมด|Tháng-mòt][ร้อย|ráwy][ห้าสิบ|hâa-sìp][บาท|bàat][จ้ะ|jâ]",
+     "id": "Ini, masih panas-panas, mantap. Makannya pelan-pelan ya. Semuanya seratus lima puluh baht.",
+     "literal": "ini — (akrab). panas-panas — sedap-sedap. makan — pelan-pelan — ya. seluruhnya — seratus — lima-puluh — baht — (akrab)."
+    },
+    {
+     "speaker": "บูดี:",
+     "text": "[ขอบคุณ|Khàwp-khun][ครับ|khráp][ป้า|pâa] [พรุ่งนี้|Phrûng-níi][มา|maa][อีก|ìik][ครับ|khráp]",
+     "id": "Terima kasih, Pa. Besok saya datang lagi.",
+     "literal": "terima-kasih — (sopan) — bibi. besok — datang — lagi — (sopan)."
+    }
+   ],
+   "notes": [
+    "**ๆ (ไม้ยมก mái-yá-mók) = ulangi kata sebelumnya.** *เด็กๆ* dibaca *dèk-dèk*, *ช้าๆ* dibaca *cháa-cháa*. Tandanya cuma satu, bunyinya dua kali. Persis seperti angka 2 dalam tulisan lama bahasa Indonesia: \"anak2\".",
+    "**Pengulangan mengubah rasa, tidak selalu berarti jamak.** *เด็กๆ* memang \"anak-anak\", tetapi *ช้าๆ* adalah \"pelan-pelan\" (lebih lembut daripada *ช้า*), *ใกล้ๆ* adalah \"di dekat-dekat situ\", *เยอะๆ* adalah desakan ramah \"yang banyak ya!\", dan *ร้อนๆ* adalah \"masih hangat, baru matang\".",
+    "**ค่อยๆ = pelan-pelan, sedikit demi sedikit.** Tanpa *ๆ*, *ค่อย* adalah \"barulah\" (A1) atau bagian dari *ไม่ค่อย* (tidak begitu). Dengan *ๆ*, artinya berubah total: *ค่อยๆ ลด* (menurunkan sedikit demi sedikit), *ค่อยๆ เดิน* (berjalan pelan-pelan).",
+    "**จ้ะ dan จ๊ะ: partikel orang tua kepada yang lebih muda.** Pa Somsri memakai *จ้ะ* untuk pernyataan dan *จ๊ะ* untuk pertanyaan, di tempat *ค่ะ/คะ*. Hangat dan keibuan, tetapi hanya pantas dipakai ke bawah atau ke teman akrab. Budi tetap memakai *ครับ*.",
+    "**หนู dan พ่อหนุ่ม: panggilan sayang.** *หนู* (harfiah \"tikus\") adalah panggilan orang tua untuk anak muda, laki-laki maupun perempuan; *พ่อหนุ่ม* \"si anak muda\" khusus laki-laki. Keduanya terdengar seperti \"Nak\" atau \"Le\" di Jawa Timur."
+   ],
+   "grammars": [
+    {
+     "title": "ๆ dan artinya yang bergeser",
+     "body": [
+      "Pengulangan berlaku untuk kata benda, kata sifat, dan keterangan. Arti tambahan yang muncul bergantung pada jenis katanya."
+     ],
+     "table": {
+      "head": [
+       "Kata",
+       "Diulang",
+       "Baca",
+       "Arti tambahan"
+      ],
+      "rows": [
+       [
+        "เด็ก (anak)",
+        "เด็กๆ",
+        "*dèk-dèk*",
+        "anak-anak (sekelompok)"
+       ],
+       [
+        "เพื่อน (teman)",
+        "เพื่อนๆ",
+        "*phûean-phûean*",
+        "teman-teman"
+       ],
+       [
+        "ช้า (lambat)",
+        "ช้าๆ",
+        "*cháa-cháa*",
+        "pelan-pelan (lebih lembut)"
+       ],
+       [
+        "ใกล้ (dekat)",
+        "ใกล้ๆ",
+        "*klâi-klâi*",
+        "di dekat-dekat, sekitar situ"
+       ],
+       [
+        "เยอะ (banyak)",
+        "เยอะๆ",
+        "*yóe-yóe*",
+        "yang banyak ya! (desakan ramah)"
+       ],
+       [
+        "ร้อน (panas)",
+        "ร้อนๆ",
+        "*ráwn-ráwn*",
+        "masih panas, baru matang"
+       ],
+       [
+        "ดี (baik)",
+        "ดีๆ",
+        "*dii-dii*",
+        "baik-baik, dengan cermat"
+       ],
+       [
+        "ค่อย",
+        "ค่อยๆ",
+        "*khâwy-khâwy*",
+        "sedikit demi sedikit"
+       ],
+       [
+        "บ่อย (sering)",
+        "บ่อยๆ",
+        "*bàwy-bàwy*",
+        "sering-sering"
+       ]
+      ]
+     },
+     "after": [
+      "⚠️ Tidak semua kata bisa diulang. Kata benda yang dihitung dengan angka tidak diulang: \"tiga anak\" adalah *เด็กสามคน*, bukan *เด็กๆ สามคน*."
+     ]
+    }
+   ]
+  }
+ ],
+ "sections": [
+  {
+   "title": "Empat puluh kata bantu bilangan yang paling sering",
+   "blocks": [
+    {
+     "type": "p",
+     "text": "Susunannya tetap seperti di A1: kata benda + angka + kata bantu (*หมวกสามใบ*), atau kata benda + kata bantu + *นี้/นั้น* (*หมวกใบนี้*). Kalau benda itu sendiri sudah menjadi satuan (*ห้อง, กล่อง, แผง, ครั้ง*), kata bendanya diulang: *แผงโซลาร์สองร้อยแผง* (dua ratus panel surya)."
+    },
+    {
+     "type": "tabel",
+     "head": [
+      "Kata bantu",
+      "Baca",
+      "Untuk"
+     ],
+     "rows": [
+      [
+       "คน",
+       "*khon*",
+       "orang"
+      ],
+      [
+       "ท่าน",
+       "*thâan*",
+       "orang yang dihormati (tamu, atasan)"
+      ],
+      [
+       "ตัว",
+       "*tua*",
+       "hewan, baju, celana, meja, kursi, huruf"
+      ],
+      [
+       "อัน",
+       "*an*",
+       "benda kecil umum (jalan keluar kalau lupa)"
+      ],
+      [
+       "ชิ้น",
+       "*chín*",
+       "potongan (kue, daging), barang satuan"
+      ],
+      [
+       "ใบ",
+       "*bai*",
+       "daun, wadah (gelas, tas, kotak, helm), tiket, lembar resmi"
+      ],
+      [
+       "แผ่น",
+       "*phàaen*",
+       "lembaran tipis (kertas, keping CD, ubin)"
+      ],
+      [
+       "เล่ม",
+       "*lêm*",
+       "buku, pisau, lilin"
+      ],
+      [
+       "คัน",
+       "*khan*",
+       "kendaraan darat, payung, sendok, garpu"
+      ],
+      [
+       "ลำ",
+       "*lam*",
+       "kapal, pesawat"
+      ],
+      [
+       "หลัง",
+       "*lǎng*",
+       "rumah, bangunan"
+      ],
+      [
+       "ห้อง",
+       "*hâwng*",
+       "ruangan, kamar"
+      ],
+      [
+       "เครื่อง",
+       "*khrûueang*",
+       "mesin, alat elektronik (ponsel, komputer, AC)"
+      ],
+      [
+       "เส้น",
+       "*sên*",
+       "benda panjang tipis (kabel, mi, kalung, jalan)"
+      ],
+      [
+       "ขวด",
+       "*khùat*",
+       "botol"
+      ],
+      [
+       "แก้ว",
+       "*kâaeo*",
+       "gelas (minuman)"
+      ],
+      [
+       "จาน",
+       "*jaan*",
+       "piring (makanan)"
+      ],
+      [
+       "ชาม",
+       "*chaam*",
+       "mangkuk (sup, mi)"
+      ],
+      [
+       "ถ้วย",
+       "*thûai*",
+       "cangkir, mangkuk kecil"
+      ],
+      [
+       "ห่อ",
+       "*hàw*",
+       "bungkus"
+      ],
+      [
+       "ถุง",
+       "*thǔng*",
+       "kantong plastik"
+      ],
+      [
+       "กล่อง",
+       "*klàwng*",
+       "kotak (isinya)"
+      ],
+      [
+       "คู่",
+       "*khûu*",
+       "pasang (sepatu, sarung tangan, sumpit)"
+      ],
+      [
+       "ชุด",
+       "*chút*",
+       "set (dokumen, baju setelan, perkakas)"
+      ],
+      [
+       "ฉบับ",
+       "*chà-bàp*",
+       "surat, dokumen, koran"
+      ],
+      [
+       "รูป",
+       "*rûup*",
+       "foto, gambar; biksu"
+      ],
+      [
+       "องค์",
+       "*ong*",
+       "patung Buddha, arca"
+      ],
+      [
+       "ต้น",
+       "*tôn*",
+       "pohon, tiang"
+      ],
+      [
+       "ดอก",
+       "*dàwk*",
+       "bunga, anak kunci"
+      ],
+      [
+       "ลูก",
+       "*lûuk*",
+       "buah bulat (jeruk, mangga), bola"
+      ],
+      [
+       "หัว",
+       "*hǔa*",
+       "umbi (bawang, kentang)"
+      ],
+      [
+       "เม็ด",
+       "*mét*",
+       "butir (pil, biji, kancing)"
+      ],
+      [
+       "ด้าม",
+       "*dâam*",
+       "pulpen, alat bertangkai"
+      ],
+      [
+       "แท่ง",
+       "*thâeng*",
+       "batang (pensil, cokelat, lipstik)"
+      ],
+      [
+       "ก้อน",
+       "*kâwn*",
+       "bongkah (batu, sabun, es)"
+      ],
+      [
+       "ที่",
+       "*thîi*",
+       "porsi makanan; tempat duduk"
+      ],
+      [
+       "เรื่อง",
+       "*rûueang*",
+       "cerita, film, perkara"
+      ],
+      [
+       "ข้อ",
+       "*khâw*",
+       "butir, soal, pasal"
+      ],
+      [
+       "แห่ง",
+       "*hàeng*",
+       "tempat, lokasi"
+      ],
+      [
+       "วง",
+       "*wong*",
+       "lingkaran, cincin, grup musik"
+      ]
+     ]
+    },
+    {
+     "type": "kotak",
+     "title": "Kalau lupa kata bantunya",
+     "items": [
+      "*อัน* bisa menyelamatkan untuk benda mati yang kecil: *ขออันนี้ครับ/ค่ะ* (minta yang ini). Terdengar sedikit seperti orang asing, tetapi tetap dimengerti.",
+      "Untuk makanan di warung, cukup tunjuk wadahnya: *จาน, ชาม, แก้ว, ห่อ*. Pedagang lebih peduli wadahnya daripada nama hidangannya.",
+      "⚠️ Jangan pakai *อัน* untuk orang atau hewan. \"Tiga orang\" selalu *สามคน*, \"dua ekor kucing\" *แมวสองตัว*."
+     ]
+    }
+   ]
+  },
+  {
+   "title": "ไม้ยมก ๆ: aturan menulisnya",
+   "blocks": [
+    {
+     "type": "p",
+     "text": "Tanda *ๆ* terlihat sepele, tetapi ada aturan bakunya. Menurut Ratchabandit, *ๆ* diberi spasi di depan dan di belakangnya (*เด็ก ๆ เล่นกัน*, anak-anak bermain); dalam praktik — juga di buku ini — ia menempel pada kata yang diulang dan diberi spasi sesudahnya: *เด็กๆ เล่นกัน*. Di pesan singkat, orang sering menulisnya tanpa spasi atau malah bertumpuk (*มากๆๆ*) — wajar di obrolan, jangan di surat resmi."
+    },
+    {
+     "type": "tabel",
+     "head": [
+      "Benar",
+      "Salah",
+      "Kenapa"
+     ],
+     "rows": [
+      [
+       "คนคนนี้",
+       "คนๆ นี้",
+       "*คน* pertama kata benda, yang kedua kata bantu: dua fungsi berbeda"
+      ],
+      [
+       "เด็กๆ",
+       "เด็กเด็ก",
+       "kata yang sama dengan fungsi sama ditulis dengan ๆ"
+      ],
+      [
+       "วันหนึ่งๆ",
+       "วันหนึ่งวันหนึ่ง",
+       "ๆ boleh mengulang frasa pendek"
+      ],
+      [
+       "นานๆ ที",
+       "นานๆที",
+       "dalam tulisan rapi ada spasi sesudah ๆ"
+      ]
+     ]
+    },
+    {
+     "type": "p",
+     "text": "Baris pertama adalah jebakan yang sering dilanggar bahkan oleh orang Thai sendiri: *คนคนนี้* (orang ini) ditulis penuh karena kata pertama adalah bendanya dan kata kedua adalah kata bantunya. Di iklan dan media sosial kamu akan sering melihat *คนๆ นี้*; kenali, tetapi tulislah yang baku."
+    }
+   ]
+  },
+  {
+   "title": "Ulangan berjenjang — unit 13",
+   "blocks": [
+    {
+     "type": "p",
+     "text": "Tutup kolom Thai, baca terjemahan Indonesianya, lalu susun kembali kalimatnya dari ingatan."
+    },
+    {
+     "type": "tabel",
+     "head": [
+      "Bahasa Indonesia",
+      "ภาษาไทย",
+      "Baca"
+     ],
+     "rows": [
+      [
+       "Budi, habis dari Yaowarat ya? Kata Nok ramai sekali.",
+       "บูดี ไปเยาวราชมาเหรอ นกบอกว่าคนเยอะมาก",
+       "*Buu-dii pai Yao-wá-râat maa rǒoe Nók bàwk wâa khon yóe mâak*"
+      ],
+      [
+       "Tadi pagi Khun Wichai bertanya apakah saya kenal Joy.",
+       "เมื่อเช้าคุณวิชัยถามผมว่ารู้จักน้องจอยไหม",
+       "*Mûea-cháao Khun Wí-chai thǎam phǒm wâa rúu-jàk náwng Jaawy mǎi*"
+      ],
+      [
+       "Oh iya, Khun Wichai titip pesan: rapat besok diundur jadi jam dua siang.",
+       "อ้อ คุณวิชัยฝากบอกว่าประชุมพรุ่งนี้เลื่อนเป็นบ่ายสองนะ",
+       "*Âw khun Wí-chai fàak bàwk wâa prà-chum phrûng-níi lûuean pen bàai sǎawng ná*"
+      ],
+      [
+       "Saya juga takut terpisah dari Nok.",
+       "ผมก็กลัวว่าจะหลงกับนกครับ",
+       "*Phǒm kâw klua wâa jà lǒng kàp Nók khráp*"
+      ],
+      [
+       "Saya harap tahun ini jadi tahun yang baik.",
+       "ผมหวังว่าปีนี้จะเป็นปีที่ดีครับ",
+       "*Phǒm wǎng wâa pii níi jà pen pii thîi dii khráp*"
+      ]
+     ]
+    }
+   ]
+  }
+ ],
+ "vocab": [
+  {
+   "th": "ทุก",
+   "baca": "thúk",
+   "id": "setiap, semua (*ทุกคน, ทุกวัน*)"
+  },
+  {
+   "th": "บาง",
+   "baca": "baang",
+   "id": "sebagian, beberapa (*บางคน*)"
+  },
+  {
+   "th": "หลาย",
+   "baca": "lǎai",
+   "id": "banyak, beberapa (*หลายแบบ*)"
+  },
+  {
+   "th": "แต่ละ",
+   "baca": "tàae-lá",
+   "id": "masing-masing (*แต่ละวัน*)"
+  },
+  {
+   "th": "ทั้ง",
+   "baca": "tháng",
+   "id": "seluruh (*ทั้งทีม, ทั้งวัน*)"
+  },
+  {
+   "th": "ทั้งหมด",
+   "baca": "tháng-mòt",
+   "id": "semuanya, total"
+  },
+  {
+   "th": "…ละ",
+   "baca": "lá",
+   "id": "per (*คนละสองคู่, วันละสี่ชั่วโมง*)"
+  },
+  {
+   "th": "หมวกนิรภัย",
+   "baca": "mùak ní-rá-phai",
+   "id": "helm pengaman (kb. *ใบ*)"
+  },
+  {
+   "th": "ถุงมือ",
+   "baca": "thǔng-muue",
+   "id": "sarung tangan (kb. *คู่*)"
+  },
+  {
+   "th": "คู่",
+   "baca": "khûu",
+   "id": "pasang (kata bantu); pasangan"
+  },
+  {
+   "th": "พอ",
+   "baca": "phaw",
+   "id": "cukup (*มีพอไหม*)"
+  },
+  {
+   "th": "แบบ",
+   "baca": "bàaep",
+   "id": "jenis, model"
+  },
+  {
+   "th": "เท่ากัน",
+   "baca": "thâo-kan",
+   "id": "sama (jumlah, harga)"
+  },
+  {
+   "th": "เลือก",
+   "baca": "lûueak",
+   "id": "memilih"
+  },
+  {
+   "th": "สายไฟ",
+   "baca": "sǎai-fai",
+   "id": "kabel listrik (kb. *เส้น*)"
+  },
+  {
+   "th": "แบ่ง",
+   "baca": "bàeng",
+   "id": "membagi (*แบ่งงาน*)"
+  },
+  {
+   "th": "แค่",
+   "baca": "khâae",
+   "id": "hanya, cuma"
+  },
+  {
+   "th": "ไม่เกิน",
+   "baca": "mâi kooen",
+   "id": "tidak lebih dari, maksimal"
+  },
+  {
+   "th": "สลับกัน",
+   "baca": "sà-làp kan",
+   "id": "bergantian"
+  },
+  {
+   "th": "รายการ",
+   "baca": "raai-kaan",
+   "id": "daftar; acara (TV)"
+  },
+  {
+   "th": "ดึก",
+   "baca": "dùek",
+   "id": "larut malam (*กลับดึก*)"
+  },
+  {
+   "th": "ยุ่ง",
+   "baca": "yûng",
+   "id": "sibuk"
+  },
+  {
+   "th": "ห่อ",
+   "baca": "hàw",
+   "id": "bungkus (kata bantu); membungkus"
+  },
+  {
+   "th": "พัดลม",
+   "baca": "phát-lom",
+   "id": "kipas angin (kb. *ตัว* atau *เครื่อง*)"
+  },
+  {
+   "th": "ค่อยๆ",
+   "baca": "khâwy-khâwy",
+   "id": "pelan-pelan, sedikit demi sedikit"
+  },
+  {
+   "th": "แซ่บ",
+   "baca": "sâep",
+   "id": "sedap, mantap (kata Isan)"
+  },
+  {
+   "th": "จ้ะ",
+   "baca": "jâ",
+   "id": "partikel akrab (orang tua ke yang muda); *จ๊ะ* untuk tanya"
+  }
+ ],
+ "exercises": [
+  {
+   "prompt": "Terjemahkan ke bahasa Thai. Bayangkan kamu laki-laki.",
+   "items": [
+    "Semua teknisi harus punya helm.",
+    "Sebagian orang sudah punya.",
+    "Sarung tangan, dua pasang per orang.",
+    "Setiap hari hanya tiga orang naik ke atap.",
+    "Pedasnya sedikit saja ya.",
+    "Saya menurunkan berat badan pelan-pelan."
+   ]
+  },
+  {
+   "prompt": "Isi dengan kata yang tepat.",
+   "items": [
+    "ช่าง____คนต้องมีหมวก (semua)",
+    "____คนมีแล้วครับ (sebagian)",
+    "ถุงมือมี____แบบ (banyak)",
+    "____แบบราคาไม่เท่ากัน (masing-masing)",
+    "ทำงานได้วัน____สี่ชั่วโมง (per)",
+    "ทำไมไม่ขึ้นไป____ทีม (seluruh)",
+    "ต้องสั่งเพิ่มกี่____ (kata bantu untuk helm)"
+   ]
+  },
+  {
+   "prompt": "Lengkapi dengan kata bantu bilangan yang tepat.",
+   "items": [
+    "ถุงมือสอง____",
+    "ข้าวเหนียวสอง____",
+    "ไก่ย่างครึ่ง____",
+    "คอมพิวเตอร์สาม____",
+    "หนังสือห้า____",
+    "เอกสารสิบ____"
+   ]
+  },
+  {
+   "prompt": "Susun jadi kalimat yang benar.",
+   "items": [
+    "ครับ / หมวก / มี / ต้อง / ทุกคน / ช่าง",
+    "ครับ / สองคู่ / คนละ / ถุงมือ",
+    "ไม่เท่ากัน / ราคา / แบบ / แต่ละ",
+    "นะครับ / น้อยๆ / เผ็ด",
+    "นะ / ช้าๆ / กิน"
+   ]
+  }
+ ],
+ "answers": [
+  "ช่างทุกคนต้องมีหมวกนิรภัยครับ — บางคนมีแล้วครับ — ถุงมือคนละสองคู่ครับ — แต่ละวันขึ้นหลังคาได้แค่สามคนครับ — เผ็ดน้อยๆ นะครับ — ผมค่อยๆ ลดน้ำหนักครับ",
+  "ทุก — บาง — หลาย — แต่ละ — ละ — ทั้ง — ใบ",
+  "คู่ — ห่อ — ตัว — เครื่อง — เล่ม — ฉบับ atau ชุด",
+  "ช่างทุกคนต้องมีหมวกครับ — ถุงมือคนละสองคู่ครับ — แต่ละแบบราคาไม่เท่ากัน — เผ็ดน้อยๆ นะครับ — กินช้าๆ นะ"
+ ],
+ "wave": "Ulangi unit 13: tutup bahasa Thainya, lalu teruskan semua kabar dari pantry — siapa bilang apa, siapa bertanya apa, dan pesan apa yang dititipkan Khun Wichai."
+}

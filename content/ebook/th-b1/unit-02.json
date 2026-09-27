@@ -1,0 +1,601 @@
+{
+ "title": "Memilih kontraktor — ซึ่ง, อัน, ผู้ที่, ที่ว่า",
+ "title_target": "เลือกผู้รับเหมา — Lûeak phûu-ráp-mǎo",
+ "goal": "Membandingkan tiga penawaran dan melaporkannya kepada atasan dengan kalimat yang memuat keterangan panjang: \"perusahaan yang pernah bekerja dengan kita\", \"orang yang mengawasi pemasangan\", \"yang kamu sebut murah itu\".",
+ "bekal": [
+  "membedakan ที่ (pembatas, lisan) dan ซึ่ง (keterangan tambahan, lebih resmi)",
+  "memakai ผู้ที่ untuk \"orang yang …\" dan อัน dalam ungkapan baku tulisan",
+  "merujuk ucapan orang dengan ที่ว่า",
+  "menjadikan satu klausa sebagai topik dengan ที่…ก็เพราะ… dan ที่สำคัญคือ…"
+ ],
+ "dialogs": [
+  {
+   "title": "บทสนทนา — Tiga penawaran di atas meja",
+   "intro": "Senin, 11 Oktober 2027. Budi, Ton, dan Beem duduk di ruang rapat kecil dengan tiga surat penawaran harga pemasangan panel surya. Hari ini mereka harus memilih satu. Perhatikan bagaimana setiap perusahaan diberi keterangan panjang di belakang namanya — dengan ที่, ซึ่ง, atau ผู้ที่.",
+   "lines": [
+    {
+     "speaker": "บูดี:",
+     "text": "[เรา|Rao][มี|mii][ใบ|bai][เสนอ|sà-nǒe][ราคา|raa-khaa][สาม|sǎam][ใบ|bai][ครับ|khráp] [วันนี้|Wan-níi][ต้อง|tâwng][เลือก|lûeak][ผู้รับเหมา|phûu-ráp-mǎo][ให้|hâi][ได้|dâai][ครับ|khráp]",
+     "id": "Kita punya tiga surat penawaran harga. Hari ini kita harus memilih kontraktornya.",
+     "literal": "kita — punya — surat-penawaran-harga — tiga — (kata bantu) — (sopan). hari-ini — harus — memilih — kontraktor — supaya — dapat — (sopan)."
+    },
+    {
+     "speaker": "ต้น:",
+     "text": "[บริษัท|Baw-rí-sàt][ฟ้าใส|Fáa-sǎi][ซึ่ง|sûeng][เคย|khoei][ทำงาน|tham-ngaan][กับ|kàp][เรา|rao][มา|maa][แล้ว|láaeo] [ราคา|raa-khaa][สูง|sǔung][ที่สุด|thîi-sùt][นะ|ná]",
+     "id": "Fa Sai, yang pernah bekerja dengan kita, harganya paling mahal lho.",
+     "literal": "perusahaan — Fa-Sai — yang — pernah — bekerja — dengan — kita — datang — sudah. harga — tinggi — paling — lho."
+    },
+    {
+     "speaker": "บีม:",
+     "text": "[ส่วน|Sùan][ดอกคูน|Dàwk-khuun][เป็น|pen][บริษัท|baw-rí-sàt][ท้องถิ่น|tháawng-thìn][ซึ่ง|sûeng][มี|mii][สำนักงาน|sǎm-nák-ngaan][อยู่|yùu][ใน|nai][เมือง|muueang][ขอนแก่น|Khǎawn-kàen][ครับ|khráp]",
+     "id": "Kalau Dok Khun, itu perusahaan lokal yang kantornya ada di kota Khon Kaen.",
+     "literal": "adapun — Dok-Khun — adalah — perusahaan — lokal — yang — punya — kantor — berada — di — kota — Khon-Kaen — (sopan)."
+    },
+    {
+     "speaker": "บูดี:",
+     "text": "[ช่าง|Châang][ที่|thîi][ทำงาน|tham-ngaan][กับ|kàp][ดอกคูน|Dàwk-khuun][เป็น|pen][คน|khon][ใน|nai][พื้นที่|phúuen-thîi][ใช่|châi][ไหม|mǎi][ครับ|khráp]",
+     "id": "Teknisi yang bekerja untuk Dok Khun orang setempat, kan?",
+     "literal": "teknisi — yang — bekerja — dengan — Dok-Khun — adalah — orang — dalam — wilayah — benar — kah — (sopan)?"
+    },
+    {
+     "speaker": "บีม:",
+     "text": "[ใช่|Châi][ครับ|khráp] [ผู้ที่|Phûu-thîi][ดูแล|duu-laae][งาน|ngaan][ติดตั้ง|tìt-tâng][เป็น|pen][วิศวกร|wít-sà-wá-kawn][ที่|thîi][มี|mii][ประสบการณ์|prà-sòp-kaan][สิบ|sìp][ปี|pii][ครับ|khráp]",
+     "id": "Betul. Yang mengawasi pemasangan insinyur berpengalaman sepuluh tahun.",
+     "literal": "benar — (sopan). orang-yang — mengawasi — pekerjaan — pasang — adalah — insinyur — yang — punya — pengalaman — sepuluh — tahun — (sopan)."
+    },
+    {
+     "speaker": "ต้น:",
+     "text": "[แล้ว|Láaeo][บริษัท|baw-rí-sàt][ที่|thîi][สาม|sǎam][ล่ะ|lâ] [ที่ว่า|Thîi-wâa][ถูก|thùuk][มาก|mâak][น่ะ|nâ]",
+     "id": "Lalu perusahaan yang ketiga? Yang katanya murah sekali itu.",
+     "literal": "lalu — perusahaan — yang-ke — tiga — bagaimana? yang-dikatakan — murah — sangat — itu-lho."
+    },
+    {
+     "speaker": "บูดี:",
+     "text": "[ถูก|Thùuk][จริง|jing][ครับ|khráp] [แต่|Tàae][แผง|phǎaeng][ที่|thîi][เขา|khǎo][เสนอ|sà-nǒe][เป็น|pen][รุ่น|rûn][ซึ่ง|sûeng][ไม่มี|mâi mii][ใบรับรอง|bai-ráp-rawng][มาตรฐาน|mâat-trà-thǎan][ครับ|khráp]",
+     "id": "Memang murah. Tapi panel yang mereka tawarkan tipe yang tidak punya sertifikat standar.",
+     "literal": "murah — sungguh — (sopan). tetapi — panel — yang — dia — tawarkan — adalah — tipe — yang — tidak-ada — sertifikat — standar — (sopan)."
+    },
+    {
+     "speaker": "ต้น:",
+     "text": "[งั้น|Ngán][ตัด|tàt][ทิ้ง|thíng][ได้|dâai][เลย|loei] [ของ|Khǎawng][ถูก|thùuk][และ|láe][ดี|dii][ไม่มี|mâi mii][ใน|nai][โลก|lôok]",
+     "id": "Kalau begitu, coret saja. Barang murah dan bagus itu tidak ada di dunia.",
+     "literal": "kalau-begitu — potong — buang — bisa — langsung. barang — murah — dan — bagus — tidak-ada — di — dunia."
+    },
+    {
+     "speaker": "บีม:",
+     "text": "[ดอกคูน|Dàwk-khuun][มี|mii][ข้อดี|khâw-dii][อีก|ìik][ข้อ|khâw][หนึ่ง|nùeng][ครับ|khráp] [ถ้า|Thâa][ระบบ|rá-bòp][เสีย|sǐa] [ช่าง|châang][มา|maa][ซ่อม|sâwm][ได้|dâai][ภายใน|phaai-nai][วัน|wan][เดียว|diao][ครับ|khráp]",
+     "id": "Dok Khun punya satu kelebihan lagi. Kalau sistemnya rusak, teknisinya bisa datang memperbaiki dalam sehari.",
+     "literal": "Dok-Khun — punya — kelebihan — lagi — (kata bantu) — satu — (sopan). kalau — sistem — rusak — teknisi — datang — perbaiki — bisa — dalam — hari — tunggal — (sopan)."
+    },
+    {
+     "speaker": "บูดี:",
+     "text": "[ผม|Phǒm][เห็นด้วย|hěn-dûai][ครับ|khráp] [สิ่ง|Sìng][ที่|thîi][เรา|rao][ต้องการ|tâwng-kaan][คือ|khue][บริษัท|baw-rí-sàt][ที่|thîi][ดูแล|duu-laae][ระบบ|rá-bòp][ได้|dâai][ตลอด|tà-làwt][สิบ|sìp][ปี|pii][ครับ|khráp]",
+     "id": "Setuju. Yang kita perlukan: perusahaan yang bisa merawat sistem sepuluh tahun.",
+     "literal": "saya — setuju — (sopan). hal — yang — kita — butuhkan — adalah — perusahaan — yang — merawat — sistem — bisa — sepanjang — sepuluh — tahun — (sopan)."
+    },
+    {
+     "speaker": "ต้น:",
+     "text": "[โอเค|Oo-khee] [ผม|phǒm][โหวต|wòot][ดอกคูน|Dàwk-khuun] [แต่|tàae][ขอ|khǎaw][ดู|duu][ผลงาน|phǒn-ngaan][ที่|thîi][เขา|khǎo][เคย|khoei][ทำ|tham][ก่อน|kàwn][นะ|ná]",
+     "id": "Oke, saya pilih Dok Khun. Tapi saya mau lihat dulu hasil kerja yang pernah mereka buat.",
+     "literal": "oke — saya — memilih — Dok-Khun. tetapi — minta — lihat — hasil-kerja — yang — dia — pernah — buat — dulu — ya."
+    },
+    {
+     "speaker": "บูดี:",
+     "text": "[ได้|Dâai][ครับ|khráp] [ผม|Phǒm][จะ|jà][ขอ|khǎaw][รายชื่อ|raai-chûue][โครงการ|khroong-kaan][ที่|thîi][เขา|khǎo][เคย|khoei][ทำ|tham] [แล้ว|láaeo][ค่อย|khâwy][เสนอ|sà-nǒe][คุณ|khun][วิชัย|Wí-chai][ครับ|khráp]",
+     "id": "Baik. Saya minta daftar proyek yang pernah mereka kerjakan, baru saya ajukan ke Khun Wichai.",
+     "literal": "bisa — (sopan). saya — akan — minta — daftar-nama — proyek — yang — dia — pernah — buat. lalu — barulah — mengajukan — Tuan — Wichai — (sopan)."
+    }
+   ],
+   "notes": [
+    "**ที่ membatasi, ซึ่ง menambahkan.** *ช่างที่ทำงานกับดอกคูน* = teknisi yang (khusus) bekerja untuk Dok Khun — tanpa keterangan itu kita tak tahu teknisi yang mana. *บริษัทฟ้าใส ซึ่งเคยทำงานกับเรามาแล้ว* = Fa Sai — yang, omong-omong, pernah bekerja dengan kita. Namanya sudah jelas; *ซึ่ง* hanya menambah informasi, seperti anak kalimat di antara koma dalam bahasa Indonesia. Tetapi ini kecenderungan, bukan aturan mati: dalam ragam resmi *ซึ่ง* juga sering dipakai sebagai pembatas biasa (*รุ่นซึ่งไม่มีใบรับรอง*).",
+    "**ซึ่ง terdengar lebih rapi.** Dalam obrolan santai orang Thai memakai *ที่* untuk hampir semuanya. *ซึ่ง sûeng* muncul ketika orang berbicara dengan hati-hati — di rapat, presentasi, berita, dan tulisan. Ton yang santai pun memakainya di rapat: suasana kerja menaikkan ragamnya.",
+    "**ผู้ที่ phûu-thîi = orang yang …** Lebih sopan dan lebih resmi daripada *คนที่*. *ผู้ที่ดูแลงานติดตั้ง* = orang yang mengawasi pemasangan. Di pengumuman kamu akan melihat *ผู้ที่สนใจ* (yang berminat) dan *ผู้ที่ต้องการ* (yang memerlukan).",
+    "**ที่ว่า thîi-wâa = \"yang (kamu) sebut itu\".** Ton merujuk kabar yang sudah beredar: *ที่ว่าถูกมากน่ะ* = yang katanya murah sekali itu. Harfiahnya \"yang dikatakan bahwa\". Kamu juga akan mendengar *เรื่องที่ว่า…* (soal bahwa …) dan *ที่ว่านี้* (yang dimaksud ini).",
+    "**ของถูกและดีไม่มีในโลก** — \"barang murah dan bagus tidak ada di dunia\". Ungkapan sehari-hari yang dipakai orang Thai setiap kali tawaran terlalu murah untuk dipercaya. Padanan Indonesianya: \"ada harga, ada rupa\"."
+   ],
+   "grammars": [
+    {
+     "title": "ที่, ซึ่ง, ผู้ที่: tiga kata \"yang\"",
+     "body": [
+      "Letaknya sama dengan bahasa Indonesia: kata benda dulu, lalu \"yang\", lalu keterangannya. Yang berbeda hanya ragam dan fungsinya."
+     ],
+     "table": {
+      "head": [
+       "Kata",
+       "Baca",
+       "Fungsi",
+       "Ragam",
+       "Contoh"
+      ],
+      "rows": [
+       [
+        "ที่",
+        "*thîi*",
+        "membatasi (yang mana?)",
+        "semua ragam",
+        "ช่างที่ทำงานกับเรา"
+       ],
+       [
+        "ซึ่ง",
+        "*sûeng*",
+        "menambah keterangan",
+        "resmi, tulisan",
+        "ฟ้าใส ซึ่งเคยทำงานกับเรา"
+       ],
+       [
+        "ผู้ที่",
+        "*phûu-thîi*",
+        "orang yang …",
+        "sopan, resmi",
+        "ผู้ที่ดูแลงานติดตั้ง"
+       ],
+       [
+        "คนที่",
+        "*khon-thîi*",
+        "orang yang …",
+        "lisan",
+        "คนที่นั่งตรงนั้น"
+       ],
+       [
+        "ที่ว่า",
+        "*thîi-wâa*",
+        "yang disebut, yang dikatakan",
+        "lisan",
+        "บริษัทที่ว่าถูกมาก"
+       ]
+      ]
+     },
+     "after": [
+      "⚠️ Bahasa Thai **hampir tidak pernah** membuang \"yang\" seperti bahasa Inggris (*the man I met*). Setiap anak kalimat keterangan wajib diawali *ที่* atau *ซึ่ง*: *แผงที่เขาเสนอ*, bukan *แผงเขาเสนอ*."
+     ]
+    },
+    {
+     "title": "ที่ dan ซึ่ง dalam satu kalimat",
+     "table": {
+      "head": [
+       "Kalimat",
+       "Baca",
+       "Artinya"
+      ],
+      "rows": [
+       [
+        "แผงที่เขาเสนอเป็นรุ่นซึ่งไม่มีใบรับรอง",
+        "*phǎaeng thîi khǎo sà-nǒe pen rûn sûeng mâi mii bai-ráp-rawng*",
+        "panel yang ia tawarkan adalah tipe yang tak bersertifikat"
+       ],
+       [
+        "สิ่งที่เราต้องการคือบริษัทที่ดูแลระบบได้",
+        "*sìng thîi rao tâwng-kaan khue baw-rí-sàt thîi duu-laae rá-bòp dâai*",
+        "yang kita perlukan adalah perusahaan yang bisa merawat sistem"
+       ]
+      ]
+     },
+     "after": [
+      "Kalau \"yang\" muncul dua kali, penulis yang rapi sering mengganti salah satunya dengan *ซึ่ง* supaya kalimatnya tidak berbunyi *ที่…ที่…* berulang. Dalam obrolan, dua *ที่* sama sekali tidak salah."
+     ]
+    }
+   ]
+  },
+  {
+   "title": "บทสนทนาที่สอง — Melapor kepada Khun Wichai",
+   "intro": "Sore harinya Budi menghadap Khun Wichai dengan selembar leaflet Dok Khun di tangan. Perhatikan dua cara menjadikan satu klausa sebagai topik: ที่ผมเสนอ…ก็เพราะ… dan ที่สำคัญคือ… — serta bahasa leaflet yang penuh ซึ่ง dan อัน.",
+   "lines": [
+    {
+     "speaker": "คุณวิชัย:",
+     "text": "[สรุป|Sà-rùp][แล้ว|láaeo][คุณ|khun][บูดี|Buu-dii][เลือก|lûeak][บริษัท|baw-rí-sàt][ไหน|nǎi][ครับ|khráp]",
+     "id": "Jadi akhirnya, perusahaan mana yang Budi pilih?",
+     "literal": "rangkum — sudah — Tuan — Budi — memilih — perusahaan — mana — (sopan)?"
+    },
+    {
+     "speaker": "บูดี:",
+     "text": "[ดอกคูน|Dàwk-khuun][ครับผม|khráp-phǒm] [ที่|Thîi][ผม|phǒm][เสนอ|sà-nǒe][บริษัท|baw-rí-sàt][นี้|níi][ก็|kâw][เพราะ|phráw][เขา|khǎo][อยู่|yùu][ใกล้|klâi][พื้นที่|phúuen-thîi][ครับ|khráp]",
+     "id": "Dok Khun, Pak. Saya mengusulkan perusahaan ini karena mereka dekat lokasi.",
+     "literal": "Dok-Khun — (sopan-hormat). hal-yang — saya — usulkan — perusahaan — ini — ya — karena — dia — berada — dekat — wilayah — (sopan)."
+    },
+    {
+     "speaker": "คุณวิชัย:",
+     "text": "[ที่ว่า|Thîi-wâa][ใกล้|klâi] [ใกล้|klâi][แค่ไหน|khâae-nǎi][ครับ|khráp]",
+     "id": "Yang kamu sebut dekat itu, sedekat apa?",
+     "literal": "yang-dikatakan — dekat — dekat — sebatas-mana — (sopan)?"
+    },
+    {
+     "speaker": "บูดี:",
+     "text": "[ขับ|Khàp][รถ|rót][ไป|pai][ถึง|thǔeng][ทุก|thúk][โรงเรียน|roong-rian][ได้|dâai][ภายใน|phaai-nai][หนึ่ง|nùeng][ชั่วโมง|chûa-moong][ครับ|khráp]",
+     "id": "Mereka bisa menyetir sampai ke semua sekolah dalam satu jam.",
+     "literal": "kemudikan — mobil — pergi — sampai — setiap — sekolah — bisa — dalam — satu — jam — (sopan)."
+    },
+    {
+     "speaker": "คุณวิชัย:",
+     "text": "[ใน|Nai][แผ่นพับ|phàaen-pháp][เขียน|khǐan][ว่า|wâa][ยังไง|yang-ngai][บ้าง|bâang][ครับ|khráp]",
+     "id": "Di leaflet-nya tertulis apa saja?",
+     "literal": "di — leaflet — tulis — bahwa — bagaimana — saja — (sopan)?"
+    },
+    {
+     "speaker": "บูดี:",
+     "text": "[เขียน|Khǐan][ว่า|wâa][บริษัท|baw-rí-sàt][ซึ่ง|sûeng][ก่อตั้ง|kàw-tâng][มา|maa][กว่า|kwàa][สิบห้า|sìp-hâa][ปี|pii] [มี|mii][ประสบการณ์|prà-sòp-kaan][อัน|an][ยาวนาน|yaao-naan][ด้าน|dâan][พลังงาน|phá-lang-ngaan][แสงอาทิตย์|sǎaeng-aa-thít][ครับ|khráp]",
+     "id": "Tertulis: perusahaan yang berdiri lebih dari lima belas tahun ini memiliki pengalaman panjang di bidang energi surya.",
+     "literal": "tulis — bahwa — perusahaan — yang — didirikan — datang — lebih — lima-belas — tahun — punya — pengalaman — yang — panjang — bidang — energi — sinar-matahari — (sopan)."
+    },
+    {
+     "speaker": "คุณวิชัย:",
+     "text": "[ฟัง|Fang][แล้ว|láaeo][ดี|dii][เกิน|koen][จริง|jing][นะ|ná][ครับ|khráp] [ที่|Thîi][สำคัญ|sǎm-khan][คือ|khue][ผลงาน|phǒn-ngaan][จริง|jing][ครับ|khráp]",
+     "id": "Kedengarannya terlalu bagus. Yang penting adalah hasil kerja nyata.",
+     "literal": "dengar — sudah — bagus — melebihi — nyata — ya — (sopan). yang — penting — adalah — hasil-kerja — nyata — (sopan)."
+    },
+    {
+     "speaker": "บูดี:",
+     "text": "[ครับผม|Khráp-phǒm] [มี|Mii][โรงเรียน|roong-rian][สอง|sǎawng][แห่ง|hàeng][ซึ่ง|sûeng][ใช้|chái][ระบบ|rá-bòp][ของ|khǎawng][เขา|khǎo][มา|maa][ห้า|hâa][ปี|pii][แล้ว|láaeo][ครับ|khráp]",
+     "id": "Baik, Pak. Ada dua sekolah yang sudah lima tahun memakai sistem mereka.",
+     "literal": "(sopan-hormat). ada — sekolah — dua — (kata bantu) — yang — pakai — sistem — milik — dia — datang — lima — tahun — sudah — (sopan)."
+    },
+    {
+     "speaker": "คุณวิชัย:",
+     "text": "[ดี|Dii][ครับ|khráp] [งั้น|Ngán][อาทิตย์|aa-thít][หน้า|nâa][ที่|thîi][ไป|pai][ขอนแก่น|Khǎawn-kàen] [แวะ|wáe][ไป|pai][ดู|duu][ของ|khǎawng][จริง|jing][ด้วย|dûai][นะ|ná][ครับ|khráp]",
+     "id": "Bagus. Kalau begitu minggu depan, waktu ke Khon Kaen, mampirlah melihat yang aslinya.",
+     "literal": "baik — (sopan). kalau-begitu — minggu — depan — yang — pergi — Khon-Kaen — mampir — pergi — lihat — barang — nyata — juga — ya — (sopan)."
+    }
+   ],
+   "notes": [
+    "**ที่ + klausa = \"hal bahwa …\", dan ia bisa menjadi topik.** *ที่ผมเสนอบริษัทนี้ ก็เพราะ…* harfiahnya \"(hal) bahwa saya mengusulkan perusahaan ini, itu karena …\". Inilah cara paling alami untuk memberi alasan di rapat: sebut dulu keputusannya sebagai topik, lalu *ก็เพราะ*. Bahasa Indonesia punya pola serupa: \"Saya usulkan perusahaan ini karena …\", tetapi bahasa Thai menandai topiknya dengan *ที่*.",
+    "**ที่สำคัญคือ… = yang penting adalah …** Pola yang sama dengan kata sifat: *ที่น่าสนใจคือ…* (yang menarik …), *ที่แย่คือ…* (yang parah …). Khun Wichai memakainya untuk menggeser pembicaraan dari kata-kata indah ke hal yang benar-benar menentukan.",
+    "**อัน dalam tulisan: pengikat yang indah.** *ประสบการณ์อันยาวนาน* = pengalaman yang panjang. *อัน an* di sini adalah \"yang\" versi sastra dan resmi, hampir selalu diikuti kata sifat bernilai: *ความร่วมมืออันดี* (kerja sama yang baik), *โอกาสอันดี* (kesempatan baik). Di obrolan jangan dipakai; kenali saja di leaflet, surat, dan pidato.",
+    "**สรุปแล้ว sà-rùp láaeo = \"jadi, akhirnya\".** Harfiahnya \"setelah dirangkum\". Pembuka favorit atasan yang ingin langsung ke keputusan. *แวะ wáe* = mampir: *แวะไปดู* (mampir melihat), *แวะร้านกาแฟ* (mampir ke kedai kopi)."
+   ],
+   "grammars": [
+    {
+     "title": "ที่ sebagai pembuka topik",
+     "table": {
+      "head": [
+       "Pola",
+       "Baca",
+       "Artinya"
+      ],
+      "rows": [
+       [
+        "ที่ + klausa + ก็เพราะ…",
+        "*thîi … kâw phráw …*",
+        "(saya melakukan X) karena …"
+       ],
+       [
+        "ที่สำคัญคือ…",
+        "*thîi sǎm-khan khue …*",
+        "yang penting adalah …"
+       ],
+       [
+        "ที่น่าเสียดายคือ…",
+        "*thîi nâa-sǐa-daai khue …*",
+        "sayangnya …"
+       ],
+       [
+        "สิ่งที่ + klausa + คือ…",
+        "*sìng thîi … khue …*",
+        "hal yang … adalah …"
+       ],
+       [
+        "ที่ว่า…",
+        "*thîi-wâa …*",
+        "yang dikatakan (itu) …"
+       ]
+      ]
+     },
+     "after": [
+      "Pola-pola ini adalah jembatan dari ragam lisan ke ragam tulis: semuanya dipakai di rapat dan di laporan tanpa terdengar kaku."
+     ]
+    }
+   ]
+  }
+ ],
+ "sections": [
+  {
+   "title": "Tiga \"yang\" menurut ragam",
+   "blocks": [
+    {
+     "type": "tabel",
+     "head": [
+      "Situasi",
+      "Thai",
+      "Baca",
+      "Artinya"
+     ],
+     "rows": [
+      [
+       "obrolan",
+       "ร้านที่ขายส้มตำ",
+       "*ráan thîi khǎai sôm-tam*",
+       "warung yang menjual som tam"
+      ],
+      [
+       "rapat",
+       "บริษัทซึ่งมีสำนักงานที่ขอนแก่น",
+       "*baw-rí-sàt sûeng mii sǎm-nák-ngaan thîi Khǎawn-kàen*",
+       "perusahaan yang berkantor di Khon Kaen"
+      ],
+      [
+       "pengumuman",
+       "ผู้ที่สนใจกรุณาติดต่อ",
+       "*phûu-thîi sǒn-jai kà-ru-naa tìt-tàw*",
+       "yang berminat silakan menghubungi"
+      ],
+      [
+       "leaflet, surat",
+       "ด้วยประสบการณ์อันยาวนาน",
+       "*dûai prà-sòp-kaan an yaao-naan*",
+       "dengan pengalaman yang panjang"
+      ],
+      [
+       "pidato",
+       "ขอบคุณสำหรับความร่วมมืออันดี",
+       "*khàwp-khun sǎm-ràp khwaam-rûam-muue an dii*",
+       "terima kasih atas kerja sama yang baik"
+      ]
+     ]
+    },
+    {
+     "type": "p",
+     "text": "Semakin resmi situasinya, semakin jauh kamu bergerak dari *ที่* ke *ซึ่ง* lalu ke *อัน*. Tetapi jangan terbalik: memakai *อัน* di warung Pa Somsri akan terdengar seperti membacakan puisi. Untuk bicara, *ที่* dan sesekali *ซึ่ง* sudah lebih dari cukup; *อัน* cukup dikenali ketika membaca."
+    },
+    {
+     "type": "kotak",
+     "title": "Kata \"yang\" yang tidak boleh hilang",
+     "items": [
+      "Bahasa Inggris boleh berkata *the panel they offered*; bahasa Thai wajib *แผงที่เขาเสนอ*. Kalau kamu berpikir dalam bahasa Inggris, di sinilah biasanya kamu tersandung.",
+      "Sebaliknya, kata sifat biasa tidak perlu \"yang\": *บริษัทใหญ่* (perusahaan besar) sudah lengkap. *บริษัทที่ใหญ่* terdengar menekankan: perusahaan yang **besar** (bukan yang kecil)."
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Membaca leaflet perusahaan",
+   "blocks": [
+    {
+     "type": "tabel",
+     "head": [
+      "Ungkapan",
+      "Baca",
+      "Artinya"
+     ],
+     "rows": [
+      [
+       "ก่อตั้งเมื่อปี…",
+       "*kàw-tâng mûea pii …*",
+       "didirikan pada tahun …"
+      ],
+      [
+       "เชี่ยวชาญด้าน…",
+       "*chîao-chaan dâan …*",
+       "ahli di bidang …"
+      ],
+      [
+       "บริการครบวงจร",
+       "*baw-rí-kaan khróp-wong-jawn*",
+       "layanan lengkap dari awal sampai akhir"
+      ],
+      [
+       "รับประกัน…ปี",
+       "*ráp-prà-kan … pii*",
+       "garansi … tahun"
+      ],
+      [
+       "บริการหลังการขาย",
+       "*baw-rí-kaan lǎng-kaan-khǎai*",
+       "layanan purnajual"
+      ],
+      [
+       "ได้มาตรฐานสากล",
+       "*dâai mâat-trà-thǎan sǎa-kon*",
+       "memenuhi standar internasional"
+      ],
+      [
+       "ลูกค้ากว่า…ราย",
+       "*lûuk-kháa kwàa … raai*",
+       "lebih dari … klien"
+      ]
+     ]
+    },
+    {
+     "type": "p",
+     "text": "Leaflet dan situs perusahaan Thai hampir selalu memakai kosakata yang sama. Tahun pendiriannya biasanya ditulis dalam kalender Buddha (*พ.ศ.*): *ก่อตั้งเมื่อปี 2555* berarti didirikan tahun 2012 — kurangi 543. Kata *ราย raai* adalah kata bantu untuk klien atau kasus: *ลูกค้า 200 ราย*."
+    },
+    {
+     "type": "kotak",
+     "title": "Tiga pertanyaan sebelum memilih kontraktor",
+     "items": [
+      "**มีผลงานที่ไหนบ้าง** — Proyek apa saja yang sudah dikerjakan? Minta *รายชื่อโครงการ* dan kunjungi satu.",
+      "**รับประกันกี่ปี** — Garansinya berapa tahun? Untuk panel surya, garansi performa 20–25 tahun adalah hal biasa; untuk pemasangannya jauh lebih pendek.",
+      "**ถ้าเสีย มาซ่อมได้เร็วแค่ไหน** — Kalau rusak, secepat apa datang memperbaiki? Di proyek luar kota, jarak kantor kontraktor sama pentingnya dengan harga."
+     ]
+    }
+   ]
+  }
+ ],
+ "vocab": [
+  {
+   "th": "ผู้รับเหมา",
+   "baca": "phûu-ráp-mǎo",
+   "id": "kontraktor (kb. *ราย, เจ้า*)"
+  },
+  {
+   "th": "ใบเสนอราคา",
+   "baca": "bai-sà-nǒe-raa-khaa",
+   "id": "surat penawaran harga (kb. *ใบ, ฉบับ*)"
+  },
+  {
+   "th": "เลือก",
+   "baca": "lûeak",
+   "id": "memilih"
+  },
+  {
+   "th": "ซึ่ง",
+   "baca": "sûeng",
+   "id": "yang (keterangan tambahan, resmi)"
+  },
+  {
+   "th": "ผู้ที่",
+   "baca": "phûu-thîi",
+   "id": "orang yang (sopan)"
+  },
+  {
+   "th": "ที่ว่า",
+   "baca": "thîi-wâa",
+   "id": "yang dikatakan, yang disebut"
+  },
+  {
+   "th": "อัน",
+   "baca": "an",
+   "id": "yang (tulisan, sebelum kata sifat bernilai)"
+  },
+  {
+   "th": "บริษัท",
+   "baca": "baw-rí-sàt",
+   "id": "perusahaan (kb. *แห่ง*)"
+  },
+  {
+   "th": "ท้องถิ่น",
+   "baca": "tháawng-thìn",
+   "id": "lokal, setempat"
+  },
+  {
+   "th": "สำนักงาน",
+   "baca": "sǎm-nák-ngaan",
+   "id": "kantor (resmi)"
+  },
+  {
+   "th": "ช่าง",
+   "baca": "châang",
+   "id": "teknisi, tukang (kb. *คน*)"
+  },
+  {
+   "th": "ดูแล",
+   "baca": "duu-laae",
+   "id": "mengurus, merawat, mengawasi"
+  },
+  {
+   "th": "ติดตั้ง",
+   "baca": "tìt-tâng",
+   "id": "memasang (instalasi)"
+  },
+  {
+   "th": "ประสบการณ์",
+   "baca": "prà-sòp-kaan",
+   "id": "pengalaman"
+  },
+  {
+   "th": "แผง",
+   "baca": "phǎaeng",
+   "id": "panel (kb. *แผง*)"
+  },
+  {
+   "th": "เสนอ",
+   "baca": "sà-nǒe",
+   "id": "menawarkan, mengusulkan (*เสนอให้ ...*)"
+  },
+  {
+   "th": "ใบรับรอง",
+   "baca": "bai-ráp-rawng",
+   "id": "sertifikat, surat keterangan (kb. *ใบ*)"
+  },
+  {
+   "th": "มาตรฐาน",
+   "baca": "mâat-trà-thǎan",
+   "id": "standar"
+  },
+  {
+   "th": "ข้อดี",
+   "baca": "khâw-dii",
+   "id": "kelebihan (kb. *ข้อ*); lawannya *ข้อเสีย*"
+  },
+  {
+   "th": "ระบบ",
+   "baca": "rá-bòp",
+   "id": "sistem (kb. *ระบบ*)"
+  },
+  {
+   "th": "ซ่อม",
+   "baca": "sâwm",
+   "id": "memperbaiki"
+  },
+  {
+   "th": "ภายใน",
+   "baca": "phaai-nai",
+   "id": "dalam (waktu), di dalam"
+  },
+  {
+   "th": "เห็นด้วย",
+   "baca": "hěn-dûai",
+   "id": "setuju (*เห็นด้วยกับ ...*)"
+  },
+  {
+   "th": "ผลงาน",
+   "baca": "phǒn-ngaan",
+   "id": "hasil kerja, portofolio (kb. *ชิ้น*)"
+  },
+  {
+   "th": "สรุป",
+   "baca": "sà-rùp",
+   "id": "merangkum; kesimpulannya"
+  },
+  {
+   "th": "แผ่นพับ",
+   "baca": "phàaen-pháp",
+   "id": "leaflet, brosur lipat (kb. *แผ่น*)"
+  },
+  {
+   "th": "แวะ",
+   "baca": "wáe",
+   "id": "mampir (*แวะไป ..., แวะมา ...*)"
+  }
+ ],
+ "exercises": [
+  {
+   "prompt": "Terjemahkan ke bahasa Thai. Bayangkan kamu laki-laki.",
+   "items": [
+    "Teknisi yang bekerja dengan kami orang setempat.",
+    "Fa Sai, yang pernah bekerja dengan kami, harganya paling mahal.",
+    "Yang mengawasi pemasangan adalah insinyur senior.",
+    "Perusahaan yang katanya murah itu tidak punya sertifikat.",
+    "Yang penting adalah hasil kerja nyata.",
+    "Saya memilih perusahaan ini karena mereka dekat."
+   ]
+  },
+  {
+   "prompt": "Isi dengan ที่, ซึ่ง, ผู้ที่, ที่ว่า, atau อัน. Petunjuk ada di dalam kurung.",
+   "items": [
+    "แผง____เขาเสนอไม่มีใบรับรอง (pembatas, lisan)",
+    "บริษัทฟ้าใส ____เคยทำงานกับเรา ราคาแพง (keterangan tambahan, resmi)",
+    "____สนใจกรุณาติดต่อฝ่ายบุคคล (orang yang, pengumuman)",
+    "ร้าน____อร่อยมากน่ะ อยู่ที่ไหน (yang katanya)",
+    "ขอบคุณสำหรับความร่วมมือ____ดี (pidato)",
+    "____สำคัญคือราคา (topik)",
+    "บริษัท____มีประสบการณ์สิบปี (pembatas)"
+   ]
+  },
+  {
+   "prompt": "Gabungkan dua kalimat menjadi satu dengan kata dalam kurung.",
+   "items": [
+    "บริษัทนี้อยู่ขอนแก่น / บริษัทนี้มีช่างเยอะ (ที่)",
+    "พี่ต้นเป็นวิศวกรอาวุโส / พี่ต้นจะแต่งงานเดือนมกรา (ซึ่ง)",
+    "คนนี้ดูแลงานติดตั้ง / คนนี้เป็นคนขอนแก่น (ผู้ที่)",
+    "ผมเลือกดอกคูน / เพราะอยู่ใกล้ (ที่…ก็เพราะ)",
+    "เราต้องการบริษัท / บริษัทนั้นซ่อมได้เร็ว (ที่)",
+    "โรงเรียนสองแห่ง / ใช้ระบบนี้มาห้าปีแล้ว (ซึ่ง)"
+   ]
+  },
+  {
+   "prompt": "Susun jadi kalimat yang benar.",
+   "items": [
+    "ครับ / ที่ / ช่าง / ทำงานกับเรา / เป็นคนขอนแก่น",
+    "คือ / ที่สำคัญ / ผลงานจริง / ครับ",
+    "ถูกมาก / ที่ว่า / บริษัท / ล่ะ",
+    "ครับ / ผู้ที่ / ติดตั้ง / ดูแลงาน / เป็นวิศวกร",
+    "ประสบการณ์ / มี / ยาวนาน / อัน"
+   ]
+  }
+ ],
+ "answers": [
+  "ช่างที่ทำงานกับเราเป็นคนในพื้นที่ครับ — บริษัทฟ้าใสซึ่งเคยทำงานกับเรามาแล้วราคาแพงที่สุดครับ — ผู้ที่ดูแลงานติดตั้งเป็นวิศวกรอาวุโสครับ — บริษัทที่ว่าถูกไม่มีใบรับรองครับ — ที่สำคัญคือผลงานจริงครับ — ที่ผมเลือกบริษัทนี้ก็เพราะเขาอยู่ใกล้ครับ",
+  "ที่ — ซึ่ง — ผู้ที่ — ที่ว่า — อัน — ที่ — ที่",
+  "บริษัทที่อยู่ขอนแก่นมีช่างเยอะ — พี่ต้นซึ่งเป็นวิศวกรอาวุโสจะแต่งงานเดือนมกรา — ผู้ที่ดูแลงานติดตั้งเป็นคนขอนแก่น — ที่ผมเลือกดอกคูนก็เพราะอยู่ใกล้ — เราต้องการบริษัทที่ซ่อมได้เร็ว — มีโรงเรียนสองแห่งซึ่งใช้ระบบนี้มาห้าปีแล้ว",
+  "ช่างที่ทำงานกับเราเป็นคนขอนแก่นครับ — ที่สำคัญคือผลงานจริงครับ — บริษัทที่ว่าถูกมากล่ะ — ผู้ที่ดูแลงานติดตั้งเป็นวิศวกรครับ — มีประสบการณ์อันยาวนาน"
+ ],
+ "wave": "Ulangi unit 20 buku A2: tutup bahasa Thainya, lalu ceritakan kembali rencana ke depan Budi dan Nok dari ingatan — sekarang dengan satu kalimat ที่ atau ซึ่ง di setiap giliran bicara."
+}

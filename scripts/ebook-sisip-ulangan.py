@@ -6,7 +6,16 @@ Pola tulis-paralel: tiap penulis unit menandai tepat 5 baris dialog `"kunci": tr
 skrip ini yang merakit bagian ulangannya, jadi penulis unit N+2 tak perlu tahu isi unit N.
 Judul kolom kanan diambil dari meta.json (`vocab_columns[0].head`, mis. "Polski") dan
 nama bahasanya dari `cover_design.label` ("BAHASA POLANDIA" → "Polandia")."""
-import json, sys, os, glob
+import json, sys, os, glob, re
+
+RUBY = re.compile(r"\[([^\[\]|]+)\|([^\[\]|]+)\]")
+
+
+def pisah_ruby(teks):
+    """"[ผม|Phǒm][ไป|pai] [ครับ|khráp]" → ("ผมไป ครับ", "*Phǒm pai khráp*")."""
+    aksara = RUBY.sub(lambda m: m.group(1), teks)
+    baca = " ".join(m.group(2).strip() for m in RUBY.finditer(teks))
+    return [aksara, f"*{baca}*"]
 
 slug = sys.argv[1]
 cek = "--cek" in sys.argv
@@ -44,6 +53,12 @@ for n, (f, u) in units.items():
             "title": f"Ulangan berjenjang — unit {src}",
             "blocks": [
                 {"type": "p", "text": f"Tutup kolom {nama}, baca terjemahan Indonesianya, lalu susun kembali kalimatnya dari ingatan."},
+                # Modul beruby (Thai): ruby di sel tabel sempit berdesakan — cara baca
+                # kata-kata berurutan menempel jadi satu untaian. Aksaranya dipecah dari
+                # cara bacanya: kolom aksara polos + kolom "Baca" miring.
+                {"type": "tabel", "head": ["Bahasa Indonesia", kolom, "Baca"],
+                 "rows": [[l["id"], *pisah_ruby(l["text"])] for l in kunci[src]]}
+                if meta.get("ruby") else
                 {"type": "tabel", "head": ["Bahasa Indonesia", kolom],
                  # Modul RTL: tanpa *miring* — tanda markdown memotong untaian Arab
                  # jadi dua pagar dan urutannya terbalik ([ebook-rtl-arab-v1]).

@@ -1,0 +1,650 @@
+{
+ "title": "Masuk koran — bahasa berita",
+ "title_target": "ภาษาข่าว — Phaa-sǎa khàao",
+ "goal": "Membaca judul dan isi berita Thai yang sengaja dipadatkan, lalu menjawab wawancara resmi dengan tenang: mengulang kata kunci pertanyaan, menyebut angka dengan hati-hati, menutup dengan sopan.",
+ "bekal": [
+  "mengenali kata kerja khas berita: เผย, ชี้, ระบุ, คาด, เตรียม, ร่วม, กล่าวว่า",
+  "membongkar judul berita yang tanpa subjek, tanpa จะ, tanpa partikel",
+  "menjawab pertanyaan wartawan dengan susunan resmi: ขออนุญาต…, …เกิดจาก…, คาดว่า…"
+ ],
+ "dialogs": [
+  {
+   "title": "บทสนทนา — Namamu ada di koran",
+   "intro": "Senin, 5 Juni 2028, kantor di Asok. SD Ban Non Thong di Khon Kaen sudah satu semester memakai listrik dari panel surya atapnya, dan koran lokal Khon Kaen memuat hasilnya di situsnya. Ton membawa ponselnya ke meja Budi; Nok kebetulan mampir. Perhatikan bagaimana judul berita membuang hampir semua kata yang biasa diucapkan.",
+   "lines": [
+    {
+     "speaker": "ต้น:",
+     "text": "[บูดี|Buu-dii] [มา|maa][ดู|duu][นี่|nîi][สิ|sì] [ได้|Dâai][ขึ้น|khûen][ข่าว|khàao][แล้ว|láaeo][นะ|ná]",
+     "id": "Budi, sini lihat ini. Kamu masuk berita lho.",
+     "literal": "Budi — datang — lihat — ini — (ajakan). dapat — naik — berita — sudah — (lembut)."
+    },
+    {
+     "speaker": "บูดี:",
+     "text": "[จริง|Jing][เหรอ|rǒoe][ครับ|khráp] [ข่าว|Khàao][อะไร|à-rai][ครับ|khráp]",
+     "id": "Masa? Berita apa?",
+     "literal": "sungguh — kah — (sopan)? berita — apa — (sopan)?"
+    },
+    {
+     "speaker": "ต้น:",
+     "text": "[หนังสือพิมพ์|Nǎng-sǔue-phim][ท้องถิ่น|tháawng-thìn][ลง|long][ข่าว|khàao][โครงการ|khroong-kaan][เรา|rao][ครับ|khráp] [พาดหัว|Phâat-hǔa][ว่า|wâa] [วิศวกร|wít-sà-wá-kawn][อินโดฯ|in-doo][นำ|nam][ทีม|thiim][ติด|tìt][โซลาร์|soo-laa][รร.|roong-rian][ขอนแก่น|Khǎawn-kàen] [คาด|khâat][ลด|lót][ค่าไฟ|khâa-fai][ครึ่ง|khrûeng][หนึ่ง|nùeng]",
+     "id": "Koran lokal memuat berita proyek kita. Judulnya: \"Insinyur Indonesia Pimpin Tim Pasang Panel Surya Sekolah Khon Kaen, Listrik Diperkirakan Hemat Separuh\".",
+     "literal": "koran — lokal — turunkan — berita — proyek — kita — (sopan). judul — bahwa — insinyur — Indo — pimpin — tim — pasang — surya — sekolah — Khon-Kaen — perkirakan — kurangi — tagihan-listrik — separuh — satu."
+    },
+    {
+     "speaker": "บูดี:",
+     "text": "[ทำไม|Tham-mai][สั้น|sân][จัง|jang][ครับ|khráp] [ไม่มี|Mâi mii][ที่|thîi] [ไม่มี|mâi mii][จะ|jà] [ไม่มี|mâi mii][ประธาน|prà-thaan][ด้วย|dûai]",
+     "id": "Kok pendek sekali? Tak ada ที่, tak ada จะ, subjeknya pun tak ada.",
+     "literal": "kenapa — pendek — sekali — (sopan)? tidak-ada — yang. tidak-ada — akan. tidak-ada — subjek — juga."
+    },
+    {
+     "speaker": "นก:",
+     "text": "[ภาษา|Phaa-sǎa][ข่าว|khàao][เป็น|pen][แบบ|bàaep][นี้|níi][แหละ|làe][ค่ะ|khâ] [ตัด|Tàt][คำ|kham][ที่|thîi][ไม่|mâi][จำเป็น|jam-pen][ออก|àwk][หมด|mòt] [คาด|Khâat][ก็|kâw][คือ|khuue][คาด|khâat][ว่า|wâa][จะ|jà][นั่นเอง|nân-eeng][ค่ะ|khâ]",
+     "id": "Bahasa berita memang begitu. Semua kata yang tak perlu dibuang. คาด itu ya maksudnya \"diperkirakan akan\".",
+     "literal": "bahasa — berita — adalah — cara — ini — memang — (sopan). potong — kata — yang — tidak — perlu — keluar — habis. perkirakan — ya — adalah — perkirakan — bahwa — akan — itulah — (sopan)."
+    },
+    {
+     "speaker": "ต้น:",
+     "text": "[ผู้อำนวยการ|Phûu-am-nuai-kaan][โรงเรียน|roong-rian][เผย|phǒei][ว่า|wâa][ค่าไฟ|khâa-fai][ลดลง|lót-long][เกือบ|kùueap][ครึ่ง|khrûeng]",
+     "id": "Kepala sekolah mengungkapkan bahwa tagihan listrik turun hampir separuh.",
+     "literal": "kepala — sekolah — ungkapkan — bahwa — tagihan-listrik — turun — hampir — separuh."
+    },
+    {
+     "speaker": "บูดี:",
+     "text": "[เผย|Phǒei][แปลว่า|plaae-wâa][อะไร|à-rai][ครับ|khráp] [ผม|Phǒm][ไม่|mâi][เคย|khoei][ได้ยิน|dâai-yin][ใคร|khrai][พูด|phûut][เลย|loei][ครับ|khráp]",
+     "id": "เผย artinya apa? Saya belum pernah dengar orang mengucapkannya.",
+     "literal": "ungkap — artinya — apa — (sopan)? saya — tidak — pernah — dengar — siapa — bicara — sama-sekali — (sopan)."
+    },
+    {
+     "speaker": "นก:",
+     "text": "[เผย|Phǒei][ก็|kâw][คือ|khuue][บอก|bàwk][นั่นแหละ|nân-làe][ค่ะ|khâ] [แต่|Tàae][ใช้|chái][แค่|khâae][ใน|nai][ข่าว|khàao] [ถ้า|Thâa][พี่|phîi][พูด|phûut][ว่า|wâa][ผม|phǒm][ขอ|khǎaw][เผย|phǒei][ว่า|wâa] [คน|khon][จะ|jà][หัวเราะ|hǔa-ráw][นะคะ|ná-khá]",
+     "id": "เผย itu ya \"bilang\". Tapi cuma dipakai di berita. Kalau Phi bilang \"saya ingin mengungkapkan bahwa…\", orang bakal tertawa lho.",
+     "literal": "ungkap — ya — adalah — bilang — itulah — (sopan). tetapi — pakai — hanya — di — berita. kalau — kakak — bicara — bahwa — saya — minta — ungkap — bahwa — orang — akan — tertawa — (lembut-sopan)."
+    },
+    {
+     "speaker": "ต้น:",
+     "text": "[อาจารย์|Aa-jaan][ประเสริฐ|Prà-sòet][ชี้|chíi][ว่า|wâa][เป็น|pen][โครงการ|khroong-kaan][ต้นแบบ|tôn-bàaep][ของ|khǎawng][ภาค|phâak][อีสาน|ii-sǎan]",
+     "id": "Aa-jaan Prasoet menilai ini proyek percontohan untuk wilayah Isan.",
+     "literal": "dosen — Prasoet — tunjuk — bahwa — adalah — proyek — contoh-awal — milik — wilayah — Isan."
+    },
+    {
+     "speaker": "บูดี:",
+     "text": "[อาจารย์|Aa-jaan][ชี้|chíi][อะไร|à-rai][ครับ|khráp] [ชี้|Chíi][นิ้ว|níu][เหรอ|rǒoe][ครับ|khráp]",
+     "id": "Aa-jaan menunjuk apa? Menunjuk pakai jari?",
+     "literal": "dosen — tunjuk — apa — (sopan)? tunjuk — jari — kah — (sopan)?"
+    },
+    {
+     "speaker": "นก:",
+     "text": "[ไม่ใช่|Mâi châi][ค่ะ|khâ] [ชี้|Chíi][ใน|nai][ข่าว|khàao][แปลว่า|plaae-wâa][ให้|hâi][ความเห็น|khwaam-hěn][ค่ะ|khâ] [ส่วน|Sùan][ระบุ|rá-bù][แปลว่า|plaae-wâa][บอก|bàwk][ข้อมูล|khâw-muun][ชัดๆ|chát-chát][ค่ะ|khâ]",
+     "id": "Bukan. ชี้ di berita artinya memberi pendapat. Sedangkan ระบุ artinya menyebutkan data dengan jelas.",
+     "literal": "bukan — (sopan). tunjuk — di — berita — artinya — beri — pendapat — (sopan). sedangkan — sebutkan — artinya — beri-tahu — data — jelas-jelas — (sopan)."
+    },
+    {
+     "speaker": "ต้น:",
+     "text": "[ท้าย|Tháai][ข่าว|khàao][ระบุ|rá-bù][ว่า|wâa] [บริษัท|baw-rí-sàt][เตรียม|triam][ติดตั้ง|tìt-tâng][ที่|thîi][โรงพยาบาล|roong-phá-yaa-baan][เดือน|duuean][หน้า|nâa]",
+     "id": "Di akhir berita disebutkan, perusahaan bersiap memasang di rumah sakit bulan depan.",
+     "literal": "ujung — berita — sebutkan — bahwa — perusahaan — siapkan — pasang — di — rumah-sakit — bulan — depan."
+    },
+    {
+     "speaker": "บูดี:",
+     "text": "[ตรงนี้|Trong-níi][มี|mii][ชื่อ|chûue][ผม|phǒm][ด้วย|dûai] [นาย|Naai][บูดี|Buu-dii][กล่าว|klàao][ว่า|wâa][ทีมงาน|thiim-ngaan][พร้อม|phráwm][แล้ว|láaeo] [ผม|Phǒm][แค่|khâae][คุย|khui][โทรศัพท์|thoo-rá-sàp][ห้า|hâa][นาที|naa-thii][เอง|eeng][นะ|ná][ครับ|khráp]",
+     "id": "Di sini ada nama saya juga. \"Tuan Budi mengatakan timnya sudah siap.\" Padahal saya cuma ngobrol di telepon lima menit.",
+     "literal": "di-sini — ada — nama — saya — juga. Tuan — Budi — katakan — bahwa — tim-kerja — siap — sudah. saya — hanya — bicara — telepon — lima — menit — saja — (lembut) — (sopan)."
+    }
+   ],
+   "notes": [
+    "**ได้ขึ้นข่าว dâai khûen khàao = \"masuk berita\"**, harfiahnya \"sempat naik ke berita\". Dari sisi media: *ลงข่าว long khàao* = memuat berita (\"menurunkan\" ke halaman). Koran *ลงข่าว*, orang yang diberitakan *ได้ขึ้นข่าว*.",
+    "**Judul berita Thai membuang semua yang bisa ditebak:** subjek yang sudah jelas, *จะ* dan *แล้ว*, *ที่*, dan partikel. Yang tersisa kata benda dan kata kerja bertumpuk. Tanda ฯ di *อินโดฯ* adalah ไปยาลน้อย, penyingkat kata (seperti *กรุงเทพฯ*).",
+    "**เผย phǒei dan kawan-kawannya adalah kata \"koran\", bukan kata \"mulut\".** Di percakapan orang bilang *บอก* atau *พูด*. Memakai *เผย* atau *กล่าว* untuk dirimu sendiri di warung terdengar seperti pembaca berita yang tersesat. Kenali saat membaca; jangan dipakai saat mengobrol.",
+    "**ชี้ chíi di berita tidak ada hubungannya dengan jari.** Arti dasarnya memang \"menunjuk\", tetapi di berita ia berarti \"menilai, menegaskan\" — biasanya dipakai untuk pakar: *นักวิชาการชี้…* (akademisi menilai…). Mirip bahasa Indonesia koran yang memakai \"menunjukkan\" atau \"menyoroti\".",
+    "**นาย naai, นาง naang, นางสาว naang-sǎao** = Tuan, Nyonya, Nona. Di percakapan hampir tak terdengar, tetapi di berita, dokumen, dan formulir selalu muncul — dengan nama resmi, bukan ชื่อเล่น. Pantas Budi kaget membaca *นายบูดี*."
+   ],
+   "grammars": [
+    {
+     "title": "Kata kerja berita dan padanan lisannya",
+     "table": {
+      "head": [
+       "Kata berita",
+       "Baca",
+       "Artinya di berita",
+       "Orang biasa bilang"
+      ],
+      "rows": [
+       [
+        "เผย",
+        "*phǒei*",
+        "mengungkapkan",
+        "บอก"
+       ],
+       [
+        "ชี้",
+        "*chíi*",
+        "menilai, menegaskan (pakar)",
+        "บอกว่า, เห็นว่า"
+       ],
+       [
+        "ระบุ",
+        "*rá-bù*",
+        "menyebutkan (dengan rinci)",
+        "บอก"
+       ],
+       [
+        "คาด",
+        "*khâat*",
+        "memperkirakan",
+        "คิดว่าจะ"
+       ],
+       [
+        "เตรียม",
+        "*triam*",
+        "bersiap untuk, akan",
+        "กำลังจะ"
+       ],
+       [
+        "ร่วม",
+        "*rûam*",
+        "bersama-sama, ikut serta",
+        "ช่วยกัน, ไปด้วย"
+       ],
+       [
+        "กล่าวว่า",
+        "*klàao wâa*",
+        "mengatakan (kutipan resmi)",
+        "พูดว่า"
+       ],
+       [
+        "เร่ง",
+        "*rêng*",
+        "mempercepat, menggenjot",
+        "รีบทำ"
+       ]
+      ]
+     },
+     "after": [
+      "**คาด dan เตรียม menggantikan จะ.** Judul tak memakai penanda waktu, jadi kedua kata inilah yang menandai sesuatu belum terjadi: *คาดลดค่าไฟ* (diperkirakan akan menurunkan), *เตรียมติดตั้ง* (bersiap memasang). Tanpa keduanya, biasanya kejadiannya sudah berlangsung."
+     ]
+    },
+    {
+     "title": "Dari kalimat lisan ke judul berita",
+     "table": {
+      "head": [
+       "Kalimat lisan",
+       "Judul berita"
+      ],
+      "rows": [
+       [
+        "ผู้อำนวยการบอกว่าค่าไฟลดลงเกือบครึ่งค่ะ",
+        "ผอ.เผยค่าไฟลดลงเกือบครึ่ง"
+       ],
+       [
+        "เราคิดว่าจะคุ้มทุนภายในหกปีครับ",
+        "คาดคุ้มทุนภายใน 6 ปี"
+       ],
+       [
+        "กรุงเทพมหานครจะปิดถนนสีลมวันอาทิตย์นี้",
+        "กทม.เตรียมปิดถนนสีลมอาทิตย์นี้"
+       ]
+      ]
+     },
+     "after": [
+      "Empat langkahnya: buang partikel, buang *จะ/แล้ว/ที่*, ganti kata kerja lisan dengan kata kerja berita, lalu singkat nama lembaga (*ผอ., รพ., กทม.*). Angka di judul ditulis dengan angka Arab: *6 ปี*, bukan *หกปี*."
+     ]
+    }
+   ]
+  },
+  {
+   "title": "บทสนทนาที่สอง — Wawancara",
+   "intro": "Rabu, 7 Juni. Berita itu banyak dibaca, dan wartawan kanal berita daring, คุณกานดา (Khun Kanda), meminta wawancara lewat panggilan video. Kali ini Budi bersiap. Perhatikan bagaimana ia mengulang kata kunci pertanyaan di awal jawabannya.",
+   "lines": [
+    {
+     "speaker": "กานดา:",
+     "text": "[สวัสดี|Sà-wàt-dii][ค่ะ|khâ][คุณ|khun][บูดี|Buu-dii] [ขอบคุณ|Khàwp-khun][ที่|thîi][สละ|sà-là][เวลา|wee-laa][ให้|hâi][สัมภาษณ์|sǎm-phâat][นะคะ|ná-khá]",
+     "id": "Selamat siang, Khun Budi. Terima kasih sudah meluangkan waktu untuk wawancara.",
+     "literal": "halo — (sopan) — Tuan — Budi. terima-kasih — yang — korbankan — waktu — beri — wawancara — (lembut-sopan)."
+    },
+    {
+     "speaker": "บูดี:",
+     "text": "[ยินดี|Yin-dii][ครับ|khráp] [ขอ|Khǎaw][อนุญาต|à-nú-yâat][ตอบ|tàwp][เป็น|pen][ภาษาไทย|phaa-sǎa-thai][นะ|ná][ครับ|khráp]",
+     "id": "Dengan senang hati. Izinkan saya menjawab dalam bahasa Thai ya.",
+     "literal": "senang — (sopan). minta — izin — jawab — sebagai — bahasa-Thai — (lembut) — (sopan)."
+    },
+    {
+     "speaker": "กานดา:",
+     "text": "[ไม่|Mâi][ทราบ|sâap][ว่า|wâa][โครงการ|khroong-kaan][นี้|níi][เริ่มต้น|rôoem-tôn][อย่างไร|yàang-rai][คะ|khá]",
+     "id": "Boleh tahu, bagaimana proyek ini bermula?",
+     "literal": "tidak — tahu — bahwa — proyek — ini — bermula — bagaimana — (sopan)?"
+    },
+    {
+     "speaker": "บูดี:",
+     "text": "[โครงการ|Khroong-kaan][นี้|níi][เกิด|kòoet][จาก|jàak][ความร่วมมือ|khwaam-rûam-muue][ระหว่าง|rá-wàang][บริษัท|baw-rí-sàt][ของ|khǎawng][ผม|phǒm][กับ|kàp][มหาวิทยาลัย|má-hǎa-wít-thá-yaa-lai][ขอนแก่น|Khǎawn-kàen][ครับ|khráp] [เป้าหมาย|Pâo-mǎai][คือ|khuue][ลด|lót][ค่าไฟฟ้า|khâa-fai-fáa][ของ|khǎawng][โรงเรียน|roong-rian][และ|láe][โรงพยาบาล|roong-phá-yaa-baan][ครับ|khráp]",
+     "id": "Proyek ini lahir dari kerja sama antara perusahaan saya dan Universitas Khon Kaen. Tujuannya menurunkan tagihan listrik sekolah dan rumah sakit.",
+     "literal": "proyek — ini — lahir — dari — kerja-sama — antara — perusahaan — milik — saya — dengan — universitas — Khon-Kaen — (sopan). sasaran — adalah — kurangi — tagihan-listrik — milik — sekolah — dan — rumah-sakit — (sopan)."
+    },
+    {
+     "speaker": "กานดา:",
+     "text": "[ข่าว|Khàao][ระบุ|rá-bù][ว่า|wâa][ค่าไฟ|khâa-fai][ลดลง|lót-long][เกือบ|kùueap][ครึ่ง|khrûeng] [จริง|jing][ไหม|mǎi][คะ|khá]",
+     "id": "Di berita disebutkan tagihan listriknya turun hampir separuh. Betul begitu?",
+     "literal": "berita — sebutkan — bahwa — tagihan-listrik — turun — hampir — separuh — benar — kah — (sopan)?"
+    },
+    {
+     "speaker": "บูดี:",
+     "text": "[ประมาณ|Prà-maan][ร้อยละ|ráwy-lá][สี่สิบ|sìi-sìp][ครับ|khráp] [เรา|Rao][คาด|khâat][ว่า|wâa][จะ|jà][คุ้มทุน|khúm-thun][ภายใน|phaai-nai][หก|hòk][ปี|pii][ครับ|khráp]",
+     "id": "Sekitar empat puluh persen. Kami memperkirakan balik modal dalam enam tahun.",
+     "literal": "sekitar — per-seratus — empat-puluh — (sopan). kami — perkirakan — bahwa — akan — balik-modal — di-dalam — enam — tahun — (sopan)."
+    },
+    {
+     "speaker": "กานดา:",
+     "text": "[สุดท้าย|Sùt-tháai][นี้|níi] [อยาก|yàak][ฝาก|fàak][อะไร|à-rai][ถึง|thǔeng][ผู้ชม|phûu-chom][ไหม|mǎi][คะ|khá]",
+     "id": "Terakhir, ada pesan untuk pemirsa?",
+     "literal": "terakhir — ini — ingin — titip — apa — sampai — pemirsa — kah — (sopan)?"
+    },
+    {
+     "speaker": "บูดี:",
+     "text": "[แสงแดด|Sǎaeng-dàaet][ใน|nai][อีสาน|ii-sǎan][มี|mii][มาก|mâak][ครับ|khráp] [ถ้า|Thâa][เรา|rao][ใช้|chái][ให้|hâi][เป็น|pen] [ก็|kâw][จะ|jà][เป็น|pen][พลังงาน|phá-lang-ngaan][ของ|khǎawng][ทุกคน|thúk-khon][ครับ|khráp]",
+     "id": "Sinar matahari di Isan melimpah. Kalau kita tahu cara memakainya, ia akan jadi energi milik semua orang.",
+     "literal": "sinar-matahari — di — Isan — ada — banyak — (sopan). kalau — kita — pakai — sampai — bisa — maka — akan — menjadi — energi — milik — semua-orang — (sopan)."
+    }
+   ],
+   "notes": [
+    "**ขออนุญาต khǎaw à-nú-yâat (unit 11) membuka jawaban dengan rendah hati.** Budi meminta izin memakai bahasa Thai, padahal wawancaranya memang berbahasa Thai. Meminta izin sebelum sesuatu yang mungkin kurang sempurna membuat pendengar lebih pemaaf.",
+    "**Angka di berita dan di jawaban tidak selalu sama.** Koran menulis *เกือบครึ่ง* (hampir separuh), Budi meluruskannya dengan halus: *ประมาณร้อยละสี่สิบ*. Ia tidak berkata \"beritanya salah\", cukup menyebut angka yang tepat. Itulah cara menjaga muka wartawan dan dirinya sekaligus.",
+    "**ร้อยละ ráwy-lá vs เปอร์เซ็นต์ poe-sen**, keduanya \"persen\". *ร้อยละ* (\"per seratus\") untuk berita, laporan, dan wawancara resmi, letaknya DI DEPAN angka: *ร้อยละ 40*. *เปอร์เซ็นต์* lebih santai, di belakang angka: *40 เปอร์เซ็นต์*.",
+    "**อย่างไร yàang-rai vs ยังไง yang-ngai.** Artinya sama, \"bagaimana\". *ยังไง* bentuk lisan yang kamu pakai sejak A1; *อย่างไร* bentuk tulis dan resmi. Wartawan memakai *อย่างไร* di depan kamera, dan Budi menyambutnya dengan kata-kata yang sama resminya: *เกิดจาก, เป้าหมายคือ, คาดว่า*."
+   ],
+   "grammars": [
+    {
+     "title": "Kerangka menjawab wawancara resmi",
+     "body": [
+      "Wartawan Thai hampir selalu bertanya berurutan: bagaimana mulanya, apa hasilnya, apa kesanmu, apa pesanmu. Siapkan satu pembuka untuk tiap tahap."
+     ],
+     "table": {
+      "head": [
+       "Tahap",
+       "Ungkapan",
+       "Baca"
+      ],
+      "rows": [
+       [
+        "membuka",
+        "ยินดีครับ/ค่ะ · ขออนุญาต…",
+        "*yin-dii · khǎaw à-nú-yâat*"
+       ],
+       [
+        "asal-usul",
+        "…เกิดจาก… · เริ่มจาก…",
+        "*kòoet jàak · rôoem jàak*"
+       ],
+       [
+        "hasil",
+        "ประมาณร้อยละ… · ได้ผลดี",
+        "*prà-maan ráwy-lá · dâai phǒn dii*"
+       ],
+       [
+        "perkiraan",
+        "เราคาดว่าจะ…",
+        "*rao khâat wâa jà*"
+       ],
+       [
+        "kesan",
+        "รู้สึกประทับใจ… · ภูมิใจที่…",
+        "*rúu-sùek prà-tháp-jai · phuum-jai thîi*"
+       ],
+       [
+        "pesan penutup",
+        "อยากฝากว่า… · ขอบคุณครับ/ค่ะ",
+        "*yàak fàak wâa · khàwp-khun*"
+       ]
+      ]
+     },
+     "after": [
+      "**Ulangi kata kunci pertanyaan di awal jawaban.** Ditanya *โครงการนี้เริ่มต้นอย่างไร*, Budi mulai dengan *โครงการนี้เกิดจาก…*. Kebiasaan ini memberimu dua detik untuk berpikir, dan pendengar langsung tahu jawabanmu nyambung."
+     ]
+    }
+   ]
+  }
+ ],
+ "sections": [
+  {
+   "title": "Membaca judul berita: singkatan yang wajib dikenali",
+   "blocks": [
+    {
+     "type": "tabel",
+     "head": [
+      "Singkatan",
+      "Kepanjangan",
+      "Baca singkatannya",
+      "Artinya"
+     ],
+     "rows": [
+      [
+       "ครม.",
+       "คณะรัฐมนตรี",
+       "*khaw-raw-maw*",
+       "kabinet"
+      ],
+      [
+       "ส.ส.",
+       "สมาชิกสภาผู้แทนราษฎร",
+       "*sǎw-sǎw*",
+       "anggota DPR"
+      ],
+      [
+       "กทม.",
+       "กรุงเทพมหานคร",
+       "*kaw-thaw-maw*",
+       "Bangkok (pemerintah kota)"
+      ],
+      [
+       "จ.",
+       "จังหวัด",
+       "*jang-wàt*",
+       "provinsi"
+      ],
+      [
+       "รร.",
+       "โรงเรียน",
+       "*roong-rian*",
+       "sekolah"
+      ],
+      [
+       "รพ.",
+       "โรงพยาบาล",
+       "*roong-phá-yaa-baan*",
+       "rumah sakit"
+      ],
+      [
+       "ผอ.",
+       "ผู้อำนวยการ",
+       "*phǎw-aw*",
+       "direktur, kepala sekolah"
+      ],
+      [
+       "มข.",
+       "มหาวิทยาลัยขอนแก่น",
+       "*maw-khǎw*",
+       "Universitas Khon Kaen"
+      ]
+     ]
+    },
+    {
+     "type": "p",
+     "text": "Sebagian singkatan dibaca huruf demi huruf (*ครม. khaw-raw-maw*, *กทม. kaw-thaw-maw*, *ผอ. phǎw-aw*), sebagian lagi dibaca sebagai kata utuhnya (*รร.* dibaca *โรงเรียน*, *จ.* dibaca *จังหวัด*). Tak ada aturan pasti; dengarkan pembaca berita. Judul juga gemar kata pendek untuk orang: *หนุ่ม* (pemuda), *สาว* (perempuan muda), *วัย 30* (berusia 30). Budi yang 34 tahun tetap *วิศวกรหนุ่ม*."
+    },
+    {
+     "type": "kotak",
+     "title": "Cara membongkar judul berita dalam tiga langkah",
+     "items": [
+      "**Cari kata kerja beritanya dulu** (*เผย, ชี้, คาด, เตรียม…*): di depannya siapa yang bicara, di belakangnya isi beritanya.",
+      "**Tambahkan sendiri kata yang dibuang**: *จะ* kalau ada *คาด/เตรียม*, *แล้ว* kalau tidak ada.",
+      "**Baca paragraf pertama**: di sana judul diulang dengan kalimat lengkap, jadi tebakanmu bisa dicocokkan."
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Media Thai: dari koran pagi sampai berita di ponsel",
+   "blocks": [
+    {
+     "type": "tabel",
+     "head": [
+      "Jenis",
+      "Thai",
+      "Baca",
+      "Catatan"
+     ],
+     "rows": [
+      [
+       "koran harian",
+       "หนังสือพิมพ์รายวัน",
+       "*nǎng-sǔue-phim raai-wan*",
+       "banyak kini lebih dibaca lewat situs dan media sosialnya"
+      ],
+      [
+       "berita televisi",
+       "ข่าวโทรทัศน์",
+       "*khàao thoo-rá-thát*",
+       "acara pagi yang membacakan berita koran sangat populer"
+      ],
+      [
+       "berita daring",
+       "ข่าวออนไลน์",
+       "*khàao awn-lai*",
+       "cepat, judulnya sering lebih heboh"
+      ],
+      [
+       "wartawan",
+       "นักข่าว / ผู้สื่อข่าว",
+       "*nák-khàao / phûu-sùue-khàao*",
+       "yang kedua lebih resmi"
+      ]
+     ]
+    },
+    {
+     "type": "p",
+     "text": "Koran besar berbahasa Thai antara lain *ไทยรัฐ*, *เดลินิวส์*, *มติชน*, *ข่าวสด*, dan harian bisnis *กรุงเทพธุรกิจ*; *Bangkok Post* dan *The Nation* berbahasa Inggris. Televisi publik *Thai PBS* dikenal dengan berita dan dokumenternya. Tiap provinsi juga punya koran dan situs lokal, seperti yang memuat berita Budi."
+    },
+    {
+     "type": "p",
+     "text": "Kebiasaan khas televisi Thai: acara pagi yang membacakan dan mengomentari judul koran hari itu. Bagi pelajar, itu latihan emas — judul tertulis dan bentuk lisannya sekaligus."
+    },
+    {
+     "type": "kotak",
+     "title": "Latihan membaca berita yang realistis",
+     "items": [
+      "**Mulai dari berita daerah atau berita cuaca**, bukan politik. Kosakatanya berulang dan kalimatnya pendek.",
+      "**Baca judul saja selama seminggu.** Sepuluh judul sehari, tebak isinya, lalu cek paragraf pertama. Dalam seminggu, *เผย, ชี้, คาด* akan terbaca otomatis.",
+      "**Berita kerajaan memakai kosakata khusus (ราชาศัพท์)** yang dibahas di B2. Untuk sekarang cukup tahu bahwa kata-kata itu berbeda dan dipakai dengan hormat."
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Ulangan berjenjang — unit 14",
+   "blocks": [
+    {
+     "type": "p",
+     "text": "Tutup kolom Thai, baca terjemahan Indonesianya, lalu susun kembali kalimatnya dari ingatan."
+    },
+    {
+     "type": "tabel",
+     "head": [
+      "Bahasa Indonesia",
+      "ภาษาไทย",
+      "Baca"
+     ],
+     "rows": [
+      [
+       "Sudah setengah sembilan. Kapan sih selesainya?",
+       "สองทุ่มครึ่งแล้ว เมื่อไหร่จะเสร็จซะทีเนี่ย",
+       "*Sǎawng-thûm khrûeng láaeo Mûea-rài jà sèt sá-thii nîa*"
+      ],
+      [
+       "Nggak ah. Sudah terlanjur sampai jam segini, mending sekalian sampai selesai.",
+       "ไม่เอาหรอก ไหนๆก็อยู่ถึงป่านนี้แล้ว อยู่ให้เสร็จเลยดีกว่า",
+       "*Mâi ao ràwk Nǎi-nǎi kâw yùu thǔeng pàan-níi láaeo Yùu hâi sèt loei dii-kwàa*"
+      ],
+      [
+       "Aduh, ini salah, nih. Angka kabelnya sama sekali tidak cocok dengan gambar.",
+       "โอ๊ย ตรงนี้ผิดนี่ ตัวเลขสายไฟไม่ตรงกับแบบเลย",
+       "*Óoi trong-níi phìt nîi Tua-lêek sǎai-fai mâi trong kàp bàaep loei*"
+      ],
+      [
+       "Betulkan dulu, lalu kirim lagi biar aku lihat sekali lagi.",
+       "แก้ซะ แล้วส่งมาให้พี่ดูอีกรอบ",
+       "*Kâae sá láaeo sòng maa hâi phîi duu ìik râwp*"
+      ],
+      [
+       "Nggak apa-apa. Cuma larut satu malam, kok. Fon juga ngerti.",
+       "ไม่เป็นไร ก็แค่ดึกคืนเดียวเอง ฝนก็เข้าใจ",
+       "*Mâi pen rai Kâw khâae dùek khuuen diao eeng Fǒn kâw khâo-jai*"
+      ]
+     ]
+    }
+   ]
+  }
+ ],
+ "vocab": [
+  {
+   "th": "ข่าว",
+   "baca": "khàao",
+   "id": "berita (kb. *ข่าว*, *เรื่อง*)"
+  },
+  {
+   "th": "หนังสือพิมพ์",
+   "baca": "nǎng-sǔue-phim",
+   "id": "koran (kb. *ฉบับ*)"
+  },
+  {
+   "th": "พาดหัว",
+   "baca": "phâat-hǔa",
+   "id": "judul berita; memberi judul"
+  },
+  {
+   "th": "นักข่าว",
+   "baca": "nák-khàao",
+   "id": "wartawan"
+  },
+  {
+   "th": "สัมภาษณ์",
+   "baca": "sǎm-phâat",
+   "id": "mewawancarai; wawancara (*ให้สัมภาษณ์* = memberi wawancara)"
+  },
+  {
+   "th": "เผย",
+   "baca": "phǒei",
+   "id": "mengungkapkan (berita)"
+  },
+  {
+   "th": "ชี้",
+   "baca": "chíi",
+   "id": "menunjuk; menilai, menegaskan (berita)"
+  },
+  {
+   "th": "ระบุ",
+   "baca": "rá-bù",
+   "id": "menyebutkan dengan rinci"
+  },
+  {
+   "th": "คาด",
+   "baca": "khâat",
+   "id": "memperkirakan (*คาดว่าจะ...*)"
+  },
+  {
+   "th": "เตรียม",
+   "baca": "triam",
+   "id": "menyiapkan; bersiap untuk"
+  },
+  {
+   "th": "ร่วม",
+   "baca": "rûam",
+   "id": "bersama, ikut serta (*ร่วมกับ...*)"
+  },
+  {
+   "th": "กล่าว",
+   "baca": "klàao",
+   "id": "mengatakan (resmi)"
+  },
+  {
+   "th": "ท้องถิ่น",
+   "baca": "tháawng-thìn",
+   "id": "lokal, daerah"
+  },
+  {
+   "th": "ต้นแบบ",
+   "baca": "tôn-bàaep",
+   "id": "percontohan, model"
+  },
+  {
+   "th": "ติดตั้ง",
+   "baca": "tìt-tâng",
+   "id": "memasang (instalasi)"
+  },
+  {
+   "th": "ร้อยละ",
+   "baca": "ráwy-lá",
+   "id": "persen (di depan angka: *ร้อยละ 40*)"
+  },
+  {
+   "th": "คุ้มทุน",
+   "baca": "khúm-thun",
+   "id": "balik modal"
+  },
+  {
+   "th": "เป้าหมาย",
+   "baca": "pâo-mǎai",
+   "id": "sasaran, tujuan"
+  },
+  {
+   "th": "ความร่วมมือ",
+   "baca": "khwaam-rûam-muue",
+   "id": "kerja sama"
+  },
+  {
+   "th": "ผู้อำนวยการ",
+   "baca": "phûu-am-nuai-kaan",
+   "id": "direktur, kepala sekolah (singkatan *ผอ.*)"
+  },
+  {
+   "th": "สละเวลา",
+   "baca": "sà-là wee-laa",
+   "id": "meluangkan waktu"
+  },
+  {
+   "th": "ในฐานะ",
+   "baca": "nai thǎa-ná",
+   "id": "sebagai (kedudukan: *ในฐานะหัวหน้าโครงการ*)"
+  }
+ ],
+ "exercises": [
+  {
+   "prompt": "Terjemahkan ke bahasa Thai. Bayangkan kamu laki-laki yang sedang diwawancara wartawan.",
+   "items": [
+    "Dengan senang hati. Izinkan saya menjawab dalam bahasa Thai.",
+    "Proyek ini lahir dari kerja sama dengan Universitas Khon Kaen.",
+    "Tujuannya menurunkan tagihan listrik sekolah.",
+    "Kami memperkirakan balik modal dalam enam tahun.",
+    "Sebagai orang asing, saya sangat terkesan.",
+    "Timnya sudah siap."
+   ]
+  },
+  {
+   "prompt": "Isi dengan kata kerja berita yang tepat: เผย, ชี้, คาด, เตรียม, ร่วม, ระบุ, atau กล่าว.",
+   "items": [
+    "ผู้อำนวยการโรงเรียน____ว่าค่าไฟลดลงเกือบครึ่ง (mengungkapkan)",
+    "อาจารย์ประเสริฐ____ว่าเป็นโครงการต้นแบบของภาคอีสาน (menilai)",
+    "กรมอุตุนิยมวิทยา____ฝนตกหนักทั่วภาคอีสานพรุ่งนี้ (memperkirakan)",
+    "บริษัท____ติดตั้งแผงโซลาร์ที่โรงพยาบาลเดือนหน้า (bersiap)",
+    "นักเรียนกว่า 200 คน____กับครูปลูกต้นไม้ที่โรงเรียน (ikut serta bersama)",
+    "รายงาน____ว่าโครงการใช้งบประมาณ 6.3 ล้านบาท (menyebutkan dengan rinci)",
+    "นายบูดี____ว่าทีมงานพร้อมแล้ว (mengatakan, resmi)"
+   ]
+  },
+  {
+   "prompt": "Ubah kalimat lisan menjadi judul berita: buang partikel, จะ, dan subjek yang sudah jelas, lalu pakai kata kerja berita (dan singkatan bila ada).",
+   "items": [
+    "ผู้อำนวยการบอกว่าค่าไฟลดลงเกือบครึ่งค่ะ",
+    "อาจารย์ประเสริฐบอกว่านี่เป็นโครงการต้นแบบครับ",
+    "บริษัทกำลังจะติดตั้งแผงที่โรงพยาบาลเดือนหน้าครับ",
+    "เราคิดว่าจะคุ้มทุนภายในหกปีครับ",
+    "นักเรียนกับครูช่วยกันทำความสะอาดแผงค่ะ",
+    "กรุงเทพมหานครจะปิดถนนสีลมวันอาทิตย์นี้"
+   ]
+  },
+  {
+   "prompt": "Susun jadi kalimat yang benar.",
+   "items": [
+    "ว่า / เผย / ค่าไฟลดลงเกือบครึ่ง / ผู้อำนวยการโรงเรียน",
+    "ครับ / ตอบเป็นภาษาไทย / นะ / ขออนุญาต",
+    "ภายในหกปี / ว่า / จะคุ้มทุน / เราคาด / ครับ",
+    "เดือนหน้า / เตรียม / บริษัท / ติดตั้งที่โรงพยาบาล",
+    "คะ / อย่างไร / เริ่มต้น / โครงการนี้ / ไม่ทราบว่า"
+   ]
+  }
+ ],
+ "answers": [
+  "ยินดีครับ ขออนุญาตตอบเป็นภาษาไทยนะครับ — โครงการนี้เกิดจากความร่วมมือกับมหาวิทยาลัยขอนแก่นครับ — เป้าหมายคือลดค่าไฟฟ้าของโรงเรียนครับ — เราคาดว่าจะคุ้มทุนภายในหกปีครับ — ในฐานะชาวต่างชาติ ผมประทับใจมากครับ — ทีมงานพร้อมแล้วครับ",
+  "เผย — ชี้ — คาด — เตรียม — ร่วม — ระบุ — กล่าว",
+  "ผอ.เผยค่าไฟลดลงเกือบครึ่ง — อาจารย์ประเสริฐชี้เป็นโครงการต้นแบบ — บริษัทเตรียมติดตั้งแผงที่รพ.เดือนหน้า — คาดคุ้มทุนภายใน 6 ปี — นักเรียนร่วมกับครูทำความสะอาดแผง — กทม.เตรียมปิดถนนสีลมอาทิตย์นี้",
+  "ผู้อำนวยการโรงเรียนเผยว่าค่าไฟลดลงเกือบครึ่ง — ขออนุญาตตอบเป็นภาษาไทยนะครับ — เราคาดว่าจะคุ้มทุนภายในหกปีครับ — บริษัทเตรียมติดตั้งที่โรงพยาบาลเดือนหน้า — ไม่ทราบว่าโครงการนี้เริ่มต้นอย่างไรคะ"
+ ],
+ "wave": "Ulangi unit 14: baca lagi dialog lembur Ton dengan suara keras dan tandai setiap เลย, ซะ, dan ก็ — lalu ceritakan ulang kejadiannya dengan gaya judul berita dalam tiga baris."
+}

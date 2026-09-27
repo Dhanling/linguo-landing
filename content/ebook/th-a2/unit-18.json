@@ -1,0 +1,684 @@
+{
+ "title": "Urusan imigrasi — bahasa resmi",
+ "title_target": "ต่อวีซ่า — Tàw wii-sâa",
+ "goal": "Menghadapi loket kantor pemerintah dengan ragam resmi — *ดิฉัน/กระผม, ท่าน, กรุณา, โปรด, ขอ…ด้วย, เรียบร้อย, ครับผม* — dan menanyakan prosedur dengan jelas: dokumen apa saja, berapa lama, berapa biayanya.",
+ "bekal": [
+  "mengenali dan memakai kata-kata resmi di loket: กรุณา, โปรด, ขอ…ด้วย, ครับผม",
+  "memahami petugas yang memakai ดิฉัน dan pengumuman yang memakai ท่าน",
+  "menanyakan prosedur: ต้องใช้เอกสารอะไรบ้าง, ใช้เวลากี่วัน",
+  "memilih kata sopan: ทราบ untuk รู้, รับประทาน untuk กิน, นำ untuk เอา"
+ ],
+ "dialogs": [
+  {
+   "title": "บทสนทนา — Loket enam, Chaeng Watthana",
+   "intro": "Kamis, 17 Juni 2027. Izin tinggal Budi habis akhir bulan ini: tahun lalu visa Non-B-nya diperpanjang mengikuti kontrak kerja yang diperbarui 1 Juli 2026, jadi jatuh temponya akhir Juni. Pukul tujuh pagi ia sudah mengantre di kantor imigrasi di kompleks pemerintahan Chaeng Watthana, memeluk map berisi dokumen yang disiapkan Nok. Perhatikan betapa berbedanya bahasa di loket ini dari bahasa di warung Pa Somsri.",
+   "lines": [
+    {
+     "speaker": "ประกาศ:",
+     "text": "[หมายเลข|Mǎai-lêek][บี|bii][สอง|sǎawng][ศูนย์|sǔun][สี่|sìi] [ขอ|khǎaw][เชิญ|chooen][ที่|thîi][ช่อง|châwng][หก|hòk][ค่ะ|khâ]",
+     "id": "Nomor B204, dipersilakan ke loket enam.",
+     "literal": "nomor — B — dua — nol — empat. mohon — undang — di — loket — enam — (sopan)."
+    },
+    {
+     "speaker": "เจ้าหน้าที่:",
+     "text": "[สวัสดี|Sà-wàt-dii][ค่ะ|khâ] [ติดต่อ|Tìt-tàw][เรื่อง|rûueang][อะไร|à-rai][คะ|khá]",
+     "id": "Selamat pagi. Ada keperluan apa?",
+     "literal": "halo — (sopan). menghubungi — urusan — apa — (sopan)?"
+    },
+    {
+     "speaker": "บูดี:",
+     "text": "[สวัสดี|Sà-wàt-dii][ครับ|khráp] [ผม|Phǒm][มา|maa][ขอ|khǎaw][ต่อ|tàw][วีซ่า|wii-sâa][ทำงาน|tham-ngaan][ครับ|khráp]",
+     "id": "Selamat pagi. Saya datang untuk memperpanjang visa kerja.",
+     "literal": "halo — (sopan). saya — datang — minta — sambung — visa — kerja — (sopan)."
+    },
+    {
+     "speaker": "เจ้าหน้าที่:",
+     "text": "[กรุณา|Kà-rú-naa][ยื่น|yûuen][หนังสือเดินทาง|nǎng-sǔue-dooen-thaang][กับ|kàp][แบบฟอร์ม|bàaep-faawm][ด้วย|dûai][ค่ะ|khâ]",
+     "id": "Silakan serahkan paspor dan formulirnya.",
+     "literal": "silakan — ajukan — paspor — dan — formulir — (mohon) — (sopan)."
+    },
+    {
+     "speaker": "บูดี:",
+     "text": "[ครับผม|Khráp-phǒm] [เอกสาร|Èek-kà-sǎan][จาก|jàak][บริษัท|baw-rí-sàt][อยู่|yùu][ใน|nai][แฟ้ม|fáaem][นี้|níi][ครับ|khráp]",
+     "id": "Baik. Dokumen dari perusahaan ada di map ini.",
+     "literal": "baik-(hormat). dokumen — dari — perusahaan — ada — di-dalam — map — ini — (sopan)."
+    },
+    {
+     "speaker": "เจ้าหน้าที่:",
+     "text": "[สำเนา|Sǎm-nao][ต้อง|tâwng][เซ็น|sen][รับรอง|ráp-rawng][ทุก|thúk][หน้า|nâa][นะ|ná][คะ|khá] [หน้า|Nâa][นี้|níi][ยัง|yang][ไม่ได้|mâi-dâai][เซ็น|sen][ค่ะ|khâ]",
+     "id": "Salinannya harus ditandatangani di setiap halaman, ya. Halaman ini belum.",
+     "literal": "salinan — harus — tanda-tangan — mengesahkan — setiap — halaman — ya — (sopan). halaman — ini — masih — belum — tanda-tangan — (sopan)."
+    },
+    {
+     "speaker": "บูดี:",
+     "text": "[ขอโทษ|Khǎaw-thôot][ครับ|khráp] [ขอ|Khǎaw][ยืม|yuuem][ปากกา|pàak-kaa][ด้วย|dûai][ครับ|khráp]",
+     "id": "Maaf. Boleh saya pinjam pulpennya?",
+     "literal": "maaf — (sopan). minta — pinjam — pulpen — (mohon) — (sopan)."
+    },
+    {
+     "speaker": "เจ้าหน้าที่:",
+     "text": "[เชิญ|Chooen][ค่ะ|khâ] [ค่าธรรมเนียม|Khâa-tham-niam][หนึ่ง|nùeng][พัน|phan][เก้า|kâo][ร้อย|ráwy][บาท|bàat][ค่ะ|khâ]",
+     "id": "Silakan. Biayanya seribu sembilan ratus baht.",
+     "literal": "silakan — (sopan). biaya-resmi — satu — ribu — sembilan — ratus — baht — (sopan)."
+    },
+    {
+     "speaker": "บูดี:",
+     "text": "[ครับผม|Khráp-phǒm] [ชำระ|Cham-rá][เป็น|pen][เงินสด|ngoen-sòt][ได้|dâai][ไหม|mǎi][ครับ|khráp]",
+     "id": "Baik. Boleh dibayar tunai?",
+     "literal": "baik-(hormat). membayar — sebagai — uang-tunai — bisa — kah — (sopan)?"
+    },
+    {
+     "speaker": "เจ้าหน้าที่:",
+     "text": "[ได้|Dâai][ค่ะ|khâ] [เรียบร้อย|Rîap-ráwy][แล้ว|láaeo][ค่ะ|khâ] [ดิฉัน|Dì-chǎn][นัด|nát][ฟัง|fang][ผล|phǒn][วันที่|wan-thîi][สิบหก|sìp-hòk][กรกฎาคม|kà-rá-kà-daa-khom][นะ|ná][คะ|khá]",
+     "id": "Bisa. Sudah beres. Saya jadwalkan Anda kembali mendengar hasilnya tanggal 16 Juli, ya.",
+     "literal": "bisa — (sopan). rapi — sudah — (sopan). saya-(perempuan) — janji — dengar — hasil — tanggal — enam-belas — Juli — ya — (sopan)."
+    },
+    {
+     "speaker": "บูดี:",
+     "text": "[วัน|Wan][นั้น|nán][ต้อง|tâwng][นำ|nam][อะไร|à-rai][มา|maa][ด้วย|dûai][ไหม|mǎi][ครับ|khráp]",
+     "id": "Hari itu saya harus membawa apa?",
+     "literal": "hari — itu — harus — bawa — apa — datang — juga — kah — (sopan)?"
+    },
+    {
+     "speaker": "เจ้าหน้าที่:",
+     "text": "[นำ|Nam][หนังสือเดินทาง|nǎng-sǔue-dooen-thaang][กับ|kàp][ใบนัด|bai-nát][มา|maa][ค่ะ|khâ] [โปรด|Pròot][อย่า|yàa][ทำ|tham][ใบนัด|bai-nát][หาย|hǎai][นะ|ná][คะ|khá]",
+     "id": "Bawa paspor dan surat janji ini. Mohon jangan sampai surat janjinya hilang, ya.",
+     "literal": "bawa — paspor — dan — surat-janji — datang — (sopan). mohon — jangan — buat — surat-janji — hilang — ya — (sopan)."
+    },
+    {
+     "speaker": "บูดี:",
+     "text": "[ครับผม|Khráp-phǒm] [ขอบคุณ|Khàwp-khun][มาก|mâak][ครับ|khráp]",
+     "id": "Baik. Terima kasih banyak.",
+     "literal": "baik-(hormat). terima-kasih — banyak — (sopan)."
+    }
+   ],
+   "notes": [
+    "**ครับผม khráp-phǒm = \"baik, Pak/Bu\" — ครับ yang diberi hormat.** Laki-laki memakainya untuk mengiyakan petugas, atasan, atau orang yang jauh lebih tua. Kepada teman ia terdengar berlebihan, bahkan bercanda. Perempuan tidak punya pasangan yang tepat; cukup *ค่ะ* yang diucapkan jelas.",
+    "**ดิฉัน dì-chǎn dan กระผม krà-phǒm — \"saya\" dalam versi resmi.** Petugas perempuan memakai *ดิฉัน*; di pidato atau rapat resmi laki-laki bisa memakai *กระผม*. Di loket, *ผม* biasa sudah cukup sopan asalkan ditutup *ครับ* — Budi tidak perlu *กระผม*, yang di mulut orang asing bisa terdengar kaku.",
+    "**กรุณา kà-rú-naa dan โปรด pròot = \"mohon, silakan\".** Keduanya membuka perintah resmi: *กรุณายื่นเอกสาร* (silakan serahkan dokumen), *โปรดอย่าทำใบนัดหาย* (mohon jangan menghilangkan surat janji). *โปรด* lebih tertulis — kamu akan membacanya di papan: *โปรดรอเรียกคิว* (harap menunggu panggilan). Kata *กรุณา* sekerabat dengan *karunia* dalam bahasa Indonesia.",
+    "**ขอ… ด้วย = \"mohon …\" — permintaan paling aman di kantor mana pun.** *ขอยืมปากกาด้วยครับ* (boleh pinjam pulpen), *ขอสำเนาอีกชุดด้วยค่ะ* (mohon satu set salinan lagi). Petugas memakai *ด้วย* juga, sehingga perintahnya terdengar seperti permohonan.",
+    "**เรียบร้อย rîap-ráwy = \"beres, rapi, tuntas\".** *เรียบร้อยแล้วค่ะ* adalah kalimat yang paling ingin kamu dengar di loket. Kata yang sama memuji orang: *เขาเป็นคนเรียบร้อย* (dia orang yang santun dan rapi)."
+   ],
+   "grammars": [
+    {
+     "title": "Kata biasa dan kata di loket",
+     "body": [
+      "Bahasa Thai resmi tidak mengubah tata bahasa — hanya menukar kata. Kalimatnya tetap kalimat yang sudah kamu kenal."
+     ],
+     "table": {
+      "head": [
+       "Biasa",
+       "Resmi",
+       "Baca",
+       "Artinya"
+      ],
+      "rows": [
+       [
+        "ฉัน / ผม",
+        "ดิฉัน / กระผม",
+        "*dì-chǎn / krà-phǒm*",
+        "saya"
+       ],
+       [
+        "คุณ",
+        "ท่าน",
+        "*thâan*",
+        "Anda (sangat hormat, pengumuman)"
+       ],
+       [
+        "ช่วย…หน่อย",
+        "กรุณา… / โปรด…",
+        "*kà-rú-naa / pròot*",
+        "silakan, mohon"
+       ],
+       [
+        "ส่ง / ให้",
+        "ยื่น",
+        "*yûuen*",
+        "menyerahkan, mengajukan"
+       ],
+       [
+        "เอา…มา",
+        "นำ…มา",
+        "*nam … maa*",
+        "membawa"
+       ],
+       [
+        "จ่าย",
+        "ชำระ",
+        "*cham-rá*",
+        "membayar"
+       ],
+       [
+        "ครับ",
+        "ครับผม",
+        "*khráp-phǒm*",
+        "ya, baik (laki-laki)"
+       ],
+       [
+        "เสร็จแล้ว",
+        "เรียบร้อยแล้ว",
+        "*rîap-ráwy láaeo*",
+        "sudah beres"
+       ]
+      ]
+     },
+     "after": [
+      "**ท่าน *thâan*** jarang dipakai langsung di loket; kamu akan mendengarnya di pengumuman dan membacanya di papan: *ท่านที่มาติดต่อ กรุณารับบัตรคิว* (Bapak/Ibu yang berkepentingan, silakan ambil nomor antrean)."
+     ]
+    }
+   ]
+  },
+  {
+   "title": "บทสนทนาที่สอง — Langkah berikutnya",
+   "intro": "Jumat pagi di kantor. Budi turun ke lantai HR untuk mengembalikan map kepada Nok dan menanyakan urusan yang masih tersisa: izin kerja dan lapor diri 90 hari. Perhatikan cara Budi menanyakan prosedur — pendek, tetapi lengkap.",
+   "lines": [
+    {
+     "speaker": "นก:",
+     "text": "[เมื่อวาน|Mûea-waan][ที่|thîi][ตม.|taw-maw][เป็น|pen][ยังไง|yang-ngai][บ้าง|bâang][คะ|khá]",
+     "id": "Kemarin di imigrasi bagaimana?",
+     "literal": "kemarin — di — imigrasi — adalah — bagaimana — beberapa — (sopan)?"
+    },
+    {
+     "speaker": "บูดี:",
+     "text": "[เรียบร้อย|Rîap-ráwy][ครับ|khráp] [เดือน|Duuean][หน้า|nâa][ต้อง|tâwng][ไป|pai][ฟัง|fang][ผล|phǒn][อีก|ìik][ที|thii][ครับ|khráp]",
+     "id": "Beres. Bulan depan harus ke sana lagi mendengar hasilnya.",
+     "literal": "beres — (sopan). bulan — depan — harus — pergi — dengar — hasil — lagi — kali — (sopan)."
+    },
+    {
+     "speaker": "นก:",
+     "text": "[ดี|Dii][ค่ะ|khâ] [ต่อไป|Tàw-pai][ก็|kâw][ต่อ|tàw][ใบ|bai][อนุญาต|à-nú-yâat][ทำงาน|tham-ngaan][นะ|ná][คะ|khá]",
+     "id": "Bagus. Selanjutnya memperpanjang izin kerja, ya.",
+     "literal": "bagus — (sopan). selanjutnya — ya — sambung — surat-izin-kerja — ya — (sopan)."
+    },
+    {
+     "speaker": "บูดี:",
+     "text": "[ต้อง|Tâwng][ใช้|chái][เอกสาร|èek-kà-sǎan][อะไร|à-rai][บ้าง|bâang][ครับ|khráp]",
+     "id": "Dokumen apa saja yang diperlukan?",
+     "literal": "harus — pakai — dokumen — apa — saja — (sopan)?"
+    },
+    {
+     "speaker": "นก:",
+     "text": "[สำเนา|Sǎm-nao][หนังสือเดินทาง|nǎng-sǔue-dooen-thaang] [รูปถ่าย|rûup-thàai] [ใบรับรองแพทย์|bai-ráp-rawng-phâaet][ค่ะ|khâ] [เอกสาร|Èek-kà-sǎan][บริษัท|baw-rí-sàt][นก|Nók][เตรียม|triam][ให้|hâi][ค่ะ|khâ]",
+     "id": "Salinan paspor, pasfoto, surat keterangan dokter. Dokumen perusahaan Nok yang siapkan.",
+     "literal": "salinan — paspor. foto. surat-keterangan-dokter — (sopan). dokumen — perusahaan — Nok — siapkan — untukmu — (sopan)."
+    },
+    {
+     "speaker": "บูดี:",
+     "text": "[ใช้|Chái][เวลา|wee-laa][กี่|kìi][วัน|wan][ครับ|khráp]",
+     "id": "Makan waktu berapa hari?",
+     "literal": "pakai — waktu — berapa — hari — (sopan)?"
+    },
+    {
+     "speaker": "นก:",
+     "text": "[ยื่น|Yûuen][ออนไลน์|awn-laai][ประมาณ|prà-maan][เจ็ด|jèt][วัน|wan][ทำการ|tham-kaan][ค่ะ|khâ] [ถ้า|Thâa][เอกสาร|èek-kà-sǎan][ครบ|khróp]",
+     "id": "Diajukan daring, kira-kira tujuh hari kerja. Kalau dokumennya lengkap.",
+     "literal": "ajukan — online — kira-kira — tujuh — hari — kerja — (sopan). kalau — dokumen — lengkap."
+    },
+    {
+     "speaker": "บูดี:",
+     "text": "[แล้ว|Láaeo][รายงาน|raai-ngaan][ตัว|tua][เก้าสิบ|kâo-sìp][วัน|wan][ล่ะ|lâ][ครับ|khráp] [ต้อง|Tâwng][ไป|pai][เอง|eeng][ไหม|mǎi][ครับ|khráp]",
+     "id": "Lalu lapor diri 90 hari bagaimana? Harus datang sendiri?",
+     "literal": "lalu — lapor — diri — sembilan-puluh — hari — (tanya-balik) — (sopan)? harus — pergi — sendiri — kah — (sopan)?"
+    },
+    {
+     "speaker": "นก:",
+     "text": "[ทำ|Tham][ออนไลน์|awn-laai][ได้|dâai][ค่ะ|khâ] [ยื่น|Yûuen][ล่วงหน้า|lûang-nâa][ได้|dâai][สิบห้า|sìp-hâa][วัน|wan] [อย่า|Yàa][ปล่อย|plàwy][ให้|hâi][เลย|loei][กำหนด|kam-nòt][นะ|ná][คะ|khá]",
+     "id": "Bisa daring. Boleh diajukan lima belas hari lebih awal. Jangan sampai lewat tenggat, ya.",
+     "literal": "buat — online — bisa — (sopan). ajukan — di-muka — bisa — lima-belas — hari. jangan — biarkan — sampai — lewat — tenggat — ya — (sopan)."
+    },
+    {
+     "speaker": "บูดี:",
+     "text": "[ขอบใจ|Khàwp-jai][นะ|ná][นก|Nók] [ถ้า|Thâa][ไม่มี|mâi-mii][นก|Nók][ผม|phǒm][แย่|yâae][เลย|loei][ครับ|khráp]",
+     "id": "Makasih ya, Nok. Kalau tidak ada Nok, saya pasti kewalahan.",
+     "literal": "terima-kasih — ya — Nok. kalau — tidak-ada — Nok — saya — payah — betul — (sopan)."
+    }
+   ],
+   "notes": [
+    "**ต้องใช้เอกสารอะไรบ้าง = \"dokumen apa saja yang diperlukan?\"** — kalimat terpenting di kantor mana pun. *บ้าง* meminta daftar, bukan satu jawaban (A1 unit 20). Tukar kata bendanya dan kalimat ini melayanimu di bank, di kantor pos, di rumah sakit: *ต้องใช้อะไรบ้างครับ*.",
+    "**ใช้เวลากี่วัน = \"makan waktu berapa hari?\"** Harfiahnya \"memakai waktu berapa hari\". Untuk jam: *ใช้เวลากี่ชั่วโมง*; untuk yang tak tentu: *ใช้เวลานานไหม* (lama tidak?).",
+    "**วันทำการ wan tham-kaan = \"hari kerja\"** — Senin sampai Jumat, tanpa hari libur resmi. Kantor pemerintah menghitung semua tenggat dengan *วันทำการ*; *เจ็ดวันทำการ* bisa berarti hampir dua minggu kalender kalau ada libur panjang.",
+    "**ตม. taw-maw** adalah singkatan dari *สำนักงานตรวจคนเข้าเมือง* (kantor imigrasi). Semua orang, termasuk petugasnya, cukup menyebut *ตม.* Orang Thai membaca singkatan huruf demi huruf dengan nama konsonannya, jadi *ตม.* dibaca *taw-maw*.",
+    "**อย่าปล่อยให้เลยกำหนด = \"jangan sampai lewat tenggat\".** *ปล่อยให้* (membiarkan) sudah kamu kenal dari unit 8. Terlambat lapor diri 90 hari dikenai denda — Nok, sebagai orang HR, menekankannya dengan *นะคะ*."
+   ],
+   "grammars": [
+    {
+     "title": "Menanyakan prosedur: tujuh pertanyaan inti",
+     "table": {
+      "head": [
+       "Yang ditanyakan",
+       "Kalimat",
+       "Baca"
+      ],
+      "rows": [
+       [
+        "dokumen",
+        "ต้องใช้เอกสารอะไรบ้าง",
+        "*tâwng chái èek-kà-sǎan à-rai bâang*"
+       ],
+       [
+        "lama",
+        "ใช้เวลากี่วัน",
+        "*chái wee-laa kìi wan*"
+       ],
+       [
+        "biaya",
+        "ค่าธรรมเนียมเท่าไร",
+        "*khâa-tham-niam thâo-rai*"
+       ],
+       [
+        "tempat",
+        "ต้องยื่นที่ไหน",
+        "*tâwng yûuen thîi-nǎi*"
+       ],
+       [
+        "waktu",
+        "ยื่นได้ตั้งแต่เมื่อไร",
+        "*yûuen dâai tâng-tàae mûea-rai*"
+       ],
+       [
+        "diri sendiri?",
+        "ต้องไปเองไหม",
+        "*tâwng pai eeng mǎi*"
+       ],
+       [
+        "diwakilkan?",
+        "ให้คนอื่นยื่นแทนได้ไหม",
+        "*hâi khon ùuen yûuen thaaen dâai mǎi*"
+       ]
+      ]
+     },
+     "after": [
+      "Di loket, tambahkan pembuka yang sopan: *ขอสอบถามหน่อยครับ/ค่ะ* (mohon bertanya sebentar). *สอบถาม* adalah versi resmi dari *ถาม*."
+     ]
+    }
+   ]
+  }
+ ],
+ "sections": [
+  {
+   "title": "Dokumen dan loket: kosakata imigrasi",
+   "blocks": [
+    {
+     "type": "tabel",
+     "head": [
+      "Thai",
+      "Baca",
+      "Indonesia"
+     ],
+     "rows": [
+      [
+       "หนังสือเดินทาง / พาสปอร์ต",
+       "*nǎng-sǔue-dooen-thaang / pháat-sà-pàwt*",
+       "paspor"
+      ],
+      [
+       "วีซ่า",
+       "*wii-sâa*",
+       "visa, izin tinggal"
+      ],
+      [
+       "ใบอนุญาตทำงาน",
+       "*bai à-nú-yâat tham-ngaan*",
+       "izin kerja (work permit)"
+      ],
+      [
+       "สำเนา",
+       "*sǎm-nao*",
+       "salinan, fotokopi"
+      ],
+      [
+       "เซ็นรับรองสำเนาถูกต้อง",
+       "*sen ráp-rawng sǎm-nao thùuk-tâwng*",
+       "menandatangani salinan sebagai sah"
+      ],
+      [
+       "รูปถ่าย",
+       "*rûup-thàai*",
+       "pasfoto"
+      ],
+      [
+       "แบบฟอร์ม ตม.7",
+       "*bàaep-faawm taw-maw jèt*",
+       "formulir perpanjangan izin tinggal"
+      ],
+      [
+       "รายงานตัว 90 วัน (ตม.47)",
+       "*raai-ngaan tua kâo-sìp wan*",
+       "lapor diri 90 hari"
+      ],
+      [
+       "ใบนัด",
+       "*bai nát*",
+       "surat janji, tanda kembali"
+      ],
+      [
+       "ค่าธรรมเนียม",
+       "*khâa-tham-niam*",
+       "biaya resmi"
+      ],
+      [
+       "บัตรคิว",
+       "*bàt khiu*",
+       "nomor antrean"
+      ]
+     ]
+    },
+    {
+     "type": "p",
+     "text": "Orang asing yang bekerja di Thailand berurusan dengan dua kantor. **ตม.** (imigrasi) mengurus izin tinggal: perpanjangan tahunan dengan formulir *ตม.7* (di Bangkok, di kompleks pemerintahan Chaeng Watthana) dan lapor diri setiap 90 hari dengan formulir *ตม.47* — bisa datang sendiri, lewat pos, atau daring. **กรมการจัดหางาน** (Departemen Ketenagakerjaan) mengurus izin kerja, yang kini banyak diajukan daring oleh perusahaan. Kedua izin saling bergantung: tanpa izin kerja, izin tinggal kerja tidak diperpanjang."
+    },
+    {
+     "type": "kotak",
+     "title": "Sebelum berangkat ke ตม.",
+     "items": [
+      "**Tanda tangani setiap halaman salinan**, dan di banyak kantor tuliskan juga *สำเนาถูกต้อง* (salinan sesuai asli) di atas tanda tanganmu. Salinan tanpa tanda tangan dikembalikan.",
+      "**Berpakaian rapi.** Kantor pemerintah Thailand memasang aturan berpakaian; celana pendek, kaus tanpa lengan, dan sandal jepit bisa membuatmu ditolak masuk.",
+      "**Datang pagi dan bawa pulpen sendiri** — antrean dibuka pagi-pagi dan nomor antrean bisa habis.",
+      "**Aturan dan biaya bisa berubah.** Angka di unit ini adalah contoh; periksa situs resmi imigrasi atau tanyakan bagian HR sebelum berangkat."
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Kata sopan dan kata biasa",
+   "blocks": [
+    {
+     "type": "p",
+     "text": "Bahasa Thai punya banyak pasangan kata: satu untuk sehari-hari, satu untuk situasi resmi atau untuk orang yang dihormati. Mirip bahasa Jawa *ngoko* dan *krama* — Budi, orang Surabaya, langsung merasa akrab. Bedanya, di bahasa Thai jumlahnya jauh lebih sedikit, dan salah memilih tidak dianggap kurang ajar; paling-paling terdengar kaku atau terlalu santai."
+    },
+    {
+     "type": "tabel",
+     "head": [
+      "Biasa",
+      "Sopan",
+      "Baca",
+      "Artinya"
+     ],
+     "rows": [
+      [
+       "กิน",
+       "ทาน / รับประทาน",
+       "*thaan / ráp-prà-thaan*",
+       "makan"
+      ],
+      [
+       "รู้",
+       "ทราบ",
+       "*sâap*",
+       "tahu"
+      ],
+      [
+       "ถาม",
+       "สอบถาม",
+       "*sàwp-thǎam*",
+       "bertanya"
+      ],
+      [
+       "บอก",
+       "แจ้ง",
+       "*jâaeng*",
+       "memberi tahu"
+      ],
+      [
+       "เอา…มา",
+       "นำ…มา",
+       "*nam … maa*",
+       "membawa"
+      ],
+      [
+       "ขอโทษ",
+       "ขออภัย",
+       "*khǎaw à-phai*",
+       "mohon maaf"
+      ],
+      [
+       "ดีใจ",
+       "ยินดี",
+       "*yin-dii*",
+       "senang"
+      ]
+     ]
+    },
+    {
+     "type": "kotak",
+     "title": "Tiga kalimat sopan yang langsung bisa dipakai",
+     "items": [
+      "**ทราบแล้วครับ/ค่ะ** — sudah saya pahami. Lebih hormat daripada *รู้แล้ว*, yang kepada atasan bisa terdengar \"iya, iya, saya tahu\".",
+      "**เชิญทานข้าวครับ/ค่ะ** — silakan makan. *ทาน* adalah pilihan aman kepada siapa pun.",
+      "**ยินดีครับ/ค่ะ** — dengan senang hati. Jawaban halus untuk ucapan terima kasih di situasi resmi."
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Ulangan berjenjang — unit 16",
+   "blocks": [
+    {
+     "type": "p",
+     "text": "Tutup kolom Thai, baca terjemahan Indonesianya, lalu susun kembali kalimatnya dari ingatan."
+    },
+    {
+     "type": "tabel",
+     "head": [
+      "Bahasa Indonesia",
+      "ภาษาไทย",
+      "Baca"
+     ],
+     "rows": [
+      [
+       "Nggak apa-apa kok. Cuma pusing sedikit.",
+       "ไม่เป็นไรหรอกครับ แค่ปวดหัวนิดหน่อยครับ",
+       "*Mâi pen rai ràwk khráp Khâae pùat hǔa nít-nàwy khráp*"
+      ],
+      [
+       "Ke dokter saja, yuk. Nok ikut.",
+       "ไปหาหมอเถอะค่ะ นกไปด้วยค่ะ",
+       "*Pai hǎa mǎw thòe khâ Nók pai dûai khâ*"
+      ],
+      [
+       "Pekerjaan nggak bakal lari ke mana-mana. Kesehatan lebih penting.",
+       "งานไม่หนีไปไหนหรอกค่ะ สุขภาพสำคัญกว่านะคะ",
+       "*Ngaan mâi nǐi pai nǎi ràwk khâ Sùk-khà-phâap sǎm-khan kwàa ná khá*"
+      ],
+      [
+       "Saya demam sejak semalam. Pusing, dan seluruh badan pegal.",
+       "มีไข้มาตั้งแต่เมื่อคืนครับ ปวดหัวแล้วก็ปวดเมื่อยทั้งตัวครับ",
+       "*Mii khâi maa tâng-tàae mûea-khuuen khráp Pùat hǔa láaeo kâw pùat-mûeai tháng tua khráp*"
+      ],
+      [
+       "Tenggorokan agak sakit. Ruam tidak ada. Saya merasa lemas sekali, tak ingin makan apa-apa.",
+       "เจ็บคอนิดหน่อยครับ ผื่นไม่มีครับ รู้สึกเพลียมากไม่อยากกินอะไรเลยครับ",
+       "*Jèp khaw nít-nàwy khráp Phùuen mâi mii khráp Rúu-sùek phlia mâak mâi yàak kin à-rai loei khráp*"
+      ]
+     ]
+    }
+   ]
+  }
+ ],
+ "vocab": [
+  {
+   "th": "ตม.",
+   "baca": "taw-maw",
+   "id": "kantor imigrasi (singkatan)"
+  },
+  {
+   "th": "ต่อวีซ่า",
+   "baca": "tàw wii-sâa",
+   "id": "memperpanjang visa/izin tinggal"
+  },
+  {
+   "th": "เจ้าหน้าที่",
+   "baca": "jâo-nâa-thîi",
+   "id": "petugas (kb. *คน*, hormat *ท่าน*)"
+  },
+  {
+   "th": "ติดต่อ",
+   "baca": "tìt-tàw",
+   "id": "menghubungi, berurusan (*ติดต่อเรื่องอะไร*)"
+  },
+  {
+   "th": "ดิฉัน",
+   "baca": "dì-chǎn",
+   "id": "saya (perempuan, resmi)"
+  },
+  {
+   "th": "กระผม",
+   "baca": "krà-phǒm",
+   "id": "saya (laki-laki, sangat resmi)"
+  },
+  {
+   "th": "ครับผม",
+   "baca": "khráp-phǒm",
+   "id": "ya, baik (laki-laki, hormat)"
+  },
+  {
+   "th": "กรุณา",
+   "baca": "kà-rú-naa",
+   "id": "silakan, mohon (resmi)"
+  },
+  {
+   "th": "โปรด",
+   "baca": "pròot",
+   "id": "mohon, harap (tulisan, pengumuman)"
+  },
+  {
+   "th": "ยื่น",
+   "baca": "yûuen",
+   "id": "menyerahkan, mengajukan (*ยื่นเอกสาร*)"
+  },
+  {
+   "th": "หนังสือเดินทาง",
+   "baca": "nǎng-sǔue-dooen-thaang",
+   "id": "paspor (kb. *เล่ม*)"
+  },
+  {
+   "th": "แบบฟอร์ม",
+   "baca": "bàaep-faawm",
+   "id": "formulir (kb. *ใบ*, *ชุด*)"
+  },
+  {
+   "th": "เอกสาร",
+   "baca": "èek-kà-sǎan",
+   "id": "dokumen (kb. *ฉบับ*, *ชุด*)"
+  },
+  {
+   "th": "สำเนา",
+   "baca": "sǎm-nao",
+   "id": "salinan (kb. *ฉบับ*, *ชุด*)"
+  },
+  {
+   "th": "เซ็นรับรอง",
+   "baca": "sen ráp-rawng",
+   "id": "menandatangani sebagai pengesahan"
+  },
+  {
+   "th": "แฟ้ม",
+   "baca": "fáaem",
+   "id": "map, berkas (kb. *แฟ้ม*)"
+  },
+  {
+   "th": "ค่าธรรมเนียม",
+   "baca": "khâa-tham-niam",
+   "id": "biaya resmi"
+  },
+  {
+   "th": "ชำระ",
+   "baca": "cham-rá",
+   "id": "membayar (resmi)"
+  },
+  {
+   "th": "เรียบร้อย",
+   "baca": "rîap-ráwy",
+   "id": "beres, rapi, tuntas"
+  },
+  {
+   "th": "นำ",
+   "baca": "nam",
+   "id": "membawa (resmi, *นำ…มา*)"
+  },
+  {
+   "th": "ใบนัด",
+   "baca": "bai nát",
+   "id": "surat janji (kb. *ใบ*)"
+  },
+  {
+   "th": "ใบอนุญาตทำงาน",
+   "baca": "bai à-nú-yâat tham-ngaan",
+   "id": "izin kerja (kb. *ใบ*, *ฉบับ*)"
+  },
+  {
+   "th": "รายงานตัว",
+   "baca": "raai-ngaan tua",
+   "id": "lapor diri"
+  },
+  {
+   "th": "วันทำการ",
+   "baca": "wan tham-kaan",
+   "id": "hari kerja"
+  },
+  {
+   "th": "ล่วงหน้า",
+   "baca": "lûang-nâa",
+   "id": "di muka, lebih awal"
+  },
+  {
+   "th": "ทราบ",
+   "baca": "sâap",
+   "id": "tahu (sopan, untuk *รู้*)"
+  }
+ ],
+ "exercises": [
+  {
+   "prompt": "Terjemahkan ke bahasa Thai. Bayangkan kamu laki-laki dan sedang di loket.",
+   "items": [
+    "Saya datang untuk memperpanjang visa kerja.",
+    "Boleh saya pinjam pulpennya?",
+    "Dokumen apa saja yang diperlukan?",
+    "Makan waktu berapa hari?",
+    "Boleh dibayar tunai?",
+    "Baik, terima kasih banyak. (pakai ครับผม)"
+   ]
+  },
+  {
+   "prompt": "Isi dengan kata resmi yang tepat.",
+   "items": [
+    "____ยื่นหนังสือเดินทางด้วยค่ะ (silakan)",
+    "____อย่าทำใบนัดหายนะคะ (mohon — tertulis)",
+    "ขอยืมปากกา____ครับ (mohon)",
+    "____แล้วค่ะ (sudah beres)",
+    "วันนั้นต้อง____อะไรมาด้วยไหมครับ (membawa, resmi)",
+    "____คิดว่าเอกสารครบแล้วค่ะ (saya, petugas perempuan)",
+    "____ครับ จะเตรียมให้ครับ (sudah saya pahami, sopan)"
+   ]
+  },
+  {
+   "prompt": "Ganti kata biasa dengan kata sopan.",
+   "items": [
+    "เชิญกินข้าวครับ",
+    "รู้แล้วค่ะ",
+    "ขอถามหน่อยครับ",
+    "เอาเอกสารมาด้วยนะคะ",
+    "ขอโทษค่ะ",
+    "จ่ายเป็นเงินสดได้ไหมครับ"
+   ]
+  },
+  {
+   "prompt": "Susun jadi kalimat yang benar.",
+   "items": [
+    "ค่ะ / ด้วย / กรุณา / หนังสือเดินทาง / ยื่น",
+    "ครับ / ด้วย / ปากกา / ขอยืม",
+    "ครับ / บ้าง / อะไร / ต้องใช้ / เอกสาร",
+    "ครับ / กี่วัน / ใช้เวลา",
+    "คะ / นะ / หาย / ใบนัด / อย่าทำ / โปรด"
+   ]
+  }
+ ],
+ "answers": [
+  "ผมมาขอต่อวีซ่าทำงานครับ — ขอยืมปากกาด้วยครับ — ต้องใช้เอกสารอะไรบ้างครับ — ใช้เวลากี่วันครับ — ชำระเป็นเงินสดได้ไหมครับ atau จ่ายเป็นเงินสดได้ไหมครับ — ครับผม ขอบคุณมากครับ",
+  "กรุณา — โปรด — ด้วย — เรียบร้อย — นำ — ดิฉัน — ทราบแล้ว",
+  "เชิญทานข้าวครับ atau เชิญรับประทานอาหารครับ — ทราบแล้วค่ะ — ขอสอบถามหน่อยครับ — นำเอกสารมาด้วยนะคะ — ขออภัยค่ะ — ชำระเป็นเงินสดได้ไหมครับ",
+  "กรุณายื่นหนังสือเดินทางด้วยค่ะ — ขอยืมปากกาด้วยครับ — ต้องใช้เอกสารอะไรบ้างครับ — ใช้เวลากี่วันครับ — โปรดอย่าทำใบนัดหายนะคะ"
+ ],
+ "wave": "Ulangi unit 16: tutup bahasa Thainya, lalu jelaskan gejala flu kepada dokter — sejak kapan, apa yang dirasakan — dan kali ini tutup percakapannya dengan kalimat sopan dari unit ini: *ทราบแล้วครับ ขอบคุณครับผม*."
+}

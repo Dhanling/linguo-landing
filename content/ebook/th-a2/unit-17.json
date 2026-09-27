@@ -1,0 +1,621 @@
+{
+ "title": "Songkran — bertanya untuk memastikan",
+ "title_target": "สงกรานต์ — Sǒng-kraan",
+ "goal": "Bertanya untuk memastikan dan menyatakan heran — *ใช่ไหม, ใช่เปล่า, หรือเปล่า, ไม่ใช่เหรอ, เหรอ, จริงเหรอ* — dan membedakan *เหรอ* yang heran dari *นะ* yang menegaskan, sambil merayakan tahun baru Thai bersama keluarga Nok.",
+ "bekal": [
+  "memastikan dugaan dengan ใช่ไหม dan ใช่เปล่า",
+  "bertanya netral dengan หรือเปล่า dan heran dengan ไม่ใช่เหรอ",
+  "menanggapi kabar mengejutkan dengan เหรอ dan จริงเหรอ",
+  "menegaskan sesuatu yang kamu tahu dengan นะ"
+ ],
+ "dialogs": [
+  {
+   "title": "บทสนทนา — Pagi tahun baru di Nonthaburi",
+   "intro": "Selasa, 13 April 2027, hari pertama สงกรานต์. Keluarga Nok baru pulang dari wat; Budi datang ke rumah mereka di Nonthaburi membawa oleh-oleh. Perhatikan ekor pertanyaan: siapa yang sekadar memastikan, siapa yang bertanya netral, dan siapa yang heran.",
+   "lines": [
+    {
+     "speaker": "บูดี:",
+     "text": "[สวัสดี|Sà-wàt-dii][ปีใหม่|pii-mài][ไทย|thai][ครับ|khráp] [นี่|Nîi][ผ้า|phâa][บาติก|baa-tìk][จาก|jàak][อินโดนีเซีย|In-doo-nii-sia][ครับ|khráp] [ให้|Hâi][คุณแม่|khun-mâae][ครับ|khráp]",
+     "id": "Selamat tahun baru Thai. Ini kain batik dari Indonesia. Untuk Ibu.",
+     "literal": "halo — tahun-baru — Thai — (sopan). ini — kain — batik — dari — Indonesia — (sopan). beri — ibu — (sopan)."
+    },
+    {
+     "speaker": "แม่ของนก:",
+     "text": "[โอ้โห|Ôo-hǒo] [สวย|sǔai][จัง|jang][ค่ะ|khâ] [ทำ|Tham][ด้วย|dûai][มือ|muue][ใช่ไหม|châi-mǎi][คะ|khá]",
+     "id": "Wah, cantik sekali. Ini buatan tangan, kan?",
+     "literal": "wah — cantik — sekali — (sopan). buat — dengan — tangan — benar-kah — (sopan)?"
+    },
+    {
+     "speaker": "บูดี:",
+     "text": "[ใช่|Châi][ครับ|khráp] [ใช้|Chái][เทียน|thian][วาด|wâat][ลาย|laai][ทีละ|thii-lá][เส้น|sên][ครับ|khráp]",
+     "id": "Betul. Motifnya digambar dengan lilin, garis demi garis.",
+     "literal": "benar — (sopan). pakai — lilin — gambar — motif — satu-per-satu — garis — (sopan)."
+    },
+    {
+     "speaker": "แพร:",
+     "text": "[พี่|Phîi][บูดี|Buu-dii][รู้|rúu][วิธี|wí-thii][รดน้ำ|rót-náam][ดำหัว|dam-hǔa][หรือเปล่า|rǔue-plào][คะ|khá]",
+     "id": "Phi Budi tahu caranya rot nam dam hua atau tidak?",
+     "literal": "kakak — Budi — tahu — cara — siram-air — basuh-kepala — atau-tidak — (sopan)?"
+    },
+    {
+     "speaker": "บูดี:",
+     "text": "[ไม่|Mâi][ค่อย|khâwy][รู้|rúu][ครับ|khráp] [ต้อง|Tâwng][รด|rót][ที่|thîi][หัว|hǔa][ใช่เปล่า|châi-plào][ครับ|khráp]",
+     "id": "Kurang tahu. Disiramkan di kepala, kan?",
+     "literal": "tidak — begitu — tahu — (sopan). harus — siram — di — kepala — benar-tidak — (sopan)?"
+    },
+    {
+     "speaker": "แพร:",
+     "text": "[ไม่ใช่|Mâi-châi][ค่ะ|khâ] [รด|Rót][ที่|thîi][มือ|muue][ท่าน|thâan][ค่ะ|khâ] [ห้าม|Hâam][รด|rót][หัว|hǔa][ผู้ใหญ่|phûu-yài][นะ|ná][คะ|khá]",
+     "id": "Bukan. Disiramkan di tangan beliau. Jangan menyiram kepala orang tua, lho.",
+     "literal": "bukan — (sopan). siram — di — tangan — beliau — (sopan). dilarang — siram — kepala — orang-tua — ya — (sopan)."
+    },
+    {
+     "speaker": "บูดี:",
+     "text": "[อ้าว|Âao] [ชื่อ|chûue][ว่า|wâa][ดำหัว|dam-hǔa][ไม่ใช่เหรอ|mâi-châi-rǒoe][ครับ|khráp]",
+     "id": "Lho, namanya kan \"basuh kepala\"?",
+     "literal": "lho — nama — bahwa — basuh-kepala — bukankah — (sopan)?"
+    },
+    {
+     "speaker": "พ่อของนก:",
+     "text": "[ใช่|Châi] [ชื่อ|Chûue][ว่า|wâa][อย่าง|yàang][นั้น|nán] [แต่|Tàae][เขา|khǎo][รด|rót][ที่|thîi][มือ|muue][กัน|kan][นะ|ná] [รด|Rót][เบาๆ|bao-bao][ก็|kâw][พอ|phaw]",
+     "id": "Betul, namanya begitu. Tapi orang menyiramnya di tangan. Pelan-pelan saja sudah cukup.",
+     "literal": "benar. nama — bahwa — seperti — itu. tetapi — mereka — siram — di — tangan — bersama — lho. siram — pelan-pelan — ya — cukup."
+    },
+    {
+     "speaker": "บูดี:",
+     "text": "[ผม|Phǒm][ขอ|khǎaw][รดน้ำ|rót-náam][ขอ|khǎaw][พร|phaawn][นะ|ná][ครับ|khráp]",
+     "id": "Saya mohon izin menyiram air dan meminta restu, ya.",
+     "literal": "saya — minta — siram-air — minta — berkat — ya — (sopan)."
+    },
+    {
+     "speaker": "พ่อของนก:",
+     "text": "[ขอ|Khǎaw][ให้|hâi][บูดี|Buu-dii][สุขภาพ|sùk-khà-phâap][แข็งแรง|khǎeng-raaeng] [การงาน|kaan-ngaan][ก้าวหน้า|kâao-nâa][นะ|ná]",
+     "id": "Semoga Budi sehat selalu, dan pekerjaannya maju.",
+     "literal": "mohon — agar — Budi — kesehatan — kuat. pekerjaan — maju — ya."
+    },
+    {
+     "speaker": "บูดี:",
+     "text": "[ขอบคุณ|Khàwp-khun][ครับ|khráp] [แล้ว|Láaeo][พี่|phîi][เอก|Èek][ไม่|mâi][อยู่|yùu][เหรอ|rǒoe][ครับ|khráp]",
+     "id": "Terima kasih. Lho, Phi Ek tidak di rumah?",
+     "literal": "terima-kasih — (sopan). lalu — kakak — Ek — tidak — ada — ya — (sopan)?"
+    },
+    {
+     "speaker": "นก:",
+     "text": "[พี่|Phîi][เอก|Èek][เข้า|khâo][เวร|ween][ค่ะ|khâ] [ช่วง|Chûang][สงกรานต์|sǒng-kraan][ตำรวจ|tam-rùat][จราจร|jà-raa-jawn][ไม่ได้|mâi-dâai][หยุด|yùt][เลย|loei][ค่ะ|khâ]",
+     "id": "Phi Ek sedang giliran jaga. Selama Songkran, polisi lalu lintas sama sekali tidak libur.",
+     "literal": "kakak — Ek — masuk — giliran — (sopan). masa — Songkran — polisi — lalu-lintas — tidak — libur — sama-sekali — (sopan)."
+    }
+   ],
+   "notes": [
+    "**ใช่ไหม châi-mǎi = \"…, kan?\" — memastikan dugaan yang hampir pasti.** Khun Mae sudah melihat batiknya buatan tangan; ia hanya meminta Budi mengiyakan. Jawabannya *ใช่ครับ/ค่ะ* atau *ไม่ใช่ครับ/ค่ะ*. *ใช่เปล่า châi-plào* artinya sama, tetapi lebih santai — pas di mulut Budi yang sedang menebak.",
+    "**หรือเปล่า rǔue-plào = \"atau tidak?\" — pertanyaan netral.** Phraae benar-benar tidak tahu apakah Budi tahu caranya. Bandingkan: *รู้ไหม* (tahu tidak?) sedikit lebih langsung, *รู้หรือเปล่า* terasa lebih terbuka. Keduanya sopan.",
+    "**ไม่ใช่เหรอ mâi-châi-rǒoe = \"bukankah …?\" — heran karena kenyataan tak sesuai dugaan.** Budi yakin *ดำหัว* berarti membasuh kepala. ⚠️ Menjawabnya sama dengan bahasa Indonesia: *ใช่* berarti \"iya, memang begitu\" — Khun Pho mengiyakan namanya, lalu meluruskan praktiknya.",
+    "**ท่าน thâan = \"beliau\".** Kata ganti hormat untuk orang tua, guru, atasan, atau biksu. Phraae memakai *ท่าน* untuk orang tuanya sendiri karena sedang menjelaskan tata cara menghormati mereka.",
+    "**ขอให้… khǎaw hâi = \"semoga …\".** Restu orang tua hampir selalu dimulai begitu: *ขอให้สุขภาพแข็งแรง* (semoga sehat), *ขอให้การงานก้าวหน้า* (semoga pekerjaan maju), *ขอให้มีความสุข* (semoga bahagia). Yang lebih muda cukup menerimanya dengan *ขอบคุณครับ/ค่ะ* dan *ไหว้*."
+   ],
+   "grammars": [
+    {
+     "title": "Enam ekor pertanyaan: dari memastikan sampai heran",
+     "table": {
+      "head": [
+       "Ekor",
+       "Baca",
+       "Pembicara…",
+       "Contoh"
+      ],
+      "rows": [
+       [
+        "ใช่ไหม",
+        "*châi-mǎi*",
+        "hampir yakin, minta diiyakan",
+        "ทำด้วยมือใช่ไหมคะ"
+       ],
+       [
+        "ใช่เปล่า",
+        "*châi-plào*",
+        "sama, lebih santai",
+        "รดที่หัวใช่เปล่าครับ"
+       ],
+       [
+        "หรือเปล่า",
+        "*rǔue-plào*",
+        "benar-benar tak tahu (netral)",
+        "รู้วิธีหรือเปล่าคะ"
+       ],
+       [
+        "ไม่ใช่เหรอ",
+        "*mâi-châi-rǒoe*",
+        "tadinya yakin, kini ragu",
+        "ชื่อว่าดำหัวไม่ใช่เหรอ"
+       ],
+       [
+        "เหรอ",
+        "*rǒoe*",
+        "baru tahu, sedikit heran",
+        "พี่เอกไม่อยู่เหรอครับ"
+       ],
+       [
+        "จริงเหรอ",
+        "*jing rǒoe*",
+        "sangat heran, \"masa sih?\"",
+        "จริงเหรอครับ"
+       ]
+      ]
+     },
+     "after": [
+      "**หรอ *rǒoe*** yang sering kamu lihat di pesan singkat hanyalah ejaan santai dari *เหรอ*, dibaca sama. Di tulisan resmi dan di modul ini dipakai *เหรอ*.",
+      "Ekor pertanyaan tetap diikuti *ครับ* atau *คะ*: *ใช่ไหมคะ*, *ไม่ใช่เหรอครับ*. Perempuan memakai *คะ* bernada tinggi karena ini pertanyaan."
+     ]
+    }
+   ]
+  },
+  {
+   "title": "บทสนทนาที่สอง — Perang air di Silom",
+   "intro": "Rabu, 14 April. Nok, Phraae, dan Budi turun di stasiun BTS Sala Daeng dengan pistol air dan kantong plastik tahan air untuk ponsel. Jalan Silom sudah penuh orang basah kuyup. Perhatikan dua ekor kalimat yang saling menjawab: *เหรอ* (heran) dan *นะ* (menegaskan).",
+   "lines": [
+    {
+     "speaker": "แพร:",
+     "text": "[พี่|Phîi][ใส่|sài][โทรศัพท์|thoo-rá-sàp][ใน|nai][ซอง|sawng][กันน้ำ|kan-náam][หรือยัง|rǔue-yang][คะ|khá]",
+     "id": "Phi sudah masukkan ponsel ke kantong tahan air belum?",
+     "literal": "kakak — masukkan — telepon — di-dalam — kantong — tahan-air — atau-belum — (sopan)?"
+    },
+    {
+     "speaker": "บูดี:",
+     "text": "[ใส่|Sài][แล้ว|láaeo][ครับ|khráp] [เอ๊ะ|É] [คน|khon][เยอะ|yóe][ขนาด|khà-nàat][นี้|níi][เลย|loei][เหรอ|rǒoe][ครับ|khráp]",
+     "id": "Sudah. Eh, orangnya sebanyak ini?",
+     "literal": "masukkan — sudah — (sopan). eh — orang — banyak — ukuran — ini — betul — ya — (sopan)?"
+    },
+    {
+     "speaker": "นก:",
+     "text": "[เยอะ|Yóe][ค่ะ|khâ] [สีลม|Sǐi-lom][คน|khon][เยอะ|yóe][ที่สุด|thîi-sùt][นะ|ná][คะ|khá] [ระวัง|Rá-wang][กระเป๋า|krà-pǎo][ด้วย|dûai][นะ|ná][คะ|khá]",
+     "id": "Banyak. Silom memang paling ramai, lho. Hati-hati tasnya, ya.",
+     "literal": "banyak — (sopan). Silom — orang — banyak — paling — lho — (sopan). hati-hati — tas — juga — ya — (sopan)."
+    },
+    {
+     "speaker": "หนุ่ม:",
+     "text": "[สวัสดี|Sà-wàt-dii][ปีใหม่|pii-mài][ครับ|khráp] [ขอ|Khǎaw][ประ|prà][แป้ง|pâaeng][หน่อย|nàwy][นะ|ná][ครับ|khráp]",
+     "id": "Selamat tahun baru. Boleh saya olesi bedak, ya?",
+     "literal": "halo — tahun-baru — (sopan). minta — oles — bedak — sedikit — ya — (sopan)."
+    },
+    {
+     "speaker": "บูดี:",
+     "text": "[ได้|Dâai][ครับ|khráp] [โอ๊ย|Óoi] [เย็น|yen][จัง|jang] [น้ำ|Náam][นี่|nîi][ใส่|sài][น้ำแข็ง|náam-khǎeng][เหรอ|rǒoe][ครับ|khráp]",
+     "id": "Boleh. Aduh, dingin sekali. Airnya pakai es, ya?",
+     "literal": "boleh — (sopan). aduh — dingin — sekali. air — ini — masukkan — es — ya — (sopan)?"
+    },
+    {
+     "speaker": "แพร:",
+     "text": "[ใช่|Châi][ค่ะ|khâ] [เดือน|Duuean][เมษา|mee-sǎa][ร้อน|ráwn][ที่สุด|thîi-sùt][นะ|ná][คะ|khá] [น้ำ|Náam][เย็น|yen][ถึง|thǔeng][จะ|jà][สนุก|sà-nùk][ค่ะ|khâ]",
+     "id": "Iya. April itu bulan paling panas, lho. Justru air dingin yang seru.",
+     "literal": "benar — (sopan). bulan — April — panas — paling — lho — (sopan). air — dingin — baru — akan — seru — (sopan)."
+    },
+    {
+     "speaker": "บูดี:",
+     "text": "[จริง|Jing][ด้วย|dûai][ครับ|khráp] [ที่|Thîi][อินโดนีเซีย|in-doo-nii-sia][ไม่มี|mâi-mii][เทศกาล|thêet-sà-kaan][แบบ|bàaep][นี้|níi][นะ|ná][ครับ|khráp]",
+     "id": "Benar juga. Di Indonesia tidak ada festival seperti ini, lho.",
+     "literal": "benar — juga — (sopan). di — Indonesia — tidak-ada — festival — macam — ini — lho — (sopan)."
+    },
+    {
+     "speaker": "นก:",
+     "text": "[เหรอ|Rǒoe][คะ|khá] [แล้ว|Láaeo][เทศกาล|thêet-sà-kaan][ใหญ่|yài][ของ|khǎawng][พี่|phîi][คือ|khuue][อะไร|à-rai][คะ|khá]",
+     "id": "Oh ya? Lalu festival besar di tempat Phi apa?",
+     "literal": "ya-kah — (sopan)? lalu — festival — besar — milik — kakak — adalah — apa — (sopan)?"
+    },
+    {
+     "speaker": "บูดี:",
+     "text": "[วัน|Wan][อีด|ìit][หลัง|lǎng][รอมฎอน|rawm-má-dawn][เรา|rao][ไป|pai][ขอขมา|khǎaw-khà-maa][ผู้ใหญ่|phûu-yài][ครับ|khráp] [คล้ายๆ|Khláai-khláai][รดน้ำ|rót-náam][ดำหัว|dam-hǔa][นะ|ná][ครับ|khráp]",
+     "id": "Hari Idulfitri sesudah Ramadan, kami minta maaf kepada orang tua. Mirip rot nam dam hua, lho.",
+     "literal": "hari — Id — sesudah — Ramadan — kami — pergi — minta-maaf — orang-tua — (sopan). mirip-mirip — siram-air — basuh-kepala — lho — (sopan)."
+    },
+    {
+     "speaker": "แพร:",
+     "text": "[จริง|Jing][เหรอ|rǒoe][คะ|khá] [เหมือน|Mǔuean][กัน|kan][เลย|loei] [งั้น|Ngán][ปี|pii][นี้|níi][พี่|phîi][ได้|dâai][ทั้ง|tháng][สอง|sǎawng][แบบ|bàaep][เลย|loei][นะ|ná][คะ|khá]",
+     "id": "Masa? Sama banget. Berarti tahun ini Phi dapat dua-duanya, ya.",
+     "literal": "sungguh — ya — (sopan)? sama — bersama — betul. kalau-begitu — tahun — ini — kakak — dapat — keduanya — dua — macam — betul — ya — (sopan)."
+    }
+   ],
+   "notes": [
+    "**เหรอ rǒoe di ujung pernyataan = \"… ya?\" dengan rasa heran.** *คนเยอะขนาดนี้เลยเหรอครับ* — Budi tidak bertanya berapa jumlahnya; ia terkejut. Diucapkan sendirian, *เหรอคะ* berarti \"oh ya?\": Nok menanggapi kabar yang baru ia dengar, lalu bertanya lebih jauh.",
+    "**นะ di ujung pernyataan = \"lho, memang\" — menegaskan hal yang pembicara tahu.** *สีลมคนเยอะที่สุดนะคะ* (Silom memang paling ramai, lho), *เดือนเมษาร้อนที่สุดนะคะ*. Pendengar diajak menerima fakta itu. Jadi *เหรอ* menerima kabar dengan heran, *นะ* memberikan kabar dengan yakin.",
+    "**ขนาดนี้ khà-nàat níi = \"sebesar/sebanyak ini\".** *คนเยอะขนาดนี้* (orang sebanyak ini), *ร้อนขนาดนี้* (sepanas ini). Pasangannya *ขนาดนั้น* (sebanyak itu). *เลย* sesudahnya menambah rasa kaget.",
+    "**ขอประแป้งหน่อยนะครับ** — orang tak dikenal meminta izin mengoleskan *ดินสอพอง*, pasta kapur putih, ke pipimu. Menjawab *ได้ครับ/ค่ะ* sambil tersenyum adalah bagian dari perayaan. Tolak dengan sopan kalau kamu tidak mau; jangan biarkan pasta itu mengenai mata.",
+    "**ขอขมา khǎaw-khà-maa = \"memohon maaf\" (hormat) — kata yang sama yang dipakai orang Thai saat รดน้ำดำหัว.** Budi menemukan kesamaan dengan sungkeman Lebaran: yang muda memohon maaf kepada yang tua, lalu menerima restu."
+   ],
+   "grammars": [
+    {
+     "title": "เหรอ (menerima dengan heran) dan นะ (memberi dengan yakin)",
+     "table": {
+      "head": [
+       "Situasi",
+       "Kalimat",
+       "Baca",
+       "Rasa"
+      ],
+      "rows": [
+       [
+        "kamu baru tahu",
+        "ร้อนขนาดนี้เลยเหรอ",
+        "*ráwn khà-nàat níi loei rǒoe*",
+        "sepanas ini, ya?"
+       ],
+       [
+        "kamu memberi tahu",
+        "เดือนเมษาร้อนที่สุดนะ",
+        "*duuean mee-sǎa ráwn thîi-sùt ná*",
+        "April paling panas, lho"
+       ],
+       [
+        "menanggapi kabar",
+        "เหรอคะ / เหรอครับ",
+        "*rǒoe khá / rǒoe khráp*",
+        "oh ya?"
+       ],
+       [
+        "sangat heran",
+        "จริงเหรอ",
+        "*jing rǒoe*",
+        "masa sih?"
+       ],
+       [
+        "membenarkan",
+        "จริงด้วย",
+        "*jing dûai*",
+        "benar juga"
+       ],
+       [
+        "mengingatkan",
+        "ระวังด้วยนะ",
+        "*rá-wang dûai ná*",
+        "hati-hati, ya"
+       ]
+      ]
+     },
+     "after": [
+      "⚠️ **เหรอ yang berulang-ulang terdengar tak percaya.** Menanggapi setiap kalimat dengan *เหรอ* membuat lawan bicara merasa diragukan. Selingi dengan *อ๋อ* (oh, begitu), *จริงด้วย* (benar juga), atau *ดีจัง* (asyik)."
+     ]
+    }
+   ]
+  }
+ ],
+ "sections": [
+  {
+   "title": "สงกรานต์: tahun baru Thai",
+   "blocks": [
+    {
+     "type": "tabel",
+     "head": [
+      "Tanggal",
+      "Nama",
+      "Baca",
+      "Juga dikenal sebagai"
+     ],
+     "rows": [
+      [
+       "13 April",
+       "วันมหาสงกรานต์",
+       "*wan má-hǎa-sǒng-kraan*",
+       "Hari Lansia Nasional (*วันผู้สูงอายุ*)"
+      ],
+      [
+       "14 April",
+       "วันเนา",
+       "*wan nao*",
+       "Hari Keluarga (*วันครอบครัว*)"
+      ],
+      [
+       "15 April",
+       "วันเถลิงศก",
+       "*wan thà-lǒeng-sòk*",
+       "hari pertama tahun baru"
+      ]
+     ]
+    },
+    {
+     "type": "p",
+     "text": "*สงกรานต์* berasal dari kata Sanskerta *saṅkrānti*, \"perpindahan\" — matahari berpindah ke rasi Aries. Dulu inilah tahun baru resmi Siam; kini ia tiga hari libur nasional, dan banyak orang Bangkok pulang kampung. Pagi hari keluarga pergi ke wat untuk *ทำบุญ* dan *สรงน้ำพระ* (menyiram arca Buddha dengan air wangi). Lalu yang muda melakukan *รดน้ำดำหัว*: menuangkan air wangi (*น้ำอบ*) ke telapak tangan orang tua dan kakek-nenek, memohon maaf, dan menerima restu. Perang air di jalan adalah wajah yang paling terkenal, tetapi intinya tetap air sebagai penyejuk dan penyuci."
+    },
+    {
+     "type": "p",
+     "text": "Pada Desember 2023, UNESCO mencatat Songkran di Thailand sebagai Warisan Budaya Takbenda. Tempat perang air yang paling ramai di Bangkok: Jalan Silom (BTS Sala Daeng, MRT Silom) dan Khao San."
+    },
+    {
+     "type": "kotak",
+     "title": "Etiket perang air",
+     "items": [
+      "**Jangan menyiram biksu, orang tua, bayi, dan pengendara motor.** Air di wajah pengendara motor bisa menyebabkan kecelakaan.",
+      "**Yang memegang pasta ดินสอพอง meminta izin dulu**: *ขอประแป้งหน่อยนะครับ/คะ*. Kamu boleh menolak sambil tersenyum: *ไม่เป็นไรครับ/ค่ะ ขอบคุณ*.",
+      "**Berpakaian sopan meski basah.** Kemeja bunga-bunga (*เสื้อลายดอก*) adalah seragam tak resmi Songkran; hindari pakaian yang menerawang saat basah.",
+      "**Masukkan ponsel dan dompet ke kantong tahan air (*ซองกันน้ำ*)**, yang dijual di setiap sudut jalan menjelang Songkran."
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Tujuh hari berbahaya",
+   "blocks": [
+    {
+     "type": "p",
+     "text": "Setiap tahun, jutaan orang pulang kampung dan kembali lagi dalam beberapa hari, banyak di antaranya naik sepeda motor. Pemerintah menyebut masa itu **เจ็ดวันอันตราย *jèt wan an-tà-raai*** (tujuh hari berbahaya) — biasanya sekitar 11–17 April — dan mengumumkan jumlah kecelakaan setiap hari. Polisi membuka pos pemeriksaan (*ด่านตรวจ*) di jalan-jalan besar. Karena itu Phi Ek, polisi lalu lintas, justru paling sibuk ketika orang lain berlibur."
+    },
+    {
+     "type": "tabel",
+     "head": [
+      "Thai",
+      "Baca",
+      "Indonesia"
+     ],
+     "rows": [
+      [
+       "อุบัติเหตุ",
+       "*ù-bàt-tì-hèet*",
+       "kecelakaan"
+      ],
+      [
+       "เมาแล้วขับ",
+       "*mao láaeo khàp*",
+       "mabuk lalu menyetir"
+      ],
+      [
+       "หมวกกันน็อก",
+       "*mùak-kan-náwk*",
+       "helm"
+      ],
+      [
+       "ถนนลื่น",
+       "*thà-nǒn lûuen*",
+       "jalan licin"
+      ],
+      [
+       "ด่านตรวจ",
+       "*dàan trùat*",
+       "pos pemeriksaan"
+      ],
+      [
+       "กลับต่างจังหวัด",
+       "*klàp tàang-jang-wàt*",
+       "pulang ke daerah (mudik)"
+      ],
+      [
+       "ขับรถปลอดภัย",
+       "*khàp rót plàwt-phai*",
+       "menyetir dengan aman"
+      ]
+     ]
+    },
+    {
+     "type": "p",
+     "text": "Bagi orang Indonesia, gambarannya akrab: mudik Lebaran dengan jalan padat, kantuk di belakang kemudi, dan posko di mana-mana. Ucapan yang paling pas untuk teman yang pulang kampung: *เดินทางปลอดภัยนะครับ/คะ* — selamat jalan, hati-hati di jalan."
+    }
+   ]
+  },
+  {
+   "title": "Ulangan berjenjang — unit 15",
+   "blocks": [
+    {
+     "type": "p",
+     "text": "Tutup kolom Thai, baca terjemahan Indonesianya, lalu susun kembali kalimatnya dari ingatan."
+    },
+    {
+     "type": "tabel",
+     "head": [
+      "Bahasa Indonesia",
+      "ภาษาไทย",
+      "Baca"
+     ],
+     "rows": [
+      [
+       "Semua teknisi harus punya helm, tapi sebagian sudah punya.",
+       "ช่างทุกคนต้องมีหมวกนิรภัย แต่บางคนมีแล้วครับ",
+       "*Châang thúk khon tâwng mii mùak ní-rá-phai Tàae baang khon mii láaeo khráp*"
+      ],
+      [
+       "Tiga buah. Lalu sarung tangan, masing-masing dua pasang.",
+       "สามใบครับ แล้วก็ถุงมือคนละสองคู่ครับ",
+       "*Sǎam bai khráp Láaeo kâw thǔng-muue khon-lá sǎawng khûu khráp*"
+      ],
+      [
+       "Setiap hari hanya tiga orang yang boleh naik ke atap.",
+       "แต่ละวันขึ้นหลังคาได้แค่สามคนครับ",
+       "*Tàae-lá wan khûen lǎng-khaa dâai khâae sǎam khon khráp*"
+      ],
+      [
+       "Pedasnya sedikit saja ya, Pa.",
+       "เผ็ดน้อยๆนะครับป้า",
+       "*Phèt náwy-náwy ná khráp pâa*"
+      ],
+      [
+       "Saya menurunkan berat pelan-pelan. Dua kilo sebulan.",
+       "ผมค่อยๆลดน้ำหนักครับ เดือนละสองกิโล",
+       "*Phǒm khâwy-khâwy lót nám-nàk khráp Duuean lá sǎawng kì-loo*"
+      ]
+     ]
+    }
+   ]
+  }
+ ],
+ "vocab": [
+  {
+   "th": "สงกรานต์",
+   "baca": "sǒng-kraan",
+   "id": "Songkran, tahun baru Thai"
+  },
+  {
+   "th": "รดน้ำดำหัว",
+   "baca": "rót-náam dam-hǔa",
+   "id": "menyiram tangan orang tua dan meminta restu"
+  },
+  {
+   "th": "รด",
+   "baca": "rót",
+   "id": "menyiram, menuangkan (*รดที่มือ*)"
+  },
+  {
+   "th": "ขอพร",
+   "baca": "khǎaw phaawn",
+   "id": "meminta restu"
+  },
+  {
+   "th": "ขอขมา",
+   "baca": "khǎaw-khà-maa",
+   "id": "memohon maaf (hormat)"
+  },
+  {
+   "th": "ขอให้",
+   "baca": "khǎaw hâi",
+   "id": "semoga (*ขอให้สุขภาพแข็งแรง*)"
+  },
+  {
+   "th": "แข็งแรง",
+   "baca": "khǎeng-raaeng",
+   "id": "kuat, sehat"
+  },
+  {
+   "th": "ก้าวหน้า",
+   "baca": "kâao-nâa",
+   "id": "maju, berkembang"
+  },
+  {
+   "th": "ท่าน",
+   "baca": "thâan",
+   "id": "beliau (hormat)"
+  },
+  {
+   "th": "ผู้ใหญ่",
+   "baca": "phûu-yài",
+   "id": "orang yang lebih tua, orang dewasa"
+  },
+  {
+   "th": "ใช่ไหม",
+   "baca": "châi-mǎi",
+   "id": "…, kan? (memastikan)"
+  },
+  {
+   "th": "ใช่เปล่า",
+   "baca": "châi-plào",
+   "id": "…, kan? (santai)"
+  },
+  {
+   "th": "ไม่ใช่เหรอ",
+   "baca": "mâi-châi-rǒoe",
+   "id": "bukankah …?"
+  },
+  {
+   "th": "จริงเหรอ",
+   "baca": "jing rǒoe",
+   "id": "masa sih? sungguh?"
+  },
+  {
+   "th": "จริงด้วย",
+   "baca": "jing dûai",
+   "id": "benar juga"
+  },
+  {
+   "th": "ผ้า",
+   "baca": "phâa",
+   "id": "kain (kb. *ผืน*)"
+  },
+  {
+   "th": "เทียน",
+   "baca": "thian",
+   "id": "lilin (kb. *เล่ม*)"
+  },
+  {
+   "th": "เข้าเวร",
+   "baca": "khâo ween",
+   "id": "masuk giliran jaga"
+  },
+  {
+   "th": "ตำรวจจราจร",
+   "baca": "tam-rùat jà-raa-jawn",
+   "id": "polisi lalu lintas"
+  },
+  {
+   "th": "ซองกันน้ำ",
+   "baca": "sawng kan-náam",
+   "id": "kantong tahan air (kb. *ซอง*)"
+  },
+  {
+   "th": "ประแป้ง",
+   "baca": "prà pâaeng",
+   "id": "mengoleskan bedak/pasta kapur"
+  },
+  {
+   "th": "ดินสอพอง",
+   "baca": "din-sǎw-phawng",
+   "id": "pasta kapur putih Songkran"
+  },
+  {
+   "th": "น้ำแข็ง",
+   "baca": "náam-khǎeng",
+   "id": "es"
+  },
+  {
+   "th": "ขนาดนี้",
+   "baca": "khà-nàat níi",
+   "id": "sebesar/sebanyak ini"
+  },
+  {
+   "th": "เทศกาล",
+   "baca": "thêet-sà-kaan",
+   "id": "festival, perayaan"
+  },
+  {
+   "th": "เปียก",
+   "baca": "pìak",
+   "id": "basah"
+  }
+ ],
+ "exercises": [
+  {
+   "prompt": "Terjemahkan ke bahasa Thai. Bayangkan kamu perempuan.",
+   "items": [
+    "Ini buatan tangan, kan?",
+    "Kamu tahu caranya atau tidak?",
+    "Bukankah namanya Songkran?",
+    "Orangnya sebanyak ini, ya?",
+    "Silom memang paling ramai, lho.",
+    "Masa? Sama banget."
+   ]
+  },
+  {
+   "prompt": "Isi dengan ใช่ไหม, หรือเปล่า, ไม่ใช่เหรอ, เหรอ, atau นะ.",
+   "items": [
+    "คุณเป็นคนอินโดนีเซีย____คะ (…, kan? kamu hampir yakin)",
+    "พรุ่งนี้ว่าง____ครับ (luang atau tidak? kamu tak tahu)",
+    "วันนี้วันหยุด____คะ ทำไมพี่ไปทำงาน (bukankah hari ini libur?)",
+    "ร้อนขนาดนี้เลย____ครับ (sepanas ini, ya? heran)",
+    "เดือนเมษาร้อนที่สุด____คะ (April paling panas, lho)",
+    "พี่เอกเป็นตำรวจ____คะ (…, kan?)",
+    "____คะ ไม่รู้มาก่อนเลยค่ะ (oh ya? tidak tahu sebelumnya)"
+   ]
+  },
+  {
+   "prompt": "Ubah sesuai petunjuk.",
+   "items": [
+    "เขาไม่อยู่ (jadikan pertanyaan heran dengan เหรอ, laki-laki)",
+    "ทำด้วยมือ (minta diiyakan dengan ใช่ไหม, perempuan)",
+    "ชื่อว่าดำหัว (kamu tadinya yakin, kini ragu; laki-laki)",
+    "คนเยอะ (tegaskan dengan นะ, perempuan)",
+    "Jawab setuju: ชื่อว่าสงกรานต์ไม่ใช่เหรอคะ (laki-laki)",
+    "Tanggapi kabar mengejutkan dengan \"masa sih?\" (perempuan)"
+   ]
+  },
+  {
+   "prompt": "Susun jadi kalimat yang benar.",
+   "items": [
+    "คะ / ใช่ไหม / ด้วยมือ / ทำ",
+    "ครับ / ใช่เปล่า / ที่หัว / รด / ต้อง",
+    "ครับ / ไม่ใช่เหรอ / ดำหัว / ชื่อว่า",
+    "ครับ / เหรอ / ขนาดนี้ / เยอะ / คน / เลย",
+    "คะ / นะ / ที่สุด / เยอะ / คน / สีลม"
+   ]
+  }
+ ],
+ "answers": [
+  "ทำด้วยมือใช่ไหมคะ — รู้วิธีหรือเปล่าคะ — ชื่อว่าสงกรานต์ไม่ใช่เหรอคะ — คนเยอะขนาดนี้เลยเหรอคะ — สีลมคนเยอะที่สุดนะคะ — จริงเหรอคะ เหมือนกันเลยค่ะ",
+  "ใช่ไหม — หรือเปล่า — ไม่ใช่เหรอ — เหรอ — นะ — ใช่ไหม — เหรอ",
+  "เขาไม่อยู่เหรอครับ — ทำด้วยมือใช่ไหมคะ — ชื่อว่าดำหัวไม่ใช่เหรอครับ — คนเยอะนะคะ — ใช่ครับ ชื่อว่าสงกรานต์ครับ — จริงเหรอคะ",
+  "ทำด้วยมือใช่ไหมคะ — ต้องรดที่หัวใช่เปล่าครับ — ชื่อว่าดำหัวไม่ใช่เหรอครับ — คนเยอะขนาดนี้เลยเหรอครับ — สีลมคนเยอะที่สุดนะคะ"
+ ],
+ "wave": "Ulangi unit 15: tutup bahasa Thainya, lalu bagikan tugas tim dengan *ทุกคน, แต่ละคน, คนละ…* — dan pastikan setiap orang paham bagiannya dengan *ใช่ไหม*."
+}
