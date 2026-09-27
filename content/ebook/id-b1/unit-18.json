@@ -1,0 +1,702 @@
+{
+  "title": "When things go wrong",
+  "title_target": "Saya mau melaporkan kehilangan",
+  "goal": "Cope in Indonesian when something goes wrong: report a theft to the police, get the *surat keterangan kehilangan*, talk to a doctor in A&E, deal with insurance, and complain in writing without losing your manners.",
+  "bekal": [
+    "make a police report: *Saya mau melaporkan kehilangan dompet*",
+    "describe an injury and understand the doctor: *terpeleset, bengkak, rawat jalan*",
+    "ask for the documents an insurance claim needs: *surat keterangan medis, kuitansi asli*"
+  ],
+  "dialogs": [
+    {
+      "title": "Dialogue — Di kantor polisi",
+      "intro": "A Tuesday in September, in Magelang. Sarah went to Pasar Rejowinangun to buy salak for the homestay, and came back without her wallet. Now she is at the service desk (SPKT) of the town's police station.",
+      "lines": [
+        {
+          "speaker": "Petugas:",
+          "text": "Selamat siang, Mbak. Ada yang bisa kami bantu?",
+          "id": "Good afternoon. How can we help you?",
+          "literal": "good afternoon, Miss. exist which can we help?"
+        },
+        {
+          "speaker": "Sarah:",
+          "text": "Selamat siang, Pak. Saya mau melaporkan kehilangan dompet.",
+          "id": "Good afternoon. I'd like to report a lost wallet.",
+          "literal": "good afternoon, Sir. I want report loss wallet."
+        },
+        {
+          "speaker": "Petugas:",
+          "text": "Baik. Boleh saya lihat identitas Mbak? Paspor atau KITAS.",
+          "id": "Right. May I see some identification? Passport or KITAS.",
+          "literal": "good. may I see identity Miss? passport or KITAS."
+        },
+        {
+          "speaker": "Sarah:",
+          "text": "Justru KITAS saya ada di dompet itu, Pak. Ini fotokopi paspor saya.",
+          "id": "That's just it, my KITAS was in that wallet. Here's a photocopy of my passport.",
+          "literal": "precisely KITAS my exist in wallet that, Sir. this photocopy passport my."
+        },
+        {
+          "speaker": "Petugas:",
+          "text": "Tidak apa-apa. Kejadiannya kapan dan di mana?",
+          "id": "That's fine. When and where did it happen?",
+          "literal": "not what-what. incident-the when and where?"
+        },
+        {
+          "speaker": "Sarah:",
+          "text": "Tadi pagi sekitar jam sepuluh, di Pasar Rejowinangun. Sepertinya saya kecopetan waktu antre beli salak.",
+          "id": "This morning at about ten, at Rejowinangun market. I think I was pickpocketed while queuing for salak.",
+          "literal": "earlier morning around hour ten, at Market Rejowinangun. seems I pickpocketed when queue buy salak."
+        },
+        {
+          "speaker": "Petugas:",
+          "text": "Mohon disebutkan apa saja isi dompetnya.",
+          "id": "Please list everything that was in the wallet.",
+          "literal": "request is-mentioned what just contents wallet-the."
+        },
+        {
+          "speaker": "Sarah:",
+          "text": "KITAS, dua kartu ATM, SIM, dan uang tunai kira-kira delapan ratus ribu rupiah.",
+          "id": "My KITAS, two bank cards, my driving licence, and about eight hundred thousand rupiah in cash.",
+          "literal": "KITAS, two card ATM, SIM, and money cash roughly eight hundred thousand rupiah."
+        },
+        {
+          "speaker": "Petugas:",
+          "text": "Kartu ATM-nya sudah diblokir?",
+          "id": "Have the bank cards been blocked?",
+          "literal": "card ATM-the already is-blocked?"
+        },
+        {
+          "speaker": "Sarah:",
+          "text": "Sudah, Pak, lewat telepon ke bank. Apa ada kemungkinan dompetnya ditemukan?",
+          "id": "Yes, I rang the bank. Is there any chance the wallet will be found?",
+          "literal": "already, Sir, via telephone to bank. whether exist possibility wallet-the is-found?"
+        },
+        {
+          "speaker": "Petugas:",
+          "text": "Kemungkinan selalu ada. Tapi terus terang, uang tunainya biasanya tidak kembali.",
+          "id": "There's always a chance. But to be frank, the cash usually doesn't come back.",
+          "literal": "possibility always exist. but continue clear, money cash-the usually not return."
+        },
+        {
+          "speaker": "Sarah:",
+          "text": "Saya mengerti. Yang penting saya bisa mengurus KITAS baru di Imigrasi.",
+          "id": "I understand. The main thing is that I can apply for a new KITAS at Immigration.",
+          "literal": "I understand. which important I can arrange KITAS new at Immigration."
+        },
+        {
+          "speaker": "Petugas:",
+          "text": "Untuk itu Mbak perlu surat keterangan ini. Mohon dicek datanya, lalu tanda tangan di sini.",
+          "id": "For that you'll need this certificate. Please check the details, then sign here.",
+          "literal": "for that Miss need letter statement this. request is-checked data-its, then sign here."
+        },
+        {
+          "speaker": "Sarah:",
+          "text": "Sudah benar, Pak. Ada biayanya?",
+          "id": "That's all correct. Is there a fee?",
+          "literal": "already correct, Sir. exist cost-its?"
+        },
+        {
+          "speaker": "Petugas:",
+          "text": "Tidak ada, Mbak. Layanan ini gratis. Hati-hati di jalan.",
+          "id": "No. This service is free. Take care on the way home.",
+          "literal": "not exist, Miss. service this free. careful-careful on road."
+        }
+      ],
+      "notes": [
+        "**Ada yang bisa kami bantu?** The standard opening of any service desk, from banks to police stations: “is there something we can help with?”. Note *kami*, not *saya*: the officer speaks for the institution. The desk itself is the *SPKT* (*Sentra Pelayanan Kepolisian Terpadu*), the integrated service centre found in every police station.",
+        "**Melaporkan kehilangan.** *Kehilangan* is both the verb “to lose” (*Saya kehilangan dompet*) and the noun “loss”. The paper Sarah receives is officially the *Surat Keterangan Tanda Lapor Kehilangan* (SKTLK), but everyone calls it *surat kehilangan*. Banks, Immigration and phone shops all ask for it.",
+        "**Justru KITAS saya…** *Justru* here means “that's exactly the problem”: it turns the officer's request back on itself. Very natural, and more polite than *Tidak bisa, Pak*.",
+        "**Kecopetan** is the adversative *ke-…-an* from A2: something bad happened **to** you. *Copet* is a pickpocket, *dicopet* is to be pickpocketed. Its cousins: *kecurian* (robbed, burgled), *kemalingan* (burgled, from *maling*, thief), *kebobolan* (broken into).",
+        "**Mohon disebutkan, mohon dicek.** Officials make requests with *mohon* + a passive verb, exactly like the notices in A2 Unit 15. It is courteous and impersonal at once. You answer it simply, with no need to repeat the verb.",
+        "**Layanan ini gratis.** Making a police report costs nothing, and police stations display signs saying *Tidak dipungut biaya* (no fee is charged). *Hati-hati di jalan* (“careful on the road”) is the standard goodbye to someone who is leaving, from a friend or a police officer alike."
+      ],
+      "grammars": [
+        {
+          "title": "Lapor and hilang: two word families for the counter",
+          "body": [
+            "You will hear every member of these two families in any office where something is reported, from a police station to a hotel reception."
+          ],
+          "table": {
+            "head": [
+              "Word",
+              "English",
+              "Example"
+            ],
+            "rows": [
+              [
+                "*melapor*",
+                "to make a report, to report in",
+                "*Saya mau melapor ke polisi.*"
+              ],
+              [
+                "*melaporkan*",
+                "to report (something)",
+                "*melaporkan kehilangan dompet*"
+              ],
+              [
+                "*pelapor*",
+                "the person reporting",
+                "*nama dan alamat pelapor*"
+              ],
+              [
+                "*laporan*",
+                "a report",
+                "*laporan polisi, laporan bulanan*"
+              ],
+              [
+                "*hilang*",
+                "lost, missing, gone",
+                "*Dompet saya hilang.*"
+              ],
+              [
+                "*kehilangan*",
+                "to lose; a loss",
+                "*Saya kehilangan KITAS.*"
+              ],
+              [
+                "*menghilangkan*",
+                "to lose (someone's fault); to remove",
+                "*Siapa yang menghilangkan kunci?*"
+              ]
+            ]
+          },
+          "after": [
+            "*Kehilangan* just states the loss; *menghilangkan* blames somebody for it. *Maaf, saya menghilangkan buku Ibu* is an honest confession: “I've lost your book.” Ads use the second meaning too: *menghilangkan noda* (removes stains).",
+            "The *terlapor* is the person who has been reported, the accused. You will meet it in news stories rather than at the desk."
+          ]
+        },
+        {
+          "title": "Answering an official's questions",
+          "body": [
+            "Officials ask in a compact, slightly formal style. Recognise the question and answer with the information only; you do not need to match their register."
+          ],
+          "table": {
+            "head": [
+              "The official says",
+              "What they want",
+              "You answer"
+            ],
+            "rows": [
+              [
+                "*Atas nama siapa?*",
+                "your name (on a form, a booking)",
+                "*Atas nama Sarah, Pak.*"
+              ],
+              [
+                "*Kejadiannya kapan?*",
+                "date and time",
+                "*Tadi pagi, sekitar jam sepuluh.*"
+              ],
+              [
+                "*Kronologinya bagaimana?*",
+                "what happened, in order",
+                "*Awalnya saya… lalu… waktu itu…*"
+              ],
+              [
+                "*Ada saksi?*",
+                "a witness",
+                "*Tidak ada, Pak. Saya sendirian.*"
+              ],
+              [
+                "*Mohon disebutkan…*",
+                "a list or a detail",
+                "*KITAS, dua kartu ATM, SIM.*"
+              ],
+              [
+                "*Sudah sesuai?*",
+                "is the document correct?",
+                "*Sudah sesuai, Pak.*"
+              ],
+              [
+                "*Silakan tanda tangan di sini.*",
+                "your signature",
+                "*Baik.*"
+              ]
+            ]
+          },
+          "after": [
+            "*Kronologi* (chronology) is the word for “what happened, step by step”, and you will be asked for it after any accident, theft or dispute. Tell it with the sequencers from A2 Unit 20: *awalnya, lalu, setelah itu, akhirnya*."
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Second dialogue — Di IGD",
+      "intro": "Ten days later. A Dutch guest at one of the homestays, Mevrouw Anke, slipped in the bathroom and hit her head. Sarah has brought her to the A&E (IGD) of the district hospital in Muntilan and talks to the doctor on duty.",
+      "lines": [
+        {
+          "speaker": "Dokter:",
+          "text": "Mbak keluarga pasien?",
+          "id": "Are you a relative of the patient?",
+          "literal": "Miss family patient?"
+        },
+        {
+          "speaker": "Sarah:",
+          "text": "Bukan, Dok. Saya koordinator desa wisata. Beliau tamu homestay kami, tadi terpeleset di kamar mandi.",
+          "id": "No, doctor. I coordinate the tourist village. She's a guest at one of our homestays; she slipped in the bathroom.",
+          "literal": "not, Doc. I coordinator village tourism. she guest homestay our, earlier slipped in room bathe."
+        },
+        {
+          "speaker": "Dokter:",
+          "text": "Pergelangan kaki kanannya bengkak, tapi sepertinya tidak patah. Kita rontgen dulu supaya pasti.",
+          "id": "Her right ankle is swollen, but it doesn't look broken. We'll X-ray it first to be sure.",
+          "literal": "wrist foot right-her swollen, but seems not broken. we X-ray first so-that certain."
+        },
+        {
+          "speaker": "Sarah:",
+          "text": "Kira-kira berapa lama hasilnya, Dok? Beliau agak panik.",
+          "id": "About how long will the result take? She's a bit panicky.",
+          "literal": "roughly how long result-the, Doc? she rather panic."
+        },
+        {
+          "speaker": "Dokter:",
+          "text": "Sekitar satu jam. Tolong sampaikan bahwa luka di dahinya sudah dijahit dan tidak parah.",
+          "id": "About an hour. Please tell her that the cut on her forehead has been stitched and it isn't serious.",
+          "literal": "around one hour. please convey that wound on forehead-her already is-sewn and not severe."
+        },
+        {
+          "speaker": "Sarah:",
+          "text": "Baik. Beliau juga bertanya soal asuransi perjalanan. Dokumen apa saja yang diperlukan untuk klaim?",
+          "id": "All right. She's also asking about her travel insurance. What documents does she need for a claim?",
+          "literal": "good. she also ask matter insurance travel. document what just which is-needed for claim?"
+        },
+        {
+          "speaker": "Dokter:",
+          "text": "Biasanya surat keterangan medis, hasil rontgen, dan kuitansi asli. Semuanya bisa diminta di bagian administrasi.",
+          "id": "Usually a medical certificate, the X-ray results and the original receipts. You can get all of them from the admin office.",
+          "literal": "usually letter statement medical, result X-ray, and receipt original. all-of-it can is-requested at section administration."
+        },
+        {
+          "speaker": "Sarah:",
+          "text": "Apakah beliau harus dirawat inap?",
+          "id": "Will she have to be admitted?",
+          "literal": "whether she must is-cared-for stay?"
+        },
+        {
+          "speaker": "Dokter:",
+          "text": "Kalau tidak ada patah tulang, cukup rawat jalan. Kakinya dibebat, istirahat tiga hari, lalu kontrol lagi.",
+          "id": "If nothing's broken, outpatient care is enough. We'll bandage the foot; three days' rest, then come back for a check-up.",
+          "literal": "if not exist broken bone, enough care walk. foot-her is-bandaged, rest three day, then control again."
+        },
+        {
+          "speaker": "Sarah:",
+          "text": "Syukurlah. Nanti saya sampaikan juga ke Bu Ratna: lantai kamar mandinya perlu keset antiselip.",
+          "id": "Thank goodness. I'll tell Bu Ratna too: that bathroom floor needs a non-slip mat.",
+          "literal": "thanks-[lah]. later I convey also to Mrs Ratna: floor room bathe-the need mat anti-slip."
+        },
+        {
+          "speaker": "Dokter:",
+          "text": "Ide bagus. Banyak sekali pasien IGD kami yang jatuh di kamar mandi, lho.",
+          "id": "Good idea. An awful lot of our A&E patients have fallen in a bathroom, you know.",
+          "literal": "idea good. many very patient IGD our who fall in room bathe, [lho]."
+        }
+      ],
+      "notes": [
+        "**Mbak keluarga pasien?** Hospitals want to know who is responsible for a patient, and in Indonesia that is normally the family, who also stay, feed and look after them. A friend or colleague who brings someone in is called the *penanggung jawab* (the person responsible) for the paperwork.",
+        "**Dok** is the short address for a doctor, just as *Pak* and *Bu* are. In writing, a medical doctor is *dr.* in lower case (*dr. Fitri*); *Dr.* with a capital is a PhD, like Dr. Lestari. Indonesians find the difference obvious and foreigners never notice it.",
+        "**Terpeleset** is *ter-* of accident: to slip without meaning to. Its neighbours: *terjatuh* (to fall over), *tersandung* (to trip), *terkilir* (to sprain), *tergores* (to get scratched). Compare A2 Unit 11.",
+        "**Rontgen** (from the name of the German physicist) is the everyday word for an X-ray, and it becomes a verb with no prefix at all: *Kita rontgen dulu*, *sudah dirontgen*. Hospitals may also write *foto sinar-X*.",
+        "**Rawat inap, rawat jalan.** *Rawat* means to look after. *Rawat inap* (care with an overnight stay) is inpatient treatment; *rawat jalan* (care while walking) is outpatient treatment. ⚠️ *Kontrol* is a false friend: it means a follow-up check-up, not “control”.",
+        "**Syukurlah** (thank God, thank goodness) is *syukur* (gratitude) + the *-lah* of Unit 17. Muslims may say *Alhamdulillah* in the same place; *syukurlah* works for everyone."
+      ],
+      "grammars": [
+        {
+          "title": "Describing an injury",
+          "body": [
+            "Most injury words are either *ter-* verbs (it happened to you by accident) or plain adjectives describing the result. Put them together and you have the whole story."
+          ],
+          "table": {
+            "head": [
+              "What happened",
+              "The result",
+              "English"
+            ],
+            "rows": [
+              [
+                "*terpeleset*",
+                "*bengkak*",
+                "slipped; swollen"
+              ],
+              [
+                "*terjatuh*",
+                "*memar*",
+                "fell over; bruised"
+              ],
+              [
+                "*tersandung*",
+                "*terkilir*",
+                "tripped; sprained"
+              ],
+              [
+                "*terbentur*",
+                "*luka*",
+                "knocked against something; a cut, wounded"
+              ],
+              [
+                "*tergores*",
+                "*berdarah*",
+                "scratched; bleeding"
+              ],
+              [
+                "*tertabrak motor*",
+                "*patah tulang*",
+                "hit by a motorbike; a broken bone"
+              ]
+            ]
+          },
+          "after": [
+            "Say where it hurts with *sakit* or the body part + *-nya*: *Kepalanya terbentur pintu* (she hit her head on the door), *Kaki saya sakit* (my foot hurts). *Pusing* is dizzy or a headache, *mual* is nauseous.",
+            "⚠️ *Patah* is for things that snap: bones, sticks, pencils. A broken phone or car is *rusak*; a broken glass is *pecah*."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Hospital and insurance",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Indonesian hospitals are organised in *instalasi* and *bagian* (departments). You go in through the IGD in an emergency and through the *poli* (outpatient clinic) otherwise."
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Indonesian",
+            "English",
+            "Note"
+          ],
+          "rows": [
+            [
+              "*IGD*",
+              "A&E, emergency room",
+              "*Instalasi Gawat Darurat*"
+            ],
+            [
+              "*poli*, *poliklinik*",
+              "outpatient clinic",
+              "*poli gigi, poli anak*"
+            ],
+            [
+              "*rawat inap*",
+              "inpatient care",
+              "rooms by class: *kelas 1, 2, 3, VIP*"
+            ],
+            [
+              "*BPJS Kesehatan*",
+              "national health insurance",
+              "foreign residents with a KITAS can join"
+            ],
+            [
+              "*asuransi swasta*",
+              "private insurance",
+              "*klaim*, *polis*, *premi*"
+            ],
+            [
+              "*surat keterangan medis*",
+              "medical certificate",
+              "also *surat keterangan dokter*"
+            ],
+            [
+              "*kuitansi asli*",
+              "original receipt",
+              "insurers never accept copies"
+            ],
+            [
+              "*resep*",
+              "prescription",
+              "taken to the *apotek* (pharmacy)"
+            ]
+          ]
+        },
+        {
+          "type": "kotak",
+          "title": "Emergency numbers",
+          "items": [
+            "*112* — national emergency number, works from any phone",
+            "*110* — police (*polisi*)",
+            "*113* — fire brigade (*pemadam kebakaran*, usually shortened to *damkar*)",
+            "*118* or *119* — ambulance (*ambulans*), depending on the region"
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Complaining politely",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Indonesians complain softly and in writing if they can. A complaint that opens with courtesy and ends with a request gets answered; one that opens with anger gets filed. The spoken word is *komplain*; the standard one is *keluhan* or *pengaduan*."
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Step",
+            "Indonesian",
+            "English"
+          ],
+          "rows": [
+            [
+              "open",
+              "*Dengan hormat, saya ingin menyampaikan keluhan mengenai…*",
+              "I would like to raise a complaint about…"
+            ],
+            [
+              "facts",
+              "*Pada tanggal 12 Agustus, saya…*",
+              "On 12 August, I…"
+            ],
+            [
+              "the problem",
+              "*Sayangnya, …*",
+              "Unfortunately, …"
+            ],
+            [
+              "the effect",
+              "*Hal ini menyebabkan…*",
+              "This resulted in…"
+            ],
+            [
+              "the request",
+              "*Mohon agar masalah ini segera ditindaklanjuti.*",
+              "I ask that this be followed up promptly."
+            ],
+            [
+              "close",
+              "*Atas perhatian dan kerja samanya, saya ucapkan terima kasih.*",
+              "Thank you for your attention and cooperation."
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "In speech the shape is the same, only shorter: *Maaf, Mas, saya mau komplain sedikit. Kamarnya belum dibersihkan dari kemarin. Bisa dibantu?* The *Bisa dibantu?* at the end is what makes it work."
+        }
+      ]
+    },
+    {
+      "title": "Wave review — Unit 16",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Cover the Indonesian column, read the English, and rebuild each sentence from memory."
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "English",
+            "Indonesian"
+          ],
+          "rows": [
+            [
+              "OK, so basically our target market is Gen Z tourists who care about sustainability.",
+              "*Oke, jadi basically target market kita itu wisatawan Gen Z yang concern sama sustainability.*"
+            ],
+            [
+              "The funny thing is, “profesional” is a loanword itself, and it's already Indonesian.",
+              "*Lucunya, “profesional” itu sendiri kata serapan, dan sudah jadi bahasa Indonesia.*"
+            ],
+            [
+              "Cultural figures? You mean Pak Sastro, the puppeteer? He'll be so proud to be called that.",
+              "*Budayawan? Maksudnya Pak Sastro, dalang itu? Wah, beliau pasti bangga disebut begitu.*"
+            ],
+            [
+              "I've put together a small glossary for our report. Please have a look.",
+              "*Saya sudah menyusun glosarium kecil untuk laporan kita. Silakan dilihat, Mbak.*"
+            ],
+            [
+              "So *kwalitas* is wrong? And Yoga wrote *aktifitas* with an *f*.",
+              "*Berarti “kwalitas” salah? Yoga juga menulis “aktifitas” dengan “f”.*"
+            ]
+          ]
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "id": "melaporkan",
+      "baca": "muh-la-POR-kan",
+      "en": "to report"
+    },
+    {
+      "id": "kehilangan",
+      "baca": "kuh-hi-LA-ngan",
+      "en": "to lose; loss"
+    },
+    {
+      "id": "identitas",
+      "baca": "i-dén-TI-tas",
+      "en": "identification, ID"
+    },
+    {
+      "id": "justru",
+      "baca": "JUS-tru",
+      "en": "precisely, that's just it; on the contrary"
+    },
+    {
+      "id": "kejadian",
+      "baca": "kuh-ja-DI-an",
+      "en": "incident, event"
+    },
+    {
+      "id": "kecopetan",
+      "baca": "kuh-co-PÉ-tan",
+      "en": "to be pickpocketed"
+    },
+    {
+      "id": "uang tunai",
+      "baca": "U-ang TU-nai",
+      "en": "cash"
+    },
+    {
+      "id": "diblokir",
+      "baca": "di-BLO-kir",
+      "en": "blocked"
+    },
+    {
+      "id": "kemungkinan",
+      "baca": "kuh-mung-KI-nan",
+      "en": "possibility, chance"
+    },
+    {
+      "id": "terus terang",
+      "baca": "tuh-RUS tuh-RANG",
+      "en": "frankly, to be honest"
+    },
+    {
+      "id": "mengurus",
+      "baca": "muh-NGU-rus",
+      "en": "to take care of, to process (paperwork)"
+    },
+    {
+      "id": "surat keterangan",
+      "baca": "SU-rat kuh-tuh-RA-ngan",
+      "en": "certificate, official statement"
+    },
+    {
+      "id": "tanda tangan",
+      "baca": "TAN-da TA-ngan",
+      "en": "signature; to sign"
+    },
+    {
+      "id": "layanan",
+      "baca": "la-YA-nan",
+      "en": "service"
+    },
+    {
+      "id": "terpeleset",
+      "baca": "tuhr-puh-luh-SÉT",
+      "en": "to slip"
+    },
+    {
+      "id": "pergelangan kaki",
+      "baca": "puhr-guh-LA-ngan KA-ki",
+      "en": "ankle"
+    },
+    {
+      "id": "bengkak",
+      "baca": "BÉNG-kak",
+      "en": "swollen"
+    },
+    {
+      "id": "patah",
+      "baca": "PA-tah",
+      "en": "broken (bone, stick)"
+    },
+    {
+      "id": "luka",
+      "baca": "LU-ka",
+      "en": "wound, cut; injured"
+    },
+    {
+      "id": "dahi",
+      "baca": "DA-hi",
+      "en": "forehead"
+    },
+    {
+      "id": "dijahit",
+      "baca": "di-JA-hit",
+      "en": "stitched, sewn"
+    },
+    {
+      "id": "asuransi",
+      "baca": "a-su-RAN-si",
+      "en": "insurance"
+    },
+    {
+      "id": "kuitansi",
+      "baca": "ku-i-TAN-si",
+      "en": "receipt"
+    },
+    {
+      "id": "rawat inap",
+      "baca": "RA-wat I-nap",
+      "en": "inpatient care, admitted"
+    },
+    {
+      "id": "rawat jalan",
+      "baca": "RA-wat JA-lan",
+      "en": "outpatient care"
+    },
+    {
+      "id": "dibebat",
+      "baca": "di-buh-BAT",
+      "en": "bandaged"
+    }
+  ],
+  "exercises": [
+    {
+      "prompt": "Translate into Indonesian.",
+      "items": [
+        "I'd like to report a lost wallet.",
+        "I was pickpocketed at the market this morning.",
+        "Have the bank cards been blocked?",
+        "The guest slipped in the bathroom.",
+        "Where can I get the original receipt?",
+        "Her ankle isn't broken, it's only swollen."
+      ]
+    },
+    {
+      "prompt": "Fill the gap with the right form of the word in brackets.",
+      "items": [
+        "Saya mau ____ kehilangan dompet ke polisi. (lapor)",
+        "Nama ____ ditulis di bagian atas surat. (lapor)",
+        "Tadi pagi saya ____ di pasar. (copet)",
+        "Saya ____ KITAS dan dua kartu ATM. (hilang)",
+        "Maaf, Bu, saya ____ buku Ibu. (hilang)",
+        "Tamu itu ____ di kamar mandi. (peleset)"
+      ]
+    },
+    {
+      "prompt": "Make it an official request with mohon and a passive verb.",
+      "items": [
+        "Sebutkan isi dompetnya.",
+        "Cek datanya dulu.",
+        "Tanda tangani surat ini.",
+        "Isi formulir ini.",
+        "Bawa kuitansi aslinya.",
+        "Tunggu sebentar."
+      ]
+    },
+    {
+      "prompt": "Put the words in the right order.",
+      "items": [
+        "kehilangan / melaporkan / mau / saya / dompet",
+        "sepuluh / kejadiannya / jam / sekitar / tadi pagi",
+        "ada / kemungkinan / selalu",
+        "dirawat / beliau / apakah / harus / inap / ?",
+        "rontgen / dulu / supaya / kita / pasti",
+        "keluhan / saya / menyampaikan / ingin"
+      ]
+    }
+  ],
+  "answers": [
+    "Saya mau melaporkan kehilangan dompet. — Tadi pagi saya kecopetan di pasar. — Kartu ATM-nya sudah diblokir? — Tamu itu terpeleset di kamar mandi. — Di mana saya bisa meminta kuitansi aslinya? — Pergelangan kakinya tidak patah, hanya bengkak.",
+    "melaporkan — pelapor — kecopetan — kehilangan — menghilangkan — terpeleset",
+    "Mohon disebutkan isi dompetnya. — Mohon dicek dulu datanya. — Mohon surat ini ditandatangani. — Mohon formulir ini diisi. — Mohon kuitansi aslinya dibawa. — Mohon ditunggu sebentar.",
+    "Saya mau melaporkan kehilangan dompet. — Kejadiannya tadi pagi sekitar jam sepuluh. — Kemungkinan selalu ada. — Apakah beliau harus dirawat inap? — Kita rontgen dulu supaya pasti. — Saya ingin menyampaikan keluhan."
+  ]
+}

@@ -1,0 +1,715 @@
+{
+  "title": "Official Indonesian — notices, forms and the formal email",
+  "title_target": "Yth. Ibu Wulan, dengan hormat",
+  "goal": "Read the language of signs, forms and counters (*harap, dimohon, wajib, dilarang*), deal with a bank in standard Indonesian, and write a short formal email with the fixed openings and closings (*Yth., Dengan hormat, Hormat kami*).",
+  "bekal": [
+    "understand and obey notices: *Harap antre*, *Dilarang merokok*, *Wajib lapor 1x24 jam*",
+    "open a bank account and fill in a form in formal Indonesian",
+    "write a formal email that starts with *Yth.* and *Dengan hormat* and ends with *Hormat kami*"
+  ],
+  "dialogs": [
+    {
+      "title": "Dialogue — Buka rekening di bank",
+      "intro": "A few days later. While her KITAS extension is being processed, Sarah needs an Indonesian bank account for her salary. She goes to a bank branch on Jalan Sudirman in Yogyakarta, where a security guard greets everyone at the door.",
+      "lines": [
+        {
+          "speaker": "Satpam:",
+          "text": "Selamat siang, Bu. Ke teller atau customer service?",
+          "id": "Good afternoon, madam. Teller or customer service?",
+          "literal": "safe noon, madam. to teller or customer service?"
+        },
+        {
+          "speaker": "Sarah:",
+          "text": "Customer service, Pak. Saya mau buka rekening.",
+          "id": "Customer service, please. I'd like to open an account.",
+          "literal": "customer service, sir. I want open account."
+        },
+        {
+          "speaker": "Satpam:",
+          "text": "Silakan ambil nomor antrean di mesin itu. Harap menunggu sampai nomor Ibu dipanggil.",
+          "id": "Please take a queue number from that machine. Kindly wait until your number is called.",
+          "literal": "please take number queue at machine that. hope wait until number madam is-called."
+        },
+        {
+          "speaker": "Sarah:",
+          "text": "\"Dilarang menggunakan telepon genggam di area teller.\" Baik, HP saya matikan.",
+          "id": "\"The use of mobile phones in the teller area is prohibited.\" Right, I'll switch my phone off.",
+          "literal": "\"is-forbidden use telephone hand-held at area teller.\" good, phone my I-switch-off."
+        },
+        {
+          "speaker": "CS:",
+          "text": "Nomor antrean C-12, silakan ke meja tiga. Selamat siang, Bu. Ada yang bisa kami bantu?",
+          "id": "Queue number C12, desk three please. Good afternoon. How can we help?",
+          "literal": "number queue C-12, please to table three. safe noon, madam. exist that can we help?"
+        },
+        {
+          "speaker": "Sarah:",
+          "text": "Selamat siang, Mbak. Saya ingin membuka rekening tabungan.",
+          "id": "Good afternoon. I'd like to open a savings account.",
+          "literal": "safe noon, miss. I wish open account savings."
+        },
+        {
+          "speaker": "CS:",
+          "text": "Baik, Bu. Untuk warga negara asing, wajib melampirkan paspor, KITAS, dan surat keterangan kerja.",
+          "id": "Certainly. Foreign nationals are required to provide a passport, KITAS and a letter of employment.",
+          "literal": "good, madam. for citizen country foreign, obligatory attach passport, KITAS, and letter statement work."
+        },
+        {
+          "speaker": "Sarah:",
+          "text": "Semuanya sudah saya bawa. Ini, Mbak.",
+          "id": "I've brought all of them. Here you are.",
+          "literal": "all-of-it already I bring. this, miss."
+        },
+        {
+          "speaker": "CS:",
+          "text": "Terima kasih. Dimohon mengisi formulir ini dengan huruf kapital, lalu tanda tangan di sini.",
+          "id": "Thank you. Please fill in this form in capital letters, then sign here.",
+          "literal": "receive love. is-requested fill form this with letter capital, then sign hand at here."
+        },
+        {
+          "speaker": "Sarah:",
+          "text": "Kolom \"nama ibu kandung\" ini wajib diisi?",
+          "id": "Is this \"mother's name\" box compulsory?",
+          "literal": "column \"name mother womb\" this obligatory is-filled?"
+        },
+        {
+          "speaker": "CS:",
+          "text": "Wajib, Bu. Itu untuk keamanan, misalnya kalau Ibu lupa PIN.",
+          "id": "Yes, it is. It's for security, for example if you forget your PIN.",
+          "literal": "obligatory, madam. that for security, for-example if madam forget PIN."
+        },
+        {
+          "speaker": "Sarah:",
+          "text": "Oh, begitu. Setoran awalnya berapa, Mbak?",
+          "id": "I see. How much is the opening deposit?",
+          "literal": "oh, like-that. deposit initial-the how-much, miss?"
+        },
+        {
+          "speaker": "CS:",
+          "text": "Minimal lima ratus ribu rupiah. Kartu debitnya bisa langsung diambil hari ini.",
+          "id": "At least five hundred thousand rupiah. You can take your debit card today.",
+          "literal": "minimum five hundred thousand rupiah. card debit-the can directly is-taken day this."
+        },
+        {
+          "speaker": "Sarah:",
+          "text": "Satu lagi: kata kantor saya, saya juga wajib ikut BPJS Kesehatan. Bisa daftar di sini?",
+          "id": "One more thing: my office says I also have to join BPJS Kesehatan. Can I register here?",
+          "literal": "one more: word office my, I also obligatory join BPJS Health. can register at here?"
+        },
+        {
+          "speaker": "CS:",
+          "text": "Mohon maaf, Bu, pendaftaran BPJS tidak di bank. Biasanya didaftarkan oleh bagian HRD perusahaan.",
+          "id": "I'm sorry, BPJS registration isn't done at the bank. It's usually done by the company's HR department.",
+          "literal": "beg forgiveness, madam, registration BPJS not at bank. usually is-registered by part HRD company."
+        }
+      ],
+      "notes": [
+        "**Harap — \"kindly, you are expected to\".** On signs and in official speech, *harap* + verb is a polite instruction that is not really optional: *Harap menunggu* (please wait), *Harap tenang* (quiet, please). It comes from *harap*, \"to hope\", but the hope is the institution's, and firm.",
+        "**Dilarang — \"forbidden\".** The standard prohibition on every sign in the country: *Dilarang merokok*, *Dilarang parkir*, *Dilarang masuk*. Sarah reads the sign aloud — a good habit, because notice Indonesian uses full *me-* verbs (*menggunakan*) and formal nouns (*telepon genggam* for *HP*) that you rarely hear in speech.",
+        "**Wajib — \"compulsory, required\".** *Wajib* is stronger than *harus* and implies a rule rather than a personal need: *Wajib melampirkan paspor*, *wajib diisi* (must be filled in). The mirror image on a form is *tidak wajib* or *opsional*.",
+        "**Ingin, membuka, melampirkan.** Sarah says *saya mau buka rekening* to the guard but *saya ingin membuka rekening tabungan* at the desk. *Ingin* is the formal \"wish to\", and the full *me-* verb goes with it. Both are correct; the second simply matches the room.",
+        "**Nama ibu kandung** — your biological mother's name — is asked on almost every Indonesian bank and government form as a security question. *Kandung* means \"of the womb\": *ibu kandung, saudara kandung* (full sibling). Foreigners are often surprised; Indonesians are surprised that anyone is surprised.",
+        "**BPJS Kesehatan** is the national health insurance scheme; foreigners who work in Indonesia for more than six months are required to join, usually through their employer. *HRD* (said *ha-ér-dé*) is the human resources department, the office that sorts it out."
+      ],
+      "grammars": [
+        {
+          "title": "Notice words: how strong is it?",
+          "body": [
+            "Official Indonesian has a ladder of instructions, from a gentle request to a flat ban. These words start almost every sign, form and announcement."
+          ],
+          "table": {
+            "head": [
+              "Word",
+              "Strength",
+              "Example",
+              "English"
+            ],
+            "rows": [
+              [
+                "*mohon*",
+                "polite request",
+                "*Mohon maaf atas ketidaknyamanannya.*",
+                "We apologise for the inconvenience."
+              ],
+              [
+                "*dimohon*",
+                "polite request",
+                "*Dimohon tenang.*",
+                "Quiet, please."
+              ],
+              [
+                "*harap*",
+                "firm request",
+                "*Harap antre.*",
+                "Please queue."
+              ],
+              [
+                "*wajib*",
+                "required by rule",
+                "*Wajib memakai helm.*",
+                "Helmets must be worn."
+              ],
+              [
+                "*tidak diperkenankan*",
+                "not permitted (very formal)",
+                "*Tidak diperkenankan membawa makanan.*",
+                "No outside food."
+              ],
+              [
+                "*dilarang*",
+                "forbidden",
+                "*Dilarang merokok.*",
+                "No smoking."
+              ],
+              [
+                "*awas*",
+                "danger, watch out",
+                "*Awas anjing galak.*",
+                "Beware of the dog."
+              ]
+            ]
+          },
+          "after": [
+            "Signs drop the subject and often the object: *Dilarang parkir* (no parking), *Harap lepas alas kaki* (please remove footwear). Who is forbidden? You are.",
+            "⚠️ Don't write *Tidak boleh parkir* on a sign — it is correct but sounds like a neighbour's note, not a notice."
+          ]
+        },
+        {
+          "title": "Counter Indonesian and street Indonesian",
+          "body": [
+            "At a bank, an office or an embassy, standard Indonesian is expected — from you and from the staff. Here are the swaps to make."
+          ],
+          "table": {
+            "head": [
+              "Formal (baku)",
+              "Everyday",
+              "English"
+            ],
+            "rows": [
+              [
+                "*ingin*",
+                "*mau, pengin*",
+                "want, wish"
+              ],
+              [
+                "*membuka rekening*",
+                "*buka rekening*",
+                "open an account"
+              ],
+              [
+                "*menggunakan*",
+                "*pakai*",
+                "use"
+              ],
+              [
+                "*telepon genggam*",
+                "*HP*",
+                "mobile phone"
+              ],
+              [
+                "*mengisi formulir*",
+                "*isi formulir*",
+                "fill in a form"
+              ],
+              [
+                "*menandatangani*",
+                "*tanda tangan, teken*",
+                "sign"
+              ],
+              [
+                "*tidak*",
+                "*nggak*",
+                "not"
+              ]
+            ]
+          },
+          "after": [
+            "The pattern is always the same: full *me-* verbs, *tidak* not *nggak*, no particles (*sih, dong, kok*), and *Bapak/Ibu* for \"you\". That is most of what \"formal Indonesian\" means at A2."
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Second dialogue — Email resmi",
+      "intro": "Back at the office. Pak Hendra's visit is confirmed, and he wants to see one of the partner schools. Sarah has to write to its head teacher, Ibu Wulan Sari, and asks Mbak Nur to look at her draft.",
+      "lines": [
+        {
+          "speaker": "Sarah:",
+          "text": "Mbak Nur, boleh minta tolong? Saya mau menulis email ke Bu Wulan, kepala sekolah mitra kita.",
+          "id": "Nur, could I ask a favour? I need to write an email to Bu Wulan, the head of one of our partner schools.",
+          "literal": "miss Nur, may ask help? I want write email to Mrs Wulan, head school partner our."
+        },
+        {
+          "speaker": "Nur:",
+          "text": "Tentu. Coba saya lihat drafnya.",
+          "id": "Of course. Let me see the draft.",
+          "literal": "certain. try I see draft-the."
+        },
+        {
+          "speaker": "Sarah:",
+          "text": "Saya mulai dengan \"Halo, Bu Wulan!\". Terlalu santai, ya?",
+          "id": "I've started with \"Hello, Bu Wulan!\". Too casual, isn't it?",
+          "literal": "I start with \"hello, Mrs Wulan!\". too relaxed, yes?"
+        },
+        {
+          "speaker": "Nur:",
+          "text": "Betul. Untuk email resmi, tulis \"Yth. Ibu Wulan Sari\", lalu \"Dengan hormat,\".",
+          "id": "Yes. For a formal email, write \"Yth. Ibu Wulan Sari\", then \"Dengan hormat,\".",
+          "literal": "correct. for email official, write \"that respected Mrs Wulan Sari\", then \"with respect,\"."
+        },
+        {
+          "speaker": "Sarah:",
+          "text": "Yth. itu singkatan dari apa, Mbak?",
+          "id": "What does Yth. stand for?",
+          "literal": "Yth. that abbreviation from what, miss?"
+        },
+        {
+          "speaker": "Nur:",
+          "text": "\"Yang terhormat.\" Setelah itu, jelaskan maksud Mbak dalam satu atau dua kalimat.",
+          "id": "\"Yang terhormat\", meaning \"the honourable\". After that, explain your purpose in one or two sentences.",
+          "literal": "\"that honoured.\" after that, explain intention miss in one or two sentence."
+        },
+        {
+          "speaker": "Sarah:",
+          "text": "\"Kami bermaksud mengunjungi sekolah Ibu pada hari Rabu, 17 Februari 2027.\" Begini?",
+          "id": "\"We would like to visit your school on Wednesday 17 February 2027.\" Like this?",
+          "literal": "\"we intend visit school madam on day Wednesday, 17 February 2027.\" like-this?"
+        },
+        {
+          "speaker": "Nur:",
+          "text": "Bagus. Tambahkan juga siapa yang datang: Pak Hendra dan Mbak sendiri.",
+          "id": "Good. Also add who's coming: Pak Hendra and you.",
+          "literal": "good. add also who that come: Mr Hendra and miss self."
+        },
+        {
+          "speaker": "Sarah:",
+          "text": "Lalu penutupnya bagaimana?",
+          "id": "And how do I close it?",
+          "literal": "then closing-the how?"
+        },
+        {
+          "speaker": "Nur:",
+          "text": "\"Atas perhatian dan kerja sama Ibu, kami ucapkan terima kasih.\" Lalu \"Hormat kami\", nama, dan jabatan Mbak.",
+          "id": "\"We thank you for your attention and cooperation.\" Then \"Hormat kami\", your name and your job title.",
+          "literal": "\"on attention and work together madam, we say receive love.\" then \"respect our\", name, and position miss."
+        },
+        {
+          "speaker": "Sarah:",
+          "text": "Wah, panjang juga. Tapi kedengarannya sopan sekali.",
+          "id": "Gosh, that's quite long. But it sounds very polite.",
+          "literal": "wow, long also. but sound-its polite very."
+        }
+      ],
+      "notes": [
+        "**Yth.** is short for *Yang terhormat*, \"the honourable\", and heads every formal letter or email before the recipient's title and name: *Yth. Bapak Hendra Wijaya*. It is always abbreviated in writing but read out in full at ceremonies.",
+        "**Dengan hormat,** (\"with respect\") is the fixed greeting of the formal letter, the equivalent of \"Dear Sir or Madam\". It stands alone on its own line, followed by a comma, and the letter starts on the next line.",
+        "**Kami bermaksud…** — \"we intend to, we would like to\". Formal letters speak for the institution with *kami*, not *saya*, even when one person is writing. *Bermaksud* (from *maksud*, intention) is the standard way to state the purpose of a letter.",
+        "**Mengunjungi sekolah Ibu.** In the email, *Ibu* means \"you\" and *sekolah Ibu* \"your school\". Formal Indonesian never uses *Anda* to someone it knows and respects; the title does the work. Capitalise it: *Ibu*, *Bapak*.",
+        "**Atas perhatian… kami ucapkan terima kasih.** The closing formula thanks the reader for their *perhatian* (attention) and often their *kerja sama* (cooperation). The word order — thanks at the end — is fixed; you will see it at the bottom of a thousand letters.",
+        "**Hormat kami — \"yours faithfully\".** Literally \"our respect\", it goes above your name and *jabatan* (job title). 💬 Among colleagues who email each other daily, *Salam* or *Terima kasih* is enough; Mbak Nur's rule is that the first email to anyone outside is always the formal one."
+      ],
+      "grammars": [
+        {
+          "title": "The shape of a formal email",
+          "body": [
+            "An Indonesian formal letter or email is built from fixed parts in a fixed order. Learn the formulas and you only have to write the middle."
+          ],
+          "table": {
+            "head": [
+              "Part",
+              "Indonesian",
+              "English"
+            ],
+            "rows": [
+              [
+                "recipient",
+                "*Yth. Ibu Wulan Sari, Kepala Sekolah*",
+                "To Ibu Wulan Sari, Head Teacher"
+              ],
+              [
+                "greeting",
+                "*Dengan hormat,*",
+                "Dear Madam,"
+              ],
+              [
+                "purpose",
+                "*Melalui email ini, kami bermaksud…*",
+                "We are writing to…"
+              ],
+              [
+                "request",
+                "*Kami mohon kesediaan Ibu untuk…*",
+                "We would be grateful if you could…"
+              ],
+              [
+                "closing",
+                "*Atas perhatian dan kerja sama Ibu, kami ucapkan terima kasih.*",
+                "Thank you for your attention and cooperation."
+              ],
+              [
+                "sign-off",
+                "*Hormat kami,* + name + *jabatan*",
+                "Yours faithfully, + name + title"
+              ]
+            ]
+          },
+          "after": [
+            "*Kesediaan* (willingness) is from *sedia* (ready): asking for someone's *kesediaan* is more polite than asking them to do something. You will meet the full letter, with *Sehubungan dengan* and *Demikian*, in the B2 book."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Forms: what they ask",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Indonesian forms are remarkably similar from bank to hospital to kelurahan. These are the fields you will fill in again and again; write in capital letters unless told otherwise."
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "On the form",
+            "English",
+            "Tip"
+          ],
+          "rows": [
+            [
+              "*Nama lengkap*",
+              "full name",
+              "exactly as in your passport"
+            ],
+            [
+              "*Tempat, tanggal lahir*",
+              "place and date of birth",
+              "*Melbourne, 12-05-1996*"
+            ],
+            [
+              "*Jenis kelamin*",
+              "sex",
+              "*laki-laki* or *perempuan*"
+            ],
+            [
+              "*Kewarganegaraan*",
+              "nationality",
+              "*Australia*, or *WNA* (foreign national)"
+            ],
+            [
+              "*Pekerjaan*",
+              "occupation",
+              "*karyawan swasta* = private-sector employee"
+            ],
+            [
+              "*Alamat domisili*",
+              "current address",
+              "where you actually live, with RT/RW"
+            ],
+            [
+              "*Nama ibu kandung*",
+              "mother's name",
+              "a security question"
+            ],
+            [
+              "*Tanda tangan*",
+              "signature",
+              "sign within the box"
+            ]
+          ]
+        },
+        {
+          "type": "kotak",
+          "title": "Abbreviations on official papers",
+          "items": [
+            "*Yth.* — *yang terhormat*, the honourable (addressee)",
+            "*a.n.* — *atas nama*, on behalf of; in the name of",
+            "*u.p.* — *untuk perhatian*, for the attention of",
+            "*dll.* — *dan lain-lain*, etc.; *dsb.* — *dan sebagainya*, and so on",
+            "*tgl.* — *tanggal*, date; *No.* — *nomor*, number"
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Signs you will see",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Most public notices use the words from this unit. Read them as whole phrases; many are so familiar to Indonesians that they have become jokes and memes."
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Sign",
+            "English",
+            "Where"
+          ],
+          "rows": [
+            [
+              "*Tamu wajib lapor 1x24 jam*",
+              "Guests must report within 24 hours",
+              "at the entrance to a kampung (report to the RT)"
+            ],
+            [
+              "*Harap tenang, ada ujian*",
+              "Quiet please, exam in progress",
+              "schools"
+            ],
+            [
+              "*Dilarang parkir di depan pintu*",
+              "No parking in front of the gate",
+              "houses, shops"
+            ],
+            [
+              "*Buanglah sampah pada tempatnya*",
+              "Put rubbish in the bin",
+              "everywhere"
+            ],
+            [
+              "*Mohon maaf, perjalanan Anda terganggu*",
+              "Sorry for the disruption to your journey",
+              "roadworks"
+            ],
+            [
+              "*Harap lepas alas kaki*",
+              "Please remove footwear",
+              "mosques, homes, some clinics"
+            ],
+            [
+              "*Area wajib masker*",
+              "Masks compulsory",
+              "hospitals"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "*1x24 jam* is read *satu kali dua puluh empat jam* and simply means \"within 24 hours\" — the RT sign from Unit 4 is a legal reminder, not decoration."
+        }
+      ]
+    },
+    {
+      "title": "Wave review — Unit 13",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Cover the Indonesian column, read the English, and rebuild each sentence from memory."
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "English",
+            "Indonesian"
+          ],
+          "rows": [
+            [
+              "So are you coming to Dieng on Saturday?",
+              "*Mbak, jadi ikut ke Dieng hari Sabtu?*"
+            ],
+            [
+              "At a homestay near Telaga Warna. If you're happy with that, I'll book now.",
+              "*Di homestay dekat Telaga Warna. Kalau Mbak setuju, aku pesan sekarang.*"
+            ],
+            [
+              "Very formal. So if we cancel on Thursday, we lose the money?",
+              "*Formal banget. Jadi kalau kita batal hari Kamis, uangnya hangus?*"
+            ],
+            [
+              "Hey, where's your jacket? I did remind you yesterday.",
+              "*Lho, jaketnya mana, Mbak? Kan kemarin sudah kuingatkan.*"
+            ],
+            [
+              "Oh, perfect timing! How much are the gloves?",
+              "*Wah, pas sekali! Sarung tangannya berapa, Bu?*"
+            ]
+          ]
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "id": "rekening",
+      "baca": "ré-kuh-NING",
+      "en": "bank account"
+    },
+    {
+      "id": "antrean",
+      "baca": "an-TRÉ-an",
+      "en": "queue"
+    },
+    {
+      "id": "harap",
+      "baca": "HA-rap",
+      "en": "kindly, please (on notices); to hope"
+    },
+    {
+      "id": "dipanggil",
+      "baca": "di-PANG-gil",
+      "en": "be called"
+    },
+    {
+      "id": "dilarang",
+      "baca": "di-LA-rang",
+      "en": "forbidden"
+    },
+    {
+      "id": "menggunakan",
+      "baca": "muhng-gu-NA-kan",
+      "en": "to use (formal)"
+    },
+    {
+      "id": "telepon genggam",
+      "baca": "té-LÉ-pon guhng-GAM",
+      "en": "mobile phone (formal)"
+    },
+    {
+      "id": "ingin",
+      "baca": "I-ngin",
+      "en": "to wish, want (formal)"
+    },
+    {
+      "id": "tabungan",
+      "baca": "ta-BU-ngan",
+      "en": "savings"
+    },
+    {
+      "id": "warga negara asing",
+      "baca": "WAR-ga nuh-GA-ra A-sing",
+      "en": "foreign national"
+    },
+    {
+      "id": "wajib",
+      "baca": "WA-jib",
+      "en": "compulsory, required"
+    },
+    {
+      "id": "melampirkan",
+      "baca": "muh-LAM-pir-kan",
+      "en": "to attach, enclose"
+    },
+    {
+      "id": "dimohon",
+      "baca": "di-MO-hon",
+      "en": "(you are) requested"
+    },
+    {
+      "id": "huruf kapital",
+      "baca": "HU-ruf ka-PI-tal",
+      "en": "capital letters"
+    },
+    {
+      "id": "tanda tangan",
+      "baca": "TAN-da TA-ngan",
+      "en": "signature; to sign"
+    },
+    {
+      "id": "kolom",
+      "baca": "KO-lom",
+      "en": "box, field (on a form); column"
+    },
+    {
+      "id": "ibu kandung",
+      "baca": "I-bu KAN-dung",
+      "en": "(biological) mother"
+    },
+    {
+      "id": "keamanan",
+      "baca": "kuh-a-MA-nan",
+      "en": "security, safety"
+    },
+    {
+      "id": "setoran",
+      "baca": "suh-TO-ran",
+      "en": "deposit (money paid in)"
+    },
+    {
+      "id": "didaftarkan",
+      "baca": "di-DAF-tar-kan",
+      "en": "be registered"
+    },
+    {
+      "id": "Yth.",
+      "baca": "yang tuhr-HOR-mat",
+      "en": "the honourable (in addresses)"
+    },
+    {
+      "id": "dengan hormat",
+      "baca": "duh-NGAN HOR-mat",
+      "en": "Dear Sir or Madam (letter opening)"
+    },
+    {
+      "id": "bermaksud",
+      "baca": "buhr-MAK-sud",
+      "en": "to intend, wish to"
+    },
+    {
+      "id": "penutup",
+      "baca": "puh-NU-tup",
+      "en": "closing, conclusion"
+    },
+    {
+      "id": "perhatian",
+      "baca": "puhr-ha-TI-an",
+      "en": "attention"
+    },
+    {
+      "id": "jabatan",
+      "baca": "ja-BA-tan",
+      "en": "position, job title"
+    }
+  ],
+  "exercises": [
+    {
+      "prompt": "Translate these notices and sentences into formal Indonesian.",
+      "items": [
+        "No smoking.",
+        "Please wait until your number is called. (with harap)",
+        "Helmets must be worn. (with wajib)",
+        "I would like to open a savings account.",
+        "Please fill in this form in capital letters. (with dimohon)",
+        "We would like to visit your school on Wednesday. (to Ibu Wulan)"
+      ]
+    },
+    {
+      "prompt": "Fill the gap with harap, dilarang, wajib, Yth., Dengan hormat or Hormat kami.",
+      "items": [
+        "____ Bapak Hendra Wijaya",
+        "____ merokok di dalam ruangan.",
+        "Semua tamu ____ lapor 1x24 jam.",
+        "____ antre dengan tertib.",
+        "____, (the line after the addressee)",
+        "____, Sarah, Koordinator Kemitraan"
+      ]
+    },
+    {
+      "prompt": "Make it formal, as you would at a bank counter.",
+      "items": [
+        "Saya mau buka rekening.",
+        "Boleh pakai HP di sini?",
+        "Saya nggak bawa paspor.",
+        "Tanda tangan di sini, ya.",
+        "Isi formulirnya dulu.",
+        "Saya mau daftar BPJS."
+      ]
+    },
+    {
+      "prompt": "Put the words in the right order.",
+      "items": [
+        "menunggu / harap / dipanggil / sampai / nomor Ibu",
+        "wajib / kolom / diisi / ini",
+        "rekening / saya / membuka / ingin / tabungan",
+        "bermaksud / sekolah Ibu / kami / mengunjungi",
+        "terima kasih / perhatian / kami / atas / ucapkan / Ibu",
+        "telepon genggam / dilarang / menggunakan"
+      ]
+    }
+  ],
+  "answers": [
+    "Dilarang merokok. — Harap menunggu sampai nomor Anda dipanggil. — Wajib memakai helm. — Saya ingin membuka rekening tabungan. — Dimohon mengisi formulir ini dengan huruf kapital. — Kami bermaksud mengunjungi sekolah Ibu pada hari Rabu.",
+    "Yth. — Dilarang — wajib — Harap — Dengan hormat — Hormat kami",
+    "Saya ingin membuka rekening. — Apakah saya boleh menggunakan telepon genggam di sini? — Saya tidak membawa paspor. — Silakan menandatangani di sini. — Silakan mengisi formulirnya terlebih dahulu. — Saya ingin mendaftar BPJS.",
+    "Harap menunggu sampai nomor Ibu dipanggil. — Kolom ini wajib diisi. — Saya ingin membuka rekening tabungan. — Kami bermaksud mengunjungi sekolah Ibu. — Atas perhatian Ibu, kami ucapkan terima kasih. — Dilarang menggunakan telepon genggam."
+  ]
+}

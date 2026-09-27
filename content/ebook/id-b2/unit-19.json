@@ -1,0 +1,654 @@
+{
+  "title": "Writing an essay",
+  "title_target": "Satu paragraf, satu gagasan",
+  "goal": "Build a formal Indonesian essay the way an editor expects it: paragraphs with a clear *kalimat utama*, sentences linked by the right cohesion markers, and a *simpulan* that ends rather than repeats.",
+  "bekal": [
+    "write a paragraph with a *kalimat utama* and *kalimat penjelas*, deductive or inductive",
+    "link sentences and paragraphs with *selain itu, sebaliknya, oleh karena itu, dengan kata lain*",
+    "turn spoken sentence openers (*Dan, Tapi, Makanya, Soalnya*) into written ones"
+  ],
+  "dialogs": [
+    {
+      "title": "Dialogue — Paragraf pertama",
+      "intro": "Late November 2029, a wet evening in Jakarta. Mbak Dewi has invited Sarah to write an opinion piece for her newspaper. Dr. Lestari has stayed late at the Program Jembatan office to look at the first draft.",
+      "lines": [
+        {
+          "speaker": "Sarah:",
+          "text": "Bu, Mbak Dewi minta esai delapan ratus kata untuk rubrik opini. Temanya pengalaman belajar bahasa Indonesia.",
+          "id": "Mbak Dewi wants an eight-hundred-word essay for the opinion page. The theme is my experience of learning Indonesian.",
+          "literal": "Bu, Mbak Dewi ask essay eight hundred word for column opinion. theme-its experience learn language Indonesia."
+        },
+        {
+          "speaker": "Lestari:",
+          "text": "Menarik. Judulnya sudah ada?",
+          "id": "Interesting. Have you got a title?",
+          "literal": "interesting. title-its already exist?"
+        },
+        {
+          "speaker": "Sarah:",
+          "text": "Sementara ini “Belajar Bahasa, Belajar Mendengarkan”. Boleh saya bacakan paragraf pertamanya?",
+          "id": "For now, “Learning a Language, Learning to Listen”. May I read you the first paragraph?",
+          "literal": "temporary this “learn language, learn listen”. may I read-for paragraph first-its?"
+        },
+        {
+          "speaker": "Lestari:",
+          "text": "Silakan.",
+          "id": "Please do.",
+          "literal": "please."
+        },
+        {
+          "speaker": "Sarah:",
+          "text": "“Saya tiba di Jakarta empat tahun yang lalu. Kantor saya di lantai sebelas. Waktu itu saya hanya tahu kata ‘terima kasih’. Bahasa Indonesia ternyata bahasa yang ramah.”",
+          "id": "“I arrived in Jakarta four years ago. My office was on the eleventh floor. At the time I only knew the words ‘thank you’. Indonesian turned out to be a friendly language.”",
+          "literal": "“I arrive in Jakarta four year which past. office my at floor eleven. time that I only know word ‘thank you’. language Indonesia turn-out language which friendly.”"
+        },
+        {
+          "speaker": "Lestari:",
+          "text": "Kalimatnya jernih, tetapi paragrafnya belum punya kalimat utama. Apa gagasan pokoknya?",
+          "id": "The sentences are clear, but the paragraph has no topic sentence yet. What's the main idea?",
+          "literal": "sentence-the clear, but paragraph-the not-yet have sentence main. what idea principal-its?"
+        },
+        {
+          "speaker": "Sarah:",
+          "text": "Bahwa belajar bahasa Indonesia mengajari saya mendengarkan.",
+          "id": "That learning Indonesian taught me to listen.",
+          "literal": "that learn language Indonesia teach me listen."
+        },
+        {
+          "speaker": "Lestari:",
+          "text": "Nah, letakkan gagasan itu di awal sebagai kalimat utama. Kalimat yang lain menjadi kalimat penjelas.",
+          "id": "There you are. Put that idea at the start as the topic sentence. The other sentences become supporting sentences.",
+          "literal": "there, place idea that at start as sentence main. sentence which other become sentence explainer."
+        },
+        {
+          "speaker": "Sarah:",
+          "text": "Jadi paragrafnya deduktif, ya: yang umum dulu, baru contoh-contohnya.",
+          "id": "So it's a deductive paragraph: the general point first, then the examples.",
+          "literal": "so paragraph-the deductive, [ya]: which general first, only-then example-example-its."
+        },
+        {
+          "speaker": "Lestari:",
+          "text": "Betul. Satu paragraf, satu gagasan. Kalimat tentang lantai sebelas tidak mendukung gagasan pokok, jadi sebaiknya dibuang.",
+          "id": "Right. One paragraph, one idea. The sentence about the eleventh floor doesn't support the main idea, so it had better go.",
+          "literal": "correct. one paragraph, one idea. sentence about floor eleven not support idea principal, so best be-thrown-away."
+        },
+        {
+          "speaker": "Sarah:",
+          "text": "Sayang sekali, padahal itu kenangan pertama saya.",
+          "id": "What a shame, and it's my very first memory here.",
+          "literal": "pity very, whereas that memory first my."
+        },
+        {
+          "speaker": "Lestari:",
+          "text": "Simpan untuk paragraf lain. Lalu, antarparagraf perlu penghubung: “selain itu”, “sebaliknya”, “oleh karena itu”.",
+          "id": "Save it for another paragraph. And between paragraphs you need linking words: “in addition”, “conversely”, “therefore”.",
+          "literal": "keep for paragraph other. then, between-paragraph need connector: “besides that”, “the-opposite-of-it”, “by reason that”."
+        },
+        {
+          "speaker": "Sarah:",
+          "text": "Penutupnya bagaimana? Saya cenderung mengulang semuanya.",
+          "id": "What about the ending? I tend to repeat everything.",
+          "literal": "closing-the how? I tend repeat all-of-it."
+        },
+        {
+          "speaker": "Lestari:",
+          "text": "Simpulan bukan ringkasan. Tutup dengan satu gagasan yang membuat pembaca berpikir, lalu berhenti.",
+          "id": "A conclusion is not a summary. End with one idea that makes the reader think, and then stop.",
+          "literal": "conclusion not summary. close with one idea which make reader think, then stop."
+        }
+      ],
+      "notes": [
+        "**Rubrik opini** — the opinion column of a newspaper. *Rubrik* is any regular section (*rubrik olahraga*, *rubrik budaya*). Indonesian dailies publish outside contributors' essays constantly, and *menulis di kolom opini Kompas* is a real mark of standing.",
+        "**Boleh saya bacakan?** — \"may I read (it) for you?\" The *-kan* of *bacakan* is the benefactive you met in A2 Unit 5: *membacakan* is to read aloud for someone. The object-focus order, *boleh saya bacakan*, is the polite way to offer.",
+        "**Kalimat utama and kalimat penjelas** — topic sentence and supporting sentences. Indonesian schools drill this from primary level, and every editor thinks in these terms. *Gagasan pokok* (main idea) is what the *kalimat utama* states.",
+        "**Deduktif, induktif** — a deductive paragraph opens with the *kalimat utama*; an inductive one builds up to it at the end; a *campuran* (mixed) one states it at the start and restates it at the end. Opinion pieces in the Indonesian press are overwhelmingly deductive.",
+        "**Sayang sekali, padahal…** — *padahal* (\"whereas, and yet\") adds the fact that makes the loss painful. *Sayang* here is \"a pity\", not \"darling\"; context always tells you which.",
+        "**Simpulan or kesimpulan?** Both mean \"conclusion\" and both are in KBBI. Language teachers and style guides prefer *simpulan* for the conclusion of a text, keeping *kesimpulan* for the act or result of concluding. Most people use *kesimpulan* for everything; in a test, write *simpulan*."
+      ],
+      "grammars": [
+        {
+          "title": "Anatomy of a paragraph",
+          "body": [
+            "An Indonesian textbook paragraph has named parts, and an editor will use these names when commenting on your draft."
+          ],
+          "table": {
+            "head": [
+              "Part",
+              "Job",
+              "Typical opener"
+            ],
+            "rows": [
+              [
+                "*kalimat utama*",
+                "states the one main idea",
+                "(none, just the claim)"
+              ],
+              [
+                "*kalimat penjelas* (reason)",
+                "explains why",
+                "*Hal ini karena…*"
+              ],
+              [
+                "*kalimat penjelas* (example)",
+                "gives a concrete case",
+                "*Misalnya, …*"
+              ],
+              [
+                "*kalimat penjelas* (detail)",
+                "adds evidence or data",
+                "*Menurut data…*"
+              ],
+              [
+                "*kalimat penegas*",
+                "restates the main idea (mixed paragraph)",
+                "*Dengan kata lain, …*"
+              ]
+            ]
+          },
+          "after": [
+            "The test of a *kalimat penjelas* is simple: does it support the *kalimat utama*? If not, it belongs elsewhere or nowhere, like Sarah's eleventh floor.",
+            "Aim for four to six sentences a paragraph in an opinion piece. A one-sentence paragraph is a journalistic effect; use it once, at most."
+          ]
+        },
+        {
+          "title": "Cohesion markers",
+          "body": [
+            "These are the *penghubung* (linking words) that carry a reader from one sentence or paragraph to the next. Each opens a sentence and is followed by a comma."
+          ],
+          "table": {
+            "head": [
+              "Function",
+              "Markers",
+              "English"
+            ],
+            "rows": [
+              [
+                "adding",
+                "*Selain itu, Di samping itu, Lebih lanjut*",
+                "In addition, Moreover, Furthermore"
+              ],
+              [
+                "contrasting",
+                "*Namun, Sebaliknya, Meskipun demikian*",
+                "However, Conversely, Even so"
+              ],
+              [
+                "cause and result",
+                "*Oleh karena itu, Akibatnya, Dengan demikian*",
+                "Therefore, As a result, Thus"
+              ],
+              [
+                "example",
+                "*Misalnya, Sebagai contoh*",
+                "For example, For instance"
+              ],
+              [
+                "sequence",
+                "*Mula-mula, Kemudian, Selanjutnya*",
+                "At first, Then, Next"
+              ],
+              [
+                "summing up",
+                "*Dengan kata lain, Singkatnya, Pada akhirnya*",
+                "In other words, In short, In the end"
+              ]
+            ]
+          },
+          "after": [
+            "⚠️ *Sehingga* and *karena* join clauses inside one sentence; they cannot open a sentence on their own. *Sehingga acaranya ditunda.* is a fragment. Write *Oleh karena itu, acaranya ditunda.* instead.",
+            "⚠️ *Daripada* is only for comparison (*lebih sering mengangguk daripada memahami*), never as a linking word meaning \"of\" or \"than that\"."
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Second dialogue — Catatan dari redaksi",
+      "intro": "Four days later. Mbak Dewi calls Sarah about the draft she sent in.",
+      "lines": [
+        {
+          "speaker": "Dewi:",
+          "text": "Mbak Sarah, esainya sudah saya baca. Secara keseluruhan bagus, dan kami akan memuatnya Sabtu depan.",
+          "id": "Sarah, I've read your essay. On the whole it's good, and we'll run it next Saturday.",
+          "literal": "Mbak Sarah, essay-the already I read. in-manner whole good, and we will publish-it Saturday front."
+        },
+        {
+          "speaker": "Sarah:",
+          "text": "Wah, lega saya. Tapi pasti ada catatannya, kan?",
+          "id": "Oh, what a relief. But there must be some notes, surely?",
+          "literal": "wow, relieved I. but certainly exist note-its, [kan]?"
+        },
+        {
+          "speaker": "Dewi:",
+          "text": "Ada tiga. Pertama, paragraf ketiga terlalu panjang. Ada dua gagasan di situ, soal pasar dan soal rapat desa. Sebaiknya dipecah.",
+          "id": "Three. First, the third paragraph is too long. There are two ideas in it, the market and the village meeting. It should be split.",
+          "literal": "exist three. first, paragraph third too long. exist two idea at there, matter market and matter meeting village. best be-split."
+        },
+        {
+          "speaker": "Sarah:",
+          "text": "Setuju. Saya sendiri merasa paragraf itu agak berat.",
+          "id": "Agreed. I felt that paragraph was a bit heavy myself.",
+          "literal": "agree. I self feel paragraph that rather heavy."
+        },
+        {
+          "speaker": "Dewi:",
+          "text": "Kedua, beberapa kalimat diawali “Dan” dan “Tapi”. Dalam ragam tulis, lebih baik “Selain itu” atau “Namun”.",
+          "id": "Second, several sentences begin with “And” and “But”. In written style, “Selain itu” or “Namun” is better.",
+          "literal": "second, several sentence be-begun “and” and “but”. in variety written, more good “besides that” or “however”."
+        },
+        {
+          "speaker": "Sarah:",
+          "text": "Itu kebiasaan dari bahasa Inggris. Yang ketiga?",
+          "id": "That's a habit from English. And the third?",
+          "literal": "that habit from language English. which third?"
+        },
+        {
+          "speaker": "Dewi:",
+          "text": "Judulnya. Redaktur kami mengusulkan “Bahasa yang Mengajari Saya Diam”.",
+          "id": "The title. Our editor suggests “The Language That Taught Me to Be Quiet”.",
+          "literal": "title-the. editor our propose “language which teach me silent”."
+        },
+        {
+          "speaker": "Sarah:",
+          "text": "Memang lebih memancing rasa ingin tahu. Tapi saya khawatir pembaca mengira saya disuruh diam.",
+          "id": "It's certainly more intriguing. But I'm worried readers will think somebody told me to shut up.",
+          "literal": "indeed more fish-for feeling want know. but I worried reader suppose I be-told silent."
+        },
+        {
+          "speaker": "Dewi:",
+          "text": "Ha-ha, benar juga. Kalau begitu, judul Mbak tetap, dan usulan redaktur jadi subjudul.",
+          "id": "Ha, fair point. In that case your title stays, and the editor's suggestion becomes the subtitle.",
+          "literal": "ha-ha, true also. if like-that, title Mbak remain, and proposal editor become subtitle."
+        },
+        {
+          "speaker": "Sarah:",
+          "text": "Jalan tengah yang bagus. Terima kasih atas masukannya, Mbak Dewi.",
+          "id": "A good compromise. Thank you for the feedback, Mbak Dewi.",
+          "literal": "road middle which good. thank you for input-the, Mbak Dewi."
+        }
+      ],
+      "notes": [
+        "**Memuat** — literally \"to load, contain\", and the standard verb for a newspaper publishing something: *Kompas memuat esainya*, *Esainya dimuat hari Sabtu*. *Menerbitkan* is used for books and whole publications.",
+        "**Secara keseluruhan** — \"on the whole\". *Secara* + noun or adjective makes an adverb phrase: *secara umum* (in general), *secara resmi* (officially), *secara pribadi* (personally). Editors love to open with praise *secara keseluruhan* before the notes.",
+        "**Pertama, kedua, yang ketiga** — Dewi numbers her points, which is how Indonesians give structured feedback. Sarah's *Yang ketiga?* (\"and the third one?\") uses *yang* to stand for the missing noun, *catatan*.",
+        "**Ragam tulis** — written register, as opposed to *ragam lisan* (spoken register). *Ragam* means \"variety\"; it is the same root as *beragam* and *keberagaman* from Unit 17.",
+        "**Memancing rasa ingin tahu** — \"to arouse curiosity\", literally \"to fish for the feeling of wanting to know\". *Memancing* (to fish) is used for provoking anything: *memancing emosi* (to provoke anger), *memancing diskusi*.",
+        "**Mengira** vs **berpikir.** *Mengira* is \"to suppose, assume\", usually wrongly: *Saya kira dia sudah pulang* (I thought he'd gone home, but he hadn't). *Pembaca mengira* is exactly the misunderstanding Sarah fears."
+      ],
+      "grammars": [
+        {
+          "title": "From spoken openers to written ones",
+          "body": [
+            "Speech happily starts sentences with *dan*, *tapi* or *makanya*. Written Indonesian replaces each with a full cohesion marker followed by a comma."
+          ],
+          "table": {
+            "head": [
+              "Spoken opener",
+              "Written opener",
+              "English"
+            ],
+            "rows": [
+              [
+                "*Dan…*",
+                "*Selain itu, …*",
+                "In addition, …"
+              ],
+              [
+                "*Tapi…*",
+                "*Namun, …*",
+                "However, …"
+              ],
+              [
+                "*Jadi…*",
+                "*Oleh karena itu, …*",
+                "Therefore, …"
+              ],
+              [
+                "*Makanya…*",
+                "*Itulah sebabnya…*",
+                "That is why…"
+              ],
+              [
+                "*Soalnya…*",
+                "*Hal itu disebabkan oleh…*",
+                "This is because of…"
+              ],
+              [
+                "*Terus…*",
+                "*Kemudian, …* / *Selanjutnya, …*",
+                "Then, … / Next, …"
+              ]
+            ]
+          },
+          "after": [
+            "*Tetapi* and *dan* are perfectly good inside a sentence: *Kalimatnya jernih, tetapi paragrafnya belum punya kalimat utama.* The rule is only about the first word after a full stop.",
+            "*Jadi* is acceptable in semi-formal writing and in speeches; in an essay or report, *oleh karena itu* or *dengan demikian* reads more deliberately."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "The shape of an opinion essay",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "An 800-word *esai opini* has three parts. The proportions below are what Indonesian editors expect, give or take a paragraph."
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Part",
+            "Share",
+            "What it does",
+            "Sample opening"
+          ],
+          "rows": [
+            [
+              "*pendahuluan*",
+              "about 15%",
+              "hooks the reader, states the issue",
+              "*Empat tahun lalu, saya hanya tahu dua kata.*"
+            ],
+            [
+              "*isi* (paragraph 1)",
+              "about 25%",
+              "first argument with example",
+              "*Pertama, bahasa Indonesia memaksa saya memperhatikan nada.*"
+            ],
+            [
+              "*isi* (paragraph 2)",
+              "about 25%",
+              "second argument",
+              "*Selain itu, bahasa ini mengajari saya menunggu.*"
+            ],
+            [
+              "*isi* (paragraph 3)",
+              "about 20%",
+              "counterpoint or complication",
+              "*Meskipun demikian, tidak semua diam itu setuju.*"
+            ],
+            [
+              "*penutup*",
+              "about 15%",
+              "*simpulan*, one idea that stays",
+              "*Pada akhirnya, belajar bahasa adalah belajar rendah hati.*"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "*Pendahuluan, isi, penutup* are the words teachers and editors use; you will also see *bagian awal, bagian inti, bagian akhir*. A good title (*judul*) is short, specific and has a verb or a surprise in it."
+        }
+      ]
+    },
+    {
+      "title": "Sarah's first paragraph, rebuilt",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Here is the paragraph after Lestari's advice: a mixed (*campuran*) paragraph that states the idea, supports it three times and restates it."
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Sentence",
+            "Role"
+          ],
+          "rows": [
+            [
+              "*Bahasa Indonesia mengajari saya satu hal yang tidak saya duga: mendengarkan.*",
+              "*kalimat utama*"
+            ],
+            [
+              "*Empat tahun lalu, di sebuah kantor di Jakarta, saya lebih sering mengangguk daripada memahami.*",
+              "*penjelas*: experience"
+            ],
+            [
+              "*Karena belum lancar, saya terpaksa memperhatikan nada, jeda, dan wajah lawan bicara.*",
+              "*penjelas*: cause"
+            ],
+            [
+              "*Dari situ saya belajar bahwa “iya” tidak selalu berarti setuju.*",
+              "*penjelas*: example"
+            ],
+            [
+              "*Kemudian saya sadar bahwa dalam bahasa Inggris pun saya jarang mendengarkan sesabar itu.*",
+              "*penjelas*: reflection"
+            ],
+            [
+              "*Dengan kata lain, bahasa baru membuat saya menjadi pendengar yang lebih baik.*",
+              "*kalimat penegas*"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "In English: “Indonesian taught me one thing I did not expect: listening. Four years ago, in an office in Jakarta, I nodded more often than I understood. Because I was not yet fluent, I had to pay attention to tone, pauses and the other person's face. From that I learnt that *iya* does not always mean yes. Then I realised that even in English I seldom listened so patiently. In other words, a new language made me a better listener.”"
+        }
+      ]
+    },
+    {
+      "title": "Wave review — Unit 17",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Cover the Indonesian column, read the English, and rebuild each sentence from memory."
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "English",
+            "Indonesian"
+          ],
+          "rows": [
+            [
+              "Early February? Oh, that's right on Lebaran. In 2030 Idul Fitri falls in early February.",
+              "*Awal Februari? Wah, Mbak, itu pas Lebaran. Tahun 2030 Idul Fitri jatuhnya awal Februari.*"
+            ],
+            [
+              "OK, we'll move the arrival to mid-February, after the collective leave days.",
+              "*Oke, kedatangan kita geser ke pertengahan Februari, setelah cuti bersama.*"
+            ],
+            [
+              "Then we'll move Bali to April. When's Waisak?",
+              "*Kalau begitu, Bali kita pindah ke April. Waisak kapan?*"
+            ],
+            [
+              "Miss Sarah, may I ask something a bit personal?",
+              "*Miss Sarah, boleh tanya yang agak pribadi?*"
+            ],
+            [
+              "Oh, sorry, Miss. Here it's normal, you know. It's even on our ID cards.",
+              "*Oh, maaf, Miss. Di sini kan biasa. Di KTP juga ada.*"
+            ]
+          ]
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "id": "esai",
+      "baca": "É-sai",
+      "en": "essay"
+    },
+    {
+      "id": "rubrik",
+      "baca": "RU-brik",
+      "en": "newspaper section, column"
+    },
+    {
+      "id": "tema",
+      "baca": "TÉ-ma",
+      "en": "theme"
+    },
+    {
+      "id": "judul",
+      "baca": "JU-dul",
+      "en": "title"
+    },
+    {
+      "id": "membacakan",
+      "baca": "muhm-ba-CA-kan",
+      "en": "to read aloud (for someone)"
+    },
+    {
+      "id": "ternyata",
+      "baca": "tuhr-NYA-ta",
+      "en": "it turns out"
+    },
+    {
+      "id": "jernih",
+      "baca": "juhr-NIH",
+      "en": "clear"
+    },
+    {
+      "id": "kalimat utama",
+      "baca": "KA-li-mat u-TA-ma",
+      "en": "topic sentence"
+    },
+    {
+      "id": "gagasan pokok",
+      "baca": "ga-GA-san PO-kok",
+      "en": "main idea"
+    },
+    {
+      "id": "kalimat penjelas",
+      "baca": "KA-li-mat puhn-juh-LAS",
+      "en": "supporting sentence"
+    },
+    {
+      "id": "deduktif",
+      "baca": "dé-DUK-tif",
+      "en": "deductive"
+    },
+    {
+      "id": "mendukung",
+      "baca": "muhn-DU-kung",
+      "en": "to support"
+    },
+    {
+      "id": "kenangan",
+      "baca": "kuh-NA-ngan",
+      "en": "memory, keepsake"
+    },
+    {
+      "id": "penghubung",
+      "baca": "puhng-HU-bung",
+      "en": "linking word, connector"
+    },
+    {
+      "id": "cenderung",
+      "baca": "cuhn-duh-RUNG",
+      "en": "to tend (to)"
+    },
+    {
+      "id": "mengulang",
+      "baca": "muh-NGU-lang",
+      "en": "to repeat"
+    },
+    {
+      "id": "simpulan",
+      "baca": "sim-PU-lan",
+      "en": "conclusion (of a text)"
+    },
+    {
+      "id": "ringkasan",
+      "baca": "ring-KA-san",
+      "en": "summary"
+    },
+    {
+      "id": "secara keseluruhan",
+      "baca": "suh-CA-ra kuh-suh-lu-RU-han",
+      "en": "on the whole"
+    },
+    {
+      "id": "memuat",
+      "baca": "muh-MU-at",
+      "en": "to publish (in a paper), contain"
+    },
+    {
+      "id": "dipecah",
+      "baca": "di-puh-CAH",
+      "en": "to be split"
+    },
+    {
+      "id": "ragam tulis",
+      "baca": "RA-gam TU-lis",
+      "en": "written register"
+    },
+    {
+      "id": "diawali",
+      "baca": "di-a-WA-li",
+      "en": "to be begun (with)"
+    },
+    {
+      "id": "redaktur",
+      "baca": "ré-DAK-tur",
+      "en": "(newspaper) editor"
+    },
+    {
+      "id": "memancing",
+      "baca": "muh-MAN-cing",
+      "en": "to fish; to provoke, arouse"
+    },
+    {
+      "id": "subjudul",
+      "baca": "sub-JU-dul",
+      "en": "subtitle"
+    }
+  ],
+  "exercises": [
+    {
+      "prompt": "Translate into Indonesian.",
+      "items": [
+        "One paragraph, one idea.",
+        "Put the main idea at the beginning of the paragraph.",
+        "This sentence does not support the main idea.",
+        "A conclusion is not a summary.",
+        "We will publish your essay next Saturday.",
+        "The third paragraph should be split."
+      ]
+    },
+    {
+      "prompt": "Fill in the gap with a cohesion marker or term.",
+      "items": [
+        "Program ini membantu mahasiswa. ____, program ini juga membantu sekolah. (in addition)",
+        "Hujan turun sepanjang hari. ____, acara dipindahkan ke dalam ruangan. (therefore)",
+        "Di Australia agama dianggap urusan pribadi. ____, di Indonesia agama tercantum di KTP. (conversely)",
+        "Banyak kata serapan berasal dari bahasa Belanda, ____ *kantor* dan *handuk*. (for example)",
+        "____, belajar bahasa adalah belajar mendengarkan. (in other words)",
+        "Dalam paragraf deduktif, kalimat ____ terletak di awal."
+      ]
+    },
+    {
+      "prompt": "Rewrite each sentence in written Indonesian, replacing the spoken opener.",
+      "items": [
+        "Dan programnya juga murah.",
+        "Tapi hasilnya belum maksimal.",
+        "Makanya kami menambah satu kelas.",
+        "Terus mahasiswa pulang ke Australia.",
+        "Jadi anggarannya harus dinaikkan.",
+        "Soalnya jadwalnya bentrok dengan Lebaran."
+      ]
+    },
+    {
+      "prompt": "Put the words in order.",
+      "items": [
+        "bukan / simpulan / ringkasan",
+        "dipecah / paragraf / sebaiknya / ketiga / itu",
+        "memuat / Sabtu / kami / depan / esainya / akan",
+        "kalimat / di / letak / awal / utama / paragraf",
+        "mengulang / cenderung / semuanya / saya",
+        "masukannya / atas / terima / kasih"
+      ]
+    }
+  ],
+  "answers": [
+    "Satu paragraf, satu gagasan. — Letakkan gagasan pokok di awal paragraf. — Kalimat ini tidak mendukung gagasan pokok. — Simpulan bukan ringkasan. — Kami akan memuat esai Anda Sabtu depan. — Paragraf ketiga sebaiknya dipecah.",
+    "Selain itu — Oleh karena itu — Sebaliknya — misalnya — Dengan kata lain — utama",
+    "Selain itu, programnya juga murah. — Namun, hasilnya belum maksimal. — Itulah sebabnya kami menambah satu kelas. — Kemudian, mahasiswa pulang ke Australia. — Oleh karena itu, anggarannya harus dinaikkan. — Hal itu disebabkan oleh jadwal yang bentrok dengan Lebaran.",
+    "Simpulan bukan ringkasan. — Paragraf ketiga itu sebaiknya dipecah. — Kami akan memuat esainya Sabtu depan. — Letak kalimat utama di awal paragraf. — Saya cenderung mengulang semuanya. — Terima kasih atas masukannya."
+  ]
+}

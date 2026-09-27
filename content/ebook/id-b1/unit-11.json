@@ -1,0 +1,695 @@
+{
+  "title": "In the news — how Indonesian journalists write and talk",
+  "title_target": "Desa kita masuk berita!",
+  "goal": "Read a local news article and a headline without getting lost, recognise the fixed vocabulary of reporting (*menurut, dilaporkan, pihak, terkait, sebanyak*), and answer a journalist's questions on the radio in clean, careful Indonesian.",
+  "bekal": [
+    "turn a clipped headline like *Warga Keluhkan Jalan Rusak* back into a full sentence",
+    "tell who said what with *menurut*, *mengatakan*, *menyatakan* and the faceless *dilaporkan*",
+    "give numbers the way the news does: *sebanyak dua belas rumah*, *mencapai Rp90 juta*, *tujuh di antaranya*"
+  ],
+  "dialogs": [
+    {
+      "title": "Dialogue — Berita tentang Sumberwangi",
+      "intro": "A Saturday morning in late April, two weeks after the flood. Sarah is having breakfast at Bu Ratna's homestay when Yoga rushes in, waving his phone: a regional news site has published a story about the village.",
+      "lines": [
+        {
+          "speaker": "Yoga:",
+          "text": "Mbak Sarah, Bu Ratna, desa kita masuk berita! Coba lihat judulnya.",
+          "id": "Sarah, Bu Ratna, our village is in the news! Look at the headline.",
+          "literal": "miss Sarah, Mrs Ratna, village we enter news! try see headline-its."
+        },
+        {
+          "speaker": "Sarah:",
+          "text": "“Pascabanjir, Warga Sumberwangi Gotong Royong Perbaiki Jembatan.” Kok kata kerjanya tanpa me-?",
+          "id": "“After the flood, Sumberwangi residents join forces to repair bridge.” Why is the verb missing its me-?",
+          "literal": "post-flood, residents Sumberwangi mutual-help repair bridge. [kok] word work-its without me-?"
+        },
+        {
+          "speaker": "Yoga:",
+          "text": "Judul berita memang begitu, Mbak. Hemat tempat. Isinya baru pakai kalimat lengkap.",
+          "id": "Headlines are just like that. It saves space. The article itself uses full sentences.",
+          "literal": "title news indeed like-that, miss. save place. content-its only-then use sentence complete."
+        },
+        {
+          "speaker": "Ratna:",
+          "text": "Nama saya disebut juga nggak, Mas Yoga?",
+          "id": "Am I mentioned as well, Yoga?",
+          "literal": "name my is-mentioned also not, brother Yoga?"
+        },
+        {
+          "speaker": "Yoga:",
+          "text": "Disebut, Bu! “Menurut Ratna (47), ketua kelompok homestay setempat, sebanyak dua belas rumah warga terdampak banjir.”",
+          "id": "You are! “According to Ratna, 47, head of the local homestay group, twelve residents' houses were affected by the flood.”",
+          "literal": "is-mentioned, Mrs! according-to Ratna (47), head group homestay local, as-many-as two ten house resident affected flood."
+        },
+        {
+          "speaker": "Ratna:",
+          "text": "Lho, umur saya kok ditulis? Nggak sopan itu.",
+          "id": "Hang on, why did they print my age? That's rude.",
+          "literal": "[lho], age my [kok] is-written? not polite that."
+        },
+        {
+          "speaker": "Sarah:",
+          "text": "Itu kebiasaan media, Bu. Koran di Australia juga sering begitu.",
+          "id": "That's just how the media do it. Newspapers in Australia often do the same.",
+          "literal": "that habit media, Mrs. newspaper in Australia also often like-that."
+        },
+        {
+          "speaker": "Yoga:",
+          "text": "Terus ada ini: “Pihak desa menyatakan perbaikan ditargetkan selesai bulan depan.”",
+          "id": "Then there's this: “The village authorities stated that repairs are targeted for completion next month.”",
+          "literal": "then exist this: side village state repair is-targeted finished month front."
+        },
+        {
+          "speaker": "Sarah:",
+          "text": "“Pihak desa” itu siapa? Pak Harun?",
+          "id": "Who exactly is “the village side”? Pak Harun?",
+          "literal": "side village that who? Mr Harun?"
+        },
+        {
+          "speaker": "Ratna:",
+          "text": "Ya Pak Harun, perangkat desa, semuanya. Wartawan suka pakai kata itu kalau malas menyebut nama.",
+          "id": "Pak Harun, the village officials, all of them. Journalists like that word when they can't be bothered to name names.",
+          "literal": "yes Mr Harun, apparatus village, all-of-it. journalist like use word that if lazy mention name."
+        },
+        {
+          "speaker": "Yoga:",
+          "text": "Nah, yang ini agak serem: “Kerugian akibat banjir dilaporkan mencapai Rp150 juta.”",
+          "id": "Now this one's a bit scary: “Losses from the flood are reported to have reached 150 million rupiah.”",
+          "literal": "[nah], which this rather scary: loss result flood is-reported reach Rp150 million."
+        },
+        {
+          "speaker": "Sarah:",
+          "text": "Dilaporkan siapa? Angkanya tidak sama dengan data kami.",
+          "id": "Reported by whom? That figure doesn't match our data.",
+          "literal": "is-reported who? number-the not same with data our."
+        },
+        {
+          "speaker": "Ratna:",
+          "text": "Wartawannya kemarin tanya ke saya, Mbak. Saya cuma bilang “kira-kira”, kok.",
+          "id": "The reporter asked me yesterday. I only said “roughly”, honestly.",
+          "literal": "journalist-the yesterday ask to me, miss. I only say roughly, [kok]."
+        },
+        {
+          "speaker": "Sarah:",
+          "text": "Ya sudah. Nanti saya kirim klarifikasi terkait angka itu ke redaksinya.",
+          "id": "Oh well. I'll send the editors a clarification about that figure later.",
+          "literal": "yes already. later I send clarification related number that to editorial-office-its."
+        },
+        {
+          "speaker": "Yoga:",
+          "text": "Siap, Mbak. Tapi judulnya keren, kan? Kita bisa viral lagi!",
+          "id": "Right you are. But the headline's cool, isn't it? We could go viral again!",
+          "literal": "ready, miss. but title-its cool, [kan]? we can viral again!"
+        }
+      ],
+      "notes": [
+        "**Headlines have their own grammar.** Indonesian headlines drop the *me-* prefix (*Perbaiki*, not *Memperbaiki*), skip *yang* and *telah*, and capitalise every major word. It is the same economy that makes English write “Residents Repair Bridge”. Read a headline by mentally putting the prefix back: *perbaiki → memperbaiki*.",
+        "**Pascabanjir** — *pasca-* means “post-, after” and in standard spelling is written joined to the next word: *pascabanjir, pascapanen, pascasarjana* (postgraduate). You will also see it separated by a hyphen before a capital (*pasca-Lebaran*). In speech people simply say *setelah banjir*.",
+        "**Ratna (47)** — Indonesian news gives a person's age in brackets straight after the name, and often drops titles like *Bu* or *Pak*. It is not rude in print, whatever Bu Ratna thinks; saying someone's bare name to their face would be.",
+        "**Pihak** literally means “side, party”, and newsrooms use it for any institution that says something: *pihak desa* (the village authorities), *pihak kepolisian* (the police), *pihak sekolah* (the school), *pihak terkait* (the relevant parties). It lets a reporter quote an organisation without naming a person.",
+        "**Dilaporkan mencapai** — “is reported to reach”. *Dilaporkan*, *disebutkan* and *diperkirakan* are passive with no doer, which is precisely their point: the reporter does not say who reported it. Sarah's *Dilaporkan siapa?* is the right reflex for any careful reader.",
+        "**Serem** is the spoken form of *seram* (creepy, scary); *keren* is “cool”; *viral* has been borrowed straight from English. *Redaksi* is the editorial office of a paper or site — the place you send a *klarifikasi* or a *hak jawab* (right of reply)."
+      ],
+      "grammars": [
+        {
+          "title": "Reading headlines: put the prefixes back",
+          "body": [
+            "A headline is a full sentence with the grammar squeezed out. The verb loses its *me-*, the article words vanish, and a comma often replaces “after” or “in”. Rebuild it and it becomes ordinary Indonesian."
+          ],
+          "table": {
+            "head": [
+              "Headline",
+              "Full sentence",
+              "English"
+            ],
+            "rows": [
+              [
+                "*Warga Keluhkan Jalan Rusak*",
+                "*Warga mengeluhkan jalan yang rusak.*",
+                "Residents complain about damaged road"
+              ],
+              [
+                "*Polisi Amankan Dua Pencuri*",
+                "*Polisi mengamankan dua pencuri.*",
+                "Police arrest two thieves"
+              ],
+              [
+                "*Harga Cabai Naik Jelang Lebaran*",
+                "*Harga cabai naik menjelang Lebaran.*",
+                "Chilli prices rise ahead of Lebaran"
+              ],
+              [
+                "*Bupati Resmikan Pasar Baru*",
+                "*Bupati meresmikan pasar baru.*",
+                "Regent opens new market"
+              ],
+              [
+                "*Tiga Rumah Rusak Diterjang Banjir*",
+                "*Tiga rumah rusak karena diterjang banjir.*",
+                "Three houses damaged by flood"
+              ],
+              [
+                "*Pascabanjir, Warga Gotong Royong*",
+                "*Setelah banjir, warga bergotong royong.*",
+                "After flood, residents pull together"
+              ]
+            ]
+          },
+          "after": [
+            "⚠️ *Amankan / diamankan* — “to make safe” — is the polite police word for arresting someone. *Tiga orang diamankan* means three people were taken into custody, not rescued.",
+            "*Jelang* is the headline form of *menjelang* (“ahead of, approaching”), and *terjang* (to strike, to sweep away) is a favourite verb for floods, storms and even price rises."
+          ]
+        },
+        {
+          "title": "Who said it: reporting verbs",
+          "body": [
+            "News Indonesian is careful about sources, and each reporting verb has a slightly different weight. *Menurut* needs no verb at all and is the easiest to use."
+          ],
+          "table": {
+            "head": [
+              "Indonesian",
+              "Weight",
+              "Example"
+            ],
+            "rows": [
+              [
+                "*menurut X*",
+                "according to X",
+                "*Menurut Pak Harun, jembatan selesai bulan ini.*"
+              ],
+              [
+                "*X mengatakan (bahwa)*",
+                "X said (neutral)",
+                "*Ia mengatakan warga sudah siap.*"
+              ],
+              [
+                "*X menyatakan*",
+                "X stated (official)",
+                "*Pihak desa menyatakan perbaikan hampir selesai.*"
+              ],
+              [
+                "*X menjelaskan*",
+                "X explained",
+                "*Dr. Lestari menjelaskan penyebab banjir.*"
+              ],
+              [
+                "*X mengaku*",
+                "X admitted, claimed",
+                "*Pelaku mengaku menyesal.*"
+              ],
+              [
+                "*dilaporkan*",
+                "it is reported (no source)",
+                "*Dua orang dilaporkan hilang.*"
+              ],
+              [
+                "*diduga*",
+                "is suspected, allegedly",
+                "*Kebakaran diduga akibat korsleting.*"
+              ]
+            ]
+          },
+          "after": [
+            "In news prose the pronoun is *ia* rather than *dia*: *Ia mengatakan…*. Both mean “he/she”; *ia* simply sounds written.",
+            "💬 In conversation all of this collapses into *katanya* and *bilang*: *Katanya kerugiannya 150 juta* — “apparently the losses were 150 million.”"
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Second dialogue — Wawancara di radio",
+      "intro": "Three days later Sarah is a guest on a morning talk show at a Magelang community radio station. The host, Mas Aji, has read the same article.",
+      "lines": [
+        {
+          "speaker": "Aji:",
+          "text": "Pendengar setia, pagi ini kami kedatangan tamu dari Desa Sumberwangi, Mbak Sarah. Selamat pagi, Mbak.",
+          "id": "Dear listeners, this morning we have a guest from Sumberwangi village, Sarah. Good morning.",
+          "literal": "listener loyal, morning this we are-come-to guest from village Sumberwangi, miss Sarah. safe morning, miss."
+        },
+        {
+          "speaker": "Sarah:",
+          "text": "Selamat pagi, Mas Aji, dan selamat pagi para pendengar.",
+          "id": "Good morning, Aji, and good morning to all the listeners.",
+          "literal": "safe morning, brother Aji, and safe morning [plural] listener."
+        },
+        {
+          "speaker": "Aji:",
+          "text": "Mbak, beredar kabar bahwa kerugian banjir mencapai seratus lima puluh juta. Benar begitu?",
+          "id": "There's a report going round that flood losses reached a hundred and fifty million. Is that right?",
+          "literal": "miss, circulate news that loss flood reach one-hundred five ten million. true like-that?"
+        },
+        {
+          "speaker": "Sarah:",
+          "text": "Angka itu perlu diluruskan. Menurut pendataan kami, kerugiannya sekitar sembilan puluh juta rupiah.",
+          "id": "That figure needs correcting. According to our data collection, the losses are around ninety million rupiah.",
+          "literal": "number that need be-straightened. according-to data-collection our, loss-the around nine ten million rupiah."
+        },
+        {
+          "speaker": "Aji:",
+          "text": "Lalu bagaimana dengan rumah warga yang terdampak?",
+          "id": "And what about the residents' houses that were affected?",
+          "literal": "then how with house resident which affected?"
+        },
+        {
+          "speaker": "Sarah:",
+          "text": "Sebanyak dua belas rumah rusak ringan, dan tujuh di antaranya sudah selesai diperbaiki.",
+          "id": "Twelve houses suffered minor damage, and seven of them have already been repaired.",
+          "literal": "as-many-as two ten house damaged light, and seven among-them already finished be-repaired."
+        },
+        {
+          "speaker": "Aji:",
+          "text": "Apakah ada bantuan dari pihak pemerintah kabupaten?",
+          "id": "Has there been any help from the regency government?",
+          "literal": "whether exist help from side government regency?"
+        },
+        {
+          "speaker": "Sarah:",
+          "text": "Terkait bantuan, sebaiknya ditanyakan langsung kepada pihak desa. Saya tidak berwenang menjawab.",
+          "id": "Regarding aid, it's best to ask the village authorities directly. I'm not in a position to answer.",
+          "literal": "related help, best-it be-asked directly to side village. I not authorised answer."
+        },
+        {
+          "speaker": "Aji:",
+          "text": "Baik. Terakhir, kapan desa wisata Sumberwangi siap menerima tamu lagi?",
+          "id": "Fine. Finally, when will Sumberwangi's tourist village be ready to welcome visitors again?",
+          "literal": "good. last, when village tourism Sumberwangi ready receive guest again?"
+        },
+        {
+          "speaker": "Sarah:",
+          "text": "Kalau tidak ada halangan, bulan depan. Kami tunggu kedatangan Bapak-Ibu sekalian!",
+          "id": "If all goes well, next month. We look forward to seeing you all!",
+          "literal": "if not exist obstacle, month front. we wait arrival Sir-Madam all!"
+        },
+        {
+          "speaker": "Aji:",
+          "text": "Terima kasih, Mbak Sarah. Pendengar, jangan ke mana-mana, kami kembali setelah jeda berikut.",
+          "id": "Thank you, Sarah. Listeners, stay tuned, we'll be back after the break.",
+          "literal": "receive love, miss Sarah. listener, don't to where-where, we return after pause following."
+        }
+      ],
+      "notes": [
+        "**Kami kedatangan tamu** — *kedatangan* is a *ke-an* adversative-style verb meaning “to receive a visit from”: “we have been come-to by a guest”. It is the standard way hosts open: *Hari ini kami kedatangan tamu istimewa.*",
+        "**Para pendengar** — *para* marks a plural group of people and is formal: *para pendengar, para tamu, para peserta*. Never double it with reduplication: ⚠️ *para pendengar-pendengar* is a classic error even among Indonesians.",
+        "**Beredar kabar bahwa…** — “word is going round that…”. *Beredar* (to circulate) is how journalists introduce a rumour without endorsing it. *Kabar* is news in the everyday sense; *berita* is news as a published item.",
+        "**Perlu diluruskan** — literally “needs to be straightened”. *Meluruskan* is the gentle, face-saving way to correct a public error: nobody is accused of lying, a line is just being made straight again.",
+        "**Saya tidak berwenang menjawab** — “I don't have the authority to answer.” This is Sarah declining politely and passing the question to the right *pihak*. It is a useful sentence at any press moment, and much safer than *Saya tidak tahu*.",
+        "**Jangan ke mana-mana** — “don't go anywhere”, the fixed radio and TV phrase before an ad break. *Kalau tidak ada halangan* (“if there is no obstacle”) is the formal twin of *insyaallah* for future plans."
+      ],
+      "grammars": [
+        {
+          "title": "Counting the way the news counts",
+          "body": [
+            "News Indonesian rarely just puts a number in front of a noun. It frames it with a quantity word that makes the sentence sound measured and official."
+          ],
+          "table": {
+            "head": [
+              "Word",
+              "Meaning",
+              "Example"
+            ],
+            "rows": [
+              [
+                "*sebanyak*",
+                "a total of (countable)",
+                "*Sebanyak 12 rumah rusak.*"
+              ],
+              [
+                "*sejumlah*",
+                "a number of, several",
+                "*Sejumlah warga mengungsi.*"
+              ],
+              [
+                "*mencapai*",
+                "reaching",
+                "*Kerugian mencapai Rp90 juta.*"
+              ],
+              [
+                "*sekitar / kurang lebih*",
+                "around, approximately",
+                "*sekitar 300 wisatawan*"
+              ],
+              [
+                "*lebih dari*",
+                "more than",
+                "*lebih dari 50 hektare sawah*"
+              ],
+              [
+                "*X di antaranya*",
+                "X of them",
+                "*tujuh di antaranya*"
+              ],
+              [
+                "*hingga*",
+                "up to; until",
+                "*hingga 40 persen*"
+              ]
+            ]
+          },
+          "after": [
+            "*Sebanyak* sits at the front of the sentence and is followed by the number; in speech you would simply drop it: *Dua belas rumah rusak.*",
+            "Money is written *Rp90 juta* or *Rp90.000.000* — a full stop, not a comma, separates thousands, and a comma marks decimals: *2,5 juta* is two and a half million."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "The newsroom's favourite words",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "A small set of words turns up in almost every Indonesian news item. Learn these and a local news site stops looking like a wall of text."
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Indonesian",
+            "English",
+            "Typical phrase"
+          ],
+          "rows": [
+            [
+              "*terkait*",
+              "related to, regarding",
+              "*terkait kasus itu*"
+            ],
+            [
+              "*setempat*",
+              "local",
+              "*warga setempat*"
+            ],
+            [
+              "*terdampak*",
+              "affected",
+              "*wilayah terdampak banjir*"
+            ],
+            [
+              "*sementara itu*",
+              "meanwhile",
+              "opens a new paragraph"
+            ],
+            [
+              "*hingga kini / hingga berita ini diturunkan*",
+              "so far / at the time of writing",
+              "*hingga kini belum ada korban*"
+            ],
+            [
+              "*korban*",
+              "victim, casualty",
+              "*tidak ada korban jiwa*"
+            ],
+            [
+              "*mengungsi*",
+              "to evacuate, take refuge",
+              "*warga mengungsi ke balai desa*"
+            ],
+            [
+              "*meresmikan*",
+              "to officially open",
+              "*Bupati meresmikan jembatan*"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "*Tidak ada korban jiwa* — “no loss of life” — is the phrase every reader looks for first in a disaster report. *Korban* on its own can mean anyone affected, so *korban banjir* includes people whose kitchens were flooded."
+        }
+      ]
+    },
+    {
+      "title": "ADIKSIMBA: how a news story is built",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Indonesian journalism students learn the English “5W + 1H” under a memorable acronym: **ADIKSIMBA** — *Apa, DI mana, Kapan, SIapa, Mengapa, BAgaimana*. A good first paragraph (*teras berita*, the lead) answers most of them."
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Question",
+            "In the Sumberwangi article"
+          ],
+          "rows": [
+            [
+              "*Apa?* (what)",
+              "*warga memperbaiki jembatan*"
+            ],
+            [
+              "*Di mana?* (where)",
+              "*Desa Sumberwangi, Kabupaten Magelang*"
+            ],
+            [
+              "*Kapan?* (when)",
+              "*Sabtu (22/4)*, the day of the clean-up"
+            ],
+            [
+              "*Siapa?* (who)",
+              "*warga, kelompok homestay, pihak desa*"
+            ],
+            [
+              "*Mengapa?* (why)",
+              "*jembatan rusak diterjang banjir*"
+            ],
+            [
+              "*Bagaimana?* (how)",
+              "*secara gotong royong*, with volunteer labour"
+            ]
+          ]
+        },
+        {
+          "type": "kotak",
+          "title": "Small print worth decoding",
+          "items": [
+            "*Sabtu (22/4)* — the day, then the date as day/month in brackets: Saturday 22 April.",
+            "*(sar)*, *(ant)* at the end — the reporter's initials or the news agency (*Antara*).",
+            "*Baca juga:* — “read also”, a link to a related story in the middle of an article."
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Wave review — Unit 9",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Cover the Indonesian column, read the English, and rebuild each sentence from memory."
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "English",
+            "Indonesian"
+          ],
+          "rows": [
+            [
+              "I'm so sorry. And the heater was only repaired last week, too.",
+              "*Mohon maaf, Pak. Padahal pemanasnya baru diperbaiki minggu lalu.*"
+            ],
+            [
+              "Oh dear, as for that, even though we've had a word with it, that rooster just won't be quiet.",
+              "*Waduh, kalau itu, Pak, meskipun sudah kami tegur, ayamnya tetap tidak mau diam.*"
+            ],
+            [
+              "And we won't charge you for tonight.",
+              "*Kami juga tidak menagih biaya untuk malam ini, Pak.*"
+            ],
+            [
+              "Five, actually. While I was waiting for my soto, you know.",
+              "*Lima menit, malah. Sambil nunggu soto, to.*"
+            ],
+            [
+              "Too late. Pak Hendra knows already; he's even sent his congratulations.",
+              "*Terlambat. Pak Hendra sudah tahu, bahkan sudah kirim ucapan selamat.*"
+            ]
+          ]
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "id": "berita",
+      "baca": "buh-RI-ta",
+      "en": "news, news item"
+    },
+    {
+      "id": "judul",
+      "baca": "JU-dul",
+      "en": "title, headline"
+    },
+    {
+      "id": "pascabanjir",
+      "baca": "pas-ca-BAN-jir",
+      "en": "after the flood"
+    },
+    {
+      "id": "gotong royong",
+      "baca": "GO-tong RO-yong",
+      "en": "communal work, mutual help"
+    },
+    {
+      "id": "hemat",
+      "baca": "HÉ-mat",
+      "en": "economical; to save"
+    },
+    {
+      "id": "menurut",
+      "baca": "muh-NU-rut",
+      "en": "according to"
+    },
+    {
+      "id": "setempat",
+      "baca": "suh-tuhm-PAT",
+      "en": "local"
+    },
+    {
+      "id": "sebanyak",
+      "baca": "suh-BA-nyak",
+      "en": "a total of, as many as"
+    },
+    {
+      "id": "terdampak",
+      "baca": "tuhr-DAM-pak",
+      "en": "affected"
+    },
+    {
+      "id": "kebiasaan",
+      "baca": "kuh-bi-a-SA-an",
+      "en": "habit, custom"
+    },
+    {
+      "id": "pihak",
+      "baca": "PI-hak",
+      "en": "side, party, authorities"
+    },
+    {
+      "id": "menyatakan",
+      "baca": "muh-nya-TA-kan",
+      "en": "to state, declare"
+    },
+    {
+      "id": "perangkat desa",
+      "baca": "puh-RANG-kat DÉ-sa",
+      "en": "village officials"
+    },
+    {
+      "id": "wartawan",
+      "baca": "war-TA-wan",
+      "en": "journalist, reporter"
+    },
+    {
+      "id": "kerugian",
+      "baca": "kuh-ru-GI-an",
+      "en": "loss, damage (financial)"
+    },
+    {
+      "id": "dilaporkan",
+      "baca": "di-la-POR-kan",
+      "en": "is reported"
+    },
+    {
+      "id": "mencapai",
+      "baca": "muhn-CA-pai",
+      "en": "to reach"
+    },
+    {
+      "id": "klarifikasi",
+      "baca": "kla-ri-fi-KA-si",
+      "en": "clarification"
+    },
+    {
+      "id": "terkait",
+      "baca": "tuhr-KAIT",
+      "en": "related to, regarding"
+    },
+    {
+      "id": "redaksi",
+      "baca": "ruh-DAK-si",
+      "en": "editorial office, editors"
+    },
+    {
+      "id": "pendengar",
+      "baca": "puhn-duh-NGAR",
+      "en": "listener"
+    },
+    {
+      "id": "beredar",
+      "baca": "buh-ruh-DAR",
+      "en": "to circulate"
+    },
+    {
+      "id": "diluruskan",
+      "baca": "di-lu-RUS-kan",
+      "en": "to be corrected, set straight"
+    },
+    {
+      "id": "di antaranya",
+      "baca": "di an-ta-RA-nya",
+      "en": "among them, of which"
+    },
+    {
+      "id": "berwenang",
+      "baca": "buhr-wuh-NANG",
+      "en": "to have authority"
+    },
+    {
+      "id": "halangan",
+      "baca": "ha-LA-ngan",
+      "en": "obstacle, hindrance"
+    }
+  ],
+  "exercises": [
+    {
+      "prompt": "Translate into Indonesian.",
+      "items": [
+        "Our village is in the news.",
+        "According to the village head, the bridge will be finished next month.",
+        "A total of twelve houses were affected by the flood.",
+        "The losses are reported to have reached ninety million rupiah.",
+        "I will send a clarification regarding that figure.",
+        "Don't go anywhere!"
+      ]
+    },
+    {
+      "prompt": "Fill in the gap.",
+      "items": [
+        "____ Pak Harun, perbaikan selesai akhir bulan. (according to)",
+        "Kerugian ____ mencapai Rp90 juta. (is reported)",
+        "____ dua belas rumah rusak ringan. (a total of)",
+        "Pertanyaan ____ bantuan sebaiknya ditanyakan kepada pihak desa. (regarding)",
+        "Dua belas rumah rusak, tujuh di ____ sudah diperbaiki. (among them)",
+        "Menurut warga ____, jalan itu sudah lama rusak. (local)"
+      ]
+    },
+    {
+      "prompt": "Rewrite each headline as a full, ordinary sentence.",
+      "items": [
+        "Warga Keluhkan Jalan Rusak",
+        "Polisi Amankan Dua Pencuri Motor",
+        "Harga Cabai Naik Jelang Lebaran",
+        "Bupati Resmikan Jembatan Baru",
+        "Desa Wisata Sumberwangi Siap Terima Tamu",
+        "Mahasiswa UGM Bantu Warga Pascabanjir"
+      ]
+    },
+    {
+      "prompt": "Put the words in the right order.",
+      "items": [
+        "masuk / desa / berita / kita",
+        "rumah / sebanyak / rusak / dua belas / ringan",
+        "mencapai / kerugian / juta / dilaporkan / sembilan puluh",
+        "pihak / ditanyakan / sebaiknya / desa / kepada",
+        "perlu / angka / diluruskan / itu",
+        "ke / jangan / mana-mana"
+      ]
+    }
+  ],
+  "answers": [
+    "Desa kita masuk berita. — Menurut kepala desa, jembatan itu akan selesai bulan depan. — Sebanyak dua belas rumah terdampak banjir. — Kerugian dilaporkan mencapai sembilan puluh juta rupiah. — Saya akan mengirim klarifikasi terkait angka itu. — Jangan ke mana-mana!",
+    "Menurut — dilaporkan — Sebanyak — terkait — antaranya — setempat",
+    "Warga mengeluhkan jalan yang rusak. — Polisi mengamankan dua pencuri motor. — Harga cabai naik menjelang Lebaran. — Bupati meresmikan jembatan baru. — Desa wisata Sumberwangi siap menerima tamu. — Mahasiswa UGM membantu warga setelah banjir.",
+    "Desa kita masuk berita. — Sebanyak dua belas rumah rusak ringan. — Kerugian dilaporkan mencapai sembilan puluh juta. — Sebaiknya ditanyakan kepada pihak desa. — Angka itu perlu diluruskan. — Jangan ke mana-mana."
+  ]
+}
