@@ -1,0 +1,664 @@
+{
+ "title": "Tajuk rencana dan angka — bahasa data",
+ "title_target": "บทบรรณาธิการกับตัวเลข — Bòt ban-naa-thí-kaan kàp tua-lêek",
+ "goal": "Membaca tajuk rencana (บทบรรณาธิการ) tentang energi dan memisahkan data dari opini, lalu menyampaikan angka program dalam bahasa data yang baku — *ร้อยละ, เท่าตัว, เฉลี่ย, สัดส่วน, แนวโน้ม, คิดเป็น* — serta menafsirkan grafik: naik, turun, tertinggi, stabil.",
+ "bekal": [
+  "memakai ร้อยละ, เท่าตัว, เฉลี่ย, สัดส่วน, คิดเป็น dalam kalimat tulis",
+  "membedakan kalimat data dan kalimat opini dalam tajuk rencana",
+  "menjelaskan grafik: แนวโน้ม, เพิ่มขึ้น, ลดลง, สูงสุด, ต่ำสุด, คงที่",
+  "membaca angka desimal dan angka besar dengan benar"
+ ],
+ "dialogs": [
+  {
+   "title": "บทสนทนา — Tajuk rencana pagi ini",
+   "intro": "Senin, 2 Juli 2029, kantor program di Chula. Sebuah harian berbahasa Thai memuat tajuk rencana tentang masa depan listrik Thailand, dan Phi Phim meminta Budi membacanya sebelum rapat siang. Perhatikan kata-kata angka yang tak pernah kamu dengar di warung — dan bagaimana tajuk rencana menyusun data sebelum opini.",
+   "lines": [
+    {
+     "speaker": "พิมพ์ชนก:",
+     "text": "[อ่าน|Àan][บท|bòt][บรรณาธิการ|ban-naa-thí-kaan][เช้า|cháao][นี้|níi][หรือยัง|rǔue-yang][คะ|khá]",
+     "id": "Sudah baca tajuk rencana pagi ini?",
+     "literal": "baca — naskah — editor — pagi — ini — atau-belum — (sopan)?"
+    },
+    {
+     "speaker": "บูดี:",
+     "text": "[อ่าน|Àan][แล้ว|láaeo][ครับ|khráp] [เขา|Khǎo][เขียน|khǐan][ว่า|wâa][ไฟฟ้า|fai-fáa][ของ|khǎawng][ไทย|thai][เกิน|kooen][ครึ่ง|khrûeng][มาจาก|maa-jàak][ก๊าซ|káat][ธรรมชาติ|tham-má-châat]",
+     "id": "Sudah. Katanya lebih dari separuh listrik Thailand berasal dari gas alam.",
+     "literal": "baca — sudah — (sopan). mereka — tulis — bahwa — listrik — milik — Thai — lebih — separuh — datang-dari — gas — alam."
+    },
+    {
+     "speaker": "พิมพ์ชนก:",
+     "text": "[ใน|Nai][บทความ|bòt-khwaam][ไม่|mâi][ใช้|chái][คำ|kham][ว่า|wâa][เปอร์เซ็นต์|poe-sen] [แต่|tàae][ใช้|chái][ว่า|wâa][ร้อยละ|ráwy-lá][ค่ะ|khâ]",
+     "id": "Dalam artikel tidak dipakai kata เปอร์เซ็นต์, tapi ร้อยละ.",
+     "literal": "di — artikel — tidak — pakai — kata — bahwa — persen — tetapi — pakai — bahwa — per-seratus — (sopan)."
+    },
+    {
+     "speaker": "บูดี:",
+     "text": "[ภาษา|Phaa-sǎa][เขียน|khǐan][อีก|ìik][แล้ว|láaeo][ครับ|khráp] [เหมือน|Mǔuean][ตอน|tawn][ที่|thîi][ผม|phǒm][เขียน|khǐan][อีเมล|ii-meeo][ถึง|thǔeng][เขต|khèet][เลย|loei]",
+     "id": "Bahasa tulis lagi. Persis seperti waktu saya menulis surel ke dinas pendidikan.",
+     "literal": "bahasa — tulis — lagi — sudah — (sopan). seperti — waktu — yang — saya — tulis — surel — sampai — dinas — sekali."
+    },
+    {
+     "speaker": "พิมพ์ชนก:",
+     "text": "[ประโยค|Prà-yòok][นี้|níi][สำคัญ|sǎm-khan][ค่ะ|khâ] [ใน|Nai][สิบ|sìp][ปี|pii][ที่ผ่านมา|thîi-phàan-maa][การ|kaan][ติดตั้ง|tìt-tâng][โซลาร์|soo-laa][บน|bon][หลังคา|lǎng-khaa][เพิ่มขึ้น|phôoem-khûen][หลาย|lǎai][เท่าตัว|thâo-tua]",
+     "id": "Kalimat ini penting: \"Dalam sepuluh tahun terakhir, pemasangan panel surya di atap meningkat beberapa kali lipat.\"",
+     "literal": "kalimat — ini — penting — (sopan). dalam — sepuluh — tahun — yang-lewat — pemasangan — surya — di-atas — atap — bertambah — beberapa — kali-lipat."
+    },
+    {
+     "speaker": "บูดี:",
+     "text": "[เท่าตัว|Thâo-tua][แปลว่า|plaae-wâa][สองเท่า|sǎawng thâo][ใช่ไหม|châi-mǎi][ครับ|khráp]",
+     "id": "เท่าตัว artinya dua kali, kan?",
+     "literal": "kali-lipat — artinya — dua-kali — benar-kan — (sopan)?"
+    },
+    {
+     "speaker": "พิมพ์ชนก:",
+     "text": "[เพิ่มขึ้น|Phôoem-khûen][หนึ่ง|nùeng][เท่าตัว|thâo-tua][คือ|khue][จาก|jàak][สิบ|sìp][เป็น|pen][ยี่สิบ|yîi-sìp][ค่ะ|khâ]",
+     "id": "Naik satu kali lipat artinya dari sepuluh menjadi dua puluh.",
+     "literal": "bertambah — satu — kali-lipat — adalah — dari — sepuluh — jadi — dua-puluh — (sopan)."
+    },
+    {
+     "speaker": "บูดี:",
+     "text": "[แล้ว|Láaeo][ประโยค|prà-yòok][สุดท้าย|sùt-tháai][ที่ว่า|thîi-wâa][ถึงเวลา|thǔeng wee-laa][แล้ว|láaeo][ที่|thîi][ภาครัฐ|phâak-rát][ต้อง|tâwng][ทบทวน|thóp-thuan][นโยบาย|ná-yoo-baai][ล่ะ|lâ][ครับ|khráp]",
+     "id": "Lalu kalimat terakhir, \"Sudah tiba waktunya pemerintah meninjau ulang kebijakan\"?",
+     "literal": "lalu — kalimat — terakhir — yang-berbunyi — sampai — waktu — sudah — yang — sektor-negara — harus — tinjau — kebijakan — (tanya) — (sopan)?"
+    },
+    {
+     "speaker": "พิมพ์ชนก:",
+     "text": "[นั่น|Nân][คือ|khue][ความเห็น|khwaam-hěn][ของ|khǎawng][กอง|kawng][บรรณาธิการ|ban-naa-thí-kaan][ค่ะ|khâ] [ไม่ใช่|Mâi châi][ข้อมูล|khâw-muun]",
+     "id": "Itu pendapat dewan redaksi. Bukan data.",
+     "literal": "itu — adalah — pendapat — milik — dewan — editor — (sopan). bukan — data."
+    },
+    {
+     "speaker": "บูดี:",
+     "text": "[ทำไม|Tham-mai][ไม่|mâi][ขึ้นต้น|khûen-tôn][ด้วย|dûai][ความเห็น|khwaam-hěn][เลย|loei][ครับ|khráp]",
+     "id": "Kenapa tidak langsung dibuka dengan pendapat?",
+     "literal": "mengapa — tidak — mulai — dengan — pendapat — langsung — (sopan)?"
+    },
+    {
+     "speaker": "พิมพ์ชนก:",
+     "text": "[บท|Bòt][บรรณาธิการ|ban-naa-thí-kaan][ให้|hâi][ข้อมูล|khâw-muun][ก่อน|kàwn] [แล้ว|láaeo][ค่อย|khâwy][เสนอ|sà-nǒe][ความเห็น|khwaam-hěn][ค่ะ|khâ]",
+     "id": "Tajuk rencana memberi data dulu, baru menyampaikan pendapat.",
+     "literal": "naskah — editor — beri — data — dulu — lalu — baru — ajukan — pendapat — (sopan)."
+    },
+    {
+     "speaker": "บูดี:",
+     "text": "[งั้น|Ngán][รายงาน|raai-ngaan][ของ|khǎawng][โครงการ|khroong-kaan][เรา|rao][ก็|kâw][ควร|khuan][ให้|hâi][ตัวเลข|tua-lêek][นำ|nam][หน้า|nâa][เหมือนกัน|mǔuean-kan][ครับ|khráp]",
+     "id": "Kalau begitu laporan program kita juga sebaiknya membiarkan angka yang berbicara lebih dulu.",
+     "literal": "kalau-begitu — laporan — milik — program — kita — pun — sebaiknya — biar — angka — pimpin — depan — sama — (sopan)."
+    }
+   ],
+   "notes": [
+    "**บทบรรณาธิการ bòt ban-naa-thí-kaan = tajuk rencana**; *บรรณาธิการ* = editor (dari *บรรณ* \"tulisan\" + *อธิการ* \"pengurus\" — ingat awalan *อธิ-* di unit 6). *กองบรรณาธิการ* = dewan redaksi. Tajuk rencana Thai umumnya tanpa nama penulis dan mewakili sikap koran.",
+    "**ร้อยละ ráwy-lá untuk tulisan, เปอร์เซ็นต์ untuk percakapan.** Susunannya terbalik dari bahasa Indonesia: *ร้อยละ 35* (\"per seratus, 35\") tetapi *35 เปอร์เซ็นต์*. Di laporan resmi Thai, *ร้อยละ* hampir wajib.",
+    "**⚠️ เท่าตัว adalah jebakan.** *เพิ่มขึ้นหนึ่งเท่าตัว* = bertambah 100 % (10 → 20). *เพิ่มขึ้นสองเท่าตัว* biasanya = 10 → 30, tetapi dalam bahasa sehari-hari *เพิ่มขึ้นสองเท่า* sering dipakai untuk \"menjadi dua kali\". Di laporan, hindari salah paham: tulis angkanya (*จาก 10 เป็น 20*).",
+    "**ที่ผ่านมา thîi-phàan-maa = \"yang telah lewat, terakhir\"**: *ในสิบปีที่ผ่านมา* (dalam sepuluh tahun terakhir), *เดือนที่ผ่านมา* (bulan lalu). Frasa waktu wajib di awal kalimat data.",
+    "**ถึงเวลาแล้วที่… = \"sudah tiba waktunya …\"** — penanda opini khas tajuk rencana, sering disusul *ภาครัฐ* (pihak pemerintah, harfiah \"sektor negara\") dan kata kerja tulis seperti *ทบทวน* (meninjau ulang), *เร่ง* (mempercepat), *ส่งเสริม* (mendorong)."
+   ],
+   "grammars": [
+    {
+     "title": "Enam kata data",
+     "table": {
+      "head": [
+       "Kata",
+       "Baca",
+       "Artinya",
+       "Contoh"
+      ],
+      "rows": [
+       [
+        "ร้อยละ",
+        "*ráwy-lá*",
+        "persen (tulis)",
+        "ประหยัดได้ร้อยละ 35"
+       ],
+       [
+        "เท่าตัว",
+        "*thâo-tua*",
+        "kali lipat",
+        "เพิ่มขึ้นหนึ่งเท่าตัว"
+       ],
+       [
+        "เฉลี่ย",
+        "*chà-lìa*",
+        "rata-rata",
+        "โดยเฉลี่ยเดือนละ 20,000 บาท"
+       ],
+       [
+        "สัดส่วน",
+        "*sàt-sùan*",
+        "proporsi, porsi",
+        "สัดส่วนพลังงานหมุนเวียน"
+       ],
+       [
+        "แนวโน้ม",
+        "*naaeo-nóom*",
+        "kecenderungan, tren",
+        "มีแนวโน้มเพิ่มขึ้น"
+       ],
+       [
+        "คิดเป็น",
+        "*khít-pen*",
+        "setara dengan, sebesar",
+        "คิดเป็นร้อยละ 40 ของทั้งหมด"
+       ]
+      ]
+     },
+     "after": [
+      "*คิดเป็น* (\"dihitung menjadi\") adalah penghubung favorit laporan Thai: angka mentah dulu, lalu *คิดเป็น* + persen atau uang: *ผลิตได้ 12,000 หน่วย คิดเป็นเงินประมาณ 50,000 บาท*."
+     ]
+    },
+    {
+     "title": "Data atau opini? Penanda dalam tajuk rencana",
+     "table": {
+      "head": [
+       "Penanda",
+       "Baca",
+       "Fungsi",
+       "Padanan"
+      ],
+      "rows": [
+       [
+        "จากข้อมูลของ…",
+        "*jàak khâw-muun khǎawng …*",
+        "data",
+        "menurut data …"
+       ],
+       [
+        "เห็นได้ชัดว่า",
+        "*hěn dâai chát wâa*",
+        "tafsiran",
+        "jelas terlihat bahwa"
+       ],
+       [
+        "ไม่อาจปฏิเสธได้ว่า",
+        "*mâi àat pà-tì-sèet dâai wâa*",
+        "tafsiran kuat",
+        "tak dapat dimungkiri bahwa"
+       ],
+       [
+        "ประเด็นสำคัญอยู่ที่…",
+        "*prà-den sǎm-khan yùu thîi …*",
+        "pokok opini",
+        "yang terpenting adalah …"
+       ],
+       [
+        "ถึงเวลาแล้วที่…",
+        "*thǔeng wee-laa láaeo thîi …*",
+        "opini, desakan",
+        "sudah tiba waktunya …"
+       ],
+       [
+        "หวังว่า…จะ…",
+        "*wǎng wâa … jà …*",
+        "harapan",
+        "semoga …"
+       ]
+      ]
+     },
+     "after": [
+      "Tandai tiap kalimat tajuk rencana: data, tafsiran, atau desakan. Urutannya hampir selalu begitu, dan paragraf terakhir biasanya dibuka dengan *ถึงเวลาแล้วที่* atau *ภาครัฐควร*."
+     ]
+    }
+   ]
+  },
+  {
+   "title": "บทสนทนาที่สอง — Grafik setengah tahun",
+   "intro": "Rabu, 4 Juli. Budi dan Mind menyusun data pembanding untuk laporan setengah tahun program: grafik produksi listrik bulanan Januari–Juni dari sekolah-sekolah di Khon Kaen yang panelnya dipasang pada proyek Budi sebelumnya, dan satu grafik dari sebuah sekolah mitra di Jawa Timur yang sudah lebih dulu memakai panel surya. Mind yang menulis keterangan grafik. Perhatikan kata kerja untuk menggambarkan garis.",
+   "lines": [
+    {
+     "speaker": "มายด์:",
+     "text": "[พี่|Phîi][บูดี|Buu-dii][คะ|khá] [แผนภูมิ|Phǎaen-phuum][นี้|níi][ควร|khuan][อธิบาย|à-thí-baai][ว่า|wâa][ยังไง|yang-ngai][คะ|khá]",
+     "id": "Phi Budi, grafik ini sebaiknya dijelaskan bagaimana?",
+     "literal": "kakak — Budi — (sopan). bagan — ini — sebaiknya — jelaskan — bahwa — bagaimana — (sopan)?"
+    },
+    {
+     "speaker": "บูดี:",
+     "text": "[เริ่ม|Rôoem][จาก|jàak][แนวโน้ม|naaeo-nóom][ก่อน|kàwn][ครับ|khráp] [ตั้งแต่|Tâng-tàae][มกราคม|mók-kà-raa-khom][ถึง|thǔeng][เมษายน|mee-sǎa-yon][การ|kaan][ผลิต|phà-lìt][ไฟฟ้า|fai-fáa][เพิ่มขึ้น|phôoem-khûen][ต่อเนื่อง|tàw-nûeang]",
+     "id": "Mulai dari trennya dulu. Dari Januari sampai April, produksi listrik naik terus.",
+     "literal": "mulai — dari — kecenderungan — dulu — (sopan). sejak — Januari — sampai — April — pem- — produksi — listrik — bertambah — terus-menerus."
+    },
+    {
+     "speaker": "มายด์:",
+     "text": "[แล้ว|Láaeo][เดือน|duuean][มิถุนายน|mí-thù-naa-yon][ลดลง|lót-long][เพราะ|phráw][อะไร|à-rai][คะ|khá]",
+     "id": "Lalu bulan Juni turun karena apa?",
+     "literal": "lalu — bulan — Juni — berkurang — karena — apa — (sopan)?"
+    },
+    {
+     "speaker": "บูดี:",
+     "text": "[เพราะ|Phráw][เข้า|khâo][หน้าฝน|nâa-fǒn][แล้ว|láaeo][ครับ|khráp] [เมฆ|Mêek][เยอะ|yóe][แดด|dàaet][น้อย|náwy]",
+     "id": "Karena sudah masuk musim hujan. Awan banyak, sinar matahari sedikit.",
+     "literal": "karena — masuk — musim-hujan — sudah — (sopan). awan — banyak — terik — sedikit."
+    },
+    {
+     "speaker": "มายด์:",
+     "text": "[เดือน|Duuean][ไหน|nǎi][สูงสุด|sǔung-sùt][คะ|khá]",
+     "id": "Bulan apa yang tertinggi?",
+     "literal": "bulan — mana — tertinggi — (sopan)?"
+    },
+    {
+     "speaker": "บูดี:",
+     "text": "[เมษายน|Mee-sǎa-yon][สูงสุด|sǔung-sùt] [ส่วน|sùan][มิถุนายน|mí-thù-naa-yon][ต่ำสุด|tàm-sùt][ครับ|khráp]",
+     "id": "April tertinggi, sedangkan Juni terendah.",
+     "literal": "April — tertinggi — sedangkan — Juni — terendah — (sopan)."
+    },
+    {
+     "speaker": "มายด์:",
+     "text": "[โดย|Dooi][เฉลี่ย|chà-lìa][โรงเรียน|roong-rian][ประหยัด|prà-yàt][ค่าไฟ|khâa-fai][ได้|dâai][เท่าไร|thâo-rai][คะ|khá]",
+     "id": "Rata-rata sekolah bisa menghemat tagihan listrik berapa?",
+     "literal": "dengan — rata-rata — sekolah — hemat — ongkos-listrik — dapat — berapa — (sopan)?"
+    },
+    {
+     "speaker": "บูดี:",
+     "text": "[เฉลี่ย|Chà-lìa][ร้อยละ|ráwy-lá][สามสิบห้า|sǎam-sìp-hâa][ครับ|khráp] [คิดเป็น|Khít-pen][เงิน|ngoen][ประมาณ|prà-maan][สอง|sǎawng][หมื่น|mùuen][บาท|bàat][ต่อ|tàw][เดือน|duuean]",
+     "id": "Rata-rata 35 persen. Setara sekitar dua puluh ribu baht per bulan.",
+     "literal": "rata-rata — per-seratus — tiga-puluh-lima — (sopan). setara — uang — sekitar — dua — puluh-ribu — baht — per — bulan."
+    },
+    {
+     "speaker": "มายด์:",
+     "text": "[ฝั่ง|Fàng][อินโดนีเซีย|in-doo-nii-sia][ล่ะ|lâ][คะ|khá] [เส้น|Sên][เกือบ|kùueap][ตรง|trong][เลย|loei]",
+     "id": "Kalau yang di Indonesia? Garisnya hampir lurus.",
+     "literal": "sisi — Indonesia — (tanya) — (sopan)? garis — hampir — lurus — sekali."
+    },
+    {
+     "speaker": "บูดี:",
+     "text": "[เพราะ|Phráw][อยู่|yùu][ใกล้|klâi][เส้นศูนย์สูตร|sên-sǔun-sùut][ครับ|khráp] [แดด|Dàaet][ค่อนข้าง|khâwn-khâang][คงที่|khong-thîi][ทั้ง|tháng][ปี|pii]",
+     "id": "Karena dekat garis khatulistiwa. Sinar mataharinya relatif stabil sepanjang tahun.",
+     "literal": "karena — berada — dekat — garis-khatulistiwa — (sopan). terik — agak — tetap — seluruh — tahun."
+    }
+   ],
+   "notes": [
+    "**แผนภูมิ phǎaen-phuum adalah kata baku untuk grafik dan bagan**; dalam percakapan orang juga berkata *กราฟ*. Jenis-jenisnya: *แผนภูมิแท่ง* (grafik batang), *แผนภูมิเส้น* (grafik garis), *แผนภูมิวงกลม* (diagram lingkaran).",
+    "**สูงสุด / ต่ำสุด = tertinggi / terendah** — bentuk tulis yang ringkas dari *สูงที่สุด / ต่ำที่สุด*. Pasangan untuk grafik: *แตะระดับสูงสุด* (menyentuh titik tertinggi), *ต่ำสุดในรอบปี* (terendah dalam setahun).",
+    "**โดยเฉลี่ย = rata-rata** (sebagai keterangan kalimat). *เฉลี่ย* juga kata kerja: *เฉลี่ยแล้ว…* (kalau dirata-rata …), *ค่าเฉลี่ย* (nilai rata-rata). Satuan per waktu memakai *ต่อ* dalam tulisan (*ต่อเดือน*) dan *…ละ* dalam lisan (*เดือนละ*, A2 u15).",
+    "**ค่อนข้างคงที่ = relatif stabil.** *ค่อนข้าง* (A2 u06) adalah pelunak kesayangan penulis laporan Thai: klaim jadi tidak terlalu mutlak. Bandingkan *คงที่* saja (tetap, konstan) yang terdengar seperti hukum fisika."
+   ],
+   "grammars": [
+    {
+     "title": "Kata kerja untuk menggambarkan grafik",
+     "table": {
+      "head": [
+       "Garis…",
+       "Thai",
+       "Baca",
+       "Contoh"
+      ],
+      "rows": [
+       [
+        "naik",
+        "เพิ่มขึ้น",
+        "*phôoem-khûen*",
+        "เพิ่มขึ้นต่อเนื่องสี่เดือน"
+       ],
+       [
+        "turun",
+        "ลดลง",
+        "*lót-long*",
+        "ลดลงร้อยละ 20"
+       ],
+       [
+        "melonjak",
+        "พุ่งสูงขึ้น",
+        "*phûng sǔung khûen*",
+        "พุ่งสูงขึ้นในเดือนเมษายน"
+       ],
+       [
+        "stabil",
+        "คงที่ / ทรงตัว",
+        "*khong-thîi / song-tua*",
+        "ทรงตัวอยู่ที่ระดับเดิม"
+       ],
+       [
+        "naik-turun",
+        "ผันผวน",
+        "*phǎn-phǔan*",
+        "ผันผวนตามสภาพอากาศ"
+       ],
+       [
+        "menyentuh",
+        "แตะระดับ…",
+        "*tàe rá-dàp …*",
+        "แตะระดับสูงสุดในรอบปี"
+       ]
+      ]
+     },
+     "after": [
+      "Keterangan cara ditaruh sesudah kata kerja dengan *อย่าง*: *เพิ่มขึ้นอย่างต่อเนื่อง* (naik terus-menerus), *ลดลงอย่างมาก* (turun tajam), *เพิ่มขึ้นเล็กน้อย* (naik sedikit). Susunan kalimat grafik yang aman: waktu → pelaku → kata kerja → besaran: *ในเดือนมิถุนายน การผลิตไฟฟ้าลดลงร้อยละ 20*."
+     ]
+    }
+   ]
+  }
+ ],
+ "sections": [
+  {
+   "title": "Membaca angka dengan suara keras",
+   "blocks": [
+    {
+     "type": "tabel",
+     "head": [
+      "Tulisan",
+      "Dibaca",
+      "Baca",
+      "Catatan"
+     ],
+     "rows": [
+      [
+       "3.5",
+       "สามจุดห้า",
+       "*sǎam jùt hâa*",
+       "titik desimal = จุด"
+      ],
+      [
+       "ร้อยละ 12.5",
+       "ร้อยละสิบสองจุดห้า",
+       "*ráwy-lá sìp-sǎawng jùt hâa*",
+       "Thai memakai titik, bukan koma"
+      ],
+      [
+       "20,000",
+       "สองหมื่น",
+       "*sǎawng mùuen*",
+       "koma pemisah ribuan"
+      ],
+      [
+       "1.2 ล้าน",
+       "หนึ่งจุดสองล้าน",
+       "*nùeng jùt sǎawng láan*",
+       "1.200.000"
+      ],
+      [
+       "3,400 ล้านบาท",
+       "สามพันสี่ร้อยล้านบาท",
+       "*sǎam-phan sìi-ráwy láan bàat*",
+       "3,4 miliar baht"
+      ]
+     ]
+    },
+    {
+     "type": "p",
+     "text": "⚠️ Tanda desimal dan pemisah ribuan dalam bahasa Thai mengikuti gaya Inggris: *3.5* berarti tiga koma lima, *20,000* berarti dua puluh ribu — kebalikan dari kebiasaan Indonesia. Ini salah satu sumber kekeliruan paling mahal dalam laporan dwibahasa. Budi memutuskan setiap tabel program memakai format Thai di versi Thai dan format Indonesia di versi Indonesia, dengan catatan di kaki tabel."
+    },
+    {
+     "type": "kotak",
+     "title": "Angka besar: dari หมื่น sampai พันล้าน",
+     "items": [
+      "Bahasa Thai punya kata sendiri untuk 10.000 (*หมื่น*) dan 100.000 (*แสน*), jadi angka dikelompokkan berbeda: 250.000 = *สองแสนห้าหมื่น*.",
+      "Satu juta = *ล้าน*; di atasnya angka dibangun dari ล้าน: *สิบล้าน, ร้อยล้าน, พันล้าน* (satu miliar), *หมื่นล้าน, แสนล้าน*, *ล้านล้าน* (satu triliun).",
+      "Dalam berita ekonomi kamu akan sering membaca *หมื่นล้านบาท* (sepuluh miliar baht)."
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Contoh tajuk rencana",
+   "blocks": [
+    {
+     "type": "kotak",
+     "title": "Cuplikan (disederhanakan)",
+     "items": [
+      "*จากข้อมูลในช่วงสิบปีที่ผ่านมา การติดตั้งโซลาร์บนหลังคาบ้านและอาคารเพิ่มขึ้นหลายเท่าตัว* — data.",
+      "*อย่างไรก็ดี ไฟฟ้าที่คนไทยใช้ยังมาจากก๊าซธรรมชาติเกินครึ่ง* — data.",
+      "*เห็นได้ชัดว่าพลังงานแสงอาทิตย์มีแนวโน้มจะมีบทบาทมากขึ้น* — tafsiran.",
+      "*ถึงเวลาแล้วที่ภาครัฐต้องทบทวนนโยบาย เพื่อให้ประชาชนเข้าถึงพลังงานสะอาดได้ง่ายขึ้น* — opini dan desakan."
+     ]
+    },
+    {
+     "type": "tabel",
+     "head": [
+      "Frasa tajuk",
+      "Baca",
+      "Artinya"
+     ],
+     "rows": [
+      [
+       "บทบาท",
+       "*bòt-bàat*",
+       "peran"
+      ],
+      [
+       "เข้าถึง",
+       "*khâo-thǔeng*",
+       "menjangkau, mengakses"
+      ],
+      [
+       "พลังงานหมุนเวียน",
+       "*phá-lang-ngaan mǔn-wian*",
+       "energi terbarukan"
+      ],
+      [
+       "พลังงานสะอาด",
+       "*phá-lang-ngaan sà-àat*",
+       "energi bersih"
+      ]
+     ]
+    },
+    {
+     "type": "p",
+     "text": "Cuplikan ini dibuat untuk latihan, bukan kutipan koran sungguhan, tetapi strukturnya persis struktur tajuk rencana Thai: dua kalimat data, satu tafsiran, satu desakan. Coba tandai tajuk rencana asli di koran daring Thai dengan tiga label itu."
+    }
+   ]
+  },
+  {
+   "title": "Ulangan berjenjang — unit 8",
+   "blocks": [
+    {
+     "type": "p",
+     "text": "Tutup kolom Thai, baca terjemahan Indonesianya, lalu susun kembali kalimatnya dari ingatan."
+    },
+    {
+     "type": "tabel",
+     "head": [
+      "Bahasa Indonesia",
+      "ภาษาไทย",
+      "Baca"
+     ],
+     "rows": [
+      [
+       "Rama V melawat ke Jawa tiga kali.",
+       "รัชกาลที่ห้าเสด็จประพาสชวาสามครั้งครับ",
+       "*Rát-chá-kaan thîi hâa sà-dèt prà-phâat chá-waa sǎam khráng khráp*"
+      ],
+      [
+       "Yang pertama tahun 1871. Kemudian beliau melawat dua kali lagi.",
+       "ครั้งแรกปีหนึ่งพันแปดร้อยเจ็ดสิบเอ็ด ต่อมาเสด็จอีกสองครั้งครับ",
+       "*Khráng râaek pii nùeng-phan pàaet-ráwy jèt-sìp-èt Tàw-maa sà-dèt ìik sǎawng khráng khráp*"
+      ],
+      [
+       "Sejak saat itu, seni Jawa pun ada di Bangkok.",
+       "นับตั้งแต่นั้นมาศิลปะชวาก็อยู่ในกรุงเทพฯค่ะ",
+       "*Náp-tâng-tàae nán maa sǐn-lá-pà chá-waa kâw yùu nai krung-thêep khâ*"
+      ],
+      [
+       "Borobudur dibangun pada abad ke-9 Masehi.",
+       "บุโรพุทโธสร้างในคริสต์ศตวรรษที่เก้าครับ",
+       "*Bù-roo-phút-thoo sâang nai khrít sàt-tà-wát thîi kâo khráp*"
+      ],
+      [
+       "Mulai hari ini saya tidak akan bingung soal tahun พ.ศ. lagi.",
+       "นับตั้งแต่วันนี้ผมจะไม่สับสนเรื่องพ.ศ.อีกแล้วครับ",
+       "*Náp-tâng-tàae wan-níi phǒm jà mâi sàp-sǒn rûueang phaw-sǎaw ìik láaeo khráp*"
+      ]
+     ]
+    }
+   ]
+  }
+ ],
+ "vocab": [
+  {
+   "th": "บทบรรณาธิการ",
+   "baca": "bòt ban-naa-thí-kaan",
+   "id": "tajuk rencana"
+  },
+  {
+   "th": "บรรณาธิการ",
+   "baca": "ban-naa-thí-kaan",
+   "id": "editor, redaktur (*กองบรรณาธิการ* = dewan redaksi)"
+  },
+  {
+   "th": "บทความ",
+   "baca": "bòt-khwaam",
+   "id": "artikel (kb. *บท, ชิ้น*)"
+  },
+  {
+   "th": "ครึ่ง",
+   "baca": "khrûeng",
+   "id": "setengah (*เกินครึ่ง* = lebih dari separuh)"
+  },
+  {
+   "th": "ก๊าซธรรมชาติ",
+   "baca": "káat tham-má-châat",
+   "id": "gas alam"
+  },
+  {
+   "th": "ร้อยละ",
+   "baca": "ráwy-lá",
+   "id": "persen (tulis; *ร้อยละ 35*)"
+  },
+  {
+   "th": "เปอร์เซ็นต์",
+   "baca": "poe-sen",
+   "id": "persen (lisan; *35 เปอร์เซ็นต์*)"
+  },
+  {
+   "th": "เท่าตัว",
+   "baca": "thâo-tua",
+   "id": "kali lipat (*เพิ่มขึ้นหนึ่งเท่าตัว* = naik 100 %)"
+  },
+  {
+   "th": "ที่ผ่านมา",
+   "baca": "thîi-phàan-maa",
+   "id": "yang lalu, terakhir (*ในสิบปีที่ผ่านมา*)"
+  },
+  {
+   "th": "ภาครัฐ",
+   "baca": "phâak-rát",
+   "id": "pemerintah, sektor publik"
+  },
+  {
+   "th": "ทบทวน",
+   "baca": "thóp-thuan",
+   "id": "meninjau ulang"
+  },
+  {
+   "th": "นโยบาย",
+   "baca": "ná-yoo-baai",
+   "id": "kebijakan"
+  },
+  {
+   "th": "ความเห็น",
+   "baca": "khwaam-hěn",
+   "id": "pendapat, opini"
+  },
+  {
+   "th": "ข้อมูล",
+   "baca": "khâw-muun",
+   "id": "data, informasi"
+  },
+  {
+   "th": "แผนภูมิ",
+   "baca": "phǎaen-phuum",
+   "id": "grafik, bagan"
+  },
+  {
+   "th": "แนวโน้ม",
+   "baca": "naaeo-nóom",
+   "id": "kecenderungan, tren (*มีแนวโน้ม...*)"
+  },
+  {
+   "th": "ผลิต",
+   "baca": "phà-lìt",
+   "id": "memproduksi (*การผลิตไฟฟ้า*)"
+  },
+  {
+   "th": "ต่อเนื่อง",
+   "baca": "tàw-nûeang",
+   "id": "terus-menerus, berkelanjutan"
+  },
+  {
+   "th": "สูงสุด",
+   "baca": "sǔung-sùt",
+   "id": "tertinggi, maksimum"
+  },
+  {
+   "th": "ต่ำสุด",
+   "baca": "tàm-sùt",
+   "id": "terendah, minimum"
+  },
+  {
+   "th": "เฉลี่ย",
+   "baca": "chà-lìa",
+   "id": "rata-rata (*โดยเฉลี่ย*); merata-rata"
+  },
+  {
+   "th": "คิดเป็น",
+   "baca": "khít-pen",
+   "id": "setara dengan, sebesar (*คิดเป็นร้อยละ...*)"
+  },
+  {
+   "th": "สัดส่วน",
+   "baca": "sàt-sùan",
+   "id": "proporsi, porsi"
+  },
+  {
+   "th": "คงที่",
+   "baca": "khong-thîi",
+   "id": "tetap, stabil"
+  },
+  {
+   "th": "เส้นศูนย์สูตร",
+   "baca": "sên-sǔun-sùut",
+   "id": "garis khatulistiwa"
+  }
+ ],
+ "exercises": [
+  {
+   "prompt": "Terjemahkan ke bahasa Thai. Bayangkan kamu laki-laki, sedang menyusun laporan program.",
+   "items": [
+    "Dalam artikel tidak dipakai kata เปอร์เซ็นต์, tapi ร้อยละ.",
+    "Naik satu kali lipat artinya dari sepuluh menjadi dua puluh.",
+    "Tajuk rencana memberi data dulu, baru menyampaikan pendapat.",
+    "April tertinggi, sedangkan Juni terendah.",
+    "Sinar matahari relatif stabil sepanjang tahun.",
+    "Rata-rata sekolah menghemat 35 persen (tulis)."
+   ]
+  },
+  {
+   "prompt": "Isi dengan kata data yang tepat.",
+   "items": [
+    "โรงเรียนประหยัดค่าไฟได้____ 35 (persen, tulis)",
+    "ผลิตได้ 12,000 หน่วย ____เงินประมาณ 50,000 บาท (setara)",
+    "ในสิบปี____ การติดตั้งโซลาร์เพิ่มขึ้นมาก (terakhir)",
+    "ราคาแผงมี____ลดลง (kecenderungan)",
+    "โดย____ โรงเรียนใช้ไฟเดือนละ 8,000 หน่วย (rata-rata)",
+    "จำนวนผู้ใช้เพิ่มขึ้นหนึ่ง____ (kali lipat)",
+    "____ก๊าซธรรมชาติในการผลิตไฟฟ้ายังสูง (proporsi)"
+   ]
+  },
+  {
+   "prompt": "Tulis kalimat grafik dalam bahasa Thai tulis dari data ini.",
+   "items": [
+    "Januari → April: naik terus-menerus",
+    "Juni: turun 20 persen",
+    "April: tertinggi dalam setahun",
+    "Indonesia: relatif stabil sepanjang tahun",
+    "hemat rata-rata 35 persen = ±20.000 baht per bulan",
+    "Mei → Juni: naik-turun mengikuti cuaca"
+   ]
+  },
+  {
+   "prompt": "Susun jadi kalimat yang benar.",
+   "items": [
+    "ร้อยละ / ใช้ว่า / ในบทความ",
+    "ให้ข้อมูลก่อน / บทบรรณาธิการ / เสนอความเห็น / แล้วค่อย",
+    "สูงสุด / เมษายน / มิถุนายนต่ำสุด / ส่วน",
+    "มีแนวโน้ม / พลังงานแสงอาทิตย์ / เพิ่มขึ้น",
+    "คิดเป็น / ของทั้งหมด / ร้อยละ 40"
+   ]
+  }
+ ],
+ "answers": [
+  "ในบทความไม่ใช้คำว่าเปอร์เซ็นต์แต่ใช้ว่าร้อยละครับ — เพิ่มขึ้นหนึ่งเท่าตัวคือจากสิบเป็นยี่สิบครับ — บทบรรณาธิการให้ข้อมูลก่อนแล้วค่อยเสนอความเห็นครับ — เมษายนสูงสุดส่วนมิถุนายนต่ำสุดครับ — แดดค่อนข้างคงที่ทั้งปีครับ — โดยเฉลี่ยโรงเรียนประหยัดได้ร้อยละ 35 ครับ",
+  "ร้อยละ — คิดเป็น — ที่ผ่านมา — แนวโน้ม — เฉลี่ย — เท่าตัว — สัดส่วน",
+  "ตั้งแต่มกราคมถึงเมษายนเพิ่มขึ้นอย่างต่อเนื่อง — ในเดือนมิถุนายนลดลงร้อยละ 20 — เดือนเมษายนสูงสุดในรอบปี — ฝั่งอินโดนีเซียค่อนข้างคงที่ทั้งปี — ประหยัดได้เฉลี่ยร้อยละ 35 คิดเป็นเงินประมาณ 20,000 บาทต่อเดือน — ตั้งแต่พฤษภาคมถึงมิถุนายนผันผวนตามสภาพอากาศ",
+  "ในบทความใช้ว่าร้อยละ — บทบรรณาธิการให้ข้อมูลก่อนแล้วค่อยเสนอความเห็น — เมษายนสูงสุดส่วนมิถุนายนต่ำสุด — พลังงานแสงอาทิตย์มีแนวโน้มเพิ่มขึ้น — คิดเป็นร้อยละ 40 ของทั้งหมด"
+ ],
+ "wave": "Ulangi unit 8: bacakan lagi narasi lawatan Rama V ke Jawa, lalu ubah setiap tahun ke พ.ศ. dan ค.ศ. keras-keras — latihan angka terbaik sebelum membaca statistik."
+}

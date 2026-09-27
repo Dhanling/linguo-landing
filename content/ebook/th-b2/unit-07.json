@@ -1,0 +1,773 @@
+{
+ "title": "Saudara jauh — Sanskerta di dua bahasa",
+ "title_target": "ญาติห่างๆ — Yâat hàang-hàang",
+ "goal": "Menemukan kata kembar Pali-Sanskerta yang dimiliki bahasa Thai dan bahasa Indonesia, menjelaskan asal dan pergeseran maknanya dengan pola *มาจาก, ตรงกับ, ความหมายเปลี่ยนไป*, dan menghindari *false friends* seperti สตรี (perempuan) vs istri.",
+ "bekal": [
+  "menjelaskan asal kata: X มาจาก Y, X ตรงกับ Y, มีความหมายเดียวกัน",
+  "mengenali belasan kata kembar Thai–Indonesia dan cara ejaannya",
+  "membedakan kata kembar sejati dari *false friends*",
+  "menebak apakah kata Thai berasal dari Pali atau Sanskerta dari ejaannya"
+ ],
+ "dialogs": [
+  {
+   "title": "บทสนทนา — Sepuluh kata untuk PR Mind",
+   "intro": "Sabtu, 20 Januari 2029, sebuah kafe dekat kampus Chula. Mind dan Budi rutin bertukar bahasa setiap Sabtu: satu jam bahasa Indonesia, satu jam bahasa Thai. Hari ini Mind membawa PR dari dosen bahasa Indonesianya. Perhatikan cara menjelaskan asal kata dan kesamaan makna.",
+   "lines": [
+    {
+     "speaker": "มายด์:",
+     "text": "[พี่|Phîi][บูดี|Buu-dii][คะ|khá] [อาจารย์|Aa-jaan][ให้|hâi][หนู|nǔu][หา|hǎa][คำ|kham][ไทย|thai][ที่|thîi][มี|mii][ใน|nai][ภาษา|phaa-sǎa][อินโดนีเซีย|in-doo-nii-sia][ด้วย|dûai][สิบ|sìp][คำ|kham][ค่ะ|khâ]",
+     "id": "Phi Budi, dosenku menyuruhku mencari sepuluh kata Thai yang juga ada dalam bahasa Indonesia.",
+     "literal": "kakak — Budi — (sopan). dosen — suruh — aku — cari — kata — Thai — yang — ada — di — bahasa — Indonesia — juga — sepuluh — kata — (sopan)."
+    },
+    {
+     "speaker": "บูดี:",
+     "text": "[สิบ|Sìp][คำ|kham][น้อย|náwy][ไป|pai][นะ|ná] [เริ่ม|Rôoem][จาก|jàak][คำ|kham][ว่า|wâa][ภาษา|phaa-sǎa][ก็ได้|kâw-dâai] [ภาษา|Phaa-sǎa][อินโดนีเซีย|in-doo-nii-sia][พูด|phûut][ว่า|wâa][บาฮาซา|baa-haa-saa]",
+     "id": "Sepuluh itu terlalu sedikit. Mulai saja dari kata ภาษา. Bahasa Indonesia menyebutnya \"bahasa\".",
+     "literal": "sepuluh — kata — sedikit — terlalu — (lembut). mulai — dari — kata — bahwa — bahasa — boleh. bahasa — Indonesia — bicara — bahwa — bahasa."
+    },
+    {
+     "speaker": "มายด์:",
+     "text": "[จริง|Jing][เหรอ|rǒoe][คะ|khá] [ทำไม|Tham-mai][เหมือนกัน|mǔuean-kan][ขนาด|khà-nàat][นี้|níi][คะ|khá]",
+     "id": "Masa? Kok bisa semirip itu?",
+     "literal": "sungguh — kah — (sopan)? mengapa — sama — ukuran — ini — (sopan)?"
+    },
+    {
+     "speaker": "บูดี:",
+     "text": "[ทั้ง|Tháng][สอง|sǎawng][คำ|kham][มาจาก|maa-jàak][ภาษา|phaa-sǎa][สันสกฤต|sǎn-sà-krìt][ครับ|khráp]",
+     "id": "Kedua kata itu berasal dari bahasa Sanskerta.",
+     "literal": "kedua — dua — kata — datang-dari — bahasa — Sanskerta — (sopan)."
+    },
+    {
+     "speaker": "มายด์:",
+     "text": "[ถ้า|Thâa][อย่างนั้น|yàang-nán][มนุษย์|má-nút][ก็|kâw][น่าจะ|nâa-jà][มี|mii][ด้วย|dûai][ใช่ไหม|châi-mǎi][คะ|khá]",
+     "id": "Kalau begitu, มนุษย์ mestinya ada juga, ya?",
+     "literal": "kalau — begitu — manusia — pun — mestinya — ada — juga — benar-kan — (sopan)?"
+    },
+    {
+     "speaker": "บูดี:",
+     "text": "[มี|Mii][ครับ|khráp] [มานูเซีย|Maa-nuu-sia][ความหมาย|khwaam-mǎai][เดียวกัน|diao-kan][เป๊ะ|pé] [ครู|Khruu][ก็|kâw][ตรงกับ|trong-kàp][กูรู|kuu-ruu][ครับ|khráp]",
+     "id": "Ada: manusia, artinya persis sama. ครู juga sama dengan \"guru\".",
+     "literal": "ada — (sopan). manusia — makna — sama — persis. guru-sekolah — juga — cocok-dengan — guru — (sopan)."
+    },
+    {
+     "speaker": "มายด์:",
+     "text": "[กูรู|Kuu-ruu][ใน|nai][ภาษา|phaa-sǎa][ไทย|thai][แปลว่า|plaae-wâa][ผู้เชี่ยวชาญ|phûu-chîao-chaan][นะคะ|ná-khá] [ไม่ใช่|Mâi châi][ครู|khruu][ใน|nai][โรงเรียน|roong-rian]",
+     "id": "Tapi กูรู dalam bahasa Thai artinya pakar, lho. Bukan guru di sekolah.",
+     "literal": "guru — di — bahasa — Thai — artinya — pakar — (lembut-sopan). bukan — guru-sekolah — di — sekolah."
+    },
+    {
+     "speaker": "บูดี:",
+     "text": "[คน|Khon][ไทย|thai][ยืม|yuuem][คำ|kham][นี้|níi][มา|maa][สอง|sǎawng][ครั้ง|khráng][ครับ|khráp]",
+     "id": "Orang Thai meminjam kata ini dua kali.",
+     "literal": "orang — Thai — pinjam — kata — ini — datang — dua — kali — (sopan)."
+    },
+    {
+     "speaker": "มายด์:",
+     "text": "[ครั้ง|Khráng][แรก|râaek][จาก|jàak][สันสกฤต|sǎn-sà-krìt] [ครั้ง|khráng][ที่สอง|thîi-sǎawng][จาก|jàak][ภาษา|phaa-sǎa][อังกฤษ|ang-krìt][ใช่ไหม|châi-mǎi][คะ|khá]",
+     "id": "Pertama dari Sanskerta, kedua dari bahasa Inggris, begitu?",
+     "literal": "kali — pertama — dari — Sanskerta. kali — kedua — dari — bahasa — Inggris — benar-kan — (sopan)?"
+    },
+    {
+     "speaker": "บูดี:",
+     "text": "[ใช่|Châi][ครับ|khráp] [แล้ว|Láaeo][ภาษา|phaa-sǎa][อังกฤษ|ang-krìt][ก็|kâw][ยืม|yuuem][มา|maa][จาก|jàak][อินเดีย|in-dia][อีก|ìik][ที|thii]",
+     "id": "Betul. Dan bahasa Inggris pun meminjamnya dari India.",
+     "literal": "benar — (sopan). lalu — bahasa — Inggris — pun — pinjam — datang — dari — India — lagi — kali."
+    },
+    {
+     "speaker": "มายด์:",
+     "text": "[สนุก|Sà-nùk][จัง|jang][ค่ะ|khâ] [แล้ว|Láaeo][สามี|sǎa-mii][ล่ะ|lâ][คะ|khá] [หนู|Nǔu][เคย|khoei][ได้ยิน|dâai-yin][ว่า|wâa][คล้าย|khláai][กัน|kan]",
+     "id": "Seru sekali. Lalu สามี? Aku pernah dengar katanya mirip.",
+     "literal": "seru — sangat — (sopan). lalu — suami — (tanya) — (sopan)? aku — pernah — dengar — bahwa — mirip — satu-sama-lain."
+    },
+    {
+     "speaker": "บูดี:",
+     "text": "[สามี|Sǎa-mii][กับ|kàp][ซูอามี|suu-aa-mii][มี|mii][ความหมาย|khwaam-mǎai][เดียวกัน|diao-kan][ครับ|khráp]",
+     "id": "สามี dan \"suami\" punya arti yang sama.",
+     "literal": "suami — dan — suami — punya — makna — sama — (sopan)."
+    }
+   ],
+   "notes": [
+    "**มาจาก maa-jàak = \"berasal dari\"**, pola paling dasar untuk asal kata: *ภาษามาจากภาษาสันสกฤต*. Untuk kecocokan dua kata dipakai *ตรงกับ* (\"sepadan dengan\"): *ครูตรงกับคำว่า guru*. Untuk arti: *มีความหมายเดียวกัน* (artinya sama) atau *ความหมายคล้ายกัน* (mirip).",
+    "**Ejaan Thai menyimpan huruf Sanskerta walau tak dibaca.** *มนุษย์* dibaca *má-nút*, tetapi ditulis dengan ษ dan ย berการันต์ — jejak *manuṣya*. Bahasa Indonesia menulis sesuai bunyi (manusia). Karena itu kata kembar sering lebih mudah dikenali dari tulisan Thai-nya daripada dari bunyinya.",
+    "**ครู dan กูรู: satu kata, dua kali pinjam.** *ครู khruu* masuk berabad-abad lalu dari Sanskerta *guru* dan berarti guru sekolah. *กูรู kuu-ruu* masuk baru-baru ini dari bahasa Inggris dan berarti pakar (*กูรูด้านการเงิน*, pakar keuangan). Bahasa Indonesia memakai satu \"guru\" untuk keduanya.",
+    "**เป๊ะ pé = persis, tepat sekali** (lisan). *ตรงเวลาเป๊ะ* (tepat waktu persis), *เหมือนเป๊ะ* (mirip persis). Dalam tulisan resmi: *ตรงกันทุกประการ*.",
+    "**สามี sǎa-mii adalah kata sopan untuk suami**; pasangannya *ภรรยา phan-rá-yaa* (istri). Di percakapan akrab orang Thai sering memakai *แฟน* untuk pasangan menikah juga, sedangkan *ผัว/เมีย* terdengar kasar di mulut orang asing — kenali, jangan pakai."
+   ],
+   "grammars": [
+    {
+     "title": "Dua belas kata kembar",
+     "table": {
+      "head": [
+       "Thai",
+       "Baca",
+       "Indonesia",
+       "Asal Sanskerta"
+      ],
+      "rows": [
+       [
+        "ภาษา",
+        "*phaa-sǎa*",
+        "bahasa",
+        "bhāṣā"
+       ],
+       [
+        "มนุษย์",
+        "*má-nút*",
+        "manusia",
+        "manuṣya"
+       ],
+       [
+        "สามี",
+        "*sǎa-mii*",
+        "suami",
+        "svāmin"
+       ],
+       [
+        "บุตร",
+        "*bùt*",
+        "putra",
+        "putra"
+       ],
+       [
+        "ครู",
+        "*khruu*",
+        "guru",
+        "guru"
+       ],
+       [
+        "สัตว์",
+        "*sàt*",
+        "satwa",
+        "sattva"
+       ],
+       [
+        "มิตร",
+        "*mít*",
+        "mitra",
+        "mitra"
+       ],
+       [
+        "ทูต",
+        "*thûut*",
+        "duta",
+        "dūta"
+       ],
+       [
+        "ภัย",
+        "*phai*",
+        "bahaya",
+        "bhaya"
+       ],
+       [
+        "อักษร",
+        "*àk-sǒn*",
+        "aksara",
+        "akṣara"
+       ],
+       [
+        "สมุทร",
+        "*sà-mùt*",
+        "samudra",
+        "samudra"
+       ],
+       [
+        "ศัตรู",
+        "*sàt-truu*",
+        "seteru",
+        "śatru"
+       ]
+      ]
+     },
+     "after": [
+      "Perhatikan pola bunyi: huruf akhir kata Thai sering tak dibaca (*สมุทร sà-mùt*, *บุตร bùt*), sedangkan bahasa Indonesia menambah vokal (*samudra, putra*). Konsonan bersuara Sanskerta *b, d, g* sering menjadi *ph, th, kh* di Thai: *bhaya → ภัย phai*, *dūta → ทูต thûut*, *guru → ครู khruu*."
+     ]
+    },
+    {
+     "title": "Pola menjelaskan asal dan makna kata",
+     "table": {
+      "head": [
+       "Pola",
+       "Contoh",
+       "Artinya"
+      ],
+      "rows": [
+       [
+        "X มาจาก(ภาษา) Y",
+        "ภาษามาจากภาษาสันสกฤต",
+        "ภาษา berasal dari bahasa Sanskerta"
+       ],
+       [
+        "X ตรงกับ Y",
+        "ครูตรงกับคำว่า guru",
+        "ครู sepadan dengan kata guru"
+       ],
+       [
+        "X กับ Y มีความหมายเดียวกัน",
+        "สามีกับ suami มีความหมายเดียวกัน",
+        "keduanya berarti sama"
+       ],
+       [
+        "X ออกเสียงคล้าย Y",
+        "ศัตรูออกเสียงคล้าย seteru",
+        "bunyinya mirip"
+       ],
+       [
+        "ยืม X มาจาก Y",
+        "คนไทยยืมคำนี้มาจากอังกฤษ",
+        "dipinjam dari"
+       ],
+       [
+        "ความหมายเปลี่ยนไป / เพี้ยนไป",
+        "ความหมายเพี้ยนไปจากเดิม",
+        "maknanya bergeser (menyimpang)"
+       ]
+      ]
+     },
+     "after": [
+      "*เพี้ยน phían* berarti \"meleset, sumbang\" — dipakai untuk nada lagu yang fals dan juga makna kata yang bergeser. Nadanya sedikit negatif; untuk tulisan ilmiah pakai *เปลี่ยนไป* atau *แตกต่างไป*."
+     ]
+    }
+   ]
+  },
+  {
+   "title": "บทสนทนาที่สอง — Toilet untuk istri siapa?",
+   "intro": "Sabtu berikutnya, 27 Januari. Mind mencoba menerjemahkan papan-papan di kampus ke bahasa Indonesia sebagai latihan. Terjemahan pertamanya membuat Budi tertawa. Perhatikan kata yang kembar bentuknya tetapi berlainan maknanya.",
+   "lines": [
+    {
+     "speaker": "มายด์:",
+     "text": "[พี่|Phîi][บูดี|Buu-dii][คะ|khá] [ป้าย|Pâai][ห้องน้ำ|hâwng-náam][สตรี|sà-trii][หนู|nǔu][แปล|plaae][ว่า|wâa][ห้องน้ำ|hâwng-náam][อิสตรี|ìt-sà-trii][ถูก|thùuk][ไหม|mǎi][คะ|khá]",
+     "id": "Phi Budi, papan ห้องน้ำสตรี kuterjemahkan jadi \"toilet istri\". Benar, kan?",
+     "literal": "kakak — Budi — (sopan). papan — toilet — perempuan — aku — terjemah — bahwa — toilet — istri — benar — kah — (sopan)?"
+    },
+    {
+     "speaker": "บูดี:",
+     "text": "[ไม่|Mâi][ถูก|thùuk][ครับ|khráp] [อิสตรี|Ìt-sà-trii][ใน|nai][ภาษา|phaa-sǎa][อินโดนีเซีย|in-doo-nii-sia][แปลว่า|plaae-wâa][ภรรยา|phan-rá-yaa]",
+     "id": "Salah. Kata istri dalam bahasa Indonesia artinya ภรรยา.",
+     "literal": "tidak — benar — (sopan). istri — di — bahasa — Indonesia — artinya — istri."
+    },
+    {
+     "speaker": "มายด์:",
+     "text": "[ตายแล้ว|Taai láaeo] [งั้น|Ngán][ห้องน้ำ|hâwng-náam][นี้|níi][ก็|kâw][สำหรับ|sǎm-ràp][ภรรยา|phan-rá-yaa][ของ|khǎawng][ใคร|khrai][คะ|khá]",
+     "id": "Aduh! Jadi toilet itu untuk istri siapa?",
+     "literal": "mati — sudah! kalau-begitu — toilet — ini — pun — untuk — istri — milik — siapa — (sopan)?"
+    },
+    {
+     "speaker": "บูดี:",
+     "text": "[มาจาก|Maa-jàak][สันสกฤต|sǎn-sà-krìt][คำ|kham][เดียวกัน|diao-kan] [แต่|tàae][ความหมาย|khwaam-mǎai][เปลี่ยน|plìan][ไป|pai][คนละ|khon-lá][ทาง|thaang][ครับ|khráp]",
+     "id": "Asalnya satu kata Sanskerta, tapi maknanya bergeser ke arah berbeda.",
+     "literal": "datang-dari — Sanskerta — kata — sama — tetapi — makna — berubah — pergi — lain-lain — arah — (sopan)."
+    },
+    {
+     "speaker": "มายด์:",
+     "text": "[มี|Mii][คำ|kham][แบบนี้|bàaep-níi][อีก|ìik][ไหม|mǎi][คะ|khá] [หนู|Nǔu][จะ|jà][ได้|dâai][ไม่|mâi][ปล่อย|plàwy][ไก่|kài][อีก|ìik]",
+     "id": "Ada lagi kata seperti ini? Biar aku tidak bikin blunder lagi.",
+     "literal": "ada — kata — seperti-ini — lagi — kah — (sopan)? aku — akan — dapat — tidak — lepas — ayam — lagi."
+    },
+    {
+     "speaker": "บูดี:",
+     "text": "[กรุณา|Kà-rú-naa][ไง|ngai] [ภาษา|Phaa-sǎa][ไทย|thai][แปลว่า|plaae-wâa][เมตตา|mêet-taa][หรือ|rǔue][โปรด|pròot] [แต่|Tàae][คารูเนีย|kaa-ruu-nia][แปลว่า|plaae-wâa][ของขวัญ|khǎawng-khwǎn][จาก|jàak][พระเจ้า|phrá-jâo]",
+     "id": "Misalnya กรุณา. Dalam bahasa Thai artinya belas kasih, atau \"mohon\". Tapi karunia artinya anugerah dari Tuhan.",
+     "literal": "belas-kasih — kan. bahasa — Thai — artinya — kasih-sayang — atau — mohon. tetapi — karunia — artinya — hadiah — dari — Tuhan."
+    },
+    {
+     "speaker": "มายด์:",
+     "text": "[แล้ว|Láaeo][ศาสตร์|sàat][ล่ะ|lâ][คะ|khá] [วิทยาศาสตร์|Wít-thá-yaa-sàat][เศรษฐศาสตร์|sèet-thà-sàat]",
+     "id": "Kalau ศาสตร์? Seperti di วิทยาศาสตร์, เศรษฐศาสตร์.",
+     "literal": "lalu — ilmu — (tanya) — (sopan)? sains — ekonomi."
+    },
+    {
+     "speaker": "บูดี:",
+     "text": "[ใน|Nai][ภาษา|phaa-sǎa][อินโดนีเซีย|in-doo-nii-sia][คำ|kham][นี้|níi][แปลว่า|plaae-wâa][วรรณคดี|wan-ná-khá-dii][ครับ|khráp] [ไม่ใช่|Mâi châi][วิทยาศาสตร์|wít-thá-yaa-sàat]",
+     "id": "Dalam bahasa Indonesia kata ini (sastra) berarti kesusastraan. Bukan ilmu pengetahuan.",
+     "literal": "di — bahasa — Indonesia — kata — ini — artinya — kesusastraan — (sopan). bukan — sains."
+    },
+    {
+     "speaker": "มายด์:",
+     "text": "[หนู|Nǔu][จะ|jà][จด|jòt][ไว้|wái][ทั้งหมด|tháng-mòt][เลย|loei][ค่ะ|khâ] [เพื่อน|Phûean][ที่|thîi][ปลอม|plawm][ตัว|tua][เป็น|pen][ญาติ|yâat][แบบนี้|bàaep-níi][อันตราย|an-tà-raai][ที่สุด|thîi-sùt]",
+     "id": "Aku catat semuanya. Teman yang menyamar jadi saudara begini paling berbahaya.",
+     "literal": "aku — akan — catat — simpan — semua — langsung — (sopan). teman — yang — palsu — diri — jadi — kerabat — seperti-ini — berbahaya — paling."
+    }
+   ],
+   "notes": [
+    "**สตรี sà-trii = perempuan (resmi), dan ia ada di papan-papan umum:** *ห้องน้ำสตรี* (toilet wanita), *โรงเรียนสตรี...* (sekolah putri), *ชุดสตรี* (busana wanita). Pasangannya *บุรุษ bù-rút* (pria), juga resmi: *ห้องน้ำบุรุษ*. Di percakapan cukup *ผู้หญิง / ผู้ชาย*.",
+    "**กรุณา kà-rú-naa punya dua wajah di Thai:** kata benda \"belas kasih\" (*ความกรุณา*) dan kata permohonan resmi di depan kata kerja: *กรุณาถอดรองเท้า* (mohon lepas sepatu). Bahasa Indonesia menyimpan makna lain dari akar yang sama: *karunia*, anugerah.",
+    "**ปล่อยไก่ plàwy kài = \"melepas ayam\", bikin blunder yang memalukan** karena tak tahu. Idiom lisan yang sangat umum: *ปล่อยไก่ตัวใหญ่เลย* (blunder besar sekali). *ตายแล้ว* (\"sudah mati!\") adalah seruan kaget yang wajar, bukan kata kasar.",
+    "**Untuk *false friends* bahasa Thai tak punya istilah sehari-hari yang mapan**; orang cukup menjelaskannya: *คำที่ดูเหมือนแต่ความหมายไม่ใช่* (kata yang tampak sama tapi maknanya lain). *คำพ้องรูป* adalah hal lain: dua kata Thai yang ejaannya sama. Julukan Mind — \"teman yang menyamar jadi saudara\" — adalah permainan kata buatannya sendiri, bukan ungkapan baku."
+   ],
+   "grammars": [
+    {
+     "title": "Kembar bentuk, lain makna",
+     "table": {
+      "head": [
+       "Thai",
+       "Baca",
+       "Arti Thai",
+       "Kata Indonesia",
+       "Arti Indonesia"
+      ],
+      "rows": [
+       [
+        "สตรี",
+        "*sà-trii*",
+        "perempuan",
+        "istri",
+        "wife"
+       ],
+       [
+        "กรุณา",
+        "*kà-rú-naa*",
+        "belas kasih; mohon",
+        "karunia",
+        "anugerah"
+       ],
+       [
+        "ศาสตร์",
+        "*sàat*",
+        "ilmu, bidang studi",
+        "sastra",
+        "kesusastraan"
+       ],
+       [
+        "บัณฑิต",
+        "*ban-dìt*",
+        "sarjana, lulusan",
+        "pendeta",
+        "rohaniwan"
+       ],
+       [
+        "ทาน",
+        "*thaan*",
+        "sedekah, derma",
+        "dana",
+        "uang, modal"
+       ],
+       [
+        "คุณ",
+        "*khun*",
+        "kebajikan, jasa (juga \"Anda\")",
+        "guna",
+        "manfaat"
+       ],
+       [
+        "อากาศ",
+        "*aa-kàat*",
+        "udara, cuaca",
+        "angkasa",
+        "langit, antariksa"
+       ],
+       [
+        "นคร",
+        "*ná-khawn*",
+        "kota besar",
+        "negara",
+        "negara"
+       ],
+       [
+        "อาคม",
+        "*aa-khom*",
+        "mantra, ilmu gaib",
+        "agama",
+        "agama"
+       ]
+      ]
+     },
+     "after": [
+      "Semua pasangan di atas berasal dari satu akar Sanskerta (*strī, karuṇā, śāstra, paṇḍita, dāna, guṇa, ākāśa, nagara, āgama*). Hafalkan terutama *คุณ*: sapaan \"Anda\" dalam bahasa Thai tumbuh dari kata yang berarti \"kebajikan\" — kamu menyapa orang dengan menyebut kebaikannya."
+     ]
+    }
+   ]
+  }
+ ],
+ "sections": [
+  {
+   "title": "Kata kembar per bidang",
+   "blocks": [
+    {
+     "type": "tabel",
+     "head": [
+      "Bidang",
+      "Thai",
+      "Baca",
+      "Indonesia"
+     ],
+     "rows": [
+      [
+       "angka",
+       "ทศวรรษ",
+       "*thót-sà-wát*",
+       "dasawarsa (dekade)"
+      ],
+      [
+       "angka",
+       "สัปดาห์",
+       "*sàp-daa*",
+       "sapta (tujuh) → pekan"
+      ],
+      [
+       "angka",
+       "ปริญญาตรี",
+       "*pà-rin-yaa trii*",
+       "tri (tiga) → gelar S1"
+      ],
+      [
+       "agama",
+       "ศีล",
+       "*sǐin*",
+       "sila (Pancasila)"
+      ],
+      [
+       "agama",
+       "วิหาร",
+       "*wí-hǎan*",
+       "wihara"
+      ],
+      [
+       "agama",
+       "ภิกษุ",
+       "*phík-sù*",
+       "biksu"
+      ],
+      [
+       "alam",
+       "ภูมิ",
+       "*phuum*",
+       "bumi"
+      ],
+      [
+       "alam",
+       "สุริยะ",
+       "*sù-rí-yá*",
+       "surya"
+      ],
+      [
+       "hewan",
+       "ครุฑ",
+       "*khrút*",
+       "garuda"
+      ],
+      [
+       "hewan",
+       "สิงห์",
+       "*sǐng*",
+       "singa"
+      ],
+      [
+       "batin",
+       "สมาธิ",
+       "*sà-maa-thí*",
+       "semadi"
+      ],
+      [
+       "batin",
+       "จิต",
+       "*jìt*",
+       "cita (cita-cita)"
+      ]
+     ]
+    },
+    {
+     "type": "p",
+     "text": "Kata bilangan adalah tambang emas. *ทศวรรษ* (dekade) dan \"dasawarsa\" dirakit dari akar yang persis sama: *daśa* (sepuluh) + *varṣa* (tahun). *สัปดาห์* (pekan) berasal dari *sapta* (tujuh) — hari dalam sepekan. *ศีล* dalam *ศีลห้า* atau *เบญจศีล* (lima sila umat Buddha) bersaudara dengan \"sila\" dalam Pancasila: *pañca* + *śīla*, lima prinsip. Isinya tentu berbeda; yang sama adalah cara merakit katanya."
+    },
+    {
+     "type": "kotak",
+     "title": "Garuda di dua lambang",
+     "items": [
+      "*ครุฑ khrút* adalah garuda dalam bahasa Thai, dan seperti di Indonesia, ia menjadi lambang negara: *ตราแผ่นดิน* Thailand berbentuk garuda, dan kamu akan melihatnya di dokumen resmi dan gedung pemerintah.",
+      "Bentuk kata Thai lebih pendek: *garuḍa* → *ครุฑ*, dengan huruf ฑ yang di sini dibaca *t* dan vokal akhir yang hilang — pola yang sama dengan *สมุทร*.",
+      "Kalau kamu bercerita tentang Garuda Pancasila, cukup katakan *ตราครุฑของอินโดนีเซีย* — orang Thai langsung paham."
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Dari India lewat dua jalan",
+   "blocks": [
+    {
+     "type": "tabel",
+     "head": [
+      "Sanskerta (di Thai)",
+      "Baca",
+      "Pali (di Thai)",
+      "Baca",
+      "Indonesia"
+     ],
+     "rows": [
+      [
+       "ภรรยา",
+       "*phan-rá-yaa*",
+       "ภริยา",
+       "*phá-rí-yaa*",
+       "— (istri)"
+      ],
+      [
+       "กษัตริย์",
+       "*kà-sàt*",
+       "ขัตติยะ",
+       "*khàt-tì-yá*",
+       "kesatria"
+      ],
+      [
+       "วิทยา",
+       "*wít-thá-yaa*",
+       "วิชา",
+       "*wí-chaa*",
+       "widya"
+      ],
+      [
+       "ปรัชญา",
+       "*pràt-yaa*",
+       "ปัญญา",
+       "*pan-yaa*",
+       "— (filsafat, kearifan)"
+      ],
+      [
+       "ฤทธิ์",
+       "*rít*",
+       "อิทธิ",
+       "*ìt-thí*",
+       "—"
+      ]
+     ]
+    },
+    {
+     "type": "p",
+     "text": "Bahasa Thai menerima kosakata India lewat dua jalan: bahasa **Pali**, bahasa kitab Buddhisme Theravada yang menjadi agama mayoritas, dan bahasa **Sanskerta**, bahasa istana dan upacara Brahmana yang banyak datang lewat bahasa Khmer. Karena itu satu akar kadang punya dua bentuk Thai dengan makna yang sedikit berbeda: *ปัญญา* (kecerdasan) dan *ปรัชญา* (filsafat). Nusantara menerima kosakata yang sama terutama dalam bentuk Sanskerta, lewat kerajaan-kerajaan Hindu-Buddha seperti Sriwijaya, Mataram Kuno, dan Majapahit — maka kata Indonesia hampir selalu mirip bentuk Sanskerta, bukan bentuk Pali: *kesatria* seperti *กษัตริย์*, bukan seperti *ขัตติยะ*."
+    },
+    {
+     "type": "kotak",
+     "title": "Menebak asal dari ejaan",
+     "items": [
+      "Huruf **ศ ษ ฤ** dan gugus ร seperti *-ตร, -ทร* sering menandai bentuk Sanskerta: bahasa Pali tak punya bunyi *ś, ṣ, ṛ*.",
+      "Konsonan ganda seperti *-ตต-, -ชช-, -ญญ-* (*ขัตติยะ, วิชชา, ปัญญา*) biasanya menandai bentuk Pali.",
+      "Kata kembar Thai–Indonesia paling banyak di bidang agama, pemerintahan, dan ilmu — bidang yang dulu dikuasai kaum terpelajar di istana. Kata sehari-hari (makan, rumah, air) di kedua bahasa tetap kata asli."
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Ulangan berjenjang — unit 5",
+   "blocks": [
+    {
+     "type": "p",
+     "text": "Tutup kolom Thai, baca terjemahan Indonesianya, lalu susun kembali kalimatnya dari ingatan."
+    },
+    {
+     "type": "tabel",
+     "head": [
+      "Bahasa Indonesia",
+      "ภาษาไทย",
+      "Baca"
+     ],
+     "rows": [
+      [
+       "Baik. Pihak Indonesia mengusulkan agar pelatihan guru yang pertama diadakan di Surabaya.",
+       "ครับ ฝ่ายอินโดนีเซียขอเสนอว่า การอบรมครูครั้งแรกควรจัดที่สุราบายาครับ",
+       "*Khráp Fàai in-doo-nii-sia khǎaw sà-nǒe wâa kaan òp-rom khruu khráng râaek khuan jàt thîi Sù-raa-baa-yaa khráp*"
+      ],
+      [
+       "Pihak Thailand tidak berkeberatan. Kami dengan senang hati berangkat ke sana.",
+       "ฝ่ายไทยไม่ขัดข้องค่ะ ยินดีเดินทางไปค่ะ",
+       "*Fàai thai mâi khàt-khâwng khâ Yin-dii dooen-thaang pai khâ*"
+      ],
+      [
+       "Hal ini tampaknya harus kami pertimbangkan dulu, karena menyangkut anggaran beberapa lembaga.",
+       "เรื่องนี้คงต้องขอพิจารณาก่อนค่ะ เพราะเกี่ยวกับงบประมาณของหลายหน่วยงาน",
+       "*Rûueang níi khong tâwng khǎaw phí-jaa-rá-naa kàwn khâ Phráw kìao-kàp ngóp-prà-maan khǎawng lǎai nùai-ngaan*"
+      ],
+      [
+       "Hmm, waktu itu Kakak mungkin kurang leluasa. Harus mengawasi ujian tengah semester juga.",
+       "อืม ช่วงนั้นพี่อาจจะไม่ค่อยสะดวกนะ ต้องคุมสอบกลางภาคด้วย",
+       "*Uuem chûang nán phîi àat jà mâi khâwy sà-dùak ná Tâwng khum sàawp klaang-phâak dûai*"
+      ],
+      [
+       "Nanti Kakak coba tanyakan dulu ya. Tapi tidak janji, ya.",
+       "เดี๋ยวพี่ลองถามดูก่อนนะ แต่ไม่รับปากนะ",
+       "*Dǐao phîi lawng thǎam duu kàwn ná Tàae mâi ráp-pàak ná*"
+      ]
+     ]
+    }
+   ]
+  }
+ ],
+ "vocab": [
+  {
+   "th": "ญาติ",
+   "baca": "yâat",
+   "id": "kerabat, saudara (*ญาติห่างๆ* = saudara jauh)"
+  },
+  {
+   "th": "สันสกฤต",
+   "baca": "sǎn-sà-krìt",
+   "id": "Sanskerta"
+  },
+  {
+   "th": "บาลี",
+   "baca": "baa-lii",
+   "id": "Pali"
+  },
+  {
+   "th": "มาจาก",
+   "baca": "maa-jàak",
+   "id": "berasal dari"
+  },
+  {
+   "th": "ตรงกับ",
+   "baca": "trong-kàp",
+   "id": "sepadan dengan, cocok dengan"
+  },
+  {
+   "th": "ความหมาย",
+   "baca": "khwaam-mǎai",
+   "id": "makna, arti"
+  },
+  {
+   "th": "เดียวกัน",
+   "baca": "diao-kan",
+   "id": "sama, yang itu juga (*คำเดียวกัน*)"
+  },
+  {
+   "th": "มนุษย์",
+   "baca": "má-nút",
+   "id": "manusia"
+  },
+  {
+   "th": "สามี",
+   "baca": "sǎa-mii",
+   "id": "suami (sopan)"
+  },
+  {
+   "th": "ภรรยา",
+   "baca": "phan-rá-yaa",
+   "id": "istri (sopan)"
+  },
+  {
+   "th": "กูรู",
+   "baca": "kuu-ruu",
+   "id": "pakar (serapan Inggris, lisan)"
+  },
+  {
+   "th": "ยืม",
+   "baca": "yuuem",
+   "id": "meminjam (*ยืม...มาจาก...*)"
+  },
+  {
+   "th": "เป๊ะ",
+   "baca": "pé",
+   "id": "persis, tepat sekali (lisan)"
+  },
+  {
+   "th": "คล้าย",
+   "baca": "khláai",
+   "id": "mirip (*คล้ายกัน*)"
+  },
+  {
+   "th": "สตรี",
+   "baca": "sà-trii",
+   "id": "perempuan, wanita (resmi)"
+  },
+  {
+   "th": "บุรุษ",
+   "baca": "bù-rút",
+   "id": "pria (resmi)"
+  },
+  {
+   "th": "ป้าย",
+   "baca": "pâai",
+   "id": "papan, rambu, label"
+  },
+  {
+   "th": "เปลี่ยน",
+   "baca": "plìan",
+   "id": "berubah, mengganti (*เปลี่ยนไป*)"
+  },
+  {
+   "th": "คนละทาง",
+   "baca": "khon-lá thaang",
+   "id": "ke arah yang berlainan"
+  },
+  {
+   "th": "ปล่อยไก่",
+   "baca": "plàwy kài",
+   "id": "membuat blunder memalukan (idiom)"
+  },
+  {
+   "th": "กรุณา",
+   "baca": "kà-rú-naa",
+   "id": "belas kasih; mohon (*กรุณา + kata kerja*)"
+  },
+  {
+   "th": "วรรณคดี",
+   "baca": "wan-ná-khá-dii",
+   "id": "kesusastraan (klasik)"
+  },
+  {
+   "th": "ปลอมตัว",
+   "baca": "plawm tua",
+   "id": "menyamar"
+  },
+  {
+   "th": "อันตราย",
+   "baca": "an-tà-raai",
+   "id": "berbahaya; bahaya"
+  },
+  {
+   "th": "ทศวรรษ",
+   "baca": "thót-sà-wát",
+   "id": "dekade, dasawarsa"
+  }
+ ],
+ "exercises": [
+  {
+   "prompt": "Terjemahkan ke bahasa Thai. Bayangkan kamu perempuan, mahasiswi yang belajar bahasa Indonesia.",
+   "items": [
+    "Kedua kata itu berasal dari bahasa Sanskerta.",
+    "Orang Thai meminjam kata ini dua kali.",
+    "สามี dan \"suami\" punya arti yang sama.",
+    "Asalnya satu kata, tapi maknanya bergeser ke arah berbeda.",
+    "ครู sepadan dengan kata \"guru\".",
+    "Aku tidak mau bikin blunder lagi."
+   ]
+  },
+  {
+   "prompt": "Isi dengan kata yang tepat.",
+   "items": [
+    "ภาษา____ภาษาสันสกฤต (berasal dari)",
+    "ครู____คำว่า guru ในภาษาอินโดนีเซีย (sepadan dengan)",
+    "มนุษย์กับ manusia มีความหมาย____ (sama)",
+    "ห้องน้ำ____อยู่ชั้นสอง (perempuan, resmi)",
+    "____ถอดรองเท้าก่อนเข้าห้อง (mohon, resmi)",
+    "คนไทย____คำว่ากูรูมาจากภาษาอังกฤษ (meminjam)",
+    "ความหมายของคำนี้____ไปจากเดิม (bergeser, agak negatif)"
+   ]
+  },
+  {
+   "prompt": "Jawab dengan kalimat lengkap bahasa Thai.",
+   "items": [
+    "สตรีในภาษาไทยแปลว่าอะไร",
+    "ครูกับกูรูต่างกันยังไง",
+    "คำว่าทศวรรษตรงกับคำไหนในภาษาอินโดนีเซีย",
+    "บัณฑิตในภาษาไทยแปลว่าอะไร",
+    "อากาศในภาษาไทยแปลว่าอะไร",
+    "ทำไมคำไทยหลายคำคล้ายภาษาอินโดนีเซีย"
+   ]
+  },
+  {
+   "prompt": "Susun jadi kalimat yang benar.",
+   "items": [
+    "มาจาก / ทั้งสองคำ / ภาษาสันสกฤต",
+    "ยืม / สองครั้ง / คนไทย / คำนี้มา",
+    "มีความหมาย / สามีกับซูอามี / เดียวกัน",
+    "คนละทาง / เปลี่ยนไป / ความหมาย",
+    "ห้องน้ำสตรี / อยู่ / ชั้นสอง"
+   ]
+  }
+ ],
+ "answers": [
+  "ทั้งสองคำมาจากภาษาสันสกฤตค่ะ — คนไทยยืมคำนี้มาสองครั้งค่ะ — สามีกับซูอามีมีความหมายเดียวกันค่ะ — มาจากคำเดียวกันแต่ความหมายเปลี่ยนไปคนละทางค่ะ — ครูตรงกับคำว่ากูรูค่ะ — หนูไม่อยากปล่อยไก่อีกแล้วค่ะ",
+  "มาจาก — ตรงกับ — เดียวกัน — สตรี — กรุณา — ยืม — เพี้ยน",
+  "สตรีแปลว่าผู้หญิง — ครูคือคนสอนหนังสือส่วนกูรูคือผู้เชี่ยวชาญ — ทศวรรษตรงกับคำว่าดาซาวาร์ซา — บัณฑิตแปลว่าคนที่เรียนจบปริญญา — อากาศแปลว่าลมที่เราหายใจหรือสภาพอากาศ — เพราะทั้งสองภาษายืมคำจากภาษาสันสกฤต",
+  "ทั้งสองคำมาจากภาษาสันสกฤต — คนไทยยืมคำนี้มาสองครั้ง — สามีกับซูอามีมีความหมายเดียวกัน — ความหมายเปลี่ยนไปคนละทาง — ห้องน้ำสตรีอยู่ชั้นสอง"
+ ],
+ "wave": "Ulangi unit 5: baca lagi dialog negosiasi MoU dan cari kata Pali-Sanskerta di dalamnya (misalnya ประสงค์, พิจารณา) — tebak dulu dari ejaannya, lalu periksa apakah ada saudaranya dalam bahasa Indonesia."
+}

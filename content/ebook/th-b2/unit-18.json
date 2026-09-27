@@ -1,0 +1,621 @@
+{
+ "title": "Laporan dan surat resmi — หนังสือราชการ & บันทึกข้อความ",
+ "title_target": "หนังสือราชการ — Nǎng-sǔue râat-chá-kaan",
+ "goal": "Menyusun surat resmi Thai dengan bagian-bagian bakunya, membedakan surat keluar dari memo internal, lalu mengikuti rapat evaluasi yang memakai bahasa notulen.",
+ "bekal": [
+  "bagian surat resmi: ที่, วันที่, เรื่อง, เรียน, อ้างถึง, สิ่งที่ส่งมาด้วย",
+  "memilih penutup: จึงเรียนมาเพื่อโปรดทราบ atau เพื่อโปรดพิจารณา",
+  "membedakan หนังสือภายนอก dari บันทึกข้อความ",
+  "bahasa notulen: ดำเนินการ, อนุมัติ, มอบหมาย, มติ, รับทราบ"
+ ],
+ "dialogs": [
+  {
+   "title": "บทสนทนา — Surat pengantar laporan akhir",
+   "intro": "Jumat, 24 Agustus 2029, kantor program di Chula. Laporan akhir fase pertama harus dikirim ke lembaga pemberi dana hari ini. Nok datang dari Asok membawa berkas HR — penugasan Budi di Chula berakhir 30 September — dan Budi memintanya memeriksa surat pengantar. Perhatikan urutan bagian surat dan penutupnya.",
+   "lines": [
+    {
+     "speaker": "นก:",
+     "text": "[พี่|Phîi][บูดี|Buu-dii][คะ|khá] [นก|Nók][เอา|ao][เอกสาร|èek-kà-sǎan][สิ้นสุด|sîn-sùt][การ|kaan][ปฏิบัติงาน|pà-tì-bàt-ngaan][ที่|thîi][จุฬาฯ|Jù-laa][มา|maa][ให้|hâi][เซ็น|sen][ค่ะ|khâ]",
+     "id": "Phi Budi, saya bawa dokumen berakhirnya penugasan di Chula untuk ditandatangani.",
+     "literal": "kakak — Budi — (sopan). Nok — bawa — dokumen — berakhir — (kb.) — tugas — di — Chula — datang — untuk — tanda-tangan — (sopan)."
+    },
+    {
+     "speaker": "บูดี:",
+     "text": "[ขอบคุณ|Khàwp-khun][ครับ|khráp] [นก|Nók][ช่วย|chûai][ดู|duu][หนังสือ|nǎng-sǔue][ฉบับ|chà-bàp][นี้|níi][ให้|hâi][หน่อย|nàwy][ได้ไหม|dâai mǎi] [ผม|Phǒm][ต้อง|tâwng][ส่ง|sòng][รายงาน|raai-ngaan][ฉบับ|chà-bàp][สมบูรณ์|sǒm-buun][ให้|hâi][ผู้ให้ทุน|phûu-hâi-thun][วันนี้|wan-níi]",
+     "id": "Terima kasih. Nok, tolong periksa surat ini? Laporan akhir harus saya kirim hari ini.",
+     "literal": "terima-kasih — (sopan). Nok — bantu — lihat — surat — (kb.) — ini — (untuk) — sedikit — bisa-kah? saya — harus — kirim — laporan — edisi-lengkap — kepada — pemberi-dana — hari-ini."
+    },
+    {
+     "speaker": "นก:",
+     "text": "[ได้|Dâai][ค่ะ|khâ] [ข้างบน|Khâang-bon][ต้อง|tâwng][มี|mii][เลขที่|lêek-thîi][หนังสือ|nǎng-sǔue] [วันที่|wan-thîi] [เรื่อง|rûueang] [แล้ว|láaeo][ก็|kâw][เรียน|rian][ค่ะ|khâ]",
+     "id": "Bisa. Di bagian atas harus ada nomor surat, tanggal, perihal, lalu kepada siapa.",
+     "literal": "bisa — (sopan). bagian-atas — harus — ada — nomor-surat — tanggal — perihal — lalu — kepada-yth — (sopan)."
+    },
+    {
+     "speaker": "บูดี:",
+     "text": "[เรื่อง|Rûueang] [ผม|phǒm][เขียน|khǐan][ว่า|wâa][ส่ง|sòng][รายงาน|raai-ngaan][ผลการดำเนินงาน|phǒn-kaan-dam-noen-ngaan][ระยะ|rá-yá][ที่|thîi][หนึ่ง|nùeng][ครับ|khráp]",
+     "id": "Perihalnya saya tulis: Pengiriman laporan hasil pelaksanaan fase pertama.",
+     "literal": "perihal — saya — tulis — bahwa — kirim — laporan — hasil-pelaksanaan — tahap-pertama — (sopan)."
+    },
+    {
+     "speaker": "นก:",
+     "text": "[ดี|Dii][ค่ะ|khâ] [แล้ว|Láaeo][ต้อง|tâwng][มี|mii][อ้างถึง|âang-thǔeng][ด้วย|dûai][นะคะ|ná-khá] [คือ|Khuue][เอกสาร|èek-kà-sǎan][ที่|thîi][เกี่ยวข้อง|kìao-khâwng]",
+     "id": "Bagus. Lalu harus ada \"rujukan\" juga, yaitu dokumen yang terkait.",
+     "literal": "baik — (sopan). lalu — harus — ada — rujukan — juga — (lembut-sopan). yaitu — dokumen — terkait."
+    },
+    {
+     "speaker": "บูดี:",
+     "text": "[ผม|Phǒm][อ้างถึง|âang-thǔeng][สัญญา|sǎn-yaa][ทุน|thun][ที่|thîi][ลงนาม|long-naam][ปี|pii][ที่แล้ว|thîi-láaeo] [ส่วน|Sùan][สิ่ง|sìng][ที่|thîi][ส่งมา|sòng-maa][ด้วย|dûai] [คือ|khuue][รายงาน|raai-ngaan][หนึ่ง|nùeng][เล่ม|lêm][ครับ|khráp]",
+     "id": "Saya merujuk kontrak hibah yang ditandatangani tahun lalu. Lampirannya satu jilid laporan.",
+     "literal": "saya — rujuk — kontrak — dana — yang — tanda-tangan — tahun-lalu. adapun — barang — yang — kirim-datang — bersama — adalah — laporan — satu — jilid — (sopan)."
+    },
+    {
+     "speaker": "นก:",
+     "text": "[ถูกต้อง|Thùuk-tâwng][ค่ะ|khâ] [ย่อหน้า|Yâw-nâa][สุดท้าย|sùt-tháai][พี่|phîi][เขียน|khǐan][ว่า|wâa][อะไร|à-rai][คะ|khá]",
+     "id": "Benar. Paragraf terakhirnya Phi tulis apa?",
+     "literal": "benar — (sopan). paragraf — terakhir — kakak — tulis — bahwa — apa — (sopan)?"
+    },
+    {
+     "speaker": "บูดี:",
+     "text": "[จึง|Jueng][เรียน|rian][มา|maa][เพื่อ|phûea][โปรด|pròot][ทราบ|sâap][ครับ|khráp] [ถูก|Thùuk][ไหม|mǎi][ครับ|khráp]",
+     "id": "\"Demikian kami sampaikan untuk diketahui.\" Betul, kan?",
+     "literal": "maka — beri-tahu — datang — untuk — mohon — ketahui — (sopan). benar — kah — (sopan)?"
+    },
+    {
+     "speaker": "นก:",
+     "text": "[ถ้า|Thâa][อยาก|yàak][ให้|hâi][เขา|khǎo][ทำ|tham][อะไร|à-rai][ต่อ|tàw] [ต้อง|tâwng][ใช้|chái][เพื่อ|phûea][โปรด|pròot][พิจารณา|phí-jaa-rá-naa][ค่ะ|khâ]",
+     "id": "Kalau ingin mereka melakukan sesuatu, harus pakai \"untuk dipertimbangkan\".",
+     "literal": "kalau — ingin — supaya — mereka — lakukan — apa — lanjut, harus — pakai — untuk-mohon-pertimbangkan — (sopan)."
+    },
+    {
+     "speaker": "บูดี:",
+     "text": "[ผม|Phǒm][อยาก|yàak][ให้|hâi][เขา|khǎo][พิจารณา|phí-jaa-rá-naa][ทุน|thun][ระยะ|rá-yá][ที่|thîi][สอง|sǎawng][ด้วย|dûai] [งั้น|Ngán][ใช้|chái][โปรด|pròot][พิจารณา|phí-jaa-rá-naa][ครับ|khráp]",
+     "id": "Saya ingin mereka juga mempertimbangkan dana fase kedua. Jadi pakai \"mohon dipertimbangkan\".",
+     "literal": "saya — ingin — supaya — mereka — pertimbangkan — dana — tahap-kedua — juga. kalau-begitu — pakai — mohon — pertimbangkan — (sopan)."
+    },
+    {
+     "speaker": "นก:",
+     "text": "[แล้ว|Láaeo][ลงท้าย|long-tháai][ว่า|wâa][ขอแสดงความนับถือ|khǎaw sà-daaeng khwaam-náp-thǔue] [ใต้|Tâi][ลายเซ็น|laai-sen][ใส่|sài][ชื่อเต็ม|chûue-tem][กับ|kàp][ตำแหน่ง|tam-nàeng][ค่ะ|khâ]",
+     "id": "Lalu ditutup dengan \"hormat kami\". Di bawah tanda tangan tulis nama lengkap dan jabatan.",
+     "literal": "lalu — tutup — bahwa — mohon-menyatakan-hormat. bawah — tanda-tangan — isi — nama-lengkap — dengan — jabatan — (sopan)."
+    },
+    {
+     "speaker": "บูดี:",
+     "text": "[ถ้า|Thâa][เป็น|pen][บันทึกข้อความ|ban-thúek-khâaw-khwaam][ถึง|thǔeng][คุณ|khun][วิชัย|Wí-chai] [ต้อง|tâwng][ลงท้าย|long-tháai][แบบนี้|bàaep-níi][ไหม|mǎi][ครับ|khráp]",
+     "id": "Kalau memo internal untuk Khun Wichai, harus ditutup seperti ini juga?",
+     "literal": "kalau — adalah — memo — ke — Tuan Wichai — harus — tutup — cara-ini — kah — (sopan)?"
+    },
+    {
+     "speaker": "นก:",
+     "text": "[ไม่|Mâi][ต้อง|tâwng][ค่ะ|khâ] [บันทึกข้อความ|Ban-thúek-khâaw-khwaam][ใช้|chái][ภายใน|phaai-nai][หน่วยงาน|nùai-ngaan] [ไม่มี|mâi mii][ขอแสดงความนับถือ|khǎaw sà-daaeng khwaam-náp-thǔue][ค่ะ|khâ]",
+     "id": "Tidak perlu. Memo dipakai di dalam instansi, tanpa \"hormat kami\".",
+     "literal": "tidak — perlu — (sopan). memo — pakai — dalam — instansi — tidak-ada — hormat-kami — (sopan)."
+    }
+   ],
+   "notes": [
+    "**หนังสือ nǎng-sǔue berarti \"buku\" sekaligus \"surat\".** Di kantor, *หนังสือ* hampir selalu surat resmi, kata bantunya *ฉบับ*; laporan berjilid dihitung *เล่ม*. *รายงานฉบับสมบูรณ์* = laporan akhir, lawan *รายงานความก้าวหน้า* (laporan kemajuan, B1 u08).",
+    "**เรียน rian di kepala surat bukan \"belajar\".** Di surat ia berarti \"dengan hormat, kepada\": *เรียน ผู้อำนวยการ…*. (surel B1 u17). Kalau penerimanya pejabat tinggi sekali, kata ini naik menjadi *กราบเรียน*.",
+    "**อ้างถึง âang thǔeng dan สิ่งที่ส่งมาด้วย sìng thîi sòng maa dûai** adalah \"rujukan\" dan \"lampiran\". Keduanya baris sendiri di bawah *เรียน*, hanya bila ada. Lampiran disebut beserta jumlahnya: *รายงาน จำนวน ๑ เล่ม*.",
+    "**จึงเรียนมาเพื่อ… jueng rian maa phûea** menandai maksud surat, dan kata sesudahnya menentukan permintaanmu (tabel di bawah). Budi hampir memilih *โปรดทราบ* padahal ia berharap dana baru.",
+    "**บันทึกข้อความ ban-thúek khâw-khwaam** adalah memo dalam satu instansi: lebih pendek, tanpa alamat, tanpa *ขอแสดงความนับถือ*. Surat ke luar instansi disebut *หนังสือภายนอก nǎng-sǔue phaai-nâwk*."
+   ],
+   "grammars": [
+    {
+     "title": "Kalimat penutup: satu kata, empat maksud",
+     "table": {
+      "head": [
+       "Penutup",
+       "Baca",
+       "Maksudnya",
+       "Dipakai untuk"
+      ],
+      "rows": [
+       [
+        "จึงเรียนมาเพื่อโปรดทราบ",
+        "*jueng rian maa phûea pròot sâap*",
+        "demikian untuk diketahui",
+        "pemberitahuan, laporan biasa"
+       ],
+       [
+        "จึงเรียนมาเพื่อโปรดพิจารณา",
+        "*… pròot phí-jaa-rá-naa*",
+        "mohon dipertimbangkan",
+        "usulan, permohonan dana"
+       ],
+       [
+        "จึงเรียนมาเพื่อโปรดดำเนินการ",
+        "*… pròot dam-noen-kaan*",
+        "mohon dilaksanakan",
+        "kepada bawahan atau mitra yang bertugas"
+       ],
+       [
+        "จึงเรียนมาเพื่อโปรดพิจารณาอนุเคราะห์",
+        "*… à-nú-khráw*",
+        "mohon kiranya dibantu",
+        "meminta bantuan atau izin"
+       ],
+       [
+        "… จะเป็นพระคุณยิ่ง",
+        "*jà pen phrá-khun yîng*",
+        "atas perhatiannya kami ucapkan terima kasih",
+        "sesudah permohonan bantuan"
+       ]
+      ]
+     },
+     "after": [
+      "Intinya: *จึง* (maka) + *เรียนมา* (kami sampaikan) + *เพื่อ* (untuk) + *โปรด…* (mohon…)."
+     ]
+    }
+   ]
+  },
+  {
+   "title": "บทสนทนาที่สอง — Rapat evaluasi fase pertama",
+   "intro": "Senin, 27 Agustus, rapat evaluasi program. Phi Phim memimpin, Khun Wichai mewakili perusahaan, Budi melapor — lalu datang tawaran tak terduga. Perhatikan kata kerja birokrasi dan keputusan dengan *ให้*.",
+   "lines": [
+    {
+     "speaker": "พิมพ์ชนก:",
+     "text": "[วาระ|Waa-rá][สุดท้าย|sùt-tháai][ค่ะ|khâ] [การ|Kaan][ประเมินผล|prà-moen-phǒn][ระยะ|rá-yá][ที่|thîi][หนึ่ง|nùeng] [เชิญ|Chooen][บูดี|Buu-dii][รายงาน|raai-ngaan][ค่ะ|khâ]",
+     "id": "Agenda terakhir: evaluasi fase pertama. Silakan, Budi, laporkan.",
+     "literal": "agenda — terakhir — (sopan). (pembentuk kb.) — evaluasi — tahap-pertama. silakan — Budi — lapor — (sopan)."
+    },
+    {
+     "speaker": "บูดี:",
+     "text": "[ขอบคุณ|Khàwp-khun][ครับ|khráp] [โครงการ|Khroong-kaan][ดำเนินการ|dam-noen-kaan][ครบ|khróp][สิบ|sìp][โรงเรียน|roong-rian][ตาม|taam][แผน|phǎaen][ครับ|khráp]",
+     "id": "Terima kasih. Program terlaksana di sepuluh sekolah sesuai rencana.",
+     "literal": "terima-kasih — (sopan). proyek — laksanakan — lengkap — sepuluh — sekolah — sesuai — rencana — (sopan)."
+    },
+    {
+     "speaker": "คุณวิชัย:",
+     "text": "[ที่|Thîi][สุราบายา|Sù-raa-baa-yaa][ติดตั้ง|tìt-tâng][ล่าช้า|lâa-cháa][กว่า|kwàa][แผน|phǎaen][ไหม|mǎi][ครับ|khráp]",
+     "id": "Di Surabaya, pemasangannya terlambat dari rencana?",
+     "literal": "di — Surabaya — pasang — terlambat — dari — rencana — kah — (sopan)?"
+    },
+    {
+     "speaker": "บูดี:",
+     "text": "[ช้า|Cháa][ไป|pai][สอง|sǎawng][สัปดาห์|sàp-daa][ครับผม|khráp-phǒm] [เพราะ|Phráw][ต้อง|tâwng][รอ|raw][ใบอนุญาต|bai-à-nú-yâat][จาก|jàak][การไฟฟ้า|kaan-fai-fáa] [ตอนนี้|tawn-níi][แก้ไข|kâae-khǎi][เรียบร้อย|rîap-ráwy][แล้ว|láaeo][ครับ|khráp]",
+     "id": "Terlambat dua minggu, Pak, karena harus menunggu izin dari perusahaan listrik. Sekarang sudah beres.",
+     "literal": "lambat — pergi — dua — minggu — (sopan-hormat). karena — harus — tunggu — surat-izin — dari — perusahaan-listrik. sekarang — perbaiki — beres — sudah — (sopan)."
+    },
+    {
+     "speaker": "พิมพ์ชนก:",
+     "text": "[ระยะ|Rá-yá][ที่|thîi][สอง|sǎawng][เรา|rao][ต้องการ|tâwng-kaan][ผู้ประสานงาน|phûu-prà-sǎan-ngaan][ประจำ|prà-jam][ที่|thîi][สุราบายา|Sù-raa-baa-yaa][ค่ะ|khâ] [ดิฉัน|Dì-chǎn][กับ|kàp][คุณ|khun][วิชัย|Wí-chai][เห็น|hěn][ตรงกัน|trong-kan][ว่า|wâa][ควร|khuan][เป็น|pen][บูดี|Buu-dii]",
+     "id": "Di fase kedua kita membutuhkan koordinator yang berkedudukan di Surabaya. Saya dan Khun Wichai sepakat, orangnya sebaiknya Budi.",
+     "literal": "tahap-kedua — kita — perlu — koordinator — tetap — di — Surabaya — (sopan). saya — dengan — Tuan — Wichai — lihat — sama — bahwa — sebaiknya — adalah — Budi."
+    },
+    {
+     "speaker": "คุณวิชัย:",
+     "text": "[บริษัท|Baw-rí-sàt][พร้อม|phráwm][อนุมัติ|à-nú-mát][ครับ|khráp] [ถ้า|Thâa][บูดี|Buu-dii][ตกลง|tòk-long] [ผม|phǒm][จะ|jà][มอบหมาย|mâwp-mǎai][งาน|ngaan][อย่างเป็นทางการ|yàang-pen-thaang-kaan][เดือน|duuean][หน้า|nâa]",
+     "id": "Perusahaan siap menyetujui. Kalau Budi setuju, saya akan menugaskannya secara resmi bulan depan.",
+     "literal": "perusahaan — siap — setujui — (sopan). kalau — Budi — sepakat, saya — akan — tugaskan — kerja — secara-resmi — bulan-depan."
+    },
+    {
+     "speaker": "บูดี:",
+     "text": "[เป็น|Pen][เกียรติ|kìat][มาก|mâak][ครับ|khráp] [แต่|Tàae][ผม|phǒm][ขอ|khǎaw][เวลา|wee-laa][พิจารณา|phí-jaa-rá-naa][สัก|sàk][หนึ่ง|nùeng][สัปดาห์|sàp-daa][ได้ไหม|dâai mǎi][ครับ|khráp]",
+     "id": "Suatu kehormatan besar. Tetapi bolehkah saya minta waktu seminggu untuk mempertimbangkan?",
+     "literal": "adalah — kehormatan — sangat — (sopan). tetapi — saya — minta — waktu — pertimbangkan — sekadar — satu-minggu — bisa-kah — (sopan)?"
+    },
+    {
+     "speaker": "คุณวิชัย:",
+     "text": "[ได้|Dâai][ครับ|khráp] [ปรึกษา|Prùek-sǎa][ครอบครัว|khrâwp-khrua][ก่อน|kàwn][ก็|kâw][ดี|dii]",
+     "id": "Boleh. Bagus juga berunding dulu dengan keluarga.",
+     "literal": "bisa — (sopan). berunding — keluarga — dulu — ya — baik."
+    },
+    {
+     "speaker": "พิมพ์ชนก:",
+     "text": "[ขอ|Khǎaw][สรุป|sà-rùp][มติ|má-tì][ที่ประชุม|thîi-prà-chum][นะคะ|ná-khá] [ให้|Hâi][บูดี|Buu-dii][แจ้ง|jâaeng][คำตอบ|kham-tàwp][ภายใน|phaai-nai][วันที่|wan-thîi][สาม|sǎam][กันยายน|kan-yaa-yon] [และ|Láe][ให้|hâi][ฝ่าย|fàai][เลขานุการ|lee-khǎa-nú-kaan][ติดตาม|tìt-taam][เรื่อง|rûueang][ทุน|thun][ระยะ|rá-yá][ที่|thîi][สอง|sǎawng][ค่ะ|khâ]",
+     "id": "Saya rangkum keputusan rapat: Budi menyampaikan jawabannya paling lambat 3 September, dan sekretariat menindaklanjuti urusan dana fase kedua.",
+     "literal": "minta — rangkum — keputusan-rapat — (lembut-sopan). agar — Budi — beri-tahu — jawaban — paling-lambat — tanggal — 3 — September. dan — agar — bagian-sekretaris — ikuti — urusan — dana — tahap-kedua — (sopan)."
+    },
+    {
+     "speaker": "บูดี:",
+     "text": "[รับทราบ|Ráp-sâap][ครับผม|khráp-phǒm]",
+     "id": "Dimengerti, Pak.",
+     "literal": "terima-tahu — (sopan-hormat)."
+    }
+   ],
+   "notes": [
+    "**ดำเนินการ dam-noen-kaan** adalah kata kerja birokrasi paling serbaguna: \"melaksanakan, mengerjakan, memproses\". Di obrolan orang bilang *ทำ*; di rapat dan laporan, *ดำเนินการ*. *โครงการดำเนินการครบสิบโรงเรียน* = programnya terlaksana penuh di sepuluh sekolah.",
+    "**ครับผม khráp-phǒm** — Budi memakainya kepada Khun Wichai, atasannya, sejak A2, dan di rapat resmi juga kepada pimpinan rapat.",
+    "**ขอเวลาพิจารณา khǎaw wee-laa phí-jaa-rá-naa** — \"minta waktu untuk mempertimbangkan\" — menunda jawaban besar tanpa terdengar menolak; didahului *เป็นเกียรติมาก*, terima kasih dulu, baru ruang berpikir.",
+    "**Notulen memakai ให้ untuk keputusan.** *ให้บูดีแจ้งคำตอบ…* bukan \"memberi Budi\", tetapi \"(rapat memutuskan) agar Budi menyampaikan…\" — ให้ kausatif A2 u08 berbaju resmi. *มติที่ประชุม má-tì thîi prà-chum* = keputusan rapat.",
+    "**รับทราบ ráp-sâap** — \"menerima dan mengetahui\" — jawaban baku untuk instruksi atau keputusan: dimengerti, akan dilaksanakan. (B2 u13)."
+   ],
+   "grammars": [
+    {
+     "title": "Bahasa notulen rapat",
+     "table": {
+      "head": [
+       "Ungkapan",
+       "Baca",
+       "Arti"
+      ],
+      "rows": [
+       [
+        "วาระที่ ๑ / วาระสุดท้าย",
+        "*waa-rá thîi nùeng / waa-rá sùt-tháai*",
+        "agenda pertama / terakhir"
+       ],
+       [
+        "ที่ประชุมเห็นชอบ",
+        "*thîi prà-chum hěn-châwp*",
+        "rapat menyetujui"
+       ],
+       [
+        "ที่ประชุมมีมติให้ …",
+        "*mii má-tì hâi*",
+        "rapat memutuskan agar …"
+       ],
+       [
+        "มอบหมายให้ … ดำเนินการ",
+        "*mâwp-mǎai hâi … dam-noen-kaan*",
+        "menugaskan … untuk melaksanakan"
+       ],
+       [
+        "ให้ … ติดตามและรายงาน",
+        "*hâi … tìt-taam láe raai-ngaan*",
+        "agar … menindaklanjuti dan melapor"
+       ]
+      ]
+     },
+     "after": [
+      "Notulen Thai hampir tanpa \"saya/kami\": pelakunya *ที่ประชุม* atau jabatan, keputusan berbentuk *ให้ + pihak + kata kerja*."
+     ]
+    }
+   ]
+  }
+ ],
+ "sections": [
+  {
+   "title": "Surat Budi, baris demi baris",
+   "blocks": [
+    {
+     "type": "tabel",
+     "head": [
+      "Bagian",
+      "Isi di surat Budi",
+      "Catatan"
+     ],
+     "rows": [
+      [
+       "ที่",
+       "ที่ สพ ๐๑๒/๑๒๘",
+       "kode & nomor unit / nomor urut surat; kiri atas"
+      ],
+      [
+       "alamat pengirim",
+       "โครงการสะพานพลังงาน จุฬาลงกรณ์มหาวิทยาลัย",
+       "kanan atas"
+      ],
+      [
+       "วันที่",
+       "๒๔ สิงหาคม ๒๕๗๒",
+       "2029 + 543 = 2572; bulan ditulis penuh"
+      ],
+      [
+       "เรื่อง",
+       "ส่งรายงานผลการดำเนินงานระยะที่ ๑",
+       "perihal singkat"
+      ],
+      [
+       "เรียน",
+       "ผู้อำนวยการ (lembaga pemberi dana)",
+       "jabatan, bukan nama orang"
+      ],
+      [
+       "อ้างถึง",
+       "สัญญาให้ทุน ลงวันที่ … ๒๕๗๑",
+       "rujukan, hanya bila ada"
+      ],
+      [
+       "สิ่งที่ส่งมาด้วย",
+       "รายงานฉบับสมบูรณ์ จำนวน ๑ เล่ม",
+       "lampiran dan jumlahnya"
+      ],
+      [
+       "isi",
+       "ตามที่… บัดนี้… จึงเรียนมาเพื่อโปรดพิจารณา",
+       "latar → isi → maksud"
+      ],
+      [
+       "penutup",
+       "ขอแสดงความนับถือ",
+       "lalu tanda tangan, nama lengkap, jabatan"
+      ]
+     ]
+    },
+    {
+     "type": "p",
+     "text": "Isi surat resmi Thai hampir selalu tiga paragraf: latar dibuka *ตามที่… taam thîi* (sehubungan dengan…), isi dengan *บัดนี้… bàt-níi* (kini…) atau *ในการนี้…* (dalam hal ini…), dan maksud dengan *จึงเรียนมาเพื่อ…*. Dokumen pemerintah biasanya memakai angka Thai (๑ ๒ ๓)."
+    },
+    {
+     "type": "kotak",
+     "title": "Enam jenis surat resmi",
+     "items": [
+      "**หนังสือภายนอก** (surat keluar) dan **หนังสือภายใน** (surat antarbagian, ditulis di kertas *บันทึกข้อความ*); empat lainnya: surat bercap, surat perintah, surat pengumuman, dan dokumen bukti seperti berita acara.",
+      "Instansi pemerintah memakai huruf *TH Sarabun* ukuran 16 — huruf lain langsung terlihat \"bukan dari kantor pemerintah\"."
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Kata kerja birokrasi",
+   "blocks": [
+    {
+     "type": "tabel",
+     "head": [
+      "Resmi",
+      "Baca",
+      "Arti",
+      "Lisan"
+     ],
+     "rows": [
+      [
+       "ดำเนินการ",
+       "*dam-noen-kaan*",
+       "melaksanakan",
+       "ทำ"
+      ],
+      [
+       "พิจารณา",
+       "*phí-jaa-rá-naa*",
+       "mempertimbangkan",
+       "คิดดู"
+      ],
+      [
+       "อนุมัติ",
+       "*à-nú-mát*",
+       "menyetujui (berwenang)",
+       "โอเค, ให้ผ่าน"
+      ],
+      [
+       "อนุเคราะห์",
+       "*à-nú-khráw*",
+       "membantu (dari atas)",
+       "ช่วย"
+      ],
+      [
+       "มอบหมาย",
+       "*mâwp-mǎai*",
+       "menugaskan",
+       "ให้ทำ"
+      ],
+      [
+       "แจ้ง",
+       "*jâaeng*",
+       "memberitahukan",
+       "บอก"
+      ],
+      [
+       "รับทราบ",
+       "*ráp-sâap*",
+       "mengetahui, mencatat",
+       "รู้แล้ว"
+      ]
+     ]
+    },
+    {
+     "type": "p",
+     "text": "Seperti di B1 u17 dan B2 u01: di surat, notulen, dan presentasi pakai kolom kiri; di telepon dengan rekan, kolom kanan."
+    },
+    {
+     "type": "kotak",
+     "title": "Sebelum menekan \"kirim\"",
+     "items": [
+      "**Periksa penutupnya:** mereka cukup tahu (*โปรดทราบ*) atau perlu bertindak (*โปรดพิจารณา*)?",
+      "**Periksa jabatan penerima**; salah jabatan lebih memalukan daripada salah ketik.",
+      "**Tahun dalam พ.ศ.**, bukan ค.ศ."
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Ulangan berjenjang — unit 16",
+   "blocks": [
+    {
+     "type": "p",
+     "text": "Tutup kolom Thai, baca terjemahan Indonesianya, lalu susun kembali kalimatnya dari ingatan."
+    },
+    {
+     "type": "tabel",
+     "head": [
+      "Bahasa Indonesia",
+      "ภาษาไทย",
+      "Baca"
+     ],
+     "rows": [
+      [
+       "Iya. Keluarga saya beramal di wat ini setiap tahun.",
+       "ใช่ค่ะ ครอบครัวนกทำบุญที่วัดนี้ทุกปีค่ะ",
+       "*Châi khâ Khrâwp-khrua Nók tham-bun thîi wát níi thúk pii khâ*"
+      ],
+      [
+       "Orang awam memegang lima sila, tetapi biksu harus memegang 227 sila.",
+       "ชาวบ้านถือศีลห้าข้อ แต่พระต้องถือศีลสองร้อยยี่สิบเจ็ดข้อค่ะ",
+       "*Chaao-bâan thǔue-sǐin hâa khâw Tàae phrá tâwng thǔue-sǐin sǎawng ráwy yîi-sìp jèt khâw khâ*"
+      ],
+      [
+       "Lima belas hari. Anak laki-laki ditahbiskan untuk membalas budi orang tua.",
+       "สิบห้าวันค่ะ ลูกชายบวชเพื่อทดแทนคุณพ่อแม่ค่ะ",
+       "*Sìp hâa wan khâ Lûuk-chaai bùat phûea thót-thaaen-khun phâaw-mâae khâ*"
+      ],
+      [
+       "Terima kasih banyak, Paman. Saya ikut berbahagia untuk Paman dan keluarga.",
+       "ขอบคุณมากครับลุง ขอแสดงความยินดีกับลุงและครอบครัวด้วยนะครับ",
+       "*Khàwp-khun mâak khráp lung Khǎaw-sà-daaeng-khwaam-yin-dii kàp lung láe khrâwp-khrua dûai ná khráp*"
+      ],
+      [
+       "Bagus sekali. Agamanya berbeda, tetapi sama-sama mengajarkan menjadi orang baik.",
+       "ดีจริงๆ ศาสนาต่างกัน แต่สอนให้เป็นคนดีเหมือนกันนะ",
+       "*Dii jing-jing Sàat-sà-nǎa tàang-kan tàae sǎawn hâi pen khon-dii mǔuean-kan ná*"
+      ]
+     ]
+    }
+   ]
+  }
+ ],
+ "vocab": [
+  {
+   "th": "หนังสือราชการ",
+   "baca": "nǎng-sǔue-râat-chá-kaan",
+   "id": "surat resmi/dinas (kb. *ฉบับ*)"
+  },
+  {
+   "th": "บันทึกข้อความ",
+   "baca": "ban-thúek khâw-khwaam",
+   "id": "memo internal"
+  },
+  {
+   "th": "ฉบับสมบูรณ์",
+   "baca": "chà-bàp sǒm-buun",
+   "id": "edisi lengkap, final (*รายงานฉบับสมบูรณ์*)"
+  },
+  {
+   "th": "เรื่อง",
+   "baca": "rûueang",
+   "id": "perihal (di kepala surat)"
+  },
+  {
+   "th": "เรียน",
+   "baca": "rian",
+   "id": "kepada yth. (di surat)"
+  },
+  {
+   "th": "อ้างถึง",
+   "baca": "âang-thǔeng",
+   "id": "merujuk; rujukan"
+  },
+  {
+   "th": "สิ่งที่ส่งมาด้วย",
+   "baca": "sìng thîi sòng maa dûai",
+   "id": "lampiran"
+  },
+  {
+   "th": "ย่อหน้า",
+   "baca": "yâw-nâa",
+   "id": "paragraf"
+  },
+  {
+   "th": "ลงท้าย",
+   "baca": "long-tháai",
+   "id": "menutup (surat, kalimat)"
+  },
+  {
+   "th": "ลายเซ็น",
+   "baca": "laai-sen",
+   "id": "tanda tangan (*เซ็นชื่อ* = menandatangani)"
+  },
+  {
+   "th": "ตำแหน่ง",
+   "baca": "tam-nàeng",
+   "id": "jabatan"
+  },
+  {
+   "th": "ผู้ให้ทุน",
+   "baca": "phûu-hâi-thun",
+   "id": "pemberi dana"
+  },
+  {
+   "th": "ดำเนินการ",
+   "baca": "dam-noen-kaan",
+   "id": "melaksanakan"
+  },
+  {
+   "th": "พิจารณา",
+   "baca": "phí-jaa-rá-naa",
+   "id": "mempertimbangkan (*โปรดพิจารณา*)"
+  },
+  {
+   "th": "มอบหมาย",
+   "baca": "mâwp-mǎai",
+   "id": "menugaskan (*มอบหมายให้...*)"
+  },
+  {
+   "th": "ผู้ประสานงาน",
+   "baca": "phûu-prà-sǎan-ngaan",
+   "id": "koordinator"
+  },
+  {
+   "th": "วาระ",
+   "baca": "waa-rá",
+   "id": "agenda rapat (*วาระที่ ๑*)"
+  },
+  {
+   "th": "มติ",
+   "baca": "má-tì",
+   "id": "keputusan rapat (*มติที่ประชุม*)"
+  },
+  {
+   "th": "รับทราบ",
+   "baca": "ráp-sâap",
+   "id": "dimengerti, mencatat"
+  },
+  {
+   "th": "ติดตาม",
+   "baca": "tìt-taam",
+   "id": "menindaklanjuti; mengikuti"
+  },
+  {
+   "th": "เกียรติ",
+   "baca": "kìat",
+   "id": "kehormatan (*เป็นเกียรติ*)"
+  },
+  {
+   "th": "ปรึกษา",
+   "baca": "prùek-sǎa",
+   "id": "berunding, berkonsultasi (*ปรึกษากับ...*)"
+  }
+ ],
+ "exercises": [
+  {
+   "prompt": "Terjemahkan ke bahasa Thai. Bayangkan kamu laki-laki yang sedang menyiapkan surat dan rapat.",
+   "items": [
+    "Saya harus mengirim laporan akhir ke pemberi dana hari ini.",
+    "Lampirannya satu jilid laporan.",
+    "Demikian kami sampaikan untuk dipertimbangkan.",
+    "Program terlaksana di sepuluh sekolah sesuai rencana.",
+    "Suatu kehormatan besar. Bolehkah saya minta waktu seminggu?",
+    "Dimengerti, Pak."
+   ]
+  },
+  {
+   "prompt": "Isi dengan kata yang tepat (petunjuk dalam kurung).",
+   "items": [
+    "____ ส่งรายงานผลการดำเนินงาน (perihal)",
+    "____ ผู้อำนวยการ (kepada yth.)",
+    "____ รายงานฉบับสมบูรณ์ จำนวน ๑ เล่ม (lampiran)",
+    "จึงเรียนมาเพื่อโปรด____ (hanya untuk diketahui)",
+    "จึงเรียนมาเพื่อโปรด____ (mohon dipertimbangkan)",
+    "บันทึกข้อความไม่มีคำว่า____ (hormat kami)",
+    "ที่ประชุมมี____ให้บูดีแจ้งคำตอบ (keputusan)"
+   ]
+  },
+  {
+   "prompt": "Ubah kalimat lisan menjadi bahasa surat atau notulen.",
+   "items": [
+    "บอกให้รู้หน่อยนะ",
+    "ช่วยคิดดูหน่อยนะ",
+    "โครงการทำเสร็จครบสิบโรงเรียนแล้ว",
+    "หัวหน้าโอเคแล้ว",
+    "ให้บูดีทำเรื่องนี้",
+    "รู้แล้วครับ"
+   ]
+  },
+  {
+   "prompt": "Susun jadi kalimat yang benar.",
+   "items": [
+    "เพื่อ / จึงเรียนมา / โปรดพิจารณา",
+    "ครบสิบโรงเรียน / ตามแผน / ดำเนินการ / โครงการ",
+    "สักหนึ่งสัปดาห์ / ผมขอเวลาพิจารณา / ครับ / ได้ไหม",
+    "ภายในหน่วยงาน / บันทึกข้อความ / ใช้",
+    "แจ้งคำตอบ / ให้บูดี / ภายในวันที่สามกันยายน"
+   ]
+  }
+ ],
+ "answers": [
+  "ผมต้องส่งรายงานฉบับสมบูรณ์ให้ผู้ให้ทุนวันนี้ครับ — สิ่งที่ส่งมาด้วยคือรายงานหนึ่งเล่มครับ — จึงเรียนมาเพื่อโปรดพิจารณา — โครงการดำเนินการครบสิบโรงเรียนตามแผนครับ — เป็นเกียรติมากครับ ผมขอเวลาสักหนึ่งสัปดาห์ได้ไหมครับ — รับทราบครับผม",
+  "เรื่อง — เรียน — สิ่งที่ส่งมาด้วย — ทราบ — พิจารณา — ขอแสดงความนับถือ — มติ",
+  "จึงเรียนมาเพื่อโปรดทราบ atau แจ้งให้ทราบ — จึงเรียนมาเพื่อโปรดพิจารณา — โครงการดำเนินการครบสิบโรงเรียนแล้ว — หัวหน้าอนุมัติแล้ว — มอบหมายให้บูดีดำเนินการ — รับทราบครับ",
+  "จึงเรียนมาเพื่อโปรดพิจารณา — โครงการดำเนินการครบสิบโรงเรียนตามแผน — ผมขอเวลาพิจารณาสักหนึ่งสัปดาห์ได้ไหมครับ — บันทึกข้อความใช้ภายในหน่วยงาน — ให้บูดีแจ้งคำตอบภายในวันที่สามกันยายน"
+ ],
+ "wave": "Ulangi unit 16: baca lagi dialog di halaman wat dengan suara keras, lalu tulis tiga baris บันทึกข้อความ fiktif kepada atasanmu untuk meminta cuti menghadiri งานบวช seorang teman."
+}

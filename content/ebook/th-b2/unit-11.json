@@ -1,0 +1,610 @@
+{
+ "title": "Bahasa kontrak — pihak, tenggat, dan \"dianggap\"",
+ "title_target": "ภาษาสัญญา — Phaa-sǎa sǎn-yaa",
+ "goal": "Membaca kontrak Thai tanpa panik — pihak, tenggat, denda, ให้ถือว่า — lalu menanyakan pasal yang kabur dengan sopan.",
+ "bekal": [
+  "menyebut pihak: ผู้ว่าจ้าง, ผู้รับจ้าง, คู่สัญญา, ฝ่าย",
+  "membaca tenggat dan denda: ภายใน…วัน นับแต่…, ค่าปรับ",
+  "memahami ให้ถือว่า, หากฝ่ายใดฝ่ายหนึ่ง…, มีผลบังคับใช้",
+  "meminta klarifikasi: ขออนุญาตสอบถาม…, ครอบคลุมถึง…หรือเปล่า"
+ ],
+ "dialogs": [
+  {
+   "title": "บทสนทนา — Draf kontrak ruang kelas energi",
+   "intro": "Senin, 9 Juli 2029, kantor proyek bersama di Chula. Program akan membangun *ห้องเรียนพลังงาน* — ruang kelas energi berpanel surya peraga untuk pelatihan guru kedua negara; draf kontraknya baru tiba. Perhatikan: kontrak memakai peran, bukan nama.",
+   "lines": [
+    {
+     "speaker": "พิมพ์ชนก:",
+     "text": "[ร่าง|Râang][สัญญา|sǎn-yaa][จ้าง|jâang][มา|maa][แล้ว|láaeo][ค่ะ|khâ] [บูดี|Buu-dii][อ่าน|àan][หรือยัง|rǔue-yang][คะ|khá]",
+     "id": "Draf kontraknya sudah datang. Budi sudah baca?",
+     "literal": "draf — kontrak — sewa-jasa — datang — sudah — (sopan). Budi — baca — atau-belum — (sopan)?"
+    },
+    {
+     "speaker": "บูดี:",
+     "text": "[อ่าน|Àan][แล้ว|láaeo][ครับ|khráp][อาจารย์|aa-jaan] [ยาก|Yâak][กว่า|kwàa][ภาษา|phaa-sǎa][ข่าว|khàao][อีก|ìik][ครับ|khráp]",
+     "id": "Sudah, Aa-jaan. Lebih sulit daripada bahasa berita.",
+     "literal": "baca — sudah — (sopan) — dosen. sulit — lebih — bahasa — berita — lagi — (sopan)."
+    },
+    {
+     "speaker": "พิมพ์ชนก:",
+     "text": "[มหาวิทยาลัย|Má-hǎa-wít-thá-yaa-lai][เป็น|pen][ผู้ว่าจ้าง|phûu-wâa-jâang] [บริษัท|baw-rí-sàt][เป็น|pen][ผู้รับจ้าง|phûu-ráp-jâang][ค่ะ|khâ]",
+     "id": "Universitas pemberi kerja, perusahaan penerima kerja.",
+     "literal": "universitas — adalah — pemberi-kerja. perusahaan — adalah — penerima-kerja — (sopan)."
+    },
+    {
+     "speaker": "บูดี:",
+     "text": "[ทำไม|Tham-mai][ใน|nai][สัญญา|sǎn-yaa][ไม่|mâi][เรียก|rîak][ชื่อ|chûue][บริษัท|baw-rí-sàt][แสงอรุณ|Sǎaeng-à-run][ครับ|khráp]",
+     "id": "Kenapa kontraknya tidak menyebut nama perusahaan Saeng Arun?",
+     "literal": "kenapa — di kontrak — tidak — sebut — nama — perusahaan — Saeng-Arun — (sopan)?"
+    },
+    {
+     "speaker": "พิมพ์ชนก:",
+     "text": "[ข้อ|Khâw][แรก|râaek][เขียน|khǐan][ว่า|wâa] [ซึ่ง|sûeng][ต่อไป|tàw-pai][เรียกว่า|rîak-wâa][ผู้รับจ้าง|phûu-ráp-jâang] [หลัง|Lǎng][จาก|jàak][นั้น|nán][ก็|kâw][ใช้|chái][คำ|kham][นี้|níi][ตลอด|tà-làwt][ค่ะ|khâ]",
+     "id": "Pasal pertama menulis \"yang selanjutnya disebut penerima kerja\". Sesudah itu kata ini yang dipakai.",
+     "literal": "pasal pertama — tulis — bahwa: yang — selanjutnya — disebut — penerima-kerja. sesudah itu — maka — pakai — kata ini — terus — (sopan)."
+    },
+    {
+     "speaker": "บูดี:",
+     "text": "[ข้อ|Khâw][สาม|sǎam][บอก|bàwk][ว่า|wâa][ต้อง|tâwng][ทำ|tham][ให้|hâi][แล้วเสร็จ|láaeo-sèt][ภายใน|phaai-nai][เก้าสิบ|kâo-sìp][วัน|wan] [นับแต่|náp-tàae][วัน|wan][ลงนาม|long-naam][ใช่ไหม|châi-mǎi][ครับ|khráp]",
+     "id": "Pasal tiga bilang harus rampung dalam 90 hari terhitung sejak tanggal penandatanganan, ya?",
+     "literal": "pasal tiga — bilang — harus — kerjakan sampai rampung — dalam — 90 hari — terhitung-sejak — hari tanda-tangan — betul-kan — (sopan)?"
+    },
+    {
+     "speaker": "พิมพ์ชนก:",
+     "text": "[ใช่|Châi][ค่ะ|khâ] [ถ้า|Thâa][ส่งมอบ|sòng-mâawp][งาน|ngaan][ช้า|cháa] [ต้อง|tâwng][เสีย|sǐa][ค่าปรับ|khâa-pràp][เป็น|pen][รายวัน|raai-wan][ค่ะ|khâ]",
+     "id": "Betul. Kalau terlambat menyerahkan pekerjaan, harus membayar denda harian.",
+     "literal": "betul — (sopan). kalau — serahkan pekerjaan — lambat — harus — keluarkan — denda — sebagai — per-hari — (sopan)."
+    },
+    {
+     "speaker": "พิมพ์ชนก:",
+     "text": "[หาก|Hàak][ฝ่าย|fàai][ใด|dai][ฝ่าย|fàai][หนึ่ง|nùeng][ผิดสัญญา|phìt-sǎn-yaa] [อีก|ìik][ฝ่าย|fàai][มี|mii][สิทธิ์|sìt][บอกเลิก|bàwk-lôek][สัญญา|sǎn-yaa][ได้|dâai][ค่ะ|khâ]",
+     "id": "Jika salah satu pihak ingkar, pihak lain berhak memutus kontrak.",
+     "literal": "jika — pihak mana — pihak satu — langgar-kontrak, lain — pihak — punya-hak — memutus kontrak — bisa — (sopan)."
+    },
+    {
+     "speaker": "บูดี:",
+     "text": "[แล้ว|Láaeo][ประโยค|prà-yòok][นี้|níi][ล่ะ|lâ][ครับ|khráp] [หาก|Hàak][ผู้รับจ้าง|phûu-ráp-jâang][ไม่|mâi][แก้ไข|kâae-khǎi][ภายใน|phaai-nai][สิบห้า|sìp-hâa][วัน|wan] [ให้|hâi][ถือว่า|thǔue-wâa][ผิดสัญญา|phìt-sǎn-yaa]",
+     "id": "Lalu kalimat ini? \"Jika penerima kerja tidak memperbaiki dalam 15 hari, dianggap ingkar janji.\"",
+     "literal": "lalu — kalimat ini — (tanya) — (sopan)? jika — penerima-kerja — tidak — perbaiki — dalam — 15 hari — biarlah — dianggap — langgar-kontrak."
+    },
+    {
+     "speaker": "พิมพ์ชนก:",
+     "text": "[ให้ถือว่า|Hâi thǔue-wâa][แปลว่า|plaae-wâa][นับ|náp][เป็น|pen][อย่างนั้น|yàang-nán][ทันที|than-thii] [ไม่|Mâi][ต้อง|tâwng][เถียง|thǐang][กัน|kan][อีก|ìik][ค่ะ|khâ]",
+     "id": "\"Dianggap\" artinya langsung dihitung begitu. Tidak perlu berdebat lagi.",
+     "literal": "dianggap — artinya — dihitung — sebagai — begitu — seketika. tidak — perlu — berdebat — (saling) — lagi — (sopan)."
+    },
+    {
+     "speaker": "บูดี:",
+     "text": "[สัญญา|Sǎn-yaa][นี้|níi][มีผล|mii-phǒn][บังคับใช้|bang-kháp-chái][ตั้งแต่|tâng-tàae][วัน|wan][ลงนาม|long-naam][ใช่ไหม|châi-mǎi][ครับ|khráp]",
+     "id": "Kontrak ini berlaku sejak tanggal penandatanganan, kan?",
+     "literal": "kontrak ini — berakibat — berlaku-wajib — sejak — hari tanda-tangan — betul-kan — (sopan)?"
+    },
+    {
+     "speaker": "พิมพ์ชนก:",
+     "text": "[ถูกต้อง|Thùuk-tâwng][ค่ะ|khâ] [ส่วน|Sùan][ข้อ|khâw][ที่|thîi][ยัง|yang][ไม่|mâi][ชัด|chát] [พรุ่งนี้|phrûng-níi][ไป|pai][ถาม|thǎam][นิติกร|ní-tì-kawn][ด้วย|dûai][กัน|kan][นะคะ|ná-khá]",
+     "id": "Tepat. Pasal yang masih kabur, besok kita tanyakan bersama ke bagian hukum, ya.",
+     "literal": "tepat — (sopan). adapun — pasal — yang — masih tidak jelas — besok — pergi — tanya — ahli-hukum — bersama — (lembut-sopan)."
+    }
+   ],
+   "notes": [
+    "**ผู้ว่าจ้าง dan ผู้รับจ้าง** dibangun dari *ผู้-* (orang yang…) + *ว่าจ้าง* (memborongkan) dan *รับจ้าง* (menerima upahan). Polanya sama di kontrak sewa (*ผู้ให้เช่า / ผู้เช่า*). Kedua pihak bersama disebut *คู่สัญญา* (\"pasangan kontrak\").",
+    "**ซึ่งต่อไปเรียกว่า…** adalah rumus definisi, persis \"yang selanjutnya disebut…\". Sesudahnya carilah *ผู้รับจ้าง*, bukan \"Saeng Arun\".",
+    "**ภายใน…วัน นับแต่…** — *ภายใน* (paling lambat) menandai batas waktu, *นับแต่* (terhitung sejak) titik mulainya (versi resmi *ตั้งแต่*, seperti *ลงนาม* untuk *เซ็น*). Dendanya biasanya persentase per hari: *ค่าปรับวันละร้อยละ 0.1 ของค่าจ้าง* — untuk kontrak 2,4 juta baht berarti 2.400 baht sehari.",
+    "**หากฝ่ายใดฝ่ายหนึ่ง…** — *ใด dai* adalah \"mana\" versi tulis (lisan *ไหน*): *ฝ่ายใด, ผู้ใด, กรณีใดๆ*. *ฝ่ายใดฝ่ายหนึ่ง* = salah satu pihak, lalu *อีกฝ่าย* = pihak lain. Pasangan *มีสิทธิ์* (berhak) adalah *มีหน้าที่* (berkewajiban). ⚠️ *ใด* ditulis dengan ใ — jangan tertukar dengan *ได้*.",
+    "**ให้ถือว่า hâi thǔue-wâa** adalah rumus \"anggapan hukum\": begitu syaratnya terpenuhi, keadaannya dianggap terjadi tanpa perlu diperdebatkan. Ini *ให้* \"membiarkan\" dari A2 u8 — harfiah \"biarlah dipegang bahwa…\"."
+   ],
+   "grammars": [
+    {
+     "title": "Rumus-rumus kontrak yang paling sering",
+     "table": {
+      "head": [
+       "Rumus",
+       "Baca",
+       "Artinya",
+       "Padanan lisan"
+      ],
+      "rows": [
+       [
+        "ผู้ว่าจ้าง / ผู้รับจ้าง",
+        "*phûu-wâa-jâang / phûu-ráp-jâang*",
+        "pemberi kerja / penerima kerja",
+        "คนจ้าง / คนรับงาน"
+       ],
+       [
+        "คู่สัญญา, ฝ่าย",
+        "*khûu-sǎn-yaa, fàai*",
+        "para pihak, pihak",
+        "สองฝ่าย"
+       ],
+       [
+        "ซึ่งต่อไปเรียกว่า…",
+        "*sûeng tàw-pai rîak-wâa*",
+        "yang selanjutnya disebut…",
+        "—"
+       ],
+       [
+        "ภายใน…วัน นับแต่…",
+        "*phaai-nai … wan náp-tàae*",
+        "dalam … hari terhitung sejak…",
+        "ไม่เกิน…วัน ตั้งแต่…"
+       ],
+       [
+        "หากฝ่ายใดฝ่ายหนึ่ง…",
+        "*hàak fàai dai fàai nùeng*",
+        "jika salah satu pihak…",
+        "ถ้าใครคนใดคนหนึ่ง…"
+       ],
+       [
+        "ให้ถือว่า…",
+        "*hâi thǔue-wâa*",
+        "dianggap…",
+        "นับว่า…"
+       ],
+       [
+        "มีผลบังคับใช้ตั้งแต่…",
+        "*mii-phǒn bang-kháp-chái tâng-tàae*",
+        "mulai berlaku sejak…",
+        "เริ่มใช้…"
+       ]
+      ]
+     },
+     "after": [
+      "Kontrak Thai memakai *ข้อ* (pasal) dan *วรรค wák* (ayat): *ข้อ 3 วรรคสอง* = pasal 3 ayat 2. Jumlah uang ditulis angka dan huruf: *(สองล้านสี่แสนบาทถ้วน)*."
+     ]
+    }
+   ]
+  },
+  {
+   "title": "บทสนทนาที่สอง — Bertanya kepada bagian hukum",
+   "intro": "Selasa, 10 Juli. Budi menemui คุณปวีณา, นิติกร (staf ahli hukum) universitas yang menyusun draf. Perhatikan: Budi mengutip pasalnya dulu, baru bertanya.",
+   "lines": [
+    {
+     "speaker": "บูดี:",
+     "text": "[สวัสดี|Sà-wàt-dii][ครับ|khráp][คุณ|khun][ปวีณา|Pà-wii-naa] [ขออนุญาต|Khǎaw-à-nú-yâat][สอบถาม|sàwp-thǎam][เรื่อง|rûueang][ร่าง|râang][สัญญา|sǎn-yaa][สัก|sàk][สาม|sǎam][ข้อ|khâw][ครับ|khráp]",
+     "id": "Selamat siang, Khun Paweena. Mohon izin menanyakan kira-kira tiga hal soal draf kontraknya.",
+     "literal": "halo — (sopan) — Khun Paweena. mohon-izin — menanyakan — soal — draf kontrak — kira-kira — tiga — butir — (sopan)."
+    },
+    {
+     "speaker": "ปวีณา:",
+     "text": "[ยินดี|Yin-dii][ค่ะ|khâ] [เชิญ|Chooen][เลย|loei][ค่ะ|khâ] [ข้อ|Khâw][ไหน|nǎi][ที่|thîi][ยัง|yang][ไม่|mâi][ชัดเจน|chát-jeen][คะ|khá]",
+     "id": "Dengan senang hati. Silakan. Pasal mana yang belum jelas?",
+     "literal": "senang-hati — (sopan). silakan — (penekan) — (sopan). pasal — mana — yang — masih — tidak — jelas — (sopan)?"
+    },
+    {
+     "speaker": "บูดี:",
+     "text": "[ข้อ|Khâw][เจ็ด|jèt][เขียน|khǐan][ถึง|thǔeng][เหตุ|hèet][สุดวิสัย|sùt-wí-sǎi] [ไม่ทราบว่า|Mâi sâap wâa][ครอบคลุม|khrâawp-khlum][ถึง|thǔeng][น้ำท่วม|náam-thûam][ด้วย|dûai][หรือเปล่า|rǔue-plào][ครับ|khráp]",
+     "id": "Pasal tujuh menyebut keadaan kahar. Boleh tahu, apakah itu mencakup banjir juga?",
+     "literal": "pasal tujuh — tulis — sampai — sebab-di-luar-kuasa. tidak-tahu-apakah — mencakup — sampai — banjir — juga — atau-tidak — (sopan)?"
+    },
+    {
+     "speaker": "ปวีณา:",
+     "text": "[ครอบคลุม|Khrâawp-khlum][ค่ะ|khâ] [น้ำท่วม|Náam-thûam][ถือ|thǔue][เป็น|pen][ภัย|phai][ธรรมชาติ|tham-má-châat] [แต่|Tàae][ต้อง|tâwng][แจ้ง|jâaeng][เป็น|pen][หนังสือ|nǎng-sǔue][ภายใน|phaai-nai][เจ็ด|jèt][วัน|wan][ค่ะ|khâ]",
+     "id": "Mencakup. Banjir termasuk bencana alam. Tetapi harus diberitahukan secara tertulis dalam tujuh hari.",
+     "literal": "mencakup — (sopan). banjir — dianggap — sebagai — bencana alam. tetapi — harus — beri-tahu — secara-surat — dalam — 7 hari — (sopan)."
+    },
+    {
+     "speaker": "บูดี:",
+     "text": "[คำว่า|Kham-wâa][วัน|wan][ใน|nai][สัญญา|sǎn-yaa][หมายถึง|mǎai-thǔeng][วันทำการ|wan-tham-kaan][หรือ|rǔue][วัน|wan][ตาม|taam][ปฏิทิน|pà-tì-thin][ครับ|khráp]",
+     "id": "\"Hari\" di kontrak berarti hari kerja atau hari kalender?",
+     "literal": "kata — hari — di kontrak — maksudnya — hari-kerja — atau — hari menurut kalender — (sopan)?"
+    },
+    {
+     "speaker": "ปวีณา:",
+     "text": "[ถ้า|Thâa][ไม่ได้|mâi-dâai][ระบุ|rá-bù][ไว้|wái] [โดยทั่วไป|dooi-thûa-pai][หมายถึง|mǎai-thǔeng][วัน|wan][ตาม|taam][ปฏิทิน|pà-tì-thin][ค่ะ|khâ] [ดิฉัน|Dì-chǎn][จะ|jà][เติม|toem][ให้|hâi][ชัด|chát][ใน|nai][ข้อ|khâw][สาม|sǎam][เลย|loei][ค่ะ|khâ]",
+     "id": "Kalau tidak disebutkan, umumnya berarti hari kalender. Saya tambahkan supaya jelas di pasal tiga.",
+     "literal": "kalau — tidak — sebutkan — (simpan), umumnya — berarti — hari menurut kalender — (sopan). saya — akan — tambah — supaya jelas — di pasal tiga — sekalian — (sopan)."
+    },
+    {
+     "speaker": "บูดี:",
+     "text": "[ถ้า|Thâa][ฉบับ|chà-bàp][ภาษาไทย|phaa-sǎa-thai][กับ|kàp][ภาษาอังกฤษ|phaa-sǎa-ang-krìt][ขัด|khàt][กัน|kan] [ให้|hâi][ยึด|yúet][ฉบับ|chà-bàp][ไหน|nǎi][ครับ|khráp]",
+     "id": "Kalau versi Thai dan Inggris bertentangan, versi mana yang dipegang?",
+     "literal": "kalau — naskah bahasa-Thai — dengan — bahasa-Inggris — bertentangan — (saling), biarlah — pegang — naskah — mana — (sopan)?"
+    },
+    {
+     "speaker": "ปวีณา:",
+     "text": "[ให้|Hâi][ถือ|thǔue][ฉบับ|chà-bàp][ภาษาไทย|phaa-sǎa-thai][เป็น|pen][หลัก|làk][ค่ะ|khâ] [หาก|Hàak][มี|mii][ข้อพิพาท|khâw-phí-phâat][ก็|kâw][ขึ้น|khûen][ศาล|sǎan][ไทย|thai][ค่ะ|khâ]",
+     "id": "Naskah Thai yang dijadikan pegangan. Kalau ada sengketa, diadili di pengadilan Thai.",
+     "literal": "biarlah — pegang — naskah — bahasa-Thai — sebagai — pokok — (sopan). jika — ada — sengketa — maka — naik — pengadilan — Thai — (sopan)."
+    },
+    {
+     "speaker": "บูดี:",
+     "text": "[ชัดเจน|Chát-jeen][แล้ว|láaeo][ครับ|khráp] [ขอบคุณ|Khàwp-khun][ที่|thîi][ช่วย|chûai][อธิบาย|à-thí-baai][ครับ|khráp]",
+     "id": "Sudah jelas. Terima kasih sudah menjelaskan.",
+     "literal": "jelas — sudah — (sopan). terima-kasih — yang — bantu jelaskan — (sopan)."
+    },
+    {
+     "speaker": "ปวีณา:",
+     "text": "[ยินดี|Yin-dii][ค่ะ|khâ] [ดิฉัน|Dì-chǎn][จะ|jà][ส่ง|sòng][ร่าง|râang][ใหม่|mài][ให้|hâi][ภายใน|phaai-nai][วันศุกร์|wan-sùk][นี้|níi][ค่ะ|khâ]",
+     "id": "Sama-sama. Draf baru saya kirim paling lambat Jumat ini.",
+     "literal": "senang-hati — (sopan). saya — akan — kirim — draf baru — (kepada) — dalam — Jumat ini — (sopan)."
+    }
+   ],
+   "notes": [
+    "**ขออนุญาตสอบถาม** — \"mohon izin menanyakan\". Di kantor Thai orang minta izin dulu, walau yang ditanya memang bertugas menjawab. *สอบถาม* adalah *ถาม* versi resmi (B1 u17).",
+    "**Kutip dulu, baru tanya.** Menyebut *ข้อเจ็ด…* lebih dulu membuat Budi tak terdengar menuduh draf keliru — muka penyusunnya terjaga (B1 u11).",
+    "**ไม่ทราบว่า…หรือเปล่า** — pembuka tanya yang sangat halus; *ครอบคลุมถึง* (mencakup) menanyakan cakupan pasal.",
+    "**หมายถึง vs แปลว่า** — *แปลว่า* menerjemahkan kata (*ศาล แปลว่า pengadilan*); *หมายถึง* menunjuk isi/cakupan (*วัน หมายถึงวันตามปฏิทิน*) — itulah yang dipakai untuk pasal.",
+    "**ยึด / ถือ…เป็นหลัก** — \"memegang … sebagai pokok\". Kontrak dwibahasa lazim menetapkan satu naskah yang menang."
+   ],
+   "grammars": [
+    {
+     "title": "Meminta klarifikasi pasal",
+     "table": {
+      "head": [
+       "Keperluan",
+       "Ungkapan",
+       "Baca"
+      ],
+      "rows": [
+       [
+        "membuka",
+        "ขออนุญาตสอบถามข้อ…",
+        "*khǎaw-à-nú-yâat sàwp-thǎam khâw …*"
+       ],
+       [
+        "mengutip",
+        "ข้อ…เขียนว่า… / ที่ระบุว่า…",
+        "*khâw … khǐan wâa / thîi rá-bù wâa*"
+       ],
+       [
+        "cakupan",
+        "ไม่ทราบว่าครอบคลุมถึง…หรือเปล่า",
+        "*mâi sâap wâa khrâawp-khlum thǔeng … rǔue-plào*"
+       ],
+       [
+        "makna",
+        "คำว่า…หมายถึง…หรือ…",
+        "*kham-wâa … mǎai-thǔeng … rǔue …*"
+       ],
+       [
+        "kasus",
+        "ในกรณีที่… จะเป็นอย่างไร",
+        "*nai kaw-rá-nii thîi … jà pen yàang-rai*"
+       ]
+      ]
+     },
+     "after": [
+      "⚠️ *ในกรณีที่…จะเป็นอย่างไร* (\"kalau terjadi…, bagaimana?\") menguji tiap pasal dengan skenario nyata."
+     ]
+    }
+   ]
+  }
+ ],
+ "sections": [
+  {
+   "title": "Kerangka kontrak kerja Thai",
+   "blocks": [
+    {
+     "type": "tabel",
+     "head": [
+      "Bagian",
+      "Thai",
+      "Isinya"
+     ],
+     "rows": [
+      [
+       "kepala",
+       "สัญญาฉบับนี้ทำขึ้น ณ … เมื่อวันที่ …",
+       "tempat, tanggal; *ณ* = di"
+      ],
+      [
+       "para pihak",
+       "ระหว่าง… ซึ่งต่อไปในสัญญานี้เรียกว่า \"ผู้ว่าจ้าง\" ฝ่ายหนึ่ง กับ…",
+       "nama resmi, wakil, alamat"
+      ],
+      [
+       "pokok perjanjian",
+       "ข้อ 1 ข้อตกลงว่าจ้าง",
+       "pekerjaan; rincian di *เอกสารแนบท้าย*"
+      ],
+      [
+       "jangka waktu",
+       "ข้อ 3 ระยะเวลาแล้วเสร็จ",
+       "tenggat, *ภายใน…วัน*"
+      ],
+      [
+       "pembayaran",
+       "การจ่ายเงิน แบ่งเป็น…งวด",
+       "*งวด* = termin, sesudah *ตรวจรับ*"
+      ],
+      [
+       "denda",
+       "ค่าปรับ",
+       "per hari keterlambatan"
+      ],
+      [
+       "pemutusan",
+       "การบอกเลิกสัญญา",
+       "ingkar janji, *เหตุสุดวิสัย*"
+      ],
+      [
+       "penutup",
+       "สัญญานี้ทำขึ้นสองฉบับ มีข้อความถูกต้องตรงกัน…",
+       "dua rangkap, saksi"
+      ]
+     ]
+    },
+    {
+     "type": "p",
+     "text": "Kalimat penutup kontrak Thai hampir selalu sama: *คู่สัญญาได้อ่านและเข้าใจข้อความโดยละเอียดแล้ว จึงได้ลงลายมือชื่อไว้เป็นสำคัญต่อหน้าพยาน* — \"para pihak telah membaca dan memahami isinya secara saksama, maka membubuhkan tanda tangan sebagai bukti di hadapan saksi\". *ลงลายมือชื่อ* adalah versi paling resmi dari *เซ็น* dan *ลงนาม*."
+    },
+    {
+     "type": "kotak",
+     "title": "Sebelum menandatangani di Thailand",
+     "items": [
+      "Lazimnya **dua rangkap** (*สองฉบับ*), satu per pihak, ditandatangani di depan **dua saksi** (*พยาน*).",
+      "Banyak kantor meminta **paraf tiap halaman** (*เซ็นกำกับทุกหน้า*) agar halaman tak ditukar.",
+      "Kontrak borongan (*สัญญาจ้างทำของ*) terkena **bea meterai** (*อากรแสตมป์*): 1 baht per 1.000 baht nilai kontrak."
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Kata hukum dalam hidup sehari-hari",
+   "blocks": [
+    {
+     "type": "tabel",
+     "head": [
+      "Thai",
+      "Baca",
+      "Artinya"
+     ],
+     "rows": [
+      [
+       "สัญญาเช่า",
+       "*sǎn-yaa châo*",
+       "kontrak sewa"
+      ],
+      [
+       "ผู้ให้เช่า / ผู้เช่า",
+       "*phûu-hâi-châo / phûu-châo*",
+       "yang menyewakan / penyewa"
+      ],
+      [
+       "เงินประกัน",
+       "*ngoen prà-kan*",
+       "uang jaminan (deposit sewa)"
+      ],
+      [
+       "ผิดสัญญา",
+       "*phìt-sǎn-yaa*",
+       "ingkar janji, wanprestasi"
+      ],
+      [
+       "ค่าเสียหาย",
+       "*khâa-sǐa-hǎai*",
+       "ganti rugi"
+      ],
+      [
+       "ศาล / ฟ้อง",
+       "*sǎan / fáawng*",
+       "pengadilan / menggugat"
+      ]
+     ]
+    },
+    {
+     "type": "p",
+     "text": "Budi pertama kali bertemu bahasa ini saat menyewa kondominium di On Nut: kontrak setahun, *เงินประกัน* dua bulan sewa, dikembalikan saat keluar dikurangi *ค่าเสียหาย*. *ฟ้อง* juga hidup di luar pengadilan: anak yang mengadu ke ibunya disebut *ฟ้องแม่*."
+    },
+    {
+     "type": "kotak",
+     "title": "Tiga kebiasaan membaca kontrak Thai",
+     "items": [
+      "Cari *ซึ่งต่อไปเรียกว่า*: siapa *ผู้ว่าจ้าง*, siapa *ผู้รับจ้าง*.",
+      "Lingkari setiap *ภายใน…วัน* dan *นับแต่…*: di tenggatlah orang tersandung.",
+      "Baca pasal *ให้ถือว่า* dua kali — misalnya pekerjaan dianggap diterima bila pemberi kerja diam 15 hari."
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Ulangan berjenjang — unit 9",
+   "blocks": [
+    {
+     "type": "p",
+     "text": "Tutup kolom Thai, baca terjemahan Indonesianya, lalu susun kembali kalimatnya dari ingatan."
+    },
+    {
+     "type": "tabel",
+     "head": [
+      "Bahasa Indonesia",
+      "ภาษาไทย",
+      "Baca"
+     ],
+     "rows": [
+      [
+       "กลอนแปด punya delapan suku per larik.",
+       "กลอนแปดมีวรรคละแปดคำค่ะ",
+       "*Klawn pàaet mii wák lá pàaet kham khâ*"
+      ],
+      [
+       "Tahu apa pun tak menandingi berilmu; pandai menyelamatkan diri, itulah yang terbaik.",
+       "รู้สิ่งใดไม่สู้รู้วิชา รู้รักษาตัวรอดเป็นยอดดี",
+       "*Rúu sìng dai mâi sûu rúu wí-chaa Rúu rák-sǎa tua râwt pen yâwt dii*"
+      ],
+      [
+       "Suku terakhir larik pertama berima dengan suku ketiga larik kedua.",
+       "คำสุดท้ายของวรรคแรกสัมผัสกับคำที่สามของวรรคที่สองค่ะ",
+       "*Kham sùt-tháai khǎawng wák râaek sǎm-phàt kàp kham thîi sǎam khǎawng wák thîi-sǎawng khâ*"
+      ],
+      [
+       "Jangan mudah percaya orang. Hati manusia tak terukur dalamnya.",
+       "อย่าไว้ใจคนง่ายๆค่ะ ใจคนลึกจนหยั่งไม่ถึง",
+       "*Yàa wái-jai khon ngâai-ngâai khâ Jai khon lúek jon yàng mâi thǔeng*"
+      ],
+      [
+       "Jumlah larik, jumlah suku, dan bunyi vokal di akhir larik sudah ditentukan.",
+       "กำหนดจำนวนวรรคจำนวนคำ และเสียงสระท้ายวรรคครับ",
+       "*Kam-nòt jam-nuan wák jam-nuan kham láe sǐang sà tháai wák khráp*"
+      ]
+     ]
+    }
+   ]
+  }
+ ],
+ "vocab": [
+  {
+   "th": "สัญญา",
+   "baca": "sǎn-yaa",
+   "id": "kontrak; janji (kb. *ฉบับ*)"
+  },
+  {
+   "th": "ผู้ว่าจ้าง",
+   "baca": "phûu-wâa-jâang",
+   "id": "pemberi kerja, pihak yang memborongkan"
+  },
+  {
+   "th": "ผู้รับจ้าง",
+   "baca": "phûu-ráp-jâang",
+   "id": "penerima kerja, kontraktor"
+  },
+  {
+   "th": "คู่สัญญา",
+   "baca": "khûu-sǎn-yaa",
+   "id": "para pihak dalam kontrak"
+  },
+  {
+   "th": "ฝ่าย",
+   "baca": "fàai",
+   "id": "pihak (*ฝ่ายใดฝ่ายหนึ่ง*, *อีกฝ่าย*)"
+  },
+  {
+   "th": "ข้อ",
+   "baca": "khâw",
+   "id": "pasal; butir (*ข้อ 3*)"
+  },
+  {
+   "th": "ภายใน",
+   "baca": "phaai-nai",
+   "id": "di dalam; paling lambat (*ภายใน 7 วัน*)"
+  },
+  {
+   "th": "นับแต่",
+   "baca": "náp-tàae",
+   "id": "terhitung sejak (tulis; lisan *ตั้งแต่*)"
+  },
+  {
+   "th": "ลงนาม",
+   "baca": "long-naam",
+   "id": "menandatangani (resmi; lisan *เซ็น*)"
+  },
+  {
+   "th": "ค่าปรับ",
+   "baca": "khâa-pràp",
+   "id": "denda (*เสียค่าปรับ*)"
+  },
+  {
+   "th": "ค่าจ้าง",
+   "baca": "khâa-jâang",
+   "id": "upah, nilai borongan"
+  },
+  {
+   "th": "ผิดสัญญา",
+   "baca": "phìt-sǎn-yaa",
+   "id": "ingkar janji, melanggar kontrak"
+  },
+  {
+   "th": "บอกเลิก",
+   "baca": "bàwk-lôek",
+   "id": "memutus (*บอกเลิกสัญญา*)"
+  },
+  {
+   "th": "สิทธิ์",
+   "baca": "sìt",
+   "id": "hak (*มีสิทธิ์*)"
+  },
+  {
+   "th": "ให้ถือว่า",
+   "baca": "hâi thǔue-wâa",
+   "id": "dianggap (rumus hukum)"
+  },
+  {
+   "th": "มีผลบังคับใช้",
+   "baca": "mii-phǒn bang-kháp-chái",
+   "id": "mulai berlaku"
+  },
+  {
+   "th": "เหตุสุดวิสัย",
+   "baca": "hèet-sùt-wí-sǎi",
+   "id": "keadaan kahar, force majeure"
+  },
+  {
+   "th": "ครอบคลุม",
+   "baca": "khrâawp-khlum",
+   "id": "mencakup (*ครอบคลุมถึง…*)"
+  },
+  {
+   "th": "ระบุ",
+   "baca": "rá-bù",
+   "id": "menyebutkan secara tegas"
+  },
+  {
+   "th": "ปฏิทิน",
+   "baca": "pà-tì-thin",
+   "id": "kalender (*วันตามปฏิทิน*)"
+  },
+  {
+   "th": "ข้อพิพาท",
+   "baca": "khâw-phí-phâat",
+   "id": "sengketa"
+  },
+  {
+   "th": "นิติกร",
+   "baca": "ní-tì-kawn",
+   "id": "staf ahli hukum (di instansi)"
+  }
+ ],
+ "exercises": [
+  {
+   "prompt": "Terjemahkan ke bahasa Thai. Bayangkan kamu laki-laki.",
+   "items": [
+    "Universitas adalah pemberi kerja, perusahaan adalah penerima kerja.",
+    "Jika salah satu pihak ingkar janji, pihak lain berhak memutus kontrak.",
+    "Kontrak ini berlaku sejak tanggal penandatanganan, kan?",
+    "\"Hari\" di kontrak berarti hari kerja atau hari kalender?",
+    "Kalau versi Thai dan Inggris bertentangan, versi mana yang dipegang?",
+    "Mohon izin menanyakan pasal tujuh."
+   ]
+  },
+  {
+   "prompt": "Isi dengan kata kontrak yang tepat. Petunjuk ada di dalam kurung.",
+   "items": [
+    "บริษัทแสงอรุณ ซึ่งต่อไปในสัญญานี้เรียกว่า ____ (penerima kerja)",
+    "ผู้รับจ้างต้องทำงานให้แล้วเสร็จ____ 90 วัน (paling lambat)",
+    "____วันลงนาม (terhitung sejak, tulis)",
+    "หากฝ่าย____ฝ่ายหนึ่งผิดสัญญา (mana, tulis)",
+    "หากไม่แก้ไขภายใน 15 วัน ให้____ว่าผิดสัญญา (dianggap)",
+    "ภัยธรรมชาติถือเป็นเหตุ____ (kahar)",
+    "ไม่ทราบว่า____ถึงน้ำท่วมด้วยหรือเปล่าครับ (mencakup)"
+   ]
+  },
+  {
+   "prompt": "Ubah kalimat lisan ini menjadi bahasa kontrak.",
+   "items": [
+    "ถ้าใครคนใดคนหนึ่งไม่ทำตามสัญญา อีกคนเลิกได้",
+    "ต้องทำให้เสร็จไม่เกิน 90 วัน",
+    "เริ่มใช้สัญญาตั้งแต่วันเซ็น",
+    "ถ้าส่งงานช้า ต้องจ่ายค่าปรับ",
+    "คนจ้างคือมหาวิทยาลัย",
+    "ถ้าไม่แก้ภายใน 15 วัน ก็นับว่าผิดสัญญา"
+   ]
+  },
+  {
+   "prompt": "Susun jadi kalimat yang benar.",
+   "items": [
+    "ผู้ว่าจ้าง / มหาวิทยาลัย / ค่ะ / เป็น",
+    "มีสิทธิ์ / อีกฝ่าย / บอกเลิกสัญญา / ได้",
+    "มีผลบังคับใช้ / สัญญานี้ / วันลงนาม / ตั้งแต่",
+    "ให้ถือว่า / ภายใน 15 วัน / หากไม่แก้ไข / ผิดสัญญา",
+    "ครับ / ขออนุญาต / ข้อเจ็ด / สอบถาม"
+   ]
+  }
+ ],
+ "answers": [
+  "มหาวิทยาลัยเป็นผู้ว่าจ้าง บริษัทเป็นผู้รับจ้างครับ — หากฝ่ายใดฝ่ายหนึ่งผิดสัญญา อีกฝ่ายมีสิทธิ์บอกเลิกสัญญาได้ครับ — สัญญานี้มีผลบังคับใช้ตั้งแต่วันลงนามใช่ไหมครับ — คำว่าวันในสัญญาหมายถึงวันทำการหรือวันตามปฏิทินครับ — ถ้าฉบับภาษาไทยกับภาษาอังกฤษขัดกัน ให้ยึดฉบับไหนครับ — ขออนุญาตสอบถามข้อเจ็ดครับ",
+  "ผู้รับจ้าง — ภายใน — นับแต่ — ใด — ถือ — สุดวิสัย — ครอบคลุม",
+  "หากฝ่ายใดฝ่ายหนึ่งผิดสัญญา อีกฝ่ายมีสิทธิ์บอกเลิกสัญญาได้ — ต้องทำงานให้แล้วเสร็จภายใน 90 วัน — สัญญานี้มีผลบังคับใช้ตั้งแต่วันลงนาม — หากส่งมอบงานล่าช้า ผู้รับจ้างต้องเสียค่าปรับ — มหาวิทยาลัยเป็นผู้ว่าจ้าง — หากไม่แก้ไขภายใน 15 วัน ให้ถือว่าผิดสัญญา",
+  "มหาวิทยาลัยเป็นผู้ว่าจ้างค่ะ — อีกฝ่ายมีสิทธิ์บอกเลิกสัญญาได้ — สัญญานี้มีผลบังคับใช้ตั้งแต่วันลงนาม — หากไม่แก้ไขภายใน 15 วันให้ถือว่าผิดสัญญา — ขออนุญาตสอบถามข้อเจ็ดครับ"
+ ],
+ "wave": "Ulangi unit 9: bacakan lagi baris-baris puisinya keras-keras, lalu bandingkan dengan kalimat kontrak di unit ini."
+}
