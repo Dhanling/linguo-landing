@@ -22,6 +22,30 @@ export async function POST(req: NextRequest) {
     const session_id = clampStr(body.session_id, 64);
     if (!path || !session_id) return ok(); // payload tak valid → diamkan
 
+    // landing-klik-v1 — klik tombol/link masuk tabel terpisah, bukan dihitung view.
+    if (body.type === "click") {
+      const KINDS = ["whatsapp", "cta", "nav", "outbound", "button"];
+      const click = {
+        session_id,
+        path,
+        label: clampStr(body.label, 120),
+        href: clampStr(body.href, 500),
+        kind: KINDS.includes(body.kind) ? body.kind : "button",
+        device: body.device === "mobile" ? "mobile" : "desktop",
+      };
+      await fetch(`${SUPABASE_URL}/rest/v1/landing_click_events`, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          apikey: SUPABASE_KEY,
+          Authorization: `Bearer ${SUPABASE_KEY}`,
+          Prefer: "return=minimal",
+        },
+        body: JSON.stringify(click),
+      });
+      return ok();
+    }
+
     // duration_ms: angka wajar 0..6 jam (buang NaN/negatif/keterlaluan).
     let duration_ms = Number(body.duration_ms);
     if (!Number.isFinite(duration_ms) || duration_ms < 0) duration_ms = 0;
