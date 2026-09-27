@@ -11,6 +11,7 @@
 //   node scripts/ebook-publish.mjs cari <kata> [nama-siswa]
 //   node scripts/ebook-publish.mjs terbit <slug>            # unggah PDF + upsert produk
 //   node scripts/ebook-publish.mjs beri-akses <slug> <email|student_id>
+//   node scripts/ebook-publish.mjs susul-level <slug> [email] [--jalan]
 //
 // ⚠️ Pemberian akses SENGAJA dua langkah: baris `digital_purchases` disisipkan
 // "Belum Bayar" dulu, baru di-UPDATE jadi "Lunas". Trigger
@@ -39,7 +40,9 @@ if (!url || !key) {
 }
 const sb = createClient(url, key);
 
-const [perintah, slug, target] = process.argv.slice(2);
+const argv = process.argv.slice(2);
+const JALAN = argv.includes("--jalan");
+const [perintah, slug, target] = argv.filter((a) => a !== "--jalan");
 if (!perintah || !slug) {
   console.error("pakai: node scripts/ebook-publish.mjs <status|terbit|beri-akses> <slug> [email]");
   process.exit(1);
@@ -200,6 +203,63 @@ async function cari() {
   }
 }
 
-const jalan = { status, cari, terbit, "beri-akses": beriAkses }[perintah];
+// [ebook-susul-level-v1] Siswa yang daftar SEBELUM modul levelnya terbit diberi buku
+// level terdekat di bawahnya oleh `ebook_product_for_language()` (Inez, Private Thai
+// B1.1, daftar 26 Sep → dapat Thai 101 - A1; Thai 103 - B1 baru terbit 27 Sep). Trigger
+// bundel tidak ikut berbunyi saat produk baru lahir, jadi setelah `terbit` modul
+// A2/B1/B2 jalankan perintah ini: ia memanggil ulang `sync_ebook_access_for_registration`
+// untuk registrasi berbahasa sama yang levelnya >= level modul dan sudah punya e-book
+// dari kelas. Pemilihan produk, masa berlaku, dan syarat berhak tetap di fungsi DB —
+// di sini cuma memilih siapa yang dipicu ulang. Email akses menyusul lewat cron
+// `ebook-access-email` (access_granted_at baru). Tanpa --jalan = pratinjau saja.
+const rankCefr = (t) => ({ A1: 1, A2: 2, B1: 3, B2: 4, C1: 5, C2: 6 })[
+  (String(t ?? "").match(/\b([ABC][12])(?![0-9])/i)?.[1] ?? "").toUpperCase()] ?? null;
+
+async function susulLevel() {
+  const { data: prod } = await sb.from("digital_products")
+    .select("id,title,language,level").eq("slug", slugProduk).maybeSingle();
+  if (!prod) { console.error("produknya belum ada — jalankan `terbit` dulu"); process.exit(1); }
+  const tingkat = rankCefr(prod.level ?? prod.title);
+  if (!prod.language || !tingkat) { console.error("produk tanpa bahasa/level — tak bisa disusulkan"); process.exit(1); }
+  console.log(`Produk: ${prod.title} (${prod.language}, level ${tingkat})`);
+
+  let q = sb.from("registrations")
+    .select("id,language,level,payment_status,student_id,students(name,email)")
+    .ilike("language", prod.language)
+    .in("payment_status", ["Lunas", "Cicilan"]);
+  if (target) {
+    const { data: sis } = await sb.from("students").select("id").ilike("email", target);
+    if (!sis?.length) { console.error(`siswa ${target} tidak ketemu`); process.exit(1); }
+    q = q.in("student_id", sis.map((x) => x.id));
+  }
+  const { data: regs, error } = await q;
+  if (error) throw new Error(`baca registrasi gagal: ${error.message}`);
+  const calon = (regs ?? []).filter((r) => (rankCefr(r.level) ?? 0) >= tingkat);
+  if (!calon.length) { console.log("· tak ada registrasi yang levelnya setara/lebih tinggi"); return; }
+
+  // Hanya yang memang sudah berhak e-book dari kelas (punya baris bundel) — sisanya
+  // tak dapat apa-apa dari fungsi DB, jadi tak perlu dipicu.
+  const { data: bundel } = await sb.from("digital_purchases")
+    .select("registration_id,product_id,digital_products(title)")
+    .in("registration_id", calon.map((r) => r.id))
+    .is("archived_at", null);
+  const punya = new Map();
+  for (const b of bundel ?? []) {
+    punya.set(b.registration_id, [...(punya.get(b.registration_id) ?? []), b]);
+  }
+
+  for (const r of calon) {
+    const milik = punya.get(r.id) ?? [];
+    const label = `${r.students?.name ?? "?"} <${r.students?.email ?? "-"}> ${r.level ?? ""}`;
+    if (!milik.length) { console.log(`· ${label}: belum punya e-book dari kelas — dilewati`); continue; }
+    if (milik.some((b) => b.product_id === prod.id)) { console.log(`· ${label}: sudah punya ${prod.title}`); continue; }
+    const kini = milik.map((b) => b.digital_products?.title).join(", ");
+    if (!JALAN) { console.log(`→ ${label}: kini ${kini} (pratinjau — tambah --jalan)`); continue; }
+    const { data: hasil, error: eRpc } = await sb.rpc("sync_ebook_access_for_registration", { p_reg_id: r.id });
+    console.log(eRpc ? `✗ ${label}: ${eRpc.message}` : `✓ ${label}: ${hasil} (sebelumnya ${kini})`);
+  }
+}
+
+const jalan = { status, cari, terbit, "beri-akses": beriAkses, "susul-level": susulLevel }[perintah];
 if (!jalan) { console.error(`perintah tak dikenal: ${perintah}`); process.exit(1); }
 await jalan();
