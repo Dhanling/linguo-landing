@@ -11,9 +11,9 @@
 import { useCallback, useEffect, useLayoutEffect, useMemo, useRef, useState } from "react";
 import Link from "next/link";
 import { AnimatePresence, motion, type PanInfo } from "framer-motion";
-import { ChevronLeft, ChevronRight, List, BookOpen, Languages, Loader2, RotateCcw, Hand } from "lucide-react";
+import { ChevronLeft, ChevronRight, List, BookOpen, Languages, Loader2, RotateCcw, Hand, Play, Pause, X } from "lucide-react";
 import type { Ayat, Halaman, Kata, Surat } from "@/lib/quran/sumber";
-import { JUMLAH_HALAMAN } from "@/lib/quran/sumber";
+import { JUMLAH_HALAMAN, audioSurat } from "@/lib/quran/sumber";
 import { muatHalaman, muatMorfologi } from "./data";
 import PanelKata from "./PanelKata";
 import DaftarSurat from "./DaftarSurat";
@@ -118,6 +118,26 @@ export default function MushafReader({
     setPilihan(null);
   }, []);
 
+  // [quran-tips-bawah-v1] Tips tak lagi menimpa mushaf: diam di bawah kertas,
+  // tersembunyi, dan baru muncul sebentar saat kursor/jari bergerak.
+  const [gerak, setGerak] = useState(false);
+  useEffect(() => {
+    if (!tips) return;
+    let t: ReturnType<typeof setTimeout>;
+    const muncul = () => {
+      setGerak(true);
+      clearTimeout(t);
+      t = setTimeout(() => setGerak(false), 2500);
+    };
+    window.addEventListener("pointermove", muncul, { passive: true });
+    window.addEventListener("touchstart", muncul, { passive: true });
+    return () => {
+      clearTimeout(t);
+      window.removeEventListener("pointermove", muncul);
+      window.removeEventListener("touchstart", muncul);
+    };
+  }, [tips]);
+
   const tutupTips = () => {
     setTips(false);
     try {
@@ -140,24 +160,52 @@ export default function MushafReader({
   // Audio tunggal untuk kata & ayat — memutar yang baru menghentikan yang lama.
   const audioRef = useRef<HTMLAudioElement | null>(null);
   const [audioAktif, setAudioAktif] = useState<string | null>(null);
+  const [jeda, setJeda] = useState(false);
   const audio = useMemo(
     () => ({
       aktif: audioAktif,
+      jeda,
       putar: (url: string, id: string) => {
         audioRef.current?.pause();
         const el = new Audio(url);
         audioRef.current = el;
         setAudioAktif(id);
+        setJeda(false);
         el.onended = () => setAudioAktif((a) => (a === id ? null : a));
         el.play().catch(() => setAudioAktif(null));
       },
       berhenti: () => {
         audioRef.current?.pause();
         setAudioAktif(null);
+        setJeda(false);
+      },
+      /** Jeda / lanjut audio yang sedang aktif (dipakai pemutar satu surat). */
+      jedaLanjut: () => {
+        const el = audioRef.current;
+        if (!el) return;
+        if (el.paused) {
+          void el.play().catch(() => {});
+          setJeda(false);
+        } else {
+          el.pause();
+          setJeda(true);
+        }
       },
     }),
-    [audioAktif],
+    [audioAktif, jeda],
   );
+  useEffect(() => () => audioRef.current?.pause(), []);
+
+  // [quran-putar-surat-v1] Putar satu surat utuh; tombol yang sama jadi jeda/lanjut.
+  const suratDiputar = audioAktif?.startsWith("surat-") ? Number(audioAktif.slice(6)) : null;
+  const putarSurat = useCallback(
+    (n: number) => {
+      if (suratDiputar === n) audio.jedaLanjut();
+      else audio.putar(audioSurat(n), `surat-${n}`);
+    },
+    [audio, suratDiputar],
+  );
+  const pemutarSurat = { diputar: suratDiputar, jeda, putar: putarSurat };
 
   const suratIni = data?.ayat[0] ? daftarSurat.find((s) => s.id === data.ayat[0].surat) : undefined;
   const namaSurat = (id: number) => daftarSurat.find((s) => s.id === id)?.nama ?? `Surat ${id}`;
@@ -230,7 +278,7 @@ export default function MushafReader({
       <main
         className={`relative mx-auto flex w-full max-w-5xl flex-1 items-start justify-center px-3 py-4 transition-[padding] duration-300 sm:px-6 ${
           pilihan ? "lg:pr-[452px]" : ""
-        }`}
+        } ${tips ? "pb-28" : ""}`}
       >
         {/* Tombol samping (desktop). Kiri = berikutnya karena mushaf dibaca kanan-ke-kiri. */}
         <button
@@ -305,6 +353,7 @@ export default function MushafReader({
                     onPilih={pilih}
                     namaSurat={namaSurat}
                     daftarSurat={daftarSurat}
+                    pemutar={pemutarSurat}
                   />
                 ) : (
                   <HalamanTerjemah
@@ -314,6 +363,7 @@ export default function MushafReader({
                     onPilih={pilih}
                     namaSurat={namaSurat}
                     daftarSurat={daftarSurat}
+                    pemutar={pemutarSurat}
                   />
                 )}
                 <p className="relative mt-3 text-center text-xs font-semibold text-stone-400">{angkaArab(hal)}</p>
@@ -322,13 +372,13 @@ export default function MushafReader({
           </AnimatePresence>
 
           <AnimatePresence>
-            {tips && (
+            {tips && gerak && (
               <motion.button
-                initial={{ opacity: 0, y: 8 }}
+                initial={{ opacity: 0, y: -6 }}
                 animate={{ opacity: 1, y: 0 }}
-                exit={{ opacity: 0 }}
+                exit={{ opacity: 0, y: -6 }}
                 onClick={tutupTips}
-                className="absolute inset-x-4 bottom-16 z-20 flex items-center gap-3 rounded-2xl bg-stone-900/90 px-4 py-3 text-left text-sm text-white shadow-lg"
+                className="absolute inset-x-4 top-full z-20 mt-3 flex items-center gap-3 rounded-2xl bg-stone-900/90 px-4 py-3 text-left text-sm text-white shadow-lg"
               >
                 <Hand size={20} className="shrink-0" />
                 <span>
@@ -363,6 +413,37 @@ export default function MushafReader({
           </button>
         </div>
       </nav>
+
+      {/* Pemutar satu surat: pil melayang selama murattal surat aktif. */}
+      <AnimatePresence>
+        {suratDiputar && (
+          <motion.div
+            initial={{ opacity: 0, y: 16 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: 16 }}
+            className="fixed bottom-16 left-1/2 z-30 flex -translate-x-1/2 items-center gap-2 rounded-full bg-stone-900/95 py-1.5 pl-1.5 pr-2 text-white shadow-lg md:bottom-5"
+          >
+            <button
+              onClick={() => putarSurat(suratDiputar)}
+              className="grid h-9 w-9 place-items-center rounded-full"
+              style={{ background: TEAL }}
+              aria-label={jeda ? "Lanjutkan" : "Jeda"}
+            >
+              {jeda ? <Play size={16} className="translate-x-[1px]" /> : <Pause size={16} />}
+            </button>
+            <span className="max-w-[46vw] truncate text-sm font-semibold">
+              {jeda ? "Dijeda" : "Memutar"} · QS {namaSurat(suratDiputar)}
+            </span>
+            <button
+              onClick={audio.berhenti}
+              className="grid h-8 w-8 place-items-center rounded-full text-stone-300 hover:bg-white/10 hover:text-white"
+              aria-label="Hentikan"
+            >
+              <X size={16} />
+            </button>
+          </motion.div>
+        )}
+      </AnimatePresence>
 
       {/* Panel kata: bottom sheet di HP, panel kanan di desktop */}
       <AnimatePresence>
@@ -404,6 +485,7 @@ export default function MushafReader({
         onTutup={() => setDaftarBuka(false)}
         daftar={daftarSurat}
         fontArab={fontArab}
+        pemutar={pemutarSurat}
         onPilihHalaman={(n) => {
           pergi(n);
           setDaftarBuka(false);
@@ -420,16 +502,62 @@ type PropsHalaman = {
   onPilih: (k: Kata, a: Ayat) => void;
   namaSurat: (id: number) => string;
   daftarSurat: Surat[];
+  pemutar: PemutarSurat;
 };
 
-function KepalaSurat({ surat, fontArab, daftarSurat }: { surat: number; fontArab: string; daftarSurat: Surat[] }) {
+export type PemutarSurat = { diputar: number | null; jeda: boolean; putar: (n: number) => void };
+
+/** Tombol putar/jeda satu surat. Di layar sentuh selalu tampil; di desktop muncul saat hover. */
+export function TombolPutarSurat({
+  surat,
+  pemutar,
+  className = "",
+}: {
+  surat: number;
+  pemutar: PemutarSurat;
+  className?: string;
+}) {
+  const aktif = pemutar.diputar === surat;
+  const main = aktif && !pemutar.jeda;
+  return (
+    <button
+      type="button"
+      onClick={(e) => {
+        e.stopPropagation();
+        pemutar.putar(surat);
+      }}
+      title={main ? "Jeda" : "Putar satu surat"}
+      aria-label={main ? "Jeda murattal surat" : "Putar murattal satu surat"}
+      className={`grid h-8 w-8 shrink-0 place-items-center rounded-full text-white shadow-sm transition active:scale-95 focus-visible:opacity-100 ${
+        aktif ? "opacity-100" : "[@media(hover:hover)]:opacity-0 [@media(hover:hover)]:group-hover:opacity-100"
+      } ${className}`}
+      style={{ background: TEAL }}
+    >
+      {main ? <Pause size={14} /> : <Play size={14} className="translate-x-[1px]" />}
+    </button>
+  );
+}
+
+function KepalaSurat({
+  surat,
+  fontArab,
+  daftarSurat,
+  pemutar,
+}: {
+  surat: number;
+  fontArab: string;
+  daftarSurat: Surat[];
+  pemutar: PemutarSurat;
+}) {
   const s = daftarSurat.find((x) => x.id === surat);
   return (
     <div className="my-2 text-center">
-      <div className="mx-auto flex items-center justify-center gap-3 rounded-xl border border-[#D9C79A] bg-[#F7EFD8] px-4 py-1.5">
+      <div className="group relative mx-auto flex items-center justify-center gap-3 rounded-xl border border-[#D9C79A] bg-[#F7EFD8] px-4 py-1.5">
         <span dir="rtl" className={`${fontArab} text-[1.35em] leading-[1.6] text-[#6B5320]`}>
           سُورَةُ {s?.namaArab ?? ""}
         </span>
+        {/* Font kepala ikut em mushaf → tombol dipatok px supaya ukurannya tetap. */}
+        <TombolPutarSurat surat={surat} pemutar={pemutar} className="absolute left-3 top-1/2 -translate-y-1/2 font-sans" />
       </div>
       {/* Al-Fatihah: basmalah = ayat 1 (sudah ada di teks); At-Taubah tanpa basmalah. */}
       {surat !== 1 && surat !== 9 && (
@@ -449,7 +577,7 @@ function PenandaAyat({ n }: { n: string }) {
   );
 }
 
-function HalamanMushaf({ data, fontArab, pilihan, onPilih, daftarSurat }: PropsHalaman) {
+function HalamanMushaf({ data, fontArab, pilihan, onPilih, daftarSurat, pemutar }: PropsHalaman) {
   const baris = useMemo(() => susunBaris(data), [data]);
   const wadah = useRef<HTMLDivElement>(null);
   const [ukuran, setUkuran] = useState<number | null>(null);
@@ -501,7 +629,7 @@ function HalamanMushaf({ data, fontArab, pilihan, onPilih, daftarSurat }: PropsH
     >
       {baris.map((b) =>
         b.jenis === "kepala" ? (
-          <KepalaSurat key={`k${b.surat}`} surat={b.surat} fontArab={fontArab} daftarSurat={daftarSurat} />
+          <KepalaSurat key={`k${b.surat}`} surat={b.surat} fontArab={fontArab} daftarSurat={daftarSurat} pemutar={pemutar} />
         ) : (
           <div
             key={b.no}
@@ -534,14 +662,14 @@ function HalamanMushaf({ data, fontArab, pilihan, onPilih, daftarSurat }: PropsH
   );
 }
 
-function HalamanTerjemah({ data, fontArab, pilihan, onPilih, daftarSurat }: PropsHalaman) {
+function HalamanTerjemah({ data, fontArab, pilihan, onPilih, daftarSurat, pemutar }: PropsHalaman) {
   return (
     <div className="relative space-y-5 px-1">
       {data.ayat.map((a) => (
         <div key={a.key}>
           {a.ayat === 1 && (
             <div className="text-[26px]">
-              <KepalaSurat surat={a.surat} fontArab={fontArab} daftarSurat={daftarSurat} />
+              <KepalaSurat surat={a.surat} fontArab={fontArab} daftarSurat={daftarSurat} pemutar={pemutar} />
             </div>
           )}
           <p dir="rtl" className={`${fontArab} text-[26px] leading-[2.1]`}>

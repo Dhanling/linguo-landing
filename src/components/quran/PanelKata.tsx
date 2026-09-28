@@ -87,7 +87,9 @@ export default function PanelKata({
             QS {namaSurat} {ayat.ayat} · kata ke-{nomorKata}
           </p>
           <div className="mt-1 flex items-center gap-3">
-            <span dir="rtl" className={`${fontArab} text-4xl leading-[1.6] text-stone-900`}>
+            {/* Harakat bawah (kasrah) Amiri Quran turun jauh di bawah garis → ruang ekstra
+                supaya tak menimpa transliterasi. [panel-kata-translit-jarak-v1] */}
+            <span dir="rtl" className={`${fontArab} block pb-3 pt-1 text-4xl leading-[1.9] text-stone-900`}>
               {kata.ar}
             </span>
             {kata.audio && (
@@ -101,7 +103,7 @@ export default function PanelKata({
               </button>
             )}
           </div>
-          <p className="text-sm italic text-stone-500">{kata.latin}</p>
+          <p className="mt-1 text-sm italic text-stone-500">{kata.latin}</p>
           <p className="mt-1 text-lg font-semibold text-stone-800">{kata.arti}</p>
         </div>
         <button

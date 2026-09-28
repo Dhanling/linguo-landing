@@ -4,6 +4,7 @@ import { useMemo, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import { Search, X } from "lucide-react";
 import { JUMLAH_HALAMAN, JUZ_MULAI, type Surat } from "@/lib/quran/sumber";
+import { TombolPutarSurat, type PemutarSurat } from "./MushafReader";
 
 const TEAL = "#1A9E9E";
 
@@ -21,12 +22,14 @@ export default function DaftarSurat({
   onTutup,
   daftar,
   fontArab,
+  pemutar,
   onPilihHalaman,
 }: {
   buka: boolean;
   onTutup: () => void;
   daftar: Surat[];
   fontArab: string;
+  pemutar: PemutarSurat;
   onPilihHalaman: (n: number) => void;
 }) {
   const [tab, setTab] = useState<"surat" | "juz">("surat");
@@ -116,10 +119,10 @@ export default function DaftarSurat({
               {tab === "surat" ? (
                 <ul>
                   {hasil.map((s) => (
-                    <li key={s.id}>
+                    <li key={s.id} className="group flex items-center rounded-xl pr-2 hover:bg-stone-50">
                       <button
                         onClick={() => onPilihHalaman(s.halaman[0])}
-                        className="flex w-full items-center gap-3 rounded-xl px-3 py-2.5 text-left hover:bg-stone-50"
+                        className="flex min-w-0 flex-1 items-center gap-3 px-3 py-2.5 text-left"
                       >
                         <span className="grid h-9 w-9 shrink-0 place-items-center rounded-lg bg-stone-100 text-xs font-bold text-stone-600">
                           {s.id}
@@ -134,6 +137,7 @@ export default function DaftarSurat({
                           {s.namaArab}
                         </span>
                       </button>
+                      <TombolPutarSurat surat={s.id} pemutar={pemutar} />
                     </li>
                   ))}
                   {hasil.length === 0 && <li className="px-3 py-6 text-center text-sm text-stone-500">Surat tidak ditemukan.</li>}

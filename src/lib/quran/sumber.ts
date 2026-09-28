@@ -13,6 +13,8 @@ export const JUMLAH_HALAMAN = 604;
 /** Audio murattal per kata & per ayat (relatif ke host ini). */
 export const AUDIO_KATA = "https://audio.qurancdn.com/";
 export const AUDIO_AYAT = "https://verses.quran.com/";
+/** [quran-putar-surat-v1] Murattal satu surat utuh (Mishari Alafasy, CDN Quran.com). */
+export const audioSurat = (n: number) => `https://download.quranicaudio.com/qdc/mishari_al_afasy/murattal/${n}.mp3`;
 const REVALIDATE = 60 * 60 * 24 * 30;
 
 export type Kata = {
