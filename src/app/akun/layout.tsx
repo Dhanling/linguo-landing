@@ -6,6 +6,7 @@
 import type { Metadata } from "next";
 import { AKUN_BOOT_SCRIPT } from "@/lib/akunBootScript"; // [boot-splash-v1]
 import BootSettle from "@/components/akun/BootSettle"; // [boot-splash-v1]
+import RatingSesiPengingat from "@/components/akun/RatingSesiPengingat"; // [rating-sesi-akun-v1]
 
 export const metadata: Metadata = {
   robots: { index: false, follow: false, nocache: true },
@@ -40,6 +41,8 @@ export default function NoIndexLayout({ children }: { children: React.ReactNode 
       <script dangerouslySetInnerHTML={{ __html: AKUN_BOOT_SCRIPT }} />
       {children}
       <BootSettle />
+      {/* [rating-sesi-akun-v1] Sesi 7 hari terakhir yang belum dinilai siswa. */}
+      <RatingSesiPengingat />
     </>
   );
 }
