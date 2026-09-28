@@ -6,8 +6,8 @@
 // Beranda dia jadi ringkasan; kalendernya sendiri sekarang lega penuh selebar layar.
 
 import { useEffect, useMemo, useState } from "react";
-import { CalendarDays, ChevronRight, Video } from "lucide-react";
-import { classRoomUrl, isJoinable } from "@/lib/classRoom";
+import { CalendarDays, ChevronRight, Lock, Video } from "lucide-react";
+import { classRoomUrl } from "@/lib/classRoom";
 import { useT } from "@/lib/uiLang"; // [ui-lang-switcher-v1]
 import {
   LIVE_COLOR, LangFlag, LiveBadge, MONTHS_SHORT, countdownLabel, fmtTime, isDead, isLiveNow,
@@ -36,6 +36,10 @@ type SesiBlok = {
   /** Sesi yang tombol "Masuk Kelas"-nya dipakai — yang sedang/paling dekat jalan. */
   join: NormSession | null;
 };
+
+/** [sesi-mendatang-hover-join-v1] Tombol masuk kelas baru dibuka H-10 menit
+ *  (sama dengan panel hover kalender Jadwal). */
+const JOIN_BUKA_MENIT = 10;
 
 // Aturan "nyambung" (kelas & hari sama, jeda ≤ 20 menit, ekor SEMUA blok dicocokkan —
 // sesi-beruntun-gabung-v2) tinggal di jadwalShared: kalender Jadwal memakainya juga.
@@ -112,7 +116,7 @@ export default function SesiMendatangCard({
             _past: d.getTime() + (s.durationMinutes || 60) * 60000 < now,
             // jadwal-live-now-v1: sesi yang jamnya lagi jalan detik ini.
             _live: isLiveNow(d, s.durationMinutes, now, s.status),
-            _joinable: isJoinable(d),
+            _joinable: now >= d.getTime() - JOIN_BUKA_MENIT * 60_000 && now <= d.getTime() + 3 * 60 * 60_000,
           };
         })
         .filter((s) => !s._past)
@@ -259,7 +263,7 @@ function SesiItem({ b, studentName, onClick, today = false, now }: {
       tabIndex={0}
       onClick={onClick}
       onKeyDown={(e) => { if (e.key === "Enter" || e.key === " ") { e.preventDefault(); onClick(); } }}
-      className="sesi-mendatang-item cursor-pointer rounded-2xl bg-slate-50 p-3 text-left transition hover:bg-slate-100/70"
+      className="sesi-mendatang-item group relative cursor-pointer rounded-2xl bg-slate-50 p-3 text-left transition hover:bg-slate-100/70"
       // jadwal-live-now-v1: cincin merah — sama dengan blok di kalender.
       style={b._live ? { boxShadow: `0 0 0 2px ${LIVE_COLOR}` } : undefined}
     >
@@ -279,8 +283,10 @@ function SesiItem({ b, studentName, onClick, today = false, now }: {
             <span className="truncate text-[14px] font-extrabold text-[#12172B]">
               {s.language}{s.level ? ` — ${s.level}` : ""}
             </span>
+            {/* [sesi-mendatang-hover-join-v1] nomor sesi & jumlah sesi disembunyikan
+                biar kartunya rapi — baru muncul saat kartu di-hover. */}
             {nomor ? (
-              <span className="shrink-0 rounded-full px-1.5 py-0.5 text-[10px] font-extrabold" style={{ background: c.bg, color: c.text }}>{nomor}</span>
+              <span className="hidden shrink-0 rounded-full group-hover:inline group-focus-within:inline px-1.5 py-0.5 text-[10px] font-extrabold" style={{ background: c.bg, color: c.text }}>{nomor}</span>
             ) : null}
           </span>
           <span className="mt-0.5 block truncate text-[12px] font-medium text-[#6B7280]">
@@ -293,14 +299,14 @@ function SesiItem({ b, studentName, onClick, today = false, now }: {
               // hitung mundur, yang justru dicari siswa di kelas hari ini.
               <>
                 {b._time}{b._end ? `–${b._end}` : ""} · {b.totalMinutes} {t("mnt")}
-                {jumlah > 1 ? ` · ${jumlah} ${t("sesi")}` : ""}
+                {jumlah > 1 && <span className="hidden group-hover:inline">{` · ${jumlah} ${t("sesi")}`}</span>}
                 {" · "}
                 <span className="font-bold text-[#16796E]">{countdownLabel(b._d, now)}</span>
               </>
             ) : (
               <>
                 {t(b._weekday)} · {b._time}{b._end ? `–${b._end}` : ""} · {b.totalMinutes} {t("mnt")}
-                {jumlah > 1 ? ` · ${jumlah} ${t("sesi")}` : ""}
+                {jumlah > 1 && <span className="hidden group-hover:inline">{` · ${jumlah} ${t("sesi")}`}</span>}
               </>
             )}
           </span>
@@ -323,7 +329,7 @@ function SesiItem({ b, studentName, onClick, today = false, now }: {
           onClick={(e) => e.stopPropagation()}
           className="mt-2.5 inline-flex w-full items-center justify-center gap-1.5 rounded-xl bg-[#16796E] px-3 py-2 text-[12px] font-extrabold text-white transition hover:bg-[#0F5A52]"
         >
-          <Video className="h-3.5 w-3.5" strokeWidth={2.2} /> {t("Masuk Kelas")}
+          <Video className="h-3.5 w-3.5" strokeWidth={2.2} /> {t("Join kelas live")}
         </a>
       )}
       {/* [masuk-kelas-dibuka-jam-v1] Sebelum jendela 30 menit tombolnya dulu tak ada
@@ -332,8 +338,16 @@ function SesiItem({ b, studentName, onClick, today = false, now }: {
           tombolnya ada, cuma belum dibuka, lengkap dengan jamnya. */}
       {!b.join && today && (
         <div className="mt-2.5 inline-flex w-full items-center justify-center gap-1.5 rounded-xl bg-slate-200/70 px-3 py-2 text-[12px] font-bold text-[#6B7280]">
-          <Video className="h-3.5 w-3.5" strokeWidth={2.2} /> {t("Masuk Kelas dibuka")} {fmtTime(new Date(b._d.getTime() - 30 * 60_000))}
+          <Video className="h-3.5 w-3.5" strokeWidth={2.2} /> {t("Masuk Kelas dibuka")} {fmtTime(new Date(b._d.getTime() - JOIN_BUKA_MENIT * 60_000))}
         </div>
+      )}
+      {/* [sesi-mendatang-hover-join-v1] Kelas hari-hari berikutnya: tombol join muncul
+          di pojok kanan saat kartu di-hover (melayang, tinggi kartu tak berubah) —
+          masih terkunci sampai H-10 menit. */}
+      {!b.join && !today && (
+        <span className="pointer-events-none absolute right-3 top-1/2 inline-flex -translate-y-1/2 items-center gap-1.5 rounded-xl bg-slate-200 px-3 py-2 text-[11.5px] font-bold text-[#6B7280] opacity-0 transition-opacity duration-200 group-hover:opacity-100">
+          <Lock className="h-3.5 w-3.5" strokeWidth={2.4} /> {t("Join dibuka")} {fmtTime(new Date(b._d.getTime() - JOIN_BUKA_MENIT * 60_000))}
+        </span>
       )}
     </div>
   );
