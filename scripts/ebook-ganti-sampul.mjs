@@ -11,8 +11,10 @@
 //
 // Pakai: node scripts/ebook-ganti-sampul.mjs <manifes.tsv>
 //   manifes = baris "<slug-modul>	<slug-produk>	<berkas sumber>"; kolom
-//   ketiga hanya catatan asal berkas, yang diunggah selalu
-//   `content/ebook/<slug-modul>/cover.png` + `dist/ebook/<slug-modul>.pdf`.
+//   ketiga hanya catatan asal berkas, yang diunggah adalah sampul yang ditunjuk
+//   `meta.cover` (bawaan cover.png) + `dist/ebook/<slug-modul>.pdf`.
+//   Sampul JPG (hasil kompres) diunggah sebagai `<slug-produk>.jpg` — nama
+//   objek berubah dari .png, jadi cache gambar lama ikut lepas.
 //   Contoh manifes: scripts/sampul-ebook-2026-09.tsv
 //
 // Sesudah ini rakit ulang potongan pratinjaunya:
@@ -42,10 +44,12 @@ for (const [mod, prod] of rows) {
       .upload(berkas, pdf, { contentType: "application/pdf", upsert: true });
     if (error) throw new Error(`PDF: ${error.message}`);
 
-    const png = readFileSync(`content/ebook/${mod}/cover.png`);
-    const objek = `ebook-covers/${prod}.png`;
+    const sampul = JSON.parse(readFileSync(`content/ebook/${mod}/meta.json`, "utf8")).cover || "cover.png";
+    const ext = sampul.split(".").pop().toLowerCase().replace("jpeg", "jpg");
+    const gambar = readFileSync(`content/ebook/${mod}/${sampul}`);
+    const objek = `ebook-covers/${prod}.${ext}`;
     const { error: e2 } = await sb.storage.from("lms-media")
-      .upload(objek, png, { contentType: "image/png", upsert: true, cacheControl: "3600" });
+      .upload(objek, gambar, { contentType: ext === "jpg" ? "image/jpeg" : `image/${ext}`, upsert: true, cacheControl: "3600" });
     if (e2) throw new Error(`sampul: ${e2.message}`);
     const url = sb.storage.from("lms-media").getPublicUrl(objek).data.publicUrl;
     // ?v= memaksa kartu lama melewati cache CDN & <img> browser
