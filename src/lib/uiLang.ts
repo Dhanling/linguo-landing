@@ -1155,6 +1155,8 @@ const EN: Record<string, string> = {
   "Susun jawaban dengan struktur yang jelas: pembuka, isi, penutup.": "Structure your answer clearly: opening, body, closing.",
   "Tanpa batas": "No limit",
   "Tanya admin": "Ask the admin",
+  "Join kelas live": "Join live class",
+  "Join dibuka 10 menit sebelum kelas": "Join opens 10 minutes before class",
   "Terisi": "Answered",
   "Terkunci": "Locked",
   "Tes ini ada bagian Speaking. Pastikan mikrofon berfungsi sebelum mulai.": "This test has a Speaking section. Make sure your microphone works before you start.",

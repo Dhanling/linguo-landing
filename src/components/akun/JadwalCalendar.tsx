@@ -188,10 +188,19 @@ export default function JadwalCalendar({
     setHover((h) => ({ items, rect, open: !!h }));
     hoverTimer.current = window.setTimeout(() => setHover((h) => (h ? { ...h, open: true } : h)), 60);
   };
+  /* [jadwal-hover-join-v1] Panel sekarang bisa diklik (tombol Join kelas live), jadi
+     menutupnya ditunda sebentar: panel muncul menimpa bloknya → blok kena pointerleave,
+     lalu panel kena pointerenter dan membatalkan penutupan. */
   const tutupHover = () => {
     if (hoverTimer.current) window.clearTimeout(hoverTimer.current);
-    setHover((h) => (h ? { ...h, open: false } : h));
-    hoverTimer.current = window.setTimeout(() => setHover(null), 240);
+    hoverTimer.current = window.setTimeout(() => {
+      setHover((h) => (h ? { ...h, open: false } : h));
+      hoverTimer.current = window.setTimeout(() => setHover(null), 240);
+    }, 120);
+  };
+  const tahanHover = () => {
+    if (hoverTimer.current) window.clearTimeout(hoverTimer.current);
+    setHover((h) => (h ? { ...h, open: true } : h));
   };
   useEffect(() => () => { if (hoverTimer.current) window.clearTimeout(hoverTimer.current); }, []);
   useEffect(() => { setHover(null); }, [mode, cursor, fullscreen]);
@@ -390,31 +399,38 @@ export default function JadwalCalendar({
         .libur-kolom{background-color:rgba(244,63,94,0.05);}
         .lms-dark .libur-kolom{background-color:rgba(244,63,94,0.10);}
       `}</style>
-      {hover && <BlokHoverDetail items={hover.items} rect={hover.rect} open={hover.open} now={now} />}
+      {hover && (
+        <BlokHoverDetail
+          items={hover.items} rect={hover.rect} open={hover.open} now={now} studentName={studentName}
+          onEnter={tahanHover} onLeave={tutupHover}
+          onPilih={() => { setSelected(hover.items[0]._iso); setHover(null); }}
+        />
+      )}
       {/* Jadwal Tetap kelas grup (Reguler & English Test Preparation) — batch + Zoom.
           [jadwal-batch-kalender-v1] pertemuan batch-nya sekarang juga tergambar di
           kalender di bawah; blok ini tetap jadi ringkasan "setiap hari apa, jam berapa". */}
       {/* [jadwal-kelas-belum-terjadwal-v1] Siswa yang kalendernya kosong dulu cuma
           melihat "Tidak ada sesi di hari ini" dan mengira webnya rusak. */}
       {kelasBelumTerjadwal.length > 0 && (
-        <div className="rounded-2xl bg-amber-50 p-4 ring-1 ring-amber-200">
-          <h3 className="text-[13px] font-bold text-[#12172B] inline-flex items-center gap-1.5">
-            <CalendarDays className="w-4 h-4 text-amber-600" strokeWidth={2.5} /> {tt("Jadwal sesi berikutnya belum diatur")}
-          </h3>
-          <ul className="mt-1.5 space-y-0.5">
-            {kelasBelumTerjadwal.map((k) => (
-              <li key={k.id} className="text-[12.5px] text-[#374151]">
-                <span className="font-bold">{k.label}</span> — {tt("sisa")} {k.sisa} {tt("sesi")}
-              </li>
-            ))}
-          </ul>
-          <p className="mt-1.5 text-[12px] text-[#6B7280]">
-            {tt("Pengajar/admin sedang menyusun jadwalnya. Begitu diatur, sesinya otomatis muncul di kalender ini.")}
-          </p>
+        /* [jadwal-belum-terjadwal-ringkas-v2] Kartu dipadatkan: tint teal tanpa garis tepi,
+           kalimat penjelas dibuang, tombol Tanya admin pindah ke kanan sebaris judul. */
+        <div className="flex items-center gap-3 rounded-xl bg-[#16796E]/[0.08] px-3.5 py-2.5">
+          <CalendarDays className="h-4 w-4 shrink-0 text-[#16796E]" strokeWidth={2.5} />
+          <div className="min-w-0 flex-1">
+            <h3 className="text-[12.5px] font-bold leading-tight text-[#12172B]">{tt("Jadwal sesi berikutnya belum diatur")}</h3>
+            <p className="mt-0.5 truncate text-[11.5px] font-medium text-slate-700">
+              {kelasBelumTerjadwal.map((k, i) => (
+                <span key={k.id}>
+                  {i > 0 && " · "}
+                  <span className="font-bold text-[#12172B]">{k.label}</span> ({tt("sisa")} {k.sisa} {tt("sesi")})
+                </span>
+              ))}
+            </p>
+          </div>
           <a
             href={`https://wa.me/6282116859493?text=${encodeURIComponent(`Halo admin Linguo${studentName ? `, saya ${studentName}` : ""}. Jadwal kelas ${kelasBelumTerjadwal.map((k) => k.label).join(", ")} saya belum muncul, boleh dibantu atur?`)}`}
             target="_blank" rel="noopener noreferrer"
-            className="mt-2.5 inline-flex h-8 items-center rounded-lg bg-[#16796E] px-3 text-[12px] font-bold text-white transition hover:opacity-90"
+            className="inline-flex h-7 shrink-0 items-center rounded-lg bg-[#16796E] px-2.5 text-[11.5px] font-bold text-white transition hover:opacity-90"
           >
             {tt("Tanya admin")}
           </a>
@@ -870,6 +886,8 @@ function statusBlok(items: NormSession[]) {
 }
 
 const HOVER_W = 288;
+/** [jadwal-hover-join-v1] Tombol Join di panel hover baru aktif H-10 menit. */
+const JOIN_BUKA_MENIT = 10;
 
 /**
  * [jadwal-blok-hover-zoom-v1] Panel detail yang membesar dari blok di time-grid
@@ -878,7 +896,10 @@ const HOVER_W = 288;
  */
 const HOVER_EASE = "cubic-bezier(.16,1,.3,1)";
 
-function BlokHoverDetail({ items, rect, open, now }: { items: NormSession[]; rect: DOMRect; open: boolean; now: number }) {
+function BlokHoverDetail({ items, rect, open, now, studentName, onEnter, onLeave, onPilih }: {
+  items: NormSession[]; rect: DOMRect; open: boolean; now: number; studentName?: string;
+  onEnter: () => void; onLeave: () => void; onPilih: () => void;
+}) {
   const tt = useT();
   const head = items[0];
   const tail = items[items.length - 1];
@@ -890,6 +911,12 @@ function BlokHoverDetail({ items, rect, open, now }: { items: NormSession[]; rec
   const st = statusBlok(items);
   const nomor = nomorSesiLabel(items);
   const d = head._d;
+  // [jadwal-hover-join-v1] Sesi blok yang sedang/paling dekat jalan; tombolnya hidup dari
+  // H-10 menit sampai sesi itu selesai. Pertemuan batch tanpa tautan rapat tak punya room.
+  const sesiJoin = items.find((s) => !isDead(s.status) && s._d.getTime() + (s.durationMinutes || 60) * 60000 >= now);
+  const bisaRoom = !!sesiJoin && (!sesiJoin.isBatch || !!sesiJoin.joinUrl);
+  const bukaJoin = sesiJoin ? sesiJoin._d.getTime() - JOIN_BUKA_MENIT * 60000 : 0;
+  const joinAktif = bisaRoom && now >= bukaJoin;
 
   // Tengahnya sejajar blok, dijepit ke viewport; blok di bagian bawah layar → panel naik.
   const vw = window.innerWidth;
@@ -902,7 +929,10 @@ function BlokHoverDetail({ items, rect, open, now }: { items: NormSession[]; rec
   return (
     <div
       role="tooltip"
-      className="pointer-events-none fixed z-[80] overflow-hidden rounded-2xl bg-white shadow-[0_24px_60px_-20px_rgba(18,23,43,0.55)] ring-1 ring-slate-200"
+      onPointerEnter={(ev) => { if (ev.pointerType === "mouse") onEnter(); }}
+      onPointerLeave={(ev) => { if (ev.pointerType === "mouse") onLeave(); }}
+      onClick={onPilih}
+      className="fixed z-[80] cursor-pointer overflow-hidden rounded-2xl bg-white shadow-[0_24px_60px_-20px_rgba(18,23,43,0.55)] ring-1 ring-slate-200"
       style={{
         ...pos,
         left,
@@ -912,6 +942,7 @@ function BlokHoverDetail({ items, rect, open, now }: { items: NormSession[]; rec
         transform: open ? "translateY(0) scale(1)" : `translateY(${turun ? -6 : 6}px) scale(0.94)`,
         transition: `opacity 220ms ease-out, transform 280ms ${HOVER_EASE}, left 280ms ${HOVER_EASE}, top 280ms ${HOVER_EASE}, bottom 280ms ${HOVER_EASE}`,
         willChange: "transform, opacity",
+        pointerEvents: open ? "auto" : "none",
       }}
     >
       <div className="px-3.5 pb-2.5 pt-3" style={{ background: c.bg, color: c.text }}>
@@ -976,6 +1007,21 @@ function BlokHoverDetail({ items, rect, open, now }: { items: NormSession[]; rec
             <span className="truncate">{head.materialTitle}</span>
           </p>
         ) : null}
+
+        {bisaRoom && sesiJoin && (joinAktif ? (
+          <a
+            href={sesiJoin.joinUrl || classRoomUrl(sesiJoin.id, { title: `Kelas ${sesiJoin.language}`, name: studentName })}
+            target="_blank" rel="noopener noreferrer"
+            onClick={(ev) => ev.stopPropagation()}
+            className="flex w-full items-center justify-center gap-1.5 rounded-xl bg-[#16796E] px-3 py-2 text-[12.5px] font-extrabold text-white transition hover:bg-[#0F5A52]"
+          >
+            <Video className="h-4 w-4" strokeWidth={2.4} /> {tt("Join kelas live")}
+          </a>
+        ) : (
+          <span className="flex w-full items-center justify-center gap-1.5 rounded-xl bg-slate-100 px-3 py-2 text-[11.5px] font-bold text-[#6B7280]">
+            <Lock className="h-3.5 w-3.5" strokeWidth={2.4} /> {tt("Join dibuka 10 menit sebelum kelas")}
+          </span>
+        ))}
       </div>
     </div>
   );
