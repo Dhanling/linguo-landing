@@ -353,3 +353,16 @@ export function infoKiriman(n: Pick<StudentNote, 'tags'>): { pengajar: string | 
   const ambil = (awalan: string) => tags.find((x) => x.startsWith(awalan))?.slice(awalan.length).trim() || null;
   return { pengajar: ambil('pengajar:'), kelas: ambil('kelas:') };
 }
+
+/** [lingnote-pratinjau-v1] Pratinjau POV (tanpa login): baca lewat /api/preview-notes (service role,
+ *  dikunci cookie pratinjau ke satu siswa). Hanya-baca. */
+export async function muatPratinjau(studentId: string): Promise<{ notes: StudentNote[]; tasks: StudentTask[] }> {
+  try {
+    const res = await fetch(`/api/preview-notes?student=${encodeURIComponent(studentId)}`, { cache: 'no-store' });
+    if (!res.ok) return { notes: [], tasks: [] };
+    const j = await res.json();
+    return { notes: (j.notes || []).map(rapikanNote), tasks: j.tasks || [] };
+  } catch {
+    return { notes: [], tasks: [] };
+  }
+}

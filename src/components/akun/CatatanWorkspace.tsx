@@ -33,7 +33,7 @@ import {
 } from 'lucide-react';
 import {
   muatCatatan, buatCatatan, simpanCatatan, hapusCatatan, unggahBerkas, hapusBerkas, jenisBerkas,
-  muatTugas, buatTugas, ubahTugas, hapusTugas, parseBlok, toggleChecklist, cuplikan, infoKiriman,
+  muatTugas, buatTugas, ubahTugas, hapusTugas, parseBlok, toggleChecklist, cuplikan, infoKiriman, muatPratinjau,
   type StudentNote, type StudentTask, type NoteAttachment,
 } from '@/lib/studentWorkspace';
 import { useT } from '@/lib/uiLang';
@@ -135,6 +135,14 @@ function Pratinjau({ md, onToggle }: { md: string; onToggle?: (baris: number) =>
   );
 }
 
+/** [lingnote-kosong-v1] Bentangan pembuka untuk buku yang belum berisi catatan —
+ *  sampul tetap bisa dibuka (dulu: sampul mati kalau kosong / pratinjau). */
+const KOSONG = '__kosong__';
+const KOSONG_NOTE: StudentNote = {
+  id: KOSONG, student_id: '', registration_id: null, session_number: null, title: '', content: '', icon: null, color: null,
+  tags: [], attachments: [], pinned: false, shared_with_teacher: false, archived_at: null, created_at: '', updated_at: '',
+};
+
 type Flip = { kind: 'next' | 'prev' | 'open' | 'close'; from: StudentNote | null; toId: string | null };
 
 export default function CatatanWorkspace({
@@ -182,24 +190,33 @@ export default function CatatanWorkspace({
   const bukuRef = useRef<HTMLDivElement | null>(null);
   const sentuhX = useRef<number | null>(null);
 
-  const sel = useMemo(() => notes.find((n) => n.id === selId) || null, [notes, selId]);
+  const sel = useMemo(() => (selId === KOSONG ? KOSONG_NOTE : notes.find((n) => n.id === selId) || null), [notes, selId]);
+  const diKosong = selId === KOSONG;
 
   const muat = useCallback(async () => {
     if (!studentId) return;
     setLoading(true);
+    if (readOnly) {
+      const p = await muatPratinjau(studentId);
+      setNotes(p.notes);
+      setTasks(p.tasks);
+      setLoading(false);
+      return;
+    }
     const [a, b] = await Promise.all([muatCatatan(studentId), muatTugas(studentId)]);
     setNotes(a.notes);
     setTasks(b.tasks);
     setBelumMigrasi(a.missing || b.missing);
     setLoading(false);
-  }, [studentId]);
+  }, [studentId, readOnly]);
 
   useEffect(() => { muat(); }, [muat]);
 
   const muatUlangTugas = useCallback(async () => {
+    if (readOnly) return;
     const b = await muatTugas(studentId);
     setTasks(b.tasks);
-  }, [studentId]);
+  }, [studentId, readOnly]);
 
   // Lebar panel menentukan bentuk buku: bentangan 2 halaman atau 1 halaman.
   useEffect(() => {
@@ -668,9 +685,60 @@ export default function CatatanWorkspace({
 
   const pita = (n: StudentNote) => (n.pinned ? <span className="ln-ribbon" aria-hidden /> : null);
 
+  const kosongIsi = (live: boolean) => (
+    <>
+      <div className="ln-kop"><span className="ln-kop-tgl">{t('Halaman pertama')}</span></div>
+      <div className="ln-title">Lingnote</div>
+      <div className="ln-lined mt-3">
+        <div className="ln-md">
+          <p className="ln-md-p">{readOnly ? t('Siswa ini belum punya catatan.') : t('Buku ini masih kosong.')}</p>
+          <p className="ln-md-p">{t('Satu catatan = satu bentangan halaman. Balik halaman lewat sudut kertas, tombol panah, atau geser.')}</p>
+          <p className="ln-md-p">{t('Kosakata yang dikirim pengajar saat kelas live juga masuk ke sini, per sesi.')}</p>
+        </div>
+        {live && !readOnly && (
+          <button onClick={tambahCatatan} className="ln-btn mt-3 inline-flex items-center gap-1.5">
+            <Plus className="h-4 w-4" /> {t('Tulis catatan pertama')}
+          </button>
+        )}
+      </div>
+    </>
+  );
+  const kosongKiri = () => (
+    <div className="ln-page ln-page-l">
+      <div className="ln-page-in">
+        <div className="ln-kop"><span className="ln-kop-tgl">{t('Milik')}</span></div>
+        <div className="ln-title">Lingnote</div>
+        <p className="ln-kop-tgl mt-3">{t('Buku catatan belajarmu — materi, kosakata, berkas, dan PR tersimpan rapi, tidak hilang seperti di chat.')}</p>
+        <div className="ln-fill" />
+        <div className="ln-lamp">
+          <span className="ln-label">{t('Daftar isi')}</span>
+          <p className="ln-hint mt-2">{t('Belum ada halaman.')}</p>
+        </div>
+      </div>
+    </div>
+  );
+  const kosongKanan = (live: boolean) => (
+    <div className="ln-page ln-page-r">
+      <div className="ln-page-in">
+        <div className="ln-lined ln-scroll">
+          <div className="ln-md">
+            <p className="ln-md-p">{readOnly ? t('Siswa ini belum punya catatan.') : t('Buku ini masih kosong.')}</p>
+            <p className="ln-md-p">{t('Satu catatan = satu bentangan halaman. Balik halaman lewat sudut kertas, tombol panah, atau geser.')}</p>
+            <p className="ln-md-p">{t('Kosakata yang dikirim pengajar saat kelas live juga masuk ke sini, per sesi.')}</p>
+          </div>
+          {live && !readOnly && (
+            <button onClick={tambahCatatan} className="ln-btn mt-3 inline-flex items-center gap-1.5">
+              <Plus className="h-4 w-4" /> {t('Tulis catatan pertama')}
+            </button>
+          )}
+        </div>
+      </div>
+    </div>
+  );
+
   // Halaman kiri (bentangan): kop, judul, info kelas, lampiran.
   const HalKiri = (n: StudentNote | null, live = false) =>
-    n ? (
+    n?.id === KOSONG ? kosongKiri() : n ? (
       <div className="ln-page ln-page-l">
         <div className="ln-page-in">
           {kepala(n, live)}
@@ -678,7 +746,7 @@ export default function CatatanWorkspace({
           {lampiran(n, live)}
         </div>
         <span className="ln-pno ln-pno-l">{nomorHal(n)?.kiri ?? ''}</span>
-        {live && sebelumnya && (
+        {(live || (readOnly && !flip)) && sebelumnya && (
           <button className="ln-corner ln-corner-l" onClick={() => balik('prev', sebelumnya.id)} title={t('Halaman sebelumnya')} />
         )}
       </div>
@@ -686,7 +754,7 @@ export default function CatatanWorkspace({
 
   // Halaman kanan (bentangan): isi catatan di kertas bergaris.
   const HalKanan = (n: StudentNote | null, live = false) =>
-    n ? (
+    n?.id === KOSONG ? kosongKanan(live) : n ? (
       <div className="ln-page ln-page-r">
         {pita(n)}
         <div className="ln-page-in">
@@ -695,7 +763,7 @@ export default function CatatanWorkspace({
           </div>
         </div>
         <span className="ln-pno ln-pno-r">{nomorHal(n)?.kanan ?? ''}</span>
-        {live && berikutnya && (
+        {(live || (readOnly && !flip)) && berikutnya && (
           <button className="ln-corner ln-corner-r" onClick={() => balik('next', berikutnya.id)} title={t('Halaman berikutnya')} />
         )}
       </div>
@@ -703,7 +771,11 @@ export default function CatatanWorkspace({
 
   // Satu halaman (layar sempit): semuanya ditumpuk.
   const HalTunggal = (n: StudentNote | null, live = false) =>
-    n ? (
+    n?.id === KOSONG ? (
+      <div className="ln-page ln-page-r">
+        <div className="ln-page-in ln-scroll">{kosongIsi(live)}</div>
+      </div>
+    ) : n ? (
       <div className="ln-page ln-page-r">
         {pita(n)}
         <div className="ln-page-in ln-scroll">
@@ -722,8 +794,8 @@ export default function CatatanWorkspace({
       className="ln-cover"
       role="button"
       tabIndex={0}
-      onClick={() => (terfilter[0] ? balik('open', terfilter[0].id) : tambahCatatan())}
-      onKeyDown={(e) => { if (e.key === 'Enter') (terfilter[0] ? balik('open', terfilter[0].id) : tambahCatatan()); }}
+      onClick={() => balik('open', terfilter[0]?.id || KOSONG)}
+      onKeyDown={(e) => { if (e.key === 'Enter') balik('open', terfilter[0]?.id || KOSONG); }}
     >
       <div className="ln-cover-stitch" />
       <div className="ln-cover-band" />
@@ -735,7 +807,7 @@ export default function CatatanWorkspace({
           {loading ? '…' : terfilter.length ? `${terfilter.length} ${t('catatan')}` : t('Buku masih kosong')}
         </div>
         <div className="ln-cover-cta">
-          {terfilter.length ? t('Ketuk untuk membuka') : readOnly ? t('Pratinjau: hanya baca') : t('Ketuk untuk mulai menulis')}
+          {readOnly ? t('Ketuk untuk membuka · hanya baca') : terfilter.length ? t('Ketuk untuk membuka') : t('Ketuk untuk mulai menulis')}
         </div>
       </div>
       <div className="ln-cover-foot">linguo.id</div>
@@ -743,7 +815,7 @@ export default function CatatanWorkspace({
   );
 
   // ── Rakit bentangan: halaman dasar + lembar yang sedang dibalik ─────────────
-  const ke = flip?.toId ? notes.find((n) => n.id === flip.toId) || null : null;
+  const ke = flip?.toId === KOSONG ? KOSONG_NOTE : flip?.toId ? notes.find((n) => n.id === flip.toId) || null : null;
   const dari = flip?.from || null;
   let dasarKiri: ReactNode = null;
   let dasarKanan: ReactNode = null;
@@ -753,8 +825,8 @@ export default function CatatanWorkspace({
 
   if (lebar) {
     if (!flip) {
-      dasarKiri = HalKiri(sel, true);
-      dasarKanan = sel ? HalKanan(sel, true) : Sampul;
+      dasarKiri = HalKiri(sel, !readOnly || diKosong);
+      dasarKanan = sel ? HalKanan(sel, !readOnly || diKosong) : Sampul;
     } else {
       const muka = { next: [HalKanan(dari), HalKiri(ke)], prev: [HalKiri(dari), HalKanan(ke)], open: [Sampul, HalKiri(ke)], close: [HalKiri(dari), Sampul] }[flip.kind];
       dasarKiri = { next: HalKiri(dari), prev: HalKiri(ke), open: null, close: null }[flip.kind];
@@ -768,7 +840,7 @@ export default function CatatanWorkspace({
       );
     }
   } else {
-    if (!flip) dasarKanan = sel ? HalTunggal(sel, true) : Sampul;
+    if (!flip) dasarKanan = sel ? HalTunggal(sel, !readOnly || diKosong) : Sampul;
     else {
       dasarKanan = { next: HalTunggal(ke), prev: HalTunggal(dari), open: HalTunggal(ke), close: HalTunggal(dari) }[flip.kind];
       const atas = { next: HalTunggal(dari), prev: HalTunggal(ke), open: Sampul, close: Sampul }[flip.kind];
