@@ -5759,7 +5759,7 @@ export default function AkunPage() {
           {tabShown("catatan") && (
             <motion.div key="catatan" initial={false} animate={{ opacity: 1 }} className="w-full pb-8" style={tabHidden("catatan")}>
               {student?.id && (
-                <CatatanWorkspace studentId={student.id} regs={student?.registrations || []} />
+                <CatatanWorkspace studentId={student.id} regs={student?.registrations || []} readOnly={previewMode} />
               )}
             </motion.div>
           )}

@@ -101,7 +101,7 @@ export async function muatCatatan(studentId: string): Promise<{ notes: StudentNo
 export async function buatCatatan(
   studentId: string,
   patch: Partial<StudentNote> = {}
-): Promise<StudentNote | null> {
+): Promise<{ note: StudentNote | null; missing: boolean }> {
   const { data, error } = await supabase
     .from('student_notes')
     .insert({
@@ -120,8 +120,11 @@ export async function buatCatatan(
     // .select() WAJIB — tanpa ini insert balik kosong dan UI kira gagal.
     .select(NOTE_COLS)
     .single();
-  if (error) { console.warn('[student-workspace] buatCatatan gagal:', error.message); return null; }
-  return rapikanNote(data);
+  // `missing` dipisah dari gagal biasa: dulu SEMUA kegagalan (mis. RLS menolak di
+  // mode Pratinjau POV yang tanpa login) dibaca "tabel belum dimigrasi" → banner
+  // kuning yang menyesatkan.
+  if (error) { console.warn('[student-workspace] buatCatatan gagal:', error.message); return { note: null, missing: isTableMissing(error) }; }
+  return { note: rapikanNote(data), missing: false };
 }
 
 export async function simpanCatatan(id: string, patch: Partial<StudentNote>): Promise<boolean> {

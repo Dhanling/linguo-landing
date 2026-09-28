@@ -142,7 +142,10 @@ export default function CatatanWorkspace({
   regs = [],
   regId = null,
   embedded = false,
+  readOnly = false,
 }: {
+  /** [lingnote-pratinjau-v1] Mode Pratinjau POV (staf, tanpa login siswa): hanya baca. */
+  readOnly?: boolean;
   studentId: string;
   /** Kelas siswa — dipakai buat menautkan catatan ke kelas & chip filter. */
   regs?: any[];
@@ -306,8 +309,14 @@ export default function CatatanWorkspace({
 
   async function tambahCatatan() {
     const target = regId || (filterReg !== 'all' ? filterReg : null);
-    const n = await buatCatatan(studentId, { title: '', content: '', registration_id: target });
-    if (!n) { setBelumMigrasi(true); return; }
+    if (readOnly) return;
+    const res = await buatCatatan(studentId, { title: '', content: '', registration_id: target });
+    const n = res.note;
+    if (!n) {
+      if (res.missing) setBelumMigrasi(true);
+      else alert(t('Catatan baru gagal dibuat. Coba muat ulang halaman, lalu ulangi.'));
+      return;
+    }
     const from = simpanSekarang();
     const baru = [n, ...notes.map((x) => (from && x.id === from.id ? from : x))];
     setNotes(baru);
@@ -726,7 +735,7 @@ export default function CatatanWorkspace({
           {loading ? '…' : terfilter.length ? `${terfilter.length} ${t('catatan')}` : t('Buku masih kosong')}
         </div>
         <div className="ln-cover-cta">
-          {terfilter.length ? t('Ketuk untuk membuka') : t('Ketuk untuk mulai menulis')}
+          {terfilter.length ? t('Ketuk untuk membuka') : readOnly ? t('Pratinjau: hanya baca') : t('Ketuk untuk mulai menulis')}
         </div>
       </div>
       <div className="ln-cover-foot">linguo.id</div>
@@ -824,12 +833,12 @@ export default function CatatanWorkspace({
           >
             <ChevronRight className="h-4 w-4" />
           </button>
-          <button
+          {!readOnly && <button
             onClick={tambahCatatan}
             className="ml-auto inline-flex items-center gap-1 rounded-xl px-2.5 py-1.5 transition-colors hover:bg-gray-100"
           >
             <Plus className="h-4 w-4" /> {t('Halaman baru')}
-          </button>
+          </button>}
         </div>
       )}
     </div>
@@ -910,18 +919,18 @@ export default function CatatanWorkspace({
                 </div>
               )}
 
-              <button
+              {!readOnly && <button
                 onClick={tambahCatatan}
                 className="mb-2 flex w-full items-center gap-2 rounded-xl border border-dashed border-gray-300 px-3 py-2.5 text-[13px] font-semibold text-gray-500 transition-colors hover:border-[#16796E] hover:bg-teal-50/60 hover:text-[#16796E]"
               >
                 <Plus className="h-4 w-4" strokeWidth={2.5} /> {t('Catatan baru')}
-              </button>
+              </button>}
 
               <div className="max-h-[52vh] space-y-1 overflow-y-auto pr-0.5">
                 {loading && <div className="flex justify-center py-6"><Loader2 className="h-5 w-5 animate-spin text-gray-300" /></div>}
                 {!loading && terfilter.length === 0 && (
                   <p className="px-2 py-6 text-center text-[12.5px] text-gray-400">
-                    {cari ? t('Tidak ada catatan yang cocok.') : t('Belum ada catatan. Mulai dari tombol di atas.')}
+                    {cari ? t('Tidak ada catatan yang cocok.') : readOnly ? t('Siswa ini belum punya catatan.') : t('Belum ada catatan. Mulai dari tombol di atas.')}
                   </p>
                 )}
                 {terfilter.map((n, i) => {
