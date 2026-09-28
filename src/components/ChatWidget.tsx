@@ -481,9 +481,12 @@ export default function ChatWidget() {
   // [kuis-layar-bersih-v1] Halaman kuis juga: siswa sedang mengerjakan soal berbatas
   // waktu, dan FAB CS di kanan-bawah persis menimpa tombol "Lanjut" yang menempel di
   // dasar layar HP. Bantuan bukan yang dia cari di menit-menit itu.
+  // [quran-reader-v1] Pembaca /alquran juga: bilah navigasi halaman menempel di dasar
+  // layar HP dan panel kata naik dari bawah — FAB ini persis menimpa keduanya.
   if (
     pathname?.startsWith("/akun") || pathname?.startsWith("/watch") ||
-    pathname?.startsWith("/pendataan") || pathname?.startsWith("/kuis")
+    pathname?.startsWith("/pendataan") || pathname?.startsWith("/kuis") ||
+    pathname?.startsWith("/alquran")
   ) return null;
 
   return (

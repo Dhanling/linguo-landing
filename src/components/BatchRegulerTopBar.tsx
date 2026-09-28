@@ -22,6 +22,7 @@ import { isPromoActive } from "@/lib/promoMerdeka";
 // dilewati — daftar yang sama dengan PromoTopBar.
 const EXCLUDED = [
   "/akun", "/student", "/laporan-b2b", "/pendataan", "/payment", "/kuis",
+  "/alquran", // [quran-reader-v1] layar baca penuh
 ];
 
 // Harga normal yang dicoret. Sinkron dengan PRICE_STRIKE di halaman

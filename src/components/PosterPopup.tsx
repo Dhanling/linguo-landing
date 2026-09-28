@@ -48,6 +48,7 @@ const EXCLUDED = [
   "/auth",
   "/onboarding",
   "/pretest",
+  "/alquran", // [quran-reader-v1] layar baca mushaf — pop-up menutupi halaman yang sedang dibaca
   "/micro-teaching",
   "/simulasi",
   "/watch",

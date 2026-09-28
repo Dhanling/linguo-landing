@@ -25,6 +25,7 @@ import { formatCountdown, usePromoMerdeka } from "@/components/PromoMerdeka";
 // yang justru dipakai membaca soal.
 const EXCLUDED = [
   "/akun", "/student", "/laporan-b2b", "/pendataan", "/payment", "/kuis",
+  "/alquran", // [quran-reader-v1] layar baca penuh
 ];
 
 export default function PromoTopBar() {

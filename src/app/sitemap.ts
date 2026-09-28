@@ -59,6 +59,9 @@ const STATIC_ROUTES: Array<{
   { path: "/kursus", priority: 0.9, changeFrequency: "weekly" },
   { path: "/kelas-trial", priority: 0.9, changeFrequency: "weekly" },
   { path: "/persiapan-tes", priority: 0.9, changeFrequency: "weekly" },
+  // [program-arab-quran-v1] Program Bahasa Arab Al-Qur'an + pembaca mushaf gratisnya.
+  { path: "/bahasa-arab-quran", priority: 0.85, changeFrequency: "monthly" },
+  { path: "/alquran", priority: 0.8, changeFrequency: "monthly" },
   { path: "/kelas-anak", priority: 0.85, changeFrequency: "monthly" },
   { path: "/jadwal-kelas-reguler", priority: 0.85, changeFrequency: "weekly" },
   { path: "/toko", priority: 0.8, changeFrequency: "weekly" },

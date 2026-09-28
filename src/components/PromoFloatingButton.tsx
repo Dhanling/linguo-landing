@@ -25,6 +25,7 @@ import { usePromoMerdeka } from "@/components/PromoMerdeka";
 // soal ia cuma menghalangi tombol navigasi tanpa pernah jadi klik.
 const EXCLUDED = [
   "/akun", "/student", "/laporan-b2b", "/pendataan", "/payment", "/kuis",
+  "/alquran", // [quran-reader-v1] layar baca penuh
 ];
 
 const POS_KEY = "linguo_promo_merdeka_pos";
