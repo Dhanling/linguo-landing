@@ -46,7 +46,7 @@ import { kunciJejak } from "@/lib/jejakPemilik";
 import { siapkanTabPembayaran } from "@/lib/bukaTabPembayaran";
 import KolomWaPembeli, { useWaPembeli } from "@/components/akun/KolomWaPembeli"; // [wa-wajib-digital-v1]
 import { KODE_WA_WAJIB } from "@/lib/waPembeli";
-import { sampulKecil } from "@/lib/sampulKecil"; // [pustaka-sampul-kecil-v1]
+import { sampulKecil, sampulGagal } from "@/lib/sampulKecil"; // [pustaka-sampul-kecil-v1]
 // [pustaka-keranjang-v1] beli beberapa produk sekaligus → satu invoice
 import {
   useKeranjang, tambahKeKeranjang, hapusDariKeranjang, kosongkanKeranjang,
@@ -1239,7 +1239,7 @@ export default function LibraryView({ userId, supabase, previewStudentId = null,
                     >
                       {sampul ? (
                         /* eslint-disable-next-line @next/next/no-img-element */
-                        <img src={sampulKecil(sampul, 128)} alt="" loading="lazy" decoding="async" className={`h-full w-full object-cover${jangkarSampul(prod)}`} />
+                        <img src={sampulKecil(sampul, 128)} alt="" loading="lazy" decoding="async" onError={sampulGagal(sampul)} className={`h-full w-full object-cover${jangkarSampul(prod)}`} />
                       ) : (
                         <span className="absolute inset-0 grid place-items-center text-[13px] font-black text-white/80">
                           {glyphFor(prod)}
@@ -1665,7 +1665,7 @@ function ShelfCover({
             loading="lazy"
             decoding="async"
             className={`absolute inset-0 h-full w-full object-cover${jangkarSampul(p)}`}
-            onError={(e) => { (e.currentTarget as HTMLImageElement).style.display = "none"; }}
+            onError={sampulGagal(foto)}
           />
         </>
       ) : (
@@ -1886,7 +1886,7 @@ function ProductRow({
             loading="lazy"
             decoding="async"
             className="absolute inset-0 h-full w-full object-cover"
-            onError={(e) => { (e.currentTarget as HTMLImageElement).style.display = "none"; }}
+            onError={sampulGagal(fotoSampul(prod))}
           />
         ) : (
           <span className="absolute inset-0 flex items-center justify-center text-2xl font-black text-white/25">{glyphFor(prod)}</span>
@@ -2554,7 +2554,7 @@ function CartModal({
                       decoding="async"
                       alt=""
                       className={`h-full w-full object-cover${x.coverUrl ? " object-top" : ""}`}
-                      onError={(e) => { (e.currentTarget as HTMLImageElement).style.display = "none"; }}
+                      onError={sampulGagal(x.coverUrl || getLangPhoto(x.language))}
                     />
                   )}
                 </span>
