@@ -29,7 +29,7 @@ import {
   NotebookPen, Plus, Search, Pin, PinOff, Trash2, Paperclip, Link2, FileText, Image as ImageIcon,
   Presentation, Play, Loader2, Check, Share2, Eye, PenLine, Brain, ListTodo, CalendarClock,
   X, Heading1, Heading2, List, ListChecks, Quote, Minus, GraduationCap, Cloud, ChevronLeft, ChevronRight,
-  BookOpen, Languages,
+  BookOpen, Languages, Maximize2, Minimize2,
 } from 'lucide-react';
 import {
   muatCatatan, buatCatatan, simpanCatatan, hapusCatatan, unggahBerkas, hapusBerkas, jenisBerkas,
@@ -84,7 +84,7 @@ function suaraBalik() {
   } catch { /* tanpa suara pun tidak apa-apa */ }
 }
 
-// ── Pratinjau markdown ringan — tiap baris 28px supaya pas di garis buku ─────────
+// ── Pratinjau markdown ringan — tiap baris 24px supaya pas di garis buku ─────────
 function Pratinjau({ md, onToggle }: { md: string; onToggle?: (baris: number) => void }) {
   const blok = parseBlok(md);
   if (!blok.length) return null;
@@ -311,6 +311,31 @@ export default function CatatanWorkspace({
     const b = terfilter.findIndex((n) => n.id === id);
     balik(a >= 0 && b >= 0 && b < a ? 'prev' : 'next', id);
   }
+
+  // [lingnote-layar-penuh-v1] Buku memenuhi layar. Fullscreen API dipasang di wadah buku
+  // (lapisan teratas, lolos dari z-index/overflow induk); kelas .ln-full = cadangan
+  // position:fixed untuk browser tanpa API itu (Safari iPhone).
+  const [penuh, setPenuh] = useState(false);
+  async function alihPenuh() {
+    if (!penuh) {
+      setPenuh(true);
+      try { await bukuRef.current?.requestFullscreen?.(); } catch { /* cadangan CSS tetap jalan */ }
+    } else {
+      setPenuh(false);
+      try { if (document.fullscreenElement) await document.exitFullscreen(); } catch { /* abaikan */ }
+    }
+  }
+  useEffect(() => {
+    const onChange = () => { if (!document.fullscreenElement) setPenuh(false); };
+    document.addEventListener('fullscreenchange', onChange);
+    return () => document.removeEventListener('fullscreenchange', onChange);
+  }, []);
+  useEffect(() => {
+    if (!penuh) return;
+    const onEsc = (e: KeyboardEvent) => { if (e.key === 'Escape' && !document.fullscreenElement) setPenuh(false); };
+    window.addEventListener('keydown', onEsc);
+    return () => window.removeEventListener('keydown', onEsc);
+  }, [penuh]);
 
   // Panah kiri/kanan = balik halaman (kecuali sedang mengetik).
   useEffect(() => {
@@ -857,7 +882,7 @@ export default function CatatanWorkspace({
   const Buku = (
     <div
       ref={bukuRef}
-      className="ln-stage"
+      className={`ln-stage ${penuh ? 'ln-full' : ''}`}
       onTouchStart={(e) => {
         const tag = (e.target as HTMLElement).tagName.toLowerCase();
         sentuhX.current = tag === 'textarea' || tag === 'input' ? null : e.touches[0].clientX;
@@ -876,41 +901,63 @@ export default function CatatanWorkspace({
         {lembar}
       </div>
 
-      {/* navigasi di bawah buku */}
-      {sel && !flip && (
-        <div className="mt-4 flex items-center justify-center gap-2 text-[12.5px] font-semibold text-gray-500">
-          <button
-            onClick={() => (lebar ? balik('close', null) : setMobileEditor(false))}
-            className="mr-auto inline-flex items-center gap-1 rounded-xl px-2.5 py-1.5 transition-colors hover:bg-gray-100"
-          >
-            {lebar ? <BookOpen className="h-4 w-4" /> : <ChevronLeft className="h-4 w-4" />}
-            {lebar ? t('Tutup buku') : t('Daftar')}
-          </button>
-          <button
-            disabled={!sebelumnya}
-            onClick={() => sebelumnya && balik('prev', sebelumnya.id)}
-            className="rounded-xl p-1.5 transition-colors hover:bg-gray-100 disabled:opacity-30"
-            title={t('Halaman sebelumnya')}
-          >
-            <ChevronLeft className="h-4 w-4" />
-          </button>
-          <span className="min-w-[88px] text-center tabular-nums">
-            {idxSel >= 0 ? `${idxSel + 1} / ${terfilter.length}` : '—'}
-          </span>
-          <button
-            disabled={!berikutnya}
-            onClick={() => berikutnya && balik('next', berikutnya.id)}
-            className="rounded-xl p-1.5 transition-colors hover:bg-gray-100 disabled:opacity-30"
-            title={t('Halaman berikutnya')}
-          >
-            <ChevronRight className="h-4 w-4" />
-          </button>
-          {!readOnly && <button
-            onClick={tambahCatatan}
-            className="ml-auto inline-flex items-center gap-1 rounded-xl px-2.5 py-1.5 transition-colors hover:bg-gray-100"
-          >
-            <Plus className="h-4 w-4" /> {t('Halaman baru')}
-          </button>}
+      {/* navigasi di bawah buku: kiri tutup · tengah halaman · kanan halaman baru + layar penuh */}
+      {!flip && (
+        <div className="ln-nav mt-4 grid grid-cols-[1fr_auto_1fr] items-center gap-2 text-[12.5px] font-semibold text-gray-500">
+          <div>
+            {sel && (
+              <button
+                onClick={() => (lebar ? balik('close', null) : setMobileEditor(false))}
+                className="inline-flex items-center gap-1 rounded-xl px-2.5 py-1.5 transition-colors hover:bg-gray-100"
+              >
+                {lebar ? <BookOpen className="h-4 w-4" /> : <ChevronLeft className="h-4 w-4" />}
+                {lebar ? t('Tutup buku') : t('Daftar')}
+              </button>
+            )}
+          </div>
+          <div className="flex items-center gap-2">
+            {sel && (
+              <>
+                <button
+                  disabled={!sebelumnya}
+                  onClick={() => sebelumnya && balik('prev', sebelumnya.id)}
+                  className="rounded-xl p-1.5 transition-colors hover:bg-gray-100 disabled:opacity-30"
+                  title={t('Halaman sebelumnya')}
+                >
+                  <ChevronLeft className="h-4 w-4" />
+                </button>
+                <span className="min-w-[64px] text-center tabular-nums">
+                  {idxSel >= 0 ? `${idxSel + 1} / ${terfilter.length}` : '—'}
+                </span>
+                <button
+                  disabled={!berikutnya}
+                  onClick={() => berikutnya && balik('next', berikutnya.id)}
+                  className="rounded-xl p-1.5 transition-colors hover:bg-gray-100 disabled:opacity-30"
+                  title={t('Halaman berikutnya')}
+                >
+                  <ChevronRight className="h-4 w-4" />
+                </button>
+              </>
+            )}
+          </div>
+          <div className="flex items-center justify-end gap-1">
+            {sel && !readOnly && (
+              <button
+                onClick={tambahCatatan}
+                className="inline-flex items-center gap-1 rounded-xl px-2.5 py-1.5 transition-colors hover:bg-gray-100"
+              >
+                <Plus className="h-4 w-4" /> <span className="hidden sm:inline">{t('Halaman baru')}</span>
+              </button>
+            )}
+            <button
+              onClick={alihPenuh}
+              title={penuh ? t('Keluar layar penuh') : t('Layar penuh')}
+              className="inline-flex items-center gap-1 rounded-xl px-2.5 py-1.5 transition-colors hover:bg-gray-100"
+            >
+              {penuh ? <Minimize2 className="h-4 w-4" /> : <Maximize2 className="h-4 w-4" />}
+              <span className="hidden sm:inline">{penuh ? t('Keluar layar penuh') : t('Layar penuh')}</span>
+            </button>
+          </div>
         </div>
       )}
     </div>
@@ -1089,6 +1136,13 @@ const LN_CSS = `
   --ln-ink:#2A2824;--ln-ink-2:#6A6356;--ln-ink-3:#A59D8C;--ln-accent:#16796E;--ln-cover-a:#1A9E9E;--ln-cover-b:#0B4F4A;--ln-shadow:rgba(40,30,10,.28);
   --ln-h:640px;position:relative;}
 .lms-dark .ln-stage{--ln-paper:#EDE6D5;--ln-paper-2:#E3DAC5;--ln-edge:#CFC4AA;--ln-shadow:rgba(0,0,0,.7);}
+.ln-full{position:fixed;inset:0;z-index:90;display:flex;flex-direction:column;justify-content:center;overflow:auto;padding:20px 28px 12px;
+  background:radial-gradient(ellipse at 50% 30%,#2A2520,#14110E 70%);--ln-h:calc(100dvh - 92px);}
+.ln-full .ln-book{width:100%;max-width:1500px;margin:0 auto;}
+.ln-full .ln-single{height:var(--ln-h);}
+.ln-full .ln-nav{width:100%;max-width:1500px;margin-left:auto;margin-right:auto;color:#D6CFC2;}
+.ln-full .ln-nav button:hover{background:rgba(255,255,255,.08);}
+.ln-full .ln-md,.ln-full .ln-area{font-size:15px;}
 .ln-book{position:relative;display:grid;height:var(--ln-h);perspective:2800px;transition:transform .75s cubic-bezier(.45,.05,.3,1);}
 .ln-spread{grid-template-columns:1fr 1fr;}
 .ln-single{grid-template-columns:1fr;--ln-h:max(540px,calc(100dvh - 230px));height:max(540px,calc(100dvh - 230px));}
@@ -1121,7 +1175,7 @@ const LN_CSS = `
 .ln-kop{display:flex;align-items:center;gap:6px;min-height:30px;border-bottom:1px solid var(--ln-edge);padding-bottom:6px;}
 .ln-kop-tgl{font:italic 500 12.5px/1.2 'Iowan Old Style','Palatino Linotype',Palatino,Georgia,serif;color:var(--ln-ink-2);}
 .ln-title{display:block;width:100%;margin-top:14px;background:transparent;border:0;outline:0;padding:0;resize:none;overflow:hidden;
-  font:700 27px/1.2 'Iowan Old Style','Palatino Linotype',Palatino,'Book Antiqua',Georgia,serif;color:var(--ln-ink);letter-spacing:-.01em;}
+  font:700 22px/1.25 'Iowan Old Style','Palatino Linotype',Palatino,'Book Antiqua',Georgia,serif;color:var(--ln-ink);letter-spacing:-.01em;}
 .ln-title::placeholder,.ln-title[data-kosong]{color:var(--ln-ink-3) !important;}
 .ln-meta{display:flex;flex-wrap:wrap;gap:6px;margin-top:12px;}
 .ln-chip{display:inline-flex;align-items:center;gap:5px;border:1px solid var(--ln-edge) !important;background:rgba(255,255,255,.55);color:var(--ln-ink-2);
@@ -1152,7 +1206,7 @@ select.ln-chip{appearance:auto;padding-right:6px;}
 .ln-stamp-t{font-size:12px;font-weight:800;}
 .ln-stamp-s{margin-top:2px;font-size:12px;color:#6D28D9;}
 
-.ln-bar{position:sticky;top:0;z-index:2;display:flex;flex-wrap:wrap;align-items:center;gap:6px;min-height:36px;margin-bottom:6px;padding-bottom:6px;
+.ln-bar{position:sticky;top:0;z-index:2;display:flex;flex-wrap:wrap;align-items:center;gap:6px;min-height:42px;margin-bottom:6px;padding-bottom:6px;
   background:var(--ln-paper);border-bottom:1px solid var(--ln-edge);}
 .ln-seg{display:flex;gap:2px;border-radius:10px;padding:2px;background:rgba(0,0,0,.05);}
 .ln-seg button{display:inline-flex;align-items:center;gap:4px;border-radius:8px;padding:4px 9px;font-size:12px;font-weight:700;color:var(--ln-ink-2);}
@@ -1162,26 +1216,26 @@ select.ln-chip{appearance:auto;padding-right:6px;}
 /* kertas bergaris: garis & margin merah ikut menggulung bersama tulisan */
 .ln-lined{position:relative;height:100%;
   background-image:linear-gradient(to right,transparent 22px,var(--ln-margin) 22px,var(--ln-margin) 23px,transparent 23px),
-    linear-gradient(to bottom,transparent 27px,var(--ln-line) 27px,var(--ln-line) 28px);
-  background-size:100% 100%,100% 28px;background-attachment:local;padding-left:34px;}
-.ln-single .ln-lined{height:auto;min-height:280px;padding-left:26px;background-image:linear-gradient(to right,transparent 14px,var(--ln-margin) 14px,var(--ln-margin) 15px,transparent 15px),linear-gradient(to bottom,transparent 27px,var(--ln-line) 27px,var(--ln-line) 28px);}
-.ln-single .ln-title{font-size:22px;}
+    linear-gradient(to bottom,transparent 23px,var(--ln-line) 23px,var(--ln-line) 24px);
+  background-size:100% 100%,100% 24px;background-attachment:local;padding-left:34px;}
+.ln-single .ln-lined{height:auto;min-height:280px;padding-left:26px;background-image:linear-gradient(to right,transparent 14px,var(--ln-margin) 14px,var(--ln-margin) 15px,transparent 15px),linear-gradient(to bottom,transparent 23px,var(--ln-line) 23px,var(--ln-line) 24px);background-size:100% 100%,100% 24px;}
+.ln-single .ln-title{font-size:19px;}
 .ln-page-r .ln-scroll{flex:1;}
 .ln-area{display:block;width:100%;min-height:100%;resize:none;overflow:hidden;background:transparent;border:0;outline:0;padding:0;
-  font-size:15px;line-height:28px;color:var(--ln-ink);}
-.ln-md{font-size:15px;line-height:28px;color:var(--ln-ink);}
-.ln-md-p{min-height:28px;}
-.ln-md-h1{font:700 21px/28px 'Iowan Old Style','Palatino Linotype',Palatino,Georgia,serif;color:var(--ln-ink);}
-.ln-md-h2{font:700 18px/28px 'Iowan Old Style','Palatino Linotype',Palatino,Georgia,serif;color:var(--ln-ink);}
-.ln-md-h3{font-weight:700;font-size:15px;line-height:28px;}
+  font-size:13.5px;line-height:24px;color:var(--ln-ink);}
+.ln-md{font-size:13.5px;line-height:24px;color:var(--ln-ink);}
+.ln-md-p{min-height:24px;}
+.ln-md-h1{font:700 17px/24px 'Iowan Old Style','Palatino Linotype',Palatino,Georgia,serif;color:var(--ln-ink);}
+.ln-md-h2{font:700 15px/24px 'Iowan Old Style','Palatino Linotype',Palatino,Georgia,serif;color:var(--ln-ink);}
+.ln-md-h3{font-weight:700;font-size:13.5px;line-height:24px;}
 .ln-md-quote{border-left:3px solid rgba(22,121,110,.45);padding-left:10px;font-style:italic;color:var(--ln-ink-2);}
-.ln-md-hr{height:28px;background:linear-gradient(to bottom,transparent 13px,var(--ln-ink-3) 13px,var(--ln-ink-3) 14px,transparent 14px);opacity:.5;}
+.ln-md-hr{height:24px;background:linear-gradient(to bottom,transparent 11px,var(--ln-ink-3) 11px,var(--ln-ink-3) 12px,transparent 12px);opacity:.5;}
 .ln-md-li{display:flex;gap:8px;}
-.ln-md-dot{margin-top:12px;height:5px;width:5px;flex-shrink:0;border-radius:999px;background:var(--ln-ink-2);}
+.ln-md-dot{margin-top:10px;height:4px;width:4px;flex-shrink:0;border-radius:999px;background:var(--ln-ink-2);}
 .ln-md-no{flex-shrink:0;font-weight:700;color:var(--ln-ink-3);}
 .ln-md-todo{display:flex;width:100%;gap:8px;text-align:left;border-radius:6px;}
 .ln-md-todo:hover{background:rgba(22,121,110,.06);}
-.ln-md-box{margin-top:6px;display:flex;height:16px;width:16px;flex-shrink:0;align-items:center;justify-content:center;border-radius:4px;border:2px solid var(--ln-ink-3);color:#fff;}
+.ln-md-box{margin-top:5px;display:flex;height:14px;width:14px;flex-shrink:0;align-items:center;justify-content:center;border-radius:4px;border:2px solid var(--ln-ink-3);color:#fff;}
 .ln-md-todo[data-done] .ln-md-box{border-color:var(--ln-accent);background:var(--ln-accent);}
 .ln-md-todo[data-done] .ln-md-todo-t{color:var(--ln-ink-3);text-decoration:line-through;}
 .ln-strong{font-weight:700;color:var(--ln-ink);}
