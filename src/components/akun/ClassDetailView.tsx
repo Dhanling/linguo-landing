@@ -67,7 +67,7 @@ const TABS: { id: ClassTab; label: string; icon: LucideIcon }[] = [
   { id: 'rapor', label: 'Rapor', icon: BarChart2 },
   // [student-workspace-v1] Catatan pribadi siswa untuk kelas ini — bukan materi
   // pengajar. Sengaja jadi tab terpisah supaya tab "Materi" tetap murni isi kelas.
-  { id: 'catatan', label: 'Catatan Saya', icon: NotebookPen },
+  { id: 'catatan', label: 'Lingnote', icon: NotebookPen },
 ];
 
 const isValidTab = (t: string | null | undefined): t is ClassTab =>

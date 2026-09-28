@@ -59,7 +59,7 @@ const NAV_GROUPS: { title: string; items: NavItem[] }[] = [
          (catatan, berkas, PR) + Mode Belajar Sendiri (Pomodoro). Sengaja bertetangga
          dengan "Kelas & Materi": yang satu bahan dari pengajar, yang satu bahan
          bikinan siswa sendiri. */
-      { key: "catatan", label: "Catatan Saya", icon: NotebookPen },
+      { key: "catatan", label: "Lingnote", icon: NotebookPen },
       /* [lingbook-lebur-pustaka-v1] "Lingbook" DICABUT dari sidebar. Dulu ada tiga
          pintu ke barang yang sama — Kelas & Materi, Perpustakaan, dan Lingbook —
          dan siswa harus menebak yang mana. Sekarang Perpustakaan jadi satu-satunya

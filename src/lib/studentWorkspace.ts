@@ -334,8 +334,19 @@ export function toggleChecklist(md: string, baris: number): string {
 export function cuplikan(md: string, panjang = 90): string {
   const teks = (md || '')
     .split('\n')
-    .map((l) => l.replace(/^[#>\-*\d.]+\s*(\[[ xX]\])?\s*/, '').trim())
+    .map((l) => l.replace(/^[#>\-*\d.]+\s*(\[[ xX]\])?\s*/, '').replace(/\*\*/g, '').trim())
     .filter(Boolean)
     .join(' · ');
   return teks.length > panjang ? teks.slice(0, panjang) + '…' : teks;
+}
+
+/** [lingnote-kosakata-live-v1] Catatan yang dikirim pengajar dari caption Kelas Video.
+ *  Ditandai lewat `tags` (bukan kolom baru): 'dari-pengajar', 'pengajar:<nama>',
+ *  'kelas:<bahasa · level>'. Dirakit RPC `teacher_kirim_kosakata`
+ *  (sql/20260928_lingnote_kosakata_pengajar.sql). */
+export function infoKiriman(n: Pick<StudentNote, 'tags'>): { pengajar: string | null; kelas: string | null } | null {
+  const tags = n.tags || [];
+  if (!tags.includes('dari-pengajar')) return null;
+  const ambil = (awalan: string) => tags.find((x) => x.startsWith(awalan))?.slice(awalan.length).trim() || null;
+  return { pengajar: ambil('pengajar:'), kelas: ambil('kelas:') };
 }
