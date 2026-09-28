@@ -39,7 +39,7 @@ export async function POST(req: Request) {
 
     const { data: m } = await db
       .from("ling_chat_messages")
-      .select("id,content,created_at")
+      .select("id,content,created_at,attachment_url,attachment_name,attachment_mime,reply_to_text")
       .eq("session_id", sessionId)
       .eq("role", "admin")
       .gt("id", afterId)

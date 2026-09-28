@@ -46,7 +46,48 @@ const PROACTIVE: { prefix: string; text: string }[] = [
   { prefix: "/toko", text: "Butuh rekomendasi e-book atau e-learning? Tanya Ling 😊" },
 ];
 
-type Msg = { role: "user" | "assistant" | "admin"; content: string };
+// [ling-chat-lampiran-reply-v1] attachment = dokumen (mis. PDF jadwal kelas),
+// quote = teks pesan yang dibalas admin lewat tombol Reply di Chat Minling.
+type Attachment = { url: string; name: string; mime?: string | null };
+type Msg = {
+  role: "user" | "assistant" | "admin";
+  content: string;
+  attachment?: Attachment | null;
+  quote?: string | null;
+};
+type RawMsg = {
+  id: number;
+  role?: string;
+  content: string;
+  attachment_url?: string | null;
+  attachment_name?: string | null;
+  attachment_mime?: string | null;
+  reply_to_text?: string | null;
+};
+const extras = (x: RawMsg): Pick<Msg, "attachment" | "quote"> => ({
+  attachment: x.attachment_url
+    ? { url: x.attachment_url, name: x.attachment_name || "Dokumen", mime: x.attachment_mime }
+    : null,
+  quote: x.reply_to_text || null,
+});
+
+const IcDoc = (
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" /><path d="M14 2v6h6M9 13h6M9 17h4" /></svg>
+);
+
+/** Kartu dokumen di bawah bubble — klik = buka di tab baru. */
+function AttachmentCard({ a }: { a: Attachment }) {
+  const isPdf = /pdf/i.test(a.mime || "") || /\.pdf($|\?)/i.test(a.name);
+  return (
+    <a className="lingw-doc" href={a.url} target="_blank" rel="noopener noreferrer">
+      <span className="lingw-doc-ic">{IcDoc}</span>
+      <span className="lingw-doc-txt">
+        <span className="lingw-doc-name">{a.name}</span>
+        <span className="lingw-doc-sub">{isPdf ? "PDF · ketuk untuk membuka" : "Ketuk untuk membuka"}</span>
+      </span>
+    </a>
+  );
+}
 
 // Render ringan: **tebal** -> <strong>, dan buang sisa tanda '*' (bullet/italic)
 function renderRich(text: string) {
@@ -152,6 +193,16 @@ const CSS = `
 .lingw-row.user .lingw-bubble{background:var(--teal);color:#fff;border-bottom-right-radius:6px;box-shadow:0 8px 18px -8px rgba(11,124,113,.5);}
 .lingw-adminwrap{max-width:80%;}
 .lingw-adminlbl{font-size:10px;font-weight:700;color:#059669;margin:0 0 4px 4px;}
+.lingw-withdoc{max-width:80%;display:flex;flex-direction:column;}
+.lingw-withdoc .lingw-bubble{max-width:100%;}
+.lingw-doc{display:flex;align-items:center;gap:10px;margin-top:8px;padding:10px 12px;border-radius:12px;background:#fff;border:1px solid var(--teal-line);color:var(--ink);text-decoration:none;box-shadow:0 4px 14px -8px rgba(8,51,46,.18);transition:border-color .2s;}
+.lingw-doc:hover{border-color:var(--teal);}
+.lingw-doc-ic{flex:0 0 auto;width:36px;height:36px;border-radius:10px;display:grid;place-items:center;background:#FEE2E2;color:#DC2626;}
+.lingw-doc-ic svg{width:20px;height:20px;}
+.lingw-doc-txt{display:flex;flex-direction:column;min-width:0;}
+.lingw-doc-name{font-size:13px;font-weight:700;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
+.lingw-doc-sub{font-size:11.5px;color:var(--muted);}
+.lingw-quote{display:block;margin:0 0 6px;padding:5px 9px;border-left:3px solid #10B981;border-radius:6px;background:rgba(16,185,129,.1);font-size:12.5px;line-height:1.4;color:#047857;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
 .lingw-bubble.admin{max-width:100%;background:#ECFDF5;color:#065F46;border:1px solid #A7F3D0;border-top-left-radius:6px;}
 
 .lingw-typing{display:inline-flex;gap:5px;padding:15px 18px;background:#fff;border:1px solid var(--teal-line);border-radius:18px;border-top-left-radius:6px;}
@@ -290,8 +341,7 @@ export default function ChatWidget() {
           body: JSON.stringify({ sessionId }),
         });
         const data = await res.json();
-        const arr: Array<{ id: number; role: string; content: string }> =
-          Array.isArray(data?.messages) ? data.messages : [];
+        const arr: RawMsg[] = Array.isArray(data?.messages) ? data.messages : [];
         if (data?.ticket_no) setTicket(data.ticket_no);
         if (data?.status === "human") setHumanMode(true);
         if (arr.length) {
@@ -303,7 +353,7 @@ export default function ChatWidget() {
             .filter(
               (x) => x.role === "user" || x.role === "assistant" || x.role === "admin"
             )
-            .map((x) => ({ role: x.role as Msg["role"], content: x.content }));
+            .map((x) => ({ role: x.role as Msg["role"], content: x.content, ...extras(x) }));
           // cuma merge kalau user belum ngetik apa-apa di sesi render ini
           setMessages((m) =>
             m.length <= 1 ? [{ role: "assistant", content: GREETING }, ...past] : m
@@ -353,14 +403,12 @@ export default function ChatWidget() {
         if (!alive) return;
         if (data?.status === "human") setHumanMode(true);
         else if (data?.status === "bot") setHumanMode(false);
-        const arr: Array<{ id: number; content: string }> = Array.isArray(data?.messages)
-          ? data.messages
-          : [];
+        const arr: RawMsg[] = Array.isArray(data?.messages) ? data.messages : [];
         if (arr.length) {
           adminCursor.current = Math.max(adminCursor.current, ...arr.map((x) => x.id));
           setMessages((m) => [
             ...m,
-            ...arr.map((x) => ({ role: "admin" as const, content: x.content })),
+            ...arr.map((x) => ({ role: "admin" as const, content: x.content, ...extras(x) })),
           ]);
         }
       } catch {
@@ -442,7 +490,9 @@ export default function ChatWidget() {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
-          messages: next.filter((m) => m.role === "user" || m.role === "assistant"),
+          messages: next
+            .filter((m) => m.role === "user" || m.role === "assistant")
+            .map((m) => ({ role: m.role, content: m.content })),
           sessionId,
           page: typeof window !== "undefined" ? window.location.pathname : null,
         }),
@@ -453,7 +503,18 @@ export default function ChatWidget() {
       setWaNudge(data?.escalate === true);
       const reply = data && data.reply;
       if (reply) {
-        setMessages((m) => [...m, { role: "assistant", content: reply }]);
+        const a = data?.attachment;
+        setMessages((m) => [
+          ...m,
+          {
+            role: "assistant",
+            content: reply,
+            attachment:
+              a && typeof a.url === "string"
+                ? { url: a.url, name: String(a.name || "Dokumen"), mime: a.mime ?? null }
+                : null,
+          },
+        ]);
       }
     } catch {
       setMessages((m) => [
@@ -586,7 +647,11 @@ export default function ChatWidget() {
                 <div key={i} className="lingw-row bot">
                   <div className="lingw-adminwrap">
                     <div className="lingw-adminlbl">Admin Linguo</div>
-                    <div className="lingw-bubble admin">{m.content}</div>
+                    <div className="lingw-bubble admin">
+                      {m.quote && <span className="lingw-quote">{m.quote}</span>}
+                      {m.content}
+                    </div>
+                    {m.attachment && <AttachmentCard a={m.attachment} />}
                   </div>
                 </div>
               );
@@ -594,8 +659,11 @@ export default function ChatWidget() {
             const mine = m.role === "user";
             return (
               <div key={i} className={"lingw-row " + (mine ? "user" : "bot")}>
-                <div className="lingw-bubble">
-                  {m.role === "assistant" ? renderRich(m.content) : m.content}
+                <div className={m.attachment ? "lingw-withdoc" : undefined}>
+                  <div className="lingw-bubble">
+                    {m.role === "assistant" ? renderRich(m.content) : m.content}
+                  </div>
+                  {m.attachment && <AttachmentCard a={m.attachment} />}
                 </div>
               </div>
             );

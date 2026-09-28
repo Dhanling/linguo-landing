@@ -8,6 +8,7 @@
 import { NextResponse } from "next/server";
 import { createClient } from "@supabase/supabase-js";
 import { resolveEtpBatches, todayWIBISO } from "@/lib/etpBatches";
+import { fetchJadwalKelas, jadwalGelombang, jadwalPdfFileName } from "@/lib/jadwalKelasPdf";
 
 export const runtime = "nodejs";
 export const dynamic = "force-dynamic";
@@ -1259,6 +1260,57 @@ async function callDeepSeekChat(system: string, msgs: ChatMsg[]): Promise<string
   }
 }
 
+/* ── [ling-chat-jadwal-pdf-v1] Tanya jadwal Reguler/ETP → kirim PDF ──────────
+ * Permintaan owner 28 Sep 2026: pertanyaan jadwal Kelas Reguler & ETP
+ * (TOEFL/IELTS) dijawab dengan PDF jadwal (/api/jadwal-kelas/pdf, live dari DB)
+ * + caption singkat — bukan daftar 12 bahasa yang memanjang di bubble chat.
+ * Dideteksi tanpa AI supaya berkasnya PASTI terkirim. Pertanyaan jadwal milik
+ * Private/Kids/Trial atau jadwal kelas siswa sendiri tetap ke AI.
+ */
+const JADWAL_PDF_URL = "https://linguo.id/api/jadwal-kelas/pdf";
+const JADWAL_ASK_RE =
+  /\b(jadwal\w*|schedules?|kapan (mulai|kelas|buka|dimulai)|mulai kapan|batch\w*|gelombang|jam berapa|hari apa|when does .* start)\b/i;
+const JADWAL_REG_RE = /regul[ae]r|\bgrup\b|\bgroup\b|kelompok|\betp\b|toefl|ielts|test ?prep|batch|gelombang/i;
+const JADWAL_SKIP_RE =
+  /privat|private|semi|\bkids?\b|anak|trial|reschedule|ganti jadwal|pindah jadwal|ubah jadwal|jadwal (saya|aku|ku)\b|jadwalku|kelas (saya|aku)\b|kelasku|sudah daftar|udah daftar|udh daftar/i;
+
+function wantsJadwalPdf(text: string, page: string | null, prevBot: string): boolean {
+  const t = text.trim();
+  // Menu bernomor: 4 = jadwal kelas reguler (chip menu widget / SAPAAN & MENU),
+  // kecuali "4" itu jawaban atas pertanyaan Ling sebelumnya ("berapa orang?").
+  if (/^4[.)]?$/.test(t)) return !/berapa|jumlah|usia|umur|sesi|level|kelas berapa/i.test(prevBot);
+  if (!JADWAL_ASK_RE.test(t) || JADWAL_SKIP_RE.test(t)) return false;
+  return JADWAL_REG_RE.test(t) || /jadwal-kelas-reguler|test-prep|toefl|ielts/i.test(page || "");
+}
+
+const BULAN_EN: Record<string, string> = {
+  Januari: "January", Februari: "February", Maret: "March", Mei: "May", Juni: "June",
+  Juli: "July", Agustus: "August", Oktober: "October", Desember: "December",
+};
+const bulanEn = (s: string) => s.replace(/[A-Z][a-z]+/g, (w) => BULAN_EN[w] || w);
+
+function jadwalCaption(text: string, gelombang: string, adaReg: boolean, adaEtp: boolean): string {
+  const english =
+    /\b(schedules?|when|what|class(es)?|start)\b/i.test(text) &&
+    !/\b(jadwal|kelas|kapan|mulai|kak|apa|berapa|dong|ya)\b/i.test(text);
+  if (english) {
+    const prod = [adaReg ? "Regular Classes" : "", adaEtp ? "English Test Preparation (TOEFL/IELTS)" : ""]
+      .filter(Boolean)
+      .join(" and ");
+    return (
+      `Here is the full schedule for our ${prod}${gelombang ? ` (${bulanEn(gelombang)} intake)` : ""} 📄 ` +
+      `Tap the file below to open it. Which class are you interested in? 😊`
+    );
+  }
+  const prod = [adaReg ? "Kelas Reguler" : "", adaEtp ? "English Test Preparation (TOEFL/IELTS)" : ""]
+    .filter(Boolean)
+    .join(" dan ");
+  return (
+    `Berikut jadwal lengkap ${prod}${gelombang ? ` batch ${gelombang}` : ""} ya kak 📄 ` +
+    `Klik berkasnya untuk membuka. Kakak tertarik kelas yang mana? 😊`
+  );
+}
+
 /** Balasan mentah model (JSON kontrak Ling). "" = semua penyedia gagal. */
 async function callChatLLM(system: string, msgs: ChatMsg[]): Promise<string> {
   return (
@@ -1329,6 +1381,45 @@ export async function POST(req: Request) {
     // Mode human: admin yang pegang, AI berhenti jawab otomatis
     if (status === "human") {
       return NextResponse.json({ reply: "", ticket_no, status });
+    }
+
+    // [ling-chat-jadwal-pdf-v1] Tanya jadwal Reguler/ETP → PDF, tanpa AI.
+    const lastUser = msgs[msgs.length - 1];
+    if (lastUser && lastUser.role === "user" && wantsJadwalPdf(lastUser.content, page, msgs[msgs.length - 2]?.content || "")) {
+      try {
+        const jadwal = await fetchJadwalKelas();
+        if (jadwal.reguler.length || jadwal.etp.length) {
+          const reply = jadwalCaption(
+            lastUser.content,
+            jadwalGelombang([...jadwal.reguler, ...jadwal.etp]),
+            jadwal.reguler.length > 0,
+            jadwal.etp.length > 0,
+          );
+          const attachment = {
+            url: JADWAL_PDF_URL,
+            name: jadwalPdfFileName(jadwal),
+            mime: "application/pdf",
+          };
+          if (db && sessionId) {
+            try {
+              await db.from("ling_chat_messages").insert({
+                session_id: sessionId,
+                role: "assistant",
+                content: reply,
+                attachment_url: attachment.url,
+                attachment_name: attachment.name,
+                attachment_mime: attachment.mime,
+              });
+            } catch {
+              /* abaikan */
+            }
+          }
+          return NextResponse.json({ reply, attachment, ticket_no, status });
+        }
+      } catch (e) {
+        console.error("[ling-chat] jadwal pdf", e);
+        /* jatuh ke AI */
+      }
     }
 
     if (!apiKey) {

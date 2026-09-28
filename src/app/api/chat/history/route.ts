@@ -34,7 +34,7 @@ export async function POST(req: Request) {
 
     const { data: m } = await db
       .from("ling_chat_messages")
-      .select("id,role,content")
+      .select("id,role,content,attachment_url,attachment_name,attachment_mime,reply_to_text")
       .eq("session_id", sessionId)
       .order("id", { ascending: true })
       .limit(200);
