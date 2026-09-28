@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { CreditCard, Mail, X } from "lucide-react";
+import { CreditCard, Mail, Sparkles, X } from "lucide-react";
 import { normalisasiWa } from "@/lib/waPembeli";
 
 interface PricingTier {
@@ -11,7 +11,15 @@ interface PricingTier {
   display_label: string;
 }
 
+/* [ebook-paket-lengkap-v1] Paket Lengkap A1–B2 (lihat lib/bundelEbook.ts). */
+export interface PaketLengkapTawaran {
+  items: { level: string; productId: string; pricingId: string; price: number }[];
+  normal: number;
+  total: number;
+}
+
 interface Props {
+  paketLengkap?: PaketLengkapTawaran | null;
   product: {
     id: string;
     title: string;
@@ -24,10 +32,12 @@ function formatRupiah(n: number) {
   return new Intl.NumberFormat("id-ID").format(n);
 }
 
-export default function CheckoutSection({ product, pricingTiers }: Props) {
+export default function CheckoutSection({ product, pricingTiers, paketLengkap = null }: Props) {
   const [selectedTier, setSelectedTier] = useState<PricingTier | null>(
     pricingTiers[0] ?? null
   );
+  // [ebook-paket-lengkap-v1] true = yang dibeli Paket Lengkap, bukan tier modul ini
+  const [pilihPaket, setPilihPaket] = useState(false);
   const [showCheckoutModal, setShowCheckoutModal] = useState(false);
   const [submitting, setSubmitting] = useState(false);
   const [form, setForm] = useState({ name: "", email: "", phone: "" });
@@ -43,6 +53,9 @@ export default function CheckoutSection({ product, pricingTiers }: Props) {
       </div>
     );
   }
+
+  const hargaDipilih = pilihPaket && paketLengkap ? paketLengkap.total : selectedTier.price;
+  const labelDipilih = pilihPaket && paketLengkap ? "Selamanya · A1–B2" : selectedTier.display_label;
 
   async function handleCheckout(e: React.FormEvent) {
     e.preventDefault();
@@ -63,6 +76,38 @@ export default function CheckoutSection({ product, pricingTiers }: Props) {
 
     setSubmitting(true);
 
+    const refKiriman =
+      refCode.trim() ||
+      (typeof document !== "undefined"
+        ? ("; " + document.cookie).split("; linguo_ref=")[1]?.split(";")[0] ?? null
+        : null);
+
+    // [ebook-paket-lengkap-v1] Paket = keranjang 4 modul lewat jalur tamu
+    // /api/create-cart-invoice; server yang menerapkan harga paketnya (dan
+    // membuang modul yang ternyata sudah dimiliki email ini).
+    if (pilihPaket && paketLengkap) {
+      try {
+        const res = await fetch("/api/create-cart-invoice", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({
+            buyer_email: form.email,
+            buyer_name: form.name,
+            buyer_phone: waPembeli,
+            referral_code: refKiriman,
+            items: paketLengkap.items.map((x) => ({ productId: x.productId, pricingId: x.pricingId })),
+          }),
+        });
+        const data = await res.json().catch(() => ({}));
+        if (!res.ok || !data.invoice_url) throw new Error(data.error ?? "Gagal bikin invoice");
+        window.location.href = data.invoice_url;
+      } catch (err: any) {
+        setError(err.message ?? "Terjadi kesalahan");
+        setSubmitting(false);
+      }
+      return;
+    }
+
     try {
       const response = await fetch(
         `${process.env.NEXT_PUBLIC_SUPABASE_URL}/functions/v1/xendit-create-digital-invoice`,
@@ -75,11 +120,7 @@ export default function CheckoutSection({ product, pricingTiers }: Props) {
           body: JSON.stringify({
             pricing_id: selectedTier.id,
             // referral-code-field-v1 — manual input menang; fallback ke linguo_ref cookie (affiliate-ref-capture-v1)
-            referral_code:
-              refCode.trim() ||
-              (typeof document !== "undefined"
-                ? ("; " + document.cookie).split("; linguo_ref=")[1]?.split(";")[0] ?? null
-                : null),
+            referral_code: refKiriman,
             buyer_email: form.email,
             buyer_name: form.name,
             buyer_phone: waPembeli,
@@ -115,9 +156,9 @@ export default function CheckoutSection({ product, pricingTiers }: Props) {
             {pricingTiers.map((tier) => (
               <button
                 key={tier.id}
-                onClick={() => setSelectedTier(tier)}
+                onClick={() => { setSelectedTier(tier); setPilihPaket(false); }}
                 className={`rounded-xl border-2 px-2 py-2 text-center transition-all ${
-                  selectedTier?.id === tier.id
+                  !pilihPaket && selectedTier?.id === tier.id
                     ? "border-teal-500 bg-teal-50"
                     : "border-gray-200 bg-white hover:border-gray-300"
                 }`}
@@ -132,15 +173,41 @@ export default function CheckoutSection({ product, pricingTiers }: Props) {
         </div>
       )}
 
+      {/* [ebook-paket-lengkap-v1] Paket Lengkap A1–B2 — juga jangkar harga:
+          di sebelahnya, Selamanya satu modul terbaca wajar. */}
+      {paketLengkap && (
+        <button
+          type="button"
+          onClick={() => setPilihPaket((v) => !v)}
+          aria-pressed={pilihPaket}
+          className={`mb-3 flex w-full items-center gap-3 rounded-xl border-2 px-3 py-2.5 text-left transition-all ${
+            pilihPaket ? "border-teal-500 bg-teal-50" : "border-dashed border-teal-300 bg-white hover:border-teal-400"
+          }`}
+        >
+          <Sparkles className="h-5 w-5 shrink-0 text-teal-600" strokeWidth={2} aria-hidden />
+          <span className="min-w-0 flex-1">
+            <span className="block text-[13px] font-semibold text-gray-900">Paket Lengkap A1–B2</span>
+            <span className="block text-[11px] text-gray-500">
+              4 modul ({paketLengkap.items.map((x) => x.level).join(", ")}) · akses Selamanya · hemat{" "}
+              {Math.round((1 - paketLengkap.total / paketLengkap.normal) * 100)}%
+            </span>
+          </span>
+          <span className="shrink-0 text-right leading-tight">
+            <span className="block text-[11px] text-gray-400 line-through">Rp {formatRupiah(paketLengkap.normal)}</span>
+            <span className="block text-[14px] font-bold text-teal-700">Rp {formatRupiah(paketLengkap.total)}</span>
+          </span>
+        </button>
+      )}
+
       {/* Selected price */}
       <div className="mb-3 flex items-baseline justify-between gap-3 rounded-2xl bg-teal-50 px-4 py-3">
         <div>
           <div className="text-[11px] font-medium text-gray-600">Total Bayar</div>
           <div className="text-[26px] font-bold leading-tight text-teal-600">
-            Rp {formatRupiah(selectedTier.price)}
+            Rp {formatRupiah(hargaDipilih)}
           </div>
         </div>
-        <div className="text-[12px] font-semibold text-gray-600">{selectedTier.display_label}</div>
+        <div className="text-[12px] font-semibold text-gray-600">{labelDipilih}</div>
       </div>
 
       <button
@@ -178,8 +245,15 @@ export default function CheckoutSection({ product, pricingTiers }: Props) {
             </div>
 
             <div className="bg-gray-50 rounded-xl p-3 mb-4 text-sm">
-              <div className="font-semibold text-gray-900">{product.title}</div>
-              <div className="text-gray-600">{selectedTier.display_label} — Rp {formatRupiah(selectedTier.price)}</div>
+              <div className="font-semibold text-gray-900">
+                {pilihPaket && paketLengkap ? "Paket Lengkap A1–B2 (4 modul)" : product.title}
+              </div>
+              <div className="text-gray-600">{labelDipilih} — Rp {formatRupiah(hargaDipilih)}</div>
+              {pilihPaket && paketLengkap && (
+                <div className="mt-1 text-xs text-gray-500">
+                  Modul yang sudah kamu miliki otomatis tidak ditagih lagi.
+                </div>
+              )}
             </div>
 
             <form onSubmit={handleCheckout} className="space-y-3">
@@ -262,7 +336,7 @@ export default function CheckoutSection({ product, pricingTiers }: Props) {
                 disabled={submitting}
                 className="w-full bg-teal-600 hover:bg-teal-700 disabled:opacity-50 disabled:cursor-not-allowed text-white font-semibold py-4 rounded-2xl transition-colors"
               >
-                {submitting ? "Membuat Invoice..." : `Lanjut Bayar Rp ${formatRupiah(selectedTier.price)}`}
+                {submitting ? "Membuat Invoice..." : `Lanjut Bayar Rp ${formatRupiah(hargaDipilih)}`}
               </button>
 
               <p className="text-xs text-gray-500 text-center">

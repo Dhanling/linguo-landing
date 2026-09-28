@@ -43,6 +43,7 @@ import { createClient } from "@supabase/supabase-js";
 import { fetchProductLangs, materialReady } from "@/lib/digitalAccess";
 import { promoAmountFor } from "@/lib/promoMerdeka";
 import { KODE_WA_WAJIB, PESAN_WA_WAJIB, pastikanWaPembeli } from "@/lib/waPembeli";
+import { hitungPaketLengkap, type ModulDimiliki } from "@/lib/bundelEbook";
 
 const SUPABASE_URL = process.env.NEXT_PUBLIC_SUPABASE_URL!;
 const SUPABASE_ANON_KEY = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!;
@@ -224,14 +225,24 @@ async function buatInvoice(req: NextRequest): Promise<NextResponse> {
   // (akun yang dibuat sesudah bayar punya auth_user_id NULL).
   const { data: milik } = await admin
     .from("digital_purchases")
-    .select("product_id")
+    .select("product_id, source, digital_products ( title, language, type )")
     .eq("payment_status", "Lunas")
     .or(
       authUserId
         ? `auth_user_id.eq.${authUserId},buyer_email.ilike.${email}`
         : `buyer_email.ilike.${email}`,
     );
-  const dimiliki = new Set((milik ?? []).map((r: { product_id: string }) => r.product_id));
+  type BarisMilik = { product_id: string; source: string | null; digital_products: ModulDimiliki | ModulDimiliki[] | null };
+  const barisMilik = (milik ?? []) as unknown as BarisMilik[];
+  // [ebook-paket-lengkap-v1] Baris cicip ('preview', Rp0, Unit 1 saja) juga
+  // berstatus Lunas, tapi BUKAN kepemilikan — yang pernah mencicip A1 harus tetap
+  // bisa membelinya (termasuk sebagai bagian Paket Lengkap).
+  const milikPenuh = barisMilik.filter((r) => r.source !== "preview");
+  const dimiliki = new Set(milikPenuh.map((r) => r.product_id));
+  // Modul yang sudah dimiliki ikut menutup syarat A1–B2 Paket Lengkap.
+  const modulDimiliki: ModulDimiliki[] = milikPenuh
+    .map((r) => (Array.isArray(r.digital_products) ? r.digital_products[0] : r.digital_products))
+    .filter((d): d is ModulDimiliki => !!d);
 
   // [onboarding-belanja-v1] Simulasi yang sudah dimiliki tidak dijual ulang —
   // aksesnya lifetime per jenis tes, jadi bayar kedua kali tidak menambah apa
@@ -283,9 +294,24 @@ async function buatInvoice(req: NextRequest): Promise<NextResponse> {
     );
   }
 
+  // [ebook-paket-lengkap-v1] Harga final per baris — modul yang masuk Paket
+  // Lengkap A1–B2 dibagi rata; sisanya harga tiernya sendiri.
+  const paket = hitungPaketLengkap(
+    sah.map((x) => ({
+      productId: x.prod.id,
+      title: x.prod.title,
+      language: x.prod.language,
+      type: x.prod.type,
+      durationDays: x.tier.duration_days,
+      price: x.tier.price ?? 0,
+    })),
+    modulDimiliki,
+  );
+  const hargaBaris = (x: { prod: Prod; tier: Tier }) => paket.harga.get(x.prod.id) ?? x.tier.price ?? 0;
+
   const simBaris = simSah.map((t) => ({ testType: t, harga: hargaSimulasi(t) }));
   const total =
-    sah.reduce((n, x) => n + (x.tier.price ?? 0), 0) +
+    sah.reduce((n, x) => n + hargaBaris(x), 0) +
     simBaris.reduce((n, x) => n + x.harga, 0);
   if (total <= 0) return tolak("Total belanja tidak valid.", 400);
 
@@ -300,7 +326,7 @@ async function buatInvoice(req: NextRequest): Promise<NextResponse> {
     buyer_email: email,
     buyer_name: pembeliNama,
     buyer_phone: pembeliTelepon,
-    amount: x.tier.price,
+    amount: hargaBaris(x),
     payment_status: "Belum Bayar",
     xendit_status: "PENDING",
     // Baris ke-2 dst diberi sufiks: kolom ini dipakai sebagai kunci match 1:1 di
@@ -381,7 +407,9 @@ async function buatInvoice(req: NextRequest): Promise<NextResponse> {
         description:
           sah.length + simBaris.length === 1
             ? `Linguo — ${sah[0] ? sah[0].prod.title : SIM_LABEL[simBaris[0].testType]}`
-            : `Linguo — ${sah.length + simBaris.length} produk digital (Perpustakaan)`,
+            : paket.bahasa.length > 0
+              ? `Linguo — Paket Lengkap A1–B2 ${paket.bahasa.join(", ")}${sah.length + simBaris.length > paket.dalamPaket.size ? ` + ${sah.length + simBaris.length - paket.dalamPaket.size} produk lain` : ""}`
+              : `Linguo — ${sah.length + simBaris.length} produk digital (Perpustakaan)`,
         currency: "IDR",
         invoice_duration: 86400,
         should_send_email: true,
@@ -398,9 +426,9 @@ async function buatInvoice(req: NextRequest): Promise<NextResponse> {
         // memeriksa isi keranjangnya sebelum membayar.
         items: [
           ...sah.map((x) => ({
-            name: `${rapiTipe(x.prod.type)} — ${x.prod.title}${x.tier.display_label ? ` (${x.tier.display_label})` : ""}`,
+            name: `${rapiTipe(x.prod.type)} — ${x.prod.title}${x.tier.display_label ? ` (${x.tier.display_label})` : ""}${paket.dalamPaket.has(x.prod.id) ? " · Paket Lengkap A1–B2" : ""}`,
             quantity: 1,
-            price: x.tier.price,
+            price: hargaBaris(x),
           })),
           ...simBaris.map((x) => ({ name: SIM_LABEL[x.testType], quantity: 1, price: x.harga })),
         ],
@@ -436,6 +464,8 @@ async function buatInvoice(req: NextRequest): Promise<NextResponse> {
         external_id: extId,
         total,
         jumlah: sah.length + simBaris.length,
+        paket_lengkap: paket.bahasa,
+        hemat: paket.hemat,
         // Item yang gugur dilaporkan apa adanya supaya UI bisa bilang mana yang
         // tak ikut dibayar — bukan diam-diam menagih lebih sedikit.
         ditolak,

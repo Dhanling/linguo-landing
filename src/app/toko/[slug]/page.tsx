@@ -8,6 +8,8 @@ import Deskripsi from "./Deskripsi";
 import { masihDijual } from "@/lib/elearningBundle";
 import { LABEL_NEW_EDITION, adalahNewEdition } from "@/lib/ebookEdisi";
 import TautanLegal from "@/components/TautanLegal"; // [xendit-legal-links-v1]
+import { HARGA_PAKET_LENGKAP, LEVEL_PAKET, seriModulPaket } from "@/lib/bundelEbook";
+import type { PaketLengkapTawaran } from "./CheckoutSection";
 
 const supabase = createClient(
   process.env.NEXT_PUBLIC_SUPABASE_URL!,
@@ -68,6 +70,37 @@ async function getProduct(slug: string) {
   return data;
 }
 
+/* [ebook-paket-lengkap-v1] Empat modul A1–B2 bahasa yang sama, tier Selamanya
+   masing-masing. Muncul HANYA kalau keempat levelnya ada & bertier Selamanya —
+   bahasa yang baru punya A1 tak ditawari paket yang isinya belum ada. Harganya
+   tetap dihitung ulang /api/create-cart-invoice saat checkout. */
+async function getPaketLengkap(language: string | null, title: string): Promise<PaketLengkapTawaran | null> {
+  const seri = seriModulPaket(title);
+  if (!language || !seri) return null;
+  const { data } = await supabase
+    .from("digital_products")
+    .select("id, title, digital_product_pricing ( id, price, duration_days, is_active )")
+    .eq("type", "ebook")
+    .eq("is_active", true)
+    .eq("language", language);
+  const perLevel = new Map<string, { productId: string; pricingId: string; price: number }>();
+  for (const p of (data ?? []) as any[]) {
+    // seri, bukan language: "Arabic" juga berisi "Levantine Arabic 101 - A1"
+    const sp = seriModulPaket(p.title);
+    const tier = (p.digital_product_pricing ?? []).find((t: any) => t.is_active && t.duration_days === null && Number(t.price) > 0);
+    if (!sp || sp.kunci !== seri.kunci || !tier || perLevel.has(sp.level)) continue;
+    const lv = sp.level;
+    perLevel.set(lv, { productId: p.id, pricingId: tier.id, price: Number(tier.price) });
+  }
+  if (!LEVEL_PAKET.every((lv) => perLevel.has(lv))) return null;
+  const items = LEVEL_PAKET.map((lv) => ({ level: lv, ...perLevel.get(lv)! }));
+  return {
+    items,
+    normal: items.reduce((n, x) => n + x.price, 0),
+    total: HARGA_PAKET_LENGKAP,
+  };
+}
+
 export default async function ProductDetailPage({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params;
   /* [elearning-per-bahasa-v1] Paket 12+ bahasa berhenti dijual. Barisnya
@@ -97,6 +130,7 @@ export default async function ProductDetailPage({ params }: { params: Promise<{ 
   const bisaDicicipi =
     isEbook && pricingTiers.length > 0 && (await punyaPratinjau(fileUrl));
   const TypeIcon = isEbook ? BookOpen : Clapperboard;
+  const paketLengkap = isEbook ? await getPaketLengkap(product.language ?? null, product.title) : null;
   // [ebook-new-edition-label-v1] Label edisi, dari pola judul (tak ada kolomnya).
   const newEdition = adalahNewEdition(product.title, product.type);
   const flagCode = product.language
@@ -237,6 +271,7 @@ export default async function ProductDetailPage({ params }: { params: Promise<{ 
                   type: product.type as "ebook" | "elearning",
                 }}
                 pricingTiers={pricingTiers}
+                paketLengkap={paketLengkap}
               />
 
               {/* [ebook-pratinjau-unit1-v1] Cicipan cuma untuk modul yang dibaca

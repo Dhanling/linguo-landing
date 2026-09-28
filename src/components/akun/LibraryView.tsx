@@ -47,6 +47,7 @@ import { siapkanTabPembayaran } from "@/lib/bukaTabPembayaran";
 import KolomWaPembeli, { useWaPembeli } from "@/components/akun/KolomWaPembeli"; // [wa-wajib-digital-v1]
 import { KODE_WA_WAJIB } from "@/lib/waPembeli";
 import { sampulKecil, sampulGagal } from "@/lib/sampulKecil"; // [pustaka-sampul-kecil-v1]
+import { hitungPaketLengkap, seriModulPaket, type ModulDimiliki } from "@/lib/bundelEbook"; // [ebook-paket-lengkap-v1]
 // [pustaka-keranjang-v1] beli beberapa produk sekaligus → satu invoice
 import {
   useKeranjang, tambahKeKeranjang, hapusDariKeranjang, kosongkanKeranjang,
@@ -578,6 +579,15 @@ export default function LibraryView({ userId, supabase, previewStudentId = null,
   const pvCached = preview && libPreviewCache?.student === previewStudentId ? libPreviewCache : null;
   const cached = !preview && libCache && libCache.userId === userId ? libCache : null;
   const [purchases, setPurchases] = useState<Purchase[]>(cached?.purchases ?? pvCached?.purchases ?? []);
+  // [ebook-paket-lengkap-v1] Modul yang sudah dimiliki ikut menutup syarat
+  // Paket Lengkap A1–B2 — aturan yang sama dengan /api/create-cart-invoice,
+  // supaya total di keranjang = total di halaman Xendit.
+  const modulDimiliki = useMemo<ModulDimiliki[]>(
+    () => purchases
+      .filter((p) => p.payment_status === "Lunas" && p.source !== "preview")
+      .map((p) => p.digital_products),
+    [purchases],
+  );
   // [pratinjau-beli-langsung-v1] null = belum dimuat / siswa tanpa email → beli dimatikan
   const [previewBuyer, setPreviewBuyer] = useState<PreviewBuyer>(pvCached?.buyer ?? null);
 
@@ -616,7 +626,38 @@ export default function LibraryView({ userId, supabase, previewStudentId = null,
   // [pustaka-keranjang-v1] keranjang belanja + popupnya. Mode pratinjau staf
   // memakai kunci kosong supaya keranjang siswa asli tak pernah tersentuh.
   const kunciKeranjang = preview ? "" : userId;
-  const { items: keranjang, total: totalKeranjang } = useKeranjang(kunciKeranjang);
+  const { items: keranjang } = useKeranjang(kunciKeranjang);
+  const totalKeranjang = useMemo(
+    () => hitungPaketLengkap(keranjang, modulDimiliki).total,
+    [keranjang, modulDimiliki],
+  );
+  // [ebook-paket-lengkap-v1] Tawaran di popup Beli: level bahasa yang sama yang
+  // BELUM dimiliki, masing-masing tier Selamanya. Muncul cuma kalau bersama
+  // modul yang sudah dimiliki ia menutup A1–B2 (aturan hitungPaketLengkap).
+  const tawaranPaket = useMemo(() => {
+    const seri = buyFor?.type === "ebook" ? seriModulPaket(buyFor.title) : null;
+    if (!buyFor || !seri) return null;
+    const milikIds = new Set(purchases.filter((p) => !cicipan(p)).map((p) => p.digital_products?.id));
+    const perLevel = new Map<string, { item: CatalogItem; tier: RenewTier }>();
+    for (const k of [buyFor, ...katalog]) {
+      const sk = k.type === "ebook" ? seriModulPaket(k.title) : null;
+      if (!sk || sk.kunci !== seri.kunci) continue;
+      const tier = k.pricing.find((t) => t.duration_days === null);
+      if (!tier || milikIds.has(k.id) || perLevel.has(sk.level)) continue;
+      perLevel.set(sk.level, { item: k, tier });
+    }
+    const isi = [...perLevel.values()];
+    const hasil = hitungPaketLengkap(
+      isi.map(({ item, tier }) => ({
+        productId: item.id, title: item.title, language: item.language, type: item.type,
+        durationDays: tier.duration_days, price: tier.price,
+      })),
+      modulDimiliki,
+    );
+    if (hasil.bahasa.length === 0) return null;
+    // "Arabic" → "Arab"; seri bernama khusus ("Brazilian Portuguese") apa adanya
+    return { isi, total: hasil.total, normal: hasil.total + hasil.hemat, bahasa: labelBahasa(seri.seri) };
+  }, [buyFor, katalog, purchases, modulDimiliki]);
   const [bukaKeranjang, setBukaKeranjang] = useState(false);
   /* linguo-patch:produk-digital-link-v1 */
   const [playing, setPlaying] = useState<PlayerTarget | null>(null);
@@ -666,7 +707,8 @@ export default function LibraryView({ userId, supabase, previewStudentId = null,
      dan terbaca seolah pembayarannya gagal. */
   useEffect(() => {
     if (!kunciKeranjang || purchases.length === 0) return;
-    sinkronkanKeranjang(kunciKeranjang, new Set(purchases.map((p) => p.digital_products.id)));
+    // [ebook-paket-lengkap-v1] baris cicip bukan kepemilikan — modulnya boleh tetap di keranjang
+    sinkronkanKeranjang(kunciKeranjang, new Set(purchases.filter((p) => !cicipan(p)).map((p) => p.digital_products.id)));
   }, [purchases, kunciKeranjang]);
 
   /* [pustaka-katalog-terkunci-v1] katalog produk aktif — dimuat terpisah dari
@@ -1543,6 +1585,7 @@ export default function LibraryView({ userId, supabase, previewStudentId = null,
       {bukaKeranjang && (
         <CartModal
           items={keranjang}
+          dimiliki={modulDimiliki}
           supabase={supabase}
           onClose={() => setBukaKeranjang(false)}
           onHapus={(id) => hapusDariKeranjang(kunciKeranjang, id)}
@@ -1585,6 +1628,13 @@ export default function LibraryView({ userId, supabase, previewStudentId = null,
           onKeranjang={(tier) => {
             tambahKeKeranjang(kunciKeranjang, keItemKeranjang(buyFor, tier));
             toast.success(`${judulRingkas(buyFor.title)} masuk keranjang`);
+          }}
+          paketLengkap={tawaranPaket}
+          onPaketLengkap={() => {
+            if (!tawaranPaket) return;
+            for (const { item, tier } of tawaranPaket.isi) tambahKeKeranjang(kunciKeranjang, keItemKeranjang(item, tier));
+            setBuyFor(null);
+            setBukaKeranjang(true);
           }}
         />
       )}
@@ -2446,9 +2496,10 @@ function LockedCard({
 // yang menulis N baris digital_purchases untuk satu invoice. Harga di layar cuma
 // tampilan — yang ditagih adalah hitungan ulang server dari digital_product_pricing.
 function CartModal({
-  items, supabase, onClose, onHapus, onKosongkan,
+  items, dimiliki, supabase, onClose, onHapus, onKosongkan,
 }: {
   items: ItemKeranjang[];
+  dimiliki: ModulDimiliki[];
   supabase: SupabaseClient;
   onClose: () => void;
   onHapus: (productId: string) => void;
@@ -2456,7 +2507,8 @@ function CartModal({
 }) {
   const [submitting, setSubmitting] = useState(false);
   const wa = useWaPembeli(supabase); // [wa-wajib-digital-v1]
-  const total = items.reduce((n, x) => n + (Number(x.price) || 0), 0);
+  const paket = useMemo(() => hitungPaketLengkap(items, dimiliki), [items, dimiliki]);
+  const total = paket.total;
 
   // Keranjang yang dikosongkan dari dalam popup tak menyisakan apa pun untuk
   // dilihat — tutup sendiri daripada memamerkan layar kosong.
@@ -2566,7 +2618,14 @@ function CartModal({
                     {[x.type === "ebook" ? "Lingbook" : "E-Learning", x.tierLabel].filter(Boolean).join(" · ")}
                   </p>
                 </div>
-                <span className="shrink-0 text-[13.5px] font-extrabold text-[#12172B]">{fmtRupiah(x.price)}</span>
+                {paket.dalamPaket.has(x.productId) ? (
+                  <span className="shrink-0 text-right leading-tight">
+                    <span className="block text-[11px] font-semibold text-slate-400 line-through">{fmtRupiah(x.price)}</span>
+                    <span className="block text-[13.5px] font-extrabold text-[#12A37E]">{fmtRupiah(paket.harga.get(x.productId) ?? x.price)}</span>
+                  </span>
+                ) : (
+                  <span className="shrink-0 text-[13.5px] font-extrabold text-[#12172B]">{fmtRupiah(x.price)}</span>
+                )}
                 <button
                   onClick={() => onHapus(x.productId)}
                   aria-label={`Hapus ${x.title} dari keranjang`}
@@ -2589,6 +2648,15 @@ function CartModal({
         {/* footer */}
         <div className="border-t border-slate-100 px-5 py-4">
           <KolomWaPembeli wa={wa} disabled={submitting} />
+          {paket.bahasa.length > 0 && (
+            <div className="mb-2.5 flex items-center gap-2 rounded-xl bg-[#12A37E]/10 px-3 py-2 text-[12.5px] font-bold text-[#0C8163]">
+              <Sparkles className="h-4 w-4 shrink-0" strokeWidth={2.4} />
+              <span className="min-w-0 flex-1">
+                Paket Lengkap A1–B2 {paket.bahasa.map(labelBahasa).join(", ")} aktif
+              </span>
+              <span className="shrink-0">hemat {fmtRupiah(paket.hemat)}</span>
+            </div>
+          )}
           <div className="mb-3 flex items-center justify-between">
             <span className="text-[13px] font-bold text-slate-500">Total</span>
             <span className="text-[19px] font-extrabold text-[#12172B]">{fmtRupiah(total)}</span>
@@ -2615,7 +2683,7 @@ function CartModal({
 // tier harganya sudah ikut terbawa dari katalog jadi tak perlu query lagi.
 function BuyModal({
   item, supabase, onClose, onClaimed, diKeranjang, onKeranjang,
-  previewBuyer = null, previewStudentId = null,
+  previewBuyer = null, previewStudentId = null, paketLengkap = null, onPaketLengkap,
 }: {
   item: CatalogItem; supabase: SupabaseClient; onClose: () => void;
   /* [pratinjau-beli-langsung-v1] terisi HANYA di POV siswa — pengganti sesi login */
@@ -2624,6 +2692,9 @@ function BuyModal({
   onClaimed: () => void;
   /* [pustaka-keranjang-v1] tier yang sedang dipilih ikut dibawa ke keranjang */
   diKeranjang: boolean; onKeranjang: (tier: RenewTier) => void;
+  /* [ebook-paket-lengkap-v1] level lain yang belum dimiliki → Paket Lengkap A1–B2 */
+  paketLengkap?: { isi: unknown[]; total: number; normal: number; bahasa: string } | null;
+  onPaketLengkap?: () => void;
 }) {
   const tiers = item.pricing;
   const [selectedId, setSelectedId] = useState<string | null>(
@@ -2912,6 +2983,30 @@ function BuyModal({
                 {diKeranjang
                   ? <><Check className="h-[18px] w-[18px]" strokeWidth={3} /> Perbarui keranjang</>
                   : <><Plus className="h-[18px] w-[18px]" strokeWidth={2.6} /> Masukkan keranjang</>}
+              </button>
+            )}
+            {/* [ebook-paket-lengkap-v1] Jalan pintas ke B2: semua level yang belum
+                dimiliki masuk keranjang sekaligus, harga paketnya dihitung ulang
+                server saat checkout. */}
+            {!promo && !pratinjau && paketLengkap && onPaketLengkap && (
+              <button
+                onClick={onPaketLengkap}
+                disabled={submitting}
+                className="mt-2.5 flex w-full items-center gap-3 rounded-2xl border-2 border-dashed border-[#12A37E]/50 bg-[#12A37E]/5 px-3.5 py-2.5 text-left transition hover:border-[#12A37E] hover:bg-[#12A37E]/10 disabled:opacity-50"
+              >
+                <Sparkles className="h-5 w-5 shrink-0 text-[#12A37E]" strokeWidth={2.2} />
+                <span className="min-w-0 flex-1">
+                  <span className="block text-[13.5px] font-extrabold text-[#0C8163]">
+                    Paket Lengkap {paketLengkap.bahasa} A1–B2
+                  </span>
+                  <span className="block text-[11.5px] font-semibold text-slate-500">
+                    {paketLengkap.isi.length} modul · akses Selamanya · masuk keranjang
+                  </span>
+                </span>
+                <span className="shrink-0 text-right leading-tight">
+                  <span className="block text-[11px] font-semibold text-slate-400 line-through">{fmtRupiah(paketLengkap.normal)}</span>
+                  <span className="block text-[14px] font-extrabold text-[#0C8163]">{fmtRupiah(paketLengkap.total)}</span>
+                </span>
               </button>
             )}
             <p className="mt-2.5 text-center text-[11px] font-medium text-slate-400">
