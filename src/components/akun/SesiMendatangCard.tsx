@@ -263,7 +263,7 @@ function SesiItem({ b, studentName, onClick, today = false, now }: {
       tabIndex={0}
       onClick={onClick}
       onKeyDown={(e) => { if (e.key === "Enter" || e.key === " ") { e.preventDefault(); onClick(); } }}
-      className="sesi-mendatang-item group relative cursor-pointer rounded-2xl bg-slate-50 p-3 text-left transition hover:bg-slate-100/70"
+      className="sesi-mendatang-item group cursor-pointer rounded-2xl bg-slate-50 p-3 text-left transition hover:bg-slate-100/70"
       // jadwal-live-now-v1: cincin merah — sama dengan blok di kalender.
       style={b._live ? { boxShadow: `0 0 0 2px ${LIVE_COLOR}` } : undefined}
     >
@@ -283,11 +283,6 @@ function SesiItem({ b, studentName, onClick, today = false, now }: {
             <span className="truncate text-[14px] font-extrabold text-[#12172B]">
               {s.language}{s.level ? ` — ${s.level}` : ""}
             </span>
-            {/* [sesi-mendatang-hover-join-v1] nomor sesi & jumlah sesi disembunyikan
-                biar kartunya rapi — baru muncul saat kartu di-hover. */}
-            {nomor ? (
-              <span className="hidden shrink-0 rounded-full group-hover:inline group-focus-within:inline px-1.5 py-0.5 text-[10px] font-extrabold" style={{ background: c.bg, color: c.text }}>{nomor}</span>
-            ) : null}
           </span>
           <span className="mt-0.5 block truncate text-[12px] font-medium text-[#6B7280]">
             {b._live ? (
@@ -310,10 +305,28 @@ function SesiItem({ b, studentName, onClick, today = false, now }: {
               </>
             )}
           </span>
-          {s.teacher && (
+          {/* [sesi-mendatang-hover-join-v2] Nomor sesi & "Join dibuka" duduk di kanan
+              baris pengajar — dulu pilnya melayang di atas kartu dan menutupi jam. Muncul
+              (memudar masuk) hanya saat kartu di-hover; ruangnya sudah dipesan, jadi tak
+              ada yang bergeser. */}
+          {(s.teacher || nomor || (!b.join && !today)) && (
             <span className="mt-1 flex items-center gap-1.5 text-[11px] font-medium text-[#6B7280]">
-              <TeacherAvatar name={s.teacher} src={s.teacherAvatarUrl} size={18} />
-              <span className="truncate">{s.teacher}</span>
+              {s.teacher && (
+                <>
+                  <TeacherAvatar name={s.teacher} src={s.teacherAvatarUrl} size={18} />
+                  <span className="truncate">{s.teacher}</span>
+                </>
+              )}
+              <span className="ml-auto flex shrink-0 items-center gap-1.5 opacity-0 transition-opacity duration-200 group-hover:opacity-100 group-focus-within:opacity-100">
+                {nomor ? (
+                  <span className="rounded-full px-1.5 py-0.5 text-[10px] font-extrabold" style={{ background: c.bg, color: c.text }}>{nomor}</span>
+                ) : null}
+                {!b.join && !today && (
+                  <span className="inline-flex items-center gap-1 rounded-lg bg-slate-200 px-2 py-0.5 text-[10.5px] font-bold text-[#6B7280]">
+                    <Lock className="h-3 w-3" strokeWidth={2.4} /> {t("Join dibuka")} {fmtTime(new Date(b._d.getTime() - JOIN_BUKA_MENIT * 60_000))}
+                  </span>
+                )}
+              </span>
             </span>
           )}
         </span>
@@ -340,14 +353,6 @@ function SesiItem({ b, studentName, onClick, today = false, now }: {
         <div className="mt-2.5 inline-flex w-full items-center justify-center gap-1.5 rounded-xl bg-slate-200/70 px-3 py-2 text-[12px] font-bold text-[#6B7280]">
           <Video className="h-3.5 w-3.5" strokeWidth={2.2} /> {t("Masuk Kelas dibuka")} {fmtTime(new Date(b._d.getTime() - JOIN_BUKA_MENIT * 60_000))}
         </div>
-      )}
-      {/* [sesi-mendatang-hover-join-v1] Kelas hari-hari berikutnya: tombol join muncul
-          di pojok kanan saat kartu di-hover (melayang, tinggi kartu tak berubah) —
-          masih terkunci sampai H-10 menit. */}
-      {!b.join && !today && (
-        <span className="pointer-events-none absolute right-3 top-1/2 inline-flex -translate-y-1/2 items-center gap-1.5 rounded-xl bg-slate-200 px-3 py-2 text-[11.5px] font-bold text-[#6B7280] opacity-0 transition-opacity duration-200 group-hover:opacity-100">
-          <Lock className="h-3.5 w-3.5" strokeWidth={2.4} /> {t("Join dibuka")} {fmtTime(new Date(b._d.getTime() - JOIN_BUKA_MENIT * 60_000))}
-        </span>
       )}
     </div>
   );
