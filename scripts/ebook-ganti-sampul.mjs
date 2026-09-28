@@ -13,14 +13,15 @@
 //   manifes = baris "<slug-modul>	<slug-produk>	<berkas sumber>"; kolom
 //   ketiga hanya catatan asal berkas, yang diunggah adalah sampul yang ditunjuk
 //   `meta.cover` (bawaan cover.png) + `dist/ebook/<slug-modul>.pdf`.
-//   Sampul JPG (hasil kompres) diunggah sebagai `<slug-produk>.jpg` — nama
-//   objek berubah dari .png, jadi cache gambar lama ikut lepas.
+//   Gambar kartu selalu disusutkan ke 800 px JPEG mozjpeg q82 (±170 KB) dan
+//   diunggah sebagai `<slug-produk>.jpg` — kartu cuma dirender ~300 px.
 //   Contoh manifes: scripts/sampul-ebook-2026-09.tsv
 //
 // Sesudah ini rakit ulang potongan pratinjaunya:
 //   node scripts/build-ebook-pratinjau.mjs --paksa <slug-produk>
 import { readFileSync } from "node:fs";
 import { createClient } from "@supabase/supabase-js";
+import sharp from "sharp";
 
 for (const line of readFileSync(".env.local", "utf8").split("\n")) {
   const m = line.match(/^\s*([A-Z0-9_]+)\s*=\s*(.*)\s*$/);
@@ -45,11 +46,12 @@ for (const [mod, prod] of rows) {
     if (error) throw new Error(`PDF: ${error.message}`);
 
     const sampul = JSON.parse(readFileSync(`content/ebook/${mod}/meta.json`, "utf8")).cover || "cover.png";
-    const ext = sampul.split(".").pop().toLowerCase().replace("jpeg", "jpg");
-    const gambar = readFileSync(`content/ebook/${mod}/${sampul}`);
-    const objek = `ebook-covers/${prod}.${ext}`;
+    const gambar = await sharp(`content/ebook/${mod}/${sampul}`).rotate()
+      .resize({ width: 800, withoutEnlargement: true })
+      .jpeg({ quality: 82, mozjpeg: true, progressive: true }).toBuffer();
+    const objek = `ebook-covers/${prod}.jpg`;
     const { error: e2 } = await sb.storage.from("lms-media")
-      .upload(objek, gambar, { contentType: ext === "jpg" ? "image/jpeg" : `image/${ext}`, upsert: true, cacheControl: "3600" });
+      .upload(objek, gambar, { contentType: "image/jpeg", upsert: true, cacheControl: "3600" });
     if (e2) throw new Error(`sampul: ${e2.message}`);
     const url = sb.storage.from("lms-media").getPublicUrl(objek).data.publicUrl;
     // ?v= memaksa kartu lama melewati cache CDN & <img> browser
