@@ -23,7 +23,7 @@ import { toast } from "sonner";
 import { motion, AnimatePresence } from "framer-motion";
 import dynamic from "next/dynamic";
 import successAnim from "../payment/success/success-anim.json";
-import { Zap, Target, MessageCircle, Globe, Plus, LogOut, Clock, Calendar, Pencil, Star, Trophy, BookOpen, Newspaper, BookMarked, User, Users, Baby, ClipboardList, GraduationCap, Video, Camera, Mail, Languages, ChevronRight, Search, ArrowRight, Shield, Bell, SlidersHorizontal, Wallet, Upload, BadgeCheck, CreditCard, Check, XCircle, Hand, X, Eye, EyeOff, MessagesSquare, PartyPopper, Rocket, Sprout, HelpCircle, AlertCircle, Sparkles, FileText, Layers, Lightbulb, Loader2, AlertTriangle, Minus, Play, ExternalLink, ClipboardCheck, BarChart2, List, LayoutGrid, type LucideIcon } from "lucide-react";
+import { Zap, Target, MessageCircle, Globe, Plus, LogOut, Clock, Calendar, Pencil, Star, Trophy, BookOpen, Newspaper, BookMarked, User, Users, Baby, ClipboardList, GraduationCap, Video, Camera, Mail, Languages, ChevronRight, Search, ArrowRight, Shield, Bell, SlidersHorizontal, Wallet, Upload, BadgeCheck, CreditCard, Check, XCircle, Hand, X, Eye, EyeOff, MessagesSquare, PartyPopper, Rocket, Sprout, HelpCircle, AlertCircle, Sparkles, FileText, Layers, Lightbulb, Loader2, AlertTriangle, Minus, Play, ExternalLink, ClipboardCheck, BarChart2, List, LayoutGrid, Building2, type LucideIcon } from "lucide-react";
 // [no-emoji-lucide-v1] bendera rounded-rect buat prefix nomor WA & pilihan tes (bukan emoji 🇮🇩)
 import { RectFlag } from "@/components/RectFlag";
 import OnboardingBelanja, { type KategoriBelanja } from "@/components/akun/OnboardingBelanja"; // [onboarding-belanja-v1] produk digital ikut ditawarkan di onboarding
@@ -256,6 +256,8 @@ const PRODUCT_BADGE: Record<string, { label: string; icon: LucideIcon; color: st
   "English Test Preparation":                 { label: "Test Prep",    icon: ClipboardList, color: "text-amber-700", bg: "bg-amber-50",  border: "border-amber-200" },
   "E-Learning":                               { label: "E-Learning",   icon: GraduationCap, color: "text-indigo-700",bg: "bg-indigo-50", border: "border-indigo-200" },
   "E-Book":                                   { label: "E-Book",       icon: BookMarked,    color: "text-rose-700",  bg: "bg-rose-50",   border: "border-rose-200" },
+  // [beranda-kelas-b2b-v1] kartu semu dari RPC my_corporate_classes (bukan baris registrations)
+  "Kelas B2B":                                { label: "Kelas Perusahaan", icon: Building2, color: "text-slate-700", bg: "bg-slate-100", border: "border-slate-200" },
 };
 
 // [beranda-kelas-seksi-v1] Urutan seksi di tab "Kelas Live". Produk di luar daftar
@@ -268,6 +270,7 @@ const LIVE_SECTION_ORDER = [
   "Kelas Kids",
   "Kelas Semi Private Kids",
   "English Test Preparation (IELTS/TOEFL)",
+  "Kelas B2B",
 ];
 
 /** Samakan ejaan lama ke enum yang dipakai DB — kalau tidak, Test Prep pecah jadi dua seksi. */
@@ -300,6 +303,7 @@ const LIVE_SECTION_NOTE: Record<string, string> = {
   "Kelas Kids": "Kelas anak dengan materi & pendekatan khusus.",
   "Kelas Semi Private Kids": "Grup kecil khusus anak.",
   "English Test Preparation (IELTS/TOEFL)": "Persiapan tes IELTS/TOEFL bareng pengajar spesialis.",
+  "Kelas B2B": "Kelas dari perusahaan kamu bersama Linguo.",
 };
 
 type StudentData = {
@@ -3450,6 +3454,37 @@ export default function AkunPage() {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [student?.registrations]);
 
+  /* [beranda-kelas-b2b-v1] Peserta kelas korporat (corporate_participants) tak punya baris
+     `registrations` → Beranda-nya dulu kosong "Belum ada kelas live aktif" padahal kelasnya
+     jalan. RPC my_corporate_classes mencocokkan email sesi ke daftar peserta; hasilnya
+     dirakit jadi "registrasi semu" supaya dirender kartu yang sama dengan kelas Private. */
+  const [kelasB2B, setKelasB2B] = useState<any[]>([]);
+  useEffect(() => {
+    if (!user?.id || previewId) return;
+    let batal = false;
+    (async () => {
+      const { data, error } = await supabase.rpc("my_corporate_classes");
+      if (batal || error || !Array.isArray(data)) return;
+      setKelasB2B(
+        (data as any[]).map((k) => ({
+          id: `b2b-${k.lead_id}`,
+          __b2b: true,
+          product: "Kelas B2B",
+          company_name: k.company_name,
+          language: k.language,
+          level: k.level,
+          sessions_total: k.sessions_total || 0,
+          sessions_used: k.sessions_used || 0,
+          archived_at: k.class_status && /selesai/i.test(k.class_status) ? k.class_status : null,
+          teacher_id: k.teacher_id,
+          teachers: k.teacher_name ? { name: k.teacher_name, title: k.teacher_title, avatar_url: k.teacher_avatar_url } : null,
+        })),
+      );
+    })();
+    return () => { batal = true; };
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [user?.id, previewId]);
+
   /* [jadwal-batch-override-v1] Penyesuaian per pertemuan kelas grup (libur
      nasional, pengajar berhalangan) yang dibuat admin dari kalender Overview.
      Tanpa ini kalender siswa tetap menampilkan pertemuan yang sudah diliburkan
@@ -4468,9 +4503,12 @@ export default function AkunPage() {
                 // [beranda-riwayat-kelas-v1] pisah kelas aktif vs selesai (riwayat)
                 // [produk-digital-bukan-kelas-v1] E-Book & E-Learning tidak ikut ke sini —
                 // mereka punya tab sendiri ("Belajar Mandiri") tepat di sebelahnya.
-                const liveRegsAll = activeRegs.filter(
-                  (r: any) => isValidLiveLang(r.language) && !isProdukDigital(r.product)
-                );
+                const liveRegsAll = [
+                  ...activeRegs.filter(
+                    (r: any) => isValidLiveLang(r.language) && !isProdukDigital(r.product)
+                  ),
+                  ...kelasB2B.filter((r: any) => isValidLiveLang(r.language)), // [beranda-kelas-b2b-v1]
+                ];
                 const liveRegs = liveRegsAll.filter((r: any) => !isKelasSelesai(r));
                 const riwayatRegs = liveRegsAll.filter((r: any) => isKelasSelesai(r));
                 const CARD_BG = ["bg-[#16796E]", "bg-rose-500", "bg-indigo-500", "bg-amber-500", "bg-cyan-600", "bg-violet-500"];
@@ -4502,6 +4540,7 @@ export default function AkunPage() {
                 const homeHits: HomeHit[] = [];
                 if (hq.length >= 2) {
                   liveRegsAll.forEach((r: any) => {
+                    if (r.__b2b) return; // [beranda-kelas-b2b-v1] tak punya halaman Kelas & Materi
                     const nm = `${displayLanguage(r.language)} ${r.level || ""}`.toLowerCase();
                     if (nm.includes(hq)) homeHits.push({
                       id: `kelas-${r.id}`, kind: "Kelas",
@@ -4797,8 +4836,11 @@ export default function AkunPage() {
                                 // bukan ke halaman detail kelas (di sana tak ada apa-apa buat
                                 // produk rekaman — tanpa pengajar & tanpa sesi).
                                 const ytLink = linkElearning(reg);
-                                const Wrap: any = ytLink ? "a" : Link;
-                                const wrapProps: any = ytLink
+                                // [beranda-kelas-b2b-v1] kelas korporat tak punya halaman detail — kartu diam.
+                                const Wrap: any = reg.__b2b ? "div" : ytLink ? "a" : Link;
+                                const wrapProps: any = reg.__b2b
+                                  ? { title: reg.company_name || undefined }
+                                  : ytLink
                                   ? { href: ytLink, target: "_blank", rel: "noopener noreferrer" }
                                   : {
                                       /* [materi-tab-kuis-rapor-v1] Kartu kelas dulu melempar ke halaman

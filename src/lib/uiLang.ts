@@ -248,6 +248,8 @@ const EN: Record<string, string> = {
   "Belum ada riwayat kelas": "No class history yet",
   "Kelas yang sudah selesai akan muncul di sini.": "Classes you've finished will show up here.",
   "Belum ada kelas live aktif": "No active live class yet",
+  "Kelas Perusahaan": "Company Class",
+  "Kelas dari perusahaan kamu bersama Linguo.": "Your company's class with Linguo.",
   "Akses e-book kamu sudah aktif — tinggal baca, tanpa bayar lagi.": "Your e-book access is active — just read, no extra payment.",
   "Mulai belajar bahasa baru sekarang!": "Start learning a new language now!",
   "Belum ada paket belajar mandiri": "No self-study package yet",
