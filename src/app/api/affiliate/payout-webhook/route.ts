@@ -8,6 +8,7 @@
 //   "TCH-<uuid>" -> fee pengajar  -> teacher_payouts (+ WA otomatis)
 //   "RFD-<uuid>" -> refund siswa  -> refunds via rpc complete/fail_student_refund
 //                   (+ WA ke siswa dari bot CS) — [refund-xendit-disburse-v1]
+//   "SAL-<uuid>" -> gaji karyawan -> payroll paid/pending — [payroll-xendit-disburse-v1]
 //   "<uuid>"     -> komisi afiliator -> complete/fail_affiliate_payout (perilaku lama)
 //
 // PENTING: daftarin URL ini + callback token di dashboard Xendit pada bagian
@@ -19,6 +20,7 @@ import { createClient } from '@supabase/supabase-js';
 
 const TEACHER_PREFIX = 'TCH-';
 const REFUND_PREFIX = 'RFD-';
+const SALARY_PREFIX = 'SAL-'; // [payroll-xendit-disburse-v1]
 const MONTHS = ['Januari', 'Februari', 'Maret', 'April', 'Mei', 'Juni', 'Juli',
   'Agustus', 'September', 'Oktober', 'November', 'Desember'];
 
@@ -96,6 +98,30 @@ export async function POST(req: Request) {
       else if (isFailed) {
         const reason = data.failure_code || data.failure_reason || 'Xendit melaporkan pencairan gagal';
         await admin.rpc('fail_student_refund', { p_refund_id: refundId, p_reason: String(reason) });
+      }
+      return NextResponse.json({ ok: true });
+    }
+
+    // ── Gaji karyawan (prefix SAL-) — [payroll-xendit-disburse-v1] ───────
+    // Sukses → payroll 'paid'. Gagal → balik 'pending' + alasan (bisa dikirim
+    // ulang dari HR › Payroll). Tanpa WA: nomor bot dipantau staf lain, jadi
+    // struknya cukup email resmi Xendit.
+    if (String(referenceId).startsWith(SALARY_PREFIX)) {
+      const payrollId = String(referenceId).slice(SALARY_PREFIX.length);
+      if (isSuccess) {
+        await admin.from('payroll').update({
+          status: 'paid',
+          paid_at: new Date().toISOString(),
+          failure_reason: null,
+          ...(xenditId ? { xendit_payout_id: xenditId } : {}),
+        }).eq('id', payrollId).neq('status', 'paid');
+      } else if (isFailed) {
+        const reason = data.failure_code || data.failure_reason || 'Xendit melaporkan pencairan gagal';
+        await admin.from('payroll').update({
+          status: 'pending',
+          failure_reason: 'Xendit: ' + String(reason),
+          xendit_payout_id: null,
+        }).eq('id', payrollId).eq('status', 'processing');
       }
       return NextResponse.json({ ok: true });
     }
