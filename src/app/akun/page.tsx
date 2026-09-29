@@ -65,6 +65,12 @@ const OnbSuccessLottie = dynamic(() => import("lottie-react"), { ssr: false });
 // [akun-login-redesign-v1] Efek typewriter untuk sapaan multi-bahasa di panel kiri login.
 // [ebook-email-baca-titip-v1] ?ebook=<id> yang dititipkan melewati login.
 const TITIP_EBOOK_KEY = "linguo_titip_ebook";
+/* [akun-menu-titip-login-v1] ?menu=<tab> dari link WA/email juga harus selamat melewati
+   login — link login email / Google membuka /akun baru tanpa param itu, dan param-nya
+   sudah dibersihkan dari URL saat halaman login tampil. Peserta B2B yang diberi link
+   ?menu=pustaka dulu mendarat di Beranda "Belum ada kelas live aktif" lalu mengira
+   e-book gratisnya berbayar. */
+const TITIP_MENU_KEY = "linguo_titip_menu";
 
 const LOGIN_GREETINGS = ["Halo!", "Bonjour!", "안녕!", "¡Hola!", "Ciao!", "こんにちは!", "你好!", "Hallo!", "Olá!", "안녕하세요!"];
 function GreetingTypewriter() {
@@ -2975,6 +2981,17 @@ export default function AkunPage() {
       }
     } catch {}
     if (!resolved && (menu === "beranda" || menu === "jadwal" || menu === "materi" || menu === "akun" || menu === "sertifikat" || menu === "pustaka" || menu === "simulasi" || menu === "grup" || menu === "catatan")) resolved = menu;
+    // [akun-menu-titip-login-v1] titip menu → dipakai sekali oleh halaman sesudah login.
+    try {
+      if (resolved === menu && menu && menu !== "beranda") {
+        localStorage.setItem(TITIP_MENU_KEY, JSON.stringify({ menu, ts: Date.now() }));
+      } else if (!resolved) {
+        const titip = JSON.parse(localStorage.getItem(TITIP_MENU_KEY) || "null");
+        const m = titip?.menu;
+        if (Date.now() - Number(titip?.ts) < 2 * 3600_000 && (m === "jadwal" || m === "materi" || m === "akun" || m === "sertifikat" || m === "pustaka" || m === "simulasi" || m === "grup" || m === "catatan")) resolved = m;
+        if (titip) localStorage.removeItem(TITIP_MENU_KEY);
+      }
+    } catch {}
     // [akun-open-beranda-v1] Buka dashboard = SELALU mendarat di Beranda. Dulu tab
     // terakhir disimpan di localStorage, jadi buka /akun besok-besoknya bisa nyangkut
     // di Simulasi Tes / Sertifikat. Sekarang cuma sessionStorage: refresh di tab
@@ -2996,6 +3013,11 @@ export default function AkunPage() {
       } catch {}
     }
   }, []);
+  // [akun-menu-titip-login-v1] sudah masuk → titipan menu tak diperlukan lagi.
+  useEffect(() => {
+    if (!user?.id) return;
+    try { localStorage.removeItem(TITIP_MENU_KEY); } catch {}
+  }, [user?.id]);
   // [perf:akun-tab-keepalive-v1] catat tab yang pernah dibuka + mulai dari atas tiap
   // ganti menu (isi tab lama tetap hidup di belakang, jadi posisi gulirnya tak ikut).
   useEffect(() => {
@@ -5000,6 +5022,39 @@ export default function AkunPage() {
                               <BookOpen className="mx-auto mb-2 h-12 w-12 text-slate-300" strokeWidth={1.5} />
                               <h3 className="mb-1 font-bold text-[#12172B]">{tt("Belum ada riwayat kelas")}</h3>
                               <p className="text-sm text-gray-500">{tt("Kelas yang sudah selesai akan muncul di sini.")}</p>
+                            </div>
+                          ) : produkDigital.some((d) => d.type === "ebook") ? (
+                            /* [beranda-ebook-dimiliki-v1] Pemilik e-book tanpa kelas live (mis. peserta
+                               B2B yang diberi akses gratis) dulu cuma melihat "Belum ada kelas live
+                               aktif" + tombol Daftar Kelas + Top up saldo → dikira harus bayar. Tampilkan
+                               e-book yang SUDAH jadi miliknya di sini, lengkap dengan tombol Baca. */
+                            <div className="mt-3 rounded-3xl bg-white p-5 sm:p-6">
+                              <p className="mb-3 text-[13px] font-semibold text-[#16796E]">{tt("Akses e-book kamu sudah aktif — tinggal baca, tanpa bayar lagi.")}</p>
+                              <div className="space-y-2.5">
+                                {produkDigital.filter((d) => d.type === "ebook").map((d) => (
+                                  <div key={d.purchaseId} className="flex items-center gap-3 rounded-2xl bg-gray-50 p-3">
+                                    {d.cover ? (
+                                      <img src={d.cover} alt="" className="h-16 w-12 shrink-0 rounded-lg object-cover" />
+                                    ) : (
+                                      <span className="flex h-16 w-12 shrink-0 items-center justify-center rounded-lg bg-white"><BookOpen className="h-6 w-6 text-slate-400" strokeWidth={1.8} /></span>
+                                    )}
+                                    <div className="min-w-0 flex-1">
+                                      <p className="truncate text-[14px] font-bold text-[#12172B]">{d.title}</p>
+                                      <p className="text-[12px] text-gray-500">E-Book{d.language ? ` · ${d.language}` : ""}</p>
+                                    </div>
+                                    <button
+                                      onClick={() => { setBukaEbook(d.purchaseId); setActiveTab("pustaka"); }}
+                                      className="inline-flex h-10 shrink-0 items-center gap-1.5 rounded-xl bg-[#16796E] px-4 text-[13px] font-bold text-white transition-colors hover:bg-[#0F5A52]"
+                                    >
+                                      <BookOpen className="h-4 w-4" strokeWidth={2.2} /> {tt("Baca")}
+                                    </button>
+                                  </div>
+                                ))}
+                              </div>
+                              <div className="mt-4 flex flex-wrap items-center justify-between gap-2 border-t border-gray-100 pt-3">
+                                <p className="text-[12.5px] text-gray-500">{tt("Belum ada kelas live aktif")}</p>
+                                <button onClick={openEnrollWizard} className="inline-flex h-9 items-center gap-1.5 rounded-xl border border-slate-200 bg-white px-3.5 text-[12.5px] font-bold text-[#12172B] transition-colors hover:border-[#16796E] hover:text-[#16796E]"><Plus className="h-4 w-4" strokeWidth={2.5} /> {tt("Daftar Kelas")}</button>
+                              </div>
                             </div>
                           ) : (
                             <div className="mt-3 rounded-3xl bg-white p-8 text-center">
