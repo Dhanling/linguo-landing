@@ -8,7 +8,7 @@
 // =============================================================================
 
 import { useEffect, useMemo, useState } from "react";
-import { Hand } from "lucide-react";
+import { Baby, Check as CheckIcon, GraduationCap, Hand, Rocket, Smile, X } from "lucide-react";
 import {
   TRIAL_LANGUAGES,
   TRIAL_DURATIONS,
@@ -45,14 +45,14 @@ const TOTAL = 4;
 const KIDS_TIERS = [
   {
     id: "little-learner" as const,
-    emoji: "🐣",
+    Icon: Baby,
     name: "Little Learner",
     age: "Usia 5–8 tahun",
     duration: "30 menit/sesi",
   },
   {
     id: "young-explorer" as const,
-    emoji: "🚀",
+    Icon: Rocket,
     name: "Young Explorer",
     age: "Usia 9–12 tahun",
     duration: "45 menit/sesi",
@@ -62,13 +62,13 @@ const KIDS_TIERS = [
 const PROGRAMS = [
   {
     id: "private" as const,
-    emoji: "🎓",
+    Icon: GraduationCap,
     name: "Kelas Private",
     desc: "Belajar 1-on-1 bareng pengajar, 60+ bahasa, durasi fleksibel.",
   },
   {
     id: "kids" as const,
-    emoji: "🧒",
+    Icon: Smile,
     name: "Kelas Kids",
     desc: "Khusus anak usia 5–12 tahun. Belajar lewat aktivitas interaktif.",
   },
@@ -101,7 +101,7 @@ const LANG_FEATURED = new Set<string>([
   "Spanish",
 ]);
 
-// flag = kode ISO buat flagcdn (40x30 png), atau path lokal "/flags/…" utk yg tak
+// flag = kode ISO buat flagcdn (w80 png, datar), atau path lokal "/flags/…" utk yg tak
 // punya negara (Esperanto, Kurdi), atau "sign" (ikon tangan). region = grup chip.
 // "lainnya" HANYA utk bahasa tanpa negara/benua (Sign Language, Esperanto).
 const LANG_META: Record<string, { flag: string; region: LangRegion }> = {
@@ -466,7 +466,7 @@ export default function TrialWizard({
       className="absolute top-3 right-3 h-5 w-5 rounded-full flex items-center justify-center text-white text-xs"
       style={{ background: TEAL }}
     >
-      ✓
+      <CheckIcon className="h-3 w-3" strokeWidth={3} />
     </span>
   );
 
@@ -493,7 +493,10 @@ export default function TrialWizard({
         >
           {program === p.id && <Check />}
           <div className="flex items-start gap-3">
-            <div className="text-3xl leading-none">{p.emoji}</div>
+            {/* ikon Lucide, bukan emoji [trial-no-emoji-v1] */}
+            <span className="h-10 w-10 rounded-xl bg-teal-50 text-teal-600 flex items-center justify-center shrink-0">
+              <p.Icon className="h-5 w-5" />
+            </span>
             <div className="pr-6">
               <div className="font-bold text-gray-900">{p.name}</div>
               <div className="text-xs text-gray-500 mt-0.5">{p.desc}</div>
@@ -520,7 +523,9 @@ export default function TrialWizard({
                 className={selectCard(kidsType === t.id) + " p-3"}
               >
                 {kidsType === t.id && <Check />}
-                <div className="text-2xl">{t.emoji}</div>
+                <span className="h-8 w-8 rounded-lg bg-teal-50 text-teal-600 flex items-center justify-center">
+                  <t.Icon className="h-4 w-4" />
+                </span>
                 <div className="font-bold text-sm text-gray-900 mt-1">
                   {t.name}
                 </div>
@@ -601,14 +606,14 @@ export default function TrialWizard({
                       : "border-gray-100 text-gray-700 hover:border-teal-300 hover:bg-teal-50/40")
                   }
                 >
-                  {/* bendera persegi panjang membulat [trial-lang-flag-v2] */}
+                  {/* bendera datar persegi panjang membulat — flagcdn "40x30" itu varian BERKIBAR mirip emoji, pakai "w80" [trial-lang-flag-v3] */}
                   {langFlag(l) === "sign" ? (
                     <span className="h-[18px] w-6 rounded-[4px] bg-teal-50 ring-1 ring-black/10 flex items-center justify-center shrink-0">
                       <Hand className="h-3 w-3 text-teal-600" />
                     </span>
                   ) : (
                     <img
-                      src={langFlag(l).startsWith("/") ? langFlag(l) : `https://flagcdn.com/40x30/${langFlag(l)}.png`}
+                      src={langFlag(l).startsWith("/") ? langFlag(l) : `https://flagcdn.com/w80/${langFlag(l)}.png`}
                       alt=""
                       loading="lazy"
                       className="h-[18px] w-6 rounded-[4px] object-cover ring-1 ring-black/10 shrink-0"
@@ -877,7 +882,7 @@ export default function TrialWizard({
             </div>
             {refAffiliate && (
               <div className="mt-1.5 inline-flex items-center gap-1.5 rounded-lg bg-green-50 border border-green-200 px-3 py-1.5 text-xs font-medium text-green-700">
-                ✓ Referral {refAffiliate.name || "afiliator"} berhasil dipakai
+                <CheckIcon className="h-3.5 w-3.5" /> Referral {refAffiliate.name || "afiliator"} berhasil dipakai
               </div>
             )}
             {refError && (
@@ -939,7 +944,7 @@ export default function TrialWizard({
               aria-label="Tutup"
               className="h-8 w-8 rounded-full bg-gray-100 text-gray-500 hover:bg-gray-200 flex items-center justify-center shrink-0"
             >
-              ✕
+              <X className="h-4 w-4" />
             </button>
           )}
         </div>
