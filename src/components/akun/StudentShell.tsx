@@ -7,7 +7,7 @@ import Link from "next/link";
 import { supabase } from "@/lib/supabase-client";
 import NotificationBell from "@/components/NotificationBell";
 import MobileBottomNav from "@/components/akun/MobileBottomNav";
-import { LayoutGrid, BookOpen, Library, CalendarDays, Star, Settings, LogOut, Moon, Sun, ClipboardCheck, Clapperboard, Layers, MessagesSquare, Menu, X, Bug, NotebookPen, type LucideIcon } from "lucide-react";
+import { LayoutGrid, BookOpen, Library, CalendarDays, Star, Settings, LogOut, Moon, Sun, ClipboardCheck, Clapperboard, Layers, MessagesSquare, Menu, X, Bug, NotebookPen, PanelLeftClose, PanelLeftOpen, ChevronsLeft, type LucideIcon } from "lucide-react";
 // [bug-report-pengajar-siswa-v1] siswa lapor bug dari LMS → masuk Bug Tracker admin
 import BugReportDialog from "@/components/akun/BugReportDialog";
 import PosterPopupAkun from "@/components/akun/PosterPopupAkun"; // [poster-popup-akun-v1]
@@ -105,6 +105,21 @@ const GROUP_LABEL = "px-3.5 pb-1.5 pt-4 text-[10.5px] font-bold uppercase tracki
    menunya jadi ikon tanpa teks di HP. Itu sebabnya `rail` dioper eksplisit. */
 const RAIL_COMPACT = "justify-center gap-0 px-0 lg:justify-start lg:gap-3 lg:px-3.5";
 const RAIL_LABEL = "hidden lg:inline";
+
+/* [student-rail-cluster-v1] rail klaster + panel submenu (lihat SIDEBAR di bawah).
+   Ikon klaster = ikon seksi NAV_GROUPS; seksi baru tanpa ikon di sini jatuh ke LayoutGrid. */
+const RAIL_GROUP_ICON: Record<string, LucideIcon> = { Aktivitas: CalendarDays, Belajar: BookOpen, Akun: Settings };
+// Baris menu DI PANEL (latar putih/hitam, bukan teal) — zoom-in halus saat hover.
+const PANEL_ITEM_BASE =
+  "group relative flex w-full shrink-0 items-center gap-2.5 rounded-xl px-3 py-2 text-left text-[13px] font-semibold origin-left transform-gpu transition-[transform,background-color,color] duration-200 ease-out hover:scale-[1.03] active:scale-[0.99] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#16796E]";
+const PANEL_ITEM_ACTIVE = "bg-teal-50 text-[#0F5A52]";
+const PANEL_ITEM_IDLE = "text-slate-700 hover:bg-slate-100 hover:text-slate-900";
+const PANEL_ICON = "h-[18px] w-[18px] shrink-0 transform-gpu transition-transform duration-200 ease-out group-hover:scale-110";
+const RAIL_ICON_BTN =
+  "flex h-9 w-9 items-center justify-center rounded-xl text-white/70 transition-[background-color,color,transform] duration-150 hover:scale-110 hover:bg-black/25 hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/70";
+const PANEL_KEY = "lms-rail-panel";
+// Sama seperti DARK_BOOT: status panel terpasang di <html> sebelum paint pertama.
+const PANEL_BOOT = `try{document.documentElement.classList.toggle("lms-panel-closed",localStorage.getItem("${PANEL_KEY}")==="0")}catch(e){}`;
 
 const DARK_KEY = "lms-dark-mode";
 
@@ -283,15 +298,20 @@ export default function StudentShell({
   );
 
   // Satu renderer dipakai sidebar desktop & drawer mobile → menunya mustahil beda.
-  const renderItem = (item: NavItem, onNavigated?: () => void, rail = false) => {
+  const renderItem = (item: NavItem, onNavigated?: () => void, rail = false, panel = false) => {
     const Icon = item.icon;
+    // [student-rail-cluster-v1] varian panel submenu: latar terang, label selalu tampil.
+    const BASE = panel ? PANEL_ITEM_BASE : NAV_ITEM_BASE;
+    const ACTIVE = panel ? PANEL_ITEM_ACTIVE : NAV_ITEM_ACTIVE;
+    const IDLE = panel ? PANEL_ITEM_IDLE : NAV_ITEM_IDLE;
+    const ICON = panel ? PANEL_ICON : NAV_ICON;
     // [shell-tablet-rail-v1] di rail sempit label disembunyikan → judulnya pindah ke
     // tooltip supaya menu tetap bisa dikenali tanpa melebarkan sidebar.
     const compact = rail ? ` ${RAIL_COMPACT}` : "";
     const labelCls = rail ? `truncate ${RAIL_LABEL}` : "truncate";
     const railTitle = rail ? t(item.label) : undefined;
     // [nav-newtab-icon-off-v1] tak ada lagi tombol di kanan → tak perlu sisa ruang.
-    const NAV_ITEM_LINK = NAV_ITEM_BASE + compact;
+    const NAV_ITEM_LINK = BASE + compact;
     if ("href" in item) {
       // [perf:sidebar-nav-v1] next/link → navigasi client-side + prefetch otomatis
       // (dulu <a> biasa = full page reload tiap pindah menu)
@@ -313,10 +333,10 @@ export default function StudentShell({
           target={newTab ? "_blank" : undefined}
           rel={newTab ? "noopener noreferrer" : undefined}
           title={newTab ? `${t("Buka")} ${t(item.label)} ${t("di tab baru")}` : railTitle}
-          className={`${newTab ? NAV_ITEM_BASE + compact : NAV_ITEM_LINK} ${isActiveLink ? NAV_ITEM_ACTIVE : NAV_ITEM_IDLE}`}
+          className={`${NAV_ITEM_LINK} ${isActiveLink ? ACTIVE : IDLE}`}
           aria-current={isActiveLink ? "page" : undefined}
         >
-          <Icon className={NAV_ICON} />
+          <Icon className={ICON} />
           {/* [nav-newtab-noicon-v1] ikon ExternalLink inline dicabut — bikin sidebar
               ramai; perilaku buka tab baru TETAP (target dipertahankan di atas),
               title tetap menjelaskan buat yang hover. */}
@@ -328,8 +348,8 @@ export default function StudentShell({
     }
     if (item.soon) {
       return (
-        <div key={item.key} title={railTitle} className={`${NAV_ITEM_BASE}${compact} cursor-default text-white/35`}>
-          <Icon className={NAV_ICON} />
+        <div key={item.key} title={railTitle} className={`${BASE}${compact} cursor-default ${panel ? "text-slate-400" : "text-white/35"}`}>
+          <Icon className={ICON} />
           <span className={labelCls}>{t(item.label)}</span>
         </div>
       );
@@ -356,10 +376,10 @@ export default function StudentShell({
           onNavigated?.();
         }}
         title={railTitle}
-        className={`${NAV_ITEM_LINK} ${isActive ? NAV_ITEM_ACTIVE : NAV_ITEM_IDLE}`}
+        className={`${NAV_ITEM_LINK} ${isActive ? ACTIVE : IDLE}`}
         aria-current={isActive ? "page" : undefined}
       >
-        <Icon className={NAV_ICON} />
+        <Icon className={ICON} />
         <span className={labelCls}>{t(item.label)}</span>
       </Link>
     ));
@@ -384,6 +404,51 @@ export default function StudentShell({
       })}
     </>
   );
+
+  /* [student-rail-cluster-v1] klaster rail = Beranda + seksi NAV_GROUPS yang punya isi. */
+  const clusters = [
+    { id: "beranda", label: NAV_HOME.label, icon: NAV_HOME.icon, items: [NAV_HOME] },
+    ...NAV_GROUPS.map((g) => ({
+      id: g.title,
+      label: g.title,
+      icon: RAIL_GROUP_ICON[g.title] ?? LayoutGrid,
+      items: g.items.filter((it) => showNav(it.key)),
+    })),
+  ].filter((c) => c.items.length > 0);
+  const multiClusters = clusters.filter((c) => c.items.length > 1);
+  const clusterOfActive = multiClusters.find((c) => c.items.some((it) => it.key === active));
+  const [panelClusterId, setPanelClusterId] = useState<string | null>(null);
+  useEffect(() => { if (clusterOfActive) setPanelClusterId(clusterOfActive.id); }, [clusterOfActive?.id]);
+  const panelCluster =
+    multiClusters.find((c) => c.id === panelClusterId) ?? clusterOfActive ?? multiClusters[0] ?? null;
+  // lg+ = panel menempel (status di <html> via PANEL_BOOT); md–lg = panel melayang.
+  const [isWide, setIsWide] = useState(false);
+  const [panelOpen, setPanelOpen] = useState(true);
+  const [panelNarrow, setPanelNarrow] = useState(false);
+  useEffect(() => {
+    const mq = window.matchMedia("(min-width: 1024px)");
+    const on = () => { setIsWide(mq.matches); if (mq.matches) setPanelNarrow(false); };
+    on();
+    mq.addEventListener("change", on);
+    setPanelOpen(!document.documentElement.classList.contains("lms-panel-closed"));
+    return () => mq.removeEventListener("change", on);
+  }, []);
+  const setWideOpen = (open: boolean) => {
+    setPanelOpen(open);
+    document.documentElement.classList.toggle("lms-panel-closed", !open);
+    try { localStorage.setItem(PANEL_KEY, open ? "1" : "0"); } catch {}
+  };
+  const togglePanelWide = () => setWideOpen(!panelOpen);
+  const panelShownFor = (id: string) => panelCluster?.id === id && (isWide ? panelOpen : panelNarrow);
+  // Fade isi panel HANYA saat klaster diganti dari rail — bukan tiap muat halaman.
+  const [panelSwitched, setPanelSwitched] = useState(false);
+  const openPanel = (id: string) => {
+    const same = panelCluster?.id === id;
+    if (!same) setPanelSwitched(true);
+    setPanelClusterId(id);
+    if (isWide) { if (same && panelOpen) setWideOpen(false); else if (!panelOpen) setWideOpen(true); }
+    else setPanelNarrow(!(same && panelNarrow));
+  };
 
   // [shell-tablet-rail-v1] dulu tiga konstanta JSX — sekarang fungsi, karena di rail
   // tablet ketiganya ikut menciut jadi ikon-saja.
@@ -426,6 +491,7 @@ export default function StudentShell({
     /* [linguo-patch:shell-frame-ref-v2] full-bleed: teal isi penuh viewport (no outer grey), white canvas float di dalem */
     <div className="min-h-screen w-full bg-[#EEF1F4] md:flex md:p-0">
       <script dangerouslySetInnerHTML={{ __html: DARK_BOOT }} />
+      <script dangerouslySetInnerHTML={{ __html: PANEL_BOOT }} />
       {/* [ling-lms-dark-v2] dark mode scoped & class-based — !important biar menang atas utility Tailwind.
           Palet HITAM dominan (bukan abu kebiruan) + teks kontras tinggi; nutup juga class gray-* dan
           hex hardcoded (#12172B, #6B7280, dst.) yang dulu lolos & bikin teks tak kebaca.
@@ -433,6 +499,11 @@ export default function StudentShell({
           → #0a0a0a) lebih GELAP dari latar seksinya (#F5F6F8 → #121212), jadi kartu & segmented
           control lenyap ditelan latar. Sekarang mirror light mode: panel < well < kartu. */}
       <style>{`
+        /* [student-rail-cluster-v1] panel submenu tertutup (lg+) + fade saat ganti klaster */
+        @media (min-width:1024px){.lms-panel-closed .lms-rail-panel{width:0 !important;margin-left:0 !important;opacity:0;pointer-events:none}}
+        @keyframes lms-panel-fade{from{opacity:0;transform:translateX(10px)}to{opacity:1;transform:none}}
+        .lms-panel-fade{animation:lms-panel-fade .18s ease-out}
+        @media (prefers-reduced-motion:reduce){.lms-panel-fade{animation:none}}
         /* ── [shell-dark-hairline-v1] Garis polos tanpa warna ──
            Di Tailwind v4 'border-b' (tanpa 'border-<warna>') memakai currentColor,
            jadi di atas hitam ia menjiplak warna TEKS dan muncul sebagai garis putih
@@ -690,35 +761,112 @@ export default function StudentShell({
           laptop Windows 1366×768 (tinggi viewport efektif ±600px setelah bilah
           browser) sebelumnya kena tinggi minimum yang lebih besar dari layarnya
           sendiri → seluruh shell ikut menggulung dan sidebar-nya ikut hanyut. */}
-      <div className="w-full md:flex md:h-screen md:min-h-[520px] md:bg-[#16796E] md:p-2.5 lg:min-h-[600px] lg:p-3">
+      {/* [student-rail-cluster-v1] bingkai tak lagi teal penuh: rail teal jadi kartu sendiri,
+          panel & kanvas putih melayang di atas latar abu (hitam di mode gelap). */}
+      <div className="w-full md:flex md:h-screen md:min-h-[520px] md:gap-2.5 md:p-2.5 lg:min-h-[600px] lg:p-3">
 
-        {/* SIDEBAR — desktop only. [sidebar-label-v1] ikon + teks label */}
-        {/* [shell-laptop-height-v1] 10 menu + 3 label seksi + 3 tombol bawah ≈ 750px. Di
-            laptop Windows 1366×768 sidebar-nya lebih tinggi dari layar → sebelumnya isinya
-            saling dipepet karena flex-item boleh menciut. Sekarang tiap baris `shrink-0`
-            (lihat NAV_ITEM_BASE) dan padding-nya menyusut di viewport pendek; kalau tetap
-            tak muat, sidebar-nya digulung — bukan menumpuk. */}
-        <aside className="hidden w-[76px] shrink-0 flex-col overflow-y-auto overflow-x-hidden px-2.5 py-5 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden md:flex lg:w-[216px] lg:px-4 lg:py-6">
-          {/* logo — white bubble langsung di atas teal, tanpa kotak putih.
-              [shell-tablet-rail-v1] di rail sempit tinggal ikonnya. */}
-          <div className="flex shrink-0 items-center justify-center gap-2.5 lg:justify-start lg:px-2">
+        {/* SIDEBAR — [student-rail-cluster-v1] gaya ClickUp, sekeluarga dengan dashboard
+            admin & pengajar: kartu teal gelap membulat berisi KLASTER (ikon + label kecil):
+            Beranda · Aktivitas · Belajar · Pengaturan. Klaster ber-isi banyak membuka panel
+            submenu di kanannya; klaster satu-menu langsung pindah tab. Kelompoknya sama
+            persis dengan seksi lama ([shell-nav-groups-v1]), cuma kini jadi klaster.
+            Panel di lg+ MENEMPEL (buka/tutupnya diingat; kelas `lms-panel-closed` dipasang
+            skrip boot sebelum paint, jadi tak ada panel yang meluncur masuk tiap muat
+            halaman). Di md–lg panel melayang di atas konten & menutup sendiri sesudah
+            memilih. Di bawah md tetap drawer + bottom nav seperti sebelumnya. */}
+        <div className="relative hidden h-full shrink-0 md:flex">
+          <aside
+            className="flex h-full w-[76px] flex-col items-center overflow-y-auto overflow-x-hidden rounded-[22px] px-1.5 py-4 shadow-lg shadow-black/20 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden"
+            style={{ backgroundImage: "linear-gradient(180deg,#11595a 0%,#0a3a3b 100%)" }}
+            aria-label={t("Menu utama")}
+          >
             {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img src="/images/logo-linguo-icon.png" alt="Linguo" className="h-9 w-9 object-contain" />
-            <span className="hidden text-lg font-bold text-white lg:inline">Linguo</span>
-          </div>
+            <img src="/images/logo-linguo-icon.png" alt="Linguo" title="Linguo" className="mb-4 h-9 w-9 shrink-0 object-contain" />
+            <nav className="flex w-full flex-col gap-1">
+              {clusters.map((c) => {
+                const single = c.items.length === 1;
+                const isActive = c.items.some((it) => it.key === active);
+                const selected = !single && panelCluster?.id === c.id && panelShownFor(c.id);
+                const Icon = single ? c.items[0].icon : c.icon;
+                const label = t(single ? c.items[0].label : c.label);
+                const inner = (
+                  <>
+                    <span
+                      className={`relative flex h-10 w-10 items-center justify-center rounded-xl transition-[background-color,transform] duration-200 ease-out group-hover/rail:scale-110 ${isActive ? "text-[#0F5A52] shadow-md" : selected ? "bg-black/25" : "group-hover/rail:bg-white/15"}`}
+                      /* Putih lewat style, bukan bg-white: dark mode memetakan ulang .bg-white. */
+                      style={isActive ? { backgroundColor: "#ffffff" } : undefined}
+                    >
+                      <Icon className="h-5 w-5" strokeWidth={isActive ? 2.4 : 2} />
+                    </span>
+                    <span className="w-full truncate text-center">{label}</span>
+                  </>
+                );
+                const cls = `group/rail flex w-full flex-col items-center gap-1 rounded-xl px-0.5 py-1.5 text-[10px] font-semibold leading-tight transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/70 ${isActive || selected ? "text-white" : "text-white/70 hover:text-white"}`;
+                if (single) {
+                  const it = c.items[0];
+                  const href = withPreview("href" in it ? it.href : `/akun?menu=${it.key}`);
+                  return (
+                    <Link key={c.id} href={href} prefetch title={label} className={cls} aria-current={isActive ? "page" : undefined}
+                      onClick={(e) => {
+                        if ("href" in it || it.soon) return;
+                        if (e.metaKey || e.ctrlKey || e.shiftKey || e.altKey) return;
+                        e.preventDefault();
+                        onTabChange(it.key as AkunTab);
+                        setPanelNarrow(false);
+                      }}>
+                      {inner}
+                    </Link>
+                  );
+                }
+                return (
+                  <button key={c.id} onClick={() => openPanel(c.id)} title={label} aria-expanded={selected} className={cls}>
+                    {inner}
+                  </button>
+                );
+              })}
+            </nav>
+            <div className="mt-auto flex w-full shrink-0 flex-col items-center gap-1 border-t border-white/15 pt-3">
+              <button onClick={togglePanelWide} title={t(panelOpen ? "Tutup menu" : "Buka menu")} aria-label={t(panelOpen ? "Tutup menu" : "Buka menu")} className={`${RAIL_ICON_BTN} hidden lg:flex`}>
+                {panelOpen ? <PanelLeftClose className="h-[18px] w-[18px]" /> : <PanelLeftOpen className="h-[18px] w-[18px]" />}
+              </button>
+              {canReportBug && (
+                <button onClick={() => setBugOpen(true)} title={t("Lapor Bug")} aria-label={t("Lapor Bug")} className={RAIL_ICON_BTN}>
+                  <Bug className="h-[18px] w-[18px]" />
+                </button>
+              )}
+              <button onClick={toggleDark} title={isDark ? t("Mode terang") : t("Mode gelap")} aria-label={isDark ? t("Mode terang") : t("Mode gelap")} className={RAIL_ICON_BTN}>
+                {isDark ? <Sun className="h-[18px] w-[18px] text-amber-300" /> : <Moon className="h-[18px] w-[18px]" />}
+              </button>
+              <button onClick={signOut} title={t("Keluar")} aria-label={t("Keluar")} className={`${RAIL_ICON_BTN} hover:!bg-red-500/80`}>
+                <LogOut className="h-[18px] w-[18px]" />
+              </button>
+            </div>
+          </aside>
 
-          {/* nav */}
-          <nav className="mt-6 flex shrink-0 flex-col gap-1.5 lg:mt-7" aria-label="Menu utama">
-            {renderNav(undefined, true)}
-          </nav>
-
-          {/* bottom group: dark toggle + logout */}
-          <div className="mt-auto flex shrink-0 flex-col gap-1.5 pt-6 [@media(max-height:820px)]:pt-3">
-            {bugBtn(true)}
-            {themeBtn(true)}
-            {logoutBtn(true)}
-          </div>
-        </aside>
+          {/* ── Panel submenu ── */}
+          {panelCluster && (
+            <div
+              className={`lms-rail-panel h-full shrink-0 overflow-hidden transition-[width,opacity,margin] duration-200 ease-out max-lg:absolute max-lg:left-[84px] max-lg:top-0 max-lg:z-50 lg:ml-2.5 lg:w-[232px] ${panelNarrow ? "" : "max-lg:hidden"}`}
+            >
+              <div className="flex h-full w-[232px] flex-col rounded-[22px] bg-white shadow-sm max-lg:shadow-2xl">
+                <div className="flex items-center gap-2 px-4 pb-2 pt-5">
+                  <h2 className="min-w-0 flex-1 truncate text-[17px] font-bold tracking-tight text-slate-900">{t(panelCluster.label)}</h2>
+                  <button
+                    onClick={() => (panelNarrow ? setPanelNarrow(false) : togglePanelWide())}
+                    title={t("Tutup menu")}
+                    aria-label={t("Tutup menu")}
+                    className="flex h-8 w-8 items-center justify-center rounded-lg text-slate-400 transition hover:bg-slate-100 hover:text-slate-700"
+                  >
+                    <ChevronsLeft className="h-4 w-4" />
+                  </button>
+                </div>
+                <nav key={panelCluster.id} className={`${panelSwitched ? "lms-panel-fade " : ""}flex flex-1 flex-col gap-0.5 overflow-y-auto px-3 pb-5`} aria-label={t(panelCluster.label)}>
+                  {panelCluster.items.map((it) => renderItem(it, () => setPanelNarrow(false), false, true))}
+                </nav>
+              </div>
+            </div>
+          )}
+        </div>
 
         {/* ── TOP BAR MOBILE ── [shell-mobile-drawer-v1]
             Dirender di SHELL (bukan di /akun) supaya semua halaman ber-shell
