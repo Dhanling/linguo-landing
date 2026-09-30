@@ -108,10 +108,18 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <script type="application/ld+json" {...jsonLd(ORG_SCHEMA)} />
         <script type="application/ld+json" {...jsonLd(WEBSITE_SCHEMA)} />
 
+        {/* [third-party-lazy-v1] Pustaka GA4 (±170 KB) & Pixel (±200 KB) diunduh
+            `lazyOnload` — sesudah halaman selesai dimuat — karena dulu ikut
+            berebut main thread di HP (skor Performa 33). Stub gtag/fbq tetap
+            dipasang `afterInteractive` supaya event yang ditembak sebelum
+            pustakanya datang diantrekan (dataLayer / fbq.queue), bukan hilang. */}
+        <link rel="preconnect" href="https://www.googletagmanager.com" />
+        <link rel="preconnect" href="https://connect.facebook.net" />
+
         {/* Google Analytics (GA4) */}
         {GA_ID && (
           <>
-            <Script src={`https://www.googletagmanager.com/gtag/js?id=${GA_ID}`} strategy="afterInteractive" />
+            <Script src={`https://www.googletagmanager.com/gtag/js?id=${GA_ID}`} strategy="lazyOnload" />
             <Script id="ga4-init" strategy="afterInteractive">
               {`
                 window.dataLayer = window.dataLayer || [];
@@ -135,14 +143,12 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
                 {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
                 n.callMethod.apply(n,arguments):n.queue.push(arguments)};
                 if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-                n.queue=[];t=b.createElement(e);t.async=!0;
-                t.src=v;s=b.getElementsByTagName(e)[0];
-                s.parentNode.insertBefore(t,s)}(window, document,'script',
-                'https://connect.facebook.net/en_US/fbevents.js');
+                n.queue=[]}(window);
                 fbq('init', '${FB_PIXEL_ID}');
                 fbq('track', 'PageView');
               `}
             </Script>
+            <Script src="https://connect.facebook.net/en_US/fbevents.js" strategy="lazyOnload" />
             <noscript>
               <img
                 height="1"

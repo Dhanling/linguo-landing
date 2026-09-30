@@ -5,8 +5,10 @@ import React, { useState, useEffect, useRef } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Globe, ChevronDown, ChevronLeft, ChevronRight, Mail, Star, Check, ArrowRight, ArrowUp, Menu, X, Zap, AtSign, Search, Sparkles, GraduationCap, Users, School, Baby, ClipboardList, MonitorPlay, BookOpen, Timer, Building2, Headphones, ScrollText, Languages } from "lucide-react";
 import PlacementPicker from "@/components/PlacementPicker";
-import { resolveFlag } from "@blade-flags/core";
-import { defaultFlags } from "@blade-flags/core/flags/default";
+// [home-flags-subset-v1] Bendera beranda dari subset kecil (bukan set lengkap
+// blade-flags 1,2 MB); kode di luar subset jatuh ke RectFlag lazy.
+import { HOME_FLAGS } from "@/lib/flags/homeFlags";
+import { RectFlag as RectFlagLazy } from "@/components/RectFlag";
 // linguo-patch:private-pricing-v1 — harga Private mengikuti kategori bahasa
 import { BRAND_FACTS } from "@/lib/brand-facts";
 import { jsonLd, faqSchema } from "@/lib/schema"; // [aeo-schema-v1] // [aeo-brand-facts-v1] jumlah bahasa & harga "mulai dari" tidak lagi ditulis manual
@@ -844,7 +846,10 @@ function getFlagCode(name:string){return FLAG_CODES[name]||"un"}
 // hitung dimensi eksplisit dari viewBox (aspect ratio asli dijaga) dan set ke
 // SVG + wrapper. Tinggi diatur lewat prop `h` (px).
 function RectFlag({code,h=24,className=""}:{code:string;h?:number;className?:string}){
-  const svg=resolveFlag(defaultFlags,code,"country");
+  const svg=HOME_FLAGS[code];
+  // Belum ada di subset (bahasa baru) → versi lazy yang mengunduh set lengkap.
+  // "un" = bahasa tak dikenal → langsung Globe, tak perlu unduh apa pun.
+  if(!svg&&code!=="un") return <RectFlagLazy code={code} h={h} className={className}/>;
   if(!svg) return <Globe aria-hidden style={{height:h,width:h}} className={`text-slate-400 shrink-0 ${className}`}/>;
   const m=svg.match(/viewBox="([\d.\s-]+)"/);
   let w=Math.round(h*36/26);
@@ -1827,7 +1832,11 @@ export default function Home() {
     {/* HERO */}
     <section className="bg-[#1A9E9E] lg:min-h-screen flex items-center relative overflow-hidden pt-20 lg:pt-32 pb-6 lg:pb-0">
       <div className="max-w-7xl mx-auto px-6 lg:px-12 grid lg:grid-cols-[1fr_1.3fr] gap-4 items-center py-4 lg:py-0">
-        <motion.div initial={{opacity:0,x:-30}} animate={{opacity:1,x:0}} transition={{duration:0.7}}>
+        {/* [hero-lcp-v1] Kolom hero sengaja div biasa, BUKAN motion.div dengan
+            initial opacity 0: framer-motion menulis opacity:0 ke HTML server,
+            jadi H1 + form baru kelihatan setelah seluruh JS halaman selesai
+            hydrate (FCP HP 6 dtk). Sekarang tampil langsung dari HTML. */}
+        <div>
           <div className="flex items-start gap-3 lg:block mb-4 lg:mb-0">
             <div className="flex-1">
               {/* [seo-h1-v1] H1 lama cuma berbunyi "Everyone Can Be a Polyglot":
@@ -1857,8 +1866,8 @@ export default function Home() {
           <HeroFunnel lang={lang} onLoginOpen={()=>setLoginOpen(true)}/>
           <Image src="/images/google-review.png" alt="Google Reviews 5.0/5" width={146} height={31} sizes="146px" className="h-7 sm:h-8 w-auto mt-4 sm:mt-6 opacity-90"/>
           
-        </motion.div>
-        <motion.div initial={{opacity:0,x:40}} animate={{opacity:1,x:0}} transition={{delay:0.3}} className="hidden lg:flex justify-end relative -mr-28">
+        </div>
+        <div className="hidden lg:flex justify-end relative -mr-28">
           <div className="relative w-[810px] h-[810px]">
             <HeroModel3D alt="Learn languages with Linguo"/>
             <div className="absolute top-16 left-[27%] pointer-events-none">
@@ -1870,7 +1879,7 @@ export default function Home() {
               </motion.div>
             </div>
           </div>
-        </motion.div>
+        </div>
       </div>
     </section>
 

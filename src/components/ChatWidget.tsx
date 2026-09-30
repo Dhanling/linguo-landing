@@ -119,7 +119,7 @@ const CSS = `
 .lingw{
   --teal:#16A398; --teal-deep:#0C7C71; --teal-soft:#E7F4F2; --teal-line:#D2E9E5;
   --yellow:#F8C53D; --yellow-deep:#EAB223; --ink:#0E2A27; --muted:#5C7A75; --panel-w:460px;
-  font-family:'Plus Jakarta Sans',system-ui,-apple-system,sans-serif;
+  font-family:var(--font-jakarta),'Plus Jakarta Sans',system-ui,-apple-system,sans-serif;
 }
 .lingw *{box-sizing:border-box;}
 
@@ -165,7 +165,7 @@ const CSS = `
 .lingw-avatar:after{content:"";position:absolute;inset:7px;border-radius:50%;background:rgba(255,255,255,.18);}
 @keyframes lingw-spin{to{transform:rotate(360deg);}}
 .lingw-on{position:absolute;right:-1px;bottom:-1px;width:14px;height:14px;border-radius:50%;background:#36D399;border:2.5px solid #0E8276;z-index:3;}
-.lingw-nm{font-family:'Baloo 2','Plus Jakarta Sans',sans-serif;font-weight:700;font-size:18.5px;line-height:1.1;display:flex;align-items:center;gap:6px;}
+.lingw-nm{font-family:var(--font-baloo),'Baloo 2',var(--font-jakarta),sans-serif;font-weight:700;font-size:18.5px;line-height:1.1;display:flex;align-items:center;gap:6px;}
 .lingw-nm .d{width:5px;height:5px;border-radius:50%;background:rgba(255,255,255,.6);}
 .lingw-role{font-size:12.5px;opacity:.85;font-weight:500;margin-top:1px;}
 .lingw-iconbtn{margin-left:auto;width:36px;height:36px;border-radius:50%;border:none;cursor:pointer;color:#fff;display:grid;place-items:center;background:rgba(255,255,255,.16);transition:background .2s;}
@@ -227,7 +227,7 @@ const CSS = `
 .lingw-send:disabled{opacity:.4;cursor:default;}
 .lingw-send svg{width:19px;height:19px;}
 .lingw-powered{text-align:center;font-size:11px;color:#B6C8C4;margin-top:9px;font-weight:600;}
-.lingw-powered b{color:var(--teal-deep);font-family:'Baloo 2','Plus Jakarta Sans',sans-serif;}
+.lingw-powered b{color:var(--teal-deep);font-family:var(--font-baloo),'Baloo 2',var(--font-jakarta),sans-serif;}
 
 /* [ling-intercom-v1] teaser proactive di atas launcher */
 .lingw-teaser{
@@ -331,17 +331,10 @@ export default function ChatWidget() {
     }
   }, []);
 
-  // muat font Baloo 2 + Plus Jakarta Sans sekali (panel-scoped)
-  useEffect(() => {
-    const id = "linguo-chat-fonts";
-    if (typeof document === "undefined" || document.getElementById(id)) return;
-    const link = document.createElement("link");
-    link.id = id;
-    link.rel = "stylesheet";
-    link.href =
-      "https://fonts.googleapis.com/css2?family=Baloo+2:wght@600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap";
-    document.head.appendChild(link);
-  }, []);
+  // [font-dobel-v1] Font TIDAK lagi dimuat dari fonts.googleapis.com — Baloo 2
+  // & Plus Jakarta Sans sudah di-self-host next/font di layout.tsx. Link lama
+  // mengunduh keduanya DUA kali (±60 KB + request pemblokir render). CSS panel
+  // di atas memakai var(--font-jakarta)/var(--font-baloo) dari <html>.
 
   // auto-scroll
   useEffect(() => {

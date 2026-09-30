@@ -11,8 +11,13 @@
 //   - Perpindahan halaman di DALAM situs (klik menu) tidak memunculkannya lagi,
 //     karena komponen ini hidup di layout dan tidak ter-mount ulang selama
 //     navigasi klien.
-//   - Ditunda ~1,2 detik supaya halaman sempat terlihat dulu (dan tidak
-//     mengganggu LCP/CLS halaman).
+//   - [poster-popup-lcp-v1] Muncul SESUDAH pengunjung pertama kali scroll
+//     (jeda 0,8 dtk), atau 6 dtk sesudah halaman selesai dimuat kalau dia
+//     diam saja. Dulu ditunda 1,2 dtk sejak mount — di HP poster ini jadi
+//     elemen terbesar di layar sehingga Google mencatatnya sebagai LCP
+//     (±12 dtk, skor Performa 33). Chrome berhenti mencatat LCP begitu
+//     pengguna scroll, jadi poster yang muncul sesudah scroll tak lagi
+//     dihitung.
 //   - Halaman ber-chrome sendiri & halaman "kerja" (dashboard siswa, laporan,
 //     form pendataan, pembayaran, pengerjaan kuis, checkout) dilewati — daftar
 //     yang sama dengan PromoTopBar/BatchRegulerTopBar, ditambah alur yang
@@ -36,7 +41,8 @@ const POSTER_ALT =
 const CTA_HREF = "/jadwal-kelas-reguler";
 const CTA_LABEL = "Lihat Jadwal & Daftar";
 
-const DELAY_MS = 1200;
+const DELAY_SESUDAH_SCROLL_MS = 800;
+const DELAY_SESUDAH_LOAD_MS = 6000;
 
 const EXCLUDED = [
   "/akun",
@@ -64,11 +70,33 @@ export default function PosterPopup() {
   useEffect(() => {
     if (dilewati) return;
 
-    const id = setTimeout(() => {
-      setOpen(true);
-      requestAnimationFrame(() => setMasuk(true));
-    }, DELAY_MS);
-    return () => clearTimeout(id);
+    let id: ReturnType<typeof setTimeout> | undefined;
+    let sudah = false;
+    const tampil = (ms: number) => {
+      if (sudah) return;
+      sudah = true;
+      lepas();
+      clearTimeout(id);
+      id = setTimeout(() => {
+        setOpen(true);
+        requestAnimationFrame(() => setMasuk(true));
+      }, ms);
+    };
+    const onScroll = () => tampil(DELAY_SESUDAH_SCROLL_MS);
+    const onLoad = () => {
+      if (!sudah) id = setTimeout(() => tampil(0), DELAY_SESUDAH_LOAD_MS);
+    };
+    const lepas = () => {
+      window.removeEventListener("scroll", onScroll);
+      window.removeEventListener("load", onLoad);
+    };
+    window.addEventListener("scroll", onScroll, { passive: true });
+    if (document.readyState === "complete") onLoad();
+    else window.addEventListener("load", onLoad);
+    return () => {
+      lepas();
+      clearTimeout(id);
+    };
   }, [dilewati]);
 
   const close = useCallback(() => {
