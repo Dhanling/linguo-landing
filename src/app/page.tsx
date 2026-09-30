@@ -1361,6 +1361,9 @@ const PRODUCTS = [
 
 function ProductDock({setPricingTab,onSelectProgram}:{setPricingTab:(t:number)=>void;onSelectProgram:(prog:string)=>void}) {
   const [isMobile, setIsMobile] = useState(false);
+  // [produk-marquee-v1] kartu berjalan kiri→kanan, baru mulai saat section masuk layar
+  const hostRef = useRef<HTMLDivElement>(null);
+  const [jalan, setJalan] = useState(false);
 
   useEffect(() => {
     const check = () => setIsMobile(window.innerWidth < 1024);
@@ -1369,28 +1372,34 @@ function ProductDock({setPricingTab,onSelectProgram}:{setPricingTab:(t:number)=>
     return () => window.removeEventListener("resize", check);
   }, []);
 
-  // Mobile: compact 2-column grid (Ruangguru-style). product-dock-mobile-grid-v1
-  if (isMobile) {
-    return (
-      <div className="grid grid-cols-2 gap-3 px-4 py-4 items-stretch">
-        {PRODUCTS.map((p,i)=>(
-          <DockCard key={i} product={p} mobile setPricingTab={setPricingTab} onSelectProgram={onSelectProgram}/>
+  useEffect(() => {
+    const el = hostRef.current;
+    if (!el || typeof IntersectionObserver === "undefined") { setJalan(true); return; }
+    const io = new IntersectionObserver(([e]) => setJalan(e.isIntersecting), { threshold: 0.15 });
+    io.observe(el);
+    return () => io.disconnect();
+  }, []);
+
+  // Dua salinan berurutan supaya putarannya mulus; salinan kedua disembunyikan dari
+  // pembaca layar & Tab, tapi TETAP bisa diklik (jangan pakai inert: kartu jadi mati klik).
+  return (
+    <div ref={hostRef} className="pd-host relative -mx-6 overflow-hidden py-4 lg:py-6 [mask-image:linear-gradient(to_right,transparent,black_6%,black_94%,transparent)]">
+      <div className={`pd-track flex w-max ${jalan ? "" : "pd-paused"}`}>
+        {[0,1].map(set=>(
+          <div key={set} className={`flex shrink-0 items-stretch ${isMobile?"gap-3 pr-3":"gap-4 pr-4"}`} aria-hidden={set===1||undefined}>
+            {PRODUCTS.map((p,i)=>(
+              <div key={i} className={isMobile?"w-[150px]":"w-[232px]"}>
+                <DockCard product={p} mobile={isMobile} salinan={set===1} setPricingTab={setPricingTab} onSelectProgram={onSelectProgram}/>
+              </div>
+            ))}
+          </div>
         ))}
       </div>
-    );
-  }
-
-  // Desktop: grid melebar penuh (ala mega-menu), bukan baris flex di tengah.
-  return (
-    <div className="grid grid-cols-4 gap-4 xl:gap-5 py-6 items-stretch">
-      {PRODUCTS.map((p,i)=>(
-        <DockCard key={i} product={p} setPricingTab={setPricingTab} onSelectProgram={onSelectProgram}/>
-      ))}
     </div>
   );
 }
 
-function DockCard({product:p,mobile,setPricingTab,onSelectProgram}:{product:typeof PRODUCTS[0];mobile?:boolean;setPricingTab:(t:number)=>void;onSelectProgram:(prog:string)=>void}) {
+function DockCard({product:p,mobile,salinan,setPricingTab,onSelectProgram}:{product:typeof PRODUCTS[0];mobile?:boolean;salinan?:boolean;setPricingTab:(t:number)=>void;onSelectProgram:(prog:string)=>void}) {
   const card = p as typeof p & { img1?: string; img2?: string; lucideIcon?: React.ElementType; objPos?: string };
   const LucideIco = card.lucideIcon;
   const sizeCls = mobile ? "w-full h-full rounded-xl" : "w-full h-full rounded-3xl";
@@ -1422,8 +1431,8 @@ function DockCard({product:p,mobile,setPricingTab,onSelectProgram}:{product:type
         </div>
       )}
       {priceMulai && <span className={`${mobile?"text-[10px] text-slate-500":"text-[10px] text-slate-400"} leading-none`}>Mulai</span>}
-      <div className="flex items-baseline gap-0.5">
-        <span className={`${mobile?"text-[13px]":"text-sm lg:text-base"} font-bold text-slate-900 whitespace-nowrap`}>{priceMain}</span>
+      <div className="flex items-baseline gap-0.5 whitespace-nowrap">
+        <span className={`${mobile?"text-[13px]":"text-sm"} font-bold text-slate-900 whitespace-nowrap`}>{priceMain}</span>
         {p.per && <span className={`${mobile?"text-[10px]":"text-[10px]"} text-slate-400`}>{p.per}</span>}
       </div>
     </div>
@@ -1433,11 +1442,11 @@ function DockCard({product:p,mobile,setPricingTab,onSelectProgram}:{product:type
     <div onClick={handleClick}
       className={`group relative flex flex-col bg-gradient-to-b from-white to-slate-50/80 border border-slate-100 shadow-[0_4px_20px_rgba(0,0,0,0.08)] hover:shadow-[0_8px_30px_rgba(26,158,158,0.15)] transition-all duration-300 cursor-pointer overflow-hidden ${sizeCls}`}>
       {/* Image zone full-bleed ke tepi kartu (tanpa bezel putih) — sudut atas ikut radius kartu via overflow-hidden */}
-      <div className={`relative overflow-hidden w-full mb-0 ${mobile ? "h-[130px]" : "h-52 lg:h-56"}`} style={{backgroundColor:p.bgColor}}>
+      <div className={`relative overflow-hidden w-full mb-0 ${mobile ? "h-[100px]" : "h-36"}`} style={{backgroundColor:p.bgColor}}>
         {card.img1 ? (
           <>
-            <Image src={card.img1} alt={p.title} fill loading="lazy" sizes="(min-width: 1024px) 300px, 50vw" className={`object-cover ${objPos} transition-opacity duration-300 group-hover:opacity-0`} />
-            <Image src={card.img2 || card.img1} alt="" aria-hidden fill loading="lazy" sizes="(min-width: 1024px) 300px, 50vw" className={`object-cover ${objPos} opacity-0 transition-opacity duration-300 group-hover:opacity-100`} />
+            <Image src={card.img1} alt={p.title} fill loading="lazy" sizes="(min-width: 1024px) 232px, 150px" className={`object-cover ${objPos} transition-opacity duration-300 group-hover:opacity-0`} />
+            <Image src={card.img2 || card.img1} alt="" aria-hidden fill loading="lazy" sizes="(min-width: 1024px) 232px, 150px" className={`object-cover ${objPos} opacity-0 transition-opacity duration-300 group-hover:opacity-100`} />
           </>
         ) : LucideIco ? (
           <div className="w-full h-full flex items-center justify-center"><LucideIco className={mobile?"w-10 h-10":"w-14 h-14"} style={{color:"#1A9E9E"}} strokeWidth={1.5}/></div>
@@ -1453,12 +1462,15 @@ function DockCard({product:p,mobile,setPricingTab,onSelectProgram}:{product:type
       {/* Info panel below image */}
       <div className="px-3 pt-3 pb-3 flex flex-col flex-1">
         <h3 className={`font-bold ${mobile?"text-[13px]":"text-sm lg:text-[15px]"} text-slate-900 mb-0.5 leading-tight`}>{p.title}</h3>
-        <p className={`${mobile?"text-[10px]":"text-[10px] lg:text-xs"} text-slate-400 leading-snug mb-3 line-clamp-2`}>{p.desc}</p>
+        {/* Deskripsi disembunyikan, baru muncul 1 baris saat hover (HP tanpa hover: tak ditampilkan) */}
+        {mobile ? <div className="mb-2"/> : (
+          <p title={p.desc} className="text-[11px] text-slate-400 leading-snug truncate max-h-0 opacity-0 mb-2 transition-all duration-300 group-hover:max-h-5 group-hover:opacity-100">{p.desc}</p>
+        )}
         {mobile ? (
           /* Mobile: stack price above a full-width button — never overlap. product-dock-mobile-stack-v1 */
           <div className="flex flex-col gap-2 mt-auto">
             {priceBlock}
-            <button onClick={(e)=>{e.stopPropagation(); handleClick();}}
+            <button tabIndex={salinan?-1:undefined} onClick={(e)=>{e.stopPropagation(); handleClick();}}
               className="w-full bg-[#1A9E9E] hover:bg-[#178888] text-white text-xs font-bold px-3 py-2 rounded-lg transition-colors active:scale-95">
               Beli →
             </button>
@@ -1466,8 +1478,8 @@ function DockCard({product:p,mobile,setPricingTab,onSelectProgram}:{product:type
         ) : (
           <div className="flex items-end justify-between gap-2">
             {priceBlock}
-            <button onClick={(e)=>{e.stopPropagation(); handleClick();}}
-              className="shrink-0 bg-[#1A9E9E] hover:bg-[#178888] text-white text-xs font-bold px-4 py-2.5 rounded-xl transition-colors active:scale-95 whitespace-nowrap">
+            <button tabIndex={salinan?-1:undefined} onClick={(e)=>{e.stopPropagation(); handleClick();}}
+              className="shrink-0 bg-[#1A9E9E] hover:bg-[#178888] text-white text-xs font-bold px-3 py-2 rounded-lg transition-colors active:scale-95 whitespace-nowrap">
               Beli →
             </button>
           </div>
