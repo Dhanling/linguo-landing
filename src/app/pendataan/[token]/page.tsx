@@ -43,6 +43,8 @@ type IntakeForm = {
   institution: string | null;
   learning_goal: string | null;
   hobby: string | null;
+  // [teacher-gender-pref-v1]
+  teacher_gender_pref: string | null;
   prior_experience: string | null;
   // [pendataan-domisili-referral-v1]
   // [pendataan-negara-v1] `country` kosong = baris lama, waktu itu formulirnya
@@ -190,6 +192,14 @@ const MONTHS = [
   "Januari", "Februari", "Maret", "April", "Mei", "Juni",
   "Juli", "Agustus", "September", "Oktober", "November", "Desember",
 ];
+
+// [teacher-gender-pref-v1] Siswa kadang minta pengajar perempuan/laki-laki.
+// Jawabannya ikut ke notif permintaan pengajar di grup Special Case Private.
+const TEACHER_PREFS = [
+  { value: "wanita", label: "Wanita" },
+  { value: "pria", label: "Pria" },
+  { value: "bebas", label: "Bebas, siapa saja" },
+] as const;
 
 const STEPS = [
   { title: "Data Diri", icon: User },
@@ -732,6 +742,7 @@ export default function PendataanPage() {
   const [blocks, setBlocks] = useState<Set<string>>(new Set());
   const [showEarly, setShowEarly] = useState(false);
   const [goal, setGoal] = useState("");
+  const [teacherPref, setTeacherPref] = useState("");
 
   useEffect(() => {
     fetch(`/api/pendataan?token=${encodeURIComponent(token)}`)
@@ -747,6 +758,7 @@ export default function PendataanPage() {
         setEmail(d.email || d.contact_email || "");
         setInstitution(d.institution || "");
         setGoal(d.learning_goal || "");
+        setTeacherPref(d.teacher_gender_pref || "");
         setHobby(d.hobby || "");
         setCountry(d.country || NEGARA_ID);
         setProvince(d.province || "");
@@ -877,6 +889,7 @@ export default function PendataanPage() {
       if (!goal.trim()) return "Ceritakan sedikit tujuan belajarmu";
     }
     if (s === 3 && blocks.size === 0) return "Pilih minimal 1 blok waktu yang kamu bisa";
+    if (s === 3 && !teacherPref) return "Pilih preferensi pengajarmu";
     return "";
   };
 
@@ -935,6 +948,7 @@ export default function PendataanPage() {
           prior_experience: experienceNote.trim() ? `${experience} — ${experienceNote.trim()}` : experience,
           preferred_schedule: scheduleText,
           learning_goal: goal,
+          teacher_gender_pref: teacherPref,
         }),
       });
       if (res.ok) { setDone(true); return; }
@@ -1355,6 +1369,23 @@ export default function PendataanPage() {
                       ))}
                     </div>
                   )}
+
+                  <div className="space-y-3 border-t border-slate-200 pt-5">
+                    <p className="flex items-start gap-2 text-base font-bold text-slate-900">
+                      <User className="mt-0.5 h-4 w-4 shrink-0" style={{ color: TEAL }} />
+                      Preferensi pengajar
+                    </p>
+                    <div className="flex flex-wrap gap-2">
+                      {TEACHER_PREFS.map((o) => (
+                        <button key={o.value} type="button" onClick={() => setTeacherPref(o.value)}
+                          className={chipClass(teacherPref === o.value)}
+                          style={teacherPref === o.value ? { background: TEAL } : undefined}>
+                          {teacherPref === o.value && <Check className="h-3 w-3" />}
+                          {o.label}
+                        </button>
+                      ))}
+                    </div>
+                  </div>
                 </div>
               )}
             </motion.div>

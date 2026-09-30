@@ -29,6 +29,8 @@ const SELECT_COLS = [
   "country",
   // [pendataan-alamat-offline-v1] migrasi 20260820120000
   "address", "district", "postal_code",
+  // [teacher-gender-pref-v1] sql/teacher_gender_pref_20260930.sql (repo dashboard)
+  "teacher_gender_pref",
 ].join(",");
 
 // Mode kelas dibaca hidup-hidup dari registrasi/tagihannya, bukan disalin ke
@@ -137,6 +139,7 @@ export async function POST(req: NextRequest) {
     const priorExperience = clean(body.prior_experience, 300);
     const learningGoal = clean(body.learning_goal, 1000);
     const schedule = clean(body.preferred_schedule, 4000);
+    const teacherPref = clean(body.teacher_gender_pref, 10);
 
     // [pendataan-semua-wajib-v1] Semua isian wajib — pagarnya ada di sini juga,
     // bukan cuma di formulirnya: yang menembak endpoint ini langsung tetap tidak
@@ -155,6 +158,9 @@ export async function POST(req: NextRequest) {
     if (!priorExperience) return NextResponse.json({ error: "Pengalaman belajar wajib diisi" }, { status: 400 });
     if (!learningGoal) return NextResponse.json({ error: "Tujuan belajar wajib diisi" }, { status: 400 });
     if (!schedule) return NextResponse.json({ error: "Pilih minimal 1 blok waktu yang kamu bisa" }, { status: 400 });
+    if (!teacherPref || !["pria", "wanita", "bebas"].includes(teacherPref)) {
+      return NextResponse.json({ error: "Pilih preferensi pengajarmu" }, { status: 400 });
+    }
 
     // [pendataan-alamat-offline-v1] Kelas offline butuh alamat yang bisa
     // didatangi. Modenya ditanyakan ke database, bukan dipercaya dari body:
@@ -210,6 +216,7 @@ export async function POST(req: NextRequest) {
       hobby,
       prior_experience: priorExperience,
       learning_goal: learningGoal,
+      teacher_gender_pref: teacherPref,
       status: "submitted",
       submitted_at: new Date().toISOString(),
       updated_at: new Date().toISOString(),
