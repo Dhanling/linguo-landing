@@ -56,6 +56,18 @@ function hitungMundur(ms: number): string {
   return d > 0 ? `${d} hari ${pad(h)}:${pad(m)}:${pad(s)}` : `${pad(h)}:${pad(m)}:${pad(s)}`;
 }
 
+// Versi ringkas untuk HP: "Rp500rb" & "3h 12:34:56" — biar bar muat 2 baris.
+const rpPendek = (n: number) =>
+  n % 1000 === 0 ? `Rp${(n / 1000).toLocaleString("id-ID")}rb` : rp(n);
+
+function hitungMundurPendek(ms: number): string {
+  const total = Math.floor(ms / 1000);
+  const d = Math.floor(total / 86400);
+  const pad = (n: number) => String(n).padStart(2, "0");
+  const jam = `${pad(Math.floor((total % 86400) / 3600))}:${pad(Math.floor((total % 3600) / 60))}:${pad(total % 60)}`;
+  return d > 0 ? `${d}h ${jam}` : jam;
+}
+
 export default function BatchRegulerTopBar() {
   const pathname = usePathname() || "/";
   const ref = useRef<HTMLDivElement | null>(null);
@@ -120,9 +132,35 @@ export default function BatchRegulerTopBar() {
       ref={ref}
       className="fixed inset-x-0 top-0 z-[70] bg-gradient-to-r from-[#0F7A7A] via-[#1A9E9E] to-[#0F7A7A] text-white shadow-md"
     >
+      {/* [bar-batch-reguler-hp-v1] HP: dipadatkan jadi 2 baris — dulu flex-wrap
+          bikin bar 4 baris & makan seperempat layar. */}
       <Link
         href="/jadwal-kelas-reguler"
-        className="mx-auto flex w-full max-w-7xl flex-wrap items-center justify-center gap-x-3 gap-y-1 px-4 py-2 text-center text-[13px] font-semibold sm:text-sm"
+        className="flex flex-col items-center gap-0.5 px-3 py-1.5 text-center text-[12px] font-semibold leading-tight sm:hidden"
+      >
+        <span className="flex max-w-full items-center gap-1.5 whitespace-nowrap">
+          <Hourglass className="h-3.5 w-3.5 shrink-0" />
+          <span className="truncate font-extrabold uppercase tracking-wide">
+            Reguler {labelBulan(batch.batchMonth)}
+          </span>
+          {batch.price < PRICE_STRIKE && (
+            <span className="text-[11px] text-white/70 line-through">{rpPendek(PRICE_STRIKE)}</span>
+          )}
+          <span className="text-[14px] font-extrabold text-[#FFD43B]">{rp(batch.price)}</span>
+        </span>
+        <span className="flex items-center gap-2 whitespace-nowrap">
+          <span className="tabular-nums text-white/90">
+            Tutup <span className="font-bold">{hitungMundurPendek(sisa)}</span> lagi
+          </span>
+          <span className="inline-flex items-center gap-0.5 rounded-full bg-[#FFD43B] px-2.5 py-0.5 text-[11px] font-extrabold text-slate-900">
+            Lihat Jadwal <ArrowRight className="h-3 w-3" />
+          </span>
+        </span>
+      </Link>
+
+      <Link
+        href="/jadwal-kelas-reguler"
+        className="mx-auto hidden w-full max-w-7xl sm:flex flex-wrap items-center justify-center gap-x-3 gap-y-1 px-4 py-2 text-center text-[13px] font-semibold sm:text-sm"
       >
         <span className="inline-flex items-center gap-1.5">
           <Hourglass className="h-4 w-4 shrink-0" />
