@@ -2045,7 +2045,16 @@ export default function Home() {
     <Reveal>
     <section className="py-16 lg:py-24 bg-white">
       <div className="max-w-5xl mx-auto px-6">
-        <h2 className="font-heading text-2xl lg:text-3xl font-bold text-center mb-10 lg:mb-14">Story from our student</h2>
+        <h2 className="font-heading text-2xl lg:text-3xl font-bold text-center mb-3">Story from our student</h2>
+        {/* [aeo-google-reviews-v1] Rating Google Maps sebagai teks + tautan —
+            dibaca mesin jawaban yang tidak merayapi Maps. Bukan schema. */}
+        <p className="text-center text-sm text-slate-500 mb-10 lg:mb-14">
+          <a href={BRAND_FACTS.googleReviews.mapsUrl} target="_blank" rel="noopener noreferrer" className="hover:text-[#1A9E9E] transition-colors">
+            <span className="text-amber-500" aria-hidden>★</span>{" "}
+            <strong className="text-slate-800">{BRAND_FACTS.googleReviews.ratingLabel}</strong> dari{" "}
+            {BRAND_FACTS.googleReviews.countLabel} ulasan di Google Maps
+          </a>
+        </p>
         <TestimonialCarousel/>
       </div>
     </section>

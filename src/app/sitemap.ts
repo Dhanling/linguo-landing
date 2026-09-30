@@ -1,6 +1,7 @@
 import type { MetadataRoute } from "next";
 import { getAllLanguageDetailSlugs } from "@/data/languages-detail";
 import { ALL_LANG_SLUGS } from "@/lib/funnelRouting";
+import { PERBANDINGAN_BAHASA_UPDATED, TANPA_PERBANDINGAN } from "@/data/perbandingan-bahasa";
 
 // [seo-sitemap-lengkap-v1] Sebelumnya sitemap ini cuma memuat 4 URL statis
 // (/, /blog, /corporate, /jadi-pengajar) + daftar post blog. Belasan halaman
@@ -48,8 +49,11 @@ const STATIC_ROUTES: Array<{
   path: string;
   priority: number;
   changeFrequency: MetadataRoute.Sitemap[number]["changeFrequency"];
+  /** Tanggal ubah isi halaman ini kalau berbeda dari STATIC_UPDATED. */
+  updated?: Date;
 }> = [
-  { path: "/", priority: 1.0, changeFrequency: "weekly" },
+  // [aeo-google-reviews-v1] 30 Sep 2026: baris rating Google di bagian testimoni.
+  { path: "/", priority: 1.0, changeFrequency: "weekly", updated: new Date("2026-09-30") },
 
   // Halaman uang — konversi langsung
   // [daftar-page-funnel-v1] /daftar = hub pendaftaran (dulu modal di homepage).
@@ -77,8 +81,10 @@ const STATIC_ROUTES: Array<{
   // kueri transaksional: /tentang mendefinisikan entitas Linguo.id (dipakai
   // model untuk menjawab "apa itu Linguo"), /perbandingan menjawab kueri
   // "X vs Y" yang selama ini dijawab pihak ketiga.
-  { path: "/tentang", priority: 0.8, changeFrequency: "monthly" },
-  { path: "/perbandingan", priority: 0.8, changeFrequency: "monthly" },
+  // [aeo-google-reviews-v1] /tentang dapat bagian ulasan; /perbandingan dapat
+  // daftar perbandingan per bahasa — keduanya 30 Sep 2026.
+  { path: "/tentang", priority: 0.8, changeFrequency: "monthly", updated: new Date("2026-09-30") },
+  { path: "/perbandingan", priority: 0.8, changeFrequency: "monthly", updated: new Date("2026-09-30") },
 
   // Konten & alat gratis — mesin akuisisi organik
   { path: "/blog", priority: 0.9, changeFrequency: "daily" },
@@ -118,7 +124,7 @@ const STATIC_ROUTES: Array<{
 export default function sitemap(): MetadataRoute.Sitemap {
   const entries: MetadataRoute.Sitemap = STATIC_ROUTES.map((r) => ({
     url: r.path === "/" ? BASE : `${BASE}${r.path}`,
-    lastModified: STATIC_UPDATED,
+    lastModified: r.updated ?? STATIC_UPDATED,
     changeFrequency: r.changeFrequency,
     priority: r.priority,
   }));
@@ -131,6 +137,17 @@ export default function sitemap(): MetadataRoute.Sitemap {
       lastModified: KURSUS_UPDATED,
       changeFrequency: "weekly",
       priority: 0.95,
+    });
+  }
+
+  // [aeo-perbandingan-bahasa-v1] "Kursus bahasa X online terbaik" per bahasa.
+  for (const slug of getAllLanguageDetailSlugs()) {
+    if (TANPA_PERBANDINGAN.has(slug)) continue;
+    entries.push({
+      url: `${BASE}/perbandingan/bahasa-${slug}`,
+      lastModified: PERBANDINGAN_BAHASA_UPDATED,
+      changeFrequency: "monthly",
+      priority: 0.85,
     });
   }
 

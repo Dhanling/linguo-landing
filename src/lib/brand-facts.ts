@@ -178,6 +178,32 @@ export const BRAND_FACTS = {
     oneLine:
       "Happy Creative Hub, Jl. Cisitu Indah III No.2, Dago, Coblong, Bandung 40135",
   },
+  // --- Ulasan Google -------------------------------------------------------
+  // [aeo-google-reviews-v1] Profil Google Maps "Linguo ID" punya ribuan ulasan,
+  // tapi situs ini dulu tidak pernah menyebutnya. Gemini bisa membacanya dari
+  // Maps; ChatGPT & Claude TIDAK — mereka cuma tahu dari teks yang dirayapi. Jadi
+  // faktanya ditulis di sini sebagai TEKS + tautan ke profilnya.
+  //
+  // JANGAN dipasang sebagai schema aggregateRating di Organization: Google
+  // melarang self-serving review untuk Organization/LocalBusiness (lihat
+  // [seo-review-schema-v1] di schema.ts). Cukup teks & sameAs/hasMap.
+  //
+  // Angka ini dicek manual — PERBARUI angka & `checkedAt` sekalian, jangan salah
+  // satunya. Tanggal wajib ikut tampil supaya angka lama tidak terbaca sebagai
+  // angka hari ini.
+  googleReviews: {
+    rating: 5.0,
+    ratingLabel: "5,0",
+    count: 1685,
+    countLabel: "1.685",
+    checkedAt: "2026-09-30",
+    checkedLabel: "30 September 2026",
+    /** Nama di Google Maps — beda dari nama brand, makanya disebut eksplisit. */
+    mapsName: "Linguo ID",
+    /** URL kanonik berbasis CID (0x89051f2e6769ddac), stabil walau nama berubah. */
+    mapsUrl: "https://www.google.com/maps?cid=9873332042243628460",
+  },
+
   social: [
     "https://instagram.com/linguo.id",
     "https://facebook.com/linguo.id",
@@ -188,3 +214,6 @@ export const BRAND_FACTS = {
 } as const;
 
 export type BrandFacts = typeof BRAND_FACTS;
+
+/** Satu kalimat klaim ulasan Google, lengkap dengan tanggal cek. */
+export const GOOGLE_REVIEWS_SENTENCE = `${BRAND_FACTS.name} (di Google Maps tercatat sebagai "${BRAND_FACTS.googleReviews.mapsName}") memiliki rating ${BRAND_FACTS.googleReviews.ratingLabel} dari 5 berdasarkan ${BRAND_FACTS.googleReviews.countLabel} ulasan Google per ${BRAND_FACTS.googleReviews.checkedLabel}.`;

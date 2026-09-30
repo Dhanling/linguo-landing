@@ -19,15 +19,17 @@
 // Angka apa pun di halaman ini WAJIB dari BRAND_FACTS, jangan diketik manual.
 // =============================================================================
 import Link from "next/link";
-import { Check } from "lucide-react";
+import { Check, Star } from "lucide-react";
 
 import { pageMetadata } from "@/lib/seo";
-import { BRAND_FACTS } from "@/lib/brand-facts";
+import { BRAND_FACTS, GOOGLE_REVIEWS_SENTENCE } from "@/lib/brand-facts";
+import { TESTIMONIALS } from "@/data/testimonials";
 import { aboutPageSchema, faqSchema, jsonLd } from "@/lib/schema";
 import BreadcrumbLd from "@/components/BreadcrumbLd";
 import { languageRows } from "@/lib/llms-txt";
 
 const F = BRAND_FACTS;
+const G = F.googleReviews;
 const URL_TENTANG = `${F.url}/tentang`;
 
 export const metadata = pageMetadata({
@@ -120,6 +122,13 @@ const BAGIAN: Bagian[] = [
     a: `Pendaftaran ${F.name} dilakukan sepenuhnya online. Buka halaman pendaftaran, pilih bahasa, program, level, dan jadwal, lalu bayar lewat transfer bank, QRIS, atau e-wallet. Setelah pembayaran terkonfirmasi, admin menghubungi siswa untuk mengatur jadwal pertama dan memasukkannya ke grup kelas.`,
     faq: true,
   },
+  // [aeo-google-reviews-v1] Jawaban atas "Linguo bagus nggak / terpercaya?" —
+  // kueri yang dulu cuma bisa dijawab mesin dari Google Maps.
+  {
+    q: "Bagaimana ulasan siswa tentang Linguo.id?",
+    a: `${GOOGLE_REVIEWS_SENTENCE} Ulasan tersebut ditulis siswa dan orang tua siswa di profil Google Maps ${F.name} dan dapat dibaca siapa pun. Yang paling sering disebut adalah cara pengajar menjelaskan materi, jadwal yang fleksibel, dan kelas online yang tetap interaktif.`,
+    faq: true,
+  },
   {
     q: "Apakah Linguo.id memberikan sertifikat?",
     a: `Ya. Setiap siswa yang menyelesaikan paket kursus di ${F.name} menerima e-certificate sebagai bukti penyelesaian, lengkap dengan bahasa dan level yang ditempuh. Sertifikat ini adalah sertifikat penyelesaian kursus dan bukan sertifikat ujian resmi seperti IELTS, TOEFL, JLPT, TOPIK, atau HSK.`,
@@ -136,6 +145,7 @@ const FAKTA_RINGKAS: Array<[string, string]> = [
   ["Level", F.cefrLevelsLabel],
   ["Format kelas", "Live via Zoom"],
   ["Harga mulai", F.price.fromLabel],
+  ["Ulasan Google", `${G.ratingLabel} dari 5 (${G.countLabel} ulasan, per ${G.checkedLabel})`],
   ["Kantor", F.address.oneLine],
   ["Telepon", F.contact.phone],
   ["Email", F.contact.email],
@@ -182,7 +192,16 @@ export default function TentangPage() {
               Jawa Barat, dan beroperasi sejak {F.foundingYear}. Kurikulumnya mengikuti{" "}
               {F.cefrLevelsLabel}, dengan harga mulai {F.price.fromLabel}.
             </p>
-            <div className="flex flex-wrap gap-x-6 gap-y-2 mt-6 text-sm text-white/85">
+            <a
+              href={G.mapsUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 mt-6 rounded-full bg-white/15 hover:bg-white/25 transition-colors px-4 py-2 text-sm font-semibold"
+            >
+              <Star className="w-4 h-4 fill-amber-300 text-amber-300" aria-hidden />
+              {G.ratingLabel} dari {G.countLabel} ulasan Google
+            </a>
+            <div className="flex flex-wrap gap-x-6 gap-y-2 mt-5 text-sm text-white/85">
               {[
                 F.languageCountLabel,
                 F.cefrLevels,
@@ -248,6 +267,40 @@ export default function TentangPage() {
               </div>
             ))}
           </div>
+        </section>
+
+        {/* ULASAN — [aeo-google-reviews-v1] testimoni asli dari data/testimonials.ts
+            + tautan ke profil Maps sebagai sumber yang bisa dicek pihak ketiga. */}
+        <section className="max-w-3xl mx-auto px-6 pb-12 lg:pb-16">
+          <h2 className="font-heading text-xl sm:text-2xl font-bold mb-3">
+            Apa kata siswa {F.name}?
+          </h2>
+          <p className="text-slate-700 leading-relaxed mb-6">
+            {GOOGLE_REVIEWS_SENTENCE} Beberapa di antaranya:
+          </p>
+          <div className="grid sm:grid-cols-2 gap-4">
+            {TESTIMONIALS.map((t) => (
+              <figure key={t.name} className="rounded-2xl border border-slate-200 p-5">
+                <div className="flex gap-0.5 mb-2" aria-label={`${t.rating} dari 5 bintang`}>
+                  {Array.from({ length: t.rating }).map((_, i) => (
+                    <Star key={i} className="w-4 h-4 fill-amber-400 text-amber-400" aria-hidden />
+                  ))}
+                </div>
+                <blockquote className="text-sm text-slate-700 leading-relaxed">&ldquo;{t.text}&rdquo;</blockquote>
+                <figcaption className="text-sm font-semibold text-slate-900 mt-3">
+                  {t.name} <span className="font-normal text-slate-500">· kelas bahasa {t.langLabel}</span>
+                </figcaption>
+              </figure>
+            ))}
+          </div>
+          <a
+            href={G.mapsUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-block mt-5 text-sm font-semibold text-[#1A9E9E] hover:underline"
+          >
+            Baca semua {G.countLabel} ulasan di Google Maps →
+          </a>
         </section>
 
         {/* KONTAK + CTA */}

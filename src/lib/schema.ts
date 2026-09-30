@@ -72,7 +72,7 @@ export function organizationSchema() {
     "@id": ORG_ID,
     name: BRAND_FACTS.name,
     legalName: BRAND_FACTS.legalName,
-    alternateName: ["Linguo", "Linguo Indonesia"],
+    alternateName: ["Linguo", "Linguo Indonesia", BRAND_FACTS.googleReviews.mapsName],
     url: BASE,
     logo: {
       "@type": "ImageObject",
@@ -104,7 +104,10 @@ export function organizationSchema() {
         areaServed: "ID",
       },
     ],
-    sameAs: [...BRAND_FACTS.social],
+    // [aeo-google-reviews-v1] Profil Maps menyambungkan entitas "Linguo ID" di
+    // Google Maps dengan linguo.id. Rating-nya sengaja TIDAK dimarkup di sini.
+    hasMap: BRAND_FACTS.googleReviews.mapsUrl,
+    sameAs: [...BRAND_FACTS.social, BRAND_FACTS.googleReviews.mapsUrl],
   };
 }
 

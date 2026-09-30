@@ -31,6 +31,7 @@ import {
 } from "../../../lib/schema"; // [aeo-schema-v1]
 import { toLangCode } from "../../../lib/quiz/language";
 import { getLanguageDeep, type LanguageDeep } from "../../../data/language-deep"; // [aeo-language-deep-v1]
+import { TANPA_PERBANDINGAN } from "../../../data/perbandingan-bahasa"; // [aeo-perbandingan-bahasa-v1]
 import LanguageDeepContent, {
   LanguageDeepFaq,
 } from "../../../components/kursus/LanguageDeepContent";
@@ -930,6 +931,20 @@ function FAQSection({ detail, langName }: { detail: LanguageDetail; langName: st
             </details>
           ))}
         </div>
+
+        {/* [aeo-perbandingan-bahasa-v1] Tautan internal ke halaman perbandingan
+            bahasa ini — tanpa ini halaman itu yatim dan lambat dirayapi. */}
+        {!TANPA_PERBANDINGAN.has(detail.urlSlug) && (
+          <p className="mt-8 text-center text-sm text-slate-600">
+            Masih menimbang?{" "}
+            <Link
+              href={`/perbandingan/bahasa-${detail.urlSlug}`}
+              className="font-semibold text-[#1A9E9E] hover:underline"
+            >
+              Bandingkan kursus Bahasa {langName} online: Linguo.id vs pilihan lain
+            </Link>
+          </p>
+        )}
       </div>
     </section>
   );

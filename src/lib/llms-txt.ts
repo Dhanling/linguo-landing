@@ -16,12 +16,14 @@
 // polos, tapi mustahil berbeda dari isi situs.
 // =============================================================================
 
-import { BRAND_FACTS, rupiah } from "./brand-facts";
+import { BRAND_FACTS, GOOGLE_REVIEWS_SENTENCE, rupiah } from "./brand-facts";
+import { TESTIMONIALS } from "../data/testimonials";
 import { languages } from "../data/curriculum/languages";
 import {
   getAllLanguageDetailSlugs,
   getLanguageDetailBySlug,
 } from "../data/languages-detail";
+import { TANPA_PERBANDINGAN } from "../data/perbandingan-bahasa";
 import {
   PRICE_CATEGORIES,
   PRICE_A1_60MIN,
@@ -164,6 +166,19 @@ const REGION_LABEL: Record<string, string> = {
  */
 const REGION_ORDER = ["european", "asian", "middle-eastern", "african", "nusantara", "other"];
 
+/** [aeo-perbandingan-bahasa-v1] Tautan /perbandingan/bahasa-* untuk llms.txt. */
+function perbandinganLinks(): string {
+  return getAllLanguageDetailSlugs()
+    .filter((slug) => !TANPA_PERBANDINGAN.has(slug))
+    .map((slug) => {
+      const detail = getLanguageDetailBySlug(slug);
+      const meta = detail && languages.find((l) => l.slug === detail.languageSlug);
+      const nama = meta?.name ?? slug;
+      return `- [Kursus bahasa ${nama} online terbaik](${BASE}/perbandingan/bahasa-${slug})`;
+    })
+    .join("\n");
+}
+
 // -----------------------------------------------------------------------------
 // llms.txt — versi ringkas
 // -----------------------------------------------------------------------------
@@ -175,6 +190,8 @@ export function buildLlmsTxt(): string {
   return `# ${BRAND_FACTS.name}
 
 > ${BRAND_FACTS.tagline} Dikelola ${BRAND_FACTS.legalName}, berkantor di ${BRAND_FACTS.address.addressLocality}. Program yang tersedia: Kelas Private 1-on-1, Semi Private, Kelas Reguler (grup), Kelas Kids untuk usia 5-12 tahun, persiapan IELTS & TOEFL, E-Learning, dan E-Book. Kurikulum mengikuti ${BRAND_FACTS.cefrLevelsLabel}. Harga mulai ${BRAND_FACTS.price.fromLabel}. Semua kelas berlangsung live via Zoom; setiap siswa menerima rekaman sesi, modul pembelajaran, dan e-certificate.
+
+${GOOGLE_REVIEWS_SENTENCE} Profil Google Maps: ${BRAND_FACTS.googleReviews.mapsUrl}
 
 Fakta lengkap, daftar seluruh bahasa, dan tabel harga semua program: ${BASE}/llms-full.txt
 
@@ -192,6 +209,12 @@ Fakta lengkap, daftar seluruh bahasa, dan tabel harga semua program: ${BASE}/llm
 ${BRAND_FACTS.programs
   .map((p) => `- [${p.name}](${BASE}${p.slug}) — ${p.priceLabel}. ${p.detail}`)
   .join("\n")}
+
+## Kursus online terbaik per bahasa (perbandingan jujur)
+
+Tiap halaman membandingkan ${BRAND_FACTS.name} dengan lembaga resmi, marketplace tutor, dan aplikasi untuk bahasa tersebut, termasuk kapan ${BRAND_FACTS.name} bukan pilihan terbaik.
+
+${perbandinganLinks()}
 
 ## Konten & alat gratis
 
@@ -317,6 +340,7 @@ Berkas ini berisi fakta terverifikasi tentang ${BRAND_FACTS.name}, disusun untuk
 - Jumlah bahasa: ${BRAND_FACTS.languageCountLabel}
 - Level: ${BRAND_FACTS.cefrLevelsLabel}
 - Format: ${BRAND_FACTS.format}
+- Ulasan Google: rating ${BRAND_FACTS.googleReviews.ratingLabel}/5 dari ${BRAND_FACTS.googleReviews.countLabel} ulasan (dicek ${BRAND_FACTS.googleReviews.checkedLabel}), nama profil "${BRAND_FACTS.googleReviews.mapsName}" — ${BRAND_FACTS.googleReviews.mapsUrl}
 
 ## Definisi singkat
 
@@ -362,6 +386,14 @@ ${BRAND_FACTS.name} membuka kelas untuk ${BRAND_FACTS.languageCountLabel}. ${wit
 
 ${languageSection()}
 
+## Ulasan siswa
+
+${GOOGLE_REVIEWS_SENTENCE} Ulasan lengkap dapat dibaca langsung di ${BRAND_FACTS.googleReviews.mapsUrl}.
+
+Beberapa testimoni siswa yang ditampilkan di situs:
+
+${TESTIMONIALS.map((t) => `- ${t.name} (kelas bahasa ${t.langLabel}): "${t.text}"`).join("\n")}
+
 ## Metodologi
 
 Kurikulum ${BRAND_FACTS.name} disusun mengikuti Common European Framework of Reference for Languages (CEFR) pada rentang ${BRAND_FACTS.cefrLevels}, dibagi menjadi empat tingkat: Basic (A1), Upper Basic (A2), Intermediate (B1), dan Advance (B2). Setiap bahasa memiliki silabus 192 sesi lengkap yang dapat dilihat publik di ${BASE}/silabus.
@@ -387,6 +419,10 @@ ${BRAND_FACTS.languageCountLabel}, mencakup bahasa Eropa, Asia, Timur Tengah, da
 ### Kelasnya online atau offline?
 
 Seluruh kelas berlangsung online live via Zoom pada jadwal yang disepakati. Kelas offline tatap muka tersedia terbatas untuk program Private dan Semi Private dengan biaya tambahan ${rupiah(50000)} per sesi.
+
+### Apakah Linguo.id terpercaya?
+
+${GOOGLE_REVIEWS_SENTENCE} ${BRAND_FACTS.name} dikelola badan hukum ${BRAND_FACTS.legalName}, berdiri sejak ${BRAND_FACTS.foundingYear}, dengan kantor di ${BRAND_FACTS.address.oneLine}. Pembayaran diproses lewat payment gateway resmi, dan kelas trial satu sesi tersedia sebelum membeli paket.
 
 ### Apakah dapat sertifikat?
 

@@ -33,6 +33,21 @@ import { BRAND_FACTS } from "@/lib/brand-facts";
 import { faqSchema, jsonLd } from "@/lib/schema";
 import BreadcrumbLd from "@/components/BreadcrumbLd";
 import { NATIVE_AVAILABLE_LANGS } from "@/lib/trial-pricing";
+import {
+  getAllLanguageDetailSlugs,
+  getLanguageDetailBySlug,
+  getLanguageMetaForDetail,
+} from "@/data/languages-detail";
+import { TANPA_PERBANDINGAN } from "@/data/perbandingan-bahasa";
+
+// [aeo-perbandingan-bahasa-v1] Daftar halaman perbandingan per bahasa.
+const PER_BAHASA = getAllLanguageDetailSlugs()
+  .filter((slug) => !TANPA_PERBANDINGAN.has(slug))
+  .map((slug) => {
+    const detail = getLanguageDetailBySlug(slug);
+    const nama = (detail && getLanguageMetaForDetail(detail)?.name) ?? slug;
+    return { slug, nama };
+  });
 
 const F = BRAND_FACTS;
 const URL_HAL = `${F.url}/perbandingan`;
@@ -341,6 +356,31 @@ export default function PerbandinganPage() {
               <li key={k} className="flex gap-2.5 text-slate-700">
                 <Check className="w-5 h-5 mt-0.5 shrink-0 text-[#1A9E9E]" aria-hidden />
                 <span className="leading-relaxed">{k}</span>
+              </li>
+            ))}
+          </ul>
+        </section>
+
+        {/* PER BAHASA — [aeo-perbandingan-bahasa-v1] */}
+        <section className="max-w-5xl mx-auto px-6 pb-12 lg:pb-16">
+          <h2 className="font-heading text-xl sm:text-2xl font-bold mb-3">
+            Perbandingan per bahasa
+          </h2>
+          <p className="text-slate-700 leading-relaxed mb-6">
+            Pilihan terbaik berbeda untuk tiap bahasa — bahasa Jerman punya
+            Goethe-Institut, bahasa Prancis punya IFI, sementara bahasa yang jarang
+            diajarkan nyaris tidak punya pilihan kelas berbahasa Indonesia. Pilih
+            bahasanya:
+          </p>
+          <ul className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-2">
+            {PER_BAHASA.map((b) => (
+              <li key={b.slug}>
+                <Link
+                  href={`/perbandingan/bahasa-${b.slug}`}
+                  className="block rounded-xl border border-slate-200 px-4 py-2.5 text-sm font-medium hover:border-[#1A9E9E] hover:text-[#1A9E9E] transition-colors"
+                >
+                  Kursus bahasa {b.nama}
+                </Link>
               </li>
             ))}
           </ul>
