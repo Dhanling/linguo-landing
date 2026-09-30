@@ -250,6 +250,12 @@ const CSS = `
    di desktop modal ke-center & ga nutupin FAB, jadi tetap tampil. */
 .lingw-launcher.ovhide{opacity:1;pointer-events:auto;transform:none;}
 @media (max-width:560px){.lingw{--panel-w:100vw;}.lingw-launcher{right:16px;bottom:16px;}.lingw-launcher.ovhide{opacity:0;pointer-events:none;transform:scale(.6);}.lingw-teaser{right:16px;bottom:90px;}}
+
+/* [ling-fab-autohide-v1] minggir pas halaman di-scroll/disentuh di HP */
+.lingw-launcher.away{opacity:0;pointer-events:none;transform:translateY(90px) scale(.85);}
+.lingw-teaser{transition:opacity .25s ease,transform .3s ease;}
+.lingw-teaser.away{animation:none;opacity:0;pointer-events:none;transform:translateY(24px);}
+@media (prefers-reduced-motion:reduce){.lingw-launcher.away,.lingw-teaser.away{transform:none;}}
 `;
 
 export default function ChatWidget() {
@@ -275,6 +281,37 @@ export default function ChatWidget() {
   // Pakai store global supaya ga numpuk di atas modal. SSR fallback → 0.
   const overlayOpen =
     useSyncExternalStore(subscribeOverlay, getOverlayCount, () => 0) > 0;
+
+  // [ling-fab-autohide-v1] Di HP, launcher (dan teaser) minggir ke bawah selama
+  // halaman di-scroll / disentuh, lalu muncul lagi begitu jari berhenti ~1 dtk.
+  // Biar ga nutupin konten (mis. tombol "Lihat pembahasan" di hasil placement).
+  const [fabAway, setFabAway] = useState(false);
+  useEffect(() => {
+    if (typeof window === "undefined") return;
+    const mq = window.matchMedia("(max-width: 560px), (pointer: coarse)");
+    let t: ReturnType<typeof setTimeout> | undefined;
+    const hide = () => {
+      if (!mq.matches) return;
+      setFabAway(true);
+      clearTimeout(t);
+      t = setTimeout(() => setFabAway(false), 1100);
+    };
+    const onTouch = (e: TouchEvent) => {
+      // sentuhan ke launcher/teaser/panel sendiri jangan bikin launcher kabur
+      const el = e.target as Element | null;
+      if (el?.closest?.(".lingw-launcher, .lingw-teaser, .lingw-panel")) return;
+      hide();
+    };
+    window.addEventListener("scroll", hide, { passive: true });
+    window.addEventListener("touchstart", onTouch, { passive: true });
+    window.addEventListener("touchmove", onTouch, { passive: true });
+    return () => {
+      clearTimeout(t);
+      window.removeEventListener("scroll", hide);
+      window.removeEventListener("touchstart", onTouch);
+      window.removeEventListener("touchmove", onTouch);
+    };
+  }, []);
 
   // session id persisten (per browser) — biar tiket nyambung kalau visitor balik lagi
   useEffect(() => {
@@ -557,7 +594,7 @@ export default function ChatWidget() {
       <button
         aria-label="Buka chat Linguo"
         onClick={() => setOpen(true)}
-        className={"lingw-launcher" + (open ? " hidden" : "") + (overlayOpen ? " ovhide" : "")}
+        className={"lingw-launcher" + (open ? " hidden" : "") + (overlayOpen ? " ovhide" : "") + (fabAway && !open ? " away" : "")}
       >
         <span className="ping" />
         {IcChat}
@@ -565,7 +602,7 @@ export default function ChatWidget() {
 
       {teaser && !open && !overlayOpen && (
         <div
-          className="lingw-teaser"
+          className={"lingw-teaser" + (fabAway ? " away" : "")}
           role="button"
           onClick={() => {
             setTeaser(null);
