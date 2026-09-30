@@ -1361,9 +1361,16 @@ const PRODUCTS = [
 
 function ProductDock({setPricingTab,onSelectProgram}:{setPricingTab:(t:number)=>void;onSelectProgram:(prog:string)=>void}) {
   const [isMobile, setIsMobile] = useState(false);
-  // [produk-marquee-v1] kartu berjalan kiri→kanan, baru mulai saat section masuk layar
+  // [produk-carousel-v2] satu baris 5 kartu (HP: 2), geser satu kartu ke kanan tiap
+  // beberapa detik saat section kelihatan; berhenti saat di-hover.
   const hostRef = useRef<HTMLDivElement>(null);
-  const [jalan, setJalan] = useState(false);
+  const [lebar, setLebar] = useState(0);
+  const [kelihatan, setKelihatan] = useState(false);
+  const [dihover, setDihover] = useState(false);
+  const [gerakHalus, setGerakHalus] = useState(true);
+  const N = PRODUCTS.length;
+  // Dua salinan berurutan: indeks mulai di salinan kedua lalu mundur (isi bergeser ke kanan).
+  const [idx, setIdx] = useState(N);
 
   useEffect(() => {
     const check = () => setIsMobile(window.innerWidth < 1024);
@@ -1374,26 +1381,45 @@ function ProductDock({setPricingTab,onSelectProgram}:{setPricingTab:(t:number)=>
 
   useEffect(() => {
     const el = hostRef.current;
-    if (!el || typeof IntersectionObserver === "undefined") { setJalan(true); return; }
-    const io = new IntersectionObserver(([e]) => setJalan(e.isIntersecting), { threshold: 0.15 });
+    if (!el) return;
+    const ro = new ResizeObserver(() => setLebar(el.clientWidth));
+    ro.observe(el);
+    const io = new IntersectionObserver(([e]) => setKelihatan(e.isIntersecting), { threshold: 0.2 });
     io.observe(el);
-    return () => io.disconnect();
+    return () => { ro.disconnect(); io.disconnect(); };
   }, []);
 
-  // Dua salinan berurutan supaya putarannya mulus; salinan kedua disembunyikan dari
-  // pembaca layar & Tab, tapi TETAP bisa diklik (jangan pakai inert: kartu jadi mati klik).
+  useEffect(() => {
+    if (!kelihatan || dihover) return;
+    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+    const t = setInterval(() => { setGerakHalus(true); setIdx(i => i - 1); }, 3200);
+    return () => clearInterval(t);
+  }, [kelihatan, dihover]);
+
+  // Sampai awal salinan pertama → lompat diam-diam ke posisi yang sama di salinan kedua.
+  const onGeserSelesai = (e: React.TransitionEvent) => {
+    if (e.target !== e.currentTarget) return; // transisi anak (opacity/shadow) ikut menggelembung
+    if (idx <= 0) { setGerakHalus(false); setIdx(N); }
+  };
+
+  const perBaris = isMobile ? 2 : 5;
+  const gap = isMobile ? 12 : 16;
+  const kartuW = lebar ? (lebar - gap * (perBaris - 1)) / perBaris : 0;
+
   return (
-    <div ref={hostRef} className="pd-host relative -mx-6 overflow-hidden py-4 lg:py-6 [mask-image:linear-gradient(to_right,transparent,black_6%,black_94%,transparent)]">
-      <div className={`pd-track flex w-max ${jalan ? "" : "pd-paused"}`}>
-        {[0,1].map(set=>(
-          <div key={set} className={`flex shrink-0 items-stretch ${isMobile?"gap-3 pr-3":"gap-4 pr-4"}`} aria-hidden={set===1||undefined}>
-            {PRODUCTS.map((p,i)=>(
-              <div key={i} className={isMobile?"w-[150px]":"w-[232px]"}>
-                <DockCard product={p} mobile={isMobile} salinan={set===1} setPricingTab={setPricingTab} onSelectProgram={onSelectProgram}/>
+    <div className={isMobile ? "px-4 py-4" : "py-6"}>
+      <div ref={hostRef} className="relative overflow-visible" onMouseEnter={()=>setDihover(true)} onMouseLeave={()=>setDihover(false)}>
+        <div className="overflow-hidden -mx-2 px-2 -my-4 py-4">
+          <div className="flex items-stretch"
+            onTransitionEnd={onGeserSelesai}
+            style={{ gap, transform: `translateX(${-idx * (kartuW + gap)}px)`, transition: gerakHalus ? "transform 700ms cubic-bezier(.22,.61,.36,1)" : "none", visibility: kartuW ? "visible" : "hidden" }}>
+            {[...PRODUCTS, ...PRODUCTS].map((p,i)=>(
+              <div key={i} className="shrink-0" style={{ width: kartuW || undefined }} aria-hidden={i < N || undefined}>
+                <DockCard product={p} mobile={isMobile} salinan={i < N} setPricingTab={setPricingTab} onSelectProgram={onSelectProgram}/>
               </div>
             ))}
           </div>
-        ))}
+        </div>
       </div>
     </div>
   );
@@ -1442,11 +1468,12 @@ function DockCard({product:p,mobile,salinan,setPricingTab,onSelectProgram}:{prod
     <div onClick={handleClick}
       className={`group relative flex flex-col bg-gradient-to-b from-white to-slate-50/80 border border-slate-100 shadow-[0_4px_20px_rgba(0,0,0,0.08)] hover:shadow-[0_8px_30px_rgba(26,158,158,0.15)] transition-all duration-300 cursor-pointer overflow-hidden ${sizeCls}`}>
       {/* Image zone full-bleed ke tepi kartu (tanpa bezel putih) — sudut atas ikut radius kartu via overflow-hidden */}
-      <div className={`relative overflow-hidden w-full mb-0 ${mobile ? "h-[100px]" : "h-36"}`} style={{backgroundColor:p.bgColor}}>
+      <div className="relative overflow-hidden w-full mb-0 aspect-[4/3]" style={{backgroundColor:p.bgColor}}>
         {card.img1 ? (
           <>
-            <Image src={card.img1} alt={p.title} fill loading="lazy" sizes="(min-width: 1024px) 232px, 150px" className={`object-cover ${objPos} transition-opacity duration-300 group-hover:opacity-0`} />
-            <Image src={card.img2 || card.img1} alt="" aria-hidden fill loading="lazy" sizes="(min-width: 1024px) 232px, 150px" className={`object-cover ${objPos} opacity-0 transition-opacity duration-300 group-hover:opacity-100`} />
+            {/* Satu gambar saja kalau tak ada img2 — crossfade gambar yang sama bikin kartu berkedip saat hover */}
+            <Image src={card.img1} alt={p.title} fill loading="lazy" sizes="(min-width: 1024px) 240px, 45vw" className={`object-cover ${objPos} ${card.img2 ? "transition-opacity duration-300 group-hover:opacity-0" : ""}`} />
+            {card.img2 && <Image src={card.img2} alt="" aria-hidden fill loading="lazy" sizes="(min-width: 1024px) 240px, 45vw" className={`object-cover ${objPos} opacity-0 transition-opacity duration-300 group-hover:opacity-100`} />}
           </>
         ) : LucideIco ? (
           <div className="w-full h-full flex items-center justify-center"><LucideIco className={mobile?"w-10 h-10":"w-14 h-14"} style={{color:"#1A9E9E"}} strokeWidth={1.5}/></div>
@@ -1462,9 +1489,9 @@ function DockCard({product:p,mobile,salinan,setPricingTab,onSelectProgram}:{prod
       {/* Info panel below image */}
       <div className="px-3 pt-3 pb-3 flex flex-col flex-1">
         <h3 className={`font-bold ${mobile?"text-[13px]":"text-sm lg:text-[15px]"} text-slate-900 mb-0.5 leading-tight`}>{p.title}</h3>
-        {/* Deskripsi disembunyikan, baru muncul 1 baris saat hover (HP tanpa hover: tak ditampilkan) */}
+        {/* Deskripsi disembunyikan, muncul 1 baris saat hover — tingginya dipesan tetap supaya kartu tak melar/berkedip (HP tanpa hover: tak ditampilkan) */}
         {mobile ? <div className="mb-2"/> : (
-          <p title={p.desc} className="text-[11px] text-slate-400 leading-snug truncate max-h-0 opacity-0 mb-2 transition-all duration-300 group-hover:max-h-5 group-hover:opacity-100">{p.desc}</p>
+          <p title={p.desc} className="text-[11px] text-slate-400 leading-4 h-4 truncate opacity-0 mb-2 transition-opacity duration-300 group-hover:opacity-100">{p.desc}</p>
         )}
         {mobile ? (
           /* Mobile: stack price above a full-width button — never overlap. product-dock-mobile-stack-v1 */
