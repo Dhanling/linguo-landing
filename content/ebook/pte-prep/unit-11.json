@@ -1,0 +1,298 @@
+{
+ "jenis": "testprep",
+ "skill": "READING · FILL IN THE BLANKS",
+ "title": "Fill in the Blanks (Drag and Drop): kelas kata & makna",
+ "title_target": "Reading — sorting the word bank by word class, then by meaning",
+ "goal": "Mengisi celah Drag and Drop dengan dua pertanyaan berurutan — kelas kata apa yang muat di sini, lalu kata mana yang cocok maknanya — dan menyelesaikan satu teks 80 kata dalam ± 1,5 menit tanpa terpancing kata pengecoh di kotak.",
+ "bekal": [
+  "menebak kelas kata sebuah celah dari kata di kiri-kanannya, sebelum melihat kotak kata",
+  "mengelompokkan isi kotak kata menurut akhiran dan bentuknya, lalu mengenali pasangan seakar yang salah satunya pengecoh",
+  "memakai jumlah (tunggal atau jamak), pola kata kerja, dan arah kalimat untuk membuang pengecoh yang kelas katanya sudah benar"
+ ],
+ "sections": [
+  {
+   "title": "Bentuk soal dan bedanya dengan Dropdown",
+   "blocks": [
+    {"type": "p", "text": "Fill in the Blanks (Drag and Drop) adalah tipe keempat di Part 2 · Reading, sesudah Reorder Paragraph dan sebelum Multiple Choice, Single Answer. Di layar ada satu teks pendek — **sampai 80 kata** — dengan beberapa celah. Di bawah teks ada sebuah kotak berisi kata-kata. Kamu menyeret kata dari kotak ke celah. **Jumlah kata di kotak selalu lebih banyak daripada jumlah celah**, jadi beberapa kata pasti tersisa: itulah pengecohnya. Di tiap tes ada beberapa soal tipe ini."},
+    {"type": "kotak", "title": "Instruksi di layar", "items": [
+     "*In the text below some words are missing. Drag words from the box below to the appropriate place in the text. To undo an answer choice, drag the word back to the box below the text.*",
+     "Artinya: di teks berikut ada beberapa kata yang hilang. Seret kata dari kotak di bawah ke tempat yang tepat di dalam teks. Untuk membatalkan pilihan, seret kata itu kembali ke kotak di bawah teks."
+    ]},
+    {"type": "p", "text": "Sekilas soal ini mirip Dropdown di unit sebelumnya. Cara kerjanya justru berlawanan, dan karena itu cara menyerangnya juga lain."},
+    {"type": "tabel", "head": ["", "Dropdown (Unit 10)", "Drag and Drop (unit ini)"], "rows": [
+     ["Panjang teks", "sampai 200 kata", "sampai 80 kata"],
+     ["Asal pilihan", "tiap celah punya empat pilihan sendiri", "SATU kotak kata dipakai bersama oleh semua celah"],
+     ["Sifat pilihan", "sering empat kata yang searti atau seakar", "campuran kelas kata: noun, verb, adjective, adverb dalam satu kotak"],
+     ["Pengecoh", "tiga per celah", "hanya beberapa kata untuk seluruh teks, tapi tiap pengecoh bisa mengincar lebih dari satu celah"],
+     ["Akibat satu salah", "berhenti di celah itu", "bisa menular: kata yang salah tempat tak lagi tersedia untuk celah yang benar"],
+     ["Senjata utama", "kolokasi dan preposisi", "kelas kata dulu, makna kemudian"]
+    ]},
+    {"type": "p", "text": "Baris kelima adalah alasan soal ini perlu ditangani dengan tertib. Tiap kata hanya bisa dipakai **satu kali**. Kalau *production* kamu taruh di celah yang sebenarnya milik *attraction*, kamu belum tentu rugi satu poin saja — celah lain yang membutuhkan kata itu ikut kosong atau terisi kata sisa. Sebaliknya, tiap celah yang kamu isi dengan yakin membuat kotak kata menyusut, dan celah berikutnya jadi lebih mudah."},
+    {"type": "sub", "text": "Cara dinilai"},
+    {"type": "list", "items": [
+     "Tiap celah dinilai sendiri-sendiri: celah yang benar mendapat poin, celah yang salah **tidak mengurangi** apa pun. Jadi jangan menekan *Next* dengan celah kosong. Kata sisa yang kelas katanya cocok masih punya peluang; celah kosong tidak.",
+     "Waktunya menumpang **satu timer** Part 2 (23–30 menit untuk seluruh Reading). Teksnya pendek, jadi patokan latihannya juga pendek: **± 1,5 menit per teks**.",
+     "Tidak ada tombol kembali. Sesudah *Next*, susunanmu terkunci.",
+     "Menyeret butuh ketelitian tangan. Sebelum pindah soal, pastikan tiap kata benar-benar menempel di celah yang kamu maksud dan tidak ada celah yang masih kosong."
+    ]}
+   ]
+  },
+  {
+   "title": "Saringan 1 · Kelas kata: baca celahnya, bukan kotaknya",
+   "blocks": [
+    {"type": "p", "text": "Kebiasaan yang paling banyak membuang waktu: membaca kotak kata dulu, lalu mencoba kata satu per satu ke tiap celah. Delapan kata kali lima celah berarti empat puluh percobaan. Balik urutannya. **Lihat celahnya dulu dan putuskan kelas katanya**; sesudah itu kotak yang berisi delapan kata biasanya tinggal dua atau tiga calon — kadang satu."},
+    {"type": "p", "text": "Kelas kata sebuah celah tidak perlu ditebak dari arti kalimat. Ia dibaca dari kata yang menempel di kiri dan kanannya."},
+    {"type": "tabel", "head": ["Yang terlihat di sekitar celah", "Kelas kata yang muat", "Contoh"], "rows": [
+     ["*the · a · this · their · its* + …… + *of* atau verb", "noun", "the …… of the river · their …… has been confirmed"],
+     ["*a · the* + …… + noun", "adjective", "a …… change · the …… results"],
+     ["*is · are · become · remain · seem* + …… (lalu titik atau koma)", "adjective", "the cause remains ……"],
+     ["*is · are* + …… + adjective", "adverb", "is …… important · are …… common"],
+     ["subjek + …… + verb, atau verb + …… di ujung klausa", "adverb", "prices …… rise · costs fell ……"],
+     ["*to · can · may · must · will* + ……", "verb bentuk dasar", "may …… crops · to …… the data"],
+     ["*has · have · had* + ……", "past participle", "have …… considerably"],
+     ["*is · are · was* + …… + *by · to · in*", "past participle (pasif)", "is …… to childhood · was …… by storms"],
+     ["subjek tunggal (*it, the river*) + …… + objek", "verb berakhiran *-s*", "it …… the land"],
+     ["preposisi (*of, in, for, by, without*) + ……", "noun atau bentuk *-ing*", "without …… · the risk of ……"]
+    ]},
+    {"type": "sub", "text": "Akhiran: cara mengenali kelas kata di kotak"},
+    {"type": "p", "text": "Sesudah tahu kelas kata yang dicari, kamu perlu mengenalinya di kotak dalam satu lirikan. Kata akademik berbaik hati: kelas katanya hampir selalu tertulis di akhirannya, bahkan kalau kamu belum pernah melihat kata itu."},
+    {"type": "tabel", "head": ["Kelas kata", "Akhiran khas", "Contoh"], "rows": [
+     ["Noun", "*-tion · -sion · -ment · -ness · -ity · -ance · -ence · -ship · -th · -ure*", "expansion, settlement, awareness, stability, resistance, presence, ownership, growth, failure"],
+     ["Verb", "*-ise · -ize · -ify · -ate · -en*", "stabilise, simplify, generate, strengthen, widen"],
+     ["Adjective", "*-ous · -ive · -al · -ic · -able · -ible · -ful · -less · -ary · -ent · -ant*", "numerous, productive, global, economic, reliable, visible, harmful, harmless, primary, frequent, dominant"],
+     ["Adverb", "adjective + *-ly*", "gradually, sharply, particularly, widely"]
+    ]},
+    {"type": "kotak", "title": "Empat jebakan akhiran", "items": [
+     "**Berakhiran -ly tapi adjective:** *costly, likely, unlikely, friendly, lively, elderly, timely, daily, early*. Tandanya: *-ly* menempel pada noun (*cost, friend, time*), bukan pada adjective. *A costly mistake* benar; *they work costly* salah.",
+     "**Berakhiran -al atau -ive tapi noun:** *proposal, arrival, approval, survival, removal, denial* dan *alternative, initiative, objective, incentive, representative*. Kalau di depannya ada *the* atau *an* dan di belakangnya *of* atau verb, ia noun.",
+     "**Satu bentuk, dua kelas kata:** *increase, decrease, change, research, study, estimate, impact, benefit, present, limit, cause, result* bisa noun dan verb. Yang memutuskan adalah posisinya: *the …… in prices* (noun) lawan *prices …… every year* (verb).",
+     "**Bentuk -ing dan -ed:** bisa bagian dari verb (*is rising, has declined*), bisa adjective (*rising prices, a limited supply*), dan *-ing* bisa menjadi noun (*the melting of the ice*). Karena serba bisa, kata berbentuk *-ing* di kotak perlu diuji di lebih dari satu celah."
+    ]},
+    {"type": "sub", "text": "Bentuk juga menyaring: -s, -ed, dan jumlah"},
+    {"type": "p", "text": "Kelas kata saja kadang menyisakan dua atau tiga calon. Sebelum pindah ke makna, periksa **bentuknya** — ini masih pekerjaan tiga detik dan sering menyelesaikan celah."},
+    {"type": "list", "items": [
+     "**Noun: tunggal atau jamak?** Lihat verb sesudah celah. *The long-term …… outweigh the risk*: verb-nya *outweigh*, tanpa *-s*, jadi celahnya noun jamak. *production* dan *attraction* gugur tanpa perlu dipikirkan artinya. Sebaliknya, *The main …… is* menuntut noun tunggal.",
+     "**Verb: dengan -s atau tanpa?** Lihat subjeknya. Sesudah *it, the ash, each study*: verb ber-*s* (*enriches*). Sesudah modal (*may, can, must*) atau subjek jamak: bentuk dasar (*enrich*). Penulis soal senang menaruh kedua bentuk dalam satu kotak.",
+     "**Ada objek atau tidak?** Celah yang langsung diikuti noun (*…… one language*) butuh verb yang bisa punya objek. Celah yang diikuti preposisi butuh kata yang berjodoh dengan preposisi itu: *…… to childhood* hanya menerima *confined* atau *limited*, bukan *disputed*."
+    ]},
+    {"type": "p", "text": "Kesalahan khas penutur Indonesia ada persis di sini. Bahasa Indonesia tidak mengubah bentuk kata menurut jumlah atau pelaku, jadi mata kita tidak terlatih melihat *-s*. Kita juga terbiasa memakai satu kata untuk beberapa kelas kata — \"kehilangan\" bisa *lose* dan *loss*, \"sukses\" bisa *success, succeed,* dan *successful* — sehingga *the lose of ice* terasa wajar. Di soal ini, pasangan seperti itu sengaja ditaruh berdampingan di kotak."}
+   ]
+  },
+  {
+   "title": "Saringan 2 · Makna, dan cara menghadapi pengecoh",
+   "blocks": [
+    {"type": "p", "text": "Kalau sesudah saringan kelas kata dan bentuk masih tersisa dua calon, barulah makna bekerja. Jangan bertanya \"mana yang enak didengar\". Tanyakan tiga hal yang bisa dijawab dari teksnya."},
+    {"type": "list", "items": [
+     "**Arah kalimatnya ke mana?** Cari kata penanda di kalimat yang sama: *yet, but, although, despite* (berbalik arah), *therefore, so, because* (sebab-akibat), *even, only, still* (di luar dugaan). *An eruption may …… fields overnight, yet farmers usually return*: *yet* menuntut hal buruk di depannya.",
+     "**Kalimat sesudahnya bilang apa?** Sama seperti di Dropdown, petunjuk sering ditaruh SESUDAH celah. Baca sampai titik, dan kalau masih ragu, sampai titik berikutnya.",
+     "**Apakah kalimatnya berarti sesuatu?** Banyak pengecoh lolos tata bahasa tapi menghasilkan kalimat kosong: *The main production is the soil.* Susunannya benar, isinya tidak ada. Kalau kamu tak bisa menjelaskan arti kalimat itu dengan kata-katamu sendiri, kata itu bukan jawabannya."
+    ]},
+    {"type": "sub", "text": "Empat jenis pengecoh di kotak kata"},
+    {"type": "tabel", "head": ["Jenis pengecoh", "Contoh di kotak", "Cara membuangnya"], "rows": [
+     ["Saudara seakar: akar sama, kelas kata lain", "loss · lose, gradual · gradually, introduce · introduction", "Saringan kelas kata. Hanya satu dari keduanya yang bentuknya muat di celah mana pun; kembarannya hampir selalu tersisa."],
+     ["Bentuk lain dari verb atau noun yang sama", "enrich · enriches, limit · limits, benefit · benefits", "Saringan bentuk: cocokkan dengan subjek (tunggal, jamak) atau dengan modal di depan celah."],
+     ["Kelas kata sama, makna lain", "destroy · attract, tiny · harmful, global · sharp", "Saringan makna: arah kalimat dan kalimat sesudahnya."],
+     ["Mirip ejaan atau bunyinya", "conclusion · confusion, access · assess, affect · effect", "Baca kata sampai huruf terakhir. Pengecoh ini hidup dari mata yang terburu-buru."]
+    ]},
+    {"type": "p", "text": "Satu hal tentang pasangan seakar: melihat *gradual* dan *gradually* di kotak yang sama memberitahumu bahwa ada satu celah yang menguji pasangan itu, dan **paling banyak satu** dari keduanya terpakai. Itu informasi gratis. Tetapi jangan dibalik menjadi aturan bahwa salah satunya pasti jawaban — kadang dua-duanya pengecoh untuk celah yang jawabannya kata lain."},
+    {"type": "sub", "text": "Urutan kerja"},
+    {"type": "kotak", "title": "Sembilan puluh detik untuk satu teks", "items": [
+     "**0.00–0.15** Baca kalimat pertama utuh untuk menangkap topik. Lirik kotak kata dan kelompokkan dalam kepala: mana noun, verb, adjective, adverb. Tandai pasangan seakar.",
+     "**0.15–1.00** Kerjakan celah satu per satu. Di tiap celah: lihat kiri-kanan → sebut kelas kata dan bentuknya → cari di kotak. Kalau hanya satu kata yang muat, seret. Kalau ada dua atau lebih, baca kalimatnya sampai titik dan pakai makna. Kalau masih ragu, **lewati dulu**.",
+     "**1.00–1.15** Kembali ke celah yang dilewati. Kotak kata sekarang sudah menyusut; sering kali tinggal satu kata yang kelas katanya cocok.",
+     "**1.15–1.30** Baca teks utuh dari awal dengan semua kata terpasang, lalu lihat kata yang tersisa di kotak. Kata sisa seharusnya bisa kamu jelaskan sebagai pengecoh: \"ini kembaran yang salah kelas kata\", \"ini verb yang butuh subjek jamak\". Kalau ada kata sisa yang terasa sangat cocok dengan topik teks, periksa lagi celah yang kelas katanya sama dengannya."
+    ]}
+   ]
+  },
+  {
+   "title": "Contoh dibedah",
+   "blocks": [
+    {"type": "p", "text": "Empat celah, enam kata di kotak. Coba isi dulu dalam satu setengah menit sebelum membaca bedahannya."},
+    {"type": "passage", "title": "Contoh · Shrinking glaciers", "words": 70, "paragraphs": [
+     "Glaciers and ice sheets hold about two-thirds of the world's fresh water. As global temperatures rise, most glaciers have (1) …… considerably in recent decades. The (2) …… of this ice threatens the water supply of millions of people who live downstream. Meltwater is (3) …… important during the dry season, when little rain falls. Scientists therefore monitor glaciers closely, since even a (4) …… change in their size can affect entire river systems."
+    ]},
+    {"type": "p", "text": "**Kotak kata:** lose · slight · shrunk · rapid · particularly · loss"},
+    {"type": "p", "text": "Mulai dari kotaknya. Kelompokkan: *lose* verb bentuk dasar; *shrunk* past participle; *loss* noun; *slight* dan *rapid* adjective; *particularly* adverb. Ada satu pasangan seakar, *lose · loss*. Enam kata, empat celah, dua akan tersisa."},
+    {"type": "tabel", "head": ["Celah", "Kiri-kanan celah", "Kelas kata dan calon", "Keputusan"], "rows": [
+     ["(1)", "*have …… considerably*", "past participle → hanya *shrunk*", "**shrunk**. *have lose* salah bentuk (harus *lost*, dan itu pun butuh objek). Selesai di saringan kelas kata."],
+     ["(2)", "*The …… of this ice threatens*", "noun tunggal → hanya *loss*", "**loss**. *The lose of* adalah kesalahan khas kita: *lose* verb, noun-nya *loss*. Selesai di saringan kelas kata."],
+     ["(3)", "*is …… important*", "adverb di depan adjective → hanya *particularly*", "**particularly**. *slight* dan *rapid* adjective; adjective tidak bisa menerangkan adjective lain."],
+     ["(4)", "*even a …… change*", "adjective → *slight* atau *rapid*", "**slight**. Di sini kelas kata menyisakan dua calon, dan makna yang memutuskan. Kata *even* menandai hal di luar dugaan: bahkan perubahan yang KECIL pun berpengaruh. *even a rapid change* tidak punya logika itu — perubahan cepat memang wajar berpengaruh."]
+    ]},
+    {"type": "p", "text": "Tersisa di kotak: *lose* dan *rapid*. Keduanya bisa dijelaskan: *lose* kembaran salah kelas kata dari *loss*, *rapid* adjective yang kalah makna di celah (4). Perhatikan perbandingannya: tiga dari empat celah selesai tanpa memikirkan arti teks sama sekali. Itulah sebabnya saringan kelas kata dikerjakan lebih dulu — ia cepat, dan ia tidak bergantung pada apakah kamu paham setiap kata di teksnya."}
+   ]
+  },
+  {
+   "title": "Keluarga kata yang sering masuk kotak",
+   "blocks": [
+    {"type": "p", "text": "Pengecoh seakar hanya berbahaya kalau kamu tidak yakin mana noun dan mana verb-nya. Dua belas keluarga berikut sering muncul di teks akademik. Tutup tiga kolom, lihat satu, dan sebutkan sisanya dengan suara."},
+    {"type": "tabel", "head": ["Noun", "Verb", "Adjective", "Adverb"], "rows": [
+     ["loss", "lose", "lost", "—"],
+     ["growth", "grow", "growing", "—"],
+     ["success", "succeed", "successful", "successfully"],
+     ["choice", "choose", "chosen", "—"],
+     ["belief", "believe", "believable", "—"],
+     ["strength", "strengthen", "strong", "strongly"],
+     ["threat", "threaten", "threatening", "—"],
+     ["analysis", "analyse", "analytical", "analytically"],
+     ["variety · variation", "vary", "various · variable", "variously"],
+     ["production · product · productivity", "produce", "productive", "productively"],
+     ["competition · competitor", "compete", "competitive", "competitively"],
+     ["response", "respond", "responsive", "responsively"]
+    ]},
+    {"type": "p", "text": "Enam baris pertama adalah yang paling sering salah, karena noun-nya **tidak** memakai akhiran yang biasa: *loss, growth, success, choice, belief, strength*. Tidak ada *-tion* atau *-ment* yang menolong. Hafalkan sebagai pasangan: *lose · loss, choose · choice, believe · belief, succeed · success*."}
+   ]
+  },
+  {
+   "title": "Teks latihan",
+   "blocks": [
+    {"type": "p", "text": "Empat teks, masing-masing lima celah dan delapan kata di kotak — tiga kata akan tersisa. Kerjakan Latihan 1–4 dari teks-teks ini. Pasang timer **6 menit** untuk keempatnya. Ingat aturan tesnya: tiap kata hanya dipakai satu kali dalam satu teks."},
+    {"type": "passage", "title": "Teks 1 · Living beside a volcano", "words": 67, "paragraphs": [
+     "Despite the obvious danger, people have always settled near volcanoes. The main (1) …… is the soil. Volcanic ash is rich in minerals, and as it breaks down it (2) …… the land with nutrients that crops need. Farms on these slopes are therefore highly (3) ……, often yielding several harvests a year. An eruption may (4) …… fields overnight, yet farmers usually return, because the long-term (5) …… outweigh the risk."
+    ]},
+    {"type": "p", "text": "**Kotak kata 1:** production · attract · enriches · advantages · destroy · attraction · productive · enrichment"},
+    {"type": "passage", "title": "Teks 2 · Microplastics", "words": 71, "paragraphs": [
+     "Microplastics are fragments of plastic smaller than five millimetres. Some are manufactured at that size, but most form when larger items (1) …… break apart in sunlight and waves. Because they are so (2) ……, the particles slip through many filters and are swallowed by fish and seabirds. Their (3) …… has now been confirmed in drinking water and even in human blood. Whether they (4) …… our health remains (5) ……, and research is continuing."
+    ]},
+    {"type": "p", "text": "**Kotak kata 2:** present · uncertain · gradual · threaten · tiny · harmful · presence · gradually"},
+    {"type": "passage", "title": "Teks 3 · The bilingual brain", "words": 64, "paragraphs": [
+     "Speaking two languages was once thought to confuse young children. Later studies reached the opposite (1) ……: bilingual children are often better at ignoring distractions, perhaps because they must constantly (2) …… one language while using the other. Nor is the benefit (3) …… to childhood. In older adults, lifelong bilingualism has been linked to a later (4) …… of dementia symptoms, although the evidence is still (5) ……."
+    ]},
+    {"type": "p", "text": "**Kotak kata 3:** dispute · onset · confined · confusion · suppress · conclude · disputed · conclusion"},
+    {"type": "passage", "title": "Teks 4 · The shipping container", "words": 75, "paragraphs": [
+     "Before the 1950s, cargo was loaded onto ships by hand, piece by piece, and a vessel could spend as long in port as at sea. The (1) …… of the standard steel container changed everything. Goods now travel from factory to shop without being unpacked, and cranes can (2) …… a ship in a fraction of the time. Transport costs fell so (3) …… that distance stopped being a serious (4) …… to trade, and manufacturing became truly (5) ……."
+    ]},
+    {"type": "p", "text": "**Kotak kata 4:** sharp · barrier · introduce · global · unload · sharply · globe · introduction"}
+   ]
+  },
+  {
+   "title": "Menilai diri dan latihan mandiri",
+   "blocks": [
+    {"type": "p", "text": "Sesudah mencocokkan dengan kunci, jangan berhenti di jumlah benar. Untuk tiap celah yang salah, tentukan di saringan mana kamu jatuh — karena obatnya berbeda."},
+    {"type": "tabel", "head": ["Kode", "Jenis salah", "Tandanya", "Obatnya"], "rows": [
+     ["K", "Kelas kata", "Kamu menaruh adjective di tempat adverb, atau verb di tempat noun (*the lose of, fell so sharp*).", "Latih tabel posisi di atas: ambil artikel berbahasa Inggris, tutup satu kata per kalimat, sebutkan kelas katanya dari kata tetangganya."],
+     ["B", "Bentuk", "Kelas kata benar, tapi *-s* atau jumlahnya salah (*it enrich, the advantages is*).", "Biasakan melirik subjek dan verb sebelum menyeret. Tiga detik."],
+     ["M", "Makna", "Kelas kata dan bentuk benar, tapi kalimatnya berbalik arah atau tak berarti apa-apa.", "Baca sampai titik. Cari *yet, although, therefore, even*."],
+     ["T", "Tertukar", "Dua celah saling bertukar kata, atau satu salah menyeret celah lain.", "Kamu mengisi celah sulit terlalu dini. Isi yang pasti dulu."]
+    ]},
+    {"type": "list", "items": [
+     "Apakah aku memutuskan kelas kata **sebelum** melihat kotak, atau mencoba kata satu per satu?",
+     "Untuk tiap kata yang tersisa di kotak, bisakah aku menyebut kenapa ia pengecoh?",
+     "Apakah empat teks selesai dalam 6 menit? Kalau tidak, di celah mana aku berlama-lama — dan apakah celah itu seharusnya kulewati dulu?",
+     "Target 65+: paling sedikit **16 dari 20** celah benar, tanpa satu pun salah berkode K."
+    ]},
+    {"type": "kotak", "title": "Latihan mandiri: buat kotak katamu sendiri", "items": [
+     "Ambil satu paragraf 60–80 kata dari artikel sains populer atau buku teks berbahasa Inggris. Hapus lima kata isi — usahakan campuran noun, verb, adjective, dan adverb — dan tulis kelimanya di kertas terpisah. Tambahkan tiga pengecoh buatanmu: satu kembaran seakar (*growth* untuk *grow*), satu bentuk lain (*grows*), satu kata berkelas sama tapi maknanya lain. Kerjakan esok harinya.",
+     "Membuat pengecoh adalah latihan yang lebih kuat daripada mengerjakan soal: untuk menulis pengecoh yang bagus, kamu harus tahu persis kenapa ia salah. Sesudah sepuluh paragraf, kamu akan mulai menebak pengecoh di kotak sebelum membacanya.",
+     "Tiap kali bertemu kata akademik baru, catat **keluarganya**, bukan katanya saja: noun, verb, adjective, adverb dalam satu baris, seperti tabel keluarga kata di unit ini.",
+     "Untuk berlatih dalam format layar aslinya, dengan kotak kata yang benar-benar diseret, pakai tes latihan resmi berskor dari Pearson. Di kelas Private PTE Linguo, pengajar bisa membantu memetakan kode salahmu dan memberi teks tambahan untuk jenis salah yang paling sering."
+    ]}
+   ]
+  }
+ ],
+ "exercises": [
+  {
+   "prompt": "Text 1 (Living beside a volcano). In the text below some words are missing. Choose the word from the box that fits each blank. Each word can be used only once. — Artinya: Teks 1. Di teks berikut ada beberapa kata yang hilang. Pilih kata dari kotak yang cocok untuk tiap celah. Tiap kata hanya boleh dipakai satu kali.",
+   "tipe": "isian",
+   "pilihan": ["production", "attract", "enriches", "advantages", "destroy", "attraction", "productive", "enrichment"],
+   "items": [
+    "Despite the obvious danger, people have always settled near volcanoes. The main ____ is the soil.",
+    "Volcanic ash is rich in minerals, and as it breaks down it ____ the land with nutrients that crops need.",
+    "Farms on these slopes are therefore highly ____, often yielding several harvests a year.",
+    "An eruption may ____ fields overnight, yet farmers usually return, because the long-term (…) outweigh the risk.",
+    "An eruption may (…) fields overnight, yet farmers usually return, because the long-term ____ outweigh the risk."
+   ]
+  },
+  {
+   "prompt": "Text 2 (Microplastics). In the text below some words are missing. Choose the word from the box that fits each blank. Each word can be used only once. — Artinya: Teks 2. Di teks berikut ada beberapa kata yang hilang. Pilih kata dari kotak yang cocok untuk tiap celah. Tiap kata hanya boleh dipakai satu kali.",
+   "tipe": "isian",
+   "pilihan": ["present", "uncertain", "gradual", "threaten", "tiny", "harmful", "presence", "gradually"],
+   "items": [
+    "Some are manufactured at that size, but most form when larger items ____ break apart in sunlight and waves.",
+    "Because they are so ____, the particles slip through many filters and are swallowed by fish and seabirds.",
+    "Their ____ has now been confirmed in drinking water and even in human blood.",
+    "Whether they ____ our health remains (…), and research is continuing.",
+    "Whether they (…) our health remains ____, and research is continuing."
+   ]
+  },
+  {
+   "prompt": "Text 3 (The bilingual brain). In the text below some words are missing. Choose the word from the box that fits each blank. Each word can be used only once. — Artinya: Teks 3. Di teks berikut ada beberapa kata yang hilang. Pilih kata dari kotak yang cocok untuk tiap celah. Tiap kata hanya boleh dipakai satu kali.",
+   "tipe": "isian",
+   "pilihan": ["dispute", "onset", "confined", "confusion", "suppress", "conclude", "disputed", "conclusion"],
+   "items": [
+    "Speaking two languages was once thought to confuse young children. Later studies reached the opposite ____.",
+    "Bilingual children are often better at ignoring distractions, perhaps because they must constantly ____ one language while using the other.",
+    "Nor is the benefit ____ to childhood.",
+    "In older adults, lifelong bilingualism has been linked to a later ____ of dementia symptoms, although the evidence is still (…).",
+    "In older adults, lifelong bilingualism has been linked to a later (…) of dementia symptoms, although the evidence is still ____."
+   ]
+  },
+  {
+   "prompt": "Text 4 (The shipping container). In the text below some words are missing. Choose the word from the box that fits each blank. Each word can be used only once. — Artinya: Teks 4. Di teks berikut ada beberapa kata yang hilang. Pilih kata dari kotak yang cocok untuk tiap celah. Tiap kata hanya boleh dipakai satu kali.",
+   "tipe": "isian",
+   "pilihan": ["sharp", "barrier", "introduce", "global", "unload", "sharply", "globe", "introduction"],
+   "items": [
+    "The ____ of the standard steel container changed everything.",
+    "Goods now travel from factory to shop without being unpacked, and cranes can ____ a ship in a fraction of the time.",
+    "Transport costs fell so ____ that distance stopped being a serious (…) to trade, and manufacturing became truly (…).",
+    "Transport costs fell so (…) that distance stopped being a serious ____ to trade, and manufacturing became truly (…).",
+    "Transport costs fell so (…) that distance stopped being a serious (…) to trade, and manufacturing became truly ____."
+   ]
+  }
+ ],
+ "answers": [
+  "attraction — enriches — productive — destroy — advantages",
+  "gradually — tiny — presence — threaten — uncertain",
+  "conclusion — suppress — confined — onset — disputed",
+  "introduction — unload — sharply — barrier — global"
+ ],
+ "pembahasan": [
+  {
+   "title": "Pembahasan",
+   "blocks": [
+    {"type": "p", "text": "Di tiap baris, urutannya sama dengan cara kerjamu: kelas kata dan bentuk dulu, makna kalau masih perlu. Kata yang tersisa di kotak dijelaskan di bawah tiap tabel."},
+    {"type": "sub", "text": "Latihan 1 · Living beside a volcano"},
+    {"type": "tabel", "head": ["No", "Jawaban", "Alasan & pengecoh"], "rows": [
+     ["1", "attraction", "*The main …… is*: noun tunggal. *advantages* gugur karena jamak (verb-nya *is*); *attract* gugur karena verb. Tersisa tiga noun tunggal, dan makna yang memilih: kalimat sebelumnya bertanya kenapa orang tetap tinggal di dekat gunung api, jadi yang dicari adalah daya tariknya. *The main production is the soil* dan *The main enrichment is the soil* benar susunannya tetapi tidak berarti apa-apa."],
+     ["2", "enriches", "*it …… the land with nutrients*: subjek tunggal *it* + objek, jadi verb ber-*s*. Hanya *enriches* yang bentuknya begitu. *attract* dan *destroy* tanpa *-s* tidak cocok dengan *it*; *enrichment* noun. Polanya pun khas: *enrich something with something*."],
+     ["3", "productive", "*are therefore highly ……,*: sesudah adverb *highly* dan sebelum koma, yang muat hanya adjective, dan *productive* satu-satunya adjective di kotak. *production* adalah kembarannya yang noun — pengecoh seakar. Frasa sesudah koma, *yielding several harvests a year*, menegaskan maknanya."],
+     ["4", "destroy", "*may …… fields*: sesudah modal, verb bentuk dasar yang punya objek. Calonnya *destroy* dan *attract*; *enriches* gugur karena ber-*s*. Makna memutuskan: *yet farmers usually return* menuntut hal buruk di depan *yet*, dan *attract fields* tidak berarti apa-apa."],
+     ["5", "advantages", "*the long-term …… outweigh the risk*: verb-nya *outweigh* tanpa *-s*, jadi subjeknya noun JAMAK. *advantages* satu-satunya noun jamak di kotak. *production, attraction, enrichment* semuanya tunggal dan akan menuntut *outweighs*. Celah ini selesai dengan melihat satu huruf."]
+    ]},
+    {"type": "p", "text": "Tersisa di kotak 1: *production* (noun, kembaran *productive*), *attract* (verb, kembaran *attraction*), *enrichment* (noun, kembaran *enriches*). Ketiga pengecohnya saudara seakar dari tiga jawaban."},
+    {"type": "sub", "text": "Latihan 2 · Microplastics"},
+    {"type": "tabel", "head": ["No", "Jawaban", "Alasan & pengecoh"], "rows": [
+     ["1", "gradually", "*larger items …… break apart*: celah di antara subjek dan verb-nya adalah tempat adverb. *gradually* satu-satunya adverb di kotak. *gradual*, kembarannya, adjective: bisa *a gradual break-up*, tidak bisa *items gradual break*."],
+     ["2", "tiny", "*they are so ……,*: adjective, dan di kotak ada lima (*tiny, uncertain, gradual, harmful, present*). Kelas kata tidak cukup; baca sisa kalimatnya. Partikel lolos dari saringan dan tertelan ikan KARENA apa? Karena ukurannya — kalimat pertama sudah menyebut *smaller than five millimetres*. *harmful* cocok dengan topik, tapi bahaya bukan sebab partikel lolos saringan, dan kalimat terakhir justru bilang bahayanya belum pasti."],
+     ["3", "presence", "*Their …… has now been confirmed in*: noun tunggal sesudah *Their*. *presence* (keberadaan) cocok dengan *in drinking water … in human blood*. *present* adalah kembaran mirip ejaan: sebagai noun artinya \"masa kini\" atau \"hadiah\", sebagai adjective tak bisa berdiri sesudah *Their*. *threaten* verb."],
+     ["4", "threaten", "*Whether they …… our health*: subjek jamak *they* + objek, jadi verb bentuk dasar. Calonnya *threaten* dan *present* (yang juga bisa verb: menyajikan). *present our health* tidak berarti apa-apa; *threaten our health* cocok dengan arah teks."],
+     ["5", "uncertain", "*remains ……,*: adjective sesudah *remains*. Subjeknya seluruh klausa *Whether they threaten our health* — sebuah pertanyaan. Pertanyaan hanya bisa *remain uncertain*; ia tidak bisa *tiny, gradual,* atau *harmful*. Kata *Whether* dan *research is continuing* sama-sama menunjuk ke ketidakpastian."]
+    ]},
+    {"type": "p", "text": "Tersisa di kotak 2: *present* (mirip *presence*), *gradual* (kembaran *gradually*), *harmful* (adjective yang cocok topik tetapi tidak cocok di celah mana pun). *harmful* adalah jenis pengecoh yang paling menggoda: kata yang memang kamu harapkan muncul di teks tentang polusi."},
+    {"type": "sub", "text": "Latihan 3 · The bilingual brain"},
+    {"type": "tabel", "head": ["No", "Jawaban", "Alasan & pengecoh"], "rows": [
+     ["1", "conclusion", "*reached the opposite ……*: noun, dan kolokasinya *reach a conclusion*. Yang dilawan adalah anggapan lama di kalimat pertama. *confusion* tinggal selisih beberapa huruf dan didukung kata *confuse* di kalimat pertama — pengecoh mirip ejaan sekaligus pengecoh \"kata dari teks\". *reach a confusion* dan *reach a dispute* bukan pasangan kata. *conclude* verb."],
+     ["2", "suppress", "*must constantly …… one language*: sesudah modal, verb bentuk dasar yang punya objek. Tiga calon: *suppress, dispute, conclude*. Makna: sambil memakai satu bahasa, bahasa yang lain harus DITEKAN — dan latihan menekan itulah yang membuat mereka pandai mengabaikan gangguan. *dispute one language* (membantah) dan *conclude one language* (mengakhiri) tidak masuk akal."],
+     ["3", "confined", "*Nor is the benefit …… to childhood*: sesudah *is*, bentuk *-ed* yang berjodoh dengan *to*. *confined to* = terbatas pada. *disputed* juga berbentuk *-ed*, tetapi tidak pernah diikuti *to* seperti ini. Preposisi sesudah celah yang memutuskan."],
+     ["4", "onset", "*a later …… of dementia symptoms*: noun. *onset* = awal munculnya (penyakit, gejala); *a later onset* berarti gejalanya muncul lebih lambat — itulah manfaat yang dimaksud. *conclusion of symptoms* berarti gejalanya berakhir, yang tidak terjadi pada demensia; *confusion* dan *dispute* tidak membentuk makna dengan *later … of symptoms*."],
+     ["5", "disputed", "*the evidence is still ……*: adjective atau past participle. *disputed* = masih diperdebatkan, cocok dengan *although*. *confined* butuh *to* + sesuatu sesudahnya. *dispute* adalah kembaran seakar: noun atau verb bentuk dasar, tidak bisa berdiri sesudah *is still*."]
+    ]},
+    {"type": "p", "text": "Tersisa di kotak 3: *dispute, confusion, conclude*. Di teks ini kelas kata lebih sering menyisakan dua atau tiga calon, jadi makna bekerja lebih keras — tetapi tetap sesudah kelas kata memangkas kotaknya."},
+    {"type": "sub", "text": "Latihan 4 · The shipping container"},
+    {"type": "tabel", "head": ["No", "Jawaban", "Alasan & pengecoh"], "rows": [
+     ["1", "introduction", "*The …… of the standard steel container changed*: noun tunggal di antara *The* dan *of*. Calon: *introduction, barrier, globe*. Yang mengubah segalanya adalah DIPERKENALKANNYA peti kemas. *introduce* adalah kembaran verb-nya: *the introduce of* salah kelas kata."],
+     ["2", "unload", "*cranes can …… a ship*: sesudah *can*, verb bentuk dasar. Calon: *unload* dan *introduce*. Derek membongkar muatan kapal; *introduce a ship* tidak berarti apa-apa di sini. Kalimat pertama (*cargo was loaded onto ships by hand*) memberi lawan katanya."],
+     ["3", "sharply", "*fell so …… that*: kata yang menerangkan verb *fell* harus adverb, dan *sharply* satu-satunya adverb di kotak. *fell so sharp* adalah kesalahan khas kita, karena dalam bahasa Indonesia \"turun tajam\" tidak butuh akhiran. Kolokasinya juga jadi: *fall · rise sharply*."],
+     ["4", "barrier", "*a serious …… to trade*: noun tunggal sesudah adjective, diikuti *to*. *a barrier to trade* = penghalang perdagangan; jarak berhenti menjadi penghalang karena ongkosnya turun. *introduction to trade* memang susunan yang ada, tetapi *distance stopped being a serious introduction* tidak berarti apa-apa. *globe* tidak berjodoh dengan *to*."],
+     ["5", "global", "*became truly ……*: adjective sesudah *became* dan adverb *truly*. Calon: *global* dan *sharp*. Kalau jarak tak lagi menghalangi, produksi menyebar ke seluruh dunia: *global*. *globe* adalah kembaran noun-nya; *sharply* adverb."]
+    ]},
+    {"type": "p", "text": "Tersisa di kotak 4: *sharp, introduce, globe* — lagi-lagi tiga saudara seakar dari tiga jawaban."},
+    {"type": "kotak", "title": "Yang perlu dicatat", "items": [
+     "Dari 20 celah, kira-kira sepertiganya selesai **hanya dengan kelas kata dan bentuk**: satu-satunya adverb (*gradually, sharply*), satu-satunya adjective (*productive*), satu-satunya noun jamak (*advantages*), satu-satunya verb ber-*s* (*enriches*). Di celah lain, kelas kata memangkas kotak lebih dulu, baru makna memilih di antara sisanya. Urutannya jangan dibalik.",
+     "Makna hampir selalu diputuskan oleh **satu kata penanda** di kalimat yang sama: *yet* (Teks 1), *Because* dan *Whether* (Teks 2), *although* (Teks 3), *even* (contoh gletser). Kalau dua calon sama-sama lolos tata bahasa, cari kata penanda itu sebelum memilih.",
+     "Sepuluh dari dua belas kata sisa adalah **saudara seakar** jawaban. Begitu kamu melihat pasangan seperti *loss · lose* atau *global · globe* di kotak, tanyakan satu hal saja: celahnya menuntut kelas kata yang mana? Pengecoh jenis ini gugur tanpa perlu memahami teksnya — asal kamu melihat celahnya dulu, bukan kotaknya."
+    ]}
+   ]
+  }
+ ]
+}

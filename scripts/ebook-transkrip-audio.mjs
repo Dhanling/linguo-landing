@@ -112,6 +112,23 @@ const SUARA_PENUTUR = {
   guide: "nova",            // pemandu tur kampus — namanya Renee, perempuan
   professor: "echo",        // dosen laki-laki (fable terlalu British untuk TOEFL)
 };
+/* [ebook-transkrip-audio-v3] PTE Academic Prep — daftar penutur dikunci di
+   content/ebook/pte-prep/SKEMA.md. Berbeda dari TOEFL: "Lecturer" laki-laki dan
+   "Professor" perempuan (dua kuliah beruntun tak boleh terdengar orang yang
+   sama), jadi petanya dipisah per modul dan dicek lebih dulu. */
+const SUARA_PTE = {
+  speaker: "sage",          // kalimat lepas: Repeat Sentence, Write from Dictation, Short Question
+  lecturer: "onyx",         // kuliah, laki-laki
+  professor: "coral",       // kuliah, perempuan
+  anna: "nova",             // diskusi kelompok tiga orang
+  ben: "ash",
+  chloe: "shimmer",
+  man: "echo",
+  woman: "nova",
+  model: "fable",           // model jawaban lisan yang ditiru siswa
+  narrator: "alloy",
+};
+const SUARA_MODUL = /pte/i.test(slug) ? SUARA_PTE : {};
 /** Suara per penutur KHUSUS satu naskah — kunci `judul blok|penutur`, huruf kecil.
  *  Perlu karena label yang sama dipakai orang berbeda: "Student" di Conversation 1
  *  unit-03 laki-laki ("He missed…"), di Conversation 2 perempuan ("Why does the
@@ -143,7 +160,16 @@ const GAYA_TOEFL = {
   monolog: "Read in a natural General American English accent as a TOEFL ITP Listening talk or lecture. Natural pace of a real exam recording, do not slow down, no extra pauses. Informative, fluent. Do not dramatise.",
   narator: "Read in a natural General American English accent as the neutral narrator of a TOEFL test recording. Clear, natural pace of a real exam recording, do not slow down, no extra pauses.",
 };
-const GAYA = /toefl/i.test(slug) ? GAYA_TOEFL : GAYA_IELTS;
+/** [ebook-transkrip-audio-v3] PTE Academic: rekaman tesnya memakai beragam aksen
+ *  (Inggris, Australia, Amerika) dengan tempo bicara wajar — tidak diperlambat.
+ *  Kalimat lepas (Repeat Sentence, Write from Dictation) dibaca SEKALI dengan
+ *  jelas, tanpa jeda dramatis di tengah kalimat. */
+const GAYA_PTE = {
+  dialog: "Read as a real university student or staff member speaking in a recorded PTE Academic listening item. Natural conversational pace, clear, neutral international English accent. Do not slow down. Do not dramatise.",
+  monolog: "Read as a speaker in a recorded PTE Academic test item (an academic lecture excerpt or a single test sentence). Clear, neutral international English accent, natural pace of a real exam recording, do not slow down, no extra pauses inside sentences. Do not dramatise.",
+  narator: "Read as the neutral announcer of an English test recording. Clear and even, natural pace. Do not dramatise.",
+};
+const GAYA = /toefl/i.test(slug) ? GAYA_TOEFL : /pte/i.test(slug) ? GAYA_PTE : GAYA_IELTS;
 
 /* ── pembantu ──────────────────────────────────────────────────────────────── */
 
@@ -306,7 +332,7 @@ for (const f of berkasUnit) {
   const suara = new Map();
   const pemilik = [...new Map(turn.map((t) => [t.kunci, t])).values()];
   for (const t of pemilik) {
-    const pilih = SUARA_BLOK[`${t.judul}|${t.penutur.toLowerCase()}`] ?? SUARA_PENUTUR[t.penutur.toLowerCase()];
+    const pilih = SUARA_BLOK[`${t.judul}|${t.penutur.toLowerCase()}`] ?? SUARA_MODUL[t.penutur.toLowerCase()] ?? SUARA_PENUTUR[t.penutur.toLowerCase()];
     if (pilih) suara.set(t.kunci, pilih);
   }
   for (const t of pemilik) {

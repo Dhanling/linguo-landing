@@ -1,0 +1,277 @@
+{
+ "jenis": "testprep",
+ "skill": "READING · REORDER PARAGRAPH",
+ "title": "Reorder Paragraph",
+ "title_target": "Reading — restoring the order of a jumbled paragraph",
+ "goal": "Menyusun 4–5 kotak kalimat acak menjadi paragraf utuh dalam ± 2 menit dengan membaca petunjuk pengaitnya — bukan dengan perasaan — dan tetap mengamankan nilai per pasangan saat urutan lengkapnya belum ketemu.",
+ "bekal": [
+  "menemukan kalimat pembuka dengan mencoret kotak yang pasti bukan pembuka",
+  "menyebut kata pengait yang memaksa tiap sambungan: pronoun, a → the, nama lengkap → nama belakang, penghubung",
+  "mengunci pasangan yang pasti dulu, lalu merangkainya, supaya nilai per pasangan tetap aman"
+ ],
+ "sections": [
+  {
+   "title": "Bentuk soal dan cara mesin menilainya",
+   "blocks": [
+    {"type": "p", "text": "Reorder Paragraph adalah tipe ketiga di Part 2 · Reading, sesudah Multiple Choice, Multiple Answers dan sebelum Fill in the Blanks (Drag and Drop). Layarnya terbelah dua. Di panel kiri ada **4–5 kotak teks** dalam urutan acak; panel kanan kosong. Kamu menyeret kotak satu per satu ke kanan sampai terbentuk paragraf yang utuh. Kalau semua kotak disambung, panjang teksnya paling banyak **110 kata** — pendek, tapi padat. Di tiap tes ada beberapa soal tipe ini."},
+    {"type": "kotak", "title": "Instruksi di layar", "items": [
+     "*The text boxes in the left panel have been placed in a random order. Restore the original order by dragging the text boxes from the left panel to the right panel.*",
+     "Artinya: kotak teks di panel kiri diletakkan dalam urutan acak. Kembalikan ke urutan aslinya dengan menyeret kotak dari panel kiri ke panel kanan."
+    ]},
+    {"type": "p", "text": "Yang membuat tipe ini berbeda dari soal benar-salah biasa adalah cara menghitung nilainya. Mesin **tidak** memeriksa apakah kotak pertama ada di posisi pertama. Mesin memeriksa **pasangan berurutan**: untuk setiap dua kotak yang kamu taruh berdampingan dan memang berdampingan di teks aslinya, kamu dapat satu poin. Paragraf 5 kotak punya 4 pasangan, paragraf 4 kotak punya 3 pasangan. Lihat apa akibatnya kalau urutan aslinya 1–2–3–4–5:"},
+    {"type": "tabel", "head": ["Urutan jawabanmu", "Pasangan yang benar", "Nilai"], "rows": [
+     ["1–2–3–4–5", "1→2, 2→3, 3→4, 4→5", "4 dari 4"],
+     ["2–3–4–5–1", "2→3, 3→4, 4→5", "3 dari 4"],
+     ["1–2–3–5–4", "1→2, 2→3", "2 dari 4"],
+     ["1–3–2–4–5", "4→5", "1 dari 4"],
+     ["5–4–3–2–1", "tidak ada", "0 dari 4"]
+    ]},
+    {"type": "p", "text": "Bandingkan baris kedua dan keempat. Di baris kedua, kalimat pembukanya malah nyasar ke ujung — tetapi tiga sambungan lain utuh, jadi nilainya 3. Di baris keempat, pembuka dan penutupnya sudah di tempat yang benar, hanya dua kalimat tengah yang tertukar — dan nilainya tinggal 1, karena satu pertukaran di tengah memutus tiga sambungan sekaligus. Pelajarannya: **yang dihitung mesin adalah sambungan, bukan posisi.** Maka cara kerjamu juga harus berangkat dari sambungan."},
+    {"type": "list", "items": [
+     "**Urutan yang benar sebagian tetap bernilai.** Jangan pernah menekan Next dengan panel kanan kosong atau diisi asal. Dua kotak yang kamu yakin bergandengan sudah satu poin.",
+     "**Waktunya menumpang timer Part 2** (23–30 menit untuk seluruh Reading). Patokan latihan: **± 2 menit per soal**. Lebih dari itu, kamu sedang meminjam waktu soal berikutnya.",
+     "**Tidak ada tombol kembali.** Sesudah Next, susunanmu terkunci. Baca ulang dari atas ke bawah sekali sebelum pindah."
+    ]}
+   ]
+  },
+  {
+   "title": "Langkah 1: cari kalimat pembuka dengan mencoret",
+   "blocks": [
+    {"type": "p", "text": "Kalimat pembuka adalah satu-satunya kalimat yang tidak punya \"masa lalu\". Ia harus bisa dibaca orang yang belum tahu apa-apa. Empat kotak lainnya selalu menggandeng sesuatu yang sudah disebut. Karena itu, pembuka paling cepat ditemukan dengan **mencoret** kotak yang pasti bukan pembuka, bukan dengan memilih yang terasa enak."},
+    {"type": "kotak", "title": "Tiga uji kalimat pembuka", "items": [
+     "**Tidak menunjuk ke belakang.** Tidak ada *he, she, it, they, them, his, their* yang orangnya atau bendanya belum disebut, dan tidak ada *this, these, that, such* + kata benda (*this finding, these materials, such practices*).",
+     "**Tidak dibuka penghubung.** *However, therefore, moreover, for example, as a result, in addition, also, instead* selalu menghubungkan dengan kalimat sebelumnya. Kalimat yang memuatnya otomatis bukan pembuka.",
+     "**Memperkenalkan, bukan melanjutkan.** Pembuka menyebut topik dengan nama atau istilah **lengkap** — nama depan dan belakang, istilah berikut singkatannya, sering sekalian definisinya — dan memakai *a/an* untuk benda yang baru muncul."
+    ]},
+    {"type": "p", "text": "Coret setiap kotak yang gagal di salah satu uji. Hampir selalu tinggal satu. Kalau tinggal dua, pilih yang **lebih umum** dan yang memuat nama lengkap; kalimat yang lebih khusus hampir pasti datang belakangan. Coba pada lima kalimat lepas berikut."},
+    {"type": "tabel", "head": ["Kalimat", "Bisa jadi pembuka?", "Alasannya"], "rows": [
+     ["However, the results were disappointing.", "Tidak", "Dibuka *However*; *the results* juga menunjuk percobaan yang sudah disebut."],
+     ["These dams also change the temperature of the river.", "Tidak", "*These dams* menunjuk ke belakang, dan *also* berarti sudah ada satu akibat lain sebelumnya."],
+     ["Koch later repeated the experiment on mice.", "Tidak", "Nama belakang saja, *later*, dan *the experiment*: tiga tanda bahwa orang dan percobaannya sudah diperkenalkan."],
+     ["The Sahara is the largest hot desert in the world.", "Ya", "*The* di sini bagian dari nama diri, bukan penunjuk ke kalimat lain."],
+     ["Although it weighs only a few grams, the ruby-throated hummingbird can fly non-stop across the Gulf of Mexico.", "Ya", "*it* menunjuk ke DEPAN, ke *the ruby-throated hummingbird* di kalimat yang sama. Kalimatnya tetap berdiri sendiri."]
+    ]},
+    {"type": "p", "text": "Dua baris terakhir adalah jebakan untuk yang menghafal aturan tanpa membaca. *The* dan *it* baru menjadi tanda \"bukan pembuka\" kalau rujukannya **tidak ada di dalam kalimat itu sendiri**. Satu hal lagi: urutan kotak di panel kiri benar-benar acak. Kotak paling atas bisa saja pembukanya, bisa juga penutupnya — letak di layar bukan petunjuk apa pun."}
+   ]
+  },
+  {
+   "title": "Langkah 2–4: pengait, pasangan, rangkaian",
+   "blocks": [
+    {"type": "p", "text": "Setiap kalimat selain pembuka memegang \"tangan\" kalimat sebelumnya lewat satu atau dua kata. Kata-kata itulah **petunjuk pengait**. Tugasmu bukan memahami isi paragraf sedalam-dalamnya, melainkan menemukan tangan siapa memegang tangan siapa."},
+    {"type": "tabel", "head": ["Pengait", "Cara membacanya", "Contoh pasangan"], "rows": [
+     ["Pronoun: *he, she, it, they, them*", "Cari kotak yang menyebut orang atau bendanya. Jumlah harus cocok: *they* butuh kata benda jamak.", "*Honeybees forage over long distances.* → *They can fly three kilometres from the hive.*"],
+     ["*this, these, such* + kata benda", "Kata bendanya merangkum isi kalimat sebelumnya. Tanyakan: *finding* yang mana? *practices* yang mana?", "*Yields doubled within five years.* → *This increase surprised even the researchers.*"],
+     ["Artikel *a* → *the*", "Benda yang baru muncul memakai *a/an*; begitu disebut lagi, ia menjadi *the*.", "*Engineers built a small dam across the stream.* → *The dam raised the water level by two metres.*"],
+     ["Nama lengkap → nama belakang, istilah → singkatan", "Bentuk lengkap selalu lebih dulu.", "*the chemist Marie Curie* → *Curie*; *the World Health Organization (WHO)* → *the WHO*"],
+     ["Penghubung", "*However* = kalimat sebelumnya berlawanan arah. *Therefore, as a result* = kalimat sebelumnya penyebabnya. *Moreover, in addition, also* = sudah ada satu butir yang searah. *For example* = sebelumnya ada klaim umum.", "*The drug works well in adults.* → *However, it has never been tested on children.*"],
+     ["Urutan waktu", "Tahun, *at the time, later, a decade afterwards, today, now*. Susun dari yang paling lama.", "*In 1928 …* → *Ten years later …* → *Today …*"],
+     ["Umum → khusus, klaim → contoh, metode → hasil", "Pernyataan luas dulu, rinciannya menyusul; cara meneliti dulu, temuannya menyusul.", "*Noise harms concentration.* → *In one study, typists made twice as many errors in a noisy room.*"]
+    ]},
+    {"type": "sub", "text": "Bangun pasangan dulu, baru rangkaian"},
+    {"type": "p", "text": "Kesalahan paling umum: menyusun dari atas — \"pembukanya ini, lalu… kayaknya ini\" — sampai kotak terakhir tidak punya tempat. Lakukan sebaliknya. Cari dua kotak yang **pasti** bergandengan karena satu kata pengait, kunci sebagai blok, lalu cari blok berikutnya. Paragraf 5 kotak biasanya pecah menjadi pembuka + dua blok; tinggal menyambung ujung-ujungnya. Cara ini cocok dengan cara mesin menilai: setiap blok yang benar adalah poin yang sudah di tangan, apa pun yang terjadi dengan sisanya."},
+    {"type": "sub", "text": "Kalimat penutup"},
+    {"type": "p", "text": "Penutup biasanya salah satu dari tiga hal: **akibat atau hasil** (*as a result, therefore*), **keadaan sekarang** sesudah cerita masa lalu (*today, now, is still regarded as*), atau **simpulan dan implikasi**. Cirinya: ia tidak membuka benda atau istilah baru yang masih perlu dijelaskan. Kalau sebuah kotak memperkenalkan sesuatu dengan *a/an* dan kotak lain menyebutnya dengan *the*, kotak pertama mustahil menjadi penutup."},
+    {"type": "kotak", "title": "Urutan kerja dua menit", "items": [
+     "**0.00–0.20** Baca semua kotak sekilas. Tangkap topiknya, belum menyusun.",
+     "**0.20–0.40** Coret yang pasti bukan pembuka. Seret pembukanya ke kanan.",
+     "**0.40–1.20** Garis bawahi (dalam kepala) kata pengait tiap kotak. Kunci pasangan yang pasti.",
+     "**1.20–1.45** Sambung blok-bloknya, seret semuanya ke kanan.",
+     "**1.45–2.00** Baca panel kanan dari atas ke bawah. Di tiap sambungan, sebut kata pengaitnya. Ada sambungan yang tak bisa kamu sebut pengaitnya? Itu yang perlu dicek sekali lagi. Lalu Next."
+    ]}
+   ]
+  },
+  {
+   "title": "Contoh dibedah",
+   "blocks": [
+    {"type": "p", "text": "Lima kotak berikut dicetak dalam urutan acak, persis seperti di panel kiri. Sebelum membaca bedahannya, coba susun sendiri dalam dua menit."},
+    {"type": "passage", "title": "Contoh · Coral reefs", "words": 104, "paragraphs": [
+     {"label": "A", "text": "These algae supply the coral with most of its food and also give it its colour."},
+     {"label": "B", "text": "This process, known as bleaching, is not immediately fatal, but a reef that stays too warm for many weeks will eventually starve."},
+     {"label": "C", "text": "Coral reefs cover less than one per cent of the ocean floor, yet they are home to roughly a quarter of all marine species."},
+     {"label": "D", "text": "When the water becomes too warm, however, the coral expels them and loses both: it turns white and begins to go hungry."},
+     {"label": "E", "text": "This extraordinary richness depends on a partnership between the coral animal and the microscopic algae that live inside its tissues."}
+    ]},
+    {"type": "tabel", "head": ["Langkah", "Yang dilihat", "Keputusan"], "rows": [
+     ["1 · Coret yang bukan pembuka", "A dibuka *These algae*. B dibuka *This process*. D memuat *however*, *them*, dan *both*. E dibuka *This extraordinary richness*.", "Empat kotak menunjuk ke belakang. Hanya **C** yang berdiri sendiri dan memperkenalkan topiknya, *Coral reefs*. C = pembuka."],
+     ["2 · Pasangan C→E", "*This extraordinary richness* — kekayaan yang mana? *a quarter of all marine species* di C.", "E menempel pada C."],
+     ["3 · Pasangan E→A", "*These algae* butuh alga yang sudah diperkenalkan: *the microscopic algae that live inside its tissues* di E.", "A menempel pada E."],
+     ["4 · Pasangan A→D", "*loses both* — dua hal apa? *its food* dan *its colour* di A. *them* = alga. *however* = arah berbalik: dari memberi menjadi kehilangan. Bagian akhir D pun mencerminkan A: *turns white* (warna), *go hungry* (makanan).", "D menempel pada A."],
+     ["5 · Pasangan D→B", "*This process* = mengusir alga lalu memutih, di D. B memberi nama (*bleaching*) dan akibat akhirnya.", "B menempel pada D, sekaligus penutup."],
+     ["6 · Baca ulang", "C – E – A – D – B: fakta umum → penyebabnya → peran alga → apa yang terjadi saat air menghangat → akibat akhirnya.", "Tiap sambungan punya kata pengait yang bisa ditunjuk. Next."]
+    ]},
+    {"type": "p", "text": "Perhatikan dua hal. Pertama, tak satu pun keputusan di atas membutuhkan pengetahuan biologi; semuanya dibaca dari *this, these, them, both, however*. Kedua, kotak D adalah yang paling berbahaya: banyak yang menaruhnya tepat sesudah E, karena *them* juga cocok dengan *algae* di sana. Yang menggagalkannya satu kata, *both* — baru punya arti sesudah A menyebut dua hal. **Satu kotak sering punya dua pengait; yang paling sempit rujukannya itulah yang menentukan.**"}
+   ]
+  },
+  {
+   "title": "Bahan latihan: lima set",
+   "blocks": [
+    {"type": "p", "text": "Lima set berikut dipakai untuk Latihan 1–5: Set 1 untuk Latihan 1, dan seterusnya. Pasang timer **2 menit per set** (10 menit untuk semuanya). Tulis dulu urutanmu di kertas — misalnya *D–A–C–B* — baru isikan ke latihan. Huruf kotak hanya label; urutan cetaknya acak."},
+    {"type": "passage", "title": "Set 1 · Antibiotic resistance", "words": 86, "paragraphs": [
+     {"label": "A", "text": "The process is a natural one, but it has been greatly accelerated by the careless way in which these medicines are used."},
+     {"label": "B", "text": "As a result of such practices, infections that doctors once cured easily with a single course of tablets are becoming difficult, and sometimes impossible, to treat."},
+     {"label": "C", "text": "Antibiotic resistance occurs when bacteria evolve the ability to survive the drugs that were designed to kill them."},
+     {"label": "D", "text": "In many countries, for example, they are given routinely to healthy farm animals and sold to patients without a prescription."}
+    ]},
+    {"type": "passage", "title": "Set 2 · The Soho outbreak", "words": 91, "paragraphs": [
+     {"label": "A", "text": "In 1854, an outbreak of cholera killed more than 500 people in the London district of Soho in just ten days."},
+     {"label": "B", "text": "Snow marked each death on a street map and found that the victims were clustered around a single public pump."},
+     {"label": "C", "text": "The authorities removed the handle of the pump on his advice, and his map is now regarded as one of the founding documents of epidemiology."},
+     {"label": "D", "text": "At the time, most doctors believed that the disease was spread by foul air, but a local physician named John Snow suspected the water supply."}
+    ]},
+    {"type": "passage", "title": "Set 3 · Measuring an economy", "words": 83, "paragraphs": [
+     {"label": "A", "text": "Many economists therefore argue that it should be published alongside direct measures of health, education and environmental quality."},
+     {"label": "B", "text": "Governments have long treated a rise in this figure as evidence that their citizens are becoming better off."},
+     {"label": "C", "text": "This assumption is misleading, however, because GDP counts all spending as positive: cleaning up an oil spill adds to it just as building a school does."},
+     {"label": "D", "text": "Gross domestic product, or GDP, is the total value of the goods and services that a country produces in a year."}
+    ]},
+    {"type": "passage", "title": "Set 4 · The spacing effect", "words": 103, "paragraphs": [
+     {"label": "A", "text": "He found that when the repetitions were distributed over several days, far fewer were needed than when they were packed into a single sitting."},
+     {"label": "B", "text": "This finding, known as the spacing effect, was first reported by the German researcher Hermann Ebbinghaus in 1885."},
+     {"label": "C", "text": "Today's language-learning apps exploit this saving of effort by bringing each word back for review at gradually increasing intervals."},
+     {"label": "D", "text": "Ebbinghaus memorised lists of meaningless syllables and recorded how many repetitions he needed to relearn them later."},
+     {"label": "E", "text": "Psychologists have known for more than a century that information is remembered better when study sessions are spread out than when they are crammed together."}
+    ]},
+    {"type": "passage", "title": "Set 5 · How satellite navigation works", "words": 105, "paragraphs": [
+     {"label": "A", "text": "Because radio waves travel at a known speed, that delay reveals how far the receiver is from each satellite."},
+     {"label": "B", "text": "The Global Positioning System, or GPS, relies on about thirty satellites that orbit roughly 20,000 kilometres above the Earth."},
+     {"label": "C", "text": "A receiver on the ground, such as a mobile phone, picks up several of these signals and measures how long each one took to arrive."},
+     {"label": "D", "text": "With distances to at least four satellites, the device can then calculate its own position to within a few metres."},
+     {"label": "E", "text": "Each of these satellites carries an atomic clock and continuously broadcasts a signal stating its position and the exact time of transmission."}
+    ]}
+   ]
+  },
+  {
+   "title": "Menilai diri dan latihan mandiri",
+   "blocks": [
+    {"type": "p", "text": "Sesudah mencocokkan dengan kunci, jangan berhenti di \"benar\" atau \"salah\". Hitung nilaimu **seperti mesin menghitungnya**: tulis urutanmu, lalu tandai setiap dua huruf berdampingan yang juga berdampingan di kunci. Set 4 kotak bernilai maksimal 3, set 5 kotak maksimal 4, jadi kelima set di atas bernilai 17. Untuk target 65+, bidik **14 ke atas**, dan tidak ada set yang nilainya 0."},
+    {"type": "list", "items": [
+     "Apakah pembuka kutemukan dengan **mencoret**, atau karena \"terasa seperti pembuka\"?",
+     "Untuk tiap sambungan, bisakah aku menyebut **satu kata pengait** yang memaksanya?",
+     "Kalau salah: sambungan mana yang putus, dan pengait apa yang kulewatkan — pronoun, *the*, nama belakang, atau penghubung?",
+     "Apakah aku selesai dalam 2 menit? Kalau lebih, di langkah mana waktuku habis?"
+    ]},
+    {"type": "kotak", "title": "Latihan mandiri: buat soalmu sendiri", "items": [
+     "Ambil satu paragraf 4–5 kalimat dari artikel sains populer atau buku teks berbahasa Inggris. Salin tiap kalimat ke secarik kertas, kocok, simpan. Besoknya — sesudah kamu lupa urutan aslinya — susun kembali dalam dua menit, lalu cocokkan.",
+     "Sebelum mengocok, lingkari kata pengait di tiap kalimat. Dalam seminggu kamu akan melihat bahwa penulis akademik memakai alat yang itu-itu saja, dan matamu mulai menangkapnya sebelum kamu memahami isi kalimatnya. Itu persis kecepatan yang dibutuhkan di ruang tes.",
+     "Untuk latihan berskor dalam format layar aslinya, pakai tes latihan resmi berskor dari Pearson; di kelas Private PTE Linguo, pengajar bisa membedah bersama sambungan mana yang paling sering kamu lewatkan."
+    ]}
+   ]
+  }
+ ],
+ "exercises": [
+  {
+   "prompt": "The text boxes of Set 1 have been placed in a random order. Restore the original order by choosing the correct box for each position. — Artinya: kotak teks Set 1 diletakkan dalam urutan acak. Kembalikan ke urutan aslinya dengan memilih kotak yang benar untuk tiap posisi.",
+   "tipe": "isian",
+   "pilihan": ["A", "B", "C", "D"],
+   "items": [
+    "Set 1 · Posisi 1 (kalimat pembuka): ____",
+    "Set 1 · Posisi 2: ____",
+    "Set 1 · Posisi 3: ____",
+    "Set 1 · Posisi 4 (kalimat penutup): ____"
+   ]
+  },
+  {
+   "prompt": "The text boxes of Set 2 have been placed in a random order. Restore the original order by choosing the correct box for each position. — Artinya: kotak teks Set 2 diletakkan dalam urutan acak. Kembalikan ke urutan aslinya dengan memilih kotak yang benar untuk tiap posisi.",
+   "tipe": "isian",
+   "pilihan": ["A", "B", "C", "D"],
+   "items": [
+    "Set 2 · Posisi 1 (kalimat pembuka): ____",
+    "Set 2 · Posisi 2: ____",
+    "Set 2 · Posisi 3: ____",
+    "Set 2 · Posisi 4 (kalimat penutup): ____"
+   ]
+  },
+  {
+   "prompt": "The text boxes of Set 3 have been placed in a random order. Restore the original order by choosing the correct box for each position. — Artinya: kotak teks Set 3 diletakkan dalam urutan acak. Kembalikan ke urutan aslinya dengan memilih kotak yang benar untuk tiap posisi.",
+   "tipe": "isian",
+   "pilihan": ["A", "B", "C", "D"],
+   "items": [
+    "Set 3 · Posisi 1 (kalimat pembuka): ____",
+    "Set 3 · Posisi 2: ____",
+    "Set 3 · Posisi 3: ____",
+    "Set 3 · Posisi 4 (kalimat penutup): ____"
+   ]
+  },
+  {
+   "prompt": "The text boxes of Set 4 have been placed in a random order. Restore the original order by choosing the correct box for each position. — Artinya: kotak teks Set 4 diletakkan dalam urutan acak. Kembalikan ke urutan aslinya dengan memilih kotak yang benar untuk tiap posisi.",
+   "tipe": "isian",
+   "pilihan": ["A", "B", "C", "D", "E"],
+   "items": [
+    "Set 4 · Posisi 1 (kalimat pembuka): ____",
+    "Set 4 · Posisi 2: ____",
+    "Set 4 · Posisi 3: ____",
+    "Set 4 · Posisi 4: ____",
+    "Set 4 · Posisi 5 (kalimat penutup): ____"
+   ]
+  },
+  {
+   "prompt": "The text boxes of Set 5 have been placed in a random order. Restore the original order by choosing the correct box for each position. — Artinya: kotak teks Set 5 diletakkan dalam urutan acak. Kembalikan ke urutan aslinya dengan memilih kotak yang benar untuk tiap posisi.",
+   "tipe": "isian",
+   "pilihan": ["A", "B", "C", "D", "E"],
+   "items": [
+    "Set 5 · Posisi 1 (kalimat pembuka): ____",
+    "Set 5 · Posisi 2: ____",
+    "Set 5 · Posisi 3: ____",
+    "Set 5 · Posisi 4: ____",
+    "Set 5 · Posisi 5 (kalimat penutup): ____"
+   ]
+  }
+ ],
+ "answers": [
+  "C — A — D — B",
+  "A — D — B — C",
+  "D — B — C — A",
+  "E — B — D — A — C",
+  "B — E — C — A — D"
+ ],
+ "pembahasan": [
+  {
+   "title": "Pembahasan",
+   "blocks": [
+    {"type": "p", "text": "Nomor di kolom pertama = nomor latihan · nomor soal (2.3 berarti Latihan 2, posisi 3). Di tiap baris, kata yang dicetak miring adalah pengait yang memaksa sambungannya."},
+    {"type": "sub", "text": "Set 1 · urutan C – A – D – B"},
+    {"type": "tabel", "head": ["No", "Jawaban", "Alasan & pengecoh"], "rows": [
+     ["1.1", "C", "Satu-satunya kotak yang berdiri sendiri: memperkenalkan istilah *Antibiotic resistance* sekaligus definisinya. A dibuka *The process*, D memuat *for example* dan *they*, B dibuka *As a result of such practices* — tiga-tiganya menunjuk ke belakang."],
+     ["1.2", "A", "*The process* = proses yang baru didefinisikan di C (*bacteria evolve the ability to survive*); *these medicines* = *the drugs* di C. Pengecoh D: *they* memang bisa menunjuk *the drugs*, tetapi *for example* butuh klaim umum untuk dicontohkan, dan klaim itu — *the careless way in which these medicines are used* — baru ada di A."],
+     ["1.3", "D", "Klaim → contoh. *for example* mencontohkan *the careless way* di A, dan *they* = *these medicines*. D memuat dua kebiasaan: diberikan ke ternak sehat dan dijual tanpa resep."],
+     ["1.4", "B", "*such practices* (jamak) merangkum dua kebiasaan di D, dan *As a result* menandai akibat akhir: penutup. Pengecoh: B langsung sesudah A terasa mungkin, karena *such practices* mirip *careless way*. Tetapi D lalu kehilangan pegangan — sesudah B, *they* akan menunjuk *infections*, dan contoh datang sesudah akibatnya."]
+    ]},
+    {"type": "sub", "text": "Set 2 · urutan A – D – B – C"},
+    {"type": "tabel", "head": ["No", "Jawaban", "Alasan & pengecoh"], "rows": [
+     ["2.1", "A", "Dibuka keterangan waktu *In 1854* dan memperkenalkan *an outbreak of cholera* dengan artikel *an* — hal baru. D dibuka *At the time* dan menyebut *the disease*; B memakai nama belakang saja; C menyebut *the pump* dan *his advice*. Di set ini pembukanya kebetulan kotak A: letak kotak memang bukan petunjuk, ke arah mana pun."],
+     ["2.2", "D", "*At the time* = tahun 1854 di A; *the disease* = *cholera*. Di sinilah tokohnya diperkenalkan lengkap: *a local physician named John Snow*. Pengecoh B: *Snow marked each death* terasa cocok dengan *killed more than 500 people*, tetapi nama belakang tanpa perkenalan tidak pernah menjadi penyebutan pertama."],
+     ["2.3", "B", "*Snow* ← *John Snow* di D. Ia menguji dugaannya soal *the water supply* dan menemukan *a single public pump* — artikel *a*, benda baru."],
+     ["2.4", "C", "*the pump* ← *a single public pump* (a → the); *his advice* dan *his map* ← Snow dan *a street map* di B. *is now regarded* melompat ke masa kini: ciri penutup. C mustahil sebelum B, karena pompa dan petanya belum ada."]
+    ]},
+    {"type": "sub", "text": "Set 3 · urutan D – B – C – A"},
+    {"type": "tabel", "head": ["No", "Jawaban", "Alasan & pengecoh"], "rows": [
+     ["3.1", "D", "Istilah lengkap berikut singkatannya, *Gross domestic product, or GDP*, lalu definisi. B memuat *this figure*, C memuat *This assumption* dan *however*, A memuat *therefore* dan *it*."],
+     ["3.2", "B", "*this figure* = *the total value of the goods and services* yang didefinisikan D. Pengecoh C: kotak itu memang menyebut *GDP*, tetapi *This assumption* butuh sebuah anggapan, sedangkan D hanya berisi definisi."],
+     ["3.3", "C", "*This assumption* = anggapan di B bahwa naiknya angka itu adalah *evidence that their citizens are becoming better off*. *however* membalik arah: dari anggapan ke kelemahannya."],
+     ["3.4", "A", "*therefore* = simpulan dari kelemahan di C; *it* = GDP. Pengecoh: menaruh A sesudah B. Coba baca: pemerintah menganggap GDP bukti kesejahteraan, *therefore* ekonom meminta ukuran tambahan — tidak ada sebab-akibatnya. Sebabnya (*counts all spending as positive*) baru muncul di C."]
+    ]},
+    {"type": "sub", "text": "Set 4 · urutan E – B – D – A – C"},
+    {"type": "tabel", "head": ["No", "Jawaban", "Alasan & pengecoh"], "rows": [
+     ["4.1", "E", "Pernyataan umum dengan subjek umum, *Psychologists*, tanpa satu pun penunjuk. Pengecoh D: *Ebbinghaus memorised lists…* terlihat mandiri karena tak ada pronoun di depannya — tetapi nama belakang saja berarti orangnya sudah diperkenalkan."],
+     ["4.2", "B", "*This finding* = isi E (belajar yang disebar lebih diingat). B memberi nama temuannya dan memperkenalkan penemunya lengkap: *the German researcher Hermann Ebbinghaus*."],
+     ["4.3", "D", "*Ebbinghaus* ← nama lengkap di B. Isinya metode: menghafal daftar suku kata dan mencatat *how many repetitions he needed*."],
+     ["4.4", "A", "Metode → hasil. *He* = Ebbinghaus; *the repetitions* ← *how many repetitions* di D. Pengecoh: A langsung sesudah B. *He* memang cocok, tetapi *the repetitions* belum punya rujukan — pengait yang lebih sempit yang menentukan."],
+     ["4.5", "C", "*this saving of effort* = *far fewer were needed* di A; *Today's* membawa cerita tahun 1885 ke masa kini: penutup. C tidak bisa naik ke sesudah B atau D, karena di sana belum ada \"penghematan\" apa pun."]
+    ]},
+    {"type": "sub", "text": "Set 5 · urutan B – E – C – A – D"},
+    {"type": "tabel", "head": ["No", "Jawaban", "Alasan & pengecoh"], "rows": [
+     ["5.1", "B", "Nama lengkap berikut singkatan: *The Global Positioning System, or GPS*. *The* di sini bagian dari nama diri. Pengecoh C: dibuka artikel *A* (*A receiver on the ground*), jadi terlihat seperti hal baru — tetapi di tengahnya ada *these signals*."],
+     ["5.2", "E", "*these satellites* ← *about thirty satellites* di B. E memperkenalkan *a signal*."],
+     ["5.3", "C", "*these signals* ← *a signal* yang dipancarkan tiap satelit di E. C memperkenalkan dua hal baru: *a receiver* dan *how long each one took to arrive*."],
+     ["5.4", "A", "*that delay* = *how long each one took to arrive* di C; *the receiver* ← *a receiver* (a → the). Hasilnya: jarak ke tiap satelit."],
+     ["5.5", "D", "*distances* ← *how far the receiver is from each satellite* di A; *the device* = receiver; *then* menandai langkah terakhir. Pengecoh: D sesudah C, karena *the device* cocok dengan *a receiver*. Tetapi jarak belum dihitung sebelum A — proses berjalan sinyal → waktu tempuh → jarak → posisi."]
+    ]},
+    {"type": "kotak", "title": "Yang perlu dicatat", "items": [
+     "Di kelima set, pembukanya ketemu lewat **pencoretan**: kotak lain selalu memuat *this, these, the* + benda yang belum dikenalkan, nama belakang saja, atau penghubung. Yang paling licin adalah kotak yang terlihat mandiri — *Ebbinghaus memorised…* (Set 4) dan *A receiver on the ground…* (Set 5). Baca kotak sampai titik sebelum memutuskan.",
+     "Kalau satu kotak bisa menempel di dua tempat, cari **pengait kedua** di kotak itu. *He* cocok di dua tempat, *the repetitions* hanya di satu (Set 4). *such practices* cocok di dua tempat, tetapi *they* di kotak sebelahnya hanya di satu (Set 1).",
+     "Ingat cara mesin menilai: sambungan, bukan posisi. Kalau waktumu habis dan baru yakin pada dua blok — misalnya E→C dan A→D di Set 5 — tetap seret keduanya utuh. Dua pasangan itu sudah 2 dari 4 poin."
+    ]}
+   ]
+  }
+ ]
+}

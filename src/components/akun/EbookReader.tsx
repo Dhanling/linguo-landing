@@ -1249,7 +1249,7 @@ export default function EbookReader({
     setTempoAudio(v);
     try { localStorage.setItem(KUNCI_TEMPO, String(v)); } catch { /* tak apa */ }
   }, []);
-  const modulTes = /\b(ielts|toefl|toeic|test prep)\b/i.test(title ?? "");
+  const modulTes = /\b(ielts|toefl|toeic|pte|test prep)\b/i.test(title ?? ""); // [ebook-pte-prep-v1] "PTE Academic Prep - Skor 65+" ikut dibuka satu halaman lebar
   /** null = ikut lebar layar; true/false = pilihan siswa dari bilah atas. */
   const [duaManual, setDuaManual] = useState<boolean | null>(() => (modulTes ? false : null));
   const [muatDua, setMuatDua] = useState(false);
