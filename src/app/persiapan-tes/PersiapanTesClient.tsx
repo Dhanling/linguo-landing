@@ -2,6 +2,8 @@
 // [test-prep-v1] Flow katalog + checkout Persiapan Ujian Bahasa (HSK/JLPT/TOPIK/
 // Goethe). Pilih produk → format (semi-private / private) → level → (private:
 // jumlah sesi) → masuk keranjang → isi identitas → checkout Xendit.
+// [test-prep-pte-v1] PTE ikut katalog ini, tapi khusus Private (tarif flat per
+// jam, tanpa level) — pilihan format & level disembunyikan untuk produk begitu.
 //
 // [test-prep-keranjang-v1] Checkout kini lewat KERANJANG: beberapa paket
 // (mis. JLPT N5 semi-private + TOPIK I private) dibayar dalam satu invoice
@@ -11,7 +13,7 @@ import { useEffect, useMemo, useRef, useState, type ChangeEvent, type ReactNode 
 import Link from "next/link";
 import { motion, AnimatePresence } from "framer-motion";
 import {
-  PenTool, GraduationCap, ScrollText, Award, Users, User, Check, X,
+  PenTool, GraduationCap, ScrollText, Award, Laptop, Users, User, Check, X,
   ArrowLeft, Clock, Sparkles, ShoppingCart, Plus, Trash2, ArrowRight,
   type LucideIcon,
 } from "lucide-react";
@@ -30,13 +32,14 @@ import {
 } from "@/lib/testPrepCart";
 
 const TEAL = "#1A9E9E";
-const ICON: Record<string, LucideIcon> = { PenTool, GraduationCap, ScrollText, Award };
+const ICON: Record<string, LucideIcon> = { PenTool, GraduationCap, ScrollText, Award, Laptop };
 
 /** "TOPIK" + "TOPIK I" → "TOPIK I", bukan "TOPIK TOPIK I". */
 const judulPaket = (test: string, level: string) => (level.startsWith(test) ? level : `${test} ${level}`);
 
 const namaBahasa = (lang: string) =>
-  lang === "Japanese" ? "Jepang" : lang === "Korean" ? "Korea" : lang === "German" ? "Jerman" : "Mandarin";
+  lang === "Japanese" ? "Jepang" : lang === "Korean" ? "Korea" : lang === "German" ? "Jerman"
+    : lang === "English" ? "Inggris" : "Mandarin";
 
 export default function PersiapanTesClient() {
   const [active, setActive] = useState<TestPrepProduct | null>(null);
@@ -100,7 +103,7 @@ export default function PersiapanTesClient() {
           </div>
           <h1 className="mb-4 text-3xl font-extrabold text-slate-900 sm:text-5xl">
             Persiapan Ujian Bahasa<br />
-            <span className="bg-gradient-to-r from-teal-500 to-indigo-500 bg-clip-text text-transparent">HSK · JLPT · TOPIK · Goethe</span>
+            <span className="bg-gradient-to-r from-teal-500 to-indigo-500 bg-clip-text text-transparent">PTE · HSK · JLPT · TOPIK · Goethe</span>
           </h1>
           <p className="mx-auto mb-2 max-w-2xl text-base text-slate-500 sm:text-lg">
             Kelas persiapan sertifikasi resmi dengan pengajar berpengalaman. Pilih grup kecil (semi-private) yang ekonomis atau private 1-on-1 yang fleksibel. Bisa ambil beberapa paket sekaligus dalam satu pembayaran.
@@ -108,9 +111,9 @@ export default function PersiapanTesClient() {
         </div>
       </section>
 
-      {/* Katalog produk — 4 kartu satu baris di desktop */}
+      {/* Katalog produk — 5 kartu satu baris di layar lebar, 3+2 di laptop kecil */}
       <section ref={katalogRef} className="mx-auto max-w-6xl scroll-mt-20 px-4 pb-8">
-        <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+        <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5">
           {TEST_PREP_PRODUCTS.map((p) => {
             const Icon = ICON[p.icon] ?? Award;
             const foto = getLangPhoto(p.language);
@@ -168,9 +171,19 @@ export default function PersiapanTesClient() {
                   <p className="mb-4 flex-1 text-[13px] leading-relaxed text-slate-600 line-clamp-3">{p.blurb}</p>
                   <div>
                     <p className="text-[10px] font-medium uppercase tracking-wide text-slate-400">Mulai dari</p>
-                    <p className="text-lg font-extrabold leading-tight text-slate-900">{formatRupiah(p.semiPrice)}</p>
-                    {/* [test-prep-level-pricing-v1] "Mulai dari" = level TERENDAH & semi-private. */}
-                    <p className="text-[11px] text-slate-400">/orang · {SEMI_SESSIONS} sesi semi-private · {p.levels[0]?.label}</p>
+                    {/* [test-prep-level-pricing-v1] "Mulai dari" = level TERENDAH & semi-private.
+                        [test-prep-pte-v1] Produk khusus Private: tarif per sesi private. */}
+                    {p.privateOnly ? (
+                      <>
+                        <p className="text-lg font-extrabold leading-tight text-slate-900">{formatRupiah(privatePerSessionFor(p, p.levels[0]?.id ?? ""))}</p>
+                        <p className="text-[11px] text-slate-400">/sesi · private 1-on-1 · {SESSION_MINUTES} menit</p>
+                      </>
+                    ) : (
+                      <>
+                        <p className="text-lg font-extrabold leading-tight text-slate-900">{formatRupiah(p.semiPrice)}</p>
+                        <p className="text-[11px] text-slate-400">/orang · {SEMI_SESSIONS} sesi semi-private · {p.levels[0]?.label}</p>
+                      </>
+                    )}
                   </div>
                   <span
                     className="mt-3 flex w-full items-center justify-center gap-1.5 rounded-xl px-3 py-2 text-sm font-bold text-white shadow-sm transition group-hover:brightness-110"
@@ -277,7 +290,9 @@ function ProductModal({ product, onClose, onAdd, onBuyNow }: {
   onAdd: (item: TestPrepCartItem) => void;
   onBuyNow: (item: TestPrepCartItem) => void;
 }) {
-  const [format, setFormat] = useState<TestPrepFormat>("semi");
+  // [test-prep-pte-v1] Produk khusus Private (PTE) langsung di format private.
+  const privateOnly = !!product.privateOnly;
+  const [format, setFormat] = useState<TestPrepFormat>(privateOnly ? "private" : "semi");
   const [level, setLevel] = useState(product.levels[0]?.id ?? "");
   const [sessions, setSessions] = useState<number>(DEFAULT_PRIVATE_SESSIONS);
   const [tab, setTab] = useState<InfoTab>("cara");
@@ -307,6 +322,15 @@ function ProductModal({ product, onClose, onAdd, onBuyNow }: {
       <div className="grid min-w-0 gap-5 overflow-y-auto p-5 md:grid-cols-[1.1fr_1fr] [&>*]:min-w-0">
         {/* Kolom kiri: pilihan */}
         <div className="space-y-4">
+          {privateOnly ? (
+            <div className="flex items-center gap-2 rounded-2xl bg-slate-100 px-3 py-2.5">
+              <User className="h-4 w-4 shrink-0 text-teal-600" />
+              <span className="min-w-0">
+                <span className="block text-sm font-bold text-slate-900">Private 1-on-1</span>
+                <span className="block text-[11px] text-slate-500">Persiapan {product.test} saat ini khusus kelas private</span>
+              </span>
+            </div>
+          ) : (
           <div>
             <p className="mb-1.5 text-xs font-semibold text-slate-500">Format kelas</p>
             <div className="grid grid-cols-2 gap-1 rounded-2xl bg-slate-100 p-1">
@@ -328,7 +352,10 @@ function ProductModal({ product, onClose, onAdd, onBuyNow }: {
               })}
             </div>
           </div>
+          )}
 
+          {/* Satu level saja (PTE) = tidak ada yang dipilih, barisnya disembunyikan. */}
+          {product.levels.length > 1 && (
           <div>
             <p className="mb-1.5 text-xs font-semibold text-slate-500">Target level ujian</p>
             <div className="flex flex-wrap gap-1.5">
@@ -337,6 +364,7 @@ function ProductModal({ product, onClose, onAdd, onBuyNow }: {
               ))}
             </div>
           </div>
+          )}
 
           {format === "private" && (
             <div>
@@ -378,7 +406,7 @@ function ProductModal({ product, onClose, onAdd, onBuyNow }: {
             {([
               { k: "cara", label: "Cara kerja" },
               { k: "dapat", label: "Yang kamu dapat" },
-              { k: "harga", label: "Harga per level" },
+              { k: "harga", label: privateOnly ? "Rincian harga" : "Harga per level" },
             ] as { k: InfoTab; label: string }[]).map((t) => (
               <button key={t.k} onClick={() => setTab(t.k)}
                 className={`flex-1 rounded-xl px-2 py-1.5 text-[12px] font-semibold transition ${tab === t.k ? "text-white" : "text-slate-500 hover:bg-slate-50"}`}
@@ -411,7 +439,29 @@ function ProductModal({ product, onClose, onAdd, onBuyNow }: {
                 <>Rekaman & materi bisa diakses lewat dashboard siswa Linguo.</>,
               ]} />
             )}
-            {tab === "harga" && (
+            {tab === "harga" && privateOnly && (
+              <div className="overflow-hidden rounded-xl border border-slate-100">
+                <table className="w-full text-[12px]">
+                  <thead className="bg-slate-50 text-[11px] uppercase tracking-wide text-slate-400">
+                    <tr><th className="px-2.5 py-1.5 text-left font-semibold">Paket private</th><th className="px-2.5 py-1.5 text-right font-semibold">Total</th></tr>
+                  </thead>
+                  <tbody>
+                    {PRIVATE_SESSION_OPTS.map((n) => (
+                      <tr key={n} onClick={() => setSessions(n)}
+                        className={`cursor-pointer border-t border-slate-100 ${sessions === n ? "bg-teal-50 font-semibold text-teal-800" : "hover:bg-slate-50"}`}>
+                        <td className="px-2.5 py-1.5">{n} sesi @{SESSION_MINUTES} menit</td>
+                        <td className="px-2.5 py-1.5 text-right tabular-nums">{formatRupiah(privatePerSessionFor(product, level) * n)}</td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+                <p className="px-2.5 py-1.5 text-[11px] text-slate-400">
+                  Tarif flat {formatRupiah(privatePerSessionFor(product, level))}/sesi
+                  {product.flatPrivatePerHour ? ` (${formatRupiah(product.flatPrivatePerHour)}/jam)` : ""}, sama untuk semua target skor.
+                </p>
+              </div>
+            )}
+            {tab === "harga" && !privateOnly && (
               <div className="overflow-hidden rounded-xl border border-slate-100">
                 <table className="w-full text-[12px]">
                   <thead className="bg-slate-50 text-[11px] uppercase tracking-wide text-slate-400">

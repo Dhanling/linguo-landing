@@ -98,5 +98,6 @@ export const FOOTER_PROGRAMS: { label: string; href: string }[] = [
   { label: "Kelas Private",   href: "/kursus" },
   { label: "Persiapan IELTS", href: "/persiapan-tes" },
   { label: "Persiapan TOEFL", href: "/persiapan-tes" },
+  { label: "Persiapan PTE",   href: "/persiapan-tes?produk=pte" },
   { label: "Kelas Anak",      href: "/kelas-anak" },
 ];

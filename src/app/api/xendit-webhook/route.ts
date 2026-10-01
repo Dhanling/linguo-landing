@@ -156,6 +156,8 @@ function mapFunnelProgramToProduct(program: string | null): string | null {
     p === "english test preparation (ielts/toefl)"
   )
     return "English Test Preparation (IELTS/TOEFL)";
+  // [test-prep-pte-v1] PTE dari /persiapan-tes membawa nama produk registrasinya sendiri.
+  if (p === "english test prep private") return "English Test Prep Private";
   // Test Prep (HSK/JLPT/TOPIK/Goethe): tak ada enum khusus → default format grup kecil.
   if (p === "test prep") return "Kelas Semi Private";
   // "digital"/"e-learning"/"e-book"/"simulasi" → skip (pipeline sendiri).

@@ -1,6 +1,7 @@
 // =============================================================================
 // [test-prep-v1] Sumber tunggal data produk Persiapan Ujian Bahasa (test prep)
-// selain IELTS/TOEFL: HSK (Mandarin), JLPT (Jepang), TOPIK (Korea), Goethe (Jerman).
+// selain IELTS/TOEFL: HSK (Mandarin), JLPT (Jepang), TOPIK (Korea), Goethe (Jerman),
+// dan PTE (Inggris, khusus Private — lihat [test-prep-pte-v1]).
 //
 // Dipakai bersama oleh:
 //   - Halaman flow /persiapan-tes (katalog + checkout)
@@ -19,7 +20,7 @@
 
 import { getPrivateBase60 } from "./trial-pricing";
 
-export type TestPrepId = "hsk" | "jlpt" | "topik" | "goethe";
+export type TestPrepId = "hsk" | "jlpt" | "topik" | "goethe" | "pte";
 export type TestPrepFormat = "semi" | "private";
 
 export interface TestPrepLevel {
@@ -47,7 +48,31 @@ export interface TestPrepProduct {
    * HANYA untuk label etalase. Tagihan WAJIB lewat quoteTestPrep() yang sadar level.
    */
   semiPrice: number;
+  /**
+   * [test-prep-pte-v1] Produk yang HANYA dijual Private 1-on-1 (belum ada grup
+   * semi-private). Format "semi" dari klien dipaksa jadi "private" di
+   * quoteTestPrep() & normalizeCartItem(), dan `semiPrice` diabaikan.
+   */
+  privateOnly?: boolean;
+  /**
+   * [test-prep-pte-v1] Tarif Private FLAT per jam — tidak ikut tabel kategori
+   * bahasa × level. Dipakai keluarga tes bahasa Inggris (IELTS/TOEFL/PTE).
+   */
+  flatPrivatePerHour?: number;
+  /**
+   * [test-prep-pte-v1] Nilai `leads.program` / `leads.language` saat checkout.
+   * Default: program "Test Prep" + bahasa produk (dikonversi manual oleh admin).
+   * Diisi untuk produk yang punya padanan produk registrasi resmi, supaya
+   * webhook langsung melahirkan registrasinya begitu invoice lunas.
+   */
+  lead?: { program: string; language: string };
 }
+
+// [test-prep-pte-v1] Tarif Private persiapan tes bahasa Inggris: FLAT per jam.
+// Mirror TEST_PREP_PRIVATE.perHour di dashboard admin (WA Inbox › Pembayaran)
+// dan blok "Test Prep" di knowledge chatbot (api/chat/route.ts) — IELTS, TOEFL,
+// dan PTE memakai angka yang sama. Kalau tarifnya berubah, ubah di ketiganya.
+export const ENGLISH_TEST_PREP_PER_HOUR = 120000;
 
 // Paket semi-private = tetap 12 sesi @90 menit (harga per orang).
 export const SEMI_SESSIONS = 12;
@@ -67,6 +92,30 @@ export const SEMI_GROUP_MAX = 6;
 export const SEMI_GROUP_OPEN_AT = SEMI_GROUP_MIN;
 
 export const TEST_PREP_PRODUCTS: TestPrepProduct[] = [
+  // [test-prep-pte-v1] PTE Academic (Pearson). Sementara harganya disamakan
+  // dengan Private IELTS/TOEFL (Rp120.000/jam flat) dan hanya dijual Private —
+  // belum ada batch grup maupun paket semi-private. Tidak berjenjang: satu
+  // "level" saja supaya alur keranjang (yang butuh level) tetap sama.
+  {
+    id: "pte",
+    test: "PTE",
+    title: "PTE Academic — Pearson Test of English",
+    language: "English",
+    flagCode: "gb",
+    icon: "Laptop",
+    accent: "#6D28D9",
+    bg: "#F1EAFE",
+    demandTag: "Baru",
+    blurb:
+      "Persiapan PTE Academic: Speaking & Writing, Reading, dan Listening dengan format tes berbasis komputer. Latihan tipe soal khas PTE (Read Aloud, Repeat Sentence, Describe Image, Write from Dictation) + strategi skor.",
+    levels: [
+      { id: "Academic", label: "PTE Academic", desc: "Kuliah, kerja & visa (Australia, Selandia Baru, UK)", cefr: "A1" },
+    ],
+    semiPrice: 0,
+    privateOnly: true,
+    flatPrivatePerHour: ENGLISH_TEST_PREP_PER_HOUR,
+    lead: { program: "English Test Prep Private", language: "PTE prep" },
+  },
   {
     id: "jlpt",
     test: "JLPT",
@@ -219,6 +268,10 @@ const roundTo = (n: number, step: number) => Math.round(n / step) * step;
  * dikali PRIVATE_PREMIUM. Dijamin tidak pernah lebih murah dari Private biasa.
  */
 export function privatePerSessionFor(product: TestPrepProduct, levelId: string): number {
+  // [test-prep-pte-v1] Tarif flat per jam (PTE) — tidak ikut level.
+  if (product.flatPrivatePerHour) {
+    return Math.round((product.flatPrivatePerHour * SESSION_MINUTES) / 60);
+  }
   const cefr = cefrOfLevel(product, levelId);
   const base60 = getPrivateBase60(product.language, cefr);
   const perSessionBiasa = Math.round((base60 * SESSION_MINUTES) / 60);
@@ -227,6 +280,7 @@ export function privatePerSessionFor(product: TestPrepProduct, levelId: string):
 
 /** Harga paket semi-private (12 sesi, per orang) untuk level ini. */
 export function semiPriceFor(product: TestPrepProduct, levelId: string): number {
+  if (product.privateOnly) return 0; // tidak dijual semi-private
   const dasar = levelStepIndex(product.levels[0]?.cefr ?? "A1");
   const target = levelStepIndex(cefrOfLevel(product, levelId));
   return roundTo((product.semiPrice * LEVEL_STEP[target]) / LEVEL_STEP[dasar], 1000);
@@ -238,6 +292,7 @@ export function semiPriceFor(product: TestPrepProduct, levelId: string): number 
  * harga satu sesi.
  */
 export function semiPerSessionFor(product: TestPrepProduct, levelId: string): number {
+  if (product.privateOnly) return 0;
   return Math.round(semiPriceFor(product, levelId) / SEMI_SESSIONS);
 }
 
@@ -246,6 +301,7 @@ export function semiPerSessionFor(product: TestPrepProduct, levelId: string): nu
  * yang sama. 0 kalau tidak ada penghematan.
  */
 export function semiSavingPct(product: TestPrepProduct, levelId: string): number {
+  if (product.privateOnly) return 0;
   const privat = privatePerSessionFor(product, levelId) * SEMI_SESSIONS;
   const semi = semiPriceFor(product, levelId);
   if (!privat || semi >= privat) return 0;
@@ -267,7 +323,9 @@ export function quoteTestPrep(
   sessions?: number,
 ): TestPrepQuote {
   const lvl = level || product.levels[0]?.id || "";
-  if (format === "semi") {
+  // [test-prep-pte-v1] Produk khusus Private: format "semi" tidak pernah sah,
+  // apa pun yang dikirim klien (anti-tamper — harga semi-nya 0).
+  if (format === "semi" && !product.privateOnly) {
     const amount = semiPriceFor(product, lvl);
     return {
       amount,
