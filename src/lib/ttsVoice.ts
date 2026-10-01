@@ -54,6 +54,12 @@ export const CHIRP_LOCALES: Record<string, string> = {
      persis dengan Urdu; ښ ږ ځ څ ې ۍ keluar sebagai bunyi terdekatnya. */
   mn: "ru-RU",
   ps: "ur-IN",
+  /* [tts-bosnia-pinjam-hr-v1] Bosnia: nol voice bs-* di katalog Google. Dipinjamkan
+     ke hr-HR — Bosnia beraksara Latin memakai abjad Gaj yang sama persis dengan
+     Kroasia (č ć đ š ž, lj nj dž) dan bunyinya nyaris tak terbedakan; pengenal
+     caption pun sudah jatuh ke hr-HR (useLiveCaptions). Azure punya suara asli
+     bs-BA, tapi kuncinya belum terpasang di server (1 Okt 2026). */
+  bs: "hr-HR",
 };
 
 /** Kore = suara Chirp 3 HD bawaan (ada di semua locale di peta atas). */
