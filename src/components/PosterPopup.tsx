@@ -155,7 +155,7 @@ export default function PosterPopup() {
           <X className="h-5 w-5" />
         </button>
 
-        <Link href={CTA_HREF} onClick={close} className="block">
+        <Link href={CTA_HREF} prefetch={false} onClick={close} className="block">
           <Image
             src={POSTER_SRC}
             alt={POSTER_ALT}
@@ -168,7 +168,7 @@ export default function PosterPopup() {
         </Link>
 
         <Link
-          href={CTA_HREF}
+          href={CTA_HREF} prefetch={false}
           onClick={close}
           className="mt-3 flex w-full items-center justify-center gap-2 rounded-full bg-[#FFD43B] px-5 py-3 text-sm font-extrabold text-slate-900 shadow-lg transition-transform duration-200 hover:scale-[1.03] sm:text-base"
         >

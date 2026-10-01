@@ -7,14 +7,14 @@
 // sebelum ada yang meng-klik apa pun) dan sekali setelah jeda pendek, karena
 // cookie `_fbp` baru ditulis oleh script Pixel — pada tembakan pertama cookie
 // itu biasanya belum ada. [third-party-lazy-v1] Pixel sekarang dimuat
-// `lazyOnload` (sesudah halaman selesai dimuat), jadi diulang beberapa kali
-// sampai ±12 dtk; captureAdAttribution cuma mengisi yang masih kosong.
+// saat interaksi pertama / 15 dtk sesudah load [third-party-interaksi-v1], jadi diulang beberapa kali
+// sampai ±20 dtk; captureAdAttribution cuma mengisi yang masih kosong.
 
 import { useEffect } from "react";
 import { usePathname } from "next/navigation";
 import { captureAdAttribution } from "@/lib/adAttribution";
 
-const PIXEL_SETTLE_MS = [1800, 5000, 12000];
+const PIXEL_SETTLE_MS = [1800, 5000, 12000, 20000];
 
 export default function AdAttributionCapture() {
   const pathname = usePathname();

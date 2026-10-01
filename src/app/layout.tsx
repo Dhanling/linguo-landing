@@ -30,6 +30,7 @@ import BatchRegulerTopBar from "@/components/BatchRegulerTopBar"; // bar-batch-r
 import PromoFloatingButton from "@/components/PromoFloatingButton"; // promo-merdeka-v1 — sticker melayang → WA CS
 import PromoLeadModal from "@/components/PromoLeadModal"; // promo-lead-form-v1 — form nama/WA/email sebelum ke WhatsApp
 import PosterPopup from "@/components/PosterPopup"; // poster-popup-v1 — pop-up poster promo saat pengunjung baru masuk
+import ThirdPartyLoader from "@/components/ThirdPartyLoader"; // [third-party-interaksi-v1] GA4 & Pixel dimuat saat interaksi pertama
 
 // [seo-metadata-v1] Judul lama bertumpu pada kata "Polyglot" — hampir tidak ada
 // yang mencarinya dalam bahasa Indonesia, jadi homepage kehilangan sinyal
@@ -94,6 +95,11 @@ const WEBSITE_SCHEMA = websiteSchema(`${BRAND_FACTS.url}/blog?q={search_term_str
 // NEXT_PUBLIC_GA_ID        → from Google Analytics (G-XXXXXXXX)
 const FB_PIXEL_ID = process.env.NEXT_PUBLIC_FB_PIXEL_ID || "";
 const GA_ID = process.env.NEXT_PUBLIC_GA_ID || "";
+// Dimuat ThirdPartyLoader — konstanta modul supaya referensi array stabil.
+const THIRD_PARTY_SRCS = [
+  ...(GA_ID ? [`https://www.googletagmanager.com/gtag/js?id=${GA_ID}`] : []),
+  ...(FB_PIXEL_ID ? ["https://connect.facebook.net/en_US/fbevents.js"] : []),
+];
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
@@ -108,8 +114,9 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <script type="application/ld+json" {...jsonLd(ORG_SCHEMA)} />
         <script type="application/ld+json" {...jsonLd(WEBSITE_SCHEMA)} />
 
-        {/* [third-party-lazy-v1] Pustaka GA4 (±170 KB) & Pixel (±200 KB) diunduh
-            `lazyOnload` — sesudah halaman selesai dimuat — karena dulu ikut
+        {/* [third-party-lazy-v1] → [third-party-interaksi-v1] Pustaka GA4 & Pixel
+            dimuat ThirdPartyLoader (body) saat interaksi pertama / 15 dtk sesudah
+            load. Catatan lama: dulu `lazyOnload` — sesudah halaman selesai dimuat — karena dulu ikut
             berebut main thread di HP (skor Performa 33). Stub gtag/fbq tetap
             dipasang `afterInteractive` supaya event yang ditembak sebelum
             pustakanya datang diantrekan (dataLayer / fbq.queue), bukan hilang. */}
@@ -119,7 +126,6 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         {/* Google Analytics (GA4) */}
         {GA_ID && (
           <>
-            <Script src={`https://www.googletagmanager.com/gtag/js?id=${GA_ID}`} strategy="lazyOnload" />
             <Script id="ga4-init" strategy="afterInteractive">
               {`
                 window.dataLayer = window.dataLayer || [];
@@ -148,7 +154,6 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
                 fbq('track', 'PageView');
               `}
             </Script>
-            <Script src="https://connect.facebook.net/en_US/fbevents.js" strategy="lazyOnload" />
             <noscript>
               <img
                 height="1"
@@ -173,6 +178,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <AdAttributionCapture />{/* ads-conversion-sync */}
         <PromoFloatingButton />{/* promo-merdeka-v1 */}
         <PromoLeadModal />{/* promo-lead-form-v1 — dipicu banner & sticker */}
+        <ThirdPartyLoader srcs={THIRD_PARTY_SRCS} />{/* [third-party-interaksi-v1] */}
         <PosterPopup />{/* poster-popup-v1 — sekali per sesi, ditunda 1,2 dtk */}
 
       </body>

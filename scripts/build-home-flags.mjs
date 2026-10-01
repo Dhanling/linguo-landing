@@ -9,8 +9,8 @@ import { writeFileSync, readFileSync } from "node:fs";
 import { resolveFlag } from "@blade-flags/core";
 import { defaultFlags } from "@blade-flags/core/flags/default";
 
-const page = readFileSync(new URL("../src/app/page.tsx", import.meta.url), "utf8");
-// Semua literal kode ISO-2 di peta FLAG_CODES & GREETINGS beranda.
+const page = readFileSync(new URL("../src/app/_home/islands.tsx", import.meta.url), "utf8");
+// Semua literal kode ISO-2 di peta FLAG_CODES & GREETINGS beranda (_home/islands.tsx).
 const codes = [...new Set([...page.matchAll(/(?:code|[A-Za-z]+):"([a-z]{2})"/g)].map((m) => m[1]))].sort();
 const out = {};
 for (const c of codes) {

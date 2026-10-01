@@ -63,12 +63,11 @@ body {
 .animate-marquee-slow { animation: marquee 40s linear infinite; }
 .animate-marquee:hover, .animate-marquee-slow:hover { animation-play-state: paused; }
 
-/* linguo-patch:page-enter-v1 — subtle whole-page fade-in on load (CSS only, no JS). */
-@keyframes pageEnter {
-  from { opacity: 0; }
-  to   { opacity: 1; }
-}
-body { animation: pageEnter 0.5s ease-out both; }
+/* linguo-patch:page-enter-v1 DICABUT [no-body-fade-v1] — dulu body di-fade dari
+   opacity 0 selama 0,5 dtk di SEMUA halaman. Selama body transparan Chrome tidak
+   mencatat LCP, jadi LCP tiap halaman tertahan sampai animasi selesai — dan di HP
+   yang main thread-nya sibuk JS, animasinya ikut molor (skor PageSpeed HP).
+   Jangan pasang fade seluruh halaman lagi. */
 
 /* linguo-patch:btn-micro-v1 — hover micro-interaction (scale + glow) on brand CTAs.
    Scoped to <a>/<button> carrying the teal/amber CTA background so badges & chips

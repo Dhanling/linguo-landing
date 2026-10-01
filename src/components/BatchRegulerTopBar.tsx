@@ -132,10 +132,14 @@ export default function BatchRegulerTopBar() {
       ref={ref}
       className="fixed inset-x-0 top-0 z-[70] bg-gradient-to-r from-[#0F7A7A] via-[#1A9E9E] to-[#0F7A7A] text-white shadow-md"
     >
+      {/* [home-prefetch-off-v1] prefetch dimatikan: pita ini tampil di layar
+          pertama, jadi Next langsung mem-prefetch JS /jadwal-kelas-reguler —
+          termasuk set bendera lengkap 406 KB — saat beranda HP masih dimuat. */}
       {/* [bar-batch-reguler-hp-v1] HP: dipadatkan jadi 2 baris — dulu flex-wrap
           bikin bar 4 baris & makan seperempat layar. */}
       <Link
         href="/jadwal-kelas-reguler"
+        prefetch={false}
         className="flex flex-col items-center gap-0.5 px-3 py-1.5 text-center text-[12px] font-semibold leading-tight sm:hidden"
       >
         <span className="flex max-w-full items-center gap-1.5 whitespace-nowrap">
@@ -160,6 +164,7 @@ export default function BatchRegulerTopBar() {
 
       <Link
         href="/jadwal-kelas-reguler"
+        prefetch={false}
         className="mx-auto hidden w-full max-w-7xl sm:flex flex-wrap items-center justify-center gap-x-3 gap-y-1 px-4 py-2 text-center text-[13px] font-semibold sm:text-sm"
       >
         <span className="inline-flex items-center gap-1.5">
