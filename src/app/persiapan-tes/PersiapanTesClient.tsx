@@ -43,6 +43,8 @@ const namaBahasa = (lang: string) =>
 
 export default function PersiapanTesClient() {
   const [active, setActive] = useState<TestPrepProduct | null>(null);
+  // [silabus-pte-v1] `?sesi=16` dari halaman silabus memilihkan jumlah sesinya.
+  const [sesiAwal, setSesiAwal] = useState<number | undefined>(undefined);
   const [cart, setCart] = useState<TestPrepCartItem[]>([]);
   const [checkoutOpen, setCheckoutOpen] = useState(false);
   const [pulse, setPulse] = useState(0);
@@ -52,7 +54,10 @@ export default function PersiapanTesClient() {
   // `?produk=jlpt` langsung membuka modal produk itu (tautan dari landing/iklan).
   useEffect(() => {
     setCart(loadCart());
-    const id = new URLSearchParams(window.location.search).get("produk");
+    const params = new URLSearchParams(window.location.search);
+    const id = params.get("produk");
+    const sesi = Number(params.get("sesi"));
+    if ((PRIVATE_SESSION_OPTS as readonly number[]).includes(sesi)) setSesiAwal(sesi);
     if (id) setActive(getTestPrepProduct(id));
   }, []);
   const updateCart = (next: TestPrepCartItem[]) => { setCart(next); saveCart(next); };
@@ -261,7 +266,8 @@ export default function PersiapanTesClient() {
           <ProductModal
             key={active.id}
             product={active}
-            onClose={() => setActive(null)}
+            initialSessions={sesiAwal}
+            onClose={() => { setActive(null); setSesiAwal(undefined); }}
             onAdd={(item) => { addItem(item); setActive(null); }}
             onBuyNow={(item) => { addItem(item); setActive(null); setCheckoutOpen(true); }}
           />
@@ -284,8 +290,9 @@ export default function PersiapanTesClient() {
 /* ── Modal produk: pilih format/level/sesi, info di tab, aksi di footer tetap ── */
 type InfoTab = "cara" | "dapat" | "harga";
 
-function ProductModal({ product, onClose, onAdd, onBuyNow }: {
+function ProductModal({ product, initialSessions, onClose, onAdd, onBuyNow }: {
   product: TestPrepProduct;
+  initialSessions?: number;
   onClose: () => void;
   onAdd: (item: TestPrepCartItem) => void;
   onBuyNow: (item: TestPrepCartItem) => void;
@@ -294,7 +301,7 @@ function ProductModal({ product, onClose, onAdd, onBuyNow }: {
   const privateOnly = !!product.privateOnly;
   const [format, setFormat] = useState<TestPrepFormat>(privateOnly ? "private" : "semi");
   const [level, setLevel] = useState(product.levels[0]?.id ?? "");
-  const [sessions, setSessions] = useState<number>(DEFAULT_PRIVATE_SESSIONS);
+  const [sessions, setSessions] = useState<number>(initialSessions ?? DEFAULT_PRIVATE_SESSIONS);
   const [tab, setTab] = useState<InfoTab>("cara");
 
   const quote = quoteTestPrep(product, format, level, sessions);
@@ -398,6 +405,15 @@ function ProductModal({ product, onClose, onAdd, onBuyNow }: {
               <p className="mt-1 text-[11px] leading-relaxed text-slate-500">Jadwal diatur bersama pengajar setelah pembayaran.</p>
             )}
           </div>
+
+          {/* [silabus-pte-v1] Produk yang punya halaman silabus: tautkan, ikut jumlah sesi terpilih. */}
+          {product.syllabusHref && (
+            <Link href={`${product.syllabusHref}?paket=${quote.sessions}`}
+              className="flex items-center justify-between gap-2 rounded-2xl border border-slate-200 px-4 py-2.5 text-sm font-semibold text-teal-700 transition hover:border-teal-300 hover:bg-teal-50">
+              <span className="flex items-center gap-2"><ScrollText className="h-4 w-4" /> Lihat silabus {quote.sessions} sesi</span>
+              <ArrowRight className="h-4 w-4" />
+            </Link>
+          )}
         </div>
 
         {/* Kolom kanan: info dalam tab */}

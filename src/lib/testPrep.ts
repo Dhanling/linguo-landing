@@ -66,6 +66,8 @@ export interface TestPrepProduct {
    * webhook langsung melahirkan registrasinya begitu invoice lunas.
    */
   lead?: { program: string; language: string };
+  /** [silabus-pte-v1] Halaman silabus produk ini, kalau ada — ditautkan dari modal checkout. */
+  syllabusHref?: string;
 }
 
 // [test-prep-pte-v1] Tarif Private persiapan tes bahasa Inggris: FLAT per jam.
@@ -115,6 +117,7 @@ export const TEST_PREP_PRODUCTS: TestPrepProduct[] = [
     privateOnly: true,
     flatPrivatePerHour: ENGLISH_TEST_PREP_PER_HOUR,
     lead: { program: "English Test Prep Private", language: "PTE prep" },
+    syllabusHref: "/persiapan-tes/pte",
   },
   {
     id: "jlpt",

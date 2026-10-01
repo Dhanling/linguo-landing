@@ -63,6 +63,8 @@ const STATIC_ROUTES: Array<{
   { path: "/kursus", priority: 0.9, changeFrequency: "weekly" },
   { path: "/kelas-trial", priority: 0.9, changeFrequency: "weekly" },
   { path: "/persiapan-tes", priority: 0.9, changeFrequency: "weekly" },
+  // [silabus-pte-v1] Silabus kelas persiapan PTE Academic (16 modul, paket 8/12/16 sesi).
+  { path: "/persiapan-tes/pte", priority: 0.8, changeFrequency: "monthly", updated: new Date("2026-10-01") },
   // [program-arab-quran-v1] Program Bahasa Arab Al-Qur'an + pembaca mushaf gratisnya.
   { path: "/bahasa-arab-quran", priority: 0.85, changeFrequency: "monthly" },
   { path: "/alquran", priority: 0.8, changeFrequency: "monthly" },

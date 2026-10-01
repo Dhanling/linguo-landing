@@ -220,6 +220,7 @@ ${perbandinganLinks()}
 
 - [Blog](${BASE}/blog): artikel belajar bahasa, tips, dan panduan ujian.
 - [Silabus](${BASE}/silabus): kurikulum per bahasa, 192 sesi dari A1 sampai B2, plus placement test gratis per bahasa.
+- [Silabus persiapan PTE Academic](${BASE}/persiapan-tes/pte): 16 modul untuk 22 tipe soal format terbaru, dipetakan ke paket 8, 12, dan 16 sesi private.
 - [Kelas trial](${BASE}/kelas-trial): satu sesi percobaan berbayar sebelum ambil paket.
 - [Simulasi TOEFL](${BASE}/simulasi): simulasi tes dengan skor resmi.
 - [Watch & Learn](${BASE}/watch-learn): belajar dari video YouTube dengan transkrip dan terjemahan.
