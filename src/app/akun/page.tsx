@@ -156,6 +156,8 @@ const StudentGroupChat = dynamic(() => import('@/components/akun/StudentGroupCha
 const LibraryView = dynamic(() => import('@/components/akun/LibraryView'), { ssr: false, loading: TabLoading });
 // [student-workspace-v1] Ruang catatan/berkas/PR milik siswa + Mode Belajar Sendiri.
 const CatatanWorkspace = dynamic(() => import('@/components/akun/CatatanWorkspace'), { ssr: false, loading: TabLoading });
+// [latihan-menulis-v1] Latihan menulis aksara non-Latin (urutan goresan, jiplak, nilai AI).
+const LatihanMenulisTab = dynamic(() => import('@/components/akun/LatihanMenulisTab'), { ssr: false, loading: TabLoading });
 import AttentionAlert from '@/components/akun/AttentionAlert';
 // ── Supabase Client ──────────────────────────────────────────────────────
 // [akun-batalkan-hard-delete-v1] pakai client anon kanonik dari @/lib/supabase-client
@@ -2886,10 +2888,10 @@ export default function AkunPage() {
      loncat ke Jadwal. Aman terhadap hidrasi: saat HTML awal (server) tab tak
      pernah dirender karena authLoading masih true. Deep-link lain (?reg, ?sesi,
      ?ebook, tab tersimpan) tetap diselesaikan efek di bawah. */
-  const [activeTab, setActiveTab] = useState<"beranda"|"jadwal"|"materi"|"akun"|"sertifikat"|"pustaka"|"simulasi"|"grup"|"catatan">(() => {
+  const [activeTab, setActiveTab] = useState<"beranda"|"jadwal"|"materi"|"akun"|"sertifikat"|"pustaka"|"simulasi"|"grup"|"catatan"|"menulis">(() => {
     if (typeof window === "undefined") return "beranda";
     const m = new URLSearchParams(window.location.search).get("menu");
-    return m === "jadwal" || m === "materi" || m === "akun" || m === "sertifikat" || m === "pustaka" || m === "simulasi" || m === "grup" || m === "catatan" ? m : "beranda";
+    return m === "jadwal" || m === "materi" || m === "akun" || m === "sertifikat" || m === "pustaka" || m === "simulasi" || m === "grup" || m === "catatan" || m === "menulis" ? m : "beranda";
   }); // [linguo-patch:akun-pustaka-tab-v1] [simulasi-inshell-v1] [student-workspace-v1]
   /* [lanjutkan-ebook-buka-langsung-v1] Modul yang readernya harus dibuka begitu
      tab Perpustakaan tampil — dititipkan kartu "Lanjutkan Belajar" di beranda. */
@@ -2960,7 +2962,7 @@ export default function AkunPage() {
        kelas Beranda waktu dibuka di tab baru (klik biasa ditangani in-shell). */
     const regParam = sp.get("reg");
     const ktab = sp.get("ktab");
-    let resolved: "beranda" | "jadwal" | "materi" | "akun" | "sertifikat" | "pustaka" | "simulasi" | "grup" | "catatan" | null = null;
+    let resolved: "beranda" | "jadwal" | "materi" | "akun" | "sertifikat" | "pustaka" | "simulasi" | "grup" | "catatan" | "menulis" | null = null;
     if (regParam) { setMateriSel(regParam); resolved = "materi"; }
     if (ktab === "sesi" || ktab === "materi" || ktab === "kuis" || ktab === "rapor") { setMateriTab(ktab); resolved = "materi"; }
     if (sesi) { setLmsSesi(sesi); resolved = "materi"; } // [linguo-patch:akun-inplace-lessonplayer-v1] deep-link sesi → overlay player
@@ -2984,7 +2986,7 @@ export default function AkunPage() {
         }
       }
     } catch {}
-    if (!resolved && (menu === "beranda" || menu === "jadwal" || menu === "materi" || menu === "akun" || menu === "sertifikat" || menu === "pustaka" || menu === "simulasi" || menu === "grup" || menu === "catatan")) resolved = menu;
+    if (!resolved && (menu === "beranda" || menu === "jadwal" || menu === "materi" || menu === "akun" || menu === "sertifikat" || menu === "pustaka" || menu === "simulasi" || menu === "grup" || menu === "catatan" || menu === "menulis")) resolved = menu;
     // [akun-menu-titip-login-v1] titip menu → dipakai sekali oleh halaman sesudah login.
     try {
       if (resolved === menu && menu && menu !== "beranda") {
@@ -2992,7 +2994,7 @@ export default function AkunPage() {
       } else if (!resolved) {
         const titip = JSON.parse(localStorage.getItem(TITIP_MENU_KEY) || "null");
         const m = titip?.menu;
-        if (Date.now() - Number(titip?.ts) < 2 * 3600_000 && (m === "jadwal" || m === "materi" || m === "akun" || m === "sertifikat" || m === "pustaka" || m === "simulasi" || m === "grup" || m === "catatan")) resolved = m;
+        if (Date.now() - Number(titip?.ts) < 2 * 3600_000 && (m === "jadwal" || m === "materi" || m === "akun" || m === "sertifikat" || m === "pustaka" || m === "simulasi" || m === "grup" || m === "catatan" || m === "menulis")) resolved = m;
         if (titip) localStorage.removeItem(TITIP_MENU_KEY);
       }
     } catch {}
@@ -3004,7 +3006,7 @@ export default function AkunPage() {
     if (!resolved) {
       try {
         const saved = sessionStorage.getItem("linguo_akun_tab");
-        if (saved === "beranda" || saved === "jadwal" || saved === "materi" || saved === "akun" || saved === "sertifikat" || saved === "pustaka" || saved === "simulasi" || saved === "grup" || saved === "catatan") resolved = saved;
+        if (saved === "beranda" || saved === "jadwal" || saved === "materi" || saved === "akun" || saved === "sertifikat" || saved === "pustaka" || saved === "simulasi" || saved === "grup" || saved === "catatan" || saved === "menulis") resolved = saved;
       } catch {}
     }
     if (resolved) setActiveTab(resolved);
@@ -4466,7 +4468,7 @@ export default function AkunPage() {
           halaman ini yang punya, sisanya nol navigasi di HP. */}
 
       {/* ── Content ─────────────────────────────────────────────── */}
-      <main className={activeTab === "materi" ? "w-full lg:flex lg:min-h-0 lg:flex-1 lg:flex-col" : activeTab === "beranda" ? "w-full" : activeTab === "sertifikat" ? "w-full px-3 pt-4 sm:px-5" : activeTab === "akun" ? "w-full px-3 pt-4 sm:px-5" : activeTab === "simulasi" ? "mx-auto w-full max-w-[1320px] px-4 sm:px-6 pt-5" : activeTab === "grup" ? "w-full pt-5" : activeTab === "catatan" ? "mx-auto w-full max-w-[1320px] pt-5" : (activeTab === "jadwal" || activeTab === "pustaka") ? "mx-auto w-full max-w-[1320px] px-4 sm:px-6 pt-5 space-y-6" : "mx-auto max-w-6xl px-4 sm:px-6 pt-5 space-y-6"}>
+      <main className={activeTab === "materi" ? "w-full lg:flex lg:min-h-0 lg:flex-1 lg:flex-col" : activeTab === "beranda" ? "w-full" : activeTab === "sertifikat" ? "w-full px-3 pt-4 sm:px-5" : activeTab === "akun" ? "w-full px-3 pt-4 sm:px-5" : (activeTab === "simulasi" || activeTab === "menulis") ? "mx-auto w-full max-w-[1320px] px-4 sm:px-6 pt-5" : activeTab === "grup" ? "w-full pt-5" : activeTab === "catatan" ? "mx-auto w-full max-w-[1320px] pt-5" : (activeTab === "jadwal" || activeTab === "pustaka") ? "mx-auto w-full max-w-[1320px] px-4 sm:px-6 pt-5 space-y-6" : "mx-auto max-w-6xl px-4 sm:px-6 pt-5 space-y-6"}>
         {/* [akun-tab-swap-nofade-v1] Pindah menu dulu pakai mode="wait": tab lama
             fade-out DULU sampai habis, baru tab baru fade-in dari opacity 0 →
             ada jeda panel kosong ±0.6 detik = kedipan tiap balik ke Beranda.
@@ -5858,6 +5860,14 @@ export default function AkunPage() {
               {student?.id && (
                 <CatatanWorkspace studentId={student.id} regs={student?.registrations || []} readOnly={previewMode} />
               )}
+            </motion.div>
+          )}
+
+          {/* [latihan-menulis-v1] TAB LATIHAN MENULIS — aksara yang dibuka duluan
+              mengikuti bahasa kelas siswa (Jepang → Hiragana, Thailand → konsonan, …). */}
+          {tabShown("menulis") && (
+            <motion.div key="menulis" initial={false} animate={{ opacity: 1 }} className="w-full pb-8" style={tabHidden("menulis")}>
+              <LatihanMenulisTab languages={(student?.registrations || []).map((r: any) => r.language)} />
             </motion.div>
           )}
 

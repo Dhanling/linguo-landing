@@ -100,6 +100,7 @@ const EN: Record<string, string> = {
   "Kelas & Materi": "Classes & Materials",
   "Lingbook": "Lingbook",
   "Simulasi Tes": "Test Simulation",
+  "Latihan Menulis": "Writing Practice", // [latihan-menulis-v1]
   "Watch & Learn": "Watch & Learn",
   "Kosakata Saya": "My Vocabulary",
   "Pengaturan": "Settings",
