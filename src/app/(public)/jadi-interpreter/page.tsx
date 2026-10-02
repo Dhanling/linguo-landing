@@ -13,7 +13,7 @@ import {
   SPECIALIZATIONS, CERTIFICATIONS, LANGUAGE_PAIRS_DEFAULT, REFERRAL_SOURCES, GENDERS, MODES,
 } from "@/components/interpreter/constants";
 
-const WA = "https://wa.me/6282130113243";
+const WA = "https://wa.me/6281320113243";
 const waMsg = (msg: string) => `${WA}?text=${encodeURIComponent(msg)}`;
 
 const STEPS = [

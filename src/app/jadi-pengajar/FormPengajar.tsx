@@ -30,7 +30,7 @@ import {
   X, Loader2, CheckCircle2, Search, Check, ChevronDown, ChevronLeft, ChevronRight,
 } from "lucide-react";
 
-const WA = "https://wa.me/6282130113243";
+const WA = "https://wa.me/6281320113243";
 const waMsg = (msg: string) => `${WA}?text=${encodeURIComponent(msg)}`;
 
 export type Lang = "id" | "en";

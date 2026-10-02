@@ -11,6 +11,11 @@ import { usePathname } from "next/navigation";
 import { subscribeOverlay, getOverlayCount } from "@/lib/overlayStore";
 
 const WA_NUMBER = "6282116859493"; // admin handoff
+// [ling-handoff-kurikulum-v1] Calon pengajar bukan urusan CS: handoff-nya
+// langsung ke nomor WA Kurikulum (yang memegang rekrutmen & pengajar).
+const WA_KURIKULUM = "6281320113243";
+const RECRUIT_RE =
+  /\b(jadi|menjadi|melamar|lamaran|lowongan)\s+(sebagai\s+)?(pengajar|tutor|guru)\b|\bteaching\s+(opportunit|position|job|vacanc)|\bbecome\s+an?\s+(teacher|tutor)\b/i;
 const GREETING =
   "Halo kak! 👋 Aku Ling, asisten Linguo.id 😊\nAda yang bisa dibantu? Bales angka atau ketik pertanyaan langsung ya:\n\n1️⃣ Info program & bahasa\n2️⃣ Info biaya\n3️⃣ Trial class\n4️⃣ Jadwal kelas reguler\n5️⃣ Cara daftar\n6️⃣ Chat langsung dengan admin";
 // Chip menu bernomor — disamakan dgn menu WA bot. Nomor 6 langsung handoff WA admin.
@@ -473,10 +478,15 @@ export default function ChatWidget() {
       if (label && !poin.includes(label)) poin.push(label);
     }
     const transcript = poin.slice(-3).join(" · ");
+    const recruit =
+      !!pathname?.startsWith("/jadi-pengajar") || poin.some((x) => RECRUIT_RE.test(x));
+    const salam = recruit
+      ? "Halo Tim Kurikulum Linguo, saya dari chat website."
+      : "Halo Admin Linguo, saya dari chat website.";
     const halaman = pathname && pathname !== "/" ? ` Saya lagi buka halaman ${pathname}.` : "";
     const tiket = ticket ? ` (Tiket ${ticket})` : "";
     let text =
-      "Halo Admin Linguo, saya dari chat website." +
+      salam +
       tiket +
       (transcript ? ` Yang saya tanyakan: ${transcript}.` : "") +
       halaman;
@@ -494,7 +504,7 @@ export default function ChatWidget() {
       const data = await res.json();
       if (data?.summary) {
         text =
-          "Halo Admin Linguo, saya dari chat website." +
+          salam +
           tiket +
           " Ringkasan chat saya: " +
           data.summary +
@@ -503,7 +513,7 @@ export default function ChatWidget() {
     } catch {
       /* ringkasan gagal/lambat: pakai fallback */
     }
-    const url = `https://wa.me/${WA_NUMBER}?text=${encodeURIComponent(text)}`;
+    const url = `https://wa.me/${recruit ? WA_KURIKULUM : WA_NUMBER}?text=${encodeURIComponent(text)}`;
     if (w) w.location.href = url;
     else window.open(url, "_blank");
   }
