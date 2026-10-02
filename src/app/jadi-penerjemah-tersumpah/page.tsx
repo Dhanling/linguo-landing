@@ -121,7 +121,7 @@ const STATUS_MESSAGES: Record<string, string> = {
 };
 
 // WhatsApp admin Linguo
-const WA = "6285798745252";
+const WA = "6281320113243"; // WA Kurikulum — semua lamaran/loker ke sini
 const waMsg = (text: string) =>
   `https://wa.me/${WA}?text=${encodeURIComponent(text)}`;
 

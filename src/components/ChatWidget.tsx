@@ -11,11 +11,12 @@ import { usePathname } from "next/navigation";
 import { subscribeOverlay, getOverlayCount } from "@/lib/overlayStore";
 
 const WA_NUMBER = "6282116859493"; // admin handoff
-// [ling-handoff-kurikulum-v1] Calon pengajar bukan urusan CS: handoff-nya
-// langsung ke nomor WA Kurikulum (yang memegang rekrutmen & pengajar).
+// [ling-handoff-kurikulum-v2] Pelamar (pengajar, penerjemah, interpreter, loker
+// apa pun) bukan urusan CS: handoff-nya langsung ke nomor WA Kurikulum.
 const WA_KURIKULUM = "6281320113243";
+const RECRUIT_PATHS = ["/jadi-", "/karir", "/micro-teaching"];
 const RECRUIT_RE =
-  /\b(jadi|menjadi|melamar|lamaran|lowongan)\s+(sebagai\s+)?(pengajar|tutor|guru)\b|\bteaching\s+(opportunit|position|job|vacanc)|\bbecome\s+an?\s+(teacher|tutor)\b/i;
+  /\b(jadi|menjadi|melamar|lamaran|lowongan|loker)\s+(sebagai\s+)?(pengajar|tutor|guru|penerjemah|interpreter|translator)\b|\b(loker|lowongan|karir|rekrutmen|magang|internship|melamar\s+kerja|lamaran\s+kerja|kirim\s+cv|job\s+vacanc\w*|career)\b|\bteaching\s+(opportunit|position|job|vacanc)|\bbecome\s+an?\s+(teacher|tutor)\b/i;
 const GREETING =
   "Halo kak! 👋 Aku Ling, asisten Linguo.id 😊\nAda yang bisa dibantu? Bales angka atau ketik pertanyaan langsung ya:\n\n1️⃣ Info program & bahasa\n2️⃣ Info biaya\n3️⃣ Trial class\n4️⃣ Jadwal kelas reguler\n5️⃣ Cara daftar\n6️⃣ Chat langsung dengan admin";
 // Chip menu bernomor — disamakan dgn menu WA bot. Nomor 6 langsung handoff WA admin.
@@ -479,7 +480,7 @@ export default function ChatWidget() {
     }
     const transcript = poin.slice(-3).join(" · ");
     const recruit =
-      !!pathname?.startsWith("/jadi-pengajar") || poin.some((x) => RECRUIT_RE.test(x));
+      RECRUIT_PATHS.some((x) => pathname?.startsWith(x)) || poin.some((x) => RECRUIT_RE.test(x));
     const salam = recruit
       ? "Halo Tim Kurikulum Linguo, saya dari chat website."
       : "Halo Admin Linguo, saya dari chat website.";
