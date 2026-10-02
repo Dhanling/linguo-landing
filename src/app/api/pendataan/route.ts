@@ -49,6 +49,37 @@ function classModeOf(row: ModeRow): "online" | "offline" {
   return mode.toLowerCase() === "offline" ? "offline" : "online";
 }
 
+// [teacher-gender-stock-v1] Preferensi gender pengajar cuma ditanyakan kalau
+// pengajar AKTIF bahasa itu memang ada yang pria DAN ada yang wanita — kalau
+// stoknya cuma satu gender (atau gendernya belum didata), pilihannya janji
+// kosong. Pencocokan bahasanya sama dengan job_private_teacher_search
+// (sql/teacher_search_gender_20261002.sql di repo dashboard).
+const langKey = (raw: unknown): string => {
+  const k = String(raw || "").split(" - ")[0].trim().toLowerCase();
+  return k === "chinese" ? "mandarin" : k;
+};
+
+async function teacherGenderChoice(language: unknown): Promise<boolean> {
+  const key = langKey(language);
+  if (!key) return false;
+  try {
+    const res = await sb("teachers?status=eq.Aktif&gender=in.(pria,wanita)&select=languages,gender&limit=2000");
+    if (!res.ok) {
+      console.error("Pendataan teacher gender error:", await res.text());
+      return false;
+    }
+    const rows = (await res.json()) as { languages?: string[] | null; gender?: string | null }[];
+    const found = new Set<string>();
+    for (const t of Array.isArray(rows) ? rows : []) {
+      if (t.gender && (t.languages || []).some((l) => langKey(l) === key)) found.add(t.gender);
+    }
+    return found.has("pria") && found.has("wanita");
+  } catch (e) {
+    console.error("Pendataan teacher gender error:", e);
+    return false;
+  }
+}
+
 function sb(path: string, init: RequestInit = {}) {
   return fetch(`${SUPABASE_URL}/rest/v1/${path}`, {
     ...init,
@@ -107,7 +138,11 @@ export async function GET(req: NextRequest) {
   // Yang dikirim ke formulir cuma satu kolom datar `class_mode`; sisa hasil
   // embed tidak perlu bocor ke halaman publik.
   const { registrations, manual_invoices, ...form } = rows[0] as ModeRow & Record<string, unknown>;
-  return NextResponse.json({ ...form, class_mode: classModeOf(rows[0]) });
+  return NextResponse.json({
+    ...form,
+    class_mode: classModeOf(rows[0]),
+    teacher_gender_choice: await teacherGenderChoice(form.language),
+  });
 }
 
 export async function POST(req: NextRequest) {
@@ -158,16 +193,13 @@ export async function POST(req: NextRequest) {
     if (!priorExperience) return NextResponse.json({ error: "Pengalaman belajar wajib diisi" }, { status: 400 });
     if (!learningGoal) return NextResponse.json({ error: "Tujuan belajar wajib diisi" }, { status: 400 });
     if (!schedule) return NextResponse.json({ error: "Pilih minimal 1 blok waktu yang kamu bisa" }, { status: 400 });
-    if (!teacherPref || !["pria", "wanita", "bebas"].includes(teacherPref)) {
-      return NextResponse.json({ error: "Pilih preferensi pengajarmu" }, { status: 400 });
-    }
 
     // [pendataan-alamat-offline-v1] Kelas offline butuh alamat yang bisa
     // didatangi. Modenya ditanyakan ke database, bukan dipercaya dari body:
     // yang menembak endpoint ini langsung tidak boleh melewati pertanyaannya
     // cuma dengan mengaku kelasnya online.
     const modeRes = await sb(
-      `student_intake_forms?token=eq.${token}&select=id,${MODE_EMBED}`,
+      `student_intake_forms?token=eq.${token}&select=id,language,${MODE_EMBED}`,
     );
     if (!modeRes.ok) {
       console.error("Pendataan mode error:", await modeRes.text());
@@ -180,6 +212,14 @@ export async function POST(req: NextRequest) {
     // Kelas offline di luar negeri tidak dilayani — pengajarnya tidak bisa
     // datang — jadi alamat detailnya tidak dipaksakan ke siswa luar Indonesia.
     const isOffline = classModeOf(modeRows[0]) === "offline" && !luarNegeri;
+
+    // [teacher-gender-stock-v1] Pertanyaannya tidak tampil kalau stok pengajar
+    // bahasa ini tidak punya dua gender — jawabannya dikosongkan, bukan "bebas",
+    // supaya di dashboard terbaca "tidak ditanya", bukan "siswa memilih bebas".
+    const genderChoice = await teacherGenderChoice(modeRows[0].language);
+    if (genderChoice && (!teacherPref || !["pria", "wanita", "bebas"].includes(teacherPref))) {
+      return NextResponse.json({ error: "Pilih preferensi pengajarmu" }, { status: 400 });
+    }
     if (isOffline) {
       if (!district) return NextResponse.json({ error: "Kecamatan wajib diisi untuk kelas offline" }, { status: 400 });
       if (!address) return NextResponse.json({ error: "Alamat lengkap wajib diisi untuk kelas offline" }, { status: 400 });
@@ -216,7 +256,7 @@ export async function POST(req: NextRequest) {
       hobby,
       prior_experience: priorExperience,
       learning_goal: learningGoal,
-      teacher_gender_pref: teacherPref,
+      teacher_gender_pref: genderChoice ? teacherPref : null,
       status: "submitted",
       submitted_at: new Date().toISOString(),
       updated_at: new Date().toISOString(),

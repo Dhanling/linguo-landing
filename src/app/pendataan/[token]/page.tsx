@@ -45,6 +45,9 @@ type IntakeForm = {
   hobby: string | null;
   // [teacher-gender-pref-v1]
   teacher_gender_pref: string | null;
+  // [teacher-gender-stock-v1] true kalau pengajar aktif bahasa ini ada yang
+  // pria DAN wanita — kalau tidak, pertanyaannya tidak ditampilkan.
+  teacher_gender_choice?: boolean;
   prior_experience: string | null;
   // [pendataan-domisili-referral-v1]
   // [pendataan-negara-v1] `country` kosong = baris lama, waktu itu formulirnya
@@ -889,7 +892,7 @@ export default function PendataanPage() {
       if (!goal.trim()) return "Ceritakan sedikit tujuan belajarmu";
     }
     if (s === 3 && blocks.size === 0) return "Pilih minimal 1 blok waktu yang kamu bisa";
-    if (s === 3 && !teacherPref) return "Pilih preferensi pengajarmu";
+    if (s === 3 && form?.teacher_gender_choice && !teacherPref) return "Pilih preferensi pengajarmu";
     return "";
   };
 
@@ -948,7 +951,7 @@ export default function PendataanPage() {
           prior_experience: experienceNote.trim() ? `${experience} — ${experienceNote.trim()}` : experience,
           preferred_schedule: scheduleText,
           learning_goal: goal,
-          teacher_gender_pref: teacherPref,
+          teacher_gender_pref: form?.teacher_gender_choice ? teacherPref : "",
         }),
       });
       if (res.ok) { setDone(true); return; }
@@ -1370,6 +1373,7 @@ export default function PendataanPage() {
                     </div>
                   )}
 
+                  {form?.teacher_gender_choice && (
                   <div className="space-y-3 border-t border-slate-200 pt-5">
                     <p className="flex items-start gap-2 text-base font-bold text-slate-900">
                       <User className="mt-0.5 h-4 w-4 shrink-0" style={{ color: TEAL }} />
@@ -1386,6 +1390,7 @@ export default function PendataanPage() {
                       ))}
                     </div>
                   </div>
+                  )}
                 </div>
               )}
             </motion.div>
