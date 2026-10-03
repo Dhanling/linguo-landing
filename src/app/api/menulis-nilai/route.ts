@@ -16,7 +16,13 @@ const GEMINI_API_KEY = process.env.GEMINI_API_KEY || "";
 const MODEL = ["gemini-2.5-flash", "gemini-2.5-flash-lite"];
 // [latihan-menulis-v2] Cadangan kalau Gemini tumbang. 3 Okt 2026 saldo prepay
 // Gemini habis (402) dan rute ini cuma punya satu penyedia, jadi tombol "Nilai
-// dengan AI" mati total untuk semua siswa. DeepSeek tidak dipakai: dia buta gambar.
+// dengan AI" mati total untuk semua siswa.
+// [latihan-menulis-deepseek-v1] DeepSeek jadi penilai PERTAMA (permintaan owner):
+// `deepseek-flash` bisa membaca gambar (api-docs.deepseek.com/guides/vision) dan
+// dompetnya terpisah dari Gemini. Alias lama `deepseek-chat` buta gambar — jangan
+// dipakai di sini. Urutan: DeepSeek → Gemini → Claude.
+const DEEPSEEK_API_KEY = process.env.DEEPSEEK_API_KEY || "";
+const MODEL_DEEPSEEK = process.env.MENULIS_DEEPSEEK_MODEL || "deepseek-flash";
 const ANTHROPIC_API_KEY = process.env.ANTHROPIC_API_KEY || "";
 const MODEL_CLAUDE = "claude-haiku-4-5-20251001";
 const BATAS_PNG = 600_000; // base64; kanvas 320px jauh di bawah ini
@@ -62,6 +68,33 @@ async function tanyaGemini(model: string, png: string, pesan: string, bahasaBala
   const data = await res.json().catch(() => null);
   const teks = String(data?.candidates?.[0]?.content?.parts?.[0]?.text ?? "").trim();
   if (!teks) throw new Error(`${model} balas kosong`);
+  return teks;
+}
+
+async function tanyaDeepSeek(png: string, pesan: string, bahasaBalasan: string): Promise<string> {
+  const res = await fetch("https://api.deepseek.com/chat/completions", {
+    method: "POST",
+    headers: { "Content-Type": "application/json", Authorization: `Bearer ${DEEPSEEK_API_KEY}` },
+    body: JSON.stringify({
+      model: MODEL_DEEPSEEK,
+      max_tokens: 400,
+      temperature: 0.2,
+      messages: [
+        { role: "system", content: sistem(bahasaBalasan) },
+        {
+          role: "user",
+          content: [
+            { type: "text", text: pesan },
+            { type: "image_url", image_url: { url: `data:image/png;base64,${png}` } },
+          ],
+        },
+      ],
+    }),
+  });
+  if (!res.ok) throw new Error(`deepseek ${res.status}: ${(await res.text().catch(() => "")).slice(0, 200)}`);
+  const data = await res.json().catch(() => null);
+  const teks = String(data?.choices?.[0]?.message?.content ?? "").trim();
+  if (!teks) throw new Error("deepseek balas kosong");
   return teks;
 }
 
@@ -111,11 +144,12 @@ export async function POST(req: NextRequest) {
     if (!aksara || !png || png.length > BATAS_PNG || !/^[A-Za-z0-9+/=]+$/.test(png)) {
       return NextResponse.json({ error: "png/char tidak sah" }, { status: 400 });
     }
-    if (!GEMINI_API_KEY && !ANTHROPIC_API_KEY) return NextResponse.json({ error: "kunci AI belum diset" }, { status: 503 });
+    if (!DEEPSEEK_API_KEY && !GEMINI_API_KEY && !ANTHROPIC_API_KEY) return NextResponse.json({ error: "kunci AI belum diset" }, { status: 503 });
 
     const pesan = `Tulisan target: "${aksara}"${baca ? ` (dibaca: ${baca})` : ""}${jenis ? `. Jenis aksara: ${jenis}` : ""}. Nilai tulisan tangan pada gambar.`;
     const galat: string[] = [];
     const penjawab: (() => Promise<string>)[] = [
+      ...(DEEPSEEK_API_KEY ? [() => tanyaDeepSeek(png, pesan, bahasaBalasan)] : []),
       ...(GEMINI_API_KEY ? MODEL.map((model) => () => tanyaGemini(model, png, pesan, bahasaBalasan)) : []),
       ...(ANTHROPIC_API_KEY ? [() => tanyaClaude(png, pesan, bahasaBalasan)] : []),
     ];
@@ -137,6 +171,9 @@ export async function POST(req: NextRequest) {
         });
       } catch (e) {
         galat.push(String((e as Error)?.message || e).slice(0, 160));
+        // Tercatat walau penyedia berikutnya berhasil: DeepSeek yang gagal diam-diam
+        // (model/kunci salah) kalau tidak begini tak pernah kelihatan.
+        console.warn("[menulis-nilai] penyedia gagal:", galat[galat.length - 1]);
       }
     }
     console.error("[menulis-nilai] semua penyedia gagal:", galat.join(" | "));
