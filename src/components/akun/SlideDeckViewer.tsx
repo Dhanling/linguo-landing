@@ -234,9 +234,9 @@ export function SlideBody({ s, kunci, lang }: { s: MateriSlide; kunci?: boolean;
   const kiriSaja = s.ruang === "kiri";
   /* Slide yang isinya banyak dikecilkan sedikit supaya tetap muat tanpa gulir. */
   const n = s.items?.length || s.lines?.length || s.quiz?.length || s.examples?.length || s.points?.length || s.questions?.length || 0;
-  /* [dialog-3-baris-v1] Gelembung dialog kini tiga baris, jadi 5 baris dialog
-     (masih satu kolom) dan dialog sangat panjang dikecilkan sedikit. */
-  const skala = s.type === "dialog" ? (n === 5 || n > 8 ? 0.9 : 1)
+  /* [dialog-gulir-v1] Dialog tidak dikecilkan dan tidak dibagi dua kolom:
+     selalu satu kolom seperti chat, dialog panjang digulir di dalam kartu. */
+  const skala = s.type === "dialog" ? 1
     : s.type === "quiz" ? (n > 5 ? 0.88 : 1)
     : s.type === "vocab" ? (n > 6 ? 0.9 : 1)
     : n > 6 ? 0.88 : 1;
@@ -260,7 +260,7 @@ export function SlideBody({ s, kunci, lang }: { s: MateriSlide; kunci?: boolean;
         <div className="mt-[1cqh] h-[0.3cqw] w-[9%] rounded-full" style={{ background: tema.aksen }} />
       </div>
 
-      <div className="mt-[2cqh] min-h-0 flex-1 overflow-y-auto pr-1" style={{ fontSize: `clamp(${0.66 * skala}rem, ${1.5 * skala}cqw, ${1.05 * skala}rem)` }}>
+      <div className="mt-[2cqh] min-h-0 flex-1 overflow-y-auto pr-[1cqw]" style={{ scrollbarWidth: "thin", fontSize: `clamp(${0.66 * skala}rem, ${1.5 * skala}cqw, ${1.05 * skala}rem)` }}>
         {s.type === "vocab" && (
           <ul className={`grid gap-x-[1.6cqw] gap-y-[1.2cqh] ${(s.items || []).length > 4 ? "grid-cols-2" : "grid-cols-1"}`}>
             {(s.items || []).map((it, i) => (
@@ -302,8 +302,9 @@ export function SlideBody({ s, kunci, lang }: { s: MateriSlide; kunci?: boolean;
         )}
 
         {s.type === "dialog" && (
-          // Dialog panjang (> 5 baris) dibagi dua kolom supaya muat tanpa gulir.
-          <div className={(s.lines || []).length > 5 ? "columns-2 gap-x-[2.5cqw]" : ""}>
+          // [dialog-gulir-v1] Satu kolom berapa pun panjangnya — urutan percakapan
+          // terbaca lurus dari atas ke bawah; yang tak muat digulir.
+          <div>
             {(s.lines || []).map((l, i) => {
               // Pembicara pertama di kiri, yang lain di kanan — seperti gelembung chat.
               const kiri = !l.speaker || l.speaker === s.lines?.[0]?.speaker;
