@@ -9,6 +9,7 @@ import { NextResponse } from "next/server";
 import { createClient } from "@supabase/supabase-js";
 import { resolveEtpBatches, todayWIBISO } from "@/lib/etpBatches";
 import { fetchJadwalKelas, jadwalGelombang, jadwalPdfFileName } from "@/lib/jadwalKelasPdf";
+import { PRICE_CATEGORIES, getSemiPrivatePrice } from "@/lib/trial-pricing";
 
 export const runtime = "nodejs";
 export const dynamic = "force-dynamic";
@@ -19,6 +20,41 @@ const MODEL = "claude-haiku-4-5";
 // ling-knowledge-v2: knowledge base disamakan dgn WA bot (~/linguo-wa-bot/faq.md).
 // ling-menu-flow-v1: flow menu bernomor 1-6 disamakan dgn WA bot (bot.js SAPAAN & MENU).
 // Kalau harga/FAQ/menu berubah, update DUA tempat: WA bot (faq.md + bot.js) + blok ini.
+// [semi-private-price-sync-v1] Harga Semi-Private disuntikkan sebagai ANGKA JADI
+// dari getSemiPrivatePrice() — rumus yang sama dengan checkout /daftar & /harga.
+// Dulu knowledge cuma memuat level Basic 60 menit grup 2-4, sisanya dihitung AI
+// sendiri dan meleset dari invoice.
+const SEMI_ROW_LABELS: [string, string][] = [
+  ["C", "Inggris, Korea, Jepang, Mandarin, Prancis, Jerman, Arab"],
+  ["B", "Spanyol, Italia, Rusia, Belanda, Thai, Bahasa Isyarat"],
+  ["A", "Portugis, Vietnam, Hindi, Turki, Polandia, Swedia, Yunani, Norwegia, Denmark, Ibrani, Tagalog, Farsi, English British, Melayu, Latin, Esperanto, Mesir Kuno + bahasa langka/Eropa/klasik lain"],
+  ["D", "bahasa daerah Nusantara (Jawa, Sunda, Bali, Batak, Bugis, Banjar, Madura)"],
+  ["E", "BIPA"],
+];
+const SEMI_LEVEL_LABELS = ["Basic", "Upper Basic", "Intermediate", "Advance"];
+const SEMI_LEVEL_KEYS = ["A1", "A2", "B1", "C1"];
+const SEMI_DURATIONS = [30, 45, 60, 75, 90];
+const SEMI_SIZES = [2, 3, 4, 5, 6, 7, 8, 9, 10];
+const semiRp = (v: number) => String(Math.round(v)).replace(/\B(?=(\d{3})+(?!\d))/g, ".");
+function semiPerStudent(cat: string, levelIdx: number, durationMin: number, classSize: number): number {
+  // Bahasa wakil kategori: getSemiPrivatePrice menerima nama bahasa, bukan huruf.
+  return getSemiPrivatePrice(PRICE_CATEGORIES[cat][0], SEMI_LEVEL_KEYS[levelIdx], classSize, durationMin).perStudent;
+}
+function buildSemiPrivateTable(): string {
+  const out: string[] = [];
+  for (const [cat, names] of SEMI_ROW_LABELS) {
+    out.push(`[${cat}] ${names}:`);
+    SEMI_LEVEL_LABELS.forEach((label, lv) => {
+      for (const dur of SEMI_DURATIONS) {
+        const cells = SEMI_SIZES.map((n) => `${n} org ${semiRp(semiPerStudent(cat, lv, dur, n))}`);
+        out.push(`- ${label} ${dur} mnt: ${cells.join(" | ")}`);
+      }
+    });
+  }
+  return out.join("\n");
+}
+const SEMI_PRIVATE_TABLE = buildSemiPrivateTable();
+
 const SYSTEM = `Kamu adalah "Ling", asisten virtual resmi Linguo.id — kursus bahasa online nomor 1 di Indonesia (sejak 2020, PT Linguo Edu Indonesia).
 
 GAYA:
@@ -174,13 +210,14 @@ JANGAN campur label: "Little Learner"/"Young Explorer" itu tier USIA Kelas Kids 
 
 SEMI-PRIVATE: ANGGOTA GRUPNYA DICARI SISWA SENDIRI. Grupnya dibentuk user bareng teman/pasangan/keluarga/rekan kerjanya sendiri (minimal 2 orang). Linguo TIDAK mencarikan teman se-grup, tidak menjodohkan user yang belum saling kenal, dan tidak punya daftar tunggu partner belajar. DILARANG menawarkan "Minling bantu carikan temannya", "nanti kami carikan partner belajar", atau menanyakan "perlu Minling bantu cari teman?". Kalau user mau Semi-Private tapi belum punya teman: sampaikan dengan sopan bahwa anggota grupnya diajak sendiri oleh user, lalu tawarkan gantinya — Private (1-on-1, jadwal fleksibel) atau Reguler kalau bahasanya memang sedang ada batch dan levelnya Basic A1.1.
 
-Biaya Semi-Private (kelas grup kecil yang dibikin siswa sendiri) — PER SISWA per sesi, level Basic, 60 menit. Makin besar grupnya makin murah per siswanya. Kolom: grup 2 orang | 3 orang | 4 orang (kategorinya sama dengan tabel Private di atas & sama-sama tidak boleh disebut ke user):
-- Kategori C: Rp 80.000 | 76.667 | 65.000
-- Kategori B: Rp 95.000 | 86.667 | 75.000
-- Kategori A: Rp 105.000 | 97.000 | 85.000
-- Kategori D: Rp 75.000 | 66.667 | 55.000
-- Kategori E: Rp 135.000 | 127.000 | 115.000
-Paket yang disarankan 16 sesi (bukan minimum — lihat JUMLAH SESI & CARA BAYAR), plus paket Recording (+E-book) per siswa (opsional per orang — tidak wajib semua anggota grup ambil; mis. grup 2 siswa bisa cuma 1 yang beli modul, ditagih 1×). Angka di atas HANYA untuk level Basic, 60 menit, grup 2-4 orang — untuk level/durasi lain atau grup 5-10 orang JANGAN menghitung sendiri, bilang dihitungkan admin setelah tahu jumlah anggota grup, level & durasinya.
+Biaya Semi-Private (kelas grup kecil yang dibikin siswa sendiri):
+Biaya PER SISWA per sesi — SUDAH DIHITUNG kalkulator harga yang sama dengan checkout linguo.id & invoice, lengkap untuk tiap level, durasi, dan jumlah anggota grup (2-10 orang). Makin besar grupnya makin murah per siswanya.
+CARA PAKAI: cari baris BAHASA → LEVEL + DURASI → ambil angka pada jumlah anggota grupnya, lalu SALIN apa adanya (jangan dibulatkan). DILARANG menghitung sendiri: jangan mengalikan tarif Basic dengan level/durasi, jangan memakai tarif Private, jangan menaksir. Kombinasi yang tidak ada di tabel (mis. grup lebih dari 10 orang) → bilang harganya dihitungkan admin dulu.
+Huruf kategori bahasa tetap RAHASIA (sama seperti tabel Private) — sebutkan nama bahasa, nama level, durasi, dan nominalnya saja.
+${SEMI_PRIVATE_TABLE}
+Total paket = angka per siswa di tabel × jumlah sesi (paket yang disarankan 16 sesi, bukan minimum — lihat JUMLAH SESI & CARA BAYAR). Cek hitungan: Inggris Intermediate 90 menit grup 2 orang = Rp 156.000 per siswa per sesi → 16 sesi Rp 2.496.000 per siswa.
+Level, durasi, atau jumlah anggota grupnya belum jelas? Tanyakan dulu yang kurang; boleh sambil memberi gambaran level Basic 60 menit untuk grup 2-4 orang dari tabel.
+Plus paket Recording (+E-book) per siswa (opsional per orang — tidak wajib semua anggota grup ambil; mis. grup 2 siswa bisa cuma 1 yang beli modul, ditagih 1×).
 
 Trial Class (BERBAYAR, bukan gratis):
 - Trial = 1 sesi berbayar untuk mencicipi metode belajar sebelum ambil paket penuh. Umumnya online via Zoom.
