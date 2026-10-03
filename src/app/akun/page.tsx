@@ -149,6 +149,8 @@ const LessonPlayer = dynamic(() => import('@/components/akun/LessonPlayer'), { s
 // [beranda-insights-v1] kartu ringkasan belajar (skill+delta, PR, materi, beban minggu, peringkat).
 // ssr:false — semua isinya butuh sesi Supabase klien, tak ada gunanya dirender di server.
 const BerandaInsights = dynamic(() => import('@/components/akun/BerandaInsights'), { ssr: false });
+// [cek-level-berkala-v1] level terakhir + grafik riwayat placement + ajakan tes ulang
+const CekLevel = dynamic(() => import('@/components/akun/CekLevel'), { ssr: false });
 /* [nav-tab-grup-pustaka-v1] Grup Kelas & Perpustakaan Saya sekarang tab di halaman ini.
    Komponennya sama persis dengan yang dipakai route /akun/grup & /akun/perpustakaan,
    jadi tak ada dua versi tampilan yang harus dijaga sinkron. */
@@ -5160,6 +5162,17 @@ export default function AkunPage() {
                           previewStudentId={previewId}
                         />
                       )}
+
+                      {/* [cek-level-berkala-v1] Tes level mandiri: level terakhir, grafik
+                          riwayat, dan tanda "waktunya tes ulang" tiap 4 minggu. Tidak
+                          bergantung pada penilaian pengajar; menyembunyikan diri kalau
+                          siswa tak punya bahasa ber-placement maupun riwayat tes. */}
+                      <CekLevel
+                        regs={liveRegs}
+                        studentId={previewId || student?.id}
+                        previewStudentId={previewId}
+                        displayLanguage={displayLanguage}
+                      />
 
                       {/* [beranda-onboarding-cta-v1] satu langkah berikutnya buat siswa baru,
                           gantinya banner promo + 3 CTA rebutan yang dulu jadi layar pertama. */}

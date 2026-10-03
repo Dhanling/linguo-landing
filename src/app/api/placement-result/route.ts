@@ -91,6 +91,7 @@ export async function POST(req: NextRequest) {
       student_id,
       maxScore,
       mulai,
+      languageSlug,
     } = body;
 
     const SUPABASE_URL = process.env.NEXT_PUBLIC_SUPABASE_URL;
@@ -198,6 +199,9 @@ export async function POST(req: NextRequest) {
     if (email) payload.email = email;
     if (whatsapp) payload.whatsapp = whatsapp;
     if (student_id) payload.student_id = student_id;
+    // [cek-level-berkala-v1] slug & skor maksimum — dipakai grafik riwayat di /akun.
+    if (typeof languageSlug === "string" && /^[a-z-]{2,40}$/.test(languageSlug)) payload.language_slug = languageSlug;
+    if (Number.isFinite(Number(maxScore)) && Number(maxScore) > 0) payload.max_score = Math.round(Number(maxScore));
 
     const res = await fetch(SUPABASE_URL + "/rest/v1/placement_results", {
       method: "POST",

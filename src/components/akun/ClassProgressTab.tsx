@@ -28,6 +28,7 @@ import { SkillRow } from '@/components/akun/SkillBar';
 import { useT, useUiLang } from '@/lib/uiLang'; // [ui-lang-switcher-v1]
 // [nilai-per-pertemuan-v1] nilai kuis tiap pertemuan (schedules.quiz_*)
 import { quizPct } from '@/components/akun/ClassQuizScores';
+import CekLevel from '@/components/akun/CekLevel'; // [cek-level-berkala-v1]
 import { Mic, Headphones, BookOpen, PenLine, TrendingUp, Video, ClipboardList, MessageCircle, Share2, Printer, Check, Lock, type LucideIcon } from 'lucide-react';
 
 const SKILLS: { key: string; label: string; Icon: LucideIcon }[] = [
@@ -57,9 +58,11 @@ const ATT_SOLID: Record<string, { label: string; solid: string; dot: string }> =
 };
 const ATT_ORDER = ['hadir', 'izin', 'sakit', 'alpa'] as const;
 
-export default function ClassProgressTab({ reg, schedules, aksesRekaman }: {
+export default function ClassProgressTab({ reg, schedules, aksesRekaman, previewStudentId = null }: {
   reg: any;
   schedules: any[];
+  /** [cek-level-berkala-v1] POV staf — riwayat Cek Level dibaca atas nama siswa ini. */
+  previewStudentId?: string | null;
   /** [addon-akses-rekaman-v1] hak rekaman registrasi ini. Kalau tak dikirim,
    *  komponen ini memuatnya sendiri (lihat efek di bawah). */
   aksesRekaman?: AksesAddon;
@@ -306,6 +309,10 @@ export default function ClassProgressTab({ reg, schedules, aksesRekaman }: {
           </div>
         )}
       </section>
+
+      {/* [cek-level-berkala-v1] Tes level mandiri bahasa kelas ini — angka yang
+          tidak menunggu penilaian pengajar, lengkap dengan grafik riwayatnya. */}
+      <CekLevel variant="kelas" regs={[reg]} studentId={reg.student_id} previewStudentId={previewStudentId} />
 
       {/* [kelas-tab-kuis-v1] Nilai kuis pindah ke tabnya sendiri (tab Kuis) —
           di sini dulu cuma sepotong grafik tanpa rincian benar/salah. */}

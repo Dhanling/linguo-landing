@@ -147,6 +147,7 @@ export default function PlacementTest({ curriculum, questions }: Props) {
         body: JSON.stringify({
           mulai: true,
           language: meta.name,
+      languageSlug: meta.slug,
           source: "placement-test-" + meta.slug + "-mulai",
           name: who.name,
           email: who.email,
@@ -715,6 +716,7 @@ function ResultScreen({ score, questions, log, meta, timeElapsedSec, contact, on
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
           language: meta.name,
+      languageSlug: meta.slug,
           level: result.sublevel,
           score,
           maxScore,
@@ -739,6 +741,7 @@ function ResultScreen({ score, questions, log, meta, timeElapsedSec, contact, on
 
     const payload: Record<string, unknown> = {
       language: meta.name,
+      languageSlug: meta.slug,
       level: result.sublevel,
       score,
       maxScore,
@@ -783,6 +786,7 @@ function ResultScreen({ score, questions, log, meta, timeElapsedSec, contact, on
               }
             : {
                 language: meta.name,
+                languageSlug: meta.slug,
                 level: result.sublevel,
                 score,
                 maxScore,

@@ -608,7 +608,7 @@ export default function ClassDetailView({ reg, initialTab, previewStudentId = nu
         {loading && <div className="py-10 text-center text-gray-400">{tl('Memuat…')}</div>}
 
         {/* [kelas-tab-v1] Progress = skill CEFR (student_skills) + timeline laporan sesi */}
-        {!loading && activeTab === 'progress' && <ClassProgressTab reg={reg} schedules={schedules} />}
+        {!loading && activeTab === 'progress' && <ClassProgressTab reg={reg} schedules={schedules} previewStudentId={previewStudentId} />}
 
         {/* [kelas-tab-v1] Materi = lampiran pengajar (class_materials) + recording sesi.
             [kelas-materi-milestone-v1] Sekaligus linimasa milestone seluruh sesi
