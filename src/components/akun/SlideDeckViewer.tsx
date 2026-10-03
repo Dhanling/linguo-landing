@@ -234,7 +234,9 @@ export function SlideBody({ s, kunci, lang }: { s: MateriSlide; kunci?: boolean;
   const kiriSaja = s.ruang === "kiri";
   /* Slide yang isinya banyak dikecilkan sedikit supaya tetap muat tanpa gulir. */
   const n = s.items?.length || s.lines?.length || s.quiz?.length || s.examples?.length || s.points?.length || s.questions?.length || 0;
-  const skala = s.type === "dialog" ? (n > 6 ? 0.9 : 1)
+  /* [dialog-3-baris-v1] Gelembung dialog kini tiga baris, jadi 5 baris dialog
+     (masih satu kolom) dan dialog sangat panjang dikecilkan sedikit. */
+  const skala = s.type === "dialog" ? (n === 5 || n > 8 ? 0.9 : 1)
     : s.type === "quiz" ? (n > 5 ? 0.88 : 1)
     : s.type === "vocab" ? (n > 6 ? 0.9 : 1)
     : n > 6 ? 0.88 : 1;
@@ -300,8 +302,8 @@ export function SlideBody({ s, kunci, lang }: { s: MateriSlide; kunci?: boolean;
         )}
 
         {s.type === "dialog" && (
-          // Dialog panjang (> 6 baris) dibagi dua kolom supaya muat tanpa gulir.
-          <div className={(s.lines || []).length > 6 ? "columns-2 gap-x-[2.5cqw]" : ""}>
+          // Dialog panjang (> 5 baris) dibagi dua kolom supaya muat tanpa gulir.
+          <div className={(s.lines || []).length > 5 ? "columns-2 gap-x-[2.5cqw]" : ""}>
             {(s.lines || []).map((l, i) => {
               // Pembicara pertama di kiri, yang lain di kanan — seperti gelembung chat.
               const kiri = !l.speaker || l.speaker === s.lines?.[0]?.speaker;
@@ -309,8 +311,9 @@ export function SlideBody({ s, kunci, lang }: { s: MateriSlide; kunci?: boolean;
                 <div key={i} className={`mb-[1cqh] flex break-inside-avoid ${kiri ? "justify-start" : "justify-end"}`}>
                   <div className={`max-w-[86%] rounded-2xl px-[2cqw] py-[0.9cqh] shadow-sm ${kiri ? "rounded-bl-sm border border-[color:var(--tepi,transparent)] bg-white" : "rounded-br-sm"}`}
                     style={kiri ? undefined : { background: tema.lembut }}>
+                    {/* [dialog-3-baris-v1] Tiga baris: pembicara, kalimat bahasa target, arti. */}
+                    {l.speaker && <div className="text-[0.76em] font-extrabold leading-tight" style={{ color: kiri ? TEAL : tema.aksen }}>{l.speaker}</div>}
                     <div className="font-semibold text-gray-900">
-                      {l.speaker && <span className="mr-[0.5em] text-[0.8em] font-extrabold" style={{ color: kiri ? TEAL : tema.aksen }}>{l.speaker}</span>}
                       <Ucap teks={l.text} lang={lang} />
                     </div>
                     {l.meaning && <div className="text-[0.88em] text-gray-500">{l.meaning}</div>}
