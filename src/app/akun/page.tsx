@@ -3458,6 +3458,40 @@ export default function AkunPage() {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [student?.registrations]);
 
+  /* [siswa-pengajar-batch-v1] Kelas GRUP (Reguler & English Test Preparation):
+     pengajarnya menempel di batch, `registrations.teacher_id` hampir selalu NULL —
+     jadi kartu kelasnya dulu cuma bertuliskan "Reguler" / "Test Prep" di tempat nama
+     pengajar. RPC my_batch_teachers memulangkan pengajar batch per registrasi, HANYA
+     untuk batch yang sudah jalan (batch yang masih buka pendaftaran sering sudah
+     punya calon pengajar — itu belum boleh diumumkan ke siswa). Hasilnya dititipkan
+     ke `teacherDir` supaya semua tempat yang menampilkan pengajar ikut terisi.
+     `registrations.teacher_id` SENGAJA tidak ditimpa: kolom itu dipakai alur booking
+     sesi Private. Pakai `tidOf(reg)` untuk tampilan. */
+  const [batchTeacherOf, setBatchTeacherOf] = useState<Record<string, string>>({});
+  const adaKelasGrup = (student?.registrations || []).some(
+    (r: any) => !r.teacher_id && (r.batch_id || r.test_prep_batch_id)
+  );
+  useEffect(() => {
+    if (!adaKelasGrup || !student?.id) return;
+    let batal = false;
+    (async () => {
+      const { data, error } = await supabase.rpc("my_batch_teachers", previewId ? { p_student_id: student.id } : {});
+      if (batal || error || !Array.isArray(data) || data.length === 0) return;
+      const peta: Record<string, string> = {};
+      (data as any[]).forEach((t) => { if (t?.registration_id && t?.teacher_id) peta[t.registration_id] = t.teacher_id; });
+      setBatchTeacherOf(peta);
+      setTeacherDir((prev) => {
+        const next = { ...prev };
+        (data as any[]).forEach((t) => {
+          if (t?.teacher_id) next[t.teacher_id] = { id: t.teacher_id, name: t.name, title: t.title, avatar_url: t.avatar_url };
+        });
+        return next;
+      });
+    })();
+    return () => { batal = true; };
+  }, [adaKelasGrup, student?.id, previewId]);
+  const tidOf = (r: any): string | undefined => r?.teacher_id || (r?.id ? batchTeacherOf[r.id] : undefined) || undefined;
+
   /* [beranda-kelas-b2b-v1] Peserta kelas korporat (corporate_participants) tak punya baris
      `registrations` → Beranda-nya dulu kosong "Belum ada kelas live aktif" padahal kelasnya
      jalan. RPC my_corporate_classes mencocokkan email sesi ke daftar peserta; hasilnya
@@ -4519,7 +4553,7 @@ export default function AkunPage() {
                 const teacherMap = new Map<string, { name: string; count: number; langs: Set<string>; avatar_url: string | null }>();
                 activeRegs.forEach((r: any) => {
                   // [teacher-avatar-sync-v1] nama + foto dari direktori teachers (fallback embed)
-                  const d = r.teacher_id ? teacherDir[r.teacher_id] : undefined;
+                  const d = tidOf(r) ? teacherDir[tidOf(r)!] : undefined;
                   const tn = d?.name || r?.teachers?.name;
                   if (!tn) return;
                   // [teacher-sapaan-v1] kunci map tetap nama lengkap (biar tak ada
@@ -4601,7 +4635,7 @@ export default function AkunPage() {
                 // Masuk Kelas), jadi dulu satu sesi tampil dua kali di layar pertama.
                 const sesiMendatangCards = upcomingSchedules.map((s) => {
                   const reg = student?.registrations?.find((r) => r.id === s.registration_id);
-                  const tDir = reg?.teacher_id ? teacherDir[reg.teacher_id] : undefined;
+                  const tDir = tidOf(reg) ? teacherDir[tidOf(reg)!] : undefined;
                   // [sesi-nomor-sinkron-v1] nomor sesi dari peta terpusat: melanjutkan
                   // hitungan `sessions_used` (kelas lawas sering tak punya baris jadwal
                   // untuk sesi awalnya), dan nomor > plafon paket tetap disembunyikan —
@@ -4831,7 +4865,7 @@ export default function AkunPage() {
                                 const selesai = isKelasSelesai(reg); // [beranda-status-badge-v1]
                                 // [teacher-avatar-sync-v1] direktori teachers menang atas embed
                                 // (embed bisa berasal dari snapshot lama tanpa avatar_url)
-                                const tDir = reg.teacher_id ? teacherDir[reg.teacher_id] : undefined;
+                                const tDir = tidOf(reg) ? teacherDir[tidOf(reg)!] : undefined;
                                 const tAva = tDir?.avatar_url || reg?.teachers?.avatar_url || null;
                                 // [teacher-sapaan-v1] kartu kelas sempit — sapaan + panggilan saja
                                 const tName = sapaan(tDir?.name || reg?.teachers?.name, tDir?.title || reg?.teachers?.title) || null;
@@ -5305,7 +5339,7 @@ export default function AkunPage() {
                   const reg = student?.registrations.find((r: any) => r.id === s.registration_id);
                   // [jadwal-teacher-avatar-v1] direktori `teachers` menang atas embed
                   // registrasi (embed bisa dari cache lama yang belum punya foto).
-                  const tDir = reg?.teacher_id ? teacherDir[reg.teacher_id] : undefined;
+                  const tDir = tidOf(reg) ? teacherDir[tidOf(reg)!] : undefined;
                   return {
                     id: s.id,
                     registrationId: s.registration_id,
@@ -5366,7 +5400,7 @@ export default function AkunPage() {
                       }
                     : null;
                   if (!src || src.ended) return [];
-                  const tDir = r.teacher_id ? teacherDir[r.teacher_id] : undefined;
+                  const tDir = tidOf(r) ? teacherDir[tidOf(r)!] : undefined;
                   return batchOccurrencesWithOverrides({
                     days: src.days, time: src.time,
                     startDate: src.startDate, endDate: src.endDate, totalSessions: src.totalSessions,
@@ -5456,7 +5490,7 @@ export default function AkunPage() {
                    bukan nama lengkap seperti di database. Gelar/nama panjang bikin
                    baris kartu kepotong. */
                 const teacherLabel = (r: any) => {
-                  const d = r?.teacher_id ? teacherDir[r.teacher_id] : undefined;
+                  const d = tidOf(r) ? teacherDir[tidOf(r)!] : undefined;
                   const nm = d?.name || r?.teachers?.name;
                   return nm ? sapaan(nm, d?.title) : "";
                 };
