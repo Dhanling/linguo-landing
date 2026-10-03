@@ -3475,8 +3475,18 @@ export default function AkunPage() {
     if (!adaKelasGrup || !student?.id) return;
     let batal = false;
     (async () => {
-      const { data, error } = await supabase.rpc("my_batch_teachers", previewId ? { p_student_id: student.id } : {});
-      if (batal || error || !Array.isArray(data) || data.length === 0) return;
+      // Mode pratinjau staf: sesi di browser bukan milik siswa, jadi pengajar batch
+      // sudah dititipkan server (/api/preview-student) di `batch_teacher` tiap registrasi.
+      let data: any[] | null = null;
+      if (previewId) {
+        data = (student?.registrations || [])
+          .filter((r: any) => r?.batch_teacher?.id)
+          .map((r: any) => ({ registration_id: r.id, teacher_id: r.batch_teacher.id, ...r.batch_teacher }));
+      } else {
+        const res = await supabase.rpc("my_batch_teachers");
+        if (!res.error && Array.isArray(res.data)) data = res.data as any[];
+      }
+      if (batal || !data || data.length === 0) return;
       const peta: Record<string, string> = {};
       (data as any[]).forEach((t) => { if (t?.registration_id && t?.teacher_id) peta[t.registration_id] = t.teacher_id; });
       setBatchTeacherOf(peta);
@@ -3489,7 +3499,7 @@ export default function AkunPage() {
       });
     })();
     return () => { batal = true; };
-  }, [adaKelasGrup, student?.id, previewId]);
+  }, [adaKelasGrup, student?.id, student?.registrations, previewId]);
   const tidOf = (r: any): string | undefined => r?.teacher_id || (r?.id ? batchTeacherOf[r.id] : undefined) || undefined;
 
   /* [beranda-kelas-b2b-v1] Peserta kelas korporat (corporate_participants) tak punya baris

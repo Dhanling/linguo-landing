@@ -80,10 +80,27 @@ export async function GET(req: NextRequest) {
     );
     (batches || []).forEach((b: any) => { tpBatchMap[b.id] = b; });
   }
+  // [siswa-pengajar-batch-v1] Pengajar kelas grup (Reguler/ETP) menempel di batch —
+  // RPC yang sama dengan klien siswa, supaya gerbang "batch sudah jalan" tak punya
+  // dua salinan. Gagal = kartu tampil tanpa nama pengajar, bukan error.
+  const batchTeacherMap: Record<string, any> = {};
+  try {
+    const res = await fetch(`${SUPABASE_URL}/rest/v1/rpc/my_batch_teachers`, {
+      method: "POST", headers: H, cache: "no-store", body: JSON.stringify({ p_student_id: id }),
+    });
+    const rows = res.ok ? await res.json() : [];
+    (Array.isArray(rows) ? rows : []).forEach((t: any) => {
+      if (t?.registration_id && t?.teacher_id) {
+        batchTeacherMap[t.registration_id] = { id: t.teacher_id, name: t.name, title: t.title, avatar_url: t.avatar_url };
+      }
+    });
+  } catch {}
+
   const registrations = regs.map((r: any) => ({
     ...r,
     batch: r.batch_id ? batchMap[r.batch_id] || null : null,
     testPrepBatch: r.test_prep_batch_id ? tpBatchMap[r.test_prep_batch_id] || null : null,
+    batch_teacher: batchTeacherMap[r.id] || null,
   }));
 
   // Jadwal — jadwal-riwayat-v1: riwayat + sesi mendatang (dulu cuma mendatang,
