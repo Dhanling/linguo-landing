@@ -100,8 +100,12 @@ export interface MateriSlide {
   answers?: string[];
   /** recap */
   homework?: string;
-  /** [slide-sampul-v1] title — gambar sampul 16:9 di /public/slide-cover kedua repo */
+  /** [slide-sampul-v1] Gambar latar 16:9 di /public/slide-cover kedua repo —
+   *  sampul untuk slide pembuka, latar untuk jenis lain [slide-latar-v1]. */
   cover?: string;
+  /** [slide-latar-v1] "kiri" = isi slide hanya di sisi kiri, karena sisi kanan
+   *  gambar latarnya berisi ilustrasi yang tak boleh tertutup. */
+  ruang?: "kiri";
 }
 
 export interface MateriDeck {
@@ -213,10 +217,13 @@ export function normalizeSlide(raw: any): MateriSlide | null {
     s.points = strList(raw.points);
   } else if (type === "title") {
     s.note = str(raw.note) || undefined;
-    // [slide-sampul-v1] Hanya berkas di /slide-cover — dek buatan AI atau baris
-    // lama tak bisa menyelipkan gambar dari alamat lain.
-    const cover = str(raw.cover);
-    if (/^\/slide-cover\/[\w.-]+$/.test(cover)) s.cover = cover;
+  }
+  // [slide-sampul-v1] Hanya berkas di /slide-cover — dek buatan AI atau baris
+  // lama tak bisa menyelipkan gambar dari alamat lain.
+  const cover = str(raw.cover);
+  if (/^\/slide-cover\/[\w.-]+$/.test(cover)) {
+    s.cover = cover;
+    if (raw.ruang === "kiri" && type !== "title") s.ruang = "kiri";
   }
 
   const kosong =

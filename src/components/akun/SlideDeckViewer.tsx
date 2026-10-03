@@ -21,6 +21,9 @@ import { SLIDE_TYPE_LABEL } from "@/lib/materiSlides";
 import {
   bisaDibunyikan, bukaKunciAudio, hentikanEbookTts, siapkanEbook, ucapkanEbook,
 } from "@/lib/ebookTts";
+// [slide-arti-v1] Arti kata yang SAMA dengan kartu ketuk-kata reader e-book
+// (cache memori → localStorage → cache bersama di server).
+import { artiKataEbook, artiTersimpan, type HasilArti } from "@/lib/ebookKata";
 
 const TEAL = "#1A9E9E";
 /** Ada di /public kedua repo (dashboard & landing). */
@@ -52,14 +55,47 @@ const TEMA: Record<SlideType, Tema> = {
 
 const TEPI = /^[^\p{L}\p{N}]+|[^\p{L}\p{N}]+$/gu;
 
+/* [slide-arti-v1] Tooltip arti di atas kata yang diklik. Posisinya `fixed`
+   terhadap KARTU slide (`contain: layout` di SlideCard menjadikan kartu acuan
+   `fixed` — container-type saja TIDAK, tooltipnya lari ke pojok layar), bukan
+   `absolute` terhadap kata: daftar kosakata/dialog itu wadah gulir, dan tooltip
+   absolute di baris teratas akan terpotong tepinya. */
+type Tip = { kata: string; x: number; y: number; bawah: boolean; arti: HasilArti | undefined };
+
 function Ucap({ teks, lang, kalimat = true }: { teks: string; lang?: string | null; kalimat?: boolean }) {
   const [aktif, setAktif] = useState<number | null>(null);
+  const [tip, setTip] = useState<Tip | null>(null);
+  const adaTip = !!tip;
+  useEffect(() => {
+    if (!adaTip) return;
+    const tutup = () => setTip(null);
+    document.addEventListener("pointerdown", tutup);
+    return () => document.removeEventListener("pointerdown", tutup);
+  }, [adaTip]);
   if (!lang || !bisaDibunyikan(lang)) return <>{teks}</>;
+
+  const bukaTip = (kata: string, el: HTMLElement) => {
+    const kartu = el.closest("[data-slide-card]");
+    if (!kartu) return;
+    const k = kartu.getBoundingClientRect();
+    const r = el.getBoundingClientRect();
+    const bawah = r.top - k.top < k.height * 0.24;
+    const ada = artiTersimpan(kata, utuh, lang);
+    setTip({
+      kata, bawah, arti: ada,
+      x: Math.min(Math.max(r.left + r.width / 2 - k.left, k.width * 0.15), k.width * 0.85),
+      y: (bawah ? r.bottom : r.top) - k.top,
+    });
+    if (ada === undefined) {
+      void artiKataEbook(kata, utuh, lang).then((h) => setTip((t) => (t && t.kata === kata ? { ...t, arti: h } : t)));
+    }
+  };
 
   const bunyikan = (apa: string, idx: number) => (e: ReactMouseEvent) => {
     e.stopPropagation();
     bukaKunciAudio();
     setAktif(idx);
+    if (idx >= 0) bukaTip(apa, e.currentTarget as HTMLElement);
     void ucapkanEbook(apa, lang).finally(() => setTimeout(() => setAktif((a) => (a === idx ? null : a)), 700));
   };
   // Pemisah tampilan ("·", "/", "→") dibaca sebagai jeda, bukan dieja.
@@ -86,6 +122,29 @@ function Ucap({ teks, lang, kalimat = true }: { teks: string; lang?: string | nu
           style={{ color: aktif === -1 ? "#0E7C7B" : TEAL }}>
           <Volume2 className="h-[0.95em] w-[0.95em]" />
         </button>
+      )}
+      {/* Layanan arti sedang tak bisa dipakai → tanpa tooltip, bunyinya tetap jalan. */}
+      {tip && tip.arti !== null && tip.arti !== "mati" && (
+        <span role="tooltip"
+          className="pointer-events-none z-30 block w-max max-w-[28cqw] rounded-[0.7em] bg-gray-900 px-[0.85em] py-[0.55em] text-left text-[clamp(0.6rem,1.25cqw,0.9rem)] font-normal not-italic leading-snug text-white shadow-xl"
+          style={{ position: "fixed", left: tip.x, top: tip.y, transform: `translate(-50%, ${tip.bawah ? "0.5em" : "calc(-100% - 0.5em)"})` }}>
+          <span className="block font-bold" style={{ color: "#7FE3D6" }}>
+            {tip.kata}
+            {tip.arti?.translit && <span className="ml-[0.5em] font-normal text-gray-400">/{tip.arti.translit}/</span>}
+          </span>
+          {tip.arti ? (
+            <>
+              <span className="block">{tip.arti.arti}</span>
+              {(tip.arti.kelas || tip.arti.dasar) && (
+                <span className="mt-[0.2em] block text-[0.82em] text-gray-400">
+                  {[tip.arti.kelas, tip.arti.dasar && `dasar: ${tip.arti.dasar}`].filter(Boolean).join(" · ")}
+                </span>
+              )}
+            </>
+          ) : (
+            <span className="block text-gray-400">Mencari arti…</span>
+          )}
+        </span>
       )}
     </span>
   );
@@ -174,8 +233,8 @@ export function SlideBody({ s, kunci, lang }: { s: MateriSlide; kunci?: boolean;
     : n > 6 ? 0.88 : 1;
 
   return (
-    <div className="flex h-full flex-col px-[6cqw] pb-[1.5cqh] pt-[5cqh]">
-      <div className="shrink-0 pr-[9%]">
+    <div className={`flex h-full flex-col pb-[1.5cqh] pl-[6cqw] pt-[5cqh] ${s.ruang === "kiri" ? "pr-[46cqw]" : "pr-[6cqw]"}`}>
+      <div className={`shrink-0 ${s.ruang === "kiri" ? "" : "pr-[9%]"}`}>
         <span className="inline-block rounded-full px-[0.9em] py-[0.2em] text-[clamp(0.5rem,1cqw,0.7rem)] font-extrabold uppercase tracking-[0.12em] text-white"
           style={{ background: tema.aksen }}>
           {SLIDE_TYPE_LABEL[s.type]}
@@ -309,18 +368,20 @@ export function SlideCard({ s, showAnswers, lang, className = "" }: {
 }) {
   const tema = TEMA[s.type] || TEMA.points;
   const judul = s.type === "title";
-  const sampul = judul && s.cover ? s.cover : null;
+  const sampul = s.cover || null;
   return (
     // `container-type: size` bikin clamp(...cqw) menskala ikut LEBAR KARTU, bukan
     // lebar layar — itu yang bikin teks slide ikut membesar saat fullscreen.
-    <div className={`relative flex flex-col overflow-hidden text-left ${className}`}
-      style={{ containerType: "size", background: tema.bg }}>
+    <div data-slide-card className={`relative flex flex-col overflow-hidden text-left ${className}`}
+      style={{ containerType: "size", contain: "layout", background: tema.bg }}>
       {/* [slide-tema-v1] Dekor: dua lingkaran warna + watermark logo. Semuanya
           pointer-events-none supaya kata & opsi kuis di atasnya tetap bisa diklik. */}
       {/* [slide-sampul-v1] Gambar sampul menggantikan lingkaran dekor & logo pudar. */}
-      {sampul ? (
+      {/* [slide-latar-v1] Slide isi: gambar latar + selapis putih tipis supaya teks tetap terbaca. */}
+      {sampul ? (<>
         <img aria-hidden src={sampul} alt="" className="pointer-events-none absolute inset-0 h-full w-full select-none object-cover" />
-      ) : (<>
+        {!judul && <div aria-hidden className="pointer-events-none absolute inset-0" style={{ background: "rgba(255,255,255,0.3)" }} />}
+      </>) : (<>
       <div aria-hidden className="pointer-events-none absolute -right-[7%] -top-[16%] aspect-square w-[30%] rounded-full"
         style={{ background: judul ? "rgba(255,255,255,0.14)" : tema.lembut, opacity: judul ? 1 : 0.75 }} />
       <div aria-hidden className="pointer-events-none absolute -bottom-[22%] -left-[8%] aspect-square w-[34%] rounded-full"
@@ -330,15 +391,15 @@ export function SlideCard({ s, showAnswers, lang, className = "" }: {
       </>)}
       {/* [slide-watermark-v1] Tanda air: logo besar pudar + tulisan miring berulang.
           Ikut terekam di tangkapan layar/rekaman, tapi tidak mengganggu baca. */}
-      {!sampul && <img aria-hidden src={LOGO} alt=""
+      {!(judul && sampul) && <img aria-hidden src={LOGO} alt=""
         className="pointer-events-none absolute left-1/2 top-1/2 w-[34%] -translate-x-1/2 -translate-y-1/2 select-none"
-        style={{ opacity: judul ? 0.07 : 0.05, filter: judul ? "brightness(0) invert(1)" : undefined }} />}
+        style={{ opacity: judul ? 0.07 : sampul ? 0.08 : 0.05, filter: judul ? "brightness(0) invert(1)" : undefined }} />}
       <div aria-hidden className="pointer-events-none absolute inset-0 select-none overflow-hidden">
-        {(sampul ? [18] : [18, 50, 82]).map((top, r) => (
+        {(judul && sampul ? [18] : [18, 50, 82]).map((top, r) => (
           <div key={r} className="absolute whitespace-nowrap text-[clamp(0.6rem,1.5cqw,1.1rem)] font-extrabold uppercase tracking-[0.5em]"
             style={{
               top: `${top}%`, left: "-10%", transform: "rotate(-18deg)",
-              color: judul ? "#fff" : tema.aksen, opacity: judul ? 0.06 : 0.045,
+              color: judul ? "#fff" : tema.aksen, opacity: judul ? 0.06 : sampul ? 0.09 : 0.045,
             }}>
             {Array.from({ length: 8 }).map(() => "linguo.id").join("   ·   ")}
           </div>
@@ -352,7 +413,7 @@ export function SlideCard({ s, showAnswers, lang, className = "" }: {
       {showAnswers && <KunciJawaban s={s} />}
 
       <div className="relative flex shrink-0 items-center justify-between px-[6cqw] py-[1.2cqh] text-[clamp(0.5rem,1.05cqw,0.72rem)] font-semibold"
-        style={sampul
+        style={judul && sampul
           ? { color: "#0E7C7B" }
           : judul
           ? { color: "rgba(255,255,255,0.85)" }
