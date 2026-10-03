@@ -451,6 +451,9 @@ const EN: Record<string, string> = {
   "Selamat! 🎉 Program": "Congratulations! 🎉 Your",
   "sudah selesai — sertifikatmu siap diunduh.": "program is complete — your certificate is ready to download.",
   "Unduh Sertifikat": "Download Certificate",
+  "Pengajar menerbitkan rapor tiap 4 sesi dan Rapor Akhir di akhir program":
+    "Your teacher publishes a progress report every 4 sessions and a Final Report at the end of the program",
+  "Rapor Sesi": "Progress Report · Session",
   "Rapor Tengah": "Mid-term Report",
   "Rapor Akhir": "Final Report",
   "Diterbitkan": "Published",

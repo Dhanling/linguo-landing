@@ -2,8 +2,10 @@
 
 // [kelas-tab-v1] Tab Rapor di detail kelas siswa.
 // Rapor = SNAPSHOT resmi yang DITERBITKAN pengajar (beda dgn tab Progress yang
-// live): class_reports berisi rapor tengah (mid, ± sesi 8) & akhir (final),
-// masing-masing skor 4 skill + ringkasan kehadiran + komentar pengajar.
+// live): class_reports berisi rapor berkala tiap 4 sesi (s4, s8, … —
+// [rapor-berkala-v1], cermin src/lib/raporBerkala.ts di dashboard admin), rapor
+// tengah gaya lama (mid) & akhir (final), masing-masing skor 4 skill + ringkasan
+// kehadiran + komentar pengajar.
 // RLS memastikan siswa cuma bisa baca yang published_at-nya terisi — draft
 // pengajar tak pernah sampai ke sini.
 // Rapor bisa dicetak/simpan PDF; kalau rapor AKHIR sudah terbit, tombol
@@ -23,6 +25,8 @@ const SKILLS: { key: string; label: string; Icon: LucideIcon }[] = [
 ];
 
 const TYPE_LABEL: Record<string, string> = { mid: 'Rapor Tengah', final: 'Rapor Akhir' };
+// "s8" → sesi 8; null untuk mid/final.
+const raporSesi = (type: string): number | null => { const m = /^s(\d+)$/.exec(type || ''); return m ? Number(m[1]) : null; };
 
 type SkillEntry = { score?: number; note?: string };
 
@@ -38,7 +42,9 @@ function printReport(opts: { report: any; studentName: string; reg: any; teacher
   const skills = (report.skills || {}) as Record<string, SkillEntry>;
   const att = report.attendance || {};
   const date = new Date(report.published_at).toLocaleDateString('id-ID', { day: 'numeric', month: 'long', year: 'numeric' });
-  w.document.write(`<!DOCTYPE html><html><head><meta charset="utf-8"><title>${esc(TYPE_LABEL[report.report_type] || 'Rapor')} — ${esc(studentName)}</title>
+  const sesi = raporSesi(report.report_type);
+  const judul = sesi ? `Rapor Sesi ${sesi}` : (TYPE_LABEL[report.report_type] || 'Rapor');
+  w.document.write(`<!DOCTYPE html><html><head><meta charset="utf-8"><title>${esc(judul)} — ${esc(studentName)}</title>
 <style>
   * { margin:0; padding:0; box-sizing:border-box; }
   body { font-family:'Inter',-apple-system,sans-serif; padding:40px; color:#1a1a1a; max-width:820px; margin:0 auto; }
@@ -66,7 +72,7 @@ function printReport(opts: { report: any; studentName: string; reg: any; teacher
   </div>
   <div class="header">
     <div><div class="logo">Linguo<span>.id</span></div><div class="subtitle">Online Language School</div></div>
-    <div class="badge">${esc((TYPE_LABEL[report.report_type] || 'RAPOR').toUpperCase())}</div>
+    <div class="badge">${esc(judul.toUpperCase())}</div>
   </div>
   <div class="info">
     <div class="name">${esc(studentName)}</div>
@@ -191,7 +197,7 @@ export default function ClassRaporTab({ reg, teacherName, teacherFullName }: { r
       <div className="py-14 text-center text-gray-400">
         <BarChart2 className="mx-auto mb-2 h-9 w-9" strokeWidth={1.5} />
         <div className="text-sm text-gray-500">{t('Belum ada rapor yang diterbitkan')}</div>
-        <div className="mt-1 text-xs">{t('Pengajar menerbitkan Rapor Tengah (± sesi 8) dan Rapor Akhir di akhir program')}</div>
+        <div className="mt-1 text-xs">{t('Pengajar menerbitkan rapor tiap 4 sesi dan Rapor Akhir di akhir program')}</div>
       </div>
     );
   }
@@ -227,7 +233,7 @@ export default function ClassRaporTab({ reg, teacherName, teacherFullName }: { r
             <div className="flex items-start justify-between gap-2">
               <div>
                 <span className={`inline-block rounded-full px-2.5 py-1 text-[11px] font-bold ${r.report_type === 'final' ? 'bg-[#16796E] text-white' : 'bg-[#16796E]/10 text-[#16796E]'}`}>
-                  {t(TYPE_LABEL[r.report_type] || 'Rapor')}
+                  {raporSesi(r.report_type) ? `${t('Rapor Sesi')} ${raporSesi(r.report_type)}` : t(TYPE_LABEL[r.report_type] || 'Rapor')}
                 </span>
                 <div className="mt-1.5 text-xs text-gray-400">
                   {t('Diterbitkan')} {new Date(r.published_at).toLocaleDateString(dateLocale, { day: 'numeric', month: 'long', year: 'numeric' })}
