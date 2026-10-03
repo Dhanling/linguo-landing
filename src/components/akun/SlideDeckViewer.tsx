@@ -17,9 +17,56 @@ import { useT } from "@/lib/uiLang"; // [ui-lang-switcher-v1]
 
 const TEAL = "#1A9E9E";
 
+/* ── [dek-siap-pakai-v1] Kuis pilihan ganda ─────────────────────────────────
+   Diklik langsung di layar (pengajar share screen, siswa menyebut jawabannya):
+   opsi yang dipilih menyala hijau/merah dan jawaban benar ikut ditandai. Tombol
+   kunci (ikon mata) menandai semua jawaban benar sekaligus. */
+
+const HURUF = ["A", "B", "C", "D", "E", "F"];
+
+function KuisPilihan({ s, kunci }: { s: MateriSlide; kunci?: boolean }) {
+  const [pilih, setPilih] = useState<Record<number, number>>({});
+  return (
+    <ol className="space-y-[2.5%]">
+      {(s.quiz || []).map((q, qi) => {
+        const p = pilih[qi];
+        const terjawab = p != null;
+        return (
+          <li key={qi}>
+            <div className="flex gap-2 font-semibold text-gray-900">
+              <span className="shrink-0" style={{ color: TEAL }}>{qi + 1}.</span>
+              <span>{q.q}</span>
+            </div>
+            <div className="mt-[1%] flex flex-wrap gap-[1.5%] pl-[1.6em]">
+              {q.options.map((o, oi) => {
+                const benar = oi === q.answer;
+                const nyala = (terjawab || kunci) && benar;
+                const salah = terjawab && p === oi && !benar;
+                return (
+                  <button key={oi} type="button"
+                    onClick={() => setPilih((x) => ({ ...x, [qi]: oi }))}
+                    className={`rounded-lg border px-[0.7em] py-[0.25em] text-left transition ${
+                      nyala ? "border-emerald-500 bg-emerald-50 text-emerald-800"
+                        : salah ? "border-rose-400 bg-rose-50 text-rose-700 line-through"
+                          : "border-gray-200 bg-gray-50 text-gray-700 hover:border-gray-300"}`}>
+                    <span className="mr-1 font-bold">{HURUF[oi] || oi + 1}.</span>{o}
+                  </button>
+                );
+              })}
+            </div>
+            {(terjawab || kunci) && q.explain && (
+              <div className="mt-[0.8%] pl-[1.6em] text-[0.88em] text-gray-500">{q.explain}</div>
+            )}
+          </li>
+        );
+      })}
+    </ol>
+  );
+}
+
 /* ── Isi satu slide ──────────────────────────────────────────────────────── */
 
-export function SlideBody({ s }: { s: MateriSlide }) {
+export function SlideBody({ s, kunci }: { s: MateriSlide; kunci?: boolean }) {
   if (s.type === "title") {
     return (
       <div className="flex h-full flex-col items-center justify-center px-[6%] text-center">
@@ -90,6 +137,27 @@ export function SlideBody({ s }: { s: MateriSlide }) {
           </ul>
         )}
 
+        {s.type === "dialog" && (
+          <div className="space-y-[1.8%]">
+            {(s.lines || []).map((l, i) => {
+              // Pembicara pertama di kiri, yang lain di kanan — seperti gelembung chat.
+              const kiri = !l.speaker || l.speaker === s.lines?.[0]?.speaker;
+              return (
+                <div key={i} className={`flex ${kiri ? "justify-start" : "justify-end"}`}>
+                  <div className={`max-w-[80%] rounded-2xl px-[3%] py-[1.5%] ${kiri ? "rounded-bl-sm bg-gray-100" : "rounded-br-sm bg-teal-50"}`}>
+                    {l.speaker && <div className="text-[0.78em] font-bold" style={{ color: TEAL }}>{l.speaker}</div>}
+                    <div className="font-semibold text-gray-900">{l.text}</div>
+                    {l.meaning && <div className="text-[0.88em] text-gray-500">{l.meaning}</div>}
+                  </div>
+                </div>
+              );
+            })}
+            {s.note && <p className="rounded-xl bg-amber-50 px-[3%] py-[2%] text-amber-800">{s.note}</p>}
+          </div>
+        )}
+
+        {s.type === "quiz" && <KuisPilihan s={s} kunci={kunci} />}
+
         {s.type === "practice" && (
           <ol className="space-y-[2.5%]">
             {(s.questions || []).map((q, i) => (
@@ -135,7 +203,7 @@ export function SlideCard({ s, showAnswers, className = "" }: { s: MateriSlide; 
     // `container-type: size` bikin clamp(...cqw) menskala ikut LEBAR KARTU, bukan
     // lebar layar — itu yang bikin teks slide ikut membesar saat fullscreen.
     <div className={`flex flex-col overflow-hidden bg-white text-left ${className}`} style={{ containerType: "size" }}>
-      <div className="min-h-0 flex-1"><SlideBody s={s} /></div>
+      <div className="min-h-0 flex-1"><SlideBody s={s} kunci={showAnswers} /></div>
       {showAnswers && <KunciJawaban s={s} />}
     </div>
   );
@@ -216,7 +284,7 @@ export function SlideDeckViewer({
           {subtitle && <span className="hidden truncate text-xs text-gray-400 sm:inline">· {subtitle}</span>}
         </div>
         <div className="flex shrink-0 items-center gap-1.5">
-          {s.type === "practice" && (
+          {(s.type === "practice" || s.type === "quiz") && (
             <button onClick={() => setKunci((k) => !k)} title={kunci ? "Sembunyikan kunci jawaban" : "Tampilkan kunci jawaban"}
               className="rounded-lg p-1.5 text-gray-400 transition hover:bg-gray-800 hover:text-white">
               {kunci ? <EyeOff size={16} /> : <Eye size={16} />}
@@ -238,7 +306,7 @@ export function SlideDeckViewer({
           className="absolute left-2 z-10 rounded-full bg-white/10 p-2.5 text-white transition hover:bg-white/20 disabled:opacity-20 sm:left-4 sm:p-3">
           <ChevronLeft size={22} />
         </button>
-        <SlideCard s={s} showAnswers={kunci} className="aspect-[16/9] max-h-full w-full max-w-[min(1100px,92vw)] rounded-2xl shadow-2xl" />
+        <SlideCard key={i} s={s} showAnswers={kunci} className="aspect-[16/9] max-h-full w-full max-w-[min(1100px,92vw)] rounded-2xl shadow-2xl" />
         <button onClick={maju} disabled={i === total - 1} aria-label={t("Slide berikutnya")}
           className="absolute right-2 z-10 rounded-full bg-white/10 p-2.5 text-white transition hover:bg-white/20 disabled:opacity-20 sm:right-4 sm:p-3">
           <ChevronRight size={22} />

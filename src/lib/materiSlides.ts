@@ -22,21 +22,30 @@
 
 export const SLIDE_MATERIAL_KIND = "ai_slides";
 
-/** Batas atas jumlah slide. Materi kelas 1 sesi, bukan silabus. */
+/** Batas atas jumlah slide hasil generate AI. Materi kelas 1 sesi, bukan silabus. */
 export const MAX_SLIDES = 10;
+/**
+ * [dek-siap-pakai-v1] Batas atas dek yang DISIMPAN/disunting. Dek siap pakai
+ * per sesi silabus (src/data/dekSilabus) berisi dialog + kosakata + tata bahasa
+ * + kuis seperti satu unit e-book, jadi lebih panjang dari hasil AI (~12–16
+ * slide). Batas AI tetap MAX_SLIDES; batas ini cuma pagar supaya dek tidak liar.
+ */
+export const MAX_SLIDES_DEK = 30;
 export const MIN_SLIDES = 3;
 export const DEFAULT_SLIDES = 6;
 
-export type SlideType = "title" | "points" | "vocab" | "pattern" | "practice" | "recap";
+export type SlideType = "title" | "points" | "vocab" | "pattern" | "dialog" | "practice" | "quiz" | "recap";
 
-export const SLIDE_TYPES: SlideType[] = ["title", "points", "vocab", "pattern", "practice", "recap"];
+export const SLIDE_TYPES: SlideType[] = ["title", "points", "vocab", "pattern", "dialog", "practice", "quiz", "recap"];
 
 export const SLIDE_TYPE_LABEL: Record<SlideType, string> = {
   title: "Pembuka",
   points: "Poin",
   vocab: "Kosakata",
   pattern: "Pola kalimat",
+  dialog: "Dialog",
   practice: "Latihan",
+  quiz: "Kuis",
   recap: "Rangkuman",
 };
 
@@ -55,6 +64,21 @@ export interface ExampleItem {
   meaning: string;
 }
 
+/** [dek-siap-pakai-v1] Satu baris dialog. */
+export interface DialogLine {
+  speaker: string;
+  text: string;
+  meaning?: string;
+}
+
+/** [dek-siap-pakai-v1] Satu soal pilihan ganda. `answer` = indeks opsi yang benar. */
+export interface QuizItem {
+  q: string;
+  options: string[];
+  answer: number;
+  explain?: string;
+}
+
 export interface MateriSlide {
   type: SlideType;
   heading: string;
@@ -67,6 +91,10 @@ export interface MateriSlide {
   pattern?: string;
   examples?: ExampleItem[];
   note?: string;
+  /** dialog */
+  lines?: DialogLine[];
+  /** quiz — pilihan ganda */
+  quiz?: QuizItem[];
   /** practice — jawaban sejajar indeks dengan soal, boleh lebih pendek */
   questions?: string[];
   answers?: string[];
@@ -124,6 +152,25 @@ function normExample(v: any): ExampleItem | null {
   return { target, meaning };
 }
 
+function normLine(v: any): DialogLine | null {
+  const text = str(v?.text);
+  if (!text) return null;
+  return { speaker: str(v?.speaker), text, meaning: str(v?.meaning) || undefined };
+}
+
+function normQuiz(v: any): QuizItem | null {
+  const q = str(v?.q);
+  const options = strList(v?.options);
+  if (!q || options.length < 2) return null;
+  const a = Number(v?.answer);
+  return {
+    q,
+    options,
+    answer: Number.isInteger(a) && a >= 0 && a < options.length ? a : 0,
+    explain: str(v?.explain) || undefined,
+  };
+}
+
 /**
  * Bentuk ulang satu slide mentah (dari AI atau dari baris lama) jadi bentuk yang
  * pasti bisa dirender. Mengembalikan null kalau slide itu kosong melompong —
@@ -142,6 +189,11 @@ export function normalizeSlide(raw: any): MateriSlide | null {
     s.pattern = str(raw.pattern) || undefined;
     s.examples = (Array.isArray(raw.examples) ? raw.examples : []).map(normExample).filter(Boolean) as ExampleItem[];
     s.note = str(raw.note) || undefined;
+  } else if (type === "dialog") {
+    s.lines = (Array.isArray(raw.lines) ? raw.lines : []).map(normLine).filter(Boolean) as DialogLine[];
+    s.note = str(raw.note) || undefined;
+  } else if (type === "quiz") {
+    s.quiz = (Array.isArray(raw.quiz) ? raw.quiz : []).map(normQuiz).filter(Boolean) as QuizItem[];
   } else if (type === "practice") {
     s.questions = strList(raw.questions);
     s.answers = strList(raw.answers);
@@ -157,7 +209,7 @@ export function normalizeSlide(raw: any): MateriSlide | null {
   const kosong =
     !s.heading && !s.subheading && !s.note && !s.pattern && !s.homework &&
     !s.points?.length && !s.items?.length && !s.examples?.length &&
-    !s.questions?.length;
+    !s.questions?.length && !s.lines?.length && !s.quiz?.length;
   return kosong ? null : s;
 }
 
@@ -167,7 +219,9 @@ export function emptySlide(type: SlideType): MateriSlide {
     case "title": return { type, heading: "", subheading: "" };
     case "vocab": return { type, heading: "", items: [{ term: "", meaning: "" }] };
     case "pattern": return { type, heading: "", pattern: "", examples: [{ target: "", meaning: "" }] };
+    case "dialog": return { type, heading: "", lines: [{ speaker: "A", text: "", meaning: "" }] };
     case "practice": return { type, heading: "", questions: [""], answers: [""] };
+    case "quiz": return { type, heading: "", quiz: [{ q: "", options: ["", "", ""], answer: 0 }] };
     case "recap": return { type, heading: "", points: [""], homework: "" };
     default: return { type: "points", heading: "", points: [""] };
   }
@@ -185,7 +239,7 @@ export function parseDeck(content: string | null | undefined): MateriDeck | null
   if (!raw || !Array.isArray(raw.slides)) return null;
   const slides = raw.slides.map(normalizeSlide).filter(Boolean) as MateriSlide[];
   if (!slides.length) return null;
-  return { v: 1, slides: slides.slice(0, MAX_SLIDES) };
+  return { v: 1, slides: slides.slice(0, MAX_SLIDES_DEK) };
 }
 
 export function serializeDeck(slides: MateriSlide[]): string {
@@ -214,6 +268,10 @@ export function deckToText(deck: MateriDeck): string {
       out.push(`- ${it.term}${cara}: ${it.meaning}${contoh}`);
     });
     s.examples?.forEach((e) => out.push(`- ${e.target}${e.meaning ? ` (${e.meaning})` : ""}`));
+    s.lines?.forEach((l) => out.push(`${l.speaker ? `${l.speaker}: ` : ""}${l.text}${l.meaning ? ` (${l.meaning})` : ""}`));
+    s.quiz?.forEach((q, qi) => {
+      out.push(`${qi + 1}. ${q.q} — ${q.options.map((o, oi) => `${String.fromCharCode(65 + oi)}) ${o}`).join("  ")} → ${q.options[q.answer] ?? ""}`);
+    });
     s.questions?.forEach((q, qi) => {
       const jawab = s.answers?.[qi];
       out.push(`${qi + 1}. ${q}${jawab ? ` → ${jawab}` : ""}`);
