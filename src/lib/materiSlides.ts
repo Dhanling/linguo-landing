@@ -104,6 +104,13 @@ export interface MateriSlide {
 
 export interface MateriDeck {
   v: 1;
+  /**
+   * [slide-tts-v1] Kode bahasa target ("es", "ja") — dipakai penonton slide untuk
+   * membunyikan kata yang diklik. Disimpan DI DALAM dek karena sisi siswa
+   * (ClassMateriTab/SesiTimeline) tidak selalu memegang bahasa kelasnya. Dek
+   * lama tanpa bidang ini tetap terbaca; katanya saja yang tidak bisa diklik.
+   */
+  lang?: string;
   slides: MateriSlide[];
 }
 
@@ -239,11 +246,12 @@ export function parseDeck(content: string | null | undefined): MateriDeck | null
   if (!raw || !Array.isArray(raw.slides)) return null;
   const slides = raw.slides.map(normalizeSlide).filter(Boolean) as MateriSlide[];
   if (!slides.length) return null;
-  return { v: 1, slides: slides.slice(0, MAX_SLIDES_DEK) };
+  const lang = /^[a-z]{2,3}(-[a-z]{2,4})?$/i.test(str(raw.lang)) ? str(raw.lang).toLowerCase() : undefined;
+  return { v: 1, ...(lang ? { lang } : {}), slides: slides.slice(0, MAX_SLIDES_DEK) };
 }
 
-export function serializeDeck(slides: MateriSlide[]): string {
-  return JSON.stringify({ v: 1, slides } satisfies MateriDeck);
+export function serializeDeck(slides: MateriSlide[], lang?: string | null): string {
+  return JSON.stringify({ v: 1, ...(lang ? { lang } : {}), slides } satisfies MateriDeck);
 }
 
 /** Baris materi ini dek slide atau bukan. */

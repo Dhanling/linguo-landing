@@ -112,7 +112,7 @@ function ItemRow({ it }: { it: Item }) {
           <Play className="h-3.5 w-3.5 shrink-0 text-gray-400 group-hover:text-[#16796E]" strokeWidth={2.2} />
         </button>
         {buka && (dek
-          ? <SlideDeckViewer slides={dek.slides} title={it.title} onClose={() => setBuka(false)} />
+          ? <SlideDeckViewer slides={dek.slides} title={it.title} lang={dek.lang} onClose={() => setBuka(false)} />
           : <TeksMateriOverlay m={it} onClose={() => setBuka(false)} />)}
       </>
     );

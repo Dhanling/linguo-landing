@@ -171,6 +171,7 @@ function MaterialCard({ m, teacherName }: { m: any; teacherName?: string }) {
         {baca && (
           <SlideDeckViewer
             slides={dek.slides}
+            lang={dek.lang}
             title={m.title}
             subtitle={m.session_number ? `${t('Sesi')} ${m.session_number}` : undefined}
             onClose={() => setBaca(false)}
