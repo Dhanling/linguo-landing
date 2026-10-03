@@ -109,8 +109,33 @@ const slideVariants = {
   exit: (dir: number) => ({ x: dir >= 0 ? -48 : 48, opacity: 0 }),
 };
 
-export default function PlacementTest({ curriculum, questions }: Props) {
+// [placement-bank-acak-v1] Satu set soal acak dari bank soal (server). null =
+// bahasa ini belum punya bank / server lambat → pakai soal tetap bawaan halaman.
+async function ambilSoalAcak(slug: string, who: { sid?: string | null; email?: string; whatsapp?: string }): Promise<Question[] | null> {
+  const ctrl = new AbortController();
+  const batas = setTimeout(() => ctrl.abort(), 5000);
+  try {
+    const res = await fetch("/api/placement-questions", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ slug, ...who }),
+      signal: ctrl.signal,
+    });
+    const d = await res.json();
+    return Array.isArray(d?.questions) && d.questions.length > 0 ? d.questions : null;
+  } catch {
+    return null;
+  } finally {
+    clearTimeout(batas);
+  }
+}
+
+export default function PlacementTest({ curriculum, questions: soalBawaan }: Props) {
   const { meta } = curriculum;
+  // [placement-bank-acak-v1] Soal yang sedang dikerjakan — diganti set acak tiap tes dimulai.
+  const [questions, setQuestions] = useState<Question[]>(soalBawaan);
+  const [menyiapkan, setMenyiapkan] = useState(false);
+  const menyiapkanRef = useRef(false);
   const [screen, setScreen] = useState<Screen>("intro");
   const [currentQ, setCurrentQ] = useState(0);
   // Arah transisi: 1 = maju ke soal berikutnya, -1 = mundur ke soal sebelumnya
@@ -157,11 +182,20 @@ export default function PlacementTest({ curriculum, questions }: Props) {
       }).catch(() => {});
   };
 
-  const startTest = () => {
+  const startTest = async () => {
+    if (menyiapkanRef.current) return;
+    menyiapkanRef.current = true; setMenyiapkan(true);
+    const soal = (await ambilSoalAcak(meta.slug, {
+      sid: fromAkun ? searchParams?.get("sid") : null,
+      email: contact?.email,
+      whatsapp: contact?.whatsapp,
+    })) ?? soalBawaan;
+    menyiapkanRef.current = false; setMenyiapkan(false);
+    setQuestions(soal);
     startTimeRef.current = Date.now();
     setScreen("quiz"); setCurrentQ(0); setDirection(1);
-    setAnswers(Array(questions.length).fill(null));
-    siapkanAudio(questions.map((q) => q.audio));
+    setAnswers(Array(soal.length).fill(null));
+    siapkanAudio(soal.map((q) => q.audio));
     trackEvent("placement_test_quiz_started", { language: meta?.name ?? "" });
   };
 
@@ -203,7 +237,7 @@ export default function PlacementTest({ curriculum, questions }: Props) {
       <AnimatePresence mode="wait">
         {screen === "intro" && (
           <IntroScreen key="intro" meta={meta} total={questions.length} listening={questions.filter((q) => q.audio).length}
-            needContact={!fromAkun} onContact={saveContact} onStart={startTest} />
+            needContact={!fromAkun} onContact={saveContact} onStart={startTest} starting={menyiapkan} />
         )}
         {screen === "quiz" && question && (
           <QuizScreen
@@ -241,8 +275,9 @@ export default function PlacementTest({ curriculum, questions }: Props) {
 // ================================================
 // INTRO
 // ================================================
-function IntroScreen({ meta, total, listening, needContact, onContact, onStart }: {
+function IntroScreen({ meta, total, listening, needContact, onContact, onStart, starting }: {
   meta: any; total: number; listening: number; needContact: boolean; onContact: (c: Contact) => void; onStart: () => void;
+  starting: boolean;
 }) {
   // [placement-popup-biodata-tips-v1] "Mulai Test" → popup: biodata (wajib) → tips → mulai.
   const [step, setStep] = useState<null | "biodata" | "tips">(null);
@@ -371,9 +406,9 @@ function IntroScreen({ meta, total, listening, needContact, onContact, onStart }
                       </li>
                     ))}
                   </ul>
-                  <button type="button" autoFocus onClick={onStart}
-                    className="mt-6 w-full inline-flex items-center justify-center gap-2 px-6 py-3 bg-[#1A9E9E] text-white rounded-xl font-semibold hover:bg-[#147a7a] transition-colors">
-                    Mulai Test Sekarang <ArrowRight className="w-4 h-4" />
+                  <button type="button" autoFocus onClick={onStart} disabled={starting}
+                    className="mt-6 w-full inline-flex items-center justify-center gap-2 px-6 py-3 bg-[#1A9E9E] text-white rounded-xl font-semibold hover:bg-[#147a7a] transition-colors disabled:opacity-70">
+                    {starting ? "Menyiapkan soal…" : <>Mulai Test Sekarang <ArrowRight className="w-4 h-4" /></>}
                   </button>
                   {needContact && (
                     <button type="button" onClick={() => setStep("biodata")}
@@ -612,6 +647,8 @@ function ResultScreen({ score, questions, log, meta, timeElapsedSec, contact, on
 }) {
   // Compute max score dynamically: sum of DIFFICULTY_POINTS per question
   const maxScore = questions.reduce((sum, q) => sum + DIFFICULTY_POINTS[q.difficulty], 0);
+  // [placement-bank-acak-v1] Soal yang keluar di tes ini — tes ulang menghindarinya.
+  const questionKeys = questions.map((q) => q.id);
   // [placement-listening-v1] Ambang determineLevel dikalibrasi untuk skor maks 45
   // (bank Inggris). Bank lain maks 36 (tak pernah bisa B2) dan Arab kini 49 —
   // skalakan dulu ke 45 supaya ambangnya adil untuk semua bank.
@@ -720,6 +757,7 @@ function ResultScreen({ score, questions, log, meta, timeElapsedSec, contact, on
           level: result.sublevel,
           score,
           maxScore,
+          questionKeys,
           timeElapsedSec,
           source: "placement-test-" + meta.slug,
           name: contact.name,
@@ -745,6 +783,7 @@ function ResultScreen({ score, questions, log, meta, timeElapsedSec, contact, on
       level: result.sublevel,
       score,
       maxScore,
+      questionKeys,
       timeElapsedSec,
       source: fromAkun ? "akun-dashboard" : ("placement-test-" + meta.slug),
     };
@@ -790,6 +829,7 @@ function ResultScreen({ score, questions, log, meta, timeElapsedSec, contact, on
                 level: result.sublevel,
                 score,
                 maxScore,
+                questionKeys,
                 timeElapsedSec,
                 source: "placement-test-" + meta.slug + "-unlocked",
                 name: nameValue.trim(),
