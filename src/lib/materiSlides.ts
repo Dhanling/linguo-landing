@@ -100,6 +100,8 @@ export interface MateriSlide {
   answers?: string[];
   /** recap */
   homework?: string;
+  /** [slide-sampul-v1] title — gambar sampul 16:9 di /public/slide-cover kedua repo */
+  cover?: string;
 }
 
 export interface MateriDeck {
@@ -211,6 +213,10 @@ export function normalizeSlide(raw: any): MateriSlide | null {
     s.points = strList(raw.points);
   } else if (type === "title") {
     s.note = str(raw.note) || undefined;
+    // [slide-sampul-v1] Hanya berkas di /slide-cover — dek buatan AI atau baris
+    // lama tak bisa menyelipkan gambar dari alamat lain.
+    const cover = str(raw.cover);
+    if (/^\/slide-cover\/[\w.-]+$/.test(cover)) s.cover = cover;
   }
 
   const kosong =

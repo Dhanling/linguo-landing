@@ -144,11 +144,15 @@ export function SlideBody({ s, kunci, lang }: { s: MateriSlide; kunci?: boolean;
   const tema = TEMA[s.type] || TEMA.points;
 
   if (s.type === "title") {
+    /* [slide-sampul-v1] Dengan gambar sampul, judul naik ke separuh atas (langit
+       kosong pada gambar) supaya ilustrasi di separuh bawah tidak tertutup. */
+    const sampul = !!s.cover;
+    const bayang = sampul ? { textShadow: "0 0.15cqw 0.9cqw rgba(6,78,82,0.55)" } : undefined;
     return (
-      <div className="flex h-full flex-col items-center justify-center px-[8%] text-center">
+      <div className={`flex h-full flex-col items-center px-[8%] text-center ${sampul ? "justify-start pt-[8cqh]" : "justify-center"}`}>
         <img src={LOGO} alt="Linguo" className="mb-[3%] h-[14%] w-auto rounded-[22%] bg-white/95 p-[0.8%] shadow-lg" />
-        <h2 className="text-[clamp(1.4rem,3.8cqw,2.8rem)] font-extrabold leading-tight text-white drop-shadow-sm">{s.heading}</h2>
-        {s.subheading && <p className="mt-3 text-[clamp(0.8rem,1.8cqw,1.2rem)] font-medium text-white/85">{s.subheading}</p>}
+        <h2 className="text-[clamp(1.4rem,3.8cqw,2.8rem)] font-extrabold leading-tight text-white drop-shadow-sm" style={bayang}>{s.heading}</h2>
+        {s.subheading && <p className={`mt-3 text-[clamp(0.8rem,1.8cqw,1.2rem)] font-medium ${sampul ? "text-white" : "text-white/85"}`} style={bayang}>{s.subheading}</p>}
         {s.note && (
           <p className="mt-5 rounded-2xl bg-white/95 px-[2.2%] py-[1%] text-[clamp(0.7rem,1.4cqw,0.95rem)] font-semibold shadow-md" style={{ color: "#0E7C7B" }}>
             {s.note}
@@ -305,6 +309,7 @@ export function SlideCard({ s, showAnswers, lang, className = "" }: {
 }) {
   const tema = TEMA[s.type] || TEMA.points;
   const judul = s.type === "title";
+  const sampul = judul && s.cover ? s.cover : null;
   return (
     // `container-type: size` bikin clamp(...cqw) menskala ikut LEBAR KARTU, bukan
     // lebar layar — itu yang bikin teks slide ikut membesar saat fullscreen.
@@ -312,19 +317,24 @@ export function SlideCard({ s, showAnswers, lang, className = "" }: {
       style={{ containerType: "size", background: tema.bg }}>
       {/* [slide-tema-v1] Dekor: dua lingkaran warna + watermark logo. Semuanya
           pointer-events-none supaya kata & opsi kuis di atasnya tetap bisa diklik. */}
+      {/* [slide-sampul-v1] Gambar sampul menggantikan lingkaran dekor & logo pudar. */}
+      {sampul ? (
+        <img aria-hidden src={sampul} alt="" className="pointer-events-none absolute inset-0 h-full w-full select-none object-cover" />
+      ) : (<>
       <div aria-hidden className="pointer-events-none absolute -right-[7%] -top-[16%] aspect-square w-[30%] rounded-full"
         style={{ background: judul ? "rgba(255,255,255,0.14)" : tema.lembut, opacity: judul ? 1 : 0.75 }} />
       <div aria-hidden className="pointer-events-none absolute -bottom-[22%] -left-[8%] aspect-square w-[34%] rounded-full"
         style={{ background: judul ? "rgba(255,255,255,0.10)" : tema.lembut, opacity: judul ? 1 : 0.5 }} />
       <div aria-hidden className="pointer-events-none absolute right-[16%] top-[9%] aspect-square w-[5%] rounded-full"
         style={{ background: judul ? "rgba(255,255,255,0.18)" : tema.aksen, opacity: judul ? 1 : 0.16 }} />
+      </>)}
       {/* [slide-watermark-v1] Tanda air: logo besar pudar + tulisan miring berulang.
           Ikut terekam di tangkapan layar/rekaman, tapi tidak mengganggu baca. */}
-      <img aria-hidden src={LOGO} alt=""
+      {!sampul && <img aria-hidden src={LOGO} alt=""
         className="pointer-events-none absolute left-1/2 top-1/2 w-[34%] -translate-x-1/2 -translate-y-1/2 select-none"
-        style={{ opacity: judul ? 0.07 : 0.05, filter: judul ? "brightness(0) invert(1)" : undefined }} />
+        style={{ opacity: judul ? 0.07 : 0.05, filter: judul ? "brightness(0) invert(1)" : undefined }} />}
       <div aria-hidden className="pointer-events-none absolute inset-0 select-none overflow-hidden">
-        {[18, 50, 82].map((top, r) => (
+        {(sampul ? [18] : [18, 50, 82]).map((top, r) => (
           <div key={r} className="absolute whitespace-nowrap text-[clamp(0.6rem,1.5cqw,1.1rem)] font-extrabold uppercase tracking-[0.5em]"
             style={{
               top: `${top}%`, left: "-10%", transform: "rotate(-18deg)",
@@ -342,14 +352,17 @@ export function SlideCard({ s, showAnswers, lang, className = "" }: {
       {showAnswers && <KunciJawaban s={s} />}
 
       <div className="relative flex shrink-0 items-center justify-between px-[6cqw] py-[1.2cqh] text-[clamp(0.5rem,1.05cqw,0.72rem)] font-semibold"
-        style={judul
+        style={sampul
+          ? { color: "#0E7C7B" }
+          : judul
           ? { color: "rgba(255,255,255,0.85)" }
           : { color: "#0E7C7B", background: "rgba(255,255,255,0.6)", borderTop: `1px solid ${tema.lembut}` }}>
         <span className="inline-flex items-center gap-[0.5em]">
           {judul ? null : <img src={LOGO} alt="" className="h-[1.3em] w-auto" />}
-          Linguo · Online Language School
+          Linguo · Online Language School · linguo.id
         </span>
-        <span>linguo.id</span>
+        {/* [slide-sampul-v1] Hak cipta di kanan bawah tiap slide. */}
+        <span>© PT. Linguo Edu Indonesia</span>
       </div>
     </div>
   );
