@@ -1,6 +1,6 @@
 "use client";
 
-// [latihan-menulis-v1] Menu "Latihan Menulis" — latihan menulis aksara non-Latin
+// [latihan-menulis-v1] [latihan-menulis-v2] Menu "Latihan Menulis" — latihan menulis aksara non-Latin
 // (Jepang, Mandarin, Korea, Thailand, Arab, Rusia, Hindi, Yunani, Ibrani).
 // Berkas ini KEMBAR dengan linguo-admin-dashboard/src/components/teacher/WritingPractice.tsx
 // (beda cuma jalur impor) — ubah dua-duanya sekaligus.
@@ -11,15 +11,20 @@
 //   • PapanJiplak — semua aksara: kanvas bebas dengan bayangan huruf yang bisa
 //     disembunyikan, dinilai dari kemiripan bentuk (lokal) atau oleh AI.
 // Kemajuan disimpan di localStorage per peramban, tidak ke database.
+//
+// [latihan-menulis-v2] Latihan berjenjang (saran review tim): Tahap 1 huruf →
+// Tahap 2 kata → Tahap 3 kalimat sederhana, tiap kata/kalimat tampil dengan
+// artinya. Kata & kalimat ditulis bagian demi bagian (per aksara atau per kata);
+// bagian yang lebih dari satu aksara memakai papan lebar.
 
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import {
-  Check, ChevronLeft, ChevronRight, Eye, EyeOff, Loader2, PenLine, Play, RotateCcw,
+  ArrowRight, Check, ChevronLeft, ChevronRight, Eye, EyeOff, Loader2, PenLine, Play, RotateCcw,
   Sparkles, Undo2, Volume2,
 } from "lucide-react";
 import { useUiLang } from "@/lib/uiLang";
 import {
-  KOTAK_GORESAN, SCRIPT_LANGS, muatGoresan, pilihBahasaAksara,
+  KOTAK_GORESAN, SCRIPT_LANGS, muatGoresan, pecahBagian, pilihBahasaAksara, teksFrasa,
   type Glyph, type ScriptLang, type ScriptSet,
 } from "@/lib/writingScripts";
 
@@ -47,8 +52,18 @@ type Props = {
    repo tetap satu berkas utuh. Kuncinya kalimat Indonesia, sama seperti lib/uiLang. */
 const EN: Record<string, string> = {
   "Latihan Menulis": "Writing Practice",
-  "Latih tulisan tangan aksara non-Latin: lihat urutan goresannya, jiplak, lalu tulis sendiri tanpa bayangan.":
-    "Practise handwriting non-Latin scripts: watch the stroke order, trace it, then write it on your own without the guide.",
+  "Latih tulisan tangan aksara non-Latin secara bertahap: mulai dari huruf, lanjut ke kata, lalu kalimat — lengkap dengan cara baca dan artinya.":
+    "Practise handwriting non-Latin scripts step by step: start with letters, move on to words, then sentences — each with its reading and meaning.",
+  "Tahap": "Stage", "Huruf": "Letters", "Kata": "Words", "Kalimat": "Sentences",
+  "Kata dasar": "Basic words", "Kalimat sederhana (A1)": "Simple sentences (A1)",
+  "Saran: kuasai dulu huruf-hurufnya di Tahap 1 supaya menulis kata dan kalimat lebih lancar.":
+    "Tip: master the letters in Stage 1 first so writing words and sentences comes more easily.",
+  "Tahap ini tuntas!": "Stage complete!", "Lanjut ke": "Continue to",
+  "Tulis bagian demi bagian": "Write it part by part", "Bagian": "Part",
+  "Bagian berikutnya": "Next part",
+  "Semua bagian sudah ditulis.": "Every part has been written.",
+  "Penilaian AI sedang tidak tersedia, jadi tulisanmu dinilai dari kemiripan bentuknya dulu.":
+    "AI grading is unavailable right now, so your writing was scored by shape similarity instead.",
   "Jepang": "Japanese", "Mandarin": "Mandarin", "Korea": "Korean", "Thailand": "Thai", "Arab": "Arabic",
   "Rusia": "Russian", "Hindi": "Hindi", "Yunani": "Greek", "Ibrani": "Hebrew",
   "Kanji dasar (N5)": "Basic kanji (N5)", "Hanzi dasar (HSK 1)": "Basic Hanzi (HSK 1)",
@@ -187,13 +202,17 @@ function cocokGoresan(siswa: Pt[], acuan: SVGPathElement, panjang: number): "ok"
 }
 
 /* ── kanvas ───────────────────────────────────────────────────────────────── */
-function gambarHuruf(ctx: CanvasRenderingContext2D, S: number, teks: string, warna: string, rtl: boolean) {
+/* Papan bisa persegi (satu aksara) atau lebar (kata). Titik tulisan dinormalkan
+   terhadap LEBAR papan di kedua sumbu, jadi y berkisar 0..rasio. */
+const RASIO_LEBAR = 0.5;
+
+function gambarHuruf(ctx: CanvasRenderingContext2D, W: number, H: number, teks: string, warna: string, rtl: boolean) {
   ctx.save();
   ctx.direction = rtl ? "rtl" : "ltr";
   ctx.textAlign = "left";
   ctx.textBaseline = "alphabetic";
   ctx.fillStyle = warna;
-  let px = S * 0.62;
+  let px = H * 0.62;
   const ukur = () => {
     ctx.font = `${px}px ${FONT_AKSARA}`;
     const m = ctx.measureText(teks);
@@ -205,14 +224,14 @@ function gambarHuruf(ctx: CanvasRenderingContext2D, S: number, teks: string, war
     };
   };
   let m = ukur();
-  const skala = Math.min(1.25, (S * 0.72) / Math.max(1, m.w), (S * 0.72) / Math.max(1, m.h));
+  const skala = Math.min(1.25, (W * (W === H ? 0.72 : 0.88)) / Math.max(1, m.w), (H * 0.72) / Math.max(1, m.h));
   px *= skala;
   m = ukur();
-  ctx.fillText(teks, (S - m.w) / 2 + m.kiri, (S - m.h) / 2 + m.naik);
+  ctx.fillText(teks, (W - m.w) / 2 + m.kiri, (H - m.h) / 2 + m.naik);
   ctx.restore();
 }
 
-/** Garis dalam koordinat 0..1, dihaluskan lewat titik tengah. */
+/** Garis dalam satuan lebar papan (S = lebar dalam piksel), dihaluskan lewat titik tengah. */
 function gambarGaris(ctx: CanvasRenderingContext2D, S: number, garis: Pt[][], warna: string, tebal: number) {
   ctx.save();
   ctx.strokeStyle = warna;
@@ -242,22 +261,22 @@ function gambarGaris(ctx: CanvasRenderingContext2D, S: number, garis: Pt[][], wa
   ctx.restore();
 }
 
-function keBit(ctx: CanvasRenderingContext2D, N: number): Uint8Array {
-  const d = ctx.getImageData(0, 0, N, N).data;
-  const out = new Uint8Array(N * N);
-  for (let i = 0; i < N * N; i++) out[i] = d[i * 4 + 3] > 70 ? 1 : 0;
+function keBit(ctx: CanvasRenderingContext2D, W: number, H: number): Uint8Array {
+  const d = ctx.getImageData(0, 0, W, H).data;
+  const out = new Uint8Array(W * H);
+  for (let i = 0; i < W * H; i++) out[i] = d[i * 4 + 3] > 70 ? 1 : 0;
   return out;
 }
 
-function tebalkan(src: Uint8Array, N: number, r: number): Uint8Array {
+function tebalkan(src: Uint8Array, W: number, H: number, r: number): Uint8Array {
   let a = src;
   for (let k = 0; k < r; k++) {
     const b = new Uint8Array(a);
-    for (let y = 0; y < N; y++) {
-      for (let x = 0; x < N; x++) {
-        const i = y * N + x;
+    for (let y = 0; y < H; y++) {
+      for (let x = 0; x < W; x++) {
+        const i = y * W + x;
         if (a[i]) continue;
-        if ((x > 0 && a[i - 1]) || (x < N - 1 && a[i + 1]) || (y > 0 && a[i - N]) || (y < N - 1 && a[i + N])) b[i] = 1;
+        if ((x > 0 && a[i - 1]) || (x < W - 1 && a[i + 1]) || (y > 0 && a[i - W]) || (y < H - 1 && a[i + W])) b[i] = 1;
       }
     }
     a = b;
@@ -270,48 +289,60 @@ function tebalkan(src: Uint8Array, N: number, r: number): Uint8Array {
  * huruf acuan, jadi menulis tanpa bayangan (lebih kecil / agak bergeser) tidak
  * dihukum — yang dinilai bentuknya, bukan posisinya di kertas.
  */
-function nilaiBentuk(teks: string, garis: Pt[][], rtl: boolean): number | null {
+function nilaiBentuk(teks: string, garis: Pt[][], rtl: boolean, rasio = 1): number | null {
   const titik = garis.flat();
   if (!titik.length) return null;
-  const N = 96;
+  const lebar = rasio !== 1;
+  const W = lebar ? 192 : 96;
+  const H = Math.round(W * rasio);
   const buat = () => {
     const k = document.createElement("canvas");
-    k.width = k.height = N;
+    k.width = W;
+    k.height = H;
     return k.getContext("2d", { willReadFrequently: true });
   };
   const cg = buat();
   const ci = buat();
   if (!cg || !ci) return null;
-  gambarHuruf(cg, N, teks, "#000", rtl);
-  const G = keBit(cg, N);
-  let gx0 = N, gy0 = N, gx1 = 0, gy1 = 0, isiG = 0;
-  for (let y = 0; y < N; y++) for (let x = 0; x < N; x++) if (G[y * N + x]) {
+  gambarHuruf(cg, W, H, teks, "#000", rtl);
+  const G = keBit(cg, W, H);
+  let gx0 = W, gy0 = H, gx1 = 0, gy1 = 0, isiG = 0;
+  for (let y = 0; y < H; y++) for (let x = 0; x < W; x++) if (G[y * W + x]) {
     isiG++;
     if (x < gx0) gx0 = x; if (x > gx1) gx1 = x; if (y < gy0) gy0 = y; if (y > gy1) gy1 = y;
   }
   if (!isiG) return null;
-  let ix0 = 1, iy0 = 1, ix1 = 0, iy1 = 0;
+  let ix0 = Infinity, iy0 = Infinity, ix1 = -Infinity, iy1 = -Infinity;
   for (const [x, y] of titik) {
     if (x < ix0) ix0 = x; if (x > ix1) ix1 = x; if (y < iy0) iy0 = y; if (y > iy1) iy1 = y;
   }
-  const dimG = Math.max(gx1 - gx0, gy1 - gy0) / N;
-  const dimI = Math.max(ix1 - ix0, iy1 - iy0, 0.04);
-  const s = Math.min(3, Math.max(0.5, dimG / dimI));
-  const cxG = (gx0 + gx1) / 2 / N, cyG = (gy0 + gy1) / 2 / N;
+  const jepit = (v: number) => Math.min(3, Math.max(0.5, v));
+  let sx: number, sy: number;
+  if (lebar) {
+    // Kata: lebar & tinggi disamakan sendiri-sendiri — jarak antarhuruf tulisan
+    // tangan hampir tak pernah sama dengan huruf cetak.
+    sx = jepit((gx1 - gx0) / W / Math.max(ix1 - ix0, 0.04));
+    sy = jepit((gy1 - gy0) / W / Math.max(iy1 - iy0, 0.04));
+  } else {
+    const dimG = Math.max(gx1 - gx0, gy1 - gy0) / W;
+    const dimI = Math.max(ix1 - ix0, iy1 - iy0, 0.04);
+    sx = sy = jepit(dimG / dimI);
+  }
+  const cxG = (gx0 + gx1) / 2 / W, cyG = (gy0 + gy1) / 2 / W;
   const cxI = (ix0 + ix1) / 2, cyI = (iy0 + iy1) / 2;
-  const pas = garis.map((g) => g.map(([x, y]) => [(x - cxI) * s + cxG, (y - cyI) * s + cyG] as Pt));
-  gambarGaris(ci, N, pas, "#000", N * 0.05);
-  const I = keBit(ci, N);
+  const pas = garis.map((g) => g.map(([x, y]) => [(x - cxI) * sx + cxG, (y - cyI) * sy + cyG] as Pt));
+  gambarGaris(ci, W, pas, "#000", H * 0.05);
+  const I = keBit(ci, W, H);
   // Garis tengah tinta (tipis) dipakai untuk presisi: tinta tebal selalu "kena"
   // badan huruf walau jalurnya melenceng.
   const ct = buat();
   if (!ct) return null;
-  gambarGaris(ct, N, pas, "#000", N * 0.02);
-  const T = keBit(ct, N);
-  const Gt = tebalkan(G, N, 2);
-  const It = tebalkan(I, N, 3);
+  gambarGaris(ct, W, pas, "#000", H * 0.02);
+  const T = keBit(ct, W, H);
+  const Gt = tebalkan(G, W, H, 2);
+  const It = tebalkan(I, W, H, 3);
   let isiT = 0, kena = 0, tepat = 0;
-  for (let i = 0; i < N * N; i++) {
+  for (let i = 0; i < W * H; i++) {
     if (G[i] && It[i]) kena++;
     if (T[i]) { isiT++; if (Gt[i]) tepat++; }
   }
@@ -322,15 +353,17 @@ function nilaiBentuk(teks: string, garis: Pt[][], rtl: boolean): number | null {
   return Math.round(100 * Math.pow(cakupan, 1.3) * Math.pow(presisi, 1.3));
 }
 
-function pngTulisan(garis: Pt[][]): string {
-  const S = 320;
+function pngTulisan(garis: Pt[][], rasio = 1): string {
+  const W = rasio === 1 ? 320 : 560;
+  const H = Math.round(W * rasio);
   const k = document.createElement("canvas");
-  k.width = k.height = S;
+  k.width = W;
+  k.height = H;
   const ctx = k.getContext("2d");
   if (!ctx) return "";
   ctx.fillStyle = "#fff";
-  ctx.fillRect(0, 0, S, S);
-  gambarGaris(ctx, S, garis, "#000", S * 0.03);
+  ctx.fillRect(0, 0, W, H);
+  gambarGaris(ctx, W, garis, "#000", H * 0.03);
   return k.toDataURL("image/png").replace(/^data:image\/png;base64,/, "");
 }
 
@@ -503,9 +536,11 @@ function PapanGoresan({ jalur, s, tl, onSelesai }: {
 }
 
 /* ── Papan jiplak / tulis bebas ───────────────────────────────────────────── */
-function PapanJiplak({ teks, rtl, s, tl, uiLang, onSkor, mintaAi }: {
+function PapanJiplak({ teks, rtl, lebar = false, s, tl, uiLang, onSkor, mintaAi }: {
   teks: string;
   rtl: boolean;
+  /** Papan 2:1 untuk kata (lebih dari satu aksara). */
+  lebar?: boolean;
   s: Skin;
   tl: (k: string) => string;
   uiLang: "id" | "en";
@@ -515,6 +550,8 @@ function PapanJiplak({ teks, rtl, s, tl, uiLang, onSkor, mintaAi }: {
   const refBungkus = useRef<HTMLDivElement>(null);
   const refKanvas = useRef<HTMLCanvasElement>(null);
   const [sisi, setSisi] = useState(320);
+  const rasio = lebar ? RASIO_LEBAR : 1;
+  const tinggi = Math.round(sisi * rasio);
   const [garis, setGaris] = useState<Pt[][]>([]);
   const [bayangan, setBayangan] = useState(true);
   const [skor, setSkor] = useState<number | null>(null);
@@ -525,38 +562,38 @@ function PapanJiplak({ teks, rtl, s, tl, uiLang, onSkor, mintaAi }: {
   useEffect(() => {
     const el = refBungkus.current;
     if (!el) return;
-    const ukur = () => setSisi(Math.max(200, Math.min(360, Math.round(el.clientWidth))));
+    const ukur = () => setSisi(Math.max(200, Math.min(lebar ? 460 : 360, Math.round(el.clientWidth))));
     ukur();
     const ro = new ResizeObserver(ukur);
     ro.observe(el);
     return () => ro.disconnect();
-  }, []);
+  }, [lebar]);
 
   useEffect(() => {
     const k = refKanvas.current;
     const ctx = k?.getContext("2d");
     if (!k || !ctx) return;
     const dpr = Math.min(3, window.devicePixelRatio || 1);
-    if (k.width !== sisi * dpr) { k.width = sisi * dpr; k.height = sisi * dpr; }
+    if (k.width !== sisi * dpr || k.height !== tinggi * dpr) { k.width = sisi * dpr; k.height = tinggi * dpr; }
     ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
     ctx.fillStyle = KERTAS;
-    ctx.fillRect(0, 0, sisi, sisi);
+    ctx.fillRect(0, 0, sisi, tinggi);
     ctx.save();
     ctx.strokeStyle = "#e2e8f0";
     ctx.lineWidth = 1;
     ctx.setLineDash([5, 5]);
     ctx.beginPath();
-    ctx.moveTo(sisi / 2, 0); ctx.lineTo(sisi / 2, sisi);
-    ctx.moveTo(0, sisi / 2); ctx.lineTo(sisi, sisi / 2);
+    if (!lebar) { ctx.moveTo(sisi / 2, 0); ctx.lineTo(sisi / 2, tinggi); }
+    ctx.moveTo(0, tinggi / 2); ctx.lineTo(sisi, tinggi / 2);
     ctx.stroke();
     ctx.restore();
-    if (bayangan) gambarHuruf(ctx, sisi, teks, BAYANGAN, rtl);
-    gambarGaris(ctx, sisi, garis, TINTA, sisi * 0.032);
-  }, [sisi, garis, bayangan, teks, rtl]);
+    if (bayangan) gambarHuruf(ctx, sisi, tinggi, teks, BAYANGAN, rtl);
+    gambarGaris(ctx, sisi, garis, TINTA, lebar ? tinggi * 0.04 : sisi * 0.032);
+  }, [sisi, tinggi, lebar, garis, bayangan, teks, rtl]);
 
   const keNormal = (e: React.PointerEvent<HTMLCanvasElement>): Pt => {
     const r = e.currentTarget.getBoundingClientRect();
-    return [(e.clientX - r.left) / r.width, (e.clientY - r.top) / r.height];
+    return [(e.clientX - r.left) / r.width, (e.clientY - r.top) / r.width];
   };
   const turun = (e: React.PointerEvent<HTMLCanvasElement>) => {
     e.preventDefault();
@@ -573,7 +610,7 @@ function PapanJiplak({ teks, rtl, s, tl, uiLang, onSkor, mintaAi }: {
     const asli = e.nativeEvent;
     const semua = typeof asli.getCoalescedEvents === "function" ? asli.getCoalescedEvents() : [];
     const r = e.currentTarget.getBoundingClientRect();
-    const baru: Pt[] = (semua.length ? semua : [asli]).map((ev) => [(ev.clientX - r.left) / r.width, (ev.clientY - r.top) / r.height]);
+    const baru: Pt[] = (semua.length ? semua : [asli]).map((ev) => [(ev.clientX - r.left) / r.width, (ev.clientY - r.top) / r.width]);
     setGaris((g) => {
       if (!g.length) return g;
       const akhir = g[g.length - 1];
@@ -586,7 +623,7 @@ function PapanJiplak({ teks, rtl, s, tl, uiLang, onSkor, mintaAi }: {
   const batal = () => { setGaris((g) => g.slice(0, -1)); setSkor(null); setCatatan(""); setAi({ status: "idle" }); };
 
   const cek = () => {
-    const n = nilaiBentuk(teks, garis, rtl);
+    const n = nilaiBentuk(teks, garis, rtl, rasio);
     if (n === null) { setSkor(null); setCatatan(tl("Tulis dulu hurufnya di papan.")); return; }
     setSkor(n);
     setCatatan(n >= 80 ? tl("Mirip sekali — pertahankan!") : n >= 55 ? tl("Sudah terbaca, rapikan lagi bentuknya.") : tl("Bentuknya masih jauh. Coba jiplak dengan bayangan dulu."));
@@ -598,23 +635,26 @@ function PapanJiplak({ teks, rtl, s, tl, uiLang, onSkor, mintaAi }: {
     if (!garis.length) { setCatatan(tl("Tulis dulu hurufnya di papan.")); return; }
     setAi({ status: "jalan" });
     try {
-      const hasil = await mintaAi(pngTulisan(garis));
+      const hasil = await mintaAi(pngTulisan(garis, rasio));
       setAi({ status: "ok", hasil });
       setSkor(hasil.score);
       setCatatan("");
       onSkor(hasil.score);
     } catch {
+      // [latihan-menulis-v2] AI tumbang (kuota habis/jaringan) jangan jadi jalan
+      // buntu: tulisan tetap dinilai dari kemiripan bentuk supaya latihan lanjut.
       setAi({ status: "gagal" });
+      cek();
     }
   };
 
   return (
     <div>
-      <div ref={refBungkus} className="mx-auto w-full max-w-[360px]">
+      <div ref={refBungkus} className={`mx-auto w-full ${lebar ? "max-w-[460px]" : "max-w-[360px]"}`}>
         <canvas
           ref={refKanvas}
-          className="block select-none rounded-2xl"
-          style={{ width: sisi, height: sisi, touchAction: "none", cursor: "crosshair", boxShadow: "0 0 0 2px #cbd5e1", background: KERTAS }}
+          className="mx-auto block select-none rounded-2xl"
+          style={{ width: sisi, height: tinggi, touchAction: "none", cursor: "crosshair", boxShadow: "0 0 0 2px #cbd5e1", background: KERTAS }}
           onPointerDown={turun} onPointerMove={gerak} onPointerUp={angkat} onPointerCancel={angkat}
           aria-label={`${tl("Tulis bebas")}: ${teks}`}
         />
@@ -633,7 +673,7 @@ function PapanJiplak({ teks, rtl, s, tl, uiLang, onSkor, mintaAi }: {
         </button>
       </div>
       <div className="mt-2 flex flex-wrap justify-center gap-2">
-        <button type="button" onClick={cek} className={`${KELAS_TOMBOL} border-transparent ${s.utama}`}>
+        <button type="button" onClick={() => { setAi({ status: "idle" }); cek(); }} className={`${KELAS_TOMBOL} border-transparent ${s.utama}`}>
           <Check className="h-3.5 w-3.5" /> {tl("Cek tulisan")}
         </button>
         {mintaAi && (
@@ -646,6 +686,13 @@ function PapanJiplak({ teks, rtl, s, tl, uiLang, onSkor, mintaAi }: {
 
       {(skor !== null || catatan || ai.status === "gagal" || ai.status === "ok") && (
         <div className={`mt-3 rounded-xl border p-3 text-[12.5px] leading-relaxed ${s.catatan}`} aria-live="polite" lang={uiLang}>
+          {ai.status === "gagal" && (
+            <p className={skor !== null ? "mb-1.5" : ""}>
+              {skor !== null
+                ? tl("Penilaian AI sedang tidak tersedia, jadi tulisanmu dinilai dari kemiripan bentuknya dulu.")
+                : tl("Penilaian AI sedang tidak bisa dipakai. Coba lagi sebentar lagi.")}
+            </p>
+          )}
           {skor !== null && (
             <p className="text-[13px] font-bold">
               {tl("Skor")}: {skor}/100
@@ -663,7 +710,6 @@ function PapanJiplak({ teks, rtl, s, tl, uiLang, onSkor, mintaAi }: {
               )}
             </>
           )}
-          {ai.status === "gagal" && <p>{tl("Penilaian AI sedang tidak bisa dipakai. Coba lagi sebentar lagi.")}</p>}
         </div>
       )}
     </div>
@@ -672,6 +718,8 @@ function PapanJiplak({ teks, rtl, s, tl, uiLang, onSkor, mintaAi }: {
 
 /* ── Komponen utama ───────────────────────────────────────────────────────── */
 const SET_SENDIRI = "sendiri";
+const NAMA_TAHAP = ["Huruf", "Kata", "Kalimat"] as const;
+const jumlahAksara = (t: string) => Array.from(t).length;
 
 export default function WritingPractice({ skin = "siswa", preferLangs, speak, aiGrade }: Props) {
   const uiLang = useUiLang();
@@ -701,10 +749,30 @@ export default function WritingPractice({ skin = "siswa", preferLangs, speak, ai
     ? set.glyphs[Math.min(indeks, set.glyphs.length - 1)]
     : sendiri.trim() ? { c: sendiri.trim(), r: "" } : null;
 
+  /* [latihan-menulis-v2] Kata & kalimat ditulis bagian demi bagian: per aksara
+     (kana, Hanzi, blok Hangul) atau per kata. Huruf tunggal = satu bagian. */
+  const frasa = !!set?.frasa;
+  const teksTampil = huruf ? (frasa ? teksFrasa(bahasa, huruf.c) : huruf.c) : "";
+  const teksBunyi = huruf ? (set?.pair ? huruf.c.slice(-1) : teksTampil) : "";
+  const bagian = useMemo(
+    () => (!huruf ? [] : frasa ? pecahBagian(huruf.c, bahasa.unit ?? "word") : [set?.pair ? huruf.c.slice(-1) : huruf.c]),
+    [huruf, frasa, bahasa, set],
+  );
+  // Posisi & skor bagian ditempeli kunci hurufnya, jadi pindah huruf otomatis
+  // mulai dari nol tanpa sempat mencatat skor huruf sebelumnya ke huruf baru.
+  const kunciHuruf = `${bahasa.key}:${idSet}:${huruf?.c ?? ""}`;
+  const [maju, setMaju] = useState<{ kunci: string; i: number; skor: Record<number, number> }>({ kunci: "", i: 0, skor: {} });
+  const iBagian = maju.kunci === kunciHuruf ? Math.min(maju.i, Math.max(0, bagian.length - 1)) : 0;
+  const skorBagian = useMemo(() => (maju.kunci === kunciHuruf ? maju.skor : {}), [maju, kunciHuruf]);
+  const teksPapan = bagian[iBagian] ?? "";
+  // Huruf Tahap 1 selalu papan persegi (vokal Thai/Devanagari memang beberapa kode
+  // tapi satu aksara); papan lebar hanya untuk kata & "Tulis sendiri".
+  const papanLebar = (frasa || !set) && jumlahAksara(teksPapan) > 1;
+
   /* Urutan goresan diambil saat hurufnya dibuka. */
   const [jalur, setJalur] = useState<{ c: string; status: "muat" | "ada" | "kosong"; d: string[] }>({ c: "", status: "kosong", d: [] });
-  const sumber = set?.strokes;
-  const cHuruf = huruf?.c ?? "";
+  const sumber = papanLebar ? undefined : set?.strokes;
+  const cHuruf = teksPapan;
   useEffect(() => {
     if (!sumber || !cHuruf) { setJalur({ c: cHuruf, status: "kosong", d: [] }); return; }
     let hidup = true;
@@ -715,7 +783,7 @@ export default function WritingPractice({ skin = "siswa", preferLangs, speak, ai
     return () => { hidup = false; };
   }, [sumber, cHuruf]);
 
-  const catat = useCallback((skor: number) => {
+  const simpan = useCallback((skor: number) => {
     if (!set || !huruf) return;
     setKemajuan((lama) => {
       const sebelum = lama[set.id]?.[huruf.c] ?? 0;
@@ -726,19 +794,32 @@ export default function WritingPractice({ skin = "siswa", preferLangs, speak, ai
     });
   }, [set, huruf]);
 
+  const catat = useCallback((skor: number) => {
+    if (!frasa) { simpan(skor); return; }
+    setMaju((lama) => {
+      const dulu = lama.kunci === kunciHuruf ? lama.skor : {};
+      return { kunci: kunciHuruf, i: iBagian, skor: { ...dulu, [iBagian]: Math.max(dulu[iBagian] ?? 0, skor) } };
+    });
+  }, [frasa, simpan, kunciHuruf, iBagian]);
+  // Kata/kalimat baru dihitung sesudah SEMUA bagiannya ditulis; nilainya = bagian terlemah.
+  const skorFrasa = frasa && bagian.length > 0 && bagian.every((_, i) => typeof skorBagian[i] === "number")
+    ? Math.min(...bagian.map((_, i) => skorBagian[i]))
+    : null;
+  useEffect(() => { if (skorFrasa !== null) simpan(skorFrasa); }, [skorFrasa, simpan]);
+  const keBagian = (i: number) => setMaju({ kunci: kunciHuruf, i, skor: skorBagian });
+
   const mintaAi = useMemo(() => {
-    if (!aiGrade || !huruf) return undefined;
+    if (!aiGrade || !huruf || !teksPapan) return undefined;
     return (png: string) => aiGrade({
-      png, char: set?.pair ? huruf.c.slice(-1) : huruf.c, roman: huruf.r,
+      png, char: teksPapan, roman: bagian.length > 1 ? "" : huruf.r,
       script: set ? `${bahasa.label} — ${set.label}` : bahasa.label, uiLang,
     });
-  }, [aiGrade, huruf, set, bahasa, uiLang]);
+  }, [aiGrade, huruf, teksPapan, bagian, set, bahasa, uiLang]);
 
   const bunyikan = () => {
-    if (!huruf) return;
-    const teks = set?.pair ? huruf.c.slice(-1) : huruf.c;
-    if (speak) speak(teks, bahasa.code);
-    else ucapBrowser(teks, bahasa.code);
+    if (!teksBunyi) return;
+    if (speak) speak(teksBunyi, bahasa.code);
+    else ucapBrowser(teksBunyi, bahasa.code);
   };
 
   const pilihBahasa = (l: ScriptLang) => { sudahPilih.current = true; setBahasa(l); setIdSet(l.sets[0].id); setIndeks(0); };
@@ -748,7 +829,16 @@ export default function WritingPractice({ skin = "siswa", preferLangs, speak, ai
   const terbaik = set && huruf ? kemajuan[set.id]?.[huruf.c] ?? 0 : 0;
   const adaGoresan = jalur.status === "ada" && jalur.c === cHuruf;
   const pakaiGoresan = !!sumber && mode === "goresan";
-  const arti = huruf?.n ? (huruf.n === "pendek" || huruf.n === "panjang" ? tl(huruf.n) : huruf.n) : "";
+  const artiDari = (x: Glyph) =>
+    !x.n ? "" : x.n === "pendek" || x.n === "panjang" ? tl(x.n) : uiLang === "en" && x.e ? x.e : x.n;
+  const arti = huruf ? artiDari(huruf) : "";
+  const lulusDi = (x: ScriptSet) => x.glyphs.filter((y) => (kemajuan[x.id]?.[y.c] ?? 0) >= BATAS_LULUS).length;
+  const tahapSet = set?.stage ?? 1;
+  const iSet = set ? bahasa.sets.indexOf(set) : -1;
+  const setBerikut = iSet >= 0 ? bahasa.sets[iSet + 1] : undefined;
+  const hurufTahap1 = bahasa.sets.filter((x) => (x.stage ?? 1) === 1);
+  const dasarKurang = tahapSet > 1 &&
+    hurufTahap1.reduce((n, x) => n + lulusDi(x), 0) < hurufTahap1.reduce((n, x) => n + x.glyphs.length, 0) / 2;
 
   return (
     <div className="space-y-4">
@@ -760,7 +850,7 @@ export default function WritingPractice({ skin = "siswa", preferLangs, speak, ai
           <div className="min-w-0">
             <h2 className={`text-base font-semibold ${s.judul}`}>{tl("Latihan Menulis")}</h2>
             <p className={`mt-0.5 text-[12px] leading-snug ${s.redup}`}>
-              {tl("Latih tulisan tangan aksara non-Latin: lihat urutan goresannya, jiplak, lalu tulis sendiri tanpa bayangan.")}
+              {tl("Latih tulisan tangan aksara non-Latin secara bertahap: mulai dari huruf, lanjut ke kata, lalu kalimat — lengkap dengan cara baca dan artinya.")}
             </p>
           </div>
         </div>
@@ -773,17 +863,32 @@ export default function WritingPractice({ skin = "siswa", preferLangs, speak, ai
             </button>
           ))}
         </div>
-        <div className="mt-2 flex flex-wrap items-center gap-1.5">
-          {bahasa.sets.map((x) => (
-            <button key={x.id} type="button" onClick={() => pilihSet(x.id)}
-              className={`rounded-full border px-3 py-1 text-[12px] font-semibold transition-colors ${x.id === idSet ? s.pilAktif : s.pil}`}>
-              {tl(x.label)}
-            </button>
-          ))}
-          <button type="button" onClick={() => pilihSet(SET_SENDIRI)}
-            className={`rounded-full border px-3 py-1 text-[12px] font-semibold transition-colors ${idSet === SET_SENDIRI ? s.pilAktif : s.pil}`}>
-            {tl("Tulis sendiri")}
-          </button>
+        {/* [latihan-menulis-v2] Set dikelompokkan per tahap: huruf → kata → kalimat. */}
+        <div className="mt-2.5 space-y-1.5">
+          {([1, 2, 3] as const).map((t) => {
+            const daftar = bahasa.sets.filter((x) => (x.stage ?? 1) === t);
+            if (!daftar.length) return null;
+            return (
+              <div key={t} className="flex flex-wrap items-center gap-1.5">
+                <span className={`w-[104px] shrink-0 text-[10.5px] font-bold uppercase tracking-wide ${s.redup}`}>
+                  {tl("Tahap")} {t} · {tl(NAMA_TAHAP[t - 1])}
+                </span>
+                {daftar.map((x) => (
+                  <button key={x.id} type="button" onClick={() => pilihSet(x.id)}
+                    className={`rounded-full border px-3 py-1 text-[12px] font-semibold transition-colors ${x.id === idSet ? s.pilAktif : s.pil}`}>
+                    {tl(x.label)}
+                    <span className="ml-1.5 font-medium tabular-nums opacity-70">{lulusDi(x)}/{x.glyphs.length}</span>
+                  </button>
+                ))}
+                {t === 1 && (
+                  <button type="button" onClick={() => pilihSet(SET_SENDIRI)}
+                    className={`rounded-full border px-3 py-1 text-[12px] font-semibold transition-colors ${idSet === SET_SENDIRI ? s.pilAktif : s.pil}`}>
+                    {tl("Tulis sendiri")}
+                  </button>
+                )}
+              </div>
+            );
+          })}
         </div>
 
         {set && (
@@ -794,6 +899,19 @@ export default function WritingPractice({ skin = "siswa", preferLangs, speak, ai
             <p className={`mt-1 text-[11.5px] ${s.redup}`}>
               {lulusSet}/{set.glyphs.length} {tl("dikuasai")} · {tl("Kemajuan tersimpan di perangkat ini.")}
             </p>
+            {dasarKurang && (
+              <p className={`mt-2 rounded-xl border px-3 py-2 text-[12px] ${s.catatan}`}>
+                {tl("Saran: kuasai dulu huruf-hurufnya di Tahap 1 supaya menulis kata dan kalimat lebih lancar.")}
+              </p>
+            )}
+            {lulusSet === set.glyphs.length && setBerikut && (
+              <div className={`mt-2 flex flex-wrap items-center justify-between gap-2 rounded-xl border px-3 py-2 text-[12.5px] ${s.catatan}`}>
+                <span className="font-semibold">{tl("Tahap ini tuntas!")}</span>
+                <button type="button" onClick={() => pilihSet(setBerikut.id)} className={`${KELAS_TOMBOL} border-transparent ${s.utama}`}>
+                  {tl("Lanjut ke")} {tl(setBerikut.label)} <ArrowRight className="h-3.5 w-3.5" />
+                </button>
+              </div>
+            )}
           </div>
         )}
       </div>
@@ -803,20 +921,28 @@ export default function WritingPractice({ skin = "siswa", preferLangs, speak, ai
         <div className={`order-1 lg:order-2 ${s.kartu} p-4 lg:sticky lg:top-4 lg:self-start`}>
           {huruf ? (
             <>
-              <div className="flex items-center gap-3">
-                <span className={`min-w-0 max-w-[55%] truncate text-[40px] font-semibold leading-none ${s.judul}`}
-                  lang={bahasa.code} dir={bahasa.rtl ? "rtl" : "ltr"} style={{ fontFamily: FONT_AKSARA }}>
-                  {huruf.c}
-                </span>
+              <div className={frasa ? "flex items-start gap-3" : "flex items-center gap-3"}>
+                {!frasa && (
+                  <span className={`min-w-0 max-w-[55%] truncate text-[40px] font-semibold leading-none ${s.judul}`}
+                    lang={bahasa.code} dir={bahasa.rtl ? "rtl" : "ltr"} style={{ fontFamily: FONT_AKSARA }}>
+                    {huruf.c}
+                  </span>
+                )}
                 <div className="min-w-0 flex-1">
+                  {frasa && (
+                    <p className={`mb-1 break-words text-[26px] font-semibold leading-snug ${s.judul}`}
+                      lang={bahasa.code} dir={bahasa.rtl ? "rtl" : "ltr"} style={{ fontFamily: FONT_AKSARA }}>
+                      {teksTampil}
+                    </p>
+                  )}
                   {huruf.r && huruf.r !== "-" && (
-                    <p className={`truncate text-[13px] ${s.judul}`}>
+                    <p className={`${frasa ? "" : "truncate "}text-[13px] ${s.judul}`}>
                       <span className={`mr-1.5 text-[10.5px] font-bold uppercase tracking-wide ${s.redup}`}>{tl("Baca")}</span>
                       <span className="font-semibold">{huruf.r}</span>
                     </p>
                   )}
                   {arti && (
-                    <p className={`truncate text-[13px] ${s.judul}`}>
+                    <p className={`${frasa ? "" : "truncate "}text-[13px] ${s.judul}`}>
                       <span className={`mr-1.5 text-[10.5px] font-bold uppercase tracking-wide ${s.redup}`}>{tl("Arti")}</span>
                       {arti}
                     </p>
@@ -828,6 +954,31 @@ export default function WritingPractice({ skin = "siswa", preferLangs, speak, ai
                   <Volume2 className="h-[18px] w-[18px]" />
                 </button>
               </div>
+
+              {frasa && bagian.length > 1 && (
+                <div className="mt-3">
+                  <p className={`text-[11.5px] ${s.redup}`}>
+                    {tl("Tulis bagian demi bagian")} · {tl("Bagian")} {iBagian + 1} {tl("dari")} {bagian.length}
+                  </p>
+                  <div className="mt-1.5 flex flex-wrap gap-1.5" dir={bahasa.rtl ? "rtl" : "ltr"}>
+                    {bagian.map((b, i) => {
+                      const lulus = (skorBagian[i] ?? 0) >= BATAS_LULUS;
+                      return (
+                        <button key={i} type="button" onClick={() => keBagian(i)} aria-pressed={i === iBagian}
+                          lang={bahasa.code} style={{ fontFamily: FONT_AKSARA }}
+                          className={`relative rounded-lg border px-2.5 py-1 text-[18px] leading-tight transition-colors ${i === iBagian ? s.selAktif : lulus ? s.selLulus : s.sel}`}>
+                          {b}
+                          {lulus && (
+                            <span className="absolute -right-1 -top-1 grid h-3.5 w-3.5 place-items-center rounded-full text-white" style={{ background: TEAL }}>
+                              <Check className="h-2.5 w-2.5" strokeWidth={3.5} />
+                            </span>
+                          )}
+                        </button>
+                      );
+                    })}
+                  </div>
+                </div>
+              )}
 
               {sumber && (
                 <div className={`mt-3 grid grid-cols-2 gap-1 rounded-xl p-1 ${s.rel}`}>
@@ -847,7 +998,7 @@ export default function WritingPractice({ skin = "siswa", preferLangs, speak, ai
                   </div>
                 )}
                 {pakaiGoresan && adaGoresan && (
-                  <PapanGoresan key={`${set?.id}:${huruf.c}`} jalur={jalur.d} s={s} tl={tl} onSelesai={catat} />
+                  <PapanGoresan key={`${kunciHuruf}:${iBagian}`} jalur={jalur.d} s={s} tl={tl} onSelesai={catat} />
                 )}
                 {pakaiGoresan && jalur.status === "kosong" && jalur.c === cHuruf && (
                   <p className={`mb-3 rounded-xl border p-3 text-[12.5px] ${s.catatan}`}>
@@ -855,8 +1006,20 @@ export default function WritingPractice({ skin = "siswa", preferLangs, speak, ai
                   </p>
                 )}
                 {(!pakaiGoresan || (jalur.status === "kosong" && jalur.c === cHuruf)) && (
-                  <PapanJiplak key={`${idSet}:${huruf.c}`} teks={set?.pair ? huruf.c.slice(-1) : huruf.c} rtl={!!bahasa.rtl}
+                  <PapanJiplak key={`${kunciHuruf}:${iBagian}`} teks={teksPapan} rtl={!!bahasa.rtl} lebar={papanLebar}
                     s={s} tl={tl} uiLang={uiLang} onSkor={catat} mintaAi={mintaAi} />
+                )}
+                {frasa && bagian.length > 1 && typeof skorBagian[iBagian] === "number" && iBagian < bagian.length - 1 && (
+                  <div className="mt-3 flex justify-center">
+                    <button type="button" onClick={() => keBagian(iBagian + 1)} className={`${KELAS_TOMBOL} border-transparent ${s.utama}`}>
+                      {tl("Bagian berikutnya")} <ArrowRight className="h-3.5 w-3.5" />
+                    </button>
+                  </div>
+                )}
+                {frasa && bagian.length > 1 && skorFrasa !== null && (
+                  <p className={`mt-3 rounded-xl border p-3 text-center text-[12.5px] font-semibold ${s.catatan}`} aria-live="polite">
+                    {tl("Semua bagian sudah ditulis.")} {tl("Skor")}: {skorFrasa}/100
+                  </p>
                 )}
               </div>
 
@@ -881,15 +1044,21 @@ export default function WritingPractice({ skin = "siswa", preferLangs, speak, ai
 
         <div className={`order-2 lg:order-1 ${s.kartu} p-4`}>
           {set ? (
-            <div className="grid grid-cols-[repeat(auto-fill,minmax(64px,1fr))] gap-2" dir={bahasa.rtl ? "rtl" : "ltr"}>
+            <div dir={bahasa.rtl ? "rtl" : "ltr"} className={`grid gap-2 ${
+              !frasa ? "grid-cols-[repeat(auto-fill,minmax(64px,1fr))]"
+                : tahapSet === 2 ? "grid-cols-[repeat(auto-fill,minmax(128px,1fr))]" : "grid-cols-1 sm:grid-cols-2"}`}>
               {set.glyphs.map((x, i) => {
                 const lulus = (kemajuan[set.id]?.[x.c] ?? 0) >= BATAS_LULUS;
                 return (
                   <button key={x.c} type="button" onClick={() => { sudahPilih.current = true; setIndeks(i); }}
                     aria-pressed={i === indeks}
                     className={`relative flex flex-col items-center rounded-xl border px-1 pb-1.5 pt-2 transition-colors ${i === indeks ? s.selAktif : lulus ? s.selLulus : s.sel}`}>
-                    <span className="text-[24px] leading-tight" lang={bahasa.code} style={{ fontFamily: FONT_AKSARA }}>{x.c}</span>
+                    <span className={`max-w-full break-words text-center ${frasa ? "px-1 text-[19px] leading-snug" : "text-[24px] leading-tight"}`}
+                      lang={bahasa.code} style={{ fontFamily: FONT_AKSARA }}>{frasa ? teksFrasa(bahasa, x.c) : x.c}</span>
                     <span className={`mt-0.5 max-w-full truncate text-[10.5px] ${s.redup}`} dir="ltr">{x.r}</span>
+                    {frasa && (
+                      <span className={`max-w-full px-1 text-center text-[11.5px] leading-snug ${s.judul}`} dir="ltr">{artiDari(x)}</span>
+                    )}
                     {lulus && (
                       <span className="absolute right-1 top-1 grid h-3.5 w-3.5 place-items-center rounded-full text-white" style={{ background: TEAL }}>
                         <Check className="h-2.5 w-2.5" strokeWidth={3.5} />

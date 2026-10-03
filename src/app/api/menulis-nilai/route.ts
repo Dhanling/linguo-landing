@@ -14,6 +14,11 @@ export const dynamic = "force-dynamic";
 const GEMINI_API_KEY = process.env.GEMINI_API_KEY || "";
 // Flash dulu (lebih jeli membaca tulisan tangan), Flash-Lite sebagai cadangan.
 const MODEL = ["gemini-2.5-flash", "gemini-2.5-flash-lite"];
+// [latihan-menulis-v2] Cadangan kalau Gemini tumbang. 3 Okt 2026 saldo prepay
+// Gemini habis (402) dan rute ini cuma punya satu penyedia, jadi tombol "Nilai
+// dengan AI" mati total untuk semua siswa. DeepSeek tidak dipakai: dia buta gambar.
+const ANTHROPIC_API_KEY = process.env.ANTHROPIC_API_KEY || "";
+const MODEL_CLAUDE = "claude-haiku-4-5-20251001";
 const BATAS_PNG = 600_000; // base64; kanvas 320px jauh di bawah ini
 
 /* Pagar boros best-effort per kontainer: 40 penilaian / 10 menit per akun. */
@@ -29,7 +34,7 @@ function kenaBatas(uid: string): boolean {
   return false;
 }
 
-const sistem = (bahasaBalasan: string) => `Kamu guru menulis aksara yang teliti dan ramah. Kamu menerima gambar tulisan tangan seorang pelajar (tinta hitam di atas putih, ditulis dengan jari atau stylus) dan aksara yang SEHARUSNYA ia tulis.
+const sistem = (bahasaBalasan: string) => `Kamu guru menulis aksara yang teliti dan ramah. Kamu menerima gambar tulisan tangan seorang pelajar (tinta hitam di atas putih, ditulis dengan jari atau stylus) dan aksara atau kata yang SEHARUSNYA ia tulis.
 Nilai tulisan itu: apakah aksaranya terbaca sebagai aksara target, kelengkapan goresan, proporsi, dan bentuk tiap bagian. Tulisan jari boleh sedikit goyah — jangan menghukum garis yang tidak mulus, nilai bentuknya.
 Kalau gambar kosong, coretan acak, atau jelas aksara lain, beri skor di bawah 30 dan katakan terus terang.
 Balas HANYA JSON: {"score": bilangan bulat 0-100, "feedback": "1-2 kalimat penilaian", "tips": ["maksimal 3 saran perbaikan yang konkret, masing-masing satu kalimat pendek"]}.
@@ -60,6 +65,31 @@ async function tanyaGemini(model: string, png: string, pesan: string, bahasaBala
   return teks;
 }
 
+async function tanyaClaude(png: string, pesan: string, bahasaBalasan: string): Promise<string> {
+  const res = await fetch("https://api.anthropic.com/v1/messages", {
+    method: "POST",
+    headers: { "Content-Type": "application/json", "x-api-key": ANTHROPIC_API_KEY, "anthropic-version": "2023-06-01" },
+    body: JSON.stringify({
+      model: MODEL_CLAUDE,
+      max_tokens: 400,
+      system: sistem(bahasaBalasan),
+      messages: [{
+        role: "user",
+        content: [
+          { type: "image", source: { type: "base64", media_type: "image/png", data: png } },
+          { type: "text", text: pesan },
+        ],
+      }],
+    }),
+  });
+  if (!res.ok) throw new Error(`claude ${res.status}: ${(await res.text().catch(() => "")).slice(0, 200)}`);
+  const data = await res.json().catch(() => null);
+  const blok = Array.isArray(data?.content) ? data.content : [];
+  const teks = String(blok.find((b: { type?: string }) => b?.type === "text")?.text ?? "").trim();
+  if (!teks) throw new Error("claude balas kosong");
+  return teks;
+}
+
 export async function POST(req: NextRequest) {
   try {
     const token = (req.headers.get("authorization") || "").replace(/^Bearer\s+/i, "");
@@ -74,20 +104,24 @@ export async function POST(req: NextRequest) {
 
     const body = await req.json().catch(() => ({}));
     const png = String(body?.png || "");
-    const aksara = String(body?.char || "").trim().slice(0, 16);
+    const aksara = String(body?.char || "").trim().slice(0, 40);
     const baca = String(body?.roman || "").trim().slice(0, 40);
     const jenis = String(body?.script || "").trim().slice(0, 60);
     const bahasaBalasan = body?.uiLang === "en" ? "English" : "bahasa Indonesia";
     if (!aksara || !png || png.length > BATAS_PNG || !/^[A-Za-z0-9+/=]+$/.test(png)) {
       return NextResponse.json({ error: "png/char tidak sah" }, { status: 400 });
     }
-    if (!GEMINI_API_KEY) return NextResponse.json({ error: "GEMINI_API_KEY belum diset" }, { status: 503 });
+    if (!GEMINI_API_KEY && !ANTHROPIC_API_KEY) return NextResponse.json({ error: "kunci AI belum diset" }, { status: 503 });
 
-    const pesan = `Aksara target: "${aksara}"${baca ? ` (dibaca: ${baca})` : ""}${jenis ? `. Jenis aksara: ${jenis}` : ""}. Nilai tulisan tangan pada gambar.`;
+    const pesan = `Tulisan target: "${aksara}"${baca ? ` (dibaca: ${baca})` : ""}${jenis ? `. Jenis aksara: ${jenis}` : ""}. Nilai tulisan tangan pada gambar.`;
     const galat: string[] = [];
-    for (const model of MODEL) {
+    const penjawab: (() => Promise<string>)[] = [
+      ...(GEMINI_API_KEY ? MODEL.map((model) => () => tanyaGemini(model, png, pesan, bahasaBalasan)) : []),
+      ...(ANTHROPIC_API_KEY ? [() => tanyaClaude(png, pesan, bahasaBalasan)] : []),
+    ];
+    for (const tanya of penjawab) {
       try {
-        const teks = await tanyaGemini(model, png, pesan, bahasaBalasan);
+        const teks = await tanya();
         const a = teks.indexOf("{");
         const b = teks.lastIndexOf("}");
         if (a === -1 || b <= a) throw new Error("jawaban bukan JSON");
@@ -105,6 +139,7 @@ export async function POST(req: NextRequest) {
         galat.push(String((e as Error)?.message || e).slice(0, 160));
       }
     }
+    console.error("[menulis-nilai] semua penyedia gagal:", galat.join(" | "));
     return NextResponse.json({ error: galat.join(" | ") }, { status: 502 });
   } catch (e) {
     return NextResponse.json({ error: String((e as Error)?.message || e).slice(0, 300) }, { status: 500 });

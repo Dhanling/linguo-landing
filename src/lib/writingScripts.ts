@@ -1,4 +1,4 @@
-// [latihan-menulis-v1] Katalog aksara untuk menu "Latihan Menulis" (dashboard siswa
+// [latihan-menulis-v1] [latihan-menulis-v2] Katalog aksara untuk menu "Latihan Menulis" (dashboard siswa
 // & pengajar). Berkas ini KEMBAR dengan linguo-admin-dashboard/src/lib/writingScripts.ts
 // — ubah dua-duanya sekaligus.
 //
@@ -7,7 +7,8 @@
 // Hanzi dari hanzi-writer-data saat dibuka (lihat `strokes`). Aksara lain belum
 // punya data goresan terbuka, jadi latihannya menjiplak bentuk huruf.
 
-export type Glyph = { c: string; r: string; n?: string };
+/** `n` = arti/nama (Indonesia), `e` = arti dalam bahasa Inggris (kalau ada). */
+export type Glyph = { c: string; r: string; n?: string; e?: string };
 
 export type ScriptSet = {
   id: string;
@@ -16,6 +17,10 @@ export type ScriptSet = {
   strokes?: "kanjivg" | "hanzi";
   /** `c` berisi huruf besar + kecil (Аа) — yang dibunyikan huruf kecilnya. */
   pair?: boolean;
+  /** [latihan-menulis-v2] Tahap belajar: 1 = huruf, 2 = kata, 3 = kalimat. Kosong = 1. */
+  stage?: 1 | 2 | 3;
+  /** `c` berupa kata/kalimat — ditulis bagian demi bagian (lihat `pecahBagian`). */
+  frasa?: boolean;
   glyphs: Glyph[];
 };
 
@@ -27,6 +32,10 @@ export type ScriptLang = {
   /** Pencocok nama bahasa kelas ("Japanese", "Bahasa Jepang", …). */
   match: RegExp;
   rtl?: boolean;
+  /** Satuan menulis kata/kalimat: per aksara (kana, Hanzi, blok Hangul) atau per kata. Kosong = per kata. */
+  unit?: "char" | "word";
+  /** Bahasa yang kalimatnya ditulis tanpa spasi (Thai): spasi di data cuma pemisah bagian. */
+  tanpaSpasi?: boolean;
   sets: ScriptSet[];
 };
 
@@ -35,6 +44,14 @@ const g = (s: string): Glyph[] =>
     const [kiri, n] = x.split(";");
     const i = kiri.indexOf(" ");
     return { c: kiri.slice(0, i), r: kiri.slice(i + 1), ...(n ? { n } : {}) };
+  });
+
+/** Kata/kalimat: "teks=cara baca;arti;arti Inggris" dipisah "|" — teksnya boleh berspasi. */
+const k = (s: string): Glyph[] =>
+  s.split("|").map((x) => {
+    const [kiri, n, e] = x.split(";");
+    const i = kiri.indexOf("=");
+    return { c: kiri.slice(0, i), r: kiri.slice(i + 1), ...(n ? { n } : {}), ...(e ? { e } : {}) };
   });
 
 const HIRAGANA =
@@ -89,33 +106,107 @@ const YUNANI =
 const IBRANI =
   "א alef|ב bet|ג gimel|ד dalet|ה he|ו vav|ז zayin|ח chet|ט tet|י yod|כ kaf|ל lamed|מ mem|נ nun|ס samekh|ע ayin|פ pe|צ tsadi|ק qof|ר resh|ש shin|ת tav";
 
+/* ── [latihan-menulis-v2] Tahap 2 (kata) & Tahap 3 (kalimat sederhana, A1) ─────
+   Saran review tim: latihan berjenjang huruf → kata → kalimat, lengkap dengan
+   arti supaya siswa sekaligus menambah kosakata. Kalimat dipilih dari ungkapan
+   A1 yang paling awal diajarkan. */
+
+const JA_KATA =
+  "ねこ=neko;kucing;cat|いぬ=inu;anjing;dog|みず=mizu;air;water|やま=yama;gunung;mountain|さかな=sakana;ikan;fish|くるま=kuruma;mobil;car|ともだち=tomodachi;teman;friend|せんせい=sensei;guru;teacher|ありがとう=arigatou;terima kasih;thank you|こんにちは=konnichiwa;halo, selamat siang;hello|日本=nihon;Jepang;Japan|学校=gakkou;sekolah;school|名前=namae;nama;name|今日=kyou;hari ini;today|電車=densha;kereta listrik;train";
+
+const JA_KALIMAT =
+  "おはよう。=ohayou;Selamat pagi.;Good morning.|わたしは学生です。=watashi wa gakusei desu;Saya pelajar.;I am a student.|これは本です。=kore wa hon desu;Ini buku.;This is a book.|水を飲みます。=mizu o nomimasu;Saya minum air.;I drink water.|学校へ行きます。=gakkou e ikimasu;Saya pergi ke sekolah.;I go to school.|日本語を話します。=nihongo o hanashimasu;Saya berbicara bahasa Jepang.;I speak Japanese.|名前は何ですか。=namae wa nan desu ka;Siapa namamu?;What is your name?|ありがとうございます。=arigatou gozaimasu;Terima kasih banyak.;Thank you very much.";
+
+const ZH_KATA =
+  "你好=nǐ hǎo;halo;hello|谢谢=xièxie;terima kasih;thank you|再见=zàijiàn;sampai jumpa;goodbye|老师=lǎoshī;guru;teacher|学生=xuésheng;murid;student|朋友=péngyou;teman;friend|中国=Zhōngguó;Tiongkok;China|汉语=Hànyǔ;bahasa Mandarin;Chinese (language)|爸爸=bàba;ayah;father|妈妈=māma;ibu;mother|喝水=hē shuǐ;minum air;to drink water|吃饭=chī fàn;makan;to eat (a meal)|名字=míngzi;nama;name|今天=jīntiān;hari ini;today";
+
+const ZH_KALIMAT =
+  "你好吗？=nǐ hǎo ma;Apa kabar?;How are you?|我很好。=wǒ hěn hǎo;Saya baik-baik saja.;I am fine.|我是学生。=wǒ shì xuésheng;Saya murid.;I am a student.|你叫什么名字？=nǐ jiào shénme míngzi;Siapa namamu?;What is your name?|他是我的朋友。=tā shì wǒ de péngyou;Dia teman saya.;He is my friend.|我想喝茶。=wǒ xiǎng hē chá;Saya ingin minum teh.;I would like to drink tea.|我学汉语。=wǒ xué Hànyǔ;Saya belajar bahasa Mandarin.;I study Chinese.|我爱你。=wǒ ài nǐ;Aku cinta kamu.;I love you.";
+
+const KO_KATA =
+  "물=mul;air;water|밥=bap;nasi;rice, meal|사람=saram;orang;person|친구=chingu;teman;friend|학교=hakgyo;sekolah;school|사랑=sarang;cinta;love|한국=hanguk;Korea;Korea|이름=ireum;nama;name|가족=gajok;keluarga;family|학생=haksaeng;pelajar;student|선생님=seonsaengnim;guru;teacher|고마워요=gomawoyo;terima kasih;thank you";
+
+const KO_KALIMAT =
+  "안녕하세요.=annyeonghaseyo;Halo.;Hello.|감사합니다.=gamsahamnida;Terima kasih.;Thank you.|저는 학생입니다.=jeoneun haksaengimnida;Saya pelajar.;I am a student.|이것은 책입니다.=igeoseun chaegimnida;Ini buku.;This is a book.|물을 마셔요.=mureul masyeoyo;Saya minum air.;I drink water.|이름이 뭐예요?=ireumi mwoyeyo;Siapa namamu?;What is your name?|한국어를 공부해요.=hangugeoreul gongbuhaeyo;Saya belajar bahasa Korea.;I study Korean.|만나서 반갑습니다.=mannaseo bangapseumnida;Senang bertemu denganmu.;Nice to meet you.";
+
+const TH_KATA =
+  "น้ำ=nam;air;water|ข้าว=khao;nasi;rice|บ้าน=ban;rumah;house|แมว=maeo;kucing;cat|หมา=ma;anjing;dog|ปลา=pla;ikan;fish|ครู=khru;guru;teacher|รัก=rak;cinta;love|เพื่อน=phuean;teman;friend|ไทย=thai;Thailand;Thai|สวัสดี=sawatdi;halo;hello|ขอบคุณ=khop khun;terima kasih;thank you";
+
+// Thai ditulis tanpa spasi — spasi di sini cuma pemisah kata untuk latihan per bagian.
+const TH_KALIMAT =
+  "สวัสดี ครับ=sawatdi khrap;Halo. (penutur laki-laki);Hello. (male speaker)|ขอบคุณ ค่ะ=khop khun kha;Terima kasih. (penutur perempuan);Thank you. (female speaker)|ฉัน รัก คุณ=chan rak khun;Aku cinta kamu.;I love you.|ฉัน กิน ข้าว=chan kin khao;Saya makan nasi.;I eat rice.|ฉัน ชื่อ มานี=chan chue Mani;Nama saya Mani.;My name is Mani.|คุณ สบายดี ไหม=khun sabai di mai;Apa kabar?;How are you?|ฉัน เรียน ภาษาไทย=chan rian phasa thai;Saya belajar bahasa Thai.;I study Thai.";
+
+const AR_KATA =
+  "بَاب=bab;pintu;door|مَاء=ma';air;water|أَب=ab;ayah;father|أُمّ=umm;ibu;mother|بَيْت=bait;rumah;house|قَلَم=qalam;pena;pen|كِتَاب=kitab;buku;book|وَلَد=walad;anak laki-laki;boy|بِنْت=bint;anak perempuan;girl|سَلَام=salam;salam, damai;peace|شُكْرًا=syukran;terima kasih;thank you|مَدْرَسَة=madrasah;sekolah;school";
+
+const AR_KALIMAT =
+  "السَّلَامُ عَلَيْكُمْ=assalamu 'alaikum;Semoga keselamatan atasmu.;Peace be upon you.|هَذَا كِتَابٌ=hadza kitabun;Ini buku.;This is a book.|أَنَا طَالِبٌ=ana thalibun;Saya pelajar.;I am a student.|مَا اسْمُكَ؟=masmuka;Siapa namamu?;What is your name?|كَيْفَ حَالُكَ؟=kaifa haluka;Apa kabar?;How are you?|أَنَا بِخَيْرٍ=ana bikhair;Saya baik-baik saja.;I am fine.|شُكْرًا جَزِيلًا=syukran jazilan;Terima kasih banyak.;Thank you very much.|أُحِبُّ اللُّغَةَ الْعَرَبِيَّةَ=uhibbul-lughatal-'arabiyyah;Saya menyukai bahasa Arab.;I love the Arabic language.";
+
+const RU_KATA =
+  "да=da;ya;yes|нет=nyet;tidak;no|дом=dom;rumah;house|кот=kot;kucing;cat|мама=mama;ibu;mom|папа=papa;ayah;dad|вода=voda;air;water|друг=drug;teman;friend|книга=kniga;buku;book|школа=shkola;sekolah;school|привет=privet;hai;hi|спасибо=spasibo;terima kasih;thank you";
+
+const RU_KALIMAT =
+  "Доброе утро!=dobroye utro;Selamat pagi!;Good morning!|Как дела?=kak dela;Apa kabar?;How are you?|Меня зовут Анна.=menya zovut Anna;Nama saya Anna.;My name is Anna.|Я студент.=ya student;Saya mahasiswa.;I am a student.|Это мой дом.=eto moy dom;Ini rumah saya.;This is my house.|Я люблю тебя.=ya lyublyu tebya;Aku cinta kamu.;I love you.|Большое спасибо!=bol'shoye spasibo;Terima kasih banyak!;Thank you very much!|Я говорю по-русски.=ya govoryu po-russki;Saya berbicara bahasa Rusia.;I speak Russian.";
+
+const HI_KATA =
+  "घर=ghar;rumah;house|नाम=naam;nama;name|माँ=maan;ibu;mother|पिता=pitaa;ayah;father|पानी=paani;air;water|दोस्त=dost;teman;friend|किताब=kitaab;buku;book|खाना=khaanaa;makanan;food|प्यार=pyaar;cinta;love|भारत=bhaarat;India;India|नमस्ते=namaste;halo;hello|धन्यवाद=dhanyavaad;terima kasih;thank you";
+
+const HI_KALIMAT =
+  "आप कैसे हैं?=aap kaise hain;Apa kabar?;How are you?|मैं ठीक हूँ।=main theek hoon;Saya baik-baik saja.;I am fine.|मेरा नाम राज है।=meraa naam Raaj hai;Nama saya Raj.;My name is Raj.|आपका नाम क्या है?=aapkaa naam kyaa hai;Siapa nama Anda?;What is your name?|यह किताब है।=yah kitaab hai;Ini buku.;This is a book.|मैं पानी पीता हूँ।=main paani peetaa hoon;Saya minum air. (penutur laki-laki);I drink water. (male speaker)|मैं हिंदी सीखता हूँ।=main hindi seekhtaa hoon;Saya belajar bahasa Hindi. (penutur laki-laki);I am learning Hindi. (male speaker)|बहुत धन्यवाद।=bahut dhanyavaad;Terima kasih banyak.;Thank you very much.";
+
+const EL_KATA =
+  "ναι=ne;ya;yes|όχι=óchi;tidak;no|μαμά=mamá;ibu;mom|νερό=neró;air;water|σπίτι=spíti;rumah;house|γάτα=gáta;kucing;cat|φίλος=fílos;teman;friend|βιβλίο=vivlío;buku;book|σχολείο=scholío;sekolah;school|αγάπη=agápi;cinta;love|καλημέρα=kaliméra;selamat pagi;good morning|ευχαριστώ=efcharistó;terima kasih;thank you";
+
+// Tanda tanya Yunani ditulis ; (bukan ";" biasa) supaya tidak dibaca sebagai pemisah kolom.
+const EL_KALIMAT =
+  "Γεια σου!=ya su;Hai!;Hi!|Τι κάνεις;=ti kánis;Apa kabar?;How are you?|Με λένε Άννα.=me léne Ánna;Nama saya Anna.;My name is Anna.|Είμαι μαθητής.=íme mathitís;Saya pelajar.;I am a student.|Αυτό είναι βιβλίο.=aftó íne vivlío;Ini buku.;This is a book.|Πίνω νερό.=píno neró;Saya minum air.;I drink water.|Μιλάω ελληνικά.=miláo elliniká;Saya berbicara bahasa Yunani.;I speak Greek.|Ευχαριστώ πολύ!=efcharistó polí;Terima kasih banyak!;Thank you very much!";
+
+const HE_KATA =
+  "כן=ken;ya;yes|לא=lo;tidak;no|בית=bayit;rumah;house|מים=mayim;air;water|ספר=sefer;buku;book|אמא=ima;ibu;mom|אבא=aba;ayah;dad|חבר=chaver;teman;friend|כלב=kelev;anjing;dog|חתול=chatul;kucing;cat|שלום=shalom;halo, damai;hello, peace|תודה=toda;terima kasih;thank you";
+
+const HE_KALIMAT =
+  "בוקר טוב=boker tov;Selamat pagi.;Good morning.|מה שלומך?=ma shlomkha;Apa kabar?;How are you?|קוראים לי דני=kor'im li Dani;Nama saya Dani.;My name is Dani.|אני תלמיד=ani talmid;Saya pelajar.;I am a student.|זה ספר=ze sefer;Ini buku.;This is a book.|אני לומד עברית=ani lomed ivrit;Saya belajar bahasa Ibrani. (penutur laki-laki);I am learning Hebrew. (male speaker)|תודה רבה=toda raba;Terima kasih banyak.;Thank you very much.";
+
+const LABEL_KATA = "Kata dasar";
+const LABEL_KALIMAT = "Kalimat sederhana (A1)";
+
 export const SCRIPT_LANGS: ScriptLang[] = [
   {
-    key: "ja", label: "Jepang", code: "ja", match: /jepang|japan|nihon/i,
+    key: "ja", label: "Jepang", code: "ja", unit: "char", match: /jepang|japan|nihon/i,
     sets: [
       { id: "ja-hiragana", label: "Hiragana", strokes: "kanjivg", glyphs: g(HIRAGANA) },
       { id: "ja-katakana", label: "Katakana", strokes: "kanjivg", glyphs: g(KATAKANA) },
       { id: "ja-kanji-n5", label: "Kanji dasar (N5)", strokes: "kanjivg", glyphs: g(KANJI_N5) },
+      { id: "ja-kata", label: LABEL_KATA, stage: 2, frasa: true, strokes: "kanjivg", glyphs: k(JA_KATA) },
+      { id: "ja-kalimat", label: LABEL_KALIMAT, stage: 3, frasa: true, strokes: "kanjivg", glyphs: k(JA_KALIMAT) },
     ],
   },
   {
-    key: "zh", label: "Mandarin", code: "zh", match: /mandarin|chinese|china|cina|tiongkok|hanyu/i,
-    sets: [{ id: "zh-hanzi-hsk1", label: "Hanzi dasar (HSK 1)", strokes: "hanzi", glyphs: g(HANZI_HSK1) }],
+    key: "zh", label: "Mandarin", code: "zh", unit: "char", match: /mandarin|chinese|china|cina|tiongkok|hanyu/i,
+    sets: [
+      { id: "zh-hanzi-hsk1", label: "Hanzi dasar (HSK 1)", strokes: "hanzi", glyphs: g(HANZI_HSK1) },
+      { id: "zh-kata", label: LABEL_KATA, stage: 2, frasa: true, strokes: "hanzi", glyphs: k(ZH_KATA) },
+      { id: "zh-kalimat", label: LABEL_KALIMAT, stage: 3, frasa: true, strokes: "hanzi", glyphs: k(ZH_KALIMAT) },
+    ],
   },
   {
-    key: "ko", label: "Korea", code: "ko", match: /korea/i,
+    key: "ko", label: "Korea", code: "ko", unit: "char", match: /korea/i,
     sets: [
       { id: "ko-konsonan", label: "Konsonan", glyphs: g(HANGUL_KONSONAN) },
       { id: "ko-vokal", label: "Vokal", glyphs: g(HANGUL_VOKAL) },
       { id: "ko-suku", label: "Suku kata", glyphs: g(HANGUL_SUKU) },
+      { id: "ko-kata", label: LABEL_KATA, stage: 2, frasa: true, glyphs: k(KO_KATA) },
+      { id: "ko-kalimat", label: LABEL_KALIMAT, stage: 3, frasa: true, glyphs: k(KO_KALIMAT) },
     ],
   },
   {
-    key: "th", label: "Thailand", code: "th", match: /thai/i,
+    key: "th", label: "Thailand", code: "th", tanpaSpasi: true, match: /thai/i,
     sets: [
       { id: "th-konsonan", label: "Konsonan", glyphs: g(THAI_KONSONAN) },
       { id: "th-vokal", label: "Vokal", glyphs: g(THAI_VOKAL) },
       { id: "th-angka", label: "Angka", glyphs: g(THAI_ANGKA) },
+      { id: "th-kata", label: LABEL_KATA, stage: 2, frasa: true, glyphs: k(TH_KATA) },
+      { id: "th-kalimat", label: LABEL_KALIMAT, stage: 3, frasa: true, glyphs: k(TH_KALIMAT) },
     ],
   },
   {
@@ -123,26 +214,42 @@ export const SCRIPT_LANGS: ScriptLang[] = [
     sets: [
       { id: "ar-hijaiyah", label: "Huruf hijaiyah", glyphs: g(ARAB_HIJAIYAH) },
       { id: "ar-angka", label: "Angka", glyphs: g(ARAB_ANGKA) },
+      { id: "ar-kata", label: LABEL_KATA, stage: 2, frasa: true, glyphs: k(AR_KATA) },
+      { id: "ar-kalimat", label: LABEL_KALIMAT, stage: 3, frasa: true, glyphs: k(AR_KALIMAT) },
     ],
   },
   {
     key: "ru", label: "Rusia", code: "ru", match: /rusia|russia/i,
-    sets: [{ id: "ru-kiril", label: "Alfabet Kiril", pair: true, glyphs: g(KIRIL_RUSIA) }],
+    sets: [
+      { id: "ru-kiril", label: "Alfabet Kiril", pair: true, glyphs: g(KIRIL_RUSIA) },
+      { id: "ru-kata", label: LABEL_KATA, stage: 2, frasa: true, glyphs: k(RU_KATA) },
+      { id: "ru-kalimat", label: LABEL_KALIMAT, stage: 3, frasa: true, glyphs: k(RU_KALIMAT) },
+    ],
   },
   {
     key: "hi", label: "Hindi", code: "hi", match: /hindi|india/i,
     sets: [
       { id: "hi-vokal", label: "Vokal", glyphs: g(DEVANAGARI_VOKAL) },
       { id: "hi-konsonan", label: "Konsonan", glyphs: g(DEVANAGARI_KONSONAN) },
+      { id: "hi-kata", label: LABEL_KATA, stage: 2, frasa: true, glyphs: k(HI_KATA) },
+      { id: "hi-kalimat", label: LABEL_KALIMAT, stage: 3, frasa: true, glyphs: k(HI_KALIMAT) },
     ],
   },
   {
     key: "el", label: "Yunani", code: "el", match: /yunani|greek/i,
-    sets: [{ id: "el-alfabet", label: "Alfabet", pair: true, glyphs: g(YUNANI) }],
+    sets: [
+      { id: "el-alfabet", label: "Alfabet", pair: true, glyphs: g(YUNANI) },
+      { id: "el-kata", label: LABEL_KATA, stage: 2, frasa: true, glyphs: k(EL_KATA) },
+      { id: "el-kalimat", label: LABEL_KALIMAT, stage: 3, frasa: true, glyphs: k(EL_KALIMAT) },
+    ],
   },
   {
     key: "he", label: "Ibrani", code: "he", match: /ibrani|hebrew/i, rtl: true,
-    sets: [{ id: "he-alefbet", label: "Alef-bet", glyphs: g(IBRANI) }],
+    sets: [
+      { id: "he-alefbet", label: "Alef-bet", glyphs: g(IBRANI) },
+      { id: "he-kata", label: LABEL_KATA, stage: 2, frasa: true, glyphs: k(HE_KATA) },
+      { id: "he-kalimat", label: LABEL_KALIMAT, stage: 3, frasa: true, glyphs: k(HE_KALIMAT) },
+    ],
   },
 ];
 
@@ -154,6 +261,29 @@ export function pilihBahasaAksara(namaBahasa: (string | null | undefined)[]): Sc
     if (kena) return kena;
   }
   return null;
+}
+
+/* ── Kata & kalimat ───────────────────────────────────────────────────────── */
+
+const TANDA_BACA = /[\s。、．，,.!?！？:;\u037E؛،؟।"«»()]/u;
+
+/** Teks kata/kalimat seperti yang dibaca orang (Thai: spasi pemisah bagian dibuang). */
+export function teksFrasa(l: ScriptLang, c: string): string {
+  return l.tanpaSpasi ? c.replace(/ /g, "") : c;
+}
+
+/** Pecah kata/kalimat jadi bagian yang ditulis satu per satu di papan. */
+export function pecahBagian(c: string, unit: "char" | "word"): string[] {
+  if (unit === "char") return Array.from(c).filter((x) => !TANDA_BACA.test(x));
+  return c
+    .split(/\s+/)
+    .map((kata) => {
+      const a = Array.from(kata);
+      while (a.length && TANDA_BACA.test(a[0])) a.shift();
+      while (a.length && TANDA_BACA.test(a[a.length - 1])) a.pop();
+      return a.join("");
+    })
+    .filter(Boolean);
 }
 
 /* ── Urutan goresan ───────────────────────────────────────────────────────────
