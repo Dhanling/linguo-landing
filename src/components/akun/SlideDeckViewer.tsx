@@ -224,7 +224,14 @@ export function SlideBody({ s, kunci, lang }: { s: MateriSlide; kunci?: boolean;
   /* Jarak vertikal memakai cqh (tinggi kartu), bukan persen: persen pada
      margin/padding vertikal dihitung dari LEBAR, jadi di kartu 16:9 jaraknya
      hampir dua kali lipat dan isi slide terpotong. */
-  const kartu = "rounded-xl border border-white bg-white/85 px-[2.2cqw] py-[1.1cqh] shadow-sm";
+  const kartu = "rounded-xl border border-[color:var(--tepi,#fff)] bg-white/85 px-[2.2cqw] py-[1.1cqh] shadow-sm";
+  /* [slide-panel-v1] Slide berlatar gambar: isi duduk di atas panel putih
+     membulat, ilustrasinya tinggal bingkai di sekeliling panel — tetap ada tapi
+     tidak berebut perhatian dengan teks. Warna panel ditulis inline supaya mode
+     gelap tidak menimpanya; `--tepi` memberi garis tepi pada kartu & gelembung
+     putih di dalamnya (putih di atas putih kehilangan bentuk). */
+  const panel = !!s.cover;
+  const kiriSaja = s.ruang === "kiri";
   /* Slide yang isinya banyak dikecilkan sedikit supaya tetap muat tanpa gulir. */
   const n = s.items?.length || s.lines?.length || s.quiz?.length || s.examples?.length || s.points?.length || s.questions?.length || 0;
   const skala = s.type === "dialog" ? (n > 6 ? 0.9 : 1)
@@ -233,8 +240,15 @@ export function SlideBody({ s, kunci, lang }: { s: MateriSlide; kunci?: boolean;
     : n > 6 ? 0.88 : 1;
 
   return (
-    <div className={`flex h-full flex-col pb-[1.5cqh] pl-[6cqw] pt-[5cqh] ${s.ruang === "kiri" ? "pr-[46cqw]" : "pr-[6cqw]"}`}>
-      <div className={`shrink-0 ${s.ruang === "kiri" ? "" : "pr-[9%]"}`}>
+    <div className={panel ? `h-full pb-[2.6cqh] pl-[4cqw] pt-[4.8cqh] ${kiriSaja ? "pr-[45cqw]" : "pr-[4cqw]"}` : "contents"}>
+    <div className={panel
+      ? "flex h-full flex-col rounded-[2.2cqw] px-[2.8cqw] pb-[1.4cqh] pt-[2.6cqh]"
+      : `flex h-full flex-col pb-[1.5cqh] pl-[6cqw] pt-[5cqh] ${kiriSaja ? "pr-[46cqw]" : "pr-[6cqw]"}`}
+      style={panel ? {
+        background: "rgba(255,255,255,0.9)", border: "1px solid rgba(255,255,255,0.95)",
+        boxShadow: "0 0.5cqw 2.2cqw rgba(15,80,90,0.16)", ["--tepi" as string]: tema.lembut,
+      } : undefined}>
+      <div className={`shrink-0 ${kiriSaja ? "" : "pr-[9%]"}`}>
         <span className="inline-block rounded-full px-[0.9em] py-[0.2em] text-[clamp(0.5rem,1cqw,0.7rem)] font-extrabold uppercase tracking-[0.12em] text-white"
           style={{ background: tema.aksen }}>
           {SLIDE_TYPE_LABEL[s.type]}
@@ -293,7 +307,7 @@ export function SlideBody({ s, kunci, lang }: { s: MateriSlide; kunci?: boolean;
               const kiri = !l.speaker || l.speaker === s.lines?.[0]?.speaker;
               return (
                 <div key={i} className={`mb-[1cqh] flex break-inside-avoid ${kiri ? "justify-start" : "justify-end"}`}>
-                  <div className={`max-w-[86%] rounded-2xl px-[2cqw] py-[0.9cqh] shadow-sm ${kiri ? "rounded-bl-sm bg-white" : "rounded-br-sm"}`}
+                  <div className={`max-w-[86%] rounded-2xl px-[2cqw] py-[0.9cqh] shadow-sm ${kiri ? "rounded-bl-sm border border-[color:var(--tepi,transparent)] bg-white" : "rounded-br-sm"}`}
                     style={kiri ? undefined : { background: tema.lembut }}>
                     <div className="font-semibold text-gray-900">
                       {l.speaker && <span className="mr-[0.5em] text-[0.8em] font-extrabold" style={{ color: kiri ? TEAL : tema.aksen }}>{l.speaker}</span>}
@@ -342,6 +356,7 @@ export function SlideBody({ s, kunci, lang }: { s: MateriSlide; kunci?: boolean;
         </div>
       )}
     </div>
+    </div>
   );
 }
 
@@ -361,6 +376,42 @@ function KunciJawaban({ s }: { s: MateriSlide }) {
   );
 }
 
+/* ── [slide-terang-v1] Slide SELALU terang ───────────────────────────────────
+   Mode gelap kedua aplikasi (`.dark` di dashboard, `.lms-dark` di /akun) bekerja
+   dengan menimpa NAMA CLASS Tailwind (bg-white → gelap, text-gray-900 → terang).
+   Di dalam kartu slide itu merusak: pil catatan & kotak logo jadi hitam di atas
+   gambar sampul. Aturan di bawah mengembalikan nilai terangnya khusus di dalam
+   kartu — satu tingkat lebih spesifik + !important supaya menang di kedua repo.
+   Class warna BARU di dalam kartu wajib ditambahkan ke daftar ini. */
+const WARNA_TERANG: Array<[string, string, string]> = [
+  ["bg-white", "background-color", "#fff"],
+  ["bg-white\\/85", "background-color", "rgba(255,255,255,0.85)"],
+  ["bg-white\\/90", "background-color", "rgba(255,255,255,0.9)"],
+  ["bg-white\\/95", "background-color", "rgba(255,255,255,0.95)"],
+  ["bg-gray-900", "background-color", "#111827"],
+  ["bg-amber-50", "background-color", "#fffbeb"],
+  ["bg-emerald-50", "background-color", "#ecfdf5"],
+  ["bg-rose-50", "background-color", "#fff1f2"],
+  ["text-white", "color", "#fff"],
+  ["text-white\\/85", "color", "rgba(255,255,255,0.85)"],
+  ["text-gray-900", "color", "#111827"],
+  ["text-gray-700", "color", "#374151"],
+  ["text-gray-600", "color", "#4b5563"],
+  ["text-gray-500", "color", "#6b7280"],
+  ["text-gray-400", "color", "#9ca3af"],
+  ["text-amber-800", "color", "#92400e"],
+  ["text-emerald-800", "color", "#065f46"],
+  ["text-rose-700", "color", "#be123c"],
+  ["border-white", "border-color", "#fff"],
+  ["border-gray-200", "border-color", "#e5e7eb"],
+  ["border-amber-200", "border-color", "#fde68a"],
+  ["border-emerald-500", "border-color", "#10b981"],
+  ["border-rose-400", "border-color", "#fb7185"],
+];
+const CSS_TERANG = WARNA_TERANG.map(([kelas, prop, nilai]) =>
+  `.dark [data-slide-card] .${kelas},.lms-dark [data-slide-card] .${kelas}{${prop}:${nilai} !important}`,
+).join("") + "[data-slide-card]{color-scheme:light}";
+
 /* ── Kartu slide 16:9 ────────────────────────────────────────────────────── */
 
 export function SlideCard({ s, showAnswers, lang, className = "" }: {
@@ -373,14 +424,15 @@ export function SlideCard({ s, showAnswers, lang, className = "" }: {
     // `container-type: size` bikin clamp(...cqw) menskala ikut LEBAR KARTU, bukan
     // lebar layar — itu yang bikin teks slide ikut membesar saat fullscreen.
     <div data-slide-card className={`relative flex flex-col overflow-hidden text-left ${className}`}
-      style={{ containerType: "size", contain: "layout", background: tema.bg }}>
+      style={{ containerType: "size", contain: "layout", background: tema.bg, color: "#1f2937" }}>
+      <style>{CSS_TERANG}</style>
       {/* [slide-tema-v1] Dekor: dua lingkaran warna + watermark logo. Semuanya
           pointer-events-none supaya kata & opsi kuis di atasnya tetap bisa diklik. */}
       {/* [slide-sampul-v1] Gambar sampul menggantikan lingkaran dekor & logo pudar. */}
-      {/* [slide-latar-v1] Slide isi: gambar latar + selapis putih tipis supaya teks tetap terbaca. */}
+      {/* [slide-latar-v1] Slide isi: gambar latar. Teksnya terbaca karena duduk di
+          panel putih [slide-panel-v1], jadi gambarnya tak perlu dipucatkan lagi. */}
       {sampul ? (<>
-        <img aria-hidden src={sampul} alt="" className="pointer-events-none absolute inset-0 h-full w-full select-none object-cover" />
-        {!judul && <div aria-hidden className="pointer-events-none absolute inset-0" style={{ background: "rgba(255,255,255,0.3)" }} />}
+        <img aria-hidden src={sampul} alt="" decoding="sync" className="pointer-events-none absolute inset-0 h-full w-full select-none object-cover" />
       </>) : (<>
       <div aria-hidden className="pointer-events-none absolute -right-[7%] -top-[16%] aspect-square w-[30%] rounded-full"
         style={{ background: judul ? "rgba(255,255,255,0.14)" : tema.lembut, opacity: judul ? 1 : 0.75 }} />
@@ -392,21 +444,23 @@ export function SlideCard({ s, showAnswers, lang, className = "" }: {
       {/* [slide-watermark-v1] Tanda air: logo besar pudar + tulisan miring berulang.
           Ikut terekam di tangkapan layar/rekaman, tapi tidak mengganggu baca. */}
       {!(judul && sampul) && <img aria-hidden src={LOGO} alt=""
-        className="pointer-events-none absolute left-1/2 top-1/2 w-[34%] -translate-x-1/2 -translate-y-1/2 select-none"
-        style={{ opacity: judul ? 0.07 : sampul ? 0.08 : 0.05, filter: judul ? "brightness(0) invert(1)" : undefined }} />}
-      <div aria-hidden className="pointer-events-none absolute inset-0 select-none overflow-hidden">
+        className={`pointer-events-none absolute left-1/2 ${sampul ? "z-10" : ""} top-1/2 w-[34%] -translate-x-1/2 -translate-y-1/2 select-none`}
+        style={{ opacity: judul ? 0.07 : 0.05, filter: judul ? "brightness(0) invert(1)" : undefined }} />}
+      {/* [slide-panel-v1] Di slide berpanel, tanda air naik ke ATAS panel (z-10) —
+          di bawahnya ia tertutup putih dan tak lagi ikut terekam. */}
+      <div aria-hidden className={`pointer-events-none absolute inset-0 select-none overflow-hidden ${sampul && !judul ? "z-10" : ""}`}>
         {(judul && sampul ? [18] : [18, 50, 82]).map((top, r) => (
           <div key={r} className="absolute whitespace-nowrap text-[clamp(0.6rem,1.5cqw,1.1rem)] font-extrabold uppercase tracking-[0.5em]"
             style={{
               top: `${top}%`, left: "-10%", transform: "rotate(-18deg)",
-              color: judul ? "#fff" : tema.aksen, opacity: judul ? 0.06 : sampul ? 0.09 : 0.045,
+              color: judul ? "#fff" : tema.aksen, opacity: judul ? 0.06 : sampul ? 0.07 : 0.045,
             }}>
             {Array.from({ length: 8 }).map(() => "linguo.id").join("   ·   ")}
           </div>
         ))}
       </div>
       {!judul && (
-        <img src={LOGO} alt="Linguo" className="absolute right-[3%] top-[4.5%] h-[9%] w-auto select-none" />
+        <img src={LOGO} alt="Linguo" className={`absolute z-10 w-auto select-none ${sampul && s.ruang !== "kiri" ? "right-[5.8%] top-[7.6%] h-[8%]" : "right-[3%] top-[4.5%] h-[9%]"}`} />
       )}
 
       <div className="relative min-h-0 flex-1"><SlideBody s={s} kunci={showAnswers} lang={lang} /></div>
@@ -431,6 +485,12 @@ export function SlideCard({ s, showAnswers, lang, className = "" }: {
 
 /* ── Slideshow ───────────────────────────────────────────────────────────── */
 
+const DURASI_PUDAR = 320;
+const CSS_PUDAR =
+  `@keyframes slide-masuk{from{opacity:0}to{opacity:1}}` +
+  `.slide-masuk{animation:slide-masuk ${DURASI_PUDAR}ms ease-out}` +
+  `@media (prefers-reduced-motion:reduce){.slide-masuk{animation:none}}`;
+
 export function SlideDeckViewer({
   slides, title, subtitle, lang, onClose,
 }: {
@@ -442,15 +502,37 @@ export function SlideDeckViewer({
   onClose: () => void;
 }) {
   const t = useT(); // [ui-lang-switcher-v1]
-  const [i, setI] = useState(0);
+  /* [slide-transisi-v1] Slide baru memudar MASUK di atas slide lama, yang tetap
+     terpasang sampai animasinya selesai — layar tak pernah sempat kosong/gelap.
+     `i` dan `lama` sengaja satu state: kalau `lama` baru diisi lewat effect,
+     ada satu frame slide baru (opacity 0) tampil di atas latar hitam = kedipan. */
+  const [posisi, setPosisi] = useState<{ i: number; lama: number | null }>({ i: 0, lama: null });
+  const i = posisi.i;
+  const setI = useCallback((n: number | ((c: number) => number)) => {
+    setPosisi((p) => {
+      const baru = typeof n === "function" ? n(p.i) : n;
+      return baru === p.i ? p : { i: baru, lama: p.i };
+    });
+  }, []);
+  useEffect(() => {
+    if (posisi.lama == null) return;
+    const t = setTimeout(() => setPosisi((p) => (p.lama == null ? p : { ...p, lama: null })), DURASI_PUDAR + 40);
+    return () => clearTimeout(t);
+  }, [posisi]);
+  /* Gambar latar seluruh dek diunduh & di-decode begitu slideshow dibuka, supaya
+     pindah slide tidak menampilkan gradasi polos dulu lalu gambarnya menyusul. */
+  useEffect(() => {
+    const unik = Array.from(new Set(slides.map((x) => x.cover).filter(Boolean))) as string[];
+    unik.forEach((src) => { const g = new Image(); g.src = src; void g.decode?.().catch(() => {}); });
+  }, [slides]);
   const [fs, setFs] = useState(false);
   const [kunci, setKunci] = useState(false);
   const wrapRef = useRef<HTMLDivElement>(null);
   const sentuh = useRef<number | null>(null);
 
   const total = slides.length;
-  const maju = useCallback(() => setI((c) => Math.min(c + 1, total - 1)), [total]);
-  const mundur = useCallback(() => setI((c) => Math.max(c - 1, 0)), []);
+  const maju = useCallback(() => setI((c) => Math.min(c + 1, total - 1)), [total, setI]);
+  const mundur = useCallback(() => setI((c) => Math.max(c - 1, 0)), [setI]);
 
   /* Fullscreen ASLI (Fullscreen API), bukan sekadar kartu dibesarkan: pengajar
      memakai ini sambil share screen, jadi bilah browser harus benar-benar hilang. */
@@ -538,7 +620,17 @@ export function SlideDeckViewer({
           className="absolute left-2 z-10 rounded-full bg-white/10 p-2.5 text-white transition hover:bg-white/20 disabled:opacity-20 sm:left-4 sm:p-3">
           <ChevronLeft size={22} />
         </button>
-        <SlideCard key={i} s={s} showAnswers={kunci} lang={lang} className="aspect-[16/9] max-h-full w-full max-w-[min(1100px,92vw)] rounded-2xl shadow-2xl" />
+        <div className="relative aspect-[16/9] max-h-full w-full max-w-[min(1100px,92vw)] overflow-hidden rounded-2xl shadow-2xl">
+          <style>{CSS_PUDAR}</style>
+          {posisi.lama != null && slides[posisi.lama] && (
+            <div key={`lama-${posisi.lama}`} aria-hidden className="pointer-events-none absolute inset-0">
+              <SlideCard s={slides[posisi.lama]} lang={lang} className="h-full w-full" />
+            </div>
+          )}
+          <div key={i} className="slide-masuk absolute inset-0">
+            <SlideCard s={s} showAnswers={kunci} lang={lang} className="h-full w-full" />
+          </div>
+        </div>
         <button onClick={maju} disabled={i === total - 1} aria-label={t("Slide berikutnya")}
           className="absolute right-2 z-10 rounded-full bg-white/10 p-2.5 text-white transition hover:bg-white/20 disabled:opacity-20 sm:right-4 sm:p-3">
           <ChevronRight size={22} />
