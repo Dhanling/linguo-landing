@@ -56,11 +56,15 @@ export interface VocabItem {
   translit?: string;
   meaning: string;
   example?: string;
+  /** [slide-pinyin-v1] Cara baca kalimat contoh (pinyin, romaji, …). */
+  example_translit?: string;
   example_meaning?: string;
 }
 
 export interface ExampleItem {
   target: string;
+  /** [slide-pinyin-v1] Cara baca — hanya untuk bahasa beraksara non-Latin. */
+  translit?: string;
   meaning: string;
 }
 
@@ -68,6 +72,8 @@ export interface ExampleItem {
 export interface DialogLine {
   speaker: string;
   text: string;
+  /** [slide-pinyin-v1] Cara baca — hanya untuk bahasa beraksara non-Latin. */
+  translit?: string;
   meaning?: string;
 }
 
@@ -154,6 +160,7 @@ function normVocab(v: any): VocabItem | null {
     translit: translit || undefined,
     meaning,
     example: str(v?.example) || undefined,
+    example_translit: str(v?.example_translit) || undefined,
     example_meaning: str(v?.example_meaning) || undefined,
   };
 }
@@ -162,13 +169,14 @@ function normExample(v: any): ExampleItem | null {
   const target = str(v?.target);
   const meaning = str(v?.meaning);
   if (!target && !meaning) return null;
-  return { target, meaning };
+  const translit = str(v?.translit);
+  return translit ? { target, translit, meaning } : { target, meaning };
 }
 
 function normLine(v: any): DialogLine | null {
   const text = str(v?.text);
   if (!text) return null;
-  return { speaker: str(v?.speaker), text, meaning: str(v?.meaning) || undefined };
+  return { speaker: str(v?.speaker), text, translit: str(v?.translit) || undefined, meaning: str(v?.meaning) || undefined };
 }
 
 function normQuiz(v: any): QuizItem | null {

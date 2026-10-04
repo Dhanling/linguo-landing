@@ -60,6 +60,20 @@ const TEPI = /^[^\p{L}\p{N}]+|[^\p{L}\p{N}]+$/gu;
    `fixed` — container-type saja TIDAK, tooltipnya lari ke pojok layar), bukan
    `absolute` terhadap kata: daftar kosakata/dialog itu wadah gulir, dan tooltip
    absolute di baris teratas akan terpotong tepinya. */
+/* [slide-pinyin-v1] Hanzi/kana/aksara Thai ditulis tanpa spasi — `split(spasi)`
+   menjadikan satu kalimat satu "kata", jadi klik kata membunyikan seluruh
+   kalimat. Untuk teks seperti itu pemecahnya Intl.Segmenter (per kata). */
+const TANPA_SPASI = /[\u3040-\u30ff\u3400-\u9fff\u0e00-\u0e7f]/;
+function pecahKata(teks: string, lang: string): string[] {
+  const Seg = typeof Intl !== "undefined" ? (Intl as any).Segmenter : null;
+  if (!Seg || !TANPA_SPASI.test(teks)) return teks.split(/(\s+)/);
+  try {
+    return Array.from(new Seg(lang, { granularity: "word" }).segment(teks) as Iterable<{ segment: string }>, (x) => x.segment);
+  } catch {
+    return teks.split(/(\s+)/);
+  }
+}
+
 type Tip = { kata: string; x: number; y: number; bawah: boolean; arti: HasilArti | undefined };
 
 function Ucap({ teks, lang, kalimat = true }: { teks: string; lang?: string | null; kalimat?: boolean }) {
@@ -101,9 +115,12 @@ function Ucap({ teks, lang, kalimat = true }: { teks: string; lang?: string | nu
   // Pemisah tampilan ("·", "/", "→") dibaca sebagai jeda, bukan dieja.
   const utuh = teks.replace(/\s*[·/→]\s*/g, ", ").replace(/[()]/g, " ").trim();
 
+  const bagian = pecahKata(teks, lang);
+  const banyakKata = bagian.filter((b) => /\p{L}/u.test(b)).length > 1;
+
   return (
     <span>
-      {teks.split(/(\s+)/).map((b, i) => {
+      {bagian.map((b, i) => {
         const kata = b.replace(TEPI, "");
         if (!/\p{L}/u.test(kata)) return b;
         return (
@@ -116,7 +133,7 @@ function Ucap({ teks, lang, kalimat = true }: { teks: string; lang?: string | nu
           </span>
         );
       })}
-      {kalimat && /\s/.test(utuh) && (
+      {kalimat && (/\s/.test(utuh) || banyakKata) && (
         <button type="button" onClick={bunyikan(utuh, -1)} title="Dengarkan kalimat"
           className="ml-[0.4em] inline-flex translate-y-[0.12em] rounded-full p-[0.15em] opacity-50 transition hover:bg-teal-100 hover:opacity-100"
           style={{ color: aktif === -1 ? "#0E7C7B" : TEAL }}>
@@ -273,6 +290,7 @@ export function SlideBody({ s, kunci, lang }: { s: MateriSlide; kunci?: boolean;
                 {it.example && (
                   <div className="mt-1 border-l-2 pl-2 text-[0.92em] italic text-gray-600" style={{ borderColor: tema.aksen }}>
                     <Ucap teks={it.example} lang={lang} />
+                    {it.example_translit && <span className="not-italic text-gray-400"> /{it.example_translit}/</span>}
                     {it.example_meaning && <span className="not-italic text-gray-400"> ({it.example_meaning})</span>}
                   </div>
                 )}
@@ -293,6 +311,7 @@ export function SlideBody({ s, kunci, lang }: { s: MateriSlide; kunci?: boolean;
               {(s.examples || []).map((e, i) => (
                 <li key={i} className={kartu}>
                   <div className="font-semibold text-gray-900"><Ucap teks={e.target} lang={lang} /></div>
+                  {e.translit && <div className="text-[0.9em] text-gray-400">{e.translit}</div>}
                   {e.meaning && <div className="text-gray-500">{e.meaning}</div>}
                 </li>
               ))}
@@ -317,6 +336,7 @@ export function SlideBody({ s, kunci, lang }: { s: MateriSlide; kunci?: boolean;
                     <div className="font-semibold text-gray-900">
                       <Ucap teks={l.text} lang={lang} />
                     </div>
+                    {l.translit && <div className="text-[0.88em] text-gray-400">{l.translit}</div>}
                     {l.meaning && <div className="text-[0.88em] text-gray-500">{l.meaning}</div>}
                   </div>
                 </div>
