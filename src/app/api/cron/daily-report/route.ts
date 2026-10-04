@@ -18,6 +18,8 @@
 // PARAMETER UJI (tetap butuh CRON_SECRET):
 //   ?dry=1            → kembalikan HTML-nya, TIDAK mengirim email
 //   ?date=YYYY-MM-DD  → anggap tanggal itu "hari ini" (laporan = H-1-nya)
+//   ?format=json      → kembalikan datanya (JSON), TIDAK mengirim email;
+//                       dipakai /api/cron/owner-brief
 //
 // SUMBER PEMASUKAN — SENGAJA disamakan dengan `liveRegs` di Overview dashboard
 // (linguo-admin-dashboard/src/pages/Overview.tsx) supaya angka email = angka
@@ -1484,7 +1486,7 @@ export async function GET(req: NextRequest) {
       }
     );
 
-    const html = buildEmail({
+    const data: EmailData = {
       dateLabel,
       namaBulan,
       revYesterday,
@@ -1511,7 +1513,8 @@ export async function GET(req: NextRequest) {
       nSegera,
       saran,
       gagal,
-    });
+    };
+    const html = buildEmail(data);
 
     const summary = {
       revenue_kemarin: revYesterday,
@@ -1524,6 +1527,12 @@ export async function GET(req: NextRequest) {
       segera: nSegera,
       query_gagal: gagal,
     };
+
+    // [owner-brief-v1] Data mentahnya untuk /api/cron/owner-brief (PDF ke grup
+    // WA owner) — supaya angka PDF = angka email. Tidak mengirim email.
+    if (req.nextUrl.searchParams.get("format") === "json") {
+      return NextResponse.json({ ok: true, data, summary });
+    }
 
     if (dry) {
       return new NextResponse(html, {
