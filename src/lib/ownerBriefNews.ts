@@ -344,11 +344,56 @@ Jangan bermurah hati: kebanyakan berita pantas total 3-6. Total 8 ke atas hanya 
 
 Kalau beberapa berita mengabarkan PERISTIWA YANG SAMA, isi "g" dengan label peristiwa 2-4 kata yang PERSIS sama untuk semuanya (mis. "dividen interim asii"). Berita tanpa kembaran: "g" dikosongkan.
 
-Hanya untuk berita dengan d+r+k >= 8, tulis juga dalam bahasa Indonesia:
+Balas HANYA JSON ringkas, tanpa spasi/indentasi berlebih: {"hasil":[{"i":<nomor>,"d":<0-4>,"r":<0-3>,"k":<0-3>}, ...]}. Semua berita wajib ada di "hasil". Kunci "g" hanya ditulis kalau ada isinya.`;
+
+// Langkah kedua: ringkasan ditulis HANYA untuk berita yang sudah terpilih
+// (sesudah kembaran dibuang). Dipisah dari penilaian karena model sering
+// memberi nilai tinggi tanpa menulis ringkasannya.
+const SYSTEM_RINGKAS = `Kamu editor berita pribadi untuk Dhani, pemilik Linguo - sekolah bahasa online di Indonesia (kelas privat & grup 60+ bahasa, persiapan IELTS/TOEFL, e-book, klien B2B; pemasaran lewat WhatsApp, Instagram, Google; operasionalnya banyak memakai AI). Dhani juga investor ritel saham Indonesia dan Amerika.
+
+Untuk SETIAP berita di daftar, tulis dalam bahasa Indonesia (berita berbahasa Inggris ikut diindonesiakan):
 - "ringkas": 1-2 kalimat isi beritanya. HANYA dari judul dan cuplikan yang diberikan - jangan menambah angka, nama, atau fakta yang tidak tertulis di sana. Kalau cuplikan kosong, cukup jelaskan judulnya.
 - "penting": 1 kalimat kenapa ini penting, konkret. Jangan mengarang fakta tentang Linguo atau isi portofolio Dhani (kamu tidak tahu saham apa yang ia pegang); kalau kaitannya dengan Linguo tidak langsung, jangan dipaksakan - cukup tulis dampak umumnya.
 
-Balas HANYA JSON ringkas satu baris per berita, tanpa spasi/indentasi berlebih: {"hasil":[{"i":<nomor>,"d":<0-4>,"r":<0-3>,"k":<0-3>}, ...]}. Semua berita wajib ada di "hasil". Kunci "g", "ringkas", "penting" hanya ditulis kalau ada isinya.`;
+Balas HANYA JSON: {"hasil":[{"i":<nomor>,"ringkas":"...","penting":"..."}]}.`;
+
+function bacaButir<T>(teks: string): T[] {
+  try {
+    const mulai = teks.indexOf("{");
+    const akhir = teks.lastIndexOf("}");
+    return (JSON.parse(mulai >= 0 && akhir > mulai ? teks.slice(mulai, akhir + 1) : teks) as { hasil?: T[] }).hasil || [];
+  } catch {
+    // Jawaban terpotong di tengah (kehabisan token): selamatkan butir yang utuh.
+    const out: T[] = [];
+    for (const m of teks.match(/\{[^{}]*\}/g) || []) {
+      try {
+        out.push(JSON.parse(m) as T);
+      } catch {
+        /* butir rusak dilewati */
+      }
+    }
+    if (!out.length) throw new Error("jawaban AI bukan JSON");
+    return out;
+  }
+}
+
+async function tulisRingkasan(daftar: BeritaTerpilih[]): Promise<void> {
+  if (!daftar.length) return;
+  const teksDaftar = daftar
+    .map(
+      (b, i) =>
+        `${i + 1}. (${TOPIK.find((t) => t.key === b.topik)?.label || b.topik}) [${b.sumber || "?"}] ${b.judul}` +
+        (b.cuplikan ? `\n   cuplikan: ${b.cuplikan}` : ""),
+    )
+    .join("\n");
+  const { teks } = await llmJson(SYSTEM_RINGKAS, `BERITA:\n${teksDaftar}`);
+  for (const h of bacaButir<{ i?: number; ringkas?: string; penting?: string }>(teks)) {
+    const b = daftar[Number(h.i) - 1];
+    if (!b) continue;
+    b.ringkas = String(h.ringkas || "").trim();
+    b.penting = String(h.penting || "").trim();
+  }
+}
 
 // Kata penting judul - untuk mengenali dua judul yang mengabarkan hal yang sama.
 const kataJudul = (judul: string) =>
@@ -372,23 +417,7 @@ async function nilaiTopik(t: Topik, kandidat: Berita[], ambang: number): Promise
     )
     .join("\n");
   const { teks } = await llmJson(SYSTEM, `TOPIK: ${t.label}\nYang dicari: ${t.fokus}\n\nBERITA:\n${daftar}`);
-  type Butir = { i?: number; d?: number; r?: number; k?: number; g?: string; ringkas?: string; penting?: string };
-  let butir: Butir[] = [];
-  try {
-    const mulai = teks.indexOf("{");
-    const akhir = teks.lastIndexOf("}");
-    butir = (JSON.parse(mulai >= 0 && akhir > mulai ? teks.slice(mulai, akhir + 1) : teks) as { hasil?: Butir[] }).hasil || [];
-  } catch {
-    // Jawaban terpotong di tengah (kehabisan token): selamatkan butir yang utuh.
-    for (const m of teks.match(/\{[^{}]*\}/g) || []) {
-      try {
-        butir.push(JSON.parse(m) as Butir);
-      } catch {
-        /* butir rusak dilewati */
-      }
-    }
-    if (!butir.length) throw new Error("jawaban AI bukan JSON");
-  }
+  const butir = bacaButir<{ i?: number; d?: number; r?: number; k?: number; g?: string }>(teks);
   const jepit = (v: unknown, maks: number) => Math.min(maks, Math.max(0, Math.round(Number(v) || 0)));
   const out: Dinilai[] = [];
   for (const h of butir) {
@@ -399,10 +428,8 @@ async function nilaiTopik(t: Topik, kandidat: Berita[], ambang: number): Promise
     out.push({
       ...b,
       skor,
-      // Model kadang menghitung totalnya lain dan tak menulis ringkasan:
-      // pakai cuplikan aslinya, jangan dikarang.
-      ringkas: String(h.ringkas || "").trim() || b.cuplikan,
-      penting: String(h.penting || "").trim(),
+      ringkas: "",
+      penting: "",
       g: String(h.g || "").trim().toLowerCase(),
     });
   }
@@ -484,7 +511,7 @@ export async function kumpulkanBerita(opsi: {
   // 4. Buang kembaran di antara yang lolos: label peristiwa dari AI (per topik)
   //    + kemiripan judul (lintas topik). Yang skornya lebih tinggi menang.
   const diambil: Dinilai[] = [];
-  return hasil.map(({ lolos, ...topik }) => {
+  const akhir = hasil.map(({ lolos, ...topik }) => {
     const terpilih: BeritaTerpilih[] = [];
     for (const { g, ...b } of lolos || []) {
       if (terpilih.length >= MAKS_TERPILIH) break;
@@ -494,6 +521,17 @@ export async function kumpulkanBerita(opsi: {
     }
     return { ...topik, terpilih };
   });
+
+  // 5. Ringkasan + "kenapa penting" untuk yang terpilih saja. Kalau langkah ini
+  //    gagal, beritanya tetap tampil dengan cuplikan asli dari sumbernya.
+  const semua = akhir.flatMap((t) => t.terpilih);
+  try {
+    await tulisRingkasan(semua);
+  } catch (e) {
+    console.error("[owner-brief] ringkasan gagal:", (e as Error).message);
+  }
+  for (const b of semua) if (!b.ringkas) b.ringkas = b.cuplikan;
+  return akhir;
 }
 
 // ── Penutupan pasar (Yahoo Finance, tanpa kunci) ────────────────────────────
