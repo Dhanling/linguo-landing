@@ -4208,16 +4208,16 @@ export default function AkunPage() {
                     value={loginEmail}
                     onChange={e => setLoginEmail(e.target.value)}
                     onKeyDown={e => e.key === "Enter" && signInWithEmail()}
-                    className="h-13 w-full rounded-2xl border border-gray-200 bg-white px-5 py-3.5 text-sm text-gray-900 transition-all placeholder:text-gray-400 focus:border-transparent focus:outline-none focus:ring-2 focus:ring-[#1A9E9E]"
+                    className="h-13 w-full rounded-2xl border border-gray-200 bg-white px-5 py-3.5 text-sm text-gray-900 transition-all duration-200 hover:scale-[1.02] hover:border-[#1A9E9E]/50 hover:shadow-md hover:shadow-teal-900/5 placeholder:text-gray-400 focus:border-transparent focus:outline-none focus:ring-2 focus:ring-[#1A9E9E]"
                   />
-                  <div className="relative">
+                  <div className="relative rounded-2xl transition-all duration-200 hover:scale-[1.02] hover:shadow-md hover:shadow-teal-900/5">
                     <input
                       type={showPassword ? "text" : "password"}
                       placeholder="Password"
                       value={loginPassword}
                       onChange={e => setLoginPassword(e.target.value)}
                       onKeyDown={e => e.key === "Enter" && signInWithEmail()}
-                      className="h-13 w-full rounded-2xl border border-gray-200 bg-white px-5 py-3.5 pr-12 text-sm text-gray-900 transition-all placeholder:text-gray-400 focus:border-transparent focus:outline-none focus:ring-2 focus:ring-[#1A9E9E]"
+                      className="h-13 w-full rounded-2xl border border-gray-200 bg-white px-5 py-3.5 pr-12 text-sm text-gray-900 transition-all hover:border-[#1A9E9E]/50 placeholder:text-gray-400 focus:border-transparent focus:outline-none focus:ring-2 focus:ring-[#1A9E9E]"
                     />
                     <button
                       type="button"
@@ -4229,7 +4229,7 @@ export default function AkunPage() {
                     </button>
                   </div>
                   <motion.button
-                    whileHover={{ scale: (isSigningIn || !loginEmail || !loginPassword) ? 1 : 1.02 }}
+                    whileHover={{ scale: 1.02 }} /* [akun-login-hover-zoom-v1] zoom juga saat masih nonaktif */
                     whileTap={{ scale: 0.98 }}
                     onClick={signInWithEmail}
                     disabled={isSigningIn || !loginEmail || !loginPassword}
