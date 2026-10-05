@@ -668,13 +668,16 @@ function ResultScreen({ score, questions, log, meta, timeElapsedSec, contact, on
   const [showAuthModal, setShowAuthModal] = useState(false);
   const [checkingSession, setCheckingSession] = useState(false);
 
-  const levelColorMap: Record<string, { bg: string; text: string; soft: string; border: string }> = {
-    A1: { bg: "bg-emerald-100", text: "text-emerald-600", soft: "bg-emerald-50", border: "border-emerald-200" },
-    A2: { bg: "bg-sky-100", text: "text-sky-600", soft: "bg-sky-50", border: "border-sky-200" },
-    B1: { bg: "bg-violet-100", text: "text-violet-600", soft: "bg-violet-50", border: "border-violet-200" },
-    B2: { bg: "bg-rose-100", text: "text-rose-600", soft: "bg-rose-50", border: "border-rose-200" },
+  // [placement-hasil-redesign-v1] Warna tiap level mengikuti ilustrasinya
+  // (public/illustrations/placement-level/<level>.webp): A1 merah, A2 biru, B1 kuning, B2 hijau.
+  const levelColorMap: Record<string, { bg: string; text: string; soft: string; border: string; pill: string }> = {
+    A1: { bg: "bg-rose-100", text: "text-rose-500", soft: "bg-rose-50", border: "border-rose-200", pill: "bg-rose-100 text-rose-600" },
+    A2: { bg: "bg-blue-100", text: "text-blue-600", soft: "bg-blue-50", border: "border-blue-200", pill: "bg-blue-100 text-blue-700" },
+    B1: { bg: "bg-amber-100", text: "text-amber-500", soft: "bg-amber-50", border: "border-amber-200", pill: "bg-amber-100 text-amber-700" },
+    B2: { bg: "bg-emerald-100", text: "text-emerald-600", soft: "bg-emerald-50", border: "border-emerald-200", pill: "bg-emerald-100 text-emerald-700" },
   };
-  const lc = levelColorMap[result.level];
+  const lc = levelColorMap[result.level] ?? levelColorMap.A1;
+  const levelArt = `/illustrations/placement-level/${(levelColorMap[result.level] ? result.level : "A1").toLowerCase()}.webp`;
 
   // Simpan intent placement ke cookie supaya /auth/callback bisa redirect ke wizard
   const savePlacementIntent = () => {
@@ -897,42 +900,45 @@ function ResultScreen({ score, questions, log, meta, timeElapsedSec, contact, on
       </motion.section>
     ) : (
     <motion.section initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0 }}
-      className="min-h-screen py-16 px-6">
+      className="min-h-screen pt-8 pb-16 px-4 sm:px-6 bg-gradient-to-b from-[#EEF5FB] via-[#F6FAFD] to-white">
       <div className="max-w-2xl mx-auto">
-        <div className="text-center mb-10">
-          <motion.div initial={{ scale: 0, rotate: -180 }} animate={{ scale: 1, rotate: 0 }}
-            transition={{ type: "spring", stiffness: 180, damping: 12, delay: 0.2 }}
-            className={"inline-flex items-center justify-center w-24 h-24 rounded-full mb-5 " + lc.bg}>
-            <Award className={"w-12 h-12 " + lc.text} strokeWidth={2} />
+        {/* [placement-hasil-redesign-v1] Ilustrasi karakter per level (A1/A2/B1/B2) menggantikan ikon medali */}
+        <div className="text-center mb-7">
+          <motion.div initial={{ opacity: 0, scale: 0.8, y: 16 }} animate={{ opacity: 1, scale: 1, y: 0 }}
+            transition={{ type: "spring", stiffness: 160, damping: 14, delay: 0.15 }}
+            className="mx-auto mb-5 w-[250px] sm:w-[290px]">
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img src={levelArt} alt={"Ilustrasi level " + result.level} width={640} height={720}
+              className="w-full h-auto select-none drop-shadow-[0_18px_24px_rgba(15,60,90,0.10)]" draggable={false} />
           </motion.div>
-          <motion.p initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.5 }}
-            className="text-sm text-gray-500 uppercase tracking-widest mb-2">Hasil Placement Test</motion.p>
-          <motion.h1 initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.6 }}
-            className="text-5xl md:text-6xl font-bold tracking-tight mb-2">
+          <motion.p initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.45 }}
+            className="text-[13px] font-medium text-slate-500 uppercase tracking-[0.18em] mb-2">Hasil Placement Test</motion.p>
+          <motion.h1 initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.55 }}
+            className="text-[2.6rem] leading-[1.05] sm:text-6xl font-extrabold tracking-tight text-slate-900 mb-3">
             Level kamu <span className={lc.text}>{result.sublevel}</span>
           </motion.h1>
-          <motion.p initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.7 }}
-            className={"text-xl font-semibold mb-4 " + lc.text}>{result.label}</motion.p>
+          <motion.p initial={{ opacity: 0, scale: 0.9 }} animate={{ opacity: 1, scale: 1 }} transition={{ delay: 0.65 }}
+            className={"inline-block rounded-full px-5 py-1.5 text-base sm:text-lg font-semibold " + lc.pill}>{result.label}</motion.p>
         </div>
 
         {/* Score card */}
         <motion.div initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.8 }}
-          className="bg-white border border-gray-100 rounded-3xl p-6 md:p-8 shadow-sm mb-6">
-          <div className="grid grid-cols-3 gap-4 mb-6">
-            <div className="text-center border-r border-gray-100">
-              <div className="text-3xl font-bold text-gray-900">{score}<span className="text-gray-400 text-lg">/{maxScore}</span></div>
-              <div className="text-xs text-gray-500 uppercase tracking-wider mt-1">Skor</div>
+          className="bg-white rounded-[28px] p-6 md:p-8 shadow-[0_10px_40px_-12px_rgba(15,60,90,0.14)] ring-1 ring-slate-900/[0.04] mb-6">
+          <div className="grid grid-cols-3 divide-x divide-slate-200 pb-5 mb-5 border-b border-slate-200">
+            <div className="text-center px-1">
+              <div className="text-[2rem] sm:text-4xl font-extrabold tracking-tight text-slate-900 leading-none tabular-nums">{score}<span className="text-slate-400 text-lg font-bold">/{maxScore}</span></div>
+              <div className="text-xs text-slate-500 uppercase tracking-wider mt-2.5">Skor</div>
             </div>
-            <div className="text-center border-r border-gray-100">
-              <div className="text-3xl font-bold text-gray-900">{Math.round(scorePercent)}%</div>
-              <div className="text-xs text-gray-500 uppercase tracking-wider mt-1">Akurasi</div>
+            <div className="text-center px-1">
+              <div className="text-[2rem] sm:text-4xl font-extrabold tracking-tight text-slate-900 leading-none tabular-nums">{Math.round(scorePercent)}%</div>
+              <div className="text-xs text-slate-500 uppercase tracking-wider mt-2.5">Akurasi</div>
             </div>
-            <div className="text-center">
-              <div className="text-3xl font-bold text-gray-900">{Math.floor(timeElapsedSec / 60)}:{String(timeElapsedSec % 60).padStart(2, "0")}</div>
-              <div className="text-xs text-gray-500 uppercase tracking-wider mt-1">Waktu</div>
+            <div className="text-center px-1">
+              <div className="text-[2rem] sm:text-4xl font-extrabold tracking-tight text-slate-900 leading-none tabular-nums">{Math.floor(timeElapsedSec / 60)}:{String(timeElapsedSec % 60).padStart(2, "0")}</div>
+              <div className="text-xs text-slate-500 uppercase tracking-wider mt-2.5">Waktu</div>
             </div>
           </div>
-          <p className="text-gray-700 text-base leading-relaxed">{result.description}</p>
+          <p className="text-slate-700 text-base sm:text-lg leading-relaxed">{result.description}</p>
         </motion.div>
 
         {/* [placement-cefr-map-v1] Posisi di tangga CEFR Linguo (A1.1–B2.7) —
@@ -943,7 +949,7 @@ function ResultScreen({ score, questions, log, meta, timeElapsedSec, contact, on
 
         {/* REKAP BENAR/SALAH — muncul di akhir (bukan per soal) */}
         <motion.div initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.85 }}
-          className="bg-white border border-gray-100 rounded-3xl p-5 md:p-6 shadow-sm mb-6">
+          className="bg-white rounded-[28px] p-5 md:p-6 shadow-[0_10px_40px_-12px_rgba(15,60,90,0.14)] ring-1 ring-slate-900/[0.04] mb-6">
           <div className="flex items-center justify-between gap-3 mb-4">
             <div className="flex items-center gap-4 flex-wrap">
               <span className="inline-flex items-center gap-1.5 text-sm font-semibold text-emerald-700">

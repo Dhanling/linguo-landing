@@ -109,7 +109,7 @@ export default function CefrLevelMap({ sublevel }: { sublevel?: string }) {
   };
 
   return (
-    <div className="bg-white border border-gray-100 rounded-3xl p-5 md:p-7 shadow-sm mb-6">
+    <div className="bg-white rounded-[28px] p-5 md:p-7 shadow-[0_10px_40px_-12px_rgba(15,60,90,0.14)] ring-1 ring-slate-900/[0.04] mb-6">
       <div className="flex items-start gap-3">
         <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-2xl" style={{ background: "#16796E14" }}>
           <GraduationCap className="h-5 w-5" style={{ color: TEAL }} />
