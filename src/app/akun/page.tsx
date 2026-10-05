@@ -72,35 +72,6 @@ const TITIP_EBOOK_KEY = "linguo_titip_ebook";
    e-book gratisnya berbayar. */
 const TITIP_MENU_KEY = "linguo_titip_menu";
 
-const LOGIN_GREETINGS = ["Halo!", "Bonjour!", "안녕!", "¡Hola!", "Ciao!", "こんにちは!", "你好!", "Hallo!", "Olá!", "안녕하세요!"];
-function GreetingTypewriter() {
-  const [idx, setIdx] = useState(0);
-  const [text, setText] = useState("");
-  const [deleting, setDeleting] = useState(false);
-  useEffect(() => {
-    const full = LOGIN_GREETINGS[idx];
-    if (!deleting && text === full) {
-      const t = setTimeout(() => setDeleting(true), 1400);
-      return () => clearTimeout(t);
-    }
-    if (deleting && text === "") {
-      setDeleting(false);
-      setIdx((i) => (i + 1) % LOGIN_GREETINGS.length);
-      return;
-    }
-    const t = setTimeout(() => {
-      setText((prev) => deleting ? full.slice(0, prev.length - 1) : full.slice(0, prev.length + 1));
-    }, deleting ? 55 : 110);
-    return () => clearTimeout(t);
-  }, [text, deleting, idx]);
-  return (
-    <span className="inline-flex items-baseline">
-      <span>{text}</span>
-      <span className="ml-1 inline-block w-[3px] self-stretch animate-pulse bg-white/90" aria-hidden style={{ minHeight: "1em" }} />
-    </span>
-  );
-}
-
 function OnboardingSuccess({ onClose }: { onClose: () => void }) {
   useEffect(() => {
     const t = setTimeout(onClose, 2400);
@@ -4141,10 +4112,10 @@ export default function AkunPage() {
 
   if (!user && !previewMode) {
     return (
-      /* [akun-login-redesign-v1] Layout dua panel: banner ilustrasi + sapaan typewriter (kiri) + form login (kanan) */
+      /* [akun-login-redesign-v1] Layout dua panel: banner ilustrasi + logo (kiri) + form login (kanan) */
       /* [akun-login-banner-v2] Panel kiri kini ilustrasi penuh (public/images/akun-login-banner.jpg); HP dapat potongan banner di atas form */
       <div className="min-h-screen grid lg:grid-cols-2 bg-[#F3F7F5]">
-        {/* ── Panel kiri: banner ilustrasi + sapaan multi-bahasa ── */}
+        {/* ── Panel kiri: banner ilustrasi + logo ── */}
         <div className="relative hidden lg:block overflow-hidden bg-[#1FA3A8] text-white">
           <motion.img
             src="/images/akun-login-banner.jpg"
@@ -4154,16 +4125,10 @@ export default function AkunPage() {
             transition={{ duration: 1.1, ease: "easeOut" }}
             className="absolute inset-0 h-full w-full object-cover object-[35%_100%]"
           />
-          {/* peneduh langit supaya sapaan tetap terbaca */}
+          {/* peneduh langit supaya logo tetap terbaca */}
           <div className="pointer-events-none absolute inset-x-0 top-0 h-72 bg-gradient-to-b from-[#0F6E6E]/55 via-[#0F6E6E]/20 to-transparent" />
           <motion.div initial={{ opacity: 0, y: 16 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6, delay: 0.25 }} className="relative z-10 px-12 pt-12 xl:px-14">
-            <img src="/images/logo-linguo-white-full.png" alt="Linguo.id" className="mb-7 h-7 w-auto" />
-            <h1 className="text-5xl font-black leading-[1.05] tracking-tight min-h-[1.15em] drop-shadow-sm">
-              <GreetingTypewriter />
-            </h1>
-            <p className="mt-3 max-w-sm text-base leading-relaxed text-white/90">
-              Satu langkah lagi menuju kelasmu. Masuk dan lanjutkan progresmu.
-            </p>
+            <img src="/images/logo-linguo-white-full.png" alt="Linguo.id" className="h-14 w-auto drop-shadow-sm xl:h-16" />
           </motion.div>
         </div>
 
@@ -4174,9 +4139,7 @@ export default function AkunPage() {
             <img src="/images/akun-login-banner.jpg" alt="" aria-hidden className="absolute inset-0 h-full w-full object-cover object-[50%_53%]" />
             <div className="pointer-events-none absolute inset-x-0 top-0 h-24 bg-gradient-to-b from-[#0F6E6E]/50 to-transparent" />
             <div className="pointer-events-none absolute inset-x-0 bottom-0 h-10 bg-gradient-to-t from-[#F3F7F5] to-transparent" />
-            <div className="relative z-10 px-5 pt-4 text-2xl font-black tracking-tight drop-shadow-sm">
-              <GreetingTypewriter />
-            </div>
+            <img src="/images/logo-linguo-white-full.png" alt="Linguo.id" className="relative z-10 ml-5 mt-4 h-9 w-auto drop-shadow-sm" />
           </div>
 
           <div className="flex flex-1 flex-col items-center justify-center px-5 pb-12 pt-6 lg:py-12">
