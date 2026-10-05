@@ -72,8 +72,9 @@ export default function SesiBerakhirModal() {
       window.location.href = `/akun?next=${encodeURIComponent(window.location.pathname + window.location.search)}`;
       return;
     }
-    setBusy(false);
-    setOpen(false);
+    // [akun-sesi-reload-v1] Tab yang nganggur sejam sering masih memegang bundel lama
+    // (dimuat sebelum deploy terakhir) — muat ulang supaya layar Masuk-nya versi terbaru.
+    window.location.reload();
   };
 
   const en = lang === "en";
