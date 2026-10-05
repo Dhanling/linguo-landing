@@ -23,6 +23,7 @@ import { toast } from "sonner";
 import { motion, AnimatePresence } from "framer-motion";
 import dynamic from "next/dynamic";
 import successAnim from "../payment/success/success-anim.json";
+import { AVATAR_PRESETS, defaultAvatarFor, presetOfUrl, presetPath, presetUrl, type AvatarPreset } from "@/lib/defaultAvatar"; // [avatar-bawaan-siswa-v1]
 import { Zap, Target, MessageCircle, Globe, Plus, LogOut, Clock, Calendar, Pencil, Star, Trophy, BookOpen, Newspaper, BookMarked, User, Users, Baby, ClipboardList, GraduationCap, Video, Camera, Mail, Languages, ChevronRight, Search, ArrowRight, Shield, Bell, SlidersHorizontal, Wallet, Upload, BadgeCheck, CreditCard, Check, XCircle, Hand, X, Eye, EyeOff, MessagesSquare, PartyPopper, Rocket, Sprout, HelpCircle, AlertCircle, Sparkles, FileText, Layers, Lightbulb, Loader2, AlertTriangle, Minus, Play, ExternalLink, ClipboardCheck, BarChart2, List, LayoutGrid, Building2, type LucideIcon } from "lucide-react";
 // [no-emoji-lucide-v1] bendera rounded-rect buat prefix nomor WA & pilihan tes (bukan emoji 🇮🇩)
 import { RectFlag } from "@/components/RectFlag";
@@ -1554,6 +1555,18 @@ function AkunTab({ user, student, avatarUrl, displayName, firstName, xp, badges,
     }
   };
 
+  // [avatar-bawaan-siswa-v1] pilih salah satu avatar ilustrasi — disimpan sebagai URL biasa
+  // di avatar_url supaya ikut tampil di dashboard pengajar & staf.
+  const presetAktif = presetOfUrl(avatarUrl);
+  const handlePilihPreset = async (key: AvatarPreset) => {
+    if (!student?.id || key === presetOfUrl(student?.avatar_url)) return;
+    const url = presetUrl(key);
+    const { error } = await supabase.from("students").update({ avatar_url: url }).eq("id", student.id);
+    if (error) { alert(ts("Gagal mengganti avatar. Coba lagi.")); return; }
+    onAvatarUpdate(url);
+    flash(ts("Avatar diganti."));
+  };
+
   const handleRemoveAvatar = async () => {
     if (!student?.id || !avatarUrl) return;
     try {
@@ -1653,6 +1666,20 @@ function AkunTab({ user, student, avatarUrl, displayName, firstName, xp, badges,
                       <button onClick={handleRemoveAvatar} className="h-10 rounded-xl px-4 text-[13px] font-bold text-[#6B7280] transition hover:text-rose-500">{ts("Hapus")}</button>
                     </div>
                     <span className="text-[12px] font-medium text-[#6B7280]">{ts("JPG atau PNG, maksimal 2MB.")}</span>
+                  </div>
+                </div>
+                {/* [avatar-bawaan-siswa-v1] pilihan avatar ilustrasi */}
+                <div className="mt-5 border-t border-slate-100 pt-4">
+                  <p className="text-[12px] font-bold text-[#6B7280]">{ts("Atau pilih avatar")}</p>
+                  <div className="mt-2.5 flex gap-3">
+                    {AVATAR_PRESETS.map((p) => (
+                      <button key={p.key} type="button" onClick={() => handlePilihPreset(p.key)}
+                        aria-label={ts(p.label)} aria-pressed={presetAktif === p.key} title={ts(p.label)}
+                        className={`relative h-14 w-14 overflow-hidden rounded-full transition hover:scale-105 active:scale-95 ${presetAktif === p.key ? "ring-[3px] ring-[#16796E]" : "ring-1 ring-slate-200"}`}>
+                        {/* eslint-disable-next-line @next/next/no-img-element */}
+                        <img src={presetPath(p.key)} alt="" className="h-full w-full object-cover" />
+                      </button>
+                    ))}
                   </div>
                 </div>
               </SetCard>
@@ -4088,7 +4115,8 @@ export default function AkunPage() {
 
   const displayName = student?.name || user?.user_metadata?.full_name || "Siswa";
   const firstName = displayName.split(" ")[0];
-  const avatarUrl = student?.avatar_url || user?.user_metadata?.avatar_url || user?.user_metadata?.picture;
+  // [avatar-bawaan-siswa-v1] belum punya foto → avatar ilustrasi bawaan (ditebak dari nama)
+  const avatarUrl = student?.avatar_url || user?.user_metadata?.avatar_url || user?.user_metadata?.picture || defaultAvatarFor(displayName) || undefined;
 
   const openEnrollWizard = () => {
     setEnrollStep(0);

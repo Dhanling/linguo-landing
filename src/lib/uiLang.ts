@@ -541,6 +541,13 @@ const EN: Record<string, string> = {
   "Foto Profil": "Profile Photo",
   "Gagal membuat deck.": "Couldn't build the deck.",
   "Ganti foto": "Change photo",
+  // [avatar-bawaan-siswa-v1]
+  "Atau pilih avatar": "Or pick an avatar",
+  "Laki-laki": "Boy",
+  "Perempuan": "Girl",
+  "Berhijab": "With hijab",
+  "Avatar diganti.": "Avatar updated.",
+  "Gagal mengganti avatar. Coba lagi.": "Couldn't change the avatar. Please try again.",
   "Generate AI": "Generate with AI",
   "Generate deck": "Generate deck",
   "Generate deck by AI": "Generate a deck with AI",
