@@ -139,6 +139,8 @@ function isValidWa(dial: string, local: string): boolean {
   return /^\d+$/.test(full) && full.length >= 7 && full.length <= 15;
 }
 
+const PIC_LAINNYA = "__lainnya__";
+
 const inputClass = (hasError: boolean) =>
   `w-full px-4 py-3 rounded-xl border-2 bg-white text-slate-900 placeholder:text-slate-400 focus:outline-none transition-colors ${
     hasError
@@ -916,6 +918,32 @@ function Step3Komitmen({
   errors: Record<string, string>;
   updateField: (key: any, value: any) => void;
 }) {
+  const [picOptions, setPicOptions] = useState<string[]>([]);
+  const [picManual, setPicManual] = useState(false);
+  useEffect(() => {
+    let alive = true;
+    // Baca langsung lewat REST dengan kunci anon (sama seperti lingfluencer-content.html) —
+    // tidak bergantung pada sesi login pengunjung.
+    const url = process.env.NEXT_PUBLIC_SUPABASE_URL;
+    const key = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY;
+    if (!url || !key) return;
+    fetch(`${url}/rest/v1/v_lingtership_interns?select=name&order=name.asc`, {
+      headers: { apikey: key, Authorization: `Bearer ${key}` },
+    })
+      .then((r) => (r.ok ? r.json() : []))
+      .then((rows: { name?: string | null }[]) => {
+        if (!alive || !Array.isArray(rows)) return;
+        const names = rows.map((r) => String(r.name || "").trim()).filter(Boolean);
+        setPicOptions(names);
+        // nama dari ?pic= / ketikan sebelumnya yang tidak ada di daftar → mode "Lainnya"
+        if (names.length && form.pic_name && !names.includes(form.pic_name)) setPicManual(true);
+      })
+      .catch(() => {});
+    return () => {
+      alive = false;
+    };
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
   return (
     <>
       <div>
@@ -929,22 +957,62 @@ function Step3Komitmen({
         label="Nama PIC yang menghubungi kamu"
         required
         error={errors.pic_name}
-        hint="Nama tim Linguo yang outreach (misal: Intan)"
+        hint={`Pilih nama tim Linguo yang outreach kamu, atau "Lainnya…" kalau tidak ada di daftar`}
       >
         <div className="relative">
           <Users
             size={18}
             className="absolute left-3 top-1/2 -translate-y-1/2 text-slate-400 pointer-events-none"
           />
+          {/* [lingfluencer-pic-dropdown-v1] Daftar PIC = magang berstatus aktif di dashboard
+              (view v_lingtership_interns), jadi ikut berganti sendiri tiap batch baru.
+              Kalau daftarnya gagal dimuat, kolomnya kembali jadi ketik bebas. */}
+          {picOptions.length > 0 ? (
+            <>
+              <select
+                value={picManual ? PIC_LAINNYA : form.pic_name}
+                onChange={(e) => {
+                  const v = e.target.value;
+                  setPicManual(v === PIC_LAINNYA);
+                  updateField("pic_name", v === PIC_LAINNYA ? "" : v);
+                }}
+                className={`${inputClass(!!errors.pic_name)} pl-10 pr-10 appearance-none`}
+                data-error={!!errors.pic_name}
+              >
+                <option value="">Pilih PIC</option>
+                {picOptions.map((n) => (
+                  <option key={n} value={n}>
+                    {n}
+                  </option>
+                ))}
+                <option value={PIC_LAINNYA}>Lainnya…</option>
+              </select>
+              <ChevronDown
+                size={18}
+                className="absolute right-3 top-1/2 -translate-y-1/2 text-slate-400 pointer-events-none"
+              />
+            </>
+          ) : (
+            <input
+              type="text"
+              value={form.pic_name}
+              onChange={(e) => updateField("pic_name", e.target.value)}
+              className={`${inputClass(!!errors.pic_name)} pl-10`}
+              placeholder="Nama PIC"
+              data-error={!!errors.pic_name}
+            />
+          )}
+        </div>
+        {picOptions.length > 0 && picManual && (
           <input
             type="text"
             value={form.pic_name}
             onChange={(e) => updateField("pic_name", e.target.value)}
-            className={`${inputClass(!!errors.pic_name)} pl-10`}
-            placeholder="Intan"
-            data-error={!!errors.pic_name}
+            className={`${inputClass(!!errors.pic_name)} mt-2`}
+            placeholder="Tulis nama PIC"
+            autoFocus
           />
-        </div>
+        )}
       </Field>
 
       <div className="border-t border-slate-200 pt-6 space-y-3">
