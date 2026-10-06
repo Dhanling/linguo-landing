@@ -42,6 +42,37 @@ type Screen = "intro" | "quiz" | "result";
 
 // [placement-rekam-saat-mulai-v1] Kontak diisi WAJIB sebelum tes (kecuali siswa /akun).
 type Contact = { name: string; email: string; whatsapp: string };
+// [placement-gender-ilustrasi-v1] Dipilih di form sebelum tes → menentukan ilustrasi hasil
+// (cowok: <level>.webp, cewek: <level>-f.webp). Hanya disimpan di browser (linguo_prefill).
+type Gender = "m" | "f";
+const levelArtSrc = (level: string, gender: Gender | null) =>
+  `/illustrations/placement-level/${level.toLowerCase()}${gender === "f" ? "-f" : ""}.webp?v=2`;
+
+function GenderPick({ value, onChange }: { value: Gender | null; onChange: (g: Gender) => void }) {
+  return (
+    <div>
+      <p className="text-sm font-semibold text-gray-900 mb-2">Kamu cowok atau cewek?</p>
+      <div role="radiogroup" aria-label="Jenis kelamin" className="grid grid-cols-2 gap-3">
+        {([["m", "Cowok"], ["f", "Cewek"]] as [Gender, string][]).map(([g, label]) => {
+          const on = value === g;
+          return (
+            <button key={g} type="button" role="radio" aria-checked={on} onClick={() => onChange(g)}
+              className={"relative flex items-center gap-2.5 rounded-xl border-2 px-3 py-2 text-left transition-colors " +
+                (on ? "border-[#1A9E9E] bg-[#1A9E9E]/[0.07]" : "border-gray-200 bg-white hover:border-gray-300")}>
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img src={levelArtSrc("a1", g)} alt="" width={44} height={44} className="h-11 w-11 flex-shrink-0 object-contain" draggable={false} />
+              <span className={"text-sm font-semibold " + (on ? "text-[#147a7a]" : "text-gray-700")}>{label}</span>
+              <span className={"ml-auto flex h-5 w-5 flex-shrink-0 items-center justify-center rounded-full border-2 " +
+                (on ? "border-[#1A9E9E] bg-[#1A9E9E]" : "border-gray-300 bg-white")}>
+                {on && <Check className="h-3 w-3 text-white" strokeWidth={4} />}
+              </span>
+            </button>
+          );
+        })}
+      </div>
+    </div>
+  );
+}
 
 function fmtClock(sec: number): string {
   const m = Math.floor(sec / 60);
@@ -147,6 +178,7 @@ export default function PlacementTest({ curriculum, questions: soalBawaan }: Pro
   const searchParams = useSearchParams();
   const fromAkun = searchParams?.get("ref") === "akun" && !!searchParams?.get("sid");
   const [contact, setContact] = useState<Contact | null>(null);
+  const [gender, setGender] = useState<Gender | null>(null);
 
   const question = questions[currentQ];
   const progress = ((currentQ + 1) / questions.length) * 100;
@@ -237,7 +269,8 @@ export default function PlacementTest({ curriculum, questions: soalBawaan }: Pro
       <AnimatePresence mode="wait">
         {screen === "intro" && (
           <IntroScreen key="intro" meta={meta} total={questions.length} listening={questions.filter((q) => q.audio).length}
-            needContact={!fromAkun} onContact={saveContact} onStart={startTest} starting={menyiapkan} />
+            needContact={!fromAkun} onContact={saveContact} onStart={startTest} starting={menyiapkan}
+            gender={gender} onGender={setGender} />
         )}
         {screen === "quiz" && question && (
           <QuizScreen
@@ -264,6 +297,7 @@ export default function PlacementTest({ curriculum, questions: soalBawaan }: Pro
             meta={meta}
             timeElapsedSec={Math.floor((Date.now() - startTimeRef.current) / 1000)}
             contact={contact}
+            gender={gender}
             onRetake={startTest}
           />
         )}
@@ -275,9 +309,9 @@ export default function PlacementTest({ curriculum, questions: soalBawaan }: Pro
 // ================================================
 // INTRO
 // ================================================
-function IntroScreen({ meta, total, listening, needContact, onContact, onStart, starting }: {
+function IntroScreen({ meta, total, listening, needContact, onContact, onStart, starting, gender, onGender }: {
   meta: any; total: number; listening: number; needContact: boolean; onContact: (c: Contact) => void; onStart: () => void;
-  starting: boolean;
+  starting: boolean; gender: Gender | null; onGender: (g: Gender) => void;
 }) {
   // [placement-popup-biodata-tips-v1] "Mulai Test" → popup: biodata (wajib) → tips → mulai.
   const [step, setStep] = useState<null | "biodata" | "tips">(null);
@@ -293,9 +327,20 @@ function IntroScreen({ meta, total, listening, needContact, onContact, onStart, 
         if (p.name) setName(String(p.name));
         if (p.email) setEmail(String(p.email));
         if (p.whatsapp) setWa(cleanWa(String(p.whatsapp)));
+        if (p.gender === "m" || p.gender === "f") onGender(p.gender);
       }
     } catch {}
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
+
+  // Simpan pilihan supaya tes berikutnya (dan siswa /akun yang tanpa form biodata) tak memilih ulang.
+  const pilihGender = (g: Gender) => {
+    onGender(g);
+    try {
+      const p = JSON.parse(localStorage.getItem("linguo_prefill") || "null") || {};
+      localStorage.setItem("linguo_prefill", JSON.stringify({ ...p, gender: g }));
+    } catch {}
+  };
 
   const kirimBiodata = () => {
     setErr("");
@@ -304,8 +349,9 @@ function IntroScreen({ meta, total, listening, needContact, onContact, onStart, 
     if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email.trim())) return setErr("Masukkan email yang valid");
     if (w.length < 9) return setErr("Nomor WhatsApp minimal 9 digit");
     if (!w.startsWith("8")) return setErr("Nomor HP harus diawali 8 (tanpa 0 / +62)");
+    if (!gender) return setErr("Pilih cowok atau cewek dulu ya");
     const c = { name: name.trim(), email: email.trim(), whatsapp: w };
-    try { localStorage.setItem("linguo_prefill", JSON.stringify(c)); } catch {}
+    try { localStorage.setItem("linguo_prefill", JSON.stringify({ ...c, gender })); } catch {}
     onContact(c);
     setStep("tips");
   };
@@ -377,6 +423,7 @@ function IntroScreen({ meta, total, listening, needContact, onContact, onStart, 
                       <input type="tel" value={wa} onChange={(e) => setWa(cleanWa(e.target.value))} placeholder="812 xxxx xxxx" inputMode="numeric" autoComplete="tel-national"
                         className="flex-1 min-w-0 px-4 py-3 rounded-r-xl border border-gray-200 bg-white focus:border-[#1A9E9E] focus:ring-2 focus:ring-[#1A9E9E]/20 outline-none text-sm" />
                     </div>
+                    <GenderPick value={gender} onChange={pilihGender} />
                     {err && <p className="text-xs text-rose-600">{err}</p>}
                   </div>
                   <button type="submit"
@@ -406,6 +453,7 @@ function IntroScreen({ meta, total, listening, needContact, onContact, onStart, 
                       </li>
                     ))}
                   </ul>
+                  {!needContact && <div className="mt-5"><GenderPick value={gender} onChange={pilihGender} /></div>}
                   <button type="button" autoFocus onClick={onStart} disabled={starting}
                     className="mt-6 w-full inline-flex items-center justify-center gap-2 px-6 py-3 bg-[#1A9E9E] text-white rounded-xl font-semibold hover:bg-[#147a7a] transition-colors disabled:opacity-70">
                     {starting ? "Menyiapkan soal…" : <>Mulai Test Sekarang <ArrowRight className="w-4 h-4" /></>}
@@ -641,9 +689,9 @@ function QuizScreen(props: {
 // ================================================
 // RESULT (with Soft-gate WA)
 // ================================================
-function ResultScreen({ score, questions, log, meta, timeElapsedSec, contact, onRetake }: {
+function ResultScreen({ score, questions, log, meta, timeElapsedSec, contact, gender, onRetake }: {
   score: number; questions: Question[]; log: { correct: boolean; skipped: boolean }[]; meta: any; timeElapsedSec: number;
-  contact: Contact | null; onRetake: () => void;
+  contact: Contact | null; gender: Gender | null; onRetake: () => void;
 }) {
   // Compute max score dynamically: sum of DIFFICULTY_POINTS per question
   const maxScore = questions.reduce((sum, q) => sum + DIFFICULTY_POINTS[q.difficulty], 0);
@@ -669,7 +717,7 @@ function ResultScreen({ score, questions, log, meta, timeElapsedSec, contact, on
   const [checkingSession, setCheckingSession] = useState(false);
 
   // [placement-hasil-redesign-v1] Warna tiap level mengikuti ilustrasinya
-  // (public/illustrations/placement-level/<level>.webp): A1 merah, A2 biru, B1 kuning, B2 hijau.
+  // (public/illustrations/placement-level/<level>.webp, cewek: <level>-f.webp): A1 merah, A2 biru, B1 kuning, B2 hijau.
   const levelColorMap: Record<string, { bg: string; text: string; soft: string; border: string; pill: string }> = {
     A1: { bg: "bg-rose-100", text: "text-rose-500", soft: "bg-rose-50", border: "border-rose-200", pill: "bg-rose-100 text-rose-600" },
     A2: { bg: "bg-blue-100", text: "text-blue-600", soft: "bg-blue-50", border: "border-blue-200", pill: "bg-blue-100 text-blue-700" },
@@ -677,7 +725,7 @@ function ResultScreen({ score, questions, log, meta, timeElapsedSec, contact, on
     B2: { bg: "bg-emerald-100", text: "text-emerald-600", soft: "bg-emerald-50", border: "border-emerald-200", pill: "bg-emerald-100 text-emerald-700" },
   };
   const lc = levelColorMap[result.level] ?? levelColorMap.A1;
-  const levelArt = `/illustrations/placement-level/${(levelColorMap[result.level] ? result.level : "A1").toLowerCase()}.webp`;
+  const levelArt = levelArtSrc(levelColorMap[result.level] ? result.level : "A1", gender);
 
   // Simpan intent placement ke cookie supaya /auth/callback bisa redirect ke wizard
   const savePlacementIntent = () => {
@@ -900,7 +948,7 @@ function ResultScreen({ score, questions, log, meta, timeElapsedSec, contact, on
       </motion.section>
     ) : (
     <motion.section initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0 }}
-      className="min-h-screen pt-8 pb-16 px-4 sm:px-6 bg-gradient-to-b from-[#EEF5FB] via-[#F6FAFD] to-white">
+      className="min-h-screen pt-8 pb-16 px-4 sm:px-6 bg-white">
       {/* [placement-hasil-desktop-v1] Desktop (lg+): dua kolom — ilustrasi, level & skor
           menempel di kiri (sticky), rincian (peta CEFR, pembahasan, rekomendasi, tombol) di kanan.
           HP/tablet tetap satu kolom. */}
@@ -910,9 +958,9 @@ function ResultScreen({ score, questions, log, meta, timeElapsedSec, contact, on
         <div className="text-center mb-7 lg:mb-6">
           <motion.div initial={{ opacity: 0, scale: 0.8, y: 16 }} animate={{ opacity: 1, scale: 1, y: 0 }}
             transition={{ type: "spring", stiffness: 160, damping: 14, delay: 0.15 }}
-            className="mx-auto mb-5 lg:mb-4 w-[250px] sm:w-[290px] lg:w-[230px]">
+            className="mx-auto mb-5 lg:mb-4 w-[260px] sm:w-[300px] lg:w-[250px]">
             {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img src={levelArt} alt={"Ilustrasi level " + result.level} width={640} height={720}
+            <img src={levelArt} alt={"Ilustrasi level " + result.level} width={640} height={640}
               className="w-full h-auto select-none drop-shadow-[0_18px_24px_rgba(15,60,90,0.10)]" draggable={false} />
           </motion.div>
           <motion.p initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.45 }}

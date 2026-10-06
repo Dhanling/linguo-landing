@@ -58,9 +58,12 @@ export default function CefrLevelMap({ sublevel }: { sublevel?: string }) {
       const cx = xs[here] + COL / 2;
       const px = Math.min(Math.max(cx - f.pillW / 2, 0), VB_W - f.pillW);
       const tallest = Math.max(...bars.map((b, i) => (xs[i] + COL > px && xs[i] < px + f.pillW ? hOf(b) : 0)));
-      return { px, y: BASE - tallest - f.bar - f.pillH - 8 };
+      // [cefr-map-bubble-v1] Bentuk gelembung chat: ekornya menunjuk ke kolom balok siswa.
+      const tail = compact ? 9 : 6;
+      const tx = Math.min(Math.max(cx, px + 12), px + f.pillW - 12);
+      return { px, y: BASE - tallest - f.bar - f.pillH - 9 - tail, tail, tx };
     })() : null;
-    const top = Math.min(0, pill ? pill.y - 4 : 0);
+    const top = Math.min(0, pill ? pill.y - 8 : 0);
     const bottom = compact ? BASE + 76 : 240;
     return (
       <svg viewBox={`0 ${top} ${VB_W} ${bottom - top}`} className={"w-full " + (compact ? "block sm:hidden" : "hidden sm:block")} role="img"
@@ -71,14 +74,27 @@ export default function CefrLevelMap({ sublevel }: { sublevel?: string }) {
           return (
             <g key={b.code}>
               <rect x={x} y={y} width={COL} height={h} rx="6" fill={b.lvl.c} opacity={here < 0 || i <= here ? 1 : 0.3} />
-              {isHere && <rect x={x - 2.5} y={y - 2.5} width={COL + 5} height={h + 5} rx="8" fill="none" stroke={TEAL} strokeWidth="2.5" />}
+              {/* [cefr-map-outline-anim-v1] Garis tepi balok siswa: alas tipis + dua ruas yang berputar mengelilinginya. */}
+              {isHere && (
+                <>
+                  <rect x={x - 3} y={y - 3} width={COL + 6} height={h + 6} rx="8.5" fill="none" stroke={TEAL} strokeOpacity="0.22" strokeWidth="2.5" />
+                  <rect x={x - 3} y={y - 3} width={COL + 6} height={h + 6} rx="8.5" fill="none" stroke={TEAL} strokeWidth="3"
+                    strokeLinecap="round" pathLength={100} strokeDasharray="30 20">
+                    <animate attributeName="stroke-dashoffset" from="100" to="0" dur="2.2s" repeatCount="indefinite" />
+                  </rect>
+                </>
+              )}
               <text x={x + COL / 2} y={y - 7} textAnchor="middle" fontSize={f.bar} fontWeight="700" fill={isHere ? TEAL : "#6B7280"}>{compact ? b.i + 1 : b.code}</text>
             </g>
           );
         })}
         {pill && (
           <g>
-            <rect x={pill.px} y={pill.y} width={f.pillW} height={f.pillH} rx={f.pillH / 2} fill={TEAL} />
+            <animateTransform attributeName="transform" type="translate" values="0 0; 0 -3; 0 0" dur="1.8s" repeatCount="indefinite"
+              calcMode="spline" keyTimes="0; 0.5; 1" keySplines="0.4 0 0.6 1; 0.4 0 0.6 1" />
+            <rect x={pill.px} y={pill.y} width={f.pillW} height={f.pillH} rx={f.pillH * 0.38} fill={TEAL} />
+            <path d={`M${pill.tx - pill.tail} ${pill.y + f.pillH - 1} L${pill.tx} ${pill.y + f.pillH + pill.tail} L${pill.tx + pill.tail} ${pill.y + f.pillH - 1} Z`}
+              fill={TEAL} stroke={TEAL} strokeWidth="1.5" strokeLinejoin="round" />
             <text x={pill.px + f.pillW / 2} y={pill.y + f.pillH / 2 + f.pill * 0.36} textAnchor="middle" fontSize={f.pill} fontWeight="800" fill="#fff">Kamu di sini</text>
           </g>
         )}
