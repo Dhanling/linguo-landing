@@ -1170,6 +1170,8 @@ const EN: Record<string, string> = {
   "Tanpa batas": "No limit",
   "Tanya admin": "Ask the admin",
   "Join kelas live": "Join live class",
+  "Masuk ruang kelas": "Enter classroom",
+  "Ruang kelas": "Classroom",
   "Join dibuka 10 menit sebelum kelas": "Join opens 10 minutes before class",
   "Join dibuka": "Join opens at",
   "Terisi": "Answered",

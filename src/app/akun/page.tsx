@@ -4,7 +4,7 @@
 import { useState, useEffect, useMemo, useRef, useCallback, Fragment, type ReactNode } from "react";
 import { useRouter } from "next/navigation"; // [perf:sidebar-nav-v1]
 import Link from "next/link"; // [kelas-detail-page-v1] card kelas → halaman /akun/kelas/[id]
-import { classRoomUrl, isJoinable } from "@/lib/classRoom"; // [kelas-video-siswa-v1]
+import { classRoomUrl, isJoinable, classRoomUrlForRoom, pickClassRoomId } from "@/lib/classRoom"; // [kelas-video-siswa-v1]
 import { LANG_FLAGS, getFlagUrl, getLangPhoto, langGlyph } from "@/lib/lang-visuals"; // [kelas-detail-page-v1]
 import { baseLanguage, displayLanguage, regulerLangName } from "@/lib/classLanguage"; // [reguler-english-conversation-v1]
 import { REGULER_LANGS } from "@/lib/programLanguages"; // [reguler-lang-gate-server-v1] bahasa yang punya batch reguler — satu sumber dengan funnel landing
@@ -5482,6 +5482,11 @@ export default function AkunPage() {
                     id: r.id,
                     label: [r.language, r.level].filter(Boolean).join(" · ") || "Kelas",
                     sisa: Number(r.sessions_total) - (Number(r.sessions_used) || 0),
+                    // [akun-ruang-kelas-tetap-v1] ruang yang sama dengan link pengajar di Grup Kelas
+                    roomUrl: classRoomUrlForRoom(pickClassRoomId(allSchedules as any, r.id, nowMs), {
+                      title: `Kelas ${[r.language, r.level].filter(Boolean).join(" ")}`.trim(),
+                      name: student?.name || undefined,
+                    }),
                   }));
                 return <JadwalCalendar sessions={[...jadwalSessions, ...jadwalBatchSessions]} regularBatches={jadwalRegulerBatches} kelasBelumTerjadwal={kelasBelumTerjadwal} studentName={student?.name || undefined} aksesRekaman={aksesRekamanMap} />;
               })()}

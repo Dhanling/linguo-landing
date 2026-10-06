@@ -25,6 +25,55 @@ export function classRoomUrl(scheduleId: string, opts: ClassRoomLinkOpts = {}): 
   return `${CLASS_ROOM_ORIGIN}/kelas/sched-${scheduleId}?${q.toString()}`;
 }
 
+/* [akun-ruang-kelas-tetap-v1] Ruang kelas untuk kelas yang kalendernya KOSONG.
+ *
+ * Tombol "Join kelas live" cuma ada untuk sesi yang sudah masuk kalender. Kelas
+ * private yang jadwalnya belum diisi (janjian jamnya lewat WA) tak punya tombol
+ * sama sekali, padahal pengajarnya punya link ruang untuk kelas itu di menu Grup
+ * Kelas. Aturan di bawah SENGAJA menyalin pickSessionLink() + standingClassLink()
+ * di dashboard (src/lib/classLink.ts) supaya dua sisi mendarat di ruang yang
+ * sama: sesi terdekat yang belum berakhir → sesi terakhir (≤14 hari) → ruang
+ * tetap kelasnya (`reg-<registrations.id>`). Ubah satu, ubah dua-duanya. */
+const LIVE_GRACE_MIN = 30;
+const STALE_DAYS = 14;
+
+export interface RoomPickRow {
+  id?: string | null;
+  registration_id?: string | null;
+  scheduled_at: string;
+  duration_minutes?: number | string | null;
+  status?: string | null;
+}
+
+/** Room id Kelas Live yang dipakai kelas ini sekarang (`sched-…` atau `reg-…`). */
+export function pickClassRoomId(rows: RoomPickRow[], regId: string, now: number = Date.now()): string {
+  let soonest: { at: number; id: string } | null = null;
+  let latestPast: { at: number; id: string } | null = null;
+  for (const r of rows) {
+    if (r.registration_id !== regId || !r.id) continue;
+    if (r.status === "cancelled" || r.status === "hangus") continue;
+    const start = new Date(r.scheduled_at).getTime();
+    if (!Number.isFinite(start)) continue;
+    const end = start + ((Number(r.duration_minutes) || 60) + LIVE_GRACE_MIN) * 60_000;
+    if (end >= now) {
+      if (!soonest || start < soonest.at) soonest = { at: start, id: String(r.id) };
+    } else if (now - start <= STALE_DAYS * 86_400_000) {
+      if (!latestPast || start > latestPast.at) latestPast = { at: start, id: String(r.id) };
+    }
+  }
+  const hit = soonest ?? latestPast;
+  return hit ? `sched-${hit.id}` : `reg-${regId}`;
+}
+
+/** Tautan tamu ke sebuah room id apa adanya (`sched-…` / `reg-…`). */
+export function classRoomUrlForRoom(roomId: string, opts: ClassRoomLinkOpts = {}): string {
+  const q = new URLSearchParams({ guest: "1" });
+  if (opts.title) q.set("title", opts.title);
+  if (opts.teacher) q.set("teacher", opts.teacher);
+  if (opts.name) q.set("name", opts.name);
+  return `${CLASS_ROOM_ORIGIN}/kelas/${roomId}?${q.toString()}`;
+}
+
 /** Tombol masuk kelas muncul 30 menit sebelum jam mulai s/d 3 jam sesudahnya —
  *  di luar jendela itu siswa cuma akan masuk room kosong. */
 export function isJoinable(scheduledAt: string | Date): boolean {

@@ -64,7 +64,7 @@ export default function JadwalCalendar({
   regularBatches?: RegularBatch[];
   /** [jadwal-kelas-belum-terjadwal-v1] Kelas private yang masih punya sisa sesi tapi
    *  belum punya satu pun sesi mendatang — kalender kosong dijelaskan, bukan dibiarkan. */
-  kelasBelumTerjadwal?: { id: string; label: string; sisa: number }[];
+  kelasBelumTerjadwal?: { id: string; label: string; sisa: number; roomUrl?: string }[];
   /** Nama siswa — ikut dikirim ke room biar dia tak perlu mengetiknya lagi. */
   studentName?: string;
   /** [addon-akses-rekaman-v1] registration_id → hak rekaman. [rekaman-wajib-beli-v1]
@@ -414,9 +414,9 @@ export default function JadwalCalendar({
       {kelasBelumTerjadwal.length > 0 && (
         /* [jadwal-belum-terjadwal-ringkas-v2] Kartu dipadatkan: tint teal tanpa garis tepi,
            kalimat penjelas dibuang, tombol Tanya admin pindah ke kanan sebaris judul. */
-        <div className="flex items-center gap-3 rounded-xl bg-[#16796E]/[0.08] px-3.5 py-2.5">
+        <div className="flex flex-wrap items-center gap-x-3 gap-y-2 rounded-xl bg-[#16796E]/[0.08] px-3.5 py-2.5">
           <CalendarDays className="h-4 w-4 shrink-0 text-[#16796E]" strokeWidth={2.5} />
-          <div className="min-w-0 flex-1">
+          <div className="min-w-[10rem] flex-1">
             <h3 className="text-[12.5px] font-bold leading-tight text-[#12172B]">{tt("Jadwal sesi berikutnya belum diatur")}</h3>
             <p className="mt-0.5 truncate text-[11.5px] font-medium text-slate-700">
               {kelasBelumTerjadwal.map((k, i) => (
@@ -427,6 +427,20 @@ export default function JadwalCalendar({
               ))}
             </p>
           </div>
+          {/* [akun-ruang-kelas-tetap-v1] Kelas tanpa jadwal tetap punya ruang: kalau jamnya
+              sudah disepakati lewat WA, siswa masuk dari sini — ruangnya sama dengan link
+              pengajar. Lebih dari satu kelas → tombolnya menyebut kelasnya. */}
+          {kelasBelumTerjadwal.filter((k) => k.roomUrl).map((k) => (
+            <a
+              key={k.id}
+              href={k.roomUrl}
+              target="_blank" rel="noopener noreferrer"
+              className="inline-flex h-7 shrink-0 items-center gap-1 rounded-lg bg-white px-2.5 text-[11.5px] font-bold text-[#16796E] ring-1 ring-[#16796E]/30 transition hover:bg-[#16796E]/[0.06]"
+            >
+              <Video className="h-3.5 w-3.5" strokeWidth={2.4} />
+              {kelasBelumTerjadwal.length > 1 ? `${tt("Ruang kelas")} ${k.label}` : tt("Masuk ruang kelas")}
+            </a>
+          ))}
           <a
             href={`https://wa.me/6282116859493?text=${encodeURIComponent(`Halo admin Linguo${studentName ? `, saya ${studentName}` : ""}. Jadwal kelas ${kelasBelumTerjadwal.map((k) => k.label).join(", ")} saya belum muncul, boleh dibantu atur?`)}`}
             target="_blank" rel="noopener noreferrer"
