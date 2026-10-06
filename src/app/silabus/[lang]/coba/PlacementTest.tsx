@@ -901,12 +901,16 @@ function ResultScreen({ score, questions, log, meta, timeElapsedSec, contact, on
     ) : (
     <motion.section initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0 }}
       className="min-h-screen pt-8 pb-16 px-4 sm:px-6 bg-gradient-to-b from-[#EEF5FB] via-[#F6FAFD] to-white">
-      <div className="max-w-2xl mx-auto">
+      {/* [placement-hasil-desktop-v1] Desktop (lg+): dua kolom — ilustrasi, level & skor
+          menempel di kiri (sticky), rincian (peta CEFR, pembahasan, rekomendasi, tombol) di kanan.
+          HP/tablet tetap satu kolom. */}
+      <div className="max-w-2xl lg:max-w-6xl mx-auto lg:grid lg:grid-cols-[400px_minmax(0,1fr)] lg:gap-10 lg:items-start lg:pt-6">
+        <div className="lg:sticky lg:top-20">
         {/* [placement-hasil-redesign-v1] Ilustrasi karakter per level (A1/A2/B1/B2) menggantikan ikon medali */}
-        <div className="text-center mb-7">
+        <div className="text-center mb-7 lg:mb-6">
           <motion.div initial={{ opacity: 0, scale: 0.8, y: 16 }} animate={{ opacity: 1, scale: 1, y: 0 }}
             transition={{ type: "spring", stiffness: 160, damping: 14, delay: 0.15 }}
-            className="mx-auto mb-5 w-[250px] sm:w-[290px]">
+            className="mx-auto mb-5 lg:mb-4 w-[250px] sm:w-[290px] lg:w-[230px]">
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img src={levelArt} alt={"Ilustrasi level " + result.level} width={640} height={720}
               className="w-full h-auto select-none drop-shadow-[0_18px_24px_rgba(15,60,90,0.10)]" draggable={false} />
@@ -914,7 +918,7 @@ function ResultScreen({ score, questions, log, meta, timeElapsedSec, contact, on
           <motion.p initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.45 }}
             className="text-[13px] font-medium text-slate-500 uppercase tracking-[0.18em] mb-2">Hasil Placement Test</motion.p>
           <motion.h1 initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.55 }}
-            className="text-[2.6rem] leading-[1.05] sm:text-6xl font-extrabold tracking-tight text-slate-900 mb-3">
+            className="text-[2.6rem] leading-[1.05] sm:text-6xl lg:text-5xl font-extrabold tracking-tight text-slate-900 mb-3">
             Level kamu <span className={lc.text}>{result.sublevel}</span>
           </motion.h1>
           <motion.p initial={{ opacity: 0, scale: 0.9 }} animate={{ opacity: 1, scale: 1 }} transition={{ delay: 0.65 }}
@@ -923,23 +927,26 @@ function ResultScreen({ score, questions, log, meta, timeElapsedSec, contact, on
 
         {/* Score card */}
         <motion.div initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.8 }}
-          className="bg-white rounded-[28px] p-6 md:p-8 shadow-[0_10px_40px_-12px_rgba(15,60,90,0.14)] ring-1 ring-slate-900/[0.04] mb-6">
+          className="bg-white rounded-[28px] p-6 md:p-8 lg:p-6 shadow-[0_10px_40px_-12px_rgba(15,60,90,0.14)] ring-1 ring-slate-900/[0.04] mb-6 lg:mb-0">
           <div className="grid grid-cols-3 divide-x divide-slate-200 pb-5 mb-5 border-b border-slate-200">
             <div className="text-center px-1">
-              <div className="text-[2rem] sm:text-4xl font-extrabold tracking-tight text-slate-900 leading-none tabular-nums">{score}<span className="text-slate-400 text-lg font-bold">/{maxScore}</span></div>
+              <div className="text-[2rem] sm:text-4xl lg:text-[2rem] font-extrabold tracking-tight text-slate-900 leading-none tabular-nums">{score}<span className="text-slate-400 text-lg font-bold">/{maxScore}</span></div>
               <div className="text-xs text-slate-500 uppercase tracking-wider mt-2.5">Skor</div>
             </div>
             <div className="text-center px-1">
-              <div className="text-[2rem] sm:text-4xl font-extrabold tracking-tight text-slate-900 leading-none tabular-nums">{Math.round(scorePercent)}%</div>
+              <div className="text-[2rem] sm:text-4xl lg:text-[2rem] font-extrabold tracking-tight text-slate-900 leading-none tabular-nums">{Math.round(scorePercent)}%</div>
               <div className="text-xs text-slate-500 uppercase tracking-wider mt-2.5">Akurasi</div>
             </div>
             <div className="text-center px-1">
-              <div className="text-[2rem] sm:text-4xl font-extrabold tracking-tight text-slate-900 leading-none tabular-nums">{Math.floor(timeElapsedSec / 60)}:{String(timeElapsedSec % 60).padStart(2, "0")}</div>
+              <div className="text-[2rem] sm:text-4xl lg:text-[2rem] font-extrabold tracking-tight text-slate-900 leading-none tabular-nums">{Math.floor(timeElapsedSec / 60)}:{String(timeElapsedSec % 60).padStart(2, "0")}</div>
               <div className="text-xs text-slate-500 uppercase tracking-wider mt-2.5">Waktu</div>
             </div>
           </div>
-          <p className="text-slate-700 text-base sm:text-lg leading-relaxed">{result.description}</p>
+          <p className="text-slate-700 text-base sm:text-lg lg:text-base leading-relaxed">{result.description}</p>
         </motion.div>
+        </div>
+
+        <div className="min-w-0">
 
         {/* [placement-cefr-map-v1] Posisi di tangga CEFR Linguo (A1.1–B2.7) —
             sengaja di luar soft-gate: levelnya sendiri sudah tampil di atas. */}
@@ -1107,6 +1114,7 @@ function ResultScreen({ score, questions, log, meta, timeElapsedSec, contact, on
             </button>
           </div>
         </motion.div>
+        </div>
       </div>
 
       {/* Auth Gate Modal */}
