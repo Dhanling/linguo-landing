@@ -9,7 +9,7 @@ import TautanLegal from "@/components/TautanLegal"; // [xendit-legal-links-v1]
 // Ikon = lucide (satu siluet, stroke seragam), bendera bahasa = rounded-rectangle
 // blade-flags — mirror section "Tersedia 60+ Bahasa" di beranda.
 import {
-  CalendarDays, ChartColumnIncreasing, CircleCheckBig, ClipboardList, Clock, FileText,
+  CalendarDays, ChartColumnIncreasing, CircleCheckBig, ClipboardCheck, ClipboardList, Clock, FileText,
   Globe, GraduationCap, Headphones, Layers, ScrollText, Target, Users,
 } from "lucide-react";
 import { RectFlag } from "@/components/RectFlag";
@@ -42,7 +42,13 @@ const SERVICES = [
   { id: "training", Icon: GraduationCap, title: "Corporate Class Training", desc: "Kelas bahasa rutin untuk tim / karyawan" },
   { id: "interpreting", Icon: Headphones, title: "Juru Bahasa / Interpreter", desc: "Acara, site visit, audit, meeting, kunjungan delegasi" },
   { id: "translation", Icon: FileText, title: "Penerjemahan Dokumen", desc: "Dokumen umum, teknis, atau tersumpah" },
+  // [b2b-simulasi-v1] Instansi yang cuma butuh tes prediksi (TOEFL/IELTS) untuk
+  // karyawan/mahasiswanya, tanpa kelas — dulu terpaksa memilih "Class Training".
+  { id: "simulation", Icon: ClipboardCheck, title: "Simulasi / Prediction Test", desc: "Tes prediksi TOEFL / IELTS untuk karyawan atau mahasiswa" },
 ];
+const SIM_TESTS = ["TOEFL ITP", "IELTS Academic", "Lainnya (tulis di catatan)", "Belum tahu — mohon disarankan"];
+const SIM_MODES = ["Online mandiri (waktu bebas)", "Online serentak (jadwal bersama)", "Di lokasi instansi (lab komputer)", "Belum tahu"];
+const SIM_OUTPUTS = ["Skor per peserta", "Sertifikat hasil per peserta", "Rekap skor untuk instansi", "Pembahasan soal"];
 const INTERPRET_MODES = ["Simultan (headset/booth)", "Konsekutif (bergantian)", "Pendamping / escort", "Bisikan (whispering)", "Belum tahu — mohon disarankan"];
 const EQUIPMENT = ["Alat simultan (transmitter + headset)", "Booth interpreter", "Sound system & microphone", "Teknisi / operator alat", "Sudah tersedia dari kami", "Belum tahu"];
 const TRAVEL_OPTS = ["Ya, masukkan ke penawaran", "Tidak — kami yang atur", "Belum tahu"];
@@ -102,6 +108,8 @@ export default function CorporatePage() {
     interpret_mode: "", language_pairs: "", interpreter_count: "", daily_hours: "",
     equipment: [] as string[], travel_cover: "",
     doc_types: [] as string[], doc_pages: "", doc_sworn: "", doc_deadline: "",
+    // [b2b-simulasi-v1]
+    sim_tests: [] as string[], sim_mode: "", sim_date: "", sim_outputs: [] as string[],
   });
   const setF = (k: string, v: any) => setForm(f => ({ ...f, [k]: v }));
   const toggleArr = (k: string, val: string) => {
@@ -120,6 +128,11 @@ export default function CorporatePage() {
   const hasTraining = form.services.includes("training");
   const hasInterpreting = form.services.includes("interpreting");
   const hasTranslation = form.services.includes("translation");
+  const hasSimulation = form.services.includes("simulation");
+  // Simulasi tes selalu bahasa Inggris → pemohon yang hanya memilih layanan itu
+  // tak perlu dipaksa mencentang bahasa.
+  const simOnly = hasSimulation && form.services.length === 1;
+  const languages = form.languages.length > 0 ? form.languages : hasSimulation ? ["English"] : [];
   const wizardSteps = useMemo(() => {
     const st: { key: string; label: string }[] = [
       { key: "service", label: "Layanan" },
@@ -128,15 +141,16 @@ export default function CorporatePage() {
     if (hasTraining || form.services.length === 0) st.push({ key: "training", label: "Kebutuhan" });
     if (hasInterpreting) st.push({ key: "event", label: "Detail Acara" });
     if (hasTranslation) st.push({ key: "doc", label: "Dokumen" });
+    if (hasSimulation) st.push({ key: "sim", label: "Simulasi Tes" });
     st.push({ key: "pic", label: "PIC & Kirim" });
     return st;
-  }, [hasTraining, hasInterpreting, hasTranslation, form.services.length]);
+  }, [hasTraining, hasInterpreting, hasTranslation, hasSimulation, form.services.length]);
   // Daftar langkah bisa menyusut saat pilihan layanan diubah → jaga indeksnya.
   const stepIdx = Math.min(step, wizardSteps.length - 1);
   const cur = wizardSteps[stepIdx].key;
   const isLast = stepIdx === wizardSteps.length - 1;
   const canNext =
-    cur === "service" ? form.services.length > 0 && form.languages.length > 0
+    cur === "service" ? form.services.length > 0 && (form.languages.length > 0 || simOnly)
     : cur === "company" ? !!form.company_name && !!form.industry
     : true;
 
@@ -145,7 +159,7 @@ export default function CorporatePage() {
   const buildSummary = () => {
     const L: string[] = [];
     L.push(`Layanan: ${form.services.map(id => SERVICES.find(s2 => s2.id === id)?.title || id).join(" + ")}`);
-    L.push(`Bahasa: ${form.languages.join(", ") || "-"}`);
+    L.push(`Bahasa: ${languages.join(", ") || "-"}`);
     if (hasTraining) {
       L.push(`Tujuan training: ${form.training_goal.join(", ") || "-"}`);
       L.push(`Peserta: ${form.participant_count || "-"} · Timeline: ${form.timeline || "-"}`);
@@ -162,6 +176,11 @@ export default function CorporatePage() {
       L.push(`Dokumen: ${form.doc_types.join(", ") || "-"} · ${form.doc_pages || "-"} halaman · ${form.doc_sworn || "-"}`);
       L.push(`Deadline dokumen: ${form.doc_deadline || "-"}`);
     }
+    if (hasSimulation) {
+      L.push(`Simulasi tes: ${form.sim_tests.join(", ") || "-"} · Peserta: ${form.participant_count || "-"}`);
+      L.push(`Pelaksanaan: ${form.sim_mode || "-"} · Target tanggal: ${form.sim_date || "-"}`);
+      L.push(`Hasil yang dibutuhkan: ${form.sim_outputs.join(", ") || "-"}`);
+    }
     L.push(`Budget: ${form.budget_range || "-"}`);
     return L;
   };
@@ -171,7 +190,7 @@ export default function CorporatePage() {
     setSaving(true);
     const summary = buildSummary();
     const notesFull = [form.notes?.trim(), ...summary].filter(Boolean).join("\n");
-    const serviceDetail: Record<string, any> = { services: form.services, languages: form.languages };
+    const serviceDetail: Record<string, any> = { services: form.services, languages };
     if (hasInterpreting) {
       serviceDetail.event = {
         name: form.event_name, start_date: form.event_start || null, end_date: form.event_end || null,
@@ -185,6 +204,12 @@ export default function CorporatePage() {
         types: form.doc_types, pages: form.doc_pages, sworn: form.doc_sworn, deadline: form.doc_deadline || null,
       };
     }
+    if (hasSimulation) {
+      serviceDetail.simulation = {
+        tests: form.sim_tests, participants: form.participant_count, mode: form.sim_mode,
+        target_date: form.sim_date || null, outputs: form.sim_outputs,
+      };
+    }
     try {
       // Save to Supabase
       await fetch("/api/corporate-lead", {
@@ -192,6 +217,7 @@ export default function CorporatePage() {
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
           ...form,
+          languages,
           notes: notesFull,
           service_type: form.services.join("+") || "training",
           service_detail: serviceDetail,
@@ -380,7 +406,7 @@ export default function CorporatePage() {
                 <div className="space-y-4">
                   <div>
                     <label className="text-xs font-semibold text-slate-500 mb-2 block">Layanan yang Dibutuhkan * (bisa pilih lebih dari 1)</label>
-                    <div className="grid sm:grid-cols-3 gap-2">
+                    <div className="grid sm:grid-cols-2 gap-2">
                       {SERVICES.map(sv => (
                         <button key={sv.id} onClick={() => toggleArr("services", sv.id)}
                           className={`px-4 py-3 rounded-xl border-2 text-left transition-all ${
@@ -404,7 +430,7 @@ export default function CorporatePage() {
                     </p>
                   )}
                   <div>
-                    <label className="text-xs font-semibold text-slate-500 mb-2 block">Bahasa yang Dibutuhkan * (bisa pilih lebih dari 1)</label>
+                    <label className="text-xs font-semibold text-slate-500 mb-2 block">Bahasa yang Dibutuhkan {simOnly ? "(opsional — simulasi tes berbahasa Inggris)" : "* (bisa pilih lebih dari 1)"}</label>
                     <div className="grid grid-cols-3 sm:grid-cols-4 gap-2">
                       {LANGUAGES.map(l => (
                         <button key={l} onClick={() => toggleArr("languages", l)}
@@ -618,6 +644,62 @@ export default function CorporatePage() {
                       ))}
                     </div>
                   </div>
+                </div>
+              )}
+
+              {/* [b2b-simulasi-v1] Langkah 3d: Simulasi / prediction test */}
+              {cur === "sim" && (
+                <div className="space-y-4">
+                  <div>
+                    <label className="text-xs font-semibold text-slate-500 mb-2 block">Jenis Tes (bisa pilih lebih dari 1)</label>
+                    <div className="grid grid-cols-2 gap-2">
+                      {SIM_TESTS.map(t => (
+                        <button key={t} onClick={() => toggleArr("sim_tests", t)}
+                          className={`px-3 py-2 rounded-xl border-2 text-xs font-medium transition-all text-left ${
+                            form.sim_tests.includes(t) ? "border-[#1A9E9E] bg-[#1A9E9E]/5 text-[#1A9E9E]" : "border-slate-200 text-slate-600 hover:border-slate-300"
+                          }`}>{t}</button>
+                      ))}
+                    </div>
+                  </div>
+                  <div className="grid sm:grid-cols-2 gap-4">
+                    <div>
+                      <label className="text-xs font-semibold text-slate-500 mb-1.5 block">Perkiraan Jumlah Peserta</label>
+                      <select value={form.participant_count} onChange={e => setF("participant_count", e.target.value)}
+                        className="w-full border-2 border-slate-200 rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-[#1A9E9E] transition-colors bg-white">
+                        <option value="">Pilih</option>
+                        {["5-10 orang", "11-20 orang", "21-50 orang", "50-100 orang", "100+ orang"].map(sz => <option key={sz} value={sz}>{sz}</option>)}
+                      </select>
+                    </div>
+                    <div>
+                      <label className="text-xs font-semibold text-slate-500 mb-1.5 block">Target Tanggal Pelaksanaan</label>
+                      <input type="date" value={form.sim_date} onChange={e => setF("sim_date", e.target.value)} className="w-full border-2 border-slate-200 rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-[#1A9E9E] transition-colors" />
+                    </div>
+                  </div>
+                  <div>
+                    <label className="text-xs font-semibold text-slate-500 mb-2 block">Cara Pelaksanaan</label>
+                    <div className="grid grid-cols-2 gap-2">
+                      {SIM_MODES.map(o => (
+                        <button key={o} onClick={() => setF("sim_mode", o)}
+                          className={`px-3 py-2 rounded-xl border-2 text-xs font-medium transition-all text-left ${
+                            form.sim_mode === o ? "border-[#1A9E9E] bg-[#1A9E9E]/5 text-[#1A9E9E]" : "border-slate-200 text-slate-600 hover:border-slate-300"
+                          }`}>{o}</button>
+                      ))}
+                    </div>
+                  </div>
+                  <div>
+                    <label className="text-xs font-semibold text-slate-500 mb-2 block">Hasil yang Dibutuhkan (bisa pilih lebih dari 1)</label>
+                    <div className="grid grid-cols-2 gap-2">
+                      {SIM_OUTPUTS.map(o => (
+                        <button key={o} onClick={() => toggleArr("sim_outputs", o)}
+                          className={`px-3 py-2 rounded-xl border-2 text-xs font-medium transition-all text-left ${
+                            form.sim_outputs.includes(o) ? "border-[#1A9E9E] bg-[#1A9E9E]/5 text-[#1A9E9E]" : "border-slate-200 text-slate-600 hover:border-slate-300"
+                          }`}>{o}</button>
+                      ))}
+                    </div>
+                  </div>
+                  <p className="text-[11px] text-slate-500 bg-slate-50 border border-slate-200 rounded-xl px-3 py-2 leading-relaxed">
+                    Simulasi dikerjakan online lewat akun masing-masing peserta. Bagian Speaking direkam lewat mikrofon perangkat, jadi tidak perlu jadwal dengan penguji.
+                  </p>
                 </div>
               )}
 
