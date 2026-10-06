@@ -54,7 +54,9 @@ const LANGUAGES: LangEntry[] = [
   { code: "ru", name: "Russian",          cat: "B" },
   { code: "nl", name: "Dutch",            cat: "B" },
   { code: "th", name: "Thai",             cat: "B" },
-  { icon: "sign", name: "Sign Language",  cat: "B" },
+  // [sign-variant-v1] BISINDO & ASL = dua bahasa isyarat berbeda, tarif sama.
+  { icon: "sign", name: "Sign Language - BISINDO", cat: "B" },
+  { icon: "sign", name: "Sign Language - ASL", cat: "B" },
   // A — langka & Eropa
   { code: "pt", name: "Portuguese",       cat: "A" },
   { code: "vn", name: "Vietnamese",       cat: "A" },

@@ -267,17 +267,25 @@ export const TRIAL_LEVELS: { id: string; label: string; desc: string }[] = [
 /** ID level yang sah dikirim client (dipakai validasi server-side). */
 export const TRIAL_LEVEL_IDS: string[] = TRIAL_LEVELS.map((l) => l.id);
 
+// [sign-variant-v1] Bahasa isyarat dijual sebagai DUA varian yang berbeda:
+// BISINDO (Indonesia) dan ASL (Amerika). Tarifnya sama — keduanya ikut kategori
+// "Sign Language" (B) lewat getLanguageCategory(), jadi PRICE_CATEGORIES tidak
+// perlu entri baru. "Sign Language" polos tetap sah untuk data/keranjang lama.
+export const SIGN_LANGUAGE_VARIANTS = ["Sign Language - BISINDO", "Sign Language - ASL"];
+
 /** Daftar bahasa yang bisa dihitung harganya (gabungan semua kategori), urut A-Z. */
 export const TRIAL_LANGUAGES: string[] = Object.values(PRICE_CATEGORIES)
   .reduce<string[]>((acc, arr) => acc.concat(arr), [])
+  .concat(SIGN_LANGUAGE_VARIANTS)
   .sort((a, b) => a.localeCompare(b));
 
 /** Cari kategori harga sebuah bahasa. null kalau tidak ada di pricelist. */
 export function getLanguageCategory(language: string): string | null {
-  const found = Object.keys(PRICE_CATEGORIES).find((k) =>
-    PRICE_CATEGORIES[k].includes(language)
-  );
-  return found || null;
+  const catOf = (name: string) =>
+    Object.keys(PRICE_CATEGORIES).find((k) => PRICE_CATEGORIES[k].includes(name));
+  // Varian ("Sign Language - ASL") ikut kategori bahasa induknya kalau tidak
+  // punya entri sendiri; yang punya ("English - British") tetap menang.
+  return catOf(language) || catOf(language.split(" - ")[0].trim()) || null;
 }
 
 /**

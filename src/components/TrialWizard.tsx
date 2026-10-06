@@ -120,6 +120,8 @@ const LANG_META: Record<string, { flag: string; region: LangRegion }> = {
   Spanish: { flag: "es", region: "eropa" },
   Thai: { flag: "th", region: "asia" },
   "Sign Language": { flag: "sign", region: "lainnya" },
+  "Sign Language - BISINDO": { flag: "sign", region: "lainnya" },
+  "Sign Language - ASL": { flag: "sign", region: "lainnya" },
   // Kategori A
   Swahili: { flag: "ke", region: "afrika" },
   Greek: { flag: "gr", region: "eropa" },
@@ -189,7 +191,8 @@ const LANG_META: Record<string, { flag: string; region: LangRegion }> = {
 };
 
 // Tidak ditawarkan di Trial Class (tetap ada di pricelist utk alur lain).
-const TRIAL_HIDDEN_LANGS = new Set<string>(["Punjabi", "Tamil", "Yoruba", "Zulu"]);
+// "Sign Language" polos disembunyikan: siswa memilih BISINDO atau ASL [sign-variant-v1].
+const TRIAL_HIDDEN_LANGS = new Set<string>(["Punjabi", "Tamil", "Yoruba", "Zulu", "Sign Language"]);
 const TRIAL_LANG_OPTIONS = TRIAL_LANGUAGES.filter((l) => !TRIAL_HIDDEN_LANGS.has(l));
 
 const langFlag = (name: string): string => LANG_META[name]?.flag || "un";
