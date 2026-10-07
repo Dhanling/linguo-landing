@@ -229,7 +229,7 @@ export function normalizeSlide(raw: any): MateriSlide | null {
   // [slide-sampul-v1] Hanya berkas di /slide-cover — dek buatan AI atau baris
   // lama tak bisa menyelipkan gambar dari alamat lain.
   const cover = str(raw.cover);
-  if (/^\/slide-cover\/[\w.-]+$/.test(cover)) {
+  if (/^\/slide-cover\/(?:spanish-themes\/)?[\w.-]+$/.test(cover)) {
     s.cover = cover;
     if (raw.ruang === "kiri" && type !== "title") s.ruang = "kiri";
   }
