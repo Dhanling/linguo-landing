@@ -16,7 +16,10 @@ export async function fotoOauthAsli(url?: string | null): Promise<string | null>
     if (!res.ok) return url;
     const jenis = res.headers.get("content-type") || "";
     const ukuran = (await res.arrayBuffer()).byteLength;
-    return jenis.startsWith("image/png") && ukuran < HURUF_MAKS_BYTE ? null : url;
+    // ETag gambar huruf selalu "v0"; di browser header ini tak terbaca (CORS) → cukup jenis+ukuran.
+    const etag = res.headers.get("etag");
+    const huruf = jenis.startsWith("image/png") && ukuran < HURUF_MAKS_BYTE && (!etag || etag === '"v0"');
+    return huruf ? null : url;
   } catch {
     return url; // gagal memeriksa → perilaku lama, jangan sampai foto asli hilang
   }
