@@ -1,6 +1,7 @@
 import { NextRequest, NextResponse, after } from "next/server";
 import { programLangRejection } from "@/lib/programLanguages";
 import { createClient } from "@supabase/supabase-js";
+import { fotoOauthAsli } from "@/lib/oauthAvatar";
 import { KODE_WA_WAJIB, PESAN_WA_WAJIB, pastikanWaPembeli } from "@/lib/waPembeli";
 
 // ── enrollment-server-flow-v1 ────────────────────────────────────────────
@@ -126,7 +127,7 @@ export async function POST(req: NextRequest) {
       email,
       name,
       wa_number,
-      avatar_url,
+      avatar_url: avatarMentah,
       product,           // "Kelas Private" | "Kelas Reguler" | ...
       language,          // mis. "Spanish" / "IELTS/TOEFL"
       level,
@@ -151,6 +152,8 @@ export async function POST(req: NextRequest) {
       // sampah pendaftaran palsu.
       profile_only,
     } = body || {};
+    // [avatar-google-huruf-v1] gambar huruf bawaan Google bukan foto → jangan disimpan
+    const avatar_url = await fotoOauthAsli(avatarMentah);
 
     if (!email) {
       return NextResponse.json({ error: "email wajib." }, { status: 400 });

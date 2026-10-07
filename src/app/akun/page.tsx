@@ -24,6 +24,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import dynamic from "next/dynamic";
 import successAnim from "../payment/success/success-anim.json";
 import { AVATAR_PRESETS, defaultAvatarFor, presetOfUrl, presetPath, presetUrl, type AvatarPreset } from "@/lib/defaultAvatar"; // [avatar-bawaan-siswa-v1]
+import { fotoOauthAsli } from "@/lib/oauthAvatar"; // [avatar-google-huruf-v1]
 import { Zap, Target, MessageCircle, Globe, Plus, LogOut, Clock, Calendar, Pencil, Star, Trophy, BookOpen, Newspaper, BookMarked, User, Users, Baby, ClipboardList, GraduationCap, Video, Camera, Mail, Languages, ChevronRight, Search, ArrowRight, Shield, Bell, SlidersHorizontal, Wallet, Upload, BadgeCheck, CreditCard, Check, XCircle, Hand, X, Eye, EyeOff, MessagesSquare, PartyPopper, Rocket, Sprout, HelpCircle, AlertCircle, Sparkles, FileText, Layers, Lightbulb, Loader2, AlertTriangle, Minus, Play, ExternalLink, ClipboardCheck, BarChart2, List, LayoutGrid, Building2, type LucideIcon } from "lucide-react";
 // [no-emoji-lucide-v1] bendera rounded-rect buat prefix nomor WA & pilihan tes (bukan emoji 🇮🇩)
 import { RectFlag } from "@/components/RectFlag";
@@ -3691,7 +3692,8 @@ export default function AkunPage() {
               user?.email?.split("@")[0] ||
               "Siswa",
             email: user?.email,
-            avatar_url: user?.user_metadata?.avatar_url ?? user?.user_metadata?.picture ?? null,
+            // [avatar-google-huruf-v1] gambar huruf bawaan Google bukan foto → jangan disimpan
+            avatar_url: await fotoOauthAsli(user?.user_metadata?.avatar_url ?? user?.user_metadata?.picture),
           };
           const { data: inserted } = await supabase
             .from("students")
@@ -3714,10 +3716,11 @@ export default function AkunPage() {
       // Auto-sync avatar dari OAuth metadata kalo student udah ada tapi avatar_url null
       // (cover existing user yang dibuat sebelum patch fallback chain)
       if (studentData && !studentData.avatar_url) {
-        const oauthAvatar =
+        // [avatar-google-huruf-v1] gambar huruf bawaan Google dilewati → siswa tetap pakai avatar bawaan
+        const oauthAvatar = await fotoOauthAsli(
           user?.user_metadata?.avatar_url ??
           user?.user_metadata?.picture ??
-          null;
+          null);
         if (oauthAvatar) {
           const { data: synced } = await supabase
             .from("students")
@@ -4116,7 +4119,15 @@ export default function AkunPage() {
   const displayName = student?.name || user?.user_metadata?.full_name || "Siswa";
   const firstName = displayName.split(" ")[0];
   // [avatar-bawaan-siswa-v1] belum punya foto → avatar ilustrasi bawaan (ditebak dari nama)
-  const avatarUrl = student?.avatar_url || user?.user_metadata?.avatar_url || user?.user_metadata?.picture || defaultAvatarFor(displayName) || undefined;
+  // [avatar-google-huruf-v1] foto OAuth dipakai hanya kalau memang foto, bukan gambar huruf Google
+  const oauthMentah = user?.user_metadata?.avatar_url || user?.user_metadata?.picture || null;
+  const [oauthFoto, setOauthFoto] = useState<string | null>(null);
+  useEffect(() => {
+    let batal = false;
+    fotoOauthAsli(oauthMentah).then((u) => { if (!batal) setOauthFoto(u); });
+    return () => { batal = true; };
+  }, [oauthMentah]);
+  const avatarUrl = student?.avatar_url || oauthFoto || defaultAvatarFor(displayName) || undefined;
 
   const openEnrollWizard = () => {
     setEnrollStep(0);
