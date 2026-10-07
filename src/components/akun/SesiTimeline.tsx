@@ -252,7 +252,9 @@ export default function SesiTimeline({
   return (
     <div className="flex flex-col gap-4">
       {/* indeks progres sesi */}
-      <div className="materi-panel rounded-2xl bg-white px-4 py-3.5">
+      {/* [materi-mobile-ringkas-v1] di HP, varian "sesi" cuma mengulang angka kartu kelas
+          tepat di atasnya (sesi selesai, durasi, persen) — disembunyikan di layar sempit. */}
+      <div className={`materi-panel rounded-2xl bg-white px-4 py-3.5 ${variant === 'materi' ? '' : 'hidden sm:block'}`}>
         <div className="flex flex-wrap items-baseline justify-between gap-2">
           <p className="text-[13px] font-extrabold text-[#12172B]">
             {t('Sesi')} {selesai} {t('dari')} {total || rows.length}

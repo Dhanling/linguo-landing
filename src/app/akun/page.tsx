@@ -5638,11 +5638,13 @@ export default function AkunPage() {
                       <p className="flex items-center gap-1.5 text-[12px] font-bold text-gray-500"><span>{tt("Dashboard")}</span><ChevronRight className="h-3.5 w-3.5" /><span className="text-[#16796E]">{tt("Kelas & Materi")}</span></p>
                       <h1 className="mt-1 text-[24px] font-extrabold leading-tight text-[#12172B]">{tt("Kelas & Materi")}</h1>
                     </div>
-                    <div className="flex items-center gap-3">
+                    {/* [materi-mobile-ringkas-v1] di HP kotak cari selebar layar; lonceng di sini
+                        disembunyikan karena header aplikasi sudah punya lonceng yang sama. */}
+                    <div className="flex w-full items-center gap-3 lg:w-auto">
                       {/* [materi-search-live-v1] kotak cari ini dulu nol fungsi: nilainya disimpan
                           ke state tapi tidak dipakai menyaring apa pun. Sekarang benar-benar
                           menyaring daftar kelas (view Live) / daftar bahasa (view Mandiri). */}
-                      <label className="materi-panel flex h-11 w-[240px] max-w-[40vw] items-center gap-2.5 rounded-2xl bg-white px-4 transition">
+                      <label className="materi-panel flex h-11 min-w-0 flex-1 items-center gap-2.5 rounded-2xl bg-white px-4 transition lg:w-[240px] lg:max-w-[40vw] lg:flex-none">
                         <Search className="h-[18px] w-[18px] shrink-0 text-gray-400" strokeWidth={2} />
                         <input
                           value={materiSearch}
@@ -5658,7 +5660,7 @@ export default function AkunPage() {
                       </label>
                       {/* [materi-bell-real-v1] dulu lonceng hiasan dengan titik merah permanen —
                           selalu "ada notifikasi baru", padahal tidak nyambung ke mana-mana. */}
-                      {student?.id ? <NotificationBell userId={student.id} userType="student" /> : null}
+                      {student?.id ? <span className="hidden lg:block"><NotificationBell userId={student.id} userType="student" /></span> : null}
                     </div>
                   </div>
                 );
@@ -5712,9 +5714,12 @@ export default function AkunPage() {
                         {/* RIGHT detail (+ mobile pills) */}
                         <main className="materi-flat flex min-w-0 flex-col bg-[#F5F6F8] lg:min-h-0 lg:overflow-y-auto">
                           {MateriTopBar}
-                          <div className="flex gap-2.5 overflow-x-auto px-5 pt-3 lg:hidden">
-                            {shown.map((r: any) => <ClassItem key={r.id} r={r} mobile />)}
-                          </div>
+                          {/* [materi-mobile-ringkas-v1] satu kelas = pilnya cuma mengulang kartu di bawahnya */}
+                          {shown.length > 1 ? (
+                            <div className="flex gap-2.5 overflow-x-auto px-5 pt-3 lg:hidden">
+                              {shown.map((r: any) => <ClassItem key={r.id} r={r} mobile />)}
+                            </div>
+                          ) : null}
 
                           <div className="flex flex-col gap-6 px-5 pb-5 pt-4 lg:px-7 lg:pb-7">
                             {/* hero */}
@@ -5726,9 +5731,14 @@ export default function AkunPage() {
                               const nextLabel = nextSched
                                 ? new Date(nextSched.scheduled_at).toLocaleDateString("id-ID", { day: "numeric", month: "short", year: "numeric" }) + " · " + new Date(nextSched.scheduled_at).toLocaleTimeString("id-ID", { hour: "2-digit", minute: "2-digit" })
                                 : tt("Belum terjadwal");
+                              // [materi-mobile-ringkas-v1] versi pendek (tanpa tahun) untuk baris ringkas di HP
+                              const nextLabelShort = nextSched
+                                ? new Date(nextSched.scheduled_at).toLocaleDateString("id-ID", { day: "numeric", month: "short" }) + " · " + new Date(nextSched.scheduled_at).toLocaleTimeString("id-ID", { hour: "2-digit", minute: "2-digit" })
+                                : tt("Belum terjadwal");
+                              const durasiHero = String(selected.duration ?? "").match(/\d+/)?.[0] || "";
                               return (
                                 <div className="materi-panel overflow-hidden rounded-3xl bg-white">
-                                  <div className="relative flex items-center gap-5 overflow-hidden px-6 py-6 sm:px-7" style={{ background: pal.color }}>
+                                  <div className="relative flex items-center gap-3.5 overflow-hidden px-4 py-4 sm:gap-5 sm:px-7 sm:py-6" style={{ background: pal.color }}>
                                     {langPhoto && (
                                       <>
                                         <img src={langPhoto} alt="" aria-hidden className="pointer-events-none absolute inset-0 h-full w-full object-cover" onError={(e) => { (e.currentTarget as HTMLImageElement).style.display = "none"; }} />
@@ -5736,16 +5746,31 @@ export default function AkunPage() {
                                       </>
                                     )}
                                     {/* [materi-flag-pie-v1] ubin huruf diganti bendera, sama seperti daftar kelas di kiri */}
-                                    <span className="relative z-10 flex h-20 w-20 shrink-0 items-center justify-center rounded-2xl bg-white/15">
-                                      <LangSlugFlag slug={langFlagSlug(selected.language)} h={40} />
+                                    <span className="relative z-10 flex h-14 w-14 shrink-0 items-center justify-center rounded-2xl bg-white/15 sm:h-20 sm:w-20">
+                                      <span className="sm:hidden"><LangSlugFlag slug={langFlagSlug(selected.language)} h={28} /></span>
+                                      <span className="hidden sm:block"><LangSlugFlag slug={langFlagSlug(selected.language)} h={40} /></span>
                                     </span>
                                     <div className="relative z-10 min-w-0 flex-1 text-white">
                                       <span className="inline-flex items-center gap-1.5 rounded-full bg-white/20 px-2.5 py-1 text-[11px] font-bold">{tt(badge.label)}</span>
-                                      <h2 className="mt-2 text-[22px] font-extrabold leading-tight">{displayLanguage(selected.language)} — {selected.level || "TBD"}</h2>
-                                      <p className="mt-1 flex items-center gap-1.5 text-[13px] font-medium text-white/85"><User className="h-4 w-4" strokeWidth={2.5} />{tt("Pengajar")}: {teacherLabel(selected) || tt("Belum ditentukan")}</p>
+                                      <h2 className="mt-1.5 text-[18px] font-extrabold leading-tight sm:mt-2 sm:text-[22px]">{displayLanguage(selected.language)} — {selected.level || "TBD"}</h2>
+                                      <p className="mt-1 flex items-center gap-1.5 text-[12px] font-medium text-white/85 sm:text-[13px]"><User className="h-4 w-4 shrink-0" strokeWidth={2.5} />{tt("Pengajar")}: {teacherLabel(selected) || tt("Belum ditentukan")}</p>
                                     </div>
                                   </div>
-                                  <div className="grid grid-cols-3 gap-4 px-6 py-5 sm:px-7">
+                                  {/* [materi-mobile-ringkas-v1] di HP tiga kolom itu patah jadi 3–4 baris
+                                      ("Sedang / berjalan", "Belum / terjadwal"). Cukup satu baris:
+                                      donat progres · sesi selesai · sesi berikutnya. */}
+                                  <div className="flex items-center gap-3 px-4 py-3 sm:hidden">
+                                    <ProgressPie pct={pct} size={36} stroke={5} />
+                                    <p className="shrink-0 text-[13px] font-extrabold text-[#12172B]">
+                                      {selected.sessions_used || 0}<span className="font-bold text-gray-400">/{selected.sessions_total || 0}</span> {tt("sesi")}
+                                      {durasiHero ? <span className="ml-1 text-[11px] font-semibold text-gray-400">· {durasiHero}′</span> : null}
+                                    </p>
+                                    <p className="ml-auto flex min-w-0 items-center gap-1.5 border-l border-slate-100 pl-3 text-[12px] font-bold text-[#12172B]" title={tt("Sesi Berikutnya")}>
+                                      <Calendar className="h-3.5 w-3.5 shrink-0 text-gray-400" strokeWidth={2.4} />
+                                      <span className="truncate">{nextLabelShort}</span>
+                                    </p>
+                                  </div>
+                                  <div className="hidden grid-cols-3 gap-4 px-6 py-5 sm:grid sm:px-7">
                                     <div>
                                       <p className="text-[12px] font-semibold text-gray-500">{tt("Progress")}</p>
                                       {/* [materi-flag-pie-v1] bilah progres → donat, sebentuk dengan kartu kelas */}
