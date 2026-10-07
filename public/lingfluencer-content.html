@@ -166,9 +166,9 @@
             </div>
             <div class="field" style="margin-bottom:2px;">
               <label class="q" for="whatsapp">No WhatsApp<span class="req">*</span></label>
-              <p class="hint">Wajib format <b>628</b>, contoh: <b>6283157164771</b></p>
-              <input type="text" id="whatsapp" inputmode="numeric" placeholder="628xxxxxxxxxx" />
-              <div class="err" id="err-whatsapp">Pakai format 628 (contoh 6283157164771).</div>
+              <p class="hint">Awali dengan <b>kode negara</b>, tanpa tanda +. Indonesia: <b>6283157164771</b> · luar negeri, mis. Malaysia: <b>60123456789</b></p>
+              <input type="text" id="whatsapp" inputmode="tel" autocomplete="tel" placeholder="628xxxxxxxxxx" />
+              <div class="err" id="err-whatsapp">Isi nomor lengkap dengan kode negara (contoh 6283157164771 atau 60123456789).</div>
             </div>
           </section>
 
@@ -310,7 +310,8 @@
       if (n === 1) {
         if (!$("name").value.trim()) { showErr("err-name", $("name")); ok = false; }
         var wa = normalizeWa($("whatsapp").value.trim());
-        if (!(wa.indexOf("62") === 0 && wa.length >= 10 && wa.length <= 15)) { showErr("err-whatsapp", $("whatsapp")); ok = false; }
+        // Semua kode negara diterima (bukan cuma 62) — aturan sama dengan form daftar Lingfluencer. [lingfluencer-konten-wa-intl-v1]
+        if (!(wa.length >= 8 && wa.length <= 15)) { showErr("err-whatsapp", $("whatsapp")); ok = false; }
       } else if (n === 2) {
         if (getChecked().length === 0) { showErr("err-postedOn", $("postedOn")); ok = false; }
         if (!/^https?:\/\/.+/i.test($("link").value.trim())) { showErr("err-link", $("link")); ok = false; }
