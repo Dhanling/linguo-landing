@@ -19,10 +19,39 @@ const SUPABASE_URL = process.env.NEXT_PUBLIC_SUPABASE_URL!;
 const SUPABASE_KEY = process.env.SUPABASE_SERVICE_ROLE_KEY!;
 const BASE_URL = process.env.NEXT_PUBLIC_BASE_URL || "https://linguo.id";
 
+// [watch-learn-inbox-v1] Tab Pembayaran WA Inbox (dashboard.linguo.id) memakai
+// route ini untuk menagih langganan atas nama siswa, supaya nominal & jalurnya
+// sama persis dengan checkout mandiri. Beda origin → butuh CORS; yang diizinkan
+// cuma subdomain internal Linguo (sama dengan create-cart-invoice).
+const ORIGIN_INTERNAL = /^https:\/\/(dashboard|teach|meet)\.linguo\.id$|^http:\/\/localhost:\d+$/;
+function corsUntuk(req: NextRequest): Record<string, string> {
+  const origin = req.headers.get("origin") ?? "";
+  if (!ORIGIN_INTERNAL.test(origin)) return {};
+  return {
+    "Access-Control-Allow-Origin": origin,
+    "Access-Control-Allow-Methods": "POST, OPTIONS",
+    "Access-Control-Allow-Headers": "content-type",
+    Vary: "Origin",
+  };
+}
+
+export function OPTIONS(req: NextRequest) {
+  return new NextResponse(null, { status: 204, headers: corsUntuk(req) });
+}
+
 export async function POST(req: NextRequest) {
+  const res = await buatInvoice(req);
+  for (const [k, v] of Object.entries(corsUntuk(req))) res.headers.set(k, v);
+  return res;
+}
+
+async function buatInvoice(req: NextRequest) {
   try {
     const body = await req.json().catch(() => ({}));
     const { plan: planId, email, promo } = body || {};
+    // Nama & nomor WA cuma diisi dari WA Inbox (CS) — checkout mandiri tak punya.
+    const nama = typeof body?.name === "string" ? body.name.trim().slice(0, 80) : "";
+    const wa = typeof body?.phone === "string" ? body.phone.replace(/\D/g, "").slice(0, 16) : "";
 
     // ── 1. Validasi ────────────────────────────────────────────────────────
     if (!email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(String(email))) {
@@ -69,8 +98,9 @@ export async function POST(req: NextRequest) {
         method: "POST",
         headers: supaHeaders,
         body: JSON.stringify({
-          name: String(email).split("@")[0],
+          name: nama || String(email).split("@")[0],
           email,
+          ...(wa.length >= 8 ? { wa_number: wa } : {}),
           program: "Watch & Learn",
           language: "-",
           source: "watch-and-learn",
