@@ -11,9 +11,12 @@
 // ditutup permanen, tapi juga tidak mengurung siswa: dashboard tetap harus bisa
 // dipakai. Setelah 7 hari sesinya gugur sendiri dari daftar.
 // Tanpa sesi login (mis. mode pratinjau POV staf) komponen ini diam.
+//
+// [rating-sesi-nps-v1] Skalanya 0–10 (gaya NPS), bukan lagi bintang 1–5. Nilai
+// yang belum dipilih = null, karena 0 adalah jawaban yang sah.
 
 import { useEffect, useState } from "react";
-import { Star, X, Loader2, CheckCheck } from "lucide-react";
+import { X, Loader2, CheckCheck } from "lucide-react";
 import { supabase } from "@/lib/supabase-client";
 
 interface Sesi {
@@ -28,7 +31,10 @@ type Aspek = "keseluruhan" | "pengajar" | "materi" | "koneksi";
 const TEAL = "#1A9E9E";
 const KUNCI_TUNDA = "rating-sesi-tunda-v1";
 const TUNDA_MS = 12 * 3600_000;
-const LABEL = ["", "Buruk", "Kurang", "Cukup", "Bagus", "Sangat bagus"];
+const SKALA = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+const labelNilai = (n: number) => (n <= 2 ? "Buruk" : n <= 4 ? "Kurang" : n <= 6 ? "Cukup" : n <= 8 ? "Bagus" : "Sangat bagus");
+type Nilai = Record<Aspek, number | null>;
+const KOSONG: Nilai = { keseluruhan: null, pengajar: null, materi: null, koneksi: null };
 
 function bacaTunda(): Record<string, number> {
   try {
@@ -52,25 +58,34 @@ async function token(): Promise<string | null> {
   return session?.access_token ?? null;
 }
 
-function Baris({ label, value, onChange }: { label: string; value: number; onChange: (n: number) => void }) {
-  const [hover, setHover] = useState(0);
-  const tampil = hover || value;
+function Baris({ label, value, onChange }: { label: string; value: number | null; onChange: (n: number) => void }) {
   return (
-    <div style={{ display: "flex", alignItems: "center", gap: 8 }}>
-      <span style={{ flex: 1, minWidth: 0, fontWeight: 700, fontSize: 13, color: "#1f2937", lineHeight: 1.25 }}>{label}</span>
-      <div style={{ display: "flex", flexShrink: 0 }} onMouseLeave={() => setHover(0)}>
-        {[1, 2, 3, 4, 5].map((n) => (
-          <button
-            key={n}
-            type="button"
-            aria-label={`${n} bintang — ${LABEL[n]}`}
-            onMouseEnter={() => setHover(n)}
-            onClick={() => onChange(n)}
-            style={{ border: "none", background: "transparent", cursor: "pointer", padding: 2 }}
-          >
-            <Star size={22} strokeWidth={1.8} color={n <= tampil ? "#fbbf24" : "#d1d5db"} fill={n <= tampil ? "#fbbf24" : "none"} />
-          </button>
-        ))}
+    <div>
+      <div style={{ display: "flex", alignItems: "baseline", gap: 8 }}>
+        <span style={{ flex: 1, minWidth: 0, fontWeight: 700, fontSize: 13, color: "#1f2937", lineHeight: 1.25 }}>{label}</span>
+        <span style={{ flexShrink: 0, fontWeight: 600, fontSize: 11, color: "#9ca3af" }}>{value === null ? "" : `${value} · ${labelNilai(value)}`}</span>
+      </div>
+      <div role="radiogroup" aria-label={label} style={{ display: "flex", gap: 3, marginTop: 5 }}>
+        {SKALA.map((n) => {
+          const aktif = value === n;
+          return (
+            <button
+              key={n}
+              type="button"
+              role="radio"
+              aria-checked={aktif}
+              aria-label={`${n} dari 10 — ${labelNilai(n)}`}
+              onClick={() => onChange(n)}
+              style={{
+                flex: 1, minWidth: 0, height: 34, padding: 0, borderRadius: 9, cursor: "pointer",
+                border: `1px solid ${aktif ? TEAL : "#e5e7eb"}`, background: aktif ? TEAL : "#fff", color: aktif ? "#fff" : "#4b5563",
+                fontWeight: 800, fontSize: 12.5, fontFamily: "inherit", fontVariantNumeric: "tabular-nums",
+              }}
+            >
+              {n}
+            </button>
+          );
+        })}
       </div>
     </div>
   );
@@ -78,7 +93,7 @@ function Baris({ label, value, onChange }: { label: string; value: number; onCha
 
 export default function RatingSesiPengingat() {
   const [antre, setAntre] = useState<Sesi[]>([]);
-  const [nilai, setNilai] = useState<Record<Aspek, number>>({ keseluruhan: 0, pengajar: 0, materi: 0, koneksi: 0 });
+  const [nilai, setNilai] = useState<Nilai>(KOSONG);
   const [saran, setSaran] = useState("");
   const [status, setStatus] = useState<"idle" | "busy" | "ok" | "err">("idle");
   const [galat, setGalat] = useState("");
@@ -112,13 +127,13 @@ export default function RatingSesiPengingat() {
 
   const lanjut = () => {
     setAntre((a) => a.slice(1));
-    setNilai({ keseluruhan: 0, pengajar: 0, materi: 0, koneksi: 0 });
+    setNilai(KOSONG);
     setSaran("");
     setStatus("idle");
     setGalat("");
   };
   const nanti = () => { tunda(sekarang.scheduleId); lanjut(); };
-  const lengkap = !!(nilai.keseluruhan && nilai.pengajar && nilai.materi && nilai.koneksi);
+  const lengkap = nilai.keseluruhan !== null && nilai.pengajar !== null && nilai.materi !== null && nilai.koneksi !== null;
   const set = (k: Aspek) => (n: number) => setNilai((v) => ({ ...v, [k]: n }));
 
   const kirim = async () => {
@@ -171,14 +186,17 @@ export default function RatingSesiPengingat() {
         ) : (
           <>
             <p style={{ margin: "12px 0 8px", fontWeight: 600, fontSize: 12.5, color: "#4b5563", lineHeight: 1.45 }}>
-              Penilaianmu dibaca langsung oleh pengajar untuk memperbaiki pertemuan berikutnya.
+              Beri nilai 0–10. Penilaianmu dibaca langsung oleh pengajar untuk memperbaiki pertemuan berikutnya.
             </p>
-            <div style={{ display: "flex", flexDirection: "column", gap: 4 }}>
+            <div style={{ display: "flex", flexDirection: "column", gap: 10 }}>
               <Baris label="Kelas secara keseluruhan" value={nilai.keseluruhan} onChange={set("keseluruhan")} />
               <Baris label={sekarang.pengajar ? `Cara mengajar ${sekarang.pengajar}` : "Cara mengajar pengajar"} value={nilai.pengajar} onChange={set("pengajar")} />
               <Baris label="Materi & latihan" value={nilai.materi} onChange={set("materi")} />
               <Baris label="Koneksi, suara & video" value={nilai.koneksi} onChange={set("koneksi")} />
             </div>
+            <p style={{ margin: "6px 0 0", display: "flex", justifyContent: "space-between", fontWeight: 600, fontSize: 11, color: "#9ca3af" }}>
+              <span>0 = sangat buruk</span><span>10 = sangat bagus</span>
+            </p>
             <textarea
               value={saran}
               onChange={(e) => setSaran(e.target.value.slice(0, 2000))}
@@ -199,7 +217,7 @@ export default function RatingSesiPengingat() {
                 style={{ flex: 1, border: "none", borderRadius: 999, padding: "11px 16px", fontWeight: 800, fontSize: 14, color: "#fff", background: lengkap ? TEAL : "#A7C9C9", cursor: lengkap ? "pointer" : "not-allowed", display: "inline-flex", alignItems: "center", justifyContent: "center", gap: 6 }}
               >
                 {status === "busy" && <Loader2 size={15} className="animate-spin" />}
-                {lengkap ? "Kirim penilaian" : "Isi semua bintang dulu"}
+                {lengkap ? "Kirim penilaian" : "Isi semua nilai dulu"}
               </button>
             </div>
           </>

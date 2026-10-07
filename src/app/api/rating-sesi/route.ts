@@ -11,6 +11,10 @@
 // Token si pemanggil diverifikasi dulu, lalu semua baca/tulis memakai service
 // role HANYA untuk sesi milik baris `students` ber-email sama — kelas & pengajar
 // diturunkan dari jadwal di database, bukan dari klien.
+//
+// [rating-sesi-nps-v1] Nilai tiap aspek 0–10 (gaya NPS) dan disimpan dengan
+// `skala: 10`; baris lama berbintang 1–5 tetap `skala 5` (SQL
+// 20261007_rating_sesi_nps.sql di repo admin-dashboard).
 
 import { NextRequest, NextResponse } from "next/server";
 import { createClient } from "@supabase/supabase-js";
@@ -97,7 +101,7 @@ async function sesiTertunda(admin: Admin, studentIds: string[]) {
   });
 }
 
-const bintangSah = (n: unknown) => Number.isInteger(n) && (n as number) >= 1 && (n as number) <= 5;
+const nilaiSah = (n: unknown) => Number.isInteger(n) && (n as number) >= 0 && (n as number) <= 10;
 
 export async function POST(req: NextRequest) {
   try {
@@ -114,8 +118,8 @@ export async function POST(req: NextRequest) {
 
     if (body.aksi === "kirim") {
       const { scheduleId, keseluruhan, pengajar, materi, koneksi } = body;
-      if (![keseluruhan, pengajar, materi, koneksi].every(bintangSah)) {
-        return NextResponse.json({ error: "Semua bintang wajib diisi (1–5)" }, { status: 400 });
+      if (![keseluruhan, pengajar, materi, koneksi].every(nilaiSah)) {
+        return NextResponse.json({ error: "Semua nilai wajib diisi (0–10)" }, { status: 400 });
       }
       // Hanya sesi yang memang sedang menunggu penilaian dari siswa ini.
       const tertunda = await sesiTertunda(admin, studentIds);
@@ -147,6 +151,7 @@ export async function POST(req: NextRequest) {
           rating_pengajar: pengajar,
           rating_materi: materi,
           rating_koneksi: koneksi,
+          skala: 10,
           comment: saran || null,
           client_key: `akun:${studentId}`,
           room_id: "akun",
