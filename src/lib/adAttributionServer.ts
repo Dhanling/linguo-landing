@@ -16,6 +16,7 @@
 
 import { after } from "next/server";
 import type { NextRequest } from "next/server";
+import { sendOpenAiAdsLead } from "./openaiAdsServer";
 
 const SUPABASE_URL = process.env.NEXT_PUBLIC_SUPABASE_URL!;
 const SERVICE_KEY = process.env.SUPABASE_SERVICE_ROLE_KEY!;
@@ -25,6 +26,7 @@ const RPC_TIMEOUT_MS = 4000;
 type AttrShape = {
   fbclid?: unknown;
   gclid?: unknown;
+  oppref?: unknown;
   fbp?: unknown;
   fbc?: unknown;
   utm_source?: unknown;
@@ -128,9 +130,21 @@ export function recordAdAttribution(
       p_user_agent: str(req.headers.get("user-agent")),
     };
 
+    // [openai-ads-lead-v1] event lead_created ke OpenAI Ads; disiapkan di sini
+    // (selagi request masih hidup), dikirim di after() bersama RPC.
+    const sendLead = sendOpenAiAdsLead({
+      email,
+      phone,
+      oppref: str(a.oppref) ?? str(req.cookies.get("__oppref")?.value),
+      obref: str(req.cookies.get("__obref")?.value),
+      ip,
+      userAgent: payload.p_user_agent,
+      sourceUrl: str(req.headers.get("referer")),
+    });
+
     after(async () => {
       try {
-        await callRpc(payload);
+        await Promise.all([callRpc(payload), sendLead()]);
       } catch (e) {
         console.warn("[ad-attribution] gagal (diabaikan):", e);
       }

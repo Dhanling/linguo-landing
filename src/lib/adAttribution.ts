@@ -22,6 +22,7 @@
 export type AdAttribution = {
   fbclid?: string;
   gclid?: string;
+  oppref?: string; // [openai-ads-lead-v1] click ID iklan OpenAI (ChatGPT Ads)
   fbp?: string;
   fbc?: string;
   utm_source?: string;
@@ -148,6 +149,10 @@ export function captureAdAttribution(): AdAttribution | null {
   const urlGclid =
     clean(sp.get("gclid")) || clean(sp.get("gbraid")) || clean(sp.get("wbraid"));
 
+  // [openai-ads-lead-v1] Iklan OpenAI menempelkan ?oppref=… di URL pendaratan;
+  // nilainya opak dan harus dikirim balik apa adanya ke Conversions API.
+  const urlOppref = clean(sp.get("oppref"));
+
   // Cookie yang ditulis Pixel. _fbc cuma ada kalau pendaratan bawa fbclid dan
   // Pixel sempat jalan; kalau kosong tapi fbclid ada, kita sintesis sendiri
   // dengan format resmi Meta: fb.{subdomainIndex}.{creationTime}.{fbclid}
@@ -159,7 +164,8 @@ export function captureAdAttribution(): AdAttribution | null {
 
   const isNewClick =
     (!!urlFbclid && urlFbclid !== stored?.fbclid) ||
-    (!!urlGclid && urlGclid !== stored?.gclid);
+    (!!urlGclid && urlGclid !== stored?.gclid) ||
+    (!!urlOppref && urlOppref !== stored?.oppref);
 
   const urlUtms: AdAttribution = {};
   for (const k of UTM_KEYS) {
@@ -174,6 +180,7 @@ export function captureAdAttribution(): AdAttribution | null {
       ...urlUtms,
       fbclid: urlFbclid,
       gclid: urlGclid,
+      oppref: urlOppref,
       fbp: cookieFbp,
       fbc: cookieFbc || syntheticFbc,
       landing_path: clean(window.location.pathname),
@@ -188,6 +195,7 @@ export function captureAdAttribution(): AdAttribution | null {
       ...urlUtms,
       fbclid: urlFbclid || stored.fbclid,
       gclid: urlGclid || stored.gclid,
+      oppref: urlOppref || stored.oppref,
       fbp: cookieFbp || stored.fbp,
       fbc: cookieFbc || syntheticFbc || stored.fbc,
       landing_path: clean(window.location.pathname),
@@ -207,6 +215,7 @@ export function captureAdAttribution(): AdAttribution | null {
       ),
       fbclid: stored.fbclid || fbclid,
       gclid: stored.gclid || urlGclid,
+      oppref: stored.oppref || urlOppref,
       fbp: cookieFbp || stored.fbp,
       fbc: cookieFbc || stored.fbc || syntheticFbc,
       landing_path: stored.landing_path || clean(window.location.pathname),
