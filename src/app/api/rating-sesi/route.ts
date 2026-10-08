@@ -18,6 +18,7 @@
 
 import { NextRequest, NextResponse } from "next/server";
 import { createClient } from "@supabase/supabase-js";
+import { sapaan } from "@/lib/teacherName";
 
 const SUPABASE_URL = process.env.NEXT_PUBLIC_SUPABASE_URL!;
 const SUPABASE_ANON_KEY = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!;
@@ -84,9 +85,10 @@ async function sesiTertunda(admin: Admin, studentIds: string[]) {
   const regById = new Map(regList.map((r) => [r.id, r]));
   const teacherIds = Array.from(new Set(belum.map((s) => s.teacher_id || regById.get(s.registration_id)?.teacher_id).filter(Boolean))) as string[];
   const { data: guru } = teacherIds.length
-    ? await admin.from("teachers").select("id, name").in("id", teacherIds)
+    ? await admin.from("teachers").select("id, name, title").in("id", teacherIds)
     : { data: [] };
-  const namaGuru = new Map(((guru ?? []) as { id: string; name: string | null }[]).map((t) => [t.id, t.name]));
+  // [rating-sesi-sapaan-v1] Siswa membaca "Kak Dhani", bukan nama lengkap + gelar.
+  const namaGuru = new Map(((guru ?? []) as { id: string; name: string | null; title: string | null }[]).map((t) => [t.id, sapaan(t.name, t.title)]));
 
   return belum.map((s) => {
     const r = regById.get(s.registration_id);

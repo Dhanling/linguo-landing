@@ -44,7 +44,9 @@ export function callName(fullName?: string | null): string {
   // memang cuma "Muhammad" tetap dipanggil Muhammad.
   const pilihan = bersih.length > 1 && AWALAN.test(bersih[0]) ? bersih.slice(1) : bersih;
   const pertama = pilihan[0] || kata[0] || "";
-  return pertama.charAt(0).toUpperCase() + pertama.slice(1);
+  // Nama yang diketik huruf besar semua ("APRILIANA") dirapikan jadi "Apriliana".
+  const rapi = pertama.length > 2 && pertama === pertama.toUpperCase() ? pertama.toLowerCase() : pertama;
+  return rapi.charAt(0).toUpperCase() + rapi.slice(1);
 }
 
 /** "Kak Dhani". `title` diambil dari kolom `teachers.title` (nyaris selalu "Kak"). */
