@@ -1159,13 +1159,6 @@ export default function LibraryView({ userId, supabase, previewStudentId = null,
           <p className="mt-1 text-[14px] font-medium text-slate-500">
             {t("Lingbook & E-Learning yang sudah kamu beli · buka kapan saja")}
           </p>
-
-          {/* stats chips */}
-          <div className="mt-4 flex flex-wrap gap-2.5">
-            <StatChip icon={<BookOpen className="h-4 w-4" strokeWidth={2.2} />} label={`${stats.total} ${t("produk")}`} />
-            <StatChip icon={<Flame className="h-4 w-4 text-[#12A37E]" strokeWidth={2.2} />} label={`${stats.running} ${t("sedang berjalan")}`} />
-            <StatChip icon={<GraduationCap className="h-4 w-4" strokeWidth={2.2} />} label={`${stats.certs} ${t("sertifikat")}`} />
-          </div>
         </div>
 
         {/* bookmark counter */}
@@ -1180,6 +1173,15 @@ export default function LibraryView({ userId, supabase, previewStudentId = null,
           )}
         </div>
       </header>
+
+      {/* [pustaka-statistik-satu-baris-v1] Statistik jadi SATU bilah selebar halaman.
+          Dulu tiga chip lepas di dalam kolom judul (yang sudah terpotong tombol
+          penanda) — di HP chip ketiga selalu turun ke baris kedua. */}
+      <div className="!mt-4 flex items-center divide-x divide-slate-100 overflow-x-auto rounded-2xl bg-white px-0.5 py-2.5 sm:px-1 [scrollbar-width:none] sm:inline-flex [&::-webkit-scrollbar]:hidden">
+        <StatChip icon={<BookOpen className="h-4 w-4" strokeWidth={2.2} />} label={`${stats.total} ${t("produk")}`} />
+        <StatChip icon={<Flame className="h-4 w-4 text-[#12A37E]" strokeWidth={2.2} />} label={`${stats.running} ${t("sedang berjalan")}`} />
+        <StatChip icon={<GraduationCap className="h-4 w-4" strokeWidth={2.2} />} label={`${stats.certs} ${t("sertifikat")}`} />
+      </div>
 
       {/* ===== CONTINUE HERO ===== */}
       {hero && (
@@ -1330,7 +1332,9 @@ export default function LibraryView({ userId, supabase, previewStudentId = null,
       {/* ===== CONTROLS ===== */}
       <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
         <div className="flex flex-wrap items-center gap-2">
-        <div className="inline-flex items-center gap-1 rounded-2xl bg-slate-100 p-1">
+        {/* [pustaka-tab-satu-baris-v1] di HP tab membentang selebar layar & tak boleh
+            patah — dulu "E-Learning" terbelah dua baris. */}
+        <div className="flex w-full items-center gap-1 overflow-x-auto rounded-2xl bg-slate-100 p-1 [scrollbar-width:none] sm:inline-flex sm:w-auto [&::-webkit-scrollbar]:hidden">
           {(
             [
               ["all", "Semua"],
@@ -1341,12 +1345,12 @@ export default function LibraryView({ userId, supabase, previewStudentId = null,
             <button
               key={k}
               onClick={() => setTab(k)}
-              className={`inline-flex items-center gap-1.5 rounded-xl px-3.5 py-2 text-[13px] font-bold transition ${
+              className={`inline-flex flex-1 items-center justify-center gap-1 whitespace-nowrap rounded-xl px-1.5 py-2 text-[12.5px] font-bold transition sm:flex-none sm:gap-1.5 sm:px-3.5 sm:text-[13px] ${
                 tab === k ? "bg-white text-[#12172B] shadow-sm" : "text-slate-500 hover:text-slate-700"
               }`}
             >
               {t(label)}
-              <span className={`rounded-full px-1.5 py-0.5 text-[11px] ${tab === k ? "bg-[#12A37E]/10 text-[#0C8163]" : "bg-slate-200 text-slate-500"}`}>
+              <span className={`rounded-full px-1.5 py-0.5 text-[10.5px] sm:text-[11px] ${tab === k ? "bg-[#12A37E]/10 text-[#0C8163]" : "bg-slate-200 text-slate-500"}`}>
                 {counts[k]}
               </span>
             </button>
@@ -1359,7 +1363,7 @@ export default function LibraryView({ userId, supabase, previewStudentId = null,
           value={bahasa}
           onChange={(e) => setBahasa(e.target.value)}
           aria-label={t("Saring bahasa")}
-          className={`rounded-2xl border px-3 py-2.5 text-[13px] font-bold outline-none transition ${
+          className={`min-w-0 flex-1 rounded-2xl border px-3 py-2.5 text-[13px] font-bold outline-none transition sm:flex-none ${
             bahasa === "all" ? "border-slate-200 bg-white text-slate-500" : "border-[#12A37E]/40 bg-[#12A37E]/10 text-[#0C8163]"
           }`}
         >
@@ -1373,7 +1377,7 @@ export default function LibraryView({ userId, supabase, previewStudentId = null,
           value={level}
           onChange={(e) => setLevel(e.target.value)}
           aria-label={t("Saring level")}
-          className={`rounded-2xl border px-3 py-2.5 text-[13px] font-bold outline-none transition ${
+          className={`min-w-0 flex-1 rounded-2xl border px-3 py-2.5 text-[13px] font-bold outline-none transition sm:flex-none ${
             level === "all" ? "border-slate-200 bg-white text-slate-500" : "border-[#12A37E]/40 bg-[#12A37E]/10 text-[#0C8163]"
           }`}
         >
@@ -1677,7 +1681,7 @@ export default function LibraryView({ userId, supabase, previewStudentId = null,
 /* ---------------- sub-components ---------------- */
 function StatChip({ icon, label }: { icon: React.ReactNode; label: string }) {
   return (
-    <span className="inline-flex items-center gap-2 rounded-full bg-white px-3.5 py-2 text-[13px] font-bold text-slate-600">
+    <span className="inline-flex flex-1 items-center justify-center gap-1 whitespace-nowrap px-1.5 text-[11.5px] font-bold text-slate-600 sm:flex-none sm:gap-2 sm:px-4 sm:text-[13px] [&>svg]:h-3.5 [&>svg]:w-3.5 sm:[&>svg]:h-4 sm:[&>svg]:w-4">
       {icon}
       {label}
     </span>
