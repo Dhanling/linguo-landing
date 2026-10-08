@@ -17,7 +17,7 @@ import { AnimatePresence, motion } from "framer-motion";
 import {
   AlertCircle, ArrowLeft, ArrowRight, CalendarDays, Check, CheckCircle2,
   ChevronDown, ChevronLeft, ChevronRight, Clock, Globe, GraduationCap, Heart, History, Loader2, Mail,
-  MapPin, Megaphone, MessageCircle, Phone, School, SearchX, Sparkles, Target, User, X,
+  MapPin, Megaphone, MessageCircle, Phone, Plus, School, SearchX, Sparkles, Target, Trash2, User, Users, X,
 } from "lucide-react";
 import { WILAYAH_ID, getCitiesByProvince } from "@/lib/wilayah-id";
 import { NEGARA, NEGARA_ID, isIndonesia } from "@/lib/negara";
@@ -63,7 +63,26 @@ type IntakeForm = {
   address: string | null;
   district: string | null;
   postal_code: string | null;
+  // [pendataan-peserta-semi-v1] Peserta lain kelas Semi-Private. `peer_count`
+  // & `peer_fixed` dihitung server dari ukuran grup di registrasi/tagihan.
+  additional_participants?: Partial<Peer>[] | null;
+  peer_count?: number;
+  peer_fixed?: boolean;
 };
+
+/** Satu peserta selain yang mengisi form. `experience` disimpan sebagai
+ *  `prior_experience`; usia diketik sebagai teks supaya kolomnya bisa kosong. */
+type Peer = {
+  name: string;
+  nickname: string;
+  wa: string;
+  email: string;
+  age: string;
+  prior_experience: string;
+};
+
+const EMPTY_PEER: Peer = { name: "", nickname: "", wa: "", email: "", age: "", prior_experience: "" };
+const MAX_PEERS = 5;
 
 const DAYS = ["Senin", "Selasa", "Rabu", "Kamis", "Jumat", "Sabtu", "Minggu"];
 const DAYS_SHORT = ["Sen", "Sel", "Rab", "Kam", "Jum", "Sab", "Min"];
@@ -204,12 +223,16 @@ const TEACHER_PREFS = [
   { value: "bebas", label: "Bebas, siapa saja" },
 ] as const;
 
+// `kind` = isi langkahnya, bukan urutannya: langkah "Peserta" cuma ada di
+// kelas Semi-Private dan diselipkan sebelum Tujuan, jadi nomor urut bergeser.
 const STEPS = [
-  { title: "Data Diri", icon: User },
-  { title: "Kontak", icon: Phone },
-  { title: "Tujuan", icon: Target },
-  { title: "Jadwal", icon: CalendarDays },
+  { kind: 0, title: "Data Diri", icon: User },
+  { kind: 1, title: "Kontak", icon: Phone },
+  { kind: 2, title: "Tujuan", icon: Target },
+  { kind: 3, title: "Jadwal", icon: CalendarDays },
 ];
+// [pendataan-peserta-semi-v1]
+const PEER_STEP = { kind: 4, title: "Peserta", icon: Users };
 
 // [pendataan-teks-kontras-v1] Semua teks di formulir ini dulu abu-abu muda
 // (slate-400/500) dengan ukuran 11-12px. Di layar HP di bawah matahari, dan
@@ -746,6 +769,8 @@ export default function PendataanPage() {
   const [showEarly, setShowEarly] = useState(false);
   const [goal, setGoal] = useState("");
   const [teacherPref, setTeacherPref] = useState("");
+  // [pendataan-peserta-semi-v1]
+  const [peers, setPeers] = useState<Peer[]>([]);
 
   useEffect(() => {
     fetch(`/api/pendataan?token=${encodeURIComponent(token)}`)
@@ -762,6 +787,13 @@ export default function PendataanPage() {
         setInstitution(d.institution || "");
         setGoal(d.learning_goal || "");
         setTeacherPref(d.teacher_gender_pref || "");
+        const need = Math.min(d.peer_count || 0, MAX_PEERS);
+        if (need > 0) {
+          setPeers(Array.from({ length: need }, (_, i) => {
+            const p = d.additional_participants?.[i] || {};
+            return { ...EMPTY_PEER, ...p, age: p.age ? String(p.age) : "" };
+          }));
+        }
         setHobby(d.hobby || "");
         setCountry(d.country || NEGARA_ID);
         setProvince(d.province || "");
@@ -809,6 +841,19 @@ export default function PendataanPage() {
   const luarNegeri = !isIndonesia(country);
   const mintaAlamat = isOffline && !luarNegeri;
 
+  // [pendataan-peserta-semi-v1] Kelas Semi-Private: satu orang mengisi untuk
+  // seluruh grup. Jadwal, tujuan & domisili cukup dari pengisi; peserta lain
+  // cuma data yang dibutuhkan untuk grup WA, akun belajar, dan sertifikat.
+  const peerCount = Math.min(form?.peer_count || 0, MAX_PEERS);
+  const peerFixed = form?.peer_fixed !== false;
+  const steps = useMemo(
+    () => (peerCount > 0 ? [STEPS[0], STEPS[1], PEER_STEP, STEPS[2], STEPS[3]] : STEPS),
+    [peerCount],
+  );
+  const kind = steps[step]?.kind ?? 0;
+  const setPeer = (i: number, patch: Partial<Peer>) =>
+    setPeers((prev) => prev.map((p, j) => (j === i ? { ...p, ...patch } : p)));
+
   const birthdate = birthYear && birthMonth && birthDay
     ? `${birthYear}-${birthMonth.padStart(2, "0")}-${birthDay.padStart(2, "0")}`
     : "";
@@ -853,7 +898,22 @@ export default function PendataanPage() {
    *  data yang setengah terisi selalu berujung admin mengejar siswa satu per
    *  satu lewat WhatsApp. Email termasuk — akun belajar & kiriman materinya
    *  bergantung ke sana. */
-  const stepError = (s: number): string => {
+  const stepError = (stepIndex: number): string => {
+    const s = steps[stepIndex]?.kind;
+    if (s === 4) {
+      for (let i = 0; i < peers.length; i++) {
+        const p = peers[i];
+        const who = `Peserta ${i + 2}`;
+        if (!p.name.trim()) return `${who}: nama lengkap wajib diisi`;
+        if (!p.nickname.trim()) return `${who}: nama panggilan wajib diisi`;
+        if (!p.wa.trim()) return `${who}: nomor WhatsApp wajib diisi`;
+        if (!p.email.trim()) return `${who}: email wajib diisi`;
+        if (!/^\S+@\S+\.\S+$/.test(p.email.trim())) return `${who}: format email belum benar`;
+        const a = Number(p.age);
+        if (!(a >= 1 && a <= 120)) return `${who}: usia wajib diisi`;
+        if (!p.prior_experience) return `${who}: pilih pengalaman belajarnya`;
+      }
+    }
     if (s === 0) {
       if (!fullName.trim()) return "Nama lengkap wajib diisi";
       if (!nickname.trim()) return "Nama panggilan wajib diisi";
@@ -907,7 +967,7 @@ export default function PendataanPage() {
     if (typeof window !== "undefined") window.scrollTo({ top: 0, behavior: "smooth" });
   };
 
-  const last = step === STEPS.length - 1;
+  const last = step === steps.length - 1;
 
   /** Enter = tombol utama langkah ini. Kolom isian di sini bukan <form>, jadi
    *  tanpa ini Enter tidak melakukan apa-apa dan siswa harus meraih tombolnya. */
@@ -922,7 +982,7 @@ export default function PendataanPage() {
   };
 
   const handleSubmit = async () => {
-    for (let s = 0; s < STEPS.length; s++) {
+    for (let s = 0; s < steps.length; s++) {
       const msg = stepError(s);
       if (msg) { setDir(s < step ? -1 : 1); setStep(s); setError(msg); return; }
     }
@@ -952,6 +1012,9 @@ export default function PendataanPage() {
           preferred_schedule: scheduleText,
           learning_goal: goal,
           teacher_gender_pref: form?.teacher_gender_choice ? teacherPref : "",
+          additional_participants: peerCount > 0
+            ? peers.map((p) => ({ ...p, age: Number(p.age) }))
+            : [],
         }),
       });
       if (res.ok) { setDone(true); return; }
@@ -1029,11 +1092,11 @@ export default function PendataanPage() {
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img src="/images/logo-white.png" alt="Linguo" className="h-8 brightness-0" />
             <span className="text-xs font-bold text-slate-600">
-              Langkah {step + 1} dari {STEPS.length}
+              Langkah {step + 1} dari {steps.length}
             </span>
           </div>
           <div className="flex items-center gap-1.5">
-            {STEPS.map((s, i) => (
+            {steps.map((s, i) => (
               <button key={s.title} type="button" onClick={() => i < step && go(i)}
                 className="group flex-1 text-left" aria-label={s.title}>
                 <div className="h-1.5 overflow-hidden rounded-full bg-slate-100">
@@ -1059,7 +1122,7 @@ export default function PendataanPage() {
               Hai{greetName ? ` ${greetName}` : ""}, selamat bergabung!
             </h1>
             <p className="mt-2 text-base leading-relaxed text-slate-700">
-              Isi 4 langkah singkat ini supaya kami bisa menyiapkan pengajar, jadwal, dan grup kelasmu.
+              Isi {steps.length} langkah singkat ini supaya kami bisa menyiapkan pengajar, jadwal, dan grup kelasmu.
             </p>
             {(form?.language || form?.program) && (
               <div className="mt-4 flex flex-wrap items-center gap-2 rounded-2xl border border-[#1A9E9E]/20 bg-[#1A9E9E]/5 px-4 py-3 text-sm font-medium">
@@ -1083,7 +1146,7 @@ export default function PendataanPage() {
               transition={{ duration: 0.22, ease: "easeOut" }}
             >
               {/* ── 1. Data diri ── */}
-              {step === 0 && (
+              {kind === 0 && (
                 <div className="space-y-5">
                   <StepHead icon={User} title="Data Diri" desc="Buat catatan kelas dan sertifikatmu nanti." />
 
@@ -1225,8 +1288,78 @@ export default function PendataanPage() {
                 </div>
               )}
 
+              {/* ── Peserta lain (Semi-Private) ── */}
+              {kind === 4 && (
+                <div className="space-y-5">
+                  <StepHead icon={Users} title="Peserta Lain"
+                    desc={`Kelasmu ${peerFixed ? `untuk ${peerCount + 1} orang` : "Semi-Private"}. Isi data singkat teman sekelasmu — jadwal dan tujuan belajar cukup dari kamu.`} />
+
+                  {peers.map((p, i) => (
+                    <div key={i} className="space-y-4 rounded-2xl border border-slate-200 bg-slate-50/60 p-4 sm:p-5">
+                      <div className="flex items-center justify-between">
+                        <p className="text-base font-bold text-slate-900">Peserta {i + 2}</p>
+                        {!peerFixed && peers.length > peerCount && (
+                          <button type="button" onClick={() => setPeers((prev) => prev.filter((_, j) => j !== i))}
+                            className="inline-flex items-center gap-1 text-sm font-semibold text-slate-600 transition hover:text-red-600">
+                            <Trash2 className="h-4 w-4" /> Hapus
+                          </button>
+                        )}
+                      </div>
+
+                      <div className="grid gap-4 sm:grid-cols-2">
+                        <Field label="Nama lengkap" icon={User} required>
+                          <input type="text" value={p.name} onChange={(e) => setPeer(i, { name: e.target.value })}
+                            placeholder="Sesuai yang mau ditulis di sertifikat" className={inputClass} />
+                        </Field>
+                        <Field label="Nama panggilan" icon={User} required>
+                          <input type="text" value={p.nickname} onChange={(e) => setPeer(i, { nickname: e.target.value })}
+                            placeholder="contoh: Dina" className={inputClass} />
+                        </Field>
+                        <Field label="Nomor WhatsApp" icon={Phone} required hint="Nomor ini yang akan dimasukkan ke grup kelas.">
+                          <input type="tel" inputMode="tel" value={p.wa} onChange={(e) => setPeer(i, { wa: e.target.value })}
+                            placeholder="contoh: 08123456789" className={inputClass} />
+                        </Field>
+                        <Field label="Email" icon={Mail} required hint="Dipakai untuk kirim materi & akun belajar.">
+                          <input type="email" inputMode="email" value={p.email} onChange={(e) => setPeer(i, { email: e.target.value })}
+                            placeholder="nama@email.com" className={inputClass} />
+                        </Field>
+                        <Field label="Usia" icon={CalendarDays} required>
+                          <input type="number" inputMode="numeric" min={1} max={120} value={p.age}
+                            onChange={(e) => setPeer(i, { age: e.target.value.replace(/\D/g, "").slice(0, 3) })}
+                            placeholder="contoh: 24" className={inputClass} />
+                        </Field>
+                      </div>
+
+                      <div className="space-y-2">
+                        <p className="flex items-center gap-1.5 text-base font-bold text-slate-900">
+                          <History className="h-4 w-4" style={{ color: TEAL }} />
+                          Pernah belajar bahasa ini? <span className="text-red-500">*</span>
+                        </p>
+                        <div className="flex flex-wrap gap-2">
+                          {EXPERIENCES.map((e) => (
+                            <button key={e} type="button" onClick={() => setPeer(i, { prior_experience: e })}
+                              className={chipClass(p.prior_experience === e)}
+                              style={p.prior_experience === e ? { background: TEAL } : undefined}>
+                              {p.prior_experience === e && <Check className="h-3 w-3" />}
+                              {e}
+                            </button>
+                          ))}
+                        </div>
+                      </div>
+                    </div>
+                  ))}
+
+                  {!peerFixed && peers.length < MAX_PEERS && (
+                    <button type="button" onClick={() => setPeers((prev) => [...prev, { ...EMPTY_PEER }])}
+                      className="inline-flex items-center gap-1.5 rounded-full border border-dashed border-slate-400 px-4 py-2.5 text-sm font-bold text-slate-800 transition hover:border-[#1A9E9E] hover:text-[#1A9E9E]">
+                      <Plus className="h-4 w-4" /> Tambah peserta
+                    </button>
+                  )}
+                </div>
+              )}
+
               {/* ── 2. Kontak ── */}
-              {step === 1 && (
+              {kind === 1 && (
                 <div className="space-y-5">
                   <StepHead icon={Phone} title="Kontak" desc="Ke sini kami kirim undangan grup kelas dan materi." />
 
@@ -1274,7 +1407,7 @@ export default function PendataanPage() {
               )}
 
               {/* ── 3. Pengalaman + tujuan ── */}
-              {step === 2 && (
+              {kind === 2 && (
                 <div className="space-y-6">
                   <StepHead icon={Target} title="Tujuan Belajar" desc="Penentu level awal dan materi sesi pertamamu." />
 
@@ -1327,7 +1460,7 @@ export default function PendataanPage() {
               )}
 
               {/* ── 4. Jadwal ── */}
-              {step === 3 && (
+              {kind === 3 && (
                 <div className="space-y-4">
                   <StepHead icon={CalendarDays} title="Jadwal yang Diinginkan"
                     desc="1 kotak = 30 menit. Ketuk semua waktu yang kamu bisa (boleh banyak)." />

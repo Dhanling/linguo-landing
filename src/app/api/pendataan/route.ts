@@ -31,17 +31,72 @@ const SELECT_COLS = [
   "address", "district", "postal_code",
   // [teacher-gender-pref-v1] sql/teacher_gender_pref_20260930.sql (repo dashboard)
   "teacher_gender_pref",
+  // [pendataan-peserta-semi-v1] sql/20261007_pendataan_peserta_semi_private.sql (repo dashboard)
+  "additional_participants",
 ].join(",");
 
 // Mode kelas dibaca hidup-hidup dari registrasi/tagihannya, bukan disalin ke
 // baris form: admin kadang mengubah online→offline setelah link dibagikan, dan
 // salinan yang basi berarti siswa offline tidak pernah ditanyai alamatnya.
-const MODE_EMBED = "registrations(class_mode),manual_invoices(class_mode)";
+const MODE_EMBED = "registrations(class_mode,semi_private_size),manual_invoices(class_mode,split_total)";
 
 type ModeRow = {
-  registrations?: { class_mode?: string | null } | null;
-  manual_invoices?: { class_mode?: string | null } | null;
+  program?: string | null;
+  registrations?: { class_mode?: string | null; semi_private_size?: number | null } | null;
+  manual_invoices?: { class_mode?: string | null; split_total?: number | null } | null;
 };
+
+// [pendataan-peserta-semi-v1] Kelas Semi-Private diisi satu orang untuk
+// seluruh grup: siswa pertama lengkap, peserta lain versi ringkas. Jumlah
+// bloknya ikut ukuran grup di registrasi/tagihan (dasar harganya), jadi siswa
+// tidak bisa "lupa" satu teman. Ukuran yang belum tercatat (baris lama) =
+// minimal 1 peserta lain, boleh ditambah sendiri.
+const MAX_PEERS = 5;
+
+function peersOf(row: ModeRow): { count: number; fixed: boolean } {
+  if (!/semi/i.test(row?.program || "")) return { count: 0, fixed: true };
+  const size = Number(row?.registrations?.semi_private_size || row?.manual_invoices?.split_total || 0);
+  if (size >= 2) return { count: Math.min(size - 1, MAX_PEERS), fixed: true };
+  return { count: 1, fixed: false };
+}
+
+type Participant = {
+  name: string;
+  nickname: string;
+  wa: string;
+  email: string;
+  age: number;
+  prior_experience: string;
+};
+
+/** Rapikan & periksa peserta lain. Mengembalikan teks galat kalau ada yang
+ *  kurang — pesannya menyebut peserta ke berapa supaya siswa tahu blok mana. */
+function parseParticipants(raw: unknown, rule: { count: number; fixed: boolean }): Participant[] | string {
+  const list = Array.isArray(raw) ? raw.slice(0, MAX_PEERS) : [];
+  if (rule.fixed ? list.length !== rule.count : list.length < rule.count) {
+    return `Lengkapi data ${rule.count} peserta lain di kelasmu`;
+  }
+  const out: Participant[] = [];
+  for (let i = 0; i < list.length; i++) {
+    const p = (list[i] || {}) as Record<string, unknown>;
+    const who = `Peserta ${i + 2}`;
+    const name = clean(p.name, 120);
+    const nickname = clean(p.nickname, 60);
+    const wa = clean(p.wa, 30);
+    const email = clean(p.email, 160)?.toLowerCase() || null;
+    const age = Math.floor(Number(p.age));
+    const experience = clean(p.prior_experience, 300);
+    if (!name) return `${who}: nama lengkap wajib diisi`;
+    if (!nickname) return `${who}: nama panggilan wajib diisi`;
+    if (!wa) return `${who}: nomor WhatsApp wajib diisi`;
+    if (!email) return `${who}: email wajib diisi`;
+    if (!/^\S+@\S+\.\S+$/.test(email)) return `${who}: format email belum benar`;
+    if (!(age >= 1 && age <= 120)) return `${who}: usia wajib diisi`;
+    if (!experience) return `${who}: pengalaman belajar wajib dipilih`;
+    out.push({ name, nickname, wa, email, age, prior_experience: experience });
+  }
+  return out;
+}
 
 function classModeOf(row: ModeRow): "online" | "offline" {
   const mode = row?.registrations?.class_mode || row?.manual_invoices?.class_mode || "";
@@ -138,9 +193,12 @@ export async function GET(req: NextRequest) {
   // Yang dikirim ke formulir cuma satu kolom datar `class_mode`; sisa hasil
   // embed tidak perlu bocor ke halaman publik.
   const { registrations, manual_invoices, ...form } = rows[0] as ModeRow & Record<string, unknown>;
+  const peers = peersOf(rows[0]);
   return NextResponse.json({
     ...form,
     class_mode: classModeOf(rows[0]),
+    peer_count: peers.count,
+    peer_fixed: peers.fixed,
     teacher_gender_choice: await teacherGenderChoice(form.language),
   });
 }
@@ -199,7 +257,7 @@ export async function POST(req: NextRequest) {
     // yang menembak endpoint ini langsung tidak boleh melewati pertanyaannya
     // cuma dengan mengaku kelasnya online.
     const modeRes = await sb(
-      `student_intake_forms?token=eq.${token}&select=id,language,${MODE_EMBED}`,
+      `student_intake_forms?token=eq.${token}&select=id,language,program,${MODE_EMBED}`,
     );
     if (!modeRes.ok) {
       console.error("Pendataan mode error:", await modeRes.text());
@@ -219,6 +277,13 @@ export async function POST(req: NextRequest) {
     const genderChoice = await teacherGenderChoice(modeRows[0].language);
     if (genderChoice && (!teacherPref || !["pria", "wanita", "bebas"].includes(teacherPref))) {
       return NextResponse.json({ error: "Pilih preferensi pengajarmu" }, { status: 400 });
+    }
+    // [pendataan-peserta-semi-v1] Jumlah peserta ditentukan dari DB, sama
+    // seperti mode kelas — bukan dari body.
+    const peerRule = peersOf(modeRows[0]);
+    const participants = peerRule.count > 0 ? parseParticipants(body.additional_participants, peerRule) : [];
+    if (typeof participants === "string") {
+      return NextResponse.json({ error: participants }, { status: 400 });
     }
     if (isOffline) {
       if (!district) return NextResponse.json({ error: "Kecamatan wajib diisi untuk kelas offline" }, { status: 400 });
@@ -257,6 +322,7 @@ export async function POST(req: NextRequest) {
       prior_experience: priorExperience,
       learning_goal: learningGoal,
       teacher_gender_pref: genderChoice ? teacherPref : null,
+      additional_participants: participants.length > 0 ? participants : null,
       status: "submitted",
       submitted_at: new Date().toISOString(),
       updated_at: new Date().toISOString(),
