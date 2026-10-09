@@ -23,6 +23,7 @@ import { recordAdAttribution } from "@/lib/adAttributionServer";
 import {
   normalizeKelasItem, quoteKelasItem, cartItemKey, CART_MAX_ITEMS, SESSION_MINUTES,
 } from "@/lib/kelasCart";
+import { xenditMobile } from "@/lib/xenditMobile";
 
 const XENDIT_SECRET_KEY = process.env.XENDIT_SECRET_KEY!;
 const SUPABASE_URL = process.env.NEXT_PUBLIC_SUPABASE_URL!;
@@ -145,7 +146,7 @@ export async function POST(req: NextRequest) {
         customer: {
           given_names: name,
           email,
-          mobile_number: String(wa_number).startsWith("+") ? wa_number : `+62${String(wa_number).replace(/^0/, "")}`,
+          mobile_number: xenditMobile(wa_number),
         },
         success_redirect_url: `${BASE_URL}/payment/success?id=${externalId}`,
         failure_redirect_url: `${BASE_URL}/payment/failed?id=${externalId}`,

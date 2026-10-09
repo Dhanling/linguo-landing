@@ -3,6 +3,7 @@ import { programLangRejection } from "@/lib/programLanguages";
 import { createClient } from "@supabase/supabase-js";
 import { fotoOauthAsli } from "@/lib/oauthAvatar";
 import { KODE_WA_WAJIB, PESAN_WA_WAJIB, pastikanWaPembeli } from "@/lib/waPembeli";
+import { xenditMobile } from "@/lib/xenditMobile";
 
 // ── enrollment-server-flow-v1 ────────────────────────────────────────────
 // Pendaftaran "Daftar Kelas Baru" (akun dashboard) dipindah ke server route.
@@ -95,7 +96,7 @@ async function createXenditInvoiceAndSave(p: {
         customer: {
           given_names: p.name || p.email,
           email: p.email,
-          ...(p.wa_number ? { mobile_number: p.wa_number.startsWith("+") ? p.wa_number : `+62${p.wa_number.replace(/^0/, "")}` } : {}),
+          ...(p.wa_number ? { mobile_number: xenditMobile(p.wa_number) } : {}),
         },
         success_redirect_url: `${BASE_URL}/akun/success`,
         failure_redirect_url: `${BASE_URL}/akun?xendit_failed=1`,
