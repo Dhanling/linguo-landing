@@ -159,11 +159,32 @@ export default function OnboardingPage() {
   const isReguler = lead?.program === "reguler" || lead?.program === "Kelas Reguler";
 
   useEffect(() => {
-    fetch(`/api/onboarding?token=${token}`)
-      .then((r) => { if (!r.ok) throw new Error("Not found"); return r.json(); })
-      .then((d) => { setLead(d); if (d.onboarding_completed) setAlreadyDone(true); })
-      .catch(() => setNotFound(true))
-      .finally(() => setLoading(false));
+    // [onboarding-ke-pendataan-v1] Private/Semi/Kids: form yang dipakai tim
+    // (pencarian pengajar, notif grup Kurikulum) adalah /pendataan/<token>.
+    // Registrasinya dibuat webhook beberapa detik sesudah bayar, jadi dicoba
+    // ulang sebentar sebelum jatuh ke form onboarding lama.
+    let cancelled = false;
+    const load = async (attempt: number) => {
+      try {
+        const r = await fetch(`/api/onboarding?token=${token}`);
+        if (!r.ok) throw new Error("Not found");
+        const d = await r.json();
+        if (cancelled) return;
+        if (d.pendataan_token) { window.location.replace(`/pendataan/${d.pendataan_token}`); return; }
+        if (/private|kids/i.test(d.program || "") && !d.onboarding_completed && attempt < 5) {
+          setTimeout(() => { if (!cancelled) load(attempt + 1); }, 2000);
+          return;
+        }
+        setLead(d);
+        if (d.onboarding_completed) setAlreadyDone(true);
+      } catch {
+        if (cancelled) return;
+        setNotFound(true);
+      }
+      setLoading(false);
+    };
+    load(0);
+    return () => { cancelled = true; };
   }, [token]);
 
   const toggleSchedule = (s: string) => setSchedules((prev) => prev.includes(s) ? prev.filter((x) => x !== s) : [...prev, s]);
