@@ -17,6 +17,7 @@
 
 import { NextResponse } from 'next/server';
 import { createClient } from '@supabase/supabase-js';
+import { kirimSlipGaji } from '@/lib/slipGajiEmail';
 
 const TEACHER_PREFIX = 'TCH-';
 const REFUND_PREFIX = 'RFD-';
@@ -103,18 +104,21 @@ export async function POST(req: Request) {
     }
 
     // ── Gaji karyawan (prefix SAL-) — [payroll-xendit-disburse-v1] ───────
-    // Sukses → payroll 'paid'. Gagal → balik 'pending' + alasan (bisa dikirim
-    // ulang dari HR › Payroll). Tanpa WA: nomor bot dipantau staf lain, jadi
-    // struknya cukup email resmi Xendit.
+    // Sukses → payroll 'paid' + slip gaji ke email karyawan. Gagal → balik
+    // 'pending' + alasan (bisa dikirim ulang dari HR › Payroll). Tanpa WA: nomor
+    // bot dipantau staf lain, jadi slipnya lewat email saja.
     if (String(referenceId).startsWith(SALARY_PREFIX)) {
       const payrollId = String(referenceId).slice(SALARY_PREFIX.length);
       if (isSuccess) {
-        await admin.from('payroll').update({
+        const { data: baruLunas } = await admin.from('payroll').update({
           status: 'paid',
           paid_at: new Date().toISOString(),
           failure_reason: null,
           ...(xenditId ? { xendit_payout_id: xenditId } : {}),
-        }).eq('id', payrollId).neq('status', 'paid');
+        }).eq('id', payrollId).neq('status', 'paid').select('id');
+        // [slip-gaji-email-v1] hanya saat baris BARU berpindah ke 'paid' —
+        // callback Xendit yang terulang tidak mengirim slip dua kali.
+        if (baruLunas?.length) await kirimSlipGaji(admin, payrollId, xenditId);
       } else if (isFailed) {
         const reason = data.failure_code || data.failure_reason || 'Xendit melaporkan pencairan gagal';
         await admin.from('payroll').update({
