@@ -445,7 +445,6 @@ function IntroScreen({ meta, total, listening, needContact, onContact, onStart, 
                       "Klik opsi = jawaban langsung tersubmit (tanpa tombol)",
                       "Benar/salah tidak dibocorkan per soal — biar kamu fokus",
                       "Rekap lengkap + pembahasan muncul di akhir test",
-                      "Jawab jujur, tebak kalau ragu",
                     ].map((t) => (
                       <li key={t} className="flex items-start gap-2.5">
                         <Check className="w-4 h-4 text-[#1A9E9E] flex-shrink-0 mt-0.5" strokeWidth={3} />
@@ -453,6 +452,16 @@ function IntroScreen({ meta, total, listening, needContact, onContact, onStart, 
                       </li>
                     ))}
                   </ul>
+                  {/* [placement-jangan-tebak-v1] Tebakan yang kebetulan benar menaikkan level di atas kemampuan asli. */}
+                  <div className="mt-4 rounded-2xl border border-amber-200 bg-amber-50 p-4">
+                    <p className="flex items-center gap-2 text-sm font-bold text-amber-900">
+                      <SkipForward className="w-4 h-4 flex-shrink-0" />
+                      Tidak tahu jawabannya? Jangan menebak
+                    </p>
+                    <p className="mt-1.5 text-sm text-amber-900/80 leading-relaxed">
+                      Tekan <span className="font-semibold">“Tidak tahu, lewati soal”</span> di bawah tiap soal. Tebakan yang kebetulan benar bikin levelmu keluar lebih tinggi dari kemampuan aslimu.
+                    </p>
+                  </div>
                   {!needContact && <div className="mt-5"><GenderPick value={gender} onChange={pilihGender} /></div>}
                   <button type="button" autoFocus onClick={onStart} disabled={starting}
                     className="mt-6 w-full inline-flex items-center justify-center gap-2 px-6 py-3 bg-[#1A9E9E] text-white rounded-xl font-semibold hover:bg-[#147a7a] transition-colors disabled:opacity-70">
@@ -647,11 +656,14 @@ function QuizScreen(props: {
             </button>
           ) : <span />}
           <button onClick={onPass}
-            className="inline-flex items-center gap-2 px-5 py-2.5 text-sm text-gray-500 hover:text-gray-700 rounded-full hover:bg-gray-100 transition-all">
+            className="inline-flex items-center gap-2 px-5 py-2.5 text-sm font-semibold text-amber-800 bg-amber-50 border border-amber-300 rounded-full hover:bg-amber-100 transition-all">
             <SkipForward className="w-4 h-4" />
             Tidak tahu, lewati soal
           </button>
         </div>
+        <p className="mt-3 text-xs text-gray-500 text-right">
+          Jangan menebak — melewati soal bikin hasil levelmu lebih akurat.
+        </p>
       </div>
 
       {/* Konfirmasi keluar — jawaban belum tersimpan kalau keluar di tengah tes */}
@@ -1025,6 +1037,16 @@ function ResultScreen({ score, questions, log, meta, timeElapsedSec, contact, ge
               <ChevronDown className={"w-4 h-4 transition-transform " + (showRecap ? "rotate-180" : "")} />
             </button>
           </div>
+
+          {skippedCount === 0 && wrongCount >= 3 && (
+            <div className="mb-4 rounded-2xl border border-amber-200 bg-amber-50 p-4 text-sm text-amber-900/90 leading-relaxed">
+              <span className="font-semibold text-amber-900">Tadi ada yang ditebak?</span> Kamu tidak melewati satu soal pun. Kalau beberapa jawaban hasil menebak, level di atas bisa lebih tinggi dari kemampuan aslimu.{" "}
+              <button type="button" onClick={onRetake} className="font-semibold underline underline-offset-2 hover:text-amber-950">
+                Ulangi test
+              </button>{" "}
+              dan lewati soal yang tidak kamu tahu.
+            </div>
+          )}
 
           <AnimatePresence initial={false}>
             {showRecap && (
