@@ -40,6 +40,18 @@ const BRAND = "#1A9E9E";
 const BRAND_DEEP = "#0F766E";
 const OK = "#059669";       // status: benar
 const WARN = "#D97706";     // status: belum tepat
+
+// [kuis-rincian-salah-v1] Kuncinya sama dengan ERR_KINDS di edge fn `grade-quiz`
+// dan ERR_LABEL di dashboard (quizUi.tsx) — tiga tempat, tidak ada satu sumber.
+const ERR_LABEL: Record<string, string> = {
+  urutan_kata: "Urutan kata",
+  kata_kerja: "Kata kerja",
+  ejaan: "Ejaan",
+  kosakata: "Kosakata",
+  tata_bahasa: "Tata bahasa",
+  makna: "Makna",
+  kurang_lengkap: "Kurang lengkap",
+};
 const TRACK = "#E2E8F0";    // jalur kosong batang
 
 // ── PDF: dua pustaka dari CDN, dimuat saat tombolnya ditekan ────────────────
@@ -780,6 +792,7 @@ function KartuSoal({
   // `why` = kenapa benarnya benar (selalu ada kalau rapor AI jalan); `feedback` =
   // penilaian jawaban siswa. Keduanya ditampilkan kalau isinya memang berbeda.
   const catatan = [why, fb && fb !== why ? fb : ""].filter(Boolean);
+  const salah = (r?.errors ?? []).filter((e) => e && ERR_LABEL[e.kind]);
 
   return (
     <section
@@ -837,6 +850,30 @@ function KartuSoal({
               <p className="text-[10px] font-bold uppercase tracking-wide" style={{ color: OK }}>{labelKunci}</p>
               <p className="mt-0.5 text-[13px] font-semibold text-slate-700">{kunci}</p>
               {kunciTranslit && <p className="text-[11.5px] italic text-slate-400">{kunciTranslit}</p>}
+            </div>
+          )}
+
+          {/* Ditaruh di atas penjelasan panjangnya: ini jawaban atas "salahku di
+              bagian mana", yang dicari siswa sebelum mau membaca aturannya. */}
+          {salah.length > 0 && (
+            <div className="rounded-lg border p-2.5" style={{ borderColor: "#fde68a", background: "#fffbeb" }}>
+              <p className="text-[10px] font-bold uppercase tracking-wide" style={{ color: WARN }}>Yang perlu dibetulkan</p>
+              <ul className="mt-1 space-y-1.5">
+                {salah.map((e, i) => (
+                  <li key={i} className="text-[12.5px] leading-relaxed text-slate-600">
+                    <span
+                      className="mr-1.5 inline-block rounded-full px-2 py-0.5 text-[10.5px] font-bold text-white"
+                      style={{ background: WARN }}
+                    >
+                      {ERR_LABEL[e.kind]}
+                    </span>
+                    {e.wrong ? <span className="text-slate-400 line-through">{e.wrong}</span> : null}
+                    {e.wrong && e.right ? <span className="text-slate-400"> → </span> : null}
+                    {e.right ? <span className="font-semibold" style={{ color: OK }}>{e.right}</span> : null}
+                    {e.note ? <span className="block">{e.note}</span> : null}
+                  </li>
+                ))}
+              </ul>
             </div>
           )}
 

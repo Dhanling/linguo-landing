@@ -85,6 +85,12 @@ export interface QuizAnalysis {
   per_question?: QuizPerQuestion[];
 }
 
+/** [kuis-rincian-salah-v1] Jenis kesalahan satu jawaban ketikan, dari edge fn
+ *  `grade-quiz` (repo admin). `kind` daftar tertutup — lihat ERR_KINDS di sana. */
+export type QuizErrKind =
+  | "urutan_kata" | "kata_kerja" | "ejaan" | "kosakata" | "tata_bahasa" | "makna" | "kurang_lengkap";
+export interface QuizErrTag { kind: QuizErrKind; wrong: string; right: string; note: string; }
+
 export interface GradeResult {
   index: number;
   is_correct: boolean;
@@ -101,6 +107,8 @@ export interface GradeResult {
   topic?: string;
   /** Kenapa jawaban benarnya benar (diisi juga untuk soal yang dijawab benar). */
   why?: string;
+  /** Absen untuk pilihan ganda, jawaban benar, dan penilai versi lama. */
+  errors?: QuizErrTag[];
 }
 
 async function callQuizPublic<T = any>(
