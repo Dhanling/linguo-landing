@@ -1,6 +1,6 @@
 // ⚠️ KEMBAR: salinan verbatim dari linguo-admin-dashboard/src/lib/videoClass/mp4Seekable.ts
-// (modul bebas DOM/Supabase; satu-satunya beda: literal `0n` → `BigInt(0)` karena tsconfig
-// landing target ES2017). Dipakai penyambung rekaman sisi server
+// (modul bebas DOM/Supabase; beda: literal `0n` → `BigInt(0)` karena tsconfig landing
+// target ES2017, dan `as BlobPart[]` pada Blob keluaran). Dipakai penyambung rekaman sisi server
 // (src/lib/recordingsFinalize.ts). Kalau yang di dashboard berubah, salin ulang ke sini.
 
 // [vc-mp4seek-v1] Rekaman MediaRecorder (MP4) dibuat BISA DI-SEEK sebelum diunggah.
@@ -367,7 +367,7 @@ export async function makeMp4Seekable(blob: Blob): Promise<Mp4SeekResult> {
         new Uint8Array(f.moof.buffer, f.moof.byteOffset, f.moofLen),
         blob.slice(f.off + f.moofLen, f.off + f.size),
       ]),
-    ],
+    ] as BlobPart[], // beda dari dashboard: TS landing menolak Uint8Array<ArrayBufferLike> sebagai BlobPart
     { type: blob.type || "video/mp4" },
   );
   return { blob: out, changed: true, durationSec: movieSec, fragments: n };
