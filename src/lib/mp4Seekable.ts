@@ -1,5 +1,6 @@
 // ⚠️ KEMBAR: salinan verbatim dari linguo-admin-dashboard/src/lib/videoClass/mp4Seekable.ts
-// (modul bebas DOM/Supabase). Dipakai penyambung rekaman sisi server
+// (modul bebas DOM/Supabase; satu-satunya beda: literal `0n` → `BigInt(0)` karena tsconfig
+// landing target ES2017). Dipakai penyambung rekaman sisi server
 // (src/lib/recordingsFinalize.ts). Kalau yang di dashboard berubah, salin ulang ke sini.
 
 // [vc-mp4seek-v1] Rekaman MediaRecorder (MP4) dibuat BISA DI-SEEK sebelum diunggah.
@@ -254,7 +255,7 @@ export async function makeMp4Seekable(blob: Blob): Promise<Mp4SeekResult> {
   if (boxes.some((b) => b.type === "sidx" && !oldSidx.includes(b))) return unchanged("sidx di posisi tak dikenal");
   const sidxComplete = oldSidx.length >= tracks.size;
   const mdhdDirty = [...tracks.values()].some((t) =>
-    t.mdhdV === 1 ? mv.getBigUint64(t.mdhdDurOff) !== 0n : mv.getUint32(t.mdhdDurOff) !== 0);
+    t.mdhdV === 1 ? mv.getBigUint64(t.mdhdDurOff) !== BigInt(0) : mv.getUint32(t.mdhdDurOff) !== 0);
 
   // ── moof: waktu & durasi per fragmen ────────────────────────────────────────
   type Frag = { off: number; size: number; moofLen: number; moof: DataView; perTrack: Map<number, FragTrack> };
