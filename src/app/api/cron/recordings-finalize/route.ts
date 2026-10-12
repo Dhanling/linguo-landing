@@ -37,6 +37,9 @@ export const dynamic = "force-dynamic";
 export const maxDuration = 300;
 // Supabase project di ap-southeast-1 — jalankan di Singapura supaya ratusan MB
 // tidak bolak-balik lintas benua.
+// [rekaman-sambung-region-v1] Baris di bawah ternyata TIDAK dituruti (12 Okt
+// 2026: x-vercel-id `sin1::iad1`, fungsi jalan di AS → ±1 MB/dtk, rekaman
+// 416 MB mati di batas 300 detik). Yang menentukan = "regions" di vercel.json.
 export const preferredRegion = "sin1";
 
 const BUDGET_MS = 270_000; // sisakan ruang di bawah maxDuration

@@ -301,13 +301,20 @@ export async function finalizeOne(c: Candidate, sb: SupabaseClient = adminClient
     const held: Blob[] = [];
     const ws = inMemory ? null : createWriteStream(tmp);
     let written = 0;
-    for (const key of c.partKeys) {
-      const { data, error } = await sb.storage.from(c.bucket).download(key);
-      if (error || !data) throw new Error(`potongan ${key} tidak bisa dibaca: ${error?.message ?? "kosong"}`);
-      written += data.size;
-      if (!ws) { held.push(data); continue; }
-      const bytes = Buffer.from(await data.arrayBuffer());
-      if (!ws.write(bytes)) await new Promise<void>((res) => ws.once("drain", res));
+    // [rekaman-sambung-region-v1] Empat potongan sekaligus (urutan tulis tetap):
+    // satu per satu, 67 potongan = 67 kali bolak-balik berurutan.
+    for (let i = 0; i < c.partKeys.length; i += 4) {
+      const batch = await Promise.all(c.partKeys.slice(i, i + 4).map(async (key) => {
+        const { data, error } = await sb.storage.from(c.bucket).download(key);
+        if (error || !data) throw new Error(`potongan ${key} tidak bisa dibaca: ${error?.message ?? "kosong"}`);
+        return data;
+      }));
+      for (const data of batch) {
+        written += data.size;
+        if (!ws) { held.push(data); continue; }
+        const bytes = Buffer.from(await data.arrayBuffer());
+        if (!ws.write(bytes)) await new Promise<void>((res) => ws.once("drain", res));
+      }
     }
     if (ws) await new Promise<void>((res, rej) => { ws.once("error", rej); ws.end(res); });
     if (!written) throw new Error("semua potongan kosong");
