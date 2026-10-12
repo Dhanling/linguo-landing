@@ -23,6 +23,8 @@
 //   ?dry=1   → cuma daftar kandidat + alasan dilewati, tidak menyentuh apa pun
 //   ?sync=1  → tunggu sampai putaran selesai, balas hasilnya (uji manual)
 //   ?max=N   → maksimal N rekaman per putaran (bawaan 2)
+//   ?only=X  → hanya folder potongan yang path-nya memuat X
+//   ?mem=1   → paksa jalur memori (uji jalur rekaman > 480 MB pada berkas kecil)
 // Tanpa ?sync, route langsung membalas 202 dan menggarap di latar lewat
 // `after()` — pg_net memutus koneksi setelah beberapa detik, dan pekerjaan
 // satu rekaman bisa beberapa menit.
@@ -84,19 +86,21 @@ async function handle(req: NextRequest) {
   const q = req.nextUrl.searchParams;
   const max = Math.max(1, Math.min(5, Number(q.get("max") || 2) || 2));
 
+  const uji = { only: q.get("only") || undefined, forceMemory: q.get("mem") === "1" };
+
   if (q.get("dry") === "1") {
     const cands = await listCandidates();
     return NextResponse.json({ dry: true, candidates: summarize(cands) });
   }
 
   if (q.get("sync") === "1") {
-    const { candidates, results } = await finalizeRound({ budgetMs: BUDGET_MS, max });
+    const { candidates, results } = await finalizeRound({ budgetMs: BUDGET_MS, max, ...uji });
     return NextResponse.json({ candidates: summarize(candidates), results });
   }
 
   after(async () => {
     try {
-      const { results } = await finalizeRound({ budgetMs: BUDGET_MS, max });
+      const { results } = await finalizeRound({ budgetMs: BUDGET_MS, max, ...uji });
       for (const r of results) {
         if (r.ok && r.key) console.info(`[rekaman-sambung-server] ✓ ${r.key} ${Math.round((r.sizeBytes ?? 0) / 1048576)} MB ${r.durationSec}s dalam ${Math.round(r.ms / 1000)}s`);
         else if (!r.ok) console.warn(`[rekaman-sambung-server] ✗ ${r.folder}: ${r.error}`);

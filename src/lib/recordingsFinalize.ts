@@ -50,8 +50,10 @@ const MAX_ATTEMPTS = 6;
 /* [rekaman-sambung-besar-v1] /tmp Vercel cuma 500 MB, padahal kelas 90 menit
    sudah ±560 MB — dulu rekaman sebesar itu dilewati selamanya (dan folder
    potongannya dibuang storage-sweep sesudah 7 hari). Yang tidak muat di /tmp
-   sekarang disambung di memori fungsi (2 GB), jadi batasnya naik ke 1,2 GB. */
-const TMP_MAX_BYTES = 400 * 1024 * 1024;
+   sekarang disambung di memori fungsi (2 GB), jadi batasnya naik ke 1,2 GB.
+   /tmp tetap dipakai selama muat: jalur memori jauh lebih lambat (rekaman
+   417 MB, 12 Okt 2026: habis 300 detik; jalur /tmp 278 MB selesai 42 detik). */
+const TMP_MAX_BYTES = 480 * 1024 * 1024;
 const MAX_BYTES = 1200 * 1024 * 1024;
 const TUS_CHUNK = 6 * 1024 * 1024;      // Supabase mewajibkan 6 MB per bagian
 const DASHBOARD_ORIGIN = "https://dashboard.linguo.id";
@@ -214,7 +216,7 @@ async function removeFolder(sb: SupabaseClient, bucket: string, folder: string):
  * jelas, bisa diulang per bagian. Unggahan satu PUT 400 MB lewat fetch Node
  * harus memegang seluruh badan di memori atau memakai chunked transfer yang
  * belum tentu diterima — TUS adalah jalur resmi untuk berkas besar. */
-async function tusUpload(blob: Blob, opts: { bucket: string; key: string; contentType: string }): Promise<void> {
+async function tusUpload(blob: Blob, opts: { bucket: string; key: string; contentType: string }, onProgress?: (done: number) => void): Promise<void> {
   const base = process.env.NEXT_PUBLIC_SUPABASE_URL!;
   const key = process.env.SUPABASE_SERVICE_ROLE_KEY!;
   const auth = { Authorization: `Bearer ${key}`, apikey: key, "Tus-Resumable": "1.0.0" };
@@ -273,6 +275,7 @@ async function tusUpload(blob: Blob, opts: { bucket: string; key: string; conten
     }
     while (buf.length >= TUS_CHUNK) {
       await patch(buf.subarray(0, TUS_CHUNK));
+      if (onProgress && offset % (TUS_CHUNK * 16) === 0) onProgress(offset); // tiap ±96 MB
       buf = buf.subarray(TUS_CHUNK);
     }
     if (eof && buf.length) { await patch(buf); buf = Buffer.alloc(0); }
@@ -286,8 +289,11 @@ function scheduleIdFromRoom(roomId: string): string | null {
 }
 
 /** Sambung satu folder potongan jadi rekaman utuh. Tidak melempar — hasilnya dilaporkan. */
-export async function finalizeOne(c: Candidate, sb: SupabaseClient = adminClient()): Promise<FinalizeResult> {
+export async function finalizeOne(c: Candidate, sb: SupabaseClient = adminClient(), opts: { forceMemory?: boolean } = {}): Promise<FinalizeResult> {
   const t0 = Date.now();
+  // Jejak per tahap: fungsi yang dibunuh di batas waktu tak sempat melapor apa
+  // pun, jadi tanpa ini tak ketahuan tahap mana yang lambat.
+  const tahap = (apa: string) => console.info(`[rekaman-sambung-server] … ${c.folder.split("/").slice(-2).join("/")} ${apa} (+${Math.round((Date.now() - t0) / 1000)}s)`);
   const lock: Lock = { startedAt: new Date().toISOString(), attempts: (c.lock?.attempts ?? 0) + 1 };
   const ext = /\.webm$/i.test(c.partKeys[0]) ? "webm" : "mp4";
   const tmp = join(tmpdir(), `vc-finalize-${randomUUID()}.${ext}`);
@@ -297,7 +303,7 @@ export async function finalizeOne(c: Candidate, sb: SupabaseClient = adminClient
     // 1. Unduh potongan berurutan ke /tmp (memori cuma sebesar satu potongan).
     //    Yang tidak muat di /tmp ditahan di memori — lihat TMP_MAX_BYTES.
     const mime = ext === "mp4" ? "video/mp4" : "video/webm";
-    const inMemory = c.sizeBytes > TMP_MAX_BYTES;
+    const inMemory = !!opts.forceMemory || c.sizeBytes > TMP_MAX_BYTES;
     const held: Blob[] = [];
     const ws = inMemory ? null : createWriteStream(tmp);
     let written = 0;
@@ -318,6 +324,7 @@ export async function finalizeOne(c: Candidate, sb: SupabaseClient = adminClient
     }
     if (ws) await new Promise<void>((res, rej) => { ws.once("error", rej); ws.end(res); });
     if (!written) throw new Error("semua potongan kosong");
+    tahap(`unduh ${c.partKeys.length} potongan ${Math.round(written / 1048576)} MB selesai — ${inMemory ? "memori" : "/tmp"}`);
 
     // 2. Kepala MP4 ditulis ulang supaya bisa di-seek (tanpa transcode).
     const input = ws ? await openAsBlob(tmp, { type: mime }) : new Blob(held, { type: mime });
@@ -337,7 +344,9 @@ export async function finalizeOne(c: Candidate, sb: SupabaseClient = adminClient
     const stamp = new Date(c.meta.recordedAt).getTime();
     const basePath = `${PREFIX}/${c.meta.roomId}/${stamp}`;
     const videoKey = `${basePath}.${ext}`;
-    await tusUpload(out, { bucket: c.bucket, key: videoKey, contentType: mime });
+    tahap(seekable ? "kepala seekable selesai" : "tanpa pembenah seek");
+    await tusUpload(out, { bucket: c.bucket, key: videoKey, contentType: mime }, (done) => tahap(`unggah ${Math.round(done / 1048576)} MB`));
+    tahap("unggah selesai");
 
     // 4. Sidecar + katalog + tulis-balik jadwal — cermin uploadRecording (dashboard).
     const isLegacy = c.bucket === "class-materials";
@@ -392,7 +401,7 @@ export async function finalizeOne(c: Candidate, sb: SupabaseClient = adminClient
 }
 
 /** Satu putaran: garap kandidat yang layak sampai anggaran waktu habis. */
-export async function finalizeRound(opts: { budgetMs: number; max?: number }): Promise<{ candidates: Candidate[]; results: FinalizeResult[] }> {
+export async function finalizeRound(opts: { budgetMs: number; max?: number; only?: string; forceMemory?: boolean }): Promise<{ candidates: Candidate[]; results: FinalizeResult[] }> {
   const sb = adminClient();
   const t0 = Date.now();
   const candidates = await listCandidates(sb);
@@ -406,6 +415,7 @@ export async function finalizeRound(opts: { budgetMs: number; max?: number }): P
   }
   for (const c of candidates) {
     if (c.skip) continue;
+    if (opts.only && !c.folder.includes(opts.only)) continue;
     if (results.filter((r) => r.key).length >= (opts.max ?? 2)) break;
     // Jangan mulai pekerjaan baru kalau sisa waktu tak cukup untuk ukuran ini
     // (≈ 3 MB/dtk konservatif: unduh + unggah lintas region).
@@ -415,7 +425,7 @@ export async function finalizeRound(opts: { budgetMs: number; max?: number }): P
     const need = Math.max(30_000, (c.sizeBytes / (3 * 1024 * 1024)) * 1000 * 2);
     const first = !results.some((r) => r.ms > 0);
     if (!first && Date.now() - t0 + need > opts.budgetMs) { results.push({ folder: c.folder, ok: false, ms: 0, error: "ditunda — sisa waktu pemanggilan tidak cukup" }); continue; }
-    results.push(await finalizeOne(c, sb));
+    results.push(await finalizeOne(c, sb, { forceMemory: opts.forceMemory }));
   }
   return { candidates, results };
 }
