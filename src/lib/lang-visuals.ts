@@ -63,7 +63,13 @@ export const LANG_PHOTO_SLUG: Record<string, string> = {
   // [kelas-card-foto-v2] Bahasa yang tadinya jatuh ke glyph "Aa" di kartu beranda
   // (kasus nyata: kelas Private Wendy/Michael — Bulgarian, Polish, Georgian).
   bulgaria: "bulgarian", bulgarian: "bulgarian",
-  polandia: "polish", polish: "polish",
+  // [lang-foto-pte-polandia-v1] Polandia ganti foto (tepi sungai Gdańsk). Nama
+  // berkasnya baru karena /lang/* di-cache immutable setahun — menimpa polish.jpg
+  // tidak akan sampai ke browser yang sudah menyimpan foto lama.
+  polandia: "polish-gdansk", polish: "polish-gdansk",
+  // PTE = tes asal Australia → foto Sydney. registrations.language-nya "PTE prep";
+  // pengajar memakai "Test Prep - PTE".
+  pte: "pte", "pte prep": "pte", "pte preparation": "pte", "test prep - pte": "pte",
   georgia: "georgian", georgian: "georgian",
   kanton: "cantonese", kantonis: "cantonese", cantonese: "cantonese", "hong kong": "cantonese",
   uzbekistan: "uzbek", uzbek: "uzbek",
