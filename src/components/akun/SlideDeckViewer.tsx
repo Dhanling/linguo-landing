@@ -15,6 +15,7 @@ import {
 import type { MateriSlide, SlideType } from "@/lib/materiSlides";
 import { useT } from "@/lib/uiLang"; // [ui-lang-switcher-v1]
 import { SLIDE_TYPE_LABEL } from "@/lib/materiSlides";
+import { preloadSlideImage, slideImageReady } from "@/lib/slideImageCache";
 import { RectFlag } from "@/components/RectFlag";
 // [slide-tts-v1] Mesin & cache TTS yang SAMA dengan reader e-book new edition
 // (memori → Cache API → CDN bucket `tts-cache` → /api/tts). Kata yang pernah
@@ -457,7 +458,7 @@ export function SlideCard({ s, showAnswers, lang, className = "" }: {
       {/* [slide-latar-v1] Slide isi: gambar latar. Teksnya terbaca karena duduk di
           panel putih [slide-panel-v1], jadi gambarnya tak perlu dipucatkan lagi. */}
       {sampul ? (<>
-        <img aria-hidden src={sampul} alt="" decoding="sync" className="pointer-events-none absolute inset-0 h-full w-full select-none object-cover" />
+        <img key={sampul} aria-hidden src={sampul} alt="" decoding="sync" loading="eager" fetchPriority="high" className="pointer-events-none absolute inset-0 h-full w-full select-none object-cover" />
       </>) : (<>
       <div aria-hidden className="pointer-events-none absolute -right-[7%] -top-[16%] aspect-square w-[30%] rounded-full"
         style={{ background: judul ? "rgba(255,255,255,0.14)" : tema.lembut, opacity: judul ? 1 : 0.75 }} />
@@ -513,13 +514,7 @@ export function SlideCard({ s, showAnswers, lang, className = "" }: {
 
 /* ── Slideshow ───────────────────────────────────────────────────────────── */
 
-const DURASI_PUDAR = 320;
-const CSS_PUDAR =
-  `@keyframes slide-masuk{from{opacity:0}to{opacity:1}}` +
-  `.slide-masuk{animation:slide-masuk ${DURASI_PUDAR}ms ease-out}` +
-  `@media (prefers-reduced-motion:reduce){.slide-masuk{animation:none}}`;
-
-export function SlideDeckViewer({
+function SlideDeckViewerSession({
   slides, title, subtitle, lang, onClose,
 }: {
   slides: MateriSlide[];
@@ -530,29 +525,34 @@ export function SlideDeckViewer({
   onClose: () => void;
 }) {
   const t = useT(); // [ui-lang-switcher-v1]
-  /* [slide-transisi-v1] Slide baru memudar MASUK di atas slide lama, yang tetap
-     terpasang sampai animasinya selesai — layar tak pernah sempat kosong/gelap.
-     `i` dan `lama` sengaja satu state: kalau `lama` baru diisi lewat effect,
-     ada satu frame slide baru (opacity 0) tampil di atas latar hitam = kedipan. */
-  const [posisi, setPosisi] = useState<{ i: number; lama: number | null }>({ i: 0, lama: null });
-  const i = posisi.i;
+  // Ganti teks dan cover sekaligus sesudah gambar target selesai di-decode.
+  const [i, setIndex] = useState(0);
+  const target = useRef(0);
+  const navigation = useRef(0);
   const setI = useCallback((n: number | ((c: number) => number)) => {
-    setPosisi((p) => {
-      const baru = typeof n === "function" ? n(p.i) : n;
-      return baru === p.i ? p : { i: baru, lama: p.i };
+    const next = Math.max(0, Math.min(slides.length - 1, typeof n === "function" ? n(target.current) : n));
+    target.current = next;
+    const ticket = ++navigation.current;
+    void preloadSlideImage(slides[next]?.cover, "high").then(() => {
+      if (ticket === navigation.current) setIndex(next);
     });
-  }, []);
-  useEffect(() => {
-    if (posisi.lama == null) return;
-    const t = setTimeout(() => setPosisi((p) => (p.lama == null ? p : { ...p, lama: null })), DURASI_PUDAR + 40);
-    return () => clearTimeout(t);
-  }, [posisi]);
-  /* Gambar latar seluruh dek diunduh & di-decode begitu slideshow dibuka, supaya
-     pindah slide tidak menampilkan gradasi polos dulu lalu gambarnya menyusul. */
-  useEffect(() => {
-    const unik = Array.from(new Set(slides.map((x) => x.cover).filter(Boolean))) as string[];
-    unik.forEach((src) => { const g = new Image(); g.src = src; void g.decode?.().catch(() => {}); });
   }, [slides]);
+  useEffect(() => () => { navigation.current++; }, []);
+  const cover = slides[i]?.cover;
+  const [preparedCover, setPreparedCover] = useState<string | undefined>(() => slideImageReady(cover) ? cover : undefined);
+  const coverReady = !cover || preparedCover === cover || slideImageReady(cover);
+  useEffect(() => {
+    let alive = true;
+    void preloadSlideImage(cover, "high").then(() => { if (alive) setPreparedCover(cover); });
+    return () => { alive = false; };
+  }, [cover]);
+  // Prioritaskan cover aktif; latar slide berikutnya dimuat di belakang.
+  useEffect(() => {
+    void preloadSlideImage(cover, "high").then(() => {
+      const unik = new Set(slides.map((s) => s.cover).filter(Boolean));
+      unik.forEach((src) => { if (src !== cover) void preloadSlideImage(src, "low"); });
+    });
+  }, [slides, cover]);
   const [fs, setFs] = useState(false);
   const [kunci, setKunci] = useState(false);
   const wrapRef = useRef<HTMLDivElement>(null);
@@ -649,15 +649,15 @@ export function SlideDeckViewer({
           <ChevronLeft size={22} />
         </button>
         <div className="relative aspect-[16/9] max-h-full w-full max-w-[min(1100px,92vw)] overflow-hidden rounded-2xl shadow-2xl">
-          <style>{CSS_PUDAR}</style>
-          {posisi.lama != null && slides[posisi.lama] && (
-            <div key={`lama-${posisi.lama}`} aria-hidden className="pointer-events-none absolute inset-0">
-              <SlideCard s={slides[posisi.lama]} lang={lang} className="h-full w-full" />
+          {coverReady ? (
+            <div key={i} className="absolute inset-0">
+              <SlideCard s={s} showAnswers={kunci} lang={lang} className="h-full w-full" />
+            </div>
+          ) : (
+            <div role="status" className="absolute inset-0 flex items-center justify-center bg-[#0E7C7B] text-sm text-white">
+              {t("Memuat…")}
             </div>
           )}
-          <div key={i} className="slide-masuk absolute inset-0">
-            <SlideCard s={s} showAnswers={kunci} lang={lang} className="h-full w-full" />
-          </div>
         </div>
         <button onClick={maju} disabled={i === total - 1} aria-label={t("Slide berikutnya")}
           className="absolute right-2 z-10 rounded-full bg-white/10 p-2.5 text-white transition hover:bg-white/20 disabled:opacity-20 sm:right-4 sm:p-3">
@@ -674,4 +674,10 @@ export function SlideDeckViewer({
       </div>
     </div>
   );
+}
+
+/** Sesi berbeda selalu mulai dari cover pertama, tanpa state slide sesi lama. */
+export function SlideDeckViewer(props: Parameters<typeof SlideDeckViewerSession>[0]) {
+  const key = JSON.stringify([props.title, props.subtitle, props.lang, props.slides[0]?.heading, props.slides[0]?.cover]);
+  return <SlideDeckViewerSession key={key} {...props} />;
 }
