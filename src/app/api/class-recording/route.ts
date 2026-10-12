@@ -20,7 +20,7 @@ import { createClient } from "@supabase/supabase-js";
 import { previewStudentId } from "@/lib/previewSession";
 // [addon-akses-rekaman-v1] rekaman = add-on berbayar. Gerbang UI saja tak ada
 // artinya: roomId-nya `sched-<uuid>` dan siswa bisa memanggil route ini langsung.
-import { aksesRekaman, ADDON_REG_COLUMNS, type AddonRow } from "@/lib/addonAccess";
+import { aksesRekaman, muatWarisanRekaman, ADDON_REG_COLUMNS, type AddonRow } from "@/lib/addonAccess";
 
 const SUPABASE_URL = process.env.NEXT_PUBLIC_SUPABASE_URL!;
 const SUPABASE_ANON_KEY = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!;
@@ -156,7 +156,16 @@ export async function POST(req: NextRequest) {
         );
       }
       const akses = aksesRekaman(regRes.data || {}, (addonRes.data || []) as AddonRow[]);
-      if (akses !== "punya") {
+      // [rekaman-lanjutan-waris-v1] registrasi lanjutan (bayar lagi untuk kelas
+      // yang sama) ikut Recording yang dibeli di registrasi sebelumnya.
+      const waris = akses === "punya" ? null : await muatWarisanRekaman(admin, [sched.registration_id]);
+      if (akses !== "punya" && waris === null) {
+        return NextResponse.json(
+          { error: "Data paket kelas belum bisa dibaca — coba lagi sebentar." },
+          { status: 503 },
+        );
+      }
+      if (akses !== "punya" && !waris?.has(sched.registration_id)) {
         return NextResponse.json(
           {
             error:

@@ -44,7 +44,9 @@
 // gampang ditebak), dan policy RLS di sql/registration_addons_rls_siswa_20260911.sql
 // supaya siswa boleh membaca baris add-on miliknya sendiri.
 
-export type AksesAddon = "punya" | "tidak" | "belum-didata" | "memuat";
+import { canonLangName } from "@/lib/programLanguages";
+
+export type AksesAddon ="punya" | "tidak" | "belum-didata" | "memuat";
 
 /** Baris `registration_addons` — sekadar yang dibutuhkan gerbang ini. */
 export type AddonRow = {
@@ -185,7 +187,108 @@ export async function muatAksesRekamanMap(
     const a = aksesRekaman(fields.get(id) || {}, perReg.get(id) || []);
     out.set(id, addonGagal && a !== "punya" ? "memuat" : a);
   });
+
+  // [rekaman-lanjutan-waris-v1] registrasi lanjutan mewarisi Recording kelas sebelumnya.
+  const terkunci = ids.filter((id) => rekamanTerkunci(out.get(id) as AksesAddon));
+  if (terkunci.length > 0) {
+    const waris = await muatWarisanRekaman(client, terkunci);
+    // Gagal dibaca → "memuat", bukan gembok (alasan yang sama dengan addonGagal).
+    terkunci.forEach((id) => {
+      if (waris === null) out.set(id, "memuat");
+      else if (waris.has(id)) out.set(id, "punya");
+    });
+  }
   return out;
+}
+
+// ── [rekaman-lanjutan-waris-v1] Recording ikut ke registrasi LANJUTAN ─────────
+// Laporan owner 12 Okt 2026 (siswa Restu, English A1.1 Private): bayar 1 sesi +
+// Recording & E-book (3 Okt), lalu bayar 1 sesi lagi untuk melanjutkan (7 Okt).
+// Tiap pembayaran = satu baris `registrations` ([private-lanjutan-v1] di repo
+// admin), dan add-on Recording hanya menempel di baris PERTAMA — jadi rekaman
+// sesi lanjutannya terkunci "tidak termasuk paket kelas ini" padahal Recording
+// kelas itu sudah dibeli.
+//
+// Aturannya: registrasi yang tak punya Recording sendiri ikut "punya" kalau ada
+// registrasi SEBELUMNYA milik siswa yang sama, dengan produk, bahasa dan level
+// yang sama, yang Recording-nya memang dibeli. Trial, registrasi yang diarsipkan
+// dan yang Batal/Transferred tidak mewariskan. Level berbeda = paket baru →
+// Recording dibeli lagi ([rekaman-wajib-beli-v1] tetap berlaku).
+
+const KOLOM_LANJUTAN = `id, student_id, product, language, level, created_at, is_trial, status, archived_at, ${ADDON_REG_COLUMNS}`;
+
+type RegLanjutan = RegAddonFields & {
+  id: string;
+  student_id?: string | null;
+  product?: string | null;
+  language?: string | null;
+  level?: string | null;
+  created_at?: string | null;
+  is_trial?: boolean | null;
+  status?: string | null;
+  archived_at?: string | null;
+};
+
+const kunci = (s?: string | null) => String(s ?? "").trim().toLowerCase();
+
+function kelasSama(a: RegLanjutan, b: RegLanjutan): boolean {
+  return (
+    kunci(a.product) === kunci(b.product) &&
+    canonLangName(a.language).toLowerCase() === canonLangName(b.language).toLowerCase() &&
+    kunci(a.level) === kunci(b.level)
+  );
+}
+
+/**
+ * Dari `regIds` (registrasi yang Recording-nya tidak dibeli langsung), mana yang
+ * mewarisi Recording dari registrasi sebelumnya di kelas yang sama?
+ * `null` = datanya gagal dibaca (pemanggil jangan memvonis "tidak beli").
+ */
+export async function muatWarisanRekaman(client: SupabaseLike, regIds: string[]): Promise<Set<string> | null> {
+  const out = new Set<string>();
+  const ids = (regIds || []).filter(Boolean);
+  if (ids.length === 0) return out;
+  try {
+    const cur = await client.from("registrations").select(KOLOM_LANJUTAN).in("id", ids);
+    if (cur.error) return null;
+    const lanjutan = ((cur.data || []) as RegLanjutan[]).filter((r) => r.student_id && !r.is_trial);
+    if (lanjutan.length === 0) return out;
+
+    const studentIds = Array.from(new Set(lanjutan.map((r) => r.student_id as string)));
+    const sib = await client.from("registrations").select(KOLOM_LANJUTAN).in("student_id", studentIds);
+    if (sib.error) return null;
+    const calon = ((sib.data || []) as RegLanjutan[]).filter(
+      (p) => !p.is_trial && !p.archived_at && !["batal", "transferred"].includes(kunci(p.status)),
+    );
+    if (calon.length === 0) return out;
+
+    const add = await client
+      .from("registration_addons")
+      .select("registration_id, addon_type, payment_status, quantity")
+      .in("registration_id", calon.map((p) => p.id));
+    if (add.error) return null;
+    const perReg = new Map<string, AddonRow[]>();
+    (add.data || []).forEach((r: any) => {
+      const arr = perReg.get(r.registration_id) || [];
+      arr.push(r as AddonRow);
+      perReg.set(r.registration_id, arr);
+    });
+
+    lanjutan.forEach((r) => {
+      const ada = calon.some(
+        (p) =>
+          p.id !== r.id &&
+          p.student_id === r.student_id &&
+          String(p.created_at ?? "") < String(r.created_at ?? "") &&
+          kelasSama(p, r) &&
+          aksesRekaman(p, perReg.get(p.id) || []) === "punya",
+      );
+      if (ada) out.add(r.id);
+    });
+    return out;
+  } catch {
+    return null;
+  }
 }
 
 /** Versi satu registrasi — untuk komponen yang tak dapat peta dari induknya. */
