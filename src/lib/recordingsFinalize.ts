@@ -47,7 +47,12 @@ const STALE_MS = 20 * 60_000;           // manifest lebih muda = perekamnya mung
 const LOCK_FRESH_MS = 6 * 60_000;       // kunci lebih muda = pemanggilan lain sedang menggarap
 const RETRY_AFTER_MS = 3 * 60 * 60_000; // jeda sesudah gagal
 const MAX_ATTEMPTS = 6;
-const MAX_BYTES = 470 * 1024 * 1024;    // /tmp Vercel 500 MB
+/* [rekaman-sambung-besar-v1] /tmp Vercel cuma 500 MB, padahal kelas 90 menit
+   sudah ±560 MB — dulu rekaman sebesar itu dilewati selamanya (dan folder
+   potongannya dibuang storage-sweep sesudah 7 hari). Yang tidak muat di /tmp
+   sekarang disambung di memori fungsi (2 GB), jadi batasnya naik ke 1,2 GB. */
+const TMP_MAX_BYTES = 400 * 1024 * 1024;
+const MAX_BYTES = 1200 * 1024 * 1024;
 const TUS_CHUNK = 6 * 1024 * 1024;      // Supabase mewajibkan 6 MB per bagian
 const DASHBOARD_ORIGIN = "https://dashboard.linguo.id";
 
@@ -161,7 +166,7 @@ export async function listCandidates(sb: SupabaseClient = adminClient()): Promis
         const age = Date.now() - new Date(c.updatedAt).getTime();
         if (!(age > STALE_MS)) c.skip = "manifest masih segar — perekam mungkin masih jalan";
         else if (!/^0+\.(mp4|webm)$/i.test(parts[0].name)) c.skip = "potongan 0000 (kepala berkas) tidak ada";
-        else if (c.sizeBytes > MAX_BYTES) c.skip = `terlalu besar untuk /tmp server (${Math.round(c.sizeBytes / 1048576)} MB) — sambung manual dari Riwayat`;
+        else if (c.sizeBytes > MAX_BYTES) c.skip = `terlalu besar untuk server (${Math.round(c.sizeBytes / 1048576)} MB) — sambung manual dari Riwayat`;
         else if (lock?.startedAt && Date.now() - new Date(lock.startedAt).getTime() < LOCK_FRESH_MS && !lock.lastError) c.skip = "sedang digarap pemanggilan lain";
         else if (lock && lock.attempts >= MAX_ATTEMPTS) c.skip = `sudah ${lock.attempts}× gagal: ${lock.lastError ?? "?"}`;
         else if (lock?.lastAttemptAt && Date.now() - new Date(lock.lastAttemptAt).getTime() < RETRY_AFTER_MS) c.skip = `baru gagal ${lock.lastAttemptAt}: ${lock.lastError ?? "?"}`;
@@ -273,21 +278,25 @@ export async function finalizeOne(c: Candidate, sb: SupabaseClient = adminClient
     await writeLock(sb, c, lock);
 
     // 1. Unduh potongan berurutan ke /tmp (memori cuma sebesar satu potongan).
-    const ws = createWriteStream(tmp);
+    //    Yang tidak muat di /tmp ditahan di memori — lihat TMP_MAX_BYTES.
+    const mime = ext === "mp4" ? "video/mp4" : "video/webm";
+    const inMemory = c.sizeBytes > TMP_MAX_BYTES;
+    const held: Blob[] = [];
+    const ws = inMemory ? null : createWriteStream(tmp);
     let written = 0;
     for (const key of c.partKeys) {
       const { data, error } = await sb.storage.from(c.bucket).download(key);
       if (error || !data) throw new Error(`potongan ${key} tidak bisa dibaca: ${error?.message ?? "kosong"}`);
+      written += data.size;
+      if (!ws) { held.push(data); continue; }
       const bytes = Buffer.from(await data.arrayBuffer());
-      written += bytes.length;
       if (!ws.write(bytes)) await new Promise<void>((res) => ws.once("drain", res));
     }
-    await new Promise<void>((res, rej) => { ws.once("error", rej); ws.end(res); });
+    if (ws) await new Promise<void>((res, rej) => { ws.once("error", rej); ws.end(res); });
     if (!written) throw new Error("semua potongan kosong");
 
     // 2. Kepala MP4 ditulis ulang supaya bisa di-seek (tanpa transcode).
-    const mime = ext === "mp4" ? "video/mp4" : "video/webm";
-    const input = await openAsBlob(tmp, { type: mime });
+    const input = ws ? await openAsBlob(tmp, { type: mime }) : new Blob(held, { type: mime });
     let out: Blob = input;
     let durationSec = c.meta.durationSec > 0 ? c.meta.durationSec : 0;
     let seekable = false;
@@ -376,8 +385,12 @@ export async function finalizeRound(opts: { budgetMs: number; max?: number }): P
     if (results.filter((r) => r.key).length >= (opts.max ?? 2)) break;
     // Jangan mulai pekerjaan baru kalau sisa waktu tak cukup untuk ukuran ini
     // (≈ 3 MB/dtk konservatif: unduh + unggah lintas region).
+    // [rekaman-sambung-besar-v1] Pekerjaan PERTAMA satu putaran selalu dicoba:
+    // taksiran ini dulu menolak rekaman ≥ ±400 MB di setiap putaran (butuh
+    // > anggaran penuh), jadi rekaman terbesar tak pernah digarap sama sekali.
     const need = Math.max(30_000, (c.sizeBytes / (3 * 1024 * 1024)) * 1000 * 2);
-    if (Date.now() - t0 + need > opts.budgetMs) { results.push({ folder: c.folder, ok: false, ms: 0, error: "ditunda — sisa waktu pemanggilan tidak cukup" }); continue; }
+    const first = !results.some((r) => r.ms > 0);
+    if (!first && Date.now() - t0 + need > opts.budgetMs) { results.push({ folder: c.folder, ok: false, ms: 0, error: "ditunda — sisa waktu pemanggilan tidak cukup" }); continue; }
     results.push(await finalizeOne(c, sb));
   }
   return { candidates, results };

@@ -8,7 +8,16 @@
 // lewat net.http_post — BUKAN Vercel Cron (paket Hobby cuma boleh harian).
 //
 // SECURITY: wajib `Authorization: Bearer <RECORDINGS_FINALIZE_SECRET>` (atau
-// CRON_SECRET milik Vercel Cron, atau header `x-cron-secret`). Selain itu 401.
+// CRON_SECRET milik Vercel Cron, atau header `x-cron-secret`), ATAU kunci
+// service role Supabase. Selain itu 401.
+//
+// [rekaman-sambung-auth-v1] 12 Okt 2026 — sejak dipasang (11 Okt) pg_cron
+// mengirim Vault `cron_secret`, yang ternyata BUKAN nilai env CRON_SECRET
+// Vercel: tiap putaran dibalas 401 dan tak satu rekaman pun tersambung (cron
+// tetap tercatat "succeeded" — yang gagal ada di net._http_response). Sekarang
+// pg_cron membawa Vault `service_role_key` seperti job lain, dan kuncinya
+// diverifikasi ke Supabase — bukan dibandingkan sebagai string, karena proyek
+// ini punya dua kunci service role yang sama-sama sah (JWT lama & sb_secret_…).
 //
 // PARAMETER UJI:
 //   ?dry=1   → cuma daftar kandidat + alasan dilewati, tidak menyentuh apa pun
@@ -32,13 +41,31 @@ export const preferredRegion = "sin1";
 
 const BUDGET_MS = 270_000; // sisakan ruang di bawah maxDuration
 
-function authorized(req: NextRequest): boolean {
+async function authorized(req: NextRequest): Promise<boolean> {
   const bearer = (req.headers.get("authorization") ?? "").replace(/^Bearer\s+/i, "").trim();
   const given = bearer || (req.headers.get("x-cron-secret") ?? "").trim();
   if (!given) return false;
-  const secrets = [process.env.RECORDINGS_FINALIZE_SECRET, process.env.CRON_SECRET].filter((s): s is string => !!s);
+  const secrets = [process.env.RECORDINGS_FINALIZE_SECRET, process.env.CRON_SECRET, process.env.SUPABASE_SERVICE_ROLE_KEY].filter((s): s is string => !!s);
   const g = Buffer.from(given);
-  return secrets.some((s) => { const b = Buffer.from(s); return b.length === g.length && timingSafeEqual(b, g); });
+  if (secrets.some((s) => { const b = Buffer.from(s); return b.length === g.length && timingSafeEqual(b, g); })) return true;
+  return isServiceRole(given);
+}
+
+/** Endpoint admin auth hanya menjawab 200 untuk kunci service role (anon
+ *  ditolak), dan tanda tangannya diperiksa Supabase sendiri. */
+async function isServiceRole(token: string): Promise<boolean> {
+  const url = process.env.NEXT_PUBLIC_SUPABASE_URL;
+  if (!url || token.length < 40) return false;
+  try {
+    const res = await fetch(`${url}/auth/v1/admin/users?page=1&per_page=1`, {
+      headers: { Authorization: `Bearer ${token}`, apikey: token },
+      cache: "no-store",
+      signal: AbortSignal.timeout(8000),
+    });
+    return res.ok;
+  } catch {
+    return false;
+  }
 }
 
 function summarize(cands: Awaited<ReturnType<typeof listCandidates>>) {
@@ -50,7 +77,7 @@ function summarize(cands: Awaited<ReturnType<typeof listCandidates>>) {
 }
 
 async function handle(req: NextRequest) {
-  if (!authorized(req)) return NextResponse.json({ error: "unauthorized" }, { status: 401 });
+  if (!(await authorized(req))) return NextResponse.json({ error: "unauthorized" }, { status: 401 });
   const q = req.nextUrl.searchParams;
   const max = Math.max(1, Math.min(5, Number(q.get("max") || 2) || 2));
 

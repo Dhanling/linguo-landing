@@ -3,12 +3,12 @@
 -- https://linguo.id/api/cron/recordings-finalize (Next.js route di linguo-landing).
 -- Vercel Cron TIDAK dipakai (paket Hobby hanya mengizinkan jadwal harian).
 --
--- Autentikasi: header `x-cron-secret` = Vault `cron_secret` (rahasia yang sudah
--- dipakai pg_cron untuk Edge Function). Route menerimanya bila sama dengan env
--- CRON_SECRET di project Vercel linguo-landing. Kalau keduanya ternyata beda
--- (respons 401 di net._http_response), samakan: simpan nilai Vault `cron_secret`
--- sebagai env RECORDINGS_FINALIZE_SECRET (Production) di Vercel, atau buat
--- rahasia baru di kedua tempat dan ganti nama di bawah.
+-- Autentikasi: `Authorization: Bearer` = Vault `service_role_key` (sama seperti
+-- job pg_cron lain); route memverifikasinya ke Supabase.
+-- [rekaman-sambung-auth-v1] 12 Okt 2026: versi pertama mengirim Vault
+-- `cron_secret` lewat `x-cron-secret`, yang bukan nilai env CRON_SECRET Vercel
+-- → 401 di setiap putaran. Cek hasil: select status_code, content from
+-- net._http_response order by created desc — 202 {"accepted":true} = diterima.
 --
 -- Route membalas 202 seketika lalu menggarap di latar (maks ±4,5 menit per
 -- pemanggilan, 2 rekaman per putaran); kunci finalize-server.json di folder
@@ -22,9 +22,9 @@ select cron.schedule('recordings-finalize-server', '*/10 * * * *', $cron$
     url     := 'https://linguo.id/api/cron/recordings-finalize',
     headers := jsonb_build_object(
       'Content-Type', 'application/json',
-      'x-cron-secret', (
+      'Authorization', 'Bearer ' || (
         select decrypted_secret from vault.decrypted_secrets
-        where name = 'cron_secret' limit 1
+        where name = 'service_role_key' limit 1
       )
     ),
     body    := '{}'::jsonb,
