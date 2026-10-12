@@ -12,7 +12,7 @@ var dark=localStorage.getItem("lms-dark-mode")==="1";
 var d=document.documentElement;d.classList.toggle("lms-dark",dark);
 var bg=dark?"#000000":"#EEF1F4";d.style.backgroundColor=bg;
 var el=document.getElementById("boot-splash");
-if(el){el.style.background=bg;var im=el.querySelector("img");if(im&&dark)im.src="/images/logo-linguo-white-full.png";}
+if(el){el.style.background=bg;}
 var done=false;
 window.__bootSplashDismiss=function(){if(done)return;done=true;var e=document.getElementById("boot-splash");if(!e)return;e.style.opacity="0";setTimeout(function(){e.remove();d.style.backgroundColor="";},260);};
 setTimeout(window.__bootSplashDismiss,8000);

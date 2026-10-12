@@ -37,7 +37,7 @@ export default function NoIndexLayout({ children }: { children: React.ReactNode 
         style={{ position: "fixed", inset: 0, zIndex: 2147483000, background: "#EEF1F4", display: "flex", alignItems: "center", justifyContent: "center", transition: "opacity .22s ease-out", pointerEvents: "none" }}
       >
         {/* eslint-disable-next-line @next/next/no-img-element */}
-        <img src="/images/full-logo-linguo-hijau.png" alt="" style={{ width: 132, height: "auto" }} />
+        <img src="/images/maskot-loading.webp" alt="" width={96} height={101} style={{ width: 96, height: "auto" }} /> {/* [boot-splash-maskot-v1] maskot animasi, transparan → cocok terang & gelap; 96px (sumber 202px) supaya tajam di layar retina */}
       </div>
       <script dangerouslySetInnerHTML={{ __html: AKUN_BOOT_SCRIPT }} />
       {children}
