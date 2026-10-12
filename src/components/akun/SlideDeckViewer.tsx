@@ -15,6 +15,7 @@ import {
 import type { MateriSlide, SlideType } from "@/lib/materiSlides";
 import { useT } from "@/lib/uiLang"; // [ui-lang-switcher-v1]
 import { SLIDE_TYPE_LABEL } from "@/lib/materiSlides";
+import { RectFlag } from "@/components/RectFlag";
 // [slide-tts-v1] Mesin & cache TTS yang SAMA dengan reader e-book new edition
 // (memori → Cache API → CDN bucket `tts-cache` → /api/tts). Kata yang pernah
 // dibunyikan siapa pun — di e-book maupun di slide — tidak disintesis ulang.
@@ -487,15 +488,18 @@ export function SlideCard({ s, showAnswers, lang, className = "" }: {
         <img src={LOGO} alt="Linguo" className={`absolute z-10 w-auto select-none ${sampul && s.ruang !== "kiri" ? "right-[5.8%] top-[7.6%] h-[8%]" : "right-[3%] top-[4.5%] h-[9%]"}`} />
       )}
 
+      {judul && s.sublevel && (
+        <div data-slide-cover-badge className="absolute left-[4cqw] top-[4cqh] z-20 inline-flex items-center gap-[0.8cqw] rounded-[1cqw] px-[1.2cqw] py-[0.8cqh] text-[1.6cqw] font-extrabold shadow-sm"
+          style={{ background: "#fff", color: "#0E7C7B" }}>
+          {s.flagCode && <RectFlag code={s.flagCode} h={24} className="!h-[2.4cqw] !w-[3.4cqw] !rounded-[0.45cqw] [&_svg]:!h-full [&_svg]:!w-full" />}
+          <span>{s.sublevel}</span>
+        </div>
+      )}
       <div className="relative min-h-0 flex-1"><SlideBody s={s} kunci={showAnswers} lang={lang} /></div>
       {showAnswers && <KunciJawaban s={s} />}
 
       <div className="relative flex shrink-0 items-center justify-between px-[6cqw] py-[1.2cqh] text-[clamp(0.5rem,1.05cqw,0.72rem)] font-semibold"
-        style={judul && sampul
-          ? { color: "#0E7C7B" }
-          : judul
-          ? { color: "rgba(255,255,255,0.85)" }
-          : { color: "#0E7C7B", background: "rgba(255,255,255,0.6)", borderTop: `1px solid ${tema.lembut}` }}>
+        style={{ color: "#0E7C7B", background: "#fff", borderTop: `1px solid ${tema.lembut}` }}>
         <span className="inline-flex items-center gap-[0.5em]">
           {judul ? null : <img src={LOGO} alt="" className="h-[1.3em] w-auto" />}
           Linguo · Online Language School · linguo.id

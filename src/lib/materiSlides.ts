@@ -88,6 +88,9 @@ export interface QuizItem {
 export interface MateriSlide {
   type: SlideType;
   heading: string;
+  /** Identitas cover ikut tersimpan saat materi dibagikan ke siswa. */
+  sublevel?: string;
+  flagCode?: string;
   subheading?: string;
   /** points & recap */
   points?: string[];
@@ -201,6 +204,10 @@ export function normalizeSlide(raw: any): MateriSlide | null {
   if (!raw || typeof raw !== "object") return null;
   const type: SlideType = SLIDE_TYPES.includes(raw.type) ? raw.type : "points";
   const s: MateriSlide = { type, heading: str(raw.heading) };
+  const sublevel = str(raw.sublevel).toUpperCase();
+  if (/^[ABC][12](?:\.\d+)?$/.test(sublevel)) s.sublevel = sublevel;
+  const flagCode = str(raw.flagCode).toLowerCase();
+  if (/^(?:[a-z]{2}|lang:[a-z]{2})$/.test(flagCode)) s.flagCode = flagCode;
   const sub = str(raw.subheading);
   if (sub) s.subheading = sub;
 
