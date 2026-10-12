@@ -2014,12 +2014,23 @@ function EnrollWizard({ showEnroll, setShowEnroll, enrollStep, setEnrollStep, en
     const searchLangs = langAliases[enrollLang] || [enrollLang];
     supabase
       .from("regular_batches")
-      .select("id, batch_code, language, session_day, session_start_time, start_date, end_date, total_sessions, current_enrolled, max_capacity, status")
+      .select("id, batch_code, language, session_day, session_start_time, start_date, end_date, total_sessions, current_enrolled, max_capacity, status, closes_at")
       .in("language", searchLangs)
       .eq("status", "Open")
+      // [reguler-okt-tiga-bahasa-v1] hormati tombol "hide dari website" di dashboard
+      // dan batas pendaftaran. Dulu batch yang disembunyikan / sudah lewat tenggat
+      // (termasuk siklus bulan lalu yang statusnya masih "Open") tetap bisa dipilih
+      // di sini, padahal di /jadwal-kelas-reguler sudah tidak tampil.
+      .eq("is_published", true)
       .order("start_date", { ascending: true })
       .then(({ data }: any) => {
-        setAvailBatches(data || []);
+        // Batas daftar = closes_at kalau diisi, kalau tidak akhir hari mulai kelas
+        // (WIB) — aturan yang sama dengan halaman jadwal.
+        const masihBuka = (b: any) =>
+          (b.closes_at
+            ? new Date(b.closes_at).getTime()
+            : new Date(`${String(b.start_date).slice(0, 10)}T23:59:59+07:00`).getTime()) >= Date.now();
+        setAvailBatches((data || []).filter(masihBuka));
         setLoadingBatches(false);
       });
   }, [enrollProgram, enrollLang, showEnroll, supabase]);
