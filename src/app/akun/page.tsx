@@ -5764,7 +5764,8 @@ export default function AkunPage() {
                                     {langPhoto && (
                                       <>
                                         <img src={langPhoto} alt="" aria-hidden className="pointer-events-none absolute inset-0 h-full w-full object-cover" onError={(e) => { (e.currentTarget as HTMLImageElement).style.display = "none"; }} />
-                                        <div className="pointer-events-none absolute inset-0" style={{ background: "linear-gradient(105deg, rgba(15,71,65,0.88) 0%, rgba(22,121,110,0.66) 46%, rgba(22,121,110,0.28) 100%)" }} />
+                                        {/* [hero-foto-tanpa-hijau-v1] tirai netral (bukan teal) supaya foto tampil warna aslinya; cukup gelap di kiri agar teks putih terbaca */}
+                                        <div className="pointer-events-none absolute inset-0" style={{ background: "linear-gradient(105deg, rgba(0,0,0,0.62) 0%, rgba(0,0,0,0.38) 46%, rgba(0,0,0,0.12) 100%)" }} />
                                       </>
                                     )}
                                     {/* [materi-flag-pie-v1] ubin huruf diganti bendera, sama seperti daftar kelas di kiri */}
