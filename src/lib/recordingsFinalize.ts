@@ -123,9 +123,26 @@ async function readJson<T>(sb: SupabaseClient, bucket: string, key: string): Pro
 /** Semua folder potongan yang tertinggal, lengkap dengan alasan kalau belum layak digarap. */
 export async function listCandidates(sb: SupabaseClient = adminClient()): Promise<Candidate[]> {
   const out: Candidate[] = [];
+  /* [rekaman-sambung-pindai-v1] Room yang punya folder potongan ditanyakan ke
+     DB (RPC vc_recording_parts_rooms — sql/20261012-recording-parts-rooms.sql).
+     Dulu SEMUA folder room dibuka satu per satu lewat API Storage: uji kering
+     12 Okt 2026 tidak selesai dalam 60 detik, jadi jatah waktu satu putaran
+     habis untuk memindai. RPC gagal/belum terpasang → pindaian penuh lama. */
+  let known: Map<string, string[]> | null = null;
+  try {
+    const { data, error } = await sb.rpc("vc_recording_parts_rooms");
+    if (error) throw new Error(error.message);
+    known = new Map();
+    for (const r of (data ?? []) as { bucket_id: string; room: string }[]) {
+      if (r.room) known.set(r.bucket_id, [...(known.get(r.bucket_id) ?? []), r.room]);
+    }
+  } catch (e) {
+    console.warn("[rekaman-sambung-server] RPC daftar room gagal — pindai semua folder", e);
+  }
   for (const bucket of BUCKETS) {
     let rooms: Entry[];
-    try { rooms = await listAll(sb, bucket, PREFIX); } catch { continue; } // bucket lama bisa saja sudah tak ada
+    if (known) rooms = (known.get(bucket) ?? []).map((name) => ({ name, id: null }));
+    else try { rooms = await listAll(sb, bucket, PREFIX); } catch { continue; } // bucket lama bisa saja sudah tak ada
     for (const room of rooms) {
       if (room.id !== null || !room.name) continue; // hanya folder room
       const roomPath = `${PREFIX}/${room.name}`;
