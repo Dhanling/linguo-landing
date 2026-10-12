@@ -88,6 +88,8 @@ export const LANG_PHOTO_SLUG: Record<string, string> = {
   serbia: "serbian", serbian: "serbian",
   yunani: "greek", greek: "greek", greece: "greek",
   thai: "thai", thailand: "thai",
+  // [lang-foto-khmer-v1] Angkor Wat — foto kiriman owner 13 Okt 2026.
+  khmer: "khmer", kamboja: "khmer", cambodian: "khmer", "khmer (kamboja)": "khmer",
   tagalog: "filipino", filipina: "filipino", filipino: "filipino",
   // [lang-flag-bosnia-v1] Foto: Blagaj Tekija (rumah darwis di mata air Buna,
   // Herzegovina) — sumber Wikimedia Commons, lisensi CC0.
