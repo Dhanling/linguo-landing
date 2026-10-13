@@ -48,6 +48,7 @@ import { recordAdAttribution } from "@/lib/adAttributionServer";
 // tapi endpoint ini bisa dipanggil langsung — tanpa ini lahir invoice & lead
 // "Kelas Reguler Danish" untuk batch yang tidak pernah ada.
 import { programLangRejection } from "@/lib/programLanguages";
+import { regulerClosedRejection } from "@/lib/regulerOpen";
 import { xenditMobile } from "@/lib/xenditMobile";
 
 const XENDIT_SECRET_KEY = process.env.XENDIT_SECRET_KEY!;
@@ -246,6 +247,11 @@ export async function POST(req: NextRequest) {
     const langRejection = programLangRejection(program, language);
     if (langRejection) {
       return NextResponse.json({ error: langRejection }, { status: 400 });
+    }
+    // [reguler-buka-dari-batch-v1] batch reguler bahasa ini sedang tidak dibuka.
+    const closedRejection = await regulerClosedRejection(program, language);
+    if (closedRejection) {
+      return NextResponse.json({ error: closedRejection, code: "reguler_tutup" }, { status: 400 });
     }
 
     // ── 2. Hitung harga SERVER-SIDE (anti-tamper) ──────────────────────────

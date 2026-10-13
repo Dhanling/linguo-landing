@@ -3,6 +3,7 @@ import { ebookSkuPrices } from "@/lib/ebookPricing";
 import { getPlan, hargaFinal, type LmsPlanId } from "../../../data/lms-pricing";
 import { recordAdAttribution } from "@/lib/adAttributionServer";
 import { promoAmountFor } from "@/lib/promoMerdeka";
+import { regulerClosedRejection } from "@/lib/regulerOpen";
 import { createClient } from "@supabase/supabase-js";
 import { KODE_WA_WAJIB, PESAN_WA_WAJIB, normalisasiWa, pastikanWaPembeli } from "@/lib/waPembeli";
 import {
@@ -213,6 +214,16 @@ export async function POST(req: NextRequest) {
     const product = PRODUCT_PRICES[productKey || ""];
     if (!product) {
       return NextResponse.json({ error: "Produk tidak ditemukan" }, { status: 400 });
+    }
+
+    // [reguler-buka-dari-batch-v1] Kelas Reguler hanya bisa dibayar untuk bahasa
+    // yang batch-nya sedang dibuka (Bug Tracker e384f3be: Reguler Tagalog masih
+    // terbayar padahal Batch Oktober hanya Mandarin, Prancis, Jerman).
+    if (String(productKey || "").startsWith("reguler")) {
+      const closedRejection = await regulerClosedRejection("Kelas Reguler", language);
+      if (closedRejection) {
+        return NextResponse.json({ error: closedRejection, code: "reguler_tutup" }, { status: 400 });
+      }
     }
 
     // simulasi-paywall-v1: label varian (ITP/iBT/Academic/General) hanya utk

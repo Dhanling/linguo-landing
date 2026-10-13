@@ -1,5 +1,6 @@
 import { NextRequest, NextResponse, after } from "next/server";
 import { programLangRejection } from "@/lib/programLanguages";
+import { regulerClosedRejection } from "@/lib/regulerOpen";
 import { createClient } from "@supabase/supabase-js";
 import { fotoOauthAsli } from "@/lib/oauthAvatar";
 import { KODE_WA_WAJIB, PESAN_WA_WAJIB, pastikanWaPembeli } from "@/lib/waPembeli";
@@ -185,6 +186,13 @@ export async function POST(req: NextRequest) {
       const langRejection = programLangRejection(product, language);
       if (langRejection) {
         return NextResponse.json({ error: langRejection }, { status: 400 });
+      }
+      // [reguler-buka-dari-batch-v1] Bahasanya memang punya kelas reguler, tapi
+      // batch-nya sedang tidak dibuka (disembunyikan / lewat tenggat) → tolak
+      // sebelum baris registrasi & invoice dibuat (Bug Tracker e384f3be).
+      const closedRejection = await regulerClosedRejection(product, language);
+      if (closedRejection) {
+        return NextResponse.json({ error: closedRejection, code: "reguler_tutup" }, { status: 400 });
       }
     }
 

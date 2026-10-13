@@ -7,6 +7,7 @@ import Link from "next/link"; // [kelas-detail-page-v1] card kelas → halaman /
 import { classRoomUrl, isJoinable, classRoomUrlForRoom, pickClassRoomId } from "@/lib/classRoom"; // [kelas-video-siswa-v1]
 import { LANG_FLAGS, getFlagUrl, getLangPhoto, langGlyph } from "@/lib/lang-visuals"; // [kelas-detail-page-v1]
 import { baseLanguage, displayLanguage, regulerLangName } from "@/lib/classLanguage"; // [reguler-english-conversation-v1]
+import { useOpenRegulerLangs } from "@/lib/useOpenRegulerLangs"; // [reguler-buka-dari-batch-v1]
 import { REGULER_LANGS } from "@/lib/programLanguages"; // [reguler-lang-gate-server-v1] bahasa yang punya batch reguler — satu sumber dengan funnel landing
 import { languageSlug } from "@/lib/languageSlug"; // [materi-bahasa-siswa-v1] nama bahasa (EN/ID/nama kelas) → slug kanonik
 import {
@@ -615,7 +616,11 @@ function OnboardingWizard({ user, studentId, onDone }: {
   const firstName = (user?.user_metadata?.full_name || user?.email || "Kamu").split(" ")[0];
   const isTestPrep = program === "English Test Preparation";
   const isReguler = program === "Kelas Reguler";
-  const availLangs = (LANGS_BY_PROGRAM[program] || []).filter(l => !search || l.toLowerCase().includes(search.toLowerCase()));
+  // [reguler-buka-dari-batch-v1] Reguler: hanya bahasa yang batch-nya sedang dibuka.
+  const openRegulerLangs = useOpenRegulerLangs();
+  const availLangs = (LANGS_BY_PROGRAM[program] || [])
+    .filter(l => !isReguler || !openRegulerLangs || openRegulerLangs.includes(l))
+    .filter(l => !search || l.toLowerCase().includes(search.toLowerCase()));
   // [linguo-patch:onboarding-lang-catalog-v1] tampilan bahasa dikelompokkan per region (khusus Kelas Private)
   const langGroups = program === "Kelas Private"
     ? PRIVATE_LANG_GROUPS
@@ -2122,8 +2127,14 @@ function EnrollWizard({ showEnroll, setShowEnroll, enrollStep, setEnrollStep, en
     .reduce((s: number, r: any) => s + (r.total_amount || 0), 0) || 0;
 
   // Use LANGS_BY_PROGRAM for enrollment (not all languages)
-  const enrollAvailLangs = (LANGS_BY_PROGRAM[enrollProgram] || POPULAR_LANGUAGES).filter(l => l.toLowerCase().includes(langSearch.toLowerCase()));
   const isRegulerEnroll = enrollProgram === "Kelas Reguler";
+  // [reguler-buka-dari-batch-v1] Bug Tracker e384f3be — bahasa reguler yang batch-nya
+  // tidak dibuka tidak ditawarkan, dan ringkasan tanpa batch terbuka tidak bisa dibayar.
+  const openRegulerLangs = useOpenRegulerLangs();
+  const enrollAvailLangs = (LANGS_BY_PROGRAM[enrollProgram] || POPULAR_LANGUAGES)
+    .filter(l => !isRegulerEnroll || !openRegulerLangs || openRegulerLangs.includes(l))
+    .filter(l => l.toLowerCase().includes(langSearch.toLowerCase()));
+  const regulerTutup = isRegulerEnroll && !loadingBatches && availBatches.length === 0;
   // Reguler & Test Prep skip jadwal step (jadwal fix per batch)
   const TOTAL_STEPS = isTestPrep ? 4 : isRegulerEnroll ? 4 : 5;
 
@@ -2546,8 +2557,8 @@ function EnrollWizard({ showEnroll, setShowEnroll, enrollStep, setEnrollStep, en
                     ) : (
                       <p className="flex items-start gap-1.5 text-xs text-blue-700">
                         <ClipboardList className="mt-0.5 h-3.5 w-3.5 shrink-0" strokeWidth={2} />
-                        <span>Belum ada batch {regulerLangName(enrollLang)} yang dibuka. Admin akan menghubungi kamu via WhatsApp begitu batch baru tersedia, atau kamu bisa{" "}
-                        <a href="/jadwal-kelas-reguler" target="_blank" className="underline font-semibold">cek jadwal lengkap</a>.</span>
+                        <span>Kelas Reguler {regulerLangName(enrollLang)} sedang tidak dibuka, jadi belum bisa didaftar atau dibayar.{" "}
+                        <a href="/jadwal-kelas-reguler" target="_blank" className="underline font-semibold">Cek bahasa yang sedang dibuka</a>, atau pilih Kelas Private untuk mulai kapan saja.</span>
                       </p>
                     )}
                   </div>
@@ -2577,7 +2588,7 @@ function EnrollWizard({ showEnroll, setShowEnroll, enrollStep, setEnrollStep, en
                 {/* Xendit Checkout Button — primary CTA */}
                 <button
                   onClick={handleXenditCheckout}
-                  disabled={isRegulerEnroll && !agreeReguler}
+                  disabled={(isRegulerEnroll && !agreeReguler) || regulerTutup}
                   className="flex items-center justify-center gap-2 w-full h-12 rounded-xl bg-teal-600 hover:bg-teal-700 text-white font-bold text-sm transition-colors shadow-lg shadow-teal-100 mb-2 disabled:opacity-40 disabled:pointer-events-none"
                 >
                   <CreditCard className="h-4 w-4 shrink-0" strokeWidth={2} />
@@ -2588,12 +2599,12 @@ function EnrollWizard({ showEnroll, setShowEnroll, enrollStep, setEnrollStep, en
                 </p>
                 {/* WA Button */}
                 <a href={`https://wa.me/6282116859493?text=${waMsg}`} target="_blank" rel="noopener noreferrer"
-                  onClick={(e) => { if (isRegulerEnroll && !agreeReguler) { e.preventDefault(); return; } handleConfirm(); }}
-                  className={`flex items-center justify-center gap-2 w-full h-12 rounded-xl bg-green-500 hover:bg-green-600 text-white font-bold text-sm transition-colors shadow-lg shadow-green-100 ${isRegulerEnroll && !agreeReguler ? "opacity-40 pointer-events-none" : ""}`}>
+                  onClick={(e) => { if ((isRegulerEnroll && !agreeReguler) || regulerTutup) { e.preventDefault(); return; } handleConfirm(); }}
+                  className={`flex items-center justify-center gap-2 w-full h-12 rounded-xl bg-green-500 hover:bg-green-600 text-white font-bold text-sm transition-colors shadow-lg shadow-green-100 ${(isRegulerEnroll && !agreeReguler) || regulerTutup ? "opacity-40 pointer-events-none" : ""}`}>
                   <svg className="w-5 h-5" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.117.554 4.104 1.523 5.824L0 24l6.349-1.499A11.944 11.944 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.793 9.793 0 01-5.001-1.372l-.36-.214-3.726.879.896-3.628-.235-.374A9.78 9.78 0 012.182 12C2.182 6.545 6.545 2.182 12 2.182c5.455 0 9.818 4.363 9.818 9.818 0 5.454-4.363 9.818-9.818 9.818z"/></svg>
                   Bayar via Transfer (Hubungi Admin WA)
                 </a>
-                <button onClick={() => { handleConfirm(); setTimeout(openEnrollWizard, 300); }}
+                <button disabled={regulerTutup} onClick={() => { if (regulerTutup) return; handleConfirm(); setTimeout(openEnrollWizard, 300); }}
                   className="flex w-full items-center justify-center gap-2 h-10 rounded-xl border-2 border-slate-200 text-teal-600 font-semibold text-sm hover:bg-teal-50 transition-colors">
                   <Plus className="h-4 w-4 shrink-0" strokeWidth={2.5} />
                   Selesai &amp; Tambah Kelas Lain

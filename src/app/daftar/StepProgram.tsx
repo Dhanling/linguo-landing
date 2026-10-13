@@ -24,6 +24,7 @@ import {
   type ProgramSlug,
 } from "@/lib/funnelRouting";
 import { Card, BackLink, Chosen, fmtRp, useQueryHints } from "./ui";
+import { useOpenRegulerLangs } from "@/lib/useOpenRegulerLangs";
 
 // Ringkasan kartu program. Harga WAJIB dari lib/trial-pricing (kategori bahasa
 // A–E), bukan angka hardcode — sumber yang sama dengan /harga & invoice.
@@ -92,6 +93,7 @@ function programMeta(slug: ProgramSlug, langEn: string) {
 }
 
 export default function StepProgram({ langEn }: { langEn: string }) {
+  const openReguler = useOpenRegulerLangs();
   const hints = useQueryHints();
   const langId = langNameId(langEn);
   const kursusSlug = kursusSlugOf(langEn);
@@ -109,7 +111,10 @@ export default function StepProgram({ langEn }: { langEn: string }) {
       </p>
 
       <div className="mt-5 flex flex-col gap-3">
-        {programsForLang(langEn).map((slug) => {
+        {programsForLang(langEn)
+          // [reguler-buka-dari-batch-v1] Reguler disembunyikan kalau batch bahasa ini tidak dibuka.
+          .filter((slug) => slug !== "reguler" || !openReguler || openReguler.includes(langEn))
+          .map((slug) => {
           const meta = programMeta(slug, langEn)!;
           return (
             <Link

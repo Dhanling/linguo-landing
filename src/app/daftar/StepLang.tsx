@@ -13,6 +13,7 @@ import Link from "next/link";
 import { Search } from "lucide-react";
 import { RectFlag } from "@/components/RectFlag";
 import { REGULER_LANGS } from "@/lib/programLanguages";
+import { useOpenRegulerLangs } from "@/lib/useOpenRegulerLangs";
 import { SEMI_PRIVATE_MIN, SEMI_PRIVATE_MAX } from "@/lib/trial-pricing";
 import { regulerLangName } from "@/lib/classLanguage";
 import {
@@ -38,11 +39,13 @@ export default function StepLang() {
   // pahamnya baru ketahuan di percakapan WhatsApp setelah bayar, itu sudah telat.
   const semiPrivateEntry = hints.program === "semi-private";
 
+  // [reguler-buka-dari-batch-v1] hanya bahasa yang batch regulernya sedang dibuka.
+  const openReguler = useOpenRegulerLangs();
   const pool = useMemo(() => {
-    if (regulerOnly) return REGULER_LANGS;
+    if (regulerOnly) return openReguler ? REGULER_LANGS.filter((l) => openReguler.includes(l)) : REGULER_LANGS;
     if (search.trim()) return [...new Set(LANG_CATEGORIES.flatMap((c) => c.langs))];
     return LANG_CATEGORIES.find((c) => c.label === activeTab)?.langs || [];
-  }, [regulerOnly, search, activeTab]);
+  }, [regulerOnly, search, activeTab, openReguler]);
 
   const filtered = search.trim()
     ? pool.filter((l) => l.toLowerCase().includes(search.toLowerCase()) || langNameId(l).toLowerCase().includes(search.toLowerCase()))
