@@ -236,7 +236,7 @@ export function normalizeSlide(raw: any): MateriSlide | null {
   // [slide-sampul-v1] Hanya berkas di /slide-cover — dek buatan AI atau baris
   // lama tak bisa menyelipkan gambar dari alamat lain.
   const cover = str(raw.cover);
-  if (/^\/slide-cover\/(?:(?:spanish-themes|spanish-v2|portuguese-br|mandarin-themes|dutch-(?:a1-[1234]|a2-[123]))\/)?[\w.-]+$/.test(cover)) {
+  if (/^\/slide-cover\/(?:(?:spanish-themes|spanish-v2|portuguese-br|mandarin-themes|dutch-(?:a1-[1234]|a2-[1234]))\/)?[\w.-]+$/.test(cover)) {
     s.cover = cover;
     if (raw.ruang === "kiri" && type !== "title") s.ruang = "kiri";
   }
