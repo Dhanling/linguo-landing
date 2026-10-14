@@ -23,7 +23,7 @@ const curriculum: LanguageCurriculum = {
             { number: 2, title: "Română — Romance Timur dengan Cases", topics: ["Family tree Romance", "Eastern Romance unique status", "Latin-bridge potential", "Cognate awareness"] },
             { number: 3, title: "Alfabet Român 31 Huruf", topics: ["A–Z + Ă Â Î Ș Ț", "Diakritik unique RO", "Pronunciation drill", "Spelling rules"] },
             { number: 4, title: "Vokal Khas — Ă, Â, Î", topics: ["Ă = schwa (e netral)", "Â = central vowel", "Î = same sound as Â (positional rule)", "Drill discrimination"] },
-            { number: 5, title: "**Enclitic Article — Pintu Masuk Română**", topics: ["Om → om-ul (orang itu)", "Casă → casa (rumah itu)", "Article = suffix, BUKAN prefix!", "Romance compare Spanish 'el hombre'"] },
+            { number: 5, title: "Enclitic Article — Pintu Masuk Română", topics: ["Om → om-ul (orang itu)", "Casă → casa (rumah itu)", "Article = suffix, BUKAN prefix!", "Romance compare Spanish 'el hombre'"] },
             { number: 6, title: "Article Masculin '-ul'", topics: ["Om-ul, băiat-ul, copil-ul", "Linking rules", "Drill 25 maskulin", "Pattern memorization"] },
             { number: 7, title: "Article Feminin '-a'", topics: ["Casă → casa, fată → fata", "-a replaces final vowel", "Drill 25 feminin", "Pattern check"] },
             { number: 8, title: "Article Neuter — Sg vs Pl", topics: ["Neuter behaves masculine singular", "Behaves feminine plural!", "Tren-ul (1 train), trenuri-le (trains)", "Unique gender"] },
