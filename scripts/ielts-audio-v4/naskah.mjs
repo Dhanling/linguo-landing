@@ -16,7 +16,7 @@ export const BARIS = [
   ["C", "[warmly] Of course.", { eja: "B R A T H W A I T E", j: "h" }],
   ["R", { eja: "B R A T H | W A I T E", j: "h" }, "[warmly] And your first name?"],
   ["C", "Daniel."],
-  ["R", "[clearly] Thank you. And your address, Daniel?"],
+  ["R", "[curious] Thank you. And your address, Daniel?"],
   ["C", "It's number forty-two, Fenwick Road. [casually] That's in Cowley."],
   ["R", "[checking] Fenwick — is that", { eja: "F E N W I C K", j: "h" }],
   ["C", "[laughs softly] That's right. People often put a G in it, but there isn't one. Forty-two, Fenwick Road."],
@@ -42,7 +42,7 @@ export const BARIS = [
   ["R", "That's it. One last thing, purely for our records — how did you hear about the course?"],
   ["C", "[thoughtfully] Well, a friend of mine did the pottery course here last year and said it was excellent, so I had a look at your website a while ago. But honestly, what actually made me pick up the phone this morning was a poster. There's one on the noticeboard in the library on Templar Road."],
   ["R", "[pleasantly surprised] A poster, then. [laughs] That's genuinely useful — we weren't sure anybody read them."],
-  ["C", "[laughs softly] Apparently we do."],
+  ["C", "[amused] Apparently we do."],
   ["R", "[cheerful] You're booked in, Daniel. Confirmation email this afternoon, and the number I have for you is", { eja: NO, j: "a" }, "See you on the sixteenth."],
   ["C", "[warmly] Thank you very much. Goodbye."],
 ];
