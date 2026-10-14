@@ -1,5 +1,6 @@
 /* linguo-patch:register-modal-brace-fix-v1 — restore '{' pembuka RegisterModal */
 /* linguo-patch:register-modal-required-v1 — validasi nama/bahasa/program wajib sebelum submit lead */
+/* linguo-patch:register-modal-etp-v1 — IELTS/TOEFL ambil batch dari etp_batches (bukan class_batches) */
 "use client";
 
 import { useState, useEffect } from "react";
@@ -17,6 +18,8 @@ import {
 } from "lucide-react";
 import { supabase } from "@/lib/supabase-client";
 import { useOverlayLock } from "@/lib/overlayStore";
+import RegisterEtpModal, { type EtpProgramLite } from "@/components/RegisterEtpModal";
+import { type EtpBatchRow, resolveEtpBatches, todayWIBISO } from "@/lib/etpBatches";
 
 // ─────────────────────────────────────────────────────────
 // TYPES
@@ -49,6 +52,33 @@ interface ClassBatch {
   day_time: string | null;
   quota: number | null;
   enrolled: number | null;
+}
+
+// [register-modal-etp-v1] Placement IELTS/TOEFL (level "ielts" / "toefl-itp") →
+// kelas grupnya = batch ETP (view etp_batches, sumber sama dgn /jadwal-kelas-reguler),
+// bukan class_batches. Dulu modal selalu "Batch baru belum dibuka" padahal ETP buka.
+function etpBadgeFor(level?: string): "IELTS" | "TOEFL" | null {
+  const l = (level || "").toLowerCase();
+  if (l.includes("ielts")) return "IELTS";
+  if (l.includes("toefl")) return "TOEFL";
+  return null;
+}
+
+function etpRowToProgram(row: EtpBatchRow): EtpProgramLite {
+  const start = new Date(String(row.start_date) + "T00:00:00");
+  return {
+    id: row.id,
+    title: row.title,
+    badge: row.badge,
+    subtitle: `Batch ${start.toLocaleDateString("id-ID", { month: "long", year: "numeric" })}`,
+    days: row.days,
+    time: row.time,
+    startDate: start.toLocaleDateString("id-ID", { day: "numeric", month: "long", year: "numeric" }),
+    sessions: row.total_sessions,
+    sessionMin: row.duration_min,
+    price: row.price,
+    color: row.color,
+  };
 }
 
 type Step = "choose" | "private" | "reguler" | "waitlist" | "success";
@@ -84,6 +114,11 @@ export default function RegisterModal({ open, onClose, data }: RegisterModalProp
   const [batches, setBatches] = useState<ClassBatch[]>([]);
   const [selectedBatchId, setSelectedBatchId] = useState<string | null>(null);
 
+  // ETP (IELTS/TOEFL) state
+  const etpBadge = etpBadgeFor(data.level);
+  const [etpRows, setEtpRows] = useState<EtpBatchRow[]>([]);
+  const [etpPick, setEtpPick] = useState<EtpProgramLite | null>(null);
+
   // [ling-hide-fab-overlay-v1] daftarin overlay global → sembunyiin FAB WhatsApp
   useOverlayLock(open);
 
@@ -102,6 +137,28 @@ export default function RegisterModal({ open, onClose, data }: RegisterModalProp
     if (step !== "reguler") return;
     setBatchesLoading(true);
     setBatches([]);
+
+    if (etpBadge) {
+      setEtpRows([]);
+      supabase
+        .from("etp_batches")
+        .select("*")
+        .eq("is_active", true)
+        .order("start_date", { ascending: true })
+        .then(({ data: rows, error: err }) => {
+          setBatchesLoading(false);
+          if (err) console.error("[etp_batches]", err);
+          const live = resolveEtpBatches((rows ?? []) as EtpBatchRow[], todayWIBISO());
+          setEtpRows(
+            live.filter(
+              (r) =>
+                (r.badge || "").toUpperCase().includes(etpBadge) &&
+                (r.current_enrolled ?? 0) < (r.max_capacity ?? 0)
+            )
+          );
+        });
+      return;
+    }
 
     let q = supabase
       .from("class_batches")
@@ -122,7 +179,7 @@ export default function RegisterModal({ open, onClose, data }: RegisterModalProp
       );
       setBatches(available as ClassBatch[]);
     });
-  }, [step, data.language, data.level]);
+  }, [step, data.language, data.level, etpBadge]);
 
   // ── Submit Private ──
   async function submitPrivate() {
@@ -212,6 +269,7 @@ export default function RegisterModal({ open, onClose, data }: RegisterModalProp
   }
 
   return (
+    <>
     <AnimatePresence>
       {open && (
         <motion.div
@@ -257,7 +315,23 @@ export default function RegisterModal({ open, onClose, data }: RegisterModalProp
                   error={error}
                 />
               )}
-              {step === "reguler" && (
+              {step === "reguler" && etpBadge && (
+                <EtpStep
+                  data={data}
+                  rows={etpRows}
+                  loading={batchesLoading}
+                  onBack={() => setStep("choose")}
+                  onPick={(row) => {
+                    const __miss = missingRequired(data);
+                    if (__miss) { setError(__miss); return; }
+                    setEtpPick(etpRowToProgram(row));
+                    onClose();
+                  }}
+                  onWaitlist={() => setStep("waitlist")}
+                  error={error}
+                />
+              )}
+              {step === "reguler" && !etpBadge && (
                 <RegulerStep
                   data={data}
                   batches={batches}
@@ -286,6 +360,12 @@ export default function RegisterModal({ open, onClose, data }: RegisterModalProp
         </motion.div>
       )}
     </AnimatePresence>
+    <RegisterEtpModal
+      program={etpPick}
+      onClose={() => setEtpPick(null)}
+      prefill={{ name: data.name, whatsapp: data.whatsapp, email: data.email }}
+    />
+    </>
   );
 }
 
@@ -523,6 +603,124 @@ function PrivateStep({
 // ─────────────────────────────────────────────────────────
 // STEP 2B: REGULER (BATCH PICKER)
 // ─────────────────────────────────────────────────────────
+
+// ─────────────────────────────────────────────────────────
+// STEP 2b: ETP (IELTS/TOEFL) — pilih batch etp_batches → modal bayar ETP
+// ─────────────────────────────────────────────────────────
+
+function EtpStep({
+  data,
+  rows,
+  loading,
+  onBack,
+  onPick,
+  onWaitlist,
+  error,
+}: {
+  data: PrefilledData;
+  rows: EtpBatchRow[];
+  loading: boolean;
+  onBack: () => void;
+  onPick: (row: EtpBatchRow) => void;
+  onWaitlist: () => void;
+  error: string;
+}) {
+  return (
+    <div>
+      <div className="bg-gradient-to-br from-blue-500 to-indigo-600 px-6 pt-8 pb-6 text-white">
+        <button
+          onClick={onBack}
+          className="text-xs opacity-90 hover:opacity-100 mb-2 transition-opacity"
+        >
+          ← Kembali
+        </button>
+        <h2 className="text-2xl font-extrabold leading-tight">Kelas Grup ETP</h2>
+        <p className="text-sm opacity-90 mt-1">
+          {data.recommendedProgram} · Pilih batch yang tersedia
+        </p>
+      </div>
+
+      <div className="p-6 space-y-4">
+        {loading && (
+          <div className="py-8 flex items-center justify-center text-gray-500">
+            <Loader2 className="w-5 h-5 animate-spin mr-2" /> Cek ketersediaan
+            batch...
+          </div>
+        )}
+
+        {!loading && rows.length === 0 && (
+          <div className="py-8 text-center">
+            <div className="inline-flex w-14 h-14 rounded-full bg-blue-100 items-center justify-center mb-3">
+              <Calendar className="w-6 h-6 text-blue-600" />
+            </div>
+            <p className="font-semibold text-gray-900 mb-1">
+              Batch baru belum dibuka
+            </p>
+            <p className="text-sm text-gray-600 mb-5">
+              Untuk {data.recommendedProgram} belum ada batch yang lagi
+              enrolling.
+              <br />
+              Mau saya kabarin pas dibuka?
+            </p>
+            <button
+              onClick={onWaitlist}
+              className="px-6 py-3 rounded-2xl bg-gradient-to-r from-blue-500 to-indigo-600 text-white font-bold text-sm hover:opacity-95 inline-flex items-center gap-1"
+            >
+              Daftar Waiting List <ChevronRight className="w-4 h-4" />
+            </button>
+          </div>
+        )}
+
+        {!loading && rows.length > 0 && (
+          <div className="space-y-2">
+            {rows.map((r) => {
+              const p = etpRowToProgram(r);
+              const slotsLeft = (r.max_capacity ?? 0) - (r.current_enrolled ?? 0);
+              return (
+                <button
+                  key={r.id}
+                  onClick={() => onPick(r)}
+                  className="w-full p-4 rounded-xl border-2 border-gray-200 hover:border-blue-500 hover:bg-blue-50/50 transition-all text-left"
+                >
+                  <div className="flex items-center justify-between gap-3">
+                    <div className="flex-1 min-w-0">
+                      <p className="font-bold text-sm text-gray-900 truncate">
+                        {r.title} · {p.subtitle}
+                      </p>
+                      <p className="text-xs text-gray-600 mt-0.5 inline-flex items-center gap-1">
+                        <Clock className="w-3 h-3" /> {r.days} · {r.time}
+                      </p>
+                      <p className="text-xs text-gray-600 mt-0.5 inline-flex items-center gap-1">
+                        <Calendar className="w-3 h-3" /> Mulai {p.startDate} · {r.total_sessions}× {r.duration_min} mnt
+                      </p>
+                    </div>
+                    <div className="text-right flex-shrink-0">
+                      <p className="text-sm font-bold text-gray-900">
+                        Rp {Number(r.price).toLocaleString("id-ID")}
+                      </p>
+                      <p className="text-[10px] text-blue-700 font-semibold">
+                        {slotsLeft} slot tersisa
+                      </p>
+                    </div>
+                  </div>
+                </button>
+              );
+            })}
+            <p className="text-xs text-gray-500 text-center pt-1">
+              Klik batch untuk lanjut ke pembayaran.
+            </p>
+          </div>
+        )}
+
+        {error && (
+          <p className="text-sm text-red-600 bg-red-50 px-3 py-2 rounded-lg">
+            {error}
+          </p>
+        )}
+      </div>
+    </div>
+  );
+}
 
 function RegulerStep({
   data,

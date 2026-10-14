@@ -34,6 +34,8 @@ export interface EtpProgramLite {
 interface Props {
   program: EtpProgramLite | null;
   onClose: () => void;
+  // Isian awal (mis. dari placement test /silabus/<tes>/coba) — opsional.
+  prefill?: { name?: string; whatsapp?: string; email?: string };
 }
 
 function formatIDR(amount: number): string {
@@ -58,7 +60,7 @@ function isValidEmail(email: string): boolean {
   return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
 }
 
-export default function RegisterEtpModal({ program, onClose }: Props) {
+export default function RegisterEtpModal({ program, onClose, prefill }: Props) {
   const [name, setName] = useState("");
   const [wa, setWa] = useState("");
   const [email, setEmail] = useState("");
@@ -68,12 +70,13 @@ export default function RegisterEtpModal({ program, onClose }: Props) {
   // Reset form tiap kali program berubah (modal dibuka untuk batch baru).
   useEffect(() => {
     if (program) {
-      setName("");
-      setWa("");
-      setEmail("");
+      setName(prefill?.name ?? "");
+      setWa(prefill?.whatsapp ?? "");
+      setEmail(prefill?.email ?? "");
       setError(null);
       setSubmitting(false);
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [program]);
 
   // Tutup dgn ESC
