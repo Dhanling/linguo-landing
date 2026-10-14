@@ -1,0 +1,48 @@
+// Audio Listening IELTS Unit 1 (eleven_v4, Dave + Alice). Jalankan dari folder kerja kosong:
+//   node gen.mjs && python rapikan(whisper, potong ekor tiap k/*.mp3 kalimat → .rapi.wav) && node susun.mjs keluar.mp3
+//   lalu unggah ke lms-audio/ebook/ielts-prep/unit-01.mp3 (cadangan v2: lama-20261014-v2/).
+// Naskah Unit 1 untuk eleven_v4: tiap baris = daftar bagian; string = kalimat (boleh bertag emosi),
+// { eja: "B R A | T" } = token dibaca satu-satu, "|" = jeda kelompok.
+export const SUARA = { R: "Xb7hH8MSUJpSbSDYk0k2" /* Alice */, C: "CYw3kZ02Hs0563khs1Fj" /* Dave */ };
+const NO = "oh one eight six five | seven seven four | three two eight";
+export const BARIS = [
+  ["R", "[cheerful] Good morning, Riverbank Community Centre, Kate speaking. How can I help?"],
+  ["C", "[slightly nervous] Hello. I'd like to sign up for one of your evening courses — [hopeful] the photography one, if there are still places."],
+  ["R", "Digital Photography, Wednesday evenings? [thoughtfully] Let me have a look. [pleased] Yes, we've got four places left. I can take your details over the phone now, if that suits you."],
+  ["C", "[relieved] That would be great, thanks."],
+  ["R", "[businesslike] Right. Can I start with your family name?"],
+  ["C", "[politely] It's Brathwaite."],
+  ["R", "Could you spell that for me?"],
+  ["C", "[warmly] Of course.", { eja: "B R A T H W A I T E", j: "h" }],
+  ["R", { eja: "B R A T H | W A I T E", j: "h" }, "[warmly] And your first name?"],
+  ["C", "Daniel."],
+  ["R", "[clearly] Thank you. And your address, Daniel?"],
+  ["C", "It's number forty-two, Fenwick Road. [casually] That's in Cowley."],
+  ["R", "[checking] Fenwick — is that", { eja: "F E N W I C K", j: "h" }],
+  ["C", "[laughs softly] That's right. People often put a G in it, but there isn't one. Forty-two, Fenwick Road."],
+  ["R", "Lovely. And a phone number where we can reach you during the day?"],
+  ["C", "[thinking] The best one is my work number. It's", { eja: "oh one eight six five | seven seven four | two three eight", j: "a" },
+        "[sheepish] Sorry — [laughs softly] I've just given you my old extension.", { eja: "seven seven four | three two eight", j: "a" }],
+  ["R", "So that's", { eja: NO, j: "a" }, "[friendly] I'll read it back at the end as well. Now, a couple more questions. We ask everybody what they do for a living — some courses fill up with people from the same profession and we like to mix the groups a bit."],
+  ["C", "I'm a dental nurse. I work at the surgery on Marsh Lane."],
+  ["R", "A dental nurse. Thank you. Now, the course itself. It begins on Wednesday the ninth of October — [hesitant] no, wait, that's not right. The ninth is the beginners' drawing class. Photography starts a week later, on the sixteenth. Half past six until half past eight."],
+  ["C", "The sixteenth, half six. Fine. [curious] And how long does it run for?"],
+  ["R", "Ten weeks. [apologetic] Sorry, I'm doing it again — ten weeks is the daytime course. The evening group runs for eight weeks, because we lose a fortnight over Christmas."],
+  ["C", "Eight weeks. And the fee?"],
+  ["R", "The full fee for the eight sessions is a hundred and eight pounds. [curious] But can I ask, do you live in the borough?"],
+  ["C", "I do, yes. [unsure] Cowley is inside it, isn't it?"],
+  ["R", "[reassuring] It is, so you pay the resident rate, which is ninety-six pounds. You can pay online tonight or at the desk on the first evening."],
+  ["C", "Ninety-six. I'll do it online. [a bit embarrassed] What about equipment? I've only got an old camera."],
+  ["R", "[reassuring] You genuinely don't need an expensive one. A phone camera is fine for the first few weeks, and the tutor lends out two proper cameras for people who want to try them. [chuckles] Everybody asks about tripods — you don't need to bring one, we've got a cupboard full. [serious] The one thing you must bring every week is a memory card, because we copy your photographs onto the centre's computers at the end of each session."],
+  ["C", "A memory card. Noted. Anything else?"],
+  ["R", "[lightly] A notebook if you like, but that's up to you."],
+  ["C", "And where do I go on the first evening?"],
+  ["R", "[emphatic] Ah — this is new this term, so listen carefully. The class has always been in the Ashcroft Room, downstairs on the left. But the Ashcroft is being redecorated until February, so photography has moved upstairs, into the Garden Room. There's a lift by the reception desk if you need it."],
+  ["C", "Upstairs, the Garden Room."],
+  ["R", "That's it. One last thing, purely for our records — how did you hear about the course?"],
+  ["C", "[thoughtfully] Well, a friend of mine did the pottery course here last year and said it was excellent, so I had a look at your website a while ago. But honestly, what actually made me pick up the phone this morning was a poster. There's one on the noticeboard in the library on Templar Road."],
+  ["R", "[pleasantly surprised] A poster, then. [laughs] That's genuinely useful — we weren't sure anybody read them."],
+  ["C", "[laughs softly] Apparently we do."],
+  ["R", "[cheerful] You're booked in, Daniel. Confirmation email this afternoon, and the number I have for you is", { eja: NO, j: "a" }, "See you on the sixteenth."],
+  ["C", "[warmly] Thank you very much. Goodbye."],
+];
