@@ -1,6 +1,4 @@
-// Audio Listening IELTS Unit 1 (eleven_v4, Dave + Alice). Jalankan dari folder kerja kosong:
-//   node gen.mjs && python rapikan(whisper, potong ekor tiap k/*.mp3 kalimat → .rapi.wav) && node susun.mjs keluar.mp3
-//   lalu unggah ke lms-audio/ebook/ielts-prep/unit-01.mp3 (cadangan v2: lama-20261014-v2/).
+// Audio Listening IELTS Unit 1 (eleven_v4, Dave + Alice). Cara jalan: lihat gen.mjs.
 // Naskah Unit 1 untuk eleven_v4: tiap baris = daftar bagian; string = kalimat (boleh bertag emosi),
 // { eja: "B R A | T" } = token dibaca satu-satu, "|" = jeda kelompok.
 export const SUARA = { R: "Xb7hH8MSUJpSbSDYk0k2" /* Alice */, C: "CYw3kZ02Hs0563khs1Fj" /* Dave */ };
