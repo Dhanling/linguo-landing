@@ -4,6 +4,8 @@ import { execFileSync } from "node:child_process";
 import { SUARA, BARIS } from "./naskah.mjs";
 const env = readFileSync("/Users/muhamadlutfiramadhani/linguo-landing/.env.local", "utf8");
 const KEY = env.match(/^ELEVENLABS_API_KEY=(.*)$/m)[1].trim();
+// "I." sendirian dibaca v4 seperti "one" → klip huruf I diganti potongan "I" dari kalimat penutur sendiri
+// (Dave: k/23-0 "I do" 0–0,26 dtk; Alice: k/2-0 "I can" 7,24–7,46 dtk), atempo 0,7–0,8, gain disamakan.
 const UCAP = { W: "Double-u.", H: "Aitch." };
 async function tts(id, text, f) {
   for (let coba = 0; ; coba++) {
