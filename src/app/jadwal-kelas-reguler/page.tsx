@@ -4,6 +4,7 @@ import BreadcrumbLd from "@/components/BreadcrumbLd"; // [aeo-schema-v1]
 import { createClient } from "@supabase/supabase-js";
 import JadwalKelasRegulerClient from "./JadwalKelasRegulerClient";
 import { todayWIBISO } from "@/lib/etpBatches";
+import { isRegulerLang } from "@/lib/programLanguages";
 
 export const metadata: Metadata = {
   title: "Jadwal Kelas Reguler — Linguo.id",
@@ -59,7 +60,8 @@ async function getBatches() {
     return [];
   }
 
-  const rows = (data || []).filter((b: any) => b.actual_enrolled < b.max_capacity);
+  // Pendaftaran reguler hanya dibuka untuk bahasa di REGULER_LANGS.
+  const rows = (data || []).filter((b: any) => b.actual_enrolled < b.max_capacity && isRegulerLang(b.language));
 
   // Siklus lama (mis. AUG26) kadang masih `is_published` walau kelasnya sudah
   // jalan. Batch semacam itu cuma berguna kalau bahasanya belum punya batch

@@ -12,6 +12,7 @@
 // tidak muncul sama sekali.
 import { NextResponse } from "next/server";
 import { createClient } from "@supabase/supabase-js";
+import { isRegulerLang } from "@/lib/programLanguages";
 
 export const revalidate = 300;
 
@@ -39,7 +40,7 @@ export async function GET() {
     // regDeadline() di halaman /jadwal-kelas-reguler biar angkanya tidak beda.
     const deadline = (b: any) => new Date(b.closes_at || b.start_date).getTime();
     const buka = (data || []).filter(
-      (b: any) => b.actual_enrolled < b.max_capacity && deadline(b) > now,
+      (b: any) => b.actual_enrolled < b.max_capacity && deadline(b) > now && isRegulerLang(b.language),
     );
 
     if (buka.length === 0) {
