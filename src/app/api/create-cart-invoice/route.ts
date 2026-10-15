@@ -88,7 +88,15 @@ export function OPTIONS(req: NextRequest) {
 }
 
 export async function POST(req: NextRequest) {
-  const res = await buatInvoice(req);
+  // Tanpa try/catch, exception tak terduga jadi 500 TANPA header CORS → browser
+  // dashboard cuma melihat "Failed to fetch" dan penyebab aslinya hilang.
+  let res: NextResponse;
+  try {
+    res = await buatInvoice(req);
+  } catch (e) {
+    console.error("[create-cart-invoice] error tak terduga:", e);
+    res = tolak("Server gagal memproses invoice — coba lagi sebentar.", 500);
+  }
   for (const [k, v] of Object.entries(corsUntuk(req))) res.headers.set(k, v);
   return res;
 }
