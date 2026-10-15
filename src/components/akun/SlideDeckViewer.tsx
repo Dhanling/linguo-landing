@@ -88,7 +88,9 @@ function Ucap({ teks, lang, kalimat = true }: { teks: string; lang?: string | nu
     document.addEventListener("pointerdown", tutup);
     return () => document.removeEventListener("pointerdown", tutup);
   }, [adaTip]);
-  if (!lang || !bisaDibunyikan(lang)) return <>{teks}</>;
+  // [slide-rtl-v1] dir="auto": kalimat Arab/Ibrani/Persia mengalir kanan-ke-kiri
+  // dengan tanda baca di tempat yang benar, tanpa membalik tata letak kartu.
+  if (!lang || !bisaDibunyikan(lang)) return <span dir="auto">{teks}</span>;
 
   const bukaTip = (kata: string, el: HTMLElement) => {
     const kartu = el.closest("[data-slide-card]");
@@ -121,7 +123,7 @@ function Ucap({ teks, lang, kalimat = true }: { teks: string; lang?: string | nu
   const banyakKata = bagian.filter((b) => /\p{L}/u.test(b)).length > 1;
 
   return (
-    <span>
+    <span dir="auto">
       {bagian.map((b, i) => {
         const kata = b.replace(TEPI, "");
         if (!/\p{L}/u.test(kata)) return b;
