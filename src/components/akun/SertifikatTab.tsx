@@ -16,6 +16,7 @@ import {
 } from "lucide-react";
 // [sertifikat-banner-foto-v1] foto stok bahasa — sumber sama dgn kartu kelas di Beranda
 import { getLangPhoto } from "@/lib/lang-visuals";
+import QRCode from "qrcode"; // [sertifikat-qr-verifikasi-v1]
 import { tr, useT, useUiLang, type UiLang } from "@/lib/uiLang"; // [ui-lang-switcher-v1]
 
 // ── lazy-load CDN sekali doang -> nol npm dep, workflow "cp 1 file" tetep aman. ──
@@ -638,6 +639,19 @@ function IssuedDetail({ ct, studentName, defaultName, onSaveName }: { ct: Cert; 
   const cardRef = useRef<HTMLDivElement>(null);
   const [pdfLoading, setPdfLoading] = useState(false);
   const [verifyOpen, setVerifyOpen] = useState(false);
+  // [sertifikat-qr-verifikasi-v1] TTD elektronik = QR ke halaman verifikasi publik
+  // linguo.id/verifikasi/<id registrasi>. Data-URI (bukan gambar remote) supaya ikut
+  // tertangkap html2canvas saat Unduh PDF. Sertifikat contoh (id bukan UUID) tanpa QR.
+  const verifyUrl = ct.status === "issued" && /^[0-9a-f-]{36}$/i.test(ct.id) ? `https://linguo.id/verifikasi/${ct.id}` : null;
+  const [qrSrc, setQrSrc] = useState<string | null>(null);
+  useEffect(() => {
+    if (!verifyUrl) { setQrSrc(null); return; }
+    let batal = false;
+    QRCode.toDataURL(verifyUrl, { margin: 0, width: 192, errorCorrectionLevel: "M", color: { dark: "#12172B", light: "#FFFFFF" } })
+      .then((u) => { if (!batal) setQrSrc(u); })
+      .catch(() => { /* noop — jatuh ke segel */ });
+    return () => { batal = true; };
+  }, [verifyUrl]);
 
   const handleDownloadPdf = async () => {
     if (!cardRef.current || pdfLoading) return;
@@ -783,13 +797,22 @@ function IssuedDetail({ ct, studentName, defaultName, onSaveName }: { ct: Cert; 
           {/* kaki: tanda tangan pengajar · segel · tanggal terbit */}
           <div className="mx-auto mt-10 grid max-w-[560px] grid-cols-[1fr_auto_1fr] items-end gap-4">
             <div className="min-w-0 text-left">
+              {qrSrc && <p className="mb-1 inline-flex items-center gap-1 text-[9px] font-bold uppercase tracking-[0.12em]" style={{ color: col.accent }}><BadgeCheck className="h-3 w-3" />{t("Ditandatangani elektronik")}</p>}
               <p className="truncate text-[14px] font-semibold italic text-[#12172B]">{ct.teacher}</p>
               <div className="mt-1.5 h-px w-full max-w-[180px]" style={{ background: "#CBD5E1" }} />
               <p className="mt-1.5 text-[10px] font-bold uppercase tracking-[0.14em] text-[#6B7280]">{t("Pengajar")}</p>
             </div>
-            <div className="flex h-12 w-12 items-center justify-center rounded-full" style={{ border: `1.5px solid ${col.accent}`, boxShadow: `0 0 0 4px ${col.accent}14` }}>
-              <Award className="h-6 w-6" style={{ color: col.accent }} />
-            </div>
+            {qrSrc ? (
+              // [sertifikat-qr-verifikasi-v1] pindai → halaman verifikasi publik
+              <div className="flex flex-col items-center">
+                <img src={qrSrc} alt={t("QR verifikasi sertifikat")} className="h-[72px] w-[72px] rounded-md p-1" style={{ border: `1.5px solid ${col.accent}55` }} />
+                <p className="mt-1 text-[8.5px] font-bold uppercase tracking-[0.1em] text-[#6B7280]">{t("Pindai untuk verifikasi")}</p>
+              </div>
+            ) : (
+              <div className="flex h-12 w-12 items-center justify-center rounded-full" style={{ border: `1.5px solid ${col.accent}`, boxShadow: `0 0 0 4px ${col.accent}14` }}>
+                <Award className="h-6 w-6" style={{ color: col.accent }} />
+              </div>
+            )}
             <div className="min-w-0 text-right">
               <p className="truncate text-[14px] font-semibold text-[#12172B]">{to || "—"}</p>
               <div className="ml-auto mt-1.5 h-px w-full max-w-[180px]" style={{ background: "#CBD5E1" }} />
@@ -840,7 +863,9 @@ function IssuedDetail({ ct, studentName, defaultName, onSaveName }: { ct: Cert; 
               </dl>
               <p className="cert-tint mt-5 flex items-start gap-2 rounded-2xl bg-[#16796E0D] p-3 text-[11px] font-medium leading-relaxed text-[#6B7280]">
                 <Info className="mt-0.5 h-3.5 w-3.5 shrink-0 text-[#16796E]" />
-                {t("Halaman verifikasi publik dengan QR code sedang disiapkan. Untuk konfirmasi keaslian, hubungi tim Linguo dengan menyebutkan No. Sertifikat di atas.")}
+                {verifyUrl
+                  ? <span>{t("Siapa pun bisa memastikan keaslian sertifikat ini dengan memindai QR di sertifikat atau membuka")} <a href={verifyUrl} target="_blank" rel="noopener" className="font-bold text-[#16796E] underline">{t("halaman verifikasi")}</a>.</span>
+                  : t("Halaman verifikasi publik dengan QR code sedang disiapkan. Untuk konfirmasi keaslian, hubungi tim Linguo dengan menyebutkan No. Sertifikat di atas.")}
               </p>
             </div>
           </div>

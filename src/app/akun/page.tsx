@@ -3468,7 +3468,15 @@ export default function AkunPage() {
     );
     if (ids.length === 0) return;
     (async () => {
-      const { data } = await supabase.from("teachers").select("id, name, title, avatar_url").in("id", ids);
+      let { data } = await supabase.from("teachers").select("id, name, title, avatar_url").in("id", ids);
+      // [sertifikat-nama-pengajar-v1] RLS `teachers` hanya membuka SELECT untuk anon —
+      // siswa login (authenticated) dapat kosong. Ambil dari route publik (anon key).
+      if (!data || data.length === 0) {
+        try {
+          const res = await fetch(`/api/pengajar-publik?ids=${encodeURIComponent(ids.join(","))}`);
+          if (res.ok) data = (await res.json())?.teachers || null;
+        } catch { /* noop */ }
+      }
       if (!data || data.length === 0) return;
       setTeacherDir((prev) => {
         const next = { ...prev };
@@ -4095,7 +4103,9 @@ export default function AkunPage() {
         language: r.language,
         level: lvl,
         title: CEFR_TITLE[base] || "Program",
-        teacher: r?.teachers?.name || "Pengajar Linguo",
+        // [sertifikat-nama-pengajar-v1] embed `teachers` kosong untuk siswa (RLS) → pakai
+        // direktori pengajar (route publik / RPC batch) sebelum jatuh ke label generik.
+        teacher: r?.teachers?.name || (tidOf(r) ? teacherDir[tidOf(r)!]?.name : undefined) || "Pengajar Linguo",
         product: r.product || undefined, // [pustaka/sertifikat-filter-v1] dipakai filter Kelas Live vs Belajar Mandiri
         status: issued ? "issued" : "progress",
         pct, used, total,
@@ -4107,7 +4117,8 @@ export default function AkunPage() {
         idNo: issued ? `LING-${String(r.language || "XX").slice(0, 2).toUpperCase()}-${base}-${String(r.id).replace(/\D/g, "").slice(0, 6).padStart(6, "0")}` : undefined,
       };
     });
-  }, [activeRegs, jadwalNyata]);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [activeRegs, jadwalNyata, teacherDir, batchTeacherOf]);
   // [akun-split-pending-active-v1] pendingRegs = belum bayar & masih dalam window
   // 24 jam sejak enroll. INI yang dirender di "Perlu Perhatian" (badge Belum Bayar
   // + tombol Bayar + Batalkan). Lewat 24 jam → di-expire effect/cron, hilang dari
