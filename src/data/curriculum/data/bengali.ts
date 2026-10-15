@@ -83,8 +83,16 @@ const curriculum: LanguageCurriculum = {
             { number: 16, title: "Mini-Project — Narasi 'Amar Din' 200 Kata", topics: ["wajib 4 bentuk kala", "wajib classifier yang tepat", "wajib konsisten tingkat kesopanan", "kirim untuk koreksi guru"] },
           ],
         },
+      ],
+    },
+    {
+      code: "A2",
+      name: "Dasar — Tata Bahasa Lengkap & Hidup Sehari-hari",
+      description:
+        "Menuntaskan sistem kala dan aspek, verba majemuk yang jadi ciri khas Bengali, kalimat majemuk, urusan harian di Dhaka maupun Kolkata, plus prabad dan chhora sebagai pintu masuk sastra lisan. Akhir A2 kamu bisa mengurus hidup sehari-hari dan bercerita panjang dengan lancar.",
+      sublevels: [
         {
-          code: "A1.4",
+          code: "A2.1",
           name: "Kosakata Harian & Budaya Bengal",
           preview: false,
           sessions: [
@@ -102,20 +110,12 @@ const curriculum: LanguageCurriculum = {
             { number: 12, title: "Perayaan: Durga Puja & Eid" },
             { number: 13, title: "Lagu Anak & Chhora" },
             { number: 14, title: "Geografi Bengal: Dhaka, Kolkata, Sundarbans" },
-            { number: 15, title: "Review Akumulatif A1.4" },
+            { number: 15, title: "Review Akumulatif A2.1" },
             { number: 16, title: "Mini-Project — Poster Kalender Budaya Bengal" },
           ],
         },
-      ],
-    },
-    {
-      code: "A2",
-      name: "Dasar — Tata Bahasa Lengkap & Hidup Sehari-hari",
-      description:
-        "Menuntaskan sistem kala dan aspek, verba majemuk yang jadi ciri khas Bengali, kalimat majemuk, urusan harian di Dhaka maupun Kolkata, plus prabad dan chhora sebagai pintu masuk sastra lisan. Akhir A2 kamu bisa mengurus hidup sehari-hari dan bercerita panjang dengan lancar.",
-      sublevels: [
         {
-          code: "A2.1",
+          code: "A2.2",
           name: "Kala, Aspek & Verba Majemuk",
           preview: false,
           sessions: [
@@ -133,12 +133,12 @@ const curriculum: LanguageCurriculum = {
             { number: 12, title: "Konstruksi Dativa: আমার ভালো লাগে" },
             { number: 13, title: "Perintah, Larangan & Permintaan" },
             { number: 14, title: "Kesalahan Umum Pelajar Asing" },
-            { number: 15, title: "Review Akumulatif A2.1" },
+            { number: 15, title: "Review Akumulatif A2.2" },
             { number: 16, title: "Mini-Project — Esai Naratif 350 Kata" },
           ],
         },
         {
-          code: "A2.2",
+          code: "A2.3",
           name: "Kesopanan, Register & Interaksi Sosial",
           preview: false,
           sessions: [
@@ -156,12 +156,12 @@ const curriculum: LanguageCurriculum = {
             { number: 12, title: "Adda: Budaya Ngobrol Bengali" },
             { number: 13, title: "Bahasa Pesan Teks & Media Sosial" },
             { number: 14, title: "Nada Sopan Tanpa Terdengar Kaku" },
-            { number: 15, title: "Review Akumulatif A2.2" },
+            { number: 15, title: "Review Akumulatif A2.3" },
             { number: 16, title: "Mini-Project — Satu Pesan, Tiga Tingkat Kesopanan" },
           ],
         },
         {
-          code: "A2.3",
+          code: "A2.4",
           name: "Hidup di Dhaka & Kolkata",
           preview: false,
           sessions: [
@@ -179,12 +179,20 @@ const curriculum: LanguageCurriculum = {
             { number: 12, title: "Tetangga & Kehidupan Para (Lingkungan)" },
             { number: 13, title: "Darurat: Polisi, Pemadam, Ambulans" },
             { number: 14, title: "Wisata: Sundarbans, Cox's Bazar, Darjeeling" },
-            { number: 15, title: "Review Akumulatif A2.3" },
+            { number: 15, title: "Review Akumulatif A2.4" },
             { number: 16, title: "Mini-Project — Roleplay 10 Situasi Harian" },
           ],
         },
+      ],
+    },
+    {
+      code: "B1",
+      name: "Menengah — Sadhu vs Cholito, Ragam & Dunia Kerja",
+      description:
+        "Bengali punya dua ragam tulis bersejarah — sadhu bhasha yang klasik dan cholito bhasha yang modern — dan perbedaan nyata antara Bengali Bangladesh dan Benggala Barat, plus dialek Sylheti dan Chittagonian yang nyaris jadi bahasa tersendiri. Ditambah media, berita, dan Bengali untuk kerja. Akhir B1 kamu bisa membaca teks klasik, mengikuti berita, dan bekerja dalam bahasa Bengali.",
+      sublevels: [
         {
-          code: "A2.4",
+          code: "B1.1",
           name: "Prabad, Chhora & Sastra Lisan",
           preview: false,
           sessions: [
@@ -202,20 +210,12 @@ const curriculum: LanguageCurriculum = {
             { number: 12, title: "Jatra: Teater Rakyat" },
             { number: 13, title: "Menggunakan Prabad Secara Alami" },
             { number: 14, title: "Membandingkan Peribahasa Bengali & Indonesia" },
-            { number: 15, title: "Review Akumulatif A2.4" },
+            { number: 15, title: "Review Akumulatif B1.1" },
             { number: 16, title: "Mini-Project — Kumpulan 20 Prabad Beranotasi" },
           ],
         },
-      ],
-    },
-    {
-      code: "B1",
-      name: "Menengah — Sadhu vs Cholito, Ragam & Dunia Kerja",
-      description:
-        "Bengali punya dua ragam tulis bersejarah — sadhu bhasha yang klasik dan cholito bhasha yang modern — dan perbedaan nyata antara Bengali Bangladesh dan Benggala Barat, plus dialek Sylheti dan Chittagonian yang nyaris jadi bahasa tersendiri. Ditambah media, berita, dan Bengali untuk kerja. Akhir B1 kamu bisa membaca teks klasik, mengikuti berita, dan bekerja dalam bahasa Bengali.",
-      sublevels: [
         {
-          code: "B1.1",
+          code: "B1.2",
           name: "Sadhu Bhasha & Cholito Bhasha",
           preview: false,
           sessions: [
@@ -233,12 +233,12 @@ const curriculum: LanguageCurriculum = {
             { number: 12, title: "Serapan Sanskerta dalam Bengali Benggala Barat" },
             { number: 13, title: "Serapan Inggris & Portugis" },
             { number: 14, title: "Memilih Register yang Tepat" },
-            { number: 15, title: "Review Akumulatif B1.1" },
+            { number: 15, title: "Review Akumulatif B1.2" },
             { number: 16, title: "Mini-Project — Terjemahan Teks Sadhu ke Cholito" },
           ],
         },
         {
-          code: "B1.2",
+          code: "B1.3",
           name: "Ragam Wilayah & Dialek",
           preview: false,
           sessions: [
@@ -256,12 +256,12 @@ const curriculum: LanguageCurriculum = {
             { number: 12, title: "Mengenali Dialek dari Rekaman" },
             { number: 13, title: "Sikap Penutur terhadap Dialek" },
             { number: 14, title: "Latihan Simak Multi-Dialek" },
-            { number: 15, title: "Review Akumulatif B1.2" },
+            { number: 15, title: "Review Akumulatif B1.3" },
             { number: 16, title: "Mini-Project — Analisis Video Dialek & Transkripsi" },
           ],
         },
         {
-          code: "B1.3",
+          code: "B1.4",
           name: "Media, Berita & Wacana Publik",
           preview: false,
           sessions: [
@@ -279,12 +279,12 @@ const curriculum: LanguageCurriculum = {
             { number: 12, title: "Menulis Surat Pembaca" },
             { number: 13, title: "Bahasa Iklan Bengali" },
             { number: 14, title: "Debat Isu Terkini" },
-            { number: 15, title: "Review Akumulatif B1.3" },
+            { number: 15, title: "Review Akumulatif B1.4" },
             { number: 16, title: "Mini-Project — Laporan Berita Sendiri 450 Kata" },
           ],
         },
         {
-          code: "B1.4",
+          code: "B1.5",
           name: "Bengali Profesional & Dunia Kerja",
           preview: false,
           sessions: [
@@ -302,7 +302,7 @@ const curriculum: LanguageCurriculum = {
             { number: 12, title: "Etika Kerja & Hierarki Kantor" },
             { number: 13, title: "Menangani Konflik di Tempat Kerja" },
             { number: 14, title: "Presentasi 10 Menit Terstruktur" },
-            { number: 15, title: "Review Akumulatif B1.4" },
+            { number: 15, title: "Review Akumulatif B1.5" },
             { number: 16, title: "Mini-Project — Simulasi Wawancara Kerja Penuh" },
           ],
         },

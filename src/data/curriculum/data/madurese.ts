@@ -83,9 +83,17 @@ const curriculum: LanguageCurriculum = {
             { number: 16, title: "Mini-Project — Mapping 7 Tingkat Personal", topics: ["Buat diagram konteks personal", "Identifikasi siapa pakai tingkat apa", "Audio 3 dialog tingkat berbeda", "Submit dengan refleksi"] },
           ],
         },
+      ],
+    },
+    {
+      code: "A2",
+      name: "Dasar — Komunikasi Harian & Switching 7 Tingkat",
+      description:
+        "Lo memperluas kapasitas ke aktivitas harian, profesi, transaksi pasar, dan mulai mendalami penggunaan 7 tingkat tutur dalam konteks dinamis (kapan switch, dengan siapa, dalam situasi apa). Target: bisa berinteraksi di pasar, warung kopi, dan acara adat tanpa salah register.",
+      sublevels: [
         {
-          code: "A1.4",
-          name: "Konsolidasi A1 — Integrasi Salam, Vocab, 7 Tingkat",
+          code: "A2.1",
+          name: "Jembatan A1→A2 · Konsolidasi A1 — Integrasi Salam, Vocab, 7 Tingkat",
           preview: false,
           sessions: [
             { number: 1, title: "Recap Salam & Sapaan Harian" },
@@ -102,20 +110,12 @@ const curriculum: LanguageCurriculum = {
             { number: 12, title: "Vocabulary Expansion Tematik" },
             { number: 13, title: "Mock Test A1 Style" },
             { number: 14, title: "Diagnostic Review — Gap Identification" },
-            { number: 15, title: "Review Akumulatif A1.4" },
+            { number: 15, title: "Review Akumulatif A2.1" },
             { number: 16, title: "Mini-Project — Portofolio Sertifikasi A1" },
           ],
         },
-      ],
-    },
-    {
-      code: "A2",
-      name: "Dasar — Komunikasi Harian & Switching 7 Tingkat",
-      description:
-        "Lo memperluas kapasitas ke aktivitas harian, profesi, transaksi pasar, dan mulai mendalami penggunaan 7 tingkat tutur dalam konteks dinamis (kapan switch, dengan siapa, dalam situasi apa). Target: bisa berinteraksi di pasar, warung kopi, dan acara adat tanpa salah register.",
-      sublevels: [
         {
-          code: "A2.1",
+          code: "A2.2",
           name: "Aktivitas Harian & Profesi Madura",
           preview: true,
           sessions: [
@@ -133,12 +133,12 @@ const curriculum: LanguageCurriculum = {
             { number: 12, title: "Dialog Profesi di Kantor", topics: ["Sapaan kolega", "Tanya jadwal rapat", "Permintaan tolong sopan", "Pamit pulang kerja"] },
             { number: 13, title: "Dialog di Warung Kopi", topics: ["Sapaan datang", "Pesan kopi & makanan ringan", "Diskusi adat & politik", "Pamit ramah"] },
             { number: 14, title: "Mini-Story Profesi Madura", topics: ["Cerita seorang panèmbhâ' (petani tembakau)", "Cerita seorang juragan sate", "Comprehension 5 pertanyaan", "Diskusi singkat"] },
-            { number: 15, title: "Review Akumulatif A2.1", topics: ["Recall 20 profesi", "Recall verba aktivitas", "Recall waktu lampau & akan datang", "Cloze test 10 item"] },
+            { number: 15, title: "Review Akumulatif A2.2", topics: ["Recall 20 profesi", "Recall verba aktivitas", "Recall waktu lampau & akan datang", "Cloze test 10 item"] },
             { number: 16, title: "Mini-Project — Wawancara Profesi", topics: ["Wawancara 1 orang Madura", "Transkrip 10 tukar-tanya", "Submit audio + teks", "Refleksi register pilihan"] },
           ],
         },
         {
-          code: "A2.2",
+          code: "A2.3",
           name: "Pasar Madura — Belanja, Negosiasi, & Transaksi",
           preview: true,
           sessions: [
@@ -156,12 +156,12 @@ const curriculum: LanguageCurriculum = {
             { number: 12, title: "Kalimat Imbauan & Pilihan", topics: ["Pola 'sopaja' (supaya)", "Pola 'mun' (jika)", "Pola pilihan: 'arèya' atau 'rowa'", "Drill kalimat kondisi"] },
             { number: 13, title: "Mengelola Daftar Belanja", topics: ["Tulis daftar belanja", "Kelompokkan per komoditas", "Estimasi anggaran", "Pola praktis"] },
             { number: 14, title: "Mini-Dialog Berbelanja Lengkap", topics: ["Datang ke pasar", "Tawar 3 komoditas", "Bayar & kembalian", "Pamit ramah"] },
-            { number: 15, title: "Review Akumulatif A2.2", topics: ["Recall kosakata belanja", "Recall pola tawar", "Recall satuan & angka besar", "Cloze test 10 item"] },
+            { number: 15, title: "Review Akumulatif A2.3", topics: ["Recall kosakata belanja", "Recall pola tawar", "Recall satuan & angka besar", "Cloze test 10 item"] },
             { number: 16, title: "Mini-Project — Video Belanja Pasar", topics: ["Rekam diri belanja pasar", "Audio 3 menit dialog", "Submit dengan transkrip", "Refleksi negosiasi"] },
           ],
         },
         {
-          code: "A2.3",
+          code: "A2.4",
           name: "7 Tingkat Kontekstual — Switching Dinamis",
           preview: true,
           sessions: [
@@ -179,13 +179,21 @@ const curriculum: LanguageCurriculum = {
             { number: 12, title: "Bahasa Tubuh Pendamping", topics: ["Posisi tubuh saat Tinggi", "Tangan dilipat di hati", "Sikap merendah", "Eye contact culture Madura"] },
             { number: 13, title: "7 Tingkat dalam Tulis", topics: ["Surat ke kiai: Tinggi", "WA grup keluarga: Engghi-Enten", "Caption Instagram: Engghi-Enten/Enja-Iya", "Email formal: Engghi-Bunten"] },
             { number: 14, title: "Mini-Story Kompleks Switching", topics: ["Cerita 1 hari adat Madura", "Tokoh 5 tingkat sosial", "Comprehension 8 pertanyaan", "Diskusi refleksi sosial"] },
-            { number: 15, title: "Review Akumulatif A2.3", topics: ["Recall 7 tingkat lengkap", "Identifikasi 10 konteks sosial", "Self-assess switching", "Diagnostik gap"] },
+            { number: 15, title: "Review Akumulatif A2.4", topics: ["Recall 7 tingkat lengkap", "Identifikasi 10 konteks sosial", "Self-assess switching", "Diagnostik gap"] },
             { number: 16, title: "Mini-Project — Audio 5 Konteks Switching", topics: ["Rekam 5 dialog beda konteks", "Switching jelas terdokumentasi", "Submit dengan analisis", "Refleksi kearagân Madura"] },
           ],
         },
+      ],
+    },
+    {
+      code: "B1",
+      name: "Menengah — Madura Kultural, Adat, & Diaspora",
+      description:
+        "Lo masuk ke eksplorasi budaya: Karapan Sapi heritage, Carok sebagai sistem konflik historis (frame etika-historis, bukan glorifikasi), dan jaringan diaspora Madura yang ekstensif. Target: bisa berdiskusi adat dengan native speaker tanpa terdengar pemula.",
+      sublevels: [
         {
-          code: "A2.4",
-          name: "Konsolidasi A2 — Integrasi Adat, Profesi, 7 Tingkat",
+          code: "B1.1",
+          name: "Jembatan A2→B1 · Konsolidasi A2 — Integrasi Adat, Profesi, 7 Tingkat",
           preview: false,
           sessions: [
             { number: 1, title: "Recap Aktivitas Harian & Profesi" },
@@ -202,20 +210,12 @@ const curriculum: LanguageCurriculum = {
             { number: 12, title: "Latihan Wawancara Pendek" },
             { number: 13, title: "Mock Test A2 Style" },
             { number: 14, title: "Diagnostic Gap Identification" },
-            { number: 15, title: "Review Akumulatif A2.4" },
+            { number: 15, title: "Review Akumulatif B1.1" },
             { number: 16, title: "Mini-Project — Portofolio Sertifikasi A2" },
           ],
         },
-      ],
-    },
-    {
-      code: "B1",
-      name: "Menengah — Madura Kultural, Adat, & Diaspora",
-      description:
-        "Lo masuk ke eksplorasi budaya: Karapan Sapi heritage, Carok sebagai sistem konflik historis (frame etika-historis, bukan glorifikasi), dan jaringan diaspora Madura yang ekstensif. Target: bisa berdiskusi adat dengan native speaker tanpa terdengar pemula.",
-      sublevels: [
         {
-          code: "B1.1",
+          code: "B1.2",
           name: "Karapan Sapi & Tradisi Pamekasan",
           preview: true,
           sessions: [
@@ -233,12 +233,12 @@ const curriculum: LanguageCurriculum = {
             { number: 12, title: "Industri Heritage Modern", topics: ["Workshop sapi balap turis", "Souvenir karapan sapi", "Pelestarian via generasi muda", "Komersialisasi heritage"] },
             { number: 13, title: "Listening — Audio Komentator", topics: ["Audio komentator karapan", "Identifikasi vocabulary lomba", "Comprehension 5 pertanyaan", "Refleksi heritage"] },
             { number: 14, title: "Mini-Story Pemilik Sapi Veteran", topics: ["Cerita pemilik sapi karapan 40 tahun", "Comprehension 8 pertanyaan", "Refleksi heritage", "Diskusi kelompok"] },
-            { number: 15, title: "Review Akumulatif B1.1", topics: ["Recall sejarah & struktur lomba", "Recall persiapan & pakaian", "Recall festival & kontroversi", "Cloze test 15 item"] },
+            { number: 15, title: "Review Akumulatif B1.2", topics: ["Recall sejarah & struktur lomba", "Recall persiapan & pakaian", "Recall festival & kontroversi", "Cloze test 15 item"] },
             { number: 16, title: "Mini-Project — Dokumentasi Karapan", topics: ["Hadiri/tonton 1 karapan langsung", "Tulis observasi 1000 kata", "Identifikasi 30 istilah baru", "Refleksi heritage personal"] },
           ],
         },
         {
-          code: "B1.2",
+          code: "B1.3",
           name: "Carok — Sistem Konflik Adat Historis",
           preview: true,
           sessions: [
@@ -256,12 +256,12 @@ const curriculum: LanguageCurriculum = {
             { number: 12, title: "Diaspora Madura & Identitas Modern", topics: ["Diaspora Jakarta — adaptasi sosial", "Diaspora Kalimantan — multikultural", "Pembentukan identitas baru", "Menjauh dari stigma"] },
             { number: 13, title: "Listening — Diskusi Akademik", topics: ["Audio diskusi akademik carok", "Identifikasi argumen historis", "Comprehension 8 pertanyaan", "Refleksi etika"] },
             { number: 14, title: "Mini-Story Tokoh Adat Damai", topics: ["Cerita kiai sebagai mediator", "Comprehension 10 pertanyaan", "Refleksi peran tokoh adat", "Diskusi respektful"] },
-            { number: 15, title: "Review Akumulatif B1.2", topics: ["Recall konteks historis carok", "Recall filosofi & aturan adat", "Recall transformasi modern", "Cloze test 15 item"] },
+            { number: 15, title: "Review Akumulatif B1.3", topics: ["Recall konteks historis carok", "Recall filosofi & aturan adat", "Recall transformasi modern", "Cloze test 15 item"] },
             { number: 16, title: "Mini-Project — Esai Akademik Carok", topics: ["Tulis esai 1500 kata anthropological", "Hindari frame sensational", "Cite 3 sumber akademik", "Submit untuk review formal"] },
           ],
         },
         {
-          code: "B1.3",
+          code: "B1.4",
           name: "Diaspora Madura — Jakarta, Surabaya, Kalimantan",
           preview: true,
           sessions: [
@@ -279,12 +279,12 @@ const curriculum: LanguageCurriculum = {
             { number: 12, title: "Tantangan Diaspora", topics: ["Stigma stereotype", "Adaptasi sosial", "Konflik antar-generasi", "Pemeliharaan identitas"] },
             { number: 13, title: "Listening — Wawancara Diaspora", topics: ["Audio wawancara generasi 2", "Identifikasi konteks sosial", "Comprehension 8 pertanyaan", "Refleksi hybrid identity"] },
             { number: 14, title: "Mini-Story Keluarga Diaspora", topics: ["Cerita keluarga 3 generasi Jakarta", "Comprehension 10 pertanyaan", "Refleksi heritage", "Diskusi kelompok"] },
-            { number: 15, title: "Review Akumulatif B1.3", topics: ["Recall sejarah & geografi diaspora", "Recall bisnis & komunitas", "Recall tantangan", "Cloze test 15 item"] },
+            { number: 15, title: "Review Akumulatif B1.4", topics: ["Recall sejarah & geografi diaspora", "Recall bisnis & komunitas", "Recall tantangan", "Cloze test 15 item"] },
             { number: 16, title: "Mini-Project — Profil Diaspora", topics: ["Wawancara 1 keluarga diaspora", "Tulis profil 1500 kata", "Highlight pewarisan bahasa", "Refleksi heritage personal"] },
           ],
         },
         {
-          code: "B1.4",
+          code: "B1.5",
           name: "Konsolidasi B1 — Integrasi Karapan, Carok, Diaspora",
           preview: false,
           sessions: [
@@ -302,7 +302,7 @@ const curriculum: LanguageCurriculum = {
             { number: 12, title: "Mock Test B1 Style" },
             { number: 13, title: "Wawancara Roleplay Kompleks" },
             { number: 14, title: "Diagnostic Gap Identification" },
-            { number: 15, title: "Review Akumulatif B1.4" },
+            { number: 15, title: "Review Akumulatif B1.5" },
             { number: 16, title: "Mini-Project — Portofolio Sertifikasi B1" },
           ],
         },

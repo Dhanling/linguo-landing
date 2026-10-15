@@ -83,8 +83,16 @@ const curriculum: LanguageCurriculum = {
             { number: 16, title: "Mini-Project — Мій День У Києві", topics: ["3 menit audio harian", "Cases + verb integration", "Self-recording", "Peer review"] },
           ],
         },
+      ],
+    },
+    {
+      code: "A2",
+      name: "Dasar — Cases Expansion & Past Tense",
+      description:
+        "Mendalami case system bertahap (genitive, dative, instrumental, locative, vocative), aspek Slavic, dan past tense -в/-ла gender-marked.",
+      sublevels: [
         {
-          code: "A1.4",
+          code: "A2.1",
           name: "Числа, Гроші & Покупки",
           preview: false,
           sessions: [
@@ -102,20 +110,12 @@ const curriculum: LanguageCurriculum = {
             { number: 12, title: "Рахунок У Ресторані" },
             { number: 13, title: "Чайові Культура" },
             { number: 14, title: "Онлайн Покупки — Rozetka, Prom" },
-            { number: 15, title: "Review Akumulatif A1.4" },
+            { number: 15, title: "Review Akumulatif A2.1" },
             { number: 16, title: "Mini-Project — Тижневий Список Покупок" },
           ],
         },
-      ],
-    },
-    {
-      code: "A2",
-      name: "Dasar — Cases Expansion & Past Tense",
-      description:
-        "Mendalami case system bertahap (genitive, dative, instrumental, locative, vocative), aspek Slavic, dan past tense -в/-ла gender-marked.",
-      sublevels: [
         {
-          code: "A2.1",
+          code: "A2.2",
           name: "Genitive Case — Pintu Masuk Kompleks",
           preview: true,
           sessions: [
@@ -133,12 +133,12 @@ const curriculum: LanguageCurriculum = {
             { number: 12, title: "Family + Genitive", topics: ["Сестра брата — sister of brother", "Family relationships", "Drill 25", "Genealogy dialog"] },
             { number: 13, title: "Reading Genitive-Heavy Text", topics: ["A2-level Ukrainian text", "Genitive spotting", "Vocab in context", "Comprehension"] },
             { number: 14, title: "Speed Drill Genitive", topics: ["Form generation speed", "Translation drill", "Self-test", "Mastery check"] },
-            { number: 15, title: "Review Akumulatif A2.1", topics: ["Genitive mastery test", "Reading checkpoint", "Vocab 230 item", "Speaking drill"] },
+            { number: 15, title: "Review Akumulatif A2.2", topics: ["Genitive mastery test", "Reading checkpoint", "Vocab 230 item", "Speaking drill"] },
             { number: 16, title: "Mini-Project — Моя Сім'я (Genitive Heavy)", topics: ["Family description 300 kata", "Genitive-heavy", "Audio narration", "Peer review"] },
           ],
         },
         {
-          code: "A2.2",
+          code: "A2.3",
           name: "Past Tense '-в/-ла/-ло' & Aspect",
           preview: true,
           sessions: [
@@ -156,12 +156,12 @@ const curriculum: LanguageCurriculum = {
             { number: 12, title: "Reading Past-Heavy Text", topics: ["A2-level Ukrainian narrative", "Past tense spotting", "Vocab in context", "Comprehension"] },
             { number: 13, title: "Speed Drill Past + Aspect", topics: ["Conjugation speed", "Gender awareness check", "Aspect choice drill", "Self-test"] },
             { number: 14, title: "Folk Tale Past Reading", topics: ["Ukrainian folktale", "Past tense narrative style", "Cultural context", "Comprehension"] },
-            { number: 15, title: "Review Akumulatif A2.2", topics: ["Past tense mastery", "Storytelling 90 detik", "Vocab 280 item", "Reading checkpoint"] },
+            { number: 15, title: "Review Akumulatif A2.3", topics: ["Past tense mastery", "Storytelling 90 detik", "Vocab 280 item", "Reading checkpoint"] },
             { number: 16, title: "Mini-Project — Минулого Літа Audio", topics: ["Last summer narrative 400 kata", "Past + aspect mix", "Audio narration", "Peer feedback"] },
           ],
         },
         {
-          code: "A2.3",
+          code: "A2.4",
           name: "Dative, Instrumental & Locative Cases",
           preview: true,
           sessions: [
@@ -179,12 +179,20 @@ const curriculum: LanguageCurriculum = {
             { number: 12, title: "Vocative Case '-е/-у'", topics: ["Тарасе! Маріє! — addressing", "Address case (unique to East Slavic among Slavic langs)", "Drill 15", "Vocative usage"] },
             { number: 13, title: "All 7 Cases Mapping", topics: ["Full case chart review", "Function-form mapping", "Drill bank", "Pattern internalization"] },
             { number: 14, title: "Reading Case-Heavy Text", topics: ["B1-level Ukrainian text", "All-case spotting", "Vocab in context", "Comprehension"] },
-            { number: 15, title: "Review Akumulatif A2.3", topics: ["Case mastery test (all 7)", "Speaking checkpoint", "Vocab 330 item", "Reading test"] },
+            { number: 15, title: "Review Akumulatif A2.4", topics: ["Case mastery test (all 7)", "Speaking checkpoint", "Vocab 330 item", "Reading test"] },
             { number: 16, title: "Mini-Project — Лист Другу (All Cases)", topics: ["Letter to friend 400 kata", "All cases integration", "Audio narration", "Peer review"] },
           ],
         },
+      ],
+    },
+    {
+      code: "B1",
+      name: "Menengah — Aspect Mastery & Conditional",
+      description:
+        "Mendalami sistem aspect perfective/imperfective, conditional mood 'би', participles & gerunds, dan struktur kalimat kompleks Ukrainian.",
+      sublevels: [
         {
-          code: "A2.4",
+          code: "B1.1",
           name: "Future, Comparison & Subjunctive Hint",
           preview: false,
           sessions: [
@@ -202,20 +210,12 @@ const curriculum: LanguageCurriculum = {
             { number: 12, title: "Modal + Subjunctive Preview" },
             { number: 13, title: "Reading: Predictions Text" },
             { number: 14, title: "Listening: Forecast" },
-            { number: 15, title: "Review Akumulatif A2.4" },
+            { number: 15, title: "Review Akumulatif B1.1" },
             { number: 16, title: "Mini-Project — Через 5 Років" },
           ],
         },
-      ],
-    },
-    {
-      code: "B1",
-      name: "Menengah — Aspect Mastery & Conditional",
-      description:
-        "Mendalami sistem aspect perfective/imperfective, conditional mood 'би', participles & gerunds, dan struktur kalimat kompleks Ukrainian.",
-      sublevels: [
         {
-          code: "B1.1",
+          code: "B1.2",
           name: "Aspect Mastery — Доконаний vs Недоконаний Вид",
           preview: true,
           sessions: [
@@ -233,12 +233,12 @@ const curriculum: LanguageCurriculum = {
             { number: 12, title: "Reading Aspect-Aware Text", topics: ["B1-level Ukrainian text", "Aspect spotting + justify", "Comprehension drill", "Discussion"] },
             { number: 13, title: "Story Retelling Aspect", topics: ["Choose aspect based on narrative", "Background vs event mix", "Drill 15", "Audio practice"] },
             { number: 14, title: "Speed Drill Aspect", topics: ["Conjugate both aspects", "Translation drill", "Self-test", "Mastery check"] },
-            { number: 15, title: "Review Akumulatif B1.1", topics: ["Aspect mastery test", "Reading checkpoint", "Vocab 400 item", "Speaking drill"] },
+            { number: 15, title: "Review Akumulatif B1.2", topics: ["Aspect mastery test", "Reading checkpoint", "Vocab 400 item", "Speaking drill"] },
             { number: 16, title: "Mini-Project — Aspect-Aware Storytelling", topics: ["Short story 400 kata", "Aspect choices justified", "Audio + skrip", "Peer review"] },
           ],
         },
         {
-          code: "B1.2",
+          code: "B1.3",
           name: "Conditional 'Би' & Hypothetical",
           preview: true,
           sessions: [
@@ -256,12 +256,12 @@ const curriculum: LanguageCurriculum = {
             { number: 12, title: "Speaking: Hypothetical Topics", topics: ["What-if discussions", "Debate hypothetical", "Politeness layers", "Roleplay"] },
             { number: 13, title: "Writing: Якби Essay", topics: ["100-kata conditional essay", "Integration practice", "Coherence check", "Self-edit"] },
             { number: 14, title: "Speed Drill Conditional", topics: ["Particle placement speed", "Translation drill", "Self-test", "Mastery check"] },
-            { number: 15, title: "Review Akumulatif B1.2", topics: ["Conditional mastery test", "Speaking roleplay", "Vocab 450 item", "Reading checkpoint"] },
+            { number: 15, title: "Review Akumulatif B1.3", topics: ["Conditional mastery test", "Speaking roleplay", "Vocab 450 item", "Reading checkpoint"] },
             { number: 16, title: "Mini-Project — Якби Я Жив В Україні", topics: ["Imagination essay 400 kata", "Conditional + hypothetical heavy", "Audio + skrip", "Peer review"] },
           ],
         },
         {
-          code: "B1.3",
+          code: "B1.4",
           name: "Participles, Gerunds & Complex Clauses",
           preview: true,
           sessions: [
@@ -279,12 +279,12 @@ const curriculum: LanguageCurriculum = {
             { number: 12, title: "Reading: Complex Subordinate", topics: ["B1+ Ukrainian editorial", "Multi-clause parsing", "Vocab in context", "Comprehension"] },
             { number: 13, title: "Writing: Subordinate-Rich Para", topics: ["100-kata complex paragraph", "Subordinate integration", "Flow construction", "Self-edit"] },
             { number: 14, title: "Speaking: Argument Building", topics: ["Pro-contra structure", "Subordinate clause usage", "Drill 20", "Discussion"] },
-            { number: 15, title: "Review Akumulatif B1.3", topics: ["Subordinate mastery test", "Reading complex", "Writing check", "Vocab 500 item"] },
+            { number: 15, title: "Review Akumulatif B1.4", topics: ["Subordinate mastery test", "Reading complex", "Writing check", "Vocab 500 item"] },
             { number: 16, title: "Mini-Project — Аргументативне Есе 500 Слів", topics: ["Argumentative essay", "Subordinate clause heavy", "Audio narration", "Peer review"] },
           ],
         },
         {
-          code: "B1.4",
+          code: "B1.5",
           name: "Passive, Reflexive & Idiomatic",
           preview: false,
           sessions: [
@@ -302,7 +302,7 @@ const curriculum: LanguageCurriculum = {
             { number: 12, title: "Reading: Ukrainian Folktale" },
             { number: 13, title: "Speaking: Idiomatic Usage" },
             { number: 14, title: "Writing: Formal Letter" },
-            { number: 15, title: "Review Akumulatif B1.4" },
+            { number: 15, title: "Review Akumulatif B1.5" },
             { number: 16, title: "Mini-Project — Офіційний Лист" },
           ],
         },

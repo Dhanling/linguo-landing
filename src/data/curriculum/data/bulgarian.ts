@@ -83,8 +83,16 @@ const curriculum: LanguageCurriculum = {
             { number: 16, title: "Mini-Project — София Квартал Тур", topics: ["3 menit audio neighborhood tour", "Article-heavy speech", "Self-recording", "Peer review"] },
           ],
         },
+      ],
+    },
+    {
+      code: "A2",
+      name: "Dasar — Aspect, Past Tenses & Cases (Pronoun Only)",
+      description:
+        "Mendalami sistem aspect Slavic (perfective vs imperfective), past tenses (aorist & imperfect), serta pronoun-only case system (noun cases sudah lost!).",
+      sublevels: [
         {
-          code: "A1.4",
+          code: "A2.1",
           name: "Пазаруване — Belanja & Servis",
           preview: false,
           sessions: [
@@ -102,20 +110,12 @@ const curriculum: LanguageCurriculum = {
             { number: 12, title: "Сметка в Ресторант" },
             { number: 13, title: "Бакшиш Култура" },
             { number: 14, title: "Онлайн Пазаруване" },
-            { number: 15, title: "Review Akumulatif A1.4" },
+            { number: 15, title: "Review Akumulatif A2.1" },
             { number: 16, title: "Mini-Project — Седмичен Списък" },
           ],
         },
-      ],
-    },
-    {
-      code: "A2",
-      name: "Dasar — Aspect, Past Tenses & Cases (Pronoun Only)",
-      description:
-        "Mendalami sistem aspect Slavic (perfective vs imperfective), past tenses (aorist & imperfect), serta pronoun-only case system (noun cases sudah lost!).",
-      sublevels: [
         {
-          code: "A2.1",
+          code: "A2.2",
           name: "Aspect — Свършен vs Несвършен Вид",
           preview: true,
           sessions: [
@@ -133,12 +133,12 @@ const curriculum: LanguageCurriculum = {
             { number: 12, title: "Story Retelling Aspect", topics: ["Choose aspect based on narrative", "Background vs event", "Drill 15", "Audio practice"] },
             { number: 13, title: "Speed Drill Pairs", topics: ["Conjugate both aspects", "Translation drill", "Self-test", "Mastery check"] },
             { number: 14, title: "Aspect in Compound Tenses", topics: ["Preview past tense + aspect", "Aspect persists across tenses", "Drill 15", "Pattern preview"] },
-            { number: 15, title: "Review Akumulatif A2.1", topics: ["Aspect mastery test", "Reading checkpoint", "Vocab 230 item", "Speaking drill"] },
+            { number: 15, title: "Review Akumulatif A2.2", topics: ["Aspect mastery test", "Reading checkpoint", "Vocab 230 item", "Speaking drill"] },
             { number: 16, title: "Mini-Project — Aspect-Aware Storytelling", topics: ["Short story 300 kata", "Aspect choices justified", "Audio + skrip", "Peer review"] },
           ],
         },
         {
-          code: "A2.2",
+          code: "A2.3",
           name: "Past Tenses — Аорист & Имперфект",
           preview: true,
           sessions: [
@@ -156,12 +156,12 @@ const curriculum: LanguageCurriculum = {
             { number: 12, title: "Mixed Tense Narrative", topics: ["Aorist + imperfect + perfect mix", "Native-like storytelling", "Drill 15", "Audio practice"] },
             { number: 13, title: "Folklore Past Stories", topics: ["Bulgarian folktale opener", "Aspect-aware reading", "Cultural narrative", "Comprehension"] },
             { number: 14, title: "Speed Drill Tense", topics: ["Tense conjugation speed", "Translation drill", "Self-test", "Mastery check"] },
-            { number: 15, title: "Review Akumulatif A2.2", topics: ["Past tense mastery", "Storytelling 90 detik", "Vocab 280 item", "Reading checkpoint"] },
+            { number: 15, title: "Review Akumulatif A2.3", topics: ["Past tense mastery", "Storytelling 90 detik", "Vocab 280 item", "Reading checkpoint"] },
             { number: 16, title: "Mini-Project — Миналото Лято Audio", topics: ["Last summer narrative 400 kata", "Aspect + tense mix", "Audio narration", "Peer feedback"] },
           ],
         },
         {
-          code: "A2.3",
+          code: "A2.4",
           name: "Clitic Pronouns & Personal Cases",
           preview: true,
           sessions: [
@@ -179,12 +179,20 @@ const curriculum: LanguageCurriculum = {
             { number: 12, title: "Reading Clitic-Heavy Text", topics: ["A2+ Bulgarian narrative", "Clitic spotting", "Vocab in context", "Comprehension"] },
             { number: 13, title: "Speaking with Clitics", topics: ["Daily conversation", "Pronoun fluency", "Drill 20", "Practice"] },
             { number: 14, title: "Common Mistakes Native Indo", topics: ["Clitic position errors", "Doubling confusion", "Correction drill", "Pattern check"] },
-            { number: 15, title: "Review Akumulatif A2.3", topics: ["Pronoun mastery test", "Speaking checkpoint", "Vocab 330 item", "Reading test"] },
+            { number: 15, title: "Review Akumulatif A2.4", topics: ["Pronoun mastery test", "Speaking checkpoint", "Vocab 330 item", "Reading test"] },
             { number: 16, title: "Mini-Project — Семеен Разказ", topics: ["Family story 400 kata", "Clitic-heavy", "Audio narration", "Peer review"] },
           ],
         },
+      ],
+    },
+    {
+      code: "B1",
+      name: "Menengah — Evidentiality & Conditional",
+      description:
+        "Menguasai renarrative/evidential mood (signature Balkan), conditional patterns, dan struktur kalimat kompleks untuk percakapan intermediate.",
+      sublevels: [
         {
-          code: "A2.4",
+          code: "B1.1",
           name: "Future, Modal & Comparison",
           preview: false,
           sessions: [
@@ -202,20 +210,12 @@ const curriculum: LanguageCurriculum = {
             { number: 12, title: "Reading: Predictions Text" },
             { number: 13, title: "Listening: Forecast" },
             { number: 14, title: "Speaking: 5-Year Plan" },
-            { number: 15, title: "Review Akumulatif A2.4" },
+            { number: 15, title: "Review Akumulatif B1.1" },
             { number: 16, title: "Mini-Project — След 5 Години" },
           ],
         },
-      ],
-    },
-    {
-      code: "B1",
-      name: "Menengah — Evidentiality & Conditional",
-      description:
-        "Menguasai renarrative/evidential mood (signature Balkan), conditional patterns, dan struktur kalimat kompleks untuk percakapan intermediate.",
-      sublevels: [
         {
-          code: "B1.1",
+          code: "B1.2",
           name: "Renarrative Mood — Преизказно Наклонение",
           preview: true,
           sessions: [
@@ -233,12 +233,12 @@ const curriculum: LanguageCurriculum = {
             { number: 12, title: "Mixed Indicative-Renarrative", topics: ["Switch perspective in story", "Witnessed vs heard portions", "Drill 15 mixed", "Audio practice"] },
             { number: 13, title: "Renarrative Speed Drill", topics: ["Conversion exercises", "Translation drill", "Self-test", "Mastery check"] },
             { number: 14, title: "Reading Renarrative-Heavy", topics: ["B1+ Bulgarian editorial", "Renarrative spotting", "Comprehension", "Discussion"] },
-            { number: 15, title: "Review Akumulatif B1.1", topics: ["Renarrative mastery test", "Reading checkpoint", "Vocab 400 item", "Speaking drill"] },
+            { number: 15, title: "Review Akumulatif B1.2", topics: ["Renarrative mastery test", "Reading checkpoint", "Vocab 400 item", "Speaking drill"] },
             { number: 16, title: "Mini-Project — Местни Слухове Skits", topics: ["Gossip skit 3 menit", "Renarrative heavy", "Authentic register", "Peer feedback"] },
           ],
         },
         {
-          code: "B1.2",
+          code: "B1.3",
           name: "Conditional & Hypothetical",
           preview: true,
           sessions: [
@@ -256,12 +256,12 @@ const curriculum: LanguageCurriculum = {
             { number: 12, title: "Speaking: Hypothetical Topics", topics: ["What-if discussions", "Debate hypothetical", "Politeness layers", "Roleplay"] },
             { number: 13, title: "Writing: Ако Essay", topics: ["100-kata conditional essay", "Integration practice", "Coherence check", "Self-edit"] },
             { number: 14, title: "Speed Drill Conditional", topics: ["Conjugation speed", "Translation drill", "Self-test", "Mastery check"] },
-            { number: 15, title: "Review Akumulatif B1.2", topics: ["Conditional mastery test", "Speaking roleplay", "Vocab 450 item", "Reading checkpoint"] },
+            { number: 15, title: "Review Akumulatif B1.3", topics: ["Conditional mastery test", "Speaking roleplay", "Vocab 450 item", "Reading checkpoint"] },
             { number: 16, title: "Mini-Project — Ако Живеех В България", topics: ["Imagination essay 400 kata", "Conditional + hypothetical heavy", "Audio + skrip", "Peer review"] },
           ],
         },
         {
-          code: "B1.3",
+          code: "B1.4",
           name: "Participles, Gerunds & Complex Clauses",
           preview: true,
           sessions: [
@@ -279,12 +279,12 @@ const curriculum: LanguageCurriculum = {
             { number: 12, title: "Reading: Complex Subordinate", topics: ["B1+ Bulgarian editorial", "Multi-clause parsing", "Vocab in context", "Comprehension"] },
             { number: 13, title: "Writing: Subordinate-Rich Para", topics: ["100-kata complex paragraph", "Subordinate integration", "Flow construction", "Self-edit"] },
             { number: 14, title: "Speaking: Argument Building", topics: ["Pro-contra structure", "Subordinate clause usage", "Drill 20", "Discussion"] },
-            { number: 15, title: "Review Akumulatif B1.3", topics: ["Subordinate mastery test", "Reading complex", "Writing check", "Vocab 500 item"] },
+            { number: 15, title: "Review Akumulatif B1.4", topics: ["Subordinate mastery test", "Reading complex", "Writing check", "Vocab 500 item"] },
             { number: 16, title: "Mini-Project — Аргументативно Есе 500 Думи", topics: ["Argumentative essay", "Subordinate clause heavy", "Audio narration", "Peer review"] },
           ],
         },
         {
-          code: "B1.4",
+          code: "B1.5",
           name: "Passive, Reflexive & Idiomatic",
           preview: false,
           sessions: [
@@ -302,7 +302,7 @@ const curriculum: LanguageCurriculum = {
             { number: 12, title: "Reading: Bulgarian Folktale" },
             { number: 13, title: "Speaking: Idiomatic Usage" },
             { number: 14, title: "Writing: Formal Letter" },
-            { number: 15, title: "Review Akumulatif B1.4" },
+            { number: 15, title: "Review Akumulatif B1.5" },
             { number: 16, title: "Mini-Project — Официално Писмо" },
           ],
         },

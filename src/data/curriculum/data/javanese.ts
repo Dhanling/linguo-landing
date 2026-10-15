@@ -6,7 +6,7 @@ const meta = getLanguageBySlug("javanese")!;
 const curriculum: LanguageCurriculum = {
   meta,
   overview:
-    "Bahasa Jawa (Basa Jawa) adalah bahasa Austronesia dengan ~80 juta penutur — bahasa daerah terbesar di Indonesia, dipakai di Jawa Tengah, DIY, Jawa Timur, plus diaspora besar di Suriname, Belanda, dan New Caledonia. Ciri paling khas: sistem undak-usuk basa — 3+ tingkatan formalitas (Ngoko, Krama Madya, Krama Inggil) yang menentukan 100% pilihan kata tergantung lawan bicara, usia, dan situasi. Pendekatan Lingcore: mulai dari Ngoko di A1-A2 (production-first, biar pede ngomong tanpa beban etiket), gradually introduce Krama Madya di A2.2, mahir Krama Lugu di B1, dan Krama Inggil + sastra klasik di B2. Aksara Hanacaraka (sistem tulisan asli) dilatih bertahap dari A1.4 sebagai literasi sekunder. Bahasa Jawa bukan sekadar bahasa keluarga — ini kunci membuka kebudayaan kerajaan Mataram, Wayang Purwa, Serat Centhini, Ronggowarsito, dan sastra modern Pramoedya yang berakar di tanah Jawa.",
+    "Bahasa Jawa (Basa Jawa) adalah bahasa Austronesia dengan ~80 juta penutur — bahasa daerah terbesar di Indonesia, dipakai di Jawa Tengah, DIY, Jawa Timur, plus diaspora besar di Suriname, Belanda, dan New Caledonia. Ciri paling khas: sistem undak-usuk basa — 3+ tingkatan formalitas (Ngoko, Krama Madya, Krama Inggil) yang menentukan 100% pilihan kata tergantung lawan bicara, usia, dan situasi. Pendekatan Lingcore: mulai dari Ngoko di A1-A2 (production-first, biar pede ngomong tanpa beban etiket), gradually introduce Krama Madya di A2.3, mahir Krama Lugu di B1, dan Krama Inggil + sastra klasik di B2. Aksara Hanacaraka (sistem tulisan asli) dilatih bertahap dari A2.1 sebagai literasi sekunder. Bahasa Jawa bukan sekadar bahasa keluarga — ini kunci membuka kebudayaan kerajaan Mataram, Wayang Purwa, Serat Centhini, Ronggowarsito, dan sastra modern Pramoedya yang berakar di tanah Jawa.",
   levels: [
     {
       code: "A1",
@@ -22,7 +22,7 @@ const curriculum: LanguageCurriculum = {
             { number: 1, title: "Orientasi — Basa Jawa di Peta Dunia", topics: ["Austronesia: serumpun Indonesia, Sunda, Malay", "80 juta penutur — bahasa daerah terbesar Indonesia", "Diaspora: Suriname, Belanda, New Caledonia", "Ciri khas: undak-usuk basa (Ngoko/Krama/Krama Inggil)"] },
             { number: 2, title: "Sistem Tulisan — Latin & Hanacaraka", topics: ["Standard modern: aksara Latin (sama Indonesia)", "Hanacaraka — aksara asli, 20 huruf nglegena", "Pendekatan Linguo: prioritas Latin, Hanacaraka bertahap", "Sejarah: legenda Aji Saka, dari aksara Pallawa abad ke-4"] },
             { number: 3, title: "Bunyi Khas Jawa — Vokal å vs a", topics: ["Vokal 'a' di akhir suku buka jadi 'å' (sega → segå)", "Konsonan dental t/d vs retroflex (dengan lidah ke gigi)", "Bunyi 'dh' (dheweke) vs 'd' biasa", "Konsonan khas: ng, ny — sama Indonesia"] },
-            { number: 4, title: "Undak-Usuk Basa — Pengantar Tingkatan", topics: ["Ngoko: santai, dengan sebaya/lebih muda — fokus A1-A2", "Krama Madya: setengah formal — diintro A2.2", "Krama Inggil: hormat tinggi (orang tua, atasan, raja)", "Aturan emas: kalau ragu, pakai Krama ke yang lebih tua"] },
+            { number: 4, title: "Undak-Usuk Basa — Pengantar Tingkatan", topics: ["Ngoko: santai, dengan sebaya/lebih muda — fokus A1-A2", "Krama Madya: setengah formal — diintro A2.3", "Krama Inggil: hormat tinggi (orang tua, atasan, raja)", "Aturan emas: kalau ragu, pakai Krama ke yang lebih tua"] },
             { number: 5, title: "Sapaan Ngoko — Halo, Piye Kabare", topics: ["Halo universal; Sugeng (enjing/siyang/sonten/dalu)", "Piye kabare? — apa kabar (Ngoko)", "Apik-apik wae — baik-baik saja", "Pamitan: tak pamit, ati-ati"] },
             { number: 6, title: "Pronoun Ngoko — Aku, Kowe, Dheweke", topics: ["Aku (saya), Kowe (kamu — Ngoko, hanya sesama umur)", "Dheweke (dia), Awake dhewe (kami eksklusif)", "Kita (kami inklusif)", "Peringatan: 'Kowe' ke yang lebih tua = kasar; pakai Sampeyan"] },
             { number: 7, title: "Pertanyaan Dasar — Apa, Sapa, Endi", topics: ["Apa? (apa), Sapa? (siapa)", "Endi? (mana), Kapan? (kapan)", "Genepi? (kenapa), Pira? (berapa)", "Pola: kata tanya bisa di depan atau belakang"] },
@@ -83,8 +83,16 @@ const curriculum: LanguageCurriculum = {
             { number: 16, title: "Mini-Project — Cerita 1 Minggu", topics: ["Diary 7 hari dalam Basa Jawa Ngoko", "Min 15 kalimat, 5 verba berbeda", "Sertakan weton (hari + pasaran) jika tahu", "Sertifikat A1.3 ✓"] },
           ],
         },
+      ],
+    },
+    {
+      code: "A2",
+      name: "Dasar — Ngoko Mahir + Krama Madya",
+      description:
+        "Konsolidasi Ngoko ke level percakapan natural plus pengenalan Krama Madya untuk interaksi sopan ringan (tetangga, tukang, layanan). Akhir A2 kamu lancar Ngoko dan bisa switch ke Krama Madya dengan mertua, atasan ringan, dan situasi semi-formal.",
+      sublevels: [
         {
-          code: "A1.4",
+          code: "A2.1",
           name: "Hanacaraka & Cerita Pendek",
           preview: false,
           sessions: [
@@ -102,20 +110,12 @@ const curriculum: LanguageCurriculum = {
             { number: 12, title: "Slametan — Tradisi Berkat Jawa" },
             { number: 13, title: "Tata Krama Sederhana — Lewat, Salam" },
             { number: 14, title: "Etika Tamu Datang — Tradisi Lenggah" },
-            { number: 15, title: "Review Akumulatif A1.4" },
+            { number: 15, title: "Review Akumulatif A2.1" },
             { number: 16, title: "Mini-Project — Cerita Pendek Hanacaraka" },
           ],
         },
-      ],
-    },
-    {
-      code: "A2",
-      name: "Dasar — Ngoko Mahir + Krama Madya",
-      description:
-        "Konsolidasi Ngoko ke level percakapan natural plus pengenalan Krama Madya untuk interaksi sopan ringan (tetangga, tukang, layanan). Akhir A2 kamu lancar Ngoko dan bisa switch ke Krama Madya dengan mertua, atasan ringan, dan situasi semi-formal.",
-      sublevels: [
         {
-          code: "A2.1",
+          code: "A2.2",
           name: "Ngoko Lugu Mahir",
           preview: false,
           sessions: [
@@ -133,12 +133,12 @@ const curriculum: LanguageCurriculum = {
             { number: 12, title: "Sakit & Klinik — Lara, Periksa" },
             { number: 13, title: "Olahraga — Sepak Bola Jawa, Pencak" },
             { number: 14, title: "Hobi Mendalam — Mancing, Nggembala" },
-            { number: 15, title: "Review Akumulatif A2.1" },
+            { number: 15, title: "Review Akumulatif A2.2" },
             { number: 16, title: "Mini-Project — Vlog Ngoko 2 Menit" },
           ],
         },
         {
-          code: "A2.2",
+          code: "A2.3",
           name: "Ngoko Andhap — Krama Madya Intro",
           preview: false,
           sessions: [
@@ -156,12 +156,12 @@ const curriculum: LanguageCurriculum = {
             { number: 12, title: "Etika Tamu Datang — Mangga Lenggah" },
             { number: 13, title: "Mengundang dengan Krama Madya" },
             { number: 14, title: "Penolakan Halus dalam Krama" },
-            { number: 15, title: "Review Akumulatif A2.2" },
+            { number: 15, title: "Review Akumulatif A2.3" },
             { number: 16, title: "Mini-Project — Roleplay Tetangga" },
           ],
         },
         {
-          code: "A2.3",
+          code: "A2.4",
           name: "Pekerjaan & Profesi Jawa",
           preview: false,
           sessions: [
@@ -179,12 +179,20 @@ const curriculum: LanguageCurriculum = {
             { number: 12, title: "Karir Pendidik — Guru Bahasa Daerah" },
             { number: 13, title: "Karir Seniman — Pelukis, Pemain Gamelan" },
             { number: 14, title: "Pekerjaan dalam Pemerintahan" },
-            { number: 15, title: "Review Akumulatif A2.3" },
+            { number: 15, title: "Review Akumulatif A2.4" },
             { number: 16, title: "Mini-Project — Resume Basa Jawa" },
           ],
         },
+      ],
+    },
+    {
+      code: "B1",
+      name: "Menengah — Krama Lugu Shift",
+      description:
+        "Pergeseran utama: dari Ngoko ke Krama Lugu sebagai default register untuk konteks formal — mertua, atasan, customer service, acara adat. Pengenalan tembang macapat (Pocung, Gambuh, Kinanthi) sebagai jembatan ke sastra Jawa.",
+      sublevels: [
         {
-          code: "A2.4",
+          code: "B1.1",
           name: "Cerita Rakyat Jawa Sederhana",
           preview: false,
           sessions: [
@@ -202,20 +210,12 @@ const curriculum: LanguageCurriculum = {
             { number: 12, title: "Loro Blonyo — Sepasang Pengantin Mistis" },
             { number: 13, title: "Cerita Wali Songo — Sunan Kalijaga" },
             { number: 14, title: "Diskusi: Moral Cerita Rakyat" },
-            { number: 15, title: "Review Akumulatif A2.4" },
+            { number: 15, title: "Review Akumulatif B1.1" },
             { number: 16, title: "Mini-Project — Tulis Ulang 1 Cerita" },
           ],
         },
-      ],
-    },
-    {
-      code: "B1",
-      name: "Menengah — Krama Lugu Shift",
-      description:
-        "Pergeseran utama: dari Ngoko ke Krama Lugu sebagai default register untuk konteks formal — mertua, atasan, customer service, acara adat. Pengenalan tembang macapat (Pocung, Gambuh, Kinanthi) sebagai jembatan ke sastra Jawa.",
-      sublevels: [
         {
-          code: "B1.1",
+          code: "B1.2",
           name: "Krama Lugu Pengantar",
           preview: false,
           sessions: [
@@ -233,12 +233,12 @@ const curriculum: LanguageCurriculum = {
             { number: 12, title: "Email Profesional Basa Jawa" },
             { number: 13, title: "Etika Telepon Krama" },
             { number: 14, title: "Konflik & Diplomasi Krama" },
-            { number: 15, title: "Review Akumulatif B1.1" },
+            { number: 15, title: "Review Akumulatif B1.2" },
             { number: 16, title: "Mini-Project — Roleplay Acara Adat" },
           ],
         },
         {
-          code: "B1.2",
+          code: "B1.3",
           name: "Krama dalam Konteks Kerja",
           preview: false,
           sessions: [
@@ -256,12 +256,12 @@ const curriculum: LanguageCurriculum = {
             { number: 12, title: "MC Acara Sederhana Krama" },
             { number: 13, title: "Wawancara Pekerjaan dalam Krama" },
             { number: 14, title: "Etika Bisnis Jawa Tradisional" },
-            { number: 15, title: "Review Akumulatif B1.2" },
+            { number: 15, title: "Review Akumulatif B1.3" },
             { number: 16, title: "Mini-Project — Surat Lamaran Lengkap" },
           ],
         },
         {
-          code: "B1.3",
+          code: "B1.4",
           name: "Krama untuk Acara Adat & Keluarga",
           preview: false,
           sessions: [
@@ -279,12 +279,12 @@ const curriculum: LanguageCurriculum = {
             { number: 12, title: "Sambutan Tamu Krama Inggil (preview)" },
             { number: 13, title: "Doa Singkat dalam Krama" },
             { number: 14, title: "Filosofi Slametan — Memayu Hayuning Bawana" },
-            { number: 15, title: "Review Akumulatif B1.3" },
+            { number: 15, title: "Review Akumulatif B1.4" },
             { number: 16, title: "Mini-Project — Sambutan Acara Keluarga" },
           ],
         },
         {
-          code: "B1.4",
+          code: "B1.5",
           name: "Tembang Macapat — Pocung, Gambuh, Kinanthi",
           preview: false,
           sessions: [
@@ -302,7 +302,7 @@ const curriculum: LanguageCurriculum = {
             { number: 12, title: "Wirama, Wirasa, Wiraga — 3 Pilar Macapat" },
             { number: 13, title: "Menulis Pocung Sederhana" },
             { number: 14, title: "Performansi Tembang — Pelafalan & Irama" },
-            { number: 15, title: "Review Akumulatif B1.4" },
+            { number: 15, title: "Review Akumulatif B1.5" },
             { number: 16, title: "Mini-Project — Tembangkan Pocung Karya Sendiri" },
           ],
         },

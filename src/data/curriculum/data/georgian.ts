@@ -6,7 +6,7 @@ const meta = getLanguageBySlug("georgian")!;
 const curriculum: LanguageCurriculum = {
   meta,
   overview:
-    "Bahasa Georgia (Kartuli, ქართული) adalah anggota tunggal rumpun Kartvelian — keluarga bahasa Kaukasus Selatan yang tidak terkait Indo-European maupun Turkic, membuatnya salah satu bahasa paling unik secara struktural di dunia. Dengan ~4 juta penutur dan sejarah literatur tertulis sejak abad ke-5 Masehi, Kartuli menggunakan aksara Mkhedruli yang khas (33 huruf, satu-satunya alfabet besar tanpa distinction kapital/non-kapital). Tata bahasanya menampilkan sistem 11 screeve (kombinasi tense-aspect-mood-evidentiality), case ergatif (subjek transitif aorist mendapat marker -ma), dan inversion construction untuk verb indirect (\"saya menyukai X\" → X jadi subjek tata bahasa). Anchor budaya: Vepkhistq'aosani karya Shota Rustaveli abad-12 (epos nasional Georgia), tradisi supra dengan polyphonic singing UNESCO heritage, dan wine origin tertua dunia (qvevri 8.000 tahun). Kurikulum Linguo membawa lo dari nol — pengenalan Mkhedruli bertahap dari A1.1, ergative case sebagai pivot tata bahasa di A2.3, screeve system bertahap A1–B2, kulminasi di Rustaveli + sastra modern (Qazbegi, Chiladze). Target akhir: B2 untuk persiapan sertifikasi TIL dan komunikasi profesional di Kaukasus.",
+    "Bahasa Georgia (Kartuli, ქართული) adalah anggota tunggal rumpun Kartvelian — keluarga bahasa Kaukasus Selatan yang tidak terkait Indo-European maupun Turkic, membuatnya salah satu bahasa paling unik secara struktural di dunia. Dengan ~4 juta penutur dan sejarah literatur tertulis sejak abad ke-5 Masehi, Kartuli menggunakan aksara Mkhedruli yang khas (33 huruf, satu-satunya alfabet besar tanpa distinction kapital/non-kapital). Tata bahasanya menampilkan sistem 11 screeve (kombinasi tense-aspect-mood-evidentiality), case ergatif (subjek transitif aorist mendapat marker -ma), dan inversion construction untuk verb indirect (\"saya menyukai X\" → X jadi subjek tata bahasa). Anchor budaya: Vepkhistq'aosani karya Shota Rustaveli abad-12 (epos nasional Georgia), tradisi supra dengan polyphonic singing UNESCO heritage, dan wine origin tertua dunia (qvevri 8.000 tahun). Kurikulum Linguo membawa lo dari nol — pengenalan Mkhedruli bertahap dari A1.1, ergative case sebagai pivot tata bahasa di A2.4, screeve system bertahap A1–B2, kulminasi di Rustaveli + sastra modern (Qazbegi, Chiladze). Target akhir: B2 untuk persiapan sertifikasi TIL dan komunikasi profesional di Kaukasus.",
   levels: [
     {
       code: "A1",
@@ -83,8 +83,16 @@ const curriculum: LanguageCurriculum = {
             { number: 16, title: "Mini-Project — Marshrutka Roleplay", topics: ["Naik marshrutka skenario", "3 menit dialog", "Audio recording", "Self-rating + feedback"] },
           ],
         },
+      ],
+    },
+    {
+      code: "A2",
+      name: "Dasar — Membangun Komunikasi & Ergative",
+      description:
+        "Memperluas verba lampau (aorist series), memperkenalkan case ergatif sebagai pivot khas Kartuli, serta membangun naratif sederhana untuk pengalaman dan opini.",
+      sublevels: [
         {
-          code: "A1.4",
+          code: "A2.1",
           name: "Belanja, Uang & Angka Lanjutan",
           preview: false,
           sessions: [
@@ -102,20 +110,12 @@ const curriculum: LanguageCurriculum = {
             { number: 12, title: "Receipt & Invoice" },
             { number: 13, title: "Online Shopping Frasa" },
             { number: 14, title: "Comparative: -ze (lebih)" },
-            { number: 15, title: "Review Akumulatif A1.4" },
+            { number: 15, title: "Review Akumulatif A2.1" },
             { number: 16, title: "Mini-Project — Belanja Mingguan Plan" },
           ],
         },
-      ],
-    },
-    {
-      code: "A2",
-      name: "Dasar — Membangun Komunikasi & Ergative",
-      description:
-        "Memperluas verba lampau (aorist series), memperkenalkan case ergatif sebagai pivot khas Kartuli, serta membangun naratif sederhana untuk pengalaman dan opini.",
-      sublevels: [
         {
-          code: "A2.1",
+          code: "A2.2",
           name: "Past Tense — Aorist Series",
           preview: true,
           sessions: [
@@ -125,7 +125,7 @@ const curriculum: LanguageCurriculum = {
             { number: 4, title: "Aorist Irregular Frequent", topics: ["Vtkvi — saya bilang", "Mivedi — saya pergi", "Movedi — saya datang", "Top-50 verb list aorist"] },
             { number: 5, title: "Vipikrobdi vs Vikoni", topics: ["Continuous past hint (Series 1)", "Vs completed aorist", "Aspect distinction drill", "Story translation"] },
             { number: 6, title: "Gushinde — Frame Kemarin", topics: ["Gushin, dghes, khval", "Time adverbs lampau", "Sequence: jer, mere, bolos", "Diary sederhana"] },
-            { number: 7, title: "Ergative Preview", topics: ["Foreshadowing aorist transitive", "-ma marker hint", "Bocemma is wrota — boy wrote it", "Anticipation untuk A2.3"] },
+            { number: 7, title: "Ergative Preview", topics: ["Foreshadowing aorist transitive", "-ma marker hint", "Bocemma is wrota — boy wrote it", "Anticipation untuk A2.4"] },
             { number: 8, title: "Narasi Pengalaman Pribadi", topics: ["Last weekend story", "Aorist + adverb sequence", "Listener comprehension check", "Peer storytelling"] },
             { number: 9, title: "Aorist + Adverb Waktu", topics: ["Gushin saghamos — kemarin sore", "Tslelebis tsin — tahun lalu", "Specific time vocab", "Drill 30 kalimat"] },
             { number: 10, title: "Negative Aorist", topics: ["Ar vipikrobdi", "Ar mivedi", "Ar prefix di past", "Negative narrative"] },
@@ -133,12 +133,12 @@ const curriculum: LanguageCurriculum = {
             { number: 12, title: "Story Retelling Skill", topics: ["Listen → retell exercise", "Aorist conversion drill", "Reported event", "Memory + verb form"] },
             { number: 13, title: "Past Habitual Hint", topics: ["Imperfect Series 1 lampau", "Used to vs did once", "Aspect contrast intro", "Common error spotting"] },
             { number: 14, title: "Aorist Modal Verbs", topics: ["Sheidzleboda — bisa (past)", "Unda iko — harus dulu", "Modal + main verb", "Politeness past"] },
-            { number: 15, title: "Review Akumulatif A2.1", topics: ["Aorist conjugation table", "Storytelling 90 detik", "Listening dictation", "Vocab 180 item"] },
+            { number: 15, title: "Review Akumulatif A2.2", topics: ["Aorist conjugation table", "Storytelling 90 detik", "Listening dictation", "Vocab 180 item"] },
             { number: 16, title: "Mini-Project — Diary 7 Hari (Aorist)", topics: ["Tulis diary mingguan", "20+ aorist verbs", "Read aloud audio", "Self-edit + revisi"] },
           ],
         },
         {
-          code: "A2.2",
+          code: "A2.3",
           name: "Travel & Arah — Mengeksplorasi Kaukasus",
           preview: true,
           sessions: [
@@ -156,12 +156,12 @@ const curriculum: LanguageCurriculum = {
             { number: 12, title: "Border Crossing Phrase", topics: ["Kartulis sazgvari", "Armenia & Turki border", "Customs vocab", "Visa talk"] },
             { number: 13, title: "Tour Guide Listening", topics: ["Site descriptions intermediate", "Historical narrative", "Comprehension drill", "Note-taking skill"] },
             { number: 14, title: "Travel Diary Template", topics: ["Daily entry structure", "5 sense description", "Photo caption Mkhedruli", "Reflection prompt"] },
-            { number: 15, title: "Review Akumulatif A2.2", topics: ["Travel mock scenario", "Direction listening", "Booking call", "Vocab 200 item"] },
+            { number: 15, title: "Review Akumulatif A2.3", topics: ["Travel mock scenario", "Direction listening", "Booking call", "Vocab 200 item"] },
             { number: 16, title: "Mini-Project — Plan Trip 3-Hari Kaukasus", topics: ["Itinerary lengkap Kartuli", "Booking emails", "Audio tour guide imitation", "Peer review presentation"] },
           ],
         },
         {
-          code: "A2.3",
+          code: "A2.4",
           name: "Ergative Case — Pivot Tata Bahasa Kartuli",
           preview: true,
           sessions: [
@@ -179,12 +179,20 @@ const curriculum: LanguageCurriculum = {
             { number: 12, title: "Ergative dalam News Headlines", topics: ["Tabloid scanning", "Subject-action focus", "Headline vocab", "Reading inference"] },
             { number: 13, title: "Spoken Drill Audio", topics: ["Listen-mark pattern", "Distinguish 3 patterns aurally", "Speed transcription", "Self-test"] },
             { number: 14, title: "Reading Folk Tale", topics: ["Lela & Lasha folktale", "Ergative dense passage", "Vocab in context", "Discussion Q"] },
-            { number: 15, title: "Review Akumulatif A2.3", topics: ["Ergative mastery test", "Conversion drill timed", "Storytelling 2 menit", "Vocab 230 item"] },
+            { number: 15, title: "Review Akumulatif A2.4", topics: ["Ergative mastery test", "Conversion drill timed", "Storytelling 2 menit", "Vocab 230 item"] },
             { number: 16, title: "Mini-Project — Ergative Story 200 Kata", topics: ["Original short story", "Min 15 ergative subjects", "Read aloud + record", "Peer edit"] },
           ],
         },
+      ],
+    },
+    {
+      code: "B1",
+      name: "Menengah — Menjelajahi Screeves",
+      description:
+        "Membongkar sistem 11 screeve Kartuli secara bertahap: future, subjunctive, perfect, dan conditional. Membangun ekspresi opini, hipotetis, dan narasi kompleks.",
+      sublevels: [
         {
-          code: "A2.4",
+          code: "B1.1",
           name: "Rutinitas, Opini, Cuaca",
           preview: false,
           sessions: [
@@ -202,20 +210,12 @@ const curriculum: LanguageCurriculum = {
             { number: 12, title: "Future Hint Forward" },
             { number: 13, title: "Time Management Phrases" },
             { number: 14, title: "Reflexive Verbs Dasar" },
-            { number: 15, title: "Review Akumulatif A2.4" },
+            { number: 15, title: "Review Akumulatif B1.1" },
             { number: 16, title: "Mini-Project — Vlog Audio Hari-Hari" },
           ],
         },
-      ],
-    },
-    {
-      code: "B1",
-      name: "Menengah — Menjelajahi Screeves",
-      description:
-        "Membongkar sistem 11 screeve Kartuli secara bertahap: future, subjunctive, perfect, dan conditional. Membangun ekspresi opini, hipotetis, dan narasi kompleks.",
-      sublevels: [
         {
-          code: "B1.1",
+          code: "B1.2",
           name: "Future Tense & Perencanaan",
           preview: true,
           sessions: [
@@ -225,7 +225,7 @@ const curriculum: LanguageCurriculum = {
             { number: 4, title: "Khval — Frame Besok", topics: ["Khval, zeg, agdgomis", "Future time adverbs", "Calendar planning", "Schedule discussion"] },
             { number: 5, title: "Plans & Goals", topics: ["Davgegmav — saya berencana", "Long-term goal vocab", "Tsletliuri gegma", "Annual goals talk"] },
             { number: 6, title: "Career Conversation", topics: ["Job future hypothetical", "Interview future tense", "Promotion vocab", "Mentorship talk"] },
-            { number: 7, title: "Conditional Hint", topics: ["Tu... vipikreb — if I think", "Real conditional", "Setup ke B1.4", "Drill 15 kalimat"] },
+            { number: 7, title: "Conditional Hint", topics: ["Tu... vipikreb — if I think", "Real conditional", "Setup ke B1.5", "Drill 15 kalimat"] },
             { number: 8, title: "Negation in Future", topics: ["Ar vipikreb", "Future negation patterns", "Refusal politely", "Decline invitation"] },
             { number: 9, title: "Future Time Adverbs", topics: ["Male, momavalsh", "Tslis bolos", "Mes-shemdeg", "Drill bank"] },
             { number: 10, title: "Predictions about Georgia", topics: ["Economy talk", "Tech development", "Tourism future", "Wine industry"] },
@@ -233,12 +233,12 @@ const curriculum: LanguageCurriculum = {
             { number: 12, title: "Family Plan Discussion", topics: ["Family future plans", "Major life events", "Wedding/baby vocab", "Long-term commitment talk"] },
             { number: 13, title: "Travel Plan Future", topics: ["Will travel statements", "Booking future", "Vacation planning", "Coordination dialog"] },
             { number: 14, title: "Future News Headlines", topics: ["Predictive headlines", "Forecast vocab", "Weather forecast", "Economic forecast"] },
-            { number: 15, title: "Review Akumulatif B1.1", topics: ["Future conjugation mastery", "Goal-setting essay", "Audio listening", "Vocab 280 item"] },
+            { number: 15, title: "Review Akumulatif B1.2", topics: ["Future conjugation mastery", "Goal-setting essay", "Audio listening", "Vocab 280 item"] },
             { number: 16, title: "Mini-Project — Plan 1 Tahun Audio Pitch", topics: ["3 menit audio plan", "10+ future verbs", "Q&A defense", "Peer evaluation"] },
           ],
         },
         {
-          code: "B1.2",
+          code: "B1.3",
           name: "Subjunctive — Modus Pengandaian",
           preview: true,
           sessions: [
@@ -256,12 +256,12 @@ const curriculum: LanguageCurriculum = {
             { number: 12, title: "Email Polite Forms", topics: ["Formal email open", "Polite ask templates", "Closing salutations", "Business email"] },
             { number: 13, title: "Customer Service Frasa", topics: ["Complaint handling", "Apology language", "Resolution offer", "Service recovery"] },
             { number: 14, title: "Subjunctive Drills", topics: ["Speed conjugation", "Sentence transformation", "Listening discrimination", "Self-test"] },
-            { number: 15, title: "Review Akumulatif B1.2", topics: ["Subjunctive mastery test", "Email composition", "Roleplay request", "Vocab 320 item"] },
+            { number: 15, title: "Review Akumulatif B1.3", topics: ["Subjunctive mastery test", "Email composition", "Roleplay request", "Vocab 320 item"] },
             { number: 16, title: "Mini-Project — Surat Permohonan Formal", topics: ["Official request letter", "200 kata Mkhedruli", "Polite registers", "Peer review + revisi"] },
           ],
         },
         {
-          code: "B1.3",
+          code: "B1.4",
           name: "Perfect Tenses — Konstruksi Inversi",
           preview: true,
           sessions: [
@@ -279,12 +279,12 @@ const curriculum: LanguageCurriculum = {
             { number: 12, title: "Inversion in Casual Speech", topics: ["Daily perfect use", "Common idioms", "Slang inversion", "Coffeeshop dialog"] },
             { number: 13, title: "Common Verb Inversion List", topics: ["50-verb compendium", "Memorization strategy", "Flashcard system", "Spaced repetition setup"] },
             { number: 14, title: "Drill Practice", topics: ["Conversion exercises", "Speed translation", "Audio shadowing", "Self-correction"] },
-            { number: 15, title: "Review Akumulatif B1.3", topics: ["Perfect + inversion mastery", "Reading checkpoint", "Audio dictation", "Vocab 360 item"] },
+            { number: 15, title: "Review Akumulatif B1.4", topics: ["Perfect + inversion mastery", "Reading checkpoint", "Audio dictation", "Vocab 360 item"] },
             { number: 16, title: "Mini-Project — Pengalaman Hidup Reflektif", topics: ["Life experience essay", "Perfect-heavy 300 kata", "Audio reading", "Self-reflection"] },
           ],
         },
         {
-          code: "B1.4",
+          code: "B1.5",
           name: "Conditional & Hipotetis",
           preview: false,
           sessions: [
@@ -302,7 +302,7 @@ const curriculum: LanguageCurriculum = {
             { number: 12, title: "Wishes with Conditional" },
             { number: 13, title: "Advice Giving" },
             { number: 14, title: "Conditional Drills" },
-            { number: 15, title: "Review Akumulatif B1.4" },
+            { number: 15, title: "Review Akumulatif B1.5" },
             { number: 16, title: "Mini-Project — Debate Mock Topic" },
           ],
         },

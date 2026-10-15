@@ -6,7 +6,7 @@ const meta = getLanguageBySlug("dutch")!;
 const curriculum: LanguageCurriculum = {
   meta,
   overview:
-    "Bahasa Belanda (Nederlands) adalah bahasa Germanik Barat dengan ~25 juta penutur asli (Belanda, Vlaanderen Belgia, Suriname, Karibia Belanda), serta jejak historis ekstensif di Indonesia melalui VOC (1602–1799) dan kolonial Hindia Belanda. Bagi pelajar Indonesia, Nederlands menawarkan dua nilai unik: akses ke arsip historis (hukum perdata KUHPer, hukum adat, sastra colonial Multatuli) yang masih menjadi fondasi sistem hukum Indonesia, serta tata bahasa Germanic yang memberi jembatan ke German dan English. Fitur signature: word order V2 (verba finit selalu di posisi-2 main clause), articles de (common) vs het (neuter — ~25% dari noun, harus dihafal), modal particles (toch, even, maar, eens — partikel kecil yang mengubah nuansa), separable verbs (opstaan → ik sta op), serta diminutive -je yang sangat produktif secara budaya (biertje, momentje, hondje — penting dalam Dutch politeness). Anchor budaya: gezelligheid (cozy togetherness), polderlandschap, Rembrandt-Vermeer Golden Age, Anne Frank, sepeda culture Amsterdam, dan tentunya Max Havelaar Multatuli yang mengkritik kolonialisme Belanda di Lebak. Kurikulum Linguo: V2 sebagai signature di A1.2, modal particles bertahap A2–B1, separable verbs A2.3, dan B2 dengan jalur khusus Dutch-Indonesia heritage (legal Dutch, archival reading). Target B2 untuk NT2 Programma II + CNaVT sertifikasi resmi.",
+    "Bahasa Belanda (Nederlands) adalah bahasa Germanik Barat dengan ~25 juta penutur asli (Belanda, Vlaanderen Belgia, Suriname, Karibia Belanda), serta jejak historis ekstensif di Indonesia melalui VOC (1602–1799) dan kolonial Hindia Belanda. Bagi pelajar Indonesia, Nederlands menawarkan dua nilai unik: akses ke arsip historis (hukum perdata KUHPer, hukum adat, sastra colonial Multatuli) yang masih menjadi fondasi sistem hukum Indonesia, serta tata bahasa Germanic yang memberi jembatan ke German dan English. Fitur signature: word order V2 (verba finit selalu di posisi-2 main clause), articles de (common) vs het (neuter — ~25% dari noun, harus dihafal), modal particles (toch, even, maar, eens — partikel kecil yang mengubah nuansa), separable verbs (opstaan → ik sta op), serta diminutive -je yang sangat produktif secara budaya (biertje, momentje, hondje — penting dalam Dutch politeness). Anchor budaya: gezelligheid (cozy togetherness), polderlandschap, Rembrandt-Vermeer Golden Age, Anne Frank, sepeda culture Amsterdam, dan tentunya Max Havelaar Multatuli yang mengkritik kolonialisme Belanda di Lebak. Kurikulum Linguo: V2 sebagai signature di A1.2, modal particles bertahap A2–B1, separable verbs A2.4, dan B2 dengan jalur khusus Dutch-Indonesia heritage (legal Dutch, archival reading). Target B2 untuk NT2 Programma II + CNaVT sertifikasi resmi.",
   levels: [
     {
       code: "A1",
@@ -83,8 +83,16 @@ const curriculum: LanguageCurriculum = {
             { number: 16, title: "Mini-Project — Een Dag in Mijn Leven", topics: ["3 menit vlog Belanda", "Daily routine narration", "10+ verb activity", "Self-edit"] },
           ],
         },
+      ],
+    },
+    {
+      code: "A2",
+      name: "Dasar — Past Tense & Modal Verbs",
+      description:
+        "Mengembangkan kompetensi past tense (perfectum dengan hebben/zijn), modal verbs, separable verbs, dan struktur kalimat yang lebih kompleks.",
+      sublevels: [
         {
-          code: "A1.4",
+          code: "A2.1",
           name: "Eten, Winkelen & Diensten",
           preview: false,
           sessions: [
@@ -102,20 +110,12 @@ const curriculum: LanguageCurriculum = {
             { number: 12, title: "Trein NS Reiseninformatie" },
             { number: 13, title: "Tram, Bus, Metro" },
             { number: 14, title: "Internet & Telefoonabonnement" },
-            { number: 15, title: "Review Akumulatif A1.4" },
+            { number: 15, title: "Review Akumulatif A2.1" },
             { number: 16, title: "Mini-Project — Weekboodschappen Plan" },
           ],
         },
-      ],
-    },
-    {
-      code: "A2",
-      name: "Dasar — Past Tense & Modal Verbs",
-      description:
-        "Mengembangkan kompetensi past tense (perfectum dengan hebben/zijn), modal verbs, separable verbs, dan struktur kalimat yang lebih kompleks.",
-      sublevels: [
         {
-          code: "A2.1",
+          code: "A2.2",
           name: "Perfectum — Past Tense Belanda",
           preview: true,
           sessions: [
@@ -131,14 +131,14 @@ const curriculum: LanguageCurriculum = {
             { number: 10, title: "Question in Perfectum", topics: ["Heb je gewerkt?", "Ben je gekomen?", "V-S-O + participle", "Interview format"] },
             { number: 11, title: "Past Time Expressions", topics: ["Vanochtend, gisteravond", "Lang geleden, net", "Een week/maand geleden", "Temporal vocab bank"] },
             { number: 12, title: "Reading Short Story", topics: ["A2-level Dutch short narrative", "Perfectum spotting", "Vocab in context", "Comprehension Q"] },
-            { number: 13, title: "Imperfectum Hint", topics: ["Single-word past forms", "Was, had, ging, kwam", "Used in narrative writing", "Setup ke A2.4"] },
+            { number: 13, title: "Imperfectum Hint", topics: ["Single-word past forms", "Was, had, ging, kwam", "Used in narrative writing", "Setup ke B1.1"] },
             { number: 14, title: "Perfect vs Simple Past Choice", topics: ["Spoken: prefer perfectum", "Written: prefer imperfectum", "Register awareness", "Practice both"] },
-            { number: 15, title: "Review Akumulatif A2.1", topics: ["Past tense mastery test", "Story retelling 90 detik", "Listening dictation", "Vocab 230 item"] },
+            { number: 15, title: "Review Akumulatif A2.2", topics: ["Past tense mastery test", "Story retelling 90 detik", "Listening dictation", "Vocab 230 item"] },
             { number: 16, title: "Mini-Project — Mijn Week (Audio Diary)", topics: ["Weekly diary audio", "Perfect tense heavy", "Audio + transkrip", "Self-assessment"] },
           ],
         },
         {
-          code: "A2.2",
+          code: "A2.3",
           name: "Modaal — Kunnen, Moeten, Willen, Mogen",
           preview: true,
           sessions: [
@@ -156,12 +156,12 @@ const curriculum: LanguageCurriculum = {
             { number: 12, title: "Modal in Subordinate Clause", topics: ["...dat ik moet werken", "Word order subclause", "Drill 25 complex", "Pattern recognition"] },
             { number: 13, title: "Idiomatic Modal Usage", topics: ["Dat kan niet — itu tidak mungkin", "Het moet eens — harus suatu saat", "Cultural idiom", "Native-like phrasing"] },
             { number: 14, title: "Modal Listening Drill", topics: ["Authentic dialog", "Spot modal forms", "Speed listening", "Self-test"] },
-            { number: 15, title: "Review Akumulatif A2.2", topics: ["Modal mastery test", "Request roleplay", "Subordinate clause check", "Vocab 280 item"] },
+            { number: 15, title: "Review Akumulatif A2.3", topics: ["Modal mastery test", "Request roleplay", "Subordinate clause check", "Vocab 280 item"] },
             { number: 16, title: "Mini-Project — Sollicitatie Roleplay", topics: ["Job application roleplay", "Modal-heavy dialog", "5 menit interaction", "Peer feedback"] },
           ],
         },
         {
-          code: "A2.3",
+          code: "A2.4",
           name: "Separable Verbs — Werkwoord Met Voorvoegsel",
           preview: true,
           sessions: [
@@ -179,12 +179,20 @@ const curriculum: LanguageCurriculum = {
             { number: 12, title: "Idiomatic Separable Verbs", topics: ["Doorgaan, uitzoeken, afspreken", "Idiomatic meaning shift", "Native-like usage", "Drill 15 idioms"] },
             { number: 13, title: "Voice Active vs Passive Hint", topics: ["Passive worden preview", "Setup ke B1", "Active dominance Dutch", "Brief exposure"] },
             { number: 14, title: "Speed Drill Separable", topics: ["Conversion exercises", "Listen-mark pattern", "Drill 50 verbs", "Self-correction"] },
-            { number: 15, title: "Review Akumulatif A2.3", topics: ["Separable mastery test", "V2 + separable integration", "Reading comprehension", "Vocab 330 item"] },
+            { number: 15, title: "Review Akumulatif A2.4", topics: ["Separable mastery test", "V2 + separable integration", "Reading comprehension", "Vocab 330 item"] },
             { number: 16, title: "Mini-Project — Mijn Werkdag Beschrijving", topics: ["Workday narration 3 menit", "15+ separable verbs", "Audio + skrip", "Peer review"] },
           ],
         },
+      ],
+    },
+    {
+      code: "B1",
+      name: "Menengah — Modal Particles & Discourse",
+      description:
+        "Menguasai modal particles signature Belanda (toch, even, maar, eens), tata bahasa kompleks dengan word order subclause, dan kompetensi diskursif untuk topik abstract.",
+      sublevels: [
         {
-          code: "A2.4",
+          code: "B1.1",
           name: "Imperfectum & Er-Construction",
           preview: false,
           sessions: [
@@ -202,20 +210,12 @@ const curriculum: LanguageCurriculum = {
             { number: 12, title: "Reading: Historische Tekst" },
             { number: 13, title: "Writing: Verhaal Schrijven" },
             { number: 14, title: "Listening: Nieuwsberichten" },
-            { number: 15, title: "Review Akumulatif A2.4" },
+            { number: 15, title: "Review Akumulatif B1.1" },
             { number: 16, title: "Mini-Project — Kort Verhaal 200 Woorden" },
           ],
         },
-      ],
-    },
-    {
-      code: "B1",
-      name: "Menengah — Modal Particles & Discourse",
-      description:
-        "Menguasai modal particles signature Belanda (toch, even, maar, eens), tata bahasa kompleks dengan word order subclause, dan kompetensi diskursif untuk topik abstract.",
-      sublevels: [
         {
-          code: "B1.1",
+          code: "B1.2",
           name: "Modal Particles — Toch, Even, Maar, Eens",
           preview: true,
           sessions: [
@@ -233,12 +233,12 @@ const curriculum: LanguageCurriculum = {
             { number: 12, title: "Modal Particle Drills Speed", topics: ["Fill-in-blank", "Choose correct particle", "Context matching", "Self-test"] },
             { number: 13, title: "Hoor & Joh — Discourse Markers", topics: ["Sentence-final hoor", "Joh familiar marker", "Friend-level register", "Tonal awareness"] },
             { number: 14, title: "Reading: Cabaret Scripts", topics: ["Cabaret heavy in particles", "Humor + particle interplay", "Reading aloud", "Imitation drill"] },
-            { number: 15, title: "Review Akumulatif B1.1", topics: ["Modal particle mastery", "Roleplay native-like", "Listening test", "Vocab 400 item"] },
+            { number: 15, title: "Review Akumulatif B1.2", topics: ["Modal particle mastery", "Roleplay native-like", "Listening test", "Vocab 400 item"] },
             { number: 16, title: "Mini-Project — Cabaret Sketch 3 Menit", topics: ["Original sketch with particles", "Audio + performance", "Native feedback", "Self-edit"] },
           ],
         },
         {
-          code: "B1.2",
+          code: "B1.3",
           name: "Word Order Complexity — V2 + Subclause",
           preview: true,
           sessions: [
@@ -256,12 +256,12 @@ const curriculum: LanguageCurriculum = {
             { number: 12, title: "Passive Past — Werd/Is Geworden", topics: ["Werd gemaakt — was being made", "Is gemaakt geworden", "Spoken vs written passive", "Story conversion"] },
             { number: 13, title: "Reading: Krantenartikel", topics: ["B1-level news article", "Complex word order spotting", "Vocabulary in context", "Comprehension"] },
             { number: 14, title: "Writing: Argumentatief Essay", topics: ["100-150 kata essay", "Complex sentence integration", "Argument flow", "Self-edit"] },
-            { number: 15, title: "Review Akumulatif B1.2", topics: ["Word order mastery test", "Reading checkpoint", "Writing assessment", "Vocab 450 item"] },
+            { number: 15, title: "Review Akumulatif B1.3", topics: ["Word order mastery test", "Reading checkpoint", "Writing assessment", "Vocab 450 item"] },
             { number: 16, title: "Mini-Project — Mening Artikel 250 Kata", topics: ["Opinion article original", "10+ complex sentences", "Peer review", "Revision cycle"] },
           ],
         },
         {
-          code: "B1.3",
+          code: "B1.4",
           name: "Formal Register & Subjunctive Remnants",
           preview: true,
           sessions: [
@@ -279,12 +279,12 @@ const curriculum: LanguageCurriculum = {
             { number: 12, title: "Reading Officiële Documenten", topics: ["Gemeente letter sample", "Belastingdienst form", "Reading practice", "Vocab in context"] },
             { number: 13, title: "Speaking Formal Situations", topics: ["Interview met overheid", "Bank consultation", "Notaris talk", "Roleplay drill"] },
             { number: 14, title: "Formal Listening — Politiek", topics: ["Politicus speech", "Tweede Kamer debate", "Note-taking practice", "Critical listening"] },
-            { number: 15, title: "Review Akumulatif B1.3", topics: ["Formal register mastery", "Email composition test", "Reading official text", "Vocab 500 item"] },
+            { number: 15, title: "Review Akumulatif B1.4", topics: ["Formal register mastery", "Email composition test", "Reading official text", "Vocab 500 item"] },
             { number: 16, title: "Mini-Project — Formele Brief 300 Woorden", topics: ["Original formal letter", "Government context", "Formal vocab heavy", "Peer review"] },
           ],
         },
         {
-          code: "B1.4",
+          code: "B1.5",
           name: "Wonen, Leven & Complex Prepositions",
           preview: false,
           sessions: [
@@ -302,7 +302,7 @@ const curriculum: LanguageCurriculum = {
             { number: 12, title: "Speaking: Discussion Topics" },
             { number: 13, title: "Writing: Opinion Piece" },
             { number: 14, title: "Translation Practice" },
-            { number: 15, title: "Review Akumulatif B1.4" },
+            { number: 15, title: "Review Akumulatif B1.5" },
             { number: 16, title: "Mini-Project — Mening Stuk 400 Woorden" },
           ],
         },

@@ -83,9 +83,17 @@ const curriculum: LanguageCurriculum = {
             { number: 16, title: "Mini-Project — Cerita Sahabat", topics: ["Paragraf 12 kalimat", "Past tense + deskripsi", "Komparatif 2x minimum", "Feedback A1.3"] },
           ],
         },
+      ],
+    },
+    {
+      code: "A2",
+      name: "Pra-Menengah — Arab Mengalir",
+      description:
+        "Verba kompleks, cerita masa lalu lengkap, rencana masa depan, masuk ke dunia Arab — 22 negara Liga, Ramadan, hospitality, hidangan regional. Akhir A2 kamu bisa ngobrol panjang dan baca artikel pendek.",
+      sublevels: [
         {
-          code: "A1.4",
-          name: "Konsolidasi A1 — Pondasi Solid",
+          code: "A2.1",
+          name: "Jembatan A1→A2 · Konsolidasi A1 — Pondasi Solid",
           preview: false,
           sessions: [
             { number: 1, title: "Refleksi Pondasi A1 — Yang Sudah Dicapai" },
@@ -106,16 +114,8 @@ const curriculum: LanguageCurriculum = {
             { number: 16, title: "Mini-Project Final A1 — Vlog Perkenalan 2 Menit" },
           ],
         },
-      ],
-    },
-    {
-      code: "A2",
-      name: "Pra-Menengah — Arab Mengalir",
-      description:
-        "Verba kompleks, cerita masa lalu lengkap, rencana masa depan, masuk ke dunia Arab — 22 negara Liga, Ramadan, hospitality, hidangan regional. Akhir A2 kamu bisa ngobrol panjang dan baca artikel pendek.",
-      sublevels: [
         {
-          code: "A2.1",
+          code: "A2.2",
           name: "Pengalaman & Cerita Masa Lalu",
           preview: false,
           sessions: [
@@ -133,12 +133,12 @@ const curriculum: LanguageCurriculum = {
             { number: 12, title: "Conditional Tipe 2 — لو + Madhi" },
             { number: 13, title: "Cerita Tradisi Keluarga" },
             { number: 14, title: "Wawancara: Tanya Cerita Hidup" },
-            { number: 15, title: "Review Akumulatif A2.1" },
+            { number: 15, title: "Review Akumulatif A2.2" },
             { number: 16, title: "Mini-Project — Cerita Pribadi 300 Kata" },
           ],
         },
         {
-          code: "A2.2",
+          code: "A2.3",
           name: "Rencana & Masa Depan",
           preview: false,
           sessions: [
@@ -156,12 +156,12 @@ const curriculum: LanguageCurriculum = {
             { number: 12, title: "Predict — Ramalan Sederhana" },
             { number: 13, title: "Tulis Email Permohonan" },
             { number: 14, title: "Wawancara Kerja Dasar" },
-            { number: 15, title: "Review Akumulatif A2.2" },
+            { number: 15, title: "Review Akumulatif A2.3" },
             { number: 16, title: "Mini-Project — Rencana 5 Tahun" },
           ],
         },
         {
-          code: "A2.3",
+          code: "A2.4",
           name: "Dunia Arab — Geografi & 22 Negara Liga",
           preview: false,
           sessions: [
@@ -179,12 +179,20 @@ const curriculum: LanguageCurriculum = {
             { number: 12, title: "Qatar & Kuwait — Negara-Kota Kaya" },
             { number: 13, title: "Iraq (العراق) — Baghdad sebagai Pusat Sejarah" },
             { number: 14, title: "Palestina dalam Sastra & Sejarah" },
-            { number: 15, title: "Review Akumulatif A2.3" },
+            { number: 15, title: "Review Akumulatif A2.4" },
             { number: 16, title: "Mini-Project — Itinerary Tur Dunia Arab" },
           ],
         },
+      ],
+    },
+    {
+      code: "B1",
+      name: "Menengah — Sastra, Sinema & Quran",
+      description:
+        "Diskusi topik abstrak, sejarah Arab dari Jahiliyah ke Nahda, sastra klasik (Mu'allaqat, Mutanabkbi, 1001 Malam), sinema Mesir Hollywood-of-Arab-World, dan Quran sebagai puncak linguistik. Mulai bisa argumen dan opini.",
+      sublevels: [
         {
-          code: "A2.4",
+          code: "B1.1",
           name: "Budaya Arab — Ramadan, Idul Fitri, Hospitality",
           preview: false,
           sessions: [
@@ -202,20 +210,12 @@ const curriculum: LanguageCurriculum = {
             { number: 12, title: "Olahraga — Football, Falconry, Pacuan Unta" },
             { number: 13, title: "Bazaar / Souq Culture — Seni Tawar-Menawar" },
             { number: 14, title: "Modesty & Konteks Budaya — Norma Sosial" },
-            { number: 15, title: "Review Akumulatif A2.4" },
+            { number: 15, title: "Review Akumulatif B1.1" },
             { number: 16, title: "Mini-Project Final A2 — Esai Budaya Arab 400 Kata" },
           ],
         },
-      ],
-    },
-    {
-      code: "B1",
-      name: "Menengah — Sastra, Sinema & Quran",
-      description:
-        "Diskusi topik abstrak, sejarah Arab dari Jahiliyah ke Nahda, sastra klasik (Mu'allaqat, Mutanabkbi, 1001 Malam), sinema Mesir Hollywood-of-Arab-World, dan Quran sebagai puncak linguistik. Mulai bisa argumen dan opini.",
-      sublevels: [
         {
-          code: "B1.1",
+          code: "B1.2",
           name: "Sejarah Arab — Dari Jahiliyah ke Modern",
           preview: false,
           sessions: [
@@ -233,12 +233,12 @@ const curriculum: LanguageCurriculum = {
             { number: 12, title: "Pan-Arabisme — Nasser, Ba'ath" },
             { number: 13, title: "Arab Spring 2011 — Implikasi Sosial-Budaya" },
             { number: 14, title: "Tantangan Kontemporer — Diaspora & Identitas" },
-            { number: 15, title: "Review Akumulatif B1.1" },
+            { number: 15, title: "Review Akumulatif B1.2" },
             { number: 16, title: "Mini-Project — Timeline Sejarah Arab 700 Kata" },
           ],
         },
         {
-          code: "B1.2",
+          code: "B1.3",
           name: "Sastra Klasik — Puisi & Prosa",
           preview: false,
           sessions: [
@@ -256,12 +256,12 @@ const curriculum: LanguageCurriculum = {
             { number: 12, title: "Ibn Khaldun — Muqaddimah, Bapak Sosiologi" },
             { number: 13, title: "Bentuk Puisi — Qasida, Ghazal, Madih, Hija'" },
             { number: 14, title: "Aruzh — Meter Klasik Puisi Arab" },
-            { number: 15, title: "Review Akumulatif B1.2" },
+            { number: 15, title: "Review Akumulatif B1.3" },
             { number: 16, title: "Mini-Project — Analisis 1 Puisi Klasik" },
           ],
         },
         {
-          code: "B1.3",
+          code: "B1.4",
           name: "Sinema Arab & Media Pan-Arab",
           preview: false,
           sessions: [
@@ -279,12 +279,12 @@ const curriculum: LanguageCurriculum = {
             { number: 12, title: "Vocab Film & TV" },
             { number: 13, title: "Tonton & Diskusi Film Pilihan" },
             { number: 14, title: "Influencer & YouTube Arab" },
-            { number: 15, title: "Review Akumulatif B1.3" },
+            { number: 15, title: "Review Akumulatif B1.4" },
             { number: 16, title: "Mini-Project — Review Konten Media Arab" },
           ],
         },
         {
-          code: "B1.4",
+          code: "B1.5",
           name: "Quran sebagai Bahasa Tertinggi",
           preview: false,
           sessions: [
@@ -302,7 +302,7 @@ const curriculum: LanguageCurriculum = {
             { number: 12, title: "Doa & Dzikir Harian" },
             { number: 13, title: "Khutbah Jumat — Vocab Mimbar" },
             { number: 14, title: "Quran sebagai Sastra Dunia — Apresiasi" },
-            { number: 15, title: "Review Akumulatif B1.4" },
+            { number: 15, title: "Review Akumulatif B1.5" },
             { number: 16, title: "Mini-Project Final B1 — Tafsir Singkat 1 Surah Pendek" },
           ],
         },

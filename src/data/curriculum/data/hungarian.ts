@@ -6,7 +6,7 @@ const meta = getLanguageBySlug("hungarian")!;
 const curriculum: LanguageCurriculum = {
   meta,
   overview:
-    "Bahasa Hungaria (Magyar) adalah bahasa Uralic — **BUKAN Indo-European** — dengan ~13 juta penutur, sebagian besar di Hungaria, plus minoritas signifikan di Rumania (Transilvania), Slovakia, Serbia (Vojvodina), dan Ukraina (Zakarpattia). Kekerabatan terdekatnya adalah Finlandia dan Estonia (rumpun Finno-Ugric), yang berarti tata bahasa Magyar fundamentally berbeda dari tetangga-tetangga Eropa-nya. Bagi pelajar Indonesia, ini berarti tidak ada cognate yang membantu — semua kosakata harus dibangun dari nol — tapi tata bahasanya ternyata logis dan sistematis. Fitur signature: **vowel harmony** (front/back) yang mengatur suffix mana yang nempel ke noun/verb, **18 grammatical cases** (nominative, accusative -t, dative -nak/-nek, plus locative trio inessive/illative/elative dan banyak lagi), agglutination layered, **definite vs indefinite conjugation** (látom vs látok — \"saya melihatnya\" vs \"saya melihat\" — distinksi unik), no gender, dan word order yang fleksibel dengan fokus topik-fokus. Anchor budaya: Petőfi Sándor (penyair nasional, Revolusi 1848), Bartók Béla (komposer-etnomusikolog), Liszt Ferenc piano, Revolusi 1956, gulyás-paprikás-tokaji, Budapest gyógyfürdő (pemandian air panas), dan filsuf Lukács György. Kurikulum Linguo: flag bahasa non-IE prominently A1.1, vowel harmony A1.1, cases bertahap A1.4–B1, **definite/indefinite conjugation pivot di B1.1**, Petőfi reading B2.4, Esterházy + Kertész modern B2.5, kulminasi sertifikasi ECL atau Origó B2.",
+    "Bahasa Hungaria (Magyar) adalah bahasa Uralic — **BUKAN Indo-European** — dengan ~13 juta penutur, sebagian besar di Hungaria, plus minoritas signifikan di Rumania (Transilvania), Slovakia, Serbia (Vojvodina), dan Ukraina (Zakarpattia). Kekerabatan terdekatnya adalah Finlandia dan Estonia (rumpun Finno-Ugric), yang berarti tata bahasa Magyar fundamentally berbeda dari tetangga-tetangga Eropa-nya. Bagi pelajar Indonesia, ini berarti tidak ada cognate yang membantu — semua kosakata harus dibangun dari nol — tapi tata bahasanya ternyata logis dan sistematis. Fitur signature: **vowel harmony** (front/back) yang mengatur suffix mana yang nempel ke noun/verb, **18 grammatical cases** (nominative, accusative -t, dative -nak/-nek, plus locative trio inessive/illative/elative dan banyak lagi), agglutination layered, **definite vs indefinite conjugation** (látom vs látok — \"saya melihatnya\" vs \"saya melihat\" — distinksi unik), no gender, dan word order yang fleksibel dengan fokus topik-fokus. Anchor budaya: Petőfi Sándor (penyair nasional, Revolusi 1848), Bartók Béla (komposer-etnomusikolog), Liszt Ferenc piano, Revolusi 1956, gulyás-paprikás-tokaji, Budapest gyógyfürdő (pemandian air panas), dan filsuf Lukács György. Kurikulum Linguo: flag bahasa non-IE prominently A1.1, vowel harmony A1.1, cases bertahap A2.1–B1, **definite/indefinite conjugation pivot di B1.2**, Petőfi reading B2.4, Esterházy + Kertész modern B2.5, kulminasi sertifikasi ECL atau Origó B2.",
   levels: [
     {
       code: "A1",
@@ -83,8 +83,16 @@ const curriculum: LanguageCurriculum = {
             { number: 16, title: "Mini-Project — Egy Napom Budapesten", topics: ["3 menit audio harian", "Verb + case integration", "Self-recording", "Peer review"] },
           ],
         },
+      ],
+    },
+    {
+      code: "A2",
+      name: "Dasar — Past Tense & Case Expansion",
+      description:
+        "Mendalami past tense -t/-tt, memperluas case system (dative, locative trio, instrumental), dan persiapan untuk pivot definite/indefinite di B1.",
+      sublevels: [
         {
-          code: "A1.4",
+          code: "A2.1",
           name: "Számok, Pénz & Vásárlás",
           preview: false,
           sessions: [
@@ -102,20 +110,12 @@ const curriculum: LanguageCurriculum = {
             { number: 12, title: "Étterem Számla" },
             { number: 13, title: "Borravaló Culture" },
             { number: 14, title: "Online Vásárlás" },
-            { number: 15, title: "Review Akumulatif A1.4" },
+            { number: 15, title: "Review Akumulatif A2.1" },
             { number: 16, title: "Mini-Project — Heti Bevásárlólista" },
           ],
         },
-      ],
-    },
-    {
-      code: "A2",
-      name: "Dasar — Past Tense & Case Expansion",
-      description:
-        "Mendalami past tense -t/-tt, memperluas case system (dative, locative trio, instrumental), dan persiapan untuk pivot definite/indefinite di B1.",
-      sublevels: [
         {
-          code: "A2.1",
+          code: "A2.2",
           name: "Past Tense '-t/-tt' — Múlt Idő",
           preview: true,
           sessions: [
@@ -133,12 +133,12 @@ const curriculum: LanguageCurriculum = {
             { number: 12, title: "Past + Modal Verbs", topics: ["Akartam — saya mau", "Tudtam — saya bisa/tahu", "Kellett — harus", "Drill 20 modal past"] },
             { number: 13, title: "Past Tense Interview", topics: ["Job interview format", "Past experience narration", "Roleplay drill", "Storytelling skill"] },
             { number: 14, title: "Past Speed Drill", topics: ["Conjugation test", "Listening dictation", "Self-correction", "Mastery check"] },
-            { number: 15, title: "Review Akumulatif A2.1", topics: ["Past tense mastery", "Storytelling 90 detik", "Vocab 230 item", "Dialog test"] },
+            { number: 15, title: "Review Akumulatif A2.2", topics: ["Past tense mastery", "Storytelling 90 detik", "Vocab 230 item", "Dialog test"] },
             { number: 16, title: "Mini-Project — Múlt Heti Naplóm", topics: ["7-day diary audio", "Past-tense heavy", "20+ past verbs", "Self-review"] },
           ],
         },
         {
-          code: "A2.2",
+          code: "A2.3",
           name: "Dative '-nak/-nek' & Locative Trio",
           preview: true,
           sessions: [
@@ -156,12 +156,12 @@ const curriculum: LanguageCurriculum = {
             { number: 12, title: "Ablative '-tól/-től' — Dari Dekat", topics: ["Anyámtól jövök — saya datang dari (tempat) ibu", "Separation source", "Drill 25", "Movement origin"] },
             { number: 13, title: "Instrumental '-val/-vel' — Dengan", topics: ["Tollal írok — saya tulis dengan pena", "Instrument/companion", "Assimilation rule", "Drill 25"] },
             { number: 14, title: "Causal-Final '-ért' — Untuk", topics: ["Érted teszem — saya melakukannya untukmu", "Purpose marker", "Drill 20", "Reasoning context"] },
-            { number: 15, title: "Review Akumulatif A2.2", topics: ["Case mastery test (9 cases)", "Spatial drill", "Vocab 280 item", "Reading checkpoint"] },
+            { number: 15, title: "Review Akumulatif A2.3", topics: ["Case mastery test (9 cases)", "Spatial drill", "Vocab 280 item", "Reading checkpoint"] },
             { number: 16, title: "Mini-Project — Budapest Mozgalom Térkép", topics: ["Movement narrative city tour", "Cases bertumpuk", "Audio 3 menit", "Peer review"] },
           ],
         },
         {
-          code: "A2.3",
+          code: "A2.4",
           name: "Future, Comparative & Superlative",
           preview: true,
           sessions: [
@@ -179,12 +179,20 @@ const curriculum: LanguageCurriculum = {
             { number: 12, title: "Negation in Future", topics: ["Nem fogok — saya tidak akan", "Future refusal politely", "Drill 15", "Decline invitation"] },
             { number: 13, title: "Reading Future Predictions", topics: ["B1-level forecasting text", "Vocab in context", "Comprehension drill", "Discussion"] },
             { number: 14, title: "Speaking: 5-Year Plan", topics: ["Personal vision presentation", "Future tense heavy", "Q&A drill", "Polish presentation"] },
-            { number: 15, title: "Review Akumulatif A2.3", topics: ["Future + comparison mastery", "Speaking checkpoint", "Vocab 330 item", "Reading test"] },
+            { number: 15, title: "Review Akumulatif A2.4", topics: ["Future + comparison mastery", "Speaking checkpoint", "Vocab 330 item", "Reading test"] },
             { number: 16, title: "Mini-Project — 5 Év Múlva Magyarországon", topics: ["Future vision 400 kata", "Future-heavy", "Audio + skrip", "Peer review"] },
           ],
         },
+      ],
+    },
+    {
+      code: "B1",
+      name: "Menengah — Definite/Indefinite Pivot & Conditional",
+      description:
+        "Menguasai sistem definite vs indefinite conjugation Magyar (signature feature!), conditional mood, dan tata bahasa kompleks untuk percakapan intermediate.",
+      sublevels: [
         {
-          code: "A2.4",
+          code: "B1.1",
           name: "Imperative, Politeness & Compound Verbs",
           preview: false,
           sessions: [
@@ -202,20 +210,12 @@ const curriculum: LanguageCurriculum = {
             { number: 12, title: "Office Imperative Usage" },
             { number: 13, title: "Speed Drill Compound" },
             { number: 14, title: "Reading: Hungarian Recipe" },
-            { number: 15, title: "Review Akumulatif A2.4" },
+            { number: 15, title: "Review Akumulatif B1.1" },
             { number: 16, title: "Mini-Project — Magyar Recept Audio" },
           ],
         },
-      ],
-    },
-    {
-      code: "B1",
-      name: "Menengah — Definite/Indefinite Pivot & Conditional",
-      description:
-        "Menguasai sistem definite vs indefinite conjugation Magyar (signature feature!), conditional mood, dan tata bahasa kompleks untuk percakapan intermediate.",
-      sublevels: [
         {
-          code: "B1.1",
+          code: "B1.2",
           name: "Definite vs Indefinite Conjugation — Pivot Magyar",
           preview: true,
           sessions: [
@@ -233,12 +233,12 @@ const curriculum: LanguageCurriculum = {
             { number: 12, title: "Practice Conversion Drill", topics: ["Same sentence, definite/indefinite swap", "Speed conversion", "Listening discrimination", "Self-test"] },
             { number: 13, title: "Common Mistakes Native Indo", topics: ["Default to indefinite trap", "Definiteness sensitivity training", "Common errors catalog", "Correction drill"] },
             { number: 14, title: "Reading Conjugation-Heavy Text", topics: ["B1 Magyar passage", "Conjugation spotting", "Vocab in context", "Comprehension"] },
-            { number: 15, title: "Review Akumulatif B1.1", topics: ["Definite/indefinite mastery test", "Conversion drill", "Vocab 400 item", "Reading checkpoint"] },
+            { number: 15, title: "Review Akumulatif B1.2", topics: ["Definite/indefinite mastery test", "Conversion drill", "Vocab 400 item", "Reading checkpoint"] },
             { number: 16, title: "Mini-Project — Egy Nap Részletes Leírása", topics: ["Detailed day description", "Conjugation-heavy 400 kata", "Audio + skrip", "Peer review"] },
           ],
         },
         {
-          code: "B1.2",
+          code: "B1.3",
           name: "Conditional Mood — Feltételes Mód",
           preview: true,
           sessions: [
@@ -256,12 +256,12 @@ const curriculum: LanguageCurriculum = {
             { number: 12, title: "Reading Conditional-Heavy Text", topics: ["B1+ Magyar essay", "Conditional spotting", "Comprehension drill", "Discussion"] },
             { number: 13, title: "Speaking: Hypothetical Topics", topics: ["What-if discussions", "Debate hypothetical", "Politeness layers", "Roleplay"] },
             { number: 14, title: "Writing: Ha Essay", topics: ["100-kata hypothetical essay", "Conditional integration", "Coherence check", "Self-edit"] },
-            { number: 15, title: "Review Akumulatif B1.2", topics: ["Conditional mastery test", "Speaking roleplay", "Vocab 450 item", "Reading checkpoint"] },
+            { number: 15, title: "Review Akumulatif B1.3", topics: ["Conditional mastery test", "Speaking roleplay", "Vocab 450 item", "Reading checkpoint"] },
             { number: 16, title: "Mini-Project — Ha Magyarországon Élnék", topics: ["Imagination essay 400 kata", "Conditional + hypothetical heavy", "Audio + skrip", "Peer review"] },
           ],
         },
         {
-          code: "B1.3",
+          code: "B1.4",
           name: "Participles, Gerunds & Subordinate Clauses",
           preview: true,
           sessions: [
@@ -279,12 +279,12 @@ const curriculum: LanguageCurriculum = {
             { number: 12, title: "Indirect Speech", topics: ["Azt mondta hogy... — dia bilang bahwa...", "Reported speech pattern", "Tense shift rules", "Drill 25"] },
             { number: 13, title: "Reading: Complex Subordinate", topics: ["B1+ Magyar editorial", "Multi-clause parsing", "Vocab in context", "Comprehension"] },
             { number: 14, title: "Writing: Subordinate-Rich Para", topics: ["100-kata complex paragraph", "Subordinate integration", "Flow construction", "Self-edit"] },
-            { number: 15, title: "Review Akumulatif B1.3", topics: ["Subordinate mastery test", "Reading complex", "Writing check", "Vocab 500 item"] },
+            { number: 15, title: "Review Akumulatif B1.4", topics: ["Subordinate mastery test", "Reading complex", "Writing check", "Vocab 500 item"] },
             { number: 16, title: "Mini-Project — Vélemény Cikk 500 Kata", topics: ["Opinion piece", "Subordinate clause heavy", "Audio narration", "Peer review"] },
           ],
         },
         {
-          code: "B1.4",
+          code: "B1.5",
           name: "Passive, Causative & Reflexive",
           preview: false,
           sessions: [
@@ -302,7 +302,7 @@ const curriculum: LanguageCurriculum = {
             { number: 12, title: "Speaking: Voice Variations" },
             { number: 13, title: "Writing: Formal Report" },
             { number: 14, title: "Speed Drill Voice" },
-            { number: 15, title: "Review Akumulatif B1.4" },
+            { number: 15, title: "Review Akumulatif B1.5" },
             { number: 16, title: "Mini-Project — Hivatalos Jelentés" },
           ],
         },

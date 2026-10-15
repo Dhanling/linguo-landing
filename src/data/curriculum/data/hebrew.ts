@@ -83,9 +83,17 @@ const curriculum: LanguageCurriculum = {
             { number: 16, title: "Mini-Project — Cerita Sahabat", topics: ["Paragraf 12 kalimat", "Past tense + deskripsi", "Komparatif 2x minimum", "Feedback A1.3"] },
           ],
         },
+      ],
+    },
+    {
+      code: "A2",
+      name: "Pra-Menengah — Ibrani Mengalir",
+      description:
+        "Verba kompleks, cerita masa lalu lengkap, rencana masa depan, geografi Israel, hari raya Yahudi (Shabbat, Pesach, Hanukkah). Akhir A2 kamu bisa ngobrol panjang dan baca artikel pendek.",
+      sublevels: [
         {
-          code: "A1.4",
-          name: "Konsolidasi A1 — Pondasi Solid",
+          code: "A2.1",
+          name: "Jembatan A1→A2 · Konsolidasi A1 — Pondasi Solid",
           preview: false,
           sessions: [
             { number: 1, title: "Refleksi Pondasi A1 — Yang Sudah Dicapai" },
@@ -106,16 +114,8 @@ const curriculum: LanguageCurriculum = {
             { number: 16, title: "Mini-Project Final A1 — Vlog Perkenalan 2 Menit" },
           ],
         },
-      ],
-    },
-    {
-      code: "A2",
-      name: "Pra-Menengah — Ibrani Mengalir",
-      description:
-        "Verba kompleks, cerita masa lalu lengkap, rencana masa depan, geografi Israel, hari raya Yahudi (Shabbat, Pesach, Hanukkah). Akhir A2 kamu bisa ngobrol panjang dan baca artikel pendek.",
-      sublevels: [
         {
-          code: "A2.1",
+          code: "A2.2",
           name: "Pengalaman & Cerita Masa Lalu",
           preview: false,
           sessions: [
@@ -133,12 +133,12 @@ const curriculum: LanguageCurriculum = {
             { number: 12, title: "Conditional Tipe 2 — אילו... הייתי..." },
             { number: 13, title: "Cerita Tradisi Keluarga" },
             { number: 14, title: "Wawancara: Tanya Cerita Hidup" },
-            { number: 15, title: "Review Akumulatif A2.1" },
+            { number: 15, title: "Review Akumulatif A2.2" },
             { number: 16, title: "Mini-Project — Cerita Pribadi 300 Kata" },
           ],
         },
         {
-          code: "A2.2",
+          code: "A2.3",
           name: "Rencana & Masa Depan",
           preview: false,
           sessions: [
@@ -156,12 +156,12 @@ const curriculum: LanguageCurriculum = {
             { number: 12, title: "Predict — Ramalan Sederhana" },
             { number: 13, title: "Tulis Email Permohonan" },
             { number: 14, title: "Wawancara Kerja Dasar" },
-            { number: 15, title: "Review Akumulatif A2.2" },
+            { number: 15, title: "Review Akumulatif A2.3" },
             { number: 16, title: "Mini-Project — Rencana 5 Tahun" },
           ],
         },
         {
-          code: "A2.3",
+          code: "A2.4",
           name: "Geografi Israel & Tempat Bersejarah",
           preview: false,
           sessions: [
@@ -179,12 +179,20 @@ const curriculum: LanguageCurriculum = {
             { number: 12, title: "Gurun Negev (הנגב) & Pertanian Inovatif" },
             { number: 13, title: "Pantai Mediterania — Caesarea, Akko" },
             { number: 14, title: "Iklim & Musim — Mediterania ke Gurun" },
-            { number: 15, title: "Review Akumulatif A2.3" },
+            { number: 15, title: "Review Akumulatif A2.4" },
             { number: 16, title: "Mini-Project — Itinerary Tur Israel" },
           ],
         },
+      ],
+    },
+    {
+      code: "B1",
+      name: "Menengah — Revival, Sastra & Musik",
+      description:
+        "Sejarah Ibrani dari Tanakh ke revival modern, kisah Eliezer Ben-Yehuda mendetail, musik Israel (folk, Mizrahi, modern), Tanakh sebagai karya sastra dunia. Mulai bisa argumen dan opini abstrak.",
+      sublevels: [
         {
-          code: "A2.4",
+          code: "B1.1",
           name: "Hari Raya & Tradisi — Shabbat, Pesach, Hanukkah",
           preview: false,
           sessions: [
@@ -202,20 +210,12 @@ const curriculum: LanguageCurriculum = {
             { number: 12, title: "Bar/Bat Mitzvah — Coming of Age" },
             { number: 13, title: "Brit Milah & Upacara Penamaan" },
             { number: 14, title: "Mezuzah & Hamsa — Simbol Rumah" },
-            { number: 15, title: "Review Akumulatif A2.4" },
+            { number: 15, title: "Review Akumulatif B1.1" },
             { number: 16, title: "Mini-Project Final A2 — Esai Tradisi Yahudi 400 Kata" },
           ],
         },
-      ],
-    },
-    {
-      code: "B1",
-      name: "Menengah — Revival, Sastra & Musik",
-      description:
-        "Sejarah Ibrani dari Tanakh ke revival modern, kisah Eliezer Ben-Yehuda mendetail, musik Israel (folk, Mizrahi, modern), Tanakh sebagai karya sastra dunia. Mulai bisa argumen dan opini abstrak.",
-      sublevels: [
         {
-          code: "B1.1",
+          code: "B1.2",
           name: "Sejarah Bahasa Ibrani — Dari Tanakh ke Revival",
           preview: false,
           sessions: [
@@ -233,12 +233,12 @@ const curriculum: LanguageCurriculum = {
             { number: 12, title: "Perubahan Bahasa Pasca-1948" },
             { number: 13, title: "Ibrani Modern vs Klasik" },
             { number: 14, title: "Yiddish & Ladino Hari Ini" },
-            { number: 15, title: "Review Akumulatif B1.1" },
+            { number: 15, title: "Review Akumulatif B1.2" },
             { number: 16, title: "Mini-Project — Timeline Bahasa Ibrani 700 Kata" },
           ],
         },
         {
-          code: "B1.2",
+          code: "B1.3",
           name: "Eliezer Ben-Yehuda — Mukjizat Linguistik Mendetail",
           preview: false,
           sessions: [
@@ -256,12 +256,12 @@ const curriculum: LanguageCurriculum = {
             { number: 12, title: "Pelajaran Linguistik dari Revival Ibrani" },
             { number: 13, title: "Apakah Bisa Diulang? Welsh, Cornish, Manx, Hawaiian" },
             { number: 14, title: "Legasi Ben-Yehuda Hari Ini" },
-            { number: 15, title: "Review Akumulatif B1.2" },
+            { number: 15, title: "Review Akumulatif B1.3" },
             { number: 16, title: "Mini-Project — Esai Linguistik Revival 700 Kata" },
           ],
         },
         {
-          code: "B1.3",
+          code: "B1.4",
           name: "Musik Israel — Folk, Mizrahi, Modern Pop",
           preview: false,
           sessions: [
@@ -279,12 +279,12 @@ const curriculum: LanguageCurriculum = {
             { number: 12, title: "Liturgis — Hazzanut & Piyutim Klasik" },
             { number: 13, title: "Lagu Anak Ibrani Klasik" },
             { number: 14, title: "Diskusi: Musik sebagai Cermin Masyarakat Israel" },
-            { number: 15, title: "Review Akumulatif B1.3" },
+            { number: 15, title: "Review Akumulatif B1.4" },
             { number: 16, title: "Mini-Project — Analisis Lagu Ibrani Pilihan" },
           ],
         },
         {
-          code: "B1.4",
+          code: "B1.5",
           name: "Sastra Klasik — Tanakh sebagai Karya Sastra Dunia",
           preview: false,
           sessions: [
@@ -302,7 +302,7 @@ const curriculum: LanguageCurriculum = {
             { number: 12, title: "Yehuda HaLevi — Penyair Sefardi Medieval" },
             { number: 13, title: "Maimonides (Rambam) — Filsafat dalam Ibrani & Arab" },
             { number: 14, title: "Diskusi: Tanakh sebagai Sastra Dunia" },
-            { number: 15, title: "Review Akumulatif B1.4" },
+            { number: 15, title: "Review Akumulatif B1.5" },
             { number: 16, title: "Mini-Project Final B1 — Analisis 1 Episode Tanakh" },
           ],
         },

@@ -6,7 +6,7 @@ const meta = getLanguageBySlug("urdu")!;
 const curriculum: LanguageCurriculum = {
   meta,
   overview:
-    "Urdu (اردو) adalah bahasa nasional Pakistan dan salah satu dari 22 bahasa terjadwal di India (resmi di Jammu-Kashmir, Telangana, Bihar, UP, Delhi), dituturkan oleh sekitar 230+ juta penutur total — bahasa terbesar ke-11 dunia. Urdu adalah **sister language Hindi** secara gramatikal: keduanya sama-sama Indo-Aryan, dengan SOV word order, postposition system, split ergativity ने/نے marker, gender m/f, dan agreement complex yang IDENTIK. Yang membedakan: aksara, register vocabulary, dan kultur sastra. Urdu ditulis dengan **Nastaliq** (نستعلیق) — varian Perso-Arabic yang flowing-calligraphic, **kanan-ke-kiri (RTL)** — pivot pedagogical Linguo paling unik di A1.1 dengan mental-shift writing direction dan 38 huruf (28 dari Arabic + 4 dari Persian + 6 unik Urdu termasuk retroflex ٹ ڈ ڑ). Kosakata Urdu didominasi **loanword Persian-Arabic** (kitab کتاب vs Hindi pustak, mohabbat محبت vs Hindi prem, qalam قلم vs Hindi lekhni) — pivot A1.2 mengenalkan pola loanword recognition yang membuka pintu ke vocab Arabic, Persian, dan bahkan Bahasa Indonesia (banyak kosakata seperti 'kitab', 'qalam', 'majlis', 'akhirat' di Bahasa Indonesia juga berasal dari Persian-Arabic via Urdu/Persian heritage). Fitur signature kedua: **tradisi ghazal** (غزل) — bentuk puisi cinta-mistis paling agung Urdu dengan struktur sher-matla-maqta-radif-qafia-takhallus-behar yang dikupas tuntas di B1.1 dan menjadi backbone B2.4 (Mirza Ghalib mendalam) dan B2.5 (Allama Iqbal + Faiz Ahmad Faiz). Bagi pelajar Indonesia: Urdu menawarkan jembatan unik — register Persian-Arabic-nya beresonansi dengan vocab Bahasa Indonesia (1000+ kata serapan), sementara grammar-nya bisa di-transfer langsung dari Hindi (kalau sudah belajar) atau sebaliknya. Linguo membawa pelajar dari pengenalan Nastaliq RTL (A1.1) hingga apresiasi ghazal Mirza Ghalib abad ke-19 dan sastra modern Faiz Ahmad Faiz (B2.4–B2.5). Konten budaya berfokus pada warisan Mughal (Lahore-Delhi-Hyderabad), Sufi heritage, qawwali (Nusrat Fateh Ali Khan), kuliner biryani-nihari-haleem, Eid culture. Target sertifikasi: NUML (National University of Modern Languages, Islamabad) atau placement di Jamia Millia Islamia Delhi Urdu department.",
+    "Urdu (اردو) adalah bahasa nasional Pakistan dan salah satu dari 22 bahasa terjadwal di India (resmi di Jammu-Kashmir, Telangana, Bihar, UP, Delhi), dituturkan oleh sekitar 230+ juta penutur total — bahasa terbesar ke-11 dunia. Urdu adalah **sister language Hindi** secara gramatikal: keduanya sama-sama Indo-Aryan, dengan SOV word order, postposition system, split ergativity ने/نے marker, gender m/f, dan agreement complex yang IDENTIK. Yang membedakan: aksara, register vocabulary, dan kultur sastra. Urdu ditulis dengan **Nastaliq** (نستعلیق) — varian Perso-Arabic yang flowing-calligraphic, **kanan-ke-kiri (RTL)** — pivot pedagogical Linguo paling unik di A1.1 dengan mental-shift writing direction dan 38 huruf (28 dari Arabic + 4 dari Persian + 6 unik Urdu termasuk retroflex ٹ ڈ ڑ). Kosakata Urdu didominasi **loanword Persian-Arabic** (kitab کتاب vs Hindi pustak, mohabbat محبت vs Hindi prem, qalam قلم vs Hindi lekhni) — pivot A1.2 mengenalkan pola loanword recognition yang membuka pintu ke vocab Arabic, Persian, dan bahkan Bahasa Indonesia (banyak kosakata seperti 'kitab', 'qalam', 'majlis', 'akhirat' di Bahasa Indonesia juga berasal dari Persian-Arabic via Urdu/Persian heritage). Fitur signature kedua: **tradisi ghazal** (غزل) — bentuk puisi cinta-mistis paling agung Urdu dengan struktur sher-matla-maqta-radif-qafia-takhallus-behar yang dikupas tuntas di B1.2 dan menjadi backbone B2.4 (Mirza Ghalib mendalam) dan B2.5 (Allama Iqbal + Faiz Ahmad Faiz). Bagi pelajar Indonesia: Urdu menawarkan jembatan unik — register Persian-Arabic-nya beresonansi dengan vocab Bahasa Indonesia (1000+ kata serapan), sementara grammar-nya bisa di-transfer langsung dari Hindi (kalau sudah belajar) atau sebaliknya. Linguo membawa pelajar dari pengenalan Nastaliq RTL (A1.1) hingga apresiasi ghazal Mirza Ghalib abad ke-19 dan sastra modern Faiz Ahmad Faiz (B2.4–B2.5). Konten budaya berfokus pada warisan Mughal (Lahore-Delhi-Hyderabad), Sufi heritage, qawwali (Nusrat Fateh Ali Khan), kuliner biryani-nihari-haleem, Eid culture. Target sertifikasi: NUML (National University of Modern Languages, Islamabad) atau placement di Jamia Millia Islamia Delhi Urdu department.",
   levels: [
     {
       code: "A1",
@@ -83,8 +83,16 @@ const curriculum: LanguageCurriculum = {
             { number: 16, title: "Mini-Project — Travel Narrative Karachi-Lahore 90 Detik dalam Nastaliq", topics: ["narasi perjalanan multi-stop", "minimal 8 postposition berbeda", "natural SOV order RTL", "submit teks Nastaliq + audio + postposition highlight"] },
           ],
         },
+      ],
+    },
+    {
+      code: "A2",
+      name: "Dasar+ — Urdu Konversasional",
+      description:
+        "Beralih dari frasa terisolasi ke percakapan multi-turn natural. Tuntaskan Hindi-Urdu register comparison di A2.4 (signature deep dive — efisien banget bagi pelajar yang sudah belajar Hindi atau exposure Bollywood), bangun kosakata Mughal heritage, qawwali, kuliner, plus konsumsi media Urdu ringan.",
+      sublevels: [
         {
-          code: "A1.4",
+          code: "A2.1",
           name: "Numerik Lanjut, Transportasi & Belanja Pakistan",
           preview: false,
           sessions: [
@@ -102,20 +110,12 @@ const curriculum: LanguageCurriculum = {
             { number: 12, title: "Liberty Market vs Emporium Mall Lahore" },
             { number: 13, title: "Café Lahore & Karachi: Pesan Doodh Patti Chai" },
             { number: 14, title: "Bayar via JazzCash, Easypaisa, RAAST Pakistan" },
-            { number: 15, title: "Review Akumulatif A1.4" },
+            { number: 15, title: "Review Akumulatif A2.1" },
             { number: 16, title: "Mini-Project — Simulasi Trip Lahore → Islamabad → Karachi" },
           ],
         },
-      ],
-    },
-    {
-      code: "A2",
-      name: "Dasar+ — Urdu Konversasional",
-      description:
-        "Beralih dari frasa terisolasi ke percakapan multi-turn natural. Tuntaskan Hindi-Urdu register comparison di A2.3 (signature deep dive — efisien banget bagi pelajar yang sudah belajar Hindi atau exposure Bollywood), bangun kosakata Mughal heritage, qawwali, kuliner, plus konsumsi media Urdu ringan.",
-      sublevels: [
         {
-          code: "A2.1",
+          code: "A2.2",
           name: "Percakapan Sehari-Hari & Dunia Kerja Pakistan",
           preview: true,
           sessions: [
@@ -133,12 +133,12 @@ const curriculum: LanguageCurriculum = {
             { number: 12, title: "Bank Pakistan: HBL, MCB, UBL", topics: ["paise nikalna پیسے نکالنا", "transfer karna ٹرانسفر کرنا", "khata kholna کھاتا کھولنا", "RAAST instant transfer"] },
             { number: 13, title: "Klinik: Konsultasi & Resep", topics: ["alamaat علامات (symptoms)", "dawa دوا (medicine)", "nuskha نسخہ (prescription)", "AKU Karachi context"] },
             { number: 14, title: "Roleplay Restaurant: Order Lengkap Biryani-Nihari", topics: ["menu typical Pakistani", "modifikasi pesanan (kam mirch / mild)", "split bill", "tip culture Pakistan"] },
-            { number: 15, title: "Review Akumulatif A2.1", topics: ["semua skenario sehari-hari", "drill 5 register sosial", "mini-test multi-turn", "feedback delivery RTL"] },
+            { number: 15, title: "Review Akumulatif A2.2", topics: ["semua skenario sehari-hari", "drill 5 register sosial", "mini-test multi-turn", "feedback delivery RTL"] },
             { number: 16, title: "Mini-Project — Roleplay Hari Kerja Penuh Pakistan 5 Menit", topics: ["pagi: greet kolega + chai", "siang: meeting + lunch biryani", "sore: email reply + pulang", "submit audio + transkrip Nastaliq"] },
           ],
         },
         {
-          code: "A2.2",
+          code: "A2.3",
           name: "Mughal Heritage, Eid & Qawwali Culture",
           preview: true,
           sessions: [
@@ -156,12 +156,12 @@ const curriculum: LanguageCurriculum = {
             { number: 12, title: "Kuliner Lahore: Nihari, Haleem, Paya", topics: ["Lahore breakfast culture", "Old Anarkali street food", "preparation method", "comparison Karachi style"] },
             { number: 13, title: "Kuliner Karachi: Biryani Sindhi, Chaat", topics: ["Karachi biryani style", "Sindhi influence", "street food culture", "comparison Lahore"] },
             { number: 14, title: "Sosial Media: WhatsApp & FB Pakistan", topics: ["WhatsApp universal", "FB still dominant in Pakistan", "vocab caption umum Urdu", "etika komentar"] },
-            { number: 15, title: "Review Akumulatif A2.2", topics: ["recall vocab heritage + qawwali + kuliner", "drill caption & komentar Nastaliq", "mini-test reading 3 post FB", "self-record reaction"] },
+            { number: 15, title: "Review Akumulatif A2.3", topics: ["recall vocab heritage + qawwali + kuliner", "drill caption & komentar Nastaliq", "mini-test reading 3 post FB", "self-record reaction"] },
             { number: 16, title: "Mini-Project — Review 1 Qawwali Performance + 3 Caption FB Urdu", topics: ["review qawwali: lirik favorit + meaning", "caption 1: makanan Pakistan", "caption 2: heritage site Lahore", "caption 3: festival Eid"] },
           ],
         },
         {
-          code: "A2.3",
+          code: "A2.4",
           name: "Hindi-Urdu Register Comparison — Signature Bridge",
           preview: true,
           sessions: [
@@ -179,12 +179,20 @@ const curriculum: LanguageCurriculum = {
             { number: 12, title: "Diaspora Context: Urdu-Hindi in UK, US, Canada", topics: ["heritage speaker realities", "code-mixing patterns generation 2", "language attitudes", "Indonesia parallel"] },
             { number: 13, title: "Translation Practice: Urdu ↔ Hindi (Register Shift)", topics: ["translate 10 kalimat Urdu high-register ke Hindi", "translate 10 Hindi back ke Urdu high", "vocab substitution precision", "self-recording bilingual"] },
             { number: 14, title: "Hindi-Urdu Strategy: Which Register for Which Audience", topics: ["Pakistani audience: lean Urdu register", "Indian Muslim: comfortable Urdu", "Indian Hindu: lean Sanskrit register", "secular ambiguity strategy"] },
-            { number: 15, title: "Review Akumulatif A2.3", topics: ["mastery test cross-reading", "code-switch fluency drill", "register sensitivity assessment", "self-evaluation"] },
+            { number: 15, title: "Review Akumulatif A2.4", topics: ["mastery test cross-reading", "code-switch fluency drill", "register sensitivity assessment", "self-evaluation"] },
             { number: 16, title: "Mini-Project — Translasi 1 Lagu Bollywood ke Pure Urdu + Pure Hindi", topics: ["pilih lagu Bollywood ikonik", "translate ke Urdu register tinggi", "translate ke Hindi register tinggi", "submit dua versi + annotation register"] },
           ],
         },
+      ],
+    },
+    {
+      code: "B1",
+      name: "Menengah — Topical & Cultural Urdu + Ghazal Foundation",
+      description:
+        "Beralih dari survival ke ekspresi. Pelajar bisa berdiskusi opini, narasi multi-paragraf, mulai mengapresiasi ghazal couplet structure (signature B1.2 — sher, matla, maqta, radif, qafia), dan konsumsi media Urdu (Pakistani drama TV, podcast Urdu, ghazal radio, qawwali) secara mandiri.",
+      sublevels: [
         {
-          code: "A2.4",
+          code: "B1.1",
           name: "Karachi, Lahore, Islamabad & Pakistani Heritage Provincial",
           preview: false,
           sessions: [
@@ -202,20 +210,12 @@ const curriculum: LanguageCurriculum = {
             { number: 12, title: "Bahasa untuk Backpacker: Hostel Lahore" },
             { number: 13, title: "Emergency Vocab: 15 Police, 115 Ambulance, 1122 Rescue" },
             { number: 14, title: "Festival Provincial: Basant Spring, Urs Sufi Saints" },
-            { number: 15, title: "Review Akumulatif A2.4" },
+            { number: 15, title: "Review Akumulatif B1.1" },
             { number: 16, title: "Mini-Project — Itinerary 14-Hari Heritage Pakistan Loop" },
           ],
         },
-      ],
-    },
-    {
-      code: "B1",
-      name: "Menengah — Topical & Cultural Urdu + Ghazal Foundation",
-      description:
-        "Beralih dari survival ke ekspresi. Pelajar bisa berdiskusi opini, narasi multi-paragraf, mulai mengapresiasi ghazal couplet structure (signature B1.1 — sher, matla, maqta, radif, qafia), dan konsumsi media Urdu (Pakistani drama TV, podcast Urdu, ghazal radio, qawwali) secara mandiri.",
-      sublevels: [
         {
-          code: "B1.1",
+          code: "B1.2",
           name: "Diskusi & Opini + Ghazal Couplet Structure Intro",
           preview: true,
           sessions: [
@@ -233,12 +233,12 @@ const curriculum: LanguageCurriculum = {
             { number: 12, title: "Topik: Bahasa Inggris di Pendidikan Pakistan", topics: ["English-medium school dominance", "Urdu preservation debate", "Pashto-Sindhi-Punjabi minority languages", "balanced view"] },
             { number: 13, title: "Topik: Pariwisata Pakistan — Berkah atau Beban", topics: ["mountain tourism Hunza", "Karakoram Highway", "preservasi cultural integrity", "balanced critique"] },
             { number: 14, title: "Active Listening: Acknowledge & Paraphrase", topics: ["repeat: aap kehna chahte hain ke...", "validate: main samajh gaya", "ask deeper: aur kyon", "Pakistani politeness"] },
-            { number: 15, title: "Review Akumulatif B1.1", topics: ["ghazal structure mastery", "drill agree/disagree register", "mini-test 1 paragraf opini", "self-assessment audio"] },
+            { number: 15, title: "Review Akumulatif B1.2", topics: ["ghazal structure mastery", "drill agree/disagree register", "mini-test 1 paragraf opini", "self-assessment audio"] },
             { number: 16, title: "Mini-Project — Diskusi Panel 8 Menit + Tulis 1 Ghazal Sederhana 5 Sher", topics: ["diskusi heritage Pakistan", "tulis ghazal: 5 sher, radif, qafia konsisten, takhallus di maqta", "submit audio diskusi + ghazal Nastaliq"] },
           ],
         },
         {
-          code: "B1.2",
+          code: "B1.3",
           name: "Narasi & Storytelling",
           preview: true,
           sessions: [
@@ -256,12 +256,12 @@ const curriculum: LanguageCurriculum = {
             { number: 12, title: "Pakistani Drama TV: Watch & Retell Episode", topics: ["pilih 1 episode Humsafar / Zindagi Gulzar Hai", "retell plot 3 menit", "character analysis singkat", "vocab acquisition"] },
             { number: 13, title: "Cerita Sufi: Mystic Tradition Urdu", topics: ["Sufi qissa tradition", "narrative atmosphere spiritual", "Rumi-influenced layers", "respect cultural beliefs"] },
             { number: 14, title: "Story Climax: Pacing & Build-Up", topics: ["pacing dengan kalimat pendek", "build-up dengan deskripsi", "release di klimaks", "rewrite ending exercise"] },
-            { number: 15, title: "Review Akumulatif B1.2", topics: ["narasi 6 jenis", "test struktur 3-act", "self-edit narasi sendiri", "peer feedback"] },
+            { number: 15, title: "Review Akumulatif B1.3", topics: ["narasi 6 jenis", "test struktur 3-act", "self-edit narasi sendiri", "peer feedback"] },
             { number: 16, title: "Mini-Project — Cerita Pendek Original 500 Kata Nastaliq", topics: ["fiksi pendek 5 paragraf SOV consistent", "include dialog + deskripsi", "moral atau twist ending", "submit teks Nastaliq + ringkasan audio"] },
           ],
         },
         {
-          code: "B1.3",
+          code: "B1.4",
           name: "Argumentasi & Persuasi",
           preview: true,
           sessions: [
@@ -279,12 +279,12 @@ const curriculum: LanguageCurriculum = {
             { number: 12, title: "Bahasa Persuasi Politik: Critical Awareness", topics: ["loaded language detection", "false dichotomy", "appeal to authority", "media literacy"] },
             { number: 13, title: "Negosiasi: B2B Pakistan Relationship-First Heritage", topics: ["chai-and-talk approach", "long-term relationship value", "Persian hospitality heritage", "win-win framing"] },
             { number: 14, title: "Persuasive Speech 5 Menit Rekaman", topics: ["pilih cause Anda peduli", "struktur opening-body-CTA", "delivery pace & pause", "submit audio"] },
-            { number: 15, title: "Review Akumulatif B1.3", topics: ["semua connector logis", "drill claim-evidence", "debate skill assessment", "self-edit essay"] },
+            { number: 15, title: "Review Akumulatif B1.4", topics: ["semua connector logis", "drill claim-evidence", "debate skill assessment", "self-edit essay"] },
             { number: 16, title: "Mini-Project — Esai Argumentatif 700 Kata + Pitch 3 Menit", topics: ["pilih kontroversi sosial Pakistan", "3 alasan + 1 counter-argument", "kesimpulan & CTA", "rekaman pitch + submit teks"] },
           ],
         },
         {
-          code: "B1.4",
+          code: "B1.5",
           name: "Konsumsi Media Urdu Mandiri",
           preview: false,
           sessions: [
@@ -302,7 +302,7 @@ const curriculum: LanguageCurriculum = {
             { number: 12, title: "Comic Lokal Urdu & Manga Translated" },
             { number: 13, title: "Radio FM Urdu: Mast FM, Apna Karachi FM" },
             { number: 14, title: "Konsumsi Multi-Media Project Weekly" },
-            { number: 15, title: "Review Akumulatif B1.4" },
+            { number: 15, title: "Review Akumulatif B1.5" },
             { number: 16, title: "Mini-Project — Media Diary 30 Hari + Review 1 Karya" },
           ],
         },

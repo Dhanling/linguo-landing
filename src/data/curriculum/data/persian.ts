@@ -83,9 +83,17 @@ const curriculum: LanguageCurriculum = {
             { number: 16, title: "Mini-Project — Cerita Tentang Sahabat", topics: ["Paragraf 12 kalimat", "Pakai past tense + deskripsi", "Komparatif minimum 2x", "Final feedback A1.3"] },
           ],
         },
+      ],
+    },
+    {
+      code: "A2",
+      name: "Pra-Menengah — Persia Mengalir",
+      description:
+        "Verba kompleks, cerita masa lalu lengkap, rencana masa depan. Kamu mulai bisa ngobrol panjang topik personal, baca artikel pendek, dan masuk ke budaya Iran lewat Nowruz & taarof.",
+      sublevels: [
         {
-          code: "A1.4",
-          name: "Konsolidasi A1 — Pondasi Solid",
+          code: "A2.1",
+          name: "Jembatan A1→A2 · Konsolidasi A1 — Pondasi Solid",
           preview: false,
           sessions: [
             { number: 1, title: "Refleksi Pondasi A1 — Yang Sudah Dicapai" },
@@ -106,16 +114,8 @@ const curriculum: LanguageCurriculum = {
             { number: 16, title: "Mini-Project Final A1 — Vlog Perkenalan 2 Menit" },
           ],
         },
-      ],
-    },
-    {
-      code: "A2",
-      name: "Pra-Menengah — Persia Mengalir",
-      description:
-        "Verba kompleks, cerita masa lalu lengkap, rencana masa depan. Kamu mulai bisa ngobrol panjang topik personal, baca artikel pendek, dan masuk ke budaya Iran lewat Nowruz & taarof.",
-      sublevels: [
         {
-          code: "A2.1",
+          code: "A2.2",
           name: "Pengalaman & Cerita Masa Lalu",
           preview: false,
           sessions: [
@@ -133,12 +133,12 @@ const curriculum: LanguageCurriculum = {
             { number: 12, title: "Andaikan Saja — Conditional Tipe 2 Intro" },
             { number: 13, title: "Cerita Tradisi Keluarga" },
             { number: 14, title: "Wawancara: Tanya Cerita Hidup Seseorang" },
-            { number: 15, title: "Review Akumulatif A2.1" },
+            { number: 15, title: "Review Akumulatif A2.2" },
             { number: 16, title: "Mini-Project — Tulis Cerita Pribadi 300 Kata" },
           ],
         },
         {
-          code: "A2.2",
+          code: "A2.3",
           name: "Rencana & Masa Depan",
           preview: false,
           sessions: [
@@ -156,12 +156,12 @@ const curriculum: LanguageCurriculum = {
             { number: 12, title: "Predict — Ramalan Sederhana" },
             { number: 13, title: "Tulis Email Permohonan Sederhana" },
             { number: 14, title: "Wawancara Kerja Dasar Persia" },
-            { number: 15, title: "Review Akumulatif A2.2" },
+            { number: 15, title: "Review Akumulatif A2.3" },
             { number: 16, title: "Mini-Project — Rencana 5 Tahun ke Depan" },
           ],
         },
         {
-          code: "A2.3",
+          code: "A2.4",
           name: "Persia & Iran — Geografi dan Kota",
           preview: false,
           sessions: [
@@ -179,12 +179,20 @@ const curriculum: LanguageCurriculum = {
             { number: 12, title: "Iklim Iran — 4 Musim Ekstrim" },
             { number: 13, title: "Transportasi Antar Kota — Kereta & Bus" },
             { number: 14, title: "Bahasa Daerah di Iran — Azeri, Kurdi, Lori" },
-            { number: 15, title: "Review Akumulatif A2.3" },
+            { number: 15, title: "Review Akumulatif A2.4" },
             { number: 16, title: "Mini-Project — Itinerary Liburan ke Iran" },
           ],
         },
+      ],
+    },
+    {
+      code: "B1",
+      name: "Menengah — Imersi Budaya & Sinema",
+      description:
+        "Diskusi topik abstrak, baca berita & sastra ringan, masuk ke sinema Iran (Kiarostami, Farhadi), musik, dan puisi klasik (Rumi, Hafez). Mulai bisa argumen sederhana dan ekspresi opini.",
+      sublevels: [
         {
-          code: "A2.4",
+          code: "B1.1",
           name: "Nowruz, Ta'arof & Budaya Persia",
           preview: false,
           sessions: [
@@ -202,20 +210,12 @@ const curriculum: LanguageCurriculum = {
             { number: 12, title: "Karpet Persia — Bukan Cuma Suvenir" },
             { number: 13, title: "Khat (خط) — Kaligrafi Persia" },
             { number: 14, title: "Khoresh (Stew) Klasik — Per Provinsi" },
-            { number: 15, title: "Review Akumulatif A2.4" },
+            { number: 15, title: "Review Akumulatif B1.1" },
             { number: 16, title: "Mini-Project Final A2 — Esai Budaya Persia 400 Kata" },
           ],
         },
-      ],
-    },
-    {
-      code: "B1",
-      name: "Menengah — Imersi Budaya & Sinema",
-      description:
-        "Diskusi topik abstrak, baca berita & sastra ringan, masuk ke sinema Iran (Kiarostami, Farhadi), musik, dan puisi klasik (Rumi, Hafez). Mulai bisa argumen sederhana dan ekspresi opini.",
-      sublevels: [
         {
-          code: "B1.1",
+          code: "B1.2",
           name: "Sejarah Persia — Dari Achaemenid ke Modern",
           preview: false,
           sessions: [
@@ -233,12 +233,12 @@ const curriculum: LanguageCurriculum = {
             { number: 12, title: "Pahlavi — Modernisasi Reza Shah & Mohammad Reza" },
             { number: 13, title: "Revolusi Islam 1979 — Khomeini" },
             { number: 14, title: "Iran Modern — Era Reformasi & Sekarang" },
-            { number: 15, title: "Review Akumulatif B1.1" },
+            { number: 15, title: "Review Akumulatif B1.2" },
             { number: 16, title: "Mini-Project — Timeline Sejarah Persia 700 Kata" },
           ],
         },
         {
-          code: "B1.2",
+          code: "B1.3",
           name: "Sinema Persia — Kiarostami, Farhadi, Panahi",
           preview: false,
           sessions: [
@@ -256,12 +256,12 @@ const curriculum: LanguageCurriculum = {
             { number: 12, title: "Animasi Iran — Persepolis & Marjane Satrapi" },
             { number: 13, title: "Vokabulari Film — صحنه، شخصیت، فیلمبردار" },
             { number: 14, title: "Tonton & Diskusi: Satu Film Lengkap" },
-            { number: 15, title: "Review Akumulatif B1.2" },
+            { number: 15, title: "Review Akumulatif B1.3" },
             { number: 16, title: "Mini-Project — Review Film Iran Pilihan (500 Kata)" },
           ],
         },
         {
-          code: "B1.3",
+          code: "B1.4",
           name: "Musik, Seni & Kaligrafi Persia",
           preview: false,
           sessions: [
@@ -279,12 +279,12 @@ const curriculum: LanguageCurriculum = {
             { number: 12, title: "Taman Persia (باغ ایرانی) — UNESCO" },
             { number: 13, title: "Seniman Kontemporer — Shirin Neshat" },
             { number: 14, title: "Diskusi: Estetika Persia dalam Hidup Sehari-hari" },
-            { number: 15, title: "Review Akumulatif B1.3" },
+            { number: 15, title: "Review Akumulatif B1.4" },
             { number: 16, title: "Mini-Project — Esai Seni Persia Favorit 500 Kata" },
           ],
         },
         {
-          code: "B1.4",
+          code: "B1.5",
           name: "Puisi Klasik — Rumi, Hafez, Saadi, Khayyam",
           preview: false,
           sessions: [
@@ -302,7 +302,7 @@ const curriculum: LanguageCurriculum = {
             { number: 12, title: "Mengurai Kosakata Puisi Klasik" },
             { number: 13, title: "Hafalan: 1 Ghazal Hafez" },
             { number: 14, title: "Diskusi: Pesan Rumi untuk Hidup Modern" },
-            { number: 15, title: "Review Akumulatif B1.4" },
+            { number: 15, title: "Review Akumulatif B1.5" },
             { number: 16, title: "Mini-Project Final B1 — Tafsir Pribadi 1 Puisi" },
           ],
         },

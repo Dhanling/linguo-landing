@@ -83,8 +83,16 @@ const curriculum: LanguageCurriculum = {
             { number: 16, title: "Mini-Project — Surat ke Teman", topics: ["Tulis surat 15 kalimat Indonesia", "Sertakan: kabar, cerita, undangan", "Pakai 3 tense markers + komparatif", "Peer review"] },
           ],
         },
+      ],
+    },
+    {
+      code: "A2",
+      name: "Dasar Mahir — Imbuhan Dasar",
+      description:
+        "Penguasaan sistem imbuhan inti: prefiks me-, ber-, ter-, di- — area di mana foreign learner paling sering tergelincir. Plus konjungsi kompleks, reduplikasi mahir, kalimat majemuk.",
+      sublevels: [
         {
-          code: "A1.4",
+          code: "A2.1",
           name: "Naratif & Deskripsi Sederhana",
           preview: false,
           sessions: [
@@ -102,20 +110,12 @@ const curriculum: LanguageCurriculum = {
             { number: 12, title: "Tulisan Cerita Pendek 100 Kata" },
             { number: 13, title: "Reading Comprehension — Teks Pendek" },
             { number: 14, title: "Listening — Audio Native Berbagai Daerah" },
-            { number: 15, title: "Review Akumulatif A1.4 — Akhir Pemula" },
+            { number: 15, title: "Review Akumulatif A2.1 — Akhir Pemula" },
             { number: 16, title: "Mini-Project — Cerita Pengalaman 200 Kata" },
           ],
         },
-      ],
-    },
-    {
-      code: "A2",
-      name: "Dasar Mahir — Imbuhan Dasar",
-      description:
-        "Penguasaan sistem imbuhan inti: prefiks me-, ber-, ter-, di- — area di mana foreign learner paling sering tergelincir. Plus konjungsi kompleks, reduplikasi mahir, kalimat majemuk.",
-      sublevels: [
         {
-          code: "A2.1",
+          code: "A2.2",
           name: "Imbuhan me- & memper- (Aktif Transitif)",
           preview: false,
           sessions: [
@@ -133,12 +133,12 @@ const curriculum: LanguageCurriculum = {
             { number: 12, title: "Common Mistakes — Foreign Learner Pitfalls" },
             { number: 13, title: "Reading: Artikel Sederhana Dipenuhi me-" },
             { number: 14, title: "Writing: 15 Kalimat dengan Variasi me-" },
-            { number: 15, title: "Review Akumulatif A2.1" },
+            { number: 15, title: "Review Akumulatif A2.2" },
             { number: 16, title: "Mini-Project — Artikel 300 Kata Mayoritas me-" },
           ],
         },
         {
-          code: "A2.2",
+          code: "A2.3",
           name: "Imbuhan ber- & ter- (Aktif Intransitif & Resultatif)",
           preview: false,
           sessions: [
@@ -156,12 +156,12 @@ const curriculum: LanguageCurriculum = {
             { number: 12, title: "Common Mistakes — Mencampur me- dengan ber-" },
             { number: 13, title: "Reading: Cerpen Pendek Variasi Imbuhan" },
             { number: 14, title: "Writing: 15 Kalimat Variasi ber-/ter-" },
-            { number: 15, title: "Review Akumulatif A2.2" },
+            { number: 15, title: "Review Akumulatif A2.3" },
             { number: 16, title: "Mini-Project — Cerita 400 Kata 3 Imbuhan" },
           ],
         },
         {
-          code: "A2.3",
+          code: "A2.4",
           name: "Imbuhan di- (Pasif)",
           preview: false,
           sessions: [
@@ -179,12 +179,20 @@ const curriculum: LanguageCurriculum = {
             { number: 12, title: "Common Mistakes — Overuse Active Voice (English Habit)" },
             { number: 13, title: "Reading: Artikel Berita dengan Banyak Pasif" },
             { number: 14, title: "Writing: 15 Kalimat Pasif Variatif" },
-            { number: 15, title: "Review Akumulatif A2.3" },
+            { number: 15, title: "Review Akumulatif A2.4" },
             { number: 16, title: "Mini-Project — Tulis Berita 300 Kata Dominan Pasif" },
           ],
         },
+      ],
+    },
+    {
+      code: "B1",
+      name: "Menengah — Imbuhan Kompleks & Register",
+      description:
+        "Konfiks lanjut (ke-an, per-an, me-kan, me-i), distingsi register baku vs gaul, kosa kata loan word (Sanskrit/Arab/Belanda/English), bahasa daerah influence (Jakarta, Jawa, Sunda, Betawi), dialektika dasar.",
+      sublevels: [
         {
-          code: "A2.4",
+          code: "B1.1",
           name: "Reduplikasi & Kata Majemuk",
           preview: false,
           sessions: [
@@ -202,20 +210,12 @@ const curriculum: LanguageCurriculum = {
             { number: 12, title: "Kata Majemuk Idiomatis — Kepala Batu, Mata Sapi" },
             { number: 13, title: "Reading: Teks Kaya Reduplikasi" },
             { number: 14, title: "Writing: Variasi Reduplikasi & Majemuk" },
-            { number: 15, title: "Review Akumulatif A2.4 — Penutup A2" },
+            { number: 15, title: "Review Akumulatif B1.1 — Penutup A2" },
             { number: 16, title: "Mini-Project — Esai 500 Kata Kaya Reduplikasi" },
           ],
         },
-      ],
-    },
-    {
-      code: "B1",
-      name: "Menengah — Imbuhan Kompleks & Register",
-      description:
-        "Konfiks lanjut (ke-an, per-an, me-kan, me-i), distingsi register baku vs gaul, kosa kata loan word (Sanskrit/Arab/Belanda/English), bahasa daerah influence (Jakarta, Jawa, Sunda, Betawi), dialektika dasar.",
-      sublevels: [
         {
-          code: "B1.1",
+          code: "B1.2",
           name: "Konfiks ke-an & per-an (Nominalisasi)",
           preview: false,
           sessions: [
@@ -233,12 +233,12 @@ const curriculum: LanguageCurriculum = {
             { number: 12, title: "Common Mistakes — Forming ke-an/per-an Salah" },
             { number: 13, title: "Reading: Artikel Akademik Tingkat Awal" },
             { number: 14, title: "Writing: Esai 500 Kata dengan Konfiks" },
-            { number: 15, title: "Review Akumulatif B1.1" },
+            { number: 15, title: "Review Akumulatif B1.2" },
             { number: 16, title: "Mini-Project — Resume Berita 400 Kata" },
           ],
         },
         {
-          code: "B1.2",
+          code: "B1.3",
           name: "Konfiks me-kan & me-i (Kausatif & Lokatif)",
           preview: false,
           sessions: [
@@ -256,12 +256,12 @@ const curriculum: LanguageCurriculum = {
             { number: 12, title: "Common Mistakes — Overgenerating Konfiks" },
             { number: 13, title: "Reading: Cerpen Sastra dengan Konfiks Kompleks" },
             { number: 14, title: "Writing: Esai Argumentatif 600 Kata" },
-            { number: 15, title: "Review Akumulatif B1.2" },
+            { number: 15, title: "Review Akumulatif B1.3" },
             { number: 16, title: "Mini-Project — Artikel Opini 500 Kata" },
           ],
         },
         {
-          code: "B1.3",
+          code: "B1.4",
           name: "Register Formal vs Informal — Baku vs Gaul",
           preview: false,
           sessions: [
@@ -279,12 +279,12 @@ const curriculum: LanguageCurriculum = {
             { number: 12, title: "Switch Register di Tengah Percakapan — Skill Native" },
             { number: 13, title: "Reading: Twitter/X Indonesia & Komentar Instagram" },
             { number: 14, title: "Writing: Tulis Pesan Sama untuk 3 Register Berbeda" },
-            { number: 15, title: "Review Akumulatif B1.3" },
+            { number: 15, title: "Review Akumulatif B1.4" },
             { number: 16, title: "Mini-Project — Roleplay 5 Register Berbeda" },
           ],
         },
         {
-          code: "B1.4",
+          code: "B1.5",
           name: "Loan Words — Sanskrit, Arab, Belanda, English",
           preview: false,
           sessions: [
@@ -302,7 +302,7 @@ const curriculum: LanguageCurriculum = {
             { number: 12, title: "Pemerintah & EYD — Standar Resmi Loan Words" },
             { number: 13, title: "Bahasa Daerah Influence — Jawa, Sunda, Betawi" },
             { number: 14, title: "Diskusi: Pinjaman Loan Words Era Digital" },
-            { number: 15, title: "Review Akumulatif B1.4 — Penutup B1" },
+            { number: 15, title: "Review Akumulatif B1.5 — Penutup B1" },
             { number: 16, title: "Mini-Project — Esai Sejarah Loan Word 800 Kata" },
           ],
         },

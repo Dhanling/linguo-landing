@@ -83,8 +83,16 @@ const curriculum: LanguageCurriculum = {
             { number: 16, title: "Mini-Projek — Karangan Pendek 150 Patah Perkataan", topics: ["tajuk 'Keluarga dan Kampung Saya'", "guna 8 imbuhan berbeza", "semak sendiri guna senarai semak", "hantar untuk pembetulan guru"] },
           ],
         },
+      ],
+    },
+    {
+      code: "A2",
+      name: "Dasar — Imbuhan Mahir & Bahasa Pasar vs Baku",
+      description:
+        "Naik dari ayat mudah ke perbualan lancar: imbuhan lanjutan, peralihan antara bahasa pasar (yang benar-benar dipakai di jalan) dan bahasa baku (yang dipakai di sekolah dan pejabat), urusan harian di Malaysia, plus pantun sebagai pintu masuk budaya. Akhir A2 kamu boleh urus hidup harian di Malaysia tanpa tukar ke bahasa Inggeris.",
+      sublevels: [
         {
-          code: "A1.4",
+          code: "A2.1",
           name: "Jawi Pengenalan & Budaya Asas",
           preview: false,
           sessions: [
@@ -102,20 +110,12 @@ const curriculum: LanguageCurriculum = {
             { number: 12, title: "Lagu Rakyat — Rasa Sayang, Chan Mali Chan" },
             { number: 13, title: "Cerita Rakyat — Sang Kancil & Buaya" },
             { number: 14, title: "Negeri-negeri Malaysia & Ibu Kotanya" },
-            { number: 15, title: "Ulang Kaji Menyeluruh A1.4" },
+            { number: 15, title: "Ulang Kaji Menyeluruh A2.1" },
             { number: 16, title: "Mini-Projek — Kad Ucapan Raya Bertulisan Jawi" },
           ],
         },
-      ],
-    },
-    {
-      code: "A2",
-      name: "Dasar — Imbuhan Mahir & Bahasa Pasar vs Baku",
-      description:
-        "Naik dari ayat mudah ke perbualan lancar: imbuhan lanjutan, peralihan antara bahasa pasar (yang benar-benar dipakai di jalan) dan bahasa baku (yang dipakai di sekolah dan pejabat), urusan harian di Malaysia, plus pantun sebagai pintu masuk budaya. Akhir A2 kamu boleh urus hidup harian di Malaysia tanpa tukar ke bahasa Inggeris.",
-      sublevels: [
         {
-          code: "A2.1",
+          code: "A2.2",
           name: "Imbuhan Lanjutan & Ayat Majmuk",
           preview: false,
           sessions: [
@@ -133,12 +133,12 @@ const curriculum: LanguageCurriculum = {
             { number: 12, title: "Kata Nafi Lanjutan: tiada, tanpa, jangan" },
             { number: 13, title: "Frasa Nama & Frasa Kerja Panjang" },
             { number: 14, title: "Kesalahan Tatabahasa Lazim Pelajar Indonesia" },
-            { number: 15, title: "Ulang Kaji Menyeluruh A2.1" },
+            { number: 15, title: "Ulang Kaji Menyeluruh A2.2" },
             { number: 16, title: "Mini-Projek — Karangan Naratif 250 Patah Perkataan" },
           ],
         },
         {
-          code: "A2.2",
+          code: "A2.3",
           name: "Bahasa Pasar, Bahasa Baku & Manglish",
           preview: false,
           sessions: [
@@ -156,12 +156,12 @@ const curriculum: LanguageCurriculum = {
             { number: 12, title: "Menulis WhatsApp kepada Rakan vs Bos" },
             { number: 13, title: "Nada Sopan: Melembutkan Permintaan" },
             { number: 14, title: "Mengelak Bunyi Kasar Tanpa Sedar" },
-            { number: 15, title: "Ulang Kaji Menyeluruh A2.2" },
+            { number: 15, title: "Ulang Kaji Menyeluruh A2.3" },
             { number: 16, title: "Mini-Projek — Satu Mesej, Tiga Laras Berbeza" },
           ],
         },
         {
-          code: "A2.3",
+          code: "A2.4",
           name: "Urusan Harian di Malaysia",
           preview: false,
           sessions: [
@@ -179,12 +179,20 @@ const curriculum: LanguageCurriculum = {
             { number: 12, title: "Bercakap dengan Jiran & Komuniti" },
             { number: 13, title: "Kecemasan: Polis, Bomba, Ambulans" },
             { number: 14, title: "Cuti & Melancong dalam Malaysia" },
-            { number: 15, title: "Ulang Kaji Menyeluruh A2.3" },
+            { number: 15, title: "Ulang Kaji Menyeluruh A2.4" },
             { number: 16, title: "Mini-Projek — Roleplay Panjang 10 Situasi Harian" },
           ],
         },
+      ],
+    },
+    {
+      code: "B1",
+      name: "Menengah — Wacana Rasmi, Ragam Serantau & Dunia Kerja",
+      description:
+        "Peralihan dari perbualan ke wacana: surat rasmi dan minit mesyuarat, ragam serantau yang benar-benar kamu dengar di Kelantan, Sarawak, Brunei dan Singapura, bahasa media, sampai Melayu profesional untuk temuduga dan tempat kerja. Akhir B1 kamu boleh bekerja dan berurusan rasmi sepenuhnya dalam bahasa Melayu.",
+      sublevels: [
         {
-          code: "A2.4",
+          code: "B1.1",
           name: "Pantun, Peribahasa & Simpulan Bahasa",
           preview: false,
           sessions: [
@@ -202,20 +210,12 @@ const curriculum: LanguageCurriculum = {
             { number: 12, title: "Peribahasa dalam Ucapan Rasmi" },
             { number: 13, title: "Beza Peribahasa Melayu & Indonesia" },
             { number: 14, title: "Menggunakan Peribahasa Tanpa Janggal" },
-            { number: 15, title: "Ulang Kaji Menyeluruh A2.4" },
+            { number: 15, title: "Ulang Kaji Menyeluruh B1.1" },
             { number: 16, title: "Mini-Projek — Cipta & Deklamasi Empat Rangkap Pantun" },
           ],
         },
-      ],
-    },
-    {
-      code: "B1",
-      name: "Menengah — Wacana Rasmi, Ragam Serantau & Dunia Kerja",
-      description:
-        "Peralihan dari perbualan ke wacana: surat rasmi dan minit mesyuarat, ragam serantau yang benar-benar kamu dengar di Kelantan, Sarawak, Brunei dan Singapura, bahasa media, sampai Melayu profesional untuk temuduga dan tempat kerja. Akhir B1 kamu boleh bekerja dan berurusan rasmi sepenuhnya dalam bahasa Melayu.",
-      sublevels: [
         {
-          code: "B1.1",
+          code: "B1.2",
           name: "Wacana Rasmi & Surat Menyurat",
           preview: false,
           sessions: [
@@ -233,12 +233,12 @@ const curriculum: LanguageCurriculum = {
             { number: 12, title: "Menyunting Teks Rasmi" },
             { number: 13, title: "Penggunaan Kata Ganti Rasmi & Gelaran" },
             { number: 14, title: "Kesalahan Lazim dalam Surat Rasmi" },
-            { number: 15, title: "Ulang Kaji Menyeluruh B1.1" },
+            { number: 15, title: "Ulang Kaji Menyeluruh B1.2" },
             { number: 16, title: "Mini-Projek — Fail Rasmi: Surat, Memo & Minit" },
           ],
         },
         {
-          code: "B1.2",
+          code: "B1.3",
           name: "Ragam Serantau — Kelantan, Sarawak, Brunei & Singapura",
           preview: false,
           sessions: [
@@ -256,12 +256,12 @@ const curriculum: LanguageCurriculum = {
             { number: 12, title: "Memahami Dialek Tanpa Menuturkannya" },
             { number: 13, title: "Latihan Dengar Dialek Campuran" },
             { number: 14, title: "Sikap Terhadap Dialek & Bahasa Baku" },
-            { number: 15, title: "Ulang Kaji Menyeluruh B1.2" },
+            { number: 15, title: "Ulang Kaji Menyeluruh B1.3" },
             { number: 16, title: "Mini-Projek — Analisis Video Dialek & Terjemahan Baku" },
           ],
         },
         {
-          code: "B1.3",
+          code: "B1.4",
           name: "Media, Berita & Wacana Awam",
           preview: false,
           sessions: [
@@ -279,12 +279,12 @@ const curriculum: LanguageCurriculum = {
             { number: 12, title: "Perbahasan Isu Semasa" },
             { number: 13, title: "Bahasa Iklan & Pemasaran Malaysia" },
             { number: 14, title: "Bahasa Sukan & Ulasan Langsung" },
-            { number: 15, title: "Ulang Kaji Menyeluruh B1.3" },
+            { number: 15, title: "Ulang Kaji Menyeluruh B1.4" },
             { number: 16, title: "Mini-Projek — Laporan Berita Sendiri 400 Patah Perkataan" },
           ],
         },
         {
-          code: "B1.4",
+          code: "B1.5",
           name: "Melayu Profesional & Dunia Kerja",
           preview: false,
           sessions: [
@@ -302,7 +302,7 @@ const curriculum: LanguageCurriculum = {
             { number: 12, title: "Etika Kerja & Hierarki di Pejabat Malaysia" },
             { number: 13, title: "Menangani Konflik di Tempat Kerja" },
             { number: 14, title: "Pembentangan 10 Minit Berstruktur" },
-            { number: 15, title: "Ulang Kaji Menyeluruh B1.4" },
+            { number: 15, title: "Ulang Kaji Menyeluruh B1.5" },
             { number: 16, title: "Mini-Projek — Simulasi Temuduga Penuh" },
           ],
         },

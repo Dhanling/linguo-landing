@@ -83,9 +83,17 @@ const curriculum: LanguageCurriculum = {
             { number: 16, title: "Mini-Project — Cerita Sahabat", topics: ["Paragraf 12 kalimat", "Past tense + deskripsi", "Komparatif 2x minimum", "Feedback A1.3"] },
           ],
         },
+      ],
+    },
+    {
+      code: "A2",
+      name: "Pra-Menengah — Vietnam Mengalir",
+      description:
+        "Verba kompleks dengan tense markers, cerita masa lalu lengkap, rencana masa depan, masuk ke Vietnam — Hà Nội, Sài Gòn, Mekong Delta, Tết, áo dài, kopi vỉa hè. Akhir A2 kamu bisa ngobrol panjang dan baca artikel pendek.",
+      sublevels: [
         {
-          code: "A1.4",
-          name: "Konsolidasi A1 — Pondasi Solid",
+          code: "A2.1",
+          name: "Jembatan A1→A2 · Konsolidasi A1 — Pondasi Solid",
           preview: false,
           sessions: [
             { number: 1, title: "Refleksi Pondasi A1 — Yang Sudah Dicapai" },
@@ -106,16 +114,8 @@ const curriculum: LanguageCurriculum = {
             { number: 16, title: "Mini-Project Final A1 — Vlog Perkenalan 2 Menit" },
           ],
         },
-      ],
-    },
-    {
-      code: "A2",
-      name: "Pra-Menengah — Vietnam Mengalir",
-      description:
-        "Verba kompleks dengan tense markers, cerita masa lalu lengkap, rencana masa depan, masuk ke Vietnam — Hà Nội, Sài Gòn, Mekong Delta, Tết, áo dài, kopi vỉa hè. Akhir A2 kamu bisa ngobrol panjang dan baca artikel pendek.",
-      sublevels: [
         {
-          code: "A2.1",
+          code: "A2.2",
           name: "Pengalaman & Cerita Masa Lalu",
           preview: false,
           sessions: [
@@ -133,12 +133,12 @@ const curriculum: LanguageCurriculum = {
             { number: 12, title: "Conditional Tipe 2 — Nếu... Thì..." },
             { number: 13, title: "Cerita Tradisi Keluarga" },
             { number: 14, title: "Wawancara: Tanya Cerita Hidup" },
-            { number: 15, title: "Review Akumulatif A2.1" },
+            { number: 15, title: "Review Akumulatif A2.2" },
             { number: 16, title: "Mini-Project — Cerita Pribadi 300 Kata" },
           ],
         },
         {
-          code: "A2.2",
+          code: "A2.3",
           name: "Rencana & Masa Depan",
           preview: false,
           sessions: [
@@ -156,12 +156,12 @@ const curriculum: LanguageCurriculum = {
             { number: 12, title: "Predict — Ramalan Sederhana" },
             { number: 13, title: "Tulis Email Permohonan" },
             { number: 14, title: "Wawancara Kerja Dasar" },
-            { number: 15, title: "Review Akumulatif A2.2" },
+            { number: 15, title: "Review Akumulatif A2.3" },
             { number: 16, title: "Mini-Project — Rencana 5 Tahun" },
           ],
         },
         {
-          code: "A2.3",
+          code: "A2.4",
           name: "Vietnam — Geografi & Kota Utama",
           preview: false,
           sessions: [
@@ -179,12 +179,20 @@ const curriculum: LanguageCurriculum = {
             { number: 12, title: "Etnis Minoritas — H'mong, Tày, Thái" },
             { number: 13, title: "Bahasa Daerah Vietnam — Kontras dengan Tiếng Việt" },
             { number: 14, title: "Iklim — Utara (4 musim) vs Selatan (2 musim)" },
-            { number: 15, title: "Review Akumulatif A2.3" },
+            { number: 15, title: "Review Akumulatif A2.4" },
             { number: 16, title: "Mini-Project — Itinerary Tur Vietnam" },
           ],
         },
+      ],
+    },
+    {
+      code: "B1",
+      name: "Menengah — Sejarah, Sastra & Spiritualitas",
+      description:
+        "Diskusi topik abstrak, sejarah Vietnam dari Văn Lang sampai Đổi Mới, sastra klasik (Truyện Kiều by Nguyễn Du), sinema arthouse (Trần Anh Hùng), spiritualitas Tam Giáo. Mulai bisa argumen dan opini.",
+      sublevels: [
         {
-          code: "A2.4",
+          code: "B1.1",
           name: "Budaya Vietnam — Tết, Áo Dài, Cà Phê",
           preview: false,
           sessions: [
@@ -202,20 +210,12 @@ const curriculum: LanguageCurriculum = {
             { number: 12, title: "Konfusianisme — Etika Sosial & Family" },
             { number: 13, title: "Ancestor Veneration — Bàn Thờ Gia Tiên" },
             { number: 14, title: "Hierarchy Sosial & Speech Levels" },
-            { number: 15, title: "Review Akumulatif A2.4" },
+            { number: 15, title: "Review Akumulatif B1.1" },
             { number: 16, title: "Mini-Project Final A2 — Esai Budaya Vietnam 400 Kata" },
           ],
         },
-      ],
-    },
-    {
-      code: "B1",
-      name: "Menengah — Sejarah, Sastra & Spiritualitas",
-      description:
-        "Diskusi topik abstrak, sejarah Vietnam dari Văn Lang sampai Đổi Mới, sastra klasik (Truyện Kiều by Nguyễn Du), sinema arthouse (Trần Anh Hùng), spiritualitas Tam Giáo. Mulai bisa argumen dan opini.",
-      sublevels: [
         {
-          code: "B1.1",
+          code: "B1.2",
           name: "Sejarah Vietnam — Văn Lang ke Đổi Mới",
           preview: false,
           sessions: [
@@ -233,12 +233,12 @@ const curriculum: LanguageCurriculum = {
             { number: 12, title: "Vietnam Modern — Tiger Ekonomi ASEAN" },
             { number: 13, title: "WTO 2007 & Integrasi Global" },
             { number: 14, title: "Tantangan Kontemporer — Sea Disputes, Climate" },
-            { number: 15, title: "Review Akumulatif B1.1" },
+            { number: 15, title: "Review Akumulatif B1.2" },
             { number: 16, title: "Mini-Project — Timeline Sejarah Vietnam 700 Kata" },
           ],
         },
         {
-          code: "B1.2",
+          code: "B1.3",
           name: "Sastra Klasik — Truyện Kiều & Puisi",
           preview: false,
           sessions: [
@@ -256,12 +256,12 @@ const curriculum: LanguageCurriculum = {
             { number: 12, title: "Aksara Chữ Nôm — Aksara Asli Pra-Latin" },
             { number: 13, title: "Aksara Chữ Hán — Pengaruh Tiongkok 1.000 Tahun" },
             { number: 14, title: "Romanisasi & Peran Alexandre de Rhodes" },
-            { number: 15, title: "Review Akumulatif B1.2" },
+            { number: 15, title: "Review Akumulatif B1.3" },
             { number: 16, title: "Mini-Project — Analisis 1 Puisi Klasik" },
           ],
         },
         {
-          code: "B1.3",
+          code: "B1.4",
           name: "Sinema & Musik Vietnam",
           preview: false,
           sessions: [
@@ -279,12 +279,12 @@ const curriculum: LanguageCurriculum = {
             { number: 12, title: "Vocab Film & TV" },
             { number: 13, title: "Tonton & Diskusi Film" },
             { number: 14, title: "Influencer YouTube Vietnam" },
-            { number: 15, title: "Review Akumulatif B1.3" },
+            { number: 15, title: "Review Akumulatif B1.4" },
             { number: 16, title: "Mini-Project — Review Media Vietnam" },
           ],
         },
         {
-          code: "B1.4",
+          code: "B1.5",
           name: "Spiritualitas Vietnam — Tam Giáo",
           preview: false,
           sessions: [
@@ -302,7 +302,7 @@ const curriculum: LanguageCurriculum = {
             { number: 12, title: "Hòa Hảo — Reformasi Buddha" },
             { number: 13, title: "Katolikisme di Vietnam — Warisan Prancis" },
             { number: 14, title: "Diskusi: Spiritualitas Modern Vietnam" },
-            { number: 15, title: "Review Akumulatif B1.4" },
+            { number: 15, title: "Review Akumulatif B1.5" },
             { number: 16, title: "Mini-Project Final B1 — Esai Spiritualitas Vietnam" },
           ],
         },

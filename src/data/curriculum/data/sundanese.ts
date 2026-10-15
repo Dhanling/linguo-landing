@@ -6,7 +6,7 @@ const meta = getLanguageBySlug("sundanese")!;
 const curriculum: LanguageCurriculum = {
   meta,
   overview:
-    "Bahasa Sunda (Basa Sunda) adalah bahasa Austronesia dengan ~40 juta penutur — bahasa daerah terbesar kedua di Indonesia setelah Jawa. Dipakai di seluruh Tatar Sunda: Jawa Barat, Banten, sebagian Jakarta, hingga diaspora di kota-kota besar Indonesia. Ciri paling khas: sistem undak-usuk basa Sunda — bertingkat seperti Jawa tapi dengan kategori berbeda (Loma akrab, Lemes ka batur untuk orang lain, Lemes ka sorangan untuk diri sendiri). Fonem 'eu' (vokal tengah unik) jadi penanda Sunda paling cepat dibedakan dari Indonesia. Pendekatan Lingcore: mulai dari Basa Loma di A1-A2 (production-first, biar pede ngomong dengan teman sebaya), gradually introduce Lemes ka batur di A2.2, mahir Lemes lengkap di B1, dan sastra klasik + Aksara Sunda mahir di B2. Aksara Sunda Baku (revival aksara asli) dilatih bertahap dari A1.4. Bahasa Sunda bukan sekadar bahasa daerah — ini kunci membuka kebudayaan Pajajaran, Carita Pantun, Wayang Golek, Pencak Silat Cimande, sastra Ajip Rosidi, dan jutaan diaspora Sunda di seluruh Indonesia.",
+    "Bahasa Sunda (Basa Sunda) adalah bahasa Austronesia dengan ~40 juta penutur — bahasa daerah terbesar kedua di Indonesia setelah Jawa. Dipakai di seluruh Tatar Sunda: Jawa Barat, Banten, sebagian Jakarta, hingga diaspora di kota-kota besar Indonesia. Ciri paling khas: sistem undak-usuk basa Sunda — bertingkat seperti Jawa tapi dengan kategori berbeda (Loma akrab, Lemes ka batur untuk orang lain, Lemes ka sorangan untuk diri sendiri). Fonem 'eu' (vokal tengah unik) jadi penanda Sunda paling cepat dibedakan dari Indonesia. Pendekatan Lingcore: mulai dari Basa Loma di A1-A2 (production-first, biar pede ngomong dengan teman sebaya), gradually introduce Lemes ka batur di A2.3, mahir Lemes lengkap di B1, dan sastra klasik + Aksara Sunda mahir di B2. Aksara Sunda Baku (revival aksara asli) dilatih bertahap dari A2.1. Bahasa Sunda bukan sekadar bahasa daerah — ini kunci membuka kebudayaan Pajajaran, Carita Pantun, Wayang Golek, Pencak Silat Cimande, sastra Ajip Rosidi, dan jutaan diaspora Sunda di seluruh Indonesia.",
   levels: [
     {
       code: "A1",
@@ -22,7 +22,7 @@ const curriculum: LanguageCurriculum = {
             { number: 1, title: "Orientasi — Basa Sunda di Peta Indonesia", topics: ["Austronesia: serumpun Indonesia, Jawa, Malay", "40 juta penutur — bahasa daerah terbesar #2 Indonesia", "Tatar Sunda: Jabar, Banten, sebagian Jakarta", "Ciri khas: undak-usuk Loma vs Lemes + fonem 'eu'"] },
             { number: 2, title: "Sistem Tulisan — Latin & Aksara Sunda", topics: ["Standard modern: aksara Latin (sama Indonesia)", "Aksara Sunda Baku — revival aksara asli", "Pendekatan Linguo: prioritas Latin, Aksara Sunda bertahap", "Sejarah: Aksara Sunda Kuno abad ke-14 (prasasti Kawali)"] },
             { number: 3, title: "Bunyi Khas Sunda — Fonem 'eu'", topics: ["'eu' — vokal tengah unik (peuyeum, beureum)", "Vokal lengkap: a, i, u, e, é, è, eu, o", "Konsonan 'ny', 'ng' — sama Indonesia", "Stress: biasanya suku akhir, beda dari Indonesia"] },
-            { number: 4, title: "Undak-Usuk Basa Sunda — Pengantar", topics: ["Loma: akrab, teman sebaya — fokus A1-A2", "Lemes ka batur: hormat ke orang lain — diintro A2.2", "Lemes ka sorangan: rendah hati saat bicara tentang diri sendiri", "Aturan emas: ke yang lebih tua, pakai Lemes; sebaya, pakai Loma"] },
+            { number: 4, title: "Undak-Usuk Basa Sunda — Pengantar", topics: ["Loma: akrab, teman sebaya — fokus A1-A2", "Lemes ka batur: hormat ke orang lain — diintro A2.3", "Lemes ka sorangan: rendah hati saat bicara tentang diri sendiri", "Aturan emas: ke yang lebih tua, pakai Lemes; sebaya, pakai Loma"] },
             { number: 5, title: "Sapaan Sunda — Sampurasun, Kumaha Damang", topics: ["Sampurasun — sapaan tradisional Sunda; balas: Rampés", "Halo, Wilujeng (enjing/siang/sonten/wengi)", "Kumaha damang? (Lemes) / Kumaha cik? (Loma)", "Pamitan: Mangga ti payun, Hapunten"] },
             { number: 6, title: "Pronoun Sunda — Kuring, Anjeun, Manéhna", topics: ["Loma: Kuring/Aing (saya), Manéh (kamu)", "Lemes: Abdi (saya), Anjeun (Anda)", "Dia: Manéhna (Loma), Anjeunna (Lemes)", "Peringatan: 'Aing' sangat kasar — jangan ke yang lebih tua"] },
             { number: 7, title: "Pertanyaan Dasar — Naon, Saha, Dimana", topics: ["Naon? (apa), Saha? (siapa)", "Dimana? (di mana), Iraha? (kapan)", "Naha? (kenapa), Sabaraha? (berapa)", "Pola: kata tanya di depan kalimat"] },
@@ -83,8 +83,16 @@ const curriculum: LanguageCurriculum = {
             { number: 16, title: "Mini-Project — Cerita 1 Minggu", topics: ["Diary 7 hari dalam Basa Sunda Loma", "Min 15 kalimat, 5 verba berbeda", "Sertakan tempat khas Tatar Sunda", "Sertifikat A1.3 ✓"] },
           ],
         },
+      ],
+    },
+    {
+      code: "A2",
+      name: "Dasar — Loma Mahir + Lemes Ka Batur Intro",
+      description:
+        "Konsolidasi Basa Loma ke level percakapan natural plus pengenalan Lemes ka batur untuk interaksi sopan dengan orang lain (tetangga, tukang, layanan). Akhir A2 kamu lancar Loma dan bisa switch ke Lemes ka batur dengan orang tua, atasan ringan, dan situasi semi-formal.",
+      sublevels: [
         {
-          code: "A1.4",
+          code: "A2.1",
           name: "Aksara Sunda & Carita Pondok",
           preview: false,
           sessions: [
@@ -102,20 +110,12 @@ const curriculum: LanguageCurriculum = {
             { number: 12, title: "Hajatan — Tradisi Berkat Sunda" },
             { number: 13, title: "Tata Krama Sederhana — Liwat, Salam" },
             { number: 14, title: "Etika Tamu — Tradisi Sunda" },
-            { number: 15, title: "Review Akumulatif A1.4" },
+            { number: 15, title: "Review Akumulatif A2.1" },
             { number: 16, title: "Mini-Project — Carita Pondok Aksara Sunda" },
           ],
         },
-      ],
-    },
-    {
-      code: "A2",
-      name: "Dasar — Loma Mahir + Lemes Ka Batur Intro",
-      description:
-        "Konsolidasi Basa Loma ke level percakapan natural plus pengenalan Lemes ka batur untuk interaksi sopan dengan orang lain (tetangga, tukang, layanan). Akhir A2 kamu lancar Loma dan bisa switch ke Lemes ka batur dengan orang tua, atasan ringan, dan situasi semi-formal.",
-      sublevels: [
         {
-          code: "A2.1",
+          code: "A2.2",
           name: "Basa Loma Mahir",
           preview: false,
           sessions: [
@@ -133,12 +133,12 @@ const curriculum: LanguageCurriculum = {
             { number: 12, title: "Gering & Ka Klinik — Periksa Kasehatan" },
             { number: 13, title: "Olahraga — Pencak Silat Cimande, Cikalong" },
             { number: 14, title: "Hobi Mendalam — Mancing, Ngarit" },
-            { number: 15, title: "Review Akumulatif A2.1" },
+            { number: 15, title: "Review Akumulatif A2.2" },
             { number: 16, title: "Mini-Project — Vlog Loma 2 Menit" },
           ],
         },
         {
-          code: "A2.2",
+          code: "A2.3",
           name: "Lemes Ka Batur — Pengantar Formal",
           preview: false,
           sessions: [
@@ -156,12 +156,12 @@ const curriculum: LanguageCurriculum = {
             { number: 12, title: "Etika Tamu Datang — Mangga Calik" },
             { number: 13, title: "Mengundang dengan Lemes" },
             { number: 14, title: "Penolakan Halus dalam Lemes" },
-            { number: 15, title: "Review Akumulatif A2.2" },
+            { number: 15, title: "Review Akumulatif A2.3" },
             { number: 16, title: "Mini-Project — Roleplay Tetangga Lemes" },
           ],
         },
         {
-          code: "A2.3",
+          code: "A2.4",
           name: "Pagawéan & Profesi Sunda",
           preview: false,
           sessions: [
@@ -179,12 +179,20 @@ const curriculum: LanguageCurriculum = {
             { number: 12, title: "Karir Pendidik — Guru Basa Daérah" },
             { number: 13, title: "Karir Seniman — Pelukis, Pemain Kacapi" },
             { number: 14, title: "Pagawéan dalam Pemerintahan" },
-            { number: 15, title: "Review Akumulatif A2.3" },
+            { number: 15, title: "Review Akumulatif A2.4" },
             { number: 16, title: "Mini-Project — Resume Basa Sunda" },
           ],
         },
+      ],
+    },
+    {
+      code: "B1",
+      name: "Menengah — Lemes Lengkap & Sastra Awal",
+      description:
+        "Pergeseran utama: dari Loma ke Lemes ka batur + Lemes ka sorangan (sistem dua sisi unik Sunda) sebagai default register untuk konteks formal. Pengenalan Kawih dan Pupuh sebagai jembatan ke sastra Sunda.",
+      sublevels: [
         {
-          code: "A2.4",
+          code: "B1.1",
           name: "Carita Rakyat Sunda Sederhana",
           preview: false,
           sessions: [
@@ -202,20 +210,12 @@ const curriculum: LanguageCurriculum = {
             { number: 12, title: "Asal Banjaran Cianjur" },
             { number: 13, title: "Cerita Wali Songo Sunda — Sunan Gunung Jati" },
             { number: 14, title: "Diskusi: Moral Carita Rakyat" },
-            { number: 15, title: "Review Akumulatif A2.4" },
+            { number: 15, title: "Review Akumulatif B1.1" },
             { number: 16, title: "Mini-Project — Tulis Ulang 1 Carita" },
           ],
         },
-      ],
-    },
-    {
-      code: "B1",
-      name: "Menengah — Lemes Lengkap & Sastra Awal",
-      description:
-        "Pergeseran utama: dari Loma ke Lemes ka batur + Lemes ka sorangan (sistem dua sisi unik Sunda) sebagai default register untuk konteks formal. Pengenalan Kawih dan Pupuh sebagai jembatan ke sastra Sunda.",
-      sublevels: [
         {
-          code: "B1.1",
+          code: "B1.2",
           name: "Lemes Lengkap — Ka Batur & Ka Sorangan",
           preview: false,
           sessions: [
@@ -233,12 +233,12 @@ const curriculum: LanguageCurriculum = {
             { number: 12, title: "Email Profesional Basa Sunda" },
             { number: 13, title: "Etika Telepon Lemes" },
             { number: 14, title: "Konflik & Diplomasi Lemes" },
-            { number: 15, title: "Review Akumulatif B1.1" },
+            { number: 15, title: "Review Akumulatif B1.2" },
             { number: 16, title: "Mini-Project — Roleplay Acara Adat" },
           ],
         },
         {
-          code: "B1.2",
+          code: "B1.3",
           name: "Lemes dalam Konteks Pagawéan",
           preview: false,
           sessions: [
@@ -256,12 +256,12 @@ const curriculum: LanguageCurriculum = {
             { number: 12, title: "MC Acara Sederhana Lemes" },
             { number: 13, title: "Wawancara Pagawéan dalam Lemes" },
             { number: 14, title: "Etika Bisnis Sunda Tradisional" },
-            { number: 15, title: "Review Akumulatif B1.2" },
+            { number: 15, title: "Review Akumulatif B1.3" },
             { number: 16, title: "Mini-Project — Surat Lamaran Lengkap" },
           ],
         },
         {
-          code: "B1.3",
+          code: "B1.4",
           name: "Lemes untuk Acara Adat & Kulawarga",
           preview: false,
           sessions: [
@@ -279,12 +279,12 @@ const curriculum: LanguageCurriculum = {
             { number: 12, title: "Sambutan Tamu Lemes Tinggi" },
             { number: 13, title: "Doa Singkat dalam Lemes Sunda" },
             { number: 14, title: "Filosofi Sunda — Silih Asah, Silih Asih, Silih Asuh" },
-            { number: 15, title: "Review Akumulatif B1.3" },
+            { number: 15, title: "Review Akumulatif B1.4" },
             { number: 16, title: "Mini-Project — Sambutan Acara Keluarga" },
           ],
         },
         {
-          code: "B1.4",
+          code: "B1.5",
           name: "Pupuh & Kawih — Lagu Sastra Sunda",
           preview: false,
           sessions: [
@@ -302,7 +302,7 @@ const curriculum: LanguageCurriculum = {
             { number: 12, title: "Tembang Cianjuran — Klasik Vokal" },
             { number: 13, title: "Filosofi Pupuh — Siklus Hidup Sunda" },
             { number: 14, title: "Menulis Pupuh Sederhana" },
-            { number: 15, title: "Review Akumulatif B1.4" },
+            { number: 15, title: "Review Akumulatif B1.5" },
             { number: 16, title: "Mini-Project — Tembangkan Pupuh Karya Sendiri" },
           ],
         },

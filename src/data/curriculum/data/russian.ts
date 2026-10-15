@@ -83,9 +83,17 @@ const curriculum: LanguageCurriculum = {
             { number: 16, title: "Mini-Project — Cerita Sahabat", topics: ["Paragraf 12 kalimat", "Past tense + deskripsi", "Komparatif 2x minimum", "Feedback A1.3"] },
           ],
         },
+      ],
+    },
+    {
+      code: "A2",
+      name: "Pra-Menengah — Rusia Mengalir",
+      description:
+        "6 kasus tata bahasa secara sistematis, aspek perfective/imperfective, verba gerak dengan prefix, masuk ke Rusia geografis & budaya — Москва, Санкт-Петербург, Сибирь, Маслeница, дача, баня. Akhir A2 kamu bisa ngobrol panjang dan baca artikel pendek.",
+      sublevels: [
         {
-          code: "A1.4",
-          name: "Konsolidasi A1 — Pondasi Solid",
+          code: "A2.1",
+          name: "Jembatan A1→A2 · Konsolidasi A1 — Pondasi Solid",
           preview: false,
           sessions: [
             { number: 1, title: "Refleksi Pondasi A1 — Yang Sudah Dicapai" },
@@ -106,16 +114,8 @@ const curriculum: LanguageCurriculum = {
             { number: 16, title: "Mini-Project Final A1 — Vlog Perkenalan 2 Menit" },
           ],
         },
-      ],
-    },
-    {
-      code: "A2",
-      name: "Pra-Menengah — Rusia Mengalir",
-      description:
-        "6 kasus tata bahasa secara sistematis, aspek perfective/imperfective, verba gerak dengan prefix, masuk ke Rusia geografis & budaya — Москва, Санкт-Петербург, Сибирь, Маслeница, дача, баня. Akhir A2 kamu bisa ngobrol panjang dan baca artikel pendek.",
-      sublevels: [
         {
-          code: "A2.1",
+          code: "A2.2",
           name: "Pengalaman & Cerita Masa Lalu",
           preview: false,
           sessions: [
@@ -133,12 +133,12 @@ const curriculum: LanguageCurriculum = {
             { number: 12, title: "Verba Modal Past — Мог, Должен Был" },
             { number: 13, title: "Conditional Tipe 2 — Если Бы..." },
             { number: 14, title: "Wawancara: Tanya Cerita Hidup" },
-            { number: 15, title: "Review Akumulatif A2.1" },
+            { number: 15, title: "Review Akumulatif A2.2" },
             { number: 16, title: "Mini-Project — Cerita Pribadi 300 Kata" },
           ],
         },
         {
-          code: "A2.2",
+          code: "A2.3",
           name: "Rencana & Masa Depan",
           preview: false,
           sessions: [
@@ -156,12 +156,12 @@ const curriculum: LanguageCurriculum = {
             { number: 12, title: "Optimisme vs Pesimisme — Сикап" },
             { number: 13, title: "Predict — Ramalan Sederhana" },
             { number: 14, title: "Tulis Email Permohonan" },
-            { number: 15, title: "Review Akumulatif A2.2" },
+            { number: 15, title: "Review Akumulatif A2.3" },
             { number: 16, title: "Mini-Project — Rencana 5 Tahun" },
           ],
         },
         {
-          code: "A2.3",
+          code: "A2.4",
           name: "Rusia — Geografi & Kota Utama",
           preview: false,
           sessions: [
@@ -179,12 +179,20 @@ const curriculum: LanguageCurriculum = {
             { number: 12, title: "Кавказ — Pegunungan, Чечня, Дагестан" },
             { number: 13, title: "Народы России — Lebih dari 190 Etnis" },
             { number: 14, title: "Iklim — Континентальный, -50°C ke +40°C" },
-            { number: 15, title: "Review Akumulatif A2.3" },
+            { number: 15, title: "Review Akumulatif A2.4" },
             { number: 16, title: "Mini-Project — Itinerary Tur Rusia 14 Hari" },
           ],
         },
+      ],
+    },
+    {
+      code: "B1",
+      name: "Menengah — Sejarah, Sastra & Spiritualitas",
+      description:
+        "Diskusi topik abstrak, sejarah Rusia dari Киевская Русь sampai Federasi, sastra Золотой Век (Pushkin, Lermontov, Gogol), sinema Tarkovsky & Eisenstein, spiritualitas Ortodoks & filosofi. Mulai bisa argumen dan opini.",
+      sublevels: [
         {
-          code: "A2.4",
+          code: "B1.1",
           name: "Budaya Rusia — Маслeница, Дача, Баня",
           preview: false,
           sessions: [
@@ -202,20 +210,12 @@ const curriculum: LanguageCurriculum = {
             { number: 12, title: "Матрёшка — Boneka Bersarang Ikonik" },
             { number: 13, title: "Ушанка & Валенки — Pakaian Musim Dingin" },
             { number: 14, title: "Русская Душа — Konsep Spiritual yang Sulit Diterjemahkan" },
-            { number: 15, title: "Review Akumulatif A2.4" },
+            { number: 15, title: "Review Akumulatif B1.1" },
             { number: 16, title: "Mini-Project Final A2 — Esai Budaya Rusia 400 Kata" },
           ],
         },
-      ],
-    },
-    {
-      code: "B1",
-      name: "Menengah — Sejarah, Sastra & Spiritualitas",
-      description:
-        "Diskusi topik abstrak, sejarah Rusia dari Киевская Русь sampai Federasi, sastra Золотой Век (Pushkin, Lermontov, Gogol), sinema Tarkovsky & Eisenstein, spiritualitas Ortodoks & filosofi. Mulai bisa argumen dan opini.",
-      sublevels: [
         {
-          code: "B1.1",
+          code: "B1.2",
           name: "Sejarah Rusia — Киевская Русь ke Федерация",
           preview: false,
           sessions: [
@@ -238,7 +238,7 @@ const curriculum: LanguageCurriculum = {
           ],
         },
         {
-          code: "B1.2",
+          code: "B1.3",
           name: "Sastra Rusia — Золотой Век",
           preview: false,
           sessions: [
@@ -256,12 +256,12 @@ const curriculum: LanguageCurriculum = {
             { number: 12, title: "Иван Крылов — Fabel Klasik Rusia" },
             { number: 13, title: "Membaca Pendek — Cuplikan Pushkin" },
             { number: 14, title: "Diskusi: Lishniy Chelovek (Manusia Berlebih)" },
-            { number: 15, title: "Review Akumulatif B1.2" },
+            { number: 15, title: "Review Akumulatif B1.3" },
             { number: 16, title: "Mini-Project — Analisis 1 Puisi Lirik" },
           ],
         },
         {
-          code: "B1.3",
+          code: "B1.4",
           name: "Sinema, Musik & Seni Rusia",
           preview: false,
           sessions: [
@@ -279,12 +279,12 @@ const curriculum: LanguageCurriculum = {
             { number: 12, title: "Рок Россия — Виктор Цой & Кино" },
             { number: 13, title: "Передвижники — Pelukis Realis Abad 19" },
             { number: 14, title: "Авангард — Малевич, Кандинский" },
-            { number: 15, title: "Review Akumulatif B1.3" },
+            { number: 15, title: "Review Akumulatif B1.4" },
             { number: 16, title: "Mini-Project — Resensi Film Rusia" },
           ],
         },
         {
-          code: "B1.4",
+          code: "B1.5",
           name: "Filsafat & Spiritualitas Rusia",
           preview: false,
           sessions: [
@@ -302,7 +302,7 @@ const curriculum: LanguageCurriculum = {
             { number: 12, title: "Marxisme-Leninisme — Ideologi Soviet" },
             { number: 13, title: "Новый Религиозный Поиск Post-Soviet" },
             { number: 14, title: "Diskusi: Rusia Antara Eropa & Asia" },
-            { number: 15, title: "Review Akumulatif B1.4" },
+            { number: 15, title: "Review Akumulatif B1.5" },
             { number: 16, title: "Mini-Project Final B1 — Esai Filsafat 600 Kata" },
           ],
         },

@@ -83,9 +83,17 @@ const curriculum: LanguageCurriculum = {
             { number: 16, title: "Mini-Project — Audio 3 Level Switching", topics: ["Rekam 3 dialog pendek", "Tunjukkan switching jelas", "Submit dengan transkrip", "Refleksi: kesalahan & kapan tepat"] },
           ],
         },
+      ],
+    },
+    {
+      code: "A2",
+      name: "Dasar — Komunikasi Harian & Adat Bali Lebih Dalam",
+      description:
+        "Lo memperluas kapasitas komunikasi ke aktivitas harian, profesi, transaksi pasar, dan mulai mendalami penggunaan Sor-Singgih dalam konteks dinamis (kapan switch, dengan siapa, dalam situasi apa). Target: bisa berinteraksi di pasar, warung, dan acara adat tanpa salah register.",
+      sublevels: [
         {
-          code: "A1.4",
-          name: "Konsolidasi A1 — Integrasi Salam, Vocab, Sor-Singgih",
+          code: "A2.1",
+          name: "Jembatan A1→A2 · Konsolidasi A1 — Integrasi Salam, Vocab, Sor-Singgih",
           preview: false,
           sessions: [
             { number: 1, title: "Recap Salam & Sapaan Harian" },
@@ -102,20 +110,12 @@ const curriculum: LanguageCurriculum = {
             { number: 12, title: "Vocabulary Expansion Tematik" },
             { number: 13, title: "Mock Test A1 Style" },
             { number: 14, title: "Diagnostic Review — Gap Identification" },
-            { number: 15, title: "Review Akumulatif A1.4" },
+            { number: 15, title: "Review Akumulatif A2.1" },
             { number: 16, title: "Mini-Project — Portofolio Sertifikasi A1" },
           ],
         },
-      ],
-    },
-    {
-      code: "A2",
-      name: "Dasar — Komunikasi Harian & Adat Bali Lebih Dalam",
-      description:
-        "Lo memperluas kapasitas komunikasi ke aktivitas harian, profesi, transaksi pasar, dan mulai mendalami penggunaan Sor-Singgih dalam konteks dinamis (kapan switch, dengan siapa, dalam situasi apa). Target: bisa berinteraksi di pasar, warung, dan acara adat tanpa salah register.",
-      sublevels: [
         {
-          code: "A2.1",
+          code: "A2.2",
           name: "Aktivitas Harian & Profesi Bali",
           preview: true,
           sessions: [
@@ -133,12 +133,12 @@ const curriculum: LanguageCurriculum = {
             { number: 12, title: "Dialog Profesi di Kantor", topics: ["Sapaan kolega", "Tanya jadwal rapat", "Permintaan tolong sopan", "Pamit pulang kerja"] },
             { number: 13, title: "Dialog Pariwisata Dasar", topics: ["Sapaan tamu Bali ke wisatawan", "Tawar transport sopan", "Jelaskan tempat wisata", "Pamit ramah ke tamu"] },
             { number: 14, title: "Mini-Story Profesi Bali", topics: ["Cerita seorang pemangku", "Cerita seorang penari", "Comprehension 5 pertanyaan", "Diskusi singkat"] },
-            { number: 15, title: "Review Akumulatif A2.1", topics: ["Recall 20 profesi", "Recall verba aktivitas", "Recall waktu lampau & akan datang", "Cloze test 10 item"] },
+            { number: 15, title: "Review Akumulatif A2.2", topics: ["Recall 20 profesi", "Recall verba aktivitas", "Recall waktu lampau & akan datang", "Cloze test 10 item"] },
             { number: 16, title: "Mini-Project — Wawancara Profesi", topics: ["Wawancara 1 orang Bali", "Transkrip 10 tukar-tanya", "Submit audio + teks", "Refleksi register pilihan"] },
           ],
         },
         {
-          code: "A2.2",
+          code: "A2.3",
           name: "Pasar Bali — Belanja, Negosiasi, & Transaksi",
           preview: true,
           sessions: [
@@ -156,12 +156,12 @@ const curriculum: LanguageCurriculum = {
             { number: 12, title: "Kalimat Imbauan & Pilihan", topics: ["'Mangda...' (supaya)", "'Yén...' (jika)", "Pola pilihan: 'puniki utawi punika'", "Drill kalimat dengan kondisi"] },
             { number: 13, title: "Mengelola Daftar Belanja", topics: ["Tulis daftar belanja", "Kelompokkan per komoditas", "Estimasi anggaran", "Pola praktis manajemen"] },
             { number: 14, title: "Mini-Dialog Berbelanja Lengkap", topics: ["Datang ke pasar", "Tawar 3 komoditas", "Bayar & terima kembalian", "Pamit ramah"] },
-            { number: 15, title: "Review Akumulatif A2.2", topics: ["Recall kosakata belanja", "Recall pola tawar", "Recall satuan & angka besar", "Cloze test 10 item"] },
+            { number: 15, title: "Review Akumulatif A2.3", topics: ["Recall kosakata belanja", "Recall pola tawar", "Recall satuan & angka besar", "Cloze test 10 item"] },
             { number: 16, title: "Mini-Project — Video Belanja Bali", topics: ["Rekam diri belanja real", "Audio 3 menit dialog", "Submit dengan transkrip", "Refleksi negosiasi"] },
           ],
         },
         {
-          code: "A2.3",
+          code: "A2.4",
           name: "Sor-Singgih Kontekstual — Switching Sosial Dinamis",
           preview: true,
           sessions: [
@@ -179,13 +179,21 @@ const curriculum: LanguageCurriculum = {
             { number: 12, title: "Bahasa Tubuh Pendamping", topics: ["Posisi tubuh saat Alus", "Tangan dilipat di hati (sembah)", "Sikap merendah", "Eye contact culture Bali"] },
             { number: 13, title: "Sor-Singgih dalam Tulis", topics: ["Surat ke pemangku: Alus", "WA grup banjar: Madia", "Caption Instagram: Madia/Andap", "Email formal: Alus"] },
             { number: 14, title: "Mini-Story Kompleks Switching", topics: ["Cerita 1 hari adat Bali", "Tokoh 4 level sosial", "Comprehension 8 pertanyaan", "Diskusi refleksi sosial"] },
-            { number: 15, title: "Review Akumulatif A2.3", topics: ["Recall 30 pasangan kata 3-level", "Identifikasi 10 konteks sosial", "Self-assess switching", "Diagnostik gap"] },
+            { number: 15, title: "Review Akumulatif A2.4", topics: ["Recall 30 pasangan kata 3-level", "Identifikasi 10 konteks sosial", "Self-assess switching", "Diagnostik gap"] },
             { number: 16, title: "Mini-Project — Audio 4 Konteks Switching", topics: ["Rekam 4 dialog beda konteks", "Switching jelas terdokumentasi", "Submit dengan analisis", "Refleksi tata krama Bali"] },
           ],
         },
+      ],
+    },
+    {
+      code: "B1",
+      name: "Menengah — Bali Kultural, Adat, & Sosial Lebih Dalam",
+      description:
+        "Lo masuk ke level eksplorasi budaya: upacara lifecycle (Ngaben, otonan, pernikahan adat), hari raya besar (Galungan-Kuningan), sistem agraris UNESCO Subak, dan kontribusi adat ke kehidupan modern Bali. Target: bisa berdiskusi soal adat dengan native speaker tanpa terdengar 'pelajar pemula'.",
+      sublevels: [
         {
-          code: "A2.4",
-          name: "Konsolidasi A2 — Integrasi Adat, Profesi, Switching",
+          code: "B1.1",
+          name: "Jembatan A2→B1 · Konsolidasi A2 — Integrasi Adat, Profesi, Switching",
           preview: false,
           sessions: [
             { number: 1, title: "Recap Aktivitas Harian & Profesi" },
@@ -202,20 +210,12 @@ const curriculum: LanguageCurriculum = {
             { number: 12, title: "Latihan Wawancara Pendek" },
             { number: 13, title: "Mock Test A2 Style" },
             { number: 14, title: "Diagnostic Gap Identification" },
-            { number: 15, title: "Review Akumulatif A2.4" },
+            { number: 15, title: "Review Akumulatif B1.1" },
             { number: 16, title: "Mini-Project — Portofolio Sertifikasi A2" },
           ],
         },
-      ],
-    },
-    {
-      code: "B1",
-      name: "Menengah — Bali Kultural, Adat, & Sosial Lebih Dalam",
-      description:
-        "Lo masuk ke level eksplorasi budaya: upacara lifecycle (Ngaben, otonan, pernikahan adat), hari raya besar (Galungan-Kuningan), sistem agraris UNESCO Subak, dan kontribusi adat ke kehidupan modern Bali. Target: bisa berdiskusi soal adat dengan native speaker tanpa terdengar 'pelajar pemula'.",
-      sublevels: [
         {
-          code: "B1.1",
+          code: "B1.2",
           name: "Ngaben & Upacara Lifecycle Hindu Bali",
           preview: true,
           sessions: [
@@ -233,12 +233,12 @@ const curriculum: LanguageCurriculum = {
             { number: 12, title: "Hari Baik (Padewasan)", topics: ["Konsep dewasa ayu", "Konsultasi pemangku padewasan", "Hari untuk pernikahan/upacara", "Pemilihan tanggal adat"] },
             { number: 13, title: "Solidaritas Banjar di Upacara", topics: ["Konsep krama desa", "Tugas banjar saat upacara", "Sumbangan & jangki", "Ngayah collective work"] },
             { number: 14, title: "Mini-Story Ngaben Keluarga", topics: ["Cerita Ngaben kakek", "Comprehension 8 pertanyaan", "Diskusi etika & dharma", "Refleksi pribadi"] },
-            { number: 15, title: "Review Akumulatif B1.1", topics: ["Recall 5 yadnya & tahapan", "Recall kosakata Ngaben & otonan", "Identifikasi peran pemangku", "Cloze test lanjutan"] },
+            { number: 15, title: "Review Akumulatif B1.2", topics: ["Recall 5 yadnya & tahapan", "Recall kosakata Ngaben & otonan", "Identifikasi peran pemangku", "Cloze test lanjutan"] },
             { number: 16, title: "Mini-Project — Etnografi Upacara", topics: ["Hadiri 1 upacara langsung", "Tulis observasi 500 kata", "Identifikasi 30 istilah baru", "Refleksi pribadi mendalam"] },
           ],
         },
         {
-          code: "B1.2",
+          code: "B1.3",
           name: "Galungan-Kuningan & Hari Raya Hindu Bali",
           preview: true,
           sessions: [
@@ -256,12 +256,12 @@ const curriculum: LanguageCurriculum = {
             { number: 12, title: "Hari Raya Pura Keluarga", topics: ["Piodalan sanggah (otonan pura)", "Banten ageng piodalan", "Undangan keluarga besar", "Hierarki banten"] },
             { number: 13, title: "Hari Raya Pura Desa", topics: ["Piodalan Pura Puseh/Desa/Dalem", "Tradisi ngayah masal", "Variasi adat per desa", "Hari raya unik per desa"] },
             { number: 14, title: "Mini-Story Galungan di Banjar", topics: ["Cerita persiapan keluarga", "Comprehension 8 pertanyaan", "Refleksi makna dharma", "Diskusi kelompok"] },
-            { number: 15, title: "Review Akumulatif B1.2", topics: ["Recall kalender hari raya", "Recall komponen banten besar", "Recall makna spiritual", "Cloze test 15 item"] },
+            { number: 15, title: "Review Akumulatif B1.3", topics: ["Recall kalender hari raya", "Recall komponen banten besar", "Recall makna spiritual", "Cloze test 15 item"] },
             { number: 16, title: "Mini-Project — Dokumentasi Galungan", topics: ["Foto/video 1 hari raya", "Tulis narasi 800 kata", "Highlight 40 istilah baru", "Refleksi spiritual personal"] },
           ],
         },
         {
-          code: "B1.3",
+          code: "B1.4",
           name: "Subak UNESCO & Sistem Sosial Tradisional",
           preview: true,
           sessions: [
@@ -279,12 +279,12 @@ const curriculum: LanguageCurriculum = {
             { number: 12, title: "Pariwisata Berbasis Budaya", topics: ["Konsep pariwisata budaya Bali", "Awig-awig vs invasi turisme", "Sustainable tourism initiatives", "Pelindung adat dari kapitalisasi"] },
             { number: 13, title: "Ancaman pada Subak Modern", topics: ["Alih fungsi lahan", "Generasi muda meninggalkan tani", "Krisis air & iklim", "Inisiatif konservasi"] },
             { number: 14, title: "Mini-Story Pekaseh Veteran", topics: ["Cerita pekaseh 70 tahun", "Comprehension 8 pertanyaan", "Refleksi krisis subak", "Diskusi solusi"] },
-            { number: 15, title: "Review Akumulatif B1.3", topics: ["Recall struktur subak", "Recall Tri Hita Karana aplikasi", "Recall krama & sekaa", "Cloze test 15 item"] },
+            { number: 15, title: "Review Akumulatif B1.4", topics: ["Recall struktur subak", "Recall Tri Hita Karana aplikasi", "Recall krama & sekaa", "Cloze test 15 item"] },
             { number: 16, title: "Mini-Project — Profil Subak Lokal", topics: ["Wawancara 1 pekaseh", "Tulis profil 1000 kata", "Highlight 50 istilah teknis", "Refleksi keberlanjutan"] },
           ],
         },
         {
-          code: "B1.4",
+          code: "B1.5",
           name: "Konsolidasi B1 — Integrasi Adat, Upacara, Subak",
           preview: false,
           sessions: [
@@ -302,7 +302,7 @@ const curriculum: LanguageCurriculum = {
             { number: 12, title: "Mock Test B1 Style" },
             { number: 13, title: "Wawancara Roleplay Kompleks" },
             { number: 14, title: "Diagnostic Gap Identification" },
-            { number: 15, title: "Review Akumulatif B1.4" },
+            { number: 15, title: "Review Akumulatif B1.5" },
             { number: 16, title: "Mini-Project — Portofolio Sertifikasi B1" },
           ],
         },

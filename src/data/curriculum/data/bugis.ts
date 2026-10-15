@@ -83,9 +83,17 @@ const curriculum: LanguageCurriculum = {
             { number: 16, title: "Mini-Project — Esai Refleksi 5 Gender", topics: ["Tulis esai 800 kata refleksi", "Hindari frame controversy", "Cite 2 sumber akademik", "Submit dengan refleksi pribadi"] },
           ],
         },
+      ],
+    },
+    {
+      code: "A2",
+      name: "Dasar — Komunikasi Harian & Tradisi Maritim Bugis",
+      description:
+        "Lo memperluas kapasitas komunikasi ke aktivitas harian, profesi, transaksi pasar, dan kosakata maritim signature Bugis (Pinisi, pelayaran, navigasi). Target: bisa berinteraksi di pasar, pelabuhan, dan acara adat dengan vocabulary pelayaran yang khas.",
+      sublevels: [
         {
-          code: "A1.4",
-          name: "Konsolidasi A1 — Integrasi Salam, Vocab, 5 Gender",
+          code: "A2.1",
+          name: "Jembatan A1→A2 · Konsolidasi A1 — Integrasi Salam, Vocab, 5 Gender",
           preview: false,
           sessions: [
             { number: 1, title: "Recap Salam & Sapaan Harian" },
@@ -102,20 +110,12 @@ const curriculum: LanguageCurriculum = {
             { number: 12, title: "Vocabulary Expansion Tematik" },
             { number: 13, title: "Mock Test A1 Style" },
             { number: 14, title: "Diagnostic Review — Gap Identification" },
-            { number: 15, title: "Review Akumulatif A1.4" },
+            { number: 15, title: "Review Akumulatif A2.1" },
             { number: 16, title: "Mini-Project — Portofolio Sertifikasi A1" },
           ],
         },
-      ],
-    },
-    {
-      code: "A2",
-      name: "Dasar — Komunikasi Harian & Tradisi Maritim Bugis",
-      description:
-        "Lo memperluas kapasitas komunikasi ke aktivitas harian, profesi, transaksi pasar, dan kosakata maritim signature Bugis (Pinisi, pelayaran, navigasi). Target: bisa berinteraksi di pasar, pelabuhan, dan acara adat dengan vocabulary pelayaran yang khas.",
-      sublevels: [
         {
-          code: "A2.1",
+          code: "A2.2",
           name: "Aktivitas Harian & Profesi Bugis-Makassar",
           preview: true,
           sessions: [
@@ -133,12 +133,12 @@ const curriculum: LanguageCurriculum = {
             { number: 12, title: "Dialog Profesi di Kantor", topics: ["Sapaan kolega", "Tanya jadwal rapat", "Permintaan tolong sopan", "Pamit pulang kerja"] },
             { number: 13, title: "Dialog di Warkop Makassar", topics: ["Sapaan datang", "Pesan kopi & makanan ringan", "Diskusi politik & adat", "Pamit ramah"] },
             { number: 14, title: "Mini-Story Profesi Bugis", topics: ["Cerita seorang sawimadeng (pelaut)", "Cerita seorang pengrajin sutera", "Comprehension 5 pertanyaan", "Diskusi singkat"] },
-            { number: 15, title: "Review Akumulatif A2.1", topics: ["Recall 20 profesi", "Recall verba aktivitas", "Recall waktu lampau & akan datang", "Cloze test 10 item"] },
+            { number: 15, title: "Review Akumulatif A2.2", topics: ["Recall 20 profesi", "Recall verba aktivitas", "Recall waktu lampau & akan datang", "Cloze test 10 item"] },
             { number: 16, title: "Mini-Project — Wawancara Profesi", topics: ["Wawancara 1 orang Bugis", "Transkrip 10 tukar-tanya", "Submit audio + teks", "Refleksi register pilihan"] },
           ],
         },
         {
-          code: "A2.2",
+          code: "A2.3",
           name: "Pasar Bugis & Transaksi Tradisional",
           preview: true,
           sessions: [
@@ -156,12 +156,12 @@ const curriculum: LanguageCurriculum = {
             { number: 12, title: "Kalimat Imbauan & Pilihan", topics: ["Pola 'kuasanna...' (supaya)", "Pola 'rekko...' (jika)", "Pola pilihan: 'iyé' iyaregae iyé'", "Drill kalimat kondisi"] },
             { number: 13, title: "Mengelola Daftar Belanja", topics: ["Tulis daftar belanja", "Kelompokkan per komoditas", "Estimasi anggaran", "Pola praktis"] },
             { number: 14, title: "Mini-Dialog Berbelanja Lengkap", topics: ["Datang ke pasar", "Tawar 3 komoditas", "Bayar & kembalian", "Pamit ramah"] },
-            { number: 15, title: "Review Akumulatif A2.2", topics: ["Recall kosakata belanja", "Recall pola tawar", "Recall satuan & angka besar", "Cloze test 10 item"] },
+            { number: 15, title: "Review Akumulatif A2.3", topics: ["Recall kosakata belanja", "Recall pola tawar", "Recall satuan & angka besar", "Cloze test 10 item"] },
             { number: 16, title: "Mini-Project — Video Belanja Pasa'", topics: ["Rekam diri belanja pasar", "Audio 3 menit dialog", "Submit dengan transkrip", "Refleksi negosiasi"] },
           ],
         },
         {
-          code: "A2.3",
+          code: "A2.4",
           name: "Maritime Vocabulary — Pinisi & Pelayaran Bugis",
           preview: true,
           sessions: [
@@ -179,13 +179,21 @@ const curriculum: LanguageCurriculum = {
             { number: 12, title: "Maritime Industry Modern", topics: ["Perusahaan shipping Bugis", "Pelabuhan modern Makassar", "Container shipping integrasi", "Bisnis maritim diaspora"] },
             { number: 13, title: "Listening — Audio Pelaut", topics: ["Audio pelaut veteran cerita", "Identifikasi vocabulary maritim", "Comprehension 5 pertanyaan", "Refleksi heritage"] },
             { number: 14, title: "Mini-Story Punggawa Pinisi", topics: ["Cerita kapten pinisi veteran", "Comprehension 8 pertanyaan", "Refleksi maritim heritage", "Diskusi kelompok"] },
-            { number: 15, title: "Review Akumulatif A2.3", topics: ["Recall vocabulary pinisi", "Recall navigasi tradisional", "Recall rute & komoditas", "Cloze test 15 item"] },
+            { number: 15, title: "Review Akumulatif A2.4", topics: ["Recall vocabulary pinisi", "Recall navigasi tradisional", "Recall rute & komoditas", "Cloze test 15 item"] },
             { number: 16, title: "Mini-Project — Dokumentasi Pinisi", topics: ["Hadiri/tonton pembuatan pinisi", "Tulis observasi 800 kata", "Identifikasi 30 istilah baru", "Refleksi maritim adat"] },
           ],
         },
+      ],
+    },
+    {
+      code: "B1",
+      name: "Menengah — Bugis Kultural, Bissu, & Pinisi Heritage",
+      description:
+        "Lo masuk ke eksplorasi budaya mendalam: pernikahan adat Mappacci, peran sakral Bissu, dan UNESCO Pinisi heritage. Target: bisa berdiskusi adat dengan native speaker dan memahami konteks ritual Bugis tanpa terdengar pemula.",
+      sublevels: [
         {
-          code: "A2.4",
-          name: "Konsolidasi A2 — Integrasi Adat, Profesi, Maritim",
+          code: "B1.1",
+          name: "Jembatan A2→B1 · Konsolidasi A2 — Integrasi Adat, Profesi, Maritim",
           preview: false,
           sessions: [
             { number: 1, title: "Recap Aktivitas Harian & Profesi" },
@@ -202,20 +210,12 @@ const curriculum: LanguageCurriculum = {
             { number: 12, title: "Latihan Wawancara Pendek" },
             { number: 13, title: "Mock Test A2 Style" },
             { number: 14, title: "Diagnostic Gap Identification" },
-            { number: 15, title: "Review Akumulatif A2.4" },
+            { number: 15, title: "Review Akumulatif B1.1" },
             { number: 16, title: "Mini-Project — Portofolio Sertifikasi A2" },
           ],
         },
-      ],
-    },
-    {
-      code: "B1",
-      name: "Menengah — Bugis Kultural, Bissu, & Pinisi Heritage",
-      description:
-        "Lo masuk ke eksplorasi budaya mendalam: pernikahan adat Mappacci, peran sakral Bissu, dan UNESCO Pinisi heritage. Target: bisa berdiskusi adat dengan native speaker dan memahami konteks ritual Bugis tanpa terdengar pemula.",
-      sublevels: [
         {
-          code: "B1.1",
+          code: "B1.2",
           name: "Adat Pernikahan Bugis — Mappacci & Tradisi",
           preview: true,
           sessions: [
@@ -233,12 +233,12 @@ const curriculum: LanguageCurriculum = {
             { number: 12, title: "Pernikahan Adat Modern", topics: ["Adaptasi di kota besar", "Kombinasi adat & modern", "Pernikahan Bugis Jakarta", "Mempertahankan elemen inti"] },
             { number: 13, title: "Konflik Pernikahan Adat", topics: ["Konflik sompa terlalu tinggi", "Konflik antar tetua", "Mediasi adat", "Pemulihan hubungan"] },
             { number: 14, title: "Mini-Story Pernikahan Bugis", topics: ["Cerita pernikahan adat Bone lengkap", "Comprehension 10 pertanyaan", "Identifikasi 30 istilah", "Diskusi etika & adat"] },
-            { number: 15, title: "Review Akumulatif B1.1", topics: ["Recall tahapan pernikahan", "Recall peran adat & sompa", "Recall elong & pidato", "Cloze test 15 item"] },
+            { number: 15, title: "Review Akumulatif B1.2", topics: ["Recall tahapan pernikahan", "Recall peran adat & sompa", "Recall elong & pidato", "Cloze test 15 item"] },
             { number: 16, title: "Mini-Project — Etnografi Pernikahan", topics: ["Hadiri 1 pernikahan langsung", "Tulis observasi 1000 kata", "Identifikasi 40 istilah baru", "Refleksi pribadi mendalam"] },
           ],
         },
         {
-          code: "B1.2",
+          code: "B1.3",
           name: "Bissu — Pendeta Transenden & Peran Sakral",
           preview: true,
           sessions: [
@@ -256,12 +256,12 @@ const curriculum: LanguageCurriculum = {
             { number: 12, title: "Basa Bissu — Bahasa Sakral", topics: ["Vocabulary khusus Bissu", "Beda dari Bugis standar", "Mantra & doa Bissu", "Reading transkripsi terbatas"] },
             { number: 13, title: "Listening — Wawancara Bissu", topics: ["Audio dokumenter Bissu", "Identifikasi vocabulary", "Comprehension 8 pertanyaan", "Refleksi heritage"] },
             { number: 14, title: "Mini-Story Bissu Veteran", topics: ["Cerita Bissu Eka Tuanaja (tokoh utama)", "Comprehension 10 pertanyaan", "Refleksi pluralitas budaya", "Diskusi respektful"] },
-            { number: 15, title: "Review Akumulatif B1.2", topics: ["Recall sejarah & peran Bissu", "Recall ritual & atribut", "Recall pelestarian", "Cloze test 15 item"] },
+            { number: 15, title: "Review Akumulatif B1.3", topics: ["Recall sejarah & peran Bissu", "Recall ritual & atribut", "Recall pelestarian", "Cloze test 15 item"] },
             { number: 16, title: "Mini-Project — Esai Bissu", topics: ["Tulis esai 1500 kata pelestarian", "Cite 3 sumber akademik", "Hindari frame Western LGBT", "Submit untuk review formal"] },
           ],
         },
         {
-          code: "B1.3",
+          code: "B1.4",
           name: "Pinisi UNESCO Heritage & Pelayaran Modern",
           preview: true,
           sessions: [
@@ -279,12 +279,12 @@ const curriculum: LanguageCurriculum = {
             { number: 12, title: "Pelestarian via Pendidikan", topics: ["Sekolah adat pembuatan", "Workshop turis edukasi", "Kerjasama Pemda & akademisi", "Inisiatif diaspora"] },
             { number: 13, title: "Listening — Audio Maestro", topics: ["Audio maestro pinisi veteran", "Identifikasi vocabulary teknis", "Comprehension 8 pertanyaan", "Refleksi heritage"] },
             { number: 14, title: "Mini-Story Pelaut Veteran", topics: ["Cerita punggawa pinisi 60 tahun", "Comprehension 10 pertanyaan", "Refleksi maritim adat", "Diskusi kelompok"] },
-            { number: 15, title: "Review Akumulatif B1.3", topics: ["Recall sejarah & UNESCO", "Recall pembuatan & maestro", "Recall pelestarian modern", "Cloze test 20 item"] },
+            { number: 15, title: "Review Akumulatif B1.4", topics: ["Recall sejarah & UNESCO", "Recall pembuatan & maestro", "Recall pelestarian modern", "Cloze test 20 item"] },
             { number: 16, title: "Mini-Project — Profil Pinisi", topics: ["Wawancara 1 punggawa/maestro", "Tulis profil 1500 kata", "Highlight 40 istilah teknis", "Refleksi keberlanjutan"] },
           ],
         },
         {
-          code: "B1.4",
+          code: "B1.5",
           name: "Konsolidasi B1 — Integrasi Adat, Bissu, Pinisi",
           preview: false,
           sessions: [
@@ -302,7 +302,7 @@ const curriculum: LanguageCurriculum = {
             { number: 12, title: "Mock Test B1 Style" },
             { number: 13, title: "Wawancara Roleplay Kompleks" },
             { number: 14, title: "Diagnostic Gap Identification" },
-            { number: 15, title: "Review Akumulatif B1.4" },
+            { number: 15, title: "Review Akumulatif B1.5" },
             { number: 16, title: "Mini-Project — Portofolio Sertifikasi B1" },
           ],
         },

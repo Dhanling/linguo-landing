@@ -6,7 +6,7 @@ const meta = getLanguageBySlug("cantonese")!;
 const curriculum: LanguageCurriculum = {
   meta,
   overview:
-    "Cantonese / Bahasa Kanton (廣東話 gwong2 dung1 waa2) adalah varian Sinitik utama yang dituturkan oleh sekitar 85 juta penutur native di Hong Kong, Macau, Guangzhou, Pearl River Delta, dan diaspora global yang signifikan — termasuk komunitas Tionghoa-Indonesia di Pontianak, Singkawang, dan kota-kota Kalimantan Barat. Berbeda dari Mandarin standar (普通話) yang punya 4 tone, Cantonese mempertahankan **6 tone** (atau 9 dengan checked tone) — pivot pedagogical Linguo di A1.1 dengan minimal-pair drills sistematis menggunakan romanisasi Jyutping (粵拼) — standar resmi LSHK sejak 1993, mengganti Yale lama. Cantonese tetap pakai **aksara Tionghoa Tradisional (繁體字)** seperti yang dilestarikan di Hong Kong dan Macau — bukan Simplified seperti di RRT. Implikasinya: pelajar Linguo yang sudah belajar Mandarin punya ~80% vocabulary overlap pada level karakter, tapi pelafalan & tone shift total. Fitur signature kedua: sistem **sentence-final particles** yang sangat kaya (㗎 gaa3, 喎 wo3, 嘞 laak3, 喇 laa3, 啦 laa1, 嘅 ge3, 咩 me1, 囉 lo1, 㗎喎 gaa3 wo3 — particle stacking!) — perangkat ekspresif yang membuat Cantonese terasa hidup dan emosional, dikupas tuntas di A1.3. Linguo juga membawa Cantonese-Mandarin bridge di A2.3 — efisien untuk pelajar Indonesia yang banyak terpapar Mandarin Mandopop maupun keluarga Tionghoa-Indonesia. Konten budaya berfokus pada warisan Cantopop (Sam Hui, Beyond, Anita Mui, Leslie Cheung), sinema Hong Kong (Bruce Lee, Wong Kar-wai, Stephen Chow mo lei tau, John Woo), kuliner dim sum, dan sastra HK modern (Xi Xi, Chan Koonchung, Leung Ping-kwan/也斯). Target sertifikasi: placement di Lingnan University, Hong Kong Baptist University, Macau Polytechnic, atau LSCAT-affiliated examiners.",
+    "Cantonese / Bahasa Kanton (廣東話 gwong2 dung1 waa2) adalah varian Sinitik utama yang dituturkan oleh sekitar 85 juta penutur native di Hong Kong, Macau, Guangzhou, Pearl River Delta, dan diaspora global yang signifikan — termasuk komunitas Tionghoa-Indonesia di Pontianak, Singkawang, dan kota-kota Kalimantan Barat. Berbeda dari Mandarin standar (普通話) yang punya 4 tone, Cantonese mempertahankan **6 tone** (atau 9 dengan checked tone) — pivot pedagogical Linguo di A1.1 dengan minimal-pair drills sistematis menggunakan romanisasi Jyutping (粵拼) — standar resmi LSHK sejak 1993, mengganti Yale lama. Cantonese tetap pakai **aksara Tionghoa Tradisional (繁體字)** seperti yang dilestarikan di Hong Kong dan Macau — bukan Simplified seperti di RRT. Implikasinya: pelajar Linguo yang sudah belajar Mandarin punya ~80% vocabulary overlap pada level karakter, tapi pelafalan & tone shift total. Fitur signature kedua: sistem **sentence-final particles** yang sangat kaya (㗎 gaa3, 喎 wo3, 嘞 laak3, 喇 laa3, 啦 laa1, 嘅 ge3, 咩 me1, 囉 lo1, 㗎喎 gaa3 wo3 — particle stacking!) — perangkat ekspresif yang membuat Cantonese terasa hidup dan emosional, dikupas tuntas di A1.3. Linguo juga membawa Cantonese-Mandarin bridge di A2.4 — efisien untuk pelajar Indonesia yang banyak terpapar Mandarin Mandopop maupun keluarga Tionghoa-Indonesia. Konten budaya berfokus pada warisan Cantopop (Sam Hui, Beyond, Anita Mui, Leslie Cheung), sinema Hong Kong (Bruce Lee, Wong Kar-wai, Stephen Chow mo lei tau, John Woo), kuliner dim sum, dan sastra HK modern (Xi Xi, Chan Koonchung, Leung Ping-kwan/也斯). Target sertifikasi: placement di Lingnan University, Hong Kong Baptist University, Macau Polytechnic, atau LSCAT-affiliated examiners.",
   levels: [
     {
       code: "A1",
@@ -83,8 +83,16 @@ const curriculum: LanguageCurriculum = {
             { number: 16, title: "Mini-Project — Rekam Dialog Multi-Turn 3 Menit dengan 5+ Partikel Berbeda", topics: ["scenario: order di cha chaan teng", "minimal 5 partikel berbeda", "natural flow", "submit audio + transkrip dengan partikel highlighted"] },
           ],
         },
+      ],
+    },
+    {
+      code: "A2",
+      name: "Dasar+ — Cantonese Konversasional",
+      description:
+        "Beralih dari frasa terisolasi ke percakapan multi-turn natural. Tuntaskan jembatan Cantonese-Mandarin di A2.4 (signature deep dive untuk pelajar Indonesia yang sering terpapar dua-duanya), bangun kosakata sosial-kerja-tradisi HK, plus konsumsi Cantopop & sinema HK ringan.",
+      sublevels: [
         {
-          code: "A1.4",
+          code: "A2.1",
           name: "Numerik Lanjut, MTR & Belanja HK",
           preview: false,
           sessions: [
@@ -102,20 +110,12 @@ const curriculum: LanguageCurriculum = {
             { number: 12, title: "Café Cha Chaan Teng: Order Lengkap" },
             { number: 13, title: "Dim Sum Restaurant: Yum Cha Etiquette" },
             { number: 14, title: "Bayar via Octopus, AlipayHK, WeChat Pay HK" },
-            { number: 15, title: "Review Akumulatif A1.4" },
+            { number: 15, title: "Review Akumulatif A2.1" },
             { number: 16, title: "Mini-Project — Simulasi Trip Hong Kong → Macau Day Trip" },
           ],
         },
-      ],
-    },
-    {
-      code: "A2",
-      name: "Dasar+ — Cantonese Konversasional",
-      description:
-        "Beralih dari frasa terisolasi ke percakapan multi-turn natural. Tuntaskan jembatan Cantonese-Mandarin di A2.3 (signature deep dive untuk pelajar Indonesia yang sering terpapar dua-duanya), bangun kosakata sosial-kerja-tradisi HK, plus konsumsi Cantopop & sinema HK ringan.",
-      sublevels: [
         {
-          code: "A2.1",
+          code: "A2.2",
           name: "Percakapan Sehari-Hari & Dunia Kerja HK",
           preview: true,
           sessions: [
@@ -133,12 +133,12 @@ const curriculum: LanguageCurriculum = {
             { number: 12, title: "Bank HK: HSBC, BOC, Hang Seng", topics: ["提款 tai4 fun2 (withdraw)", "過數 gwo3 sou3 (transfer)", "開戶口 hoi1 wu6 hau2 (open account)", "FPS instant transfer system"] },
             { number: 13, title: "Klinik: HK Public vs Private Healthcare", topics: ["症狀 zing3 zong6 (symptoms)", "藥水 joek6 seoi2 (medicine)", "私家醫生 si1 gaa1 ji1 sang1 (private doctor)", "GP vs hospital"] },
             { number: 14, title: "Cha Chaan Teng: Roleplay Order Lengkap", topics: ["menu typical: 西多 sai1 do1, 港式奶茶, 公仔麵", "modifikasi pesanan", "split bill (AA制 aa1 zai3)", "HK service culture"] },
-            { number: 15, title: "Review Akumulatif A2.1", topics: ["semua skenario sehari-hari", "drill 5 register sosial", "mini-test multi-turn", "feedback delivery"] },
+            { number: 15, title: "Review Akumulatif A2.2", topics: ["semua skenario sehari-hari", "drill 5 register sosial", "mini-test multi-turn", "feedback delivery"] },
             { number: 16, title: "Mini-Project — Roleplay Hari Kerja Penuh HK 5 Menit", topics: ["pagi: greet kolega + tea", "siang: meeting + lunch", "sore: WhatsApp boss + pulang", "submit audio + transkrip"] },
           ],
         },
         {
-          code: "A2.2",
+          code: "A2.3",
           name: "Cantopop Heritage, HK Film & Dim Sum Culture",
           preview: true,
           sessions: [
@@ -156,12 +156,12 @@ const curriculum: LanguageCurriculum = {
             { number: 12, title: "Sosial Media: WhatsApp + Instagram + Threads HK", topics: ["FB declining among youth", "IG dominant HK 20s-30s", "Threads adoption", "etika komentar HK"] },
             { number: 13, title: "Live Streaming: Twitch HK & openrice Reviews", topics: ["urgency markers", "social proof", "scarcity tactics", "HK ad analysis"] },
             { number: 14, title: "Cantonese Slang & Internet Lingo: 香港潮語", topics: ["GG, 廢青 fai3 cing1 (useless youth slang)", "KOL HK contexts", "code-switch Cantonese-English-Mandarin youth", "list 30 trending terms"] },
-            { number: 15, title: "Review Akumulatif A2.2", topics: ["recall vocab Cantopop + film + dim sum", "drill caption & komentar", "mini-test reading 3 post IG", "self-record reaction"] },
+            { number: 15, title: "Review Akumulatif A2.3", topics: ["recall vocab Cantopop + film + dim sum", "drill caption & komentar", "mini-test reading 3 post IG", "self-record reaction"] },
             { number: 16, title: "Mini-Project — Karaoke 1 Lagu Cantopop + Review 1 Film HK 3 Menit", topics: ["pilih lagu klasik", "perform with reading Jyutping", "review film: plot + favorite scene", "submit audio + tulisan"] },
           ],
         },
         {
-          code: "A2.3",
+          code: "A2.4",
           name: "Cantonese-Mandarin Bridge — Code-Switch & Cross-Reading",
           preview: true,
           sessions: [
@@ -179,12 +179,20 @@ const curriculum: LanguageCurriculum = {
             { number: 12, title: "Mandarin Slip-Ups: Common Cantonese Speaker Mistakes", topics: ["pelajar Cantonese sering salah tone Mandarin", "lexical false friends", "list 20 common errors", "self-awareness drill"] },
             { number: 13, title: "Diaspora Context: Tionghoa-Indonesia Cantonese", topics: ["Pontianak Cantonese community", "Singkawang heritage", "preservation in diaspora", "Indonesia perspective"] },
             { number: 14, title: "Cantonese ↔ Mandarin Translation Practice", topics: ["translate 10 kalimat Mandarin ke Cantonese", "translate 10 kalimat Cantonese ke Mandarin", "tone shift accuracy", "vocab substitution precision"] },
-            { number: 15, title: "Review Akumulatif A2.3", topics: ["mastery test cross-reading", "code-switch fluency drill", "Mandarin decode mini-test", "self-assessment audio"] },
+            { number: 15, title: "Review Akumulatif A2.4", topics: ["mastery test cross-reading", "code-switch fluency drill", "Mandarin decode mini-test", "self-assessment audio"] },
             { number: 16, title: "Mini-Project — Reaksi Video Mandarin 2 Menit + Komentar Cantonese", topics: ["pilih video Mandopop atau Mainland TV", "react & summarize dalam Cantonese", "highlight word-by-word switch", "submit audio + transkrip dual-script"] },
           ],
         },
+      ],
+    },
+    {
+      code: "B1",
+      name: "Menengah — Topical & Cultural Cantonese",
+      description:
+        "Beralih dari survival ke ekspresi. Pelajar bisa berdiskusi opini, narasi multi-paragraf, argumentasi sederhana, dan konsumsi media Cantonese (TVB drama, Cantopop, HK indie film, podcast Cantonese, YouTube HK creators) secara mandiri.",
+      sublevels: [
         {
-          code: "A2.4",
+          code: "B1.1",
           name: "Macau, Guangzhou & Cantonese Diaspora",
           preview: false,
           sessions: [
@@ -202,20 +210,12 @@ const curriculum: LanguageCurriculum = {
             { number: 12, title: "Backpacker HK: Hostel Mong Kok Vibe" },
             { number: 13, title: "Emergency Vocab: 999, A&E, 24-Hour 7-Eleven" },
             { number: 14, title: "Festival HK: Mid-Autumn, Lunar New Year, Tin Hau" },
-            { number: 15, title: "Review Akumulatif A2.4" },
+            { number: 15, title: "Review Akumulatif B1.1" },
             { number: 16, title: "Mini-Project — Itinerary 10-Hari Greater Bay Area Loop" },
           ],
         },
-      ],
-    },
-    {
-      code: "B1",
-      name: "Menengah — Topical & Cultural Cantonese",
-      description:
-        "Beralih dari survival ke ekspresi. Pelajar bisa berdiskusi opini, narasi multi-paragraf, argumentasi sederhana, dan konsumsi media Cantonese (TVB drama, Cantopop, HK indie film, podcast Cantonese, YouTube HK creators) secara mandiri.",
-      sublevels: [
         {
-          code: "B1.1",
+          code: "B1.2",
           name: "Diskusi & Opini",
           preview: true,
           sessions: [
@@ -233,12 +233,12 @@ const curriculum: LanguageCurriculum = {
             { number: 12, title: "Active Listening: Acknowledge & Paraphrase", topics: ["repeat: 你係咪話...", "validate: 我明白", "ask deeper: 點解咁諗", "HK politeness"] },
             { number: 13, title: "Group Discussion: Moderasi 4 Peserta", topics: ["intro round", "turn-taking management", "HK direct + face-saving balance", "wrap-up summary"] },
             { number: 14, title: "Debate Mini: 2 vs 2 Topik Ringan", topics: ["topik: WFH vs office in HK", "prepare arguments 5 menit", "rebuttal etiquette", "judge feedback"] },
-            { number: 15, title: "Review Akumulatif B1.1", topics: ["recall 6 topik diskusi", "drill agree/disagree", "mini-test 1 paragraf opini", "self-assessment audio"] },
+            { number: 15, title: "Review Akumulatif B1.2", topics: ["recall 6 topik diskusi", "drill agree/disagree", "mini-test 1 paragraf opini", "self-assessment audio"] },
             { number: 16, title: "Mini-Project — Diskusi Panel Rekaman 8 Menit", topics: ["pilih topik dari list", "3 peserta diskusi", "moderator-style facilitation", "submit audio + transkrip"] },
           ],
         },
         {
-          code: "B1.2",
+          code: "B1.3",
           name: "Narasi & Storytelling",
           preview: true,
           sessions: [
@@ -256,12 +256,12 @@ const curriculum: LanguageCurriculum = {
             { number: 12, title: "TVB Drama: Watch & Retell Episode", topics: ["pilih 1 episode klasik", "retell plot 3 menit", "character analysis", "vocab acquisition"] },
             { number: 13, title: "Cerita Hantu HK: 鬼故 Gwai2 Gu2 Tradition", topics: ["HK ghost story scene heritage", "narrative atmosphere", "Wai Ying-hung horror films", "respect beliefs"] },
             { number: 14, title: "Story Climax: Pacing & Build-Up", topics: ["pacing dengan kalimat pendek", "build-up dengan deskripsi", "release di klimaks dengan particle stack", "rewrite ending exercise"] },
-            { number: 15, title: "Review Akumulatif B1.2", topics: ["narasi 6 jenis", "test struktur 3-act", "self-edit narasi sendiri", "peer feedback"] },
+            { number: 15, title: "Review Akumulatif B1.3", topics: ["narasi 6 jenis", "test struktur 3-act", "self-edit narasi sendiri", "peer feedback"] },
             { number: 16, title: "Mini-Project — Cerita Pendek Original 500 Kata", topics: ["fiksi pendek 5 paragraf", "include dialog + deskripsi + particle", "moral atau twist ending", "submit teks + ringkasan audio"] },
           ],
         },
         {
-          code: "B1.3",
+          code: "B1.4",
           name: "Argumentasi & Persuasi",
           preview: true,
           sessions: [
@@ -279,12 +279,12 @@ const curriculum: LanguageCurriculum = {
             { number: 12, title: "Bahasa Persuasi Iklan: Critical Awareness", topics: ["loaded language detection", "false dichotomy", "appeal to authority", "media literacy"] },
             { number: 13, title: "Negosiasi: B2B HK Pragmatic Style", topics: ["face-saving + direct mix", "indirect bargaining tea-context", "tea-and-talk approach", "win-win framing"] },
             { number: 14, title: "Persuasive Speech 5 Menit Rekaman", topics: ["pilih cause Anda peduli", "struktur opening-body-CTA", "delivery pace & pause", "submit audio"] },
-            { number: 15, title: "Review Akumulatif B1.3", topics: ["semua connector logis", "drill claim-evidence", "debate skill assessment", "self-edit essay"] },
+            { number: 15, title: "Review Akumulatif B1.4", topics: ["semua connector logis", "drill claim-evidence", "debate skill assessment", "self-edit essay"] },
             { number: 16, title: "Mini-Project — Esai Argumentatif 700 Kata + Pitch 3 Menit", topics: ["pilih kontroversi HK heritage", "3 alasan + 1 counter-argument", "kesimpulan & CTA", "rekaman pitch + submit teks"] },
           ],
         },
         {
-          code: "B1.4",
+          code: "B1.5",
           name: "Konsumsi Media Cantonese Mandiri",
           preview: false,
           sessions: [
@@ -302,7 +302,7 @@ const curriculum: LanguageCurriculum = {
             { number: 12, title: "Manga Cantonese-Translated & Comic Lokal" },
             { number: 13, title: "Radio FM Cantonese: 商台, 香港電台" },
             { number: 14, title: "Konsumsi Multi-Media Project Weekly" },
-            { number: 15, title: "Review Akumulatif B1.4" },
+            { number: 15, title: "Review Akumulatif B1.5" },
             { number: 16, title: "Mini-Project — Media Diary 30 Hari + Review 1 Karya" },
           ],
         },

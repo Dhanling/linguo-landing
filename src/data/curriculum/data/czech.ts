@@ -83,9 +83,17 @@ const curriculum: LanguageCurriculum = {
             { number: 16, title: "Mini-Project — Cerita Sahabat", topics: ["Paragraf 12 kalimat", "Past tense + deskripsi", "Komparatif 2x minimum", "Feedback A1.3"] },
           ],
         },
+      ],
+    },
+    {
+      code: "A2",
+      name: "Pra-Menengah — Čeština Plynně",
+      description:
+        "7 kasus tata bahasa secara sistematis, aspek perfective/imperfective lebih dalam, masuk ke Ceko geografis & budaya — Praha, Brno, Karlovy Vary, knedlíky, Pilsner, Smetana, Kafka. Akhir A2 kamu bisa ngobrol panjang dan baca artikel pendek.",
+      sublevels: [
         {
-          code: "A1.4",
-          name: "Konsolidace A1 — Pondasi Solid",
+          code: "A2.1",
+          name: "Jembatan A1→A2 · Konsolidasi A1 — Pondasi Solid",
           preview: false,
           sessions: [
             { number: 1, title: "Refleksi Pondasi A1 — Yang Sudah Dicapai" },
@@ -106,16 +114,8 @@ const curriculum: LanguageCurriculum = {
             { number: 16, title: "Mini-Project Final A1 — Vlog Perkenalan 2 Menit" },
           ],
         },
-      ],
-    },
-    {
-      code: "A2",
-      name: "Pra-Menengah — Čeština Plynně",
-      description:
-        "7 kasus tata bahasa secara sistematis, aspek perfective/imperfective lebih dalam, masuk ke Ceko geografis & budaya — Praha, Brno, Karlovy Vary, knedlíky, Pilsner, Smetana, Kafka. Akhir A2 kamu bisa ngobrol panjang dan baca artikel pendek.",
-      sublevels: [
         {
-          code: "A2.1",
+          code: "A2.2",
           name: "Pengalaman & Cerita Masa Lalu",
           preview: false,
           sessions: [
@@ -133,12 +133,12 @@ const curriculum: LanguageCurriculum = {
             { number: 12, title: "Verba Modal Past — Mohl, Musel" },
             { number: 13, title: "Conditional Tipe 2 — Kdybych..." },
             { number: 14, title: "Wawancara: Tanya Cerita Hidup" },
-            { number: 15, title: "Review Akumulatif A2.1" },
+            { number: 15, title: "Review Akumulatif A2.2" },
             { number: 16, title: "Mini-Project — Cerita Pribadi 300 Kata" },
           ],
         },
         {
-          code: "A2.2",
+          code: "A2.3",
           name: "Rencana & Masa Depan",
           preview: false,
           sessions: [
@@ -156,12 +156,12 @@ const curriculum: LanguageCurriculum = {
             { number: 12, title: "Optimismus vs Pesimismus — Sikap" },
             { number: 13, title: "Predict — Ramalan Sederhana" },
             { number: 14, title: "Tulis Email Permohonan" },
-            { number: 15, title: "Review Akumulatif A2.2" },
+            { number: 15, title: "Review Akumulatif A2.3" },
             { number: 16, title: "Mini-Project — Plán na 5 Let" },
           ],
         },
         {
-          code: "A2.3",
+          code: "A2.4",
           name: "Česká Republika — Geografi & Kota Utama",
           preview: false,
           sessions: [
@@ -179,12 +179,20 @@ const curriculum: LanguageCurriculum = {
             { number: 12, title: "Bohemian Switzerland — Sandstone Formations" },
             { number: 13, title: "Vltava — Sungai Praha, Inspirasi Smetana" },
             { number: 14, title: "Iklim — 4 Musim Khas Eropa Tengah" },
-            { number: 15, title: "Review Akumulatif A2.3" },
+            { number: 15, title: "Review Akumulatif A2.4" },
             { number: 16, title: "Mini-Project — Itinerary Tur Česko 14 Hari" },
           ],
         },
+      ],
+    },
+    {
+      code: "B1",
+      name: "Menengah — Sejarah, Sastra & Spiritualitas",
+      description:
+        "Diskusi topik abstrak, sejarah Ceko dari Velká Morava sampai Sametová Revoluce, sastra Hašek/Hrabal/Kundera/Havel, sinema Forman/Menzel, filsafat Masaryk & Patočka. Mulai bisa argumen dan opini.",
+      sublevels: [
         {
-          code: "A2.4",
+          code: "B1.1",
           name: "Budaya Čeština — Vánoce, Pivo, Kafka",
           preview: false,
           sessions: [
@@ -202,20 +210,12 @@ const curriculum: LanguageCurriculum = {
             { number: 12, title: "Skepticism Religius — Most Atheist Country" },
             { number: 13, title: "Czech Hospitality — Pohostinnost" },
             { number: 14, title: "Pražská Jaro — Spring 1968 Memory" },
-            { number: 15, title: "Review Akumulatif A2.4" },
+            { number: 15, title: "Review Akumulatif B1.1" },
             { number: 16, title: "Mini-Project Final A2 — Esai Budaya Čeština 400 Kata" },
           ],
         },
-      ],
-    },
-    {
-      code: "B1",
-      name: "Menengah — Sejarah, Sastra & Spiritualitas",
-      description:
-        "Diskusi topik abstrak, sejarah Ceko dari Velká Morava sampai Sametová Revoluce, sastra Hašek/Hrabal/Kundera/Havel, sinema Forman/Menzel, filsafat Masaryk & Patočka. Mulai bisa argumen dan opini.",
-      sublevels: [
         {
-          code: "B1.1",
+          code: "B1.2",
           name: "Sejarah Ceko — Velká Morava ke Sametová Revoluce",
           preview: false,
           sessions: [
@@ -238,7 +238,7 @@ const curriculum: LanguageCurriculum = {
           ],
         },
         {
-          code: "B1.2",
+          code: "B1.3",
           name: "Sastra Ceko — Hašek, Hrabal, Kundera, Havel",
           preview: false,
           sessions: [
@@ -256,12 +256,12 @@ const curriculum: LanguageCurriculum = {
             { number: 12, title: "Ivan Klíma — Sastra Disiden" },
             { number: 13, title: "Membaca Pendek — Cuplikan Švejk" },
             { number: 14, title: "Diskusi: Černý Humor Ceko" },
-            { number: 15, title: "Review Akumulatif B1.2" },
+            { number: 15, title: "Review Akumulatif B1.3" },
             { number: 16, title: "Mini-Project — Analisis 1 Karya Hrabal/Kundera" },
           ],
         },
         {
-          code: "B1.3",
+          code: "B1.4",
           name: "Sinema, Musik & Seni Ceko",
           preview: false,
           sessions: [
@@ -279,12 +279,12 @@ const curriculum: LanguageCurriculum = {
             { number: 12, title: "Alfons Mucha — Art Nouveau Master" },
             { number: 13, title: "David Černý — Patung Kontemporer Provokatif" },
             { number: 14, title: "Arsitektur — Cubism Czech, Functionalism" },
-            { number: 15, title: "Review Akumulatif B1.3" },
+            { number: 15, title: "Review Akumulatif B1.4" },
             { number: 16, title: "Mini-Project — Resensi Film Ceko" },
           ],
         },
         {
-          code: "B1.4",
+          code: "B1.5",
           name: "Filsafat, Sains & Spiritualitas",
           preview: false,
           sessions: [
@@ -302,7 +302,7 @@ const curriculum: LanguageCurriculum = {
             { number: 12, title: "Catholicism Czech — Sebelum & Sesudah Komunisme" },
             { number: 13, title: "Diskusi: Identitas Ceko Antara Slavik & Eropa Tengah" },
             { number: 14, title: "Czech Sains Modern — Heyrovský Nobel Polarografi" },
-            { number: 15, title: "Review Akumulatif B1.4" },
+            { number: 15, title: "Review Akumulatif B1.5" },
             { number: 16, title: "Mini-Project Final B1 — Esai Filsafat 600 Kata" },
           ],
         },

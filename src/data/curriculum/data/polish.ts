@@ -83,9 +83,17 @@ const curriculum: LanguageCurriculum = {
             { number: 16, title: "Mini-Project — Cerita Sahabat", topics: ["Paragraf 12 kalimat", "Past tense + deskripsi", "Komparatif 2x minimum", "Feedback A1.3"] },
           ],
         },
+      ],
+    },
+    {
+      code: "A2",
+      name: "Pra-Menengah — Polski Płynnie",
+      description:
+        "7 kasus tata bahasa secara sistematis, aspek perfective/imperfective lebih dalam, numerali kompleks, masuk ke Polandia geografis & budaya — Warszawa, Kraków, Gdańsk, pierogi, Solidarność, Chopin. Akhir A2 kamu bisa ngobrol panjang dan baca artikel pendek.",
+      sublevels: [
         {
-          code: "A1.4",
-          name: "Konsolidacja A1 — Pondasi Solid",
+          code: "A2.1",
+          name: "Jembatan A1→A2 · Konsolidasi A1 — Pondasi Solid",
           preview: false,
           sessions: [
             { number: 1, title: "Refleksi Pondasi A1 — Yang Sudah Dicapai" },
@@ -106,16 +114,8 @@ const curriculum: LanguageCurriculum = {
             { number: 16, title: "Mini-Project Final A1 — Vlog Perkenalan 2 Menit" },
           ],
         },
-      ],
-    },
-    {
-      code: "A2",
-      name: "Pra-Menengah — Polski Płynnie",
-      description:
-        "7 kasus tata bahasa secara sistematis, aspek perfective/imperfective lebih dalam, numerali kompleks, masuk ke Polandia geografis & budaya — Warszawa, Kraków, Gdańsk, pierogi, Solidarność, Chopin. Akhir A2 kamu bisa ngobrol panjang dan baca artikel pendek.",
-      sublevels: [
         {
-          code: "A2.1",
+          code: "A2.2",
           name: "Pengalaman & Cerita Masa Lalu",
           preview: false,
           sessions: [
@@ -133,12 +133,12 @@ const curriculum: LanguageCurriculum = {
             { number: 12, title: "Verba Modal Past — Mogłem, Musiałem" },
             { number: 13, title: "Conditional Tipe 2 — Gdybym..." },
             { number: 14, title: "Wawancara: Tanya Cerita Hidup" },
-            { number: 15, title: "Review Akumulatif A2.1" },
+            { number: 15, title: "Review Akumulatif A2.2" },
             { number: 16, title: "Mini-Project — Cerita Pribadi 300 Kata" },
           ],
         },
         {
-          code: "A2.2",
+          code: "A2.3",
           name: "Rencana & Masa Depan",
           preview: false,
           sessions: [
@@ -156,12 +156,12 @@ const curriculum: LanguageCurriculum = {
             { number: 12, title: "Optymizm vs Pesymizm — Sikap" },
             { number: 13, title: "Predict — Ramalan Sederhana" },
             { number: 14, title: "Tulis Email Permohonan" },
-            { number: 15, title: "Review Akumulatif A2.2" },
+            { number: 15, title: "Review Akumulatif A2.3" },
             { number: 16, title: "Mini-Project — Plan na 5 Lat" },
           ],
         },
         {
-          code: "A2.3",
+          code: "A2.4",
           name: "Polska — Geografi & Kota Utama",
           preview: false,
           sessions: [
@@ -179,12 +179,20 @@ const curriculum: LanguageCurriculum = {
             { number: 12, title: "Wisła — Sungai Utama 1000 KM" },
             { number: 13, title: "Mniejszości Etniczne — Kashubians, Silesians" },
             { number: 14, title: "Iklim — 4 Musim Khas Eropa Tengah" },
-            { number: 15, title: "Review Akumulatif A2.3" },
+            { number: 15, title: "Review Akumulatif A2.4" },
             { number: 16, title: "Mini-Project — Itinerary Tur Polski 14 Hari" },
           ],
         },
+      ],
+    },
+    {
+      code: "B1",
+      name: "Menengah — Sejarah, Sastra & Spiritualitas",
+      description:
+        "Diskusi topik abstrak, sejarah Polandia dari Piast sampai Solidarność & EU, sastra romantis (Mickiewicz, Słowacki), Nobel Laureates (Sienkiewicz, Reymont, Miłosz, Szymborska, Tokarczuk), sinema Wajda & Kieślowski. Mulai bisa argumen dan opini.",
+      sublevels: [
         {
-          code: "A2.4",
+          code: "B1.1",
           name: "Budaya Polski — Wigilia, Pierogi, Chopin",
           preview: false,
           sessions: [
@@ -202,20 +210,12 @@ const curriculum: LanguageCurriculum = {
             { number: 12, title: "Polskie Imieniny — Name Day > Birthday" },
             { number: 13, title: "Polska Gościnność — Gość w Dom, Bóg w Dom" },
             { number: 14, title: "Honor Polski — Konsep Patriotyzm" },
-            { number: 15, title: "Review Akumulatif A2.4" },
+            { number: 15, title: "Review Akumulatif B1.1" },
             { number: 16, title: "Mini-Project Final A2 — Esai Budaya Polandia 400 Kata" },
           ],
         },
-      ],
-    },
-    {
-      code: "B1",
-      name: "Menengah — Sejarah, Sastra & Spiritualitas",
-      description:
-        "Diskusi topik abstrak, sejarah Polandia dari Piast sampai Solidarność & EU, sastra romantis (Mickiewicz, Słowacki), Nobel Laureates (Sienkiewicz, Reymont, Miłosz, Szymborska, Tokarczuk), sinema Wajda & Kieślowski. Mulai bisa argumen dan opini.",
-      sublevels: [
         {
-          code: "B1.1",
+          code: "B1.2",
           name: "Sejarah Polandia — Piast ke Solidarność",
           preview: false,
           sessions: [
@@ -238,7 +238,7 @@ const curriculum: LanguageCurriculum = {
           ],
         },
         {
-          code: "B1.2",
+          code: "B1.3",
           name: "Sastra Polandia — Romantyzm & Nobel Laureates",
           preview: false,
           sessions: [
@@ -256,12 +256,12 @@ const curriculum: LanguageCurriculum = {
             { number: 12, title: "Olga Tokarczuk — Nobel 2018, Prosa Mythic" },
             { number: 13, title: "Membaca Pendek — Cuplikan Mickiewicz" },
             { number: 14, title: "Diskusi: Tema Patriotyzm dalam Sastra" },
-            { number: 15, title: "Review Akumulatif B1.2" },
+            { number: 15, title: "Review Akumulatif B1.3" },
             { number: 16, title: "Mini-Project — Analisis 1 Puisi Szymborska" },
           ],
         },
         {
-          code: "B1.3",
+          code: "B1.4",
           name: "Sinema, Musik & Seni Polski",
           preview: false,
           sessions: [
@@ -279,12 +279,12 @@ const curriculum: LanguageCurriculum = {
             { number: 12, title: "Plakat Polski — Sekolah Desain Poster" },
             { number: 13, title: "Polski Surrealisme — Beksiński" },
             { number: 14, title: "Architektur — Stalinist vs Modern Polish" },
-            { number: 15, title: "Review Akumulatif B1.3" },
+            { number: 15, title: "Review Akumulatif B1.4" },
             { number: 16, title: "Mini-Project — Resensi Film Polski" },
           ],
         },
         {
-          code: "B1.4",
+          code: "B1.5",
           name: "Filsafat, Sains & Spiritualitas",
           preview: false,
           sessions: [
@@ -302,7 +302,7 @@ const curriculum: LanguageCurriculum = {
             { number: 12, title: "Sekularyzasi Polski Pasca-Komunisme" },
             { number: 13, title: "Polski Sains Modern — Hubble & Observatory" },
             { number: 14, title: "Diskusi: Polska Między Wschodem & Zachodem" },
-            { number: 15, title: "Review Akumulatif B1.4" },
+            { number: 15, title: "Review Akumulatif B1.5" },
             { number: 16, title: "Mini-Project Final B1 — Esai Filsafat 600 Kata" },
           ],
         },

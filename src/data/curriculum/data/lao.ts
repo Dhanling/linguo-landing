@@ -6,7 +6,7 @@ const meta = getLanguageBySlug("lao")!;
 const curriculum: LanguageCurriculum = {
   meta,
   overview:
-    "Lao (ພາສາລາວ) adalah bahasa nasional Republik Demokratik Rakyat Laos, dituturkan oleh sekitar 7 juta penutur di Laos plus 20+ juta di wilayah Isan (Thailand Timur Laut) dengan mutual intelligibility 70%+ — fakta unik yang menjadikan Lao salah satu 'bahasa bonus' paling efisien di Asia Tenggara. Sebagai anggota rumpun Tai-Kadai (sekeluarga dengan Thai), Lao adalah bahasa tonal dengan 6 tone (vs 5 di Thai standar) — pivot pedagogical Linguo di A1.1 yang menggunakan minimal-pair drills sistematis. Aksara Lao adalah versi modernisasi dari Khom Brahmi yang disederhanakan pasca-revolusi 1975 (Thai masih pakai versi tradisional yang lebih kompleks): 27 konsonan, 28 vokal, ditulis kiri-ke-kanan tanpa spasi tradisional. Lao adalah bahasa isolating (mirip Thai, Vietnamese, Mandarin): tidak ada konjugasi, tidak ada deklinasi, tetapi WAJIB classifier untuk benda yang dihitung — sistem yang dikupas tuntas di A1.3 (ໂຕ untuk hewan/baju, ຄົນ untuk orang, ຫົວ untuk buku, dst). Linguo membawa pelajar dari penguasaan aksara dan tone (A1.1) hingga apresiasi Phra Lak Phra Lam (versi Lao Ramayana) dan sastra modern Outhine Bounyavong & Dara Kanlaya (B2.4–B2.5), plus jembatan Thai-Lao cognate yang membuka pintu ke konsumsi media Isan & Bangkok (A2.3). Target sertifikasi: kredensial dari Royal University of Laos (National University of Laos / NUOL) atau Institute of Language Studies (ILS) Vientiane.",
+    "Lao (ພາສາລາວ) adalah bahasa nasional Republik Demokratik Rakyat Laos, dituturkan oleh sekitar 7 juta penutur di Laos plus 20+ juta di wilayah Isan (Thailand Timur Laut) dengan mutual intelligibility 70%+ — fakta unik yang menjadikan Lao salah satu 'bahasa bonus' paling efisien di Asia Tenggara. Sebagai anggota rumpun Tai-Kadai (sekeluarga dengan Thai), Lao adalah bahasa tonal dengan 6 tone (vs 5 di Thai standar) — pivot pedagogical Linguo di A1.1 yang menggunakan minimal-pair drills sistematis. Aksara Lao adalah versi modernisasi dari Khom Brahmi yang disederhanakan pasca-revolusi 1975 (Thai masih pakai versi tradisional yang lebih kompleks): 27 konsonan, 28 vokal, ditulis kiri-ke-kanan tanpa spasi tradisional. Lao adalah bahasa isolating (mirip Thai, Vietnamese, Mandarin): tidak ada konjugasi, tidak ada deklinasi, tetapi WAJIB classifier untuk benda yang dihitung — sistem yang dikupas tuntas di A1.3 (ໂຕ untuk hewan/baju, ຄົນ untuk orang, ຫົວ untuk buku, dst). Linguo membawa pelajar dari penguasaan aksara dan tone (A1.1) hingga apresiasi Phra Lak Phra Lam (versi Lao Ramayana) dan sastra modern Outhine Bounyavong & Dara Kanlaya (B2.4–B2.5), plus jembatan Thai-Lao cognate yang membuka pintu ke konsumsi media Isan & Bangkok (A2.4). Target sertifikasi: kredensial dari Royal University of Laos (National University of Laos / NUOL) atau Institute of Language Studies (ILS) Vientiane.",
   levels: [
     {
       code: "A1",
@@ -83,8 +83,16 @@ const curriculum: LanguageCurriculum = {
             { number: 16, title: "Mini-Project — Deskripsi Isi Tas/Kamar dengan 10+ Classifier", topics: ["inventory lisan benda di sekitar", "minimal 10 classifier berbeda", "voice-record 90 detik", "submit dengan transkrip"] },
           ],
         },
+      ],
+    },
+    {
+      code: "A2",
+      name: "Dasar+ — Lao Konversasional",
+      description:
+        "Beralih dari frasa terisolasi ke percakapan multi-turn. Tuntaskan jembatan Thai-Lao cognate di A2.4 (signature deep dive) yang membuka konsumsi media Bangkok & Isan, plus kosakata sosial-kerja-tradisi & Mor Lam musik heritage.",
+      sublevels: [
         {
-          code: "A1.4",
+          code: "A2.1",
           name: "Numerik Lanjut, Transportasi & Belanja",
           preview: false,
           sessions: [
@@ -102,20 +110,12 @@ const curriculum: LanguageCurriculum = {
             { number: 12, title: "Talad Khua Din vs Vientiane Center Mall" },
             { number: 13, title: "Café Sakura: Pesan Coffee Lao Style" },
             { number: 14, title: "Bayar via BCEL One QR Konteks Modern" },
-            { number: 15, title: "Review Akumulatif A1.4" },
+            { number: 15, title: "Review Akumulatif A2.1" },
             { number: 16, title: "Mini-Project — Simulasi Trip Vientiane → Luang Prabang Slow Boat" },
           ],
         },
-      ],
-    },
-    {
-      code: "A2",
-      name: "Dasar+ — Lao Konversasional",
-      description:
-        "Beralih dari frasa terisolasi ke percakapan multi-turn. Tuntaskan jembatan Thai-Lao cognate di A2.3 (signature deep dive) yang membuka konsumsi media Bangkok & Isan, plus kosakata sosial-kerja-tradisi & Mor Lam musik heritage.",
-      sublevels: [
         {
-          code: "A2.1",
+          code: "A2.2",
           name: "Percakapan Sehari-Hari & Dunia Kerja",
           preview: true,
           sessions: [
@@ -133,12 +133,12 @@ const curriculum: LanguageCurriculum = {
             { number: 12, title: "Bank: BCEL, LDB, Joint Development", topics: ["thon ngern (tarik uang)", "on ngern (transfer)", "kep ngern (deposit)", "Lao banking landscape"] },
             { number: 13, title: "Klinik: Konsultasi & Resep", topics: ["bot bok ahan (gejala)", "ya (obat) dose mu len", "thaw thaw ya (waktu minum)", "Mahosot Hospital Vientiane"] },
             { number: 14, title: "Café Sinouk & Roleplay Pemesanan", topics: ["menu kopi Lao asli", "modifikasi pesanan", "split bill", "tip culture rare di Laos"] },
-            { number: 15, title: "Review Akumulatif A2.1", topics: ["semua skenario kerja-harian", "drill 5 register sosial", "mini-test multi-turn", "feedback delivery"] },
+            { number: 15, title: "Review Akumulatif A2.2", topics: ["semua skenario kerja-harian", "drill 5 register sosial", "mini-test multi-turn", "feedback delivery"] },
             { number: 16, title: "Mini-Project — Roleplay Hari Kerja Penuh 5 Menit", topics: ["pagi: greet kolega + small talk", "siang: meeting + lunch", "sore: email + pulang", "submit audio + transkrip"] },
           ],
         },
         {
-          code: "A2.2",
+          code: "A2.3",
           name: "Tradisi, Festival & Mor Lam Heritage",
           preview: true,
           sessions: [
@@ -156,12 +156,12 @@ const curriculum: LanguageCurriculum = {
             { number: 12, title: "Sosial Media: Facebook Dominance & TikTok Lao", topics: ["FB > 4M users di Laos", "vocab caption umum", "TikTok Lao Vientiane creators", "etika komentar"] },
             { number: 13, title: "Live Selling Vocab di Facebook Lao", topics: ["jaeng ler tham (klaim diskon)", "thawn nung ler (drop nomor)", "scarcity tactics", "polite urgency"] },
             { number: 14, title: "Pasar Khua Din vs Mall: Diskusi Sopan", topics: ["pasar tradisional preservation", "mall urbanisasi pressure", "vocab modernisasi", "balanced viewpoint"] },
-            { number: 15, title: "Review Akumulatif A2.2", topics: ["recall vocab festival + tradisi", "drill kuliner + musik", "mini-test reading 3 post FB", "self-record reaction"] },
+            { number: 15, title: "Review Akumulatif A2.3", topics: ["recall vocab festival + tradisi", "drill kuliner + musik", "mini-test reading 3 post FB", "self-record reaction"] },
             { number: 16, title: "Mini-Project — 3 Caption FB + 1 Live Selling 90 Detik", topics: ["caption 1: makanan Lao", "caption 2: tempat wisata", "caption 3: bisnis kecil", "live selling produk fiksi"] },
           ],
         },
         {
-          code: "A2.3",
+          code: "A2.4",
           name: "Thai-Lao Bridge — Cognate Mastery & Cross-Border Comm",
           preview: true,
           sessions: [
@@ -179,12 +179,20 @@ const curriculum: LanguageCurriculum = {
             { number: 12, title: "Cross-Border Travel: Friendship Bridge Vocab", topics: ["Nong Khai-Vientiane bridge", "immigration phrases", "currency exchange", "bahasa pekerja perbatasan"] },
             { number: 13, title: "Diaspora Lao di Bangkok: Migrant Worker Reality", topics: ["estimasi 500k+ Lao migrant", "vocab ketenagakerjaan migran", "discrimination discourse", "remittance economy"] },
             { number: 14, title: "Strategi Code-Mixing: Untuk Diaspora Generasi 2", topics: ["heritage speaker realities", "code-mixing patterns", "language attitudes", "Indonesia parallel"] },
-            { number: 15, title: "Review Akumulatif A2.3", topics: ["mastery test cognate", "Thai script decode mini-test", "code-switch fluency drill", "self-assessment audio"] },
+            { number: 15, title: "Review Akumulatif A2.4", topics: ["mastery test cognate", "Thai script decode mini-test", "code-switch fluency drill", "self-assessment audio"] },
             { number: 16, title: "Mini-Project — Reaksi Video Thai 2 Menit + Komentar Lao", topics: ["pilih video Thai TV", "react & summarize dalam Lao", "highlight cognate yang dikenali", "submit audio + log Thai words yang dipahami"] },
           ],
         },
+      ],
+    },
+    {
+      code: "B1",
+      name: "Menengah — Topical & Cultural Lao",
+      description:
+        "Beralih dari survival ke ekspresi. Pelajar bisa berdiskusi opini, narasi multi-paragraf, argumentasi sederhana, dan konsumsi media Lao (TV LNTV, radio, podcast Lao, musik Mor Lam modern) secara mandiri.",
+      sublevels: [
         {
-          code: "A2.4",
+          code: "B1.1",
           name: "Luang Prabang & Provincial Lao Heritage",
           preview: false,
           sessions: [
@@ -202,20 +210,12 @@ const curriculum: LanguageCurriculum = {
             { number: 12, title: "Bahasa untuk Backpacker: Hostel Vibe" },
             { number: 13, title: "Emergency Vocab: Polisi, Ambulans, 24-Hour Pharmacy" },
             { number: 14, title: "Festival Provincial: Boat Racing Khammouane" },
-            { number: 15, title: "Review Akumulatif A2.4" },
+            { number: 15, title: "Review Akumulatif B1.1" },
             { number: 16, title: "Mini-Project — Itinerary 10-Hari Lao Loop Lengkap" },
           ],
         },
-      ],
-    },
-    {
-      code: "B1",
-      name: "Menengah — Topical & Cultural Lao",
-      description:
-        "Beralih dari survival ke ekspresi. Pelajar bisa berdiskusi opini, narasi multi-paragraf, argumentasi sederhana, dan konsumsi media Lao (TV LNTV, radio, podcast Lao, musik Mor Lam modern) secara mandiri.",
-      sublevels: [
         {
-          code: "B1.1",
+          code: "B1.2",
           name: "Diskusi & Opini",
           preview: true,
           sessions: [
@@ -233,12 +233,12 @@ const curriculum: LanguageCurriculum = {
             { number: 12, title: "Active Listening: Acknowledge & Paraphrase", topics: ["repeat: chao maai khwam waa", "validate: khoi khao chai", "ask deeper: maai khwam waang", "Lao politeness"] },
             { number: 13, title: "Group Discussion: Moderasi 4 Peserta", topics: ["intro round", "turn-taking management", "consensus-seeking Lao style", "wrap-up summary"] },
             { number: 14, title: "Debate Mini: 2 vs 2 Topik Ringan", topics: ["topik: WFH vs kantor di Vientiane", "prepare arguments 5 menit", "rebuttal etiquette", "judge feedback"] },
-            { number: 15, title: "Review Akumulatif B1.1", topics: ["recall 6 topik diskusi", "drill agree/disagree register", "mini-test 1 paragraf opini", "self-assessment audio"] },
+            { number: 15, title: "Review Akumulatif B1.2", topics: ["recall 6 topik diskusi", "drill agree/disagree register", "mini-test 1 paragraf opini", "self-assessment audio"] },
             { number: 16, title: "Mini-Project — Diskusi Panel Rekaman 8 Menit", topics: ["pilih topik dari list", "3 peserta diskusi", "moderator-style facilitation", "submit audio + transkrip"] },
           ],
         },
         {
-          code: "B1.2",
+          code: "B1.3",
           name: "Narasi & Storytelling",
           preview: true,
           sessions: [
@@ -256,12 +256,12 @@ const curriculum: LanguageCurriculum = {
             { number: 12, title: "Drama TV Thai/Lao: Watch & Retell Episode", topics: ["pilih 1 episode populer", "retell plot 3 menit", "character analysis", "vocab acquisition"] },
             { number: 13, title: "Cerita Phi (Spirit) Lao: Phi Pop & Phi Tai Hong", topics: ["spirit lore Lao", "narrative atmosphere", "rural village version", "respect cultural beliefs"] },
             { number: 14, title: "Story Climax: Pacing & Build-Up", topics: ["pacing dengan kalimat pendek", "build-up dengan deskripsi", "release di klimaks", "rewrite ending exercise"] },
-            { number: 15, title: "Review Akumulatif B1.2", topics: ["narasi 6 jenis", "test struktur 3-act", "self-edit narasi sendiri", "peer feedback"] },
+            { number: 15, title: "Review Akumulatif B1.3", topics: ["narasi 6 jenis", "test struktur 3-act", "self-edit narasi sendiri", "peer feedback"] },
             { number: 16, title: "Mini-Project — Cerita Pendek Original 500 Kata", topics: ["fiksi pendek 5 paragraf", "include dialog + deskripsi", "moral atau twist ending", "submit teks + ringkasan audio"] },
           ],
         },
         {
-          code: "B1.3",
+          code: "B1.4",
           name: "Argumentasi & Persuasi",
           preview: true,
           sessions: [
@@ -279,12 +279,12 @@ const curriculum: LanguageCurriculum = {
             { number: 12, title: "Bahasa Persuasi Politik: Critical Awareness", topics: ["loaded language detection", "false dichotomy", "appeal to authority", "media literacy"] },
             { number: 13, title: "Negosiasi: B2B Lao Style Face-Saving", topics: ["face-saving culture", "indirect bargaining", "thi hen di nam kan (compromise)", "win-win framing"] },
             { number: 14, title: "Persuasive Speech 5 Menit Rekaman", topics: ["pilih cause Anda peduli", "struktur opening-body-CTA", "delivery pace & pause", "submit audio"] },
-            { number: 15, title: "Review Akumulatif B1.3", topics: ["semua connector logis", "drill claim-evidence", "debate skill assessment", "self-edit essay"] },
+            { number: 15, title: "Review Akumulatif B1.4", topics: ["semua connector logis", "drill claim-evidence", "debate skill assessment", "self-edit essay"] },
             { number: 16, title: "Mini-Project — Esai Argumentatif 700 Kata + Pitch 3 Menit", topics: ["pilih kontroversi sosial", "3 alasan + 1 counter-argument", "kesimpulan & CTA", "rekaman pitch + submit teks"] },
           ],
         },
         {
-          code: "B1.4",
+          code: "B1.5",
           name: "Konsumsi Media Lao Mandiri",
           preview: false,
           sessions: [
@@ -302,7 +302,7 @@ const curriculum: LanguageCurriculum = {
             { number: 12, title: "Comic Lokal & Thai Manga Translated" },
             { number: 13, title: "Radio FM Lao: Talk Show & Music" },
             { number: 14, title: "Konsumsi Multi-Media Project Weekly" },
-            { number: 15, title: "Review Akumulatif B1.4" },
+            { number: 15, title: "Review Akumulatif B1.5" },
             { number: 16, title: "Mini-Project — Media Diary 30 Hari + Review 1 Karya" },
           ],
         },

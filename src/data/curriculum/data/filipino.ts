@@ -83,9 +83,17 @@ const curriculum: LanguageCurriculum = {
             { number: 16, title: "Mini-Project — Cerita Kaibigan", topics: ["Paragraf 12 kalimat", "Completed aspect + deskripsi", "Komparatif 2x minimum", "Feedback A1.3"] },
           ],
         },
+      ],
+    },
+    {
+      code: "A2",
+      name: "Pra-Menengah — Tagalog Mengalir",
+      description:
+        "Verba dengan trigger system mendalam, cerita masa lalu lengkap, rencana masa depan, geografi Filipina (7.641 pulau!), budaya Fiesta, Bayanihan, Pasko sebagai perayaan terpanjang. Akhir A2 kamu bisa ngobrol panjang.",
+      sublevels: [
         {
-          code: "A1.4",
-          name: "Konsolidasi A1 — Pondasi Solid",
+          code: "A2.1",
+          name: "Jembatan A1→A2 · Konsolidasi A1 — Pondasi Solid",
           preview: false,
           sessions: [
             { number: 1, title: "Refleksi Pondasi A1 — Yang Sudah Dicapai" },
@@ -106,16 +114,8 @@ const curriculum: LanguageCurriculum = {
             { number: 16, title: "Mini-Project Final A1 — Vlog Perkenalan 2 Menit" },
           ],
         },
-      ],
-    },
-    {
-      code: "A2",
-      name: "Pra-Menengah — Tagalog Mengalir",
-      description:
-        "Verba dengan trigger system mendalam, cerita masa lalu lengkap, rencana masa depan, geografi Filipina (7.641 pulau!), budaya Fiesta, Bayanihan, Pasko sebagai perayaan terpanjang. Akhir A2 kamu bisa ngobrol panjang.",
-      sublevels: [
         {
-          code: "A2.1",
+          code: "A2.2",
           name: "Pengalaman & Cerita Masa Lalu",
           preview: false,
           sessions: [
@@ -133,12 +133,12 @@ const curriculum: LanguageCurriculum = {
             { number: 12, title: "Conditional Tipe 2 — Kung... Sana..." },
             { number: 13, title: "Cerita Tradisi Keluarga" },
             { number: 14, title: "Wawancara: Tanya Cerita Hidup" },
-            { number: 15, title: "Review Akumulatif A2.1" },
+            { number: 15, title: "Review Akumulatif A2.2" },
             { number: 16, title: "Mini-Project — Cerita Pribadi 300 Kata" },
           ],
         },
         {
-          code: "A2.2",
+          code: "A2.3",
           name: "Rencana & Masa Depan",
           preview: false,
           sessions: [
@@ -156,12 +156,12 @@ const curriculum: LanguageCurriculum = {
             { number: 12, title: "Predict — Ramalan Sederhana" },
             { number: 13, title: "Tulis Email Permohonan" },
             { number: 14, title: "Wawancara Kerja Dasar" },
-            { number: 15, title: "Review Akumulatif A2.2" },
+            { number: 15, title: "Review Akumulatif A2.3" },
             { number: 16, title: "Mini-Project — Rencana 5 Tahun" },
           ],
         },
         {
-          code: "A2.3",
+          code: "A2.4",
           name: "Geografi Filipina — 7.641 Pulau",
           preview: false,
           sessions: [
@@ -179,12 +179,20 @@ const curriculum: LanguageCurriculum = {
             { number: 12, title: "Iklim — Tropis dengan 20+ Topan per Tahun" },
             { number: 13, title: "Transportasi Antar Pulau — Ferry & Plane" },
             { number: 14, title: "Etnis Filipina — Tagalog, Cebuano, Ilocano, Bicolano" },
-            { number: 15, title: "Review Akumulatif A2.3" },
+            { number: 15, title: "Review Akumulatif A2.4" },
             { number: 16, title: "Mini-Project — Itinerary Tur Filipina" },
           ],
         },
+      ],
+    },
+    {
+      code: "B1",
+      name: "Menengah — Sejarah, Rizal, OPM & Sinema",
+      description:
+        "Diskusi topik abstrak, sejarah Filipina dari pra-kolonial sampai EDSA, sastra klasik Rizal (Noli Me Tangere, El Filibusterismo), Balagtas Florante at Laura, sinema Lino Brocka & Lav Diaz, OPM modern.",
+      sublevels: [
         {
-          code: "A2.4",
+          code: "B1.1",
           name: "Budaya — Fiesta, Bayanihan, Pasko Terpanjang Dunia",
           preview: false,
           sessions: [
@@ -202,20 +210,12 @@ const curriculum: LanguageCurriculum = {
             { number: 12, title: "Mano Po — Salim Tangan ke Orang Tua" },
             { number: 13, title: "Karaoke Culture — Hobi Nasional" },
             { number: 14, title: "Basketball — Olahraga Cinta Nasional" },
-            { number: 15, title: "Review Akumulatif A2.4" },
+            { number: 15, title: "Review Akumulatif B1.1" },
             { number: 16, title: "Mini-Project Final A2 — Esai Budaya Filipina 400 Kata" },
           ],
         },
-      ],
-    },
-    {
-      code: "B1",
-      name: "Menengah — Sejarah, Rizal, OPM & Sinema",
-      description:
-        "Diskusi topik abstrak, sejarah Filipina dari pra-kolonial sampai EDSA, sastra klasik Rizal (Noli Me Tangere, El Filibusterismo), Balagtas Florante at Laura, sinema Lino Brocka & Lav Diaz, OPM modern.",
-      sublevels: [
         {
-          code: "B1.1",
+          code: "B1.2",
           name: "Sejarah Filipina — Pra-Kolonial ke EDSA",
           preview: false,
           sessions: [
@@ -233,12 +233,12 @@ const curriculum: LanguageCurriculum = {
             { number: 12, title: "Kemerdekaan Resmi 1946" },
             { number: 13, title: "Era Marcos & Martial Law" },
             { number: 14, title: "EDSA People Power 1986 — Revolusi Tanpa Darah" },
-            { number: 15, title: "Review Akumulatif B1.1" },
+            { number: 15, title: "Review Akumulatif B1.2" },
             { number: 16, title: "Mini-Project — Timeline Sejarah Filipina 700 Kata" },
           ],
         },
         {
-          code: "B1.2",
+          code: "B1.3",
           name: "Sastra Klasik — Rizal, Balagtas, Bonifacio",
           preview: false,
           sessions: [
@@ -256,12 +256,12 @@ const curriculum: LanguageCurriculum = {
             { number: 12, title: "Awit & Korido — Bentuk Puisi Tradisional" },
             { number: 13, title: "Bahasa Spanyol dalam Sastra Filipina Awal" },
             { number: 14, title: "Hafalan: 1 Bagian Mi Último Adiós" },
-            { number: 15, title: "Review Akumulatif B1.2" },
+            { number: 15, title: "Review Akumulatif B1.3" },
             { number: 16, title: "Mini-Project — Analisis 1 Karya Klasik" },
           ],
         },
         {
-          code: "B1.3",
+          code: "B1.4",
           name: "Sinema & Musik Filipina (OPM)",
           preview: false,
           sessions: [
@@ -279,12 +279,12 @@ const curriculum: LanguageCurriculum = {
             { number: 12, title: "IV of Spades — Funk Revival Modern" },
             { number: 13, title: "OPM Hip-Hop — Gloc-9, Francis M" },
             { number: 14, title: "Tonton & Diskusi Film Pilihan" },
-            { number: 15, title: "Review Akumulatif B1.3" },
+            { number: 15, title: "Review Akumulatif B1.4" },
             { number: 16, title: "Mini-Project — Review Film/Lagu Filipina" },
           ],
         },
         {
-          code: "B1.4",
+          code: "B1.5",
           name: "Filipina Modern — Bahasa, Diaspora, Sosial",
           preview: false,
           sessions: [
@@ -302,7 +302,7 @@ const curriculum: LanguageCurriculum = {
             { number: 12, title: "Gen Z Filipino — TikTok & Mobile-First" },
             { number: 13, title: "Diaspora Filipina di USA, Eropa, Timur Tengah" },
             { number: 14, title: "Filipina-Indonesia Hubungan Bilateral" },
-            { number: 15, title: "Review Akumulatif B1.4" },
+            { number: 15, title: "Review Akumulatif B1.5" },
             { number: 16, title: "Mini-Project Final B1 — Esai Filipina Kontemporer" },
           ],
         },

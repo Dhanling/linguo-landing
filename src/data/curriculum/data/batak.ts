@@ -83,9 +83,17 @@ const curriculum: LanguageCurriculum = {
             { number: 16, title: "Mini-Project — Mapping Kekerabatan", topics: ["Buat diagram kekerabatan diri", "Identifikasi hula-hula, boru, dongan tubu", "Wawancara orangtua/kakek-nenek", "Submit dengan refleksi"] },
           ],
         },
+      ],
+    },
+    {
+      code: "A2",
+      name: "Dasar — Komunikasi Harian & Adat Batak Lebih Dalam",
+      description:
+        "Lo memperluas kapasitas komunikasi ke aktivitas harian, profesi, transaksi pasar, dan mulai mendalami penggunaan kosakata kultural (ulos, gondang, tor-tor). Target: bisa berinteraksi di pasar, lapo, dan acara adat dengan sapaan kekerabatan yang tepat.",
+      sublevels: [
         {
-          code: "A1.4",
-          name: "Konsolidasi A1 — Integrasi Salam, Vocab, Dalihan na Tolu",
+          code: "A2.1",
+          name: "Jembatan A1→A2 · Konsolidasi A1 — Integrasi Salam, Vocab, Dalihan na Tolu",
           preview: false,
           sessions: [
             { number: 1, title: "Recap Salam & Sapaan Harian" },
@@ -102,20 +110,12 @@ const curriculum: LanguageCurriculum = {
             { number: 12, title: "Vocabulary Expansion Tematik" },
             { number: 13, title: "Mock Test A1 Style" },
             { number: 14, title: "Diagnostic Review — Gap Identification" },
-            { number: 15, title: "Review Akumulatif A1.4" },
+            { number: 15, title: "Review Akumulatif A2.1" },
             { number: 16, title: "Mini-Project — Portofolio Sertifikasi A1" },
           ],
         },
-      ],
-    },
-    {
-      code: "A2",
-      name: "Dasar — Komunikasi Harian & Adat Batak Lebih Dalam",
-      description:
-        "Lo memperluas kapasitas komunikasi ke aktivitas harian, profesi, transaksi pasar, dan mulai mendalami penggunaan kosakata kultural (ulos, gondang, tor-tor). Target: bisa berinteraksi di pasar, lapo, dan acara adat dengan sapaan kekerabatan yang tepat.",
-      sublevels: [
         {
-          code: "A2.1",
+          code: "A2.2",
           name: "Aktivitas Harian & Profesi Batak",
           preview: true,
           sessions: [
@@ -133,12 +133,12 @@ const curriculum: LanguageCurriculum = {
             { number: 12, title: "Dialog Profesi di Kantor", topics: ["Sapaan kolega", "Tanya jadwal rapat", "Permintaan tolong sopan", "Pamit pulang kerja"] },
             { number: 13, title: "Dialog di Lapo Tuak", topics: ["Sapaan datang", "Pesan minuman & makanan", "Bayar & terima kembalian", "Pamit ramah"] },
             { number: 14, title: "Mini-Story Profesi Batak", topics: ["Cerita seorang partonun (penenun)", "Cerita seorang nelayan Danau Toba", "Comprehension 5 pertanyaan", "Diskusi singkat"] },
-            { number: 15, title: "Review Akumulatif A2.1", topics: ["Recall 20 profesi", "Recall verba aktivitas", "Recall waktu lampau & akan datang", "Cloze test 10 item"] },
+            { number: 15, title: "Review Akumulatif A2.2", topics: ["Recall 20 profesi", "Recall verba aktivitas", "Recall waktu lampau & akan datang", "Cloze test 10 item"] },
             { number: 16, title: "Mini-Project — Wawancara Profesi", topics: ["Wawancara 1 orang Batak", "Transkrip 10 tukar-tanya", "Submit audio + teks", "Refleksi register pilihan"] },
           ],
         },
         {
-          code: "A2.2",
+          code: "A2.3",
           name: "Pasar Batak — Belanja, Negosiasi, & Transaksi",
           preview: true,
           sessions: [
@@ -156,12 +156,12 @@ const curriculum: LanguageCurriculum = {
             { number: 12, title: "Kalimat Imbauan & Pilihan", topics: ["Pola 'asa...' (supaya)", "Pola 'molo...' (jika)", "Pola pilihan: 'on manang an'", "Drill kalimat kondisi"] },
             { number: 13, title: "Mengelola Daftar Belanja", topics: ["Tulis daftar belanja", "Kelompokkan per komoditas", "Estimasi anggaran", "Pola praktis"] },
             { number: 14, title: "Mini-Dialog Berbelanja Lengkap", topics: ["Datang ke onan", "Tawar 3 komoditas", "Bayar & kembalian", "Pamit ramah"] },
-            { number: 15, title: "Review Akumulatif A2.2", topics: ["Recall kosakata belanja", "Recall pola tawar", "Recall satuan & angka besar", "Cloze test 10 item"] },
+            { number: 15, title: "Review Akumulatif A2.3", topics: ["Recall kosakata belanja", "Recall pola tawar", "Recall satuan & angka besar", "Cloze test 10 item"] },
             { number: 16, title: "Mini-Project — Video Belanja Batak", topics: ["Rekam diri belanja di onan", "Audio 3 menit dialog", "Submit dengan transkrip", "Refleksi negosiasi"] },
           ],
         },
         {
-          code: "A2.3",
+          code: "A2.4",
           name: "Tor-Tor & Ulos — Vocabulary Kultural",
           preview: true,
           sessions: [
@@ -179,13 +179,21 @@ const curriculum: LanguageCurriculum = {
             { number: 12, title: "Tradisi Lain & Ulos", topics: ["Ulos di kelahiran bayi", "Ulos di kematian (Sibolang)", "Ulos untuk tetua tinggi", "Pemulihan via ulos"] },
             { number: 13, title: "Industri Ulos Modern", topics: ["Penenun tradisional di Toba", "Persaingan tekstil pabrik", "Pemasaran online ulos", "Sertifikasi keaslian"] },
             { number: 14, title: "Mini-Story Ulos Pusaka", topics: ["Cerita ulos warisan kakek", "Comprehension 8 pertanyaan", "Refleksi heritage personal", "Diskusi kelompok"] },
-            { number: 15, title: "Review Akumulatif A2.3", topics: ["Recall jenis ulos & kegunaan", "Recall tor-tor & gondang", "Recall tradisi mangulosi", "Cloze test 15 item"] },
+            { number: 15, title: "Review Akumulatif A2.4", topics: ["Recall jenis ulos & kegunaan", "Recall tor-tor & gondang", "Recall tradisi mangulosi", "Cloze test 15 item"] },
             { number: 16, title: "Mini-Project — Dokumentasi Tor-Tor", topics: ["Hadiri/tonton 1 tor-tor live", "Tulis observasi 500 kata", "Identifikasi 20 istilah baru", "Refleksi heritage"] },
           ],
         },
+      ],
+    },
+    {
+      code: "B1",
+      name: "Menengah — Batak Kultural, Adat, & Variasi Dialek",
+      description:
+        "Lo masuk ke eksplorasi budaya: pernikahan adat lengkap, musik gondang & tor-tor mendalam, dan jembatan ke 4 variasi dialek (Karo, Mandailing, Pakpak, Simalungun). Target: bisa berdiskusi adat dengan native speaker dan memahami percakapan dasar di 5 dialek.",
+      sublevels: [
         {
-          code: "A2.4",
-          name: "Konsolidasi A2 — Integrasi Adat, Profesi, Ulos & Tor-Tor",
+          code: "B1.1",
+          name: "Jembatan A2→B1 · Konsolidasi A2 — Integrasi Adat, Profesi, Ulos & Tor-Tor",
           preview: false,
           sessions: [
             { number: 1, title: "Recap Aktivitas Harian & Profesi" },
@@ -202,20 +210,12 @@ const curriculum: LanguageCurriculum = {
             { number: 12, title: "Latihan Wawancara Pendek" },
             { number: 13, title: "Mock Test A2 Style" },
             { number: 14, title: "Diagnostic Gap Identification" },
-            { number: 15, title: "Review Akumulatif A2.4" },
+            { number: 15, title: "Review Akumulatif B1.1" },
             { number: 16, title: "Mini-Project — Portofolio Sertifikasi A2" },
           ],
         },
-      ],
-    },
-    {
-      code: "B1",
-      name: "Menengah — Batak Kultural, Adat, & Variasi Dialek",
-      description:
-        "Lo masuk ke eksplorasi budaya: pernikahan adat lengkap, musik gondang & tor-tor mendalam, dan jembatan ke 4 variasi dialek (Karo, Mandailing, Pakpak, Simalungun). Target: bisa berdiskusi adat dengan native speaker dan memahami percakapan dasar di 5 dialek.",
-      sublevels: [
         {
-          code: "B1.1",
+          code: "B1.2",
           name: "Adat Pernikahan Batak — Mangulosi & Marhata",
           preview: true,
           sessions: [
@@ -233,12 +233,12 @@ const curriculum: LanguageCurriculum = {
             { number: 12, title: "Pernikahan Adat Modern", topics: ["Adaptasi di kota besar", "Kombinasi adat & modern", "Pernikahan Batak Jakarta", "Mempertahankan elemen inti"] },
             { number: 13, title: "Konflik Pernikahan Adat", topics: ["Konflik sinamot terlalu tinggi", "Konflik antar tetua", "Mediasi adat", "Pemulihan hubungan"] },
             { number: 14, title: "Mini-Story Pernikahan Adat", topics: ["Cerita pernikahan adat Toba lengkap", "Comprehension 10 pertanyaan", "Identifikasi 30 istilah", "Diskusi etika & dharma"] },
-            { number: 15, title: "Review Akumulatif B1.1", topics: ["Recall tahapan pernikahan", "Recall peran Dalihan na Tolu", "Recall umpasa & pidato", "Cloze test 15 item"] },
+            { number: 15, title: "Review Akumulatif B1.2", topics: ["Recall tahapan pernikahan", "Recall peran Dalihan na Tolu", "Recall umpasa & pidato", "Cloze test 15 item"] },
             { number: 16, title: "Mini-Project — Etnografi Pernikahan", topics: ["Hadiri 1 pernikahan langsung", "Tulis observasi 1000 kata", "Identifikasi 40 istilah baru", "Refleksi pribadi mendalam"] },
           ],
         },
         {
-          code: "B1.2",
+          code: "B1.3",
           name: "Gondang & Tor-Tor — Musik Adat Tradisi",
           preview: true,
           sessions: [
@@ -256,12 +256,12 @@ const curriculum: LanguageCurriculum = {
             { number: 12, title: "Festival Musik Batak", topics: ["Festival Danau Toba", "Festival Karo & Pakpak", "Karya Pelajar Indonesia (KPI)", "Promosi heritage musik"] },
             { number: 13, title: "Listening — Audio Gondang Live", topics: ["Identifikasi instrumen", "Identifikasi jenis gondang", "Identifikasi mood adat", "Vocabulary musik"] },
             { number: 14, title: "Mini-Story Pemain Gondang", topics: ["Cerita pemain gondang veteran", "Comprehension 10 pertanyaan", "Refleksi seni adat", "Diskusi kelompok"] },
-            { number: 15, title: "Review Akumulatif B1.2", topics: ["Recall set gondang & komposisi", "Recall jenis tor-tor", "Recall opera Batak heritage", "Cloze test 15 item"] },
+            { number: 15, title: "Review Akumulatif B1.3", topics: ["Recall set gondang & komposisi", "Recall jenis tor-tor", "Recall opera Batak heritage", "Cloze test 15 item"] },
             { number: 16, title: "Mini-Project — Esai Musik Batak", topics: ["Pilih 1 jenis gondang/tor-tor", "Tulis esai 1500 kata", "Cite 3 sumber akademik", "Submit untuk review"] },
           ],
         },
         {
-          code: "B1.3",
+          code: "B1.4",
           name: "Bridging 5 Dialek — Karo, Mandailing, Pakpak, Simalungun",
           preview: true,
           sessions: [
@@ -279,12 +279,12 @@ const curriculum: LanguageCurriculum = {
             { number: 12, title: "Adat & Kekerabatan Lintas", topics: ["Dalihan na Tolu di 5 dialek", "Variasi sapaan kekerabatan", "Adat pernikahan lintas dialek", "Mediasi konflik lintas marga"] },
             { number: 13, title: "Listening — Audio 5 Dialek", topics: ["Audio Karo native speaker", "Audio Mandailing native", "Audio Pakpak & Simalungun", "Identifikasi dialek aural"] },
             { number: 14, title: "Mini-Story Diaspora 5 Dialek", topics: ["Cerita keluarga campuran dialek", "Comprehension 10 pertanyaan", "Refleksi unity in diversity", "Diskusi kelompok"] },
-            { number: 15, title: "Review Akumulatif B1.3", topics: ["Recall 4 dialek non-Toba", "Recall vocabulary cross-dialect", "Recall marga lintas dialek", "Cloze test 20 item"] },
+            { number: 15, title: "Review Akumulatif B1.4", topics: ["Recall 4 dialek non-Toba", "Recall vocabulary cross-dialect", "Recall marga lintas dialek", "Cloze test 20 item"] },
             { number: 16, title: "Mini-Project — Mapping 5 Dialek", topics: ["Buat tabel comparison 5 dialek", "30 kata umum, lintas-dialek", "Wawancara native speaker tiap dialek", "Submit dengan refleksi"] },
           ],
         },
         {
-          code: "B1.4",
+          code: "B1.5",
           name: "Konsolidasi B1 — Integrasi Adat, Musik, & Dialek",
           preview: false,
           sessions: [
@@ -302,7 +302,7 @@ const curriculum: LanguageCurriculum = {
             { number: 12, title: "Mock Test B1 Style" },
             { number: 13, title: "Wawancara Roleplay Kompleks" },
             { number: 14, title: "Diagnostic Gap Identification" },
-            { number: 15, title: "Review Akumulatif B1.4" },
+            { number: 15, title: "Review Akumulatif B1.5" },
             { number: 16, title: "Mini-Project — Portofolio Sertifikasi B1" },
           ],
         },

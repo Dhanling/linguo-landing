@@ -83,8 +83,16 @@ const curriculum: LanguageCurriculum = {
             { number: 16, title: "Mini-Project — Ziua Mea În București", topics: ["3 menit audio harian", "Verb + preposition integration", "Self-recording", "Peer review"] },
           ],
         },
+      ],
+    },
+    {
+      code: "A2",
+      name: "Dasar — Past Tense & Case System",
+      description:
+        "Mendalami past tense (perfect compus & imperfect), memperkenalkan case system genitive-dative yang langka di Romance, dan pemfasihan struktur kalimat.",
+      sublevels: [
         {
-          code: "A1.4",
+          code: "A2.1",
           name: "Cumpărături & Servicii",
           preview: false,
           sessions: [
@@ -102,20 +110,12 @@ const curriculum: LanguageCurriculum = {
             { number: 12, title: "Nota la Restaurant" },
             { number: 13, title: "Bacșiș Cultură" },
             { number: 14, title: "Cumpărături Online" },
-            { number: 15, title: "Review Akumulatif A1.4" },
+            { number: 15, title: "Review Akumulatif A2.1" },
             { number: 16, title: "Mini-Project — Listă Cumpărături Săptămânale" },
           ],
         },
-      ],
-    },
-    {
-      code: "A2",
-      name: "Dasar — Past Tense & Case System",
-      description:
-        "Mendalami past tense (perfect compus & imperfect), memperkenalkan case system genitive-dative yang langka di Romance, dan pemfasihan struktur kalimat.",
-      sublevels: [
         {
-          code: "A2.1",
+          code: "A2.2",
           name: "Perfect Compus — Am + Participle",
           preview: true,
           sessions: [
@@ -131,14 +131,14 @@ const curriculum: LanguageCurriculum = {
             { number: 10, title: "Past Time Adverbs Lengkap", topics: ["Mai devreme, demult, recent", "Just now: chiar acum", "Drill 25", "Aspect awareness"] },
             { number: 11, title: "Reading Past-Heavy Text", topics: ["A2-level Romanian biography", "Past tense spotting", "Vocab in context", "Comprehension Q"] },
             { number: 12, title: "Past + Direction", topics: ["Am mers la mare — saya pergi ke laut", "Travel narrative", "Drill 20", "Story integration"] },
-            { number: 13, title: "Imperfect Hint", topics: ["Lucram — saya sedang bekerja (past)", "Background/habitual past preview", "Setup ke A2.2", "Brief exposure"] },
+            { number: 13, title: "Imperfect Hint", topics: ["Lucram — saya sedang bekerja (past)", "Background/habitual past preview", "Setup ke A2.3", "Brief exposure"] },
             { number: 14, title: "Past Speed Drill", topics: ["Conjugation speed test", "Listening dictation", "Self-correction", "Mastery check"] },
-            { number: 15, title: "Review Akumulatif A2.1", topics: ["Perfect mastery test", "Storytelling 90 detik", "Vocab 230 item", "Dialog test"] },
+            { number: 15, title: "Review Akumulatif A2.2", topics: ["Perfect mastery test", "Storytelling 90 detik", "Vocab 230 item", "Dialog test"] },
             { number: 16, title: "Mini-Project — Săptămâna Trecută Audio", topics: ["7-day diary audio", "Perfect-tense heavy", "20+ past verbs", "Self-review"] },
           ],
         },
         {
-          code: "A2.2",
+          code: "A2.3",
           name: "Imperfect & Past Aspect Distinction",
           preview: true,
           sessions: [
@@ -156,12 +156,12 @@ const curriculum: LanguageCurriculum = {
             { number: 12, title: "Speaking: Childhood Memoir", topics: ["Imperfect-heavy memoir", "Background details", "Drill 15", "Personal story"] },
             { number: 13, title: "Writing: Descriptive Past", topics: ["100-kata descriptive past", "Imperfect integration", "Self-edit", "Polish"] },
             { number: 14, title: "Speed Drill Aspect", topics: ["Aspect choice exercises", "Listen-mark pattern", "Translation drill", "Self-test"] },
-            { number: 15, title: "Review Akumulatif A2.2", topics: ["Aspect mastery test", "Storytelling 90 detik", "Vocab 280 item", "Reading checkpoint"] },
+            { number: 15, title: "Review Akumulatif A2.3", topics: ["Aspect mastery test", "Storytelling 90 detik", "Vocab 280 item", "Reading checkpoint"] },
             { number: 16, title: "Mini-Project — Copilăria Mea", topics: ["Childhood memoir 400 kata", "Imperfect + perfect mix", "Audio narration", "Peer feedback"] },
           ],
         },
         {
-          code: "A2.3",
+          code: "A2.4",
           name: "Case Genitive-Dative — Latin Heritage",
           preview: true,
           sessions: [
@@ -179,12 +179,20 @@ const curriculum: LanguageCurriculum = {
             { number: 12, title: "Common Mistakes Native Indo", topics: ["Accusative-genitive confusion", "Clitic doubling miss", "Common errors catalog", "Correction drill"] },
             { number: 13, title: "Practice Conversion Drill", topics: ["Same sentence, case swap", "Speed conversion", "Translation drill", "Self-test"] },
             { number: 14, title: "Speaking with Cases", topics: ["Detailed possession description", "Indirect object usage", "Drill 20", "Conversation"] },
-            { number: 15, title: "Review Akumulatif A2.3", topics: ["Case mastery test", "Reading checkpoint", "Writing check", "Vocab 330 item"] },
+            { number: 15, title: "Review Akumulatif A2.4", topics: ["Case mastery test", "Reading checkpoint", "Writing check", "Vocab 330 item"] },
             { number: 16, title: "Mini-Project — Genealogie Familiei", topics: ["Family tree description", "Genitive heavy", "Audio narration", "Peer review"] },
           ],
         },
+      ],
+    },
+    {
+      code: "B1",
+      name: "Menengah — Subjunctive & Conditional",
+      description:
+        "Menguasai subjunctive Romance dengan partikel 'să', conditional mood, dan struktur kalimat kompleks untuk percakapan intermediate.",
+      sublevels: [
         {
-          code: "A2.4",
+          code: "B1.1",
           name: "Future, Comparative & Subjunctive Hint",
           preview: false,
           sessions: [
@@ -202,20 +210,12 @@ const curriculum: LanguageCurriculum = {
             { number: 12, title: "Modal + Subjunctive Preview" },
             { number: 13, title: "Reading: Predictions" },
             { number: 14, title: "Listening: Forecast" },
-            { number: 15, title: "Review Akumulatif A2.4" },
+            { number: 15, title: "Review Akumulatif B1.1" },
             { number: 16, title: "Mini-Project — 5 Ani În Viitor" },
           ],
         },
-      ],
-    },
-    {
-      code: "B1",
-      name: "Menengah — Subjunctive & Conditional",
-      description:
-        "Menguasai subjunctive Romance dengan partikel 'să', conditional mood, dan struktur kalimat kompleks untuk percakapan intermediate.",
-      sublevels: [
         {
-          code: "B1.1",
+          code: "B1.2",
           name: "Subjunctive 'Să' — Romance Heart",
           preview: true,
           sessions: [
@@ -233,12 +233,12 @@ const curriculum: LanguageCurriculum = {
             { number: 12, title: "Subjunctive in Folklore", topics: ["Făt-Frumos tales", "Subjunctive in fairy tales", "Reading practice", "Cultural narrative"] },
             { number: 13, title: "Reading Subjunctive-Heavy Text", topics: ["B1 Romanian essay", "Subjunctive spotting", "Vocab in context", "Comprehension"] },
             { number: 14, title: "Writing: Wishes & Goals", topics: ["100-kata goal essay", "Subjunctive integration", "Self-edit", "Polish"] },
-            { number: 15, title: "Review Akumulatif B1.1", topics: ["Subjunctive mastery test", "Reading checkpoint", "Speaking roleplay", "Vocab 400 item"] },
+            { number: 15, title: "Review Akumulatif B1.2", topics: ["Subjunctive mastery test", "Reading checkpoint", "Speaking roleplay", "Vocab 400 item"] },
             { number: 16, title: "Mini-Project — Dorințele Mele Pentru Viitor", topics: ["Goals essay 400 kata", "Subjunctive heavy", "Audio narration", "Peer review"] },
           ],
         },
         {
-          code: "B1.2",
+          code: "B1.3",
           name: "Conditional & Hypothetical",
           preview: true,
           sessions: [
@@ -256,12 +256,12 @@ const curriculum: LanguageCurriculum = {
             { number: 12, title: "Speaking: Hypothetical Topics", topics: ["What-if discussions", "Debate hypothetical", "Politeness layers", "Roleplay"] },
             { number: 13, title: "Writing: Dacă Essay", topics: ["100-kata conditional essay", "Integration with subjunctive", "Coherence check", "Self-edit"] },
             { number: 14, title: "Speed Drill Conditional", topics: ["Conjugation speed", "Translation drill", "Self-test", "Mastery check"] },
-            { number: 15, title: "Review Akumulatif B1.2", topics: ["Conditional mastery test", "Speaking roleplay", "Vocab 450 item", "Reading checkpoint"] },
+            { number: 15, title: "Review Akumulatif B1.3", topics: ["Conditional mastery test", "Speaking roleplay", "Vocab 450 item", "Reading checkpoint"] },
             { number: 16, title: "Mini-Project — Dacă Aș Locui În România", topics: ["Imagination essay 400 kata", "Conditional + hypothetical heavy", "Audio + skrip", "Peer review"] },
           ],
         },
         {
-          code: "B1.3",
+          code: "B1.4",
           name: "Participles, Gerunds & Complex Clauses",
           preview: true,
           sessions: [
@@ -279,12 +279,12 @@ const curriculum: LanguageCurriculum = {
             { number: 12, title: "Writing: Subordinate-Rich Para", topics: ["100-kata complex paragraph", "Subordinate integration", "Flow construction", "Self-edit"] },
             { number: 13, title: "Speaking: Argument Building", topics: ["Pro-contra structure", "Subordinate clause usage", "Drill 20", "Discussion"] },
             { number: 14, title: "Speed Drill Complex", topics: ["Sentence construction", "Speed test", "Self-correction", "Mastery check"] },
-            { number: 15, title: "Review Akumulatif B1.3", topics: ["Subordinate mastery test", "Reading complex", "Writing check", "Vocab 500 item"] },
+            { number: 15, title: "Review Akumulatif B1.4", topics: ["Subordinate mastery test", "Reading complex", "Writing check", "Vocab 500 item"] },
             { number: 16, title: "Mini-Project — Eseu Argumentativ 500 Kata", topics: ["Argumentative essay", "Subordinate clause heavy", "Audio narration", "Peer review"] },
           ],
         },
         {
-          code: "B1.4",
+          code: "B1.5",
           name: "Passive, Reflexive & Idiomatic",
           preview: false,
           sessions: [
@@ -302,7 +302,7 @@ const curriculum: LanguageCurriculum = {
             { number: 12, title: "Reading: Romanian Folktale" },
             { number: 13, title: "Speaking: Idiomatic Usage" },
             { number: 14, title: "Writing: Formal Letter" },
-            { number: 15, title: "Review Akumulatif B1.4" },
+            { number: 15, title: "Review Akumulatif B1.5" },
             { number: 16, title: "Mini-Project — Scrisoare Oficială" },
           ],
         },

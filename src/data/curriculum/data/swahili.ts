@@ -83,8 +83,16 @@ const curriculum: LanguageCurriculum = {
             { number: 16, title: "Mini-Project — Narasi 'Siku Yangu' 200 Kata", topics: ["wajib 4 kala berbeda", "wajib penanda objek", "wajib sistem jam Swahili", "kirim untuk koreksi guru"] },
           ],
         },
+      ],
+    },
+    {
+      code: "A2",
+      name: "Dasar — Perluasan Kata Kerja & Hidup Sehari-hari",
+      description:
+        "Kunci produktivitas Kiswahili: satu akar kata kerja bisa melahirkan puluhan turunan lewat perluasan aplikatif, pasif, kausatif, dan resiprokal. Ditambah kalimat majemuk, urusan harian di Afrika Timur, dan methali (peribahasa) yang jadi tulang punggung kearifan lokal. Akhir A2 kamu bisa mengurus hidup harian dan bercerita dengan lancar.",
+      sublevels: [
         {
-          code: "A1.4",
+          code: "A2.1",
           name: "Ngeli Selebihnya & Budaya Afrika Timur",
           preview: false,
           sessions: [
@@ -102,20 +110,12 @@ const curriculum: LanguageCurriculum = {
             { number: 12, title: "Utamaduni wa Salamu & Adab Sosial" },
             { number: 13, title: "Sherehe & Hari Besar" },
             { number: 14, title: "Nyimbo za Watoto & Lagu Rakyat" },
-            { number: 15, title: "Marudio ya A1.4" },
+            { number: 15, title: "Marudio ya A2.1" },
             { number: 16, title: "Mini-Project — Presentasi Negara Afrika Timur Pilihan" },
           ],
         },
-      ],
-    },
-    {
-      code: "A2",
-      name: "Dasar — Perluasan Kata Kerja & Hidup Sehari-hari",
-      description:
-        "Kunci produktivitas Kiswahili: satu akar kata kerja bisa melahirkan puluhan turunan lewat perluasan aplikatif, pasif, kausatif, dan resiprokal. Ditambah kalimat majemuk, urusan harian di Afrika Timur, dan methali (peribahasa) yang jadi tulang punggung kearifan lokal. Akhir A2 kamu bisa mengurus hidup harian dan bercerita dengan lancar.",
-      sublevels: [
         {
-          code: "A2.1",
+          code: "A2.2",
           name: "Kauli za Vitenzi — Perluasan Kata Kerja",
           preview: false,
           sessions: [
@@ -133,12 +133,12 @@ const curriculum: LanguageCurriculum = {
             { number: 12, title: "Kesalahan Umum dalam Perluasan" },
             { number: 13, title: "Latihan Produksi Kata Berantai" },
             { number: 14, title: "Membaca Teks dengan Perluasan Padat" },
-            { number: 15, title: "Marudio ya A2.1" },
+            { number: 15, title: "Marudio ya A2.2" },
             { number: 16, title: "Mini-Project — Peta Kata dari 10 Akar Kerja" },
           ],
         },
         {
-          code: "A2.2",
+          code: "A2.3",
           name: "Sentensi Changamano — Kalimat Majemuk",
           preview: false,
           sessions: [
@@ -156,12 +156,12 @@ const curriculum: LanguageCurriculum = {
             { number: 12, title: "Konjungsi Wacana Tingkat Lanjut" },
             { number: 13, title: "Menyusun Paragraf Kohesif" },
             { number: 14, title: "Analisis Kesalahan Kalimat Panjang" },
-            { number: 15, title: "Marudio ya A2.2" },
+            { number: 15, title: "Marudio ya A2.3" },
             { number: 16, title: "Mini-Project — Esai Naratif 350 Kata" },
           ],
         },
         {
-          code: "A2.3",
+          code: "A2.4",
           name: "Maisha ya Kila Siku Afrika Mashariki",
           preview: false,
           sessions: [
@@ -179,12 +179,20 @@ const curriculum: LanguageCurriculum = {
             { number: 12, title: "Majirani & Kehidupan Bertetangga" },
             { number: 13, title: "Dharura: Polisi, Zimamoto, Ambulensi" },
             { number: 14, title: "Utalii: Safari, Fukwe & Mlima" },
-            { number: 15, title: "Marudio ya A2.3" },
+            { number: 15, title: "Marudio ya A2.4" },
             { number: 16, title: "Mini-Project — Roleplay 10 Situasi Harian" },
           ],
         },
+      ],
+    },
+    {
+      code: "B1",
+      name: "Menengah — Ragam, Media & Kiswahili Profesional",
+      description:
+        "Kiswahili di dunia nyata: perbedaan Kiunguja Zanzibar, Kimvita Mombasa, Kiswahili sanifu, dan Sheng anak muda Nairobi; membaca dan mendengar media Afrika Timur; serta Kiswahili untuk kerja, NGO, dan wawancara. Akhir B1 kamu bisa bekerja dan mengikuti berita sepenuhnya dalam Kiswahili.",
+      sublevels: [
         {
-          code: "A2.4",
+          code: "B1.1",
           name: "Methali, Vitendawili & Nyimbo",
           preview: false,
           sessions: [
@@ -202,20 +210,12 @@ const curriculum: LanguageCurriculum = {
             { number: 12, title: "Menggunakan Methali Tanpa Janggal" },
             { number: 13, title: "Menulis dengan Sentuhan Peribahasa" },
             { number: 14, title: "Membandingkan Peribahasa Swahili & Indonesia" },
-            { number: 15, title: "Marudio ya A2.4" },
+            { number: 15, title: "Marudio ya B1.1" },
             { number: 16, title: "Mini-Project — Kumpulan 20 Methali Beranotasi" },
           ],
         },
-      ],
-    },
-    {
-      code: "B1",
-      name: "Menengah — Ragam, Media & Kiswahili Profesional",
-      description:
-        "Kiswahili di dunia nyata: perbedaan Kiunguja Zanzibar, Kimvita Mombasa, Kiswahili sanifu, dan Sheng anak muda Nairobi; membaca dan mendengar media Afrika Timur; serta Kiswahili untuk kerja, NGO, dan wawancara. Akhir B1 kamu bisa bekerja dan mengikuti berita sepenuhnya dalam Kiswahili.",
-      sublevels: [
         {
-          code: "B1.1",
+          code: "B1.2",
           name: "Lahaja — Ragam Kiswahili",
           preview: false,
           sessions: [
@@ -233,12 +233,12 @@ const curriculum: LanguageCurriculum = {
             { number: 12, title: "Mengenali Ragam dari Rekaman" },
             { number: 13, title: "Sikap Penutur terhadap Ragam" },
             { number: 14, title: "Memilih Ragam Sesuai Situasi" },
-            { number: 15, title: "Marudio ya B1.1" },
+            { number: 15, title: "Marudio ya B1.2" },
             { number: 16, title: "Mini-Project — Analisis Rekaman Multi-Ragam" },
           ],
         },
         {
-          code: "B1.2",
+          code: "B1.3",
           name: "Habari & Vyombo vya Habari",
           preview: false,
           sessions: [
@@ -256,12 +256,12 @@ const curriculum: LanguageCurriculum = {
             { number: 12, title: "Menulis Surat Pembaca" },
             { number: 13, title: "Bahasa Iklan Afrika Timur" },
             { number: 14, title: "Debat Isu Terkini" },
-            { number: 15, title: "Marudio ya B1.2" },
+            { number: 15, title: "Marudio ya B1.3" },
             { number: 16, title: "Mini-Project — Laporan Berita Sendiri 450 Kata" },
           ],
         },
         {
-          code: "B1.3",
+          code: "B1.4",
           name: "Kiswahili Kazini — Dunia Kerja",
           preview: false,
           sessions: [
@@ -279,12 +279,12 @@ const curriculum: LanguageCurriculum = {
             { number: 12, title: "Etika Kerja & Hierarki Kantor" },
             { number: 13, title: "Menangani Konflik di Tempat Kerja" },
             { number: 14, title: "Presentasi 10 Menit Terstruktur" },
-            { number: 15, title: "Marudio ya B1.3" },
+            { number: 15, title: "Marudio ya B1.4" },
             { number: 16, title: "Mini-Project — Simulasi Wawancara Kerja Penuh" },
           ],
         },
         {
-          code: "B1.4",
+          code: "B1.5",
           name: "Utamaduni & Jamii — Budaya dan Masyarakat",
           preview: false,
           sessions: [
@@ -302,7 +302,7 @@ const curriculum: LanguageCurriculum = {
             { number: 12, title: "Sinema & Filamu za Kiswahili" },
             { number: 13, title: "Olahraga & Budaya Populer" },
             { number: 14, title: "Diskusi Isu Sosial Kontemporer" },
-            { number: 15, title: "Marudio ya B1.4" },
+            { number: 15, title: "Marudio ya B1.5" },
             { number: 16, title: "Mini-Project — Esai Budaya 500 Kata" },
           ],
         },

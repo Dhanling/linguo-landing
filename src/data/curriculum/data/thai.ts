@@ -83,9 +83,17 @@ const curriculum: LanguageCurriculum = {
             { number: 16, title: "Mini-Project — Cerita Sahabat", topics: ["Paragraf 12 kalimat", "Past markers + deskripsi", "Komparatif 2x minimum", "Feedback A1.3"] },
           ],
         },
+      ],
+    },
+    {
+      code: "A2",
+      name: "Pra-Menengah — Thai Mengalir",
+      description:
+        "Verba dengan tense markers, cerita masa lalu, rencana masa depan, masuk ke Thailand — Bangkok, Chiang Mai, Phuket, Songkran, Loi Krathong, Buddhism Theravada. Akhir A2 kamu bisa ngobrol panjang & baca artikel pendek.",
+      sublevels: [
         {
-          code: "A1.4",
-          name: "Konsolidasi A1 — Pondasi Solid",
+          code: "A2.1",
+          name: "Jembatan A1→A2 · Konsolidasi A1 — Pondasi Solid",
           preview: false,
           sessions: [
             { number: 1, title: "Refleksi Pondasi A1 — Yang Sudah Dicapai" },
@@ -106,16 +114,8 @@ const curriculum: LanguageCurriculum = {
             { number: 16, title: "Mini-Project Final A1 — Vlog Perkenalan 2 Menit" },
           ],
         },
-      ],
-    },
-    {
-      code: "A2",
-      name: "Pra-Menengah — Thai Mengalir",
-      description:
-        "Verba dengan tense markers, cerita masa lalu, rencana masa depan, masuk ke Thailand — Bangkok, Chiang Mai, Phuket, Songkran, Loi Krathong, Buddhism Theravada. Akhir A2 kamu bisa ngobrol panjang & baca artikel pendek.",
-      sublevels: [
         {
-          code: "A2.1",
+          code: "A2.2",
           name: "Pengalaman & Cerita Masa Lalu",
           preview: false,
           sessions: [
@@ -133,12 +133,12 @@ const curriculum: LanguageCurriculum = {
             { number: 12, title: "Conditional Tipe 2 — ถ้า... ก็..." },
             { number: 13, title: "Cerita Tradisi Keluarga" },
             { number: 14, title: "Wawancara: Tanya Cerita Hidup" },
-            { number: 15, title: "Review Akumulatif A2.1" },
+            { number: 15, title: "Review Akumulatif A2.2" },
             { number: 16, title: "Mini-Project — Cerita Pribadi 300 Kata" },
           ],
         },
         {
-          code: "A2.2",
+          code: "A2.3",
           name: "Rencana & Masa Depan",
           preview: false,
           sessions: [
@@ -156,12 +156,12 @@ const curriculum: LanguageCurriculum = {
             { number: 12, title: "Predict — Ramalan Sederhana" },
             { number: 13, title: "Tulis Email Permohonan" },
             { number: 14, title: "Wawancara Kerja Dasar" },
-            { number: 15, title: "Review Akumulatif A2.2" },
+            { number: 15, title: "Review Akumulatif A2.3" },
             { number: 16, title: "Mini-Project — Rencana 5 Tahun" },
           ],
         },
         {
-          code: "A2.3",
+          code: "A2.4",
           name: "Thailand — Geografi & Kota Utama",
           preview: false,
           sessions: [
@@ -179,12 +179,20 @@ const curriculum: LanguageCurriculum = {
             { number: 12, title: "Etnis Minoritas — Karen, Hmong, Lahu Highlanders" },
             { number: 13, title: "Iklim — Hot, Rainy, Cool 3 Musim" },
             { number: 14, title: "Lao-Thai & Burmese-Thai Borders" },
-            { number: 15, title: "Review Akumulatif A2.3" },
+            { number: 15, title: "Review Akumulatif A2.4" },
             { number: 16, title: "Mini-Project — Itinerary Tur Thailand" },
           ],
         },
+      ],
+    },
+    {
+      code: "B1",
+      name: "Menengah — Sejarah, Sastra Klasik & Buddhism",
+      description:
+        "Sejarah Thai dari Sukhothai sampai Bhumibol, sastra klasik Ramakien & Phra Aphai Mani Sunthorn Phu, sinema arthouse (Apichatpong Cannes), Buddhism Theravada mendalam, Pali sebagai bahasa suci.",
+      sublevels: [
         {
-          code: "A2.4",
+          code: "B1.1",
           name: "Budaya Thai — Buddhism, Songkran, Wai",
           preview: false,
           sessions: [
@@ -202,20 +210,12 @@ const curriculum: LanguageCurriculum = {
             { number: 12, title: "Hospitality Thai — Smile Land" },
             { number: 13, title: "Muay Thai (มวยไทย) — Seni Bela Diri Nasional" },
             { number: 14, title: "Pernikahan Thai — Tradisi & Vocab" },
-            { number: 15, title: "Review Akumulatif A2.4" },
+            { number: 15, title: "Review Akumulatif B1.1" },
             { number: 16, title: "Mini-Project Final A2 — Esai Budaya Thai 400 Kata" },
           ],
         },
-      ],
-    },
-    {
-      code: "B1",
-      name: "Menengah — Sejarah, Sastra Klasik & Buddhism",
-      description:
-        "Sejarah Thai dari Sukhothai sampai Bhumibol, sastra klasik Ramakien & Phra Aphai Mani Sunthorn Phu, sinema arthouse (Apichatpong Cannes), Buddhism Theravada mendalam, Pali sebagai bahasa suci.",
-      sublevels: [
         {
-          code: "B1.1",
+          code: "B1.2",
           name: "Sejarah Thailand — Sukhothai ke Bhumibol",
           preview: false,
           sessions: [
@@ -233,12 +233,12 @@ const curriculum: LanguageCurriculum = {
             { number: 12, title: "Raja Bhumibol — Pemerintahan Terpanjang 70 Tahun" },
             { number: 13, title: "Krisis Ekonomi 1997 — Tom Yum Goong Crisis" },
             { number: 14, title: "Thailand Modern — Raja Vajiralongkorn" },
-            { number: 15, title: "Review Akumulatif B1.1" },
+            { number: 15, title: "Review Akumulatif B1.2" },
             { number: 16, title: "Mini-Project — Timeline Sejarah Thai 700 Kata" },
           ],
         },
         {
-          code: "B1.2",
+          code: "B1.3",
           name: "Sastra Klasik — Ramakien & Phra Aphai Mani",
           preview: false,
           sessions: [
@@ -256,12 +256,12 @@ const curriculum: LanguageCurriculum = {
             { number: 12, title: "Kap (กาพย์) — Bentuk Religius" },
             { number: 13, title: "Pengaruh Sanskrit & Pali pada Sastra Thai" },
             { number: 14, title: "Diskusi: Relevansi Klasik Hari Ini" },
-            { number: 15, title: "Review Akumulatif B1.2" },
+            { number: 15, title: "Review Akumulatif B1.3" },
             { number: 16, title: "Mini-Project — Analisis 1 Karya Klasik" },
           ],
         },
         {
-          code: "B1.3",
+          code: "B1.4",
           name: "Sinema, Musik & Drama Thai",
           preview: false,
           sessions: [
@@ -279,12 +279,12 @@ const curriculum: LanguageCurriculum = {
             { number: 12, title: "Rap & Hip Hop Thai — Twopee, F.Hero" },
             { number: 13, title: "Tonton & Diskusi Lakorn" },
             { number: 14, title: "Influencer & YouTuber Thai" },
-            { number: 15, title: "Review Akumulatif B1.3" },
+            { number: 15, title: "Review Akumulatif B1.4" },
             { number: 16, title: "Mini-Project — Review Media Thai" },
           ],
         },
         {
-          code: "B1.4",
+          code: "B1.5",
           name: "Buddhism Theravada Mendalam",
           preview: false,
           sessions: [
@@ -302,7 +302,7 @@ const curriculum: LanguageCurriculum = {
             { number: 12, title: "Buddhist Influence pada Sastra Thai" },
             { number: 13, title: "Sangha Hari Ini — Reformasi & Tantangan" },
             { number: 14, title: "Diskusi: Buddhism Modern di Thailand" },
-            { number: 15, title: "Review Akumulatif B1.4" },
+            { number: 15, title: "Review Akumulatif B1.5" },
             { number: 16, title: "Mini-Project Final B1 — Esai Buddhism Thai" },
           ],
         },

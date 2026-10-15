@@ -6,7 +6,7 @@ const meta = getLanguageBySlug("khmer")!;
 const curriculum: LanguageCurriculum = {
   meta,
   overview:
-    "Khmer (ភាសាខ្មែរ) adalah bahasa nasional Kamboja, dituturkan oleh lebih dari 17 juta orang dan menjadi pintu masuk ke peradaban Khmer Empire (802–1431) yang mewariskan kompleks Angkor Wat — monumen religius terbesar di dunia. Sebagai anggota rumpun Austroasiatic (Mon-Khmer), Khmer memiliki tipologi yang berbeda total dari tetangganya yang tonal: TIDAK ada nada, TIDAK ada konjugasi tense, TIDAK ada deklinasi. Sebagai gantinya, Khmer mengandalkan sistem partikel waktu (កំពុង 'sedang', នឹង 'akan', បាន 'sudah') yang elegan dan logis — fitur signature yang menjadi pivot pedagogical Linguo di A1.3. Aksara Khmer (turunan Brahmi via Pallava abad ke-7) memiliki 33 konsonan terbagi dua seri (a-series dan o-series), di mana seri konsonan menentukan pelafalan vokal — keunikan yang dikupas tuntas di A2.3 bersama subscript consonant stacking (ជើង). Linguo membawa pelajar dari pengenalan aksara dan kebiasaan membaca tanpa spasi (A1.1) hingga apresiasi Reamker (versi Khmer dari Ramayana) dan sastra modern Pich Tum Kravel & Yeng Chheangly (B2.4–B2.7). Target sertifikasi: kredensial Royal University of Phnom Penh atau IFAS Khmer level placement.",
+    "Khmer (ភាសាខ្មែរ) adalah bahasa nasional Kamboja, dituturkan oleh lebih dari 17 juta orang dan menjadi pintu masuk ke peradaban Khmer Empire (802–1431) yang mewariskan kompleks Angkor Wat — monumen religius terbesar di dunia. Sebagai anggota rumpun Austroasiatic (Mon-Khmer), Khmer memiliki tipologi yang berbeda total dari tetangganya yang tonal: TIDAK ada nada, TIDAK ada konjugasi tense, TIDAK ada deklinasi. Sebagai gantinya, Khmer mengandalkan sistem partikel waktu (កំពុង 'sedang', នឹង 'akan', បាន 'sudah') yang elegan dan logis — fitur signature yang menjadi pivot pedagogical Linguo di A1.3. Aksara Khmer (turunan Brahmi via Pallava abad ke-7) memiliki 33 konsonan terbagi dua seri (a-series dan o-series), di mana seri konsonan menentukan pelafalan vokal — keunikan yang dikupas tuntas di A2.4 bersama subscript consonant stacking (ជើង). Linguo membawa pelajar dari pengenalan aksara dan kebiasaan membaca tanpa spasi (A1.1) hingga apresiasi Reamker (versi Khmer dari Ramayana) dan sastra modern Pich Tum Kravel & Yeng Chheangly (B2.4–B2.7). Target sertifikasi: kredensial Royal University of Phnom Penh atau IFAS Khmer level placement.",
   levels: [
     {
       code: "A1",
@@ -83,8 +83,16 @@ const curriculum: LanguageCurriculum = {
             { number: 16, title: "Mini-Project — Narasi 3 Paragraf (Rutin, Lampau, Depan)", topics: ["paragraf 1: hari biasa (habitual)", "paragraf 2: kemarin atau minggu lalu (បាន)", "paragraf 3: rencana minggu depan (នឹង)", "submit teks + audio 90 detik"] },
           ],
         },
+      ],
+    },
+    {
+      code: "A2",
+      name: "Dasar+ — Khmer Konversasional",
+      description:
+        "Tingkatkan dari frasa terisolasi ke percakapan multi-turn. Tuntaskan sistem dua seri konsonan + subscript stacking di A2.4 (signature deep dive), bangun kosakata sosial-kerja-tradisi, dan mulai konsumsi media Khmer ringan.",
+      sublevels: [
         {
-          code: "A1.4",
+          code: "A2.1",
           name: "Numerik Lanjut, Transportasi & Belanja",
           preview: false,
           sessions: [
@@ -102,20 +110,12 @@ const curriculum: LanguageCurriculum = {
             { number: 12, title: "Pasar Tradisional vs Mall AEON" },
             { number: 13, title: "Café & Pesan Makanan Khmer" },
             { number: 14, title: "Bayar via QR (KHQR & Bakong) — Konteks Modern" },
-            { number: 15, title: "Review Akumulatif A1.4" },
+            { number: 15, title: "Review Akumulatif A2.1" },
             { number: 16, title: "Mini-Project — Simulasi Trip Phnom Penh → Siem Reap" },
           ],
         },
-      ],
-    },
-    {
-      code: "A2",
-      name: "Dasar+ — Khmer Konversasional",
-      description:
-        "Tingkatkan dari frasa terisolasi ke percakapan multi-turn. Tuntaskan sistem dua seri konsonan + subscript stacking di A2.3 (signature deep dive), bangun kosakata sosial-kerja-tradisi, dan mulai konsumsi media Khmer ringan.",
-      sublevels: [
         {
-          code: "A2.1",
+          code: "A2.2",
           name: "Percakapan Sehari-Hari & Dunia Kerja",
           preview: true,
           sessions: [
@@ -133,12 +133,12 @@ const curriculum: LanguageCurriculum = {
             { number: 12, title: "Bank: Tarik Tunai, Transfer, Setor", topics: ["ដក​ប្រាក់ (tarik uang)", "ផ្ទេរ (transfer)", "បំពេញបែបបទ (isi formulir)", "ABA & Acleda terminologi"] },
             { number: 13, title: "Klinik: Konsultasi Dokter & Resep Obat", topics: ["រោគសញ្ញា (gejala)", "ឱសថ (obat)", "បាក់តេរី vs វីរុស", "follow-up appointment"] },
             { number: 14, title: "Café Khmer: Roleplay Pemesanan Lengkap", topics: ["menu typical kopi-roti", "modifikasi pesanan", "split bill", "tip culture (jarang di Kamboja)"] },
-            { number: 15, title: "Review Akumulatif A2.1", topics: ["semua skenario sehari-hari", "drill 5 register sosial", "mini-test multi-turn dialog", "feedback bahasa tubuh"] },
+            { number: 15, title: "Review Akumulatif A2.2", topics: ["semua skenario sehari-hari", "drill 5 register sosial", "mini-test multi-turn dialog", "feedback bahasa tubuh"] },
             { number: 16, title: "Mini-Project — Roleplay Hari Kerja Penuh (5 Menit)", topics: ["pagi: greet kolega, small talk", "siang: rapat + lunch order", "sore: email reply + pulang", "submit audio 5 menit + transkrip"] },
           ],
         },
         {
-          code: "A2.2",
+          code: "A2.3",
           name: "Sosial Media, Bisnis Kecil & Tradisi Khmer",
           preview: true,
           sessions: [
@@ -156,12 +156,12 @@ const curriculum: LanguageCurriculum = {
             { number: 12, title: "Tarian Apsara & Royal Ballet", topics: ["UNESCO Intangible Heritage", "gerakan tangan & makna", "Reamker dance-drama", "preservasi pasca-Khmer Rouge"] },
             { number: 13, title: "Kuliner: Amok, Lok Lak, Num Banh Chok", topics: ["អាម៉ុក ikan curry kelapa", "ឡុកឡាក់ daging sapi cuka", "នំបញ្ចុក mie sarapan", "regional variations"] },
             { number: 14, title: "Pasar Lokal: Phsar Chas, Phsar Thmey", topics: ["beda pasar lama vs baru", "section-by-section navigation", "bahasa tawar harga halus", "produk khas tiap pasar"] },
-            { number: 15, title: "Review Akumulatif A2.2", topics: ["recall vocab medsos + tradisi", "drill caption & komentar", "mini-test reading 3 post FB", "self-record reaction TikTok"] },
+            { number: 15, title: "Review Akumulatif A2.3", topics: ["recall vocab medsos + tradisi", "drill caption & komentar", "mini-test reading 3 post FB", "self-record reaction TikTok"] },
             { number: 16, title: "Mini-Project — Buat 3 Caption FB + 1 Live Selling 90 Detik", topics: ["caption 1: makanan", "caption 2: tempat wisata", "caption 3: produk bisnis", "live selling: tawarkan 1 produk fiksi"] },
           ],
         },
         {
-          code: "A2.3",
+          code: "A2.4",
           name: "2-Series Mastery & Subscript Stacking Deep Dive",
           preview: true,
           sessions: [
@@ -175,16 +175,24 @@ const curriculum: LanguageCurriculum = {
             { number: 8, title: "Diacritic Tambahan: ៌ (reahmuk), ៍ (toandakhiat)", topics: ["repeater & cancellation marks", "fungsi gramatikal", "implikasi pelafalan", "drill kata-kata dengan diacritic"] },
             { number: 9, title: "Punctuation Khmer: ។ ៕ ៚ ៙", topics: ["។ (khan) end of sentence", "៕ end of paragraph/section", "៚ end of text religious", "modern usage vs traditional"] },
             { number: 10, title: "Bilangan Ordinal & Pecahan", topics: ["ទី១ (ke-1) ទី២ (ke-2)", "កន្លះ (setengah) មួយ​ភាគបី (1/3)", "persentase ភាគរយ", "math word problems sederhana"] },
-            { number: 11, title: "Reading Speed Drill: Paragraf 50 Kata", topics: ["3 paragraf level A2.3", "track waktu baca", "comprehension Q&A", "target 1 menit/paragraf"] },
+            { number: 11, title: "Reading Speed Drill: Paragraf 50 Kata", topics: ["3 paragraf level A2.4", "track waktu baca", "comprehension Q&A", "target 1 menit/paragraf"] },
             { number: 12, title: "Handwriting Lanjutan: Goresan & Proporsi", topics: ["proporsi konsonan vs vokal", "subscript ukuran setengah", "spacing antar-kata modern", "drill 100 kata tertulis"] },
             { number: 13, title: "Typing Khmer di Keyboard: NIDA Layout", topics: ["NIDA Khmer Unicode layout", "switch layout system", "shortcut konsonan & subscript", "drill ketik 50 kata/menit target"] },
             { number: 14, title: "Membaca Tanda Jalan & Papan Toko di Phnom Penh", topics: ["foto-foto signage real", "deciphering brand names", "abbreviations Khmer (jarang)", "konteks Phnom Penh modern"] },
-            { number: 15, title: "Review Akumulatif A2.3", topics: ["mastery test dual-series", "subscript stacking dictation", "reading speed assessment", "handwriting evaluation"] },
+            { number: 15, title: "Review Akumulatif A2.4", topics: ["mastery test dual-series", "subscript stacking dictation", "reading speed assessment", "handwriting evaluation"] },
             { number: 16, title: "Mini-Project — Transkripsi Audio 2 Menit + Tulis Tangan", topics: ["dengar audio cerita 2 menit", "transkripsi dengan subscript akurat", "tulis tangan rapi 1 paragraf", "submit foto handwriting + soft copy"] },
           ],
         },
+      ],
+    },
+    {
+      code: "B1",
+      name: "Menengah — Topical & Cultural Khmer",
+      description:
+        "Beralih dari survival ke ekspresi. Pelajar bisa berdiskusi opini, narasi multi-paragraf, argumentasi sederhana, dan konsumsi media Khmer (berita, podcast, drama TV) secara mandiri.",
+      sublevels: [
         {
-          code: "A2.4",
+          code: "B1.1",
           name: "Phnom Penh Urban Life & Provincial Travel",
           preview: false,
           sessions: [
@@ -202,20 +210,12 @@ const curriculum: LanguageCurriculum = {
             { number: 12, title: "Bahasa untuk Backpacker: Hostel & Common Room" },
             { number: 13, title: "Emergency Vocab: Polisi, Ambulans, Apotek 24-Jam" },
             { number: 14, title: "Festival Provincial: Yang Wajib Dikunjungi" },
-            { number: 15, title: "Review Akumulatif A2.4" },
+            { number: 15, title: "Review Akumulatif B1.1" },
             { number: 16, title: "Mini-Project — Itinerary Perjalanan 7 Hari ke Kamboja" },
           ],
         },
-      ],
-    },
-    {
-      code: "B1",
-      name: "Menengah — Topical & Cultural Khmer",
-      description:
-        "Beralih dari survival ke ekspresi. Pelajar bisa berdiskusi opini, narasi multi-paragraf, argumentasi sederhana, dan konsumsi media Khmer (berita, podcast, drama TV) secara mandiri.",
-      sublevels: [
         {
-          code: "B1.1",
+          code: "B1.2",
           name: "Diskusi & Opini",
           preview: true,
           sessions: [
@@ -233,12 +233,12 @@ const curriculum: LanguageCurriculum = {
             { number: 12, title: "Active Listening: Acknowledge & Paraphrase", topics: ["repeat back: អ្នកមានន័យថា...", "validate: ខ្ញុំយល់", "ask deeper: មានន័យដូចម្តេច", "Khmer politeness in listening"] },
             { number: 13, title: "Group Discussion: Moderasi 4 Peserta", topics: ["intro round", "turn-taking management", "consensus-seeking style", "wrap-up summary"] },
             { number: 14, title: "Debate Mini: 2 vs 2, Topik Ringan", topics: ["topik: WFH vs kantor", "prepare arguments 5 menit", "rebuttal etiquette", "judge feedback"] },
-            { number: 15, title: "Review Akumulatif B1.1", topics: ["recall 6 topik diskusi", "drill agree/disagree register", "mini-test 1 paragraf opini", "self-assessment audio"] },
+            { number: 15, title: "Review Akumulatif B1.2", topics: ["recall 6 topik diskusi", "drill agree/disagree register", "mini-test 1 paragraf opini", "self-assessment audio"] },
             { number: 16, title: "Mini-Project — Diskusi Panel Rekaman 8 Menit", topics: ["pilih topik dari list", "3 peserta berdiskusi", "moderator-style facilitation", "submit audio + transkrip"] },
           ],
         },
         {
-          code: "B1.2",
+          code: "B1.3",
           name: "Narasi & Storytelling",
           preview: true,
           sessions: [
@@ -256,12 +256,12 @@ const curriculum: LanguageCurriculum = {
             { number: 12, title: "Khmer Drama TV: Watch & Retell Episode", topics: ["pilih 1 episode CTN", "retell plot 3 menit", "character analysis singkat", "vocab acquisition baru"] },
             { number: 13, title: "Cerita Horor Khmer: Arak & Ap Ghost Tradition", topics: ["spirit lore Khmer", "narrative atmosphere", "rural vs urban version", "respect cultural beliefs"] },
             { number: 14, title: "Story Climax: Pacing & Build-Up", topics: ["pacing dengan kalimat pendek", "build-up dengan deskripsi", "release di klimaks", "rewrite ending exercise"] },
-            { number: 15, title: "Review Akumulatif B1.2", topics: ["narasi 6 jenis", "test struktur 3-act", "self-edit narasi sendiri", "peer feedback"] },
+            { number: 15, title: "Review Akumulatif B1.3", topics: ["narasi 6 jenis", "test struktur 3-act", "self-edit narasi sendiri", "peer feedback"] },
             { number: 16, title: "Mini-Project — Cerita Pendek Original 500 Kata", topics: ["fiksi pendek 5 paragraf", "include dialog + deskripsi", "moral atau twist ending", "submit teks + ringkasan audio"] },
           ],
         },
         {
-          code: "B1.3",
+          code: "B1.4",
           name: "Argumentasi & Persuasi",
           preview: true,
           sessions: [
@@ -279,12 +279,12 @@ const curriculum: LanguageCurriculum = {
             { number: 12, title: "Bahasa Persuasi Politik: Critical Awareness", topics: ["loaded language detection", "false dichotomy", "appeal to authority", "media literacy"] },
             { number: 13, title: "Negosiasi: B2B Khmer Style", topics: ["face-saving etiquette", "indirect bargaining", "ឌួសឆន្ទ (compromise)", "win-win framing"] },
             { number: 14, title: "Persuasive Speech 5 Menit Rekaman", topics: ["pilih cause Anda peduli", "struktur opening-body-CTA", "delivery pace & pause", "submit audio"] },
-            { number: 15, title: "Review Akumulatif B1.3", topics: ["semua connector logis", "drill claim-evidence", "debate skill assessment", "self-edit essay"] },
+            { number: 15, title: "Review Akumulatif B1.4", topics: ["semua connector logis", "drill claim-evidence", "debate skill assessment", "self-edit essay"] },
             { number: 16, title: "Mini-Project — Esai Argumentatif 700 Kata + Pitch 3 Menit", topics: ["pilih kontroversi sosial", "3 alasan + 1 counter-argument", "kesimpulan & CTA", "rekaman pitch + submit teks"] },
           ],
         },
         {
-          code: "B1.4",
+          code: "B1.5",
           name: "Konsumsi Media Khmer Mandiri",
           preview: false,
           sessions: [
@@ -302,7 +302,7 @@ const curriculum: LanguageCurriculum = {
             { number: 12, title: "Comic & Manga Diterjemahkan ke Khmer" },
             { number: 13, title: "Acara Radio FM: Talk Show Lokal" },
             { number: 14, title: "Konsumsi Multi-Media Project Weekly" },
-            { number: 15, title: "Review Akumulatif B1.4" },
+            { number: 15, title: "Review Akumulatif B1.5" },
             { number: 16, title: "Mini-Project — Media Diary 30 Hari + Review 1 Karya" },
           ],
         },

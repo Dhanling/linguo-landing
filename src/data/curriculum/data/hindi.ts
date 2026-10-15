@@ -6,7 +6,7 @@ const meta = getLanguageBySlug("hindi")!;
 const curriculum: LanguageCurriculum = {
   meta,
   overview:
-    "Hindi (हिन्दी) adalah bahasa nasional India bersama English, dituturkan oleh 600+ juta penutur total (340 juta native + 260 juta L2) — bahasa terbesar ke-3 di dunia setelah Mandarin dan English. Sebagai anggota rumpun Indo-Aryan (cabang Indo-European), Hindi berbagi ancestor dengan Sanskrit, Persian, Latin, dan banyak bahasa Eropa modern — implikasinya: pelajar Indonesia akan menemukan banyak cognate tersembunyi (Sanskrit-derived terms di Bahasa Indonesia seperti 'agama', 'guru', 'pustaka', 'utara' semua dari rumpun yang sama). Aksara Devanagari (देवनागरी) adalah abugida syllabic dengan 11 vokal independent + 33 konsonan basic, ditulis kiri-ke-kanan dengan signature top-bar line (शिरोरेखा shirorekha) yang menghubungkan huruf-huruf dalam satu kata — pivot pedagogical Linguo di A1.1 dengan pendekatan vokal-first. Word order Hindi adalah **SOV** (sama dengan Burmese, Japanese, Korean), dan menggunakan **postposition** (di belakang kata benda, bukan preposition seperti English) — sistem 6 postposition utama (में/से/को/का/की/के) dikupas tuntas di A1.3. Fitur signature paling unik: **split ergativity** — di tense perfective, subjek transitive verb mendapat marker ergative ने (ne), dan verb agreement bergeser ke OBJEK, bukan subjek (Sanskrit legacy yang Hindi pertahankan). Ini menjadi pivot mental-shift A2.3 dengan drill sistematis. Hindi juga punya sistem **3-way honorific pronoun** (तू intim/kasar < तुम kasual < आप hormat/plural) yang nuansa sosialnya dikupas di B1.1. Linguo membawa pelajar dari pengenalan Devanagari (A1.1) hingga apresiasi Tulsidas Ramcharitmanas (Awadhi-Hindi epik abad ke-16) dan sastra modern Munshi Premchand & Mahadevi Verma (B2.4–B2.5). Konten budaya: warisan Bollywood (industri film terbesar dunia by output), poetry Bhakti (Kabir, Surdas, Tulsidas), Diwali-Holi-Eid festivals, kuliner chai-biryani-samosa-thali, plus koneksi historis dengan Nusantara (Hindu heritage Bali-Jawa, Sanskrit loanwords di Bahasa Indonesia). Target sertifikasi: CSH (Central Hindi Institute Agra), KHS (Kendriya Hindi Sansthan Delhi), atau placement di JNU/DU.",
+    "Hindi (हिन्दी) adalah bahasa nasional India bersama English, dituturkan oleh 600+ juta penutur total (340 juta native + 260 juta L2) — bahasa terbesar ke-3 di dunia setelah Mandarin dan English. Sebagai anggota rumpun Indo-Aryan (cabang Indo-European), Hindi berbagi ancestor dengan Sanskrit, Persian, Latin, dan banyak bahasa Eropa modern — implikasinya: pelajar Indonesia akan menemukan banyak cognate tersembunyi (Sanskrit-derived terms di Bahasa Indonesia seperti 'agama', 'guru', 'pustaka', 'utara' semua dari rumpun yang sama). Aksara Devanagari (देवनागरी) adalah abugida syllabic dengan 11 vokal independent + 33 konsonan basic, ditulis kiri-ke-kanan dengan signature top-bar line (शिरोरेखा shirorekha) yang menghubungkan huruf-huruf dalam satu kata — pivot pedagogical Linguo di A1.1 dengan pendekatan vokal-first. Word order Hindi adalah **SOV** (sama dengan Burmese, Japanese, Korean), dan menggunakan **postposition** (di belakang kata benda, bukan preposition seperti English) — sistem 6 postposition utama (में/से/को/का/की/के) dikupas tuntas di A1.3. Fitur signature paling unik: **split ergativity** — di tense perfective, subjek transitive verb mendapat marker ergative ने (ne), dan verb agreement bergeser ke OBJEK, bukan subjek (Sanskrit legacy yang Hindi pertahankan). Ini menjadi pivot mental-shift A2.4 dengan drill sistematis. Hindi juga punya sistem **3-way honorific pronoun** (तू intim/kasar < तुम kasual < आप hormat/plural) yang nuansa sosialnya dikupas di B1.2. Linguo membawa pelajar dari pengenalan Devanagari (A1.1) hingga apresiasi Tulsidas Ramcharitmanas (Awadhi-Hindi epik abad ke-16) dan sastra modern Munshi Premchand & Mahadevi Verma (B2.4–B2.5). Konten budaya: warisan Bollywood (industri film terbesar dunia by output), poetry Bhakti (Kabir, Surdas, Tulsidas), Diwali-Holi-Eid festivals, kuliner chai-biryani-samosa-thali, plus koneksi historis dengan Nusantara (Hindu heritage Bali-Jawa, Sanskrit loanwords di Bahasa Indonesia). Target sertifikasi: CSH (Central Hindi Institute Agra), KHS (Kendriya Hindi Sansthan Delhi), atau placement di JNU/DU.",
   levels: [
     {
       code: "A1",
@@ -83,8 +83,16 @@ const curriculum: LanguageCurriculum = {
             { number: 16, title: "Mini-Project — Travel Narrative 'Jakarta to Delhi' 90 Detik", topics: ["narasi perjalanan multi-stop", "minimal 8 postposition berbeda", "natural SOV order", "submit teks + audio + postposition highlight"] },
           ],
         },
+      ],
+    },
+    {
+      code: "A2",
+      name: "Dasar+ — Hindi Konversasional",
+      description:
+        "Beralih dari frasa terisolasi ke percakapan multi-turn. Tuntaskan split ergativity ने marker di A2.4 (signature deep dive — fitur paling unik Hindi yang membedakan dari English dan Bahasa Indonesia), bangun kosakata Bollywood-festival-kuliner, plus konsumsi media India ringan.",
+      sublevels: [
         {
-          code: "A1.4",
+          code: "A2.1",
           name: "Numerik Lanjut, Transportasi & Belanja Hindi-Belt",
           preview: false,
           sessions: [
@@ -102,20 +110,12 @@ const curriculum: LanguageCurriculum = {
             { number: 12, title: "Connaught Place vs Chandni Chowk Heritage" },
             { number: 13, title: "Dhaba Roadside vs Restaurant: Order Lengkap" },
             { number: 14, title: "Bayar via UPI, PhonePe, Google Pay India" },
-            { number: 15, title: "Review Akumulatif A1.4" },
+            { number: 15, title: "Review Akumulatif A2.1" },
             { number: 16, title: "Mini-Project — Simulasi Trip Delhi → Agra → Jaipur Golden Triangle" },
           ],
         },
-      ],
-    },
-    {
-      code: "A2",
-      name: "Dasar+ — Hindi Konversasional",
-      description:
-        "Beralih dari frasa terisolasi ke percakapan multi-turn. Tuntaskan split ergativity ने marker di A2.3 (signature deep dive — fitur paling unik Hindi yang membedakan dari English dan Bahasa Indonesia), bangun kosakata Bollywood-festival-kuliner, plus konsumsi media India ringan.",
-      sublevels: [
         {
-          code: "A2.1",
+          code: "A2.2",
           name: "Percakapan Sehari-Hari & Dunia Kerja India",
           preview: true,
           sessions: [
@@ -133,12 +133,12 @@ const curriculum: LanguageCurriculum = {
             { number: 12, title: "Bank: SBI, HDFC, ICICI India", topics: ["पैसे निकालना (withdraw)", "ट्रांसफर karna (transfer)", "खाता खोलना (open account)", "UPI integration"] },
             { number: 13, title: "Klinik: Konsultasi Dokter & Resep", topics: ["लक्षण lakshan (symptoms)", "दवा davaa (medicine)", "नुस्खा nuskhaa (prescription)", "AIIMS context"] },
             { number: 14, title: "Dhaba/Restaurant: Roleplay Pemesanan", topics: ["menu typical: butter chicken, dal makhani, naan", "modifikasi pesanan (kam masala / no spice)", "split bill", "tip culture India"] },
-            { number: 15, title: "Review Akumulatif A2.1", topics: ["semua skenario sehari-hari", "drill 5 register sosial", "mini-test multi-turn", "feedback delivery"] },
+            { number: 15, title: "Review Akumulatif A2.2", topics: ["semua skenario sehari-hari", "drill 5 register sosial", "mini-test multi-turn", "feedback delivery"] },
             { number: 16, title: "Mini-Project — Roleplay Hari Kerja Penuh India 5 Menit", topics: ["pagi: greet kolega + chai", "siang: meeting + lunch", "sore: email reply + pulang", "submit audio + transkrip Devanagari"] },
           ],
         },
         {
-          code: "A2.2",
+          code: "A2.3",
           name: "Bollywood, Festivals & Kuliner Heritage",
           preview: true,
           sessions: [
@@ -156,12 +156,12 @@ const curriculum: LanguageCurriculum = {
             { number: 12, title: "Kuliner Region 3: Bengali (Fish Curry, Mishti Doi)", topics: ["heritage Bengal", "fish-based culture", "Rasgulla dessert origin", "regional vocab"] },
             { number: 13, title: "Sosial Media: WhatsApp & Instagram India Dominance", topics: ["WhatsApp messenger universal India", "IG growing rapidly", "vocab caption umum", "etika komentar"] },
             { number: 14, title: "Hindi Internet Lingo & Hinglish", topics: ["code-switch Hindi-English natural", "WhatsApp slang", "regional creator Hindi belt", "list 30 trending terms"] },
-            { number: 15, title: "Review Akumulatif A2.2", topics: ["recall Bollywood + festivals + kuliner", "drill caption & komentar", "mini-test reading 3 post IG", "self-record reaction"] },
+            { number: 15, title: "Review Akumulatif A2.3", topics: ["recall Bollywood + festivals + kuliner", "drill caption & komentar", "mini-test reading 3 post IG", "self-record reaction"] },
             { number: 16, title: "Mini-Project — Review 1 Film Bollywood + 3 Caption IG", topics: ["review film: plot + favorite scene + lirik favorit", "caption 1: makanan India", "caption 2: festival experience", "caption 3: travel destination India"] },
           ],
         },
         {
-          code: "A2.3",
+          code: "A2.4",
           name: "Split Ergativity — Signature ने Marker (Mental Shift!)",
           preview: true,
           sessions: [
@@ -179,12 +179,20 @@ const curriculum: LanguageCurriculum = {
             { number: 12, title: "Common Mistakes: Lupa ने atau Salah Agreement", topics: ["pelajar sering lupa ne", "agreement object lupa direct", "list 15 common errors + perbaikan", "self-awareness drill"] },
             { number: 13, title: "Bandingkan dengan Bahasa Indonesia: Tidak Ada Ergative", topics: ["Bahasa Indonesia: 'saya makan' / 'saya sudah makan' — no change", "Hindi: 'main khaata hoon' → 'mainne khaayaa' (drastic shift)", "drill konversi Indonesian narrative ke Hindi perfective", "rewiring mental"] },
             { number: 14, title: "Storytelling Practice: 5-Paragraf Cerita Past Perfective", topics: ["susun narasi 5 paragraf", "wajib pakai ne consistently", "agreement object benar", "self-record 2 menit"] },
-            { number: 15, title: "Review Akumulatif A2.3", topics: ["mastery test full split ergativity", "drill 30 perfective transitive", "mock peer feedback", "self-evaluation"] },
+            { number: 15, title: "Review Akumulatif A2.4", topics: ["mastery test full split ergativity", "drill 30 perfective transitive", "mock peer feedback", "self-evaluation"] },
             { number: 16, title: "Mini-Project — Narasi Hari Kemarin 600 Kata + Audio 3 Menit", topics: ["cerita full hari kemarin pakai perfective", "minimal 20 ne markers consistent", "agreement object semua benar", "submit teks Devanagari + audio"] },
           ],
         },
+      ],
+    },
+    {
+      code: "B1",
+      name: "Menengah — Topical & Cultural Hindi",
+      description:
+        "Beralih dari survival ke ekspresi. Pelajar bisa berdiskusi opini dengan honorific 3-way mastery (तू/तुम/आप — signature B1.2), narasi multi-paragraf, argumentasi sederhana, dan konsumsi media Hindi (TV serials, podcast Hindi, YouTube creators Hindi-belt) secara mandiri.",
+      sublevels: [
         {
-          code: "A2.4",
+          code: "B1.1",
           name: "Delhi NCR & Hindi-Belt Provincial Heritage",
           preview: false,
           sessions: [
@@ -202,20 +210,12 @@ const curriculum: LanguageCurriculum = {
             { number: 12, title: "Bahasa untuk Backpacker: Hostel Paharganj" },
             { number: 13, title: "Emergency Vocab: 100 Police, 102 Ambulance, 24x7 Pharmacy" },
             { number: 14, title: "Festival Provincial: Pushkar Camel Fair, Kumbh Mela" },
-            { number: 15, title: "Review Akumulatif A2.4" },
+            { number: 15, title: "Review Akumulatif B1.1" },
             { number: 16, title: "Mini-Project — Itinerary 14-Hari North India Heritage Trail" },
           ],
         },
-      ],
-    },
-    {
-      code: "B1",
-      name: "Menengah — Topical & Cultural Hindi",
-      description:
-        "Beralih dari survival ke ekspresi. Pelajar bisa berdiskusi opini dengan honorific 3-way mastery (तू/तुम/आप — signature B1.1), narasi multi-paragraf, argumentasi sederhana, dan konsumsi media Hindi (TV serials, podcast Hindi, YouTube creators Hindi-belt) secara mandiri.",
-      sublevels: [
         {
-          code: "B1.1",
+          code: "B1.2",
           name: "Diskusi & Opini + 3-Way Honorific Mastery",
           preview: true,
           sessions: [
@@ -233,12 +233,12 @@ const curriculum: LanguageCurriculum = {
             { number: 12, title: "Topik: Bollywood & Generasi Muda", topics: ["streaming era impact", "OTT platform vs theater", "regional cinema rise", "balanced view"] },
             { number: 13, title: "Topik: Pariwisata India — Berkah atau Beban", topics: ["over-tourism Goa-Manali", "Taj Mahal preservation", "ecotourism alternatives", "balanced critique"] },
             { number: 14, title: "Group Discussion: Moderasi 4 Peserta dengan Honorific Mix", topics: ["intro round with appropriate honorific", "turn-taking management", "consensus-seeking style India", "wrap-up summary"] },
-            { number: 15, title: "Review Akumulatif B1.1", topics: ["3-way honorific mastery", "drill agree/disagree register", "mini-test 1 paragraf opini", "self-assessment audio"] },
+            { number: 15, title: "Review Akumulatif B1.2", topics: ["3-way honorific mastery", "drill agree/disagree register", "mini-test 1 paragraf opini", "self-assessment audio"] },
             { number: 16, title: "Mini-Project — Diskusi Panel Rekaman 8 Menit", topics: ["pilih topik dari list", "3 peserta diskusi", "moderator-style facilitation", "submit audio + transkrip Devanagari"] },
           ],
         },
         {
-          code: "B1.2",
+          code: "B1.3",
           name: "Narasi & Storytelling",
           preview: true,
           sessions: [
@@ -256,12 +256,12 @@ const curriculum: LanguageCurriculum = {
             { number: 12, title: "Hindi TV Serial: Watch & Retell Episode", topics: ["pilih 1 episode Saathi/Yeh Rishta", "retell plot 3 menit", "character analysis singkat", "vocab acquisition baru"] },
             { number: 13, title: "Cerita Bhoot (Ghost) Heritage Indian Folklore", topics: ["spirit lore Hindi belt", "narrative atmosphere", "rural vs urban version", "respect cultural beliefs"] },
             { number: 14, title: "Story Climax: Pacing & Build-Up", topics: ["pacing dengan kalimat pendek", "build-up dengan deskripsi", "release di klimaks", "rewrite ending exercise"] },
-            { number: 15, title: "Review Akumulatif B1.2", topics: ["narasi 6 jenis", "test struktur 3-act", "self-edit narasi sendiri", "peer feedback"] },
+            { number: 15, title: "Review Akumulatif B1.3", topics: ["narasi 6 jenis", "test struktur 3-act", "self-edit narasi sendiri", "peer feedback"] },
             { number: 16, title: "Mini-Project — Cerita Pendek Original 500 Kata", topics: ["fiksi pendek 5 paragraf SOV consistent", "include dialog + deskripsi + ne markers", "moral atau twist ending", "submit teks Devanagari + ringkasan audio"] },
           ],
         },
         {
-          code: "B1.3",
+          code: "B1.4",
           name: "Argumentasi & Persuasi",
           preview: true,
           sessions: [
@@ -279,12 +279,12 @@ const curriculum: LanguageCurriculum = {
             { number: 12, title: "Bahasa Persuasi Politik: Critical Awareness", topics: ["loaded language detection", "false dichotomy", "appeal to authority", "media literacy"] },
             { number: 13, title: "Negosiasi: B2B India Style Relationship-First", topics: ["jugaad culture", "tea-and-talk approach", "long-term relationship preferred", "win-win framing"] },
             { number: 14, title: "Persuasive Speech 5 Menit Rekaman", topics: ["pilih cause Anda peduli", "struktur opening-body-CTA", "delivery pace & pause", "submit audio"] },
-            { number: 15, title: "Review Akumulatif B1.3", topics: ["semua connector logis", "drill claim-evidence", "debate skill assessment", "self-edit essay"] },
+            { number: 15, title: "Review Akumulatif B1.4", topics: ["semua connector logis", "drill claim-evidence", "debate skill assessment", "self-edit essay"] },
             { number: 16, title: "Mini-Project — Esai Argumentatif 700 Kata + Pitch 3 Menit", topics: ["pilih kontroversi sosial India", "3 alasan + 1 counter-argument", "kesimpulan & CTA", "rekaman pitch + submit teks"] },
           ],
         },
         {
-          code: "B1.4",
+          code: "B1.5",
           name: "Konsumsi Media Hindi Mandiri",
           preview: false,
           sessions: [
@@ -302,7 +302,7 @@ const curriculum: LanguageCurriculum = {
             { number: 12, title: "Manga Hindi-Translated & Comic Lokal Diamond Books" },
             { number: 13, title: "Acara Radio FM: Radio Mirchi Hindi" },
             { number: 14, title: "Konsumsi Multi-Media Project Weekly" },
-            { number: 15, title: "Review Akumulatif B1.4" },
+            { number: 15, title: "Review Akumulatif B1.5" },
             { number: 16, title: "Mini-Project — Media Diary 30 Hari + Review 1 Karya" },
           ],
         },

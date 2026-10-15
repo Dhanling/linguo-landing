@@ -6,7 +6,7 @@ const meta = getLanguageBySlug("turkish")!;
 const curriculum: LanguageCurriculum = {
   meta,
   overview:
-    "Bahasa Turki (Türkçe) adalah anggota terbesar rumpun Turkic dengan ~85 juta penutur asli di Turki, Siprus Utara, Bulgaria, dan diaspora luas di Eropa. Türkçe modern adalah hasil reformasi radikal Atatürk (1928) yang mengganti aksara Arab-Ottoman ke alfabet Latin (29 huruf) dan memurnikan kosakata dari pengaruh Arab-Persia. Bagi pelajar Indonesia, Türkçe menawarkan tata bahasa aglutinatif yang menarik — kata kerja membangun makna kompleks lewat suffix bertumpuk (gel-ebil-iyor-um — \"saya bisa datang\") — dengan fitur signature: **vowel harmony** (front/back + rounded/unrounded — fondasi mutlak dari A1.1), agglutination layers (locative -de/-da, possessive, plural, case all suffix-based), **evidentiality** lewat -di (saksi mata) vs -miş (hearsay/inference) — distinksi yang menjadi gateway B1, no gender, SOV word order, dan harmony progression yang harus konsisten lintas suffix. Anchor budaya: Istanbul Boğaz, kebab-baklava-Türk kahvesi, Yunus Emre puisi Sufi abad-13, tarekat Mevlevi (whirling dervishes), Orhan Pamuk Nobel 2006, dan tentu dizi Turki (TRT, Show, ATV) yang booming di Indonesia (Cinta di Musim Cherry, Elif, Pak Suami). Kurikulum Linguo: vowel harmony foundational A1.1, agglutination layered A1–A2, **evidentiality -miş/-di pivot di A2.3**, Yunus Emre + Pamuk reading B2.4–B2.5, kulminasi TÖMER B2 certification (B1 = jalur Turkish citizenship via TVQS).",
+    "Bahasa Turki (Türkçe) adalah anggota terbesar rumpun Turkic dengan ~85 juta penutur asli di Turki, Siprus Utara, Bulgaria, dan diaspora luas di Eropa. Türkçe modern adalah hasil reformasi radikal Atatürk (1928) yang mengganti aksara Arab-Ottoman ke alfabet Latin (29 huruf) dan memurnikan kosakata dari pengaruh Arab-Persia. Bagi pelajar Indonesia, Türkçe menawarkan tata bahasa aglutinatif yang menarik — kata kerja membangun makna kompleks lewat suffix bertumpuk (gel-ebil-iyor-um — \"saya bisa datang\") — dengan fitur signature: **vowel harmony** (front/back + rounded/unrounded — fondasi mutlak dari A1.1), agglutination layers (locative -de/-da, possessive, plural, case all suffix-based), **evidentiality** lewat -di (saksi mata) vs -miş (hearsay/inference) — distinksi yang menjadi gateway B1, no gender, SOV word order, dan harmony progression yang harus konsisten lintas suffix. Anchor budaya: Istanbul Boğaz, kebab-baklava-Türk kahvesi, Yunus Emre puisi Sufi abad-13, tarekat Mevlevi (whirling dervishes), Orhan Pamuk Nobel 2006, dan tentu dizi Turki (TRT, Show, ATV) yang booming di Indonesia (Cinta di Musim Cherry, Elif, Pak Suami). Kurikulum Linguo: vowel harmony foundational A1.1, agglutination layered A1–A2, **evidentiality -miş/-di pivot di A2.4**, Yunus Emre + Pamuk reading B2.4–B2.5, kulminasi TÖMER B2 certification (B1 = jalur Turkish citizenship via TVQS).",
   levels: [
     {
       code: "A1",
@@ -83,8 +83,16 @@ const curriculum: LanguageCurriculum = {
             { number: 16, title: "Mini-Project — İstanbul Mahalle Tur", topics: ["3 menit audio mahalle tour", "Cases bertumpuk", "Self-recording", "Peer review"] },
           ],
         },
+      ],
+    },
+    {
+      code: "A2",
+      name: "Dasar — Past Tense & Evidentiality",
+      description:
+        "Membongkar two-past system Türkçe (definite -di vs reportative -miş), possessive layers, dan future tense. Evidentiality sebagai pivot di A2.4.",
+      sublevels: [
         {
-          code: "A1.4",
+          code: "A2.1",
           name: "Sayılar, Para & Alışveriş",
           preview: false,
           sessions: [
@@ -102,20 +110,12 @@ const curriculum: LanguageCurriculum = {
             { number: 12, title: "Restoran Hesap Detail" },
             { number: 13, title: "Bahşiş Culture" },
             { number: 14, title: "Karşılaştırma — daha/en" },
-            { number: 15, title: "Review Akumulatif A1.4" },
+            { number: 15, title: "Review Akumulatif A2.1" },
             { number: 16, title: "Mini-Project — Haftalık Alışveriş Planı" },
           ],
         },
-      ],
-    },
-    {
-      code: "A2",
-      name: "Dasar — Past Tense & Evidentiality",
-      description:
-        "Membongkar two-past system Türkçe (definite -di vs reportative -miş), possessive layers, dan future tense. Evidentiality sebagai pivot di A2.3.",
-      sublevels: [
         {
-          code: "A2.1",
+          code: "A2.2",
           name: "Definite Past '-di' — Saksi Mata",
           preview: true,
           sessions: [
@@ -133,12 +133,12 @@ const curriculum: LanguageCurriculum = {
             { number: 12, title: "Past + Direct Object", topics: ["Kitabı okudum — saya baca bukunya", "Accusative + past", "Drill 25", "Story integration"] },
             { number: 13, title: "Past Tense Interview", topics: ["Ne yaptın? — kamu apa lakukan?", "Job interview format", "Past experience narration", "Roleplay drill"] },
             { number: 14, title: "Past Speed Drill", topics: ["Conjugation speed test", "50 verbs in 5 menit", "Listening dictation", "Self-correction"] },
-            { number: 15, title: "Review Akumulatif A2.1", topics: ["Past tense mastery", "Storytelling 90 detik", "Vocab 230 item", "Dialog test"] },
+            { number: 15, title: "Review Akumulatif A2.2", topics: ["Past tense mastery", "Storytelling 90 detik", "Vocab 230 item", "Dialog test"] },
             { number: 16, title: "Mini-Project — Geçen Hafta Diary", topics: ["7-day diary audio", "Past-tense heavy", "20+ past verbs", "Self-review"] },
           ],
         },
         {
-          code: "A2.2",
+          code: "A2.3",
           name: "Possessive Layers & Genitif",
           preview: true,
           sessions: [
@@ -156,12 +156,12 @@ const curriculum: LanguageCurriculum = {
             { number: 12, title: "Aile Toplantısı Roleplay", topics: ["Family gathering scenario", "Honorifics + politeness", "Hierarchy navigation", "Multi-generation talk"] },
             { number: 13, title: "Reading Akrabalık Diagram", topics: ["Family tree Türkçe", "Possession chains", "Vocab integration", "Comprehension"] },
             { number: 14, title: "Suffix Stack Speed Drill", topics: ["Order memorization", "Speed conversion", "Listening discrimination", "Self-test"] },
-            { number: 15, title: "Review Akumulatif A2.2", topics: ["Possessive mastery test", "Family talk dialog", "Vocab 280 item", "Reading checkpoint"] },
+            { number: 15, title: "Review Akumulatif A2.3", topics: ["Possessive mastery test", "Family talk dialog", "Vocab 280 item", "Reading checkpoint"] },
             { number: 16, title: "Mini-Project — Ailem & Akrabalarım", topics: ["Family essay 300 kata", "Possession chains heavy", "Audio + skrip", "Peer feedback"] },
           ],
         },
         {
-          code: "A2.3",
+          code: "A2.4",
           name: "Evidentiality '-miş' — Hearsay Past Signature Türkçe",
           preview: true,
           sessions: [
@@ -179,12 +179,20 @@ const curriculum: LanguageCurriculum = {
             { number: 12, title: "Inferential vs Reportative", topics: ["Same form, different meaning", "Context disambiguation", "Pragmatic mastery", "Comprehension drill"] },
             { number: 13, title: "'-miştir' Formal Documentation", topics: ["Resmi tutanaklar", "Reported in legal/official text", "Past + 'is' combination", "Formal register"] },
             { number: 14, title: "Storytelling Mix '-di / -miş'", topics: ["Personal story (witnessed)", "Inserted heard parts (-miş)", "Native-like narrative", "Audio practice"] },
-            { number: 15, title: "Review Akumulatif A2.3", topics: ["Evidentiality mastery test", "Story rewriting", "Newscast roleplay", "Vocab 330 item"] },
+            { number: 15, title: "Review Akumulatif A2.4", topics: ["Evidentiality mastery test", "Story rewriting", "Newscast roleplay", "Vocab 330 item"] },
             { number: 16, title: "Mini-Project — Mahalle Dedikodusu Skits", topics: ["Gossip skit 3 menit", "-miş heavy", "Authentic register", "Peer feedback"] },
           ],
         },
+      ],
+    },
+    {
+      code: "B1",
+      name: "Menengah — Conditional, Participle, Causative",
+      description:
+        "Mendalami tata bahasa kompleks: conditional -se/-sa, participle -en/-an dan relative clauses, gerunds, causative -dir, dan passive.",
+      sublevels: [
         {
-          code: "A2.4",
+          code: "B1.1",
           name: "Future '-ecek/-acak' & Plans",
           preview: false,
           sessions: [
@@ -202,20 +210,12 @@ const curriculum: LanguageCurriculum = {
             { number: 12, title: "Family Future Plans" },
             { number: 13, title: "Reading: Tahminler" },
             { number: 14, title: "Listening: Hava Durumu" },
-            { number: 15, title: "Review Akumulatif A2.4" },
+            { number: 15, title: "Review Akumulatif B1.1" },
             { number: 16, title: "Mini-Project — 5 Yıl Sonra Vizyonum" },
           ],
         },
-      ],
-    },
-    {
-      code: "B1",
-      name: "Menengah — Conditional, Participle, Causative",
-      description:
-        "Mendalami tata bahasa kompleks: conditional -se/-sa, participle -en/-an dan relative clauses, gerunds, causative -dir, dan passive.",
-      sublevels: [
         {
-          code: "B1.1",
+          code: "B1.2",
           name: "Conditional '-se/-sa' & Hypothetical",
           preview: true,
           sessions: [
@@ -233,12 +233,12 @@ const curriculum: LanguageCurriculum = {
             { number: 12, title: "Hypothetical Future", topics: ["10 yıl sonra olsaydım...", "Future hypothetical", "Imagination prompts", "Drill 15"] },
             { number: 13, title: "Speaking: Hypothetical Topics", topics: ["What-if discussions", "Debate hypothetical", "Politeness layers", "Roleplay"] },
             { number: 14, title: "Writing: Eğer Essay", topics: ["100-kata eğer essay", "Conditional integration", "Coherence check", "Self-edit"] },
-            { number: 15, title: "Review Akumulatif B1.1", topics: ["Conditional mastery test", "Speaking roleplay", "Vocab 400 item", "Reading checkpoint"] },
+            { number: 15, title: "Review Akumulatif B1.2", topics: ["Conditional mastery test", "Speaking roleplay", "Vocab 400 item", "Reading checkpoint"] },
             { number: 16, title: "Mini-Project — Eğer Ben Türkiye'de Yaşasaydım", topics: ["Essay imagination 400 kata", "Conditional + hypothetical heavy", "Audio + skrip", "Peer review"] },
           ],
         },
         {
-          code: "B1.2",
+          code: "B1.3",
           name: "Participle '-en/-an' & Relative Clauses",
           preview: true,
           sessions: [
@@ -256,12 +256,12 @@ const curriculum: LanguageCurriculum = {
             { number: 12, title: "Speaking with Relatives", topics: ["Describing people/places relatively", "Detailed description", "Drill 20", "Conversation"] },
             { number: 13, title: "Relative + Tense Shifts", topics: ["Time-aware relativization", "Past/future relative", "Drill 15", "Pattern check"] },
             { number: 14, title: "Speed Drill Relative", topics: ["Conversion exercises", "Speed translation", "Self-test", "Mastery check"] },
-            { number: 15, title: "Review Akumulatif B1.2", topics: ["Relative mastery test", "Reading complex", "Writing check", "Vocab 450 item"] },
+            { number: 15, title: "Review Akumulatif B1.3", topics: ["Relative mastery test", "Reading complex", "Writing check", "Vocab 450 item"] },
             { number: 16, title: "Mini-Project — İstanbul'da Tanıdığım İnsanlar", topics: ["Profile essay 400 kata", "Relative clause heavy", "Audio + skrip", "Peer review"] },
           ],
         },
         {
-          code: "B1.3",
+          code: "B1.4",
           name: "Gerunds, Infinitives & Verbal Nouns",
           preview: true,
           sessions: [
@@ -279,12 +279,12 @@ const curriculum: LanguageCurriculum = {
             { number: 12, title: "Writing: Sequence Narratives", topics: ["Multi-action narrative", "Gerund integration", "Flow construction", "Self-edit"] },
             { number: 13, title: "Speaking: Description Rich", topics: ["Detailed manner description", "Adverbial -erek heavy", "Drill 20", "Storytelling"] },
             { number: 14, title: "Gerund Speed Drill", topics: ["Conversion exercises", "Translation drill", "Self-test", "Mastery check"] },
-            { number: 15, title: "Review Akumulatif B1.3", topics: ["Gerund mastery test", "Reading complex", "Writing check", "Vocab 500 item"] },
+            { number: 15, title: "Review Akumulatif B1.4", topics: ["Gerund mastery test", "Reading complex", "Writing check", "Vocab 500 item"] },
             { number: 16, title: "Mini-Project — Çocukluğumun Bir Günü", topics: ["Childhood memoir 500 kata", "Gerund + relative clauses", "Audio narration", "Peer review"] },
           ],
         },
         {
-          code: "B1.4",
+          code: "B1.5",
           name: "Causative & Passive Voice",
           preview: false,
           sessions: [
@@ -302,7 +302,7 @@ const curriculum: LanguageCurriculum = {
             { number: 12, title: "Speed Drill Voice" },
             { number: 13, title: "Writing: Formal Letter" },
             { number: 14, title: "Speaking: News Anchor" },
-            { number: 15, title: "Review Akumulatif B1.4" },
+            { number: 15, title: "Review Akumulatif B1.5" },
             { number: 16, title: "Mini-Project — Haber Sunucusu Mock" },
           ],
         },

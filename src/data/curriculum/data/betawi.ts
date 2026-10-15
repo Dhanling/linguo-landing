@@ -83,8 +83,16 @@ const curriculum: LanguageCurriculum = {
             { number: 16, title: "Mini-Project — Dialog Warung 12 Giliran", topics: ["tulis naskah dialog pembeli-penjual", "wajib 6 partikel berbeda", "rekam berdua", "kirim buat penilaian"] },
           ],
         },
+      ],
+    },
+    {
+      code: "A2",
+      name: "Dasar — Ngobrol Lancar, Ragam Wilayah & Pantun",
+      description:
+        "Naik dari kalimat ke obrolan panjang: percakapan kampung yang natural, perbedaan Betawi Tengah dan Betawi Ora, dunia pasar dan tawar-menawar, sampai pantun Betawi sebagai pintu ke seni tutur. Akhir A2 kamu bisa ikut nimbrung obrolan keluarga Betawi tanpa kelihatan orang luar.",
+      sublevels: [
         {
-          code: "A1.4",
+          code: "A2.1",
           name: "Budaya Dasar & Kalender Betawi",
           preview: false,
           sessions: [
@@ -102,20 +110,12 @@ const curriculum: LanguageCurriculum = {
             { number: 12, title: "Silat Betawi & Budaya Jawara" },
             { number: 13, title: "Masjid, Majelis & Kehidupan Beragama" },
             { number: 14, title: "Peta Kampung Betawi yang Masih Bertahan" },
-            { number: 15, title: "Review Akumulatif A1.4" },
+            { number: 15, title: "Review Akumulatif A2.1" },
             { number: 16, title: "Mini-Project — Poster Kalender Budaya Betawi Setahun" },
           ],
         },
-      ],
-    },
-    {
-      code: "A2",
-      name: "Dasar — Ngobrol Lancar, Ragam Wilayah & Pantun",
-      description:
-        "Naik dari kalimat ke obrolan panjang: percakapan kampung yang natural, perbedaan Betawi Tengah dan Betawi Ora, dunia pasar dan tawar-menawar, sampai pantun Betawi sebagai pintu ke seni tutur. Akhir A2 kamu bisa ikut nimbrung obrolan keluarga Betawi tanpa kelihatan orang luar.",
-      sublevels: [
         {
-          code: "A2.1",
+          code: "A2.2",
           name: "Ngobrol Kampung yang Natural",
           preview: false,
           sessions: [
@@ -133,12 +133,12 @@ const curriculum: LanguageCurriculum = {
             { number: 12, title: "Ngobrol di Kondangan" },
             { number: 13, title: "Ngobrol di Pengajian & Majelis" },
             { number: 14, title: "Nelpon & Kirim Pesan Gaya Betawi" },
-            { number: 15, title: "Review Akumulatif A2.1" },
+            { number: 15, title: "Review Akumulatif A2.2" },
             { number: 16, title: "Mini-Project — Obrolan Bebas 5 Menit Tanpa Naskah" },
           ],
         },
         {
-          code: "A2.2",
+          code: "A2.3",
           name: "Betawi Tengah, Betawi Ora & Betawi Udik",
           preview: false,
           sessions: [
@@ -156,12 +156,12 @@ const curriculum: LanguageCurriculum = {
             { number: 12, title: "Ragam Mana yang Dipakai di Media" },
             { number: 13, title: "Sikap Penutur terhadap Ragam Sendiri" },
             { number: 14, title: "Latihan Dengar Campuran Ragam" },
-            { number: 15, title: "Review Akumulatif A2.2" },
+            { number: 15, title: "Review Akumulatif A2.3" },
             { number: 16, title: "Mini-Project — Analisis Video Ragam & Transkripsi" },
           ],
         },
         {
-          code: "A2.3",
+          code: "A2.4",
           name: "Pasar, Dagang & Ekonomi Kampung",
           preview: false,
           sessions: [
@@ -179,12 +179,20 @@ const curriculum: LanguageCurriculum = {
             { number: 12, title: "Kuliner sebagai Usaha Keluarga" },
             { number: 13, title: "Promosi Dagangan Gaya Betawi" },
             { number: 14, title: "Jualan Online dengan Logat Betawi" },
-            { number: 15, title: "Review Akumulatif A2.3" },
+            { number: 15, title: "Review Akumulatif A2.4" },
             { number: 16, title: "Mini-Project — Simulasi Buka Lapak Sehari Penuh" },
           ],
         },
+      ],
+    },
+    {
+      code: "B1",
+      name: "Menengah — Lenong, Cerita Rakyat, Adat & Media",
+      description:
+        "Masuk ke jantung ekspresi Betawi: lenong sebagai teater rakyat, tokoh legendaris Si Pitung dan Nyai Dasima, upacara adat dari palang pintu sampai nujuh bulan, plus bagaimana Betawi hidup di sinetron, film, dan konten digital hari ini. Akhir B1 kamu bisa membawakan monolog lenong dan menjelaskan adat Betawi dalam bahasanya sendiri.",
+      sublevels: [
         {
-          code: "A2.4",
+          code: "B1.1",
           name: "Pantun, Peribahasa & Seni Tutur",
           preview: false,
           sessions: [
@@ -202,20 +210,12 @@ const curriculum: LanguageCurriculum = {
             { number: 12, title: "Rebana & Syair Keagamaan" },
             { number: 13, title: "Membawakan Pantun di Depan Orang" },
             { number: 14, title: "Menulis Pantun Sendiri" },
-            { number: 15, title: "Review Akumulatif A2.4" },
+            { number: 15, title: "Review Akumulatif B1.1" },
             { number: 16, title: "Mini-Project — Berbalas Pantun 8 Bait Berpasangan" },
           ],
         },
-      ],
-    },
-    {
-      code: "B1",
-      name: "Menengah — Lenong, Cerita Rakyat, Adat & Media",
-      description:
-        "Masuk ke jantung ekspresi Betawi: lenong sebagai teater rakyat, tokoh legendaris Si Pitung dan Nyai Dasima, upacara adat dari palang pintu sampai nujuh bulan, plus bagaimana Betawi hidup di sinetron, film, dan konten digital hari ini. Akhir B1 kamu bisa membawakan monolog lenong dan menjelaskan adat Betawi dalam bahasanya sendiri.",
-      sublevels: [
         {
-          code: "B1.1",
+          code: "B1.2",
           name: "Lenong & Seni Peran Betawi",
           preview: false,
           sessions: [
@@ -233,12 +233,12 @@ const curriculum: LanguageCurriculum = {
             { number: 12, title: "Menulis Adegan Lenong Sendiri" },
             { number: 13, title: "Latihan Peran Berpasangan" },
             { number: 14, title: "Lenong Kontemporer & Panggung Modern" },
-            { number: 15, title: "Review Akumulatif B1.1" },
+            { number: 15, title: "Review Akumulatif B1.2" },
             { number: 16, title: "Mini-Project — Pentaskan Satu Adegan Lenong 5 Menit" },
           ],
         },
         {
-          code: "B1.2",
+          code: "B1.3",
           name: "Cerita Rakyat & Tokoh Legendaris",
           preview: false,
           sessions: [
@@ -256,12 +256,12 @@ const curriculum: LanguageCurriculum = {
             { number: 12, title: "Adaptasi Film & Sinetron" },
             { number: 13, title: "Mendongeng Ulang dengan Gaya Sendiri" },
             { number: 14, title: "Membandingkan Tokoh Betawi & Nusantara Lain" },
-            { number: 15, title: "Review Akumulatif B1.2" },
+            { number: 15, title: "Review Akumulatif B1.3" },
             { number: 16, title: "Mini-Project — Mendongeng Rekaman 8 Menit" },
           ],
         },
         {
-          code: "B1.3",
+          code: "B1.4",
           name: "Adat, Upacara & Siklus Hidup",
           preview: false,
           sessions: [
@@ -279,12 +279,12 @@ const curriculum: LanguageCurriculum = {
             { number: 12, title: "Peran Tokoh Adat & Ustaz" },
             { number: 13, title: "Perubahan Adat di Jakarta Modern" },
             { number: 14, title: "Menjadi Pembawa Acara Adat" },
-            { number: 15, title: "Review Akumulatif B1.3" },
+            { number: 15, title: "Review Akumulatif B1.4" },
             { number: 16, title: "Mini-Project — Naskah MC Palang Pintu Lengkap" },
           ],
         },
         {
-          code: "B1.4",
+          code: "B1.5",
           name: "Betawi di Media Modern",
           preview: false,
           sessions: [
@@ -302,7 +302,7 @@ const curriculum: LanguageCurriculum = {
             { number: 12, title: "Menulis Naskah Konten Betawi" },
             { number: 13, title: "Etika Merepresentasikan Budaya" },
             { number: 14, title: "Diskusi Isu Identitas Betawi Hari Ini" },
-            { number: 15, title: "Review Akumulatif B1.4" },
+            { number: 15, title: "Review Akumulatif B1.5" },
             { number: 16, title: "Mini-Project — Produksi Konten Video 3 Menit" },
           ],
         },

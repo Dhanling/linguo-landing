@@ -6,7 +6,7 @@ const meta = getLanguageBySlug("burmese")!;
 const curriculum: LanguageCurriculum = {
   meta,
   overview:
-    "Bahasa Myanmar / Burmese (မြန်မာစာ) adalah bahasa resmi Republik Persatuan Myanmar, dituturkan oleh sekitar 33 juta penutur asli dan menjadi bahasa kedua bagi 10+ juta lainnya di kelompok etnis Shan, Karen, Mon, dan Rakhine. Berbeda dari mayoritas bahasa Asia Tenggara, Burmese adalah anggota rumpun Sino-Tibetan (sekeluarga dengan Mandarin dan Tibet), bukan Austroasiatic maupun Tai-Kadai — implikasi struktural langsungnya: Burmese punya word order SOV (Subjek-Objek-Verba), satu-satunya bahasa nasional SOV di Asia Tenggara dataran rendah, yang menjadi pivot pedagogical Linguo di A1.2 melalui drill mental-shift sistematis. Aksara Burmese (turunan Brahmi via Pyu abad ke-11) ditulis dengan huruf-huruf bulat karakteristik — sejarah praktisnya: naskah kuno ditulis di daun palem dengan stylus, dan goresan lurus akan merobek serat daun, sehingga huruf-huruf evolusioner menjadi melengkung. 33 konsonan dasar dengan vokal inheren 'a', plus sistem tone 4-arah (low, high, high-falling, stop) yang dikupas tuntas di A1.1. Fitur signature kedua: sistem honorific & politeness particle yang berlapis-lapis — partikel ပါ ('pa/ba') wajib di tutur formal (A1.3), plus sistem honorific pronoun ပါ/ခင်ဗျား/ရှင်/ဦး/ဒေါ် yang membedakan male-female speaker DAN male-female addressee — gendered first-person yang langka di dunia (A2.3 deep dive). Linguo membawa pelajar dari pengenalan aksara bulat dan tone (A1.1) hingga apresiasi Hmannan Yazawin (Glass Palace Chronicle abad ke-19, kronik resmi Konbaung) dan sastra modern Min Thu Wun & Pe Myint (B2.4–B2.5). Konten berfokus pada warisan budaya Bagan-Mandalay-Yangon, Theravada Buddhism, Thingyan, Pwe theater, dan kuliner mohinga-laphet thoke — sengaja menghindari diskusi politik kontemporer pasca-2021 demi kenyamanan pelajar lintas-latar. Target sertifikasi: kredensial Myanmar Institute of Language Studies (MILS) Yangon atau placement di Yangon University of Foreign Languages.",
+    "Bahasa Myanmar / Burmese (မြန်မာစာ) adalah bahasa resmi Republik Persatuan Myanmar, dituturkan oleh sekitar 33 juta penutur asli dan menjadi bahasa kedua bagi 10+ juta lainnya di kelompok etnis Shan, Karen, Mon, dan Rakhine. Berbeda dari mayoritas bahasa Asia Tenggara, Burmese adalah anggota rumpun Sino-Tibetan (sekeluarga dengan Mandarin dan Tibet), bukan Austroasiatic maupun Tai-Kadai — implikasi struktural langsungnya: Burmese punya word order SOV (Subjek-Objek-Verba), satu-satunya bahasa nasional SOV di Asia Tenggara dataran rendah, yang menjadi pivot pedagogical Linguo di A1.2 melalui drill mental-shift sistematis. Aksara Burmese (turunan Brahmi via Pyu abad ke-11) ditulis dengan huruf-huruf bulat karakteristik — sejarah praktisnya: naskah kuno ditulis di daun palem dengan stylus, dan goresan lurus akan merobek serat daun, sehingga huruf-huruf evolusioner menjadi melengkung. 33 konsonan dasar dengan vokal inheren 'a', plus sistem tone 4-arah (low, high, high-falling, stop) yang dikupas tuntas di A1.1. Fitur signature kedua: sistem honorific & politeness particle yang berlapis-lapis — partikel ပါ ('pa/ba') wajib di tutur formal (A1.3), plus sistem honorific pronoun ပါ/ခင်ဗျား/ရှင်/ဦး/ဒေါ် yang membedakan male-female speaker DAN male-female addressee — gendered first-person yang langka di dunia (A2.4 deep dive). Linguo membawa pelajar dari pengenalan aksara bulat dan tone (A1.1) hingga apresiasi Hmannan Yazawin (Glass Palace Chronicle abad ke-19, kronik resmi Konbaung) dan sastra modern Min Thu Wun & Pe Myint (B2.4–B2.5). Konten berfokus pada warisan budaya Bagan-Mandalay-Yangon, Theravada Buddhism, Thingyan, Pwe theater, dan kuliner mohinga-laphet thoke — sengaja menghindari diskusi politik kontemporer pasca-2021 demi kenyamanan pelajar lintas-latar. Target sertifikasi: kredensial Myanmar Institute of Language Studies (MILS) Yangon atau placement di Yangon University of Foreign Languages.",
   levels: [
     {
       code: "A1",
@@ -83,8 +83,16 @@ const curriculum: LanguageCurriculum = {
             { number: 16, title: "Mini-Project — Dialog Formal 5 Menit (Audio + Transkrip)", topics: ["scenario: meet senior colleague", "wajib ပါ konsisten di sepanjang dialog", "gender-aware pronoun", "submit audio + tone-marked transkrip"] },
           ],
         },
+      ],
+    },
+    {
+      code: "A2",
+      name: "Dasar+ — Burmese Konversasional",
+      description:
+        "Beralih dari frasa terisolasi ke percakapan multi-turn. Tuntaskan honorific system di A2.4 (signature deep dive Burmese yang lebih kaya dari Khmer & Lao), bangun kosakata sosial-kerja-tradisi, dan mulai konsumsi media Burmese ringan (TV, podcast, YouTube heritage content).",
+      sublevels: [
         {
-          code: "A1.4",
+          code: "A2.1",
           name: "Numerik Lanjut, Transportasi & Belanja",
           preview: false,
           sessions: [
@@ -102,20 +110,12 @@ const curriculum: LanguageCurriculum = {
             { number: 12, title: "Bogyoke Market vs Junction City Mall" },
             { number: 13, title: "Café di Pansodan Street: Pesan Tea House Style" },
             { number: 14, title: "Bayar via KBZ Pay & Wave Money Konteks Modern" },
-            { number: 15, title: "Review Akumulatif A1.4" },
+            { number: 15, title: "Review Akumulatif A2.1" },
             { number: 16, title: "Mini-Project — Simulasi Trip Yangon → Bagan via Bus Malam" },
           ],
         },
-      ],
-    },
-    {
-      code: "A2",
-      name: "Dasar+ — Burmese Konversasional",
-      description:
-        "Beralih dari frasa terisolasi ke percakapan multi-turn. Tuntaskan honorific system di A2.3 (signature deep dive Burmese yang lebih kaya dari Khmer & Lao), bangun kosakata sosial-kerja-tradisi, dan mulai konsumsi media Burmese ringan (TV, podcast, YouTube heritage content).",
-      sublevels: [
         {
-          code: "A2.1",
+          code: "A2.2",
           name: "Percakapan Sehari-Hari & Dunia Kerja",
           preview: true,
           sessions: [
@@ -133,12 +133,12 @@ const curriculum: LanguageCurriculum = {
             { number: 12, title: "Bank: KBZ, AYA, CB Bank", topics: ["ငွေ​ထုတ် (tarik uang)", "ငွေ​လွှဲ (transfer)", "ဖြ​ည့်​စ​ ပုံ​စံ (isi formulir)", "Myanmar banking landscape"] },
             { number: 13, title: "Klinik: Konsultasi Dokter & Resep Obat", topics: ["ရော​ဂါ​လက္ခ​ဏာ (gejala)", "ဆေး​ (obat)", "​ဆေး​ဖ​တ်​စာ (resep)", "follow-up appointment"] },
             { number: 14, title: "Café Yangon: Roleplay Pemesanan Lengkap", topics: ["menu kopi-paratha typical", "modifikasi pesanan", "split bill", "tip culture Myanmar"] },
-            { number: 15, title: "Review Akumulatif A2.1", topics: ["semua skenario sehari-hari", "drill 5 register sosial", "mini-test multi-turn", "feedback bahasa tubuh"] },
+            { number: 15, title: "Review Akumulatif A2.2", topics: ["semua skenario sehari-hari", "drill 5 register sosial", "mini-test multi-turn", "feedback bahasa tubuh"] },
             { number: 16, title: "Mini-Project — Roleplay Hari Kerja Penuh 5 Menit", topics: ["pagi: greet kolega, small talk", "siang: rapat + lunch order", "sore: email reply + pulang", "submit audio + transkrip"] },
           ],
         },
         {
-          code: "A2.2",
+          code: "A2.3",
           name: "Festival, Tradisi & Pwe Heritage",
           preview: true,
           sessions: [
@@ -156,12 +156,12 @@ const curriculum: LanguageCurriculum = {
             { number: 12, title: "Sosial Media: Facebook & Viber Dominance", topics: ["FB sebagai 'internet' Myanmar", "Viber primary messaging", "vocab caption umum", "etika komentar"] },
             { number: 13, title: "Live Selling di Facebook Burmese", topics: ["urgency markers Burmese", "drop nomor: နံပါတ်​ပေး​ပါ", "garansi: အာမ​ခံ​", "polite urgency"] },
             { number: 14, title: "Pasar Bogyoke vs Junction City Mall: Diskusi", topics: ["pasar tradisional preservation", "mall urbanisasi pressure", "vocab modernisasi", "balanced viewpoint"] },
-            { number: 15, title: "Review Akumulatif A2.2", topics: ["recall vocab festival + tradisi", "drill kuliner + musik", "mini-test reading 3 post FB", "self-record reaction"] },
+            { number: 15, title: "Review Akumulatif A2.3", topics: ["recall vocab festival + tradisi", "drill kuliner + musik", "mini-test reading 3 post FB", "self-record reaction"] },
             { number: 16, title: "Mini-Project — 3 Caption FB + 1 Live Selling 90 Detik", topics: ["caption 1: makanan Myanmar", "caption 2: tempat wisata", "caption 3: bisnis kecil", "live selling produk fiksi"] },
           ],
         },
         {
-          code: "A2.3",
+          code: "A2.4",
           name: "Honorific System Deep Dive — Speaker & Listener Gender",
           preview: true,
           sessions: [
@@ -179,12 +179,20 @@ const curriculum: LanguageCurriculum = {
             { number: 12, title: "Politeness in Praise: Avoiding Awkwardness", topics: ["humble counter-response", "deflect compliment Burmese style", "expressing genuine admiration", "drill 10 compliment exchanges"] },
             { number: 13, title: "Honorific in Buddhist Context", topics: ["addressing temple visitors", "speaking near pagoda", "monk-laity register strict", "ritual occasions speech"] },
             { number: 14, title: "Modern Code-Switch: Honorific + English", topics: ["Burmese English code-switch reality", "preserving honorific in mixed speech", "social media patterns", "younger generation trends"] },
-            { number: 15, title: "Review Akumulatif A2.3", topics: ["mastery test full honorific system", "speaker-listener combo dictation", "mock formal scenario assessment", "self-evaluation"] },
+            { number: 15, title: "Review Akumulatif A2.4", topics: ["mastery test full honorific system", "speaker-listener combo dictation", "mock formal scenario assessment", "self-evaluation"] },
             { number: 16, title: "Mini-Project — Formal Conversation 8 Menit dengan 3 Speaker", topics: ["scenario: meet boss + colleague + intern", "honorific switch per addressee", "kyama vs kyanaw consistency", "submit audio + register annotation"] },
           ],
         },
+      ],
+    },
+    {
+      code: "B1",
+      name: "Menengah — Topical & Cultural Burmese",
+      description:
+        "Beralih dari survival ke ekspresi. Pelajar bisa berdiskusi opini (dengan sensitivitas kultural), narasi multi-paragraf, argumentasi sederhana, dan konsumsi media Burmese heritage (TV channel non-politik, podcast budaya, musik klasik & modern, drama TV) secara mandiri.",
+      sublevels: [
         {
-          code: "A2.4",
+          code: "B1.1",
           name: "Mandalay, Bagan & Provincial Heritage",
           preview: false,
           sessions: [
@@ -202,20 +210,12 @@ const curriculum: LanguageCurriculum = {
             { number: 12, title: "Bahasa untuk Backpacker: Hostel Vibe" },
             { number: 13, title: "Emergency Vocab: Polisi, Ambulans, 24-Hour Apotek" },
             { number: 14, title: "Festival Provincial: Phaung Daw Oo Pagoda Festival" },
-            { number: 15, title: "Review Akumulatif A2.4" },
+            { number: 15, title: "Review Akumulatif B1.1" },
             { number: 16, title: "Mini-Project — Itinerary 10-Hari Heritage Trail Myanmar" },
           ],
         },
-      ],
-    },
-    {
-      code: "B1",
-      name: "Menengah — Topical & Cultural Burmese",
-      description:
-        "Beralih dari survival ke ekspresi. Pelajar bisa berdiskusi opini (dengan sensitivitas kultural), narasi multi-paragraf, argumentasi sederhana, dan konsumsi media Burmese heritage (TV channel non-politik, podcast budaya, musik klasik & modern, drama TV) secara mandiri.",
-      sublevels: [
         {
-          code: "B1.1",
+          code: "B1.2",
           name: "Diskusi & Opini (Kultural Heritage Fokus)",
           preview: true,
           sessions: [
@@ -233,12 +233,12 @@ const curriculum: LanguageCurriculum = {
             { number: 12, title: "Active Listening: Acknowledge & Paraphrase", topics: ["repeat: ​ဆို​လို​တာ​က...", "validate: နား​လည်​ပါ​တယ်", "ask deeper: ပို​၍​ ရှင်း​ပြ​ပါ", "Burmese politeness"] },
             { number: 13, title: "Group Discussion: Moderasi 4 Peserta", topics: ["intro round", "turn-taking management", "consensus-seeking Burmese style", "wrap-up summary"] },
             { number: 14, title: "Debate Mini: 2 vs 2 Topik Heritage", topics: ["topik: longyi sehari-hari vs Western dress", "prepare arguments 5 menit", "rebuttal etiquette", "judge feedback"] },
-            { number: 15, title: "Review Akumulatif B1.1", topics: ["recall 6 topik diskusi", "drill agree/disagree register", "mini-test 1 paragraf opini", "self-assessment audio"] },
+            { number: 15, title: "Review Akumulatif B1.2", topics: ["recall 6 topik diskusi", "drill agree/disagree register", "mini-test 1 paragraf opini", "self-assessment audio"] },
             { number: 16, title: "Mini-Project — Diskusi Panel Rekaman 8 Menit", topics: ["pilih topik kultural dari list", "3 peserta diskusi", "moderator-style facilitation", "submit audio + transkrip"] },
           ],
         },
         {
-          code: "B1.2",
+          code: "B1.3",
           name: "Narasi & Storytelling",
           preview: true,
           sessions: [
@@ -256,12 +256,12 @@ const curriculum: LanguageCurriculum = {
             { number: 12, title: "Drama TV Burmese Heritage Genre: Watch & Retell", topics: ["pilih 1 episode historical", "retell plot 3 menit", "character analysis", "vocab acquisition"] },
             { number: 13, title: "Cerita Nat (Spirit) Burmese Folklore", topics: ["37 Great Nats lore", "narrative atmosphere", "pre-Buddhist tradition syncretism", "respect cultural beliefs"] },
             { number: 14, title: "Story Climax: Pacing & Build-Up", topics: ["pacing dengan kalimat pendek SOV", "build-up dengan deskripsi", "release di klimaks", "rewrite ending exercise"] },
-            { number: 15, title: "Review Akumulatif B1.2", topics: ["narasi 6 jenis", "test struktur 3-act", "self-edit narasi sendiri", "peer feedback"] },
+            { number: 15, title: "Review Akumulatif B1.3", topics: ["narasi 6 jenis", "test struktur 3-act", "self-edit narasi sendiri", "peer feedback"] },
             { number: 16, title: "Mini-Project — Cerita Pendek Original 500 Kata", topics: ["fiksi pendek 5 paragraf SOV consistent", "include dialog + deskripsi", "moral atau twist ending", "submit teks + ringkasan audio"] },
           ],
         },
         {
-          code: "B1.3",
+          code: "B1.4",
           name: "Argumentasi & Persuasi",
           preview: true,
           sessions: [
@@ -279,12 +279,12 @@ const curriculum: LanguageCurriculum = {
             { number: 12, title: "Bahasa Persuasi Iklan: Critical Awareness", topics: ["loaded language detection", "false dichotomy", "appeal to authority", "media literacy"] },
             { number: 13, title: "Negosiasi: B2B Burmese Face-Saving Style", topics: ["face-saving culture", "indirect bargaining", "tea-and-talk approach", "win-win framing"] },
             { number: 14, title: "Persuasive Speech 5 Menit Rekaman", topics: ["pilih cause budaya yang Anda peduli", "struktur opening-body-CTA", "delivery pace & pause", "submit audio"] },
-            { number: 15, title: "Review Akumulatif B1.3", topics: ["semua connector logis", "drill claim-evidence", "debate skill assessment", "self-edit essay"] },
+            { number: 15, title: "Review Akumulatif B1.4", topics: ["semua connector logis", "drill claim-evidence", "debate skill assessment", "self-edit essay"] },
             { number: 16, title: "Mini-Project — Esai Argumentatif 700 Kata + Pitch 3 Menit", topics: ["pilih kontroversi heritage", "3 alasan + 1 counter-argument", "kesimpulan & CTA", "rekaman pitch + submit teks"] },
           ],
         },
         {
-          code: "B1.4",
+          code: "B1.5",
           name: "Konsumsi Media Burmese Mandiri (Heritage Fokus)",
           preview: false,
           sessions: [
@@ -302,7 +302,7 @@ const curriculum: LanguageCurriculum = {
             { number: 12, title: "Comic Lokal Burmese & Manga Translated" },
             { number: 13, title: "Acara Radio FM: Heritage Talk Show" },
             { number: 14, title: "Konsumsi Multi-Media Project Weekly" },
-            { number: 15, title: "Review Akumulatif B1.4" },
+            { number: 15, title: "Review Akumulatif B1.5" },
             { number: 16, title: "Mini-Project — Media Diary 30 Hari + Review 1 Karya" },
           ],
         },
