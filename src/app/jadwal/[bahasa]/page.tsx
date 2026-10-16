@@ -4,6 +4,7 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { langFromSlug, langNameId } from "@/lib/funnelRouting";
 import JadwalPublikClient from "./JadwalPublikClient";
+import PilihBahasa from "../PilihBahasa";
 
 const BASE = "https://linguo.id";
 
@@ -34,14 +35,14 @@ export default async function JadwalBahasaPage({ params }: PageProps) {
   return (
     <div className="min-h-screen bg-slate-50">
       <header className="border-b border-slate-100 bg-white">
-        <div className="mx-auto flex max-w-2xl items-center justify-between px-4 py-3">
+        <div className="mx-auto flex max-w-3xl items-center justify-between px-4 py-3">
           <Link href="/" className="text-lg font-extrabold tracking-tight text-[#1A9E9E]">
             Linguo<span className="text-slate-900">.id</span>
           </Link>
-          <Link href="/jadwal" className="text-xs font-medium text-slate-400 hover:text-[#1A9E9E]">Bahasa lain</Link>
+          <PilihBahasa current={bahasa} kecil />
         </div>
       </header>
-      <main className="mx-auto w-full max-w-2xl px-4 pb-32 pt-6">
+      <main className="mx-auto w-full max-w-3xl px-4 pb-32 pt-6">
         <p className="text-xs font-bold uppercase tracking-wider text-[#1A9E9E]">Kelas Private · 1-on-1</p>
         <h1 className="mt-1 text-2xl font-extrabold text-slate-900 sm:text-3xl">Jadwal Bahasa {langId}</h1>
         <p className="mt-2 text-sm leading-relaxed text-slate-600">

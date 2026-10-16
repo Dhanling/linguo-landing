@@ -34,6 +34,8 @@ export type HasilJadwalPublik = {
   durasi: number;
   /** epoch ms jam mulai yang bisa dipilih, urut. */
   slot: number[];
+  /** Jam yang ada di Availability pengajar tapi sudah terisi sesi/batch (blok merah). */
+  terisi: number[];
   /** Ada pengajar bahasa ini yang Availability-nya segar (walau mungkin penuh). */
   adaPengajar: boolean;
   diperbarui: number;
@@ -50,7 +52,7 @@ export async function jadwalPublik(langEn: string, durasi: number): Promise<Hasi
   const admin = adminClient();
   const sekarang = Date.now();
   const target = languageSlug(langEn);
-  const kosong = { bahasa: langEn, durasi, slot: [], adaPengajar: false, diperbarui: sekarang };
+  const kosong = { bahasa: langEn, durasi, slot: [], terisi: [], adaPengajar: false, diperbarui: sekarang };
   if (!target) return kosong;
 
   // Pengajar yang menyentuh Availability ≤30 hari (simpan = hapus lalu isi ulang,
@@ -71,6 +73,8 @@ export async function jadwalPublik(langEn: string, durasi: number): Promise<Hasi
   if (!cocok.length) return kosong;
 
   const hitung = new Map<number, number>();
+  // Jam yang dibuka pengajar di Availability, terlepas dari jadwal yang sudah jalan.
+  const dibuka = new Set<number>();
   let adaPengajar = false;
   await Promise.all(cocok.map(async (g) => {
     const p = await bahanPengajar(admin, g.id, sekarang);
@@ -81,8 +85,11 @@ export async function jadwalPublik(langEn: string, durasi: number): Promise<Hasi
       durasi, sekarang, batasAkhir: null,
     };
     for (const t of daftarSlot(bahan)) hitung.set(t, (hitung.get(t) ?? 0) + 1);
+    for (const t of daftarSlot({ ...bahan, sibuk: [] })) dibuka.add(t);
   }));
 
   const slot = [...hitung.entries()].filter(([, n]) => n >= MIN_PENGAJAR).map(([t]) => t).sort((x, y) => x - y);
-  return { bahasa: langEn, durasi, slot, adaPengajar, diperbarui: sekarang };
+  const bisa = new Set(slot);
+  const terisi = [...dibuka].filter((t) => !bisa.has(t)).sort((x, y) => x - y);
+  return { bahasa: langEn, durasi, slot, terisi, adaPengajar, diperbarui: sekarang };
 }
