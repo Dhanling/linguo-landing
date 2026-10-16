@@ -14,6 +14,7 @@ import { RectFlag, FLAG_CODE_BY_SLUG } from "@/components/RectFlag";
 import CefrLevelMap from "@/components/CefrLevelMap";
 import { padananUjian, CATATAN_PADANAN } from "@/lib/levelEquivalence"; // [padanan-ujian-v1] // [placement-cefr-map-v1]
 import ListeningPlayer, { siapkanAudio } from "./ListeningPlayer"; // [placement-listening-v1]
+import { DuaJalurPlacement, SpeakingTestOffer } from "./SpeakingTest"; // [placement-dua-jalur-v1]
 
 // Teks jawaban benar per tipe soal — dipakai di rekap akhir (bukan saat menjawab)
 function correctAnswerText(q: Question): string {
@@ -380,7 +381,7 @@ function IntroScreen({ meta, total, listening, needContact, onContact, onStart, 
         </h1>
 
         <p className="text-lg text-gray-600 mb-8 leading-relaxed">
-          Gratis, {listening ? "5" : "2"} menit{listening ? `, termasuk ${listening} soal listening` : ""}. Dapatkan level CEFR kamu + rekomendasi chapter yang pas untuk mulai.
+          Self-assessment gratis, {listening ? "5" : "2"} menit{listening ? `, termasuk ${listening} soal listening` : ""}. Dapatkan level CEFR kamu + rekomendasi chapter yang pas untuk mulai.
         </p>
 
         <div className="grid grid-cols-3 gap-3 md:gap-4 mb-8">
@@ -394,6 +395,9 @@ function IntroScreen({ meta, total, listening, needContact, onContact, onStart, 
           Mulai Test
           <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
         </button>
+
+        <DuaJalurPlacement slug={meta.slug} langFull={funnelLangName(meta.slug)}
+          langTitle={displayLangTitle(meta)} durasi={listening ? "~5 menit" : "~2 menit"} />
       </div>
 
       <AnimatePresence>
@@ -1195,6 +1199,9 @@ function ResultScreen({ score, questions, log, meta, timeElapsedSec, contact, ge
             </button>
           </div>
         </motion.div>
+
+        <SpeakingTestOffer slug={meta.slug} langFull={funnelLangName(meta.slug)}
+          langTitle={displayLangTitle(meta)} sublevel={result.sublevel} />
         </div>
       </div>
 
