@@ -7,6 +7,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { ChevronLeft, ChevronRight, ClipboardList, School, Search, User, X } from "lucide-react";
 import { GRUP } from "@/app/jadwal/PilihBahasa";
 import { useOverlayLock } from "@/lib/overlayStore";
+import { FLAG_CODE_BY_SLUG, RectFlag } from "@/components/RectFlag";
 
 const JENIS = [
   { key: "private", icon: User, title: "Kelas Private 1-on-1", desc: "Lihat jam kosong pengajar 2 minggu ke depan, per bahasa." },
@@ -110,8 +111,12 @@ export default function CekJadwalPopup({ open, onClose }: { open: boolean; onClo
                     <div key={g.label}>
                       <p className="px-4 pb-1 pt-2.5 text-[11px] font-bold uppercase tracking-wider text-slate-400">{g.label}</p>
                       {g.langs.map((l) => (
-                        <a key={l.slug} href={`/jadwal/${l.slug}`} className="block rounded-lg px-4 py-2 text-sm text-slate-700 hover:bg-[#1A9E9E]/10 hover:text-[#1A9E9E]">
-                          {l.nama}
+                        <a key={l.slug} href={`/jadwal/${l.slug}`} className="group flex items-center gap-3 rounded-lg px-4 py-2 text-sm text-slate-700 hover:bg-[#1A9E9E]/10 hover:text-[#1A9E9E]">
+                          {/* [cek-jadwal-bendera-v1] bendera rounded-rectangle + zoom saat hover */}
+                          <span className="flex items-center gap-3 origin-left transition-transform duration-200 ease-out group-hover:scale-110">
+                            <RectFlag code={FLAG_CODE_BY_SLUG[l.en.toLowerCase()]} h={18} className="shadow-sm" />
+                            <span>{l.nama}</span>
+                          </span>
                         </a>
                       ))}
                     </div>

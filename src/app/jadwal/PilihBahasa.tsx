@@ -13,7 +13,7 @@ export const GRUP = (() => {
   return LANG_CATEGORIES.map((c) => {
     const langs = c.langs.filter((l) => !sudah.has(l));
     langs.forEach((l) => sudah.add(l));
-    return { label: c.label, langs: langs.map((l) => ({ slug: langSlugOf(l), nama: langNameId(l) })) };
+    return { label: c.label, langs: langs.map((l) => ({ slug: langSlugOf(l), nama: langNameId(l), en: l })) };
   }).filter((g) => g.langs.length);
 })();
 
