@@ -17,7 +17,7 @@ import { languageSlug } from "@/lib/languageSlug";
 
 /** Turunkan/naikkan sesudah cakupan Availability cukup — 2 = selalu ada cadangan. */
 export const MIN_PENGAJAR = 1;
-export const DURASI_PUBLIK = [45, 60, 90] as const;
+export const DURASI_PUBLIK = [30, 45, 60, 90] as const;
 
 const HARI = 86_400_000;
 const SEGAR_HARI = 30;

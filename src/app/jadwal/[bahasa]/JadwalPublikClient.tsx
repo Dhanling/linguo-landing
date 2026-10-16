@@ -13,7 +13,7 @@ import { CalendarCheck, Check, ChevronLeft, ChevronRight, MessageCircle, Refresh
 import { hhmm, wibInstant, wibOf } from "@/lib/aturJadwal";
 
 const WA_NUMBER = "6282116859493";
-const DURASI = [45, 60, 90];
+const DURASI = [30, 45, 60, 90];
 const MAKS_PILIH = 5;
 const HARI = ["Senin", "Selasa", "Rabu", "Kamis", "Jumat", "Sabtu", "Minggu"];
 const HARI_PENDEK = ["Sen", "Sel", "Rab", "Kam", "Jum", "Sab", "Min"];
