@@ -219,6 +219,7 @@ export async function POST(req: NextRequest) {
       class_mode,
       class_city,
       kids_level,
+      schedule_preference,
     } = body || {};
 
     // ── 1. Validasi minimal ────────────────────────────────────────────────
@@ -237,6 +238,11 @@ export async function POST(req: NextRequest) {
       : "online";
     const classCity =
       typeof class_city === "string" ? class_city.trim().slice(0, 200) : "";
+    // [jadwal-publik-v1] jam mingguan pilihan dari /jadwal/<bahasa> (teks bebas, dibatasi).
+    const schedulePreference =
+      program === "Kelas Private" && typeof schedule_preference === "string"
+        ? schedule_preference.trim().slice(0, 300) || null
+        : null;
     if (classMode === "offline" && classCity.length < 3) {
       return NextResponse.json(
         { error: "Isi kota/area kelas dulu untuk kelas offline ya." },
@@ -370,6 +376,8 @@ export async function POST(req: NextRequest) {
         // langsung lihat mana kelas offline & di kota mana.
         class_mode: classMode,
         class_city: classMode === "offline" ? classCity : null,
+        // [jadwal-publik-v1] dibawa xendit-webhook ke registrations.preferred_schedule.
+        schedule_preference: schedulePreference,
         source: "landing-page",
         payment_status: "PENDING",
         xendit_external_id: externalId,

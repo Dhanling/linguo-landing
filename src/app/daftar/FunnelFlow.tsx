@@ -21,7 +21,7 @@
 
 import { useCallback, useEffect, useState } from "react";
 import { useRouter, useSearchParams } from "next/navigation";
-import { ShieldCheck } from "lucide-react";
+import { CalendarCheck, ShieldCheck } from "lucide-react";
 import { RectFlag } from "@/components/RectFlag";
 import { supabase } from "@/lib/supabase-client";
 import {
@@ -49,6 +49,7 @@ import { regulerLangName } from "@/lib/classLanguage";
 import {
   buildFunnelPath,
   langNameId,
+  langSlugOf,
   levelsForProgram,
   type FunnelRoute,
 } from "@/lib/funnelRouting";
@@ -114,6 +115,9 @@ export default function FunnelFlow({ route }: { route: FunnelRoute }) {
     const n = Number(sp.get("peserta")) || SEMI_PRIVATE_MIN;
     return Math.min(Math.max(Math.round(n), SEMI_PRIVATE_MIN), SEMI_PRIVATE_MAX);
   });
+  // [jadwal-publik-v1] jam mingguan yang dipilih di /jadwal/<bahasa>, teks siap simpan
+  // ("Selasa 19.00-20.00, Kamis 19.00-20.00 (mulai 21 Okt)") → leads.schedule_preference.
+  const [jadwal, setJadwal] = useState(() => (sp.get("jadwal") || "").slice(0, 300));
   const [classMode, setClassMode] = useState<"online" | "offline">(
     sp.get("mode") === "offline" ? "offline" : "online",
   );
@@ -201,6 +205,7 @@ export default function FunnelFlow({ route }: { route: FunnelRoute }) {
       q.set("durasi", String(duration));
       q.set("sesi", String(sessions));
     }
+    if (programSlug === "private" && jadwal) q.set("jadwal", jadwal);
     if (canOffline) {
       q.set("mode", classMode);
       if (classMode === "offline" && offlineCity.trim()) q.set("kota", offlineCity.trim());
@@ -362,6 +367,7 @@ export default function FunnelFlow({ route }: { route: FunnelRoute }) {
           addon_ebook: wantEbook,
           addon_recording: wantRecording,
           sessions: isSessionProg ? sessions : null,
+          schedule_preference: program === "Kelas Private" && jadwal ? jadwal : null,
           class_size: program === "Semi Private" ? classSize : null,
           class_mode: canOffline ? classMode : "online",
           class_city: isOffline ? offlineCity.trim() : null,
@@ -658,6 +664,34 @@ export default function FunnelFlow({ route }: { route: FunnelRoute }) {
             </>
           )}
 
+          {/* [jadwal-publik-v1] Jam pilihan dari kalender publik, atau ajakan melihatnya. */}
+          {program === "Kelas Private" && langEn && (
+            <section className="mt-6 rounded-2xl border border-[#1A9E9E]/20 bg-[#1A9E9E]/5 p-4">
+              <div className="flex items-start gap-3">
+                <CalendarCheck className="mt-0.5 h-5 w-5 shrink-0 text-[#1A9E9E]" />
+                <div className="min-w-0 flex-1">
+                  {jadwal ? (
+                    <>
+                      <p className="text-sm font-bold text-slate-900">Jadwal pilihanmu</p>
+                      <p className="mt-0.5 text-sm text-slate-600">{jadwal}</p>
+                      <div className="mt-2 flex gap-3 text-xs font-semibold">
+                        <a href={`/jadwal/${langSlugOf(langEn)}`} className="text-[#1A9E9E] hover:underline">Ubah jam</a>
+                        <button type="button" onClick={() => setJadwal("")} className="text-slate-400 hover:text-slate-600">Hapus</button>
+                      </div>
+                    </>
+                  ) : (
+                    <>
+                      <p className="text-sm font-bold text-slate-900">Mau lihat jam kosong pengajar dulu?</p>
+                      <a href={`/jadwal/${langSlugOf(langEn)}`} className="mt-1 inline-block text-sm font-semibold text-[#1A9E9E] hover:underline">
+                        Cek jadwal Bahasa {langNameId(langEn)} →
+                      </a>
+                    </>
+                  )}
+                </div>
+              </div>
+            </section>
+          )}
+
           {/* [private-addon-ebook-recording-v1] Add-on modul + recording untuk
               Kelas Private. Sebelumnya opsi ini cuma ada di jalur WhatsApp:
               siswa yang daftar sendiri lewat web tidak pernah tahu fasilitasnya
@@ -924,6 +958,7 @@ export default function FunnelFlow({ route }: { route: FunnelRoute }) {
             )}
             {isSessionProg && <Row label="Durasi / sesi" value={`${duration} menit`} />}
             {isSessionProg && <Row label="Jumlah sesi" value={`${sessions} sesi`} />}
+            {program === "Kelas Private" && jadwal && <Row label="Jadwal pilihan" value={jadwal} />}
 
             {program === "Kelas Reguler" ? (
               <>

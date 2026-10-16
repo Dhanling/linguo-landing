@@ -42,24 +42,18 @@ const REG_COLS =
 
 const bahasaDasar = (l?: string | null) => String(l || "").split(/\s[-–]\s/)[0].trim().toLowerCase();
 
-/** Konteks lengkap satu registrasi: pengajar, sisa jatah, dan bahan hitungan slot. */
-export async function konteksReg(admin: Admin, reg: Reg, kecualiId?: string | null) {
-  const sekarang = Date.now();
-  const teacherId = reg.teacher_id!;
+/** Bagian milik pengajar: Availability + jam sibuknya (sesi & pertemuan batch).
+ *  Dipakai "Atur jadwal sendiri" (per registrasi) dan kalender publik /jadwal (per bahasa). */
+export async function bahanPengajar(admin: Admin, teacherId: string, sekarang: number, kecualiId?: string | null) {
   const sampai = new Date(sekarang + (JENDELA_HARI + 2) * HARI).toISOString();
   const dari = new Date(sekarang - HARI).toISOString();
 
-  const [guru, mingguan, pengecualian, jadwalReg, sibukGuru, sibukSiswa, reguler, etp] = await Promise.all([
-    admin.from("teachers").select("id, name, title, nickname, whatsapp, user_id, status").eq("id", teacherId).maybeSingle(),
+  const [mingguan, pengecualian, sibukGuru, reguler, etp] = await Promise.all([
     admin.from("teacher_availability").select("day_of_week, time_slot, created_at").eq("teacher_id", teacherId),
     admin.from("teacher_availability_overrides").select("override_date, time_slot, type, created_at").eq("teacher_id", teacherId)
       .gte("override_date", new Date(sekarang - HARI).toISOString().slice(0, 10)),
     admin.from("schedules").select("id, registration_id, teacher_id, student_id, scheduled_at, duration_minutes, status, session_number")
-      .eq("registration_id", reg.id).range(0, 999),
-    admin.from("schedules").select("id, registration_id, teacher_id, student_id, scheduled_at, duration_minutes, status, session_number")
       .eq("teacher_id", teacherId).gte("scheduled_at", dari).lte("scheduled_at", sampai).range(0, 999),
-    admin.from("schedules").select("id, registration_id, teacher_id, student_id, scheduled_at, duration_minutes, status, session_number")
-      .eq("student_id", reg.student_id).gte("scheduled_at", dari).lte("scheduled_at", sampai).range(0, 999),
     admin.from("regular_batches").select("id, session_day, session_start_time, session_duration_min, start_date, end_date, total_sessions, status, cancelled_at")
       .eq("teacher_id", teacherId).in("status", ["Confirmed", "Running"]).is("cancelled_at", null),
     admin.from("test_prep_batches").select("id, schedule_days, schedule_time, duration_minutes, start_date, end_date, sessions_total, cancelled_at")
@@ -75,18 +69,9 @@ export async function konteksReg(admin: Admin, reg: Reg, kecualiId?: string | nu
   );
   const availSegar = avail.length > 0 && terakhirDiubah > sekarang - AVAIL_SEGAR_HARI * HARI;
 
-  // Jatah: yang sudah lewat (minimal sessions_used — sesi lama sebelum ada baris schedules)
-  // + yang masih akan datang.
-  const sesiReg = ((jadwalReg.data ?? []) as Sched[]).filter(jalan);
-  const lewat = sesiReg.filter((s) => new Date(s.scheduled_at).getTime() < sekarang).length;
-  const mendatang = sesiReg.filter((s) => new Date(s.scheduled_at).getTime() >= sekarang).length;
-  const total = Number(reg.sessions_total) || Number(reg.total_sessions) || 0;
-  const terpakai = Math.max(Number(reg.sessions_used) || 0, lewat) + mendatang;
-  const sisa = Math.max(0, total - terpakai);
-
   const sibuk: Interval[] = [];
   const dilihat = new Set<string>();
-  for (const s of [...((sibukGuru.data ?? []) as Sched[]), ...((sibukSiswa.data ?? []) as Sched[])]) {
+  for (const s of (sibukGuru.data ?? []) as Sched[]) {
     if (dilihat.has(s.id) || s.id === kecualiId || !jalan(s)) continue;
     dilihat.add(s.id);
     sibuk.push(intervalOf(s));
@@ -116,6 +101,48 @@ export async function konteksReg(admin: Admin, reg: Reg, kecualiId?: string | nu
     days: b.schedule_days, time: b.schedule_time, startDate: b.start_date, endDate: b.end_date, totalSessions: b.sessions_total,
   });
 
+  return {
+    availSegar,
+    sibuk,
+    sibukIds: dilihat,
+    mingguan: new Set(avail.map((a) => `${a.day_of_week}-${String(a.time_slot).slice(0, 5)}`)),
+    pengecualian: new Map(over.map((o) => [`${o.override_date}-${String(o.time_slot).slice(0, 5)}`, o.type])),
+  };
+}
+
+/** Konteks lengkap satu registrasi: pengajar, sisa jatah, dan bahan hitungan slot. */
+export async function konteksReg(admin: Admin, reg: Reg, kecualiId?: string | null) {
+  const sekarang = Date.now();
+  const teacherId = reg.teacher_id!;
+  const sampai = new Date(sekarang + (JENDELA_HARI + 2) * HARI).toISOString();
+  const dari = new Date(sekarang - HARI).toISOString();
+
+  const [guru, pengajar, jadwalReg, sibukSiswa] = await Promise.all([
+    admin.from("teachers").select("id, name, title, nickname, whatsapp, user_id, status").eq("id", teacherId).maybeSingle(),
+    bahanPengajar(admin, teacherId, sekarang, kecualiId),
+    admin.from("schedules").select("id, registration_id, teacher_id, student_id, scheduled_at, duration_minutes, status, session_number")
+      .eq("registration_id", reg.id).range(0, 999),
+    admin.from("schedules").select("id, registration_id, teacher_id, student_id, scheduled_at, duration_minutes, status, session_number")
+      .eq("student_id", reg.student_id).gte("scheduled_at", dari).lte("scheduled_at", sampai).range(0, 999),
+  ]);
+  const { availSegar } = pengajar;
+
+  // Jatah: yang sudah lewat (minimal sessions_used — sesi lama sebelum ada baris schedules)
+  // + yang masih akan datang.
+  const sesiReg = ((jadwalReg.data ?? []) as Sched[]).filter(jalan);
+  const lewat = sesiReg.filter((s) => new Date(s.scheduled_at).getTime() < sekarang).length;
+  const mendatang = sesiReg.filter((s) => new Date(s.scheduled_at).getTime() >= sekarang).length;
+  const total = Number(reg.sessions_total) || Number(reg.total_sessions) || 0;
+  const terpakai = Math.max(Number(reg.sessions_used) || 0, lewat) + mendatang;
+  const sisa = Math.max(0, total - terpakai);
+
+  const sibuk: Interval[] = [...pengajar.sibuk];
+  for (const s of (sibukSiswa.data ?? []) as Sched[]) {
+    if (pengajar.sibukIds.has(s.id) || s.id === kecualiId || !jalan(s)) continue;
+    pengajar.sibukIds.add(s.id);
+    sibuk.push(intervalOf(s));
+  }
+
   let batasAkhir: number | null = null;
   if (reg.expiry_date) {
     const [y, m, d] = reg.expiry_date.slice(0, 10).split("-").map(Number);
@@ -123,8 +150,8 @@ export async function konteksReg(admin: Admin, reg: Reg, kecualiId?: string | nu
   }
 
   const bahan: BahanSlot = {
-    mingguan: new Set(avail.map((a) => `${a.day_of_week}-${String(a.time_slot).slice(0, 5)}`)),
-    pengecualian: new Map(over.map((o) => [`${o.override_date}-${String(o.time_slot).slice(0, 5)}`, o.type])),
+    mingguan: pengajar.mingguan,
+    pengecualian: pengajar.pengecualian,
     sibuk,
     durasi: durasiMenit(reg.duration),
     sekarang,
