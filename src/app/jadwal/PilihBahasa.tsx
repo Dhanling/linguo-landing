@@ -8,7 +8,7 @@ import { Check, ChevronDown, Search } from "lucide-react";
 import { LANG_CATEGORIES, langNameId, langSlugOf } from "@/lib/funnelRouting";
 
 // Populer di atas, kategori lain tanpa mengulang bahasa yang sudah tampil.
-const GRUP = (() => {
+export const GRUP = (() => {
   const sudah = new Set<string>();
   return LANG_CATEGORIES.map((c) => {
     const langs = c.langs.filter((l) => !sudah.has(l));

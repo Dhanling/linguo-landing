@@ -72,7 +72,6 @@ const STATIC_ROUTES: Array<{
   { path: "/alquran", priority: 0.8, changeFrequency: "monthly" },
   { path: "/kelas-anak", priority: 0.85, changeFrequency: "monthly" },
   { path: "/jadwal-kelas-reguler", priority: 0.85, changeFrequency: "weekly" },
-  { path: "/jadwal", priority: 0.75, changeFrequency: "weekly", updated: new Date("2026-10-16") },
   { path: "/toko", priority: 0.8, changeFrequency: "weekly" },
   { path: "/toko/paket-elearning", priority: 0.8, changeFrequency: "weekly" },
   // [seo-ebook-canonical-v1] /produk/ebook halaman jualan sungguhan (ditaut dari

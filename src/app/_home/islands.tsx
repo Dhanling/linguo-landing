@@ -22,6 +22,7 @@ import TautanLegal from "@/components/TautanLegal"; // [xendit-legal-links-v1]
 import Reveal from "@/components/Reveal"; // linguo-patch:scroll-reveal-v1
 import HeroModel3D from "@/components/HeroModel3D"; // [hero-3d-v1]
 import { useOverlayLock } from "@/lib/overlayStore";
+import CekJadwalPopup from "@/components/CekJadwalPopup"; // [cek-jadwal-popup-v1]
 import { TESTIMONIALS } from "@/data/testimonials";
 import { regulerLangName } from "@/lib/classLanguage"; // [reguler-english-conversation-v1]
 // wa-quick-program-lang-sync-v1 — aturan bahasa × program (sumber tunggal)
@@ -118,6 +119,14 @@ export function Navbar({lang,setLang,onPricingTab,onLoginOpen}:{lang:string;setL
   const [placementPernah, setPlacementPernah] = useState(false);
   useEffect(() => { if (placementPickerOpen) setPlacementPernah(true); }, [placementPickerOpen]);
   const [startPickerOpen, setStartPickerOpen] = useState(false); // linguo-patch:start-picker-v1
+  const [cekJadwalOpen, setCekJadwalOpen] = useState(false); // [cek-jadwal-popup-v1]
+  useEffect(() => {
+    // /jadwal lama dialihkan ke /#cek-jadwal → langsung buka pop-up.
+    const cek = () => { if (window.location.hash === "#cek-jadwal") { setCekJadwalOpen(true); history.replaceState(null, "", window.location.pathname + window.location.search); } };
+    cek();
+    window.addEventListener("hashchange", cek);
+    return () => window.removeEventListener("hashchange", cek);
+  }, []);
   useEffect(() => {
     let ticking = false;
     const fn = () => {
@@ -212,8 +221,8 @@ export function Navbar({lang,setLang,onPricingTab,onLoginOpen}:{lang:string;setL
                 )}</AnimatePresence>
               </div>
               {/* Other nav links */}
-              {[["Watch & Learn","/watch-learn"],["Cek Jadwal","/jadwal"],["Harga","/harga"],["Silabus","/silabus"],["Blog","/blog"]].map(([l,h]) => (
-                <a key={l} href={h} className={`cursor-pointer relative text-sm font-bold py-1 ${c?"text-slate-700 hover:text-slate-900":"text-white hover:text-white"} transition-colors group`}>
+              {[["Watch & Learn","/watch-learn"],["Cek Jadwal","#cek-jadwal"],["Harga","/harga"],["Silabus","/silabus"],["Blog","/blog"]].map(([l,h]) => (
+                <a key={l} href={h} onClick={h==="#cek-jadwal" ? (e)=>{ e.preventDefault(); setCekJadwalOpen(true); } : undefined} className={`cursor-pointer relative text-sm font-bold py-1 ${c?"text-slate-700 hover:text-slate-900":"text-white hover:text-white"} transition-colors group`}>
                   {l}
                   <span className={`absolute left-0 -bottom-1 h-[3px] w-0 group-hover:w-full transition-all duration-300 rounded-full bg-[#fbbf24]`}/>
                 </a>
@@ -264,7 +273,7 @@ export function Navbar({lang,setLang,onPricingTab,onLoginOpen}:{lang:string;setL
               <a href="/toko/paket-elearning" onClick={()=>setOpen(false)} className="text-base py-3 text-left">E-Learning</a>
               <a href="/produk/ebook" onClick={()=>setOpen(false)} className="text-base py-3 text-left">E-Book</a>
               <a href="/watch-learn" onClick={()=>setOpen(false)} className="text-base py-3 text-left">Watch &amp; Learn</a>
-              <a href="/jadwal" onClick={()=>setOpen(false)} className="text-base py-3">Cek Jadwal</a>
+              <button onClick={()=>{setOpen(false);setCekJadwalOpen(true);}} className="text-base py-3 text-left">Cek Jadwal</button>
               <a href="/harga" onClick={()=>setOpen(false)} className="text-base py-3">Harga</a>
               <a href="/silabus" onClick={()=>setOpen(false)} className="text-base py-3">Silabus</a>
               <a href="/blog" onClick={()=>setOpen(false)} className="text-base py-3">Blog</a>
@@ -334,6 +343,7 @@ export function Navbar({lang,setLang,onPricingTab,onLoginOpen}:{lang:string;setL
           </>
         )}
       </AnimatePresence>
+      <CekJadwalPopup open={cekJadwalOpen} onClose={()=>setCekJadwalOpen(false)} />
       {/* linguo-patch:old-wa-float-removed-v2 — tombol WA float lama dihapus; diganti ChatWidget Ling */}
       {(placementPickerOpen || placementPernah) && <PlacementPicker open={placementPickerOpen} onClose={()=>setPlacementPickerOpen(false)} />}
 
