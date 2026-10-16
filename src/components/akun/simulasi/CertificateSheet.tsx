@@ -25,6 +25,7 @@
 // dan seksi resmi yang TIDAK diujikan ikut dicetak sebagai baris "Tidak diujikan"
 // — dulu baris itu dibuang diam-diam sehingga sertifikat TOEFL ITP tampil hanya
 // "Section 1" dan "Section 3" tanpa penjelasan ke mana Section 2 pergi.
+import { useEffect, useState } from "react";
 import type { OfficialScore } from "@/lib/simScore";
 import { officialBody } from "@/lib/simCertificate";
 
@@ -190,6 +191,8 @@ export default function CertificateSheet({ data, scale = 1 }: { data: Certificat
               <p><b>Diterbitkan</b> {fmtTanggalPanjang(data.submittedAt)}</p>
               <p>Keaslian sertifikat dapat dicek pada akun linguo.id pemiliknya dengan nomor di atas.</p>
             </div>
+            {/* [sertifikat-ttd-rini-v1] semua sertifikat ditandatangani Head of Curriculum */}
+            <TtdRini />
           </div>
 
           <p className="sert-disclaimer">
@@ -297,7 +300,12 @@ export const CERT_CSS = `
 .sert-skill.is-absent .sert-skill-bar { background: #f3f6f9; }
 .sert-partial { margin: 12px 0 0; font-size: 10px; color: #a0aec0; }
 
-.sert-foot { padding-top: 14px; border-top: 1px solid #eef2f6; }
+.sert-foot { display: flex; align-items: flex-end; justify-content: space-between; gap: 18px; padding-top: 14px; border-top: 1px solid #eef2f6; }
+/* [sertifikat-ttd-rini-v1] blok tanda tangan Head of Curriculum */
+.sert-ttd { flex: 0 0 auto; min-width: 170px; text-align: center; }
+.sert-ttd img { display: block; height: 54px; width: auto; margin: 0 auto -8px; }
+.sert-ttd-name { margin: 0; padding-top: 5px; border-top: 1px solid #cbd5e1; font-size: 11px; font-weight: 800; color: #12172B; }
+.sert-ttd-role { margin: 2px 0 0; font-size: 8.5px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: #6b7280; }
 .sert-foot-left { font-size: 9.5px; line-height: 1.75; color: #94a3b8; }
 .sert-foot-left p { margin: 0; display: inline; }
 .sert-foot-left p + p::before { content: " · "; }
@@ -321,3 +329,43 @@ export const CERT_CSS = `
   * { -webkit-print-color-adjust: exact !important; print-color-adjust: exact !important; }
 }
 `;
+
+/* [sertifikat-ttd-rini-v1] Tanda tangan Head of Curriculum untuk SEMUA sertifikat
+   (kelas & simulasi). PNG di public/sertifikat diubah ke data-URI dulu supaya pasti
+   ikut tertangkap html2canvas saat Unduh PDF — pola yang sama dengan QR verifikasi. */
+export const TTD_RINI = {
+  src: "/sertifikat/ttd-rini.png",
+  nama: "Rini Rismawati",
+  jabatan: "Head of Curriculum",
+} as const;
+
+export function useTtdDataUrl(src: string = TTD_RINI.src): string | null {
+  const [url, setUrl] = useState<string | null>(null);
+  useEffect(() => {
+    let batal = false;
+    fetch(src)
+      .then((r) => (r.ok ? r.blob() : Promise.reject(new Error(String(r.status)))))
+      .then((b) => new Promise<string>((res, rej) => {
+        const fr = new FileReader();
+        fr.onload = () => res(String(fr.result));
+        fr.onerror = () => rej(fr.error);
+        fr.readAsDataURL(b);
+      }))
+      .then((u) => { if (!batal) setUrl(u); })
+      .catch(() => { if (!batal) setUrl(src); }); // jatuh ke URL biasa — tetap tampil di layar
+    return () => { batal = true; };
+  }, [src]);
+  return url;
+}
+
+function TtdRini() {
+  const ttd = useTtdDataUrl();
+  return (
+    <div className="sert-ttd">
+      {/* eslint-disable-next-line @next/next/no-img-element */}
+      {ttd ? <img src={ttd} alt="" /> : <div style={{ height: 54 }} />}
+      <p className="sert-ttd-name">{TTD_RINI.nama}</p>
+      <p className="sert-ttd-role">{TTD_RINI.jabatan}</p>
+    </div>
+  );
+}

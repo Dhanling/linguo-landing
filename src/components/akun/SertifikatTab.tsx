@@ -17,6 +17,7 @@ import {
 // [sertifikat-banner-foto-v1] foto stok bahasa — sumber sama dgn kartu kelas di Beranda
 import { getLangPhoto } from "@/lib/lang-visuals";
 import QRCode from "qrcode"; // [sertifikat-qr-verifikasi-v1]
+import { TTD_RINI, useTtdDataUrl } from "@/components/akun/simulasi/CertificateSheet"; // [sertifikat-ttd-rini-v1]
 import { tr, useT, useUiLang, type UiLang } from "@/lib/uiLang"; // [ui-lang-switcher-v1]
 
 // ── lazy-load CDN sekali doang -> nol npm dep, workflow "cp 1 file" tetep aman. ──
@@ -643,6 +644,8 @@ function IssuedDetail({ ct, studentName, defaultName, onSaveName }: { ct: Cert; 
   // linguo.id/verifikasi/<id registrasi>. Data-URI (bukan gambar remote) supaya ikut
   // tertangkap html2canvas saat Unduh PDF. Sertifikat contoh (id bukan UUID) tanpa QR.
   const verifyUrl = ct.status === "issued" && /^[0-9a-f-]{36}$/i.test(ct.id) ? `https://linguo.id/verifikasi/${ct.id}` : null;
+  // [sertifikat-ttd-rini-v1] tanda tangan Head of Curriculum (data-URI, ikut ke PDF)
+  const ttdSrc = useTtdDataUrl();
   const [qrSrc, setQrSrc] = useState<string | null>(null);
   useEffect(() => {
     if (!verifyUrl) { setQrSrc(null); return; }
@@ -794,13 +797,17 @@ function IssuedDetail({ ct, studentName, defaultName, onSaveName }: { ct: Cert; 
             {showsSkills(kind) && <SkillBlock ct={ct} accent={col.accent} />}
           </div>
 
-          {/* kaki: tanda tangan pengajar · segel · tanggal terbit */}
+          {/* kaki: tanda tangan Head of Curriculum · QR/segel · tanggal terbit + pengajar
+              [sertifikat-ttd-rini-v1] Semua sertifikat ditandatangani Rini Rismawati
+              (Head of Curriculum); nama pengajar tetap tercantum di kolom kanan. */}
           <div className="mx-auto mt-10 grid max-w-[560px] grid-cols-[1fr_auto_1fr] items-end gap-4">
             <div className="min-w-0 text-left">
               {qrSrc && <p className="mb-1 inline-flex items-center gap-1 text-[9px] font-bold uppercase tracking-[0.12em]" style={{ color: col.accent }}><BadgeCheck className="h-3 w-3" />{t("Ditandatangani elektronik")}</p>}
-              <p className="truncate text-[14px] font-semibold italic text-[#12172B]">{ct.teacher}</p>
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              {ttdSrc ? <img src={ttdSrc} alt="" className="-mb-2 block h-[56px] w-auto" /> : <div className="h-[48px]" />}
+              <p className="truncate text-[14px] font-semibold text-[#12172B]">{TTD_RINI.nama}</p>
               <div className="mt-1.5 h-px w-full max-w-[180px]" style={{ background: "#CBD5E1" }} />
-              <p className="mt-1.5 text-[10px] font-bold uppercase tracking-[0.14em] text-[#6B7280]">{t("Pengajar")}</p>
+              <p className="mt-1.5 text-[10px] font-bold uppercase tracking-[0.14em] text-[#6B7280]">{TTD_RINI.jabatan}</p>
             </div>
             {qrSrc ? (
               // [sertifikat-qr-verifikasi-v1] pindai → halaman verifikasi publik
@@ -817,6 +824,7 @@ function IssuedDetail({ ct, studentName, defaultName, onSaveName }: { ct: Cert; 
               <p className="truncate text-[14px] font-semibold text-[#12172B]">{to || "—"}</p>
               <div className="ml-auto mt-1.5 h-px w-full max-w-[180px]" style={{ background: "#CBD5E1" }} />
               <p className="mt-1.5 text-[10px] font-bold uppercase tracking-[0.14em] text-[#6B7280]">{t("Tanggal terbit")}</p>
+              <p className="mt-2 truncate text-[10px] font-semibold text-[#6B7280]">{t("Pengajar")}: <span className="italic text-[#12172B]">{ct.teacher}</span></p>
             </div>
           </div>
           {ct.idNo && <p className="mt-8 text-center text-[10px] font-semibold tracking-[0.12em] text-[#6B7280]">{t("No. Sertifikat")} · {ct.idNo}</p>}

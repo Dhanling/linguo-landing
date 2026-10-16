@@ -133,5 +133,25 @@ export async function GET(req: NextRequest) {
   )) || [];
   const saldo_linguo = saldoRows.reduce((a: number, r: any) => a + (Number(r.amount) || 0), 0);
 
-  return NextResponse.json({ student: { ...student, registrations, saldo_linguo }, schedules, upcomingSchedules });
+  // [beranda-produk-digital-v1] E-book / e-learning milik siswa — di klien query-nya
+  // bergantung sesi (auth_user_id / email sesi), yang tak ada di POV staf. Cocokkan
+  // lewat student_id, registrasi yang dilahirkan pembelian, ATAU email siswa (banyak
+  // baris lama ber-auth_user_id & student_id NULL — kasus Abdul Aziz 16 Okt 2026).
+  // Kolom select WAJIB sama dengan query klien di akun/page.tsx.
+  let digitalPurchases: any[] = [];
+  try {
+    const email = String(student.email || "").trim();
+    const emailAman = /^[^\s,()"'\\%*]+@[^\s,()"'\\%*]+$/.test(email) ? email : "";
+    const syarat = [`student_id.eq.${id}`];
+    if (regIds.length > 0) syarat.push(`registration_id.in.(${regIds.join(",")})`);
+    if (emailAman) syarat.push(`buyer_email.ilike.${emailAman}`);
+    digitalPurchases =
+      (await rest(
+        `digital_purchases?payment_status=eq.Lunas&or=(${syarat.join(",")})` +
+          `&select=id,registration_id,digital_products(id,type,title,language,cover_url,file_url,video_playlist_url)` +
+          `&order=created_at.desc`
+      )) || [];
+  } catch { digitalPurchases = []; }
+
+  return NextResponse.json({ student: { ...student, registrations, saldo_linguo }, schedules, upcomingSchedules, digitalPurchases });
 }
