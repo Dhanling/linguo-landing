@@ -28,6 +28,13 @@ const PROGRAM_LABEL: Record<string, string> = {
   kids: "Kelas Kids",
 };
 
+// [speaking-test-bayar-v1] Speaking Test (jalur ke-2 placement test) = 1 sesi
+// Private 60 menit level A1 dengan pengajar lokal — harganya persis trial
+// Private A1 60 menit, jadi menumpang alur trial (baris trial_registrations
+// program "private", muncul di menu Trial Class untuk dijadwalkan). Dibedakan
+// lewat source "landing-speaking-test" + lead source "Speaking Test".
+const SPEAKING_TEST_SOURCE = "landing-speaking-test";
+
 export async function POST(req: NextRequest) {
   try {
     const body = await req.json();
@@ -43,16 +50,24 @@ export async function POST(req: NextRequest) {
       name,
       email,
       wa_number,
-      program,
       language,
-      level, // trial-level-price-v1 — level CEFR pilihan siswa (Private saja)
       kids_type,
-      duration_minutes,
-      teacher_type, // native-pricing-v1 — "lokal" | "native"
       preferred_schedule,
       affiliate_id, // referral-code-trial-v1 — hasil validasi di client (opsional)
       affiliate_ref_code, // kode referral mentah, disimpan untuk audit (opsional)
+      jenis, // speaking-test-bayar-v1 — "speaking_test" | undefined (trial biasa)
+      return_slug, // speaking-test-bayar-v1 — slug silabus untuk tombol kembali
     } = body || {};
+    const isSpeaking = jenis === "speaking_test";
+    const backSlug =
+      typeof return_slug === "string" && /^[a-z0-9-]{2,40}$/.test(return_slug)
+        ? return_slug
+        : null;
+    // Speaking Test: paksa parameter tetap — jangan percaya pilihan klien.
+    const program = isSpeaking ? "private" : body?.program;
+    const level = isSpeaking ? "A1" : body?.level;
+    const duration_minutes = isSpeaking ? 60 : body?.duration_minutes;
+    const teacher_type = isSpeaking ? "lokal" : body?.teacher_type;
 
     // ── 1. Validasi minimal ────────────────────────────────────────────────
     if (!name || !email || !wa_number || !program || !language) {
@@ -140,7 +155,8 @@ export async function POST(req: NextRequest) {
     };
 
     // ── 3. Soft dedup — 1 email boleh trial lagi, asal beda bahasa ─────────
-    try {
+    // Speaking Test tidak ikut dedup: boleh tes ulang, dan tidak memblok trial.
+    if (!isSpeaking) try {
       const dupRes = await fetch(
         `${SUPABASE_URL}/rest/v1/trial_registrations` +
           `?email=ilike.${encodeURIComponent(email)}` +
@@ -166,10 +182,11 @@ export async function POST(req: NextRequest) {
       console.warn("Trial dedup check failed (non-fatal):", e);
     }
 
-    const externalId = `LINGUO-TRIAL-${Date.now()}-${Math.random()
+    // Prefix tetap "LINGUO-TRIAL-" — xendit-reconcile-registration menyaring itu.
+    const externalId = `${isSpeaking ? "LINGUO-TRIAL-SPEAK" : "LINGUO-TRIAL"}-${Date.now()}-${Math.random()
       .toString(36)
       .slice(2, 7)}`;
-    const programLabel = PROGRAM_LABEL[program];
+    const programLabel = isSpeaking ? "Speaking Test" : PROGRAM_LABEL[program];
 
     // ── 4. Insert trial_registrations (WAJIB sukses) ───────────────────────
     const trialRes = await fetch(
@@ -192,7 +209,8 @@ export async function POST(req: NextRequest) {
           payment_status: "PENDING",
           amount,
           xendit_external_id: externalId,
-          source: "landing-kelas-trial",
+          source: isSpeaking ? SPEAKING_TEST_SOURCE : "landing-kelas-trial",
+          notes: isSpeaking ? "Speaking Test (placement test dengan pengajar, 60 menit)" : null,
           // referral-code-trial-v1 — simpan attribusi di row trial supaya bertahan
           // setelah redirect. Komisi dicatat saat PAID (lihat verify-trial-payment).
           affiliate_id: affiliate_id || null,
@@ -231,7 +249,7 @@ export async function POST(req: NextRequest) {
           language,
           level: trialLevel, // trial-level-price-v1
           program: programLabel,
-          source: "Trial Class",
+          source: isSpeaking ? "Speaking Test" : "Trial Class",
           payment_status: "PENDING",
           xendit_external_id: externalId,
           amount,
@@ -255,8 +273,9 @@ export async function POST(req: NextRequest) {
     }
 
     // ── 6. Buat invoice Xendit ─────────────────────────────────────────────
-    const desc =
-      `Trial ${programLabel} — ${language}` +
+    const desc = isSpeaking
+      ? `Speaking Test ${language} — 60 menit 1-on-1 dengan pengajar`
+      : `Trial ${programLabel} — ${language}` +
       (program === "kids"
         ? ` (${kids_type})`
         : ` ${trialLevel} (${durationMin} menit/sesi)`) +
@@ -290,8 +309,11 @@ export async function POST(req: NextRequest) {
           email,
           mobile_number: xenditMobile(wa_number),
         },
-        success_redirect_url: `${BASE_URL}/kelas-trial/success?ext=${externalId}`,
-        failure_redirect_url: `${BASE_URL}/kelas-trial?gagal=1`,
+        success_redirect_url: `${BASE_URL}/kelas-trial/success?ext=${externalId}` +
+          (isSpeaking ? "&jenis=speaking" : ""),
+        failure_redirect_url: isSpeaking
+          ? `${BASE_URL}/silabus/${backSlug ?? "english"}/coba?gagal=1`
+          : `${BASE_URL}/kelas-trial?gagal=1`,
         items: [{ name: desc, quantity: 1, price: amount }],
       }),
     });

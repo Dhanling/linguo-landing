@@ -587,6 +587,27 @@ export default function HargaPage() {
           </p>
         </div>
 
+        {/* [speaking-test-bayar-v1] Placement test dua jalur */}
+        <div className="mt-8 bg-white border border-slate-100 rounded-2xl p-6 shadow-sm">
+          <h3 className="font-bold text-slate-800 mb-4">Placement Test: dua jalur</h3>
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+            <div className="rounded-xl border border-[#1A9E9E]/30 bg-[#1A9E9E]/5 p-4">
+              <div className="flex items-center justify-between gap-2">
+                <p className="font-semibold text-slate-800">Self-assessment online</p>
+                <span className="text-xs font-bold text-white bg-[#1A9E9E] rounded-full px-2.5 py-0.5">Gratis</span>
+              </div>
+              <p className="text-sm text-slate-600 mt-1.5">Grammar, reading & listening. Hasil level CEFR langsung keluar.</p>
+            </div>
+            <div className="rounded-xl border border-violet-200 bg-violet-50 p-4">
+              <div className="flex items-center justify-between gap-2">
+                <p className="font-semibold text-slate-800">Speaking Test dengan pengajar</p>
+                <span className="text-xs font-bold text-violet-700 bg-violet-100 rounded-full px-2.5 py-0.5 whitespace-nowrap">Harga Private A1</span>
+              </div>
+              <p className="text-sm text-slate-600 mt-1.5">60 menit 1-on-1 via video call, seharga 1 sesi Kelas Private level A1 bahasa itu (mis. Inggris Rp 100.000). Bayar langsung di halaman placement test.</p>
+            </div>
+          </div>
+        </div>
+
         {/* Bottom CTA */}
         <div className="mt-8 bg-gradient-to-br from-[#1A9E9E] via-[#17918f] to-[#0e7070] rounded-2xl p-8 text-white text-center relative overflow-hidden">
           <div className="absolute -top-8 -right-8 w-40 h-40 rounded-full bg-white/5 pointer-events-none" />

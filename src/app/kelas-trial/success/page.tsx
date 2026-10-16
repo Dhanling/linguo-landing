@@ -17,10 +17,14 @@ type State = "checking" | "paid" | "pending" | "error";
 
 export default function TrialSuccessPage() {
   const [state, setState] = useState<State>("checking");
+  // [speaking-test-bayar-v1] Speaking Test menumpang alur trial — teksnya beda.
+  const [speaking, setSpeaking] = useState(false);
 
   useEffect(() => {
     if (typeof window === "undefined") return;
-    const ext = new URLSearchParams(window.location.search).get("ext") || "";
+    const qs = new URLSearchParams(window.location.search);
+    const ext = qs.get("ext") || "";
+    setSpeaking(qs.get("jenis") === "speaking");
     if (!ext) {
       setState("error");
       return;
@@ -74,7 +78,9 @@ export default function TrialSuccessPage() {
     paid: {
       icon: "✅",
       title: "Pembayaran berhasil!",
-      desc: "Terima kasih sudah daftar Trial Class Linguo. Tim kami akan menghubungi kamu via WhatsApp untuk mengatur jadwal sesi trial.",
+      desc: speaking
+        ? "Terima kasih sudah booking Speaking Test Linguo. Tim kami akan menghubungi kamu via WhatsApp untuk mengatur jadwal tes 60 menit dengan pengajar."
+        : "Terima kasih sudah daftar Trial Class Linguo. Tim kami akan menghubungi kamu via WhatsApp untuk mengatur jadwal sesi trial.",
     },
     pending: {
       icon: "🕐",
