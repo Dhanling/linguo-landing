@@ -2684,6 +2684,49 @@ const MANDIRI_NATIVE: Record<string, { native: string; label: string }> = {
 type AkunSnapshot = { user: any; student: any; schedules: any[]; badges: any[]; streak: number };
 let akunSnapshot: AkunSnapshot | null = null;
 
+// ── [beranda-produk-digital-v1] ─────────────────────────────────────────────
+// Bentuk kartu produk digital (e-book / e-learning) milik siswa untuk Beranda,
+// "Lanjutkan Belajar", dan tautan playlist E-Learning. Dipakai dua jalur:
+// query klien (siswa login) dan respons /api/preview-student (POV staf) —
+// satu pemetaan supaya keduanya tak pernah beda isi.
+type ProdukDigitalItem = { id: string; purchaseId: string; type: "ebook" | "elearning"; title: string; language: string | null; cover: string | null; link: string | null };
+function susunProdukDigital(rows: any[]): { map: Record<string, string>; punya: ProdukDigitalItem[] } {
+  const map: Record<string, string> = {};
+  const punya: ProdukDigitalItem[] = [];
+  const sudah = new Set<string>();
+  for (const row of rows || []) {
+    const prod = row?.digital_products;
+    if (!prod) continue;
+    const link = externalLinkFor(prod);
+    const linkSiap = link && !isPlaceholderLink(link) ? link : null;
+    // Satu produk bisa dibeli dua kali (perpanjangan) — cukup satu kartu.
+    if (prod.id && !sudah.has(prod.id)) {
+      sudah.add(prod.id);
+      punya.push({
+        id: String(prod.id),
+        // [lanjutkan-belajar-v1] posisi baca e-book disimpan per PEMBELIAN
+        // (kunci `ebook-hal:<purchaseId>` di EbookReader), bukan per produk.
+        purchaseId: String(row.id),
+        type: prod.type === "ebook" ? "ebook" : "elearning",
+        title: prod.title || "Produk digital",
+        language: prod.language || null,
+        /* [lingbook-sampul-kartu-v1] Sampul asli produk buat kartu "Lanjutkan
+           Belajar" — ikon buku generik tak memberi tahu BUKU YANG MANA yang
+           terakhir dibaca. Kosong → jatuh ke foto stok bahasa. */
+        cover: prod.cover_url || null,
+        // E-Book dibaca di dalam Perpustakaan (EbookReader), bukan lewat tautan luar.
+        link: prod.type === "ebook" ? null : linkSiap,
+      });
+    }
+    if (prod.type === "ebook") continue;
+    if (!linkSiap) continue;
+    if (row.registration_id) map[row.registration_id] = linkSiap;
+    const lang = (prod.language || "").trim().toLowerCase();
+    if (lang) map[`lang:${lang}`] = linkSiap;
+  }
+  return { map, punya };
+}
+
 export default function AkunPage() {
 
   const [user, setUser] = useState<any>(() => akunSnapshot?.user ?? null);
@@ -3327,6 +3370,11 @@ export default function AkunPage() {
         if (c?.student) {
           setStudent(c.student);
           setAllSchedules(c.schedules || []);
+          // [beranda-produk-digital-v1] e-book/e-learning milik siswa ikut di snapshot
+          if (Array.isArray(c.digitalPurchases)) {
+            const { map, punya } = susunProdukDigital(c.digitalPurchases);
+            setElearnLink(map); setProdukDigital(punya);
+          }
           simpanDaftarLevel(previewId, c.student?.registrations); // [kelas-level-switcher-v3]
           hadCache = true;
         }
@@ -3357,9 +3405,17 @@ export default function AkunPage() {
           sessionStorage.setItem(`linguo_preview_cache_${previewId}`, JSON.stringify({
             student: json.student,
             schedules: json.schedules || json.upcomingSchedules || [],
+            digitalPurchases: json.digitalPurchases || [],
           }));
         } catch {}
         setStudent(json.student);
+        /* [beranda-produk-digital-v1] POV staf tak punya sesi siswa → query
+           digital_purchases di klien tak jalan; routenya yang mengirim barisnya
+           (dicocokkan ke student_id / registrasi / email siswa). */
+        if (Array.isArray(json.digitalPurchases)) {
+          const { map, punya } = susunProdukDigital(json.digitalPurchases);
+          setElearnLink(map); setProdukDigital(punya);
+        }
         simpanDaftarLevel(previewId, json.student?.registrations); // [kelas-level-switcher-v3]
         // jadwal-riwayat-v1: endpoint sekarang mengirim `schedules` (riwayat + mendatang).
         // `upcomingSchedules` dipertahankan sebagai fallback buat respons lama.
@@ -3599,9 +3655,7 @@ export default function AkunPage() {
      siswa. Sejak kartunya keluar dari "Kelas Live", tab "Belajar Mandiri" di Beranda
      yang jadi rumahnya — dan kepemilikan ini juga yang menentukan siswa disebut
      "belum punya apa pun" atau tidak. */
-  const [produkDigital, setProdukDigital] = useState<
-    { id: string; purchaseId: string; type: "ebook" | "elearning"; title: string; language: string | null; cover: string | null; link: string | null }[]
-  >([]);
+  const [produkDigital, setProdukDigital] = useState<ProdukDigitalItem[]>([]);
   useEffect(() => {
     if (!user?.id) return;
     let batal = false;
@@ -3619,39 +3673,7 @@ export default function AkunPage() {
       const { data } = await (milikSaya ? base.or(milikSaya) : base.eq("auth_user_id", user.id))
         .eq("payment_status", "Lunas");
       if (batal || !data) return;
-      const map: Record<string, string> = {};
-      const punya: { id: string; purchaseId: string; type: "ebook" | "elearning"; title: string; language: string | null; cover: string | null; link: string | null }[] = [];
-      const sudah = new Set<string>();
-      for (const row of data as any[]) {
-        const prod = row?.digital_products;
-        if (!prod) continue;
-        const link = externalLinkFor(prod);
-        const linkSiap = link && !isPlaceholderLink(link) ? link : null;
-        // Satu produk bisa dibeli dua kali (perpanjangan) — cukup satu kartu.
-        if (prod.id && !sudah.has(prod.id)) {
-          sudah.add(prod.id);
-          punya.push({
-            id: String(prod.id),
-            // [lanjutkan-belajar-v1] posisi baca e-book disimpan per PEMBELIAN
-            // (kunci `ebook-hal:<purchaseId>` di EbookReader), bukan per produk.
-            purchaseId: String(row.id),
-            type: prod.type === "ebook" ? "ebook" : "elearning",
-            title: prod.title || "Produk digital",
-            language: prod.language || null,
-            /* [lingbook-sampul-kartu-v1] Sampul asli produk buat kartu "Lanjutkan
-               Belajar" — ikon buku generik tak memberi tahu BUKU YANG MANA yang
-               terakhir dibaca. Kosong → jatuh ke foto stok bahasa. */
-            cover: prod.cover_url || null,
-            // E-Book dibaca di dalam Perpustakaan (EbookReader), bukan lewat tautan luar.
-            link: prod.type === "ebook" ? null : linkSiap,
-          });
-        }
-        if (prod.type === "ebook") continue;
-        if (!linkSiap) continue;
-        if (row.registration_id) map[row.registration_id] = linkSiap;
-        const lang = (prod.language || "").trim().toLowerCase();
-        if (lang) map[`lang:${lang}`] = linkSiap;
-      }
+      const { map, punya } = susunProdukDigital(data as any[]); // [beranda-produk-digital-v1]
       setElearnLink(map);
       setProdukDigital(punya);
     })();
@@ -4714,6 +4736,60 @@ export default function AkunPage() {
                 // [saldo-beranda-v1] kolom kanan kini juga memuat kartu Saldo Linguo
                 const adaKolomKanan = sesiMendatangCards.length > 0 || !!student?.id;
 
+                // [beranda-produk-digital-v1] seksi "Produk Digital Kamu" — lihat komentar di JSX.
+                const bukaProdukDigital = (d: ProdukDigitalItem) => {
+                  if (d.type === "ebook") { setBukaEbook(d.purchaseId); setActiveTab("pustaka"); return; }
+                  if (d.link) { window.open(d.link, "_blank", "noopener,noreferrer"); return; }
+                  setActiveTab("pustaka");
+                };
+                const produkDigitalSection = (
+                  <section className="mb-5">
+                    <div className="flex flex-wrap items-center justify-between gap-3">
+                      <div className="flex items-center gap-2.5">
+                        <h2 className="text-[18px] font-extrabold text-[#12172B]">{tt("Produk Digital Kamu")}</h2>
+                        <span className="rounded-full bg-white px-2 py-0.5 text-[11.5px] font-bold text-gray-500">{produkDigital.length}</span>
+                      </div>
+                      <button onClick={() => setActiveTab("pustaka")} className="inline-flex items-center gap-1 text-[13px] font-bold text-[#16796E] hover:text-[#0F5A52]">
+                        {tt("Buka Perpustakaan")} <ChevronRight className="h-4 w-4" strokeWidth={2.4} />
+                      </button>
+                    </div>
+                    <p className="mt-0.5 text-[12.5px] text-gray-500">{tt("Akses kamu sudah aktif — tinggal buka, tanpa bayar lagi.")}</p>
+                    <div className={`mt-3 grid grid-cols-1 gap-3.5 sm:grid-cols-2 lg:grid-cols-3 ${adaKolomKanan ? "2xl:grid-cols-4" : "xl:grid-cols-4"}`}>
+                      {produkDigital.map((d) => {
+                        const ebook = d.type === "ebook";
+                        const Ikon = ebook ? BookOpen : Play;
+                        return (
+                          <button
+                            key={d.purchaseId}
+                            type="button"
+                            onClick={() => bukaProdukDigital(d)}
+                            className="group flex items-center gap-3 rounded-[20px] bg-white p-3 text-left transition-shadow hover:shadow-[0_6px_20px_rgba(18,23,43,0.08)]"
+                          >
+                            {d.cover ? (
+                              <img src={d.cover} alt="" className="h-[72px] w-[54px] shrink-0 rounded-xl object-cover" loading="lazy" />
+                            ) : (
+                              <span className="flex h-[72px] w-[54px] shrink-0 items-center justify-center rounded-xl bg-[#E6F4F3] text-[#16796E]">
+                                <Ikon className="h-6 w-6" strokeWidth={1.8} />
+                              </span>
+                            )}
+                            <div className="min-w-0 flex-1">
+                              <p className="line-clamp-2 text-[14px] font-bold leading-snug text-[#12172B]">{d.title}</p>
+                              <p className="mt-0.5 text-[12px] text-gray-500">
+                                {ebook ? "E-Book" : "E-Learning"}{d.language ? ` · ${d.language}` : ""}
+                              </p>
+                              <span className="mt-1.5 inline-flex items-center gap-1 text-[12.5px] font-bold text-[#16796E]">
+                                <Ikon className="h-3.5 w-3.5" strokeWidth={2.4} />
+                                {ebook ? tt("Baca sekarang") : d.link ? tt("Tonton videonya") : tt("Buka")}
+                                {!ebook && d.link && <ExternalLink className="h-3 w-3 text-gray-400" />}
+                              </span>
+                            </div>
+                          </button>
+                        );
+                      })}
+                    </div>
+                  </section>
+                );
+
                 return (
                   <div className="flex min-h-[calc(100vh-2rem)] flex-col bg-white lg:block">
 
@@ -4834,6 +4910,14 @@ export default function AkunPage() {
                           melompong, sementara daftar sesi terdorong jauh ke bawah lipatan. */}
                       <div className={`grid gap-5 lg:items-start ${adaKolomKanan ? "lg:grid-cols-[minmax(0,1fr)_320px] xl:grid-cols-[minmax(0,1fr)_360px]" : ""}`}>
                         <div className="min-w-0">
+                        {/* [beranda-produk-digital-v1] "Produk Digital Kamu" — e-book/e-learning
+                            yang SUDAH dibeli tampil langsung di Beranda, tak peduli siswa punya
+                            kelas live atau tidak (dulu cuma muncul sebagai pengganti layar kosong
+                            "Belum ada kelas live aktif"). Tujuannya satu klik dari Beranda ke
+                            reader/playlist, bukan lewat menu Perpustakaan dulu. Saat belum ada
+                            kelas live, seksinya naik ke atas "Kelas Kamu" karena itulah yang
+                            dibeli siswa. */}
+                        {produkDigital.length > 0 && liveRegs.length === 0 && produkDigitalSection}
                         {/* [beranda-tanpa-tab-mandiri-v1] Tab "Kelas Live" vs "Belajar Mandiri"
                             dicabut — beranda cuma menampilkan kelas live. Materi mandiri
                             (e-learning/LMS) tak lagi punya pintu masuk di dashboard siswa. */}
@@ -5157,39 +5241,6 @@ export default function AkunPage() {
                               <h3 className="mb-1 font-bold text-[#12172B]">{tt("Belum ada riwayat kelas")}</h3>
                               <p className="text-sm text-gray-500">{tt("Kelas yang sudah selesai akan muncul di sini.")}</p>
                             </div>
-                          ) : produkDigital.some((d) => d.type === "ebook") ? (
-                            /* [beranda-ebook-dimiliki-v1] Pemilik e-book tanpa kelas live (mis. peserta
-                               B2B yang diberi akses gratis) dulu cuma melihat "Belum ada kelas live
-                               aktif" + tombol Daftar Kelas + Top up saldo → dikira harus bayar. Tampilkan
-                               e-book yang SUDAH jadi miliknya di sini, lengkap dengan tombol Baca. */
-                            <div className="mt-3 rounded-3xl bg-white p-5 sm:p-6">
-                              <p className="mb-3 text-[13px] font-semibold text-[#16796E]">{tt("Akses e-book kamu sudah aktif — tinggal baca, tanpa bayar lagi.")}</p>
-                              <div className="space-y-2.5">
-                                {produkDigital.filter((d) => d.type === "ebook").map((d) => (
-                                  <div key={d.purchaseId} className="flex items-center gap-3 rounded-2xl bg-gray-50 p-3">
-                                    {d.cover ? (
-                                      <img src={d.cover} alt="" className="h-16 w-12 shrink-0 rounded-lg object-cover" />
-                                    ) : (
-                                      <span className="flex h-16 w-12 shrink-0 items-center justify-center rounded-lg bg-white"><BookOpen className="h-6 w-6 text-slate-400" strokeWidth={1.8} /></span>
-                                    )}
-                                    <div className="min-w-0 flex-1">
-                                      <p className="truncate text-[14px] font-bold text-[#12172B]">{d.title}</p>
-                                      <p className="text-[12px] text-gray-500">E-Book{d.language ? ` · ${d.language}` : ""}</p>
-                                    </div>
-                                    <button
-                                      onClick={() => { setBukaEbook(d.purchaseId); setActiveTab("pustaka"); }}
-                                      className="inline-flex h-10 shrink-0 items-center gap-1.5 rounded-xl bg-[#16796E] px-4 text-[13px] font-bold text-white transition-colors hover:bg-[#0F5A52]"
-                                    >
-                                      <BookOpen className="h-4 w-4" strokeWidth={2.2} /> {tt("Baca")}
-                                    </button>
-                                  </div>
-                                ))}
-                              </div>
-                              <div className="mt-4 flex flex-wrap items-center justify-between gap-2 border-t border-gray-100 pt-3">
-                                <p className="text-[12.5px] text-gray-500">{tt("Belum ada kelas live aktif")}</p>
-                                <button onClick={openEnrollWizard} className="inline-flex h-9 items-center gap-1.5 rounded-xl border border-slate-200 bg-white px-3.5 text-[12.5px] font-bold text-[#12172B] transition-colors hover:border-[#16796E] hover:text-[#16796E]"><Plus className="h-4 w-4" strokeWidth={2.5} /> {tt("Daftar Kelas")}</button>
-                              </div>
-                            </div>
                           ) : (
                             <div className="mt-3 rounded-3xl bg-white p-8 text-center">
                               <BookOpen className="mx-auto mb-2 h-12 w-12 text-slate-300" strokeWidth={1.5} />
@@ -5202,6 +5253,7 @@ export default function AkunPage() {
                             </div>
                           )}
                         </div>
+                        {produkDigital.length > 0 && liveRegs.length > 0 && produkDigitalSection}
                         </div>
 
                         {/* jadwal-gcal-v1: SESI MENDATANG — pindahan dari kolom kiri kalender
