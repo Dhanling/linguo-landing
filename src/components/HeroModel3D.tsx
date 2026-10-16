@@ -9,10 +9,16 @@
 // PNG lama tetap jadi lapisan awal & LCP — three.js baru diunduh saat browser
 // idle, hanya di desktop, dilewati kalau hemat data. Render berhenti saat hero tak terlihat.
 // [hero-3d-tanpa-jeda-v1] Lapisan awal desktop = hero-character-3d.png, yaitu frame
-// pertama model ini sendiri (kamera, pose t=0, bayangan, 1620×1620) — dulu PNG lama
+// pertama model ini sendiri (kamera, pose t=0, TANPA bayangan, 1620×1620) — dulu PNG lama
 // beda sudut, jadi PNG harus pudar dulu baru 3D muncul (ada celah kosong ±0,7 dtk).
 // Sekarang kanvas memudar MASUK di atas gambar yang identik, gambar baru disembunyikan
 // sesudahnya. Kalau model/kamera/pencahayaan diubah, render ulang gambarnya.
+// [hero-bayangan-css-v1] Bayangan BUKAN bagian gambar maupun scene 3D: satu <div>
+// gradien radial yang sama sejak HTML pertama, digerakkan loop render (skala &
+// opasitas ikut melayang). Dulu bayangan ada di gambar (terkompres AVIF, diam) lalu
+// diganti bayangan WebGL yang bernapas & terpotong tepi kanvas — kelihatan "ganti".
+// Posisi/ukuran = proyeksi bidang bayangan lama lewat kamera ini (hitung ulang kalau
+// kamera/model berubah).
 import Image from "next/image";
 import React, { useEffect, useRef, useState } from "react";
 
@@ -22,12 +28,17 @@ const ORBIT_THETA = -35, ORBIT_PHI = 80, FOV = 30;
 const YAW_MAX = 26, PITCH_MAX = 12, BODY_YAW_MAX = 6; // derajat
 const DIAM_SETELAH_MS = 2500;
 const MELAYANG = 0.014;                                   // amplitudo naik-turun (satuan model; tinggi karakter ≈ 1)
-const BAYANGAN_JARAK = 0.12, BAYANGAN_OPASITAS = 0.32;    // celah kaki→lantai khayal
+const BAYANGAN_OPASITAS = 0.32;
+// Elips bayangan dalam % kotak (skala 1 = karakter di titik terendah).
+const BAYANGAN = { x: 50, y: 92.92, w: 45.8, h: 18.39 };
+const skalaBayangan = (k01: number) => 1 - 0.14 * k01;   // k01: 0 = terendah, 1 = tertinggi
+const opasitasBayangan = (k01: number) => 1 - 0.35 * k01;
 
 const rad = (d: number) => (d * Math.PI) / 180;
 
 export default function HeroModel3D({ alt }: { alt: string }) {
   const wadahRef = useRef<HTMLDivElement>(null);
+  const bayanganRef = useRef<HTMLDivElement>(null);
   const [siap, setSiap] = useState(false);
 
   useEffect(() => {
@@ -90,25 +101,6 @@ export default function HeroModel3D({ alt }: { alt: string }) {
       );
       camera.lookAt(pusat);
 
-      // Bayangan melayang: elips lembut (gradien radial di kanvas) di lantai khayal
-      // di bawah kaki. Tak ikut grup badan — ia yang bereaksi pada naik-turunnya karakter.
-      const tekstur = (() => {
-        const c = document.createElement("canvas"); c.width = c.height = 128;
-        const g = c.getContext("2d")!;
-        const gr = g.createRadialGradient(64, 64, 0, 64, 64, 64);
-        gr.addColorStop(0, "rgba(0,0,0,1)"); gr.addColorStop(0.45, "rgba(0,0,0,.55)"); gr.addColorStop(1, "rgba(0,0,0,0)");
-        g.fillStyle = gr; g.fillRect(0, 0, 128, 128);
-        const t = new THREE.CanvasTexture(c); t.colorSpace = THREE.SRGBColorSpace; return t;
-      })();
-      const matBayangan = new THREE.MeshBasicMaterial({ map: tekstur, transparent: true, depthWrite: false, toneMapped: false, opacity: BAYANGAN_OPASITAS });
-      const bayangan = new THREE.Mesh(new THREE.PlaneGeometry(1, 1), matBayangan);
-      bayangan.rotation.x = -Math.PI / 2;
-      const ukuranKotak = kotak.getSize(new THREE.Vector3());
-      bayangan.scale.set(ukuranKotak.x * 0.95, ukuranKotak.z * 1.3, 1);
-      bayangan.position.set(pusat.x, kotak.min.y - BAYANGAN_JARAK, (kotak.min.z + kotak.max.z) / 2);
-      bayangan.renderOrder = -1;
-      scene.add(bayangan);
-      const skalaBayangan = bayangan.scale.clone();
 
       // Rotasi kepala dihitung di ruang model lalu dikonversi ke ruang lokal tulang:
       // lokal = pInv · delta · p · q0 — tak bergantung orientasi sumbu tulang hasil ekspor.
@@ -169,8 +161,11 @@ export default function HeroModel3D({ alt }: { alt: string }) {
         const naik = diam ? 0 : Math.sin(fase / 650); // -1..1
         badan.position.y = naik * MELAYANG;
         const k01 = (naik + 1) / 2;
-        bayangan.scale.set(skalaBayangan.x * (1 - 0.14 * k01), skalaBayangan.y * (1 - 0.14 * k01), 1);
-        matBayangan.opacity = BAYANGAN_OPASITAS * (1 - 0.35 * k01);
+        const el = bayanganRef.current;
+        if (el) {
+          el.style.transform = `translate(-50%, -50%) scale(${skalaBayangan(k01)})`;
+          el.style.opacity = String(opasitasBayangan(k01));
+        }
         if (kepala && q0) {
           qYaw.setFromAxisAngle(sumbuYaw, rad(cx * YAW_MAX));
           qPitch.setFromAxisAngle(sumbuPitch, rad(-cy * PITCH_MAX));
@@ -222,7 +217,6 @@ export default function HeroModel3D({ alt }: { alt: string }) {
             mat.dispose();
           });
         });
-        bayangan.geometry.dispose(); matBayangan.dispose(); tekstur.dispose();
         envTex.dispose(); pmrem.dispose(); renderer.dispose();
         kanvas.remove();
       };
@@ -241,10 +235,22 @@ export default function HeroModel3D({ alt }: { alt: string }) {
 
   return (
     <div ref={wadahRef} className="relative w-full h-full">
+      {/* [hero-bayangan-css-v1] Keadaan awal = fase 0 (k01 0,5), sama dgn frame pertama. */}
+      <div
+        ref={bayanganRef}
+        aria-hidden="true"
+        className="pointer-events-none absolute"
+        style={{
+          left: `${BAYANGAN.x}%`, top: `${BAYANGAN.y}%`, width: `${BAYANGAN.w}%`, height: `${BAYANGAN.h}%`,
+          transform: `translate(-50%, -50%) scale(${skalaBayangan(0.5)})`,
+          opacity: opasitasBayangan(0.5),
+          background: `radial-gradient(closest-side, rgba(0,0,0,${BAYANGAN_OPASITAS}) 0%, rgba(0,0,0,${BAYANGAN_OPASITAS * 0.55}) 45%, rgba(0,0,0,0) 100%)`,
+        }}
+      />
       <Image
         src="/images/hero-character-3d.png" alt={siap ? "" : alt} aria-hidden={siap || undefined}
         width={1620} height={1620} priority sizes="(min-width: 1024px) 810px, 0px"
-        className={`w-full h-full object-contain ${siap ? "invisible" : ""}`}
+        className={`relative w-full h-full object-contain ${siap ? "invisible" : ""}`}
       />
       {siap && <span className="sr-only">{alt}</span>}
     </div>
