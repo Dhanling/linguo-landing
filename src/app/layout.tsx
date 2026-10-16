@@ -95,10 +95,14 @@ const WEBSITE_SCHEMA = websiteSchema(`${BRAND_FACTS.url}/blog?q={search_term_str
 // NEXT_PUBLIC_GA_ID        → from Google Analytics (G-XXXXXXXX)
 const FB_PIXEL_ID = process.env.NEXT_PUBLIC_FB_PIXEL_ID || "";
 const GA_ID = process.env.NEXT_PUBLIC_GA_ID || "";
+// [clarity-v1] Microsoft Clarity — rekaman sesi & heatmap gratis. Project ID dari
+// clarity.microsoft.com → Settings → Overview. Kosong = tidak dimuat sama sekali.
+const CLARITY_ID = process.env.NEXT_PUBLIC_CLARITY_ID || "";
 // Dimuat ThirdPartyLoader — konstanta modul supaya referensi array stabil.
 const THIRD_PARTY_SRCS = [
   ...(GA_ID ? [`https://www.googletagmanager.com/gtag/js?id=${GA_ID}`] : []),
   ...(FB_PIXEL_ID ? ["https://connect.facebook.net/en_US/fbevents.js"] : []),
+  ...(CLARITY_ID ? [`https://www.clarity.ms/tag/${CLARITY_ID}`] : []),
 ];
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
@@ -122,6 +126,16 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
             pustakanya datang diantrekan (dataLayer / fbq.queue), bukan hilang. */}
         <link rel="preconnect" href="https://www.googletagmanager.com" />
         <link rel="preconnect" href="https://connect.facebook.net" />
+
+        {/* [clarity-v1] Stub dipasang sejak awal (pola sama dgn gtag/fbq): panggilan
+            clarity("set"/"event") sebelum pustakanya tiba diantrekan di .q.
+            Pustakanya sendiri ikut ThirdPartyLoader. Clarity menyamarkan isian
+            form secara bawaan (mode Balanced) — jangan diubah ke "Off". */}
+        {CLARITY_ID && (
+          <Script id="clarity-init" strategy="afterInteractive">
+            {`window.clarity=window.clarity||function(){(window.clarity.q=window.clarity.q||[]).push(arguments)};`}
+          </Script>
+        )}
 
         {/* Google Analytics (GA4) */}
         {GA_ID && (

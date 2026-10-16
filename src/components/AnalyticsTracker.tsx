@@ -8,6 +8,7 @@
 // EXCLUDED_PREFIXES). Jalur ini terpisah dari GA4/FB Pixel yang sudah ada.
 import { useEffect, useRef } from "react";
 import { usePathname } from "next/navigation";
+import { codeInWaUrl, sendWaRef, tagWaUrl } from "@/lib/waLeadRef";
 
 // Path yang TIDAK dilacak (area login/akun & alur auth).
 const EXCLUDED_PREFIXES = ["/akun", "/student", "/onboarding", "/auth"];
@@ -57,6 +58,19 @@ function classifyClick(el: HTMLElement, href: string, label: string): string {
   return "button";
 }
 
+// [wa-lead-ref-v1] Tempel kode [LG-XXXX] ke teks link WA SEBELUM browser
+// mengikuti href-nya (pendengar fase capture jalan duluan dari aksi bawaan).
+// Dipanggil juga saat pointerdown supaya "buka di tab baru"/tekan lama ikut berkode.
+function tagWaAnchor(target: EventTarget | null): HTMLAnchorElement | null {
+  const a = (target as HTMLElement | null)?.closest?.("a[href]") as HTMLAnchorElement | null;
+  if (!a || !isTracked(location.pathname)) return null;
+  const href = a.getAttribute("href") || "";
+  if (!/wa\.me|whatsapp\.com/i.test(href)) return null;
+  const tagged = tagWaUrl(href);
+  if (tagged !== href) a.setAttribute("href", tagged);
+  return a;
+}
+
 function sendClick(target: EventTarget | null) {
   const el = (target as HTMLElement | null)?.closest?.("a, button, [role='button']") as HTMLElement | null;
   if (!el) return;
@@ -87,6 +101,8 @@ function sendClick(target: EventTarget | null) {
   } catch {
     // diamkan — analytics tak boleh ganggu UX
   }
+  const code = href ? codeInWaUrl(href) : null;
+  if (code) sendWaRef(code, { session_id: getSessionId(), label, href });
 }
 
 export default function AnalyticsTracker() {
@@ -146,9 +162,27 @@ export default function AnalyticsTracker() {
 
   // landing-klik-v1 — satu pendengar di dokumen (fase capture) untuk semua klik.
   useEffect(() => {
-    const onClick = (e: MouseEvent) => sendClick(e.target);
+    const onClick = (e: MouseEvent) => {
+      try {
+        tagWaAnchor(e.target);
+      } catch {
+        // kode lead gagal ditempel → link asli tetap jalan
+      }
+      sendClick(e.target);
+    };
+    const onPointerDown = (e: PointerEvent) => {
+      try {
+        tagWaAnchor(e.target);
+      } catch {
+        // idem
+      }
+    };
     document.addEventListener("click", onClick, true);
-    return () => document.removeEventListener("click", onClick, true);
+    document.addEventListener("pointerdown", onPointerDown, true);
+    return () => {
+      document.removeEventListener("click", onClick, true);
+      document.removeEventListener("pointerdown", onPointerDown, true);
+    };
   }, []);
 
   return null;

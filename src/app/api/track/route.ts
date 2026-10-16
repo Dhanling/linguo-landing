@@ -18,6 +18,47 @@ export async function POST(req: NextRequest) {
   try {
     const body = await req.json().catch(() => ({}));
 
+    // [wa-lead-ref-v1] Kode [LG-XXXX] yang ditempel ke tombol WA + asal
+    // pengunjung. Ditulis lewat RPC (upsert: halaman pertama tetap, halaman
+    // terakhir & jumlah klik diperbarui) — lihat sql/20261016_wa_lead_ref.sql
+    // di repo admin dashboard.
+    if (body.type === "wa_ref") {
+      const code = clampStr(body.code, 16);
+      if (!/^LG-[2-9A-HJKMNP-Z]{4}$/.test(code)) return ok();
+      const a = body.attribution && typeof body.attribution === "object" ? body.attribution : {};
+      const ip = (req.headers.get("x-forwarded-for") ?? "").split(",")[0].trim();
+      await fetch(`${SUPABASE_URL}/rest/v1/rpc/landing_wa_ref_touch`, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          apikey: SUPABASE_KEY,
+          Authorization: `Bearer ${SUPABASE_KEY}`,
+        },
+        body: JSON.stringify({
+          p_code: code,
+          p_session_id: clampStr(body.session_id, 64) || null,
+          p_path: clampStr(body.path, 300) || null,
+          p_title: clampStr(body.title, 200) || null,
+          p_label: clampStr(body.label, 120) || null,
+          p_fbclid: clampStr(a.fbclid, 512) || null,
+          p_gclid: clampStr(a.gclid, 512) || null,
+          p_fbp: clampStr(a.fbp, 512) || null,
+          p_fbc: clampStr(a.fbc, 512) || null,
+          p_utm_source: clampStr(a.utm_source, 200) || null,
+          p_utm_medium: clampStr(a.utm_medium, 200) || null,
+          p_utm_campaign: clampStr(a.utm_campaign, 300) || null,
+          p_utm_content: clampStr(a.utm_content, 300) || null,
+          p_utm_term: clampStr(a.utm_term, 300) || null,
+          p_landing_path: clampStr(a.landing_path, 300) || null,
+          p_referrer: clampStr(a.referrer, 500) || null,
+          p_ip: ip || null,
+          p_user_agent: clampStr(req.headers.get("user-agent"), 400) || null,
+        }),
+        signal: AbortSignal.timeout(4000),
+      });
+      return ok();
+    }
+
     const path = clampStr(body.path, 300);
     const session_id = clampStr(body.session_id, 64);
     if (!path || !session_id) return ok(); // payload tak valid → diamkan

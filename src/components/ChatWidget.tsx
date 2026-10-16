@@ -9,6 +9,7 @@
 import { useState, useRef, useEffect, useSyncExternalStore } from "react";
 import { usePathname } from "next/navigation";
 import { subscribeOverlay, getOverlayCount } from "@/lib/overlayStore";
+import { taggedWaUrlAndTrack } from "@/lib/waLeadRef"; // [wa-lead-ref-v1]
 
 const WA_NUMBER = "6282116859493"; // admin handoff
 // [ling-handoff-kurikulum-v2] Pelamar (pengajar, penerjemah, interpreter, loker
@@ -514,7 +515,8 @@ export default function ChatWidget() {
     } catch {
       /* ringkasan gagal/lambat: pakai fallback */
     }
-    const url = `https://wa.me/${recruit ? WA_KURIKULUM : WA_NUMBER}?text=${encodeURIComponent(text)}`;
+    // [wa-lead-ref-v1] Nomor CS ditempeli kode lead; nomor Kurikulum dilewati tagWaUrl.
+    const url = taggedWaUrlAndTrack(`https://wa.me/${recruit ? WA_KURIKULUM : WA_NUMBER}?text=${encodeURIComponent(text)}`, "chat widget");
     if (w) w.location.href = url;
     else window.open(url, "_blank");
   }
