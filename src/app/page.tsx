@@ -66,7 +66,11 @@ export default function Home() {
           
         </div>
         <div className="hidden lg:flex justify-end relative -mr-28">
-          <div className="relative w-[810px] h-[810px]">
+          {/* [hero-3d-muat-layar-v1] Dulu dipatok 810×810: di layar laptop (tinggi
+              ±800–900 px) kotak ini + pita promo + navbar melebihi tinggi layar,
+              jadi kaki karakter terpotong saat landing pertama dibuka. Sekarang
+              sisi kotak = tinggi layar dikurangi pita & navbar (maks 810). */}
+          <div className="relative w-[min(810px,calc(100svh-150px))] h-[min(810px,calc(100svh-150px))]">
             <HeroModel3D alt="Learn languages with Linguo"/>
             <div className="absolute top-16 left-[27%] pointer-events-none">
               <Melayang amp={8}>
