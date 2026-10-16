@@ -314,7 +314,7 @@ async function resolveKurikulumSender(admin: any): Promise<string | null> {
   // Cermin resolveKurikulumSender di edge fn teacher-fee-notify (linguo-app).
   const skor = (s: any) => {
     if (/kurikulum/i.test(String(s.label || ''))) return 2;
-    if (String(s.id) === 'kelas') return 0;
+    if (/^kelas/.test(String(s.id))) return 0; // kelas & kelas2 [wa-sender-kelas2-v1]
     return 1;
   };
   return list.slice().sort((a, b) => skor(b) - skor(a))[0]?.id || null;
