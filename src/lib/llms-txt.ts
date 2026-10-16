@@ -25,6 +25,8 @@ import {
   getLanguageDetailBySlug,
 } from "../data/languages-detail";
 import { TANPA_PERBANDINGAN } from "../data/perbandingan-bahasa";
+import { TES_BAHASA } from "../data/persiapanTesBahasa"; // [seo-tes-kota-v1]
+import { KOTA_OFFLINE } from "../data/kursusOfflineKota"; // [seo-tes-kota-v1]
 import {
   PRICE_CATEGORIES,
   PRICE_A1_60MIN,
@@ -32,6 +34,7 @@ import {
   SEMI_PRIVATE_PRICE_BASIC,
   KIDS_PRICE_LL,
   KIDS_PRICE_YE,
+  OFFLINE_SURCHARGE_PER_SESSION,
 } from "./trial-pricing";
 
 const BASE = BRAND_FACTS.url;
@@ -222,9 +225,15 @@ ${perbandinganLinks()}
 - [Blog](${BASE}/blog): artikel belajar bahasa, tips, dan panduan ujian.
 - [Silabus](${BASE}/silabus): kurikulum per bahasa, 192 sesi dari A1 sampai B2, plus placement test gratis per bahasa.
 - [Silabus persiapan PTE Academic](${BASE}/persiapan-tes/pte): 16 modul untuk 22 tipe soal format terbaru, dipetakan ke paket 8, 12, dan 16 sesi private.
+${TES_BAHASA.map((t) => `- [Kursus persiapan ${t.tes} online](${BASE}/persiapan-tes/${t.slug}): ujian bahasa ${t.bahasa}, bagian yang diujikan, padanan level CEFR, dan biaya kelas persiapan.`).join("\n")}
 - [Kelas trial](${BASE}/kelas-trial): satu sesi percobaan berbayar sebelum ambil paket.
 - [Simulasi TOEFL](${BASE}/simulasi): simulasi tes dengan skor resmi.
 - [Watch & Learn](${BASE}/watch-learn): belajar dari video YouTube dengan transkrip dan terjemahan.
+
+## Kelas offline (pengajar datang ke lokasi siswa)
+
+- [Kursus bahasa offline](${BASE}/kursus-bahasa-offline): Kelas Private dan Semi Private tatap muka di rumah, kos, atau kantor siswa. Tarif online + ${rupiah(OFFLINE_SURCHARGE_PER_SESSION)} per sesi di semua kota; ketersediaan pengajar dicek dulu per area. ${BRAND_FACTS.name} tidak punya cabang.
+${KOTA_OFFLINE.map((k) => `- [Kursus bahasa offline di ${k.nama}](${BASE}/kursus-bahasa-offline/${k.slug})`).join("\n")}
 
 ## Untuk institusi & karier
 

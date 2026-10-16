@@ -2,6 +2,8 @@ import type { MetadataRoute } from "next";
 import { getAllLanguageDetailSlugs } from "@/data/languages-detail";
 import { ALL_LANG_SLUGS } from "@/lib/funnelRouting";
 import { PERBANDINGAN_BAHASA_UPDATED, TANPA_PERBANDINGAN } from "@/data/perbandingan-bahasa";
+import { TES_BAHASA, TES_BAHASA_UPDATED } from "@/data/persiapanTesBahasa";
+import { KOTA_OFFLINE, KOTA_OFFLINE_UPDATED } from "@/data/kursusOfflineKota";
 
 // [seo-sitemap-lengkap-v1] Sebelumnya sitemap ini cuma memuat 4 URL statis
 // (/, /blog, /corporate, /jadi-pengajar) + daftar post blog. Belasan halaman
@@ -150,6 +152,34 @@ export default function sitemap(): MetadataRoute.Sitemap {
       lastModified: PERBANDINGAN_BAHASA_UPDATED,
       changeFrequency: "monthly",
       priority: 0.85,
+    });
+  }
+
+  // [seo-tes-kota-v1] "Kursus persiapan <ujian> online" per ujian resmi
+  // (JLPT, TOPIK, HSK, Goethe, DELF). /persiapan-tes/pte sudah ada di
+  // STATIC_ROUTES — TES_BAHASA sengaja tidak memuat slug "pte".
+  for (const t of TES_BAHASA) {
+    entries.push({
+      url: `${BASE}/persiapan-tes/${t.slug}`,
+      lastModified: TES_BAHASA_UPDATED,
+      changeFrequency: "monthly",
+      priority: 0.8,
+    });
+  }
+
+  // [seo-tes-kota-v1] Kelas offline (pengajar datang ke lokasi siswa): hub + per kota.
+  entries.push({
+    url: `${BASE}/kursus-bahasa-offline`,
+    lastModified: KOTA_OFFLINE_UPDATED,
+    changeFrequency: "monthly",
+    priority: 0.8,
+  });
+  for (const k of KOTA_OFFLINE) {
+    entries.push({
+      url: `${BASE}/kursus-bahasa-offline/${k.slug}`,
+      lastModified: KOTA_OFFLINE_UPDATED,
+      changeFrequency: "monthly",
+      priority: 0.75,
     });
   }
 
