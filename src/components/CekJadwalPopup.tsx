@@ -109,12 +109,12 @@ export default function CekJadwalPopup({ open, onClose }: { open: boolean; onClo
                   {tampil.length === 0 && <p className="px-4 py-3 text-sm text-slate-400">Bahasa tidak ditemukan</p>}
                   {tampil.map((g) => (
                     <div key={g.label}>
-                      <p className="px-4 pb-1 pt-2.5 text-[11px] font-bold uppercase tracking-wider text-slate-400">{g.label}</p>
+                      <p className="px-4 pb-1 pt-2.5 text-xs font-bold uppercase tracking-wider text-slate-400">{g.label}</p>
                       {g.langs.map((l) => (
-                        <a key={l.slug} href={`/jadwal/${l.slug}`} className="group flex items-center gap-3 rounded-lg px-4 py-2 text-sm text-slate-700 hover:bg-[#1A9E9E]/10 hover:text-[#1A9E9E]">
-                          {/* [cek-jadwal-bendera-v1] bendera rounded-rectangle + zoom saat hover */}
-                          <span className="flex items-center gap-3 origin-left transition-transform duration-200 ease-out group-hover:scale-110">
-                            <RectFlag code={FLAG_CODE_BY_SLUG[l.en.toLowerCase()]} h={18} className="shadow-sm" />
+                        <a key={l.slug} href={`/jadwal/${l.slug}`} className="group flex items-center gap-3 rounded-xl px-4 py-2.5 text-base font-semibold text-gray-900 hover:bg-[#1A9E9E]/10 hover:text-[#1A9E9E]">
+                          {/* [cek-jadwal-bendera-v2] bendera & teks sebesar daftar Placement Test (h=28, text-base) + zoom saat hover */}
+                          <span className="flex items-center gap-3.5 origin-left transition-transform duration-200 ease-out group-hover:scale-105">
+                            <RectFlag code={FLAG_CODE_BY_SLUG[l.en.toLowerCase()]} h={28} className="shadow-sm" />
                             <span>{l.nama}</span>
                           </span>
                         </a>
