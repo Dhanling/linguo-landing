@@ -199,7 +199,8 @@ export default function JadwalPublikClient({ slug, langId }: { slug: string; lan
       </ul>
 
       {pilih.size > 0 && (
-        <div className="fixed inset-x-0 bottom-0 z-40 border-t border-slate-200 bg-white/95 px-4 py-3 shadow-[0_-8px_24px_rgba(15,23,42,0.08)] backdrop-blur">
+        // pr-24: tombol chat Ling (fixed kanan-bawah, 64px) jangan menutupi "Lanjut daftar".
+        <div className="fixed inset-x-0 bottom-0 z-40 border-t border-slate-200 bg-white/95 py-3 pl-4 pr-24 lg:pr-4 shadow-[0_-8px_24px_rgba(15,23,42,0.08)] backdrop-blur">
           <div className="mx-auto flex max-w-2xl items-center gap-3">
             <div className="min-w-0 flex-1">
               <p className="text-[11px] font-semibold uppercase tracking-wider text-slate-400">Jadwal pilihanmu · {durasi} menit</p>
