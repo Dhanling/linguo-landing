@@ -16,8 +16,8 @@
 //   - view Hari & Minggu sekarang pakai time-grid yang sama persis polanya dengan
 //     pengajar: gutter jam, garis jam, kolom bergaris, penanda "sekarang" merah.
 
-import { useEffect, useMemo, useRef, useState } from "react";
-import { ChevronLeft, ChevronRight, Video, CalendarDays, Clock, BookOpen, FileText, ExternalLink, PlayCircle, Maximize2, Minimize2, Lock } from "lucide-react";
+import { useEffect, useMemo, useRef, useState, type ReactNode } from "react";
+import { ChevronLeft, ChevronRight, Video, CalendarDays, Clock, BookOpen, FileText, ExternalLink, PlayCircle, Maximize2, Minimize2, Lock, CalendarClock } from "lucide-react";
 import { classRoomUrl, isJoinable, studentRecordingHref, isInternalRecordingHref } from "@/lib/classRoom"; // [kelas-video-siswa-v1] + jadwal-riwayat-v1
 import RecordingModal from "./RecordingModal";
 // [addon-akses-rekaman-v1] rekaman sesi cuma buat kelas yang beli add-on Recording.
@@ -59,6 +59,9 @@ export default function JadwalCalendar({
   kelasBelumTerjadwal = [],
   studentName,
   aksesRekaman,
+  sisipan,
+  bisaUbahReg,
+  onUbahSesi,
 }: {
   sessions: JadwalSession[];
   regularBatches?: RegularBatch[];
@@ -71,6 +74,11 @@ export default function JadwalCalendar({
    *  Hanya "punya" yang boleh menonton. Peta kosong = masih dimuat (tombol & gembok
    *  belum tampil); registrasi yang tak ada di peta yang sudah terisi = terkunci. */
   aksesRekaman?: Map<string, AksesAddon>;
+  /** [atur-jadwal-sendiri-v1] kartu "Atur jadwal sendiri" — dirender di atas kotak belum terjadwal. */
+  sisipan?: ReactNode;
+  /** [atur-jadwal-sendiri-v1] registrasi yang sesinya boleh dipindah/dibatalkan siswa sendiri. */
+  bisaUbahReg?: Set<string>;
+  onUbahSesi?: (s: JadwalSession) => void;
 }) {
   // [ui-lang-switcher-v1] `tt`, bukan `t` — `t` sudah dipakai buat handle interval di bawah.
   const tt = useT();
@@ -411,6 +419,7 @@ export default function JadwalCalendar({
           kalender di bawah; blok ini tetap jadi ringkasan "setiap hari apa, jam berapa". */}
       {/* [jadwal-kelas-belum-terjadwal-v1] Siswa yang kalendernya kosong dulu cuma
           melihat "Tidak ada sesi di hari ini" dan mengira webnya rusak. */}
+      {sisipan}
       {kelasBelumTerjadwal.length > 0 && (
         /* [jadwal-belum-terjadwal-ringkas-v2] Kartu dipadatkan: tint teal tanpa garis tepi,
            kalimat penjelas dibuang, tombol Tanya admin pindah ke kanan sebaris judul. */
@@ -853,7 +862,8 @@ export default function JadwalCalendar({
               </div>
               <div className="flex flex-col gap-3 rounded-2xl border border-slate-100 p-3 sm:p-4">
                 {agendaEvents.map((e) => (
-                  <SessionCard key={e.id} e={e} now={now} studentName={studentName} aksesRekaman={aksesRekaman} />
+                  <SessionCard key={e.id} e={e} now={now} studentName={studentName} aksesRekaman={aksesRekaman}
+                    onUbah={onUbahSesi && e.registrationId && bisaUbahReg?.has(e.registrationId) ? onUbahSesi : undefined} />
                 ))}
               </div>
             </div>
@@ -1045,7 +1055,7 @@ function BlokHoverDetail({ items, rect, open, now, studentName, onEnter, onLeave
  * Kartu sesi lengkap (jam, kelas, pengajar, aksi, materi) — dipakai agenda di
  * bawah kalender pada SEMUA view.
  */
-function SessionCard({ e, now, studentName, aksesRekaman }: { e: NormSession; now: number; studentName?: string; aksesRekaman?: Map<string, AksesAddon> }) {
+function SessionCard({ e, now, studentName, aksesRekaman, onUbah }: { e: NormSession; now: number; studentName?: string; aksesRekaman?: Map<string, AksesAddon>; onUbah?: (s: JadwalSession) => void }) {
   const tt = useT(); // [ui-lang-switcher-v1]
   const c = langColor(e.language);
   const st = statusMeta(e); // jadwal-riwayat-v1
@@ -1146,6 +1156,16 @@ function SessionCard({ e, now, studentName, aksesRekaman }: { e: NormSession; no
             <span className="inline-flex items-center gap-1.5 rounded-xl bg-slate-200/70 px-3.5 py-2 text-[12.5px] font-bold text-[#6B7280]">
               <Video className="h-3.5 w-3.5" strokeWidth={2.2} /> {tt("Masuk Kelas dibuka")} {fmtTime(new Date(e._d.getTime() - 30 * 60_000))}
             </span>
+          )}
+          {/* [atur-jadwal-sendiri-v1] pindah/batal sendiri — hanya sampai H-1 (server menegakkan lagi) */}
+          {onUbah && !e.isBatch && !isDead(e.status) && e._d.getTime() - now >= 24 * 3600_000 && (
+            <button
+              type="button"
+              onClick={() => onUbah(e)}
+              className="inline-flex items-center gap-1.5 rounded-xl bg-white px-3.5 py-2 text-[12.5px] font-extrabold text-[#16796E] ring-1 ring-[#16796E]/25 hover:bg-[#EAF3F2]"
+            >
+              <CalendarClock className="h-3.5 w-3.5" strokeWidth={2.2} /> {tt("Pindah / batal")}
+            </button>
           )}
           {/* [addon-akses-rekaman-v1] rekamannya ada, paketnya tidak mencakup */}
           {e.recordingUrl && rekamanDikunci && (

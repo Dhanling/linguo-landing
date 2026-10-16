@@ -59,6 +59,7 @@ import { orMilikSaya } from "@/lib/digitalOwnership"; // [perpustakaan-akses-ema
 // add-on tersimpan di 3 tempat, semuanya dibaca helper ini.
 import { muatAksesRekamanMap, type AksesAddon } from "@/lib/addonAccess";
 import { isDead } from "@/components/akun/jadwalShared"; // [jadwal-kelas-belum-terjadwal-v1]
+import { AturJadwalKartu, AturJadwalSheet, useKelasAturJadwal, type KelasAturJadwal, type SesiUbah } from "@/components/akun/AturJadwal"; // [atur-jadwal-sendiri-v1]
 const SimulasiKatalog = dynamic(() => import('@/components/akun/SimulasiKatalog'), { ssr: false, loading: () => <div className="flex w-full items-center justify-center py-24"><div className="h-7 w-7 animate-spin rounded-full border-2 border-[#16796E] border-t-transparent" /></div> }); // [simulasi-inshell-v1] lazy
 
 // [linguo-patch:onboarding-success-lottie-v1] Lottie ceklis sukses (reuse success-anim.json).
@@ -3204,12 +3205,11 @@ export default function AkunPage() {
     return () => { alive = false; };
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [student?.id]);
-  // Booking Modal
-  const [bookingReg, setBookingReg] = useState<StudentReg | null>(null);
-  const [availSlots, setAvailSlots] = useState<Set<string>>(new Set()); // "day_of_week-HH:MM"
-  const [bookedSlots, setBookedSlots] = useState<Set<string>>(new Set()); // ISO strings
-  const [loadingSlots, setLoadingSlots] = useState(false);
-  const [selectedSlots, setSelectedSlots] = useState<Set<string>>(new Set());
+  // [atur-jadwal-sendiri-v1] pesan/pindah/batal sesi sendiri (menggantikan modal booking lama
+  // yang tak pernah punya tombol pembuka, membaca hari Availability bergeser sehari, dan
+  // buta terhadap jadwal siswa lain pengajar yang sama).
+  const aturJadwal = useKelasAturJadwal(!!student?.id);
+  const [aturSheet, setAturSheet] = useState<{ mode: "pesan" | "pindah"; kelas: KelasAturJadwal; sesi?: SesiUbah } | null>(null);
   const [pendingModalReg, setPendingModalReg] = useState<any>(null); // pending-payment popup
   // [akun-cancel-enrollment-v1] target kartu yang lagi dikonfirmasi pembatalannya + flag in-flight
   const [cancelTarget, setCancelTarget] = useState<any>(null);
@@ -3246,7 +3246,6 @@ export default function AkunPage() {
       setCancelling(false);
     }
   };
-  const [bookingSubmit, setBookingSubmit] = useState(false);
   // Email/password login
   const [loginEmail, setLoginEmail] = useState("");
   const [loginPassword, setLoginPassword] = useState("");
@@ -3994,75 +3993,6 @@ export default function AkunPage() {
   }
 
   // ── Derived Data ─────────────────────────────────────────────────
-  // Booking helpers
-  async function openBooking(reg: StudentReg) {
-    if (!reg.teacher_id) {
-      alert("Kelas ini belum punya pengajar ditugaskan. Hubungi admin.");
-      return;
-    }
-    setBookingReg(reg);
-    setSelectedSlots(new Set());
-    setLoadingSlots(true);
-    // Fetch teacher_availability
-    const { data: avail } = await supabase
-      .from("teacher_availability")
-      .select("day_of_week, time_slot")
-      .eq("teacher_id", reg.teacher_id);
-    setAvailSlots(new Set((avail || []).map((a: any) => `${a.day_of_week}-${a.time_slot}`)));
-    // Fetch already-booked schedules in next 14 days (to avoid conflicts)
-    const until = new Date(); until.setDate(until.getDate() + 14);
-    const { data: booked } = await supabase
-      .from("schedules")
-      .select("scheduled_at")
-      .eq("teacher_id", reg.teacher_id)
-      .gte("scheduled_at", new Date().toISOString())
-      .lte("scheduled_at", until.toISOString())
-      .neq("status", "cancelled");
-    setBookedSlots(new Set((booked || []).map((b: any) => new Date(b.scheduled_at).toISOString())));
-    setLoadingSlots(false);
-  }
-
-  async function submitBooking() {
-    if (!bookingReg || selectedSlots.size === 0 || !student) return;
-    setBookingSubmit(true);
-    try {
-      const rows = Array.from(selectedSlots).map((slot) => ({
-        registration_id: bookingReg.id,
-        teacher_id: bookingReg.teacher_id,
-        student_id: student.id,
-        scheduled_at: slot,
-        duration_minutes: Number(bookingReg.duration) || 60,
-        status: "pending",
-        student_confirmed: true,
-        student_confirmed_at: new Date().toISOString(),
-        notes: "Menunggu konfirmasi pengajar",
-      }));
-      const { data: created, error } = await supabase.from("schedules").insert(rows).select("id, scheduled_at");
-      if (error) throw error;
-      // [notif-v2] kabari pengajar ada booking baru (bell dashboard pengajar).
-      // Lewat RPC notify_user (SECURITY DEFINER) karena RLS notifications menolak
-      // insert lintas-user. Gagal kirim tidak boleh membatalkan booking-nya.
-      try {
-        await Promise.all((created || []).map((row: any) =>
-          supabase.rpc("notify_user", {
-            p_recipient_id: bookingReg.teacher_id,
-            p_user_type: "teacher",
-            p_title: "Booking baru menunggu konfirmasi",
-            p_body: `${student.name || "Siswa"} booking kelas ${displayLanguage(bookingReg.language)} pada ${new Date(row.scheduled_at).toLocaleString("id-ID", { weekday: "long", day: "numeric", month: "long", year: "numeric", hour: "2-digit", minute: "2-digit", timeZone: "Asia/Jakarta" })} WIB.`,
-            p_url: null,
-            p_schedule_id: row.id,
-          })
-        ));
-      } catch (e) { console.error("[notif-v2] gagal kirim notif booking ke pengajar:", e); }
-      setBookingReg(null);
-      setSelectedSlots(new Set());
-      alert(`${rows.length} sesi berhasil di-booking! Menunggu konfirmasi pengajar.`);
-    } catch (e: any) {
-      alert("Gagal: " + e.message);
-    }
-    setBookingSubmit(false);
-  }
-
   // [akun-split-pending-active-v1] activeRegs = HANYA yang sudah dibayar
   // (payment_status 'Lunas' atau 'Cicilan'). Ini yang masuk "Kelas Live" /
   // UnifiedCourseCard. Yang belum bayar TIDAK pernah masuk sini — mereka ada di
@@ -5575,7 +5505,9 @@ export default function AkunPage() {
                     !r.batch_id && !r.test_prep_batch_id && !isProdukDigital(r.product) &&
                     Number(r.sessions_total) > 0 && (Number(r.sessions_used) || 0) < Number(r.sessions_total) &&
                     !punyaSesiMendatang(r.id) &&
-                    !bahasaMasihJalan.has(bahasaDasar(r.language)))
+                    !bahasaMasihJalan.has(bahasaDasar(r.language)) &&
+                    // [atur-jadwal-sendiri-v1] yang bisa dipesan sendiri sudah dijawab kartu Atur jadwal
+                    !aturJadwal.kelas.some((k) => k.regId === r.id && k.bisaPesan))
                   .map((r: any) => ({
                     id: r.id,
                     label: [r.language, r.level].filter(Boolean).join(" · ") || "Kelas",
@@ -5586,7 +5518,18 @@ export default function AkunPage() {
                       name: student?.name || undefined,
                     }),
                   }));
-                return <JadwalCalendar sessions={[...jadwalSessions, ...jadwalBatchSessions]} regularBatches={jadwalRegulerBatches} kelasBelumTerjadwal={kelasBelumTerjadwal} studentName={student?.name || undefined} aksesRekaman={aksesRekamanMap} />;
+                const kelasUbah = new Map(aturJadwal.kelas.map((k) => [k.regId, k]));
+                return <JadwalCalendar sessions={[...jadwalSessions, ...jadwalBatchSessions]} regularBatches={jadwalRegulerBatches} kelasBelumTerjadwal={kelasBelumTerjadwal} studentName={student?.name || undefined} aksesRekaman={aksesRekamanMap}
+                  sisipan={<AturJadwalKartu kelas={aturJadwal.kelas} onPilih={(kelas) => setAturSheet({ mode: "pesan", kelas })} />}
+                  bisaUbahReg={new Set(kelasUbah.keys())}
+                  onUbahSesi={(s) => {
+                    const kelas = s.registrationId ? kelasUbah.get(s.registrationId) : undefined;
+                    if (!kelas) return;
+                    setAturSheet({ mode: "pindah", kelas, sesi: {
+                      id: s.id, registrationId: s.registrationId!, scheduledAt: s.scheduledAt,
+                      durationMinutes: s.durationMinutes, label: kelas.label, sessionNumber: s.sessionNumber,
+                    } });
+                  }} />;
               })()}
             </motion.div>
           )}
@@ -6253,116 +6196,19 @@ export default function AkunPage() {
         </div>
       )}
 
-      {bookingReg && (
-        <div className="fixed inset-0 z-[60] flex items-end sm:items-center justify-center bg-black/60 p-0 sm:p-4" onClick={() => !bookingSubmit && setBookingReg(null)}>
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            className="bg-white rounded-t-3xl sm:rounded-3xl shadow-2xl w-full sm:max-w-2xl max-h-[92vh] overflow-hidden flex flex-col"
-            onClick={e => e.stopPropagation()}
-          >
-            <div className="flex items-center justify-between px-5 py-4 border-b border-gray-100 shrink-0">
-              <div>
-                <h3 className="text-lg font-bold text-gray-900">Booking Sesi</h3>
-                <p className="text-xs text-gray-500 mt-0.5">
-                  {displayLanguage(bookingReg.language)} · {bookingReg.level}
-                  {bookingReg.teachers?.name && <span className="inline-flex items-center gap-1"> · <GraduationCap className="h-3.5 w-3.5" strokeWidth={2.2} />{bookingReg.teachers.name}</span>}
-                </p>
-              </div>
-              <button
-                onClick={() => !bookingSubmit && setBookingReg(null)}
-                className="h-8 w-8 rounded-full bg-gray-100 flex items-center justify-center text-gray-500 hover:bg-gray-200 transition-colors"
-              ><XCircle className="h-5 w-5" strokeWidth={2} /></button>
-            </div>
-
-            <div className="flex-1 overflow-y-auto px-5 py-4">
-              {loadingSlots ? (
-                <div className="py-16 text-center text-sm text-gray-500">Memuat jadwal pengajar...</div>
-              ) : availSlots.size === 0 ? (
-                <div className="py-12 text-center">
-                  <Calendar className="mx-auto mb-2 h-8 w-8 text-slate-300" strokeWidth={1.8} />
-                  <p className="text-sm text-gray-700 font-medium">Pengajar belum set jadwal tersedia</p>
-                  <p className="text-xs text-gray-500 mt-1">Hubungi admin untuk booking manual</p>
-                </div>
-              ) : (
-                <>
-                  <p className="text-xs text-gray-500 mb-3">
-                    Pilih slot yang kosong (hijau) dalam 14 hari ke depan. Jam yang sudah dibook akan abu-abu.
-                  </p>
-                  <div className="flex flex-col gap-3">
-                    {Array.from({ length: 14 }, (_, di) => {
-                      const date = new Date();
-                      date.setDate(date.getDate() + di);
-                      const dow = date.getDay();
-                      const daySlots: { time: string; iso: string; isBooked: boolean; isPast: boolean }[] = [];
-                      for (let h = 6; h < 22; h++) {
-                        const time = `${String(h).padStart(2, "0")}:00`;
-                        const slotDate = new Date(date);
-                        slotDate.setHours(h, 0, 0, 0);
-                        const iso = slotDate.toISOString();
-                        const isAvail = availSlots.has(`${dow}-${time}`) || availSlots.has(`${dow}-${time}:00`);
-                        const isBooked = bookedSlots.has(iso);
-                        const isPast = slotDate.getTime() <= Date.now() + 60 * 60 * 1000;
-                        if (isAvail) daySlots.push({ time, iso, isBooked, isPast });
-                      }
-                      if (daySlots.length === 0) return null;
-                      const dayLabel = date.toLocaleDateString("id-ID", { weekday: "long", day: "numeric", month: "short" });
-                      return (
-                        <div key={di} className="bg-slate-50 rounded-xl p-3">
-                          <p className="text-xs font-semibold text-gray-700 mb-2">{dayLabel}</p>
-                          <div className="flex flex-wrap gap-1.5">
-                            {daySlots.map(s => {
-                              const disabled = s.isBooked || s.isPast;
-                              const isSelected = selectedSlots.has(s.iso);
-                              return (
-                                <button
-                                  key={s.time}
-                                  disabled={disabled}
-                                  onClick={() => {
-                                  setSelectedSlots((prev) => {
-                                    const next = new Set(prev);
-                                    if (next.has(s.iso)) next.delete(s.iso);
-                                    else next.add(s.iso);
-                                    return next;
-                                  });
-                                }}
-                                  className={`px-3 py-1.5 rounded-lg text-xs font-semibold transition-colors ${
-                                    isSelected
-                                      ? "bg-teal-600 text-white"
-                                      : disabled
-                                      ? "bg-gray-100 text-gray-400 cursor-not-allowed line-through"
-                                      : "bg-green-50 text-green-700 hover:bg-green-100 border border-green-200"
-                                  }`}
-                                >
-                                  {s.time}
-                                </button>
-                              );
-                            })}
-                          </div>
-                        </div>
-                      );
-                    })}
-                  </div>
-                </>
-              )}
-            </div>
-
-            <div className="border-t border-gray-100 px-5 py-4 flex items-center justify-between gap-3 shrink-0">
-              <div className="flex items-center gap-1.5 text-xs text-gray-500 min-w-0 truncate">
-                {selectedSlots.size > 0 ? (
-                  <><Check className="h-3.5 w-3.5 shrink-0 text-teal-600" strokeWidth={2.5} />{selectedSlots.size} sesi dipilih</>
-                ) : "Pilih slot dulu"}
-              </div>
-              <button
-                onClick={submitBooking}
-                disabled={selectedSlots.size === 0 || bookingSubmit}
-                className="inline-flex h-10 items-center gap-2 rounded-xl bg-teal-600 px-5 text-sm font-semibold text-white hover:bg-teal-700 disabled:opacity-40 disabled:cursor-not-allowed transition-colors shrink-0"
-              >
-                {bookingSubmit ? "Menyimpan..." : selectedSlots.size > 0 ? `Booking ${selectedSlots.size} Sesi →` : "Pilih slot dulu"}
-              </button>
-            </div>
-          </motion.div>
-        </div>
+      {aturSheet && (
+        <AturJadwalSheet
+          mode={aturSheet.mode}
+          kelas={aturSheet.kelas}
+          sesi={aturSheet.sesi}
+          onTutup={() => setAturSheet(null)}
+          onSelesai={(pesan) => {
+            setAturSheet(null);
+            toast.success(pesan);
+            if (user?.email) loadStudentData(user.email, true);
+            aturJadwal.muat();
+          }}
+        />
       )}
 
       {/* Enrollment Wizard */}
