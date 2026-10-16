@@ -149,10 +149,12 @@ const CSS = `
 
 .lingw-scrim{
   position:fixed;inset:0;z-index:9998;background:rgba(6,38,34,.28);
-  -webkit-backdrop-filter:blur(6px);backdrop-filter:blur(6px);
-  opacity:0;pointer-events:none;transition:opacity .4s ease;
+  opacity:0;pointer-events:none;visibility:hidden;transition:opacity .4s ease,visibility 0s linear .4s;
 }
-.lingw-scrim.open{opacity:1;pointer-events:auto;}
+/* [scroll-perf-v1] blur hanya saat terbuka — dulu lapisan blur layar-penuh (opacity 0)
+   ikut dikomposit tiap frame scroll di Chrome Mac. */
+.lingw-scrim.open{opacity:1;pointer-events:auto;visibility:visible;transition:opacity .4s ease;
+  -webkit-backdrop-filter:blur(6px);backdrop-filter:blur(6px);}
 
 .lingw-panel{
   position:fixed;top:0;right:0;bottom:0;z-index:9999;width:var(--panel-w);max-width:100vw;

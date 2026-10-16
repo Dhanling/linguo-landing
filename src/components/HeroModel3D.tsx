@@ -63,7 +63,7 @@ export default function HeroModel3D({ alt }: { alt: string }) {
       if (batal) return;
 
       const renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true, powerPreference: "low-power" });
-      renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+      renderer.setPixelRatio(Math.min(window.devicePixelRatio, 1.5)); // [scroll-perf-v1] 2× = 1620² + MSAA tiap frame, berat di Mac Retina
       renderer.toneMapping = THREE.NeutralToneMapping;
       renderer.toneMappingExposure = 1.05;
       renderer.setClearColor(0x000000, 0);
@@ -188,9 +188,20 @@ export default function HeroModel3D({ alt }: { alt: string }) {
           // Gambar awal disembunyikan SESUDAH kanvas penuh, bukan berbarengan.
           tSiap = window.setTimeout(() => setSiap(true), 350);
         }
-        if (!diam && terlihat && !document.hidden) raf = requestAnimationFrame(frame);
+        if (!diam && terlihat && !gulir && !document.hidden) raf = requestAnimationFrame(frame);
       };
-      const lanjut = () => { if (!raf && !diam && terlihat && !document.hidden) raf = requestAnimationFrame(frame); };
+      const lanjut = () => { if (!raf && !diam && terlihat && !gulir && !document.hidden) raf = requestAnimationFrame(frame); };
+
+      // [scroll-perf-v1] Selama halaman di-scroll, render WebGL dijeda (karakter
+      // diam sejenak) supaya GPU/main thread dipakai untuk scroll; lanjut 150 ms
+      // sesudah scroll berhenti. Dulu ia terus merender 60–120 fps sambil scroll.
+      let gulir = false, tGulir = 0;
+      const onGulir = () => {
+        gulir = true;
+        clearTimeout(tGulir);
+        tGulir = window.setTimeout(() => { gulir = false; tSebelum = 0; lanjut(); }, 150);
+      };
+      if (!diam) window.addEventListener("scroll", onGulir, { passive: true });
 
       const io = new IntersectionObserver(([en]) => { terlihat = en.isIntersecting; lanjut(); });
       io.observe(wadah);
@@ -203,6 +214,8 @@ export default function HeroModel3D({ alt }: { alt: string }) {
       bersihkan = () => {
         cancelAnimationFrame(raf);
         clearTimeout(tSiap);
+        clearTimeout(tGulir);
+        window.removeEventListener("scroll", onGulir);
         mixer.stopAllAction();
         io.disconnect(); ro.disconnect();
         document.removeEventListener("visibilitychange", lanjut);

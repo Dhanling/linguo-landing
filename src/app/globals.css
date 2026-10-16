@@ -61,6 +61,11 @@ body {
 }
 .animate-marquee { animation: marquee 25s linear infinite; }
 .animate-marquee-slow { animation: marquee 40s linear infinite; }
+
+/* [scroll-perf-v1] Gelembung hero naik-turun (Melayang) — murni compositor. */
+@keyframes melayang { 50% { transform: translateY(var(--amp, -6px)); } }
+.melayang { animation: melayang 3s ease-in-out infinite; will-change: transform; }
+@media (prefers-reduced-motion: reduce) { .melayang { animation: none; } }
 .animate-marquee:hover, .animate-marquee-slow:hover { animation-play-state: paused; }
 
 /* linguo-patch:page-enter-v1 DICABUT [no-body-fade-v1] — dulu body di-fade dari

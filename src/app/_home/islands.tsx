@@ -163,7 +163,7 @@ export function Navbar({lang,setLang,onPricingTab,onLoginOpen}:{lang:string;setL
           Di atas hero: bar teal full-width. Setelah scroll (ter-reveal saat scroll
           up): floating pill dengan efek kaca (frosted glass) — background di baliknya
           nge-blur ala Lingopie. */}
-      <nav className={`transition-all duration-300 ${c ? "mt-2.5 sm:mt-3 mx-2.5 sm:mx-4 rounded-2xl sm:rounded-full bg-white/60 supports-[backdrop-filter]:bg-white/50 backdrop-blur-xl backdrop-saturate-150 border border-white/50 shadow-xl shadow-slate-900/10" : "bg-[#1A9E9E]"}`}>
+      <nav className={`transition-[margin,border-radius,background-color,box-shadow] duration-300 ${c ? "mt-2.5 sm:mt-3 mx-2.5 sm:mx-4 rounded-2xl sm:rounded-full bg-white/80 supports-[backdrop-filter]:bg-white/70 backdrop-blur-md border border-white/50 shadow-xl shadow-slate-900/10" : "bg-[#1A9E9E]"}`}>
         <div className="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
           <div className="flex items-center gap-10">
             <a href="/" className="flex items-center">
@@ -1090,17 +1090,26 @@ export function LanguageStrip({className=""}:{className?:string}) {
 
     let raf = 0;
     let prev = 0;
+    // [scroll-perf-v1] Loop hanya jalan saat strip terlihat & tab aktif — dulu
+    // terus menulis scrollLeft tiap 30 ms sepanjang halaman dibuka.
+    let terlihat = false;
     const tick = (t: number) => {
+      raf = 0;
       // Keep the original ~1px/30ms cadence regardless of refresh rate.
       if (t - prev >= 30) {
         prev = t;
         el.scrollLeft = el.scrollLeft >= maxScroll ? 0 : el.scrollLeft + 1;
       }
-      raf = requestAnimationFrame(tick);
+      jalan();
     };
-    raf = requestAnimationFrame(tick);
+    const jalan = () => { if (!raf && terlihat && !document.hidden) raf = requestAnimationFrame(tick); };
+    const io = new IntersectionObserver(([en]) => { terlihat = en.isIntersecting; jalan(); });
+    io.observe(el);
+    document.addEventListener("visibilitychange", jalan);
     return () => {
       cancelAnimationFrame(raf);
+      io.disconnect();
+      document.removeEventListener("visibilitychange", jalan);
       window.removeEventListener("resize", recalc);
     };
   }, [paused]);
@@ -1350,9 +1359,11 @@ export function HomeMount() {
 /** Gelembung yang naik-turun pelan di hero. */
 export function Melayang({ amp, className, children }: { amp: number; className?: string; children: React.ReactNode }) {
   return (
-    <motion.div animate={{ y: [0, -amp, 0] }} transition={{ duration: 3, repeat: Infinity }} className={className}>
+    // [scroll-perf-v1] Animasi CSS (compositor), bukan motion `y` yang dihitung JS
+    // tiap frame dan ikut berebut main thread saat scroll.
+    <div style={{ "--amp": `${-amp}px` } as React.CSSProperties} className={`melayang ${className ?? ""}`}>
       {children}
-    </motion.div>
+    </div>
   );
 }
 
