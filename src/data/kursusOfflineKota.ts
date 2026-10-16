@@ -11,7 +11,7 @@
 //
 // FAKTA BISNIS (sumber: lib/trial-pricing.ts [offline-private-class-v1] +
 // aturan Minling di api/chat/route.ts):
-// - Offline cuma untuk Kelas Private & Semi Private (OFFLINE_PROGRAMS).
+// - Offline untuk Kelas Private, Semi Private & Kelas Kids (OFFLINE_PROGRAMS).
 //   Reguler tetap online via Zoom dengan jadwal tetap.
 // - Tarif offline = tarif online + OFFLINE_SURCHARGE_PER_SESSION per sesi,
 //   sama di semua daerah.

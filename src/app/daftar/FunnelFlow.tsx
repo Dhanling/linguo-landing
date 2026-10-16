@@ -543,7 +543,7 @@ export default function FunnelFlow({ route }: { route: FunnelRoute }) {
             </section>
           )}
 
-          {/* Mode kelas — Private & Semi Private */}
+          {/* Mode kelas — Private, Semi Private & Kids [kids-offline-v1] */}
           {canOffline && (
             <section className="mt-6">
               <h2 className="text-base font-bold text-slate-900">Mode kelas</h2>

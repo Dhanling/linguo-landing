@@ -81,8 +81,8 @@ function computeFunnelAmount(input: {
   kidsLevel: string;
 }): PriceResult | null {
   const { program, language, level, duration, teacherType, sessions, classSize, testPrepId, testPrepFormat, kidsLevel } = input;
-  // offline-private-class-v1 — offline (pengajar datang) cuma untuk Private &
-  // Semi Private; program lain dipaksa online biar tak ada tagihan +50rb yang
+  // offline-private-class-v1 — offline (pengajar datang) cuma untuk Private,
+  // Semi Private & Kids [kids-offline-v1]; program lain dipaksa online biar tak ada tagihan +50rb yang
   // tak pernah bisa dijalankan.
   const classMode = supportsOffline(program) ? normalizeClassMode(input.classMode) : "online";
   const isOffline = classMode === "offline";
@@ -156,14 +156,17 @@ function computeFunnelAmount(input: {
     // Nilai di luar daftar dianggap A1 (bukan ditolak): itu perilaku lama, dan
     // tarif A1 adalah yang termurah, jadi tidak ada celah menekan tagihan.
     const lvl = KIDS_PRICE_LEVELS.includes(kidsLevel) ? kidsLevel : "A1";
-    const perSession = computeKidsPerSession(key, duration, teacherType, language, lvl);
-    if (!perSession) return null;
+    const onlinePerSession = computeKidsPerSession(key, duration, teacherType, language, lvl);
+    if (!onlinePerSession) return null;
+    // [kids-offline-v1] selisih offline ditambah SETELAH markup native, sama dgn Private.
+    const perSession = applyOfflineSurcharge(onlinePerSession, classMode);
     return {
       amount: perSession * sessions,
       perSession,
       description:
         `Kelas Kids ${language} — ${level} — Level ${lvl} — ${sessions} sesi @${duration} menit` +
-        (teacherType === "native" ? " (Pengajar Native)" : ""),
+        (teacherType === "native" ? " (Pengajar Native)" : "") +
+        offlineSuffix,
     };
   }
 
