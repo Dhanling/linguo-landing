@@ -21,6 +21,7 @@ import Link from "next/link";
 import type { LanguageMeta } from "@/data/curriculum";
 import { displayLangTitle, regionLabels } from "@/data/curriculum/languages";
 import { LangSlugFlag } from "@/components/RectFlag";
+import { padananTangga } from "@/lib/levelEquivalence"; // [padanan-ujian-v1]
 
 export default function SilabusHub({ languages }: { languages: LanguageMeta[] }) {
   const [query, setQuery] = useState("");
@@ -205,6 +206,8 @@ export default function SilabusHub({ languages }: { languages: LanguageMeta[] })
 
 const LanguageCard = memo(function LanguageCard({ lang, large = false }: { lang: LanguageMeta; large?: boolean }) {
   const isLocked = !lang.available;
+  // [padanan-ujian-v1] Tag ujian resmi ("TOPIK", "JLPT") kalau level bahasa ini punya padanan.
+  const ujian = padananTangga(lang.slug)?.ujian;
   const content = (
     // Pembungkus .group = target hover, posisinya TIDAK pernah berubah.
     // Kartu di dalamnya yang naik pas hover → kursor nggak pernah "lepas".
@@ -219,7 +222,13 @@ const LanguageCard = memo(function LanguageCard({ lang, large = false }: { lang:
           {isLocked ? (
             <span className="text-[10px] uppercase tracking-wider bg-amber-100 text-amber-700 px-2 py-0.5 rounded-full font-semibold">Segera</span>
           ) : (
-            <span className="text-[10px] uppercase tracking-wider bg-emerald-100 text-emerald-700 px-2 py-0.5 rounded-full font-semibold">Tersedia</span>
+            <span className="flex items-center gap-1">
+              {ujian && (
+                <span title={`Level Linguo dipadankan (perkiraan) ke ${ujian}`}
+                  className="text-[10px] tracking-wider bg-slate-100 text-slate-600 px-2 py-0.5 rounded-full font-semibold">{ujian}</span>
+              )}
+              <span className="text-[10px] uppercase tracking-wider bg-emerald-100 text-emerald-700 px-2 py-0.5 rounded-full font-semibold">Tersedia</span>
+            </span>
           )}
         </div>
         <h3 className={`font-bold text-gray-900 mb-1 ${large ? "text-xl md:text-2xl" : "text-base"}`}>

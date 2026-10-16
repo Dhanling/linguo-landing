@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { ringkasanPadanan } from "@/lib/levelEquivalence"; // [padanan-ujian-v1]
 import { notFound, redirect } from "next/navigation";
 import { displayLangTitle, getCurriculum, languages, resolveLanguageSlug } from "@/data/curriculum";
 import CurriculumViewer from "./CurriculumViewer";
@@ -19,11 +20,13 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const c = getCurriculum(slug);
   if (!c) return { title: "Silabus tidak ditemukan | Linguo.id" };
   const title = displayLangTitle(c.meta);
+  // [padanan-ujian-v1] "Setara TOPIK I Level 1 sampai TOPIK II Level 4" — orang mencari "silabus TOPIK 3", bukan "silabus B1".
+  const padanan = ringkasanPadanan(slug);
   return {
     title: `Silabus ${title} — A1 sampai B2 | Linguo.id`,
     // linguo-patch:silabus-jumlah-sesi-v1 — dulu "192 sesi" ditulis tetap, padahal
     // tiap bahasa beda jumlah sublevelnya (ada yang 192, ada yang 304). Hitung saja.
-    description: `Kurikulum lengkap ${title} di Linguo.id: ${totalSessions(c)} sesi, 4 level CEFR. ${c.overview}`,
+    description: `Kurikulum lengkap ${title} di Linguo.id: ${totalSessions(c)} sesi, 4 level CEFR.${padanan ? ` Kurang lebih setara ${padanan}.` : ""} ${c.overview}`,
     alternates: { canonical: `https://linguo.id/silabus/${slug}` },
     openGraph: {
       title: `Silabus ${title} — Linguo.id`,

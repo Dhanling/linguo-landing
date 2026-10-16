@@ -1,5 +1,6 @@
 // src/app/kursus/[lang]/page.tsx
 import type { Metadata } from "next";
+import PadananUjianBadge from "@/components/PadananUjianBadge"; // [padanan-ujian-v1]
 import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
@@ -638,7 +639,10 @@ function Curriculum({ detail, langName }: { detail: LanguageDetail; langName: st
                   {level.level}
                 </span>
                 <div>
-                  <h3 className="text-lg font-semibold text-slate-900">{level.title}</h3>
+                  <h3 className="flex flex-wrap items-center gap-2 text-lg font-semibold text-slate-900">
+                    {level.title}
+                    <PadananUjianBadge bahasa={detail.languageSlug} level={level.level} />{/* [padanan-ujian-v1] */}
+                  </h3>
                   <p className="text-sm text-slate-500">{level.sessionCount} sesi</p>
                 </div>
               </div>

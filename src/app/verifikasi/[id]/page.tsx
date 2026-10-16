@@ -4,6 +4,7 @@
 // yang ditampilkan hanya data sertifikat: nama siswa, program, pengajar, sesi.
 // Sertifikat baru dianggap TERBIT kalau sessions_used >= sessions_total —
 // aturan yang sama dengan memo `certs` di src/app/akun/page.tsx.
+import { padananUjian } from "@/lib/levelEquivalence"; // [padanan-ujian-v1]
 import Link from "next/link";
 import { BadgeCheck, ShieldAlert, ShieldCheck } from "lucide-react";
 import { createClient } from "@supabase/supabase-js";
@@ -21,6 +22,8 @@ type Data = {
   sesi: number;
   terbit: boolean;
   noSertifikat: string;
+  /** [padanan-ujian-v1] "TOPIK II Level 3" dsb — null kalau bahasa tak punya padanan. */
+  padanan: string | null;
 };
 
 async function ambil(id: string): Promise<Data | null> {
@@ -44,6 +47,7 @@ async function ambil(id: string): Promise<Data | null> {
     level: reg.level || "—",
     pengajar: reg.teachers?.name || "Pengajar Linguo",
     sesi: total,
+    padanan: padananUjian(reg.language, reg.level)?.label || null,
     terbit: total > 0 && used >= total,
     // sama persis dengan idNo di sertifikat
     noSertifikat: `LING-${String(reg.language || "XX").slice(0, 2).toUpperCase()}-${base}-${String(reg.id).replace(/\D/g, "").slice(0, 6).padStart(6, "0")}`,
@@ -75,6 +79,7 @@ export default async function VerifikasiPage({ params }: { params: Promise<{ id:
               {[
                 ["Diberikan kepada", d.nama],
                 ["Program", `${d.bahasa} — CEFR ${d.level}`],
+                ...(d.padanan ? [["Kurang lebih setara (perkiraan)", `≈ ${d.padanan}`]] : []),
                 ["Pengajar", d.pengajar],
                 ["Jumlah sesi", `${d.sesi} sesi`],
                 ["No. Sertifikat", d.noSertifikat],

@@ -17,6 +17,7 @@
 // =============================================================================
 
 import { BRAND_FACTS, GOOGLE_REVIEWS_SENTENCE, rupiah } from "./brand-facts";
+import { daftarPadananTeks } from "./levelEquivalence"; // [padanan-ujian-v1]
 import { TESTIMONIALS } from "../data/testimonials";
 import { languages } from "../data/curriculum/languages";
 import {
@@ -400,6 +401,9 @@ ${TESTIMONIALS.map((t) => `- ${t.name} (kelas bahasa ${t.langLabel}): "${t.text}
 Kurikulum ${BRAND_FACTS.name} disusun mengikuti Common European Framework of Reference for Languages (CEFR) pada rentang ${BRAND_FACTS.cefrLevels}, dibagi menjadi empat tingkat: Basic (A1), Upper Basic (A2), Intermediate (B1), dan Advance (B2). Setiap bahasa memiliki silabus 192 sesi lengkap yang dapat dilihat publik di ${BASE}/silabus.
 
 Setiap level dipecah lagi menjadi sublevel. A1 terdiri dari 3 sublevel, A2 terdiri dari 4 sublevel, B1 terdiri dari 5 sublevel, dan B2 terdiri dari 7 sublevel. Siswa naik sublevel setelah menyelesaikan sesi dan penilaian pada sublevel sebelumnya.
+
+Untuk bahasa yang memiliki ujian kemahiran resmi sendiri, level Linguo dipadankan secara perkiraan (bukan hasil ujian resmi) sebagai berikut:
+${daftarPadananTeks()}
 
 Penempatan level dilakukan lewat placement test online gratis per bahasa di ${BASE}/silabus/{bahasa}/coba. Pemula tanpa pengalaman sebelumnya langsung masuk Basic A1.1 tanpa perlu tes. Hasil placement test bersifat rekomendasi, bukan penempatan wajib.
 

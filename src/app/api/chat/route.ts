@@ -10,6 +10,7 @@ import { createClient } from "@supabase/supabase-js";
 import { resolveEtpBatches, todayWIBISO } from "@/lib/etpBatches";
 import { fetchJadwalKelas, jadwalGelombang, jadwalPdfFileName } from "@/lib/jadwalKelasPdf";
 import { PRICE_CATEGORIES, getSemiPrivatePrice } from "@/lib/trial-pricing";
+import { daftarPadananTeks } from "@/lib/levelEquivalence"; // [padanan-ujian-v1]
 
 export const runtime = "nodejs";
 export const dynamic = "force-dynamic";
@@ -93,6 +94,8 @@ KNOWLEDGE BASE:
 Program:
 - Private = 1-on-1. Jadwal FLEKSIBEL: hari & jam dibahas langsung oleh siswa bersama pengajar nanti di grup WA (setelah pendaftaran). Frekuensi kelas bisa 1-5x pertemuan per minggu, tergantung kesepakatan bersama pengajar. Reguler = group class 8-15 siswa, jadwal sudah ditentukan Linguo (1 jadwal, tidak bisa request).
 - Level CEFR — strukturnya PERSIS sama dengan silabus di linguo.id/silabus/{slug}, jangan mengarang jumlah lain: A1 = 3 sublevel (A1.1, A1.2, A1.3), A2 = 4 sublevel (A2.1-A2.4), B1 = 5 sublevel (B1.1-B1.5), B2 = 7 sublevel (B2.1-B2.7, B2.7 = test prep). Tiap sublevel 16 sesi @60 atau @90 menit, jadi A1 penuh = 48 sesi, A2 = 64 sesi, B1 = 80 sesi, B2 = 112 sesi (total 304 sesi dari nol sampai near-native). "A1.1" = sublevel pertama saja (16 sesi), "A1 penuh/full" = 3 sublevel (48 sesi). Bisa skip sublevel kalau lolos evaluasi pengajar.
+- PADANAN UJIAN RESMI (TOPIK/JLPT/HSK dll) — kalau user menyebut target ujian ("mau TOPIK 3", "butuh N4", "HSK 4"), petakan ke level Linguo PERSIS dari tabel ini (sama dengan yang tampil di silabus & hasil placement test), dan selalu bilang "kurang lebih setara" karena ini perkiraan, bukan hasil ujian resmi. Bahasa yang tidak ada di tabel = jangan mengarang padanan:
+${daftarPadananTeks()}
 - KENAIKAN SUBLEVEL TIAP 16 SESI — jangan salah hitung: sesi ke-1 s.d. 16 = A1.1, sesi 17-32 = A1.2, sesi 33-48 = A1.3, sesi 49-64 = A2.1, dst. Begitu 16 sesi A1.1 selesai, siswa LANGSUNG lanjut A1.2 — TIDAK perlu 32 sesi dulu. Angka 32 sesi itu total kumulatif SETELAH A1.2 selesai, bukan syarat masuk A1.2. Contoh: siswa yang baru menempuh 9 sesi masih di A1.1 (9 dari 16 sesi), belum A1.2. Kalau siswa menyebut syarat sesi lain ("A1.2 kan minimal 32 lesson dulu ya?"), luruskan dengan sopan — jangan diiyakan.
 - Kelas online interaktif via Zoom. Silabus: https://linguo.id/silabus
 - MATERI & REKAMAN KELAS ADA DI DASHBOARD SISWA (linguo.id/akun), BUKAN LAGI GOOGLE CLASSROOM. Siswa login ke linguo.id/akun pakai email yang dipakai waktu mendaftar, lalu buka menu "Kelas & Materi": tab "Materi" berisi materi/modul yang diunggah pengajar, tab "Progress" berisi rekaman tiap sesi (diputar langsung di halaman). Rekaman juga muncul di kartu sesi pada menu Jadwal. Google Classroom SUDAH TIDAK DIPAKAI — dilarang menyebut atau menjanjikan Google Classroom lagi.

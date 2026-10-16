@@ -18,6 +18,7 @@
 import { useEffect, useMemo, useState } from 'react';
 import { useRouter } from 'next/navigation';
 import { Target, ArrowUpRight, ArrowDownRight, Minus, RotateCcw, Play } from 'lucide-react';
+import PadananUjianBadge from '@/components/PadananUjianBadge'; // [padanan-ujian-v1]
 import {
   fetchPlacementHistory, cachedPlacementHistory, placementSlugFor, namaBahasaSlug,
   levelValue, hariSejak, CEFR_BANDS, JEDA_CEK_LEVEL_HARI, type PlacementRow,
@@ -165,6 +166,7 @@ export default function CekLevel({
             {akhir ? (
               <div className="mt-1 flex flex-wrap items-center gap-2">
                 <span className="text-[28px] font-extrabold leading-none text-[#12172B]">{akhir.row.level}</span>
+                <PadananUjianBadge bahasa={slug} level={akhir.row.level} />
                 {arah !== null && (
                   <span className={`inline-flex items-center gap-1 rounded-full px-2.5 py-1 text-[11.5px] font-bold ${
                     arah > 0 ? 'bg-emerald-50 text-emerald-700' : arah < 0 ? 'bg-rose-50 text-rose-600' : 'bg-slate-100 text-gray-500'}`}>

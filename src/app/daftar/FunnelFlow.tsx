@@ -52,6 +52,7 @@ import {
   levelsForProgram,
   type FunnelRoute,
 } from "@/lib/funnelRouting";
+import PadananUjianBadge from "@/components/PadananUjianBadge"; // [padanan-ujian-v1]
 import {
   BackLink,
   Card,
@@ -498,7 +499,10 @@ export default function FunnelFlow({ route }: { route: FunnelRoute }) {
                   </div>
                   <div className="flex-1">
                     <p className="text-sm font-bold">{levelLabel(lv)}</p>
-                    <p className="mt-0.5 text-xs text-slate-500">{levelDesc(lv)}</p>
+                    <p className="mt-0.5 flex flex-wrap items-center gap-1.5 text-xs text-slate-500">
+                      {levelDesc(lv)}
+                      <PadananUjianBadge bahasa={langEn} level={lv} size="xs" />{/* [padanan-ujian-v1] */}
+                    </p>
                   </div>
                 </button>
               ))}

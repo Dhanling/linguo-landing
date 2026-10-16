@@ -17,6 +17,8 @@
 // =============================================================================
 
 import { daftarSlugFromLanguageSlug } from "@/lib/funnelRouting";
+// [padanan-ujian-v1] "≈ TOPIK II Level 3" di bawah baris level — satu sumber dgn silabus & hasil tes.
+import { padananUjian } from "@/lib/levelEquivalence";
 
 const RESEND_API_KEY = process.env.RESEND_API_KEY || "";
 const EMAIL_FROM = process.env.EMAIL_FROM || "Linguo <noreply@linguo.id>";
@@ -100,6 +102,8 @@ function susunIsi(row: Row, maxScore?: number) {
     tanggal: tglIndo(row.created_at),
     level,
     levelLabel,
+    // Padanan ujian resmi (TOPIK/JLPT/HSK…) — null kalau bahasa itu tak punya.
+    padanan: padananUjian(row.source || row.language, row.level)?.label || null,
     blurb: info?.blurb || null,
     skor,
     waktu: durasi(row.time_elapsed_sec),
@@ -116,6 +120,7 @@ function pesanWa(row: Row, maxScore?: number) {
     ``,
     `Berikut hasilnya ya kak:`,
     `📊 Level: *${x.levelLabel}*`,
+    ...(x.padanan ? [`🎯 Kurang lebih setara: *${x.padanan}* (perkiraan)`] : []),
     ...(x.skor ? [`✅ Skor: ${x.skor}`] : []),
     ...(x.waktu ? [`⏱️ Waktu pengerjaan: ${x.waktu}`] : []),
     ``,
@@ -148,6 +153,7 @@ function htmlEmail(row: Row, maxScore?: number) {
         </p>
         <table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="border:1px solid #E6E8EC;border-radius:14px;padding:10px 16px;margin:0 0 16px">
           ${baris("Level", x.levelLabel)}
+          ${x.padanan ? baris("Kurang lebih setara (perkiraan)", `≈ ${x.padanan}`) : ""}
           ${x.skor ? baris("Skor", x.skor) : ""}
           ${x.waktu ? baris("Waktu pengerjaan", x.waktu) : ""}
         </table>

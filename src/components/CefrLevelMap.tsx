@@ -7,6 +7,7 @@
 // A1=3, A2=4, B1=5, B2=7 — 19 sublevel × 16 sesi = 304 sesi.
 import { useMemo } from "react";
 import { GraduationCap } from "lucide-react";
+import { padananTangga, type Band } from "@/lib/levelEquivalence"; // [padanan-ujian-v1]
 
 type Lvl = { code: string; name: string; en: string; subs: number; blurb: string; c: string };
 const LEVELS: Lvl[] = [
@@ -18,7 +19,10 @@ const LEVELS: Lvl[] = [
 const SESI = 16;
 const TEAL = "#16796E";
 
-export default function CefrLevelMap({ sublevel }: { sublevel?: string }) {
+export default function CefrLevelMap({ sublevel, bahasa }: { sublevel?: string; bahasa?: string }) {
+  // [padanan-ujian-v1] Tangga ujian resmi bahasa ini (TOPIK/JLPT/HSK…); null = tak ditampilkan.
+  const tangga = padananTangga(bahasa);
+  const padananDi = (code: string) => tangga?.level[code as Band] || null;
   const bars = useMemo(() => {
     const out: { code: string; lvl: Lvl; i: number }[] = [];
     LEVELS.forEach((lvl) => { for (let i = 1; i <= lvl.subs; i++) out.push({ code: `${lvl.code}.${i}`, lvl, i: i - 1 }); });
@@ -135,6 +139,9 @@ export default function CefrLevelMap({ sublevel }: { sublevel?: string }) {
           <h3 className="text-lg md:text-xl font-bold text-gray-900 leading-snug">
             {hereLvl ? <>{bars[here].code} · {hereLvl.code} {hereLvl.name} <span className="text-gray-400 font-semibold">({hereLvl.en})</span></> : "Peta level di Linguo"}
           </h3>
+          {hereLvl && padananDi(hereLvl.code) && (
+            <p className="mt-1 text-sm font-semibold text-gray-600">≈ {padananDi(hereLvl.code)} <span className="font-medium text-gray-400">(perkiraan)</span></p>
+          )}
         </div>
       </div>
       <p className="mt-3 text-sm text-gray-600 leading-relaxed">
@@ -171,6 +178,9 @@ export default function CefrLevelMap({ sublevel }: { sublevel?: string }) {
                 <span className="flex items-center gap-1.5 text-sm font-bold text-gray-900 whitespace-nowrap">
                   <span className="shrink-0">{lvl.name}</span>
                   <span className="min-w-0 truncate text-xs font-semibold text-gray-400">· {lvl.code}.1–{lvl.code}.{lvl.subs}</span>
+                  {padananDi(lvl.code) && (
+                    <span className="shrink-0 rounded-full bg-white px-1.5 py-px text-[10px] font-semibold text-slate-500 ring-1 ring-slate-200">≈ {padananDi(lvl.code)}</span>
+                  )}
                   {mine && <span className="ml-auto shrink-0 rounded-full px-2 py-0.5 text-[10px] font-bold text-white" style={{ background: TEAL }}>Level kamu</span>}
                 </span>
                 <span className="mt-0.5 block text-xs text-gray-600 leading-relaxed">{lvl.blurb}</span>
@@ -182,6 +192,11 @@ export default function CefrLevelMap({ sublevel }: { sublevel?: string }) {
       <p className="mt-4 text-xs text-gray-500 leading-relaxed">
         Begitu {SESI} sesi di satu sublevel tuntas, kamu langsung naik ke sublevel berikutnya dan dapat sertifikat — misal selesai A1.1 lanjut A1.2. Kalau evaluasi pengajar menyatakan kamu sudah mampu, sublevel boleh dilompati.
       </p>
+      {tangga && (
+        <p className="mt-2 text-xs text-gray-400 leading-relaxed">
+          Padanan {tangga.ujian} di atas perkiraan supaya mudah dibandingkan — bukan hasil ujian resmi {tangga.namaUjian}.
+        </p>
+      )}
     </div>
   );
 }

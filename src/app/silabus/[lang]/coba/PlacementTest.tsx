@@ -11,7 +11,8 @@ import type { LanguageCurriculum } from "@/data/curriculum/types";
 import { displayLangTitle } from "@/data/curriculum/languages";
 import { type Question, type DragDropQuestion, type MissingQuestion, type MatchingQuestion, type FillChoiceQuestion, DIFFICULTY_POINTS, determineLevel } from "@/data/placement/english";
 import { RectFlag, FLAG_CODE_BY_SLUG } from "@/components/RectFlag";
-import CefrLevelMap from "@/components/CefrLevelMap"; // [placement-cefr-map-v1]
+import CefrLevelMap from "@/components/CefrLevelMap";
+import { padananUjian, CATATAN_PADANAN } from "@/lib/levelEquivalence"; // [padanan-ujian-v1] // [placement-cefr-map-v1]
 import ListeningPlayer, { siapkanAudio } from "./ListeningPlayer"; // [placement-listening-v1]
 
 // Teks jawaban benar per tipe soal — dipakai di rekap akhir (bukan saat menjawab)
@@ -737,6 +738,7 @@ function ResultScreen({ score, questions, log, meta, timeElapsedSec, contact, ge
     B2: { bg: "bg-emerald-100", text: "text-emerald-600", soft: "bg-emerald-50", border: "border-emerald-200", pill: "bg-emerald-100 text-emerald-700" },
   };
   const lc = levelColorMap[result.level] ?? levelColorMap.A1;
+  const padanan = padananUjian(meta.slug, result.level); // [padanan-ujian-v1]
   const levelArt = levelArtSrc(levelColorMap[result.level] ? result.level : "A1", gender);
 
   // Simpan intent placement ke cookie supaya /auth/callback bisa redirect ke wizard
@@ -983,6 +985,15 @@ function ResultScreen({ score, questions, log, meta, timeElapsedSec, contact, ge
           </motion.h1>
           <motion.p initial={{ opacity: 0, scale: 0.9 }} animate={{ opacity: 1, scale: 1 }} transition={{ delay: 0.65 }}
             className={"inline-block rounded-full px-5 py-1.5 text-base sm:text-lg font-semibold " + lc.pill}>{result.label}</motion.p>
+          {/* [padanan-ujian-v1] Bahasa non-CEFR (Korea/Jepang/Mandarin…): padanan ke ujian resminya. */}
+          {padanan && (
+            <motion.p initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.75 }}
+              title={CATATAN_PADANAN}
+              className="mt-3 text-sm sm:text-base font-medium text-slate-500">
+              Kurang lebih setara <span className="font-bold text-slate-800">{padanan.label}</span>
+              <span className="block text-[11px] text-slate-400 mt-0.5">perkiraan, bukan hasil ujian resmi</span>
+            </motion.p>
+          )}
         </div>
 
         {/* Score card */}
@@ -1011,7 +1022,7 @@ function ResultScreen({ score, questions, log, meta, timeElapsedSec, contact, ge
         {/* [placement-cefr-map-v1] Posisi di tangga CEFR Linguo (A1.1–B2.7) —
             sengaja di luar soft-gate: levelnya sendiri sudah tampil di atas. */}
         <motion.div initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.82 }}>
-          <CefrLevelMap sublevel={result.sublevel} />
+          <CefrLevelMap sublevel={result.sublevel} bahasa={meta.slug} />
         </motion.div>
 
         {/* REKAP BENAR/SALAH — muncul di akhir (bukan per soal) */}

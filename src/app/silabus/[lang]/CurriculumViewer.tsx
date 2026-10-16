@@ -9,6 +9,8 @@ import { getIconForSession } from "@/data/curriculum/sessionIcons";
 import { daftarSlugFromLanguageSlug } from "@/lib/funnelRouting";
 import { LangSlugFlag } from "@/components/RectFlag";
 import { displayLangTitle } from "@/data/curriculum";
+import PadananUjianBadge from "@/components/PadananUjianBadge"; // [padanan-ujian-v1]
+import { padananUjian } from "@/lib/levelEquivalence";
 
 const MOCK_STATS = {
   totalLearners: 1247,
@@ -141,6 +143,7 @@ export default function CurriculumViewer({ curriculum }: { curriculum: LanguageC
           >
             <span className={`inline-block w-2 h-2 rounded-full ${theme.primaryCls}`} />
             {theme.label} {activeLevel.code}
+            <PadananUjianBadge bahasa={meta.slug} level={activeLevel.code} className="self-center" />
             <Icons.ChevronDown className={`w-6 h-6 text-gray-400 transition-transform ${dropdownOpen ? "rotate-180" : ""}`} />
           </button>
 
@@ -164,7 +167,10 @@ export default function CurriculumViewer({ curriculum }: { curriculum: LanguageC
                       <span className={`w-2 h-2 rounded-full ${t.primaryCls}`} />
                       <div className="flex-1">
                         <div className="font-semibold text-sm text-gray-900">{t.label} {lvl.code}</div>
-                        <div className="text-xs text-gray-500">{lvl.name} · {lvl.sublevels.length} chapter</div>
+                        <div className="text-xs text-gray-500">
+                          {lvl.name} · {lvl.sublevels.length} chapter
+                          {padananUjian(meta.slug, lvl.code) ? ` · ≈ ${padananUjian(meta.slug, lvl.code)!.label}` : ""}
+                        </div>
                       </div>
                       {i === activeLevelIdx && <Icons.Check className="w-4 h-4 text-gray-600" />}
                     </button>

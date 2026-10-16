@@ -192,7 +192,7 @@ export const languageDetails: Record<string, LanguageDetail> = {
         level: "A2",
         title: "A2 — Dasar",
         sessionCount: 64,
-        description: "Bisa percakapan sehari-hari dengan struktur dasar. Setara TOPIK 1 (level 1–2).",
+        description: "Bisa percakapan sehari-hari dengan struktur dasar. Target TOPIK I Level 2.",
         topics: [
           "Konjugasi kata kerja: 해요체 vs 합니다체",
           "Bentuk lampau (-았/었어요) dan masa depan (-ㄹ 거예요)",
@@ -206,7 +206,7 @@ export const languageDetails: Record<string, LanguageDetail> = {
         title: "B1 — Menengah",
         sessionCount: 80,
         description:
-          "Diskusi topik kompleks, baca artikel ringan, nonton drama dengan subtitle Korea. Persiapan TOPIK 2 (level 3–4).",
+          "Diskusi topik kompleks, baca artikel ringan, nonton drama dengan subtitle Korea. Target TOPIK II Level 3.",
         topics: [
           "Tata bahasa kondisional: -면, -았/었더라면, -ㄴ다면",
           "Pasif & kausatif: -이/히/리/기-, -게 하다",
@@ -220,7 +220,7 @@ export const languageDetails: Record<string, LanguageDetail> = {
         title: "B2 — Atas",
         sessionCount: 112,
         description:
-          "Mahir untuk konteks akademik, profesional, dan literatur. Persiapan TOPIK 2 level 5–6.",
+          "Mahir untuk konteks akademik, profesional, dan literatur. Persiapan TOPIK II Level 4.",
         topics: [
           "Tata bahasa formal akademik & laporan",
           "Hanja (漢字) dasar untuk istilah teknis & berita",
@@ -335,7 +335,7 @@ export const languageDetails: Record<string, LanguageDetail> = {
     curriculum: [
       {
         level: "A1",
-        title: "A1 — Pemula (Setara JLPT N5)",
+        title: "A1 — Pemula",
         sessionCount: 48,
         description:
           "Mulai dari nol. Hiragana, Katakana, ~100 Kanji dasar, pola kalimat sederhana, percakapan harian.",
@@ -349,7 +349,7 @@ export const languageDetails: Record<string, LanguageDetail> = {
       },
       {
         level: "A2",
-        title: "A2 — Dasar (Setara JLPT N4)",
+        title: "A2 — Dasar",
         sessionCount: 64,
         description: "Sehari-hari lancar dengan struktur dasar lengkap. Setara JLPT N4 — syarat Tokutei Ginou.",
         topics: [
@@ -362,7 +362,7 @@ export const languageDetails: Record<string, LanguageDetail> = {
       },
       {
         level: "B1",
-        title: "B1 — Menengah (Setara JLPT N3)",
+        title: "B1 — Menengah",
         sessionCount: 80,
         description:
           "Bisa diskusi topik kompleks, baca artikel ringan, nonton dorama dengan subtitle Jepang.",
@@ -376,7 +376,7 @@ export const languageDetails: Record<string, LanguageDetail> = {
       },
       {
         level: "B2",
-        title: "B2 — Atas (Setara JLPT N2)",
+        title: "B2 — Atas",
         sessionCount: 112,
         description:
           "Mahir untuk akademik, kerja, sastra. Persiapan JLPT N2 — syarat banyak pekerjaan profesional di Jepang.",
@@ -494,7 +494,7 @@ export const languageDetails: Record<string, LanguageDetail> = {
     curriculum: [
       {
         level: "A1",
-        title: "A1 — Pemula (Setara HSK 1–2)",
+        title: "A1 — Pemula",
         sessionCount: 48,
         description: "Pinyin, 4 nada, ~150 Hanzi dasar, pola kalimat sederhana, percakapan harian.",
         topics: [
@@ -507,7 +507,7 @@ export const languageDetails: Record<string, LanguageDetail> = {
       },
       {
         level: "A2",
-        title: "A2 — Dasar (Setara HSK 3)",
+        title: "A2 — Dasar",
         sessionCount: 64,
         description: "Sehari-hari lancar, ~600 Hanzi kumulatif. Setara HSK 3 — syarat banyak universitas China.",
         topics: [
@@ -520,7 +520,7 @@ export const languageDetails: Record<string, LanguageDetail> = {
       },
       {
         level: "B1",
-        title: "B1 — Menengah (Setara HSK 4)",
+        title: "B1 — Menengah",
         sessionCount: 80,
         description: "Diskusi topik kompleks, baca artikel ringan, nonton C-drama dengan subtitle Mandarin.",
         topics: [
@@ -533,7 +533,7 @@ export const languageDetails: Record<string, LanguageDetail> = {
       },
       {
         level: "B2",
-        title: "B2 — Atas (Setara HSK 5)",
+        title: "B2 — Atas",
         sessionCount: 112,
         description:
           "Mahir untuk bisnis, akademik, dan media. Persiapan HSK 5 — syarat kerja profesional di perusahaan Tiongkok.",
@@ -808,7 +808,7 @@ export const languageDetails: Record<string, LanguageDetail> = {
     curriculum: [
       {
         level: "A1",
-        title: "A1 — Pemula (Start Deutsch 1)",
+        title: "A1 — Pemula",
         sessionCount: 48,
         description:
           "Mulai dari nol. Pelafalan, perkenalan, kalimat sederhana — setara Goethe-Zertifikat A1 (syarat visa au pair & pasangan).",
@@ -1471,7 +1471,7 @@ export const languageDetails: Record<string, LanguageDetail> = {
       },
       {
         level: "B1",
-        title: "B1 — Intermediair (NT2 Programma I)",
+        title: "B1 — Intermediair",
         sessionCount: 80,
         description:
           "Level ujian NT2 Programma I — syarat kerja vokasional & MBO. Diskusi topik luas dengan nyaman.",
@@ -1485,7 +1485,7 @@ export const languageDetails: Record<string, LanguageDetail> = {
       },
       {
         level: "B2",
-        title: "B2 — Gevorderd (NT2 Programma II)",
+        title: "B2 — Gevorderd",
         sessionCount: 112,
         description:
           "Level NT2 Programma II — syarat kuliah & kerja profesional di Belanda. Termasuk pengantar Belanda klasik untuk arsip.",
@@ -1788,7 +1788,7 @@ export const languageDetails: Record<string, LanguageDetail> = {
       },
       {
         level: "B1",
-        title: "B1 — Menengah (TORFL-1)",
+        title: "B1 — Menengah (Первый)",
         sessionCount: 80,
         description:
           "Level syarat masuk universitas Rusia (TORFL-1/ТРКИ-1). Diskusi topik luas, baca artikel ringan.",
@@ -1802,7 +1802,7 @@ export const languageDetails: Record<string, LanguageDetail> = {
       },
       {
         level: "B2",
-        title: "B2 — Atas (TORFL-2)",
+        title: "B2 — Atas (Второй)",
         sessionCount: 112,
         description:
           "Mahir untuk akademik & profesional. TORFL-2 — syarat program magister & pekerjaan profesional.",
