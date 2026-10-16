@@ -7,8 +7,12 @@
 // 3 detik dipanggang di Blender; kepala tetap dikendalikan kode di atasnya.
 // Dikompres ke ~1,8 MB (tekstur WebP + mesh terkuantisasi, tanpa decoder).
 // PNG lama tetap jadi lapisan awal & LCP — three.js baru diunduh saat browser
-// idle, hanya di desktop, dilewati kalau hemat data. Begitu frame pertama
-// dirender, PNG memudar keluar. Render berhenti saat hero tak terlihat.
+// idle, hanya di desktop, dilewati kalau hemat data. Render berhenti saat hero tak terlihat.
+// [hero-3d-tanpa-jeda-v1] Lapisan awal desktop = hero-character-3d.png, yaitu frame
+// pertama model ini sendiri (kamera, pose t=0, bayangan, 1620×1620) — dulu PNG lama
+// beda sudut, jadi PNG harus pudar dulu baru 3D muncul (ada celah kosong ±0,7 dtk).
+// Sekarang kanvas memudar MASUK di atas gambar yang identik, gambar baru disembunyikan
+// sesudahnya. Kalau model/kamera/pencahayaan diubah, render ulang gambarnya.
 import Image from "next/image";
 import React, { useEffect, useRef, useState } from "react";
 
@@ -38,6 +42,8 @@ export default function HeroModel3D({ alt }: { alt: string }) {
     let bersihkan: (() => void) | undefined;
 
     const mulai = async () => {
+      // Model diunduh BERBARENGAN dengan three.js, bukan sesudahnya.
+      const bufModel = fetch(MODEL_SRC).then((r) => (r.ok ? r.arrayBuffer() : null)).catch(() => null);
       const [THREE, { GLTFLoader }, { RoomEnvironment }] = await Promise.all([
         import("three"),
         import("three/examples/jsm/loaders/GLTFLoader.js"),
@@ -51,9 +57,7 @@ export default function HeroModel3D({ alt }: { alt: string }) {
       renderer.toneMappingExposure = 1.05;
       renderer.setClearColor(0x000000, 0);
       const kanvas = renderer.domElement;
-      Object.assign(kanvas.style, { position: "absolute", inset: "0", width: "100%", height: "100%", pointerEvents: "none", opacity: "0", transition: "opacity .45s ease .25s" });
-      // Transisi berurutan (PNG pudar dulu 0,3 dtk, baru 3D muncul): sudut render PNG
-      // sedikit beda dengan model, jadi kalau saling silang karakternya tampak dobel.
+      Object.assign(kanvas.style, { position: "absolute", inset: "0", width: "100%", height: "100%", pointerEvents: "none", opacity: "0", transition: "opacity .3s ease" });
       kanvas.setAttribute("aria-hidden", "true");
 
       const scene = new THREE.Scene();
@@ -62,7 +66,8 @@ export default function HeroModel3D({ alt }: { alt: string }) {
       scene.environment = envTex;
       const camera = new THREE.PerspectiveCamera(FOV, 1, 0.01, 20);
 
-      const gltf = await new GLTFLoader().loadAsync(MODEL_SRC).catch(() => null);
+      const buf = await bufModel;
+      const gltf = buf ? await new GLTFLoader().parseAsync(buf, "/models/").catch(() => null) : null;
       if (batal || !gltf) { renderer.dispose(); pmrem.dispose(); envTex.dispose(); return; }
 
       const model = gltf.scene;
@@ -150,16 +155,18 @@ export default function HeroModel3D({ alt }: { alt: string }) {
       }
       let tSebelum = 0;
 
-      const pose = (t: number) => {
+      // `fase` = waktu sejak frame pertama: osilasi mulai dari 0 supaya frame pertama
+      // sama persis dengan gambar awal (melayang & menoleh-idle = sin(0)).
+      const pose = (t: number, fase: number) => {
         const idle = t - terakhirGerak > DIAM_SETELAH_MS;
-        const gx = idle ? Math.sin(t / 1400) * 0.12 : tx;
+        const gx = idle ? Math.sin(fase / 1400) * 0.12 : tx;
         const gy = idle ? 0 : ty;
         const k = 0.06; // redaman — makin kecil makin malas
         cx += (gx - cx) * k;
         cy += (gy - cy) * k;
         badan.rotation.y = rad(cx * BODY_YAW_MAX);
         // Melayang naik-turun; bayangan mengecil & memudar saat karakter naik.
-        const naik = diam ? 0 : Math.sin(t / 650); // -1..1
+        const naik = diam ? 0 : Math.sin(fase / 650); // -1..1
         badan.position.y = naik * MELAYANG;
         const k01 = (naik + 1) / 2;
         bayangan.scale.set(skalaBayangan.x * (1 - 0.14 * k01), skalaBayangan.y * (1 - 0.14 * k01), 1);
@@ -172,14 +179,20 @@ export default function HeroModel3D({ alt }: { alt: string }) {
         }
       };
 
-      let raf = 0, terlihat = true, pertama = true;
+      let raf = 0, terlihat = true, pertama = true, t0 = 0, tSiap = 0;
       const frame = (t: number) => {
         raf = 0;
+        if (pertama) t0 = t;
         mixer.update(tSebelum ? Math.min((t - tSebelum) / 1000, 0.1) : 0);
         tSebelum = t;
-        pose(t);
+        pose(t, t - t0);
         renderer.render(scene, camera);
-        if (pertama) { pertama = false; kanvas.style.opacity = "1"; setSiap(true); }
+        if (pertama) {
+          pertama = false;
+          kanvas.style.opacity = "1";
+          // Gambar awal disembunyikan SESUDAH kanvas penuh, bukan berbarengan.
+          tSiap = window.setTimeout(() => setSiap(true), 350);
+        }
         if (!diam && terlihat && !document.hidden) raf = requestAnimationFrame(frame);
       };
       const lanjut = () => { if (!raf && !diam && terlihat && !document.hidden) raf = requestAnimationFrame(frame); };
@@ -194,6 +207,7 @@ export default function HeroModel3D({ alt }: { alt: string }) {
 
       bersihkan = () => {
         cancelAnimationFrame(raf);
+        clearTimeout(tSiap);
         mixer.stopAllAction();
         io.disconnect(); ro.disconnect();
         document.removeEventListener("visibilitychange", lanjut);
@@ -216,7 +230,8 @@ export default function HeroModel3D({ alt }: { alt: string }) {
 
     const w = window as Window & { requestIdleCallback?: (cb: () => void, o?: { timeout: number }) => number; cancelIdleCallback?: (id: number) => void };
     const jalan = () => { mulai().catch(() => {}); };
-    const id = w.requestIdleCallback ? w.requestIdleCallback(jalan, { timeout: 3000 }) : window.setTimeout(jalan, 1500);
+    // Ditunda sampai idle (maks 1 dtk, dulu 3 dtk): cukup untuk tidak berebut dgn LCP.
+    const id = w.requestIdleCallback ? w.requestIdleCallback(jalan, { timeout: 1000 }) : window.setTimeout(jalan, 600);
     return () => {
       batal = true;
       if (w.cancelIdleCallback) w.cancelIdleCallback(id); else clearTimeout(id);
@@ -227,9 +242,9 @@ export default function HeroModel3D({ alt }: { alt: string }) {
   return (
     <div ref={wadahRef} className="relative w-full h-full">
       <Image
-        src="/images/hero-character.png" alt={siap ? "" : alt} aria-hidden={siap || undefined}
-        width={810} height={656} priority sizes="(min-width: 1024px) 810px, 0px"
-        className={`w-full h-full object-contain drop-shadow-2xl transition-opacity duration-300 ${siap ? "opacity-0" : "opacity-100"}`}
+        src="/images/hero-character-3d.png" alt={siap ? "" : alt} aria-hidden={siap || undefined}
+        width={1620} height={1620} priority sizes="(min-width: 1024px) 810px, 0px"
+        className={`w-full h-full object-contain ${siap ? "invisible" : ""}`}
       />
       {siap && <span className="sr-only">{alt}</span>}
     </div>
