@@ -115,6 +115,7 @@ const SesiTimeline = dynamic(() => import('@/components/akun/SesiTimeline'), { s
    menu "Kelas & Materi" — komponennya persis yang dipakai halaman detail, bukan
    salinan baru, biar tak ada dua versi tampilan yang harus dijaga sinkron. */
 const ClassKuisTab = dynamic(() => import('@/components/akun/ClassKuisTab'), { ssr: false, loading: TabLoading });
+const RaporTab = dynamic(() => import('@/components/akun/RaporTab'), { ssr: false, loading: TabLoading }); // [rapor-tab-siswa-v1]
 const ClassRaporTab = dynamic(() => import('@/components/akun/ClassRaporTab'), { ssr: false, loading: TabLoading });
 const JadwalCalendar = dynamic(() => import('@/components/akun/JadwalCalendar'), { ssr: false, loading: TabLoading }); // linguo-patch:akun-jadwal-tab-v1
 // jadwal-gcal-v1: daftar "Sesi Mendatang" — pindahan dari kolom kiri kalender ke Beranda.
@@ -2954,10 +2955,10 @@ export default function AkunPage() {
      loncat ke Jadwal. Aman terhadap hidrasi: saat HTML awal (server) tab tak
      pernah dirender karena authLoading masih true. Deep-link lain (?reg, ?sesi,
      ?ebook, tab tersimpan) tetap diselesaikan efek di bawah. */
-  const [activeTab, setActiveTab] = useState<"beranda"|"jadwal"|"materi"|"akun"|"sertifikat"|"pustaka"|"simulasi"|"grup"|"catatan"|"menulis">(() => {
+  const [activeTab, setActiveTab] = useState<"beranda"|"jadwal"|"materi"|"akun"|"sertifikat"|"rapor"|"pustaka"|"simulasi"|"grup"|"catatan"|"menulis">(() => {
     if (typeof window === "undefined") return "beranda";
     const m = new URLSearchParams(window.location.search).get("menu");
-    return m === "jadwal" || m === "materi" || m === "akun" || m === "sertifikat" || m === "pustaka" || m === "simulasi" || m === "grup" || m === "catatan" || m === "menulis" ? m : "beranda";
+    return m === "jadwal" || m === "materi" || m === "akun" || m === "sertifikat" || m === "rapor" || m === "pustaka" || m === "simulasi" || m === "grup" || m === "catatan" || m === "menulis" ? m : "beranda";
   }); // [linguo-patch:akun-pustaka-tab-v1] [simulasi-inshell-v1] [student-workspace-v1]
   /* [lanjutkan-ebook-buka-langsung-v1] Modul yang readernya harus dibuka begitu
      tab Perpustakaan tampil — dititipkan kartu "Lanjutkan Belajar" di beranda. */
@@ -3028,7 +3029,7 @@ export default function AkunPage() {
        kelas Beranda waktu dibuka di tab baru (klik biasa ditangani in-shell). */
     const regParam = sp.get("reg");
     const ktab = sp.get("ktab");
-    let resolved: "beranda" | "jadwal" | "materi" | "akun" | "sertifikat" | "pustaka" | "simulasi" | "grup" | "catatan" | "menulis" | null = null;
+    let resolved: "beranda" | "jadwal" | "materi" | "akun" | "sertifikat" | "rapor" | "pustaka" | "simulasi" | "grup" | "catatan" | "menulis" | null = null;
     if (regParam) { setMateriSel(regParam); resolved = "materi"; }
     if (ktab === "sesi" || ktab === "materi" || ktab === "kuis" || ktab === "rapor") { setMateriTab(ktab); resolved = "materi"; }
     if (sesi) { setLmsSesi(sesi); resolved = "materi"; } // [linguo-patch:akun-inplace-lessonplayer-v1] deep-link sesi → overlay player
@@ -3052,7 +3053,7 @@ export default function AkunPage() {
         }
       }
     } catch {}
-    if (!resolved && (menu === "beranda" || menu === "jadwal" || menu === "materi" || menu === "akun" || menu === "sertifikat" || menu === "pustaka" || menu === "simulasi" || menu === "grup" || menu === "catatan" || menu === "menulis")) resolved = menu;
+    if (!resolved && (menu === "beranda" || menu === "jadwal" || menu === "materi" || menu === "akun" || menu === "sertifikat" || menu === "rapor" || menu === "pustaka" || menu === "simulasi" || menu === "grup" || menu === "catatan" || menu === "menulis")) resolved = menu;
     // [akun-menu-titip-login-v1] titip menu → dipakai sekali oleh halaman sesudah login.
     try {
       if (resolved === menu && menu && menu !== "beranda") {
@@ -3060,7 +3061,7 @@ export default function AkunPage() {
       } else if (!resolved) {
         const titip = JSON.parse(localStorage.getItem(TITIP_MENU_KEY) || "null");
         const m = titip?.menu;
-        if (Date.now() - Number(titip?.ts) < 2 * 3600_000 && (m === "jadwal" || m === "materi" || m === "akun" || m === "sertifikat" || m === "pustaka" || m === "simulasi" || m === "grup" || m === "catatan" || m === "menulis")) resolved = m;
+        if (Date.now() - Number(titip?.ts) < 2 * 3600_000 && (m === "jadwal" || m === "materi" || m === "akun" || m === "sertifikat" || m === "rapor" || m === "pustaka" || m === "simulasi" || m === "grup" || m === "catatan" || m === "menulis")) resolved = m;
         if (titip) localStorage.removeItem(TITIP_MENU_KEY);
       }
     } catch {}
@@ -3072,7 +3073,7 @@ export default function AkunPage() {
     if (!resolved) {
       try {
         const saved = sessionStorage.getItem("linguo_akun_tab");
-        if (saved === "beranda" || saved === "jadwal" || saved === "materi" || saved === "akun" || saved === "sertifikat" || saved === "pustaka" || saved === "simulasi" || saved === "grup" || saved === "catatan" || saved === "menulis") resolved = saved;
+        if (saved === "beranda" || saved === "jadwal" || saved === "materi" || saved === "akun" || saved === "sertifikat" || saved === "rapor" || saved === "pustaka" || saved === "simulasi" || saved === "grup" || saved === "catatan" || saved === "menulis") resolved = saved;
       } catch {}
     }
     if (resolved) setActiveTab(resolved);
@@ -4580,7 +4581,7 @@ export default function AkunPage() {
           halaman ini yang punya, sisanya nol navigasi di HP. */}
 
       {/* ── Content ─────────────────────────────────────────────── */}
-      <main className={activeTab === "materi" ? "w-full lg:flex lg:min-h-0 lg:flex-1 lg:flex-col" : activeTab === "beranda" ? "w-full" : activeTab === "sertifikat" ? "w-full px-3 pt-4 sm:px-5" : activeTab === "akun" ? "w-full px-3 pt-4 sm:px-5" : (activeTab === "simulasi" || activeTab === "menulis") ? "mx-auto w-full max-w-[1320px] px-4 sm:px-6 pt-5" : activeTab === "grup" ? "w-full pt-5" : activeTab === "catatan" ? "mx-auto w-full max-w-[1320px] pt-5" : (activeTab === "jadwal" || activeTab === "pustaka") ? "mx-auto w-full max-w-[1320px] px-4 sm:px-6 pt-5 space-y-6" : "mx-auto max-w-6xl px-4 sm:px-6 pt-5 space-y-6"}>
+      <main className={activeTab === "materi" ? "w-full lg:flex lg:min-h-0 lg:flex-1 lg:flex-col" : activeTab === "beranda" ? "w-full" : (activeTab === "sertifikat" || activeTab === "rapor") ? "w-full px-3 pt-4 sm:px-5" : activeTab === "akun" ? "w-full px-3 pt-4 sm:px-5" : (activeTab === "simulasi" || activeTab === "menulis") ? "mx-auto w-full max-w-[1320px] px-4 sm:px-6 pt-5" : activeTab === "grup" ? "w-full pt-5" : activeTab === "catatan" ? "mx-auto w-full max-w-[1320px] pt-5" : (activeTab === "jadwal" || activeTab === "pustaka") ? "mx-auto w-full max-w-[1320px] px-4 sm:px-6 pt-5 space-y-6" : "mx-auto max-w-6xl px-4 sm:px-6 pt-5 space-y-6"}>
         {/* [akun-tab-swap-nofade-v1] Pindah menu dulu pakai mode="wait": tab lama
             fade-out DULU sampai habis, baru tab baru fade-in dari opacity 0 →
             ada jeda panel kosong ±0.6 detik = kedipan tiap balik ke Beranda.
@@ -4686,6 +4687,7 @@ export default function AkunPage() {
                     { key: "jadwal", label: "Jadwal" },
                     { key: "simulasi", label: "Simulasi Tes" },
                     { key: "sertifikat", label: "Sertifikat" },
+                    { key: "rapor", label: "Rapor" },
                     { key: "akun", label: "Pengaturan" },
                   ] as const).filter((m) => m.label.toLowerCase().includes(hq)).forEach((m) => {
                     homeHits.push({
@@ -5986,6 +5988,13 @@ export default function AkunPage() {
                 onContinue={() => setActiveTab("materi")}
                 onSchedule={() => setActiveTab("jadwal")}
               />
+            </motion.div>
+          )}
+
+          {/* [rapor-tab-siswa-v1] Menu Rapor setelah Sertifikat — semua rapor yang sudah diterbitkan pengajar, per kelas */}
+          {tabShown("rapor") && (
+            <motion.div key="rapor" initial={false} animate={{ opacity: 1 }} className="w-full" style={tabHidden("rapor")}>
+              <RaporTab regs={activeRegs as any[]} />
             </motion.div>
           )}
 

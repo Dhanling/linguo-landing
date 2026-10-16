@@ -199,6 +199,9 @@ export type ParticipantRow = {
   score_active: number | null;
   score_mastery: number | null;
   score_confidence: number | null;
+  /** [b2b-posttest-v1] skor tes 0–100, opsional (jsonb, tanpa migrasi) */
+  pretest_score?: number | null;
+  posttest_score?: number | null;
   observation: string;
 };
 
@@ -216,6 +219,8 @@ export function makeRow(p: RosterEntry, sessionsDone: number | null): Participan
     score_active: null,
     score_mastery: null,
     score_confidence: null,
+    pretest_score: null,
+    posttest_score: null,
     observation: "",
   };
 }

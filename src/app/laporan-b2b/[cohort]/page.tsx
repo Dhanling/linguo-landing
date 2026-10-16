@@ -720,6 +720,12 @@ function ReportForm({ cohort }: { cohort: CohortConfig }) {
                         </div>
                       )}
 
+                      {/* [b2b-posttest-v1] skor Pre-Test & Post-Test (opsional) — masuk ke laporan akhir klien */}
+                      <div className="mt-3 grid grid-cols-2 gap-2.5">
+                        <NumField label="Skor Pre-Test (0–100)" value={r.pretest_score ?? null} onChange={(v) => patch(i, { pretest_score: v })} max={100} />
+                        <NumField label="Skor Post-Test (0–100)" value={r.posttest_score ?? null} onChange={(v) => patch(i, { posttest_score: v })} max={100} />
+                      </div>
+
                       <div className="mt-3">
                         <div className="mb-1 text-[12px] font-extrabold text-slate-700">Catatan observasi performa</div>
                         <textarea
