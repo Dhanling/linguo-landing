@@ -85,7 +85,7 @@ const LANGUAGES = [
 
 const FAQ = [
   { q: "Anak saya belum pernah belajar bahasa asing, bisa ikut?", a: "Tentu! Program Little Learner dirancang untuk pemula total. Guru akan mulai dari dasar dengan metode yang menyenangkan." },
-  { q: "Kelasnya online atau offline?", a: "Semua kelas dilakukan online via Zoom, jadi anak bisa belajar dari rumah dengan nyaman." },
+  { q: "Kelasnya online atau offline?", a: "Dua-duanya bisa. Kelas online via Zoom, atau offline: pengajar datang ke rumah, tergantung kesediaan pengajar di area kamu (tambahan Rp50.000 per sesi). Tanyakan ketersediaannya lewat WhatsApp." },
   { q: "Apakah orang tua perlu mendampingi?", a: "Untuk usia 5-6 tahun, kami sarankan orang tua mendampingi di beberapa sesi awal. Setelah anak terbiasa, biasanya mereka bisa mandiri." },
   { q: "Berapa kali seminggu sebaiknya belajar?", a: "Kami rekomendasikan 2-3x seminggu untuk hasil optimal. Tapi jadwal fleksibel — bisa disesuaikan dengan aktivitas anak." },
   { q: "Bagaimana jika anak tidak cocok dengan gurunya?", a: "Kami bisa mengganti guru kapan saja tanpa biaya tambahan. Kenyamanan anak adalah prioritas kami." },

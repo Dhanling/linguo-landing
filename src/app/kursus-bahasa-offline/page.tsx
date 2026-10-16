@@ -64,9 +64,9 @@ export default function KursusBahasaOfflineHub() {
         <section className="mx-auto max-w-4xl px-4 py-8 sm:py-12">
           <h1 className="font-heading text-3xl font-extrabold leading-tight sm:text-5xl">Kursus Bahasa Offline: Pengajar Datang ke Lokasimu</h1>
           <p className="mt-4 max-w-3xl text-base leading-relaxed text-slate-600 sm:text-lg">
-            Selain kelas online via Zoom, {BRAND_FACTS.name} membuka kelas offline untuk Kelas Private dan Semi Private: pengajar
+            Selain kelas online via Zoom, {BRAND_FACTS.name} membuka kelas offline untuk Kelas Private, Semi Private, dan Kids: pengajar
             datang ke rumah, kos, atau kantormu. Tarifnya sama dengan tarif online ditambah {SELISIH_LABEL} per sesi, berlaku sama
-            di semua kota. Linguo tidak punya cabang, jadi kelas offline bergantung pada pengajar yang bisa menjangkau lokasimu —
+            di semua kota. Linguo tidak punya cabang, jadi kelas offline tergantung kesediaan pengajar yang bisa menjangkau lokasimu —
             ketersediaannya dicek dulu lewat WhatsApp.
           </p>
           <div className="mt-7 flex flex-wrap gap-3">
@@ -116,6 +116,7 @@ export default function KursusBahasaOfflineHub() {
             <ul className="mt-4 space-y-2.5 text-sm leading-relaxed text-slate-600">
               {[
                 "Kelas Private 1-on-1, untuk siswa anak maupun dewasa.",
+                "Kelas Kids untuk anak usia 5–12 tahun, pengajar datang ke rumah.",
                 "Semi Private untuk grup 2–10 orang yang kamu bentuk sendiri (teman, keluarga, rekan kerja).",
                 "Semua bahasa yang dibuka Linguo, selama ada pengajar yang menjangkau lokasimu.",
                 "Jadwal disepakati bersama pengajar: pagi, malam, atau akhir pekan.",

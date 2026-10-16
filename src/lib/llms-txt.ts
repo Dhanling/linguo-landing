@@ -232,7 +232,7 @@ ${TES_BAHASA.map((t) => `- [Kursus persiapan ${t.tes} online](${BASE}/persiapan-
 
 ## Kelas offline (pengajar datang ke lokasi siswa)
 
-- [Kursus bahasa offline](${BASE}/kursus-bahasa-offline): Kelas Private dan Semi Private tatap muka di rumah, kos, atau kantor siswa. Tarif online + ${rupiah(OFFLINE_SURCHARGE_PER_SESSION)} per sesi di semua kota; ketersediaan pengajar dicek dulu per area. ${BRAND_FACTS.name} tidak punya cabang.
+- [Kursus bahasa offline](${BASE}/kursus-bahasa-offline): Kelas Private, Semi Private, dan Kids tatap muka di rumah, kos, atau kantor siswa. Tarif online + ${rupiah(OFFLINE_SURCHARGE_PER_SESSION)} per sesi di semua kota; ketersediaan pengajar dicek dulu per area. ${BRAND_FACTS.name} tidak punya cabang.
 ${KOTA_OFFLINE.map((k) => `- [Kursus bahasa offline di ${k.nama}](${BASE}/kursus-bahasa-offline/${k.slug})`).join("\n")}
 
 ## Untuk institusi & karier
@@ -389,7 +389,7 @@ ${kidsTable()}
 - IELTS & TOEFL Preparation: ${BRAND_FACTS.price.testPrepLabel} untuk 16 sesi @90 menit, termasuk mock test.
 - E-Learning per bahasa: ${rupiah(79000)} akses 6 bulan, ${rupiah(150000)} akses 1 tahun. Isinya rekaman kelas level Basic (A1.1) saja — A1.2 ke atas lewat kelas Private.
 - E-Book per bahasa: ${BRAND_FACTS.price.ebookFromLabel}, format PDF, akses selamanya.
-- Kelas offline (tatap muka) tersedia untuk Private dan Semi Private dengan tambahan ${rupiah(50000)} per sesi, terbatas kota tertentu.
+- Kelas offline (tatap muka) tersedia untuk Private, Semi Private, dan Kids (pengajar datang ke lokasi siswa, tergantung kesediaan pengajar) dengan tambahan ${rupiah(50000)} per sesi, terbatas kota tertentu.
 
 ## Daftar bahasa
 
@@ -432,7 +432,7 @@ ${BRAND_FACTS.languageCountLabel}, mencakup bahasa Eropa, Asia, Timur Tengah, da
 
 ### Kelasnya online atau offline?
 
-Seluruh kelas berlangsung online live via Zoom pada jadwal yang disepakati. Kelas offline tatap muka tersedia terbatas untuk program Private dan Semi Private dengan biaya tambahan ${rupiah(50000)} per sesi.
+Seluruh kelas berlangsung online live via Zoom pada jadwal yang disepakati. Kelas offline tatap muka tersedia terbatas untuk program Private, Semi Private, dan Kids (pengajar datang ke lokasi siswa, tergantung kesediaan pengajar) dengan biaya tambahan ${rupiah(50000)} per sesi.
 
 ### Apakah Linguo.id terpercaya?
 

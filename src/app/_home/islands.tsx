@@ -30,7 +30,6 @@ import { REGULER_LANGS, isProgramLangAllowed, langsForProgram, programsForLang }
 import { programSlugOf, langSlugOf, langFromSlug, kursusSlugOf } from "@/lib/funnelRouting";
 import { daftarHref, EMAIL_REGEX } from "./data";
 import { taggedWaUrlAndTrack } from "@/lib/waLeadRef"; // [wa-lead-ref-v1]
-import { trackEvent } from "@/lib/tracking"; // [hero-placement-cta-v1]
 
 // [home-rsc-v1] PlacementPicker membawa supabase-js — baru diunduh saat
 // pengunjung memilih "Placement Test" di pop-up Mulai Belajar.
@@ -118,13 +117,6 @@ export function Navbar({lang,setLang,onPricingTab,onLoginOpen}:{lang:string;setL
   const [placementPickerOpen, setPlacementPickerOpen] = useState(false);
   const [placementPernah, setPlacementPernah] = useState(false);
   useEffect(() => { if (placementPickerOpen) setPlacementPernah(true); }, [placementPickerOpen]);
-  // [hero-placement-cta-v1] Tombol Placement Test di hero (di luar Navbar) membuka
-  // pemilih bahasa yang sama lewat jendela global, pola __openTrialWizard.
-  useEffect(() => {
-    const w = window as unknown as { __openPlacementPicker?: () => void };
-    w.__openPlacementPicker = () => setPlacementPickerOpen(true);
-    return () => { delete w.__openPlacementPicker; };
-  }, []);
   const [startPickerOpen, setStartPickerOpen] = useState(false); // linguo-patch:start-picker-v1
   useEffect(() => {
     let ticking = false;
@@ -778,27 +770,6 @@ export function HeroFunnel({lang, onLoginOpen}:{lang:string; onLoginOpen?:()=>vo
           </button>
         </div>
         {!quickOpen && error && <p className="text-red-300 text-xs mt-2">{error}</p>}
-        {/* [hero-placement-cta-v1] Pola pesaing (Ruangguru, Cakap): tes level gratis +
-            harga per sesi terlihat langsung di layar pertama. Placement Test dulu,
-            karena hasilnya menyambung ke saran kelas & level (lihat placementNotify). */}
-        <div className="mt-4 flex flex-wrap items-center gap-x-3 gap-y-2">
-          <button type="button" data-track="hero-placement-test"
-            onClick={()=>{
-              trackEvent("hero_placement_cta", {});
-              const w = window as unknown as { __openPlacementPicker?: () => void };
-              if (w.__openPlacementPicker) w.__openPlacementPicker();
-              else window.location.href = "/silabus/english/coba";
-            }}
-            className="no-cta-zoom inline-flex items-center gap-1.5 rounded-full bg-white text-[#1A9E9E] font-bold px-4 py-2 text-xs sm:text-sm shadow-lg hover:bg-white/90 active:scale-95 transition-colors">
-            {lang==="id"?"Placement Test Gratis":"Free Placement Test"} <span className="arrow-loop inline-block">→</span>
-          </button>
-          <span className="text-white/85 text-xs sm:text-sm">
-            {lang==="id"
-              ? <>Private mulai <b className="text-white">Rp90rb/sesi</b> · jumlah sesi fleksibel</>
-              : <>Private from <b className="text-white">Rp90k/session</b> · flexible session count</>}
-          </span>
-        </div>
-        <p className="text-white/50 text-xs mt-3">{lang==="id"?"Gratis konsultasi pertama via WhatsApp":"Free first consultation via WhatsApp"}</p>
       </div>
       {/* wa-quick-modal-v1 — popup detail wajib sebelum lanjut ke WhatsApp */}
       <AnimatePresence>{quickOpen && (

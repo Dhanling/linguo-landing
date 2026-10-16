@@ -66,7 +66,7 @@ export function faqUmumOffline(namaKota?: string): FaqItem[] {
     },
     {
       q: "Apakah ada kelas offline untuk anak?",
-      a: "Kelas Private dan Semi Private offline bisa untuk siswa anak maupun dewasa. Program Kelas Kids (usia 5–12 tahun, materi gamified) didaftarkan online lewat website; kalau kamu ingin pengajar datang ke rumah untuk anak, tanyakan lewat WhatsApp dengan menyebutkan usia anak.",
+      a: "Ada. Kelas Kids (usia 5–12 tahun, materi fun & gamified) juga bisa offline: pengajar datang ke rumah atau tempat yang kamu tentukan, tergantung kesediaan pengajar di areamu. Kelas Private dan Semi Private offline pun bisa untuk anak maupun dewasa. Sebutkan usia anak saat bertanya lewat WhatsApp supaya kami carikan pengajar yang cocok.",
     },
     {
       q: `Apakah Linguo punya tempat kursus${di}?`,
