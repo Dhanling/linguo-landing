@@ -19,6 +19,10 @@
 // diganti bayangan WebGL yang bernapas & terpotong tepi kanvas — kelihatan "ganti".
 // Posisi/ukuran = proyeksi bidang bayangan lama lewat kamera ini (hitung ulang kalau
 // kamera/model berubah).
+// [hero-3d-cadangan-v1] Kalau WebGL gagal (Chrome dgn akselerasi hardware mati / GPU
+// diblokir, model gagal dimuat) dulu karakter diam total tanpa pesan. Sekarang konteks
+// dicoba ulang dgn opsi lebih longgar, dan bila tetap gagal gambar awal sendiri yang
+// melayang (CSS) & miring mengikuti cursor — tetap hidup walau tanpa 3D.
 import Image from "next/image";
 import React, { useEffect, useRef, useState } from "react";
 
@@ -39,7 +43,9 @@ const rad = (d: number) => (d * Math.PI) / 180;
 export default function HeroModel3D({ alt }: { alt: string }) {
   const wadahRef = useRef<HTMLDivElement>(null);
   const bayanganRef = useRef<HTMLDivElement>(null);
+  const miringRef = useRef<HTMLDivElement>(null);
   const [siap, setSiap] = useState(false);
+  const [cadangan, setCadangan] = useState(false);
 
   useEffect(() => {
     const wadah = wadahRef.current;
@@ -52,6 +58,27 @@ export default function HeroModel3D({ alt }: { alt: string }) {
     let batal = false;
     let bersihkan: (() => void) | undefined;
 
+    // Cadangan tanpa WebGL: gambar dimiringkan ke arah cursor (transisi CSS = redaman).
+    const pakaiCadangan = () => {
+      if (batal || diam) return;
+      setCadangan(true);
+      let tDiam = 0;
+      const onPointer = (e: PointerEvent) => {
+        const el = miringRef.current;
+        if (!el) return;
+        const r = el.getBoundingClientRect();
+        const kx = r.left + r.width * 0.62, ky = r.top + r.height * 0.28;
+        const sisi = (d: number, ke0: number, ke1: number) => Math.max(-1, Math.min(1, d / Math.max(d < 0 ? ke0 : ke1, 120)));
+        const x = sisi(e.clientX - kx, kx, window.innerWidth - kx);
+        const y = sisi(e.clientY - ky, ky, window.innerHeight - ky);
+        el.style.transform = `perspective(1400px) rotateY(${x * 10}deg) rotateX(${-y * 6}deg)`;
+        clearTimeout(tDiam);
+        tDiam = window.setTimeout(() => { el.style.transform = ""; }, DIAM_SETELAH_MS);
+      };
+      window.addEventListener("pointermove", onPointer, { passive: true });
+      bersihkan = () => { clearTimeout(tDiam); window.removeEventListener("pointermove", onPointer); };
+    };
+
     const mulai = async () => {
       // Model diunduh BERBARENGAN dengan three.js, bukan sesudahnya.
       const bufModel = fetch(MODEL_SRC).then((r) => (r.ok ? r.arrayBuffer() : null)).catch(() => null);
@@ -62,7 +89,16 @@ export default function HeroModel3D({ alt }: { alt: string }) {
       ]);
       if (batal) return;
 
-      const renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true, powerPreference: "low-power" });
+      // Opsi pertama paling hemat; kalau Chrome menolak, coba tanpa low-power/MSAA.
+      let rr: import("three").WebGLRenderer | null = null;
+      for (const opsi of [
+        { antialias: true, alpha: true, powerPreference: "low-power" as const },
+        { antialias: false, alpha: true },
+      ]) {
+        try { rr = new THREE.WebGLRenderer(opsi); break; } catch { /* coba opsi berikutnya */ }
+      }
+      if (!rr) { pakaiCadangan(); return; }
+      const renderer = rr;
       renderer.setPixelRatio(Math.min(window.devicePixelRatio, 1.5)); // [scroll-perf-v1] 2× = 1620² + MSAA tiap frame, berat di Mac Retina
       renderer.toneMapping = THREE.NeutralToneMapping;
       renderer.toneMappingExposure = 1.05;
@@ -79,7 +115,7 @@ export default function HeroModel3D({ alt }: { alt: string }) {
 
       const buf = await bufModel;
       const gltf = buf ? await new GLTFLoader().parseAsync(buf, "/models/").catch(() => null) : null;
-      if (batal || !gltf) { renderer.dispose(); pmrem.dispose(); envTex.dispose(); return; }
+      if (batal || !gltf) { renderer.dispose(); pmrem.dispose(); envTex.dispose(); if (!gltf) pakaiCadangan(); return; }
 
       const model = gltf.scene;
       const badan = new THREE.Group(); // pembungkus untuk condong badan & napas
@@ -236,7 +272,7 @@ export default function HeroModel3D({ alt }: { alt: string }) {
     };
 
     const w = window as Window & { requestIdleCallback?: (cb: () => void, o?: { timeout: number }) => number; cancelIdleCallback?: (id: number) => void };
-    const jalan = () => { mulai().catch(() => {}); };
+    const jalan = () => { mulai().catch(() => { if (!bersihkan) pakaiCadangan(); }); };
     // Ditunda sampai idle (maks 1 dtk, dulu 3 dtk): cukup untuk tidak berebut dgn LCP.
     const id = w.requestIdleCallback ? w.requestIdleCallback(jalan, { timeout: 1000 }) : window.setTimeout(jalan, 600);
     return () => {
@@ -260,11 +296,18 @@ export default function HeroModel3D({ alt }: { alt: string }) {
           background: `radial-gradient(closest-side, rgba(0,0,0,${BAYANGAN_OPASITAS}) 0%, rgba(0,0,0,${BAYANGAN_OPASITAS * 0.55}) 45%, rgba(0,0,0,0) 100%)`,
         }}
       />
-      <Image
-        src="/images/hero-character-3d.png" alt={siap ? "" : alt} aria-hidden={siap || undefined}
-        width={1620} height={1620} priority sizes="(min-width: 1024px) 810px, 0px"
-        className={`relative w-full h-full object-contain ${siap ? "invisible" : ""}`}
-      />
+      <div
+        ref={miringRef}
+        className="relative w-full h-full"
+        style={cadangan ? { transition: "transform .9s cubic-bezier(.2,.7,.3,1)", transformOrigin: "60% 45%" } : undefined}
+      >
+        <Image
+          src="/images/hero-character-3d.png" alt={siap ? "" : alt} aria-hidden={siap || undefined}
+          width={1620} height={1620} priority sizes="(min-width: 1024px) 810px, 0px"
+          className={`relative w-full h-full object-contain ${siap ? "invisible" : ""} ${cadangan ? "melayang" : ""}`}
+          style={cadangan ? ({ "--amp": "-12px", animationDuration: "4s" } as React.CSSProperties) : undefined}
+        />
+      </div>
       {siap && <span className="sr-only">{alt}</span>}
     </div>
   );
