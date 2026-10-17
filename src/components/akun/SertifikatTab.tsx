@@ -760,6 +760,8 @@ function IssuedDetail({ ct, studentName, defaultName, onSaveName }: { ct: Cert; 
         </>}
         level={<>{showCefr ? `CEFR ${ct.level}` : "Young Explorer"}{ct.score != null ? ` · Final Score ${ct.score}/100` : ""}</>}
         qr={qrSrc}
+        signature={ttdSrc || TTD_RINI.src}
+        signer={{ name: TTD_RINI.nama, role: TTD_RINI.jabatan }}
         teacher={ct.teacher === "Pengajar Linguo" ? "Linguo Instructor" : ct.teacher}
         date={to || "—"}
         number={ct.idNo}
