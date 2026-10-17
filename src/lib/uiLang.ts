@@ -452,6 +452,8 @@ const EN: Record<string, string> = {
   "Sertifikat Penyelesaian": "Certificate of Completion",
   "Selamat! 🎉 Program": "Congratulations! 🎉 Your",
   "sudah selesai — sertifikatmu siap diunduh.": "program is complete — your certificate is ready to download.",
+  "sudah selesai — sertifikat & rapor akhirmu ada di menu Sertifikat.": "program is complete — your certificate & final report are in the Certificates menu.",
+  "Lihat Sertifikat": "View Certificate",
   "Unduh Sertifikat": "Download Certificate",
   "Pengajar menerbitkan rapor tiap 4 sesi dan Rapor Akhir di akhir program":
     "Your teacher publishes a progress report every 4 sessions and a Final Report at the end of the program",

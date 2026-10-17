@@ -388,6 +388,7 @@ export default function SertifikatTab({
   certs,
   onContinue,
   onSchedule,
+  focusId,
 }: {
   studentName: string;
   /** [sertifikat-edit-nama-v1] nama akun — dipakai tombol "kembalikan" di popup ubah nama. */
@@ -397,6 +398,8 @@ export default function SertifikatTab({
   certs: Cert[];
   onContinue?: () => void;
   onSchedule?: () => void;
+  /** [rapor-ke-sertifikat-v1] id registrasi (opsional "|nonce") yang dipilih saat datang dari tab Rapor kelas. */
+  focusId?: string | null;
 }) {
   useEffect(() => { ensureInter(); }, []);
   const isDark = useIsDark();
@@ -420,6 +423,13 @@ export default function SertifikatTab({
   const filtered = useMemo(() => list.filter((c) => matchesFilter(c, filter)), [list, filter]);
 
   const [selectedId, setSelectedId] = useState<string>(list[0]?.id);
+  // focusId boleh berakhiran "|<nonce>" supaya klik ulang ke kelas yang sama tetap memilihnya lagi
+  useEffect(() => {
+    const id = focusId?.split("|")[0];
+    if (!id || !list.some((c) => c.id === id)) return;
+    setFilter("all");
+    setSelectedId(id);
+  }, [focusId, list]);
   // [sertifikat-cefr-modal-v1] popup penjelasan CEFR + peta levelisasi
   const [cefrOpen, setCefrOpen] = useState(false);
   // detail mengikuti list yang sedang difilter; fallback ke item pertama kategori aktif

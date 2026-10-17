@@ -3048,6 +3048,8 @@ export default function AkunPage() {
   // Kelas & Materi master-detail UI state
   const [materiSel, setMateriSel] = useState<string | null>(null);
   const [materiTab, setMateriTab] = useState<"sesi" | "materi" | "kuis" | "rapor">("sesi"); // [materi-tab-kuis-rapor-v1]
+  // [rapor-ke-sertifikat-v1] kelas yang dipilih di menu Sertifikat saat datang dari tab Rapor (?cert=<regId>)
+  const [certFocusId, setCertFocusId] = useState<string | null>(() => (typeof window === "undefined" ? null : new URLSearchParams(window.location.search).get("cert")));
   const [materiFilter, setMateriFilter] = useState<"all" | "run" | "done">("all");
   const [materiSearch, setMateriSearch] = useState("");
   // [beranda-ringkas-v2] state seksi "Jelajahi Bahasa" (jelajahiQ, jelajahiAll,
@@ -5967,7 +5969,7 @@ export default function AkunPage() {
                               /* [materi-tab-kuis-rapor-v1] komponen yang sama dgn halaman detail kelas */
                               <ClassKuisTab reg={selected} schedules={allSchedules.filter((s) => s.registration_id === selected.id)} />
                             ) : tabAktif === "rapor" ? (
-                              <ClassRaporTab reg={selected} teacherName={teacherLabel(selected) || undefined} teacherFullName={selected?.teachers?.name || undefined} />
+                              <ClassRaporTab reg={selected} teacherName={teacherLabel(selected) || undefined} teacherFullName={selected?.teachers?.name || undefined} onOpenSertifikat={() => { setCertFocusId(`${selected.id}|${Date.now()}`); setActiveTab("sertifikat"); }} />
                             ) : (
                               <div className="flex flex-col gap-6">
                               <SesiTimeline reg={selected} schedules={jadwalOf(selected)} variant="materi" aksesRekaman={selected.__b2b ? "punya" : aksesRekamanMap.get(selected.id)} materiTetap={materiB2B(selected)} />
@@ -6026,6 +6028,7 @@ export default function AkunPage() {
                 certs={certs}
                 onContinue={() => setActiveTab("materi")}
                 onSchedule={() => setActiveTab("jadwal")}
+                focusId={certFocusId}
               />
             </motion.div>
           )}

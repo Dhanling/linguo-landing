@@ -142,60 +142,26 @@ function printReport(opts: { report: any; studentName: string; reg: any; teacher
   w.document.close();
 }
 
-// Sertifikat penyelesaian — muncul kalau rapor AKHIR sudah terbit.
-function printCertificate(opts: { studentName: string; reg: any; teacherName?: string; finalReport: any }) {
-  const { studentName, reg, teacherName, finalReport } = opts;
-  const w = window.open('', '_blank');
-  if (!w) { alert('Popup diblokir. Izinkan popup untuk membuka sertifikat.'); return; }
-  const certNo = `LNG-${String(reg.id || '').replace(/-/g, '').slice(0, 10).toUpperCase()}`;
-  const date = new Date(finalReport.published_at).toLocaleDateString('id-ID', { day: 'numeric', month: 'long', year: 'numeric' });
-  w.document.write(`<!DOCTYPE html><html><head><meta charset="utf-8"><title>Sertifikat — ${esc(studentName)}</title>
-<style>
-  * { margin:0; padding:0; box-sizing:border-box; }
-  body { font-family:'Georgia',serif; background:#f4f6f6; padding:30px; }
-  .cert { max-width:860px; margin:0 auto; background:white; border:3px solid #1A9E9E; border-radius:8px; padding:14px; }
-  .inner { border:1px solid #c9e8e8; border-radius:4px; padding:52px 48px; text-align:center; position:relative; }
-  .logo { font-family:'Inter',-apple-system,sans-serif; font-size:24px; font-weight:700; color:#1A9E9E; letter-spacing:.5px; }
-  .logo span { color:#F5A623; }
-  .title { font-size:34px; color:#1a1a1a; margin:26px 0 6px; letter-spacing:2px; }
-  .sub { font-family:'Inter',sans-serif; font-size:12px; color:#888; text-transform:uppercase; letter-spacing:3px; }
-  .name { font-size:38px; color:#1A9E9E; margin:28px 0 4px; border-bottom:2px solid #e0f0f0; display:inline-block; padding:0 30px 8px; }
-  .desc { font-family:'Inter',sans-serif; font-size:14px; color:#555; line-height:1.8; margin-top:18px; }
-  .desc b { color:#1a1a1a; }
-  .meta { display:flex; justify-content:space-between; margin-top:56px; font-family:'Inter',sans-serif; font-size:12px; color:#666; }
-  .sign { text-align:center; }
-  .sign .line { border-top:1px solid #999; padding-top:6px; margin-top:36px; min-width:180px; font-weight:600; color:#1a1a1a; }
-  .certno { position:absolute; top:18px; right:22px; font-family:'Inter',sans-serif; font-size:10px; color:#aab; }
-  @media print { body { background:white; padding:0; } .no-print { display:none; } @page { size: landscape; margin: 8mm; } }
-</style></head><body>
-  <div class="no-print" style="text-align:center;margin-bottom:18px;">
-    <button onclick="window.print()" style="background:#1A9E9E;color:white;border:none;padding:10px 30px;border-radius:8px;font-family:Inter,sans-serif;font-size:14px;font-weight:600;cursor:pointer;">📄 Cetak / Simpan PDF</button>
-  </div>
-  <div class="cert"><div class="inner">
-    <div class="certno">No: ${certNo}</div>
-    <div class="logo">Linguo<span>.id</span></div>
-    <div class="title">SERTIFIKAT</div>
-    <div class="sub">Penyelesaian Program Belajar</div>
-    <div class="name">${esc(studentName)}</div>
-    <div class="desc">
-      telah menyelesaikan program pembelajaran<br/>
-      <b>Bahasa ${esc(reg.language || '')}${reg.level ? ' — Level ' + esc(reg.level) : ''}</b><br/>
-      sebanyak <b>${reg.sessions_total || '-'} sesi</b> di Linguo.id Online Language School
-    </div>
-    <div class="meta">
-      <div class="sign"><div class="line">${esc(teacherName || 'Pengajar')}</div><div>Pengajar</div></div>
-      <div style="align-self:end; color:#888;">Diterbitkan ${date}</div>
-      <div class="sign"><div class="line">Linguo.id</div><div>Online Language School</div></div>
-    </div>
-  </div></div>
-</body></html>`);
-  w.document.close();
+
+// [rapor-ke-sertifikat-v1] Dulu tombol ini mencetak sertifikat versi lama di jendela baru
+// (nama "Siswa", tanpa rapor) — beda dari menu Sertifikat (sertifikat + rapor 2 halaman).
+// Sekarang satu pintu: menu Sertifikat dengan kelas ini terpilih.
+function bukaSertifikat(reg: any, onOpen?: () => void) {
+  if (onOpen) { onOpen(); return; }
+  const sp = new URLSearchParams();
+  const preview = new URLSearchParams(window.location.search).get('preview');
+  if (preview) sp.set('preview', preview);
+  sp.set('menu', 'sertifikat');
+  sp.set('cert', String(reg.id));
+  window.location.href = `/akun?${sp.toString()}`;
 }
 
 // [teacher-sapaan-v1] `teacherName` = sapaan buat layar ("Kak Dhani"),
 // `teacherFullName` = nama lengkap buat dokumen cetak (rapor & sertifikat) —
 // tanda tangan di sertifikat tetap harus nama resmi, bukan panggilan.
-export default function ClassRaporTab({ reg, teacherName, teacherFullName }: { reg: any; teacherName?: string; teacherFullName?: string }) {
+// [rapor-ke-sertifikat-v1] `onOpenSertifikat` = buka menu Sertifikat in-shell dengan kelas ini
+// terpilih. Tanpa itu (halaman /akun/kelas/[id]) tombol pindah ke /akun?menu=sertifikat&cert=<id>.
+export default function ClassRaporTab({ reg, teacherName, teacherFullName, onOpenSertifikat }: { reg: any; teacherName?: string; teacherFullName?: string; onOpenSertifikat?: () => void }) {
   const t = useT(); // [ui-lang-switcher-v1]
   const uiLang = useUiLang();
   const dateLocale = uiLang === 'en' ? 'en-GB' : 'id-ID';
@@ -267,14 +233,14 @@ export default function ClassRaporTab({ reg, teacherName, teacherFullName }: { r
             <Award className="h-6 w-6" strokeWidth={2} />
           </span>
           <div className="min-w-0 flex-1">
-            <div className="text-sm font-bold text-gray-900">{t('Sertifikat Penyelesaian')}</div>
-            <div className="text-xs text-gray-500">{t('Selamat! 🎉 Program')} {reg.language} {reg.level || ''} {t('sudah selesai — sertifikatmu siap diunduh.')}</div>
+            <div className="text-sm font-bold" style={{ color: '#12172B' }}>{t('Sertifikat Penyelesaian')}</div>
+            <div className="text-xs" style={{ color: '#6B7280' }}>{t('Selamat! 🎉 Program')} {reg.language} {reg.level || ''} {t('sudah selesai — sertifikat & rapor akhirmu ada di menu Sertifikat.')}</div>
           </div>
           <button
-            onClick={() => printCertificate({ studentName: studentName || 'Siswa', reg, teacherName: teacherFullName || teacherName, finalReport })}
+            onClick={() => bukaSertifikat(reg, onOpenSertifikat)}
             className="inline-flex shrink-0 items-center gap-1.5 rounded-xl bg-amber-500 px-4 py-2.5 text-sm font-bold text-white hover:bg-amber-600"
           >
-            <Award className="h-4 w-4" strokeWidth={2.5} /> {t('Unduh Sertifikat')}
+            <Award className="h-4 w-4" strokeWidth={2.5} /> {t('Lihat Sertifikat')}
           </button>
         </div>
       )}
