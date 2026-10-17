@@ -32,7 +32,7 @@ const SESI_SUBLEVEL = 16;
 // Sama dengan SESSION_OPTS di /daftar (FunnelFlow) & create-funnel-invoice.
 const SESI_OPTS = [4, 8, 12, 16, 24];
 
-type Hasil = { slot: number[]; guru?: number[][]; terisi?: number[]; adaPengajar: boolean; durasi: number };
+type Hasil = { slot: number[]; guru?: number[][]; terisi?: number[]; adaPengajar: boolean; jumlahPengajar?: number; durasi: number };
 type Pola = "tetap" | "fleksibel";
 /** Satu sel pola mingguan, kunci "dow-menit". guru = pengajar yang kosong di jam itu
  *  pada salah satu pekan; kosong + ada terisi = merah. */
@@ -393,7 +393,13 @@ export default function JadwalPublikClient({ slug, langId }: { slug: string; lan
 
       <ul className="mt-6 space-y-2.5 text-sm text-slate-600">
         <li className="flex gap-2"><UserCheck className="mt-0.5 h-4 w-4 shrink-0 text-[#1A9E9E]" /> Pengajar dicocokkan dengan level, tujuan belajar, dan jam pilihanmu.</li>
-        <li className="flex gap-2"><RefreshCw className="mt-0.5 h-4 w-4 shrink-0 text-[#1A9E9E]" /> Kurang cocok dengan pengajarnya? Bisa minta ganti pengajar.</li>
+        <li className="flex gap-2"><RefreshCw className="mt-0.5 h-4 w-4 shrink-0 text-[#1A9E9E]" />{" "}
+          {/* [ganti-pengajar-v1] Aturan owner 17 Okt: ganti pengajar maks 1 kali; bahasa yang
+              pengajarnya terbatas (cuma 1 pengajar aktif) tidak bisa ganti. */}
+          {hasil && (hasil.jumlahPengajar ?? 2) <= 1
+            ? <span>Pengajar bahasa {langId} saat ini terbatas, jadi <b>belum bisa ganti pengajar</b>.</span>
+            : <span>Kurang cocok dengan pengajarnya? Bisa minta ganti pengajar, <b>maksimal 1 kali</b>. Untuk bahasa yang pengajarnya terbatas, belum bisa ganti pengajar.</span>}
+        </li>
         <li className="flex gap-2"><CalendarCheck className="mt-0.5 h-4 w-4 shrink-0 text-[#1A9E9E]" /> Jadwal &amp; tanggal mulai dikonfirmasi bareng pengajar lewat WhatsApp setelah pembayaran.</li>
         <li className="flex gap-2"><Repeat className="mt-0.5 h-4 w-4 shrink-0 text-[#1A9E9E]" /> Disarankan {SESI_SUBLEVEL} sesi untuk menuntaskan 1 sub-level (mis. A1.1). Boleh ambil lebih sedikit dulu, lalu tambah sesi kapan saja.</li>
       </ul>

@@ -81,6 +81,9 @@ export type HasilJadwalPublik = {
   terisi: number[];
   /** Ada pengajar bahasa ini yang Availability-nya segar (walau mungkin penuh). */
   adaPengajar: boolean;
+  /** [ganti-pengajar-v1] Jumlah pengajar aktif bahasa ini (terlepas dari Availability).
+   *  ≤ 1 = bahasa terbatas → tidak bisa ganti pengajar. */
+  jumlahPengajar: number;
   diperbarui: number;
 };
 
@@ -95,8 +98,18 @@ export async function jadwalPublik(langEn: string, durasi: number): Promise<Hasi
   const admin = adminClient();
   const sekarang = Date.now();
   const target = languageSlug(langEn);
-  const kosong = { bahasa: langEn, durasi, slot: [], guru: [], terisi: [], adaPengajar: false, diperbarui: sekarang };
+  const kosong = { bahasa: langEn, durasi, slot: [], guru: [], terisi: [], adaPengajar: false, jumlahPengajar: 0, diperbarui: sekarang };
   if (!target) return kosong;
+
+  // [ganti-pengajar-v1] Semua pengajar aktif bahasa ini, untuk aturan ganti pengajar
+  // (maks 1 kali; bahasa yang pengajarnya cuma 1 tidak bisa ganti).
+  type Guru = { id: string; email: string | null; status: string | null; languages: string[] | null };
+  const { data: semuaGuru } = await admin.from("teachers").select("id, email, status, languages").range(0, 9999);
+  const guruBahasa = ((semuaGuru ?? []) as Guru[])
+    .filter((g) => String(g.status || "").toLowerCase() === "aktif")
+    .filter((g) => !BUKAN_PENGAJAR.has(String(g.email || "").toLowerCase()))
+    .filter((g) => (g.languages ?? []).some((l) => bahasaPengajar(l) === target));
+  kosong.jumlahPengajar = guruBahasa.length;
 
   // Pengajar yang menyentuh Availability ≤30 hari (simpan = hapus lalu isi ulang,
   // jadi created_at = terakhir diperbarui).
@@ -108,11 +121,8 @@ export async function jadwalPublik(langEn: string, durasi: number): Promise<Hasi
   const ids = [...new Set([...(a.data ?? []), ...(o.data ?? [])].map((r: { teacher_id: string }) => r.teacher_id))];
   if (!ids.length) return kosong;
 
-  const { data: guru } = await admin.from("teachers").select("id, email, status, languages").in("id", ids);
-  const cocok = ((guru ?? []) as { id: string; email: string | null; status: string | null; languages: string[] | null }[])
-    .filter((g) => String(g.status || "").toLowerCase() === "aktif")
-    .filter((g) => !BUKAN_PENGAJAR.has(String(g.email || "").toLowerCase()))
-    .filter((g) => (g.languages ?? []).some((l) => bahasaPengajar(l) === target));
+  const segar = new Set(ids);
+  const cocok = guruBahasa.filter((g) => segar.has(g.id));
   if (!cocok.length) return kosong;
 
   // Nomor urut diacak supaya urutannya tidak bisa dicocokkan ke daftar pengajar.
@@ -138,5 +148,5 @@ export async function jadwalPublik(langEn: string, durasi: number): Promise<Hasi
   const guruSlot = slot.map((t) => [...hitung.get(t)!].sort((x, y) => x - y));
   const bisa = new Set(slot);
   const terisi = [...dibuka].filter((t) => !bisa.has(t)).sort((x, y) => x - y);
-  return { bahasa: langEn, durasi, slot, guru: guruSlot, terisi, adaPengajar, diperbarui: sekarang };
+  return { bahasa: langEn, durasi, slot, guru: guruSlot, terisi, adaPengajar, jumlahPengajar: guruBahasa.length, diperbarui: sekarang };
 }
