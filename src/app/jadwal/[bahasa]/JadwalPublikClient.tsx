@@ -274,29 +274,31 @@ export default function JadwalPublikClient({ slug, langId }: { slug: string; lan
           </div>
 
           <div className="mt-3 flex flex-wrap items-center gap-x-4 gap-y-1.5 text-xs text-slate-600">
-            <span className="flex items-center gap-1.5"><i className="h-3 w-3 rounded-sm border border-emerald-300 bg-emerald-100" /> Tersedia</span>
-            <span className="flex items-center gap-1.5"><i className="h-3 w-3 rounded-sm border border-rose-200 bg-rose-100" /> Sudah terisi</span>
-            <span className="flex items-center gap-1.5"><i className="h-3 w-3 rounded-sm bg-slate-100" /> Tidak tersedia</span>
-            <span className="flex items-center gap-1.5"><i className="h-3 w-3 rounded-sm bg-[#1A9E9E]" /> Pilihanmu</span>
+            <span className="flex items-center gap-1.5"><i className="h-3 w-3 bg-[#8BC34A]" /> Tersedia</span>
+            <span className="flex items-center gap-1.5"><i className="h-3 w-3 bg-rose-200" /> Sudah terisi</span>
+            <span className="flex items-center gap-1.5"><i className="h-3 w-3 border border-slate-200 bg-white" /> Tidak tersedia</span>
+            <span className="flex items-center gap-1.5"><i className="h-3 w-3 bg-[#1A9E9E]" /> Pilihanmu</span>
             {calon && (
-              <span className="flex items-center gap-1.5"><i className="h-3 w-3 rounded-sm border border-slate-200 bg-[repeating-linear-gradient(45deg,#f1f5f9_0_3px,#e2e8f0_3px_6px)]" /> Beda pengajar</span>
+              <span className="flex items-center gap-1.5"><i className="h-3 w-3 border border-slate-200 bg-[repeating-linear-gradient(45deg,#f1f5f9_0_3px,#e2e8f0_3px_6px)]" /> Beda pengajar</span>
             )}
           </div>
           <p className="mt-2 text-xs text-slate-500">
-            Klik blok hijau untuk memilih jam mulai (sampai {MAKS_PILIH}). Jam yang dipilih jadi jadwal mingguanmu, mis. tiap Selasa 19.00, bersama satu pengajar tetap. Sesudah memilih, blok yang tidak bisa dipegang pengajar yang sama jadi bergaris. Semua jam dalam WIB.
+            Arahkan kursor ke blok untuk melihat jamnya, klik blok hijau untuk memilih jam mulai (sampai {MAKS_PILIH}). Jam yang dipilih jadi jadwal mingguanmu, mis. tiap Selasa 19.00, bersama satu pengajar tetap. Sesudah memilih, blok yang tidak bisa dipegang pengajar yang sama jadi bergaris. Semua jam dalam WIB.
           </p>
 
-          <div className="mt-3 max-h-[70vh] overflow-auto rounded-2xl border border-slate-100 bg-white shadow-sm">
-            <div className="grid min-w-[340px] grid-cols-[2.75rem_repeat(7,minmax(0,1fr))] gap-[3px] p-2 sm:grid-cols-[3.5rem_repeat(7,minmax(0,1fr))]">
-              <div className="sticky top-0 z-10 bg-white" />
+          {/* [jadwal-grid-italki-v1] grid kotak rapat bergaris 1px ala italki: tanpa rounded & tanpa teks
+              jam di dalam blok; hari, jam & durasi muncul di tooltip saat hover. */}
+          <div className="mt-3 max-h-[70vh] overflow-auto rounded-2xl border border-slate-100 bg-white p-2 shadow-sm">
+            <div className="grid min-w-[340px] grid-cols-[2.75rem_repeat(7,minmax(0,1fr))] sm:grid-cols-[3.5rem_repeat(7,minmax(0,1fr))]">
+              <div className="sticky top-0 z-30 bg-white" />
               {tampil.map(({ awal, w }) => (
-                <div key={awal} className="sticky top-0 z-10 bg-white pb-1.5 text-center">
+                <div key={awal} className="sticky top-0 z-30 bg-white pb-1.5 text-center">
                   <p className="text-[10px] font-semibold uppercase text-slate-400 sm:text-[11px]">{HARI_PENDEK[w.dow]}</p>
                   <p className="text-sm font-extrabold text-slate-900 sm:text-base">{w.d}</p>
                 </div>
               ))}
-              {barisMenit.map((menit) => (
-                <Baris key={menit} menit={menit} tampil={tampil} pilih={pilih} cocok={cocok} onToggle={toggle} />
+              {barisMenit.map((menit, i) => (
+                <Baris key={menit} menit={menit} durasi={durasi} awalBaris={i === 0} tampil={tampil} pilih={pilih} cocok={cocok} onToggle={toggle} />
               ))}
             </div>
           </div>
@@ -363,34 +365,47 @@ export default function JadwalPublikClient({ slug, langId }: { slug: string; lan
   );
 }
 
-function Baris({ menit, tampil, pilih, cocok, onToggle }: {
+function Baris({ menit, durasi, awalBaris, tampil, pilih, cocok, onToggle }: {
   menit: number;
-  tampil: { awal: number; sel: Map<number, { t: number; s: Sel }> }[];
+  durasi: number;
+  awalBaris: boolean;
+  tampil: { awal: number; w: { dow: number; d: number; m: number }; sel: Map<number, { t: number; s: Sel }> }[];
   pilih: Map<string, Pilihan>;
   cocok: (t: number) => boolean;
   onToggle: (t: number) => void;
 }) {
   const jamBulat = menit % 60 === 0;
+  // Garis grid: tiap sel punya garis kanan & bawah; kolom pertama + baris pertama menambah kiri/atas.
+  const garis = `border-b border-r border-slate-200 ${awalBaris ? "border-t" : ""}`;
   return (
     <>
-      <div className={`pr-1 text-right text-[10px] tabular-nums leading-7 sm:text-[11px] ${jamBulat ? "font-semibold text-slate-500" : "text-slate-300"}`}>
+      <div className={`pr-1.5 text-right text-[10px] leading-7 tabular-nums sm:text-[11px] ${jamBulat ? "font-semibold text-slate-500" : "text-transparent"}`}>
         {titik(menit)}
       </div>
-      {tampil.map(({ awal, sel }) => {
+      {tampil.map(({ awal, w: hari, sel }, kol) => {
         const c = sel.get(menit);
-        if (!c) return <div key={awal} className="h-7 rounded bg-slate-100/70" />;
+        const tepi = `${garis} ${kol === 0 ? "border-l" : ""}`;
+        const label = `${HARI[hari.dow]}, ${hari.d} ${BULAN[hari.m]} · ${titik(menit)}–${titik(menit + durasi)} (${durasi} menit)`;
+        // Tooltip di bawah untuk baris teratas (supaya tidak tertutup header lengket), selain itu di atas.
+        const tip = (ket: string) => (
+          <span
+            className={`pointer-events-none absolute z-20 whitespace-nowrap rounded-lg bg-slate-900 px-2.5 py-1.5 text-[11px] font-semibold text-white opacity-0 shadow-lg transition-opacity group-hover:opacity-100 ${awalBaris ? "top-full mt-1.5" : "bottom-full mb-1.5"} ${kol >= 5 ? "right-0" : kol <= 1 ? "left-0" : "left-1/2 -translate-x-1/2"}`}
+          >
+            {label}
+            <span className="block text-[10px] font-medium text-slate-300">{ket}</span>
+          </span>
+        );
+        if (!c) return <div key={awal} className={`h-7 bg-white ${tepi}`} />;
         if (c.s === "terisi") {
-          return <div key={awal} title={`${titik(menit)} sudah terisi`} className="h-7 rounded border border-rose-200 bg-rose-100" />;
+          return <div key={awal} className={`group relative h-7 bg-rose-200 ${tepi}`}>{tip("Sudah terisi")}</div>;
         }
-        const w = wibOf(c.t);
-        const aktif = pilih.has(`${w.dow}-${menit}`);
+        const wc = wibOf(c.t);
+        const aktif = pilih.has(`${wc.dow}-${menit}`);
         if (!aktif && !cocok(c.t)) {
           return (
-            <div
-              key={awal}
-              title="Tidak bisa digabung dengan jadwal pilihanmu (beda pengajar)"
-              className="h-7 rounded border border-slate-200 bg-[repeating-linear-gradient(45deg,#f1f5f9_0_3px,#e2e8f0_3px_6px)]"
-            />
+            <div key={awal} className={`group relative h-7 bg-[repeating-linear-gradient(45deg,#f1f5f9_0_3px,#e2e8f0_3px_6px)] ${tepi}`}>
+              {tip("Beda pengajar dengan pilihanmu")}
+            </div>
           );
         }
         const penuh = !aktif && pilih.size >= MAKS_PILIH;
@@ -400,12 +415,13 @@ function Baris({ menit, tampil, pilih, cocok, onToggle }: {
             type="button"
             disabled={penuh}
             onClick={() => onToggle(c.t)}
-            title={`${titik(menit)} tersedia`}
-            className={`flex h-7 items-center justify-center rounded text-[10px] font-bold tabular-nums transition-colors sm:text-[11px] ${aktif
-              ? "bg-[#1A9E9E] text-white shadow-sm"
-              : "border border-emerald-300 bg-emerald-100 text-emerald-700 hover:bg-emerald-200 disabled:cursor-not-allowed disabled:opacity-50"}`}
+            aria-label={label}
+            className={`group relative flex h-7 items-center justify-center transition-colors hover:z-10 ${tepi} ${aktif
+              ? "bg-[#1A9E9E] text-white"
+              : "bg-[#8BC34A] hover:brightness-95 disabled:cursor-not-allowed disabled:opacity-50"}`}
           >
-            {aktif ? <Check className="h-3.5 w-3.5" /> : <span className="hidden sm:inline">{titik(menit)}</span>}
+            {aktif && <Check className="h-3.5 w-3.5" />}
+            {tip(aktif ? "Pilihanmu · klik untuk batal" : penuh ? `Maksimal ${MAKS_PILIH} jam` : "Tersedia · klik untuk memilih")}
           </button>
         );
       })}
