@@ -631,11 +631,9 @@ function fmtCertDate(iso: string | null | undefined, lang: UiLang): string | nul
 
 function IssuedDetail({ ct, studentName, defaultName, onSaveName }: { ct: Cert; studentName: string; defaultName?: string; onSaveName?: (name: string) => Promise<void> }) {
   const t = useT(); // [ui-lang-switcher-v1]
-  const uiLang = useUiLang();
   const [editOpen, setEditOpen] = useState(false); // [sertifikat-edit-nama-v1]
   const col = colorOf(ct.language);
   const kind = productKindOf(ct.product);
-  const copy = COPY[kind];
   const isKids = kind === "kids";
   const showCefr = kind !== "kids";
   const cardRef = useRef<HTMLDivElement>(null);
@@ -734,10 +732,14 @@ function IssuedDetail({ ct, studentName, defaultName, onSaveName }: { ct: Cert; 
   // [sertifikat-redesign-v2] Jam belajar + periode tak lagi jadi kolom statistik
   // terpisah — dirangkai ke kalimat utama ("... di Linguo, dengan total 8 jam belajar
   // (16 sesi × 30 menit) sejak 3 Jul 2026 hingga 24 Sep 2026.").
-  const from = fmtCertDate(ct.dateFrom, uiLang);
-  const to = fmtCertDate(ct.dateTo, uiLang) || ct.date || null;
-  const hoursTxt = ct.hours != null && ct.hours > 0 ? `${fmtHours(ct.hours, uiLang)} ${t("jam belajar")}` : null;
-  const sessTxt = ct.total && ct.minutesPerSession ? `${ct.total} ${t("sesi")} × ${ct.minutesPerSession} ${t("menit")}` : null;
+  // Bahasa pada lembar sertifikat selalu Inggris, terlepas dari bahasa dashboard.
+  const from = fmtCertDate(ct.dateFrom, "en");
+  const legacyDate = ct.date?.replace(/\b(Mei|Agu|Okt|Des)\b/g, (m) => ({ Mei: "May", Agu: "Aug", Okt: "Oct", Des: "Dec" }[m] || m));
+  const to = fmtCertDate(ct.dateTo, "en") || fmtCertDate(legacyDate, "en");
+  const hoursTxt = ct.hours != null && ct.hours > 0 ? `${fmtHours(ct.hours, "en")} ${ct.hours === 1 ? "hour" : "hours"} of study` : null;
+  const sessTxt = ct.total && ct.minutesPerSession ? `${ct.total} ${ct.total === 1 ? "session" : "sessions"} × ${ct.minutesPerSession} minutes` : null;
+  const programme = kind === "private" ? "private" : kind === "reguler" ? "group" : kind === "kids" ? "children's" : kind === "testprep" ? "test preparation" : "language";
+  const levelTitle = ({ A1: "Beginner", A2: "Elementary", B1: "Intermediate", B2: "Upper Intermediate", C1: "Advanced", C2: "Proficient" } as Record<string, string>)[ct.level.split(".")[0].toUpperCase()] || tr(ct.title, "en");
   const ink = "#12172B";
 
   return (
@@ -747,22 +749,21 @@ function IssuedDetail({ ct, studentName, defaultName, onSaveName }: { ct: Cert; 
         code={flagCodeOf(ct.language)}
         badge={<FlagBadge lang={ct.language} variant="chip" />}
         name={studentName}
-        heading={isKids ? t("PETUALANG CILIK") : kind === "testprep" ? t("PERSIAPAN TES") : t("PENYELESAIAN")}
+        heading={isKids ? "ACHIEVEMENT" : "COMPLETION"}
         body={<>
-          {t(copy.bodyPre)} {ct.language}{copy.bodyPost ? ` ${t(copy.bodyPost)}` : ""}
-          {showCefr ? <> — <b style={{ color: ink, whiteSpace: "nowrap" }}>{t("Level CEFR")} {ct.level}</b></> : ""}
-          {ct.title && !isKids ? ` (${t(ct.title)})` : ""} {t("di Linguo")}
-          {hoursTxt ? <>, {t("dengan total")} <b style={{ color: ink }}>{hoursTxt}</b>{sessTxt ? ` (${sessTxt})` : ""}</> : ""}
+          for successfully completing the {programme} {ct.language} programme at Linguo
+          {showCefr ? <> — <b style={{ color: ink, whiteSpace: "nowrap" }}>CEFR Level {ct.level}</b>{levelTitle ? ` (${levelTitle})` : ""}</> : ""}
+          {hoursTxt ? <>, with a total of <b style={{ color: ink }}>{hoursTxt}</b>{sessTxt ? ` (${sessTxt})` : ""}</> : ""}
           {from && to && from !== to
-            ? <> {t("sejak")} <b style={{ color: ink, whiteSpace: "nowrap" }}>{from}</b> {t("hingga")} <b style={{ color: ink, whiteSpace: "nowrap" }}>{to}</b></>
-            : to ? <> {t("pada")} <b style={{ color: ink, whiteSpace: "nowrap" }}>{to}</b></> : ""}.
+            ? <> from <b style={{ color: ink, whiteSpace: "nowrap" }}>{from}</b> to <b style={{ color: ink, whiteSpace: "nowrap" }}>{to}</b></>
+            : to ? <> on <b style={{ color: ink, whiteSpace: "nowrap" }}>{to}</b></> : ""}.
         </>}
-        level={<>{showCefr ? `CEFR ${ct.level}` : t("Petualang Cilik")}{ct.score != null ? ` · ${t("Nilai Akhir")} ${ct.score}/100` : ""}</>}
+        level={<>{showCefr ? `CEFR ${ct.level}` : "Young Explorer"}{ct.score != null ? ` · Final Score ${ct.score}/100` : ""}</>}
         qr={qrSrc}
-        teacher={ct.teacher}
+        teacher={ct.teacher === "Pengajar Linguo" ? "Linguo Instructor" : ct.teacher}
         date={to || "—"}
         number={ct.idNo}
-        labels={{ recipient: t("Diberikan kepada"), electronic: t("Ditandatangani elektronik").toUpperCase(), scan: t("Pindai untuk verifikasi").toUpperCase(), issued: t("Tanggal terbit").toUpperCase(), teacher: t("Pengajar"), number: t("No. Sertifikat") }}
+        labels={{ recipient: "This certificate is presented to", scan: "SCAN TO VERIFY", issued: "DATE OF ISSUE", teacher: "Instructor", number: "Certificate No." }}
       />
       {showsSkills(kind) && <SkillBlock ct={ct} accent={col.accent} />}
 

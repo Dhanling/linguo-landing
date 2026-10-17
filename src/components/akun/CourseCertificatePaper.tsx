@@ -1,7 +1,7 @@
 "use client";
 
 import { forwardRef, useEffect, useRef, useState, type ReactNode } from 'react';
-import { Award, BadgeCheck } from 'lucide-react';
+import { Award } from 'lucide-react';
 import { courseCertificateTheme } from '@/lib/courseCertificateTheme';
 
 // Ukuran kertas tetap supaya tata letak HP dan PDF sama dengan desktop.
@@ -19,7 +19,7 @@ type Props = {
   teacher: string;
   date: string;
   number?: string | null;
-  labels: { recipient: string; electronic: string; scan: string; issued: string; teacher: string; number: string };
+  labels: { recipient: string; scan: string; issued: string; teacher: string; number: string };
 };
 
 const CourseCertificatePaper = forwardRef<HTMLDivElement, Props>(function CourseCertificatePaper(p, ref) {
@@ -45,7 +45,7 @@ const CourseCertificatePaper = forwardRef<HTMLDivElement, Props>(function Course
           {p.badge}
         </div>
         <div style={{ position: 'absolute', top: 87, left: 160, right: 160, textAlign: 'center' }}>
-          <p style={{ margin: 0, fontSize: 20, letterSpacing: 5, color: '#60697d' }}>SERTIFIKAT</p>
+          <p style={{ margin: 0, fontSize: 20, letterSpacing: 5, color: '#60697d' }}>CERTIFICATE OF</p>
           <h2 style={{ margin: '8px -60px 0', fontFamily: "Georgia, 'Times New Roman', serif", fontWeight: 700, fontSize: p.heading.length > 18 ? 49 : 68, lineHeight: 1.12, color: '#101526' }}>{p.heading}</h2>
           <div style={{ width: 55, height: 3, background: '#ef510b', borderRadius: 5, margin: '16px auto 0' }} />
           <p style={{ margin: '28px 0 8px', fontSize: 20, color: '#535f77' }}>{p.labels.recipient}</p>
@@ -57,13 +57,11 @@ const CourseCertificatePaper = forwardRef<HTMLDivElement, Props>(function Course
         </div>
         <div style={{ position: 'absolute', left: 85, right: 85, bottom: 88, height: 145, display: 'grid', gridTemplateColumns: '1fr 220px 1fr', alignItems: 'center', gap: 30 }}>
           <div style={{ textAlign: 'left' }}>
-            {p.qr && <p style={{ display: 'flex', alignItems: 'center', gap: 8, fontSize: 12, color: '#e64b0b', fontWeight: 700, letterSpacing: 1 }}><BadgeCheck size={23} />{p.labels.electronic}</p>}
-            <BadgeCheck size={42} color="#1A9E9E" style={{ margin: '10px 0' }} />
             <p style={{ margin: 0, fontFamily: 'Georgia, serif', fontSize: 23, fontWeight: 700 }}>Rini Rismawati</p>
             <p style={{ margin: '6px 0 0', paddingTop: 9, borderTop: '1px solid #b6c2d0', fontSize: 12, letterSpacing: 2.5, color: '#606b80' }}>HEAD OF CURRICULUM</p>
           </div>
           <div style={{ textAlign: 'center', borderLeft: '1px solid #ffd2b8', borderRight: '1px solid #ffd2b8', padding: '0 15px' }}>
-            {p.qr ? <img src={p.qr} alt="QR verifikasi sertifikat" style={{ display: 'block', margin: '0 auto', width: 103, height: 103, padding: 5, border: '1px solid #ffbc99', borderRadius: 6, background: '#fff' }} /> : <Award size={72} color="#e95b16" style={{ margin: '0 auto' }} />}
+            {p.qr ? <img src={p.qr} alt="Certificate verification QR code" style={{ display: 'block', margin: '0 auto', width: 103, height: 103, padding: 5, border: '1px solid #ffbc99', borderRadius: 6, background: '#fff' }} /> : <Award size={72} color="#e95b16" style={{ margin: '0 auto' }} />}
             <p style={{ margin: '8px 0 0', fontSize: 10, fontWeight: 700, letterSpacing: 1.5, color: '#606b80' }}>{p.qr ? p.labels.scan : 'LINGUO'}</p>
           </div>
           <div style={{ textAlign: 'center' }}>
