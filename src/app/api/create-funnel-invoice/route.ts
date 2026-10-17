@@ -241,7 +241,7 @@ export async function POST(req: NextRequest) {
     // [jadwal-publik-v1] jam mingguan pilihan dari /jadwal/<bahasa> (teks bebas, dibatasi).
     const schedulePreference =
       program === "Kelas Private" && typeof schedule_preference === "string"
-        ? schedule_preference.trim().slice(0, 300) || null
+        ? schedule_preference.trim().slice(0, 500) || null
         : null;
     if (classMode === "offline" && classCity.length < 3) {
       return NextResponse.json(

@@ -117,7 +117,7 @@ export default function FunnelFlow({ route }: { route: FunnelRoute }) {
   });
   // [jadwal-publik-v1] jam mingguan yang dipilih di /jadwal/<bahasa>, teks siap simpan
   // ("Selasa 19.00-20.00, Kamis 19.00-20.00 (mulai 21 Okt)") → leads.schedule_preference.
-  const [jadwal, setJadwal] = useState(() => (sp.get("jadwal") || "").slice(0, 300));
+  const [jadwal, setJadwal] = useState(() => (sp.get("jadwal") || "").slice(0, 500));
   const [classMode, setClassMode] = useState<"online" | "offline">(
     sp.get("mode") === "offline" ? "offline" : "online",
   );

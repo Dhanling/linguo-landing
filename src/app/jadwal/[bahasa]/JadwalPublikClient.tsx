@@ -15,6 +15,7 @@ import { useEffect, useMemo, useState } from "react";
 import Link from "next/link";
 import { CalendarCheck, Check, ChevronLeft, ChevronRight, MessageCircle, RefreshCw, UserCheck } from "lucide-react";
 import { hhmm, wibInstant, wibOf } from "@/lib/aturJadwal";
+import { levelFunnel, profilDariQuery, teksProfil, type ProfilBelajar } from "@/lib/profilBelajar";
 
 const WA_NUMBER = "6282116859493";
 const DURASI = [30, 45, 60, 90];
@@ -54,6 +55,9 @@ export default function JadwalPublikClient({ slug, langId }: { slug: string; lan
   const [pekan, setPekan] = useState(0);
   const [pilih, setPilih] = useState<Map<string, Pilihan>>(new Map());
   const [lihatSaran, setLihatSaran] = useState(false);
+  // [cek-jadwal-profil-v1] level/tujuan/minat dari pop-up Cek Jadwal (null kalau buka langsung).
+  const [profil, setProfil] = useState<ProfilBelajar | null>(null);
+  useEffect(() => { setProfil(profilDariQuery(window.location.search)); }, []);
 
   useEffect(() => {
     let batal = false;
@@ -188,9 +192,11 @@ export default function JadwalPublikClient({ slug, langId }: { slug: string; lan
     });
   };
 
-  const preferensi = teksPreferensi(daftarPilih, durasi);
-  const hrefDaftar = `/daftar/${slug}/private?durasi=${durasi}` + (preferensi ? `&jadwal=${encodeURIComponent(preferensi)}` : "");
-  const waText = `Halo Linguo, saya mau Kelas Private Bahasa ${langId}. Jam yang saya mau: `;
+  const preferensi = [teksPreferensi(daftarPilih, durasi), profil ? teksProfil(profil) : ""].filter(Boolean).join(" · ");
+  const hrefDaftar = `/daftar/${slug}/private?durasi=${durasi}`
+    + (profil ? `&level=${levelFunnel(profil.level)}` : "")
+    + (preferensi ? `&jadwal=${encodeURIComponent(preferensi)}` : "");
+  const waText = `Halo Linguo, saya mau Kelas Private Bahasa ${langId}.` + (profil ? ` ${teksProfil(profil)}.` : "") + ` Jam yang saya mau: `;
 
   return (
     <>
