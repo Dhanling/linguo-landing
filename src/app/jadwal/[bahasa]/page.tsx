@@ -16,7 +16,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   if (!langEn) return { title: "Halaman tidak ditemukan | Linguo.id", robots: { index: false, follow: false } };
   const langId = langNameId(langEn);
   const title = `Jadwal Kelas Private Bahasa ${langId} — Cek Jam Kosong | Linguo.id`;
-  const description = `Lihat jam kosong pengajar Kelas Private Bahasa ${langId} untuk 2 minggu ke depan, pilih jam yang cocok, lalu daftar. Pengajar dicocokkan dengan level dan jadwalmu.`;
+  const description = `Lihat jam kosong pengajar Kelas Private Bahasa ${langId} per minggu, pilih jadwal tetap atau fleksibel, lalu daftar. Pengajar dicocokkan dengan level dan jadwalmu.`;
   const url = `${BASE}/jadwal/${bahasa}`;
   return {
     title,

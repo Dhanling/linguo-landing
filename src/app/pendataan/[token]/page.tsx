@@ -140,7 +140,8 @@ function parseSchedule(raw: string | null): Set<string> {
       set.add(blockKey(dayIdx, m - (m % STEP_MIN)));
     }
   };
-  for (const chunk of raw.split(",").map((s) => s.trim()).filter(Boolean)) {
+  // Buang ekor catatan ("… · Tetap tiap minggu", "(mulai 21 Okt)") dari kalender /jadwal/<bahasa>.
+  for (const chunk of raw.split(",").map((s) => s.replace(/\s*(·|\(mulai\b).*$/, "").trim()).filter(Boolean)) {
     let m = chunk.match(RANGE_RE);
     if (m) {
       const d = DAYS.indexOf(m[1]);

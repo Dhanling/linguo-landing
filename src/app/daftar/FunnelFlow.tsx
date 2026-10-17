@@ -68,6 +68,7 @@ import {
 } from "./ui";
 
 const SESSION_OPTS = [4, 8, 12, 16, 24];
+const SESI_SUBLEVEL = 16;
 const IELTS_PRICE = 300000;
 const REGULER_PRICE = 150000;
 const FORM_KEY = "linguo_daftar_form";
@@ -107,7 +108,8 @@ export default function FunnelFlow({ route }: { route: FunnelRoute }) {
     sp.get("pengajar") === "native" ? "native" : "lokal",
   );
   const [duration, setDuration] = useState(Number(sp.get("durasi")) || 60);
-  const [sessions, setSessions] = useState(Number(sp.get("sesi")) || 12);
+  // 16 sesi = 1 sub-level (saran, bukan minimum) → jadi bawaan; 4/8/12 tetap boleh.
+  const [sessions, setSessions] = useState(Number(sp.get("sesi")) || SESI_SUBLEVEL);
   // semi-class-size-picker-v1 — jumlah siswa Semi-Private dipilih sendiri (2–10).
   // Query ?peserta= boleh diketik orang, jadi dijepit ke rentang yang sah biar
   // simulasi di layar tidak pernah beda dari hitungan ulang server.
@@ -116,7 +118,7 @@ export default function FunnelFlow({ route }: { route: FunnelRoute }) {
     return Math.min(Math.max(Math.round(n), SEMI_PRIVATE_MIN), SEMI_PRIVATE_MAX);
   });
   // [jadwal-publik-v1] jam mingguan yang dipilih di /jadwal/<bahasa>, teks siap simpan
-  // ("Selasa 19.00-20.00, Kamis 19.00-20.00 (mulai 21 Okt)") → leads.schedule_preference.
+  // ("Selasa 19.00-20.00, Kamis 19.00-20.00 · Tetap tiap minggu · …") → leads.schedule_preference.
   const [jadwal, setJadwal] = useState(() => (sp.get("jadwal") || "").slice(0, 500));
   const [classMode, setClassMode] = useState<"online" | "offline">(
     sp.get("mode") === "offline" ? "offline" : "online",
@@ -648,18 +650,32 @@ export default function FunnelFlow({ route }: { route: FunnelRoute }) {
 
               <section className="mt-6">
                 <h2 className="text-base font-bold text-slate-900">Jumlah sesi</h2>
-                <p className="mb-3 text-sm text-slate-500">Pilih paket jumlah pertemuan</p>
+                <p className="mb-3 text-sm text-slate-500">
+                  {program === "Kelas Kids"
+                    ? "Pilih paket jumlah pertemuan"
+                    : `1 sub-level (mis. A1.1) = ${SESI_SUBLEVEL} sesi. Boleh ambil lebih sedikit dulu, lalu tambah kapan saja.`}
+                </p>
                 <div className="grid grid-cols-5 gap-2">
                   {SESSION_OPTS.map((s) => (
                     <button
                       key={s}
                       onClick={() => setSessions(s)}
-                      className={`rounded-xl border-2 py-2.5 text-sm font-bold transition-all ${sessions === s ? "border-[#1A9E9E] bg-[#1A9E9E] text-white shadow-md" : "border-slate-100 text-slate-600 hover:border-[#1A9E9E]/40"}`}
+                      className={`relative rounded-xl border-2 py-2.5 text-sm font-bold transition-all ${sessions === s ? "border-[#1A9E9E] bg-[#1A9E9E] text-white shadow-md" : "border-slate-100 text-slate-600 hover:border-[#1A9E9E]/40"}`}
                     >
                       {s}
+                      {s === SESI_SUBLEVEL && (
+                        <span className="absolute -top-2 left-1/2 -translate-x-1/2 whitespace-nowrap rounded-full bg-amber-400 px-1.5 text-[9px] font-extrabold uppercase leading-4 text-white">Saran</span>
+                      )}
                     </button>
                   ))}
                 </div>
+                {program !== "Kelas Kids" && <p className="mt-2 text-xs text-slate-500">
+                  {sessions < SESI_SUBLEVEL
+                    ? `${sessions} sesi belum menuntaskan 1 sub-level — sisanya bisa ditambah nanti tanpa mulai ulang.`
+                    : sessions === SESI_SUBLEVEL
+                      ? "Pas 1 sub-level, sampai siap naik ke level berikutnya."
+                      : `${sessions} sesi ≈ ${(sessions / SESI_SUBLEVEL).toLocaleString("id-ID", { maximumFractionDigits: 1 })} sub-level.`}
+                </p>}
               </section>
             </>
           )}
