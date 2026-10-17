@@ -302,6 +302,11 @@ export default function ClassDetailView({ reg, initialTab, previewStudentId = nu
   // kalau gagal badge-nya cuma tidak muncul, halaman TIDAK boleh ikut error.
   const [counts, setCounts] = useState<{ materi: number; rapor: number; kuis: number }>({ materi: 0, rapor: 0, kuis: 0 });
   useEffect(() => {
+    // [rapor-pratinjau-v1] Pratinjau: badge Rapor dari reg.class_reports kiriman route.
+    if (previewStudentId && Array.isArray(reg?.class_reports)) {
+      const rapor = reg.class_reports.filter((r: any) => r.published_at).length;
+      setCounts((c) => (c.rapor === rapor ? c : { ...c, rapor }));
+    }
     if (!reg?.id || previewStudentId) return;
     let alive = true;
     (async () => {
@@ -322,7 +327,7 @@ export default function ClassDetailView({ reg, initialTab, previewStudentId = nu
       });
     })();
     return () => { alive = false; };
-  }, [reg?.id, previewStudentId, schedules]);
+  }, [reg?.id, previewStudentId, schedules, reg?.class_reports]);
 
   async function fetchData(senyap = false) {
     if (!senyap) setLoading(true);

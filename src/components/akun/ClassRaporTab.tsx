@@ -204,6 +204,19 @@ export default function ClassRaporTab({ reg, teacherName, teacherFullName }: { r
 
   useEffect(() => {
     let alive = true;
+    // [rapor-pratinjau-v1] Pratinjau POV staf tak punya sesi siswa → query
+    // class_reports di klien kena RLS (role anon) dan pulang NOL baris, jadi rapor
+    // yang sudah terbit tampil "Belum ada rapor" (kasus Anita Marliani 17 Okt 2026).
+    // /api/preview-student sudah mengirim barisnya di reg.class_reports — pakai itu.
+    if (Array.isArray(reg?.class_reports)) {
+      const rows = [...reg.class_reports]
+        .filter((r: any) => r.published_at)
+        .sort((a: any, b: any) => String(a.published_at).localeCompare(String(b.published_at)));
+      setReports(rows);
+      const nm = reg?.students?.name || reg?.student_name;
+      if (nm) setStudentName(nm);
+      return () => { alive = false; };
+    }
     (async () => {
       const [repRes, stuRes] = await Promise.all([
         supabase
@@ -227,7 +240,7 @@ export default function ClassRaporTab({ reg, teacherName, teacherFullName }: { r
       if (stuRes?.data?.name) setStudentName(stuRes.data.name);
     })();
     return () => { alive = false; };
-  }, [reg.id, reg.student_id]);
+  }, [reg.id, reg.student_id, reg?.class_reports]);
 
   if (reports === null) {
     return <div className="py-10 text-center text-gray-400">{t('Memuat…')}</div>;
