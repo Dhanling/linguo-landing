@@ -43,7 +43,10 @@ const CourseCertificatePaper = forwardRef<HTMLDivElement, Props>(function Course
       <div ref={ref} data-course-certificate data-theme={theme} className="cert-paper" style={{ position: 'relative', width: COURSE_CERT_WIDTH, height: COURSE_CERT_HEIGHT, transform: `scale(${scale})`, transformOrigin: 'top left', overflow: 'hidden', background: '#fff', color: '#12172B', fontFamily: "'Inter', Arial, sans-serif" }}>
         <img src={`/images/certificates/${theme}.webp`} alt="" aria-hidden="true" style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', objectFit: 'fill' }} />
         <div style={{ position: 'absolute', inset: '48px 70px auto', display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
-          <img src="/images/full-logo-linguo-hijau.png" alt="Linguo" style={{ height: 50, width: 'auto' }} />
+          <span data-certificate-logo style={{ position: 'relative', display: 'inline-flex', padding: '10px 14px', margin: '-10px -14px' }}>
+            <span aria-hidden="true" style={{ position: 'absolute', inset: -18, background: 'radial-gradient(ellipse at center, #fff 48%, rgba(255,255,255,.96) 62%, rgba(255,255,255,.55) 78%, rgba(255,255,255,0) 100%)' }} />
+            <img src="/images/full-logo-linguo-hijau.png" alt="Linguo" style={{ position: 'relative', height: 50, width: 'auto' }} />
+          </span>
           {p.badge}
         </div>
         <div style={{ position: 'absolute', top: 87, left: 160, right: 160, textAlign: 'center' }}>

@@ -4061,6 +4061,7 @@ export default function AkunPage() {
         teacher: r?.teachers?.name || (tidOf(r) ? teacherDir[tidOf(r)!]?.name : undefined) || "Pengajar Linguo",
         product: r.product || undefined, // [pustaka/sertifikat-filter-v1] dipakai filter Kelas Live vs Belajar Mandiri
         status: issued ? "issued" : "progress",
+        classStatus: r.status,
         pct, used, total,
         date: issued ? new Date(dateTo || Date.now()).toLocaleDateString("id-ID", { day: "numeric", month: "short", year: "numeric" }) : undefined,
         hours: issued ? (total * menitPaket) / 60 : undefined,

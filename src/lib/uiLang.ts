@@ -146,6 +146,8 @@ const EN: Record<string, string> = {
   "Jelajahi Toko Digital": "Browse the Digital Store",
   "Cari produk…": "Search products…",
   "Semua": "All",
+  "Kelas Aktif": "Active Classes",
+  "Nonaktif": "Inactive",
   "E-Learning": "E-Learning",
   /* [lingbook-nama-ebook-v1] Rak e-book di Perpustakaan sekarang bernama
      "Lingbook" — nama merek, sama di ID & EN. Baris "E-Book" ditahan karena

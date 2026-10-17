@@ -79,6 +79,7 @@ export type Cert = {
   total?: number;
   // v2:
   product?: string;
+  classStatus?: string | null; // Status registrasi, terpisah dari status terbit sertifikat.
   // [sertifikat-durasi-periode-v1] jam belajar = sesi × menit/sesi (bukan jumlah sesi),
   // periode = sesi pertama → sesi terakhir (ISO). Dirangkai jadi satu kalimat di kertas.
   minutesPerSession?: number | null;
@@ -271,27 +272,12 @@ function productKindOf(p?: string): Kind {
 }
 const showsSkills = (k: Kind) => k === "private" || k === "reguler";
 
-// ── Kategori sertifikat ─────────────────────────────────────────────────────
-// Dua sumbu kategori dipakai bareng di satu baris chip:
-//   1) cara belajar  — Kelas Live vs Belajar Mandiri (LMS/e-learning)
-//   2) jenis program — Kelas Reguler / Kelas Private / IELTS & TOEFL Prep / Kids,
-//      diturunkan dari Cert.product lewat productKindOf().
-type CertCat = "live" | "mandiri";
-function certCategory(c: Cert): CertCat {
-  const p = (c.product || "").toLowerCase();
-  if (/e-?learning|mandiri|lms|self[\s-]?paced/.test(p)) return "mandiri";
-  return "live"; // private / reguler / kids / testprep = kelas dengan pengajar
+// Tiga filter berdasarkan status kelas asli, bukan jenis produk atau status sertifikat.
+type FilterKey = "all" | "active" | "inactive";
+function isActiveClass(c: Cert): boolean {
+  if (c.classStatus?.trim()) return /^(aktif|active)$/i.test(c.classStatus.trim());
+  return c.status === "progress"; // Kompatibilitas pratinjau/data lama tanpa status kelas.
 }
-
-// [sertifikat-kategori-program-v1] chip jenis program.
-type ProdKey = Exclude<Kind, "default">;
-type FilterKey = "all" | CertCat | ProdKey;
-const PRODUCT_FILTERS: { key: ProdKey; label: string; hint?: string }[] = [
-  { key: "reguler", label: "Kelas Reguler" },
-  { key: "private", label: "Kelas Private", hint: "Program Private tersedia sampai level tertinggi B1." },
-  { key: "testprep", label: "IELTS & TOEFL Prep" },
-  { key: "kids", label: "Kelas Kids" },
-];
 /** Label pendek jenis program buat kartu daftar (kolomnya cuma 320px). */
 const PROD_SHORT: Record<Kind, string> = {
   reguler: "Reguler",
@@ -302,8 +288,7 @@ const PROD_SHORT: Record<Kind, string> = {
 };
 function matchesFilter(c: Cert, key: FilterKey): boolean {
   if (key === "all") return true;
-  if (key === "live" || key === "mandiri") return certCategory(c) === key;
-  return productKindOf(c.product) === key;
+  return key === "active" ? isActiveClass(c) : !isActiveClass(c);
 }
 // [ui-lang-switcher-v1] `body` dipecah jadi awalan + akhiran, nama bahasanya
 // disisipkan di tengah saat render — kalimat utuh ber-`${lang}` tak akan pernah
@@ -418,30 +403,14 @@ export default function SertifikatTab({
   const issuedCount = list.filter((c) => c.status === "issued").length;
   const lockedCount = list.filter((c) => c.status === "progress").length;
 
-  // ── Filter kategori (cara belajar + jenis program) ──
+  // ── Filter status kelas ──
   const [filter, setFilter] = useState<FilterKey>("all");
-  const FILTERS = useMemo(() => {
-    const countOf = (k: FilterKey) => list.filter((c) => matchesFilter(c, k)).length;
-    const rows: { key: FilterKey; label: string; count: number; hint?: string }[] = [
-      { key: "all", label: tr("Semua"), count: list.length },
-      { key: "live", label: tr("Kelas Live"), count: countOf("live") },
-      { key: "mandiri", label: tr("Belajar Mandiri"), count: countOf("mandiri") },
-    ];
-    // Chip jenis program cuma muncul kalau siswa memang punya sertifikat jenisnya —
-    // kalau keempatnya selalu dipasang, kolom 320px penuh chip berangka 0.
-    for (const p of PRODUCT_FILTERS) {
-      const n = countOf(p.key);
-      if (n) rows.push({ key: p.key, label: tr(p.label), count: n, hint: p.hint ? tr(p.hint) : undefined });
-    }
-    return rows;
-  }, [list]);
-  // Sertifikat baru terbit bisa bikin chip yang lagi aktif hilang → balik ke "Semua"
-  // supaya daftarnya tidak kosong tanpa sebab yang kelihatan.
-  useEffect(() => {
-    if (!FILTERS.some((f) => f.key === filter)) setFilter("all");
-  }, [FILTERS, filter]);
+  const FILTERS = [
+    { key: "all" as const, label: t("Semua"), count: list.length },
+    { key: "active" as const, label: t("Kelas Aktif"), count: list.filter(isActiveClass).length },
+    { key: "inactive" as const, label: t("Nonaktif"), count: list.filter((c) => !isActiveClass(c)).length },
+  ];
   const filtered = useMemo(() => list.filter((c) => matchesFilter(c, filter)), [list, filter]);
-  const activeHint = FILTERS.find((f) => f.key === filter)?.hint;
 
   const [selectedId, setSelectedId] = useState<string>(list[0]?.id);
   // [sertifikat-cefr-modal-v1] popup penjelasan CEFR + peta levelisasi
@@ -523,9 +492,6 @@ export default function SertifikatTab({
               );
             })}
           </div>
-          {activeHint && (
-            <p className="-mt-1 px-4 pb-3 text-[11px] font-medium leading-relaxed text-[#6B7280]">{activeHint}</p>
-          )}
           {/* [sertifikat-kartu-kepotong-v1] Kartu paling atas dulu kepotong waktu dipilih:
               garis pilihnya dipasang lewat `outline` (digambar DI LUAR kotak) sementara
               wadahnya `overflow-y-auto` tanpa ruang atas — jadi 2px sisi atasnya tergunting
