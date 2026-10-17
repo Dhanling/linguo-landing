@@ -5,7 +5,7 @@
 // radar 4-skill (Speaking/Listening/Reading/Writing) inline-SVG (bukan Recharts -> aman di html2canvas),
 // template per-produk (Private/Reguler = CEFR + skill, Kids = playful, Test Prep/E-Learning = Phase 2 fallback),
 // font Inter (double-story 'a') + guard document.fonts.ready sebelum capture biar PDF ga fallback.
-// Data diturunkan dari registrasi (sessions_used/total). Fallback dummy kalau `certs` kosong.
+// Data diturunkan dari registrasi (sessions_used/total). Kosong → tampilan "Belum ada sertifikat".
 // Palet inline (config-independent): teal #16796E, accent #F2CB05, ink #12172B.
 
 import { useEffect, useMemo, useRef, useState } from "react";
@@ -401,15 +401,11 @@ export default function SertifikatTab({
   useEffect(() => { ensureInter(); }, []);
   const isDark = useIsDark();
 
-  const DUMMY: Cert[] = useMemo(() => [
-    { id: "d-eng-a2", product: "Kelas Private", language: "English", level: "A2", title: "Elementary", teacher: "Sarah Wijaya", status: "issued", date: "14 Feb 2026", score: 88, hours: 32, idNo: "LING-EN-A2-204815", speaking: 4, listening: 5, reading: 4, writing: 3 },
-    { id: "d-jpn-a1", product: "Kelas Private", language: "Japanese", level: "A1.1", title: "Pemula", teacher: "Kenji Tanaka", status: "issued", date: "3 Apr 2026", score: 91, hours: 16, idNo: "LING-JP-A1-205533", speaking: 3, listening: 4, reading: 4, writing: 4 },
-    { id: "d-kid-a1", product: "Kelas Kids", language: "English", level: "A1", title: "Young Explorer", teacher: "Miss Dina", status: "issued", date: "20 Mei 2026", hours: 12, idNo: "LING-EN-A1-208841" },
-    { id: "d-eng-b1", product: "Kelas Reguler", language: "English", level: "B1", title: "Conversational", teacher: "Sarah Wijaya", status: "progress", pct: 75, used: 12, total: 16 },
-    { id: "d-kor-a2", product: "Kelas Private", language: "Korean", level: "A2.1", title: "Pra-Menengah", teacher: "Min-ji Park", status: "progress", pct: 31, used: 5, total: 16 },
-  ], []);
   const t = useT(); // [ui-lang-switcher-v1]
-  const list = certs.length ? certs : DUMMY;
+  /* [sertifikat-tanpa-dummy-v1] Dulu daftar kosong diisi 5 sertifikat CONTOH (Japanese
+     A1.1 "Kenji Tanaka" 91/100, dst.) — siswa tanpa sertifikat (mis. peserta B2B Abdul
+     Aziz saat datanya belum termuat) mengira itu sertifikat miliknya. Kosong ya kosong. */
+  const list = certs;
 
   const issuedCount = list.filter((c) => c.status === "issued").length;
   const lockedCount = list.filter((c) => c.status === "progress").length;
