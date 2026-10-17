@@ -95,6 +95,9 @@ const EMPTY_FORM: FormData = { name: "", email: "", wa: "", countryCode: "+62", 
 // KOMPONEN UTAMA
 // ─────────────────────────────────────────────────────────────────────────────
 
+/** [masa-berlaku-paket-v1] Masa berlaku paket sesi (Private, Semi Private, Kids) dalam bulan. */
+const masaBerlakuBulan = (sesi: number) => Math.ceil(sesi / 4) + 1;
+
 export default function FunnelFlow({ route }: { route: FunnelRoute }) {
   const router = useRouter();
   const sp = useSearchParams();
@@ -1057,7 +1060,11 @@ export default function FunnelFlow({ route }: { route: FunnelRoute }) {
                       <li>Jadwal dicocokkan dengan pengajar <b>setelah pembayaran</b>, lewat form pendataan. Kalau belum cocok, admin bantu carikan pengajar atau jam lain.</li>
                       <li>Kalau tetap tidak ada yang cocok sebelum kelas dimulai, <b>dana kembali 100%</b>.</li>
                       <li>Pembatalan sebelum sesi pertama: <b>dana kembali 100%</b>. Setelah sesi pertama berjalan: dikembalikan proporsional atas sisa sesi, dikurangi biaya administrasi payment gateway.</li>
-                      <li>Reschedule paling lambat <b>24 jam sebelum sesi</b>. Lewat dari itu, sesi dianggap berjalan.</li>
+                      {/* [masa-berlaku-paket-v1] Rumus sama dengan form Registrasi dashboard:
+                          ceil(sesi/4)+1 bulan (10 sesi = 4 bln, 16 sesi = 5 bln, sesuai infografis
+                          "Ketentuan Teknis Private Class"). */}
+                      <li>Paket <b>{sessions} sesi berlaku {masaBerlakuBulan(sessions)} bulan</b> sejak pembayaran dikonfirmasi. Sisa sesi yang belum terpakai setelah itu hangus.</li>
+                      <li>Reschedule (siswa maupun pengajar) paling lambat <b>H-1</b> sebelum kelas. Tanpa pemberitahuan, sesi dianggap hangus. Pengecualian kondisi darurat (sakit, pemadaman listrik, force majeure) berlaku <b>maksimal 2 kali</b> per paket.</li>
                     </ul>
                   </div>
                 )}

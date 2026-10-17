@@ -87,7 +87,7 @@ export default function PengembalianDanaPage() {
             </li>
             <li>
               Reschedule sesi dapat diajukan paling lambat{" "}
-              <strong>24 jam (H-24)</strong> sebelum sesi dimulai. Di luar batas
+              <strong>H-1 (24 jam)</strong> sebelum sesi dimulai. Di luar batas
               waktu tersebut, sesi dianggap berjalan dan tidak dihitung sebagai
               sesi tersisa.
             </li>

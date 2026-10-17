@@ -24,7 +24,7 @@ export default function SyaratKetentuanPage() {
         Syarat &amp; Ketentuan
       </h1>
       <p className="mt-3 text-sm text-gray-500">
-        Berlaku efektif: 4 Juni 2026. Dengan mendaftar, melakukan pembayaran,
+        Berlaku efektif: 4 Juni 2026 (diperbarui 17 Oktober 2026). Dengan mendaftar, melakukan pembayaran,
         atau menggunakan layanan Linguo, kamu dianggap telah membaca, memahami,
         dan menyetujui seluruh ketentuan di bawah ini.
       </p>
@@ -96,14 +96,38 @@ export default function SyaratKetentuanPage() {
           </ul>
         </Section>
 
-        <Section n="5" title="Kebijakan Kelas Private & Kids">
-          <p>
-            Jadwal sesi disepakati antara peserta dan pengajar. Permintaan
-            reschedule sesi dapat diajukan paling lambat{" "}
-            <strong>24 jam (H-24)</strong> sebelum sesi dimulai. Di luar batas
-            waktu tersebut, sesi dianggap berjalan dan tidak dapat dijadwalkan
-            ulang.
-          </p>
+        {/* [masa-berlaku-paket-v1] Isi infografis "Ketentuan Teknis Private Class" (dulu baru
+            dikirim admin sesudah bayar) + jadwal dicocokkan sesudah bayar [jadwal-sesudah-bayar-v1].
+            Rumus masa berlaku = ceil(sesi/4)+1 bulan, sama dengan form daftar & dashboard. */}
+        <Section n="5" title="Kebijakan Kelas Private, Semi Private & Kids">
+          <ul className="list-disc space-y-2 pl-5">
+            <li>
+              <strong>Jadwal</strong> dicocokkan dengan pengajar setelah
+              pembayaran, melalui form pendataan. Apabila belum ada pengajar
+              yang cocok, admin membantu mencarikan pengajar atau jam lain.
+              Apabila tetap tidak ada yang cocok sebelum kelas dimulai, dana
+              dikembalikan 100%.
+            </li>
+            <li>
+              <strong>Masa berlaku paket</strong> dihitung sejak pembayaran
+              dikonfirmasi: 4 sesi = 2 bulan, 8 sesi = 3 bulan, 10 sesi = 4
+              bulan, 12 sesi = 4 bulan, 16 sesi = 5 bulan, 24 sesi = 7 bulan.
+              Sisa sesi yang belum terpakai setelah masa berlaku berakhir{" "}
+              <strong>dianggap hangus</strong> dan tidak dapat diklaim kembali.
+            </li>
+            <li>
+              <strong>Reschedule</strong> dapat diajukan oleh peserta maupun
+              pengajar paling lambat <strong>H-1 (24 jam)</strong> sebelum kelas
+              dimulai. Tanpa pemberitahuan hingga batas tersebut, sesi dianggap
+              berjalan (hangus).
+            </li>
+            <li>
+              <strong>Pengecualian</strong> berlaku untuk kondisi darurat seperti
+              sakit, pemadaman listrik, atau force majeure lainnya: sesi tidak
+              dianggap hangus, dengan toleransi{" "}
+              <strong>maksimal 2 kali</strong> selama masa paket.
+            </li>
+          </ul>
         </Section>
 
         <Section n="6" title="Produk Digital (E-Learning & E-Book)">
