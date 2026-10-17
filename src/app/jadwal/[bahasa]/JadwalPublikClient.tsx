@@ -29,6 +29,8 @@ const HARI = ["Senin", "Selasa", "Rabu", "Kamis", "Jumat", "Sabtu", "Minggu"];
 const HARI_PENDEK = ["Sen", "Sel", "Rab", "Kam", "Jum", "Sab", "Min"];
 // 1 sub-level = 16 sesi (saran, bukan minimum) — dipakai untuk perkiraan lama belajar.
 const SESI_SUBLEVEL = 16;
+// Sama dengan SESSION_OPTS di /daftar (FunnelFlow) & create-funnel-invoice.
+const SESI_OPTS = [4, 8, 12, 16, 24];
 
 type Hasil = { slot: number[]; guru?: number[][]; terisi?: number[]; adaPengajar: boolean; durasi: number };
 type Pola = "tetap" | "fleksibel";
@@ -59,10 +61,16 @@ function teksPreferensi(pilih: Pilihan[], durasi: number, pola: Pola) {
   return jam ? `${jam} · Tetap tiap minggu · Tanggal mulai disepakati dengan pengajar` : "";
 }
 
-/** "2 sesi/minggu → 16 sesi (1 sub-level) ± 8 minggu". */
-function perkiraanLama(perMinggu: number) {
+/** "2 sesi/minggu → 16 sesi ± 8 minggu". */
+function perkiraanLama(perMinggu: number, sesi: number) {
   if (!perMinggu) return "";
-  return `${perMinggu} sesi/minggu → ${SESI_SUBLEVEL} sesi (1 sub-level) ± ${Math.ceil(SESI_SUBLEVEL / perMinggu)} minggu`;
+  return `${perMinggu} sesi/minggu → ${sesi} sesi ± ${Math.ceil(sesi / perMinggu)} minggu`;
+}
+
+function ketSesi(sesi: number) {
+  if (sesi < SESI_SUBLEVEL) return `${sesi} sesi belum menuntaskan 1 sub-level — sisanya bisa ditambah nanti tanpa mulai ulang.`;
+  if (sesi === SESI_SUBLEVEL) return "Pas 1 sub-level (mis. A1.1), sampai siap naik ke level berikutnya.";
+  return `${sesi} sesi ≈ ${(sesi / SESI_SUBLEVEL).toLocaleString("id-ID", { maximumFractionDigits: 1 })} sub-level.`;
 }
 
 export default function JadwalPublikClient({ slug, langId }: { slug: string; langEn: string; langId: string }) {
@@ -70,6 +78,7 @@ export default function JadwalPublikClient({ slug, langId }: { slug: string; lan
   const [hasil, setHasil] = useState<Hasil | null>(null);
   const [gagal, setGagal] = useState(false);
   const [pola, setPola] = useState<Pola>("tetap");
+  const [sesi, setSesi] = useState(SESI_SUBLEVEL);
   const [pilih, setPilih] = useState<Map<string, Pilihan>>(new Map());
   const [lihatSaran, setLihatSaran] = useState(false);
   // [cek-jadwal-profil-v1] level/tujuan/minat dari pop-up Cek Jadwal (null kalau buka langsung).
@@ -198,26 +207,44 @@ export default function JadwalPublikClient({ slug, langId }: { slug: string; lan
 
   const preferensi = [teksPreferensi(daftarPilih, durasi, pola), profil ? teksProfil(profil) : ""].filter(Boolean).join(" · ");
   const hrefDaftar = `/daftar/${slug}/private?durasi=${durasi}`
-    + `&sesi=${SESI_SUBLEVEL}`
+    + `&sesi=${sesi}`
     + (profil ? `&level=${levelFunnel(profil.level)}` : "")
     + (preferensi ? `&jadwal=${encodeURIComponent(preferensi)}` : "");
   const waText = `Halo Linguo, saya mau Kelas Private Bahasa ${langId}.` + (profil ? ` ${teksProfil(profil)}.` : "") + ` Jam yang saya mau: `;
 
   return (
     <>
-      <div className="mt-5 flex items-center gap-2">
+      <div className="mt-5 flex flex-wrap items-center gap-2">
         <span className="text-xs font-semibold text-slate-500">Durasi per sesi</span>
         {DURASI.map((d) => (
           <button
             key={d}
             type="button"
             onClick={() => setDurasi(d)}
-            className={`rounded-full border px-3 py-1 text-xs font-bold transition-colors ${durasi === d ? "border-[#1A9E9E] bg-[#1A9E9E] text-white" : "border-slate-200 bg-white text-slate-600 hover:border-[#1A9E9E]/50"}`}
+            className={`whitespace-nowrap rounded-full border px-3 py-1 text-xs font-bold transition-colors ${durasi === d ? "border-[#1A9E9E] bg-[#1A9E9E] text-white" : "border-slate-200 bg-white text-slate-600 hover:border-[#1A9E9E]/50"}`}
           >
             {d} menit
           </button>
         ))}
       </div>
+
+      <div className="mt-3 flex flex-wrap items-center gap-2">
+        <span className="text-xs font-semibold text-slate-500">Jumlah sesi</span>
+        {SESI_OPTS.map((n) => (
+          <button
+            key={n}
+            type="button"
+            onClick={() => setSesi(n)}
+            className={`relative whitespace-nowrap rounded-full border px-3 py-1 text-xs font-bold transition-colors ${sesi === n ? "border-[#1A9E9E] bg-[#1A9E9E] text-white" : "border-slate-200 bg-white text-slate-600 hover:border-[#1A9E9E]/50"}`}
+          >
+            {n} sesi
+            {n === SESI_SUBLEVEL && (
+              <span className="absolute -top-2 right-0 rounded-full bg-amber-400 px-1 text-[8px] font-extrabold uppercase leading-3 text-white">Saran</span>
+            )}
+          </button>
+        ))}
+      </div>
+      <p className="mt-1.5 text-xs text-slate-500">{ketSesi(sesi)} Bisa diubah lagi di langkah daftar.</p>
 
       {!hasil && !gagal && (
         <div className="mt-5 space-y-2">
@@ -357,8 +384,8 @@ export default function JadwalPublikClient({ slug, langId }: { slug: string; lan
         <div className="fixed inset-x-0 bottom-0 z-40 border-t border-slate-200 bg-white/95 py-3 pl-4 pr-24 lg:pr-4 shadow-[0_-8px_24px_rgba(15,23,42,0.08)] backdrop-blur">
           <div className="mx-auto flex max-w-3xl items-center gap-3">
             <div className="min-w-0 flex-1">
-              <p className="text-[11px] font-semibold uppercase tracking-wider text-slate-400">
-                {pola === "tetap" ? "Tetap tiap minggu" : "Fleksibel"} · {durasi} menit
+              <p className="truncate text-[11px] font-semibold uppercase tracking-wider text-slate-400">
+                {pola === "tetap" ? "Tetap" : "Fleksibel"} · {sesi} sesi × {durasi} mnt
               </p>
               <p className="truncate text-sm font-bold text-slate-900">
                 {daftarPilih.length
@@ -366,7 +393,7 @@ export default function JadwalPublikClient({ slug, langId }: { slug: string; lan
                   : "Atur per sesi sesudah lunas"}
               </p>
               {pola === "tetap" && (
-                <p className="truncate text-[11px] text-slate-500">{perkiraanLama(daftarPilih.length)}</p>
+                <p className="truncate text-[11px] text-slate-500">{perkiraanLama(daftarPilih.length, sesi)}</p>
               )}
             </div>
             <Link href={hrefDaftar} className="shrink-0 rounded-xl bg-[#1A9E9E] px-4 py-2.5 text-sm font-bold text-white hover:brightness-95">
