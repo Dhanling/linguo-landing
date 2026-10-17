@@ -23,10 +23,14 @@
 // diblokir, model gagal dimuat) dulu karakter diam total tanpa pesan. Sekarang konteks
 // dicoba ulang dgn opsi lebih longgar, dan bila tetap gagal gambar awal sendiri yang
 // melayang (CSS) & miring mengikuti cursor — tetap hidup walau tanpa 3D.
+// [hero-3d-cadangan-video-v1] + jari tetap mengetik: klip "mengetik" 3 dtk dirender dari
+// GLB ini (kamera/pencahayaan sama, frame 0 = gambar awal) jadi WebM VP9 ber-alpha
+// 1620², ~160 KB, diputar berulang di atas gambar. Safari tak bisa alpha WebM → gambar saja.
 import Image from "next/image";
 import React, { useEffect, useRef, useState } from "react";
 
 const MODEL_SRC = "/models/hero-character.glb";
+const VIDEO_CADANGAN = "/models/hero-mengetik.webm";
 // Sudut kamera disamakan dengan PNG lama supaya pergantiannya tidak melompat.
 const ORBIT_THETA = -35, ORBIT_PHI = 80, FOV = 30;
 const YAW_MAX = 26, PITCH_MAX = 12, BODY_YAW_MAX = 6; // derajat
@@ -46,6 +50,8 @@ export default function HeroModel3D({ alt }: { alt: string }) {
   const miringRef = useRef<HTMLDivElement>(null);
   const [siap, setSiap] = useState(false);
   const [cadangan, setCadangan] = useState(false);
+  const [videoJalan, setVideoJalan] = useState(false);
+  const [bisaVideo, setBisaVideo] = useState(false);
 
   useEffect(() => {
     const wadah = wadahRef.current;
@@ -62,6 +68,7 @@ export default function HeroModel3D({ alt }: { alt: string }) {
     const pakaiCadangan = () => {
       if (batal || diam) return;
       setCadangan(true);
+      setBisaVideo(document.createElement("video").canPlayType('video/webm; codecs="vp9"') !== "");
       let tDiam = 0;
       const onPointer = (e: PointerEvent) => {
         const el = miringRef.current;
@@ -301,12 +308,24 @@ export default function HeroModel3D({ alt }: { alt: string }) {
         className="relative w-full h-full"
         style={cadangan ? { transition: "transform .9s cubic-bezier(.2,.7,.3,1)", transformOrigin: "60% 45%" } : undefined}
       >
-        <Image
-          src="/images/hero-character-3d.png" alt={siap ? "" : alt} aria-hidden={siap || undefined}
-          width={1620} height={1620} priority sizes="(min-width: 1024px) 810px, 0px"
-          className={`relative w-full h-full object-contain ${siap ? "invisible" : ""} ${cadangan ? "melayang" : ""}`}
+        <div
+          className={`relative w-full h-full ${cadangan ? "melayang" : ""}`}
           style={cadangan ? ({ "--amp": "-12px", animationDuration: "4s" } as React.CSSProperties) : undefined}
-        />
+        >
+          <Image
+            src="/images/hero-character-3d.png" alt={siap ? "" : alt} aria-hidden={siap || undefined}
+            width={1620} height={1620} priority sizes="(min-width: 1024px) 810px, 0px"
+            className={`relative w-full h-full object-contain ${siap || videoJalan ? "invisible" : ""}`}
+          />
+          {/* Gambar baru disembunyikan setelah video benar-benar berputar (frame 0 identik). */}
+          {cadangan && bisaVideo && (
+            <video
+              src={VIDEO_CADANGAN} muted loop autoPlay playsInline preload="auto" aria-hidden="true"
+              onPlaying={() => setVideoJalan(true)}
+              className="pointer-events-none absolute inset-0 w-full h-full object-contain"
+            />
+          )}
+        </div>
       </div>
       {siap && <span className="sr-only">{alt}</span>}
     </div>
