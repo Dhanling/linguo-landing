@@ -697,7 +697,7 @@ function IssuedDetail({ ct, studentName, defaultName, onSaveName }: { ct: Cert; 
         },
       });
       const img = canvas.toDataURL("image/jpeg", 0.95);
-      const pdf = new JsPDF({ orientation: canvas.width > canvas.height ? "landscape" : "portrait", unit: "px", format: [canvas.width, canvas.height] });
+      const pdf = new JsPDF({ orientation: "landscape", unit: "mm", format: "a4" });
       const pw = pdf.internal.pageSize.getWidth();
       const ph = pdf.internal.pageSize.getHeight();
       pdf.addImage(img, "JPEG", 0, 0, pw, ph);
