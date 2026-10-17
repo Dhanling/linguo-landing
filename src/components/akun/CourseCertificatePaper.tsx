@@ -3,6 +3,7 @@
 import { forwardRef, useEffect, useRef, useState, type ReactNode } from 'react';
 import { Award } from 'lucide-react';
 import { courseCertificateTheme } from '@/lib/courseCertificateTheme';
+import CertWatermark from './CertWatermark';
 
 // Ukuran kertas tetap supaya tata letak HP dan PDF sama dengan desktop.
 export const COURSE_CERT_WIDTH = 1120;
@@ -42,6 +43,7 @@ const CourseCertificatePaper = forwardRef<HTMLDivElement, Props>(function Course
     <div ref={outer} style={{ width: '100%', maxWidth: COURSE_CERT_WIDTH, height: COURSE_CERT_HEIGHT * scale, overflow: 'hidden', borderRadius: 8, boxShadow: '0 8px 36px #12172b12' }}>
       <div ref={ref} data-course-certificate data-theme={theme} className="cert-paper" style={{ position: 'relative', width: COURSE_CERT_WIDTH, height: COURSE_CERT_HEIGHT, transform: `scale(${scale})`, transformOrigin: 'top left', overflow: 'hidden', background: '#fff', color: '#12172B', fontFamily: "'Inter', Arial, sans-serif" }}>
         <img src={`/images/certificates/${theme}.webp`} alt="" aria-hidden="true" style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', objectFit: 'fill' }} />
+        <CertWatermark />
         <div style={{ position: 'absolute', inset: '48px 70px auto', display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
           <span data-certificate-logo style={{ position: 'relative', display: 'inline-flex', padding: '10px 14px', margin: '-10px -14px' }}>
             <span aria-hidden="true" style={{ position: 'absolute', inset: -18, background: 'radial-gradient(ellipse at center, #fff 48%, rgba(255,255,255,.96) 62%, rgba(255,255,255,.55) 78%, rgba(255,255,255,0) 100%)' }} />
@@ -76,7 +78,7 @@ const CourseCertificatePaper = forwardRef<HTMLDivElement, Props>(function Course
             <p style={{ margin: 0, paddingTop: 12, borderTop: '1px solid #b6c2d0', fontSize: 14, color: '#606b80' }}>{p.labels.teacher}: <b style={{ color: '#12172b', overflowWrap: 'anywhere' }}>{p.teacher}</b></p>
           </div>
         </div>
-        {p.number && <p style={{ position: 'absolute', bottom: 32, left: 60, right: 60, textAlign: 'center', margin: 0, fontSize: 12, letterSpacing: 1.5, color: '#606b80' }}>{p.labels.number} · {p.number}</p>}
+        {p.number && <p style={{ position: 'absolute', bottom: 32, left: 60, right: 60, textAlign: 'center', margin: 0, fontSize: 12, letterSpacing: 1.5, color: '#606b80' }}>{p.labels.number} · {p.number} · © PT. Linguo Edu Indonesia</p>}
       </div>
     </div>
   );
