@@ -486,14 +486,15 @@ export default function SertifikatTab({
             <p className="mt-0.5 text-[12px] font-medium text-[#6B7280]">{issuedCount} {t("terbit")} · {lockedCount} {t("dalam proses")}</p>
           </div>
           {/* filter kategori */}
-          <div className="flex flex-wrap gap-1.5 px-4 pb-3">
+          {/* Satu baris: chip mengisi lebar kolom (flex-auto) & tak boleh turun baris. */}
+          <div className="flex flex-nowrap gap-1 px-4 pb-3">
             {FILTERS.map((f) => {
               const on = filter === f.key;
               return (
                 <button
                   key={f.key}
                   onClick={() => setFilter(f.key)}
-                  className={`inline-flex items-center gap-1.5 rounded-full px-3 py-1.5 text-[12px] font-bold transition ${
+                  className={`inline-flex flex-auto items-center justify-center gap-1 whitespace-nowrap rounded-full px-2 py-1.5 text-[12px] font-bold transition ${
                     on ? "bg-[#16796E] text-white" : "cert-chip bg-[#F5F6F8] text-[#6B7280] hover:bg-[#EAEDF0]"
                   }`}
                 >
@@ -774,8 +775,10 @@ function IssuedDetail({ ct, studentName, defaultName, onSaveName }: { ct: Cert; 
           <span className="ml-2 text-[11px] font-medium text-[#6B7280]">{t("PDF berisi 2 halaman")}</span>
         </div>
       )}
-      <div className="grid w-full">
-      <div data-cert-slide style={{ gridArea: "1 / 1", visibility: slide === 0 ? "visible" : "hidden" }} aria-hidden={slide !== 0}>
+      {/* Kolom minmax(0,1fr) + minWidth 0 wajib: tanpa itu kolom grid melebar ke lebar asli
+          kertas (1120px) sehingga skala pratinjau tak pernah turun dan sertifikat meluber. */}
+      <div className="mx-auto grid w-full max-w-[880px] grid-cols-[minmax(0,1fr)]">
+      <div data-cert-slide style={{ gridArea: "1 / 1", minWidth: 0, visibility: slide === 0 ? "visible" : "hidden" }} aria-hidden={slide !== 0}>
       <CourseCertificatePaper
         ref={cardRef}
         code={flagCodeOf(ct.language)}
@@ -802,7 +805,7 @@ function IssuedDetail({ ct, studentName, defaultName, onSaveName }: { ct: Cert; 
       />
       </div>
       {rapor && (
-        <div data-cert-slide style={{ gridArea: "1 / 1", visibility: slide === 1 ? "visible" : "hidden" }} aria-hidden={slide !== 1}>
+        <div data-cert-slide style={{ gridArea: "1 / 1", minWidth: 0, visibility: slide === 1 ? "visible" : "hidden" }} aria-hidden={slide !== 1}>
           <RaporPaper
             ref={raporRef}
             report={rapor}
