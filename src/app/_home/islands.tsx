@@ -7,7 +7,7 @@ import Image from "next/image";
 import React, { useState, useEffect, useRef, useSyncExternalStore } from "react";
 import dynamic from "next/dynamic";
 import { motion, AnimatePresence } from "framer-motion";
-import { Globe, ChevronDown, ChevronLeft, ChevronRight, Mail, Star, Check, ArrowRight, ArrowUp, Menu, X, Zap, AtSign, Search, Sparkles, GraduationCap, Users, School, Baby, ClipboardList, MonitorPlay, BookOpen, Timer, Building2, Headphones, ScrollText, Languages } from "lucide-react";
+import { Globe, ChevronDown, ChevronLeft, ChevronRight, Mail, Star, Check, ArrowRight, ArrowUp, Menu, X, Zap, AtSign, Search, Sparkles, GraduationCap, Users, School, Baby, ClipboardList, MonitorPlay, BookOpen, Timer, Building2, Headphones, ScrollText, Languages, Clapperboard } from "lucide-react";
 // [home-flags-subset-v1] Bendera beranda dari subset kecil (bukan set lengkap
 // blade-flags 1,2 MB); kode di luar subset jatuh ke RectFlag lazy.
 import { HOME_FLAGS } from "@/lib/flags/homeFlags";
@@ -101,6 +101,8 @@ const NAV_MEGA: { group: string; items: NavMegaItem[] }[] = [
     { icon:MonitorPlay, title:"E-Learning", desc:"Materi interaktif, belajar sesuai tempo sendiri", href:"/toko/paket-elearning" },
     { icon:BookOpen, title:"E-Book", desc:"Buku digital lengkap untuk belajar di mana saja", href:"/produk/ebook" },
     { icon:Timer, title:"Simulasi TOEFL/IELTS", desc:"Latihan tes lengkap 4 skill + skor otomatis", href:"/simulasi" },
+    // nav-ramping-v1: Watch & Learn pindah dari bar navbar ke sini (klik navbar ±0,5% sesi)
+    { icon:Clapperboard, title:"Watch & Learn", desc:"Belajar dari video YouTube + subtitle interaktif, mulai gratis", href:"/watch-learn" },
   ]},
   { group: "Untuk Perusahaan", items: [
     { icon:Building2, title:"Language Training", desc:"Pelatihan bahasa untuk tim & karyawan", href:"/corporate" },
@@ -220,8 +222,8 @@ export function Navbar({lang,setLang,onPricingTab,onLoginOpen}:{lang:string;setL
                   </motion.div>
                 )}</AnimatePresence>
               </div>
-              {/* Other nav links */}
-              {[["Watch & Learn","/watch-learn"],["Cek Jadwal","#cek-jadwal"],["Harga","/harga"],["Silabus","/silabus"],["Blog","/blog"]].map(([l,h]) => (
+              {/* Other nav links — nav-ramping-v1: Blog & Watch & Learn tinggal di footer (+ mega-menu) */}
+              {[["Cek Jadwal","#cek-jadwal"],["Harga","/harga"],["Silabus","/silabus"]].map(([l,h]) => (
                 <a key={l} href={h} onClick={h==="#cek-jadwal" ? (e)=>{ e.preventDefault(); setCekJadwalOpen(true); } : undefined} className={`cursor-pointer relative text-sm font-bold py-1 ${c?"text-slate-700 hover:text-slate-900":"text-white hover:text-white"} transition-colors group`}>
                   {l}
                   <span className={`absolute left-0 -bottom-1 h-[3px] w-0 group-hover:w-full transition-all duration-300 rounded-full bg-[#fbbf24]`}/>
@@ -276,7 +278,6 @@ export function Navbar({lang,setLang,onPricingTab,onLoginOpen}:{lang:string;setL
               <button onClick={()=>{setOpen(false);setCekJadwalOpen(true);}} className="text-base py-3 text-left">Cek Jadwal</button>
               <a href="/harga" onClick={()=>setOpen(false)} className="text-base py-3">Harga</a>
               <a href="/silabus" onClick={()=>setOpen(false)} className="text-base py-3">Silabus</a>
-              <a href="/blog" onClick={()=>setOpen(false)} className="text-base py-3">Blog</a>
             </div>
 
             {/* Sticky footer — Login + Placement Test (always visible) */}
