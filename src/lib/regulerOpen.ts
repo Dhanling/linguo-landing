@@ -59,6 +59,57 @@ export async function fetchOpenRegulerLangs(): Promise<string[] | null> {
 }
 
 /**
+ * [enroll-batch-reguler-v1] Batch reguler yang sedang dibuka untuk bahasa (+level)
+ * ini — dipakai /api/enroll supaya registrasi Kelas Reguler lahir dengan
+ * `batch_id` dan langsung masuk roster batch begitu lunas. Bug Tracker cb14c1fe
+ * (Faujiah, 16 Okt 2026): Shayde bayar Reguler Tagalog 13 Okt, tapi barisnya
+ * tanpa batch_id/product_type sehingga tak pernah muncul di peserta batch.
+ * Pilihan: kode batch yang disebut di teks bahasa ("… (TAG-A11-OCT26)") →
+ * bahasa+level → bahasa saja; kalau beberapa, yang mulai paling awal.
+ * null = tidak ada batch terbuka / DB tak terbaca (pemanggil lanjut tanpa batch).
+ */
+export async function findOpenRegulerBatch(
+  language?: string | null,
+  level?: string | null,
+): Promise<{ id: string; batch_code: string | null; language: string; level: string | null } | null> {
+  const lang = regulerLangOf(language);
+  if (!lang) return null;
+  try {
+    const supabase = createClient(
+      process.env.NEXT_PUBLIC_SUPABASE_URL!,
+      process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!,
+      { auth: { persistSession: false, autoRefreshToken: false } },
+    );
+    const { data, error } = await supabase
+      .from("v_regular_batches_summary")
+      .select("id, batch_code, language, level, start_date, closes_at, status")
+      .eq("is_published", true)
+      .in("status", ["Open", "Confirmed"])
+      .order("start_date", { ascending: true });
+    if (error) throw error;
+    const now = Date.now();
+    const rows = ((data || []) as any[]).filter(
+      (b) =>
+        canonLangName(b.language) === lang &&
+        (b.closes_at
+          ? new Date(b.closes_at).getTime()
+          : new Date(`${String(b.start_date).slice(0, 10)}T23:59:59+07:00`).getTime()) >= now,
+    );
+    if (!rows.length) return null;
+    const kode = String(language || "").match(/\(([A-Z0-9-]{5,})\)\s*$/)?.[1]?.toLowerCase();
+    const lvl = String(level || "").trim().toLowerCase();
+    const pick =
+      (kode && rows.find((b) => String(b.batch_code || "").toLowerCase() === kode)) ||
+      (lvl && rows.find((b) => String(b.level || "").trim().toLowerCase() === lvl)) ||
+      rows[0];
+    return { id: pick.id, batch_code: pick.batch_code ?? null, language: pick.language, level: pick.level ?? null };
+  } catch (e) {
+    console.error("[reguler-buka] gagal mencari batch:", e);
+    return null;
+  }
+}
+
+/**
  * Bahasa reguler dari teks apa pun. Modal di /jadwal-kelas-reguler mengirim nama
  * batch utuh ("German A1.1 (GER-A11-OCT26)"), jadi selain nama kanonik dicoba
  * juga pencocokan awalan. null = bukan bahasa reguler yang dikenal.

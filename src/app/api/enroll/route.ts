@@ -1,6 +1,6 @@
 import { NextRequest, NextResponse, after } from "next/server";
-import { programLangRejection } from "@/lib/programLanguages";
-import { regulerClosedRejection } from "@/lib/regulerOpen";
+import { canonProgram, programLangRejection } from "@/lib/programLanguages";
+import { findOpenRegulerBatch, regulerClosedRejection } from "@/lib/regulerOpen";
 import { createClient } from "@supabase/supabase-js";
 import { fotoOauthAsli } from "@/lib/oauthAvatar";
 import { KODE_WA_WAJIB, PESAN_WA_WAJIB, pastikanWaPembeli } from "@/lib/waPembeli";
@@ -195,6 +195,15 @@ export async function POST(req: NextRequest) {
         return NextResponse.json({ error: closedRejection, code: "reguler_tutup" }, { status: 400 });
       }
     }
+    // [enroll-batch-reguler-v1] Kelas Reguler = kelas batch: barisnya lahir dengan
+    // product_type "Reguler" + batch_id batch terbuka bahasa/level ini, supaya
+    // begitu lunas (webhook LINGUO-REG cuma menandai Lunas) siswa langsung ada di
+    // roster batch — bukan nyangkut sebagai "Belum masuk kelas" (Bug Tracker
+    // cb14c1fe: Shayde, Reguler Tagalog, lunas 13 Okt tanpa batch). Sebelum bayar
+    // baris ini tetap "Belum Bayar" dan TIDAK dihitung kuota (v_regular_batches_
+    // summary hanya menghitung Lunas/Cicilan) — jadi aman walau siswa tak jadi bayar.
+    const isReguler = !profile_only && canonProgram(product) === "Kelas Reguler";
+    const batchReguler = isReguler ? await findOpenRegulerBatch(language, level) : null;
 
     // 1. Select-or-insert student by email (service role → bypass RLS).
     //    NB: tabel students TIDAK punya unique constraint di `email`, jadi
@@ -314,6 +323,8 @@ export async function POST(req: NextRequest) {
         payment_status: "Belum Bayar",
         enrollment_source: "self_service",
         ...(pipeline_status ? { pipeline_status } : {}),
+        ...(isReguler ? { product_type: "Reguler" } : {}),
+        ...(batchReguler ? { batch_id: batchReguler.id } : {}),
         registration_date: new Date().toISOString(),
       }),
     });
