@@ -120,6 +120,17 @@ export async function GET(req: NextRequest) {
       )) || [];
   }
 
+  // [sertifikat-rapor-2hal-v1] Rapor terbit per registrasi — halaman 2 sertifikat.
+  // Klien siswa membacanya lewat RLS; POV staf tak punya sesi, jadi ikut dikirim di sini.
+  if (regIds.length > 0) {
+    const reps =
+      (await rest(
+        `class_reports?registration_id=in.(${regIds.join(",")})&published_at=not.is.null` +
+          `&select=id,registration_id,report_type,skills,attendance,teacher_comment,recommendation,published_at`
+      )) || [];
+    registrations.forEach((r: any) => { r.class_reports = reps.filter((x: any) => x.registration_id === r.id); });
+  }
+
   // `upcomingSchedules` tetap dikirim buat klien versi lama yang belum tahu `schedules`.
   const now = Date.now();
   const upcomingSchedules = schedules.filter(

@@ -4069,6 +4069,7 @@ export default function AkunPage() {
         dateFrom: issued ? dateFrom : null,
         dateTo: issued ? dateTo || new Date().toISOString() : null,
         idNo: issued ? `LING-${String(r.language || "XX").slice(0, 2).toUpperCase()}-${base}-${String(r.id).replace(/\D/g, "").slice(0, 6).padStart(6, "0")}` : undefined,
+        reports: Array.isArray(r.class_reports) ? r.class_reports : undefined, // [sertifikat-rapor-2hal-v1] cuma dari pratinjau staf
       };
     });
     // eslint-disable-next-line react-hooks/exhaustive-deps

@@ -17,6 +17,8 @@ import {
 // [sertifikat-banner-foto-v1] foto stok bahasa — sumber sama dgn kartu kelas di Beranda
 import { getLangPhoto } from "@/lib/lang-visuals";
 import CourseCertificatePaper, { COURSE_CERT_WIDTH, COURSE_CERT_HEIGHT } from "./CourseCertificatePaper";
+import RaporPaper, { pilihRapor, type RaporRow } from "./RaporPaper"; // [sertifikat-rapor-2hal-v1]
+import { supabase } from "@/lib/supabase-client";
 import QRCode from "qrcode"; // [sertifikat-qr-verifikasi-v1]
 import { TTD_RINI, useTtdDataUrl } from "@/components/akun/simulasi/CertificateSheet"; // [sertifikat-ttd-rini-v1]
 import { tr, useT, useUiLang, type UiLang } from "@/lib/uiLang"; // [ui-lang-switcher-v1]
@@ -58,6 +60,7 @@ function ensureInter() {
 type Html2Canvas = (el: HTMLElement, opt?: Record<string, unknown>) => Promise<HTMLCanvasElement>;
 type JsPdfDoc = {
   addImage: (data: string, fmt: string, x: number, y: number, w: number, h: number) => void;
+  addPage: (format?: string, orientation?: string) => void;
   save: (name: string) => void;
   internal: { pageSize: { getWidth: () => number; getHeight: () => number } };
 };
@@ -90,6 +93,9 @@ export type Cert = {
   listening?: number | null;
   reading?: number | null;
   writing?: number | null;
+  // [sertifikat-rapor-2hal-v1] rapor terbit registrasi ini — cuma diisi pratinjau staf
+  // (/api/preview-student). Siswa login: undefined → diambil sendiri lewat RLS.
+  reports?: RaporRow[] | null;
 };
 
 // ── Dark mode dashboard ────────────────────────────────────────────────────
@@ -603,7 +609,30 @@ function IssuedDetail({ ct, studentName, defaultName, onSaveName }: { ct: Cert; 
   const isKids = kind === "kids";
   const showCefr = kind !== "kids";
   const cardRef = useRef<HTMLDivElement>(null);
+  const raporRef = useRef<HTMLDivElement>(null);
   const [pdfLoading, setPdfLoading] = useState(false);
+  // [sertifikat-rapor-2hal-v1] slide 1 = sertifikat, slide 2 = rapor kelas yang sama;
+  // "Unduh PDF" menjadikannya dua halaman.
+  const [slide, setSlide] = useState<0 | 1>(0);
+  const [rapor, setRapor] = useState<RaporRow | null>(null);
+  useEffect(() => {
+    setSlide(0);
+    if (ct.reports !== undefined) { setRapor(pilihRapor(ct.reports)); return; }
+    setRapor(null);
+    if (!/^[0-9a-f-]{36}$/i.test(ct.id)) return;
+    let batal = false;
+    supabase
+      .from("class_reports")
+      .select("id, report_type, skills, attendance, teacher_comment, recommendation, published_at")
+      .eq("registration_id", ct.id)
+      .not("published_at", "is", null)
+      .then(({ data, error }) => {
+        if (batal) return;
+        if (error) { console.warn("[sertifikat] class_reports tak terbaca:", error.message); return; }
+        setRapor(pilihRapor(data as RaporRow[]));
+      });
+    return () => { batal = true; };
+  }, [ct.id, ct.reports]);
   const [verifyOpen, setVerifyOpen] = useState(false);
   // [sertifikat-qr-verifikasi-v1] TTD elektronik = QR ke halaman verifikasi publik
   // linguo.id/verifikasi/<id registrasi>. Data-URI (bukan gambar remote) supaya ikut
@@ -637,35 +666,45 @@ function IssuedDetail({ ct, studentName, defaultName, onSaveName }: { ct: Cert; 
       const JsPDF = w.jspdf?.jsPDF;
       if (!h2c || !JsPDF) throw new Error("lib belum siap");
       // Lepaskan skala pratinjau hanya di dokumen salinan agar PDF selalu tajam.
-      const images = Array.from(cardRef.current.querySelectorAll("img"));
-      await Promise.all(images.map(async (img) => {
-        if (!img.complete) await new Promise<void>((resolve, reject) => {
-          img.onload = () => resolve();
-          img.onerror = () => reject(new Error("Gambar sertifikat gagal dimuat"));
-        });
-        if (!img.naturalWidth) throw new Error("Gambar sertifikat belum siap");
-      }));
-      const canvas = await h2c(cardRef.current, {
-        scale: 2, width: COURSE_CERT_WIDTH, height: COURSE_CERT_HEIGHT,
-        windowWidth: 1440, backgroundColor: "#ffffff", useCORS: true, logging: false,
-        onclone: (doc: Document) => {
-          const paper = doc.querySelector<HTMLElement>("[data-course-certificate]");
-          if (paper) {
-            paper.style.transform = "none";
-            if (paper.parentElement) {
-              paper.parentElement.style.width = `${COURSE_CERT_WIDTH}px`;
-              paper.parentElement.style.height = `${COURSE_CERT_HEIGHT}px`;
-              paper.parentElement.style.overflow = "visible";
+      // Slide yang sedang tersembunyi (visibility) dimunculkan di salinan saja.
+      const foto = async (el: HTMLElement, attr: string) => {
+        const images = Array.from(el.querySelectorAll("img"));
+        await Promise.all(images.map(async (img) => {
+          if (!img.complete) await new Promise<void>((resolve, reject) => {
+            img.onload = () => resolve();
+            img.onerror = () => reject(new Error("Gambar sertifikat gagal dimuat"));
+          });
+          if (!img.naturalWidth) throw new Error("Gambar sertifikat belum siap");
+        }));
+        const canvas = await h2c(el, {
+          scale: 2, width: COURSE_CERT_WIDTH, height: COURSE_CERT_HEIGHT,
+          windowWidth: 1440, backgroundColor: "#ffffff", useCORS: true, logging: false,
+          onclone: (doc: Document) => {
+            const paper = doc.querySelector<HTMLElement>(`[${attr}]`);
+            if (paper) {
+              paper.style.transform = "none";
+              const slideEl = paper.closest<HTMLElement>("[data-cert-slide]");
+              if (slideEl) slideEl.style.visibility = "visible";
+              if (paper.parentElement) {
+                paper.parentElement.style.width = `${COURSE_CERT_WIDTH}px`;
+                paper.parentElement.style.height = `${COURSE_CERT_HEIGHT}px`;
+                paper.parentElement.style.overflow = "visible";
+              }
             }
-          }
-        },
-      });
-      const img = canvas.toDataURL("image/jpeg", 0.95);
+          },
+        });
+        return canvas.toDataURL("image/jpeg", 0.95);
+      };
       const pdf = new JsPDF({ orientation: "landscape", unit: "mm", format: "a4" });
       const pw = pdf.internal.pageSize.getWidth();
       const ph = pdf.internal.pageSize.getHeight();
-      pdf.addImage(img, "JPEG", 0, 0, pw, ph);
-      pdf.save(`Sertifikat-Linguo-${ct.language}-${ct.level}${ct.idNo ? "-" + ct.idNo : ""}.pdf`);
+      pdf.addImage(await foto(cardRef.current, "data-course-certificate"), "JPEG", 0, 0, pw, ph);
+      const denganRapor = !!(rapor && raporRef.current);
+      if (denganRapor) {
+        pdf.addPage("a4", "landscape");
+        pdf.addImage(await foto(raporRef.current!, "data-rapor-paper"), "JPEG", 0, 0, pw, ph);
+      }
+      pdf.save(`${denganRapor ? "Sertifikat-Rapor" : "Sertifikat"}-Linguo-${ct.language}-${ct.level}${ct.idNo ? "-" + ct.idNo : ""}.pdf`);
     } catch (e) {
       console.error("[Sertifikat] gagal membuat PDF:", e);
       alert(t("Gagal membuat PDF. Coba lagi sebentar ya."));
@@ -710,6 +749,28 @@ function IssuedDetail({ ct, studentName, defaultName, onSaveName }: { ct: Cert; 
 
   return (
     <>
+      {/* [sertifikat-rapor-2hal-v1] Slide 1 sertifikat · slide 2 rapor. Keduanya ditumpuk
+          di sel grid yang sama dan yang tak aktif cuma `visibility:hidden` — tetap ada di
+          DOM berukuran asli supaya html2canvas bisa memotret dua-duanya untuk PDF. */}
+      {rapor && (
+        <div className="flex items-center gap-1.5">
+          {([t("Sertifikat"), t("Rapor")] as const).map((lbl, i) => (
+            <button
+              key={i}
+              onClick={() => setSlide(i as 0 | 1)}
+              className={`inline-flex items-center gap-1.5 rounded-full px-3.5 py-1.5 text-[12px] font-bold transition ${
+                slide === i ? "bg-[#16796E] text-white" : "cert-chip bg-white text-[#6B7280] hover:bg-[#EAEDF0]"
+              }`}
+            >
+              <span className={`rounded-full px-1.5 text-[11px] ${slide === i ? "bg-white/25" : "cert-chip-num bg-[#F5F6F8]"}`}>{i + 1}</span>
+              {lbl}
+            </button>
+          ))}
+          <span className="ml-2 text-[11px] font-medium text-[#6B7280]">{t("PDF berisi 2 halaman")}</span>
+        </div>
+      )}
+      <div className="grid w-full">
+      <div data-cert-slide style={{ gridArea: "1 / 1", visibility: slide === 0 ? "visible" : "hidden" }} aria-hidden={slide !== 0}>
       <CourseCertificatePaper
         ref={cardRef}
         code={flagCodeOf(ct.language)}
@@ -733,7 +794,25 @@ function IssuedDetail({ ct, studentName, defaultName, onSaveName }: { ct: Cert; 
         number={ct.idNo}
         labels={{ recipient: "This certificate is presented to", scan: "SCAN TO VERIFY", issued: "DATE OF ISSUE", teacher: "Instructor", number: "Certificate No." }}
       />
-      {showsSkills(kind) && <SkillBlock ct={ct} accent={col.accent} />}
+      </div>
+      {rapor && (
+        <div data-cert-slide style={{ gridArea: "1 / 1", visibility: slide === 1 ? "visible" : "hidden" }} aria-hidden={slide !== 1}>
+          <RaporPaper
+            ref={raporRef}
+            report={rapor}
+            name={studentName}
+            language={ct.language}
+            level={ct.level}
+            programme={PROD_SHORT[kind] === "Reguler" ? "Group" : PROD_SHORT[kind]}
+            teacher={ct.teacher === "Pengajar Linguo" ? "Linguo Instructor" : ct.teacher}
+            number={ct.idNo}
+            signature={ttdSrc || TTD_RINI.src}
+            signer={{ name: TTD_RINI.nama, role: TTD_RINI.jabatan }}
+          />
+        </div>
+      )}
+      </div>
+      {showsSkills(kind) && slide === 0 && <SkillBlock ct={ct} accent={col.accent} />}
 
       <div className="flex flex-wrap items-center gap-3">
         <button
