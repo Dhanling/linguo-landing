@@ -691,6 +691,12 @@ export default function FunnelFlow({ route }: { route: FunnelRoute }) {
                   <p className="mt-0.5 text-sm leading-relaxed text-slate-600">
                     Sesudah pembayaran, kamu isi jam yang kamu bisa di form pendataan. Kami langsung mencocokkannya dengan jam kosong pengajar Bahasa {langNameId(langEn)}, dan kalau belum cocok, admin bantu carikan.
                   </p>
+                  {/* [jaminan-jadwal-v1] Sejalan dengan /pengembalian-dana bagian 3: batal sebelum
+                      sesi pertama = dana kembali 100%. Sengaja tanpa janji jumlah hari. */}
+                  <p className="mt-2 flex items-start gap-1.5 text-sm font-semibold text-[#1A9E9E]">
+                    <ShieldCheck className="mt-0.5 h-4 w-4 shrink-0" />
+                    <span>Jadwal belum cocok dengan pengajar? Admin bantu carikan. Kalau tetap tidak ada yang cocok sebelum kelas dimulai, dana kembali 100%.</span>
+                  </p>
                 </div>
               </div>
             </section>
@@ -1042,6 +1048,19 @@ export default function FunnelFlow({ route }: { route: FunnelRoute }) {
                   </span>
                   <span className="text-base font-extrabold text-[#1A9E9E]">{fmtRp(totalAmount)}</span>
                 </div>
+                {/* [tnc-kelas-private-v1] Ringkasan /pengembalian-dana bagian 3 (Kelas Private &
+                    Kelas Anak) + jaminan jadwal. Kalau halaman kebijakan berubah, samakan di sini. */}
+                {isSessionProg && (
+                  <div className="mt-3 space-y-1.5 rounded-xl border border-[#1A9E9E]/20 bg-[#1A9E9E]/5 p-3">
+                    <p className="text-[11px] font-bold leading-relaxed text-slate-800">Jadwal &amp; kebijakan kelas:</p>
+                    <ul className="ml-3.5 list-disc space-y-1 text-[11px] leading-relaxed text-slate-700">
+                      <li>Jadwal dicocokkan dengan pengajar <b>setelah pembayaran</b>, lewat form pendataan. Kalau belum cocok, admin bantu carikan pengajar atau jam lain.</li>
+                      <li>Kalau tetap tidak ada yang cocok sebelum kelas dimulai, <b>dana kembali 100%</b>.</li>
+                      <li>Pembatalan sebelum sesi pertama: <b>dana kembali 100%</b>. Setelah sesi pertama berjalan: dikembalikan proporsional atas sisa sesi, dikurangi biaya administrasi payment gateway.</li>
+                      <li>Reschedule paling lambat <b>24 jam sebelum sesi</b>. Lewat dari itu, sesi dianggap berjalan.</li>
+                    </ul>
+                  </div>
+                )}
               </>
             )}
           </div>
@@ -1057,14 +1076,35 @@ export default function FunnelFlow({ route }: { route: FunnelRoute }) {
             </button>
           )}
 
+          {/* [tnc-kelas-private-v1] Wajib dicentang sebelum bayar. Pakai <label> (bukan <button>)
+              supaya tautan kebijakan di dalamnya sah dan tetap bisa dibuka. */}
+          {isSessionProg && (
+            <label className="group mb-3 flex w-full cursor-pointer items-start gap-2.5 text-left">
+              <input type="checkbox" checked={agreeTerms} onChange={(e) => setAgreeTerms(e.target.checked)} className="sr-only" />
+              <span className={`mt-0.5 flex h-[18px] w-[18px] shrink-0 items-center justify-center rounded-md border-2 transition-all ${agreeTerms ? "border-[#1A9E9E] bg-[#1A9E9E]" : "border-slate-300 group-hover:border-[#1A9E9E]/50"}`}>
+                {agreeTerms && <svg className="h-3 w-3 text-white" viewBox="0 0 20 20" fill="currentColor"><path fillRule="evenodd" d="M16.7 5.3a1 1 0 010 1.4l-8 8a1 1 0 01-1.4 0l-4-4a1 1 0 011.4-1.4L8 12.6l7.3-7.3a1 1 0 011.4 0z" clipRule="evenodd"/></svg>}
+              </span>
+              <span className="text-[12px] leading-snug text-slate-500">
+                Saya sudah membaca dan menyetujui{" "}
+                <a href="/syarat-ketentuan" target="_blank" rel="noopener" className="font-bold text-slate-700 underline hover:text-[#1A9E9E]">Syarat &amp; Ketentuan</a>{" "}
+                serta{" "}
+                <a href="/pengembalian-dana" target="_blank" rel="noopener" className="font-bold text-slate-700 underline hover:text-[#1A9E9E]">Kebijakan Pengembalian Dana</a>{" "}
+                Linguo, termasuk jadwal &amp; kebijakan kelas di atas.
+              </span>
+            </label>
+          )}
+
           {formError && <p className="mb-2 text-center text-xs text-red-500">{formError}</p>}
           <button
             onClick={handlePay}
-            disabled={saving || (program === "Kelas Reguler" && !agreeTerms)}
+            disabled={saving || ((program === "Kelas Reguler" || isSessionProg) && !agreeTerms)}
             className="w-full rounded-full bg-[#fbbf24] py-3.5 text-sm font-bold text-slate-900 shadow-lg transition-all hover:bg-[#f59e0b] active:scale-95 disabled:cursor-not-allowed disabled:opacity-50"
           >
             {saving ? "Memproses..." : `Bayar ${fmtRp(totalAmount)} →`}
           </button>
+          {(program === "Kelas Reguler" || isSessionProg) && !agreeTerms && (
+            <p className="mt-2 text-center text-[11px] text-slate-400">Centang persetujuan di atas untuk lanjut bayar.</p>
+          )}
           <p className="mt-3 flex items-center justify-center gap-1.5 text-[11px] text-slate-400">
             <ShieldCheck className="h-3.5 w-3.5" />
             Kamu akan diarahkan ke halaman pembayaran Xendit yang aman
