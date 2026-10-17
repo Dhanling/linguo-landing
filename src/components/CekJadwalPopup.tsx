@@ -8,6 +8,11 @@ import { ChevronLeft, ChevronRight, ClipboardList, School, Search, User, X } fro
 import { GRUP } from "@/app/jadwal/PilihBahasa";
 import { useOverlayLock } from "@/lib/overlayStore";
 import { FLAG_CODE_BY_SLUG, RectFlag } from "@/components/RectFlag";
+import { LANG_CATEGORIES, langNameId, langSlugOf } from "@/lib/funnelRouting";
+
+// [cek-jadwal-tab-grup-v1] tab grup bahasa seperti pop-up Placement Test. "Semua" = daftar
+// berkelompok (GRUP, tanpa duplikat); tab lain = isi penuh kategorinya (Jepang tetap ada di Asia).
+const TAB = ["Semua", ...LANG_CATEGORIES.map((c) => c.label)];
 
 const JENIS = [
   { key: "private", icon: User, title: "Kelas Private 1-on-1", desc: "Lihat jam kosong pengajar 2 minggu ke depan, per bahasa." },
@@ -18,11 +23,12 @@ const JENIS = [
 export default function CekJadwalPopup({ open, onClose }: { open: boolean; onClose: () => void }) {
   const [langkah, setLangkah] = useState<"jenis" | "bahasa">("jenis");
   const [cari, setCari] = useState("");
+  const [tab, setTab] = useState("Semua");
   const input = useRef<HTMLInputElement>(null);
   useOverlayLock(open);
 
   useEffect(() => {
-    if (!open) { setLangkah("jenis"); setCari(""); return; }
+    if (!open) { setLangkah("jenis"); setCari(""); setTab("Semua"); return; }
     const esc = (e: KeyboardEvent) => { if (e.key === "Escape") onClose(); };
     document.addEventListener("keydown", esc);
     return () => document.removeEventListener("keydown", esc);
@@ -32,10 +38,14 @@ export default function CekJadwalPopup({ open, onClose }: { open: boolean; onClo
 
   const tampil = useMemo(() => {
     const q = cari.trim().toLowerCase();
-    if (!q) return GRUP;
-    return GRUP.map((g) => ({ ...g, langs: g.langs.filter((l) => l.nama.toLowerCase().includes(q) || l.slug.includes(q)) }))
+    const kat = LANG_CATEGORIES.find((c) => c.label === tab);
+    const basis = kat
+      ? [{ label: kat.label, langs: kat.langs.map((l) => ({ slug: langSlugOf(l), nama: langNameId(l), en: l })) }]
+      : GRUP;
+    if (!q) return basis;
+    return basis.map((g) => ({ ...g, langs: g.langs.filter((l) => l.nama.toLowerCase().includes(q) || l.slug.includes(q)) }))
       .filter((g) => g.langs.length);
-  }, [cari]);
+  }, [cari, tab]);
 
   const ke = (href: string) => { window.location.href = href; };
 
@@ -105,11 +115,23 @@ export default function CekJadwalPopup({ open, onClose }: { open: boolean; onClo
                     className="w-full bg-transparent text-sm text-slate-800 outline-none placeholder:text-slate-400"
                   />
                 </div>
+                <div className="mt-3 flex gap-1.5 overflow-x-auto scrollbar-hide px-6 pb-1">
+                  {TAB.map((t) => (
+                    <button
+                      key={t}
+                      onClick={() => setTab(t)}
+                      className={"px-3 py-1.5 rounded-full text-xs font-medium whitespace-nowrap transition-colors " +
+                        (tab === t ? "bg-[#1A9E9E] text-white" : "bg-gray-100 text-gray-600 hover:bg-gray-200")}
+                    >
+                      {t}
+                    </button>
+                  ))}
+                </div>
                 <div className="mt-2 max-h-[55vh] overflow-y-auto overscroll-contain px-2">
                   {tampil.length === 0 && <p className="px-4 py-3 text-sm text-slate-400">Bahasa tidak ditemukan</p>}
                   {tampil.map((g) => (
                     <div key={g.label}>
-                      <p className="px-4 pb-1 pt-2.5 text-xs font-bold uppercase tracking-wider text-slate-400">{g.label}</p>
+                      {tab === "Semua" && <p className="px-4 pb-1 pt-2.5 text-xs font-bold uppercase tracking-wider text-slate-400">{g.label}</p>}
                       {g.langs.map((l) => (
                         <a key={l.slug} href={`/jadwal/${l.slug}`} className="group flex items-center gap-3 rounded-xl px-4 py-2.5 text-base font-semibold text-gray-900 hover:bg-[#1A9E9E]/10 hover:text-[#1A9E9E]">
                           {/* [cek-jadwal-bendera-v2] bendera & teks sebesar daftar Placement Test (h=28, text-base) + zoom saat hover */}
