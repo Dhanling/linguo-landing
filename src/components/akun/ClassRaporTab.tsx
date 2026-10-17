@@ -28,7 +28,35 @@ const TYPE_LABEL: Record<string, string> = { mid: 'Rapor Tengah', final: 'Rapor 
 // "s8" → sesi 8; null untuk mid/final.
 const raporSesi = (type: string): number | null => { const m = /^s(\d+)$/.exec(type || ''); return m ? Number(m[1]) : null; };
 
-type SkillEntry = { score?: number; note?: string };
+type SkillEntry = { score?: number; note?: string; nilai?: number };
+
+// [rapor-nilai-v1] Nilai 0–100 per skill + ringkasan nilai akhir, disimpan pengajar di
+// class_reports.skills (skills.<skill>.nilai & skills.ringkasan). Cermin dari
+// linguo-admin-dashboard/src/lib/raporNilai.ts — rapor lama tanpa nilai tetap tampil
+// seperti dulu (CEFR saja).
+type Ringkasan = {
+  nilai_akhir: number; rata_skill: number;
+  kuis: { rata: number; jumlah: number } | null;
+  pr: { dikumpulkan: number; diberikan: number; persen: number } | null;
+  hadir: { persen: number } | null;
+  bobot: { skill: number; kuis: number; pr: number; hadir: number };
+  status?: 'lulus' | 'bersyarat' | 'ulang';
+};
+const ringkasanDari = (skills: any): Ringkasan | null => {
+  const r = skills?.ringkasan;
+  return r && Number.isFinite(r.nilai_akhir) ? r : null;
+};
+function predikat(n: number): { huruf: string; label: string } {
+  if (n >= 85) return { huruf: 'A', label: 'Sangat Baik' };
+  if (n >= 70) return { huruf: 'B', label: 'Baik' };
+  if (n >= 55) return { huruf: 'C', label: 'Cukup' };
+  return { huruf: 'D', label: 'Perlu Latihan' };
+}
+const STATUS_LABEL: Record<string, string> = {
+  lulus: 'Lulus — siap lanjut ke level berikutnya',
+  bersyarat: 'Lulus bersyarat — disarankan penguatan dulu',
+  ulang: 'Disarankan mengulang level ini',
+};
 
 function esc(s: string): string {
   return s.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
@@ -41,6 +69,8 @@ function printReport(opts: { report: any; studentName: string; reg: any; teacher
   if (!w) { alert('Popup diblokir. Izinkan popup untuk mencetak rapor.'); return; }
   const skills = (report.skills || {}) as Record<string, SkillEntry>;
   const att = report.attendance || {};
+  const rk = ringkasanDari(report.skills);
+  const adaNilai = SKILLS.some(({ key }) => Number.isFinite(skills[key]?.nilai));
   const date = new Date(report.published_at).toLocaleDateString('id-ID', { day: 'numeric', month: 'long', year: 'numeric' });
   const sesi = raporSesi(report.report_type);
   const judul = sesi ? `Rapor Sesi ${sesi}` : (TYPE_LABEL[report.report_type] || 'Rapor');
@@ -79,9 +109,22 @@ function printReport(opts: { report: any; studentName: string; reg: any; teacher
     <div class="detail">${esc(reg.language || '')}${reg.level ? ' — Level ' + esc(reg.level) : ''}${teacherName ? ' • Pengajar: ' + esc(teacherName) : ''}</div>
     <div class="detail" style="margin-top:2px;">Diterbitkan: ${date}</div>
   </div>
-  <div class="st">Kemampuan 4 Skill · Standar CEFR</div>
+  ${rk ? `<div style="display:flex;align-items:center;gap:18px;background:#f0faf8;border:1px solid #cdeee8;border-radius:12px;padding:16px 20px;margin-bottom:22px;">
+    <div style="text-align:center;min-width:110px;"><div style="font-size:40px;font-weight:700;color:#1A9E9E;line-height:1;">${rk.nilai_akhir}</div><div style="font-size:12px;font-weight:600;margin-top:4px;">${predikat(rk.nilai_akhir).huruf} · ${predikat(rk.nilai_akhir).label}</div></div>
+    <div style="flex:1;font-size:12px;color:#555;line-height:1.7;">
+      <div><b>Nilai Akhir</b></div>
+      <div>Rata-rata skill ${rk.rata_skill} (${rk.bobot.skill}%)${rk.kuis ? ` · Kuis ${rk.kuis.rata} (${rk.bobot.kuis}%)` : ''}${rk.pr ? ` · PR ${rk.pr.dikumpulkan}/${rk.pr.diberikan} (${rk.bobot.pr}%)` : ''}${rk.hadir ? ` · Kehadiran ${rk.hadir.persen} (${rk.bobot.hadir}%)` : ''}</div>
+      ${rk.status ? `<div style="margin-top:4px;font-weight:700;color:${rk.status === 'ulang' ? '#c0392b' : rk.status === 'bersyarat' ? '#d4880f' : '#1A9E9E'};">${esc(STATUS_LABEL[rk.status] || '')}</div>` : ''}
+    </div></div>` : ''}
+  <div class="st">Kemampuan 4 Skill${adaNilai ? ' · Nilai 0–100' : ' · Standar CEFR'}</div>
   ${SKILLS.map(({ key, label }) => {
     const v = skills[key]?.score || 0;
+    const n = skills[key]?.nilai;
+    if (adaNilai) {
+      const nv = Number.isFinite(n) ? (n as number) : 0;
+      return `<div class="row"><div class="sn">${label}</div><div class="bar"><div class="fill" style="width:${nv}%"></div></div><div class="val">${Number.isFinite(n) ? nv + ' · ' + predikat(nv).huruf : '-'}${v ? ' · ' + cefr(v).band : ''}</div></div>` +
+        (skills[key]?.note ? `<div style="font-size:11px;color:#777;margin:-6px 0 10px 120px;">${esc(skills[key]!.note!)}</div>` : '');
+    }
     return `<div class="row"><div class="sn">${label}</div><div class="bar"><div class="fill" style="width:${(v / 5) * 100}%"></div></div><div class="val">${v ? cefr(v).band + ' · ' + cefr(v).name : '-'}</div></div>` +
       (skills[key]?.note ? `<div style="font-size:11px;color:#777;margin:-6px 0 10px 120px;">${esc(skills[key]!.note!)}</div>` : '');
   }).join('')}
@@ -228,6 +271,8 @@ export default function ClassRaporTab({ reg, teacherName, teacherFullName }: { r
         const att = r.attendance || {};
         const rated = SKILLS.filter((s) => skills[s.key]?.score);
         const avg = rated.length ? rated.reduce((a, s) => a + (skills[s.key].score || 0), 0) / rated.length : 0;
+        const rk = ringkasanDari(r.skills);
+        const adaNilai = SKILLS.some(({ key }) => Number.isFinite(skills[key]?.nilai));
         return (
           <div key={r.id} className="rounded-2xl bg-white p-5">
             <div className="flex items-start justify-between gap-2">
@@ -247,10 +292,57 @@ export default function ClassRaporTab({ reg, teacherName, teacherFullName }: { r
               </button>
             </div>
 
+            {/* [rapor-nilai-v1] Nilai akhir */}
+            {rk && (
+              <div className="mt-4 flex items-center gap-4 rounded-2xl bg-[#F0FAF8] p-4">
+                <div className="shrink-0 text-center">
+                  <div className="text-4xl font-extrabold leading-none text-[#16796E]">{rk.nilai_akhir}</div>
+                  <div className="mt-1 text-[11px] font-bold text-gray-700">{predikat(rk.nilai_akhir).huruf} · {t(predikat(rk.nilai_akhir).label)}</div>
+                </div>
+                <div className="min-w-0 flex-1 text-[11.5px] leading-relaxed text-gray-600">
+                  <div className="text-[11px] font-bold uppercase tracking-wider text-[#16796E]">{t('Nilai Akhir')}</div>
+                  <div>
+                    {t('Skill')} {rk.rata_skill}
+                    {rk.kuis ? <> · {t('Kuis')} {rk.kuis.rata}</> : null}
+                    {rk.pr ? <> · PR {rk.pr.dikumpulkan}/{rk.pr.diberikan}</> : null}
+                    {rk.hadir ? <> · {t('Kehadiran')} {rk.hadir.persen}%</> : null}
+                  </div>
+                  {rk.status && (
+                    <div className={`mt-1 font-bold ${rk.status === 'ulang' ? 'text-red-600' : rk.status === 'bersyarat' ? 'text-amber-600' : 'text-[#16796E]'}`}>
+                      {t(STATUS_LABEL[rk.status] || '')}
+                    </div>
+                  )}
+                </div>
+              </div>
+            )}
+
             {/* Skor skill */}
             <div className="mt-4 space-y-2.5">
               {SKILLS.map(({ key, label, Icon }) => {
                 const v = skills[key]?.score || 0;
+                const n = skills[key]?.nilai;
+                if (adaNilai) {
+                  const nv = Number.isFinite(n) ? (n as number) : 0;
+                  return (
+                    <div key={key}>
+                      <div className="mb-1 flex items-center justify-between gap-2">
+                        <span className="inline-flex items-center gap-1.5 text-[13px] font-semibold text-gray-800">
+                          <Icon className="h-4 w-4 text-[#16796E]" strokeWidth={2} /> {label}
+                        </span>
+                        {Number.isFinite(n) ? (
+                          <span className="text-[13px] font-bold text-[#16796E]">
+                            {v ? <span className="mr-1.5 rounded bg-[#16796E]/10 px-1.5 py-0.5 text-xs">{cefr(v).band}</span> : null}
+                            {nv} <span className="text-xs text-gray-500">· {predikat(nv).huruf}</span>
+                          </span>
+                        ) : <span className="text-xs text-gray-400">-</span>}
+                      </div>
+                      <div className="h-2 overflow-hidden rounded-full bg-gray-100">
+                        <div className="h-full rounded-full bg-gradient-to-r from-[#16796E] to-emerald-500" style={{ width: `${nv}%` }} />
+                      </div>
+                      {skills[key]?.note && <div className="mt-0.5 text-[11px] text-gray-500">{skills[key].note}</div>}
+                    </div>
+                  );
+                }
                 return (
                   <div key={key}>
                     <div className="mb-1 flex items-center justify-between gap-2">
@@ -273,7 +365,7 @@ export default function ClassRaporTab({ reg, teacherName, teacherFullName }: { r
                   </div>
                 );
               })}
-              {avg > 0 && (
+              {avg > 0 && !adaNilai && (
                 <div className="pt-1 text-right text-xs font-semibold text-gray-500">
                   {t('Rata-rata')} <span className="text-[#16796E]">{avg.toFixed(1)}/5.0 · ≈ {cefr(avg).band} {t(cefr(avg).name)}</span>
                 </div>
