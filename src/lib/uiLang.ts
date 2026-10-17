@@ -842,6 +842,7 @@ const EN: Record<string, string> = {
   "terbit": "issued",
   "untuk membuka sertifikat ini.": "to unlock this certificate.",
   "atas keberhasilan menuntaskan program privat Bahasa": "for successfully completing the private program in",
+  "atas keberhasilan menuntaskan program korporat Bahasa": "for successfully completing the corporate program in", // [sertifikat-b2b-v1]
   "atas keberhasilan menuntaskan program reguler Bahasa": "for successfully completing the regular program in",
   "telah menyelesaikan petualangan belajar Bahasa": "has completed a learning adventure in",
   "dengan penuh semangat": "with great enthusiasm",

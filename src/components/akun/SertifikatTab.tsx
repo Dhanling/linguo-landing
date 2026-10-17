@@ -82,6 +82,8 @@ export type Cert = {
   total?: number;
   // v2:
   product?: string;
+  /** [sertifikat-b2b-v1] nama perusahaan klien kelas B2B — tampil di kertas & header. */
+  company?: string | null;
   classStatus?: string | null; // Status registrasi, terpisah dari status terbit sertifikat.
   // [sertifikat-durasi-periode-v1] jam belajar = sesi × menit/sesi (bukan jumlah sesi),
   // periode = sesi pertama → sesi terakhir (ISO). Dirangkai jadi satu kalimat di kertas.
@@ -267,9 +269,10 @@ function FlagBadge({ lang, variant, dark = false }: { lang: string; variant: "li
 }
 
 // ── Per-produk ──────────────────────────────────────────────────────────────
-type Kind = "private" | "reguler" | "kids" | "testprep" | "default";
+type Kind = "private" | "reguler" | "kids" | "testprep" | "b2b" | "default";
 function productKindOf(p?: string): Kind {
   const s = (p || "").toLowerCase();
+  if (s.includes("b2b")) return "b2b"; // [sertifikat-b2b-v1]
   if (s.includes("kids")) return "kids";
   if (s.includes("test") || s.includes("ielts") || s.includes("toefl")) return "testprep";
   if (s.includes("private")) return "private";
@@ -290,6 +293,7 @@ const PROD_SHORT: Record<Kind, string> = {
   private: "Private",
   testprep: "IELTS & TOEFL",
   kids: "Kids",
+  b2b: "B2B",
   default: "",
 };
 function matchesFilter(c: Cert, key: FilterKey): boolean {
@@ -304,6 +308,7 @@ const COPY: Record<Kind, { eyebrow: string; bodyPre: string; bodyPost: string }>
   reguler: { eyebrow: "Sertifikat Penyelesaian", bodyPre: "atas keberhasilan menuntaskan program reguler Bahasa", bodyPost: "" },
   kids: { eyebrow: "Sertifikat Petualang Cilik", bodyPre: "telah menyelesaikan petualangan belajar Bahasa", bodyPost: "dengan penuh semangat" },
   testprep: { eyebrow: "Sertifikat Persiapan Tes", bodyPre: "atas penyelesaian program persiapan tes Bahasa", bodyPost: "" },
+  b2b: { eyebrow: "Sertifikat Penyelesaian", bodyPre: "atas keberhasilan menuntaskan program korporat Bahasa", bodyPost: "" },
   default: { eyebrow: "Sertifikat Penyelesaian", bodyPre: "atas keberhasilan menuntaskan program Bahasa", bodyPost: "" },
 };
 
@@ -743,7 +748,7 @@ function IssuedDetail({ ct, studentName, defaultName, onSaveName }: { ct: Cert; 
   const to = fmtCertDate(ct.dateTo, "en") || fmtCertDate(legacyDate, "en");
   const hoursTxt = ct.hours != null && ct.hours > 0 ? `${fmtHours(ct.hours, "en")} ${ct.hours === 1 ? "hour" : "hours"} of study` : null;
   const sessTxt = ct.total && ct.minutesPerSession ? `${ct.total} ${ct.total === 1 ? "session" : "sessions"} × ${ct.minutesPerSession} minutes` : null;
-  const programme = kind === "private" ? "private" : kind === "reguler" ? "group" : kind === "kids" ? "children's" : kind === "testprep" ? "test preparation" : "language";
+  const programme = kind === "private" ? "private" : kind === "reguler" ? "group" : kind === "kids" ? "children's" : kind === "testprep" ? "test preparation" : kind === "b2b" ? "corporate" : "language";
   const levelTitle = ({ A1: "Beginner", A2: "Elementary", B1: "Intermediate", B2: "Upper Intermediate", C1: "Advanced", C2: "Proficient" } as Record<string, string>)[ct.level.split(".")[0].toUpperCase()] || tr(ct.title, "en");
   const ink = "#12172B";
 
@@ -779,6 +784,7 @@ function IssuedDetail({ ct, studentName, defaultName, onSaveName }: { ct: Cert; 
         heading={isKids ? "ACHIEVEMENT" : "COMPLETION"}
         body={<>
           for successfully completing the {programme} {ct.language} programme at Linguo
+          {ct.company ? <> for <b style={{ color: ink }}>{ct.company}</b></> : ""}
           {showCefr ? <> — <b style={{ color: ink, whiteSpace: "nowrap" }}>CEFR Level {ct.level}</b>{levelTitle ? ` (${levelTitle})` : ""}</> : ""}
           {hoursTxt ? <>, with a total of <b style={{ color: ink }}>{hoursTxt}</b>{sessTxt ? ` (${sessTxt})` : ""}</> : ""}
           {from && to && from !== to
@@ -964,7 +970,7 @@ function ProgressDetail({ ct, onContinue, onSchedule }: { ct: Cert; onContinue?:
         <div className="relative min-w-0 flex-1">
           <span className="inline-flex items-center gap-1.5 rounded-full bg-white/20 px-2.5 py-1 text-[11px] font-bold"><Lock className="h-3 w-3" />{t("Belum Terbit")}</span>
           <h2 className="mt-2 text-[22px] font-extrabold leading-tight">{ct.language} — CEFR {ct.level}</h2>
-          <p className="mt-1 text-[13px] font-medium text-white/85">{t(ct.title || "")} · {ct.teacher}</p>
+          <p className="mt-1 text-[13px] font-medium text-white/85">{t(ct.title || "")} · {ct.company ? `${ct.company} · ` : ""}{ct.teacher}</p>
         </div>
         {/* Hiasan heksagon cuma dipakai kalau banner TIDAK punya foto — di atas foto
             dua bercak putih itu cuma bikin kotor. */}

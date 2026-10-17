@@ -100,6 +100,8 @@ function susunKelasB2B(kelas: any[], sesiAll: any[]): any[] {
         __b2b: true,
         product: "Kelas B2B",
         company_name: no != null ? `${k.company_name} · Kelas ${no}` : k.company_name,
+        perusahaan: k.company_name, // [sertifikat-b2b-v1] tanpa "· Kelas N" — untuk kertas sertifikat
+        status: k.class_status || null,
         language: k.language,
         level: k.level,
         sessions_total: k.sessions_total || 0,
@@ -4067,7 +4069,12 @@ export default function AkunPage() {
       sesiPerReg.get(k)!.push(s);
     }
     const now = Date.now();
-    return (activeRegs as any[]).map((r: any) => {
+    const dariReg = (activeRegs as any[])
+      /* [sertifikat-b2b-v1] E-Book/E-Learning tanpa jatah sesi tak akan pernah terbit —
+         dulu tampil "0/0 sesi" (Abdul Aziz: E-Book Vietnamese jadi kartu sertifikat
+         Vietnamese A1, sementara kelas B2B-nya sendiri tak muncul). */
+      .filter((r: any) => !(isProdukDigital(r.product) && !(r.sessions_total > 0)))
+      .map((r: any) => {
       const sesi = (sesiPerReg.get(String(r.id)) || []).filter((s: any) => s.status !== "cancelled");
       const selesai = sesi.filter((s: any) => s.status === "completed");
       const lewat = (selesai.length ? selesai : sesi.filter((s: any) => new Date(s.scheduled_at).getTime() <= now))
@@ -4101,7 +4108,7 @@ export default function AkunPage() {
         // direktori pengajar (route publik / RPC batch) sebelum jatuh ke label generik.
         teacher: r?.teachers?.name || (tidOf(r) ? teacherDir[tidOf(r)!]?.name : undefined) || "Pengajar Linguo",
         product: r.product || undefined, // [pustaka/sertifikat-filter-v1] dipakai filter Kelas Live vs Belajar Mandiri
-        status: issued ? "issued" : "progress",
+        status: (issued ? "issued" : "progress") as Cert["status"],
         classStatus: r.status,
         pct, used, total,
         date: issued ? new Date(dateTo || Date.now()).toLocaleDateString("id-ID", { day: "numeric", month: "short", year: "numeric" }) : undefined,
@@ -4113,8 +4120,43 @@ export default function AkunPage() {
         reports: Array.isArray(r.class_reports) ? r.class_reports : undefined, // [sertifikat-rapor-2hal-v1] cuma dari pratinjau staf
       };
     });
+    /* [sertifikat-b2b-v1] Kelas B2B (registrasi semu dari RPC korporat) ikut punya
+       sertifikat, berlabel program B2B + nama perusahaan. Durasi per sesi hanya dipakai
+       kalau tercatat di jadwal — jangan mengarang "× 60 menit" untuk kontrak tanpa jadwal.
+       Tanpa QR verifikasi: halaman /verifikasi membaca registrations (id UUID). */
+    const dariB2B: Cert[] = (kelasB2B as any[]).map((r: any) => {
+      const sesi = (r.__sesi || []).filter((s: any) => s.status !== "cancelled");
+      const selesai = sesi.filter((s: any) => s.status === "completed").map((s: any) => s.scheduled_at as string).sort();
+      const menit = Number(sesi.find((s: any) => Number(s.duration_minutes) > 0)?.duration_minutes) || null;
+      const total = r.sessions_total || 0;
+      const used = r.sessions_used || 0;
+      const issued = total > 0 && used >= total;
+      const lvl = String(r.level || "A1");
+      const base = lvl.split(".")[0].toUpperCase();
+      const dateTo = selesai[selesai.length - 1] || null;
+      return {
+        id: String(r.id),
+        language: r.language,
+        level: lvl,
+        title: CEFR_TITLE[base] || "Program",
+        teacher: r?.teachers?.name || (r.teacher_id ? teacherDir[r.teacher_id]?.name : undefined) || "Pengajar Linguo",
+        product: "Kelas B2B",
+        company: r.perusahaan || r.company_name || null,
+        status: issued ? "issued" : "progress",
+        classStatus: r.status || null,
+        pct: total > 0 ? Math.min(100, Math.max(0, Math.round((used / total) * 100))) : 0,
+        used, total,
+        date: issued ? new Date(dateTo || Date.now()).toLocaleDateString("id-ID", { day: "numeric", month: "short", year: "numeric" }) : undefined,
+        hours: issued && menit ? (total * menit) / 60 : undefined,
+        minutesPerSession: menit,
+        dateFrom: issued ? selesai[0] || null : null,
+        dateTo: issued ? dateTo || new Date().toISOString() : null,
+        idNo: issued ? `LING-${String(r.language || "XX").slice(0, 2).toUpperCase()}-${base}-B2B${String(r.id).replace(/\D/g, "").slice(0, 6).padStart(6, "0")}` : undefined,
+      } as Cert;
+    });
+    return [...dariReg, ...dariB2B];
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [activeRegs, jadwalNyata, teacherDir, batchTeacherOf]);
+  }, [activeRegs, jadwalNyata, teacherDir, batchTeacherOf, kelasB2B]);
   // [akun-split-pending-active-v1] pendingRegs = belum bayar & masih dalam window
   // 24 jam sejak enroll. INI yang dirender di "Perlu Perhatian" (badge Belum Bayar
   // + tombol Bayar + Batalkan). Lewat 24 jam → di-expire effect/cron, hilang dari
