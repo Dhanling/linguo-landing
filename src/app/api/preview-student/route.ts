@@ -27,6 +27,14 @@ async function rest(path: string) {
   return res.json();
 }
 
+async function rpc(fn: string, body: Record<string, unknown>) {
+  const res = await fetch(`${SUPABASE_URL}/rest/v1/rpc/${fn}`, {
+    method: "POST", headers: H, body: JSON.stringify(body), cache: "no-store",
+  });
+  if (!res.ok) return null;
+  return res.json();
+}
+
 export async function GET(req: NextRequest) {
   const id = req.nextUrl.searchParams.get("id");
   // Validasi bentuk UUID biar ga dipakai buat enumerasi sembarangan.
@@ -164,5 +172,19 @@ export async function GET(req: NextRequest) {
       )) || [];
   } catch { digitalPurchases = []; }
 
-  return NextResponse.json({ student: { ...student, registrations, saldo_linguo }, schedules, upcomingSchedules, digitalPurchases });
+  // [kelas-b2b-pratinjau-v1] Kelas B2B dicocokkan lewat email peserta korporat — di klien
+  // RPC-nya memakai email sesi, yang tak ada di POV staf. Fungsi *_by_email khusus service_role.
+  let corporateClasses: any[] = [];
+  let corporateSessions: any[] = [];
+  const emailSiswa = String(student.email || "").trim();
+  if (emailSiswa) {
+    const [k, s] = await Promise.all([
+      rpc("corporate_classes_by_email", { p_email: emailSiswa }),
+      rpc("corporate_class_sessions_by_email", { p_email: emailSiswa }),
+    ]);
+    corporateClasses = Array.isArray(k) ? k : [];
+    corporateSessions = Array.isArray(s) ? s : [];
+  }
+
+  return NextResponse.json({ student: { ...student, registrations, saldo_linguo }, schedules, upcomingSchedules, digitalPurchases, corporateClasses, corporateSessions });
 }

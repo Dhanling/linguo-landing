@@ -92,6 +92,9 @@ export async function POST(req: NextRequest) {
         );
       }
       ownedIds = new Set([previewId]);
+      // [kelas-b2b-pratinjau-v1] POV peserta B2B: kepesertaan korporat dicocokkan lewat email siswa.
+      const { data: stu } = await admin.from("students").select("email").eq("id", previewId).maybeSingle();
+      emailSesi = String(stu?.email || "").trim().toLowerCase();
     }
 
     // ── 2. Rekaman ini memang milik dia? ─────────────────────────────────────

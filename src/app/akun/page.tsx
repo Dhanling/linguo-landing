@@ -76,6 +76,46 @@ const TITIP_EBOOK_KEY = "linguo_titip_ebook";
    e-book gratisnya berbayar. */
 const TITIP_MENU_KEY = "linguo_titip_menu";
 
+/* [kelas-b2b-materi-v1] Baris RPC kelas & sesi korporat → "registrasi semu" yang dirender
+   kartu kelas & panel Kelas & Materi. Dipakai jalur login (RPC my_*) dan POV staf
+   (/api/preview-student, [kelas-b2b-pratinjau-v1]). */
+function susunKelasB2B(kelas: any[], sesiAll: any[]): any[] {
+  const out: any[] = [];
+  kelas.forEach((k) => {
+    const sesiLead = sesiAll.filter((s) => s.lead_id === k.lead_id);
+    /* Satu kontrak bisa punya beberapa sub-kelas (GroundProbe Kelas 1 & 2, jadwal
+       & nomor sesinya sendiri-sendiri). Peserta tak tercatat di sub-kelas mana,
+       jadi tiap sub-kelas jadi kartu terpisah — jangan dilebur jadi satu linimasa. */
+    const nos = Array.from(new Set(sesiLead.map((s) => s.class_no).filter((n) => n != null))).sort((a, b) => a - b);
+    const grup: Array<{ no: number | null; sesi: any[] }> =
+      nos.length > 1 ? nos.map((no) => ({ no, sesi: sesiLead.filter((s) => s.class_no === no) })) : [{ no: null, sesi: sesiLead }];
+    grup.forEach(({ no, sesi }) => {
+      const id = no != null ? `b2b-${k.lead_id}-${no}` : `b2b-${k.lead_id}`;
+      // Jadwal kalender B2B baru dipakai di tengah kontrak (GroundProbe Kelas 1: 12 baris
+      // selesai padahal sudah sesi #37) — nomor sesi tertinggi yang selesai lebih jujur.
+      const selesaiSesi = sesi.filter((s) => s.status === "completed");
+      const selesaiNyata = Math.max(selesaiSesi.length, ...selesaiSesi.map((s) => Number(s.session_number) || 0));
+      out.push({
+        id,
+        __b2b: true,
+        product: "Kelas B2B",
+        company_name: no != null ? `${k.company_name} · Kelas ${no}` : k.company_name,
+        language: k.language,
+        level: k.level,
+        sessions_total: k.sessions_total || 0,
+        // sessions_completed lead dipakai bersama semua sub-kelas — per sub-kelas
+        // yang jujur adalah jadwal yang benar-benar selesai.
+        sessions_used: no != null ? selesaiNyata : Math.max(k.sessions_used || 0, selesaiNyata),
+        archived_at: k.class_status && /selesai/i.test(k.class_status) ? k.class_status : null,
+        teacher_id: k.teacher_id,
+        teachers: k.teacher_name ? { name: k.teacher_name, title: k.teacher_title, avatar_url: k.teacher_avatar_url } : null,
+        __sesi: sesi.map((s) => ({ ...s, registration_id: id })),
+      });
+    });
+  });
+  return out;
+}
+
 function OnboardingSuccess({ onClose }: { onClose: () => void }) {
   useEffect(() => {
     const t = setTimeout(onClose, 2400);
@@ -3375,6 +3415,8 @@ export default function AkunPage() {
             const { map, punya } = susunProdukDigital(c.digitalPurchases);
             setElearnLink(map); setProdukDigital(punya);
           }
+          // [kelas-b2b-pratinjau-v1] kelas korporat ikut di snapshot
+          if (Array.isArray(c.corporateClasses)) setKelasB2B(susunKelasB2B(c.corporateClasses, c.corporateSessions || []));
           simpanDaftarLevel(previewId, c.student?.registrations); // [kelas-level-switcher-v3]
           hadCache = true;
         }
@@ -3406,6 +3448,8 @@ export default function AkunPage() {
             student: json.student,
             schedules: json.schedules || json.upcomingSchedules || [],
             digitalPurchases: json.digitalPurchases || [],
+            corporateClasses: json.corporateClasses || [],
+            corporateSessions: json.corporateSessions || [],
           }));
         } catch {}
         setStudent(json.student);
@@ -3416,6 +3460,10 @@ export default function AkunPage() {
           const { map, punya } = susunProdukDigital(json.digitalPurchases);
           setElearnLink(map); setProdukDigital(punya);
         }
+        /* [kelas-b2b-pratinjau-v1] Peserta B2B (mis. Abdul Aziz, Alfamart × Vietnam) dulu
+           tampil "Belum ada kelas live aktif" di POV staf: RPC kelas korporat di klien
+           memakai email sesi, yang tak ada di pratinjau. Routenya yang mencocokkan. */
+        if (Array.isArray(json.corporateClasses)) setKelasB2B(susunKelasB2B(json.corporateClasses, json.corporateSessions || []));
         simpanDaftarLevel(previewId, json.student?.registrations); // [kelas-level-switcher-v3]
         // jadwal-riwayat-v1: endpoint sekarang mengirim `schedules` (riwayat + mendatang).
         // `upcomingSchedules` dipertahankan sebagai fallback buat respons lama.
@@ -3605,41 +3653,7 @@ export default function AkunPage() {
       ]);
       const { data, error } = kelasRes;
       if (batal || error || !Array.isArray(data)) return;
-      const sesiAll: any[] = Array.isArray(sesiRes.data) ? sesiRes.data : [];
-      const out: any[] = [];
-      (data as any[]).forEach((k) => {
-        const sesiLead = sesiAll.filter((s) => s.lead_id === k.lead_id);
-        /* Satu kontrak bisa punya beberapa sub-kelas (GroundProbe Kelas 1 & 2, jadwal
-           & nomor sesinya sendiri-sendiri). Peserta tak tercatat di sub-kelas mana,
-           jadi tiap sub-kelas jadi kartu terpisah — jangan dilebur jadi satu linimasa. */
-        const nos = Array.from(new Set(sesiLead.map((s) => s.class_no).filter((n) => n != null))).sort((a, b) => a - b);
-        const grup: Array<{ no: number | null; sesi: any[] }> =
-          nos.length > 1 ? nos.map((no) => ({ no, sesi: sesiLead.filter((s) => s.class_no === no) })) : [{ no: null, sesi: sesiLead }];
-        grup.forEach(({ no, sesi }) => {
-          const id = no != null ? `b2b-${k.lead_id}-${no}` : `b2b-${k.lead_id}`;
-          // Jadwal kalender B2B baru dipakai di tengah kontrak (GroundProbe Kelas 1: 12 baris
-          // selesai padahal sudah sesi #37) — nomor sesi tertinggi yang selesai lebih jujur.
-          const selesaiSesi = sesi.filter((s) => s.status === "completed");
-          const selesaiNyata = Math.max(selesaiSesi.length, ...selesaiSesi.map((s) => Number(s.session_number) || 0));
-          out.push({
-            id,
-            __b2b: true,
-            product: "Kelas B2B",
-            company_name: no != null ? `${k.company_name} · Kelas ${no}` : k.company_name,
-            language: k.language,
-            level: k.level,
-            sessions_total: k.sessions_total || 0,
-            // sessions_completed lead dipakai bersama semua sub-kelas — per sub-kelas
-            // yang jujur adalah jadwal yang benar-benar selesai.
-            sessions_used: no != null ? selesaiNyata : Math.max(k.sessions_used || 0, selesaiNyata),
-            archived_at: k.class_status && /selesai/i.test(k.class_status) ? k.class_status : null,
-            teacher_id: k.teacher_id,
-            teachers: k.teacher_name ? { name: k.teacher_name, title: k.teacher_title, avatar_url: k.teacher_avatar_url } : null,
-            __sesi: sesi.map((s) => ({ ...s, registration_id: id })),
-          });
-        });
-      });
-      setKelasB2B(out);
+      setKelasB2B(susunKelasB2B(data as any[], Array.isArray(sesiRes.data) ? sesiRes.data : []));
     })();
     return () => { batal = true; };
     // eslint-disable-next-line react-hooks/exhaustive-deps
