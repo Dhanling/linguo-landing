@@ -3596,23 +3596,50 @@ export default function AkunPage() {
     if (!user?.id || previewId) return;
     let batal = false;
     (async () => {
-      const { data, error } = await supabase.rpc("my_corporate_classes");
+      /* [kelas-b2b-materi-v1] Sesi korporat (jadwal + rekaman + materi pengajar) ikut
+         diambil supaya kartunya bisa dibuka di "Kelas & Materi" seperti kelas Private.
+         RPC sesi gagal (belum dimigrasi) → kartu tetap tampil, linimasanya kosong. */
+      const [kelasRes, sesiRes] = await Promise.all([
+        supabase.rpc("my_corporate_classes"),
+        supabase.rpc("my_corporate_class_sessions"),
+      ]);
+      const { data, error } = kelasRes;
       if (batal || error || !Array.isArray(data)) return;
-      setKelasB2B(
-        (data as any[]).map((k) => ({
-          id: `b2b-${k.lead_id}`,
-          __b2b: true,
-          product: "Kelas B2B",
-          company_name: k.company_name,
-          language: k.language,
-          level: k.level,
-          sessions_total: k.sessions_total || 0,
-          sessions_used: k.sessions_used || 0,
-          archived_at: k.class_status && /selesai/i.test(k.class_status) ? k.class_status : null,
-          teacher_id: k.teacher_id,
-          teachers: k.teacher_name ? { name: k.teacher_name, title: k.teacher_title, avatar_url: k.teacher_avatar_url } : null,
-        })),
-      );
+      const sesiAll: any[] = Array.isArray(sesiRes.data) ? sesiRes.data : [];
+      const out: any[] = [];
+      (data as any[]).forEach((k) => {
+        const sesiLead = sesiAll.filter((s) => s.lead_id === k.lead_id);
+        /* Satu kontrak bisa punya beberapa sub-kelas (GroundProbe Kelas 1 & 2, jadwal
+           & nomor sesinya sendiri-sendiri). Peserta tak tercatat di sub-kelas mana,
+           jadi tiap sub-kelas jadi kartu terpisah — jangan dilebur jadi satu linimasa. */
+        const nos = Array.from(new Set(sesiLead.map((s) => s.class_no).filter((n) => n != null))).sort((a, b) => a - b);
+        const grup: Array<{ no: number | null; sesi: any[] }> =
+          nos.length > 1 ? nos.map((no) => ({ no, sesi: sesiLead.filter((s) => s.class_no === no) })) : [{ no: null, sesi: sesiLead }];
+        grup.forEach(({ no, sesi }) => {
+          const id = no != null ? `b2b-${k.lead_id}-${no}` : `b2b-${k.lead_id}`;
+          // Jadwal kalender B2B baru dipakai di tengah kontrak (GroundProbe Kelas 1: 12 baris
+          // selesai padahal sudah sesi #37) — nomor sesi tertinggi yang selesai lebih jujur.
+          const selesaiSesi = sesi.filter((s) => s.status === "completed");
+          const selesaiNyata = Math.max(selesaiSesi.length, ...selesaiSesi.map((s) => Number(s.session_number) || 0));
+          out.push({
+            id,
+            __b2b: true,
+            product: "Kelas B2B",
+            company_name: no != null ? `${k.company_name} · Kelas ${no}` : k.company_name,
+            language: k.language,
+            level: k.level,
+            sessions_total: k.sessions_total || 0,
+            // sessions_completed lead dipakai bersama semua sub-kelas — per sub-kelas
+            // yang jujur adalah jadwal yang benar-benar selesai.
+            sessions_used: no != null ? selesaiNyata : Math.max(k.sessions_used || 0, selesaiNyata),
+            archived_at: k.class_status && /selesai/i.test(k.class_status) ? k.class_status : null,
+            teacher_id: k.teacher_id,
+            teachers: k.teacher_name ? { name: k.teacher_name, title: k.teacher_title, avatar_url: k.teacher_avatar_url } : null,
+            __sesi: sesi.map((s) => ({ ...s, registration_id: id })),
+          });
+        });
+      });
+      setKelasB2B(out);
     })();
     return () => { batal = true; };
     // eslint-disable-next-line react-hooks/exhaustive-deps
@@ -4587,7 +4614,6 @@ export default function AkunPage() {
                 const homeHits: HomeHit[] = [];
                 if (hq.length >= 2) {
                   liveRegsAll.forEach((r: any) => {
-                    if (r.__b2b) return; // [beranda-kelas-b2b-v1] tak punya halaman Kelas & Materi
                     const nm = `${displayLanguage(r.language)} ${r.level || ""}`.toLowerCase();
                     if (nm.includes(hq)) homeHits.push({
                       id: `kelas-${r.id}`, kind: "Kelas",
@@ -4946,11 +4972,10 @@ export default function AkunPage() {
                                 // bukan ke halaman detail kelas (di sana tak ada apa-apa buat
                                 // produk rekaman — tanpa pengajar & tanpa sesi).
                                 const ytLink = linkElearning(reg);
-                                // [beranda-kelas-b2b-v1] kelas korporat tak punya halaman detail — kartu diam.
-                                const Wrap: any = reg.__b2b ? "div" : ytLink ? "a" : Link;
-                                const wrapProps: any = reg.__b2b
-                                  ? { title: reg.company_name || undefined }
-                                  : ytLink
+                                // [kelas-b2b-materi-v1] kelas korporat kini ikut mendarat di "Kelas & Materi"
+                                // (dulu kartu diam karena tak punya halaman detail).
+                                const Wrap: any = ytLink ? "a" : Link;
+                                const wrapProps: any = ytLink
                                   ? { href: ytLink, target: "_blank", rel: "noopener noreferrer" }
                                   : {
                                       /* [materi-tab-kuis-rapor-v1] Kartu kelas dulu melempar ke halaman
@@ -4965,6 +4990,7 @@ export default function AkunPage() {
                                          mendarat di gate login (terasa "keluar akun"). */
                                       href: previewId ? `/akun?menu=materi&reg=${reg.id}&preview=${encodeURIComponent(previewId)}` : `/akun?menu=materi&reg=${reg.id}`,
                                       prefetch: true,
+                                      title: reg.__b2b ? reg.company_name || undefined : undefined, // [kelas-b2b-materi-v1]
                                       onClick: (e: any) => {
                                         // [kelas-detail-resilient-v1] titipan reg dipertahankan — halaman
                                         // detail /akun/kelas/[id] masih hidup (dibuka dari tab baru).
@@ -5592,12 +5618,14 @@ export default function AkunPage() {
                   const v = (lang || "").trim().toLowerCase();
                   return v === "" || v === "all languages" || v === "tbd";
                 };
-                const liveClassesRaw = activeRegs
+                const liveClassesRaw: any[] = activeRegs
                   /* [produk-digital-bukan-kelas-v1] E-Book & E-Learning disaring keluar:
                      sub-tab ini khusus kelas yang punya pengajar & jadwal. Isinya tetap
                      terjangkau — E-Learning di sub-tab "Belajar Mandiri" (sumber datanya
                      myLanguageSlugs, bukan daftar ini), E-Book di menu Perpustakaan. */
-                  .filter((r: any) => !isPlaceholderLang(r.language) && !isProdukDigital(r.product));
+                  .filter((r: any) => !isPlaceholderLang(r.language) && !isProdukDigital(r.product))
+                  // [kelas-b2b-materi-v1] kelas korporat (registrasi semu) ikut daftar kelas
+                  .concat(kelasB2B.filter((r: any) => !isPlaceholderLang(r.language)));
                 const pctOf = (r: any) => {
                   const t = r.sessions_total || 0; const u = r.sessions_used || 0;
                   return t > 0 ? Math.min(100, Math.max(0, Math.round((u / t) * 100))) : 0;
@@ -5642,6 +5670,13 @@ export default function AkunPage() {
                   done: liveClasses.filter((r: any) => matchQ(r) && isSelesai(r)).length,
                 };
                 const selected = shown.find((r: any) => r.id === materiSel) || shown[0] || liveClasses[0];
+                /* [kelas-b2b-materi-v1] Kelas korporat tak punya baris schedules milik siswa
+                   (registration_id NULL) — sesinya datang dari RPC my_corporate_class_sessions
+                   dan sudah menempel di registrasi semunya. Kuis & Rapor belum ada datanya. */
+                const jadwalOf = (r: any): any[] => (r?.__b2b ? r.__sesi || [] : jadwalNyata.filter((s) => s.registration_id === r?.id));
+                const materiB2B = (r: any): any[] | undefined =>
+                  r?.__b2b ? (r.__sesi || []).flatMap((s: any) => (Array.isArray(s.materials) ? s.materials : [])) : undefined;
+                const tabAktif = selected?.__b2b && (materiTab === "kuis" || materiTab === "rapor") ? "sesi" : materiTab;
                 const palOf = (r: any) => PAL[Math.max(0, liveClasses.findIndex((x: any) => x.id === r.id)) % PAL.length];
 
                 const ClassItem = ({ r, mobile }: { r: any; mobile?: boolean }) => {
@@ -5770,7 +5805,11 @@ export default function AkunPage() {
                               const pal = palOf(selected); const pct = pctOf(selected);
                               const badge = PRODUCT_BADGE[selected.product] || PRODUCT_BADGE["Kelas Private"];
                               const langPhoto = getLangPhoto(selected.language);
-                              const nextSched = upcomingSchedules.find((s) => s.registration_id === selected.id);
+                              const nextSched = selected.__b2b
+                                ? jadwalOf(selected)
+                                    .filter((s: any) => s.status !== "cancelled" && s.status !== "completed" && new Date(s.scheduled_at).getTime() > Date.now())
+                                    .sort((a: any, b: any) => new Date(a.scheduled_at).getTime() - new Date(b.scheduled_at).getTime())[0]
+                                : upcomingSchedules.find((s) => s.registration_id === selected.id);
                               const nextLabel = nextSched
                                 ? new Date(nextSched.scheduled_at).toLocaleDateString("id-ID", { day: "numeric", month: "short", year: "numeric" }) + " · " + new Date(nextSched.scheduled_at).toLocaleTimeString("id-ID", { hour: "2-digit", minute: "2-digit" })
                                 : tt("Belum terjadwal");
@@ -5851,11 +5890,11 @@ export default function AkunPage() {
                                 ["materi", tt("Materi"), BookOpen],
                                 ["kuis", tt("Kuis"), ClipboardCheck],
                                 ["rapor", tt("Rapor"), BarChart2],
-                              ] as const).map(([k, label, Icon]) => (
+                              ] as const).filter(([k]) => !(selected.__b2b && (k === "kuis" || k === "rapor"))).map(([k, label, Icon]) => (
                                 <button
                                   key={k}
                                   onClick={() => setMateriTab(k)}
-                                  className={`flex h-10 shrink-0 items-center gap-2 rounded-xl px-4 text-[13px] font-bold transition ${materiTab === k ? "bg-[#16796E] text-white" : "materi-panel bg-white text-gray-500 hover:text-[#12172B]"}`}
+                                  className={`flex h-10 shrink-0 items-center gap-2 rounded-xl px-4 text-[13px] font-bold transition ${tabAktif === k ? "bg-[#16796E] text-white" : "materi-panel bg-white text-gray-500 hover:text-[#12172B]"}`}
                                 >
                                   <Icon className="h-4 w-4" strokeWidth={2.5} />{label}
                                 </button>
@@ -5867,16 +5906,16 @@ export default function AkunPage() {
                                 cuma memuat sesi MENDATANG (kelas 16/16 tampil kosong padahal semua
                                 rekamannya ada), dan "Materi" cuma silabus level tanpa jalan ke materi
                                 sesi tertentu. Sekarang dua-duanya linimasa sesi bernomor, terbaru di atas. */}
-                            {materiTab === "sesi" ? (
-                              <SesiTimeline reg={selected} schedules={jadwalNyata.filter((s) => s.registration_id === selected.id)} variant="sesi" aksesRekaman={aksesRekamanMap.get(selected.id)} />
-                            ) : materiTab === "kuis" ? (
+                            {tabAktif === "sesi" ? (
+                              <SesiTimeline reg={selected} schedules={jadwalOf(selected)} variant="sesi" aksesRekaman={selected.__b2b ? "punya" : aksesRekamanMap.get(selected.id)} />
+                            ) : tabAktif === "kuis" ? (
                               /* [materi-tab-kuis-rapor-v1] komponen yang sama dgn halaman detail kelas */
                               <ClassKuisTab reg={selected} schedules={allSchedules.filter((s) => s.registration_id === selected.id)} />
-                            ) : materiTab === "rapor" ? (
+                            ) : tabAktif === "rapor" ? (
                               <ClassRaporTab reg={selected} teacherName={teacherLabel(selected) || undefined} teacherFullName={selected?.teachers?.name || undefined} />
                             ) : (
                               <div className="flex flex-col gap-6">
-                              <SesiTimeline reg={selected} schedules={jadwalNyata.filter((s) => s.registration_id === selected.id)} variant="materi" aksesRekaman={aksesRekamanMap.get(selected.id)} />
+                              <SesiTimeline reg={selected} schedules={jadwalOf(selected)} variant="materi" aksesRekaman={selected.__b2b ? "punya" : aksesRekamanMap.get(selected.id)} materiTetap={materiB2B(selected)} />
                               {/* silabus level tetap ada di bawah linimasa — itu peta levelnya,
                                   bukan materi sesi yang sudah/akan dibahas pengajar */}
                               <div>

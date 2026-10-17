@@ -61,6 +61,7 @@ export async function POST(req: NextRequest) {
     // membuka /akun?preview=<id> selalu mentok "Kamu perlu masuk dulu" — padahal
     // seluruh isi dashboard lain di layar itu memang ditarik tanpa login.
     let ownedIds = new Set<string>();
+    let emailSesi = ""; // [kelas-b2b-materi-v1] peserta B2B dicocokkan lewat email, bukan student_id
     if (accessToken) {
       const userClient = createClient(SUPABASE_URL, SUPABASE_ANON_KEY, {
         global: { headers: { Authorization: `Bearer ${accessToken}` } },
@@ -77,9 +78,9 @@ export async function POST(req: NextRequest) {
         .select("id")
         .ilike("email", user.email);
       ownedIds = new Set((students ?? []).map((s: { id: string }) => s.id));
-      if (!ownedIds.size) {
-        return NextResponse.json({ error: "Akun ini belum terhubung ke data siswa" }, { status: 403 });
-      }
+      emailSesi = user.email.trim().toLowerCase();
+      // Peserta B2B sering tak punya baris `students` — vonis 403-nya ditunda ke
+      // langkah 2, setelah ketahuan jadwalnya jadwal korporat atau bukan.
     } else {
       const previewId = await previewStudentId(req);
       if (!previewId) {
@@ -103,7 +104,7 @@ export async function POST(req: NextRequest) {
 
     const { data: sched } = await admin
       .from("schedules")
-      .select("id, scheduled_at, student_id, registration_id")
+      .select("id, scheduled_at, student_id, registration_id, corporate_lead_id")
       .eq("id", scheduleId)
       .maybeSingle();
     if (!sched) {
@@ -120,7 +121,26 @@ export async function POST(req: NextRequest) {
         .maybeSingle();
       owns = !!reg?.student_id && ownedIds.has(reg.student_id);
     }
+    // [kelas-b2b-materi-v1] Sesi kelas korporat (registration_id NULL): milik setiap
+    // peserta kontrak itu — cocokkan email sesi ke corporate_participants (kolom email
+    // bisa berisi "a // b"), sama dengan RPC my_corporate_classes. Rekaman sudah
+    // termasuk kontrak perusahaan, jadi gerbang add-on di 2b dilewati.
+    let pesertaB2B = false;
+    if (!owns && emailSesi && sched.corporate_lead_id && !sched.registration_id) {
+      const { data: peserta } = await admin
+        .from("corporate_participants")
+        .select("email")
+        .eq("lead_id", sched.corporate_lead_id)
+        .ilike("email", `%${emailSesi.replace(/[%_\\]/g, "\\$&")}%`);
+      pesertaB2B = (peserta ?? []).some((p: { email: string | null }) =>
+        String(p.email || "").split("//").some((e) => e.trim().toLowerCase() === emailSesi),
+      );
+      owns = pesertaB2B;
+    }
     if (!owns) {
+      if (!ownedIds.size) {
+        return NextResponse.json({ error: "Akun ini belum terhubung ke data siswa" }, { status: 403 });
+      }
       return NextResponse.json({ error: "Rekaman ini bukan milik akun kamu" }, { status: 403 });
     }
 
@@ -135,7 +155,7 @@ export async function POST(req: NextRequest) {
     // registration_id tak bisa dibuktikan pembeliannya → ditolak juga (per 19 Sep
     // 2026 semua 197 rekaman punya registration_id). Gagal membaca data add-on =
     // 503, bukan lolos dan bukan vonis "tidak beli".
-    {
+    if (!pesertaB2B) {
       if (!sched.registration_id) {
         return NextResponse.json(
           { error: "Rekaman sesi tidak termasuk paket kelas ini. Tambahan Recording bisa dibeli lewat admin Linguo." },

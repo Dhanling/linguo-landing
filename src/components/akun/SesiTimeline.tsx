@@ -42,6 +42,8 @@ export type TimelineSchedule = {
   material_links?: { name: string; url: string; kind: 'file' | 'link' }[] | null;
   attendance_status?: string | null;
   recording_url?: string | null;
+  /** [kelas-b2b-materi-v1] 'attendance' = sesi dari grid presensi korporat: cuma tanggal, tanpa jam. */
+  sumber?: string | null;
 };
 
 type Item = { id: string; title: string; kind?: string; url: string; note?: string | null; content?: string | null };
@@ -136,6 +138,7 @@ export default function SesiTimeline({
   schedules,
   variant,
   aksesRekaman = 'memuat',
+  materiTetap,
 }: {
   reg: any;
   schedules: TimelineSchedule[];
@@ -144,6 +147,10 @@ export default function SesiTimeline({
    *  [rekaman-wajib-beli-v1] Bawaannya 'memuat' (peta belum datang): tombol
    *  maupun gembok sama-sama belum tampil. Hanya 'punya' yang boleh menonton. */
   aksesRekaman?: AksesAddon;
+  /** [kelas-b2b-materi-v1] Lampiran yang sudah dimuat pemanggil (kelas B2B: datang dari
+   *  RPC my_corporate_class_sessions karena class_materials-nya ber-registration_id NULL
+   *  dan tak terbaca RLS siswa). Kalau diisi, query class_materials dilewati. */
+  materiTetap?: any[];
 }) {
   const t = useT(); // [ui-lang-switcher-v1]
   // [vc-recmodal-v1] Rekaman yang sedang ditonton di pop-up halaman ini.
@@ -152,6 +159,7 @@ export default function SesiTimeline({
   const [materials, setMaterials] = useState<any[] | null>(variant === 'materi' ? null : []);
   useEffect(() => {
     if (variant !== 'materi') { setMaterials([]); return; }
+    if (materiTetap) { setMaterials(materiTetap); return; }
     let alive = true;
     setMaterials(null);
     (async () => {
@@ -170,7 +178,8 @@ export default function SesiTimeline({
       setMaterials(data || []);
     })();
     return () => { alive = false; };
-  }, [reg.id, variant]);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [reg.id, variant, !!materiTetap]);
 
   // [materi-sesi-semua-kelas-v1] Kelas terdahulu (paket habis sebelum penjadwalan
   // masuk aplikasi) sering TAK punya satu pun baris `schedules` — sesinya cuma
@@ -337,7 +346,7 @@ export default function SesiTimeline({
                     <p className="mt-1 flex flex-wrap items-center gap-x-3 gap-y-1 text-[12px] font-medium text-gray-500">
                       {d ? (
                         <>
-                          <span className="inline-flex items-center gap-1.5"><Calendar className="h-3.5 w-3.5" />{fmtTanggal(d)} · {fmtJam(d)}</span>
+                          <span className="inline-flex items-center gap-1.5"><Calendar className="h-3.5 w-3.5" />{fmtTanggal(d)}{s?.sumber === 'attendance' ? '' : ` · ${fmtJam(d)}`}</span>
                           {/* [durasi-paket-v1] Durasi paket menang atas duration_minutes
                               baris jadwal (baris lama bisa menyimpan 45 di kelas 60). */}
                           {(Number(reg?.duration) || s?.duration_minutes) ? <span className="inline-flex items-center gap-1.5"><Clock className="h-3.5 w-3.5" />{Number(reg?.duration) || s?.duration_minutes} {t('menit')}</span> : null}
