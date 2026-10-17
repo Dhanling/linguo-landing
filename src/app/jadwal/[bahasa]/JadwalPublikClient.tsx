@@ -460,25 +460,8 @@ function Baris({ menit, durasi, awalBaris, pola7, pilih, ekor, sorotSel, bentrok
             <span className="block text-[10px] font-medium text-slate-300">{ket}</span>
           </span>
         );
-        const induk = ekor.get(k);
-        if (induk) {
-          // Bagian bawah blok pilihan: tanpa garis atas supaya menyatu dengan sel jam mulai.
-          const lb = `Tiap ${namaHari} · ${titik(induk.menit)}–${titik(induk.menit + durasi)} (${durasi} menit)`;
-          return (
-            <button
-              key={dow}
-              type="button"
-              onClick={() => onToggle(induk.dow, induk.menit)}
-              aria-label={lb}
-              className={`group relative h-7 border-r border-b border-[#1A9E9E] bg-[#1A9E9E] ${dow === 0 ? "border-l" : ""}`}
-            >
-              <span className={`pointer-events-none absolute z-20 whitespace-nowrap rounded-lg bg-slate-900 px-2.5 py-1.5 text-[11px] font-semibold text-white opacity-0 shadow-lg transition-opacity group-hover:opacity-100 bottom-full mb-1.5 ${dow >= 5 ? "right-0" : dow <= 1 ? "left-0" : "left-1/2 -translate-x-1/2"}`}>
-                {lb}
-                <span className="block text-[10px] font-medium text-slate-300">Pilihanmu · klik untuk batal</span>
-              </span>
-            </button>
-          );
-        }
+        // Sel ekor tertutup lapisan blok dari sel jam mulai (klik jatuh ke lapisan itu).
+        if (ekor.has(k)) return <div key={dow} className={`h-7 bg-[#1A9E9E] ${tepi}`} />;
         const disorot = sorotSel.has(k);
         if (!c) return <div key={dow} className={`h-7 ${disorot ? "bg-[#1A9E9E]/50" : "bg-white"} ${tepi}`} />;
         if (c.s === "terisi") {
@@ -503,11 +486,22 @@ function Baris({ menit, durasi, awalBaris, pola7, pilih, ekor, sorotSel, bentrok
             onMouseEnter={() => { if (!aktif && !penuh && !tabrak) onSorot({ dow, menit }); }}
             onMouseLeave={() => onSorot(null)}
             aria-label={label}
-            className={`group relative flex h-7 items-center justify-center transition-colors hover:z-10 ${tepi} ${aktif
-              ? `bg-[#1A9E9E] text-white ${durasi > 30 ? "border-b-[#1A9E9E]" : ""}`
+            className={`group relative flex h-7 items-center justify-center transition-colors ${aktif ? "z-10" : "hover:z-10"} ${tepi} ${aktif
+              ? "bg-[#1A9E9E] text-white"
               : disorot ? "bg-[#1A9E9E]/50" : "bg-[#8BC34A] hover:bg-[#1A9E9E]/50 disabled:cursor-not-allowed disabled:opacity-50"}`}
           >
-            {aktif && <Check className="h-3.5 w-3.5" />}
+            {aktif && (
+              // [jadwal-blok-cek-v1] Satu lapisan setinggi durasi (90 mnt = 3 sel) menutup sel ekor;
+              // ikon bulat hijau + centang di tengah-tengah blok.
+              <span
+                className="absolute inset-x-0 top-0 flex items-center justify-center bg-[#1A9E9E]"
+                style={{ height: `calc(${Math.ceil(durasi / 30)} * 1.75rem - 1px)` }}
+              >
+                <span className={`flex items-center justify-center rounded-full bg-[#8BC34A] text-white shadow-md ring-2 ring-white ${durasi > 30 ? "h-7 w-7" : "h-5 w-5"}`}>
+                  <Check className={durasi > 30 ? "h-4 w-4" : "h-3 w-3"} strokeWidth={3} />
+                </span>
+              </span>
+            )}
             {tip(aktif ? "Pilihanmu · klik untuk batal" : penuh ? `Maksimal ${MAKS_PILIH} jam` : tabrak ? "Bentrok dengan pilihanmu di hari ini" : "Tersedia · klik untuk memilih")}
           </button>
         );
