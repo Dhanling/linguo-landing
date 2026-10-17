@@ -18,7 +18,7 @@
 
 import { useEffect, useMemo, useState } from "react";
 import Link from "next/link";
-import { CalendarCheck, CalendarClock, Check, MessageCircle, Repeat, RefreshCw, UserCheck } from "lucide-react";
+import { CalendarCheck, CalendarClock, Check, ChevronDown, MessageCircle, Repeat, RefreshCw, UserCheck } from "lucide-react";
 import { hhmm, wibOf } from "@/lib/aturJadwal";
 import { levelFunnel, profilDariQuery, teksProfil, type ProfilBelajar } from "@/lib/profilBelajar";
 
@@ -88,6 +88,8 @@ export default function JadwalPublikClient({ slug, langId }: { slug: string; lan
   const [sesi, setSesi] = useState(SESI_SUBLEVEL);
   const [pilih, setPilih] = useState<Map<string, Pilihan>>(new Map());
   const [lihatSaran, setLihatSaran] = useState(false);
+  // Info "Cara kerjanya": di HP bisa dibuka-tutup (default terbuka), di desktop selalu tampil.
+  const [bukaInfo, setBukaInfo] = useState(true);
   // [cek-jadwal-profil-v1] level/tujuan/minat dari pop-up Cek Jadwal (null kalau buka langsung).
   const [profil, setProfil] = useState<ProfilBelajar | null>(null);
   useEffect(() => { setProfil(profilDariQuery(window.location.search)); }, []);
@@ -231,192 +233,240 @@ export default function JadwalPublikClient({ slug, langId }: { slug: string; lan
     + (preferensi ? `&jadwal=${encodeURIComponent(preferensi)}` : "");
   const waText = `Halo Linguo, saya mau Kelas Private Bahasa ${langId}.` + (profil ? ` ${teksProfil(profil)}.` : "") + ` Jam yang saya mau: `;
 
+  const ringkasJam = daftarPilih.length
+    ? urutkan(daftarPilih).map((p) => `${HARI_PENDEK[p.dow]} ${titik(p.menit)}`).join(" · ")
+    : "Atur per sesi sesudah lunas";
+  const bisaLanjut = pilih.size > 0 || (pola === "fleksibel" && !!hasil && adaGrid);
+
   return (
-    <>
-      <div className="mt-5 flex flex-wrap items-center gap-2">
-        <span className="text-xs font-semibold text-slate-500">Durasi per sesi</span>
-        {DURASI.map((d) => (
-          <button
-            key={d}
-            type="button"
-            onClick={() => setDurasi(d)}
-            className={`whitespace-nowrap rounded-full border px-3 py-1 text-xs font-bold transition-colors ${durasi === d ? "border-[#1A9E9E] bg-[#1A9E9E] text-white" : "border-slate-200 bg-white text-slate-600 hover:border-[#1A9E9E]/50"}`}
-          >
-            {d} menit
-          </button>
-        ))}
-      </div>
-
-      <div className="mt-3 flex flex-wrap items-center gap-2">
-        <span className="text-xs font-semibold text-slate-500">Jumlah sesi</span>
-        {SESI_OPTS.map((n) => (
-          <button
-            key={n}
-            type="button"
-            onClick={() => setSesi(n)}
-            className={`relative whitespace-nowrap rounded-full border px-3 py-1 text-xs font-bold transition-colors ${sesi === n ? "border-[#1A9E9E] bg-[#1A9E9E] text-white" : "border-slate-200 bg-white text-slate-600 hover:border-[#1A9E9E]/50"}`}
-          >
-            {n} sesi
-            {n === SESI_SUBLEVEL && (
-              <span className="absolute -top-2 right-0 rounded-full bg-amber-400 px-1 text-[8px] font-extrabold uppercase leading-3 text-white">Saran</span>
-            )}
-          </button>
-        ))}
-      </div>
-      <p className="mt-1.5 text-xs text-slate-500">{ketSesi(sesi)} Bisa diubah lagi di langkah daftar.</p>
-
-      {!hasil && !gagal && (
-        <div className="mt-5 space-y-2">
-          {Array.from({ length: 5 }, (_, i) => <div key={i} className="h-14 animate-pulse rounded-2xl bg-slate-200/60" />)}
-        </div>
-      )}
-
-      {(gagal || (hasil && !adaSlot)) && (
-        <div className="mt-5 rounded-3xl border border-slate-100 bg-white p-6 shadow-sm">
-          <h2 className="text-lg font-extrabold text-slate-900">Jadwal fleksibel, atur bareng admin</h2>
-          <p className="mt-1.5 text-sm leading-relaxed text-slate-600">
-            {gagal
-              ? "Jadwal belum bisa dimuat sekarang."
-              : hasil?.adaPengajar
-                ? `Jam pengajar Bahasa ${langId} untuk ${durasi} menit sedang penuh.`
-                : `Jam kosong pengajar Bahasa ${langId} belum dipasang di sini.`}{" "}
-            Ceritakan jam yang kamu mau, admin carikan pengajar yang cocok.
-          </p>
-          <div className="mt-4 flex flex-wrap gap-2">
-            <a
-              href={`https://wa.me/${WA_NUMBER}?text=${encodeURIComponent(waText)}`}
-              target="_blank"
-              rel="noopener"
-              className="inline-flex items-center gap-1.5 rounded-xl bg-[#25D366] px-4 py-2.5 text-sm font-bold text-white hover:brightness-95"
-            >
-              <MessageCircle className="h-4 w-4" /> Chat admin
-            </a>
-            <Link href={hrefDaftar} className="inline-flex items-center rounded-xl border border-slate-200 px-4 py-2.5 text-sm font-bold text-slate-700 hover:border-[#1A9E9E] hover:text-[#1A9E9E]">
-              Daftar dulu
-            </Link>
-          </div>
-        </div>
-      )}
-
-      {hasil && adaGrid && (
-        <>
-          {/* [jadwal-pola-mingguan-v1] Tetap = jam sama tiap minggu; Fleksibel = atur per sesi di /akun. */}
-          <div className="mt-5 grid gap-2 sm:grid-cols-2" role="radiogroup" aria-label="Pola jadwal">
-            {([
-              { key: "tetap", Icon: Repeat, judul: "Jadwal tetap tiap minggu", ket: "Pilih jam di bawah, misalnya tiap Selasa & Kamis 19.00. Tanggal mulai disepakati bareng pengajar." },
-              { key: "fleksibel", Icon: CalendarClock, judul: "Fleksibel, atur per sesi", ket: "Jam boleh beda tiap minggu. Sesudah lunas, kamu pesan/pindah sesi sendiri di dashboard siswa (paling lambat H-1)." },
-            ] as const).map(({ key, Icon, judul, ket }) => (
+    // [jadwal-dua-kolom-v1] Desktop: pengaturan + info + ringkasan di panel kiri (sticky),
+    // kalender di kanan supaya langsung terlihat. HP: tetap bertumpuk + bar bawah.
+    <div className="mt-5 lg:grid lg:grid-cols-[300px_minmax(0,1fr)] lg:items-start lg:gap-6">
+      <aside className="space-y-4 lg:sticky lg:top-4 lg:rounded-2xl lg:border lg:border-slate-100 lg:bg-white lg:p-4 lg:shadow-sm">
+        <div>
+          <p className="mb-1.5 text-xs font-semibold text-slate-500">Durasi per sesi</p>
+          <div className="grid grid-cols-4 gap-1.5">
+            {DURASI.map((d) => (
               <button
-                key={key}
+                key={d}
                 type="button"
-                role="radio"
-                aria-checked={pola === key}
-                onClick={() => setPola(key)}
-                className={`flex gap-2.5 rounded-2xl border-2 p-3 text-left transition-colors ${pola === key ? "border-[#1A9E9E] bg-[#1A9E9E]/5" : "border-slate-100 bg-white hover:border-[#1A9E9E]/40"}`}
+                onClick={() => setDurasi(d)}
+                className={`whitespace-nowrap rounded-full border px-1 py-1 text-xs font-bold transition-colors ${durasi === d ? "border-[#1A9E9E] bg-[#1A9E9E] text-white" : "border-slate-200 bg-white text-slate-600 hover:border-[#1A9E9E]/50"}`}
               >
-                <Icon className={`mt-0.5 h-4 w-4 shrink-0 ${pola === key ? "text-[#1A9E9E]" : "text-slate-400"}`} />
-                <span>
-                  <span className="block text-sm font-bold text-slate-900">{judul}</span>
-                  <span className="mt-0.5 block text-xs leading-relaxed text-slate-500">{ket}</span>
-                </span>
+                {d} mnt
               </button>
             ))}
           </div>
+        </div>
 
-          <div className="mt-3 flex flex-wrap items-center gap-x-4 gap-y-1.5 text-xs text-slate-600">
-            <span className="flex items-center gap-1.5"><i className="h-3 w-3 bg-[#8BC34A]" /> Tersedia</span>
-            <span className="flex items-center gap-1.5"><i className="h-3 w-3 bg-rose-200" /> Sudah terisi</span>
-            <span className="flex items-center gap-1.5"><i className="h-3 w-3 border border-slate-200 bg-white" /> Tidak tersedia</span>
-            <span className="flex items-center gap-1.5"><i className="h-3 w-3 bg-[#1A9E9E]" /> Pilihanmu</span>
-            {calon && (
-              <span className="flex items-center gap-1.5"><i className="h-3 w-3 border border-slate-200 bg-[repeating-linear-gradient(45deg,#f1f5f9_0_3px,#e2e8f0_3px_6px)]" /> Beda pengajar</span>
+        <div>
+          <p className="mb-1.5 text-xs font-semibold text-slate-500">Jumlah sesi</p>
+          <div className="grid grid-cols-5 gap-1.5">
+            {SESI_OPTS.map((n) => (
+              <button
+                key={n}
+                type="button"
+                onClick={() => setSesi(n)}
+                className={`relative whitespace-nowrap rounded-full border px-1 py-1 text-xs font-bold transition-colors ${sesi === n ? "border-[#1A9E9E] bg-[#1A9E9E] text-white" : "border-slate-200 bg-white text-slate-600 hover:border-[#1A9E9E]/50"}`}
+              >
+                {n}
+                {n === SESI_SUBLEVEL && (
+                  <span className="absolute -top-2 right-0 rounded-full bg-amber-400 px-1 text-[8px] font-extrabold uppercase leading-3 text-white">Saran</span>
+                )}
+              </button>
+            ))}
+          </div>
+          <p className="mt-1.5 text-xs text-slate-500">{ketSesi(sesi)} Bisa diubah lagi di langkah daftar.</p>
+        </div>
+
+        {/* [jadwal-pola-mingguan-v1] Tetap = jam sama tiap minggu; Fleksibel = atur per sesi di /akun. */}
+        {hasil && adaGrid && (
+          <div>
+            <p className="mb-1.5 text-xs font-semibold text-slate-500">Pola jadwal</p>
+            <div className="grid grid-cols-2 gap-1 rounded-xl bg-slate-100 p-1" role="radiogroup" aria-label="Pola jadwal">
+              {([
+                { key: "tetap", Icon: Repeat, judul: "Tetap" },
+                { key: "fleksibel", Icon: CalendarClock, judul: "Fleksibel" },
+              ] as const).map(({ key, Icon, judul }) => (
+                <button
+                  key={key}
+                  type="button"
+                  role="radio"
+                  aria-checked={pola === key}
+                  onClick={() => setPola(key)}
+                  className={`flex items-center justify-center gap-1.5 rounded-lg px-2 py-1.5 text-xs font-bold transition-colors ${pola === key ? "bg-white text-[#1A9E9E] shadow-sm" : "text-slate-500 hover:text-slate-700"}`}
+                >
+                  <Icon className="h-3.5 w-3.5 shrink-0" /> {judul}
+                </button>
+              ))}
+            </div>
+            <p className="mt-1.5 text-xs leading-relaxed text-slate-500">
+              {pola === "tetap"
+                ? "Jam yang sama tiap minggu, mis. Selasa & Kamis 19.00."
+                : "Jam boleh beda tiap minggu. Sesudah lunas, kamu atur sendiri sesinya di dashboard siswa (paling lambat H-1)."}
+            </p>
+          </div>
+        )}
+
+        <div className="rounded-xl bg-[#1A9E9E]/5 p-3">
+          <button
+            type="button"
+            onClick={() => setBukaInfo((b) => !b)}
+            aria-expanded={bukaInfo}
+            className="flex w-full items-center justify-between text-left text-xs font-bold uppercase tracking-wider text-[#1A9E9E] lg:pointer-events-none"
+          >
+            Cara kerjanya
+            <ChevronDown className={`h-4 w-4 transition-transform lg:hidden ${bukaInfo ? "rotate-180" : ""}`} />
+          </button>
+          <ul className={`mt-2 space-y-2 text-xs leading-relaxed text-slate-600 ${bukaInfo ? "" : "hidden"} lg:block`}>
+            <li className="flex gap-2"><UserCheck className="h-4 w-4 shrink-0 text-[#1A9E9E]" /> Pengajar dicocokkan dengan level, tujuan, dan jam pilihanmu.</li>
+            <li className="flex gap-2"><RefreshCw className="h-4 w-4 shrink-0 text-[#1A9E9E]" />{" "}
+              {/* [ganti-pengajar-v1] Aturan owner 17 Okt: ganti pengajar maks 1 kali; bahasa yang
+                  pengajarnya terbatas (cuma 1 pengajar aktif) tidak bisa ganti. */}
+              {hasil && (hasil.jumlahPengajar ?? 2) <= 1
+                ? <span>Pengajar bahasa {langId} saat ini terbatas, jadi <b>belum bisa ganti pengajar</b>.</span>
+                : <span>Bisa ganti pengajar <b>1 kali</b> (kecuali bahasa yang pengajarnya terbatas).</span>}
+            </li>
+            <li className="flex gap-2"><CalendarCheck className="h-4 w-4 shrink-0 text-[#1A9E9E]" /> Jadwal &amp; tanggal mulai dikonfirmasi via WhatsApp setelah bayar.</li>
+            <li className="flex gap-2"><Repeat className="h-4 w-4 shrink-0 text-[#1A9E9E]" /> Saran {SESI_SUBLEVEL} sesi untuk 1 sub-level. Bisa mulai lebih sedikit, lalu tambah kapan saja.</li>
+          </ul>
+        </div>
+
+        {hasil && adaGrid && (
+          <div className="hidden border-t border-slate-100 pt-4 lg:block">
+            <p className="text-[11px] font-semibold uppercase tracking-wider text-slate-400">
+              {pola === "tetap" ? "Tetap" : "Fleksibel"} · {sesi} sesi × {durasi} mnt
+            </p>
+            {bisaLanjut ? (
+              <>
+                <p className="mt-0.5 text-sm font-bold text-slate-900">{ringkasJam}</p>
+                {pola === "tetap" && <p className="text-[11px] text-slate-500">{perkiraanLama(daftarPilih.length, sesi)}</p>}
+                <Link href={hrefDaftar} className="mt-3 block rounded-xl bg-[#1A9E9E] px-4 py-2.5 text-center text-sm font-bold text-white hover:brightness-95">
+                  Lanjut daftar
+                </Link>
+              </>
+            ) : (
+              <p className="mt-0.5 text-sm text-slate-500">Klik blok hijau di kalender untuk memilih jam.</p>
             )}
           </div>
-          <p className="mt-2 text-xs text-slate-500">
-            {pola === "tetap"
-              ? <>Ini pola mingguan, bukan tanggal. Klik blok hijau untuk memilih jam mulai (sampai {MAKS_PILIH}), mis. tiap Selasa 19.00, bersama satu pengajar tetap. Sesudah memilih, blok yang tidak bisa dipegang pengajar yang sama jadi bergaris. Tanggal mulai disepakati bareng pengajar sesudah daftar.</>
-              : <>Ini gambaran jam yang biasanya kosong tiap minggu. Pilih jam yang paling sering cocok untukmu (boleh dilewati) supaya kami carikan pengajar yang pas, lalu sesinya kamu atur sendiri tiap minggu.</>}{" "}
-            Semua jam dalam WIB.
-          </p>
+        )}
+      </aside>
 
-          {/* [jadwal-grid-italki-v1] grid kotak rapat bergaris 1px ala italki: tanpa rounded & tanpa teks
-              jam di dalam blok; hari, jam & durasi muncul di tooltip saat hover. */}
-          <div className="mt-3 max-h-[70vh] overflow-auto rounded-2xl border border-slate-100 bg-white p-2 shadow-sm">
-            <div className="grid min-w-[340px] grid-cols-[2.75rem_repeat(7,minmax(0,1fr))] sm:grid-cols-[3.5rem_repeat(7,minmax(0,1fr))]">
-              <div className="sticky top-0 z-30 bg-white" />
-              {HARI_PENDEK.map((h) => (
-                <div key={h} className="sticky top-0 z-30 bg-white pb-1.5 text-center">
-                  <p className="text-xs font-extrabold text-slate-900 sm:text-sm">{h}</p>
-                </div>
-              ))}
-              {barisMenit.map((menit, i) => (
-                <Baris key={menit} menit={menit} durasi={durasi} awalBaris={i === 0} pola7={pola7} pilih={pilih} ekor={ekor} sorotSel={sorotSel} bentrok={bentrok} onSorot={setSorot} cocok={cocok} onToggle={toggle} />
-              ))}
+      <section className="mt-5 min-w-0 lg:mt-0">
+        {!hasil && !gagal && (
+          <div className="space-y-2">
+            {Array.from({ length: 5 }, (_, i) => <div key={i} className="h-14 animate-pulse rounded-2xl bg-slate-200/60" />)}
+          </div>
+        )}
+
+        {(gagal || (hasil && !adaSlot)) && (
+          <div className="rounded-3xl border border-slate-100 bg-white p-6 shadow-sm">
+            <h2 className="text-lg font-extrabold text-slate-900">Jadwal fleksibel, atur bareng admin</h2>
+            <p className="mt-1.5 text-sm leading-relaxed text-slate-600">
+              {gagal
+                ? "Jadwal belum bisa dimuat sekarang."
+                : hasil?.adaPengajar
+                  ? `Jam pengajar Bahasa ${langId} untuk ${durasi} menit sedang penuh.`
+                  : `Jam kosong pengajar Bahasa ${langId} belum dipasang di sini.`}{" "}
+              Ceritakan jam yang kamu mau, admin carikan pengajar yang cocok.
+            </p>
+            <div className="mt-4 flex flex-wrap gap-2">
+              <a
+                href={`https://wa.me/${WA_NUMBER}?text=${encodeURIComponent(waText)}`}
+                target="_blank"
+                rel="noopener"
+                className="inline-flex items-center gap-1.5 rounded-xl bg-[#25D366] px-4 py-2.5 text-sm font-bold text-white hover:brightness-95"
+              >
+                <MessageCircle className="h-4 w-4" /> Chat admin
+              </a>
+              <Link href={hrefDaftar} className="inline-flex items-center rounded-xl border border-slate-200 px-4 py-2.5 text-sm font-bold text-slate-700 hover:border-[#1A9E9E] hover:text-[#1A9E9E]">
+                Daftar dulu
+              </Link>
             </div>
           </div>
-          {!adaSlot && (
-            <p className="mt-2 text-xs text-rose-500">Semua jam yang dibuka pengajar untuk {durasi} menit sedang terisi.</p>
-          )}
-          {hariBuntu.length > 0 && (
-            <div className="mt-3 rounded-2xl border border-amber-200 bg-amber-50 p-3 text-sm text-amber-900">
-              <p>
-                <b>{hariBuntu.map((d) => HARI[d]).join(", ")}</b> belum ada jam yang bisa dipegang pengajar yang sama dengan pilihanmu.
-              </p>
-              <div className="mt-2 flex flex-wrap gap-2">
-                <button type="button" onClick={() => setPilih(new Map())} className="rounded-lg border border-amber-300 bg-white px-3 py-1.5 text-xs font-bold text-amber-900 hover:bg-amber-100">
-                  Mulai ulang pilihan
-                </button>
-                <button type="button" onClick={() => setLihatSaran(true)} className="rounded-lg bg-amber-500 px-3 py-1.5 text-xs font-bold text-white hover:brightness-95">
-                  Coba jam lain
-                </button>
-              </div>
-              {lihatSaran && (
-                saran.length ? (
-                  <div className="mt-2 flex flex-wrap gap-2">
-                    {saran.map((s) => (
-                      <button key={s.menit} type="button" onClick={() => pakaiSaran(s.dows, s.menit)} className="rounded-lg border border-emerald-300 bg-emerald-100 px-3 py-1.5 text-xs font-bold text-emerald-800 hover:bg-emerald-200">
-                        {rentangHari(s.dows)} {titik(s.menit)} → Pakai jam ini
-                      </button>
-                    ))}
-                  </div>
-                ) : (
-                  <p className="mt-2 text-xs">
-                    Belum ada satu pengajar yang kosong di jam yang sama untuk semua hari itu.{" "}
-                    <a href={`https://wa.me/${WA_NUMBER}?text=${encodeURIComponent(waText)}`} target="_blank" rel="noopener" className="font-bold underline">Chat admin</a> untuk dicarikan.
-                  </p>
-                )
+        )}
+
+        {hasil && adaGrid && (
+          <>
+            <div className={`flex flex-wrap items-center gap-x-4 gap-y-1.5 text-xs text-slate-600 ${hasil && !adaSlot ? "mt-5" : ""}`}>
+              <span className="flex items-center gap-1.5"><i className="h-3 w-3 bg-[#8BC34A]" /> Tersedia</span>
+              <span className="flex items-center gap-1.5"><i className="h-3 w-3 bg-rose-200" /> Sudah terisi</span>
+              <span className="flex items-center gap-1.5"><i className="h-3 w-3 border border-slate-200 bg-white" /> Tidak tersedia</span>
+              <span className="flex items-center gap-1.5"><i className="h-3 w-3 bg-[#1A9E9E]" /> Pilihanmu</span>
+              {calon && (
+                <span className="flex items-center gap-1.5"><i className="h-3 w-3 border border-slate-200 bg-[repeating-linear-gradient(45deg,#f1f5f9_0_3px,#e2e8f0_3px_6px)]" /> Beda pengajar</span>
               )}
             </div>
-          )}
-        </>
-      )}
+            <p className="mt-2 text-xs text-slate-500">
+              {pola === "tetap"
+                ? <>Pola mingguan, bukan tanggal. Klik blok hijau untuk memilih jam mulai (sampai {MAKS_PILIH}), bersama satu pengajar tetap. Blok bergaris = tidak bisa dipegang pengajar yang sama.</>
+                : <>Gambaran jam yang biasanya kosong tiap minggu. Pilih jam yang paling sering cocok (boleh dilewati) supaya kami carikan pengajar yang pas.</>}{" "}
+              Semua jam dalam WIB.
+            </p>
 
-      <ul className="mt-6 space-y-2.5 text-sm text-slate-600">
-        <li className="flex gap-2"><UserCheck className="mt-0.5 h-4 w-4 shrink-0 text-[#1A9E9E]" /> Pengajar dicocokkan dengan level, tujuan belajar, dan jam pilihanmu.</li>
-        <li className="flex gap-2"><RefreshCw className="mt-0.5 h-4 w-4 shrink-0 text-[#1A9E9E]" />{" "}
-          {/* [ganti-pengajar-v1] Aturan owner 17 Okt: ganti pengajar maks 1 kali; bahasa yang
-              pengajarnya terbatas (cuma 1 pengajar aktif) tidak bisa ganti. */}
-          {hasil && (hasil.jumlahPengajar ?? 2) <= 1
-            ? <span>Pengajar bahasa {langId} saat ini terbatas, jadi <b>belum bisa ganti pengajar</b>.</span>
-            : <span>Kurang cocok dengan pengajarnya? Bisa minta ganti pengajar, <b>maksimal 1 kali</b>. Untuk bahasa yang pengajarnya terbatas, belum bisa ganti pengajar.</span>}
-        </li>
-        <li className="flex gap-2"><CalendarCheck className="mt-0.5 h-4 w-4 shrink-0 text-[#1A9E9E]" /> Jadwal &amp; tanggal mulai dikonfirmasi bareng pengajar lewat WhatsApp setelah pembayaran.</li>
-        <li className="flex gap-2"><Repeat className="mt-0.5 h-4 w-4 shrink-0 text-[#1A9E9E]" /> Disarankan {SESI_SUBLEVEL} sesi untuk menuntaskan 1 sub-level (mis. A1.1). Boleh ambil lebih sedikit dulu, lalu tambah sesi kapan saja.</li>
-      </ul>
+            {/* [jadwal-grid-italki-v1] grid kotak rapat bergaris 1px ala italki: tanpa rounded & tanpa teks
+                jam di dalam blok; hari, jam & durasi muncul di tooltip saat hover. */}
+            <div className="mt-3 max-h-[70vh] overflow-auto rounded-2xl border border-slate-100 bg-white p-2 shadow-sm lg:max-h-[calc(100vh-7rem)]">
+              <div className="grid min-w-[340px] grid-cols-[2.75rem_repeat(7,minmax(0,1fr))] sm:grid-cols-[3.5rem_repeat(7,minmax(0,1fr))]">
+                <div className="sticky top-0 z-30 bg-white" />
+                {HARI_PENDEK.map((h) => (
+                  <div key={h} className="sticky top-0 z-30 bg-white pb-1.5 text-center">
+                    <p className="text-xs font-extrabold text-slate-900 sm:text-sm">{h}</p>
+                  </div>
+                ))}
+                {barisMenit.map((menit, i) => (
+                  <Baris key={menit} menit={menit} durasi={durasi} awalBaris={i === 0} pola7={pola7} pilih={pilih} ekor={ekor} sorotSel={sorotSel} bentrok={bentrok} onSorot={setSorot} cocok={cocok} onToggle={toggle} />
+                ))}
+              </div>
+            </div>
+            {!adaSlot && (
+              <p className="mt-2 text-xs text-rose-500">Semua jam yang dibuka pengajar untuk {durasi} menit sedang terisi.</p>
+            )}
+            {hariBuntu.length > 0 && (
+              <div className="mt-3 rounded-2xl border border-amber-200 bg-amber-50 p-3 text-sm text-amber-900">
+                <p>
+                  <b>{hariBuntu.map((d) => HARI[d]).join(", ")}</b> belum ada jam yang bisa dipegang pengajar yang sama dengan pilihanmu.
+                </p>
+                <div className="mt-2 flex flex-wrap gap-2">
+                  <button type="button" onClick={() => setPilih(new Map())} className="rounded-lg border border-amber-300 bg-white px-3 py-1.5 text-xs font-bold text-amber-900 hover:bg-amber-100">
+                    Mulai ulang pilihan
+                  </button>
+                  <button type="button" onClick={() => setLihatSaran(true)} className="rounded-lg bg-amber-500 px-3 py-1.5 text-xs font-bold text-white hover:brightness-95">
+                    Coba jam lain
+                  </button>
+                </div>
+                {lihatSaran && (
+                  saran.length ? (
+                    <div className="mt-2 flex flex-wrap gap-2">
+                      {saran.map((s) => (
+                        <button key={s.menit} type="button" onClick={() => pakaiSaran(s.dows, s.menit)} className="rounded-lg border border-emerald-300 bg-emerald-100 px-3 py-1.5 text-xs font-bold text-emerald-800 hover:bg-emerald-200">
+                          {rentangHari(s.dows)} {titik(s.menit)} → Pakai jam ini
+                        </button>
+                      ))}
+                    </div>
+                  ) : (
+                    <p className="mt-2 text-xs">
+                      Belum ada satu pengajar yang kosong di jam yang sama untuk semua hari itu.{" "}
+                      <a href={`https://wa.me/${WA_NUMBER}?text=${encodeURIComponent(waText)}`} target="_blank" rel="noopener" className="font-bold underline">Chat admin</a> untuk dicarikan.
+                    </p>
+                  )
+                )}
+              </div>
+            )}
+          </>
+        )}
+      </section>
 
-      {(pilih.size > 0 || (pola === "fleksibel" && hasil && adaGrid)) && (
+      {bisaLanjut && (
+        // HP saja; di desktop ringkasan + tombol ada di panel kiri.
         // pr-24: tombol chat Ling (fixed kanan-bawah, 64px) jangan menutupi "Lanjut daftar".
-        <div className="fixed inset-x-0 bottom-0 z-40 border-t border-slate-200 bg-white/95 py-3 pl-4 pr-24 lg:pr-4 shadow-[0_-8px_24px_rgba(15,23,42,0.08)] backdrop-blur">
+        <div className="fixed inset-x-0 bottom-0 z-40 border-t border-slate-200 bg-white/95 py-3 pl-4 pr-24 shadow-[0_-8px_24px_rgba(15,23,42,0.08)] backdrop-blur lg:hidden">
           <div className="mx-auto flex max-w-3xl items-center gap-3">
             <div className="min-w-0 flex-1">
               <p className="truncate text-[11px] font-semibold uppercase tracking-wider text-slate-400">
                 {pola === "tetap" ? "Tetap" : "Fleksibel"} · {sesi} sesi × {durasi} mnt
               </p>
-              <p className="truncate text-sm font-bold text-slate-900">
-                {daftarPilih.length
-                  ? urutkan(daftarPilih).map((p) => `${HARI_PENDEK[p.dow]} ${titik(p.menit)}`).join(" · ")
-                  : "Atur per sesi sesudah lunas"}
-              </p>
+              <p className="truncate text-sm font-bold text-slate-900">{ringkasJam}</p>
               {pola === "tetap" && (
                 <p className="truncate text-[11px] text-slate-500">{perkiraanLama(daftarPilih.length, sesi)}</p>
               )}
@@ -427,7 +477,7 @@ export default function JadwalPublikClient({ slug, langId }: { slug: string; lan
           </div>
         </div>
       )}
-    </>
+    </div>
   );
 }
 

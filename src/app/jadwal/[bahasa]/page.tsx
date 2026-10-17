@@ -33,7 +33,7 @@ export default async function JadwalBahasaPage({ params }: PageProps) {
 
   return (
     <div className="min-h-screen bg-slate-50">
-      <main className="mx-auto w-full max-w-3xl px-4 pb-32 pt-8">
+      <main className="mx-auto w-full max-w-3xl px-4 pb-32 lg:max-w-6xl lg:pb-12 pt-8">
         <p className="text-xs font-bold uppercase tracking-wider text-[#1A9E9E]">Kelas Private · 1-on-1</p>
         <div className="mt-1 flex flex-wrap items-center justify-between gap-x-4 gap-y-2">
           <h1 className="text-2xl font-extrabold text-slate-900 sm:text-3xl">Jadwal Bahasa {langId}</h1>
