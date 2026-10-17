@@ -58,7 +58,6 @@ const EXCLUDED = [
   "/micro-teaching",
   "/simulasi",
   "/watch",
-  "/jadwal/", // [jadwal-publik-v1] kalender jam kosong Private — pop-up Reguler menutupi kalendernya
 ];
 
 export default function PosterPopup() {

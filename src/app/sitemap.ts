@@ -196,16 +196,5 @@ export default function sitemap(): MetadataRoute.Sitemap {
     });
   }
 
-  // [jadwal-blok-v1] Kalender jam kosong Private per bahasa. /jadwal kini hanya dropdown
-  // (tanpa tautan statis), jadi halaman per bahasa didaftarkan di sini.
-  for (const slug of ALL_LANG_SLUGS) {
-    entries.push({
-      url: `${BASE}/jadwal/${slug}`,
-      lastModified: new Date("2026-10-16"),
-      changeFrequency: "daily",
-      priority: 0.6,
-    });
-  }
-
   return entries;
 }

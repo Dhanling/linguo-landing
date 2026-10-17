@@ -15,12 +15,13 @@ import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import { useParams } from "next/navigation";
 import { AnimatePresence, motion } from "framer-motion";
 import {
-  AlertCircle, ArrowLeft, ArrowRight, CalendarDays, Check, CheckCircle2,
+  AlertCircle, AlertTriangle, ArrowLeft, ArrowRight, CalendarDays, Check, CheckCircle2,
   ChevronDown, ChevronLeft, ChevronRight, Clock, Globe, GraduationCap, Heart, History, Loader2, Mail,
   MapPin, Megaphone, MessageCircle, Phone, Plus, School, SearchX, Sparkles, Target, Trash2, User, Users, X,
 } from "lucide-react";
 import { WILAYAH_ID, getCitiesByProvince } from "@/lib/wilayah-id";
 import { NEGARA, NEGARA_ID, isIndonesia } from "@/lib/negara";
+import type { HasilCocok } from "@/lib/cocokJadwal";
 
 const TEAL = "#1A9E9E";
 const WA_CS = "6282116859493";
@@ -741,6 +742,8 @@ export default function PendataanPage() {
   const [notFound, setNotFound] = useState(false);
   const [alreadyDone, setAlreadyDone] = useState(false);
   const [done, setDone] = useState(false);
+  // [jadwal-sesudah-bayar-v1] Hasil pencocokan jam pilihan dengan jam kosong pengajar.
+  const [match, setMatch] = useState<HasilCocok | null>(null);
   const [saving, setSaving] = useState(false);
   const [error, setError] = useState("");
 
@@ -1018,8 +1021,8 @@ export default function PendataanPage() {
             : [],
         }),
       });
-      if (res.ok) { setDone(true); return; }
       const body = await res.json().catch(() => ({}));
+      if (res.ok) { setMatch(body?.match ?? null); setDone(true); return; }
       if (res.status === 409) { setAlreadyDone(true); return; }
       setError(body?.error || "Gagal menyimpan. Coba lagi.");
     } catch {
@@ -1060,14 +1063,21 @@ export default function PendataanPage() {
         <h1 className="mb-2 text-2xl font-bold text-slate-900">
           {done ? "Data berhasil dikirim!" : "Data kamu sudah lengkap"}
         </h1>
-        <p className="mb-6 text-base text-slate-700">
-          Tim Linguo akan menghubungi kamu via WhatsApp untuk konfirmasi jadwal dan pembuatan grup kelas.
-        </p>
+        {done && match ? (
+          <HasilJadwal match={match} nama={fullName || form?.contact_name || ""} bahasa={form?.language || ""} jadwal={scheduleText} />
+        ) : (
+          <p className="mb-6 text-base text-slate-700">
+            Tim Linguo akan menghubungi kamu via WhatsApp untuk konfirmasi jadwal dan pembuatan grup kelas.
+          </p>
+        )}
         <div className="flex flex-col items-center gap-3">
-          <a href={`https://wa.me/${WA_CS}?text=Halo%20Linguo%2C%20saya%20sudah%20mengisi%20form%20pendataan`} target="_blank" rel="noreferrer"
-            className="inline-flex items-center gap-2 rounded-full bg-green-500 px-6 py-3 font-semibold text-white transition hover:bg-green-600">
-            <MessageCircle className="h-4 w-4" /> Chat WhatsApp
-          </a>
+          {/* Yang belum cocok sudah punya tombol "Chat admin soal jadwal" di kartunya. */}
+          {!(done && match && match.status !== "cocok") && (
+            <a href={`https://wa.me/${WA_CS}?text=Halo%20Linguo%2C%20saya%20sudah%20mengisi%20form%20pendataan`} target="_blank" rel="noreferrer"
+              className="inline-flex items-center gap-2 rounded-full bg-green-500 px-6 py-3 font-semibold text-white transition hover:bg-green-600">
+              <MessageCircle className="h-4 w-4" /> Chat WhatsApp
+            </a>
+          )}
           <a href="/" className="text-sm hover:underline" style={{ color: TEAL }}>Kembali ke halaman utama</a>
         </div>
       </Shell>
@@ -1565,7 +1575,7 @@ export default function PendataanPage() {
           {last ? (
             <button type="button" onClick={handleSubmit} disabled={saving}
               className="flex-1 rounded-full bg-[#fbbf24] py-3.5 text-base font-bold text-slate-900 shadow-lg shadow-amber-200/60 transition-all hover:bg-[#f59e0b] active:scale-95 disabled:opacity-50">
-              {saving ? "Menyimpan..." : "Kirim Data"}
+              {saving ? "Mengirim & mencocokkan jadwal..." : "Kirim Data"}
             </button>
           ) : (
             <button type="button" onClick={() => go(step + 1)}
@@ -1573,6 +1583,55 @@ export default function PendataanPage() {
               style={{ background: TEAL }}>
               Lanjut <ArrowRight className="h-4 w-4" />
             </button>
+          )}
+        </div>
+      </div>
+    </div>
+  );
+}
+
+/** [jadwal-sesudah-bayar-v1] Kartu hasil cocok / sebagian / tidak cocok sesudah form dikirim.
+ *  Yang belum cocok diarahkan ke admin lewat WA dengan jam pilihannya sudah terisi. */
+function HasilJadwal({ match, nama, bahasa, jadwal }: { match: HasilCocok; nama: string; bahasa: string; jadwal: string }) {
+  const waText = `Halo Linguo, saya ${nama}${bahasa ? ` (kelas ${bahasa})` : ""} sudah mengisi form pendataan. ` +
+    `Jam yang saya bisa: ${jadwal}. ` +
+    (match.status === "sebagian" ? "Jadwalnya baru cocok sebagian, mohon dibantu carikan pengajar." : "Jadwalnya belum cocok dengan pengajar, mohon dibantu carikan.");
+  const tampil = {
+    cocok: {
+      Icon: CheckCircle2, warna: "border-emerald-200 bg-emerald-50", ikon: "text-emerald-600",
+      judul: "Jadwalmu cocok dengan pengajar",
+      ket: `Ada pengajar yang kosong di ${match.hariCocok} hari pilihanmu. Tim Linguo akan mengonfirmasi pengajar & tanggal mulai lewat WhatsApp.`,
+    },
+    sebagian: {
+      Icon: AlertTriangle, warna: "border-amber-200 bg-amber-50", ikon: "text-amber-600",
+      judul: "Jadwalmu baru cocok sebagian",
+      ket: `Satu pengajar baru bisa memegang ${match.hariCocok} dari ${match.hariDiminta} hari pilihanmu. Admin bisa bantu carikan jam lain atau pengajar yang pas.`,
+    },
+    tidak: {
+      Icon: AlertCircle, warna: "border-rose-200 bg-rose-50", ikon: "text-rose-600",
+      judul: "Jadwalmu belum cocok dengan pengajar",
+      ket: match.adaPengajar
+        ? "Jam kosong pengajar saat ini belum ada yang pas dengan jam pilihanmu. Chat admin, nanti kami carikan pengajar yang cocok."
+        : "Jam kosong pengajar bahasa ini belum terpasang di sistem. Chat admin, nanti kami carikan pengajar yang cocok.",
+    },
+  }[match.status];
+  return (
+    <div className={`mb-6 rounded-2xl border p-4 text-left ${tampil.warna}`}>
+      <div className="flex gap-3">
+        <tampil.Icon className={`mt-0.5 h-5 w-5 shrink-0 ${tampil.ikon}`} />
+        <div className="min-w-0">
+          <p className="text-base font-bold text-slate-900">{tampil.judul}</p>
+          <p className="mt-1 text-sm leading-relaxed text-slate-700">{tampil.ket}</p>
+          {match.contoh.length > 0 && match.status !== "tidak" && (
+            <p className="mt-2 text-sm text-slate-700">
+              Contoh jam yang bisa: <b>{match.contoh.join(", ")}</b> ({match.durasi} menit, WIB)
+            </p>
+          )}
+          {match.status !== "cocok" && (
+            <a href={`https://wa.me/${WA_CS}?text=${encodeURIComponent(waText)}`} target="_blank" rel="noreferrer"
+              className="mt-3 inline-flex items-center gap-2 rounded-full bg-green-500 px-5 py-2.5 text-sm font-semibold text-white transition hover:bg-green-600">
+              <MessageCircle className="h-4 w-4" /> Chat admin soal jadwal
+            </a>
           )}
         </div>
       </div>

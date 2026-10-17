@@ -49,7 +49,6 @@ import { regulerLangName } from "@/lib/classLanguage";
 import {
   buildFunnelPath,
   langNameId,
-  langSlugOf,
   levelsForProgram,
   type FunnelRoute,
 } from "@/lib/funnelRouting";
@@ -117,9 +116,9 @@ export default function FunnelFlow({ route }: { route: FunnelRoute }) {
     const n = Number(sp.get("peserta")) || SEMI_PRIVATE_MIN;
     return Math.min(Math.max(Math.round(n), SEMI_PRIVATE_MIN), SEMI_PRIVATE_MAX);
   });
-  // [jadwal-publik-v1] jam mingguan yang dipilih di /jadwal/<bahasa>, teks siap simpan
+  // [jadwal-publik-v1] jam mingguan dari tautan lama /jadwal/<bahasa> (kini dialihkan), teks siap simpan
   // ("Selasa 19.00-20.00, Kamis 19.00-20.00 · Tetap tiap minggu · …") → leads.schedule_preference.
-  const [jadwal, setJadwal] = useState(() => (sp.get("jadwal") || "").slice(0, 500));
+  const [jadwal] = useState(() => (sp.get("jadwal") || "").slice(0, 500));
   const [classMode, setClassMode] = useState<"online" | "offline">(
     sp.get("mode") === "offline" ? "offline" : "online",
   );
@@ -680,29 +679,18 @@ export default function FunnelFlow({ route }: { route: FunnelRoute }) {
             </>
           )}
 
-          {/* [jadwal-publik-v1] Jam pilihan dari kalender publik, atau ajakan melihatnya. */}
+          {/* [jadwal-sesudah-bayar-v1] Kalender jam kosong tidak lagi publik: sesudah bayar siswa
+              mengisi jam yang dia bisa di form pendataan, lalu langsung melihat cocok/tidaknya
+              dengan pengajar. Jam bawaan tautan lama (?jadwal=) tetap ikut tersimpan. */}
           {program === "Kelas Private" && langEn && (
             <section className="mt-6 rounded-2xl border border-[#1A9E9E]/20 bg-[#1A9E9E]/5 p-4">
               <div className="flex items-start gap-3">
                 <CalendarCheck className="mt-0.5 h-5 w-5 shrink-0 text-[#1A9E9E]" />
                 <div className="min-w-0 flex-1">
-                  {jadwal ? (
-                    <>
-                      <p className="text-sm font-bold text-slate-900">Jadwal pilihanmu</p>
-                      <p className="mt-0.5 text-sm text-slate-600">{jadwal}</p>
-                      <div className="mt-2 flex gap-3 text-xs font-semibold">
-                        <a href={`/jadwal/${langSlugOf(langEn)}`} className="text-[#1A9E9E] hover:underline">Ubah jam</a>
-                        <button type="button" onClick={() => setJadwal("")} className="text-slate-400 hover:text-slate-600">Hapus</button>
-                      </div>
-                    </>
-                  ) : (
-                    <>
-                      <p className="text-sm font-bold text-slate-900">Mau lihat jam kosong pengajar dulu?</p>
-                      <a href={`/jadwal/${langSlugOf(langEn)}`} className="mt-1 inline-block text-sm font-semibold text-[#1A9E9E] hover:underline">
-                        Cek jadwal Bahasa {langNameId(langEn)} →
-                      </a>
-                    </>
-                  )}
+                  <p className="text-sm font-bold text-slate-900">Jadwal fleksibel, dicocokkan setelah daftar</p>
+                  <p className="mt-0.5 text-sm leading-relaxed text-slate-600">
+                    Sesudah pembayaran, kamu isi jam yang kamu bisa di form pendataan. Kami langsung mencocokkannya dengan jam kosong pengajar Bahasa {langNameId(langEn)}, dan kalau belum cocok, admin bantu carikan.
+                  </p>
                 </div>
               </div>
             </section>

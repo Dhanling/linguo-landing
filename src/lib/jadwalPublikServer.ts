@@ -1,4 +1,5 @@
-// [jadwal-publik-v1] Kalender jam kosong Kelas Private per BAHASA untuk calon siswa
+// [jadwal-publik-v1] Jam kosong Kelas Private per BAHASA. [jadwal-sesudah-bayar-v1] Kalender publiknya
+// sudah dicabut; kini dipakai lib/cocokJadwal untuk mencocokkan form pendataan. Asalnya: kalender calon siswa
 // (/jadwal/<bahasa>), tanpa login dan tanpa nama pengajar.
 //
 // Satu jam tampil kalau minimal MIN_PENGAJAR pengajar aktif bahasa itu kosong di jam

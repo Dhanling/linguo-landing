@@ -8,8 +8,11 @@
 //   POST /api/pendataan               -> simpan jawaban, tandai submitted
 
 import { NextRequest, NextResponse } from "next/server";
+import { cocokkanJadwal, programBerbatch, type HasilCocok } from "@/lib/cocokJadwal";
 
 export const dynamic = "force-dynamic";
+// Pencocokan jadwal membaca Availability tiap pengajar bahasa itu — beri ruang lebih dari 10 dtk.
+export const maxDuration = 30;
 
 const SUPABASE_URL = process.env.NEXT_PUBLIC_SUPABASE_URL!;
 const SERVICE_KEY = process.env.SUPABASE_SERVICE_ROLE_KEY!;
@@ -168,6 +171,37 @@ const clean = (v: unknown, max = 300): string | null => {
   const s = typeof v === "string" ? v.trim() : "";
   return s ? s.slice(0, max) : null;
 };
+
+const BATAS_COCOK_MS = 8000;
+
+/** Hasil pencocokan jadwal (null = tidak dicocokkan / gagal). Disimpan ke kolom
+ *  schedule_match (sql/20261017_pendataan_schedule_match.sql di repo dashboard); kalau
+ *  kolomnya belum ada, PATCH-nya gagal diam-diam dan siswa tetap melihat hasilnya. */
+async function cocokkanForm(token: string, row: ModeRow & { language?: string | null }, schedule: string): Promise<HasilCocok | null> {
+  if (programBerbatch(row.program) || !row.language) return null;
+  try {
+    // Durasi per sesi: registrasi (teks) lalu tagihan. Dibaca terpisah supaya nama
+    // kolom yang keliru tidak pernah merusak pembacaan form utama.
+    const dRes = await sb(`student_intake_forms?token=eq.${token}&select=registrations(duration),manual_invoices(duration_min)`);
+    const dRow = dRes.ok ? ((await dRes.json()) as { registrations?: { duration?: unknown } | null; manual_invoices?: { duration_min?: unknown } | null }[])[0] : null;
+    const durasiRaw = dRow?.registrations?.duration || dRow?.manual_invoices?.duration_min || null;
+    const match = await Promise.race([
+      cocokkanJadwal(row.language, schedule, durasiRaw),
+      new Promise<null>((r) => setTimeout(() => r(null), BATAS_COCOK_MS)),
+    ]);
+    if (match) {
+      const simpan = await sb(`student_intake_forms?token=eq.${token}`, {
+        method: "PATCH",
+        body: JSON.stringify({ schedule_match: match }),
+      });
+      if (!simpan.ok) console.error("Pendataan schedule_match belum tersimpan:", await simpan.text());
+    }
+    return match;
+  } catch (e) {
+    console.error("Pendataan cocok jadwal error:", e);
+    return null;
+  }
+}
 
 export async function GET(req: NextRequest) {
   const token = (req.nextUrl.searchParams.get("token") || "").trim();
@@ -347,7 +381,10 @@ export async function POST(req: NextRequest) {
       return NextResponse.json({ error: "Form ini sudah pernah dikirim", code: "already" }, { status: 409 });
     }
 
-    return NextResponse.json({ success: true });
+    // [jadwal-sesudah-bayar-v1] Cocokkan jam pilihan siswa dengan jam kosong pengajar.
+    // Form sudah tersimpan di atas — gagal/lambatnya pencocokan tidak boleh menggagalkannya.
+    const match = await cocokkanForm(token, modeRows[0], schedule);
+    return NextResponse.json({ success: true, match });
   } catch (err) {
     console.error("Pendataan error:", err);
     return NextResponse.json({ error: "Internal server error" }, { status: 500 });
