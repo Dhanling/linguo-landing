@@ -12,7 +12,7 @@ import { useEffect, useMemo, useRef, useState } from "react";
 import {
   Award, BadgeCheck, Lock, Download, Share2, ExternalLink, ShieldCheck,
   Flag, Play, CalendarDays, Info, X, Loader2, Mic, Headphones, BookOpen, PenLine,
-  Sparkles, Star, ChevronRight, GraduationCap,
+  Sparkles, Star, ChevronRight, GraduationCap, BarChart2,
 } from "lucide-react";
 // [sertifikat-banner-foto-v1] foto stok bahasa — sumber sama dgn kartu kelas di Beranda
 import { getLangPhoto } from "@/lib/lang-visuals";
@@ -577,7 +577,7 @@ export default function SertifikatTab({
             {selected ? (
               selected.status === "issued"
                 ? <IssuedDetail ct={selected} studentName={studentName} defaultName={defaultName} onSaveName={onSaveName} />
-                : <ProgressDetail ct={selected} onContinue={onContinue} onSchedule={onSchedule} />
+                : <ProgressDetail ct={selected} studentName={studentName} onContinue={onContinue} onSchedule={onSchedule} />
             ) : (
               <div className="cert-card rounded-2xl bg-white p-12 text-center">
                 <Award className="mx-auto mb-3 h-10 w-10 text-slate-300" strokeWidth={1.6} />
@@ -607,22 +607,12 @@ function fmtCertDate(iso: string | null | undefined, lang: UiLang): string | nul
   return d.toLocaleDateString(lang === "en" ? "en-GB" : "id-ID", { day: "numeric", month: "short", year: "numeric", timeZone: "Asia/Jakarta" }).replace("Sept", "Sep");
 }
 
-function IssuedDetail({ ct, studentName, defaultName, onSaveName }: { ct: Cert; studentName: string; defaultName?: string; onSaveName?: (name: string) => Promise<void> }) {
-  const t = useT(); // [ui-lang-switcher-v1]
-  const [editOpen, setEditOpen] = useState(false); // [sertifikat-edit-nama-v1]
-  const col = colorOf(ct.language);
-  const kind = productKindOf(ct.product);
-  const isKids = kind === "kids";
-  const showCefr = kind !== "kids";
-  const cardRef = useRef<HTMLDivElement>(null);
-  const raporRef = useRef<HTMLDivElement>(null);
-  const [pdfLoading, setPdfLoading] = useState(false);
-  // [sertifikat-rapor-2hal-v1] slide 1 = sertifikat, slide 2 = rapor kelas yang sama;
-  // "Unduh PDF" menjadikannya dua halaman.
-  const [slide, setSlide] = useState<0 | 1>(0);
+// ── [sertifikat-rapor-2hal-v3] Rapor kelas + pembuat PDF bersama ──────────────
+// Rapor terbit registrasi ini (akhir dulu, kalau tidak terbaru). Pratinjau staf
+// membawa barisnya di `ct.reports`; siswa login membaca sendiri lewat RLS.
+function useRaporKelas(ct: Cert): RaporRow | null {
   const [rapor, setRapor] = useState<RaporRow | null>(null);
   useEffect(() => {
-    setSlide(0);
     if (ct.reports !== undefined) { setRapor(pilihRapor(ct.reports)); return; }
     setRapor(null);
     if (!/^[0-9a-f-]{36}$/i.test(ct.id)) return;
@@ -639,6 +629,110 @@ function IssuedDetail({ ct, studentName, defaultName, onSaveName }: { ct: Cert; 
       });
     return () => { batal = true; };
   }, [ct.id, ct.reports]);
+  return rapor;
+}
+
+// Satu kertas (1120×792) = satu halaman A4 landscape. Skala pratinjau dilepas & slide
+// yang sedang tersembunyi (visibility) dimunculkan HANYA di dokumen salinan html2canvas.
+async function buatPdf(pages: { el: HTMLElement; attr: string }[]): Promise<JsPdfDoc> {
+  ensureInter();
+  await loadScript(H2C_URL);
+  await loadScript(JSPDF_URL);
+  // Pastiin font + bendera (data-URI udah di state) siap sebelum capture.
+  try { await (document as Document & { fonts?: { ready: Promise<unknown>; load: (f: string) => Promise<unknown> } }).fonts?.load("800 30px Inter"); } catch { /* noop */ }
+  try { await (document as Document & { fonts?: { ready: Promise<unknown> } }).fonts?.ready; } catch { /* noop */ }
+  await new Promise((res) => setTimeout(res, 60));
+  const w = window as typeof window & { html2canvas?: Html2Canvas; jspdf?: { jsPDF: JsPdfCtor } };
+  const h2c = w.html2canvas;
+  const JsPDF = w.jspdf?.jsPDF;
+  if (!h2c || !JsPDF) throw new Error("lib belum siap");
+  const foto = async (el: HTMLElement, attr: string) => {
+    const images = Array.from(el.querySelectorAll("img"));
+    await Promise.all(images.map(async (img) => {
+      if (!img.complete) await new Promise<void>((resolve, reject) => {
+        img.onload = () => resolve();
+        img.onerror = () => reject(new Error("Gambar sertifikat gagal dimuat"));
+      });
+      if (!img.naturalWidth) throw new Error("Gambar sertifikat belum siap");
+    }));
+    const canvas = await h2c(el, {
+      scale: 2, width: COURSE_CERT_WIDTH, height: COURSE_CERT_HEIGHT,
+      windowWidth: 1440, backgroundColor: "#ffffff", useCORS: true, logging: false,
+      onclone: (doc: Document) => {
+        const paper = doc.querySelector<HTMLElement>(`[${attr}]`);
+        if (paper) {
+          paper.style.transform = "none";
+          const slideEl = paper.closest<HTMLElement>("[data-cert-slide]");
+          if (slideEl) slideEl.style.visibility = "visible";
+          if (paper.parentElement) {
+            paper.parentElement.style.width = `${COURSE_CERT_WIDTH}px`;
+            paper.parentElement.style.height = `${COURSE_CERT_HEIGHT}px`;
+            paper.parentElement.style.overflow = "visible";
+          }
+        }
+      },
+    });
+    return canvas.toDataURL("image/jpeg", 0.95);
+  };
+  const pdf = new JsPDF({ orientation: "landscape", unit: "mm", format: "a4" });
+  const pw = pdf.internal.pageSize.getWidth();
+  const ph = pdf.internal.pageSize.getHeight();
+  for (let i = 0; i < pages.length; i++) {
+    if (i > 0) pdf.addPage("a4", "landscape");
+    pdf.addImage(await foto(pages[i].el, pages[i].attr), "JPEG", 0, 0, pw, ph);
+  }
+  return pdf;
+}
+
+/** Tab Sertifikat | Rapor di kepala panel detail — tampil untuk semua kelas. */
+function SlideTabs({ slide, onChange, note }: { slide: 0 | 1; onChange: (s: 0 | 1) => void; note?: string | null }) {
+  const t = useT();
+  return (
+    <div className="flex flex-wrap items-center gap-1.5">
+      {([t("Sertifikat"), t("Rapor")] as const).map((lbl, i) => (
+        <button
+          key={i}
+          onClick={() => onChange(i as 0 | 1)}
+          className={`inline-flex items-center gap-1.5 rounded-full px-3.5 py-1.5 text-[12px] font-bold transition ${
+            slide === i ? "bg-[#16796E] text-white" : "cert-chip bg-white text-[#6B7280] hover:bg-[#EAEDF0]"
+          }`}
+        >
+          {i === 0 ? <Award className="h-3.5 w-3.5" /> : <BarChart2 className="h-3.5 w-3.5" />}
+          {lbl}
+        </button>
+      ))}
+      {note ? <span className="ml-2 text-[11px] font-medium text-[#6B7280]">{note}</span> : null}
+    </div>
+  );
+}
+
+/** Slide Rapor saat belum ada rapor terbit. */
+function RaporKosong() {
+  const t = useT();
+  return (
+    <div className="cert-card flex flex-col items-center justify-center rounded-2xl bg-white px-6 py-14 text-center">
+      <BarChart2 className="mb-3 h-10 w-10 text-slate-300" strokeWidth={1.6} />
+      <p className="text-[15px] font-extrabold text-[#12172B]">{t("Belum ada rapor yang diterbitkan")}</p>
+      <p className="mt-1 max-w-[380px] text-[13px] text-[#6B7280]">{t("Pengajar menerbitkan rapor tiap 4 sesi dan Rapor Akhir di akhir program")}</p>
+    </div>
+  );
+}
+
+function IssuedDetail({ ct, studentName, defaultName, onSaveName }: { ct: Cert; studentName: string; defaultName?: string; onSaveName?: (name: string) => Promise<void> }) {
+  const t = useT(); // [ui-lang-switcher-v1]
+  const [editOpen, setEditOpen] = useState(false); // [sertifikat-edit-nama-v1]
+  const col = colorOf(ct.language);
+  const kind = productKindOf(ct.product);
+  const isKids = kind === "kids";
+  const showCefr = kind !== "kids";
+  const cardRef = useRef<HTMLDivElement>(null);
+  const raporRef = useRef<HTMLDivElement>(null);
+  const [pdfLoading, setPdfLoading] = useState(false);
+  // [sertifikat-rapor-2hal-v1] slide 1 = sertifikat, slide 2 = rapor kelas yang sama;
+  // "Unduh PDF" menjadikannya dua halaman.
+  const [slide, setSlide] = useState<0 | 1>(0);
+  const rapor = useRaporKelas(ct);
+  useEffect(() => { setSlide(0); }, [ct.id]);
   const [verifyOpen, setVerifyOpen] = useState(false);
   // [sertifikat-qr-verifikasi-v1] TTD elektronik = QR ke halaman verifikasi publik
   // linguo.id/verifikasi/<id registrasi>. Data-URI (bukan gambar remote) supaya ikut
@@ -660,56 +754,11 @@ function IssuedDetail({ ct, studentName, defaultName, onSaveName }: { ct: Cert; 
     if (!cardRef.current || pdfLoading) return;
     setPdfLoading(true);
     try {
-      ensureInter();
-      await loadScript(H2C_URL);
-      await loadScript(JSPDF_URL);
-      // Pastiin font + bendera (data-URI udah di state) siap sebelum capture.
-      try { await (document as Document & { fonts?: { ready: Promise<unknown>; load: (f: string) => Promise<unknown> } }).fonts?.load("800 30px Inter"); } catch { /* noop */ }
-      try { await (document as Document & { fonts?: { ready: Promise<unknown> } }).fonts?.ready; } catch { /* noop */ }
-      await new Promise((res) => setTimeout(res, 60));
-      const w = window as typeof window & { html2canvas?: Html2Canvas; jspdf?: { jsPDF: JsPdfCtor } };
-      const h2c = w.html2canvas;
-      const JsPDF = w.jspdf?.jsPDF;
-      if (!h2c || !JsPDF) throw new Error("lib belum siap");
-      // Lepaskan skala pratinjau hanya di dokumen salinan agar PDF selalu tajam.
-      // Slide yang sedang tersembunyi (visibility) dimunculkan di salinan saja.
-      const foto = async (el: HTMLElement, attr: string) => {
-        const images = Array.from(el.querySelectorAll("img"));
-        await Promise.all(images.map(async (img) => {
-          if (!img.complete) await new Promise<void>((resolve, reject) => {
-            img.onload = () => resolve();
-            img.onerror = () => reject(new Error("Gambar sertifikat gagal dimuat"));
-          });
-          if (!img.naturalWidth) throw new Error("Gambar sertifikat belum siap");
-        }));
-        const canvas = await h2c(el, {
-          scale: 2, width: COURSE_CERT_WIDTH, height: COURSE_CERT_HEIGHT,
-          windowWidth: 1440, backgroundColor: "#ffffff", useCORS: true, logging: false,
-          onclone: (doc: Document) => {
-            const paper = doc.querySelector<HTMLElement>(`[${attr}]`);
-            if (paper) {
-              paper.style.transform = "none";
-              const slideEl = paper.closest<HTMLElement>("[data-cert-slide]");
-              if (slideEl) slideEl.style.visibility = "visible";
-              if (paper.parentElement) {
-                paper.parentElement.style.width = `${COURSE_CERT_WIDTH}px`;
-                paper.parentElement.style.height = `${COURSE_CERT_HEIGHT}px`;
-                paper.parentElement.style.overflow = "visible";
-              }
-            }
-          },
-        });
-        return canvas.toDataURL("image/jpeg", 0.95);
-      };
-      const pdf = new JsPDF({ orientation: "landscape", unit: "mm", format: "a4" });
-      const pw = pdf.internal.pageSize.getWidth();
-      const ph = pdf.internal.pageSize.getHeight();
-      pdf.addImage(await foto(cardRef.current, "data-course-certificate"), "JPEG", 0, 0, pw, ph);
       const denganRapor = !!(rapor && raporRef.current);
-      if (denganRapor) {
-        pdf.addPage("a4", "landscape");
-        pdf.addImage(await foto(raporRef.current!, "data-rapor-paper"), "JPEG", 0, 0, pw, ph);
-      }
+      const pdf = await buatPdf([
+        { el: cardRef.current, attr: "data-course-certificate" },
+        ...(denganRapor ? [{ el: raporRef.current!, attr: "data-rapor-paper" }] : []),
+      ]);
       pdf.save(`${denganRapor ? "Sertifikat-Rapor" : "Sertifikat"}-Linguo-${ct.language}-${ct.level}${ct.idNo ? "-" + ct.idNo : ""}.pdf`);
     } catch (e) {
       console.error("[Sertifikat] gagal membuat PDF:", e);
@@ -758,23 +807,7 @@ function IssuedDetail({ ct, studentName, defaultName, onSaveName }: { ct: Cert; 
       {/* [sertifikat-rapor-2hal-v1] Slide 1 sertifikat · slide 2 rapor. Keduanya ditumpuk
           di sel grid yang sama dan yang tak aktif cuma `visibility:hidden` — tetap ada di
           DOM berukuran asli supaya html2canvas bisa memotret dua-duanya untuk PDF. */}
-      {rapor && (
-        <div className="flex items-center gap-1.5">
-          {([t("Sertifikat"), t("Rapor")] as const).map((lbl, i) => (
-            <button
-              key={i}
-              onClick={() => setSlide(i as 0 | 1)}
-              className={`inline-flex items-center gap-1.5 rounded-full px-3.5 py-1.5 text-[12px] font-bold transition ${
-                slide === i ? "bg-[#16796E] text-white" : "cert-chip bg-white text-[#6B7280] hover:bg-[#EAEDF0]"
-              }`}
-            >
-              <span className={`rounded-full px-1.5 text-[11px] ${slide === i ? "bg-white/25" : "cert-chip-num bg-[#F5F6F8]"}`}>{i + 1}</span>
-              {lbl}
-            </button>
-          ))}
-          <span className="ml-2 text-[11px] font-medium text-[#6B7280]">{t("PDF berisi 2 halaman")}</span>
-        </div>
-      )}
+      <SlideTabs slide={slide} onChange={setSlide} note={rapor ? t("PDF berisi 2 halaman: sertifikat + rapor") : null} />
       {/* Kolom minmax(0,1fr) + minWidth 0 wajib: tanpa itu kolom grid melebar ke lebar asli
           kertas (1120px) sehingga skala pratinjau tak pernah turun dan sertifikat meluber. */}
       <div className="mx-auto grid w-full max-w-[880px] grid-cols-[minmax(0,1fr)]">
@@ -819,6 +852,9 @@ function IssuedDetail({ ct, studentName, defaultName, onSaveName }: { ct: Cert; 
             signer={{ name: TTD_RINI.nama, role: TTD_RINI.jabatan }}
           />
         </div>
+      )}
+      {!rapor && slide === 1 && (
+        <div style={{ gridArea: "1 / 1", minWidth: 0 }}><RaporKosong /></div>
       )}
       </div>
       {showsSkills(kind) && slide === 0 && <SkillBlock ct={ct} accent={col.accent} />}
@@ -937,8 +973,29 @@ function EditNamaModal({ current, defaultName, accent, onSave, onClose }: {
   );
 }
 
-function ProgressDetail({ ct, onContinue, onSchedule }: { ct: Cert; onContinue?: () => void; onSchedule?: () => void }) {
+function ProgressDetail({ ct, studentName, onContinue, onSchedule }: { ct: Cert; studentName: string; onContinue?: () => void; onSchedule?: () => void }) {
   const t = useT(); // [ui-lang-switcher-v1]
+  // [sertifikat-rapor-2hal-v3] kelas yang belum selesai juga punya tab Rapor — isinya
+  // rapor terbit terbaru (tiap 4 sesi), bisa diunduh sendiri sebagai PDF 1 halaman.
+  const [slide, setSlide] = useState<0 | 1>(0);
+  useEffect(() => { setSlide(0); }, [ct.id]);
+  const rapor = useRaporKelas(ct);
+  const raporRef = useRef<HTMLDivElement>(null);
+  const ttdSrc = useTtdDataUrl();
+  const [pdfLoading, setPdfLoading] = useState(false);
+  const unduhRapor = async () => {
+    if (!raporRef.current || pdfLoading) return;
+    setPdfLoading(true);
+    try {
+      const pdf = await buatPdf([{ el: raporRef.current, attr: "data-rapor-paper" }]);
+      pdf.save(`Rapor-Linguo-${ct.language}-${ct.level}.pdf`);
+    } catch (e) {
+      console.error("[Sertifikat] gagal membuat PDF rapor:", e);
+      alert(t("Gagal membuat PDF. Coba lagi sebentar ya."));
+    } finally {
+      setPdfLoading(false);
+    }
+  };
   const col = colorOf(ct.language);
   const isDark = useIsDark();
   const photo = getLangPhoto(ct.language); // [sertifikat-banner-foto-v1]
@@ -946,7 +1003,44 @@ function ProgressDetail({ ct, onContinue, onSchedule }: { ct: Cert; onContinue?:
   const used = ct.used ?? 0;
   const pct = ct.pct ?? (total > 0 ? Math.round((used / total) * 100) : 0);
   const remain = Math.max(0, total - used);
+  const kind = productKindOf(ct.product);
+  if (slide === 1) {
+    return (
+      <>
+        <SlideTabs slide={slide} onChange={setSlide} />
+        {rapor ? (
+          <>
+            <div className="mx-auto w-full max-w-[880px]">
+              <RaporPaper
+                ref={raporRef}
+                report={rapor}
+                name={studentName}
+                language={ct.language}
+                level={ct.level}
+                programme={PROD_SHORT[kind] === "Reguler" ? "Group" : PROD_SHORT[kind]}
+                teacher={ct.teacher === "Pengajar Linguo" ? "Linguo Instructor" : ct.teacher}
+                signature={ttdSrc || TTD_RINI.src}
+                signer={{ name: TTD_RINI.nama, role: TTD_RINI.jabatan }}
+              />
+            </div>
+            <div>
+              <button
+                onClick={unduhRapor}
+                disabled={pdfLoading}
+                className="inline-flex h-12 items-center gap-2 rounded-2xl bg-[#16796E] px-6 text-[14px] font-extrabold text-white transition hover:bg-[#0F5A52] disabled:cursor-not-allowed disabled:opacity-60"
+              >
+                {pdfLoading ? <Loader2 className="h-[18px] w-[18px] animate-spin" /> : <Download className="h-[18px] w-[18px]" />}
+                {pdfLoading ? t("Membuat PDF…") : t("Unduh Rapor PDF")}
+              </button>
+            </div>
+          </>
+        ) : <RaporKosong />}
+      </>
+    );
+  }
   return (
+    <>
+    <SlideTabs slide={slide} onChange={setSlide} />
     <div className="cert-card overflow-hidden rounded-[2rem] bg-white shadow-[0_24px_50px_-34px_rgba(18,23,43,.5)]">
       {/* [sertifikat-banner-foto-v1] Banner pakai FOTO bahasa, persis kartu kelas di
           Beranda (sumber: getLangPhoto). Dulu cuma blok warna aksen — di kanvas hitam
@@ -997,6 +1091,7 @@ function ProgressDetail({ ct, onContinue, onSchedule }: { ct: Cert; onContinue?:
         </div>
       </div>
     </div>
+    </>
   );
 }
 

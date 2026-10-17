@@ -130,7 +130,7 @@ const RaporPaper = forwardRef<HTMLDivElement, Props>(function RaporPaper(p, ref)
         </div>
 
         {/* isi: kiri nilai, kanan komentar */}
-        <div style={{ position: "absolute", top: 232, left: 64, right: 64, bottom: 150, display: "grid", gridTemplateColumns: "1fr 1fr", gap: 36 }}>
+        <div style={{ position: "absolute", top: 232, left: 64, right: 64, bottom: 170, display: "grid", gridTemplateColumns: "1fr 1fr", gap: 36 }}>
           <div style={{ minWidth: 0 }}>
             {rk && (
               <div style={{ display: "flex", alignItems: "center", gap: 20, padding: "14px 20px", border: "1px solid #CDEEE8", borderRadius: 12, marginBottom: 18 }}>
@@ -209,7 +209,7 @@ const RaporPaper = forwardRef<HTMLDivElement, Props>(function RaporPaper(p, ref)
         {/* kaki: tanda tangan + nomor */}
         <div style={{ position: "absolute", left: 64, right: 64, bottom: 44, display: "flex", alignItems: "flex-end", justifyContent: "space-between" }}>
           <div>
-            <img src={p.signature} alt={`${p.signer.name} — ${p.signer.role} signature`} style={{ display: "block", height: 58, width: 130, objectFit: "contain", objectPosition: "left center" }} />
+            <img src={p.signature} alt={`${p.signer.name} — ${p.signer.role} signature`} style={{ display: "block", height: 76, width: 140, objectFit: "contain", objectPosition: "left bottom" }} />
             <p style={{ margin: 0, fontFamily: "Georgia, serif", fontSize: 17, fontWeight: 700 }}>{p.signer.name}</p>
             <p style={{ margin: "4px 0 0", paddingTop: 6, borderTop: "1px solid #B6C2D0", fontSize: 10.5, letterSpacing: 2, color: MUTED }}>{p.signer.role.toUpperCase()}</p>
           </div>

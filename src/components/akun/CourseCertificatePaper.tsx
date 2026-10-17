@@ -62,7 +62,7 @@ const CourseCertificatePaper = forwardRef<HTMLDivElement, Props>(function Course
         </div>
         <div style={{ position: 'absolute', left: 85, right: 85, bottom: 88, height: 145, display: 'grid', gridTemplateColumns: '1fr 220px 1fr', alignItems: 'center', gap: 30 }}>
           <div style={{ textAlign: 'left' }}>
-            <img src={p.signature} alt={`${p.signer.name} — ${p.signer.role} signature`} style={{ display: 'block', height: 82, width: 170, objectFit: 'contain', objectPosition: 'left center', marginBottom: 4 }} />
+            <img src={p.signature} alt={`${p.signer.name} — ${p.signer.role} signature`} style={{ display: 'block', height: 108, width: 180, objectFit: 'contain', objectPosition: 'left bottom', margin: '-26px 0 4px' }} />
             <p style={{ margin: 0, fontFamily: 'Georgia, serif', fontSize: 23, fontWeight: 700 }}>{p.signer.name}</p>
             <p style={{ margin: '6px 0 0', paddingTop: 9, borderTop: '1px solid #b6c2d0', fontSize: 12, letterSpacing: 2.5, color: '#606b80' }}>{p.signer.role.toUpperCase()}</p>
           </div>

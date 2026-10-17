@@ -3001,7 +3001,7 @@ export default function AkunPage() {
   const [activeTab, setActiveTab] = useState<"beranda"|"jadwal"|"materi"|"akun"|"sertifikat"|"rapor"|"pustaka"|"simulasi"|"grup"|"catatan"|"menulis">(() => {
     if (typeof window === "undefined") return "beranda";
     const m = new URLSearchParams(window.location.search).get("menu");
-    return m === "jadwal" || m === "materi" || m === "akun" || m === "sertifikat" || m === "rapor" || m === "pustaka" || m === "simulasi" || m === "grup" || m === "catatan" || m === "menulis" ? m : "beranda";
+    return m === "jadwal" || m === "materi" || m === "akun" || m === "sertifikat" || m === "pustaka" || m === "simulasi" || m === "grup" || m === "catatan" || m === "menulis" ? m : m === "rapor" ? "sertifikat" : "beranda"; // [sertifikat-rapor-2hal-v3] menu Rapor dilebur ke Sertifikat
   }); // [linguo-patch:akun-pustaka-tab-v1] [simulasi-inshell-v1] [student-workspace-v1]
   /* [lanjutkan-ebook-buka-langsung-v1] Modul yang readernya harus dibuka begitu
      tab Perpustakaan tampil — dititipkan kartu "Lanjutkan Belajar" di beranda. */
@@ -3119,7 +3119,7 @@ export default function AkunPage() {
         if (saved === "beranda" || saved === "jadwal" || saved === "materi" || saved === "akun" || saved === "sertifikat" || saved === "rapor" || saved === "pustaka" || saved === "simulasi" || saved === "grup" || saved === "catatan" || saved === "menulis") resolved = saved;
       } catch {}
     }
-    if (resolved) setActiveTab(resolved);
+    if (resolved) setActiveTab(resolved === "rapor" ? "sertifikat" : resolved); // [sertifikat-rapor-2hal-v3]
     // bersihin deep-link param sekali pakai, biar refresh berikutnya andelin tab tersimpan (bukan param nyangkut)
     if (menu || sesi || view || ebookId || regParam || ktab) {
       try {
@@ -4701,7 +4701,6 @@ export default function AkunPage() {
                     { key: "jadwal", label: "Jadwal" },
                     { key: "simulasi", label: "Simulasi Tes" },
                     { key: "sertifikat", label: "Sertifikat" },
-                    { key: "rapor", label: "Rapor" },
                     { key: "akun", label: "Pengaturan" },
                   ] as const).filter((m) => m.label.toLowerCase().includes(hq)).forEach((m) => {
                     homeHits.push({

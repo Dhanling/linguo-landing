@@ -7,7 +7,7 @@ import Link from "next/link";
 import { supabase } from "@/lib/supabase-client";
 import NotificationBell from "@/components/NotificationBell";
 import MobileBottomNav from "@/components/akun/MobileBottomNav";
-import { LayoutGrid, BookOpen, Library, CalendarDays, Star, FileBarChart, Settings, LogOut, Moon, Sun, ClipboardCheck, Clapperboard, Layers, MessagesSquare, Menu, X, Bug, NotebookPen, PenLine, PanelLeftClose, PanelLeftOpen, ChevronsLeft, type LucideIcon } from "lucide-react";
+import { LayoutGrid, BookOpen, Library, CalendarDays, Star, Settings, LogOut, Moon, Sun, ClipboardCheck, Clapperboard, Layers, MessagesSquare, Menu, X, Bug, NotebookPen, PenLine, PanelLeftClose, PanelLeftOpen, ChevronsLeft, type LucideIcon } from "lucide-react";
 // [bug-report-pengajar-siswa-v1] siswa lapor bug dari LMS → masuk Bug Tracker admin
 import BugReportDialog from "@/components/akun/BugReportDialog";
 import PosterPopupAkun from "@/components/akun/PosterPopupAkun"; // [poster-popup-akun-v1]
@@ -49,7 +49,8 @@ const NAV_GROUPS: { title: string; items: NavItem[] }[] = [
       { key: "grup", label: "Grup Kelas", icon: MessagesSquare },
       { key: "pustaka", label: "Perpustakaan", icon: Library },
       { key: "sertifikat", label: "Sertifikat", icon: Star },
-      { key: "rapor", label: "Rapor", icon: FileBarChart }, // [rapor-tab-siswa-v1]
+      // [sertifikat-rapor-2hal-v3] menu Rapor dilebur ke Sertifikat (tab Rapor di panel detail);
+      // riwayat rapor per kelas tetap ada di detail kelas → tab Rapor.
     ],
   },
   {
