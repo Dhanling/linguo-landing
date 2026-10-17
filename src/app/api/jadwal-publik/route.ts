@@ -1,6 +1,6 @@
 // [jadwal-publik-v1] GET /api/jadwal-publik?bahasa=korea&durasi=60
-// → { bahasa, durasi, slot: [epoch ms], adaPengajar, diperbarui }
-// Publik (tanpa login), tanpa identitas pengajar. Di-cache CDN 5 menit: Availability
+// → { bahasa, durasi, slot: [epoch ms], guru: [[no. urut pengajar]], terisi, adaPengajar, diperbarui }
+// Publik (tanpa login), tanpa identitas pengajar (nomor urut diacak per respons). Di-cache CDN 5 menit: Availability
 // jarang berubah, dan halaman ini bisa ramai kalau dipasang di iklan.
 
 import { NextRequest, NextResponse } from "next/server";

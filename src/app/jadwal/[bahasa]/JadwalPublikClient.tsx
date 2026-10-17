@@ -6,6 +6,10 @@
 // [jadwal-blok-v1] Tampilan grid mingguan ala italki: kolom = hari, baris = jam per 30
 // menit. Hijau = masih kosong (bisa dipilih), merah = dibuka pengajar tapi sudah terisi
 // sesi/batch, abu = tidak dibuka. Semua dihitung dari Availability dashboard pengajar.
+// [jadwal-satu-guru-v1] Private = satu pengajar per siswa. Sesudah klik pertama, blok hijau
+// hanya jam yang kosong di pengajar yang juga kosong di SEMUA pilihan sebelumnya; sisanya
+// abu bergaris. Kalau ada hari yang jadi buntu, "Coba jam lain" menawarkan satu jam yang
+// dipegang satu pengajar di semua hari itu.
 
 import { useEffect, useMemo, useState } from "react";
 import Link from "next/link";
@@ -19,9 +23,16 @@ const HARI = ["Senin", "Selasa", "Rabu", "Kamis", "Jumat", "Sabtu", "Minggu"];
 const HARI_PENDEK = ["Sen", "Sel", "Rab", "Kam", "Jum", "Sab", "Min"];
 const BULAN = ["Jan", "Feb", "Mar", "Apr", "Mei", "Jun", "Jul", "Agu", "Sep", "Okt", "Nov", "Des"];
 
-type Hasil = { slot: number[]; terisi?: number[]; adaPengajar: boolean; durasi: number };
+type Hasil = { slot: number[]; guru?: number[][]; terisi?: number[]; adaPengajar: boolean; durasi: number };
 type Sel = "kosong" | "terisi" | null;
 type Pilihan = { dow: number; menit: number; pertama: number };
+
+const irisan = (a: Set<number>, b: Set<number>) => new Set([...a].filter((x) => b.has(x)));
+const rentangHari = (dows: number[]) => {
+  const u = [...new Set(dows)].sort((a, b) => a - b);
+  const runtut = u.length > 2 && u.every((d, i) => i === 0 || d === u[i - 1] + 1);
+  return runtut ? `${HARI_PENDEK[u[0]]}–${HARI_PENDEK[u[u.length - 1]]}` : u.map((d) => HARI_PENDEK[d]).join(", ");
+};
 
 const titik = (menit: number) => hhmm(menit % (24 * 60)).replace(":", ".");
 const tglPendek = (ms: number) => { const w = wibOf(ms); return `${w.d} ${BULAN[w.m]}`; };
@@ -42,6 +53,7 @@ export default function JadwalPublikClient({ slug, langId }: { slug: string; lan
   const [gagal, setGagal] = useState(false);
   const [pekan, setPekan] = useState(0);
   const [pilih, setPilih] = useState<Map<string, Pilihan>>(new Map());
+  const [lihatSaran, setLihatSaran] = useState(false);
 
   useEffect(() => {
     let batal = false;
@@ -86,6 +98,80 @@ export default function JadwalPublikClient({ slug, langId }: { slug: string; lan
     }
     return { hari, barisMenit };
   }, [hasil]);
+  // Slot → pengajar yang kosong, dan per pengajar: "dow-menit" → kemunculan pertama.
+  const { guruDi, jamGuru } = useMemo(() => {
+    const guruDi = new Map<number, Set<number>>();
+    const jamGuru = new Map<number, Map<string, number>>();
+    (hasil?.slot ?? []).forEach((t, i) => {
+      const g = hasil?.guru?.[i] ?? [];
+      guruDi.set(t, new Set(g));
+      const w = wibOf(t);
+      const k = `${w.dow}-${w.hh * 60 + w.mi}`;
+      for (const no of g) {
+        if (!jamGuru.has(no)) jamGuru.set(no, new Map());
+        const m = jamGuru.get(no)!;
+        if (!m.has(k) || m.get(k)! > t) m.set(k, t);
+      }
+    });
+    return { guruDi, jamGuru };
+  }, [hasil]);
+
+  const daftarPilih = [...pilih.values()];
+  // Pengajar yang bisa memegang semua pilihan; null = belum memilih (semua boleh).
+  const calon = useMemo(() => {
+    let c: Set<number> | null = null;
+    for (const p of pilih.values()) {
+      const g = guruDi.get(p.pertama) ?? new Set<number>();
+      c = c ? irisan(c, g) : new Set(g);
+    }
+    return c;
+  }, [pilih, guruDi]);
+  const cocok = (t: number) => !calon || [...(guruDi.get(t) ?? [])].some((g) => calon.has(g));
+
+  // Hari yang sebelumnya punya jam hijau tapi sekarang buntu karena saringan.
+  const hariBuntu = useMemo(() => {
+    if (!calon) return [];
+    const dipilih = new Set(daftarPilih.map((p) => p.dow));
+    const ada = new Set<number>(), bisa = new Set<number>();
+    for (const t of hasil?.slot ?? []) {
+      const d = wibOf(t).dow;
+      if (dipilih.has(d)) continue;
+      ada.add(d);
+      if (cocok(t)) bisa.add(d);
+    }
+    return [...ada].filter((d) => !bisa.has(d)).sort((a, b) => a - b);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [calon, hasil, pilih]);
+
+  // Jam (menit-hari) yang dipegang SATU pengajar di semua hari pilihan + hari buntu.
+  const saran = useMemo(() => {
+    if (!lihatSaran || !daftarPilih.length) return [];
+    const dows = [...new Set([...daftarPilih.map((p) => p.dow), ...hariBuntu])].sort((a, b) => a - b);
+    const hasilSaran = new Map<number, number[]>(); // menit → [kemunculan pertama per hari]
+    for (const jam of jamGuru.values()) {
+      const menitSet = new Set([...jam.keys()].map((k) => Number(k.split("-")[1])));
+      for (const menit of menitSet) {
+        if (hasilSaran.has(menit)) continue;
+        const ts = dows.map((d) => jam.get(`${d}-${menit}`));
+        if (ts.every((t) => t !== undefined)) hasilSaran.set(menit, ts as number[]);
+      }
+    }
+    const pusat = daftarPilih[0].menit;
+    return [...hasilSaran.entries()]
+      .sort(([a], [b]) => Math.abs(a - pusat) - Math.abs(b - pusat))
+      .slice(0, 3)
+      .map(([menit, ts]) => ({ menit, dows, ts }));
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [lihatSaran, pilih, hariBuntu, jamGuru]);
+
+  useEffect(() => { setLihatSaran(false); }, [pilih]);
+
+  const pakaiSaran = (dows: number[], menit: number, ts: number[]) => {
+    const baru = new Map<string, Pilihan>();
+    dows.slice(0, MAKS_PILIH).forEach((dow, i) => baru.set(`${dow}-${menit}`, { dow, menit, pertama: ts[i] }));
+    setPilih(baru);
+  };
+
   const tampil = hari.slice(pekan * 7, pekan * 7 + 7);
   const adaSlot = (hasil?.slot.length ?? 0) > 0;
   const adaGrid = barisMenit.length > 0;
@@ -102,7 +188,6 @@ export default function JadwalPublikClient({ slug, langId }: { slug: string; lan
     });
   };
 
-  const daftarPilih = [...pilih.values()];
   const preferensi = teksPreferensi(daftarPilih, durasi);
   const hrefDaftar = `/daftar/${slug}/private?durasi=${durasi}` + (preferensi ? `&jadwal=${encodeURIComponent(preferensi)}` : "");
   const waText = `Halo Linguo, saya mau Kelas Private Bahasa ${langId}. Jam yang saya mau: `;
@@ -187,9 +272,12 @@ export default function JadwalPublikClient({ slug, langId }: { slug: string; lan
             <span className="flex items-center gap-1.5"><i className="h-3 w-3 rounded-sm border border-rose-200 bg-rose-100" /> Sudah terisi</span>
             <span className="flex items-center gap-1.5"><i className="h-3 w-3 rounded-sm bg-slate-100" /> Tidak tersedia</span>
             <span className="flex items-center gap-1.5"><i className="h-3 w-3 rounded-sm bg-[#1A9E9E]" /> Pilihanmu</span>
+            {calon && (
+              <span className="flex items-center gap-1.5"><i className="h-3 w-3 rounded-sm border border-slate-200 bg-[repeating-linear-gradient(45deg,#f1f5f9_0_3px,#e2e8f0_3px_6px)]" /> Beda pengajar</span>
+            )}
           </div>
           <p className="mt-2 text-xs text-slate-500">
-            Klik blok hijau untuk memilih jam mulai (sampai {MAKS_PILIH}). Jam yang dipilih jadi jadwal mingguanmu, mis. tiap Selasa 19.00. Semua jam dalam WIB.
+            Klik blok hijau untuk memilih jam mulai (sampai {MAKS_PILIH}). Jam yang dipilih jadi jadwal mingguanmu, mis. tiap Selasa 19.00, bersama satu pengajar tetap. Sesudah memilih, blok yang tidak bisa dipegang pengajar yang sama jadi bergaris. Semua jam dalam WIB.
           </p>
 
           <div className="mt-3 max-h-[70vh] overflow-auto rounded-2xl border border-slate-100 bg-white shadow-sm">
@@ -202,12 +290,43 @@ export default function JadwalPublikClient({ slug, langId }: { slug: string; lan
                 </div>
               ))}
               {barisMenit.map((menit) => (
-                <Baris key={menit} menit={menit} tampil={tampil} pilih={pilih} onToggle={toggle} />
+                <Baris key={menit} menit={menit} tampil={tampil} pilih={pilih} cocok={cocok} onToggle={toggle} />
               ))}
             </div>
           </div>
           {!adaSlot && (
             <p className="mt-2 text-xs text-rose-500">Semua jam yang dibuka pengajar untuk {durasi} menit sedang terisi.</p>
+          )}
+          {hariBuntu.length > 0 && (
+            <div className="mt-3 rounded-2xl border border-amber-200 bg-amber-50 p-3 text-sm text-amber-900">
+              <p>
+                <b>{hariBuntu.map((d) => HARI[d]).join(", ")}</b> belum ada jam yang bisa dipegang pengajar yang sama dengan pilihanmu.
+              </p>
+              <div className="mt-2 flex flex-wrap gap-2">
+                <button type="button" onClick={() => setPilih(new Map())} className="rounded-lg border border-amber-300 bg-white px-3 py-1.5 text-xs font-bold text-amber-900 hover:bg-amber-100">
+                  Mulai ulang pilihan
+                </button>
+                <button type="button" onClick={() => setLihatSaran(true)} className="rounded-lg bg-amber-500 px-3 py-1.5 text-xs font-bold text-white hover:brightness-95">
+                  Coba jam lain
+                </button>
+              </div>
+              {lihatSaran && (
+                saran.length ? (
+                  <div className="mt-2 flex flex-wrap gap-2">
+                    {saran.map((s) => (
+                      <button key={s.menit} type="button" onClick={() => pakaiSaran(s.dows, s.menit, s.ts)} className="rounded-lg border border-emerald-300 bg-emerald-100 px-3 py-1.5 text-xs font-bold text-emerald-800 hover:bg-emerald-200">
+                        {rentangHari(s.dows)} {titik(s.menit)} → Pakai jam ini
+                      </button>
+                    ))}
+                  </div>
+                ) : (
+                  <p className="mt-2 text-xs">
+                    Belum ada satu pengajar yang kosong di jam yang sama untuk semua hari itu.{" "}
+                    <a href={`https://wa.me/${WA_NUMBER}?text=${encodeURIComponent(waText)}`} target="_blank" rel="noopener" className="font-bold underline">Chat admin</a> untuk dicarikan.
+                  </p>
+                )
+              )}
+            </div>
           )}
         </>
       )}
@@ -238,10 +357,11 @@ export default function JadwalPublikClient({ slug, langId }: { slug: string; lan
   );
 }
 
-function Baris({ menit, tampil, pilih, onToggle }: {
+function Baris({ menit, tampil, pilih, cocok, onToggle }: {
   menit: number;
   tampil: { awal: number; sel: Map<number, { t: number; s: Sel }> }[];
   pilih: Map<string, Pilihan>;
+  cocok: (t: number) => boolean;
   onToggle: (t: number) => void;
 }) {
   const jamBulat = menit % 60 === 0;
@@ -258,6 +378,15 @@ function Baris({ menit, tampil, pilih, onToggle }: {
         }
         const w = wibOf(c.t);
         const aktif = pilih.has(`${w.dow}-${menit}`);
+        if (!aktif && !cocok(c.t)) {
+          return (
+            <div
+              key={awal}
+              title="Tidak bisa digabung dengan jadwal pilihanmu (beda pengajar)"
+              className="h-7 rounded border border-slate-200 bg-[repeating-linear-gradient(45deg,#f1f5f9_0_3px,#e2e8f0_3px_6px)]"
+            />
+          );
+        }
         const penuh = !aktif && pilih.size >= MAKS_PILIH;
         return (
           <button
