@@ -39,6 +39,13 @@ type Pola = "tetap" | "fleksibel";
 type Sel = { s: "kosong" | "terisi"; guru: Set<number> };
 type Pilihan = { dow: number; menit: number };
 const kunci = (dow: number, menit: number) => `${dow}-${menit}`;
+/** [jadwal-blok-durasi-v1] Kunci sel 30 menit yang tertutup satu sesi (jam mulai + ekornya),
+ *  supaya pilihan 90 menit tampil 3 baris, bukan cuma sel jam mulai. */
+const rentangSel = (dow: number, menit: number, durasi: number) => {
+  const out: string[] = [];
+  for (let m = menit; m < menit + durasi; m += 30) out.push(kunci(dow, m));
+  return out;
+};
 
 const irisan = (a: Set<number>, b: Set<number>) => new Set([...a].filter((x) => b.has(x)));
 const rentangHari = (dows: number[]) => {
@@ -195,6 +202,18 @@ export default function JadwalPublikClient({ slug, langId }: { slug: string; lan
   const adaSlot = (hasil?.slot.length ?? 0) > 0;
   const adaGrid = barisMenit.length > 0;
 
+  // Sel ekor (bukan jam mulai) dari tiap pilihan → kunci jam mulainya; klik ekor = batal pilihan itu.
+  const ekor = useMemo(() => {
+    const e = new Map<string, Pilihan>();
+    for (const p of pilih.values()) rentangSel(p.dow, p.menit, durasi).slice(1).forEach((k) => e.set(k, p));
+    return e;
+  }, [pilih, durasi]);
+  const [sorot, setSorot] = useState<Pilihan | null>(null);
+  const sorotSel = useMemo(() => new Set(sorot ? rentangSel(sorot.dow, sorot.menit, durasi).slice(1) : []), [sorot, durasi]);
+  // Jam mulai yang sesinya menabrak pilihan lain di hari yang sama.
+  const bentrok = (dow: number, menit: number) =>
+    rentangSel(dow, menit, durasi).some((k, i) => ekor.has(k) || (i > 0 && pilih.has(k)));
+
   const toggle = (dow: number, menit: number) => {
     const key = kunci(dow, menit);
     setPilih((lama) => {
@@ -331,7 +350,7 @@ export default function JadwalPublikClient({ slug, langId }: { slug: string; lan
                 </div>
               ))}
               {barisMenit.map((menit, i) => (
-                <Baris key={menit} menit={menit} durasi={durasi} awalBaris={i === 0} pola7={pola7} pilih={pilih} cocok={cocok} onToggle={toggle} />
+                <Baris key={menit} menit={menit} durasi={durasi} awalBaris={i === 0} pola7={pola7} pilih={pilih} ekor={ekor} sorotSel={sorotSel} bentrok={bentrok} onSorot={setSorot} cocok={cocok} onToggle={toggle} />
               ))}
             </div>
           </div>
@@ -406,12 +425,16 @@ export default function JadwalPublikClient({ slug, langId }: { slug: string; lan
   );
 }
 
-function Baris({ menit, durasi, awalBaris, pola7, pilih, cocok, onToggle }: {
+function Baris({ menit, durasi, awalBaris, pola7, pilih, ekor, sorotSel, bentrok, onSorot, cocok, onToggle }: {
   menit: number;
   durasi: number;
   awalBaris: boolean;
   pola7: Map<string, Sel>;
   pilih: Map<string, Pilihan>;
+  ekor: Map<string, Pilihan>;
+  sorotSel: Set<string>;
+  bentrok: (dow: number, menit: number) => boolean;
+  onSorot: (p: Pilihan | null) => void;
   cocok: (k: string) => boolean;
   onToggle: (dow: number, menit: number) => void;
 }) {
@@ -437,32 +460,55 @@ function Baris({ menit, durasi, awalBaris, pola7, pilih, cocok, onToggle }: {
             <span className="block text-[10px] font-medium text-slate-300">{ket}</span>
           </span>
         );
-        if (!c) return <div key={dow} className={`h-7 bg-white ${tepi}`} />;
+        const induk = ekor.get(k);
+        if (induk) {
+          // Bagian bawah blok pilihan: tanpa garis atas supaya menyatu dengan sel jam mulai.
+          const lb = `Tiap ${namaHari} · ${titik(induk.menit)}–${titik(induk.menit + durasi)} (${durasi} menit)`;
+          return (
+            <button
+              key={dow}
+              type="button"
+              onClick={() => onToggle(induk.dow, induk.menit)}
+              aria-label={lb}
+              className={`group relative h-7 border-r border-b border-[#1A9E9E] bg-[#1A9E9E] ${dow === 0 ? "border-l" : ""}`}
+            >
+              <span className={`pointer-events-none absolute z-20 whitespace-nowrap rounded-lg bg-slate-900 px-2.5 py-1.5 text-[11px] font-semibold text-white opacity-0 shadow-lg transition-opacity group-hover:opacity-100 bottom-full mb-1.5 ${dow >= 5 ? "right-0" : dow <= 1 ? "left-0" : "left-1/2 -translate-x-1/2"}`}>
+                {lb}
+                <span className="block text-[10px] font-medium text-slate-300">Pilihanmu · klik untuk batal</span>
+              </span>
+            </button>
+          );
+        }
+        const disorot = sorotSel.has(k);
+        if (!c) return <div key={dow} className={`h-7 ${disorot ? "bg-[#1A9E9E]/50" : "bg-white"} ${tepi}`} />;
         if (c.s === "terisi") {
-          return <div key={dow} className={`group relative h-7 bg-rose-200 ${tepi}`}>{tip("Sudah terisi")}</div>;
+          return <div key={dow} className={`group relative h-7 ${disorot ? "bg-[#1A9E9E]/50" : "bg-rose-200"} ${tepi}`}>{tip("Sudah terisi")}</div>;
         }
         const aktif = pilih.has(k);
         if (!aktif && !cocok(k)) {
           return (
-            <div key={dow} className={`group relative h-7 bg-[repeating-linear-gradient(45deg,#f1f5f9_0_3px,#e2e8f0_3px_6px)] ${tepi}`}>
+            <div key={dow} className={`group relative h-7 ${disorot ? "bg-[#1A9E9E]/50" : "bg-[repeating-linear-gradient(45deg,#f1f5f9_0_3px,#e2e8f0_3px_6px)]"} ${tepi}`}>
               {tip("Beda pengajar dengan pilihanmu")}
             </div>
           );
         }
         const penuh = !aktif && pilih.size >= MAKS_PILIH;
+        const tabrak = !aktif && !penuh && bentrok(dow, menit);
         return (
           <button
             key={dow}
             type="button"
-            disabled={penuh}
+            disabled={penuh || tabrak}
             onClick={() => onToggle(dow, menit)}
+            onMouseEnter={() => { if (!aktif && !penuh && !tabrak) onSorot({ dow, menit }); }}
+            onMouseLeave={() => onSorot(null)}
             aria-label={label}
             className={`group relative flex h-7 items-center justify-center transition-colors hover:z-10 ${tepi} ${aktif
-              ? "bg-[#1A9E9E] text-white"
-              : "bg-[#8BC34A] hover:brightness-95 disabled:cursor-not-allowed disabled:opacity-50"}`}
+              ? `bg-[#1A9E9E] text-white ${durasi > 30 ? "border-b-[#1A9E9E]" : ""}`
+              : disorot ? "bg-[#1A9E9E]/50" : "bg-[#8BC34A] hover:bg-[#1A9E9E]/50 disabled:cursor-not-allowed disabled:opacity-50"}`}
           >
             {aktif && <Check className="h-3.5 w-3.5" />}
-            {tip(aktif ? "Pilihanmu · klik untuk batal" : penuh ? `Maksimal ${MAKS_PILIH} jam` : "Tersedia · klik untuk memilih")}
+            {tip(aktif ? "Pilihanmu · klik untuk batal" : penuh ? `Maksimal ${MAKS_PILIH} jam` : tabrak ? "Bentrok dengan pilihanmu di hari ini" : "Tersedia · klik untuk memilih")}
           </button>
         );
       })}

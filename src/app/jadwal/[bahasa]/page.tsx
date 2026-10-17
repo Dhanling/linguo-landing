@@ -1,6 +1,5 @@
 // [jadwal-publik-v1] /jadwal/<bahasa> — jam kosong Kelas Private per bahasa, tanpa login.
 import type { Metadata } from "next";
-import Link from "next/link";
 import { notFound } from "next/navigation";
 import { langFromSlug, langNameId } from "@/lib/funnelRouting";
 import JadwalPublikClient from "./JadwalPublikClient";
@@ -34,17 +33,12 @@ export default async function JadwalBahasaPage({ params }: PageProps) {
 
   return (
     <div className="min-h-screen bg-slate-50">
-      <header className="border-b border-slate-100 bg-white">
-        <div className="mx-auto flex max-w-3xl items-center justify-between px-4 py-3">
-          <Link href="/" className="text-lg font-extrabold tracking-tight text-[#1A9E9E]">
-            Linguo<span className="text-slate-900">.id</span>
-          </Link>
-          <PilihBahasa current={bahasa} kecil />
-        </div>
-      </header>
-      <main className="mx-auto w-full max-w-3xl px-4 pb-32 pt-6">
+      <main className="mx-auto w-full max-w-3xl px-4 pb-32 pt-8">
         <p className="text-xs font-bold uppercase tracking-wider text-[#1A9E9E]">Kelas Private · 1-on-1</p>
-        <h1 className="mt-1 text-2xl font-extrabold text-slate-900 sm:text-3xl">Jadwal Bahasa {langId}</h1>
+        <div className="mt-1 flex flex-wrap items-center justify-between gap-x-4 gap-y-2">
+          <h1 className="text-2xl font-extrabold text-slate-900 sm:text-3xl">Jadwal Bahasa {langId}</h1>
+          <PilihBahasa current={bahasa} />
+        </div>
         <p className="mt-2 text-sm leading-relaxed text-slate-600">
           Pilih jam yang cocok buatmu. Pengajar dicocokkan dengan level, tujuan, dan jadwalmu setelah pendaftaran.
         </p>
