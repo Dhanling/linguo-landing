@@ -16,6 +16,7 @@ import {
 } from "lucide-react";
 // [sertifikat-banner-foto-v1] foto stok bahasa — sumber sama dgn kartu kelas di Beranda
 import { getLangPhoto } from "@/lib/lang-visuals";
+import CourseCertificatePaper, { COURSE_CERT_WIDTH, COURSE_CERT_HEIGHT } from "./CourseCertificatePaper";
 import QRCode from "qrcode"; // [sertifikat-qr-verifikasi-v1]
 import { TTD_RINI, useTtdDataUrl } from "@/components/akun/simulasi/CertificateSheet"; // [sertifikat-ttd-rini-v1]
 import { tr, useT, useUiLang, type UiLang } from "@/lib/uiLang"; // [ui-lang-switcher-v1]
@@ -671,12 +672,35 @@ function IssuedDetail({ ct, studentName, defaultName, onSaveName }: { ct: Cert; 
       const h2c = w.html2canvas;
       const JsPDF = w.jspdf?.jsPDF;
       if (!h2c || !JsPDF) throw new Error("lib belum siap");
-      const canvas = await h2c(cardRef.current, { scale: 2, backgroundColor: "#ffffff", useCORS: true, logging: false });
-      const img = canvas.toDataURL("image/png");
+      // Lepaskan skala pratinjau hanya di dokumen salinan agar PDF selalu tajam.
+      const images = Array.from(cardRef.current.querySelectorAll("img"));
+      await Promise.all(images.map(async (img) => {
+        if (!img.complete) await new Promise<void>((resolve, reject) => {
+          img.onload = () => resolve();
+          img.onerror = () => reject(new Error("Gambar sertifikat gagal dimuat"));
+        });
+        if (!img.naturalWidth) throw new Error("Gambar sertifikat belum siap");
+      }));
+      const canvas = await h2c(cardRef.current, {
+        scale: 2, width: COURSE_CERT_WIDTH, height: COURSE_CERT_HEIGHT,
+        windowWidth: 1440, backgroundColor: "#ffffff", useCORS: true, logging: false,
+        onclone: (doc: Document) => {
+          const paper = doc.querySelector<HTMLElement>("[data-course-certificate]");
+          if (paper) {
+            paper.style.transform = "none";
+            if (paper.parentElement) {
+              paper.parentElement.style.width = `${COURSE_CERT_WIDTH}px`;
+              paper.parentElement.style.height = `${COURSE_CERT_HEIGHT}px`;
+              paper.parentElement.style.overflow = "visible";
+            }
+          }
+        },
+      });
+      const img = canvas.toDataURL("image/jpeg", 0.95);
       const pdf = new JsPDF({ orientation: canvas.width > canvas.height ? "landscape" : "portrait", unit: "px", format: [canvas.width, canvas.height] });
       const pw = pdf.internal.pageSize.getWidth();
       const ph = pdf.internal.pageSize.getHeight();
-      pdf.addImage(img, "PNG", 0, 0, pw, ph);
+      pdf.addImage(img, "JPEG", 0, 0, pw, ph);
       pdf.save(`Sertifikat-Linguo-${ct.language}-${ct.level}${ct.idNo ? "-" + ct.idNo : ""}.pdf`);
     } catch (e) {
       console.error("[Sertifikat] gagal membuat PDF:", e);
@@ -718,118 +742,29 @@ function IssuedDetail({ ct, studentName, defaultName, onSaveName }: { ct: Cert; 
 
   return (
     <>
-      <div
+      <CourseCertificatePaper
         ref={cardRef}
-        // `cert-paper` = penanda "ini kertas, jangan ikut menghitam". Lihat blok <style> di atas.
-        className="cert-paper relative overflow-hidden rounded-2xl bg-white"
-        style={{
-          fontFamily: CERT_FONT,
-          border: "1px solid #ECECEC",
-          backgroundImage:
-            "repeating-linear-gradient(45deg, rgba(22,121,110,.03) 0 1px, transparent 1px 10px), repeating-linear-gradient(-45deg, rgba(22,121,110,.03) 0 1px, transparent 1px 10px)",
-        }}
-      >
-        {/* pita aksen atas + bingkai tipis ganda */}
-        <div className="pointer-events-none absolute inset-x-0 top-0 h-1.5" style={{ background: `linear-gradient(90deg, ${col.accent}, ${col.accent}99, ${col.accent})` }} />
-        <div className="pointer-events-none absolute inset-0 m-3 rounded-xl" style={{ border: `1px solid ${col.accent}33` }} />
-        <div className="pointer-events-none absolute inset-0 m-[17px] rounded-lg" style={{ border: `1px solid ${col.accent}1a` }} />
-
-        <div className="relative px-7 pb-8 pt-10 sm:px-14">
-          {/* kepala: logo kiri, bendera kanan */}
-          <div className="flex items-center justify-between gap-3">
-            <img src="/images/full-logo-linguo-hijau.png" alt="Linguo" className="h-8 w-auto object-contain" />
-            <FlagBadge lang={ct.language} variant="chip" />
-          </div>
-
-          <div className="mt-9 text-center">
-            <p className="inline-flex items-center gap-1.5 text-[11px] font-bold uppercase tracking-[0.3em] text-[#6B7280]">
-              {isKids && <Sparkles className="h-3.5 w-3.5" style={{ color: col.accent }} />}{t(copy.eyebrow)}
-            </p>
-            <p className="mt-6 text-[12px] font-medium text-[#6B7280]">{t("Diberikan kepada")}</p>
-            {/* [sertifikat-edit-nama-v1] pensil di samping nama — `data-html2canvas-ignore`
-                bikin tombolnya tak ikut terfoto ke PDF. Diposisikan absolute biar namanya
-                tetap persis di tengah. */}
-            <div className="relative mx-auto mt-1.5 w-fit max-w-full">
-              <h2 className="text-[26px] font-extrabold leading-tight tracking-tight text-[#12172B] sm:text-[32px]">{studentName}</h2>
-              {onSaveName && (
-                <button
-                  type="button"
-                  data-html2canvas-ignore="true"
-                  onClick={() => setEditOpen(true)}
-                  title={t("Ubah nama di sertifikat")}
-                  aria-label={t("Ubah nama di sertifikat")}
-                  className="absolute -right-10 top-1/2 flex h-8 w-8 -translate-y-1/2 items-center justify-center rounded-full transition hover:scale-110"
-                  style={{ background: col.bg, color: col.text }}
-                >
-                  <PenLine className="h-4 w-4" />
-                </button>
-              )}
-            </div>
-            <div className="mx-auto mt-3 h-[3px] w-14 rounded-full" style={{ background: col.accent }} />
-
-            <p className="mx-auto mt-5 max-w-[520px] text-[13.5px] font-medium leading-[1.75] text-[#6B7280]">
-              {t(copy.bodyPre)} {ct.language}{copy.bodyPost ? ` ${t(copy.bodyPost)}` : ""}
-              {showCefr ? <> — <b style={{ color: ink }}>{t("Level CEFR")} {ct.level}</b></> : ""}
-              {ct.title && !isKids ? ` (${t(ct.title)})` : ""} {t("di Linguo")}
-              {hoursTxt ? <>, {t("dengan total")} <b className="whitespace-nowrap" style={{ color: ink }}>{hoursTxt}</b>{sessTxt ? ` (${sessTxt})` : ""}</> : ""}
-              {from && to && from !== to
-                ? <> {t("sejak")} <b className="whitespace-nowrap" style={{ color: ink }}>{from}</b> {t("hingga")} <b className="whitespace-nowrap" style={{ color: ink }}>{to}</b></>
-                : to ? <> {t("pada")} <b className="whitespace-nowrap" style={{ color: ink }}>{to}</b></> : ""}
-              .
-            </p>
-
-            {/* CEFR level chip (non-kids) atau bintang (kids) */}
-            {showCefr ? (
-              <div className="mx-auto mt-6 inline-flex items-center gap-2 rounded-full px-4 py-2" style={{ background: col.bg }}>
-                <Award className="h-4 w-4" style={{ color: col.text }} />
-                <span className="text-[13px] font-extrabold tracking-wide" style={{ color: col.text }}>CEFR {ct.level}</span>
-                {!isKids && ct.score != null && (
-                  <span className="border-l pl-2 text-[12px] font-bold" style={{ color: col.text, borderColor: `${col.accent}40` }}>{t("Nilai Akhir")} {ct.score}/100</span>
-                )}
-              </div>
-            ) : (
-              <div className="mx-auto mt-6 flex items-center justify-center gap-1.5">
-                {[0, 1, 2].map((i) => <Star key={i} className="h-6 w-6" style={{ color: col.accent }} fill={col.accent} />)}
-              </div>
-            )}
-
-            {/* 4-skill radar (Private/Reguler only, render kalau data ada) */}
-            {showsSkills(kind) && <SkillBlock ct={ct} accent={col.accent} />}
-          </div>
-
-          {/* kaki: tanda tangan Head of Curriculum · QR/segel · tanggal terbit + pengajar
-              [sertifikat-ttd-rini-v1] Semua sertifikat ditandatangani Rini Rismawati
-              (Head of Curriculum); nama pengajar tetap tercantum di kolom kanan. */}
-          <div className="mx-auto mt-10 grid max-w-[560px] grid-cols-[1fr_auto_1fr] items-end gap-4">
-            <div className="min-w-0 text-left">
-              {qrSrc && <p className="mb-1 inline-flex items-center gap-1 text-[9px] font-bold uppercase tracking-[0.12em]" style={{ color: col.accent }}><BadgeCheck className="h-3 w-3" />{t("Ditandatangani elektronik")}</p>}
-              {/* eslint-disable-next-line @next/next/no-img-element */}
-              {ttdSrc ? <img src={ttdSrc} alt="" className="-mb-2 block h-[56px] w-auto" /> : <div className="h-[48px]" />}
-              <p className="truncate text-[14px] font-semibold text-[#12172B]">{TTD_RINI.nama}</p>
-              <div className="mt-1.5 h-px w-full max-w-[180px]" style={{ background: "#CBD5E1" }} />
-              <p className="mt-1.5 text-[10px] font-bold uppercase tracking-[0.14em] text-[#6B7280]">{TTD_RINI.jabatan}</p>
-            </div>
-            {qrSrc ? (
-              // [sertifikat-qr-verifikasi-v1] pindai → halaman verifikasi publik
-              <div className="flex flex-col items-center">
-                <img src={qrSrc} alt={t("QR verifikasi sertifikat")} className="h-[72px] w-[72px] rounded-md p-1" style={{ border: `1.5px solid ${col.accent}55` }} />
-                <p className="mt-1 text-[8.5px] font-bold uppercase tracking-[0.1em] text-[#6B7280]">{t("Pindai untuk verifikasi")}</p>
-              </div>
-            ) : (
-              <div className="flex h-12 w-12 items-center justify-center rounded-full" style={{ border: `1.5px solid ${col.accent}`, boxShadow: `0 0 0 4px ${col.accent}14` }}>
-                <Award className="h-6 w-6" style={{ color: col.accent }} />
-              </div>
-            )}
-            <div className="min-w-0 text-right">
-              <p className="truncate text-[14px] font-semibold text-[#12172B]">{to || "—"}</p>
-              <div className="ml-auto mt-1.5 h-px w-full max-w-[180px]" style={{ background: "#CBD5E1" }} />
-              <p className="mt-1.5 text-[10px] font-bold uppercase tracking-[0.14em] text-[#6B7280]">{t("Tanggal terbit")}</p>
-              <p className="mt-2 truncate text-[10px] font-semibold text-[#6B7280]">{t("Pengajar")}: <span className="italic text-[#12172B]">{ct.teacher}</span></p>
-            </div>
-          </div>
-          {ct.idNo && <p className="mt-8 text-center text-[10px] font-semibold tracking-[0.12em] text-[#6B7280]">{t("No. Sertifikat")} · {ct.idNo}</p>}
-        </div>
-      </div>
+        code={flagCodeOf(ct.language)}
+        badge={<FlagBadge lang={ct.language} variant="chip" />}
+        name={studentName}
+        heading={isKids ? t("PETUALANG CILIK") : kind === "testprep" ? t("PERSIAPAN TES") : t("PENYELESAIAN")}
+        body={<>
+          {t(copy.bodyPre)} {ct.language}{copy.bodyPost ? ` ${t(copy.bodyPost)}` : ""}
+          {showCefr ? <> — <b style={{ color: ink, whiteSpace: "nowrap" }}>{t("Level CEFR")} {ct.level}</b></> : ""}
+          {ct.title && !isKids ? ` (${t(ct.title)})` : ""} {t("di Linguo")}
+          {hoursTxt ? <>, {t("dengan total")} <b style={{ color: ink }}>{hoursTxt}</b>{sessTxt ? ` (${sessTxt})` : ""}</> : ""}
+          {from && to && from !== to
+            ? <> {t("sejak")} <b style={{ color: ink, whiteSpace: "nowrap" }}>{from}</b> {t("hingga")} <b style={{ color: ink, whiteSpace: "nowrap" }}>{to}</b></>
+            : to ? <> {t("pada")} <b style={{ color: ink, whiteSpace: "nowrap" }}>{to}</b></> : ""}.
+        </>}
+        level={<>{showCefr ? `CEFR ${ct.level}` : t("Petualang Cilik")}{ct.score != null ? ` · ${t("Nilai Akhir")} ${ct.score}/100` : ""}</>}
+        qr={qrSrc}
+        teacher={ct.teacher}
+        date={to || "—"}
+        number={ct.idNo}
+        labels={{ recipient: t("Diberikan kepada"), electronic: t("Ditandatangani elektronik").toUpperCase(), scan: t("Pindai untuk verifikasi").toUpperCase(), issued: t("Tanggal terbit").toUpperCase(), teacher: t("Pengajar"), number: t("No. Sertifikat") }}
+      />
+      {showsSkills(kind) && <SkillBlock ct={ct} accent={col.accent} />}
 
       <div className="flex flex-wrap items-center gap-3">
         <button
