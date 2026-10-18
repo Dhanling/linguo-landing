@@ -4108,7 +4108,7 @@ export default function AkunPage() {
         title: CEFR_TITLE[base] || "Program",
         // [sertifikat-nama-pengajar-v1] embed `teachers` kosong untuk siswa (RLS) → pakai
         // direktori pengajar (route publik / RPC batch) sebelum jatuh ke label generik.
-        teacher: r?.teachers?.name || (tidOf(r) ? teacherDir[tidOf(r)!]?.name : undefined) || "Pengajar Linguo",
+        teacher: sapaan(r?.teachers?.name || (tidOf(r) ? teacherDir[tidOf(r)!]?.name : undefined)) || "Pengajar Linguo", // [panggilan-pengajar-v1]
         product: r.product || undefined, // [pustaka/sertifikat-filter-v1] dipakai filter Kelas Live vs Belajar Mandiri
         status: (issued ? "issued" : "progress") as Cert["status"],
         classStatus: r.status,
@@ -4141,7 +4141,7 @@ export default function AkunPage() {
         language: r.language,
         level: lvl,
         title: CEFR_TITLE[base] || "Program",
-        teacher: r?.teachers?.name || (r.teacher_id ? teacherDir[r.teacher_id]?.name : undefined) || "Pengajar Linguo",
+        teacher: sapaan(r?.teachers?.name || (r.teacher_id ? teacherDir[r.teacher_id]?.name : undefined)) || "Pengajar Linguo", // [panggilan-pengajar-v1]
         product: "Kelas B2B",
         company: r.perusahaan || r.company_name || null,
         status: issued ? "issued" : "progress",

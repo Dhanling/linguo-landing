@@ -19,6 +19,7 @@ import {
 import { getFlagUrl } from "@/lib/lang-visuals";
 import { displayLanguage } from "@/lib/classLanguage";
 import { useT, useUiLang } from "@/lib/uiLang"; // [ui-lang-switcher-v1]
+import { sapaan } from "@/lib/teacherName"; // [panggilan-pengajar-v1]
 
 // ── Types ──────────────────────────────────────────────────────────
 export type CourseReg = {
@@ -202,7 +203,7 @@ export default function UnifiedCourseCard({
       {reg.teachers && (
         <div className="flex items-center gap-1.5 mb-3 text-xs text-gray-500">
           <GraduationCap className="w-3.5 h-3.5" strokeWidth={2} />
-          <span>{reg.teachers.name}</span>
+          <span>{sapaan(reg.teachers.name)}</span>
         </div>
       )}
 

@@ -16,6 +16,7 @@ import { supabase } from '@/lib/supabase-client';
 import { cefr } from '@/components/akun/ClassProgressTab';
 import { BarChart2, Award, Printer, Mic, Headphones, BookOpen, PenLine, type LucideIcon } from 'lucide-react';
 import { useT, useUiLang } from '@/lib/uiLang'; // [ui-lang-switcher-v1]
+import { sapaan } from "@/lib/teacherName"; // [panggilan-pengajar-v1]
 
 const SKILLS: { key: string; label: string; Icon: LucideIcon }[] = [
   { key: 'speaking', label: 'Speaking', Icon: Mic },
@@ -157,8 +158,9 @@ function bukaSertifikat(reg: any, onOpen?: () => void) {
 }
 
 // [teacher-sapaan-v1] `teacherName` = sapaan buat layar ("Kak Dhani"),
-// `teacherFullName` = nama lengkap buat dokumen cetak (rapor & sertifikat) —
-// tanda tangan di sertifikat tetap harus nama resmi, bukan panggilan.
+// `teacherFullName` = nama lengkap (dulu dicetak di rapor). [panggilan-pengajar-v1]
+// Owner 18 Okt 2026: nama lengkap pengajar tak pernah tampil ke siswa, termasuk
+// dokumen cetak — rapor kini memakai sapaan juga.
 // [rapor-ke-sertifikat-v1] `onOpenSertifikat` = buka menu Sertifikat in-shell dengan kelas ini
 // terpilih. Tanpa itu (halaman /akun/kelas/[id]) tombol pindah ke /akun?menu=sertifikat&cert=<id>.
 export default function ClassRaporTab({ reg, teacherName, teacherFullName, onOpenSertifikat }: { reg: any; teacherName?: string; teacherFullName?: string; onOpenSertifikat?: () => void }) {
@@ -264,7 +266,7 @@ export default function ClassRaporTab({ reg, teacherName, teacherFullName, onOpe
                 </div>
               </div>
               <button
-                onClick={() => printReport({ report: r, studentName: studentName || 'Siswa', reg, teacherName: teacherFullName || teacherName })}
+                onClick={() => printReport({ report: r, studentName: studentName || 'Siswa', reg, teacherName: teacherName || (teacherFullName ? sapaan(teacherFullName) : undefined) })}
                 className="inline-flex shrink-0 items-center gap-1.5 rounded-lg bg-gray-100 px-3 py-2 text-xs font-semibold text-gray-700 hover:bg-gray-200"
               >
                 <Printer className="h-3.5 w-3.5" strokeWidth={2.5} /> {t('Cetak')}

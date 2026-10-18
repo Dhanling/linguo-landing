@@ -8,6 +8,7 @@
 // data yang memang sudah publik — tidak membuka kolom baru.
 import { NextRequest, NextResponse } from "next/server";
 import { createClient } from "@supabase/supabase-js";
+import { callName } from "@/lib/teacherName"; // [panggilan-pengajar-v1]
 
 const UUID = /^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/i;
 
@@ -23,7 +24,9 @@ export async function GET(req: NextRequest) {
     const { data, error } = await supabase.from("teachers").select("id, name, title, avatar_url").in("id", ids);
     if (error) return NextResponse.json({ teachers: [] }, { status: 200 });
     return NextResponse.json(
-      { teachers: data || [] },
+      // [panggilan-pengajar-v1] Owner 18 Okt: nama lengkap pengajar tidak dikirim ke
+      // browser siswa — cukup panggilan ("Dhani"); layar menambah sapaan "Kak".
+      { teachers: (data || []).map((t) => ({ ...t, name: callName(t.name) || t.name })) },
       { headers: { "Cache-Control": "public, s-maxage=600, stale-while-revalidate=3600" } },
     );
   } catch {

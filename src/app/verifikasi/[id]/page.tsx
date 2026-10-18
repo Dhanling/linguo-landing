@@ -8,6 +8,7 @@ import { padananUjian } from "@/lib/levelEquivalence"; // [padanan-ujian-v1]
 import Link from "next/link";
 import { BadgeCheck, ShieldAlert, ShieldCheck } from "lucide-react";
 import { createClient } from "@supabase/supabase-js";
+import { sapaan } from "@/lib/teacherName"; // [panggilan-pengajar-v1]
 
 export const dynamic = "force-dynamic";
 export const metadata = { title: "Verifikasi Sertifikat — Linguo.id", robots: { index: false, follow: false } };
@@ -45,7 +46,7 @@ async function ambil(id: string): Promise<Data | null> {
     nama: reg.students?.name || "—",
     bahasa: reg.language || "—",
     level: reg.level || "—",
-    pengajar: reg.teachers?.name || "Pengajar Linguo",
+    pengajar: sapaan(reg.teachers?.name) || "Pengajar Linguo", // [panggilan-pengajar-v1] nama lengkap tak pernah tampil ke publik
     sesi: total,
     padanan: padananUjian(reg.language, reg.level)?.label || null,
     terbit: total > 0 && used >= total,
