@@ -4054,6 +4054,10 @@ export default function AkunPage() {
   const activeRegs = useMemo(() => student?.registrations.filter(r =>
     // [linguo-patch:akun-hide-cancelled-v1] buang reg yang di-Batal-in admin/cron & yang udah diarsip
     r.pipeline_status !== "Batal" && !r.archived_at &&
+    // [akun-sembunyikan-transferred-v1] kelas lama yang sudah dipindah (mis. Reguler →
+    // Private lewat "Pindah kelas") berstatus Transferred — uangnya sudah jadi potongan
+    // kelas baru, jadi kartunya tidak boleh tampil lagi. Riwayat tagihan tetap membacanya.
+    r.status !== "Transferred" &&
     (r.payment_status === "Lunas" || r.payment_status === "Cicilan")
   ) || [], [student]);
 
