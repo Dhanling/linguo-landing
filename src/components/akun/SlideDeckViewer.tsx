@@ -26,6 +26,7 @@ import {
 // [slide-arti-v1] Arti kata yang SAMA dengan kartu ketuk-kata reader e-book
 // (cache memori → localStorage → cache bersama di server).
 import { artiKataEbook, artiTersimpan, type HasilArti } from "@/lib/ebookKata";
+import { SlideVisual } from "@/components/akun/SlideVisual";
 
 const TEAL = "#1A9E9E";
 /** Ada di /public kedua repo (dashboard & landing). */
@@ -281,6 +282,18 @@ export function SlideBody({ s, kunci, lang }: { s: MateriSlide; kunci?: boolean;
         <div className="mt-[1cqh] h-[0.3cqw] w-[9%] rounded-full" style={{ background: tema.aksen }} />
       </div>
 
+      {/* [slide-visual-v1] Slide ber-diagram mengisi sisa tinggi kartu tanpa gulir;
+          kata-katanya dibunyikan dari Hanzi/aksara aslinya. */}
+      {s.visual ? (
+        <div className="mt-[1.6cqh] flex min-h-0 flex-1 flex-col gap-[1.2cqh]" style={{ fontSize: "clamp(0.62rem, 1.45cqw, 1.05rem)" }}>
+          <div className="min-h-0 flex-1">
+            <SlideVisual visual={s.visual} aksen={tema.aksen}
+              ucap={lang && bisaDibunyikan(lang) ? (t) => { bukaKunciAudio(); void ucapkanEbook(t, lang); } : undefined}
+              siapkan={lang && bisaDibunyikan(lang) ? (t) => siapkanEbook(t, lang) : undefined} />
+          </div>
+          {s.note && <p className="shrink-0 rounded-xl border border-amber-200 bg-amber-50 px-[2.2cqw] py-[0.9cqh] text-[0.86em] text-amber-800">{s.note}</p>}
+        </div>
+      ) : (
       <div className="mt-[2cqh] min-h-0 flex-1 overflow-y-auto pr-[1cqw]" style={{ scrollbarWidth: "thin", fontSize: `clamp(${0.66 * skala}rem, ${1.5 * skala}cqw, ${1.05 * skala}rem)` }}>
         {s.type === "vocab" && (
           <ul className={`grid gap-x-[1.6cqw] gap-y-[1.2cqh] ${(s.items || []).length > 4 ? "grid-cols-2" : "grid-cols-1"}`}>
@@ -375,6 +388,7 @@ export function SlideBody({ s, kunci, lang }: { s: MateriSlide; kunci?: boolean;
           </ol>
         )}
       </div>
+      )}
 
       {s.type === "recap" && s.homework && (
         <div className="mt-[1.4cqh] shrink-0 rounded-xl px-[2.2cqw] py-[1.3cqh] text-[clamp(0.68rem,1.4cqw,0.95rem)] text-white shadow-md"

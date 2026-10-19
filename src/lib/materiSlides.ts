@@ -85,6 +85,28 @@ export interface QuizItem {
   explain?: string;
 }
 
+/* ── [slide-visual-v1] Visual khusus di atas jenis slide biasa ───────────────
+   Bidang opsional: penonton yang kenal `visual` menggambar diagram (kontur nada,
+   susunan suku kata, kelompok bunyi, jebakan ejaan); penonton lama tetap
+   membaca bidang teks biasanya (examples/items), jadi slide tak pernah kosong.
+   `hanzi` (atau aksara asli lain) = yang dibunyikan TTS — pinyin dibaca suara
+   Mandarin sebagai huruf Latin, Hanzi selalu benar nadanya. */
+
+/** Nada Mandarin: 1–4, 0 = netral. */
+export type Nada = 0 | 1 | 2 | 3 | 4;
+
+export interface VisualNadaRow { tone: Nada; pinyin: string; hanzi?: string; meaning: string; hint?: string }
+export interface VisualSukuRow { initial: string; final: string; tone: Nada; pinyin: string; hanzi?: string; meaning: string }
+export interface VisualChip { text: string; sub?: string; hanzi?: string; meaning?: string; mark?: string }
+export interface VisualGroup { label: string; big?: string; hint?: string; chips: VisualChip[] }
+export interface VisualJebakanRow { text: string; hanzi?: string; meaning?: string; wrong: string; right: string }
+
+export type SlideVisual =
+  | { kind: "nada"; rows: VisualNadaRow[] }
+  | { kind: "suku-kata"; rows: VisualSukuRow[] }
+  | { kind: "kelompok"; groups: VisualGroup[] }
+  | { kind: "jebakan"; rows: VisualJebakanRow[] };
+
 export interface MateriSlide {
   type: SlideType;
   heading: string;
@@ -115,6 +137,8 @@ export interface MateriSlide {
   /** [slide-latar-v1] "kiri" = isi slide hanya di sisi kiri, karena sisi kanan
    *  gambar latarnya berisi ilustrasi yang tak boleh tertutup. */
   ruang?: "kiri";
+  /** [slide-visual-v1] Diagram pengganti isi teks — lihat SlideVisual. */
+  visual?: SlideVisual;
 }
 
 export interface MateriDeck {
@@ -195,6 +219,41 @@ function normQuiz(v: any): QuizItem | null {
   };
 }
 
+const nada = (v: any): Nada => {
+  const n = Number(v);
+  return (n === 1 || n === 2 || n === 3 || n === 4 ? n : 0) as Nada;
+};
+const opt = (v: any) => str(v) || undefined;
+
+/** [slide-visual-v1] Visual rusak/kosong = dibuang; slide jatuh ke tampilan teks. */
+function normVisual(v: any): SlideVisual | undefined {
+  if (!v || typeof v !== "object") return undefined;
+  const arr = (x: any): any[] => (Array.isArray(x) ? x : []);
+  if (v.kind === "nada") {
+    const rows = arr(v.rows).map((r) => ({ tone: nada(r?.tone), pinyin: str(r?.pinyin), hanzi: opt(r?.hanzi), meaning: str(r?.meaning), hint: opt(r?.hint) }))
+      .filter((r) => r.pinyin);
+    return rows.length ? { kind: "nada", rows } : undefined;
+  }
+  if (v.kind === "suku-kata") {
+    const rows = arr(v.rows).map((r) => ({ initial: str(r?.initial), final: str(r?.final), tone: nada(r?.tone), pinyin: str(r?.pinyin), hanzi: opt(r?.hanzi), meaning: str(r?.meaning) }))
+      .filter((r) => r.pinyin && r.final);
+    return rows.length ? { kind: "suku-kata", rows } : undefined;
+  }
+  if (v.kind === "kelompok") {
+    const groups = arr(v.groups).map((g) => ({
+      label: str(g?.label), big: opt(g?.big), hint: opt(g?.hint),
+      chips: arr(g?.chips).map((c) => ({ text: str(c?.text), sub: opt(c?.sub), hanzi: opt(c?.hanzi), meaning: opt(c?.meaning), mark: opt(c?.mark) })).filter((c) => c.text),
+    })).filter((g) => g.label || g.big);
+    return groups.length ? { kind: "kelompok", groups } : undefined;
+  }
+  if (v.kind === "jebakan") {
+    const rows = arr(v.rows).map((r) => ({ text: str(r?.text), hanzi: opt(r?.hanzi), meaning: opt(r?.meaning), wrong: str(r?.wrong), right: str(r?.right) }))
+      .filter((r) => r.text && r.right);
+    return rows.length ? { kind: "jebakan", rows } : undefined;
+  }
+  return undefined;
+}
+
 /**
  * Bentuk ulang satu slide mentah (dari AI atau dari baris lama) jadi bentuk yang
  * pasti bisa dirender. Mengembalikan null kalau slide itu kosong melompong —
@@ -233,6 +292,8 @@ export function normalizeSlide(raw: any): MateriSlide | null {
   } else if (type === "title") {
     s.note = str(raw.note) || undefined;
   }
+  const visual = normVisual(raw.visual);
+  if (visual) s.visual = visual;
   // [slide-sampul-v1] Hanya berkas di /slide-cover — dek buatan AI atau baris
   // lama tak bisa menyelipkan gambar dari alamat lain.
   const cover = str(raw.cover);
@@ -244,7 +305,7 @@ export function normalizeSlide(raw: any): MateriSlide | null {
   const kosong =
     !s.heading && !s.subheading && !s.note && !s.pattern && !s.homework &&
     !s.points?.length && !s.items?.length && !s.examples?.length &&
-    !s.questions?.length && !s.lines?.length && !s.quiz?.length;
+    !s.questions?.length && !s.lines?.length && !s.quiz?.length && !s.visual;
   return kosong ? null : s;
 }
 
