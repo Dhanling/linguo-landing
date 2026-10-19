@@ -101,11 +101,44 @@ export interface VisualChip { text: string; sub?: string; hanzi?: string; meanin
 export interface VisualGroup { label: string; big?: string; hint?: string; chips: VisualChip[] }
 export interface VisualJebakanRow { text: string; hanzi?: string; meaning?: string; wrong: string; right: string }
 
+/* [slide-sejarah-v1] Sejarah bahasa: peta persebaran yang bisa diputar + linimasa.
+   Koordinat dalam derajat (lon, lat); `tahun` negatif = Sebelum Masehi. Elemen
+   peta muncul saat linimasa melewati tahunnya. */
+export interface SejarahWilayah { lon: number; lat: number; r: number; tahun: number; label?: string }
+export interface SejarahTitik { lon: number; lat: number; nama: string; tahun: number; /** label di kiri titik */ kiri?: boolean }
+export interface SejarahRute { tahun: number; label?: string; /** posisi label [lon, lat] */ di?: [number, number]; titik: Array<[number, number]> }
+export interface SejarahPeristiwa { tahun: number; judul: string; info?: string; asli?: string; translit?: string }
+export interface SejarahStat { angka: string; label: string }
+
+/* [slide-banding-v1] Perbandingan tata bahasa dengan bahasa Indonesia. Token
+   dengan `g` sama = padanan kata (diberi warna sama) supaya urutan kata terlihat. */
+export interface BandingToken { t: string; tr?: string; arti?: string; g?: number }
+export type BandingStatus = "sama" | "mirip" | "beda";
+export interface BandingRow {
+  aspek: string; status: BandingStatus; ringkas: string;
+  id: BandingToken[]; target: BandingToken[];
+  /** Kalimat utuh yang dibunyikan TTS (kalau kosong: token digabung). */
+  teks?: string; catatan?: string;
+}
+
 export type SlideVisual =
   | { kind: "nada"; rows: VisualNadaRow[] }
   | { kind: "suku-kata"; rows: VisualSukuRow[] }
   | { kind: "kelompok"; groups: VisualGroup[] }
-  | { kind: "jebakan"; rows: VisualJebakanRow[] };
+  | { kind: "jebakan"; rows: VisualJebakanRow[] }
+  | {
+      kind: "sejarah";
+      /** [lonMin, latMin, lonMax, latMax] bingkai peta. */
+      fokus: [number, number, number, number];
+      peristiwa: SejarahPeristiwa[];
+      wilayah?: SejarahWilayah[];
+      titik?: SejarahTitik[];
+      rute?: SejarahRute[];
+      /** Negara (id ISO 3166 angka, mis. "156") yang diwarnai mulai `tahun`. */
+      negara?: Array<{ id: string; tahun: number }>;
+      stat?: SejarahStat[];
+    }
+  | { kind: "banding"; bahasa: string; rows: BandingRow[] };
 
 export interface MateriSlide {
   type: SlideType;
@@ -250,6 +283,35 @@ function normVisual(v: any): SlideVisual | undefined {
     const rows = arr(v.rows).map((r) => ({ text: str(r?.text), hanzi: opt(r?.hanzi), meaning: opt(r?.meaning), wrong: str(r?.wrong), right: str(r?.right) }))
       .filter((r) => r.text && r.right);
     return rows.length ? { kind: "jebakan", rows } : undefined;
+  }
+  if (v.kind === "sejarah") {
+    const num = (x: any) => (Number.isFinite(Number(x)) ? Number(x) : NaN);
+    const ok = (o: any) => Object.values(o).every((x) => typeof x !== "number" || Number.isFinite(x));
+    const peristiwa = arr(v.peristiwa).map((p) => ({ tahun: num(p?.tahun), judul: str(p?.judul), info: opt(p?.info), asli: opt(p?.asli), translit: opt(p?.translit) }))
+      .filter((p) => p.judul && ok(p)).sort((a, b) => a.tahun - b.tahun);
+    const f = arr(v.fokus).map(num);
+    if (!peristiwa.length || f.length !== 4 || !f.every(Number.isFinite) || f[0] >= f[2] || f[1] >= f[3]) return undefined;
+    const wilayah = arr(v.wilayah).map((w) => ({ lon: num(w?.lon), lat: num(w?.lat), r: num(w?.r), tahun: num(w?.tahun), label: opt(w?.label) })).filter((w) => ok(w) && w.r > 0);
+    const titik = arr(v.titik).map((t) => ({ lon: num(t?.lon), lat: num(t?.lat), nama: str(t?.nama), tahun: num(t?.tahun), ...(t?.kiri === true ? { kiri: true } : null) })).filter((t) => t.nama && ok(t));
+    const titikDi = (x: any) => { const d = arr(x).map(num); return d.length === 2 && d.every(Number.isFinite) ? (d as [number, number]) : undefined; };
+    const rute = arr(v.rute).map((r) => ({ tahun: num(r?.tahun), label: opt(r?.label), di: titikDi(r?.di), titik: arr(r?.titik).map((p) => [num(p?.[0]), num(p?.[1])] as [number, number]).filter((p) => p.every(Number.isFinite)) }))
+      .filter((r) => Number.isFinite(r.tahun) && r.titik.length >= 2);
+    const negara = arr(v.negara).map((n) => ({ id: str(n?.id), tahun: num(n?.tahun) })).filter((n) => /^\d{3}$/.test(n.id) && Number.isFinite(n.tahun));
+    const stat = arr(v.stat).map((x) => ({ angka: str(x?.angka), label: str(x?.label) })).filter((x) => x.angka);
+    return { kind: "sejarah", fokus: f as [number, number, number, number], peristiwa, wilayah, titik, rute, negara, stat };
+  }
+  if (v.kind === "banding") {
+    const tok = (t: any): BandingToken | null => {
+      const x = str(t?.t); if (!x) return null;
+      const g = Number(t?.g);
+      return { t: x, tr: opt(t?.tr), arti: opt(t?.arti), g: Number.isInteger(g) && g > 0 ? g : undefined };
+    };
+    const rows = arr(v.rows).map((r) => ({
+      aspek: str(r?.aspek), status: (["sama", "mirip", "beda"].includes(r?.status) ? r.status : "mirip") as BandingStatus,
+      ringkas: str(r?.ringkas), id: arr(r?.id).map(tok).filter(Boolean) as BandingToken[],
+      target: arr(r?.target).map(tok).filter(Boolean) as BandingToken[], teks: opt(r?.teks), catatan: opt(r?.catatan),
+    })).filter((r) => r.aspek && r.target.length);
+    return rows.length ? { kind: "banding", bahasa: str(v.bahasa) || "Bahasa target", rows } : undefined;
   }
   return undefined;
 }

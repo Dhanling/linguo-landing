@@ -10,9 +10,9 @@
 // Warna ditulis inline (bukan kelas Tailwind) supaya mode gelap /akun dan
 // dashboard tidak menimpanya — slide selalu terang [slide-terang-v1].
 
-import { createContext, useContext, useEffect, useRef, useState } from "react";
-import { Volume2, Wind, X, Check, Play, Square } from "lucide-react";
-import type { Nada, SlideVisual as Visual } from "@/lib/materiSlides";
+import { createContext, useContext, useEffect, useId, useLayoutEffect, useRef, useState } from "react";
+import { Volume2, Wind, X, Check, Play, Square, Pause, RotateCcw, Equal, Shuffle } from "lucide-react";
+import type { BandingStatus, BandingToken, Nada, SlideVisual as Visual } from "@/lib/materiSlides";
 // [slide-audio-eleven-v1] Klip per kata hasil ElevenLabs eleven_v4 (dibuat sekali,
 // konturnya dicek otomatis). Kata yang belum punya klip jatuh ke TTS biasa.
 import { AUDIO_SLIDE_ZH, AUDIO_SLIDE_ZH_BASE } from "./audioSlideZh";
@@ -392,6 +392,361 @@ function VisualJebakan({ rows, ucap, siapkan }: { rows: Extract<Visual, { kind: 
   );
 }
 
+/* ── [slide-sejarah-v1] Peta persebaran + linimasa yang bisa diputar ──────────
+   Peta dasar = Natural Earth 110m (world-atlas) yang sudah diproyeksikan
+   plate carrée ke path SVG: x = (lon+180)·10, y = (90−lat)·10 — berkas statis
+   /peta/dunia-110m.json di kedua repo (±34 KB gzip), diunduh sekali saat slide
+   sejarah pertama tampil. Sumbu x dipadatkan cos(lintang tengah) supaya bentuk
+   daratan tidak melebar; lingkaran persebaran dihitung langsung di koordinat
+   layar sehingga tetap bulat. */
+
+let petaDunia: Promise<Record<string, string> | null> | null = null;
+const muatPeta = () =>
+  (petaDunia ??= fetch("/peta/dunia-110m.json").then((r) => (r.ok ? r.json() : null)).catch(() => { petaDunia = null; return null; }));
+
+const MUNCUL = "@keyframes slideVisMuncul{from{opacity:0;transform:translateY(0.4em)}to{opacity:1;transform:none}}";
+export const formatTahun = (t: number) => (t < 0 ? `${-t} SM` : t < 1000 ? `${t} M` : String(t));
+const DURASI_PER_PERISTIWA = 2600;
+
+function VisualSejarah({ v, ucap, siapkan, aksen }: { v: Extract<Visual, { kind: "sejarah" }>; ucap?: Ucap; siapkan?: (t: string) => void; aksen: string }) {
+  const uid = useId().replace(/:/g, "");
+  const [peta, setPeta] = useState<Record<string, string> | null>(null);
+  useEffect(() => { let hidup = true; void muatPeta().then((p) => { if (hidup) setPeta(p); }); return () => { hidup = false; }; }, []);
+
+  const ev = v.peristiwa;
+  const akhir = ev.length - 1;
+  /* pos = posisi pecahan di linimasa (0 … jumlah peristiwa − 1). Mulai di ujung
+     supaya peta langsung utuh (juga untuk cuplikan/gambar slide); Putar = dari awal. */
+  const [pos, setPos] = useState(akhir);
+  const [jalan, setJalan] = useState(false);
+  useEffect(() => {
+    if (!jalan) return;
+    let raf = 0; let lalu = performance.now();
+    const langkah = (kini: number) => {
+      const dt = kini - lalu; lalu = kini;
+      let selesai = false;
+      setPos((p) => { const n = Math.min(akhir, p + dt / DURASI_PER_PERISTIWA); if (n >= akhir) selesai = true; return n; });
+      if (selesai) setJalan(false); else raf = requestAnimationFrame(langkah);
+    };
+    raf = requestAnimationFrame(langkah);
+    return () => cancelAnimationFrame(raf);
+  }, [jalan, akhir]);
+
+  const i0 = Math.min(akhir, Math.floor(pos + 1e-6));
+  const frac = pos - i0;
+  const tahun = i0 >= akhir ? ev[akhir].tahun : ev[i0].tahun + (ev[i0 + 1].tahun - ev[i0].tahun) * frac;
+  const kini = ev[i0];
+  const tampak = (t: number) => t <= tahun + 0.5;
+
+  const [lon0, lat0, lon1, lat1] = v.fokus;
+  const k = Math.cos((((lat0 + lat1) / 2) * Math.PI) / 180);
+  const X = (lon: number) => (lon + 180) * 10 * k;
+  const Yg = (lat: number) => (90 - lat) * 10;
+  const vb = { x: X(lon0), y: Yg(lat1), w: (lon1 - lon0) * 10 * k, h: (lat1 - lat0) * 10 };
+  const u = vb.w / 100; // satuan relatif lebar peta
+  const semua = peta ? Object.values(peta).join("") : "";
+  const negaraAktif = new Set((v.negara || []).filter((n) => tampak(n.tahun)).map((n) => n.id));
+
+  const putar = () => {
+    if (jalan) { setJalan(false); return; }
+    if (pos >= akhir - 1e-3) setPos(0);
+    setJalan(true);
+  };
+
+  return (
+    <div className="grid h-full gap-[1.2cqw]" style={{ gridTemplateColumns: "1fr 37%" }}>
+      {/* Peta */}
+      <div className="relative min-h-0 overflow-hidden" style={{ ...KARTU, background: "#D9EEF3" }}>
+        <svg viewBox={`${vb.x} ${vb.y} ${vb.w} ${vb.h}`} preserveAspectRatio="xMidYMid meet" className="absolute inset-0 h-full w-full" aria-label="Peta persebaran bahasa">
+          <style>{`@keyframes denyut-${uid}{0%{opacity:.7;transform:scale(1)}100%{opacity:0;transform:scale(3.2)}}${MUNCUL}`}</style>
+          <defs>
+            <radialGradient id={`${uid}-g`}>
+              <stop offset="0" stopColor={aksen} stopOpacity="0.62" />
+              <stop offset="0.65" stopColor={aksen} stopOpacity="0.42" />
+              <stop offset="1" stopColor={aksen} stopOpacity="0" />
+            </radialGradient>
+            <clipPath id={`${uid}-darat`}><path d={semua} transform={`scale(${k} 1)`} /></clipPath>
+          </defs>
+          <rect x={vb.x} y={vb.y} width={vb.w} height={vb.h} fill="#D9EEF3" />
+          {/* Garis lintang/bujur tipis setiap 10° */}
+          {Array.from({ length: 37 }, (_, i) => -180 + i * 10).filter((l) => l > lon0 && l < lon1).map((l) => (
+            <line key={`b${l}`} x1={X(l)} x2={X(l)} y1={vb.y} y2={vb.y + vb.h} stroke="#C4E2EA" strokeWidth={u * 0.15} />
+          ))}
+          {Array.from({ length: 19 }, (_, i) => -90 + i * 10).filter((l) => l > lat0 && l < lat1).map((l) => (
+            <line key={`l${l}`} y1={Yg(l)} y2={Yg(l)} x1={vb.x} x2={vb.x + vb.w} stroke={l === 0 ? "#AFD5DF" : "#C4E2EA"} strokeWidth={u * (l === 0 ? 0.25 : 0.15)} />
+          ))}
+          {peta && (
+            <g transform={`scale(${k} 1)`}>
+              {Object.entries(peta).map(([id, d]) => (
+                <path key={id} d={d} fill={negaraAktif.has(id) ? aksen : "#FBF5E6"} fillOpacity={negaraAktif.has(id) ? 0.3 : 1}
+                  stroke="#B5A780" strokeWidth={0.6} vectorEffect="non-scaling-stroke" style={{ transition: "fill-opacity .6s, fill .6s" }} />
+              ))}
+            </g>
+          )}
+          {/* Persebaran: lingkaran lembut yang dipotong garis pantai */}
+          <g clipPath={peta ? `url(#${uid}-darat)` : undefined}>
+            {(v.wilayah || []).map((w, i) => (
+              <g key={i} transform={`translate(${X(w.lon)} ${Yg(w.lat)})`}>
+                <circle r={w.r * 10} fill={`url(#${uid}-g)`}
+                  style={{ transform: `scale(${tampak(w.tahun) ? 1 : 0})`, transition: "transform 1.1s cubic-bezier(.2,.8,.2,1)" }} />
+              </g>
+            ))}
+          </g>
+          {(v.wilayah || []).filter((w) => w.label).map((w, i) => (
+            <text key={i} x={X(w.lon)} y={Yg(w.lat)} textAnchor="middle" fontSize={u * 2.3} fontWeight={800} fontStyle="italic"
+              fill="#0B4F4E" stroke="#fff" strokeWidth={u * 0.5} paintOrder="stroke" opacity={tampak(w.tahun) ? 0.9 : 0}
+              style={{ transition: "opacity .6s" }}>{w.label}</text>
+          ))}
+          {/* Rute (mis. pelayaran) digambar bertahap */}
+          {(v.rute || []).map((r, i) => {
+            const d = r.titik.map(([lo, la], j) => `${j ? "L" : "M"}${X(lo)} ${Yg(la)}`).join("");
+            const on = tampak(r.tahun);
+            return (
+              <g key={i}>
+                <path d={d} fill="none" stroke="#B45309" strokeWidth={u * 0.45} strokeLinecap="round" strokeLinejoin="round" pathLength={100}
+                  style={{ strokeDasharray: 100, strokeDashoffset: on ? 0 : 100, transition: "stroke-dashoffset 2.2s ease-in-out" }} />
+                {r.label && (() => { const [lo, la] = r.di || r.titik[Math.floor(r.titik.length / 2)]; return (
+                  <text x={X(lo) + u * 1.2} y={Yg(la)} fontSize={u * 2} fontWeight={700} fill="#92400E" stroke="#fff" strokeWidth={u * 0.45} paintOrder="stroke"
+                    opacity={on ? 1 : 0} style={{ transition: "opacity .8s .8s" }}>{r.label}</text>
+                ); })()}
+              </g>
+            );
+          })}
+          {/* Titik kota/peristiwa */}
+          {(v.titik || []).map((t, i) => {
+            const on = tampak(t.tahun);
+            const baru = on && t.tahun === kini.tahun;
+            return (
+              <g key={i} transform={`translate(${X(t.lon)} ${Yg(t.lat)})`} opacity={on ? 1 : 0} style={{ transition: "opacity .5s" }}>
+                {baru && <circle r={u * 0.9} fill="none" stroke={aksen} strokeWidth={u * 0.3}
+                  style={{ animation: `denyut-${uid} 1.4s ease-out infinite`, transformBox: "fill-box", transformOrigin: "center" }} />}
+                <circle r={u * (baru ? 0.95 : 0.7)} fill="#fff" stroke={baru ? aksen : "#475569"} strokeWidth={u * 0.3} />
+                <text x={u * (t.kiri ? -1.4 : 1.4)} y={u * 0.75} textAnchor={t.kiri ? "end" : "start"} fontSize={u * (baru ? 2.3 : 1.9)} fontWeight={baru ? 800 : 600}
+                  fill={baru ? "#0B4F4E" : "#334155"} stroke="#fff" strokeWidth={u * 0.5} paintOrder="stroke">{t.nama}</text>
+              </g>
+            );
+          })}
+        </svg>
+        {/* Tahun berjalan */}
+        <div className="pointer-events-none absolute left-[0.8em] top-[0.6em] rounded-[0.6em] px-[0.7em] py-[0.2em] shadow-sm"
+          style={{ background: "rgba(255,255,255,0.92)" }}>
+          <div className="text-[0.62em] font-bold uppercase tracking-wider" style={{ color: "#6B7280" }}>Tahun</div>
+          <div className="text-[1.5em] font-extrabold leading-none tabular-nums" style={{ color: aksen }}>{formatTahun(Math.round(tahun))}</div>
+        </div>
+        {!peta && <div className="absolute inset-0 grid place-items-center text-[0.8em]" style={{ color: "#6B7280" }}>Memuat peta…</div>}
+        {!!v.stat?.length && (
+          <div className="pointer-events-none absolute bottom-[0.6em] left-[0.6em] right-[0.6em] flex flex-wrap gap-[0.4em]">
+            {v.stat.slice(0, 3).map((x, i) => (
+              <div key={i} className="rounded-[0.6em] px-[0.6em] py-[0.2em] leading-tight shadow-sm" style={{ background: "rgba(255,255,255,0.93)" }}>
+                <span className="text-[0.95em] font-extrabold" style={{ color: aksen }}>{x.angka}</span>
+                <span className="ml-[0.35em] text-[0.66em] font-semibold" style={{ color: "#4B5563" }}>{x.label}</span>
+              </div>
+            ))}
+          </div>
+        )}
+      </div>
+
+      {/* Linimasa: tombol putar + daftar peristiwa; yang sedang disorot melebar */}
+      <div className="flex min-h-0 flex-col gap-[0.6cqh]">
+        <div className="flex shrink-0 items-center gap-[0.7em]">
+          <button type="button" onClick={(e) => { e.stopPropagation(); putar(); }}
+            className="inline-flex shrink-0 items-center gap-[0.4em] rounded-full px-[0.9em] py-[0.3em] text-[0.8em] font-bold text-white shadow-sm transition hover:brightness-110"
+            style={{ background: aksen }} aria-label={jalan ? "Jeda" : "Putar animasi persebaran"}>
+            {jalan ? <><Pause className="h-[1em] w-[1em]" /> Jeda</>
+              : pos >= akhir - 1e-3 ? <><RotateCcw className="h-[1em] w-[1em]" /> Putar animasi</>
+              : <><Play className="h-[1em] w-[1em]" /> Lanjut</>}
+          </button>
+          <div className="relative h-[0.3em] min-w-0 flex-1 rounded-full" style={{ background: "#E5E7EB" }}>
+            <div className="absolute inset-y-0 left-0 rounded-full" style={{ background: aksen, width: `${akhir ? (pos / akhir) * 100 : 100}%` }} />
+          </div>
+        </div>
+        <div className="relative flex min-h-0 flex-1 flex-col gap-[0.35cqh] overflow-hidden">
+          {/* garis linimasa */}
+          <div className="absolute bottom-[0.6em] left-[0.55em] top-[0.6em] w-[0.14em]" style={{ background: "#E5E7EB" }} />
+          {ev.map((p, i) => {
+            const ini = i === i0;
+            const lewat = i <= pos + 1e-6;
+            return (
+              // div ber-role, bukan <button>: di dalamnya ada tombol bunyi (button di dalam button = HTML tak sah).
+              <div key={i} role="button" tabIndex={0}
+                onClick={(e) => { e.stopPropagation(); setJalan(false); setPos(i); }}
+                onKeyDown={(e) => { if (e.key === "Enter" || e.key === " ") { e.preventDefault(); e.stopPropagation(); setJalan(false); setPos(i); } }}
+                className={`relative flex min-h-0 cursor-pointer items-start gap-[0.6em] rounded-[0.6em] text-left transition ${ini ? "shrink-0" : "flex-1"}`}
+                style={ini ? { ...KARTU, padding: "0.35em 0.6em 0.45em 0", borderColor: `${aksen}66`, background: `${aksen}0D` } : { padding: "0 0.6em 0 0" }}>
+                <span className="relative z-[1] mt-[0.2em] block shrink-0 rounded-full"
+                  style={{ width: "1.1em", height: "1.1em", background: lewat ? aksen : "#fff", border: `0.16em solid ${lewat ? aksen : "#CBD5E1"}`,
+                    boxShadow: ini ? `0 0 0 0.22em ${aksen}33` : undefined }} />
+                <span className="min-w-0 flex-1 leading-tight">
+                  <span className="flex items-baseline gap-[0.5em]">
+                    <span className="shrink-0 text-[0.78em] font-extrabold tabular-nums" style={{ color: lewat ? aksen : "#9CA3AF" }}>{formatTahun(p.tahun)}</span>
+                    <span className={`min-w-0 text-[0.8em] font-bold ${ini ? "" : "truncate"}`} style={{ color: lewat ? "#111827" : "#9CA3AF" }}>{p.judul}</span>
+                  </span>
+                  {ini && (p.asli || p.info) && (
+                    <span className="mt-[0.3em] block" style={{ animation: "slideVisMuncul .35s ease-out" }}>
+                      {p.asli && (
+                        <Bunyi teks={p.asli} ucap={ucap} siapkan={siapkan}
+                          className="mb-[0.25em] inline-flex items-center gap-[0.45em] rounded-[0.5em] px-[0.5em] py-[0.1em]"
+                          style={{ background: "#fff", border: `1px solid ${aksen}55` }}>
+                          <span className="text-[1.05em] font-bold" style={{ color: "#111827" }}>{p.asli}</span>
+                          {p.translit && <span className="text-[0.75em] font-semibold" style={{ color: aksen }}>{p.translit}</span>}
+                          {ucap && <Volume2 className="h-[0.9em] w-[0.9em]" style={{ color: aksen, opacity: 0.75 }} />}
+                        </Bunyi>
+                      )}
+                      {p.info && <span className="block text-[0.72em] leading-snug" style={{ color: "#4B5563" }}>{p.info}</span>}
+                    </span>
+                  )}
+                </span>
+              </div>
+            );
+          })}
+        </div>
+      </div>
+    </div>
+  );
+}
+
+/* ── [slide-banding-v1] Perbandingan tata bahasa dengan bahasa Indonesia ─────
+   Kiri: daftar aspek + label Sama/Mirip/Beda. Kanan: contoh kalimat kedua bahasa
+   berdampingan; kata yang sepadan diberi warna sama sehingga perbedaan urutan
+   kata terlihat sekilas. */
+
+const WARNA_STATUS: Record<BandingStatus, { teks: string; latar: string; label: string }> = {
+  sama: { teks: "#047857", latar: "#D1FAE5", label: "Sama" },
+  mirip: { teks: "#B45309", latar: "#FEF3C7", label: "Mirip" },
+  beda: { teks: "#BE123C", latar: "#FFE4E6", label: "Beda" },
+};
+const WARNA_PADANAN = ["#0E7C7B", "#C2410C", "#7C3AED", "#2563EB", "#DB2777", "#65A30D", "#0891B2"];
+const IKON_STATUS: Record<BandingStatus, typeof Check> = { sama: Equal, mirip: Shuffle, beda: X };
+
+function Token({ t, sisi, ucap, siapkan }: { t: BandingToken; sisi: "id" | "target"; ucap?: Ucap; siapkan?: (t: string) => void }) {
+  const w = t.g ? WARNA_PADANAN[(t.g - 1) % WARNA_PADANAN.length] : "#9CA3AF";
+  const target = sisi === "target";
+  const isi = (
+    <>
+      {t.tr && <span className="text-[0.85em] font-bold" style={{ color: w }}>{t.tr}</span>}
+      <span className={`${target ? "text-[2.1em]" : "text-[1.55em]"} font-extrabold leading-tight`} style={{ color: "#111827" }}>{t.t}</span>
+      {t.arti && <span className="text-[0.75em] font-medium" style={{ color: "#6B7280" }}>{t.arti}</span>}
+    </>
+  );
+  const gaya: React.CSSProperties = t.g
+    ? { background: `${w}14`, border: `0.13em solid ${w}`, borderBottomWidth: "0.3em" }
+    : { background: "#F9FAFB", border: "0.13em dashed #CBD5E1", borderBottomWidth: "0.3em" };
+  const kelas = "flex min-w-[3em] flex-col items-center rounded-[0.7em] px-[0.8em] py-[0.3em] leading-tight";
+  const data = { "data-sisi": sisi, "data-g": t.g ?? "" };
+  return target && ucap ? (
+    <span {...data} className="inline-flex"><Bunyi teks={t.t} ucap={ucap} siapkan={siapkan} className={kelas} style={gaya}>{isi}</Bunyi></span>
+  ) : <span {...data} className={kelas} style={gaya}>{isi}</span>;
+}
+
+/** Garis lengkung dari kata Indonesia ke padanannya — urutan yang bersilang langsung terlihat. */
+function useGarisPadanan(kotak: React.RefObject<HTMLDivElement | null>, kunci: unknown) {
+  const [garis, setGaris] = useState<Array<{ d: string; w: string }>>([]);
+  useLayoutEffect(() => {
+    const el = kotak.current;
+    if (!el) return;
+    const hitung = () => {
+      const b = el.getBoundingClientRect();
+      const ambil = (sisi: string) => {
+        const m = new Map<string, DOMRect>();
+        el.querySelectorAll<HTMLElement>(`[data-sisi="${sisi}"]`).forEach((n) => { if (n.dataset.g) m.set(n.dataset.g, n.getBoundingClientRect()); });
+        return m;
+      };
+      const atas = ambil("id"); const bawah = ambil("target");
+      const out: Array<{ d: string; w: string }> = [];
+      atas.forEach((r1, g) => {
+        const r2 = bawah.get(g); if (!r2) return;
+        const x1 = r1.left + r1.width / 2 - b.left, y1 = r1.bottom - b.top + 2;
+        const x2 = r2.left + r2.width / 2 - b.left, y2 = r2.top - b.top - 2;
+        const my = (y1 + y2) / 2;
+        out.push({ d: `M${x1} ${y1} C${x1} ${my}, ${x2} ${my}, ${x2} ${y2}`, w: WARNA_PADANAN[(Number(g) - 1) % WARNA_PADANAN.length] });
+      });
+      setGaris(out);
+    };
+    hitung();
+    const ro = new ResizeObserver(hitung);
+    ro.observe(el);
+    return () => ro.disconnect();
+  }, [kotak, kunci]);
+  return garis;
+}
+
+function VisualBanding({ v, ucap, siapkan, aksen }: { v: Extract<Visual, { kind: "banding" }>; ucap?: Ucap; siapkan?: (t: string) => void; aksen: string }) {
+  const [pilih, setPilih] = useState(0);
+  const r = v.rows[Math.min(pilih, v.rows.length - 1)];
+  const kotak = useRef<HTMLDivElement>(null);
+  const garis = useGarisPadanan(kotak, pilih);
+  const st = WARNA_STATUS[r.status];
+  const hitung = (s: BandingStatus) => v.rows.filter((x) => x.status === s).length;
+  const kalimat = r.teks || r.target.map((t) => t.t).join(/[　-鿿가-힯]/.test(r.target[0]?.t || "") ? "" : " ");
+  return (
+    <div className="grid h-full gap-[1.2cqw]" style={{ gridTemplateColumns: "36% 1fr" }}>
+      <style>{MUNCUL}</style>
+      <div className="flex min-h-0 flex-col gap-[0.5cqh]">
+        <div className="flex shrink-0 gap-[0.4em] text-[0.7em] font-bold">
+          {(["sama", "mirip", "beda"] as BandingStatus[]).map((s) => (
+            <span key={s} className="rounded-full px-[0.7em] py-[0.15em]" style={{ background: WARNA_STATUS[s].latar, color: WARNA_STATUS[s].teks }}>
+              {hitung(s)} {WARNA_STATUS[s].label.toLowerCase()}
+            </span>
+          ))}
+        </div>
+        {v.rows.map((x, i) => {
+          const s = WARNA_STATUS[x.status];
+          const Ikon = IKON_STATUS[x.status];
+          const ini = i === pilih;
+          return (
+            <button key={i} type="button" onClick={(e) => { e.stopPropagation(); setPilih(i); }}
+              className="flex min-h-0 flex-1 items-center gap-[0.6em] px-[0.8em] text-left transition"
+              style={{ ...KARTU, borderLeft: `0.35em solid ${s.teks}`, ...(ini ? { background: s.latar, boxShadow: `0 0 0 0.14em ${s.teks}` } : null) }}>
+              <span className="grid h-[1.6em] w-[1.6em] shrink-0 place-items-center rounded-full" style={{ background: s.latar, color: s.teks }}>
+                <Ikon className="h-[0.95em] w-[0.95em]" />
+              </span>
+              <span className="min-w-0 flex-1 truncate text-[0.88em] font-bold" style={{ color: "#111827" }}>{x.aspek}</span>
+              <span className="shrink-0 text-[0.66em] font-extrabold uppercase tracking-wider" style={{ color: s.teks }}>{s.label}</span>
+            </button>
+          );
+        })}
+      </div>
+
+      <div key={pilih} className="flex min-h-0 flex-col gap-[0.9cqh] p-[1.3cqw]" style={{ ...KARTU, borderTop: `0.3em solid ${st.teks}`, animation: "slideVisMuncul .3s ease-out" }}>
+        <div className="flex items-center gap-[0.6em]">
+          <span className="rounded-full px-[0.7em] py-[0.1em] text-[0.72em] font-extrabold uppercase tracking-wider" style={{ background: st.latar, color: st.teks }}>{st.label}</span>
+          <span className="text-[1.1em] font-extrabold" style={{ color: "#111827" }}>{r.aspek}</span>
+        </div>
+        <p className="text-[0.88em] leading-snug" style={{ color: "#374151" }}>{r.ringkas}</p>
+
+        <div ref={kotak} className="relative flex min-h-0 flex-1 flex-col justify-center gap-[9cqh]">
+          <svg className="pointer-events-none absolute inset-0 h-full w-full overflow-visible" aria-hidden>
+            {garis.map((l, i) => (
+              <path key={i} d={l.d} fill="none" stroke={l.w} strokeWidth={2.5} strokeDasharray="5 4" strokeLinecap="round" opacity={0.75} />
+            ))}
+          </svg>
+          <div className="flex items-center gap-[1em]">
+            <span className="w-[5.5em] shrink-0 text-[0.66em] font-bold uppercase leading-tight tracking-wider" style={{ color: "#6B7280" }}>Bahasa Indonesia</span>
+            <div className="flex flex-wrap items-end gap-[0.6em]">{r.id.map((t, i) => <Token key={i} t={t} sisi="id" />)}</div>
+          </div>
+          <div className="flex items-center gap-[1em]">
+            <span className="flex w-[5.5em] shrink-0 flex-col items-start gap-[0.4em] text-[0.66em] font-bold uppercase leading-tight tracking-wider" style={{ color: aksen }}>
+              {v.bahasa}
+              {ucap && (
+                <button type="button" onClick={(e) => { e.stopPropagation(); ucap(kalimat); }} onMouseEnter={() => siapkan?.(kalimat)}
+                  className="inline-flex items-center gap-[0.3em] rounded-full px-[0.7em] py-[0.2em] text-white normal-case tracking-normal" style={{ background: aksen }}>
+                  <Volume2 className="h-[1.1em] w-[1.1em]" /> Dengar
+                </button>
+              )}
+            </span>
+            <div className="flex flex-wrap items-end gap-[0.6em]">{r.target.map((t, i) => <Token key={i} t={t} sisi="target" ucap={ucap} siapkan={siapkan} />)}</div>
+          </div>
+        </div>
+        {r.catatan && (
+          <p className="shrink-0 rounded-[0.7em] px-[0.9em] py-[0.45em] text-[0.8em] leading-snug" style={{ background: "#F8FAFC", border: "1px solid #E2E8F0", color: "#475569" }}>
+            {r.catatan}
+          </p>
+        )}
+      </div>
+    </div>
+  );
+}
+
 export function SlideVisual({ visual, aksen, ucap, siapkan, lang }: {
   visual: Visual; aksen: string;
   /** Kode bahasa slide — klip rekaman hanya dipakai untuk Mandarin ("zh"). */
@@ -406,6 +761,8 @@ export function SlideVisual({ visual, aksen, ucap, siapkan, lang }: {
     if (!klip) return;
     const teks = visual.kind === "kelompok"
       ? visual.groups.flatMap((g) => g.chips.map((c) => c.hanzi || ""))
+      : visual.kind === "sejarah" ? visual.peristiwa.map((p) => p.asli || "")
+      : visual.kind === "banding" ? visual.rows.flatMap((r) => r.target.map((t) => t.t))
       : visual.rows.map((r) => r.hanzi || "");
     teks.forEach((t) => { const u = urlKlip(t); if (u) void fetch(u, { cache: "force-cache" }).catch(() => {}); });
   }, [visual, klip]);
@@ -421,5 +778,7 @@ function Isi({ visual, aksen, ucap, siapkan }: { visual: Visual; aksen: string; 
   if (visual.kind === "suku-kata") return <VisualSuku rows={visual.rows} ucap={ucap} siapkan={siapkan} />;
   if (visual.kind === "kelompok") return <VisualKelompok groups={visual.groups} ucap={ucap} siapkan={siapkan} aksen={aksen} />;
   if (visual.kind === "jebakan") return <VisualJebakan rows={visual.rows} ucap={ucap} siapkan={siapkan} />;
+  if (visual.kind === "sejarah") return <VisualSejarah v={visual} ucap={ucap} siapkan={siapkan} aksen={aksen} />;
+  if (visual.kind === "banding") return <VisualBanding v={visual} ucap={ucap} siapkan={siapkan} aksen={aksen} />;
   return null;
 }
