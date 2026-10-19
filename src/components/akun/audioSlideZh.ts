@@ -1,0 +1,66 @@
+// [slide-audio-eleven-v1] Klip per kata untuk slide visual Mandarin — DIBUAT, bukan ditulis tangan.
+// ElevenLabs eleven_v4, suara Sarah (EXAVITQu4vr4xnSDxMaL), language_code zh; tiap klip dipotong
+// heningnya lalu konturnya dicek otomatis (nada 1 datar, 2 naik, 3 turun-naik, 4 jatuh) dan dibuat
+// ulang dengan seed lain bila meleset. Nama berkas = sha256(teks)[:16]. Skrip: linguo-landing
+// scripts/slide-audio-zh/ (gen.py → unggah.mjs). Kata baru di visual Mandarin = jalankan ulang skripnya,
+// tanpa klip kata itu tetap berbunyi lewat TTS biasa.
+// ⚠️ Kembar di linguo-admin-dashboard/src/components/materi/ & linguo-landing/src/components/akun/.
+
+export const AUDIO_SLIDE_ZH_BASE =
+  "https://jbtgciepdmqxxcjflrxz.supabase.co/storage/v1/object/public/lms-audio/slide-audio/zh-v4/";
+
+export const AUDIO_SLIDE_ZH: Record<string, string> = {
+  "妈": "e331d617554b0f37.mp3",
+  "好": "f867f34178594f89.mp3",
+  "中": "a567bdaa11367f26.mp3",
+  "爱": "bafe3b2ee79f7c51.mp3",
+  "你": "a0c7716669b5ded0.mp3",
+  "麻": "2461475506683975.mp3",
+  "马": "a25ee73c98d16172.mp3",
+  "骂": "45d31d7e4c504b6d.mp3",
+  "吗": "5ac1612110def2c4.mp3",
+  "八": "2c467d3673926b20.mp3",
+  "怕": "0d2c43256849e491.mp3",
+  "饭": "f9fb8bcb87a58ef1.mp3",
+  "大": "7d4ca7f48effd602.mp3",
+  "他": "8b7b91e0001c6971.mp3",
+  "来": "6d8229118caa20c2.mp3",
+  "哥": "0fab08c0aaec69cd.mp3",
+  "渴": "3dcae0ae0b0e7af5.mp3",
+  "鸡": "6d93a4fb838143c5.mp3",
+  "七": "1b0542878c67f6cd.mp3",
+  "西": "b9f0c815459caa83.mp3",
+  "吃": "c814805bc6d0365a.mp3",
+  "书": "1be968f125240969.mp3",
+  "热": "312490eda9072580.mp3",
+  "字": "c55038b272b109b8.mp3",
+  "菜": "45f0c2d97be1214d.mp3",
+  "四": "754a9d5828d502f1.mp3",
+  "爸": "e601bb9113eb5e57.mp3",
+  "我": "b70bb4acc0484cf0.mp3",
+  "波": "36d5d011d7dbc149.mp3",
+  "喝": "193632bffe7bd105.mp3",
+  "课": "c9ad714600dd4f76.mp3",
+  "一": "51a75f4634dfa859.mp3",
+  "不": "b02dfe2160c687c2.mp3",
+  "女": "0ab4610b9257c298.mp3",
+  "绿": "84b34ffba5aa3e3e.mp3",
+  "去": "99ae21ea6c39ccc1.mp3",
+  "是，四": "c7a61a265012f7bd.mp3",
+  "茶": "7e005ba311f86fa7.mp3",
+  "妈妈": "45f1364f08aed165.mp3",
+  "谢谢": "1bf7ac688560d3b0.mp3",
+  "拔": "316ea2a125a199c6.mp3",
+  "把": "2442748e41108dab.mp3",
+  "汤": "37fe121b6b013d9c.mp3",
+  "糖": "c86bc88f26043273.mp3",
+  "买": "2cd2507d65de178f.mp3",
+  "卖": "d998fc91a1724de6.mp3",
+  "树": "635643d28367e5e0.mp3",
+  "问": "4628c0e06f4b378d.mp3",
+  "吻": "bf5358660b9f00cd.mp3",
+  "十": "fc7edd399a5c4b93.mp3",
+  "习": "d47438951b6ff31d.mp3",
+  "洗": "b2d7b4bbf6bcf133.mp3",
+  "系": "a13e67ae72e5fffb.mp3",
+};

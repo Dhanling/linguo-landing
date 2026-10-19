@@ -287,7 +287,7 @@ export function SlideBody({ s, kunci, lang }: { s: MateriSlide; kunci?: boolean;
       {s.visual ? (
         <div className="mt-[1.6cqh] flex min-h-0 flex-1 flex-col gap-[1.2cqh]" style={{ fontSize: "clamp(0.62rem, 1.45cqw, 1.05rem)" }}>
           <div className="min-h-0 flex-1">
-            <SlideVisual visual={s.visual} aksen={tema.aksen}
+            <SlideVisual visual={s.visual} aksen={tema.aksen} lang={lang}
               ucap={lang && bisaDibunyikan(lang) ? (t) => { bukaKunciAudio(); void ucapkanEbook(t, lang); } : undefined}
               siapkan={lang && bisaDibunyikan(lang) ? (t) => siapkanEbook(t, lang) : undefined} />
           </div>

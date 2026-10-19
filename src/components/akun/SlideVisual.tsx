@@ -10,9 +10,12 @@
 // Warna ditulis inline (bukan kelas Tailwind) supaya mode gelap /akun dan
 // dashboard tidak menimpanya — slide selalu terang [slide-terang-v1].
 
-import { useState } from "react";
-import { Volume2, Wind, X, Check, Play } from "lucide-react";
+import { createContext, useContext, useEffect, useRef, useState } from "react";
+import { Volume2, Wind, X, Check, Play, Square } from "lucide-react";
 import type { Nada, SlideVisual as Visual } from "@/lib/materiSlides";
+// [slide-audio-eleven-v1] Klip per kata hasil ElevenLabs eleven_v4 (dibuat sekali,
+// konturnya dicek otomatis). Kata yang belum punya klip jatuh ke TTS biasa.
+import { AUDIO_SLIDE_ZH, AUDIO_SLIDE_ZH_BASE } from "./audioSlideZh";
 
 /* Warna nada ala kamus Pleco/Hanping: siswa mengaitkan warna dengan kontur. */
 export const WARNA_NADA: Record<Nada, string> = {
@@ -60,12 +63,39 @@ function IkonNada({ tone, size = "1.6em" }: { tone: Nada; size?: string }) {
 
 type Ucap = (teks: string) => unknown;
 
+/* ── [slide-audio-eleven-v1] Pemutar klip per kata ─────────────────────────
+   TTS biasa (Chirp) melafalkan satu Hanzi lepas dengan nada yang datar —
+   naik-turunnya tak terdengar. Untuk kata di slide visual Mandarin dipakai klip
+   rekaman ElevenLabs; selesai = saat audionya berakhir, jadi "Dengar berurutan"
+   bisa memutar kata satu per satu dan menyalakan kontur yang sedang berbunyi. */
+const KlipCtx = createContext(false);
+let pemutar: HTMLAudioElement | null = null;
+const urlKlip = (teks: string) => (AUDIO_SLIDE_ZH[teks] ? AUDIO_SLIDE_ZH_BASE + AUDIO_SLIDE_ZH[teks] : null);
+const jeda = (ms: number) => new Promise<void>((ok) => setTimeout(ok, ms));
+
+function putar(teks: string, ucap: Ucap | undefined, pakaiKlip: boolean): Promise<void> {
+  const url = pakaiKlip ? urlKlip(teks) : null;
+  if (url && typeof Audio !== "undefined") {
+    try { pemutar?.pause(); } catch { /* diam */ }
+    const a = new Audio(url);
+    pemutar = a;
+    return new Promise((ok) => {
+      a.onended = () => ok();
+      a.onerror = () => { ucap?.(teks); void jeda(900).then(ok); };
+      a.play().catch(() => { ucap?.(teks); void jeda(900).then(ok); });
+    });
+  }
+  ucap?.(teks);
+  return jeda(1000);
+}
+
 /** Tombol yang membunyikan `teks`; tanpa fungsi ucap jadi blok biasa. */
 function Bunyi({ teks, ucap, siapkan, children, className = "", style }: {
   teks?: string; ucap?: Ucap; siapkan?: (t: string) => void;
   children: React.ReactNode; className?: string; style?: React.CSSProperties;
 }) {
   const [nyala, setNyala] = useState(false);
+  const klip = useContext(KlipCtx);
   if (!ucap || !teks) return <div className={className} style={style}>{children}</div>;
   return (
     <button type="button" className={`text-left transition hover:-translate-y-[1px] hover:shadow-md ${className}`}
@@ -74,8 +104,7 @@ function Bunyi({ teks, ucap, siapkan, children, className = "", style }: {
       onClick={(e) => {
         e.stopPropagation();
         setNyala(true);
-        ucap(teks);
-        setTimeout(() => setNyala(false), 900);
+        void putar(teks, ucap, klip).then(() => setNyala(false));
       }}>
       {children}
     </button>
@@ -91,14 +120,43 @@ const KARTU: React.CSSProperties = {
 /* ── Empat nada pada satu suku kata ─────────────────────────────────────── */
 
 function VisualNada({ rows, ucap, siapkan, aksen }: { rows: Extract<Visual, { kind: "nada" }>["rows"]; ucap?: Ucap; siapkan?: (t: string) => void; aksen: string }) {
-  const semua = rows.map((r) => r.hanzi || r.pinyin).join("，");
+  const klip = useContext(KlipCtx);
   const berkontur = rows.filter((r) => r.tone !== 0);
+  /* Baris yang sedang berbunyi: barisnya menyala, konturnya digambar ulang di
+     grafik selagi suaranya terdengar — naik-turun nada terlihat DAN terdengar. */
+  const [main, setMain] = useState<number | null>(null);
+  const [jalan, setJalan] = useState(false);
+  const giliran = useRef(0);
+  useEffect(() => () => { giliran.current++; try { pemutar?.pause(); } catch { /* diam */ } }, []);
+  const nadaMain = main != null ? rows[main]?.tone : null;
+
+  const satu = async (i: number) => {
+    const g = ++giliran.current;
+    setJalan(false);
+    setMain(i);
+    await putar(rows[i].hanzi || rows[i].pinyin, ucap, klip);
+    if (g === giliran.current) setMain(null);
+  };
+  const berurutan = async () => {
+    if (jalan) { giliran.current++; setJalan(false); setMain(null); try { pemutar?.pause(); } catch { /* diam */ } return; }
+    const g = ++giliran.current;
+    setJalan(true);
+    for (let i = 0; i < rows.length; i++) {
+      if (g !== giliran.current) return;
+      setMain(i);
+      await putar(rows[i].hanzi || rows[i].pinyin, ucap, klip);
+      await jeda(450);
+    }
+    if (g === giliran.current) { setMain(null); setJalan(false); }
+  };
+
   return (
     <div className="grid h-full gap-[1.6cqw]" style={{ gridTemplateColumns: "38% 1fr" }}>
       <div className="flex min-h-0 flex-col p-[1.2cqw]" style={KARTU}>
         <div className="mb-[0.6cqh] text-[0.8em] font-bold uppercase tracking-wider" style={{ color: aksen }}>Kontur nada</div>
         <div className="relative min-h-0 flex-1">
           <svg viewBox="-6 0 108 100" preserveAspectRatio="xMidYMid meet" className="h-full w-full" aria-label="Kontur keempat nada">
+            <style>{"@keyframes gambarNada{from{stroke-dashoffset:100}to{stroke-dashoffset:0}}"}</style>
             {[1, 2, 3, 4, 5].map((lv) => (
               <g key={lv}>
                 <line x1="8" x2="96" y1={Y(lv)} y2={Y(lv)} stroke="#E5E7EB" strokeWidth="0.8" strokeDasharray={lv === 1 || lv === 5 ? undefined : "2 2"} />
@@ -114,24 +172,32 @@ function VisualNada({ rows, ucap, siapkan, aksen }: { rows: Extract<Visual, { ki
                 </marker>
               ))}
             </defs>
-            {berkontur.map((r) => (
-              <path key={r.tone} d={KONTUR[r.tone as Exclude<Nada, 0>]} fill="none" stroke={WARNA_NADA[r.tone]} strokeWidth="2.6" strokeLinecap="round"
-                markerEnd={`url(#panah-nada-${r.tone})`} />
-            ))}
+            {berkontur.map((r) => {
+              const ini = nadaMain === r.tone;
+              const redup = nadaMain != null && !ini;
+              return (
+                <path key={ini ? `${r.tone}-${main}` : r.tone} d={KONTUR[r.tone as Exclude<Nada, 0>]} fill="none" stroke={WARNA_NADA[r.tone]}
+                  strokeWidth={ini ? 4 : 2.6} strokeLinecap="round" pathLength={100} opacity={redup ? 0.18 : 1}
+                  markerEnd={`url(#panah-nada-${r.tone})`}
+                  style={ini ? { strokeDasharray: 100, animation: "gambarNada 0.55s ease-out both" } : { transition: "opacity .2s" }} />
+              );
+            })}
+            {nadaMain === 0 && <circle cx="50" cy={Y(2.5)} r="3.2" fill={WARNA_NADA[0]} />}
             {/* Label pinyin di ujung tiap kontur. */}
             {berkontur.map((r) => {
               const ujung: Record<number, [number, number]> = { 1: [50, Y(5) - 3], 2: [70, Y(4.6) + 7], 3: [44, Y(1) + 9], 4: [66, Y(3.4) - 1] };
               const [x, y] = ujung[r.tone];
-              return <text key={r.tone} x={x} y={y} fontSize="7" fontWeight="800" textAnchor="middle" fill={WARNA_NADA[r.tone]}>{r.pinyin}</text>;
+              return <text key={r.tone} x={x} y={y} fontSize="7" fontWeight="800" textAnchor="middle" fill={WARNA_NADA[r.tone]}
+                opacity={nadaMain != null && nadaMain !== r.tone ? 0.25 : 1}>{r.pinyin}</text>;
             })}
           </svg>
         </div>
         {ucap && (
-          <button type="button" onClick={(e) => { e.stopPropagation(); ucap(semua); }}
-            onMouseEnter={() => siapkan?.(semua)}
+          <button type="button" onClick={(e) => { e.stopPropagation(); void berurutan(); }}
+            onMouseEnter={() => rows.forEach((r) => siapkan?.(r.hanzi || r.pinyin))}
             className="mt-[0.8cqh] inline-flex items-center justify-center gap-[0.4em] rounded-full px-[1em] py-[0.35em] text-[0.85em] font-bold text-white shadow-sm transition hover:brightness-110"
             style={{ background: aksen }}>
-            <Play className="h-[1em] w-[1em]" /> Dengar berurutan
+            {jalan ? <><Square className="h-[0.9em] w-[0.9em]" /> Berhenti</> : <><Play className="h-[1em] w-[1em]" /> Dengar berurutan</>}
           </button>
         )}
       </div>
@@ -139,10 +205,9 @@ function VisualNada({ rows, ucap, siapkan, aksen }: { rows: Extract<Visual, { ki
       <div className="flex min-h-0 flex-col justify-between gap-[0.8cqh]">
         {rows.map((r, i) => {
           const w = WARNA_NADA[r.tone];
-          return (
-            <Bunyi key={i} teks={r.hanzi || r.pinyin} ucap={ucap} siapkan={siapkan}
-              className="flex min-h-0 flex-1 items-center gap-[1.2cqw] px-[1.2cqw] py-[0.4cqh]"
-              style={{ ...KARTU, borderLeft: `0.4em solid ${w}` }}>
+          const nyala = main === i;
+          const isi = (
+            <>
               <div className="flex w-[4.6em] shrink-0 flex-col items-center leading-none">
                 <IkonNada tone={r.tone} size="2em" />
                 <span className="mt-[0.2em] text-[0.68em] font-bold" style={{ color: w }}>{NAMA_NADA[r.tone]} {TANDA_NADA[r.tone]}</span>
@@ -153,9 +218,21 @@ function VisualNada({ rows, ucap, siapkan, aksen }: { rows: Extract<Visual, { ki
                 <span className="block font-bold" style={{ color: "#111827" }}>{r.meaning}</span>
                 {r.hint && <span className="block text-[0.82em]" style={{ color: "#6B7280" }}>{r.hint}</span>}
               </span>
-              {ucap && <Volume2 className="h-[1.1em] w-[1.1em] shrink-0" style={{ color: w, opacity: 0.7 }} />}
-            </Bunyi>
+              {ucap && <Volume2 className="h-[1.1em] w-[1.1em] shrink-0" style={{ color: w, opacity: nyala ? 1 : 0.7 }} />}
+            </>
           );
+          const gaya: React.CSSProperties = {
+            ...KARTU, borderLeft: `0.4em solid ${w}`,
+            ...(nyala ? { background: `${w}14`, boxShadow: `0 0 0 0.15em ${w}`, transform: "scale(1.01)" } : null),
+          };
+          const kelas = "flex min-h-0 flex-1 items-center gap-[1.2cqw] px-[1.2cqw] py-[0.4cqh] text-left transition";
+          return ucap ? (
+            <button key={i} type="button" className={kelas} style={gaya}
+              onMouseEnter={() => siapkan?.(r.hanzi || r.pinyin)}
+              onClick={(e) => { e.stopPropagation(); void satu(i); }}>
+              {isi}
+            </button>
+          ) : <div key={i} className={kelas} style={gaya}>{isi}</div>;
         })}
       </div>
     </div>
@@ -315,12 +392,31 @@ function VisualJebakan({ rows, ucap, siapkan }: { rows: Extract<Visual, { kind: 
   );
 }
 
-export function SlideVisual({ visual, aksen, ucap, siapkan }: {
+export function SlideVisual({ visual, aksen, ucap, siapkan, lang }: {
   visual: Visual; aksen: string;
+  /** Kode bahasa slide — klip rekaman hanya dipakai untuk Mandarin ("zh"). */
+  lang?: string | null;
   /** Bunyikan teks (Hanzi/aksara asli); tanpa ini visual tidak bisa diklik. */
   ucap?: Ucap;
   siapkan?: (teks: string) => void;
 }) {
+  const klip = !!ucap && /^zh/i.test(lang || "");
+  // Klip kata di slide ini diunduh di muka (±5 KB/kata) supaya klik pertama langsung bunyi.
+  useEffect(() => {
+    if (!klip) return;
+    const teks = visual.kind === "kelompok"
+      ? visual.groups.flatMap((g) => g.chips.map((c) => c.hanzi || ""))
+      : visual.rows.map((r) => r.hanzi || "");
+    teks.forEach((t) => { const u = urlKlip(t); if (u) void fetch(u, { cache: "force-cache" }).catch(() => {}); });
+  }, [visual, klip]);
+  // Pindah slide = klip yang masih berbunyi dihentikan.
+  useEffect(() => () => { try { pemutar?.pause(); } catch { /* diam */ } }, []);
+  // Kata yang punya klip tak perlu dipanaskan di TTS biasa.
+  const siap = klip && siapkan ? (t: string) => { if (!urlKlip(t)) siapkan(t); } : siapkan;
+  return <KlipCtx.Provider value={klip}><Isi visual={visual} aksen={aksen} ucap={ucap} siapkan={siap} /></KlipCtx.Provider>;
+}
+
+function Isi({ visual, aksen, ucap, siapkan }: { visual: Visual; aksen: string; ucap?: Ucap; siapkan?: (teks: string) => void }) {
   if (visual.kind === "nada") return <VisualNada rows={visual.rows} ucap={ucap} siapkan={siapkan} aksen={aksen} />;
   if (visual.kind === "suku-kata") return <VisualSuku rows={visual.rows} ucap={ucap} siapkan={siapkan} />;
   if (visual.kind === "kelompok") return <VisualKelompok groups={visual.groups} ucap={ucap} siapkan={siapkan} aksen={aksen} />;
