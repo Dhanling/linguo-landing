@@ -692,6 +692,8 @@ function VisualBanding({ v, ucap, siapkan, aksen }: { v: Extract<Visual, { kind:
   const st = WARNA_STATUS[r.status];
   const hitung = (s: BandingStatus) => v.rows.filter((x) => x.status === s).length;
   const kalimat = r.teks || r.target.map((t) => t.t).join(/[　-鿿가-힯]/.test(r.target[0]?.t || "") ? "" : " ");
+  // [slide-banding-rtl-v1] Aksara Arab/Ibrani: kata pertama di KANAN (urutan baca), garis padanan ikut posisi aslinya.
+  const rtl = r.target.some((t) => /[\u0590-\u08FF]/.test(t.t));
   return (
     <div className="grid h-full gap-[1.2cqw]" style={{ gridTemplateColumns: "36% 1fr" }}>
       <style>{MUNCUL}</style>
@@ -748,7 +750,7 @@ function VisualBanding({ v, ucap, siapkan, aksen }: { v: Extract<Visual, { kind:
                 </button>
               )}
             </span>
-            <div className="flex flex-wrap items-end gap-[0.6em]">{r.target.map((t, i) => <Token key={i} t={t} sisi="target" ucap={ucap} siapkan={siapkan} />)}</div>
+            <div dir={rtl ? "rtl" : undefined} className="flex flex-wrap items-end gap-[0.6em]">{r.target.map((t, i) => <Token key={i} t={t} sisi="target" ucap={ucap} siapkan={siapkan} />)}</div>
           </div>
         </div>
         {r.catatan && (
