@@ -11,7 +11,7 @@
 // dashboard tidak menimpanya — slide selalu terang [slide-terang-v1].
 
 import { createContext, useContext, useEffect, useId, useLayoutEffect, useRef, useState } from "react";
-import { Volume2, Wind, X, Check, Play, Square, Pause, RotateCcw, Equal, Shuffle } from "lucide-react";
+import { Volume2, Wind, X, Check, Play, Square, RotateCcw, Equal, Shuffle, ChevronLeft, ChevronRight } from "lucide-react";
 import type { BandingStatus, BandingToken, Nada, SlideVisual as Visual } from "@/lib/materiSlides";
 // [slide-audio-eleven-v1] Klip per kata hasil ElevenLabs eleven_v4 (dibuat sekali,
 // konturnya dicek otomatis). Kata yang belum punya klip jatuh ke TTS biasa.
@@ -406,7 +406,7 @@ const muatPeta = () =>
 
 const MUNCUL = "@keyframes slideVisMuncul{from{opacity:0;transform:translateY(0.4em)}to{opacity:1;transform:none}}";
 export const formatTahun = (t: number) => (t < 0 ? `${-t} SM` : t < 1000 ? `${t} M` : String(t));
-const DURASI_PER_PERISTIWA = 2600;
+const DURASI_PER_PERISTIWA = 2000;
 
 function VisualSejarah({ v, ucap, siapkan, aksen }: { v: Extract<Visual, { kind: "sejarah" }>; ucap?: Ucap; siapkan?: (t: string) => void; aksen: string }) {
   const uid = useId().replace(/:/g, "");
@@ -416,23 +416,32 @@ function VisualSejarah({ v, ucap, siapkan, aksen }: { v: Extract<Visual, { kind:
   const ev = v.peristiwa;
   const akhir = ev.length - 1;
   /* pos = posisi pecahan di linimasa (0 … jumlah peristiwa − 1). Mulai di ujung
-     supaya peta langsung utuh (juga untuk cuplikan/gambar slide); Putar = dari awal. */
+     supaya peta langsung utuh (juga untuk cuplikan/gambar slide).
+     [slide-sejarah-langkah-v1] Pengajar maju satu peristiwa per klik: pos
+     dianimasikan menuju `tujuan` lalu berhenti, supaya ada waktu menjelaskan. */
   const [pos, setPos] = useState(akhir);
-  const [jalan, setJalan] = useState(false);
+  const posRef = useRef(akhir);
+  const [tujuan, setTujuan] = useState<number | null>(null);
   useEffect(() => {
-    if (!jalan) return;
+    if (tujuan === null) return;
     let raf = 0; let lalu = performance.now();
     const langkah = (kini: number) => {
-      const dt = kini - lalu; lalu = kini;
-      let selesai = false;
-      setPos((p) => { const n = Math.min(akhir, p + dt / DURASI_PER_PERISTIWA); if (n >= akhir) selesai = true; return n; });
-      if (selesai) setJalan(false); else raf = requestAnimationFrame(langkah);
+      // stempel rAF pertama bisa lebih awal dari performance.now() → dt negatif.
+      const dt = Math.max(0, kini - lalu); lalu = kini;
+      const p = posRef.current;
+      const arah = Math.sign(tujuan - p);
+      let n = p + (arah * dt) / DURASI_PER_PERISTIWA;
+      if (arah === 0 || (arah > 0 ? n >= tujuan : n <= tujuan)) n = tujuan;
+      posRef.current = n; setPos(n);
+      if (n === tujuan) setTujuan(null); else raf = requestAnimationFrame(langkah);
     };
     raf = requestAnimationFrame(langkah);
     return () => cancelAnimationFrame(raf);
-  }, [jalan, akhir]);
+  }, [tujuan]);
+  const lompat = (i: number) => { setTujuan(null); posRef.current = i; setPos(i); };
+  const gerak = (i: number) => setTujuan(Math.max(0, Math.min(akhir, i)));
 
-  const i0 = Math.min(akhir, Math.floor(pos + 1e-6));
+  const i0 = Math.max(0, Math.min(akhir, Math.floor(pos + 1e-6)));
   const frac = pos - i0;
   const tahun = i0 >= akhir ? ev[akhir].tahun : ev[i0].tahun + (ev[i0 + 1].tahun - ev[i0].tahun) * frac;
   const kini = ev[i0];
@@ -447,11 +456,11 @@ function VisualSejarah({ v, ucap, siapkan, aksen }: { v: Extract<Visual, { kind:
   const semua = peta ? Object.values(peta).join("") : "";
   const negaraAktif = new Set((v.negara || []).filter((n) => tampak(n.tahun)).map((n) => n.id));
 
-  const putar = () => {
-    if (jalan) { setJalan(false); return; }
-    if (pos >= akhir - 1e-3) setPos(0);
-    setJalan(true);
-  };
+  // Patokan langkah = tujuan yang sedang dituju (klik beruntun tetap maju/mundur satu-satu).
+  const diUjung = tujuan === null && pos >= akhir - 1e-3;
+  const diAwal = tujuan === null ? pos <= 1e-3 : tujuan === 0;
+  const berikutnya = () => (diUjung ? lompat(0) : gerak((tujuan ?? Math.floor(pos + 1e-6)) + 1));
+  const sebelumnya = () => gerak((tujuan ?? Math.ceil(pos - 1e-6)) - 1);
 
   return (
     <div className="grid h-full gap-[1.2cqw]" style={{ gridTemplateColumns: "1fr 37%" }}>
@@ -546,19 +555,24 @@ function VisualSejarah({ v, ucap, siapkan, aksen }: { v: Extract<Visual, { kind:
         )}
       </div>
 
-      {/* Linimasa: tombol putar + daftar peristiwa; yang sedang disorot melebar */}
+      {/* Linimasa: tombol Sebelumnya/Berikutnya + daftar peristiwa; yang sedang disorot melebar */}
       <div className="flex min-h-0 flex-col gap-[0.6cqh]">
-        <div className="flex shrink-0 items-center gap-[0.7em]">
-          <button type="button" onClick={(e) => { e.stopPropagation(); putar(); }}
+        <div className="flex shrink-0 items-center gap-[0.5em]">
+          <button type="button" onClick={(e) => { e.stopPropagation(); sebelumnya(); }} disabled={diAwal}
+            className="inline-flex shrink-0 items-center justify-center rounded-full p-[0.35em] text-[0.8em] shadow-sm transition hover:brightness-95 disabled:opacity-40"
+            style={{ background: "#fff", border: `1px solid ${aksen}66`, color: aksen }} aria-label="Peristiwa sebelumnya" title="Sebelumnya">
+            <ChevronLeft className="h-[1.1em] w-[1.1em]" />
+          </button>
+          <button type="button" onClick={(e) => { e.stopPropagation(); berikutnya(); }}
             className="inline-flex shrink-0 items-center gap-[0.4em] rounded-full px-[0.9em] py-[0.3em] text-[0.8em] font-bold text-white shadow-sm transition hover:brightness-110"
-            style={{ background: aksen }} aria-label={jalan ? "Jeda" : "Putar animasi persebaran"}>
-            {jalan ? <><Pause className="h-[1em] w-[1em]" /> Jeda</>
-              : pos >= akhir - 1e-3 ? <><RotateCcw className="h-[1em] w-[1em]" /> Putar animasi</>
-              : <><Play className="h-[1em] w-[1em]" /> Lanjut</>}
+            style={{ background: aksen }} aria-label={diUjung ? "Mulai dari peristiwa pertama" : "Peristiwa berikutnya"}>
+            {diUjung ? <><RotateCcw className="h-[1em] w-[1em]" /> Mulai dari awal</>
+              : <>Berikutnya <ChevronRight className="h-[1.1em] w-[1.1em]" /></>}
           </button>
           <div className="relative h-[0.3em] min-w-0 flex-1 rounded-full" style={{ background: "#E5E7EB" }}>
             <div className="absolute inset-y-0 left-0 rounded-full" style={{ background: aksen, width: `${akhir ? (pos / akhir) * 100 : 100}%` }} />
           </div>
+          <span className="shrink-0 text-[0.7em] font-bold tabular-nums" style={{ color: "#6B7280" }}>{i0 + 1}/{ev.length}</span>
         </div>
         <div className="relative flex min-h-0 flex-1 flex-col gap-[0.35cqh] overflow-hidden">
           {/* garis linimasa */}
@@ -569,8 +583,8 @@ function VisualSejarah({ v, ucap, siapkan, aksen }: { v: Extract<Visual, { kind:
             return (
               // div ber-role, bukan <button>: di dalamnya ada tombol bunyi (button di dalam button = HTML tak sah).
               <div key={i} role="button" tabIndex={0}
-                onClick={(e) => { e.stopPropagation(); setJalan(false); setPos(i); }}
-                onKeyDown={(e) => { if (e.key === "Enter" || e.key === " ") { e.preventDefault(); e.stopPropagation(); setJalan(false); setPos(i); } }}
+                onClick={(e) => { e.stopPropagation(); lompat(i); }}
+                onKeyDown={(e) => { if (e.key === "Enter" || e.key === " ") { e.preventDefault(); e.stopPropagation(); lompat(i); } }}
                 className={`relative flex min-h-0 cursor-pointer items-start gap-[0.6em] rounded-[0.6em] text-left transition ${ini ? "shrink-0" : "flex-1"}`}
                 style={ini ? { ...KARTU, padding: "0.35em 0.6em 0.45em 0", borderColor: `${aksen}66`, background: `${aksen}0D` } : { padding: "0 0.6em 0 0" }}>
                 <span className="relative z-[1] mt-[0.2em] block shrink-0 rounded-full"
