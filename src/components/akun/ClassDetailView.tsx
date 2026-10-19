@@ -18,6 +18,31 @@ import ClassLevelSwitcher from '@/components/akun/ClassLevelSwitcher';
 // [kelas-switch-instan-v1] cache sesi + pasang-sebelum-paint biar pindah level tak kedip
 import { readCache, writeCache, useIsoLayoutEffect, regKey, schedKey, materiKey, levelRegsKey, STUDENT_ID_KEY, simpanDaftarLevel } from '@/lib/kelasCache';
 import { tanpaSesiSintetis } from '@/lib/sesiSintetis'; // [jadwal-hantu-hidden-v1]
+
+/* [rekaman-blok-sesi-v1] 19 Okt 2026 — Andrio (English A2.3) belajar dua jam = dua baris
+   jadwal (Sesi 11 + 12) dalam satu ruang Linguo Meet "Sesi 11–12". Dashboard pengajar
+   dulu menempel rekaman cuma ke baris pertama blok, jadi Sesi 12 tampil tanpa rekaman
+   padahal rekamannya satu berkas yang sama. Baris selesai yang kosong rekamannya kini
+   meminjam tautan dari baris SEBELUMNYA yang bersambung (selisih mulai ≤ durasi + 5
+   menit) di registrasi yang sama. Dashboard sejak [vc-rekaman-blok-sesi-v1] menulis ke
+   semua baris blok; ini jaring untuk riwayat lama & deploy yang belum serempak. */
+function isiRekamanBlok<T extends { id?: string; status?: string | null; scheduled_at?: string | null; duration_minutes?: number | null; recording_url?: string | null }>(rows: T[]): T[] {
+  const urut = [...rows].sort((a, b) => String(a.scheduled_at || '').localeCompare(String(b.scheduled_at || '')));
+  const pinjam = new Map<string, string>();
+  let prev: T | null = null;
+  for (const s of urut) {
+    const mulai = s.scheduled_at ? new Date(s.scheduled_at).getTime() : NaN;
+    if (prev && !s.recording_url && s.status === 'completed' && prev.recording_url && Number.isFinite(mulai)) {
+      const prevMulai = new Date(prev.scheduled_at as string).getTime();
+      const durasi = (Number(prev.duration_minutes) || 60) * 60000;
+      if (mulai > prevMulai && mulai <= prevMulai + durasi + 5 * 60000 && s.id) pinjam.set(s.id, prev.recording_url as string);
+    }
+    // baris yang baru dipinjami ikut jadi "sebelumnya" supaya blok 3 jam juga tersambung
+    prev = s.recording_url || (s.id && pinjam.has(s.id)) ? { ...s, recording_url: s.recording_url || pinjam.get(s.id as string) } : s;
+  }
+  if (!pinjam.size) return rows;
+  return rows.map((s) => (s.id && pinjam.has(s.id) ? { ...s, recording_url: pinjam.get(s.id) } : s));
+}
 // [teacher-sapaan-v1] siswa manggil pengajarnya "Kak Dhani", bukan nama lengkap
 import { sapaan } from '@/lib/teacherName';
 import ClassProgressTab from '@/components/akun/ClassProgressTab';
@@ -105,7 +130,7 @@ export default function ClassDetailView({ reg, initialTab, previewStudentId = nu
      TERBESAR antara `registrations.sessions_used` (yang sudah memuat sesi itu) dan
      jumlah baris `completed`. */
   const [schedules, setSchedulesRaw] = useState<any[]>([]);
-  const setSchedules = (rows: any[]) => setSchedulesRaw(tanpaSesiSintetis(rows || []));
+  const setSchedules = (rows: any[]) => setSchedulesRaw(isiRekamanBlok(tanpaSesiSintetis(rows || [])));
   const [loading, setLoading] = useState(true);
   // [kelas-switch-instan-v1] Jadwal level yang pernah dibuka dipasang dari cache
   // sebelum paint: linimasa & kartu "Sesi Berikutnya" langsung terisi, query di
