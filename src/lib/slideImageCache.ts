@@ -1,7 +1,9 @@
 /** Cache kecil untuk unduh + decode cover sebelum kartu ditampilkan. */
 type Entri = { image: HTMLImageElement; promise: Promise<void>; ready: boolean };
 const cache = new Map<string, Entri>();
-const BATAS = 12;
+// [slide-cepat-v1] Cukup untuk beberapa dek sekaligus (tiap dek ±3 gambar unik);
+// entri yang terbuang memaksa slide menunggu lagi walau berkasnya sudah di cache HTTP.
+const BATAS = 40;
 
 export function slideImageReady(src?: string): boolean {
   return !src || cache.get(src)?.ready === true;
@@ -37,4 +39,12 @@ export function preloadSlideImage(src?: string, priority: "high" | "low" = "low"
   image.onerror = () => finish(false);
   image.src = src;
   return promise;
+}
+
+/** [slide-cepat-v1] Panaskan seluruh gambar satu dek sebelum viewer dibuka
+ *  (hover/fokus tombol slide): dua gambar pertama didahulukan. */
+export function preloadDekSlides(slides?: Array<{ cover?: string | null }> | null): void {
+  if (!slides?.length) return;
+  const unik = [...new Set(slides.map((s) => s.cover).filter(Boolean) as string[])];
+  unik.forEach((src, n) => { void preloadSlideImage(src, n < 2 ? "high" : "low"); });
 }

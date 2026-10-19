@@ -15,7 +15,7 @@ import {
 import type { MateriSlide, SlideType } from "@/lib/materiSlides";
 import { useT } from "@/lib/uiLang"; // [ui-lang-switcher-v1]
 import { SLIDE_TYPE_LABEL } from "@/lib/materiSlides";
-import { preloadSlideImage, slideImageReady } from "@/lib/slideImageCache";
+import { preloadDekSlides, preloadSlideImage, slideImageReady } from "@/lib/slideImageCache";
 import { RectFlag } from "@/components/RectFlag";
 // [slide-tts-v1] Mesin & cache TTS yang SAMA dengan reader e-book new edition
 // (memori → Cache API → CDN bucket `tts-cache` → /api/tts). Kata yang pernah
@@ -514,6 +514,8 @@ export function SlideCard({ s, showAnswers, lang, className = "" }: {
   );
 }
 
+const TUNGGU_COVER = 150;
+
 /* ── Slideshow ───────────────────────────────────────────────────────────── */
 
 function SlideDeckViewerSession({
@@ -527,7 +529,9 @@ function SlideDeckViewerSession({
   onClose: () => void;
 }) {
   const t = useT(); // [ui-lang-switcher-v1]
-  // Ganti teks dan cover sekaligus sesudah gambar target selesai di-decode.
+  // [slide-cepat-v1] Slide tampil seketika — tak ada layar "Memuat…".
+  // Kalau cover tujuan belum siap, tunggu paling lama TUNGGU_COVER ms supaya teks
+  // & gambar tetap berganti bersamaan; lewat dari itu pindah saja, gambar menyusul.
   const [i, setIndex] = useState(0);
   const target = useRef(0);
   const navigation = useRef(0);
@@ -535,25 +539,17 @@ function SlideDeckViewerSession({
     const next = Math.max(0, Math.min(slides.length - 1, typeof n === "function" ? n(target.current) : n));
     target.current = next;
     const ticket = ++navigation.current;
-    void preloadSlideImage(slides[next]?.cover, "high").then(() => {
-      if (ticket === navigation.current) setIndex(next);
-    });
+    const cov = slides[next]?.cover;
+    if (slideImageReady(cov)) { setIndex(next); return; }
+    const pindah = () => { if (ticket === navigation.current) setIndex(next); };
+    void preloadSlideImage(cov, "high").then(pindah);
+    window.setTimeout(pindah, TUNGGU_COVER);
   }, [slides]);
   useEffect(() => () => { navigation.current++; }, []);
   const cover = slides[i]?.cover;
-  const [preparedCover, setPreparedCover] = useState<string | undefined>(() => slideImageReady(cover) ? cover : undefined);
-  const coverReady = !cover || preparedCover === cover || slideImageReady(cover);
+  // Cover aktif dulu, lalu semua gambar dek lainnya di belakang.
   useEffect(() => {
-    let alive = true;
-    void preloadSlideImage(cover, "high").then(() => { if (alive) setPreparedCover(cover); });
-    return () => { alive = false; };
-  }, [cover]);
-  // Prioritaskan cover aktif; latar slide berikutnya dimuat di belakang.
-  useEffect(() => {
-    void preloadSlideImage(cover, "high").then(() => {
-      const unik = new Set(slides.map((s) => s.cover).filter(Boolean));
-      unik.forEach((src) => { if (src !== cover) void preloadSlideImage(src, "low"); });
-    });
+    void preloadSlideImage(cover, "high").then(() => preloadDekSlides(slides));
   }, [slides, cover]);
   const [fs, setFs] = useState(false);
   const [kunci, setKunci] = useState(false);
@@ -651,15 +647,9 @@ function SlideDeckViewerSession({
           <ChevronLeft size={22} />
         </button>
         <div className="relative aspect-[16/9] max-h-full w-full max-w-[min(1100px,92vw)] overflow-hidden rounded-2xl shadow-2xl">
-          {coverReady ? (
-            <div key={i} className="absolute inset-0">
-              <SlideCard s={s} showAnswers={kunci} lang={lang} className="h-full w-full" />
-            </div>
-          ) : (
-            <div role="status" className="absolute inset-0 flex items-center justify-center bg-[#0E7C7B] text-sm text-white">
-              {t("Memuat…")}
-            </div>
-          )}
+          <div key={i} className="absolute inset-0">
+            <SlideCard s={s} showAnswers={kunci} lang={lang} className="h-full w-full" />
+          </div>
         </div>
         <button onClick={maju} disabled={i === total - 1} aria-label={t("Slide berikutnya")}
           className="absolute right-2 z-10 rounded-full bg-white/10 p-2.5 text-white transition hover:bg-white/20 disabled:opacity-20 sm:right-4 sm:p-3">

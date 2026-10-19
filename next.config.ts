@@ -107,6 +107,13 @@ const nextConfig: NextConfig = {
           { key: 'Cache-Control', value: 'public, max-age=31536000, immutable' },
         ],
       },
+      {
+        // [slide-cepat-v1] Gambar slide materi: tanpa ini tiap buka dek = cek ulang ke server.
+        source: '/slide-cover/:path*',
+        headers: [
+          { key: 'Cache-Control', value: 'public, max-age=86400, stale-while-revalidate=31536000' },
+        ],
+      },
     ];
   },
 };
