@@ -95,6 +95,12 @@ export async function POST(req: NextRequest) {
       // [kelas-b2b-pratinjau-v1] POV peserta B2B: kepesertaan korporat dicocokkan lewat email siswa.
       const { data: stu } = await admin.from("students").select("email").eq("id", previewId).maybeSingle();
       emailSesi = String(stu?.email || "").trim().toLowerCase();
+      // [akun-student-kembar-v2] kelas kembaran ber-email sama ikut tampil di POV
+      // (/api/preview-student), jadi rekamannya juga harus bisa diputar.
+      if (emailSesi) {
+        const { data: kembar } = await admin.from("students").select("id").ilike("email", emailSesi);
+        (kembar ?? []).forEach((s: { id: string }) => ownedIds.add(s.id));
+      }
     }
 
     // ── 2. Rekaman ini memang milik dia? ─────────────────────────────────────

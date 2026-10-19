@@ -54,9 +54,23 @@ export async function GET(req: NextRequest) {
     return NextResponse.json({ error: "not found" }, { status: 404 });
   }
 
+  // [akun-student-kembar-v2] Satu email bisa punya >1 baris `students` (pindah kelas,
+  // tagihan manual, dan insert balapan melahirkan kembaran). Kelasnya tersebar di
+  // kembaran itu — Shafa: French A1.2 di satu baris, Arabic A1.2 di baris lain;
+  // Anisa: pratinjau dibuka di kembaran kosong padahal Private Jerman ada di baris
+  // lama. Registrasi semua kembaran ikut ditarik, sama dengan klien /akun.
+  const emailKembar = String(student.email || "").trim();
+  let idSiswa: string[] = [id];
+  if (/^[^\s,()"'\\%*]+@[^\s,()"'\\%*]+$/.test(emailKembar)) {
+    const kembar = await rest(`students?email=ilike.${encodeURIComponent(emailKembar)}&select=id`);
+    const ids = (Array.isArray(kembar) ? kembar : []).map((s: any) => s.id).filter(Boolean);
+    idSiswa = Array.from(new Set([id, ...ids]));
+  }
+  const inSiswa = `in.(${idSiswa.join(",")})`;
+
   const regs =
     (await rest(
-      `registrations?student_id=eq.${id}` +
+      `registrations?student_id=${inSiswa}` +
         `&select=id,product,language,level,status,sessions_total,sessions_used,` +
         `duration,total_amount,payment_status,registration_date,teacher_id,batch_id,test_prep_batch_id,` +
         // [akun-tagihan-real-v1] kolom billing buat tab Tagihan & Paket di preview
@@ -92,17 +106,19 @@ export async function GET(req: NextRequest) {
   // RPC yang sama dengan klien siswa, supaya gerbang "batch sudah jalan" tak punya
   // dua salinan. Gagal = kartu tampil tanpa nama pengajar, bukan error.
   const batchTeacherMap: Record<string, any> = {};
-  try {
-    const res = await fetch(`${SUPABASE_URL}/rest/v1/rpc/my_batch_teachers`, {
-      method: "POST", headers: H, cache: "no-store", body: JSON.stringify({ p_student_id: id }),
-    });
-    const rows = res.ok ? await res.json() : [];
-    (Array.isArray(rows) ? rows : []).forEach((t: any) => {
-      if (t?.registration_id && t?.teacher_id) {
-        batchTeacherMap[t.registration_id] = { id: t.teacher_id, name: t.name, title: t.title, avatar_url: t.avatar_url };
-      }
-    });
-  } catch {}
+  await Promise.all(idSiswa.map(async (sid) => {
+    try {
+      const res = await fetch(`${SUPABASE_URL}/rest/v1/rpc/my_batch_teachers`, {
+        method: "POST", headers: H, cache: "no-store", body: JSON.stringify({ p_student_id: sid }),
+      });
+      const rows = res.ok ? await res.json() : [];
+      (Array.isArray(rows) ? rows : []).forEach((t: any) => {
+        if (t?.registration_id && t?.teacher_id) {
+          batchTeacherMap[t.registration_id] = { id: t.teacher_id, name: t.name, title: t.title, avatar_url: t.avatar_url };
+        }
+      });
+    } catch {}
+  }));
 
   const registrations = regs.map((r: any) => ({
     ...r,
@@ -148,7 +164,7 @@ export async function GET(req: NextRequest) {
   // [saldo-beranda-v1] Saldo Linguo — RLS saldo butuh sesi siswa, jadi pratinjau
   // (tanpa login) menghitungnya di sini.
   const saldoRows = (await rest(
-    `student_wallet_entries?student_id=eq.${id}&status=eq.success&select=amount`
+    `student_wallet_entries?student_id=${inSiswa}&status=eq.success&select=amount`
   )) || [];
   const saldo_linguo = saldoRows.reduce((a: number, r: any) => a + (Number(r.amount) || 0), 0);
 
@@ -161,7 +177,7 @@ export async function GET(req: NextRequest) {
   try {
     const email = String(student.email || "").trim();
     const emailAman = /^[^\s,()"'\\%*]+@[^\s,()"'\\%*]+$/.test(email) ? email : "";
-    const syarat = [`student_id.eq.${id}`];
+    const syarat = [`student_id.${inSiswa}`];
     if (regIds.length > 0) syarat.push(`registration_id.in.(${regIds.join(",")})`);
     if (emailAman) syarat.push(`buyer_email.ilike.${emailAman}`);
     digitalPurchases =

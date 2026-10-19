@@ -3853,6 +3853,11 @@ export default function AkunPage() {
         return;
       }
 
+      const idSiswaKembar = Array.from(new Set([
+        studentData.id,
+        ...kandidat.map((r: any) => r.id).filter(Boolean),
+      ]));
+
       // Only use columns that actually exist in the DB
       const { data: regsData } = await supabase
         .from("registrations")
@@ -3868,7 +3873,10 @@ export default function AkunPage() {
           addons, addon_ebook_recording,
           teachers(name, whatsapp, avatar_url)
         `)
-        .eq("student_id", studentData.id)
+        // [akun-student-kembar-v2] Registrasi SEMUA kembaran ber-email sama, bukan cuma
+        // baris yang terpilih. Kelas sering tersebar: Shafa (19 Okt 2026) punya French
+        // A1.2 di satu baris dan Arabic A1.2 di baris lain — dulu salah satunya hilang.
+        .in("student_id", idSiswaKembar.length > 0 ? idSiswaKembar : [studentData.id])
         .order("registration_date", { ascending: false });
 
       /* Batch kelas grup — Reguler (`regular_batches`) & English Test Preparation
@@ -3963,7 +3971,7 @@ export default function AkunPage() {
         supabase
           .from("student_badges")
           .select("*")
-          .eq("student_id", studentData.id)
+          .in("student_id", idSiswaKembar)
           .order("earned_at", { ascending: false }),
       ]);
       const schedRes: { data: any[] | null; error?: any } = jadwalServer

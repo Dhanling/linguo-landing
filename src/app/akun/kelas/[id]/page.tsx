@@ -128,7 +128,9 @@ function KelasDetailInner() {
       // Verifikasi kepemilikan: registration harus milik student dgn email login ini.
       const load = () =>
         Promise.all([
-          supabase.from("students").select("id").eq("email", email).maybeSingle(),
+          // [akun-student-kembar-v2] BUKAN maybeSingle(): email dengan >1 baris students
+          // membuat maybeSingle() balik null → siswa diusir dari kelasnya sendiri.
+          supabase.from("students").select("id").eq("email", email),
           supabase
             .from("registrations")
             .select(`
@@ -163,9 +165,10 @@ function KelasDetailInner() {
         return;
       }
 
-      const student = sRes.data;
+      const idSiswa = new Set(((sRes.data as { id: string }[] | null) || []).map((s) => s.id));
+      const student = idSiswa.size > 0;
       const regData = rRes.data;
-      if (!regData || !student || regData.student_id !== student.id) {
+      if (!regData || !student || !idSiswa.has(regData.student_id)) {
         // Query SUKSES tapi reg tak terlihat/bukan miliknya. Kalau user baru saja
         // klik card miliknya di beranda (handoff ada), jangan usir — tampilkan
         // data handoff & catat buat debug (kemungkinan besar RLS/data lagi aneh).
