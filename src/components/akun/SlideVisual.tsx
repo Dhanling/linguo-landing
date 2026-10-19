@@ -233,7 +233,7 @@ function Keping({ c, ucap, siapkan, aksen }: { c: Extract<Visual, { kind: "kelom
           </span>
         </>
       ) : (
-        <span className="text-[1.05em] font-extrabold" style={{ color: w }}>
+        <span className="whitespace-nowrap text-[1.05em] font-extrabold" style={{ color: w }}>
           {c.text}{c.hanzi && <span className="ml-[0.3em]" style={{ color: "#111827" }}>{c.hanzi}</span>}
         </span>
       )}
