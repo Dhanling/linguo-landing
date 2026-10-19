@@ -2975,10 +2975,16 @@ export default function AkunPage() {
      datang isinya kosong → dianggap "memuat" (tombol & gembok belum tampil);
      gerbang yang sesungguhnya ada di /api/class-recording. */
   const [aksesRekamanMap, setAksesRekamanMap] = useState<Map<string, AksesAddon>>(() => new Map());
-  const regIdsKey = (student?.registrations || []).map((r: any) => r.id).join(",");
+  const regIdsKey = (student?.registrations || []).map((r: any) => `${r.id}:${r.akses_rekaman || ""}`).join(",");
   useEffect(() => {
     const regs = (student?.registrations || []) as any[];
     if (regs.length === 0) { setAksesRekamanMap(new Map()); return; }
+    // [rekaman-pov-akses-v1] POV staf tak punya sesi siswa → RLS add-on kosong.
+    // Peta dihitung server (/api/preview-student) dan dititipkan di tiap registrasi.
+    if (previewMode) {
+      setAksesRekamanMap(new Map(regs.filter((r) => r?.akses_rekaman).map((r) => [r.id, r.akses_rekaman as AksesAddon])));
+      return;
+    }
     let alive = true;
     (async () => {
       // Snapshot cache lama belum menyimpan kolom add-on → minta helper menambalnya.
@@ -2988,7 +2994,7 @@ export default function AkunPage() {
     })();
     return () => { alive = false; };
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [regIdsKey]);
+  }, [regIdsKey, previewMode]);
 
   const [streak, setStreak] = useState(() => akunSnapshot?.streak ?? 0);
   const [dataLoading, setDataLoading] = useState(false);

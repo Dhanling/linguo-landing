@@ -1,5 +1,7 @@
 import { NextRequest, NextResponse } from "next/server";
+import { createClient } from "@supabase/supabase-js";
 import { previewStudentId } from "@/lib/previewSession";
+import { muatAksesRekamanMap, ADDON_REG_COLUMNS } from "@/lib/addonAccess";
 
 // ── preview-student-v1 ───────────────────────────────────────────────────
 // Endpoint READ-ONLY buat "POV siswa". Dashboard /akun dibuka via
@@ -76,7 +78,7 @@ export async function GET(req: NextRequest) {
         // [akun-tagihan-real-v1] kolom billing buat tab Tagihan & Paket di preview
         `installment_paid,payment_due_date,payment_date,created_at,` +
         // [teacher-avatar-sync-v1] ikutkan avatar_url biar foto pengajar tampil di preview
-        `pipeline_status,archived_at,teachers(name,whatsapp,avatar_url)` +
+        `pipeline_status,archived_at,${ADDON_REG_COLUMNS},teachers(name,whatsapp,avatar_url)` +
         `&order=registration_date.desc`
     )) || [];
 
@@ -153,6 +155,19 @@ export async function GET(req: NextRequest) {
           `&select=id,registration_id,report_type,skills,attendance,teacher_comment,recommendation,published_at`
       )) || [];
     registrations.forEach((r: any) => { r.class_reports = reps.filter((x: any) => x.registration_id === r.id); });
+  }
+
+  // [rekaman-pov-akses-v1] Hak tonton rekaman per registrasi. Klien siswa membacanya
+  // lewat RLS `registration_addons` (butuh email sesi); POV staf tanpa login cuma
+  // dapat baris kosong → peta "belum-didata"/"memuat" → tombol "Tonton rekaman"
+  // tak pernah muncul di pratinjau, padahal siswanya beli Recording (Davin, Spanish
+  // A2.2, 19 Okt 2026). Dihitung di sini dengan helper yang sama.
+  if (regIds.length > 0) {
+    try {
+      const admin = createClient(SUPABASE_URL, SUPABASE_KEY, { auth: { persistSession: false, autoRefreshToken: false } });
+      const akses = await muatAksesRekamanMap(admin, registrations);
+      registrations.forEach((r: any) => { r.akses_rekaman = akses.get(r.id) ?? "memuat"; });
+    } catch { /* tanpa peta → klien tetap "memuat" */ }
   }
 
   // `upcomingSchedules` tetap dikirim buat klien versi lama yang belum tahu `schedules`.
