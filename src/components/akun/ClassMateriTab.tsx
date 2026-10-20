@@ -26,6 +26,7 @@ import { useEffect, useState } from 'react';
 import { supabase } from '@/lib/supabase-client';
 // [kelas-switch-instan-v1] materi level yang pernah dibuka/di-prefetch → tampil tanpa "Memuat…"
 import { readCache, writeCache, useIsoLayoutEffect, materiKey } from '@/lib/kelasCache';
+import KuisKelasSesi, { type KuisKelasBaris } from '@/components/akun/KuisKelasSesi';
 // (Play, bukan Youtube — versi lucide-react di repo ini tidak meng-export ikon brand)
 import { BookOpen, FileText, Presentation, Link2, Paperclip, Video, ExternalLink, Play, Check, X, ChevronRight, Clock, CalendarDays, PenLine, Sparkles, type LucideIcon } from 'lucide-react';
 import { studentRecordingHref, isPlayableRecording } from '@/lib/classRoom';
@@ -318,9 +319,11 @@ function statusMilestone(sched: any | null, sudahJalan = false) {
 // isinya karena silabus level (judul sesi + poin/kosakata yang dipelajari) datang
 // dari data kurikulum, bukan dari laporan pengajar.
 function SesiDetailDrawer({
-  no, sched, st, items, teacherName, durasi, silabus, onClose,
+  no, sched, st, items, teacherName, durasi, silabus, onClose, kuisKelas,
 }: {
   no: number;
+  /** [vc-kuis-simpan-materi-v1] Soal kuis live yang ditutup pengajar di sesi ini. */
+  kuisKelas?: KuisKelasBaris[];
   sched: any | null;
   st: ReturnType<typeof statusMilestone>;
   items: any[];
@@ -439,6 +442,8 @@ function SesiDetailDrawer({
               <p className="mt-1 text-[11px] text-gray-400">{t('Pengumpulan & penilaiannya ada di tab Tugas.')}</p>
             </section>
           )}
+
+          {kuisKelas && kuisKelas.length > 0 && <KuisKelasSesi soal={kuisKelas} />}
 
           <section>
             <h4 className="mb-2 text-xs font-bold uppercase tracking-wider text-gray-500">
@@ -652,6 +657,26 @@ export default function ClassMateriTab({
     return () => { alive = false; };
   }, [reg.id]);
 
+  // [vc-kuis-simpan-materi-v1] Kuis live yang tersimpan dari Kelas Video.
+  // Boleh gagal (tabel belum dimigrasi) — drawer cuma tidak menampilkan bagiannya.
+  const [kuisKelas, setKuisKelas] = useState<KuisKelasBaris[]>([]);
+  useEffect(() => {
+    let alive = true;
+    supabase
+      .from('live_quiz_log')
+      .select('id, schedule_id, session_number, language, question, options, correct, naskah, arti, explanation, votes, created_at')
+      .eq('registration_id', reg.id)
+      .order('created_at', { ascending: true })
+      .then(({ data, error }) => {
+        if (!alive) return;
+        if (error) { console.warn('[kelas-materi] gagal load live_quiz_log:', error.message); return; }
+        setKuisKelas((data || []) as KuisKelasBaris[]);
+      });
+    return () => { alive = false; };
+  }, [reg.id]);
+  const kuisUntuk = (sched: any | null, no: number) =>
+    kuisKelas.filter((k) => (sched?.id && k.schedule_id ? k.schedule_id === sched.id : k.session_number === no));
+
   useEffect(() => {
     let alive = true;
     loadSilabusLevel(reg.language, reg.level)
@@ -850,6 +875,7 @@ export default function ClassMateriTab({
           teacherName={teacherName}
           durasi={durasiSesi || msTerbuka.sched?.duration_minutes || null}
           silabus={silabusSesi(msTerbuka.no)}
+          kuisKelas={kuisUntuk(msTerbuka.sched, msTerbuka.no)}
           onClose={() => setSesiTerbuka(null)}
         />
       )}

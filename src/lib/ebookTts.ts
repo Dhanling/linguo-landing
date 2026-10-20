@@ -1706,26 +1706,31 @@ export function hentikanEbookTts() {
 /* Suara bawaan browser. Mutunya jauh di bawah Chirp — ini bukan pengganti,
    melainkan supaya ketukan tetap MENGELUARKAN bunyi waktu jalur utamanya
    bermasalah. Diam total tak terbedakan dari tombol rusak. */
-function ucapkanBrowser(teks: string, kode: string) {
+function ucapkanBrowser(teks: string, kode: string, laju = 1) {
   if (typeof window === "undefined" || !window.speechSynthesis) return;
   try {
     window.speechSynthesis.cancel();
     const u = new SpeechSynthesisUtterance(teks);
     u.lang = SUARA_BROWSER[kode] ?? SUARA_BROWSER[kode.split("-")[0]] ?? "en-US";
-    u.rate = 0.9;
+    u.rate = 0.9 * laju;
     window.speechSynthesis.speak(u);
   } catch {
     /* sudah sejauh ini — biarkan diam */
   }
 }
 
-async function mainkan(base64: string): Promise<boolean> {
+async function mainkan(base64: string, laju = 1): Promise<boolean> {
   if (!audio) audio = new Audio();
   try { audio.pause(); } catch { /* diam */ }
   try { window.speechSynthesis?.cancel(); } catch { /* diam */ }
   audio.volume = 1;
   // ⚠️ JANGAN menyetel currentTime di sini — lihat jebakan (2) di atas.
   audio.src = `data:audio/mp3;base64,${base64}`;
+  // [vc-kuis-listening-laju-v1] Kecepatan putar (1 = biasa, 0.75 = pelan) —
+  // kembaran dashboard. Ganti src mengembalikan playbackRate ke default, jadi
+  // keduanya disetel di sini (sekaligus mengembalikan 1× untuk pemutaran lain).
+  audio.defaultPlaybackRate = laju;
+  audio.playbackRate = laju;
   try {
     await audio.play();
     return true;
@@ -1954,7 +1959,7 @@ export type HasilUcap = "ok" | "gagal" | "dilewati";
  * Bunyikan potongan teks bahasa target.
  * @returns "dilewati" kalau memang tak layak dibunyikan (bukan galat).
  */
-export async function ucapkanEbook(teksMentah: string, kode: string): Promise<HasilUcap> {
+export async function ucapkanEbook(teksMentah: string, kode: string, laju = 1): Promise<HasilUcap> {
   const teks = rapikan(teksMentah);
   if (!teks || !bisaDibunyikan(kode)) return "dilewati";
 
@@ -1962,8 +1967,8 @@ export async function ucapkanEbook(teksMentah: string, kode: string): Promise<Ha
   const putar = async (b64: string) => {
     // Siswa sudah mengetuk kata lain sementara ini menunggu jaringan.
     if (saya !== seq) return "ok" as const;
-    if (await mainkan(b64)) return "ok" as const;
-    ucapkanBrowser(teks, kode);
+    if (await mainkan(b64, laju)) return "ok" as const;
+    ucapkanBrowser(teks, kode, laju);
     return "gagal" as const;
   };
 
@@ -1971,6 +1976,6 @@ export async function ucapkanEbook(teksMentah: string, kode: string): Promise<Ha
   if (ada) return putar(ada);
 
   const b64 = await ambilAudio(kode, teks, true);
-  if (!b64) { ucapkanBrowser(teks, kode); return "gagal"; }
+  if (!b64) { ucapkanBrowser(teks, kode, laju); return "gagal"; }
   return putar(b64);
 }
