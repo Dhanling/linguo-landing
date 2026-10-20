@@ -203,6 +203,108 @@ async function cocokkanForm(token: string, row: ModeRow & { language?: string | 
   }
 }
 
+// [pendataan-siswa-lama-v1] Siswa yang pernah terdaftar tidak perlu mengetik
+// ulang data diri: isian dari form pendataan yang dulu dikirim (paling baru)
+// dan baris `students`-nya dipakai sebagai isian awal. Pencocokannya lewat
+// student_id, nomor WA (10 digit terakhir), atau email kontak form INI — yang
+// ditulis admin/sistem saat tagihan dibuat, bukan diketik pengunjung — jadi
+// pemegang link hanya melihat data milik kontak yang sama. Isian per kelas
+// (pengalaman belajar bahasa ini, tujuan, jadwal) sengaja tidak diwariskan.
+const PREFILL_KEYS = [
+  "full_name", "nickname", "whatsapp", "email", "birth_date", "institution",
+  "country", "province", "city", "referral_source", "hobby", "teacher_gender_pref",
+] as const;
+type Prefill = Partial<Record<(typeof PREFILL_KEYS)[number], string>>;
+/** `siswaLama` = pernah punya kelas/form lain di Linguo → formulir menyapa
+ *  "selamat datang kembali". Siswa baru pun bisa dapat `data` (nama lengkap
+ *  dari baris students yang dibuat saat bayar), tapi tanpa sapaan itu. */
+type PrefillHasil = { siswaLama: boolean; data: Prefill };
+
+const ekorWa = (raw: unknown): string => {
+  const d = String(raw || "").replace(/\D/g, "");
+  return d.length >= 9 ? d.slice(-10) : "";
+};
+const emailSah = (raw: unknown): string => {
+  const e = String(raw || "").trim().toLowerCase();
+  return /^[^\s@,()*]+@[^\s@,()*]+\.[^\s@,()*]+$/.test(e) ? e : "";
+};
+
+async function prefillSiswaLama(token: string): Promise<PrefillHasil | null> {
+  try {
+    const meRes = await sb(
+      `student_intake_forms?token=eq.${token}&select=id,program,registration_id,student_id,contact_whatsapp,contact_email,registrations(student_id)`,
+    );
+    if (!meRes.ok) return null;
+    const me = ((await meRes.json()) as {
+      id: string; program?: string | null; registration_id?: string | null; student_id?: string | null; contact_whatsapp?: string | null; contact_email?: string | null;
+      registrations?: { student_id?: string | null } | null;
+    }[])[0];
+    if (!me) return null;
+    const sid = [me.student_id, me.registrations?.student_id].find((v) => v && UUID_RE.test(v)) || "";
+    const ekor = ekorWa(me.contact_whatsapp);
+    const email = encodeURIComponent(emailSah(me.contact_email));
+    if (!sid && !ekor && !email) return null;
+
+    const syaratForm = [
+      sid && `student_id.eq.${sid}`,
+      ekor && `contact_whatsapp.like.*${ekor}`,
+      ekor && `whatsapp.like.*${ekor}`,
+      email && `contact_email.ilike.${email}`,
+      email && `email.ilike.${email}`,
+    ].filter(Boolean).join(",");
+    const syaratSiswa = [
+      sid && `id.eq.${sid}`,
+      ekor && `whatsapp.like.*${ekor}`,
+      email && `email.ilike.${email}`,
+    ].filter(Boolean).join(",");
+
+    const [fRes, sRes] = await Promise.all([
+      sb(`student_intake_forms?status=eq.submitted&id=neq.${me.id}&or=(${syaratForm})` +
+        `&select=${PREFILL_KEYS.join(",")}&order=submitted_at.desc.nullslast&limit=1`),
+      sb(`students?or=(${syaratSiswa})&select=id,name,nickname,whatsapp,email,birth_date,birthdate,` +
+        `institution,country,province,city&limit=5`),
+    ]);
+    const lama = fRes.ok ? ((await fRes.json()) as Record<string, unknown>[])[0] || {} : {};
+    const siswaRows = sRes.ok ? ((await sRes.json()) as Record<string, unknown>[]) : [];
+    // Baris students kembar lazim (lihat catatan registrasi duplikat) — yang
+    // student_id-nya sama dengan form ini didahulukan.
+    siswaRows.sort((a, b) => Number(b.id === sid) - Number(a.id === sid));
+    const s = siswaRows[0] || {};
+
+    const dariSiswa: Record<string, unknown> = {
+      full_name: s.name, nickname: s.nickname, whatsapp: s.whatsapp, email: s.email,
+      birth_date: s.birth_date || s.birthdate, institution: s.institution,
+      country: s.country, province: s.province, city: s.city,
+      // students.source sengaja tidak dipakai: isinya bisa kode sistem
+      // (mis. sumber registrasi), bukan jawaban "dari mana tahu Linguo".
+    };
+    // Kelas Kids: satu nomor orang tua dipakai beberapa anak — data diri anak
+    // (nama, tanggal lahir, sekolah, hobi) bisa milik kakak/adiknya. Yang
+    // diwariskan cuma data kontak & domisili keluarga.
+    const kids = /kids/i.test(me.program || "");
+    const PRIBADI = new Set(["full_name", "nickname", "birth_date", "institution", "hobby", "teacher_gender_pref"]);
+    const out: Prefill = {};
+    for (const k of PREFILL_KEYS) {
+      if (kids && PRIBADI.has(k)) continue;
+      const v = [lama[k], dariSiswa[k]].map((x) => (typeof x === "string" ? x.trim() : "")).find(Boolean);
+      if (v) out[k] = k === "birth_date" ? v.slice(0, 10) : v;
+    }
+    // Pernah punya kelas lain? Dicari lewat semua baris students yang cocok
+    // (kembar), registrasi form ini sendiri tidak dihitung.
+    let siswaLama = Object.keys(lama).length > 0;
+    const ids = siswaRows.map((r) => String(r.id || "")).filter((v) => UUID_RE.test(v));
+    if (!siswaLama && ids.length) {
+      const bukan = me.registration_id && UUID_RE.test(me.registration_id) ? `&id=neq.${me.registration_id}` : "";
+      const rRes = await sb(`registrations?student_id=in.(${ids.join(",")})${bukan}&archived_at=is.null&select=id&limit=1`);
+      siswaLama = rRes.ok && ((await rRes.json()) as unknown[]).length > 0;
+    }
+    return Object.keys(out).length || siswaLama ? { siswaLama, data: out } : null;
+  } catch (e) {
+    console.error("Pendataan prefill error:", e);
+    return null;
+  }
+}
+
 export async function GET(req: NextRequest) {
   const token = (req.nextUrl.searchParams.get("token") || "").trim();
   // Link yang kepotong waktu disalin dari WhatsApp harus terbaca sebagai
@@ -228,8 +330,10 @@ export async function GET(req: NextRequest) {
   // embed tidak perlu bocor ke halaman publik.
   const { registrations, manual_invoices, ...form } = rows[0] as ModeRow & Record<string, unknown>;
   const peers = peersOf(rows[0]);
+  const prefill = form.status === "pending" ? await prefillSiswaLama(token) : null;
   return NextResponse.json({
     ...form,
+    prefill,
     class_mode: classModeOf(rows[0]),
     peer_count: peers.count,
     peer_fixed: peers.fixed,

@@ -69,6 +69,14 @@ type IntakeForm = {
   additional_participants?: Partial<Peer>[] | null;
   peer_count?: number;
   peer_fixed?: boolean;
+  // [pendataan-siswa-lama-v1] Data diri dari pendaftaran sebelumnya (form lama
+  // yang sudah dikirim + baris students). Cuma mengisi kolom yang masih kosong.
+  prefill?: {
+    siswaLama: boolean;
+    data: Partial<Record<
+      "full_name" | "nickname" | "whatsapp" | "email" | "birth_date" | "institution" | "country"
+      | "province" | "city" | "referral_source" | "hobby" | "teacher_gender_pref", string>>;
+  } | null;
 };
 
 /** Satu peserta selain yang mengisi form. `experience` disimpan sebagai
@@ -775,6 +783,7 @@ export default function PendataanPage() {
   const [teacherPref, setTeacherPref] = useState("");
   // [pendataan-peserta-semi-v1]
   const [peers, setPeers] = useState<Peer[]>([]);
+  const [siswaLama, setSiswaLama] = useState(false);
 
   useEffect(() => {
     fetch(`/api/pendataan?token=${encodeURIComponent(token)}`)
@@ -782,6 +791,26 @@ export default function PendataanPage() {
       .then((d: IntakeForm) => {
         setForm(d);
         if (d.status === "submitted") { setAlreadyDone(true); return; }
+        // [pendataan-siswa-lama-v1] Isian form ini sendiri tetap menang; kolom
+        // yang masih kosong diisi dari pendaftaran sebelumnya, baru dari kontak
+        // tagihan. Yang tetap kosong wajib dilengkapi seperti biasa.
+        const lama = d.prefill?.data || {};
+        setSiswaLama(!!d.prefill?.siswaLama);
+        d = {
+          ...d,
+          full_name: d.full_name || lama.full_name || null,
+          nickname: d.nickname || lama.nickname || null,
+          whatsapp: d.whatsapp || lama.whatsapp || null,
+          email: d.email || lama.email || null,
+          birth_date: d.birth_date || lama.birth_date || null,
+          institution: d.institution || lama.institution || null,
+          country: d.country || lama.country || null,
+          province: d.province || lama.province || null,
+          city: d.city || lama.city || null,
+          referral_source: d.referral_source || lama.referral_source || null,
+          hobby: d.hobby || lama.hobby || null,
+          teacher_gender_pref: d.teacher_gender_pref || lama.teacher_gender_pref || null,
+        };
         // Prefill dari yang sudah diketik admin waktu bikin tagihan — siswa
         // tinggal membetulkan, bukan mengetik ulang dari nol.
         setFullName(d.full_name || d.contact_name || "");
@@ -1130,11 +1159,20 @@ export default function PendataanPage() {
         {step === 0 && (
           <motion.div initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} className="mb-6">
             <h1 className="text-[26px] font-bold leading-tight tracking-tight text-slate-900">
-              Hai{greetName ? ` ${greetName}` : ""}, selamat bergabung!
+              Hai{greetName ? ` ${greetName}` : ""}, {siswaLama ? "selamat datang kembali!" : "selamat bergabung!"}
             </h1>
             <p className="mt-2 text-base leading-relaxed text-slate-700">
               Isi {steps.length} langkah singkat ini supaya kami bisa menyiapkan pengajar, jadwal, dan grup kelasmu.
             </p>
+            {siswaLama && (
+              <div className="mt-4 flex items-start gap-2.5 rounded-2xl border border-amber-200 bg-amber-50 px-4 py-3 text-sm leading-relaxed text-amber-900">
+                <History className="mt-0.5 h-4 w-4 shrink-0" />
+                <span>
+                  Kamu sudah pernah terdaftar di Linguo, jadi data yang sudah kami punya langsung kami isikan.
+                  Cukup cek, lalu lengkapi kolom yang masih kosong.
+                </span>
+              </div>
+            )}
             {(form?.language || form?.program) && (
               <div className="mt-4 flex flex-wrap items-center gap-2 rounded-2xl border border-[#1A9E9E]/20 bg-[#1A9E9E]/5 px-4 py-3 text-sm font-medium">
                 <Sparkles className="h-3.5 w-3.5" style={{ color: TEAL }} />
