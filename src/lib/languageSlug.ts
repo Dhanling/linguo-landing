@@ -31,6 +31,16 @@ const ALIAS: Record<string, string> = {
   tagalog: "filipino",
   portuguese: "portuguese-br",
   portugis: "portuguese-br",
+  // [bendera-brasil-v1] registrations.language kelas Brasil = "Portuguese - Brazilian";
+  // tanpa alias ini kartu kelas jatuh ke ikon globe.
+  "portuguese - brazilian": "portuguese-br",
+  "portuguese – brazilian": "portuguese-br",
+  "portuguese (brazil)": "portuguese-br",
+  "brazilian portuguese": "portuguese-br",
+  "portugis brasil": "portuguese-br",
+  "portuguese - european": "portuguese-pt",
+  "portuguese (portugal)": "portuguese-pt",
+  "european portuguese": "portuguese-pt",
   indonesian: "bipa",
   "bahasa indonesia": "bipa",
 };
