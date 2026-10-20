@@ -662,6 +662,8 @@ export default function ClassMateriTab({
   const [kuisKelas, setKuisKelas] = useState<KuisKelasBaris[]>([]);
   useEffect(() => {
     let alive = true;
+    // [kuis-kelas-pov-v1] Pratinjau POV: sudah dititipkan /api/preview-student.
+    if (Array.isArray(reg.kuis_kelas)) { setKuisKelas(reg.kuis_kelas as KuisKelasBaris[]); return; }
     supabase
       .from('live_quiz_log')
       .select('id, schedule_id, session_number, language, question, options, correct, naskah, arti, explanation, votes, created_at')
@@ -673,7 +675,8 @@ export default function ClassMateriTab({
         setKuisKelas((data || []) as KuisKelasBaris[]);
       });
     return () => { alive = false; };
-  }, [reg.id]);
+    // Snapshot cache lama belum membawa kuis_kelas → efek diulang begitu data segar datang.
+  }, [reg.id, Array.isArray(reg.kuis_kelas) ? reg.kuis_kelas.length : -1]);
   const kuisUntuk = (sched: any | null, no: number) =>
     kuisKelas.filter((k) => (sched?.id && k.schedule_id ? k.schedule_id === sched.id : k.session_number === no));
 

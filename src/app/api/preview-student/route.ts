@@ -157,6 +157,18 @@ export async function GET(req: NextRequest) {
     registrations.forEach((r: any) => { r.class_reports = reps.filter((x: any) => x.registration_id === r.id); });
   }
 
+  // [kuis-kelas-pov-v1] Kuis live tersimpan (live_quiz_log) — RLS cuma untuk siswa
+  // yang login, jadi POV staf dulu tak pernah melihat bagian "Kuis di Kelas".
+  if (regIds.length > 0) {
+    const kuis =
+      (await rest(
+        `live_quiz_log?registration_id=in.(${regIds.join(",")})` +
+          `&select=id,registration_id,schedule_id,session_number,language,question,options,correct,naskah,arti,explanation,votes,created_at` +
+          `&order=created_at.asc`
+      )) || [];
+    registrations.forEach((r: any) => { r.kuis_kelas = kuis.filter((x: any) => x.registration_id === r.id); });
+  }
+
   // [rekaman-pov-akses-v1] Hak tonton rekaman per registrasi. Klien siswa membacanya
   // lewat RLS `registration_addons` (butuh email sesi); POV staf tanpa login cuma
   // dapat baris kosong → peta "belum-didata"/"memuat" → tombol "Tonton rekaman"
