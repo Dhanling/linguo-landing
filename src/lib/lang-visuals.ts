@@ -33,6 +33,9 @@ export const LANG_FLAGS: Record<string, string> = {
   Farsi:"ir",Swahili:"tz",Irish:"ie",Irlandia:"ie",Kurdish:"iq",Kurdi:"iq",
   "English British":"gb","Traditional Chinese":"tw",
   Banjar:"id","BIPA (Indonesian for Foreigners)":"id",
+  // [lang-foto-brazil-v1] varian nama Portugis Brasil
+  "Portuguese - Brazilian":"br","Brazilian Portuguese":"br",
+  "Portugis Brasil":"br",Brazil:"br",Brasil:"br",
 };
 export const getFlagUrl = (lang: string) => `https://flagcdn.com/w40/${LANG_FLAGS[baseLanguage(lang)] || "un"}.png`;
 
@@ -51,6 +54,12 @@ export const LANG_PHOTO_SLUG: Record<string, string> = {
   swahili: "swahili",
   rusia: "russian", russian: "russian",
   portugis: "portuguese", portuguese: "portuguese",
+  // [lang-foto-brazil-v1] Portugis Brasil — Pão de Açúcar, Rio de Janeiro (foto kiriman
+  // owner 20 Okt 2026). Tadinya "Portuguese - Brazilian" jatuh ke glyph "Aa".
+  "portuguese - brazilian": "brazil", "brazilian portuguese": "brazil",
+  "portuguese brazil": "brazil", "portuguese - brazil": "brazil",
+  "portugis brasil": "brazil", "portugis - brasil": "brazil",
+  brazil: "brazil", brasil: "brazil", brazilian: "brazil",
   hungaria: "hungarian", hungarian: "hungarian",
   mandarin: "mandarin", "mandarin (china)": "mandarin", china: "mandarin", chinese: "mandarin",
   hindi: "hindi",
@@ -60,6 +69,10 @@ export const LANG_PHOTO_SLUG: Record<string, string> = {
   sunda: "sundanese", sundanese: "sundanese", "bahasa sunda": "sundanese",
   ibrani: "hebrew", hebrew: "hebrew",
   "mesir kuno": "ancient-egypt", "ancient egypt": "ancient-egypt", hieroglif: "ancient-egypt",
+  // [lang-foto-brazil-v1] nama katalog /harga yang tadinya tak cocok ke foto yang sudah ada
+  "ancient egyptian": "ancient-egypt",
+  "english british": "english-convo", "english - british": "english-convo",
+  "egyptian arabic dialect": "arabic",
   // [kelas-card-foto-v2] Bahasa yang tadinya jatuh ke glyph "Aa" di kartu beranda
   // (kasus nyata: kelas Private Wendy/Michael — Bulgarian, Polish, Georgian).
   bulgaria: "bulgarian", bulgarian: "bulgarian",
