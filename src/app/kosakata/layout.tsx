@@ -6,9 +6,9 @@ import { pageMetadata } from "@/lib/seo";
 
 export const metadata = pageMetadata({
   path: "/kosakata",
-  title: "Kosakata Saya — Linguo.id",
+  title: "Lingwords — Linguo.id",
   description:
-    "Flashcard kata yang kamu simpan dari Watch & Learn. Halaman pribadi, butuh akun Linguo.",
+    "Progres kosakata kamu terhadap target tiap level CEFR, plus flashcard kata tersimpan. Halaman pribadi, butuh akun Linguo.",
   noindex: true,
 });
 

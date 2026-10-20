@@ -73,7 +73,7 @@ const NAV_GROUPS: { title: string; items: NavItem[] }[] = [
       { key: "simulasi", label: "Simulasi Tes", icon: ClipboardCheck },
       { key: "watch", label: "Watch & Learn", icon: Clapperboard, href: "/watch" },
       // Entry point global ke flashcard kata tersimpan (halaman /kosakata).
-      { key: "kosakata", label: "Kosakata Saya", icon: Layers, href: "/kosakata" },
+      { key: "kosakata", label: "Lingwords", icon: Layers, href: "/kosakata" }, // [lingwords-v1] dulu "Kosakata Saya"
     ],
   },
   {

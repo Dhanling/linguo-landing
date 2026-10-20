@@ -1,57 +1,93 @@
 "use client";
 
-// Halaman "Kosakata Saya" — entry point global ke flashcard kata tersimpan, biar
-// bisa dibuka langsung dari sidebar dashboard tanpa harus masuk katalog Watch &
-// Learn dulu. Me-render FlashcardDeck (overlay layar penuh) sbg halaman mandiri;
-// tombol tutup mengembalikan ke halaman sebelumnya (fallback /akun).
+// [lingwords-v1] Halaman Lingwords — dulu "Kosakata Saya" yang langsung membuka
+// FlashcardDeck layar penuh. Sekarang halaman progres kosakata (target per level,
+// grafik, heatmap, tonggak) di dalam shell dashboard siswa; flashcard dibuka dari
+// tombol "Latih kosakata" atau langsung lewat /kosakata?latih=1.
 
 import { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
+import { Layers } from "lucide-react";
 import FlashcardDeck from "@/components/watch/FlashcardDeck";
+import StudentShell, { type AkunTab } from "@/components/akun/StudentShell";
+import LingwordsDashboard from "@/components/lingwords/LingwordsDashboard";
+import { supabase, peekSessionUser } from "@/lib/supabase-client";
+import type { RegLike } from "@/lib/lingwords";
 
 // Sama dgn WatchAndLearn — bahasa terakhir dipilih, untuk filter awal deck.
 const LANG_KEY = "linguo:watch:lang:v1";
 
 export default function KosakataPage() {
   const router = useRouter();
-  const [lang, setLang] = useState("en");
-  // [preview-session-v1] POV siswa (staf). Kata tersimpan hidup di localStorage
-  // perangkat masing-masing — tak ada salinannya di server — jadi dari pratinjau
-  // yang tampil adalah kosakata BROWSER INI, bukan milik siswanya. Dijelaskan
-  // lewat banner supaya deck kosong tak terbaca sebagai "siswa belum menyimpan apa pun".
-  const [preview, setPreview] = useState(false);
+  const [deckLang, setDeckLang] = useState<string | null>(null);
+  const [previewId, setPreviewId] = useState<string | null>(null);
+  const [userId, setUserId] = useState<string | null>(null);
+  const [regs, setRegs] = useState<RegLike[]>([]);
 
-  // Baca bahasa terakhir sesudah mount (hindari mismatch hidrasi).
   useEffect(() => {
-    try {
-      const saved = localStorage.getItem(LANG_KEY);
-      if (saved) setLang(saved);
-    } catch {
-      /* abaikan */
+    const qs = new URLSearchParams(window.location.search);
+    setPreviewId(qs.get("preview"));
+    if (qs.get("latih")) {
+      let l = "en";
+      try { l = localStorage.getItem(LANG_KEY) || l; } catch { /* abaikan */ }
+      setDeckLang(l);
     }
-    try {
-      setPreview(!!new URLSearchParams(window.location.search).get("preview"));
-    } catch {
-      /* abaikan */
-    }
+    setUserId(peekSessionUser()?.id || null);
+
+    let alive = true;
+    (async () => {
+      const { data } = await supabase.auth.getSession();
+      const user = data.session?.user;
+      if (!alive || !user) return;
+      setUserId(user.id);
+      if (qs.get("preview") || !user.email) return;
+      // Level kelas → target kosakata per bahasa. Gagal = target jatuh ke A1, tetap jalan.
+      const { data: st } = await supabase.from("students").select("id").eq("email", user.email);
+      const ids = ((st as { id: string }[] | null) || []).map((s) => s.id);
+      if (!ids.length) return;
+      const { data: rg } = await supabase
+        .from("registrations")
+        .select("language, level, pipeline_status, archived_at")
+        .in("student_id", ids)
+        .is("archived_at", null);
+      if (!alive) return;
+      setRegs(((rg as (RegLike & { pipeline_status?: string })[] | null) || []).filter((r) => r.pipeline_status !== "Batal"));
+    })();
+    return () => { alive = false; };
   }, []);
 
-  const close = () => {
-    if (typeof window !== "undefined" && window.history.length > 1) router.back();
-    else router.push("/akun");
+  const goTab = (t: AkunTab) => {
+    router.push(`/akun?menu=${t}${previewId ? `&preview=${encodeURIComponent(previewId)}` : ""}`);
+  };
+
+  const closeDeck = () => {
+    setDeckLang(null);
+    const qs = new URLSearchParams(window.location.search);
+    if (qs.has("latih")) {
+      qs.delete("latih");
+      window.history.replaceState(null, "", `/kosakata${qs.toString() ? `?${qs}` : ""}`);
+    }
   };
 
   return (
-    <>
-      <FlashcardDeck initialLang={lang} onClose={close} />
-      {preview && (
-        <div className="pointer-events-none fixed inset-x-0 bottom-0 z-[95] flex justify-center px-3 pb-3">
-          <p className="rounded-xl bg-amber-400/95 px-3.5 py-2 text-center text-[12px] font-semibold leading-snug text-amber-950 shadow-lg">
-            Mode pratinjau — kosakata tersimpan di perangkat siswa, jadi daftar di sini
-            mengikuti browser ini, bukan milik siswanya.
+    <StudentShell active="kosakata" onTabChange={goTab} previewStudentId={previewId}>
+      <main className="mx-auto w-full max-w-6xl px-4 pb-16 pt-5 sm:px-6">
+        <div className="mb-4">
+          <h1 className="flex items-center gap-2 text-xl font-bold text-gray-900 sm:text-2xl">
+            <Layers className="h-6 w-6 text-[#1A9E9E]" /> Lingwords
+          </h1>
+          <p className="mt-1 text-sm text-gray-500">
+            Semua kosakatamu — dari kelas, materi, dan Watch &amp; Learn — dan seberapa dekat kamu dengan target level.
           </p>
         </div>
-      )}
-    </>
+        <LingwordsDashboard
+          userId={userId}
+          regs={regs}
+          previewMode={!!previewId}
+          onPractice={(l) => setDeckLang(l)}
+        />
+      </main>
+      {deckLang && <FlashcardDeck initialLang={deckLang} onClose={closeDeck} />}
+    </StudentShell>
   );
 }

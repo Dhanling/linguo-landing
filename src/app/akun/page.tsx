@@ -167,6 +167,7 @@ const LessonPlayer = dynamic(() => import('@/components/akun/LessonPlayer'), { s
 // [beranda-insights-v1] kartu ringkasan belajar (skill+delta, PR, materi, beban minggu, peringkat).
 // ssr:false — semua isinya butuh sesi Supabase klien, tak ada gunanya dirender di server.
 const BerandaInsights = dynamic(() => import('@/components/akun/BerandaInsights'), { ssr: false });
+const LingwordsCard = dynamic(() => import('@/components/lingwords/LingwordsCard'), { ssr: false }); // [lingwords-v1]
 // [cek-level-berkala-v1] level terakhir + grafik riwayat placement + ajakan tes ulang
 const CekLevel = dynamic(() => import('@/components/akun/CekLevel'), { ssr: false });
 /* [nav-tab-grup-pustaka-v1] Grup Kelas & Perpustakaan Saya sekarang tab di halaman ini.
@@ -5337,6 +5338,15 @@ export default function AkunPage() {
                           previewStudentId={previewId}
                         />
                       )}
+
+                      {/* [lingwords-v1] Lingwords: posisi kosakata terhadap target level +
+                          grafik 12 pekan. Rinciannya di /kosakata. */}
+                      <LingwordsCard
+                        userId={user?.id}
+                        regs={liveRegsAll}
+                        previewMode={previewMode}
+                        previewQuery={previewId ? `?preview=${encodeURIComponent(previewId)}` : ""}
+                      />
 
                       {/* [cek-level-berkala-v1] Tes level mandiri: level terakhir, grafik
                           riwayat, dan tanda "waktunya tes ulang" tiap 4 minggu. Tidak

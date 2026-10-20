@@ -3416,6 +3416,9 @@ export function gradeSavedWord(word: string, langCode: string, grade: SrsGrade):
     if (keyOf(w.word, w.langCode) !== keyOf(word, langCode)) return w;
     return { ...w, srs: gradeCard(w.srs ?? newSrsState(), grade) };
   });
+  // [lingwords-v1] heatmap aktivitas harian. Impor dinamis: modul ini ikut dipakai
+  // rute API (WATCH_PLANS), jangan sampai menarik klien Supabase browser ke server.
+  void import("./lingwordsTick").then((m) => m.tickLingwords(langCode)).catch(() => {});
   return writeVocab(next) ? next : getSavedWords();
 }
 
