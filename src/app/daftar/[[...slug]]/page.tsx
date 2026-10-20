@@ -114,10 +114,7 @@ export default async function DaftarPage({ params }: PageProps) {
       <script type="application/ld+json" {...jsonLd(breadcrumb)} />
 
       <header className="border-b border-slate-100 bg-white">
-        <div className="mx-auto flex max-w-2xl items-center justify-between px-4 py-3">
-          <Link href="/" className="text-lg font-extrabold tracking-tight text-[#1A9E9E]">
-            Linguo<span className="text-slate-900">.id</span>
-          </Link>
+        <div className="mx-auto flex max-w-2xl items-center justify-end px-4 py-3">
           <span className="text-xs font-medium text-slate-400">Pendaftaran kelas</span>
         </div>
       </header>

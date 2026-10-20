@@ -17,7 +17,6 @@ import { useOpenRegulerLangs } from "@/lib/useOpenRegulerLangs";
 import { SEMI_PRIVATE_MIN, SEMI_PRIVATE_MAX } from "@/lib/trial-pricing";
 import { regulerLangName } from "@/lib/classLanguage";
 import {
-  ALL_FUNNEL_LANGS,
   LANG_CATEGORIES,
   langNameId,
   langSlugOf,
@@ -119,7 +118,8 @@ export default function StepLang() {
         </div>
       )}
 
-      <div className="mt-4 grid grid-cols-2 gap-2 sm:grid-cols-3">
+      {/* Pilihan bahasa digulir di dalam kotak supaya kartu tidak memanjang ke bawah. */}
+      <div className="mt-4 grid max-h-[22rem] grid-cols-2 gap-2 overflow-y-auto overscroll-contain pr-1 sm:grid-cols-3">
         {filtered.map((l) => (
           <Link
             key={l}
@@ -131,22 +131,6 @@ export default function StepLang() {
           </Link>
         ))}
       </div>
-
-      {/* Daftar lengkap, selalu ada di HTML. Picker di atas cuma menampilkan satu
-          kategori sekaligus — tanpa blok ini crawler hanya menemukan 8 tautan
-          "Populer", padahal tiap bahasa punya halaman pendaftarannya sendiri. */}
-      <nav aria-label="Semua bahasa" className="mt-7 border-t border-slate-100 pt-5">
-        <h2 className="text-xs font-bold uppercase tracking-wider text-slate-400">Semua bahasa</h2>
-        <ul className="mt-2.5 flex flex-wrap gap-x-3 gap-y-1.5">
-          {ALL_FUNNEL_LANGS.map((l) => (
-            <li key={l}>
-              <Link href={`/daftar/${langSlugOf(l)}`} className="text-xs text-slate-500 hover:text-[#1A9E9E] hover:underline">
-                {langNameId(l)}
-              </Link>
-            </li>
-          ))}
-        </ul>
-      </nav>
 
       <p className="mt-6 text-center text-xs text-slate-400">
         Belum tahu levelmu?{" "}
