@@ -6057,6 +6057,7 @@ export default function AkunPage() {
                 onContinue={() => setActiveTab("materi")}
                 onSchedule={() => setActiveTab("jadwal")}
                 focusId={certFocusId}
+                lingwordsUserId={previewMode ? null : user?.id || null}
               />
             </motion.div>
           )}

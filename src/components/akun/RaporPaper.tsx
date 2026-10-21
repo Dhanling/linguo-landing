@@ -73,6 +73,8 @@ type Props = {
   number?: string | null;
   signature: string;
   signer: { name: string; role: string };
+  /** [lingwords-v2] Tonggak kosakata Lingwords — hanya diisi kalau target level tercapai. */
+  vocab?: { n: number; level: string; target: number } | null;
 };
 
 const TEAL = "#16796E";
@@ -162,6 +164,11 @@ const RaporPaper = forwardRef<HTMLDivElement, Props>(function RaporPaper(p, ref)
             <p style={{ margin: "20px 0 0", fontSize: 14, color: BODY }}>
               Attendance <b>{att.attended ?? "-"}/{att.total ?? "-"} sessions</b>{att.rate != null ? ` (${att.rate}%)` : ""}
             </p>
+            {p.vocab && (
+              <p style={{ margin: "8px 0 0", fontSize: 14, color: BODY }}>
+                Vocabulary <b>mastered {p.vocab.n.toLocaleString("en-US")} words</b> (CEFR {p.vocab.level} target {p.vocab.target.toLocaleString("en-US")})
+              </p>
+            )}
           </div>
 
           <div style={{ minWidth: 0, overflow: "hidden" }}>

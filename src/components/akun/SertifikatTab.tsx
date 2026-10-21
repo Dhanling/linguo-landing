@@ -22,6 +22,9 @@ import { supabase } from "@/lib/supabase-client";
 import QRCode from "qrcode"; // [sertifikat-qr-verifikasi-v1]
 import { TTD_RINI, useTtdDataUrl } from "@/components/akun/simulasi/CertificateSheet"; // [sertifikat-ttd-rini-v1]
 import { tr, useT, useUiLang, type UiLang } from "@/lib/uiLang"; // [ui-lang-switcher-v1]
+import { useLingwords } from "@/components/lingwords/useLingwords"; // [lingwords-v2]
+import { toLangCode } from "@/lib/quiz/language";
+import { LEVEL_VOCAB_TARGET } from "@/lib/vocabProgress";
 
 // ── lazy-load CDN sekali doang -> nol npm dep, workflow "cp 1 file" tetep aman. ──
 function loadScript(src: string): Promise<void> {
@@ -389,8 +392,12 @@ export default function SertifikatTab({
   onContinue,
   onSchedule,
   focusId,
+  lingwordsUserId = null,
 }: {
   studentName: string;
+  /** [lingwords-v2] id akun siswa untuk lencana kosakata. null (mode pratinjau POV) =
+   *  lencana tak ditampilkan — data lokal staf bukan milik siswanya. */
+  lingwordsUserId?: string | null;
   /** [sertifikat-edit-nama-v1] nama akun — dipakai tombol "kembalikan" di popup ubah nama. */
   defaultName?: string;
   /** Simpan nama sertifikat ("" = kembali ke nama akun). Tak diisi = tombol ubah disembunyikan. */
@@ -582,7 +589,7 @@ export default function SertifikatTab({
           <div className="flex flex-col gap-6 p-4 sm:p-5 lg:p-6">
             {selected ? (
               selected.status === "issued"
-                ? <IssuedDetail ct={selected} studentName={studentName} defaultName={defaultName} onSaveName={onSaveName} />
+                ? <IssuedDetail ct={selected} studentName={studentName} defaultName={defaultName} onSaveName={onSaveName} lingwordsUserId={lingwordsUserId} />
                 : <ProgressDetail ct={selected} studentName={studentName} onContinue={onContinue} onSchedule={onSchedule} />
             ) : (
               <div className="cert-card rounded-2xl bg-white p-12 text-center">
@@ -724,8 +731,25 @@ function RaporKosong() {
   );
 }
 
-function IssuedDetail({ ct, studentName, defaultName, onSaveName }: { ct: Cert; studentName: string; defaultName?: string; onSaveName?: (name: string) => Promise<void> }) {
+/* [lingwords-v2] Lencana tonggak kosakata: "Menguasai N kosakata A1" muncul di sertifikat
+   & rapor kalau jumlah kata dikuasai (Lingwords) bahasa ini sudah mencapai target level
+   sertifikatnya (LEVEL_VOCAB_TARGET, level induk: A1.2 → A1). */
+function useVocabBadge(userId: string | null, language: string, level: string): { n: number; level: string; target: number } | null {
+  const { words } = useLingwords(userId, [], { sync: false });
+  return useMemo(() => {
+    if (!userId) return null;
+    const lang = toLangCode(language);
+    const base = (level || "").split(".")[0].toUpperCase();
+    const target = LEVEL_VOCAB_TARGET[base];
+    if (!lang || !target) return null;
+    const n = words.filter((w) => w.lang === lang && w.stage === "dikuasai").length;
+    return n >= target ? { n, level: base, target } : null;
+  }, [userId, words, language, level]);
+}
+
+function IssuedDetail({ ct, studentName, defaultName, onSaveName, lingwordsUserId = null }: { ct: Cert; studentName: string; defaultName?: string; onSaveName?: (name: string) => Promise<void>; lingwordsUserId?: string | null }) {
   const t = useT(); // [ui-lang-switcher-v1]
+  const vocab = useVocabBadge(lingwordsUserId, ct.language, ct.level);
   const [editOpen, setEditOpen] = useState(false); // [sertifikat-edit-nama-v1]
   const col = colorOf(ct.language);
   const kind = productKindOf(ct.product);
@@ -856,6 +880,7 @@ function IssuedDetail({ ct, studentName, defaultName, onSaveName }: { ct: Cert; 
             number={ct.idNo}
             signature={ttdSrc || TTD_RINI.src}
             signer={{ name: TTD_RINI.nama, role: TTD_RINI.jabatan }}
+            vocab={vocab}
           />
         </div>
       )}
@@ -864,6 +889,15 @@ function IssuedDetail({ ct, studentName, defaultName, onSaveName }: { ct: Cert; 
       )}
       </div>
       {showsSkills(kind) && slide === 0 && <SkillBlock ct={ct} accent={col.accent} />}
+      {vocab && (
+        <a href="/kosakata" className="flex items-center gap-3 rounded-2xl bg-[#1A9E9E]/8 px-4 py-3 ring-1 ring-[#1A9E9E]/25 transition hover:bg-[#1A9E9E]/12">
+          <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-[#1A9E9E] text-white"><Award className="h-[18px] w-[18px]" /></span>
+          <span className="min-w-0">
+            <b className="block text-[14px] text-[#12172B]">{t("Menguasai")} {vocab.n.toLocaleString("id-ID")} {t("kosakata")} {vocab.level}</b>
+            <span className="text-[12px] font-medium text-[#6B7280]">{t("Target kosakata level")} {vocab.level} ({vocab.target.toLocaleString("id-ID")} {t("kata")}) {t("tercapai — tercatat di Lingwords & rapor.")}</span>
+          </span>
+        </a>
+      )}
 
       <div className="flex flex-wrap items-center gap-3">
         <button
