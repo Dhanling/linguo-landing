@@ -31,8 +31,8 @@ import { toLangCode } from "@/lib/quiz/language";
 import { LEVEL_VOCAB_TARGET, normalizeLevel } from "@/lib/vocabProgress";
 
 export type LwStage = "dikenal" | "dilatih" | "dikuasai";
-export type LwSource = "simpanan" | "materi" | "server" | "ebook" | "lingnote";
-const SERVER_SOURCES: LwSource[] = ["simpanan", "materi", "ebook", "lingnote"];
+export type LwSource = "simpanan" | "materi" | "server" | "ebook" | "lingnote" | "kelas";
+const SERVER_SOURCES: LwSource[] = ["simpanan", "materi", "ebook", "lingnote", "kelas"];
 
 export interface LwWord {
   lang: string;
@@ -44,6 +44,8 @@ export interface LwWord {
   firstSeen: number; // ms
   masteredAt: number | null;
   lastActive: number | null;
+  /** [lingwords-kelas-v1] Keterangan asal, mis. "Sesi 5 · Kak Dhani" (kata dari kelas). */
+  note?: string;
 }
 
 export const LW_LEVELS = ["A1", "A2", "B1", "B2", "C1", "C2"] as const;
@@ -195,13 +197,23 @@ const lingnoteCache = new Map<string, LwWord[]>();
  * (lihat sql/20260928_lingnote_kosakata_pengajar.sql). Siswa boleh menyunting
  * catatannya, jadi pengurai ini longgar: cukup "- **kata**" di awal baris.
  */
+/** [lingwords-kelas-v1] Kata/frasa pendek, bukan kalimat — kembar dengan lingwordsKelas.ts dashboard. */
+export function kataPendek(s: string): boolean {
+  const t = s.trim();
+  if (!t || /[.?!。？！]$/.test(t)) return false;
+  const token = t.split(/\s+/).filter(Boolean);
+  if (token.length === 1 && /[\u3040-\u30ff\u3400-\u9fff\uac00-\ud7af\u0e00-\u0e7f]/.test(t)) return t.length <= 10;
+  return token.length <= 4 && t.length <= 60;
+}
+
 export function parseLingnoteLines(md: string): { word: string; translit?: string; meaning: string }[] {
   const out: { word: string; translit?: string; meaning: string }[] = [];
   (md || "").split("\n").forEach((line) => {
     const m = line.match(/^\s*[-*]\s+\*\*(.+?)\*\*\s*(?:\(([^)]*)\))?(.*)$/);
     if (!m) return;
     const word = m[1].trim();
-    if (!word || word.length > 80) return;
+    // Baris Mode Tandem berupa KALIMAT (pertanyaan/jawaban), bukan kosakata.
+    if (!word || !kataPendek(word)) return;
     const rest = m[3] || "";
     const dash = rest.indexOf("—");
     out.push({
@@ -289,6 +301,7 @@ interface ServerRow {
   first_seen: string;
   mastered_at: string | null;
   last_active: string | null;
+  note?: string | null;
 }
 
 function fromServerRow(r: ServerRow): LwWord {
@@ -303,6 +316,7 @@ function fromServerRow(r: ServerRow): LwWord {
     firstSeen: new Date(r.first_seen).getTime(),
     masteredAt: r.mastered_at ? new Date(r.mastered_at).getTime() : null,
     lastActive: r.last_active ? new Date(r.last_active).getTime() : null,
+    note: r.note || undefined,
   };
 }
 
@@ -314,7 +328,7 @@ export async function fetchServerWords(): Promise<LwWord[]> {
     for (let from = 0; from < 20_000; from += 1000) {
       const { data, error } = await supabase
         .from("student_words")
-        .select("lang,word,meaning,translit,source,stage,first_seen,mastered_at,last_active")
+        .select("*")
         .order("first_seen", { ascending: true })
         .range(from, from + 999);
       if (error) {

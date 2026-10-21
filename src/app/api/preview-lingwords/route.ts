@@ -68,7 +68,7 @@ export async function GET(req: NextRequest) {
     const inUser = `in.(${users.join(",")})`;
     for (let from = 0; from < 20_000; from += 1000) {
       const page = (await serviceRest(
-        `student_words?user_id=${inUser}&select=lang,word,word_key,meaning,translit,source,stage,first_seen,mastered_at,last_active&order=first_seen.asc`,
+        `student_words?user_id=${inUser}&select=*&order=first_seen.asc`,
         { headers: { Range: `${from}-${from + 999}` } }
       )) || [];
       words.push(...page);

@@ -7,7 +7,7 @@
 
 import { useMemo } from 'react';
 import {
-  Award, CalendarDays, Check, Clock, Flame, Layers, Lock, Play, Target, TrendingUp, CloudOff,
+  Award, CalendarDays, Check, Clock, Flame, Layers, Lock, Play, Target, TrendingUp, CloudOff, GraduationCap,
 } from 'lucide-react';
 import { useT } from '@/lib/uiLang';
 import { computeStats, etaText, LW_LEVELS, type RegLike } from '@/lib/lingwords';
@@ -48,6 +48,16 @@ export default function LingwordsDashboard({
     [words, lang, regKey, activity]
   );
   const langWords = useMemo(() => (lang ? words.filter((w) => w.lang === lang) : []), [words, lang]);
+  // [lingwords-kelas-v1] Kata yang ditambahkan pengajar sesudah kelas, 30 hari terakhir.
+  const kelasWords = useMemo(() => {
+    const batas = Date.now() - 30 * 86_400_000;
+    return langWords.filter((w) => w.source === 'kelas' && w.firstSeen >= batas).sort((a, b) => b.firstSeen - a.firstSeen);
+  }, [langWords]);
+  const kelasGrup = useMemo(() => {
+    const m = new Map<string, typeof kelasWords>();
+    kelasWords.forEach((w) => { const k = w.note || ''; m.set(k, (m.get(k) || []).concat(w)); });
+    return Array.from(m.entries()).slice(0, 4);
+  }, [kelasWords]);
 
   if (loading) {
     return (
@@ -167,6 +177,41 @@ export default function LingwordsDashboard({
         </div>
       </section>
 
+      {/* [lingwords-kelas-v1] Kata dari kelas — ditambahkan pengajar sesudah mengajar */}
+      {kelasWords.length > 0 && (
+        <section className={card}>
+          <div className="flex flex-wrap items-center justify-between gap-2">
+            <h2 className="flex items-center gap-2 text-[15px] font-extrabold text-[#12172B]">
+              <GraduationCap className="h-[18px] w-[18px] text-[#1A9E9E]" /> {t('Baru dari kelas')}
+            </h2>
+            <button type="button"
+              onClick={() => (onPracticeTheme ? onPracticeTheme(stats.lang, { label: t('Kata dari kelas'), words: kelasWords }) : onPractice(stats.lang))}
+              className="inline-flex items-center gap-1 rounded-xl bg-[#1A9E9E]/10 px-2.5 py-1.5 text-[12px] font-bold text-[#16796E] hover:bg-[#1A9E9E] hover:text-white">
+              <Play className="h-3.5 w-3.5" /> {t('Latih')} {kelasWords.length} {t('kata')}
+            </button>
+          </div>
+          <p className="mb-3 mt-0.5 text-[12.5px] text-gray-500">{t('Kosakata yang ditambahkan pengajarmu sesudah kelas.')}</p>
+          <div className="space-y-2.5">
+            {kelasGrup.map(([note, ws]) => (
+              <div key={note || '-'}>
+                {note && <p className="mb-1 text-[11.5px] font-bold uppercase tracking-wide text-gray-400">{note}</p>}
+                <div className="flex flex-wrap gap-1.5">
+                  {ws.slice(0, 30).map((w) => (
+                    <span key={w.word} title={w.meaning || undefined}
+                      className="inline-flex max-w-[220px] items-baseline gap-1.5 rounded-xl bg-[#1A9E9E]/8 px-2.5 py-1.5 text-[13px] font-bold text-[#0F5A52]">
+                      <span className="truncate">{w.word}</span>
+                      {(w.translit || w.meaning) && (
+                        <span className="truncate text-[11px] font-medium text-gray-500">{[w.translit, w.meaning].filter(Boolean).join(' · ')}</span>
+                      )}
+                    </span>
+                  ))}
+                </div>
+              </div>
+            ))}
+          </div>
+        </section>
+      )}
+
       {/* [lingwords-v2] Peta kata per tema */}
       <LwThemeMap
         words={langWords}
@@ -267,7 +312,7 @@ export default function LingwordsDashboard({
       <p className="flex items-start justify-center gap-1.5 px-2 text-center text-[11.5px] font-medium leading-relaxed text-gray-400">
         {!server && !previewMode && <CloudOff className="mt-[2px] h-3.5 w-3.5 shrink-0" />}
         <span>
-          {t('Dihitung dari kata tersimpan Watch & Learn dan e-book, kiriman pengajar di Lingnote, serta materi & kuis yang sudah kamu selesaikan.')}{' '}
+          {t('Dihitung dari kata tersimpan Watch & Learn dan e-book, kosakata kelas & kiriman pengajar di Lingnote, serta materi & kuis yang sudah kamu selesaikan.')}{' '}
           {previewMode
             ? t('Mode pratinjau: data asli siswa (hanya-baca). Kata yang belum pernah tersinkron dari perangkat siswa belum terlihat.')
             : server

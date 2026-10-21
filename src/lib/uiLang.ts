@@ -1805,4 +1805,9 @@ const EN: Record<string, string> = {
   "Kuis arti kata tema ini": "Meaning quiz for this theme",
   "Hujan Kata tema ini": "Word Rain for this theme",
   "Butuh minimal 4 kata berarti": "Needs at least 4 words with a meaning",
+  /* [lingwords-kelas-v1] */
+  "Baru dari kelas": "New from class",
+  "Kata dari kelas": "Words from class",
+  "Kosakata yang ditambahkan pengajarmu sesudah kelas.": "Vocabulary your teacher added after class.",
+  "Dihitung dari kata tersimpan Watch & Learn dan e-book, kosakata kelas & kiriman pengajar di Lingnote, serta materi & kuis yang sudah kamu selesaikan.": "Counted from words saved in Watch & Learn and e-books, class vocabulary & words your teacher sent to Lingnote, and the materials & quizzes you have completed.",
 };
