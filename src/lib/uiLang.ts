@@ -1816,4 +1816,13 @@ const EN: Record<string, string> = {
   "dari kelas": "from class",
   "kata, perkiraan": "words, estimated",
   "kata dikuasai yang tercatat di Lingwords.": "mastered words tracked in Lingwords.",
+  // [lingwords-card-v2] Kartu Lingwords Beranda.
+  "Pelacak kosakata": "Vocabulary tracker",
+  "Periode aktivitas": "Activity period",
+  "30 hari": "30 days",
+  "90 hari": "90 days",
+  "ke target": "to the",
+  "tercapai — lanjut ke level berikutnya!": "goal reached — on to the next level!",
+  "dikuasai pekan ini": "mastered this week",
+  "Aktivitas kata": "Word activity",
 };

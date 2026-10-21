@@ -57,7 +57,7 @@ export function LwStackBar({ stats }: { stats: LwStats }) {
     { k: 'dikenal', n: stats.counts.dikenal, c: LW_COLORS.dikenal },
   ].filter((s) => s.n > 0);
   return (
-    <div className="flex h-3 gap-[2px] overflow-hidden rounded-full bg-[#E8EAEE]" aria-hidden>
+    <div className="flex h-3.5 gap-[2px] overflow-hidden rounded-full bg-[#E8EAEE]" aria-hidden>
       {seg.map((s) => (
         <div key={s.k} className="h-full first:rounded-l-full" style={{ width: `${(s.n / base) * 100}%`, background: s.c, minWidth: 3 }} />
       ))}
@@ -78,7 +78,7 @@ export function LwLegend({ stats, t }: { stats: LwStats; t: (s: string) => strin
     <div className="flex flex-wrap gap-x-3.5 gap-y-1 text-[11.5px] font-semibold text-gray-500">
       {items.map(([c, l, n]) => (
         <span key={l} className="inline-flex items-center gap-1.5">
-          <i className="inline-block h-2.5 w-2.5 rounded-[3px]" style={{ background: c }} />
+          <i className="inline-block h-2.5 w-2.5 rounded-full" style={{ background: c }} />
           {l} <b className="text-[#12172B]">{n}</b>
         </span>
       ))}
@@ -218,6 +218,71 @@ export function LwHeatmap({ heat, weeks = 18, t }: { heat: Map<string, number>; 
         {t('Sedikit')}
         {bg.map((b) => <i key={b} className="inline-block h-2.5 w-2.5 rounded-[3px]" style={{ background: b }} />)}
         {t('Banyak')}
+      </div>
+    </div>
+  );
+}
+
+// [lingwords-card-v2] Grafik batang aktivitas kata per periode (kartu Beranda).
+// 7/30 hari = batang harian, 90 hari = per pekan, Semua = per bulan (maks 12).
+export type LwPeriod = '7' | '30' | '90' | 'all';
+
+export function activityBuckets(heat: Map<string, number>, period: LwPeriod): { label: string; title: string; n: number }[] {
+  const today = new Date();
+  today.setHours(0, 0, 0, 0);
+  const dayAt = (back: number) => { const d = new Date(today); d.setDate(d.getDate() - back); return d; };
+  if (period === '7' || period === '30') {
+    const len = Number(period);
+    return Array.from({ length: len }, (_, i) => {
+      const d = dayAt(len - 1 - i);
+      return {
+        label: len === 7 ? d.toLocaleDateString('id-ID', { weekday: 'short' }) : String(d.getDate()),
+        title: d.toLocaleDateString('id-ID', { weekday: 'long', day: 'numeric', month: 'short' }),
+        n: heat.get(dk(d)) || 0,
+      };
+    });
+  }
+  if (period === '90') {
+    return Array.from({ length: 13 }, (_, i) => {
+      const end = 12 - i;
+      let n = 0;
+      for (let j = 0; j < 7; j++) n += heat.get(dk(dayAt(end * 7 + j))) || 0;
+      const s = dayAt(end * 7 + 6);
+      return { label: s.toLocaleDateString('id-ID', { day: 'numeric', month: 'short' }), title: `Pekan ${s.toLocaleDateString('id-ID', { day: 'numeric', month: 'short' })}`, n };
+    });
+  }
+  const per = new Map<string, number>();
+  heat.forEach((n, k) => per.set(k.slice(0, 7), (per.get(k.slice(0, 7)) || 0) + n));
+  const first = Array.from(per.keys()).sort()[0];
+  const months: Date[] = [];
+  for (let i = 11; i >= 0; i--) months.push(new Date(today.getFullYear(), today.getMonth() - i, 1));
+  const from = first ? months.findIndex((m) => dk(m).slice(0, 7) >= first) : months.length - 1;
+  return months.slice(Math.max(0, Math.min(from, months.length - 6))).map((m) => ({
+    label: m.toLocaleDateString('id-ID', { month: 'short' }),
+    title: m.toLocaleDateString('id-ID', { month: 'long', year: 'numeric' }),
+    n: per.get(dk(m).slice(0, 7)) || 0,
+  }));
+}
+
+export function LwActivityBars({ heat, period, t }: { heat: Map<string, number>; period: LwPeriod; t: (s: string) => string }) {
+  const b = useMemo(() => activityBuckets(heat, period), [heat, period]);
+  const max = Math.max(1, ...b.map((x) => x.n));
+  const every = b.length <= 13 ? 1 : 5;
+  return (
+    <div>
+      <div className="flex h-[92px] items-end justify-around gap-[3px] @3xl:gap-1.5" role="img"
+        aria-label={`${t('Aktivitas kata')}: ${b.reduce((s, x) => s + x.n, 0)}`}>
+        {b.map((x, i) => (
+          <div key={i} title={`${x.title}: ${x.n}`} className="max-w-[34px] flex-1 rounded-t-md rounded-b-[3px] transition-[height] duration-500"
+            style={{ height: `${Math.max(7, (x.n / max) * 100)}%`, background: i === b.length - 1 ? LW_COLORS.dilatih : x.n ? LW_COLORS.dikenal : 'rgba(143,211,207,0.35)' }} />
+        ))}
+      </div>
+      <div className="mt-1.5 flex justify-around gap-[3px] @3xl:gap-1.5">
+        {b.map((x, i) => (
+          <span key={i} className="max-w-[34px] flex-1 overflow-visible whitespace-nowrap text-center text-[10.5px] font-semibold text-gray-400">
+            {(b.length - 1 - i) % every === 0 ? x.label : ''}
+          </span>
+        ))}
       </div>
     </div>
   );
