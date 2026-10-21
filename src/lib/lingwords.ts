@@ -472,8 +472,12 @@ export interface LwStats {
   level: string; // level target sekarang
   levelKnown: boolean; // level dari kelas, bukan tebakan
   target: number;
-  counts: Record<LwStage, number>;
-  mastered: number;
+  counts: Record<LwStage, number>; // kata TERLACAK saja (tanpa bekal)
+  /** [lingwords-bekal-v1] Bekal level yang sudah dilewati di kelas (A2 → target A1 = 300),
+   *  dianggap dikuasai walau katanya tak pernah tercatat satu per satu. */
+  bekal: number;
+  bekalLevel: string | null;
+  mastered: number; // bekal + kata dikuasai terlacak
   pct: number;
   remaining: number;
   pacePerDay: number; // kata dikuasai/hari, 28 hari terakhir
@@ -505,8 +509,15 @@ export function computeStats(all: LwWord[], lang: string, regs: RegLike[], activ
   const words = all.filter((w) => w.lang === lang);
   const counts: Record<LwStage, number> = { dikenal: 0, dilatih: 0, dikuasai: 0 };
   words.forEach((w) => counts[w.stage]++);
-  const mastered = counts.dikuasai;
   const classLevel = levelForLang(lang, regs);
+  /* [lingwords-bekal-v1] Siswa yang sudah duduk di kelas A2 pasti sudah melewati A1,
+     tapi kosakata A1-nya (dari kelas, sebelum Lingwords ada) tak tercatat → dulu
+     tampil "0 / 600". Target level sebelumnya dihitung sebagai bekal dikuasai.
+     Kata A1 yang terlacak bisa ikut terhitung dua kali — perkiraan yang diterima. */
+  const ci = classLevel ? LW_LEVELS.indexOf(classLevel as (typeof LW_LEVELS)[number]) : -1;
+  const bekalLevel = ci > 0 ? LW_LEVELS[ci - 1] : null;
+  const bekal = bekalLevel ? LEVEL_VOCAB_TARGET[bekalLevel] : 0;
+  const mastered = bekal + counts.dikuasai;
   const level = pickLevel(mastered, classLevel);
   const target = LEVEL_VOCAB_TARGET[level];
   const remaining = Math.max(0, target - mastered);
@@ -525,8 +536,8 @@ export function computeStats(all: LwWord[], lang: string, regs: RegLike[], activ
     const end = now - i * 7 * DAY;
     weekly.push({
       start: end,
-      mastered: masteredTimes.filter((t) => t <= end).length,
-      collected: words.filter((w) => w.firstSeen <= end).length,
+      mastered: bekal + masteredTimes.filter((t) => t <= end).length,
+      collected: bekal + words.filter((w) => w.firstSeen <= end).length,
     });
   }
 
@@ -570,6 +581,8 @@ export function computeStats(all: LwWord[], lang: string, regs: RegLike[], activ
     levelKnown: !!classLevel,
     target,
     counts,
+    bekal,
+    bekalLevel,
     mastered,
     pct: Math.min(100, Math.round((mastered / target) * 100)),
     remaining,

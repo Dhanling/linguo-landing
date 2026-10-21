@@ -1810,4 +1810,10 @@ const EN: Record<string, string> = {
   "Kata dari kelas": "Words from class",
   "Kosakata yang ditambahkan pengajarmu sesudah kelas.": "Vocabulary your teacher added after class.",
   "Dihitung dari kata tersimpan Watch & Learn dan e-book, kosakata kelas & kiriman pengajar di Lingnote, serta materi & kuis yang sudah kamu selesaikan.": "Counted from words saved in Watch & Learn and e-books, class vocabulary & words your teacher sent to Lingnote, and the materials & quizzes you have completed.",
+  // [lingwords-bekal-v1] Bekal level sebelumnya di Lingwords.
+  "Bekal": "Carried over",
+  "Termasuk bekal": "Includes the carried-over",
+  "dari kelas": "from class",
+  "kata, perkiraan": "words, estimated",
+  "kata dikuasai yang tercatat di Lingwords.": "mastered words tracked in Lingwords.",
 };

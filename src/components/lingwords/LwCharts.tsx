@@ -9,6 +9,7 @@ import { useMemo, useRef, useState } from 'react';
 import type { LwStats } from '@/lib/lingwords';
 
 export const LW_COLORS = {
+  bekal: '#5E7F7D', // [lingwords-bekal-v1] bekal level sebelumnya (perkiraan, bukan kata terlacak)
   dikuasai: '#0E6B6B',
   dilatih: '#1A9E9E',
   dikenal: '#8FD3CF',
@@ -50,7 +51,8 @@ export function LwRing({ stats, size = 132, stroke = 12 }: { stats: LwStats; siz
 export function LwStackBar({ stats }: { stats: LwStats }) {
   const base = Math.max(stats.target, stats.mastered + stats.counts.dilatih + stats.counts.dikenal);
   const seg = [
-    { k: 'dikuasai', n: stats.mastered, c: LW_COLORS.dikuasai },
+    { k: 'bekal', n: stats.bekal, c: LW_COLORS.bekal },
+    { k: 'dikuasai', n: stats.counts.dikuasai, c: LW_COLORS.dikuasai },
     { k: 'dilatih', n: stats.counts.dilatih, c: LW_COLORS.dilatih },
     { k: 'dikenal', n: stats.counts.dikenal, c: LW_COLORS.dikenal },
   ].filter((s) => s.n > 0);
@@ -66,7 +68,8 @@ export function LwStackBar({ stats }: { stats: LwStats }) {
 export function LwLegend({ stats, t }: { stats: LwStats; t: (s: string) => string }) {
   const belum = Math.max(0, stats.target - stats.mastered - stats.counts.dilatih - stats.counts.dikenal);
   const items: [string, string, number][] = [
-    [LW_COLORS.dikuasai, t('Dikuasai'), stats.mastered],
+    ...(stats.bekal ? [[LW_COLORS.bekal, `${t('Bekal')} ${stats.bekalLevel}`, stats.bekal] as [string, string, number]] : []),
+    [LW_COLORS.dikuasai, t('Dikuasai'), stats.counts.dikuasai],
     [LW_COLORS.dilatih, t('Dilatih'), stats.counts.dilatih],
     [LW_COLORS.dikenal, t('Dikenal'), stats.counts.dikenal],
     [LW_COLORS.track, t('Belum'), belum],

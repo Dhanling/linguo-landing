@@ -122,6 +122,11 @@ export default function LingwordsDashboard({
             <p className="mt-1 text-[12.5px] font-medium text-gray-500">
               {t('Target kosakata level')} {stats.level}{!stats.levelKnown && ` (${t('perkiraan — level kelas belum tercatat')})`}
             </p>
+            {stats.bekal > 0 && (
+              <p className="mt-0.5 text-[12px] text-gray-400">
+                {t('Termasuk bekal')} {stats.bekalLevel} {t('dari kelas')} ({fmt(stats.bekal)} {t('kata, perkiraan')}) + {fmt(stats.counts.dikuasai)} {t('kata dikuasai yang tercatat di Lingwords.')}
+              </p>
+            )}
             <div className="mt-3"><LwStackBar stats={stats} /></div>
             <div className="mt-2"><LwLegend stats={stats} t={t} /></div>
             <div className="mt-4 flex flex-wrap gap-2">
