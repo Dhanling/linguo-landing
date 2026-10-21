@@ -31,10 +31,12 @@ import {
   Volume2,
   X,
   Zap,
+  CloudRain,
 } from "lucide-react";
 import DeckLibrary from "./DeckLibrary";
 import { useWlPanel } from "@/lib/wlAnalytics";
 import VocabQuiz from "./VocabQuiz";
+import WordRain from "./WordRain";
 import {
   FREE_SAVE_LIMIT,
   getSavedWords,
@@ -269,7 +271,7 @@ function exportVocabPdf(words: SavedWord[], title: string) {
 }
 
 type Tab = "belajar" | "deck" | "analisa";
-type ViewMode = "home" | "review" | "done" | "quiz";
+type ViewMode = "home" | "review" | "done" | "quiz" | "rain";
 
 export default function FlashcardDeck({
   initialLang,
@@ -295,6 +297,7 @@ export default function FlashcardDeck({
 
   // Analitik WL: kuis kosakata & pustaka Deck komunitas.
   useWlPanel("watch_vocab_quiz", view === "quiz");
+  useWlPanel("watch_word_rain", view === "rain");
   useWlPanel("watch_deck_library", tab === "deck");
   const [pos, setPos] = useState(0);
   const [knew, setKnew] = useState(0);
@@ -480,7 +483,7 @@ export default function FlashcardDeck({
   useEffect(() => {
     const onKey = (e: KeyboardEvent) => {
       if (e.key === "Escape") {
-        if (view === "review" || view === "done" || view === "quiz") setView("home");
+        if (view === "review" || view === "done" || view === "quiz" || view === "rain") setView("home");
         else onClose();
       }
     };
@@ -542,6 +545,15 @@ export default function FlashcardDeck({
     return (
       <Shell>
         <VocabQuiz words={words} onExit={() => setView("home")} />
+      </Shell>
+    );
+  }
+
+  // ── HUJAN KATA ──────────────────────────────────────────────────────────────
+  if (view === "rain") {
+    return (
+      <Shell>
+        <WordRain words={words} onExit={() => setView("home")} />
       </Shell>
     );
   }
@@ -738,6 +750,7 @@ export default function FlashcardDeck({
                   reviewedToday={reviewedToday}
                   onStart={startReview}
                   onQuiz={() => setView("quiz")}
+                  onRain={() => setView("rain")}
                 />
               ) : (
                 <AnalisaTab words={words} stats={stats} />
@@ -757,12 +770,14 @@ function BelajarTab({
   reviewedToday,
   onStart,
   onQuiz,
+  onRain,
 }: {
   words: SavedWord[];
   stats: DeckStats;
   reviewedToday: number;
   onStart: (reviewAhead: boolean) => void;
   onQuiz: () => void;
+  onRain: () => void;
 }) {
   const t = useT(); // [ui-lang-switcher-v1]
   const due = stats.dueCount;
@@ -848,6 +863,22 @@ function BelajarTab({
         <div className="min-w-0 flex-1">
           <p className="text-[15px] font-extrabold text-white">{t("Main Kuis Arti Kata")}</p>
           <p className="text-[12px] text-white/80">{t("Tebak arti lawan waktu — poin, streak & efek suara")}</p>
+        </div>
+        <ArrowRight className="h-5 w-5 shrink-0 text-white/90" />
+      </button>
+
+      {/* Main Hujan Kata — game mengetik kata sebelum jatuh ke tanah */}
+      <button
+        onClick={onRain}
+        className="flex w-full items-center gap-3 rounded-2xl p-4 text-left transition-transform hover:scale-[1.01]"
+        style={{ background: "linear-gradient(135deg,#2D9CDB,#1B5E8C)" }}
+      >
+        <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-white/20">
+          <CloudRain className="h-5 w-5 text-white" />
+        </span>
+        <div className="min-w-0 flex-1">
+          <p className="text-[15px] font-extrabold text-white">{t("Main Hujan Kata")}</p>
+          <p className="text-[12px] text-white/80">{t("Ketik kata sebelum jatuh ke tanah — makin lama makin deras")}</p>
         </div>
         <ArrowRight className="h-5 w-5 shrink-0 text-white/90" />
       </button>

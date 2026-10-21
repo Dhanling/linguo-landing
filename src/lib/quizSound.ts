@@ -11,6 +11,12 @@ export interface QuizAudio {
   tick: () => void;
   finish: () => void;
   click: () => void;
+  /** Hujan Kata: huruf benar — ketukan sangat halus. */
+  type: () => void;
+  /** Hujan Kata: huruf salah — dengung pendek pelan. */
+  typo: () => void;
+  /** Hujan Kata: nyawa habis — nada turun. */
+  gameOver: () => void;
   /** Bangunkan/resume context — panggil dari klik pengguna sebelum main. */
   unlock: () => void;
 }
@@ -95,6 +101,26 @@ export function createQuizAudio(): QuizAudio {
       const c = ac();
       if (!c) return;
       tone(c, 440, 0.04, "sine", 0.06, 0);
+    },
+    // Hujan Kata: tiap huruf benar — dibuat sangat pelan karena berbunyi terus.
+    type: () => {
+      const c = ac();
+      if (!c) return;
+      tone(c, 1318.5, 0.03, "sine", 0.035, 0); // E6
+    },
+    // Hujan Kata: huruf salah — dengung rendah pendek, lebih halus dari `wrong`.
+    typo: () => {
+      const c = ac();
+      if (!c) return;
+      tone(c, 174.61, 0.07, "square", 0.05, 0); // F3
+    },
+    // Hujan Kata: nyawa habis — tiga nada turun.
+    gameOver: () => {
+      const c = ac();
+      if (!c) return;
+      tone(c, 392, 0.16, "triangle", 0.15, 0); // G4
+      tone(c, 311.13, 0.16, "triangle", 0.15, 0.15); // Eb4
+      tone(c, 233.08, 0.4, "triangle", 0.15, 0.3); // Bb3
     },
   };
 }
