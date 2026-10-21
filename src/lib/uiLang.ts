@@ -1825,4 +1825,10 @@ const EN: Record<string, string> = {
   "tercapai — lanjut ke level berikutnya!": "goal reached — on to the next level!",
   "dikuasai pekan ini": "mastered this week",
   "Aktivitas kata": "Word activity",
+  // [lingwords-kelas-kata-v1] Bar kelas kata kartu Lingwords.
+  "Kata benda": "Nouns",
+  "Kata kerja": "Verbs",
+  "Kata sifat": "Adjectives",
+  "Belum dikelompokkan": "Not grouped yet",
+  "Warna pekat = dikuasai, pudar = masih dilatih/dikenal": "Solid = mastered, faded = still practising/seen",
 };

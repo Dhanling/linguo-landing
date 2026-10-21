@@ -11,10 +11,14 @@
 // [sesi-cukup] Untuk semua siswa yang login (bukan staf): cuma mengklasifikasi
 // kata milik pemanggil, maks 120 kata per panggilan, dan hasilnya di-cache global.
 // Urutan penyedia bisa digeser lewat env LINGWORDS_TEMA_ORDER (pola EBOOK_KATA_ORDER).
+//
+// [lingwords-kelas-kata-v1] body.jenis = "kelas" → kelas kata (benda/kerja/sifat/lainnya)
+// untuk bar kartu Lingwords, cache bersama di tabel word_pos (kolom pos). Jawaban
+// {pos:{…}} alih-alih {themes:{…}}. Tanpa jenis = tema seperti semula.
 
 import { NextRequest, NextResponse } from "next/server";
 import { createClient } from "@supabase/supabase-js";
-import { LW_THEME_IDS } from "@/lib/lingwordsTemaDaftar";
+import { LW_POS_IDS, LW_THEME_IDS } from "@/lib/lingwordsTemaDaftar";
 
 export const runtime = "nodejs";
 export const dynamic = "force-dynamic";
@@ -40,6 +44,16 @@ function urutan(): Penyedia[] {
   return dari.length ? dari : URUTAN_BAWAAN;
 }
 
+type Jenis = "tema" | "kelas";
+
+const SISTEM_KELAS =
+  "You tag the part of speech of vocabulary saved by a language learner. " +
+  `Allowed ids: ${LW_POS_IDS.join(", ")}. ` +
+  "benda = noun (including proper nouns and noun phrases); kerja = verb (any form, including infinitives and conjugated forms); " +
+  "sifat = adjective; lainnya = adverbs, pronouns, numbers, prepositions, conjunctions, particles, greetings, " +
+  "interjections and multi-word expressions or sentences. Judge by the word in the given language, using the meaning to disambiguate. " +
+  'Reply with ONLY a JSON object {"pos":["<id>", ...]} with exactly one id per input line, in the same order.';
+
 const SISTEM =
   "You sort vocabulary of a language learner into topic groups. " +
   `Allowed theme ids: ${LW_THEME_IDS.join(", ")}. ` +
@@ -55,7 +69,7 @@ const SISTEM =
 const pesan = (bahasa: string, kata: { word: string; meaning: string }[]) =>
   `Language code: ${bahasa}\n` + kata.map((k, i) => `${i + 1}. ${k.word}${k.meaning ? ` — ${k.meaning}` : ""}`).join("\n");
 
-async function lewatOpenAICompat(endpoint: string, key: string, model: string, user: string): Promise<string> {
+async function lewatOpenAICompat(endpoint: string, key: string, model: string, user: string, sistem: string): Promise<string> {
   const res = await fetch(endpoint, {
     method: "POST",
     headers: { Authorization: `Bearer ${key}`, "Content-Type": "application/json" },
@@ -65,7 +79,7 @@ async function lewatOpenAICompat(endpoint: string, key: string, model: string, u
       temperature: 0,
       response_format: { type: "json_object" },
       messages: [
-        { role: "system", content: SISTEM },
+        { role: "system", content: sistem },
         { role: "user", content: user },
       ],
     }),
@@ -76,14 +90,14 @@ async function lewatOpenAICompat(endpoint: string, key: string, model: string, u
   return String(data?.choices?.[0]?.message?.content ?? "");
 }
 
-async function lewatGemini(user: string): Promise<string> {
+async function lewatGemini(user: string, sistem: string): Promise<string> {
   const res = await fetch(
     `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-lite:generateContent?key=${GEMINI_API_KEY}`,
     {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({
-        systemInstruction: { parts: [{ text: SISTEM }] },
+        systemInstruction: { parts: [{ text: sistem }] },
         contents: [{ role: "user", parts: [{ text: user }] }],
         generationConfig: { temperature: 0, maxOutputTokens: 2000, responseMimeType: "application/json", thinkingConfig: { thinkingBudget: 0 } },
       }),
@@ -95,7 +109,7 @@ async function lewatGemini(user: string): Promise<string> {
   return String(data?.candidates?.[0]?.content?.parts?.[0]?.text ?? "");
 }
 
-async function lewatClaude(user: string): Promise<string> {
+async function lewatClaude(user: string, sistem: string): Promise<string> {
   const res = await fetch("https://api.anthropic.com/v1/messages", {
     method: "POST",
     headers: { "x-api-key": ANTHROPIC_API_KEY, "anthropic-version": "2023-06-01", "Content-Type": "application/json" },
@@ -103,7 +117,7 @@ async function lewatClaude(user: string): Promise<string> {
       model: "claude-haiku-5-5",
       max_tokens: 2000,
       temperature: 0,
-      system: SISTEM,
+      system: sistem,
       messages: [{ role: "user", content: user }],
     }),
     signal: AbortSignal.timeout(20_000),
@@ -113,39 +127,42 @@ async function lewatClaude(user: string): Promise<string> {
   return String(data?.content?.[0]?.text ?? "");
 }
 
-function urai(teks: string, n: number): string[] | null {
+function urai(teks: string, n: number, jenis: Jenis): string[] | null {
   const a = teks.indexOf("{");
   const b = teks.lastIndexOf("}");
   if (a === -1 || b <= a) return null;
   try {
-    const p = JSON.parse(teks.slice(a, b + 1)) as { themes?: unknown };
-    if (!Array.isArray(p.themes) || p.themes.length !== n) return null;
-    return p.themes.map((x) => ((LW_THEME_IDS as string[]).includes(String(x)) ? String(x) : "lainnya"));
+    const p = JSON.parse(teks.slice(a, b + 1)) as { themes?: unknown; pos?: unknown };
+    const arr = jenis === "kelas" ? p.pos : p.themes;
+    const ids: string[] = jenis === "kelas" ? LW_POS_IDS : LW_THEME_IDS;
+    if (!Array.isArray(arr) || arr.length !== n) return null;
+    return arr.map((x) => (ids.includes(String(x)) ? String(x) : "lainnya"));
   } catch {
     return null;
   }
 }
 
-async function klasifikasi(bahasa: string, kata: { word: string; meaning: string }[]): Promise<string[]> {
+async function klasifikasi(bahasa: string, kata: { word: string; meaning: string }[], jenis: Jenis): Promise<string[]> {
   const user = pesan(bahasa, kata);
+  const sistem = jenis === "kelas" ? SISTEM_KELAS : SISTEM;
   const galat: string[] = [];
   for (const p of urutan()) {
     try {
       let teks = "";
       if (p === "deepseek") {
         if (!DEEPSEEK_API_KEY) continue;
-        teks = await lewatOpenAICompat("https://api.deepseek.com/chat/completions", DEEPSEEK_API_KEY, "deepseek-chat", user);
+        teks = await lewatOpenAICompat("https://api.deepseek.com/chat/completions", DEEPSEEK_API_KEY, "deepseek-chat", user, sistem);
       } else if (p === "gemini") {
         if (!GEMINI_API_KEY) continue;
-        teks = await lewatGemini(user);
+        teks = await lewatGemini(user, sistem);
       } else if (p === "claude") {
         if (!ANTHROPIC_API_KEY) continue;
-        teks = await lewatClaude(user);
+        teks = await lewatClaude(user, sistem);
       } else {
         if (!GROQ_API_KEY) continue;
-        teks = await lewatOpenAICompat("https://api.groq.com/openai/v1/chat/completions", GROQ_API_KEY, "llama-3.1-8b-instant", user);
+        teks = await lewatOpenAICompat("https://api.groq.com/openai/v1/chat/completions", GROQ_API_KEY, "llama-3.1-8b-instant", user, sistem);
       }
-      const hasil = urai(teks, kata.length);
+      const hasil = urai(teks, kata.length, jenis);
       if (hasil) return hasil;
       galat.push(`${p}: jawaban tak sesuai`);
     } catch (e) {
@@ -171,7 +188,11 @@ export async function POST(req: NextRequest) {
   const { data: u, error: authErr } = await userClient.auth.getUser();
   if (authErr || !u.user) return NextResponse.json({ error: "sesi tidak sah" }, { status: 401 });
 
-  const body = (await req.json().catch(() => ({}))) as { lang?: string; words?: { word?: string; meaning?: string }[] };
+  const body = (await req.json().catch(() => ({}))) as { lang?: string; jenis?: string; words?: { word?: string; meaning?: string }[] };
+  const jenis: Jenis = body.jenis === "kelas" ? "kelas" : "tema";
+  const tabel = jenis === "kelas" ? "word_pos" : "word_themes";
+  const kolom = jenis === "kelas" ? "pos" : "theme";
+  const kunciJawab = jenis === "kelas" ? "pos" : "themes";
   const lang = String(body.lang || "").toLowerCase().trim().slice(0, 12);
   if (!/^[a-z-]{2,12}$/.test(lang)) return NextResponse.json({ error: "lang tidak sah" }, { status: 400 });
   const seen = new Set<string>();
@@ -184,31 +205,32 @@ export async function POST(req: NextRequest) {
       return true;
     })
     .slice(0, 120);
-  if (!kata.length) return NextResponse.json({ themes: {} });
+  if (!kata.length) return NextResponse.json({ [kunciJawab]: {} });
 
   const themes: Record<string, string> = {};
   const sb = admin();
   if (sb) {
+    // Tabel word_pos belum dibuat → error diabaikan, semua jatuh ke AI.
     const { data } = await sb
-      .from("word_themes")
-      .select("word_key,theme")
+      .from(tabel)
+      .select(`word_key,${kolom}`)
       .eq("lang", lang)
       .in("word_key", kata.map((k) => k.word.toLowerCase()));
-    ((data as { word_key: string; theme: string }[] | null) || []).forEach((r) => (themes[r.word_key] = r.theme));
+    ((data as Record<string, string>[] | null) || []).forEach((r) => (themes[r.word_key] = r[kolom]));
   }
   const belum = kata.filter((k) => !themes[k.word.toLowerCase()]);
   if (belum.length) {
     let hasil: string[];
     try {
-      hasil = await klasifikasi(lang, belum);
+      hasil = await klasifikasi(lang, belum, jenis);
     } catch (e) {
       // Sebagian sudah terjawab dari cache → tetap dikirim; klien coba lagi lain kali.
-      if (Object.keys(themes).length) return NextResponse.json({ themes, partial: true });
+      if (Object.keys(themes).length) return NextResponse.json({ [kunciJawab]: themes, partial: true });
       return NextResponse.json({ error: String((e as Error)?.message || e).slice(0, 300) }, { status: 502 });
     }
-    const baris = belum.map((k, i) => ({ lang, word_key: k.word.toLowerCase(), theme: hasil[i] }));
-    baris.forEach((r) => (themes[r.word_key] = r.theme));
-    if (sb) await sb.from("word_themes").upsert(baris, { onConflict: "lang,word_key", ignoreDuplicates: true }).then(() => {}, () => {});
+    const baris = belum.map((k, i) => ({ lang, word_key: k.word.toLowerCase(), [kolom]: hasil[i] }));
+    belum.forEach((k, i) => (themes[k.word.toLowerCase()] = hasil[i]));
+    if (sb) await sb.from(tabel).upsert(baris, { onConflict: "lang,word_key", ignoreDuplicates: true }).then(() => {}, () => {});
   }
-  return NextResponse.json({ themes });
+  return NextResponse.json({ [kunciJawab]: themes });
 }

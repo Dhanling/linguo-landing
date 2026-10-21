@@ -6,7 +6,7 @@
 import { useEffect, useMemo, useState } from 'react';
 import { getSavedWords, onSavedWordsChanged, type SavedWord } from '@/lib/immersionLearn';
 import { langsOf, loadLingwords, loadPreviewLingwords, type LwActivity, type LwWord, type RegLike } from '@/lib/lingwords';
-import { primeThemes } from '@/lib/lingwordsTema';
+import { primePos, primeThemes } from '@/lib/lingwordsTema';
 
 // Hasil terakhir ditahan di memori modul → balik ke Beranda tak bikin kartu kedip.
 const memo = new Map<string, { words: LwWord[]; activity: LwActivity[]; server: boolean; regs?: RegLike[] }>();
@@ -33,7 +33,7 @@ export function useLingwords(
     let alive = true;
     const h = setTimeout(async () => {
       const res = preview
-        ? await loadPreviewLingwords(preview).then((r) => { primeThemes(r.themes); return r; })
+        ? await loadPreviewLingwords(preview).then((r) => { primeThemes(r.themes); primePos(r.pos); return r; })
         : await loadLingwords(userId, saved, opts);
       if (!alive) return;
       memo.set(key, res);

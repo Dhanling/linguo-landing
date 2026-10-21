@@ -6,7 +6,8 @@
 // paling terang kontrasnya rendah, jadi selalu ditemani legenda berteks.
 
 import { useMemo, useRef, useState } from 'react';
-import type { LwStats } from '@/lib/lingwords';
+import type { LwStats, LwWord } from '@/lib/lingwords';
+import { LW_POS, posOf, type LwPosId } from '@/lib/lingwordsTema';
 
 export const LW_COLORS = {
   bekal: '#5E7F7D', // [lingwords-bekal-v1] bekal level sebelumnya (perkiraan, bukan kata terlacak)
@@ -284,6 +285,70 @@ export function LwActivityBars({ heat, period, t }: { heat: Map<string, number>;
           </span>
         ))}
       </div>
+    </div>
+  );
+}
+
+// [lingwords-kelas-kata-v1] Bar kartu Beranda per KELAS KATA (ala referensi desain):
+// bekal level sebelumnya | benda | kerja | sifat | lainnya | belum dikelompokkan,
+// terhadap target level. Tiap kelas: bagian padat = dikuasai, pudar = dilatih/dikenal,
+// jadi info status tidak hilang. `ver` memaksa hitung ulang sesudah cache kelas terisi.
+export const LW_POS_COLORS: Record<LwPosId, string> = {
+  benda: '#1A9E9E',
+  kerja: '#F5A524',
+  sifat: '#3B82F6',
+  lainnya: '#8B5CF6',
+};
+const PENDING = '#CBD5E1';
+
+export interface LwPosRow { id: LwPosId | 'pending'; label: string; color: string; total: number; mastered: number }
+
+export function posRows(words: LwWord[], lang: string): LwPosRow[] {
+  const by = new Map<string, { total: number; mastered: number }>();
+  words.forEach((w) => {
+    if (w.lang !== lang) return;
+    const k = posOf(lang, w.word) || 'pending';
+    const r = by.get(k) || { total: 0, mastered: 0 };
+    r.total++;
+    if (w.stage === 'dikuasai') r.mastered++;
+    by.set(k, r);
+  });
+  const rows: LwPosRow[] = LW_POS.map((p) => ({ id: p.id, label: p.label, color: LW_POS_COLORS[p.id], ...(by.get(p.id) || { total: 0, mastered: 0 }) }));
+  const pend = by.get('pending');
+  if (pend) rows.push({ id: 'pending', label: 'Belum dikelompokkan', color: PENDING, ...pend });
+  return rows;
+}
+
+export function LwPosBar({ stats, rows }: { stats: LwStats; rows: LwPosRow[] }) {
+  const sum = rows.reduce((s, r) => s + r.total, 0);
+  const base = Math.max(stats.target, stats.bekal + sum);
+  const pct = (n: number) => `${(n / base) * 100}%`;
+  return (
+    <div className="flex h-3.5 gap-[2px] overflow-hidden rounded-full bg-[#E8EAEE]" aria-hidden>
+      {stats.bekal > 0 && <div className="h-full" style={{ width: pct(stats.bekal), background: LW_COLORS.bekal, minWidth: 3 }} />}
+      {rows.filter((r) => r.total > 0).map((r) => (
+        <div key={r.id} className="flex h-full" style={{ width: pct(r.total), minWidth: 3 }}>
+          {r.mastered > 0 && <div className="h-full" style={{ width: `${(r.mastered / r.total) * 100}%`, background: r.color }} />}
+          {r.total > r.mastered && <div className="h-full flex-1" style={{ background: r.color, opacity: 0.5 }} />}
+        </div>
+      ))}
+    </div>
+  );
+}
+
+export function LwPosLegend({ stats, rows, t }: { stats: LwStats; rows: LwPosRow[]; t: (s: string) => string }) {
+  const items: [string, string, number][] = [
+    ...(stats.bekal ? [[LW_COLORS.bekal, `${t('Bekal')} ${stats.bekalLevel}`, stats.bekal] as [string, string, number]] : []),
+    ...rows.filter((r) => r.id !== 'pending' || r.total > 0).map((r) => [r.color, t(r.label), r.total] as [string, string, number]),
+  ];
+  return (
+    <div className="flex flex-wrap gap-x-3.5 gap-y-1 text-[11.5px] font-semibold text-gray-500">
+      {items.map(([c, l, n]) => (
+        <span key={l} className="inline-flex items-center gap-1.5">
+          <i className="inline-block h-2.5 w-2.5 rounded-full" style={{ background: c }} />
+          {l} <b className="text-[#12172B]">{n}</b>
+        </span>
+      ))}
     </div>
   );
 }

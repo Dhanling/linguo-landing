@@ -4,7 +4,8 @@
 // level (cincin + bar status) dan perkiraan waktu sampai target. [lingwords-card-v2]
 // Tata letak ala "vocabulary tracker": pilihan periode 7/30/90 hari/Semua, pil
 // target, dan grafik batang aktivitas kata. Rinciannya (tangga level, heatmap,
-// tonggak) di /kosakata.
+// tonggak) di /kosakata. [lingwords-kelas-kata-v1] Bar & legenda per kelas kata
+// (benda/kerja/sifat/lainnya, ditandai AI di latar); status tetap di /kosakata.
 //
 // Catatan: kartu "Kosakata Saya" lama dicabut dari Beranda 11 Agu karena layar
 // pertama terlalu padat — makanya kartu ini sengaja SATU baris ringkas.
@@ -14,7 +15,8 @@ import { ChevronRight, Layers, Lightbulb, PartyPopper, Sparkles, Target } from '
 import { useT } from '@/lib/uiLang';
 import { computeStats, etaText, type RegLike } from '@/lib/lingwords';
 import { langLabel } from '@/lib/quiz/language';
-import { LwActivityBars, LwLegend, LwRing, LwStackBar, type LwPeriod } from './LwCharts';
+import { LwActivityBars, LwPosBar, LwPosLegend, LwRing, posRows, type LwPeriod } from './LwCharts';
+import { ensurePos } from '@/lib/lingwordsTema';
 import { useLangPick, useLingwords } from './useLingwords';
 import { useEffect, useMemo, useState } from 'react';
 
@@ -65,6 +67,25 @@ export default function LingwordsCard({
     [words, lang, regKey, activity]
   );
   const href = `/kosakata${previewQuery}`;
+
+  // Kelas kata: kata yang belum ditandai dikirim ke AI per batch (pratinjau POV = cache saja).
+  const [posVer, setPosVer] = useState(0);
+  const langWords = useMemo(() => (lang ? words.filter((w) => w.lang === lang) : []), [words, lang]);
+  const wordKey = langWords.map((w) => w.word).join('|');
+  useEffect(() => {
+    if (previewMode || !lang || !langWords.length) return;
+    let alive = true;
+    ensurePos(lang, langWords)
+      .then((changed) => { if (alive && changed) setPosVer((v) => v + 1); })
+      .catch(() => {});
+    return () => { alive = false; };
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [lang, wordKey, previewMode]);
+  const rows = useMemo(
+    () => (lang ? posRows(langWords, lang) : []),
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+    [langWords, lang, posVer]
+  );
 
   if (loading) {
     return <div className="h-[196px] animate-pulse rounded-3xl bg-white ring-1 ring-slate-200/70" aria-hidden />;
@@ -138,8 +159,8 @@ export default function LingwordsCard({
               <span className="text-[34px] font-extrabold tracking-tight text-[#12172B]">{fmt(stats.mastered)}</span>
               <span className="text-[14.5px] font-semibold text-gray-500">/ {fmt(stats.target)} {t('kata dikuasai')}</span>
             </p>
-            <div className="mt-3.5"><LwStackBar stats={stats} /></div>
-            <div className="mt-2.5"><LwLegend stats={stats} t={t} /></div>
+            <div className="mt-3.5" title={t('Warna pekat = dikuasai, pudar = masih dilatih/dikenal')}><LwPosBar stats={stats} rows={rows} /></div>
+            <div className="mt-2.5"><LwPosLegend stats={stats} rows={rows} t={t} /></div>
             <p className="mt-3.5 flex items-start gap-2 rounded-2xl bg-[#1A9E9E]/8 px-3.5 py-2.5 text-[12.5px] font-semibold text-[#0F5A52]">
               {stats.remaining > 0 ? (
                 <>

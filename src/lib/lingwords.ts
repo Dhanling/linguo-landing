@@ -651,7 +651,7 @@ export async function loadLingwords(
  */
 export async function loadPreviewLingwords(
   studentId: string
-): Promise<{ words: LwWord[]; activity: LwActivity[]; server: boolean; regs: RegLike[]; themes: Record<string, string> }> {
+): Promise<{ words: LwWord[]; activity: LwActivity[]; server: boolean; regs: RegLike[]; themes: Record<string, string>; pos: Record<string, string> }> {
   try {
     const res = await fetch(`/api/preview-lingwords?student=${encodeURIComponent(studentId)}`, { cache: "no-store" });
     if (!res.ok) throw new Error(String(res.status));
@@ -661,11 +661,12 @@ export async function loadPreviewLingwords(
       notes?: { content: string | null; tags: string[] | null; created_at: string }[];
       regs?: RegLike[];
       themes?: Record<string, string>;
+      pos?: Record<string, string>;
       akun?: boolean;
     };
     const words = mergeWords((j.words || []).map(fromServerRow), lingnoteFromNotes(j.notes || []));
-    return { words, activity: j.activity || [], server: !!j.akun, regs: j.regs || [], themes: j.themes || {} };
+    return { words, activity: j.activity || [], server: !!j.akun, regs: j.regs || [], themes: j.themes || {}, pos: j.pos || {} };
   } catch {
-    return { words: [], activity: [], server: false, regs: [], themes: {} };
+    return { words: [], activity: [], server: false, regs: [], themes: {}, pos: {} };
   }
 }

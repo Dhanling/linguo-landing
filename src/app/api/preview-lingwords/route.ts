@@ -80,6 +80,7 @@ export async function GET(req: NextRequest) {
 
   // Tema kata yang sudah diketahui (cache bersama) — pratinjau tak memanggil AI.
   const themes: Record<string, string> = {};
+  const pos: Record<string, string> = {};
   const byLang = new Map<string, string[]>();
   (words as { lang: string; word_key: string }[]).forEach((w) => byLang.set(w.lang, (byLang.get(w.lang) || []).concat(w.word_key)));
   for (const [lang, keys] of byLang) {
@@ -87,6 +88,9 @@ export async function GET(req: NextRequest) {
       const q = keys.slice(i, i + 150).map((k) => `"${k.replace(/"/g, '\\"')}"`).join(",");
       const rows = (await serviceRest(`word_themes?lang=eq.${encodeURIComponent(lang)}&word_key=in.(${encodeURIComponent(q)})&select=word_key,theme`)) || [];
       rows.forEach((r: { word_key: string; theme: string }) => (themes[`${lang}::${r.word_key}`] = r.theme));
+      // [lingwords-kelas-kata-v1] kelas kata (tabel word_pos — belum ada = kosong)
+      const pr = (await serviceRest(`word_pos?lang=eq.${encodeURIComponent(lang)}&word_key=in.(${encodeURIComponent(q)})&select=word_key,pos`)) || [];
+      (Array.isArray(pr) ? pr : []).forEach((r: { word_key: string; pos: string }) => (pos[`${lang}::${r.word_key}`] = r.pos));
     }
   }
 
@@ -96,6 +100,7 @@ export async function GET(req: NextRequest) {
     words,
     activity,
     themes,
+    pos,
     akun: users.length > 0,
   });
 }
