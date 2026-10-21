@@ -226,11 +226,11 @@ function FlagBadge({ lang, variant, dark = false }: { lang: string; variant: "li
   if (variant === "chip") {
     // pill bendera + nama, dipakai di kartu sertifikat
     return (
-      <span className="inline-flex items-center gap-2 rounded-full bg-white px-3 py-1.5 shadow-[0_4px_14px_-8px_rgba(18,23,43,.4)]" style={{ border: `1px solid ${col.accent}33` }}>
+      <span className="inline-flex items-center gap-2 rounded-full bg-white px-3 py-1.5 shadow-[0_4px_14px_-8px_rgba(18,23,43,.4)]" style={{ border: "1px solid #ffc8a3", background: "#fff9e8" }}>
         {url
           ? <img src={url} alt={lang} className="h-4 w-6 rounded-[3px] object-cover" style={{ boxShadow: "0 0 0 1px rgba(0,0,0,.06)" }} />
           : <span className="flex h-4 w-6 items-center justify-center rounded-[3px] text-[9px] font-extrabold" style={{ background: col.bg, color: col.text }}>{glyphOf(lang)}</span>}
-        <span className="text-[12px] font-extrabold tracking-wide" style={{ color: col.text }}>{lang}</span>
+        <span className="text-[12px] font-extrabold tracking-wide" style={{ color: "#ef742e" }}>{lang}</span>
       </span>
     );
   }
@@ -847,7 +847,7 @@ function IssuedDetail({ ct, studentName, defaultName, onSaveName, lingwordsUserI
       <div data-cert-slide style={{ gridArea: "1 / 1", minWidth: 0, visibility: slide === 0 ? "visible" : "hidden" }} aria-hidden={slide !== 0}>
       <CourseCertificatePaper
         ref={cardRef}
-        code={flagCodeOf(ct.language)}
+        code={flagCodeOf(ct.language)} language={ct.language}
         badge={<FlagBadge lang={ct.language} variant="chip" />}
         name={studentName}
         heading={isKids ? "ACHIEVEMENT" : "COMPLETION"}
