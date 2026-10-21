@@ -755,6 +755,12 @@ export default function StudentShell({
            Selektor gabungan '.text-white' → cuma kena elemen bertulisan putih. */
         .lms-dark .bg-\\[\\#12A37E\\].text-white{background-color:#0f766e !important;}
         .lms-dark .hover\\:bg-\\[\\#0C8163\\].text-white:hover{background-color:#115e59 !important;}
+        /* [teal-gelap-kontras-v1] Teal brand terang (1A9E9E/1FB3B3/2ABFBF) bertulisan
+           putih cuma 2-3:1 di atas kartu hitam. Di mode gelap dipekatkan ke teal yang
+           sama dengan CTA lain, termasuk gradien yang berawal dari teal terang. */
+        .lms-dark .bg-\\[\\#1A9E9E\\].text-white,.lms-dark .bg-\\[\\#1FB3B3\\].text-white,.lms-dark .bg-\\[\\#2ABFBF\\].text-white,.lms-dark .bg-teal-400.text-white{background-color:#0f766e !important;}
+        .lms-dark .hover\\:bg-\\[\\#147878\\].text-white:hover,.lms-dark .hover\\:bg-\\[\\#0F5A52\\].text-white:hover,.lms-dark .hover\\:bg-\\[\\#178888\\].text-white:hover,.lms-dark .hover\\:bg-\\[\\#158585\\].text-white:hover{background-color:#115e59 !important;}
+        .lms-dark .from-\\[\\#1A9E9E\\].text-white,.lms-dark .from-\\[\\#1FB3B3\\].text-white,.lms-dark .from-\\[\\#2ABFBF\\].text-white{--tw-gradient-from:#0f766e !important;}
         /* Tombol netral "Belum siap": slate-400 nyaris seterang kartu putih → di
            gelap jadi abu pekat, tulisan putihnya tetap kebaca. */
         .lms-dark .bg-slate-400.text-white,.lms-dark .bg-gray-400.text-white{background-color:#2f3338 !important;}
