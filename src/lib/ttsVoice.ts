@@ -152,6 +152,15 @@ export function namaVoice(kode?: string | null): string | null {
   return az ? az.voice : namaVoiceGoogle(kode);
 }
 
+/** [tts-dua-suara-v1] Suara Chirp 3 HD kedua (pria) untuk pembicara B dialog listening
+ *  Kelas Video — null kalau locale-nya tak ber-Chirp. Kembar di repo admin. */
+export const CHIRP_SPEAKER_2 = "Charon";
+export function namaVoiceGoogle2(kode?: string | null): string | null {
+  const locale = localeChirp(kode);
+  if (!locale || VOICE_OVERRIDE[locale]) return null;
+  return `${locale}-Chirp3-HD-${CHIRP_SPEAKER_2}`;
+}
+
 /** Sama seperti cleanText di gen-vietnam-audio.mjs — buang anotasi "(...)" & "·".
  *  Teks yang MASUK ke kunci cache adalah hasil fungsi ini, bukan teks mentah. */
 export function bersihkanTeksTts(s: string): string {

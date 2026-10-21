@@ -23,7 +23,7 @@ import os from "node:os";
 import path from "node:path";
 import {
   AZURE_FORMAT, AZURE_VOICES, BATAS_TEKS_TTS, BUCKET_TTS, ESPEAK_VOICES, bersihkanTeksTts,
-  jalurCacheTts, localeChirp, namaVoiceGoogle, penyediaTts,
+  jalurCacheTts, localeChirp, namaVoiceGoogle, namaVoiceGoogle2, penyediaTts,
 } from "@/lib/ttsVoice";
 
 export const runtime = "nodejs";
@@ -224,7 +224,7 @@ async function keCache(jalur: string, base64: string) {
 /** Balasan rute ini: `abadi` menandai isi yang boleh disimpan CDN/browser. */
 type Hasil = { status: number; body: Record<string, unknown>; abadi?: boolean };
 
-async function sintesis(teksMentah: unknown, langMentah: unknown): Promise<Hasil> {
+async function sintesis(teksMentah: unknown, langMentah: unknown, suaraMentah?: unknown): Promise<Hasil> {
   const text = bersihkanTeksTts(String(teksMentah || "")).slice(0, BATAS_TEKS_TTS);
   if (!text) return { status: 400, body: { error: "text kosong" } };
 
@@ -263,7 +263,8 @@ async function sintesis(teksMentah: unknown, langMentah: unknown): Promise<Hasil
     : azure
       ? azure.voice
       : chirpLocale
-        ? (namaVoiceGoogle(langBase) as string)
+        // [tts-dua-suara-v1] voice=2 → pembicara kedua dialog (Charon); tanpa Chirp → suara biasa.
+        ? ((String(suaraMentah ?? "") === "2" && namaVoiceGoogle2(langBase)) || (namaVoiceGoogle(langBase) as string))
         : await resolveVoice(await getAccessToken());
 
   // Sudah pernah disintesis? Balas dari simpanan — nol karakter ditagih.
@@ -376,7 +377,7 @@ export async function POST(req: NextRequest) {
   try {
     const body = await req.json().catch(() => ({}));
     // POST tak pernah disimpan browser/CDN — headernya sekadar tak menghalangi.
-    return balas(await sintesis(body?.text, body?.lang), false, headerAsal(req));
+    return balas(await sintesis(body?.text, body?.lang, body?.voice), false, headerAsal(req));
   } catch (e: any) {
     return NextResponse.json({ error: e?.message || "internal error" }, { status: 500 });
   }
@@ -411,7 +412,7 @@ export async function GET(req: NextRequest) {
       await hangatkan();
       return new NextResponse(null, { status: 204, headers: { "Cache-Control": "no-store", ...headerAsal(req) } });
     }
-    return balas(await sintesis(q.get("text"), q.get("lang")), true, headerAsal(req));
+    return balas(await sintesis(q.get("text"), q.get("lang"), q.get("voice")), true, headerAsal(req));
   } catch (e: any) {
     return NextResponse.json({ error: e?.message || "internal error" }, { status: 500 });
   }
