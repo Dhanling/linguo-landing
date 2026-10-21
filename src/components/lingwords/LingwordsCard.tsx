@@ -21,15 +21,20 @@ export default function LingwordsCard({
   regs,
   previewMode = false,
   previewQuery = '',
+  previewStudentId = null,
 }: {
   userId?: string | null;
   regs: RegLike[];
-  /** POV siswa (staf): sesi milik staf, jadi data server bukan milik siswanya → lokal saja. */
+  /** POV siswa (staf): sesi milik staf → data asli siswa dibaca lewat /api/preview-lingwords. */
   previewMode?: boolean;
   previewQuery?: string;
+  previewStudentId?: string | null;
 }) {
   const t = useT();
-  const { loading, words, activity, langs } = useLingwords(previewMode ? null : userId, regs, { sync: !previewMode });
+  const { loading, words, activity, langs } = useLingwords(previewMode ? null : userId, regs, {
+    sync: !previewMode,
+    previewStudentId: previewMode ? previewStudentId : null,
+  });
   const [lang, setLang] = useLangPick(langs);
   const regKey = regs.map((r) => `${r.language}|${r.level}`).join(',');
   const stats = useMemo(

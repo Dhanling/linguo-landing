@@ -5346,6 +5346,7 @@ export default function AkunPage() {
                         regs={liveRegsAll}
                         previewMode={previewMode}
                         previewQuery={previewId ? `?preview=${encodeURIComponent(previewId)}` : ""}
+                        previewStudentId={previewId || null}
                       />
 
                       {/* [cek-level-berkala-v1] Tes level mandiri: level terakhir, grafik
@@ -6058,6 +6059,7 @@ export default function AkunPage() {
                 onSchedule={() => setActiveTab("jadwal")}
                 focusId={certFocusId}
                 lingwordsUserId={previewMode ? null : user?.id || null}
+                lingwordsPreviewId={previewId}
               />
             </motion.div>
           )}

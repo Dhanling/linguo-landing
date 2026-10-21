@@ -111,6 +111,7 @@ export default function KosakataPage() {
           userId={userId}
           regs={regs}
           previewMode={!!previewId}
+          previewStudentId={previewId}
           onPractice={(l) => setDeckLang(l)}
           onPracticeTheme={practiceTheme}
         />

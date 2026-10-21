@@ -41,6 +41,17 @@ export function themeOf(lang: string, word: string): LwThemeId | undefined {
   return baca()[kunci(lang, word)];
 }
 
+/** [lingwords-pratinjau-v1] Isi cache dengan tema yang sudah diketahui server ("lang::kata" → tema). */
+export function primeThemes(map: Record<string, string>): void {
+  if (typeof window === "undefined") return;
+  const lokal = baca();
+  let ubah = false;
+  Object.entries(map).forEach(([k, t]) => {
+    if ((LW_THEME_IDS as string[]).includes(t) && lokal[k] !== t) { lokal[k] = t as LwThemeId; ubah = true; }
+  });
+  if (ubah) tulis();
+}
+
 let mati = false; // AI/rute tumbang → berhenti mencoba sampai muat ulang
 const jalan = new Map<string, Promise<void>>();
 

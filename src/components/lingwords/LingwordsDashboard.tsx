@@ -24,9 +24,11 @@ export default function LingwordsDashboard({
   userId,
   regs,
   previewMode = false,
+  previewStudentId = null,
   onPractice,
   onPracticeTheme,
 }: {
+  previewStudentId?: string | null;
   userId?: string | null;
   regs: RegLike[];
   previewMode?: boolean;
@@ -34,11 +36,14 @@ export default function LingwordsDashboard({
   onPracticeTheme?: (lang: string, p: LwThemePractice) => void;
 }) {
   const t = useT();
-  const { loading, words, activity, langs, server } = useLingwords(previewMode ? null : userId, regs, { sync: !previewMode });
+  const { loading, words, activity, langs, server, regs: effRegs } = useLingwords(previewMode ? null : userId, regs, {
+    sync: !previewMode,
+    previewStudentId: previewMode ? previewStudentId : null,
+  });
   const [lang, setLang] = useLangPick(langs);
-  const regKey = regs.map((r) => `${r.language}|${r.level}`).join(',');
+  const regKey = effRegs.map((r) => `${r.language}|${r.level}`).join(',');
   const stats = useMemo(
-    () => (lang ? computeStats(words, lang, regs, activity) : null),
+    () => (lang ? computeStats(words, lang, effRegs, activity) : null),
     // eslint-disable-next-line react-hooks/exhaustive-deps
     [words, lang, regKey, activity]
   );
@@ -264,7 +269,7 @@ export default function LingwordsDashboard({
         <span>
           {t('Dihitung dari kata tersimpan Watch & Learn dan e-book, kiriman pengajar di Lingnote, serta materi & kuis yang sudah kamu selesaikan.')}{' '}
           {previewMode
-            ? t('Mode pratinjau: kata tersimpan mengikuti perangkat ini, bukan milik siswanya.')
+            ? t('Mode pratinjau: data asli siswa (hanya-baca). Kata yang belum pernah tersinkron dari perangkat siswa belum terlihat.')
             : server
               ? t('Tersinkron ke akunmu — tetap ada walau ganti perangkat.')
               : t('Kata tersimpan saat ini masih tercatat per perangkat.')}

@@ -213,7 +213,32 @@ export function parseLingnoteLines(md: string): { word: string; translit?: strin
   return out;
 }
 
-/** Kata kiriman pengajar dari Lingnote. Bahasanya dari tag "kelas:<bahasa · level>". */
+/** Catatan Lingnote kiriman pengajar → kata. Bahasanya dari tag "kelas:<bahasa · level>". */
+export function lingnoteFromNotes(rows: { content: string | null; tags: string[] | null; created_at: string }[]): LwWord[] {
+  const out: LwWord[] = [];
+  rows.forEach((r) => {
+    const kelas = (r.tags || []).find((x) => x.startsWith("kelas:"))?.slice(6) || "";
+    const lang = toLangCode(kelas.split("·")[0].trim());
+    if (!lang) return;
+    const at = new Date(r.created_at).getTime() || Date.now();
+    parseLingnoteLines(r.content || "").forEach((w) =>
+      out.push({
+        lang,
+        word: w.word,
+        meaning: w.meaning,
+        translit: w.translit,
+        source: "lingnote",
+        stage: "dikenal",
+        firstSeen: at,
+        masteredAt: null,
+        lastActive: null,
+      })
+    );
+  });
+  return out;
+}
+
+/** Kata kiriman pengajar dari Lingnote (siswa login). */
 export async function fetchLingnoteWords(userId: string): Promise<LwWord[]> {
   if (!userId) return [];
   const hit = lingnoteCache.get(userId);
@@ -242,26 +267,7 @@ export async function fetchLingnoteWords(userId: string): Promise<LwWord[]> {
       rows.push(...page);
       if (page.length < 1000) break;
     }
-    const out: LwWord[] = [];
-    rows.forEach((r) => {
-      const kelas = (r.tags || []).find((x) => x.startsWith("kelas:"))?.slice(6) || "";
-      const lang = toLangCode(kelas.split("·")[0].trim());
-      if (!lang) return;
-      const at = new Date(r.created_at).getTime() || Date.now();
-      parseLingnoteLines(r.content || "").forEach((w) =>
-        out.push({
-          lang,
-          word: w.word,
-          meaning: w.meaning,
-          translit: w.translit,
-          source: "lingnote",
-          stage: "dikenal",
-          firstSeen: at,
-          masteredAt: null,
-          lastActive: null,
-        })
-      );
-    });
+    const out = lingnoteFromNotes(rows);
     lingnoteCache.set(userId, out);
     return out;
   } catch {
@@ -285,6 +291,21 @@ interface ServerRow {
   last_active: string | null;
 }
 
+function fromServerRow(r: ServerRow): LwWord {
+  return {
+    lang: r.lang,
+    word: r.word,
+    meaning: r.meaning || "",
+    translit: r.translit || undefined,
+    // Asal aslinya ikut dibawa (e-book/Lingnote dari perangkat lain); kolom kosong = "server".
+    source: SERVER_SOURCES.includes(r.source as LwSource) ? (r.source as LwSource) : "server",
+    stage: r.stage,
+    firstSeen: new Date(r.first_seen).getTime(),
+    masteredAt: r.mastered_at ? new Date(r.mastered_at).getTime() : null,
+    lastActive: r.last_active ? new Date(r.last_active).getTime() : null,
+  };
+}
+
 export async function fetchServerWords(): Promise<LwWord[]> {
   if (serverMissing) return [];
   const out: LwWord[] = [];
@@ -301,20 +322,7 @@ export async function fetchServerWords(): Promise<LwWord[]> {
         break;
       }
       const rows = (data as ServerRow[] | null) || [];
-      rows.forEach((r) =>
-        out.push({
-          lang: r.lang,
-          word: r.word,
-          meaning: r.meaning || "",
-          translit: r.translit || undefined,
-          // Asal aslinya ikut dibawa (e-book/Lingnote dari perangkat lain); kolom kosong = "server".
-          source: SERVER_SOURCES.includes(r.source as LwSource) ? (r.source as LwSource) : "server",
-          stage: r.stage,
-          firstSeen: new Date(r.first_seen).getTime(),
-          masteredAt: r.mastered_at ? new Date(r.mastered_at).getTime() : null,
-          lastActive: r.last_active ? new Date(r.last_active).getTime() : null,
-        })
-      );
+      rows.forEach((r) => out.push(fromServerRow(r)));
       if (rows.length < 1000) break;
     }
   } catch {
@@ -606,4 +614,31 @@ export async function loadLingwords(
   // Sinkron di latar: semua sumber perangkat ini (bukan baris server) → student_words.
   if (opts.sync !== false) void syncSavedWords(userId, mergeWords(local, materi, lingnote)).catch(() => {});
   return { words: mergeWords(local, materi, lingnote, server), activity, server: !serverMissing };
+}
+
+/**
+ * [lingwords-pratinjau-v1] Mode pratinjau POV staf: data ASLI siswa lewat
+ * /api/preview-lingwords (service role, dikunci cookie pratinjau, hanya-baca).
+ * Kata simpanan di browser staf sengaja TIDAK ikut — itu bukan milik siswanya.
+ * Kosakata materi hanya terlihat kalau siswa pernah membuka Lingwords (sudah tersinkron).
+ */
+export async function loadPreviewLingwords(
+  studentId: string
+): Promise<{ words: LwWord[]; activity: LwActivity[]; server: boolean; regs: RegLike[]; themes: Record<string, string> }> {
+  try {
+    const res = await fetch(`/api/preview-lingwords?student=${encodeURIComponent(studentId)}`, { cache: "no-store" });
+    if (!res.ok) throw new Error(String(res.status));
+    const j = (await res.json()) as {
+      words?: ServerRow[];
+      activity?: LwActivity[];
+      notes?: { content: string | null; tags: string[] | null; created_at: string }[];
+      regs?: RegLike[];
+      themes?: Record<string, string>;
+      akun?: boolean;
+    };
+    const words = mergeWords((j.words || []).map(fromServerRow), lingnoteFromNotes(j.notes || []));
+    return { words, activity: j.activity || [], server: !!j.akun, regs: j.regs || [], themes: j.themes || {} };
+  } catch {
+    return { words: [], activity: [], server: false, regs: [], themes: {} };
+  }
 }

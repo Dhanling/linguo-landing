@@ -393,7 +393,10 @@ export default function SertifikatTab({
   onSchedule,
   focusId,
   lingwordsUserId = null,
+  lingwordsPreviewId = null,
 }: {
+  /** [lingwords-pratinjau-v1] id siswa pratinjau POV → lencana dari data asli siswa (hanya-baca). */
+  lingwordsPreviewId?: string | null;
   studentName: string;
   /** [lingwords-v2] id akun siswa untuk lencana kosakata. null (mode pratinjau POV) =
    *  lencana tak ditampilkan — data lokal staf bukan milik siswanya. */
@@ -589,7 +592,7 @@ export default function SertifikatTab({
           <div className="flex flex-col gap-6 p-4 sm:p-5 lg:p-6">
             {selected ? (
               selected.status === "issued"
-                ? <IssuedDetail ct={selected} studentName={studentName} defaultName={defaultName} onSaveName={onSaveName} lingwordsUserId={lingwordsUserId} />
+                ? <IssuedDetail ct={selected} studentName={studentName} defaultName={defaultName} onSaveName={onSaveName} lingwordsUserId={lingwordsUserId} lingwordsPreviewId={lingwordsPreviewId} />
                 : <ProgressDetail ct={selected} studentName={studentName} onContinue={onContinue} onSchedule={onSchedule} />
             ) : (
               <div className="cert-card rounded-2xl bg-white p-12 text-center">
@@ -734,22 +737,22 @@ function RaporKosong() {
 /* [lingwords-v2] Lencana tonggak kosakata: "Menguasai N kosakata A1" muncul di sertifikat
    & rapor kalau jumlah kata dikuasai (Lingwords) bahasa ini sudah mencapai target level
    sertifikatnya (LEVEL_VOCAB_TARGET, level induk: A1.2 → A1). */
-function useVocabBadge(userId: string | null, language: string, level: string): { n: number; level: string; target: number } | null {
-  const { words } = useLingwords(userId, [], { sync: false });
+function useVocabBadge(userId: string | null, previewId: string | null, language: string, level: string): { n: number; level: string; target: number } | null {
+  const { words } = useLingwords(userId, [], { sync: false, previewStudentId: previewId });
   return useMemo(() => {
-    if (!userId) return null;
+    if (!userId && !previewId) return null;
     const lang = toLangCode(language);
     const base = (level || "").split(".")[0].toUpperCase();
     const target = LEVEL_VOCAB_TARGET[base];
     if (!lang || !target) return null;
     const n = words.filter((w) => w.lang === lang && w.stage === "dikuasai").length;
     return n >= target ? { n, level: base, target } : null;
-  }, [userId, words, language, level]);
+  }, [userId, previewId, words, language, level]);
 }
 
-function IssuedDetail({ ct, studentName, defaultName, onSaveName, lingwordsUserId = null }: { ct: Cert; studentName: string; defaultName?: string; onSaveName?: (name: string) => Promise<void>; lingwordsUserId?: string | null }) {
+function IssuedDetail({ ct, studentName, defaultName, onSaveName, lingwordsUserId = null, lingwordsPreviewId = null }: { ct: Cert; studentName: string; defaultName?: string; onSaveName?: (name: string) => Promise<void>; lingwordsUserId?: string | null; lingwordsPreviewId?: string | null }) {
   const t = useT(); // [ui-lang-switcher-v1]
-  const vocab = useVocabBadge(lingwordsUserId, ct.language, ct.level);
+  const vocab = useVocabBadge(lingwordsUserId, lingwordsPreviewId, ct.language, ct.level);
   const [editOpen, setEditOpen] = useState(false); // [sertifikat-edit-nama-v1]
   const col = colorOf(ct.language);
   const kind = productKindOf(ct.product);
