@@ -37,6 +37,7 @@ import {
   ChevronLeft, ChevronRight, Loader2, Minus, Plus, X, BookOpen, AlertCircle,
   Columns2, Square, Maximize2, Minimize2, Volume2, List, Play, CornerDownLeft, Scan,
   ChevronDown, Eye, EyeOff, PenLine, HelpCircle, Lock, ShoppingBag, Sparkles, GripVertical, Headphones,
+  BookmarkPlus, BookmarkCheck,
 } from "lucide-react";
 import EbookLatihan, { type BerkasLatihan, type UnitLatihan } from "./EbookLatihan";
 // [ebook-panduan-tour-v1]
@@ -3477,6 +3478,36 @@ export default function EbookReader({
     setBunyi(null);
   }, [ttsAktif, kodeBahasa, resolusiKetuk, isiDiTitik, ke]);
 
+  /* [lingwords-v2] Simpan kata yang diketuk ke Lingwords: masuk simpanan kosakata
+     (sama dengan Watch & Learn, origin 'ebook') supaya ikut flashcard/SRS dan
+     tersinkron ke student_words. Ketukan biasa TIDAK otomatis tersimpan — angka
+     Lingwords hanya menghitung kata yang memang dipilih siswa. Modul immersionLearn
+     besar, jadi diimpor saat dibutuhkan saja. */
+  const [lwSimpan, setLwSimpan] = useState<"" | "ok" | "gagal">("");
+  useEffect(() => {
+    setLwSimpan("");
+    if (!ucap || ucap.terjemahan || !kodeBahasa) return;
+    let hidup = true;
+    void import("@/lib/immersionLearn").then((m) => {
+      if (hidup && m.isWordSaved(ucap.kata, kodeBahasa)) setLwSimpan("ok");
+    });
+    return () => { hidup = false; };
+  }, [ucap, kodeBahasa]);
+  const simpanKeLingwords = useCallback(async () => {
+    if (!ucap || !kodeBahasa || lwSimpan === "ok") return;
+    const m = await import("@/lib/immersionLearn");
+    const a = arti && arti !== "mati" ? arti : null;
+    const r = m.saveWord({
+      word: ucap.kata,
+      meaning: a?.arti || "",
+      translit: a?.translit || undefined,
+      langCode: kodeBahasa,
+      example: ucap.kalimat || "",
+      origin: "ebook",
+    });
+    setLwSimpan(r.ok ? "ok" : "gagal");
+  }, [ucap, arti, kodeBahasa, lwSimpan]);
+
   const ucapkanLagi = useCallback(async (teks: string, jenis: "kata" | "kalimat", kode?: string) => {
     const k = kode || kodeBahasa;
     if (!k) return;
@@ -3954,6 +3985,17 @@ export default function EbookReader({
                           <span className="shrink-0 rounded-md bg-[#3ED9C0]/15 px-1.5 py-0.5 text-[9px] font-bold uppercase tracking-wide text-[#7fe3e0]">
                             {arti.kelas}
                           </span>
+                        )}
+                        {!ucap.terjemahan && !cicip && (
+                          <button
+                            onClick={() => void simpanKeLingwords()}
+                            className={`shrink-0 rounded-md p-0.5 transition hover:bg-white/10 ${
+                              lwSimpan === "ok" ? "text-[#3ED9C0]" : lwSimpan === "gagal" ? "text-amber-300" : "text-white/50 hover:text-white"}`}
+                            title={lwSimpan === "ok" ? t("Tersimpan di Lingwords") : lwSimpan === "gagal" ? t("Gagal menyimpan — penyimpanan browser penuh") : t("Simpan ke Lingwords")}
+                            aria-label={t("Simpan ke Lingwords")}
+                          >
+                            {lwSimpan === "ok" ? <BookmarkCheck className="h-3.5 w-3.5" /> : <BookmarkPlus className="h-3.5 w-3.5" />}
+                          </button>
                         )}
                         {/* [ebook-kartu-seret-v1] Pegangan seret — penanda
                             bahwa kartunya bisa dipindah. Bukan tombol, jadi

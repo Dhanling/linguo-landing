@@ -77,7 +77,7 @@ export default function KosakataPage() {
             <Layers className="h-6 w-6 text-[#1A9E9E]" /> Lingwords
           </h1>
           <p className="mt-1 text-sm text-gray-500">
-            Semua kosakatamu — dari kelas, materi, dan Watch &amp; Learn — dan seberapa dekat kamu dengan target level.
+            Semua kosakatamu — dari kelas, materi, e-book, Lingnote, dan Watch &amp; Learn — dan seberapa dekat kamu dengan target level.
           </p>
         </div>
         <LingwordsDashboard

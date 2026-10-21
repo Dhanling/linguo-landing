@@ -54,7 +54,7 @@ export default function LingwordsDashboard({
         <Layers className="mx-auto h-9 w-9 text-[#1A9E9E]" />
         <h2 className="mt-3 text-lg font-extrabold text-[#12172B]">{t('Lingwords kamu masih kosong')}</h2>
         <p className="mx-auto mt-1 max-w-md text-[13.5px] text-gray-500">
-          {t('Simpan kata dari Watch & Learn atau selesaikan materi kelas — semua kosakatamu dikumpulkan di sini, lengkap dengan target per level.')}
+          {t('Simpan kata dari Watch & Learn atau e-book, selesaikan materi kelas, atau terima kiriman pengajar di Lingnote — semua kosakatamu dikumpulkan di sini, lengkap dengan target per level.')}
         </p>
         <a href="/watch" className="mt-4 inline-flex rounded-xl bg-[#1A9E9E] px-4 py-2.5 text-[13px] font-bold text-white hover:bg-[#16796E]">
           {t('Buka Watch & Learn')}
@@ -249,7 +249,7 @@ export default function LingwordsDashboard({
       <p className="flex items-start justify-center gap-1.5 px-2 text-center text-[11.5px] font-medium leading-relaxed text-gray-400">
         {!server && !previewMode && <CloudOff className="mt-[2px] h-3.5 w-3.5 shrink-0" />}
         <span>
-          {t('Dihitung dari kata tersimpan Watch & Learn, materi & kuis yang sudah kamu selesaikan.')}{' '}
+          {t('Dihitung dari kata tersimpan Watch & Learn dan e-book, kiriman pengajar di Lingnote, serta materi & kuis yang sudah kamu selesaikan.')}{' '}
           {previewMode
             ? t('Mode pratinjau: kata tersimpan mengikuti perangkat ini, bukan milik siswanya.')
             : server

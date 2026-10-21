@@ -2922,6 +2922,9 @@ export interface SavedWord {
   // Video tempat kata disimpan — dipakai badge "kosakata di video ini" pada player.
   // Opsional: kata lama (sebelum fitur ini) tak punya field ini.
   videoId?: string;
+  // [lingwords-v2] Asal kata selain Watch & Learn — 'ebook' = disimpan dari kartu
+  // ketuk-kata reader e-book. Dibawa ke student_words.source saat sinkron Lingwords.
+  origin?: "ebook" | "lingnote";
   ts: number;
   // State spaced-repetition (SM-2). Opsional: kata lama (sebelum fitur SRS) tak
   // punya field ini → diperlakukan "baru" / jatuh tempo langsung saat direview.

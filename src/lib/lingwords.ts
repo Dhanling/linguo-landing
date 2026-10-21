@@ -7,6 +7,14 @@
 //      Mandiri yang sudah selesai; bahasanya dari lms_modules.language.
 //   3. "server"   — tabel student_words (sql/20261020_lingwords.sql): salinan kata
 //      dari SEMUA perangkat siswa. Ditulis lewat RPC lingwords_sync.
+//   4. "lingnote" — [lingwords-v2] kata kiriman pengajar ke Lingnote (RPC
+//      teacher_kirim_kosakata): baris "- **kata** (latin) — arti" di student_notes
+//      bertag 'dari-pengajar'. Dibaca langsung dari tabel asalnya.
+//   5. "ebook"    — [lingwords-v2] kata yang disimpan dari kartu ketuk-kata reader
+//      e-book. Masuk ke simpanan lokal (SavedWord.origin='ebook') supaya ikut SRS.
+//
+// Semua sumber selain "server" disinkronkan ke student_words, jadi tabel itu jadi
+// cermin lengkap dompet siswa (dipakai portal pengajar & tema kata).
 //
 // Tabel server bersifat opsional: kalau belum ada / RLS menolak / offline, semua
 // fungsi di sini jatuh diam-diam ke dua sumber lokal — kartunya tetap jalan.
@@ -23,7 +31,8 @@ import { toLangCode } from "@/lib/quiz/language";
 import { LEVEL_VOCAB_TARGET, normalizeLevel } from "@/lib/vocabProgress";
 
 export type LwStage = "dikenal" | "dilatih" | "dikuasai";
-export type LwSource = "simpanan" | "materi" | "server";
+export type LwSource = "simpanan" | "materi" | "server" | "ebook" | "lingnote";
+const SERVER_SOURCES: LwSource[] = ["simpanan", "materi", "ebook", "lingnote"];
 
 export interface LwWord {
   lang: string;
@@ -64,7 +73,7 @@ export function fromSaved(saved: SavedWord[]): LwWord[] {
       word,
       meaning: (w.meaning || "").trim(),
       translit: w.translit,
-      source: "simpanan",
+      source: w.origin || "simpanan",
       stage,
       firstSeen: w.ts || Date.now(),
       masteredAt: stage === "dikuasai" ? estimateMasteredAt(w, last) : null,
@@ -177,11 +186,95 @@ export async function fetchMateriWords(userId: string): Promise<LwWord[]> {
   }
 }
 
+// ── Sumber 4: kosakata kiriman pengajar di Lingnote ─────────────────────────
+
+const lingnoteCache = new Map<string, LwWord[]>();
+
+/**
+ * [lingwords-v2] Satu baris kiriman = "- **kata** (latin) · bentuk dasar: x — arti"
+ * (lihat sql/20260928_lingnote_kosakata_pengajar.sql). Siswa boleh menyunting
+ * catatannya, jadi pengurai ini longgar: cukup "- **kata**" di awal baris.
+ */
+export function parseLingnoteLines(md: string): { word: string; translit?: string; meaning: string }[] {
+  const out: { word: string; translit?: string; meaning: string }[] = [];
+  (md || "").split("\n").forEach((line) => {
+    const m = line.match(/^\s*[-*]\s+\*\*(.+?)\*\*\s*(?:\(([^)]*)\))?(.*)$/);
+    if (!m) return;
+    const word = m[1].trim();
+    if (!word || word.length > 80) return;
+    const rest = m[3] || "";
+    const dash = rest.indexOf("—");
+    out.push({
+      word,
+      translit: (m[2] || "").trim() || undefined,
+      meaning: dash >= 0 ? rest.slice(dash + 1).trim() : "",
+    });
+  });
+  return out;
+}
+
+/** Kata kiriman pengajar dari Lingnote. Bahasanya dari tag "kelas:<bahasa · level>". */
+export async function fetchLingnoteWords(userId: string): Promise<LwWord[]> {
+  if (!userId) return [];
+  const hit = lingnoteCache.get(userId);
+  if (hit) return hit;
+  try {
+    const { data: ses } = await supabase.auth.getSession();
+    const email = ses.session?.user?.email;
+    if (!email) return [];
+    // Satu email bisa punya beberapa baris students (lihat akun-student-kembar).
+    const { data: st } = await supabase.from("students").select("id").eq("email", email);
+    const ids = ((st as { id: string }[] | null) || []).map((x) => x.id);
+    if (!ids.length) return [];
+    type Row = { content: string | null; tags: string[] | null; created_at: string };
+    const rows: Row[] = [];
+    for (let from = 0; from < 10_000; from += 1000) {
+      const { data, error } = await supabase
+        .from("student_notes")
+        .select("content,tags,created_at")
+        .in("student_id", ids)
+        .contains("tags", ["dari-pengajar"])
+        .is("archived_at", null)
+        .order("created_at", { ascending: true })
+        .range(from, from + 999);
+      if (error) break;
+      const page = (data as Row[] | null) || [];
+      rows.push(...page);
+      if (page.length < 1000) break;
+    }
+    const out: LwWord[] = [];
+    rows.forEach((r) => {
+      const kelas = (r.tags || []).find((x) => x.startsWith("kelas:"))?.slice(6) || "";
+      const lang = toLangCode(kelas.split("·")[0].trim());
+      if (!lang) return;
+      const at = new Date(r.created_at).getTime() || Date.now();
+      parseLingnoteLines(r.content || "").forEach((w) =>
+        out.push({
+          lang,
+          word: w.word,
+          meaning: w.meaning,
+          translit: w.translit,
+          source: "lingnote",
+          stage: "dikenal",
+          firstSeen: at,
+          masteredAt: null,
+          lastActive: null,
+        })
+      );
+    });
+    lingnoteCache.set(userId, out);
+    return out;
+  } catch {
+    return [];
+  }
+}
+
 // ── Sumber 3: server (student_words) ────────────────────────────────────────
 
 let serverMissing = false; // tabel belum dibuat → berhenti mencoba di sesi tab ini
 
 interface ServerRow {
+  source: string | null;
   lang: string;
   word: string;
   meaning: string | null;
@@ -200,7 +293,7 @@ export async function fetchServerWords(): Promise<LwWord[]> {
     for (let from = 0; from < 20_000; from += 1000) {
       const { data, error } = await supabase
         .from("student_words")
-        .select("lang,word,meaning,translit,stage,first_seen,mastered_at,last_active")
+        .select("lang,word,meaning,translit,source,stage,first_seen,mastered_at,last_active")
         .order("first_seen", { ascending: true })
         .range(from, from + 999);
       if (error) {
@@ -214,7 +307,8 @@ export async function fetchServerWords(): Promise<LwWord[]> {
           word: r.word,
           meaning: r.meaning || "",
           translit: r.translit || undefined,
-          source: "server",
+          // Asal aslinya ikut dibawa (e-book/Lingnote dari perangkat lain); kolom kosong = "server".
+          source: SERVER_SOURCES.includes(r.source as LwSource) ? (r.source as LwSource) : "server",
           stage: r.stage,
           firstSeen: new Date(r.first_seen).getTime(),
           masteredAt: r.mastered_at ? new Date(r.mastered_at).getTime() : null,
@@ -232,8 +326,9 @@ export async function fetchServerWords(): Promise<LwWord[]> {
 const SYNC_KEY = "linguo:lingwords:synced:v1";
 
 /**
- * Kirim kata simpanan perangkat ini ke server — hanya yang berubah sejak sinkron
- * terakhir (tanda tangan stage+review disimpan di localStorage). Best-effort.
+ * Kirim kata perangkat ini ke server — simpanan (W&L/e-book), materi, Lingnote — hanya
+ * yang berubah sejak sinkron terakhir (tanda tangan stage+review disimpan di
+ * localStorage). Best-effort.
  */
 export async function syncSavedWords(userId: string, words: LwWord[]): Promise<void> {
   if (serverMissing || !userId || typeof window === "undefined") return;
@@ -243,8 +338,8 @@ export async function syncSavedWords(userId: string, words: LwWord[]): Promise<v
   } catch {
     sent = {};
   }
-  const sig = (w: LwWord) => `${w.stage}|${w.lastActive ?? 0}|${w.meaning ? 1 : 0}|${w.translit ? 1 : 0}`;
-  const todo = words.filter((w) => w.source === "simpanan" && sent[keyOf(w.lang, w.word)] !== sig(w));
+  const sig = (w: LwWord) => `${w.source}|${w.stage}|${w.lastActive ?? 0}|${w.meaning ? 1 : 0}|${w.translit ? 1 : 0}`;
+  const todo = words.filter((w) => w.source !== "server" && sent[keyOf(w.lang, w.word)] !== sig(w));
   if (!todo.length) return;
   const iso = (ms: number | null) => (ms ? new Date(ms).toISOString() : null);
   for (let i = 0; i < todo.length; i += 500) {
@@ -255,7 +350,7 @@ export async function syncSavedWords(userId: string, words: LwWord[]): Promise<v
         word: w.word,
         meaning: w.meaning,
         translit: w.translit || "",
-        source: "simpanan",
+        source: w.source,
         stage: w.stage,
         first_seen: iso(w.firstSeen),
         mastered_at: iso(w.masteredAt),
@@ -502,7 +597,13 @@ export async function loadLingwords(
 ): Promise<{ words: LwWord[]; activity: LwActivity[]; server: boolean }> {
   const local = fromSaved(saved);
   if (!userId) return { words: mergeWords(local), activity: [], server: false };
-  if (opts.sync !== false) await syncSavedWords(userId, local).catch(() => {});
-  const [materi, server, activity] = await Promise.all([fetchMateriWords(userId), fetchServerWords(), fetchActivity()]);
-  return { words: mergeWords(local, materi, server), activity, server: !serverMissing };
+  const [materi, lingnote, server, activity] = await Promise.all([
+    fetchMateriWords(userId),
+    fetchLingnoteWords(userId),
+    fetchServerWords(),
+    fetchActivity(),
+  ]);
+  // Sinkron di latar: semua sumber perangkat ini (bukan baris server) → student_words.
+  if (opts.sync !== false) void syncSavedWords(userId, mergeWords(local, materi, lingnote)).catch(() => {});
+  return { words: mergeWords(local, materi, lingnote, server), activity, server: !serverMissing };
 }
