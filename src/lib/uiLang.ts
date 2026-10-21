@@ -1800,4 +1800,9 @@ const EN: Record<string, string> = {
   "Hujan makin deras": "The rain is getting heavier",
   "Akhiri permainan": "End game",
   "Ketik di sini…": "Type here…",
+  // [lingwords-v3] Kuis & Hujan Kata per tema di Peta Kata.
+  "Latih flashcard tema ini": "Practise this theme with flashcards",
+  "Kuis arti kata tema ini": "Meaning quiz for this theme",
+  "Hujan Kata tema ini": "Word Rain for this theme",
+  "Butuh minimal 4 kata berarti": "Needs at least 4 words with a meaning",
 };

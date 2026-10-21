@@ -278,6 +278,7 @@ export default function FlashcardDeck({
   onClose,
   onChange,
   only,
+  game,
 }: {
   initialLang: string;
   onClose: () => void;
@@ -285,6 +286,10 @@ export default function FlashcardDeck({
   /** [lingwords-v2] Saring dek ke sekumpulan kata (mis. satu tema Peta Kata).
    *  `keys` = "kode::kata huruf kecil". Bisa dilepas siswa lewat tombol "Semua kata". */
   only?: { label: string; keys: string[] } | null;
+  /** [lingwords-v3] Langsung buka Kuis Arti / Hujan Kata dengan kata ini (mis. semua
+   *  kata satu tema, termasuk yang sudah dikuasai & belum ada di simpanan). Keluar
+   *  dari permainan = tutup dek, kembali ke Lingwords. */
+  game?: { mode: "quiz" | "rain"; words: SavedWord[] } | null;
 }) {
   const t = useT(); // [ui-lang-switcher-v1]
   const [all, setAll] = useState<SavedWord[]>([]);
@@ -292,7 +297,7 @@ export default function FlashcardDeck({
   const [tab, setTab] = useState<Tab>("belajar");
 
   // State sesi review (dibekukan saat sesi mulai).
-  const [view, setView] = useState<ViewMode>("home");
+  const [view, setView] = useState<ViewMode>(game?.mode ?? "home");
   const [deck, setDeck] = useState<SavedWord[]>([]);
 
   // Analitik WL: kuis kosakata & pustaka Deck komunitas.
@@ -434,6 +439,7 @@ export default function FlashcardDeck({
 
   // Ganti filter/tab saat sesi tak aktif → kembali ke home.
   useEffect(() => {
+    if (game) return; // [lingwords-v3] mode permainan langsung: jangan dilempar ke home
     if (view !== "home") setView("home");
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [filter]);
@@ -483,13 +489,14 @@ export default function FlashcardDeck({
   useEffect(() => {
     const onKey = (e: KeyboardEvent) => {
       if (e.key === "Escape") {
-        if (view === "review" || view === "done" || view === "quiz" || view === "rain") setView("home");
+        if (game) onClose();
+        else if (view === "review" || view === "done" || view === "quiz" || view === "rain") setView("home");
         else onClose();
       }
     };
     window.addEventListener("keydown", onKey);
     return () => window.removeEventListener("keydown", onKey);
-  }, [view, onClose]);
+  }, [view, onClose, game]);
 
   const totalWords = all.length;
 
@@ -544,7 +551,7 @@ export default function FlashcardDeck({
   if (view === "quiz") {
     return (
       <Shell>
-        <VocabQuiz words={words} onExit={() => setView("home")} />
+        {game ? <VocabQuiz words={game.words} onExit={onClose} /> : <VocabQuiz words={words} onExit={() => setView("home")} />}
       </Shell>
     );
   }
@@ -553,7 +560,7 @@ export default function FlashcardDeck({
   if (view === "rain") {
     return (
       <Shell>
-        <WordRain words={words} onExit={() => setView("home")} />
+        {game ? <WordRain words={game.words} onExit={onClose} /> : <WordRain words={words} onExit={() => setView("home")} />}
       </Shell>
     );
   }

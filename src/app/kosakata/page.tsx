@@ -14,7 +14,7 @@ import LingwordsDashboard from "@/components/lingwords/LingwordsDashboard";
 import { supabase, peekSessionUser } from "@/lib/supabase-client";
 import type { RegLike } from "@/lib/lingwords";
 import type { LwThemePractice } from "@/components/lingwords/LwThemeMap";
-import { getSavedWords, saveWord } from "@/lib/immersionLearn";
+import { getSavedWords, saveWord, type SavedWord } from "@/lib/immersionLearn";
 
 // Sama dgn WatchAndLearn — bahasa terakhir dipilih, untuk filter awal deck.
 const LANG_KEY = "linguo:watch:lang:v1";
@@ -23,6 +23,7 @@ export default function KosakataPage() {
   const router = useRouter();
   const [deckLang, setDeckLang] = useState<string | null>(null);
   const [deckOnly, setDeckOnly] = useState<{ label: string; keys: string[] } | null>(null);
+  const [deckGame, setDeckGame] = useState<{ mode: "quiz" | "rain"; words: SavedWord[] } | null>(null);
   const [previewId, setPreviewId] = useState<string | null>(null);
   const [userId, setUserId] = useState<string | null>(null);
   const [regs, setRegs] = useState<RegLike[]>([]);
@@ -68,6 +69,26 @@ export default function KosakataPage() {
      kartu baru — flashcard/SRS hanya bekerja di atas simpanan lokal. */
   const practiceTheme = (lang: string, p: LwThemePractice) => {
     const key = (w: string) => `${lang}::${w.trim().toLowerCase()}`;
+    /* [lingwords-v3] Kuis / Hujan Kata per tema: murni permainan (tak menyentuh SRS),
+       jadi pakai SEMUA kata tema — termasuk yang dikuasai — tanpa menambah simpanan.
+       Versi simpanan lokal didahulukan karena sering punya translit (wajib untuk
+       mengetik kata non-Latin di Hujan Kata). */
+    if (p.mode === "quiz" || p.mode === "rain") {
+      const local = new Map(getSavedWords().map((w) => [key(w.word), w]));
+      const words: SavedWord[] = p.words
+        .filter((w) => w.meaning?.trim())
+        .map((w) => {
+          const s = local.get(key(w.word));
+          return s
+            ? { ...s, meaning: s.meaning || w.meaning, translit: s.translit || w.translit }
+            : { word: w.word, meaning: w.meaning, translit: w.translit, langCode: lang, example: "", ts: w.firstSeen || Date.now() };
+        });
+      setDeckOnly(null);
+      setDeckGame({ mode: p.mode, words });
+      setDeckLang(lang);
+      return;
+    }
+    setDeckGame(null);
     if (!previewId) {
       const have = new Set(getSavedWords().map((w) => key(w.word)));
       p.words
@@ -89,6 +110,7 @@ export default function KosakataPage() {
   const closeDeck = () => {
     setDeckLang(null);
     setDeckOnly(null);
+    setDeckGame(null);
     const qs = new URLSearchParams(window.location.search);
     if (qs.has("latih")) {
       qs.delete("latih");
@@ -116,7 +138,7 @@ export default function KosakataPage() {
           onPracticeTheme={practiceTheme}
         />
       </main>
-      {deckLang && <FlashcardDeck initialLang={deckLang} onClose={closeDeck} only={deckOnly} />}
+      {deckLang && <FlashcardDeck initialLang={deckLang} onClose={closeDeck} only={deckOnly} game={deckGame} />}
     </StudentShell>
   );
 }

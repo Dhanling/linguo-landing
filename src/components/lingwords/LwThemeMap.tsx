@@ -2,14 +2,15 @@
 
 // [lingwords-v2] Peta Kata per tema: tiap tema punya bar sendiri (dikuasai / semua
 // kata tema itu). Tema di bawah 50% ditandai oranye = celah yang perlu dilatih.
-// Tombol "Latih" membuka FlashcardDeck yang disaring ke kata tema itu.
+// Tombol "Latih" membuka FlashcardDeck yang disaring ke kata tema itu; [lingwords-v3]
+// tombol Kuis & Hujan Kata langsung membuka permainan dengan SEMUA kata tema itu.
 // Tema berasal dari cache per kata (src/lib/lingwordsTema.ts) — tak dihitung ulang
 // tiap render; kata yang belum bertema ditandai AI per batch di latar.
 
 import { useEffect, useMemo, useState } from 'react';
 import {
   Utensils, Users, Clock, Bus, Home, CloudSun, ShoppingBag, GraduationCap, MessageCircle, Shapes, Layers,
-  Map as MapIcon, Play, Loader2, type LucideIcon,
+  Map as MapIcon, Play, Loader2, Zap, CloudRain, type LucideIcon,
 } from 'lucide-react';
 import type { LwWord } from '@/lib/lingwords';
 import { ensureThemes, LW_THEMES, themeOf, type LwThemeId } from '@/lib/lingwordsTema';
@@ -29,10 +30,13 @@ const ICON: Record<LwThemeId, LucideIcon> = {
   lainnya: Layers,
 };
 const ORANYE = '#F59E0B';
+// Kuis butuh 1 jawaban + 3 pengecoh, Hujan Kata minimal 4 kata — keduanya perlu arti.
+const MIN_GAME = 4;
 
 export interface LwThemePractice {
   label: string;
   words: LwWord[];
+  mode?: 'flashcard' | 'quiz' | 'rain';
 }
 
 export default function LwThemeMap({
@@ -104,8 +108,10 @@ export default function LwThemeMap({
           {rows.list.map((r) => {
             const Icon = ICON[r.id];
             const weak = r.pct < 50;
+            const canGame = r.words.filter((w) => w.meaning?.trim()).length >= MIN_GAME;
+            const gameBtn = 'flex h-8 w-8 shrink-0 items-center justify-center rounded-xl bg-[#1A9E9E]/10 text-[#16796E] hover:bg-[#1A9E9E] hover:text-white disabled:pointer-events-none disabled:opacity-35';
             return (
-              <div key={r.id} className="flex items-center gap-3 rounded-2xl px-3 py-2.5 ring-1 ring-slate-200/70">
+              <div key={r.id} className="flex min-w-0 items-center gap-2 rounded-2xl px-3 py-2.5 ring-1 ring-slate-200/70 @md:gap-3">
                 <span className={`flex h-9 w-9 shrink-0 items-center justify-center rounded-xl ${weak ? 'bg-amber-50 text-amber-600' : 'bg-[#1A9E9E]/10 text-[#16796E]'}`}>
                   <Icon className="h-[18px] w-[18px]" />
                 </span>
@@ -120,10 +126,25 @@ export default function LwThemeMap({
                     <div className="h-full rounded-full" style={{ width: `${Math.max(r.pct, 3)}%`, background: weak ? ORANYE : LW_COLORS.dikuasai }} />
                   </div>
                 </div>
-                <button type="button" onClick={() => onPractice({ label: t(r.label), words: r.words })}
-                  className="inline-flex shrink-0 items-center gap-1 rounded-xl bg-[#1A9E9E]/10 px-2.5 py-1.5 text-[12px] font-bold text-[#16796E] hover:bg-[#1A9E9E] hover:text-white">
-                  <Play className="h-3.5 w-3.5" /> {t('Latih')}
-                </button>
+                <div className="flex shrink-0 items-center gap-1">
+                  <button type="button" onClick={() => onPractice({ label: t(r.label), words: r.words })}
+                    title={t('Latih flashcard tema ini')} aria-label={t('Latih flashcard tema ini')}
+                    className="inline-flex h-8 min-w-8 items-center justify-center gap-1 rounded-xl bg-[#1A9E9E]/10 px-2 text-[12px] font-bold text-[#16796E] hover:bg-[#1A9E9E] hover:text-white @md:px-2.5">
+                    <Play className="h-3.5 w-3.5" /> <span className="hidden @md:inline">{t('Latih')}</span>
+                  </button>
+                  <button type="button" disabled={!canGame} className={gameBtn}
+                    onClick={() => onPractice({ label: t(r.label), words: r.words, mode: 'quiz' })}
+                    title={canGame ? t('Kuis arti kata tema ini') : t('Butuh minimal 4 kata berarti')}
+                    aria-label={t('Kuis arti kata tema ini')}>
+                    <Zap className="h-4 w-4" />
+                  </button>
+                  <button type="button" disabled={!canGame} className={gameBtn}
+                    onClick={() => onPractice({ label: t(r.label), words: r.words, mode: 'rain' })}
+                    title={canGame ? t('Hujan Kata tema ini') : t('Butuh minimal 4 kata berarti')}
+                    aria-label={t('Hujan Kata tema ini')}>
+                    <CloudRain className="h-4 w-4" />
+                  </button>
+                </div>
               </div>
             );
           })}
