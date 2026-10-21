@@ -15,6 +15,7 @@ import {
   Sparkles, Star, ChevronRight, GraduationCap, BarChart2,
 } from "lucide-react";
 // [sertifikat-banner-foto-v1] foto stok bahasa — sumber sama dgn kartu kelas di Beranda
+import { prefetchCertificatePreview, prepareCertificatePrintImages } from "@/lib/certificateImages";
 import { certificateCountryCode } from "@/lib/courseCertificateTheme";
 import { getLangPhoto } from "@/lib/lang-visuals";
 import CourseCertificatePaper, { COURSE_CERT_WIDTH, COURSE_CERT_HEIGHT } from "./CourseCertificatePaper";
@@ -154,33 +155,12 @@ const glyphOf = (lang: string) => GLYPH[lang] || (lang.slice(0, 2) || "Aa");
 // Bendera dan ilustrasi memakai pemetaan negara yang sama.
 const flagCodeOf = certificateCountryCode;
 
-// Prefetch bendera -> data-URI (base64). Same-origin URI = nol risiko CORS pas html2canvas capture.
-function useFlagDataUrl(lang: string): string | null {
-  const code = flagCodeOf(lang);
-  const [url, setUrl] = useState<string | null>(null);
-  useEffect(() => {
-    let alive = true;
-    setUrl(null);
-    if (!code) return;
-    fetch(`https://flagcdn.com/w80/${code}.png`)
-      .then((r) => (r.ok ? r.blob() : Promise.reject(new Error("flag fetch"))))
-      .then((b) => new Promise<string>((res, rej) => {
-        const fr = new FileReader();
-        fr.onload = () => res(String(fr.result));
-        fr.onerror = () => rej(new Error("read"));
-        fr.readAsDataURL(b);
-      }))
-      .then((d) => { if (alive) setUrl(d); })
-      .catch(() => { if (alive) setUrl(null); });
-    return () => { alive = false; };
-  }, [code]);
-  return url;
-}
-
+// Bendera lokal bisa langsung tampil dan ikut diekspor tanpa fetch lintas domain.
 // `dark` sengaja PROP, bukan hook: varian "chip" hidup di dalam kertas sertifikat
 // yang selalu terang, jadi cuma pemanggil yang tahu latarnya gelap atau tidak.
 function FlagBadge({ lang, variant, dark = false }: { lang: string; variant: "list" | "hero" | "chip"; dark?: boolean }) {
-  const url = useFlagDataUrl(lang);
+  const flagCode = flagCodeOf(lang);
+  const url = flagCode ? `/images/certificates/flags-v1/${flagCode}.png` : null;
   const col = colorOf(lang);
   if (variant === "chip") {
     // pill bendera + nama, dipakai di kartu sertifikat
@@ -204,13 +184,7 @@ function FlagBadge({ lang, variant, dark = false }: { lang: string; variant: "li
       </span>
     );
   }
-  // [sertifikat-list-bendera-v1] list — benderanya diambil LANGSUNG dari CDN,
-  // bukan lewat prefetch data-URI. Baris ini tidak pernah ikut capture html2canvas
-  // (cuma kertas sertifikat yang butuh same-origin), sementara nunggu data-URI bikin
-  // barisnya jatuh ke inisial huruf ("Bu", "Po") tiap prefetch telat/gagal.
-  // Inisialnya tetap ada di belakang sebagai jaring pengaman kalau gambar gagal muat.
-  // [sertifikat-list-bendera-v2] ukurannya bendera biasa (28x40, sudut tumpul) —
-  // dulu kotak 48x48 yang bikin gambarnya dipotong & barisnya terasa berat.
+  // Daftar dan kertas memakai aset bendera lokal yang sama.
   const code = flagCodeOf(lang);
   return (
     <span
@@ -220,7 +194,7 @@ function FlagBadge({ lang, variant, dark = false }: { lang: string; variant: "li
       <span className="text-[11px] font-extrabold" style={{ color: dark ? col.textDark : col.text }}>{glyphOf(lang)}</span>
       {code ? (
         <img
-          src={`https://flagcdn.com/w80/${code}.png`}
+          src={`/images/certificates/flags-v1/${code}.png`}
           alt={lang}
           className="absolute inset-0 h-full w-full object-cover"
           onError={(e) => { (e.currentTarget as HTMLImageElement).style.display = "none"; }}
@@ -500,6 +474,8 @@ export default function SertifikatTab({
                 <button
                   key={ct.id}
                   onClick={() => setSelectedId(ct.id)}
+                  onMouseEnter={() => { if (ct.status === "issued") prefetchCertificatePreview(ct.language); }}
+                  onFocus={() => { if (ct.status === "issued") prefetchCertificatePreview(ct.language); }}
                   className="group flex w-full transform-gpu items-center gap-3 rounded-2xl p-3 text-left transition duration-200 ease-out [backface-visibility:hidden] hover:scale-[1.03] hover:bg-[#F5F6F8] active:scale-[.99]"
                   style={
                     active
@@ -633,9 +609,10 @@ async function buatPdf(pages: { el: HTMLElement; attr: string }[]): Promise<JsPd
     const canvas = await h2c(el, {
       scale: 2, width: COURSE_CERT_WIDTH, height: COURSE_CERT_HEIGHT,
       windowWidth: 1440, backgroundColor: "#ffffff", useCORS: true, logging: false,
-      onclone: (doc: Document) => {
+      onclone: async (doc: Document) => {
         const paper = doc.querySelector<HTMLElement>(`[${attr}]`);
         if (paper) {
+          await prepareCertificatePrintImages(paper);
           paper.style.transform = "none";
           const slideEl = paper.closest<HTMLElement>("[data-cert-slide]");
           if (slideEl) slideEl.style.visibility = "visible";

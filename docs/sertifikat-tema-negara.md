@@ -100,3 +100,9 @@ Bahasa daerah memakai ilustrasi budaya daerah masing-masing. Esperanto dan nama 
 | Punjab, India | punjabi.webp |
 | Afrika Selatan | afrikaans.webp |
 | Wilayah budaya Kurdi | kurdish.webp |
+
+## Pemuatan gambar
+
+Layar memakai WebP ringan di `preview-v1/` dan logo `logo-v1.webp`. Gambar asli hanya dimuat pada dokumen salinan saat ekspor PDF. Bendera di `flags-v1/` disajikan dari domain sendiri. Preview diprefetch saat pilihan sertifikat mendapat hover atau fokus, kecuali pengguna mengaktifkan hemat data.
+
+Jalankan `node scripts/optimasi-gambar-sertifikat.mjs` sesudah memperbarui ilustrasi sumber. Aset gambar memakai cache immutable; naikkan versi nama direktori/file preview dan referensinya bila kontennya berubah.

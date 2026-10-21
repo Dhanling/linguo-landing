@@ -3,6 +3,7 @@
 import { forwardRef, useEffect, useRef, useState, type ReactNode } from 'react';
 import { Award } from 'lucide-react';
 import CertWatermark from './CertWatermark';
+import { certificatePreviewUrl } from '@/lib/certificateImages';
 import { courseCertificateTheme } from '@/lib/courseCertificateTheme';
 
 export const COURSE_CERT_WIDTH = 1120;
@@ -31,13 +32,13 @@ export default forwardRef<HTMLDivElement, Props>(function CourseCertificatePaper
   const theme = courseCertificateTheme(p.code, p.language);
   return <div ref={outer} style={{ width: '100%', maxWidth: COURSE_CERT_WIDTH, height: COURSE_CERT_HEIGHT * scale, overflow: 'hidden', borderRadius: 12, boxShadow: '0 8px 36px #123a3b14' }}>
     <div ref={ref} className="cert-paper" data-course-certificate data-theme={theme} style={{ position: 'relative', width: COURSE_CERT_WIDTH, height: COURSE_CERT_HEIGHT, transform: `scale(${scale})`, transformOrigin: 'top left', overflow: 'hidden', background: '#fff9e8', color: '#103f4b', fontFamily: "Inter, Arial, sans-serif" }}>
-      <img src={`/images/certificates/${theme}.webp`} alt="" style={{ position: 'absolute', inset: 0, width: '100%', height: '100%' }} />
+      <img src={certificatePreviewUrl(p.code, p.language)} data-certificate-print-src={`/images/certificates/${theme}.webp`} fetchPriority="high" decoding="async" width={1120} height={792} alt="" style={{ position: 'absolute', inset: 0, width: '100%', height: '100%' }} />
       <svg aria-hidden="true" viewBox="0 0 1120 792" style={{ position: 'absolute', inset: 0, width: '100%', height: '100%' }}>
         <path d="M130 110Q180 90 250 101Q540 65 820 104Q940 88 990 112Q970 195 960 255Q945 350 980 425Q955 485 960 550Q965 610 1005 682Q965 736 870 729Q560 750 240 727Q155 748 115 691Q165 620 162 550Q165 485 148 417Q165 345 153 270Q155 180 130 110Z" fill="#fff9e8" fillOpacity=".95" />
       </svg>
       <CertWatermark logoOpacity={0.025} textOpacity={0.025} />
       <div style={{ position: 'absolute', top: 26, left: 30, right: 30, display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
-        <span style={{ display: 'inline-flex', padding: '8px 12px', borderRadius: 12, background: '#fff9e8e6' }}><img src="/images/full-logo-linguo-hijau.png" alt="Linguo" style={{ width: 146, height: 'auto' }} /></span>{p.badge}
+        <span style={{ display: 'inline-flex', padding: '8px 12px', borderRadius: 12, background: '#fff9e8e6' }}><img src="/images/certificates/logo-v1.webp" data-certificate-print-src="/images/full-logo-linguo-hijau.png" alt="Linguo" style={{ width: 146, height: 'auto' }} /></span>{p.badge}
       </div>
       <div style={{ position: 'absolute', top: 143, left: 185, right: 185, textAlign: 'center' }}>
         <h2 style={{ margin: 0, fontFamily: 'Georgia, serif', fontSize: 28, letterSpacing: 2.5, textTransform: 'uppercase' }}>CERTIFICATE OF {p.heading}</h2>

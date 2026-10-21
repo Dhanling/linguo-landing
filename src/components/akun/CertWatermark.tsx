@@ -9,7 +9,7 @@ const TEAL = "#16796E";
 export default function CertWatermark({ logoOpacity = 0.05, textOpacity = 0.05 }: { logoOpacity?: number; textOpacity?: number }) {
   return (
     <>
-      <img src="/images/full-logo-linguo-hijau.png" alt="" aria-hidden="true"
+      <img src="/images/certificates/logo-v1.webp" data-certificate-print-src="/images/full-logo-linguo-hijau.png" alt="" aria-hidden="true"
         style={{ position: "absolute", left: "50%", top: "50%", width: "34%", transform: "translate(-50%, -50%)", opacity: logoOpacity, pointerEvents: "none", userSelect: "none" }} />
       <div aria-hidden="true" style={{ position: "absolute", inset: 0, overflow: "hidden", pointerEvents: "none", userSelect: "none" }}>
         {[18, 50, 82].map((top) => (

@@ -114,7 +114,7 @@ const RaporPaper = forwardRef<HTMLDivElement, Props>(function RaporPaper(p, ref)
 
         {/* kepala */}
         <div style={{ position: "absolute", top: 64, left: 80, right: 80, display: "flex", alignItems: "center", justifyContent: "space-between" }}>
-          <img src="/images/full-logo-linguo-hijau.png" alt="Linguo" style={{ height: 34, width: "auto" }} />
+          <img src="/images/certificates/logo-v1.webp" data-certificate-print-src="/images/full-logo-linguo-hijau.png" alt="Linguo" style={{ height: 34, width: "auto" }} />
           <p style={{ margin: 0, fontFamily: "Georgia, 'Times New Roman', serif", fontSize: 24, fontWeight: 700 }}>{judulRapor(p.report.report_type)}</p>
         </div>
 
