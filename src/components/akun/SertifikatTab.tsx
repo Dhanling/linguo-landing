@@ -15,6 +15,7 @@ import {
   Sparkles, Star, ChevronRight, GraduationCap, BarChart2,
 } from "lucide-react";
 // [sertifikat-banner-foto-v1] foto stok bahasa — sumber sama dgn kartu kelas di Beranda
+import { certificateCountryCode } from "@/lib/courseCertificateTheme";
 import { getLangPhoto } from "@/lib/lang-visuals";
 import CourseCertificatePaper, { COURSE_CERT_WIDTH, COURSE_CERT_HEIGHT } from "./CourseCertificatePaper";
 import RaporPaper, { pilihRapor, type RaporRow } from "./RaporPaper"; // [sertifikat-rapor-2hal-v1]
@@ -150,50 +151,8 @@ const GLYPH: Record<string, string> = {
 };
 const glyphOf = (lang: string) => GLYPH[lang] || (lang.slice(0, 2) || "Aa");
 
-// ── Bendera per-bahasa (mapping dikonfirm Dhani 2 Jun 2026) ─────────────────
-// English Conversation=US, British English=GB | Portuguese=BR (default), European=PT
-// Arabic=SA | Mandarin=CN, Cantonese=HK
-const FLAG: Record<string, string> = {
-  "English Conversation": "us", English: "us", Inggris: "us",
-  "British English": "gb", "English (UK)": "gb",
-  Portuguese: "br", "Brazilian Portuguese": "br", "Portuguese (Brazil)": "br", Portugis: "br",
-  "European Portuguese": "pt", "Portuguese (Portugal)": "pt",
-  Arabic: "sa", Arab: "sa",
-  Mandarin: "cn", "Mandarin (China)": "cn", Chinese: "cn",
-  Cantonese: "hk",
-  Japanese: "jp", Jepang: "jp", Korean: "kr", Korea: "kr",
-  French: "fr", Prancis: "fr", German: "de", Jerman: "de", Spanish: "es", Spanyol: "es",
-  Russian: "ru", Rusia: "ru", Dutch: "nl", Belanda: "nl", Italian: "it", Italia: "it",
-  Hebrew: "il", Ibrani: "il", Turkish: "tr", Turki: "tr", Thai: "th", Vietnamese: "vn",
-  Hindi: "in", Danish: "dk", Swedish: "se", Finnish: "fi", Polish: "pl", Czech: "cz",
-  Greek: "gr", Yunani: "gr", Persian: "ir", Persia: "ir", Georgian: "ge", Norwegian: "no",
-  Hungarian: "hu", Romanian: "ro", Bulgarian: "bg", Ukrainian: "ua", Icelandic: "is",
-  Filipino: "ph", Khmer: "kh", Lao: "la", Burmese: "mm", Urdu: "pk",
-  Javanese: "id", Jawa: "id", Sundanese: "id", Sunda: "id", Balinese: "id",
-  Batak: "id", Bugis: "id", Madurese: "id", BIPA: "id",
-  // [sertifikat-bendera-lengkap-v1] dulu Bosnian/Uzbek dkk. tak ada di peta → jatuh ke
-  // inisial "Bo"/"Uz". Nama Inggris + Indonesia (languages.ts) dua-duanya dipetakan.
-  Bosnian: "ba", Bosnia: "ba", Uzbek: "uz", Serbian: "rs", Serbia: "rs", Croatian: "hr", Kroasia: "hr",
-  Slovak: "sk", Slovakia: "sk", Slovenian: "si", Slovenia: "si", Kazakh: "kz", Kazakhstan: "kz",
-  Azerbaijani: "az", Azerbaijan: "az", Albanian: "al", Albania: "al", Lithuanian: "lt", Lithuania: "lt",
-  Latvian: "lv", Latvia: "lv", Estonian: "ee", Estonia: "ee", Macedonian: "mk", Makedonia: "mk",
-  Armenian: "am", Armenia: "am", Tajik: "tj", Kyrgyz: "kg", Turkmen: "tm", Pashto: "af", Sinhala: "lk",
-  Malay: "my", Melayu: "my", Tagalog: "ph", Filipina: "ph", Laos: "la", Myanmar: "mm", Thailand: "th", Vietnam: "vn",
-  Bengali: "bd", Tamil: "in", Punjabi: "in", Nepali: "np", Nepal: "np", Mongolian: "mn", Mongol: "mn",
-  Swahili: "tz", Zulu: "za", Afrikaans: "za", Yoruba: "ng", Amharic: "et", Amhar: "et",
-  Irish: "ie", Irlandia: "ie", Latin: "va", Welsh: "gb-wls", Catalan: "es-ct",
-  Georgia: "ge", Swedia: "se", Norwegia: "no", Denmark: "dk", Finlandia: "fi", Polandia: "pl", Ceko: "cz",
-  Hungaria: "hu", Rumania: "ro", Bulgaria: "bg", Ukraina: "ua", Islandia: "is", Kanton: "hk",
-  "Portugis (Portugal)": "pt", "Portugis (Brasil)": "br", Betawi: "id", Minang: "id", Aceh: "id", Banjar: "id", Bali: "id", Madura: "id",
-};
-const FLAG_LC: Record<string, string> = Object.keys(FLAG).reduce((acc, k) => {
-  acc[k.toLowerCase()] = FLAG[k];
-  return acc;
-}, {} as Record<string, string>);
-function flagCodeOf(lang: string): string | null {
-  if (!lang) return null;
-  return FLAG[lang] || FLAG_LC[lang.trim().toLowerCase()] || null;
-}
+// Bendera dan ilustrasi memakai pemetaan negara yang sama.
+const flagCodeOf = certificateCountryCode;
 
 // Prefetch bendera -> data-URI (base64). Same-origin URI = nol risiko CORS pas html2canvas capture.
 function useFlagDataUrl(lang: string): string | null {

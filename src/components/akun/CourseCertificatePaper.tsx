@@ -3,7 +3,6 @@
 import { forwardRef, useEffect, useRef, useState, type ReactNode } from 'react';
 import { Award } from 'lucide-react';
 import CertWatermark from './CertWatermark';
-import CertificateLandscape from './CertificateLandscape';
 import { courseCertificateTheme } from '@/lib/courseCertificateTheme';
 
 export const COURSE_CERT_WIDTH = 1120;
@@ -33,7 +32,6 @@ export default forwardRef<HTMLDivElement, Props>(function CourseCertificatePaper
   return <div ref={outer} style={{ width: '100%', maxWidth: COURSE_CERT_WIDTH, height: COURSE_CERT_HEIGHT * scale, overflow: 'hidden', borderRadius: 12, boxShadow: '0 8px 36px #123a3b14' }}>
     <div ref={ref} className="cert-paper" data-course-certificate data-theme={theme} style={{ position: 'relative', width: COURSE_CERT_WIDTH, height: COURSE_CERT_HEIGHT, transform: `scale(${scale})`, transformOrigin: 'top left', overflow: 'hidden', background: '#fff9e8', color: '#103f4b', fontFamily: "Inter, Arial, sans-serif" }}>
       <img src={`/images/certificates/${theme}.webp`} alt="" style={{ position: 'absolute', inset: 0, width: '100%', height: '100%' }} />
-      {theme === 'watercolor-landscape' && <CertificateLandscape code={p.code} language={p.language} />}
       <svg aria-hidden="true" viewBox="0 0 1120 792" style={{ position: 'absolute', inset: 0, width: '100%', height: '100%' }}>
         <path d="M130 110Q180 90 250 101Q540 65 820 104Q940 88 990 112Q970 195 960 255Q945 350 980 425Q955 485 960 550Q965 610 1005 682Q965 736 870 729Q560 750 240 727Q155 748 115 691Q165 620 162 550Q165 485 148 417Q165 345 153 270Q155 180 130 110Z" fill="#fff9e8" fillOpacity=".95" />
       </svg>
