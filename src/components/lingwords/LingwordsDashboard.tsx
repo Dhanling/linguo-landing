@@ -15,6 +15,7 @@ import { LEVEL_VOCAB_TARGET } from '@/lib/vocabProgress';
 import { langLabel } from '@/lib/quiz/language';
 import { LwHeatmap, LwLegend, LwProgressChart, LwRing, LwStackBar, LW_COLORS } from './LwCharts';
 import { useLangPick, useLingwords } from './useLingwords';
+import LwThemeMap, { type LwThemePractice } from './LwThemeMap';
 
 const card = 'rounded-3xl bg-white p-4 ring-1 ring-slate-200/70 sm:p-5';
 const fmt = (n: number) => n.toLocaleString('id-ID');
@@ -24,11 +25,13 @@ export default function LingwordsDashboard({
   regs,
   previewMode = false,
   onPractice,
+  onPracticeTheme,
 }: {
   userId?: string | null;
   regs: RegLike[];
   previewMode?: boolean;
   onPractice: (lang: string) => void;
+  onPracticeTheme?: (lang: string, p: LwThemePractice) => void;
 }) {
   const t = useT();
   const { loading, words, activity, langs, server } = useLingwords(previewMode ? null : userId, regs, { sync: !previewMode });
@@ -39,6 +42,7 @@ export default function LingwordsDashboard({
     // eslint-disable-next-line react-hooks/exhaustive-deps
     [words, lang, regKey, activity]
   );
+  const langWords = useMemo(() => (lang ? words.filter((w) => w.lang === lang) : []), [words, lang]);
 
   if (loading) {
     return (
@@ -157,6 +161,15 @@ export default function LingwordsDashboard({
           })}
         </div>
       </section>
+
+      {/* [lingwords-v2] Peta kata per tema */}
+      <LwThemeMap
+        words={langWords}
+        lang={stats.lang}
+        allowFetch={!previewMode}
+        onPractice={(p) => (onPracticeTheme ? onPracticeTheme(stats.lang, p) : onPractice(stats.lang))}
+        t={t}
+      />
 
       <div className="grid gap-4 lg:grid-cols-3">
         {/* Grafik perkembangan */}

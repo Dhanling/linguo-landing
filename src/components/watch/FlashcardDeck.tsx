@@ -275,10 +275,14 @@ export default function FlashcardDeck({
   initialLang,
   onClose,
   onChange,
+  only,
 }: {
   initialLang: string;
   onClose: () => void;
   onChange?: () => void;
+  /** [lingwords-v2] Saring dek ke sekumpulan kata (mis. satu tema Peta Kata).
+   *  `keys` = "kode::kata huruf kecil". Bisa dilepas siswa lewat tombol "Semua kata". */
+  only?: { label: string; keys: string[] } | null;
 }) {
   const t = useT(); // [ui-lang-switcher-v1]
   const [all, setAll] = useState<SavedWord[]>([]);
@@ -343,10 +347,12 @@ export default function FlashcardDeck({
     return counts;
   }, [all]);
 
-  const words = useMemo(
-    () => (filter === "all" ? all : all.filter((w) => w.langCode === filter)),
-    [all, filter]
-  );
+  const [onlyOn, setOnlyOn] = useState(!!only);
+  const onlySet = useMemo(() => (only && onlyOn ? new Set(only.keys) : null), [only, onlyOn]);
+  const words = useMemo(() => {
+    const byLang = filter === "all" ? all : all.filter((w) => w.langCode === filter);
+    return onlySet ? byLang.filter((w) => onlySet.has(`${w.langCode}::${w.word.trim().toLowerCase()}`)) : byLang;
+  }, [all, filter, onlySet]);
 
   const stats = useMemo(() => statsFor(words), [words]);
   const reviewedToday = useMemo(
@@ -698,6 +704,14 @@ export default function FlashcardDeck({
 
           <div className="min-h-0 flex-1 overflow-y-auto px-4 py-4 sm:px-6 lg:px-8 lg:py-6">
             <div className="mx-auto w-full max-w-lg lg:mx-0 lg:max-w-none">
+              {only && onlyOn && tab !== "deck" && (
+                <div className="mb-3 flex items-center justify-between gap-2 rounded-2xl bg-[#1A9E9E]/15 px-3 py-2 text-[12.5px] font-semibold text-[#7fe3e0]">
+                  <span>{t("Tema")}: {only.label} · {words.length} {t("kata")}</span>
+                  <button type="button" onClick={() => setOnlyOn(false)} className="inline-flex items-center gap-1 rounded-lg px-2 py-1 text-[#3ED9C0] hover:bg-white/10">
+                    <X className="h-3.5 w-3.5" /> {t("Semua kata")}
+                  </button>
+                </div>
+              )}
               {tab === "deck" ? (
                 // Tab Deck tetap tampil walau belum ada kata tersimpan — justru
                 // deck (AI/komunitas) jadi jalan tercepat mengisi kosakata.

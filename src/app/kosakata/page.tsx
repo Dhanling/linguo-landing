@@ -13,6 +13,8 @@ import StudentShell, { type AkunTab } from "@/components/akun/StudentShell";
 import LingwordsDashboard from "@/components/lingwords/LingwordsDashboard";
 import { supabase, peekSessionUser } from "@/lib/supabase-client";
 import type { RegLike } from "@/lib/lingwords";
+import type { LwThemePractice } from "@/components/lingwords/LwThemeMap";
+import { getSavedWords, saveWord } from "@/lib/immersionLearn";
 
 // Sama dgn WatchAndLearn — bahasa terakhir dipilih, untuk filter awal deck.
 const LANG_KEY = "linguo:watch:lang:v1";
@@ -20,6 +22,7 @@ const LANG_KEY = "linguo:watch:lang:v1";
 export default function KosakataPage() {
   const router = useRouter();
   const [deckLang, setDeckLang] = useState<string | null>(null);
+  const [deckOnly, setDeckOnly] = useState<{ label: string; keys: string[] } | null>(null);
   const [previewId, setPreviewId] = useState<string | null>(null);
   const [userId, setUserId] = useState<string | null>(null);
   const [regs, setRegs] = useState<RegLike[]>([]);
@@ -60,8 +63,32 @@ export default function KosakataPage() {
     router.push(`/akun?menu=${t}${previewId ? `&preview=${encodeURIComponent(previewId)}` : ""}`);
   };
 
+  /* [lingwords-v2] Latih satu tema: kata tema yang belum ada di simpanan perangkat ini
+     (materi, Lingnote, perangkat lain) dan belum dikuasai dimasukkan dulu sebagai
+     kartu baru — flashcard/SRS hanya bekerja di atas simpanan lokal. */
+  const practiceTheme = (lang: string, p: LwThemePractice) => {
+    const key = (w: string) => `${lang}::${w.trim().toLowerCase()}`;
+    if (!previewId) {
+      const have = new Set(getSavedWords().map((w) => key(w.word)));
+      p.words
+        .filter((w) => w.stage !== "dikuasai" && !have.has(key(w.word)))
+        .slice(0, 40)
+        .forEach((w) => saveWord({
+          word: w.word,
+          meaning: w.meaning,
+          translit: w.translit,
+          langCode: lang,
+          example: "",
+          ...(w.source === "lingnote" || w.source === "ebook" ? { origin: w.source } : {}),
+        }));
+    }
+    setDeckOnly({ label: p.label, keys: p.words.map((w) => key(w.word)) });
+    setDeckLang(lang);
+  };
+
   const closeDeck = () => {
     setDeckLang(null);
+    setDeckOnly(null);
     const qs = new URLSearchParams(window.location.search);
     if (qs.has("latih")) {
       qs.delete("latih");
@@ -85,9 +112,10 @@ export default function KosakataPage() {
           regs={regs}
           previewMode={!!previewId}
           onPractice={(l) => setDeckLang(l)}
+          onPracticeTheme={practiceTheme}
         />
       </main>
-      {deckLang && <FlashcardDeck initialLang={deckLang} onClose={closeDeck} />}
+      {deckLang && <FlashcardDeck initialLang={deckLang} onClose={closeDeck} only={deckOnly} />}
     </StudentShell>
   );
 }
