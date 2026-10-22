@@ -140,12 +140,15 @@ export async function GET(req: NextRequest) {
       admin
         .from("affiliate_clicks")
         .select("id", { count: "exact", head: true })
-        .eq("affiliate_id", aff.id),
+        .eq("affiliate_id", aff.id)
+        // [afiliator-klik-v1] pratinjau link FB/WA & crawler tidak dihitung
+        .eq("is_bot", false),
       // 5. Clicks within the daily window (timestamps only)
       admin
         .from("affiliate_clicks")
         .select("created_at")
         .eq("affiliate_id", aff.id)
+        .eq("is_bot", false)
         .gte("created_at", windowStartIso),
       // 6. Conversions + commission sums per status
       admin
