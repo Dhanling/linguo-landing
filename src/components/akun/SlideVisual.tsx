@@ -98,7 +98,8 @@ function Bunyi({ teks, ucap, siapkan, children, className = "", style }: {
   const klip = useContext(KlipCtx);
   if (!ucap || !teks) return <div className={className} style={style}>{children}</div>;
   return (
-    <button type="button" className={`text-left transition hover:-translate-y-[1px] hover:shadow-md ${className}`}
+    // [vc-slide-ketuk-tts-v1] data-ucap dibaca saat slide dipotret untuk Kelas Video.
+    <button type="button" data-ucap={teks} className={`text-left transition hover:-translate-y-[1px] hover:shadow-md ${className}`}
       style={{ ...style, ...(nyala ? { boxShadow: "0 0 0 0.18em #99E6DC" } : null) }}
       onMouseEnter={() => siapkan?.(teks)}
       onClick={(e) => {
@@ -744,7 +745,7 @@ function VisualBanding({ v, ucap, siapkan, aksen }: { v: Extract<Visual, { kind:
             <span className="flex w-[5.5em] shrink-0 flex-col items-start gap-[0.4em] text-[0.66em] font-bold uppercase leading-tight tracking-wider" style={{ color: aksen }}>
               {v.bahasa}
               {ucap && (
-                <button type="button" onClick={(e) => { e.stopPropagation(); ucap(kalimat); }} onMouseEnter={() => siapkan?.(kalimat)}
+                <button type="button" data-ucap={kalimat} onClick={(e) => { e.stopPropagation(); ucap(kalimat); }} onMouseEnter={() => siapkan?.(kalimat)}
                   className="inline-flex items-center gap-[0.3em] rounded-full px-[0.7em] py-[0.2em] text-white normal-case tracking-normal" style={{ background: aksen }}>
                   <Volume2 className="h-[1.1em] w-[1.1em]" /> Dengar
                 </button>
@@ -758,6 +759,310 @@ function VisualBanding({ v, ucap, siapkan, aksen }: { v: Extract<Visual, { kind:
             {r.catatan}
           </p>
         )}
+      </div>
+    </div>
+  );
+}
+
+/* ── [slide-alfabet-v1] Abjad: satu ubin per huruf, klik = pop-up contoh kata ── */
+
+const WARNA_TANDA = "#E11D48";
+
+/* [slide-alfabet-aksara-v1] Aksara Arab/Ibrani dibaca kanan → kiri. */
+const RTL = /[֐-ࣿ]/;
+/* Aksara bertanda vokal di atas/bawah (Jawa, Khmer, Lao, Burma) butuh baris lebih longgar supaya tak menabrak romanisasi. */
+const AKSARA_TINGGI = /[\uA980-\uA9DF\u1780-\u17FF\u0E80-\u0EFF\u1000-\u109F]/;
+const longgar = (t: string): React.CSSProperties | undefined => (AKSARA_TINGGI.test(t) ? { lineHeight: 1.9, paddingBottom: "0.45em" } : undefined);
+
+/** Label bawaan visual; dek BIPA (`ui: "en"`) memakai bahasa Inggris. */
+const LABEL = {
+  id: { klik: "Klik huruf untuk melihat contoh kata", beda: "bunyinya beda dari bahasa Indonesia", dibaca: "dibaca", khas: "Bunyi khas", contoh: "Contoh kata",
+    dengar: "Dengar", tutup: "Tutup", bentuk: "Bentuk", bisu: "tidak dibaca", vokal: "Vokal murni", vokalKet: "pendek & jelas, persis bahasa Indonesia", seperti: "seperti" },
+  en: { klik: "Click a letter to see example words", beda: "sounds different from English", dibaca: "sounds like", khas: "Special sound", contoh: "Example words",
+    dengar: "Listen", tutup: "Close", bentuk: "Forms", bisu: "silent", vokal: "Pure vowels", vokalKet: "short & clear, always the same sound", seperti: "like" },
+};
+
+/** Huruf besar + kecil untuk ubin. Aksara tanpa huruf kapital (Arab, Devanagari, …) cukup sekali;
+ *  digraf ditulis "Ch ch" / "Dzs dzs". Georgia: toUpperCase() memberi Mtavruli yang tak dipakai
+ *  dalam tulisan sehari-hari, jadi Mkhedruli tetap tampil sekali. */
+function bentukKapital(h: string, besarTetap?: string): { besar: string; kecil: string | null } {
+  // [slide-alfabet-aksara-v1] `besar` = kapital eksplisit (Turki: i → İ, ı → I — toUpperCase() bawaan salah).
+  if (besarTetap) return { besar: besarTetap, kecil: h };
+  if (/[Ⴀ-ჿᲐ-Ჿ]/.test(h)) return { besar: h, kecil: null };
+  const kecil = h.toLowerCase();
+  const [c0, ...sisa] = Array.from(kecil);
+  // [slide-alfabet-v1] ß → "SS" kalau di-toUpperCase(); pakai kapital ẞ.
+  const besar = (c0 === "ß" ? "ẞ" : (c0 || "").toUpperCase()) + sisa.join("");
+  return besar === kecil ? { besar: kecil, kecil: null } : { besar, kecil };
+}
+
+function VisualAlfabet({ v, ucap, siapkan, aksen }: { v: Extract<Visual, { kind: "alfabet" }>; ucap?: Ucap; siapkan?: (t: string) => void; aksen: string }) {
+  const [buka, setBuka] = useState<number | null>(null);
+  const L = LABEL[v.ui === "en" ? "en" : "id"];
+  const n = v.huruf.length;
+  // Abjad panjang (Ceko 42, Hungaria 44, Georgia 33) tetap muat tanpa gulir.
+  const kolom = n > 40 ? 11 : n > 30 ? 10 : n > 24 ? 9 : n > 16 ? 8 : 6;
+  const h = buka === null ? null : v.huruf[buka];
+  const rtl = v.huruf.some((x) => RTL.test(x.huruf));
+  // Huruf berdiakritik yang berdiri sendiri di abjad (č, ö, å, ñ, …) tak boleh dilebur ke huruf dasarnya saat disorot.
+  const tetap = new Set(v.huruf.map((x) => x.huruf.toLowerCase().normalize("NFC")).filter((x) => x.normalize("NFD") !== x));
+  const suara = (x: { ucap?: string; nama: string }) => x.ucap || x.nama;
+
+  // Selama pop-up terbuka: Esc menutup pop-up (bukan slideshow), panah = huruf sebelum/sesudahnya.
+  useEffect(() => {
+    if (buka === null) return;
+    const k = (e: KeyboardEvent) => {
+      if (e.key === "Escape") { e.stopImmediatePropagation(); e.preventDefault(); setBuka(null); }
+      else if (e.key === "ArrowRight" || e.key === "ArrowLeft") {
+        e.stopImmediatePropagation(); e.preventDefault();
+        setBuka((b) => (b === null ? b : (b + (e.key === "ArrowRight" ? 1 : -1) + n) % n));
+      }
+    };
+    window.addEventListener("keydown", k, true);
+    return () => window.removeEventListener("keydown", k, true);
+  }, [buka, n]);
+
+  // Buka huruf = namanya langsung dibunyikan (tulisan asli kalau ada `ucap`).
+  const pilih = (i: number) => { setBuka(i); ucap?.(suara(v.huruf[i])); };
+  const geser = (d: number) => (e: React.MouseEvent) => { e.stopPropagation(); pilih((buka! + d + n) % n); };
+  const hb = h ? bentukKapital(h.huruf, h.besar) : null;
+
+  return (
+    <div className="relative flex h-full flex-col gap-[0.8cqh]">
+      <style>{MUNCUL + "@keyframes alfabetPop{from{opacity:0;transform:scale(.92)}to{opacity:1;transform:none}}"}</style>
+      <div className="flex shrink-0 items-center gap-[1.2em] text-[0.72em] font-semibold" style={{ color: "#6B7280" }}>
+        <span>{L.klik}</span>
+        <span className="inline-flex items-center gap-[0.4em]">
+          <span className="h-[0.8em] w-[0.8em] rounded-full" style={{ background: WARNA_TANDA }} /> {v.ket || L.beda}
+        </span>
+      </div>
+      <div dir={rtl ? "rtl" : undefined} className="grid min-h-0 flex-1 gap-[0.7cqw]" style={{ gridTemplateColumns: `repeat(${kolom}, minmax(0,1fr))`, gridAutoRows: "1fr" }}>
+        {v.huruf.map((x, i) => {
+          const beda = !!x.tanda;
+          const w = beda ? WARNA_TANDA : aksen;
+          const k = bentukKapital(x.huruf, x.besar);
+          return (
+            <button key={i} type="button" onMouseEnter={() => siapkan?.(suara(x))}
+              onClick={(e) => { e.stopPropagation(); pilih(i); }}
+              className="relative flex min-h-0 flex-col items-center justify-center rounded-[0.8em] leading-none transition hover:-translate-y-[2px] hover:shadow-lg"
+              style={{ background: beda ? "#FFF1F2" : "#fff", border: `1px solid ${beda ? "#FECDD3" : "#E5E7EB"}`, borderBottom: `0.28em solid ${w}`,
+                animation: `slideVisMuncul .35s ease-out ${i * 18}ms both`, ...(buka === i ? { boxShadow: `0 0 0 0.16em ${w}` } : null) }}>
+              {beda && <span className="absolute right-[0.4em] top-[0.4em] h-[0.5em] w-[0.5em] rounded-full" style={{ background: WARNA_TANDA }} />}
+              <span dir="auto" className={`${kolom > 9 ? "text-[1.75em]" : "text-[2.1em]"} font-extrabold`} style={{ color: k.kecil ? "#111827" : w }}>
+                {k.besar}{k.kecil && <span className="ml-[0.04em] text-[0.7em] font-bold" style={{ color: w }}>{k.kecil}</span>}
+              </span>
+              <span dir="ltr" className="mt-[0.35em] max-w-full truncate px-[0.3em] text-[0.74em] font-semibold" style={{ color: "#4B5563" }}>{x.nama}</span>
+            </button>
+          );
+        })}
+      </div>
+
+      {h && hb && (
+        <div className="absolute inset-0 z-10 grid place-items-center rounded-[0.8em]" style={{ background: "rgba(15,23,42,0.35)", backdropFilter: "blur(2px)" }}
+          onClick={(e) => { e.stopPropagation(); setBuka(null); }}>
+          <div key={buka} className="relative flex w-[78%] max-w-full gap-[2cqw] p-[1.8cqw]" onClick={(e) => e.stopPropagation()}
+            style={{ ...KARTU, background: "#fff", borderTop: `0.35em solid ${h.tanda ? WARNA_TANDA : aksen}`, boxShadow: "0 1.2cqw 3cqw rgba(15,23,42,0.25)", animation: "alfabetPop .22s ease-out" }}>
+            <button type="button" aria-label={L.tutup} onClick={(e) => { e.stopPropagation(); setBuka(null); }}
+              className="absolute right-[0.6em] top-[0.6em] grid h-[1.8em] w-[1.8em] place-items-center rounded-full hover:bg-gray-100" style={{ color: "#6B7280" }}>
+              <X className="h-[1.1em] w-[1.1em]" />
+            </button>
+            <div className="flex w-[30%] shrink-0 flex-col items-center justify-center rounded-[0.8em] py-[1em] text-center"
+              style={{ background: h.tanda ? "#FFF1F2" : `${aksen}12` }}>
+              <span dir="auto" className="text-[4.6em] font-extrabold leading-none" style={{ color: hb.kecil ? "#111827" : h.tanda ? WARNA_TANDA : aksen }}>
+                {hb.besar}{hb.kecil && <span className="text-[0.6em]" style={{ color: h.tanda ? WARNA_TANDA : aksen }}>{hb.kecil}</span>}
+              </span>
+              {h.bentuk && (
+                <span className="mt-[1em] text-[0.72em] font-semibold" style={{ color: "#6B7280" }}>
+                  {L.bentuk}: <span dir="rtl" className="text-[1.5em] font-bold" style={{ color: "#374151" }}>{h.bentuk}</span>
+                </span>
+              )}
+              <span className="mt-[0.4em] text-[1.25em] font-extrabold" style={{ color: "#111827" }}>{h.nama}</span>
+              {h.baca && <span className="px-[0.5em] text-[0.82em]" style={{ color: "#6B7280" }}>{L.dibaca} “{h.baca}”</span>}
+              {ucap && (
+                <button type="button" onMouseEnter={() => siapkan?.(suara(h))} onClick={(e) => { e.stopPropagation(); ucap(suara(h)); }}
+                  className="mt-[0.7em] inline-flex items-center gap-[0.35em] rounded-full px-[0.9em] py-[0.25em] text-[0.8em] font-bold text-white" style={{ background: aksen }}>
+                  <Volume2 className="h-[1.1em] w-[1.1em]" /> {L.dengar}
+                </button>
+              )}
+            </div>
+            <div className="flex min-w-0 flex-1 flex-col gap-[0.7em] pr-[1.5em]">
+              {h.tanda && (
+                <span className="self-start rounded-full px-[0.8em] py-[0.15em] text-[0.72em] font-extrabold uppercase tracking-wider" style={{ background: "#FFE4E6", color: "#BE123C" }}>
+                  {L.khas} · {h.tanda}
+                </span>
+              )}
+              {h.info && <p className="text-[0.9em] leading-snug" style={{ color: "#374151" }}>{h.info}</p>}
+              <div className="text-[0.7em] font-bold uppercase tracking-wider" style={{ color: "#9CA3AF" }}>{L.contoh}</div>
+              <div dir={rtl ? "rtl" : undefined} className="grid gap-[0.6em]" style={{ gridTemplateColumns: `repeat(${Math.min(h.contoh.length, 3) || 1}, minmax(0,1fr))` }}>
+                {h.contoh.map((c, ci) => (
+                  <Bunyi key={ci} teks={c.kata} ucap={ucap} siapkan={siapkan}
+                    className="flex flex-col items-center rounded-[0.8em] px-[0.6em] py-[0.7em] text-center leading-tight"
+                    style={{ background: "#F9FAFB", border: "1px solid #E5E7EB" }}>
+                    {c.ikon && <span className="text-[2em] leading-none">{c.ikon}</span>}
+                    <span dir="auto" className="mt-[0.3em] text-[1.25em] font-extrabold" style={{ color: "#111827", ...longgar(c.kata) }}>
+                      <Sorot kata={c.kata} sorot={h.sorot || [h.huruf]} tetap={tetap} warna={h.tanda ? WARNA_TANDA : aksen} garis />
+                    </span>
+                    {c.baca && <span dir="ltr" className="text-[0.82em] font-bold" style={{ color: h.tanda ? WARNA_TANDA : aksen }}>“{c.baca}”</span>}
+                    <span dir="ltr" className="text-[0.8em]" style={{ color: "#6B7280" }}>{c.arti}</span>
+                    {ucap && <Volume2 className="mt-[0.3em] h-[0.9em] w-[0.9em]" style={{ color: "#9CA3AF" }} />}
+                  </Bunyi>
+                ))}
+              </div>
+              <div className="mt-auto flex items-center justify-between pt-[0.3em] text-[0.75em] font-semibold" style={{ color: "#6B7280" }}>
+                <button type="button" onClick={geser(-1)} className="inline-flex items-center gap-[0.2em] rounded-full px-[0.6em] py-[0.2em] hover:bg-gray-100">
+                  <ChevronLeft className="h-[1.1em] w-[1.1em]" /> {bentukKapital(v.huruf[(buka! - 1 + n) % n].huruf, v.huruf[(buka! - 1 + n) % n].besar).besar}
+                </button>
+                <span>{buka! + 1} / {n}</span>
+                <button type="button" onClick={geser(1)} className="inline-flex items-center gap-[0.2em] rounded-full px-[0.6em] py-[0.2em] hover:bg-gray-100">
+                  {bentukKapital(v.huruf[(buka! + 1) % n].huruf, v.huruf[(buka! + 1) % n].besar).besar} <ChevronRight className="h-[1.1em] w-[1.1em]" />
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      )}
+    </div>
+  );
+}
+
+/* ── [slide-bunyi-v1] Vokal murni + bunyi khas ──────────────────────────── */
+
+const WARNA_VOKAL = ["#E11D48", "#EA580C", "#16A34A", "#2563EB", "#7C3AED"];
+// Tilde ikut dilebur (Vietnam ũ = u + nada); ñ/ã yang berdiri sendiri dijaga lewat `tetap`.
+const tanpaAksen = (c: string) => c.normalize("NFD").replace(/[̀-ͯ]/g, "").normalize("NFC").toLowerCase();
+
+/** Potong `kata` jadi bagian biasa/tersorot: potongan `sorot` terpanjang dicocokkan dulu (rr sebelum r).
+ *  Aksen dilebur (á = a), kecuali huruf di `tetap` — huruf berdiakritik yang berdiri sendiri (č ≠ c, ä ≠ a). */
+function potongSorot(kata: string, sorot: string[], tetap?: Set<string>): Array<{ t: string; s: boolean }> {
+  const lebur = (c: string) => {
+    const k = c.toLowerCase().normalize("NFC");
+    if (tetap?.has(k)) return k;
+    if (!tetap?.size) return tanpaAksen(c);
+    // Huruf bertanda nada di atas huruf khas (Vietnam ế = ê + nada) tetap dihitung huruf khas itu.
+    const d = Array.from(k.normalize("NFD"));
+    let pas = "";
+    for (const t of tetap) {
+      const td = Array.from(t.normalize("NFD"));
+      if (td[0] === d[0] && td.slice(1).every((m) => d.includes(m)) && td.length > Array.from(pas.normalize("NFD")).length) pas = t;
+    }
+    return pas || tanpaAksen(c);
+  };
+  const huruf = Array.from(kata.normalize("NFC"));
+  const dasar = huruf.map(lebur);
+  const pola = [...sorot].map((x) => Array.from(x.normalize("NFC")).map(lebur)).sort((a, b) => b.length - a.length);
+  const kena = huruf.map(() => false);
+  for (let i = 0; i < huruf.length;) {
+    const p = pola.find((q) => q.length && q.every((c, k) => dasar[i + k] === c));
+    if (p) { for (let k = 0; k < p.length; k++) kena[i + k] = true; i += p.length; }
+    else i++;
+  }
+  // [slide-alfabet-aksara-v1] Matra Devanagari/Bangla menempel di konsonannya — browser tak bisa mewarnai
+  // separuh gugus aksara, jadi yang disorot satu gugus utuh (कु, মা), bukan matra-nya saja.
+  const gugus: string[][] = typeof Intl !== "undefined" && "Segmenter" in Intl
+    ? Array.from(new Intl.Segmenter(undefined, { granularity: "grapheme" }).segment(huruf.join("")), (g) => Array.from(g.segment))
+    : huruf.map((c) => [c]);
+  const out: Array<{ t: string; s: boolean }> = [];
+  let i = 0;
+  for (const g of gugus) {
+    const s = g.some((_, k) => kena[i + k]);
+    i += g.length;
+    const last = out[out.length - 1];
+    if (last && last.s === s) last.t += g.join(""); else out.push({ t: g.join(""), s });
+  }
+  return out;
+}
+
+/** Huruf berdiakritik yang disebut di daftar (ä, ø, č, …) — tak dilebur ke huruf dasarnya. */
+function hurufTetap(daftar: string[]): Set<string> {
+  return new Set(daftar.flatMap((x) => Array.from(x.toLowerCase().normalize("NFC"))).filter((c) => c.normalize("NFD") !== c));
+}
+
+/** Huruf yang sedang dibahas diberi warna di dalam contoh katanya.
+ *  Aksara Arab/Ibrani: huruf yang bersambung tetap utuh — kata diwarnai tanpa garis bawah supaya sambungannya tak putus. */
+function Sorot({ kata, sorot, tetap, warna, garis, coret }: { kata: string; sorot: string[]; tetap?: Set<string>; warna: string; garis?: boolean; coret?: boolean }) {
+  const gaya: React.CSSProperties = coret
+    ? { color: "#94A3B8", textDecoration: "line-through", textDecorationColor: warna, textDecorationThickness: "0.12em" }
+    : garis && !RTL.test(kata) ? { color: warna, textDecoration: "underline", textDecorationThickness: "0.1em", textUnderlineOffset: "0.15em" }
+    : { color: warna };
+  return <>{potongSorot(kata, sorot, tetap).map((b, k) => b.s ? <span key={k} style={gaya}>{b.t}</span> : <span key={k}>{b.t}</span>)}</>;
+}
+
+function VisualBunyi({ v, ucap, siapkan, aksen }: { v: Extract<Visual, { kind: "bunyi" }>; ucap?: Ucap; siapkan?: (t: string) => void; aksen: string }) {
+  const L = LABEL[v.ui === "en" ? "en" : "id"];
+  const kolom = v.khas.length > 4 ? 3 : 2;
+  // Tanpa ubin vokal / kartu cuma satu baris → kartu tinggi; contoh kata dibesarkan supaya tak kosong melompong.
+  const lapang = v.vokal.length === 0 || v.khas.length <= kolom;
+  const tetap = hurufTetap([...v.vokal.flatMap((x) => [x.huruf, ...(x.sorot || [])]), ...v.khas.flatMap((x) => x.sorot || [x.tulisan])]);
+  // Vokal lebih dari 6 (Finlandia 8, Hindi 11) dipecah dua baris.
+  const nV = v.vokal.length;
+  const dua = nV > 6;
+  const kolomV = dua ? Math.ceil(nV / 2) : nV;
+  // Lebih dari 7 kolom (Lao 16 vokal): ubin terlalu sempit untuk huruf + kata berdampingan → huruf di atas, kata di bawah.
+  const rapat = kolomV > 7;
+  return (
+    <div className="flex h-full flex-col gap-[1.1cqh]">
+      <style>{MUNCUL}</style>
+      {nV > 0 && (
+        <div className="grid shrink-0 gap-[0.8cqw]"
+          style={{ height: v.khas.length ? (dua ? "46%" : "30%") : dua ? "70%" : "45%", gridTemplateColumns: `7.5em repeat(${kolomV}, minmax(0,1fr))`, gridTemplateRows: dua ? "1fr 1fr" : "1fr" }}>
+          <div className="flex flex-col justify-center rounded-[0.8em] px-[0.8em] leading-tight" style={{ background: `${aksen}14`, color: aksen, gridRow: dua ? "span 2" : undefined }}>
+            <span className="text-[0.66em] font-extrabold uppercase tracking-wider">{v.vokalJudul || L.vokal}</span>
+            <span className="mt-[0.2em] text-[0.78em] font-semibold" style={{ color: "#374151" }}>{v.vokalKet || L.vokalKet}</span>
+          </div>
+          {v.vokal.map((x, i) => {
+            const w = WARNA_VOKAL[i % WARNA_VOKAL.length];
+            return (
+              <Bunyi key={i} teks={x.kata} ucap={ucap} siapkan={siapkan}
+                className={`flex min-w-0 items-center rounded-[0.8em] leading-tight ${rapat ? "flex-col justify-center gap-[0.15em] px-[0.3em] text-center" : dua ? "gap-[0.5em] px-[0.6em]" : "gap-[0.7em] px-[0.8em]"}`}
+                style={{ background: "#fff", border: "1px solid #E5E7EB", borderBottom: `0.3em solid ${w}`, animation: `slideVisMuncul .35s ease-out ${i * 60}ms both` }}>
+                {/* Pasangan "ö · ő" tetap satu baris dan mengecil supaya kata contohnya tak terpotong. */}
+                <span dir="auto" className={`${Array.from(x.huruf).length > 2 ? "text-[1.5em]" : dua ? "text-[2.1em]" : "text-[2.6em]"} shrink-0 whitespace-nowrap font-extrabold leading-none`} style={{ color: w }}>{x.huruf}</span>
+                <span className={`flex min-w-0 flex-col ${rapat ? "max-w-full items-center" : ""}`}>
+                  {x.seperti && <span className="max-w-full truncate text-[0.68em] font-semibold" style={{ color: "#9CA3AF" }}>{L.seperti} “{x.seperti}”</span>}
+                  <span dir="auto" className={`max-w-full truncate ${rapat ? "text-[1.05em]" : "text-[1.3em]"} font-extrabold`} style={{ color: "#111827", ...longgar(x.kata) }}>
+                    <Sorot kata={x.kata} sorot={x.sorot || [x.huruf]} tetap={tetap} warna={w} />
+                  </span>
+                  {x.baca && <span className="truncate text-[0.74em] font-bold" style={{ color: w }}>“{x.baca}”</span>}
+                  <span className="truncate text-[0.74em]" style={{ color: "#6B7280" }}>{x.arti}</span>
+                </span>
+                {x.ikon && !rapat && <span className="ml-auto shrink-0 text-[1.9em] leading-none">{x.ikon}</span>}
+              </Bunyi>
+            );
+          })}
+        </div>
+      )}
+      <div className="grid min-h-0 flex-1 gap-[0.8cqw]" style={{ gridTemplateColumns: `repeat(${kolom}, minmax(0,1fr))`, gridAutoRows: "1fr" }}>
+        {v.khas.map((x, i) => {
+          const w = WARNA_PADANAN[i % WARNA_PADANAN.length];
+          return (
+            <div key={i} className="flex min-h-0 flex-col gap-[0.5em] p-[0.7em]"
+              style={{ ...KARTU, borderTop: `0.3em solid ${w}`, animation: `slideVisMuncul .35s ease-out ${200 + i * 60}ms both` }}>
+              <div className="flex items-center gap-[0.6em]">
+                <span dir="auto" className="grid h-[2.1em] min-w-[2.1em] shrink-0 place-items-center rounded-[0.6em] px-[0.4em] text-[1.25em] font-extrabold leading-none"
+                  style={{ background: `${w}18`, color: w }}>{x.tulisan}</span>
+                <span className="flex min-w-0 flex-col leading-tight">
+                  <span className="text-[1em] font-extrabold" style={{ color: "#111827" }}>
+                    {x.bisu ? <span style={{ color: "#9CA3AF" }}>{L.bisu}</span> : <><span style={{ color: "#9CA3AF" }}>{L.dibaca}</span> {x.bunyi}</>}
+                  </span>
+                  {x.info && <span className="text-[0.72em] leading-snug" style={{ color: "#6B7280" }}>{x.info}</span>}
+                </span>
+              </div>
+              <div className="flex min-h-0 flex-1 gap-[0.4em]">
+                {x.contoh.map((c, ci) => (
+                  <Bunyi key={ci} teks={c.kata} ucap={ucap} siapkan={siapkan}
+                    className="flex min-w-0 flex-1 flex-col items-center justify-center rounded-[0.6em] px-[0.3em] text-center leading-tight"
+                    style={{ background: "#F9FAFB", border: "1px solid #E5E7EB" }}>
+                    <span dir="auto" className={`max-w-full truncate ${lapang ? "text-[1.6em]" : "text-[1.05em]"} font-extrabold`} style={{ color: "#111827", ...longgar(c.kata) }}>
+                      <Sorot kata={c.kata} sorot={x.sorot || [x.tulisan]} tetap={tetap} warna={w} coret={x.bisu} />
+                    </span>
+                    {c.baca && <span className={`max-w-full truncate ${lapang ? "text-[1em]" : "text-[0.78em]"} font-bold`} style={{ color: w }}>“{c.baca}”</span>}
+                    {c.arti && <span className={`max-w-full truncate ${lapang ? "text-[0.85em]" : "text-[0.66em]"}`} style={{ color: "#6B7280" }}>{c.arti}</span>}
+                  </Bunyi>
+                ))}
+              </div>
+            </div>
+          );
+        })}
       </div>
     </div>
   );
@@ -779,6 +1084,7 @@ export function SlideVisual({ visual, aksen, ucap, siapkan, lang }: {
       ? visual.groups.flatMap((g) => g.chips.map((c) => c.hanzi || ""))
       : visual.kind === "sejarah" ? visual.peristiwa.map((p) => p.asli || "")
       : visual.kind === "banding" ? visual.rows.flatMap((r) => r.target.map((t) => t.t))
+      : visual.kind === "alfabet" || visual.kind === "bunyi" ? []
       : visual.rows.map((r) => r.hanzi || "");
     teks.forEach((t) => { const u = urlKlip(t); if (u) void fetch(u, { cache: "force-cache" }).catch(() => {}); });
   }, [visual, klip]);
@@ -796,5 +1102,7 @@ function Isi({ visual, aksen, ucap, siapkan }: { visual: Visual; aksen: string; 
   if (visual.kind === "jebakan") return <VisualJebakan rows={visual.rows} ucap={ucap} siapkan={siapkan} />;
   if (visual.kind === "sejarah") return <VisualSejarah v={visual} ucap={ucap} siapkan={siapkan} aksen={aksen} />;
   if (visual.kind === "banding") return <VisualBanding v={visual} ucap={ucap} siapkan={siapkan} aksen={aksen} />;
+  if (visual.kind === "bunyi") return <VisualBunyi v={visual} ucap={ucap} siapkan={siapkan} aksen={aksen} />;
+  if (visual.kind === "alfabet") return <VisualAlfabet v={visual} ucap={ucap} siapkan={siapkan} aksen={aksen} />;
   return null;
 }

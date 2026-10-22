@@ -129,7 +129,9 @@ function Ucap({ teks, lang, kalimat = true }: { teks: string; lang?: string | nu
         const kata = b.replace(TEPI, "");
         if (!/\p{L}/u.test(kata)) return b;
         return (
-          <span key={i} role="button" tabIndex={-1}
+          // [vc-slide-ketuk-tts-v1] data-ucap = teks yang dibunyikan; dibaca saat
+          // slide dipotret untuk Kelas Video supaya kotak katanya ikut terbawa.
+          <span key={i} role="button" tabIndex={-1} data-ucap={kata} data-ucap-konteks={utuh}
             onMouseEnter={() => siapkanEbook(kata, lang)}
             onClick={bunyikan(kata, i)}
             className="cursor-pointer rounded-[0.25em] transition-colors hover:bg-teal-100/80"
@@ -139,7 +141,7 @@ function Ucap({ teks, lang, kalimat = true }: { teks: string; lang?: string | nu
         );
       })}
       {kalimat && (/\s/.test(utuh) || banyakKata) && (
-        <button type="button" onClick={bunyikan(utuh, -1)} title="Dengarkan kalimat"
+        <button type="button" onClick={bunyikan(utuh, -1)} title="Dengarkan kalimat" data-ucap={utuh}
           className="ml-[0.4em] inline-flex translate-y-[0.12em] rounded-full p-[0.15em] opacity-50 transition hover:bg-teal-100 hover:opacity-100"
           style={{ color: aktif === -1 ? "#0E7C7B" : TEAL }}>
           <Volume2 className="h-[0.95em] w-[0.95em]" />
@@ -198,7 +200,10 @@ function KuisPilihan({ s, kunci, aksen }: { s: MateriSlide; kunci?: boolean; aks
                 const nyala = (terjawab || kunci) && benar;
                 const salah = terjawab && p === oi && !benar;
                 return (
-                  <button key={oi} type="button"
+                  // [vc-slide-kuis-klik-v1] data-soal/opsi/pilihan dibaca saat slide
+                  // dipotret untuk Kelas Video: pilihan jadi kotak yang bisa diklik
+                  // di panggung dan tanda ✓/✗ digambar ke kanvas yang disiarkan.
+                  <button key={oi} type="button" data-soal={qi} data-opsi={oi} data-pilihan={benar ? "1" : "0"}
                     onClick={() => setPilih((x) => ({ ...x, [qi]: oi }))}
                     className={`rounded-lg border px-[0.7em] py-[0.25em] text-left shadow-sm transition ${
                       nyala ? "border-emerald-500 bg-emerald-50 text-emerald-800"
@@ -234,11 +239,10 @@ export function SlideBody({ s, kunci, lang }: { s: MateriSlide; kunci?: boolean;
         <img src={LOGO} alt="Linguo" className="mb-[3%] h-[14%] w-auto rounded-[22%] bg-white/95 p-[0.8%] shadow-lg" />
         <h2 className="text-[clamp(1.4rem,3.8cqw,2.8rem)] font-extrabold leading-tight text-white drop-shadow-sm" style={bayang}>{s.heading}</h2>
         {s.subheading && <p className={`mt-3 text-[clamp(0.8rem,1.8cqw,1.2rem)] font-medium ${sampul ? "text-white" : "text-white/85"}`} style={bayang}>{s.subheading}</p>}
-        {s.note && (
-          <p className="mt-5 rounded-2xl bg-white/95 px-[2.2%] py-[1%] text-[clamp(0.7rem,1.4cqw,0.95rem)] font-semibold shadow-md" style={{ color: "#0E7C7B" }}>
-            {s.note}
-          </p>
-        )}
+        {/* [slide-sampul-polos-v1] Catatan pembuka (`s.note`) sengaja TIDAK
+            ditampilkan di sampul — permintaan owner 19 Okt 2026: kartu putih
+            berisi paragraf sambutan bikin sampul terlalu ramai dan menutupi
+            ilustrasi. Teksnya tetap ada di data & editor untuk dibaca pengajar. */}
       </div>
     );
   }
@@ -275,7 +279,7 @@ export function SlideBody({ s, kunci, lang }: { s: MateriSlide; kunci?: boolean;
       <div className={`shrink-0 ${kiriSaja ? "" : "pr-[9%]"}`}>
         <span className="inline-block rounded-full px-[0.9em] py-[0.2em] text-[clamp(0.5rem,1cqw,0.7rem)] font-extrabold uppercase tracking-[0.12em] text-white"
           style={{ background: tema.aksen }}>
-          {s.visual?.kind === "sejarah" ? "Sejarah" : s.visual?.kind === "banding" ? "Perbandingan" : SLIDE_TYPE_LABEL[s.type]}
+          {s.visual?.kind === "sejarah" ? "Sejarah" : s.visual?.kind === "banding" ? "Perbandingan" : s.visual?.kind === "alfabet" ? "Alfabet" : s.visual?.kind === "bunyi" ? "Pelafalan" : SLIDE_TYPE_LABEL[s.type]}
         </span>
         <h3 className="mt-[0.8cqh] text-[clamp(1rem,2.4cqw,1.7rem)] font-extrabold leading-snug text-gray-900">{s.heading}</h3>
         {s.subheading && <p className="mt-0.5 text-[clamp(0.68rem,1.4cqw,0.95rem)] text-gray-500">{s.subheading}</p>}

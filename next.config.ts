@@ -96,6 +96,19 @@ const nextConfig: NextConfig = {
       },
     ];
   },
+  // [dek-siswa-v1] Ilustrasi slide siap pakai lengkapnya ada di dashboard
+  // (teach.linguo.id/slide-cover); salinan di public/ landing belum semua. Rewrite
+  // `fallback` hanya jalan kalau berkasnya TIDAK ada di public/, jadi gambar
+  // lokal tetap disajikan dari sini.
+  async rewrites() {
+    return {
+      beforeFiles: [],
+      afterFiles: [],
+      fallback: [
+        { source: '/slide-cover/:path*', destination: 'https://teach.linguo.id/slide-cover/:path*' },
+      ],
+    };
+  },
   async headers() {
     return [
       {

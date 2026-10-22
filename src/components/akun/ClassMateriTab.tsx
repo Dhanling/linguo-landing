@@ -21,6 +21,13 @@
 // laporan pengajar. Sebelum ini cuma baris yang punya `schedules` yang hidup —
 // di kelas lawas (sesi cuma tercatat di sessions_used) hampir semua baris mati
 // walau sudah dicentang hijau.
+//
+// [dek-siswa-v1] Slide SIAP PAKAI per sesi silabus (dek yang sama dengan yang
+// dipresentasikan pengajar) ikut dibuka di drawer sesi — tapi hanya sampai sesi
+// yang sudah berjalan: kelas di sesi 6/16 → slide sesi 1–6 terbuka, sesi 7 dst.
+// terkunci. Angkanya sama dengan "Progress Sesi" (prop sesiTerpakai). Kalau
+// pengajar sudah menyimpan dek slide sendiri untuk sesi itu, dek siap pakai
+// tidak ditampilkan dobel.
 
 import { useEffect, useState } from 'react';
 import { supabase } from '@/lib/supabase-client';
@@ -28,7 +35,7 @@ import { supabase } from '@/lib/supabase-client';
 import { readCache, writeCache, useIsoLayoutEffect, materiKey } from '@/lib/kelasCache';
 import KuisKelasSesi, { type KuisKelasBaris } from '@/components/akun/KuisKelasSesi';
 // (Play, bukan Youtube — versi lucide-react di repo ini tidak meng-export ikon brand)
-import { BookOpen, FileText, Presentation, Link2, Paperclip, Video, ExternalLink, Play, Check, X, ChevronRight, Clock, CalendarDays, PenLine, Sparkles, type LucideIcon } from 'lucide-react';
+import { BookOpen, FileText, Presentation, Link2, Paperclip, Video, ExternalLink, Play, Check, X, ChevronRight, Clock, CalendarDays, PenLine, Sparkles, Lock, type LucideIcon } from 'lucide-react';
 import { studentRecordingHref, isPlayableRecording } from '@/lib/classRoom';
 import RecordingModal from './RecordingModal';
 import { muatAksesRekamanSatu, rekamanBolehTampil, type AksesAddon } from '@/lib/addonAccess';
@@ -36,8 +43,13 @@ import { publicNotes, parseSessionNotes, ATTENDANCE_BADGE } from '@/components/a
 // [kelas-materi-silabus-sesi-v1] silabus per sesi (judul + poin yang dipelajari)
 import { loadSilabusLevel, type SilabusSesi, type SilabusLevel } from '@/lib/silabusSesi';
 // [materi-slide-v1] Materi berbentuk dek slide — ditonton di tempat, lihat lib/materiSlides.
-import { parseDeck } from '@/lib/materiSlides';
+import { parseDeck, type MateriSlide } from '@/lib/materiSlides';
 import { SlideDeckViewer } from '@/components/akun/SlideDeckViewer';
+// [dek-siswa-v1] dek siap pakai per sesi silabus (dirakit di repo dashboard)
+import { loadDekSiswa, type DekSublevelSiswa } from '@/lib/dekSilabusSiswa';
+import { preloadDekSlides } from '@/lib/slideImageCache';
+import { languageSlug } from '@/lib/languageSlug';
+import { toLangCode } from '@/lib/quiz/language';
 import { tr, useT, useUiLang } from '@/lib/uiLang'; // [ui-lang-switcher-v1]
 
 // Deteksi jenis dari URL — fallback kalau kolom kind kosong / materi lama.
@@ -318,10 +330,78 @@ function statusMilestone(sched: any | null, sudahJalan = false) {
 // jadi dulu 15 dari 16 milestone-nya mati total waktu diklik. Drawer tetap ada
 // isinya karena silabus level (judul sesi + poin/kosakata yang dipelajari) datang
 // dari data kurikulum, bukan dari laporan pengajar.
+/** [dek-siswa-v1] Kartu slide siap pakai satu sesi di drawer. `terbuka` false =
+ *  sesinya belum berjalan → kartu terkunci, slide tidak bisa dibuka. */
+function SlideSesiCard({ no, slides, judul, lang, terbuka, terpakai }: {
+  no: number;
+  slides: MateriSlide[];
+  judul?: string;
+  lang?: string | null;
+  terbuka: boolean;
+  terpakai: number;
+}) {
+  const t = useT();
+  const [buka, setBuka] = useState(false);
+  if (!terbuka) {
+    return (
+      <div className="flex items-center gap-3 rounded-2xl bg-gray-50 p-3.5">
+        <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-gray-100 text-gray-400">
+          <Lock className="h-5 w-5" strokeWidth={2} />
+        </span>
+        <div className="min-w-0 flex-1">
+          <div className="text-sm font-semibold text-gray-500">{t('Slide materi terkunci')}</div>
+          <div className="mt-0.5 text-xs text-gray-400">
+            {t('Terbuka setelah sesi ini berjalan')} · {terpakai} {t('sesi sudah berjalan')}
+          </div>
+        </div>
+      </div>
+    );
+  }
+  return (
+    <>
+      <button
+        type="button"
+        onClick={() => setBuka(true)}
+        onMouseEnter={() => preloadDekSlides(slides)}
+        onFocus={() => preloadDekSlides(slides)}
+        className="group flex w-full items-center gap-3 rounded-2xl bg-violet-50/60 p-3.5 text-left transition hover:shadow-sm"
+      >
+        <span className={`flex h-11 w-11 shrink-0 items-center justify-center rounded-xl ${KIND_META.ai_slides.cls}`}>
+          <Presentation className="h-5 w-5" strokeWidth={2} />
+        </span>
+        <div className="min-w-0 flex-1">
+          <div className="truncate text-sm font-semibold text-gray-900 group-hover:text-[#16796E]">
+            {t('Slide Materi')} · {t('Sesi')} {no}
+          </div>
+          {judul && <div className="mt-0.5 truncate text-xs text-gray-500">{judul}</div>}
+          <div className="mt-0.5 text-[11px] text-gray-400">{slides.length} {t('slide')}</div>
+        </div>
+        <Play className="h-4 w-4 shrink-0 text-gray-300 group-hover:text-[#16796E]" strokeWidth={2} />
+      </button>
+      {buka && (
+        <SlideDeckViewer
+          slides={slides}
+          lang={lang}
+          title={judul || `${t('Sesi')} ${no}`}
+          subtitle={`${t('Sesi')} ${no}`}
+          onClose={() => setBuka(false)}
+        />
+      )}
+    </>
+  );
+}
+
 function SesiDetailDrawer({
   no, sched, st, items, teacherName, durasi, silabus, onClose, kuisKelas,
+  dekSesi, dekTerbuka = false, terpakai = 0, lang,
 }: {
   no: number;
+  /** [dek-siswa-v1] Slide siap pakai sesi ini (null = tak ada dek). */
+  dekSesi?: MateriSlide[] | null;
+  /** Sesi ini sudah berjalan → slide boleh dibuka. */
+  dekTerbuka?: boolean;
+  terpakai?: number;
+  lang?: string | null;
   /** [vc-kuis-simpan-materi-v1] Soal kuis live yang ditutup pengajar di sesi ini. */
   kuisKelas?: KuisKelasBaris[];
   sched: any | null;
@@ -410,6 +490,15 @@ function SesiDetailDrawer({
             </section>
           )}
 
+          {/* [dek-siswa-v1] Slide siap pakai — kecuali pengajar sudah menyimpan
+              dek slide sendiri untuk sesi ini (tampil di Materi Sesi di bawah). */}
+          {dekSesi && dekSesi.length > 0 && !items.some((m) => parseDeck(m.content)) && (
+            <section>
+              <h4 className="mb-2 text-xs font-bold uppercase tracking-wider text-gray-500">{t('Slide Materi')}</h4>
+              <SlideSesiCard no={no} slides={dekSesi} judul={silabus?.title} lang={lang} terbuka={dekTerbuka} terpakai={terpakai} />
+            </section>
+          )}
+
           {catatan.topic && (
             <section>
               <h4 className="mb-1.5 text-xs font-bold uppercase tracking-wider text-gray-500">{t('Topik')}</h4>
@@ -487,10 +576,13 @@ function MilestoneRow({
   items,
   durasi,
   silabus,
+  adaSlide,
   isLast,
   onOpen,
 }: {
   no: number;
+  /** [dek-siswa-v1] Slide siap pakai sesi ini sudah terbuka. */
+  adaSlide?: boolean;
   sched: any | null;
   /** Sesi ini sudah berjalan menurut hitungan sesi terpakai, walau tak ada baris jadwal. */
   sudahJalan?: boolean;
@@ -569,6 +661,11 @@ function MilestoneRow({
                 <Paperclip className="h-3 w-3" strokeWidth={2.4} />{items.length} {t('materi')}
               </span>
             )}
+            {adaSlide && (
+              <span className="inline-flex items-center gap-1 rounded-full bg-violet-50 px-2 py-0.5 text-[11px] font-bold text-violet-600">
+                <Presentation className="h-3 w-3" strokeWidth={2.4} />{t('Slide')}
+              </span>
+            )}
             {bisaDibuka && <ChevronRight className="h-3.5 w-3.5 text-gray-300 group-hover/head:text-[#16796E]" strokeWidth={2.4} />}
           </div>
 
@@ -632,6 +729,8 @@ export default function ClassMateriTab({
   // [kelas-materi-silabus-sesi-v1] Silabus level kelas ini (16 sesi). null = tidak
   // ketemu (bahasa/level tak terjawab kurikulum) — linimasa tetap jalan tanpa judul.
   const [silabus, setSilabus] = useState<SilabusLevel | null>(null);
+  // [dek-siswa-v1] Slide siap pakai sublevel kelas ini (null = belum ada dek).
+  const [dek, setDek] = useState<DekSublevelSiswa | null>(null);
 
   useEffect(() => {
     let alive = true;
@@ -687,6 +786,15 @@ export default function ClassMateriTab({
       .catch(() => { if (alive) setSilabus(null); });
     return () => { alive = false; };
   }, [reg.language, reg.level]);
+
+  // Sublevel dek = sublevel silabus yang sudah terjawab (A1 polos → A1.1, dst.).
+  const kodeSilabus = silabus?.code || null;
+  useEffect(() => {
+    let alive = true;
+    setDek(null);
+    loadDekSiswa(languageSlug(reg.language), kodeSilabus).then((d) => { if (alive) setDek(d); });
+    return () => { alive = false; };
+  }, [reg.language, kodeSilabus]);
 
   if (materials === null) {
     return <div className="py-10 text-center text-gray-400">Memuat…</div>;
@@ -783,6 +891,8 @@ export default function ClassMateriTab({
   /** Sesi ke-`no` di silabus level ini. Paket 16 sesi = 1 sublevel = 16 entri,
    *  jadi nomornya sejajar. Sesi tambahan di luar paket tidak punya pasangan. */
   const silabusSesi = (no: number): SilabusSesi | null => silabus?.sessions?.[no - 1] || null;
+  const dekUntuk = (no: number): MateriSlide[] | null => dek?.[no] || null;
+  const langDek = toLangCode(reg.language);
 
   // Sesi yang dibatalkan tidak ikut penomoran, tapi jangan dihilangkan — siswa
   // masih perlu bisa melihat sesi mana yang batal dan alasannya.
@@ -841,6 +951,7 @@ export default function ClassMateriTab({
                 items={itemsFor(ms.sched, ms.no)}
                 durasi={durasiSesi || ms.sched?.duration_minutes || null}
                 silabus={silabusSesi(ms.no)}
+                adaSlide={ms.sudahJalan && !!dekUntuk(ms.no)}
                 isLast={i === arr.length - 1}
                 onOpen={() => setSesiTerbuka(ms.no)}
               />
@@ -879,6 +990,10 @@ export default function ClassMateriTab({
           durasi={durasiSesi || msTerbuka.sched?.duration_minutes || null}
           silabus={silabusSesi(msTerbuka.no)}
           kuisKelas={kuisUntuk(msTerbuka.sched, msTerbuka.no)}
+          dekSesi={dekUntuk(msTerbuka.no)}
+          dekTerbuka={msTerbuka.sudahJalan}
+          terpakai={terpakai}
+          lang={langDek}
           onClose={() => setSesiTerbuka(null)}
         />
       )}

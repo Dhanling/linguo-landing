@@ -20,6 +20,8 @@
 // Sengaja menumpang kolom `content` yang sudah ada, bukan kolom jsonb baru,
 // supaya fitur ini tidak menunggu migrasi dijalankan manual.
 
+import { spanishSlideArtwork } from "../data/spanishSlideThemes";
+
 export const SLIDE_MATERIAL_KIND = "ai_slides";
 
 /** Batas atas jumlah slide hasil generate AI. Materi kelas 1 sesi, bukan silabus. */
@@ -121,6 +123,29 @@ export interface BandingRow {
   teks?: string; catatan?: string;
 }
 
+/* [slide-alfabet-v1] Abjad per huruf: satu ubin per huruf, klik = pop-up nama
+   huruf, cara baca, dan contoh kata. `tanda` = label singkat untuk huruf yang
+   bunyinya beda dari bahasa Indonesia (ubinnya diberi warna).
+   [slide-alfabet-aksara-v1] Untuk aksara non-Latin: `ucap` = tulisan asli yang
+   dibunyikan TTS (mis. alif → "ألف"; default `nama`), `bentuk` = bentuk lain
+   huruf (awal/tengah/akhir Arab), `sorot` = potongan yang diwarnai di contoh kata
+   (abugida: huruf mandiri + tanda vokal/matra), contoh `baca` = transliterasi. */
+export interface AlfabetContoh { kata: string; arti: string; ikon?: string; baca?: string }
+export interface AlfabetHuruf {
+  huruf: string; nama: string; baca?: string; tanda?: string; info?: string; contoh: AlfabetContoh[];
+  ucap?: string; bentuk?: string; sorot?: string[];
+  /** Kapital eksplisit kalau toUpperCase() salah (Turki i → İ); `huruf` = bentuk kecilnya. */
+  besar?: string;
+}
+
+/* [slide-bunyi-v1] Vokal + bunyi khas: ubin vokal di atas, kartu bunyi khas di
+   bawah. `sorot` = potongan huruf yang diwarnai di contoh kata (default `tulisan`);
+   `bisu` = potongan itu dicoret karena tak dibunyikan (mis. h).
+   Vokal: `baca` = transliterasi kata, `sorot` = potongan yang diwarnai (default `huruf`). */
+export interface BunyiVokal { huruf: string; seperti?: string; kata: string; arti: string; ikon?: string; baca?: string; sorot?: string[] }
+export interface BunyiContoh { kata: string; baca?: string; arti?: string }
+export interface BunyiKhas { tulisan: string; bunyi: string; info?: string; sorot?: string[]; bisu?: boolean; contoh: BunyiContoh[] }
+
 export type SlideVisual =
   | { kind: "nada"; rows: VisualNadaRow[] }
   | { kind: "suku-kata"; rows: VisualSukuRow[] }
@@ -138,7 +163,12 @@ export type SlideVisual =
       negara?: Array<{ id: string; tahun: number }>;
       stat?: SejarahStat[];
     }
-  | { kind: "banding"; bahasa: string; rows: BandingRow[] };
+  | { kind: "banding"; bahasa: string; rows: BandingRow[] }
+  /** `ui: "en"` = label bawaan visual dalam bahasa Inggris (dek BIPA). */
+  /** `ket` = ganti teks legenda blok merah (default "bunyinya beda dari bahasa Indonesia"), mis. Khmer "konsonan seri-o". */
+  | { kind: "alfabet"; huruf: AlfabetHuruf[]; ui?: "en"; ket?: string }
+  /** `vokalJudul`/`vokalKet` = ganti label kotak vokal (default "Vokal murni"). */
+  | { kind: "bunyi"; vokal: BunyiVokal[]; khas: BunyiKhas[]; vokalJudul?: string; vokalKet?: string; ui?: "en" };
 
 export interface MateriSlide {
   type: SlideType;
@@ -313,6 +343,28 @@ function normVisual(v: any): SlideVisual | undefined {
     })).filter((r) => r.aspek && r.target.length);
     return rows.length ? { kind: "banding", bahasa: str(v.bahasa) || "Bahasa target", rows } : undefined;
   }
+  if (v.kind === "alfabet") {
+    const huruf = arr(v.huruf).map((h) => ({
+      huruf: str(h?.huruf), nama: str(h?.nama), baca: opt(h?.baca), tanda: opt(h?.tanda), info: opt(h?.info),
+      ucap: opt(h?.ucap), bentuk: opt(h?.bentuk), besar: opt(h?.besar), sorot: strList(h?.sorot).length ? strList(h?.sorot) : undefined,
+      contoh: arr(h?.contoh).map((c) => ({ kata: str(c?.kata), arti: str(c?.arti), ikon: opt(c?.ikon), baca: opt(c?.baca) })).filter((c) => c.kata),
+    })).filter((h) => h.huruf && h.nama);
+    return huruf.length ? { kind: "alfabet", huruf, ui: v.ui === "en" ? "en" : undefined, ket: opt(v.ket) } : undefined;
+  }
+  if (v.kind === "bunyi") {
+    const vokal = arr(v.vokal).map((x) => ({
+      huruf: str(x?.huruf), seperti: opt(x?.seperti), kata: str(x?.kata), arti: str(x?.arti), ikon: opt(x?.ikon), baca: opt(x?.baca),
+      sorot: strList(x?.sorot).length ? strList(x?.sorot) : undefined,
+    })).filter((x) => x.huruf && x.kata);
+    const khas = arr(v.khas).map((x) => ({
+      tulisan: str(x?.tulisan), bunyi: str(x?.bunyi), info: opt(x?.info), bisu: x?.bisu === true ? true : undefined,
+      sorot: strList(x?.sorot).length ? strList(x?.sorot) : undefined,
+      contoh: arr(x?.contoh).map((c) => ({ kata: str(c?.kata), baca: opt(c?.baca), arti: opt(c?.arti) })).filter((c) => c.kata),
+    })).filter((x) => x.tulisan && x.contoh.length);
+    return vokal.length || khas.length
+      ? { kind: "bunyi", vokal, khas, vokalJudul: opt(v.vokalJudul), vokalKet: opt(v.vokalKet), ui: v.ui === "en" ? "en" : undefined }
+      : undefined;
+  }
   return undefined;
 }
 
@@ -360,7 +412,16 @@ export function normalizeSlide(raw: any): MateriSlide | null {
   // lama tak bisa menyelipkan gambar dari alamat lain.
   const cover = str(raw.cover);
   if (/^\/slide-cover\/(?:(?:spanish-themes|spanish-v2|portuguese-br|mandarin-themes|dutch-(?:a[12]-[1-4]|b1-[1-4]|b2-[1-7]))\/)?[\w.-]+$/.test(cover)) {
-    s.cover = cover;
+    // Decks saved before the illustrated artwork was ready contain the old
+    // deterministic SVG path. Resolve that specific built-in asset to the
+    // current session artwork, preserving uploaded/custom cover choices.
+    const spanishVector = cover.match(/^\/slide-cover\/spanish-themes\/(spanish-(?:a1|a2|b1|b2)-\d)-sesi-(\d+)(-tujuan)?-vector\.svg$/);
+    const currentSpanishArt = spanishVector
+      ? spanishSlideArtwork(spanishVector[1], Number(spanishVector[2]))
+      : null;
+    s.cover = currentSpanishArt
+      ? spanishVector![3] ? currentSpanishArt.objectives : currentSpanishArt.cover
+      : cover;
     if (raw.ruang === "kiri" && type !== "title") s.ruang = "kiri";
   }
 

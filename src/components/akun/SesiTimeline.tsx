@@ -14,10 +14,14 @@
 //     (schedules.material_links), dan lampiran pengajar (class_materials).
 // Kalau tabel class_materials belum dimigrasi, jatuh ke daftar tanpa lampiran —
 // jangan crash.
+//
+// [dek-siswa-v1] Tab Materi juga membuka slide SIAP PAKAI per sesi silabus (dek
+// yang sama dengan yang dipresentasikan pengajar), tapi cuma sampai sesi yang
+// sudah berjalan: "Sesi 6 dari 16" → slide sesi 1–6 terbuka, sesi 7 dst. terkunci.
 
 import { useEffect, useMemo, useState } from 'react';
 import { supabase } from '@/lib/supabase-client';
-import { Calendar, Clock, Video, BookOpen, ExternalLink, Play, Lock } from 'lucide-react';
+import { Calendar, Clock, Video, BookOpen, ExternalLink, Play, Lock, Presentation } from 'lucide-react';
 import { studentRecordingHref, isInternalRecordingHref, isPlayableRecording } from '@/lib/classRoom';
 // [addon-akses-rekaman-v1] rekaman sesi = add-on berbayar; 'tidak' berarti admin
 // sudah mendata pembelian tambahannya dan Recording TIDAK dibeli.
@@ -26,8 +30,13 @@ import RecordingModal from './RecordingModal';
 import { detectKind, KIND_META, TeksMateriOverlay } from './ClassMateriTab';
 // [materi-slide-v1] Materi tanpa url (dek slide / teks AI) dibuka di tempat,
 // bukan sebagai tautan — lihat ItemRow.
-import { parseDeck } from '@/lib/materiSlides';
+import { parseDeck, type MateriSlide } from '@/lib/materiSlides';
 import { SlideDeckViewer } from '@/components/akun/SlideDeckViewer';
+import { loadSilabusLevel } from '@/lib/silabusSesi';
+import { loadDekSiswa, type DekSublevelSiswa } from '@/lib/dekSilabusSiswa';
+import { preloadDekSlides } from '@/lib/slideImageCache';
+import { languageSlug } from '@/lib/languageSlug';
+import { toLangCode } from '@/lib/quiz/language';
 import { getUiLang, tr, useT } from '@/lib/uiLang'; // [ui-lang-switcher-v1]
 
 export type TimelineSchedule = {
@@ -133,6 +142,35 @@ function ItemRow({ it }: { it: Item }) {
   );
 }
 
+/** [dek-siswa-v1] Tombol slide siap pakai satu sesi (gayanya sama dengan ItemRow). */
+function SlideSesiRow({ no, slides, judul, lang }: { no: number; slides: MateriSlide[]; judul?: string; lang?: string | null }) {
+  const t = useT();
+  const [buka, setBuka] = useState(false);
+  return (
+    <>
+      <button
+        type="button"
+        onClick={() => setBuka(true)}
+        onMouseEnter={() => preloadDekSlides(slides)}
+        onFocus={() => preloadDekSlides(slides)}
+        className="group flex w-full items-center gap-2.5 rounded-xl bg-[#F5F6F8] px-3 py-2.5 transition hover:bg-[#E8EAEE]"
+      >
+        <span className={`flex h-8 w-8 shrink-0 items-center justify-center rounded-lg ${KIND_META.ai_slides.cls}`}>
+          <Presentation className="h-4 w-4" strokeWidth={2} />
+        </span>
+        <span className="min-w-0 flex-1 text-left">
+          <span className="block truncate text-[13px] font-bold text-[#12172B]">{judul || `${t('Slide Materi')} · ${t('Sesi')} ${no}`}</span>
+          <span className="block truncate text-[11px] font-medium text-gray-500">{t('Slide Materi')} · {slides.length} {t('slide')}</span>
+        </span>
+        <Play className="h-3.5 w-3.5 shrink-0 text-gray-400 group-hover:text-[#16796E]" strokeWidth={2.2} />
+      </button>
+      {buka && (
+        <SlideDeckViewer slides={slides} lang={lang} title={judul || `${t('Sesi')} ${no}`} subtitle={`${t('Sesi')} ${no}`} onClose={() => setBuka(false)} />
+      )}
+    </>
+  );
+}
+
 export default function SesiTimeline({
   reg,
   schedules,
@@ -180,6 +218,24 @@ export default function SesiTimeline({
     return () => { alive = false; };
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [reg.id, variant, !!materiTetap]);
+
+  // [dek-siswa-v1] Silabus level (judul sesi + kode sublevel) → dek siap pakai.
+  const [judulSesi, setJudulSesi] = useState<string[]>([]);
+  const [dek, setDek] = useState<DekSublevelSiswa | null>(null);
+  useEffect(() => {
+    if (variant !== 'materi') return;
+    let alive = true;
+    setDek(null);
+    (async () => {
+      const sil = await loadSilabusLevel(reg?.language, reg?.level).catch(() => null);
+      if (!alive || !sil) return;
+      setJudulSesi((sil.sessions || []).map((s) => s?.title || ''));
+      const d = await loadDekSiswa(languageSlug(reg?.language), sil.code);
+      if (alive) setDek(d);
+    })();
+    return () => { alive = false; };
+  }, [variant, reg?.language, reg?.level]);
+  const langDek = toLangCode(reg?.language);
 
   // [materi-sesi-semua-kelas-v1] Kelas terdahulu (paket habis sebelum penjadwalan
   // masuk aplikasi) sering TAK punya satu pun baris `schedules` — sesinya cuma
@@ -313,6 +369,10 @@ export default function SesiTimeline({
               ? s.status === 'completed' || (past && s.status !== 'cancelled' && s.status !== 'hangus')
               : jenis === 'selesai-semu';
             const items = variant === 'materi' && s ? itemsOf(s) : [];
+            // [dek-siswa-v1] Terbuka = nomor sesinya sudah terlewati menurut angka
+            // "Sesi X dari Y" di atas. Dek pengajar yang tersimpan menang (tak dobel).
+            const dekSesi = variant === 'materi' && !items.some((it) => parseDeck(it.content)) ? dek?.[no] || null : null;
+            const slideTerbuka = !!dekSesi && no <= selesai;
             // di tab Sesi rekaman sudah punya tombol sendiri — chip ini cuma buat lampiran
             const jumlahMateri = Array.isArray(s?.material_links) ? s!.material_links!.length : 0;
             return (
@@ -365,10 +425,16 @@ export default function SesiTimeline({
                     )}
 
                     {variant === 'materi' && (
-                      items.length > 0 ? (
+                      items.length > 0 || slideTerbuka ? (
                         <div className="mt-2.5 grid grid-cols-1 gap-2 sm:grid-cols-2">
+                          {slideTerbuka && <SlideSesiRow no={no} slides={dekSesi!} judul={judulSesi[no - 1] || undefined} lang={langDek} />}
                           {items.map((it) => <ItemRow key={it.id} it={it} />)}
                         </div>
+                      ) : dekSesi ? (
+                        <p className="mt-2 inline-flex items-center gap-1.5 text-[12px] font-medium text-gray-400">
+                          <Lock className="h-3.5 w-3.5 shrink-0" strokeWidth={2.2} />
+                          {t('Slide materi terkunci')} · {t('Terbuka setelah sesi ini berjalan')}
+                        </p>
                       ) : (
                         <p className="mt-2 text-[12px] font-medium text-gray-400">{t('Belum ada materi untuk sesi ini')}</p>
                       )
