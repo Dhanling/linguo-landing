@@ -132,6 +132,8 @@ export function sendWaRef(code: string, extra: { session_id?: string; label?: st
       label: (extra.label || "").slice(0, 120),
       href: (extra.href || "").slice(0, 500),
       attribution: getAdAttribution(),
+      // [afiliator-wa-ref-v1] Cadangan kalau cookie linguo_ref tak terkirim.
+      affiliate_ref: affiliateRefFromStorage(),
     });
     const blob = new Blob([payload], { type: "application/json" });
     if (!navigator.sendBeacon("/api/track", blob)) {
@@ -145,6 +147,14 @@ export function sendWaRef(code: string, extra: { session_id?: string; label?: st
     (window as unknown as { clarity?: (...a: unknown[]) => void }).clarity?.("set", "wa_ref", code);
   } catch {
     /* abaikan */
+  }
+}
+
+function affiliateRefFromStorage(): string {
+  try {
+    return localStorage.getItem("linguo_ref") || "";
+  } catch {
+    return "";
   }
 }
 

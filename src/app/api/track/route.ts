@@ -14,6 +14,12 @@ function clampStr(v: unknown, max: number): string {
   return typeof v === "string" ? v.slice(0, max) : "";
 }
 
+function affiliateRef(req: NextRequest, fromBody: unknown): string | null {
+  const raw = req.cookies.get("linguo_ref")?.value || clampStr(fromBody, 32);
+  const code = raw.trim().toUpperCase();
+  return /^[A-Z0-9]{4,16}$/.test(code) ? code : null;
+}
+
 export async function POST(req: NextRequest) {
   try {
     const body = await req.json().catch(() => ({}));
@@ -53,6 +59,10 @@ export async function POST(req: NextRequest) {
           p_referrer: clampStr(a.referrer, 500) || null,
           p_ip: ip || null,
           p_user_agent: clampStr(req.headers.get("user-agent"), 400) || null,
+          // [afiliator-wa-ref-v1] Kode afiliator pengunjung ini (cookie dari
+          // middleware ?ref=, cadangan localStorage) → chat WA-nya tertaut ke
+          // afiliator, registrasinya terisi otomatis. sql/20261022_afiliator_wa_ref.sql.
+          p_affiliate_ref: affiliateRef(req, body.affiliate_ref),
         }),
         signal: AbortSignal.timeout(4000),
       });
