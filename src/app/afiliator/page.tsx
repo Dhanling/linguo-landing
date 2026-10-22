@@ -47,6 +47,7 @@ import { toast } from "sonner";
 import KomisiKalkulator from "@/components/afiliator/KomisiKalkulator";
 import { PRODUCTS, TIERS } from "@/lib/affiliate-komisi";
 
+import { AFFILIATE_NICHES, MAX_AFFILIATE_NICHES } from "@/lib/affiliate-niche";
 const DASHBOARD_URL = "/akun/afiliator";
 
 type FormState = {
@@ -57,6 +58,7 @@ type FormState = {
   tiktok_handle: string;
   followers: string;
   motivation: string;
+  niche: string[];
 };
 
 const EMPTY: FormState = {
@@ -67,6 +69,7 @@ const EMPTY: FormState = {
   tiktok_handle: "",
   followers: "",
   motivation: "",
+  niche: [],
 };
 
 // ── Content config ───────────────────────────────────────────────────────────
@@ -212,7 +215,7 @@ export default function AfiliatorSignupPage() {
   const [error, setError] = useState<string | null>(null);
   const [done, setDone] = useState(false);
 
-  function set<K extends keyof FormState>(key: K, val: string) {
+  function set<K extends keyof FormState>(key: K, val: FormState[K]) {
     setForm((f) => ({ ...f, [key]: val }));
   }
 
@@ -311,6 +314,7 @@ export default function AfiliatorSignupPage() {
           tiktok_handle: form.tiktok_handle,
           followers: form.followers,
           motivation: form.motivation,
+          niche: form.niche,
         }),
       });
       const json = await res.json().catch(() => ({}));
@@ -851,6 +855,31 @@ export default function AfiliatorSignupPage() {
                                   </div>
                                 </Field>
                               </div>
+                              <Field label={`Jenis konten kamu (maks. ${MAX_AFFILIATE_NICHES})`}>
+                                <div className="flex flex-wrap gap-2">
+                                  {AFFILIATE_NICHES.map((n) => {
+                                    const on = form.niche.includes(n);
+                                    const full = !on && form.niche.length >= MAX_AFFILIATE_NICHES;
+                                    return (
+                                      <button
+                                        key={n}
+                                        type="button"
+                                        disabled={full}
+                                        onClick={() =>
+                                          set("niche", on ? form.niche.filter((x) => x !== n) : [...form.niche, n])
+                                        }
+                                        className={`rounded-full border px-3 py-1.5 text-xs font-medium transition ${
+                                          on
+                                            ? "border-[#1A9E9E] bg-[#1A9E9E] text-white"
+                                            : "border-slate-200 bg-slate-50 text-slate-600 hover:border-[#1A9E9E]/50"
+                                        } ${full ? "cursor-not-allowed opacity-40" : ""}`}
+                                      >
+                                        {n}
+                                      </button>
+                                    );
+                                  })}
+                                </div>
+                              </Field>
                               <Field label="Perkiraan total followers">
                                 <input
                                   type="number"

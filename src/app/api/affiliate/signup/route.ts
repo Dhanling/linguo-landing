@@ -19,6 +19,7 @@
 // ============================================================================
 
 import { NextRequest, NextResponse } from "next/server";
+import { AFFILIATE_NICHES, MAX_AFFILIATE_NICHES } from "@/lib/affiliate-niche";
 import { createClient } from "@supabase/supabase-js";
 
 const SUPABASE_URL = process.env.NEXT_PUBLIC_SUPABASE_URL!;
@@ -66,6 +67,9 @@ export async function POST(req: NextRequest) {
       .trim()
       .replace(/^@/, "");
     const motivation = String(body.motivation || "").trim();
+    const niche = (Array.isArray(body.niche) ? body.niche : [])
+      .filter((n: unknown): n is string => (AFFILIATE_NICHES as readonly string[]).includes(String(n)))
+      .slice(0, MAX_AFFILIATE_NICHES);
 
     // ── 2. Validate required fields ──────────────────────────────────────
     if (name.length < 2) {
@@ -129,24 +133,27 @@ export async function POST(req: NextRequest) {
     let inserted: { id: string; referral_code: string } | null = null;
     for (let attempt = 0; attempt < 6; attempt++) {
       const code = makeCode();
-      const { data, error } = await admin
-        .from("affiliates")
-        .insert({
-          referral_code: code,
-          name,
-          email,
-          whatsapp,
-          ig_handle: igHandle || null,
-          tiktok_handle: tiktokHandle || null,
-          followers,
-          motivation: motivation || null,
-          tier: "standard",
-          status: "pending_review",
-          source: "self_signup",
-          user_id: null,
-        })
-        .select("id, referral_code")
-        .single();
+      const row: Record<string, unknown> = {
+        referral_code: code,
+        name,
+        email,
+        whatsapp,
+        ig_handle: igHandle || null,
+        tiktok_handle: tiktokHandle || null,
+        followers,
+        motivation: motivation || null,
+        tier: "standard",
+        status: "pending_review",
+        source: "self_signup",
+        user_id: null,
+      };
+      if (niche.length) row.niche = niche;
+      let { data, error } = await admin.from("affiliates").insert(row).select("id, referral_code").single();
+      // Kolom niche belum dibuat (sql/affiliates_niche_20261022.sql di dashboard) → simpan tanpa niche.
+      if (error && row.niche && /niche/i.test(error.message || "")) {
+        delete row.niche;
+        ({ data, error } = await admin.from("affiliates").insert(row).select("id, referral_code").single());
+      }
 
       if (!error && data) {
         inserted = data as { id: string; referral_code: string };
