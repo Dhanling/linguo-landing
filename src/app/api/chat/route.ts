@@ -557,12 +557,11 @@ const todayWIB = todayWIBISO;
 // linguo-app/suggest-reply, linguo-wa-bot/db.js, linguo-landing chat route &
 // linguo-admin-dashboard (mirror).
 const LATE_JOIN_LANGS: string[] = [];
-// 23 Sep 2026: gelombang OKTOBER 2026 dibuka. Bahasa, hari & jam persis sama
-// dengan batch September, tanggalnya digeser tepat 4 minggu (kelas 12–18 Okt),
-// pendaftaran tutup H-1 kelas pertama tiap bahasa (11–17 Okt, closes_at
-// regular_batches). Penanda PENDAFTARAN DIPERPANJANG di batchTag tetap generik:
-// dia menyala untuk batch mana pun yang closes_at-nya masih ke depan.
-const NEXT_REGULER_BATCH = "Oktober 2026 — pendaftarannya SUDAH DIBUKA sekarang (kelas mulai 12–18 Oktober 2026, bahasa/hari/jamnya sama persis dengan batch September; pendaftaran tiap bahasa ditutup H-1 sebelum kelas pertamanya, 11–17 Oktober 2026 — batas daftar persisnya ada di penanda [PENDAFTARAN], hari & jamnya ada di blok JADWAL BATCH REGULER)";
+// 22 Okt 2026: gelombang OKTOBER 2026 sudah mulai (Mandarin & Jerman 22 Okt,
+// Prancis 25 Okt); gelombang berikutnya belum dirilis. Perbarui teks ini tiap
+// gelombang baru dibuka. Penanda PENDAFTARAN DIPERPANJANG di batchTag tetap
+// generik: dia menyala untuk batch mana pun yang closes_at-nya masih ke depan.
+const NEXT_REGULER_BATCH = "berikutnya (setelah gelombang Oktober 2026) — hari, jam & tanggal mulainya BELUM DIRILIS; biasanya diumumkan menjelang pendaftaran dibuka, jadi tawarkan untuk dikabari begitu jadwalnya keluar";
 
 /** Batch Reguler bahasa ini masih boleh disusul walau kelasnya sudah mulai? */
 function acceptsLateJoin(language: unknown): boolean {
@@ -800,21 +799,27 @@ async function getScheduleBlock(): Promise<string> {
     const etpLive = resolveEtpBatches(etp as never, today);
     // Batch penuh TETAP dicantumkan (bertanda [KUOTA: PENUH ...]) — dulu dibuang,
     // akibatnya kalau ditanya batch itu AI jawab "belum dibuka" padahal penuh.
-    // Siklus lama yang pendaftarannya sudah tutup dibuang KALAU bahasa+levelnya
-    // sudah punya batch penerus yang masih buka — penyaringan yang sama dipakai
-    // halaman /jadwal-kelas-reguler, biar daftar Ling tidak beda dengan landing.
+    // [jadwal-batch-terbaru-v1] Per bahasa+level hanya batch TERBARU (plus yang
+    // pendaftarannya masih buka) — siklus lama dibuang walau batch penerusnya
+    // sudah tutup juga. Penyaringan yang sama dipakai halaman
+    // /jadwal-kelas-reguler, biar daftar Ling tidak beda dengan landing.
     // closes_at menang kalau diisi — batch yang pendaftarannya diperpanjang tetap
     // dihitung buka walau kelasnya sudah mulai (sama dengan masihBuka di page.tsx).
     const regBuka = (b: any) =>
       b.closes_at
         ? new Date(b.closes_at).getTime() >= Date.now()
         : String(b.start_date).slice(0, 10) >= today;
-    const adaPenerus = new Set(
-      (reg || []).filter(regBuka).map((b: any) => `${b.language}|${b.level}`)
-    );
+    const terbaru: Record<string, string> = {};
+    for (const b of (reg || []) as any[]) {
+      const k = `${b.language}|${b.level}`;
+      if (!terbaru[k] || String(b.start_date) > terbaru[k]) terbaru[k] = String(b.start_date);
+    }
     const regHidup = (reg || []).filter(
-      (b: any) => regBuka(b) || !adaPenerus.has(`${b.language}|${b.level}`)
+      (b: any) => regBuka(b) || String(b.start_date) === terbaru[`${b.language}|${b.level}`]
     );
+    const regDibuka = regHidup
+      .filter((b: any) => regBuka(b) && !isFull(b.actual_enrolled, b.max_capacity))
+      .map((b: any) => `${langLabel(b.language)} ${b.level}`);
     const regLines = regHidup.map((b: any) => {
       const t1 = (b.session_start_time || "").slice(0, 5).replace(":", ".");
       const t2 = (b.session_end_time || "").slice(0, 5).replace(":", ".");
@@ -839,7 +844,14 @@ async function getScheduleBlock(): Promise<string> {
 
     const parts: string[] = [`TANGGAL HARI INI: ${fmtDateID(today)} (WIB)`];
     if (regLines.length) {
-      parts.push("JADWAL BATCH REGULER (sumber sama persis dgn halaman linguo.id/jadwal-kelas-reguler):\n" + regLines.join("\n"));
+      parts.push(
+        "JADWAL BATCH REGULER (sumber sama persis dgn halaman linguo.id/jadwal-kelas-reguler):\n" +
+          (regDibuka.length
+            ? `YANG MASIH BISA DIDAFTAR HARI INI HANYA: ${regDibuka.join(", ")}. Batch bahasa lain di bawah pendaftarannya SUDAH DITUTUP.\n`
+            : "SAAT INI TIDAK ADA batch Reguler yang masih menerima pendaftaran — semua di bawah SUDAH DITUTUP.\n") +
+          "Baca tiap baris sendiri-sendiri: tanggal, kuota & batas daftar milik bahasa di baris itu, JANGAN dipindah ke bahasa lain.\n" +
+          regLines.join("\n")
+      );
     }
     if (etpLines.length) {
       parts.push("JADWAL BATCH ETP / TEST PREP (TOEFL & IELTS Prep group) — tab ETP di linguo.id/jadwal-kelas-reguler:\n" + etpLines.join("\n"));

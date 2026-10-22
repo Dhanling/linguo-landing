@@ -63,10 +63,11 @@ async function getBatches() {
   // Pendaftaran reguler hanya dibuka untuk bahasa di REGULER_LANGS.
   const rows = (data || []).filter((b: any) => b.actual_enrolled < b.max_capacity && isRegulerLang(b.language));
 
-  // Siklus lama (mis. AUG26) kadang masih `is_published` walau kelasnya sudah
-  // jalan. Batch semacam itu cuma berguna kalau bahasanya belum punya batch
-  // penerus — begitu siklus baru terbit, yang lama disembunyikan biar daftarnya
-  // tidak penuh kartu "Pendaftaran ditutup".
+  // Siklus lama (mis. AUG26/SEP26) masih `is_published` selama kelasnya jalan.
+  // Per bahasa+level hanya batch TERBARU yang tampil (plus yang pendaftarannya
+  // masih buka) — siklus lama disembunyikan walau batch penerusnya juga sudah
+  // tutup, biar daftarnya tidak penuh baris "Pendaftaran ditutup"
+  // [jadwal-batch-terbaru-v1].
   // Tanggal dibanding dalam WIB — server Vercel jalan di UTC, kalau pakai jam
   // server batch yang mulai hari ini bisa hilang sejak pukul 07.00 WIB.
   const hariIni = todayWIBISO();
@@ -76,12 +77,14 @@ async function getBatches() {
     if (b.closes_at) return new Date(b.closes_at).getTime() >= Date.now();
     return String(b.start_date).slice(0, 10) >= hariIni;
   };
-  const adaPenerus = new Set(
-    rows.filter(masihBuka).map((b: any) => `${b.language}|${b.level}`)
-  );
+  const terbaru: Record<string, string> = {};
+  for (const b of (data || []) as any[]) {
+    const k = `${b.language}|${b.level}`;
+    if (!terbaru[k] || String(b.start_date) > terbaru[k]) terbaru[k] = String(b.start_date);
+  }
 
   return rows.filter(
-    (b: any) => masihBuka(b) || !adaPenerus.has(`${b.language}|${b.level}`)
+    (b: any) => masihBuka(b) || String(b.start_date) === terbaru[`${b.language}|${b.level}`]
   );
 }
 
