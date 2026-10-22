@@ -33,11 +33,12 @@ import { LANG_SEARCH_ALIAS } from "@/lib/langAlias";
  *  belum jadi pilihan funnel — jangan ditambah ke sini sebelum halaman
  *  /kursus & kategori harganya ada. */
 export const REGULER_LANGS = [
-  "Mandarin", "German", "French",
+  "English", "Mandarin", "Japanese", "Korean", "Arabic",
+  "French", "German", "Italian", "Dutch", "Spanish", "Tagalog",
 ];
-// 15 Okt 2026: Reguler dipersempit ke 3 bahasa (peminat bahasa lain masih
-// sedikit). Bahasa lain (English, Japanese, Korean, dst.) ditutup dari
-// pendaftaran — kembalikan ke daftar di atas kalau batch dibuka lagi.
+// 15 Okt 2026 sempat dipersempit ke Mandarin/Jerman/Prancis; 22 Okt dibuka lagi
+// untuk gelombang NOV26 [reguler-nov26-buka-semua-v1]. Menutup satu bahasa cukup
+// sembunyikan batch-nya di dashboard (is_published) — regulerOpen.ts membaca DB.
 
 // ── Normalisasi nama bahasa ─────────────────────────────────────────────────
 // Nama bahasa masuk ke sini dalam banyak bentuk: nama Inggris dari funnel
