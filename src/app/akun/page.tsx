@@ -607,6 +607,111 @@ function RegulerTermsBox({ checked, onChange }: { checked: boolean; onChange: (v
   );
 }
 
+// [akun-email-lain-v1] Laporan Faujiah db6f7259 (21 Okt 2026): siswa yang didaftarkan
+// admin dengan email A tapi masuk /akun pakai email B tidak menemukan kelasnya dan
+// malah dioper ke onboarding. Nomor WA-nya biasanya sama — dari situ email yang benar
+// ditunjukkan (tersamar, lihat /api/akun-email-lain) sebelum siswa mendaftar ulang.
+type AkunLain = { email: string; kelas: string[] };
+async function cariAkunLain(wa: string): Promise<AkunLain[]> {
+  try {
+    const { data: { session } } = await supabase.auth.getSession();
+    if (!session) return [];
+    const res = await fetch("/api/akun-email-lain", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ accessToken: session.access_token, wa }),
+    });
+    const j = await res.json().catch(() => null);
+    return Array.isArray(j?.akun) ? j.akun : [];
+  } catch { return []; }
+}
+
+function KartuAkunLain({ akun, emailSekarang }: { akun: AkunLain[]; emailSekarang?: string }) {
+  const [keluar, setKeluar] = useState(false);
+  if (!akun.length) return null;
+  return (
+    <div className="mb-3 rounded-2xl border border-amber-200 bg-amber-50 p-4 text-left">
+      <div className="flex items-start gap-2.5">
+        <AlertTriangle className="mt-0.5 h-4 w-4 shrink-0 text-amber-600" />
+        <div className="min-w-0 text-sm text-amber-900">
+          <p className="font-bold">Kamu sudah terdaftar di Linguo</p>
+          {akun.map((a) => (
+            <p key={a.email} className="mt-1">
+              {a.kelas.length ? <>Kelas <b>{a.kelas.join(", ")}</b> tercatat </> : "Akunmu tercatat "}
+              pakai email <b className="break-all">{a.email}</b>.
+            </p>
+          ))}
+          <p className="mt-1 text-amber-800">
+            Sekarang kamu masuk pakai <b className="break-all">{emailSekarang || "email lain"}</b>, jadi kelasnya belum kelihatan.
+            Keluar lalu masuk lagi pakai email di atas — dashboard &amp; kelasmu langsung muncul, tanpa daftar ulang.
+          </p>
+          <button
+            type="button"
+            disabled={keluar}
+            onClick={async () => {
+              setKeluar(true);
+              try { await supabase.auth.signOut(); } catch {}
+              window.location.href = "/akun";
+            }}
+            className="mt-3 w-full rounded-xl bg-amber-600 py-2.5 text-sm font-bold text-white transition hover:bg-amber-700 disabled:opacity-60">
+            {keluar ? "Keluar…" : "Keluar & masuk pakai email itu"}
+          </button>
+          <a href={`https://wa.me/6282116859493?text=${encodeURIComponent(`Halo admin Linguo, saya sudah terdaftar tapi lupa email yang dipakai. Saya sekarang login pakai ${emailSekarang || "-"}.`)}`}
+            target="_blank" rel="noopener noreferrer"
+            className="mt-2 block text-center text-xs font-semibold text-amber-700 underline">
+            Lupa emailnya / tak bisa masuk? Chat admin
+          </a>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+/** Tautan kecil di langkah pertama onboarding: cek kelas lewat nomor WA. */
+function CekKelasEmailLain({ emailSekarang }: { emailSekarang?: string }) {
+  const [buka, setBuka] = useState(false);
+  const [nomor, setNomor] = useState("");
+  const [cek, setCek] = useState<"idle" | "jalan" | "kosong">("idle");
+  const [akun, setAkun] = useState<AkunLain[]>([]);
+  if (akun.length) return <KartuAkunLain akun={akun} emailSekarang={emailSekarang} />;
+  if (!buka) {
+    return (
+      <button type="button" onClick={() => setBuka(true)}
+        className="mx-auto mb-4 block text-xs font-semibold text-teal-700 underline underline-offset-2">
+        Sudah didaftarkan admin / sudah bayar kelas? Cek kelasmu di sini
+      </button>
+    );
+  }
+  const jalankan = async () => {
+    if (nomor.replace(/\D/g, "").length < 9) return;
+    setCek("jalan");
+    const hasil = await cariAkunLain(nomor);
+    setAkun(hasil);
+    setCek(hasil.length ? "idle" : "kosong");
+  };
+  return (
+    <div className="mb-4 rounded-2xl bg-white p-4 text-left shadow-sm ring-1 ring-slate-100">
+      <p className="text-sm font-semibold text-gray-800">Nomor WhatsApp yang kamu pakai waktu daftar</p>
+      <div className="mt-2 flex gap-2">
+        <input value={nomor} onChange={(e) => { setNomor(e.target.value); setCek("idle"); }} inputMode="numeric"
+          placeholder="0812 3456 7890" onKeyDown={(e) => { if (e.key === "Enter") void jalankan(); }}
+          className="min-w-0 flex-1 rounded-xl border border-gray-200 px-3 py-2 text-sm outline-none focus:border-gray-300" />
+        <button type="button" onClick={() => void jalankan()} disabled={cek === "jalan"}
+          className="shrink-0 rounded-xl bg-teal-600 px-4 py-2 text-sm font-bold text-white disabled:opacity-60">
+          {cek === "jalan" ? "…" : "Cek"}
+        </button>
+      </div>
+      {cek === "kosong" && (
+        <p className="mt-2 text-xs text-gray-500">
+          Belum ada kelas lain yang tercatat dengan nomor ini. Kalau kamu yakin sudah terdaftar,{" "}
+          <a className="font-semibold text-teal-700 underline" target="_blank" rel="noopener noreferrer"
+            href={`https://wa.me/6282116859493?text=${encodeURIComponent(`Halo admin Linguo, saya sudah terdaftar tapi kelasnya tidak muncul di dashboard. Saya login pakai ${emailSekarang || "-"}.`)}`}>chat admin</a>.
+        </p>
+      )}
+    </div>
+  );
+}
+
 function OnboardingWizard({ user, studentId, onDone }: {
   user: any; studentId?: string; onDone: (data: {program: string; lang: string; testType: string; exp: string; wa: string; name: string; birthdate: string; domicile: string; level: string; avatarFile?: File | null}) => void;
 }) {
@@ -651,6 +756,15 @@ function OnboardingWizard({ user, studentId, onDone }: {
   const waDigits = wa.replace(/\D/g, "");
   const waNorm = waDigits.startsWith("0") ? "62" + waDigits.slice(1) : waDigits.startsWith("8") ? "62" + waDigits : waDigits;
   const waValid = waNorm.startsWith("62") && waNorm.length >= 10 && waNorm.length <= 15;
+  // [akun-email-lain-v1] Nomor yang sudah dipakai siswa ber-email lain → tunjukkan dulu.
+  const [akunLain, setAkunLain] = useState<AkunLain[]>([]);
+  useEffect(() => {
+    setAkunLain([]);
+    if (!waValid) return;
+    let batal = false;
+    const t = setTimeout(() => { void cariAkunLain(waNorm).then((a) => { if (!batal) setAkunLain(a); }); }, 600);
+    return () => { batal = true; clearTimeout(t); };
+  }, [waNorm, waValid]);
   const profileValid = name.trim().length >= 2 && waValid && !!birthdate && domicileValid;
   const missing: string[] = [];
   if (name.trim().length < 2) missing.push("Nama lengkap");
@@ -741,6 +855,7 @@ function OnboardingWizard({ user, studentId, onDone }: {
                   </div>
                 ))}
               </div>
+              <CekKelasEmailLain emailSekarang={user?.email} />
               <button onClick={() => setStep(1)} className="w-full bg-teal-600 hover:bg-teal-700 text-white font-bold py-4 rounded-2xl text-base transition-all shadow-md shadow-teal-200 active:scale-[0.98]">
                 Mulai Setup →
               </button>
@@ -981,6 +1096,7 @@ function OnboardingWizard({ user, studentId, onDone }: {
 
                 {/* Nomor WhatsApp — prefix bendera + +62 (inline sebaris) */}
                 <div>
+                  <KartuAkunLain akun={akunLain} emailSekarang={user?.email} />
                   <label className="text-xs text-gray-500 mb-1 block">Nomor WhatsApp aktif</label>
                   <div className={`flex items-stretch overflow-hidden rounded-xl border bg-white focus-within:border-gray-300 ${triedNext && !waValid ? "border-red-300" : "border-gray-200"}`}>
                     <span className="flex shrink-0 items-center gap-1.5 whitespace-nowrap border-r border-gray-200 bg-gray-50 px-3 text-sm font-semibold text-gray-600">
