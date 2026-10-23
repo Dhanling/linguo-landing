@@ -3,7 +3,6 @@
 "use client";
 
 import { Fragment, useState, useMemo, useEffect } from "react";
-import { useSearchParams } from "next/navigation";
 import { motion, AnimatePresence } from "framer-motion";
 import {
   Search, Calendar, Clock, Users, MessageCircle,
@@ -13,8 +12,12 @@ import {
   Trophy, BarChart3, FileText, Globe,
   ArrowUpDown, ArrowUp, ArrowDown,
 } from "lucide-react";
-import { resolveFlag } from "@blade-flags/core";
-import { defaultFlags } from "@blade-flags/core/flags/default";
+// [perf:jadwal-flags-subset-v1] Dulu set lengkap blade-flags (265 negara, 324 KB
+// gzip) diimpor statis di sini → wajib diunduh & di-parse sebelum halaman bisa
+// hydrate; di HP itu penyebab utama LCP ±5 dtk. Halaman ini cuma butuh ±11
+// bendera, semuanya ada di subset beranda; kode lain jatuh ke RectFlag lazy.
+import { HOME_FLAGS } from "@/lib/flags/homeFlags";
+import { RectFlag as RectFlagLazy } from "@/components/RectFlag";
 import Link from "next/link";
 import RegisterRegulerModal from "@/components/RegisterRegulerModal";
 import RegisterEtpModal from "@/components/RegisterEtpModal";
@@ -87,7 +90,7 @@ interface EtpProgram {
 // di DB regular_batches.language) + alias Indonesia. Lookup via getFlagCode() yang
 // dinormalisasi (lowercase, buang non-huruf) supaya "English Conversation" /
 // "english-conversation" sama-sama match. Bendera dirender pakai SVG blade-flags
-// (komponen RectFlag) — konsisten dgn landing, bukan emoji lagi.
+// (subset HOME_FLAGS, komponen RectFlag) — konsisten dgn landing, bukan emoji lagi.
 const LANGUAGE_CODES: Record<string, string> = {
   // English (DB canonical)
   "english conversation": "gb",
@@ -128,7 +131,8 @@ function getFlagCode(lang: string): string {
 // hitung dimensi eksplisit dari viewBox (aspect ratio dijaga). Tinggi lewat prop `h`.
 // Kalau kode kosong / bendera ga ketemu → fallback ikon Globe (bukan emoji).
 function RectFlag({ code, h = 20, className = "" }: { code: string; h?: number; className?: string }) {
-  const svg = code ? resolveFlag(defaultFlags, code, "country") : null;
+  const svg = code ? HOME_FLAGS[code] : null;
+  if (!svg && code) return <RectFlagLazy code={code} h={h} className={className} />;
   if (!svg) return <Globe aria-hidden style={{ height: h, width: h }} className={`text-slate-400 shrink-0 ${className}`} />;
   const m = svg.match(/viewBox="([\d.\s-]+)"/);
   let w = Math.round((h * 36) / 26);
@@ -318,6 +322,11 @@ function buildNextBatchWALink(): string {
   return `https://wa.me/${WA_NUMBER}?text=${encodeURIComponent(text)}`;
 }
 
+function buildAskWALink(): string {
+  const text = `Halo Linguo! Saya lihat jadwal Kelas Reguler di website. Mau tanya bahasa, jadwal & cara daftarnya.`;
+  return `https://wa.me/${WA_NUMBER}?text=${encodeURIComponent(text)}`;
+}
+
 function buildWAMessage(batch: Batch): string {
   const text = [
     `Halo Linguo! Saya tertarik mendaftar Kelas Reguler:`,
@@ -376,10 +385,14 @@ export default function JadwalKelasRegulerClient({
   batches: Batch[];
   etpBatches: EtpBatchRow[];
 }) {
-  const searchParams = useSearchParams();
-  const [activeTab, setActiveTab] = useState<Tab>(
-    searchParams.get("tab") === "etp" ? "etp" : "reguler"
-  );
+  // [perf:jadwal-ssr-v1] Dulu tab awal dibaca lewat useSearchParams() → Next
+  // membatalkan SSR seluruh komponen (BAILOUT_TO_CLIENT_SIDE_RENDERING): HTML cuma
+  // <div> kosong dan di HP halaman baru tampil setelah semua JS jalan (LCP ±5 dtk).
+  // Sekarang HTML dirender server dengan tab Reguler; ?tab=etp dibaca sesudah mount.
+  const [activeTab, setActiveTab] = useState<Tab>("reguler");
+  useEffect(() => {
+    if (new URLSearchParams(window.location.search).get("tab") === "etp") setActiveTab("etp");
+  }, []);
   const [search, setSearch] = useState("");
   const [selectedLang, setSelectedLang] = useState<string>("all");
   // null = urutan bawaan (rekomendasi): slot terbanyak dulu, lalu A–Z.
@@ -537,9 +550,11 @@ export default function JadwalKelasRegulerClient({
       </div>
 
       {/* ── HERO ── */}
-      <section className="relative px-4 pt-6 pb-8 md:pt-10 md:pb-12 max-w-6xl mx-auto">
+      {/* [perf:jadwal-hero-tanpa-fade-v1] Hero dulu motion.div opacity 0 → judul
+          (elemen LCP) baru tampil sesudah JS hydrate. Sekarang tampil dari HTML. */}
+      <section className="relative px-4 pt-4 pb-5 md:pt-10 md:pb-10 max-w-6xl mx-auto">
         <div className="text-center">
-          <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5 }}>
+          <div>
             <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-teal-100 text-teal-800 text-xs font-semibold mb-4">
               <Calendar className="h-3.5 w-3.5" />
               Jadwal Kelas Linguo
@@ -550,7 +565,29 @@ export default function JadwalKelasRegulerClient({
             <p className="text-base md:text-lg text-slate-600 max-w-2xl mx-auto">
               Pilih program yang sesuai: Kelas Reguler untuk belajar bahasa baru, atau ETP untuk persiapan sertifikasi TOEFL & IELTS.
             </p>
-          </motion.div>
+            {/* [jadwal-cta-atas-v1] 747 sesi/30 hari mendarat di sini tapi CTA baru
+                ada di banner & tabel di bawah. Dua jalur langsung di atas fold. */}
+            <div className="mt-5 flex flex-col sm:flex-row items-stretch sm:items-center justify-center gap-2.5 max-w-sm sm:max-w-none mx-auto">
+              <a
+                href="#jadwal"
+                data-track="Hero Jadwal: Lihat Jadwal"
+                className="inline-flex items-center justify-center gap-2 h-11 px-5 rounded-xl bg-teal-600 text-white text-sm font-bold hover:bg-teal-700 transition-colors"
+              >
+                <CalendarDays className="h-4 w-4" />
+                Lihat Jadwal &amp; Daftar
+              </a>
+              <a
+                href={buildAskWALink()}
+                target="_blank"
+                rel="noopener noreferrer"
+                data-track="Hero Jadwal: Tanya via WhatsApp"
+                className="inline-flex items-center justify-center gap-2 h-11 px-5 rounded-xl border border-teal-600 text-teal-700 bg-white text-sm font-bold hover:bg-teal-50 transition-colors"
+              >
+                <MessageCircle className="h-4 w-4" />
+                Tanya via WhatsApp
+              </a>
+            </div>
+          </div>
         </div>
       </section>
 
@@ -641,7 +678,7 @@ export default function JadwalKelasRegulerClient({
       )}
 
       {/* ── TAB SWITCHER ── */}
-      <section className="px-4 pb-6 max-w-6xl mx-auto">
+      <section id="jadwal" className="px-4 pb-6 max-w-6xl mx-auto scroll-mt-20">
         <div className="flex gap-2 bg-slate-100 p-1 rounded-xl w-fit mx-auto">
           <button
             onClick={() => setActiveTab("reguler")}

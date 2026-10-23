@@ -16,6 +16,7 @@ import { PROMO, promoWaUrl } from "@/lib/promoMerdeka";
 import { formatRp } from "@/lib/simulasiPakets";
 import { withAdAttribution } from "@/lib/adAttribution";
 import { useOverlayLock } from "@/lib/overlayStore";
+import { trackConversion } from "@/components/AnalyticsTracker";
 
 const OPEN_EVENT = "linguo:promo-lead-open";
 
@@ -121,6 +122,7 @@ export default function PromoLeadModal() {
     if (typeof window !== "undefined" && (window as any).gtag) {
       (window as any).gtag("event", "promo_merdeka_lead", { value: PROMO.price });
     }
+    trackConversion("form", "Promo lead");
 
     const url = promoWaUrl({ name, email });
     if (waTab) waTab.location.href = url;

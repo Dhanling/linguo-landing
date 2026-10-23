@@ -71,6 +71,39 @@ function tagWaAnchor(target: EventTarget | null): HTMLAnchorElement | null {
   return a;
 }
 
+function beacon(payload: string) {
+  try {
+    const blob = new Blob([payload], { type: "application/json" });
+    if (!navigator.sendBeacon("/api/track", blob)) {
+      fetch("/api/track", { method: "POST", body: payload, keepalive: true });
+    }
+  } catch {
+    // diamkan — analytics tak boleh ganggu UX
+  }
+}
+
+// [landing-konversi-v1] Konversi nyata, bukan sekadar klik: "form" = data diri
+// lolos validasi, "invoice" = invoice Xendit berhasil dibuat (tepat sebelum
+// redirect — sendBeacon tetap terkirim walau halaman ditinggal). Masuk tabel
+// landing_click_events dengan kind tersendiri, jadi bisa dihitung per sesi
+// terhadap landing_page_events tanpa DDL baru.
+export function trackConversion(kind: "form" | "invoice", label: string) {
+  try {
+    const path = location.pathname;
+    beacon(JSON.stringify({
+      type: "click",
+      session_id: getSessionId(),
+      path,
+      label: label.replace(/\s+/g, " ").trim().slice(0, 120),
+      href: "",
+      kind,
+      device: getDevice(),
+    }));
+  } catch {
+    // idem
+  }
+}
+
 function sendClick(target: EventTarget | null) {
   const el = (target as HTMLElement | null)?.closest?.("a, button, [role='button']") as HTMLElement | null;
   if (!el) return;
@@ -93,14 +126,7 @@ function sendClick(target: EventTarget | null) {
     kind: classifyClick(el, href, label),
     device: getDevice(),
   });
-  try {
-    const blob = new Blob([payload], { type: "application/json" });
-    if (!navigator.sendBeacon("/api/track", blob)) {
-      fetch("/api/track", { method: "POST", body: payload, keepalive: true });
-    }
-  } catch {
-    // diamkan — analytics tak boleh ganggu UX
-  }
+  beacon(payload);
   const code = href ? codeInWaUrl(href) : null;
   if (code) sendWaRef(code, { session_id: getSessionId(), label, href });
 }

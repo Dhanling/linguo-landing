@@ -53,6 +53,7 @@ import {
   type FunnelRoute,
 } from "@/lib/funnelRouting";
 import PadananUjianBadge from "@/components/PadananUjianBadge"; // [padanan-ujian-v1]
+import { trackConversion } from "@/components/AnalyticsTracker";
 import {
   BackLink,
   Card,
@@ -310,6 +311,7 @@ export default function FunnelFlow({ route }: { route: FunnelRoute }) {
     if (typeof window !== "undefined" && (window as any).gtag) {
       (window as any).gtag("event", "funnel_form_submitted", { program, language: lang, level });
     }
+    trackConversion("form", `${program} · ${langLabel} ${level}`);
     router.push(buildFunnelPath({ langEn, programSlug, level, confirm: true }) + optionQuery());
   };
 
@@ -355,7 +357,11 @@ export default function FunnelFlow({ route }: { route: FunnelRoute }) {
           }),
         });
         const data = await res.json();
-        if (data.invoice_url) { window.location.href = data.invoice_url; return; }
+        if (data.invoice_url) {
+          trackConversion("invoice", `${program} · ${langLabel} ${level}`);
+          window.location.href = data.invoice_url;
+          return;
+        }
         setFormError(data.error || "Gagal membuat invoice. Silakan coba lagi.");
         setSaving(false);
         return;
@@ -388,7 +394,11 @@ export default function FunnelFlow({ route }: { route: FunnelRoute }) {
         }),
       });
       const data = await res.json();
-      if (res.ok && data?.invoice_url) { window.location.href = data.invoice_url; return; }
+      if (res.ok && data?.invoice_url) {
+        trackConversion("invoice", `${program} · ${langLabel} ${level}`);
+        window.location.href = data.invoice_url;
+        return;
+      }
       setFormError(data?.error || "Gagal memproses pembayaran. Coba lagi ya.");
       setSaving(false);
     } catch (e) {

@@ -28,6 +28,7 @@ import {
   validatePhoneWithCountry,
 } from "@/lib/phone";
 import type { CountryCode } from "libphonenumber-js";
+import { trackConversion } from "@/components/AnalyticsTracker";
 
 const TEAL = "#1A9E9E";
 const TEAL_DARK = "#178a8a";
@@ -436,6 +437,7 @@ export default function TrialWizard({
       });
       const data = await res.json();
       if (res.ok && data?.invoice_url) {
+        trackConversion("invoice", `Trial ${program} · ${language}`);
         window.location.href = data.invoice_url;
         return;
       }

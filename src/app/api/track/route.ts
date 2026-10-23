@@ -75,7 +75,8 @@ export async function POST(req: NextRequest) {
 
     // landing-klik-v1 — klik tombol/link masuk tabel terpisah, bukan dihitung view.
     if (body.type === "click") {
-      const KINDS = ["whatsapp", "cta", "nav", "outbound", "button"];
+      // [landing-konversi-v1] form/invoice = konversi dari trackConversion().
+      const KINDS = ["whatsapp", "cta", "nav", "outbound", "button", "form", "invoice"];
       const click = {
         session_id,
         path,

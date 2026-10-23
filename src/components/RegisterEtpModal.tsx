@@ -9,6 +9,7 @@
 
 import { useState, useEffect } from "react";
 import { X, Loader2, MessageCircle, Calendar, Clock, CalendarDays } from "lucide-react";
+import { trackConversion } from "@/components/AnalyticsTracker";
 
 const WA_NUMBER = "6282116859493";
 
@@ -131,6 +132,7 @@ export default function RegisterEtpModal({ program, onClose, prefill }: Props) {
         setSubmitting(false);
         return;
       }
+      trackConversion("invoice", `${ETP_PROGRAM} · ${program!.badge}`);
       // Redirect ke checkout Xendit
       window.location.href = data.invoice_url;
     } catch {

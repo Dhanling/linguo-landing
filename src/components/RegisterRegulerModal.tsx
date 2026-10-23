@@ -7,6 +7,7 @@
 
 import { useState, useEffect } from "react";
 import { X, Loader2, MessageCircle, Calendar, Clock, Check } from "lucide-react";
+import { trackConversion } from "@/components/AnalyticsTracker";
 
 const WA_NUMBER = "6282116859493";
 const TEAL = "#1A9E9E";
@@ -134,6 +135,7 @@ export default function RegisterRegulerModal({ batch, onClose }: Props) {
         setSubmitting(false);
         return;
       }
+      trackConversion("invoice", `Kelas Reguler · ${batch!.language} ${batch!.level}`);
       // Redirect ke checkout Xendit
       window.location.href = data.invoice_url;
     } catch (e) {
