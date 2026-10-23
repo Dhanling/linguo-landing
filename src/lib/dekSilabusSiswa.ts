@@ -1,3 +1,4 @@
+import { upgradeImagegenA2Cover } from '../data/imagegenA2Cover';
 // [dek-siswa-v1] Slide SIAP PAKAI per sesi silabus untuk siswa (tab Materi kelas).
 //
 // Dek-nya ditulis & dirakit di repo dashboard (src/data/dekSilabus → build
@@ -41,7 +42,7 @@ async function ambil(k: string): Promise<DekSublevelSiswa | null> {
       const s = normalizeSlide(r);
       if (!s) return;
       if (typeof r?.cover === 'string' && COVER_AMAN.test(r.cover) && !r.cover.includes('..')) {
-        s.cover = r.cover;
+        s.cover = upgradeImagegenA2Cover(r.cover) || undefined;
         if (r.ruang === 'kiri' && s.type !== 'title') s.ruang = 'kiri';
       }
       bersih.push(s);

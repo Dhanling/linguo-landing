@@ -1,4 +1,6 @@
 'use client';
+import { isImagegenA2GoalCover } from "../../data/imagegenA2Cover";
+
 
 // [materi-slide-v1] Penonton slide materi kelas — sisi SISWA.
 //
@@ -258,6 +260,7 @@ export function SlideBody({ s, kunci, lang }: { s: MateriSlide; kunci?: boolean;
      putih di dalamnya (putih di atas putih kehilangan bentuk). */
   const panel = !!s.cover;
   const kiriSaja = s.ruang === "kiri";
+  const ruangTeks = kiriSaja ? (isImagegenA2GoalCover(s.cover) ? "pr-[55cqw]" : "pr-[45cqw]") : "pr-[4cqw]";
   /* Slide yang isinya banyak dikecilkan sedikit supaya tetap muat tanpa gulir. */
   const n = s.items?.length || s.lines?.length || s.quiz?.length || s.examples?.length || s.points?.length || s.questions?.length || 0;
   /* [dialog-gulir-v1] Dialog tidak dikecilkan dan tidak dibagi dua kolom:
@@ -268,7 +271,7 @@ export function SlideBody({ s, kunci, lang }: { s: MateriSlide; kunci?: boolean;
     : n > 6 ? 0.88 : 1;
 
   return (
-    <div className={panel ? `h-full pb-[2.6cqh] pl-[4cqw] pt-[4.8cqh] ${kiriSaja ? "pr-[45cqw]" : "pr-[4cqw]"}` : "contents"}>
+    <div className={panel ? `h-full pb-[2.6cqh] pl-[4cqw] pt-[4.8cqh] ${ruangTeks}` : "contents"}>
     <div className={panel
       ? "flex h-full flex-col rounded-[2.2cqw] px-[2.8cqw] pb-[1.4cqh] pt-[2.6cqh]"
       : `flex h-full flex-col pb-[1.5cqh] pl-[6cqw] pt-[5cqh] ${kiriSaja ? "pr-[46cqw]" : "pr-[6cqw]"}`}
