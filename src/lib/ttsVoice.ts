@@ -161,6 +161,72 @@ export function namaVoiceGoogle2(kode?: string | null): string | null {
   return `${locale}-Chirp3-HD-${CHIRP_SPEAKER_2}`;
 }
 
+/* ── [tts-persona-v1] Pilihan suara pembicara listening (Kelas Video) ─────────
+   Permintaan owner 23 Okt 2026: pengajar memilih SIAPA yang berbicara di audio
+   listening — pria, wanita, remaja — dan aksennya (Amerika, Inggris, …).
+   Semua masih Google Chirp 3 HD: speaker yang sama tersedia di tiap locale, jadi
+   "aksen" cukup mengganti locale-nya (en-US → en-GB) dan "persona" mengganti
+   nama speaker-nya. Nama voice yang dihasilkan tetap `<locale>-Chirp3-HD-<Nama>`
+   dan langsung jadi folder cache di `tts-cache` — persona baru = cache sendiri.
+   Bahasa tanpa Chirp (Azure/eSpeak/override) mengabaikan persona & aksen.
+   Persona "pria" = Charon, sama persis dengan suara 2 lama → cache-nya dipakai
+   bersama. 🔴 KEMBAR di dua repo (landing & admin) — salin utuh. */
+export const PERSONA_SUARA: { id: string; label: string; speaker: string }[] = [
+  { id: "wanita", label: "Wanita", speaker: "Kore" },
+  { id: "pria", label: "Pria", speaker: "Charon" },
+  { id: "remaja-pi", label: "Remaja putri", speaker: "Leda" },
+  { id: "remaja-pa", label: "Remaja putra", speaker: "Puck" },
+  { id: "wanita-tua", label: "Wanita dewasa", speaker: "Gacrux" },
+  { id: "pria-tua", label: "Pria dewasa", speaker: "Algenib" },
+];
+
+/** Aksen per bahasa → locale Chirp 3 HD. Yang pertama = bawaan (sama dengan CHIRP_LOCALES). */
+export const AKSEN_SUARA: Record<string, { id: string; label: string; locale: string }[]> = {
+  en: [
+    { id: "us", label: "Amerika", locale: "en-US" },
+    { id: "gb", label: "Inggris (British)", locale: "en-GB" },
+    { id: "au", label: "Australia", locale: "en-AU" },
+    { id: "in", label: "India", locale: "en-IN" },
+  ],
+  es: [
+    { id: "es", label: "Spanyol", locale: "es-ES" },
+    { id: "us", label: "Amerika Latin", locale: "es-US" },
+  ],
+  fr: [
+    { id: "fr", label: "Prancis", locale: "fr-FR" },
+    { id: "ca", label: "Kanada", locale: "fr-CA" },
+  ],
+};
+
+/** Persona yang dikenal (selain itu → null). "2" = nama lama pembicara kedua (Charon). */
+export function personaSuara(id?: string | null) {
+  const k = String(id ?? "").trim().toLowerCase();
+  if (k === "2") return PERSONA_SUARA[1];
+  return PERSONA_SUARA.find((p) => p.id === k) ?? null;
+}
+
+/** Locale untuk aksen pilihan; aksen tak dikenal → locale bawaan bahasa itu. */
+export function localeAksen(kode?: string | null, aksen?: string | null): string | null {
+  const dasar = localeChirp(kode);
+  if (!dasar) return null;
+  const a = AKSEN_SUARA[kodeDasar(kode)]?.find((x) => x.id === String(aksen ?? "").trim().toLowerCase());
+  return a?.locale ?? dasar;
+}
+
+/**
+ * Nama voice Google untuk persona + aksen; null = pakai suara biasa
+ * (bahasa tanpa Chirp, persona tak dikenal). Persona bawaan (wanita) dengan
+ * aksen bawaan sengaja menghasilkan nama yang SAMA dengan namaVoiceGoogle,
+ * supaya cache lama tetap kena.
+ */
+export function namaVoicePersona(kode?: string | null, persona?: string | null, aksen?: string | null): string | null {
+  const p = personaSuara(persona);
+  const locale = localeAksen(kode, aksen);
+  if (!locale || VOICE_OVERRIDE[localeChirp(kode) as string] || VOICE_OVERRIDE[locale]) return null;
+  if (!p && !aksen) return null;
+  return `${locale}-Chirp3-HD-${(p ?? PERSONA_SUARA[0]).speaker}`;
+}
+
 /** Sama seperti cleanText di gen-vietnam-audio.mjs — buang anotasi "(...)" & "·".
  *  Teks yang MASUK ke kunci cache adalah hasil fungsi ini, bukan teks mentah. */
 export function bersihkanTeksTts(s: string): string {

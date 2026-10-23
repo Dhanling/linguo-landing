@@ -23,7 +23,7 @@ import os from "node:os";
 import path from "node:path";
 import {
   AZURE_FORMAT, AZURE_VOICES, BATAS_TEKS_TTS, BUCKET_TTS, ESPEAK_VOICES, bersihkanTeksTts,
-  jalurCacheTts, localeChirp, namaVoiceGoogle, namaVoiceGoogle2, penyediaTts,
+  jalurCacheTts, localeAksen, localeChirp, namaVoiceGoogle, namaVoicePersona, penyediaTts,
 } from "@/lib/ttsVoice";
 
 export const runtime = "nodejs";
@@ -224,7 +224,7 @@ async function keCache(jalur: string, base64: string) {
 /** Balasan rute ini: `abadi` menandai isi yang boleh disimpan CDN/browser. */
 type Hasil = { status: number; body: Record<string, unknown>; abadi?: boolean };
 
-async function sintesis(teksMentah: unknown, langMentah: unknown, suaraMentah?: unknown): Promise<Hasil> {
+async function sintesis(teksMentah: unknown, langMentah: unknown, suaraMentah?: unknown, aksenMentah?: unknown): Promise<Hasil> {
   const text = bersihkanTeksTts(String(teksMentah || "")).slice(0, BATAS_TEKS_TTS);
   if (!text) return { status: 400, body: { error: "text kosong" } };
 
@@ -256,15 +256,21 @@ async function sintesis(teksMentah: unknown, langMentah: unknown, suaraMentah?: 
   // Jalur lawas (tanpa `lang`) tetap butuh token karena voice-nya ditanyakan.
   const espeak = penyedia === "espeak" ? ESPEAK_VOICES[langBase] : null;
   const azure = penyedia === "azure" ? AZURE_VOICES[langBase] : null;
-  const chirpLocale = penyedia === "google" ? localeChirp(langBase) : null;
+  // [tts-persona-v1] voice=<persona> (pria/wanita/remaja-pa/…; "2" = Charon lama)
+  // + aksen=<us|gb|au|…> → speaker & locale Chirp lain. Tak dikenal → suara biasa.
+  const aksen = typeof aksenMentah === "string" ? aksenMentah.slice(0, 8) : null;
+  const persona = typeof suaraMentah === "string" ? suaraMentah.slice(0, 16) : null;
+  const voicePersona = penyedia === "google" ? namaVoicePersona(langBase, persona, aksen) : null;
+  const chirpLocale = penyedia === "google"
+    ? (voicePersona ? localeAksen(langBase, aksen) : localeChirp(langBase))
+    : null;
   const languageCode = azure?.locale ?? chirpLocale ?? LANG_CODE;
   const voice = espeak
     ? espeak.voice
     : azure
       ? azure.voice
       : chirpLocale
-        // [tts-dua-suara-v1] voice=2 → pembicara kedua dialog (Charon); tanpa Chirp → suara biasa.
-        ? ((String(suaraMentah ?? "") === "2" && namaVoiceGoogle2(langBase)) || (namaVoiceGoogle(langBase) as string))
+        ? (voicePersona ?? (namaVoiceGoogle(langBase) as string))
         : await resolveVoice(await getAccessToken());
 
   // Sudah pernah disintesis? Balas dari simpanan — nol karakter ditagih.
@@ -377,7 +383,7 @@ export async function POST(req: NextRequest) {
   try {
     const body = await req.json().catch(() => ({}));
     // POST tak pernah disimpan browser/CDN — headernya sekadar tak menghalangi.
-    return balas(await sintesis(body?.text, body?.lang, body?.voice), false, headerAsal(req));
+    return balas(await sintesis(body?.text, body?.lang, body?.voice, body?.aksen), false, headerAsal(req));
   } catch (e: any) {
     return NextResponse.json({ error: e?.message || "internal error" }, { status: 500 });
   }
@@ -412,7 +418,7 @@ export async function GET(req: NextRequest) {
       await hangatkan();
       return new NextResponse(null, { status: 204, headers: { "Cache-Control": "no-store", ...headerAsal(req) } });
     }
-    return balas(await sintesis(q.get("text"), q.get("lang"), q.get("voice")), true, headerAsal(req));
+    return balas(await sintesis(q.get("text"), q.get("lang"), q.get("voice"), q.get("aksen")), true, headerAsal(req));
   } catch (e: any) {
     return NextResponse.json({ error: e?.message || "internal error" }, { status: 500 });
   }
