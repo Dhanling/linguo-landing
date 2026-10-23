@@ -282,7 +282,7 @@ export function SlideBody({ s, kunci, lang }: { s: MateriSlide; kunci?: boolean;
       <div className={`shrink-0 ${kiriSaja ? "" : "pr-[9%]"}`}>
         <span className="inline-block rounded-full px-[0.9em] py-[0.2em] text-[clamp(0.5rem,1cqw,0.7rem)] font-extrabold uppercase tracking-[0.12em] text-white"
           style={{ background: tema.aksen }}>
-          {s.visual?.kind === "sejarah" ? "Sejarah" : s.visual?.kind === "banding" ? "Perbandingan" : s.visual?.kind === "alfabet" ? "Alfabet" : s.visual?.kind === "bunyi" ? "Pelafalan" : SLIDE_TYPE_LABEL[s.type]}
+          {s.visual?.kind === "isyarat" ? (s.visual.baris?.length ? "Dialog isyarat" : "Isyarat 3D") : s.visual?.kind === "sejarah" ? "Sejarah" : s.visual?.kind === "banding" ? "Perbandingan" : s.visual?.kind === "alfabet" ? "Alfabet" : s.visual?.kind === "bunyi" ? "Pelafalan" : SLIDE_TYPE_LABEL[s.type]}
         </span>
         <h3 className="mt-[0.8cqh] text-[clamp(1rem,2.4cqw,1.7rem)] font-extrabold leading-snug text-gray-900">{s.heading}</h3>
         {s.subheading && <p className="mt-0.5 text-[clamp(0.68rem,1.4cqw,0.95rem)] text-gray-500">{s.subheading}</p>}

@@ -43,6 +43,10 @@ const ALIAS: Record<string, string> = {
   "european portuguese": "portuguese-pt",
   indonesian: "bipa",
   "bahasa indonesia": "bipa",
+  // [isyarat-3d-v1] registrations.language = "Sign Language - ASL"
+  "sign language - asl": "asl",
+  "sign language (asl)": "asl",
+  "bahasa isyarat asl": "asl",
 };
 
 // slug ↔ nama Indonesia ↔ nama asli, langsung dari master kurikulum (jangan

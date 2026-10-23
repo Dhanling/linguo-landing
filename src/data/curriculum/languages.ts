@@ -83,6 +83,7 @@ export const languages: LanguageMeta[] = [
   { slug: "amharic",     name: "Amhar",     nativeName: "አማርኛ",        flag: "🇪🇹", region: "african", available: false },
 
   // === Other / Classical ===
+  { slug: "asl",         name: "Bahasa Isyarat ASL", nativeName: "American Sign Language", flag: "🤟", region: "other", available: true, description: "Bahasa isyarat komunitas Tuli Amerika — abjad jari, ekspresi wajah sebagai tata bahasa, dan avatar 3D yang bisa diputar ulang pelan.", aliases: ["asl","american sign language","isyarat amerika","bahasa isyarat amerika","sign language asl"] }, // [isyarat-3d-v1]
   { slug: "latin",       name: "Latin",     nativeName: "Latinum",     flag: "📜", region: "other", available: false },
   { slug: "esperanto",   name: "Esperanto", nativeName: "Esperanto",   flag: "🟢", region: "other", available: false },
   { slug: "armenian",    name: "Armenia",   nativeName: "Հայերեն",      flag: "🇦🇲", region: "other", available: false },

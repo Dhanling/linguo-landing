@@ -147,7 +147,14 @@ export interface BunyiVokal { huruf: string; seperti?: string; kata: string; art
 export interface BunyiContoh { kata: string; baca?: string; arti?: string }
 export interface BunyiKhas { tulisan: string; bunyi: string; info?: string; sorot?: string[]; bisu?: boolean; contoh: BunyiContoh[] }
 
+/* [isyarat-3d-v1] Bahasa isyarat: avatar 3D (Blender) memperagakan kode klip.
+   `tanda` = mode kamus (tombol per isyarat), `baris` = dialog dua tokoh A/B.
+   `urut` = kode klip berurutan; "#RIO" = dieja jari. `eja` = kotak ketik-untuk-dieja. */
+export interface IsyaratTanda { kode: string; gloss?: string; arti?: string }
+export interface IsyaratBaris { siapa: "A" | "B"; urut: string[]; gloss: string; arti: string; wajah?: string }
+
 export type SlideVisual =
+  | { kind: "isyarat"; bahasa: string; tanda?: IsyaratTanda[]; baris?: IsyaratBaris[]; nama?: [string, string]; eja?: boolean; tokoh?: "A" | "B" }
   | { kind: "nada"; rows: VisualNadaRow[] }
   | { kind: "suku-kata"; rows: VisualSukuRow[] }
   | { kind: "kelompok"; groups: VisualGroup[] }
@@ -293,6 +300,24 @@ const opt = (v: any) => str(v) || undefined;
 function normVisual(v: any): SlideVisual | undefined {
   if (!v || typeof v !== "object") return undefined;
   const arr = (x: any): any[] => (Array.isArray(x) ? x : []);
+  if (v.kind === "isyarat") {
+    const kode = (x: any) => { const k = str(x).toUpperCase(); return /^#?[A-Z0-9_]{1,24}$/.test(k) ? k : ""; };
+    const tanda = arr(v.tanda).map((t) => ({ kode: kode(t?.kode), gloss: opt(t?.gloss), arti: opt(t?.arti) })).filter((t) => t.kode && !t.kode.startsWith("#"));
+    const baris = arr(v.baris).map((b) => ({
+      siapa: (b?.siapa === "B" ? "B" : "A") as "A" | "B", urut: arr(b?.urut).map(kode).filter(Boolean),
+      gloss: str(b?.gloss), arti: str(b?.arti), wajah: /^[a-z_]{2,12}$/.test(str(b?.wajah)) ? str(b?.wajah) : undefined,
+    })).filter((b) => b.urut.length && b.gloss);
+    const eja = v.eja === true;
+    if (!tanda.length && !baris.length && !eja) return undefined;
+    const nama = arr(v.nama).map(str).filter(Boolean);
+    const bahasa = /^[a-z]{2,10}$/.test(str(v.bahasa)) ? str(v.bahasa) : "asl";
+    return {
+      kind: "isyarat", bahasa,
+      ...(tanda.length ? { tanda } : {}), ...(baris.length ? { baris } : {}),
+      ...(nama.length === 2 ? { nama: nama as [string, string] } : {}),
+      ...(eja ? { eja } : {}), ...(v.tokoh === "B" ? { tokoh: "B" as const } : {}),
+    };
+  }
   if (v.kind === "nada") {
     const rows = arr(v.rows).map((r) => ({ tone: nada(r?.tone), pinyin: str(r?.pinyin), hanzi: opt(r?.hanzi), meaning: str(r?.meaning), hint: opt(r?.hint) }))
       .filter((r) => r.pinyin);

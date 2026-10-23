@@ -10,9 +10,11 @@
 // Warna ditulis inline (bukan kelas Tailwind) supaya mode gelap /akun dan
 // dashboard tidak menimpanya — slide selalu terang [slide-terang-v1].
 
-import { createContext, useContext, useEffect, useId, useLayoutEffect, useRef, useState } from "react";
+import { createContext, lazy, Suspense, useContext, useEffect, useId, useLayoutEffect, useRef, useState } from "react";
 import { Volume2, Wind, X, Check, Play, Square, RotateCcw, Equal, Shuffle, ChevronLeft, ChevronRight } from "lucide-react";
 import type { BandingStatus, BandingToken, Nada, SlideVisual as Visual } from "@/lib/materiSlides";
+// [isyarat-3d-v1] Avatar 3D bahasa isyarat — three.js dimuat hanya di slide ini.
+const SlideIsyarat = lazy(() => import("./SlideIsyarat"));
 // [slide-audio-eleven-v1] Klip per kata hasil ElevenLabs eleven_v4 (dibuat sekali,
 // konturnya dicek otomatis). Kata yang belum punya klip jatuh ke TTS biasa.
 import { AUDIO_SLIDE_ZH, AUDIO_SLIDE_ZH_BASE } from "./audioSlideZh";
@@ -1084,7 +1086,7 @@ export function SlideVisual({ visual, aksen, ucap, siapkan, lang }: {
       ? visual.groups.flatMap((g) => g.chips.map((c) => c.hanzi || ""))
       : visual.kind === "sejarah" ? visual.peristiwa.map((p) => p.asli || "")
       : visual.kind === "banding" ? visual.rows.flatMap((r) => r.target.map((t) => t.t))
-      : visual.kind === "alfabet" || visual.kind === "bunyi" ? []
+      : visual.kind === "alfabet" || visual.kind === "bunyi" || visual.kind === "isyarat" ? []
       : visual.rows.map((r) => r.hanzi || "");
     teks.forEach((t) => { const u = urlKlip(t); if (u) void fetch(u, { cache: "force-cache" }).catch(() => {}); });
   }, [visual, klip]);
@@ -1096,6 +1098,7 @@ export function SlideVisual({ visual, aksen, ucap, siapkan, lang }: {
 }
 
 function Isi({ visual, aksen, ucap, siapkan }: { visual: Visual; aksen: string; ucap?: Ucap; siapkan?: (teks: string) => void }) {
+  if (visual.kind === "isyarat") return <Suspense fallback={null}><SlideIsyarat v={visual} aksen={aksen} /></Suspense>;
   if (visual.kind === "nada") return <VisualNada rows={visual.rows} ucap={ucap} siapkan={siapkan} aksen={aksen} />;
   if (visual.kind === "suku-kata") return <VisualSuku rows={visual.rows} ucap={ucap} siapkan={siapkan} />;
   if (visual.kind === "kelompok") return <VisualKelompok groups={visual.groups} ucap={ucap} siapkan={siapkan} aksen={aksen} />;
