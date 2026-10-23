@@ -79,12 +79,14 @@ function buildBlocks(list: NormSession[], now: number): SesiBlok[] {
 export default function SesiMendatangCard({
   sessions,
   studentName,
+  studentPic,
   onOpenJadwal,
   limit = 4,
   layout = "wide",
 }: {
   sessions: JadwalSession[];
   studentName?: string;
+  studentPic?: string;
   /** Buka tab Jadwal — kalender penuh (riwayat, bulan, minggu). */
   onOpenJadwal: () => void;
   limit?: number;
@@ -212,7 +214,7 @@ export default function SesiMendatangCard({
           <p className={groupLabel}>{t("Hari Ini")}</p>
           <div className={gridCls}>
             {hariIni.map((b) => (
-              <SesiItem key={b.key} b={b} studentName={studentName} onClick={goJadwal} today now={now} />
+              <SesiItem key={b.key} b={b} studentName={studentName} studentPic={studentPic} onClick={goJadwal} today now={now} />
             ))}
           </div>
         </>
@@ -222,7 +224,7 @@ export default function SesiMendatangCard({
           {hariIni.length > 0 && <p className={groupLabel}>{t("Berikutnya")}</p>}
           <div className={gridCls}>
             {visibleNanti.map((b) => (
-              <SesiItem key={b.key} b={b} studentName={studentName} onClick={goJadwal} now={now} />
+              <SesiItem key={b.key} b={b} studentName={studentName} studentPic={studentPic} onClick={goJadwal} now={now} />
             ))}
           </div>
         </>
@@ -245,8 +247,8 @@ export default function SesiMendatangCard({
 // keduanya sudah ada di tab Jadwal, dan di kartu ringkasan mereka cuma bikin tiap
 // baris tinggi berbeda-beda sehingga daftarnya susah dipindai sekilas.
 // Titik warna bahasa diganti bendera — "kelas apa" kebaca tanpa menghafal legenda.
-function SesiItem({ b, studentName, onClick, today = false, now }: {
-  b: SesiBlok; studentName?: string; onClick: () => void;
+function SesiItem({ b, studentName, studentPic, onClick, today = false, now }: {
+  b: SesiBlok; studentName?: string; studentPic?: string; onClick: () => void;
   /** [sesi-hari-ini-v1] item di kelompok "Hari Ini" — nama hari diganti hitung mundur. */
   today?: boolean;
   now: number;
@@ -336,7 +338,7 @@ function SesiItem({ b, studentName, onClick, today = false, now }: {
           room-nya sedang dipakai, bukan selalu sesi pertama. */}
       {b.join && (
         <a
-          href={classRoomUrl(b.join.id, { title: `Kelas ${s.language}`, name: studentName })}
+          href={classRoomUrl(b.join.id, { title: `Kelas ${s.language}`, name: studentName, pic: studentPic })}
           target="_blank"
           rel="noopener noreferrer"
           onClick={(e) => e.stopPropagation()}

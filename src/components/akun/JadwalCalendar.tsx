@@ -58,6 +58,7 @@ export default function JadwalCalendar({
   regularBatches = [],
   kelasBelumTerjadwal = [],
   studentName,
+  studentPic,
   aksesRekaman,
   sisipan,
   bisaUbahReg,
@@ -70,6 +71,7 @@ export default function JadwalCalendar({
   kelasBelumTerjadwal?: { id: string; label: string; sisa: number; roomUrl?: string }[];
   /** Nama siswa — ikut dikirim ke room biar dia tak perlu mengetiknya lagi. */
   studentName?: string;
+  studentPic?: string;
   /** [addon-akses-rekaman-v1] registration_id → hak rekaman. [rekaman-wajib-beli-v1]
    *  Hanya "punya" yang boleh menonton. Peta kosong = masih dimuat (tombol & gembok
    *  belum tampil); registrasi yang tak ada di peta yang sudah terisi = terkunci. */
@@ -409,7 +411,7 @@ export default function JadwalCalendar({
       `}</style>
       {hover && (
         <BlokHoverDetail
-          items={hover.items} rect={hover.rect} open={hover.open} now={now} studentName={studentName}
+          items={hover.items} rect={hover.rect} open={hover.open} now={now} studentName={studentName} studentPic={studentPic}
           onEnter={tahanHover} onLeave={tutupHover}
           onPilih={() => { setSelected(hover.items[0]._iso); setHover(null); }}
         />
@@ -770,7 +772,7 @@ export default function JadwalCalendar({
                                          (di sana ada keterangan jam tombolnya dibuka / rekaman). */
                                       const j = blok.find((s) => s._joinable && !s._past) || blok.find((s) => s._joinable);
                                       if (j) {
-                                        window.open(j.joinUrl || classRoomUrl(j.id, { title: `Kelas ${j.language}`, name: studentName }), "_blank", "noopener,noreferrer");
+                                        window.open(j.joinUrl || classRoomUrl(j.id, { title: `Kelas ${j.language}`, name: studentName, pic: studentPic }), "_blank", "noopener,noreferrer");
                                         return;
                                       }
                                       setSelected(iso);
@@ -862,7 +864,7 @@ export default function JadwalCalendar({
               </div>
               <div className="flex flex-col gap-3 rounded-2xl border border-slate-100 p-3 sm:p-4">
                 {agendaEvents.map((e) => (
-                  <SessionCard key={e.id} e={e} now={now} studentName={studentName} aksesRekaman={aksesRekaman}
+                  <SessionCard key={e.id} e={e} now={now} studentName={studentName} studentPic={studentPic} aksesRekaman={aksesRekaman}
                     onUbah={onUbahSesi && e.registrationId && bisaUbahReg?.has(e.registrationId) ? onUbahSesi : undefined} />
                 ))}
               </div>
@@ -920,8 +922,8 @@ const JOIN_BUKA_MENIT = 10;
  */
 const HOVER_EASE = "cubic-bezier(.16,1,.3,1)";
 
-function BlokHoverDetail({ items, rect, open, now, studentName, onEnter, onLeave, onPilih }: {
-  items: NormSession[]; rect: DOMRect; open: boolean; now: number; studentName?: string;
+function BlokHoverDetail({ items, rect, open, now, studentName, studentPic, onEnter, onLeave, onPilih }: {
+  items: NormSession[]; rect: DOMRect; open: boolean; now: number; studentName?: string; studentPic?: string;
   onEnter: () => void; onLeave: () => void; onPilih: () => void;
 }) {
   const tt = useT();
@@ -1034,7 +1036,7 @@ function BlokHoverDetail({ items, rect, open, now, studentName, onEnter, onLeave
 
         {bisaRoom && sesiJoin && (joinAktif ? (
           <a
-            href={sesiJoin.joinUrl || classRoomUrl(sesiJoin.id, { title: `Kelas ${sesiJoin.language}`, name: studentName })}
+            href={sesiJoin.joinUrl || classRoomUrl(sesiJoin.id, { title: `Kelas ${sesiJoin.language}`, name: studentName, pic: studentPic })}
             target="_blank" rel="noopener noreferrer"
             onClick={(ev) => ev.stopPropagation()}
             className="flex w-full items-center justify-center gap-1.5 rounded-xl bg-[#16796E] px-3 py-2 text-[12.5px] font-extrabold text-white transition hover:bg-[#0F5A52]"
@@ -1055,7 +1057,7 @@ function BlokHoverDetail({ items, rect, open, now, studentName, onEnter, onLeave
  * Kartu sesi lengkap (jam, kelas, pengajar, aksi, materi) — dipakai agenda di
  * bawah kalender pada SEMUA view.
  */
-function SessionCard({ e, now, studentName, aksesRekaman, onUbah }: { e: NormSession; now: number; studentName?: string; aksesRekaman?: Map<string, AksesAddon>; onUbah?: (s: JadwalSession) => void }) {
+function SessionCard({ e, now, studentName, studentPic, aksesRekaman, onUbah }: { e: NormSession; now: number; studentName?: string; studentPic?: string; aksesRekaman?: Map<string, AksesAddon>; onUbah?: (s: JadwalSession) => void }) {
   const tt = useT(); // [ui-lang-switcher-v1]
   const c = langColor(e.language);
   const st = statusMeta(e); // jadwal-riwayat-v1
@@ -1142,7 +1144,7 @@ function SessionCard({ e, now, studentName, aksesRekaman, onUbah }: { e: NormSes
         <span className="flex shrink-0 flex-col justify-center gap-1.5">
           {e._joinable && (
             <a
-              href={e.joinUrl || classRoomUrl(e.id, { title: `Kelas ${e.language}`, name: studentName })}
+              href={e.joinUrl || classRoomUrl(e.id, { title: `Kelas ${e.language}`, name: studentName, pic: studentPic })}
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-1.5 rounded-xl bg-[#16796E] px-3.5 py-2 text-[12.5px] font-extrabold text-white hover:bg-[#0F5A52]"

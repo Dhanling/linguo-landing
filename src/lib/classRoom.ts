@@ -15,6 +15,8 @@ export interface ClassRoomLinkOpts {
   teacher?: string;
   /** Nama siswa — biar dia tidak perlu mengetik namanya lagi di halaman masuk. */
   name?: string;
+  /** [vc-avatar-foto-v1] Foto siswa (students.avatar_url) — tampil di ubin Linguo Meet saat kameranya mati. */
+  pic?: string;
 }
 
 export function classRoomUrl(scheduleId: string, opts: ClassRoomLinkOpts = {}): string {
@@ -22,6 +24,7 @@ export function classRoomUrl(scheduleId: string, opts: ClassRoomLinkOpts = {}): 
   if (opts.title) q.set("title", opts.title);
   if (opts.teacher) q.set("teacher", opts.teacher);
   if (opts.name) q.set("name", opts.name);
+  if (opts.pic && /^https:\/\//i.test(opts.pic)) q.set("pic", opts.pic);
   return `${CLASS_ROOM_ORIGIN}/kelas/sched-${scheduleId}?${q.toString()}`;
 }
 
@@ -71,6 +74,7 @@ export function classRoomUrlForRoom(roomId: string, opts: ClassRoomLinkOpts = {}
   if (opts.title) q.set("title", opts.title);
   if (opts.teacher) q.set("teacher", opts.teacher);
   if (opts.name) q.set("name", opts.name);
+  if (opts.pic && /^https:\/\//i.test(opts.pic)) q.set("pic", opts.pic);
   return `${CLASS_ROOM_ORIGIN}/kelas/${roomId}?${q.toString()}`;
 }
 

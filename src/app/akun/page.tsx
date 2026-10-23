@@ -5429,6 +5429,7 @@ export default function AkunPage() {
                               <SesiMendatangCard
                                 sessions={sesiMendatangCards}
                                 studentName={student?.name || undefined}
+                                studentPic={student?.avatar_url || undefined}
                                 onOpenJadwal={() => setActiveTab("jadwal")}
                                 layout="column"
                                 limit={5}
@@ -5746,10 +5747,11 @@ export default function AkunPage() {
                     roomUrl: classRoomUrlForRoom(pickClassRoomId(allSchedules as any, r.id, nowMs), {
                       title: `Kelas ${[r.language, r.level].filter(Boolean).join(" ")}`.trim(),
                       name: student?.name || undefined,
+                      pic: student?.avatar_url || undefined,
                     }),
                   }));
                 const kelasUbah = new Map(aturJadwal.kelas.map((k) => [k.regId, k]));
-                return <JadwalCalendar sessions={[...jadwalSessions, ...jadwalBatchSessions]} regularBatches={jadwalRegulerBatches} kelasBelumTerjadwal={kelasBelumTerjadwal} studentName={student?.name || undefined} aksesRekaman={aksesRekamanMap}
+                return <JadwalCalendar sessions={[...jadwalSessions, ...jadwalBatchSessions]} regularBatches={jadwalRegulerBatches} kelasBelumTerjadwal={kelasBelumTerjadwal} studentName={student?.name || undefined} studentPic={student?.avatar_url || undefined} aksesRekaman={aksesRekamanMap}
                   sisipan={<AturJadwalKartu kelas={aturJadwal.kelas} onPilih={(kelas) => setAturSheet({ mode: "pesan", kelas })} />}
                   bisaUbahReg={new Set(kelasUbah.keys())}
                   onUbahSesi={(s) => {
