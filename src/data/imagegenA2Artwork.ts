@@ -143,11 +143,23 @@ export const IMAGEGEN_A2_KEYS: readonly string[] = [
   "bulgarian-a1-1",
   "bulgarian-a1-2",
   "bulgarian-a1-3",
+  "bulgarian-a2-1",
   "bulgarian-a2-2",
   "bulgarian-a2-3",
   "bulgarian-a2-4",
+  "ukrainian-a1-1",
+  "ukrainian-a1-2",
+  "ukrainian-a1-3",
+  "ukrainian-a2-1",
+  "ukrainian-a2-2",
+  "ukrainian-a2-3",
+  "ukrainian-a2-4",
+  "icelandic-a1-1",
   "icelandic-a1-2",
+  "icelandic-a1-3",
+  "icelandic-a2-1",
   "icelandic-a2-2",
+  "icelandic-a2-3",
   "icelandic-a2-4"
 ];
 const SIAP = new Set(IMAGEGEN_A2_KEYS);
