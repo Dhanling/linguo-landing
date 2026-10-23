@@ -118,6 +118,7 @@ const STATIC_ROUTES: Array<{
   { path: "/afiliator", priority: 0.6, changeFrequency: "monthly" },
   { path: "/lingfluencer", priority: 0.5, changeFrequency: "monthly" },
   { path: "/karir", priority: 0.5, changeFrequency: "weekly" },
+  { path: "/links", priority: 0.4, changeFrequency: "monthly" }, // [link-bio-v1]
 
   // Legal — nilai peringkat nol, tapi sinyal kepercayaan untuk Google
   { path: "/privacy", priority: 0.2, changeFrequency: "yearly" },

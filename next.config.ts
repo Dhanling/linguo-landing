@@ -59,6 +59,11 @@ const nextConfig: NextConfig = {
         destination: '/toko/paket-elearning',
         permanent: true,
       },
+      // [link-bio-v1] Pengganti linktr.ee/asklinguo — satu halaman /links; alias
+      // yang gampang diketik dari bio sosmed ikut diarahkan ke sana.
+      { source: '/linktree', destination: '/links', permanent: true },
+      { source: '/bio', destination: '/links', permanent: true },
+      { source: '/link', destination: '/links', permanent: true },
       // [seo-url-kursus-v1] Hub kelas & 46 landing bahasa pindah dari /kelas ke
       // /kursus. Dasarnya data GSC 3 bulan: kueri mengandung "kursus" = 140
       // tayangan, "kelas" = 1. Kata "kelas" praktis tidak dipakai orang saat

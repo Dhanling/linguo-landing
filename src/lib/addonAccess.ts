@@ -59,10 +59,30 @@ export type AddonRow = {
 export type RegAddonFields = {
   addons?: any;
   addon_ebook_recording?: boolean | null;
+  /** Jenis paket kuotasi WA ('reguler_bundle' = modul + recording). */
+  addon_type?: string | null;
 };
 
 /** Kolom registrasi yang WAJIB ikut di-select kalau mau memanggil aksesRekaman(). */
-export const ADDON_REG_COLUMNS = "addons, addon_ebook_recording";
+export const ADDON_REG_COLUMNS = "addons, addon_ebook_recording, addon_type";
+
+/* [rekaman-bundel-isi-v1] Bug Tracker ed23b05b (Faujiah, 23 Okt 2026): siswa Private/
+   Reguler yang cuma membeli E-book lewat kuotasi WA / tagihan manual tetap bisa membuka
+   rekaman. Sebabnya: webhook Xendit menyalakan `addon_ebook_recording` untuk add-on APA
+   PUN (bendera itu cuma berarti "ada add-on", lihat dashboard sql/bundel_recording_saja_
+   20260911.sql & src/lib/invoiceAddons.ts bundleContents), sedangkan gerbang ini membaca
+   bendera itu sebagai "rekaman ikut". Isi paketnya dibaca dari label `addons` /
+   `addon_type` — cermin bundleContents() di dashboard & bundle_includes_ebook() di DB:
+   'bundle' = modul + rekaman; ada kata record/rekaman = rekaman ikut; hanya e-book/modul
+   = TANPA rekaman; label kosong sama sekali (baris lama) = paket lengkap seperti dulu. */
+export function bundelIkutRekaman(reg: RegAddonFields): boolean {
+  const teks = `${JSON.stringify(reg?.addons ?? "")} ${reg?.addon_type ?? ""}`.toLowerCase();
+  if (teks.includes("bundle")) return true;
+  const recording = /record|rekaman/.test(teks);
+  const ebook = /e-?book|modul/.test(teks);
+  if (!ebook && !recording) return true; // label kosong → paket lengkap (perilaku lama)
+  return recording;
+}
 
 const LUNAS = new Set(["lunas", "paid"]);
 
@@ -103,14 +123,17 @@ export function aksesRekaman(reg: RegAddonFields, addonRows: AddonRow[]): AksesA
   );
   if (rekamanLunas) return "punya";
 
-  // 2) bundel e-book + rekaman dari penawaran WA.
-  if (reg?.addon_ebook_recording === true) return "punya";
+  // 2) paket kuotasi WA — HANYA kalau isinya memang memuat rekaman ([rekaman-bundel-isi-v1]).
+  //    Paket "E-book" saja menyalakan bendera yang sama tapi tidak memberi hak rekaman.
+  if (reg?.addon_ebook_recording === true && bundelIkutRekaman(reg)) return "punya";
 
   // 3) `addons` jsonb versi lama.
   const j = addonsJsonb(reg);
   if (j && j.recording) return "punya";
 
-  // 4) add-on sudah didata, rekaman tidak termasuk.
+  // 4) add-on sudah didata, rekaman tidak termasuk — termasuk paket WA yang isinya
+  //    cuma e-book ([rekaman-bundel-isi-v1]).
+  if (reg?.addon_ebook_recording === true) return "tidak";
   // `addon_ebook_recording === false` SENGAJA tidak dihitung sebagai "sudah didata":
   // kolomnya NOT NULL default false, jadi false = "tak pernah disentuh", bukan
   // "admin memutuskan tanpa rekaman". (Hak aksesnya kini sama dengan "belum-didata";

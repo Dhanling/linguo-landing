@@ -759,8 +759,29 @@ function langToLocale(lang: string): string {
     ja: "ja-JP", ko: "ko-KR", zh: "zh-CN", ar: "ar-SA", ru: "ru-RU",
     it: "it-IT", pt: "pt-BR", nl: "nl-NL", sv: "sv-SE", pl: "pl-PL",
     tr: "tr-TR", vi: "vi-VN", th: "th-TH", hi: "hi-IN",
+    // [blog-tts-azure-v1] bahasa minoritas — hanya berguna kalau perangkat pembaca punya suaranya
+    lo: "lo-LA", km: "km-KH", my: "my-MM", ka: "ka-GE", fa: "fa-IR", uz: "uz-UZ", ga: "ga-IE",
+    mn: "mn-MN", ne: "ne-NP", si: "si-LK", am: "am-ET", hy: "hy-AM", az: "az-AZ", kk: "kk-KZ",
   };
   return map[lang] ?? lang;
+}
+
+/* [blog-tts-azure-v1] Bug Tracker 015f7334 (Intan, 23 Okt 2026): saat server gagal, fallback
+   Web Speech dulu TETAP bicara walau browser tidak punya suara bahasanya — utterance.voice
+   kosong → browser memakai suara default (Indonesia/Inggris) membaca aksara Laos, hasilnya
+   "suara tidak relevan". Sekarang: tanpa suara yang cocok, tombolnya diberi tanda & pesan
+   singkat, bukan bunyi bahasa lain. Daftar suara bisa belum termuat (Chrome memuatnya
+   asinkron) — kalau daftarnya kosong sama sekali, perilaku lama dipertahankan. */
+let noVoiceNoteTimer: ReturnType<typeof setTimeout> | null = null;
+function showNoVoiceNote(ttsEl: HTMLElement, lang: string) {
+  const prev = ttsEl.getAttribute("title");
+  ttsEl.setAttribute("title", `Suara untuk bahasa "${lang}" belum tersedia di perangkat ini`);
+  ttsEl.classList.add("tts-no-voice");
+  if (noVoiceNoteTimer) clearTimeout(noVoiceNoteTimer);
+  noVoiceNoteTimer = setTimeout(() => {
+    ttsEl.classList.remove("tts-no-voice");
+    if (prev) ttsEl.setAttribute("title", prev); else ttsEl.removeAttribute("title");
+  }, 2500);
 }
 
 // Pilihan suara Gemini TTS (prebuilt voices). Semua multilingual — autodetect bahasa dari teks.
@@ -951,8 +972,14 @@ export default function ArticleContent({ post, relatedPosts }: { post: BlogPost;
       utterance.rate = 0.9;
       utterance.pitch = 1;
       const voices = window.speechSynthesis.getVoices();
-      const match = voices.find(v => v.lang.startsWith(utterance.lang.split("-")[0]));
+      const base = utterance.lang.split("-")[0].toLowerCase();
+      const match = voices.find(v => v.lang.toLowerCase().replace("_", "-").startsWith(base));
       if (match) utterance.voice = match;
+      else if (voices.length > 0) { // [blog-tts-azure-v1] ada daftar suara, tapi bahasa ini tidak ada
+        ttsEl.classList.remove("speaking");
+        showNoVoiceNote(ttsEl, lang);
+        return;
+      }
       // Web Speech kasih event boundary → sinkron kata akurat (bukan estimasi).
       const words = getWords(ttsEl);
       let cursor = 0;

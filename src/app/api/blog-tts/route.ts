@@ -21,6 +21,7 @@ import crypto from "node:crypto";
 import { readFileSync } from "node:fs";
 import os from "node:os";
 import path from "node:path";
+import { AZURE_FORMAT, AZURE_VOICES } from "@/lib/ttsVoice";
 
 export const runtime = "nodejs";
 export const dynamic = "force-dynamic";
@@ -38,6 +39,45 @@ const jsonCors = (data: unknown, init?: ResponseInit) =>
 
 export function OPTIONS() {
   return new NextResponse(null, { status: 204, headers: CORS_HEADERS });
+}
+
+// ── Azure Neural (bahasa minoritas) ─────────────────────────────────────────
+// [blog-tts-azure-v1] Bug Tracker 015f7334 (Intan, 23 Okt 2026): anotasi 🔊 bahasa Laos
+// bisu / bunyinya bahasa lain. Google (Chirp maupun Standard) TIDAK punya suara Laos,
+// jadi rute ini selalu melempar "lo" ke Gemini — yang kreditnya habis (402) dan memang
+// tidak mendaftarkan Laos — lalu browser pembaca memutar suara default. Peta AZURE_VOICES
+// (src/lib/ttsVoice.ts, dipakai /api/tts) sudah punya lo-LA-KeomanyNeural, km, my, ka, dll.
+// Env: AZURE_SPEECH_KEY + AZURE_SPEECH_REGION (mis. southeastasia). Tanpa kunci, bahasa
+// ini dijawab 503 yang jelas sebabnya — bukan audio ngawur.
+const AZURE_KEY = process.env.AZURE_SPEECH_KEY || "";
+const AZURE_REGION = process.env.AZURE_SPEECH_REGION || "";
+const azureSiap = () => !!(AZURE_KEY && AZURE_REGION);
+const xmlEscape = (s: string) =>
+  s.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;").replace(/'/g, "&apos;");
+
+async function synthesizeAzure(text: string, lang: string) {
+  const v = AZURE_VOICES[lang];
+  if (!v) throw new Error(`azure: bahasa "${lang}" tidak ada di peta`);
+  const ssml =
+    `<speak version="1.0" xmlns="http://www.w3.org/2001/10/synthesis" xml:lang="${v.locale}">` +
+    `<voice name="${v.voice}">${xmlEscape(text)}</voice></speak>`;
+  const res = await fetch(`https://${AZURE_REGION}.tts.speech.microsoft.com/cognitiveservices/v1`, {
+    method: "POST",
+    headers: {
+      "Ocp-Apim-Subscription-Key": AZURE_KEY,
+      "Content-Type": "application/ssml+xml",
+      "X-Microsoft-OutputFormat": AZURE_FORMAT,
+      "User-Agent": "linguo-blog-tts",
+    },
+    body: ssml,
+  });
+  if (!res.ok) {
+    const detail = await res.text().catch(() => "");
+    throw new Error(`azure ${res.status}: ${detail.slice(0, 200)}`);
+  }
+  const buf = Buffer.from(await res.arrayBuffer());
+  if (!buf.length) throw new Error("azure: balasan kosong");
+  return { audioContent: buf.toString("base64"), mimeType: "audio/mpeg" };
 }
 
 // ── Gemini (fallback) ───────────────────────────────────────────────────────
@@ -213,6 +253,27 @@ export async function POST(req: NextRequest) {
         return jsonCors(out, { headers: { ...cacheHeaders, "x-tts-provider": "chirp" } });
       } catch (e: any) {
         console.error("blog-tts: chirp gagal, fallback ke gemini:", e?.message || e);
+      }
+    }
+
+    // 1b) Azure Neural — bahasa yang di katalog Google nihil (Laos, Khmer, Myanmar, …).
+    //     [blog-tts-azure-v1] Dicoba SEBELUM Gemini: Gemini tidak mendaftarkan bahasa-bahasa
+    //     ini, jadi hasilnya (kalau pun ada) bukan pelafalan yang benar.
+    const butuhAzure = !!(lang && !CHIRP_LOCALES[lang] && AZURE_VOICES[lang]);
+    if (butuhAzure) {
+      if (azureSiap()) {
+        try {
+          const out = await synthesizeAzure(text, lang);
+          return jsonCors(out, { headers: { ...cacheHeaders, "x-tts-provider": "azure" } });
+        } catch (e: any) {
+          console.error("blog-tts: azure gagal:", e?.message || e);
+        }
+      } else {
+        // Jangan jatuh ke Gemini/suara browser yang bunyinya bahasa lain — kabarkan apa adanya.
+        return jsonCors(
+          { error: "suara belum tersedia", detail: `Bahasa "${lang}" butuh Azure Speech (AZURE_SPEECH_KEY + AZURE_SPEECH_REGION belum dipasang di server).`, lang },
+          { status: 503 },
+        );
       }
     }
 
