@@ -1565,9 +1565,15 @@ function AkunTab({ user, student, avatarUrl, displayName, firstName, xp, badges,
       // [akun-pay-fallback-amount-v1] registrasi wizard punya total_amount 0 →
       // pakai nominal patokan yang sama dengan PaymentCard, jangan kirim 0.
       const amount = r.total_amount > 0 ? r.total_amount : calculateDefaultAmount(r.product, r.level);
+      // [edge-auth-gate-v1] edge fn kini mengecek registrasi milik siswa ini → bawa token sesi.
+      const { data: { session: sesiBayar } } = await supabase.auth.getSession();
       const res = await fetch("https://jbtgciepdmqxxcjflrxz.supabase.co/functions/v1/xendit-create-invoice", {
         method: "POST",
-        headers: { "Content-Type": "application/json", Authorization: `Bearer ${process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY}` },
+        headers: {
+          "Content-Type": "application/json",
+          apikey: process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY ?? "",
+          Authorization: `Bearer ${sesiBayar?.access_token ?? process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY}`,
+        },
         body: JSON.stringify({
           registration_id: r.id,
           amount,
@@ -6361,13 +6367,16 @@ export default function AkunPage() {
                   const programLabel = PROGRAMS.find(p => p.key === r.product)?.label || r.product;
                   const langLabel = r.product === "IELTS/TOEFL Prep" ? "IELTS/TOEFL" : displayLanguage(r.language);
                   const desc = `${programLabel} — ${langLabel}`;
+                  // [edge-auth-gate-v1] edge fn kini mengecek registrasi milik siswa ini → bawa token sesi.
+                  const { data: { session: sesiBayar } } = await supabase.auth.getSession();
                   const res = await fetch(
                     "https://jbtgciepdmqxxcjflrxz.supabase.co/functions/v1/xendit-create-invoice",
                     {
                       method: "POST",
                       headers: {
                         "Content-Type": "application/json",
-                        Authorization: `Bearer ${process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY}`,
+                        apikey: process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY ?? "",
+                        Authorization: `Bearer ${sesiBayar?.access_token ?? process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY}`,
                       },
                       body: JSON.stringify({
                         registration_id: r.id,
