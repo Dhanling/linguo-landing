@@ -1,15 +1,15 @@
 import type { LanguageCurriculum } from "../types";
 import { getLanguageBySlug } from "../languages";
 
-// [isyarat-3d-v1] Silabus American Sign Language (ASL). A1.1 punya dek slide
-// siap pakai dengan avatar 3D (dashboard: src/data/dekSilabus/asl-a1-1.ts) —
+// [isyarat-3d-v1] Silabus American Sign Language (ASL). A1.1–A2.4 punya dek slide
+// siap pakai dengan avatar 3D (dashboard: src/data/dekSilabus/asl-*.ts) —
 // judul sesi di sini WAJIB sama persis dengan heading dek ("Sesi N · …").
 const meta = getLanguageBySlug("asl")!;
 
 const curriculum: LanguageCurriculum = {
   meta,
   overview:
-    "American Sign Language (ASL) adalah bahasa isyarat komunitas Tuli di Amerika Serikat dan sebagian Kanada — bahasa utuh dengan tata bahasanya sendiri, bukan bahasa Inggris yang 'diterjemahkan ke tangan'. ASL lahir dari pertemuan bahasa isyarat Prancis (LSF) dengan isyarat lokal Amerika di sekolah Tuli pertama di Hartford (1817), dan kini dipakai di kampus, konferensi, dan konten internasional. Satu isyarat terbentuk dari bentuk tangan, lokasi, gerakan, arah telapak, dan ekspresi wajah; ekspresi wajah bahkan berfungsi sebagai tata bahasa (alis naik untuk pertanyaan ya/tidak, alis berkerut untuk pertanyaan WH). Di Linguo, tiap sesi A1 dilengkapi avatar 3D yang bisa diputar ulang pelan dan dari berbagai sudut, plus dialog dua tokoh yang bisa diputar per baris. Catatan: ASL berbeda dengan BISINDO (Bahasa Isyarat Indonesia).",
+    "American Sign Language (ASL) adalah bahasa isyarat komunitas Tuli di Amerika Serikat dan sebagian Kanada — bahasa utuh dengan tata bahasanya sendiri, bukan bahasa Inggris yang 'diterjemahkan ke tangan'. ASL lahir dari pertemuan bahasa isyarat Prancis (LSF) dengan isyarat lokal Amerika di sekolah Tuli pertama di Hartford (1817), dan kini dipakai di kampus, konferensi, dan konten internasional. Satu isyarat terbentuk dari bentuk tangan, lokasi, gerakan, arah telapak, dan ekspresi wajah; ekspresi wajah bahkan berfungsi sebagai tata bahasa (alis naik untuk pertanyaan ya/tidak, alis berkerut untuk pertanyaan WH). Di Linguo, tiap sesi A1–A2 dilengkapi avatar 3D yang bisa diputar ulang pelan dan dari berbagai sudut, plus dialog dua tokoh yang bisa diputar per baris. Catatan: ASL berbeda dengan BISINDO (Bahasa Isyarat Indonesia).",
   levels: [
     {
       code: "A1",
@@ -84,6 +84,106 @@ const curriculum: LanguageCurriculum = {
             { number: 14, title: "Video Call & Teknologi", topics: ["VIDEOPHONE, TEXT", "etika video call"] },
             { number: 15, title: "Review A1.3", topics: ["cerita 1 menit", "kuis classifier"] },
             { number: 16, title: "Proyek Akhir A1 — Cerita Diri 2 Menit", topics: ["perkenalan + keluarga + rutinitas", "rekam & presentasi"] },
+          ],
+        },
+      ],
+    },
+    {
+      code: "A2",
+      name: "Dasar Lanjut — Bercerita, Kota & Pendapat",
+      description:
+        "Lanjutan A1: keluarga besar, rutinitas & frekuensi, pakaian, sekolah, olahraga, perasaan lanjutan, petunjuk arah dengan classifier, restoran, dokter, darurat, perjalanan, aspek verba (terus-menerus & berulang), daftar di jari, kalimat bersyarat, role shift, cerita masa kecil, pendapat & setuju-tidak setuju, pekerjaan, aksesibilitas, dan sejarah komunitas Tuli. Akhir A2 kamu bisa bercerita 3–5 menit dengan penanda waktu, classifier, dan role shift, serta menyampaikan pendapat beserta alasannya.",
+      sublevels: [
+        {
+          code: "A2.1",
+          name: "Daily Life — Kehidupan Sehari-hari",
+          preview: false,
+          sessions: [
+            { number: 1, title: "Review A1 & Sapaan Lanjutan", topics: ["WHAT'S-UP, LONG-TIME-NO-SEE", "NICE-MEET-YOU lengkap", "menyapa teman lama"] },
+            { number: 2, title: "Keluarga Besar", topics: ["GRANDMOTHER, GRANDFATHER", "AUNT, UNCLE, COUSIN", "MARRIED, DIVORCED", "pohon keluarga"] },
+            { number: 3, title: "Rutinitas & Frekuensi", topics: ["EVERY-DAY, EVERY-MORNING, EVERY-WEEK", "ALWAYS, OFTEN, SOMETIMES", "pengulangan isyarat waktu"] },
+            { number: 4, title: "Pakaian", topics: ["SHIRT, PANTS, SHOES, DRESS", "HAT, COAT, WEAR", "mendeskripsikan pakaian teman"] },
+            { number: 5, title: "Sekolah & Kampus", topics: ["CLASS, TEST, HOMEWORK", "COLLEGE, MATH, ENGLISH", "jadwal pelajaran"] },
+            { number: 6, title: "Olahraga", topics: ["SPORT, BASKETBALL, SOCCER", "RUN, WIN, LOSE", "tim favorit"] },
+            { number: 7, title: "Hewan", topics: ["DOG, CAT, BIRD, FISH", "HORSE, ANIMAL", "hewan peliharaan"] },
+            { number: 8, title: "Classifier Ukuran & Bentuk", topics: ["SASS: garis, titik, belang", "ukuran kecil–besar dengan wajah", "mendeskripsikan benda"] },
+            { number: 9, title: "Perasaan Lanjutan", topics: ["ANGRY, SCARED, EXCITED", "BORED, NERVOUS, PROUD", "intensitas lewat wajah & gerak"] },
+            { number: 10, title: "Mengajak & Menolak", topics: ["CAN, CAN'T, MAYBE", "BUSY, FREE", "mengajak dengan sopan"] },
+            { number: 11, title: "Bulan, Tahun & Kalender", topics: ["MONTH, YEAR", "NEXT-WEEK, LAST-WEEK", "nama bulan dieja jari"] },
+            { number: 12, title: "Ulang Tahun & Perayaan", topics: ["BIRTHDAY, PARTY, GIFT", "CELEBRATE, HOLIDAY", "mengucapkan selamat"] },
+            { number: 13, title: "Jamak & Jumlah", topics: ["MANY, FEW, ALL, SOME", "mengulang isyarat untuk jamak", "classifier jamak"] },
+            { number: 14, title: "Kesukaan & Favorit", topics: ["FAVORITE, BEST, WORST", "PREFER vs LIKE", "membandingkan pilihan"] },
+            { number: 15, title: "Review A2.1", topics: ["kuis isyarat A2.1", "dialog 10 giliran", "umpan balik"] },
+            { number: 16, title: "Proyek — Vlog Satu Hariku", topics: ["rutinitas + frekuensi", "pakaian & perasaan", "rekam & kirim"] },
+          ],
+        },
+        {
+          code: "A2.2",
+          name: "Around Town — Di Sekitar Kota",
+          preview: false,
+          sessions: [
+            { number: 1, title: "Petunjuk Arah", topics: ["LEFT, RIGHT, STRAIGHT", "TURN, CORNER, BLOCK", "peta di ruang isyarat"] },
+            { number: 2, title: "Transportasi Umum", topics: ["TICKET, STATION", "ARRIVE, LEAVE", "LATE, EARLY"] },
+            { number: 3, title: "Di Restoran", topics: ["MENU, ORDER, WAITER", "DELICIOUS, BILL", "memesan makanan"] },
+            { number: 4, title: "Belanja Pakaian", topics: ["SIZE, EXPENSIVE, CHEAP", "SALE, BUY", "tawar-menawar sopan"] },
+            { number: 5, title: "Bank & Kantor Pos", topics: ["MONEY, BANK, SAVE", "LETTER, SEND", "mengurus keperluan"] },
+            { number: 6, title: "Ke Dokter", topics: ["APPOINTMENT, PAIN, FEVER", "COUGH, MEDICINE", "menjelaskan gejala"] },
+            { number: 7, title: "Darurat & Keselamatan", topics: ["EMERGENCY, POLICE, FIRE", "ACCIDENT, SAFE", "minta bantuan"] },
+            { number: 8, title: "Lokasi & Preposisi Ruang", topics: ["IN, ON, UNDER", "NEXT-TO, BEHIND", "classifier sebagai preposisi"] },
+            { number: 9, title: "Akhir Pekan & Rekreasi", topics: ["WEEKEND, PLAN", "BEACH, MOUNTAIN, PARK", "rencana libur"] },
+            { number: 10, title: "Liburan & Perjalanan", topics: ["TRAVEL, VACATION, HOTEL", "FLY, PACK", "cerita perjalanan"] },
+            { number: 11, title: "Negara & Kebangsaan", topics: ["INDONESIA, AMERICA, JAPAN", "CHINA, ENGLAND, FRANCE", "nama isyarat negara dari komunitasnya"] },
+            { number: 12, title: "Juru Bahasa Isyarat & Bantuan", topics: ["INTERPRETER, NEED", "REQUEST, HELP", "etika bekerja dengan juru bahasa"] },
+            { number: 13, title: "Pertanyaan Lanjutan", topics: ["WHICH, HOW-MUCH, HOW-LONG", "WHAT-FOR", "alis berkerut & naik"] },
+            { number: 14, title: "Roleplay: Bertanya Jalan", topics: ["menunjuk & classifier", "mengonfirmasi arah", "dialog lengkap"] },
+            { number: 15, title: "Review A2.2", topics: ["kuis isyarat A2.2", "dialog di kota", "umpan balik"] },
+            { number: 16, title: "Proyek — Video Tur Kotaku", topics: ["arah + tempat + transportasi", "classifier peta", "rekam & presentasi"] },
+          ],
+        },
+        {
+          code: "A2.3",
+          name: "Storytelling — Bercerita",
+          preview: false,
+          sessions: [
+            { number: 1, title: "Penanda Waktu Lanjutan", topics: ["RECENTLY, LONG-AGO", "NOT-YET, SINCE", "garis waktu di badan"] },
+            { number: 2, title: "Aspek Verba: Terus & Berulang", topics: ["isyarat diulang melingkar = terus-menerus", "REGULARLY", "WORK-terus, STUDY-terus"] },
+            { number: 3, title: "Urutan & Daftar di Jari", topics: ["FIRST, SECOND, THIRD, LAST", "listing di tangan kiri", "menyebut tiga hal"] },
+            { number: 4, title: "Kata Penghubung", topics: ["BUT, OR, THEN", "BECAUSE (WHY retoris)", "menggabung kalimat"] },
+            { number: 5, title: "Kalimat Bersyarat", topics: ["SUPPOSE / IF", "alis naik di klausa syarat", "kalau…, maka…"] },
+            { number: 6, title: "Classifier Gerak Lanjutan", topics: ["CL:V orang berdiri, jatuh, duduk", "CL:2 dua orang berjalan", "menggambarkan adegan"] },
+            { number: 7, title: "Role Shift Lanjutan", topics: ["dialog dalam cerita", "bahu & pandangan", "dua tokoh bergantian"] },
+            { number: 8, title: "Kata Kerja Berarah Lanjutan", topics: ["SHOW, TELL, INFORM", "LOOK-AT, PAY", "arah = siapa ke siapa"] },
+            { number: 9, title: "Cerita Masa Kecil", topics: ["GROW-UP, YOUNG", "REMEMBER, FORGET", "kenangan sekolah"] },
+            { number: 10, title: "Lucu & Mengejutkan", topics: ["FUNNY, SURPRISE, WOW", "LAUGH", "ekspresi wajah besar"] },
+            { number: 11, title: "Menggambarkan Kejadian", topics: ["HAPPEN, SUDDENLY", "FINALLY, ACCIDENT", "urutan adegan"] },
+            { number: 12, title: "Puisi & ABC Story", topics: ["ABC story: bentuk tangan A–Z", "puisi angka", "seni ASL"] },
+            { number: 13, title: "Menyampaikan Pesan Orang Lain", topics: ["SAY, TELL, ASK", "role shift untuk kutipan", "pesan berantai"] },
+            { number: 14, title: "Narasi Berurutan", topics: ["FIRST … THEN … FINISH", "penanda waktu + classifier", "cerita 6 adegan"] },
+            { number: 15, title: "Review A2.3", topics: ["kuis aspek & classifier", "cerita 1 menit", "umpan balik"] },
+            { number: 16, title: "Proyek — Cerita Pengalaman 3 Menit", topics: ["role shift + classifier", "penanda waktu", "rekam & presentasi"] },
+          ],
+        },
+        {
+          code: "A2.4",
+          name: "Opinions & Community — Pendapat & Komunitas Tuli",
+          preview: false,
+          sessions: [
+            { number: 1, title: "Menyatakan Pendapat", topics: ["THINK, FEEL, OPINION", "AGREE, DISAGREE", "alasan dengan WHY retoris"] },
+            { number: 2, title: "Benar, Salah & Sama-Beda", topics: ["RIGHT, WRONG", "SAME, DIFFERENT", "membandingkan dua hal"] },
+            { number: 3, title: "Rencana & Cita-cita", topics: ["FUTURE, GOAL, DREAM", "HOPE, TRY", "rencana 5 tahun"] },
+            { number: 4, title: "Pekerjaan & Karier", topics: ["JOB, INTERVIEW, BOSS", "MEETING, COMPANY", "melamar kerja"] },
+            { number: 5, title: "Teknologi & Media Sosial", topics: ["INTERNET, EMAIL, VIDEO", "CAPTION, PHONE", "etika daring"] },
+            { number: 6, title: "Kesehatan & Gaya Hidup", topics: ["EXERCISE, HEALTHY", "STRONG, WEAK", "kebiasaan sehat"] },
+            { number: 7, title: "Alam & Lingkungan", topics: ["TREE, FLOWER, EARTH", "CLEAN, DIRTY", "menjaga lingkungan"] },
+            { number: 8, title: "Sejarah Tuli: Gallaudet & DPN", topics: ["Gallaudet University", "Deaf President Now 1988", "tokoh Tuli"] },
+            { number: 9, title: "Aksesibilitas & Hak", topics: ["ACCESS, RIGHTS, LAW", "INTERPRETER, CAPTION", "ADA 1990"] },
+            { number: 10, title: "Seni & Teater Tuli", topics: ["ART, THEATER, POETRY", "Deaf View/Image Art", "seniman Tuli"] },
+            { number: 11, title: "Bahasa Isyarat di Dunia", topics: ["ASL, BSL, BISINDO", "International Sign", "isyarat negara"] },
+            { number: 12, title: "Harus, Perlu & Penting", topics: ["MUST, SHOULD, IMPORTANT", "ACTUALLY", "menyampaikan saran"] },
+            { number: 13, title: "Menyampaikan Berita", topics: ["NEWS, ANNOUNCE", "berita baik & buruk", "wajah sesuai isi berita"] },
+            { number: 14, title: "Roleplay: Wawancara", topics: ["bertanya & menjawab panjang", "pendapat + alasan", "umpan balik"] },
+            { number: 15, title: "Review A2", topics: ["kuis semua isyarat A2", "debat ringan", "umpan balik"] },
+            { number: 16, title: "Proyek Akhir A2 — Presentasi 5 Menit", topics: ["topik pilihan + pendapat", "classifier, role shift, penanda waktu", "presentasi & tanya jawab"] },
           ],
         },
       ],

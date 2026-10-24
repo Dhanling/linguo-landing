@@ -23,3 +23,10 @@ rangka bayangan (`rangka` di isyarat-gerak.json, ditulis kemas.mjs) lalu me-reta
 tulang humanoid VRM tiap bingkai. Ganti avatar = ekspor VRM baru, kecilkan dengan
 `kecilkan_vrm.py` (buang morph NORMAL, morph POSITION jadi sparse, thumbnail 256 px),
 salin ke `public/models/isyarat/asl/` KEDUA repo, render ulang `vrm-poster-*.png`.
+
+## A1.2–A2.4 — [isyarat-asl-a1a2-v1]
+
+Kosakata per sublevel ada di `kamus_a1_2.py` … `kamus_a2_4.py` (diimpor otomatis di akhir
+`kamus.py`); pembagian kode di `ALOKASI.md` supaya tidak bentrok. Cek semua kode dek ada di kamus:
+`node --import tsx cek_kode.mjs <dek.ts>…` (dari worktree dashboard; `cek_kode.mjs` memanggil
+`daftar_kode.py` lewat Blender — taruh keduanya di folder kerja seperti ~/linguo-isyarat-work).

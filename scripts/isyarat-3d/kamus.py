@@ -779,3 +779,11 @@ WAJAH = {
     "sedih": dict(alis=(0.0015, 0.002, 16), mata=0.88, mulut=(0.85, 0.7)),
     "tidur": dict(alis=(-0.001, 0, 3), mata=0.08, mulut=(0.9, 0.8)),
 }
+
+# ── [isyarat-asl-a1a2-v1] Kamus tambahan per sublevel A1.2–A2.4 ─────────────
+# Tiap berkas kamus_<sub>.py memanggil S()/k()/… dari modul ini. Kode dibagi di
+# ../ALOKASI.md supaya tidak bentrok; berkas yang belum ada dilewati.
+import importlib as _il, os as _os
+for _m in ("kamus_a1_2", "kamus_a1_3", "kamus_a2_1", "kamus_a2_2", "kamus_a2_3", "kamus_a2_4"):
+    if _os.path.exists(_os.path.join(_os.path.dirname(__file__), _m + ".py")):
+        _il.import_module(_m)
