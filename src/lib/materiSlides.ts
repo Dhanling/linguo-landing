@@ -1,4 +1,5 @@
 import { upgradeImagegenA2Cover } from "../data/imagegenA2Cover";
+import { upgradeAslCover } from "../data/aslSlideArtwork";
 // [materi-slide-v1] Format slide untuk materi kelas (`class_materials`).
 //
 // Kenapa format sendiri, bukan menumpang slide Lingcore (`session_slides` +
@@ -438,7 +439,7 @@ export function normalizeSlide(raw: any): MateriSlide | null {
   if (visual) s.visual = visual;
   // [slide-sampul-v1] Hanya berkas di /slide-cover — dek buatan AI atau baris
   // lama tak bisa menyelipkan gambar dari alamat lain.
-  const cover = upgradeImagegenA2Cover(str(raw.cover));
+  const cover = upgradeAslCover(upgradeImagegenA2Cover(str(raw.cover)));
   if (/^\/slide-cover\/(?:(?:spanish-themes|spanish-v2|portuguese-br|mandarin-themes|dutch-(?:a[12]-[1-4]|b1-[1-4]|b2-[1-7]))\/)?[\w.-]+$/.test(cover)) {
     // Decks saved before the illustrated artwork was ready contain the old
     // deterministic SVG path. Resolve that specific built-in asset to the
