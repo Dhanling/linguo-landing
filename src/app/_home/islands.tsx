@@ -58,7 +58,16 @@ const LANG_CATEGORIES = [
   { label: "Eropa", langs: ["English","French","German","Spanish","Italian","Dutch","Portuguese","Russian","Polish","Swedish","Norwegian","Danish","Finnish","Greek","Czech","Hungarian","Romanian","Bosnian"] },
   { label: "Nusantara", langs: ["Javanese","Sundanese","Betawi","BIPA"] },
   { label: "Afrika", langs: ["Swahili"] },
+  // [klaim-diskon-isyarat-v1] BISINDO & ASL dua bahasa berbeda — nilai kanonik
+  // sama dgn TrialWizard/harga (SIGN_LANGUAGE_VARIANTS) biar WA Inbox kebaca.
+  { label: "Bahasa Isyarat", langs: ["Sign Language - BISINDO","Sign Language - ASL"] },
 ];
+
+// Label tampilan di dropdown; nilai yang dikirim tetap nama kanonik.
+const QUICK_LANG_LABEL: Record<string,string> = {
+  "Sign Language - BISINDO": "Bahasa Isyarat - BISINDO",
+  "Sign Language - ASL": "Bahasa Isyarat - ASL (American)",
+};
 
 // linguo-patch:reguler-lang-gate — bahasa yg punya jadwal Kelas Reguler (regular_batches)
 // sekarang tinggal di @/lib/programLanguages (dipakai bareng FunnelModal + /api/wa-quick-lead).
@@ -818,7 +827,7 @@ export function HeroFunnel({lang, onLoginOpen}:{lang:string; onLoginOpen?:()=>vo
                 <option value="">{lang==="id"?"Bahasa yang mau dipelajari":"Language you want to learn"}</option>
                 {quickLangOpts.map(l=>(
                   <option key={l} value={l} className="text-slate-900">
-                    {qProgram==="Kelas Reguler" ? regulerLangName(l) : l}
+                    {qProgram==="Kelas Reguler" ? regulerLangName(l) : (QUICK_LANG_LABEL[l] || l)}
                   </option>
                 ))}
               </select>
