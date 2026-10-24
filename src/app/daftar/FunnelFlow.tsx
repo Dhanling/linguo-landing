@@ -145,10 +145,19 @@ export default function FunnelFlow({ route }: { route: FunnelRoute }) {
   // Level dipilih di halaman langkah 3 (bareng durasi & paket), baru dibawa ke URL.
   // ?level= dipakai alur tes penempatan: hasilnya (A1/A2/B1/B2) sudah tahu level
   // siswa, jadi kartunya tinggal terpilih duluan.
+  // [funnel-naik-v1] Tanpa ?level=, level pertama (A1) langsung terpilih: dulu
+  // tombol "Lanjut" mati & ringkasan harga kosong sampai orang memilih kartu
+  // level di tengah halaman — 97 sesi sampai sini, hanya 23 yang lanjut (Okt 2026).
+  // Kids dikecualikan: segmen level-nya = kelompok usia, harus dipilih sadar.
   const suggestedLevel = (sp.get("level") || "").toUpperCase();
-  const [selLevel, setSelLevel] = useState(
-    level || (programSlug && levelsForProgram(programSlug).includes(suggestedLevel) ? suggestedLevel : ""),
-  );
+  const [selLevel, setSelLevel] = useState(() => {
+    if (level) return level;
+    if (!programSlug) return "";
+    const opts = levelsForProgram(programSlug);
+    if (opts.includes(suggestedLevel)) return suggestedLevel;
+    return programSlug === "kids" ? "" : opts[0] || "";
+  });
+  const [showRef, setShowRef] = useState(false);
   const [form, setForm] = useState<FormData>(EMPTY_FORM);
   const [agreeTerms, setAgreeTerms] = useState(false);
   const [formError, setFormError] = useState("");
@@ -495,7 +504,7 @@ export default function FunnelFlow({ route }: { route: FunnelRoute }) {
               {program === "Kelas Kids" ? "Kelompok usia" : "Level"}
             </h2>
             <p className="mb-3 text-sm text-slate-500">
-              {program === "Kelas Kids" ? "Pilih sesuai usia anak" : "Belum tahu levelmu? Ambil tes penempatan gratis dulu."}
+              {program === "Kelas Kids" ? "Pilih sesuai usia anak" : "Pemula pilih A1. Belum tahu levelmu? Ambil tes penempatan gratis dulu."}
             </p>
             <div className="flex flex-col gap-2">
               {levels.map((lv) => (
@@ -857,6 +866,32 @@ export default function FunnelFlow({ route }: { route: FunnelRoute }) {
           <h1 className="mt-4 text-2xl font-extrabold text-slate-900">Lengkapi data diri</h1>
           <p className="mt-1 text-sm text-slate-500">Isi data di bawah agar tim kami bisa menghubungimu</p>
 
+          {/* [funnel-naik-v1] Dari 23 sesi yang sampai di sini, cuma 2 yang lanjut ke
+              konfirmasi (Okt 2026). Total & jaminan dulu baru tampil di langkah 5 —
+              sekarang diulang di atas formulir supaya orang tahu apa yang dibayar
+              dan bahwa uangnya aman sebelum menyerahkan nomor WA. */}
+          {totalAmount > 0 && (
+            <div className="mt-4 rounded-2xl border-2 border-[#1A9E9E]/20 bg-[#1A9E9E]/[0.03] p-4">
+              <div className="flex items-center justify-between">
+                <span className="text-sm font-semibold text-slate-700">
+                  Total tagihan{program === "Semi Private" ? " (kamu)" : ""}
+                </span>
+                <span className="text-lg font-extrabold text-[#1A9E9E]">{fmtRp(totalAmount)}</span>
+              </div>
+              <ul className="mt-2 space-y-1 text-[12px] leading-snug text-slate-600">
+                {isSessionProg ? (
+                  <>
+                    <li className="flex items-start gap-1.5"><ShieldCheck className="mt-0.5 h-3.5 w-3.5 shrink-0 text-[#1A9E9E]" />Batal sebelum sesi pertama = dana kembali 100%</li>
+                    <li className="flex items-start gap-1.5"><CalendarCheck className="mt-0.5 h-3.5 w-3.5 shrink-0 text-[#1A9E9E]" />Jadwal dicocokkan dengan pengajar setelah bayar</li>
+                  </>
+                ) : program === "Kelas Reguler" ? (
+                  <li className="flex items-start gap-1.5"><ShieldCheck className="mt-0.5 h-3.5 w-3.5 shrink-0 text-[#1A9E9E]" />Kuota 8 peserta belum terpenuhi = pindah batch berikutnya atau refund penuh</li>
+                ) : null}
+                <li className="flex items-start gap-1.5"><ShieldCheck className="mt-0.5 h-3.5 w-3.5 shrink-0 text-[#1A9E9E]" />Bayar aman lewat halaman pembayaran Xendit</li>
+              </ul>
+            </div>
+          )}
+
           <div className="mt-5 space-y-3">
             <button
               onClick={handleGoogleSignIn}
@@ -916,17 +951,25 @@ export default function FunnelFlow({ route }: { route: FunnelRoute }) {
                 />
               </div>
             </div>
-            <div>
-              <label className="mb-1 block text-xs font-medium text-slate-600">Kode Referral (opsional)</label>
-              <input
-                type="text"
-                placeholder="Masukkan kode referral jika ada"
-                value={form.refCode}
-                onChange={(e) => saveForm({ ...form, refCode: e.target.value })}
-                className="w-full rounded-xl border-2 border-slate-200 px-4 py-3 text-sm focus:border-[#1A9E9E] focus:outline-none"
-              />
-              <p className="mt-1 text-xs text-slate-400">Dapatkan dari teman atau afiliator Linguo</p>
-            </div>
+            {/* [funnel-naik-v1] Kode referral dilipat: kolom kosong yang tidak dipunyai
+                kebanyakan orang menambah panjang formulir & bikin ragu. */}
+            {showRef || form.refCode ? (
+              <div>
+                <label className="mb-1 block text-xs font-medium text-slate-600">Kode Referral (opsional)</label>
+                <input
+                  type="text"
+                  placeholder="Masukkan kode referral jika ada"
+                  value={form.refCode}
+                  onChange={(e) => saveForm({ ...form, refCode: e.target.value })}
+                  className="w-full rounded-xl border-2 border-slate-200 px-4 py-3 text-sm focus:border-[#1A9E9E] focus:outline-none"
+                />
+                <p className="mt-1 text-xs text-slate-400">Dapatkan dari teman atau afiliator Linguo</p>
+              </div>
+            ) : (
+              <button type="button" onClick={() => setShowRef(true)} className="text-xs font-medium text-[#1A9E9E] hover:underline">
+                Punya kode referral?
+              </button>
+            )}
           </div>
 
           {formError && <p className="mt-2 text-xs text-red-500">{formError}</p>}

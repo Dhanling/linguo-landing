@@ -1139,11 +1139,15 @@ export default function ArticleContent({ post, relatedPosts }: { post: BlogPost;
     hindi:'Hindi',turki:'Turki',finlandia:'Finlandia',georgia:'Georgia',ukraina:'Ukraina',
   };
   const _words = [
-    ...(post.tags||[]).flatMap((t) => t.toLowerCase().replace(/[#_]/g,'').split(/[s-]+/)),
+    ...(post.tags||[]).flatMap((t) => t.toLowerCase().replace(/[#_]/g,'').split(/[\s-]+/)),
     ...(post.slug||'').split('-'),
-    ...(post.title||'').toLowerCase().split(/s+/).map((w) => w.replace(/[^a-z]/g,'')),
+    ...(post.title||'').toLowerCase().split(/\s+/).map((w) => w.replace(/[^a-z]/g,'')),
   ];
   const langName = _words.reduce((found, word) => found || LANG_NAMES[word] || '', '');
+  // [funnel-naik-v1] CTA blog langsung ke /daftar/<bahasa> (pilih program), bukan
+  // beranda berparameter — 319 sesi masuk lewat blog seminggu, 0 sampai /daftar.
+  // Slug /daftar = nama Indonesia lowercase, kecuali Thai → thailand.
+  const daftarHref = langName ? `/daftar/${langName === 'Thai' ? 'thailand' : langName.toLowerCase()}` : "/daftar";
   const minutes = readTime(post.content);
 
   return (
@@ -1159,7 +1163,7 @@ export default function ArticleContent({ post, relatedPosts }: { post: BlogPost;
           <div className="flex items-center gap-6">
             <a href="/" className="text-sm text-slate-500 hover:text-slate-900 transition-colors hidden sm:block font-medium">Home</a>
             <Link href="/blog" className="text-sm text-slate-500 hover:text-slate-900 transition-colors font-medium">Blog</Link>
-            <a href={langName ? `/?lang=${encodeURIComponent(langName.toLowerCase())}&program=private` : "/"} className="bg-[#1A9E9E] text-white text-sm font-bold px-5 py-2 rounded-full hover:bg-[#178585] transition-colors">
+            <a href={daftarHref} className="bg-[#1A9E9E] text-white text-sm font-bold px-5 py-2 rounded-full hover:bg-[#178585] transition-colors">
               {langName ? `Daftar Bahasa ${langName} Sekarang` : "Daftar Sekarang"}
             </a>
           </div>
@@ -1310,7 +1314,7 @@ export default function ArticleContent({ post, relatedPosts }: { post: BlogPost;
 
               <div className="flex flex-col sm:flex-row gap-3">
                 <a
-                  href={langName ? `/?lang=${encodeURIComponent(langName.toLowerCase())}&program=private` : "/"}
+                  href={daftarHref}
                   className="inline-flex items-center justify-center gap-2 bg-[#fbbf24] hover:bg-[#f59e0b] text-slate-900 font-bold px-8 py-3.5 rounded-full text-sm transition-all shadow-md hover:shadow-lg hover:-translate-y-0.5 active:scale-95"
                 >
                   <Rocket className="w-4 h-4" /> {langName ? `Daftar Bahasa ${langName} Sekarang` : "Daftar Sekarang"}
