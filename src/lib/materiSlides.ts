@@ -149,12 +149,13 @@ export interface BunyiKhas { tulisan: string; bunyi: string; info?: string; soro
 
 /* [isyarat-3d-v1] Bahasa isyarat: avatar 3D (Blender) memperagakan kode klip.
    `tanda` = mode kamus (tombol per isyarat), `baris` = dialog dua tokoh A/B.
-   `urut` = kode klip berurutan; "#RIO" = dieja jari. `eja` = kotak ketik-untuk-dieja. */
+   `urut` = kode klip berurutan; "#RIO" = dieja jari. `eja` = kotak ketik-untuk-dieja.
+   [isyarat-vrm-v1] `avatar: "vrm"` = tokoh VRoid (isyarat-*.vrm) alih-alih rig Blender. */
 export interface IsyaratTanda { kode: string; gloss?: string; arti?: string }
 export interface IsyaratBaris { siapa: "A" | "B"; urut: string[]; gloss: string; arti: string; wajah?: string }
 
 export type SlideVisual =
-  | { kind: "isyarat"; bahasa: string; tanda?: IsyaratTanda[]; baris?: IsyaratBaris[]; nama?: [string, string]; eja?: boolean; tokoh?: "A" | "B" }
+  | { kind: "isyarat"; bahasa: string; tanda?: IsyaratTanda[]; baris?: IsyaratBaris[]; nama?: [string, string]; eja?: boolean; tokoh?: "A" | "B"; avatar?: "vrm" }
   | { kind: "nada"; rows: VisualNadaRow[] }
   | { kind: "suku-kata"; rows: VisualSukuRow[] }
   | { kind: "kelompok"; groups: VisualGroup[] }
@@ -316,6 +317,7 @@ function normVisual(v: any): SlideVisual | undefined {
       ...(tanda.length ? { tanda } : {}), ...(baris.length ? { baris } : {}),
       ...(nama.length === 2 ? { nama: nama as [string, string] } : {}),
       ...(eja ? { eja } : {}), ...(v.tokoh === "B" ? { tokoh: "B" as const } : {}),
+      ...(v.avatar === "vrm" ? { avatar: "vrm" as const } : {}),
     };
   }
   if (v.kind === "nada") {

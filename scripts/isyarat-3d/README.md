@@ -14,3 +14,12 @@ Salin `out/web/*` ke `public/models/isyarat/asl/` di KEDUA repo (landing & dashb
 Isyarat baru = tambah entri di `kamus.py` (titik tubuh & bentuk tangan di `isyarat.py`),
 cek visual dengan `--cek` (render 3 bingkai per isyarat), lalu panggang ulang.
 ⚠️ Gerak ditulis dari kamus umum ASL — perlu dicek pengajar Tuli.
+
+## Avatar VRoid (VRM) — [isyarat-vrm-v1]
+
+Slide dengan `avatar: "vrm"` memakai `isyarat-pria.vrm` / `isyarat-wanita.vrm` (ekspor
+VRoid Studio, VRM 1.0). Klip TETAP dipanggang di rig Blender; SlideIsyarat memutarnya di
+rangka bayangan (`rangka` di isyarat-gerak.json, ditulis kemas.mjs) lalu me-retarget ke
+tulang humanoid VRM tiap bingkai. Ganti avatar = ekspor VRM baru, kecilkan dengan
+`kecilkan_vrm.py` (buang morph NORMAL, morph POSITION jadi sparse, thumbnail 256 px),
+salin ke `public/models/isyarat/asl/` KEDUA repo, render ulang `vrm-poster-*.png`.

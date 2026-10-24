@@ -50,6 +50,17 @@ function sampel(t, v, k, n, dur) {
 const b64 = (arr) => Buffer.from(arr.buffer, arr.byteOffset, arr.byteLength).toString("base64");
 
 const doc = await io.read(`${IN}/isyarat-pria.glb`);
+// [isyarat-vrm-v1] Kerangka diam (nama, induk, T, R) untuk rangka bayangan retarget VRM di SlideIsyarat
+const sendi = doc.getRoot().listSkins()[0].listJoints();
+const rangka = [];
+const kunjungi = (n) => {
+  if (rangka.some((r) => r[0] === n.getName())) return;
+  const p = n.getParentNode();
+  if (p && sendi.includes(p)) kunjungi(p);
+  rangka.push([n.getName(), p && sendi.includes(p) ? rangka.findIndex((r) => r[0] === p.getName()) : -1,
+    ...n.getTranslation().map((x) => +x.toFixed(6)), ...n.getRotation().map((x) => +x.toFixed(6))]);
+};
+sendi.forEach(kunjungi);
 const klip = {};
 for (const anim of doc.getRoot().listAnimations()) {
   const nama = anim.getName();
@@ -88,6 +99,6 @@ await docW.transform(prune(), dedup(), quantize());
 await io.write(`${OUT}/isyarat-wanita.glb`, docW);
 
 const kamus = JSON.parse(fs.readFileSync(`${IN}/kamus.json`, "utf8"));
-const out = { v: 1, fps: FPS, tulang: TULANG, isyarat: kamus.isyarat, wajah: kamus.wajah, klip };
+const out = { v: 1, fps: FPS, tulang: TULANG, isyarat: kamus.isyarat, wajah: kamus.wajah, klip, rangka };
 fs.writeFileSync(`${OUT}/isyarat-gerak.json`, JSON.stringify(out));
 for (const f of ["isyarat-pria.glb", "isyarat-wanita.glb", "isyarat-gerak.json"]) console.log(f, fs.statSync(`${OUT}/${f}`).size);

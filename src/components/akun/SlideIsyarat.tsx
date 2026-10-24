@@ -8,10 +8,19 @@
 // salin apa adanya (beda hanya jalur impor materiSlides & 'use client').
 //
 // Aset di /public/models/isyarat/<bahasa>/ KEDUA repo:
-//   isyarat-pria.glb / isyarat-wanita.glb — mesh + rig (kerangka identik)
-//   isyarat-gerak.json — semua klip (kuaternion int16 per tulang) + kamus
-// Klip dibangun jadi THREE.AnimationClip di sini; tulang diikat lewat nama,
-// jadi klip yang sama bisa diputar di kedua tokoh.
+//   isyarat-pria.glb / isyarat-wanita.glb — mesh + rig Blender (kerangka identik)
+//   isyarat-pria.vrm / isyarat-wanita.vrm — avatar VRoid (VRM 1.0, jari 3 ruas),
+//                        dipakai kalau visual `avatar: "vrm"`
+//   isyarat-gerak.json — semua klip (kuaternion int16 per tulang rig Blender),
+//                        kamus, dan `rangka` (kerangka rig Blender saat diam)
+// Rig Blender: klip diikat langsung lewat nama tulang di kedua tokoh.
+// [isyarat-vrm-v1] VRM: klip tetap dipanggang di rig Blender, lalu diputar di
+// "rangka bayangan" (Object3D tak terlihat, dibangun dari `rangka`), lalu tiap
+// bingkai rotasi dunia tiap tulang dipindah ke tulang humanoid VRM (retarget):
+//   Dt = (Ws · Ws_diam⁻¹) · Fs_diam · Ft_diam⁻¹ — lihat class Retarget. Beda pose
+//   diam (A-pose Blender vs T-pose VRoid) dikoreksi per tulang lewat bingkai
+//   arah-tulang + normal telapak (F).
+// Ekspresi wajah VRM memakai expression VRM (rig Blender: klip WAJAH_*).
 //
 // three.js dimuat dinamis saat slide ini tampil — slide lain tak ikut berat.
 
@@ -23,7 +32,9 @@ type VisualIsyarat = Extract<Visual, { kind: "isyarat" }>;
 
 type KlipData = { d: number; n: number; c: Record<string, number[]>; v: Record<string, string | number[]> };
 type MetaIsyarat = { kode: string; arti: string; kat: string; cara: string; gloss: string; dur: number; wajah?: string | null; eja?: boolean };
-type Gerak = { v: 1; fps: number; tulang: string[]; isyarat: MetaIsyarat[]; wajah: string[]; klip: Record<string, KlipData> };
+/** [nama, indeks induk (-1 = akar), tx, ty, tz, qx, qy, qz, qw] — urut induk dulu */
+type TulangRangka = [string, number, number, number, number, number, number, number, number];
+type Gerak = { v: 1; fps: number; tulang: string[]; isyarat: MetaIsyarat[]; wajah: string[]; klip: Record<string, KlipData>; rangka: TulangRangka[] };
 
 const TEAL = "#0E7C7B";
 const NAMA_AWAL: [string, string] = ["Rio", "Mia"];
@@ -90,6 +101,130 @@ function bangunKlip(THREE: Three, g: Gerak, nama: string) {
   return new THREE.AnimationClip(nama, dur, tracks);
 }
 
+/* ── Retarget rig Blender → humanoid VRM ─────────────────────────────────── */
+
+type VRM = import("@pixiv/three-vrm").VRM;
+type NamaTulangVRM = import("@pixiv/three-vrm").VRMHumanBoneName;
+
+// [tulang rig Blender, tulang humanoid VRM]
+const PETA: [string, NamaTulangVRM][] = [["neck", "neck"], ["head", "head"]];
+for (const [s, h] of [["R", "right"], ["L", "left"]] as const) {
+  PETA.push([`upperarm_${s}`, `${h}UpperArm`], [`forearm_${s}`, `${h}LowerArm`], [`hand_${s}`, `${h}Hand`],
+    [`thumb1_${s}`, `${h}ThumbMetacarpal`], [`thumb2_${s}`, `${h}ThumbProximal`], [`thumb3_${s}`, `${h}ThumbDistal`]);
+  for (const [f, F] of [["index", "Index"], ["middle", "Middle"], ["ring", "Ring"], ["pinky", "Little"]] as const) {
+    PETA.push([`${f}1_${s}`, `${h}${F}Proximal`], [`${f}2_${s}`, `${h}${F}Intermediate`], [`${f}3_${s}`, `${h}${F}Distal`]);
+  }
+}
+/** Tulang berikut di rantai (untuk arah tulang); tanpa anak = arah dari induknya. */
+function anakDari(b: string): string | null {
+  const m = b.match(/^(upperarm|forearm|hand|thumb|index|middle|ring|pinky)(\d?)_([RL])$/);
+  if (b === "neck") return "head";
+  if (!m) return null;
+  const [, j, n, s] = m;
+  if (j === "upperarm") return `forearm_${s}`;
+  if (j === "forearm") return `hand_${s}`;
+  if (j === "hand") return `middle1_${s}`;
+  return n === "3" ? null : `${j}${+n + 1}_${s}`;
+}
+function indukDari(b: string): string | null {
+  const m = b.match(/^(forearm|hand|thumb|index|middle|ring|pinky)(\d?)_([RL])$/);
+  if (b === "head") return "neck";
+  if (!m) return null;
+  const [, j, n, s] = m;
+  if (j === "forearm") return `upperarm_${s}`;
+  if (j === "hand") return `forearm_${s}`;
+  return n === "1" ? `hand_${s}` : `${j}${+n - 1}_${s}`;
+}
+
+/** Rangka bayangan rig Blender (tak dirender) — target AnimationMixer. */
+function bangunRangka(THREE: Three, g: Gerak) {
+  const akar = new THREE.Object3D();
+  const tulang = new Map<string, import("three").Object3D>();
+  const urut: import("three").Object3D[] = [];
+  for (const [nama, induk, tx, ty, tz, qx, qy, qz, qw] of g.rangka) {
+    const o = new THREE.Object3D();
+    o.name = nama;
+    o.position.set(tx, ty, tz);
+    o.quaternion.set(qx, qy, qz, qw);
+    (induk >= 0 ? urut[induk] : akar).add(o);
+    urut.push(o);
+    tulang.set(nama, o);
+  }
+  akar.updateMatrixWorld(true);
+  return { akar, tulang };
+}
+
+class Retarget {
+  private item: { src: import("three").Object3D; restInv: import("three").Quaternion; A: import("three").Quaternion; node: import("three").Object3D; induk: number }[] = [];
+  private Dt: import("three").Quaternion[] = [];
+  private q: import("three").Quaternion;
+  private qi: import("three").Quaternion;
+  constructor(THREE: Three, rangka: ReturnType<typeof bangunRangka>, vrm: VRM) {
+    this.q = new THREE.Quaternion(); this.qi = new THREE.Quaternion();
+    const hum = vrm.humanoid;
+    vrm.scene.updateMatrixWorld(true);
+    const posS = (b: string) => rangka.tulang.get(b)!.getWorldPosition(new THREE.Vector3());
+    const posT = (b: string) => hum.getNormalizedBoneNode(PETA.find((p) => p[0] === b)![1])!.getWorldPosition(new THREE.Vector3());
+    const arah = (pos: (b: string) => import("three").Vector3, b: string) => {
+      const a = anakDari(b);
+      if (a) return pos(a).sub(pos(b)).normalize();
+      const i = indukDari(b);
+      return i ? pos(b).sub(pos(i)).normalize() : new THREE.Vector3(0, 1, 0);
+    };
+    // Normal telapak (urutan silang sama di kedua rig → arah anatomis sama)
+    const telapak = (pos: (b: string) => import("three").Vector3, s: string) => {
+      const h = pos(`hand_${s}`);
+      return pos(`index1_${s}`).sub(h).cross(pos(`pinky1_${s}`).sub(h)).normalize();
+    };
+    const bingkai = (p: import("three").Vector3, sek: import("three").Vector3) => {
+      const s2 = sek.clone().addScaledVector(p, -sek.dot(p)).normalize();
+      const t = new THREE.Vector3().crossVectors(p, s2);
+      return new THREE.Quaternion().setFromRotationMatrix(new THREE.Matrix4().makeBasis(p, s2, t));
+    };
+    const depan = new THREE.Vector3(0, 0, 1);
+    PETA.forEach(([b, h]) => {
+      const node = hum.getNormalizedBoneNode(h);
+      const src = rangka.tulang.get(b);
+      if (!node || !src) return;
+      const sisi = b.match(/_([RL])$/)?.[1];
+      const Fs = bingkai(arah(posS, b), sisi ? telapak(posS, sisi) : depan);
+      const Ft = bingkai(arah(posT, b), sisi ? telapak(posT, sisi) : depan);
+      const ib = indukDari(b);
+      this.item.push({
+        src, node,
+        restInv: src.getWorldQuaternion(new THREE.Quaternion()).invert(),
+        A: Fs.multiply(Ft.invert()),
+        induk: ib ? this.item.findIndex((x) => x.src.name === ib) : -1,
+      });
+      this.Dt.push(new THREE.Quaternion());
+    });
+  }
+  /** Rangka bayangan (sudah dianimasikan) → rotasi lokal tulang ternormalisasi VRM. */
+  terapkan(akar: import("three").Object3D) {
+    akar.updateMatrixWorld(true);
+    this.item.forEach((it, i) => {
+      // Dt = (rotasi dunia sekarang · rotasi dunia diam⁻¹) · A
+      this.Dt[i].copy(it.src.getWorldQuaternion(this.q)).multiply(it.restInv).multiply(it.A);
+    });
+    this.item.forEach((it, i) => {
+      if (it.induk < 0) it.node.quaternion.copy(this.Dt[i]);
+      else it.node.quaternion.copy(this.qi.copy(this.Dt[it.induk]).invert().multiply(this.Dt[i]));
+    });
+  }
+}
+
+/* ── Wajah: expression VRM ───────────────────────────────────────────────── */
+
+const WAJAH_VRM: Record<string, Partial<Record<string, number>>> = {
+  netral: {},
+  senang: { relaxed: 0.55, happy: 0.15 },
+  ya_tidak: { surprised: 0.45 },   // alis naik: pertanyaan ya/tidak
+  wh: { angry: 0.35 },             // alis turun: pertanyaan apa/siapa/di mana
+  sedih: { sad: 0.7 },
+  tidur: { blink: 1 },
+};
+const EKSPRESI = ["happy", "relaxed", "surprised", "angry", "sad", "blink"];
+
 /* ── Pemain satu tokoh: lapis badan (antrean klip) + lapis wajah ─────────── */
 
 type Item = { klip: string; skala: number; onMulai?: () => void };
@@ -103,9 +238,23 @@ class Pemain {
   sekarang: Item | null = null;
   tahan = 0;
   selesai: (() => void) | null = null;
-  constructor(THREE: Three, root: import("three").Object3D, klip: (n: string) => import("three").AnimationClip | null) {
-    this.mixer = new THREE.AnimationMixer(root);
+  // Mode VRM saja (null = rig Blender, klip langsung di model)
+  private vrm: VRM | null = null;
+  private rangka: ReturnType<typeof bangunRangka> | null = null;
+  private retarget: Retarget | null = null;
+  private wajahTuju: Partial<Record<string, number>> = {};
+  private wajahNow: Record<string, number> = {};
+  private wajahLaju = 4;
+  private kedip = 2.5;
+  constructor(THREE: Three, tokoh: VRM | import("three").Object3D, g: Gerak, klip: (n: string) => import("three").AnimationClip | null) {
+    if ("humanoid" in tokoh) {
+      this.vrm = tokoh;
+      this.rangka = bangunRangka(THREE, g);
+      this.retarget = new Retarget(THREE, this.rangka, tokoh);
+    }
+    this.mixer = new THREE.AnimationMixer(this.rangka ? this.rangka.akar : tokoh as import("three").Object3D);
     this.klip = klip;
+    EKSPRESI.forEach((e) => { this.wajahNow[e] = 0; });
     this.keDiam(0);
     this.setWajah("netral", 0);
   }
@@ -130,6 +279,11 @@ class Pemain {
     this.ganti(a, fade);
   }
   setWajah(nama: string, fade = 0.25) {
+    if (this.vrm) {
+      this.wajahTuju = WAJAH_VRM[nama] || {};
+      this.wajahLaju = 1 / Math.max(0.05, fade);
+      return;
+    }
     const a = this.aksi(`WAJAH_${nama.toUpperCase()}`) || this.aksi("WAJAH_NETRAL");
     if (!a || a === this.wajah) return;
     a.reset(); a.setLoop(2201, Infinity); a.play();
@@ -165,8 +319,27 @@ class Pemain {
     this.sekarang = it;
     it.onMulai?.();
   }
+  private updateWajah(dt: number) {
+    const em = this.vrm?.expressionManager;
+    if (!em) return;
+    // Kedip otomatis (kecuali ekspresi sudah memejam)
+    this.kedip -= dt;
+    let blinkAuto = 0;
+    if (this.kedip < 0.14) blinkAuto = Math.sin(Math.max(0, this.kedip) / 0.14 * Math.PI);
+    if (this.kedip <= 0) this.kedip = 2.4 + Math.random() * 2.2;
+    const k = Math.min(1, dt * this.wajahLaju);
+    for (const e of EKSPRESI) {
+      this.wajahNow[e] += ((this.wajahTuju[e] || 0) - this.wajahNow[e]) * k;
+      em.setValue(e, e === "blink" ? Math.max(this.wajahNow[e], blinkAuto * (1 - this.wajahNow.happy)) : this.wajahNow[e]);
+    }
+  }
   update(dt: number) {
     this.mixer.update(dt);
+    if (this.vrm && this.retarget && this.rangka) {
+      this.retarget.terapkan(this.rangka.akar);
+      this.updateWajah(dt);
+      this.vrm.update(dt);
+    }
     const it = this.sekarang;
     const a = this.badan;
     if (!it || !a) return;
@@ -195,13 +368,17 @@ type Panggung = {
   dispose: () => void;
 };
 
+// Tinggi leher rig Blender lama — acuan bingkai kamera (target & jarak diskalakan)
+const LEHER_ACUAN = 1.43;
+
 async function bangunPanggung(
-  kanvas: HTMLCanvasElement, wadah: HTMLElement, base: string, dialog: boolean, tokoh: "A" | "B",
+  kanvas: HTMLCanvasElement, wadah: HTMLElement, base: string, dialog: boolean, tokoh: "A" | "B", pakaiVrm: boolean,
   onSiap: (g: Gerak) => void, onGagal: (e: unknown) => void,
 ): Promise<Panggung | null> {
-  const [THREE, { GLTFLoader }, gerak] = await Promise.all([
+  const [THREE, { GLTFLoader }, threeVrm, gerak] = await Promise.all([
     import("three"),
     import("three/examples/jsm/loaders/GLTFLoader.js"),
+    pakaiVrm ? import("@pixiv/three-vrm") : null,
     muatGerak(base),
   ]);
   let renderer: import("three").WebGLRenderer;
@@ -209,25 +386,39 @@ async function bangunPanggung(
     renderer = new THREE.WebGLRenderer({ canvas: kanvas, antialias: true, alpha: true, preserveDrawingBuffer: true });
   } catch (e) { onGagal(e); return null; }
   renderer.setPixelRatio(Math.min(window.devicePixelRatio || 1, 2));
-  renderer.toneMapping = THREE.NeutralToneMapping;
-  renderer.toneMappingExposure = 1.05;
   renderer.setClearColor(0x000000, 0);
 
   const scene = new THREE.Scene();
-  scene.add(new THREE.HemisphereLight(0xffffff, 0xb8aa9c, 1.5));
-  const kunci = new THREE.DirectionalLight(0xffffff, 2.1); kunci.position.set(-1.6, 3, 3); scene.add(kunci);
-  const isi = new THREE.DirectionalLight(0xfff4ea, 0.7); isi.position.set(2, 1.5, 2); scene.add(isi);
-  const tepi = new THREE.DirectionalLight(0xdff7f6, 1.0); tepi.position.set(0, 2.5, -2.5); scene.add(tepi);
+  if (pakaiVrm) {
+    // MToon: cahaya rata, tanpa tone mapping (warna tekstur VRoid apa adanya)
+    scene.add(new THREE.HemisphereLight(0xffffff, 0xd8d0c8, 1.2));
+    const kunci = new THREE.DirectionalLight(0xffffff, 1.6); kunci.position.set(-1.2, 2.5, 3); scene.add(kunci);
+  } else {
+    renderer.toneMapping = THREE.NeutralToneMapping;
+    renderer.toneMappingExposure = 1.05;
+    scene.add(new THREE.HemisphereLight(0xffffff, 0xb8aa9c, 1.5));
+    const kunci = new THREE.DirectionalLight(0xffffff, 2.1); kunci.position.set(-1.6, 3, 3); scene.add(kunci);
+    const isi = new THREE.DirectionalLight(0xfff4ea, 0.7); isi.position.set(2, 1.5, 2); scene.add(isi);
+    const tepi = new THREE.DirectionalLight(0xdff7f6, 1.0); tepi.position.set(0, 2.5, -2.5); scene.add(tepi);
+  }
 
-  const camera = new THREE.PerspectiveCamera(dialog ? 30 : 27, 1, 0.1, 20);
-  const target = new THREE.Vector3(0, dialog ? 1.27 : 1.31, 0);
-  const jarak = dialog ? 3.05 : 2.15;
-  let az = 0;
-  const pasangKamera = () => {
-    camera.position.set(target.x + Math.sin(az) * jarak, target.y + 0.06, target.z + Math.cos(az) * jarak);
-    camera.lookAt(target);
+  const loader = new GLTFLoader();
+  if (threeVrm) loader.register((p) => new threeVrm.VRMLoaderPlugin(p));
+  const muat = async (f: string): Promise<{ root: import("three").Object3D; vrm: VRM | null }> => {
+    const g = await loader.loadAsync(`${base}${f}`);
+    const vrm = threeVrm ? (g.userData.vrm as VRM) : null;
+    if (vrm && threeVrm) {
+      threeVrm.VRMUtils.removeUnnecessaryVertices(vrm.scene);
+      threeVrm.VRMUtils.combineSkeletons(vrm.scene);
+    }
+    const root = vrm ? vrm.scene : g.scene;
+    root.traverse((o) => { o.frustumCulled = false; });
+    return { root, vrm };
   };
-  pasangKamera();
+  const ext = pakaiVrm ? "vrm" : "glb";
+  const daftar = dialog ? [`isyarat-pria.${ext}`, `isyarat-wanita.${ext}`] : [`isyarat-${tokoh === "B" ? "wanita" : "pria"}.${ext}`];
+  let tokohs: Awaited<ReturnType<typeof muat>>[];
+  try { tokohs = await Promise.all(daftar.map(muat)); } catch (e) { renderer.dispose(); onGagal(e); return null; }
 
   const klipCache = new Map<string, import("three").AnimationClip | null>();
   const klip = (n: string) => {
@@ -235,22 +426,29 @@ async function bangunPanggung(
     return klipCache.get(n)!;
   };
 
-  const loader = new GLTFLoader();
-  const muat = (f: string) => loader.loadAsync(`${base}${f}`);
-  const daftar = dialog ? ["isyarat-pria.glb", "isyarat-wanita.glb"] : [tokoh === "B" ? "isyarat-wanita.glb" : "isyarat-pria.glb"];
-  let gltfs: Awaited<ReturnType<typeof muat>>[];
-  try { gltfs = await Promise.all(daftar.map(muat)); } catch (e) { renderer.dispose(); onGagal(e); return null; }
-
-  const pemain = gltfs.map((g, i) => {
-    const m = g.scene;
-    m.traverse((o) => { (o as import("three").Mesh).frustumCulled = false; });
+  // Bingkai kamera mengikuti tinggi avatar (VRoid lebih pendek dari rig Blender)
+  const leher = tokohs.map(({ vrm }) => vrm ? vrm.humanoid.getNormalizedBoneNode("neck")!.getWorldPosition(new THREE.Vector3()).y : LEHER_ACUAN);
+  const k = leher.reduce((a, b) => a + b, 0) / leher.length / LEHER_ACUAN;
+  const pemain = tokohs.map(({ root, vrm }, i) => {
+    const p = new Pemain(THREE, vrm || root, gerak, klip);
     if (dialog) {
-      m.position.x = i === 0 ? -0.42 : 0.42;
-      m.rotation.y = i === 0 ? 0.55 : -0.55;
+      root.position.x = (i === 0 ? -0.42 : 0.42) * k;
+      root.rotation.y = i === 0 ? 0.55 : -0.55;
     }
-    scene.add(m);
-    return new Pemain(THREE, m, klip);
+    scene.add(root);
+    return p;
   });
+
+  const camera = new THREE.PerspectiveCamera(dialog ? 30 : 27, 1, 0.1, 20);
+  // VRoid berkepala besar & berbadan ramping: dialog boleh lebih dekat
+  const target = new THREE.Vector3(0, (dialog ? (pakaiVrm ? 1.24 : 1.27) : 1.31) * k, 0);
+  const jarak = (dialog ? (pakaiVrm ? 2.45 : 3.05) : 2.15) * k;
+  let az = 0;
+  const pasangKamera = () => {
+    camera.position.set(target.x + Math.sin(az) * jarak, target.y + 0.06 * k, target.z + Math.cos(az) * jarak);
+    camera.lookAt(target);
+  };
+  pasangKamera();
 
   const ukur = () => {
     const w = wadah.clientWidth || 1, h = wadah.clientHeight || 1;
@@ -284,7 +482,8 @@ async function bangunPanggung(
     dispose: () => {
       cancelAnimationFrame(raf); ro.disconnect(); io.disconnect();
       pemain.forEach((p) => p.mixer.stopAllAction());
-      scene.traverse((o) => {
+      if (threeVrm) tokohs.forEach(({ root }) => threeVrm.VRMUtils.deepDispose(root));
+      else scene.traverse((o) => {
         const m = o as import("three").Mesh;
         m.geometry?.dispose?.();
         const mat = m.material as import("three").Material | import("three").Material[] | undefined;
@@ -306,6 +505,7 @@ const tombol = (aktif: boolean, aksen: string): React.CSSProperties => ({
 
 export default function SlideIsyarat({ v, aksen = TEAL }: { v: VisualIsyarat; aksen?: string }) {
   const dialog = !!v.baris?.length;
+  const pakaiVrm = v.avatar === "vrm";
   const base = `/models/isyarat/${v.bahasa || "asl"}/`;
   const kanvas = useRef<HTMLCanvasElement>(null);
   const wadah = useRef<HTMLDivElement>(null);
@@ -329,7 +529,7 @@ export default function SlideIsyarat({ v, aksen = TEAL }: { v: VisualIsyarat; ak
     let batal = false;
     const el = kanvas.current, w = wadah.current;
     if (!el || !w) return;
-    void bangunPanggung(el, w, base, dialog, v.tokoh === "B" ? "B" : "A",
+    void bangunPanggung(el, w, base, dialog, v.tokoh === "B" ? "B" : "A", pakaiVrm,
       (g) => { if (!batal) { setGerak(g); setStatus("siap"); } },
       () => { if (!batal) setStatus("gagal"); },
     ).then((p) => {
@@ -337,7 +537,7 @@ export default function SlideIsyarat({ v, aksen = TEAL }: { v: VisualIsyarat; ak
       panggung.current = p;
     }).catch(() => { if (!batal) setStatus("gagal"); });
     return () => { batal = true; urutPutar.current++; panggung.current?.dispose(); panggung.current = null; };
-  }, [base, dialog, v.tokoh]);
+  }, [base, dialog, v.tokoh, pakaiVrm]);
 
   const meta = useMemo(() => new Map((gerak?.isyarat || []).map((m) => [m.kode, m])), [gerak]);
   const skala = pelan ? 0.5 : 1;
@@ -439,7 +639,7 @@ export default function SlideIsyarat({ v, aksen = TEAL }: { v: VisualIsyarat; ak
   };
   const onUp = () => { seret.current = null; };
 
-  const poster = `${base}${dialog ? "poster-dialog.png" : v.tokoh === "B" ? "poster-wanita.png" : "poster-pria.png"}`;
+  const poster = `${base}${pakaiVrm ? "vrm-" : ""}${dialog ? "poster-dialog.png" : v.tokoh === "B" ? "poster-wanita.png" : "poster-pria.png"}`;
   const tAktif = !dialog && aktif >= 0 ? v.tanda?.[aktif] : null;
   const mAktif = tAktif ? meta.get(tAktif.kode) : null;
   const bAktif = dialog && aktif >= 0 ? v.baris?.[aktif] : null;
