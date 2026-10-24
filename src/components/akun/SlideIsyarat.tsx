@@ -385,14 +385,17 @@ async function bangunPanggung(
   try {
     renderer = new THREE.WebGLRenderer({ canvas: kanvas, antialias: true, alpha: true, preserveDrawingBuffer: true });
   } catch (e) { onGagal(e); return null; }
-  renderer.setPixelRatio(Math.min(window.devicePixelRatio || 1, 2));
+  // [isyarat-jia-v1] Minimal 2× (supersampling) supaya jari & wajah tetap tajam di layar 1×
+  renderer.setPixelRatio(Math.min(Math.max(window.devicePixelRatio || 1, 2), 3));
   renderer.setClearColor(0x000000, 0);
 
   const scene = new THREE.Scene();
   if (pakaiVrm) {
-    // MToon: cahaya rata, tanpa tone mapping (warna tekstur VRoid apa adanya)
-    scene.add(new THREE.HemisphereLight(0xffffff, 0xd8d0c8, 1.2));
-    const kunci = new THREE.DirectionalLight(0xffffff, 1.6); kunci.position.set(-1.2, 2.5, 3); scene.add(kunci);
+    // MToon, tanpa tone mapping. [isyarat-jia-v1] Cahaya diredam (dulu kulit & wajah
+    // nyaris putih) + kunci dari samping supaya bayangan jari/wajah terbaca.
+    scene.add(new THREE.HemisphereLight(0xffffff, 0xa89c90, 0.55));
+    const kunci = new THREE.DirectionalLight(0xffffff, 1.15); kunci.position.set(-2, 2.2, 2.4); scene.add(kunci);
+    const isi = new THREE.DirectionalLight(0xfff4ea, 0.3); isi.position.set(2, 1.2, 2); scene.add(isi);
   } else {
     renderer.toneMapping = THREE.NeutralToneMapping;
     renderer.toneMappingExposure = 1.05;
@@ -540,7 +543,7 @@ export default function SlideIsyarat({ v, aksen = TEAL }: { v: VisualIsyarat; ak
   }, [base, dialog, v.tokoh, pakaiVrm]);
 
   const meta = useMemo(() => new Map((gerak?.isyarat || []).map((m) => [m.kode, m])), [gerak]);
-  const skala = pelan ? 0.5 : 1;
+  const skala = pelan ? 0.3 : 1; // [isyarat-jia-v1] dulu 0,5× — masih terlalu cepat untuk ditiru
 
   const sudut = useCallback((a: number) => { az.current = a; panggung.current?.setSudut(a); }, []);
   useEffect(() => { sudut(samping ? (dialog ? 0.0 : -0.75) : 0); }, [samping, dialog, sudut]);
@@ -649,7 +652,7 @@ export default function SlideIsyarat({ v, aksen = TEAL }: { v: VisualIsyarat; ak
       {/* Panggung 3D */}
       <div ref={wadah} style={{
         position: "relative", flex: dialog ? "1.25 1 0" : "1 1 0", minWidth: 0, borderRadius: "1.2cqw", overflow: "hidden",
-        background: "radial-gradient(120% 90% at 50% 35%, #ffffff 0%, #E8F6F5 55%, #CDEBE9 100%)",
+        background: "radial-gradient(120% 90% at 50% 35%, #EEF6F5 0%, #D3E9E7 55%, #B3D6D3 100%)",
         border: "1px solid #CDEBE9", touchAction: "pan-y", cursor: "grab",
       }}
         onPointerDown={onDown} onPointerMove={onMove} onPointerUp={onUp} onPointerCancel={onUp}>
@@ -692,7 +695,7 @@ export default function SlideIsyarat({ v, aksen = TEAL }: { v: VisualIsyarat; ak
         )}
         {status === "siap" && (
           <div style={{ position: "absolute", top: "3%", right: "3%", display: "flex", gap: "0.4em" }}>
-            <button type="button" onClick={() => setPelan((x) => !x)} title="Putar pelan (0,5×)" style={tombol(pelan, aksen)}><Turtle size="1.1em" /> Pelan</button>
+            <button type="button" onClick={() => setPelan((x) => !x)} title="Putar pelan (0,3×)" style={tombol(pelan, aksen)}><Turtle size="1.1em" /> Pelan</button>
             <button type="button" onClick={() => setSamping((x) => !x)} title="Ganti sudut pandang (atau seret avatar)" style={tombol(samping, aksen)}><Rotate3d size="1.1em" /> Sudut</button>
           </div>
         )}
