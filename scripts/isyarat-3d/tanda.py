@@ -12,7 +12,9 @@
 import bpy, sys, os, json, math
 sys.path.insert(0, os.path.dirname(__file__))
 import isyarat as I
-import kamus as K
+import importlib
+# [isyarat-bisindo-v1] KAMUS=kamus_bisindo → kamus BISINDO; bawaan ASL.
+K = importlib.import_module(os.environ.get("KAMUS", "kamus"))
 from mathutils import Vector as V, Quaternion
 
 argv = sys.argv[sys.argv.index("--") + 1:]
@@ -215,7 +217,8 @@ if CEK:
     sudut = argv[argv.index("--sudut") + 1] if "--sudut" in argv else "depan"
     pos = {"depan": ((0.0, -1.75, 1.36), (0, 0, 1.30)), "samping": ((-1.45, -0.95, 1.40), (0, -0.12, 1.30)),
            "atas": ((-0.5, -1.4, 1.95), (0, -0.15, 1.30)),
-           "eja": ((-0.10, -0.95, 1.40), (-0.11, -0.30, 1.37))}[sudut]
+           "eja": ((-0.10, -0.95, 1.40), (-0.11, -0.30, 1.37)),
+           "eja2": ((-0.03, -0.98, 1.40), (-0.03, -0.30, 1.36))}[sudut]
     cam.location = V(pos[0]); cam.rotation_euler = (V(pos[1]) - V(pos[0])).to_track_quat("-Z", "Y").to_euler()
     cam_d.angle = math.radians(32)
     sc.render.engine = "BLENDER_WORKBENCH"

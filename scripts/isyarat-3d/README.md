@@ -30,3 +30,11 @@ Kosakata per sublevel ada di `kamus_a1_2.py` … `kamus_a2_4.py` (diimpor otomat
 `kamus.py`); pembagian kode di `ALOKASI.md` supaya tidak bentrok. Cek semua kode dek ada di kamus:
 `node --import tsx cek_kode.mjs <dek.ts>…` (dari worktree dashboard; `cek_kode.mjs` memanggil
 `daftar_kode.py` lewat Blender — taruh keduanya di folder kerja seperti ~/linguo-isyarat-work).
+
+## BISINDO — [isyarat-bisindo-v1]
+
+Kamus terpisah `kamus_bisindo.py` (abjad jari dua tangan A–Z + angka 1–10; rujukan: dataset
+terbuka Mendeley BISINDO, lihat kepala berkas). Pilih kamus lewat env `KAMUS`:
+`KAMUS=kamus_bisindo $B -b out/avatar.blend --python tanda.py -- out/glb-bisindo [KODE,…] [--cek --sudut eja2]`
+→ kemas ke `public/models/isyarat/bisindo/` di KEDUA repo (dek memakai `bahasa: "bisindo"`).
+⚠️ Belum dicek pengajar Tuli; Q & S paling meragukan. Kosakata BISINDO BELUM ada — jangan dikarang.

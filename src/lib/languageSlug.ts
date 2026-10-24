@@ -47,6 +47,10 @@ const ALIAS: Record<string, string> = {
   "sign language - asl": "asl",
   "sign language (asl)": "asl",
   "bahasa isyarat asl": "asl",
+  // [isyarat-bisindo-v1] registrations.language = "Sign Language - BISINDO"
+  "sign language - bisindo": "bisindo",
+  "sign language (bisindo)": "bisindo",
+  "bahasa isyarat bisindo": "bisindo",
 };
 
 // slug ↔ nama Indonesia ↔ nama asli, langsung dari master kurikulum (jangan
