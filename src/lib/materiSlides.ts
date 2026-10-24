@@ -440,7 +440,7 @@ export function normalizeSlide(raw: any): MateriSlide | null {
   // [slide-sampul-v1] Hanya berkas di /slide-cover — dek buatan AI atau baris
   // lama tak bisa menyelipkan gambar dari alamat lain.
   const noSesiAsl = Number(/^Sesi\s+(\d+)/i.exec(str(raw.heading))?.[1]) || 1;
-  const cover = upgradeAslCover(upgradeImagegenA2Cover(str(raw.cover)), noSesiAsl);
+  const cover = upgradeAslCover(upgradeImagegenA2Cover(str(raw.cover)), noSesiAsl, str(raw.sublevel) || 'A1.1');
   if (/^\/slide-cover\/(?:(?:spanish-themes|spanish-v2|portuguese-br|mandarin-themes|dutch-(?:a[12]-[1-4]|b1-[1-4]|b2-[1-7]))\/)?[\w.-]+$/.test(cover)) {
     // Decks saved before the illustrated artwork was ready contain the old
     // deterministic SVG path. Resolve that specific built-in asset to the
@@ -489,7 +489,7 @@ export function parseDeck(content: string | null | undefined): MateriDeck | null
   // Nomor sesi dari judul juga dipakai untuk memperbarui gambar tujuan lama.
   const noSesiAsl = Number(/^Sesi\s+(\d+)/i.exec(str(raw.slides[0]?.heading))?.[1]) || 1;
   const slides = raw.slides.map((s: any) => normalizeSlide(s && typeof s === 'object'
-    ? { ...s, cover: upgradeAslCover(str(s.cover), noSesiAsl) } : s)).filter(Boolean) as MateriSlide[];
+    ? { ...s, cover: upgradeAslCover(str(s.cover), noSesiAsl, str(raw.slides[0]?.sublevel) || 'A1.1') } : s)).filter(Boolean) as MateriSlide[];
   if (!slides.length) return null;
   const lang = /^[a-z]{2,3}(-[a-z]{2,4})?$/i.test(str(raw.lang)) ? str(raw.lang).toLowerCase() : undefined;
   return { v: 1, ...(lang ? { lang } : {}), slides: slides.slice(0, MAX_SLIDES_DEK) };
