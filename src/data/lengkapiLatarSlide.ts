@@ -15,7 +15,7 @@ const SLUG: Record<string, string> = {
 };
 
 /** Terapkan latar pada dek lama saat ditonton; gambar pilihan pengajar dipertahankan. */
-export function lengkapiLatarA11<T extends Slide>(slides: T[], lang?: string, subtitle?: string): T[] {
+export function lengkapiLatarA11<T extends Slide>(slides: T[], lang?: string | null, subtitle?: string): T[] {
   const cover = slides[0]?.cover || '';
   const dariCover = /(?:^|\/)([a-z-]+)-a1-1(?:-|\.)/.exec(cover);
   const level = slides[0]?.sublevel || /\bA1\.1\b/i.exec(subtitle || '')?.[0];
