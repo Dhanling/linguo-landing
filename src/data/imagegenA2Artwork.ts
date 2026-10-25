@@ -1,5 +1,14 @@
 // Daftar pasangan Imagegen yang sudah diperiksa; satu pasangan dipakai 16 sesi.
 export const IMAGEGEN_A2_KEYS: readonly string[] = [
+  "betawi-a1-1",
+  "portuguese-pt-a1-1",
+  "czech-a1-1",
+  "irish-a1-1",
+  "lao-a1-1",
+  "burmese-a1-1",
+  "bengali-a1-1",
+  "balinese-a1-1",
+  "madurese-a1-1",
   "japanese-a1-1",
   "japanese-a1-2",
   "japanese-a1-3",
@@ -163,8 +172,10 @@ export const IMAGEGEN_A2_KEYS: readonly string[] = [
   "icelandic-a2-4"
 ];
 const SIAP = new Set(IMAGEGEN_A2_KEYS);
+// Paket Imagegen A1.1: latar isi dipakai bersama mulai slide ketiga.
+const BAHASA_A11_LATAR = new Set(["betawi-a1-1","portuguese-pt-a1-1","czech-a1-1","irish-a1-1","lao-a1-1","burmese-a1-1","bengali-a1-1","balinese-a1-1","madurese-a1-1"]);
 
-export function imagegenA2Artwork(key: string, session: number): { cover: string; objectives: string } | null {
+export function imagegenA2Artwork(key: string, session: number): { cover: string; objectives: string; latar?: string } | null {
   if (!Number.isInteger(session) || session < 1 || session > 16 || !SIAP.has(key)) return null;
-  return { cover: `/slide-cover/${key}-cover-imagegen-v3.jpg`, objectives: `/slide-cover/${key}-tujuan-imagegen-v3.jpg` };
+  return { cover: `/slide-cover/${key}-cover-imagegen-v3.jpg`, objectives: `/slide-cover/${key}-tujuan-imagegen-v3.jpg`, ...(BAHASA_A11_LATAR.has(key) ? {latar: `/slide-cover/${key}-latar-imagegen-v3.jpg`} : {}) };
 }
