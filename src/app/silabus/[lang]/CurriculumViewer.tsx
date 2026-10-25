@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import Link from "next/link";
 import { motion, AnimatePresence } from "framer-motion";
 import * as Icons from "lucide-react";
@@ -11,13 +11,6 @@ import { LangSlugFlag } from "@/components/RectFlag";
 import { displayLangTitle } from "@/data/curriculum";
 import PadananUjianBadge from "@/components/PadananUjianBadge"; // [padanan-ujian-v1]
 import { padananUjian } from "@/lib/levelEquivalence";
-
-const MOCK_STATS = {
-  totalLearners: 1247,
-  completionRate: 87,
-  rating: 4.8,
-  alumni: 620,
-};
 
 interface LevelTheme {
   primary: string;
@@ -46,6 +39,10 @@ export default function CurriculumViewer({ curriculum }: { curriculum: LanguageC
   // "Bahasa Jepang", tapi IELTS/TOEFL ITP tanpa prefiks "Bahasa" (itu nama ujian).
   const title = displayLangTitle(meta);
   const [activeLevelIdx, setActiveLevelIdx] = useState(0);
+  // [silabus-tab-sublevel-v1] satu chapter (A1.1, A1.2, …) tampil per tab
+  const [activeSubIdx, setActiveSubIdx] = useState(0);
+  const [overviewOpen, setOverviewOpen] = useState(false);
+  const tabsRef = useRef<HTMLDivElement>(null);
   const [dropdownOpen, setDropdownOpen] = useState(false);
   const [showStickyCta, setShowStickyCta] = useState(false);
   // Silabus IELTS/TOEFL bukan "bahasa" di funnel — pendaftarannya lewat program
@@ -61,9 +58,27 @@ export default function CurriculumViewer({ curriculum }: { curriculum: LanguageC
 
   const activeLevel = levels[activeLevelIdx];
   const theme = LEVEL_THEMES[activeLevel.code];
+  const activeSub = activeLevel.sublevels[Math.min(activeSubIdx, activeLevel.sublevels.length - 1)];
+  const isFirst = activeLevelIdx === 0 && activeSubIdx === 0;
+  const isLast = activeLevelIdx === levels.length - 1 && activeSubIdx >= activeLevel.sublevels.length - 1;
+  // Penanda **tebal** markdown di data overview dulu tampil mentah di halaman.
+  const overviewText = overview.replace(/\*\*/g, "");
 
-  // Social proof fake completion per level
-  const completionByLevel: Record<string, number> = { A1: 85, A2: 62, B1: 41, B2: 24 };
+  const pilihLevel = (i: number) => { setActiveLevelIdx(i); setActiveSubIdx(0); };
+  // Tombol bawah melangkah per chapter, lalu menyeberang ke level berikutnya.
+  const langkah = (arah: 1 | -1) => {
+    if (arah === 1) {
+      if (activeSubIdx < activeLevel.sublevels.length - 1) setActiveSubIdx(activeSubIdx + 1);
+      else if (activeLevelIdx < levels.length - 1) pilihLevel(activeLevelIdx + 1);
+    } else {
+      if (activeSubIdx > 0) setActiveSubIdx(activeSubIdx - 1);
+      else if (activeLevelIdx > 0) {
+        setActiveLevelIdx(activeLevelIdx - 1);
+        setActiveSubIdx(levels[activeLevelIdx - 1].sublevels.length - 1);
+      }
+    }
+    tabsRef.current?.scrollIntoView({ behavior: "smooth", block: "start" });
+  };
 
   // Show sticky CTA after scrolling past hero (~400px)
   useEffect(() => {
@@ -102,7 +117,16 @@ export default function CurriculumViewer({ curriculum }: { curriculum: LanguageC
             </div>
           </div>
 
-          <p className="text-base md:text-lg text-gray-700 leading-relaxed mb-7">{overview}</p>
+          {/* [silabus-tab-sublevel-v1] deskripsi dipendekkan 3 baris; teks lengkap tetap di DOM untuk SEO */}
+          <div className="mb-7">
+            <p className={`text-base md:text-lg text-gray-700 leading-relaxed ${overviewOpen ? "" : "line-clamp-3"}`}>{overviewText}</p>
+            <button
+              onClick={() => setOverviewOpen((o) => !o)}
+              className="mt-1.5 text-sm font-semibold text-[#1A9E9E] hover:underline"
+            >
+              {overviewOpen ? "Tutup" : "Baca selengkapnya"}
+            </button>
+          </div>
 
           {/* PRIMARY HERO CTA */}
           <div className="flex flex-col sm:flex-row gap-3">
@@ -121,16 +145,6 @@ export default function CurriculumViewer({ curriculum }: { curriculum: LanguageC
               Placement Test
             </Link>
           </div>
-        </div>
-      </section>
-
-      {/* SOCIAL PROOF STRIP */}
-      <section className="border-y border-gray-100 bg-gray-50/50">
-        <div className="max-w-3xl mx-auto px-6 py-4 md:py-5 flex flex-wrap gap-x-6 gap-y-3 justify-center md:justify-between items-center text-sm">
-          <SocialStat icon="Users" value={MOCK_STATS.totalLearners.toLocaleString("id-ID")} label="sedang belajar" pulse />
-          <SocialStat icon="GraduationCap" value={MOCK_STATS.alumni.toLocaleString("id-ID")} label="alumni" />
-          <SocialStat icon="Star" value={MOCK_STATS.rating.toFixed(1)} label="rating Google" />
-          <SocialStat icon="Trophy" value={`${MOCK_STATS.completionRate}%`} label="tingkat selesai" />
         </div>
       </section>
 
@@ -161,7 +175,7 @@ export default function CurriculumViewer({ curriculum }: { curriculum: LanguageC
                   return (
                     <button
                       key={lvl.code}
-                      onClick={() => { setActiveLevelIdx(i); setDropdownOpen(false); }}
+                      onClick={() => { pilihLevel(i); setDropdownOpen(false); }}
                       className={`w-full px-4 py-2.5 text-left hover:bg-gray-50 flex items-center gap-3 ${i === activeLevelIdx ? "bg-gray-50" : ""}`}
                     >
                       <span className={`w-2 h-2 rounded-full ${t.primaryCls}`} />
@@ -181,15 +195,26 @@ export default function CurriculumViewer({ curriculum }: { curriculum: LanguageC
           </AnimatePresence>
         </div>
 
-        {/* LEVEL PROGRESS BAR */}
-        <div className="mt-5">
-          <LevelProgressBar
-            completion={completionByLevel[activeLevel.code]}
-            color={theme.primary}
-          />
-          <p className="text-xs text-gray-500 mt-2">
-            <span className="font-semibold text-gray-700">{Math.floor((completionByLevel[activeLevel.code] / 100) * MOCK_STATS.totalLearners).toLocaleString("id-ID")}</span> dari {MOCK_STATS.totalLearners.toLocaleString("id-ID")} learner sedang atau sudah lewat level ini
-          </p>
+        {/* SUBLEVEL TABS */}
+        <div ref={tabsRef} className="mt-5 -mx-6 px-6 overflow-x-auto scroll-mt-24">
+          <div role="tablist" className="flex gap-2 w-max pb-1">
+            {activeLevel.sublevels.map((sl, i) => {
+              const aktif = sl.code === activeSub.code;
+              return (
+                <button
+                  key={sl.code}
+                  role="tab"
+                  aria-selected={aktif}
+                  onClick={() => setActiveSubIdx(i)}
+                  className={`px-4 py-2 rounded-full text-sm font-semibold whitespace-nowrap border transition-colors ${
+                    aktif ? `${theme.primaryCls} text-white border-transparent` : "bg-white text-gray-600 border-gray-200 hover:border-gray-400"
+                  }`}
+                >
+                  {sl.code}
+                </button>
+              );
+            })}
+          </div>
         </div>
       </section>
 
@@ -197,42 +222,38 @@ export default function CurriculumViewer({ curriculum }: { curriculum: LanguageC
       <section className="max-w-3xl mx-auto px-6 pt-8 pb-16">
         <AnimatePresence mode="wait">
           <motion.div
-            key={activeLevel.code}
+            key={activeSub.code}
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -10 }}
             transition={{ duration: 0.25 }}
-            className="space-y-14 md:space-y-20"
           >
-            {activeLevel.sublevels.map((sublevel, ci) => (
-              <ChapterSection
-                key={sublevel.code}
-                sublevel={sublevel}
-                chapterNum={ci + 1}
-                theme={theme}
-                langName={meta.name}
-                onStartLearning={handleStartLearning}
-              />
-            ))}
+            <ChapterSection
+              sublevel={activeSub}
+              chapterNum={activeLevel.sublevels.indexOf(activeSub) + 1}
+              theme={theme}
+              langName={meta.name}
+              onStartLearning={handleStartLearning}
+            />
           </motion.div>
         </AnimatePresence>
 
         {/* Level navigation */}
         <div className="mt-16 flex items-center justify-between gap-3 border-t border-gray-100 pt-8">
           <button
-            onClick={() => setActiveLevelIdx((i) => Math.max(0, i - 1))}
-            disabled={activeLevelIdx === 0}
+            onClick={() => langkah(-1)}
+            disabled={isFirst}
             className="flex-1 md:flex-none inline-flex items-center gap-2 px-5 py-3 rounded-full border border-gray-200 text-gray-700 hover:bg-gray-50 disabled:opacity-30 disabled:cursor-not-allowed"
           >
             <Icons.ChevronLeft className="w-4 h-4" />
-            <span className="text-sm font-medium">Level sebelumnya</span>
+            <span className="text-sm font-medium">Sebelumnya</span>
           </button>
           <button
-            onClick={() => setActiveLevelIdx((i) => Math.min(levels.length - 1, i + 1))}
-            disabled={activeLevelIdx === levels.length - 1}
+            onClick={() => langkah(1)}
+            disabled={isLast}
             className={`flex-1 md:flex-none inline-flex items-center justify-center gap-2 px-5 py-3 ${theme.primaryCls} text-white rounded-full hover:opacity-90 disabled:opacity-30 disabled:cursor-not-allowed`}
           >
-            <span className="text-sm font-medium">Level selanjutnya</span>
+            <span className="text-sm font-medium">Selanjutnya</span>
             <Icons.ChevronRight className="w-4 h-4" />
           </button>
         </div>
@@ -296,36 +317,6 @@ export default function CurriculumViewer({ curriculum }: { curriculum: LanguageC
 // ==================================================
 // Sub-components
 // ==================================================
-
-function SocialStat({ icon, value, label, pulse = false }: { icon: string; value: string; label: string; pulse?: boolean }) {
-  const Icon = (Icons as any)[icon] as React.FC<{ className?: string; strokeWidth?: number }>;
-  return (
-    <div className="flex items-center gap-2">
-      <Icon className="w-4 h-4 text-gray-500" strokeWidth={2} />
-      <div className="flex items-baseline gap-1.5">
-        <span className="font-bold text-gray-900">{value}</span>
-        {pulse && <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse" />}
-        <span className="text-xs text-gray-500">{label}</span>
-      </div>
-    </div>
-  );
-}
-
-function LevelProgressBar({ completion, color }: { completion: number; color: string }) {
-  return (
-    <div className="relative h-3 bg-gray-100 rounded-full overflow-hidden">
-      <motion.div
-        initial={{ width: 0 }}
-        animate={{ width: `${completion}%` }}
-        transition={{ duration: 0.8, ease: "easeOut" }}
-        className="absolute inset-y-0 left-0 rounded-full flex items-center justify-end pr-2"
-        style={{ backgroundColor: color }}
-      >
-        <span className="text-[10px] font-bold text-white">{completion}%</span>
-      </motion.div>
-    </div>
-  );
-}
 
 function ChapterSection({
   sublevel, chapterNum, theme, langName, onStartLearning,
