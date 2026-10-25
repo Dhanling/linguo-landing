@@ -5,6 +5,7 @@ import { createClient } from "@supabase/supabase-js";
 import { fotoOauthAsli } from "@/lib/oauthAvatar";
 import { KODE_WA_WAJIB, PESAN_WA_WAJIB, pastikanWaPembeli } from "@/lib/waPembeli";
 import { xenditMobile } from "@/lib/xenditMobile";
+import { enrollAmount } from "@/lib/enrollPrice";
 
 // ── enrollment-server-flow-v1 ────────────────────────────────────────────
 // Pendaftaran "Daftar Kelas Baru" (akun dashboard) dipindah ke server route.
@@ -135,7 +136,7 @@ export async function POST(req: NextRequest) {
       level,
       duration,          // string menit/sesi
       sessions,          // [enroll-jumlah-sesi-v1] kuota sesi yang dibeli (16 = 1 sub-level)
-      amount,            // total_amount (rupiah)
+      amount: amountKlien, // total_amount (rupiah) — hanya penanda "berbayar", nominal dihitung ulang
       ref_code,
       with_invoice,      // true → langsung buat invoice Xendit & balikin invoice_url
       // [onboarding-server-insert-v1] dipakai wizard onboarding /akun:
@@ -154,6 +155,23 @@ export async function POST(req: NextRequest) {
       // sampah pendaftaran palsu.
       profile_only,
     } = body || {};
+    // [edge-auth-gate-v1] Dulu nominal dipercaya dari body → siapa pun bisa
+    // mendaftar Private 16 sesi seharga Rp10.000 dan webhook menandainya Lunas.
+    // Sekarang dihitung ulang dari tabel harga yang sama dengan wizard /akun.
+    // Klien yang mengirim 0 (wizard onboarding) tetap 0: nominalnya dipatok
+    // belakangan oleh xendit-create-invoice.
+    let amount = 0;
+    if (!profile_only && Number(amountKlien) > 0) {
+      const sesi = Number.isFinite(Number(sessions)) ? Math.trunc(Number(sessions)) : 0;
+      amount = enrollAmount(String(product), String(language ?? ""), duration ?? "60", sesi);
+      if (!amount) {
+        return NextResponse.json({ error: "Paket/durasi tidak dikenali — hubungi admin." }, { status: 400 });
+      }
+      if (amount !== Number(amountKlien)) {
+        console.warn(`enroll: nominal klien ${amountKlien} ≠ server ${amount} (${product}/${language}/${duration}/${sesi})`);
+      }
+    }
+
     // [avatar-google-huruf-v1] gambar huruf bawaan Google bukan foto → jangan disimpan
     const avatar_url = await fotoOauthAsli(avatarMentah);
 
