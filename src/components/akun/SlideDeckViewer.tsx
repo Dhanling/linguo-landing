@@ -1,4 +1,5 @@
 'use client';
+import { lengkapiLatarA11 } from "../../data/lengkapiLatarSlide";
 import { isImagegenA2GoalCover } from "../../data/imagegenA2Cover";
 
 
@@ -692,5 +693,5 @@ function SlideDeckViewerSession({
 /** Sesi berbeda selalu mulai dari cover pertama, tanpa state slide sesi lama. */
 export function SlideDeckViewer(props: Parameters<typeof SlideDeckViewerSession>[0]) {
   const key = JSON.stringify([props.title, props.subtitle, props.lang, props.slides[0]?.heading, props.slides[0]?.cover]);
-  return <SlideDeckViewerSession key={key} {...props} />;
+  return <SlideDeckViewerSession key={key} {...props} slides={lengkapiLatarA11(props.slides, props.lang, props.subtitle)} />;
 }

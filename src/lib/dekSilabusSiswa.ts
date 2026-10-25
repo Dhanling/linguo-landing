@@ -30,7 +30,7 @@ export const kunciDekSiswa = (slug: string, code: string) =>
 const COVER_AMAN = /^\/slide-cover\/[\w./-]+\.(?:jpe?g|png|webp|svg)$/;
 
 async function ambil(k: string): Promise<DekSublevelSiswa | null> {
-  const res = await fetch(`${SUMBER}/${k}.json`);
+  const res = await fetch(`${SUMBER}/${k}.json`, { cache: "no-cache" });
   if (res.status === 404) return null;
   if (!res.ok || !(res.headers.get('content-type') || '').includes('json')) throw new Error(`dek ${k}: ${res.status}`);
   const raw = await res.json();
