@@ -100,6 +100,7 @@ export async function POST(req: NextRequest) {
     const body = await req.json();
     const {
       name, email, phone, province, city, languages, level, experience, note,
+      nationality, residence_country,
       teaching_mode, can_teach_kids, kids_tiers,
     } = body;
 
@@ -164,6 +165,8 @@ export async function POST(req: NextRequest) {
         phone: normalizedPhone,
         province: province.trim(),
         city: city.trim(),
+        nationality: typeof nationality === "string" ? nationality.trim() || null : null,
+        residence_country: typeof residence_country === "string" ? residence_country.trim() || null : null,
         languages: languages.trim(),
         level: level || null,
         experience: experience || null,

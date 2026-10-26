@@ -166,7 +166,11 @@ const T = {
     city: "Kab/Kota Domisili *",
     cityPh: "Pilih kab/kota...",
     cityWait: "Pilih provinsi dulu",
-    cityAbroadPh: "Kota & negara, contoh: Madrid, Spanyol",
+    cityAbroadPh: "Kota, contoh: Madrid",
+    nationality: "Asal / Kewarganegaraan *",
+    nationalityPh: "Contoh: Indonesia",
+    residence: "Negara tempat tinggal sekarang *",
+    residencePh: "Contoh: Belanda",
     statusMessages: {
       submitted: "Pendaftaran kamu sedang menunggu review. Tim kami akan menghubungi via WhatsApp dalam 1–3 hari kerja.",
       reviewed: "Pendaftaran sudah direview tim. Tunggu kabar selanjutnya via WhatsApp.",
@@ -175,7 +179,7 @@ const T = {
       onboarded: "Kamu sudah jadi pengajar Linguo. Login ke dashboard pengajar untuk mulai mengajar.",
     } as Record<string, string>,
     s2Title: "Bahasa & Kualifikasi",
-    s2Desc: "Pilih bahasa yang ingin kamu ajarkan",
+    s2Desc: "Tulis semua bahasa yang kamu kuasai, termasuk bahasa ibu (pilih level Native)",
     langsLabel: "Bahasa yang Dikuasai * (urutkan dari paling mahir, max 5)",
     langNo: (n: number) => `Bahasa #${n}`,
     langBest: " (paling mahir)",
@@ -224,7 +228,8 @@ const T = {
     s4Title: "Review & Kirim",
     s4Desc: "Periksa data kamu sebelum mengirim",
     review: {
-      name: "Nama", email: "Email", wa: "WhatsApp", province: "Provinsi", city: "Kota",
+      name: "Nama", email: "Email", wa: "WhatsApp", nationality: "Asal", residence: "Negara domisili",
+      province: "Provinsi", city: "Kota",
       langs: "Bahasa", mode: "Mode Mengajar", cert: "Sertifikat", kids: "Mengajar Kids",
       exp: "Pengalaman", video: "Video", motiv: "Motivasi",
     },
@@ -253,7 +258,8 @@ const T = {
     offline: "Koneksi terputus. Cek internet kamu dan coba lagi.",
     waSummary: {
       intro: (n: string) => `Halo, saya ${n} dan tertarik menjadi pengajar di Linguo.`,
-      email: "Email", phone: "Telp", province: "Provinsi", city: "Kota", langs: "Bahasa",
+      email: "Email", phone: "Telp", nationality: "Asal", residence: "Negara domisili",
+      province: "Provinsi", city: "Kota", langs: "Bahasa",
       mode: "Mode", kids: "Mengajar Kids", certs: "Sertifikat", exp: "Pengalaman",
       video: "Video", motiv: "Motivasi",
     },
@@ -358,13 +364,17 @@ const T = {
     askAdmin: "Ask our admin on WhatsApp →",
     waCheckEmail: (v: string) => `Hello, I would like to check my teacher application for the email ${v}`,
     waCheckPhone: (v: string) => `Hello, I would like to check my teacher application for the WhatsApp number ${v}`,
-    province: "Province *",
-    provincePh: "Select a province...",
+    province: "Where do you live? (pick \"Outside Indonesia\" if you live abroad) *",
+    provincePh: "Select...",
     abroad: "Outside Indonesia",
     city: "City / Regency *",
     cityPh: "Select a city/regency...",
     cityWait: "Select a province first",
-    cityAbroadPh: "City and country, e.g. Madrid, Spain",
+    cityAbroadPh: "City, e.g. Madrid",
+    nationality: "Nationality (where are you from?) *",
+    nationalityPh: "e.g. Dutch, French, Nigerian",
+    residence: "Country you live in now *",
+    residencePh: "e.g. Netherlands",
     statusMessages: {
       submitted: "Your application is waiting to be reviewed. Our team will contact you on WhatsApp within 1–3 working days.",
       reviewed: "Your application has been reviewed. We will get back to you on WhatsApp.",
@@ -373,7 +383,7 @@ const T = {
       onboarded: "You are already a Linguo teacher. Sign in to the teacher dashboard to start teaching.",
     } as Record<string, string>,
     s2Title: "Languages & Qualifications",
-    s2Desc: "Choose the languages you want to teach",
+    s2Desc: "List every language you speak, including your native language (choose level Native)",
     langsLabel: "Languages You Speak * (most fluent first, up to 5)",
     langNo: (n: number) => `Language #${n}`,
     langBest: " (most fluent)",
@@ -422,7 +432,8 @@ const T = {
     s4Title: "Review & Submit",
     s4Desc: "Check your answers before sending",
     review: {
-      name: "Name", email: "Email", wa: "WhatsApp", province: "Province", city: "City",
+      name: "Name", email: "Email", wa: "WhatsApp", nationality: "Nationality", residence: "Country of residence",
+      province: "Province", city: "City",
       langs: "Languages", mode: "Teaching Mode", cert: "Certificates", kids: "Teaches Kids",
       exp: "Experience", video: "Video", motiv: "Motivation",
     },
@@ -459,7 +470,8 @@ const T = {
     offline: "Connection lost. Check your internet and try again.",
     waSummary: {
       intro: (n: string) => `Hello, my name is ${n} and I am interested in teaching at Linguo.`,
-      email: "Email", phone: "Phone", province: "Province", city: "City", langs: "Languages",
+      email: "Email", phone: "Phone", nationality: "Nationality", residence: "Country of residence",
+      province: "Province", city: "City", langs: "Languages",
       mode: "Mode", kids: "Teaches kids", certs: "Certificates", exp: "Experience",
       video: "Video", motiv: "Motivation",
     },
@@ -672,6 +684,10 @@ export default function FormPengajar({ lang }: { lang: Lang }) {
   const [phone, setPhone] = useState("");
   const [city, setCity] = useState("");
   const [province, setProvince] = useState("");
+  // [pengajar-asal-domisili-v1] asal & negara domisili — pelamar native bisa tinggal
+  // di negaranya sendiri ATAU di Indonesia, jadi dua-duanya ditanya terpisah.
+  const [nationality, setNationality] = useState(lang === "id" ? "Indonesia" : "");
+  const [residence, setResidence] = useState("");
 
   // Step 1: Dup check states
   const [emailCheck, setEmailCheck] = useState<DupCheck>({ status: "idle" });
@@ -789,10 +805,11 @@ export default function FormPengajar({ lang }: { lang: Lang }) {
      langkah 1. Yang dikirim ke server tetap dua kolom teks yang sama. */
   const diLuarNegeri = province === LUAR_NEGERI;
   const provinceValue = diLuarNegeri ? t.abroad : province;
+  const residenceValue = diLuarNegeri ? residence.trim() : (province ? "Indonesia" : "");
 
   const canNext = (s: number) => {
     if (s === 1) {
-      return !!(name.trim() && email.trim() && phone.trim() && province && city)
+      return !!(name.trim() && email.trim() && phone.trim() && nationality.trim() && province && city && residenceValue)
         && emailCheck.status !== "blocking"
         && phoneCheck.status !== "blocking"
         && emailCheck.status !== "checking"
@@ -818,10 +835,13 @@ export default function FormPengajar({ lang }: { lang: Lang }) {
       : null;
     const payload = {
       name, email, phone, province: provinceValue, city,
+      nationality: nationality.trim(), residence_country: residenceValue,
       languages: validSkills.map(s => `${s.lang}|${s.level}`).join(", "),
       level: validSkills[0]?.level ?? "",
       experience: exp,
       note: [
+        nationality.trim() && `Asal: ${nationality.trim()}`,
+        residenceValue && `Negara domisili: ${residenceValue}`,
         provinceValue && `Provinsi: ${provinceValue}`,
         city && `Kota: ${city}`,
         certsBlock,
@@ -878,6 +898,8 @@ export default function FormPengajar({ lang }: { lang: Lang }) {
       w.intro(name), "",
       `${w.email}: ${email}`,
       `${w.phone}: ${phone}`,
+      `${w.nationality}: ${nationality.trim()}`,
+      `${w.residence}: ${residenceValue}`,
       `${w.province}: ${provinceValue}`,
       `${w.city}: ${city}`,
       `${w.langs}: ${skillsText}`,
@@ -1219,14 +1241,27 @@ export default function FormPengajar({ lang }: { lang: Lang }) {
                     )}
                   </div>
                   <div>
+                    <label className="text-xs font-semibold text-slate-500 mb-1.5 block">{t.nationality}</label>
+                    <input type="text" value={nationality} onChange={e => setNationality(e.target.value)} placeholder={t.nationalityPh}
+                      className="w-full border-2 border-slate-200 rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-[#1A9E9E] transition-colors" />
+                  </div>
+                  <div>
                     <label className="text-xs font-semibold text-slate-500 mb-1.5 block">{t.province}</label>
                     <select value={province} onChange={e => { setProvince(e.target.value); setCity(""); }}
                       className="w-full border-2 border-slate-200 rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-[#1A9E9E] transition-colors bg-white">
                       <option value="">{t.provincePh}</option>
+                      {lang === "en" && <option value={LUAR_NEGERI}>{t.abroad}</option>}
                       {WILAYAH_ID.map(p => <option key={p.name} value={p.name}>{p.name}</option>)}
-                      <option value={LUAR_NEGERI}>{t.abroad}</option>
+                      {lang === "id" && <option value={LUAR_NEGERI}>{t.abroad}</option>}
                     </select>
                   </div>
+                  {diLuarNegeri && (
+                    <div>
+                      <label className="text-xs font-semibold text-slate-500 mb-1.5 block">{t.residence}</label>
+                      <input type="text" value={residence} onChange={e => setResidence(e.target.value)} placeholder={t.residencePh}
+                        className="w-full border-2 border-slate-200 rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-[#1A9E9E] transition-colors" />
+                    </div>
+                  )}
                   <div>
                     <label className="text-xs font-semibold text-slate-500 mb-1.5 block">{t.city}</label>
                     {diLuarNegeri ? (
@@ -1449,6 +1484,8 @@ export default function FormPengajar({ lang }: { lang: Lang }) {
                     { label: t.review.name, value: name },
                     { label: t.review.email, value: email },
                     { label: t.review.wa, value: phone },
+                    { label: t.review.nationality, value: nationality.trim() || "-" },
+                    { label: t.review.residence, value: residenceValue || "-" },
                     { label: t.review.province, value: provinceValue || "-" },
                     { label: t.review.city, value: city || "-" },
                     { label: t.review.langs, value: validSkills.map(s => `${langNameBySlug(s.lang)} (${s.level})`).join(", ") || "-" },
