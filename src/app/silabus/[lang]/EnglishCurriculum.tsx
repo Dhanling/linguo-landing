@@ -27,7 +27,7 @@ function artForTitle(title: string) {
 }
 function SessionArt({ title, index = 0, hero = false, chapterCode }: { title: string; index?: number; hero?: boolean; chapterCode?: string }) {
   const key = hero ? "hero" : chapterCode === "A1.1" ? firstChapterArt[index] : artForTitle(title);
-  return <img src={`/images/silabus/english-minimal/${key}.webp`} alt="" width={hero ? 960 : 480} height={hero ? 640 : 320} loading={hero ? "eager" : "lazy"} fetchPriority={hero ? "high" : "auto"} className="h-full w-full object-cover" />;
+  return <img src={`/images/silabus/english-round-eyes/${key}.webp`} alt="" width={hero ? 960 : 480} height={hero ? 640 : 320} loading={hero ? "eager" : "lazy"} fetchPriority={hero ? "high" : "auto"} className="h-full w-full object-cover" />;
 }
 
 function SessionCard({ session, index, chapterCode }: { session: SessionPreview; index: number; chapterCode: string }) {
