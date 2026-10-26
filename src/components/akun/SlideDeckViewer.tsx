@@ -31,6 +31,8 @@ import {
 import { artiKataEbook, artiTersimpan, type HasilArti } from "@/lib/ebookKata";
 import { SlideVisual } from "@/components/akun/SlideVisual";
 
+import DutchNumberSlide, { isDutchNumberSlide } from "./DutchNumberSlide";
+
 const TEAL = "#1A9E9E";
 /** Ada di /public kedua repo (dashboard & landing). */
 const LOGO = "/logo-icon.png";
@@ -300,6 +302,9 @@ function LatihanJawab({ s, kunci, aksen, kartu }: { s: MateriSlide; kunci?: bool
 /* ── Isi satu slide ──────────────────────────────────────────────────────── */
 
 export function SlideBody({ s, kunci, lang }: { s: MateriSlide; kunci?: boolean; lang?: string | null }) {
+  if (isDutchNumberSlide(s, lang)) {
+    return <DutchNumberSlide key={s.heading} slide={s} renderSpeech={text => <Ucap teks={text} lang={lang} />} />;
+  }
   const tema = TEMA[s.type] || TEMA.points;
 
   if (s.type === "title") {
