@@ -1,5 +1,6 @@
 "use client";
 
+import EnglishCurriculum from "./EnglishCurriculum";
 import { useState, useEffect, useRef } from "react";
 import Link from "next/link";
 import { motion, AnimatePresence } from "framer-motion";
@@ -35,6 +36,10 @@ const LEVEL_THEMES: Record<string, LevelTheme> = {
 // ============================================================
 
 export default function CurriculumViewer({ curriculum }: { curriculum: LanguageCurriculum }) {
+  return curriculum.meta.slug === "english" ? <EnglishCurriculum curriculum={curriculum} /> : <StandardCurriculum curriculum={curriculum} />;
+}
+
+function StandardCurriculum({ curriculum }: { curriculum: LanguageCurriculum }) {
   const { meta, overview, levels } = curriculum;
   // "Bahasa Jepang", tapi IELTS/TOEFL ITP tanpa prefiks "Bahasa" (itu nama ujian).
   const title = displayLangTitle(meta);
