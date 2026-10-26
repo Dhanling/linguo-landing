@@ -54,7 +54,7 @@ export default async function Image() {
             Lowongan Pengajar Bahasa Online
           </div>
           <div style={{ display: "flex", marginTop: 18, fontSize: 30, opacity: 0.92 }}>
-            {`Kursus bahasa ${BRAND_FACTS.languageCountLabel} · kelas Private, Semi-Private & grup`}
+            {`Kelas online ${BRAND_FACTS.languageCountLabel} · Private, Semi-Private & grup`}
           </div>
           <div style={{ display: "flex", flexWrap: "wrap", gap: 12, marginTop: 30 }}>
             {CHIPS.map((c) => (
