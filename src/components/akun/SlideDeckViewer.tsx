@@ -13,7 +13,7 @@ import { isImagegenA2GoalCover } from "../../data/imagegenA2Cover";
 
 import { useCallback, useEffect, useRef, useState, type MouseEvent as ReactMouseEvent } from "react";
 import {
-  ChevronLeft, ChevronRight, X, Maximize2, Minimize2, Eye, EyeOff, Volume2,
+  ChevronLeft, ChevronRight, X, Maximize2, Minimize2, Eye, EyeOff, Volume2, Check, RotateCcw,
 } from "lucide-react";
 import type { MateriSlide, SlideType } from "@/lib/materiSlides";
 import { useT } from "@/lib/uiLang"; // [ui-lang-switcher-v1]
@@ -227,6 +227,76 @@ function KuisPilihan({ s, kunci, aksen }: { s: MateriSlide; kunci?: boolean; aks
   );
 }
 
+/* ── [latihan-cek-jawaban-v1] Latihan isian + kunci satu per satu ───────────
+   26 Okt 2026: siswa menebak dulu, lalu tombol "Cek jawaban" membuka kunci SATU
+   soal per klik (urut dari atas) tepat di bawah soalnya. Soal tertentu juga bisa
+   diketuk langsung. Di Kelas Video slide jadi gambar: kartu soal (`data-latihan`
+   + `data-jawab`) dan tombolnya (`data-latihan-cek`) direkam saat dipotret, lalu
+   kuncinya dilukis ke kanvas siaran (VideoClassRoom → ImageMark.jawab). Mode
+   kunci (ikon mata) tetap membuka semuanya sekaligus. */
+
+const CSS_JAWAB = `@keyframes latihanJawab{from{opacity:0;transform:translateY(-0.4em)}to{opacity:1;transform:none}}
+.latihan-jawab{animation:latihanJawab .35s ease-out both}
+@media (prefers-reduced-motion:reduce){.latihan-jawab{animation:none}}`;
+
+function LatihanJawab({ s, kunci, aksen, kartu }: { s: MateriSlide; kunci?: boolean; aksen: string; kartu: string }) {
+  const soal = s.questions || [];
+  const jawab = s.answers || [];
+  const punya = soal.map((_, i) => !!jawab[i]?.trim());
+  const [buka, setBuka] = useState<Set<number>>(new Set());
+  const total = punya.filter(Boolean).length;
+  const terbuka = kunci ? total : soal.filter((_, i) => punya[i] && buka.has(i)).length;
+  const berikut = () => {
+    const i = soal.findIndex((_, k) => punya[k] && !buka.has(k));
+    if (i < 0) setBuka(new Set());
+    else setBuka((b) => new Set(b).add(i));
+  };
+  const ketuk = (i: number) => {
+    if (!punya[i] || kunci) return;
+    setBuka((b) => {
+      const n = new Set(b);
+      if (n.has(i)) n.delete(i); else n.add(i);
+      return n;
+    });
+  };
+  const semua = total > 0 && terbuka >= total;
+  return (
+      <ol className="space-y-[1.3cqh]">
+        {soal.map((q, i) => {
+          const tampil = punya[i] && (kunci || buka.has(i));
+          return (
+            <li key={i}>
+              <button type="button" onClick={() => ketuk(i)}
+                data-latihan={punya[i] && !kunci ? i : undefined} data-jawab={punya[i] && !kunci ? jawab[i] : undefined}
+                className={`flex w-full items-start gap-[0.8em] text-left ${kartu} ${punya[i] && !kunci ? "cursor-pointer" : "cursor-default"}`}>
+                <span className="shrink-0 font-extrabold" style={{ color: aksen }}>{i + 1}.</span>
+                <span className="min-w-0 flex-1">
+                  <span className="block text-gray-700">{q}</span>
+                  {tampil && (
+                    <span className="latihan-jawab mt-[0.4cqh] flex items-start gap-[0.4em] font-semibold" style={{ color: "#047857" }}>
+                      <Check className="mt-[0.15em] h-[1em] w-[1em] shrink-0" strokeWidth={3} />
+                      <span>{jawab[i]}</span>
+                    </span>
+                  )}
+                </span>
+              </button>
+            </li>
+          );
+        })}
+      {total > 0 && !kunci && (
+        <li className="sticky bottom-0 flex justify-end pb-[0.4cqh]">
+          <button type="button" onClick={berikut} data-latihan-cek="1"
+            className="inline-flex items-center gap-[0.45em] rounded-full px-[1.1em] py-[0.35em] font-bold text-white shadow-md transition hover:brightness-110"
+            style={{ background: semua ? "#64748B" : aksen }}>
+            {semua ? <RotateCcw className="h-[1em] w-[1em]" strokeWidth={2.6} /> : <Check className="h-[1em] w-[1em]" strokeWidth={3} />}
+            {semua ? "Sembunyikan jawaban" : terbuka === 0 ? "Cek jawaban" : `Jawaban berikutnya (${terbuka}/${total})`}
+          </button>
+        </li>
+      )}
+      </ol>
+  );
+}
+
 /* ── Isi satu slide ──────────────────────────────────────────────────────── */
 
 export function SlideBody({ s, kunci, lang }: { s: MateriSlide; kunci?: boolean; lang?: string | null }) {
@@ -385,16 +455,7 @@ export function SlideBody({ s, kunci, lang }: { s: MateriSlide; kunci?: boolean;
           </ul>
         )}
 
-        {s.type === "practice" && (
-          <ol className="space-y-[1.3cqh]">
-            {(s.questions || []).map((q, i) => (
-              <li key={i} className={`flex items-start gap-[0.8em] ${kartu}`}>
-                <span className="shrink-0 font-extrabold" style={{ color: tema.aksen }}>{i + 1}.</span>
-                <span className="text-gray-700">{q}</span>
-              </li>
-            ))}
-          </ol>
-        )}
+        {s.type === "practice" && <LatihanJawab key={s.heading} s={s} kunci={kunci} aksen={tema.aksen} kartu={kartu} />}
       </div>
       )}
 
@@ -406,22 +467,6 @@ export function SlideBody({ s, kunci, lang }: { s: MateriSlide; kunci?: boolean;
         </div>
       )}
     </div>
-    </div>
-  );
-}
-
-/** Panel kunci jawaban — sengaja terpisah supaya bisa disembunyikan saat mengajar. */
-function KunciJawaban({ s }: { s: MateriSlide }) {
-  const jawab = (s.answers || []).filter(Boolean);
-  if (s.type !== "practice" || !jawab.length) return null;
-  return (
-    <div className="relative border-t border-gray-200 bg-white/90 px-[6cqw] py-[1.2cqh] text-[clamp(0.62rem,1.25cqw,0.85rem)]">
-      <div className="mb-1 font-bold text-gray-500">Kunci jawaban</div>
-      <ol className="flex flex-wrap gap-x-4 gap-y-1">
-        {jawab.map((a, i) => (
-          <li key={i} className="text-gray-700"><span className="font-semibold">{i + 1}.</span> {a}</li>
-        ))}
-      </ol>
     </div>
   );
 }
@@ -475,7 +520,7 @@ export function SlideCard({ s, showAnswers, lang, className = "" }: {
     // lebar layar — itu yang bikin teks slide ikut membesar saat fullscreen.
     <div data-slide-card className={`relative flex flex-col overflow-hidden text-left ${className}`}
       style={{ containerType: "size", contain: "layout", background: tema.bg, color: "#1f2937" }}>
-      <style>{CSS_TERANG}</style>
+      <style>{CSS_TERANG + CSS_JAWAB}</style>
       {/* [slide-tema-v1] Dekor: dua lingkaran warna + watermark logo. Semuanya
           pointer-events-none supaya kata & opsi kuis di atasnya tetap bisa diklik. */}
       {/* [slide-sampul-v1] Gambar sampul menggantikan lingkaran dekor & logo pudar. */}
@@ -521,7 +566,6 @@ export function SlideCard({ s, showAnswers, lang, className = "" }: {
         </div>
       )}
       <div className="relative min-h-0 flex-1"><SlideBody s={s} kunci={showAnswers} lang={lang} /></div>
-      {showAnswers && <KunciJawaban s={s} />}
 
       <div className="relative flex shrink-0 items-center justify-between px-[6cqw] py-[1.2cqh] text-[clamp(0.5rem,1.05cqw,0.72rem)] font-semibold"
         style={{ color: "#0E7C7B", background: "#fff", borderTop: `1px solid ${tema.lembut}` }}>
