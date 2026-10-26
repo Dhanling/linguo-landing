@@ -23,6 +23,7 @@ import { isPromoActive } from "@/lib/promoMerdeka";
 const EXCLUDED = [
   "/akun", "/student", "/laporan-b2b", "/pendataan", "/payment", "/kuis",
   "/alquran", // [quran-reader-v1] layar baca penuh
+  "/jadi-pengajar", // halaman rekrutmen pengajar (juga versi EN) — promo kelas siswa tak relevan
 ];
 
 // Harga normal yang dicoret. Sinkron dengan PRICE_STRIKE di halaman

@@ -27,8 +27,12 @@ import {
   Video, Users, Repeat,
   Smile, Ban, Baby, Backpack,
   GraduationCap, Award, Link2, AlertCircle,
+  Wallet, Clock, Home, TrendingUp, Globe, MessagesSquare,
   X, Loader2, CheckCircle2, Search, Check, ChevronDown, ChevronLeft, ChevronRight,
 } from "lucide-react";
+
+// [jadi-pengajar-flat-icon-v1] ikon flat (lucide) menggantikan emoji di kartu manfaat.
+const BENEFIT_ICONS = { wallet: Wallet, clock: Clock, home: Home, trend: TrendingUp, globe: Globe, award: Award } as const;
 
 const WA = "https://wa.me/6281320113243";
 const waMsg = (msg: string) => `${WA}?text=${encodeURIComponent(msg)}`;
@@ -90,12 +94,12 @@ const T = {
     benefitEyebrow: "Kenapa Mengajar di Linguo?",
     benefitTitle: "Keuntungan Jadi Pengajar",
     benefits: [
-      { icon: "💰", title: "Penghasilan Fleksibel", desc: "Fee per sesi yang kompetitif — semakin banyak mengajar, semakin besar penghasilan" },
-      { icon: "🕐", title: "Atur Jadwal Sendiri", desc: "Tentukan hari dan jam mengajar sesuai availability kamu" },
-      { icon: "🏠", title: "Kerja dari Mana Saja", desc: "100% online via Zoom — dari rumah, kafe, atau mana pun" },
-      { icon: "📈", title: "Berkembang Bersama", desc: "Pelatihan rutin, feedback siswa, dan kesempatan mengajar berbagai level" },
-      { icon: "🌍", title: "Komunitas Polyglot", desc: "Bergabung dengan komunitas pengajar bahasa dari berbagai latar belakang" },
-      { icon: "📜", title: "Sertifikat Mengajar", desc: "Dapatkan sertifikat pengajar resmi dari Linguo.id" },
+      { icon: "wallet", title: "Penghasilan Fleksibel", desc: "Fee per sesi yang kompetitif — semakin banyak mengajar, semakin besar penghasilan" },
+      { icon: "clock", title: "Atur Jadwal Sendiri", desc: "Tentukan hari dan jam mengajar sesuai availability kamu" },
+      { icon: "home", title: "Kerja dari Mana Saja", desc: "100% online via Zoom — dari rumah, kafe, atau mana pun" },
+      { icon: "trend", title: "Berkembang Bersama", desc: "Pelatihan rutin, feedback siswa, dan kesempatan mengajar berbagai level" },
+      { icon: "globe", title: "Komunitas Polyglot", desc: "Bergabung dengan komunitas pengajar bahasa dari berbagai latar belakang" },
+      { icon: "award", title: "Sertifikat Mengajar", desc: "Dapatkan sertifikat pengajar resmi dari Linguo.id" },
     ],
     tierEyebrow: "Dua Jalur Mengajar",
     tierTitle: "Pilih Sesuai Kualifikasi Kamu",
@@ -299,12 +303,12 @@ const T = {
     benefitEyebrow: "Why Teach at Linguo?",
     benefitTitle: "What You Get as a Teacher",
     benefits: [
-      { icon: "💰", title: "Flexible Income", desc: "Competitive per-session fee — the more you teach, the more you earn" },
-      { icon: "🕐", title: "Set Your Own Hours", desc: "Choose the days and times that fit your availability" },
-      { icon: "🏠", title: "Work From Anywhere", desc: "100% online via Zoom — from home, a café, or anywhere else" },
-      { icon: "📈", title: "Grow With Us", desc: "Regular training, student feedback, and the chance to teach every level" },
-      { icon: "🌍", title: "Polyglot Community", desc: "Join a community of language teachers from all kinds of backgrounds" },
-      { icon: "📜", title: "Teaching Certificate", desc: "Receive an official teaching certificate from Linguo.id" },
+      { icon: "wallet", title: "Flexible Income", desc: "Competitive per-session fee — the more you teach, the more you earn" },
+      { icon: "clock", title: "Set Your Own Hours", desc: "Choose the days and times that fit your availability" },
+      { icon: "home", title: "Work From Anywhere", desc: "100% online via Zoom — from home, a café, or anywhere else" },
+      { icon: "trend", title: "Grow With Us", desc: "Regular training, student feedback, and the chance to teach every level" },
+      { icon: "globe", title: "Polyglot Community", desc: "Join a community of language teachers from all kinds of backgrounds" },
+      { icon: "award", title: "Teaching Certificate", desc: "Receive an official teaching certificate from Linguo.id" },
     ],
     tierEyebrow: "Two Teaching Tracks",
     tierTitle: "Pick the One That Fits You",
@@ -923,7 +927,8 @@ export default function FormPengajar({ lang }: { lang: Lang }) {
     setTimeout(() => window.open(waMsg(msg), "_blank"), 1000);
   };
 
-  const fade = { initial: { opacity: 0, y: 20 }, whileInView: { opacity: 1, y: 0 }, viewport: { once: true } };
+  // [jadi-pengajar-anti-kedip-v1] sekali muncul saja, geser kecil, mulai saat 15% terlihat.
+  const fade = { initial: { opacity: 0, y: 12 }, whileInView: { opacity: 1, y: 0 }, viewport: { once: true, amount: 0.15 }, transition: { duration: 0.4, ease: "easeOut" as const } };
   const slideIn = { initial: { opacity: 0, x: 30 }, animate: { opacity: 1, x: 0 }, exit: { opacity: 0, x: -30 }, transition: { duration: 0.3 } };
 
   // ====== LANDING VIEW (step === 0) ======
@@ -931,7 +936,7 @@ export default function FormPengajar({ lang }: { lang: Lang }) {
     return (
       <div className="min-h-screen bg-white" style={{ fontFamily: "'Plus Jakarta Sans', sans-serif" }}>
         {/* HEADER */}
-        <header className="sticky top-[var(--promo-bar-h,0px)] z-50 bg-white/80 backdrop-blur-xl border-b border-slate-100">
+        <header className="sticky top-[var(--promo-bar-h,0px)] z-50 bg-white border-b border-slate-100">
           <div className="max-w-6xl mx-auto px-4 h-16 flex items-center justify-between">
             <Link href="/" className="flex items-center"><Image src="/images/logo-white.png" alt="Linguo" width={90} height={32} priority className="h-8 w-auto brightness-0" /></Link>
             <div className="flex items-center gap-2">
@@ -1018,8 +1023,10 @@ export default function FormPengajar({ lang }: { lang: Lang }) {
             </motion.div>
             <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
               {t.benefits.map((b, i) => (
-                <motion.div key={i} {...fade} transition={{ delay: i * 0.08 }} className="bg-white border-2 border-slate-100 rounded-2xl p-6 hover:border-[#1A9E9E]/30 hover:shadow-lg transition-all group">
-                  <span className="text-3xl mb-3 block">{b.icon}</span>
+                <motion.div key={i} {...fade} transition={{ delay: i * 0.08 }} className="bg-white border-2 border-slate-100 rounded-2xl p-6 hover:border-[#1A9E9E]/30 hover:shadow-lg transition-[border-color,box-shadow] duration-200 group">
+                  {(() => { const Icon = BENEFIT_ICONS[b.icon as keyof typeof BENEFIT_ICONS]; return (
+                    <span className="h-11 w-11 rounded-xl bg-[#1A9E9E]/10 text-[#1A9E9E] flex items-center justify-center mb-4"><Icon className="h-5 w-5" /></span>
+                  ); })()}
                   <h3 className="font-bold text-base mb-2 group-hover:text-[#1A9E9E] transition-colors">{b.title}</h3>
                   <p className="text-sm text-slate-500 leading-relaxed">{b.desc}</p>
                 </motion.div>
@@ -1036,28 +1043,28 @@ export default function FormPengajar({ lang }: { lang: Lang }) {
               <h2 className="text-2xl sm:text-3xl font-bold">{t.tierTitle}</h2>
             </motion.div>
             <div className="grid sm:grid-cols-2 gap-5">
-              <motion.div {...fade} className="border-2 border-slate-100 rounded-2xl p-6 hover:border-[#1A9E9E]/30 hover:shadow-lg transition-all">
+              <motion.div {...fade} className="border-2 border-slate-100 rounded-2xl p-6 hover:border-[#1A9E9E]/30 hover:shadow-lg transition-[border-color,box-shadow] duration-200">
                 <div className="flex items-center gap-3 mb-4">
-                  <span className="h-10 w-10 bg-[#1A9E9E]/10 rounded-xl flex items-center justify-center text-xl">🎓</span>
+                  <span className="h-10 w-10 bg-[#1A9E9E]/10 text-[#1A9E9E] rounded-xl flex items-center justify-center"><GraduationCap className="h-5 w-5" /></span>
                   <div><h3 className="font-bold">{t.tierProTitle}</h3><p className="text-xs text-slate-400">{t.tierProSub}</p></div>
                 </div>
                 <ul className="space-y-2 text-sm text-slate-600">
                   {t.tierProItems.map((item) => (
-                    <li key={item} className="flex items-start gap-2"><span className="text-[#1A9E9E] mt-0.5">✓</span>{item}</li>
+                    <li key={item} className="flex items-start gap-2"><Check className="h-4 w-4 text-[#1A9E9E] mt-0.5 flex-shrink-0" />{item}</li>
                   ))}
                 </ul>
                 <div className="mt-4 pt-4 border-t border-slate-100">
                   <span className="text-xs bg-[#1A9E9E]/10 text-[#1A9E9E] font-semibold px-3 py-1 rounded-full">{t.tierProBadge}</span>
                 </div>
               </motion.div>
-              <motion.div {...fade} transition={{ delay: 0.1 }} className="border-2 border-slate-100 rounded-2xl p-6 hover:border-blue-300 hover:shadow-lg transition-all">
+              <motion.div {...fade} transition={{ delay: 0.1 }} className="border-2 border-slate-100 rounded-2xl p-6 hover:border-blue-300 hover:shadow-lg transition-[border-color,box-shadow] duration-200">
                 <div className="flex items-center gap-3 mb-4">
-                  <span className="h-10 w-10 bg-blue-50 rounded-xl flex items-center justify-center text-xl">🗣️</span>
+                  <span className="h-10 w-10 bg-blue-50 text-blue-500 rounded-xl flex items-center justify-center"><MessagesSquare className="h-5 w-5" /></span>
                   <div><h3 className="font-bold">{t.tierComTitle}</h3><p className="text-xs text-slate-400">{t.tierComSub}</p></div>
                 </div>
                 <ul className="space-y-2 text-sm text-slate-600">
                   {t.tierComItems.map((item) => (
-                    <li key={item} className="flex items-start gap-2"><span className="text-blue-500 mt-0.5">✓</span>{item}</li>
+                    <li key={item} className="flex items-start gap-2"><Check className="h-4 w-4 text-blue-500 mt-0.5 flex-shrink-0" />{item}</li>
                   ))}
                 </ul>
                 <div className="mt-4 pt-4 border-t border-slate-100">
@@ -1077,7 +1084,7 @@ export default function FormPengajar({ lang }: { lang: Lang }) {
             </motion.div>
             <div className="grid sm:grid-cols-3 gap-5">
               {TEACHER_PHOTOS.map((teacher, i) => ({ ...teacher, quote: t.testiQuotes[i] })).map((t, i) => (
-                <motion.div key={i} {...fade} transition={{ delay: i * 0.1 }} className="bg-white rounded-2xl border border-slate-100 p-5 hover:shadow-lg transition-all">
+                <motion.div key={i} {...fade} transition={{ delay: i * 0.1 }} className="bg-white rounded-2xl border border-slate-100 p-5 hover:shadow-lg transition-[border-color,box-shadow] duration-200">
                   <div className="flex items-center gap-3 mb-4">
                     <img src={t.img} alt={t.name} className="h-12 w-12 rounded-full object-cover" />
                     <div>
