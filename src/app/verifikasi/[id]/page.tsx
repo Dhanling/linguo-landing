@@ -2,7 +2,7 @@
 // QR di pojok sertifikat (/akun → Certificates) mengarah ke sini dengan id
 // registrasi (UUID, tak bisa ditebak). Dibaca server-side pakai service role,
 // yang ditampilkan hanya data sertifikat: nama siswa, program, pengajar, sesi.
-// Sertifikat baru dianggap TERBIT kalau sessions_used >= sessions_total —
+// Sertifikat baru dianggap TERBIT kalau sessions_used >= sessions_total (paket per sesi: 16 sesi per level) —
 // aturan yang sama dengan memo `certs` di src/app/akun/page.tsx.
 import { padananUjian } from "@/lib/levelEquivalence"; // [padanan-ujian-v1]
 import Link from "next/link";
@@ -34,13 +34,30 @@ async function ambil(id: string): Promise<Data | null> {
   });
   const { data: r } = await supabase
     .from("registrations")
-    .select("id, language, level, sessions_used, sessions_total, students(name), teachers(name)")
+    .select("id, student_id, product_type, language, level, sessions_used, sessions_total, students(name), teachers(name)")
     .eq("id", id)
     .maybeSingle();
   if (!r) return null;
   const reg = r as any;
-  const total = Number(reg.sessions_total) || 0;
-  const used = Number(reg.sessions_used) || 0;
+  let total = Number(reg.sessions_total) || 0;
+  let used = Number(reg.sessions_used) || 0;
+  // [sertifikat-16-sesi-v1] Private paket kecil (< 8 sesi, bayar per sesi) dijumlah per
+  // bahasa + level dan baru terbit di sesi ke-16 — sama dengan memo `certs` di /akun.
+  if (reg.product_type === "Private" && total > 0 && total < 8 && reg.student_id) {
+    const { data: lain } = await supabase
+      .from("registrations")
+      .select("sessions_used, sessions_total, level, pipeline_status, status")
+      .eq("student_id", reg.student_id)
+      .eq("product_type", "Private")
+      .ilike("language", String(reg.language || ""))
+      .in("payment_status", ["Lunas", "Cicilan"])
+      .is("archived_at", null)
+      .lt("sessions_total", 8);
+    used = ((lain as any[]) || [])
+      .filter((x) => String(x.level || "") === String(reg.level || "") && x.pipeline_status !== "Batal" && x.status !== "Transferred")
+      .reduce((n, x) => n + Math.min(Number(x.sessions_used) || 0, Number(x.sessions_total) || 0), 0);
+    total = 16;
+  }
   const base = String(reg.level || "A1").split(".")[0].toUpperCase();
   return {
     nama: reg.students?.name || "—",

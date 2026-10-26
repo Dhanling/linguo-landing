@@ -4159,13 +4159,40 @@ export default function AkunPage() {
       sesiPerReg.get(k)!.push(s);
     }
     const now = Date.now();
-    const dariReg = (activeRegs as any[])
+    // [sertifikat-16-sesi-v1] Sertifikat 1 level = 16 sesi. Private yang dibayar per sesi /
+    // paket kecil (< 8 sesi) bukan akhir level: registrasi bahasa + level yang sama digabung
+    // jadi satu kartu "x/16 sesi" dan baru terbit di sesi ke-16 (Restu: 4× paket 1 sesi
+    // English A1.1 dulu langsung dapat sertifikat). Id/pengajar ikut registrasi terbaru.
+    const SESI_LEVEL = 16;
+    const regsSertif: any[] = [];
+    const gabungan = new Map<string, any>();
+    for (const r of activeRegs as any[]) {
+      const tot = Number(r.sessions_total) || 0;
+      if (r.product_type !== "Private" || tot <= 0 || tot >= 8) { regsSertif.push(r); continue; }
+      const k = `${String(r.language || "").toLowerCase()}|${String(r.level || "")}`;
+      const used = Math.min(Number(r.sessions_used) || 0, tot);
+      const g = gabungan.get(k);
+      if (!g) {
+        const baru = { ...r, sessions_used: used, sessions_total: SESI_LEVEL, __regIds: [String(r.id)], __terbaru: r.created_at };
+        gabungan.set(k, baru);
+        regsSertif.push(baru);
+        continue;
+      }
+      g.sessions_used += used;
+      g.__regIds.push(String(r.id));
+      if (String(r.created_at || "") > String(g.__terbaru || "")) {
+        Object.assign(g, { id: r.id, teachers: r.teachers, teacher_id: r.teacher_id, status: r.status, class_reports: r.class_reports, __terbaru: r.created_at });
+      }
+    }
+    const dariReg = regsSertif
       /* [sertifikat-b2b-v1] E-Book/E-Learning tanpa jatah sesi tak akan pernah terbit —
          dulu tampil "0/0 sesi" (Abdul Aziz: E-Book Vietnamese jadi kartu sertifikat
          Vietnamese A1, sementara kelas B2B-nya sendiri tak muncul). */
       .filter((r: any) => !(isProdukDigital(r.product) && !(r.sessions_total > 0)))
       .map((r: any) => {
-      const sesi = (sesiPerReg.get(String(r.id)) || []).filter((s: any) => s.status !== "cancelled");
+      const sesi = ((r.__regIds as string[] | undefined) || [String(r.id)])
+        .flatMap((id) => sesiPerReg.get(id) || [])
+        .filter((s: any) => s.status !== "cancelled");
       const selesai = sesi.filter((s: any) => s.status === "completed");
       const lewat = (selesai.length ? selesai : sesi.filter((s: any) => new Date(s.scheduled_at).getTime() <= now))
         .map((s: any) => s.scheduled_at as string)
