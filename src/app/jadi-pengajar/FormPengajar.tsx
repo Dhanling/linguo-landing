@@ -81,6 +81,12 @@ const T = {
     ],
     earnPer: "/bulan",
     earnNote: "*Berdasarkan fee Rp 60.000/sesi, 4 minggu/bulan",
+    // [jadi-pengajar-en-tanpa-rupiah-v1] fee Rp 60K = tarif pengajar LOKAL; versi EN (native/asing)
+    // tak menampilkan nominal — tarif native beda dan dibahas saat interview.
+    feeStat: "Rp 60K",
+    showEarn: true,
+    payTitle: "",
+    payDesc: "",
     benefitEyebrow: "Kenapa Mengajar di Linguo?",
     benefitTitle: "Keuntungan Jadi Pengajar",
     benefits: [
@@ -276,8 +282,8 @@ const T = {
     heroDesc: "Share your language skills and earn on a schedule you set yourself. Teach online from anywhere, anytime.",
     ctaRegister: "Apply Now →",
     ctaAskWa: "Ask Us on WhatsApp",
-    stats: ["Languages", "Active Students", "Teachers", "Fee/Session"],
-    earnEyebrow: "Earnings Simulation",
+    stats: ["Languages", "Active Students", "Teachers", "Paid per session"],
+    earnEyebrow: "Pay",
     earnTitle: "How Much Can You Earn?",
     earnCards: [
       { sesi: "5 sessions/week", monthly: "Rp 1,200,000", label: "Light part-time" },
@@ -285,7 +291,11 @@ const T = {
       { sesi: "20 sessions/week", monthly: "Rp 4,800,000", label: "Full-time" },
     ],
     earnPer: "/month",
-    earnNote: "*Based on a Rp 60,000/session fee, 4 weeks per month",
+    earnNote: "",
+    feeStat: "PayPal · Wise",
+    showEarn: false,
+    payTitle: "How You Get Paid",
+    payDesc: "Competitive per-session rate, paid via PayPal or Wise. Your rate depends on your profile and experience and is discussed in the interview.",
     benefitEyebrow: "Why Teach at Linguo?",
     benefitTitle: "What You Get as a Teacher",
     benefits: [
@@ -956,7 +966,7 @@ export default function FormPengajar({ lang }: { lang: Lang }) {
         {/* STATS */}
         <section className="py-10 border-b border-slate-100 bg-slate-50">
           <div className="max-w-4xl mx-auto px-6 grid grid-cols-2 sm:grid-cols-4 gap-6 text-center">
-            {["55+", "1,200+", "20+", "Rp 60K"].map((num, i) => ({ num, label: t.stats[i] })).map((s, i) => (
+            {["55+", "1,200+", "20+", t.feeStat].map((num, i) => ({ num, label: t.stats[i] })).map((s, i) => (
               <motion.div key={i} {...fade} transition={{ delay: i * 0.1 }}>
                 <p className="text-2xl sm:text-3xl font-bold text-[#1A9E9E]">{s.num}</p>
                 <p className="text-xs text-slate-500 mt-1">{s.label}</p>
@@ -966,6 +976,15 @@ export default function FormPengajar({ lang }: { lang: Lang }) {
         </section>
 
         {/* EARNING SIMULATOR */}
+        {!t.showEarn ? (
+        <section className="py-16 sm:py-20 bg-white">
+          <motion.div {...fade} className="max-w-2xl mx-auto px-4 text-center">
+            <p className="text-xs font-bold text-[#1A9E9E] uppercase tracking-widest mb-2">{t.earnEyebrow}</p>
+            <h2 className="text-2xl sm:text-3xl font-bold mb-4">{t.payTitle}</h2>
+            <p className="text-slate-600 leading-relaxed">{t.payDesc}</p>
+          </motion.div>
+        </section>
+        ) : (
         <section className="py-16 sm:py-24 bg-white">
           <div className="max-w-4xl mx-auto px-4">
             <motion.div {...fade} className="text-center mb-10">
@@ -988,6 +1007,7 @@ export default function FormPengajar({ lang }: { lang: Lang }) {
             <p className="text-center text-xs text-slate-400 mt-4">{t.earnNote}</p>
           </div>
         </section>
+        )}
 
         {/* BENEFITS */}
         <section className="py-16 sm:py-24 bg-slate-50">
