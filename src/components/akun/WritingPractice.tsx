@@ -16,11 +16,16 @@
 // Tahap 2 kata → Tahap 3 kalimat sederhana, tiap kata/kalimat tampil dengan
 // artinya. Kata & kalimat ditulis bagian demi bagian (per aksara atau per kata);
 // bagian yang lebih dari satu aksara memakai papan lebar.
+//
+// [latihan-menulis-v3] Tampilan baru (stepper Huruf → Kata → Kalimat, grid huruf
+// besar, panel papan dengan "Lihat cara menulis" + "Mulai Menulis") dan animasi
+// urutan goresan untuk SEMUA aksara: selain KanjiVG/Hanzi, datanya digambar sendiri
+// di lib/goresan/*.ts. Font aksara (Google Fonts) dimuat saat bahasanya dipilih.
 
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import {
-  ArrowRight, Check, ChevronLeft, ChevronRight, Eye, EyeOff, Loader2, PenLine, Play, RotateCcw,
-  Sparkles, Undo2, Volume2,
+  ArrowRight, Check, ChevronDown, ChevronLeft, ChevronRight, Eye, EyeOff, Lightbulb, Loader2, PenLine,
+  Sparkles, Trash2, Undo2, Volume2,
 } from "lucide-react";
 import { useUiLang } from "@/lib/uiLang";
 import {
@@ -38,6 +43,25 @@ export type MintaNilaiAi = (a: {
   uiLang: "id" | "en";
 }) => Promise<HasilNilaiAi>;
 
+/** [vc-menulis-share-v1] Apa yang sedang tampil di papan — dikirim lewat `onTampil`
+ *  supaya Linguo Meet bisa melukis keterangannya ke kanvas siaran. */
+export type TampilMenulis = {
+  /** Huruf/kata/kalimat yang dilatih (sudah berbentuk frasa untuk set kata/kalimat). */
+  teks: string;
+  baca: string;
+  arti: string;
+  bahasa: string;
+  kode: string;
+  rtl: boolean;
+  set: string;
+  tahap: number;
+  /** Bagian yang sedang ditulis (= teks kalau cuma satu bagian). */
+  bagian: string;
+  iBagian: number;
+  nBagian: number;
+  mode: "goresan" | "bebas";
+};
+
 type Props = {
   /** Kelas warna mengikuti dashboard tempatnya dipasang. */
   skin?: "siswa" | "pengajar";
@@ -45,6 +69,8 @@ type Props = {
   preferLangs?: (string | null | undefined)[];
   speak?: (teks: string, kode: string) => void;
   aiGrade?: MintaNilaiAi;
+  /** [vc-menulis-share-v1] Dipanggil tiap huruf/bagian/mode yang tampil berganti (null = belum ada huruf). */
+  onTampil?: (info: TampilMenulis | null) => void;
 };
 
 /* ── teks antarmuka ───────────────────────────────────────────────────────────
@@ -98,6 +124,34 @@ const EN: Record<string, string> = {
   "Urutan goresan: KanjiVG (CC BY-SA 3.0) & Make Me a Hanzi.": "Stroke order: KanjiVG (CC BY-SA 3.0) & Make Me a Hanzi.",
   "Kemajuan tersimpan di perangkat ini.": "Progress is saved on this device.",
   "pendek": "short", "panjang": "long",
+  // [latihan-menulis-v3]
+  "Pilih huruf untuk berlatih menulis": "Pick a letter to practise writing",
+  "Pilih kata untuk berlatih menulis": "Pick a word to practise writing",
+  "Pilih kalimat untuk berlatih menulis": "Pick a sentence to practise writing",
+  "Lihat cara menulis": "See how to write it", "Mulai Menulis": "Start writing",
+  "Bahasa lain": "More languages", "Ringkas": "Show less",
+  "Kanton": "Cantonese", "Persia": "Persian", "Urdu": "Urdu", "Melayu (Jawi)": "Malay (Jawi)",
+  "Georgia": "Georgian", "Armenia": "Armenian", "Bulgaria": "Bulgarian", "Ukraina": "Ukrainian",
+  "Mongol": "Mongolian", "Khmer": "Khmer", "Laos": "Lao", "Myanmar": "Burmese", "Bengali": "Bengali",
+  "Tamil": "Tamil", "Punjabi": "Punjabi", "Nepal": "Nepali", "Amhar": "Amharic", "Jawa": "Javanese",
+  "Sunda": "Sundanese", "Bali": "Balinese", "Batak": "Batak", "Bugis": "Buginese",
+  "Hanzi tradisional": "Traditional Hanzi",  "Huruf Jawi": "Jawi letters",
+  "Huruf dasar": "Base letters",
+  "Bentuk vokal": "Vowel forms",
+  "Huruf Gurmukhi": "Gurmukhi letters",
+  "Aksara nglegena": "Base letters",
+  "Sandhangan": "Vowel marks",
+  "Aksara ngalagena": "Base letters",
+  "Aksara swara": "Vowel letters",
+  "Rarangkén": "Vowel & final marks",
+  "Aksara wreastra": "Base letters",
+  "Pangangge suara": "Vowel marks",
+  "Pangangge tengenan": "Final consonant marks",
+  "Ina ni surat (huruf induk)": "Base letters",
+  "Anak ni surat (tanda vokal)": "Vowel & final marks",
+  "Ina' surek": "Base letters",
+  "Ana' surek": "Vowel marks",
+  "Huruf akhir (sofit)": "Final letters (sofit)",
 };
 
 const SKIN = {
@@ -116,6 +170,11 @@ const SKIN = {
     ikon: "bg-teal-50 text-teal-700",
     rel: "bg-slate-100",
     catatan: "border-slate-200 bg-slate-50 text-slate-700",
+    tahap: "border-slate-200 bg-white hover:border-teal-400",
+    tahapAktif: "border-teal-600 bg-teal-50 ring-1 ring-teal-600",
+    bulat: "bg-slate-100 text-slate-600",
+    bulatAktif: "bg-teal-600 text-white",
+    garisAktif: "bg-teal-600",
   },
   pengajar: {
     kartu: "rounded-2xl border bg-card shadow-sm",
@@ -132,6 +191,11 @@ const SKIN = {
     ikon: "bg-[#0c7d6c]/10 text-[#0c7d6c] dark:text-[#2cbca4]",
     rel: "bg-muted",
     catatan: "border-border bg-muted/50 text-foreground",
+    tahap: "border-border bg-background hover:border-[#0c7d6c]",
+    tahapAktif: "border-[#0c7d6c] bg-[#0c7d6c]/10 ring-1 ring-[#0c7d6c]",
+    bulat: "bg-muted text-foreground/70",
+    bulatAktif: "bg-[#0c7d6c] text-white",
+    garisAktif: "bg-[#0c7d6c]",
   },
 } as const;
 type Skin = (typeof SKIN)[keyof typeof SKIN];
@@ -206,7 +270,7 @@ function cocokGoresan(siswa: Pt[], acuan: SVGPathElement, panjang: number): "ok"
    terhadap LEBAR papan di kedua sumbu, jadi y berkisar 0..rasio. */
 const RASIO_LEBAR = 0.5;
 
-function gambarHuruf(ctx: CanvasRenderingContext2D, W: number, H: number, teks: string, warna: string, rtl: boolean) {
+function gambarHuruf(ctx: CanvasRenderingContext2D, W: number, H: number, teks: string, warna: string, rtl: boolean, font = FONT_AKSARA) {
   ctx.save();
   ctx.direction = rtl ? "rtl" : "ltr";
   ctx.textAlign = "left";
@@ -214,7 +278,7 @@ function gambarHuruf(ctx: CanvasRenderingContext2D, W: number, H: number, teks: 
   ctx.fillStyle = warna;
   let px = H * 0.62;
   const ukur = () => {
-    ctx.font = `${px}px ${FONT_AKSARA}`;
+    ctx.font = `${px}px ${font}`;
     const m = ctx.measureText(teks);
     return {
       kiri: m.actualBoundingBoxLeft,
@@ -289,7 +353,7 @@ function tebalkan(src: Uint8Array, W: number, H: number, r: number): Uint8Array 
  * huruf acuan, jadi menulis tanpa bayangan (lebih kecil / agak bergeser) tidak
  * dihukum — yang dinilai bentuknya, bukan posisinya di kertas.
  */
-function nilaiBentuk(teks: string, garis: Pt[][], rtl: boolean, rasio = 1): number | null {
+function nilaiBentuk(teks: string, garis: Pt[][], rtl: boolean, rasio = 1, font = FONT_AKSARA): number | null {
   const titik = garis.flat();
   if (!titik.length) return null;
   const lebar = rasio !== 1;
@@ -304,7 +368,7 @@ function nilaiBentuk(teks: string, garis: Pt[][], rtl: boolean, rasio = 1): numb
   const cg = buat();
   const ci = buat();
   if (!cg || !ci) return null;
-  gambarHuruf(cg, W, H, teks, "#000", rtl);
+  gambarHuruf(cg, W, H, teks, "#000", rtl, font);
   const G = keBit(cg, W, H);
   let gx0 = W, gy0 = H, gx1 = 0, gy1 = 0, isiG = 0;
   for (let y = 0; y < H; y++) for (let x = 0; x < W; x++) if (G[y * W + x]) {
@@ -377,15 +441,45 @@ function ucapBrowser(teks: string, kode: string) {
   } catch { /* peramban tanpa speechSynthesis */ }
 }
 
+/* [latihan-menulis-v3] Font aksara dari Google Fonts — <link> dipasang sekali per
+   keluarga, lalu document.fonts.load memastikan glyph yang dipakai sudah ada sebelum
+   bayangan dilukis ke kanvas (kanvas tidak menunggu font sendiri). */
+const linkFont = new Map<string, Promise<void>>();
+function siapkanFont(family: string, teks: string): Promise<void> {
+  let j = linkFont.get(family);
+  if (!j) {
+    j = new Promise<void>((ok) => {
+      const l = document.createElement("link");
+      l.rel = "stylesheet";
+      l.href = `https://fonts.googleapis.com/css2?family=${family.replace(/ /g, "+")}&display=swap`;
+      l.onload = () => ok();
+      l.onerror = () => ok();
+      document.head.appendChild(l);
+    });
+    linkFont.set(family, j);
+  }
+  return j.then(() => document.fonts.load(`40px "${family}"`, teks || "a")).then(() => undefined, () => undefined);
+}
+const fontUntuk = (l: ScriptLang) => (l.font ? `"${l.font}", ${FONT_AKSARA}` : FONT_AKSARA);
+
 const KELAS_TOMBOL =
   "inline-flex h-9 items-center gap-1.5 rounded-xl border px-3 text-[12.5px] font-semibold transition-colors disabled:cursor-not-allowed disabled:opacity-50";
+/** Baris alat papan: tiga tombol sama lebar. */
+const KELAS_ALAT =
+  "inline-flex h-10 items-center justify-center gap-1.5 rounded-xl border px-2 text-[12.5px] font-semibold transition-colors disabled:cursor-not-allowed disabled:opacity-45";
+/** Tombol utama selebar papan. */
+const KELAS_UTAMA =
+  "inline-flex h-12 w-full items-center justify-center gap-2 rounded-xl text-[14.5px] font-bold shadow-sm transition-colors disabled:cursor-default disabled:opacity-60";
 
 /* ── Papan urutan goresan ─────────────────────────────────────────────────── */
-function PapanGoresan({ jalur, s, tl, onSelesai }: {
+function PapanGoresan({ jalur, s, tl, putar, onSelesai, onBerikut }: {
   jalur: string[];
   s: Skin;
   tl: (k: string) => string;
+  /** Berubah = putar ulang animasi seluruh huruf (tombol "Lihat cara menulis" di induk). */
+  putar: number;
   onSelesai: (skor: number) => void;
+  onBerikut?: () => void;
 }) {
   const refAcuan = useRef<(SVGPathElement | null)[]>([]);
   const [panjang, setPanjang] = useState<number[]>([]);
@@ -403,15 +497,16 @@ function PapanGoresan({ jalur, s, tl, onSelesai }: {
   useEffect(() => {
     setPanjang(jalur.map((_, i) => refAcuan.current[i]?.getTotalLength() ?? 0));
   }, [jalur]);
-  // Huruf baru dibuka → perlihatkan dulu cara menulisnya.
+  // Huruf baru dibuka (atau "Lihat cara menulis" diketuk) → perlihatkan cara menulisnya.
   useEffect(() => {
+    setPesan("");
     setAnim({ mode: "semua", i: 0, nonce: Date.now() });
-  }, [jalur]);
+  }, [jalur, putar]);
 
   const n = jalur.length;
   const tuntas = selesai >= n;
-  const putar = () => { setPesan(""); setAnim({ mode: "semua", i: 0, nonce: Date.now() }); };
   const ulangi = () => { setSelesai(0); setSalah(0); setSalahIni(0); setPesan(""); setAnim(null); setGaris([]); };
+  const batal = () => { setAnim(null); setPesan(""); setSalahIni(0); setSelesai((v) => Math.max(0, v - 1)); };
 
   const keKotak = (e: React.PointerEvent<SVGSVGElement>): Pt => {
     const r = e.currentTarget.getBoundingClientRect();
@@ -476,10 +571,11 @@ function PapanGoresan({ jalur, s, tl, onSelesai }: {
     <div>
       <style>{"@keyframes wp-gores{to{stroke-dashoffset:0}}"}</style>
       <div
-        className="relative mx-auto aspect-square w-full max-w-[360px] overflow-hidden rounded-2xl"
+        className="relative mx-auto aspect-square w-full max-w-[420px] overflow-hidden rounded-2xl"
         style={{ background: KERTAS, boxShadow: `inset 0 0 0 2px ${gagal ? MERAH : "#cbd5e1"}`, transition: "box-shadow .15s" }}
       >
         <svg
+          data-papan="goresan"
           viewBox={`0 0 ${KOTAK_GORESAN} ${KOTAK_GORESAN}`}
           className="h-full w-full select-none"
           style={{ touchAction: "none", cursor: tuntas ? "default" : "crosshair" }}
@@ -515,37 +611,53 @@ function PapanGoresan({ jalur, s, tl, onSelesai }: {
       <p className={`mt-2.5 min-h-[18px] text-center text-[12.5px] font-medium ${s.redup}`} aria-live="polite">
         {pesan || (tuntas ? "" : anim ? "" : tl("Tulis goresan berikutnya, mulai dari titik hijau."))}
       </p>
-      <p className={`text-center text-[11.5px] ${s.redup}`}>
-        {tl("Goresan")} {Math.min(selesai + (tuntas ? 0 : 1), n)} {tl("dari")} {n}
-      </p>
 
-      <div className="mt-3 flex flex-wrap justify-center gap-2">
-        <button type="button" onClick={putar} className={`${KELAS_TOMBOL} ${s.tombol}`}>
-          <Play className="h-3.5 w-3.5" /> {tl("Putar animasi")}
+      <div className="mt-2 grid grid-cols-3 gap-2">
+        <button type="button" onClick={() => setBayangan((v) => !v)} className={`${KELAS_ALAT} ${s.tombol}`}>
+          {bayangan ? <EyeOff className="h-4 w-4 shrink-0" /> : <Eye className="h-4 w-4 shrink-0" />}
+          <span className="truncate">{bayangan ? tl("Sembunyikan bayangan") : tl("Tampilkan bayangan")}</span>
         </button>
-        <button type="button" onClick={() => setBayangan((v) => !v)} className={`${KELAS_TOMBOL} ${s.tombol}`}>
-          {bayangan ? <EyeOff className="h-3.5 w-3.5" /> : <Eye className="h-3.5 w-3.5" />}
-          {bayangan ? tl("Sembunyikan bayangan") : tl("Tampilkan bayangan")}
+        <button type="button" onClick={batal} disabled={selesai === 0 || tuntas} className={`${KELAS_ALAT} ${s.tombol}`}>
+          <Undo2 className="h-4 w-4 shrink-0" /> <span className="truncate">{tl("Batalkan goresan")}</span>
         </button>
-        <button type="button" onClick={ulangi} className={`${KELAS_TOMBOL} ${s.tombol}`}>
-          <RotateCcw className="h-3.5 w-3.5" /> {tl("Ulangi")}
+        <button type="button" onClick={ulangi} disabled={selesai === 0 && !anim} className={`${KELAS_ALAT} ${s.tombol}`}>
+          <Trash2 className="h-4 w-4 shrink-0" /> <span className="truncate">{tl("Hapus")}</span>
         </button>
+      </div>
+      <div className="mt-2.5">
+        {tuntas ? (
+          <button type="button" onClick={onBerikut ?? ulangi} className={`${KELAS_UTAMA} ${s.utama}`}>
+            {onBerikut ? <>{tl("Berikutnya")} <ArrowRight className="h-4 w-4" /></> : <>{tl("Ulangi")}</>}
+          </button>
+        ) : anim?.mode === "semua" ? (
+          <button type="button" onClick={ulangi} className={`${KELAS_UTAMA} ${s.utama}`}>
+            <PenLine className="h-4 w-4" /> {tl("Mulai Menulis")}
+          </button>
+        ) : (
+          <div className={`${KELAS_UTAMA} border shadow-none ${s.catatan}`} aria-live="polite">
+            <PenLine className="h-4 w-4" /> {tl("Goresan")} {Math.min(selesai + 1, n)} {tl("dari")} {n}
+          </div>
+        )}
       </div>
     </div>
   );
 }
 
 /* ── Papan jiplak / tulis bebas ───────────────────────────────────────────── */
-function PapanJiplak({ teks, rtl, lebar = false, s, tl, uiLang, onSkor, mintaAi }: {
+function PapanJiplak({ teks, rtl, lebar = false, font, versiFont, s, tl, uiLang, onSkor, mintaAi, onBerikut }: {
   teks: string;
   rtl: boolean;
   /** Papan 2:1 untuk kata (lebih dari satu aksara). */
   lebar?: boolean;
+  font: string;
+  /** Naik tiap font aksara selesai dimuat — bayangan dilukis ulang. */
+  versiFont: number;
   s: Skin;
   tl: (k: string) => string;
   uiLang: "id" | "en";
   onSkor: (skor: number) => void;
   mintaAi?: (png: string) => Promise<HasilNilaiAi>;
+  onBerikut?: () => void;
 }) {
   const refBungkus = useRef<HTMLDivElement>(null);
   const refKanvas = useRef<HTMLCanvasElement>(null);
@@ -562,7 +674,7 @@ function PapanJiplak({ teks, rtl, lebar = false, s, tl, uiLang, onSkor, mintaAi 
   useEffect(() => {
     const el = refBungkus.current;
     if (!el) return;
-    const ukur = () => setSisi(Math.max(200, Math.min(lebar ? 460 : 360, Math.round(el.clientWidth))));
+    const ukur = () => setSisi(Math.max(200, Math.min(lebar ? 520 : 420, Math.round(el.clientWidth))));
     ukur();
     const ro = new ResizeObserver(ukur);
     ro.observe(el);
@@ -587,9 +699,9 @@ function PapanJiplak({ teks, rtl, lebar = false, s, tl, uiLang, onSkor, mintaAi 
     ctx.moveTo(0, tinggi / 2); ctx.lineTo(sisi, tinggi / 2);
     ctx.stroke();
     ctx.restore();
-    if (bayangan) gambarHuruf(ctx, sisi, tinggi, teks, BAYANGAN, rtl);
+    if (bayangan) gambarHuruf(ctx, sisi, tinggi, teks, BAYANGAN, rtl, font);
     gambarGaris(ctx, sisi, garis, TINTA, lebar ? tinggi * 0.04 : sisi * 0.032);
-  }, [sisi, tinggi, lebar, garis, bayangan, teks, rtl]);
+  }, [sisi, tinggi, lebar, garis, bayangan, teks, rtl, font, versiFont]);
 
   const keNormal = (e: React.PointerEvent<HTMLCanvasElement>): Pt => {
     const r = e.currentTarget.getBoundingClientRect();
@@ -623,7 +735,7 @@ function PapanJiplak({ teks, rtl, lebar = false, s, tl, uiLang, onSkor, mintaAi 
   const batal = () => { setGaris((g) => g.slice(0, -1)); setSkor(null); setCatatan(""); setAi({ status: "idle" }); };
 
   const cek = () => {
-    const n = nilaiBentuk(teks, garis, rtl, rasio);
+    const n = nilaiBentuk(teks, garis, rtl, rasio, font);
     if (n === null) { setSkor(null); setCatatan(tl("Tulis dulu hurufnya di papan.")); return; }
     setSkor(n);
     setCatatan(n >= 80 ? tl("Mirip sekali — pertahankan!") : n >= 55 ? tl("Sudah terbaca, rapikan lagi bentuknya.") : tl("Bentuknya masih jauh. Coba jiplak dengan bayangan dulu."));
@@ -648,11 +760,14 @@ function PapanJiplak({ teks, rtl, lebar = false, s, tl, uiLang, onSkor, mintaAi 
     }
   };
 
+  const lulus = skor !== null && skor >= BATAS_LULUS;
+
   return (
     <div>
-      <div ref={refBungkus} className={`mx-auto w-full ${lebar ? "max-w-[460px]" : "max-w-[360px]"}`}>
+      <div ref={refBungkus} className={`mx-auto w-full ${lebar ? "max-w-[520px]" : "max-w-[420px]"}`}>
         <canvas
           ref={refKanvas}
+          data-papan="jiplak"
           className="mx-auto block select-none rounded-2xl"
           style={{ width: sisi, height: tinggi, touchAction: "none", cursor: "crosshair", boxShadow: "0 0 0 2px #cbd5e1", background: KERTAS }}
           onPointerDown={turun} onPointerMove={gerak} onPointerUp={angkat} onPointerCancel={angkat}
@@ -660,26 +775,33 @@ function PapanJiplak({ teks, rtl, lebar = false, s, tl, uiLang, onSkor, mintaAi 
         />
       </div>
 
-      <div className="mt-3 flex flex-wrap justify-center gap-2">
-        <button type="button" onClick={() => setBayangan((v) => !v)} className={`${KELAS_TOMBOL} ${s.tombol}`}>
-          {bayangan ? <EyeOff className="h-3.5 w-3.5" /> : <Eye className="h-3.5 w-3.5" />}
-          {bayangan ? tl("Sembunyikan bayangan") : tl("Tampilkan bayangan")}
+      <div className="mt-3 grid grid-cols-3 gap-2">
+        <button type="button" onClick={() => setBayangan((v) => !v)} className={`${KELAS_ALAT} ${s.tombol}`}>
+          {bayangan ? <EyeOff className="h-4 w-4 shrink-0" /> : <Eye className="h-4 w-4 shrink-0" />}
+          <span className="truncate">{bayangan ? tl("Sembunyikan bayangan") : tl("Tampilkan bayangan")}</span>
         </button>
-        <button type="button" onClick={batal} disabled={!garis.length} className={`${KELAS_TOMBOL} ${s.tombol}`}>
-          <Undo2 className="h-3.5 w-3.5" /> {tl("Batalkan goresan")}
+        <button type="button" onClick={batal} disabled={!garis.length} className={`${KELAS_ALAT} ${s.tombol}`}>
+          <Undo2 className="h-4 w-4 shrink-0" /> <span className="truncate">{tl("Batalkan goresan")}</span>
         </button>
-        <button type="button" onClick={hapus} disabled={!garis.length} className={`${KELAS_TOMBOL} ${s.tombol}`}>
-          <RotateCcw className="h-3.5 w-3.5" /> {tl("Hapus")}
+        <button type="button" onClick={hapus} disabled={!garis.length} className={`${KELAS_ALAT} ${s.tombol}`}>
+          <Trash2 className="h-4 w-4 shrink-0" /> <span className="truncate">{tl("Hapus")}</span>
         </button>
       </div>
-      <div className="mt-2 flex flex-wrap justify-center gap-2">
-        <button type="button" onClick={() => { setAi({ status: "idle" }); cek(); }} className={`${KELAS_TOMBOL} border-transparent ${s.utama}`}>
-          <Check className="h-3.5 w-3.5" /> {tl("Cek tulisan")}
-        </button>
+      <div className="mt-2.5 flex gap-2">
+        {lulus && onBerikut ? (
+          <button type="button" onClick={onBerikut} className={`${KELAS_UTAMA} ${s.utama}`}>
+            {tl("Berikutnya")} <ArrowRight className="h-4 w-4" />
+          </button>
+        ) : (
+          <button type="button" onClick={() => { setAi({ status: "idle" }); cek(); }} className={`${KELAS_UTAMA} ${s.utama}`}>
+            <Check className="h-4 w-4" /> {tl("Cek tulisan")}
+          </button>
+        )}
         {mintaAi && (
-          <button type="button" onClick={nilaiAi} disabled={ai.status === "jalan"} className={`${KELAS_TOMBOL} ${s.tombol}`}>
-            {ai.status === "jalan" ? <Loader2 className="h-3.5 w-3.5 animate-spin" /> : <Sparkles className="h-3.5 w-3.5" />}
-            {ai.status === "jalan" ? tl("Menilai…") : tl("Nilai dengan AI")}
+          <button type="button" onClick={nilaiAi} disabled={ai.status === "jalan"} title={tl("Nilai dengan AI")}
+            className={`inline-flex h-12 shrink-0 items-center justify-center gap-1.5 rounded-xl border px-4 text-[13px] font-semibold transition-colors disabled:opacity-60 ${s.tombol}`}>
+            {ai.status === "jalan" ? <Loader2 className="h-4 w-4 animate-spin" /> : <Sparkles className="h-4 w-4" />}
+            <span className="hidden sm:inline">{ai.status === "jalan" ? tl("Menilai…") : tl("Nilai dengan AI")}</span>
           </button>
         )}
       </div>
@@ -719,9 +841,14 @@ function PapanJiplak({ teks, rtl, lebar = false, s, tl, uiLang, onSkor, mintaAi 
 /* ── Komponen utama ───────────────────────────────────────────────────────── */
 const SET_SENDIRI = "sendiri";
 const NAMA_TAHAP = ["Huruf", "Kata", "Kalimat"] as const;
+const SUBJUDUL_TAHAP = [
+  "Pilih huruf untuk berlatih menulis", "Pilih kata untuk berlatih menulis", "Pilih kalimat untuk berlatih menulis",
+] as const;
+/** Jumlah pil bahasa yang tampil sebelum "Bahasa lain" dibuka. */
+const PIL_RINGKAS = 10;
 const jumlahAksara = (t: string) => Array.from(t).length;
 
-export default function WritingPractice({ skin = "siswa", preferLangs, speak, aiGrade }: Props) {
+export default function WritingPractice({ skin = "siswa", preferLangs, speak, aiGrade, onTampil }: Props) {
   const uiLang = useUiLang();
   const tl = useCallback((k: string) => (uiLang === "en" ? EN[k] ?? k : k), [uiLang]);
   const s: Skin = SKIN[skin];
@@ -733,6 +860,9 @@ export default function WritingPractice({ skin = "siswa", preferLangs, speak, ai
   const [sendiri, setSendiri] = useState("");
   const [mode, setMode] = useState<"goresan" | "bebas">("goresan");
   const [kemajuan, setKemajuan] = useState<Kemajuan>({});
+  const [semuaBahasa, setSemuaBahasa] = useState(false);
+  const [putar, setPutar] = useState(0);
+  const [versiFont, setVersiFont] = useState(0);
   const sudahPilih = useRef(false);
 
   useEffect(() => { setKemajuan(bacaKemajuan()); }, []);
@@ -748,6 +878,7 @@ export default function WritingPractice({ skin = "siswa", preferLangs, speak, ai
   const huruf: Glyph | null = set
     ? set.glyphs[Math.min(indeks, set.glyphs.length - 1)]
     : sendiri.trim() ? { c: sendiri.trim(), r: "" } : null;
+  const font = fontUntuk(bahasa);
 
   /* [latihan-menulis-v2] Kata & kalimat ditulis bagian demi bagian: per aksara
      (kana, Hanzi, blok Hangul) atau per kata. Huruf tunggal = satu bagian. */
@@ -768,6 +899,15 @@ export default function WritingPractice({ skin = "siswa", preferLangs, speak, ai
   // Huruf Tahap 1 selalu papan persegi (vokal Thai/Devanagari memang beberapa kode
   // tapi satu aksara); papan lebar hanya untuk kata & "Tulis sendiri".
   const papanLebar = (frasa || !set) && jumlahAksara(teksPapan) > 1;
+
+  // [latihan-menulis-v3] Font aksara dimuat saat bahasanya dipilih; papan & ubin dilukis ulang sesudahnya.
+  const contohFont = set ? set.glyphs.map((x) => x.c).join("") : teksPapan;
+  useEffect(() => {
+    if (!bahasa.font) return;
+    let hidup = true;
+    siapkanFont(bahasa.font, contohFont).then(() => { if (hidup) setVersiFont((v) => v + 1); });
+    return () => { hidup = false; };
+  }, [bahasa.font, contohFont]);
 
   /* Urutan goresan diambil saat hurufnya dibuka. */
   const [jalur, setJalur] = useState<{ c: string; status: "muat" | "ada" | "kosong"; d: string[] }>({ c: "", status: "kosong", d: [] });
@@ -825,135 +965,201 @@ export default function WritingPractice({ skin = "siswa", preferLangs, speak, ai
   const pilihBahasa = (l: ScriptLang) => { sudahPilih.current = true; setBahasa(l); setIdSet(l.sets[0].id); setIndeks(0); };
   const pilihSet = (id: string) => { sudahPilih.current = true; setIdSet(id); setIndeks(0); };
 
-  const lulusSet = set ? set.glyphs.filter((x) => (kemajuan[set.id]?.[x.c] ?? 0) >= BATAS_LULUS).length : 0;
+  const lulusDi = (x: ScriptSet) => x.glyphs.filter((y) => (kemajuan[x.id]?.[y.c] ?? 0) >= BATAS_LULUS).length;
+  const lulusSet = set ? lulusDi(set) : 0;
   const terbaik = set && huruf ? kemajuan[set.id]?.[huruf.c] ?? 0 : 0;
   const adaGoresan = jalur.status === "ada" && jalur.c === cHuruf;
   const pakaiGoresan = !!sumber && mode === "goresan";
   const artiDari = (x: Glyph) =>
     !x.n ? "" : x.n === "pendek" || x.n === "panjang" ? tl(x.n) : uiLang === "en" && x.e ? x.e : x.n;
   const arti = huruf ? artiDari(huruf) : "";
-  const lulusDi = (x: ScriptSet) => x.glyphs.filter((y) => (kemajuan[x.id]?.[y.c] ?? 0) >= BATAS_LULUS).length;
   const tahapSet = set?.stage ?? 1;
   const iSet = set ? bahasa.sets.indexOf(set) : -1;
   const setBerikut = iSet >= 0 ? bahasa.sets[iSet + 1] : undefined;
   const hurufTahap1 = bahasa.sets.filter((x) => (x.stage ?? 1) === 1);
   const dasarKurang = tahapSet > 1 &&
     hurufTahap1.reduce((n, x) => n + lulusDi(x), 0) < hurufTahap1.reduce((n, x) => n + x.glyphs.length, 0) / 2;
+  const setTahap = (t: number) => bahasa.sets.filter((x) => (x.stage ?? 1) === t);
+
+  // Tombol "Berikutnya" di papan: bagian berikut dulu (kata/kalimat), lalu huruf berikut.
+  const adaBerikut = !!set && (iBagian < bagian.length - 1 || indeks < set.glyphs.length - 1);
+  const berikutnya = () => {
+    if (!set) return;
+    if (frasa && iBagian < bagian.length - 1) keBagian(iBagian + 1);
+    else setIndeks((i) => Math.min(set.glyphs.length - 1, i + 1));
+  };
+
+  // Pil bahasa: ringkas dulu (bahasa yang sedang dipilih selalu ikut tampil).
+  const pilBahasa = useMemo(() => {
+    if (semuaBahasa) return SCRIPT_LANGS;
+    const awal = SCRIPT_LANGS.slice(0, PIL_RINGKAS);
+    return awal.includes(bahasa) ? awal : [...awal.slice(0, PIL_RINGKAS - 1), bahasa];
+  }, [semuaBahasa, bahasa]);
+
+  // [vc-menulis-share-v1] Kabari pemasang (Linguo Meet) apa yang sedang tampil.
+  const labelSet = set ? tl(set.label) : tl("Tulis sendiri");
+  const labelBahasa = tl(bahasa.label);
+  useEffect(() => {
+    if (!onTampil) return;
+    onTampil(huruf ? {
+      teks: teksTampil, baca: huruf.r, arti, bahasa: labelBahasa, kode: bahasa.code, rtl: !!bahasa.rtl,
+      set: labelSet, tahap: tahapSet, bagian: teksPapan, iBagian, nBagian: bagian.length,
+      mode: pakaiGoresan ? "goresan" : "bebas",
+    } : null);
+  }, [onTampil, huruf, teksTampil, arti, labelBahasa, bahasa.code, bahasa.rtl, labelSet, tahapSet, teksPapan, iBagian, bagian.length, pakaiGoresan]);
+
+  // Huruf hiasan di pojok kepala kartu — contoh aksara bahasa yang dipilih.
+  const hiasan = bahasa.sets[0]?.glyphs[0]?.c.slice(-1) ?? "";
 
   return (
     <div className="space-y-4">
-      <div className={`${s.kartu} p-4`}>
-        <div className="flex items-start gap-3">
-          <span className={`grid h-10 w-10 shrink-0 place-items-center rounded-xl ${s.ikon}`}>
-            <PenLine className="h-5 w-5" />
-          </span>
-          <div className="min-w-0">
-            <h2 className={`text-base font-semibold ${s.judul}`}>{tl("Latihan Menulis")}</h2>
-            <p className={`mt-0.5 text-[12px] leading-snug ${s.redup}`}>
-              {tl("Latih tulisan tangan aksara non-Latin secara bertahap: mulai dari huruf, lanjut ke kata, lalu kalimat — lengkap dengan cara baca dan artinya.")}
-            </p>
+      {/* ── Kepala: judul, bahasa, tahap ── */}
+      <div className={`${s.kartu} relative overflow-hidden p-4 sm:p-5`}>
+        <div className="flex items-start gap-4">
+          <div className="min-w-0 flex-1">
+            <div className="flex items-start gap-3">
+              <span className={`grid h-12 w-12 shrink-0 place-items-center rounded-2xl ${s.ikon}`}>
+                <PenLine className="h-6 w-6" />
+              </span>
+              <div className="min-w-0">
+                <h2 className={`text-lg font-bold sm:text-xl ${s.judul}`}>{tl("Latihan Menulis")}</h2>
+                <p className={`mt-0.5 text-[12.5px] leading-snug ${s.redup}`}>
+                  {tl("Latih tulisan tangan aksara non-Latin secara bertahap: mulai dari huruf, lanjut ke kata, lalu kalimat — lengkap dengan cara baca dan artinya.")}
+                </p>
+              </div>
+            </div>
+
+            <div className="mt-4 flex flex-wrap gap-2">
+              {pilBahasa.map((l) => (
+                <button key={l.key} type="button" onClick={() => pilihBahasa(l)} aria-pressed={l.key === bahasa.key}
+                  className={`rounded-full border px-4 py-1.5 text-[13px] font-semibold transition-colors ${l.key === bahasa.key ? s.pilAktif : s.pil}`}>
+                  {tl(l.label)}
+                </button>
+              ))}
+              {SCRIPT_LANGS.length > PIL_RINGKAS && (
+                <button type="button" onClick={() => setSemuaBahasa((v) => !v)}
+                  className={`inline-flex items-center gap-1 rounded-full border border-dashed px-3.5 py-1.5 text-[13px] font-semibold transition-colors ${s.pil}`}>
+                  {semuaBahasa ? tl("Ringkas") : `${tl("Bahasa lain")} (${SCRIPT_LANGS.length - PIL_RINGKAS})`}
+                  <ChevronDown className={`h-3.5 w-3.5 transition-transform ${semuaBahasa ? "rotate-180" : ""}`} />
+                </button>
+              )}
+            </div>
+          </div>
+
+          {/* Hiasan: kartu kertas berisi aksara bahasa terpilih (warna inline = sama di terang/gelap). */}
+          <div aria-hidden className="relative hidden h-[118px] w-[150px] shrink-0 md:block">
+            <div className="absolute inset-0 rounded-full" style={{ background: "radial-gradient(circle at 60% 45%, rgba(26,158,158,.28), transparent 70%)" }} />
+            <div className="absolute left-7 top-3 grid h-[92px] w-[84px] rotate-[-8deg] place-items-center rounded-2xl"
+              style={{ background: "linear-gradient(160deg,#fdf6e3,#efe0bd)", boxShadow: "0 10px 24px rgba(0,0,0,.25), inset 0 0 0 1px rgba(120,90,40,.2)" }}>
+              <span lang={bahasa.code} className="text-[46px] font-bold leading-none" style={{ color: "#134e4a", fontFamily: font }}>{hiasan}</span>
+            </div>
+            <Sparkles className="absolute left-0 top-2 h-5 w-5" style={{ color: "#f5b942" }} />
+            <PenLine className="absolute bottom-1 right-2 h-7 w-7 rotate-12" style={{ color: "#d9a35b" }} />
           </div>
         </div>
 
-        <div className="mt-3.5 flex flex-wrap gap-1.5">
-          {SCRIPT_LANGS.map((l) => (
-            <button key={l.key} type="button" onClick={() => pilihBahasa(l)}
-              className={`rounded-full border px-3 py-1.5 text-[12.5px] font-semibold transition-colors ${l.key === bahasa.key ? s.pilAktif : s.pil}`}>
-              {tl(l.label)}
-            </button>
-          ))}
-        </div>
-        {/* [latihan-menulis-v2] Set dikelompokkan per tahap: huruf → kata → kalimat. */}
-        <div className="mt-2.5 space-y-1.5">
+        {/* [latihan-menulis-v3] Stepper tahap: Huruf → Kata → Kalimat. */}
+        <div className="mt-4 flex items-stretch">
           {([1, 2, 3] as const).map((t) => {
-            const daftar = bahasa.sets.filter((x) => (x.stage ?? 1) === t);
+            const daftar = setTahap(t);
             if (!daftar.length) return null;
+            const aktif = t === tahapSet && !!set;
+            const total = daftar.reduce((n, x) => n + x.glyphs.length, 0);
+            const lulus = daftar.reduce((n, x) => n + lulusDi(x), 0);
+            const tampil = aktif && set ? set : daftar[0];
+            const tuntasTahap = lulus >= total;
+            const sebelumnyaTuntas = t > 1 && setTahap(t - 1).every((x) => lulusDi(x) >= x.glyphs.length);
             return (
-              <div key={t} className="flex flex-wrap items-center gap-1.5">
-                <span className={`w-[104px] shrink-0 text-[10.5px] font-bold uppercase tracking-wide ${s.redup}`}>
-                  {tl("Tahap")} {t} · {tl(NAMA_TAHAP[t - 1])}
-                </span>
-                {daftar.map((x) => (
-                  <button key={x.id} type="button" onClick={() => pilihSet(x.id)}
-                    className={`rounded-full border px-3 py-1 text-[12px] font-semibold transition-colors ${x.id === idSet ? s.pilAktif : s.pil}`}>
-                    {tl(x.label)}
-                    <span className="ml-1.5 font-medium tabular-nums opacity-70">{lulusDi(x)}/{x.glyphs.length}</span>
-                  </button>
-                ))}
-                {t === 1 && (
-                  <button type="button" onClick={() => pilihSet(SET_SENDIRI)}
-                    className={`rounded-full border px-3 py-1 text-[12px] font-semibold transition-colors ${idSet === SET_SENDIRI ? s.pilAktif : s.pil}`}>
-                    {tl("Tulis sendiri")}
-                  </button>
+              <div key={t} className="flex min-w-0 flex-1 items-center">
+                {t > 1 && (
+                  <span aria-hidden className={`mx-1 hidden h-0.5 w-6 shrink-0 sm:block lg:w-12 ${sebelumnyaTuntas ? s.garisAktif : ""}`}
+                    style={sebelumnyaTuntas ? undefined : { backgroundImage: "linear-gradient(90deg, rgba(148,163,184,.6) 50%, transparent 50%)", backgroundSize: "8px 2px" }} />
                 )}
+                <button type="button" onClick={() => pilihSet(aktif ? tampil.id : daftar[0].id)} aria-current={aktif ? "step" : undefined}
+                  className={`flex min-w-0 flex-1 items-center gap-2.5 rounded-xl border px-2.5 py-2 text-left transition-colors sm:px-3 sm:py-2.5 ${t > 1 ? "ml-1.5 sm:ml-0" : ""} ${aktif ? s.tahapAktif : s.tahap}`}>
+                  <span className={`grid h-8 w-8 shrink-0 place-items-center rounded-full text-[14px] font-bold sm:h-9 sm:w-9 ${aktif || tuntasTahap ? s.bulatAktif : s.bulat}`}>
+                    {tuntasTahap ? <Check className="h-4 w-4" strokeWidth={3} /> : t}
+                  </span>
+                  <span className="min-w-0">
+                    <span className={`block truncate text-[13.5px] font-bold ${s.judul}`}>{tl(NAMA_TAHAP[t - 1])}</span>
+                    <span className={`hidden truncate text-[11.5px] sm:block ${s.redup}`}>
+                      {daftar.length > 1 && !aktif ? daftar.map((x) => tl(x.label)).join(" · ") : tl(tampil.label)}{" "}
+                      <span className="tabular-nums" style={{ color: TEAL }}>{aktif ? lulusDi(tampil) : lulus}/{aktif ? tampil.glyphs.length : total}</span>
+                    </span>
+                  </span>
+                </button>
               </div>
             );
           })}
         </div>
 
-        {set && (
-          <div className="mt-3">
-            <div className={`h-1.5 overflow-hidden rounded-full ${s.rel}`}>
-              <div className="h-full rounded-full" style={{ width: `${(lulusSet / set.glyphs.length) * 100}%`, background: TEAL, transition: "width .3s" }} />
-            </div>
-            <p className={`mt-1 text-[11.5px] ${s.redup}`}>
-              {lulusSet}/{set.glyphs.length} {tl("dikuasai")} · {tl("Kemajuan tersimpan di perangkat ini.")}
-            </p>
-            {dasarKurang && (
-              <p className={`mt-2 rounded-xl border px-3 py-2 text-[12px] ${s.catatan}`}>
-                {tl("Saran: kuasai dulu huruf-hurufnya di Tahap 1 supaya menulis kata dan kalimat lebih lancar.")}
-              </p>
-            )}
-            {lulusSet === set.glyphs.length && setBerikut && (
-              <div className={`mt-2 flex flex-wrap items-center justify-between gap-2 rounded-xl border px-3 py-2 text-[12.5px] ${s.catatan}`}>
-                <span className="font-semibold">{tl("Tahap ini tuntas!")}</span>
-                <button type="button" onClick={() => pilihSet(setBerikut.id)} className={`${KELAS_TOMBOL} border-transparent ${s.utama}`}>
-                  {tl("Lanjut ke")} {tl(setBerikut.label)} <ArrowRight className="h-3.5 w-3.5" />
-                </button>
-              </div>
+        {/* Set di dalam tahap aktif (mis. Hiragana · Katakana · Kanji) + "Tulis sendiri" di Tahap 1. */}
+        {(setTahap(tahapSet).length > 1 || tahapSet === 1) && (
+          <div className="mt-3 flex flex-wrap gap-1.5">
+            {setTahap(tahapSet).map((x) => (
+              <button key={x.id} type="button" onClick={() => pilihSet(x.id)} aria-pressed={x.id === idSet}
+                className={`rounded-full border px-3 py-1 text-[12px] font-semibold transition-colors ${x.id === idSet ? s.pilAktif : s.pil}`}>
+                {tl(x.label)}
+                <span className="ml-1.5 font-medium tabular-nums opacity-70">{lulusDi(x)}/{x.glyphs.length}</span>
+              </button>
+            ))}
+            {tahapSet === 1 && (
+              <button type="button" onClick={() => pilihSet(SET_SENDIRI)} aria-pressed={idSet === SET_SENDIRI}
+                className={`rounded-full border px-3 py-1 text-[12px] font-semibold transition-colors ${idSet === SET_SENDIRI ? s.pilAktif : s.pil}`}>
+                {tl("Tulis sendiri")}
+              </button>
             )}
           </div>
         )}
       </div>
 
-      <div className="grid gap-4 lg:grid-cols-[minmax(0,1fr)_minmax(0,420px)]">
-        {/* Papan duluan di HP: memilih huruf lalu harus menggulir ke bawah itu melelahkan. */}
+      <div className="grid gap-4 lg:grid-cols-[minmax(0,1fr)_minmax(0,480px)]">
+        {/* ── Panel papan (duluan di HP: memilih huruf lalu harus menggulir ke bawah itu melelahkan) ── */}
         <div className={`order-1 lg:order-2 ${s.kartu} p-4 lg:sticky lg:top-4 lg:self-start`}>
           {huruf ? (
             <>
-              <div className={frasa ? "flex items-start gap-3" : "flex items-center gap-3"}>
+              <div className="flex items-center gap-3">
                 {!frasa && (
-                  <span className={`min-w-0 max-w-[55%] truncate text-[40px] font-semibold leading-none ${s.judul}`}
-                    lang={bahasa.code} dir={bahasa.rtl ? "rtl" : "ltr"} style={{ fontFamily: FONT_AKSARA }}>
+                  <span className={`min-w-0 max-w-[45%] truncate text-[44px] font-bold leading-none ${s.judul}`}
+                    lang={bahasa.code} dir={bahasa.rtl ? "rtl" : "ltr"} style={{ fontFamily: font }}>
                     {huruf.c}
                   </span>
                 )}
                 <div className="min-w-0 flex-1">
-                  {frasa && (
-                    <p className={`mb-1 break-words text-[26px] font-semibold leading-snug ${s.judul}`}
-                      lang={bahasa.code} dir={bahasa.rtl ? "rtl" : "ltr"} style={{ fontFamily: FONT_AKSARA }}>
-                      {teksTampil}
-                    </p>
-                  )}
                   {huruf.r && huruf.r !== "-" && (
-                    <p className={`${frasa ? "" : "truncate "}text-[13px] ${s.judul}`}>
-                      <span className={`mr-1.5 text-[10.5px] font-bold uppercase tracking-wide ${s.redup}`}>{tl("Baca")}</span>
-                      <span className="font-semibold">{huruf.r}</span>
-                    </p>
+                    <p className={`truncate text-[18px] font-semibold ${s.judul}`} title={tl("Baca")}>{huruf.r}</p>
                   )}
-                  {arti && (
-                    <p className={`${frasa ? "" : "truncate "}text-[13px] ${s.judul}`}>
-                      <span className={`mr-1.5 text-[10.5px] font-bold uppercase tracking-wide ${s.redup}`}>{tl("Arti")}</span>
-                      {arti}
-                    </p>
-                  )}
-                  {terbaik > 0 && <p className={`text-[11.5px] ${s.redup}`}>{tl("Skor terbaik")}: {terbaik}</p>}
+                  {!frasa && arti && <p className={`truncate text-[12.5px] ${s.redup}`}>{arti}</p>}
                 </div>
                 <button type="button" onClick={bunyikan} title={tl("Dengar")} aria-label={tl("Dengar")}
                   className={`grid h-10 w-10 shrink-0 place-items-center rounded-full border transition-colors ${s.tombol}`}>
                   <Volume2 className="h-[18px] w-[18px]" />
                 </button>
+                {sumber && (adaGoresan || jalur.status === "muat") && (
+                  <button type="button" onClick={() => { setMode("goresan"); setPutar((v) => v + 1); }}
+                    className={`inline-flex h-10 shrink-0 items-center gap-1.5 rounded-full border px-3.5 text-[12.5px] font-semibold transition-colors ${s.tombol}`}>
+                    <Lightbulb className="h-4 w-4" style={{ color: "#f5b942" }} />
+                    <span className="hidden sm:inline">{tl("Lihat cara menulis")}</span>
+                    <ChevronRight className="h-3.5 w-3.5 opacity-60" />
+                  </button>
+                )}
               </div>
+
+              {frasa && (
+                <div className="mt-2.5">
+                  <p className={`break-words text-[26px] font-semibold leading-snug ${s.judul}`}
+                    lang={bahasa.code} dir={bahasa.rtl ? "rtl" : "ltr"} style={{ fontFamily: font }}>
+                    {teksTampil}
+                  </p>
+                  {arti && (
+                    <p className={`text-[13px] ${s.judul}`}>
+                      <span className={`mr-1.5 text-[10.5px] font-bold uppercase tracking-wide ${s.redup}`}>{tl("Arti")}</span>
+                      {arti}
+                    </p>
+                  )}
+                </div>
+              )}
+              {terbaik > 0 && <p className={`mt-1 text-[11.5px] ${s.redup}`}>{tl("Skor terbaik")}: {terbaik}</p>}
 
               {frasa && bagian.length > 1 && (
                 <div className="mt-3">
@@ -965,7 +1171,7 @@ export default function WritingPractice({ skin = "siswa", preferLangs, speak, ai
                       const lulus = (skorBagian[i] ?? 0) >= BATAS_LULUS;
                       return (
                         <button key={i} type="button" onClick={() => keBagian(i)} aria-pressed={i === iBagian}
-                          lang={bahasa.code} style={{ fontFamily: FONT_AKSARA }}
+                          lang={bahasa.code} style={{ fontFamily: font }}
                           className={`relative rounded-lg border px-2.5 py-1 text-[18px] leading-tight transition-colors ${i === iBagian ? s.selAktif : lulus ? s.selLulus : s.sel}`}>
                           {b}
                           {lulus && (
@@ -993,12 +1199,13 @@ export default function WritingPractice({ skin = "siswa", preferLangs, speak, ai
 
               <div className="mt-3">
                 {pakaiGoresan && jalur.status === "muat" && (
-                  <div className={`grid aspect-square w-full max-w-[360px] place-items-center mx-auto text-[12.5px] ${s.redup}`}>
+                  <div className={`mx-auto grid aspect-square w-full max-w-[420px] place-items-center text-[12.5px] ${s.redup}`}>
                     <span className="inline-flex items-center gap-2"><Loader2 className="h-4 w-4 animate-spin" /> {tl("Memuat urutan goresan…")}</span>
                   </div>
                 )}
                 {pakaiGoresan && adaGoresan && (
-                  <PapanGoresan key={`${kunciHuruf}:${iBagian}`} jalur={jalur.d} s={s} tl={tl} onSelesai={catat} />
+                  <PapanGoresan key={`${kunciHuruf}:${iBagian}`} jalur={jalur.d} s={s} tl={tl} putar={putar}
+                    onSelesai={catat} onBerikut={adaBerikut ? berikutnya : undefined} />
                 )}
                 {pakaiGoresan && jalur.status === "kosong" && jalur.c === cHuruf && (
                   <p className={`mb-3 rounded-xl border p-3 text-[12.5px] ${s.catatan}`}>
@@ -1007,14 +1214,8 @@ export default function WritingPractice({ skin = "siswa", preferLangs, speak, ai
                 )}
                 {(!pakaiGoresan || (jalur.status === "kosong" && jalur.c === cHuruf)) && (
                   <PapanJiplak key={`${kunciHuruf}:${iBagian}`} teks={teksPapan} rtl={!!bahasa.rtl} lebar={papanLebar}
-                    s={s} tl={tl} uiLang={uiLang} onSkor={catat} mintaAi={mintaAi} />
-                )}
-                {frasa && bagian.length > 1 && typeof skorBagian[iBagian] === "number" && iBagian < bagian.length - 1 && (
-                  <div className="mt-3 flex justify-center">
-                    <button type="button" onClick={() => keBagian(iBagian + 1)} className={`${KELAS_TOMBOL} border-transparent ${s.utama}`}>
-                      {tl("Bagian berikutnya")} <ArrowRight className="h-3.5 w-3.5" />
-                    </button>
-                  </div>
+                    font={font} versiFont={versiFont} s={s} tl={tl} uiLang={uiLang} onSkor={catat} mintaAi={mintaAi}
+                    onBerikut={adaBerikut ? berikutnya : undefined} />
                 )}
                 {frasa && bagian.length > 1 && skorFrasa !== null && (
                   <p className={`mt-3 rounded-xl border p-3 text-center text-[12.5px] font-semibold ${s.catatan}`} aria-live="polite">
@@ -1024,14 +1225,14 @@ export default function WritingPractice({ skin = "siswa", preferLangs, speak, ai
               </div>
 
               {set && (
-                <div className="mt-4 flex items-center justify-between gap-2">
+                <div className="mt-3 flex items-center justify-between gap-2">
                   <button type="button" onClick={() => setIndeks((i) => Math.max(0, i - 1))} disabled={indeks <= 0}
-                    className={`${KELAS_TOMBOL} ${s.tombol}`}>
+                    className={`${KELAS_TOMBOL} border-transparent ${s.redup}`}>
                     <ChevronLeft className="h-4 w-4" /> {tl("Sebelumnya")}
                   </button>
                   <span className={`text-[12px] tabular-nums ${s.redup}`}>{indeks + 1}/{set.glyphs.length}</span>
                   <button type="button" onClick={() => setIndeks((i) => Math.min(set.glyphs.length - 1, i + 1))}
-                    disabled={indeks >= set.glyphs.length - 1} className={`${KELAS_TOMBOL} ${s.tombol}`}>
+                    disabled={indeks >= set.glyphs.length - 1} className={`${KELAS_TOMBOL} border-transparent ${s.redup}`}>
                     {tl("Berikutnya")} <ChevronRight className="h-4 w-4" />
                   </button>
                 </div>
@@ -1042,32 +1243,62 @@ export default function WritingPractice({ skin = "siswa", preferLangs, speak, ai
           )}
         </div>
 
-        <div className={`order-2 lg:order-1 ${s.kartu} p-4`}>
+        {/* ── Daftar huruf/kata/kalimat ── */}
+        <div className={`order-2 lg:order-1 ${s.kartu} p-4 sm:p-5`}>
           {set ? (
-            <div dir={bahasa.rtl ? "rtl" : "ltr"} className={`grid gap-2 ${
-              !frasa ? "grid-cols-[repeat(auto-fill,minmax(64px,1fr))]"
-                : tahapSet === 2 ? "grid-cols-[repeat(auto-fill,minmax(128px,1fr))]" : "grid-cols-1 sm:grid-cols-2"}`}>
-              {set.glyphs.map((x, i) => {
-                const lulus = (kemajuan[set.id]?.[x.c] ?? 0) >= BATAS_LULUS;
-                return (
-                  <button key={x.c} type="button" onClick={() => { sudahPilih.current = true; setIndeks(i); }}
-                    aria-pressed={i === indeks}
-                    className={`relative flex flex-col items-center rounded-xl border px-1 pb-1.5 pt-2 transition-colors ${i === indeks ? s.selAktif : lulus ? s.selLulus : s.sel}`}>
-                    <span className={`max-w-full break-words text-center ${frasa ? "px-1 text-[19px] leading-snug" : "text-[24px] leading-tight"}`}
-                      lang={bahasa.code} style={{ fontFamily: FONT_AKSARA }}>{frasa ? teksFrasa(bahasa, x.c) : x.c}</span>
-                    <span className={`mt-0.5 max-w-full truncate text-[10.5px] ${s.redup}`} dir="ltr">{x.r}</span>
-                    {frasa && (
-                      <span className={`max-w-full px-1 text-center text-[11.5px] leading-snug ${s.judul}`} dir="ltr">{artiDari(x)}</span>
-                    )}
-                    {lulus && (
-                      <span className="absolute right-1 top-1 grid h-3.5 w-3.5 place-items-center rounded-full text-white" style={{ background: TEAL }}>
-                        <Check className="h-2.5 w-2.5" strokeWidth={3.5} />
-                      </span>
-                    )}
+            <>
+              <div className="flex flex-wrap items-end justify-between gap-x-4 gap-y-2">
+                <div className="min-w-0">
+                  <h3 className={`text-lg font-bold ${s.judul}`}>{tl(set.label)}</h3>
+                  <p className={`text-[12.5px] ${s.redup}`}>{tl(SUBJUDUL_TAHAP[tahapSet - 1])}</p>
+                </div>
+                <div className="w-40">
+                  <p className={`text-right text-[12px] tabular-nums ${s.redup}`}>{lulusSet}/{set.glyphs.length} {tl("dikuasai")}</p>
+                  <div className={`mt-1 h-1.5 overflow-hidden rounded-full ${s.rel}`}>
+                    <div className="h-full rounded-full" style={{ width: `${Math.max(3, (lulusSet / set.glyphs.length) * 100)}%`, background: TEAL, transition: "width .3s" }} />
+                  </div>
+                </div>
+              </div>
+
+              {dasarKurang && (
+                <p className={`mt-3 rounded-xl border px-3 py-2 text-[12px] ${s.catatan}`}>
+                  {tl("Saran: kuasai dulu huruf-hurufnya di Tahap 1 supaya menulis kata dan kalimat lebih lancar.")}
+                </p>
+              )}
+              {lulusSet === set.glyphs.length && setBerikut && (
+                <div className={`mt-3 flex flex-wrap items-center justify-between gap-2 rounded-xl border px-3 py-2 text-[12.5px] ${s.catatan}`}>
+                  <span className="font-semibold">{tl("Tahap ini tuntas!")}</span>
+                  <button type="button" onClick={() => pilihSet(setBerikut.id)} className={`${KELAS_TOMBOL} border-transparent ${s.utama}`}>
+                    {tl("Lanjut ke")} {tl(setBerikut.label)} <ArrowRight className="h-3.5 w-3.5" />
                   </button>
-                );
-              })}
-            </div>
+                </div>
+              )}
+
+              <div className={`mt-4 grid gap-2.5 ${
+                !frasa ? "grid-cols-[repeat(auto-fill,minmax(76px,1fr))]"
+                  : tahapSet === 2 ? "grid-cols-[repeat(auto-fill,minmax(132px,1fr))]" : "grid-cols-1 sm:grid-cols-2"}`}>
+                {set.glyphs.map((x, i) => {
+                  const lulus = (kemajuan[set.id]?.[x.c] ?? 0) >= BATAS_LULUS;
+                  return (
+                    <button key={x.c} type="button" onClick={() => { sudahPilih.current = true; setIndeks(i); }}
+                      aria-pressed={i === indeks}
+                      className={`relative flex flex-col items-center justify-center rounded-2xl border px-1.5 transition-colors ${frasa ? "py-2.5" : "aspect-square"} ${i === indeks ? s.selAktif : lulus ? s.selLulus : s.sel}`}>
+                      <span className={`max-w-full break-words text-center font-semibold ${frasa ? "px-1 text-[19px] leading-snug" : "text-[28px] leading-tight"}`}
+                        lang={bahasa.code} dir={bahasa.rtl ? "rtl" : undefined} style={{ fontFamily: font }}>{frasa ? teksFrasa(bahasa, x.c) : x.c}</span>
+                      <span className={`mt-1 max-w-full truncate text-[11px] ${s.redup}`} dir="ltr">{x.r}</span>
+                      {frasa && (
+                        <span className={`max-w-full px-1 text-center text-[11.5px] leading-snug ${s.judul}`} dir="ltr">{artiDari(x)}</span>
+                      )}
+                      {lulus && (
+                        <span className="absolute -right-1.5 -top-1.5 grid h-5 w-5 place-items-center rounded-full text-white shadow" style={{ background: TEAL }}>
+                          <Check className="h-3 w-3" strokeWidth={3.5} />
+                        </span>
+                      )}
+                    </button>
+                  );
+                })}
+              </div>
+            </>
           ) : (
             <div>
               <label className={`text-[12.5px] font-semibold ${s.judul}`} htmlFor="wp-sendiri">
@@ -1076,11 +1307,14 @@ export default function WritingPractice({ skin = "siswa", preferLangs, speak, ai
               <input id="wp-sendiri" value={sendiri} onChange={(e) => setSendiri(Array.from(e.target.value).slice(0, 8).join(""))}
                 lang={bahasa.code} dir={bahasa.rtl ? "rtl" : "ltr"} autoComplete="off"
                 className={`mt-1.5 h-11 w-full rounded-xl border px-3 text-[20px] outline-none focus:ring-2 focus:ring-teal-500/40 ${s.masukan}`}
-                style={{ fontFamily: FONT_AKSARA }} />
+                style={{ fontFamily: font }} />
               <p className={`mt-1.5 text-[11.5px] ${s.redup}`}>{tl("Maksimal 8 huruf. Tulisannya dinilai dari bentuk atau oleh AI.")}</p>
             </div>
           )}
-          {sumber && <p className={`mt-3 text-[10.5px] ${s.redup}`}>{tl("Urutan goresan: KanjiVG (CC BY-SA 3.0) & Make Me a Hanzi.")}</p>}
+          <p className={`mt-4 text-[10.5px] ${s.redup}`}>
+            {tl("Kemajuan tersimpan di perangkat ini.")}
+            {(set?.strokes === "kanjivg" || set?.strokes === "hanzi") && <> · {tl("Urutan goresan: KanjiVG (CC BY-SA 3.0) & Make Me a Hanzi.")}</>}
+          </p>
         </div>
       </div>
     </div>
