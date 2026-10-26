@@ -1,0 +1,151 @@
+import type { KonjugasiBahasa } from "./types";
+
+// Ibrani modern — ditulis tanpa niqqud (ktiv male) seperti di kelas & media sehari-hari.
+// Verba contoh binyan pa'al כ-ת-ב (לכתוב, menulis); pi'el ד-ב-ר; hif'il ז-מ-נ.
+
+const data: KonjugasiBahasa = {
+  rtl: true,
+  tabel: [
+    {
+      id: "hove-paal",
+      nama: "Present (Beynoni) — Pa'al",
+      ringkas: "Present tidak ikut persona, hanya gender & jumlah: 4 bentuk saja (lk / pr × tunggal / jamak).",
+      verba: "לכתוב",
+      arti: "menulis",
+      cocok: [/verba present/i, /pola pa'al dasar/i],
+      baris: [
+        { pronomina: "אני / אתה / הוא", arti: "saya / kamu / dia (lk)", bentuk: [["כותב", "akar"]], latin: "kotev" },
+        { pronomina: "אני / את / היא", arti: "saya / kamu / dia (pr)", bentuk: [["כותב", "akar"], ["ת", "persona"]], latin: "kotevet" },
+        { pronomina: "אנחנו / אתם / הם", arti: "kami / kalian / mereka (lk)", bentuk: [["כותב", "akar"], ["ים", "persona"]], latin: "kotvim" },
+        { pronomina: "אנחנו / אתן / הן", arti: "kami / kalian / mereka (pr)", bentuk: [["כותב", "akar"], ["ות", "persona"]], latin: "kotvot" },
+      ],
+      catatan: [
+        "Pola pa'al present: o–e → kotev, lomed, okhel. Huruf ו menandai bunyi 'o'.",
+        "Penutur perempuan berkata אני כותבת — gender pembicara ikut di verba.",
+      ],
+      contoh: { kalimat: "אני כותב מכתב לאמא.", arti: "Saya (lk) menulis surat untuk ibu.", latin: "ani kotev mikhtav le-ima." },
+    },
+    {
+      id: "tsivui",
+      nama: "Imperatif (Tsivui)",
+      ringkas: "Perintah ke 'kamu': lk, pr, atau jamak. Dalam bahasa lisan sering diganti bentuk future (תכתוב).",
+      verba: "לכתוב",
+      arti: "menulis → tulis!",
+      cocok: [/imperatif/i],
+      baris: [
+        { pronomina: "אתה", arti: "kamu (lk)", bentuk: [["כתוב", "akar"]], latin: "ktov" },
+        { pronomina: "את", arti: "kamu (pr)", bentuk: [["כתב", "akar"], ["י", "persona"]], latin: "kitvi" },
+        { pronomina: "אתם / אתן", arti: "kalian", bentuk: [["כתב", "akar"], ["ו", "persona"]], latin: "kitvu" },
+      ],
+      catatan: ["Larangan pakai אל + future: אל תכתוב (jangan tulis), bukan *אל כתוב."],
+      contoh: { kalimat: "כתוב את השם שלך כאן, בבקשה.", arti: "Tolong tulis namamu di sini.", latin: "ktov et ha-shem shelkha kan, bevakasha." },
+    },
+    {
+      id: "avar-paal",
+      nama: "Past (Avar) — Pa'al",
+      ringkas: "Akar + akhiran persona. Bentuk הוא (katav) = bentuk kamus tanpa akhiran.",
+      verba: "לכתוב",
+      arti: "menulis",
+      cocok: [/verba past(?! — pola mudari)/i, /past tense \+ deskripsi/i, /pertanyaan past/i, /pa'al \(qal\)/i],
+      baris: [
+        { pronomina: "אני", arti: "saya", bentuk: [["כתב", "akar"], ["תי", "persona"]], latin: "katavti" },
+        { pronomina: "אתה", arti: "kamu (lk)", bentuk: [["כתב", "akar"], ["ת", "persona"]], latin: "katavta" },
+        { pronomina: "את", arti: "kamu (pr)", bentuk: [["כתב", "akar"], ["ת", "persona"]], latin: "katavt" },
+        { pronomina: "הוא", arti: "dia (lk)", bentuk: [["כתב", "akar"]], latin: "katav" },
+        { pronomina: "היא", arti: "dia (pr)", bentuk: [["כתב", "akar"], ["ה", "persona"]], latin: "katva" },
+        { pronomina: "אנחנו", arti: "kami / kita", bentuk: [["כתב", "akar"], ["נו", "persona"]], latin: "katavnu" },
+        { pronomina: "אתם / אתן", arti: "kalian", bentuk: [["כתב", "akar"], ["תם", "persona"]], latin: "katavtem" },
+        { pronomina: "הם / הן", arti: "mereka", bentuk: [["כתב", "akar"], ["ו", "persona"]], latin: "katvu" },
+      ],
+      catatan: [
+        "כתבת dibaca katavta (lk) atau katavt (pr) — tulisannya sama tanpa niqqud.",
+        "Akhiran -ti, -ta, -t, -nu, -tem mirip madhi Arab (-tu, -ta, -ti, -nā, -tum).",
+      ],
+      contoh: { kalimat: "אתמול כתבתי מכתב.", arti: "Kemarin saya menulis surat.", latin: "etmol katavti mikhtav." },
+    },
+    {
+      id: "haya-beynoni",
+      nama: "היה + Present (Past Continuous / Kebiasaan)",
+      ringkas: "היה (past) + bentuk present: 'dulu biasa …' atau 'akan …' (kondisional), dua-duanya ikut subjek.",
+      verba: "היה + כותב",
+      arti: "dulu biasa menulis",
+      cocok: [/past continuous/i, /היה \+ present/i],
+      baris: [
+        { pronomina: "אני", arti: "saya (lk)", bentuk: [["הייתי ", "bantu"], ["כותב", "akar"]], latin: "hayiti kotev" },
+        { pronomina: "אתה", arti: "kamu (lk)", bentuk: [["היית ", "bantu"], ["כותב", "akar"]], latin: "hayita kotev" },
+        { pronomina: "את", arti: "kamu (pr)", bentuk: [["היית ", "bantu"], ["כותב", "akar"], ["ת", "persona"]], latin: "hayit kotevet" },
+        { pronomina: "הוא", arti: "dia (lk)", bentuk: [["היה ", "bantu"], ["כותב", "akar"]], latin: "haya kotev" },
+        { pronomina: "היא", arti: "dia (pr)", bentuk: [["הייתה ", "bantu"], ["כותב", "akar"], ["ת", "persona"]], latin: "hayta kotevet" },
+        { pronomina: "אנחנו", arti: "kami / kita", bentuk: [["היינו ", "bantu"], ["כותב", "akar"], ["ים", "persona"]], latin: "hayinu kotvim" },
+        { pronomina: "אתם", arti: "kalian", bentuk: [["הייתם ", "bantu"], ["כותב", "akar"], ["ים", "persona"]], latin: "hayitem kotvim" },
+        { pronomina: "הם", arti: "mereka", bentuk: [["היו ", "bantu"], ["כותב", "akar"], ["ים", "persona"]], latin: "hayu kotvim" },
+      ],
+      catatan: [
+        "Ibrani modern tidak punya tense 'sedang' khusus; untuk kebiasaan lampau pakai היה + present.",
+        "Konteks lain: הייתי כותב = 'saya akan menulis (seandainya…)'.",
+      ],
+      contoh: {
+        kalimat: "כשהייתי ילד, הייתי כותב שירים.",
+        arti: "Waktu kecil, saya dulu suka menulis puisi.",
+        latin: "kshe-hayiti yeled, hayiti kotev shirim.",
+      },
+    },
+    {
+      id: "atid-paal",
+      nama: "Future (Atid) — Pa'al",
+      ringkas: "Prefiks persona א ת י נ (+ akhiran untuk pr / jamak) — sepola dengan mudhari' Arab.",
+      verba: "לכתוב",
+      arti: "menulis",
+      cocok: [/future simple/i, /pola mudari'? ibrani/i],
+      baris: [
+        { pronomina: "אני", arti: "saya", bentuk: [["א", "persona"], ["כתוב", "akar"]], latin: "ekhtov" },
+        { pronomina: "אתה", arti: "kamu (lk)", bentuk: [["ת", "persona"], ["כתוב", "akar"]], latin: "tikhtov" },
+        { pronomina: "את", arti: "kamu (pr)", bentuk: [["ת", "persona"], ["כתב", "akar"], ["י", "persona"]], latin: "tikhtevi" },
+        { pronomina: "הוא", arti: "dia (lk)", bentuk: [["י", "persona"], ["כתוב", "akar"]], latin: "yikhtov" },
+        { pronomina: "היא", arti: "dia (pr)", bentuk: [["ת", "persona"], ["כתוב", "akar"]], latin: "tikhtov" },
+        { pronomina: "אנחנו", arti: "kami / kita", bentuk: [["נ", "persona"], ["כתוב", "akar"]], latin: "nikhtov" },
+        { pronomina: "אתם / אתן", arti: "kalian", bentuk: [["ת", "persona"], ["כתב", "akar"], ["ו", "persona"]], latin: "tikhtevu" },
+        { pronomina: "הם / הן", arti: "mereka", bentuk: [["י", "persona"], ["כתב", "akar"], ["ו", "persona"]], latin: "yikhtevu" },
+      ],
+      catatan: [
+        "כ di awal akar berubah bunyi jadi 'kh' setelah prefiks: katav → yikhtov.",
+        "תכתוב dipakai untuk אתה dan היא — sama seperti تَكْتُبُ di Arab.",
+      ],
+      contoh: { kalimat: "מחר אכתוב לך.", arti: "Besok saya akan menulis untukmu.", latin: "makhar ekhtov lekha." },
+    },
+    {
+      id: "hove-piel",
+      nama: "Present — Binyan Pi'el",
+      ringkas: "Pi'el (intensif aktif): present selalu diawali מ־ dengan pola me-a-e.",
+      verba: "לדבר",
+      arti: "berbicara",
+      cocok: [/(?<!dari )pi'el/i, /konjugasi lengkap per binyan/i],
+      baris: [
+        { pronomina: "אני / אתה / הוא", arti: "saya / kamu / dia (lk)", bentuk: [["מ", "waktu"], ["דבר", "akar"]], latin: "medaber" },
+        { pronomina: "אני / את / היא", arti: "saya / kamu / dia (pr)", bentuk: [["מ", "waktu"], ["דבר", "akar"], ["ת", "persona"]], latin: "medaberet" },
+        { pronomina: "אנחנו / אתם / הם", arti: "kami / kalian / mereka (lk)", bentuk: [["מ", "waktu"], ["דבר", "akar"], ["ים", "persona"]], latin: "medabrim" },
+        { pronomina: "אנחנו / אתן / הן", arti: "kami / kalian / mereka (pr)", bentuk: [["מ", "waktu"], ["דבר", "akar"], ["ות", "persona"]], latin: "medabrot" },
+      ],
+      catatan: ["Past pi'el: דיברתי (dibarti), future: אדבר (adaber) — huruf tengah digandakan (dagesh)."],
+      contoh: { kalimat: "היא מדברת עברית יפה.", arti: "Dia (pr) berbicara bahasa Ibrani dengan bagus.", latin: "hi medaberet ivrit yafe." },
+    },
+    {
+      id: "hove-hifil",
+      nama: "Present — Binyan Hif'il",
+      ringkas: "Hif'il (kausatif): present diawali מ־ dengan pola ma-i, sering ada י sebelum huruf akar terakhir.",
+      verba: "להזמין",
+      arti: "memesan / mengundang",
+      cocok: [/(?<!dari )hif'il/i, /konjugasi lengkap per binyan/i],
+      baris: [
+        { pronomina: "אני / אתה / הוא", arti: "saya / kamu / dia (lk)", bentuk: [["מ", "waktu"], ["זמין", "akar"]], latin: "mazmin" },
+        { pronomina: "אני / את / היא", arti: "saya / kamu / dia (pr)", bentuk: [["מ", "waktu"], ["זמינ", "akar"], ["ה", "persona"]], latin: "mazmina" },
+        { pronomina: "אנחנו / אתם / הם", arti: "kami / kalian / mereka (lk)", bentuk: [["מ", "waktu"], ["זמינ", "akar"], ["ים", "persona"]], latin: "mazminim" },
+        { pronomina: "אנחנו / אתן / הן", arti: "kami / kalian / mereka (pr)", bentuk: [["מ", "waktu"], ["זמינ", "akar"], ["ות", "persona"]], latin: "mazminot" },
+      ],
+      catatan: ["Past hif'il diawali ה: הזמנתי (hizmanti) — 'saya memesan'."],
+      contoh: { kalimat: "אנחנו מזמינים פיצה.", arti: "Kami memesan pizza.", latin: "anakhnu mazminim pitsa." },
+    },
+  ],
+};
+
+export default data;

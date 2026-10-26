@@ -1834,4 +1834,16 @@ const EN: Record<string, string> = {
   "Kata sifat": "Adjectives",
   "Belum dikelompokkan": "Not grouped yet",
   "Warna pekat = dikuasai, pudar = masih dilatih/dikenal": "Solid = mastered, faded = still practising/seen",
+  // [konjugasi-animasi-v1] Tabel konjugasi beranimasi di modal sesi silabus.
+  "Tabel konjugasi": "Conjugation table",
+  "Putar ulang animasi": "Replay animation",
+  "Sembunyikan akhiran, tebak dulu, lalu ketuk baris untuk cek": "Hide the endings, guess first, then tap a row to check",
+  "Tebak akhirannya, lalu ketuk baris untuk cek": "Guess the ending, then tap a row to check",
+  "Akar kata": "Stem",
+  "Penanda waktu": "Tense marker",
+  "Akhiran persona": "Person ending",
+  "Kata bantu": "Auxiliary",
+  "Penanda lain": "Other marker",
+  "Bandingkan dengan tense lain": "Compare with other tenses",
+  "Tampilkan yang dibahas sesi ini saja": "Show only this session's tenses",
 };

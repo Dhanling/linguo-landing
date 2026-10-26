@@ -3,10 +3,15 @@
 import { useEffect, useState } from "react";
 // [fix:gotrue-client-tunggal-v1] pakai client kanonik, jangan bikin instance GoTrue baru
 import { supabase } from "@/lib/supabase-client";
-import { BookOpen, ChevronDown, Target, Loader2, ArrowRight, X, Video, FileText, ClipboardList, ChevronRight } from "lucide-react";
+import { BookOpen, ChevronDown, Target, Loader2, ArrowRight, X, Video, FileText, ClipboardList, ChevronRight, Table2 } from "lucide-react";
 // [lms-content-readiness-v1] sumber tunggal "sesi ini sudah ada isinya atau belum"
 import { fetchLessonStats } from "@/lib/lmsContent";
 import { useT } from "@/lib/uiLang"; // [ui-lang-switcher-v1]
+// [konjugasi-animasi-v1] tabel konjugasi beranimasi untuk sesi yang membahas tense
+import dynamic from "next/dynamic";
+import { muatKonjugasi, tabelUntukSesi } from "@/lib/konjugasi";
+import type { KonjugasiBahasa } from "@/data/konjugasi/types";
+const TabelKonjugasi = dynamic(() => import("./TabelKonjugasi"), { ssr: false });
 
 type Session = { number: number; title: string; topics?: string[] };
 type Sublevel = { code: string; name: string; preview?: boolean; sessions: Session[] };
@@ -70,6 +75,16 @@ export default function SilabusOutline({
     Record<string, { lessonId: string; quizCount: number; hasAudio: boolean; hasMateri: boolean; hasContent: boolean }[]> | null
   >(null);
   const [showOverview, setShowOverview] = useState(false); // [linguo-patch:silabus-overview-modal-v1]
+  const [konjugasi, setKonjugasi] = useState<KonjugasiBahasa | null>(null); // [konjugasi-animasi-v1]
+
+  useEffect(() => {
+    let alive = true;
+    setKonjugasi(null);
+    muatKonjugasi(slug).then((d) => alive && setKonjugasi(d));
+    return () => {
+      alive = false;
+    };
+  }, [slug]);
 
   useEffect(() => {
     let alive = true;
@@ -298,6 +313,12 @@ export default function SilabusOutline({
                                   {s.number}
                                 </span>
                                 <span className={`min-w-0 flex-1 truncate text-[13px] font-bold ${soon ? "text-gray-400" : "text-[#12172B]"}`}>{s.title}</span>
+                                {tabelUntukSesi(konjugasi, s).length ? (
+                                  <span className="inline-flex shrink-0 items-center gap-1 rounded-full bg-[#16796E]/10 px-2 py-0.5 text-[10px] font-bold text-[#16796E]">
+                                    <Table2 className="h-3 w-3" strokeWidth={2.5} />
+                                    {t("Konjugasi")}
+                                  </span>
+                                ) : null}
                                 {soon ? (
                                   <span className="shrink-0 rounded-full bg-slate-100 px-2 py-0.5 text-[10px] font-bold text-gray-400">{t("Segera")}</span>
                                 ) : null}
@@ -377,6 +398,11 @@ export default function SilabusOutline({
                 </ul>
               </div>
             ) : null}
+
+            {(() => {
+              const dibahas = tabelUntukSesi(konjugasi, openSession.s);
+              return konjugasi && dibahas.length ? <TabelKonjugasi key={`${openSession.subCode}-${openSession.s.number}`} data={konjugasi} dibahas={dibahas} /> : null;
+            })()}
 
             {lessonState.status === "loading" ? (
               <div className="mt-5 flex items-center justify-center rounded-xl bg-[#F5F6F8]/60 py-6">
