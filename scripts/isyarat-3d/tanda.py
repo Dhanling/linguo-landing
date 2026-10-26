@@ -199,7 +199,7 @@ for kode in kodes:
     e = K.KAMUS[kode]
     act, dur = panggang(kode, e)
     acts.append(act)
-    meta.append(dict(kode=kode, arti=e["arti"], kat=e["kat"], cara=e["cara"], gloss=e["gloss"], dur=round(dur, 3), wajah=e["wajah"]))
+    meta.append(dict(kode=kode, arti=e["arti"], kat=e["kat"], cara=e["cara"], gloss=e["gloss"], dur=round(dur, 3), wajah=e["wajah"], **({"ragu": True} if e.get("ragu") else {})))
     print("PANGGANG", kode, round(dur, 2))
 for kode in K.KAMUS:
     if not (K.KAMUS[kode]["R"] or K.KAMUS[kode]["L"]):

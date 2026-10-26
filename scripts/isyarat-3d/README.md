@@ -37,4 +37,12 @@ Kamus terpisah `kamus_bisindo.py` (abjad jari dua tangan A–Z + angka 1–10; r
 terbuka Mendeley BISINDO, lihat kepala berkas). Pilih kamus lewat env `KAMUS`:
 `KAMUS=kamus_bisindo $B -b out/avatar.blend --python tanda.py -- out/glb-bisindo [KODE,…] [--cek --sudut eja2]`
 → kemas ke `public/models/isyarat/bisindo/` di KEDUA repo (dek memakai `bahasa: "bisindo"`).
-⚠️ Belum dicek pengajar Tuli; Q & S paling meragukan. Kosakata BISINDO BELUM ada — jangan dikarang.
+⚠️ Belum dicek pengajar Tuli; Q & S paling meragukan.
+
+### Kosakata A1.1–A2.4 — [isyarat-bisindo-a1a2-v1]
+`kamus_bisindo_a1_1.py` … `kamus_bisindo_a2_4.py` (diimpor otomatis di akhir `kamus_bisindo.py`;
+pembagian kode di `ALOKASI_BISINDO.md`, brief agen di `BRIEF_BISINDO.md`). 474 isyarat, 459 klip.
+⚠️ Rujukan tertulis per isyarat BISINDO hampir tak ada: bentuk disusun dari prinsip ikonik + gerak
+bibir, BUKAN disalin dari ASL. Entri `ragu=True` (±377) ikut ke `isyarat-gerak.json` sebagai
+`"ragu": true` — daftar yang WAJIB dicek pengajar Tuli. Cek kode dek:
+`KAMUS=kamus_bisindo node --import tsx cek_kode.mjs <dek.ts>…`.

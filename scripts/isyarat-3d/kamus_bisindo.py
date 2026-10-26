@@ -16,8 +16,11 @@ import isyarat as I
 
 KAMUS = {}
 
-def S(kode, arti, kat, R, L=None, kepala=None, wajah=None, cara="", gloss=None):
-    KAMUS[kode] = dict(kode=kode, arti=arti, kat=kat, R=R, L=L, kepala=kepala or [], wajah=wajah, cara=cara, gloss=gloss or kode.replace("_", "-"))
+def S(kode, arti, kat, R, L=None, kepala=None, wajah=None, cara="", gloss=None, ragu=False):
+    # [isyarat-bisindo-a1a2-v1] ragu=True → bentuk belum yakin, WAJIB dicek pengajar Tuli
+    # (ikut ke kamus.json / isyarat-gerak.json sebagai "ragu": true, tak tampil ke siswa).
+    if kode in KAMUS: raise ValueError(f"kode BISINDO dobel: {kode}")
+    KAMUS[kode] = dict(kode=kode, arti=arti, kat=kat, R=R, L=L, kepala=kepala or [], wajah=wajah, cara=cara, gloss=gloss or kode.replace("_", "-"), ragu=ragu)
 
 _G = I.GENGGAM
 I.BENTUK.update({
@@ -162,3 +165,13 @@ for n in range(6, 11):
            [k(0, p=ANGKA_L, a="telapak", b="5", j="atas", tp="depan+0.1*dalam")],
            f"Tangan kiri terbuka (5) + tangan kanan {n - 5} — dua tangan dijumlah." if n < 10
            else "Kedua tangan terbuka (5 + 5).")
+
+# ── [isyarat-bisindo-a1a2-v1] Kosakata per sublevel A1.1–A2.4 ─────────────────
+# Tiap berkas kamus_bisindo_<sub>.py memakai S()/k()/… dari modul ini; pembagian kode
+# di ../ALOKASI_BISINDO.md supaya tidak bentrok. Berkas yang belum ada dilewati.
+import importlib as _il, os as _os, sys as _sys
+_sys.modules.setdefault("kamus_bisindo", _sys.modules[__name__])
+for _m in ("kamus_bisindo_a1_1", "kamus_bisindo_a1_2", "kamus_bisindo_a1_3", "kamus_bisindo_a2_1",
+           "kamus_bisindo_a2_2", "kamus_bisindo_a2_3", "kamus_bisindo_a2_4"):
+    if _os.path.exists(_os.path.join(_os.path.dirname(__file__), _m + ".py")):
+        _il.import_module(_m)
