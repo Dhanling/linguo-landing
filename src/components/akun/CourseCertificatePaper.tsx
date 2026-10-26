@@ -17,6 +17,15 @@ type Props = {
   labels: { recipient: string; scan: string; issued: string; teacher: string; number: string };
 };
 
+// [sertifikat-nama-font-v2] Nama siswa Indonesia sering panjang ("Restu Cahyo Umar Pratama"
+// dulu 59px → pecah 2 baris). Ukuran dihitung dari panjang nama supaya ≤ 40 karakter tetap
+// 1 baris di kotak ±720px (Georgia bold ≈ 0,58 em/karakter di kertas, dibulatkan 0,6), maks 46px; lebih panjang → 2 baris.
+function nameFontSize(name: string): number {
+  const n = Math.max(1, name.trim().length);
+  if (n <= 40) return Math.round(Math.min(46, 720 / (n * 0.6)));
+  return Math.round(Math.max(18, Math.min(30, 1440 / (n * 0.6))));
+}
+
 // Kertas berukuran tetap; hanya pratinjau yang diperkecil mengikuti lebar layar.
 export default forwardRef<HTMLDivElement, Props>(function CourseCertificatePaper(p, ref) {
   const outer = useRef<HTMLDivElement>(null);
@@ -45,7 +54,7 @@ export default forwardRef<HTMLDivElement, Props>(function CourseCertificatePaper
         <div style={{ margin: '14px auto 25px', display: 'flex', alignItems: 'center', justifyContent: 'center', gap: 18, color: '#f18d57' }}><span style={{ width: 155, height: 1, background: '#f18d57' }} />◆<span style={{ width: 155, height: 1, background: '#f18d57' }} /></div>
         <p style={{ margin: '0 0 9px', fontSize: 12, letterSpacing: 2, textTransform: 'uppercase', color: '#50777a' }}>{p.labels.recipient}</p>
         <div style={{ height: 90, display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-          <p style={{ margin: 0, fontFamily: 'Georgia, serif', fontSize: p.name.length > 100 ? 20 : p.name.length > 70 ? 25 : p.name.length > 55 ? 30 : p.name.length > 32 ? 40 : 59, lineHeight: 1.1, fontWeight: 700, overflowWrap: 'anywhere' }}>{p.name}</p>
+          <p style={{ margin: 0, fontFamily: 'Georgia, serif', fontSize: nameFontSize(p.name), lineHeight: 1.1, fontWeight: 700, overflowWrap: 'anywhere' }}>{p.name}</p>
         </div>
         <div style={{ width: 48, height: 4, background: '#f18d57', borderRadius: 4, margin: '13px auto 22px' }} />
         <div style={{ fontSize: 17, lineHeight: 1.65 }}>{p.body}</div>
