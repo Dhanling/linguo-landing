@@ -4160,7 +4160,7 @@ export default function AkunPage() {
     }
     const now = Date.now();
     // [sertifikat-16-sesi-v1] Sertifikat 1 level = 16 sesi. Private yang dibayar per sesi /
-    // paket kecil (< 8 sesi) bukan akhir level: registrasi bahasa + level yang sama digabung
+    // paket < 16 sesi (standar Linguo 16 sesi per sublevel) bukan akhir level: registrasi bahasa + level yang sama digabung
     // jadi satu kartu "x/16 sesi" dan baru terbit di sesi ke-16 (Restu: 4× paket 1 sesi
     // English A1.1 dulu langsung dapat sertifikat). Id/pengajar ikut registrasi terbaru.
     const SESI_LEVEL = 16;
@@ -4168,7 +4168,7 @@ export default function AkunPage() {
     const gabungan = new Map<string, any>();
     for (const r of activeRegs as any[]) {
       const tot = Number(r.sessions_total) || 0;
-      if (r.product_type !== "Private" || tot <= 0 || tot >= 8) { regsSertif.push(r); continue; }
+      if (r.product_type !== "Private" || tot <= 0 || tot >= SESI_LEVEL) { regsSertif.push(r); continue; }
       const k = `${String(r.language || "").toLowerCase()}|${String(r.level || "")}`;
       const used = Math.min(Number(r.sessions_used) || 0, tot);
       const g = gabungan.get(k);

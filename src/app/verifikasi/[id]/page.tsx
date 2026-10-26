@@ -41,9 +41,9 @@ async function ambil(id: string): Promise<Data | null> {
   const reg = r as any;
   let total = Number(reg.sessions_total) || 0;
   let used = Number(reg.sessions_used) || 0;
-  // [sertifikat-16-sesi-v1] Private paket kecil (< 8 sesi, bayar per sesi) dijumlah per
+  // [sertifikat-16-sesi-v1] Private paket < 16 sesi (bayar per sesi / paket 4–12 sesi) dijumlah per
   // bahasa + level dan baru terbit di sesi ke-16 — sama dengan memo `certs` di /akun.
-  if (reg.product_type === "Private" && total > 0 && total < 8 && reg.student_id) {
+  if (reg.product_type === "Private" && total > 0 && total < 16 && reg.student_id) {
     const { data: lain } = await supabase
       .from("registrations")
       .select("sessions_used, sessions_total, level, pipeline_status, status")
@@ -52,7 +52,7 @@ async function ambil(id: string): Promise<Data | null> {
       .ilike("language", String(reg.language || ""))
       .in("payment_status", ["Lunas", "Cicilan"])
       .is("archived_at", null)
-      .lt("sessions_total", 8);
+      .lt("sessions_total", 16);
     used = ((lain as any[]) || [])
       .filter((x) => String(x.level || "") === String(reg.level || "") && x.pipeline_status !== "Batal" && x.status !== "Transferred")
       .reduce((n, x) => n + Math.min(Number(x.sessions_used) || 0, Number(x.sessions_total) || 0), 0);
