@@ -43,19 +43,23 @@ async function ambil(id: string): Promise<Data | null> {
   let used = Number(reg.sessions_used) || 0;
   // [sertifikat-16-sesi-v1] Private paket < 16 sesi (bayar per sesi / paket 4–12 sesi) dijumlah per
   // bahasa + level dan baru terbit di sesi ke-16 — sama dengan memo `certs` di /akun.
-  if (reg.product_type === "Private" && total > 0 && total < 16 && reg.student_id) {
+  // [sertifikat-reguler-16-v1] Reguler (batch 8 sesi, `sessions_total` sering NULL) ikut sejak 27 Okt 2026.
+  const ikutGabung = (x: any) => {
+    const t = Number(x.sessions_total) || 0;
+    return x.product_type === "Reguler" ? t < 16 : x.product_type === "Private" && t > 0 && t < 16;
+  };
+  if (ikutGabung(reg) && reg.student_id) {
     const { data: lain } = await supabase
       .from("registrations")
-      .select("sessions_used, sessions_total, level, pipeline_status, status")
+      .select("sessions_used, sessions_total, product_type, level, pipeline_status, status")
       .eq("student_id", reg.student_id)
-      .eq("product_type", "Private")
+      .in("product_type", ["Private", "Reguler"])
       .ilike("language", String(reg.language || ""))
       .in("payment_status", ["Lunas", "Cicilan"])
-      .is("archived_at", null)
-      .lt("sessions_total", 16);
+      .is("archived_at", null);
     used = ((lain as any[]) || [])
-      .filter((x) => String(x.level || "") === String(reg.level || "") && x.pipeline_status !== "Batal" && x.status !== "Transferred")
-      .reduce((n, x) => n + Math.min(Number(x.sessions_used) || 0, Number(x.sessions_total) || 0), 0);
+      .filter((x) => ikutGabung(x) && String(x.level || "") === String(reg.level || "") && x.pipeline_status !== "Batal" && x.status !== "Transferred")
+      .reduce((n, x) => n + (Number(x.sessions_total) > 0 ? Math.min(Number(x.sessions_used) || 0, Number(x.sessions_total)) : Number(x.sessions_used) || 0), 0);
     total = 16;
   }
   const base = String(reg.level || "A1").split(".")[0].toUpperCase();

@@ -3938,7 +3938,7 @@ export default function AkunPage() {
       const { data: regsData } = await supabase
         .from("registrations")
         .select(`
-          id, product, language, level, status,
+          id, product, product_type, language, level, status,
           sessions_total, sessions_used,
           duration, total_amount, payment_status,
           installment_paid, payment_due_date, payment_date, created_at,
@@ -3986,11 +3986,20 @@ export default function AkunPage() {
       ]);
       (regBatchRes.data || []).forEach((b: any) => { batchMap[b.id] = b; });
       (tpBatchRes.data || []).forEach((b: any) => { tpBatchMap[b.id] = b; });
-      const enrichedRegs = regsWithBatch.map((r: any) => ({
-        ...r,
-        batch: r.batch_id ? batchMap[r.batch_id] || null : null,
-        testPrepBatch: r.test_prep_batch_id ? tpBatchMap[r.test_prep_batch_id] || null : null,
-      }));
+      const enrichedRegs = regsWithBatch.map((r: any) => {
+        const batch = r.batch_id ? batchMap[r.batch_id] || null : null;
+        const testPrepBatch = r.test_prep_batch_id ? tpBatchMap[r.test_prep_batch_id] || null : null;
+        // [sertifikat-reguler-16-v1] Banyak registrasi Reguler/Test Prep `sessions_total`-nya
+        // NULL (101 dari 156 Reguler per 27 Okt 2026) — jatah sesinya ada di batch. Dulu kartu
+        // tampil "Sesi 8/0", progres 0% (Arrijal, batch ENG-A11-AUG26).
+        const jatahBatch = Number(batch?.total_sessions) || Number(testPrepBatch?.sessions_total) || 0;
+        return {
+          ...r,
+          sessions_total: Number(r.sessions_total) > 0 ? r.sessions_total : jatahBatch || r.sessions_total,
+          batch,
+          testPrepBatch,
+        };
+      });
 
       // Student is now active — clear wizard cache
       try { localStorage.removeItem(`linguo_wizard_${user?.id || email}`); } catch {}
@@ -4166,11 +4175,15 @@ export default function AkunPage() {
     const SESI_LEVEL = 16;
     const regsSertif: any[] = [];
     const gabungan = new Map<string, any>();
+    // [sertifikat-reguler-16-v1] Reguler (batch 8 sesi) ikut aturan yang sama sejak 27 Okt 2026
+    // (arahan owner "kaya yang lain"): 1 batch A1.1 = 8/16, sertifikat terbit sesudah 16 sesi level
+    // itu — boleh gabungan Reguler + Private.
     for (const r of activeRegs as any[]) {
       const tot = Number(r.sessions_total) || 0;
-      if (r.product_type !== "Private" || tot <= 0 || tot >= SESI_LEVEL) { regsSertif.push(r); continue; }
+      const gabung = r.product_type === "Reguler" ? tot < SESI_LEVEL : r.product_type === "Private" && tot > 0 && tot < SESI_LEVEL;
+      if (!gabung) { regsSertif.push(r); continue; }
       const k = `${String(r.language || "").toLowerCase()}|${String(r.level || "")}`;
-      const used = Math.min(Number(r.sessions_used) || 0, tot);
+      const used = tot > 0 ? Math.min(Number(r.sessions_used) || 0, tot) : Number(r.sessions_used) || 0;
       const g = gabungan.get(k);
       if (!g) {
         const baru = { ...r, sessions_used: used, sessions_total: SESI_LEVEL, __regIds: [String(r.id)], __terbaru: r.created_at };
