@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import Link from "next/link";
-import { ArrowLeft, ArrowRight, BookOpen, ChevronDown, ChevronRight, ChartNoAxesColumnIncreasing, Clock3, Users, Target, Plus, Minus } from "lucide-react";
+import { ArrowLeft, ArrowRight, BookOpen, ChevronRight, ChartNoAxesColumnIncreasing, Clock3, Users, Target } from "lucide-react";
 import type { LanguageCurriculum, SessionPreview } from "@/data/curriculum";
 import { LangSlugFlag } from "@/components/RectFlag";
 
@@ -34,14 +34,15 @@ function SessionCard({ session, index, chapterCode }: { session: SessionPreview;
   const [expanded, setExpanded] = useState(false);
   const topics = session.topics ?? [];
   const id = `english-session-${session.number}-${index}`;
-  return <li className="overflow-hidden rounded-[22px] border border-white bg-white shadow-[0_4px_20px_#164e6310]">
-    <button type="button" onClick={() => setExpanded(!expanded)} aria-expanded={expanded} aria-controls={id} className="group flex w-full items-center gap-3 p-3 text-left focus-visible:outline-2 focus-visible:outline-[#1A9E9E] sm:gap-4">
+  return <li className="group relative hover:z-10 focus-within:z-10">
+    <div className="overflow-hidden rounded-[22px] border border-white bg-white shadow-[0_4px_20px_#164e6310] transition-transform duration-300 ease-out motion-safe:group-hover:scale-[1.025] motion-safe:group-focus-within:scale-[1.025]">
+    <button type="button" onClick={() => setExpanded(!expanded)} aria-expanded={expanded} aria-controls={id} className="flex w-full items-center gap-3 p-3 text-left focus-visible:outline-2 focus-visible:outline-[#1A9E9E] sm:gap-4">
       <span className="self-start rounded-full bg-[#E6F7F4] px-3 py-3 text-sm font-bold text-[#1A9E9E]">{String(index + 1).padStart(2, "0")}</span>
       <span className="min-w-0 flex-1 py-2"><span className="block text-sm font-bold leading-snug text-slate-900 sm:text-base">{session.title}</span><span className="mt-2 block text-xs leading-relaxed text-slate-500">{topics.length ? topics.slice(0, 2).join(" · ") : "Latihan dan praktik bahasa Inggris bersama pengajar."}</span><span className="mt-3 flex flex-wrap gap-1">{topics.slice(0, 2).map(topic => <span key={topic} className="rounded-full bg-[#F0F6F8] px-2 py-1 text-[10px] text-slate-500">{topic}</span>)}</span></span>
-      <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-[#1A9E9E] text-white group-hover:bg-[#147a7a]">{expanded ? <Minus size={15}/> : <Plus size={15}/>}</span>
       <span className="hidden w-[31%] shrink-0 overflow-hidden rounded-2xl min-[400px]:block"><SessionArt title={session.title} index={index} chapterCode={chapterCode}/></span>
     </button>
     <div id={id} hidden={!expanded} className="border-t border-slate-100 px-5 py-4 text-sm leading-relaxed text-slate-600">{topics.length ? <ul className="list-disc space-y-1 pl-5">{topics.map(topic => <li key={topic}>{topic}</li>)}</ul> : "Materi, latihan, dan praktik sesi ini dibahas langsung bersama pengajar di kelas."}</div>
+    </div>
   </li>;
 }
 
@@ -68,7 +69,7 @@ export default function EnglishCurriculum({ curriculum }: { curriculum: Language
         <p className="mt-2 text-sm leading-6 text-slate-500">{level.description}</p>
         <div className="my-5 flex flex-wrap gap-2" aria-label="Pilih chapter">{level.sublevels.map((c, i) => <button key={c.code} type="button" aria-pressed={chapterIndex === i} onClick={() => setChapterIndex(i)} className={`rounded-full border px-6 py-2.5 text-sm font-semibold transition-colors ${chapterIndex === i ? "border-[#1A9E9E] bg-[#1A9E9E] text-white" : "border-slate-200 text-slate-500 hover:border-[#1A9E9E]"}`}>{c.code}</button>)}</div>
         <div className="rounded-[22px] border border-slate-100 bg-[#F3F8F9] p-3 md:p-4">
-          <div className="flex flex-wrap items-center justify-between gap-4 px-2 pb-5 pt-2"><div><p className="text-xs font-bold uppercase tracking-wider text-[#1A9E9E]">Chapter {chapterIndex + 1}</p><h3 className="mt-1 text-2xl font-bold">{chapter.name}</h3><p className="mt-2 text-xs text-slate-500">{chapter.sessions.length} sesi · {chapter.code} · Pilih kartu untuk lihat topik sesi</p></div><span className="inline-flex items-center gap-2 rounded-full border border-slate-200 bg-white px-4 py-2 text-xs text-slate-500"><BookOpen size={15}/>Silabus per sesi<ChevronDown size={14}/></span></div>
+          <div className="flex flex-wrap items-center justify-between gap-4 px-2 pb-5 pt-2"><div><p className="text-xs font-bold uppercase tracking-wider text-[#1A9E9E]">Chapter {chapterIndex + 1}</p><h3 className="mt-1 text-2xl font-bold">{chapter.name}</h3><p className="mt-2 text-xs text-slate-500">{chapter.sessions.length} sesi · {chapter.code} · Pilih kartu untuk lihat topik sesi</p></div></div>
           <ol key={chapter.code} className="grid grid-cols-1 items-start gap-3 lg:grid-cols-2">{chapter.sessions.map((session, i) => <SessionCard key={session.number} session={session} index={i} chapterCode={chapter.code}/>)}</ol>
         </div>
         <div className="mt-6 flex justify-end"><Link href="/daftar/inggris" className="inline-flex items-center gap-2 rounded-full bg-[#1A9E9E] px-6 py-3 text-sm font-semibold text-white hover:bg-[#147a7a]">Belajar bareng pengajar<ChevronRight size={17}/></Link></div>
