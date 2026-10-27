@@ -21,7 +21,7 @@
 import { toLangCode } from "@/lib/quiz/language";
 import { KODE_CHIRP } from "@/lib/quizTts";
 import {
-  BATAS_TEKS_TTS, BUCKET_TTS, bersihkanTeksTts, jalurCacheTts, namaVoice,
+  BATAS_TEKS_TTS, BUCKET_TTS, bersihkanTeksTts, jalurCacheTts, namaVoice, namaVoicePersona,
 } from "@/lib/ttsVoice";
 
 /** Bahasa ini punya suara di /api/tts (Chirp 3 HD atau Azure Neural)? Beda
@@ -1805,9 +1805,9 @@ function keBase64(buf: ArrayBuffer): string {
   return btoa(s);
 }
 
-async function dariCdn(kode: string, teks: string): Promise<string | null> {
+async function dariCdn(kode: string, teks: string, voiceNama?: string | null): Promise<string | null> {
   if (cdnMati || !ASAL_SUPABASE) return null;
-  const voice = namaVoice(kode);
+  const voice = voiceNama ?? namaVoice(kode);
   if (!voice || typeof crypto === "undefined" || !crypto.subtle) return null;
   // Kunci dihitung dari teks yang SUDAH dibersihkan seperti di server —
   // bedanya seujung kuku saja sudah cukup membuat semuanya jatuh ke jalur lambat.
@@ -1841,34 +1841,38 @@ const sedang = new Map<string, Promise<string | null>>();
  * @param bolehSintesis false = berhenti sebelum /api/tts. Dipakai prasiapan:
  *   ketukan yang ternyata cuma geseran halaman tak boleh menagih Chirp.
  */
-function ambilAudio(kode: string, teks: string, bolehSintesis: boolean): Promise<string | null> {
-  const kunci = `${kode}|${teks}`;
+function ambilAudio(kode: string, teks: string, bolehSintesis: boolean, persona?: string): Promise<string | null> {
+  // [dialog-suara-penutur-v1] Persona pembicara dialog → nama voice sendiri (cache
+  // sendiri); null = bahasa tanpa Chirp / persona bawaan → jalur lama apa adanya.
+  const voicePersona = persona ? namaVoicePersona(kode, persona) : null;
+  const kodeKunci = voicePersona ? `${kode}@${voicePersona}` : kode;
+  const kunci = `${kodeKunci}|${teks}`;
   const ada = memori.get(kunci);
   if (ada) return Promise.resolve(ada);
   const jalan = sedang.get(kunci);
   if (jalan) return jalan;
 
   const kerja = (async () => {
-    const tersimpan = await dariCacheTetap(kode, teks);
+    const tersimpan = await dariCacheTetap(kodeKunci, teks);
     if (tersimpan) { memori.set(kunci, tersimpan); return tersimpan; }
 
-    const cdn = await dariCdn(kode, teks);
+    const cdn = await dariCdn(kode, teks, voicePersona);
     if (cdn) {
       memori.set(kunci, cdn);
-      void keCacheTetap(kode, teks, cdn);
+      void keCacheTetap(kodeKunci, teks, cdn);
       return cdn;
     }
     if (!bolehSintesis) return null;
 
     // GET, bukan POST: balasannya boleh disimpan CDN Vercel + cache browser
     // (lihat header abadi di /api/tts) — POST tak pernah disimpan keduanya.
-    const alamatApi = `/api/tts?text=${encodeURIComponent(teks)}&lang=${encodeURIComponent(kode)}`;
+    const alamatApi = `/api/tts?text=${encodeURIComponent(teks)}&lang=${encodeURIComponent(kode)}${voicePersona ? `&voice=${encodeURIComponent(persona!)}` : ""}`;
     const res = await fetch(alamatApi);
     if (!res.ok) return null;
     const { audioContent } = await res.json();
     if (!audioContent) return null;
     memori.set(kunci, audioContent);
-    void keCacheTetap(kode, teks, audioContent);
+    void keCacheTetap(kodeKunci, teks, audioContent);
     return audioContent as string;
   })().catch(() => null).finally(() => { sedang.delete(kunci); });
 
@@ -1957,9 +1961,11 @@ export type HasilUcap = "ok" | "gagal" | "dilewati";
 
 /**
  * Bunyikan potongan teks bahasa target.
+ * @param persona [dialog-suara-penutur-v1] id PERSONA_SUARA pembicara dialog
+ *   ("pria", "wanita-tua", …); tanpa itu = suara bawaan.
  * @returns "dilewati" kalau memang tak layak dibunyikan (bukan galat).
  */
-export async function ucapkanEbook(teksMentah: string, kode: string, laju = 1): Promise<HasilUcap> {
+export async function ucapkanEbook(teksMentah: string, kode: string, laju = 1, persona?: string): Promise<HasilUcap> {
   const teks = rapikan(teksMentah);
   if (!teks || !bisaDibunyikan(kode)) return "dilewati";
 
@@ -1972,10 +1978,11 @@ export async function ucapkanEbook(teksMentah: string, kode: string, laju = 1): 
     return "gagal" as const;
   };
 
-  const ada = memori.get(`${kode}|${teks}`);
+  const ada = persona ? null : memori.get(`${kode}|${teks}`);
   if (ada) return putar(ada);
 
-  const b64 = await ambilAudio(kode, teks, true);
+  // Persona gagal (locale tanpa speaker itu) → suara bawaan, jangan diam.
+  const b64 = (await ambilAudio(kode, teks, true, persona)) ?? (persona ? await ambilAudio(kode, teks, true) : null);
   if (!b64) { ucapkanBrowser(teks, kode, laju); return "gagal"; }
   return putar(b64);
 }

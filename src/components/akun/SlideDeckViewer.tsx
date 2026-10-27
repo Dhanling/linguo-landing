@@ -26,6 +26,7 @@ import { RectFlag } from "@/components/RectFlag";
 import {
   bisaDibunyikan, bukaKunciAudio, hentikanEbookTts, siapkanEbook, ucapkanEbook,
 } from "@/lib/ebookTts";
+import { personaDialog } from "@/lib/suaraPenutur";
 // [slide-arti-v1] Arti kata yang SAMA dengan kartu ketuk-kata reader e-book
 // (cache memori → localStorage → cache bersama di server).
 import { artiKataEbook, artiTersimpan, type HasilArti } from "@/lib/ebookKata";
@@ -84,7 +85,8 @@ function pecahKata(teks: string, lang: string): string[] {
 
 type Tip = { kata: string; x: number; y: number; bawah: boolean; arti: HasilArti | undefined };
 
-function Ucap({ teks, lang, kalimat = true }: { teks: string; lang?: string | null; kalimat?: boolean }) {
+// [dialog-suara-penutur-v1] `suara` = persona TTS pembicara dialog (lihat suaraPenutur.ts).
+function Ucap({ teks, lang, kalimat = true, suara }: { teks: string; lang?: string | null; kalimat?: boolean; suara?: string }) {
   const [aktif, setAktif] = useState<number | null>(null);
   const [tip, setTip] = useState<Tip | null>(null);
   const adaTip = !!tip;
@@ -120,7 +122,7 @@ function Ucap({ teks, lang, kalimat = true }: { teks: string; lang?: string | nu
     bukaKunciAudio();
     setAktif(idx);
     if (idx >= 0) bukaTip(apa, e.currentTarget as HTMLElement);
-    void ucapkanEbook(apa, lang).finally(() => setTimeout(() => setAktif((a) => (a === idx ? null : a)), 700));
+    void ucapkanEbook(apa, lang, 1, suara).finally(() => setTimeout(() => setAktif((a) => (a === idx ? null : a)), 700));
   };
   // Pemisah tampilan ("·", "/", "→") dibaca sebagai jeda, bukan dieja.
   const utuh = teks.replace(/\s*[·/→]\s*/g, ", ").replace(/[()]/g, " ").trim();
@@ -136,7 +138,7 @@ function Ucap({ teks, lang, kalimat = true }: { teks: string; lang?: string | nu
         return (
           // [vc-slide-ketuk-tts-v1] data-ucap = teks yang dibunyikan; dibaca saat
           // slide dipotret untuk Kelas Video supaya kotak katanya ikut terbawa.
-          <span key={i} role="button" tabIndex={-1} data-ucap={kata} data-ucap-konteks={utuh}
+          <span key={i} role="button" tabIndex={-1} data-ucap={kata} data-ucap-konteks={utuh} data-ucap-suara={suara}
             onMouseEnter={() => siapkanEbook(kata, lang)}
             onClick={bunyikan(kata, i)}
             className="cursor-pointer rounded-[0.25em] transition-colors hover:bg-teal-100/80"
@@ -146,7 +148,7 @@ function Ucap({ teks, lang, kalimat = true }: { teks: string; lang?: string | nu
         );
       })}
       {kalimat && (/\s/.test(utuh) || banyakKata) && (
-        <button type="button" onClick={bunyikan(utuh, -1)} title="Dengarkan kalimat" data-ucap={utuh}
+        <button type="button" onClick={bunyikan(utuh, -1)} title="Dengarkan kalimat" data-ucap={utuh} data-ucap-suara={suara}
           className="ml-[0.4em] inline-flex translate-y-[0.12em] rounded-full p-[0.15em] opacity-50 transition hover:bg-teal-100 hover:opacity-100"
           style={{ color: aktif === -1 ? "#0E7C7B" : TEAL }}>
           <Volume2 className="h-[0.95em] w-[0.95em]" />
@@ -306,6 +308,7 @@ export function SlideBody({ s, kunci, lang }: { s: MateriSlide; kunci?: boolean;
     return <DutchNumberSlide key={s.heading} slide={s} renderSpeech={text => <Ucap teks={text} lang={lang} />} />;
   }
   const tema = TEMA[s.type] || TEMA.points;
+  const suaraPenutur = s.type === "dialog" ? personaDialog((s.lines || []).map((l) => l.speaker)) : null;
 
   if (s.type === "title") {
     /* [slide-sampul-v1] Dengan gambar sampul, judul naik ke separuh atas (langit
@@ -434,7 +437,7 @@ export function SlideBody({ s, kunci, lang }: { s: MateriSlide; kunci?: boolean;
                     {/* [dialog-3-baris-v1] Tiga baris: pembicara, kalimat bahasa target, arti. */}
                     {l.speaker && <div className="text-[0.76em] font-extrabold leading-tight" style={{ color: kiri ? TEAL : tema.aksen }}>{l.speaker}</div>}
                     <div className="font-semibold text-gray-900">
-                      <Ucap teks={l.text} lang={lang} />
+                      <Ucap teks={l.text} lang={lang} suara={suaraPenutur?.get(l.speaker?.trim() ?? "")} />
                     </div>
                     {l.translit && <div className="text-[0.88em] text-gray-400">{l.translit}</div>}
                     {l.meaning && <div className="text-[0.88em] text-gray-500">{l.meaning}</div>}
