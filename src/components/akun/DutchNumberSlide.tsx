@@ -1,7 +1,9 @@
 'use client';
 
-import { useId, useState, type ReactNode } from 'react';
+import { useEffect, useId, useState, type ReactNode } from 'react';
 import type { MateriSlide } from '@/lib/materiSlides';
+import { bukaKunciAudio, hentikanEbookTts, ucapkanEbook } from '@/lib/ebookTts';
+import { Volume2 } from 'lucide-react';
 import styles from './DutchNumberSlide.module.css';
 
 const ANGKA = [
@@ -35,21 +37,30 @@ export default function DutchNumberSlide({ slide, renderSpeech }: {
 }) {
   const [tab, setTab] = useState(/(?:11|13)\s*(?:–|-|sampai|tot)/i.test(slide.heading) ? 1 : 0);
   const id = useId();
+  useEffect(() => () => hentikanEbookTts(), []);
+  const speak = (text: string) => {
+    bukaKunciAudio();
+    hentikanEbookTts();
+    void ucapkanEbook(text, 'nl');
+  };
+  const selectTab = (index: number) => {
+    setTab(index);
+    const range = ANGKA.slice(index === 0 ? 0 : 11, index === 0 ? 11 : 21);
+    speak(range.map(([term]) => term).join(', '));
+  };
   const start = tab === 0 ? 0 : 11;
   const numbers = ANGKA.slice(start, tab === 0 ? 11 : 21);
   return (
     <section className={styles.scene} aria-label="Belajar angka bahasa Belanda">
-      <div className={styles.cloud} aria-hidden="true" />
-      <div className={styles.decoration} aria-hidden="true"><span>🇳🇱</span><span>🌷</span></div>
       <div className={styles.panel}>
         <span className={styles.label}>Kosakata · Bahasa Belanda</span>
         <h3 className={styles.heading}><span>Getallen</span> — angka {tab === 0 ? '0 sampai 10' : '11 sampai 20'}</h3>
-        <p className={styles.subtitle}>Kenali angkanya, lalu ketuk kata untuk mendengar pelafalan.</p>
+        <p className={styles.subtitle}>Klik tab untuk dengar semua angka, atau klik angka untuk dengar satu kata.</p>
         <div className={styles.tabs} role="tablist" aria-label="Rentang angka">
           {['0–10', '11–20'].map((label, index) => (
             <button key={label} id={`${id}-tab-${index}`} role="tab" type="button"
               aria-selected={tab === index} aria-controls={`${id}-panel`} tabIndex={tab === index ? 0 : -1}
-              className={styles.tab} onClick={() => setTab(index)}
+              className={styles.tab} onClick={() => selectTab(index)}
               onKeyDown={event => {
                 if (['ArrowLeft', 'ArrowRight', 'Home', 'End'].includes(event.key)) {
                   event.preventDefault();
@@ -58,7 +69,7 @@ export default function DutchNumberSlide({ slide, renderSpeech }: {
                   setTab(next);
                   document.getElementById(`${id}-tab-${next}`)?.focus();
                 }
-              }}>{label}</button>
+              }}><Volume2 aria-hidden="true" />{label}</button>
           ))}
         </div>
         <div id={`${id}-panel`} role="tabpanel" aria-labelledby={`${id}-tab-${tab}`} className={styles.content} tabIndex={0}>
@@ -69,7 +80,7 @@ export default function DutchNumberSlide({ slide, renderSpeech }: {
               const example = saved?.example || CONTOH[number]?.[0];
               const translation = saved?.example_meaning || CONTOH[number]?.[1];
               return <li key={number} className={styles.card}>
-                <span className={styles.number} data-tone={index % 5}>{number}</span>
+                <button type="button" className={styles.number} data-tone={index % 5} aria-label={`Dengarkan ${number}: ${term}`} onClick={() => speak(term)}>{number}</button>
                 <div className={styles.word}>
                   <div><strong>{renderSpeech(term)}</strong><span className={styles.meaning}> — {meaning}</span></div>
                   {example && <div className={styles.example}>{renderSpeech(example)}{translation && <span> ({translation})</span>}</div>}

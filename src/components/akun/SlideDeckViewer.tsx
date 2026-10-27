@@ -519,7 +519,7 @@ export function SlideCard({ s, showAnswers, lang, className = "" }: {
 }) {
   const tema = TEMA[s.type] || TEMA.points;
   const judul = s.type === "title";
-  const sampul = s.cover || null;
+  const sampul = isDutchNumberSlide(s, lang) ? "/slide-cover/dutch-numbers/background-reference-v3.jpg" : s.cover || null;
   return (
     // `container-type: size` bikin clamp(...cqw) menskala ikut LEBAR KARTU, bukan
     // lebar layar — itu yang bikin teks slide ikut membesar saat fullscreen.
