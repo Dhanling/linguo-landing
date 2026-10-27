@@ -31,6 +31,8 @@ import {
 import { artiKataEbook, artiTersimpan, type HasilArti } from "@/lib/ebookKata";
 import { SlideVisual } from "@/components/akun/SlideVisual";
 
+import NumberSlide from "./NumberSlide";
+import { numberSlideTheme } from "@/lib/numberSlideTheme";
 import DutchNumberSlide, { isDutchNumberSlide } from "./DutchNumberSlide";
 
 const TEAL = "#1A9E9E";
@@ -305,6 +307,10 @@ export function SlideBody({ s, kunci, lang }: { s: MateriSlide; kunci?: boolean;
   if (isDutchNumberSlide(s, lang)) {
     return <DutchNumberSlide key={s.heading} slide={s} renderSpeech={text => <Ucap teks={text} lang={lang} />} />;
   }
+  const numberTheme = numberSlideTheme(s, lang);
+  if (numberTheme && !s.visual) {
+    return <NumberSlide key={`${numberTheme.slug}:${s.heading}`} slide={s} theme={numberTheme} lang={lang} renderSpeech={text => <Ucap teks={text} lang={lang || numberTheme.code} />} />;
+  }
   const tema = TEMA[s.type] || TEMA.points;
 
   if (s.type === "title") {
@@ -519,7 +525,7 @@ export function SlideCard({ s, showAnswers, lang, className = "" }: {
 }) {
   const tema = TEMA[s.type] || TEMA.points;
   const judul = s.type === "title";
-  const sampul = isDutchNumberSlide(s, lang) ? "/slide-cover/dutch-numbers/background-reference-v3.jpg" : s.cover || null;
+  const sampul = isDutchNumberSlide(s, lang) ? "/slide-cover/dutch-numbers/background-reference-v3.jpg" : numberSlideTheme(s, lang)?.image || s.cover || null;
   return (
     // `container-type: size` bikin clamp(...cqw) menskala ikut LEBAR KARTU, bukan
     // lebar layar — itu yang bikin teks slide ikut membesar saat fullscreen.
