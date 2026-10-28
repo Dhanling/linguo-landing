@@ -112,7 +112,7 @@ export function SpeakingTestOffer({ slug, langFull, langTitle, sublevel }: {
 type Prefill = { name?: string; email?: string; whatsapp?: string };
 
 /** Tombol "Bayar & booking" + form singkat → invoice Xendit. */
-function BookingButton({ slug, langFull, langTitle, price, source, sublevel, className }: {
+export function BookingButton({ slug, langFull, langTitle, price, source, sublevel, className }: {
   slug: string; langFull: string; langTitle: string; price: number;
   source: "intro" | "result"; sublevel?: string; className: string;
 }) {

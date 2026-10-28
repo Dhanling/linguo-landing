@@ -2,6 +2,7 @@
 
 import { useState, useEffect, useRef } from "react";
 import { useSearchParams } from "next/navigation";
+import SwedishIntro from "./SwedishIntro";
 import AuthModal from "@/components/AuthModal";
 import { supabase } from "@/lib/supabase-client";
 import Link from "next/link";
@@ -362,7 +363,10 @@ function IntroScreen({ meta, total, listening, needContact, onContact, onStart, 
 
   return (
     <motion.section initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}
-      className="min-h-screen flex items-center justify-center px-6 py-20">
+      className={meta.slug === "swedish" ? "min-h-screen w-full" : "min-h-screen flex items-center justify-center px-6 py-20"}>
+      {meta.slug === "swedish" ? (
+        <SwedishIntro total={total} listening={listening} onStart={() => setStep(needContact ? "biodata" : "tips")} />
+      ) : (
       <div className="max-w-2xl w-full">
         <Link href={"/silabus/" + meta.slug} className="text-sm text-gray-500 hover:text-gray-900 inline-flex items-center gap-1 mb-8 group">
           <ArrowLeft className="w-4 h-4 transition-transform group-hover:-translate-x-0.5" />
@@ -399,6 +403,7 @@ function IntroScreen({ meta, total, listening, needContact, onContact, onStart, 
         <DuaJalurPlacement slug={meta.slug} langFull={funnelLangName(meta.slug)}
           langTitle={displayLangTitle(meta)} durasi={listening ? "~5 menit" : "~2 menit"} />
       </div>
+      )}
 
       <AnimatePresence>
         {step && (
