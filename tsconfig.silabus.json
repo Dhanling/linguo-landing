@@ -1,0 +1,14 @@
+{
+  "extends": "./tsconfig.json",
+  "compilerOptions": {
+    "incremental": false
+  },
+  "include": [
+    "next-env.d.ts",
+    "src/app/silabus/[lang]/IllustratedCurriculum.tsx",
+    "src/app/silabus/[lang]/CurriculumViewer.tsx",
+    "src/lib/silabusScene.ts",
+    "src/app/silabus/[lang]/IllustratedCurriculum.test.tsx",
+    "scripts/siapkan-silabus-first-chapter.ts"
+  ]
+}
