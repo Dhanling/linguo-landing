@@ -1,8 +1,9 @@
 "use client";
 
 import Image from "next/image";
-import Link from "next/link";
-import { ArrowLeft, ArrowRight, Award, Check, Clock3, FileText, ListChecks, Mic, Sparkles } from "lucide-react";
+import { motion, useReducedMotion } from "framer-motion";
+import LanguageSwitcher from "../LanguageSwitcher";
+import { ArrowRight, Award, Check, Clock3, FileText, ListChecks, Mic, Sparkles } from "lucide-react";
 import { RectFlag, FLAG_CODE_BY_SLUG } from "@/components/RectFlag";
 import { BookingButton, speakingTestPrice } from "./SpeakingTest";
 import { formatRupiah } from "@/lib/trial-pricing";
@@ -19,6 +20,9 @@ type Props = {
 };
 
 export default function PlacementIntro({ slug, langFull, langTitle, total, listening, onStart, exam }: Props) {
+  const reduceMotion = useReducedMotion();
+  const entrance = reduceMotion ? false : { opacity: 0, scale: 0.94 };
+  const hover = reduceMotion ? undefined : { scale: 1.025 };
   const price = speakingTestPrice(slug, langFull);
   const minutes = exam ? 15 : listening ? 5 : 2;
   const duration = `~${minutes} mnt`;
@@ -28,7 +32,7 @@ export default function PlacementIntro({ slug, langFull, langTitle, total, liste
   return (
     <div className={styles.page}>
       <div className={styles.container}>
-        <Link href={`/silabus/${slug}`} className={styles.back}><ArrowLeft size={15} /> Kembali ke silabus</Link>
+        <LanguageSwitcher currentSlug={slug} destination="placement" />
         <section className={styles.hero} aria-labelledby="placement-title">
           <div className={styles.copy}>
             <div className={styles.flag}><RectFlag code={FLAG_CODE_BY_SLUG[slug]} h={47} /></div>
@@ -48,7 +52,7 @@ export default function PlacementIntro({ slug, langFull, langTitle, total, liste
         <section className={styles.paths} aria-labelledby="paths-title">
           <div className={styles.sectionHeading}><div><h2 id="paths-title">Pilih tes kamu</h2></div></div>
           <div className={styles.cards}>
-            <article className={`${styles.card} ${styles.free}`}>
+            <motion.article className={`${styles.card} ${styles.free}`} initial={entrance} whileInView={{ opacity: 1, scale: 1 }} viewport={{ once: true, amount: 0.15 }} whileHover={hover} transition={{ duration: 0.3, ease: "easeOut" }}>
               <div className={styles.cardTop}><span className={styles.cardIcon}><FileText size={29} /></span><span className={styles.badge}>Gratis</span></div>
               <h3>Self-assessment</h3><p>Tes mandiri cepat untuk cek levelmu.</p>
               <div className={styles.cardBody}>
@@ -56,8 +60,8 @@ export default function PlacementIntro({ slug, langFull, langTitle, total, liste
                 <Image src="/illustrations/placement/self-assessment-v2.webp" alt="" width={640} height={560} sizes="(max-width: 760px) 50vw, 260px" className={styles.cardArt} />
               </div>
               <button type="button" onClick={onStart} className={styles.primary}>Mulai Test Gratis <ArrowRight size={20} /></button>
-            </article>
-            <article className={`${styles.card} ${styles.speaking}`}>
+            </motion.article>
+            <motion.article className={`${styles.card} ${styles.speaking}`} initial={entrance} whileInView={{ opacity: 1, scale: 1 }} viewport={{ once: true, amount: 0.15 }} whileHover={hover} transition={{ duration: 0.3, ease: "easeOut" }}>
               <div className={styles.cardTop}><span className={styles.cardIcon}><Mic size={29} /></span><span className={styles.badge}>{formatRupiah(price)}</span></div>
               <h3>Speaking Test</h3><p>Tes live dengan pengajar untuk evaluasi lebih akurat.</p>
               <div className={styles.cardBody}>
@@ -66,7 +70,7 @@ export default function PlacementIntro({ slug, langFull, langTitle, total, liste
               </div>
               <BookingButton slug={slug} langFull={langFull} langTitle={langTitle} price={price} source="intro" label="Bayar & Booking" className={styles.secondary} />
               <a href={bookingUrl} target="_blank" rel="noopener noreferrer" className={styles.admin}>Tanya admin dulu</a>
-            </article>
+            </motion.article>
           </div>
           <p className={styles.footnote}><Award size={15} /> {exam ? `Self-assessment ini memberi estimasi, bukan skor resmi ${langTitle}.` : "Self-assessment memberi estimasi level untuk belajar, bukan sertifikasi resmi CEFR."}</p>
         </section>

@@ -4,6 +4,7 @@ import { createHash } from "node:crypto";
 import { renderToStaticMarkup } from "react-dom/server";
 import { getLanguageBySlug, displayLangTitle } from "@/data/curriculum/languages";
 import { CEFR_QUESTIONS } from "./cefrQuestions";
+import { PLACEMENT_LANGUAGE_SLUGS } from "@/data/placementLanguages";
 import PlacementIntro from "./PlacementIntro";
 
 const slugs = [...Object.keys(CEFR_QUESTIONS), "ielts", "toefl-itp"];
@@ -22,7 +23,8 @@ describe("Pembuka placement semua bahasa", () => {
     expect(html).toContain(encodeURIComponent(hero));
     expect(html).toContain(encodeURIComponent("/illustrations/placement/self-assessment-v2.webp"));
     expect(html).toContain(encodeURIComponent("/illustrations/placement/speaking-test-v2.webp"));
-    expect(html).toContain(`href="/silabus/${slug}"`);
+    expect(html).toContain("Ganti / pilih bahasa");
+    expect(html).not.toContain("Kembali ke silabus");
     expect(html).toContain(displayLangTitle(meta!));
     expect(html).not.toContain("HEJ, CALON PENUTUR SWEDIA!");
     expect(html).not.toContain("MULAI DARI SINI");
@@ -30,6 +32,10 @@ describe("Pembuka placement semua bahasa", () => {
     if (slug !== "swedish") expect(html).not.toContain("Bahasa Swedia");
     if (exam) expect(html).toContain("15 menit");
     else expect(html).toContain(`${questions.length}</strong>`);
+  });
+
+  it("pemilih hanya memuat bahasa dengan tes aktif", () => {
+    expect([...PLACEMENT_LANGUAGE_SLUGS].sort()).toEqual([...slugs].sort());
   });
 
   it("semua hero dan kedua ilustrasi kartu tersedia", () => {
