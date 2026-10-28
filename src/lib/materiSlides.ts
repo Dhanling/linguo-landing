@@ -441,7 +441,7 @@ export function normalizeSlide(raw: any): MateriSlide | null {
   // lama tak bisa menyelipkan gambar dari alamat lain.
   const noSesiAsl = Number(/^Sesi\s+(\d+)/i.exec(str(raw.heading))?.[1]) || 1;
   const cover = upgradeAslCover(upgradeImagegenA2Cover(str(raw.cover)), noSesiAsl, str(raw.sublevel) || 'A1.1');
-  if (/^\/slide-cover\/(?:(?:spanish-themes|spanish-v2|portuguese-br|mandarin-themes|dutch-(?:a[12]-[1-4]|b1-[1-4]|b2-[1-7]))\/)?[\w.-]+$/.test(cover)) {
+  if (/^\/slide-cover\/(?:(?:french-themes|spanish-themes|spanish-v2|portuguese-br|mandarin-themes|dutch-(?:a[12]-[1-4]|b1-[1-4]|b2-[1-7]))\/)?[\w.-]+$/.test(cover)) {
     // Decks saved before the illustrated artwork was ready contain the old
     // deterministic SVG path. Resolve that specific built-in asset to the
     // current session artwork, preserving uploaded/custom cover choices.

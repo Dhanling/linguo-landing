@@ -1,4 +1,6 @@
 'use client';
+import FrenchThematicSlide, { FrenchThematicTitle } from "./FrenchThematicSlide";
+import { frenchThematicTheme } from "@/data/frenchThematicThemes";
 import PersonalPronounSlide from "./PersonalPronounSlide";
 import { personalPronounTheme } from "@/lib/personalPronouns";
 import { lengkapiLatarA11 } from "../../data/lengkapiLatarSlide";
@@ -314,6 +316,9 @@ export function SlideBody({ s, kunci, lang }: { s: MateriSlide; kunci?: boolean;
   if (isMsaPronounSlide(s, lang)) {
     return <ArabicPronounSlide key={s.heading} slide={s} renderSpeech={text => <Ucap teks={text} lang="ar" />} />;
   }
+  const frenchTheme = frenchThematicTheme(s);
+  if (frenchTheme && s.type === 'title') return <FrenchThematicTitle theme={frenchTheme} />;
+  if (frenchTheme && s.type === 'vocab') return <FrenchThematicSlide key={s.heading} slide={s} theme={frenchTheme} renderSpeech={text => <Ucap teks={text} lang="fr" />} />;
   const pronounTheme = personalPronounTheme(s, lang);
   if (pronounTheme && !('visual' in s && s.visual)) {
     return <PersonalPronounSlide key={`${pronounTheme.slug}:${s.heading}`} slide={s} theme={pronounTheme} lang={lang} renderSpeech={text => <Ucap teks={text} lang={lang || pronounTheme.code} />} />;
@@ -353,7 +358,7 @@ export function SlideBody({ s, kunci, lang }: { s: MateriSlide; kunci?: boolean;
      putih di dalamnya (putih di atas putih kehilangan bentuk). */
   const panel = !!s.cover;
   const kiriSaja = s.ruang === "kiri";
-  const ruangTeks = kiriSaja ? (isImagegenA2GoalCover(s.cover) ? "pr-[55cqw]" : "pr-[45cqw]") : "pr-[4cqw]";
+  const ruangTeks = frenchTheme ? "pr-[24cqw]" : kiriSaja ? (isImagegenA2GoalCover(s.cover) ? "pr-[55cqw]" : "pr-[45cqw]") : "pr-[4cqw]";
   /* Slide yang isinya banyak dikecilkan sedikit supaya tetap muat tanpa gulir. */
   const n = s.items?.length || s.lines?.length || s.quiz?.length || s.examples?.length || s.points?.length || s.questions?.length || 0;
   /* [dialog-gulir-v1] Dialog tidak dikecilkan dan tidak dibagi dua kolom:
