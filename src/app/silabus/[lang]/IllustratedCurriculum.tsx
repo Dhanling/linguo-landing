@@ -2,13 +2,14 @@
 
 import { useState } from "react";
 import Link from "next/link";
-import { ArrowLeft, ArrowRight, BookOpen, ChevronRight, ChartNoAxesColumnIncreasing, Clock3, Users, Target } from "lucide-react";
+import { ArrowRight, BookOpen, ChevronRight, ChartNoAxesColumnIncreasing, Clock3, Users, Target } from "lucide-react";
 import type { LanguageCurriculum, SessionPreview } from "@/data/curriculum";
 import { displayLangTitle } from "@/data/curriculum/languages";
 import { daftarSlugFromLanguageSlug } from "@/lib/funnelRouting";
 import { SILABUS_SCENES, sceneForSession } from "@/lib/silabusScene";
 import PadananUjianBadge from "@/components/PadananUjianBadge";
 import { LangSlugFlag } from "@/components/RectFlag";
+import LanguageSwitcher from "./LanguageSwitcher";
 
 const labels = { A1: "Pemula", A2: "Pra-Menengah", B1: "Menengah", B2: "Menengah Atas" };
 
@@ -72,7 +73,7 @@ export default function IllustratedCurriculum({ curriculum }: { curriculum: Lang
   return <main className="min-h-screen bg-[#F1F9F9] px-3 pb-12 pt-4 text-slate-900 sm:px-4 md:px-8 md:pb-20 md:pt-28">
     <div className="mx-auto max-w-7xl space-y-6">
       <section className="relative overflow-hidden rounded-[28px] bg-white p-4 shadow-[0_12px_60px_#1a9e9e08] sm:p-6 md:p-10">
-        <Link href="/silabus" className="mb-4 inline-flex md:mb-7 items-center gap-2 text-sm text-slate-500 hover:text-[#1A9E9E]"><ArrowLeft size={16}/>Semua silabus</Link>
+        <LanguageSwitcher currentSlug={meta.slug} />
         <div className="grid items-center gap-5 md:gap-8 lg:grid-cols-[1.5fr_1fr]">
           <div><div className="mb-4 flex items-center gap-3 md:mb-5 md:gap-5"><LangSlugFlag slug={meta.slug} h={58} className="max-sm:!h-10 max-sm:!w-auto"/><div><p className="text-xs font-semibold uppercase tracking-widest text-slate-400">Silabus</p><h1 className="mt-1 text-2xl font-bold tracking-tight sm:text-3xl md:text-5xl">{title}</h1><p className="mt-1 text-lg italic text-slate-500">{meta.nativeName}</p></div></div>
             <p id={`${meta.slug}-overview`} className={`max-w-2xl text-sm leading-7 text-slate-500 md:text-base ${longOverview && !overviewExpanded ? "line-clamp-4" : ""}`}>{curriculum.overview}</p>
