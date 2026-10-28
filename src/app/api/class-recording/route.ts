@@ -104,106 +104,153 @@ export async function POST(req: NextRequest) {
     }
 
     // ── 2. Rekaman ini memang milik dia? ─────────────────────────────────────
-    // Room id kelas terjadwal deterministik: `sched-<schedule.id>`. Room instan
-    // (tanpa jadwal) tidak bisa dipetakan ke siswa mana pun → tolak.
-    const scheduleId = String(roomId).startsWith("sched-") ? String(roomId).slice(6) : null;
-    if (!scheduleId || !UUID_RE.test(scheduleId)) {
+    // Ruang sesi: `sched-<schedule.id>` → satu jadwal. [rekaman-tempel-sesi-v1]
+    // Ruang yang dipakai ULANG (`reg-<uuid>` ruang tetap kelas, `batch-…-<no>`
+    // pertemuan batch, ruang Kelas Instan 12 heksa) sah HANYA kalau ada jadwal
+    // milik siswa ini yang `recording_url`-nya menunjuk ke ruang itu (ditulis
+    // dashboard: pencocokan otomatis / tombol "Tempel ke sesi"). Berkasnya lalu
+    // disaring ke pertemuan jadwal itu saja (`&rec=<epoch>` atau jendela jam sesi)
+    // — satu ruang instan bisa berisi rekaman siswa lain.
+    const roomStr = String(roomId);
+    const scheduleId = roomStr.startsWith("sched-") ? roomStr.slice(6) : null;
+    const REUSED_ROOM_RE = /^(?:reg-[0-9a-f-]{36}|batch-(?:reguler|etp)-[0-9a-f-]{36}-\d{1,3}|[0-9a-f]{12})$/i;
+    const SCHED_COLS = "id, scheduled_at, duration_minutes, student_id, registration_id, corporate_lead_id, recording_url";
+    // [rekaman-tempel-sesi-v1] Kepemilikan + gerbang add-on per jadwal (null = lolos).
+    type SchedRow = { id: string; scheduled_at: string; duration_minutes?: number | null; student_id: string | null; registration_id: string | null; corporate_lead_id: string | null; recording_url?: string | null };
+    const cekSched = async (sched: SchedRow): Promise<NextResponse | null> => {
+      let owns = !!sched.student_id && ownedIds.has(sched.student_id);
+      // Jadwal lama kadang hanya punya registration_id — telusuri lewat registrasi.
+      if (!owns && sched.registration_id) {
+        const { data: reg } = await admin
+          .from("registrations")
+          .select("student_id")
+          .eq("id", sched.registration_id)
+          .maybeSingle();
+        owns = !!reg?.student_id && ownedIds.has(reg.student_id);
+      }
+      // [kelas-b2b-materi-v1] Sesi kelas korporat (registration_id NULL): milik setiap
+      // peserta kontrak itu — cocokkan email sesi ke corporate_participants (kolom email
+      // bisa berisi "a // b"), sama dengan RPC my_corporate_classes. Rekaman sudah
+      // termasuk kontrak perusahaan, jadi gerbang add-on di 2b dilewati.
+      let pesertaB2B = false;
+      if (!owns && emailSesi && sched.corporate_lead_id && !sched.registration_id) {
+        const { data: peserta } = await admin
+          .from("corporate_participants")
+          .select("email")
+          .eq("lead_id", sched.corporate_lead_id)
+          .ilike("email", `%${emailSesi.replace(/[%_\\]/g, "\\$&")}%`);
+        pesertaB2B = (peserta ?? []).some((p: { email: string | null }) =>
+          String(p.email || "").split("//").some((e) => e.trim().toLowerCase() === emailSesi),
+        );
+        owns = pesertaB2B;
+      }
+      if (!owns) {
+        if (!ownedIds.size) {
+          return NextResponse.json({ error: "Akun ini belum terhubung ke data siswa" }, { status: 403 });
+        }
+        return NextResponse.json({ error: "Rekaman ini bukan milik akun kamu" }, { status: 403 });
+      }
+
+      // ── 2b. Paketnya memang mencakup rekaman? ────────────────────────────────
+      // [addon-akses-rekaman-v1] Add-on "Recording" (Rp 100.000) diinput admin per
+      // registrasi dan tersimpan di TIGA tempat (tabel registration_addons,
+      // registrations.addons jsonb, registrations.addon_ebook_recording buat bundel
+      // e-book+rekaman dari penawaran WA) — helper aksesRekaman() membaca ketiganya.
+      // [rekaman-wajib-beli-v1] (19 Sep 2026, keputusan owner) HANYA "punya" yang
+      // lolos. Dulu "belum-didata" (nol catatan add-on) ikut diizinkan, sehingga
+      // setiap registrasi baru tanpa add-on menonton gratis. Jadwal tanpa
+      // registration_id tak bisa dibuktikan pembeliannya → ditolak juga (per 19 Sep
+      // 2026 semua 197 rekaman punya registration_id). Gagal membaca data add-on =
+      // 503, bukan lolos dan bukan vonis "tidak beli".
+      if (!pesertaB2B) {
+        if (!sched.registration_id) {
+          return NextResponse.json(
+            { error: "Rekaman sesi tidak termasuk paket kelas ini. Tambahan Recording bisa dibeli lewat admin Linguo." },
+            { status: 403 },
+          );
+        }
+        const [regRes, addonRes] = await Promise.all([
+          admin.from("registrations").select(`id, ${ADDON_REG_COLUMNS}`).eq("id", sched.registration_id).maybeSingle(),
+          admin
+            .from("registration_addons")
+            .select("addon_type, payment_status, quantity")
+            .eq("registration_id", sched.registration_id),
+        ]);
+        if (regRes.error || addonRes.error) {
+          return NextResponse.json(
+            { error: "Data paket kelas belum bisa dibaca — coba lagi sebentar." },
+            { status: 503 },
+          );
+        }
+        const akses = aksesRekaman(regRes.data || {}, (addonRes.data || []) as AddonRow[]);
+        // [rekaman-lanjutan-waris-v1] registrasi lanjutan (bayar lagi untuk kelas
+        // yang sama) ikut Recording yang dibeli di registrasi sebelumnya.
+        const waris = akses === "punya" ? null : await muatWarisanRekaman(admin, [sched.registration_id]);
+        if (akses !== "punya" && waris === null) {
+          return NextResponse.json(
+            { error: "Data paket kelas belum bisa dibaca — coba lagi sebentar." },
+            { status: 503 },
+          );
+        }
+        if (akses !== "punya" && !waris?.has(sched.registration_id)) {
+          return NextResponse.json(
+            {
+              error:
+                "Rekaman sesi tidak termasuk paket kelas ini. Tambahan Recording bisa dibeli lewat admin Linguo.",
+            },
+            { status: 403 },
+          );
+        }
+      }
+      return null;
+    };
+
+    let rows: SchedRow[] = [];
+    if (scheduleId && UUID_RE.test(scheduleId)) {
+      const { data } = await admin.from("schedules").select(SCHED_COLS).eq("id", scheduleId).maybeSingle();
+      if (!data) {
+        return NextResponse.json({ error: "Sesi kelas tidak ditemukan" }, { status: 404 });
+      }
+      const tolak = await cekSched(data as SchedRow);
+      if (tolak) return tolak;
+      rows = [data as SchedRow];
+    } else if (REUSED_ROOM_RE.test(roomStr)) {
+      const { data } = await admin
+        .from("schedules")
+        .select(SCHED_COLS)
+        .ilike("recording_url", `%room=${roomStr}%`)
+        .neq("status", "cancelled")
+        .limit(100);
+      // Batas ruang: `room=<id>` harus berakhir di sini (bukan awalan id lain).
+      const cands = ((data || []) as SchedRow[]).filter((r) =>
+        new RegExp(`[?&]room=${roomStr}(?:&|$)`).test(String(r.recording_url || "")));
+      let tolakPertama: NextResponse | null = null;
+      for (const r of cands) {
+        const tolak = await cekSched(r);
+        if (!tolak) rows.push(r);
+        else tolakPertama ??= tolak;
+      }
+      if (!rows.length) {
+        return tolakPertama ?? NextResponse.json({ error: "Rekaman ini belum ditempel ke sesi kelasmu" }, { status: 403 });
+      }
+    } else {
       return NextResponse.json({ error: "Rekaman ini tidak terhubung ke jadwal kelas" }, { status: 403 });
     }
-
-    const { data: sched } = await admin
-      .from("schedules")
-      .select("id, scheduled_at, student_id, registration_id, corporate_lead_id")
-      .eq("id", scheduleId)
-      .maybeSingle();
-    if (!sched) {
-      return NextResponse.json({ error: "Sesi kelas tidak ditemukan" }, { status: 404 });
-    }
-
-    let owns = !!sched.student_id && ownedIds.has(sched.student_id);
-    // Jadwal lama kadang hanya punya registration_id — telusuri lewat registrasi.
-    if (!owns && sched.registration_id) {
-      const { data: reg } = await admin
-        .from("registrations")
-        .select("student_id")
-        .eq("id", sched.registration_id)
-        .maybeSingle();
-      owns = !!reg?.student_id && ownedIds.has(reg.student_id);
-    }
-    // [kelas-b2b-materi-v1] Sesi kelas korporat (registration_id NULL): milik setiap
-    // peserta kontrak itu — cocokkan email sesi ke corporate_participants (kolom email
-    // bisa berisi "a // b"), sama dengan RPC my_corporate_classes. Rekaman sudah
-    // termasuk kontrak perusahaan, jadi gerbang add-on di 2b dilewati.
-    let pesertaB2B = false;
-    if (!owns && emailSesi && sched.corporate_lead_id && !sched.registration_id) {
-      const { data: peserta } = await admin
-        .from("corporate_participants")
-        .select("email")
-        .eq("lead_id", sched.corporate_lead_id)
-        .ilike("email", `%${emailSesi.replace(/[%_\\]/g, "\\$&")}%`);
-      pesertaB2B = (peserta ?? []).some((p: { email: string | null }) =>
-        String(p.email || "").split("//").some((e) => e.trim().toLowerCase() === emailSesi),
-      );
-      owns = pesertaB2B;
-    }
-    if (!owns) {
-      if (!ownedIds.size) {
-        return NextResponse.json({ error: "Akun ini belum terhubung ke data siswa" }, { status: 403 });
-      }
-      return NextResponse.json({ error: "Rekaman ini bukan milik akun kamu" }, { status: 403 });
-    }
-
-    // ── 2b. Paketnya memang mencakup rekaman? ────────────────────────────────
-    // [addon-akses-rekaman-v1] Add-on "Recording" (Rp 100.000) diinput admin per
-    // registrasi dan tersimpan di TIGA tempat (tabel registration_addons,
-    // registrations.addons jsonb, registrations.addon_ebook_recording buat bundel
-    // e-book+rekaman dari penawaran WA) — helper aksesRekaman() membaca ketiganya.
-    // [rekaman-wajib-beli-v1] (19 Sep 2026, keputusan owner) HANYA "punya" yang
-    // lolos. Dulu "belum-didata" (nol catatan add-on) ikut diizinkan, sehingga
-    // setiap registrasi baru tanpa add-on menonton gratis. Jadwal tanpa
-    // registration_id tak bisa dibuktikan pembeliannya → ditolak juga (per 19 Sep
-    // 2026 semua 197 rekaman punya registration_id). Gagal membaca data add-on =
-    // 503, bukan lolos dan bukan vonis "tidak beli".
-    if (!pesertaB2B) {
-      if (!sched.registration_id) {
-        return NextResponse.json(
-          { error: "Rekaman sesi tidak termasuk paket kelas ini. Tambahan Recording bisa dibeli lewat admin Linguo." },
-          { status: 403 },
-        );
-      }
-      const [regRes, addonRes] = await Promise.all([
-        admin.from("registrations").select(`id, ${ADDON_REG_COLUMNS}`).eq("id", sched.registration_id).maybeSingle(),
-        admin
-          .from("registration_addons")
-          .select("addon_type, payment_status, quantity")
-          .eq("registration_id", sched.registration_id),
-      ]);
-      if (regRes.error || addonRes.error) {
-        return NextResponse.json(
-          { error: "Data paket kelas belum bisa dibaca — coba lagi sebentar." },
-          { status: 503 },
-        );
-      }
-      const akses = aksesRekaman(regRes.data || {}, (addonRes.data || []) as AddonRow[]);
-      // [rekaman-lanjutan-waris-v1] registrasi lanjutan (bayar lagi untuk kelas
-      // yang sama) ikut Recording yang dibeli di registrasi sebelumnya.
-      const waris = akses === "punya" ? null : await muatWarisanRekaman(admin, [sched.registration_id]);
-      if (akses !== "punya" && waris === null) {
-        return NextResponse.json(
-          { error: "Data paket kelas belum bisa dibaca — coba lagi sebentar." },
-          { status: 503 },
-        );
-      }
-      if (akses !== "punya" && !waris?.has(sched.registration_id)) {
-        return NextResponse.json(
-          {
-            error:
-              "Rekaman sesi tidak termasuk paket kelas ini. Tambahan Recording bisa dibeli lewat admin Linguo.",
-          },
-          { status: 403 },
-        );
-      }
-    }
+    const sched = rows[0];
+    // Ruang dipakai ulang → berkas yang lolos hanya milik pertemuan jadwal di atas.
+    const reused = !scheduleId;
+    const lolosBerkas = (fileName: string) => {
+      if (!reused) return true;
+      const ms = Number(fileName.match(/^(\d{12,14})/)?.[1] ?? NaN);
+      if (!Number.isFinite(ms)) return false;
+      return rows.some((r) => {
+        const stamp = /[?&]rec=(\d{12,14})/.exec(String(r.recording_url || ""))?.[1];
+        if (stamp) return String(ms) === stamp;
+        const mulai = new Date(r.scheduled_at).getTime();
+        const dur = (Number(r.duration_minutes) || 60) * 60_000;
+        return ms >= mulai - 2 * 3_600_000 && ms <= mulai + dur + 6 * 3_600_000;
+      });
+    };
 
     // ── 3. Ambil filenya ─────────────────────────────────────────────────────
     const items: RecordingItem[] = [];
@@ -214,7 +261,7 @@ export async function POST(req: NextRequest) {
       sortBy: { column: "name", order: "desc" },
     });
     for (const f of privateFiles ?? []) {
-      if (!/\.(mp4|webm)$/i.test(f.name)) continue;
+      if (!/\.(mp4|webm)$/i.test(f.name) || !lolosBerkas(f.name)) continue;
       const key = `${folder}/${f.name}`;
       const { data: signed } = await admin.storage.from(BUCKET).createSignedUrl(key, SIGNED_TTL_SEC);
       if (!signed?.signedUrl) continue;
@@ -233,7 +280,7 @@ export async function POST(req: NextRequest) {
         sortBy: { column: "name", order: "desc" },
       });
       for (const f of legacyFiles ?? []) {
-        if (!/\.(mp4|webm)$/i.test(f.name)) continue;
+        if (!/\.(mp4|webm)$/i.test(f.name) || !lolosBerkas(f.name)) continue;
         const key = `${folder}/${f.name}`;
         items.push({
           key,

@@ -93,8 +93,11 @@ export function isJoinable(scheduledAt: string | Date): boolean {
 // Di sisi siswa, tautan itu kita alihkan ke pemutar sendiri di linguo.id yang
 // memverifikasi kepemilikan lalu membuat signed URL (bucket rekaman privat).
 
-/** roomId itu selalu turunan id jadwal / registrasi (`sched-…`, `reg-…`). */
-const ROOM_ID_RE = /^(?:sched|reg|room)-[A-Za-z0-9._:-]+$/i;
+/** roomId itu turunan id jadwal / registrasi (`sched-…`, `reg-…`), pertemuan batch
+ *  (`batch-reguler|etp-<uuid>-<no>`), atau ruang Kelas Instan (12 heksa).
+ *  [rekaman-tempel-sesi-v1] dua bentuk terakhir dulu jatuh ke "tautan eksternal"
+ *  dan melempar siswa ke layar login dashboard. */
+const ROOM_ID_RE = /^(?:(?:sched|reg|room)-[A-Za-z0-9._:-]+|batch-(?:reguler|etp)-[0-9a-f-]{36}-\d{1,3}|[0-9a-f]{12})$/i;
 
 /** Ambil roomId dari nilai `schedules.recording_url` apa pun bentuknya. */
 export function roomIdFromRecordingUrl(recordingUrl: string): string | null {
