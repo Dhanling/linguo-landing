@@ -12,6 +12,7 @@ import { supabase } from "@/lib/supabase-client";
 import RegisterModal from "@/components/RegisterModal";
 // linguo-patch:placement-cefr-wire-v1
 import PlacementTest from "./PlacementTest";
+import PlacementIntro from "./PlacementIntro";
 import type { LanguageCurriculum } from "@/data/curriculum/types";
 import type { Question as PlacementQuestion } from "@/data/placement/english";
 
@@ -400,44 +401,8 @@ function IeltsToeflPlacement() {
   // RENDER: INTRO
   // ─────────────────────────────────────────────────────────────────────────
   if (phase === "intro") return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-50 to-white flex items-center justify-center p-4">
-      <motion.div
-        initial={{ opacity: 0, y: 24 }}
-        animate={{ opacity: 1, y: 0 }}
-        className="w-full max-w-md bg-white rounded-3xl shadow-xl border border-gray-100 overflow-hidden"
-      >
-        <div className="bg-gradient-to-br from-teal-500 to-emerald-600 p-8 text-white text-center">
-          <Award className="w-16 h-16 mx-auto mb-4 opacity-90" />
-          <h1 className="text-2xl font-bold mb-2">Placement Test {testLabel}</h1>
-          <p className="text-teal-50 text-sm">10 soal · 15 menit · Gratis</p>
-        </div>
-        <div className="p-6 space-y-4">
-          <div className="space-y-3">
-            <div className="flex items-start gap-3">
-              <Target className="w-5 h-5 text-teal-600 mt-0.5 flex-shrink-0" />
-              <p className="text-sm text-gray-700">Dapatkan estimasi level {testLabel} kamu</p>
-            </div>
-            <div className="flex items-start gap-3">
-              <BookOpen className="w-5 h-5 text-teal-600 mt-0.5 flex-shrink-0" />
-              <p className="text-sm text-gray-700">Soal mencakup Reading, Grammar, & Vocabulary</p>
-            </div>
-            <div className="flex items-start gap-3">
-              <Sparkles className="w-5 h-5 text-teal-600 mt-0.5 flex-shrink-0" />
-              <p className="text-sm text-gray-700">Rekomendasi program belajar yang sesuai</p>
-            </div>
-          </div>
-          <button
-            onClick={() => setPhase("test")}
-            className="w-full py-3.5 bg-gradient-to-r from-teal-500 to-emerald-600 text-white font-semibold rounded-xl hover:opacity-95 transition-opacity flex items-center justify-center gap-2"
-          >
-            Mulai Test <ChevronRight className="w-5 h-5" />
-          </button>
-          <Link href="/silabus" className="block text-center text-sm text-gray-500 hover:text-gray-700">
-            ← Kembali ke Silabus
-          </Link>
-        </div>
-      </motion.div>
-    </div>
+    <PlacementIntro slug={testType} langFull="English" langTitle={testLabel} total={questions.length}
+      listening={0} exam={testType} onStart={() => setPhase("test")} />
   );
 
   // ─────────────────────────────────────────────────────────────────────────

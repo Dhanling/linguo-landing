@@ -2,7 +2,7 @@
 
 import { useState, useEffect, useRef } from "react";
 import { useSearchParams } from "next/navigation";
-import SwedishIntro from "./SwedishIntro";
+import PlacementIntro from "./PlacementIntro";
 import AuthModal from "@/components/AuthModal";
 import { supabase } from "@/lib/supabase-client";
 import Link from "next/link";
@@ -15,7 +15,7 @@ import { RectFlag, FLAG_CODE_BY_SLUG } from "@/components/RectFlag";
 import CefrLevelMap from "@/components/CefrLevelMap";
 import { padananUjian, CATATAN_PADANAN } from "@/lib/levelEquivalence"; // [padanan-ujian-v1] // [placement-cefr-map-v1]
 import ListeningPlayer, { siapkanAudio } from "./ListeningPlayer"; // [placement-listening-v1]
-import { DuaJalurPlacement, SpeakingTestOffer } from "./SpeakingTest"; // [placement-dua-jalur-v1]
+import { SpeakingTestOffer } from "./SpeakingTest"; // [placement-dua-jalur-v1]
 
 // Teks jawaban benar per tipe soal — dipakai di rekap akhir (bukan saat menjawab)
 function correctAnswerText(q: Question): string {
@@ -363,47 +363,9 @@ function IntroScreen({ meta, total, listening, needContact, onContact, onStart, 
 
   return (
     <motion.section initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}
-      className={meta.slug === "swedish" ? "min-h-screen w-full" : "min-h-screen flex items-center justify-center px-6 py-20"}>
-      {meta.slug === "swedish" ? (
-        <SwedishIntro total={total} listening={listening} onStart={() => setStep(needContact ? "biodata" : "tips")} />
-      ) : (
-      <div className="max-w-2xl w-full">
-        <Link href={"/silabus/" + meta.slug} className="text-sm text-gray-500 hover:text-gray-900 inline-flex items-center gap-1 mb-8 group">
-          <ArrowLeft className="w-4 h-4 transition-transform group-hover:-translate-x-0.5" />
-          Kembali ke silabus
-        </Link>
-
-        <motion.div initial={{ scale: 0.8, opacity: 0 }} animate={{ scale: 1, opacity: 1 }}
-          transition={{ type: "spring", stiffness: 200, damping: 15 }}
-          className="mb-6">
-          <RectFlag code={FLAG_CODE_BY_SLUG[meta.slug]} h={72} className="shadow-md" />
-        </motion.div>
-
-        <h1 className="text-4xl md:text-5xl font-bold tracking-tight mb-4">
-          Placement Test<br />
-          <span className="text-[#1A9E9E]">{displayLangTitle(meta)}</span>
-        </h1>
-
-        <p className="text-lg text-gray-600 mb-8 leading-relaxed">
-          Self-assessment gratis, {listening ? "5" : "2"} menit{listening ? `, termasuk ${listening} soal listening` : ""}. Dapatkan level CEFR kamu + rekomendasi chapter yang pas untuk mulai.
-        </p>
-
-        <div className="grid grid-cols-3 gap-3 md:gap-4 mb-8">
-          <InfoCard icon="List" value={String(total)} label="Soal" />
-          <InfoCard icon="Clock" value={listening ? "~5 mnt" : "~2 mnt"} label="Durasi" />
-          <InfoCard icon="Award" value="CEFR" label="Standard" />
-        </div>
-
-        <button onClick={() => setStep(needContact ? "biodata" : "tips")}
-          className="w-full md:w-auto inline-flex items-center justify-center gap-2 px-8 py-4 bg-[#1A9E9E] text-white rounded-full font-bold text-lg hover:bg-[#147a7a] shadow-xl shadow-[#1A9E9E]/20 transition-all group">
-          Mulai Test
-          <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
-        </button>
-
-        <DuaJalurPlacement slug={meta.slug} langFull={funnelLangName(meta.slug)}
-          langTitle={displayLangTitle(meta)} durasi={listening ? "~5 menit" : "~2 menit"} />
-      </div>
-      )}
+      className="min-h-screen w-full">
+      <PlacementIntro slug={meta.slug} langFull={funnelLangName(meta.slug)} langTitle={displayLangTitle(meta)}
+        total={total} listening={listening} onStart={() => setStep(needContact ? "biodata" : "tips")} />
 
       <AnimatePresence>
         {step && (
@@ -490,18 +452,6 @@ function IntroScreen({ meta, total, listening, needContact, onContact, onStart, 
         )}
       </AnimatePresence>
     </motion.section>
-  );
-}
-
-const INFO_ICONS = { List, Clock, Award } as const;
-function InfoCard({ icon, value, label }: { icon: keyof typeof INFO_ICONS; value: string; label: string }) {
-  const Icon = INFO_ICONS[icon];
-  return (
-    <div className="bg-white border border-gray-100 rounded-2xl p-4 text-center">
-      <Icon className="w-5 h-5 text-gray-400 mx-auto mb-2" strokeWidth={2} />
-      <div className="text-xl md:text-2xl font-bold text-gray-900">{value}</div>
-      <div className="text-xs text-gray-500 uppercase tracking-wider mt-0.5">{label}</div>
-    </div>
   );
 }
 
