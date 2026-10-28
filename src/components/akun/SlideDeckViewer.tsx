@@ -1,4 +1,6 @@
 'use client';
+import PersonalPronounSlide from "./PersonalPronounSlide";
+import { personalPronounTheme } from "@/lib/personalPronouns";
 import { lengkapiLatarA11 } from "../../data/lengkapiLatarSlide";
 import { isImagegenA2GoalCover } from "../../data/imagegenA2Cover";
 
@@ -312,6 +314,10 @@ export function SlideBody({ s, kunci, lang }: { s: MateriSlide; kunci?: boolean;
   if (isMsaPronounSlide(s, lang)) {
     return <ArabicPronounSlide key={s.heading} slide={s} renderSpeech={text => <Ucap teks={text} lang="ar" />} />;
   }
+  const pronounTheme = personalPronounTheme(s, lang);
+  if (pronounTheme && !('visual' in s && s.visual)) {
+    return <PersonalPronounSlide key={`${pronounTheme.slug}:${s.heading}`} slide={s} theme={pronounTheme} lang={lang} renderSpeech={text => <Ucap teks={text} lang={lang || pronounTheme.code} />} />;
+  }
   const numberTheme = numberSlideTheme(s, lang);
   if (numberTheme && !s.visual) {
     return <NumberSlide key={`${numberTheme.slug}:${s.heading}`} slide={s} theme={numberTheme} lang={lang} renderSpeech={text => <Ucap teks={text} lang={lang || numberTheme.code} />} />;
@@ -530,7 +536,7 @@ export function SlideCard({ s, showAnswers, lang, className = "" }: {
 }) {
   const tema = TEMA[s.type] || TEMA.points;
   const judul = s.type === "title";
-  const sampul = isMsaPronounSlide(s, lang) ? ARABIC_PRONOUN_BACKGROUND : isDutchNumberSlide(s, lang) ? "/slide-cover/dutch-numbers/background-reference-v3.jpg" : numberSlideTheme(s, lang)?.image || s.cover || null;
+  const sampul = isMsaPronounSlide(s, lang) ? ARABIC_PRONOUN_BACKGROUND : personalPronounTheme(s, lang)?.image || (isDutchNumberSlide(s, lang) ? "/slide-cover/dutch-numbers/background-reference-v3.jpg" : numberSlideTheme(s, lang)?.image || s.cover || null);
   return (
     // `container-type: size` bikin clamp(...cqw) menskala ikut LEBAR KARTU, bukan
     // lebar layar — itu yang bikin teks slide ikut membesar saat fullscreen.
