@@ -112,9 +112,9 @@ export function SpeakingTestOffer({ slug, langFull, langTitle, sublevel }: {
 type Prefill = { name?: string; email?: string; whatsapp?: string };
 
 /** Tombol "Bayar & booking" + form singkat → invoice Xendit. */
-export function BookingButton({ slug, langFull, langTitle, price, source, sublevel, className }: {
+export function BookingButton({ slug, langFull, langTitle, price, source, sublevel, className, label }: {
   slug: string; langFull: string; langTitle: string; price: number;
-  source: "intro" | "result"; sublevel?: string; className: string;
+  source: "intro" | "result"; sublevel?: string; className: string; label?: string;
 }) {
   const [open, setOpen] = useState(false);
   const [name, setName] = useState("");
@@ -177,7 +177,7 @@ export function BookingButton({ slug, langFull, langTitle, price, source, sublev
     <>
       <button type="button" className={className}
         onClick={() => { setOpen(true); trackEvent("speaking_test_booking_click", { language: langFull, source, level: sublevel ?? "" }); }}>
-        Bayar & booking {formatRupiah(price)} <ArrowRight className="w-4 h-4" />
+        {label ?? `Bayar & booking ${formatRupiah(price)}`} <ArrowRight className="w-4 h-4" />
       </button>
       {open && typeof document !== "undefined" && createPortal(
         <div className="fixed inset-0 z-[80] bg-black/50 backdrop-blur-sm flex items-center justify-center px-4 pointer-events-auto"
