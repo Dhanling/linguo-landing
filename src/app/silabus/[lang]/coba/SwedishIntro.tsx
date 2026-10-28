@@ -41,7 +41,7 @@ export default function SwedishIntro({ total, listening, onStart }: { total: num
               <h3>Self-assessment</h3><p>Tes mandiri cepat untuk cek levelmu.</p>
               <div className={styles.cardBody}>
                 <ul>{[listening ? "Grammar, reading & listening" : "Grammar & reading", `${listening ? "±5" : "±2"} menit`].map(t => <li key={t}><Check size={17} />{t}</li>)}</ul>
-                <Image src="/illustrations/placement/self-assessment-v1.webp" alt="" width={640} height={560} sizes="(max-width: 760px) 50vw, 260px" className={styles.cardArt} />
+                <Image src="/illustrations/placement/self-assessment-v2.webp" alt="" width={640} height={560} sizes="(max-width: 760px) 50vw, 260px" className={styles.cardArt} />
               </div>
               <button type="button" onClick={onStart} className={styles.primary}>Mulai Test Gratis <ArrowRight size={20} /></button>
             </article>
@@ -50,7 +50,7 @@ export default function SwedishIntro({ total, listening, onStart }: { total: num
               <h3>Speaking Test</h3><p>Tes live dengan pengajar untuk evaluasi lebih akurat.</p>
               <div className={styles.cardBody}>
                 <ul>{["1-on-1 via video call", "60 menit"].map(t => <li key={t}><Check size={17} />{t}</li>)}</ul>
-                <Image src="/illustrations/placement/speaking-test-v1.webp" alt="" width={640} height={560} sizes="(max-width: 760px) 50vw, 260px" className={styles.cardArt} />
+                <Image src="/illustrations/placement/speaking-test-v2.webp" alt="" width={640} height={560} sizes="(max-width: 760px) 50vw, 260px" className={styles.cardArt} />
               </div>
               <BookingButton slug="swedish" langFull="Swedish" langTitle="Bahasa Swedia" price={price} source="intro" label="Bayar & Booking" className={styles.secondary} />
               <a href={bookingUrl} target="_blank" rel="noopener noreferrer" className={styles.admin}>Tanya admin dulu</a>
