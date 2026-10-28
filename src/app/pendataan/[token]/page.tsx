@@ -102,7 +102,7 @@ const DAYS_SHORT = ["Sen", "Sel", "Rab", "Kam", "Jum", "Sab", "Min"];
 const STEP_MIN = 30;
 const EARLY_START = 6 * 60;   // 06.00 — disembunyikan sampai siswa memintanya
 const DAY_START = 8 * 60;     // 08.00
-const DAY_END = 21 * 60;      // 21.00 (kotak terakhir 20.30-21.00)
+const DAY_END = 22 * 60;      // 22.00 (kotak terakhir 21.30-22.00) — dulu 21.00, siswa yang mulai 20.30 tak bisa pilih sesi 60 menit [pendataan-jam-22-v1]
 
 const blockKey = (dayIdx: number, minute: number) => `${dayIdx}|${minute}`;
 const fmtTime = (minute: number) =>
@@ -1512,7 +1512,7 @@ export default function PendataanPage() {
               {kind === 3 && (
                 <div className="space-y-4">
                   <StepHead icon={CalendarDays} title="Jadwal yang Diinginkan"
-                    desc="1 kotak = 30 menit. Ketuk semua waktu yang kamu bisa (boleh banyak)." />
+                    desc="1 kotak = 30 menit. Ketuk semua waktu yang kamu bisa (boleh banyak) — pilih rentang sepanjang 1 sesi kelasmu (mis. 60 menit = 2 kotak)." />
 
                   {/* Ikon + teks dibungkus span sendiri: kalau teksnya jadi anak
                       langsung flex, tiap potongan kalimat pecah jadi kolom. */}
