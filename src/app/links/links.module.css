@@ -1,0 +1,41 @@
+.page {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  min-height: 100svh;
+  background: #effbfb;
+}
+.card {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  width: 100%;
+  min-height: 74px;
+  padding: 0 16px 0 10px;
+  border: 1px solid rgb(255 255 255 / 85%);
+  border-radius: 20px;
+  background: rgb(255 255 255 / 96%);
+  color: #18213d;
+  box-shadow: 0 5px 20px rgb(26 158 158 / 8%);
+  transition: transform 180ms ease, box-shadow 180ms ease;
+}
+.card:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgb(26 158 158 / 16%); }
+.card:focus-visible { outline: 3px solid #1a9e9e; outline-offset: 4px; }
+.highlight { background: #1a9e9e; color: white; border-color: #1a9e9e; min-height: 84px; }
+.highlight:focus-visible { outline-color: #133e45; }
+.illustration { flex-shrink: 0; width: 90px; height: 70px; border-radius: 40% 55% 38% 50%; background: #edfaf9; }
+.highlight .illustration { background: #bcebe5; width: 100px; height: 80px; }
+.arrow { display: grid; place-items: center; flex-shrink: 0; width: 34px; height: 34px; border-radius: 50%; background: #f1f5fb; color: #34435c; transition: transform 180ms ease; }
+.highlight .arrow { background: white; color: #147e7e; }
+.card:hover .arrow { transform: translateX(2px); }
+.landscape { position: fixed; z-index: -1; inset: 0; pointer-events: none; overflow: hidden; }
+.sky { position: absolute; top: 0; left: 0; width: 100%; height: 240px; }
+.hills { position: absolute; bottom: 0; left: 0; width: 100%; height: 40vh; }
+@media (max-width: 420px) {
+  .sky { height: 100px; }
+  .card { gap: 10px; padding-right: 12px; min-height: 82px; border-radius: 18px; }
+  .illustration { width: 72px; height: 70px; }
+  .highlight .illustration { width: 78px; height: 78px; }
+  .arrow { width: 30px; height: 30px; }
+}
+@media (prefers-reduced-motion: reduce) { .card, .arrow { transition: none; } }

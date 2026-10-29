@@ -45,6 +45,7 @@ const DELAY_SESUDAH_SCROLL_MS = 800;
 const DELAY_SESUDAH_LOAD_MS = 6000;
 
 const EXCLUDED = [
+  "/links", // Halaman bio memakai daftar tautan tanpa promosi mengambang.
   "/akun",
   "/student",
   "/laporan-b2b",

@@ -11,12 +11,14 @@
 // Tak ada komponen lain yang membuka chat lewat event, jadi FAB yang muncul
 // sedikit belakangan tidak memutus alur apa pun.
 import dynamic from "next/dynamic";
+import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
 
 const ChatWidget = dynamic(() => import("@/components/ChatWidget"), { ssr: false });
 
 export default function ChatWidgetLazy() {
   const [siap, setSiap] = useState(false);
+  const pathname = usePathname();
 
   useEffect(() => {
     let idleId: number | undefined;
@@ -38,5 +40,5 @@ export default function ChatWidgetLazy() {
     };
   }, []);
 
-  return siap ? <ChatWidget /> : null;
+  return siap && pathname !== "/links" ? <ChatWidget /> : null;
 }

@@ -21,20 +21,22 @@ export type BioLink = {
   href: string;
   /** Tombol yang ditonjolkan (warna brand penuh). */
   highlight?: boolean;
+  /** Ilustrasi kartu agar tetap sesuai saat urutan tautan berubah. */
+  illustration: string;
 };
 
 const CS_WA = `https://wa.me/${BRAND_FACTS.contact.whatsapp}?text=${encodeURIComponent("Halo Linguo, saya mau tanya kelas bahasa")}`;
 const PENGADUAN_WA = `https://wa.me/6281320113243?text=${encodeURIComponent("Halo Linguo, saya ingin menyampaikan saran/keluhan")}`;
 
 export const BIO_LINKS: BioLink[] = [
-  { label: "Customer Support", note: "Chat WhatsApp admin Linguo", href: CS_WA, highlight: true },
-  { label: "Pendaftaran Kelas Reguler", note: "Mulai 150rb / 2 bulan · 11 bahasa", href: "/jadwal-kelas-reguler" },
-  { label: "Pendaftaran Kelas TOEFL/IELTS Prep", note: "300rb / 2 bulan", href: "/jadwal-kelas-reguler?tab=etp" },
-  { label: "Pendaftaran Private Class (Online/Offline)", note: `Mulai ${BRAND_FACTS.price.fromLabel} per sesi`, href: "/kelas-trial" },
-  { label: "Kelas Bersama Native Teacher", note: "Private dengan penutur asli", href: "/harga" },
-  { label: "Linguo for Corporate (B2B)", note: "Pelatihan bahasa untuk tim perusahaan", href: "/corporate" },
-  { label: "Paket E-Learning 10+ Bahasa", note: "Berlangganan 1 tahun · cuma 29k", href: "/toko/paket-elearning" },
-  { label: "E-book Belajar Bahasa", note: "Cuma 99k", href: "/toko" },
-  { label: "Lowongan Kerja Linguo", note: "Karir & rekrutmen pengajar", href: "/karir" },
-  { label: "Layanan Pengaduan, Saran & Keluhan", note: "WhatsApp tim kurikulum", href: PENGADUAN_WA },
+  { illustration: "support", label: "Customer Support", note: "Chat WhatsApp admin Linguo", href: CS_WA, highlight: true },
+  { illustration: "reguler", label: "Pendaftaran Kelas Reguler", note: "Mulai 150rb / 2 bulan · 11 bahasa", href: "/jadwal-kelas-reguler" },
+  { illustration: "test-prep", label: "Pendaftaran Kelas TOEFL/IELTS Prep", note: "300rb / 2 bulan", href: "/jadwal-kelas-reguler?tab=etp" },
+  { illustration: "private", label: "Pendaftaran Private Class (Online/Offline)", note: `Mulai ${BRAND_FACTS.price.fromLabel} per sesi`, href: "/kelas-trial" },
+  { illustration: "native", label: "Kelas Bersama Native Teacher", note: "Private dengan penutur asli", href: "/harga" },
+  { illustration: "corporate", label: "Linguo for Corporate (B2B)", note: "Pelatihan bahasa untuk tim perusahaan", href: "/corporate" },
+  { illustration: "elearning", label: "Paket E-Learning 10+ Bahasa", note: "Berlangganan 1 tahun · cuma 29k", href: "/toko/paket-elearning" },
+  { illustration: "ebook", label: "E-book Belajar Bahasa", note: "Cuma 99k", href: "/toko" },
+  { illustration: "karir", label: "Lowongan Kerja Linguo", note: "Karir & rekrutmen pengajar", href: "/karir" },
+  { illustration: "pengaduan", label: "Layanan Pengaduan, Saran & Keluhan", note: "WhatsApp tim kurikulum", href: PENGADUAN_WA },
 ];

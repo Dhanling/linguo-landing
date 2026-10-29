@@ -24,6 +24,7 @@ import { formatCountdown, usePromoMerdeka } from "@/components/PromoMerdeka";
 // jualan, dan bar promo yang mendorong seluruh halaman turun memakan ruang layar HP
 // yang justru dipakai membaca soal.
 const EXCLUDED = [
+  "/links", // Halaman bio memakai daftar tautan tanpa promosi mengambang.
   "/akun", "/student", "/laporan-b2b", "/pendataan", "/payment", "/kuis",
   "/alquran", // [quran-reader-v1] layar baca penuh
 ];

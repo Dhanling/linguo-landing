@@ -24,6 +24,7 @@ import { usePromoMerdeka } from "@/components/PromoMerdeka";
 // [kuis-layar-bersih-v1] /kuis ikut: sticker ini TIDAK bisa ditutup, dan di layar
 // soal ia cuma menghalangi tombol navigasi tanpa pernah jadi klik.
 const EXCLUDED = [
+  "/links", // Halaman bio memakai daftar tautan tanpa promosi mengambang.
   "/akun", "/student", "/laporan-b2b", "/pendataan", "/payment", "/kuis",
   "/alquran", // [quran-reader-v1] layar baca penuh
 ];

@@ -21,6 +21,7 @@ import { isPromoActive } from "@/lib/promoMerdeka";
 // Halaman ber-chrome sendiri (dashboard siswa, laporan, form, pengerjaan kuis)
 // dilewati — daftar yang sama dengan PromoTopBar.
 const EXCLUDED = [
+  "/links", // Halaman bio memakai daftar tautan tanpa promosi mengambang.
   "/akun", "/student", "/laporan-b2b", "/pendataan", "/payment", "/kuis",
   "/alquran", // [quran-reader-v1] layar baca penuh
   "/jadi-pengajar", // halaman rekrutmen pengajar (juga versi EN) — promo kelas siswa tak relevan
