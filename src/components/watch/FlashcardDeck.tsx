@@ -858,37 +858,32 @@ function BelajarTab({
         <StageTile value={stats.masteredCount} label={t("Dikuasai")} color={TEAL} />
       </div>
 
-      {/* Main Kuis — gamifikasi hafalan arti kata */}
-      <button
-        onClick={onQuiz}
-        className="flex w-full items-center gap-3 rounded-2xl p-4 text-left transition-transform hover:scale-[1.01]"
-        style={{ background: `linear-gradient(135deg,${PURPLE},#5B4BC4)` }}
-      >
-        <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-white/20">
-          <Zap className="h-5 w-5 text-white" />
-        </span>
-        <div className="min-w-0 flex-1">
-          <p className="text-[15px] font-extrabold text-white">{t("Main Kuis Arti Kata")}</p>
-          <p className="text-[12px] text-white/80">{t("Tebak arti lawan waktu — poin, streak & efek suara")}</p>
-        </div>
-        <ArrowRight className="h-5 w-5 shrink-0 text-white/90" />
-      </button>
-
-      {/* Main Hujan Kata — game mengetik kata sebelum jatuh ke tanah */}
-      <button
-        onClick={onRain}
-        className="flex w-full items-center gap-3 rounded-2xl p-4 text-left transition-transform hover:scale-[1.01]"
-        style={{ background: "linear-gradient(135deg,#2D9CDB,#1B5E8C)" }}
-      >
-        <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-white/20">
-          <CloudRain className="h-5 w-5 text-white" />
-        </span>
-        <div className="min-w-0 flex-1">
-          <p className="text-[15px] font-extrabold text-white">{t("Main Hujan Kata")}</p>
-          <p className="text-[12px] text-white/80">{t("Ketik kata sebelum jatuh ke tanah — makin lama makin deras")}</p>
-        </div>
-        <ArrowRight className="h-5 w-5 shrink-0 text-white/90" />
-      </button>
+      {/* Game: Kuis Arti Kata + Hujan Kata — 2 kartu berdampingan biar kolom
+          kiri (sticky di desktop) tidak kepanjangan & tidak saling tindih. */}
+      <div className="grid grid-cols-2 gap-2.5">
+        <button
+          onClick={onQuiz}
+          className="flex min-w-0 flex-col gap-2 rounded-2xl p-3.5 text-left transition-opacity hover:opacity-90"
+          style={{ background: `linear-gradient(135deg,${PURPLE},#5B4BC4)` }}
+        >
+          <span className="flex h-9 w-9 items-center justify-center rounded-xl bg-white/20">
+            <Zap className="h-4 w-4 text-white" />
+          </span>
+          <p className="text-[14px] font-extrabold leading-tight text-white">{t("Main Kuis Arti Kata")}</p>
+          <p className="text-[11.5px] leading-snug text-white/80">{t("Tebak arti lawan waktu — poin, streak & efek suara")}</p>
+        </button>
+        <button
+          onClick={onRain}
+          className="flex min-w-0 flex-col gap-2 rounded-2xl p-3.5 text-left transition-opacity hover:opacity-90"
+          style={{ background: "linear-gradient(135deg,#2D9CDB,#1B5E8C)" }}
+        >
+          <span className="flex h-9 w-9 items-center justify-center rounded-xl bg-white/20">
+            <CloudRain className="h-4 w-4 text-white" />
+          </span>
+          <p className="text-[14px] font-extrabold leading-tight text-white">{t("Main Hujan Kata")}</p>
+          <p className="text-[11.5px] leading-snug text-white/80">{t("Ketik kata sebelum jatuh ke tanah — makin lama makin deras")}</p>
+        </button>
+      </div>
       </div>
 
       {/* Daftar kata */}
