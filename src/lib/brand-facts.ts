@@ -208,6 +208,14 @@ export const BRAND_FACTS = {
     mapsName: "Linguo ID",
     /** URL kanonik berbasis CID (0x89051f2e6769ddac), stabil walau nama berubah. */
     mapsUrl: "https://www.google.com/maps?cid=9873332042243628460",
+    /**
+     * [ulasan-google-v1] Tujuan linguo.id/ulasan (dikirim ke siswa lewat WA saat
+     * sertifikat terbit). `!12e1` membuka kotak "Tulis ulasan" di Maps. Kalau owner
+     * sudah punya link resmi dari Google Business Profile ("Minta ulasan",
+     * g.page/r/…/review), ganti di sini saja — pesan WA cukup menyebut linguo.id/ulasan.
+     */
+    writeReviewUrl:
+      "https://www.google.com/maps/place/data=!4m3!3m2!1s0x0:0x89051f2e6769ddac!12e1",
   },
 
   social: [
