@@ -1,4 +1,5 @@
 'use client';
+import { isA1LanguageBodyCover, isA1LanguageCover } from '@/data/a1LanguageArtwork';
 import FrenchThematicSlide, { FrenchThematicTitle } from "./FrenchThematicSlide";
 import { frenchThematicTheme } from "@/data/frenchThematicThemes";
 import PersonalPronounSlide from "./PersonalPronounSlide";
@@ -358,7 +359,7 @@ export function SlideBody({ s, kunci, lang }: { s: MateriSlide; kunci?: boolean;
      putih di dalamnya (putih di atas putih kehilangan bentuk). */
   const panel = !!s.cover;
   const kiriSaja = s.ruang === "kiri";
-  const ruangTeks = frenchTheme ? "pr-[24cqw]" : kiriSaja ? (isImagegenA2GoalCover(s.cover) ? "pr-[55cqw]" : "pr-[45cqw]") : "pr-[4cqw]";
+  const ruangTeks = (frenchTheme || isA1LanguageBodyCover(s.cover)) ? "pr-[24cqw]" : kiriSaja ? (isImagegenA2GoalCover(s.cover) ? "pr-[55cqw]" : "pr-[45cqw]") : "pr-[4cqw]";
   /* Slide yang isinya banyak dikecilkan sedikit supaya tetap muat tanpa gulir. */
   const n = s.items?.length || s.lines?.length || s.quiz?.length || s.examples?.length || s.points?.length || s.questions?.length || 0;
   /* [dialog-gulir-v1] Dialog tidak dikecilkan dan tidak dibagi dua kolom:
@@ -563,6 +564,8 @@ export function SlideCard({ s, showAnswers, lang, className = "" }: {
       <div aria-hidden className="pointer-events-none absolute right-[16%] top-[9%] aspect-square w-[5%] rounded-full"
         style={{ background: judul ? "rgba(255,255,255,0.18)" : tema.aksen, opacity: judul ? 1 : 0.16 }} />
       </>)}
+      {judul && isA1LanguageCover(s.cover) && <div aria-hidden className="pointer-events-none absolute inset-0"
+        style={{ background: "linear-gradient(180deg,rgba(5,56,64,0.38),rgba(5,56,64,0.16) 65%,transparent)" }} />}
       {/* [slide-watermark-v1] Tanda air: logo besar pudar + tulisan miring berulang.
           Ikut terekam di tangkapan layar/rekaman, tapi tidak mengganggu baca. */}
       {!(judul && sampul) && <img aria-hidden src={LOGO} alt=""
