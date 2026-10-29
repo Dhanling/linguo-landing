@@ -44,10 +44,10 @@ import {
   Loader2, CheckCircle2, Send, ClipboardList,
   Languages, Camera, Keyboard, X, ImageIcon,
   ArrowLeft, ArrowRight, ListChecks, Play, HelpCircle, Volume2, Minimize2, Maximize2,
-  FileImage, Trash2, Plus,
+  FileImage, Trash2, Plus, Mic, Square, Headphones, RotateCcw,
 } from "lucide-react";
 import {
-  loadPublicQuiz, submitPublicQuiz, uploadHandwriting,
+  loadPublicQuiz, submitPublicQuiz, uploadHandwriting, uploadRecording, isChoiceQuestion, skillLabel,
   type PublicQuiz, type PublicQuizQuestion, type EssayResponse,
   type GradeResult, type QuizAnalysis,
 } from "@/lib/quizPublic";
@@ -59,7 +59,7 @@ import HasilKuis from "@/components/kuis/HasilKuis";
 const BRAND = "#1A9E9E";
 
 function isMC(q: { type: string; options?: any[] }): boolean {
-  return q.type === "multiple_choice" || (q.type === "hots" && Array.isArray(q.options) && q.options.length >= 2);
+  return isChoiceQuestion(q);
 }
 
 function partOf(q: PublicQuizQuestion): 1 | 2 {
@@ -73,7 +73,7 @@ function isAnswered(v: any): boolean {
   if (v === undefined || v === null) return false;
   if (typeof v === "object") {
     const e = v as EssayResponse;
-    return !!(e.tidak_tahu || e.image_url || String(e.text ?? "").trim());
+    return !!(e.tidak_tahu || e.image_url || e.audio_url || String(e.text ?? "").trim());
   }
   return String(v).trim() !== "";
 }
@@ -480,6 +480,14 @@ export default function QuizTakePage() {
   const cur = step >= 0 && step < total ? questions[step] : null;
   const count1 = questions.filter((q) => partOf(q) === 1).length;
   const count2 = total - count1;
+  // [kuis-4-skill-v1] Jumlah soal per keterampilan (kosong = kuis model lama).
+  const adaSkill = questions.some((q) => q.type === "reading" || q.type === "listening" || q.type === "speaking");
+  const skillRingkas: [string, number][] = adaSkill
+    ? (["Reading", "Listening", "Speaking", "Writing"] as const)
+      .map((l) => [l, questions.filter((q) => skillLabel(q.type) === l).length] as [string, number])
+      .filter(([, n]) => n > 0)
+    : [];
+  const skillPunyaSuara = questions.some((q) => q.type === "listening" || q.type === "speaking");
   const missing = questions.map((_, i) => i).filter((i) => !isAnswered(responses[i]));
 
   // Judul kuis cuma dipasang di kartu pembuka & halaman periksa. Di layar soal,
@@ -563,13 +571,23 @@ export default function QuizTakePage() {
             <div className="rounded-2xl border border-slate-200 bg-white p-4 shadow-sm">
               <p className="text-sm font-bold text-slate-800">{total} soal</p>
               <ul className="mt-2 space-y-1.5 text-[13px] text-slate-600">
-                {count1 > 0 && (
+                {/* [kuis-4-skill-v1] Kuis 4 skill: rincian per keterampilan, bukan per bagian. */}
+                {skillRingkas.length > 0 && (
+                  <li className="flex gap-2">
+                    <span className="mt-[7px] h-1.5 w-1.5 shrink-0 rounded-full" style={{ background: BRAND }} />
+                    <span>
+                      <b>{skillRingkas.map(([l, n]) => `${l} ${n}`).join(" · ")}</b>
+                      {skillPunyaSuara && " — siapkan earphone & izinkan mikrofon saat diminta (ada soal mendengar & berbicara)."}
+                    </span>
+                  </li>
+                )}
+                {skillRingkas.length === 0 && count1 > 0 && (
                   <li className="flex gap-2">
                     <span className="mt-[7px] h-1.5 w-1.5 shrink-0 rounded-full" style={{ background: BRAND }} />
                     <span><b>Bagian 1 · {count1} soal</b> — pilihan ganda, pilih satu jawaban yang paling tepat.</span>
                   </li>
                 )}
-                {count2 > 0 && (
+                {skillRingkas.length === 0 && count2 > 0 && (
                   <li className="flex gap-2">
                     <span className="mt-[7px] h-1.5 w-1.5 shrink-0 rounded-full" style={{ background: BRAND }} />
                     <span>
@@ -673,16 +691,29 @@ export default function QuizTakePage() {
                 <span className="rounded-full bg-slate-100 px-3 py-1 text-xs font-bold uppercase tracking-wide text-slate-500">
                   {cur.points} poin
                 </span>
+                {adaSkill && skillLabel(cur.type) && (
+                  <span className="rounded-full px-3 py-1 text-xs font-bold uppercase tracking-wide"
+                    style={{ background: "#e7f6f5", color: "#0f766e" }}>
+                    {skillLabel(cur.type)}
+                  </span>
+                )}
               </div>
               <div className="flex items-start gap-2">
-                <p className="min-w-0 flex-1 text-xl font-extrabold leading-snug text-slate-900 sm:text-2xl">{cur.prompt}</p>
-                <TombolDengar teks={cur.prompt} lang={ttsLang} besar />
+                <p className="min-w-0 flex-1 whitespace-pre-line text-xl font-extrabold leading-snug text-slate-900 sm:text-2xl">{cur.prompt}</p>
+                {/* Reading & listening menguji membaca/menyimak — tombol dengar di
+                    soalnya akan mengubah keterampilan yang diuji. */}
+                {cur.type !== "reading" && cur.type !== "listening" && (
+                  <TombolDengar teks={cur.prompt} lang={ttsLang} besar />
+                )}
               </div>
               {showTranslit && cur.prompt_translit && (
                 <p className="mt-1.5 text-base font-medium italic text-slate-500">{cur.prompt_translit}</p>
               )}
 
               <div className="mt-5">
+                {cur.type === "listening" && (
+                  <PemutarListening key={step} teks={cur.audio_text} lang={ttsLang} />
+                )}
                 {/* [kuis-lembar-sekaligus-v1] Panel lembar bersama — cuma di bagian 2,
                     dan cuma kalau pengajar mengizinkan unggahan. Ditaruh DI ATAS
                     kotak jawaban supaya siswa yang memang menulis di kertas tidak
@@ -743,6 +774,17 @@ export default function QuizTakePage() {
                   <p className="rounded-2xl border-2 border-dashed border-slate-300 px-4 py-6 text-center text-base font-semibold text-slate-500">
                     Kamu menjawab <b className="text-slate-700">tidak tahu</b> untuk soal ini.
                   </p>
+                ) : cur.type === "speaking" ? (
+                  <RekamSuara
+                    key={step}
+                    token={token}
+                    value={(responses[step] as EssayResponse) ?? {}}
+                    onChange={(v) => setResponses((s) => {
+                      const n = { ...s };
+                      if (v) n[step] = v; else delete n[step];
+                      return n;
+                    })}
+                  />
                 ) : sheetUrls.length > 0 && partOf(cur) === 2 ? (
                   /* Lembar terpasang: kotak jawaban diganti penanda. Menampilkan
                      kotak ketik di sini berarti dua jawaban hidup bersamaan untuk
@@ -813,7 +855,9 @@ export default function QuizTakePage() {
                 diketuk. */}
             {(() => {
               const soalTerakhir = step === total - 1;
-              const sembunyikanLanjut = partOf(cur) === 1 && !soalTerakhir;
+              // [kuis-4-skill-v1] Yang melompat sendiri cuma soal PILIHAN — soal tulis
+              // & rekaman di lembar utama tetap butuh tombol Lanjut.
+              const sembunyikanLanjut = isMC(cur) && !soalTerakhir;
               return (
                 <div className="sticky bottom-0 mt-4 -mx-4 border-t border-slate-200 bg-white/95 px-4 py-3 backdrop-blur sm:mx-0 sm:rounded-2xl sm:border">
                   <div className="flex items-center gap-2.5">
@@ -1073,6 +1117,170 @@ function TombolDengar({ teks, lang, besar }: { teks?: string | null; lang: strin
     >
       {sibuk ? <Loader2 className="h-5 w-5 animate-spin" /> : <Volume2 className="h-5 w-5" />}
     </span>
+  );
+}
+
+/* [kuis-4-skill-v1] Pemutar soal listening. Naskahnya TIDAK ditampilkan — yang
+   diuji menyimak. Suaranya lewat /api/tts yang sama dengan tombol dengar; boleh
+   diputar ulang (siswa A1 hampir selalu butuh dua kali). Kalau bahasanya tak punya
+   suara atau pemutarannya gagal, naskahnya baru dibuka supaya soalnya tetap bisa
+   dikerjakan — lebih baik jadi soal membaca daripada soal yang mustahil. */
+function PemutarListening({ teks, lang }: { teks?: string | null; lang: string | null }) {
+  const [sibuk, setSibuk] = useState(false);
+  const [kali, setKali] = useState(0);
+  const [gagal, setGagal] = useState(false);
+  const naskah = String(teks ?? "").trim();
+  if (!naskah) return null;
+  if (!lang || gagal) {
+    return (
+      <div className="mb-4 rounded-2xl border-2 border-dashed border-amber-300 bg-amber-50 px-4 py-3">
+        <p className="text-[12px] font-semibold text-amber-700">Audio belum bisa diputar — baca teksnya:</p>
+        <p className="mt-1 text-lg font-bold text-slate-800">{naskah}</p>
+      </div>
+    );
+  }
+  return (
+    <button type="button" disabled={sibuk}
+      onClick={() => {
+        setSibuk(true);
+        ucapkan(naskah, lang, true)
+          .then((ok) => { if (ok) setKali((k) => k + 1); else setGagal(true); })
+          .finally(() => setSibuk(false));
+      }}
+      className="mb-4 flex w-full items-center justify-center gap-3 rounded-2xl px-5 py-5 text-lg font-extrabold text-white shadow-md transition active:scale-[0.98] disabled:opacity-70"
+      style={{ background: BRAND }}>
+      {sibuk ? <Loader2 className="h-6 w-6 animate-spin" /> : <Headphones className="h-6 w-6" />}
+      {kali === 0 ? "Putar audio" : "Putar lagi"}
+      {kali > 0 && <span className="text-sm font-semibold opacity-80">· {kali}×</span>}
+    </button>
+  );
+}
+
+/* [kuis-4-skill-v1] Jawaban speaking: rekam → unggah → putar ulang. Rekamannya
+   ditranskrip & dinilai di server (grade-quiz). Dibatasi 45 detik — jawaban A1
+   itu satu-dua kalimat, dan rekaman panjang cuma memperlambat unggahan di HP. */
+const BATAS_REKAM_DETIK = 45;
+
+function RekamSuara({
+  token, value, onChange,
+}: {
+  token: string;
+  value: EssayResponse;
+  onChange: (v: EssayResponse | null) => void;
+}) {
+  const [status, setStatus] = useState<"siap" | "rekam" | "unggah">("siap");
+  const [detik, setDetik] = useState(0);
+  const [galat, setGalat] = useState("");
+  const recRef = useRef<MediaRecorder | null>(null);
+  const streamRef = useRef<MediaStream | null>(null);
+  const timerRef = useRef<number | null>(null);
+
+  function lepasMikrofon() {
+    if (timerRef.current) { window.clearInterval(timerRef.current); timerRef.current = null; }
+    streamRef.current?.getTracks().forEach((t) => t.stop());
+    streamRef.current = null;
+  }
+
+  // Pindah soal di tengah merekam → mikrofon dilepas, rekamannya dibuang.
+  useEffect(() => () => {
+    const rec = recRef.current;
+    if (rec && rec.state === "recording") { rec.ondataavailable = null; rec.onstop = null; rec.stop(); }
+    lepasMikrofon();
+  }, []);
+
+  useEffect(() => {
+    if (status === "rekam" && detik >= BATAS_REKAM_DETIK) berhenti();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [detik, status]);
+
+  async function mulai() {
+    setGalat("");
+    hentikanTts();
+    if (typeof window === "undefined" || !navigator.mediaDevices?.getUserMedia || typeof MediaRecorder === "undefined") {
+      setGalat("Browser ini belum bisa merekam suara. Buka link kuis di Chrome atau Safari terbaru ya.");
+      return;
+    }
+    let stream: MediaStream;
+    try {
+      stream = await navigator.mediaDevices.getUserMedia({ audio: true });
+    } catch {
+      setGalat("Mikrofon belum diizinkan. Izinkan akses mikrofon di browser, lalu tekan Rekam lagi.");
+      return;
+    }
+    streamRef.current = stream;
+    // Safari/iPhone cuma bisa audio/mp4; Chrome/Android audio/webm.
+    const mime = ["audio/webm;codecs=opus", "audio/webm", "audio/mp4", "audio/ogg"]
+      .find((m) => typeof MediaRecorder.isTypeSupported === "function" && MediaRecorder.isTypeSupported(m));
+    const rec = mime ? new MediaRecorder(stream, { mimeType: mime }) : new MediaRecorder(stream);
+    const potongan: Blob[] = [];
+    rec.ondataavailable = (e) => { if (e.data && e.data.size) potongan.push(e.data); };
+    rec.onstop = async () => {
+      lepasMikrofon();
+      const blob = new Blob(potongan, { type: rec.mimeType || mime || "audio/webm" });
+      if (blob.size < 800) {
+        setGalat("Rekamannya kosong. Tekan Rekam, bicara, lalu tekan Selesai.");
+        setStatus("siap");
+        return;
+      }
+      setStatus("unggah");
+      const r = await uploadRecording(token, blob);
+      setStatus("siap");
+      if (r.url) onChange({ audio_url: r.url });
+      else setGalat(r.error || "Rekaman gagal diunggah — coba lagi ya.");
+    };
+    recRef.current = rec;
+    rec.start();
+    setDetik(0);
+    setStatus("rekam");
+    timerRef.current = window.setInterval(() => setDetik((d) => d + 1), 1000);
+  }
+
+  function berhenti() {
+    if (timerRef.current) { window.clearInterval(timerRef.current); timerRef.current = null; }
+    const rec = recRef.current;
+    if (rec && rec.state === "recording") rec.stop();
+  }
+
+  return (
+    <div className="space-y-3">
+      {value.audio_url && status === "siap" && (
+        <div className="rounded-2xl border-2 px-4 py-3" style={{ borderColor: BRAND, background: "#f0fdfa" }}>
+          <p className="mb-2 flex items-center gap-1.5 text-sm font-bold" style={{ color: "#0f766e" }}>
+            <CheckCircle2 className="h-4 w-4" /> Rekamanmu tersimpan — dengarkan dulu kalau mau
+          </p>
+          <audio controls src={value.audio_url} className="w-full" />
+        </div>
+      )}
+
+      {status === "rekam" ? (
+        <button type="button" onClick={berhenti}
+          className="flex w-full items-center justify-center gap-3 rounded-2xl bg-red-500 px-5 py-5 text-lg font-extrabold text-white shadow-md transition active:scale-[0.98]">
+          <span className="relative flex h-3 w-3">
+            <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-white opacity-75" />
+            <span className="relative inline-flex h-3 w-3 rounded-full bg-white" />
+          </span>
+          <Square className="h-5 w-5" /> Selesai
+          <span className="text-sm font-semibold tabular-nums opacity-90">0:{String(detik).padStart(2, "0")} / 0:{BATAS_REKAM_DETIK}</span>
+        </button>
+      ) : (
+        <button type="button" onClick={mulai} disabled={status === "unggah"}
+          className="flex w-full items-center justify-center gap-3 rounded-2xl px-5 py-5 text-lg font-extrabold text-white shadow-md transition active:scale-[0.98] disabled:opacity-70"
+          style={{ background: BRAND }}>
+          {status === "unggah"
+            ? <><Loader2 className="h-6 w-6 animate-spin" /> Menyimpan rekaman…</>
+            : value.audio_url
+              ? <><RotateCcw className="h-6 w-6" /> Rekam ulang</>
+              : <><Mic className="h-6 w-6" /> Tekan untuk merekam</>}
+        </button>
+      )}
+
+      {galat && <p className="text-center text-sm font-semibold text-red-600">{galat}</p>}
+      {!value.audio_url && status === "siap" && !galat && (
+        <p className="text-center text-[12.5px] text-slate-500">
+          Ucapkan dengan jelas, lalu tekan <b>Selesai</b>. Suaramu dinilai otomatis.
+        </p>
+      )}
+    </div>
   );
 }
 

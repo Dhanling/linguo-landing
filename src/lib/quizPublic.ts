@@ -15,7 +15,28 @@
 const SUPABASE_URL = process.env.NEXT_PUBLIC_SUPABASE_URL || "";
 const ANON_KEY = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY || "";
 
-export type QuizQType = "multiple_choice" | "translation" | "fill_blank" | "hots" | "essay";
+export type QuizQType = "multiple_choice" | "translation" | "fill_blank" | "hots" | "essay"
+  /* [kuis-4-skill-v1] reading & listening = pilihan ganda (listening diputar TTS),
+     speaking = rekaman suara. Writing memakai `translation`. */
+  | "reading" | "listening" | "speaking";
+
+/** Soal yang dijawab dengan memilih opsi. */
+export function isChoiceQuestion(q: { type: string; options?: any[] | null }): boolean {
+  const n = Array.isArray(q.options) ? q.options.length : 0;
+  if (q.type === "multiple_choice" || q.type === "reading" || q.type === "listening") return true;
+  return q.type === "hots" && n >= 2;
+}
+
+/** Label keterampilan untuk chip soal & kartu pembuka. Null = tipe lama tanpa label skill. */
+export function skillLabel(type: string): string | null {
+  switch (type) {
+    case "reading": return "Reading";
+    case "listening": return "Listening";
+    case "speaking": return "Speaking";
+    case "translation": return "Writing";
+    default: return null;
+  }
+}
 
 export interface PublicQuizQuestion {
   type: QuizQType;
@@ -25,6 +46,8 @@ export interface PublicQuizQuestion {
   options: string[];
   options_translit?: string[];
   points: number;
+  /** [kuis-4-skill-v1] Naskah listening — dibunyikan, TIDAK ditampilkan sebelum dikirim. */
+  audio_text?: string | null;
 }
 
 export interface PublicQuiz {
@@ -66,6 +89,8 @@ export interface EssayResponse {
   sheet_no?: number;
   tidak_tahu?: boolean;
   ime?: boolean;
+  /** [kuis-4-skill-v1] Rekaman jawaban speaking (URL publik di bucket quiz-uploads). */
+  audio_url?: string;
 }
 
 /** [kuis-rapor-grafik-v1] Label materi + penjelasan "kenapa", satu per soal. */
@@ -208,6 +233,30 @@ export async function uploadHandwriting(
   );
   if (error) return { error };
   if (!data?.ok) return { error: data?.error || "Gagal mengunggah foto" };
+  return { url: String(data.url) };
+}
+
+/** [kuis-4-skill-v1] Unggah rekaman jawaban speaking. @returns URL publik, atau pesan galat. */
+export async function uploadRecording(
+  token: string,
+  blob: Blob,
+): Promise<{ url?: string; error?: string }> {
+  if (blob.size > 8 * 1024 * 1024) return { error: "Rekaman terlalu panjang." };
+  const type = (blob.type || "audio/webm").split(";")[0];
+  const ext = type.includes("mp4") ? "m4a" : type.includes("ogg") ? "ogg" : type.includes("mpeg") ? "mp3" : "webm";
+  const dataBase64 = await new Promise<string>((resolve) => {
+    const reader = new FileReader();
+    reader.onload = () => resolve(String(reader.result ?? ""));
+    reader.onerror = () => resolve("");
+    reader.readAsDataURL(blob);
+  });
+  if (!dataBase64) return { error: "Rekaman gagal dibaca." };
+  const { data, error } = await callQuizPublic(
+    { action: "upload", token, filename: `rekaman.${ext}`, content_type: type, data_base64: dataBase64 },
+    120000,
+  );
+  if (error) return { error };
+  if (!data?.ok) return { error: data?.error || "Gagal mengunggah rekaman" };
   return { url: String(data.url) };
 }
 

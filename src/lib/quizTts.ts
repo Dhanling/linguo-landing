@@ -116,10 +116,17 @@ export function hentikanTts() {
  * Bunyikan teks. Balikannya menandakan berhasil/tidak supaya pemanggil bisa
  * mematikan indikator "sedang memuat" — bukan untuk ditampilkan sebagai galat.
  */
-export async function ucapkan(teksMentah?: string | null, kode?: string | null): Promise<boolean> {
+export async function ucapkan(
+  teksMentah?: string | null,
+  kode?: string | null,
+  /** [kuis-4-skill-v1] true = teksnya PASTI bahasa target (naskah listening) —
+   *  lewati penyaring kata Indonesia/Inggris, yang bisa membungkam kalimat utuh
+   *  cuma karena satu kata kembar. */
+  mentah = false,
+): Promise<boolean> {
   if (typeof window === "undefined") return false;
   const lang = (kode || "").trim().toLowerCase();
-  const teks = teksUntukTts(teksMentah, lang);
+  const teks = mentah ? String(teksMentah ?? "").trim() : teksUntukTts(teksMentah, lang);
   if (!teks || !bisaTts(lang)) return false;
 
   const kunci = `${lang}|${teks}`;

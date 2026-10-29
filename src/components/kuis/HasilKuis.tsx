@@ -34,7 +34,7 @@ import {
 import type {
   PublicQuiz, PublicQuizQuestion, GradeResult, QuizAnalysis, EssayResponse,
 } from "@/lib/quizPublic";
-import { emailQuizResult } from "@/lib/quizPublic";
+import { emailQuizResult, isChoiceQuestion, skillLabel } from "@/lib/quizPublic";
 
 const BRAND = "#1A9E9E";
 const BRAND_DEEP = "#0F766E";
@@ -101,12 +101,15 @@ function lamaRingkas(sec: number): string {
 }
 
 function isMC(q: { type: string; options?: unknown[] }): boolean {
-  return q.type === "multiple_choice" || (q.type === "hots" && Array.isArray(q.options) && q.options.length >= 2);
+  return isChoiceQuestion(q as { type: string; options?: any[] });
 }
 
 /** Nama materi cadangan kalau rapor AI-nya absen — jujur menyebut JENIS soal,
  *  bukan mengaku-ngaku tahu materinya. Judul grafiknya ikut menyesuaikan. */
 function jenisSoal(q: PublicQuizQuestion): string {
+  // [kuis-4-skill-v1] Kuis 4 skill dikelompokkan per keterampilan.
+  const skill = skillLabel(q.type);
+  if (skill && q.type !== "translation") return skill;
   if (isMC(q)) return "Pilihan ganda";
   if (q.type === "fill_blank") return "Melengkapi kalimat";
   if (q.type === "translation") return "Terjemahan";
@@ -142,6 +145,7 @@ function jawabanSiswa(q: PublicQuizQuestion, v: unknown): string {
     // dilihat pengajar/siswa di sini bukan satu foto berisi jawaban ini saja.
     if (e.sheet) return "(dijawab di lembar foto bersama)";
     if (e.image_url) return "(dijawab lewat foto tulisan tangan)";
+    if (e.audio_url) return "(dijawab lewat rekaman suara)";
     return "";
   }
   const s = String(v).trim();
@@ -564,6 +568,7 @@ export default function HasilKuis({
             q={q}
             r={byIndex.get(i)}
             jawabanmu={jawabanSiswa(q, responses[i])}
+            rekaman={(responses[i] as EssayResponse | undefined)?.audio_url}
             open={isOpen(i)}
             onToggle={() => toggle(i)}
             showTranslit={showTranslit}
@@ -762,12 +767,14 @@ function RaporAi({ analysis, perluDiulang }: { analysis: QuizAnalysis | null; pe
 }
 
 function KartuSoal({
-  no, q, r, jawabanmu, open, onToggle, showTranslit, adaTopik,
+  no, q, r, jawabanmu, rekaman, open, onToggle, showTranslit, adaTopik,
 }: {
   no: number;
   q: PublicQuizQuestion;
   r: GradeResult | undefined;
   jawabanmu: string;
+  /** [kuis-4-skill-v1] Rekaman jawaban speaking. */
+  rekaman?: string;
   open: boolean;
   onToggle: () => void;
   showTranslit: boolean;
@@ -785,7 +792,7 @@ function KartuSoal({
      berguna, sementara di pilihan ganda yang sudah benar ia cuma mengulang apa
      yang barusan dipilih siswa. */
   const tampilkanKunci = !!kunci && (!ok || !isMC(q));
-  const labelKunci = q.type === "essay" ? "Contoh jawaban ideal" : "Jawaban benar";
+  const labelKunci = q.type === "essay" ? "Contoh jawaban ideal" : q.type === "speaking" ? "Ucapan yang diharapkan" : "Jawaban benar";
 
   const why = (r?.why ?? "").trim();
   const fb = feedbackBerguna(r?.feedback);
@@ -820,7 +827,7 @@ function KartuSoal({
               : null}
             <span className="text-[10.5px] font-bold text-slate-400 tabular-nums">{bulat(dapat)}/{bulat(poin)} poin</span>
           </span>
-          <span className="mt-1 block text-[13.5px] font-semibold leading-snug text-slate-800">{q.prompt}</span>
+          <span className="mt-1 block whitespace-pre-line text-[13.5px] font-semibold leading-snug text-slate-800">{q.prompt}</span>
           {showTranslit && q.prompt_translit
             ? <span className="mt-0.5 block text-[11.5px] italic text-slate-400">{q.prompt_translit}</span>
             : null}
@@ -836,10 +843,20 @@ function KartuSoal({
         <div className="space-y-2 px-4 pb-4">
           <Baris label="Jawabanmu" nilai={jawabanmu || "(tidak dijawab)"} warna={warna} />
 
+          {rekaman ? <audio data-pdf-hide controls preload="none" src={rekaman} className="h-9 w-full" /> : null}
+
+          {/* [kuis-4-skill-v1] Naskah listening baru dibuka sesudah dikirim. */}
+          {q.type === "listening" && q.audio_text ? (
+            <div className="rounded-lg border border-slate-200 bg-slate-50 p-2.5">
+              <p className="text-[10px] font-bold uppercase tracking-wide text-slate-400">Isi audionya</p>
+              <p className="mt-0.5 text-[12.5px] text-slate-700">{q.audio_text}</p>
+            </div>
+          ) : null}
+
           {r?.transcript ? (
             <div className="rounded-lg border border-slate-200 bg-slate-50 p-2.5">
               <p className="flex items-center gap-1 text-[10px] font-bold uppercase tracking-wide text-slate-400">
-                <ImageIcon className="h-3 w-3" /> Terbaca dari fotomu
+                <ImageIcon className="h-3 w-3" /> {rekaman ? "Terdengar dari rekamanmu" : "Terbaca dari fotomu"}
               </p>
               <p className="mt-0.5 text-[12.5px] italic text-slate-600">{r.transcript}</p>
             </div>
