@@ -1841,6 +1841,15 @@ const sedang = new Map<string, Promise<string | null>>();
  * @param bolehSintesis false = berhenti sebelum /api/tts. Dipakai prasiapan:
  *   ketukan yang ternyata cuma geseran halaman tak boleh menagih Chirp.
  */
+/* [tts-senyap-v1] Laporan owner 29 Okt 2026 (slide alfabet Denmark: bil, bog, se
+   diam saat diklik). Chirp SESEKALI membalas kata pendek dengan mp3 senyap
+   ±0,3–0,4 dtk (1,3–1,5 KB; kata asli terpendek ≥2,4 KB). Sekali tersimpan di
+   cache bersama + CDN setahun, kata itu diam selamanya. Audio sekecil itu dari
+   cache dianggap tak ada: minta ulang /api/tts dengan `segar=1` (URL lain →
+   CDN tak menyajikan salinan senyapnya; server menyintesis ulang & menimpanya). */
+const BATAS_SENYAP = 1800;
+export const audioSenyap = (b64: string) => b64.length * 0.75 < BATAS_SENYAP;
+
 function ambilAudio(kode: string, teks: string, bolehSintesis: boolean): Promise<string | null> {
   const kunci = `${kode}|${teks}`;
   const ada = memori.get(kunci);
@@ -1849,20 +1858,24 @@ function ambilAudio(kode: string, teks: string, bolehSintesis: boolean): Promise
   if (jalan) return jalan;
 
   const kerja = (async () => {
+    let segar = false;
     const tersimpan = await dariCacheTetap(kode, teks);
-    if (tersimpan) { memori.set(kunci, tersimpan); return tersimpan; }
-
-    const cdn = await dariCdn(kode, teks);
-    if (cdn) {
-      memori.set(kunci, cdn);
-      void keCacheTetap(kode, teks, cdn);
-      return cdn;
+    if (tersimpan && !audioSenyap(tersimpan)) { memori.set(kunci, tersimpan); return tersimpan; }
+    if (tersimpan) segar = true;
+    else {
+      const cdn = await dariCdn(kode, teks);
+      if (cdn && !audioSenyap(cdn)) {
+        memori.set(kunci, cdn);
+        void keCacheTetap(kode, teks, cdn);
+        return cdn;
+      }
+      if (cdn) segar = true;
     }
     if (!bolehSintesis) return null;
 
     // GET, bukan POST: balasannya boleh disimpan CDN Vercel + cache browser
     // (lihat header abadi di /api/tts) — POST tak pernah disimpan keduanya.
-    const alamatApi = `/api/tts?text=${encodeURIComponent(teks)}&lang=${encodeURIComponent(kode)}`;
+    const alamatApi = `/api/tts?text=${encodeURIComponent(teks)}&lang=${encodeURIComponent(kode)}${segar ? "&segar=1" : ""}`;
     const res = await fetch(alamatApi);
     if (!res.ok) return null;
     const { audioContent } = await res.json();

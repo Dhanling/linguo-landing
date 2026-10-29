@@ -221,6 +221,13 @@ async function keCache(jalur: string, base64: string) {
   }
 }
 
+/* [tts-senyap-v1] Chirp SESEKALI membalas kata pendek (Denmark: bil, bog, se)
+   dengan mp3 senyap ±0,3–0,4 dtk (1,3–1,5 KB; kata asli terpendek ≥2,4 KB).
+   Mintanya diulang biasanya sudah benar. Simpanan sekecil itu dianggap tak ada
+   (disintesis ulang & ditimpa), dan hasil senyap tak pernah disimpan/di-CDN-kan. */
+const BATAS_SENYAP = 1800;
+const senyap = (b64: string) => Buffer.from(b64, "base64").length < BATAS_SENYAP;
+
 /** Balasan rute ini: `abadi` menandai isi yang boleh disimpan CDN/browser. */
 type Hasil = { status: number; body: Record<string, unknown>; abadi?: boolean };
 
@@ -282,7 +289,7 @@ async function sintesis(teksMentah: unknown, langMentah: unknown, suaraMentah?: 
   // cuma mengisi simpanan kontainer — tak ada yang ditagih.
   const tokenAwal = chirpLocale ? getAccessToken().catch(() => null) : null;
   const tersimpan = await dariCache(jalur);
-  if (tersimpan) return { status: 200, body: { audioContent: tersimpan, cached: true }, abadi: true };
+  if (tersimpan && !(chirpLocale && senyap(tersimpan))) return { status: 200, body: { audioContent: tersimpan, cached: true }, abadi: true };
 
   // [tts-latin-espeak-v1] Disintesis di kontainer ini sendiri — tanpa kunci,
   // tanpa tagihan per karakter. Modulnya dimuat dinamis supaya 23 MB data
@@ -312,20 +319,30 @@ async function sintesis(teksMentah: unknown, langMentah: unknown, suaraMentah?: 
   }
 
   const token = (await tokenAwal) ?? (await getAccessToken());
-  const res = await fetch("https://texttospeech.googleapis.com/v1/text:synthesize", {
-    method: "POST",
-    headers: { Authorization: `Bearer ${token}`, "Content-Type": "application/json" },
-    body: JSON.stringify({
-      input: { text },
-      voice: { languageCode, name: voice },
-      audioConfig: { audioEncoding: ENCODING },
-    }),
-  });
-  if (!res.ok) {
-    const detail = await res.text().catch(() => "");
-    return { status: 502, body: { error: "tts failed", detail: detail.slice(0, 300) } };
+  // [tts-senyap-v1] Senyap → ulang dengan variasi kecil (kapital, tanda baca):
+  // hasil Chirp untuk kata lepas acak — "ja" senyap, "Ja" bersuara, "ja!" bersuara.
+  const kapital = text.charAt(0).toLocaleUpperCase() + text.slice(1);
+  const coba = [...new Set([text, text, kapital, `${text}!`, `${kapital}.`])];
+  let j: { audioContent?: string } = {};
+  for (const t of coba) {
+    const res = await fetch("https://texttospeech.googleapis.com/v1/text:synthesize", {
+      method: "POST",
+      headers: { Authorization: `Bearer ${token}`, "Content-Type": "application/json" },
+      body: JSON.stringify({
+        input: { text: t },
+        voice: { languageCode, name: voice },
+        audioConfig: { audioEncoding: ENCODING },
+      }),
+    });
+    if (!res.ok) {
+      const detail = await res.text().catch(() => "");
+      return { status: 502, body: { error: "tts failed", detail: detail.slice(0, 300) } };
+    }
+    j = await res.json();
+    if (!chirpLocale || !j.audioContent || !senyap(j.audioContent)) break;
   }
-  const j = await res.json();
+  // Tetap senyap sesudah semua percobaan: kirim apa adanya, tapi jangan disimpan.
+  if (j.audioContent && chirpLocale && senyap(j.audioContent)) return { status: 200, body: { audioContent: j.audioContent } };
   // [tts-klik-pertama-v1] Unggahan ke cache bersama TIDAK lagi ditunggu di
   // depan balasan: siswa yang mengetuk tak perlu ikut menanti Storage (0,2–0,6
   // detik). Dulu sengaja ditunggu karena fungsi serverless bisa dimatikan
