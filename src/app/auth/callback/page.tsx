@@ -47,7 +47,7 @@ export default function AuthCallbackPage() {
           return;
         }
         // Read funnel data from cookie (set before OAuth redirect)
-        let funnelData: { program: string; language: string; level: string; wa?: string; name?: string } = { program: "", language: "", level: "" };
+        let funnelData: { program: string; language: string; level: string; wa?: string; name?: string; ret?: string } = { program: "", language: "", level: "" };
         const raw = getCookie("linguo_funnel");
         if (raw) {
           try { funnelData = JSON.parse(raw); } catch {}
@@ -88,7 +88,15 @@ export default function AuthCallbackPage() {
           const placementIntent = parsePlacementIntent();
           const daftarSlug = placementIntent ? daftarSlugFromLanguageSlug(placementIntent.lang) : null;
           const levelHint = (placementIntent?.level || "").slice(0, 2).toUpperCase();
-          const redirectTarget = daftarSlug
+          // [funnel-naik-v2] Login dari tengah wizard /daftar → kembali ke langkah yang sama
+          // (pilihan paket ada di URL-nya). Hanya path internal /daftar/… yang diterima.
+          const funnelRet =
+            typeof funnelData.ret === "string" && /^\/daftar\/[^/\\]/.test(funnelData.ret) && !funnelData.ret.includes("//")
+              ? funnelData.ret
+              : null;
+          const redirectTarget = funnelRet
+            ? funnelRet
+            : daftarSlug
             ? `/daftar/${daftarSlug}${levelHint ? `?level=${encodeURIComponent(levelHint)}` : ""}`
             : placementIntent
               ? "/daftar"

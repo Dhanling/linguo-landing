@@ -159,6 +159,13 @@ export default function FunnelFlow({ route }: { route: FunnelRoute }) {
     return programSlug === "kids" ? "" : opts[0] || "";
   });
   const [showRef, setShowRef] = useState(false);
+  // [funnel-naik-v2] "Opsi lain" terbuka sendiri kalau tautan membawa pilihan non-bawaan.
+  const [showMore, setShowMore] = useState(
+    () =>
+      sp.get("mode") === "offline" ||
+      (!!sp.get("durasi") && sp.get("durasi") !== "60") ||
+      ["addon", "modul", "rekaman"].some((k) => sp.get(k) === "1"),
+  );
   const [form, setForm] = useState<FormData>(EMPTY_FORM);
   const [agreeTerms, setAgreeTerms] = useState(false);
   const [formError, setFormError] = useState("");
@@ -186,6 +193,28 @@ export default function FunnelFlow({ route }: { route: FunnelRoute }) {
       }
     } catch {}
   }, []);
+
+  // [funnel-naik-v2] Pulang dari "Daftar dengan Google": nama & email diambil dari akun
+  // Google, jadi tinggal mengisi nomor WhatsApp. Yang sudah diketik tidak ditimpa.
+  useEffect(() => {
+    if (step !== 4) return;
+    let off = false;
+    supabase.auth.getSession().then(({ data }) => {
+      const u = data.session?.user;
+      if (off || !u?.email) return;
+      setForm((f) => {
+        if (f.name && f.email) return f;
+        const next = {
+          ...f,
+          name: f.name || u.user_metadata?.full_name || u.user_metadata?.name || "",
+          email: f.email || u.email || "",
+        };
+        try { sessionStorage.setItem(FORM_KEY, JSON.stringify(next)); } catch {}
+        return next;
+      });
+    }).catch(() => {});
+    return () => { off = true; };
+  }, [step]);
 
   const saveForm = useCallback((next: FormData) => {
     setForm(next);
@@ -298,6 +327,12 @@ export default function FunnelFlow({ route }: { route: FunnelRoute }) {
     : program === "Kelas Reguler" ? REGULER_PRICE
     : 0) + addonAmount;
 
+  const opsiRingkas = [
+    canOffline ? (isOffline ? `Offline${offlineCity.trim() ? ` · ${offlineCity.trim()}` : ""}` : "Online") : "",
+    isSessionProg ? `${duration} menit/sesi` : "",
+    program === "Kelas Private" ? addonLabelDipilih || "tanpa tambahan" : "",
+  ].filter(Boolean).join(" · ");
+
   const durationProg = program === "Kelas Private" || program === "Kelas Kids";
   const DURATION_OPTS = program === "Kelas Kids" ? [30, 45, 60] : [30, 45, 60, 75, 90];
 
@@ -312,6 +347,24 @@ export default function FunnelFlow({ route }: { route: FunnelRoute }) {
       (window as any).gtag("event", "funnel_form_submitted", { program, language: lang, level });
     }
     trackConversion("form", `${program} · ${langLabel} ${level}`);
+    // [funnel-naik-v2] Catat sebagai draft (lihat /api/funnel-draft) — tak ditunggu.
+    try {
+      fetch("/api/funnel-draft", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        keepalive: true,
+        body: JSON.stringify({
+          name: form.name,
+          email: form.email,
+          wa: form.countryCode.replace("+", "") + form.wa,
+          program,
+          language: langLabel,
+          level,
+          total: totalAmount,
+          path: buildFunnelPath({ langEn, programSlug, level }) + optionQuery(),
+        }),
+      }).catch(() => {});
+    } catch {}
     router.push(buildFunnelPath({ langEn, programSlug, level, confirm: true }) + optionQuery());
   };
 
@@ -411,7 +464,10 @@ export default function FunnelFlow({ route }: { route: FunnelRoute }) {
   const handleGoogleSignIn = async () => {
     document.cookie =
       "linguo_funnel=" +
-      encodeURIComponent(JSON.stringify({ program, language: lang, level, wa: form.wa, name: form.name })) +
+      // [funnel-naik-v2] `ret` = langkah ini lengkap dengan pilihannya. Dulu sesudah login
+      // Google orang dilempar ke /akun dan harus mengulang semua pilihan di wizard lain —
+      // 14 klik "Daftar dengan Google" dalam 30 hari, tak satu pun sampai bayar lewat sini.
+      encodeURIComponent(JSON.stringify({ program, language: lang, level, wa: form.wa, name: form.name, ret: window.location.pathname + window.location.search })) +
       ";path=/;max-age=600;SameSite=Lax";
     await supabase.auth.signInWithOAuth({
       provider: "google",
@@ -489,25 +545,6 @@ export default function FunnelFlow({ route }: { route: FunnelRoute }) {
             </section>
           )}
 
-          {/* Jumlah peserta — Semi Private */}
-          {program === "Semi Private" && (
-            <section className="mt-6">
-              <h2 className="text-base font-bold text-slate-900">Berapa orang dalam grup?</h2>
-              <p className="mb-3 text-sm text-slate-500">Makin banyak peserta, makin hemat per orang</p>
-              <div className="grid grid-cols-5 gap-2">
-                {[2, 3, 4, 5, 6, 7, 8, 9, 10].map((n) => (
-                  <button
-                    key={n}
-                    onClick={() => setClassSize(n)}
-                    className={`rounded-xl border-2 py-2.5 text-sm font-bold transition-all ${classSize === n ? "border-[#1A9E9E] bg-[#1A9E9E] text-white shadow-md" : "border-slate-100 text-slate-600 hover:border-[#1A9E9E]/40"}`}
-                  >
-                    {n}
-                  </button>
-                ))}
-              </div>
-            </section>
-          )}
-
           {/* Level */}
           <section className="mt-6">
             <h2 className="text-base font-bold text-slate-900">
@@ -572,54 +609,6 @@ export default function FunnelFlow({ route }: { route: FunnelRoute }) {
             </section>
           )}
 
-          {/* Mode kelas — Private, Semi Private & Kids [kids-offline-v1] */}
-          {canOffline && (
-            <section className="mt-6">
-              <h2 className="text-base font-bold text-slate-900">Mode kelas</h2>
-              <p className="mb-3 text-sm text-slate-500">Belajar online, atau pengajar yang datang ke tempatmu?</p>
-              <div className="grid grid-cols-2 gap-2">
-                <button
-                  onClick={() => setClassMode("online")}
-                  className={`rounded-xl border-2 p-3 text-left transition-all ${classMode === "online" ? "border-[#1A9E9E] bg-[#1A9E9E]/[0.04]" : "border-slate-100 hover:border-[#1A9E9E]/40"}`}
-                >
-                  <p className="text-sm font-bold text-slate-900">Online</p>
-                  <p className="mt-0.5 text-[11px] leading-snug text-slate-500">Live via Zoom, dari mana saja</p>
-                  <p className="mt-1.5 text-[11px] font-bold text-[#1A9E9E]">Tarif normal</p>
-                </button>
-                <button
-                  onClick={() => setClassMode("offline")}
-                  className={`rounded-xl border-2 p-3 text-left transition-all ${classMode === "offline" ? "border-[#1A9E9E] bg-[#1A9E9E]/[0.04]" : "border-slate-100 hover:border-[#1A9E9E]/40"}`}
-                >
-                  <p className="text-sm font-bold text-slate-900">Offline</p>
-                  <p className="mt-0.5 text-[11px] leading-snug text-slate-500">Pengajar datang ke tempatmu</p>
-                  <p className="mt-1.5 text-[11px] font-bold text-[#1A9E9E]">+{fmtRp(OFFLINE_SURCHARGE_PER_SESSION)}/sesi</p>
-                </button>
-              </div>
-              {isOffline && (
-                <div className="mt-3 rounded-xl border border-amber-200 bg-amber-50 p-3.5">
-                  <p className="text-[11px] leading-relaxed text-amber-900">
-                    <b>Menyesuaikan ketersediaan pengajar.</b> Kelas offline hanya jalan kalau ada pengajar yang bisa
-                    menjangkau daerahmu. Setelah pembayaran, tim kami cek dulu pengajar di area itu — kalau belum ada,
-                    kamu bisa pindah ke kelas online (selisih biaya offline dikembalikan) atau dana direfund penuh.
-                  </p>
-                  <label className="mb-1 mt-3 block text-xs font-semibold text-slate-700">
-                    Kota / area kelas <span className="text-red-500">*</span>
-                  </label>
-                  <input
-                    type="text"
-                    value={offlineCity}
-                    onChange={(e) => setOfflineCity(e.target.value)}
-                    placeholder="Contoh: Bekasi Timur, Kota Bekasi"
-                    className="w-full rounded-xl border border-amber-200 bg-white px-3.5 py-2.5 text-sm focus:border-[#1A9E9E] focus:outline-none focus:ring-2 focus:ring-[#1A9E9E]/20"
-                  />
-                  <p className="mt-1.5 text-[10px] text-amber-800/80">
-                    Sebutkan kecamatan & kota biar tim gampang cari pengajar terdekat.
-                  </p>
-                </div>
-              )}
-            </section>
-          )}
-
           {/* Jumlah siswa — khusus Semi Private (semi-class-size-picker-v1) */}
           {program === "Semi Private" && (
             <section className="mt-6">
@@ -653,22 +642,6 @@ export default function FunnelFlow({ route }: { route: FunnelRoute }) {
           {/* Durasi & jumlah sesi — program berbasis sesi */}
           {isSessionProg && (
             <>
-              <section className="mt-6">
-                <h2 className="text-base font-bold text-slate-900">Durasi per sesi</h2>
-                <p className="mb-3 text-sm text-slate-500">Pilih lama belajar tiap sesi</p>
-                <div className="grid grid-cols-3 gap-2 sm:grid-cols-5">
-                  {DURATION_OPTS.map((d) => (
-                    <button
-                      key={d}
-                      onClick={() => setDuration(d)}
-                      className={`rounded-xl border-2 py-2.5 text-sm font-bold transition-all ${duration === d ? "border-[#1A9E9E] bg-[#1A9E9E] text-white shadow-md" : "border-slate-100 text-slate-600 hover:border-[#1A9E9E]/40"}`}
-                    >
-                      {d} menit
-                    </button>
-                  ))}
-                </div>
-              </section>
-
               <section className="mt-6">
                 <h2 className="text-base font-bold text-slate-900">Jumlah sesi</h2>
                 <p className="mb-3 text-sm text-slate-500">
@@ -724,60 +697,149 @@ export default function FunnelFlow({ route }: { route: FunnelRoute }) {
             </section>
           )}
 
-          {/* [private-addon-ebook-recording-v1] Add-on modul + recording untuk
-              Kelas Private. Sebelumnya opsi ini cuma ada di jalur WhatsApp:
-              siswa yang daftar sendiri lewat web tidak pernah tahu fasilitasnya
-              ada, dan admin kehilangan penjualan tambahan. Nominalnya tetap
-              dihitung ulang di /api/create-funnel-invoice. */}
-          {program === "Kelas Private" && selLevel && (
-            <section className="mt-6">
-              <h2 className="text-base font-bold text-slate-900">Tambahan (opsional)</h2>
-              <p className="mb-3 text-sm text-slate-500">Bisa ditambahkan sekarang, tanpa transaksi terpisah</p>
-              {/* [addon-harga-per-jenis-v1] Dua baris terpisah — dulu satu centang
-                  bundel, jadi yang cuma butuh rekaman ikut bayar modul. */}
-              <div className="space-y-2">
-                {[
-                  {
-                    on: addEbook,
-                    toggle: () => setAddEbook((v) => !v),
-                    price: ADDON_EBOOK_PRICE,
-                    title: "Modul (E-Book)",
-                    desc: "Modul lengkap sesuai bahasa & levelmu — akses selamanya, bisa dibaca kapan saja.",
-                  },
-                  {
-                    on: addRecording,
-                    toggle: () => setAddRecording((v) => !v),
-                    price: ADDON_RECORDING_PRICE,
-                    title: "Recording Kelas",
-                    desc: "Rekaman semua sesi kelasmu — akses selamanya, bisa diulang kapan saja.",
-                  },
-                ].map((opt) => (
-                  <button
-                    key={opt.title}
-                    type="button"
-                    onClick={opt.toggle}
-                    className={`group flex w-full items-start justify-between gap-3 rounded-2xl border-2 p-4 text-left transition-all ${opt.on ? "border-[#1A9E9E] bg-[#1A9E9E]/[0.04]" : "border-slate-100 hover:border-[#1A9E9E]/40"}`}
-                  >
-                    <span className="flex items-start gap-2.5">
-                      <span className={`mt-0.5 flex h-[18px] w-[18px] shrink-0 items-center justify-center rounded-md border-2 transition-all ${opt.on ? "border-[#1A9E9E] bg-[#1A9E9E]" : "border-slate-300 group-hover:border-[#1A9E9E]/50"}`}>
-                        {opt.on && <svg className="h-3 w-3 text-white" viewBox="0 0 20 20" fill="currentColor"><path fillRule="evenodd" d="M16.7 5.3a1 1 0 010 1.4l-8 8a1 1 0 01-1.4 0l-4-4a1 1 0 011.4-1.4L8 12.6l7.3-7.3a1 1 0 011.4 0z" clipRule="evenodd"/></svg>}
-                      </span>
-                      <span>
-                        <span className="block text-sm font-bold text-slate-800">{opt.title}</span>
-                        <span className="mt-0.5 block text-[11px] leading-snug text-slate-500">{opt.desc}</span>
-                      </span>
-                    </span>
-                    <span className={`whitespace-nowrap text-sm font-bold ${opt.on ? "text-[#1A9E9E]" : "text-slate-400"}`}>
-                      +{fmtRp(opt.price)}
-                    </span>
-                  </button>
-                ))}
-                {addEbook && addRecording && (
-                  <p className="px-1 text-[11px] text-slate-500">
-                    Modul + Recording — total tambahan {fmtRp(ADDON_EBOOK_RECORDING_PRICE)}
-                  </p>
-                )}
-              </div>
+          {/* [funnel-naik-v2] Opsi yang jarang diubah (mode kelas, durasi, tambahan) dilipat
+              jadi satu baris ringkas. Dulu halaman ini 7 bagian berurutan dan tombol Lanjut
+              ada di paling bawah: Okt 2026 hanya 27% sesi di sini yang lanjut ke Data Diri.
+              Terbuka sendiri kalau tautan membawa pilihan non-bawaan (offline, durasi lain,
+              add-on) supaya pilihan itu tidak tersembunyi. */}
+          {(canOffline || isSessionProg || (program === "Kelas Private" && selLevel)) && (
+            <section className="mt-6 rounded-2xl border border-slate-200">
+              <button
+                type="button"
+                onClick={() => setShowMore((v) => !v)}
+                aria-expanded={showMore}
+                className="flex w-full items-center justify-between gap-3 px-4 py-3 text-left"
+              >
+                <span className="min-w-0">
+                  <span className="block text-sm font-bold text-slate-900">Opsi lain (opsional)</span>
+                  <span className="mt-0.5 block truncate text-[12px] text-slate-500">{opsiRingkas}</span>
+                </span>
+                <span className="shrink-0 text-xs font-semibold text-[#1A9E9E]">{showMore ? "Tutup" : "Ubah"}</span>
+              </button>
+              {(showMore || !offlineReady) && (
+                <div className="border-t border-slate-100 px-4 pb-4">
+                  {/* Mode kelas — Private, Semi Private & Kids [kids-offline-v1] */}
+                  {canOffline && (
+                    <section className="mt-5">
+                      <h2 className="text-base font-bold text-slate-900">Mode kelas</h2>
+                      <p className="mb-3 text-sm text-slate-500">Belajar online, atau pengajar yang datang ke tempatmu?</p>
+                      <div className="grid grid-cols-2 gap-2">
+                        <button
+                          onClick={() => setClassMode("online")}
+                          className={`rounded-xl border-2 p-3 text-left transition-all ${classMode === "online" ? "border-[#1A9E9E] bg-[#1A9E9E]/[0.04]" : "border-slate-100 hover:border-[#1A9E9E]/40"}`}
+                        >
+                          <p className="text-sm font-bold text-slate-900">Online</p>
+                          <p className="mt-0.5 text-[11px] leading-snug text-slate-500">Live via Zoom, dari mana saja</p>
+                          <p className="mt-1.5 text-[11px] font-bold text-[#1A9E9E]">Tarif normal</p>
+                        </button>
+                        <button
+                          onClick={() => setClassMode("offline")}
+                          className={`rounded-xl border-2 p-3 text-left transition-all ${classMode === "offline" ? "border-[#1A9E9E] bg-[#1A9E9E]/[0.04]" : "border-slate-100 hover:border-[#1A9E9E]/40"}`}
+                        >
+                          <p className="text-sm font-bold text-slate-900">Offline</p>
+                          <p className="mt-0.5 text-[11px] leading-snug text-slate-500">Pengajar datang ke tempatmu</p>
+                          <p className="mt-1.5 text-[11px] font-bold text-[#1A9E9E]">+{fmtRp(OFFLINE_SURCHARGE_PER_SESSION)}/sesi</p>
+                        </button>
+                      </div>
+                      {isOffline && (
+                        <div className="mt-3 rounded-xl border border-amber-200 bg-amber-50 p-3.5">
+                          <p className="text-[11px] leading-relaxed text-amber-900">
+                            <b>Menyesuaikan ketersediaan pengajar.</b> Kelas offline hanya jalan kalau ada pengajar yang bisa
+                            menjangkau daerahmu. Setelah pembayaran, tim kami cek dulu pengajar di area itu — kalau belum ada,
+                            kamu bisa pindah ke kelas online (selisih biaya offline dikembalikan) atau dana direfund penuh.
+                          </p>
+                          <label className="mb-1 mt-3 block text-xs font-semibold text-slate-700">
+                            Kota / area kelas <span className="text-red-500">*</span>
+                          </label>
+                          <input
+                            type="text"
+                            value={offlineCity}
+                            onChange={(e) => setOfflineCity(e.target.value)}
+                            placeholder="Contoh: Bekasi Timur, Kota Bekasi"
+                            className="w-full rounded-xl border border-amber-200 bg-white px-3.5 py-2.5 text-sm focus:border-[#1A9E9E] focus:outline-none focus:ring-2 focus:ring-[#1A9E9E]/20"
+                          />
+                          <p className="mt-1.5 text-[10px] text-amber-800/80">
+                            Sebutkan kecamatan & kota biar tim gampang cari pengajar terdekat.
+                          </p>
+                        </div>
+                      )}
+                    </section>
+                  )}
+                  {isSessionProg && (
+                    <section className="mt-5">
+                      <h2 className="text-base font-bold text-slate-900">Durasi per sesi</h2>
+                      <p className="mb-3 text-sm text-slate-500">Pilih lama belajar tiap sesi</p>
+                      <div className="grid grid-cols-3 gap-2 sm:grid-cols-5">
+                        {DURATION_OPTS.map((d) => (
+                          <button
+                            key={d}
+                            onClick={() => setDuration(d)}
+                            className={`rounded-xl border-2 py-2.5 text-sm font-bold transition-all ${duration === d ? "border-[#1A9E9E] bg-[#1A9E9E] text-white shadow-md" : "border-slate-100 text-slate-600 hover:border-[#1A9E9E]/40"}`}
+                          >
+                            {d} menit
+                          </button>
+                        ))}
+                      </div>
+                    </section>
+                  )}
+                  {/* [private-addon-ebook-recording-v1] Add-on modul + recording untuk
+                      Kelas Private. Sebelumnya opsi ini cuma ada di jalur WhatsApp:
+                      siswa yang daftar sendiri lewat web tidak pernah tahu fasilitasnya
+                      ada, dan admin kehilangan penjualan tambahan. Nominalnya tetap
+                      dihitung ulang di /api/create-funnel-invoice. */}
+                  {program === "Kelas Private" && selLevel && (
+                    <section className="mt-5">
+                      <h2 className="text-base font-bold text-slate-900">Tambahan (opsional)</h2>
+                      <p className="mb-3 text-sm text-slate-500">Bisa ditambahkan sekarang, tanpa transaksi terpisah</p>
+                      {/* [addon-harga-per-jenis-v1] Dua baris terpisah — dulu satu centang
+                          bundel, jadi yang cuma butuh rekaman ikut bayar modul. */}
+                      <div className="space-y-2">
+                        {[
+                          {
+                            on: addEbook,
+                            toggle: () => setAddEbook((v) => !v),
+                            price: ADDON_EBOOK_PRICE,
+                            title: "Modul (E-Book)",
+                            desc: "Modul lengkap sesuai bahasa & levelmu — akses selamanya, bisa dibaca kapan saja.",
+                          },
+                          {
+                            on: addRecording,
+                            toggle: () => setAddRecording((v) => !v),
+                            price: ADDON_RECORDING_PRICE,
+                            title: "Recording Kelas",
+                            desc: "Rekaman semua sesi kelasmu — akses selamanya, bisa diulang kapan saja.",
+                          },
+                        ].map((opt) => (
+                          <button
+                            key={opt.title}
+                            type="button"
+                            onClick={opt.toggle}
+                            className={`group flex w-full items-start justify-between gap-3 rounded-2xl border-2 p-4 text-left transition-all ${opt.on ? "border-[#1A9E9E] bg-[#1A9E9E]/[0.04]" : "border-slate-100 hover:border-[#1A9E9E]/40"}`}
+                          >
+                            <span className="flex items-start gap-2.5">
+                              <span className={`mt-0.5 flex h-[18px] w-[18px] shrink-0 items-center justify-center rounded-md border-2 transition-all ${opt.on ? "border-[#1A9E9E] bg-[#1A9E9E]" : "border-slate-300 group-hover:border-[#1A9E9E]/50"}`}>
+                                {opt.on && <svg className="h-3 w-3 text-white" viewBox="0 0 20 20" fill="currentColor"><path fillRule="evenodd" d="M16.7 5.3a1 1 0 010 1.4l-8 8a1 1 0 01-1.4 0l-4-4a1 1 0 011.4-1.4L8 12.6l7.3-7.3a1 1 0 011.4 0z" clipRule="evenodd"/></svg>}
+                              </span>
+                              <span>
+                                <span className="block text-sm font-bold text-slate-800">{opt.title}</span>
+                                <span className="mt-0.5 block text-[11px] leading-snug text-slate-500">{opt.desc}</span>
+                              </span>
+                            </span>
+                            <span className={`whitespace-nowrap text-sm font-bold ${opt.on ? "text-[#1A9E9E]" : "text-slate-400"}`}>
+                              +{fmtRp(opt.price)}
+                            </span>
+                          </button>
+                        ))}
+                        {addEbook && addRecording && (
+                          <p className="px-1 text-[11px] text-slate-500">
+                            Modul + Recording — total tambahan {fmtRp(ADDON_EBOOK_RECORDING_PRICE)}
+                          </p>
+                        )}
+                      </div>
+                    </section>
+                  )}
+                </div>
+              )}
             </section>
           )}
 
@@ -858,13 +920,24 @@ export default function FunnelFlow({ route }: { route: FunnelRoute }) {
             </div>
           )}
 
-          <button
-            onClick={goForm}
-            disabled={!selLevel || !offlineReady}
-            className="mt-6 w-full rounded-full bg-[#1A9E9E] py-3.5 text-sm font-bold text-white shadow-lg shadow-[#1A9E9E]/25 transition-all hover:bg-[#178888] active:scale-95 disabled:cursor-not-allowed disabled:opacity-40"
-          >
-            {!selLevel ? "Pilih level dulu" : !offlineReady ? "Isi kota/area kelas dulu" : "Lanjut ke Data Diri →"}
-          </button>
+          {/* [funnel-naik-v2] Total + Lanjut menempel di bawah layar HP — dulu tombolnya baru
+              kelihatan setelah menggulir melewati semua opsi. pr-24: tombol chat Ling
+              (fixed kanan-bawah) jangan menutupi tombol. Di layar lebar tetap di tempat. */}
+          <div className="fixed inset-x-0 bottom-0 z-40 flex items-center gap-3 border-t border-slate-200 bg-white/95 py-3 pl-4 pr-24 shadow-[0_-8px_24px_rgba(15,23,42,0.08)] backdrop-blur sm:static sm:mt-6 sm:border-0 sm:bg-transparent sm:p-0 sm:shadow-none sm:backdrop-blur-none">
+            {totalAmount > 0 && (
+              <div className="shrink-0 sm:hidden">
+                <p className="text-[10px] leading-none text-slate-400">Total</p>
+                <p className="text-base font-extrabold leading-tight text-[#1A9E9E]">{fmtRp(totalAmount)}</p>
+              </div>
+            )}
+            <button
+              onClick={goForm}
+              disabled={!selLevel || !offlineReady}
+              className="w-full rounded-full bg-[#1A9E9E] py-3.5 text-sm font-bold text-white shadow-lg shadow-[#1A9E9E]/25 transition-all hover:bg-[#178888] active:scale-95 disabled:cursor-not-allowed disabled:opacity-40"
+            >
+              {!selLevel ? "Pilih level dulu" : !offlineReady ? "Isi kota/area kelas dulu" : "Lanjut ke Data Diri →"}
+            </button>
+          </div>
         </Card>
       )}
 

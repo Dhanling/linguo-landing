@@ -1264,6 +1264,26 @@ export default function ArticleContent({ post, relatedPosts }: { post: BlogPost;
           <div data-article-body dangerouslySetInnerHTML={{ __html: post.content }} />
         </article>
 
+        {/* [funnel-naik-v2] CTA ringkas tepat di akhir isi artikel. CTA utama ada di paling
+            bawah (sesudah komentar) dan hampir tak pernah terlihat: 30 hari s.d. 29 Okt 2026
+            1.364 sesi masuk lewat blog, cuma 1 yang sampai /daftar dan 4 klik CTA. */}
+        <div className={`mb-8 flex flex-col gap-3 rounded-2xl border p-5 sm:flex-row sm:items-center sm:justify-between ${darkMode ? "border-slate-700 bg-slate-800/60" : "border-[#1A9E9E]/20 bg-[#1A9E9E]/[0.05]"}`}>
+          <div className="min-w-0">
+            <p className={`text-sm font-bold ${darkMode ? "text-white" : "text-slate-900"}`}>
+              {langName ? `Mau lancar Bahasa ${langName}, bukan cuma baca artikelnya?` : "Mau lancar berbahasa asing, bukan cuma baca artikelnya?"}
+            </p>
+            <p className={`mt-0.5 text-xs ${darkMode ? "text-slate-400" : "text-slate-500"}`}>
+              Kelas live 1-on-1 atau grup, jadwal fleksibel. Lihat harga & pilih paket dalam 1 menit.
+            </p>
+          </div>
+          <a
+            href={daftarHref}
+            className="inline-flex shrink-0 items-center justify-center gap-1.5 rounded-full bg-[#1A9E9E] px-5 py-2.5 text-sm font-bold text-white transition-colors hover:bg-[#178585]"
+          >
+            Lihat paket & harga →
+          </a>
+        </div>
+
         {/* Social Bar — Clap + Share */}
         <div className={`social-bar flex items-center justify-between py-5 px-1 mb-8 border-y ${darkMode ? "border-slate-700" : "border-slate-100"}`}>
           <ClapButton postId={post.id} />
