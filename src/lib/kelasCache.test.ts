@@ -14,7 +14,11 @@ const store = new Map<string, string>();
   get length() { return store.size; },
 };
 
-let simpanDaftarLevel: any, readCache: any, levelRegsKey: any, STUDENT_ID_KEY: string;
+type ModulCache = typeof import('./kelasCache');
+let simpanDaftarLevel: ModulCache['simpanDaftarLevel'];
+let readCache: ModulCache['readCache'];
+let levelRegsKey: ModulCache['levelRegsKey'];
+let STUDENT_ID_KEY: string;
 beforeAll(async () => {
   ({ simpanDaftarLevel, readCache, levelRegsKey, STUDENT_ID_KEY } = await import('./kelasCache'));
 });
