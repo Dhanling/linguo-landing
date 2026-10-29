@@ -42,14 +42,14 @@ export interface EtpBatchRow {
 // ("website masih memajang batch Agustus padahal September sudah dipublish").
 export const ETP_FALLBACK_BATCHES: EtpBatchRow[] = [
   {
-    id: "toefl-oct26",
+    id: "toefl-nov26",
     title: "TOEFL Preparation",
     badge: "TOEFL",
     icon: "", // ikon dirender lewat <EtpIcon> (Lucide) berdasarkan badge
     color: "teal",
     days: "Senin & Rabu",
     time: "19.30 – 21.00 WIB",
-    start_date: "2026-10-26",
+    start_date: "2026-11-23",
     duration_min: 90,
     total_sessions: 16,
     price: 300000,
@@ -74,14 +74,14 @@ export const ETP_FALLBACK_BATCHES: EtpBatchRow[] = [
     is_active: true,
   },
   {
-    id: "ielts-oct26",
+    id: "ielts-nov26",
     title: "IELTS Preparation",
     badge: "IELTS",
     icon: "",
     color: "blue",
     days: "Selasa & Kamis",
     time: "19.30 – 21.00 WIB",
-    start_date: "2026-10-27",
+    start_date: "2026-11-24",
     duration_min: 90,
     total_sessions: 16,
     price: 300000,
@@ -129,8 +129,22 @@ export function isEtpBatchLive(row: EtpBatchRow, todayISO: string): boolean {
 // cadangan statik. Hasilnya identik di kedua tempat.
 export function resolveEtpBatches(rows: EtpBatchRow[] | null | undefined, todayISO: string): EtpBatchRow[] {
   const live = (rows || []).filter((r) => isEtpBatchLive(r, todayISO));
-  if (live.length) return live;
-  return ETP_FALLBACK_BATCHES.filter((r) => isEtpBatchLive(r, todayISO));
+  if (live.length) return gelombangTerbaru(live, todayISO);
+  return gelombangTerbaru(ETP_FALLBACK_BATCHES.filter((r) => isEtpBatchLive(r, todayISO)), todayISO);
+}
+
+// [etp-gelombang-terbaru-v1] Batch yang SUDAH mulai tapi belum kelar ikut lolos
+// isEtpBatchLive, jadi batch Oktober (26/27 Okt) tampil berdampingan dengan batch
+// November di halaman jadwal (Bug Tracker 5036eecb). Per jenis (badge) yang
+// ditampilkan cuma batch yang belum mulai; kalau belum ada gelombang berikutnya,
+// cukup batch terbaru — aturan yang sama dengan jadwal Reguler.
+function gelombangTerbaru(rows: EtpBatchRow[], todayISO: string): EtpBatchRow[] {
+  const terbaru: Record<string, string> = {};
+  for (const r of rows) {
+    const k = r.badge || r.title;
+    if (!terbaru[k] || String(r.start_date) > terbaru[k]) terbaru[k] = String(r.start_date);
+  }
+  return rows.filter((r) => String(r.start_date) >= todayISO || String(r.start_date) === terbaru[r.badge || r.title]);
 }
 
 // Tanggal kalender WIB (UTC+7) hari ini, 'YYYY-MM-DD'.
