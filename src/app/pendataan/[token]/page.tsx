@@ -134,6 +134,18 @@ function serializeBlocks(blocks: Set<string>): string {
   return out.join(", ");
 }
 
+/** [trial-jadwal-45-v1] Ada minimal satu rentang ≥ `n` kotak berurutan di hari
+ *  yang sama — trial 45 menit butuh 2 kotak (1 jam) supaya muat di dalamnya. */
+function hasConsecutiveRun(blocks: Set<string>, n: number): boolean {
+  for (const key of blocks) {
+    const [d, m] = key.split("|").map(Number);
+    let len = 1;
+    while (len < n && blocks.has(blockKey(d, m + len * STEP_MIN))) len++;
+    if (len >= n) return true;
+  }
+  return false;
+}
+
 const RANGE_RE = /^(\S+)\s+(\d{1,2})[.:](\d{2})\s*[-–]\s*(\d{1,2})[.:](\d{2})$/;
 const LEGACY_SLOT_RE = /^(\S+)\s+\w+\s*\((\d{1,2})-(\d{1,2})\)$/;   // "Senin pagi (08-12)"
 const LEGACY_SPECIFIC_RE = /^(\S+)\s+pukul\s+(\d{1,2})[.:](\d{2})$/; // "Senin pukul 13.00"
@@ -931,6 +943,8 @@ export default function PendataanPage() {
    *  data yang setengah terisi selalu berujung admin mengejar siswa satu per
    *  satu lewat WhatsApp. Email termasuk — akun belajar & kiriman materinya
    *  bergantung ke sana. */
+  const isTrial = /trial/i.test(form?.program || "");
+
   const stepError = (stepIndex: number): string => {
     const s = steps[stepIndex]?.kind;
     if (s === 4) {
@@ -985,6 +999,8 @@ export default function PendataanPage() {
       if (!goal.trim()) return "Ceritakan sedikit tujuan belajarmu";
     }
     if (s === 3 && blocks.size === 0) return "Pilih minimal 1 blok waktu yang kamu bisa";
+    if (s === 3 && isTrial && !hasConsecutiveRun(blocks, 2))
+      return "Untuk trial 45 menit, pilih minimal 2 kotak berurutan (1 jam), misal 19.00 + 19.30";
     if (s === 3 && form?.teacher_gender_choice && !teacherPref) return "Pilih preferensi pengajarmu";
     return "";
   };
@@ -1513,6 +1529,19 @@ export default function PendataanPage() {
                 <div className="space-y-4">
                   <StepHead icon={CalendarDays} title="Jadwal yang Diinginkan"
                     desc="1 kotak = 30 menit. Ketuk semua waktu yang kamu bisa (boleh banyak) — pilih rentang sepanjang 1 sesi kelasmu (mis. 60 menit = 2 kotak)." />
+
+                  {/* [trial-jadwal-45-v1] Siswa trial sering ragu: ini jadwal trial
+                      atau daftar paket? Jelaskan, dan kenapa minimal 2 kotak. */}
+                  {isTrial && (
+                    <div className="rounded-2xl border px-3.5 py-3 text-sm leading-relaxed text-slate-700"
+                      style={{ borderColor: `${TEAL}55`, background: `${TEAL}0d` }}>
+                      <p className="font-bold text-slate-900">Jadwal ini untuk Trial Class (45 menit), bukan pendaftaran paket.</p>
+                      <p className="mt-1">
+                        Pilih jam kamu luang, minimal <span className="font-bold text-slate-900">2 kotak berurutan (1 jam)</span>.
+                        Kelas trial 45 menit akan dijadwalkan di dalam rentang itu.
+                      </p>
+                    </div>
+                  )}
 
                   {/* Ikon + teks dibungkus span sendiri: kalau teksnya jadi anak
                       langsung flex, tiap potongan kalimat pecah jadi kolom. */}
