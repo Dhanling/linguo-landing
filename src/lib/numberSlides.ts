@@ -62,6 +62,12 @@ export function isNumberVocabulary(slide: MateriSlide): boolean {
   // Daftar bulan, tanggal, nada, ukuran, dan contoh hitungan tetap memakai tampilan aslinya.
   if (/bulan|months?|hijriyah|nada|tone|pelafalan|alfabet|tanggal|ukuran|counters?|kata ukur|operasi|operazioni|operações|hitungan|โทรศัพท์/i.test(slide.heading)) return false;
   const items = numberItems(slide), numericItems = items.filter(item => parseNumberItem(item).length > 0);
+  /* [angka-bukan-nomor-urut-v1] "1 — tempat dan tanggal surat" pada kerangka surat/cerita
+     adalah nomor urut bagian, bukan nama angka — butirnya kalimat dan artinya
+     "N — kalimat". Dulu slide polanya ikut dirender jadi slide angka 0–10. */
+  const kalimat = numericItems.filter(item => item.term.trim().split(/\s+/).length >= 4
+    && /^\d+\s*[—–-]\s+\S+(?:\s+\S+){2,}/.test(item.meaning.trim())).length;
+  if (kalimat * 2 > numericItems.length) return false;
   return numericItems.length >= 2 && numericItems.length / Math.max(items.length, 1) >= 0.45 && numberEntries(slide).length >= 4;
 }
 export function numberSystem(slide: MateriSlide): string {
