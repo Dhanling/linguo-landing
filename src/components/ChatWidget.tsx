@@ -5,6 +5,7 @@
 // linguo-patch:ling-chat-v4-redesign  — drawer UI: gradient header, avatar spin, WA strip, typing dots, composer pill, scrim blur. Semua wiring fungsional dipertahanin.
 // linguo-patch:ling-lesson-reposition-v2  — angkat launcher bubble di /akun/belajar biar ga nutupin tombol Selesaikan/Lanjut (panel drawer samping ga diutak-atik)
 // linguo-patch:ling-menu-flow-v1  — flow menu bernomor 1-6 ala WA bot: greeting tampilkan menu, chip = pilihan angka, nomor 6 langsung buka WA admin
+// linguo-patch:ling-prechat-kontak-v1  — isian wajib nama + WA + email sebelum chat (menu & composer dikunci sampai terisi)
 // linguo-patch:ling-intercom-v1  — fitur ala Intercom: riwayat chat persisten (muat ulang dari server), handoff WA pakai ringkasan AI, proactive teaser per halaman, nudge tombol admin saat bot eskalasi
 import { useState, useRef, useEffect, useSyncExternalStore } from "react";
 import { usePathname } from "next/navigation";
@@ -265,7 +266,17 @@ const CSS = `
 .lingw-teaser{transition:opacity .25s ease,transform .3s ease;}
 .lingw-teaser.away{animation:none;opacity:0;pointer-events:none;transform:translateY(24px);}
 @media (prefers-reduced-motion:reduce){.lingw-launcher.away,.lingw-teaser.away{transform:none;}}
+.lingw-pre{background:#fff;border:1.5px solid var(--teal-soft);border-radius:16px;padding:14px;margin:4px 0 8px;display:flex;flex-direction:column;gap:9px;}
+.lingw-pre-t{font-size:13.5px;font-weight:600;color:var(--ink);line-height:1.4;}
+.lingw-pre input{width:100%;box-sizing:border-box;border:1.5px solid var(--teal-soft);background:#F1F7F6;border-radius:10px;padding:10px 12px;font-size:15px;font-family:inherit;color:var(--ink);outline:none;}
+.lingw-pre input:focus{border-color:var(--teal);}
+.lingw-pre-err{font-size:12.5px;color:#C0392B;}
+.lingw-pre-btn{border:none;border-radius:999px;background:var(--teal);color:#fff;font-size:14.5px;font-weight:600;font-family:inherit;padding:11px;cursor:pointer;}
+.lingw-pre-btn:disabled{opacity:.5;cursor:default;}
+.lingw-pre-note{font-size:11.5px;color:#7A9591;text-align:center;}
 `;
+
+const CONTACT_KEY = "linguo_chat_contact";
 
 export default function ChatWidget() {
   const [open, setOpen] = useState(false);
@@ -279,6 +290,12 @@ export default function ChatWidget() {
   const [humanMode, setHumanMode] = useState(false);
   const [teaser, setTeaser] = useState<string | null>(null);
   const [waNudge, setWaNudge] = useState(false);
+  const [contactOk, setContactOk] = useState(false);
+  const [cName, setCName] = useState("");
+  const [cWa, setCWa] = useState("");
+  const [cEmail, setCEmail] = useState("");
+  const [cErr, setCErr] = useState("");
+  const [cBusy, setCBusy] = useState(false);
   const scrollRef = useRef<HTMLDivElement>(null);
   const adminCursor = useRef(0);
   const histLoaded = useRef(false);
@@ -335,6 +352,7 @@ export default function ChatWidget() {
         localStorage.setItem(k, v);
       }
       setSessionId(v);
+      if (localStorage.getItem(CONTACT_KEY)) setContactOk(true);
     } catch {
       /* localStorage diblok: jalan tanpa logging */
     }
@@ -383,6 +401,7 @@ export default function ChatWidget() {
         const arr: RawMsg[] = Array.isArray(data?.messages) ? data.messages : [];
         if (data?.ticket_no) setTicket(data.ticket_no);
         if (data?.status === "human") setHumanMode(true);
+        if (data?.has_contact) setContactOk(true);
         if (arr.length) {
           adminCursor.current = Math.max(
             adminCursor.current,
@@ -523,9 +542,60 @@ export default function ChatWidget() {
     else window.open(url, "_blank");
   }
 
+  // [ling-prechat-kontak-v1] simpan kontak dulu, baru chat dibuka.
+  async function submitContact() {
+    const name = cName.trim();
+    const digits = cWa.replace(/\D/g, "");
+    const email = cEmail.trim();
+    if (!name) return setCErr("Nama wajib diisi ya kak");
+    if (digits.length < 9 || digits.length > 16)
+      return setCErr("Nomor WhatsApp belum benar, contoh 0812xxxxxxx");
+    if (!/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(email))
+      return setCErr("Email belum benar, contoh nama@gmail.com");
+    setCErr("");
+    setCBusy(true);
+    try {
+      // localStorage diblok → tanpa sessionId; jalan tanpa logging seperti chat-nya.
+      if (!sessionId) throw new Error("no-session");
+      const res = await fetch("/api/chat/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          sessionId,
+          name,
+          wa: cWa,
+          email,
+          page: typeof window !== "undefined" ? window.location.pathname : null,
+        }),
+      });
+      const data = await res.json().catch(() => null);
+      if (res.status === 400) {
+        setCErr(data?.error || "Data belum valid");
+        return;
+      }
+    } catch {
+      /* jaringan gagal: jangan kunci pengunjung di luar chat */
+    } finally {
+      setCBusy(false);
+    }
+    try {
+      localStorage.setItem(CONTACT_KEY, "1");
+    } catch {
+      /* abaikan */
+    }
+    setContactOk(true);
+    setMessages((m) => [
+      ...m,
+      {
+        role: "assistant",
+        content: `Makasih kak ${name.split(/\s+/)[0]} 😊 Silakan pilih menu atau ketik pertanyaannya ya.`,
+      },
+    ]);
+  }
+
   async function send(forced?: string) {
     const text = (forced ?? input).trim();
-    if (!text || loading) return;
+    if (!text || loading || !contactOk) return;
     const next: Msg[] = [...messages, { role: "user", content: text }];
     setMessages(next);
     setInput("");
@@ -722,7 +792,47 @@ export default function ChatWidget() {
             </div>
           )}
 
-          {!loading && !humanMode && lastIsAssistant && (
+          {!contactOk && (
+            <form
+              className="lingw-pre"
+              onSubmit={(e) => {
+                e.preventDefault();
+                submitContact();
+              }}
+            >
+              <div className="lingw-pre-t">
+                Sebelum mulai, isi data singkat dulu ya kak biar admin bisa bantu follow up 🙏
+              </div>
+              <input
+                value={cName}
+                onChange={(e) => setCName(e.target.value)}
+                placeholder="Nama"
+                autoComplete="name"
+              />
+              <input
+                value={cWa}
+                onChange={(e) => setCWa(e.target.value)}
+                placeholder="Nomor WhatsApp (0812…)"
+                inputMode="tel"
+                autoComplete="tel"
+              />
+              <input
+                value={cEmail}
+                onChange={(e) => setCEmail(e.target.value)}
+                placeholder="Email"
+                type="email"
+                inputMode="email"
+                autoComplete="email"
+              />
+              {cErr && <div className="lingw-pre-err">{cErr}</div>}
+              <button type="submit" className="lingw-pre-btn" disabled={cBusy}>
+                {cBusy ? "Menyimpan…" : "Mulai chat"}
+              </button>
+              <div className="lingw-pre-note">Data kakak aman & cuma dipakai tim Linguo.</div>
+            </form>
+          )}
+
+          {contactOk && !loading && !humanMode && lastIsAssistant && (
             <div className="lingw-fu">
               <div className="lingw-fulabel">{IcSpark} Pilih menu</div>
               {MENU_CHIPS.map((c) => (
@@ -740,6 +850,7 @@ export default function ChatWidget() {
 
         {/* footer */}
         <div className="lingw-foot">
+          {contactOk && (
           <div className="lingw-composer">
             <input
               value={input}
@@ -761,6 +872,7 @@ export default function ChatWidget() {
               {IcSend}
             </button>
           </div>
+          )}
           <div className="lingw-powered">
             Didukung oleh <b>Linguo AI</b>
           </div>

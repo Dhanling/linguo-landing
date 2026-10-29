@@ -1432,6 +1432,8 @@ export async function POST(req: Request) {
     // --- Logging + ambil status/tiket (best-effort, ga boleh ngerusak chat) ---
     let ticket_no: string | null = null;
     let status = "bot";
+    let visitorName: string | null = null;
+    let hasContact = false;
     const db = sb();
     if (db && sessionId) {
       try {
@@ -1440,11 +1442,13 @@ export async function POST(req: Request) {
           .upsert({ id: sessionId, page }, { onConflict: "id", ignoreDuplicates: true });
         const { data: s } = await db
           .from("ling_chat_sessions")
-          .select("ticket_no,status")
+          .select("ticket_no,status,visitor_name,visitor_wa")
           .eq("id", sessionId)
           .maybeSingle();
         if (s) {
           ticket_no = (s as { ticket_no: string | null }).ticket_no;
+          visitorName = (s as { visitor_name: string | null }).visitor_name;
+          hasContact = !!(s as { visitor_wa: string | null }).visitor_wa;
           status = (s as { status: string }).status || "bot";
         }
         const last = msgs[msgs.length - 1];
@@ -1526,7 +1530,12 @@ export async function POST(req: Request) {
         getTeacherBlock(),
         getFxBlock(),
       ]);
-      return [SYSTEM, sched, offline, teacher, fxBlock].filter(Boolean).join("\n\n");
+      // [ling-prechat-kontak-v1] kontak sudah diisi lewat form sebelum chat →
+      // jangan minta nama/WA lagi.
+      const contact = hasContact
+        ? `DATA PENGUNJUNG: nama, nomor WhatsApp & email user SUDAH tercatat lewat form sebelum chat${visitorName ? ` (nama: ${visitorName}, sapa "kak ${visitorName.split(/\s+/)[0]}")` : ""}. JANGAN minta nama/nomor WA/email lagi.`
+        : "";
+      return [SYSTEM, contact, sched, offline, teacher, fxBlock].filter(Boolean).join("\n\n");
     })();
 
     const rawText = await callChatLLM(systemPrompt, msgs);

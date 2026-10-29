@@ -28,7 +28,7 @@ export async function POST(req: Request) {
 
     const { data: s } = await db
       .from("ling_chat_sessions")
-      .select("ticket_no,status")
+      .select("ticket_no,status,visitor_wa")
       .eq("id", sessionId)
       .maybeSingle();
 
@@ -55,6 +55,8 @@ export async function POST(req: Request) {
       messages: m || [],
       status: (s as { status?: string } | null)?.status || "bot",
       ticket_no: (s as { ticket_no?: string | null } | null)?.ticket_no || null,
+      // [ling-prechat-kontak-v1] sesi lama yang nomornya sudah ada → lewati isian kontak
+      has_contact: !!(s as { visitor_wa?: string | null } | null)?.visitor_wa,
     });
   } catch {
     return NextResponse.json({ messages: [], status: "bot", ticket_no: null });
