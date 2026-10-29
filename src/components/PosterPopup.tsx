@@ -58,6 +58,7 @@ const EXCLUDED = [
   "/micro-teaching",
   "/simulasi",
   "/watch",
+  "/links", // [link-bio-utm-v1] pengunjung bio sudah tahu tujuannya — data 30 hari (29 Okt): 26 orang cuma menekan Tutup
 ];
 
 export default function PosterPopup() {

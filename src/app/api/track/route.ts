@@ -114,16 +114,29 @@ export async function POST(req: NextRequest) {
       device,
     };
 
-    await fetch(`${SUPABASE_URL}/rest/v1/landing_page_events`, {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-        apikey: SUPABASE_KEY,
-        Authorization: `Bearer ${SUPABASE_KEY}`,
-        Prefer: "return=minimal",
-      },
-      body: JSON.stringify(row),
-    });
+    // [link-bio-utm-v1] Kolom sumber hanya dikirim kalau ada isinya. Kalau
+    // ditolak (kolom belum ada: sql/20261029_landing_page_events_utm.sql belum
+    // dijalankan) baris dicatat ulang tanpa kolom itu — view tak boleh hilang.
+    const sumber: Record<string, string> = {};
+    for (const k of ["utm_source", "utm_medium", "utm_campaign", "utm_content"]) {
+      const v = clampStr(body[k], 120).trim().toLowerCase();
+      if (v) sumber[k] = v;
+    }
+    if (["gclid", "ttclid", "msclkid", "fbclid"].includes(body.click_id)) sumber.click_id = body.click_id;
+
+    const insertView = (r: Record<string, unknown>) =>
+      fetch(`${SUPABASE_URL}/rest/v1/landing_page_events`, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          apikey: SUPABASE_KEY,
+          Authorization: `Bearer ${SUPABASE_KEY}`,
+          Prefer: "return=minimal",
+        },
+        body: JSON.stringify(r),
+      });
+    const res = await insertView({ ...row, ...sumber });
+    if (!res.ok && Object.keys(sumber).length) await insertView(row);
 
     return ok();
   } catch {

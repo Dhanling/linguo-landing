@@ -82,6 +82,28 @@ function beacon(payload: string) {
   }
 }
 
+// [link-bio-utm-v1] UTM & jenis click ID dari URL pendaratan. Cuma view pertama
+// yang membawanya — navigasi client Next membuang query — jadi sumber sesi =
+// view paling awal yang ber-UTM (mis. bio IG: /links?utm_source=ig&utm_content=link_in_bio).
+const UTM_KEYS = ["utm_source", "utm_medium", "utm_campaign", "utm_content"] as const;
+const CLICK_ID_KEYS = ["gclid", "ttclid", "msclkid", "fbclid"];
+
+function getSource(): Record<string, string> {
+  const src: Record<string, string> = {};
+  try {
+    const sp = new URLSearchParams(location.search);
+    for (const k of UTM_KEYS) {
+      const v = sp.get(k);
+      if (v) src[k] = v;
+    }
+    const id = CLICK_ID_KEYS.find((k) => sp.get(k));
+    if (id) src.click_id = id;
+  } catch {
+    // diamkan
+  }
+  return src;
+}
+
 // [landing-konversi-v1] Konversi nyata, bukan sekadar klik: "form" = data diri
 // lolos validasi, "invoice" = invoice Xendit berhasil dibuat (tepat sebelum
 // redirect — sendBeacon tetap terkirim walau halaman ditinggal). Masuk tabel
@@ -134,7 +156,7 @@ function sendClick(target: EventTarget | null) {
 export default function AnalyticsTracker() {
   const pathname = usePathname();
   // Kunjungan yang sedang berjalan: path + waktu masuk. null = tak sedang dilacak.
-  const current = useRef<{ path: string; enteredAt: number } | null>(null);
+  const current = useRef<{ path: string; enteredAt: number; src: Record<string, string> } | null>(null);
 
   useEffect(() => {
     // Kirim view yang sedang berjalan (dipanggil saat pindah halaman / tab hidden).
@@ -151,6 +173,7 @@ export default function AnalyticsTracker() {
         referrer: document.referrer,
         duration_ms,
         device: getDevice(),
+        ...c.src,
       });
       try {
         const blob = new Blob([payload], { type: "application/json" });
@@ -164,7 +187,7 @@ export default function AnalyticsTracker() {
 
     // Mulai lacak halaman saat ini (kalau termasuk halaman publik).
     if (isTracked(pathname)) {
-      current.current = { path: pathname, enteredAt: Date.now() };
+      current.current = { path: pathname, enteredAt: Date.now(), src: getSource() };
     }
 
     const onVisibility = () => {
@@ -172,7 +195,7 @@ export default function AnalyticsTracker() {
         flush();
       } else if (isTracked(pathname) && !current.current) {
         // kembali ke tab — mulai hitung ulang dari sekarang
-        current.current = { path: pathname, enteredAt: Date.now() };
+        current.current = { path: pathname, enteredAt: Date.now(), src: {} };
       }
     };
     document.addEventListener("visibilitychange", onVisibility);
