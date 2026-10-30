@@ -77,6 +77,19 @@ export const CERTIFICATE_COUNTRY_THEMES: Record<string, string> = {
 };
 
 const LANGUAGE_COUNTRIES: Record<string, string> = {
+  // Bahasa isyarat mengikuti wilayah komunitas asal pada katalog kelas.
+  "asl": "us",
+  "bahasa isyarat asl": "us",
+  "american sign language": "us",
+  "isyarat amerika": "us",
+  "bahasa isyarat amerika": "us",
+  "sign language asl": "us",
+  "bisindo": "id",
+  "bahasa isyarat bisindo": "id",
+  "bahasa isyarat indonesia": "id",
+  "isyarat indonesia": "id",
+  "indonesian sign language": "id",
+  "sign language bisindo": "id",
   "aceh": "id",
   "acehnese": "id",
   "afrikaans": "za",
@@ -299,6 +312,19 @@ const LANGUAGE_COUNTRIES: Record<string, string> = {
 };
 
 const REGIONAL_THEMES: Record<string, string> = {
+  "asl": "asl",
+  "bahasa isyarat asl": "asl",
+  "american sign language": "asl",
+  "isyarat amerika": "asl",
+  "bahasa isyarat amerika": "asl",
+  "sign language asl": "asl",
+  "bisindo": "bisindo",
+  "bahasa isyarat bisindo": "bisindo",
+  "bahasa isyarat indonesia": "bisindo",
+  "isyarat indonesia": "bisindo",
+  "indonesian sign language": "bisindo",
+  "sign language bisindo": "bisindo",
+
   "aceh": "acehnese",
   "acehnese": "acehnese",
   "afrikaans": "afrikaans",

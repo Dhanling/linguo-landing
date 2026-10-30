@@ -12,6 +12,10 @@
 // Sertifikat ikut muncul (window cetak, pola sama printProgressNote pengajar).
 
 import { useEffect, useState } from 'react';
+import { createRoot } from 'react-dom/client';
+import RaporPaper from './RaporPaper';
+import { TTD_RINI } from './simulasi/CertificateSheet';
+import { prepareCertificatePrintImages } from '@/lib/certificateImages';
 import { supabase } from '@/lib/supabase-client';
 import { cefr } from '@/components/akun/ClassProgressTab';
 import { BarChart2, Award, Printer, Mic, Headphones, BookOpen, PenLine, type LucideIcon } from 'lucide-react';
@@ -63,86 +67,41 @@ function esc(s: string): string {
   return s.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
 }
 
-// Cetak rapor: window print sederhana (siswa bisa "Simpan sebagai PDF").
+// Cetak memakai kertas yang sama dengan halaman rapor pada unduhan sertifikat.
 function printReport(opts: { report: any; studentName: string; reg: any; teacherName?: string }) {
   const { report, studentName, reg, teacherName } = opts;
-  const w = window.open('', '_blank');
+  const w = window.open('', '_blank', 'width=1180,height=880');
   if (!w) { alert('Popup diblokir. Izinkan popup untuk mencetak rapor.'); return; }
-  const skills = (report.skills || {}) as Record<string, SkillEntry>;
-  const att = report.attendance || {};
-  const rk = ringkasanDari(report.skills);
-  const adaNilai = SKILLS.some(({ key }) => Number.isFinite(skills[key]?.nilai));
-  const date = new Date(report.published_at).toLocaleDateString('id-ID', { day: 'numeric', month: 'long', year: 'numeric' });
-  const sesi = raporSesi(report.report_type);
-  const judul = sesi ? `Rapor Sesi ${sesi}` : (TYPE_LABEL[report.report_type] || 'Rapor');
-  w.document.write(`<!DOCTYPE html><html><head><meta charset="utf-8"><title>${esc(judul)} — ${esc(studentName)}</title>
-<style>
-  * { margin:0; padding:0; box-sizing:border-box; }
-  body { font-family:'Inter',-apple-system,sans-serif; padding:40px; color:#1a1a1a; max-width:820px; margin:0 auto; }
-  .header { display:flex; align-items:center; justify-content:space-between; border-bottom:3px solid #1A9E9E; padding-bottom:18px; margin-bottom:26px; }
-  .logo { font-size:26px; font-weight:700; color:#1A9E9E; } .logo span { color:#F5A623; }
-  .subtitle { font-size:11px; color:#888; }
-  .badge { background:#1A9E9E; color:white; padding:4px 14px; border-radius:20px; font-size:12px; font-weight:600; }
-  .info { background:#f8fffe; border:1px solid #e0f5f5; border-radius:12px; padding:18px; margin-bottom:22px; }
-  .name { font-size:22px; font-weight:700; } .detail { font-size:13px; color:#666; margin-top:4px; }
-  .st { font-size:13px; font-weight:700; color:#1A9E9E; margin-bottom:10px; text-transform:uppercase; letter-spacing:.5px; }
-  .row { display:flex; align-items:center; gap:10px; margin-bottom:10px; }
-  .sn { width:110px; font-size:13px; font-weight:600; }
-  .bar { flex:1; height:8px; background:#eee; border-radius:4px; overflow:hidden; }
-  .fill { height:100%; background:#1A9E9E; border-radius:4px; }
-  .val { width:140px; text-align:right; font-size:12px; font-weight:700; color:#1A9E9E; }
-  .att { display:grid; grid-template-columns:repeat(4,1fr); gap:10px; margin:6px 0 22px; }
-  .att-card { background:#fffef5; border:1px solid #f5e6a3; border-radius:10px; padding:12px; text-align:center; }
-  .att-num { font-size:20px; font-weight:700; color:#F5A623; } .att-lbl { font-size:11px; color:#888; margin-top:2px; }
-  .note { background:#f9f9f9; border-left:3px solid #1A9E9E; padding:13px 15px; border-radius:0 8px 8px 0; margin-bottom:14px; font-size:13px; color:#444; line-height:1.6; }
-  .footer { border-top:2px solid #eee; padding-top:14px; margin-top:28px; display:flex; justify-content:space-between; font-size:11px; color:#aaa; }
-  @media print { body { padding:20px; } .no-print { display:none; } }
-</style></head><body>
-  <div class="no-print" style="text-align:center;margin-bottom:18px;">
-    <button onclick="window.print()" style="background:#1A9E9E;color:white;border:none;padding:10px 30px;border-radius:8px;font-size:14px;font-weight:600;cursor:pointer;">📄 Cetak / Simpan PDF</button>
-  </div>
-  <div class="header">
-    <div><div class="logo">Linguo<span>.id</span></div><div class="subtitle">Online Language School</div></div>
-    <div class="badge">${esc(judul.toUpperCase())}</div>
-  </div>
-  <div class="info">
-    <div class="name">${esc(studentName)}</div>
-    <div class="detail">${esc(reg.language || '')}${reg.level ? ' — Level ' + esc(reg.level) : ''}${teacherName ? ' • Pengajar: ' + esc(teacherName) : ''}</div>
-    <div class="detail" style="margin-top:2px;">Diterbitkan: ${date}</div>
-  </div>
-  ${rk ? `<div style="display:flex;align-items:center;gap:18px;background:#f0faf8;border:1px solid #cdeee8;border-radius:12px;padding:16px 20px;margin-bottom:22px;">
-    <div style="text-align:center;min-width:110px;"><div style="font-size:40px;font-weight:700;color:#1A9E9E;line-height:1;">${rk.nilai_akhir}</div><div style="font-size:12px;font-weight:600;margin-top:4px;">${predikat(rk.nilai_akhir).huruf} · ${predikat(rk.nilai_akhir).label}</div></div>
-    <div style="flex:1;font-size:12px;color:#555;line-height:1.7;">
-      <div><b>Nilai Akhir</b></div>
-      <div>Rata-rata skill ${rk.rata_skill} (${rk.bobot.skill}%)${rk.kuis ? ` · Kuis ${rk.kuis.rata} (${rk.bobot.kuis}%)` : ''}${rk.pr ? ` · PR ${rk.pr.dikumpulkan}/${rk.pr.diberikan} (${rk.bobot.pr}%)` : ''}${rk.hadir ? ` · Kehadiran ${rk.hadir.persen} (${rk.bobot.hadir}%)` : ''}</div>
-      ${rk.status ? `<div style="margin-top:4px;font-weight:700;color:${rk.status === 'ulang' ? '#c0392b' : rk.status === 'bersyarat' ? '#d4880f' : '#1A9E9E'};">${esc(STATUS_LABEL[rk.status] || '')}</div>` : ''}
-    </div></div>` : ''}
-  <div class="st">Kemampuan 4 Skill${adaNilai ? ' · Nilai 0–100' : ' · Standar CEFR'}</div>
-  ${SKILLS.map(({ key, label }) => {
-    const v = skills[key]?.score || 0;
-    const n = skills[key]?.nilai;
-    if (adaNilai) {
-      const nv = Number.isFinite(n) ? (n as number) : 0;
-      return `<div class="row"><div class="sn">${label}</div><div class="bar"><div class="fill" style="width:${nv}%"></div></div><div class="val">${Number.isFinite(n) ? nv + ' · ' + predikat(nv).huruf : '-'}${v ? ' · ' + cefr(v).band : ''}</div></div>` +
-        (skills[key]?.note ? `<div style="font-size:11px;color:#777;margin:-6px 0 10px 120px;">${esc(skills[key]!.note!)}</div>` : '');
-    }
-    return `<div class="row"><div class="sn">${label}</div><div class="bar"><div class="fill" style="width:${(v / 5) * 100}%"></div></div><div class="val">${v ? cefr(v).band + ' · ' + cefr(v).name : '-'}</div></div>` +
-      (skills[key]?.note ? `<div style="font-size:11px;color:#777;margin:-6px 0 10px 120px;">${esc(skills[key]!.note!)}</div>` : '');
-  }).join('')}
-  <div class="st" style="margin-top:18px;">Kehadiran</div>
-  <div class="att">
-    <div class="att-card"><div class="att-num">${att.attended ?? '-'}/${att.total ?? '-'}</div><div class="att-lbl">Sesi hadir</div></div>
-    <div class="att-card"><div class="att-num">${att.rate ?? '-'}%</div><div class="att-lbl">Tingkat kehadiran</div></div>
-    <div class="att-card"><div class="att-num">${att.hangus ?? 0}</div><div class="att-lbl">Sesi hangus</div></div>
-    <div class="att-card"><div class="att-num">${att.cancelled ?? 0}</div><div class="att-lbl">Sesi batal</div></div>
-  </div>
-  ${report.teacher_comment ? `<div class="st">Komentar Pengajar</div><div class="note">${esc(report.teacher_comment)}</div>` : ''}
-  ${report.recommendation ? `<div class="st">Rekomendasi</div><div class="note" style="border-left-color:#F5A623;">${esc(report.recommendation)}</div>` : ''}
-  <div class="footer"><div>Linguo.id — Online Language School</div><div>Dicetak ${new Date().toLocaleDateString('id-ID', { day: 'numeric', month: 'long', year: 'numeric' })}</div></div>
-</body></html>`);
+  w.document.write(`<!DOCTYPE html><html><head><meta charset="utf-8"><title>Rapor — ${esc(studentName)}</title><style>
+    * { box-sizing: border-box; } body { margin: 0; background: #fff9e8; }
+    .cert-paper { print-color-adjust: exact; -webkit-print-color-adjust: exact; }
+    .no-print { padding: 16px; text-align: center; }
+    button { padding: 10px 24px; border: 0; border-radius: 8px; background: #1A9E9E; color: white; cursor: pointer; }
+    @page { size: A4 landscape; margin: 0; }
+    @media print { .no-print { display: none; } }
+  </style></head><body><div id="report-root"></div></body></html>`);
   w.document.close();
+  const root = createRoot(w.document.getElementById('report-root')!);
+  const print = async () => {
+    try {
+      const paper = w.document.querySelector<HTMLElement>('[data-rapor-paper]');
+      if (!paper) return;
+      await prepareCertificatePrintImages(paper);
+      await Promise.all(Array.from(paper.querySelectorAll('img')).map(img => img.decode()));
+      w.focus();
+      w.print();
+    } catch {
+      w.alert('Gambar rapor belum siap. Coba cetak lagi setelah gambar selesai dimuat.');
+    }
+  };
+  root.render(<>
+    <div className="no-print"><button onClick={print}>Cetak / Simpan PDF</button></div>
+    <div style={{ width: 1120 }}>
+      <RaporPaper report={report} name={studentName} language={reg.language || ''} level={reg.level || ''} programme={reg.programme || reg.class_type || ''} teacher={teacherName || '—'} signature={TTD_RINI.src} signer={{ name: TTD_RINI.nama, role: TTD_RINI.jabatan }} />
+    </div>
+  </>);
+  w.addEventListener('beforeunload', () => root.unmount(), { once: true });
 }
-
 
 // [rapor-ke-sertifikat-v1] Dulu tombol ini mencetak sertifikat versi lama di jendela baru
 // (nama "Siswa", tanpa rapor) — beda dari menu Sertifikat (sertifikat + rapor 2 halaman).
