@@ -214,6 +214,22 @@ function muatPdfjs(): Promise<any> {
   return pdfjsPromise;
 }
 
+/* [ebook-worker-coba-ulang-v1] 30 Okt 2026, laporan Faujiah (50226a55): siswa
+   Private Jepang B1 di HP Android melihat galat mentah pdf.js "Setting up fake
+   worker failed: Failed to fetch dynamically imported module …/pdf.worker.min.mjs".
+   Berkasnya ada di server — yang putus koneksi HP-nya waktu worker 1,3 MB itu
+   diunduh. Galat semacam ini dicoba ulang sekali diam-diam, dan kalau tetap
+   gagal siswa dapat kalimat yang bisa dipahami + tombol Coba lagi. */
+function galatJaringanWorker(e: any): boolean {
+  const pesan = String(e?.message || e || "");
+  return /worker|dynamically imported module|Failed to fetch|Load failed|NetworkError/i.test(pesan);
+}
+
+/** Alamat worker baru supaya percobaan ulang tidak memakai unduhan yang gagal. */
+function segarkanWorker(pdfjs: any, ke: number) {
+  try { pdfjs.GlobalWorkerOptions.workerSrc = `/pdfjs/pdf.worker.min.mjs?r=${ke}`; } catch { /* tak apa */ }
+}
+
 /* ── layar penuh ───────────────────────────────────────────────────────────
    Reader ini menutupi halaman, tapi bilah tab & alamat browser tetap terlihat —
    di laptop 13" itu memakan tinggi yang justru dipakai menghitung skala "muat
@@ -1233,6 +1249,9 @@ export default function EbookReader({
      berkelip sekejap justru terasa lebih lambat daripada tanpa spinner. */
   const [tundaMemuat, setTundaMemuat] = useState(false);
   const [galat, setGalat] = useState<string | null>(null);
+  /** [ebook-worker-coba-ulang-v1] Dinaikkan untuk memuat ulang modul dari awal. */
+  const [cobaKe, setCobaKe] = useState(0);
+  const galatWorkerRef = useRef(false);
   /* [ebook-testprep-pas-lebar-v1] 17 Sep 2026, review Rini (86f1efa7) — modul
      IELTS/TOEFL padat teks & soal; dibuka dua halaman yang dimuatkan ke TINGGI
      layar, hurufnya kekecilan sampai siswa harus memperbesar sendiri. Modul
@@ -1400,6 +1419,8 @@ export default function EbookReader({
   /* ── muat dokumen ──────────────────────────────────────────────────────── */
   useEffect(() => {
     let hidup = true;
+    // [ebook-worker-coba-ulang-v1] Muat ulang sesudah galat worker: layar tunggu lagi.
+    if (cobaKe > 0) { setMemuat(true); setGalat(null); galatWorkerRef.current = false; }
     // [ebook-buka-instan-v1] Dokumen yang sama masih hidup dari pembukaan
     // sebelumnya → tak ada yang perlu diunduh maupun diurai lagi.
     const simpananDoc = docCache?.id === purchaseId ? docCache.doc : null;
@@ -1589,7 +1610,17 @@ export default function EbookReader({
         // kalau ternyata sudah terbit ulang, dokumennya ditukar di tempat.
         if (edisiBaru) void edisiBaru.then((buf) => { if (buf) void gantiKeEdisiBaru(buf); });
       } catch (e: any) {
-        if (hidup) setGalat(e?.message || tr("Gagal memuat modul"));
+        if (!hidup) return;
+        if (galatJaringanWorker(e)) {
+          if (pdfjsRef.current) segarkanWorker(pdfjsRef.current, cobaKe + 1);
+          // Percobaan pertama yang gagal diulang sendiri; sesudahnya tombol.
+          if (cobaKe === 0) { setCobaKe(1); return; }
+          galatWorkerRef.current = true;
+          setGalat(tr("Koneksi terputus saat menyiapkan pembaca e-book. Periksa internet, lalu tekan Coba lagi."));
+        } else {
+          galatWorkerRef.current = false;
+          setGalat(e?.message || tr("Gagal memuat modul"));
+        }
       } finally {
         if (jedaTunggu) window.clearTimeout(jedaTunggu);
         if (hidup) { setMemuat(false); setTundaMemuat(false); }
@@ -1609,7 +1640,7 @@ export default function EbookReader({
       teksRef.current.clear();
       hentikanEbookTts();
     };
-  }, [purchaseId, accessToken, pratinjauUrl]);
+  }, [purchaseId, accessToken, pratinjauUrl, cobaKe]);
 
   /* Berkas soal diminta terpisah dari PDF-nya dan TIDAK ditunggu: modulnya
      harus sudah bisa dibaca walau soalnya belum sampai (atau tak ada). */
@@ -3672,6 +3703,14 @@ export default function EbookReader({
           <div className="m-auto max-w-sm px-6 text-center">
             <AlertCircle className="mx-auto mb-3 h-8 w-8 text-amber-400" />
             <p className="text-[14px] font-bold text-white">{galat}</p>
+            {galatWorkerRef.current && (
+              <button
+                onClick={() => { setGalat(null); setCobaKe((n) => n + 1); }}
+                className="mr-2 mt-4 rounded-xl bg-amber-400 px-4 py-2 text-[13px] font-bold text-black transition hover:bg-amber-300"
+              >
+                {t("Coba lagi")}
+              </button>
+            )}
             <button
               onClick={onClose}
               className="mt-4 rounded-xl bg-white/10 px-4 py-2 text-[13px] font-bold text-white transition hover:bg-white/20"
