@@ -1,4 +1,5 @@
 'use client';
+import { isPortugueseBrBodyCover } from '@/data/portugueseBrBodyBackground';
 import { isB2LanguageBodyCover, isB2LanguageCover } from '@/data/b2LanguageArtwork';
 import { isB1LanguageBodyCover, isB1LanguageCover } from '@/data/b1LanguageArtwork';
 import { isA2LanguageBodyCover, isA2LanguageCover } from '@/data/a2LanguageArtwork';
@@ -366,7 +367,7 @@ export function SlideBody({ s, kunci, lang }: { s: MateriSlide; kunci?: boolean;
      putih sendiri (kiri 1,9% · kanan 25,8% · atas 3,4% gambar). Panel CSS di atasnya
      dulu bergeser beberapa piksel → dua panel bertumpuk (laporan owner 30 Okt 2026,
      Rumania di Linguo Meet). Kini panel CSS transparan dan isinya duduk di panel gambar. */
-  const panelBawaan = !!frenchTheme || isA1LanguageBodyCover(s.cover) || isA2LanguageBodyCover(s.cover) || isB1LanguageBodyCover(s.cover) || isB2LanguageBodyCover(s.cover);
+  const panelBawaan = !!frenchTheme || isA1LanguageBodyCover(s.cover) || isA2LanguageBodyCover(s.cover) || isB1LanguageBodyCover(s.cover) || isB2LanguageBodyCover(s.cover) || isPortugueseBrBodyCover(s.cover);
   const ruangTeks = panelBawaan ? "pr-[25.8cqw]" : kiriSaja ? (isImagegenA2GoalCover(s.cover) ? "pr-[55cqw]" : "pr-[45cqw]") : "pr-[4cqw]";
   /* Slide yang isinya banyak dikecilkan sedikit supaya tetap muat tanpa gulir. */
   const n = s.items?.length || s.lines?.length || s.quiz?.length || s.examples?.length || s.points?.length || s.questions?.length || 0;
