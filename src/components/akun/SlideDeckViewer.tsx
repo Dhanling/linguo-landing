@@ -1,4 +1,5 @@
 'use client';
+import { isB1LanguageBodyCover, isB1LanguageCover } from '@/data/b1LanguageArtwork';
 import { isA2LanguageBodyCover, isA2LanguageCover } from '@/data/a2LanguageArtwork';
 import { isA1LanguageBodyCover, isA1LanguageCover } from '@/data/a1LanguageArtwork';
 import FrenchThematicSlide, { FrenchThematicTitle } from "./FrenchThematicSlide";
@@ -364,7 +365,7 @@ export function SlideBody({ s, kunci, lang }: { s: MateriSlide; kunci?: boolean;
      putih sendiri (kiri 1,9% · kanan 25,8% · atas 3,4% gambar). Panel CSS di atasnya
      dulu bergeser beberapa piksel → dua panel bertumpuk (laporan owner 30 Okt 2026,
      Rumania di Linguo Meet). Kini panel CSS transparan dan isinya duduk di panel gambar. */
-  const panelBawaan = !!frenchTheme || isA1LanguageBodyCover(s.cover) || isA2LanguageBodyCover(s.cover);
+  const panelBawaan = !!frenchTheme || isA1LanguageBodyCover(s.cover) || isA2LanguageBodyCover(s.cover) || isB1LanguageBodyCover(s.cover);
   const ruangTeks = panelBawaan ? "pr-[25.8cqw]" : kiriSaja ? (isImagegenA2GoalCover(s.cover) ? "pr-[55cqw]" : "pr-[45cqw]") : "pr-[4cqw]";
   /* Slide yang isinya banyak dikecilkan sedikit supaya tetap muat tanpa gulir. */
   const n = s.items?.length || s.lines?.length || s.quiz?.length || s.examples?.length || s.points?.length || s.questions?.length || 0;
@@ -572,7 +573,7 @@ export function SlideCard({ s, showAnswers, lang, className = "" }: {
       <div aria-hidden className="pointer-events-none absolute right-[16%] top-[9%] aspect-square w-[5%] rounded-full"
         style={{ background: judul ? "rgba(255,255,255,0.18)" : tema.aksen, opacity: judul ? 1 : 0.16 }} />
       </>)}
-      {judul && (isA1LanguageCover(s.cover) || isA2LanguageCover(s.cover)) && <div aria-hidden className="pointer-events-none absolute inset-0"
+      {judul && (isA1LanguageCover(s.cover) || isA2LanguageCover(s.cover) || isB1LanguageCover(s.cover)) && <div aria-hidden className="pointer-events-none absolute inset-0"
         style={{ background: "linear-gradient(180deg,rgba(5,56,64,0.38),rgba(5,56,64,0.16) 65%,transparent)" }} />}
       {/* [slide-watermark-v1] Tanda air: logo besar pudar + tulisan miring berulang.
           Ikut terekam di tangkapan layar/rekaman, tapi tidak mengganggu baca. */}
