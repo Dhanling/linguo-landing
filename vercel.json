@@ -18,6 +18,10 @@
     {
       "path": "/api/cron/indexnow",
       "schedule": "30 23 * * *"
+    },
+    {
+      "path": "/api/cron/availability-reminder",
+      "schedule": "0 2 * * *"
     }
   ]
 }
