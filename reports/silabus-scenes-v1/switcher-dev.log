@@ -1,0 +1,32 @@
+▲ Next.js 16.2.2 (webpack)
+- Local:         http://localhost:3218
+- Network:       http://192.168.1.4:3218
+- Environments: .env.local
+✓ Ready in 255ms
+⚠ Warning: Next.js inferred your workspace root, but it may not be correct.
+ We detected multiple lockfiles and selected the directory of /Users/muhamadlutfiramadhani/package-lock.json as the root directory.
+ To silence this warning, set `outputFileTracingRoot` in your Next.js config, or consider removing one of the lockfiles if it's not needed.
+   See https://nextjs.org/docs/app/api-reference/config/next-config-js/output#caveats for more information.
+ Detected additional lockfiles: 
+   * /Users/muhamadlutfiramadhani/linguo-admin-dashboard/.worktrees/silabus-semua-karakter/package-lock.json
+   * /Users/muhamadlutfiramadhani/linguo-admin-dashboard/package-lock.json
+
+⚠ The "middleware" file convention is deprecated. Please use "proxy" instead. Learn more: https://nextjs.org/docs/messages/middleware-to-proxy
+- Experiments (use with caution):
+  · optimizePackageImports
+
+ GET /silabus/english 200 in 4.2s (next.js: 3.5s, proxy.ts: 171ms, generate-params: 613ms, application-code: 506ms)
+ GET /silabus/english 200 in 234ms (next.js: 104ms, proxy.ts: 8ms, generate-params: 3ms, application-code: 121ms)
+ GET /api/batch-reguler-terdekat 200 in 1488ms (next.js: 1115ms, application-code: 373ms)
+ GET /silabus/english 200 in 443ms (next.js: 149ms, proxy.ts: 8ms, generate-params: 2ms, application-code: 286ms)
+ GET /api/batch-reguler-terdekat 200 in 169ms (next.js: 30ms, application-code: 139ms)
+ POST /api/track 204 in 97ms (next.js: 7ms, application-code: 90ms)
+ POST /api/track 204 in 129ms (next.js: 3ms, application-code: 126ms)
+ GET /silabus/english 200 in 90ms (next.js: 25ms, proxy.ts: 7ms, generate-params: 4ms, application-code: 59ms)
+ POST /api/track 204 in 225ms (next.js: 1322µs, application-code: 224ms)
+ POST /api/track 204 in 368ms (next.js: 1191µs, application-code: 367ms)
+ GET /silabus/dutch 200 in 337ms (next.js: 12ms, proxy.ts: 18ms, generate-params: 22µs, application-code: 307ms)
+ GET /silabus/dutch 200 in 113ms (next.js: 46ms, proxy.ts: 21ms, generate-params: 32µs, application-code: 46ms)
+[browser] Detected `scroll-behavior: smooth` on the `<html>` element. To disable smooth scrolling during route transitions, add `data-scroll-behavior="smooth"` to your <html> element. Learn more: https://nextjs.org/docs/messages/missing-data-scroll-behavior
+ POST /api/track 200 in 237ms (next.js: 2ms, application-code: 235ms)
+[?25h

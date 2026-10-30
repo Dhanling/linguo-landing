@@ -1,0 +1,31 @@
+import {chromium} from '/Users/muhamadlutfiramadhani/.npm/_npx/ad9a3fdbcad992c6/node_modules/playwright-core/index.mjs';
+const browser=await chromium.launch({executablePath:'/Applications/Google Chrome.app/Contents/MacOS/Google Chrome',headless:true});
+try {
+const page=await browser.newPage({viewport:{width:1440,height:1000}});
+const errors=[];page.on('pageerror',e=>errors.push(e.message));
+await page.goto('http://localhost:3218/silabus/english',{waitUntil:'networkidle',timeout:120000});
+await page.getByRole('button',{name:'Ganti bahasa',exact:true}).click();
+const dialog=page.getByRole('dialog');await dialog.waitFor();
+const search=page.getByRole('searchbox',{name:'Cari bahasa'});
+if(!await search.evaluate(e=>e===document.activeElement))throw Error('Fokus pencarian belum aktif');
+if(await dialog.getByRole('link').count()!==55)throw Error('Daftar bukan 55 bahasa');
+if(await dialog.locator('a[aria-current="page"]').getAttribute('href')!=='/silabus/english')throw Error('Bahasa aktif tidak ditandai');
+await page.screenshot({path:'reports/silabus-scenes-v1/switcher-desktop.png'});
+await search.fill('francais');if(await dialog.getByRole('link').count()!==1)throw Error('Pencarian tanpa aksen gagal');
+await search.fill('zzzzz');await page.getByText('Bahasa tidak ditemukan',{exact:true}).waitFor();
+await search.fill('');await page.keyboard.press('Escape');await dialog.waitFor({state:'hidden'});
+if(!await page.getByRole('button',{name:'Ganti bahasa',exact:true}).evaluate(e=>e===document.activeElement))throw Error('Fokus tidak kembali');
+await page.getByRole('button',{name:'Ganti bahasa',exact:true}).click();
+await page.mouse.click(8,8);await dialog.waitFor({state:'hidden'});
+await page.setViewportSize({width:390,height:844});
+await page.getByRole('button',{name:'Ganti bahasa',exact:true}).click();
+await search.fill('Belanda');
+await page.screenshot({path:'reports/silabus-scenes-v1/switcher-mobile.png'});
+const box=await dialog.boundingBox();if(!box||box.x<0||box.x+box.width>391)throw Error('Dialog melebar di HP');
+await dialog.getByRole('link',{name:/Belanda/}).click();
+await page.waitForURL('**/silabus/dutch');await page.getByRole('heading',{level:1,name:'Bahasa Belanda',exact:true}).waitFor();
+if(await page.locator('dialog[open]').count())throw Error('Dialog tidak tertutup setelah pilih bahasa');
+if(await page.evaluate(()=>document.body.style.overflow)==='hidden')throw Error('Scroll halaman belum pulih');
+if(errors.length)throw Error(errors.join('\n'));
+console.log('Lulus: 55 bahasa, ikon, bahasa aktif, autofokus, pencarian aksen, hasil kosong, Escape/fokus kembali, backdrop, mobile, navigasi Belanda, dan scroll pulih.');
+} finally {await browser.close();}

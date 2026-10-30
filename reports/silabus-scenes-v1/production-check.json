@@ -1,0 +1,51 @@
+{
+  "commit": "5ff3c3c3",
+  "deployment": "success",
+  "checks": [
+    {
+      "url": "https://linguo.id/silabus/english",
+      "status": 200,
+      "new_session_cards": true,
+      "assets": [
+        {
+          "path": "/images/silabus/scenes-v1/english.webp",
+          "status": 200
+        },
+        {
+          "path": "/images/silabus/first-chapter-v1/english.webp",
+          "status": 200
+        }
+      ]
+    },
+    {
+      "url": "https://linguo.id/silabus/dutch",
+      "status": 200,
+      "new_session_cards": true,
+      "assets": [
+        {
+          "path": "/images/silabus/scenes-v1/dutch.webp",
+          "status": 200
+        },
+        {
+          "path": "/images/silabus/first-chapter-v1/dutch.webp",
+          "status": 200
+        }
+      ]
+    },
+    {
+      "url": "https://linguo.id/silabus/arabic",
+      "status": 200,
+      "new_session_cards": true,
+      "assets": [
+        {
+          "path": "/images/silabus/scenes-v1/arabic.webp",
+          "status": 200
+        },
+        {
+          "path": "/images/silabus/first-chapter-v1/arabic.webp",
+          "status": 200
+        }
+      ]
+    }
+  ]
+}

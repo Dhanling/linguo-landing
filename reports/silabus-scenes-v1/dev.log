@@ -1,0 +1,52 @@
+▲ Next.js 16.2.2 (webpack)
+- Local:         http://localhost:3218
+- Network:       http://192.168.1.4:3218
+- Environments: .env.local
+✓ Ready in 185ms
+⚠ Warning: Next.js inferred your workspace root, but it may not be correct.
+ We detected multiple lockfiles and selected the directory of /Users/muhamadlutfiramadhani/package-lock.json as the root directory.
+ To silence this warning, set `outputFileTracingRoot` in your Next.js config, or consider removing one of the lockfiles if it's not needed.
+   See https://nextjs.org/docs/app/api-reference/config/next-config-js/output#caveats for more information.
+ Detected additional lockfiles: 
+   * /Users/muhamadlutfiramadhani/linguo-admin-dashboard/.worktrees/silabus-semua-karakter/package-lock.json
+   * /Users/muhamadlutfiramadhani/linguo-admin-dashboard/package-lock.json
+
+⚠ The "middleware" file convention is deprecated. Please use "proxy" instead. Learn more: https://nextjs.org/docs/messages/middleware-to-proxy
+- Experiments (use with caution):
+  · optimizePackageImports
+
+ GET /silabus/russian 200 in 4.4s (next.js: 3.8s, proxy.ts: 186ms, generate-params: 712ms, application-code: 446ms)
+ GET /silabus/russian 200 in 199ms (next.js: 85ms, proxy.ts: 6ms, generate-params: 1672µs, application-code: 108ms)
+ GET /api/batch-reguler-terdekat 200 in 1357ms (next.js: 950ms, application-code: 407ms)
+ GET /silabus/russian 200 in 32ms (next.js: 6ms, proxy.ts: 5ms, generate-params: 1382µs, application-code: 21ms)
+ POST /api/track 204 in 393ms (next.js: 230ms, application-code: 163ms)
+ GET /silabus/russian 200 in 202ms (next.js: 45ms, proxy.ts: 5ms, generate-params: 2ms, application-code: 152ms)
+ POST /api/track 204 in 120ms (next.js: 2ms, application-code: 118ms)
+ POST /api/track 204 in 132ms (next.js: 1941µs, application-code: 130ms)
+⨯ Error: Manifest file is empty
+    at ignore-listed frames {
+  page: '/api/track'
+}
+ GET /silabus/swedish 200 in 418ms (next.js: 144ms, proxy.ts: 10ms, generate-params: 3ms, application-code: 264ms)
+ POST /api/track 500 in 2.4s (next.js: 2.4s, application-code: 57ms)
+ GET /api/batch-reguler-terdekat 200 in 127ms (next.js: 42ms, application-code: 85ms)
+ GET /silabus/swedish 200 in 290ms (next.js: 156ms, proxy.ts: 8ms, generate-params: 1670µs, application-code: 126ms)
+ GET /silabus/swedish 200 in 33ms (next.js: 6ms, proxy.ts: 5ms, generate-params: 1463µs, application-code: 22ms)
+ GET /silabus/russian 200 in 571ms (next.js: 250ms, proxy.ts: 15ms, generate-params: 3ms, application-code: 306ms)
+ GET /api/batch-reguler-terdekat 200 in 497ms (next.js: 308ms, application-code: 189ms)
+ POST /api/track 204 in 302ms (next.js: 84ms, application-code: 218ms)
+ POST /api/track 204 in 738ms (next.js: 249ms, application-code: 489ms)
+ GET /silabus/russian 200 in 226ms (next.js: 73ms, proxy.ts: 6ms, generate-params: 1887µs, application-code: 148ms)
+ POST /api/track 204 in 83ms (next.js: 1820µs, application-code: 81ms)
+ POST /api/track 204 in 104ms (next.js: 1806µs, application-code: 102ms)
+ POST /api/track 204 in 102ms (next.js: 1643µs, application-code: 100ms)
+⨯ SyntaxError: Unexpected end of JSON input
+    at JSON.parse (<anonymous>) {
+  page: '/api/track'
+}
+ GET /silabus/swedish 200 in 448ms (next.js: 159ms, proxy.ts: 5ms, generate-params: 1961µs, application-code: 284ms)
+ POST /api/track 500 in 719ms (next.js: 693ms, application-code: 26ms)
+ GET /api/batch-reguler-terdekat 200 in 119ms (next.js: 45ms, application-code: 74ms)
+[browser] Image with src "/popup-reguler-september.jpg" was detected as the Largest Contentful Paint (LCP). Please add the `loading="eager"` property if this image is above the fold.
+Read more: https://nextjs.org/docs/app/api-reference/components/image#loading
+[?25h
