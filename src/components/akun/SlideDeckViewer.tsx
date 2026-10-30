@@ -360,7 +360,12 @@ export function SlideBody({ s, kunci, lang }: { s: MateriSlide; kunci?: boolean;
      putih di dalamnya (putih di atas putih kehilangan bentuk). */
   const panel = !!s.cover;
   const kiriSaja = s.ruang === "kiri";
-  const ruangTeks = (frenchTheme || isA1LanguageBodyCover(s.cover) || isA2LanguageBodyCover(s.cover)) ? "pr-[24cqw]" : kiriSaja ? (isImagegenA2GoalCover(s.cover) ? "pr-[55cqw]" : "pr-[45cqw]") : "pr-[4cqw]";
+  /* [slide-panel-bawaan-v1] Gambar isi tematik A1/A2 & Prancis sudah punya panel
+     putih sendiri (kiri 1,9% · kanan 25,8% · atas 3,4% gambar). Panel CSS di atasnya
+     dulu bergeser beberapa piksel → dua panel bertumpuk (laporan owner 30 Okt 2026,
+     Rumania di Linguo Meet). Kini panel CSS transparan dan isinya duduk di panel gambar. */
+  const panelBawaan = !!frenchTheme || isA1LanguageBodyCover(s.cover) || isA2LanguageBodyCover(s.cover);
+  const ruangTeks = panelBawaan ? "pr-[25.8cqw]" : kiriSaja ? (isImagegenA2GoalCover(s.cover) ? "pr-[55cqw]" : "pr-[45cqw]") : "pr-[4cqw]";
   /* Slide yang isinya banyak dikecilkan sedikit supaya tetap muat tanpa gulir. */
   const n = s.items?.length || s.lines?.length || s.quiz?.length || s.examples?.length || s.points?.length || s.questions?.length || 0;
   /* [dialog-gulir-v1] Dialog tidak dikecilkan dan tidak dibagi dua kolom:
@@ -371,11 +376,13 @@ export function SlideBody({ s, kunci, lang }: { s: MateriSlide; kunci?: boolean;
     : n > 6 ? 0.88 : 1;
 
   return (
-    <div className={panel ? `h-full pb-[2.6cqh] pl-[4cqw] pt-[4.8cqh] ${ruangTeks}` : "contents"}>
+    <div className={!panel ? "contents"
+      : panelBawaan ? `h-full pb-[1cqh] pl-[1.9cqw] ${frenchTheme ? "pt-[5cqh]" : "pt-[3.4cqh]"} ${ruangTeks}`
+      : `h-full pb-[2.6cqh] pl-[4cqw] pt-[4.8cqh] ${ruangTeks}`}>
     <div className={panel
       ? "flex h-full flex-col rounded-[2.2cqw] px-[2.8cqw] pb-[1.4cqh] pt-[2.6cqh]"
       : `flex h-full flex-col pb-[1.5cqh] pl-[6cqw] pt-[5cqh] ${kiriSaja ? "pr-[46cqw]" : "pr-[6cqw]"}`}
-      style={panel ? {
+      style={panelBawaan ? { ["--tepi" as string]: tema.lembut } : panel ? {
         background: "rgba(255,255,255,0.9)", border: "1px solid rgba(255,255,255,0.95)",
         boxShadow: "0 0.5cqw 2.2cqw rgba(15,80,90,0.16)", ["--tepi" as string]: tema.lembut,
       } : undefined}>
