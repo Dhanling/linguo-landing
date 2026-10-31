@@ -6,7 +6,7 @@
 import Image from "next/image";
 import React, { useState, useEffect, useRef, useSyncExternalStore } from "react";
 import dynamic from "next/dynamic";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion, AnimatePresence, useReducedMotion } from "framer-motion";
 import { Globe, ChevronDown, ChevronLeft, ChevronRight, Mail, Star, Check, ArrowRight, ArrowUp, Menu, X, Zap, AtSign, Search, Sparkles, GraduationCap, Users, School, Baby, ClipboardList, MonitorPlay, BookOpen, Timer, Building2, Headphones, ScrollText, Languages, Clapperboard } from "lucide-react";
 // [home-flags-subset-v1] Bendera beranda dari subset kecil (bukan set lengkap
 // blade-flags 1,2 MB); kode di luar subset jatuh ke RectFlag lazy.
@@ -1380,11 +1380,37 @@ export function Melayang({ amp, className, children }: { amp: number; className?
 }
 
 /** Kartu langkah "How it works" yang muncul bergiliran saat di-scroll. */
-export function MunculBergiliran({ i, className, children }: { i: number; className?: string; children: React.ReactNode }) {
+export function MunculBergiliran({ i, jeda = 0.1, className, children }: { i: number; jeda?: number; className?: string; children: React.ReactNode }) {
   return (
-    <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.1 }} className={className}>
+    <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * jeda }} className={className}>
       {children}
     </motion.div>
+  );
+}
+
+// [langkah-alur-v1] Garis penghubung "How it works" (desktop): langkah ke-i
+// muncul, lalu garis ke langkah berikutnya tergambar dari kiri dengan titik
+// yang berjalan di ujungnya, baru langkah i+1 muncul. Jedanya harus sama dengan
+// `jeda` MunculBergiliran di page.tsx (ditulis 0.45 di sana: page.tsx komponen
+// server, impor konstanta dari berkas "use client" jadi referensi, bukan angka).
+const LANGKAH_JEDA = 0.45;
+export function GarisLangkah({ i }: { i: number }) {
+  const kurangiGerak = useReducedMotion();
+  const mulai = i * LANGKAH_JEDA + 0.2;
+  const durasi = LANGKAH_JEDA - 0.05;
+  const lingkar = "w-1.5 h-1.5 rounded-full border-[1.5px] border-[#1A9E9E]";
+  return (
+    <div className="flex items-center mt-[45px] mx-3 shrink-0" aria-hidden>
+      <motion.div className={lingkar} initial={kurangiGerak ? false : { scale: 0 }} whileInView={{ scale: 1 }} viewport={{ once: true }} transition={{ delay: mulai, duration: 0.15 }}/>
+      <div className="relative w-16 h-[1.5px]">
+        <div className="absolute inset-0 border-t-[1.5px] border-dashed border-[#1A9E9E]/25"/>
+        <motion.div className="absolute inset-0 bg-[#1A9E9E] origin-left" initial={kurangiGerak ? false : { scaleX: 0 }} whileInView={{ scaleX: 1 }} viewport={{ once: true }} transition={{ delay: mulai, duration: durasi, ease: [0.65, 0, 0.35, 1] }}/>
+        {!kurangiGerak && (
+          <motion.div className="absolute top-1/2 -mt-[3px] -ml-[3px] w-1.5 h-1.5 rounded-full bg-[#1A9E9E] shadow-[0_0_0_3px_rgba(26,158,158,0.2)]" initial={{ left: "0%", opacity: 0 }} whileInView={{ left: "100%", opacity: [0, 1, 1, 0] }} viewport={{ once: true }} transition={{ delay: mulai, duration: durasi, ease: [0.65, 0, 0.35, 1] }}/>
+        )}
+      </div>
+      <motion.div className={lingkar} initial={kurangiGerak ? false : { scale: 0, backgroundColor: "rgba(26,158,158,0)" }} whileInView={{ scale: 1, backgroundColor: "rgba(26,158,158,1)" }} viewport={{ once: true }} transition={{ delay: mulai + durasi - 0.05, duration: 0.2 }}/>
+    </div>
   );
 }
 

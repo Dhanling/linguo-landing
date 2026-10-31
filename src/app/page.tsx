@@ -18,7 +18,7 @@ import { FAQS, FOOTER_LANGUAGES, FOOTER_PROGRAMS, SEMUA_BAHASA } from "./_home/d
 import {
   HomeMount, HomeNavbar, HomeLoginModal, HomeHeroFunnel, HomeProductDock, HomePricing,
   TypingBubble, LanguageStrip, WhyCarousel, TeacherGrid, TestimonialCarousel, FAQ,
-  Melayang, MunculBergiliran, GeserKelas,
+  Melayang, MunculBergiliran, GeserKelas, GarisLangkah,
 } from "./_home/islands";
 
 export default function Home() {
@@ -150,14 +150,14 @@ export default function Home() {
             {img:"/images/step-3.png",iw:320,ih:388,s:"Step 3",t:"Learn & Practice with Linguo",d:"Setelah menyelesaikan pembayaran kamu bisa mulai belajar sesuai jadwal belajar"},
             {img:"/images/step-4.png",iw:384,ih:207,s:"Step 4",t:"Level up & Get certified",d:"Setelah delapan sesi, kamu bisa ikut kelas lanjutan hingga mendapatkan e-sertifikat*",note:"* S&K berlaku"}
           ].map((s,i)=>(<div key={i} className="flex items-start">
-            <MunculBergiliran i={i} className="flex flex-col items-center w-[200px]">
+            <MunculBergiliran i={i} jeda={0.45} className="flex flex-col items-center w-[200px]">
               <div className="h-[70px] flex items-end justify-center mb-4"><Image src={s.img} alt={s.t} width={s.iw} height={s.ih} loading="lazy" sizes="100px" className="max-h-[70px] w-auto object-contain"/></div>
               <p className="text-xs text-[#1A9E9E] font-semibold italic mb-1">{s.s}</p>
               <h3 className="text-sm font-bold mb-2 leading-tight">{s.t}</h3>
               <p className="text-xs text-slate-500 leading-relaxed">{s.d}</p>
               {s.note&&<p className="text-[10px] text-slate-400 mt-1">{s.note}</p>}
             </MunculBergiliran>
-            {i<3&&<div className="flex items-center mt-[45px] mx-3 shrink-0"><div className="w-1.5 h-1.5 rounded-full border-[1.5px] border-[#1A9E9E]"/><div className="w-16 border-t-[1.5px] border-dashed border-[#1A9E9E]/40"/><div className="w-1.5 h-1.5 rounded-full border-[1.5px] border-[#1A9E9E]"/></div>}
+            {i<3&&<GarisLangkah i={i}/>}
           </div>))}
         </div>
         {/* Mobile: simple grid */}
