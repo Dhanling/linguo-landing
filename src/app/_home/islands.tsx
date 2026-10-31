@@ -6,6 +6,7 @@
 import Image from "next/image";
 import React, { useState, useEffect, useRef, useSyncExternalStore } from "react";
 import dynamic from "next/dynamic";
+import { createPortal } from "react-dom";
 import { motion, AnimatePresence, useReducedMotion } from "framer-motion";
 import { Globe, ChevronDown, ChevronLeft, ChevronRight, Mail, Star, Check, ArrowRight, ArrowUp, Menu, X, Zap, AtSign, Search, Sparkles, GraduationCap, Users, School, Baby, ClipboardList, MonitorPlay, BookOpen, Timer, Building2, Headphones, ScrollText, Languages, Clapperboard } from "lucide-react";
 // [home-flags-subset-v1] Bendera beranda dari subset kecil (bukan set lengkap
@@ -962,21 +963,67 @@ export function ProductDock({setPricingTab,onSelectProgram}:{setPricingTab:(t:nu
     if (idx <= 0) { setGerakHalus(false); setIdx(N); }
   };
 
+  // [kartu-sorot-v1] Hover (mouse, desktop): kartu membesar, kartu lain & seluruh halaman di
+  // sekitarnya diburamkan lewat lapisan backdrop-blur (portal ke body; host dinaikkan di atasnya).
+  // Klik: kartu berputar sekali, layar memudar putih, lalu pindah halaman — halaman tujuan
+  // muncul memudar lewat @view-transition (globals.css).
+  const kurangiGerak = useReducedMotion();
+  const [sorot, setSorot] = useState<number | null>(null);
+  const [pergi, setPergi] = useState<number | null>(null);
+  const [siapPortal, setSiapPortal] = useState(false);
+  const lepasSorot = useRef<ReturnType<typeof setTimeout>>(undefined);
+  useEffect(() => {
+    setSiapPortal(true);
+    // Kembali lewat tombol Back (bfcache) → halaman dipulihkan apa adanya, jadi reset animasinya.
+    const pulih = (e: PageTransitionEvent) => { if (e.persisted) { setPergi(null); setSorot(null); } };
+    window.addEventListener("pageshow", pulih);
+    return () => { window.removeEventListener("pageshow", pulih); clearTimeout(lepasSorot.current); };
+  }, []);
+  const masukKartu = (i: number) => (e: React.PointerEvent) => {
+    if (e.pointerType !== "mouse" || isMobile || kurangiGerak) return;
+    clearTimeout(lepasSorot.current);
+    setSorot(i);
+  };
+  // Jeda singkat supaya lewat celah antar kartu tak bikin halaman berkedip buram-jernih.
+  const keluarKartu = () => { clearTimeout(lepasSorot.current); lepasSorot.current = setTimeout(() => setSorot(null), 120); };
+  const animasiPergi = (i: number, go: () => void) => {
+    if (kurangiGerak || pergi !== null) return go();
+    setPergi(i);
+    setTimeout(go, 750);
+  };
+  const buram = sorot !== null || pergi !== null;
+
   const perBaris = isMobile ? 2 : 5;
   const gap = isMobile ? 12 : 16;
   const kartuW = lebar ? (lebar - gap * (perBaris - 1)) / perBaris : 0;
 
   return (
     <div className={isMobile ? "px-4 py-4" : "py-6"}>
-      <div ref={hostRef} className="relative overflow-visible" onMouseEnter={()=>setDihover(true)} onMouseLeave={()=>setDihover(false)}>
-        <div className="overflow-hidden -mx-2 px-2 -my-4 py-4">
+      {siapPortal && createPortal(<>
+        <div aria-hidden className="fixed inset-0 z-[90] pointer-events-none transition-[opacity,backdrop-filter] duration-300 ease-out"
+          style={{ opacity: buram ? 1 : 0, backdropFilter: buram ? "blur(6px)" : "blur(0px)", WebkitBackdropFilter: buram ? "blur(6px)" : "blur(0px)", background: "rgba(15,23,42,0.12)" }}/>
+        <div aria-hidden className="fixed inset-0 z-[130] pointer-events-none bg-white transition-opacity duration-[450ms] ease-in"
+          style={{ opacity: pergi !== null ? 1 : 0, transitionDelay: pergi !== null ? "280ms" : "0ms" }}/>
+      </>, document.body)}
+      <div ref={hostRef} className="relative overflow-visible" style={{ zIndex: buram ? 91 : undefined }} onMouseEnter={()=>setDihover(true)} onMouseLeave={()=>setDihover(false)}>
+        <div className="overflow-hidden -mx-3 px-3 -my-5 py-5">
           <div className="flex items-stretch"
             onTransitionEnd={onGeserSelesai}
             style={{ gap, transform: `translateX(${-idx * (kartuW + gap)}px)`, transition: gerakHalus ? "transform 700ms cubic-bezier(.22,.61,.36,1)" : "none", visibility: kartuW ? "visible" : "hidden" }}>
             {[...PRODUCTS, ...PRODUCTS].map((p,i)=>(
-              <div key={i} className="shrink-0" style={{ width: kartuW || undefined }} aria-hidden={i < N || undefined}>
+              <div key={i} className="shrink-0 relative" aria-hidden={i < N || undefined}
+                onPointerEnter={masukKartu(i)} onPointerLeave={keluarKartu}
+                style={{
+                  width: kartuW || undefined,
+                  zIndex: sorot === i || pergi === i ? 2 : undefined,
+                  // Daftar fungsi transform selalu sama — kalau beda, browser menginterpolasi matriks
+                  // dan rotateY(360deg) (= matriks identitas) tak kelihatan berputar sama sekali.
+                  transform: `perspective(1000px) rotateY(${pergi === i ? 360 : 0}deg) scale(${pergi === i ? 1.08 : sorot === i ? 1.05 : 1})`,
+                  filter: buram && sorot !== i && pergi !== i ? "blur(2px) brightness(0.92)" : "none",
+                  transition: pergi === i ? "transform 700ms cubic-bezier(.45,0,.2,1)" : "transform 300ms ease-out, filter 300ms ease-out",
+                }}>
                 <KartuMiring className={`relative h-full group/card ${isMobile ? "rounded-xl" : "rounded-3xl"}`}>
-                  <DockCard product={p} mobile={isMobile} salinan={i < N} setPricingTab={setPricingTab} onSelectProgram={onSelectProgram}/>
+                  <DockCard product={p} mobile={isMobile} salinan={i < N} setPricingTab={setPricingTab} onSelectProgram={onSelectProgram} onPergi={go => animasiPergi(i, go)}/>
                 </KartuMiring>
               </div>
             ))}
@@ -987,7 +1034,7 @@ export function ProductDock({setPricingTab,onSelectProgram}:{setPricingTab:(t:nu
   );
 }
 
-function DockCard({product:p,mobile,salinan,setPricingTab,onSelectProgram}:{product:typeof PRODUCTS[0];mobile?:boolean;salinan?:boolean;setPricingTab:(t:number)=>void;onSelectProgram:(prog:string)=>void}) {
+function DockCard({product:p,mobile,salinan,setPricingTab,onSelectProgram,onPergi}:{product:typeof PRODUCTS[0];mobile?:boolean;salinan?:boolean;setPricingTab:(t:number)=>void;onSelectProgram:(prog:string)=>void;onPergi?:(go:()=>void)=>void}) {
   const card = p as typeof p & { img1?: string; img2?: string; lucideIcon?: React.ElementType; objPos?: string };
   const LucideIco = card.lucideIcon;
   const sizeCls = mobile ? "w-full h-full rounded-xl" : "w-full h-full rounded-3xl";
@@ -999,11 +1046,12 @@ function DockCard({product:p,mobile,salinan,setPricingTab,onSelectProgram}:{prod
 
   const handleClick = () => {
     // ETP tak lewat /daftar lagi — kartunya langsung ke daftar batch TOEFL/IELTS.
+    const ke = (url: string) => { const go = () => { window.location.href = url; }; if (onPergi) onPergi(go); else go(); };
     if(p.tab>=0){
       const prog = ["Kelas Private","Kelas Reguler","IELTS/TOEFL Prep","Kelas Kids"][p.tab]||"";
-      window.location.href = prog==="IELTS/TOEFL Prep" ? "/jadwal-kelas-reguler?tab=etp" : daftarHref(prog);
+      ke(prog==="IELTS/TOEFL Prep" ? "/jadwal-kelas-reguler?tab=etp" : daftarHref(prog));
     }
-    else if((p).href){window.location.href=(p).href}
+    else if((p).href){ke((p).href)}
     else{window.open(taggedWaUrlAndTrack(`https://wa.me/6282116859493?text=${encodeURIComponent(`Halo, saya tertarik ${p.title} Linguo`)}`, p.title),'_blank')}
   };
 

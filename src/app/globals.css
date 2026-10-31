@@ -344,3 +344,8 @@ body {
 body.ebook-cicip-buka .lingw-launcher,
 body.ebook-cicip-buka .lingw-teaser { display: none !important; }
 
+
+/* [kartu-sorot-v1] Pindah halaman (navigasi penuh) memudar halus antar halaman — dipakai
+   animasi klik kartu produk beranda. Browser tanpa dukungan cukup pindah biasa. */
+@view-transition { navigation: auto; }
+@media (prefers-reduced-motion: reduce) { @view-transition { navigation: none; } }
