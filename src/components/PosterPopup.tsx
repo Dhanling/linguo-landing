@@ -5,9 +5,10 @@
 // promo Linguo apa adanya + satu tombol aksi.
 //
 // Aturan mainnya:
-//   - Muncul SETIAP kali halaman dimuat ulang (refresh / buka tab baru / masuk
-//     dari iklan). Sengaja TANPA gerbang sessionStorage: promonya masih baru
-//     dan pemiliknya memang mau poster ini kelihatan tiap kunjungan.
+//   - [poster-popup-sekali-v1] Muncul SEKALI saja per poster per browser:
+//     begitu tampil, dicatat di localStorage (kuncinya ikut nama berkas
+//     poster), jadi refresh / kunjungan berikutnya tidak memunculkannya lagi.
+//     Ganti POSTER_SRC → kuncinya berubah → poster baru tampil sekali lagi.
 //   - Perpindahan halaman di DALAM situs (klik menu) tidak memunculkannya lagi,
 //     karena komponen ini hidup di layout dan tidak ter-mount ulang selama
 //     navigasi klien.
@@ -30,11 +31,28 @@ import { ArrowRight, X } from "lucide-react";
 import { useOverlayLock } from "@/lib/overlayStore";
 
 // Ganti kalau posternya diperbarui.
-const POSTER_SRC = "/popup-reguler-september.jpg";
+const POSTER_SRC = "/popup-reguler-november.jpg";
 const POSTER_W = 1200;
-const POSTER_H = 982;
+const POSTER_H = 972;
 const POSTER_ALT =
-  "Belajar 60+ bahasa cuma Rp 150.000 untuk 2 bulan / 8x pertemuan — pendaftaran Kelas Reguler batch September dibuka";
+  "Belajar 50+ bahasa cuma Rp 150.000 untuk 2 bulan / 8x pertemuan — pendaftaran Kelas Reguler batch November dibuka";
+const SEEN_KEY = `poster-popup-seen:${POSTER_SRC}`;
+
+function sudahPernahLihat() {
+  try {
+    return localStorage.getItem(SEEN_KEY) === "1";
+  } catch {
+    return false;
+  }
+}
+
+function tandaiSudahLihat() {
+  try {
+    localStorage.setItem(SEEN_KEY, "1");
+  } catch {
+    // localStorage diblokir (mode privat dsb.) — biarkan, paling muncul lagi.
+  }
+}
 
 // Ke mana poster ini mengarah. Poster mengiklankan Kelas Reguler batch
 // terdekat, jadi tujuannya halaman jadwal batch (di situ ada tombol daftarnya).
@@ -70,7 +88,7 @@ export default function PosterPopup() {
   const dilewati = EXCLUDED.some((p) => pathname.startsWith(p));
 
   useEffect(() => {
-    if (dilewati) return;
+    if (dilewati || sudahPernahLihat()) return;
 
     let id: ReturnType<typeof setTimeout> | undefined;
     let sudah = false;
@@ -80,6 +98,7 @@ export default function PosterPopup() {
       lepas();
       clearTimeout(id);
       id = setTimeout(() => {
+        tandaiSudahLihat();
         setOpen(true);
         requestAnimationFrame(() => setMasuk(true));
       }, ms);
