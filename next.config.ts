@@ -108,7 +108,12 @@ const nextConfig: NextConfig = {
   async rewrites() {
     return {
       beforeFiles: [],
-      afterFiles: [],
+      afterFiles: [
+        // Alamat og:image lama /links (versi ImageResponse) masih tersimpan di
+        // cache Threads/WA/FB — sajikan banner baru supaya kartunya tak rusak.
+        { source: '/links/opengraph-image', destination: '/links/opengraph-image.jpg' },
+        { source: '/links/twitter-image', destination: '/links/twitter-image.jpg' },
+      ],
       fallback: [
         { source: '/slide-cover/:path*', destination: 'https://teach.linguo.id/slide-cover/:path*' },
       ],
