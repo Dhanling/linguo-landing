@@ -975,7 +975,9 @@ export function ProductDock({setPricingTab,onSelectProgram}:{setPricingTab:(t:nu
             style={{ gap, transform: `translateX(${-idx * (kartuW + gap)}px)`, transition: gerakHalus ? "transform 700ms cubic-bezier(.22,.61,.36,1)" : "none", visibility: kartuW ? "visible" : "hidden" }}>
             {[...PRODUCTS, ...PRODUCTS].map((p,i)=>(
               <div key={i} className="shrink-0" style={{ width: kartuW || undefined }} aria-hidden={i < N || undefined}>
-                <DockCard product={p} mobile={isMobile} salinan={i < N} setPricingTab={setPricingTab} onSelectProgram={onSelectProgram}/>
+                <KartuMiring className={`relative h-full group/card ${isMobile ? "rounded-xl" : "rounded-3xl"}`}>
+                  <DockCard product={p} mobile={isMobile} salinan={i < N} setPricingTab={setPricingTab} onSelectProgram={onSelectProgram}/>
+                </KartuMiring>
               </div>
             ))}
           </div>
@@ -1444,7 +1446,7 @@ export function MarqueeHalus({ className, style, children }: { className?: strin
   );
 }
 
-// [kartu-miring-v1] Gambar kartu "Most popular class": miring mengikuti kursor,
+// [kartu-miring-v1] Kartu produk (ProductDock) & gambar kartu "Most popular class": miring mengikuti kursor,
 // sedikit terangkat, dengan kilau di titik kursor. Hanya mouse (bukan sentuh)
 // dan dimatikan untuk prefers-reduced-motion.
 export function KartuMiring({ className, children }: { className?: string; children: React.ReactNode }) {
@@ -1463,7 +1465,7 @@ export function KartuMiring({ className, children }: { className?: string; child
   return (
     <div ref={ref} onPointerMove={gerak} onPointerLeave={lepas} className={`${className ?? ""} transition-[transform,box-shadow] duration-200 ease-out`}>
       {children}
-      {!kurangiGerak && <div aria-hidden className="pointer-events-none absolute inset-0 opacity-0 group-hover/card:opacity-100 transition-opacity duration-300" style={{ background: "radial-gradient(circle at var(--kilau-x,50%) var(--kilau-y,50%), rgba(255,255,255,0.28), transparent 55%)" }}/>}
+      {!kurangiGerak && <div aria-hidden className="pointer-events-none absolute inset-0 rounded-[inherit] opacity-0 group-hover/card:opacity-100 transition-opacity duration-300" style={{ background: "radial-gradient(circle at var(--kilau-x,50%) var(--kilau-y,50%), rgba(255,255,255,0.28), transparent 55%)" }}/>}
     </div>
   );
 }
