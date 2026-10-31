@@ -18,7 +18,7 @@ import { FAQS, FOOTER_LANGUAGES, FOOTER_PROGRAMS, SEMUA_BAHASA } from "./_home/d
 import {
   HomeMount, HomeNavbar, HomeLoginModal, HomeHeroFunnel, HomeProductDock, HomePricing,
   TypingBubble, LanguageStrip, WhyCarousel, TeacherGrid, TestimonialCarousel, FAQ,
-  Melayang, MunculBergiliran, GeserKelas, GarisLangkah,
+  Melayang, MunculBergiliran, GeserKelas, GarisLangkah, MarqueeHalus, KartuMiring,
 } from "./_home/islands";
 
 export default function Home() {
@@ -112,9 +112,12 @@ export default function Home() {
     </Reveal>
 
     {/* OUR CLIENTS */}
-    <section className="py-5 sm:py-10 bg-white border-b border-slate-100 overflow-hidden group">
-      <div className="animate-marquee flex items-center gap-16 w-max group-hover:[animation-play-state:paused]" style={{animationDuration:'50s'}}>
-        {[...Array(3)].flatMap((_, ri) =>
+    <section className="py-5 sm:py-10 bg-white border-b border-slate-100 overflow-hidden">
+      {/* [marquee-halus-v1] 2 salinan + pr-16 (= gap) supaya geser -50% pas satu
+          salinan, tanpa lompatan saat ulang; dulu 3 salinan → lompat setengah daftar. */}
+      <div className="[mask-image:linear-gradient(to_right,transparent,black_10%,black_90%,transparent)]">
+      <MarqueeHalus className="animate-marquee flex items-center gap-16 pr-16 w-max" style={{animationDuration:'40s'}}>
+        {[...Array(2)].flatMap((_, ri) =>
           [
             { src: "/images/clients/aiesec.png", alt: "AIESEC", w: 845, h: 120 },
             { src: "/images/clients/cimsa.png", alt: "CIMSA", w: 88, h: 119 },
@@ -130,11 +133,12 @@ export default function Home() {
             { src: "/images/clients/alfamart.png", alt: "Alfamart", w: 750, h: 240 },
             { src: "/images/clients/dua-kelinci-v2.png", alt: "Dua Kelinci", w: 494, h: 300 },
           ].map((logo, i) => (
-            // Marquee repeats the list 3× for the infinite scroll; only the first
+            // Marquee repeats the list 2× for the infinite scroll; only the first
             // copy is exposed to assistive tech, the rest are decorative duplicates.
             <Image key={`${ri}-${i}`} src={logo.src} alt={ri === 0 ? logo.alt : ""} aria-hidden={ri !== 0} width={logo.w} height={logo.h} loading="lazy" sizes="200px" className="h-7 sm:h-10 max-w-[120px] sm:max-w-[200px] w-auto object-contain opacity-50 grayscale hover:opacity-100 hover:grayscale-0 transition-all duration-300" />
           ))
         )}
+      </MarqueeHalus>
       </div>
     </section>
 
@@ -185,20 +189,20 @@ export default function Home() {
           <h2 className="font-heading text-xl sm:text-3xl font-bold">Most popular class</h2>
           <GeserKelas />
         </div>
-        <div id="class-scroll" className="overflow-hidden group">
-          <div className="animate-marquee flex gap-6 w-max group-hover:[animation-play-state:paused]" style={{animationDuration:'30s'}}>
+        <div id="class-scroll" className="overflow-hidden py-3 -my-3 [mask-image:linear-gradient(to_right,transparent,black_4%,black_96%,transparent)]">
+          <MarqueeHalus className="animate-marquee flex gap-6 pr-6 w-max" style={{animationDuration:'30s'}}>
             {[...Array(2)].flatMap((_, ri) =>
               [{l:"ENGLISH",fc:"gb",img:"/images/classes/class-english.png",t:"Beginner English",n:"Thifal Syahla",lv:"BEGINNER",lc:"text-green-600 border-green-500"},
                 {l:"KOREA",fc:"kr",img:"/images/classes/class-korea.png",t:"Sweet and tone",n:"Nitalia Wijaya",lv:"INTERMEDIATE",lc:"text-pink-500 border-pink-400"},
                 {l:"JAPAN",fc:"jp",img:"/images/classes/class-japan.png",t:"Japanese Basic",n:"Paramita Wulandari",lv:"BEGINNER",lc:"text-green-600 border-green-500"},
               ].map((c, i) => (
                 <a key={`${ri}-${i}`} href={`https://wa.me/6282116859493?text=Halo, saya tertarik kelas ${c.t}`} target="_blank" className="w-[280px] sm:w-[360px] shrink-0 group/card cursor-pointer">
-                  <div className="relative h-44 sm:h-56 rounded-2xl mb-3 sm:mb-4 overflow-hidden group-hover/card:shadow-lg transition-shadow">
+                  <KartuMiring className="relative h-44 sm:h-56 rounded-2xl mb-3 sm:mb-4 overflow-hidden group-hover/card:shadow-xl group-hover/card:shadow-[#1A9E9E]/20">
                     <Image src={c.img} alt={ri === 0 ? c.l : ""} aria-hidden={ri !== 0} fill loading="lazy" sizes="(min-width: 640px) 360px, 280px" className="object-cover"/>
                     <span className="absolute top-3 left-3 bg-[#1A9E9E] text-white text-xs font-bold px-4 py-1.5 rounded-full flex items-center gap-1.5">
                       <img src={`https://flagcdn.com/w20/${c.fc}.png`} alt="" loading="lazy" decoding="async" className="h-3.5 w-3.5 rounded-full object-cover"/> {c.l}
                     </span>
-                  </div>
+                  </KartuMiring>
                   <div className="flex items-center justify-between">
                     <div className="flex items-center gap-3">
                       <div className="h-10 w-10 rounded-full bg-slate-200 flex items-center justify-center text-xs font-bold text-slate-500">{c.n.split(" ").map(w=>w[0]).join("")}</div>
@@ -209,7 +213,7 @@ export default function Home() {
                 </a>
               ))
             )}
-          </div>
+          </MarqueeHalus>
         </div>
         <div className="text-center mt-5 sm:mt-10">
           <a href="https://wa.me/6282116859493?text=Halo, saya mau lihat kelas lainnya" target="_blank" className="inline-block border border-slate-300 text-slate-600 font-medium px-8 py-3 rounded-full text-sm hover:bg-slate-50 transition-colors">Browse more</a>

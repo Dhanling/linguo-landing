@@ -1414,6 +1414,60 @@ export function GarisLangkah({ i }: { i: number }) {
   );
 }
 
+// [marquee-halus-v1] Pembungkus marquee: saat kursor masuk, laju animasi CSS
+// diturunkan pelan ke 0 (bukan berhenti mendadak seperti animation-play-state)
+// dan naik lagi saat kursor keluar. play-state ditimpa inline karena globals.css
+// mem-pause .animate-marquee:hover.
+export function MarqueeHalus({ className, style, children }: { className?: string; style?: React.CSSProperties; children: React.ReactNode }) {
+  const ref = useRef<HTMLDivElement>(null);
+  const laju = useRef(1);
+  const raf = useRef(0);
+  const ke = (target: number) => {
+    const anim = ref.current?.getAnimations()[0];
+    if (!anim) return;
+    cancelAnimationFrame(raf.current);
+    const dari = laju.current, t0 = performance.now();
+    const langkah = (now: number) => {
+      const p = Math.min(1, (now - t0) / 700);
+      laju.current = dari + (target - dari) * (1 - Math.pow(1 - p, 3));
+      anim.playbackRate = laju.current;
+      if (p < 1) raf.current = requestAnimationFrame(langkah);
+    };
+    raf.current = requestAnimationFrame(langkah);
+  };
+  useEffect(() => () => cancelAnimationFrame(raf.current), []);
+  return (
+    <div ref={ref} className={className} style={{ ...style, animationPlayState: "running" }}
+      onPointerEnter={e => e.pointerType === "mouse" && ke(0)} onPointerLeave={e => e.pointerType === "mouse" && ke(1)}>
+      {children}
+    </div>
+  );
+}
+
+// [kartu-miring-v1] Gambar kartu "Most popular class": miring mengikuti kursor,
+// sedikit terangkat, dengan kilau di titik kursor. Hanya mouse (bukan sentuh)
+// dan dimatikan untuk prefers-reduced-motion.
+export function KartuMiring({ className, children }: { className?: string; children: React.ReactNode }) {
+  const ref = useRef<HTMLDivElement>(null);
+  const kurangiGerak = useReducedMotion();
+  const gerak = (e: React.PointerEvent<HTMLDivElement>) => {
+    const el = ref.current;
+    if (!el || e.pointerType !== "mouse" || kurangiGerak) return;
+    const r = el.getBoundingClientRect();
+    const x = (e.clientX - r.left) / r.width - 0.5, y = (e.clientY - r.top) / r.height - 0.5;
+    el.style.transform = `perspective(900px) rotateX(${(-y * 8).toFixed(2)}deg) rotateY(${(x * 8).toFixed(2)}deg) translateY(-6px)`;
+    el.style.setProperty("--kilau-x", `${((x + 0.5) * 100).toFixed(1)}%`);
+    el.style.setProperty("--kilau-y", `${((y + 0.5) * 100).toFixed(1)}%`);
+  };
+  const lepas = () => { if (ref.current) ref.current.style.transform = ""; };
+  return (
+    <div ref={ref} onPointerMove={gerak} onPointerLeave={lepas} className={`${className ?? ""} transition-[transform,box-shadow] duration-200 ease-out`}>
+      {children}
+      {!kurangiGerak && <div aria-hidden className="pointer-events-none absolute inset-0 opacity-0 group-hover/card:opacity-100 transition-opacity duration-300" style={{ background: "radial-gradient(circle at var(--kilau-x,50%) var(--kilau-y,50%), rgba(255,255,255,0.28), transparent 55%)" }}/>}
+    </div>
+  );
+}
+
 /** Tombol geser kiri/kanan "Most popular class". */
 export function GeserKelas() {
   const geser = (dx: number) => document.getElementById("class-scroll")?.scrollBy({ left: dx, behavior: "smooth" });
