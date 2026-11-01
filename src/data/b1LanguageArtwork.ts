@@ -1,27 +1,51 @@
 /** Satu paket Imagegen unik per bahasa untuk seluruh B1.1–B1.5.
  * Cover, tujuan, dan template isi adalah tiga gambar berbeda. Materi tetap editable.
- * Prompt dan sumber raster: docs/b1-per-language/.
+ * Prompt dan sumber raster: docs/b1-per-language/ dan docs/b1-completion-final/.
  */
 export const B1_LANGUAGE_ARTWORK_SLUGS: readonly string[] = [
   "arabic",
+  "balinese",
+  "batak",
+  "bengali",
+  "betawi",
   "bipa",
+  "bosnian",
+  "bugis",
+  "bulgarian",
+  "burmese",
+  "czech",
   "danish",
   "filipino",
   "finnish",
   "french",
+  "georgian",
   "greek",
   "hebrew",
+  "hindi",
   "hungarian",
+  "icelandic",
+  "irish",
   "japanese",
   "javanese",
+  "khmer",
+  "korean",
+  "lao",
+  "madurese",
+  "malay",
   "norwegian",
   "persian",
   "polish",
+  "portuguese-pt",
   "romanian",
   "russian",
   "sundanese",
+  "swahili",
   "swedish",
-  "turkish"
+  "thai",
+  "turkish",
+  "ukrainian",
+  "urdu",
+  "vietnamese"
 ];
 const ADA = new Set(B1_LANGUAGE_ARTWORK_SLUGS);
 
