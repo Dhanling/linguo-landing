@@ -50,7 +50,7 @@
 @media(max-width:639px){.card>div:last-child>div p:nth-child(2){font-size:clamp(15px,4.7vw,19px)}}
 
 /* Ilustrasi kompak ditampilkan utuh, tanpa pembesaran atau pemotongan. */
-.cardArt,.card:last-child .cardArt{height:auto;aspect-ratio:3 / 2;background:#d9f8fc;flex-shrink:0}
+.cardArt,.card:last-child .cardArt{height:auto;aspect-ratio:3 / 2;background:#fff;flex-shrink:0}
 .cardArt img,.card:last-child .cardArt img{object-fit:contain;object-position:center;transform:none}
 .cardTitle{min-height:0;padding:11px 14px 7px;border-bottom:0;background:white}
 .cardTitle h2{font-size:27px}

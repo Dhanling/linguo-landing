@@ -32,7 +32,7 @@ import {
 } from "@/lib/testPrepCart";
 
 const TEAL = "#1A9E9E";
-const CARD_ACCENT: Record<string, string> = { pte: TEAL, jlpt: "#E98424", topik: "#287FE8", hsk: "#E64C62", goethe: "#7358B8" };
+const CARD_ACCENT: Record<string, string> = { pte: TEAL, jlpt: "#FF8700", topik: TEAL, hsk: "#FF8700", goethe: TEAL };
 
 /** "TOPIK" + "TOPIK I" → "TOPIK I", bukan "TOPIK TOPIK I". */
 const judulPaket = (test: string, level: string) => (level.startsWith(test) ? level : `${test} ${level}`);
@@ -125,8 +125,7 @@ export default function PersiapanTesClient() {
                 className={`group ${styles.card}`}
               >
                 <div className={styles.cardArt}>
-                  <Image src={`/illustrations/test-prep/${p.id}-compact.webp`} alt="" fill sizes="(max-width: 639px) 50vw, (max-width: 1023px) 33vw, 20vw" />
-                  {p.demandTag && <span className={styles.badge} style={{ color: accent }}><Sparkles size={13} />{p.demandTag}</span>}
+                  <Image src={`/illustrations/test-prep/${p.id}-brush.webp`} alt="" fill sizes="(max-width: 639px) 50vw, (max-width: 1023px) 33vw, 20vw" />
                 </div>
                 <div className={styles.cardTitle}>
                   <RectFlag code={p.flagCode} h={23} className="shrink-0 rounded-sm shadow-sm" />
