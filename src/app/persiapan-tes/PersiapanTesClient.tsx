@@ -13,12 +13,12 @@ import { useEffect, useMemo, useRef, useState, type ChangeEvent, type ReactNode 
 import Link from "next/link";
 import { motion, AnimatePresence } from "framer-motion";
 import {
-  PenTool, GraduationCap, ScrollText, Award, Laptop, Users, User, Check, X,
+  ScrollText, Users, User, Check, X,
   ArrowLeft, Clock, Sparkles, ShoppingCart, Plus, Trash2, ArrowRight,
-  type LucideIcon,
 } from "lucide-react";
 import { RectFlag } from "@/components/RectFlag";
-import { getLangPhoto } from "@/lib/lang-visuals";
+import Image from "next/image";
+import styles from "./PersiapanTes.module.css";
 import {
   TEST_PREP_PRODUCTS, getTestPrepProduct, quoteTestPrep, formatRupiah, SESSION_MINUTES,
   SEMI_SESSIONS, PRIVATE_SESSION_OPTS, DEFAULT_PRIVATE_SESSIONS,
@@ -32,7 +32,7 @@ import {
 } from "@/lib/testPrepCart";
 
 const TEAL = "#1A9E9E";
-const ICON: Record<string, LucideIcon> = { PenTool, GraduationCap, ScrollText, Award, Laptop };
+const CARD_ACCENT: Record<string, string> = { pte: TEAL, jlpt: "#E98424", topik: "#287FE8", hsk: "#E64C62", goethe: "#7358B8" };
 
 /** "TOPIK" + "TOPIK I" → "TOPIK I", bukan "TOPIK TOPIK I". */
 const judulPaket = (test: string, level: string) => (level.startsWith(test) ? level : `${test} ${level}`);
@@ -73,7 +73,7 @@ export default function PersiapanTesClient() {
   const total = useMemo(() => cartTotal(cart), [cart]);
 
   return (
-    <main className="min-h-screen bg-white pb-28" style={{ fontFamily: "'Plus Jakarta Sans', sans-serif" }}>
+    <main className={`${styles.page} min-h-screen pb-28`} style={{ fontFamily: "'Plus Jakarta Sans', sans-serif" }}>
       {/* Header */}
       <header className="sticky top-0 z-40 border-b border-slate-100 bg-white/80 backdrop-blur-xl">
         <div className="mx-auto flex h-16 max-w-6xl items-center justify-between px-4">
@@ -98,30 +98,23 @@ export default function PersiapanTesClient() {
         </div>
       </header>
 
-      {/* Hero */}
-      <section className="relative overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-br from-teal-50 via-white to-indigo-50" />
-        <div className="relative mx-auto max-w-6xl px-4 py-12 text-center sm:py-16">
-          <div className="mb-5 inline-flex items-center gap-2 rounded-full border border-teal-200 bg-teal-50 px-4 py-1.5">
-            <Sparkles className="h-4 w-4 text-teal-600" />
-            <span className="text-sm font-medium text-teal-700">Persiapan ujian terstruktur + mock test</span>
+      {/* Ilustrasi dan pengantar persiapan ujian */}
+      <section className={styles.hero}>
+        <div className={styles.heroInner}>
+          <div className={styles.heroCopy}>
+            <div className={styles.eyebrow}><Sparkles size={16} /> Persiapan ujian terstruktur + mock test</div>
+            <h1>Persiapan Ujian Bahasa<span>PTE · HSK · JLPT · TOPIK · Goethe</span></h1>
+            <div className={styles.underline} aria-hidden="true" />
           </div>
-          <h1 className="mb-4 text-3xl font-extrabold text-slate-900 sm:text-5xl">
-            Persiapan Ujian Bahasa<br />
-            <span className="bg-gradient-to-r from-teal-500 to-indigo-500 bg-clip-text text-transparent">PTE · HSK · JLPT · TOPIK · Goethe</span>
-          </h1>
-          <p className="mx-auto mb-2 max-w-2xl text-base text-slate-500 sm:text-lg">
-            Kelas persiapan sertifikasi resmi dengan pengajar berpengalaman. Pilih grup kecil (semi-private) yang ekonomis atau private 1-on-1 yang fleksibel. Bisa ambil beberapa paket sekaligus dalam satu pembayaran.
-          </p>
+          <Image src="/illustrations/test-prep/student.webp" width={900} height={600} priority alt="Ilustrasi pelajar menyiapkan ujian bahasa dengan buku dan laptop" className={styles.heroArt} />
         </div>
       </section>
 
       {/* Katalog produk — 5 kartu satu baris di layar lebar, 3+2 di laptop kecil */}
-      <section ref={katalogRef} className="mx-auto max-w-6xl scroll-mt-20 px-4 pb-8">
-        <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5">
+      <section ref={katalogRef} id="pilih-ujian" className={`${styles.catalog} mx-auto scroll-mt-20 px-4 pb-8`}>
+        <div className={styles.cards}>
           {TEST_PREP_PRODUCTS.map((p) => {
-            const Icon = ICON[p.icon] ?? Award;
-            const foto = getLangPhoto(p.language);
+            const accent = CARD_ACCENT[p.id] ?? TEAL;
             const bahasa = namaBahasa(p.language);
             const diKeranjang = cart.filter((c) => c.productId === p.id).length;
             return (
@@ -129,70 +122,37 @@ export default function PersiapanTesClient() {
                 key={p.id}
                 onClick={() => setActive(p)}
                 aria-label={`Daftar persiapan ${p.test} (${bahasa})`}
-                className="group flex flex-col overflow-hidden rounded-3xl border border-slate-200 bg-white text-left shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-xl focus:outline-none focus-visible:ring-2 focus-visible:ring-teal-500"
+                className={`group ${styles.card}`}
               >
-                {/* [test-prep-kartu-foto-v1] Banner poster: foto stok bahasa + nama ujian
-                    di atas gradien hitam (wajib, teks putih hilang di sampul terang). */}
-                <div
-                  className="relative isolate flex h-36 items-end overflow-hidden transform-gpu [backface-visibility:hidden]"
-                  style={{ background: foto ? "#0E1526" : p.accent }}
-                >
-                  {foto ? (
-                    /* eslint-disable-next-line @next/next/no-img-element */
-                    <img
-                      src={foto}
-                      alt=""
-                      loading="lazy"
-                      decoding="async"
-                      className="absolute inset-0 h-full w-full object-cover transform-gpu scale-[1.02] transition-transform duration-300 ease-out [backface-visibility:hidden] group-hover:scale-[1.07]"
-                      onError={(e) => { (e.currentTarget as HTMLImageElement).style.display = "none"; }}
-                    />
-                  ) : (
-                    <>
-                      <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,_rgba(255,255,255,0.25),_transparent_60%)]" />
-                      <Icon className="absolute left-1/2 top-1/2 h-12 w-12 -translate-x-1/2 -translate-y-[65%] text-white/80" strokeWidth={1.6} />
-                    </>
-                  )}
-                  <div className="pointer-events-none absolute inset-x-0 bottom-0 h-3/5 bg-gradient-to-t from-black/85 via-black/45 to-transparent" />
-                  {p.demandTag && (
-                    <span className="absolute left-3 top-3 inline-flex items-center gap-1 rounded-full bg-black/40 px-2.5 py-1 text-[11px] font-semibold text-white backdrop-blur">
-                      <Sparkles className="h-3 w-3" strokeWidth={2} aria-hidden />
-                      {p.demandTag}
-                    </span>
-                  )}
-                  <span className="absolute right-3 top-3 flex h-8 w-8 items-center justify-center rounded-lg text-white shadow-md ring-1 ring-white/30" style={{ background: p.accent }}>
-                    <Icon className="h-4 w-4" strokeWidth={2} />
-                  </span>
-                  <div className="relative w-full p-3.5">
-                    <div className="flex items-center gap-2">
-                      <RectFlag code={p.flagCode} h={14} className="shrink-0 shadow" />
-                      <h2 className="text-lg font-extrabold leading-tight text-white drop-shadow">{p.test}</h2>
-                      <span className="text-xs font-medium text-white/85 drop-shadow">· {bahasa}</span>
-                    </div>
-                  </div>
+                <div className={styles.cardArt}>
+                  <Image src={`/illustrations/test-prep/${p.id}.webp`} alt="" fill sizes="(max-width: 639px) 50vw, (max-width: 1023px) 33vw, 20vw" className="object-cover transition-transform duration-500 group-hover:scale-105" />
+                  {p.demandTag && <span className={styles.badge} style={{ color: accent }}><Sparkles size={13} />{p.demandTag}</span>}
+                </div>
+                <div className={styles.cardTitle}>
+                  <RectFlag code={p.flagCode} h={23} className="shrink-0 rounded-sm shadow-sm" />
+                  <h2>{p.test}</h2>
                 </div>
 
                 <div className="flex flex-1 flex-col p-4">
-                  <p className="mb-4 flex-1 text-[13px] leading-relaxed text-slate-600 line-clamp-3">{p.blurb}</p>
                   <div>
-                    <p className="text-[10px] font-medium uppercase tracking-wide text-slate-400">Mulai dari</p>
+                    <p className="mb-1 text-xs font-medium text-slate-500">Mulai dari</p>
                     {/* [test-prep-level-pricing-v1] "Mulai dari" = level TERENDAH & semi-private.
                         [test-prep-pte-v1] Produk khusus Private: tarif per sesi private. */}
                     {p.privateOnly ? (
                       <>
-                        <p className="text-lg font-extrabold leading-tight text-slate-900">{formatRupiah(privatePerSessionFor(p, p.levels[0]?.id ?? ""))}</p>
+                        <p className="text-[23px] font-extrabold leading-tight tracking-tight text-slate-900">{formatRupiah(privatePerSessionFor(p, p.levels[0]?.id ?? ""))}</p>
                         <p className="text-[11px] text-slate-400">/sesi · private 1-on-1 · {SESSION_MINUTES} menit</p>
                       </>
                     ) : (
                       <>
-                        <p className="text-lg font-extrabold leading-tight text-slate-900">{formatRupiah(p.semiPrice)}</p>
+                        <p className="text-[23px] font-extrabold leading-tight tracking-tight text-slate-900">{formatRupiah(p.semiPrice)}</p>
                         <p className="text-[11px] text-slate-400">/orang · {SEMI_SESSIONS} sesi semi-private · {p.levels[0]?.label}</p>
                       </>
                     )}
                   </div>
                   <span
-                    className="mt-3 flex w-full items-center justify-center gap-1.5 rounded-xl px-3 py-2 text-sm font-bold text-white shadow-sm transition group-hover:brightness-110"
-                    style={{ background: p.accent }}
+                    className="mt-5 flex w-full items-center justify-center gap-2 rounded-full px-3 py-3 text-sm font-bold text-white shadow-sm transition group-hover:brightness-110"
+                    style={{ background: accent }}
                   >
                     {diKeranjang ? <><Check className="h-4 w-4" /> {diKeranjang} di keranjang</> : <>Pilih paket <ArrowRight className="h-4 w-4" /></>}
                   </span>
@@ -203,8 +163,8 @@ export default function PersiapanTesClient() {
         </div>
 
         {/* Perbandingan format */}
-        <div className="mt-8 grid gap-4 sm:grid-cols-2">
-          <div className="rounded-2xl border border-slate-200 p-5">
+        <div className="mt-12 grid gap-5 sm:grid-cols-2">
+          <div className="rounded-3xl border border-teal-100 bg-white/80 p-6 sm:p-8">
             <div className="mb-2 flex items-center gap-2">
               <Users className="h-5 w-5 text-teal-600" />
               <p className="font-bold text-slate-900">Semi-Private (grup kecil)</p>
@@ -215,7 +175,7 @@ export default function PersiapanTesClient() {
               ))}
             </ul>
           </div>
-          <div className="rounded-2xl border border-slate-200 p-5">
+          <div className="rounded-3xl border border-teal-100 bg-white/80 p-6 sm:p-8">
             <div className="mb-2 flex items-center gap-2">
               <User className="h-5 w-5 text-indigo-600" />
               <p className="font-bold text-slate-900">Private 1-on-1</p>
