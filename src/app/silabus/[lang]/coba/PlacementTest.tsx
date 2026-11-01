@@ -164,6 +164,29 @@ async function ambilSoalAcak(slug: string, who: { sid?: string | null; email?: s
   }
 }
 
+// [placement-pengantar-inggris-v1] Bahasa pengantar soal: "id" (bawaan bank soal) atau
+// "en" (diterjemahkan /api/placement-translate). Gagal / lambat → tetap Indonesia.
+type Pengantar = "id" | "en";
+const KUNCI_PENGANTAR = "linguo_placement_pengantar";
+async function terjemahkanSoal(soal: Question[], language: string): Promise<Question[] | null> {
+  const ctrl = new AbortController();
+  const batas = setTimeout(() => ctrl.abort(), 40000);
+  try {
+    const res = await fetch("/api/placement-translate", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ questions: soal, language }),
+      signal: ctrl.signal,
+    });
+    const d = await res.json();
+    return Array.isArray(d?.questions) && d.questions.length === soal.length ? d.questions : null;
+  } catch {
+    return null;
+  } finally {
+    clearTimeout(batas);
+  }
+}
+
 export default function PlacementTest({ curriculum, questions: soalBawaan }: Props) {
   const { meta } = curriculum;
   // [placement-bank-acak-v1] Soal yang sedang dikerjakan — diganti set acak tiap tes dimulai.
@@ -182,6 +205,16 @@ export default function PlacementTest({ curriculum, questions: soalBawaan }: Pro
   const fromAkun = searchParams?.get("ref") === "akun" && !!searchParams?.get("sid");
   const [contact, setContact] = useState<Contact | null>(null);
   const [gender, setGender] = useState<Gender | null>(null);
+  const [pengantar, setPengantarState] = useState<Pengantar>("id");
+  useEffect(() => {
+    try { if (localStorage.getItem(KUNCI_PENGANTAR) === "en") setPengantarState("en"); } catch {}
+  }, []);
+  const setPengantar = (p: Pengantar) => {
+    setPengantarState(p);
+    try { localStorage.setItem(KUNCI_PENGANTAR, p); } catch {}
+  };
+  // Bahasa yang benar-benar dipakai set soal saat ini (terjemahan bisa gagal → "id").
+  const [pengantarAktif, setPengantarAktif] = useState<Pengantar>("id");
 
   const question = questions[currentQ];
   const progress = ((currentQ + 1) / questions.length) * 100;
@@ -225,8 +258,10 @@ export default function PlacementTest({ curriculum, questions: soalBawaan }: Pro
       email: contact?.email,
       whatsapp: contact?.whatsapp,
     })) ?? soalBawaan;
+    const soalEn = pengantar === "en" ? await terjemahkanSoal(soal, funnelLangName(meta.slug)) : null;
     menyiapkanRef.current = false; setMenyiapkan(false);
-    setQuestions(soal);
+    setPengantarAktif(soalEn ? "en" : "id");
+    setQuestions(soalEn ?? soal);
     startTimeRef.current = Date.now();
     setScreen("quiz"); setCurrentQ(0); setDirection(1);
     setAnswers(Array(soal.length).fill(null));
@@ -273,7 +308,7 @@ export default function PlacementTest({ curriculum, questions: soalBawaan }: Pro
         {screen === "intro" && (
           <IntroScreen key="intro" meta={meta} total={questions.length} listening={questions.filter((q) => q.audio).length}
             needContact={!fromAkun} onContact={saveContact} onStart={startTest} starting={menyiapkan}
-            gender={gender} onGender={setGender} />
+            gender={gender} onGender={setGender} pengantar={pengantar} onPengantar={setPengantar} />
         )}
         {screen === "quiz" && question && (
           <QuizScreen
@@ -289,6 +324,7 @@ export default function PlacementTest({ curriculum, questions: soalBawaan }: Pro
             onBack={goBack}
             langSlug={meta.slug}
             startedAt={startTimeRef.current}
+            en={pengantarAktif === "en"}
           />
         )}
         {screen === "result" && (
@@ -302,6 +338,7 @@ export default function PlacementTest({ curriculum, questions: soalBawaan }: Pro
             contact={contact}
             gender={gender}
             onRetake={startTest}
+            en={pengantarAktif === "en"}
           />
         )}
       </AnimatePresence>
@@ -312,9 +349,10 @@ export default function PlacementTest({ curriculum, questions: soalBawaan }: Pro
 // ================================================
 // INTRO
 // ================================================
-function IntroScreen({ meta, total, listening, needContact, onContact, onStart, starting, gender, onGender }: {
+function IntroScreen({ meta, total, listening, needContact, onContact, onStart, starting, gender, onGender, pengantar, onPengantar }: {
   meta: any; total: number; listening: number; needContact: boolean; onContact: (c: Contact) => void; onStart: () => void;
   starting: boolean; gender: Gender | null; onGender: (g: Gender) => void;
+  pengantar: Pengantar; onPengantar: (p: Pengantar) => void;
 }) {
   // [placement-popup-biodata-tips-v1] "Mulai Test" → popup: biodata (wajib) → tips → mulai.
   const [step, setStep] = useState<null | "biodata" | "tips">(null);
@@ -435,9 +473,21 @@ function IntroScreen({ meta, total, listening, needContact, onContact, onStart, 
                     </p>
                   </div>
                   {!needContact && <div className="mt-5"><GenderPick value={gender} onChange={pilihGender} /></div>}
+                  <div className="mt-5">
+                    <p className="text-sm font-semibold text-gray-900 mb-2">Bahasa pengantar soal <span className="font-normal text-gray-500">· Instruction language</span></p>
+                    <div className="grid grid-cols-2 gap-2" role="radiogroup" aria-label="Bahasa pengantar soal">
+                      {([["id", "🇮🇩 Indonesia"], ["en", "🇬🇧 English"]] as const).map(([v, label]) => (
+                        <button key={v} type="button" role="radio" aria-checked={pengantar === v} onClick={() => onPengantar(v)}
+                          className={"px-4 py-2.5 rounded-xl border-2 text-sm font-semibold transition-colors " + (pengantar === v ? "border-[#1A9E9E] bg-[#1A9E9E]/10 text-[#147a7a]" : "border-gray-200 text-gray-600 hover:border-gray-300")}>
+                          {label}
+                        </button>
+                      ))}
+                    </div>
+                    {pengantar === "en" && <p className="mt-1.5 text-xs text-gray-500">Questions & explanations will be shown in English.</p>}
+                  </div>
                   <button type="button" autoFocus onClick={onStart} disabled={starting}
                     className="mt-6 w-full inline-flex items-center justify-center gap-2 px-6 py-3 bg-[#1A9E9E] text-white rounded-xl font-semibold hover:bg-[#147a7a] transition-colors disabled:opacity-70">
-                    {starting ? "Menyiapkan soal…" : <>Mulai Test Sekarang <ArrowRight className="w-4 h-4" /></>}
+                    {starting ? (pengantar === "en" ? "Preparing questions…" : "Menyiapkan soal…") : <>Mulai Test Sekarang <ArrowRight className="w-4 h-4" /></>}
                   </button>
                   {needContact && (
                     <button type="button" onClick={() => setStep("biodata")}
@@ -463,9 +513,9 @@ function QuizScreen(props: {
   selected: string | number | boolean | null;
   onSubmit: (v: string | number | boolean, isCorrectOverride?: boolean) => void;
   onPass: () => void;
-  onBack: () => void; langSlug: string; startedAt: number;
+  onBack: () => void; langSlug: string; startedAt: number; en: boolean;
 }) {
-  const { question, currentQ, total, progress, direction, selected, onSubmit, onPass, onBack, langSlug, startedAt } = props;
+  const { question, currentQ, total, progress, direction, selected, onSubmit, onPass, onBack, langSlug, startedAt, en } = props;
   // [placement-timer-v1] Stopwatch sejak "Mulai Test" + konfirmasi sebelum keluar.
   const [elapsed, setElapsed] = useState(() => Math.floor((Date.now() - startedAt) / 1000));
   const [confirmExit, setConfirmExit] = useState(false);
@@ -493,10 +543,10 @@ function QuizScreen(props: {
         <div className="mb-8">
           <div className="flex items-center justify-between mb-2 text-sm">
             <div className="flex items-center gap-2">
-              <button type="button" onClick={() => setConfirmExit(true)} aria-label="Keluar dari test" className="text-gray-400 hover:text-gray-600">
+              <button type="button" onClick={() => setConfirmExit(true)} aria-label={en ? "Exit test" : "Keluar dari test"} className="text-gray-400 hover:text-gray-600">
                 <X className="w-4 h-4" />
               </button>
-              <span className="text-gray-500">Soal <span className="font-bold text-gray-900">{currentQ + 1}</span> dari {total}</span>
+              <span className="text-gray-500">{en ? "Question" : "Soal"} <span className="font-bold text-gray-900">{currentQ + 1}</span> {en ? "of" : "dari"} {total}</span>
             </div>
             <div className="flex items-center gap-2">
               <span className="inline-flex items-center gap-1 text-xs font-semibold text-gray-600 bg-gray-100 px-2 py-0.5 rounded-full tabular-nums" aria-label="Waktu berjalan">
@@ -529,7 +579,7 @@ function QuizScreen(props: {
             {question.audio && <ListeningPlayer key={question.id} id={question.id} audio={question.audio} />}
             {question.type === "dragDrop" && (
               <p className="text-sm md:text-base text-gray-600 italic mb-5 bg-[#1A9E9E]/5 border-l-4 border-[#1A9E9E] px-4 py-3 rounded-r-xl">
-                <span className="font-semibold text-[#1A9E9E] not-italic">Terjemahan: </span>
+                <span className="font-semibold text-[#1A9E9E] not-italic">{en ? "Translation: " : "Terjemahan: "}</span>
                 {(question as any).translation}
               </p>
             )}
@@ -562,7 +612,7 @@ function QuizScreen(props: {
                   <input type="text" value={fillValue}
                     onChange={(e) => setFillValue(e.target.value)}
                     onKeyDown={(e) => { if (e.key === "Enter" && fillValue.trim()) onSubmit(fillValue.toLowerCase().trim()); }}
-                    placeholder="Ketik jawaban lalu Enter..."
+                    placeholder={en ? "Type your answer, then Enter..." : "Ketik jawaban lalu Enter..."}
                     className="flex-1 px-5 py-4 rounded-2xl border-2 border-gray-200 focus:border-[#1A9E9E] focus:outline-none transition-colors"
                   />
                   <button onClick={() => fillValue.trim() && onSubmit(fillValue.toLowerCase().trim())} disabled={!fillValue.trim()}
@@ -592,7 +642,7 @@ function QuizScreen(props: {
               )}
 
               {question.type === "dragDrop" && (
-                <DragDropRenderer question={question} initialValue={selected} onSubmit={onSubmit} />
+                <DragDropRenderer question={question} initialValue={selected} onSubmit={onSubmit} en={en} />
               )}
 
               {question.type === "missing" && (
@@ -612,17 +662,17 @@ function QuizScreen(props: {
             <button onClick={onBack}
               className="inline-flex items-center gap-2 px-5 py-2.5 text-sm text-gray-500 hover:text-gray-700 rounded-full hover:bg-gray-100 transition-all">
               <ArrowLeft className="w-4 h-4" />
-              Soal sebelumnya
+              {en ? "Previous question" : "Soal sebelumnya"}
             </button>
           ) : <span />}
           <button onClick={onPass}
             className="inline-flex items-center gap-2 px-5 py-2.5 text-sm font-semibold text-amber-800 bg-amber-50 border border-amber-300 rounded-full hover:bg-amber-100 transition-all">
             <SkipForward className="w-4 h-4" />
-            Tidak tahu, lewati soal
+            {en ? "I don't know, skip" : "Tidak tahu, lewati soal"}
           </button>
         </div>
         <p className="mt-3 text-xs text-gray-500 text-right">
-          Jangan menebak — melewati soal bikin hasil levelmu lebih akurat.
+          {en ? "Don't guess — skipping makes your level result more accurate." : "Jangan menebak — melewati soal bikin hasil levelmu lebih akurat."}
         </p>
       </div>
 
@@ -636,18 +686,20 @@ function QuizScreen(props: {
               role="alertdialog" aria-modal="true" aria-labelledby="exit-title"
               onClick={(e) => e.stopPropagation()}
               className="w-full max-w-sm bg-white rounded-3xl shadow-2xl p-6">
-              <h2 id="exit-title" className="text-lg font-bold text-gray-900">Yakin mau keluar?</h2>
+              <h2 id="exit-title" className="text-lg font-bold text-gray-900">{en ? "Leave the test?" : "Yakin mau keluar?"}</h2>
               <p className="text-sm text-gray-500 mt-1.5">
-                Kamu sudah di soal {currentQ + 1} dari {total}. Kalau keluar sekarang, jawabanmu tidak disimpan dan harus mulai dari awal.
+                {en
+                  ? `You're on question ${currentQ + 1} of ${total}. If you leave now, your answers won't be saved and you'll have to start over.`
+                  : `Kamu sudah di soal ${currentQ + 1} dari ${total}. Kalau keluar sekarang, jawabanmu tidak disimpan dan harus mulai dari awal.`}
               </p>
               <div className="mt-5 flex flex-col-reverse sm:flex-row gap-2">
                 <Link href={"/silabus/" + langSlug}
                   className="flex-1 text-center px-4 py-2.5 rounded-xl border border-gray-200 text-sm font-semibold text-gray-600 hover:bg-gray-50 transition-colors">
-                  Ya, keluar
+                  {en ? "Yes, leave" : "Ya, keluar"}
                 </Link>
                 <button type="button" autoFocus onClick={() => setConfirmExit(false)}
                   className="flex-1 px-4 py-2.5 rounded-xl bg-[#1A9E9E] text-white text-sm font-semibold hover:bg-[#147a7a] transition-colors">
-                  Lanjut test
+                  {en ? "Continue test" : "Lanjut test"}
                 </button>
               </div>
             </motion.div>
@@ -661,9 +713,9 @@ function QuizScreen(props: {
 // ================================================
 // RESULT (with Soft-gate WA)
 // ================================================
-function ResultScreen({ score, questions, log, meta, timeElapsedSec, contact, gender, onRetake }: {
+function ResultScreen({ score, questions, log, meta, timeElapsedSec, contact, gender, onRetake, en }: {
   score: number; questions: Question[]; log: { correct: boolean; skipped: boolean }[]; meta: any; timeElapsedSec: number;
-  contact: Contact | null; gender: Gender | null; onRetake: () => void;
+  contact: Contact | null; gender: Gender | null; onRetake: () => void; en: boolean;
 }) {
   // Compute max score dynamically: sum of DIFFICULTY_POINTS per question
   const maxScore = questions.reduce((sum, q) => sum + DIFFICULTY_POINTS[q.difficulty], 0);
@@ -1003,7 +1055,7 @@ function ResultScreen({ score, questions, log, meta, timeElapsedSec, contact, ge
             </div>
             <button onClick={() => setShowRecap((v) => !v)}
               className="text-sm font-semibold text-[#1A9E9E] hover:text-[#147a7a] inline-flex items-center gap-1 flex-shrink-0">
-              {showRecap ? "Sembunyikan" : "Lihat pembahasan"}
+              {showRecap ? (en ? "Hide" : "Sembunyikan") : (en ? "See explanations" : "Lihat pembahasan")}
               <ChevronDown className={"w-4 h-4 transition-transform " + (showRecap ? "rotate-180" : "")} />
             </button>
           </div>
@@ -1031,14 +1083,14 @@ function ResultScreen({ score, questions, log, meta, timeElapsedSec, contact, ge
                       <div key={q.id} className="p-4 rounded-2xl bg-slate-50 border border-slate-100">
                         <div className="flex items-start gap-2 mb-1.5">
                           <span className={"text-[11px] font-bold px-2 py-0.5 rounded-full flex-shrink-0 mt-0.5 " + badge}>
-                            {status === "correct" ? "Benar" : status === "skipped" ? "Dilewati" : "Salah"}
+                            {status === "correct" ? (en ? "Correct" : "Benar") : status === "skipped" ? (en ? "Skipped" : "Dilewati") : (en ? "Wrong" : "Salah")}
                           </span>
                           <p className="text-sm font-semibold text-gray-900 leading-snug">
                             <span className="text-gray-400">#{i + 1}</span> {bidi(questionPrompt(q))}
                           </p>
                         </div>
                         <p className="text-xs text-gray-600 leading-relaxed pl-1">
-                          <span className="font-semibold text-gray-800">Jawaban benar: </span>
+                          <span className="font-semibold text-gray-800">{en ? "Correct answer: " : "Jawaban benar: "}</span>
                           {bidi(correctAnswerText(q))}
                         </p>
                         <p className="text-xs text-gray-600 leading-relaxed pl-1 mt-1">{renderRich(q.explanation)}</p>
@@ -1190,10 +1242,11 @@ function reconstructDragIdx(val: string | number | boolean | null, shuffled: str
 // Pegas animasi kata pindah bank ↔ slot jawaban [placement-dragdrop-anim-v1]
 const TOKEN_SPRING = { type: "spring", stiffness: 500, damping: 35 } as const;
 
-function DragDropRenderer({ question, initialValue, onSubmit }: {
+function DragDropRenderer({ question, initialValue, onSubmit, en }: {
   question: DragDropQuestion;
   initialValue: string | number | boolean | null;
   onSubmit: (v: string | number | boolean, isCorrect?: boolean) => void;
+  en: boolean;
 }) {
   // Shuffle tokens once per mount (kartu di-remount tiap ganti soal)
   const [shuffled] = useState(() =>
@@ -1228,7 +1281,7 @@ function DragDropRenderer({ question, initialValue, onSubmit }: {
       {/* Answer slot — tokens yang sudah dipilih */}
       <div className="min-h-[80px] p-4 bg-slate-50 rounded-2xl border-2 border-dashed border-slate-200">
         {answerTokens.length === 0 ? (
-          <p className="text-center text-sm text-slate-400 italic py-4">Tap kata di bawah untuk menyusun kalimat</p>
+          <p className="text-center text-sm text-slate-400 italic py-4">{en ? "Tap the words below to build the sentence" : "Tap kata di bawah untuk menyusun kalimat"}</p>
         ) : (
           <div dir={rtl ? "rtl" : undefined} className="flex flex-wrap gap-2 items-center">
             {answerIdx.map((tokIdx, i) => (
