@@ -125,7 +125,7 @@ export default function PersiapanTesClient() {
                 className={`group ${styles.card}`}
               >
                 <div className={styles.cardArt}>
-                  <Image src={`/illustrations/test-prep/${p.id}.webp`} alt="" fill sizes="(max-width: 639px) 50vw, (max-width: 1023px) 33vw, 20vw" className="object-cover transition-transform duration-500 group-hover:scale-105" />
+                  <Image src={`/illustrations/test-prep/${p.id}-compact.webp`} alt="" fill sizes="(max-width: 639px) 50vw, (max-width: 1023px) 33vw, 20vw" />
                   {p.demandTag && <span className={styles.badge} style={{ color: accent }}><Sparkles size={13} />{p.demandTag}</span>}
                 </div>
                 <div className={styles.cardTitle}>
@@ -133,7 +133,7 @@ export default function PersiapanTesClient() {
                   <h2>{p.test}</h2>
                 </div>
 
-                <div className="flex flex-1 flex-col p-4">
+                <div className={styles.cardDetails}>
                   <div>
                     <p className="mb-1 text-xs font-medium text-slate-500">Mulai dari</p>
                     {/* [test-prep-level-pricing-v1] "Mulai dari" = level TERENDAH & semi-private.
@@ -151,7 +151,7 @@ export default function PersiapanTesClient() {
                     )}
                   </div>
                   <span
-                    className="mt-5 flex w-full items-center justify-center gap-2 rounded-full px-3 py-3 text-sm font-bold text-white shadow-sm transition group-hover:brightness-110"
+                    className="flex w-full items-center justify-center gap-2 rounded-full px-3 py-2.5 text-sm font-bold text-white shadow-sm transition group-hover:brightness-110"
                     style={{ background: accent }}
                   >
                     {diKeranjang ? <><Check className="h-4 w-4" /> {diKeranjang} di keranjang</> : <>Pilih paket <ArrowRight className="h-4 w-4" /></>}

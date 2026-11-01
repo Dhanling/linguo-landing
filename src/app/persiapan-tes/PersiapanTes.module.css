@@ -48,3 +48,11 @@
 /* Pertahankan rasio asli ilustrasi; potong area berlebih tanpa distorsi. */
 .cardArt img{object-fit:cover}
 @media(max-width:639px){.card>div:last-child>div p:nth-child(2){font-size:clamp(15px,4.7vw,19px)}}
+
+/* Ilustrasi kompak ditampilkan utuh, tanpa pembesaran atau pemotongan. */
+.cardArt,.card:last-child .cardArt{height:auto;aspect-ratio:3 / 2;background:#d9f8fc;flex-shrink:0}
+.cardArt img,.card:last-child .cardArt img{object-fit:contain;object-position:center;transform:none}
+.cardTitle{min-height:0;padding:11px 14px 7px;border-bottom:0;background:white}
+.cardTitle h2{font-size:27px}
+.card>div.cardDetails{display:flex;flex-direction:column;gap:12px;padding:5px 14px 14px}
+@media(max-width:639px){.cardTitle{padding:10px 11px 5px}.cardTitle h2{font-size:23px}.card>div.cardDetails{padding:4px 11px 11px;gap:10px}.card>div.cardDetails>span{padding:9px 6px}}
