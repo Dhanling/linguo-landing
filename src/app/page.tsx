@@ -62,7 +62,10 @@ export default function Home() {
             </div>
           </div>
           <HomeHeroFunnel />
-          <Image src="/images/google-review.png" alt="Google Reviews 5.0/5" width={146} height={31} sizes="146px" className="h-7 sm:h-8 w-auto mt-4 sm:mt-6 opacity-90"/>
+          {/* [hero-google-review-link-v1] Badge bisa diklik → /ulasan (redirect ke ulasan Google Linguo) */}
+          <a href="/ulasan" target="_blank" rel="noopener" aria-label="Lihat & tulis ulasan Google Linguo" className="inline-block mt-4 sm:mt-6 opacity-90 hover:opacity-100 transition-opacity">
+            <Image src="/images/google-review.png" alt="Google Reviews 5.0/5" width={146} height={31} sizes="146px" className="h-7 sm:h-8 w-auto"/>
+          </a>
           
         </div>
         <div className="hidden lg:flex justify-end relative -mr-28">
