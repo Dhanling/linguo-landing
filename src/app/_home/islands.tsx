@@ -6,7 +6,7 @@
 import Image from "next/image";
 import React, { useState, useEffect, useRef, useSyncExternalStore } from "react";
 import dynamic from "next/dynamic";
-import { motion, AnimatePresence, useReducedMotion, useScroll, useTransform, type MotionValue } from "framer-motion";
+import { motion, AnimatePresence, useReducedMotion, useScroll, useTransform, useMotionValueEvent, type MotionValue } from "framer-motion";
 import { Globe, ChevronDown, ChevronLeft, ChevronRight, Mail, Star, Check, ArrowRight, ArrowUp, Menu, X, Zap, AtSign, Search, Sparkles, GraduationCap, Users, School, Baby, ClipboardList, MonitorPlay, BookOpen, Timer, Building2, Headphones, ScrollText, Languages, Clapperboard } from "lucide-react";
 // [home-flags-subset-v1] Bendera beranda dari subset kecil (bukan set lengkap
 // blade-flags 1,2 MB); kode di luar subset jatuh ke RectFlag lazy.
@@ -943,81 +943,127 @@ function bukaProduk(p: typeof PRODUCTS[0]) {
   }
 }
 
-// [produk-scrolly-v1] Scrollytelling: tiap produk satu kartu lebar (ilustrasi kiri, deskripsi +
-// harga + tombol kanan) yang menempel (sticky) lalu ditumpuk kartu berikutnya saat di-scroll.
-// Kartu yang sudah tertumpuk mengecil sedikit supaya tumpukannya terasa berlapis.
+// [produk-geser-v1] Scrollytelling menyamping: section dipin (isi sticky setinggi layar) dan
+// scroll vertikal menggeser jajaran kartu ke kiri. Kartu yang sedang di tengah tampil penuh,
+// tetangganya memudar & mengecil. Tinggi section = ruang scroll untuk menggeser semua kartu.
 export function ProductDock(_props: { setPricingTab: (t: number) => void; onSelectProgram: (prog: string) => void }) {
-  const hostRef = useRef<HTMLDivElement>(null);
-  const { scrollYProgress } = useScroll({ target: hostRef, offset: ["start start", "end end"] });
+  const hostRef = useRef<HTMLElement>(null);
+  const kartuRef = useRef<HTMLDivElement>(null);
   const N = PRODUCTS.length;
+  const GAP = 28;
+  // Lebar layar & kartu diukur di klien; awal (SSR) kartu pertama sudah ditaruh di tengah lewat CSS.
+  const [ukur, setUkur] = useState({ vw: 0, w: 0 });
+  useEffect(() => {
+    const hitung = () => setUkur({ vw: window.innerWidth, w: kartuRef.current?.offsetWidth ?? 0 });
+    hitung();
+    window.addEventListener("resize", hitung);
+    return () => window.removeEventListener("resize", hitung);
+  }, []);
+  const { scrollYProgress } = useScroll({ target: hostRef, offset: ["start start", "end end"] });
+  const langkah = ukur.w + GAP;
+  const x = useTransform(scrollYProgress, p => -p * (N - 1) * langkah);
+  const lebarBar = useTransform(scrollYProgress, p => `${(p * 100).toFixed(2)}%`);
+  const [aktif, setAktif] = useState(0);
+  useMotionValueEvent(scrollYProgress, "change", p => setAktif(Math.round(p * (N - 1))));
+  // Lompat ke kartu ke-i = scroll ke titik progres i/(N-1) di dalam section.
+  const keKartu = (i: number) => {
+    const el = hostRef.current;
+    if (!el) return;
+    const jarak = el.offsetHeight - window.innerHeight;
+    window.scrollTo({ top: el.getBoundingClientRect().top + window.scrollY + jarak * (i / (N - 1)), behavior: "smooth" });
+  };
+
   return (
-    <div ref={hostRef} className="relative">
-      {PRODUCTS.map((p, i) => (
-        <KartuTumpuk key={p.title} product={p} i={i} n={N} progress={scrollYProgress} />
-      ))}
-    </div>
+    <section ref={hostRef} className="relative bg-white border-b border-slate-100" style={{ height: `${100 + (N - 1) * 55}vh` }}>
+      <div className="sticky top-0 h-screen h-[100svh] overflow-hidden flex flex-col justify-center pt-14 lg:pt-16">
+        <div className="max-w-7xl w-full mx-auto px-6 mb-5 lg:mb-8 text-center">
+          <h2 className="font-heading text-2xl sm:text-3xl lg:text-4xl font-bold mb-1">Semua kebutuhan belajar bahasa ada di Linguo</h2>
+          <p className="text-slate-500 text-sm">Pilih program yang sesuai dengan kebutuhanmu</p>
+        </div>
+
+        <motion.div className="flex items-stretch will-change-transform py-4"
+          style={{ x, gap: GAP, paddingLeft: ukur.w ? (ukur.vw - ukur.w) / 2 : "8vw" }}>
+          {PRODUCTS.map((p, i) => (
+            <KartuGeser key={p.title} product={p} i={i} n={N} progress={scrollYProgress}
+              ref={i === 0 ? kartuRef : undefined} />
+          ))}
+        </motion.div>
+
+        {/* Progres: bar + titik per produk (klik = lompat ke kartu itu) */}
+        <div className="max-w-md w-full mx-auto px-6 mt-4 lg:mt-6 flex items-center gap-4">
+          <span className="text-xs font-semibold text-[#1A9E9E] tabular-nums w-12">{String(aktif + 1).padStart(2, "0")} / {String(N).padStart(2, "0")}</span>
+          <div className="relative flex-1 h-1 rounded-full bg-slate-100 overflow-hidden">
+            <motion.span className="absolute inset-y-0 left-0 bg-[#1A9E9E] rounded-full" style={{ width: lebarBar }} />
+          </div>
+          <div className="hidden sm:flex gap-1.5">
+            {PRODUCTS.map((p, i) => (
+              <button key={p.title} type="button" aria-label={`Lihat ${p.title}`} onClick={() => keKartu(i)}
+                className={`h-2 rounded-full transition-all ${i === aktif ? "w-5 bg-[#1A9E9E]" : "w-2 bg-slate-200 hover:bg-slate-300"}`} />
+            ))}
+          </div>
+        </div>
+      </div>
+    </section>
   );
 }
 
-function KartuTumpuk({ product: p, i, n, progress }: { product: typeof PRODUCTS[0]; i: number; n: number; progress: MotionValue<number> }) {
+const KartuGeser = React.forwardRef<HTMLDivElement, { product: typeof PRODUCTS[0]; i: number; n: number; progress: MotionValue<number> }>(
+function KartuGeser({ product: p, i, n, progress }, ref) {
   const kurangiGerak = useReducedMotion();
-  const skalaAkhir = 1 - (n - 1 - i) * 0.035;
-  const scale = useTransform(progress, [i / n, 1], [1, kurangiGerak ? 1 : skalaAkhir]);
+  // k = 1 saat kartu ini tepat di tengah, turun ke 0 saat bergeser satu kartu.
+  const k = useTransform(progress, v => 1 - Math.min(1, Math.abs(i - v * (n - 1))));
+  const opacity = useTransform(k, v => 0.4 + v * 0.6);
+  const scale = useTransform(k, v => (kurangiGerak ? 1 : 0.9 + v * 0.1));
   const card = p as typeof p & { img1?: string; href?: string };
   const priceMulai = p.price.startsWith("Mulai ");
   const priceMain = priceMulai ? p.price.slice(6) : p.price;
   const poin = POIN_PRODUK[p.title] ?? [];
   return (
-    // Semua kartu sticky di induk yang SAMA (bukan pembungkus per kartu) — kalau dibungkus,
-    // sticky-nya lepas begitu pembungkusnya habis dan kartu lama ikut tergulung pergi.
-    // Jarak bawah = ruang scroll sebelum kartu berikutnya naik menumpuk.
-      <motion.div
-        className="sticky origin-top mb-[10vh] last:mb-0"
-        style={{ top: `calc(5.5rem + ${i * 12}px)`, scale }}>
-        <div className="grid lg:grid-cols-[1.1fr_1fr] bg-white rounded-3xl lg:rounded-[2rem] border border-slate-100 shadow-[0_10px_40px_rgba(15,23,42,0.10)] overflow-hidden lg:min-h-[440px]">
-          {/* Ilustrasi brush utuh di atas latar warna produk */}
-          <button type="button" tabIndex={-1} aria-hidden onClick={() => bukaProduk(p)}
-            className="relative aspect-[2/1] lg:aspect-auto cursor-pointer" style={{ background: p.bgColor }}>
-            {card.img1 && <Image src={card.img1} alt="" fill loading="lazy" sizes="(min-width: 1024px) 600px, 92vw" className="object-contain p-2 lg:p-8 mix-blend-multiply" />}
-            <span className={`absolute top-3 left-3 lg:top-5 lg:left-5 inline-flex items-center gap-0.5 text-[10px] lg:text-xs px-2.5 py-1 font-bold rounded-full whitespace-nowrap ${p.badgeColor}`}>{p.badgeIcon}{p.badgeLabel}</span>
-          </button>
+    <motion.div ref={ref} className="shrink-0 w-[84vw] sm:w-[70vw] lg:w-[min(880px,68vw)]" style={{ opacity, scale }}>
+      <div className="h-full grid lg:grid-cols-[1.1fr_1fr] bg-white rounded-3xl lg:rounded-[2rem] border border-slate-100 shadow-[0_10px_40px_rgba(15,23,42,0.10)] overflow-hidden lg:min-h-[420px]">
+        {/* Ilustrasi brush utuh di atas latar warna produk */}
+        <button type="button" tabIndex={-1} aria-hidden onClick={() => bukaProduk(p)}
+          className="relative aspect-[2/1] lg:aspect-auto cursor-pointer" style={{ background: p.bgColor }}>
+          {card.img1 && <Image src={card.img1} alt="" fill loading="lazy" sizes="(min-width: 1024px) 480px, 84vw" className="object-contain p-2 lg:p-8 mix-blend-multiply" />}
+          <span className={`absolute top-3 left-3 lg:top-5 lg:left-5 inline-flex items-center gap-0.5 text-[10px] lg:text-xs px-2.5 py-1 font-bold rounded-full whitespace-nowrap ${p.badgeColor}`}>{p.badgeIcon}{p.badgeLabel}</span>
+        </button>
 
-          <div className="flex flex-col justify-center p-4 sm:p-7 lg:p-10">
-            <p className="text-[11px] lg:text-xs font-semibold text-[#1A9E9E] tracking-wider mb-1 lg:mb-2">{String(i + 1).padStart(2, "0")} / {String(n).padStart(2, "0")}</p>
-            <h3 className="font-heading text-xl sm:text-2xl lg:text-4xl font-bold text-slate-900 leading-tight mb-1.5 lg:mb-3">{p.title}</h3>
-            <p className="text-[13px] lg:text-base text-slate-500 leading-snug lg:leading-relaxed mb-3 lg:mb-5">{p.desc}</p>
-            {poin.length > 0 && (
-              <ul className="space-y-1.5 lg:space-y-2 mb-3 lg:mb-7">
-                {poin.map(t => (
-                  <li key={t} className="flex items-start gap-2 text-[13px] lg:text-sm text-slate-700">
-                    <span className="mt-0.5 shrink-0 w-5 h-5 rounded-full bg-[#1A9E9E]/10 text-[#1A9E9E] flex items-center justify-center"><Check className="w-3 h-3" strokeWidth={3} /></span>
-                    {t}
-                  </li>
-                ))}
-              </ul>
-            )}
-            <div className="flex items-end justify-between gap-3 pt-3 lg:pt-5 border-t border-slate-100">
-              <div className="min-w-0">
-                {p.priceOld && (
-                  <div className="flex items-center gap-1.5 mb-0.5">
-                    <span className="text-xs text-slate-400 line-through">{p.priceOld}</span>
-                    {p.discount && <span className="text-[10px] font-bold text-red-500 bg-red-50 px-1.5 py-0.5 rounded">{p.discount}</span>}
-                  </div>
-                )}
-                {priceMulai && <span className="block text-xs text-slate-400 leading-none mb-0.5">Mulai</span>}
-                <span className="text-lg lg:text-2xl font-bold text-slate-900 whitespace-nowrap">{priceMain}</span>
-                {p.per && <span className="text-xs text-slate-400 ml-1">{p.per}</span>}
-              </div>
-              <button type="button" onClick={() => bukaProduk(p)}
-                className="shrink-0 inline-flex items-center gap-1.5 bg-[#1A9E9E] hover:bg-[#178888] text-white text-sm font-bold px-4 py-2.5 lg:px-5 lg:py-3 rounded-xl transition-colors active:scale-95">
-                Beli<span className="hidden sm:inline"> sekarang</span> <ArrowRight className="w-4 h-4" />
-              </button>
+        <div className="flex flex-col justify-center p-4 sm:p-7 lg:p-9">
+          <p className="text-[11px] lg:text-xs font-semibold text-[#1A9E9E] tracking-wider mb-1 lg:mb-2">{String(i + 1).padStart(2, "0")} / {String(n).padStart(2, "0")}</p>
+          <h3 className="font-heading text-xl sm:text-2xl lg:text-[2rem] font-bold text-slate-900 leading-tight mb-1.5 lg:mb-3">{p.title}</h3>
+          <p className="text-[13px] lg:text-[15px] text-slate-500 leading-snug lg:leading-relaxed mb-3 lg:mb-5">{p.desc}</p>
+          {poin.length > 0 && (
+            <ul className="space-y-1.5 lg:space-y-2 mb-3 lg:mb-6">
+              {poin.map(t => (
+                <li key={t} className="flex items-start gap-2 text-[13px] lg:text-sm text-slate-700">
+                  <span className="mt-0.5 shrink-0 w-5 h-5 rounded-full bg-[#1A9E9E]/10 text-[#1A9E9E] flex items-center justify-center"><Check className="w-3 h-3" strokeWidth={3} /></span>
+                  {t}
+                </li>
+              ))}
+            </ul>
+          )}
+          <div className="flex items-end justify-between gap-3 pt-3 lg:pt-5 border-t border-slate-100">
+            <div className="min-w-0">
+              {p.priceOld && (
+                <div className="flex items-center gap-1.5 mb-0.5">
+                  <span className="text-xs text-slate-400 line-through">{p.priceOld}</span>
+                  {p.discount && <span className="text-[10px] font-bold text-red-500 bg-red-50 px-1.5 py-0.5 rounded">{p.discount}</span>}
+                </div>
+              )}
+              {priceMulai && <span className="block text-xs text-slate-400 leading-none mb-0.5">Mulai</span>}
+              <span className="text-lg lg:text-2xl font-bold text-slate-900 whitespace-nowrap">{priceMain}</span>
+              {p.per && <span className="text-xs text-slate-400 ml-1">{p.per}</span>}
             </div>
+            <button type="button" onClick={() => bukaProduk(p)}
+              className="shrink-0 inline-flex items-center gap-1.5 bg-[#1A9E9E] hover:bg-[#178888] text-white text-sm font-bold px-4 py-2.5 lg:px-5 lg:py-3 rounded-xl transition-colors active:scale-95">
+              Beli<span className="hidden sm:inline"> sekarang</span> <ArrowRight className="w-4 h-4" />
+            </button>
           </div>
         </div>
-      </motion.div>
+      </div>
+    </motion.div>
   );
-}
+});
 
 // ========== LANGUAGE FLAG STRIP ==========
 
