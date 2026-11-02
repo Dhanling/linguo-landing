@@ -103,10 +103,16 @@ export default function Home() {
 
     {/* linguo-patch:chat-widget-drawer-aware-v1 — chat widget dipindah ke <Navbar/> (lihat dekat <PlacementPicker/>) */}
 
-    {/* PRODUCT CARDS — [produk-geser-v1] section dipin, kartu bergeser ke samping saat di-scroll.
-        Judul ikut di dalam pulau supaya tetap kelihatan selama section dipin. Tanpa <Reveal>:
-        section ini setinggi beberapa layar, jadi efek fade-in-nya tak berarti. */}
-    <HomeProductDock />
+    {/* PRODUCT CARDS — macOS Dock style */}
+    <Reveal>
+    <section className="bg-white py-14 border-b border-slate-100">
+      <div className="max-w-7xl mx-auto px-6">
+        <h2 className="font-heading text-2xl sm:text-3xl lg:text-4xl font-bold text-center mb-1">Semua kebutuhan belajar bahasa ada di Linguo</h2>
+        <p className="text-slate-500 text-sm text-center mb-10">Pilih program yang sesuai dengan kebutuhanmu</p>
+        <HomeProductDock />
+      </div>
+    </section>
+    </Reveal>
 
     {/* OUR CLIENTS */}
     <section className="py-5 sm:py-10 bg-white border-b border-slate-100 overflow-hidden">

@@ -6,7 +6,8 @@
 import Image from "next/image";
 import React, { useState, useEffect, useRef, useSyncExternalStore } from "react";
 import dynamic from "next/dynamic";
-import { motion, AnimatePresence, useReducedMotion, useScroll, useTransform, useMotionValueEvent, type MotionValue } from "framer-motion";
+import { createPortal } from "react-dom";
+import { motion, AnimatePresence, useReducedMotion } from "framer-motion";
 import { Globe, ChevronDown, ChevronLeft, ChevronRight, Mail, Star, Check, ArrowRight, ArrowUp, Menu, X, Zap, AtSign, Search, Sparkles, GraduationCap, Users, School, Baby, ClipboardList, MonitorPlay, BookOpen, Timer, Building2, Headphones, ScrollText, Languages, Clapperboard } from "lucide-react";
 // [home-flags-subset-v1] Bendera beranda dari subset kecil (bukan set lengkap
 // blade-flags 1,2 MB); kode di luar subset jatuh ke RectFlag lazy.
@@ -919,151 +920,201 @@ const PRODUCTS = [
   {badgeIcon:<svg viewBox="0 0 24 24" fill="white" className="w-2.5 h-2.5 inline-block mr-0.5"><path d="M18 2H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm-1 14H7v-2h10v2zm0-4H7v-2h10v2zm0-4H7V6h10v2z"/></svg>,badgeLabel:"Digital",badgeColor:"bg-[#FF8700] text-white",title:"E-Book",desc:"Buku digital lengkap untuk belajar mandiri di mana saja",priceOld:null,price:"Mulai Rp 79.000",per:"",discount:null,tab:-1,href:"/produk/ebook",bgColor:"#FFEBEE",imageEmoji:"",objPos:"object-[50%_20%]",img1:"/images/programs/brush/ebook.webp"},
 ];
 
-// [produk-scrolly-v1] Poin singkat di panel kanan tiap kartu (dikunci per judul PRODUCTS).
-const POIN_PRODUK: Record<string, string[]> = {
-  "Kelas Private": ["Belajar 1-on-1 online via Zoom", "Jadwal fleksibel sesuai waktumu", "Topik & materi menyesuaikan tujuanmu"],
-  "Kelas Reguler": ["Kelas grup dengan jadwal tetap", "Belajar bareng teman seangkatan", "Biaya paling hemat per bulan"],
-  "IELTS / TOEFL": ["16 sesi @90 menit", "Strategi & latihan 4 skill", "Batch terjadwal, siap hadapi tes"],
-  "Persiapan Ujian Bahasa": ["Materi fokus ke format ujian", "Kelas semi-private atau private", "Mock test seperti ujian asli"],
-  "Simulasi TOEFL/IELTS": ["Format soal mirip tes asli", "Akses selamanya (lifetime)", "Ukur skor sebelum tes asli"],
-  "Kelas Kids": ["Khusus anak usia 5–12 tahun", "1-on-1, fun & interaktif", "Pengajar ramah anak"],
-  "E-Learning": ["Rekaman kelas per bahasa", "Akses penuh 6 bulan", "Belajar sesuai tempomu sendiri"],
-  "E-Book": ["Buku digital per bahasa & level", "Baca di HP atau laptop", "Belajar mandiri di mana saja"],
-};
-
-function bukaProduk(p: typeof PRODUCTS[0]) {
-  // ETP tak lewat /daftar lagi — kartunya langsung ke daftar batch TOEFL/IELTS.
-  if (p.tab >= 0) {
-    const prog = ["Kelas Private","Kelas Reguler","IELTS/TOEFL Prep","Kelas Kids"][p.tab] || "";
-    window.location.href = prog === "IELTS/TOEFL Prep" ? "/jadwal-kelas-reguler?tab=etp" : daftarHref(prog);
-  } else if (p.href) {
-    window.location.href = p.href;
-  } else {
-    window.open(taggedWaUrlAndTrack(`https://wa.me/6282116859493?text=${encodeURIComponent(`Halo, saya tertarik ${p.title} Linguo`)}`, p.title), "_blank");
-  }
-}
-
-// [produk-geser-v1] Scrollytelling menyamping: section dipin (isi sticky setinggi layar) dan
-// scroll vertikal menggeser jajaran kartu ke kiri. Kartu yang sedang di tengah tampil penuh,
-// tetangganya memudar & mengecil. Tinggi section = ruang scroll untuk menggeser semua kartu.
-export function ProductDock(_props: { setPricingTab: (t: number) => void; onSelectProgram: (prog: string) => void }) {
-  const hostRef = useRef<HTMLElement>(null);
-  const kartuRef = useRef<HTMLDivElement>(null);
+export function ProductDock({setPricingTab,onSelectProgram}:{setPricingTab:(t:number)=>void;onSelectProgram:(prog:string)=>void}) {
+  const [isMobile, setIsMobile] = useState(false);
+  // [produk-carousel-v2] satu baris 5 kartu (HP: 2), geser satu kartu ke kanan tiap
+  // beberapa detik saat section kelihatan; berhenti saat di-hover.
+  const hostRef = useRef<HTMLDivElement>(null);
+  const [lebar, setLebar] = useState(0);
+  const [kelihatan, setKelihatan] = useState(false);
+  const [dihover, setDihover] = useState(false);
+  const [gerakHalus, setGerakHalus] = useState(true);
   const N = PRODUCTS.length;
-  const GAP = 28;
-  // Lebar layar & kartu diukur di klien; awal (SSR) kartu pertama sudah ditaruh di tengah lewat CSS.
-  const [ukur, setUkur] = useState({ vw: 0, w: 0 });
+  // Dua salinan berurutan: indeks mulai di salinan kedua lalu mundur (isi bergeser ke kanan).
+  const [idx, setIdx] = useState(N);
+
   useEffect(() => {
-    const hitung = () => setUkur({ vw: window.innerWidth, w: kartuRef.current?.offsetWidth ?? 0 });
-    hitung();
-    window.addEventListener("resize", hitung);
-    return () => window.removeEventListener("resize", hitung);
+    const check = () => setIsMobile(window.innerWidth < 1024);
+    check();
+    window.addEventListener("resize", check);
+    return () => window.removeEventListener("resize", check);
   }, []);
-  const { scrollYProgress } = useScroll({ target: hostRef, offset: ["start start", "end end"] });
-  const langkah = ukur.w + GAP;
-  const x = useTransform(scrollYProgress, p => -p * (N - 1) * langkah);
-  const lebarBar = useTransform(scrollYProgress, p => `${(p * 100).toFixed(2)}%`);
-  const [aktif, setAktif] = useState(0);
-  useMotionValueEvent(scrollYProgress, "change", p => setAktif(Math.round(p * (N - 1))));
-  // Lompat ke kartu ke-i = scroll ke titik progres i/(N-1) di dalam section.
-  const keKartu = (i: number) => {
+
+  useEffect(() => {
     const el = hostRef.current;
     if (!el) return;
-    const jarak = el.offsetHeight - window.innerHeight;
-    window.scrollTo({ top: el.getBoundingClientRect().top + window.scrollY + jarak * (i / (N - 1)), behavior: "smooth" });
+    const ro = new ResizeObserver(() => setLebar(el.clientWidth));
+    ro.observe(el);
+    const io = new IntersectionObserver(([e]) => setKelihatan(e.isIntersecting), { threshold: 0.2 });
+    io.observe(el);
+    return () => { ro.disconnect(); io.disconnect(); };
+  }, []);
+
+  useEffect(() => {
+    if (!kelihatan || dihover) return;
+    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+    const t = setInterval(() => { setGerakHalus(true); setIdx(i => i - 1); }, 3200);
+    return () => clearInterval(t);
+  }, [kelihatan, dihover]);
+
+  // Sampai awal salinan pertama → lompat diam-diam ke posisi yang sama di salinan kedua.
+  const onGeserSelesai = (e: React.TransitionEvent) => {
+    if (e.target !== e.currentTarget) return; // transisi anak (opacity/shadow) ikut menggelembung
+    if (idx <= 0) { setGerakHalus(false); setIdx(N); }
   };
 
+  // [kartu-sorot-v1] Hover (mouse, desktop): kartu membesar, kartu lain & seluruh halaman di
+  // sekitarnya diburamkan lewat lapisan backdrop-blur (portal ke body; host dinaikkan di atasnya).
+  // Klik: kartu berputar sekali, layar memudar putih, lalu pindah halaman — halaman tujuan
+  // muncul memudar lewat @view-transition (globals.css).
+  const kurangiGerak = useReducedMotion();
+  const [sorot, setSorot] = useState<number | null>(null);
+  const [pergi, setPergi] = useState<number | null>(null);
+  const [siapPortal, setSiapPortal] = useState(false);
+  const lepasSorot = useRef<ReturnType<typeof setTimeout>>(undefined);
+  useEffect(() => {
+    setSiapPortal(true);
+    // Kembali lewat tombol Back (bfcache) → halaman dipulihkan apa adanya, jadi reset animasinya.
+    const pulih = (e: PageTransitionEvent) => { if (e.persisted) { setPergi(null); setSorot(null); } };
+    window.addEventListener("pageshow", pulih);
+    return () => { window.removeEventListener("pageshow", pulih); clearTimeout(lepasSorot.current); };
+  }, []);
+  const masukKartu = (i: number) => (e: React.PointerEvent) => {
+    if (e.pointerType !== "mouse" || isMobile || kurangiGerak) return;
+    clearTimeout(lepasSorot.current);
+    setSorot(i);
+  };
+  // Jeda singkat supaya lewat celah antar kartu tak bikin halaman berkedip buram-jernih.
+  const keluarKartu = () => { clearTimeout(lepasSorot.current); lepasSorot.current = setTimeout(() => setSorot(null), 120); };
+  const animasiPergi = (i: number, go: () => void) => {
+    if (kurangiGerak || pergi !== null) return go();
+    setPergi(i);
+    setTimeout(go, 750);
+  };
+  const buram = sorot !== null || pergi !== null;
+
+  const perBaris = isMobile ? 2 : 5;
+  const gap = isMobile ? 12 : 16;
+  const kartuW = lebar ? (lebar - gap * (perBaris - 1)) / perBaris : 0;
+
   return (
-    <section ref={hostRef} className="relative bg-white border-b border-slate-100" style={{ height: `${100 + (N - 1) * 55}vh` }}>
-      <div className="sticky top-0 h-screen h-[100svh] overflow-hidden flex flex-col justify-center pt-14 lg:pt-16">
-        <div className="max-w-7xl w-full mx-auto px-6 mb-5 lg:mb-8 text-center">
-          <h2 className="font-heading text-2xl sm:text-3xl lg:text-4xl font-bold mb-1">Semua kebutuhan belajar bahasa ada di Linguo</h2>
-          <p className="text-slate-500 text-sm">Pilih program yang sesuai dengan kebutuhanmu</p>
-        </div>
-
-        <motion.div className="flex items-stretch will-change-transform py-4"
-          style={{ x, gap: GAP, paddingLeft: ukur.w ? (ukur.vw - ukur.w) / 2 : "8vw" }}>
-          {PRODUCTS.map((p, i) => (
-            <KartuGeser key={p.title} product={p} i={i} n={N} progress={scrollYProgress}
-              ref={i === 0 ? kartuRef : undefined} />
-          ))}
-        </motion.div>
-
-        {/* Progres: bar + titik per produk (klik = lompat ke kartu itu) */}
-        <div className="max-w-md w-full mx-auto px-6 mt-4 lg:mt-6 flex items-center gap-4">
-          <span className="text-xs font-semibold text-[#1A9E9E] tabular-nums w-12">{String(aktif + 1).padStart(2, "0")} / {String(N).padStart(2, "0")}</span>
-          <div className="relative flex-1 h-1 rounded-full bg-slate-100 overflow-hidden">
-            <motion.span className="absolute inset-y-0 left-0 bg-[#1A9E9E] rounded-full" style={{ width: lebarBar }} />
-          </div>
-          <div className="hidden sm:flex gap-1.5">
-            {PRODUCTS.map((p, i) => (
-              <button key={p.title} type="button" aria-label={`Lihat ${p.title}`} onClick={() => keKartu(i)}
-                className={`h-2 rounded-full transition-all ${i === aktif ? "w-5 bg-[#1A9E9E]" : "w-2 bg-slate-200 hover:bg-slate-300"}`} />
+    <div className={isMobile ? "px-4 py-4" : "py-6"}>
+      {siapPortal && createPortal(<>
+        <div aria-hidden className="fixed inset-0 z-[90] pointer-events-none transition-[opacity,backdrop-filter] duration-300 ease-out"
+          style={{ opacity: buram ? 1 : 0, backdropFilter: buram ? "blur(6px)" : "blur(0px)", WebkitBackdropFilter: buram ? "blur(6px)" : "blur(0px)", background: "rgba(15,23,42,0.12)" }}/>
+        <div aria-hidden className="fixed inset-0 z-[130] pointer-events-none bg-white transition-opacity duration-[450ms] ease-in"
+          style={{ opacity: pergi !== null ? 1 : 0, transitionDelay: pergi !== null ? "280ms" : "0ms" }}/>
+      </>, document.body)}
+      <div ref={hostRef} className="relative overflow-visible" style={{ zIndex: buram ? 91 : undefined }} onMouseEnter={()=>setDihover(true)} onMouseLeave={()=>setDihover(false)}>
+        <div className="overflow-hidden -mx-3 px-3 -my-5 py-5">
+          <div className="flex items-stretch"
+            onTransitionEnd={onGeserSelesai}
+            style={{ gap, transform: `translateX(${-idx * (kartuW + gap)}px)`, transition: gerakHalus ? "transform 700ms cubic-bezier(.22,.61,.36,1)" : "none", visibility: kartuW ? "visible" : "hidden" }}>
+            {[...PRODUCTS, ...PRODUCTS].map((p,i)=>(
+              <div key={i} className="shrink-0 relative" aria-hidden={i < N || undefined}
+                onPointerEnter={masukKartu(i)} onPointerLeave={keluarKartu}
+                style={{
+                  width: kartuW || undefined,
+                  zIndex: sorot === i || pergi === i ? 2 : undefined,
+                  // Daftar fungsi transform selalu sama — kalau beda, browser menginterpolasi matriks
+                  // dan rotateY(360deg) (= matriks identitas) tak kelihatan berputar sama sekali.
+                  transform: `perspective(1000px) rotateY(${pergi === i ? 360 : 0}deg) scale(${pergi === i ? 1.08 : sorot === i ? 1.05 : 1})`,
+                  filter: buram && sorot !== i && pergi !== i ? "blur(2px) brightness(0.92)" : "none",
+                  transition: pergi === i ? "transform 700ms cubic-bezier(.45,0,.2,1)" : "transform 300ms ease-out, filter 300ms ease-out",
+                }}>
+                <KartuMiring className={`relative h-full group/card ${isMobile ? "rounded-xl" : "rounded-3xl"}`}>
+                  <DockCard product={p} mobile={isMobile} salinan={i < N} setPricingTab={setPricingTab} onSelectProgram={onSelectProgram} onPergi={go => animasiPergi(i, go)}/>
+                </KartuMiring>
+              </div>
             ))}
           </div>
         </div>
       </div>
-    </section>
+    </div>
   );
 }
 
-const KartuGeser = React.forwardRef<HTMLDivElement, { product: typeof PRODUCTS[0]; i: number; n: number; progress: MotionValue<number> }>(
-function KartuGeser({ product: p, i, n, progress }, ref) {
-  const kurangiGerak = useReducedMotion();
-  // k = 1 saat kartu ini tepat di tengah, turun ke 0 saat bergeser satu kartu.
-  const k = useTransform(progress, v => 1 - Math.min(1, Math.abs(i - v * (n - 1))));
-  const opacity = useTransform(k, v => 0.4 + v * 0.6);
-  const scale = useTransform(k, v => (kurangiGerak ? 1 : 0.9 + v * 0.1));
-  const card = p as typeof p & { img1?: string; href?: string };
+function DockCard({product:p,mobile,salinan,setPricingTab,onSelectProgram,onPergi}:{product:typeof PRODUCTS[0];mobile?:boolean;salinan?:boolean;setPricingTab:(t:number)=>void;onSelectProgram:(prog:string)=>void;onPergi?:(go:()=>void)=>void}) {
+  const card = p as typeof p & { img1?: string; img2?: string; lucideIcon?: React.ElementType; objPos?: string };
+  const LucideIco = card.lucideIcon;
+  const sizeCls = mobile ? "w-full h-full rounded-xl" : "w-full h-full rounded-3xl";
+  // Ilustrasi brush ditampilkan utuh di atas latar putih tanpa crop atau stretch.
+  const handleClick = () => {
+    // ETP tak lewat /daftar lagi — kartunya langsung ke daftar batch TOEFL/IELTS.
+    const ke = (url: string) => { const go = () => { window.location.href = url; }; if (onPergi) onPergi(go); else go(); };
+    if(p.tab>=0){
+      const prog = ["Kelas Private","Kelas Reguler","IELTS/TOEFL Prep","Kelas Kids"][p.tab]||"";
+      ke(prog==="IELTS/TOEFL Prep" ? "/jadwal-kelas-reguler?tab=etp" : daftarHref(prog));
+    }
+    else if((p).href){ke((p).href)}
+    else{window.open(taggedWaUrlAndTrack(`https://wa.me/6282116859493?text=${encodeURIComponent(`Halo, saya tertarik ${p.title} Linguo`)}`, p.title),'_blank')}
+  };
+
   const priceMulai = p.price.startsWith("Mulai ");
   const priceMain = priceMulai ? p.price.slice(6) : p.price;
-  const poin = POIN_PRODUK[p.title] ?? [];
-  return (
-    <motion.div ref={ref} className="shrink-0 w-[84vw] sm:w-[70vw] lg:w-[min(880px,68vw)]" style={{ opacity, scale }}>
-      <div className="h-full grid lg:grid-cols-[1.1fr_1fr] bg-white rounded-3xl lg:rounded-[2rem] border border-slate-100 shadow-[0_10px_40px_rgba(15,23,42,0.10)] overflow-hidden lg:min-h-[420px]">
-        {/* Ilustrasi brush utuh di atas latar warna produk */}
-        <button type="button" tabIndex={-1} aria-hidden onClick={() => bukaProduk(p)}
-          className="relative aspect-[2/1] lg:aspect-auto cursor-pointer" style={{ background: p.bgColor }}>
-          {card.img1 && <Image src={card.img1} alt="" fill loading="lazy" sizes="(min-width: 1024px) 480px, 84vw" className="object-contain p-2 lg:p-8 mix-blend-multiply" />}
-          <span className={`absolute top-3 left-3 lg:top-5 lg:left-5 inline-flex items-center gap-0.5 text-[10px] lg:text-xs px-2.5 py-1 font-bold rounded-full whitespace-nowrap ${p.badgeColor}`}>{p.badgeIcon}{p.badgeLabel}</span>
-        </button>
 
-        <div className="flex flex-col justify-center p-4 sm:p-7 lg:p-9">
-          <p className="text-[11px] lg:text-xs font-semibold text-[#1A9E9E] tracking-wider mb-1 lg:mb-2">{String(i + 1).padStart(2, "0")} / {String(n).padStart(2, "0")}</p>
-          <h3 className="font-heading text-xl sm:text-2xl lg:text-[2rem] font-bold text-slate-900 leading-tight mb-1.5 lg:mb-3">{p.title}</h3>
-          <p className="text-[13px] lg:text-[15px] text-slate-500 leading-snug lg:leading-relaxed mb-3 lg:mb-5">{p.desc}</p>
-          {poin.length > 0 && (
-            <ul className="space-y-1.5 lg:space-y-2 mb-3 lg:mb-6">
-              {poin.map(t => (
-                <li key={t} className="flex items-start gap-2 text-[13px] lg:text-sm text-slate-700">
-                  <span className="mt-0.5 shrink-0 w-5 h-5 rounded-full bg-[#1A9E9E]/10 text-[#1A9E9E] flex items-center justify-center"><Check className="w-3 h-3" strokeWidth={3} /></span>
-                  {t}
-                </li>
-              ))}
-            </ul>
-          )}
-          <div className="flex items-end justify-between gap-3 pt-3 lg:pt-5 border-t border-slate-100">
-            <div className="min-w-0">
-              {p.priceOld && (
-                <div className="flex items-center gap-1.5 mb-0.5">
-                  <span className="text-xs text-slate-400 line-through">{p.priceOld}</span>
-                  {p.discount && <span className="text-[10px] font-bold text-red-500 bg-red-50 px-1.5 py-0.5 rounded">{p.discount}</span>}
-                </div>
-              )}
-              {priceMulai && <span className="block text-xs text-slate-400 leading-none mb-0.5">Mulai</span>}
-              <span className="text-lg lg:text-2xl font-bold text-slate-900 whitespace-nowrap">{priceMain}</span>
-              {p.per && <span className="text-xs text-slate-400 ml-1">{p.per}</span>}
-            </div>
-            <button type="button" onClick={() => bukaProduk(p)}
-              className="shrink-0 inline-flex items-center gap-1.5 bg-[#1A9E9E] hover:bg-[#178888] text-white text-sm font-bold px-4 py-2.5 lg:px-5 lg:py-3 rounded-xl transition-colors active:scale-95">
-              Beli<span className="hidden sm:inline"> sekarang</span> <ArrowRight className="w-4 h-4" />
+  const priceBlock = (
+    <div className="flex flex-col min-w-0">
+      {p.priceOld && (
+        <div className="flex items-center gap-1 mb-0.5">
+          <span className={`${mobile?"text-[10px]":"text-[9px] lg:text-[10px]"} text-slate-400 line-through`}>{p.priceOld}</span>
+          {p.discount && <span className={`${mobile?"text-[9px]":"text-[8px] lg:text-[9px]"} font-bold text-red-500 bg-red-50 px-1 py-0.5 rounded`}>{p.discount}</span>}
+        </div>
+      )}
+      {priceMulai && <span className={`${mobile?"text-[10px] text-slate-500":"text-[10px] text-slate-400"} leading-none`}>Mulai</span>}
+      <div className="flex flex-wrap items-baseline gap-x-0.5 gap-y-0.5">
+        <span className={`${mobile?"text-[13px]":"text-sm"} font-bold text-slate-900 whitespace-nowrap`}>{priceMain}</span>
+        {p.per && <span className={`${mobile?"text-[10px]":"text-[10px]"} text-slate-400`}>{p.per}</span>}
+      </div>
+    </div>
+  );
+
+  return (
+    <div onClick={handleClick}
+      className={`group relative flex flex-col bg-white border border-slate-100 shadow-[0_4px_20px_rgba(0,0,0,0.08)] hover:shadow-[0_8px_30px_rgba(26,158,158,0.15)] transition-all duration-300 cursor-pointer overflow-hidden ${sizeCls}`}>
+      {/* Ilustrasi brush dengan latar minimalis dan rasio asli. */}
+      <div className="relative overflow-hidden w-full mb-0 aspect-[3/2] bg-white">
+        {card.img1 ? (
+          <>
+            {/* Satu gambar saja kalau tak ada img2 — crossfade gambar yang sama bikin kartu berkedip saat hover */}
+            <Image src={card.img1} alt={p.title} fill loading="lazy" sizes="(min-width: 1024px) 240px, 45vw" className={`object-contain ${card.img2 ? "transition-opacity duration-300 group-hover:opacity-0" : ""}`} />
+            {card.img2 && <Image src={card.img2} alt="" aria-hidden fill loading="lazy" sizes="(min-width: 1024px) 240px, 45vw" className={`object-contain opacity-0 transition-opacity duration-300 group-hover:opacity-100`} />}
+          </>
+        ) : LucideIco ? (
+          <div className="w-full h-full flex items-center justify-center"><LucideIco className={mobile?"w-10 h-10":"w-14 h-14"} style={{color:"#1A9E9E"}} strokeWidth={1.5}/></div>
+        ) : (
+          <div className="w-full h-full flex items-center justify-center"><span className="text-4xl">{p.imageEmoji}</span></div>
+        )}
+        {/* Badge overlaid on image */}
+        <span className={`absolute z-10 inline-flex items-center gap-0.5 ${mobile?"top-2 left-2 text-[9px] px-1.5 py-0.5":"top-3 left-3 text-[9px] px-2 py-0.5"} font-bold rounded-full whitespace-nowrap ${p.badgeColor}`}>{p.badgeIcon}{p.badgeLabel}</span>
+      </div>
+
+      {/* Info panel below image */}
+      <div className="px-3 pt-2 pb-3 flex flex-col flex-1">
+        <h3 className={`font-bold ${mobile?"text-[13px]":"text-sm lg:text-[15px]"} text-slate-900 mb-2 leading-tight`}>{p.title}</h3>
+        {/* Harga langsung di bawah judul tanpa ruang deskripsi tersembunyi. */}
+        {mobile ? (
+          /* Mobile: stack price above a full-width button — never overlap. product-dock-mobile-stack-v1 */
+          <div className="flex flex-col gap-2">
+            {priceBlock}
+            <button tabIndex={salinan?-1:undefined} onClick={(e)=>{e.stopPropagation(); handleClick();}}
+              className="w-full bg-[#1A9E9E] hover:bg-[#178888] text-white text-xs font-bold px-3 py-2 rounded-lg transition-colors active:scale-95">
+              Beli →
             </button>
           </div>
-        </div>
+        ) : (
+          <div className="flex items-end justify-between gap-2">
+            {priceBlock}
+            <button tabIndex={salinan?-1:undefined} onClick={(e)=>{e.stopPropagation(); handleClick();}}
+              className="shrink-0 bg-[#1A9E9E] hover:bg-[#178888] text-white text-xs font-bold px-3 py-2 rounded-lg transition-colors active:scale-95 whitespace-nowrap">
+              Beli →
+            </button>
+          </div>
+        )}
       </div>
-    </motion.div>
+    </div>
   );
-});
+}
 
 // ========== LANGUAGE FLAG STRIP ==========
 
