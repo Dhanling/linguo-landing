@@ -63,8 +63,8 @@ export default function Home() {
           </div>
           <HomeHeroFunnel />
           {/* [hero-google-review-link-v1] Badge bisa diklik → /ulasan (redirect ke ulasan Google Linguo) */}
-          <a href="/ulasan" target="_blank" rel="noopener" aria-label="Lihat & tulis ulasan Google Linguo" className="inline-block mt-4 sm:mt-6 opacity-90 hover:opacity-100 transition-opacity">
-            <Image src="/images/google-review.png" alt="Google Reviews 5.0/5" width={146} height={31} sizes="146px" className="h-7 sm:h-8 w-auto"/>
+          <a href="https://linguo.id/ulasan" target="_blank" rel="noopener" aria-label="Lihat & tulis ulasan Google Linguo" className="inline-block mt-4 sm:mt-6 opacity-90 hover:opacity-100 transition-opacity">
+            <Image src="/images/google-review-5.png" alt="Google Reviews 5/5" width={140} height={31} sizes="140px" className="h-7 sm:h-8 w-auto"/>
           </a>
           
         </div>
