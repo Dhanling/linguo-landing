@@ -15,7 +15,8 @@ import { ChevronRight, Layers, Lightbulb, PartyPopper, Sparkles, Target } from '
 import { useT } from '@/lib/uiLang';
 import { computeStats, etaText, type RegLike } from '@/lib/lingwords';
 import { langLabel } from '@/lib/quiz/language';
-import { LwActivityBars, LwPosBar, LwPosLegend, LwRing, posRows, type LwPeriod } from './LwCharts';
+import { LwActivityBars, LwPosBar, LwPosLegend, LwRing, posRows, type LwBucket, type LwPeriod } from './LwCharts';
+import LwHariDetail from './LwHariDetail';
 import { ensurePos } from '@/lib/lingwordsTema';
 import { useLangPick, useLingwords } from './useLingwords';
 import { useEffect, useMemo, useState } from 'react';
@@ -56,8 +57,12 @@ export default function LingwordsCard({
       if (v && PERIODS.some((p) => p.id === v)) setPeriod(v);
     } catch { /* penyimpanan diblokir — pakai bawaan 7 hari */ }
   }, []);
+  // [lingwords-harian-v1] Batang terpilih → rincian kata baru rentang itu.
+  const [pick, setPick] = useState<{ i: number; b: LwBucket } | null>(null);
+  useEffect(() => setPick(null), [lang]);
   const pickPeriod = (p: LwPeriod) => {
     setPeriod(p);
+    setPick(null);
     try { localStorage.setItem(PERIOD_KEY, p); } catch { /* abaikan */ }
   };
   const regKey = regs.map((r) => `${r.language}|${r.level}`).join(',');
@@ -191,9 +196,14 @@ export default function LingwordsCard({
               </span>
               <span className="text-[11.5px] font-bold text-[#16796E]">+{stats.weekGain} {t('dikuasai pekan ini')}</span>
             </div>
-            <LwActivityBars heat={stats.heat} period={period} t={t} />
+            <LwActivityBars heat={stats.heat} period={period} t={t} selected={pick?.i ?? null}
+              onPick={(b, i) => setPick((cur) => (cur?.i === i ? null : { i, b }))} />
+            {!pick && <p className="mt-1.5 text-center text-[11px] font-semibold text-gray-400">{t('Ketuk batang untuk lihat kata barunya')}</p>}
           </div>
         </div>
+      )}
+      {pick && total > 0 && (
+        <LwHariDetail words={langWords} lang={stats.lang} bucket={pick.b} t={t} onClose={() => setPick(null)} />
       )}
     </div>
   );

@@ -1834,6 +1834,16 @@ const EN: Record<string, string> = {
   "Kata sifat": "Adjectives",
   "Belum dikelompokkan": "Not grouped yet",
   "Warna pekat = dikuasai, pudar = masih dilatih/dikenal": "Solid = mastered, faded = still practising/seen",
+  // [lingwords-harian-v1] Rincian kata baru per batang grafik kartu Lingwords.
+  "Ketuk batang untuk lihat kata barunya": "Tap a bar to see its new words",
+  "kata baru": "new words",
+  "kata lama diulang": "earlier words reviewed",
+  "Tidak ada kata baru — kamu mengulang kata yang sudah dipelajari sebelumnya.": "No new words — you reviewed words you had already learned.",
+  "Belum ada kata baru di rentang ini.": "No new words in this period yet.",
+  "Kata yang sudah kamu dapat di sesi sebelumnya tidak dihitung lagi sebagai kata baru.": "Words you already got in an earlier session are not counted as new again.",
+  "Materi kelas": "Class material",
+  "Lingnote dari pengajar": "Lingnote from your teacher",
+  "Perangkat lain": "Other device",
   // [konjugasi-animasi-v1] Tabel konjugasi beranimasi di modal sesi silabus.
   "Tabel konjugasi": "Conjugation table",
   "Putar ulang animasi": "Replay animation",

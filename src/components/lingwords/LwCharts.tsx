@@ -228,7 +228,10 @@ export function LwHeatmap({ heat, weeks = 18, t }: { heat: Map<string, number>; 
 // 7/30 hari = batang harian, 90 hari = per pekan, Semua = per bulan (maks 12).
 export type LwPeriod = '7' | '30' | '90' | 'all';
 
-export function activityBuckets(heat: Map<string, number>, period: LwPeriod): { label: string; title: string; n: number }[] {
+/** [lingwords-harian-v1] `from`/`to` (ms, `to` eksklusif) = rentang batang, untuk rincian kata saat batang diklik. */
+export interface LwBucket { label: string; title: string; n: number; from: number; to: number }
+
+export function activityBuckets(heat: Map<string, number>, period: LwPeriod): LwBucket[] {
   const today = new Date();
   today.setHours(0, 0, 0, 0);
   const dayAt = (back: number) => { const d = new Date(today); d.setDate(d.getDate() - back); return d; };
@@ -240,6 +243,8 @@ export function activityBuckets(heat: Map<string, number>, period: LwPeriod): { 
         label: len === 7 ? d.toLocaleDateString('id-ID', { weekday: 'short' }) : String(d.getDate()),
         title: d.toLocaleDateString('id-ID', { weekday: 'long', day: 'numeric', month: 'short' }),
         n: heat.get(dk(d)) || 0,
+        from: d.getTime(),
+        to: dayAt(len - 2 - i).getTime(),
       };
     });
   }
@@ -249,7 +254,7 @@ export function activityBuckets(heat: Map<string, number>, period: LwPeriod): { 
       let n = 0;
       for (let j = 0; j < 7; j++) n += heat.get(dk(dayAt(end * 7 + j))) || 0;
       const s = dayAt(end * 7 + 6);
-      return { label: s.toLocaleDateString('id-ID', { day: 'numeric', month: 'short' }), title: `Pekan ${s.toLocaleDateString('id-ID', { day: 'numeric', month: 'short' })}`, n };
+      return { label: s.toLocaleDateString('id-ID', { day: 'numeric', month: 'short' }), title: `Pekan ${s.toLocaleDateString('id-ID', { day: 'numeric', month: 'short' })}`, n, from: s.getTime(), to: dayAt(end * 7 - 1).getTime() };
     });
   }
   const per = new Map<string, number>();
@@ -262,25 +267,42 @@ export function activityBuckets(heat: Map<string, number>, period: LwPeriod): { 
     label: m.toLocaleDateString('id-ID', { month: 'short' }),
     title: m.toLocaleDateString('id-ID', { month: 'long', year: 'numeric' }),
     n: per.get(dk(m).slice(0, 7)) || 0,
+    from: m.getTime(),
+    to: new Date(m.getFullYear(), m.getMonth() + 1, 1).getTime(),
   }));
 }
 
-export function LwActivityBars({ heat, period, t }: { heat: Map<string, number>; period: LwPeriod; t: (s: string) => string }) {
+export function LwActivityBars({ heat, period, t, selected = null, onPick }: {
+  heat: Map<string, number>;
+  period: LwPeriod;
+  t: (s: string) => string;
+  /** [lingwords-harian-v1] Indeks batang terpilih + klik batang → rincian kata rentang itu. */
+  selected?: number | null;
+  onPick?: (b: LwBucket, i: number) => void;
+}) {
   const b = useMemo(() => activityBuckets(heat, period), [heat, period]);
   const max = Math.max(1, ...b.map((x) => x.n));
   const every = b.length <= 13 ? 1 : 5;
+  const warna = (x: LwBucket, i: number) =>
+    selected === i ? LW_COLORS.dikuasai : i === b.length - 1 ? LW_COLORS.dilatih : x.n ? LW_COLORS.dikenal : 'rgba(143,211,207,0.35)';
   return (
     <div>
-      <div className="flex h-[92px] items-end justify-around gap-[3px] @3xl:gap-1.5" role="img"
+      <div className="flex h-[92px] items-end justify-around gap-[3px] @3xl:gap-1.5" role={onPick ? 'group' : 'img'}
         aria-label={`${t('Aktivitas kata')}: ${b.reduce((s, x) => s + x.n, 0)}`}>
-        {b.map((x, i) => (
+        {b.map((x, i) => onPick ? (
+          <button key={i} type="button" title={`${x.title}: ${x.n}`} aria-pressed={selected === i} onClick={() => onPick(x, i)}
+            className="group flex h-full max-w-[34px] flex-1 items-end focus-visible:outline-none">
+            <span className="block w-full rounded-t-md rounded-b-[3px] transition-[height,filter] duration-500 group-hover:brightness-90 group-focus-visible:ring-2 group-focus-visible:ring-[#1A9E9E]"
+              style={{ height: `${Math.max(7, (x.n / max) * 100)}%`, background: warna(x, i) }} />
+          </button>
+        ) : (
           <div key={i} title={`${x.title}: ${x.n}`} className="max-w-[34px] flex-1 rounded-t-md rounded-b-[3px] transition-[height] duration-500"
-            style={{ height: `${Math.max(7, (x.n / max) * 100)}%`, background: i === b.length - 1 ? LW_COLORS.dilatih : x.n ? LW_COLORS.dikenal : 'rgba(143,211,207,0.35)' }} />
+            style={{ height: `${Math.max(7, (x.n / max) * 100)}%`, background: warna(x, i) }} />
         ))}
       </div>
       <div className="mt-1.5 flex justify-around gap-[3px] @3xl:gap-1.5">
         {b.map((x, i) => (
-          <span key={i} className="max-w-[34px] flex-1 overflow-visible whitespace-nowrap text-center text-[10.5px] font-semibold text-gray-400">
+          <span key={i} className={`max-w-[34px] flex-1 overflow-visible whitespace-nowrap text-center text-[10.5px] font-semibold ${selected === i ? 'text-[#16796E]' : 'text-gray-400'}`}>
             {(b.length - 1 - i) % every === 0 ? x.label : ''}
           </span>
         ))}
