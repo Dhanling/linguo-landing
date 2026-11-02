@@ -260,8 +260,30 @@ export async function POST(req: NextRequest) {
       limit: 100,
       sortBy: { column: "name", order: "desc" },
     });
-    for (const f of privateFiles ?? []) {
-      if (!/\.(mp4|webm)$/i.test(f.name) || !lolosBerkas(f.name)) continue;
+    // [rekaman-satu-per-stempel-v1] Bug cf2279c9 (Awei, iPhone): berkas yang diperbaiki
+    // (`<stempel>-seek4.mp4`, `<stempel>-fs.mp4` = remux faststart) disimpan BERDAMPINGAN
+    // dengan aslinya, jadi satu pertemuan tampil 2–3 kali dan yang diputar bisa versi rusak.
+    // Satu stempel = satu rekaman: pakai key yang tercatat aktif di `class_recordings`,
+    // kalau tidak ada pilih varian terbaru (fs > seek4 > asli).
+    const videoFiles = (privateFiles ?? []).filter((f) => /\.(mp4|webm)$/i.test(f.name) && lolosBerkas(f.name));
+    const { data: katalog } = videoFiles.length
+      ? await admin
+          .from("class_recordings")
+          .select("key")
+          .eq("bucket", BUCKET)
+          .is("deleted_at", null)
+          .in("key", videoFiles.map((f) => `${folder}/${f.name}`))
+      : { data: [] };
+    const keyKatalog = new Set((katalog ?? []).map((r: { key: string }) => r.key));
+    const peringkat = (name: string) =>
+      (keyKatalog.has(`${folder}/${name}`) ? 10 : 0) + (/-fs\./i.test(name) ? 2 : /-seek\d*\./i.test(name) ? 1 : 0);
+    const perStempel = new Map<string, (typeof videoFiles)[number]>();
+    for (const f of videoFiles) {
+      const stempel = f.name.match(/^(\d{12,14})/)?.[1] ?? f.name;
+      const lama = perStempel.get(stempel);
+      if (!lama || peringkat(f.name) > peringkat(lama.name)) perStempel.set(stempel, f);
+    }
+    for (const f of perStempel.values()) {
       const key = `${folder}/${f.name}`;
       const { data: signed } = await admin.storage.from(BUCKET).createSignedUrl(key, SIGNED_TTL_SEC);
       if (!signed?.signedUrl) continue;
@@ -299,9 +321,9 @@ export async function POST(req: NextRequest) {
   }
 }
 
-/** Nama file rekaman = epoch ms (`1721800000000.mp4`). Jadwal jadi cadangan
- *  kalau penamaannya berbeda (mis. file yang pernah dipindah manual). */
+/** Nama file rekaman = epoch ms (`1721800000000.mp4`, varian `…-fs.mp4`). Jadwal jadi
+ *  cadangan kalau penamaannya berbeda (mis. file yang pernah dipindah manual). */
 function stampOf(fileName: string, fallbackIso: string): string {
-  const ms = Number(fileName.replace(/\.(mp4|webm)$/i, ""));
+  const ms = Number(fileName.match(/^(\d{12,14})/)?.[1] ?? NaN);
   return Number.isFinite(ms) && ms > 0 ? new Date(ms).toISOString() : fallbackIso;
 }
