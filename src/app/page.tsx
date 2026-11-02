@@ -109,8 +109,9 @@ export default function Home() {
       <div className="max-w-7xl mx-auto px-6">
         <h2 className="font-heading text-2xl sm:text-3xl lg:text-4xl font-bold text-center mb-1">Semua kebutuhan belajar bahasa ada di Linguo</h2>
         <p className="text-slate-500 text-sm text-center mb-10">Pilih program yang sesuai dengan kebutuhanmu</p>
-        <HomeProductDock />
       </div>
+      {/* Di luar max-w-7xl: jajaran kartu selebar layar [produk-lebar-v1] */}
+      <HomeProductDock />
     </section>
     </Reveal>
 

@@ -992,24 +992,35 @@ export function ProductDock({setPricingTab,onSelectProgram}:{setPricingTab:(t:nu
     setTimeout(go, 750);
   };
   const buram = sorot !== null || pergi !== null;
+  // [kartu-sorot-v2] Host baru turun dari z-91 SETELAH lapisan buram selesai memudar (300ms).
+  // Dulu turun seketika saat unhover → semua kartu sempat tertutup lapisan buram yang masih
+  // memudar lalu jernih lagi = kedip.
+  const [naik, setNaik] = useState(false);
+  useEffect(() => {
+    if (buram) { setNaik(true); return; }
+    const t = setTimeout(() => setNaik(false), 320);
+    return () => clearTimeout(t);
+  }, [buram]);
 
-  const perBaris = isMobile ? 2 : 5;
-  const gap = isMobile ? 12 : 16;
-  const kartuW = lebar ? (lebar - gap * (perBaris - 1)) / perBaris : 0;
+  // [produk-lebar-v1] Desktop: jajaran selebar layar, 4 kartu utuh + seperempat kartu
+  // mengintip di kiri & kanan (lebar = 4,5 kartu + 5 celah). HP tetap 2 kartu utuh.
+  const gap = isMobile ? 12 : 20;
+  const kartuW = !lebar ? 0 : isMobile ? (lebar - gap) / 2 : (lebar - gap * 5) / 4.5;
+  const awal = isMobile ? 0 : kartuW * 0.25 + gap;
 
   return (
-    <div className={isMobile ? "px-4 py-4" : "py-6"}>
+    <div className={isMobile ? "px-4 py-4" : "py-6 max-w-[1920px] mx-auto"}>
       {siapPortal && createPortal(<>
         <div aria-hidden className="fixed inset-0 z-[90] pointer-events-none transition-[opacity,backdrop-filter] duration-300 ease-out"
           style={{ opacity: buram ? 1 : 0, backdropFilter: buram ? "blur(6px)" : "blur(0px)", WebkitBackdropFilter: buram ? "blur(6px)" : "blur(0px)", background: "rgba(15,23,42,0.12)" }}/>
         <div aria-hidden className="fixed inset-0 z-[130] pointer-events-none bg-white transition-opacity duration-[450ms] ease-in"
           style={{ opacity: pergi !== null ? 1 : 0, transitionDelay: pergi !== null ? "280ms" : "0ms" }}/>
       </>, document.body)}
-      <div ref={hostRef} className="relative overflow-visible" style={{ zIndex: buram ? 91 : undefined }} onMouseEnter={()=>setDihover(true)} onMouseLeave={()=>setDihover(false)}>
-        <div className="overflow-hidden -mx-3 px-3 -my-5 py-5">
+      <div ref={hostRef} className="relative overflow-visible" style={{ zIndex: naik ? 91 : undefined }} onMouseEnter={()=>setDihover(true)} onMouseLeave={()=>setDihover(false)}>
+        <div className={`overflow-hidden -my-6 py-6 ${isMobile ? "-mx-3 px-3" : ""}`}>
           <div className="flex items-stretch"
             onTransitionEnd={onGeserSelesai}
-            style={{ gap, transform: `translateX(${-idx * (kartuW + gap)}px)`, transition: gerakHalus ? "transform 700ms cubic-bezier(.22,.61,.36,1)" : "none", visibility: kartuW ? "visible" : "hidden" }}>
+            style={{ gap, transform: `translateX(${awal - idx * (kartuW + gap)}px)`, transition: gerakHalus ? "transform 700ms cubic-bezier(.22,.61,.36,1)" : "none", visibility: kartuW ? "visible" : "hidden" }}>
             {[...PRODUCTS, ...PRODUCTS].map((p,i)=>(
               <div key={i} className="shrink-0 relative" aria-hidden={i < N || undefined}
                 onPointerEnter={masukKartu(i)} onPointerLeave={keluarKartu}
@@ -1019,7 +1030,8 @@ export function ProductDock({setPricingTab,onSelectProgram}:{setPricingTab:(t:nu
                   // Daftar fungsi transform selalu sama — kalau beda, browser menginterpolasi matriks
                   // dan rotateY(360deg) (= matriks identitas) tak kelihatan berputar sama sekali.
                   transform: `perspective(1000px) rotateY(${pergi === i ? 360 : 0}deg) scale(${pergi === i ? 1.08 : sorot === i ? 1.05 : 1})`,
-                  filter: buram && sorot !== i && pergi !== i ? "blur(2px) brightness(0.92)" : "none",
+                  // Selalu fungsi yang sama (bukan "none") supaya transisi balik mulus tanpa lompat layer.
+                  filter: buram && sorot !== i && pergi !== i ? "blur(2px) brightness(0.92)" : "blur(0px) brightness(1)",
                   transition: pergi === i ? "transform 700ms cubic-bezier(.45,0,.2,1)" : "transform 300ms ease-out, filter 300ms ease-out",
                 }}>
                 <KartuMiring className={`relative h-full group/card ${isMobile ? "rounded-xl" : "rounded-3xl"}`}>
@@ -1057,14 +1069,14 @@ function DockCard({product:p,mobile,salinan,setPricingTab,onSelectProgram,onPerg
     <div className="flex flex-col min-w-0">
       {p.priceOld && (
         <div className="flex items-center gap-1 mb-0.5">
-          <span className={`${mobile?"text-[10px]":"text-[9px] lg:text-[10px]"} text-slate-400 line-through`}>{p.priceOld}</span>
-          {p.discount && <span className={`${mobile?"text-[9px]":"text-[8px] lg:text-[9px]"} font-bold text-red-500 bg-red-50 px-1 py-0.5 rounded`}>{p.discount}</span>}
+          <span className={`${mobile?"text-[10px]":"text-xs"} text-slate-400 line-through`}>{p.priceOld}</span>
+          {p.discount && <span className={`${mobile?"text-[9px]":"text-[10px]"} font-bold text-red-500 bg-red-50 px-1 py-0.5 rounded`}>{p.discount}</span>}
         </div>
       )}
       {priceMulai && <span className={`${mobile?"text-[10px] text-slate-500":"text-[10px] text-slate-400"} leading-none`}>Mulai</span>}
       <div className="flex flex-wrap items-baseline gap-x-0.5 gap-y-0.5">
-        <span className={`${mobile?"text-[13px]":"text-sm"} font-bold text-slate-900 whitespace-nowrap`}>{priceMain}</span>
-        {p.per && <span className={`${mobile?"text-[10px]":"text-[10px]"} text-slate-400`}>{p.per}</span>}
+        <span className={`${mobile?"text-[13px]":"text-lg"} font-bold text-slate-900 whitespace-nowrap`}>{priceMain}</span>
+        {p.per && <span className={`${mobile?"text-[10px]":"text-xs"} text-slate-400`}>{p.per}</span>}
       </div>
     </div>
   );
@@ -1077,8 +1089,8 @@ function DockCard({product:p,mobile,salinan,setPricingTab,onSelectProgram,onPerg
         {card.img1 ? (
           <>
             {/* Satu gambar saja kalau tak ada img2 — crossfade gambar yang sama bikin kartu berkedip saat hover */}
-            <Image src={card.img1} alt={p.title} fill loading="lazy" sizes="(min-width: 1024px) 240px, 45vw" className={`object-contain ${card.img2 ? "transition-opacity duration-300 group-hover:opacity-0" : ""}`} />
-            {card.img2 && <Image src={card.img2} alt="" aria-hidden fill loading="lazy" sizes="(min-width: 1024px) 240px, 45vw" className={`object-contain opacity-0 transition-opacity duration-300 group-hover:opacity-100`} />}
+            <Image src={card.img1} alt={p.title} fill loading="lazy" sizes="(min-width: 1024px) 420px, 45vw" className={`object-contain ${card.img2 ? "transition-opacity duration-300 group-hover:opacity-0" : ""}`} />
+            {card.img2 && <Image src={card.img2} alt="" aria-hidden fill loading="lazy" sizes="(min-width: 1024px) 420px, 45vw" className={`object-contain opacity-0 transition-opacity duration-300 group-hover:opacity-100`} />}
           </>
         ) : LucideIco ? (
           <div className="w-full h-full flex items-center justify-center"><LucideIco className={mobile?"w-10 h-10":"w-14 h-14"} style={{color:"#1A9E9E"}} strokeWidth={1.5}/></div>
@@ -1086,12 +1098,12 @@ function DockCard({product:p,mobile,salinan,setPricingTab,onSelectProgram,onPerg
           <div className="w-full h-full flex items-center justify-center"><span className="text-4xl">{p.imageEmoji}</span></div>
         )}
         {/* Badge overlaid on image */}
-        <span className={`absolute z-10 inline-flex items-center gap-0.5 ${mobile?"top-2 left-2 text-[9px] px-1.5 py-0.5":"top-3 left-3 text-[9px] px-2 py-0.5"} font-bold rounded-full whitespace-nowrap ${p.badgeColor}`}>{p.badgeIcon}{p.badgeLabel}</span>
+        <span className={`absolute z-10 inline-flex items-center gap-0.5 ${mobile?"top-2 left-2 text-[9px] px-1.5 py-0.5":"top-4 left-4 text-[11px] px-2.5 py-1"} font-bold rounded-full whitespace-nowrap ${p.badgeColor}`}>{p.badgeIcon}{p.badgeLabel}</span>
       </div>
 
       {/* Info panel below image */}
-      <div className="px-3 pt-2 pb-3 flex flex-col flex-1">
-        <h3 className={`font-bold ${mobile?"text-[13px]":"text-sm lg:text-[15px]"} text-slate-900 mb-2 leading-tight`}>{p.title}</h3>
+      <div className={`flex flex-col flex-1 ${mobile ? "px-3 pt-2 pb-3" : "px-5 pt-3 pb-5"}`}>
+        <h3 className={`font-bold ${mobile?"text-[13px]":"text-lg xl:text-xl"} text-slate-900 mb-2 leading-tight`}>{p.title}</h3>
         {/* Harga langsung di bawah judul tanpa ruang deskripsi tersembunyi. */}
         {mobile ? (
           /* Mobile: stack price above a full-width button — never overlap. product-dock-mobile-stack-v1 */
@@ -1106,7 +1118,7 @@ function DockCard({product:p,mobile,salinan,setPricingTab,onSelectProgram,onPerg
           <div className="flex items-end justify-between gap-2">
             {priceBlock}
             <button tabIndex={salinan?-1:undefined} onClick={(e)=>{e.stopPropagation(); handleClick();}}
-              className="shrink-0 bg-[#1A9E9E] hover:bg-[#178888] text-white text-xs font-bold px-3 py-2 rounded-lg transition-colors active:scale-95 whitespace-nowrap">
+              className="shrink-0 bg-[#1A9E9E] hover:bg-[#178888] text-white text-sm font-bold px-4 py-2.5 rounded-xl transition-colors active:scale-95 whitespace-nowrap">
               Beli →
             </button>
           </div>
