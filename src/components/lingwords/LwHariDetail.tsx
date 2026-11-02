@@ -6,7 +6,7 @@
 // sudah yang paling awal lintas sumber (mergeWords), jadi kata yang sudah didapat di
 // sesi sebelumnya otomatis tidak dihitung lagi, cukup masuk hitungan "diulang".
 
-import { useMemo } from 'react';
+import { useEffect, useMemo } from 'react';
 import { X } from 'lucide-react';
 import type { LwSource, LwWord } from '@/lib/lingwords';
 import { LW_POS, posOf, type LwPosId } from '@/lib/lingwordsTema';
@@ -49,16 +49,27 @@ export default function LwHariDetail({ words, lang, bucket, t, onClose }: {
     return { baru, diulang, perPos, perAsal };
   }, [words, lang, bucket]);
 
+  useEffect(() => {
+    const onKey = (e: KeyboardEvent) => { if (e.key === 'Escape') onClose(); };
+    window.addEventListener('keydown', onKey);
+    return () => window.removeEventListener('keydown', onKey);
+  }, [onClose]);
+
   const chips = [
     ...LW_POS.map((p) => ({ id: p.id as string, label: t(p.label), color: LW_POS_COLORS[p.id], n: perPos.get(p.id) || 0 })),
     { id: 'pending', label: t('Belum dikelompokkan'), color: '#CBD5E1', n: perPos.get('pending') || 0 },
   ].filter((c) => c.n > 0);
 
   return (
-    <div className="mt-4 rounded-2xl bg-slate-100 p-3.5 sm:p-4">
+    // Pop-up: dirender DI LUAR div @container kartu — container-type ikut membuat
+    // containing block untuk position:fixed, jadi di dalamnya overlay tak menutup layar.
+    <div className="fixed inset-0 z-[80] flex items-end justify-center bg-black/50 p-0 sm:items-center sm:p-4"
+      onClick={onClose} role="dialog" aria-modal="true" aria-label={bucket.title}>
+      <div className="flex max-h-[85vh] w-full max-w-lg flex-col rounded-t-3xl bg-white p-4 shadow-2xl ring-1 ring-slate-200/70 sm:rounded-3xl sm:p-5"
+        onClick={(e) => e.stopPropagation()}>
       <div className="flex items-start justify-between gap-3">
         <div className="min-w-0">
-          <p className="text-[13.5px] font-extrabold text-[#12172B]">{bucket.title}</p>
+          <p className="text-[15px] font-extrabold text-[#12172B]">{bucket.title}</p>
           <p className="mt-0.5 text-[12px] font-semibold text-gray-500">
             <b className="text-[#16796E]">{baru.length} {t('kata baru')}</b>
             {diulang > 0 && <> · {diulang} {t('kata lama diulang')}</>}
@@ -80,13 +91,13 @@ export default function LwHariDetail({ words, lang, bucket, t, onClose }: {
         <>
           <div className="mt-2.5 flex flex-wrap gap-1.5">
             {chips.map((c) => (
-              <span key={c.id} className="inline-flex items-center gap-1.5 rounded-full bg-white px-2.5 py-1 text-[11.5px] font-semibold text-gray-500">
+              <span key={c.id} className="inline-flex items-center gap-1.5 rounded-full bg-slate-100 px-2.5 py-1 text-[11.5px] font-semibold text-gray-500">
                 <i className="inline-block h-2 w-2 rounded-full" style={{ background: c.color }} />
                 <b className="text-[#12172B]">{c.n}</b> {c.label.toLowerCase()}
               </span>
             ))}
           </div>
-          <div className="mt-3 max-h-[260px] space-y-3 overflow-y-auto pr-1">
+          <div className="mt-3 min-h-0 flex-1 space-y-3 overflow-y-auto pr-1">
             {perAsal.map((g) => (
               <div key={`${g.src}|${g.label}`}>
                 <p className="mb-1.5 text-[11px] font-bold uppercase tracking-wide text-gray-400">
@@ -97,7 +108,7 @@ export default function LwHariDetail({ words, lang, bucket, t, onClose }: {
                     const pos = posOf(lang, w.word);
                     return (
                       <span key={w.word} title={w.meaning || undefined}
-                        className="inline-flex items-center gap-1.5 rounded-lg bg-white px-2 py-1 text-[12px] text-[#12172B]">
+                        className="inline-flex items-center gap-1.5 rounded-lg bg-slate-100 px-2 py-1 text-[12px] text-[#12172B]">
                         <i className="inline-block h-1.5 w-1.5 shrink-0 rounded-full" style={{ background: pos ? LW_POS_COLORS[pos] : '#CBD5E1' }} />
                         <b className="font-bold">{w.word}</b>
                         {w.meaning && <span className="max-w-[160px] truncate text-gray-500">{w.meaning}</span>}
@@ -113,6 +124,7 @@ export default function LwHariDetail({ words, lang, bucket, t, onClose }: {
           </p>
         </>
       )}
+      </div>
     </div>
   );
 }

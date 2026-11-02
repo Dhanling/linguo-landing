@@ -19,7 +19,7 @@ import { LwActivityBars, LwPosBar, LwPosLegend, LwRing, posRows, type LwBucket, 
 import LwHariDetail from './LwHariDetail';
 import { ensurePos } from '@/lib/lingwordsTema';
 import { useLangPick, useLingwords } from './useLingwords';
-import { useEffect, useMemo, useState } from 'react';
+import { useCallback, useEffect, useMemo, useState } from 'react';
 
 const PERIODS: { id: LwPeriod; label: string }[] = [
   { id: '7', label: '7 hari' },
@@ -60,6 +60,7 @@ export default function LingwordsCard({
   // [lingwords-harian-v1] Batang terpilih → rincian kata baru rentang itu.
   const [pick, setPick] = useState<{ i: number; b: LwBucket } | null>(null);
   useEffect(() => setPick(null), [lang]);
+  const closePick = useCallback(() => setPick(null), []);
   const pickPeriod = (p: LwPeriod) => {
     setPeriod(p);
     setPick(null);
@@ -101,6 +102,7 @@ export default function LingwordsCard({
   const eta = etaText(stats);
 
   return (
+    <>
     <div className="@container rounded-3xl bg-white p-4 ring-1 ring-slate-200/70 sm:p-5">
       {/* Kepala: merek + bahasa | periode + tautan */}
       <div className="flex flex-wrap items-center justify-between gap-x-3 gap-y-2.5">
@@ -202,9 +204,10 @@ export default function LingwordsCard({
           </div>
         </div>
       )}
-      {pick && total > 0 && (
-        <LwHariDetail words={langWords} lang={stats.lang} bucket={pick.b} t={t} onClose={() => setPick(null)} />
-      )}
     </div>
+    {pick && total > 0 && (
+      <LwHariDetail words={langWords} lang={stats.lang} bucket={pick.b} t={t} onClose={closePick} />
+    )}
+    </>
   );
 }
