@@ -226,6 +226,10 @@ const T = {
       little_learner: { label: "Little Learner", age: "4–6 tahun" },
       young_explorer: { label: "Young Explorer", age: "7–12 tahun" },
     } as Record<string, { label: string; age: string }>,
+    testPrepLabel: "Bisa Mengajar Persiapan Tes? (opsional, boleh pilih banyak)",
+    testPrepOtherPh: "Tes lainnya, contoh: SAT, GRE, Cambridge Young Learners",
+    abroadLabel: "Lulusan Kampus Luar Negeri? (opsional)",
+    abroadPh: "Nama kampus, negara, jurusan. Contoh: University of Leeds, UK, MA TESOL",
     s3Title: "Pengalaman",
     s3Desc: "Ceritakan pengalaman dan motivasi kamu",
     expLabel: "Pengalaman Mengajar *",
@@ -240,7 +244,7 @@ const T = {
     review: {
       name: "Nama", email: "Email", wa: "WhatsApp", nationality: "Asal", residence: "Negara domisili",
       province: "Provinsi", city: "Kota",
-      langs: "Bahasa", mode: "Mode Mengajar", cert: "Sertifikat", kids: "Mengajar Kids",
+      langs: "Bahasa", mode: "Mode Mengajar", cert: "Sertifikat", kids: "Mengajar Kids", testPrep: "Persiapan Tes", abroad: "Kampus Luar Negeri",
       exp: "Pengalaman", video: "Video", motiv: "Motivasi",
     },
     yes: "Ya",
@@ -270,7 +274,7 @@ const T = {
       intro: (n: string) => `Halo, saya ${n} dan tertarik menjadi pengajar di Linguo.`,
       email: "Email", phone: "Telp", nationality: "Asal", residence: "Negara domisili",
       province: "Provinsi", city: "Kota", langs: "Bahasa",
-      mode: "Mode", kids: "Mengajar Kids", certs: "Sertifikat", exp: "Pengalaman",
+      mode: "Mode", kids: "Mengajar Kids", testPrep: "Persiapan Tes", abroad: "Kampus Luar Negeri", certs: "Sertifikat", exp: "Pengalaman",
       video: "Video", motiv: "Motivasi",
     },
   },
@@ -434,6 +438,10 @@ const T = {
       little_learner: { label: "Little Learner", age: "ages 4–6" },
       young_explorer: { label: "Young Explorer", age: "ages 7–12" },
     } as Record<string, { label: string; age: string }>,
+    testPrepLabel: "Can You Teach Test Preparation? (optional, pick any)",
+    testPrepOtherPh: "Other tests, e.g. SAT, GRE, Cambridge Young Learners",
+    abroadLabel: "Graduated from a University Abroad? (optional)",
+    abroadPh: "University, country, major. Example: University of Leeds, UK, MA TESOL",
     s3Title: "Experience",
     s3Desc: "Tell us about your experience and what motivates you",
     expLabel: "Teaching Experience *",
@@ -448,7 +456,7 @@ const T = {
     review: {
       name: "Name", email: "Email", wa: "WhatsApp", nationality: "Nationality", residence: "Country of residence",
       province: "Province", city: "City",
-      langs: "Languages", mode: "Teaching Mode", cert: "Certificates", kids: "Teaches Kids",
+      langs: "Languages", mode: "Teaching Mode", cert: "Certificates", kids: "Teaches Kids", testPrep: "Test Prep", abroad: "University Abroad",
       exp: "Experience", video: "Video", motiv: "Motivation",
     },
     yes: "Yes",
@@ -486,7 +494,7 @@ const T = {
       intro: (n: string) => `Hello, my name is ${n} and I am interested in teaching at Linguo.`,
       email: "Email", phone: "Phone", nationality: "Nationality", residence: "Country of residence",
       province: "Province", city: "City", langs: "Languages",
-      mode: "Mode", kids: "Teaches kids", certs: "Certificates", exp: "Experience",
+      mode: "Mode", kids: "Teaches kids", testPrep: "Test prep", abroad: "University abroad", certs: "Certificates", exp: "Experience",
       video: "Video", motiv: "Motivation",
     },
   },
@@ -679,6 +687,13 @@ const KIDS_TIERS = [
   { value: "young_explorer", Icon: Backpack },
 ] as const;
 
+// ---- Persiapan tes [jadi-pengajar-test-prep-v1] ----
+// Disimpan di `note` ("Bisa mengajar tes: …") supaya bisa dicari di Lamaran Masuk tanpa kolom baru.
+const TEST_PREPS = [
+  "TOEFL ITP", "TOEFL iBT", "IELTS", "PTE Academic", "Duolingo English Test", "TOEIC",
+  "Cambridge (FCE/CAE/CPE)", "JLPT", "HSK", "TOPIK", "DELF/DALF", "Goethe/TestDaF", "DELE",
+] as const;
+
 // ---- Mode mengajar ----
 const TEACHING_MODES = [
   { value: "online", Icon: Video },
@@ -715,6 +730,9 @@ export default function FormPengajar({ lang }: { lang: Lang }) {
   const [certificates, setCertificates] = useState<{ name: string; link: string }[]>([{ name: "", link: "" }]);
   const [canTeachKids, setCanTeachKids] = useState<null | boolean>(null);
   const [kidsTiers, setKidsTiers] = useState<string[]>([]);
+  const [testPreps, setTestPreps] = useState<string[]>([]);
+  const [testPrepOther, setTestPrepOther] = useState("");
+  const [abroadUni, setAbroadUni] = useState("");
 
   // Step 3: Pengalaman
   const [exp, setExp] = useState("");
@@ -758,6 +776,11 @@ export default function FormPengajar({ lang }: { lang: Lang }) {
       : [...kidsTiers, t]
     );
   };
+
+  const toggleTestPrep = (v: string) => {
+    setTestPreps(testPreps.includes(v) ? testPreps.filter(x => x !== v) : [...testPreps, v]);
+  };
+  const testPrepList = [...testPreps, ...(testPrepOther.trim() ? [testPrepOther.trim()] : [])];
 
   // ---- Dup check API ----
   async function checkDuplicate(field: "email" | "phone", rawValue: string) {
@@ -858,6 +881,8 @@ export default function FormPengajar({ lang }: { lang: Lang }) {
         residenceValue && `Negara domisili: ${residenceValue}`,
         provinceValue && `Provinsi: ${provinceValue}`,
         city && `Kota: ${city}`,
+        testPrepList.length > 0 && `Bisa mengajar tes: ${testPrepList.join(", ")}`,
+        abroadUni.trim() && `Lulusan luar negeri: ${abroadUni.trim()}`,
         certsBlock,
         videoLink && `Video: ${videoLink}`,
         motivation && `Motivasi: ${motivation}`,
@@ -919,6 +944,8 @@ export default function FormPengajar({ lang }: { lang: Lang }) {
       `${w.langs}: ${skillsText}`,
       `${w.mode}: ${modeLabel}`,
       `${w.kids}: ${kidsLabel}`,
+      `${w.testPrep}: ${testPrepList.join(", ") || "-"}`,
+      `${w.abroad}: ${abroadUni.trim() || "-"}`,
       `${w.certs}:\n${certsText}`,
       `${w.exp}: ${exp}`,
       `${w.video}: ${videoLink}`,
@@ -1467,6 +1494,32 @@ export default function FormPengajar({ lang }: { lang: Lang }) {
                     </motion.div>
                   )}
                 </div>
+
+                {/* PERSIAPAN TES */}
+                <div>
+                  <label className="text-xs font-semibold text-slate-500 mb-2 block">{t.testPrepLabel}</label>
+                  <div className="flex flex-wrap gap-2">
+                    {TEST_PREPS.map(v => {
+                      const selected = testPreps.includes(v);
+                      return (
+                        <button key={v} type="button" onClick={() => toggleTestPrep(v)}
+                          className={`text-sm px-3 py-2 rounded-xl border-2 transition-all flex items-center gap-1.5 ${selected ? "bg-[#1A9E9E]/5 border-[#1A9E9E] text-[#1A9E9E] font-semibold" : "bg-white border-slate-200 text-slate-600 hover:border-slate-300"}`}>
+                          {selected && <CheckCircle2 className="h-4 w-4" />}
+                          {v}
+                        </button>
+                      );
+                    })}
+                  </div>
+                  <input type="text" value={testPrepOther} onChange={e => setTestPrepOther(e.target.value)} placeholder={t.testPrepOtherPh}
+                    className="mt-2 w-full border-2 border-slate-200 rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-[#1A9E9E] transition-colors" />
+                </div>
+
+                {/* LULUSAN LUAR NEGERI */}
+                <div>
+                  <label className="text-xs font-semibold text-slate-500 mb-1.5 block">{t.abroadLabel}</label>
+                  <input type="text" value={abroadUni} onChange={e => setAbroadUni(e.target.value)} placeholder={t.abroadPh}
+                    className="w-full border-2 border-slate-200 rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-[#1A9E9E] transition-colors" />
+                </div>
               </motion.div>
             )}
 
@@ -1523,6 +1576,8 @@ export default function FormPengajar({ lang }: { lang: Lang }) {
                           ? kidsTiers.map(v => t.kidsTiers[v]?.label ?? v).join(", ")
                           : t.yes)
                         : t.no },
+                    { label: t.review.testPrep, value: testPrepList.join(", ") || "-" },
+                    { label: t.review.abroad, value: abroadUni.trim() || "-" },
                     { label: t.review.exp, value: exp ? t.expOptions[EXP_VALUES.indexOf(exp as typeof EXP_VALUES[number])] ?? exp : "" },
                     { label: t.review.video, value: videoLink || "-" },
                   ].map((r, i) => (
