@@ -21,6 +21,7 @@ import { previewStudentId } from "@/lib/previewSession";
 // [addon-akses-rekaman-v1] rekaman = add-on berbayar. Gerbang UI saja tak ada
 // artinya: roomId-nya `sched-<uuid>` dan siswa bisa memanggil route ini langsung.
 import { aksesRekaman, muatWarisanRekaman, ADDON_REG_COLUMNS, type AddonRow } from "@/lib/addonAccess";
+import { parseBatchRoom, registrasiAnggotaBatch } from "@/lib/batchRecordings"; // [rekaman-batch-siswa-v1]
 
 const SUPABASE_URL = process.env.NEXT_PUBLIC_SUPABASE_URL!;
 const SUPABASE_ANON_KEY = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!;
@@ -206,6 +207,7 @@ export async function POST(req: NextRequest) {
     };
 
     let rows: SchedRow[] = [];
+    let anggotaBatch = false; // [rekaman-batch-siswa-v1] semua berkas ruang pertemuan batch sah
     if (scheduleId && UUID_RE.test(scheduleId)) {
       const { data } = await admin.from("schedules").select(SCHED_COLS).eq("id", scheduleId).maybeSingle();
       if (!data) {
@@ -230,6 +232,26 @@ export async function POST(req: NextRequest) {
         if (!tolak) rows.push(r);
         else tolakPertama ??= tolak;
       }
+      // [rekaman-batch-siswa-v1] Ruang pertemuan batch milik SEMUA anggota batch —
+      // tak perlu baris jadwal yang menunjuk ke ruang itu. Add-on tetap dicek per
+      // registrasi lewat cekSched.
+      const ruangBatch = rows.length ? null : parseBatchRoom(roomStr);
+      if (ruangBatch) {
+        const { data: rek } = await admin
+          .from("class_recordings")
+          .select("recorded_at")
+          .eq("room_id", roomStr)
+          .is("deleted_at", null)
+          .order("recorded_at", { ascending: true })
+          .limit(1);
+        const waktu = String(rek?.[0]?.recorded_at || new Date().toISOString());
+        for (const r of await registrasiAnggotaBatch(admin, ruangBatch, [...ownedIds])) {
+          const semu: SchedRow = { id: "", scheduled_at: waktu, student_id: r.student_id, registration_id: r.id, corporate_lead_id: null };
+          const tolak = await cekSched(semu);
+          if (!tolak) { rows.push(semu); anggotaBatch = true; break; }
+          tolakPertama ??= tolak;
+        }
+      }
       if (!rows.length) {
         return tolakPertama ?? NextResponse.json({ error: "Rekaman ini belum ditempel ke sesi kelasmu" }, { status: 403 });
       }
@@ -240,7 +262,7 @@ export async function POST(req: NextRequest) {
     // Ruang dipakai ulang → berkas yang lolos hanya milik pertemuan jadwal di atas.
     const reused = !scheduleId;
     const lolosBerkas = (fileName: string) => {
-      if (!reused) return true;
+      if (!reused || anggotaBatch) return true;
       const ms = Number(fileName.match(/^(\d{12,14})/)?.[1] ?? NaN);
       if (!Number.isFinite(ms)) return false;
       return rows.some((r) => {

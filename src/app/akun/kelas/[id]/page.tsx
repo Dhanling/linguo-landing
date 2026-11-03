@@ -137,7 +137,7 @@ function KelasDetailInner() {
               id, student_id, product, language, level, status,
               sessions_total, sessions_used,
               duration, total_amount, payment_status,
-              teacher_id, archived_at,
+              teacher_id, archived_at, batch_id, test_prep_batch_id,
               teachers(name, title, avatar_url)
             `)
             .eq("id", params.id)
