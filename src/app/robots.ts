@@ -70,6 +70,7 @@ const PRIVATE_PATHS = [
   "/payment/",      // halaman hasil pembayaran
   "/onboarding/",   // ber-token, unik per orang
   "/pendataan/",    // form pendataan siswa, ber-token per registrasi
+  "/pendataan-b2b/", // form pendataan peserta B2B, ber-token per kontrak
   "/kosakata",      // flashcard kata tersimpan siswa (localStorage, butuh akun)
   "/kuis/",         // lembar kerja ber-token, satu siswa satu link
   "/kelas/konfirmasi/", // konfirmasi jadwal, ber-token per sesi
