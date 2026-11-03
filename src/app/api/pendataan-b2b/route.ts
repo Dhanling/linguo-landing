@@ -82,6 +82,7 @@ export async function POST(req: NextRequest) {
     const city = clean(body.city, 120);
     const priorExperience = clean(body.prior_experience, 300);
     const learningGoal = clean(body.learning_goal, 1000);
+    const schedule = clean(body.preferred_schedule, 600);
 
     if (!name) return NextResponse.json({ error: "Nama lengkap wajib diisi" }, { status: 400 });
     if (!nickname) return NextResponse.json({ error: "Nama panggilan wajib diisi" }, { status: 400 });
@@ -92,6 +93,7 @@ export async function POST(req: NextRequest) {
     if (!/^\S+@\S+\.\S+$/.test(email)) return NextResponse.json({ error: "Format email belum benar" }, { status: 400 });
     if (!department) return NextResponse.json({ error: "Divisi / departemen wajib diisi" }, { status: 400 });
     if (!priorExperience) return NextResponse.json({ error: "Pengalaman belajar wajib dipilih" }, { status: 400 });
+    if (!schedule) return NextResponse.json({ error: "Pilih minimal 1 hari dan 1 jam yang kamu bisa" }, { status: 400 });
 
     const res = await sb("rpc/b2b_intake_submit", {
       method: "POST",
@@ -99,7 +101,7 @@ export async function POST(req: NextRequest) {
         p_token: token,
         p: {
           name, nickname, whatsapp, email, department, job_title: jobTitle, city,
-          prior_experience: priorExperience, learning_goal: learningGoal,
+          prior_experience: priorExperience, learning_goal: learningGoal, preferred_schedule: schedule,
         },
       }),
     });

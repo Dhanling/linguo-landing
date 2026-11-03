@@ -10,7 +10,7 @@
 import { useEffect, useState } from "react";
 import { useParams } from "next/navigation";
 import {
-  AlertCircle, BookOpen, Briefcase, Building2, CheckCircle2, GraduationCap, Loader2, Mail,
+  AlertCircle, BookOpen, Briefcase, Building2, CalendarDays, CheckCircle2, Clock, GraduationCap, Loader2, Mail,
   MapPin, MessageCircle, Phone, RotateCcw, SearchX, Target, User,
 } from "lucide-react";
 
@@ -26,12 +26,24 @@ const EXPERIENCE = [
   "Sudah bisa percakapan sehari-hari",
 ];
 
+// Jadwal: hari × blok waktu (kelas karyawan biasanya sesudah jam kerja). Disimpan
+// sebagai teks "Senin, Rabu · Malam (19.00–21.00)" + catatan — dibaca pengajar
+// di surat tugas, jadi bentuknya sengaja kalimat, bukan kode.
+const DAYS = ["Senin", "Selasa", "Rabu", "Kamis", "Jumat", "Sabtu", "Minggu"];
+const SLOTS = ["Pagi (08.00–11.00)", "Siang (12.00–15.00)", "Sore (16.00–18.00)", "Malam (19.00–21.00)"];
+
+const chipClass = (on: boolean) =>
+  `inline-flex items-center gap-1.5 rounded-full border px-4 py-2.5 text-sm font-semibold transition active:scale-95 ${
+    on ? "border-transparent text-white shadow-sm" : "border-slate-300 bg-white text-slate-800 hover:border-[#1A9E9E]/60"
+  }`;
+
 const inputClass =
   "w-full rounded-2xl border border-slate-300 bg-white px-4 py-3.5 text-base text-slate-900 placeholder:text-slate-500 shadow-sm transition focus:border-[#1A9E9E] focus:outline-none focus:ring-4 focus:ring-[#1A9E9E]/10";
 
 const EMPTY = {
   name: "", nickname: "", whatsapp: "", email: "", department: "", job_title: "", city: "",
-  prior_experience: "", learning_goal: "",
+  prior_experience: "", learning_goal: "", schedule_note: "",
+  days: [] as string[], slots: [] as string[],
 };
 
 function Field({
@@ -84,7 +96,10 @@ export default function PendataanB2BPage() {
       .catch(() => setState("error"));
   }, [token]);
 
-  const set = (k: keyof typeof EMPTY) => (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) =>
+  const toggle = (k: "days" | "slots", v: string) =>
+    setForm((f) => ({ ...f, [k]: f[k].includes(v) ? f[k].filter((x) => x !== v) : [...f[k], v] }));
+
+  const set = (k: "name" | "nickname" | "whatsapp" | "email" | "department" | "job_title" | "city" | "learning_goal" | "schedule_note") => (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) =>
     setForm((f) => ({ ...f, [k]: e.target.value }));
 
   const submit = async (e: React.FormEvent) => {
@@ -95,7 +110,13 @@ export default function PendataanB2BPage() {
       const r = await fetch("/api/pendataan-b2b", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ token, ...form }),
+        body: JSON.stringify({
+          token, ...form,
+          preferred_schedule: form.days.length && form.slots.length
+            ? `${DAYS.filter((d) => form.days.includes(d)).join(", ")} · ${SLOTS.filter((x) => form.slots.includes(x)).join(", ")}`
+              + (form.schedule_note.trim() ? ` — ${form.schedule_note.trim()}` : "")
+            : "",
+        }),
       });
       const j = await r.json().catch(() => ({}));
       if (!r.ok) {
@@ -213,15 +234,31 @@ export default function PendataanB2BPage() {
                 const on = form.prior_experience === o;
                 return (
                   <button key={o} type="button" onClick={() => setForm((f) => ({ ...f, prior_experience: o }))}
-                    className={`inline-flex items-center gap-1.5 rounded-full border px-4 py-2.5 text-sm font-semibold transition active:scale-95 ${
-                      on ? "border-transparent text-white shadow-sm" : "border-slate-300 bg-white text-slate-800 hover:border-[#1A9E9E]/60"
-                    }`}
+                    className={chipClass(on)}
                     style={on ? { backgroundColor: TEAL } : undefined}>
                     {o}
                   </button>
                 );
               })}
             </div>
+          </Field>
+          <Field label="Hari yang kamu bisa" icon={CalendarDays} required hint="Pilih semua hari yang memungkinkan — jadwal kelas disesuaikan dengan mayoritas peserta.">
+            <div className="flex flex-wrap gap-2">
+              {DAYS.map((d) => (
+                <button key={d} type="button" onClick={() => toggle("days", d)} className={chipClass(form.days.includes(d))}
+                  style={form.days.includes(d) ? { backgroundColor: TEAL } : undefined}>{d}</button>
+              ))}
+            </div>
+          </Field>
+          <Field label="Jam yang kamu bisa (WIB)" icon={Clock} required>
+            <div className="flex flex-wrap gap-2">
+              {SLOTS.map((x) => (
+                <button key={x} type="button" onClick={() => toggle("slots", x)} className={chipClass(form.slots.includes(x))}
+                  style={form.slots.includes(x) ? { backgroundColor: TEAL } : undefined}>{x}</button>
+              ))}
+            </div>
+            <input className={`${inputClass} mt-3`} value={form.schedule_note} onChange={set("schedule_note")}
+              placeholder="Catatan jadwal (opsional), mis. Jumat hanya bisa jam 17.30" />
           </Field>
           <Field label="Tujuan / kebutuhan belajar" icon={Target} hint="mis. meeting dengan klien, presentasi, email, perjalanan dinas.">
             <textarea className={`${inputClass} min-h-[96px]`} value={form.learning_goal} onChange={set("learning_goal")} placeholder="Opsional" />
