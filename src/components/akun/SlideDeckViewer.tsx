@@ -1,4 +1,5 @@
 'use client';
+import { isEnglishSessionArtCover } from '@/data/englishSessionArtwork';
 import { isCantoneseAdvancedBody } from '@/data/cantoneseAdvancedBody';
 import { isTestPrepB1BodyCover } from '@/data/testPrepB1BodyBackground';
 import { isPortugueseBrBodyCover } from '@/data/portugueseBrBodyBackground';
@@ -579,6 +580,8 @@ export function SlideCard({ s, showAnswers, lang, className = "" }: {
       </>)}
       {judul && (isA1LanguageCover(s.cover) || isA2LanguageCover(s.cover) || isB1LanguageCover(s.cover) || isB2LanguageCover(s.cover)) && <div aria-hidden className="pointer-events-none absolute inset-0"
         style={{ background: "linear-gradient(180deg,rgba(5,56,64,0.38),rgba(5,56,64,0.16) 65%,transparent)" }} />}
+      {judul && isEnglishSessionArtCover(s.cover) && <div aria-hidden className="pointer-events-none absolute inset-0"
+        style={{ background: "linear-gradient(180deg,rgba(5,56,64,0.48),rgba(5,56,64,0.28) 43%,transparent 66%)" }} />}
       {/* [slide-watermark-v1] Tanda air: logo besar pudar + tulisan miring berulang.
           Ikut terekam di tangkapan layar/rekaman, tapi tidak mengganggu baca. */}
       {!(judul && sampul) && <img aria-hidden src={LOGO} alt=""
