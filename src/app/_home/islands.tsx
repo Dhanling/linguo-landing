@@ -623,22 +623,22 @@ export function TestimonialCarousel() {
 const TEACHER_DATA = [
   {name:"Febri Darusman",role:"Spanish & Thai Teacher",img:"/images/teachers/teacher-febri.png",f1:"th",f2:"es",
     bio:"Lulusan Sastra Prancis UGM. Berpengalaman mengajar dari 2013, selain itu pernah menjadi ketua komunitas Polyglot Indonesia chapter Bandung.",
-    lessons:850,rating:5.0,price:"Rp 90K"},
+    lessons:850,rating:5.0,price:"Rp 100K"},
   {name:"Nitalia Wijaya",role:"Korean & English Teacher",img:"/images/teachers/teacher-nitalia.png",f1:"kr",f2:"gb",
     bio:"Lulusan Sastra Korea UNPAD. Memiliki sertifikasi TOPIK Level 5 dan pengalaman tinggal di Seoul selama 2 tahun.",
-    lessons:1200,rating:5.0,price:"Rp 90K"},
+    lessons:1200,rating:5.0,price:"Rp 100K"},
   {name:"Angga",role:"Chinese & Korean Teacher",img:"/images/teachers/teacher-angga.png",f1:"cn",f2:"kr",
     bio:"Lulusan Sastra China UNPAD dengan sertifikasi HSK 5. Berpengalaman mengajar Bahasa Mandarin dan Korea sejak 2018.",
-    lessons:680,rating:4.9,price:"Rp 90K"},
+    lessons:680,rating:4.9,price:"Rp 100K"},
   {name:"Paramita Wulandari",role:"Japanese & Portuguese Teacher",img:"/images/teachers/teacher-paramita.png",f1:"jp",f2:"br",
     bio:"Lulusan Sastra Jepang UI dengan sertifikasi JLPT N2. Pernah tinggal di Osaka selama 1 tahun sebagai exchange student.",
-    lessons:920,rating:5.0,price:"Rp 90K"},
+    lessons:920,rating:5.0,price:"Rp 100K"},
   {name:"Thifal Syahla",role:"English & Persian Teacher",img:"/images/teachers/teacher-thifal.png",f1:"gb",f2:"ir",
     bio:"Lulusan Sastra Inggris UPI. Memiliki sertifikasi IELTS 7.5 dan pengalaman mengajar Bahasa Inggris dan Persia sejak 2019.",
-    lessons:1050,rating:5.0,price:"Rp 90K"},
+    lessons:1050,rating:5.0,price:"Rp 100K"},
   {name:"Yeremia Immanuel",role:"French & Swahili Teacher",img:"/images/teachers/teacher-yeremia.png",f1:"fr",f2:"ke",
     bio:"Lulusan Sastra Prancis UGM. Berpengalaman mengajar Bahasa Prancis dan Swahili dengan pendekatan komunikatif sejak 2017.",
-    lessons:740,rating:4.9,price:"Rp 90K"},
+    lessons:740,rating:4.9,price:"Rp 100K"},
 ];
 
 export function HeroFunnel({lang, onLoginOpen}:{lang:string; onLoginOpen?:()=>void}) {
@@ -909,7 +909,7 @@ const PRODUCTS = [
   // linguo-patch:private-pricing-v1 — harga Private bervariasi per bahasa (Rp90rb–
   // 120rb+/sesi). Homepage tidak tahu bahasa, jadi tampilkan "Mulai" + hapus
   // framing "diskon 10% dari Rp100.000" yg tidak akurat utk harga variabel.
-  {badgeIcon:<svg viewBox="0 0 24 24" fill="white" className="w-2.5 h-2.5 inline-block mr-0.5"><path d="M12 3L1 9l11 6 9-4.91V17h2V9L12 3zM5 13.18v4L12 21l7-3.82v-4L12 17l-7-3.82z"/></svg>,badgeLabel:"Paling Diminati",badgeColor:"bg-[#1A9E9E] text-white",title:"Kelas Private",desc:"Belajar 1-on-1 via Zoom, request jadwal & topik sesukamu",priceOld:null,price:"Mulai Rp 90.000",per:"/sesi",discount:null,tab:0,bgColor:"#E0F7F7",imageEmoji:"",objPos:"object-[50%_20%]",img1:"/images/programs/brush/private.webp"},
+  {badgeIcon:<svg viewBox="0 0 24 24" fill="white" className="w-2.5 h-2.5 inline-block mr-0.5"><path d="M12 3L1 9l11 6 9-4.91V17h2V9L12 3zM5 13.18v4L12 21l7-3.82v-4L12 17l-7-3.82z"/></svg>,badgeLabel:"Paling Diminati",badgeColor:"bg-[#1A9E9E] text-white",title:"Kelas Private",desc:"Belajar 1-on-1 via Zoom, request jadwal & topik sesukamu",priceOld:null,price:"Mulai Rp 100.000",per:"/sesi",discount:null,tab:0,bgColor:"#E0F7F7",imageEmoji:"",objPos:"object-[50%_20%]",img1:"/images/programs/brush/private.webp"},
   {badgeIcon:<svg viewBox="0 0 24 24" fill="white" className="w-2.5 h-2.5 inline-block mr-0.5"><path d="M16 11c1.66 0 2.99-1.34 2.99-3S17.66 5 16 5c-1.66 0-3 1.34-3 3s1.34 3 3 3zm-8 0c1.66 0 2.99-1.34 2.99-3S9.66 5 8 5C6.34 5 5 6.34 5 8s1.34 3 3 3zm0 2c-2.33 0-7 1.17-7 3.5V19h14v-2.5c0-2.33-4.67-3.5-7-3.5zm8 0c-.29 0-.62.02-.97.05 1.16.84 1.97 1.97 1.97 3.45V19h6v-2.5c0-2.33-4.67-3.5-7-3.5z"/></svg>,badgeLabel:"Terjangkau",badgeColor:"bg-[#1A9E9E] text-white",title:"Kelas Reguler",desc:"Grup class dengan jadwal tetap, cocok untuk belajar bareng",priceOld:"Rp 200.000",price:"Rp 150.000",per:"/2 bulan",discount:"25%",tab:1,bgColor:"#E8F0FE",imageEmoji:"",objPos:"object-[50%_20%]",img1:"/images/programs/brush/reguler.webp"},
   {badgeIcon:<svg viewBox="0 0 24 24" fill="white" className="w-2.5 h-2.5 inline-block mr-0.5"><path d="M7 2v11h3v9l7-12h-4l4-8z"/></svg>,badgeLabel:"Intensif",badgeColor:"bg-[#FF8700] text-white",title:"IELTS / TOEFL",desc:"16 sesi @90 menit, persiapan tes bahasa Inggris terlengkap",priceOld:"Rp 400.000",price:"Rp 300.000",per:"/2 bulan",discount:"25%",tab:2,bgColor:"#FFF8E1",imageEmoji:"",objPos:"object-[50%_20%]",img1:"/images/programs/brush/ielts-toefl.webp"},
   // test-prep-v1 — persiapan ujian bahasa non-Inggris (HSK/JLPT/TOPIK/Goethe) → halaman /persiapan-tes
@@ -1232,13 +1232,14 @@ export function LanguageStrip({className=""}:{className?:string}) {
 const PRICING_TABS = [
   {
     // linguo-patch:private-pricing-v1 — harga Private variabel per bahasa & level.
-    // Angka di bawah = harga terendah (bahasa daerah, level A1) → diberi "Mulai".
-    id:"private",label:"Kelas Private",desc:"Fleksibel, personal, dan efektif. 1-on-1 via Zoom. Harga mulai Rp90.000/sesi — bervariasi per bahasa & level (bahasa lain Rp100rb–120rb/sesi).",
+    // [harga-private-asing-v1] Angka di bawah = bahasa asing termurah (A1) → diberi "Mulai".
+    // Rp90rb khusus bahasa daerah, disebut terpisah di desc (Bug Tracker c1d928ac).
+    id:"private",label:"Kelas Private",desc:"Fleksibel, personal, dan efektif. 1-on-1 via Zoom. Bahasa asing mulai Rp100.000/sesi — bervariasi per bahasa & level (Rp100rb–150rb/sesi). Khusus bahasa daerah (Jawa, Sunda, Bali, dll) mulai Rp90.000/sesi.",
     plans:[
-      {name:"Per Sesi",desc:"Coba dulu 1 sesi",price:"Mulai Rp 90.000",highlighted:true,badge:"Recommended"},
-      {name:"5 Sesi",desc:"5× sesi 60 menit",price:"Mulai Rp 450.000",highlighted:false},
-      {name:"10 Sesi",desc:"10× sesi 60 menit",price:"Mulai Rp 900.000",highlighted:false},
-      {name:"20 Sesi",desc:"20× sesi 60 menit",price:"Mulai Rp 1.800.000",highlighted:false},
+      {name:"Per Sesi",desc:"Coba dulu 1 sesi",price:"Mulai Rp 100.000",highlighted:true,badge:"Recommended"},
+      {name:"5 Sesi",desc:"5× sesi 60 menit",price:"Mulai Rp 500.000",highlighted:false},
+      {name:"10 Sesi",desc:"10× sesi 60 menit",price:"Mulai Rp 1.000.000",highlighted:false},
+      {name:"20 Sesi",desc:"20× sesi 60 menit",price:"Mulai Rp 2.000.000",highlighted:false},
     ],
     features:["Recording Class/sesi","Interactive Class via ZOOM","Soft file Materi Pembelajaran","Request Jadwal & Topik","Qualified Teacher","E-Certificate","Bebas Pilih 60+ Bahasa"],
     allCheck:true,wa:"Kelas Private",

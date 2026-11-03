@@ -31,7 +31,7 @@ const WA = "6282217866789";
 export const metadata: Metadata = {
   title: "Kursus Bahasa Asing Online — 60+ Bahasa, Kelas Live 1-on-1 | Linguo.id",
   description:
-    "Pilih kelas bahasa yang kamu mau: Inggris, Jepang, Korea, Mandarin, dan 60+ bahasa lain. Kelas live via Zoom bersama pengajar berpengalaman, mulai Rp90.000/sesi.",
+    "Pilih kelas bahasa yang kamu mau: Inggris, Jepang, Korea, Mandarin, dan 60+ bahasa lain. Kelas live via Zoom bersama pengajar berpengalaman, mulai Rp100.000/sesi.",
   keywords: [
     "kursus bahasa asing online",
     "les bahasa online",
@@ -43,7 +43,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Kursus Bahasa Asing Online — 60+ Bahasa | Linguo.id",
     description:
-      "Kelas live via Zoom bersama pengajar berpengalaman. 60+ bahasa, mulai Rp90.000/sesi.",
+      "Kelas live via Zoom bersama pengajar berpengalaman. 60+ bahasa, mulai Rp100.000/sesi.",
     url: `${BASE}/kursus`,
     siteName: "Linguo.id",
     locale: "id_ID",
@@ -115,7 +115,7 @@ export default function KelasIndexPage() {
           </h1>
           <p className="text-white/85 text-base sm:text-lg max-w-2xl leading-relaxed">
             60+ bahasa, kelas live 1-on-1 maupun grup via Zoom bersama pengajar
-            berpengalaman. Materi disesuaikan tujuanmu — mulai Rp90.000 per sesi.
+            berpengalaman. Materi disesuaikan tujuanmu — mulai Rp100.000 per sesi.
           </p>
           <div className="flex flex-wrap gap-x-6 gap-y-2 mt-6 text-sm text-white/85">
             {["Rekaman tiap sesi", "Bebas pilih jadwal", "E-Certificate", "Pengajar tersertifikasi"].map((t) => (

@@ -24,7 +24,13 @@
 import { KIDS_PRICE, PRICE_A1_60MIN, SEMI_PRIVATE_PRICE_BASIC } from "./trial-pricing";
 
 /** Angka "mulai dari" diturunkan dari pricelist supaya tidak bisa basi. */
-const PRIVATE_FROM = Math.min(...Object.values(PRICE_A1_60MIN));
+// [harga-private-asing-v1] Kategori D (bahasa daerah Nusantara, Rp90rb) DIKECUALIKAN dari
+// "mulai" Kelas Private: siswa bahasa asing mengira 90rb/sesi berlaku untuk semua bahasa
+// (Bug Tracker c1d928ac). Harga bahasa daerah ditampilkan terpisah lewat PRIVATE_DAERAH_FROM.
+const PRIVATE_FROM = Math.min(
+  ...Object.entries(PRICE_A1_60MIN).filter(([cat]) => cat !== "D").map(([, n]) => n),
+);
+const PRIVATE_DAERAH_FROM = PRICE_A1_60MIN.D;
 const KIDS_FROM = Math.min(...Object.values(KIDS_PRICE));
 /** Semi Private termurah per siswa: total grup 2 siswa dibagi 2 (index 1). */
 const SEMI_FROM = Math.min(
@@ -70,9 +76,12 @@ export const BRAND_FACTS = {
     /** Semi Private, per siswa per sesi (grup 2 siswa, level A1). */
     semiPrivateFrom: SEMI_FROM,
     semiPrivateFromLabel: `${rupiah(SEMI_FROM)}/siswa/sesi`,
-    /** Kelas Private 1-on-1, 60 menit, level A1, kategori bahasa termurah. */
+    /** Kelas Private 1-on-1, 60 menit, level A1, bahasa asing termurah (tanpa bahasa daerah). */
     privateFrom: PRIVATE_FROM,
     privateFromLabel: `${rupiah(PRIVATE_FROM)}/sesi`,
+    /** Kelas Private bahasa daerah Nusantara (Jawa, Sunda, Bali, dll), level A1. */
+    privateDaerahFrom: PRIVATE_DAERAH_FROM,
+    privateDaerahFromLabel: `${rupiah(PRIVATE_DAERAH_FROM)}/sesi`,
     /** Kelas Reguler (grup) — paket flat, mirror REGULER_PACKAGE_PRICE. */
     reguler: 150000,
     regulerLabel: `${rupiah(150000)}/2 bulan`,

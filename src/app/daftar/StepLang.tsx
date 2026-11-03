@@ -70,7 +70,7 @@ export default function StepLang() {
           ? "Bahasa yang punya jadwal Kelas Reguler"
           : semiPrivateEntry
           ? "Pilih bahasa untuk kelas Semi-Private grup kecilmu."
-          : "Pilih bahasa yang kamu minati — 60+ bahasa, pengajar bersertifikat, kelas mulai dari Rp 90.000/sesi."}
+          : "Pilih bahasa yang kamu minati — 60+ bahasa, pengajar bersertifikat, kelas mulai dari Rp 100.000/sesi."}
       </p>
 
       {semiPrivateEntry && (

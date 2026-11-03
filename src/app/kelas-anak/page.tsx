@@ -292,7 +292,7 @@ export default function KelasAnakPage() {
               ["", "Kelas Kids", "Private (Dewasa)"],
               ["Usia", "5–12 tahun", "13+ / Dewasa"],
               ["Durasi", "30–45 menit", "60 menit"],
-              ["Harga", "Mulai Rp 75.000–85.000", "Mulai Rp 90.000"],
+              ["Harga", "Mulai Rp 75.000–85.000", "Mulai Rp 100.000"],
               ["Metode", "Games, lagu, interaktif", "Konversasi, textbook"],
               ["Format", "1-on-1 via Zoom", "1-on-1 via Zoom"],
               ["Bahasa", "60+ bahasa", "60+ bahasa"],
