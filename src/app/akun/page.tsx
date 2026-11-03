@@ -20,6 +20,7 @@ import { tanpaSesiSintetis } from "@/lib/sesiSintetis"; // [jadwal-hantu-hidden-
 import { LangSlugFlag } from "@/components/RectFlag"; // [materi-flag-pie-v1] bendera rounded-rect (data bendera-nya lazy)
 import { sapaan, initial as callInitial } from "@/lib/teacherName"; // [teacher-sapaan-v1] "Kak Dhani", bukan nama lengkap
 import { flatPrice, isFixedPriceProgram, pricePerSession, privatePerSession } from "@/lib/enrollPrice"; // [edge-auth-gate-v1]
+import { muatRekamanBatch, tempelRekamanBatch, regBatch, type PertemuanBatch } from "@/lib/batchRecordingsClient"; // [rekaman-batch-akun-v1]
 import { supabase, initialAuthError, peekSessionUser, adoptImplicitSessionFromUrl, resolveSessionForGate } from "@/lib/supabase-client"; // [akun-oauth-error-surface-v2] [perf:session-cookie-peek-v1] [auth-implicit-hash-adopt-v1] [auth-gate-resilient-v1]
 import { toast } from "sonner";
 import { motion, AnimatePresence } from "framer-motion";
@@ -3044,6 +3045,24 @@ export default function AkunPage() {
      [rekaman-wajib-beli-v1] Hanya "punya" yang boleh menonton. Selama peta belum
      datang isinya kosong → dianggap "memuat" (tombol & gembok belum tampil);
      gerbang yang sesungguhnya ada di /api/class-recording. */
+  /* [rekaman-batch-akun-v1] Rekaman pertemuan batch Reguler/ETP (ruang `batch-…-<no>`)
+     untuk linimasa panel "Kelas & Materi" — siswa batch tak punya baris jadwal per
+     pertemuan, jadi tanpa ini rekamannya tak pernah tampil (Bug Tracker 98325725). */
+  const [rekamanBatchMap, setRekamanBatchMap] = useState<Map<string, PertemuanBatch[]>>(() => new Map());
+  const regBatchKey = (student?.registrations || []).filter(regBatch).map((r: any) => r.id).join(",");
+  useEffect(() => {
+    const regs = ((student?.registrations || []) as any[]).filter(regBatch);
+    if (!regs.length) return;
+    let alive = true;
+    (async () => {
+      const token = previewMode ? null : (await resolveSessionForGate()).session?.access_token;
+      if (!previewMode && !token) return;
+      const hasil = await Promise.all(regs.map(async (r) => [r.id, await muatRekamanBatch(r, token)] as const));
+      if (alive) setRekamanBatchMap(new Map(hasil.filter(([, m]) => m.length)));
+    })();
+    return () => { alive = false; };
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [regBatchKey, previewMode]);
   const [aksesRekamanMap, setAksesRekamanMap] = useState<Map<string, AksesAddon>>(() => new Map());
   const regIdsKey = (student?.registrations || []).map((r: any) => `${r.id}:${r.akses_rekaman || ""}`).join(",");
   useEffect(() => {
@@ -5870,7 +5889,8 @@ export default function AkunPage() {
                 /* [kelas-b2b-materi-v1] Kelas korporat tak punya baris schedules milik siswa
                    (registration_id NULL) — sesinya datang dari RPC my_corporate_class_sessions
                    dan sudah menempel di registrasi semunya. Kuis & Rapor belum ada datanya. */
-                const jadwalOf = (r: any): any[] => (r?.__b2b ? r.__sesi || [] : jadwalNyata.filter((s) => s.registration_id === r?.id));
+                const jadwalOf = (r: any): any[] => (r?.__b2b ? r.__sesi || []
+                  : tempelRekamanBatch(r, jadwalNyata.filter((s) => s.registration_id === r?.id), rekamanBatchMap.get(r?.id) || []));
                 const materiB2B = (r: any): any[] | undefined =>
                   r?.__b2b ? (r.__sesi || []).flatMap((s: any) => (Array.isArray(s.materials) ? s.materials : [])) : undefined;
                 const tabAktif = selected?.__b2b && (materiTab === "kuis" || materiTab === "rapor") ? "sesi" : materiTab;
