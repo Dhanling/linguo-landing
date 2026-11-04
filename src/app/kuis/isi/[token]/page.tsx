@@ -858,7 +858,15 @@ export default function QuizTakePage() {
               const soalTerakhir = step === total - 1;
               // [kuis-4-skill-v1] Yang melompat sendiri cuma soal PILIHAN — soal tulis
               // & rekaman di lembar utama tetap butuh tombol Lanjut.
-              const sembunyikanLanjut = isMC(cur) && !soalTerakhir;
+              /* [kuis-selanjutnya-terjawab-v1] Laporan Faujiah a4ccd163 (4 Nov 2026):
+                 siswa yang mundur ke soal sebelumnya tak punya jalan maju selain
+                 mengetuk nomor di bilah atas. Tombol muncul lagi sebagai
+                 "Selanjutnya" — tapi HANYA kalau soal ini sudah dijawab (atau
+                 "Tidak tahu"), jadi alasan tombol ini dulu dicabut (siswa
+                 menekannya duluan & melewati soal kosong) tetap tertutup. */
+              const sudahDijawab = isAnswered(responses[step]);
+              const sembunyikanLanjut = isMC(cur) && !soalTerakhir && !sudahDijawab;
+              const labelMaju = isMC(cur) ? "Selanjutnya" : "Lanjut";
               return (
                 <div className="sticky bottom-0 mt-4 -mx-4 border-t border-slate-200 bg-white/95 px-4 py-3 backdrop-blur sm:mx-0 sm:rounded-2xl sm:border">
                   <div className="flex items-center gap-2.5">
@@ -874,7 +882,7 @@ export default function QuizTakePage() {
                         style={{ background: BRAND }}>
                         {soalTerakhir
                           ? <><ListChecks className="h-5 w-5" /> Periksa Jawaban</>
-                          : <>Lanjut <ArrowRight className="h-5 w-5" /></>}
+                          : <>{labelMaju} <ArrowRight className="h-5 w-5" /></>}
                       </button>
                     )}
                   </div>
