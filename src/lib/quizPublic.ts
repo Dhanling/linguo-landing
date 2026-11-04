@@ -18,7 +18,10 @@ const ANON_KEY = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY || "";
 export type QuizQType = "multiple_choice" | "translation" | "fill_blank" | "hots" | "essay"
   /* [kuis-4-skill-v1] reading & listening = pilihan ganda (listening diputar TTS),
      speaking = rekaman suara. Writing memakai `translation`. */
-  | "reading" | "listening" | "speaking";
+  | "reading" | "listening" | "speaking"
+  /* [kuis-speaking-bebas-v1] Speaking bebas: pertanyaan/topik (umum/IELTS),
+     dijawab lisan minimal `speak_min_sec` detik. */
+  | "speaking_open";
 
 /** Soal yang dijawab dengan memilih opsi. */
 export function isChoiceQuestion(q: { type: string; options?: any[] | null }): boolean {
@@ -33,6 +36,7 @@ export function skillLabel(type: string): string | null {
     case "reading": return "Reading";
     case "listening": return "Listening";
     case "speaking": return "Speaking";
+    case "speaking_open": return "Speaking";
     case "translation": return "Writing";
     default: return null;
   }
@@ -48,6 +52,8 @@ export interface PublicQuizQuestion {
   points: number;
   /** [kuis-4-skill-v1] Naskah listening — dibunyikan, TIDAK ditampilkan sebelum dikirim. */
   audio_text?: string | null;
+  /** [kuis-speaking-bebas-v1] Durasi rekaman minimal (detik) untuk speaking bebas. */
+  speak_min_sec?: number | null;
 }
 
 export interface PublicQuiz {
@@ -91,6 +97,8 @@ export interface EssayResponse {
   ime?: boolean;
   /** [kuis-4-skill-v1] Rekaman jawaban speaking (URL publik di bucket quiz-uploads). */
   audio_url?: string;
+  /** [kuis-speaking-bebas-v1] Lama rekaman (detik). */
+  duration_sec?: number;
 }
 
 /** [kuis-rapor-grafik-v1] Label materi + penjelasan "kenapa", satu per soal. */
@@ -134,6 +142,24 @@ export interface GradeResult {
   why?: string;
   /** Absen untuk pilihan ganda, jawaban benar, dan penilai versi lama. */
   errors?: QuizErrTag[];
+  /** [kuis-speaking-bebas-v1] Rincian penilaian speaking bebas. */
+  speaking?: SpeakingDetail;
+}
+
+/** [kuis-speaking-bebas-v1] Sama dengan SpeakingDetail di edge fn grade-quiz. */
+export interface SpeakingDetail {
+  band: number | null;
+  cefr: string;
+  criteria: { fluency: number | null; lexical: number | null; grammar: number | null; relevance: number | null };
+  word_count: number;
+  duration_sec: number | null;
+  min_sec: number | null;
+  too_short: boolean;
+  corrections: { wrong: string; correct: string; kind: string; note: string }[];
+  improved: string;
+  strengths: string[];
+  tips: string[];
+  discussion: string[];
 }
 
 async function callQuizPublic<T = any>(

@@ -481,13 +481,13 @@ export default function QuizTakePage() {
   const count1 = questions.filter((q) => partOf(q) === 1).length;
   const count2 = total - count1;
   // [kuis-4-skill-v1] Jumlah soal per keterampilan (kosong = kuis model lama).
-  const adaSkill = questions.some((q) => q.type === "reading" || q.type === "listening" || q.type === "speaking");
+  const adaSkill = questions.some((q) => q.type === "reading" || q.type === "listening" || q.type === "speaking" || q.type === "speaking_open");
   const skillRingkas: [string, number][] = adaSkill
     ? (["Reading", "Listening", "Speaking", "Writing"] as const)
       .map((l) => [l, questions.filter((q) => skillLabel(q.type) === l).length] as [string, number])
       .filter(([, n]) => n > 0)
     : [];
-  const skillPunyaSuara = questions.some((q) => q.type === "listening" || q.type === "speaking");
+  const skillPunyaSuara = questions.some((q) => q.type === "listening" || q.type === "speaking" || q.type === "speaking_open");
   const missing = questions.map((_, i) => i).filter((i) => !isAnswered(responses[i]));
 
   // Judul kuis cuma dipasang di kartu pembuka & halaman periksa. Di layar soal,
@@ -774,10 +774,11 @@ export default function QuizTakePage() {
                   <p className="rounded-2xl border-2 border-dashed border-slate-300 px-4 py-6 text-center text-base font-semibold text-slate-500">
                     Kamu menjawab <b className="text-slate-700">tidak tahu</b> untuk soal ini.
                   </p>
-                ) : cur.type === "speaking" ? (
+                ) : cur.type === "speaking" || cur.type === "speaking_open" ? (
                   <RekamSuara
                     key={step}
                     token={token}
+                    minSec={cur.type === "speaking_open" ? Math.max(10, Number(cur.speak_min_sec) || 30) : 0}
                     value={(responses[step] as EssayResponse) ?? {}}
                     onChange={(v) => setResponses((s) => {
                       const n = { ...s };
@@ -1161,13 +1162,27 @@ function PemutarListening({ teks, lang }: { teks?: string | null; lang: string |
    itu satu-dua kalimat, dan rekaman panjang cuma memperlambat unggahan di HP. */
 const BATAS_REKAM_DETIK = 45;
 
+function fmtMenit(s: number): string {
+  return `${Math.floor(s / 60)}:${String(s % 60).padStart(2, "0")}`;
+}
+
+/* [kuis-speaking-bebas-v1] `minSec` > 0 = soal speaking bebas: tombol Selesai baru
+   aktif setelah durasi minimal tercapai (jawabannya memang harus panjang), dan
+   batas atasnya dilonggarkan — sekitar dua kali durasi minimal, maks 5 menit.
+   Opus/webm ±30 kbps → 5 menit ≈ 1,2 MB; AAC Safari ≈ 4 MB, masih di bawah
+   batas unggah 8 MB. */
 function RekamSuara({
-  token, value, onChange,
+  token, value, onChange, minSec = 0,
 }: {
   token: string;
   value: EssayResponse;
   onChange: (v: EssayResponse | null) => void;
+  minSec?: number;
 }) {
+  const bebas = minSec > 0;
+  const batasDetik = bebas ? Math.min(300, Math.max(90, minSec * 2 + 30)) : BATAS_REKAM_DETIK;
+  const detikRef = useRef(0);
+  const batalRef = useRef(false);
   const [status, setStatus] = useState<"siap" | "rekam" | "unggah">("siap");
   const [detik, setDetik] = useState(0);
   const [galat, setGalat] = useState("");
@@ -1189,7 +1204,8 @@ function RekamSuara({
   }, []);
 
   useEffect(() => {
-    if (status === "rekam" && detik >= BATAS_REKAM_DETIK) berhenti();
+    detikRef.current = detik;
+    if (status === "rekam" && detik >= batasDetik) berhenti();
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [detik, status]);
 
@@ -1216,6 +1232,8 @@ function RekamSuara({
     rec.ondataavailable = (e) => { if (e.data && e.data.size) potongan.push(e.data); };
     rec.onstop = async () => {
       lepasMikrofon();
+      if (batalRef.current) { batalRef.current = false; setStatus("siap"); return; }
+      const durasi = detikRef.current;
       const blob = new Blob(potongan, { type: rec.mimeType || mime || "audio/webm" });
       if (blob.size < 800) {
         setGalat("Rekamannya kosong. Tekan Rekam, bicara, lalu tekan Selesai.");
@@ -1225,14 +1243,22 @@ function RekamSuara({
       setStatus("unggah");
       const r = await uploadRecording(token, blob);
       setStatus("siap");
-      if (r.url) onChange({ audio_url: r.url });
+      if (r.url) onChange(bebas ? { audio_url: r.url, duration_sec: durasi } : { audio_url: r.url });
       else setGalat(r.error || "Rekaman gagal diunggah — coba lagi ya.");
     };
     recRef.current = rec;
     rec.start();
+    batalRef.current = false;
+    detikRef.current = 0;
     setDetik(0);
     setStatus("rekam");
     timerRef.current = window.setInterval(() => setDetik((d) => d + 1), 1000);
+  }
+
+  /** Buang rekaman yang sedang berjalan (speaking bebas: belum capai minimal). */
+  function batalkan() {
+    batalRef.current = true;
+    berhenti();
   }
 
   function berhenti() {
@@ -1252,7 +1278,33 @@ function RekamSuara({
         </div>
       )}
 
-      {status === "rekam" ? (
+      {status === "rekam" && bebas ? (
+        /* [kuis-speaking-bebas-v1] Bilah kemajuan menuju durasi minimal. */
+        <div className="space-y-2">
+          <div className="h-3 w-full overflow-hidden rounded-full bg-slate-200">
+            <div className="h-full rounded-full transition-all duration-1000"
+              style={{ width: `${Math.min(100, (detik / minSec) * 100)}%`, background: detik >= minSec ? "#10b981" : BRAND }} />
+          </div>
+          <p className="text-center text-sm font-semibold tabular-nums text-slate-600">
+            {detik < minSec
+              ? <>Terus bicara… <b>{fmtMenit(minSec - detik)}</b> lagi sampai minimal {fmtMenit(minSec)}</>
+              : <>Minimal tercapai — boleh lanjut sampai {fmtMenit(batasDetik)} atau tekan Selesai</>}
+          </p>
+          <button type="button" onClick={berhenti} disabled={detik < minSec}
+            className="flex w-full items-center justify-center gap-3 rounded-2xl bg-red-500 px-5 py-5 text-lg font-extrabold text-white shadow-md transition active:scale-[0.98] disabled:cursor-not-allowed disabled:bg-red-300">
+            <span className="relative flex h-3 w-3">
+              <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-white opacity-75" />
+              <span className="relative inline-flex h-3 w-3 rounded-full bg-white" />
+            </span>
+            <Square className="h-5 w-5" /> Selesai
+            <span className="text-sm font-semibold tabular-nums opacity-90">{fmtMenit(detik)} / {fmtMenit(batasDetik)}</span>
+          </button>
+          <button type="button" onClick={batalkan}
+            className="w-full text-center text-[12.5px] font-semibold text-slate-500 underline-offset-2 hover:underline">
+            Batalkan & ulang dari awal
+          </button>
+        </div>
+      ) : status === "rekam" ? (
         <button type="button" onClick={berhenti}
           className="flex w-full items-center justify-center gap-3 rounded-2xl bg-red-500 px-5 py-5 text-lg font-extrabold text-white shadow-md transition active:scale-[0.98]">
           <span className="relative flex h-3 w-3">
@@ -1260,7 +1312,7 @@ function RekamSuara({
             <span className="relative inline-flex h-3 w-3 rounded-full bg-white" />
           </span>
           <Square className="h-5 w-5" /> Selesai
-          <span className="text-sm font-semibold tabular-nums opacity-90">0:{String(detik).padStart(2, "0")} / 0:{BATAS_REKAM_DETIK}</span>
+          <span className="text-sm font-semibold tabular-nums opacity-90">{fmtMenit(detik)} / {fmtMenit(batasDetik)}</span>
         </button>
       ) : (
         <button type="button" onClick={mulai} disabled={status === "unggah"}
@@ -1277,7 +1329,9 @@ function RekamSuara({
       {galat && <p className="text-center text-sm font-semibold text-red-600">{galat}</p>}
       {!value.audio_url && status === "siap" && !galat && (
         <p className="text-center text-[12.5px] text-slate-500">
-          Ucapkan dengan jelas, lalu tekan <b>Selesai</b>. Suaramu dinilai otomatis.
+          {bebas
+            ? <>Jawab dengan kalimat lengkap — minimal <b>{fmtMenit(minSec)}</b>. Ceritakan alasan & contoh supaya jawabanmu panjang. Transkrip & koreksi grammar-nya akan dibahas bareng pengajar.</>
+            : <>Ucapkan dengan jelas, lalu tekan <b>Selesai</b>. Suaramu dinilai otomatis.</>}
         </p>
       )}
     </div>

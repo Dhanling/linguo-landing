@@ -792,7 +792,8 @@ function KartuSoal({
      berguna, sementara di pilihan ganda yang sudah benar ia cuma mengulang apa
      yang barusan dipilih siswa. */
   const tampilkanKunci = !!kunci && (!ok || !isMC(q));
-  const labelKunci = q.type === "essay" ? "Contoh jawaban ideal" : q.type === "speaking" ? "Ucapan yang diharapkan" : "Jawaban benar";
+  const labelKunci = q.type === "essay" || q.type === "speaking_open" ? "Contoh jawaban ideal" : q.type === "speaking" ? "Ucapan yang diharapkan" : "Jawaban benar";
+  const sp = r?.speaking; // [kuis-speaking-bebas-v1]
 
   const why = (r?.why ?? "").trim();
   const fb = feedbackBerguna(r?.feedback);
@@ -862,7 +863,52 @@ function KartuSoal({
             </div>
           ) : null}
 
-          {tampilkanKunci && (
+          {/* [kuis-speaking-bebas-v1] Perkiraan band + daftar koreksi grammar + versi perbaikan. */}
+          {sp ? (
+            <div className="space-y-2">
+              <div className="flex flex-wrap gap-1.5">
+                {sp.band != null && (
+                  <span className="rounded-full px-2.5 py-0.5 text-[11px] font-bold text-white" style={{ background: BRAND_DEEP }}>Band ≈ {sp.band}</span>
+                )}
+                {sp.cefr ? <span className="rounded-full bg-slate-100 px-2.5 py-0.5 text-[11px] font-bold text-slate-600">CEFR ≈ {sp.cefr}</span> : null}
+                {([["Fluency", sp.criteria?.fluency], ["Vocabulary", sp.criteria?.lexical], ["Grammar", sp.criteria?.grammar]] as [string, number | null][])
+                  .filter(([, v]) => v != null)
+                  .map(([k, v]) => <span key={k} className="rounded-full bg-slate-100 px-2.5 py-0.5 text-[11px] font-semibold text-slate-600">{k} {v}</span>)}
+                <span className="rounded-full bg-slate-100 px-2.5 py-0.5 text-[11px] font-semibold text-slate-600">{sp.word_count} kata</span>
+              </div>
+              {sp.too_short ? (
+                <p className="text-[12px] font-semibold" style={{ color: WARN }}>Jawabanmu lebih pendek dari durasi minimal — coba lebih panjang lain kali.</p>
+              ) : null}
+              {sp.corrections.length > 0 && (
+                <div className="rounded-lg border p-2.5" style={{ borderColor: "#fde68a", background: "#fffbeb" }}>
+                  <p className="text-[10px] font-bold uppercase tracking-wide" style={{ color: WARN }}>Koreksi grammar & kosakata</p>
+                  <ol className="mt-1 space-y-1.5">
+                    {sp.corrections.map((c, i) => (
+                      <li key={i} className="text-[12.5px] leading-relaxed text-slate-600">
+                        <span className="text-slate-400 line-through">{c.wrong}</span>
+                        <span className="text-slate-400"> → </span>
+                        <span className="font-semibold" style={{ color: OK }}>{c.correct}</span>
+                        {c.note ? <span className="block">{c.note}</span> : null}
+                      </li>
+                    ))}
+                  </ol>
+                </div>
+              )}
+              {sp.improved ? (
+                <div className="rounded-lg border p-2.5" style={{ borderColor: "#a7f3d0", background: "#f0fdf4" }}>
+                  <p className="text-[10px] font-bold uppercase tracking-wide" style={{ color: OK }}>Versi perbaikan jawabanmu</p>
+                  <p className="mt-0.5 whitespace-pre-line text-[13px] text-slate-700">{sp.improved}</p>
+                </div>
+              ) : null}
+              {sp.tips.length > 0 && (
+                <ul className="list-disc space-y-0.5 pl-5 text-[12.5px] text-slate-600">
+                  {sp.tips.map((t, i) => <li key={i}>{t}</li>)}
+                </ul>
+              )}
+            </div>
+          ) : null}
+
+          {tampilkanKunci && !sp?.improved && (
             <div className="rounded-lg border p-2.5" style={{ borderColor: "#a7f3d0", background: "#f0fdf4" }}>
               <p className="text-[10px] font-bold uppercase tracking-wide" style={{ color: OK }}>{labelKunci}</p>
               <p className="mt-0.5 text-[13px] font-semibold text-slate-700">{kunci}</p>
