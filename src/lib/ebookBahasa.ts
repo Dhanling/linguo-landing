@@ -33,8 +33,9 @@
 
 import { createClient } from "@supabase/supabase-js";
 import { adalahNewEdition } from "@/lib/ebookEdisi";
-import { labelBahasa, tingkatJudul } from "@/lib/katalogDigital";
+import { labelBahasa } from "@/lib/katalogDigital";
 import { isStoragePath } from "@/lib/digitalAccess";
+import { seriModulPaket, LEVEL_PAKET } from "@/lib/bundelEbook";
 
 export type BahasaEbook = {
   /** `digital_products.language` — nama Inggris, kunci pemenuhan di webhook. */
@@ -49,6 +50,22 @@ export type BahasaEbook = {
   cover: string | null;
   /** Berkasnya ada di bucket → tombol "Baca Gratis Unit 1" boleh muncul. */
   pratinjau: boolean;
+  /** [ebook-level-paket-v1] Kunci seri (huruf kecil) — unik per kartu bahasa. */
+  kunci?: string;
+  /** [ebook-level-paket-v1] Semua level seri ini (A1→B2) + tier harganya. Kosong
+   *  di BAHASA_CADANGAN → halaman jatuh ke checkout lama (/api/create-invoice). */
+  modul?: ModulEbook[];
+};
+
+/** [ebook-level-paket-v1] Satu modul (satu level) yang bisa dibeli di /produk/ebook. */
+export type ModulEbook = {
+  level: string;
+  productId: string;
+  slug: string;
+  judul: string;
+  cover: string | null;
+  pratinjau: boolean;
+  tiers: { id: string; label: string; price: number; days: number | null }[];
 };
 
 const BUCKET = "ebook-files";
@@ -80,12 +97,32 @@ const POPULER = [
 ];
 
 type BarisProduk = {
+  id: string;
   slug: string | null;
   title: string | null;
   language: string | null;
   cover_url: string | null;
   file_url: string | null;
-  digital_product_pricing: { is_active: boolean | null; price: number | null }[] | null;
+  digital_product_pricing:
+    | {
+        id: string;
+        is_active: boolean | null;
+        price: number | null;
+        display_label: string | null;
+        duration_days: number | null;
+        sort_order: number | null;
+      }[]
+    | null;
+};
+
+/* [ebook-level-paket-v1] Bahasa yang punya DUA seri (Arabic: "Arabic" & "Levantine
+   Arabic"; Portuguese: "Portuguese" Eropa & "Brazilian Portuguese") dulu cuma
+   menampilkan satu. Sekarang tiap seri jadi kartu sendiri — checkout-nya
+   memakai productId, bukan nama bahasa, jadi keduanya bisa dibedakan. */
+const LABEL_SERI: Record<string, string> = {
+  "levantine arabic": "Arab Syam",
+  "brazilian portuguese": "Portugis Brasil",
+  "egyptian arabic": "Arab Mesir",
 };
 
 /**
@@ -136,29 +173,27 @@ export async function muatBahasaEbook(): Promise<BahasaEbook[]> {
   });
   const { data, error } = await db
     .from("digital_products")
-    .select("slug, title, language, cover_url, file_url, digital_product_pricing(is_active, price)")
+    .select(
+      "id, slug, title, language, cover_url, file_url, digital_product_pricing(id, is_active, price, display_label, duration_days, sort_order)",
+    )
     .eq("type", "ebook")
     .eq("is_active", true)
     .order("title");
   if (error || !data) return [];
 
   const layak = (data as unknown as BarisProduk[]).filter((p) => {
-    if (!p.slug?.endsWith("-id")) return false;
+    // [ebook-level-paket-v1] Checkout kini lewat /api/create-cart-invoice yang
+    // memakai productId — saringan slug `-id` & "hanya A1" (syarat webhook lama
+    // yang mencocokkan nama bahasa) tak berlaku lagi. Semua level A1–B2 dijual.
+    if (!p.slug) return false;
     if (!adalahNewEdition(p.title, "ebook")) return false;
-    if (tingkatJudul(p.title ?? "") !== "A1") return false;
+    if (!seriModulPaket(p.title)) return false;
     if (!isStoragePath(p.file_url)) return false;
     if (!String(p.language ?? "").trim()) return false;
     return (p.digital_product_pricing ?? []).some(
       (t) => t.is_active !== false && Number(t.price) > 0,
     );
   });
-
-  const perBahasa = new Map<string, BarisProduk>();
-  for (const p of layak) {
-    const lang = String(p.language).trim();
-    const juara = perBahasa.get(lang);
-    if (!juara || lebihUtama(p, juara, lang)) perBahasa.set(lang, p);
-  }
 
   const berkas = await daftarBerkas();
   const punyaBerkas = (fileUrl: string) => {
@@ -167,15 +202,57 @@ export async function muatBahasaEbook(): Promise<BahasaEbook[]> {
     return berkas.has(`${dasar}.pratinjau.pdf`) || berkas.has(fileUrl);
   };
 
-  const daftar: BahasaEbook[] = [...perBahasa.entries()].map(([lang, p]) => ({
-    katalog: lang,
-    label: labelBahasa(lang),
-    bendera: lang.toLowerCase(),
-    slug: p.slug!,
-    judul: String(p.title ?? lang),
-    cover: p.cover_url ?? null,
-    pratinjau: punyaBerkas(String(p.file_url)),
-  }));
+  // kelompokkan per SERI (bukan per kolom language), lalu satu level satu modul
+  const perSeri = new Map<string, { lang: string; seri: string; modul: Map<string, BarisProduk> }>();
+  for (const p of layak) {
+    const sm = seriModulPaket(p.title)!;
+    const lang = String(p.language).trim();
+    const k = sm.kunci;
+    if (!perSeri.has(k)) perSeri.set(k, { lang, seri: sm.seri, modul: new Map() });
+    const g = perSeri.get(k)!;
+    const juara = g.modul.get(sm.level);
+    if (!juara || lebihUtama(p, juara, lang)) g.modul.set(sm.level, p);
+  }
+  const seriPerBahasa = new Map<string, number>();
+  for (const g of perSeri.values()) seriPerBahasa.set(g.lang, (seriPerBahasa.get(g.lang) ?? 0) + 1);
+
+  const daftar: BahasaEbook[] = [];
+  for (const [kunci, g] of perSeri) {
+    const modul: ModulEbook[] = LEVEL_PAKET.filter((lv) => g.modul.has(lv)).map((lv) => {
+      const p = g.modul.get(lv)!;
+      return {
+        level: lv,
+        productId: p.id,
+        slug: p.slug!,
+        judul: String(p.title ?? g.seri),
+        cover: p.cover_url ?? null,
+        pratinjau: punyaBerkas(String(p.file_url)),
+        tiers: (p.digital_product_pricing ?? [])
+          .filter((t) => t.is_active !== false && Number(t.price) > 0)
+          .sort((x, y) => (x.sort_order ?? 0) - (y.sort_order ?? 0))
+          .map((t) => ({
+            id: t.id,
+            label: String(t.display_label ?? ""),
+            price: Number(t.price),
+            days: t.duration_days ?? null,
+          })),
+      };
+    });
+    if (modul.length === 0) continue;
+    const utama = modul[0];
+    const seriSendiri = kunci === g.lang.toLowerCase() || (seriPerBahasa.get(g.lang) ?? 0) < 2;
+    daftar.push({
+      katalog: g.lang,
+      label: seriSendiri ? labelBahasa(g.lang) : LABEL_SERI[kunci] ?? `${labelBahasa(g.lang)} (${g.seri})`,
+      bendera: g.lang.toLowerCase(),
+      slug: utama.slug,
+      judul: utama.judul,
+      cover: utama.cover,
+      pratinjau: utama.pratinjau,
+      kunci,
+      modul,
+    });
+  }
 
   return daftar.sort((a, b) => {
     const ia = POPULER.indexOf(a.katalog);
