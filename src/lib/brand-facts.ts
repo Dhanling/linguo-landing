@@ -139,6 +139,13 @@ export const BRAND_FACTS = {
       detail: "Kelas private 1-on-1 persiapan PTE Academic (Pearson), sesi 90 menit, paket 8/12/16 sesi.",
     },
     {
+      // [toeic-prep-v1]
+      name: "TOEIC Preparation",
+      slug: "/persiapan-tes",
+      priceLabel: `${rupiah(120000)}/jam`,
+      detail: "Kelas private 1-on-1 persiapan TOEIC Listening & Reading (ETS), sesi 90 menit, paket 8/12/16 sesi.",
+    },
+    {
       name: "E-Learning",
       slug: "/toko/paket-elearning",
       priceLabel: `${rupiah(79000)}/6 bulan`,

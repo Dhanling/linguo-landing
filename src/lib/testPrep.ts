@@ -1,7 +1,8 @@
 // =============================================================================
 // [test-prep-v1] Sumber tunggal data produk Persiapan Ujian Bahasa (test prep)
 // selain IELTS/TOEFL: HSK (Mandarin), JLPT (Jepang), TOPIK (Korea), Goethe (Jerman),
-// dan PTE (Inggris, khusus Private — lihat [test-prep-pte-v1]).
+// dan PTE (Inggris, khusus Private — lihat [test-prep-pte-v1]), serta TOEIC
+// (Inggris, khusus Private, tarif sama — lihat [toeic-prep-v1]).
 //
 // Dipakai bersama oleh:
 //   - Halaman flow /persiapan-tes (katalog + checkout)
@@ -20,7 +21,7 @@
 
 import { getPrivateBase60 } from "./trial-pricing";
 
-export type TestPrepId = "hsk" | "jlpt" | "topik" | "goethe" | "pte";
+export type TestPrepId = "hsk" | "jlpt" | "topik" | "goethe" | "pte" | "toeic";
 export type TestPrepFormat = "semi" | "private";
 
 export interface TestPrepLevel {
@@ -68,12 +69,17 @@ export interface TestPrepProduct {
   lead?: { program: string; language: string };
   /** [silabus-pte-v1] Halaman silabus produk ini, kalau ada — ditautkan dari modal checkout. */
   syllabusHref?: string;
+  /**
+   * [toeic-prep-v1] Nama ilustrasi kartu katalog (/illustrations/test-prep/<art>-brush.webp).
+   * Default = `id`. TOEIC belum punya ilustrasi sendiri → memakai milik PTE.
+   */
+  art?: string;
 }
 
 // [test-prep-pte-v1] Tarif Private persiapan tes bahasa Inggris: FLAT per jam.
 // Mirror TEST_PREP_PRIVATE.perHour di dashboard admin (WA Inbox › Pembayaran)
 // dan blok "Test Prep" di knowledge chatbot (api/chat/route.ts) — IELTS, TOEFL,
-// dan PTE memakai angka yang sama. Kalau tarifnya berubah, ubah di ketiganya.
+// PTE, dan TOEIC [toeic-prep-v1] memakai angka yang sama. Kalau tarifnya berubah, ubah di ketiganya.
 export const ENGLISH_TEST_PREP_PER_HOUR = 120000;
 
 // Paket semi-private = tetap 12 sesi @90 menit (harga per orang).
@@ -118,6 +124,33 @@ export const TEST_PREP_PRODUCTS: TestPrepProduct[] = [
     flatPrivatePerHour: ENGLISH_TEST_PREP_PER_HOUR,
     lead: { program: "English Test Prep Private", language: "PTE prep" },
     syllabusHref: "/persiapan-tes/pte",
+  },
+  // [toeic-prep-v1] TOEIC (ETS) — keputusan owner 5 Nov 2026: persis seperti PTE.
+  // Khusus Private 1-on-1, tarif SAMA dengan Private IELTS (Rp120.000/jam flat
+  // = Rp180.000 per sesi 90 menit; paket 8/12/16 sesi), tanpa batch grup,
+  // tanpa semi-private, tanpa level. Lead dicatat "English Test Prep Private" /
+  // "TOEIC prep" supaya registrasinya lahir otomatis saat lunas. Belum ada
+  // halaman silabus.
+  {
+    id: "toeic",
+    test: "TOEIC",
+    title: "TOEIC — Test of English for International Communication",
+    language: "English",
+    flagCode: "us",
+    icon: "Briefcase",
+    accent: "#1D4ED8",
+    bg: "#E8F0FE",
+    demandTag: "Baru",
+    blurb:
+      "Persiapan TOEIC Listening & Reading: bahasa Inggris konteks kerja & bisnis (rapat, email, pengumuman, iklan), strategi tiap part, manajemen waktu, dan latihan soal format resmi untuk kejar skor syarat kerja, promosi, atau kelulusan.",
+    levels: [
+      { id: "Listening & Reading", label: "TOEIC Listening & Reading", desc: "Syarat kerja, promosi & kelulusan (skor 10–990)", cefr: "A1" },
+    ],
+    semiPrice: 0,
+    privateOnly: true,
+    flatPrivatePerHour: ENGLISH_TEST_PREP_PER_HOUR,
+    lead: { program: "English Test Prep Private", language: "TOEIC prep" },
+    art: "pte",
   },
   {
     id: "jlpt",

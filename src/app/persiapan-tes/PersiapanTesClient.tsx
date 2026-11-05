@@ -4,6 +4,7 @@
 // jumlah sesi) → masuk keranjang → isi identitas → checkout Xendit.
 // [test-prep-pte-v1] PTE ikut katalog ini, tapi khusus Private (tarif flat per
 // jam, tanpa level) — pilihan format & level disembunyikan untuk produk begitu.
+// [toeic-prep-v1] TOEIC menyusul dengan aturan yang sama (khusus Private).
 //
 // [test-prep-keranjang-v1] Checkout kini lewat KERANJANG: beberapa paket
 // (mis. JLPT N5 semi-private + TOPIK I private) dibayar dalam satu invoice
@@ -32,7 +33,7 @@ import {
 } from "@/lib/testPrepCart";
 
 const TEAL = "#1A9E9E";
-const CARD_ACCENT: Record<string, string> = { pte: TEAL, jlpt: "#FF8700", topik: TEAL, hsk: "#FF8700", goethe: TEAL };
+const CARD_ACCENT: Record<string, string> = { pte: TEAL, toeic: "#FF8700", jlpt: "#FF8700", topik: TEAL, hsk: "#FF8700", goethe: TEAL };
 
 /** "TOPIK" + "TOPIK I" → "TOPIK I", bukan "TOPIK TOPIK I". */
 const judulPaket = (test: string, level: string) => (level.startsWith(test) ? level : `${test} ${level}`);
@@ -103,14 +104,14 @@ export default function PersiapanTesClient() {
         <div className={styles.heroInner}>
           <div className={styles.heroCopy}>
             <div className={styles.eyebrow}><Sparkles size={16} /> Persiapan ujian terstruktur + mock test</div>
-            <h1>Persiapan Ujian Bahasa<span>PTE · HSK · JLPT · TOPIK · Goethe</span></h1>
+            <h1>Persiapan Ujian Bahasa<span>PTE · TOEIC · HSK · JLPT · TOPIK · Goethe</span></h1>
             <div className={styles.underline} aria-hidden="true" />
           </div>
           <Image src="/illustrations/test-prep/student.webp" width={900} height={600} priority alt="Ilustrasi pelajar menyiapkan ujian bahasa dengan buku dan laptop" className={styles.heroArt} />
         </div>
       </section>
 
-      {/* Katalog produk — 5 kartu satu baris di layar lebar, 3+2 di laptop kecil */}
+      {/* Katalog produk — 6 kartu satu baris di layar lebar, 3+3 di laptop kecil [toeic-prep-v1] */}
       <section ref={katalogRef} id="pilih-ujian" className={`${styles.catalog} mx-auto scroll-mt-20 px-4 pb-8`}>
         <div className={styles.cards}>
           {TEST_PREP_PRODUCTS.map((p) => {
@@ -125,7 +126,7 @@ export default function PersiapanTesClient() {
                 className={`group ${styles.card}`}
               >
                 <div className={styles.cardArt}>
-                  <Image src={`/illustrations/test-prep/${p.id}-brush.webp`} alt="" fill sizes="(max-width: 639px) 50vw, (max-width: 1023px) 33vw, 20vw" />
+                  <Image src={`/illustrations/test-prep/${p.art ?? p.id}-brush.webp`} alt="" fill sizes="(max-width: 639px) 50vw, (max-width: 1023px) 33vw, 20vw" />
                 </div>
                 <div className={styles.cardTitle}>
                   <RectFlag code={p.flagCode} h={23} className="shrink-0 rounded-sm shadow-sm" />

@@ -5,9 +5,9 @@ import BreadcrumbLd from "@/components/BreadcrumbLd"; // [aeo-schema-v1]
 import { TES_BAHASA } from "@/data/persiapanTesBahasa"; // [seo-tes-kota-v1]
 
 export const metadata: Metadata = {
-  title: "Persiapan Ujian PTE, HSK, JLPT, TOPIK & Goethe | Linguo.id",
+  title: "Persiapan Ujian PTE, TOEIC, HSK, JLPT, TOPIK & Goethe | Linguo.id",
   description:
-    "Kelas persiapan ujian bahasa: PTE Academic (Inggris), HSK (Mandarin), JLPT (Jepang), TOPIK (Korea), dan Goethe (Jerman). Semi-private grup kecil atau private 1-on-1, plus mock test. Daftar di Linguo.id.",
+    "Kelas persiapan ujian bahasa: PTE Academic & TOEIC (Inggris), HSK (Mandarin), JLPT (Jepang), TOPIK (Korea), dan Goethe (Jerman). Semi-private grup kecil atau private 1-on-1, plus mock test. Daftar di Linguo.id.",
   alternates: { canonical: "https://linguo.id/persiapan-tes" },
 };
 

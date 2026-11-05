@@ -32,7 +32,7 @@ export function normalizeCartItem(raw: unknown): TestPrepCartItem | null {
   const r = raw as Record<string, unknown>;
   const product = getTestPrepProduct(typeof r.productId === "string" ? r.productId : "");
   if (!product) return null;
-  // [test-prep-pte-v1] Produk khusus Private (PTE) tak pernah berformat semi.
+  // [test-prep-pte-v1] Produk khusus Private (PTE, TOEIC [toeic-prep-v1]) tak pernah berformat semi.
   const format: TestPrepFormat = r.format === "private" || product.privateOnly ? "private" : "semi";
   const level = typeof r.level === "string" && product.levels.some((l) => l.id === r.level)
     ? r.level

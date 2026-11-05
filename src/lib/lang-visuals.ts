@@ -83,6 +83,8 @@ export const LANG_PHOTO_SLUG: Record<string, string> = {
   // PTE = tes asal Australia → foto Sydney. registrations.language-nya "PTE prep";
   // pengajar memakai "Test Prep - PTE".
   pte: "pte", "pte prep": "pte", "pte preparation": "pte", "test prep - pte": "pte",
+  // [toeic-prep-v1] TOEIC belum punya foto sendiri → pakai foto bahasa Inggris.
+  toeic: "english-convo", "toeic prep": "english-convo", "toeic preparation": "english-convo", "test prep - toeic": "english-convo",
   georgia: "georgian", georgian: "georgian",
   kanton: "cantonese", kantonis: "cantonese", cantonese: "cantonese", "hong kong": "cantonese",
   uzbekistan: "uzbek", uzbek: "uzbek",

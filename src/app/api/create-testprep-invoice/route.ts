@@ -1,7 +1,7 @@
 // =============================================================================
 // /api/create-testprep-invoice
 // [test-prep-keranjang-v1]
-// Checkout keranjang Persiapan Ujian (HSK/JLPT/TOPIK/Goethe/PTE): N paket → SATU
+// Checkout keranjang Persiapan Ujian (HSK/JLPT/TOPIK/Goethe/PTE/TOEIC): N paket → SATU
 // invoice Xendit. Tiap paket tetap jadi SATU baris `leads` sendiri, supaya
 // auto-convert webhook melahirkan satu registrasi per kelas (dua kelas beda
 // bahasa tak boleh dilebur jadi satu registrasi).
@@ -89,7 +89,7 @@ export async function POST(req: NextRequest) {
     const leadRows = items.map((it, i) => ({
       name, email, wa_number,
       // [test-prep-pte-v1] PTE membawa program/bahasa produk registrasi resminya
-      // ("English Test Prep Private" / "PTE prep") supaya webhook langsung
+      // ("English Test Prep Private" / "PTE prep" — TOEIC: "TOEIC prep" [toeic-prep-v1]) supaya webhook langsung
       // membuat registrasinya saat lunas; ujian lain tetap "Test Prep".
       language: it.product.lead?.language ?? it.product.language,
       program: it.product.lead?.program ?? "Test Prep",
