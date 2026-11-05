@@ -1,13 +1,13 @@
 'use client';
 
-import { useMemo, useState } from 'react';
+import { useEffect, useMemo, useRef, useState } from 'react';
 import Link from 'next/link';
 import {
-  ArrowRight,
   BookOpen,
+  ChevronLeft,
+  ChevronRight,
   Clapperboard,
   ClipboardCheck,
-  Globe,
   Search,
   SearchX,
   ShoppingBag,
@@ -18,6 +18,9 @@ import { FLAG_CODE_BY_SLUG, RectFlag } from '@/components/RectFlag';
 import type { Product } from './page';
 import { BRAND_FACTS } from '@/lib/brand-facts';
 import { LABEL_NEW_EDITION, adalahNewEdition } from '@/lib/ebookEdisi';
+import { getLangPhoto } from '@/lib/lang-visuals';
+import { sampulKecil, sampulGagal } from '@/lib/sampulKecil';
+import { judulRingkas, labelBahasa } from '@/lib/katalogDigital';
 import TautanLegal from "@/components/TautanLegal"; // [xendit-legal-links-v1]
 // [toko-simulasi-tab-v1] Simulasi Tes ikut dipajang di etalase toko. Sumber
 // datanya BUKAN digital_products (entitlement-nya tabel lain:
@@ -25,31 +28,96 @@ import TautanLegal from "@/components/TautanLegal"; // [xendit-legal-links-v1]
 // lib/simulasiPakets dan tombolnya mengarah ke checkout /simulasi/paket.
 import { PAKET, PRICE, SKILL_META, promoPriceFor, type Paket } from '@/lib/simulasiPakets';
 
-// linguo-patch:toko-rectflag-lucide-v1 — kartu toko dulu pakai emoji bendera
-// (render-nya beda-beda per OS, di Windows malah cuma kode negara). Sekarang
-// bendera SVG rounded-rectangle + ikon Lucide, sesuai ikon halaman lain.
-function flagCodeFor(language: string | null): string | undefined {
-  if (!language) return undefined;
-  return FLAG_CODE_BY_SLUG[language.trim().toLowerCase()];
+// [toko-rak-sampul-v1] Kartu etalase kini kembar dengan rak Perpustakaan di
+// dashboard siswa (/akun?menu=pustaka): sampul potret 1:√2 (cover_url produk,
+// jatuh ke foto stok bahasa, lalu gradien + glyph), ikon jenis di pojok, judul
+// ringkas + bendera di bawahnya. Dulu kepala kartu lanskap bergradien + bendera
+// besar — 160+ produk terbaca seperti tabel warna, dan sampul aslinya tak pernah
+// kelihatan di toko.
+const GRADIENTS = [
+  'linear-gradient(150deg,#1FA98A,#0C8163)',
+  'linear-gradient(150deg,#3B82F6,#1D4ED8)',
+  'linear-gradient(150deg,#8B5CF6,#6D28D9)',
+  'linear-gradient(150deg,#F59E0B,#D97706)',
+  'linear-gradient(150deg,#EC4899,#BE185D)',
+  'linear-gradient(150deg,#14B8A6,#0F766E)',
+];
+function gradFor(id: string) {
+  let h = 0;
+  for (let i = 0; i < id.length; i++) h = (h * 31 + id.charCodeAt(i)) >>> 0;
+  return GRADIENTS[h % GRADIENTS.length];
 }
 
-/** Ubin bendera di kepala kartu; tanpa bendera → ikon Lucide sesuai jenis produk. */
-function ProductFlag({
-  language,
-  isEbook,
-}: {
-  language: string | null;
-  isEbook: boolean;
-}) {
-  const code = flagCodeFor(language);
-  if (code) return <RectFlag code={code} h={64} className="shadow-lg" />;
-  const Icon = language ? Globe : isEbook ? BookOpen : Clapperboard;
+const LANG_GLYPH: Record<string, string> = {
+  english: 'EN', korean: '한', japanese: 'あ', mandarin: '中', chinese: '中', arabic: 'ع',
+  french: 'FR', german: 'DE', spanish: 'ES', italian: 'IT', thai: 'TH', vietnamese: 'VN', dutch: 'NL',
+};
+function glyphFor(p: Product) {
+  const lang = p.language?.toLowerCase().trim();
+  if (lang && LANG_GLYPH[lang]) return LANG_GLYPH[lang];
+  if (lang) return lang.slice(0, 2).toUpperCase();
+  return p.type === 'ebook' ? 'PDF' : 'EN';
+}
+
+function TitleFlag({ language }: { language: string | null }) {
+  const code = language ? FLAG_CODE_BY_SLUG[language.trim().toLowerCase()] : undefined;
+  if (!code) return null;
+  return <RectFlag code={code} h={13} className="shadow-sm" />;
+}
+
+/** Sampul potret ala rak Perpustakaan /akun. */
+function ShelfCover({ p }: { p: Product }) {
+  const foto = p.cover_url || getLangPhoto(p.language);
+  return (
+    <div
+      className="relative aspect-[1/1.414] w-full overflow-hidden rounded-xl shadow-[0_14px_30px_-16px_rgba(18,23,43,0.6)] ring-1 ring-black/[0.06]"
+      style={{ background: gradFor(p.id) }}
+    >
+      {foto ? (
+        /* eslint-disable-next-line @next/next/no-img-element */
+        <img
+          src={sampulKecil(foto, 440)}
+          alt={p.title}
+          loading="lazy"
+          decoding="async"
+          onError={sampulGagal(foto)}
+          className={`absolute inset-0 h-full w-full object-cover${p.cover_url ? ' object-top' : ''}`}
+        />
+      ) : (
+        <span className="absolute inset-0 flex flex-col items-center justify-center gap-2 px-3 text-center">
+          <span className="text-[38px] font-black leading-none text-white/90">{glyphFor(p)}</span>
+          <span className="line-clamp-3 text-[11px] font-bold uppercase leading-snug tracking-wide text-white/75">
+            {judulRingkas(p.title)}
+          </span>
+        </span>
+      )}
+      {/* punggung buku + kilau tepi */}
+      <span className="pointer-events-none absolute inset-y-0 left-0 w-[9px] bg-gradient-to-r from-black/40 via-black/12 to-transparent" />
+      <span className="pointer-events-none absolute inset-0 rounded-xl ring-1 ring-inset ring-white/10" />
+    </div>
+  );
+}
+
+function TypeDot({ Icon, nama }: { Icon: typeof BookOpen; nama: string }) {
   return (
     <span
-      aria-hidden
-      className="inline-flex h-16 w-[89px] items-center justify-center rounded-[10px] bg-white/20 ring-1 ring-white/40 shadow-lg backdrop-blur"
+      title={nama}
+      aria-label={nama}
+      className="flex h-7 w-7 items-center justify-center rounded-lg bg-white/95 text-[#12172B] shadow-sm"
     >
-      <Icon className="h-8 w-8 text-white" strokeWidth={1.8} />
+      <Icon className="h-[15px] w-[15px]" strokeWidth={2.4} />
+    </span>
+  );
+}
+
+/** Lapisan aksi saat kursor di atas sampul (di layar sentuh selalu tampak). */
+function HoverAksi({ label }: { label: string }) {
+  return (
+    <span className="pointer-events-none absolute inset-0 flex items-end justify-center rounded-xl bg-gradient-to-t from-black/60 via-transparent to-transparent pb-3 opacity-0 transition duration-300 group-hover:opacity-100">
+      <span className="inline-flex items-center gap-1.5 rounded-full bg-[#12A37E] px-3.5 py-2 text-[12px] font-bold text-white shadow-lg">
+        <ShoppingBag className="h-3.5 w-3.5" strokeWidth={2.4} aria-hidden />
+        {label}
+      </span>
     </span>
   );
 }
@@ -77,6 +145,22 @@ function getDisplayPrice(product: Product): { price: number; label: string } {
   };
 }
 
+// [toko-paginasi-v1] 4 baris × 7 sampul per halaman di layar lebar.
+const PER_HALAMAN = 28;
+
+/** Nomor halaman ringkas: 1 … 4 5 6 … 12 */
+function nomorHalaman(sekarang: number, total: number): (number | '…')[] {
+  if (total <= 7) return Array.from({ length: total }, (_, i) => i + 1);
+  const set = new Set([1, total, sekarang - 1, sekarang, sekarang + 1]);
+  const urut = [...set].filter((n) => n >= 1 && n <= total).sort((a, b) => a - b);
+  const hasil: (number | '…')[] = [];
+  urut.forEach((n, i) => {
+    if (i > 0 && n - urut[i - 1] > 1) hasil.push('…');
+    hasil.push(n);
+  });
+  return hasil;
+}
+
 type FilterKey = 'all' | 'ebook' | 'elearning' | 'simulasi';
 
 /** Paket simulasi yang sudah terbit (soal siap) — yang `soon` tak dipajang. */
@@ -85,6 +169,8 @@ const SIM_ITEMS: Paket[] = PAKET.filter((p) => !p.soon);
 export default function TokoClient({ products }: { products: Product[] }) {
   const [filter, setFilter] = useState<FilterKey>('all');
   const [search, setSearch] = useState('');
+  const [halaman, setHalaman] = useState(1);
+  const gridRef = useRef<HTMLElement>(null);
 
   // [toko-simulasi-tab-v1] kartu simulasi ikut tab "Semua"/"Simulasi Tes" + kotak cari.
   const simFiltered = useMemo(() => {
@@ -132,6 +218,31 @@ export default function TokoClient({ products }: { products: Product[] }) {
     }),
     [products]
   );
+
+  // [toko-paginasi-v1] simulasi + produk digabung jadi satu daftar, lalu dipotong per halaman.
+  type Item = { kind: 'sim'; p: Paket } | { kind: 'prod'; p: Product };
+  const semua = useMemo<Item[]>(
+    () => [
+      ...simFiltered.map((p) => ({ kind: 'sim' as const, p })),
+      ...filtered.map((p) => ({ kind: 'prod' as const, p })),
+    ],
+    [simFiltered, filtered],
+  );
+  const totalHalaman = Math.max(1, Math.ceil(semua.length / PER_HALAMAN));
+  const hal = Math.min(halaman, totalHalaman);
+  const potongan = semua.slice((hal - 1) * PER_HALAMAN, hal * PER_HALAMAN);
+
+  // ganti tab / ketik di kotak cari → kembali ke halaman 1
+  useEffect(() => setHalaman(1), [filter, search]);
+
+  function keHalaman(n: number) {
+    setHalaman(n);
+    const el = gridRef.current;
+    if (el) {
+      const y = el.getBoundingClientRect().top + window.scrollY - 140;
+      window.scrollTo({ top: Math.max(0, y), behavior: 'smooth' });
+    }
+  }
 
   const tabs: { key: FilterKey; label: string; Icon: typeof Sparkles }[] = [
     { key: 'all', label: 'Semua', Icon: Sparkles },
@@ -216,9 +327,9 @@ export default function TokoClient({ products }: { products: Product[] }) {
         </div>
       </div>
 
-      {/* GRID */}
-      <section className="mx-auto max-w-7xl px-4 py-10">
-        {filtered.length === 0 && simFiltered.length === 0 ? (
+      {/* GRID — [toko-rak-sampul-v1] rak sampul 7 kolom, kembar Perpustakaan /akun */}
+      <section ref={gridRef} className="mx-auto max-w-7xl px-4 py-10">
+        {semua.length === 0 ? (
           <div className="py-20 text-center">
             <SearchX
               className="mx-auto mb-4 h-12 w-12 text-slate-300"
@@ -240,160 +351,187 @@ export default function TokoClient({ products }: { products: Product[] }) {
             </button>
           </div>
         ) : (
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5">
-            {/* [toko-simulasi-tab-v1] Kartu Simulasi Tes — checkout-nya di
-                /simulasi/paket (nama/email/WA + kode promo → Xendit). */}
-            {simFiltered.map((p, i) => {
-              const price = promoPriceFor(p.productKey);
-              return (
-                <Link
-                  key={`sim-${p.variant}`}
-                  href="/simulasi/paket"
-                  prefetch={true}
-                  className="group relative block opacity-0 animate-fadeUp"
-                  style={{ animationDelay: `${i * 50}ms`, animationFillMode: 'forwards' }}
-                >
-                  <article className="relative h-full rounded-2xl overflow-hidden bg-white border border-slate-200 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-xl">
-                    <div
-                      className="relative h-40 flex items-center justify-center overflow-hidden"
-                      style={{ background: `linear-gradient(135deg, ${p.accent}, #0F6E56)` }}
+          <>
+            <div className="mb-5 flex items-center justify-between text-[13px] font-semibold text-slate-500">
+              <span>
+                {semua.length} produk
+                {totalHalaman > 1 && ` · halaman ${hal} dari ${totalHalaman}`}
+              </span>
+            </div>
+
+            <div
+              key={`${filter}-${search}-${hal}`}
+              className="grid grid-cols-2 gap-x-3 gap-y-7 sm:grid-cols-3 sm:gap-x-4 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-7"
+            >
+              {potongan.map((item, i) => {
+                const delay = { animationDelay: `${i * 25}ms`, animationFillMode: 'forwards' as const };
+                if (item.kind === 'sim') {
+                  /* [toko-simulasi-tab-v1] Kartu Simulasi Tes — checkout-nya di
+                     /simulasi/paket (nama/email/WA + kode promo → Xendit). */
+                  const p = item.p;
+                  const price = promoPriceFor(p.productKey);
+                  return (
+                    <Link
+                      key={`sim-${p.variant}`}
+                      href="/simulasi/paket"
+                      prefetch={false}
+                      className="group block opacity-0 animate-fadeUp"
+                      style={delay}
                     >
-                      <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,_rgba(255,255,255,0.25),_transparent_60%)]" />
-                      <span
-                        aria-hidden
-                        className="relative inline-flex h-16 w-[89px] items-center justify-center rounded-[10px] bg-white/20 ring-1 ring-white/40 shadow-lg backdrop-blur"
-                      >
-                        <ClipboardCheck className="h-8 w-8 text-white" strokeWidth={1.8} />
-                      </span>
-                      <div className="absolute bottom-2 left-3 inline-flex items-center gap-1 rounded-full bg-black/25 px-2 py-0.5 text-[11px] font-medium text-white backdrop-blur">
-                        <ClipboardCheck className="h-3 w-3" strokeWidth={2} aria-hidden />
-                        Simulasi Tes
-                      </div>
-                      <div className="absolute bottom-2 right-3 inline-flex items-center rounded-full bg-white/90 px-2 py-0.5 text-[11px] font-bold text-slate-800 shadow">
-                        {p.tag}
-                      </div>
-                    </div>
-                    <div className="p-4">
-                      <h3 className="font-semibold text-slate-900 line-clamp-2 group-hover:text-teal-700 transition-colors">
-                        {p.title}
-                      </h3>
-                      <p className="mt-1.5 text-sm text-slate-600 line-clamp-2">
-                        {p.skills.map((k) => SKILL_META[k].label).join(' · ')} — skor & pembahasan langsung keluar.
-                      </p>
-                      <div className="mt-3 flex items-end justify-between gap-2">
-                        <div>
-                          <div className="text-xs text-slate-500">
-                            {price < PRICE ? (
-                              <>
-                                <span className="line-through">{formatRupiah(PRICE)}</span> · sekali bayar
-                              </>
-                            ) : (
-                              'sekali bayar, akses selamanya'
-                            )}
-                          </div>
-                          <div className="font-bold text-slate-900 text-lg leading-none">
-                            {formatRupiah(price)}
-                          </div>
+                      <div className="relative transition duration-300 group-hover:-translate-y-1.5">
+                        <div
+                          className="relative aspect-[1/1.414] w-full overflow-hidden rounded-xl shadow-[0_14px_30px_-16px_rgba(18,23,43,0.6)] ring-1 ring-black/[0.06]"
+                          style={{ background: `linear-gradient(150deg, ${p.accent}, #0F6E56)` }}
+                        >
+                          <span className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,_rgba(255,255,255,0.25),_transparent_60%)]" />
+                          <span className="absolute inset-0 flex flex-col items-center justify-center gap-2.5 px-3 text-center">
+                            <ClipboardCheck className="h-10 w-10 text-white/90" strokeWidth={1.8} aria-hidden />
+                            <span className="text-[13px] font-black uppercase leading-snug tracking-wide text-white">
+                              {p.short}
+                            </span>
+                            <span className="rounded-full bg-white/90 px-2 py-0.5 text-[10.5px] font-bold text-slate-800">
+                              {p.tag}
+                            </span>
+                          </span>
+                          <span className="pointer-events-none absolute inset-y-0 left-0 w-[9px] bg-gradient-to-r from-black/40 via-black/12 to-transparent" />
                         </div>
-                        <span className="inline-flex items-center gap-1 text-teal-600 text-sm font-medium opacity-0 group-hover:opacity-100 transition-opacity">
-                          Beli
-                          <ArrowRight className="h-3.5 w-3.5" strokeWidth={2} aria-hidden />
+                        <HoverAksi label="Beli" />
+                        <span className="pointer-events-none absolute left-2 top-2">
+                          <TypeDot Icon={ClipboardCheck} nama="Simulasi Tes" />
                         </span>
                       </div>
-                    </div>
-                  </article>
-                </Link>
-              );
-            })}
-            {filtered.map((product, i) => {
-              const { price, label } = getDisplayPrice(product);
-              const isEbook = product.type === 'ebook';
-              const newEdition = adalahNewEdition(product.title, product.type);
-              const headerGradient = isEbook
-                ? 'from-teal-500 to-teal-700'
-                : 'from-amber-400 to-orange-500';
-
-              return (
-                <Link
-                  key={product.id}
-                  href={`/toko/${product.slug}`}
-                  prefetch={true}
-                  className="group relative block opacity-0 animate-fadeUp"
-                  style={{
-                    animationDelay: `${i * 50}ms`,
-                    animationFillMode: 'forwards',
-                  }}
-                >
-                  <article
-                    className={`relative h-full rounded-2xl overflow-hidden bg-white border border-slate-200 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl ${
-                      product.is_featured
-                        ? 'ring-2 ring-yellow-400 shadow-lg shadow-yellow-400/20'
-                        : 'shadow-sm'
-                    }`}
-                  >
-                    {product.is_featured && (
-                      <div className="absolute top-3 right-3 z-10 inline-flex items-center gap-1 rounded-full bg-yellow-400 px-2.5 py-1 text-xs font-bold text-slate-900 shadow">
-                        <Star className="h-3 w-3 fill-current" strokeWidth={2} aria-hidden />
-                        Featured
-                      </div>
-                    )}
-
-                    <div
-                      className={`relative h-40 bg-gradient-to-br ${headerGradient} flex items-center justify-center overflow-hidden`}
-                    >
-                      <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,_rgba(255,255,255,0.25),_transparent_60%)]" />
-                      <span className="relative" aria-label={product.language ?? undefined}>
-                        <ProductFlag language={product.language} isEbook={isEbook} />
-                      </span>
-                      <div className="absolute bottom-2 left-3 inline-flex items-center gap-1 rounded-full bg-black/25 px-2 py-0.5 text-[11px] font-medium text-white backdrop-blur">
-                        {isEbook ? (
-                          <BookOpen className="h-3 w-3" strokeWidth={2} aria-hidden />
-                        ) : (
-                          <Clapperboard className="h-3 w-3" strokeWidth={2} aria-hidden />
-                        )}
-                        {isEbook ? 'E-Book' : 'E-Learning'}
-                      </div>
-                      {/* [ebook-new-edition-label-v1] Penanda edisi baru di
-                          kepala kartu — bukan disisipkan ke judul, supaya judul
-                          di etalase tetap sama persis dengan judul di invoice,
-                          Perpustakaan, dan reader. */}
-                      {newEdition && (
-                        <div className="absolute bottom-2 right-3 inline-flex items-center gap-1 rounded-full bg-yellow-400/95 px-2 py-0.5 text-[11px] font-bold uppercase tracking-wide text-slate-900 shadow">
-                          <Sparkles className="h-3 w-3" strokeWidth={2} aria-hidden />
-                          {LABEL_NEW_EDITION}
-                        </div>
-                      )}
-                    </div>
-
-                    <div className="p-4">
-                      <h3 className="font-semibold text-slate-900 line-clamp-2 group-hover:text-teal-700 transition-colors">
-                        {product.title}
-                      </h3>
-                      {product.description && (
-                        <p className="mt-1.5 text-sm text-slate-600 line-clamp-2">
-                          {product.description}
+                      <div className="mt-2.5 px-0.5">
+                        <h3 title={p.title} className="truncate text-[12.5px] font-extrabold leading-snug text-[#12172B] group-hover:text-teal-700">
+                          {p.title}
+                        </h3>
+                        <p className="mt-0.5 truncate text-[11.5px] font-semibold text-slate-400">
+                          Simulasi Tes · sekali bayar
                         </p>
-                      )}
-                      <div className="mt-3 flex items-end justify-between gap-2">
-                        <div>
-                          <div className="text-xs text-slate-500">
-                            {label || 'Harga'}
-                          </div>
-                          <div className="font-bold text-slate-900 text-lg leading-none">
-                            {formatRupiah(price)}
-                          </div>
-                        </div>
-                        <span className="inline-flex items-center gap-1 text-teal-600 text-sm font-medium opacity-0 group-hover:opacity-100 transition-opacity">
-                          Lihat
-                          <ArrowRight className="h-3.5 w-3.5" strokeWidth={2} aria-hidden />
-                        </span>
+                        <p className="mt-1 text-[13.5px] font-extrabold text-[#12172B]">
+                          {price < PRICE && (
+                            <span className="mr-1 text-[11px] font-semibold text-slate-400 line-through">
+                              {formatRupiah(PRICE)}
+                            </span>
+                          )}
+                          {formatRupiah(price)}
+                        </p>
                       </div>
+                    </Link>
+                  );
+                }
+
+                const product = item.p;
+                const { price, label } = getDisplayPrice(product);
+                const isEbook = product.type === 'ebook';
+                const newEdition = adalahNewEdition(product.title, product.type);
+                const meta = [
+                  isEbook ? 'E-Book' : 'E-Learning',
+                  product.language ? labelBahasa(product.language) : null,
+                ]
+                  .filter(Boolean)
+                  .join(' · ');
+
+                return (
+                  <Link
+                    key={product.id}
+                    href={`/toko/${product.slug}`}
+                    prefetch={false}
+                    className="group block opacity-0 animate-fadeUp"
+                    style={delay}
+                  >
+                    <div className="relative transition duration-300 group-hover:-translate-y-1.5">
+                      <ShelfCover p={product} />
+                      <HoverAksi label="Lihat" />
+                      <span className="pointer-events-none absolute left-2 top-2">
+                        <TypeDot
+                          Icon={isEbook ? BookOpen : Clapperboard}
+                          nama={isEbook ? 'E-Book' : 'E-Learning'}
+                        />
+                      </span>
+                      {product.is_featured && (
+                        <span
+                          title="Featured"
+                          className="pointer-events-none absolute right-2 top-2 flex h-7 w-7 items-center justify-center rounded-lg bg-yellow-400 text-slate-900 shadow-sm"
+                        >
+                          <Star className="h-[14px] w-[14px] fill-current" strokeWidth={2} aria-hidden />
+                        </span>
+                      )}
+                      {/* [ebook-new-edition-label-v1] penanda edisi baru di kaki sampul,
+                          bukan di judul — judul tetap sama dengan invoice & reader. */}
+                      {newEdition && (
+                        <span className="pointer-events-none absolute bottom-2 left-2 inline-flex items-center gap-1 rounded-full bg-yellow-400/95 px-2 py-0.5 text-[9.5px] font-extrabold uppercase tracking-wide text-slate-900 shadow transition-opacity group-hover:opacity-0">
+                          <Sparkles className="h-2.5 w-2.5" strokeWidth={2.6} aria-hidden />
+                          {LABEL_NEW_EDITION}
+                        </span>
+                      )}
                     </div>
-                  </article>
-                </Link>
-              );
-            })}
-          </div>
+
+                    <div className="mt-2.5 px-0.5">
+                      <div className="flex min-w-0 items-center gap-1.5">
+                        <TitleFlag language={product.language} />
+                        <h3
+                          title={product.title}
+                          className="truncate text-[12.5px] font-extrabold leading-snug text-[#12172B] group-hover:text-teal-700"
+                        >
+                          {judulRingkas(product.title)}
+                        </h3>
+                      </div>
+                      <p className="mt-0.5 truncate text-[11.5px] font-semibold text-slate-400">{meta}</p>
+                      <p className="mt-1 truncate text-[13.5px] font-extrabold text-[#12172B]">
+                        {price > 0 ? formatRupiah(price) : '—'}
+                        {label && (
+                          <span className="ml-1 text-[11px] font-semibold text-slate-400">/ {label.replace(/^mulai /, '')}</span>
+                        )}
+                      </p>
+                    </div>
+                  </Link>
+                );
+              })}
+            </div>
+
+            {/* [toko-paginasi-v1] */}
+            {totalHalaman > 1 && (
+              <nav aria-label="Halaman produk" className="mt-12 flex items-center justify-center gap-1.5">
+                <button
+                  type="button"
+                  onClick={() => keHalaman(hal - 1)}
+                  disabled={hal === 1}
+                  aria-label="Halaman sebelumnya"
+                  className="flex h-9 w-9 items-center justify-center rounded-full border border-slate-200 bg-white text-slate-600 transition hover:border-teal-500 hover:text-teal-700 disabled:pointer-events-none disabled:opacity-40"
+                >
+                  <ChevronLeft className="h-4 w-4" strokeWidth={2.4} />
+                </button>
+                {nomorHalaman(hal, totalHalaman).map((n, i) =>
+                  n === '…' ? (
+                    <span key={`e${i}`} className="w-6 text-center text-sm text-slate-400">…</span>
+                  ) : (
+                    <button
+                      key={n}
+                      type="button"
+                      onClick={() => keHalaman(n)}
+                      aria-current={n === hal ? 'page' : undefined}
+                      className={`h-9 min-w-9 rounded-full px-3 text-sm font-bold transition ${
+                        n === hal
+                          ? 'bg-teal-600 text-white shadow-md shadow-teal-600/30'
+                          : 'border border-slate-200 bg-white text-slate-600 hover:border-teal-500 hover:text-teal-700'
+                      }`}
+                    >
+                      {n}
+                    </button>
+                  ),
+                )}
+                <button
+                  type="button"
+                  onClick={() => keHalaman(hal + 1)}
+                  disabled={hal === totalHalaman}
+                  aria-label="Halaman berikutnya"
+                  className="flex h-9 w-9 items-center justify-center rounded-full border border-slate-200 bg-white text-slate-600 transition hover:border-teal-500 hover:text-teal-700 disabled:pointer-events-none disabled:opacity-40"
+                >
+                  <ChevronRight className="h-4 w-4" strokeWidth={2.4} />
+                </button>
+              </nav>
+            )}
+          </>
         )}
       </section>
 

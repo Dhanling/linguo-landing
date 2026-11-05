@@ -31,6 +31,7 @@ export type Product = {
   language: string | null;
   level: string | null;
   category: string | null;
+  cover_url: string | null;
   is_featured: boolean;
   digital_product_pricing: PricingTier[];
 };
@@ -49,6 +50,7 @@ export default async function TokoPage() {
       language,
       level,
       category,
+      cover_url,
       is_featured,
       digital_product_pricing (
         price,
