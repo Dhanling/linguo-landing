@@ -5,6 +5,7 @@
 // linguo-patch:ling-intercom-v1 — lead capture di tengah chat (nama+WA → tabel leads, source "ling-chat"),
 //   output model jadi JSON {reply, lead_*, intent, language, product, escalate} ala WA bot,
 //   visitor_name/visitor_wa disimpan di ling_chat_sessions (kolom sudah ada, tanpa migrasi)
+import { isKnownApplicant, isRecruitPage, recruitContextBlock } from "./recruit";
 import { NextResponse } from "next/server";
 import { createClient } from "@supabase/supabase-js";
 import { resolveEtpBatches, todayWIBISO } from "@/lib/etpBatches";
@@ -1536,7 +1537,7 @@ export async function POST(req: Request) {
       const contact = hasContact
         ? `DATA PENGUNJUNG: nama, nomor WhatsApp & email user SUDAH tercatat lewat form sebelum chat${visitorName ? ` (nama: ${visitorName}, sapa "kak ${visitorName.split(/\s+/)[0]}")` : ""}. JANGAN minta nama/nomor WA/email lagi.`
         : "";
-      return [SYSTEM, contact, sched, offline, teacher, fxBlock].filter(Boolean).join("\n\n");
+      return [SYSTEM, contact, recruitContextBlock(page), sched, offline, teacher, fxBlock].filter(Boolean).join("\n\n");
     })();
 
     const rawText = await callChatLLM(systemPrompt, msgs);
@@ -1585,14 +1586,16 @@ export async function POST(req: Request) {
             .from("ling_chat_sessions")
             .update({ visitor_name: out.lead_name, visitor_wa: wa })
             .eq("id", sessionId);
-          await db.from("leads").insert({
+          // [ling-chat-pelamar-bukan-lead-v1]
+          const pelamar = isRecruitPage(page) || (await isKnownApplicant(db, wa, null));
+          if (!pelamar) await db.from("leads").insert({
             name: out.lead_name || "Visitor Chat Web",
             wa_number: wa,
             language: out.language,
             program: (out.product && PRODUCT_LABEL[out.product]) || null,
             source: "ling-chat" + (ticket_no ? ` · ${ticket_no}` : ""),
           });
-          lead_captured = true;
+          lead_captured = !pelamar;
         }
       } catch {
         /* gagal simpan lead: jangan ganggu chat */

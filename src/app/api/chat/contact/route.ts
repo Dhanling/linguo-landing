@@ -4,6 +4,7 @@
 // cuma tanya-tanya lalu pergi tetap tercatat sebagai calon pelanggan.
 import { NextResponse } from "next/server";
 import { createClient } from "@supabase/supabase-js";
+import { isKnownApplicant, isRecruitPage } from "../recruit";
 
 export const runtime = "nodejs";
 export const dynamic = "force-dynamic";
@@ -59,7 +60,10 @@ export async function POST(req: Request) {
       .update({ visitor_name: name, visitor_wa: wa, visitor_email: email })
       .eq("id", sessionId);
     // Lead sekali per sesi — sama aturannya dengan lead capture AI di ../route.ts.
-    if (!prev?.visitor_wa) {
+    // [ling-chat-pelamar-bukan-lead-v1] pelamar (halaman rekrutmen / sudah tercatat
+    // di teacher_applications/teachers) tidak dicatat sebagai lead calon siswa.
+    const pelamar = isRecruitPage(page) || (await isKnownApplicant(db, wa, email));
+    if (!prev?.visitor_wa && !pelamar) {
       await db.from("leads").insert({
         name,
         wa_number: wa,
