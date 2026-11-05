@@ -21,7 +21,7 @@ const SUPABASE_SERVICE_KEY = process.env.SUPABASE_SERVICE_ROLE_KEY!;
 // Kolom SAMA dengan query langsung di /akun (loadStudentData) — tab Kuis,
 // linimasa sesi, dan kalender membaca baris yang sama.
 const KOLOM =
-  "id, registration_id, scheduled_at, duration_minutes, status, session_number, session_title, material_notes, material_links, attendance_status, recording_url, notes, quiz_score, quiz_max, quiz_source, quiz_submission_id, homework";
+  "id, registration_id, scheduled_at, duration_minutes, status, session_number, session_title, material_notes, material_links, attendance_status, recording_url, notes, quiz_score, quiz_max, quiz_source, quiz_submission_id, homework, student_confirmed, confirmation_token";
 
 export async function POST(req: NextRequest) {
   try {

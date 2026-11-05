@@ -4095,7 +4095,7 @@ export default function AkunPage() {
               //   membaca baris jadwal yang SAMA. Tanpa empat kolom quiz_* + homework
               //   di sini tabnya bakal selalu tampil kosong (halaman detail kelas lolos
               //   cuma karena dia query `select('*')` sendiri).
-              .select("id, registration_id, scheduled_at, duration_minutes, status, session_number, session_title, material_notes, material_links, attendance_status, recording_url, notes, quiz_score, quiz_max, quiz_source, quiz_submission_id, homework")
+              .select("id, registration_id, scheduled_at, duration_minutes, status, session_number, session_title, material_notes, material_links, attendance_status, recording_url, notes, quiz_score, quiz_max, quiz_source, quiz_submission_id, homework, student_confirmed, confirmation_token")
               .in("registration_id", regIds)
               .order("scheduled_at", { ascending: true })
           : { data: null };

@@ -51,6 +51,9 @@ export type TimelineSchedule = {
   material_links?: { name: string; url: string; kind: 'file' | 'link' }[] | null;
   attendance_status?: string | null;
   recording_url?: string | null;
+  /** [akun-konfirmasi-hadir-v1] status konfirmasi kehadiran siswa + token link publiknya. */
+  student_confirmed?: boolean | null;
+  confirmation_token?: string | null;
   /** [kelas-b2b-materi-v1] 'attendance' = sesi dari grid presensi korporat: cuma tanggal, tanpa jam. */
   sumber?: string | null;
 };
@@ -394,6 +397,22 @@ export default function SesiTimeline({
                     <div className="flex flex-wrap items-center gap-2">
                       <p className="text-[14px] font-extrabold text-[#12172B]">{t('Sesi')} {no}</p>
                       <span className={`rounded-full px-2 py-0.5 text-[11px] font-bold ${chip.cls}`}>{t(chip.label)}</span>
+                      {/* [akun-konfirmasi-hadir-v1] Laporan d17e4f68 (4 Nov 2026): siswa (Mita) tak
+                          menemukan tombol konfirmasi kehadiran sesi 2 — dulu tombolnya cuma ada di
+                          link WA dari pengajar. Sesi selesai yang belum dikonfirmasi kini punya
+                          tombolnya sendiri di sini. */}
+                      {variant === 'sesi' && s && s.status === 'completed' && s.confirmation_token && (
+                        s.student_confirmed ? (
+                          <span className="rounded-full bg-emerald-50 px-2 py-0.5 text-[11px] font-bold text-emerald-700">✓ {t('Kehadiran dikonfirmasi')}</span>
+                        ) : (
+                          <a
+                            href={`/kelas/konfirmasi/${s.confirmation_token}`}
+                            className="rounded-full bg-[#16796E] px-2.5 py-0.5 text-[11px] font-bold text-white hover:bg-[#12665d]"
+                          >
+                            {t('Konfirmasi hadir')}
+                          </a>
+                        )
+                      )}
                       {variant === 'sesi' && jumlahMateri > 0 && (
                         <span className="inline-flex items-center gap-1 rounded-full bg-[#F5F6F8] px-2 py-0.5 text-[11px] font-bold text-gray-500">
                           <BookOpen className="h-3 w-3" strokeWidth={2.4} />{jumlahMateri} {t('materi')}
