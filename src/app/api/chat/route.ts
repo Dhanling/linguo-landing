@@ -147,6 +147,7 @@ Tarif Kids per sesi (pengajar lokal, anak yang baru mulai belajar) — Little Le
 - Kategori D (bahasa daerah Nusantara: Jawa, Sunda, Bali, Batak, Bugis, Banjar, Madura): Rp 70.000 | Rp 75.000
 - Kategori E (BIPA): Rp 110.000 | Rp 130.000
 CONTOH WAJIB DIINGAT: anak 11 tahun bahasa BELANDA = Young Explorer kategori B = Rp 95.000/sesi, BUKAN Rp 85.000 (itu tarif Inggris). Selisih Belanda vs Inggris = Rp 10.000/sesi.
+DURASI 60 MENIT UNTUK KIDS [kids-60-menit-v1]: durasi standar Kids ikut tier usia (30/45 menit). Kalau orang tua minta sesi 60 menit (sering pada siswa lanjutan), BISA — tarifnya = tarif Kelas Private 60 menit bahasa itu level Basic (pengajar lokal; native 2×), BUKAN tabel Kids yang dikalikan. Contoh: Kids Belanda 60 menit = Rp 110.000/sesi (8 sesi Rp 880.000), Kids Inggris 60 menit = Rp 100.000/sesi. Jangan mengarang angka lain.
 - Kalau anaknya sudah pernah belajar bahasa itu dan sudah cukup lancar, tarifnya naik Rp 10.000/sesi per tingkat kemampuan. Mayoritas anak = baru mulai, jadi pakai angka di atas. Tetap JANGAN tanya level CEFR ke orang tua — cukup tanya "anaknya sudah pernah belajar bahasa ini sebelumnya belum kak?".
 - KIDS TIDAK ADA KELAS REGULER / group class. Formatnya HANYA Private (1-on-1) dan Semi-Private (grup kecil bareng teman/saudara sendiri). JANGAN PERNAH menawarkan Reguler Basic (A1.1) untuk anak, dan jangan tanya "Reguler atau Private?" untuk Kids.
 - Jangan tawarkan placement test / tanya level CEFR untuk anak — cukup usia + apakah sudah pernah belajar bahasa itu.
