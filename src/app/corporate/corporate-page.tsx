@@ -85,6 +85,7 @@ const CLIENTS = [
   { name: "POLBAN", img: "/images/clients/polban.png" },
   { name: "Bitget", img: "/images/clients/bitget.png" },
   { name: "CIMSA", img: "/images/clients/cimsa.png" },
+  { name: "Dexa Medica", img: "/images/clients/dexa-medica.png" },
 ];
 
 const STEPS = [
