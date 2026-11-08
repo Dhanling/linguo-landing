@@ -172,6 +172,10 @@ for n in range(6, 11):
 import importlib as _il, os as _os, sys as _sys
 _sys.modules.setdefault("kamus_bisindo", _sys.modules[__name__])
 for _m in ("kamus_bisindo_a1_1", "kamus_bisindo_a1_2", "kamus_bisindo_a1_3", "kamus_bisindo_a2_1",
-           "kamus_bisindo_a2_2", "kamus_bisindo_a2_3", "kamus_bisindo_a2_4"):
+           "kamus_bisindo_a2_2", "kamus_bisindo_a2_3", "kamus_bisindo_a2_4",
+           "kamus_bisindo_b1_1", "kamus_bisindo_b1_2", "kamus_bisindo_b1_3", "kamus_bisindo_b1_4", "kamus_bisindo_b1_5", "kamus_bisindo_b2_1", "kamus_bisindo_b2_2", "kamus_bisindo_b2_3", "kamus_bisindo_b2_4", "kamus_bisindo_b2_5", "kamus_bisindo_b2_6", "kamus_bisindo_b2_7"):
     if _os.path.exists(_os.path.join(_os.path.dirname(__file__), _m + ".py")):
-        _il.import_module(_m)
+        try:
+            _il.import_module(_m)
+        except Exception as _e:  # satu berkas rusak tak boleh mematikan kamus lain
+            import sys as _s2; print(f'KAMUS GAGAL {_m}: {_e!r}', file=_s2.stderr); print(f'KAMUS GAGAL {_m}: {_e!r}')
