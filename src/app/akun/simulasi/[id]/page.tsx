@@ -1267,6 +1267,8 @@ export default function SimulasiRunnerPage() {
           response_text: a.text || undefined,
           audio_url: audioUrl || undefined,
           image_url: q.image_url || undefined,
+          attempt_id: attemptId,
+          question_id: q.id,
         });
         const ai = graded?.score ?? null;
         const earned = ai != null ? (q.points * ai) / 100 : 0;

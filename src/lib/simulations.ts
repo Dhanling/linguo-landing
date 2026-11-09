@@ -466,6 +466,9 @@ export async function uploadRecording(attemptId: string, questionId: string, blo
 }
 
 // ── Penilaian objektif (client-side) ─────────────────────────────────────────
+// [sim-skor-server-v1] Hanya untuk tampilan instan. Skor yang TERSIMPAN dihitung
+// ulang trigger DB dari kunci jawaban — ubah aturan di sini, ubah juga
+// sim_answer_server_grade() di admin sql/20261109_keamanan_batch3.sql.
 export function gradeObjective(q: Question, selectedIndex: number | null, text: string): { correct: boolean; points: number } {
   if (q.type === "multiple_choice" || q.type === "true_false_ng" || q.type === "matching") {
     const correct = typeof q.answer === "number" && selectedIndex === q.answer;
@@ -489,6 +492,12 @@ export async function gradeWithAI(input: {
   test_type: TestType; skill: "writing" | "speaking";
   prompt: string; rubric?: string; response_text?: string; audio_url?: string;
   image_url?: string; // visual Writing Task 1 — dinilai via model vision
+  // [sim-skor-server-v1] Wajib untuk attempt siswa: server mengambil soal dari DB,
+  // memverifikasi attempt milik pemanggil, lalu MENYIMPAN nilainya sendiri
+  // (simulation_ai_grades). Nilai yang ditulis klien ke simulation_answers diabaikan
+  // trigger DB — lihat admin sql/20261109_keamanan_batch3.sql.
+  attempt_id?: string;
+  question_id?: string;
 }): Promise<{ score: number; feedback: string; transcript?: string } | null> {
   try {
     const { data: { session } } = await supabase.auth.getSession();
