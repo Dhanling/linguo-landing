@@ -41,14 +41,14 @@ import RecordingModal from './RecordingModal';
 import { muatAksesRekamanSatu, rekamanBolehTampil, type AksesAddon } from '@/lib/addonAccess';
 import { publicNotes, parseSessionNotes, ATTENDANCE_BADGE } from '@/components/akun/class-notes';
 // [kelas-materi-silabus-sesi-v1] silabus per sesi (judul + poin yang dipelajari)
-import { loadSilabusLevel, type SilabusSesi, type SilabusLevel } from '@/lib/silabusSesi';
+import { type SilabusSesi, type SilabusLevel } from '@/lib/silabusSesi';
+import { loadSilabusKelas } from '@/lib/silabusKelas';
 // [materi-slide-v1] Materi berbentuk dek slide — ditonton di tempat, lihat lib/materiSlides.
 import { parseDeck, type MateriSlide } from '@/lib/materiSlides';
 import { SlideDeckViewer } from '@/components/akun/SlideDeckViewer';
 // [dek-siswa-v1] dek siap pakai per sesi silabus (dirakit di repo dashboard)
 import { loadDekSiswa, type DekSublevelSiswa } from '@/lib/dekSilabusSiswa';
 import { preloadDekSlides } from '@/lib/slideImageCache';
-import { languageSlug } from '@/lib/languageSlug';
 import { toLangCode } from '@/lib/quiz/language';
 import { tr, useT, useUiLang } from '@/lib/uiLang'; // [ui-lang-switcher-v1]
 
@@ -779,22 +779,32 @@ export default function ClassMateriTab({
   const kuisUntuk = (sched: any | null, no: number) =>
     kuisKelas.filter((k) => (sched?.id && k.schedule_id ? k.schedule_id === sched.id : k.session_number === no));
 
+  // [slide-batch-v1] Kelas grup (Reguler/Test Prep) dipetakan lewat batch-nya —
+  // lihat lib/silabusKelas. sesiBatch = pertemuan yang sudah lewat di kalender batch.
+  const [slugDek, setSlugDek] = useState<string | null>(null);
+  const [sesiBatch, setSesiBatch] = useState(0);
   useEffect(() => {
     let alive = true;
-    loadSilabusLevel(reg.language, reg.level)
-      .then((s) => { if (alive) setSilabus(s); })
+    loadSilabusKelas(reg)
+      .then((k) => {
+        if (!alive) return;
+        setSilabus(k?.silabus || null);
+        setSlugDek(k?.slug || null);
+        setSesiBatch(k?.sesiBatch || 0);
+      })
       .catch(() => { if (alive) setSilabus(null); });
     return () => { alive = false; };
-  }, [reg.language, reg.level]);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [reg.id, reg.language, reg.level, reg.batch_id, reg.test_prep_batch_id]);
 
   // Sublevel dek = sublevel silabus yang sudah terjawab (A1 polos → A1.1, dst.).
   const kodeSilabus = silabus?.code || null;
   useEffect(() => {
     let alive = true;
     setDek(null);
-    loadDekSiswa(languageSlug(reg.language), kodeSilabus).then((d) => { if (alive) setDek(d); });
+    loadDekSiswa(slugDek, kodeSilabus).then((d) => { if (alive) setDek(d); });
     return () => { alive = false; };
-  }, [reg.language, kodeSilabus]);
+  }, [slugDek, kodeSilabus]);
 
   if (materials === null) {
     return <div className="py-10 text-center text-gray-400">Memuat…</div>;
@@ -831,7 +841,8 @@ export default function ClassMateriTab({
   // sudah berjalan. Slot terurut menaik menurut tanggal, jadi yang paling awal
   // memang yang paling mungkin sudah lewat — ini penyelamat kelas lawas yang
   // sesinya tidak pernah dicetak ke `schedules`.
-  const terpakai = Math.max(0, Number(sesiTerpakai ?? reg.sessions_used) || 0);
+  // [slide-batch-v1] Batch: sessions_used sering tertinggal — pakai juga kalender batch.
+  const terpakai = Math.max(0, Number(sesiTerpakai ?? reg.sessions_used) || 0, sesiBatch);
   const milestones = Array.from({ length: totalSlot }, (_, i) => ({
     no: i + 1,
     sched: slotSched[i] || null,

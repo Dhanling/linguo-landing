@@ -23,7 +23,7 @@ import { Loader2, Lock, ArrowLeft, RefreshCw } from "lucide-react";
 import { supabase, resolveSessionForGate } from "@/lib/supabase-client";
 import { SlideDeckViewer } from "@/components/akun/SlideDeckViewer";
 import { loadDekSiswa } from "@/lib/dekSilabusSiswa";
-import { languageSlug } from "@/lib/languageSlug";
+import { regCocokDek } from "@/lib/silabusKelas";
 import { toLangCode } from "@/lib/quiz/language";
 import { languages as CURRICULUM_LANGUAGES } from "@/data/curriculum/languages";
 import type { MateriSlide } from "@/lib/materiSlides";
@@ -50,9 +50,10 @@ async function punyaKelasBahasa(email: string | null, slug: string): Promise<boo
     if (e1) return null;
     const ids = ((siswa as any[]) || []).map((r) => r.id).filter(Boolean);
     if (!ids.length) return false;
-    const { data: regs, error: e2 } = await supabase.from("registrations").select("language").in("student_id", ids);
+    // [slide-batch-v1] Test Prep tersimpan "English"/"TOEFL prep" — regCocokDek memetakannya ke toefl-itp/ielts.
+    const { data: regs, error: e2 } = await supabase.from("registrations").select("language, level, product, test_prep_batch_id").in("student_id", ids);
     if (e2) return null;
-    return ((regs as any[]) || []).some((r) => languageSlug(r.language) === slug);
+    return ((regs as any[]) || []).some((r) => regCocokDek(r, slug));
   } catch {
     return null;
   }

@@ -32,10 +32,9 @@ import { detectKind, KIND_META, TeksMateriOverlay } from './ClassMateriTab';
 // bukan sebagai tautan — lihat ItemRow.
 import { parseDeck, type MateriSlide } from '@/lib/materiSlides';
 import { SlideDeckViewer } from '@/components/akun/SlideDeckViewer';
-import { loadSilabusLevel } from '@/lib/silabusSesi';
+import { loadSilabusKelas } from '@/lib/silabusKelas';
 import { loadDekSiswa, type DekSublevelSiswa } from '@/lib/dekSilabusSiswa';
 import { preloadDekSlides } from '@/lib/slideImageCache';
-import { languageSlug } from '@/lib/languageSlug';
 import { toLangCode } from '@/lib/quiz/language';
 import { getUiLang, tr, useT } from '@/lib/uiLang'; // [ui-lang-switcher-v1]
 
@@ -225,19 +224,23 @@ export default function SesiTimeline({
   // [dek-siswa-v1] Silabus level (judul sesi + kode sublevel) → dek siap pakai.
   const [judulSesi, setJudulSesi] = useState<string[]>([]);
   const [dek, setDek] = useState<DekSublevelSiswa | null>(null);
+  const [sesiBatch, setSesiBatch] = useState(0);
   useEffect(() => {
     if (variant !== 'materi') return;
     let alive = true;
     setDek(null);
     (async () => {
-      const sil = await loadSilabusLevel(reg?.language, reg?.level).catch(() => null);
-      if (!alive || !sil) return;
-      setJudulSesi((sil.sessions || []).map((s) => s?.title || ''));
-      const d = await loadDekSiswa(languageSlug(reg?.language), sil.code);
+      // [slide-batch-v1] kelas grup dipetakan lewat batch-nya (lib/silabusKelas)
+      const k = await loadSilabusKelas(reg).catch(() => null);
+      if (!alive || !k) return;
+      setSesiBatch(k.sesiBatch);
+      setJudulSesi((k.silabus.sessions || []).map((s) => s?.title || ''));
+      const d = await loadDekSiswa(k.slug, k.silabus.code);
       if (alive) setDek(d);
     })();
     return () => { alive = false; };
-  }, [variant, reg?.language, reg?.level]);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [variant, reg?.id, reg?.language, reg?.level, reg?.batch_id, reg?.test_prep_batch_id]);
   const langDek = toLangCode(reg?.language);
 
   // [materi-sesi-semua-kelas-v1] Kelas terdahulu (paket habis sebelum penjadwalan
@@ -278,7 +281,7 @@ export default function SesiTimeline({
   // dan presensi yang benar-benar tercatat, biar tak pernah mundur dari kenyataan.
   const selesai = Math.min(
     total || rows.length,
-    Math.max(reg?.sessions_used || 0, rows.filter(({ s }) => s?.status === 'completed').length),
+    Math.max(reg?.sessions_used || 0, rows.filter(({ s }) => s?.status === 'completed').length, sesiBatch),
   );
   const pct = total > 0 ? Math.min(100, Math.round((selesai / total) * 100)) : 0;
   const durasiMenit = String(reg?.duration ?? '').match(/\d+/)?.[0] || '';
