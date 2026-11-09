@@ -392,6 +392,26 @@ export default function ClassProgressTab({ reg, schedules, aksesRekaman, preview
                           </span>
                         );
                       })}
+                      {/* [konfirmasi-hadir-v2] Bug d17e4f68: siswa membuka detail kelas →
+                          Progress, bukan Kelas & Materi → Sesi — tombolnya ikut di sini.
+                          Blok 2 sesi sehari cukup satu tombol (sesi pertama yang belum). */}
+                      {!previewStudentId && (() => {
+                        const belum = blok.items.filter((s) => s.confirmation_token && !s.student_confirmed
+                          && (!s.attendance_status || String(s.attendance_status).toLowerCase() === 'hadir'));
+                        if (belum.length > 0) {
+                          return (
+                            <a
+                              href={`/kelas/konfirmasi/${belum[0].confirmation_token}`}
+                              className="rounded-full bg-[#16796E] px-2.5 py-1 text-xs font-bold text-white hover:bg-[#12665d]"
+                            >
+                              {t('Konfirmasi hadir')}{belum.length > 1 ? ` (${belum.length})` : ''}
+                            </a>
+                          );
+                        }
+                        return blok.items.some((s) => s.student_confirmed) ? (
+                          <span className="rounded-full bg-emerald-50 px-2 py-1 text-xs font-semibold text-emerald-700">✓ {t('Kehadiran dikonfirmasi')}</span>
+                        ) : null;
+                      })()}
                     </div>
                   </div>
 

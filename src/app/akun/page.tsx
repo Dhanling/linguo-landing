@@ -166,6 +166,7 @@ const ClassRaporTab = dynamic(() => import('@/components/akun/ClassRaporTab'), {
 const JadwalCalendar = dynamic(() => import('@/components/akun/JadwalCalendar'), { ssr: false, loading: TabLoading }); // linguo-patch:akun-jadwal-tab-v1
 // jadwal-gcal-v1: daftar "Sesi Mendatang" — pindahan dari kolom kiri kalender ke Beranda.
 const SesiMendatangCard = dynamic(() => import('@/components/akun/SesiMendatangCard'), { ssr: false });
+const KonfirmasiHadirCard = dynamic(() => import('@/components/akun/KonfirmasiHadirCard'), { ssr: false }); // [konfirmasi-hadir-v2]
 const LessonPlayer = dynamic(() => import('@/components/akun/LessonPlayer'), { ssr: false, loading: TabLoading }); // [linguo-patch:akun-inplace-lessonplayer-v1] immersive player tunggal
 // [beranda-insights-v1] kartu ringkasan belajar (skill+delta, PR, materi, beban minggu, peringkat).
 // ssr:false — semua isinya butuh sesi Supabase klien, tak ada gunanya dirender di server.
@@ -5056,6 +5057,19 @@ export default function AkunPage() {
                         </div>
                       </div>
 
+
+                      {/* [konfirmasi-hadir-v2] Sesi selesai yang belum dikonfirmasi siswa —
+                          naik ke layar pertama (bug d17e4f68: pil di tab Sesi & Rekaman tak
+                          pernah ditemukan siswa). Disembunyikan di POV staf supaya tak ada
+                          yang mengonfirmasi atas nama siswa. */}
+                      {!previewMode && (
+                        <KonfirmasiHadirCard
+                          schedules={jadwalNyata as any[]}
+                          regs={liveRegsAll as any[]}
+                          nomorSesi={nomorSesiMap}
+                          labelKelas={(r: any) => `${displayLanguage(r.language || "")} ${r.level || ""}`.trim()}
+                        />
+                      )}
 
                       {/* [lanjutkan-belajar-v1] Pintasan ke hal terakhir yang dikerjakan —
                           lintas menu (Belajar Mandiri, E-Book, Lingbook, Watch & Learn).
