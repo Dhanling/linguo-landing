@@ -29,6 +29,7 @@ import {
 } from "lucide-react";
 import { toast } from "sonner";
 import { supabase } from "@/lib/supabase-client";
+import { enrollHeaders } from "@/lib/enrollHeaders"; // [enroll-wajib-sesi-v1]
 import { FLAG_CODE_BY_SLUG, RectFlag } from "@/components/RectFlag";
 import {
   loadKatalogDigital, judulRingkas, labelBahasa, hargaMulai, tierDefault,
@@ -171,7 +172,7 @@ export default function OnboardingBelanja({
   const simpanProfil = async () => {
     const res = await fetch("/api/enroll", {
       method: "POST",
-      headers: { "Content-Type": "application/json" },
+      headers: await enrollHeaders(), /* [enroll-wajib-sesi-v1] */
       body: JSON.stringify({
         profile_only: true,
         email,

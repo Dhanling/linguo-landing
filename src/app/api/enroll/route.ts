@@ -127,7 +127,7 @@ export async function POST(req: NextRequest) {
   try {
     const body = await req.json();
     const {
-      email,
+      email: emailKlien,
       name,
       wa_number,
       avatar_url: avatarMentah,
@@ -155,6 +155,26 @@ export async function POST(req: NextRequest) {
       // sampah pendaftaran palsu.
       profile_only,
     } = body || {};
+
+    /* [enroll-wajib-sesi-v1] Audit 9 Nov 2026: dulu route ini bisa dipanggil TANPA
+       login dan email-nya dipercaya dari body — siapa pun yang tahu email siswa bisa
+       mengganti nama/nomor WA-nya (pengingat link kelas H-1 lalu terkirim ke nomor
+       penyerang) atau membuat pendaftaran & tagihan Xendit atas namanya. Sekarang
+       wajib JWT sesi, dan email SELALU diambil dari token. */
+    const jwt = (req.headers.get("authorization") || "").replace(/^Bearer\s+/i, "").trim();
+    if (!jwt) {
+      return NextResponse.json({ error: "Sesi tidak terbaca — muat ulang halaman lalu coba lagi." }, { status: 401 });
+    }
+    const pemeriksa = createClient(SUPABASE_URL, SUPABASE_KEY, { auth: { persistSession: false, autoRefreshToken: false } });
+    const { data: sesi, error: sesiErr } = await pemeriksa.auth.getUser(jwt);
+    const emailSesi = String(sesi?.user?.email ?? "").trim().toLowerCase();
+    if (sesiErr || !emailSesi) {
+      return NextResponse.json({ error: "Sesi tidak valid atau sudah habis — silakan masuk lagi." }, { status: 401 });
+    }
+    if (emailKlien && String(emailKlien).trim().toLowerCase() !== emailSesi) {
+      console.warn(`enroll: email body (${emailKlien}) ≠ email sesi (${emailSesi}) — pakai email sesi`);
+    }
+    const email = emailSesi;
     // [edge-auth-gate-v1] Dulu nominal dipercaya dari body → siapa pun bisa
     // mendaftar Private 16 sesi seharga Rp10.000 dan webhook menandainya Lunas.
     // Sekarang dihitung ulang dari tabel harga yang sama dengan wizard /akun.

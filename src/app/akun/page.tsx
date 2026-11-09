@@ -22,6 +22,7 @@ import { sapaan, initial as callInitial } from "@/lib/teacherName"; // [teacher-
 import { flatPrice, isFixedPriceProgram, pricePerSession, privatePerSession } from "@/lib/enrollPrice"; // [edge-auth-gate-v1]
 import { muatRekamanBatch, tempelRekamanBatch, regBatch, type PertemuanBatch } from "@/lib/batchRecordingsClient"; // [rekaman-batch-akun-v1]
 import { supabase, initialAuthError, peekSessionUser, adoptImplicitSessionFromUrl, resolveSessionForGate } from "@/lib/supabase-client"; // [akun-oauth-error-surface-v2] [perf:session-cookie-peek-v1] [auth-implicit-hash-adopt-v1] [auth-gate-resilient-v1]
+import { enrollHeaders } from "@/lib/enrollHeaders"; // [enroll-wajib-sesi-v1]
 import { toast } from "sonner";
 import { motion, AnimatePresence } from "framer-motion";
 import dynamic from "next/dynamic";
@@ -2289,7 +2290,7 @@ function EnrollWizard({ showEnroll, setShowEnroll, enrollStep, setEnrollStep, en
     try {
       const res = await fetch("/api/enroll", {
         method: "POST",
-        headers: { "Content-Type": "application/json" },
+        headers: await enrollHeaders(), /* [enroll-wajib-sesi-v1] */
         body: JSON.stringify(buildEnrollPayload(false)),
       });
       const data = await res.json();
@@ -2329,7 +2330,7 @@ function EnrollWizard({ showEnroll, setShowEnroll, enrollStep, setEnrollStep, en
     try {
       const res = await fetch("/api/enroll", {
         method: "POST",
-        headers: { "Content-Type": "application/json" },
+        headers: await enrollHeaders(), /* [enroll-wajib-sesi-v1] */
         body: JSON.stringify(buildEnrollPayload(true)),
       });
       const data = await res.json();
@@ -4553,7 +4554,7 @@ export default function AkunPage() {
               //    memakai handler yang sama.
               const res = await fetch("/api/enroll", {
                 method: "POST",
-                headers: { "Content-Type": "application/json" },
+                headers: await enrollHeaders(), /* [enroll-wajib-sesi-v1] */
                 body: JSON.stringify({
                   email: user?.email,
                   name: onbName,
