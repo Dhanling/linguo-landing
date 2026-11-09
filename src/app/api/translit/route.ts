@@ -13,6 +13,7 @@
 // tetap jalan tanpa bacaan Latin.
 
 import { NextRequest, NextResponse } from "next/server";
+import { batasLaju, ipPemanggil } from "@/lib/rateLimit"; // [audit9-ai-pagar-v1]
 import { transliterateBatch } from "@/lib/translit-gemini";
 
 export const runtime = "nodejs";
@@ -21,6 +22,10 @@ export const maxDuration = 30;
 
 export async function POST(req: NextRequest) {
   try {
+    // [audit9-ai-pagar-v1] Gemini dijatah per IP; kosong = klien tetap jalan tanpa romanisasi.
+    if (!(await batasLaju(`translit:${ipPemanggil(req.headers)}`, 3600, 600))) {
+      return NextResponse.json({ translit: [] }, { status: 429 });
+    }
     const body = await req.json().catch(() => ({}));
     // PENTING (alignment): jangan buang baris kosong lalu kirim sisanya — itu
     // menggeser indeks, sehingga romanisasi mendarat di baris yang SALAH (pinyin

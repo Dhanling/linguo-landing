@@ -207,13 +207,52 @@ export async function POST(req: NextRequest) {
       return await handleLmsSubscription(body);
     }
 
-    const { name, email, wa_number: waMasuk, language, program, level, productKey: directKey, ref_code, variant, sessions, duration, etp_batch_id } = body;
+    const { name, email, wa_number: waMasuk, language, program: programMasuk, level, productKey: directKey, ref_code, variant, etp_batch_id } = body;
     let wa_number: string | undefined = waMasuk; // [wa-wajib-digital-v1] bisa diisi dari profil siswa di bawah
 
-    const productKey = directKey || (program && level ? `${program}-${level.toLowerCase()}` : program);
+    const productKey = directKey || (programMasuk && level ? `${programMasuk}-${String(level).toLowerCase()}` : programMasuk);
     const product = PRODUCT_PRICES[productKey || ""];
     if (!product) {
       return NextResponse.json({ error: "Produk tidak ditemukan" }, { status: 400 });
+    }
+
+    // [audit9-invoice-program-v1] Program yang ditulis ke `leads` WAJIB turunan
+    // productKey, bukan teks bebas dari body. Dulu body {productKey:"e-learning",
+    // program:"Kelas Private", sessions:24} menghasilkan invoice Rp29.000 tapi
+    // xendit-webhook (handleFunnelLead) membuat registrasi Kelas Private 24 sesi
+    // Lunas+Aktif dari `lead.program`/`lead.sessions`. Sekarang:
+    //  - SKU kelas lama (private-*, kids-*) DITOLAK — funnel kelas sudah pindah
+    //    ke /api/create-funnel-invoice dan tak ada pemanggil SKU ini lagi.
+    //  - program dipaksa ke label kanonik per keluarga productKey; label dari body
+    //    hanya dipakai kalau memang salah satu label sah keluarga itu.
+    //  - sessions/duration dari body DIBUANG; ETP memakai angka baris etp_batches.
+    if (/^(private|kids)-/.test(String(productKey))) {
+      return NextResponse.json(
+        { error: "Produk ini tidak lagi dijual lewat jalur ini. Silakan daftar lewat linguo.id/daftar." },
+        { status: 400 }
+      );
+    }
+    const pk = String(productKey);
+    const masuk = typeof programMasuk === "string" ? programMasuk.trim() : "";
+    let program: string | null;
+    if (pk.startsWith("reguler-")) {
+      // RegisterRegulerModal tak mengirim program (webhook mendeteksi Reguler dari
+      // kode batch di language) — kosong tetap kosong; FunnelFlow kirim "reguler".
+      program = !masuk ? null : ["reguler", "Kelas Reguler"].includes(masuk) ? masuk : "reguler";
+    } else if (pk === "ielts-toefl") {
+      program = "English Test Preparation (IELTS/TOEFL)";
+    } else if (pk.startsWith("simulasi-")) {
+      program = "simulasi";
+    } else if (pk.startsWith("ebook-") || pk === "e-book") {
+      program = "e-book";
+    } else if (pk.startsWith("e-learning")) {
+      program = "e-learning";
+    } else {
+      // Produk digital lain (mis. checkout "digital" lama): label bebas boleh,
+      // ASAL bukan nama/alias kelas yang akan dibuatkan registrasi oleh webhook.
+      program = masuk && !/kelas|private|reguler|regular|kids|ielts|toefl|test prep|translation/i.test(masuk)
+        ? masuk
+        : "digital";
     }
 
     // [reguler-buka-dari-batch-v1] Kelas Reguler hanya bisa dibayar untuk bahasa
@@ -256,6 +295,10 @@ export async function POST(req: NextRequest) {
     // jatuh ke harga PRODUCT_PRICES["ielts-toefl"] di atas.
     let etpAmount: number | null = null;
     let etpDescription: string | null = null;
+    // [audit9-invoice-program-v1] jumlah sesi & durasi ETP dari server (baris batch),
+    // cadangan 16 sesi @90 menit = deskripsi PRODUCT_PRICES["ielts-toefl"].
+    let etpSessions: number | null = productKey === "ielts-toefl" ? 16 : null;
+    let etpDuration: number | null = productKey === "ielts-toefl" ? 90 : null;
     if (productKey === "ielts-toefl" && typeof etp_batch_id === "string" && etp_batch_id) {
       try {
         const etpRes = await fetch(
@@ -267,6 +310,8 @@ export async function POST(req: NextRequest) {
           const row = Array.isArray(rows) ? rows[0] : null;
           if (row && row.is_active !== false && Number(row.price) > 0) {
             etpAmount = Number(row.price);
+            if (Number(row.total_sessions) > 0) etpSessions = Number(row.total_sessions);
+            if (Number(row.duration_min) > 0) etpDuration = Number(row.duration_min);
             const bulan = new Date(String(row.start_date)).toLocaleDateString("id-ID", {
               month: "long",
               year: "numeric",
@@ -382,8 +427,9 @@ export async function POST(req: NextRequest) {
         affiliate_id: affiliateId,
         // funnel-sessions-sync-v1 — dibawa supaya xendit-webhook bisa mengisi
         // registrations.sessions_total / duration / price_per_session.
-        ...(Number(sessions) > 0 ? { sessions: Number(sessions) } : {}),
-        ...(Number(duration) > 0 ? { duration: Number(duration) } : {}),
+        // [audit9-invoice-program-v1] TIDAK lagi dari body — hanya ETP (dari server).
+        ...(etpSessions ? { sessions: etpSessions } : {}),
+        ...(etpDuration ? { duration: etpDuration } : {}),
         // addon fields cuma dikirim kalau opt-in -> pendaftaran normal ga nyentuh kolom baru
         // [addon-harga-per-jenis-v1] `addon_ebook_recording` dibaca sebagai
         // "REKAMAN ikut" (lihat lib/addonAccess + xendit-webhook), jadi pembeli

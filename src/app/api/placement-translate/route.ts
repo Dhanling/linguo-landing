@@ -16,6 +16,7 @@
 // Cache per string di memori instance — soal yang sama tak diterjemahkan dua kali.
 
 import { NextRequest, NextResponse } from "next/server";
+import { batasLaju, ipPemanggil } from "@/lib/rateLimit"; // [audit9-ai-pagar-v1]
 import type { Question } from "@/data/placement/english";
 
 export const runtime = "nodejs";
@@ -157,6 +158,10 @@ async function terjemahkan(baris: string[], bahasa: string): Promise<string[] | 
 }
 
 export async function POST(req: NextRequest) {
+  // [audit9-ai-pagar-v1] terjemahan AI dijatah per IP; null = klien pakai soal Indonesia.
+  if (!(await batasLaju(`placement-translate:${ipPemanggil(req.headers)}`, 3600, 30))) {
+    return NextResponse.json({ questions: null }, { status: 429 });
+  }
   const body = await req.json().catch(() => ({}));
   const soal = Array.isArray(body.questions) ? (body.questions as Question[]).slice(0, 60) : null;
   const bahasa = typeof body.language === "string" ? body.language.slice(0, 60) : "";

@@ -19,6 +19,7 @@ import { NextRequest, NextResponse } from "next/server";
 import { createClient } from "@supabase/supabase-js";
 import { fetchProductLangs, materialReady } from "@/lib/digitalAccess";
 import { KODE_WA_WAJIB, PESAN_WA_WAJIB, pastikanWaPembeli } from "@/lib/waPembeli";
+import { amanIlike } from "@/lib/amanIlike"; // [audit9-ilike-escape-v1]
 
 const SUPABASE_URL = process.env.NEXT_PUBLIC_SUPABASE_URL!;
 const SUPABASE_ANON_KEY = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!;
@@ -175,7 +176,7 @@ export async function POST(req: NextRequest) {
     .from("digital_purchases")
     .select("id, product_id, source, expires_at, digital_products(type)")
     .eq("payment_status", "Lunas")
-    .or(`auth_user_id.eq.${user.id},buyer_email.ilike.${email}`);
+    .or(`auth_user_id.eq.${user.id},buyer_email.ilike.${amanIlike(email)}`);
   const rows = (milik ?? []) as Array<{
     id: string; product_id: string; source: string | null; expires_at: string | null;
     digital_products: { type: string } | { type: string }[] | null;

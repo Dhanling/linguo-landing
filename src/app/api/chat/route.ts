@@ -7,6 +7,7 @@
 //   visitor_name/visitor_wa disimpan di ling_chat_sessions (kolom sudah ada, tanpa migrasi)
 import { isKnownApplicant, isRecruitPage, recruitContextBlock } from "./recruit";
 import { NextResponse } from "next/server";
+import { batasLaju, ipPemanggil } from "@/lib/rateLimit"; // [audit9-ai-pagar-v1]
 import { createClient } from "@supabase/supabase-js";
 import { resolveEtpBatches, todayWIBISO } from "@/lib/etpBatches";
 import { fetchJadwalKelas, jadwalGelombang, jadwalPdfFileName } from "@/lib/jadwalKelasPdf";
@@ -1405,6 +1406,22 @@ async function callChatLLM(system: string, msgs: ChatMsg[]): Promise<string> {
 
 export async function POST(req: Request) {
   try {
+    // [audit9-ai-pagar-v1] Ling tetap publik tanpa login, tapi dijatah per IP —
+    // tiap panggilan mengirim prompt sistem ±40 ribu token ke LLM.
+    const ipChat = ipPemanggil(req.headers);
+    if (
+      !(await batasLaju(`chat:10m:${ipChat}`, 600, 30)) ||
+      !(await batasLaju(`chat:hari:${ipChat}`, 86400, 300))
+    ) {
+      return NextResponse.json(
+        {
+          reply: "Pesanmu banyak sekali dalam waktu singkat. Istirahat sebentar ya, atau langsung chat admin kami lewat WhatsApp.",
+          escalate: true,
+        },
+        { status: 429 },
+      );
+    }
+
     // Cukup SALAH SATU penyedia yang punya kunci — lihat callChatLLM.
     const apiKey =
       process.env.ANTHROPIC_API_KEY || GEMINI_API_KEY || DEEPSEEK_API_KEY;

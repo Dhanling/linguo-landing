@@ -2,6 +2,7 @@
 // pas user klik tombol admin, percakapan diringkas AI (1-2 kalimat) supaya
 // admin langsung tahu kebutuhan user, bukan cuma "halo dari website".
 import { NextResponse } from "next/server";
+import { batasLaju, ipPemanggil } from "@/lib/rateLimit"; // [audit9-ai-pagar-v1]
 import { createClient } from "@supabase/supabase-js";
 
 export const runtime = "nodejs";
@@ -19,6 +20,10 @@ function sb() {
 export async function POST(req: Request) {
   try {
     const apiKey = process.env.ANTHROPIC_API_KEY;
+    // [audit9-ai-pagar-v1] ringkasan AI dijatah per IP (tombol admin jarang diklik).
+    if (!(await batasLaju(`chat-handoff:${ipPemanggil(req.headers)}`, 3600, 30))) {
+      return NextResponse.json({ summary: null });
+    }
     const body = (await req.json().catch(() => ({}))) as { sessionId?: unknown };
     const sessionId =
       typeof body.sessionId === "string" && body.sessionId ? body.sessionId : null;

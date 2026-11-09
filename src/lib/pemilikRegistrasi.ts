@@ -47,7 +47,12 @@ async function emailDariToken(req: NextRequest): Promise<{ id: string; email: st
   }
 }
 
-async function apakahStaf(userId: string): Promise<boolean> {
+// [audit9-batal-reg-v1] Endpoint yang MENGHAPUS registrasi (cancel-enrollment)
+// hanya boleh dilewati staf kantor tingkat atas. Pengajar & sales login di proyek
+// Supabase yang sama dan dulu ikut lolos lewat PERAN_STAF di atas.
+export const PERAN_STAF_HAPUS = new Set(["owner", "admin"]);
+
+async function apakahStaf(userId: string, peran: Set<string> = PERAN_STAF): Promise<boolean> {
   try {
     const res = await fetch(
       `${SUPABASE_URL}/rest/v1/profiles?id=eq.${encodeURIComponent(userId)}&select=role`,
@@ -55,7 +60,7 @@ async function apakahStaf(userId: string): Promise<boolean> {
     );
     if (!res.ok) return false;
     const rows = await res.json();
-    return PERAN_STAF.has(String(rows?.[0]?.role ?? "").trim());
+    return peran.has(String(rows?.[0]?.role ?? "").trim());
   } catch {
     return false;
   }
@@ -68,6 +73,8 @@ async function apakahStaf(userId: string): Promise<boolean> {
 export async function pastikanPemilikRegistrasi(
   req: NextRequest,
   emailSiswa: string | null | undefined,
+  // [audit9-batal-reg-v1] daftar peran staf yang diizinkan (bawaan PERAN_STAF lama).
+  peranStaf: Set<string> = PERAN_STAF,
 ): Promise<HasilPagar> {
   const sesi = await emailDariToken(req);
   if (!sesi) {
@@ -76,7 +83,7 @@ export async function pastikanPemilikRegistrasi(
   if (emailSiswa && sesi.email && sesi.email === String(emailSiswa).trim().toLowerCase()) {
     return { ok: true, email: sesi.email, staf: false };
   }
-  if (await apakahStaf(sesi.id)) {
+  if (await apakahStaf(sesi.id, peranStaf)) {
     return { ok: true, email: sesi.email, staf: true };
   }
   return { ok: false, status: 403, error: "Pendaftaran ini bukan milik akunmu." };

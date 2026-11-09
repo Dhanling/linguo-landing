@@ -1,4 +1,5 @@
 import { NextRequest, NextResponse } from "next/server";
+import { amanIlike } from "@/lib/amanIlike"; // [audit9-ilike-escape-v1]
 
 // ⚠️ BACA DULU — route ini BUKAN webhook Xendit yang aktif.
 // Bukti (30 Jul 2026): pembayaran simulasi LINGUO-SIM-toefl-1785391868375 masuk
@@ -98,7 +99,7 @@ async function grantSimulationEntitlement(externalId: string): Promise<void> {
 
     // Idempotensi: skip kalau sudah ada entitlement aktif utk email+test_type.
     const existRes = await fetch(
-      `${SUPABASE_URL}/rest/v1/simulation_entitlements?email=ilike.${encodeURIComponent(email)}&test_type=eq.${testType}&status=eq.active&select=id&limit=1`,
+      `${SUPABASE_URL}/rest/v1/simulation_entitlements?email=ilike.${encodeURIComponent(amanIlike(email))}&test_type=eq.${testType}&status=eq.active&select=id&limit=1`,
       { headers: { apikey: SUPABASE_KEY, Authorization: `Bearer ${SUPABASE_KEY}` } }
     );
     if (existRes.ok) {

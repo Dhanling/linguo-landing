@@ -5,6 +5,7 @@
 // loading state (dots), pertanyaan saran saat kosong.
 import { useEffect, useRef, useState } from "react";
 import { TEAL } from "./theme";
+import { supabase } from "@/lib/supabase-client";
 
 export interface AskContext {
   word: string;
@@ -49,9 +50,14 @@ export default function AskAiPanel({
     setInput("");
     setBusy(true);
     try {
+      // [audit9-ai-pagar-v1] endpoint kini wajib sesi login → kirim access token.
+      const token = (await supabase.auth.getSession()).data.session?.access_token;
       const r = await fetch("/api/lingbook/ask", {
         method: "POST",
-        headers: { "content-type": "application/json" },
+        headers: {
+          "content-type": "application/json",
+          ...(token ? { Authorization: `Bearer ${token}` } : {}),
+        },
         body: JSON.stringify({
           word: ctx.word,
           meaning: ctx.meaning,

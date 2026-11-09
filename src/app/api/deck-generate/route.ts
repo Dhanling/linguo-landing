@@ -9,6 +9,7 @@
 // Best-effort: balikin { error } saat gagal biar UI tetap jalan.
 
 import { NextRequest, NextResponse } from "next/server";
+import { batasLaju, ipPemanggil } from "@/lib/rateLimit"; // [audit9-ai-pagar-v1]
 
 export const runtime = "nodejs";
 export const dynamic = "force-dynamic";
@@ -252,6 +253,10 @@ export interface GeneratedCard {
 
 export async function POST(req: NextRequest) {
   try {
+    // [audit9-ai-pagar-v1] pembuatan deck AI dijatah per IP.
+    if (!(await batasLaju(`deck-generate:${ipPemanggil(req.headers)}`, 3600, 20))) {
+      return NextResponse.json({ error: "Batas membuat deck per jam tercapai. Coba lagi nanti." }, { status: 429 });
+    }
     // Cukup salah satu provider terpasang (Gemini utama / Groq / Claude cadangan).
     if (!DEEPSEEK_API_KEY && !GEMINI_API_KEY && !GROQ_API_KEY && !ANTHROPIC_API_KEY) {
       return NextResponse.json({ error: "Kunci AI belum diset." }, { status: 500 });

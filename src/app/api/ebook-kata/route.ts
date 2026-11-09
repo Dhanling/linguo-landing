@@ -20,6 +20,7 @@
 // jadi sesudah beberapa hari hampir semua ketukan dijawab tanpa AI sama sekali.
 
 import { NextRequest, NextResponse } from "next/server";
+import { batasLaju, ipPemanggil } from "@/lib/rateLimit"; // [audit9-ai-pagar-v1]
 import { createClient } from "@supabase/supabase-js";
 import crypto from "node:crypto";
 
@@ -242,6 +243,10 @@ async function keCache(jalur: string, isi: unknown) {
 
 export async function POST(req: NextRequest) {
   try {
+    // [audit9-ai-pagar-v1] LLM dijatah per IP (ketuk kata wajar jauh di bawah ini).
+    if (!(await batasLaju(`ebook-kata:${ipPemanggil(req.headers)}`, 3600, 600))) {
+      return NextResponse.json({ error: "Terlalu banyak permintaan — coba lagi nanti." }, { status: 429 });
+    }
     const body = await req.json().catch(() => ({}));
     const kata = String(body?.word || "").trim().slice(0, 60);
     const kalimat = String(body?.sentence || "").trim().slice(0, 300);

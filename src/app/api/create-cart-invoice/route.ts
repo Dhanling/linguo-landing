@@ -44,6 +44,7 @@ import { fetchProductLangs, materialReady } from "@/lib/digitalAccess";
 import { promoAmountFor } from "@/lib/promoMerdeka";
 import { KODE_WA_WAJIB, PESAN_WA_WAJIB, pastikanWaPembeli } from "@/lib/waPembeli";
 import { hitungPaketLengkap, type ModulDimiliki } from "@/lib/bundelEbook";
+import { amanIlike } from "@/lib/amanIlike"; // [audit9-ilike-escape-v1]
 
 const SUPABASE_URL = process.env.NEXT_PUBLIC_SUPABASE_URL!;
 const SUPABASE_ANON_KEY = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!;
@@ -237,8 +238,8 @@ async function buatInvoice(req: NextRequest): Promise<NextResponse> {
     .eq("payment_status", "Lunas")
     .or(
       authUserId
-        ? `auth_user_id.eq.${authUserId},buyer_email.ilike.${email}`
-        : `buyer_email.ilike.${email}`,
+        ? `auth_user_id.eq.${authUserId},buyer_email.ilike.${amanIlike(email)}`
+        : `buyer_email.ilike.${amanIlike(email)}`,
     );
   type BarisMilik = { product_id: string; source: string | null; digital_products: ModulDimiliki | ModulDimiliki[] | null };
   const barisMilik = (milik ?? []) as unknown as BarisMilik[];
@@ -261,7 +262,7 @@ async function buatInvoice(req: NextRequest): Promise<NextResponse> {
     const { data: entitled } = await admin
       .from("simulation_entitlements")
       .select("test_type")
-      .ilike("email", email)
+      .ilike("email", amanIlike(email))
       .eq("status", "active");
     const punya = new Set((entitled ?? []).map((r: { test_type: string }) => String(r.test_type).toLowerCase()));
     for (const t of simMinta) {

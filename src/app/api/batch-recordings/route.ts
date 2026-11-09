@@ -6,6 +6,7 @@
 import { NextRequest, NextResponse } from "next/server";
 import { createClient } from "@supabase/supabase-js";
 import { previewStudentId } from "@/lib/previewSession";
+import { amanIlike } from "@/lib/amanIlike"; // [audit9-ilike-escape-v1]
 
 const SUPABASE_URL = process.env.NEXT_PUBLIC_SUPABASE_URL!;
 const SUPABASE_ANON_KEY = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!;
@@ -31,7 +32,7 @@ export async function POST(req: NextRequest) {
       });
       const { data: { user } } = await userClient.auth.getUser();
       if (!user?.email) return NextResponse.json({ error: "Sesi tidak valid" }, { status: 401 });
-      const { data: students } = await admin.from("students").select("id").ilike("email", user.email);
+      const { data: students } = await admin.from("students").select("id").ilike("email", amanIlike(user.email));
       (students ?? []).forEach((s: { id: string }) => ownedIds.add(s.id));
     } else {
       const previewId = await previewStudentId(req);
@@ -39,7 +40,7 @@ export async function POST(req: NextRequest) {
       ownedIds.add(previewId);
       const { data: stu } = await admin.from("students").select("email").eq("id", previewId).maybeSingle();
       if (stu?.email) {
-        const { data: kembar } = await admin.from("students").select("id").ilike("email", stu.email);
+        const { data: kembar } = await admin.from("students").select("id").ilike("email", amanIlike(stu.email));
         (kembar ?? []).forEach((s: { id: string }) => ownedIds.add(s.id));
       }
     }

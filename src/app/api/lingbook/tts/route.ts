@@ -6,6 +6,7 @@
 //
 // Env: GEMINI_API_KEY. Optional: GEMINI_TTS_MODEL, GEMINI_TTS_VOICE.
 import { NextRequest, NextResponse } from "next/server";
+import { batasLaju, ipPemanggil } from "@/lib/rateLimit"; // [audit9-ai-pagar-v1]
 
 export const runtime = "nodejs";
 export const dynamic = "force-dynamic";
@@ -72,6 +73,10 @@ async function synthesizeGemini(text: string, voice: string) {
 
 export async function POST(req: NextRequest) {
   try {
+    // [audit9-ai-pagar-v1] Gemini TTS dijatah per IP; 429 → klien jatuh ke suara browser.
+    if (!(await batasLaju(`lingbook-tts:${ipPemanggil(req.headers)}`, 3600, 300))) {
+      return NextResponse.json({ error: "Terlalu banyak permintaan suara — coba lagi nanti." }, { status: 429 });
+    }
     const body = await req.json().catch(() => ({}));
     const text = String(body?.text || "").trim().slice(0, 500);
     if (!text) return NextResponse.json({ error: "text kosong" }, { status: 400 });

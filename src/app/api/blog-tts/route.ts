@@ -17,6 +17,7 @@
 //   3. ~/linguo-audio-gen/linguo-tts-key.json — fallback dev lokal
 // Env Gemini: GEMINI_API_KEY. Optional: GEMINI_TTS_MODEL, GEMINI_TTS_VOICE.
 import { NextRequest, NextResponse } from "next/server";
+import { batasLaju, ipPemanggil } from "@/lib/rateLimit"; // [audit9-ai-pagar-v1]
 import crypto from "node:crypto";
 import { readFileSync } from "node:fs";
 import os from "node:os";
@@ -236,6 +237,10 @@ async function synthesizeGemini(text: string, voice: string) {
 
 export async function POST(req: NextRequest) {
   try {
+    // [audit9-ai-pagar-v1] TTS berbayar (Chirp/Azure/Gemini) dijatah per IP.
+    if (!(await batasLaju(`blog-tts:${ipPemanggil(req.headers)}`, 3600, 300))) {
+      return jsonCors({ error: "Terlalu banyak permintaan suara — coba lagi nanti." }, { status: 429 });
+    }
     const body = await req.json().catch(() => ({}));
     const text = String(body?.text || "").trim().slice(0, 600);
     if (!text) return jsonCors({ error: "text kosong" }, { status: 400 });

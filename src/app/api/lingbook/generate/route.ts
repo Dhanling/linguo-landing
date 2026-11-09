@@ -5,6 +5,11 @@
 // { error } saat gagal biar UI CMS tetap jalan. Anthropic via raw fetch.
 import { NextResponse } from "next/server";
 import { corsHeaders } from "../_cors";
+import { penggunaDariBearer, peranPengguna } from "@/lib/penggunaApi"; // [audit9-ai-pagar-v1]
+import { batasLaju } from "@/lib/rateLimit";
+
+// [audit9-ai-pagar-v1] Generator ini (Sonnet, 8.000 token) hanya untuk CMS admin.
+const PERAN_CMS = new Set(["owner", "admin", "curriculum"]);
 
 export const runtime = "nodejs";
 export const dynamic = "force-dynamic";
@@ -25,6 +30,19 @@ export async function POST(req: Request) {
     const apiKey = process.env.ANTHROPIC_API_KEY;
     if (!apiKey) {
       return NextResponse.json({ error: "AI belum aktif (ANTHROPIC_API_KEY kosong)." }, { status: 503, headers: cors });
+    }
+
+    // [audit9-ai-pagar-v1] Dulu terbuka untuk siapa pun → kredit AI bisa dikuras.
+    // Wajib sesi staf kurikulum (dashboard mengirim Authorization: Bearer).
+    const pengguna = await penggunaDariBearer(req.headers);
+    if (!pengguna) {
+      return NextResponse.json({ error: "Masuk dulu sebagai staf untuk memakai generator AI." }, { status: 401, headers: cors });
+    }
+    if (!PERAN_CMS.has(await peranPengguna(pengguna.id))) {
+      return NextResponse.json({ error: "Generator AI hanya untuk staf kurikulum." }, { status: 403, headers: cors });
+    }
+    if (!(await batasLaju(`lingbook-generate:${pengguna.id}`, 3600, 30))) {
+      return NextResponse.json({ error: "Batas generate per jam tercapai. Coba lagi nanti." }, { status: 429, headers: cors });
     }
 
     const body = (await req.json().catch(() => ({}))) as Record<string, unknown>;

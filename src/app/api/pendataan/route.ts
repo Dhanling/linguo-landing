@@ -9,6 +9,7 @@
 
 import { NextRequest, NextResponse } from "next/server";
 import { cocokkanJadwal, programBerbatch, type HasilCocok } from "@/lib/cocokJadwal";
+import { amanIlike } from "@/lib/amanIlike"; // [audit9-ilike-escape-v1]
 
 export const dynamic = "force-dynamic";
 // Pencocokan jadwal membaca Availability tiap pengajar bahasa itu — beri ruang lebih dari 10 dtk.
@@ -242,7 +243,7 @@ async function prefillSiswaLama(token: string): Promise<PrefillHasil | null> {
     if (!me) return null;
     const sid = [me.student_id, me.registrations?.student_id].find((v) => v && UUID_RE.test(v)) || "";
     const ekor = ekorWa(me.contact_whatsapp);
-    const email = encodeURIComponent(emailSah(me.contact_email));
+    const email = encodeURIComponent(amanIlike(emailSah(me.contact_email) || "")); // [audit9-ilike-escape-v1]
     if (!sid && !ekor && !email) return null;
 
     const syaratForm = [

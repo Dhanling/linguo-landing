@@ -1,5 +1,5 @@
 import { NextRequest, NextResponse } from "next/server";
-import { pastikanPemilikRegistrasi } from "@/lib/pemilikRegistrasi";
+import { pastikanPemilikRegistrasi, PERAN_STAF_HAPUS } from "@/lib/pemilikRegistrasi";
 
 // ── enrollment-student-cancel-v1 ─────────────────────────────────────────
 // Dipanggil saat siswa klik "Batalkan pendaftaran" di kartu Belum Bayar
@@ -30,9 +30,9 @@ export async function POST(req: NextRequest) {
 
     // 1. Ambil registration + data siswa (buat isi lead).
     const selectCols =
-      "id,product,language,level,total_amount,students(name,email,whatsapp)";
+      "id,product,language,level,total_amount,status,payment_status,students(name,email,whatsapp)";
     const getRes = await fetch(
-      `${SUPABASE_URL}/rest/v1/registrations?id=eq.${registrationId}&select=${encodeURIComponent(selectCols)}&limit=1`,
+      `${SUPABASE_URL}/rest/v1/registrations?id=eq.${encodeURIComponent(String(registrationId))}&select=${encodeURIComponent(selectCols)}&limit=1`,
       { headers: sbHeaders }
     );
     if (!getRes.ok) {
@@ -48,9 +48,21 @@ export async function POST(req: NextRequest) {
        service role. Dulu modalnya cuma `registrationId` di body — tanpa sesi,
        tanpa cek pemilik — jadi siapa pun yang pernah melihat sebuah id (id-nya
        muncul di URL /akun/kelas/<id>) bisa membatalkan pendaftaran orang lain. */
-    const pagar = await pastikanPemilikRegistrasi(req, reg.students?.email);
+    // [audit9-batal-reg-v1] staf yang boleh hanya owner/admin (bukan teacher/sales).
+    const pagar = await pastikanPemilikRegistrasi(req, reg.students?.email, PERAN_STAF_HAPUS);
     if (!pagar.ok) {
       return NextResponse.json({ error: pagar.error }, { status: pagar.status });
+    }
+
+    // [audit9-batal-reg-v1] Hanya registrasi yang BELUM dibayar yang boleh dihapus
+    // — sama dengan syarat kartu "Belum Bayar" di /akun (pendingRegs). Dulu route
+    // ini menghapus registrasi Aktif/Lunas juga, tinggal tahu id-nya.
+    const ps = String(reg.payment_status ?? "").trim();
+    if (reg.status !== "Menunggu Pembayaran" || (ps && ps !== "Belum Bayar")) {
+      return NextResponse.json(
+        { error: "Pendaftaran yang sudah dibayar atau sudah berjalan tidak bisa dibatalkan dari sini. Hubungi admin Linguo." },
+        { status: 409 }
+      );
     }
 
     // 2. Insert lead follow-up (non-fatal kalau gagal — tetap lanjut delete).
@@ -76,13 +88,22 @@ export async function POST(req: NextRequest) {
 
     // 3. Delete registration.
     const delRes = await fetch(
-      `${SUPABASE_URL}/rest/v1/registrations?id=eq.${registrationId}`,
-      { method: "DELETE", headers: sbHeaders }
+      // [audit9-batal-reg-v1] filter status diulang di DELETE supaya aman dari balapan
+      // (mis. webhook Xendit menandai Lunas di antara cek dan hapus).
+      `${SUPABASE_URL}/rest/v1/registrations?id=eq.${encodeURIComponent(String(registrationId))}&status=eq.Menunggu%20Pembayaran&or=(payment_status.is.null,payment_status.eq.Belum%20Bayar,payment_status.eq.)`,
+      { method: "DELETE", headers: { ...sbHeaders, Prefer: "return=representation" } }
     );
     if (!delRes.ok) {
       const err = await delRes.text();
       console.error("cancel: delete error:", err);
       return NextResponse.json({ error: "Gagal menghapus registrasi." }, { status: 500 });
+    }
+    const terhapus = await delRes.json().catch(() => []);
+    if (!Array.isArray(terhapus) || terhapus.length === 0) {
+      return NextResponse.json(
+        { error: "Status pendaftaran berubah (mungkin baru dibayar). Muat ulang halaman." },
+        { status: 409 }
+      );
     }
 
     return NextResponse.json({ success: true });

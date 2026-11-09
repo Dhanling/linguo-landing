@@ -1,5 +1,6 @@
 import { NextRequest, NextResponse } from "next/server";
 import { recordAdAttribution } from "@/lib/adAttributionServer";
+import { batasLaju, ipPemanggil } from "@/lib/rateLimit"; // [audit9-save-lead-v1]
 
 const SUPABASE_URL = process.env.NEXT_PUBLIC_SUPABASE_URL!;
 const SUPABASE_KEY = process.env.SUPABASE_SERVICE_ROLE_KEY!;
@@ -18,6 +19,11 @@ async function supaFetch(path: string, options?: RequestInit) {
 
 export async function POST(req: NextRequest) {
   try {
+    // [audit9-save-lead-v1] Endpoint publik (dipanggil auth/callback sekali per
+    // login) — rem per IP supaya tak bisa dipakai membanjiri students/registrations.
+    if (!(await batasLaju(`save-lead:${ipPemanggil(req.headers)}`, 600, 10))) {
+      return NextResponse.json({ error: "Terlalu banyak permintaan. Coba lagi nanti." }, { status: 429 });
+    }
     const body = await req.json();
     const { name, email, program, language, level, wa } = body;
 
@@ -89,8 +95,8 @@ export async function POST(req: NextRequest) {
       // Already has this class — don't create duplicate
       return NextResponse.json({
         success: true,
-        studentId,
-        studentToken,
+        // [audit9-save-lead-v1] email sudah milik siswa lain/lama → id & token
+        // TIDAK dibocorkan (pemanggil satu-satunya tak membaca respons ini).
         isExisting: true,
         duplicate: true,
         existingStatus: dupRegs[0].status,
@@ -136,8 +142,9 @@ export async function POST(req: NextRequest) {
 
     return NextResponse.json({
       success: true,
-      studentId,
-      studentToken,
+      // [audit9-save-lead-v1] id/token hanya untuk siswa yang BARU dibuat di
+      // permintaan ini; email yang sudah ada tak boleh membuka token pemiliknya.
+      ...(isExisting ? {} : { studentId, studentToken }),
       isExisting,
       duplicate: false,
     });

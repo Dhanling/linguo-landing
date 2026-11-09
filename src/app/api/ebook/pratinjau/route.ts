@@ -21,6 +21,7 @@
 import { NextRequest, NextResponse } from "next/server";
 import { createClient } from "@supabase/supabase-js";
 import { isStoragePath } from "@/lib/digitalAccess";
+import { amanIlike } from "@/lib/amanIlike"; // [audit9-ilike-escape-v1]
 
 const SUPABASE_URL = process.env.NEXT_PUBLIC_SUPABASE_URL!;
 const SUPABASE_ANON_KEY = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!;
@@ -82,7 +83,7 @@ export async function POST(req: NextRequest) {
     .select("id, product_id, source, expires_at")
     .eq("payment_status", "Lunas")
     .eq("product_id", productId)
-    .or(`auth_user_id.eq.${user.id},buyer_email.ilike.${email}`);
+    .or(`auth_user_id.eq.${user.id},buyer_email.ilike.${amanIlike(email)}`);
   const rows = (milik ?? []) as Array<{ id: string; source: string | null; expires_at: string | null }>;
   const penuh = rows.find((r) => r.source !== "preview");
   if (penuh) {
@@ -120,9 +121,9 @@ export async function POST(req: NextRequest) {
   let telepon: string | null = null;
   try {
     const [siswa, lead, beli] = await Promise.all([
-      admin.from("students").select("whatsapp").ilike("email", email).not("whatsapp", "is", null).limit(1),
-      admin.from("leads").select("wa_number").ilike("email", email).not("wa_number", "is", null).limit(1),
-      admin.from("digital_purchases").select("buyer_phone").ilike("buyer_email", email).not("buyer_phone", "is", null).limit(1),
+      admin.from("students").select("whatsapp").ilike("email", amanIlike(email)).not("whatsapp", "is", null).limit(1),
+      admin.from("leads").select("wa_number").ilike("email", amanIlike(email)).not("wa_number", "is", null).limit(1),
+      admin.from("digital_purchases").select("buyer_phone").ilike("buyer_email", amanIlike(email)).not("buyer_phone", "is", null).limit(1),
     ]);
     telepon =
       (siswa.data?.[0] as { whatsapp?: string } | undefined)?.whatsapp ??

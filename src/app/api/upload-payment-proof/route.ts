@@ -59,6 +59,25 @@ export async function POST(req: NextRequest) {
         auth: { persistSession: false, autoRefreshToken: false },
       });
 
+      // [audit9-bukti-bayar-pemilik-v1] Jalur service role melewati RLS, jadi
+      // kepemilikan dicek manual: registrasi harus milik siswa dengan email sesi
+      // ini, dan belum Lunas. Dulu registrationId apa pun dari body diterima, jadi
+      // registrasi Lunas orang lain bisa dibalik jadi "Menunggu Verifikasi".
+      const { data: regPunya } = await serviceClient
+        .from("registrations")
+        .select("id,payment_status,students(email)")
+        .eq("id", registrationId)
+        .maybeSingle();
+      const stud = (regPunya as { students?: { email?: string | null } | { email?: string | null }[] | null } | null)?.students;
+      const emailPemilik = String((Array.isArray(stud) ? stud[0]?.email : stud?.email) ?? "").trim().toLowerCase();
+      const emailSesi = String(user.email ?? "").trim().toLowerCase();
+      if (!regPunya || !emailPemilik || !emailSesi || emailPemilik !== emailSesi) {
+        return NextResponse.json({ error: "Pendaftaran ini bukan milik akunmu." }, { status: 403 });
+      }
+      if (String((regPunya as { payment_status?: string | null }).payment_status ?? "") === "Lunas") {
+        return NextResponse.json({ error: "Pendaftaran ini sudah lunas." }, { status: 409 });
+      }
+
       const { data: rpcData, error: rpcErr } = await serviceClient.rpc("update_payment_proof", {
         p_registration_id: registrationId,
         p_proof_url: proofPath,

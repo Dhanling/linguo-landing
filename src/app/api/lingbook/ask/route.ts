@@ -2,6 +2,8 @@
 // Tutor bahasa singkat berbahasa Indonesia. Pakai Anthropic (haiku) via raw
 // fetch — pola sama seperti /api/chat. Konteks: kata + kalimat + bahasa + grammar.
 import { NextResponse } from "next/server";
+import { penggunaDariBearer } from "@/lib/penggunaApi"; // [audit9-ai-pagar-v1]
+import { batasLaju, ipPemanggil } from "@/lib/rateLimit";
 
 const MODEL = "claude-haiku-4-5";
 const MAX_QUESTIONS = 5; // batasi per sesi word card
@@ -11,6 +13,20 @@ type Msg = { role: "user" | "assistant"; content: string };
 export async function POST(req: Request) {
   try {
     const apiKey = process.env.ANTHROPIC_API_KEY;
+
+    // [audit9-ai-pagar-v1] Reader Lingbook ada di /akun (wajib login) — endpoint
+    // ini ikut wajib sesi, plus jatah per akun & per IP. Batas 5 pertanyaan per
+    // kartu dihitung dari body klien, jadi tak bisa jadi satu-satunya rem.
+    const pengguna = await penggunaDariBearer(req.headers);
+    if (!pengguna) {
+      return NextResponse.json({ reply: "Masuk dulu ke akunmu untuk bertanya ke AI ya.", limited: true }, { status: 401 });
+    }
+    if (
+      !(await batasLaju(`lingbook-ask:u:${pengguna.id}`, 3600, 60)) ||
+      !(await batasLaju(`lingbook-ask:ip:${ipPemanggil(req.headers)}`, 3600, 120))
+    ) {
+      return NextResponse.json({ reply: "Kamu sudah banyak bertanya dalam sejam terakhir. Coba lagi nanti ya.", limited: true }, { status: 429 });
+    }
 
     const body = (await req.json().catch(() => ({}))) as {
       word?: unknown;

@@ -14,6 +14,7 @@
 // Best-effort: balikin { error } / teks kosong saat gagal biar UI tetap jalan.
 
 import { NextRequest, NextResponse } from "next/server";
+import { batasLaju, ipPemanggil } from "@/lib/rateLimit"; // [audit9-ai-pagar-v1]
 
 export const runtime = "nodejs";
 export const dynamic = "force-dynamic";
@@ -432,6 +433,10 @@ function parseAsk(raw: string): { answer: string; followups: { q: string; tl?: s
 
 export async function POST(req: NextRequest) {
   try {
+    // [audit9-ai-pagar-v1] LLM dijatah per IP.
+    if (!(await batasLaju(`word-deep:${ipPemanggil(req.headers)}`, 3600, 200))) {
+      return NextResponse.json({ error: "Terlalu banyak permintaan — coba lagi nanti." }, { status: 429 });
+    }
     // [word-deep-claude-fallback-v1] Cukup SALAH SATU provider terpasang — dulu
     // gerbang ini cuma cek kunci Gemini, jadi cadangan tak akan pernah kebagian
     // giliran kalau kunci Gemini hilang/dicabut.

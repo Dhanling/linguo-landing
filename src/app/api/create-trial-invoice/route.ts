@@ -17,6 +17,7 @@ import {
 } from "@/lib/trial-pricing";
 import { recordAdAttribution } from "@/lib/adAttributionServer";
 import { xenditMobile } from "@/lib/xenditMobile";
+import { amanIlike } from "@/lib/amanIlike"; // [audit9-ilike-escape-v1]
 
 const XENDIT_SECRET_KEY = process.env.XENDIT_SECRET_KEY!;
 const SUPABASE_URL = process.env.NEXT_PUBLIC_SUPABASE_URL!;
@@ -159,7 +160,7 @@ export async function POST(req: NextRequest) {
     if (!isSpeaking) try {
       const dupRes = await fetch(
         `${SUPABASE_URL}/rest/v1/trial_registrations` +
-          `?email=ilike.${encodeURIComponent(email)}` +
+          `?email=ilike.${encodeURIComponent(amanIlike(email))}` +
           `&language=eq.${encodeURIComponent(language)}` +
           `&archived_at=is.null&status=neq.dropped&select=id&limit=1`,
         { headers: supaHeaders }

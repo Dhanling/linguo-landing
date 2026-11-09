@@ -22,6 +22,7 @@ import { previewStudentId } from "@/lib/previewSession";
 // artinya: roomId-nya `sched-<uuid>` dan siswa bisa memanggil route ini langsung.
 import { aksesRekaman, muatWarisanRekaman, ADDON_REG_COLUMNS, type AddonRow } from "@/lib/addonAccess";
 import { parseBatchRoom, registrasiAnggotaBatch } from "@/lib/batchRecordings"; // [rekaman-batch-siswa-v1]
+import { amanIlike } from "@/lib/amanIlike"; // [audit9-ilike-escape-v1]
 
 const SUPABASE_URL = process.env.NEXT_PUBLIC_SUPABASE_URL!;
 const SUPABASE_ANON_KEY = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!;
@@ -77,7 +78,7 @@ export async function POST(req: NextRequest) {
       const { data: students } = await admin
         .from("students")
         .select("id")
-        .ilike("email", user.email);
+        .ilike("email", amanIlike(user.email));
       ownedIds = new Set((students ?? []).map((s: { id: string }) => s.id));
       emailSesi = user.email.trim().toLowerCase();
       // Peserta B2B sering tak punya baris `students` — vonis 403-nya ditunda ke
@@ -99,7 +100,7 @@ export async function POST(req: NextRequest) {
       // [akun-student-kembar-v2] kelas kembaran ber-email sama ikut tampil di POV
       // (/api/preview-student), jadi rekamannya juga harus bisa diputar.
       if (emailSesi) {
-        const { data: kembar } = await admin.from("students").select("id").ilike("email", emailSesi);
+        const { data: kembar } = await admin.from("students").select("id").ilike("email", amanIlike(emailSesi));
         (kembar ?? []).forEach((s: { id: string }) => ownedIds.add(s.id));
       }
     }
