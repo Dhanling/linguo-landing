@@ -12,6 +12,7 @@
 
 import { NextRequest, NextResponse } from "next/server";
 import { createClient } from "@supabase/supabase-js";
+import { batasLaju } from "@/lib/rateLimit"; // [rate-limit-v1]
 
 const SUPABASE_URL = process.env.NEXT_PUBLIC_SUPABASE_URL!;
 const SUPABASE_ANON_KEY = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!;
@@ -37,6 +38,14 @@ export async function POST(req: NextRequest) {
     const { data: { user }, error: authErr } = await userClient.auth.getUser();
     if (authErr || !user?.email) {
       return NextResponse.json({ error: "Sesi tidak valid atau sudah habis" }, { status: 401 });
+    }
+
+    /* [rate-limit-v1] Audit 9 Nov 2026: nomor WA diambil dari isian, jadi akun mana pun
+       bisa menanyakan nomor sembarang dan tahu orang itu siswa Linguo + nama kelasnya.
+       Fitur ini cuma perlu dipakai sekali-dua kali saat onboarding — dibatasi 5 cek
+       per akun per hari supaya tak bisa dipakai menyisir nomor. */
+    if (!(await batasLaju(`email-lain:${user.email.trim().toLowerCase()}`, 86400, 5))) {
+      return NextResponse.json({ akun: [], dibatasi: true });
     }
 
     const digits = String(wa || "").replace(/\D/g, "");

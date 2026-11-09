@@ -15,6 +15,7 @@
 // (1) dibereskan di bawah — token baru diambil kalau memang harus menyintesis.
 // (2) dibereskan lewat GET yang boleh disimpan CDN + jalur langsung ke Storage
 //     di klien (lihat src/lib/ebookTts.ts).
+import { batasLaju, ipPemanggil } from "@/lib/rateLimit"; // [rate-limit-v1]
 import { NextRequest, NextResponse, after } from "next/server";
 import { createClient } from "@supabase/supabase-js";
 import crypto from "node:crypto";
@@ -231,7 +232,7 @@ const senyap = (b64: string) => Buffer.from(b64, "base64").length < BATAS_SENYAP
 /** Balasan rute ini: `abadi` menandai isi yang boleh disimpan CDN/browser. */
 type Hasil = { status: number; body: Record<string, unknown>; abadi?: boolean };
 
-async function sintesis(teksMentah: unknown, langMentah: unknown, suaraMentah?: unknown, aksenMentah?: unknown): Promise<Hasil> {
+async function sintesis(teksMentah: unknown, langMentah: unknown, suaraMentah?: unknown, aksenMentah?: unknown, ip?: string): Promise<Hasil> {
   const text = bersihkanTeksTts(String(teksMentah || "")).slice(0, BATAS_TEKS_TTS);
   if (!text) return { status: 400, body: { error: "text kosong" } };
 
@@ -290,6 +291,14 @@ async function sintesis(teksMentah: unknown, langMentah: unknown, suaraMentah?: 
   const tokenAwal = chirpLocale ? getAccessToken().catch(() => null) : null;
   const tersimpan = await dariCache(jalur);
   if (tersimpan && !(chirpLocale && senyap(tersimpan))) return { status: 200, body: { audioContent: tersimpan, cached: true }, abadi: true };
+
+  /* [rate-limit-v1] Audit 9 Nov 2026: route ini tanpa login & tanpa batas — bot bisa
+     menyedot kredit Chirp/Azure (ditagih per karakter). Hanya sintesis BARU (cache
+     miss, bukan eSpeak gratis) yang dihitung: 400 per jam per IP. 429 → klien jatuh
+     ke suara browser seperti saat server gagal. */
+  if (!espeak && ip && !(await batasLaju(`tts:${ip}`, 3600, 400))) {
+    return { status: 429, body: { error: "Terlalu banyak permintaan suara — coba lagi nanti." } };
+  }
 
   // [tts-latin-espeak-v1] Disintesis di kontainer ini sendiri — tanpa kunci,
   // tanpa tagihan per karakter. Modulnya dimuat dinamis supaya 23 MB data
@@ -400,7 +409,7 @@ export async function POST(req: NextRequest) {
   try {
     const body = await req.json().catch(() => ({}));
     // POST tak pernah disimpan browser/CDN — headernya sekadar tak menghalangi.
-    return balas(await sintesis(body?.text, body?.lang, body?.voice, body?.aksen), false, headerAsal(req));
+    return balas(await sintesis(body?.text, body?.lang, body?.voice, body?.aksen, ipPemanggil(req.headers)), false, headerAsal(req));
   } catch (e: any) {
     return NextResponse.json({ error: e?.message || "internal error" }, { status: 500 });
   }
@@ -435,7 +444,7 @@ export async function GET(req: NextRequest) {
       await hangatkan();
       return new NextResponse(null, { status: 204, headers: { "Cache-Control": "no-store", ...headerAsal(req) } });
     }
-    return balas(await sintesis(q.get("text"), q.get("lang"), q.get("voice"), q.get("aksen")), true, headerAsal(req));
+    return balas(await sintesis(q.get("text"), q.get("lang"), q.get("voice"), q.get("aksen"), ipPemanggil(req.headers)), true, headerAsal(req));
   } catch (e: any) {
     return NextResponse.json({ error: e?.message || "internal error" }, { status: 500 });
   }

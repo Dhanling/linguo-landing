@@ -5,6 +5,7 @@
 // Wajib login: tiap panggilan memakan kuota AI, jadi rute ini tidak boleh bisa
 // ditembak anonim. Yang dicek cuma "tokennya sah", bukan kepemilikan apa pun —
 // tak ada data siswa yang dibaca/ditulis di sini.
+import { batasLaju } from "@/lib/rateLimit"; // [rate-limit-v1] pagar lintas kontainer
 import { NextRequest, NextResponse } from "next/server";
 import { createClient } from "@supabase/supabase-js";
 
@@ -133,7 +134,7 @@ export async function POST(req: NextRequest) {
     });
     const { data: { user }, error: authErr } = await sb.auth.getUser();
     if (authErr || !user) return NextResponse.json({ error: "sesi tidak sah" }, { status: 401 });
-    if (kenaBatas(user.id)) return NextResponse.json({ error: "terlalu sering, coba lagi nanti" }, { status: 429 });
+    if (kenaBatas(user.id) || !(await batasLaju(`menulis:${user.id}`, 600, 60))) return NextResponse.json({ error: "terlalu sering, coba lagi nanti" }, { status: 429 });
 
     const body = await req.json().catch(() => ({}));
     const png = String(body?.png || "");
