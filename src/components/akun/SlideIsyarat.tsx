@@ -39,6 +39,18 @@ type Gerak = { v: 1; fps: number; tulang: string[]; isyarat: MetaIsyarat[]; waja
 const TEAL = "#0E7C7B";
 const NAMA_AWAL: [string, string] = ["Rio", "Mia"];
 
+/** [isyarat-klik-gagal-v1] Apakah browser masih mau membuat konteks WebGL sama sekali?
+ *  false = akselerasi grafis mati / WebGL diblokir untuk situs ini (bukan masalah dek). */
+function webglAda(): boolean {
+  try {
+    const c = document.createElement("canvas");
+    const gl = (c.getContext("webgl2") || c.getContext("webgl")) as WebGLRenderingContext | null;
+    if (!gl) return false;
+    gl.getExtension("WEBGL_lose_context")?.loseContext();
+    return true;
+  } catch { return false; }
+}
+
 const gerakCache = new Map<string, Promise<Gerak>>();
 function muatGerak(base: string): Promise<Gerak> {
   let p = gerakCache.get(base);
@@ -542,12 +554,17 @@ export default function SlideIsyarat({ v, aksen = TEAL }: { v: VisualIsyarat; ak
     const el = kanvas.current, w = wadah.current;
     if (!el || !w) return;
     setStatus("muat");
+    // [isyarat-klik-gagal-v1] Kamus (arti + cara) tak butuh WebGL — muat terpisah supaya
+    // tetap bisa dibaca saat 3D gagal.
+    muatGerak(base).then((g) => { if (!batal) setGerak(g); }).catch(() => { /* diam */ });
     const gagal = (e: unknown) => {
       if (batal) return;
       console.error("[SlideIsyarat] 3D gagal dimuat:", e);
       if (cobaOtomatis.current < 1) { cobaOtomatis.current++; setCoba((c) => c + 1); return; }
       const m = e instanceof Error ? e.message : String(e ?? "");
-      setAlasan(/webgl/i.test(m) && /creat|context/i.test(m) ? "WebGL tidak tersedia / sedang diblokir browser" : m.slice(0, 120));
+      setAlasan(!webglAda()
+        ? "WebGL mati di browser ini. Chrome: Setelan → Sistem → nyalakan \"Gunakan akselerasi grafis\", lalu muat ulang halaman."
+        : /webgl/i.test(m) && /creat|context/i.test(m) ? "GPU sedang sibuk / konteks WebGL ditolak. Tutup tab lain yang berat lalu Coba lagi." : m.slice(0, 120));
       setStatus("gagal");
     };
     void bangunPanggung(el, w, base, dialog, v.tokoh === "B" ? "B" : "A", pakaiVrm,
@@ -685,7 +702,7 @@ export default function SlideIsyarat({ v, aksen = TEAL }: { v: VisualIsyarat; ak
         )}
         {status === "gagal" && (
           <div style={{ position: "absolute", left: "4%", right: "4%", bottom: "4%", background: "rgba(255,255,255,0.95)", borderRadius: 12, padding: "0.5em 0.8em", fontSize: "0.78em", color: "#92400e" }}>
-            3D tidak bisa dimuat di perangkat ini. Daftar isyarat & caranya tetap bisa dibaca di samping.
+            3D tidak bisa dimuat di perangkat ini. Klik isyarat di samping untuk membaca caranya.
             {alasan && <div style={{ marginTop: "0.25em", fontSize: "0.85em", color: "#9ca3af" }}>Alasan: {alasan}</div>}
             <button type="button" onPointerDown={(e) => e.stopPropagation()}
               onClick={() => { setAlasan(""); setCoba((c) => c + 1); }}
@@ -695,8 +712,8 @@ export default function SlideIsyarat({ v, aksen = TEAL }: { v: VisualIsyarat; ak
           </div>
         )}
         {/* Teks bawah: gloss (token aktif ditebalkan) + arti */}
-        {status === "siap" && (bAktif || mAktif || ejaAktif) && (
-          <div style={{ position: "absolute", left: "3%", right: "3%", bottom: "3%", background: "rgba(255,255,255,0.94)", borderRadius: "1cqw", padding: "0.45em 0.8em", boxShadow: "0 2px 10px rgba(14,124,123,0.15)" }}>
+        {status !== "muat" && (bAktif || mAktif || ejaAktif) && (
+          <div style={{ position: "absolute", left: "3%", right: "3%", ...(status === "gagal" ? { top: "3%" } : { bottom: "3%" }), background: "rgba(255,255,255,0.94)", borderRadius: "1cqw", padding: "0.45em 0.8em", boxShadow: "0 2px 10px rgba(14,124,123,0.15)" }}>
             {ejaAktif ? (
               <div style={{ fontWeight: 800, letterSpacing: "0.25em", fontSize: "1.15em", color: "#111827" }}>
                 {ejaAktif.teks.split("").map((h, i) => <span key={i} style={{ color: i === ejaAktif.i ? aksen : i < ejaAktif.i ? "#111827" : "#9ca3af" }}>{h}</span>)}
@@ -754,7 +771,7 @@ export default function SlideIsyarat({ v, aksen = TEAL }: { v: VisualIsyarat; ak
                 const kiri = b.siapa !== "B";
                 return (
                   <li key={i}>
-                    <button type="button" disabled={status !== "siap"} onClick={() => void putarBaris(i)}
+                    <button type="button" disabled={status === "muat"} onClick={() => void putarBaris(i)}
                       style={{
                         width: "100%", textAlign: "left", display: "flex", gap: "0.6em", alignItems: "flex-start",
                         borderRadius: "0.8cqw", padding: "0.45em 0.7em", cursor: "pointer",
@@ -781,7 +798,7 @@ export default function SlideIsyarat({ v, aksen = TEAL }: { v: VisualIsyarat; ak
                 const m = meta.get(t.kode);
                 const on = i === aktif;
                 return (
-                  <button key={i} type="button" disabled={status !== "siap"} onClick={() => void putarTanda(i)}
+                  <button key={i} type="button" disabled={status === "muat"} onClick={() => void putarTanda(i)}
                     style={{
                       textAlign: "left", borderRadius: "0.8cqw", padding: "0.4em 0.6em", cursor: "pointer",
                       background: on ? aksen : "#fff", color: on ? "#fff" : "#111827",
