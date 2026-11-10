@@ -1,0 +1,523 @@
+{
+  "title": "Grandfather's house, little brother's book",
+  "title_target": "यह किसका घर है? — yeh kiskaa ghar hai?",
+  "goal": "Say whose something is, name your family members — and understand one rule that goes against instinct: Hindi possessives agree with the gender of the THING owned, not the owner.",
+  "bekal": [
+    "use का, की, and के correctly",
+    "say मेरा, आपका, उसका, and the rest",
+    "ask यह किसका है?",
+    "name close and extended family members",
+    "answer आपके परिवार में कितने लोग हैं?"
+  ],
+  "dialogs": [
+    {
+      "title": "संवाद — The family photo on the wall",
+      "intro": "Priya shows Ani a photo of her big family. In line seven Priya praises Ani's Hindi — notice the word she uses, and why it isn't the one you might expect.",
+      "lines": [
+        {
+          "speaker": "प्रिया:",
+          "text": "[यह|yeh] [हमारे|ha-maa-re] [परिवार|pa-ri-vaar] [की|kii] [तस्वीर|tas-viir] [है|hai]।",
+          "id": "This is a photo of our family.",
+          "literal": "this — our — family — of(fem.) — picture — is."
+        },
+        {
+          "speaker": "आनी:",
+          "text": "[वाह|vaah]! [ये|ye] [आपके|aap-ke] [पिता|pi-taa] [जी|jii] [हैं|haiⁿ]?",
+          "id": "Wow! Is this your father?",
+          "literal": "wow! this(polite) — your — father — ji — is?"
+        },
+        {
+          "speaker": "प्रिया:",
+          "text": "[जी|jii] [हाँ|haaⁿ], [और|aur] [ये|ye] [मेरी|me-rii] [माँ|maaⁿ] [हैं|haiⁿ]।",
+          "id": "Yes, and this is my mother.",
+          "literal": "ji — yes, and — this(polite) — my(fem.) — mother — is."
+        },
+        {
+          "speaker": "आनी:",
+          "text": "[और|aur] [यह|yeh] [छोटा|chho-Taa] [लड़का|laR-kaa] [कौन|kaun] [है|hai]?",
+          "id": "And who's this little boy?",
+          "literal": "and — this — small — boy — who — is?"
+        },
+        {
+          "speaker": "प्रिया:",
+          "text": "[वह|voh] [मेरे|me-re] [भाई|bhaa-ii] [का|kaa] [बेटा|be-Taa] [है|hai]।",
+          "id": "That's my brother's son.",
+          "literal": "that — my — brother — of(masc.) — son — is."
+        },
+        {
+          "speaker": "आनी:",
+          "text": "[तो|to] [वह|voh] [आपका|aap-kaa] [भतीजा|bha-tii-jaa] [है|hai]!",
+          "id": "So he's your nephew!",
+          "literal": "so — that — your — brother's-son — is!"
+        },
+        {
+          "speaker": "प्रिया:",
+          "text": "[हाँ|haaⁿ]! [आपकी|aap-kii] [हिंदी|hin-dii] [अच्छी|ach-chhii] [है|hai]।",
+          "id": "Yes! Your Hindi is good.",
+          "literal": "yes! your(fem.) — Hindi — good(fem.) — is."
+        },
+        {
+          "speaker": "आनी:",
+          "text": "[शुक्रिया|shuk-ri-yaa]। [यह|yeh] [किसका|kis-kaa] [घर|ghar] [है|hai]?",
+          "id": "Thank you. Whose house is this?",
+          "literal": "thanks. this — whose(masc.) — house — is?"
+        },
+        {
+          "speaker": "प्रिया:",
+          "text": "[यह|yeh] [मेरे|me-re] [दादा|daa-daa] [जी|jii] [का|kaa] [घर|ghar] [है|hai], [लखनऊ|lakh-na-uu] [में|meⁿ]।",
+          "id": "It's my grandfather's house, in Lucknow.",
+          "literal": "this — my — grandfather — ji — of(masc.) — house — is, Lucknow — in."
+        },
+        {
+          "speaker": "आनी:",
+          "text": "[बहुत|ba-hut] [सुंदर|sun-dar] [है|hai]। [मेरे|me-re] [दादा|daa-daa] [जी|jii] [का|kaa] [घर|ghar] [भी|bhii] [पुराना|pu-raa-naa] [है|hai]।",
+          "id": "It's beautiful. My grandfather's house is old too.",
+          "literal": "very — beautiful — is. my — grandfather — ji — of(masc.) — house — also — old(masc.) — is."
+        },
+        {
+          "speaker": "प्रिया:",
+          "text": "[आपके|aap-ke] [परिवार|pa-ri-vaar] [में|meⁿ] [कितने|kit-ne] [लोग|log] [हैं|haiⁿ]?",
+          "id": "How many people are in your family?",
+          "literal": "your — family — in — how-many(pl.) — people — are?"
+        },
+        {
+          "speaker": "आनी:",
+          "text": "[पाँच|paaⁿch] — [माँ|maaⁿ], [पापा|paa-paa], [दो|do] [भाई|bhaa-ii], [और|aur] [मैं|maiⁿ]।",
+          "id": "Five — Mom, Dad, two brothers, and me.",
+          "literal": "five — mom, dad, two — brothers, and — I."
+        }
+      ],
+      "notes": [
+        "**The heart of this unit: का, की, and के agree with the gender of the thing OWNED — the owner makes no difference at all.** *राम **की** किताब* = \"Ram's book\", and it's की because **किताब is feminine**, not because Ram is a woman. *प्रिया **का** घर* = \"Priya's house\", का because **घर is masculine**, not because Priya is a man. ⚠️ English *his/her* looks at the owner, so your instinct will keep telling you to do the same. Don't. Look at the thing.",
+        "**आपकी हिंदी अच्छी है — feminine twice, because हिंदी is feminine.** Compare *आपका घर अच्छा है* (your house is nice) — masculine twice, because घर is masculine. Possessive and adjective walk together, both following the same noun.",
+        "**के shows up in two different situations.** First, when the thing is masculine plural: *मेरे भाई* (my brothers). Second, and more often, when **a postposition follows the noun**: *आप**के** परिवार **में*** — परिवार is singular and masculine, but because में comes after it, आपका becomes आपके. This is the **oblique form**, covered fully in unit 7. For now, learn the pattern: postposition after → use के.",
+        "**पिता जी हैं, not है — and माँ takes हैं too.** Parents and older people always take the plural as a sign of respect, just like आप. That's why Priya says *ये मेरी माँ **हैं***, not *है*. ⚠️ Using the singular for your parents sounds rude to Indian ears, however \"logical\" the grammar.",
+        "**किसका, किसकी, किसके = \"whose\", and it too follows the thing.** *यह **किसका** घर है?* (whose house is this?) but *यह **किसकी** किताब है?* (whose book is this?). The answer can be just the owner: *प्रिया का* — \"Priya's\".",
+        "**Hindi kinship words are far more precise than English ones, and the difference matters.** English has one word, \"uncle\", for all of them; Hindi distinguishes **चाचा** (father's younger brother), **ताऊ** (father's elder brother), **मामा** (mother's brother), and **फूफा** (husband of father's sister). Grandfathers too: **दादा** on the father's side, **नाना** on the mother's. ⚠️ This isn't fussiness; in an Indian family the relationship decides who is respected how. When in doubt, **अंकल जी** and **आंटी जी** are safe for anyone.",
+        "**पापा and मम्मी are widely used and not considered Westernized at all.** In everyday speech Indians say *पापा* more often than *पिता जी* — the latter sounds rather formal, like \"Father\". To sound natural, say **पापा** and **मम्मी** for your own parents, and **पिता जी** / **माता जी** when talking about someone else's."
+      ],
+      "grammars": [
+        {
+          "title": "Possessives: one table for life",
+          "body": [
+            "Which column you use is decided by the thing to its right, not the owner to its left."
+          ],
+          "tables": [
+            {
+              "head": [
+                "Owner",
+                "+ masculine thing",
+                "+ masculine plural, or before a postposition",
+                "+ feminine thing"
+              ],
+              "rows": [
+                [
+                  "मैं — I",
+                  "मेरा घर",
+                  "मेरे घर · मेरे घर में",
+                  "मेरी किताब"
+                ],
+                [
+                  "तुम — you (familiar)",
+                  "तुम्हारा घर",
+                  "तुम्हारे घर",
+                  "तुम्हारी किताब"
+                ],
+                [
+                  "आप — you (polite)",
+                  "आपका घर",
+                  "आपके घर",
+                  "आपकी किताब"
+                ],
+                [
+                  "यह — he/she (near)",
+                  "इसका घर",
+                  "इसके घर",
+                  "इसकी किताब"
+                ],
+                [
+                  "वह — he/she (far)",
+                  "उसका घर",
+                  "उसके घर",
+                  "उसकी किताब"
+                ],
+                [
+                  "हम — we",
+                  "हमारा घर",
+                  "हमारे घर",
+                  "हमारी किताब"
+                ],
+                [
+                  "वे — they",
+                  "उनका घर",
+                  "उनके घर",
+                  "उनकी किताब"
+                ],
+                [
+                  "a person's name",
+                  "राम का घर",
+                  "राम के घर",
+                  "राम की किताब"
+                ]
+              ]
+            }
+          ],
+          "after": [
+            "⚠️ Look at the last row: with names or ordinary nouns, the possessive stands **separately** as का/की/के after the name — like English *'s*. *प्रिया की बहन* = \"Priya's sister\". *मेरे भाई का बेटा* = \"my brother's son\" — note **मेरे** (because भाई is followed by का), then **का** (because बेटा is masculine). Two decisions in a row, and both look to the right."
+          ]
+        },
+        {
+          "title": "Family",
+          "table": {
+            "head": [
+              "हिंदी",
+              "Pronunciation",
+              "Meaning"
+            ],
+            "rows": [
+              [
+                "परिवार",
+                "pa-ri-vaar",
+                "family (m)"
+              ],
+              [
+                "माँ · मम्मी · माता जी",
+                "maaⁿ · mam-mii · maa-taa jii",
+                "mother"
+              ],
+              [
+                "पिता जी · पापा",
+                "pi-taa jii · paa-paa",
+                "father"
+              ],
+              [
+                "भाई",
+                "bhaa-ii",
+                "brother"
+              ],
+              [
+                "बहन",
+                "be-han",
+                "sister"
+              ],
+              [
+                "बड़ा भाई · छोटा भाई",
+                "ba-Raa bhaa-ii",
+                "older · younger brother"
+              ],
+              [
+                "बेटा · बेटी",
+                "be-Taa · be-Tii",
+                "son · daughter"
+              ],
+              [
+                "पति · पत्नी",
+                "pa-ti · pat-nii",
+                "husband · wife"
+              ],
+              [
+                "दादा जी · दादी जी",
+                "daa-daa jii · daa-dii jii",
+                "grandfather · grandmother (father's side)"
+              ],
+              [
+                "नाना जी · नानी जी",
+                "naa-naa jii · naa-nii jii",
+                "grandfather · grandmother (mother's side)"
+              ],
+              [
+                "चाचा · चाची",
+                "chaa-chaa · chaa-chii",
+                "father's younger brother and his wife"
+              ],
+              [
+                "मामा · मामी",
+                "maa-maa · maa-mii",
+                "mother's brother and his wife"
+              ],
+              [
+                "भतीजा · भतीजी",
+                "bha-tii-jaa · bha-tii-jii",
+                "brother's child"
+              ],
+              [
+                "भांजा · भांजी",
+                "bhaan-jaa · bhaan-jii",
+                "sister's child"
+              ],
+              [
+                "रिश्तेदार",
+                "rish-te-daar",
+                "relative"
+              ]
+            ]
+          },
+          "after": [
+            "⚠️ **बड़ा** and **छोटा** tell older from younger siblings, just like English \"big sister\" and \"little brother\": *बड़ी बहन* (older sister), *छोटा भाई* (younger brother)."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "The extended family, and the questions that always come",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Family is the first topic Indians open with strangers — often before work, almost always before politics. These four questions will come, and having your answers ready makes your first conversations far more enjoyable."
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Question",
+            "Pronunciation",
+            "Sample answer"
+          ],
+          "rows": [
+            [
+              "आपके परिवार में कितने लोग हैं?",
+              "aap-ke pa-ri-vaar meⁿ kit-ne log haiⁿ",
+              "हम पाँच लोग हैं।"
+            ],
+            [
+              "आपके कितने भाई-बहन हैं?",
+              "aap-ke kit-ne bhaa-ii-be-han haiⁿ",
+              "मेरे दो भाई हैं।"
+            ],
+            [
+              "आपके माता-पिता क्या करते हैं?",
+              "aap-ke maa-taa-pi-taa kyaa kar-te haiⁿ",
+              "मेरे पापा व्यापारी हैं।"
+            ],
+            [
+              "क्या आप बड़े हैं या छोटे?",
+              "kyaa aap ba-Re haiⁿ yaa chho-Te",
+              "मैं सबसे छोटी हूँ।"
+            ],
+            [
+              "आपके घर में कौन कौन है?",
+              "aap-ke ghar meⁿ kaun kaun hai",
+              "माँ, पापा, और दो भाई।"
+            ]
+          ]
+        },
+        {
+          "type": "kotak",
+          "title": "Three things that make your answers sound natural",
+          "items": [
+            "**कौन कौन है** — a repeated question word means \"who all\", not just \"who\". Likewise *क्या क्या* (what all) and *कहाँ कहाँ* (where all). This doubling is very typical of Hindi — it's where Indian English gets its \"who all are coming?\".",
+            "**हम पाँच लोग हैं** — \"we're five people\", not \"there are five people in my family\". The shorter version is the one that sounds native.",
+            "**सबसे छोटी** — \"the youngest\". सबसे literally means \"than all\", and it's how Hindi forms superlatives. Unit 18 covers it."
+          ]
+        },
+        {
+          "type": "p",
+          "text": "A note that may warm your heart. In Indian families the word **जी** you learned in unit 1 is used with parents all day long — *पापा जी*, *दादी जी* — and many adults still touch their parents' feet as a greeting on special days. If you go home with an Indian friend, nobody expects you to do that; a **नमस्ते** with palms together, a slight bow, and a **जी** are more than enough, and they'll be remembered."
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "hi": "का · की · के",
+      "baca": "kaa · kii · ke",
+      "en": "of, 's (possessive)"
+    },
+    {
+      "hi": "किसका · किसकी",
+      "baca": "kis-kaa · kis-kii",
+      "en": "whose"
+    },
+    {
+      "hi": "मेरा · मेरी · मेरे",
+      "baca": "me-raa · me-rii · me-re",
+      "en": "my"
+    },
+    {
+      "hi": "आपका · आपकी · आपके",
+      "baca": "aap-kaa · aap-kii · aap-ke",
+      "en": "your (polite)"
+    },
+    {
+      "hi": "तुम्हारा",
+      "baca": "tum-haa-raa",
+      "en": "your (familiar)"
+    },
+    {
+      "hi": "उसका · उसकी",
+      "baca": "us-kaa · us-kii",
+      "en": "his, her"
+    },
+    {
+      "hi": "हमारा · हमारी",
+      "baca": "ha-maa-raa · ha-maa-rii",
+      "en": "our"
+    },
+    {
+      "hi": "उनका · उनकी",
+      "baca": "un-kaa · un-kii",
+      "en": "their; his/her (respectful)"
+    },
+    {
+      "hi": "परिवार",
+      "baca": "pa-ri-vaar",
+      "en": "family (m)"
+    },
+    {
+      "hi": "रिश्तेदार",
+      "baca": "rish-te-daar",
+      "en": "relative (m)"
+    },
+    {
+      "hi": "पति",
+      "baca": "pa-ti",
+      "en": "husband (m)"
+    },
+    {
+      "hi": "पत्नी",
+      "baca": "pat-nii",
+      "en": "wife (f)"
+    },
+    {
+      "hi": "दादा जी",
+      "baca": "daa-daa jii",
+      "en": "grandfather (father's side)"
+    },
+    {
+      "hi": "दादी जी",
+      "baca": "daa-dii jii",
+      "en": "grandmother (father's side)"
+    },
+    {
+      "hi": "नाना जी · नानी जी",
+      "baca": "naa-naa jii · naa-nii jii",
+      "en": "grandfather · grandmother (mother's side)"
+    },
+    {
+      "hi": "चाचा · चाची",
+      "baca": "chaa-chaa · chaa-chii",
+      "en": "father's younger brother and his wife"
+    },
+    {
+      "hi": "मामा · मामी",
+      "baca": "maa-maa · maa-mii",
+      "en": "mother's brother and his wife"
+    },
+    {
+      "hi": "भतीजा · भतीजी",
+      "baca": "bha-tii-jaa · bha-tii-jii",
+      "en": "brother's child"
+    },
+    {
+      "hi": "भांजा · भांजी",
+      "baca": "bhaan-jaa · bhaan-jii",
+      "en": "sister's child"
+    },
+    {
+      "hi": "तस्वीर",
+      "baca": "tas-viir",
+      "en": "picture, photo (f)"
+    },
+    {
+      "hi": "कौन",
+      "baca": "kaun",
+      "en": "who"
+    },
+    {
+      "hi": "कितना · कितनी · कितने",
+      "baca": "kit-naa · kit-nii · kit-ne",
+      "en": "how many, how much"
+    },
+    {
+      "hi": "लोग",
+      "baca": "log",
+      "en": "people (m)"
+    },
+    {
+      "hi": "व्यापारी",
+      "baca": "vyaa-paa-rii",
+      "en": "trader (m)"
+    },
+    {
+      "hi": "गृहिणी",
+      "baca": "gri-hi-Nii",
+      "en": "homemaker (f)"
+    },
+    {
+      "hi": "सबसे",
+      "baca": "sab-se",
+      "en": "most (literally: than all)"
+    },
+    {
+      "hi": "लखनऊ",
+      "baca": "lakh-na-uu",
+      "en": "Lucknow"
+    },
+    {
+      "hi": "शहर",
+      "baca": "sha-har",
+      "en": "city (m)"
+    },
+    {
+      "hi": "गाँव",
+      "baca": "gaaⁿv",
+      "en": "village (m)"
+    },
+    {
+      "hi": "नाम",
+      "baca": "naam",
+      "en": "name (m)"
+    }
+  ],
+  "exercises": [
+    {
+      "prompt": "Choose का, की, or के.",
+      "items": [
+        "राम ____ घर",
+        "प्रिया ____ किताब",
+        "मेरे भाई ____ बेटी",
+        "आपके परिवार ____ तस्वीर",
+        "दादा जी ____ गाँव",
+        "उनकी बहन ____ नाम"
+      ]
+    },
+    {
+      "prompt": "Fill in the right possessive form.",
+      "items": [
+        "यह ____ घर है। (my)",
+        "यह ____ किताब है। (my)",
+        "____ परिवार में कितने लोग हैं? (your, polite)",
+        "____ बहन कहाँ है? (his/her, far)",
+        "यह ____ स्कूल है। (our)"
+      ]
+    },
+    {
+      "prompt": "Put the words in the right order.",
+      "items": [
+        "है / यह / घर / किसका / ?",
+        "है / यह / जी / दादा / का / घर / मेरे",
+        "है / अच्छी / आपकी / हिंदी",
+        "हैं / लोग / में / कितने / परिवार / आपके / ?",
+        "है / बेटा / का / भाई / मेरे / वह"
+      ]
+    },
+    {
+      "prompt": "Translate into Hindi.",
+      "items": [
+        "Whose house is this?",
+        "This is my book.",
+        "My sister's name is Priya.",
+        "How many people are in your family?",
+        "We're five people.",
+        "This is a photo of our family."
+      ]
+    }
+  ],
+  "answers": [
+    "का — की — की — की — का — का",
+    "मेरा — मेरी — आपके — उसकी — हमारा",
+    "यह किसका घर है? — यह मेरे दादा जी का घर है। — आपकी हिंदी अच्छी है। — आपके परिवार में कितने लोग हैं? — वह मेरे भाई का बेटा है।",
+    "यह किसका घर है? — यह मेरी किताब है। — मेरी बहन का नाम प्रिया है। — आपके परिवार में कितने लोग हैं? — हम पाँच लोग हैं। — यह हमारे परिवार की तस्वीर है।"
+  ]
+}

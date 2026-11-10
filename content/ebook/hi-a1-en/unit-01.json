@@ -1,0 +1,533 @@
+{
+  "title": "Hello, my name is Ani",
+  "title_target": "नमस्ते, मेरा नाम आनी है — namaste, meraa naam aanii hai",
+  "goal": "Greet people, say your name, ask how someone is, and meet one small word you can never leave out of a Hindi sentence: है.",
+  "bekal": [
+    "greet with नमस्ते and answer it",
+    "say your name with मेरा नाम … है",
+    "ask and answer \"how are you?\"",
+    "choose between आप, तुम, and तू",
+    "use जी to sound polite with no effort"
+  ],
+  "dialogs": [
+    {
+      "title": "संवाद — At the door of the boarding house",
+      "intro": "Ani has just moved into a boarding house in Delhi. Her neighbor Rahul greets her on the stairs. Notice one thing from the very first line: almost every sentence ends in है or हूँ — and a Hindi sentence is never complete without it.",
+      "lines": [
+        {
+          "speaker": "राहुल:",
+          "text": "[नमस्ते|na-mas-te]! [मैं|maiⁿ] [राहुल|raa-hul] [हूँ|huuⁿ]।",
+          "id": "Hello! I'm Rahul.",
+          "literal": "hello! I — Rahul — am."
+        },
+        {
+          "speaker": "आनी:",
+          "text": "[नमस्ते|na-mas-te] [जी|jii]। [मेरा|me-raa] [नाम|naam] [आनी|aa-nii] [है|hai]।",
+          "id": "Hello. My name is Ani.",
+          "literal": "hello — ji. my — name — Ani — is."
+        },
+        {
+          "speaker": "राहुल:",
+          "text": "[आप|aap] [कैसी|kai-sii] [हैं|haiⁿ]?",
+          "id": "How are you?",
+          "literal": "you — how(fem.) — are?"
+        },
+        {
+          "speaker": "आनी:",
+          "text": "[मैं|maiⁿ] [ठीक|Thiik] [हूँ|huuⁿ], [शुक्रिया|shuk-ri-yaa]। [और|aur] [आप|aap]?",
+          "id": "I'm fine, thank you. And you?",
+          "literal": "I — fine — am, thanks. and — you?"
+        },
+        {
+          "speaker": "राहुल:",
+          "text": "[मैं|maiⁿ] [भी|bhii] [ठीक|Thiik] [हूँ|huuⁿ]। [आप|aap] [इंडोनेशिया|in-Do-ne-shi-yaa] [से|se] [हैं|haiⁿ]?",
+          "id": "I'm fine too. Are you from Indonesia?",
+          "literal": "I — also — fine — am. you — Indonesia — from — are?"
+        },
+        {
+          "speaker": "आनी:",
+          "text": "[जी|jii] [हाँ|haaⁿ]। [मैं|maiⁿ] [जकार्ता|ja-kaar-taa] [से|se] [हूँ|huuⁿ]।",
+          "id": "Yes. I'm from Jakarta.",
+          "literal": "ji — yes. I — Jakarta — from — am."
+        },
+        {
+          "speaker": "राहुल:",
+          "text": "[वाह|vaah]! [आप|aap] [हिंदी|hin-dii] [बोलती|bol-tii] [हैं|haiⁿ]!",
+          "id": "Wow! You speak Hindi!",
+          "literal": "wow! you — Hindi — speaking(fem.) — are!"
+        },
+        {
+          "speaker": "आनी:",
+          "text": "[थोड़ी|tho-Rii] [थोड़ी|tho-Rii]। [मैं|maiⁿ] [सीख|siikh] [रही|ra-hii] [हूँ|huuⁿ]।",
+          "id": "A little. I'm learning.",
+          "literal": "little — little. I — learn — -ing(fem.) — am."
+        },
+        {
+          "speaker": "राहुल:",
+          "text": "[बहुत|ba-hut] [अच्छा|ach-chhaa]। [यह|yeh] [मेरी|me-rii] [बहन|be-han] [है|hai], [प्रिया|pri-yaa]।",
+          "id": "Very good. This is my sister, Priya.",
+          "literal": "very — good. this — my(fem.) — sister — is, Priya."
+        },
+        {
+          "speaker": "प्रिया:",
+          "text": "[नमस्ते|na-mas-te]! [आपसे|aap-se] [मिलकर|mil-kar] [ख़ुशी|khu-shii] [हुई|hu-ii]।",
+          "id": "Hello! Nice to meet you.",
+          "literal": "hello! you-with — having-met — happiness — happened."
+        },
+        {
+          "speaker": "आनी:",
+          "text": "[मुझे|mu-jhe] [भी|bhii]। [आप|aap] [लोग|log] [यहाँ|ya-haaⁿ] [रहते|reh-te] [हैं|haiⁿ]?",
+          "id": "Me too. Do you all live here?",
+          "literal": "to-me — also. you — people — here — living — are?"
+        },
+        {
+          "speaker": "राहुल:",
+          "text": "[जी|jii] [हाँ|haaⁿ], [हम|ham] [यहीं|ya-hiiⁿ] [रहते|reh-te] [हैं|haiⁿ]। [फिर|phir] [मिलेंगे|mi-leⁿ-ge]!",
+          "id": "Yes, we live right here. See you!",
+          "literal": "ji — yes, we — right-here — living — are. again — will-meet!"
+        }
+      ],
+      "notes": [
+        "**है is the word beginners misplace or drop — and it can never go missing.** English has *is/am/are* too, but Hindi puts it **at the very end**, after everything else: मेरा नाम आनी **है** — \"my name Ani is\". Without है the sentence is not just odd; it isn't a sentence yet.",
+        "**नमस्ते works for hello and goodbye**, morning and night — one word for every occasion, no *good morning/good evening* to choose from. For something slightly more formal, use **नमस्कार**. Among Urdu speakers and Indian Muslims the greeting is **आदाब** (*aa-daab*) or **अस्सलामु अलैकुम**; among Sikhs, **सत श्री अकाल**. Each is answered with the very same words.",
+        "**जी is the most important word in Hindi that means nothing.** It sticks to everything to soften the sentence: **जी हाँ** (yes), **जी नहीं** (no), **राहुल जी** (Mr. Rahul), or on its own as \"yes?\" when someone calls you. Adding जी is almost never wrong; leaving it out can sound cold. ⚠️ With older people and new acquaintances, use जी.",
+        "**कैसी हैं, not कैसे हैं — because Ani is a woman.** This is your first sign of something that will change how you think: in Hindi, **the person's gender goes into the words**. To a woman: *आप कैसी हैं?* To a man: *आप कैसे हैं?* The answer follows suit — Ani says *मैं ठीक हूँ* (safe for both), but to say \"I'm tired\" she must say *मैं थकी हूँ*, while Rahul says *मैं थका हूँ*. Unit 4 covers this in full.",
+        "**There are three ways to say \"you\", and choosing the wrong one really shows.** **आप** for anyone older, new, or respected — the form used throughout this course. **तुम** for friends your age and people you are close to. **तू** for very close friends, small children, and prayer; to a stranger it sounds rude. ⚠️ As a newcomer, use **आप** with everyone. Nobody is offended by too much respect.",
+        "**यह is spelled \"yah\" but said \"yeh\".** The same goes for **वह** (spelled *vah*, said **voh**). This is not a quirk of two words but the pattern you read about at the front of the book: a **ह** squeezed between sounds changes the color of the vowels around it. This course always prints what is **said**, not a letter-by-letter spelling.",
+        "**शुक्रिया or धन्यवाद?** Both mean thank you. **शुक्रिया** (from the same Arabic root as *shukr*, gratitude) sounds warm and everyday; **धन्यवाद** is more formal and more often written than spoken. ⚠️ A cultural surprise: Indians **thank people for small things far less often** than English speakers do. Thanking your mother for cooking, or a close friend for pouring tea, actually sounds distant. Save शुक्रिया for strangers and for real kindness."
+      ],
+      "grammars": [
+        {
+          "title": "होना — the first verb you need",
+          "body": [
+            "होना (*ho-naa*, \"to be\") is the verb you will use most. Learn this table today; half of all A1 sentences are built on it."
+          ],
+          "tables": [
+            {
+              "head": [
+                "Subject",
+                "Pronunciation",
+                "Form of है",
+                "Example"
+              ],
+              "rows": [
+                [
+                  "मैं — I",
+                  "maiⁿ",
+                  "हूँ",
+                  "मैं आनी हूँ"
+                ],
+                [
+                  "तू — you (very close)",
+                  "tuu",
+                  "है",
+                  "तू ठीक है"
+                ],
+                [
+                  "तुम — you (familiar)",
+                  "tum",
+                  "हो",
+                  "तुम ठीक हो"
+                ],
+                [
+                  "यह — this, he/she (near)",
+                  "yeh",
+                  "है",
+                  "यह प्रिया है"
+                ],
+                [
+                  "वह — that, he/she (far)",
+                  "voh",
+                  "है",
+                  "वह राहुल है"
+                ],
+                [
+                  "हम — we",
+                  "ham",
+                  "हैं",
+                  "हम ठीक हैं"
+                ],
+                [
+                  "आप — you (polite; plural)",
+                  "aap",
+                  "हैं",
+                  "आप कैसे हैं?"
+                ],
+                [
+                  "ये · वे — they",
+                  "ye · ve",
+                  "हैं",
+                  "वे यहाँ हैं"
+                ]
+              ]
+            }
+          ],
+          "after": [
+            "To negate, just put **नहीं** right before है: *मैं ठीक नहीं हूँ* (I'm not fine). ⚠️ In fast speech है often drops after नहीं — *मैं ठीक नहीं* — but don't copy that yet; write it in full until the pattern sticks.",
+            "⚠️ **आप always takes हैं, even when you are talking to just one person.** Hindi shows respect through the plural — exactly like French *vous*. The same goes for parents you talk about: *पिता जी घर पर हैं* (Father is at home), not है."
+          ]
+        },
+        {
+          "title": "Greetings, goodbyes, and small talk",
+          "table": {
+            "head": [
+              "हिंदी",
+              "Pronunciation",
+              "When to use it"
+            ],
+            "rows": [
+              [
+                "नमस्ते",
+                "na-mas-te",
+                "hello or goodbye, any time"
+              ],
+              [
+                "नमस्कार",
+                "na-mas-kaar",
+                "more formal; common on air and in speeches"
+              ],
+              [
+                "आदाब",
+                "aa-daab",
+                "Urdu speakers' greeting; polite and warm"
+              ],
+              [
+                "आप कैसे हैं?",
+                "aap kai-se haiⁿ",
+                "how are you — to a man"
+              ],
+              [
+                "आप कैसी हैं?",
+                "aap kai-sii haiⁿ",
+                "how are you — to a woman"
+              ],
+              [
+                "क्या हाल है?",
+                "kyaa haal hai",
+                "how's it going (casual) — *haal* = state, condition"
+              ],
+              [
+                "मैं ठीक हूँ",
+                "maiⁿ Thiik huuⁿ",
+                "I'm fine"
+              ],
+              [
+                "सब ठीक है",
+                "sab Thiik hai",
+                "all good"
+              ],
+              [
+                "आपसे मिलकर ख़ुशी हुई",
+                "aap-se mil-kar khu-shii hu-ii",
+                "nice to meet you"
+              ],
+              [
+                "फिर मिलेंगे",
+                "phir mi-leⁿ-ge",
+                "see you again"
+              ],
+              [
+                "अलविदा",
+                "al-vi-daa",
+                "farewell (for a long parting)"
+              ],
+              [
+                "शुभ रात्रि",
+                "shubh raat-ri",
+                "good night (before bed)"
+              ]
+            ]
+          },
+          "after": [
+            "⚠️ **अलविदा is not \"see you\".** It is for real farewells — moving to another city or country, or a sad scene in a film. For everyday goodbyes, **नमस्ते** or **फिर मिलेंगे** is enough."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Introducing yourself in four sentences",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "These four sentences cover a whole first introduction. Learn them as one block, swap in your own details, and you have an introduction ready for any occasion."
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Sentence",
+            "Pronunciation",
+            "Meaning"
+          ],
+          "rows": [
+            [
+              "मेरा नाम आनी है।",
+              "me-raa naam aa-nii hai",
+              "My name is Ani."
+            ],
+            [
+              "मैं इंडोनेशिया से हूँ।",
+              "maiⁿ in-Do-ne-shi-yaa se huuⁿ",
+              "I'm from Indonesia."
+            ],
+            [
+              "मैं यहाँ काम करती हूँ।",
+              "maiⁿ ya-haaⁿ kaam kar-tii huuⁿ",
+              "I work here. (woman)"
+            ],
+            [
+              "मुझे हिंदी थोड़ी थोड़ी आती है।",
+              "mu-jhe hin-dii tho-Rii tho-Rii aa-tii hai",
+              "I speak a little Hindi."
+            ]
+          ]
+        },
+        {
+          "type": "kotak",
+          "title": "Two answers that will save you in week one",
+          "items": [
+            "**मुझे हिंदी नहीं आती।** (*mu-jhe hin-dii na-hiiⁿ aa-tii*) — \"I don't speak Hindi.\" It sounds far better than silence, and it almost always makes the other person slow down.",
+            "**ज़रा धीरे बोलिए।** (*za-raa dhii-re bo-li-ye*) — \"Please speak a little more slowly.\" **ज़रा** means \"a little\" and makes any request sound polite. Keep this one handy; you'll use it every day.",
+            "⚠️ Don't answer the compliment *आप हिंदी बोलती हैं!* with a flat denial. The natural reply is **थोड़ी थोड़ी** (a little) or **सीख रही हूँ** (I'm learning). Denying it outright just stops the conversation."
+          ]
+        },
+        {
+          "type": "p",
+          "text": "One thing about names. Indians will ask your name and then, quite often, ask **आपका शुभ नाम?** (*aap-kaa shubh naam* — \"your good name?\"). It isn't a different question; it's the polite way of asking the same thing. Just give your name. And don't be surprised if your name is repeated with a slightly different pronunciation — not every sound travels neatly into Hindi, and people are trying, just like you."
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "hi": "नमस्ते",
+      "baca": "na-mas-te",
+      "en": "hello; goodbye"
+    },
+    {
+      "hi": "जी",
+      "baca": "jii",
+      "en": "politeness word; yes?"
+    },
+    {
+      "hi": "मैं",
+      "baca": "maiⁿ",
+      "en": "I"
+    },
+    {
+      "hi": "आप",
+      "baca": "aap",
+      "en": "you (polite); you all"
+    },
+    {
+      "hi": "तुम",
+      "baca": "tum",
+      "en": "you (familiar)"
+    },
+    {
+      "hi": "तू",
+      "baca": "tuu",
+      "en": "you (very close)"
+    },
+    {
+      "hi": "हम",
+      "baca": "ham",
+      "en": "we"
+    },
+    {
+      "hi": "यह",
+      "baca": "yeh",
+      "en": "this; he/she (near)"
+    },
+    {
+      "hi": "वह",
+      "baca": "voh",
+      "en": "that; he/she (far)"
+    },
+    {
+      "hi": "है",
+      "baca": "hai",
+      "en": "is (he/she/it)"
+    },
+    {
+      "hi": "हूँ",
+      "baca": "huuⁿ",
+      "en": "am (I)"
+    },
+    {
+      "hi": "हैं",
+      "baca": "haiⁿ",
+      "en": "are (you polite, they)"
+    },
+    {
+      "hi": "हो",
+      "baca": "ho",
+      "en": "are (तुम)"
+    },
+    {
+      "hi": "नाम",
+      "baca": "naam",
+      "en": "name"
+    },
+    {
+      "hi": "मेरा · मेरी",
+      "baca": "me-raa · me-rii",
+      "en": "my"
+    },
+    {
+      "hi": "कैसे · कैसी",
+      "baca": "kai-se · kai-sii",
+      "en": "how"
+    },
+    {
+      "hi": "ठीक",
+      "baca": "Thiik",
+      "en": "fine, all right"
+    },
+    {
+      "hi": "शुक्रिया",
+      "baca": "shuk-ri-yaa",
+      "en": "thank you"
+    },
+    {
+      "hi": "धन्यवाद",
+      "baca": "dhan-ya-vaad",
+      "en": "thank you (formal)"
+    },
+    {
+      "hi": "और",
+      "baca": "aur",
+      "en": "and; then"
+    },
+    {
+      "hi": "भी",
+      "baca": "bhii",
+      "en": "also, too"
+    },
+    {
+      "hi": "से",
+      "baca": "se",
+      "en": "from; with"
+    },
+    {
+      "hi": "हाँ",
+      "baca": "haaⁿ",
+      "en": "yes"
+    },
+    {
+      "hi": "नहीं",
+      "baca": "na-hiiⁿ",
+      "en": "no, not"
+    },
+    {
+      "hi": "बहुत",
+      "baca": "ba-hut",
+      "en": "very; a lot"
+    },
+    {
+      "hi": "अच्छा",
+      "baca": "ach-chhaa",
+      "en": "good, fine"
+    },
+    {
+      "hi": "थोड़ा · थोड़ी",
+      "baca": "tho-Raa · tho-Rii",
+      "en": "a little"
+    },
+    {
+      "hi": "बहन",
+      "baca": "be-han",
+      "en": "sister"
+    },
+    {
+      "hi": "भाई",
+      "baca": "bhaa-ii",
+      "en": "brother"
+    },
+    {
+      "hi": "लोग",
+      "baca": "log",
+      "en": "people"
+    },
+    {
+      "hi": "यहाँ",
+      "baca": "ya-haaⁿ",
+      "en": "here"
+    },
+    {
+      "hi": "वहाँ",
+      "baca": "va-haaⁿ",
+      "en": "there"
+    },
+    {
+      "hi": "रहना",
+      "baca": "reh-naa",
+      "en": "to live, to stay"
+    },
+    {
+      "hi": "ख़ुशी",
+      "baca": "khu-shii",
+      "en": "happiness, joy"
+    },
+    {
+      "hi": "फिर",
+      "baca": "phir",
+      "en": "again; then"
+    },
+    {
+      "hi": "ज़रा",
+      "baca": "za-raa",
+      "en": "a little (softens a request)"
+    }
+  ],
+  "exercises": [
+    {
+      "prompt": "Fill in the right form of होना: हूँ, है, हैं, or हो.",
+      "items": [
+        "मैं आनी ____ ।",
+        "वह राहुल ____ ।",
+        "आप कैसे ____ ?",
+        "हम ठीक ____ ।",
+        "तुम कहाँ ____ ?",
+        "वे यहाँ ____ ।"
+      ]
+    },
+    {
+      "prompt": "Choose कैसे or कैसी, depending on who you're talking to.",
+      "items": [
+        "To Priya: आप ____ हैं?",
+        "To Rahul: आप ____ हैं?",
+        "To Mother: माँ जी ____ हैं?",
+        "To an old gentleman: आप ____ हैं?"
+      ]
+    },
+    {
+      "prompt": "Put the words in the right order. Remember: the verb goes last.",
+      "items": [
+        "है / नाम / आनी / मेरा",
+        "हूँ / मैं / से / जकार्ता",
+        "हैं / आप / कैसे / ?",
+        "है / यह / बहन / मेरी",
+        "हैं / रहते / यहाँ / हम"
+      ]
+    },
+    {
+      "prompt": "Translate into Hindi.",
+      "items": [
+        "Hello! My name is Budi.",
+        "I'm from Indonesia.",
+        "How are you? (to a woman)",
+        "I'm fine, thank you.",
+        "This is my brother.",
+        "See you again!"
+      ]
+    }
+  ],
+  "answers": [
+    "हूँ — है — हैं — हैं — हो — हैं",
+    "कैसी — कैसे — कैसी — कैसे",
+    "मेरा नाम आनी है। — मैं जकार्ता से हूँ। — आप कैसे हैं? — यह मेरी बहन है। — हम यहाँ रहते हैं।",
+    "नमस्ते! मेरा नाम बुदी है। — मैं इंडोनेशिया से हूँ। — आप कैसी हैं? — मैं ठीक हूँ, शुक्रिया। — यह मेरा भाई है। — फिर मिलेंगे!"
+  ]
+}

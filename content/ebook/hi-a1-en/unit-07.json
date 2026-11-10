@@ -1,0 +1,607 @@
+{
+  "title": "In the room, on the table — and words that change shape",
+  "title_target": "कमरे में, मेज़ पर — kamre meⁿ, mez par",
+  "goal": "Say where things are — and face the form rule that trips up beginners most: Hindi nouns change their ending as soon as a postposition follows them.",
+  "bekal": [
+    "use में, पर, के पास, के नीचे, के ऊपर, के सामने",
+    "put nouns into the oblique form, singular and plural",
+    "ask and answer where something is",
+    "name rooms and furniture",
+    "recognize why कमरा becomes कमरे"
+  ],
+  "dialogs": [
+    {
+      "title": "संवाद — The lost key",
+      "intro": "Ani has lost her key. In line nine she asks something that may have been bothering you since unit 3, and Priya answers in one short sentence that sums up this whole unit.",
+      "lines": [
+        {
+          "speaker": "आनी:",
+          "text": "[प्रिया|pri-yaa], [मेरी|me-rii] [चाबी|chaa-bii] [कहाँ|ka-haaⁿ] [है|hai]?",
+          "id": "Priya, where's my key?",
+          "literal": "Priya, my(fem.) — key — where — is?"
+        },
+        {
+          "speaker": "प्रिया:",
+          "text": "[मेज़|mez] [पर|par] [नहीं|na-hiiⁿ] [है|hai]?",
+          "id": "Isn't it on the table?",
+          "literal": "table — on — not — is?"
+        },
+        {
+          "speaker": "आनी:",
+          "text": "[नहीं|na-hiiⁿ], [कमरे|kam-re] [में|meⁿ] [भी|bhii] [नहीं|na-hiiⁿ] [है|hai]।",
+          "id": "No, and it's not in the room either.",
+          "literal": "no, room(obl.) — in — also — not — is."
+        },
+        {
+          "speaker": "प्रिया:",
+          "text": "[बैग|baig] [में|meⁿ] [देखिए|de-khi-ye]। [या|yaa] [अलमारी|al-maa-rii] [के|ke] [अंदर|an-dar]।",
+          "id": "Look in your bag. Or inside the wardrobe.",
+          "literal": "bag — in — look. or — wardrobe — of — inside."
+        },
+        {
+          "speaker": "आनी:",
+          "text": "[बैग|baig] [में|meⁿ] [सिर्फ़|sirf] [किताबें|ki-taa-beⁿ] [हैं|haiⁿ]।",
+          "id": "There are only books in my bag.",
+          "literal": "bag — in — only — books — are."
+        },
+        {
+          "speaker": "प्रिया:",
+          "text": "[दरवाज़े|dar-vaa-ze] [के|ke] [पास|paas]? [कुर्सी|kur-sii] [के|ke] [नीचे|nii-che]?",
+          "id": "Near the door? Under the chair?",
+          "literal": "door(obl.) — of — near? chair — of — under?"
+        },
+        {
+          "speaker": "आनी:",
+          "text": "[रुकिए|ru-ki-ye]… [हाँ|haaⁿ]! [किताबों|ki-taa-boⁿ] [के|ke] [नीचे|nii-che] [है|hai]!",
+          "id": "Wait… yes! It's under the books!",
+          "literal": "wait… yes! books(obl.) — of — under — is!"
+        },
+        {
+          "speaker": "प्रिया:",
+          "text": "[हा|haa] [हा|haa]। [चाबियाँ|chaa-bi-yaaⁿ] [हमेशा|ha-me-shaa] [किताबों|ki-taa-boⁿ] [के|ke] [नीचे|nii-che] [होती|ho-tii] [हैं|haiⁿ]।",
+          "id": "Ha ha. Keys are always under the books.",
+          "literal": "ha — ha. keys — always — books(obl.) — of — under — being(fem.) — are."
+        },
+        {
+          "speaker": "आनी:",
+          "text": "[प्रिया|pri-yaa], [एक|ek] [सवाल|sa-vaal]। „[कमरा|kam-raa]“ [या|yaa] „[कमरे|kam-re] [में|meⁿ]“?",
+          "id": "Priya, a question. \"Kamraa\" or \"kamre meⁿ\"?",
+          "literal": "Priya, one — question. \"room\" — or — \"room(obl.) — in\"?"
+        },
+        {
+          "speaker": "प्रिया:",
+          "text": "[जब|jab] [पीछे|pii-chhe] [कोई|ko-ii] [शब्द|shabd] [आता|aa-taa] [है|hai], [कमरा|kam-raa] „[कमरे|kam-re]“ [हो|ho] [जाता|jaa-taa] [है|hai]।",
+          "id": "When a word comes after it, \"kamraa\" turns into \"kamre\".",
+          "literal": "when — behind — some — word — coming — is, room — \"room(obl.)\" — becoming — goes."
+        },
+        {
+          "speaker": "आनी:",
+          "text": "[तो|to] „[लड़का|laR-kaa]“ → „[लड़के|laR-ke] [को|ko]“? „[किताबें|ki-taa-beⁿ]“ → „[किताबों|ki-taa-boⁿ] [में|meⁿ]“?",
+          "id": "So \"laRkaa\" → \"laRke ko\"? \"kitaabeⁿ\" → \"kitaaboⁿ meⁿ\"?",
+          "literal": "so — \"boy\" → \"boy(obl.) — to\"? \"books\" → \"books(obl.) — in\"?"
+        },
+        {
+          "speaker": "प्रिया:",
+          "text": "[बिलकुल|bil-kul] [सही|sa-hii]! [आप|aap] [बहुत|ba-hut] [तेज़|tez] [हैं|haiⁿ]।",
+          "id": "Exactly right! You catch on very fast.",
+          "literal": "completely — right! you — very — quick — are."
+        }
+      ],
+      "notes": [
+        "**The rule is as simple as Priya says: if a postposition follows, the noun changes form.** That changed form is called the **oblique form**. कमरा on its own stays कमरा; a room followed by में becomes **कमरे** में. ⚠️ This isn't an exception but a rule that applies to **every** postposition: में, पर, से, को, तक, का/की/के, and all the compounds starting with के.",
+        "**Only two groups change; the other two don't change at all.** Masculine nouns ending in **-आ** → -ए (कमरा → कमरे, लड़का → लड़के, दरवाज़ा → दरवाज़े). **Any plural** noun → -ओं (किताबें → किताबों, कमरे → कमरों, लड़कियाँ → लड़कियों). The rest — घर, मेज़, किताब, कुर्सी in the singular — stay put. So *घर में*, *मेज़ पर*, *किताब में*: nothing to change.",
+        "**The plural oblique ALWAYS ends in -ओं, no exceptions.** This is the tidiest part of the system, so hold on to it. किताबों, कमरों, लड़कियों, लोगों, दोस्तों, घरों — all of them. ⚠️ Note that the usual plural ending (-एँ, -याँ, -ए) is **replaced**, not stacked: किताब**ें** → किताब**ों**, not किताबें‌ों.",
+        "**Compound postpositions all start with के, and that के is itself oblique.** के पास (near), के नीचे (under), के ऊपर (above), के सामने (in front of), के पीछे (behind), के बीच (between), के लिए (for), के बाद (after), के साथ (with). That's why it's *दरवाज़े **के** पास* — दरवाज़ा goes oblique because के follows it.",
+        "**⚠️ Adjectives and possessives go oblique too.** *बड़ा कमरा* → *बड़**े** कमरे में*. *मेरा घर* → *मेर**े** घर में*. That's why you've been meeting मेरे and आपके since units 3 and 5 without a full explanation. Now the reason is clear: not because they're plural, but because there's a postposition at the end of the phrase.",
+        "**A subtle trap: the oblique form adds nothing to the meaning.** *कमरे में* isn't \"in the rooms\"; it's still one room. The oblique isn't a plural marker, it's a \"there's a postposition after me\" marker. Confusing oblique कमरे with plural कमरे is the most common mistake in the first month — and the only way to tell them apart is to check whether a postposition follows.",
+        "**होती हैं in line eight, not हैं.** The forms **होता · होती · होते हैं** are used for general truths: \"keys *always* end up under books\". Compare *चाबी मेज़ पर **है*** (the key is on the table, right now) with *चाबियाँ किताबों के नीचे **होती हैं*** (that's how keys are in general). You'll hear this subtle difference often in sayings and explanations."
+      ],
+      "grammars": [
+        {
+          "title": "The oblique form: one table for everything",
+          "body": [
+            "Compare the second and third columns. Only the first two singular rows change — plus the whole plural side."
+          ],
+          "tables": [
+            {
+              "head": [
+                "Group",
+                "Direct",
+                "Oblique (before a postposition)",
+                "Example"
+              ],
+              "rows": [
+                [
+                  "Masculine -आ, singular",
+                  "कमरा",
+                  "कमर**े**",
+                  "कमरे में"
+                ],
+                [
+                  "Masculine -आ, plural",
+                  "कमरे",
+                  "कमर**ों**",
+                  "कमरों में"
+                ],
+                [
+                  "Other masculine, singular",
+                  "घर",
+                  "घर (unchanged)",
+                  "घर में"
+                ],
+                [
+                  "Other masculine, plural",
+                  "घर",
+                  "घर**ों**",
+                  "घरों में"
+                ],
+                [
+                  "Feminine -ई, singular",
+                  "लड़की",
+                  "लड़की (unchanged)",
+                  "लड़की को"
+                ],
+                [
+                  "Feminine -ई, plural",
+                  "लड़कियाँ",
+                  "लड़कि**यों**",
+                  "लड़कियों को"
+                ],
+                [
+                  "Other feminine, singular",
+                  "किताब",
+                  "किताब (unchanged)",
+                  "किताब में"
+                ],
+                [
+                  "Other feminine, plural",
+                  "किताबें",
+                  "किताब**ों**",
+                  "किताबों में"
+                ]
+              ]
+            },
+            {
+              "head": [
+                "Postpositions of place",
+                "Pronunciation",
+                "Meaning",
+                "Example"
+              ],
+              "rows": [
+                [
+                  "में",
+                  "meⁿ",
+                  "in",
+                  "बैग में"
+                ],
+                [
+                  "पर",
+                  "par",
+                  "on (a surface)",
+                  "मेज़ पर"
+                ],
+                [
+                  "के अंदर",
+                  "ke an-dar",
+                  "inside",
+                  "अलमारी के अंदर"
+                ],
+                [
+                  "के बाहर",
+                  "ke baa-har",
+                  "outside",
+                  "घर के बाहर"
+                ],
+                [
+                  "के ऊपर",
+                  "ke uu-par",
+                  "above",
+                  "मेज़ के ऊपर"
+                ],
+                [
+                  "के नीचे",
+                  "ke nii-che",
+                  "under, below",
+                  "कुर्सी के नीचे"
+                ],
+                [
+                  "के पास",
+                  "ke paas",
+                  "near",
+                  "दरवाज़े के पास"
+                ],
+                [
+                  "के सामने",
+                  "ke saam-ne",
+                  "in front of",
+                  "स्कूल के सामने"
+                ],
+                [
+                  "के पीछे",
+                  "ke pii-chhe",
+                  "behind",
+                  "घर के पीछे"
+                ],
+                [
+                  "के बीच",
+                  "ke biich",
+                  "between",
+                  "दो कमरों के बीच"
+                ]
+              ]
+            }
+          ],
+          "after": [
+            "⚠️ The difference between **पर** and **के ऊपर** is English *on* vs. *above*: पर means touching the surface (*किताब मेज़ पर है* — the book is on the table), while के ऊपर means higher up (*पंखा मेज़ के ऊपर है* — the fan is above the table, on the ceiling)."
+          ]
+        },
+        {
+          "title": "The house and what's in it",
+          "table": {
+            "head": [
+              "हिंदी",
+              "Pronunciation",
+              "Meaning",
+              "हिंदी",
+              "Pronunciation",
+              "Meaning"
+            ],
+            "rows": [
+              [
+                "कमरा",
+                "kam-raa",
+                "room (m)",
+                "रसोई",
+                "ra-so-ii",
+                "kitchen (f)"
+              ],
+              [
+                "बैठक",
+                "bai-Thak",
+                "living room (f)",
+                "बाथरूम",
+                "baath-ruum",
+                "bathroom (m)"
+              ],
+              [
+                "छत",
+                "chhat",
+                "roof, rooftop terrace (f)",
+                "सीढ़ी",
+                "sii-Rhii",
+                "stairs (f)"
+              ],
+              [
+                "दीवार",
+                "dii-vaar",
+                "wall (f)",
+                "फ़र्श",
+                "farsh",
+                "floor (m)"
+              ],
+              [
+                "मेज़",
+                "mez",
+                "table (f)",
+                "कुर्सी",
+                "kur-sii",
+                "chair (f)"
+              ],
+              [
+                "बिस्तर",
+                "bis-tar",
+                "bed (m)",
+                "तकिया",
+                "ta-ki-yaa",
+                "pillow (m)"
+              ],
+              [
+                "अलमारी",
+                "al-maa-rii",
+                "wardrobe (f)",
+                "पंखा",
+                "pan-khaa",
+                "fan (m)"
+              ],
+              [
+                "खिड़की",
+                "khiR-kii",
+                "window (f)",
+                "दरवाज़ा",
+                "dar-vaa-zaa",
+                "door (m)"
+              ],
+              [
+                "बत्ती",
+                "bat-tii",
+                "light, lamp (f)",
+                "चाबी",
+                "chaa-bii",
+                "key (f)"
+              ],
+              [
+                "बैग",
+                "baig",
+                "bag (m)",
+                "सामान",
+                "saa-maan",
+                "belongings, stuff (m)"
+              ]
+            ]
+          },
+          "after": [
+            "⚠️ **छत** means \"roof\" **and** \"ceiling\", and in India it also means the flat terrace on top of the house — for drying laundry, afternoon tea, and sleeping on summer nights. If someone says *छत पर चलिए*, it's a warm invitation."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Asking where things are, and answering",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "The question-and-answer pattern is always the same: noun + postposition + है. You only have to decide one thing — whether the noun changes form."
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Question",
+            "Answer",
+            "Form note"
+          ],
+          "rows": [
+            [
+              "चाबी कहाँ है?",
+              "मेज़ पर है।",
+              "मेज़ doesn't change"
+            ],
+            [
+              "किताब कहाँ है?",
+              "बैग में है।",
+              "बैग doesn't change"
+            ],
+            [
+              "आप कहाँ हैं?",
+              "मैं कमरे में हूँ।",
+              "⚠️ कमरा → कमरे"
+            ],
+            [
+              "बच्चे कहाँ हैं?",
+              "वे कमरों में हैं।",
+              "⚠️ plural → कमरों"
+            ],
+            [
+              "स्कूल कहाँ है?",
+              "घर के पास है।",
+              "घर doesn't change"
+            ],
+            [
+              "दुकान कहाँ है?",
+              "दरवाज़े के सामने।",
+              "⚠️ दरवाज़ा → दरवाज़े"
+            ]
+          ]
+        },
+        {
+          "type": "kotak",
+          "title": "A quick way to decide",
+          "items": [
+            "**Question one: is there a postposition after it?** If not, nothing changes. Done.",
+            "**Question two: is the noun plural?** If so, the ending is **-ओं**. Done — this holds for both genders.",
+            "**Question three: is the noun masculine and ending in -आ?** If so, the ending is **-ए**. If not, nothing changes.",
+            "Those three questions cover the whole system. In a month you'll do it without thinking, but in the first weeks, really ask all three before you speak."
+          ]
+        },
+        {
+          "type": "p",
+          "text": "A consolation. The oblique form takes more beginner energy than any other part of Hindi, and it's also the part that **stops feeling hard the fastest**. The reason is simple: common combinations — *घर में*, *कमरे में*, *मेज़ पर*, *दोस्तों के साथ* — you'll say dozens of times a day until each one becomes a single sound in your head, not two words to assemble. The rule stays useful for rare words, but the common ones stick first."
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "hi": "के अंदर",
+      "baca": "ke an-dar",
+      "en": "inside"
+    },
+    {
+      "hi": "के बाहर",
+      "baca": "ke baa-har",
+      "en": "outside"
+    },
+    {
+      "hi": "के ऊपर",
+      "baca": "ke uu-par",
+      "en": "above"
+    },
+    {
+      "hi": "के नीचे",
+      "baca": "ke nii-che",
+      "en": "under, below"
+    },
+    {
+      "hi": "के सामने",
+      "baca": "ke saam-ne",
+      "en": "in front of"
+    },
+    {
+      "hi": "के पीछे",
+      "baca": "ke pii-chhe",
+      "en": "behind"
+    },
+    {
+      "hi": "के बीच",
+      "baca": "ke biich",
+      "en": "between"
+    },
+    {
+      "hi": "के साथ",
+      "baca": "ke saath",
+      "en": "with, together with"
+    },
+    {
+      "hi": "के लिए",
+      "baca": "ke li-ye",
+      "en": "for"
+    },
+    {
+      "hi": "रसोई",
+      "baca": "ra-so-ii",
+      "en": "kitchen (f)"
+    },
+    {
+      "hi": "बैठक",
+      "baca": "bai-Thak",
+      "en": "living room (f)"
+    },
+    {
+      "hi": "बाथरूम",
+      "baca": "baath-ruum",
+      "en": "bathroom (m)"
+    },
+    {
+      "hi": "छत",
+      "baca": "chhat",
+      "en": "roof, rooftop terrace (f)"
+    },
+    {
+      "hi": "सीढ़ी",
+      "baca": "sii-Rhii",
+      "en": "stairs (f)"
+    },
+    {
+      "hi": "दीवार",
+      "baca": "dii-vaar",
+      "en": "wall (f)"
+    },
+    {
+      "hi": "फ़र्श",
+      "baca": "farsh",
+      "en": "floor (m)"
+    },
+    {
+      "hi": "तकिया",
+      "baca": "ta-ki-yaa",
+      "en": "pillow (m)"
+    },
+    {
+      "hi": "पंखा",
+      "baca": "pan-khaa",
+      "en": "fan (m)"
+    },
+    {
+      "hi": "बत्ती",
+      "baca": "bat-tii",
+      "en": "light, lamp (f)"
+    },
+    {
+      "hi": "सामान",
+      "baca": "saa-maan",
+      "en": "belongings, stuff (m)"
+    },
+    {
+      "hi": "सिर्फ़",
+      "baca": "sirf",
+      "en": "only"
+    },
+    {
+      "hi": "कोई",
+      "baca": "ko-ii",
+      "en": "someone; some"
+    },
+    {
+      "hi": "जब",
+      "baca": "jab",
+      "en": "when"
+    },
+    {
+      "hi": "सही",
+      "baca": "sa-hii",
+      "en": "right, correct"
+    },
+    {
+      "hi": "ग़लत",
+      "baca": "gha-lat",
+      "en": "wrong"
+    },
+    {
+      "hi": "तेज़",
+      "baca": "tez",
+      "en": "fast; sharp"
+    },
+    {
+      "hi": "धीरे",
+      "baca": "dhii-re",
+      "en": "slow"
+    },
+    {
+      "hi": "होता · होती · होते हैं",
+      "baca": "ho-taa · ho-tii · ho-te haiⁿ",
+      "en": "is generally (general truth)"
+    },
+    {
+      "hi": "बच्चा · बच्चे",
+      "baca": "bach-chaa · bach-che",
+      "en": "child · children (m)"
+    },
+    {
+      "hi": "पीछे",
+      "baca": "pii-chhe",
+      "en": "back, behind"
+    }
+  ],
+  "exercises": [
+    {
+      "prompt": "Put into the oblique form, then add में.",
+      "items": [
+        "कमरा → ____",
+        "घर → ____",
+        "किताबें → ____",
+        "अलमारी → ____",
+        "कमरे (plural) → ____",
+        "दुकानें → ____"
+      ]
+    },
+    {
+      "prompt": "Fill in the right form.",
+      "items": [
+        "चाबी मेज़ ____ है। (on)",
+        "मैं ____ में हूँ। (कमरा)",
+        "स्कूल घर ____ है। (near)",
+        "किताब कुर्सी ____ है। (under)",
+        "बच्चे ____ में हैं। (कमरे, plural)"
+      ]
+    },
+    {
+      "prompt": "Put the words in the right order.",
+      "items": [
+        "है / चाबी / कहाँ / मेरी / ?",
+        "है / में / किताब / बैग",
+        "हूँ / मैं / में / कमरे",
+        "है / के / दुकान / पास / घर",
+        "हैं / के / किताबों / नीचे / चाबियाँ"
+      ]
+    },
+    {
+      "prompt": "Translate into Hindi.",
+      "items": [
+        "Where's my key?",
+        "It's on the table.",
+        "I'm in the room.",
+        "The book is in the bag.",
+        "The shop is in front of the house.",
+        "The children are outside."
+      ]
+    }
+  ],
+  "answers": [
+    "कमरे में — घर में — किताबों में — अलमारी में — कमरों में — दुकानों में",
+    "पर — कमरे — के पास — के नीचे — कमरों",
+    "मेरी चाबी कहाँ है? — किताब बैग में है। — मैं कमरे में हूँ। — दुकान घर के पास है। — चाबियाँ किताबों के नीचे हैं।",
+    "मेरी चाबी कहाँ है? — मेज़ पर है। — मैं कमरे में हूँ। — किताब बैग में है। — दुकान घर के सामने है। — बच्चे बाहर हैं।"
+  ]
+}

@@ -1,0 +1,606 @@
+{
+  "title": "What time is it? — quarter past, half past, quarter to",
+  "title_target": "क्या बजा है? — kyaa bajaa hai?",
+  "goal": "Tell the time and make appointments — and learn the three little words Hindi uses for quarter past, half past, and quarter to, plus two special words that have no English match.",
+  "bekal": [
+    "ask and say what time it is",
+    "use सवा, साढ़े, and पौने",
+    "recognize डेढ़ and ढाई",
+    "name the parts of the day: सुबह, दोपहर, शाम, रात",
+    "arrange to meet"
+  ],
+  "dialogs": [
+    {
+      "title": "संवाद — Making a date",
+      "intro": "Rahul asks Ani to meet tomorrow. In line six Ani discovers something useful: Indonesian and Hindi both use \"half\", but count from opposite ends — and Hindi counts the English way.",
+      "lines": [
+        {
+          "speaker": "राहुल:",
+          "text": "[कल|kal] [आप|aap] [फ़्री|frii] [हैं|haiⁿ]?",
+          "id": "Are you free tomorrow?",
+          "literal": "tomorrow — you — free — are?"
+        },
+        {
+          "speaker": "आनी:",
+          "text": "[हाँ|haaⁿ], [शाम|shaam] [को|ko]। [कितने|kit-ne] [बजे|ba-je]?",
+          "id": "Yes, in the evening. What time?",
+          "literal": "yes, evening — at. how-many — o'clock?"
+        },
+        {
+          "speaker": "राहुल:",
+          "text": "[साढ़े|saa-Rhe] [छह|chhah] [बजे|ba-je]?",
+          "id": "Half past six?",
+          "literal": "half-past — six — o'clock?"
+        },
+        {
+          "speaker": "आनी:",
+          "text": "[साढ़े|saa-Rhe] [छह|chhah]… [यानी|yaa-nii] [छह|chhah] [बजकर|baj-kar] [तीस|tiis] [मिनट|mi-naT]?",
+          "id": "SaaRhe chhah… you mean six thirty?",
+          "literal": "half-past — six… that-is — six — having-struck — thirty — minutes?"
+        },
+        {
+          "speaker": "राहुल:",
+          "text": "[जी|jii] [हाँ|haaⁿ], [छह|chhah] [बजकर|baj-kar] [तीस|tiis]।",
+          "id": "Yes, that's right, six thirty.",
+          "literal": "ji — yes, six — having-struck — thirty."
+        },
+        {
+          "speaker": "आनी:",
+          "text": "[अरे|a-re]! [हमारी|ha-maa-rii] [भाषा|bhaa-shaa] [में|meⁿ] [भी|bhii] [यह|yeh] „[आधा|aa-dhaa]“ [है|hai] — [लेकिन|le-kin] [हम|ham] „[सात|saat]“ [कहते|keh-te] [हैं|haiⁿ]।",
+          "id": "Oh! In our language it's \"half\" too — but we say \"seven\".",
+          "literal": "oh! our(fem.) — language — in — also — this — \"half\" — is — but — we — \"seven\" — saying — are."
+        },
+        {
+          "speaker": "राहुल:",
+          "text": "[दिलचस्प|dil-chasp]! [हिंदी|hin-dii] [में|meⁿ] [हम|ham] [पिछला|pichh-laa] [घंटा|ghan-Taa] [बोलते|bol-te] [हैं|haiⁿ]।",
+          "id": "Interesting! In Hindi we name the hour that's gone by.",
+          "literal": "interesting! Hindi — in — we — last — hour — saying — are."
+        },
+        {
+          "speaker": "आनी:",
+          "text": "[ठीक|Thiik] [है|hai], [साढ़े|saa-Rhe] [छह|chhah]। [कहाँ|ka-haaⁿ] [मिलेंगे|mi-leⁿ-ge]?",
+          "id": "OK, half past six. Where shall we meet?",
+          "literal": "fine — is, half-past — six. where — will-meet?"
+        },
+        {
+          "speaker": "राहुल:",
+          "text": "[कॉफ़ी|kaa-fii] [शॉप|shaap] [के|ke] [सामने|saam-ne]। [सवा|sa-vaa] [सात|saat] [तक|tak] [मैं|maiⁿ] [फ़्री|frii] [हूँ|huuⁿ]।",
+          "id": "In front of the coffee shop. I'm free until a quarter past seven.",
+          "literal": "coffee — shop — of — front. quarter-past — seven — until — I — free — am."
+        },
+        {
+          "speaker": "आनी:",
+          "text": "[सवा|sa-vaa] [सात|saat]? [यानी|yaa-nii] [सात|saat] [बजकर|baj-kar] [पंद्रह|pand-rah]?",
+          "id": "Savaa saat? You mean seven fifteen?",
+          "literal": "quarter-past — seven? that-is — seven — having-struck — fifteen?"
+        },
+        {
+          "speaker": "राहुल:",
+          "text": "[बिलकुल|bil-kul]। [और|aur] [पौने|pau-ne] [आठ|aaTh] [मुझे|mu-jhe] [जाना|jaa-naa] [है|hai]।",
+          "id": "Exactly. And at a quarter to eight I have to go.",
+          "literal": "completely. and — quarter-to — eight — to-me — go — is."
+        },
+        {
+          "speaker": "आनी:",
+          "text": "[समझ|sa-majh] [गई|ga-ii]। [कल|kal] [मिलते|mil-te] [हैं|haiⁿ]!",
+          "id": "Got it. See you tomorrow!",
+          "literal": "understand — went(fem.). tomorrow — meeting — are!"
+        }
+      ],
+      "notes": [
+        "**Good news first: साढ़े तीन means 3:30, exactly like English \"half past three\".** Hindi names the hour that has **already gone by**: साढ़े तीन is literally \"three plus a half\". Ani is surprised because in Indonesian \"half four\" means 3:30 — the next hour. ⚠️ If you've learned German or Dutch, beware the same trap: *halb sieben* is 6:30 there, but *साढ़े सात* is 7:30 in Hindi.",
+        "**So for an English speaker the logic is already familiar**, and British *half seven* (= 7:30) works exactly like Hindi. Just remember that **the number you hear is the hour that has passed**, and every other marker makes sense.",
+        "**Three marker words, each looking in a different direction.** **सवा** = a quarter **past** the number (सवा चार = 4:15). **साढ़े** = half **past** the number (साढ़े चार = 4:30). **पौने** = a quarter **to** the number (पौने चार = 3:45). ⚠️ The first two look forward from the number, the third looks back. When in doubt, use the long way: *चार बजकर पंद्रह मिनट*.",
+        "**डेढ़ and ढाई are special words for 1½ and 2½, and you must use them.** There is no *साढ़े एक* or *साढ़े दो* — those forms aren't used at all. **डेढ़ बजे** = 1:30, **ढाई बजे** = 2:30, and only then **साढ़े तीन** = 3:30 and so on. Both words are also used for amounts: *डेढ़ किलो* (1.5 kg), *ढाई घंटे* (2.5 hours).",
+        "**बजे means \"o'clock\", and it comes from a word meaning \"to strike\" (like a clock chiming).** *चार बजे* = at four o'clock, *चार बजे हैं* = it's four o'clock now. To ask the time now: **क्या बजा है?** To ask the time of a meeting: **कितने बजे?** ⚠️ The two questions are different and often mixed up.",
+        "**को after parts of the day, but not after clock times.** *शाम **को*** (in the evening), *सुबह **को*** (in the morning), *रात **को*** — but *छह बजे* without को. For days: *सोमवार **को*** (on Monday). With आज and कल: nothing at all — *आज शाम को*, *कल सुबह*.",
+        "**समझ गई — a form you haven't learned yet, but too useful to put off.** *समझ गया* (male) / *समझ गई* (female) means \"got it, I understand\", and it's what real people say, not *मैं समझती हूँ*, which sounds like a textbook. Its partner: **समझ नहीं आया** (I didn't get it). Unit 13 explains the form; for now learn it whole."
+      ],
+      "grammars": [
+        {
+          "title": "Telling the time",
+          "body": [
+            "Read the second column aloud while covering the first, then the other way round. Time has to come out fast, not be worked out."
+          ],
+          "tables": [
+            {
+              "head": [
+                "Time",
+                "हिंदी",
+                "Pronunciation",
+                "Note"
+              ],
+              "rows": [
+                [
+                  "1:00",
+                  "एक बजे",
+                  "ek ba-je",
+                  "—"
+                ],
+                [
+                  "1:15",
+                  "सवा एक",
+                  "sa-vaa ek",
+                  "—"
+                ],
+                [
+                  "1:30",
+                  "डेढ़ बजे",
+                  "DeRh ba-je",
+                  "⚠️ special word"
+                ],
+                [
+                  "1:45",
+                  "पौने दो",
+                  "pau-ne do",
+                  "a quarter to **two**"
+                ],
+                [
+                  "2:00",
+                  "दो बजे",
+                  "do ba-je",
+                  "—"
+                ],
+                [
+                  "2:30",
+                  "ढाई बजे",
+                  "Dhaa-ii ba-je",
+                  "⚠️ special word"
+                ],
+                [
+                  "3:15",
+                  "सवा तीन",
+                  "sa-vaa tiin",
+                  "—"
+                ],
+                [
+                  "3:30",
+                  "साढ़े तीन",
+                  "saa-Rhe tiin",
+                  "= English \"half past three\""
+                ],
+                [
+                  "3:45",
+                  "पौने चार",
+                  "pau-ne chaar",
+                  "—"
+                ],
+                [
+                  "4:10",
+                  "चार बजकर दस मिनट",
+                  "chaar baj-kar das mi-naT",
+                  "the long way, always safe"
+                ],
+                [
+                  "4:50",
+                  "पाँच बजने में दस मिनट",
+                  "paaⁿch baj-ne meⁿ das mi-naT",
+                  "ten minutes to five"
+                ],
+                [
+                  "12:00 noon",
+                  "दोपहर के बारह बजे",
+                  "do-pa-har ke baa-rah ba-je",
+                  "—"
+                ]
+              ]
+            },
+            {
+              "head": [
+                "Part of the day",
+                "हिंदी",
+                "Pronunciation",
+                "Roughly"
+              ],
+              "rows": [
+                [
+                  "morning",
+                  "सुबह",
+                  "su-bah",
+                  "4:00 – 11:00"
+                ],
+                [
+                  "midday, afternoon",
+                  "दोपहर",
+                  "do-pa-har",
+                  "11:00 – 16:00"
+                ],
+                [
+                  "evening",
+                  "शाम",
+                  "shaam",
+                  "16:00 – 19:00"
+                ],
+                [
+                  "night",
+                  "रात",
+                  "raat",
+                  "19:00 – 4:00"
+                ],
+                [
+                  "today",
+                  "आज",
+                  "aaj",
+                  "—"
+                ],
+                [
+                  "yesterday / tomorrow",
+                  "कल",
+                  "kal",
+                  "⚠️ one word for both"
+                ],
+                [
+                  "day after tomorrow / day before yesterday",
+                  "परसों",
+                  "par-soⁿ",
+                  "⚠️ also one word for both"
+                ],
+                [
+                  "now",
+                  "अभी · अब",
+                  "a-bhii · ab",
+                  "—"
+                ]
+              ]
+            }
+          ],
+          "after": [
+            "⚠️ **कल means \"yesterday\" AND \"tomorrow\", and परसों means \"the day after tomorrow\" AND \"the day before yesterday\".** The verb form decides: *कल मैं आई* (yesterday I came) vs. *कल मैं आऊँगी* (tomorrow I'll come). It sounds impossible until you realize Hindi sees time as a distance from today, not a direction. Unit 13 comes back to this."
+          ]
+        },
+        {
+          "title": "Making appointments",
+          "table": {
+            "head": [
+              "हिंदी",
+              "Pronunciation",
+              "Meaning"
+            ],
+            "rows": [
+              [
+                "क्या बजा है?",
+                "kyaa ba-jaa hai",
+                "What time is it?"
+              ],
+              [
+                "कितने बजे?",
+                "kit-ne ba-je",
+                "At what time? (appointment)"
+              ],
+              [
+                "आप कब फ़्री हैं?",
+                "aap kab frii haiⁿ",
+                "When are you free?"
+              ],
+              [
+                "कल शाम को मिलें?",
+                "kal shaam ko mi-leⁿ",
+                "Shall we meet tomorrow evening?"
+              ],
+              [
+                "मुझे देर हो रही है।",
+                "mu-jhe der ho ra-hii hai",
+                "I'm late."
+              ],
+              [
+                "थोड़ी देर में",
+                "tho-Rii der meⁿ",
+                "in a moment"
+              ],
+              [
+                "जल्दी",
+                "jal-dii",
+                "quickly, in a hurry"
+              ],
+              [
+                "समय पर",
+                "sa-may par",
+                "on time"
+              ],
+              [
+                "आधे घंटे बाद",
+                "aa-dhe ghan-Te baad",
+                "in half an hour"
+              ],
+              [
+                "कितनी देर?",
+                "kit-nii der",
+                "How long?"
+              ],
+              [
+                "ठीक है, तय रहा।",
+                "Thiik hai, tay ra-haa",
+                "OK, it's settled."
+              ],
+              [
+                "कल मिलते हैं!",
+                "kal mil-te haiⁿ",
+                "See you tomorrow!"
+              ]
+            ]
+          },
+          "after": [
+            "⚠️ **देर** means \"lateness\" **and** \"length of time\". *मुझे देर हो गई* = I'm late; *कितनी देर?* = how long? Context tells them apart, and both are very common."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Indian time, and how to read an appointment",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Something to know before you make your first appointment in India: there's a real difference between formal and social appointments, and both are spoken with the same words."
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Situation",
+            "What usually happens",
+            "A helpful sentence"
+          ],
+          "rows": [
+            [
+              "Trains, planes, government offices",
+              "on time; arrive early",
+              "मैं समय पर आऊँगी।"
+            ],
+            [
+              "Office meetings",
+              "more or less on time",
+              "दस बजे शुरू होगा?"
+            ],
+            [
+              "Meeting friends",
+              "fifteen to thirty minutes late",
+              "आप कितने बजे तक पहुँचेंगे?"
+            ],
+            [
+              "Dinner invitations",
+              "often an hour later than stated",
+              "खाना कितने बजे है?"
+            ],
+            [
+              "Weddings",
+              "don't arrive on time",
+              "⚠️ ask your host"
+            ]
+          ]
+        },
+        {
+          "type": "kotak",
+          "title": "Four sentences to rescue an appointment",
+          "items": [
+            "**मैं थोड़ा लेट हूँ, दस मिनट में पहुँचती हूँ।** — I'm running a bit late, I'll be there in ten minutes.",
+            "**आप कहाँ तक पहुँचे?** — Where have you got to?",
+            "**कोई बात नहीं।** — No problem. (the answer to an apology; used constantly)",
+            "**फिर कभी?** — Some other time? (a gentle way to postpone without refusing — unit 19 says more)"
+          ]
+        },
+        {
+          "type": "p",
+          "text": "And one small, pleasing note. The word **कल** meaning both yesterday and tomorrow isn't a flaw in the language; it reflects a way of seeing time you'll recognize from everyday English, where \"soon\" can mean two hours or two months and nobody is confused. Hindi just organizes it more neatly: the **distance** from today is named, and the **direction** is left to the verb. Once you're used to it, it stops feeling strange and starts feeling economical."
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "hi": "बजे",
+      "baca": "ba-je",
+      "en": "o'clock"
+    },
+    {
+      "hi": "बजकर",
+      "baca": "baj-kar",
+      "en": "past (the hour)"
+    },
+    {
+      "hi": "सवा",
+      "baca": "sa-vaa",
+      "en": "quarter past"
+    },
+    {
+      "hi": "साढ़े",
+      "baca": "saa-Rhe",
+      "en": "half past"
+    },
+    {
+      "hi": "पौने",
+      "baca": "pau-ne",
+      "en": "quarter to"
+    },
+    {
+      "hi": "डेढ़",
+      "baca": "DeRh",
+      "en": "one and a half"
+    },
+    {
+      "hi": "ढाई",
+      "baca": "Dhaa-ii",
+      "en": "two and a half"
+    },
+    {
+      "hi": "मिनट",
+      "baca": "mi-naT",
+      "en": "minute (m)"
+    },
+    {
+      "hi": "घंटा",
+      "baca": "ghan-Taa",
+      "en": "hour (m)"
+    },
+    {
+      "hi": "समय",
+      "baca": "sa-may",
+      "en": "time (m)"
+    },
+    {
+      "hi": "वक़्त",
+      "baca": "waqt",
+      "en": "time (m)"
+    },
+    {
+      "hi": "देर",
+      "baca": "der",
+      "en": "lateness; length of time (f)"
+    },
+    {
+      "hi": "जल्दी",
+      "baca": "jal-dii",
+      "en": "quickly, in a hurry"
+    },
+    {
+      "hi": "सुबह",
+      "baca": "su-bah",
+      "en": "morning (f)"
+    },
+    {
+      "hi": "दोपहर",
+      "baca": "do-pa-har",
+      "en": "midday, afternoon (f)"
+    },
+    {
+      "hi": "शाम",
+      "baca": "shaam",
+      "en": "evening (f)"
+    },
+    {
+      "hi": "रात",
+      "baca": "raat",
+      "en": "night (f)"
+    },
+    {
+      "hi": "आज",
+      "baca": "aaj",
+      "en": "today"
+    },
+    {
+      "hi": "कल",
+      "baca": "kal",
+      "en": "yesterday; tomorrow"
+    },
+    {
+      "hi": "परसों",
+      "baca": "par-soⁿ",
+      "en": "day after tomorrow; day before yesterday"
+    },
+    {
+      "hi": "अभी",
+      "baca": "a-bhii",
+      "en": "right now"
+    },
+    {
+      "hi": "कब",
+      "baca": "kab",
+      "en": "when"
+    },
+    {
+      "hi": "फ़्री · ख़ाली",
+      "baca": "frii · khaa-lii",
+      "en": "free, available"
+    },
+    {
+      "hi": "मिलना",
+      "baca": "mil-naa",
+      "en": "to meet"
+    },
+    {
+      "hi": "पहुँचना",
+      "baca": "pa-huⁿch-naa",
+      "en": "to arrive, to reach"
+    },
+    {
+      "hi": "शुरू होना",
+      "baca": "shu-ruu ho-naa",
+      "en": "to begin"
+    },
+    {
+      "hi": "ख़त्म होना",
+      "baca": "khatm ho-naa",
+      "en": "to end, to finish"
+    },
+    {
+      "hi": "यानी",
+      "baca": "yaa-nii",
+      "en": "that is, I mean"
+    },
+    {
+      "hi": "दिलचस्प",
+      "baca": "dil-chasp",
+      "en": "interesting"
+    },
+    {
+      "hi": "पिछला",
+      "baca": "pichh-laa",
+      "en": "last, previous"
+    },
+    {
+      "hi": "अगला",
+      "baca": "ag-laa",
+      "en": "next"
+    },
+    {
+      "hi": "कोई बात नहीं",
+      "baca": "ko-ii baat na-hiiⁿ",
+      "en": "no problem"
+    },
+    {
+      "hi": "तय",
+      "baca": "tay",
+      "en": "settled, agreed"
+    }
+  ],
+  "exercises": [
+    {
+      "prompt": "Write the time in Hindi.",
+      "items": [
+        "5:00 → ____",
+        "5:15 → ____",
+        "5:30 → ____",
+        "5:45 → ____",
+        "1:30 → ____",
+        "2:30 → ____"
+      ]
+    },
+    {
+      "prompt": "Write it in figures.",
+      "items": [
+        "साढ़े आठ → ____",
+        "सवा नौ → ____",
+        "पौने छह → ____",
+        "डेढ़ बजे → ____",
+        "ढाई बजे → ____"
+      ]
+    },
+    {
+      "prompt": "Put the words in the right order.",
+      "items": [
+        "है / बजा / क्या / ?",
+        "बजे / कितने / मिलेंगे / हम / ?",
+        "हूँ / फ़्री / मैं / को / शाम",
+        "है / हो / मुझे / रही / देर",
+        "हैं / कल / मिलते / हम"
+      ]
+    },
+    {
+      "prompt": "Translate into Hindi.",
+      "items": [
+        "What time is it now?",
+        "Half past six. (6:30 p.m.)",
+        "I'm free until nine.",
+        "Shall we meet tomorrow evening?",
+        "I'm running a bit late.",
+        "No problem."
+      ]
+    }
+  ],
+  "answers": [
+    "पाँच बजे — सवा पाँच — साढ़े पाँच — पौने छह — डेढ़ बजे — ढाई बजे",
+    "8:30 — 9:15 — 5:45 — 1:30 — 2:30",
+    "क्या बजा है? — हम कितने बजे मिलेंगे? — मैं शाम को फ़्री हूँ। — मुझे देर हो रही है। — हम कल मिलते हैं।",
+    "क्या बजा है? — साढ़े छह बजे। — मैं नौ बजे तक फ़्री हूँ। — कल शाम को मिलें? — मुझे थोड़ी देर हो रही है। — कोई बात नहीं।"
+  ]
+}

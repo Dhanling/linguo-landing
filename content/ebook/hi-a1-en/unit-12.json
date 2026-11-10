@@ -1,0 +1,646 @@
+{
+  "title": "Please, don't, and go ahead — commands at three levels",
+  "title_target": "सीधे जाइए, फिर बाएँ मुड़िए — siidhe jaaiye, phir baaeⁿ muRiye",
+  "goal": "Ask, tell and forbid in the right tone — and find your way when you're lost, which in India always means asking people, not looking at a map.",
+  "bekal": [
+    "forming polite commands with -इए",
+    "using मत to forbid",
+    "asking for and understanding directions",
+    "addressing strangers with the right title",
+    "softening requests with ज़रा and -इएगा"
+  ],
+  "dialogs": [
+    {
+      "title": "संवाद — Lost in the lanes",
+      "intro": "Ani is looking for a mosque and asks a passerby. Notice that almost every sentence the man says is a command — and not one of them sounds bossy.",
+      "lines": [
+        {
+          "speaker": "आनी:",
+          "text": "[भाई|bhaa-ii] [साहब|saa-hab], [माफ़|maaf] [कीजिए|kii-ji-ye]। [मस्जिद|mas-jid] [कहाँ|ka-haaⁿ] [है|hai]?",
+          "id": "Excuse me, sir. Where is the mosque?",
+          "literal": "brother — sir, sorry — do. mosque — where — is?"
+        },
+        {
+          "speaker": "राहगीर:",
+          "text": "[मस्जिद|mas-jid]? [सीधे|sii-dhe] [जाइए|jaa-i-ye], [फिर|phir] [बाएँ|baa-eⁿ] [मुड़िए|mu-Ri-ye]।",
+          "id": "The mosque? Go straight, then turn left.",
+          "literal": "mosque? straight — go, then — left — turn."
+        },
+        {
+          "speaker": "आनी:",
+          "text": "[कितनी|kit-nii] [दूर|duur] [है|hai]?",
+          "id": "How far is it?",
+          "literal": "how-much(fem.) — far — is?"
+        },
+        {
+          "speaker": "राहगीर:",
+          "text": "[पाँच|paaⁿch] [मिनट|mi-naT], [पैदल|pai-dal]। [जल्दी|jal-dii] [मत|mat] [कीजिए|kii-ji-ye], [धूप|dhuup] [तेज़|tez] [है|hai]।",
+          "id": "Five minutes on foot. Don't rush, the sun is strong.",
+          "literal": "five — minutes, on-foot. hurry — don't — do, sunshine — sharp — is."
+        },
+        {
+          "speaker": "आनी:",
+          "text": "[शुक्रिया|shuk-ri-yaa]। [और|aur] [चौराहे|chau-raa-he] [पर|par]?",
+          "id": "Thank you. And at the crossroads?",
+          "literal": "thanks. and — crossroads(obl.) — at?"
+        },
+        {
+          "speaker": "राहगीर:",
+          "text": "[चौराहे|chau-raa-he] [पर|par] [मत|mat] [मुड़िए|mu-Ri-ye]। [सीधे|sii-dhe] [चलती|chal-tii] [रहिए|ra-hi-ye]।",
+          "id": "Don't turn at the crossroads. Just keep going straight.",
+          "literal": "crossroads(obl.) — at — don't — turn. straight — walking(fem.) — keep-on."
+        },
+        {
+          "speaker": "आनी:",
+          "text": "[समझ|sa-majh] [गई|ga-ii]। [बहुत|ba-hut] [शुक्रिया|shuk-ri-yaa]।",
+          "id": "Got it. Thank you very much.",
+          "literal": "understand — did(fem.). very — thanks."
+        },
+        {
+          "speaker": "राहगीर:",
+          "text": "[बेटी|be-Tii], [एक|ek] [बात|baat] — [बैग|baig] [सामने|saam-ne] [रखिए|ra-khi-ye]। [भीड़|bhiiR] [है|hai]।",
+          "id": "Child, one thing — keep your bag in front. It's crowded.",
+          "literal": "daughter, one — thing — bag — front — keep. crowd — is."
+        },
+        {
+          "speaker": "आनी:",
+          "text": "[जी|jii], [शुक्रिया|shuk-ri-yaa]। [आप|aap] [बहुत|ba-hut] [अच्छे|ach-chhe] [हैं|haiⁿ]।",
+          "id": "Yes, thank you. You're very kind.",
+          "literal": "ji, thanks. you — very — kind — are."
+        },
+        {
+          "speaker": "राहगीर:",
+          "text": "[कोई|ko-ii] [बात|baat] [नहीं|na-hiiⁿ]। [रास्ता|raas-taa] [भूलें|bhuu-leⁿ] [तो|to] [किसी|ki-sii] [से|se] [पूछ|puuchh] [लीजिए|lii-ji-ye]।",
+          "id": "It's nothing. If you get lost, just ask anyone.",
+          "literal": "some — thing — not. way — forget — then — someone(obl.) — from — ask — take."
+        },
+        {
+          "speaker": "आनी:",
+          "text": "[ज़रूर|za-ruur] [पूछूँगी|puu-chhuuⁿ-gii]।",
+          "id": "I definitely will.",
+          "literal": "sure — will-ask(fem.)."
+        },
+        {
+          "speaker": "राहगीर:",
+          "text": "[ख़ुदा|khu-daa] [हाफ़िज़|haa-fiz], [बेटी|be-Tii]।",
+          "id": "God keep you, child.",
+          "literal": "God — protector, daughter."
+        }
+      ],
+      "notes": [
+        "**Polite commands are formed with -इए, and \"please\" is already built in.** Drop -ना from the dictionary form and add **-इए**: जाना → **जाइए**, बैठना → **बैठिए**, बोलना → **बोलिए**, रुकना → **रुकिए**. ⚠️ This form is **not rude at all** — it's the normal way to ask something of someone you respect. Adding कृपया actually makes it sound like an official announcement.",
+        "**Five verbs with irregular commands, all of them common.** करना → **कीजिए**, देना → **दीजिए**, लेना → **लीजिए**, पीना → **पीजिए**, होना → **होइए**. Learn all five now; you'll use them every day, especially दीजिए and कीजिए.",
+        "**Forbidding uses मत, not नहीं.** *मत जाइए* (don't go), *जल्दी **मत** कीजिए* (don't rush), *यहाँ **मत** बैठो* (don't sit here). ⚠️ नहीं negates statements (*मैं नहीं जाती* — I don't go), while मत forbids actions. There's also the gentler, slightly pleading **न**: *न जाइए* sounds like \"please don't go…\".",
+        "**Three levels, and as a visitor you only need one.** **आप** → -इए (जाइए) for everyone. **तुम** → -ओ (जाओ) for close friends and children. **तू** → the bare stem (जा) for very close friends, or in anger. ⚠️ Using the तुम form with an auto driver or a waiter **sounds condescending**, even if you mean to be friendly. Use -इए with everyone, no exceptions; nobody is offended by too much respect.",
+        "**Two ways to soften even more.** **ज़रा** (\"a little\") goes in front: *ज़रा रुकिए* (wait a moment, please), *ज़रा सुनिए* (excuse me, a moment) — the latter is the most natural way to get a stranger's attention. And the tail **-गा**: *आइए* (come, now) → *आइएगा* (do come again, sometime). The -इएगा form sounds very friendly and a little warm.",
+        "**Addressing strangers: pick a title, not a bare \"you\".** **भाई साहब** for a grown man, **बहन जी** or **मैडम** for a grown woman, **भैया** for a young man who serves you (driver, vendor, waiter), **दीदी** for a young woman, **अंकल जी / आंटी जी** for older people. ⚠️ Calling out just *सुनिए!* with no title sounds cold; adding a title changes the whole tone.",
+        "**ख़ुदा हाफ़िज़ — the Muslim goodbye.** It means \"may God protect you\", and another form you'll hear is **अल्लाह हाफ़िज़**. In India you'll hear greetings from several religions all day long: **नमस्ते**, **आदाब**, **सत श्री अकाल**, **जय श्री कृष्ण**. When in doubt, you can answer any of them with **नमस्ते**, and no one will be offended."
+      ],
+      "grammars": [
+        {
+          "title": "Commands at three levels",
+          "tables": [
+            {
+              "head": [
+                "Verb",
+                "आप (polite)",
+                "तुम (familiar)",
+                "तू (intimate)",
+                "Meaning"
+              ],
+              "rows": [
+                [
+                  "जाना",
+                  "जाइए",
+                  "जाओ",
+                  "जा",
+                  "go"
+                ],
+                [
+                  "आना",
+                  "आइए",
+                  "आओ",
+                  "आ",
+                  "come, come in"
+                ],
+                [
+                  "बैठना",
+                  "बैठिए",
+                  "बैठो",
+                  "बैठ",
+                  "sit"
+                ],
+                [
+                  "बोलना",
+                  "बोलिए",
+                  "बोलो",
+                  "बोल",
+                  "speak"
+                ],
+                [
+                  "सुनना",
+                  "सुनिए",
+                  "सुनो",
+                  "सुन",
+                  "listen"
+                ],
+                [
+                  "रुकना",
+                  "रुकिए",
+                  "रुको",
+                  "रुक",
+                  "wait"
+                ],
+                [
+                  "करना",
+                  "⚠️ कीजिए",
+                  "करो",
+                  "कर",
+                  "do"
+                ],
+                [
+                  "देना",
+                  "⚠️ दीजिए",
+                  "दो",
+                  "दे",
+                  "give"
+                ],
+                [
+                  "लेना",
+                  "⚠️ लीजिए",
+                  "लो",
+                  "ले",
+                  "take"
+                ],
+                [
+                  "पीना",
+                  "⚠️ पीजिए",
+                  "पियो",
+                  "पी",
+                  "drink"
+                ]
+              ]
+            },
+            {
+              "head": [
+                "Tone",
+                "Form",
+                "Example",
+                "Feels like"
+              ],
+              "rows": [
+                [
+                  "plain prohibition",
+                  "मत + command",
+                  "मत जाइए",
+                  "don't go"
+                ],
+                [
+                  "gentle prohibition",
+                  "न + command",
+                  "न जाइए",
+                  "please don't go…"
+                ],
+                [
+                  "soft request",
+                  "ज़रा + command",
+                  "ज़रा सुनिए",
+                  "excuse me, a moment"
+                ],
+                [
+                  "request for later",
+                  "-इएगा",
+                  "आइएगा",
+                  "do come again"
+                ],
+                [
+                  "invitation (together)",
+                  "-एँ",
+                  "चलें?",
+                  "shall we go?"
+                ],
+                [
+                  "command + \"get it done\"",
+                  "command + लीजिए/दीजिए",
+                  "पूछ लीजिए",
+                  "just ask"
+                ]
+              ]
+            }
+          ],
+          "after": [
+            "⚠️ The last row introduces something you'll hear a lot: **two verbs in a row**, the second coloring the first. *पूछ लीजिए* = \"just ask (for yourself)\", *बता दीजिए* = \"just tell (me)\". These are compound verbs; they don't change the meaning, only the tone. You don't need to form them yourself yet — just recognize them, and don't be thrown when you hear two verbs side by side."
+          ]
+        },
+        {
+          "title": "Directions",
+          "table": {
+            "head": [
+              "हिंदी",
+              "Pronunciation",
+              "Meaning",
+              "हिंदी",
+              "Pronunciation",
+              "Meaning"
+            ],
+            "rows": [
+              [
+                "सीधे",
+                "sii-dhe",
+                "straight",
+                "बाएँ",
+                "baa-eⁿ",
+                "left"
+              ],
+              [
+                "दाएँ",
+                "daa-eⁿ",
+                "right",
+                "मुड़िए",
+                "mu-Ri-ye",
+                "turn"
+              ],
+              [
+                "आगे",
+                "aa-ge",
+                "forward",
+                "पीछे",
+                "pii-chhe",
+                "back"
+              ],
+              [
+                "ऊपर",
+                "uu-par",
+                "up",
+                "नीचे",
+                "nii-che",
+                "down"
+              ],
+              [
+                "पास",
+                "paas",
+                "near",
+                "दूर",
+                "duur",
+                "far"
+              ],
+              [
+                "कोने पर",
+                "ko-ne par",
+                "on the corner",
+                "चौराहे पर",
+                "chau-raa-he par",
+                "at the crossroads"
+              ],
+              [
+                "पुल",
+                "pul",
+                "bridge (m)",
+                "गली",
+                "ga-lii",
+                "lane, alley (f)"
+              ],
+              [
+                "रास्ता",
+                "raas-taa",
+                "way, route (m)",
+                "पता",
+                "pa-taa",
+                "address (m)"
+              ],
+              [
+                "सामने",
+                "saam-ne",
+                "opposite, across",
+                "बग़ल में",
+                "ba-ghal meⁿ",
+                "next to"
+              ],
+              [
+                "यहाँ से",
+                "ya-haaⁿ se",
+                "from here",
+                "वहाँ तक",
+                "va-haaⁿ tak",
+                "up to there"
+              ]
+            ]
+          },
+          "after": [
+            "⚠️ **पता means both \"address\" and \"knowledge\".** *आपका पता क्या है?* = what's your address? But *मुझे पता नहीं* = I don't know — a sentence you'll use several times a day."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Asking the way, and ten emergency phrases",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "In India, asking people is almost always faster than a map — and people will stop, think about it, and explain carefully. One warning: some people don't like to disappoint you by saying \"I don't know\", so ask two different people if the directions sound unsure."
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "हिंदी",
+            "Pronunciation",
+            "Meaning"
+          ],
+          "rows": [
+            [
+              "ज़रा सुनिए…",
+              "za-raa su-ni-ye",
+              "Excuse me…"
+            ],
+            [
+              "माफ़ कीजिए।",
+              "maaf kii-ji-ye",
+              "Sorry."
+            ],
+            [
+              "स्टेशन कहाँ है?",
+              "sTe-shan ka-haaⁿ hai",
+              "Where is the station?"
+            ],
+            [
+              "यह पता कहाँ है?",
+              "yeh pa-taa ka-haaⁿ hai",
+              "Where is this address?"
+            ],
+            [
+              "कितनी दूर है?",
+              "kit-nii duur hai",
+              "How far is it?"
+            ],
+            [
+              "पैदल जा सकते हैं?",
+              "pai-dal jaa sak-te haiⁿ",
+              "Can I walk there?"
+            ],
+            [
+              "मुझे पता नहीं।",
+              "mu-jhe pa-taa na-hiiⁿ",
+              "I don't know."
+            ],
+            [
+              "मैं रास्ता भूल गई।",
+              "maiⁿ raas-taa bhuul ga-ii",
+              "I'm lost."
+            ],
+            [
+              "फिर से बोलिए।",
+              "phir se bo-li-ye",
+              "Please say it again."
+            ],
+            [
+              "थोड़ा धीरे बोलिए।",
+              "tho-Raa dhii-re bo-li-ye",
+              "Please speak more slowly."
+            ],
+            [
+              "क्या आप अंग्रेज़ी बोलते हैं?",
+              "kyaa aap ang-re-zii bol-te haiⁿ",
+              "Do you speak English?"
+            ],
+            [
+              "मदद कीजिए!",
+              "ma-dad kii-ji-ye",
+              "Help!"
+            ]
+          ]
+        },
+        {
+          "type": "kotak",
+          "title": "Three phrases that rescue beginners most often",
+          "items": [
+            "**फिर से बोलिए।** — \"Please say it again.\" Don't hesitate to use it three times in a row. Indians are used to repeating, and repeating usually means slowing down too.",
+            "**मुझे हिंदी थोड़ी थोड़ी आती है।** — \"I know a little Hindi.\" Said at the start of a conversation, it changes how fast the other person talks for the rest of it.",
+            "**यह हिंदी में क्या कहते हैं?** — \"What's this called in Hindi?\" While pointing. It's not just a survival tool; it's the fastest way to learn anyone has ever found."
+          ]
+        },
+        {
+          "type": "p",
+          "text": "⚠️ One fair word about safety. The man's advice in line eight of the dialogue — *बैग सामने रखिए* — is advice Indians really do give visitors in crowded places, and accepting it is a sign not of suspicion but of respect. In crowds, big markets and train carriages, carrying your bag in front is ordinary practice for everyone, locals and guests alike."
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "hi": "कीजिए",
+      "baca": "kii-ji-ye",
+      "en": "do (please)"
+    },
+    {
+      "hi": "दीजिए",
+      "baca": "dii-ji-ye",
+      "en": "give (please)"
+    },
+    {
+      "hi": "लीजिए",
+      "baca": "lii-ji-ye",
+      "en": "take (please)"
+    },
+    {
+      "hi": "जाइए · आइए",
+      "baca": "jaa-i-ye · aa-i-ye",
+      "en": "go · come (please)"
+    },
+    {
+      "hi": "बैठिए",
+      "baca": "bai-Thi-ye",
+      "en": "sit (please)"
+    },
+    {
+      "hi": "सुनिए",
+      "baca": "su-ni-ye",
+      "en": "listen; excuse me"
+    },
+    {
+      "hi": "बोलिए",
+      "baca": "bo-li-ye",
+      "en": "speak (please)"
+    },
+    {
+      "hi": "रुकिए",
+      "baca": "ru-ki-ye",
+      "en": "wait (please)"
+    },
+    {
+      "hi": "रखिए",
+      "baca": "ra-khi-ye",
+      "en": "put, keep (please)"
+    },
+    {
+      "hi": "मत",
+      "baca": "mat",
+      "en": "don't"
+    },
+    {
+      "hi": "न",
+      "baca": "na",
+      "en": "don't (gentle)"
+    },
+    {
+      "hi": "ज़रा",
+      "baca": "za-raa",
+      "en": "a little (softener)"
+    },
+    {
+      "hi": "कृपया",
+      "baca": "kri-pa-yaa",
+      "en": "please (formal)"
+    },
+    {
+      "hi": "माफ़ कीजिए",
+      "baca": "maaf kii-ji-ye",
+      "en": "sorry"
+    },
+    {
+      "hi": "मदद",
+      "baca": "ma-dad",
+      "en": "help (f)"
+    },
+    {
+      "hi": "पूछना",
+      "baca": "puuchh-naa",
+      "en": "to ask"
+    },
+    {
+      "hi": "भूलना",
+      "baca": "bhuul-naa",
+      "en": "to forget"
+    },
+    {
+      "hi": "पता",
+      "baca": "pa-taa",
+      "en": "address; knowledge (m)"
+    },
+    {
+      "hi": "रास्ता",
+      "baca": "raas-taa",
+      "en": "way, route (m)"
+    },
+    {
+      "hi": "गली",
+      "baca": "ga-lii",
+      "en": "lane, alley (f)"
+    },
+    {
+      "hi": "पुल",
+      "baca": "pul",
+      "en": "bridge (m)"
+    },
+    {
+      "hi": "कोना",
+      "baca": "ko-naa",
+      "en": "corner (m)"
+    },
+    {
+      "hi": "बग़ल में",
+      "baca": "ba-ghal meⁿ",
+      "en": "next to"
+    },
+    {
+      "hi": "भीड़",
+      "baca": "bhiiR",
+      "en": "crowd (f)"
+    },
+    {
+      "hi": "धूप",
+      "baca": "dhuup",
+      "en": "sunshine (f)"
+    },
+    {
+      "hi": "मस्जिद",
+      "baca": "mas-jid",
+      "en": "mosque (f)"
+    },
+    {
+      "hi": "मंदिर",
+      "baca": "man-dir",
+      "en": "temple (m)"
+    },
+    {
+      "hi": "गिरजाघर",
+      "baca": "gir-jaa-ghar",
+      "en": "church (m)"
+    },
+    {
+      "hi": "भाई साहब",
+      "baca": "bhaa-ii saa-hab",
+      "en": "title for a grown man"
+    },
+    {
+      "hi": "बहन जी",
+      "baca": "be-han jii",
+      "en": "title for a grown woman"
+    },
+    {
+      "hi": "राहगीर",
+      "baca": "raah-giir",
+      "en": "passerby (m)"
+    },
+    {
+      "hi": "ख़ुदा हाफ़िज़",
+      "baca": "khu-daa haa-fiz",
+      "en": "goodbye (Muslim greeting)"
+    },
+    {
+      "hi": "फिर से",
+      "baca": "phir se",
+      "en": "once more"
+    }
+  ],
+  "exercises": [
+    {
+      "prompt": "Make polite commands (the आप form).",
+      "items": [
+        "जाना → ____",
+        "बैठना → ____",
+        "करना → ____",
+        "देना → ____",
+        "सुनना → ____",
+        "लेना → ____"
+      ]
+    },
+    {
+      "prompt": "Choose मत or नहीं.",
+      "items": [
+        "यहाँ ____ बैठिए।",
+        "मैं वहाँ ____ जाती।",
+        "जल्दी ____ कीजिए।",
+        "वह हिंदी ____ बोलता।"
+      ]
+    },
+    {
+      "prompt": "Put the words in the right order.",
+      "items": [
+        "जाइए / सीधे / मुड़िए / बाएँ / फिर",
+        "है / कहाँ / मस्जिद / ?",
+        "कीजिए / मत / जल्दी",
+        "है / दूर / कितनी / ?",
+        "बोलिए / से / फिर"
+      ]
+    },
+    {
+      "prompt": "Translate into Hindi.",
+      "items": [
+        "Excuse me, where is the station?",
+        "Go straight, then turn right.",
+        "How far is it?",
+        "Please speak more slowly.",
+        "I don't know.",
+        "Don't go there."
+      ]
+    }
+  ],
+  "answers": [
+    "जाइए — बैठिए — कीजिए — दीजिए — सुनिए — लीजिए",
+    "मत — नहीं — मत — नहीं",
+    "सीधे जाइए, फिर बाएँ मुड़िए। — मस्जिद कहाँ है? — जल्दी मत कीजिए। — कितनी दूर है? — फिर से बोलिए।",
+    "ज़रा सुनिए, स्टेशन कहाँ है? — सीधे जाइए, फिर दाएँ मुड़िए। — कितनी दूर है? — थोड़ा धीरे बोलिए। — मुझे पता नहीं। — वहाँ मत जाइए।"
+  ]
+}
