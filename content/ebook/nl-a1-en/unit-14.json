@@ -1,0 +1,593 @@
+{
+  "title": "At the supermarket",
+  "title_target": "In de supermarkt",
+  "goal": "Buy groceries, give amounts and measures, and use *wat*, *veel*, *weinig*, and *een paar*.",
+  "bekal": [
+    "giving measures: *een kilo*, *een ons*, *een pak*, *een doos*",
+    "using words for vague amounts: *wat*, *veel*, *weinig*, *een paar*",
+    "asking where things are and asking for help in a shop"
+  ],
+  "wave": "Go back to **unit 12**: check today's weather forecast on your phone, then tell all of it in Dutch with *het …* sentences.",
+  "dialogs": [
+    {
+      "title": "Dialog — Bij de Albert Heijn",
+      "intro": "The supermarket, late afternoon. Budi is looking for one ingredient he assumes this country won't have.",
+      "lines": [
+        {
+          "speaker": "Budi:",
+          "text": "Pardon, waar staat de rijst?",
+          "id": "Excuse me, where's the rice?",
+          "literal": "pardon, where stands the rice?"
+        },
+        {
+          "speaker": "Medewerker:",
+          "text": "Schap zeven, naast de pasta.",
+          "id": "Aisle seven, next to the pasta.",
+          "literal": "aisle seven, next-to the pasta."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "En hebben jullie ook kecap manis?",
+          "id": "And do you have kecap manis too?",
+          "literal": "and have you(pl) also ketjap manis?"
+        },
+        {
+          "speaker": "Medewerker:",
+          "text": "Zeker. Bij de wereldkeuken, onderin.",
+          "id": "Sure. In the world foods section, bottom shelf.",
+          "literal": "sure. at the world-kitchen, at-the-bottom."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Serieus? In een gewone supermarkt?",
+          "id": "Really? In an ordinary supermarket?",
+          "literal": "serious? in an ordinary supermarket?"
+        },
+        {
+          "speaker": "Medewerker:",
+          "text": "Natuurlijk. We eten hier veel Indonesisch.",
+          "id": "Of course. We eat a lot of Indonesian food here.",
+          "literal": "naturally. we eat here much Indonesian."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Dat wist ik niet. Mag ik ook een half pond kaas?",
+          "id": "I didn't know that. Could I also have half a pound of cheese?",
+          "literal": "that knew I not. may I also a half pound cheese?"
+        },
+        {
+          "speaker": "Medewerker:",
+          "text": "Bij de kaasafdeling. Wilt u jong of oud?",
+          "id": "At the cheese counter. Young or old?",
+          "literal": "at the cheese-counter. want you young or old?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Wat is het verschil?",
+          "id": "What's the difference?",
+          "literal": "what is the difference?"
+        },
+        {
+          "speaker": "Medewerker:",
+          "text": "Oude kaas is droger en veel scherper.",
+          "id": "Old cheese is drier and much sharper.",
+          "literal": "old cheese is drier and much sharper."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Dan neem ik een paar plakjes oude kaas.",
+          "id": "Then I'll take a few slices of old cheese.",
+          "literal": "then take I a pair slice-lets old cheese."
+        },
+        {
+          "speaker": "Medewerker:",
+          "text": "Prima. Verder nog iets? Anders: kassa vier is vrij.",
+          "id": "Fine. Anything else? If not: checkout four is free.",
+          "literal": "good. further still something? otherwise: checkout four is free."
+        }
+      ],
+      "notes": [
+        "**Waar staat de rijst?** — Dutch picks its verb by the object's shape: *staan* (stand) for upright things, *liggen* (lie) for flat things, *zitten* (sit) for things inside something. *De melk staat in de koelkast*, *het boek ligt op tafel*.",
+        "**Onderin** = at the bottom (of a shelf). Its family: *bovenin*, *achterin*, *voorin*, *middenin*.",
+        "**We eten hier veel Indonesisch** — and that's true. Indonesian dishes are part of everyday Dutch food, a legacy of colonial history: *nasi*, *bami*, *saté*, *kroepoek*, *sambal*, and *ketjap* are in almost every supermarket. The words came into Dutch whole, sometimes with surprising spellings.",
+        "**Dat wist ik niet** — the past tense of *weten*. The past isn't covered until unit 17, but this sentence is too useful to put off.",
+        "**Jong of oud?** — a cheese's age decides its taste: *jong* (4 weeks, mild), *belegen* (4 months), *oud* (10 months, sharp with salt crystals), *overjarig* (over a year). You'll be asked this every time you buy cheese in the Netherlands.",
+        "**Een paar plakjes** — *een paar* means \"a few\", not \"a pair\" (it can mean that too, when the context is clear: *een paar schoenen*). *Plakje* = a thin slice, the diminutive of *plak*.",
+        "**Kassa vier is vrij** — *vrij* means free/available. In Dutch supermarkets you bag your own groceries: plastic bags cost money and nobody packs for you. Bring your own *boodschappentas*."
+      ],
+      "grammars": [
+        {
+          "title": "Vague amounts",
+          "body": [
+            "Where English juggles \"some\", \"a few\", and \"a little\", Dutch also sorts its words by the kind of noun."
+          ],
+          "table": {
+            "head": [
+              "Word",
+              "Used for",
+              "Example"
+            ],
+            "rows": [
+              [
+                "**wat**",
+                "some, uncountable",
+                "Ik wil **wat** melk."
+              ],
+              [
+                "**een beetje**",
+                "a little, uncountable",
+                "**Een beetje** suiker, graag."
+              ],
+              [
+                "**een paar**",
+                "a few, countable",
+                "**Een paar** appels."
+              ],
+              [
+                "**enkele**",
+                "several, rather formal",
+                "**Enkele** mensen wachten."
+              ],
+              [
+                "**veel**",
+                "many, much",
+                "**Veel** mensen, **veel** water."
+              ],
+              [
+                "**weinig**",
+                "few, little",
+                "**Weinig** tijd, **weinig** mensen."
+              ],
+              [
+                "**genoeg**",
+                "enough",
+                "Ik heb **genoeg** geld."
+              ],
+              [
+                "**te veel / te weinig**",
+                "too much / too little",
+                "Dat is **te veel**."
+              ]
+            ]
+          },
+          "after": [
+            "*Veel* and *weinig* work for both countable and uncountable nouns — a freedom English doesn't have (*many/much*, *few/little*).",
+            "⚠️ *Wat* leads two lives: the question word \"what\" and the amount word \"some\". Its position decides: *Wat wil je?* versus *Ik wil wat water.*",
+            "*Nog wat* = a bit more: *Wil je nog wat koffie?*"
+          ]
+        },
+        {
+          "title": "Measures and packaging",
+          "body": [
+            "After a measure word, the noun stands **with no article and no *van***: *een kilo appels*, not *een kilo van de appels* — unlike English \"a kilo of apples\"."
+          ],
+          "table": {
+            "head": [
+              "Nederlands",
+              "Meaning",
+              "Example"
+            ],
+            "rows": [
+              [
+                "een kilo",
+                "1 kg",
+                "een kilo aardappelen"
+              ],
+              [
+                "een pond",
+                "500 g",
+                "een pond kaas"
+              ],
+              [
+                "een ons",
+                "100 g",
+                "twee ons ham"
+              ],
+              [
+                "een liter",
+                "1 liter",
+                "een liter melk"
+              ],
+              [
+                "een pak",
+                "carton, pack",
+                "een pak melk, een pak rijst"
+              ],
+              [
+                "een fles",
+                "bottle",
+                "een fles water"
+              ],
+              [
+                "een blik",
+                "can, tin",
+                "een blik tomaten"
+              ],
+              [
+                "een pot",
+                "jar",
+                "een pot pindakaas"
+              ],
+              [
+                "een zak",
+                "bag",
+                "een zak chips"
+              ],
+              [
+                "een doos",
+                "box",
+                "een doos eieren"
+              ],
+              [
+                "een bosje",
+                "bunch",
+                "een bosje wortels"
+              ],
+              [
+                "een stuk",
+                "piece",
+                "een stuk taart"
+              ]
+            ]
+          },
+          "after": [
+            "⚠️ *Een ons* = 100 grams, not an English ounce (28 g). Ordering *twee ons* at the cheese shop gets you 200 grams — the measure the Dutch use most.",
+            "Measure words don't take a plural after a number: *drie kilo*, *twee ons*, *vijf liter* — not *drie kilo's*."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "The weekly shop",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "Nederlands",
+            "Say it",
+            "English"
+          ],
+          "rows": [
+            [
+              "het brood",
+              "het broht",
+              "bread"
+            ],
+            [
+              "de melk",
+              "duh melk",
+              "milk"
+            ],
+            [
+              "de kaas",
+              "duh kahs",
+              "cheese"
+            ],
+            [
+              "het ei / de eieren",
+              "het ey / duh EY-uh-ruh(n)",
+              "egg(s)"
+            ],
+            [
+              "de boter",
+              "duh BOH-tuhr",
+              "butter"
+            ],
+            [
+              "de rijst",
+              "duh reyst",
+              "rice"
+            ],
+            [
+              "de aardappel",
+              "duh AHR-da-puhl",
+              "potato"
+            ],
+            [
+              "de groente",
+              "duh KHROON-tuh",
+              "vegetables"
+            ],
+            [
+              "het fruit",
+              "het fröyt",
+              "fruit"
+            ],
+            [
+              "de appel / de banaan",
+              "duh A-puhl / duh ba-NAHN",
+              "apple / banana"
+            ],
+            [
+              "de ui / de knoflook",
+              "duh öy / duh KNOF-lohk",
+              "onion / garlic"
+            ],
+            [
+              "de kip / het rundvlees",
+              "duh kip / het RÜNT-flays",
+              "chicken / beef"
+            ],
+            [
+              "de suiker / het zout",
+              "duh SÖY-kuhr / het zowt",
+              "sugar / salt"
+            ],
+            [
+              "de koffie / de thee",
+              "duh KO-fee / duh tay",
+              "coffee / tea"
+            ]
+          ]
+        },
+        {
+          "type": "kotak",
+          "title": "Dutch supermarkets: good to know",
+          "items": [
+            "**Albert Heijn** (the biggest), **Jumbo**, **Lidl**, **Aldi**, and the **toko** (Asian grocery) for a full range of Asian ingredients.",
+            "*Bonuskaart* / *bonus* — the store's discount card. Without it, you pay full price for items on promotion.",
+            "Shopping bags **cost extra** and aren't handed out automatically. *Wilt u een tasje?* — say yes, and you pay for it.",
+            "*Statiegeld* — the deposit: return bottles and cans to a machine; the receipt is deducted from your total.",
+            "Saturday afternoon and Sunday can be very busy; many small shops close on Sunday and Monday morning.",
+            "⚠️ Most supermarkets **accept only debit cards** — recall unit 6."
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Phrases in the shop",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "Nederlands",
+            "English"
+          ],
+          "rows": [
+            [
+              "Waar kan ik … vinden?",
+              "Where can I find …?"
+            ],
+            [
+              "Heeft u nog …?",
+              "Do you still have …?"
+            ],
+            [
+              "Het is uitverkocht.",
+              "It's sold out."
+            ],
+            [
+              "Mag ik een tasje?",
+              "Could I have a bag?"
+            ],
+            [
+              "Heeft u een bonuskaart?",
+              "Do you have a loyalty card?"
+            ],
+            [
+              "Wilt u de bon?",
+              "Would you like the receipt?"
+            ],
+            [
+              "Kunt u dat afwegen?",
+              "Could you weigh that?"
+            ],
+            [
+              "Is dit vers?",
+              "Is this fresh?"
+            ],
+            [
+              "Tot wanneer is het houdbaar?",
+              "How long does it keep?"
+            ],
+            [
+              "Ik zoek iets zonder varkensvlees.",
+              "I'm looking for something without pork."
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "*Houdbaar tot* (use by) and *ten minste houdbaar tot* (best before) are printed on every package — two phrases worth learning before your first shop."
+        },
+        {
+          "type": "p",
+          "text": "For Asian ingredients, the key word is *toko* — borrowed from Indonesian, where it simply means \"shop\", but in Dutch it specifically means an Asian grocery. *Is er een toko in de buurt?* will be understood at once."
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "nl": "de supermarkt",
+      "baca": "duh SÜ-puhr-markt",
+      "en": "supermarket"
+    },
+    {
+      "nl": "de boodschappen",
+      "baca": "duh BOHT-skha-puh(n)",
+      "en": "groceries"
+    },
+    {
+      "nl": "het schap",
+      "baca": "het skhap",
+      "en": "shelf"
+    },
+    {
+      "nl": "de kassa",
+      "baca": "duh KA-sa",
+      "en": "checkout"
+    },
+    {
+      "nl": "de bon",
+      "baca": "duh bon",
+      "en": "receipt"
+    },
+    {
+      "nl": "het tasje",
+      "baca": "het TA-shuh",
+      "en": "shopping bag"
+    },
+    {
+      "nl": "staan / liggen / zitten",
+      "baca": "stahn / LI-khuh(n) / ZI-tuh(n)",
+      "en": "to be (standing / lying / inside)"
+    },
+    {
+      "nl": "vinden",
+      "baca": "FIN-duh(n)",
+      "en": "to find"
+    },
+    {
+      "nl": "zoeken",
+      "baca": "ZOO-kuh(n)",
+      "en": "to look for"
+    },
+    {
+      "nl": "wegen",
+      "baca": "VAY-khuh(n)",
+      "en": "to weigh"
+    },
+    {
+      "nl": "de kilo / het pond / het ons",
+      "baca": "duh KEE-loh",
+      "en": "kg / 500 g / 100 g"
+    },
+    {
+      "nl": "het pak",
+      "baca": "het pak",
+      "en": "pack, carton"
+    },
+    {
+      "nl": "het blik",
+      "baca": "het blik",
+      "en": "can, tin"
+    },
+    {
+      "nl": "de fles",
+      "baca": "duh fles",
+      "en": "bottle"
+    },
+    {
+      "nl": "de doos",
+      "baca": "duh dohs",
+      "en": "box"
+    },
+    {
+      "nl": "het stuk",
+      "baca": "het stük",
+      "en": "piece"
+    },
+    {
+      "nl": "veel / weinig",
+      "baca": "fayl / VEY-nuhkh",
+      "en": "much, many / little, few"
+    },
+    {
+      "nl": "een paar",
+      "baca": "uhn pahr",
+      "en": "a few"
+    },
+    {
+      "nl": "wat",
+      "baca": "vat",
+      "en": "some, a little"
+    },
+    {
+      "nl": "genoeg",
+      "baca": "khuh-NOOKH",
+      "en": "enough"
+    },
+    {
+      "nl": "vers",
+      "baca": "fers",
+      "en": "fresh"
+    },
+    {
+      "nl": "houdbaar",
+      "baca": "HOWT-bahr",
+      "en": "keeps, with a long shelf life"
+    },
+    {
+      "nl": "uitverkocht",
+      "baca": "ÖYT-fuhr-kokht",
+      "en": "sold out"
+    },
+    {
+      "nl": "goedkoop / duur",
+      "baca": "khoot-KOHP / dühr",
+      "en": "cheap / expensive"
+    },
+    {
+      "nl": "het verschil",
+      "baca": "het fuhr-SKHIL",
+      "en": "difference"
+    },
+    {
+      "nl": "scherp",
+      "baca": "skherp",
+      "en": "sharp / spicy"
+    },
+    {
+      "nl": "de afdeling",
+      "baca": "duh AF-day-ling",
+      "en": "department, section"
+    },
+    {
+      "nl": "vrij",
+      "baca": "frey",
+      "en": "free, available"
+    }
+  ],
+  "exercises": [
+    {
+      "prompt": "Fill in the blanks with the right measure or package.",
+      "items": [
+        "een ____ melk (1 liter)",
+        "een ____ eieren (box)",
+        "twee ____ kaas (200 gram)",
+        "een ____ rijst (carton)",
+        "een ____ tomaten (can)",
+        "een ____ taart (piece)"
+      ]
+    },
+    {
+      "prompt": "Fill in the blanks with veel, weinig, wat, or een paar.",
+      "items": [
+        "Ik heb ____ tijd — ik moet me haasten. (very little)",
+        "Wil je ____ melk in je koffie? (some)",
+        "Er staan ____ mensen bij de kassa. (many)",
+        "Ik koop ____ appels. (a few)"
+      ]
+    },
+    {
+      "prompt": "Translate into Dutch.",
+      "items": [
+        "Where's the rice?",
+        "Do you still have eggs?",
+        "Could I have half a kilo of cheese?",
+        "Is this fresh?",
+        "Could I have a bag?",
+        "I'm looking for something without pork."
+      ]
+    },
+    {
+      "prompt": "Put the words in the right order.",
+      "items": [
+        "rijst / de / staat / waar / ?",
+        "kilo / een / appels / graag / ik / wil",
+        "tasje / ik / een / mag / ?",
+        "duur / te / is / dat / mij / voor",
+        "kassa / vrij / vier / is"
+      ]
+    }
+  ],
+  "answers": [
+    "liter — doos — ons — pak — blik — stuk",
+    "weinig — wat — veel — een paar",
+    "Waar staat de rijst? — Heeft u nog eieren? — Mag ik een half kilo kaas? — Is dit vers? — Mag ik een tasje? — Ik zoek iets zonder varkensvlees.",
+    "Waar staat de rijst? — Ik wil graag een kilo appels. — Mag ik een tasje? — Dat is te duur voor mij. — Kassa vier is vrij."
+  ]
+}

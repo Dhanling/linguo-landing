@@ -1,0 +1,568 @@
+{
+  "title": "I've been to the Netherlands",
+  "title_target": "Ik ben in Nederland geweest",
+  "goal": "Choose between *hebben* and *zijn* as the helper verb, and use the simple past for the most common verbs.",
+  "bekal": [
+    "knowing when a past sentence takes *ben* instead of *heb*",
+    "using *was*, *had*, *ging*, *kon*, *moest* in a story",
+    "telling \"ever\" from \"never\""
+  ],
+  "wave": "Go back to **unit 17**: retell your yesterday in ten past-tense sentences, this time each one opening with a time expression.",
+  "dialogs": [
+    {
+      "title": "Dialog — Bij de kapper",
+      "intro": "Dutch barbers are famously chatty. Budi is stuck in twenty minutes of conversation — and it turns out to be the best practice he gets all month.",
+      "lines": [
+        {
+          "speaker": "Kapper:",
+          "text": "Ben je hier geboren?",
+          "id": "Were you born here?",
+          "literal": "are you here born?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Nee, ik ben in Bandung geboren. Ik ben hier sinds januari.",
+          "id": "No, I was born in Bandung. I've been here since January.",
+          "literal": "no, I am in Bandung born. I am here since January."
+        },
+        {
+          "speaker": "Kapper:",
+          "text": "En? Bevalt het?",
+          "id": "So? Do you like it here?",
+          "literal": "and? pleases it?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Het was moeilijk in het begin. Het weer was verschrikkelijk.",
+          "id": "It was hard at first. The weather was terrible.",
+          "literal": "it was hard in the beginning. the weather was terrible."
+        },
+        {
+          "speaker": "Kapper:",
+          "text": "Ha! Dat is het altijd. En nu?",
+          "id": "Ha! It always is. And now?",
+          "literal": "ha! that is it always. and now?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Nu gaat het goed. Ik ben naar veel steden geweest.",
+          "id": "Now it's going well. I've been to lots of cities.",
+          "literal": "now goes it well. I am to many cities been."
+        },
+        {
+          "speaker": "Kapper:",
+          "text": "Welke steden?",
+          "id": "Which cities?",
+          "literal": "which cities?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Ik ben in Rotterdam, Den Haag en Maastricht geweest.",
+          "id": "I've been to Rotterdam, The Hague, and Maastricht.",
+          "literal": "I am in Rotterdam, The-Hague and Maastricht been."
+        },
+        {
+          "speaker": "Kapper:",
+          "text": "Maastricht! Daar ben ik nog nooit geweest.",
+          "id": "Maastricht! I've never even been there.",
+          "literal": "there am I still never been."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Echt? Het is drie uur met de trein.",
+          "id": "Really? It's three hours by train.",
+          "literal": "really? that is three hours with the train."
+        },
+        {
+          "speaker": "Kapper:",
+          "text": "Precies. Dat is ver, hoor. Ik ben ooit in Zeeland geweest.",
+          "id": "Exactly. That's far, you know. I did go to Zeeland once.",
+          "literal": "precisely. that is far, hoor. I am ever in Zeeland been."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Dat is twee uur.",
+          "id": "That's two hours.",
+          "literal": "that is two hours."
+        },
+        {
+          "speaker": "Kapper:",
+          "text": "Zoals ik zei: ver.",
+          "id": "Like I said: far.",
+          "literal": "as I said: far."
+        }
+      ],
+      "notes": [
+        "**Ben je hier geboren?** — *geboren zijn* (to be born) always takes *zijn*, just like English \"I was born\". You'll be asked this sentence many times.",
+        "**Ik ben hier sinds januari** — *sinds* (since) takes the **present**, not the past. Dutch says \"I am here since January\", where English says \"I have been here since…\".",
+        "**Bevalt het?** — from *bevallen* (to please, suit). The classic question for newcomers: \"do you like it here?\". The answer: *Ja, het bevalt me goed.*",
+        "**Het was moeilijk** — *was* is the simple past of *zijn*. For *zijn*, *hebben*, and the modal verbs, this is the everyday form, not the *ge-* form.",
+        "**Ik ben naar veel steden geweest** — note *ben*, not *heb*: *zijn* is used for moving from place to place and for change of state. And *geweest* is used for \"have been to\", not *gegaan* — exactly as in English.",
+        "**Daar ben ik nog nooit geweest** — \"I've never been there\". The order: place expression first, helper verb second, participle at the end.",
+        "**Ik ben ooit in Zeeland geweest** — *ooit* means \"ever, at some point\". Don't confuse it with *nooit* (never) and *altijd* (always).",
+        "**Dat is ver, hoor** — and this is no joke. The Netherlands is small, yet a two-hour trip already counts as far. For someone like Budi, used to overnight bus rides at home, it's one of the funniest cultural differences."
+      ],
+      "grammars": [
+        {
+          "title": "Hebben or zijn?",
+          "body": [
+            "Most verbs take *hebben*. The ones that take *zijn* are a small group with one common thread: **movement or change**."
+          ],
+          "table": {
+            "head": [
+              "Use **zijn** for",
+              "Example"
+            ],
+            "rows": [
+              [
+                "movement from place to place",
+                "Ik **ben** naar Amsterdam **gegaan**."
+              ],
+              [
+                "",
+                "Hij **is** thuis**gekomen**."
+              ],
+              [
+                "change of state",
+                "Ze **is** ziek **geworden**."
+              ],
+              [
+                "",
+                "De melk **is** zuur **geworden**."
+              ],
+              [
+                "*zijn*, *blijven*, *worden*",
+                "Ik **ben** in Parijs **geweest**."
+              ],
+              [
+                "",
+                "We **zijn** thuis **gebleven**."
+              ],
+              [
+                "events with no doer",
+                "Er **is** iets **gebeurd**."
+              ],
+              [
+                "*beginnen*, *stoppen*, *sterven*",
+                "De les **is** **begonnen**."
+              ]
+            ]
+          },
+          "after": [
+            "⚠️ Some verbs of motion can take either, depending on whether there's a destination: *Ik **heb** gefietst* (I cycled — the activity) versus *Ik **ben** naar Utrecht gefietst* (I cycled to Utrecht — the movement). Same for *lopen*, *rijden*, *zwemmen*, *vliegen*.",
+            "*Zijn* + *geweest* replaces *gegaan* for experiences: *Ik ben in Maastricht geweest* (I've been to Maastricht) versus *Ik ben naar Maastricht gegaan* (I went off to Maastricht).",
+            "When in doubt: almost every verb with a direct object takes *hebben*. *Ik heb een boek gelezen*, *ik heb koffie gedronken*."
+          ]
+        },
+        {
+          "title": "The everyday simple past",
+          "body": [
+            "Dutch has two past forms. The one with *ge-* (units 17–18) is for conversation; this one, the *imperfectum*, is for **states**, for **longer stories**, and — most importantly — for a group of verbs that sound odd in the other form."
+          ],
+          "table": {
+            "head": [
+              "Present",
+              "Past (singular)",
+              "Past (plural)",
+              "Meaning"
+            ],
+            "rows": [
+              [
+                "ik ben",
+                "**was**",
+                "waren",
+                "to be"
+              ],
+              [
+                "ik heb",
+                "**had**",
+                "hadden",
+                "to have"
+              ],
+              [
+                "ik ga",
+                "**ging**",
+                "gingen",
+                "to go"
+              ],
+              [
+                "ik kan",
+                "**kon**",
+                "konden",
+                "can"
+              ],
+              [
+                "ik moet",
+                "**moest**",
+                "moesten",
+                "must"
+              ],
+              [
+                "ik wil",
+                "**wilde**",
+                "wilden",
+                "to want"
+              ],
+              [
+                "ik mag",
+                "**mocht**",
+                "mochten",
+                "may"
+              ],
+              [
+                "ik zeg",
+                "**zei**",
+                "zeiden",
+                "to say"
+              ],
+              [
+                "ik weet",
+                "**wist**",
+                "wisten",
+                "to know"
+              ],
+              [
+                "ik denk",
+                "**dacht**",
+                "dachten",
+                "to think"
+              ],
+              [
+                "ik zie",
+                "**zag**",
+                "zagen",
+                "to see"
+              ],
+              [
+                "ik doe",
+                "**deed**",
+                "deden",
+                "to do"
+              ]
+            ]
+          },
+          "after": [
+            "For these twelve verbs, the *imperfectum* is used **far more often** than the *ge-* form. The Dutch say *ik was moe*, not *ik ben moe geweest*; *ik moest werken*, not *ik heb moeten werken*.",
+            "For other verbs, use the unit 17–18 form in conversation. The *imperfectum* of ordinary verbs (*ik werkte*, *ik fietste*) shows up mostly in writing and stories — you'll read it far more often than you say it.",
+            "The form: weak verbs add **-te** or **-de** by the same 't kofschip rule: *werken → werkte*, *wonen → woonde*."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Experiences: ever and never",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "Nederlands",
+            "English"
+          ],
+          "rows": [
+            [
+              "Ben je wel eens in Amsterdam geweest?",
+              "Have you ever been to Amsterdam?"
+            ],
+            [
+              "Ja, één keer.",
+              "Yes, once."
+            ],
+            [
+              "Nee, nog nooit.",
+              "No, never."
+            ],
+            [
+              "Ik ben er twee keer geweest.",
+              "I've been there twice."
+            ],
+            [
+              "Heb je ooit stamppot gegeten?",
+              "Have you ever eaten stamppot?"
+            ],
+            [
+              "Ik heb het nog nooit geprobeerd.",
+              "I've never tried it."
+            ],
+            [
+              "Dat heb ik nog nooit gehoord.",
+              "I've never heard that before."
+            ],
+            [
+              "Ik ben nog nooit zo nat geworden.",
+              "I've never been this wet."
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "*Wel eens* and *ooit* both mean \"ever\": *wel eens* is more casual and more common in everyday questions. The negative is always *nog nooit* (never yet), not *niet ooit*."
+        },
+        {
+          "type": "kotak",
+          "title": "Provinces worth a visit",
+          "items": [
+            "**Zeeland** — the delta and the giant *Deltawerken* dams, built after the 1953 flood.",
+            "**Friesland** — has its own language (*Frysk*), the Netherlands' second official language.",
+            "**Limburg** — hilly, and the only place in the Netherlands with a \"mountain\" (322 meters).",
+            "**Groningen** — the student city with the youngest average age in the country.",
+            "**Noord-Holland** — Amsterdam, Haarlem, and the windmill village of *Zaanse Schans*.",
+            "⚠️ For students, an **OV-chipkaart** with a weekend subscription puts the whole country within cheap reach."
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Telling a story in the past",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "See how the two past forms work side by side in one story — *was*, *had*, *moest* for states, and the *ge-* form for events:"
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Nederlands",
+            "English"
+          ],
+          "rows": [
+            [
+              "Gisteren was het heel koud.",
+              "Yesterday it was very cold."
+            ],
+            [
+              "Ik moest om zes uur opstaan.",
+              "I had to get up at six."
+            ],
+            [
+              "Ik had geen tijd voor ontbijt.",
+              "I had no time for breakfast."
+            ],
+            [
+              "Ik heb de trein gemist.",
+              "I missed the train."
+            ],
+            [
+              "Daarna ben ik naar kantoor gefietst.",
+              "Then I cycled to the office."
+            ],
+            [
+              "Onderweg ging het regenen.",
+              "On the way it started raining."
+            ],
+            [
+              "Ik ben doorweekt aangekomen.",
+              "I arrived soaked."
+            ],
+            [
+              "Maar mijn collega had koffie gezet.",
+              "But my colleague had made coffee."
+            ],
+            [
+              "Toen was alles weer goed.",
+              "Then everything was fine again."
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "This pattern — states with *was/had/moest*, events with *heb/ben + ge-* — is the most natural way to tell a story in spoken Dutch. If you can tell the story of one bad day like the one above, you've moved past A1."
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "nl": "was / waren",
+      "baca": "vas / VAH-ruh(n)",
+      "en": "was / were"
+    },
+    {
+      "nl": "had / hadden",
+      "baca": "hat / HA-duh(n)",
+      "en": "had"
+    },
+    {
+      "nl": "ging / gingen",
+      "baca": "khing",
+      "en": "went"
+    },
+    {
+      "nl": "kon / konden",
+      "baca": "kon",
+      "en": "could"
+    },
+    {
+      "nl": "moest / moesten",
+      "baca": "moost",
+      "en": "had to"
+    },
+    {
+      "nl": "wilde / wilden",
+      "baca": "VIL-duh",
+      "en": "wanted"
+    },
+    {
+      "nl": "zei / zeiden",
+      "baca": "zey",
+      "en": "said"
+    },
+    {
+      "nl": "wist / wisten",
+      "baca": "vist",
+      "en": "knew"
+    },
+    {
+      "nl": "dacht / dachten",
+      "baca": "dakht",
+      "en": "thought"
+    },
+    {
+      "nl": "zag / zagen",
+      "baca": "zakh",
+      "en": "saw"
+    },
+    {
+      "nl": "geweest",
+      "baca": "khuh-VAYST",
+      "en": "been"
+    },
+    {
+      "nl": "gegaan",
+      "baca": "khuh-KHAHN",
+      "en": "gone"
+    },
+    {
+      "nl": "geworden",
+      "baca": "khuh-VOR-duh(n)",
+      "en": "become"
+    },
+    {
+      "nl": "gebleven",
+      "baca": "khuh-BLAY-fuh(n)",
+      "en": "stayed"
+    },
+    {
+      "nl": "geboren",
+      "baca": "khuh-BOH-ruh(n)",
+      "en": "born"
+    },
+    {
+      "nl": "aangekomen",
+      "baca": "AHN-khuh-koh-muh(n)",
+      "en": "arrived"
+    },
+    {
+      "nl": "ooit / nooit",
+      "baca": "ohyt / nohyt",
+      "en": "ever / never"
+    },
+    {
+      "nl": "wel eens",
+      "baca": "vel ayns",
+      "en": "ever, sometimes"
+    },
+    {
+      "nl": "nog nooit",
+      "baca": "nokh nohyt",
+      "en": "never (yet)"
+    },
+    {
+      "nl": "sinds",
+      "baca": "sints",
+      "en": "since"
+    },
+    {
+      "nl": "toen",
+      "baca": "toon",
+      "en": "then, at that time"
+    },
+    {
+      "nl": "onderweg",
+      "baca": "on-duhr-VEKH",
+      "en": "on the way"
+    },
+    {
+      "nl": "het begin",
+      "baca": "het buh-KHIN",
+      "en": "beginning"
+    },
+    {
+      "nl": "de stad / de steden",
+      "baca": "duh stat / duh STAY-duh(n)",
+      "en": "city / cities"
+    },
+    {
+      "nl": "de collega",
+      "baca": "duh ko-LAY-kha",
+      "en": "colleague"
+    },
+    {
+      "nl": "bevallen",
+      "baca": "buh-FA-luh(n)",
+      "en": "to please, suit"
+    },
+    {
+      "nl": "verschrikkelijk",
+      "baca": "fuhr-SKHRI-kuh-luhk",
+      "en": "terrible"
+    },
+    {
+      "nl": "de keer",
+      "baca": "duh kayr",
+      "en": "time (occasion)"
+    }
+  ],
+  "exercises": [
+    {
+      "prompt": "Fill in the blanks with heb/heeft or ben/is.",
+      "items": [
+        "Ik ____ naar Amsterdam gegaan.",
+        "Ik ____ koffie gedronken.",
+        "Hij ____ ziek geworden.",
+        "Zij ____ een boek gelezen.",
+        "We ____ thuis gebleven.",
+        "Er ____ iets gebeurd."
+      ]
+    },
+    {
+      "prompt": "Fill in the blanks with the simple past.",
+      "items": [
+        "Het ____ gisteren koud. (zijn)",
+        "Ik ____ geen tijd. (hebben)",
+        "Ik ____ vroeg opstaan. (moeten)",
+        "Hij ____ dat niet. (weten)",
+        "Wat ____ je? (zeggen)",
+        "We ____ naar huis. (gaan)"
+      ]
+    },
+    {
+      "prompt": "Translate into Dutch.",
+      "items": [
+        "I've been to Rotterdam.",
+        "I've never been there.",
+        "I was born in Bandung.",
+        "Yesterday it was very cold.",
+        "I missed the train.",
+        "Then everything was fine again."
+      ]
+    },
+    {
+      "prompt": "Put the words in the right order.",
+      "items": [
+        "geweest / Maastricht / ik / in / ben",
+        "nooit / daar / ik / nog / ben / geweest",
+        "koud / het / gisteren / was",
+        "gemist / trein / heb / de / ik",
+        "geboren / Bandung / ben / ik / in"
+      ]
+    }
+  ],
+  "answers": [
+    "ben — heb — is — heeft — zijn — is",
+    "was — had — moest — wist — zei — gingen",
+    "Ik ben in Rotterdam geweest. — Ik ben daar nog nooit geweest. — Ik ben in Bandung geboren. — Gisteren was het heel koud. — Ik heb de trein gemist. — Toen was alles weer goed.",
+    "Ik ben in Maastricht geweest. — Daar ben ik nog nooit geweest. — Gisteren was het koud. — Ik heb de trein gemist. — Ik ben in Bandung geboren."
+  ]
+}

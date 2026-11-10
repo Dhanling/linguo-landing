@@ -1,0 +1,556 @@
+{
+  "title": "Weather and seasons",
+  "title_target": "Het weer en de seizoenen",
+  "goal": "Talk about the weather — the number-one conversation opener in the Netherlands — name the seasons, and use *er* to say that something exists.",
+  "bekal": [
+    "talking about the weather without running out of things to say",
+    "using *het regent*, *het waait*, *het vriest*",
+    "using *er is / er zijn* to say \"there is / there are\""
+  ],
+  "wave": "Go back to **unit 10**: take ten of your own sentences, move the time expression to the front, and flip the verb.",
+  "dialogs": [
+    {
+      "title": "Dialog — Lekker weertje",
+      "intro": "Rain, then sun, then rain again — all within an hour. Budi is starting to understand something about this country.",
+      "lines": [
+        {
+          "speaker": "Sanne:",
+          "text": "Wat een weer, hè?",
+          "id": "What weather, huh?",
+          "literal": "what a weather, eh?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Vanochtend scheen de zon nog.",
+          "id": "This morning the sun was still shining.",
+          "literal": "this-morning shone the sun still."
+        },
+        {
+          "speaker": "Sanne:",
+          "text": "Ja, en nu regent het weer. Typisch Nederlands.",
+          "id": "Yes, and now it's raining again. Typically Dutch.",
+          "literal": "yes, and now rains it again. typically Dutch."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Bij ons regent het ook, maar dan uren achter elkaar.",
+          "id": "It rains where I'm from too, but then for hours on end.",
+          "literal": "at us rains it also, but then hours behind each-other."
+        },
+        {
+          "speaker": "Sanne:",
+          "text": "Hier duurt het tien minuten. En dan waait het.",
+          "id": "Here it lasts ten minutes. And then it gets windy.",
+          "literal": "here lasts it ten minutes. and then blows it."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "De wind is het ergste. Mijn paraplu is al kapot.",
+          "id": "The wind is the worst. My umbrella is already broken.",
+          "literal": "the wind is the-worst. my umbrella is already broken."
+        },
+        {
+          "speaker": "Sanne:",
+          "text": "Daarom gebruikt niemand hier een paraplu. We dragen een regenjas.",
+          "id": "That's why nobody here uses an umbrella. We wear a raincoat.",
+          "literal": "that's-why uses nobody here an umbrella. we wear a rain-coat."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "En fietsen jullie ook in de regen?",
+          "id": "And you still cycle in the rain?",
+          "literal": "and cycle you(pl) also in the rain?"
+        },
+        {
+          "speaker": "Sanne:",
+          "text": "Natuurlijk. Anders kom je nooit ergens.",
+          "id": "Of course. Otherwise you'd never get anywhere.",
+          "literal": "naturally. otherwise come you never somewhere."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Wordt het nog warm deze zomer?",
+          "id": "Will it get warm this summer?",
+          "literal": "becomes it still warm this summer?"
+        },
+        {
+          "speaker": "Sanne:",
+          "text": "Er zijn drie mooie dagen. Meestal in juli.",
+          "id": "There are three nice days. Usually in July.",
+          "literal": "there are three nice days. usually in July."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Drie dagen. Ik noteer het.",
+          "id": "Three days. I'll make a note of it.",
+          "literal": "three days. I note that."
+        }
+      ],
+      "notes": [
+        "**Wat een weer!** — \"what weather!\". The pattern *wat een + noun* works for any exclamation: *Wat een dag!*, *Wat een mooi huis!*",
+        "**Het regent** — weather always takes an empty *het* as its subject, exactly like the *it* in English *it's raining*. Dutch, like English, can't leave it out.",
+        "**Typisch Nederlands** — a phrase you'll often hear the Dutch say about their own country, usually half complaining and half proud.",
+        "**Uren achter elkaar** = for hours on end. *Achter elkaar* means \"one after another\", handy for anything in a row.",
+        "**Niemand gebruikt een paraplu** — and this is no joke: in a North Sea wind, an umbrella lasts about one season. The Dutch wear a *regenjas* and *regenbroek* (rain pants), and keep pedaling.",
+        "**Anders kom je nooit ergens** — *anders* (otherwise), *ergens* (somewhere), *nergens* (nowhere). A group of words that returns in unit 14.",
+        "**Wordt het warm?** — *worden* means \"to become\" and is used for change: *het wordt koud* (it's getting cold), *hij wordt dertig* (he's turning thirty). It's also the verb that forms the passive — an A2 matter."
+      ],
+      "grammars": [
+        {
+          "title": "Weather: sentences with an empty subject",
+          "body": [
+            "Every weather sentence uses *het* as an empty subject, and many are single verbs — Dutch says \"it rains\", \"it blows\", \"it freezes\" where English often needs \"it is\" + an adjective."
+          ],
+          "table": {
+            "head": [
+              "Nederlands",
+              "Literal",
+              "English"
+            ],
+            "rows": [
+              [
+                "Het regent.",
+                "it rains",
+                "It's raining."
+              ],
+              [
+                "Het waait.",
+                "it blows",
+                "It's windy."
+              ],
+              [
+                "Het sneeuwt.",
+                "it snows",
+                "It's snowing."
+              ],
+              [
+                "Het vriest.",
+                "it freezes",
+                "It's below zero."
+              ],
+              [
+                "Het dooit.",
+                "it thaws",
+                "The snow is melting."
+              ],
+              [
+                "Het is bewolkt.",
+                "it is clouded",
+                "It's cloudy."
+              ],
+              [
+                "De zon schijnt.",
+                "the sun shines",
+                "The sun is shining."
+              ],
+              [
+                "Het klaart op.",
+                "it clears up",
+                "It's clearing up."
+              ]
+            ]
+          },
+          "after": [
+            "Temperature uses *graden* (degrees Celsius): *Het is achttien graden.* Below zero: *Het is min drie* or *drie graden onder nul*.",
+            "⚠️ *Het is koud* (the weather is cold) differs from *Ik heb het koud* (I'm cold) — recall unit 4. Mixing them up is a classic beginner's mistake."
+          ]
+        },
+        {
+          "title": "Er is / er zijn — there is, there are",
+          "body": [
+            "To say that something not yet mentioned exists, Dutch uses *er* — the equivalent of English *there is/are*."
+          ],
+          "table": {
+            "head": [
+              "Form",
+              "Example",
+              "Meaning"
+            ],
+            "rows": [
+              [
+                "**er is** + singular",
+                "**Er is** een probleem.",
+                "There's a problem."
+              ],
+              [
+                "**er zijn** + plural",
+                "**Er zijn** drie mooie dagen.",
+                "There are three nice days."
+              ],
+              [
+                "**er is geen**",
+                "**Er is geen** koffie meer.",
+                "There's no coffee left."
+              ],
+              [
+                "question",
+                "**Is er** een supermarkt in de buurt?",
+                "Is there a supermarket nearby?"
+              ],
+              [
+                "in second position",
+                "In juli **zijn er** mooie dagen.",
+                "In July there are nice days."
+              ]
+            ]
+          },
+          "after": [
+            "Look at the last row: once a sentence opens with an adverbial, the second-position rule still applies and *er* moves behind the verb.",
+            "*Er* is used for **indefinite** things — *een probleem*, *drie dagen*, *geen koffie*. For something specific, the sentence is ordinary: *De koffie staat op tafel.*",
+            "The word *er* has many other jobs in Dutch (you met *ik heb er twee* in unit 2). This is the most common and the easiest — master it first."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Seasons and weather",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "Nederlands",
+            "Say it",
+            "English"
+          ],
+          "rows": [
+            [
+              "de lente / het voorjaar",
+              "duh LEN-tuh",
+              "spring"
+            ],
+            [
+              "de zomer",
+              "duh ZOH-muhr",
+              "summer"
+            ],
+            [
+              "de herfst / het najaar",
+              "duh herfst",
+              "autumn, fall"
+            ],
+            [
+              "de winter",
+              "duh VIN-tuhr",
+              "winter"
+            ],
+            [
+              "de regen",
+              "duh RAY-khuh(n)",
+              "rain"
+            ],
+            [
+              "de wind",
+              "duh vint",
+              "wind"
+            ],
+            [
+              "de sneeuw",
+              "duh snayv",
+              "snow"
+            ],
+            [
+              "de zon",
+              "duh zon",
+              "sun"
+            ],
+            [
+              "de wolk",
+              "duh volk",
+              "cloud"
+            ],
+            [
+              "de mist",
+              "duh mist",
+              "fog"
+            ],
+            [
+              "de bui",
+              "duh böy",
+              "shower"
+            ],
+            [
+              "het onweer",
+              "het ON-vayr",
+              "thunderstorm"
+            ],
+            [
+              "de temperatuur",
+              "duh tem-puh-rah-TÜHR",
+              "temperature"
+            ],
+            [
+              "de graad / graden",
+              "duh khraht",
+              "degree(s)"
+            ]
+          ]
+        },
+        {
+          "type": "kotak",
+          "title": "Dutch weather in numbers",
+          "items": [
+            "On average **it rains on about 130 days a year** — but almost always briefly. That's why forecasts talk about *buien* (short showers), not \"rainy days\".",
+            "Summers rarely go above 25 °C (77 °F), winters rarely below −5 °C (23 °F). What makes the cold bite is the **wind and humidity**, not the numbers.",
+            "*Elfstedentocht* — a 200 km skating race through eleven Frisian towns, held only when every canal freezes thick enough. It last took place in 1997, and every winter the whole country still talks about whether it might happen.",
+            "The darkest month is December: the sun rises at 8:30 and sets at 4:30. Many newcomers are shocked by that, not by the temperature."
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Weather small talk",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "Nederlands",
+            "English"
+          ],
+          "rows": [
+            [
+              "Wat een weer!",
+              "What weather! (usually: bad)"
+            ],
+            [
+              "Lekker weertje, hè?",
+              "Nice weather, isn't it?"
+            ],
+            [
+              "Het is guur.",
+              "It's cold, damp, and windy."
+            ],
+            [
+              "Het klaart op.",
+              "It's clearing up."
+            ],
+            [
+              "Het is drukkend warm.",
+              "It's oppressively hot."
+            ],
+            [
+              "Wat is het koud vandaag!",
+              "It's so cold today!"
+            ],
+            [
+              "Wordt het morgen beter?",
+              "Will it be better tomorrow?"
+            ],
+            [
+              "Volgens het weerbericht gaat het regenen.",
+              "The forecast says it's going to rain."
+            ],
+            [
+              "Neem een paraplu mee.",
+              "Take an umbrella."
+            ],
+            [
+              "Het valt wel mee.",
+              "It's not as bad as all that."
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "*Het valt mee* and *het valt tegen* are a very Dutch pair with no neat English equivalent: the first means \"it turned out better than expected\", the second \"it turned out worse\". Used for weather, exams, prices, and almost everything else."
+        },
+        {
+          "type": "p",
+          "text": "Talking about the weather isn't empty chitchat in the Netherlands — it's a legitimate conversation opener, even with strangers at a bus stop. Two fluent weather sentences will get you further than a paragraph of perfect grammar."
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "nl": "het weer",
+      "baca": "het vayr",
+      "en": "weather"
+    },
+    {
+      "nl": "regenen",
+      "baca": "RAY-khuh-nuh(n)",
+      "en": "to rain"
+    },
+    {
+      "nl": "waaien",
+      "baca": "VAH-yuh(n)",
+      "en": "to be windy"
+    },
+    {
+      "nl": "sneeuwen",
+      "baca": "SNAY-vuh(n)",
+      "en": "to snow"
+    },
+    {
+      "nl": "vriezen",
+      "baca": "FREE-zuh(n)",
+      "en": "to freeze"
+    },
+    {
+      "nl": "schijnen",
+      "baca": "SKHEY-nuh(n)",
+      "en": "to shine"
+    },
+    {
+      "nl": "worden",
+      "baca": "VOR-duh(n)",
+      "en": "to become"
+    },
+    {
+      "nl": "koud / warm",
+      "baca": "kowt / varm",
+      "en": "cold / warm"
+    },
+    {
+      "nl": "nat / droog",
+      "baca": "nat / drohkh",
+      "en": "wet / dry"
+    },
+    {
+      "nl": "bewolkt",
+      "baca": "buh-VOLKT",
+      "en": "cloudy"
+    },
+    {
+      "nl": "zonnig",
+      "baca": "ZO-nuhkh",
+      "en": "sunny, clear"
+    },
+    {
+      "nl": "de lente",
+      "baca": "duh LEN-tuh",
+      "en": "spring"
+    },
+    {
+      "nl": "de zomer",
+      "baca": "duh ZOH-muhr",
+      "en": "summer"
+    },
+    {
+      "nl": "de herfst",
+      "baca": "duh herfst",
+      "en": "autumn, fall"
+    },
+    {
+      "nl": "de winter",
+      "baca": "duh VIN-tuhr",
+      "en": "winter"
+    },
+    {
+      "nl": "de regen",
+      "baca": "duh RAY-khuh(n)",
+      "en": "rain"
+    },
+    {
+      "nl": "de wind",
+      "baca": "duh vint",
+      "en": "wind"
+    },
+    {
+      "nl": "de zon",
+      "baca": "duh zon",
+      "en": "sun"
+    },
+    {
+      "nl": "de paraplu",
+      "baca": "duh pa-ra-PLÜ",
+      "en": "umbrella"
+    },
+    {
+      "nl": "de regenjas",
+      "baca": "duh RAY-khuh(n)-yas",
+      "en": "raincoat"
+    },
+    {
+      "nl": "de jas",
+      "baca": "duh yas",
+      "en": "jacket, coat"
+    },
+    {
+      "nl": "dragen",
+      "baca": "DRAH-khuh(n)",
+      "en": "to wear"
+    },
+    {
+      "nl": "gebruiken",
+      "baca": "khuh-BRÖY-kuh(n)",
+      "en": "to use"
+    },
+    {
+      "nl": "er is / er zijn",
+      "baca": "uhr is / uhr zeyn",
+      "en": "there is / there are"
+    },
+    {
+      "nl": "niemand",
+      "baca": "NEE-mant",
+      "en": "nobody"
+    },
+    {
+      "nl": "ergens / nergens",
+      "baca": "ER-khuhns / NER-khuhns",
+      "en": "somewhere / nowhere"
+    },
+    {
+      "nl": "anders",
+      "baca": "AN-duhrs",
+      "en": "otherwise / different"
+    },
+    {
+      "nl": "het weerbericht",
+      "baca": "het VAYR-buh-rikht",
+      "en": "weather forecast"
+    }
+  ],
+  "exercises": [
+    {
+      "prompt": "Fill in the blanks to complete the weather sentences.",
+      "items": [
+        "____ regent. (it is raining)",
+        "____ waait hard. (it is windy)",
+        "De zon ____. (shines)",
+        "Het ____ vannacht. (freezes)",
+        "Het is achttien ____. (degrees)"
+      ]
+    },
+    {
+      "prompt": "Fill in the blanks with er is or er zijn.",
+      "items": [
+        "____ een probleem.",
+        "____ drie mooie dagen in juli.",
+        "____ geen koffie meer.",
+        "____ veel mensen op straat.",
+        "____ een supermarkt in de buurt?"
+      ]
+    },
+    {
+      "prompt": "Translate into Dutch.",
+      "items": [
+        "It's raining today.",
+        "It's very cold.",
+        "I'm cold.",
+        "Will it be better tomorrow?",
+        "Is there a supermarket nearby?",
+        "Take your raincoat."
+      ]
+    },
+    {
+      "prompt": "Put the words in the right order.",
+      "items": [
+        "regent / weer / het",
+        "koud / is / vandaag / het",
+        "mooie / zijn / dagen / drie / er",
+        "mee / paraplu / neem / een",
+        "morgen / het / wordt / beter / ?"
+      ]
+    }
+  ],
+  "answers": [
+    "Het — Het — schijnt — vriest — graden",
+    "Er is — Er zijn — Er is — Er zijn — Is er",
+    "Vandaag regent het. — Het is heel koud. — Ik heb het koud. — Wordt het morgen beter? — Is er een supermarkt in de buurt? — Neem je regenjas mee.",
+    "Het regent weer. — Het is vandaag koud. — Er zijn drie mooie dagen. — Neem een paraplu mee. — Wordt het morgen beter?"
+  ]
+}

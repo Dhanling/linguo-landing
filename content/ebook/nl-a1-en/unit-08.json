@@ -1,0 +1,583 @@
+{
+  "title": "What time is it?",
+  "title_target": "Hoe laat is het?",
+  "goal": "Tell the time in Dutch — including *half*, which points forward, not back — name days and months, and make appointments.",
+  "bekal": [
+    "read an analog clock with *over*, *voor*, *kwart* and *half*",
+    "name days, months and dates",
+    "make and cancel appointments"
+  ],
+  "wave": "Review **Unit 6**: say ten random prices out loud in Dutch, then write down the figures and check yourself.",
+  "dialogs": [
+    {
+      "title": "Dialogue — Een afspraak maken",
+      "intro": "Budi phones the dentist. He thinks he has numbers down. He's wrong.",
+      "lines": [
+        {
+          "speaker": "Assistent:",
+          "text": "Tandartspraktijk De Vries, goedemorgen.",
+          "id": "De Vries dental practice, good morning.",
+          "literal": "dentist-practice De Vries, good-morning."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Goedemorgen, u spreekt met Budi Santoso. Ik wil graag een afspraak maken.",
+          "id": "Good morning, this is Budi Santoso. I'd like to make an appointment.",
+          "literal": "good-morning, you speak with Budi Santoso. I want gladly an appointment make."
+        },
+        {
+          "speaker": "Assistent:",
+          "text": "Dat kan. Kunt u donderdag om half drie?",
+          "id": "Certainly. Can you make Thursday at half past two?",
+          "literal": "that can. can you Thursday at half three?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Half drie… dus half vier?",
+          "id": "Half drie… so half past three?",
+          "literal": "half three… so half four?"
+        },
+        {
+          "speaker": "Assistent:",
+          "text": "Nee hoor. Half drie is twee uur dertig.",
+          "id": "No. Half drie is 2:30.",
+          "literal": "no really. half three is two hour thirty."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Ah — een half uur vóór drie, niet erna.",
+          "id": "Ah — half an hour before three, not after.",
+          "literal": "ah — a half hour before three, not there-after."
+        },
+        {
+          "speaker": "Assistent:",
+          "text": "Precies. Iedereen struikelt daarover.",
+          "id": "Exactly. Everybody trips over that.",
+          "literal": "exactly. everyone stumbles there-over."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Donderdag half drie is prima. Hoe laat moet ik er zijn?",
+          "id": "Thursday at half past two is fine. What time should I be there?",
+          "literal": "Thursday half three is fine. how late must I there be?"
+        },
+        {
+          "speaker": "Assistent:",
+          "text": "Vijf minuten van tevoren. En neem uw verzekeringspas mee.",
+          "id": "Five minutes early. And bring your insurance card.",
+          "literal": "five minutes from before. and take your insurance-card along."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Doe ik. Tot donderdag!",
+          "id": "Will do. See you Thursday!",
+          "literal": "do I. until Thursday!"
+        },
+        {
+          "speaker": "Assistent:",
+          "text": "Tot donderdag. Fijne dag verder!",
+          "id": "See you Thursday. Have a nice day!",
+          "literal": "until Thursday. fine day further!"
+        }
+      ],
+      "notes": [
+        "**U spreekt met …** is the standard way to introduce yourself on the phone — not *ik ben*. Literally \"you are speaking with …\".",
+        "**Half drie = 2:30.** This is the most famous time trap in Dutch, and it really does make people show up an hour off. Dutch (like German) counts *half* towards the **next** hour: *half drie* = halfway to three o'clock. English \"half three\" (British for 3:30) means the opposite — forget it here.",
+        "**Kunt u donderdag om half drie?** — the verb *komen* is dropped because it's obvious. The full sentence: *Kunt u donderdag om half drie komen?*",
+        "**Iedereen struikelt daarover** — *daarover* = \"over that\" (literally \"thereover\"). *Daar* + a preposition replaces \"that\" for things and ideas, like old English *therefore*, *thereby*. You'll meet *daarom*, *daarmee*, *daarnaast* all the time.",
+        "**Van tevoren** = beforehand, in advance. For appointments in the Netherlands, being on time means arriving **five minutes early**; ten minutes late already counts as rude and can cost you your slot.",
+        "**Neem uw pas mee** — *meenemen* (to take along) is a separable verb: its first part (*mee*) gets thrown to the end of the sentence, like English \"bring it *along*\". The whole family is covered in the next unit.",
+        "**Doe ik** — a super-short answer meaning \"I will\". The full form is *dat doe ik*."
+      ],
+      "grammars": [
+        {
+          "title": "Telling the time",
+          "body": [
+            "Dutch divides every hour into four reference points: the full hour, quarter past, half, and quarter to. Every other minute is counted from the nearest point."
+          ],
+          "table": {
+            "head": [
+              "Time",
+              "Nederlands",
+              "Literally"
+            ],
+            "rows": [
+              [
+                "14:00",
+                "twee uur",
+                "two hour"
+              ],
+              [
+                "14:05",
+                "vijf over twee",
+                "five past two"
+              ],
+              [
+                "14:15",
+                "kwart over twee",
+                "quarter past two"
+              ],
+              [
+                "14:20",
+                "tien voor half drie",
+                "ten before half three"
+              ],
+              [
+                "14:25",
+                "vijf voor half drie",
+                "five before half three"
+              ],
+              [
+                "14:30",
+                "**half drie**",
+                "half three"
+              ],
+              [
+                "14:35",
+                "vijf over half drie",
+                "five past half three"
+              ],
+              [
+                "14:40",
+                "tien over half drie",
+                "ten past half three"
+              ],
+              [
+                "14:45",
+                "kwart voor drie",
+                "quarter to three"
+              ],
+              [
+                "14:55",
+                "vijf voor drie",
+                "five to three"
+              ]
+            ]
+          },
+          "after": [
+            "Look at the rows from 14:20 to 14:40: Dutch **counts from the half hour**, not from the full hour. *Tien voor half drie* isn't \"ten to three\" but \"ten before 2:30\" = 2:20. It takes practice, but once it sticks it actually feels more precise.",
+            "To avoid misunderstandings, the Dutch themselves often use the digital form: *twee uur dertig*, *veertien uur dertig*. At stations, airports and on official schedules the 24-hour clock is **always** used.",
+            "The questions: *Hoe laat is het?* (literally: \"how late is it?\") and *Hoe laat begint het?* To give the time of an appointment, use the preposition **om**: *om half drie*, *om acht uur*."
+          ]
+        },
+        {
+          "title": "Days, months and parts of the day",
+          "body": [
+            "Days and months are written in **lowercase** — unlike English."
+          ],
+          "tables": [
+            {
+              "head": [
+                "Day",
+                "Say it",
+                "Month",
+                "Month"
+              ],
+              "rows": [
+                [
+                  "maandag",
+                  "MAHN-dakh",
+                  "januari",
+                  "juli"
+                ],
+                [
+                  "dinsdag",
+                  "DINS-dakh",
+                  "februari",
+                  "augustus"
+                ],
+                [
+                  "woensdag",
+                  "VOONS-dakh",
+                  "maart",
+                  "september"
+                ],
+                [
+                  "donderdag",
+                  "DON-duhr-dakh",
+                  "april",
+                  "oktober"
+                ],
+                [
+                  "vrijdag",
+                  "FREY-dakh",
+                  "mei",
+                  "november"
+                ],
+                [
+                  "zaterdag",
+                  "ZAH-tuhr-dakh",
+                  "juni",
+                  "december"
+                ],
+                [
+                  "zondag",
+                  "ZON-dakh",
+                  "",
+                  ""
+                ]
+              ]
+            }
+          ],
+          "after": [
+            "Days take the preposition **op**: *op maandag*, *op zondag* (on Monday, on Sunday) — but in speech the preposition is often dropped: *Ik werk maandag.*",
+            "Parts of the day: *de ochtend* (morning), *de middag* (afternoon), *de avond* (evening), *de nacht* (night). For habits, use the **'s** form: *'s ochtends*, *'s middags*, *'s avonds*, *'s nachts* — \"in the mornings\", \"at night\".",
+            "Dates use ordinary numbers: *op 5 mei* is read *op vijf mei*. For the 1st, use *één* or *de eerste*: *de eerste januari*."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Making appointments",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "Nederlands",
+            "English"
+          ],
+          "rows": [
+            [
+              "Ik wil graag een afspraak maken.",
+              "I'd like to make an appointment."
+            ],
+            [
+              "Wanneer kunt u?",
+              "When can you make it?"
+            ],
+            [
+              "Kunt u dinsdag om tien uur?",
+              "Can you make Tuesday at ten?"
+            ],
+            [
+              "Dat komt me goed uit.",
+              "That suits me fine."
+            ],
+            [
+              "Dat lukt me niet.",
+              "I can't make that."
+            ],
+            [
+              "Heeft u iets later?",
+              "Do you have anything later?"
+            ],
+            [
+              "Ik moet de afspraak verzetten.",
+              "I need to reschedule the appointment."
+            ],
+            [
+              "Ik ben helaas verhinderd.",
+              "Unfortunately I can't make it."
+            ],
+            [
+              "Tot dan!",
+              "See you then!"
+            ],
+            [
+              "Hoe laat spreken we af?",
+              "What time shall we meet?"
+            ]
+          ]
+        },
+        {
+          "type": "kotak",
+          "title": "The agenda: a Dutch habit you must understand",
+          "items": [
+            "Almost everything in the Netherlands is **arranged in advance** — even visiting friends. Dropping by unannounced comes across as startling, not warm.",
+            "*Even in mijn agenda kijken* (\"hang on, let me check my calendar\") is a sentence you'll hear every time you invite someone.",
+            "A dinner date can be set three weeks ahead, and that's normal.",
+            "If you have to cancel, say so as early as possible: *Sorry, ik moet onze afspraak afzeggen.* Canceling on the day without a good reason leaves a bad impression.",
+            "⚠️ Doctors, dentists and government offices charge a fee if you don't show up without canceling (*no-show*)."
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Time words",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "Nederlands",
+            "Say it",
+            "English"
+          ],
+          "rows": [
+            [
+              "vandaag",
+              "fan-DAHKH",
+              "today"
+            ],
+            [
+              "morgen",
+              "MOR-khuh(n)",
+              "tomorrow"
+            ],
+            [
+              "gisteren",
+              "KHIS-tuh-ruh(n)",
+              "yesterday"
+            ],
+            [
+              "overmorgen",
+              "OH-fuhr-mor-khuh(n)",
+              "the day after tomorrow"
+            ],
+            [
+              "eergisteren",
+              "AYR-khis-tuh-ruh(n)",
+              "the day before yesterday"
+            ],
+            [
+              "vanochtend",
+              "fa-NOKH-tuhnt",
+              "this morning"
+            ],
+            [
+              "vanavond",
+              "fa-NAH-font",
+              "this evening, tonight"
+            ],
+            [
+              "vannacht",
+              "fa-NAKHT",
+              "tonight (late) / last night"
+            ],
+            [
+              "volgende week",
+              "FOL-khuhn-duh vayk",
+              "next week"
+            ],
+            [
+              "vorige week",
+              "FOH-ree-khuh vayk",
+              "last week"
+            ],
+            [
+              "altijd / nooit",
+              "AL-teyt / nohyt",
+              "always / never"
+            ],
+            [
+              "vaak / soms",
+              "fahk / soms",
+              "often / sometimes"
+            ],
+            [
+              "meestal",
+              "MAYS-tal",
+              "usually"
+            ],
+            [
+              "nu meteen",
+              "nü muh-TAYN",
+              "right now"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "⚠️ *Morgen* means **tomorrow**, while *ochtend* means morning — yet *vanmorgen* means \"this morning\" and *goedemorgen* means \"good morning\". One word, two lives (just like old English *morrow* and *morning*); the compound decides which."
+        },
+        {
+          "type": "p",
+          "text": "Time words very often stand **at the start of the sentence** in Dutch, and as soon as one does, the verb jumps to second place: *Morgen **ga** ik naar Amsterdam.* This is exactly the rule taken apart in Unit 10."
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "nl": "hoe laat",
+      "baca": "hoo laht",
+      "en": "what time"
+    },
+    {
+      "nl": "het uur",
+      "baca": "het ühr",
+      "en": "hour, o'clock"
+    },
+    {
+      "nl": "de minuut",
+      "baca": "duh mee-NÜHT",
+      "en": "minute"
+    },
+    {
+      "nl": "half",
+      "baca": "half",
+      "en": "half (towards the next hour)"
+    },
+    {
+      "nl": "kwart over / voor",
+      "baca": "kvart OH-fuhr / fohr",
+      "en": "quarter past / to"
+    },
+    {
+      "nl": "om",
+      "baca": "om",
+      "en": "at (a time)"
+    },
+    {
+      "nl": "de afspraak",
+      "baca": "duh AF-sprahk",
+      "en": "appointment"
+    },
+    {
+      "nl": "afspreken",
+      "baca": "AF-spray-kuh(n)",
+      "en": "to arrange (to meet)"
+    },
+    {
+      "nl": "verzetten",
+      "baca": "fuhr-ZE-tuh(n)",
+      "en": "to reschedule"
+    },
+    {
+      "nl": "afzeggen",
+      "baca": "AF-ze-khuh(n)",
+      "en": "to cancel"
+    },
+    {
+      "nl": "de agenda",
+      "baca": "duh a-KHEN-da",
+      "en": "diary, calendar"
+    },
+    {
+      "nl": "maandag",
+      "baca": "MAHN-dakh",
+      "en": "Monday"
+    },
+    {
+      "nl": "dinsdag",
+      "baca": "DINS-dakh",
+      "en": "Tuesday"
+    },
+    {
+      "nl": "woensdag",
+      "baca": "VOONS-dakh",
+      "en": "Wednesday"
+    },
+    {
+      "nl": "donderdag",
+      "baca": "DON-duhr-dakh",
+      "en": "Thursday"
+    },
+    {
+      "nl": "vrijdag",
+      "baca": "FREY-dakh",
+      "en": "Friday"
+    },
+    {
+      "nl": "zaterdag / zondag",
+      "baca": "ZAH-tuhr-dakh / ZON-dakh",
+      "en": "Saturday / Sunday"
+    },
+    {
+      "nl": "de week",
+      "baca": "duh vayk",
+      "en": "week"
+    },
+    {
+      "nl": "de maand",
+      "baca": "duh mahnt",
+      "en": "month"
+    },
+    {
+      "nl": "het jaar",
+      "baca": "het yahr",
+      "en": "year"
+    },
+    {
+      "nl": "de ochtend",
+      "baca": "duh OKH-tuhnt",
+      "en": "morning"
+    },
+    {
+      "nl": "de middag",
+      "baca": "duh MI-dakh",
+      "en": "afternoon"
+    },
+    {
+      "nl": "de avond",
+      "baca": "duh AH-font",
+      "en": "evening"
+    },
+    {
+      "nl": "de nacht",
+      "baca": "duh nakht",
+      "en": "night"
+    },
+    {
+      "nl": "wanneer",
+      "baca": "va-NAYR",
+      "en": "when"
+    },
+    {
+      "nl": "vroeg / laat",
+      "baca": "frookh / laht",
+      "en": "early / late"
+    },
+    {
+      "nl": "meenemen",
+      "baca": "MAY-nay-muh(n)",
+      "en": "to take along, bring"
+    },
+    {
+      "nl": "van tevoren",
+      "baca": "fan tuh-FOH-ruh(n)",
+      "en": "beforehand"
+    }
+  ],
+  "exercises": [
+    {
+      "prompt": "Write the time in Dutch.",
+      "items": [
+        "15:00 → ____",
+        "15:15 → ____",
+        "15:30 → ____",
+        "15:45 → ____",
+        "15:20 → ____",
+        "15:35 → ____"
+      ]
+    },
+    {
+      "prompt": "Write as figures.",
+      "items": [
+        "half acht → ____",
+        "kwart over negen → ____",
+        "tien voor half elf → ____",
+        "kwart voor twaalf → ____",
+        "vijf over half een → ____"
+      ]
+    },
+    {
+      "prompt": "Translate into Dutch.",
+      "items": [
+        "What time is it?",
+        "I'd like to make an appointment.",
+        "Can you make Thursday at half past two?",
+        "I can't make that.",
+        "Tomorrow I'm going to Amsterdam.",
+        "See you Monday!"
+      ]
+    },
+    {
+      "prompt": "Put the words in the right order.",
+      "items": [
+        "is / laat / het / hoe / ?",
+        "drie / om / half / kom / ik",
+        "afspraak / een / maken / wil / ik / graag",
+        "werk / maandag / ik / op",
+        "Amsterdam / ga / morgen / naar / ik"
+      ]
+    }
+  ],
+  "answers": [
+    "drie uur — kwart over drie — half vier — kwart voor vier — tien voor half vier — vijf over half vier",
+    "7:30 — 9:15 — 10:20 — 11:45 — 12:35",
+    "Hoe laat is het? — Ik wil graag een afspraak maken. — Kunt u donderdag om half drie? — Dat lukt me niet. — Morgen ga ik naar Amsterdam. — Tot maandag!",
+    "Hoe laat is het? — Ik kom om half drie. — Ik wil graag een afspraak maken. — Ik werk op maandag. — Morgen ga ik naar Amsterdam."
+  ]
+}

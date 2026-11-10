@@ -1,0 +1,532 @@
+{
+  "title": "How much is it?",
+  "title_target": "Hoeveel kost het?",
+  "goal": "Master Dutch numbers, which are read backwards, ask and give prices, and read phone numbers and dates in figures.",
+  "bekal": [
+    "read numbers up to the millions — including the backwards *eenentwintig*",
+    "ask about and understand prices in shops and markets",
+    "give your phone number the way the Dutch do"
+  ],
+  "wave": "Review **Unit 4**: cover the Dutch column of the *hebben* expressions table, look at the English, and rebuild each Dutch sentence from memory.",
+  "dialogs": [
+    {
+      "title": "Dialogue — Op de markt",
+      "intro": "Saturday market in Utrecht. Budi is standing at the cheese stall.",
+      "lines": [
+        {
+          "speaker": "Verkoper:",
+          "text": "Zegt u het maar!",
+          "id": "What can I get you?",
+          "literal": "say you it just!"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Hoeveel kost die kaas?",
+          "id": "How much is that cheese?",
+          "literal": "how-much costs that cheese?"
+        },
+        {
+          "speaker": "Verkoper:",
+          "text": "Twaalf euro vijftig per kilo. Hoeveel wilt u?",
+          "id": "Twelve euros fifty a kilo. How much would you like?",
+          "literal": "twelve euro fifty per kilo. how-much want you?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Een half pondje, alstublieft.",
+          "id": "Half a pound, please.",
+          "literal": "a half little-pound, please."
+        },
+        {
+          "speaker": "Verkoper:",
+          "text": "Dat is dan drie euro vijfenzestig.",
+          "id": "That comes to three euros sixty-five.",
+          "literal": "that is then three euro five-and-sixty."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Sorry, hoeveel? Vijfenzestig of zesenvijftig?",
+          "id": "Sorry, how much? Sixty-five or fifty-six?",
+          "literal": "sorry, how-much? five-and-sixty or six-and-fifty?"
+        },
+        {
+          "speaker": "Verkoper:",
+          "text": "Vijfenzestig. Vijf en zestig — 65.",
+          "id": "Sixty-five. Five and sixty — 65.",
+          "literal": "five-and-sixty. five and sixty — 65."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Ah, nu snap ik het. Bij ons is het andersom.",
+          "id": "Ah, now I get it. Where I'm from, it's the other way round.",
+          "literal": "ah, now get I it. by us is it the-other-way-round."
+        },
+        {
+          "speaker": "Verkoper:",
+          "text": "Iedereen zegt dat. Nog iets erbij?",
+          "id": "Everybody says that. Anything else?",
+          "literal": "everyone says that. still something there-with?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Nee, dat was het. Kan ik pinnen?",
+          "id": "No, that's all. Can I pay by card?",
+          "literal": "no, that was it. can I card-pay?"
+        },
+        {
+          "speaker": "Verkoper:",
+          "text": "Natuurlijk. Vier euro, dan is het rond.",
+          "id": "Of course. Let's call it four euros, nice and round.",
+          "literal": "naturally. four euro, then is it round."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Dank u wel. Fijne dag!",
+          "id": "Thank you. Have a nice day!",
+          "literal": "thank you indeed. fine day!"
+        }
+      ],
+      "notes": [
+        "**Zegt u het maar** is the most typical stallholder's greeting in the Netherlands — literally \"just say it\", meaning \"what would you like?\". At the bakery you'll also hear *Wie is er aan de beurt?* (whose turn is it?).",
+        "**Twaalf euro vijftig** = €12.50 (written €12,50 in Dutch). Cents aren't read as \"point fifty\": you just say the euros and then the cents. For a round price people simply say *twaalf euro*.",
+        "**Een pondje** — in the Netherlands *een pond* means **500 grams**, not an English pound. Together with *een ons* (100 grams!) it's a leftover from the old measuring system that is still very much alive at markets and cheese shops. Ask for *twee ons kaas* and you'll get 200 grams.",
+        "**Vijfenzestig or zesenvijftig?** You will really run into this confusion, not just in the book. The key: **the units come first**, then *en*, then the tens. So *vijf-en-zestig* = 5 and 60 = 65.",
+        "**Bij ons** = \"where we come from\", a short way to refer to your own country or culture.",
+        "**Nog iets erbij?** = \"anything else?\" The closing answer: *Nee, dat was het* (no, that's all) — a sentence you'll use almost every day.",
+        "**Dan is het rond** — the stallholder rounds down. Haggling isn't usual in the Netherlands, but near closing time prices often drop on their own."
+      ],
+      "grammars": [
+        {
+          "title": "Numbers: units first, then tens",
+          "body": [
+            "From 21 to 99, Dutch says **the units first** and joins them with *en*. German does the same; modern English doesn't (though old English did: \"four-and-twenty blackbirds\"). This is the only part of the Dutch number system that needs serious practice."
+          ],
+          "table": {
+            "head": [
+              "Number",
+              "Nederlands",
+              "Literally"
+            ],
+            "rows": [
+              [
+                "21",
+                "eenentwintig",
+                "one-and-twenty"
+              ],
+              [
+                "32",
+                "tweeëndertig",
+                "two-and-thirty"
+              ],
+              [
+                "45",
+                "vijfenveertig",
+                "five-and-forty"
+              ],
+              [
+                "58",
+                "achtenvijftig",
+                "eight-and-fifty"
+              ],
+              [
+                "67",
+                "zevenenzestig",
+                "seven-and-sixty"
+              ],
+              [
+                "76",
+                "zesenzeventig",
+                "six-and-seventy"
+              ],
+              [
+                "89",
+                "negenentachtig",
+                "nine-and-eighty"
+              ],
+              [
+                "99",
+                "negenennegentig",
+                "nine-and-ninety"
+              ]
+            ]
+          },
+          "after": [
+            "They are all written **as one word**, however long. The two dots over a letter (*tweeëndertig*, *drieëntwintig*) are just a spelling mark so that *ee* and *e* aren't read as one sound.",
+            "The tens: *tien, twintig, dertig, veertig, vijftig, zestig, zeventig, tachtig, negentig*. Note **dertig** and **veertig**, which change shape, and **tachtig**, which starts with a t-.",
+            "A listening trick that really helps: as soon as you hear *en* in the middle of a number, hold the first number in your head and wait for the second — the second one is the tens."
+          ]
+        },
+        {
+          "title": "Big numbers and how to write them",
+          "body": [
+            "Above a hundred, the order makes sense again."
+          ],
+          "table": {
+            "head": [
+              "Number",
+              "Nederlands"
+            ],
+            "rows": [
+              [
+                "100 / 200",
+                "honderd / tweehonderd"
+              ],
+              [
+                "101",
+                "honderdeen"
+              ],
+              [
+                "135",
+                "honderdvijfendertig"
+              ],
+              [
+                "1,000",
+                "duizend"
+              ],
+              [
+                "2,500",
+                "tweeduizend vijfhonderd"
+              ],
+              [
+                "1,000,000",
+                "een miljoen"
+              ],
+              [
+                "€ 1.250,75",
+                "twaalfhonderdvijftig euro vijfenzeventig"
+              ]
+            ]
+          },
+          "after": [
+            "⚠️ **The dot and the comma swap places** compared with English: Dutch writes a dot for thousands and a comma for decimals. *€ 1.250,75* (= €1,250.75) is read \"duizend tweehonderdvijftig euro vijfenzeventig\".",
+            "The Dutch often count in hundreds instead of thousands for years and prices: *negentienhonderd* (1900, like English \"nineteen hundred\"), *achttienhonderd euro* (€1,800).",
+            "*Honderd* and *duizend* take no *een* in front when they stand alone: *honderd euro* (a hundred euros), not *een honderd euro*."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Asking prices and paying",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "Nederlands",
+            "Say it",
+            "English"
+          ],
+          "rows": [
+            [
+              "Hoeveel kost dit?",
+              "HOO-fayl kost dit",
+              "How much is this?"
+            ],
+            [
+              "Wat kost het?",
+              "vat kost het",
+              "How much is it?"
+            ],
+            [
+              "Dat is te duur.",
+              "dat is tuh dühr",
+              "That's too expensive."
+            ],
+            [
+              "Heeft u iets goedkopers?",
+              "hayft ü eets khoot-KOH-puhrs",
+              "Do you have anything cheaper?"
+            ],
+            [
+              "Kan ik pinnen?",
+              "kan ik PI-nuh",
+              "Can I pay by card?"
+            ],
+            [
+              "Mag ik een bonnetje?",
+              "makh ik uhn BO-nuh-tyuh",
+              "Can I have a receipt?"
+            ],
+            [
+              "Het is in de aanbieding.",
+              "het is in duh AHN-bee-ding",
+              "It's on special offer."
+            ],
+            [
+              "Twee voor de prijs van één.",
+              "tvay fohr duh preys fan ayn",
+              "Two for the price of one."
+            ],
+            [
+              "Nog iets erbij?",
+              "nokh eets uhr-BEY",
+              "Anything else?"
+            ],
+            [
+              "Nee, dat was het.",
+              "nay, dat vas het",
+              "No, that's all."
+            ]
+          ]
+        },
+        {
+          "type": "kotak",
+          "title": "Money and paying in the Netherlands",
+          "items": [
+            "**Pinnen** (debit card) is the default way to pay. Many shops have an *alleen pinnen* sign — cash isn't accepted at all.",
+            "Credit cards are often **not** accepted in supermarkets and small restaurants; a debit card (Maestro/V-Pay) is what works.",
+            "1- and 2-cent coins aren't used: cash totals are rounded to the nearest 5 cents. Card payments aren't rounded.",
+            "*Statiegeld* — a bottle deposit. Plastic bottles and cans carry a 15-25 cent deposit that you get back by feeding them into the machine at the supermarket.",
+            "Giving a *fooi* (tip) isn't required; rounding up is already considered polite."
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Numbers in everyday life",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "Used for",
+            "Example",
+            "How it's read"
+          ],
+          "rows": [
+            [
+              "Phone number",
+              "06 - 21 34 55 89",
+              "nul zes, eenentwintig, vierendertig, vijfenvijftig, negenentachtig"
+            ],
+            [
+              "Postcode",
+              "3512 JE",
+              "vijfendertig twaalf JE"
+            ],
+            [
+              "House number",
+              "Kerkstraat 12-B",
+              "Kerkstraat twaalf B"
+            ],
+            [
+              "Year",
+              "2026",
+              "tweeduizend zesentwintig"
+            ],
+            [
+              "Temperature",
+              "18 °C",
+              "achttien graden"
+            ],
+            [
+              "Train platform",
+              "spoor 5",
+              "spoor vijf"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "Dutch phone numbers are read **in pairs**, not digit by digit as many English speakers would. This throws beginners into a panic on the phone — and since each pair is read backwards, a pair can sound like two other digits. It's perfectly fine to ask: *Kunt u het cijfer voor cijfer zeggen?* (\"Could you say it digit by digit?\")."
+        },
+        {
+          "type": "p",
+          "text": "A Dutch postcode (four digits + two letters) is almost a full address: together with the house number, it's enough to fill in nearly any online form. Learn your postcode in your first week."
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "nl": "hoeveel",
+      "baca": "HOO-fayl",
+      "en": "how much, how many"
+    },
+    {
+      "nl": "kosten",
+      "baca": "KOS-tuh(n)",
+      "en": "to cost"
+    },
+    {
+      "nl": "de prijs",
+      "baca": "duh preys",
+      "en": "price"
+    },
+    {
+      "nl": "duur / goedkoop",
+      "baca": "dühr / khoot-KOHP",
+      "en": "expensive / cheap"
+    },
+    {
+      "nl": "het geld",
+      "baca": "het khelt",
+      "en": "money"
+    },
+    {
+      "nl": "betalen",
+      "baca": "buh-TAH-luh(n)",
+      "en": "to pay"
+    },
+    {
+      "nl": "het bonnetje",
+      "baca": "het BO-nuh-tyuh",
+      "en": "receipt"
+    },
+    {
+      "nl": "de aanbieding",
+      "baca": "duh AHN-bee-ding",
+      "en": "special offer"
+    },
+    {
+      "nl": "de korting",
+      "baca": "duh KOR-ting",
+      "en": "discount"
+    },
+    {
+      "nl": "gratis",
+      "baca": "KHRAH-tis",
+      "en": "free (of charge)"
+    },
+    {
+      "nl": "de markt",
+      "baca": "duh markt",
+      "en": "market"
+    },
+    {
+      "nl": "de kaas",
+      "baca": "duh kahs",
+      "en": "cheese"
+    },
+    {
+      "nl": "het pond / het ons",
+      "baca": "het pont / het ons",
+      "en": "500 grams / 100 grams"
+    },
+    {
+      "nl": "de kilo",
+      "baca": "duh KEE-loh",
+      "en": "kilo"
+    },
+    {
+      "nl": "per stuk",
+      "baca": "puhr stük",
+      "en": "each, apiece"
+    },
+    {
+      "nl": "twintig",
+      "baca": "TVIN-tuhkh",
+      "en": "twenty"
+    },
+    {
+      "nl": "dertig / veertig",
+      "baca": "DER-tuhkh / FAYR-tuhkh",
+      "en": "thirty / forty"
+    },
+    {
+      "nl": "vijftig / zestig",
+      "baca": "FEYF-tuhkh / ZES-tuhkh",
+      "en": "fifty / sixty"
+    },
+    {
+      "nl": "zeventig / tachtig",
+      "baca": "ZAY-fuh-tuhkh / TAKH-tuhkh",
+      "en": "seventy / eighty"
+    },
+    {
+      "nl": "negentig",
+      "baca": "NAY-khuh-tuhkh",
+      "en": "ninety"
+    },
+    {
+      "nl": "honderd / duizend",
+      "baca": "HON-duhrt / DÖY-zuhnt",
+      "en": "hundred / thousand"
+    },
+    {
+      "nl": "het miljoen",
+      "baca": "het mil-YOON",
+      "en": "million"
+    },
+    {
+      "nl": "het cijfer",
+      "baca": "het SEY-fuhr",
+      "en": "digit, figure"
+    },
+    {
+      "nl": "het nummer",
+      "baca": "het NÜ-muhr",
+      "en": "number"
+    },
+    {
+      "nl": "snappen",
+      "baca": "SNA-puh(n)",
+      "en": "to get, understand"
+    },
+    {
+      "nl": "iedereen",
+      "baca": "EE-duhr-ayn",
+      "en": "everybody"
+    },
+    {
+      "nl": "andersom",
+      "baca": "AN-duhrs-om",
+      "en": "the other way round"
+    },
+    {
+      "nl": "rond",
+      "baca": "ront",
+      "en": "round"
+    }
+  ],
+  "exercises": [
+    {
+      "prompt": "Write the numbers in Dutch.",
+      "items": [
+        "21 → ____",
+        "35 → ____",
+        "48 → ____",
+        "67 → ____",
+        "82 → ____",
+        "99 → ____"
+      ]
+    },
+    {
+      "prompt": "Write as figures.",
+      "items": [
+        "drieëntwintig → ____",
+        "zevenenveertig → ____",
+        "vierennegentig → ____",
+        "honderdvijftien → ____",
+        "tweeduizend zesentwintig → ____"
+      ]
+    },
+    {
+      "prompt": "Translate into Dutch.",
+      "items": [
+        "How much is it?",
+        "That's too expensive.",
+        "Can I pay by card?",
+        "Ten euros fifty.",
+        "Do you have anything cheaper?",
+        "No, that's all."
+      ]
+    },
+    {
+      "prompt": "Put the words in the right order.",
+      "items": [
+        "kost / dit / hoeveel / ?",
+        "duur / te / is / dat",
+        "pinnen / kan / ik / ?",
+        "euro / dat / vijftig / twaalf / is",
+        "was / dat / het / nee"
+      ]
+    }
+  ],
+  "answers": [
+    "eenentwintig — vijfendertig — achtenveertig — zevenenzestig — tweeëntachtig — negenennegentig",
+    "23 — 47 — 94 — 115 — 2026",
+    "Hoeveel kost het? — Dat is te duur. — Kan ik pinnen? — Tien euro vijftig. — Heeft u iets goedkopers? — Nee, dat was het.",
+    "Hoeveel kost dit? — Dat is te duur. — Kan ik pinnen? — Dat is twaalf euro vijftig. — Nee, dat was het."
+  ]
+}

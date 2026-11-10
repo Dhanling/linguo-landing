@@ -1,0 +1,530 @@
+{
+  "title": "Where are you from?",
+  "title_target": "Waar kom je vandaan?",
+  "goal": "Say where you're from, where you live, what you do, and which languages you speak — and meet the basic pattern of Dutch verbs.",
+  "bekal": [
+    "answer *waar kom je vandaan?* and *waar woon je?*",
+    "say your job without an article — *ik ben student*, not *een student*",
+    "say which languages you speak and how well"
+  ],
+  "dialogs": [
+    {
+      "title": "Dialogue — In de pauze",
+      "intro": "A break in class. Sanne comes over with two cups of coffee.",
+      "lines": [
+        {
+          "speaker": "Sanne:",
+          "text": "Waar kom je vandaan, Budi?",
+          "id": "Where are you from, Budi?",
+          "literal": "where come you from-there?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Ik kom uit Indonesië, uit Bandung.",
+          "id": "I'm from Indonesia, from Bandung.",
+          "literal": "I come out-of Indonesia, out-of Bandung."
+        },
+        {
+          "speaker": "Sanne:",
+          "text": "En waar woon je nu?",
+          "id": "And where do you live now?",
+          "literal": "and where live you now?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Ik woon in Utrecht, bij mijn tante.",
+          "id": "I live in Utrecht, at my aunt's.",
+          "literal": "I live in Utrecht, by my aunt."
+        },
+        {
+          "speaker": "Sanne:",
+          "text": "Wat doe je hier? Werk je of studeer je?",
+          "id": "What are you doing here? Do you work or study?",
+          "literal": "what do you here? work you or study you?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Ik studeer. Ik ben student aan de universiteit.",
+          "id": "I study. I'm a student at the university.",
+          "literal": "I study. I am student at the university."
+        },
+        {
+          "speaker": "Sanne:",
+          "text": "Wat leuk. En je Nederlands is al goed!",
+          "id": "How nice. And your Dutch is already good!",
+          "literal": "what nice. and your Dutch is already good!"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Nee hoor, ik spreek een beetje. Ik leer nog.",
+          "id": "Oh no, I only speak a little. I'm still learning.",
+          "literal": "no really, I speak a bit. I learn still."
+        },
+        {
+          "speaker": "Sanne:",
+          "text": "Spreek je ook Engels?",
+          "id": "Do you speak English too?",
+          "literal": "speak you also English?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Ja, en Indonesisch en Soendanees natuurlijk.",
+          "id": "Yes, and Indonesian and Sundanese, of course.",
+          "literal": "yes, and Indonesian and Sundanese naturally."
+        },
+        {
+          "speaker": "Sanne:",
+          "text": "Vier talen! Ik spreek er maar twee.",
+          "id": "Four languages! I only speak two.",
+          "literal": "four languages! I speak of-them only two."
+        }
+      ],
+      "notes": [
+        "**Waar kom je vandaan?** — note how *vandaan* gets thrown to the end of the sentence. Dutch has many verbs that split up like this (covered fully in Unit 9); for now, learn the question as a whole.",
+        "**Ik kom uit Indonesië.** For countries Dutch uses *uit* (out of), not *van*. For cities too: *ik kom uit Bandung*.",
+        "**Ik woon in Utrecht** — *wonen* means to live/reside, while *leven* means to be alive. Don't mix them up: *ik leef in Utrecht* sounds as if you're surviving there.",
+        "**Ik ben student** — no *een*! This is one of the neatest differences from English (*I am a student*). The article comes back as soon as there is an adjective: *ik ben een goede student*.",
+        "**Nee hoor** is the Dutch way to brush off a compliment kindly. The *hoor* at the end of a sentence can't really be translated; it softens the tone, a bit like \"really\" or \"you know\": *Dat is goed hoor!*",
+        "**Ik spreek een beetje** — *een beetje* (a bit) is a lifesaver in your first months, usually in full as *ik spreek een beetje Nederlands*.",
+        "**Ik spreek er maar twee** — *er* here stands for \"of them\". *Er* is one of the most typically Dutch words and one of the hardest to translate; you will meet it again and again. For now, just recognize its shape.",
+        "**Maar** has two meanings: \"but\" and — as here — \"only\". Its position decides: at the start of a clause it means \"but\", in the middle it means \"only\"."
+      ],
+      "grammars": [
+        {
+          "title": "Present-tense verbs: the basic pattern",
+          "body": [
+            "The dictionary form of a Dutch verb ends in **-en**: *wonen*, *werken*, *spreken*. Drop the *-en* and you have the **stem** (the *ik* form): *woon*, *werk*, *spreek*. All that's left is adding *-t* or *-en*."
+          ],
+          "table": {
+            "head": [
+              "Pronoun",
+              "Form",
+              "wonen (to live)",
+              "werken (to work)"
+            ],
+            "rows": [
+              [
+                "ik",
+                "stem",
+                "ik **woon**",
+                "ik **werk**"
+              ],
+              [
+                "jij / u / hij / zij",
+                "stem + **t**",
+                "je **woont**",
+                "hij **werkt**"
+              ],
+              [
+                "wij / jullie / zij",
+                "dictionary form",
+                "we **wonen**",
+                "ze **werken**"
+              ]
+            ]
+          },
+          "after": [
+            "Just three rows. Compare French or Spanish with six different forms — here you really only decide one thing: *-t* or no *-t*. It's English \"he works\" with a *t* instead of an *s*.",
+            "⚠️ One exception you'll meet constantly: when *jij/je* comes **after** the verb (in questions or inverted sentences), that *-t* **disappears**: *je woont* → *woon je?*, *je werkt* → *werk je?* This only applies to *jij/je*, not to *u*: *woont u?*",
+            "A stem never ends in a double consonant or in *v/z*: *wonen → woon* (not *won*), *leven → leef*, *reizen → reis*. The reason is spelling, not grammar: the vowel has to stay long."
+          ]
+        },
+        {
+          "title": "Countries, nationalities, languages",
+          "body": [
+            "Dutch uses one word for the nationality adjective and the language, and writes it with a **capital letter** — just like English."
+          ],
+          "table": {
+            "head": [
+              "Country",
+              "Person (m / f)",
+              "Language / adjective"
+            ],
+            "rows": [
+              [
+                "Nederland",
+                "een Nederlander / Nederlandse",
+                "Nederlands"
+              ],
+              [
+                "Indonesië",
+                "een Indonesiër / Indonesische",
+                "Indonesisch"
+              ],
+              [
+                "België",
+                "een Belg / Belgische",
+                "Nederlands & Frans"
+              ],
+              [
+                "Duitsland",
+                "een Duitser / Duitse",
+                "Duits"
+              ],
+              [
+                "Engeland",
+                "een Engelsman / Engelse",
+                "Engels"
+              ],
+              [
+                "Frankrijk",
+                "een Fransman / Franse",
+                "Frans"
+              ],
+              [
+                "China",
+                "een Chinees / Chinese",
+                "Chinees"
+              ],
+              [
+                "Japan",
+                "een Japanner / Japanse",
+                "Japans"
+              ]
+            ]
+          },
+          "after": [
+            "To talk about speaking a language, the language word stands alone with no article: *ik spreek Nederlands*, *hij leert Engels*.",
+            "⚠️ *Holland* is really the name of just two provinces (Noord- and Zuid-Holland). The country is called **Nederland**. The Dutch use both, but outside Holland some people object — and since 2020 the government officially uses only *Nederland*. Also note: *Dutch* in English, but *Duits* in Dutch means **German**!"
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Jobs",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "Nederlands",
+            "Say it",
+            "English"
+          ],
+          "rows": [
+            [
+              "de student",
+              "duh stü-DENT",
+              "university student"
+            ],
+            [
+              "de leraar / de lerares",
+              "duh LAY-rahr",
+              "teacher (m / f)"
+            ],
+            [
+              "de docent",
+              "duh doh-SENT",
+              "instructor (course/university)"
+            ],
+            [
+              "de arts / de dokter",
+              "duh arts",
+              "doctor"
+            ],
+            [
+              "de verpleegkundige",
+              "duh fuhr-PLAYKH-kün-duh-khuh",
+              "nurse"
+            ],
+            [
+              "de ingenieur",
+              "duh in-zhuh-NÖR",
+              "engineer"
+            ],
+            [
+              "de ondernemer",
+              "duh on-duhr-NAY-muhr",
+              "entrepreneur"
+            ],
+            [
+              "de kok",
+              "duh kok",
+              "cook"
+            ],
+            [
+              "de winkelier",
+              "duh ving-kuh-LEER",
+              "shopkeeper"
+            ],
+            [
+              "de chauffeur",
+              "duh sho-FÖR",
+              "driver"
+            ],
+            [
+              "de vertaler",
+              "duh fuhr-TAH-luhr",
+              "translator"
+            ],
+            [
+              "de ambtenaar",
+              "duh AMPT-uh-nahr",
+              "civil servant"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "Many Dutch job words look familiar to English speakers: *student*, *dokter*, *kok* (cook), *chauffeur*. Others are false friends: *winkel* is a **shop** (a *winkelier* runs one), and *kantoor* is an office. If a word looks familiar, it's often a cousin of the English one — but check before you trust it."
+        },
+        {
+          "type": "kotak",
+          "title": "Three opening questions you must be able to answer",
+          "items": [
+            "*Wat doe je?* — What do you do? Answer: *Ik ben leraar* / *Ik studeer*.",
+            "*Waar werk je?* — Where do you work? Answer: *Ik werk bij Philips* (use **bij** for a company, **in** for a place).",
+            "*Wat studeer je?* — What do you study? Answer: *Ik studeer economie / geneeskunde / informatica*.",
+            "⚠️ *Wat ben je?* is not the usual job question; it sounds like asking what kind of creature you are."
+          ]
+        }
+      ]
+    },
+    {
+      "title": "How good is your Dutch?",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "Nederlands",
+            "English"
+          ],
+          "rows": [
+            [
+              "Ik spreek vloeiend Nederlands.",
+              "I speak Dutch fluently."
+            ],
+            [
+              "Ik spreek een beetje Nederlands.",
+              "I speak a little Dutch."
+            ],
+            [
+              "Ik versta het wel, maar ik spreek het niet.",
+              "I understand it, but I can't speak it."
+            ],
+            [
+              "Ik leer nog.",
+              "I'm still learning."
+            ],
+            [
+              "Kunt u langzamer praten, alstublieft?",
+              "Could you speak more slowly, please?"
+            ],
+            [
+              "Wat betekent dat?",
+              "What does that mean?"
+            ],
+            [
+              "Hoe zeg je … in het Nederlands?",
+              "How do you say … in Dutch?"
+            ],
+            [
+              "Spreekt u Engels?",
+              "Do you speak English?"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "*In het Nederlands* — note the *het*: a language name takes an article when it comes after a preposition. *Ik lees het boek in het Engels*."
+        },
+        {
+          "type": "p",
+          "text": "Here's practical advice you won't find in any grammar book: nearly every Dutch person speaks excellent English, and they will **switch immediately** the moment they hear the slightest hesitation in your sentence. As a native English speaker you'll get this even more. It isn't an insult; it's a habit of being helpful. The rescue line: *Mag ik Nederlands oefenen met u?* — \"may I practice my Dutch with you?\" Almost nobody says no."
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "nl": "komen uit",
+      "baca": "KOH-muh(n) öyt",
+      "en": "to come from"
+    },
+    {
+      "nl": "waar",
+      "baca": "vahr",
+      "en": "where"
+    },
+    {
+      "nl": "wonen",
+      "baca": "VOH-nuh(n)",
+      "en": "to live (reside)"
+    },
+    {
+      "nl": "werken",
+      "baca": "VER-kuh(n)",
+      "en": "to work"
+    },
+    {
+      "nl": "studeren",
+      "baca": "stü-DAY-ruh(n)",
+      "en": "to study (at university)"
+    },
+    {
+      "nl": "leren",
+      "baca": "LAY-ruh(n)",
+      "en": "to learn / to teach"
+    },
+    {
+      "nl": "spreken",
+      "baca": "SPRAY-kuh(n)",
+      "en": "to speak"
+    },
+    {
+      "nl": "praten",
+      "baca": "PRAH-tuh(n)",
+      "en": "to talk, chat"
+    },
+    {
+      "nl": "doen",
+      "baca": "doon",
+      "en": "to do"
+    },
+    {
+      "nl": "de taal / de talen",
+      "baca": "duh tahl",
+      "en": "language"
+    },
+    {
+      "nl": "Nederland",
+      "baca": "NAY-duhr-lant",
+      "en": "the Netherlands"
+    },
+    {
+      "nl": "Nederlands",
+      "baca": "NAY-duhr-lants",
+      "en": "Dutch (language)"
+    },
+    {
+      "nl": "Indonesië",
+      "baca": "in-do-NAY-zee-yuh",
+      "en": "Indonesia"
+    },
+    {
+      "nl": "Engels",
+      "baca": "ENG-uhls",
+      "en": "English"
+    },
+    {
+      "nl": "een beetje",
+      "baca": "uhn BAY-tyuh",
+      "en": "a little, a bit"
+    },
+    {
+      "nl": "vloeiend",
+      "baca": "VLOOY-uhnt",
+      "en": "fluent(ly)"
+    },
+    {
+      "nl": "nog",
+      "baca": "nokh",
+      "en": "still"
+    },
+    {
+      "nl": "al",
+      "baca": "al",
+      "en": "already"
+    },
+    {
+      "nl": "nu",
+      "baca": "nü",
+      "en": "now"
+    },
+    {
+      "nl": "of",
+      "baca": "of",
+      "en": "or"
+    },
+    {
+      "nl": "maar",
+      "baca": "mahr",
+      "en": "but / only"
+    },
+    {
+      "nl": "natuurlijk",
+      "baca": "na-TÜHR-luhk",
+      "en": "of course"
+    },
+    {
+      "nl": "de universiteit",
+      "baca": "ü-nee-fuhr-see-TEYT",
+      "en": "university"
+    },
+    {
+      "nl": "het werk",
+      "baca": "het verk",
+      "en": "work, job"
+    },
+    {
+      "nl": "de stad",
+      "baca": "duh stat",
+      "en": "city, town"
+    },
+    {
+      "nl": "bij",
+      "baca": "bey",
+      "en": "at (someone's place / a company)"
+    },
+    {
+      "nl": "vier",
+      "baca": "feer",
+      "en": "four"
+    },
+    {
+      "nl": "twee",
+      "baca": "tvay",
+      "en": "two"
+    }
+  ],
+  "exercises": [
+    {
+      "prompt": "Fill in the right form of the verb.",
+      "items": [
+        "Ik ____ in Utrecht. (wonen)",
+        "Hij ____ bij Philips. (werken)",
+        "____ je Nederlands? (spreken)",
+        "Wij ____ economie. (studeren)",
+        "Zij ____ uit Duitsland. (komen)",
+        "Wat ____ u? (doen)"
+      ]
+    },
+    {
+      "prompt": "Answer about yourself, then compare with the model in the key.",
+      "items": [
+        "Waar kom je vandaan? ____",
+        "Waar woon je? ____",
+        "Wat doe je? ____",
+        "Welke talen spreek je? ____"
+      ]
+    },
+    {
+      "prompt": "Translate into Dutch.",
+      "items": [
+        "I'm from Indonesia.",
+        "I live in Amsterdam.",
+        "I'm a student.",
+        "I speak a little Dutch.",
+        "What does that mean?",
+        "Could you speak more slowly, please?"
+      ]
+    },
+    {
+      "prompt": "Put the words in the right order.",
+      "items": [
+        "kom / Indonesië / uit / ik",
+        "woon / waar / je / ?",
+        "spreek / beetje / ik / een / Nederlands",
+        "werkt / bij / hij / Philips",
+        "student / ben / ik"
+      ]
+    }
+  ],
+  "answers": [
+    "woon — werkt — Spreek — studeren — komt — doet",
+    "Ik kom uit Indonesië. — Ik woon in Utrecht. — Ik ben student. — Ik spreek Indonesisch, Engels en een beetje Nederlands.",
+    "Ik kom uit Indonesië. — Ik woon in Amsterdam. — Ik ben student. — Ik spreek een beetje Nederlands. — Wat betekent dat? — Kunt u langzamer praten, alstublieft?",
+    "Ik kom uit Indonesië. — Waar woon je? — Ik spreek een beetje Nederlands. — Hij werkt bij Philips. — Ik ben student."
+  ]
+}

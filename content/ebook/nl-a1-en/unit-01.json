@@ -1,0 +1,550 @@
+{
+  "title": "Hello, what's your name?",
+  "title_target": "Hallo! Hoe heet je?",
+  "goal": "Greet people at the right time of day, give your name, ask how someone is, and know when to say *u* and when *je* is enough.",
+  "bekal": [
+    "greet people from morning to night with the right greeting",
+    "introduce yourself and ask other people's names",
+    "choose between *je* (casual) and *u* (polite) without a misstep"
+  ],
+  "dialogs": [
+    {
+      "title": "Dialogue — Op de taalschool",
+      "intro": "First day of a language course in Amsterdam. Budi sits down next to someone he doesn't know yet.",
+      "lines": [
+        {
+          "speaker": "Sanne:",
+          "text": "Hoi! Ik ben Sanne.",
+          "id": "Hi! I'm Sanne.",
+          "literal": "hi! I am Sanne."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Hallo Sanne. Ik heet Budi.",
+          "id": "Hello Sanne. My name is Budi.",
+          "literal": "hello Sanne. I am-called Budi."
+        },
+        {
+          "speaker": "Sanne:",
+          "text": "Aangenaam. Hoe gaat het?",
+          "id": "Nice to meet you. How are you?",
+          "literal": "pleasant. how goes it?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Goed, dank je. En met jou?",
+          "id": "Fine, thanks. And you?",
+          "literal": "good, thank you. and with you?"
+        },
+        {
+          "speaker": "Sanne:",
+          "text": "Ook goed. Ben jij nieuw hier?",
+          "id": "Fine too. Are you new here?",
+          "literal": "also good. are you new here?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Ja, het is mijn eerste dag.",
+          "id": "Yes, it's my first day.",
+          "literal": "yes, it is my first day."
+        },
+        {
+          "speaker": "Sanne:",
+          "text": "Leuk! Sorry, hoe heet je ook alweer?",
+          "id": "Nice! Sorry, what was your name again?",
+          "literal": "nice! sorry, how are-called you also again?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Budi. B-U-D-I.",
+          "id": "Budi. B-U-D-I.",
+          "literal": "Budi."
+        },
+        {
+          "speaker": "Sanne:",
+          "text": "Budi. Tot straks!",
+          "id": "Budi. See you later!",
+          "literal": "Budi. until shortly!"
+        },
+        {
+          "speaker": "Docent:",
+          "text": "Goedemorgen allemaal. Hoe gaat het met u, meneer?",
+          "id": "Good morning, everyone. How are you, sir?",
+          "literal": "good-morning all. how goes it with you, sir?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Heel goed, dank u wel.",
+          "id": "Very well, thank you very much.",
+          "literal": "very good, thank you indeed."
+        }
+      ],
+      "notes": [
+        "**Ik heet Budi** literally means \"I am called Budi\" — *heten* is a verb, not a noun. Dutch doesn't say \"my name is\" as its everyday phrase; it says \"I am called\". Another correct option is *Mijn naam is Budi*, but it sounds formal, like introducing yourself on an office phone.",
+        "**Ik ben Sanne** and **Ik heet Sanne** are both used and both correct. *Ik ben* is a little more relaxed.",
+        "**Hoe gaat het?** literally means \"how goes it?\" — not \"how are you?\". So the answer is about \"it\" too, not about \"I\": *Het gaat goed* (it goes well). In quick conversation, people just say *Goed!*",
+        "**Dank je** is for people you call *je*; **dank u** for people you call *u*. Adding *wel* makes it warmer: *dank je wel*, *dank u wel*. Mixing them up sounds like saying \"cheers, mate\" to a university president.",
+        "**En met jou?** — \"and with you?\" Note *jou*, not *je*: after a preposition (*met*, *voor*, *van*) the full form is used. The polite version: *En met u?*",
+        "**Hoe heet je ook alweer?** is a ready-made phrase for \"what was your name again?\" — it rescues a lot of conversations. Its literal meaning makes no sense (\"also again\"), so learn it as a whole.",
+        "**Tot straks** = see you later (the same day). The family is big: *tot ziens* (goodbye, neutral), *tot morgen* (see you tomorrow), *tot zo* (see you in a bit), *doei* (bye, very casual)."
+      ],
+      "grammars": [
+        {
+          "title": "Zijn — the most important verb in Dutch",
+          "body": [
+            "Just like English \"I am a teacher\", Dutch *cannot* drop the verb: *ik ben leraar*. The verb *zijn* (to be) must be there, and it is the only Dutch verb whose forms are truly all over the place — learn it like a song. Note that Dutch leaves out the article with jobs: *ik ben leraar*, not \"a teacher\"."
+          ],
+          "table": {
+            "head": [
+              "Pronoun",
+              "Form",
+              "Example"
+            ],
+            "rows": [
+              [
+                "ik (I)",
+                "**ben**",
+                "ik ben Budi"
+              ],
+              [
+                "jij / je (you)",
+                "**bent**",
+                "jij bent nieuw"
+              ],
+              [
+                "u (you, polite)",
+                "**bent** (also *is*)",
+                "u bent de docent"
+              ],
+              [
+                "hij / zij / het (he / she / it)",
+                "**is**",
+                "hij is thuis"
+              ],
+              [
+                "wij / we (we)",
+                "**zijn**",
+                "we zijn hier"
+              ],
+              [
+                "jullie (you all)",
+                "**zijn**",
+                "jullie zijn vroeg"
+              ],
+              [
+                "zij / ze (they)",
+                "**zijn**",
+                "ze zijn Nederlands"
+              ]
+            ]
+          },
+          "after": [
+            "Note that *zij* means both **she** and **they** — only the verb form tells them apart: *zij is* (she) versus *zij zijn* (they).",
+            "Each pronoun has a full form and a weak form: *jij/je*, *wij/we*, *zij/ze*, *mij/me*. The weak form is the everyday one; the full form is for emphasis — *Ik ben moe, maar jíj bent nog wakker*."
+          ]
+        },
+        {
+          "title": "Je or u? The Dutch rules of politeness",
+          "body": [
+            "The Netherlands is famous for its flat hierarchy, and you can hear it in the language: *je* is used far more widely than most learners expect."
+          ],
+          "table": {
+            "head": [
+              "Use *u* for",
+              "Use *je* for"
+            ],
+            "rows": [
+              [
+                "people much older than you",
+                "friends, acquaintances, peers"
+              ],
+              [
+                "officials, doctors, police",
+                "fellow students on your course"
+              ],
+              [
+                "customers (when you are serving)",
+                "children, anyone under their thirties"
+              ],
+              [
+                "formal letters & job interviews",
+                "almost every everyday conversation"
+              ]
+            ]
+          },
+          "after": [
+            "When in doubt, start with *u*. The Dutch will quickly cut in with *Zeg maar je* (\"just call me je\") — and after that, going back to *u* actually feels cold.",
+            "⚠️ Don't mix *u* and *jij* in one sentence. *Hoe heet u?* or *Hoe heet je?* — never *Hoe heet u, jij?*"
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Greetings by time of day",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "Nederlands",
+            "Say it",
+            "When to use it"
+          ],
+          "rows": [
+            [
+              "Goedemorgen",
+              "KHOO-duh-mor-khuh",
+              "until about 12:00"
+            ],
+            [
+              "Goedemiddag",
+              "khoo-duh-MI-dakh",
+              "12:00 to about 18:00"
+            ],
+            [
+              "Goedenavond",
+              "khoo-duh-NAH-font",
+              "after 18:00"
+            ],
+            [
+              "Goedenacht",
+              "khoo-duh-NAKHT",
+              "only when parting for bed"
+            ],
+            [
+              "Hallo / Hoi",
+              "ha-LOH / hoy",
+              "any time, casual"
+            ],
+            [
+              "Dag!",
+              "dakh",
+              "hello *and* bye — both"
+            ],
+            [
+              "Goedendag",
+              "khoo-duh-DAKH",
+              "neutral, somewhat formal"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "*Dag* is the most versatile word in Dutch: it means \"day\" (the same word as English *day*), it is used to say hello, and it is used to say goodbye. Said twice with a rising-falling tune (*dag-dag!*), it becomes a warm, typically Dutch farewell."
+        },
+        {
+          "type": "kotak",
+          "title": "Saying goodbye",
+          "items": [
+            "*Tot ziens* (tot ZEENS) — goodbye, neutral and safe with anyone.",
+            "*Doei* / *doeg* (dooy) — bye, casual, only for people you call *je*.",
+            "*Tot morgen* / *tot straks* / *tot zo* — see you tomorrow / see you later / see you in a bit.",
+            "*Fijne dag!* (FEY-nuh dakh) — have a nice day. The reply: *Jij ook!*"
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Asking names and spelling",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "Nederlands",
+            "English"
+          ],
+          "rows": [
+            [
+              "Hoe heet je?",
+              "What's your name?"
+            ],
+            [
+              "Hoe heet u?",
+              "What's your name? (polite)"
+            ],
+            [
+              "Wie ben jij?",
+              "Who are you? (rather direct)"
+            ],
+            [
+              "Wat is uw naam?",
+              "What is your name? (formal, at a counter)"
+            ],
+            [
+              "Hoe schrijf je dat?",
+              "How do you write that?"
+            ],
+            [
+              "Kun je dat spellen?",
+              "Can you spell that?"
+            ],
+            [
+              "Sorry, ik versta je niet.",
+              "Sorry, I didn't catch that."
+            ],
+            [
+              "Kun je dat herhalen?",
+              "Can you repeat that?"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "*Ik versta je niet* and *ik begrijp het niet* are different: the first means you didn't catch the sounds, the second means you don't understand the meaning. In your first weeks you will need the first one more often."
+        },
+        {
+          "type": "sub",
+          "text": "The letter names you'll use most when spelling"
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Letter",
+            "Say it",
+            "Letter",
+            "Say it"
+          ],
+          "rows": [
+            [
+              "a",
+              "ah",
+              "j",
+              "yay"
+            ],
+            [
+              "e",
+              "ay",
+              "g",
+              "khay"
+            ],
+            [
+              "i",
+              "ee",
+              "u",
+              "üh"
+            ],
+            [
+              "y",
+              "EE-khrek (*ypsilon*)",
+              "ij",
+              "LANG-uh ey"
+            ],
+            [
+              "c",
+              "say",
+              "w",
+              "vay"
+            ],
+            [
+              "v",
+              "fay",
+              "z",
+              "zet"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "Non-Dutch names almost always need spelling out in the Netherlands. The usual troublemakers: **y** (the Dutch hear it as *ij*), **c** (said \"say\"), **j** (said \"yay\" — the Dutch *j* is an English *y*) and **u** (said \"ü\", not \"oo\" — if your name has a u, say *u zoals in Utrecht*)."
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "nl": "hallo / hoi",
+      "baca": "ha-LOH / hoy",
+      "en": "hello / hi"
+    },
+    {
+      "nl": "goedemorgen",
+      "baca": "KHOO-duh-mor-khuh",
+      "en": "good morning"
+    },
+    {
+      "nl": "goedemiddag",
+      "baca": "khoo-duh-MI-dakh",
+      "en": "good afternoon"
+    },
+    {
+      "nl": "goedenavond",
+      "baca": "khoo-duh-NAH-font",
+      "en": "good evening"
+    },
+    {
+      "nl": "tot ziens",
+      "baca": "tot ZEENS",
+      "en": "goodbye"
+    },
+    {
+      "nl": "doei",
+      "baca": "dooy",
+      "en": "bye"
+    },
+    {
+      "nl": "tot straks",
+      "baca": "tot STRAKS",
+      "en": "see you later"
+    },
+    {
+      "nl": "ik ben",
+      "baca": "ik ben",
+      "en": "I am"
+    },
+    {
+      "nl": "jij bent / u bent",
+      "baca": "yey bent / ü bent",
+      "en": "you are (casual / polite)"
+    },
+    {
+      "nl": "hij / zij is",
+      "baca": "hey / zey is",
+      "en": "he / she is"
+    },
+    {
+      "nl": "heten",
+      "baca": "HAY-tuh(n)",
+      "en": "to be called"
+    },
+    {
+      "nl": "de naam",
+      "baca": "duh nahm",
+      "en": "name"
+    },
+    {
+      "nl": "aangenaam",
+      "baca": "AHN-khuh-nahm",
+      "en": "nice to meet you"
+    },
+    {
+      "nl": "hoe gaat het?",
+      "baca": "hoo khaht het",
+      "en": "how are you?"
+    },
+    {
+      "nl": "goed",
+      "baca": "khoot",
+      "en": "good, fine"
+    },
+    {
+      "nl": "heel goed",
+      "baca": "hayl khoot",
+      "en": "very well"
+    },
+    {
+      "nl": "ook",
+      "baca": "ohk",
+      "en": "also, too"
+    },
+    {
+      "nl": "dank je wel",
+      "baca": "dangk yuh VEL",
+      "en": "thank you (casual)"
+    },
+    {
+      "nl": "dank u wel",
+      "baca": "dangk ü VEL",
+      "en": "thank you (polite)"
+    },
+    {
+      "nl": "alstublieft",
+      "baca": "as-tü-BLEEFT",
+      "en": "please / here you are (polite)"
+    },
+    {
+      "nl": "alsjeblieft",
+      "baca": "a-shuh-BLEEFT",
+      "en": "please / here you are (casual)"
+    },
+    {
+      "nl": "sorry",
+      "baca": "SO-ree",
+      "en": "sorry"
+    },
+    {
+      "nl": "ja / nee",
+      "baca": "ya / nay",
+      "en": "yes / no"
+    },
+    {
+      "nl": "nieuw",
+      "baca": "neev",
+      "en": "new"
+    },
+    {
+      "nl": "hier",
+      "baca": "heer",
+      "en": "here"
+    },
+    {
+      "nl": "de dag",
+      "baca": "duh dakh",
+      "en": "day"
+    },
+    {
+      "nl": "eerste",
+      "baca": "AYRS-tuh",
+      "en": "first"
+    },
+    {
+      "nl": "leuk",
+      "baca": "lök",
+      "en": "nice, fun"
+    },
+    {
+      "nl": "meneer / mevrouw",
+      "baca": "muh-NAYR / muh-VROW",
+      "en": "sir, Mr. / madam, Mrs."
+    }
+  ],
+  "exercises": [
+    {
+      "prompt": "Fill in the right form of zijn (ben, bent, is, zijn).",
+      "items": [
+        "Ik ____ Budi.",
+        "Jij ____ nieuw hier.",
+        "Hij ____ mijn docent.",
+        "Wij ____ studenten.",
+        "Jullie ____ vroeg.",
+        "U ____ meneer Jansen."
+      ]
+    },
+    {
+      "prompt": "Choose the right greeting for the time of day.",
+      "items": [
+        "8:00 at the post office: ____",
+        "14:00 in a shop: ____",
+        "20:00 in a restaurant: ____",
+        "To a classmate, any time: ____"
+      ]
+    },
+    {
+      "prompt": "Translate into Dutch.",
+      "items": [
+        "My name is Budi.",
+        "How are you?",
+        "Fine, thanks.",
+        "What's your name? (polite)",
+        "I'm new here.",
+        "See you tomorrow!"
+      ]
+    },
+    {
+      "prompt": "Put the words in the right order.",
+      "items": [
+        "heet / ik / Budi",
+        "je / hoe / heet / ?",
+        "dag / mijn / het / eerste / is",
+        "u / gaat / met / het / hoe / ?",
+        "wel / dank / je"
+      ]
+    }
+  ],
+  "answers": [
+    "ben — bent — is — zijn — zijn — bent",
+    "Goedemorgen — Goedemiddag — Goedenavond — Hallo",
+    "Ik heet Budi. — Hoe gaat het? — Goed, dank je. — Hoe heet u? — Ik ben nieuw hier. — Tot morgen!",
+    "Ik heet Budi. — Hoe heet je? — Het is mijn eerste dag. — Hoe gaat het met u? — Dank je wel."
+  ]
+}

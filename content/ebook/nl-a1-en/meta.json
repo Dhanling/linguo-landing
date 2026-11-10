@@ -1,0 +1,1192 @@
+{
+  "brand": "LINGUO",
+  "cover": "cover.png",
+  "title": "Nederlands 101",
+  "subtitle": "A self-study course in Dutch for complete beginners",
+  "level": "Level A1 (CEFR)",
+  "edition": "English Edition",
+  "ruby": false,
+  "font_size": "9.3pt",
+  "page_margin": "11mm 10mm 9mm",
+  "labels": {
+    "unit": "Unit",
+    "dialog": "Dialogue",
+    "notes": "Notes",
+    "vocab": "Vocabulary in this unit",
+    "exercises": "Exercises",
+    "answers": "Answer key",
+    "bekal": "By the end of this unit you can:",
+    "literal": "literally:",
+    "wave": "Wave review:",
+    "bagian": "Part"
+  },
+  "vocab_columns": [
+    {
+      "head": "Nederlands",
+      "key": "nl"
+    },
+    {
+      "head": "Say it",
+      "key": "baca"
+    },
+    {
+      "head": "English",
+      "key": "en"
+    }
+  ],
+  "cover_design": {
+    "bg": "#12325B",
+    "accent": "#F28F3B",
+    "label": "DUTCH",
+    "judul": "Nederlands",
+    "judul_size": "150px",
+    "cap": "ĳ",
+    "pola_opacity": 0.45,
+    "pola": "background-image:repeating-linear-gradient(0deg, rgba(255,255,255,.11) 0 3px, transparent 3px 46px),repeating-linear-gradient(90deg, rgba(255,255,255,.07) 0 3px, transparent 3px 46px);",
+    "ringkas": "A self-study course in Dutch for complete beginners — from saying hello in Amsterdam to telling the story of last weekend.",
+    "catatan": "Every line of dialogue comes with a word-for-word translation and a pronunciation guide.",
+    "merek_sub": "SELF-STUDY MODULE",
+    "kaki_sub": "units · dialogues · exercises · answer key"
+  },
+  "product": {
+    "slug": "modul-belanda-101-en",
+    "title": "Dutch 101 - A1 (English Edition)",
+    "type": "ebook",
+    "language": "Dutch",
+    "level": "A1",
+    "file": "dutch-101-a1-en.pdf",
+    "description": "Twenty Assimil-style self-study units that take you from zero to A1 Dutch: short dialogues, word-for-word translations that show how Dutch builds its sentences, grammar notes, vocabulary with an English-friendly pronunciation guide, exercises, and an answer key. Dutch is English's close cousin — *huis*, *water*, *boek*, *melk* read themselves — so this course focuses on the spots that actually trip English speakers up, from de versus het to the verb that gets thrown to the end of the sentence. Includes a sound guide (ui, ij, g, eu, oe), an A1 grammar summary, a table of irregular verbs, and lifesaver phrases.",
+    "pages": 150
+  },
+  "front": [
+    {
+      "title": "Foreword",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Dutch is often introduced the wrong way: as \"English spoken backwards\", as a language you don't need because everyone in Amsterdam speaks English anyway. Yet it's a living language for 24 million people, the language of a country where tens of thousands of foreigners study and work, and — this is rarely noticed — **one of English's closest relatives**."
+        },
+        {
+          "type": "p",
+          "text": "You already know more Dutch than you think. *Huis* (house), *water*, *boek* (book), *melk* (milk), *appel*, *hand*, *bed*, *warm*, *koud* (cold), *zon* (sun). English has even borrowed straight from Dutch: *cookie* (koekje), *boss* (baas), *yacht* (jacht), *skate*, *landscape* (landschap), *brandy* (brandewijn). This course takes advantage of that from Unit 1: you don't start from zero, you start from a few hundred words already in your head."
+        },
+        {
+          "type": "p",
+          "text": "Only three things are truly new, and none of them has an English equivalent. **First**, every noun takes either *de* or *het* — and there's no rule you can really rely on to guess which. **Second**, the Dutch verb must sit in second place in a statement, so *tomorrow I go* becomes *morgen ga ik* — \"tomorrow go I\". **Third**, in a subordinate clause the verb is thrown to the very end: *omdat ik moe ben*, \"because I tired am\"."
+        },
+        {
+          "type": "p",
+          "text": "This course tackles all three early instead of saving them for the last chapter: *de/het* is set up in Unit 3, word order gets a whole unit in Unit 10, and subordinate clauses close the course in Unit 20 — not because they are the hardest, but because that's where everything you've learned finally connects into a story."
+        },
+        {
+          "type": "p",
+          "text": "The explanations are short on purpose. What's long isn't the theory, it's the practice."
+        },
+        {
+          "type": "kotak",
+          "title": "Before you start",
+          "items": [
+            "Set aside 20-30 undisturbed minutes, not two hours broken into pieces. Language sticks through short, frequent repetition, not one long assault.",
+            "Read out loud. The sounds *g*, *ui* and *ij* will never stick if you only read them in your head — you'll memorize the spelling, not the language.",
+            "From the very first unit, learn nouns **together with their de or het**: not *huis*, but *het huis*. That one little word decides the form of adjectives, *this/that* and pronouns throughout the sentence later on.",
+            "Don't wait until your sounds are perfect before you dare to speak. The Dutch will switch to English the moment they hear an accent — just keep answering in Dutch, and nine times out of ten they'll switch back."
+          ]
+        },
+        {
+          "type": "p",
+          "text": "Enjoy the course. *Veel succes!*"
+        }
+      ]
+    },
+    {
+      "type": "isi",
+      "title": "Contents",
+      "intro": "This course works best in order — each unit reuses what the previous ones put in place."
+    },
+    {
+      "title": "How to use this course",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "This course is built for **self-study**. Each unit is designed to be finished in one sitting, about 20-30 minutes. What matters is not how fast you move forward, but how often you come back."
+        },
+        {
+          "type": "p",
+          "text": "Every unit has the same layout, and the order is deliberate:"
+        },
+        {
+          "type": "list",
+          "items": [
+            "**Dialogue** — first read the Dutch out loud without looking at the translation. Let your ears do the work before your brain demands an explanation.",
+            "**Literal translation** — the small italic line under the translation. This is the part people skip most often, yet it is where you see how Dutch *thinks*. Example: *Ik heet Budi* literally means \"I am-called Budi\", and *Hoe gaat het?* means \"how goes it?\".",
+            "**Notes** — short explanations of whatever just felt strange.",
+            "**Vocabulary** — the new words of the unit, each with its pronunciation. Nouns are always given with *de* or *het*, so their group sticks too.",
+            "**Exercises** — do them without looking at the key. Mistakes are part of the process.",
+            "**Answer key** — open it only after you have genuinely tried."
+          ]
+        },
+        {
+          "type": "kotak",
+          "title": "Wave review",
+          "items": [
+            "From Unit 3 on, each unit asks you to revisit an earlier unit — usually two steps back, just the right distance to make your memory work without feeling like starting over. Do it in reverse: cover the Dutch, look at the English translation, and rebuild the Dutch sentence from memory.",
+            "This is what turns \"I understood it once\" into \"I can use it\". Don't skip it."
+          ]
+        },
+        {
+          "type": "p",
+          "text": "One last rule: **say it out loud**. The \"Say it\" column in every vocabulary table is not decoration — it's a core part of the lesson."
+        }
+      ]
+    },
+    {
+      "title": "Dutch pronunciation",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "The good news first: Dutch spelling is **honest**. Once you know the sound of each letter and letter combination, you can read words you've never seen and almost always get them right — something impossible in English or Danish. All you need to learn is the list, and the list is short."
+        },
+        {
+          "type": "p",
+          "text": "The **Say it** column throughout this course is written to be read the way an English speaker naturally would, with capital letters marking the stressed syllable. Example: *bedankt* → **buh-DANGKT**, stress on the second syllable. **uh** is the weak vowel in \"*a*bout\"; **ay** as in \"day\" (but without the glide); **ee** as in \"see\"; **oo** as in \"moon\"; **e** as in \"bed\"; **i** as in \"bit\"; **a** is short, as in British \"hot\" or a clipped \"father\", while **ah** is the long \"father\" sound; **o** as in British \"lot\", **oh** as in \"go\" but without the glide. Dutch stress usually falls on the first syllable, except in loanwords and words starting with *be-*, *ge-*, *ver-*, *ont-*."
+        },
+        {
+          "type": "sub",
+          "text": "Long and short vowels — a difference that changes meaning"
+        },
+        {
+          "type": "p",
+          "text": "English has long and short vowels too, but they differ in quality (\"bit\" vs \"beat\"). In Dutch the same vowel is simply held longer — and the length alone tells words apart."
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Short",
+            "Long",
+            "The difference"
+          ],
+          "rows": [
+            [
+              "*man* (man) = man",
+              "*maan* (mahn) = moon",
+              "short a vs long a"
+            ],
+            [
+              "*bom* (bom) = bomb",
+              "*boom* (bohm) = tree",
+              "short o vs long o"
+            ],
+            [
+              "*zon* (zon) = sun",
+              "*zoon* (zohn) = son",
+              "often mixed up"
+            ],
+            [
+              "*pen* (pen) = pen",
+              "*peen* (payn) = carrot",
+              "short e vs long e"
+            ],
+            [
+              "*bus* (büs) = bus",
+              "*buus* —",
+              "short u vs *uu* (mühr = wall)"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "The rule: **double** vowels (aa, ee, oo, uu) are always long. A **single** vowel is long when it ends an open syllable — that's why *maken* is read MAH-kuh(n) even though it's written with one *a*, while *makkelijk* with two *k*'s makes the vowel short. **ü** (Dutch *u/uu*) has no English match: say \"ee\" with your lips rounded as if for \"oo\" — the French *u* or German *ü*."
+        },
+        {
+          "type": "sub",
+          "text": "Five letter combinations you must learn"
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Written",
+            "Said",
+            "Examples"
+          ],
+          "rows": [
+            [
+              "**oe**",
+              "oo — exactly as in \"moon\"",
+              "*boek* (book) = book, *goed* (khoot) = good"
+            ],
+            [
+              "**eu**",
+              "ö — lips rounded as for \"oh\", tongue as for \"ay\"",
+              "*deur* (dör) = door, *neus* (nös) = nose"
+            ],
+            [
+              "**ie**",
+              "ee — as in \"see\"",
+              "*niet* (neet) = not, *drie* (dree) = three"
+            ],
+            [
+              "**ou / au**",
+              "ow — as in \"how\" (never as in \"low\")",
+              "*koud* (kowt) = cold, *gauw* (khow) = quickly"
+            ],
+            [
+              "**ij / ei**",
+              "ey — between \"ay\" in \"hey\" and \"eye\"",
+              "*wijn* (veyn) = wine, *trein* (treyn) = train"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "*ij* and *ei* are pronounced **exactly the same**; the only difference is spelling, and the Dutch themselves call them *lange ij* and *korte ei* to tell them apart when spelling. No rule decides which is used — you learn it word by word."
+        },
+        {
+          "type": "sub",
+          "text": "The most feared sounds: ui, g and sch"
+        },
+        {
+          "type": "p",
+          "text": "**ui.** This sound doesn't exist in any language you're likely to know, and it's the only Dutch sound that really needs practice. How to do it: shape your mouth for \"ö\" (as in *deur*), then, without moving your lips, slide your tongue towards \"ee\". The result is a gliding sound written **öy** in this course. The closest English gets is \"ow\" in \"how\" said with rounded lips."
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Word",
+            "Say it",
+            "Meaning"
+          ],
+          "rows": [
+            [
+              "huis",
+              "höys",
+              "house"
+            ],
+            [
+              "uit",
+              "öyt",
+              "out"
+            ],
+            [
+              "duur",
+              "dühr",
+              "expensive (compare: *uu*, not *ui*)"
+            ],
+            [
+              "buiten",
+              "BÖY-tuh(n)",
+              "outside"
+            ],
+            [
+              "tuin",
+              "töyn",
+              "garden"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "**g and ch.** Both are pronounced the same: a rough, scraping sound at the back of the throat, like *ch* in Scottish **loch** or German **Bach**, but harsher and hissier. In this course it's written **kh**. Never the *g* of \"go\". In the south (Brabant, Limburg and all of Belgium) the sound is much softer — both are equally correct."
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Word",
+            "Say it",
+            "Meaning"
+          ],
+          "rows": [
+            [
+              "goed",
+              "khoot",
+              "good"
+            ],
+            [
+              "dag",
+              "dakh",
+              "day / hello"
+            ],
+            [
+              "acht",
+              "akht",
+              "eight"
+            ],
+            [
+              "gracht",
+              "khrakht",
+              "canal"
+            ],
+            [
+              "lachen",
+              "LA-khuh(n)",
+              "to laugh"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "**sch** = s + kh, two sounds in a row, never \"sh\" or \"sk\": *school* → **skhohl**, *schrijven* → **SKHREY-fuh(n)**. But at the **end** of a word, *-isch* is said **-is**: *logisch* → LOH-khis, *Indonesisch* → in-do-NAY-zis."
+        },
+        {
+          "type": "sub",
+          "text": "Consonants that aren't what you'd expect"
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Letter",
+            "Said",
+            "Examples"
+          ],
+          "rows": [
+            [
+              "**j**",
+              "y — as in \"yes\"",
+              "*ja* (ya), *jij* (yey), *jaar* (yahr)"
+            ],
+            [
+              "**w**",
+              "a soft v — lower lip lightly touches the upper teeth, never the English w",
+              "*water* (VAH-tuhr), *wat* (vat)"
+            ],
+            [
+              "**v**",
+              "f, especially in the north",
+              "*van* (fan), *vier* (feer)"
+            ],
+            [
+              "**z**",
+              "z, with a hiss",
+              "*zijn* (zeyn), *zon* (zon)"
+            ],
+            [
+              "**r**",
+              "rolled, or in the throat",
+              "*rood* (roht) = red"
+            ]
+          ]
+        },
+        {
+          "type": "kotak",
+          "title": "Sound habits that change everything",
+          "items": [
+            "**Word endings harden.** A final *d* is said **t** and a final *b* is said **p**: *hond* → hont (dog), *ik heb* → ik hep, *hij wordt* → hey vort. The spelling stays; only the sound changes.",
+            "**The -en ending loses its n.** *lopen* → LOH-puh, *wonen* → VOH-nuh, *de mensen* → duh MEN-suh. In everyday speech the final *n* is almost always dropped; this course writes it as **(n)** to remind you it's there on paper but not in the mouth.",
+            "**Unstressed e = uh**, like the \"a\" in \"about\": *de* (duh), *een* (uhn) = a, *gesproken* (khuh-SPROH-kuh).",
+            "⚠️ Stressed *een* means **one** and is said **ayn**; unstressed it's the article \"a\" and is said **uhn**. When it needs to be clear, the Dutch write it *één*."
+          ]
+        },
+        {
+          "type": "p",
+          "text": "Practice these five words until they're smooth before starting Unit 1 — between them they hold all the typical Dutch sounds: *goedemorgen* (KHOO-duh-mor-khuh), *alstublieft* (as-tü-BLEEFT), *uitstekend* (ÖYT-stay-kuhnt), *misschien* (mi-SKHEEN), *dank je wel* (dangk yuh VEL)."
+        }
+      ]
+    }
+  ],
+  "back": [
+    {
+      "title": "A1 grammar summary",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "All the grammar of this course in ten tables. This section is meant to be opened again months after the last unit — when you can already speak, but have forgotten why something is written the way it is."
+        },
+        {
+          "type": "sub",
+          "text": "1. Articles & plurals"
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "",
+            "de-woord",
+            "het-woord"
+          ],
+          "rows": [
+            [
+              "indefinite",
+              "een man",
+              "een huis"
+            ],
+            [
+              "definite",
+              "de man",
+              "het huis"
+            ],
+            [
+              "plural",
+              "de mannen",
+              "de huizen"
+            ],
+            [
+              "this / that",
+              "deze / die man",
+              "dit / dat huis"
+            ],
+            [
+              "adjective + een",
+              "een grote man",
+              "een **groot** huis"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "Plural: **-en** for almost every word; **-s** after -el, -em, -en, -er, -je and after an unstressed vowel (*auto's*). All plurals take *de*."
+        },
+        {
+          "type": "sub",
+          "text": "2. Pronouns"
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Subject",
+            "Object",
+            "Possessive"
+          ],
+          "rows": [
+            [
+              "ik",
+              "mij / me",
+              "mijn"
+            ],
+            [
+              "jij / je",
+              "jou / je",
+              "jouw / je"
+            ],
+            [
+              "u",
+              "u",
+              "uw"
+            ],
+            [
+              "hij",
+              "hem",
+              "zijn"
+            ],
+            [
+              "zij / ze",
+              "haar",
+              "haar"
+            ],
+            [
+              "het",
+              "het",
+              "zijn"
+            ],
+            [
+              "wij / we",
+              "ons",
+              "ons / onze"
+            ],
+            [
+              "jullie",
+              "jullie",
+              "jullie"
+            ],
+            [
+              "zij / ze",
+              "hen / ze",
+              "hun"
+            ]
+          ]
+        },
+        {
+          "type": "sub",
+          "text": "3. Present-tense verbs"
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "",
+            "regular",
+            "zijn",
+            "hebben",
+            "gaan",
+            "doen"
+          ],
+          "rows": [
+            [
+              "ik",
+              "stem",
+              "ben",
+              "heb",
+              "ga",
+              "doe"
+            ],
+            [
+              "jij",
+              "stem + t",
+              "bent",
+              "hebt",
+              "gaat",
+              "doet"
+            ],
+            [
+              "u",
+              "stem + t",
+              "bent",
+              "hebt / heeft",
+              "gaat",
+              "doet"
+            ],
+            [
+              "hij / zij",
+              "stem + t",
+              "is",
+              "heeft",
+              "gaat",
+              "doet"
+            ],
+            [
+              "wij / jullie / zij",
+              "dictionary form",
+              "zijn",
+              "hebben",
+              "gaan",
+              "doen"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "When *jij/je* comes **after** the verb, the *-t* disappears: *woon je?*, *ga je?* — but not with *u*: *woont u?*"
+        },
+        {
+          "type": "sub",
+          "text": "4. Helper verbs"
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "",
+            "kunnen",
+            "moeten",
+            "mogen",
+            "willen",
+            "zullen"
+          ],
+          "rows": [
+            [
+              "ik / hij",
+              "kan",
+              "moet",
+              "mag",
+              "wil",
+              "zal"
+            ],
+            [
+              "jij",
+              "kunt / kan",
+              "moet",
+              "mag",
+              "wilt",
+              "zult"
+            ],
+            [
+              "plural",
+              "kunnen",
+              "moeten",
+              "mogen",
+              "willen",
+              "zullen"
+            ],
+            [
+              "past",
+              "kon",
+              "moest",
+              "mocht",
+              "wilde",
+              "zou"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "⚠️ *Je moet niet* = **you mustn't**. \"You don't have to\" = *je hoeft niet te …*"
+        },
+        {
+          "type": "sub",
+          "text": "5. Word order"
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Sentence type",
+            "Pattern",
+            "Example"
+          ],
+          "rows": [
+            [
+              "statement",
+              "verb in **position 2**",
+              "Morgen **ga** ik naar Utrecht."
+            ],
+            [
+              "yes/no question",
+              "verb in **position 1**",
+              "**Ga** je mee?"
+            ],
+            [
+              "question-word question",
+              "question word + verb",
+              "Waar **woon** je?"
+            ],
+            [
+              "command",
+              "verb stem only",
+              "**Kom** binnen."
+            ],
+            [
+              "subordinate clause",
+              "verb **at the end**",
+              "…omdat ik moe **ben**."
+            ],
+            [
+              "with a helper verb",
+              "main verb at the end",
+              "Ik **moet** morgen **werken**."
+            ],
+            [
+              "past",
+              "ge- form at the end",
+              "Ik **heb** hard **gewerkt**."
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "The rest of the sentence follows the order **time → manner → place**: *Ik ga morgen met de trein naar Utrecht.*"
+        },
+        {
+          "type": "sub",
+          "text": "6. Negation"
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Use",
+            "When what's negated is",
+            "Example"
+          ],
+          "rows": [
+            [
+              "**geen**",
+              "a noun with *een* or with no article",
+              "Ik heb **geen** auto."
+            ],
+            [
+              "**niet**",
+              "everything else",
+              "Het is **niet** duur. / Ik werk **niet**."
+            ]
+          ]
+        },
+        {
+          "type": "sub",
+          "text": "7. Adjectives"
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Situation",
+            "Example",
+            "-e?"
+          ],
+          "rows": [
+            [
+              "before a de-woord",
+              "de / een **grote** man",
+              "yes"
+            ],
+            [
+              "before a het-woord with *het*",
+              "het **grote** huis",
+              "yes"
+            ],
+            [
+              "before a het-woord with *een*",
+              "een **groot** huis",
+              "no"
+            ],
+            [
+              "before a plural",
+              "**grote** huizen",
+              "yes"
+            ],
+            [
+              "after the verb",
+              "Het huis is **groot**.",
+              "no"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "Comparison: **-er … dan** (*groter dan*), **de/het …-st** (*de grootste*). Irregular: *goed–beter–best*, *veel–meer–meest*, *weinig–minder–minst*, *graag–liever–liefst*."
+        },
+        {
+          "type": "sub",
+          "text": "8. The past"
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Form",
+            "Formula",
+            "Examples"
+          ],
+          "rows": [
+            [
+              "weak",
+              "**ge-** + stem + **-t / -d**",
+              "gewerkt, gehoord"
+            ],
+            [
+              "the -t rule",
+              "last sound is in *'t kofschip*",
+              "gewerkt, gemist, gestopt"
+            ],
+            [
+              "fixed prefix (be-, ver-, ont-, ge-, her-)",
+              "no *ge-*",
+              "betaald, verteld"
+            ],
+            [
+              "separable verb",
+              "*ge-* in the middle",
+              "opgebeld, uitgerust"
+            ],
+            [
+              "strong",
+              "ends in **-en**",
+              "gedronken, gelezen, gezien"
+            ],
+            [
+              "helper **hebben**",
+              "almost all verbs",
+              "Ik **heb** gegeten."
+            ],
+            [
+              "helper **zijn**",
+              "movement & change",
+              "Ik **ben** gegaan / geworden / geweest."
+            ]
+          ]
+        },
+        {
+          "type": "sub",
+          "text": "9. Subordinate clauses"
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Don't change the order",
+            "Throw the verb to the end"
+          ],
+          "rows": [
+            [
+              "en, maar, of, want, dus",
+              "omdat, dat, als, toen, terwijl"
+            ],
+            [
+              "Ik blijf thuis, **want** ik ben ziek.",
+              "Ik blijf thuis **omdat** ik ziek **ben**."
+            ],
+            [
+              "",
+              "voordat, nadat, hoewel, of (= whether)"
+            ]
+          ]
+        },
+        {
+          "type": "sub",
+          "text": "10. Numbers"
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Pattern",
+            "Examples"
+          ],
+          "rows": [
+            [
+              "units **+ en +** tens",
+              "eenentwintig (21), vijfenzestig (65)"
+            ],
+            [
+              "hundreds & thousands in normal order",
+              "honderdvijftien (115), tweeduizend (2,000)"
+            ],
+            [
+              "time: *half* points to the next hour",
+              "**half drie** = 2:30"
+            ],
+            [
+              "quarter",
+              "kwart over / kwart voor"
+            ],
+            [
+              "counting from the half hour",
+              "tien voor half drie = 2:20"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "title": "The most common irregular verbs",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Thirty-six verbs, ordered by how often you'll need them. The second column is the simple past (used for states and stories), the third is the past participle (used with *hebben*/*zijn*). A **z** means the verb takes *zijn*."
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Verb",
+            "Past",
+            "Participle",
+            "Meaning"
+          ],
+          "rows": [
+            [
+              "zijn",
+              "was / waren",
+              "geweest **z**",
+              "to be"
+            ],
+            [
+              "hebben",
+              "had / hadden",
+              "gehad",
+              "to have"
+            ],
+            [
+              "gaan",
+              "ging",
+              "gegaan **z**",
+              "to go"
+            ],
+            [
+              "komen",
+              "kwam",
+              "gekomen **z**",
+              "to come"
+            ],
+            [
+              "doen",
+              "deed",
+              "gedaan",
+              "to do"
+            ],
+            [
+              "zien",
+              "zag",
+              "gezien",
+              "to see"
+            ],
+            [
+              "weten",
+              "wist",
+              "geweten",
+              "to know"
+            ],
+            [
+              "zeggen",
+              "zei",
+              "gezegd",
+              "to say"
+            ],
+            [
+              "denken",
+              "dacht",
+              "gedacht",
+              "to think"
+            ],
+            [
+              "eten",
+              "at",
+              "gegeten",
+              "to eat"
+            ],
+            [
+              "drinken",
+              "dronk",
+              "gedronken",
+              "to drink"
+            ],
+            [
+              "slapen",
+              "sliep",
+              "geslapen",
+              "to sleep"
+            ],
+            [
+              "lezen",
+              "las",
+              "gelezen",
+              "to read"
+            ],
+            [
+              "schrijven",
+              "schreef",
+              "geschreven",
+              "to write"
+            ],
+            [
+              "spreken",
+              "sprak",
+              "gesproken",
+              "to speak"
+            ],
+            [
+              "nemen",
+              "nam",
+              "genomen",
+              "to take"
+            ],
+            [
+              "geven",
+              "gaf",
+              "gegeven",
+              "to give"
+            ],
+            [
+              "krijgen",
+              "kreeg",
+              "gekregen",
+              "to get, receive"
+            ],
+            [
+              "kopen",
+              "kocht",
+              "gekocht",
+              "to buy"
+            ],
+            [
+              "brengen",
+              "bracht",
+              "gebracht",
+              "to bring"
+            ],
+            [
+              "zoeken",
+              "zocht",
+              "gezocht",
+              "to look for"
+            ],
+            [
+              "vinden",
+              "vond",
+              "gevonden",
+              "to find"
+            ],
+            [
+              "blijven",
+              "bleef",
+              "gebleven **z**",
+              "to stay, remain"
+            ],
+            [
+              "worden",
+              "werd",
+              "geworden **z**",
+              "to become"
+            ],
+            [
+              "staan",
+              "stond",
+              "gestaan",
+              "to stand / be (placed)"
+            ],
+            [
+              "zitten",
+              "zat",
+              "gezeten",
+              "to sit / be (located)"
+            ],
+            [
+              "liggen",
+              "lag",
+              "gelegen",
+              "to lie / be (lying)"
+            ],
+            [
+              "lopen",
+              "liep",
+              "gelopen",
+              "to walk"
+            ],
+            [
+              "rijden",
+              "reed",
+              "gereden",
+              "to drive, ride"
+            ],
+            [
+              "helpen",
+              "hielp",
+              "geholpen",
+              "to help"
+            ],
+            [
+              "begrijpen",
+              "begreep",
+              "begrepen",
+              "to understand"
+            ],
+            [
+              "verliezen",
+              "verloor",
+              "verloren",
+              "to lose"
+            ],
+            [
+              "vergeten",
+              "vergat",
+              "vergeten",
+              "to forget"
+            ],
+            [
+              "beginnen",
+              "begon",
+              "begonnen **z**",
+              "to begin"
+            ],
+            [
+              "houden",
+              "hield",
+              "gehouden",
+              "to hold / (van) to love"
+            ],
+            [
+              "kijken",
+              "keek",
+              "gekeken",
+              "to look, watch"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "Don't learn them all at once. Mark the ten you use most, stick them on the wall, and swap the list every two weeks."
+        }
+      ]
+    },
+    {
+      "title": "Lifesaver phrases",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Twenty sentences that cover almost every conversational emergency. If you forget everything else in this course, these are what should remain."
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Nederlands",
+            "English"
+          ],
+          "rows": [
+            [
+              "Sorry, ik spreek maar een beetje Nederlands.",
+              "Sorry, I only speak a little Dutch."
+            ],
+            [
+              "Kunt u wat langzamer praten?",
+              "Could you speak a bit more slowly?"
+            ],
+            [
+              "Kunt u dat herhalen?",
+              "Could you repeat that?"
+            ],
+            [
+              "Ik begrijp het niet.",
+              "I don't understand."
+            ],
+            [
+              "Wat betekent dat?",
+              "What does that mean?"
+            ],
+            [
+              "Hoe zeg je … in het Nederlands?",
+              "How do you say … in Dutch?"
+            ],
+            [
+              "Hoe schrijf je dat?",
+              "How do you write that?"
+            ],
+            [
+              "Mag ik het in het Nederlands proberen?",
+              "May I try it in Dutch?"
+            ],
+            [
+              "Mag ik u iets vragen?",
+              "May I ask you something?"
+            ],
+            [
+              "Kunt u me helpen?",
+              "Could you help me?"
+            ],
+            [
+              "Waar is het toilet?",
+              "Where is the toilet?"
+            ],
+            [
+              "Hoeveel kost het?",
+              "How much is it?"
+            ],
+            [
+              "Kan ik pinnen?",
+              "Can I pay by card?"
+            ],
+            [
+              "Ik wil graag …",
+              "I'd like …"
+            ],
+            [
+              "Mag ik de rekening?",
+              "Could I have the bill?"
+            ],
+            [
+              "Ik ben verdwaald.",
+              "I'm lost."
+            ],
+            [
+              "Ik ben mijn … kwijt.",
+              "I've lost my …"
+            ],
+            [
+              "Ik voel me niet lekker.",
+              "I don't feel well."
+            ],
+            [
+              "Ik heb een afspraak met …",
+              "I have an appointment with …"
+            ],
+            [
+              "Ik ben er over vijf minuten.",
+              "I'll be there in five minutes."
+            ]
+          ]
+        },
+        {
+          "type": "kotak",
+          "title": "Five little words that make you sound native",
+          "items": [
+            "**even** — softens a request: *Kun je me even helpen?*",
+            "**hoor** — softens a statement: *Nee hoor.*",
+            "**wel** — the opposite of *niet*, for emphasis: *Ik wel!*",
+            "**maar** — softens a command: *Ga maar zitten.*",
+            "**gezellig** — the highest praise for any atmosphere: cozy, sociable, fun all at once."
+          ]
+        },
+        {
+          "type": "p",
+          "text": "*Veel succes — en tot ziens!*"
+        }
+      ]
+    }
+  ]
+}
