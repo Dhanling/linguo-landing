@@ -10,6 +10,7 @@
 // Warna ditulis inline (bukan kelas Tailwind) supaya mode gelap /akun dan
 // dashboard tidak menimpanya — slide selalu terang [slide-terang-v1].
 
+import { useSlideEn } from "@/lib/slideUiEn";
 import { createContext, lazy, Suspense, useContext, useEffect, useId, useLayoutEffect, useRef, useState } from "react";
 import { Volume2, Wind, X, Check, Play, Square, RotateCcw, Equal, Shuffle, ChevronLeft, ChevronRight } from "lucide-react";
 import type { BandingStatus, BandingToken, Nada, SlideVisual as Visual } from "@/lib/materiSlides";
@@ -124,6 +125,7 @@ const KARTU: React.CSSProperties = {
 
 function VisualNada({ rows, ucap, siapkan, aksen }: { rows: Extract<Visual, { kind: "nada" }>["rows"]; ucap?: Ucap; siapkan?: (t: string) => void; aksen: string }) {
   const klip = useContext(KlipCtx);
+  const en = useSlideEn();
   const berkontur = rows.filter((r) => r.tone !== 0);
   /* Baris yang sedang berbunyi: barisnya menyala, konturnya digambar ulang di
      grafik selagi suaranya terdengar — naik-turun nada terlihat DAN terdengar. */
@@ -156,7 +158,7 @@ function VisualNada({ rows, ucap, siapkan, aksen }: { rows: Extract<Visual, { ki
   return (
     <div className="grid h-full gap-[1.6cqw]" style={{ gridTemplateColumns: "38% 1fr" }}>
       <div className="flex min-h-0 flex-col p-[1.2cqw]" style={KARTU}>
-        <div className="mb-[0.6cqh] text-[0.8em] font-bold uppercase tracking-wider" style={{ color: aksen }}>Kontur nada</div>
+        <div className="mb-[0.6cqh] text-[0.8em] font-bold uppercase tracking-wider" style={{ color: aksen }}>{en ? "Tone contours" : "Kontur nada"}</div>
         <div className="relative min-h-0 flex-1">
           <svg viewBox="-6 0 108 100" preserveAspectRatio="xMidYMid meet" className="h-full w-full" aria-label="Kontur keempat nada">
             <style>{"@keyframes gambarNada{from{stroke-dashoffset:100}to{stroke-dashoffset:0}}"}</style>
@@ -200,7 +202,7 @@ function VisualNada({ rows, ucap, siapkan, aksen }: { rows: Extract<Visual, { ki
             onMouseEnter={() => rows.forEach((r) => siapkan?.(r.hanzi || r.pinyin))}
             className="mt-[0.8cqh] inline-flex items-center justify-center gap-[0.4em] rounded-full px-[1em] py-[0.35em] text-[0.85em] font-bold text-white shadow-sm transition hover:brightness-110"
             style={{ background: aksen }}>
-            {jalan ? <><Square className="h-[0.9em] w-[0.9em]" /> Berhenti</> : <><Play className="h-[1em] w-[1em]" /> Dengar berurutan</>}
+            {jalan ? <><Square className="h-[0.9em] w-[0.9em]" /> {en ? "Stop" : "Berhenti"}</> : <><Play className="h-[1em] w-[1em]" /> {en ? "Play in order" : "Dengar berurutan"}</>}
           </button>
         )}
       </div>
@@ -364,12 +366,13 @@ function VisualKelompok({ groups, ucap, siapkan, aksen }: { groups: Extract<Visu
 
 function VisualJebakan({ rows, ucap, siapkan }: { rows: Extract<Visual, { kind: "jebakan" }>["rows"]; ucap?: Ucap; siapkan?: (t: string) => void }) {
   const kolom = "30% 1fr 1fr";
+  const en = useSlideEn();
   return (
     <div className="flex h-full flex-col gap-[0.7cqh]">
       <div className="grid shrink-0 gap-[1cqw] px-[0.6cqw] text-[0.72em] font-bold uppercase tracking-wider" style={{ gridTemplateColumns: kolom, color: "#6B7280" }}>
-        <span>Tulisan pinyin</span>
-        <span style={{ color: "#BE123C" }}>Jangan dibaca</span>
-        <span style={{ color: "#047857" }}>Bacanya</span>
+        <span>{en ? "Pinyin spelling" : "Tulisan pinyin"}</span>
+        <span style={{ color: "#BE123C" }}>{en ? "Not like this" : "Jangan dibaca"}</span>
+        <span style={{ color: "#047857" }}>{en ? "Say it like" : "Bacanya"}</span>
       </div>
       {rows.map((r, i) => {
         const w = WARNA_NADA[nadaPinyin(r.text)];
@@ -413,6 +416,7 @@ const DURASI_PER_PERISTIWA = 2000;
 
 function VisualSejarah({ v, ucap, siapkan, aksen }: { v: Extract<Visual, { kind: "sejarah" }>; ucap?: Ucap; siapkan?: (t: string) => void; aksen: string }) {
   const uid = useId().replace(/:/g, "");
+  const en = useSlideEn();
   const [peta, setPeta] = useState<Record<string, string> | null>(null);
   useEffect(() => { let hidup = true; void muatPeta().then((p) => { if (hidup) setPeta(p); }); return () => { hidup = false; }; }, []);
 
@@ -542,10 +546,10 @@ function VisualSejarah({ v, ucap, siapkan, aksen }: { v: Extract<Visual, { kind:
         {/* Tahun berjalan */}
         <div className="pointer-events-none absolute left-[0.8em] top-[0.6em] rounded-[0.6em] px-[0.7em] py-[0.2em] shadow-sm"
           style={{ background: "rgba(255,255,255,0.92)" }}>
-          <div className="text-[0.62em] font-bold uppercase tracking-wider" style={{ color: "#6B7280" }}>Tahun</div>
+          <div className="text-[0.62em] font-bold uppercase tracking-wider" style={{ color: "#6B7280" }}>{en ? "Year" : "Tahun"}</div>
           <div className="text-[1.5em] font-extrabold leading-none tabular-nums" style={{ color: aksen }}>{formatTahun(Math.round(tahun))}</div>
         </div>
-        {!peta && <div className="absolute inset-0 grid place-items-center text-[0.8em]" style={{ color: "#6B7280" }}>Memuat peta…</div>}
+        {!peta && <div className="absolute inset-0 grid place-items-center text-[0.8em]" style={{ color: "#6B7280" }}>{en ? "Loading map…" : "Memuat peta…"}</div>}
         {!!v.stat?.length && (
           <div className="pointer-events-none absolute bottom-[0.6em] left-[0.6em] right-[0.6em] flex flex-wrap gap-[0.4em]">
             {v.stat.slice(0, 3).map((x, i) => (
@@ -563,14 +567,14 @@ function VisualSejarah({ v, ucap, siapkan, aksen }: { v: Extract<Visual, { kind:
         <div className="flex shrink-0 items-center gap-[0.5em]">
           <button type="button" onClick={(e) => { e.stopPropagation(); sebelumnya(); }} disabled={diAwal}
             className="inline-flex shrink-0 items-center justify-center rounded-full p-[0.35em] text-[0.8em] shadow-sm transition hover:brightness-95 disabled:opacity-40"
-            style={{ background: "#fff", border: `1px solid ${aksen}66`, color: aksen }} aria-label="Peristiwa sebelumnya" title="Sebelumnya">
+            style={{ background: "#fff", border: `1px solid ${aksen}66`, color: aksen }} aria-label={en ? "Previous event" : "Peristiwa sebelumnya"} title={en ? "Previous" : "Sebelumnya"}>
             <ChevronLeft className="h-[1.1em] w-[1.1em]" />
           </button>
           <button type="button" onClick={(e) => { e.stopPropagation(); berikutnya(); }}
             className="inline-flex shrink-0 items-center gap-[0.4em] rounded-full px-[0.9em] py-[0.3em] text-[0.8em] font-bold text-white shadow-sm transition hover:brightness-110"
             style={{ background: aksen }} aria-label={diUjung ? "Mulai dari peristiwa pertama" : "Peristiwa berikutnya"}>
-            {diUjung ? <><RotateCcw className="h-[1em] w-[1em]" /> Mulai dari awal</>
-              : <>Berikutnya <ChevronRight className="h-[1.1em] w-[1.1em]" /></>}
+            {diUjung ? <><RotateCcw className="h-[1em] w-[1em]" /> {en ? "Start over" : "Mulai dari awal"}</>
+              : <>{en ? "Next" : "Berikutnya"} <ChevronRight className="h-[1.1em] w-[1.1em]" /></>}
           </button>
           <div className="relative h-[0.3em] min-w-0 flex-1 rounded-full" style={{ background: "#E5E7EB" }}>
             <div className="absolute inset-y-0 left-0 rounded-full" style={{ background: aksen, width: `${akhir ? (pos / akhir) * 100 : 100}%` }} />
@@ -627,6 +631,7 @@ function VisualSejarah({ v, ucap, siapkan, aksen }: { v: Extract<Visual, { kind:
    berdampingan; kata yang sepadan diberi warna sama sehingga perbedaan urutan
    kata terlihat sekilas. */
 
+const STATUS_EN: Record<BandingStatus, string> = { sama: "Same", mirip: "Similar", beda: "Different" };
 const WARNA_STATUS: Record<BandingStatus, { teks: string; latar: string; label: string }> = {
   sama: { teks: "#047857", latar: "#D1FAE5", label: "Sama" },
   mirip: { teks: "#B45309", latar: "#FEF3C7", label: "Mirip" },
@@ -688,6 +693,8 @@ function useGarisPadanan(kotak: React.RefObject<HTMLDivElement | null>, kunci: u
 }
 
 function VisualBanding({ v, ucap, siapkan, aksen }: { v: Extract<Visual, { kind: "banding" }>; ucap?: Ucap; siapkan?: (t: string) => void; aksen: string }) {
+  const en = useSlideEn();
+  const lbl = (k: keyof typeof WARNA_STATUS) => (en ? STATUS_EN[k] : WARNA_STATUS[k].label);
   const [pilih, setPilih] = useState(0);
   const r = v.rows[Math.min(pilih, v.rows.length - 1)];
   const kotak = useRef<HTMLDivElement>(null);
@@ -704,7 +711,7 @@ function VisualBanding({ v, ucap, siapkan, aksen }: { v: Extract<Visual, { kind:
         <div className="flex shrink-0 gap-[0.4em] text-[0.7em] font-bold">
           {(["sama", "mirip", "beda"] as BandingStatus[]).map((s) => (
             <span key={s} className="rounded-full px-[0.7em] py-[0.15em]" style={{ background: WARNA_STATUS[s].latar, color: WARNA_STATUS[s].teks }}>
-              {hitung(s)} {WARNA_STATUS[s].label.toLowerCase()}
+              {hitung(s)} {lbl(s).toLowerCase()}
             </span>
           ))}
         </div>
@@ -720,7 +727,7 @@ function VisualBanding({ v, ucap, siapkan, aksen }: { v: Extract<Visual, { kind:
                 <Ikon className="h-[0.95em] w-[0.95em]" />
               </span>
               <span className="min-w-0 flex-1 truncate text-[0.88em] font-bold" style={{ color: "#111827" }}>{x.aspek}</span>
-              <span className="shrink-0 text-[0.66em] font-extrabold uppercase tracking-wider" style={{ color: s.teks }}>{s.label}</span>
+              <span className="shrink-0 text-[0.66em] font-extrabold uppercase tracking-wider" style={{ color: s.teks }}>{lbl(x.status)}</span>
             </button>
           );
         })}
@@ -728,7 +735,7 @@ function VisualBanding({ v, ucap, siapkan, aksen }: { v: Extract<Visual, { kind:
 
       <div key={pilih} className="flex min-h-0 flex-col gap-[0.9cqh] p-[1.3cqw]" style={{ ...KARTU, borderTop: `0.3em solid ${st.teks}`, animation: "slideVisMuncul .3s ease-out" }}>
         <div className="flex items-center gap-[0.6em]">
-          <span className="rounded-full px-[0.7em] py-[0.1em] text-[0.72em] font-extrabold uppercase tracking-wider" style={{ background: st.latar, color: st.teks }}>{st.label}</span>
+          <span className="rounded-full px-[0.7em] py-[0.1em] text-[0.72em] font-extrabold uppercase tracking-wider" style={{ background: st.latar, color: st.teks }}>{lbl(r.status)}</span>
           <span className="text-[1.1em] font-extrabold" style={{ color: "#111827" }}>{r.aspek}</span>
         </div>
         <p className="text-[0.88em] leading-snug" style={{ color: "#374151" }}>{r.ringkas}</p>
@@ -740,7 +747,7 @@ function VisualBanding({ v, ucap, siapkan, aksen }: { v: Extract<Visual, { kind:
             ))}
           </svg>
           <div className="flex items-center gap-[1em]">
-            <span className="w-[5.5em] shrink-0 text-[0.66em] font-bold uppercase leading-tight tracking-wider" style={{ color: "#6B7280" }}>Bahasa Indonesia</span>
+            <span className="w-[5.5em] shrink-0 text-[0.66em] font-bold uppercase leading-tight tracking-wider" style={{ color: "#6B7280" }}>{en ? "Indonesian" : "Bahasa Indonesia"}</span>
             <div className="flex flex-wrap items-end gap-[0.6em]">{r.id.map((t, i) => <Token key={i} t={t} sisi="id" />)}</div>
           </div>
           <div className="flex items-center gap-[1em]">
@@ -749,7 +756,7 @@ function VisualBanding({ v, ucap, siapkan, aksen }: { v: Extract<Visual, { kind:
               {ucap && (
                 <button type="button" data-ucap={kalimat} onClick={(e) => { e.stopPropagation(); ucap(kalimat); }} onMouseEnter={() => siapkan?.(kalimat)}
                   className="inline-flex items-center gap-[0.3em] rounded-full px-[0.7em] py-[0.2em] text-white normal-case tracking-normal" style={{ background: aksen }}>
-                  <Volume2 className="h-[1.1em] w-[1.1em]" /> Dengar
+                  <Volume2 className="h-[1.1em] w-[1.1em]" /> {en ? "Listen" : "Dengar"}
                 </button>
               )}
             </span>
@@ -783,6 +790,13 @@ const LABEL = {
   en: { klik: "Click a letter to see example words", beda: "sounds different from English", dibaca: "sounds like", khas: "Special sound", contoh: "Example words",
     dengar: "Listen", tutup: "Close", bentuk: "Forms", bisu: "silent", vokal: "Pure vowels", vokalKet: "short & clear, always the same sound", seperti: "like" },
 };
+/** [slide-terjemah-en-v2] Dek pelajar Indonesia yang diterjemahkan ke English: label English,
+ *  tapi pembandingnya tetap bahasa Indonesia (tanda di ubin = beda dari Indonesia). */
+function pilihLabel(ui: "en" | undefined, en: boolean) {
+  if (ui === "en") return LABEL.en;
+  if (!en) return LABEL.id;
+  return { ...LABEL.en, beda: "sounds different from Indonesian", vokalKet: "short & clear, just like in Indonesian" };
+}
 
 /** Huruf besar + kecil untuk ubin. Aksara tanpa huruf kapital (Arab, Devanagari, …) cukup sekali;
  *  digraf ditulis "Ch ch" / "Dzs dzs". Georgia: toUpperCase() memberi Mtavruli yang tak dipakai
@@ -800,7 +814,7 @@ function bentukKapital(h: string, besarTetap?: string): { besar: string; kecil: 
 
 function VisualAlfabet({ v, ucap, siapkan, aksen }: { v: Extract<Visual, { kind: "alfabet" }>; ucap?: Ucap; siapkan?: (t: string) => void; aksen: string }) {
   const [buka, setBuka] = useState<number | null>(null);
-  const L = LABEL[v.ui === "en" ? "en" : "id"];
+  const L = pilihLabel(v.ui, useSlideEn());
   const n = v.huruf.length;
   // Abjad panjang (Ceko 42, Hungaria 44, Georgia 33) tetap muat tanpa gulir.
   const kolom = n > 40 ? 11 : n > 30 ? 10 : n > 24 ? 9 : n > 16 ? 8 : 6;
@@ -990,7 +1004,7 @@ function Sorot({ kata, sorot, tetap, warna, garis, coret }: { kata: string; soro
 }
 
 function VisualBunyi({ v, ucap, siapkan, aksen }: { v: Extract<Visual, { kind: "bunyi" }>; ucap?: Ucap; siapkan?: (t: string) => void; aksen: string }) {
-  const L = LABEL[v.ui === "en" ? "en" : "id"];
+  const L = pilihLabel(v.ui, useSlideEn());
   const kolom = v.khas.length > 4 ? 3 : 2;
   // Tanpa ubin vokal / kartu cuma satu baris → kartu tinggi; contoh kata dibesarkan supaya tak kosong melompong.
   const lapang = v.vokal.length === 0 || v.khas.length <= kolom;

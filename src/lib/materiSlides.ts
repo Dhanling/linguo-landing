@@ -221,6 +221,8 @@ export interface MateriSlide {
   ruang?: "kiri";
   /** [slide-visual-v1] Diagram pengganti isi teks — lihat SlideVisual. */
   visual?: SlideVisual;
+  /** [slide-terjemah-en-v2] "en" = dek sudah diterjemahkan → label bawaan slide English. */
+  ui?: "en";
 }
 
 export interface MateriDeck {

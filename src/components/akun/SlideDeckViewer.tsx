@@ -31,6 +31,8 @@ import {
 import type { MateriSlide, SlideType } from "@/lib/materiSlides";
 import { useT } from "@/lib/uiLang"; // [ui-lang-switcher-v1]
 import { SLIDE_TYPE_LABEL } from "@/lib/materiSlides";
+import { SlideEnCtx, useSlideEn, SLIDE_TYPE_LABEL_EN } from "@/lib/slideUiEn";
+import { bacaBahasaArti, simpanBahasaArti, dekEnTersimpan, terjemahkanDekEn, artiKataEn, artiKataEnTersimpan, type BahasaArti } from "@/lib/terjemahDek";
 import { preloadDekSlides, preloadSlideImage, slideImageReady } from "@/lib/slideImageCache";
 import { RectFlag } from "@/components/RectFlag";
 // [slide-tts-v1] Mesin & cache TTS yang SAMA dengan reader e-book new edition
@@ -133,6 +135,7 @@ function Ucap({ teks, lang, kalimat = true }: { teks: string; lang?: string | nu
   useEffect(() => () => { putaran.current++; }, []);
   const [tip, setTip] = useState<Tip | null>(null);
   const [lup, setLup] = useState<Lup | null>(null);
+  const en = useSlideEn();
   /* Tooltip & lup di-portal ke kartu slide (acuan `fixed`-nya). Kalau tetap di
      dalam kartu kecil yang sedang di-zoom (transform), `fixed` berpindah acuan ke
      kartu kecil itu dan ikut terpotong wadah gulir. */
@@ -162,9 +165,17 @@ function Ucap({ teks, lang, kalimat = true }: { teks: string; lang?: string | nu
       x: Math.min(Math.max(r.left + r.width / 2 - k.left, k.width * 0.15), k.width * 0.85),
       y: (bawah ? r.bottom : r.top) - k.top,
     });
-    if (ada === undefined) {
-      void artiKataEbook(kata, utuh, lang).then((h) => setTip((t) => (t && t.kata === kata ? { ...t, arti: h } : t)));
-    }
+    // [slide-terjemah-en-v2] Dek English: arti kata (layanan ebook-kata = Indonesia) diterjemahkan.
+    const keEn = (h: HasilArti | undefined) => en && h && h !== "mati" ? artiKataEnTersimpan(h) : h;
+    setTip((t) => (t ? { ...t, arti: keEn(ada) } : t));
+    const lengkapi = (h: HasilArti) => {
+      setTip((t) => (t && t.kata === kata ? { ...t, arti: keEn(h) } : t));
+      if (en && h && h !== "mati" && keEn(h) === undefined) {
+        void artiKataEn(h).then((e) => setTip((t) => (t && t.kata === kata ? { ...t, arti: e } : t)));
+      }
+    };
+    if (ada === undefined) void artiKataEbook(kata, utuh, lang).then(lengkapi);
+    else lengkapi(ada);
   };
 
   const bukaLup = (kata: string, el: HTMLElement) => {
@@ -245,7 +256,7 @@ function Ucap({ teks, lang, kalimat = true }: { teks: string; lang?: string | nu
         );
       })}
       {kalimat && (/\s/.test(utuh) || banyakKata) && (
-        <button type="button" onClick={bunyikan(utuh, -1)} title="Dengarkan kalimat" data-ucap={utuh} data-ucap-kalimat
+        <button type="button" onClick={bunyikan(utuh, -1)} title={en ? "Listen to the sentence" : "Dengarkan kalimat"} data-ucap={utuh} data-ucap-kalimat
           className="ml-[0.4em] inline-flex translate-y-[0.12em] rounded-full p-[0.15em] opacity-50 transition hover:bg-teal-100 hover:opacity-100"
           style={{ color: aktif === -1 ? "#0E7C7B" : TEAL }}>
           <Volume2 className="h-[0.95em] w-[0.95em]" />
@@ -277,12 +288,12 @@ function Ucap({ teks, lang, kalimat = true }: { teks: string; lang?: string | nu
               <span className="block">{tip.arti.arti}</span>
               {(tip.arti.kelas || tip.arti.dasar) && (
                 <span className="mt-[0.2em] block text-[0.82em] text-gray-400">
-                  {[tip.arti.kelas, tip.arti.dasar && `dasar: ${tip.arti.dasar}`].filter(Boolean).join(" · ")}
+                  {[tip.arti.kelas, tip.arti.dasar && `${en ? "base" : "dasar"}: ${tip.arti.dasar}`].filter(Boolean).join(" · ")}
                 </span>
               )}
             </>
           ) : (
-            <span className="block text-gray-400">Mencari arti…</span>
+            <span className="block text-gray-400">{en ? "Looking up…" : "Mencari arti…"}</span>
           )}
         </span>,
         wadah,
@@ -357,6 +368,7 @@ const CSS_JAWAB = `@keyframes lupMuncul{from{opacity:0;scale:.7}to{opacity:1;sca
 function LatihanJawab({ s, kunci, aksen, kartu }: { s: MateriSlide; kunci?: boolean; aksen: string; kartu: string }) {
   const soal = s.questions || [];
   const jawab = s.answers || [];
+  const en = useSlideEn();
   const punya = soal.map((_, i) => !!jawab[i]?.trim());
   const [buka, setBuka] = useState<Set<number>>(new Set());
   const total = punya.filter(Boolean).length;
@@ -404,7 +416,7 @@ function LatihanJawab({ s, kunci, aksen, kartu }: { s: MateriSlide; kunci?: bool
             className="inline-flex items-center gap-[0.45em] rounded-full px-[1.1em] py-[0.35em] font-bold text-white shadow-md transition hover:brightness-110"
             style={{ background: semua ? "#64748B" : aksen }}>
             {semua ? <RotateCcw className="h-[1em] w-[1em]" strokeWidth={2.6} /> : <Check className="h-[1em] w-[1em]" strokeWidth={3} />}
-            {semua ? "Sembunyikan jawaban" : terbuka === 0 ? "Cek jawaban" : `Jawaban berikutnya (${terbuka}/${total})`}
+            {en ? (semua ? "Hide answers" : terbuka === 0 ? "Check answer" : `Next answer (${terbuka}/${total})`) : semua ? "Sembunyikan jawaban" : terbuka === 0 ? "Cek jawaban" : `Jawaban berikutnya (${terbuka}/${total})`}
           </button>
         </li>
       )}
@@ -492,7 +504,9 @@ export function SlideBody({ s, kunci, lang }: { s: MateriSlide; kunci?: boolean;
       <div className={`shrink-0 ${kiriSaja ? "" : "pr-[9%]"}`}>
         <span className="inline-block rounded-full px-[0.9em] py-[0.2em] text-[clamp(0.5rem,1cqw,0.7rem)] font-extrabold uppercase tracking-[0.12em] text-white"
           style={{ background: tema.aksen }}>
-          {s.visual?.kind === "isyarat" ? (s.visual.baris?.length ? "Dialog isyarat" : "Isyarat 3D") : s.visual?.kind === "sejarah" ? "Sejarah" : s.visual?.kind === "banding" ? "Perbandingan" : s.visual?.kind === "alfabet" ? "Alfabet" : s.visual?.kind === "bunyi" ? "Pelafalan" : s.visual?.kind === "tabel" ? "Tabel" : SLIDE_TYPE_LABEL[s.type]}
+          {s.ui === "en"
+            ? (s.visual?.kind === "isyarat" ? (s.visual.baris?.length ? "Sign dialogue" : "3D signs") : s.visual?.kind === "sejarah" ? "History" : s.visual?.kind === "banding" ? "Comparison" : s.visual?.kind === "alfabet" ? "Alphabet" : s.visual?.kind === "bunyi" ? "Pronunciation" : s.visual?.kind === "tabel" ? "Table" : SLIDE_TYPE_LABEL_EN[s.type] || SLIDE_TYPE_LABEL[s.type])
+            : s.visual?.kind === "isyarat" ? (s.visual.baris?.length ? "Dialog isyarat" : "Isyarat 3D") : s.visual?.kind === "sejarah" ? "Sejarah" : s.visual?.kind === "banding" ? "Perbandingan" : s.visual?.kind === "alfabet" ? "Alfabet" : s.visual?.kind === "bunyi" ? "Pelafalan" : s.visual?.kind === "tabel" ? "Tabel" : SLIDE_TYPE_LABEL[s.type]}
         </span>
         <h3 className="mt-[0.8cqh] text-[clamp(1rem,2.4cqw,1.7rem)] font-extrabold leading-snug text-gray-900">{s.heading}</h3>
         {s.subheading && <p className="mt-0.5 text-[clamp(0.68rem,1.4cqw,0.95rem)] text-gray-500">{s.subheading}</p>}
@@ -601,7 +615,7 @@ export function SlideBody({ s, kunci, lang }: { s: MateriSlide; kunci?: boolean;
       {s.type === "recap" && s.homework && (
         <div className="mt-[1.4cqh] shrink-0 rounded-xl px-[2.2cqw] py-[1.3cqh] text-[clamp(0.68rem,1.4cqw,0.95rem)] text-white shadow-md"
           style={{ background: `linear-gradient(90deg, ${TEAL}, ${tema.aksen})` }}>
-          <span className="font-extrabold">PR: </span>
+          <span className="font-extrabold">{s.ui === "en" ? "Homework: " : "PR: "}</span>
           <span>{s.homework}</span>
         </div>
       )}
@@ -708,7 +722,7 @@ export function SlideCard({ s, showAnswers, lang, className = "" }: {
           <span>{s.sublevel}</span>
         </div>
       )}
-      <div className="relative min-h-0 flex-1"><SlideBody s={s} kunci={showAnswers} lang={lang} /></div>
+      <div className="relative min-h-0 flex-1"><SlideEnCtx.Provider value={s.ui === "en"}><SlideBody s={s} kunci={showAnswers} lang={lang} /></SlideEnCtx.Provider></div>
 
       <div className="relative flex shrink-0 items-center justify-between px-[6cqw] py-[1.2cqh] text-[clamp(0.5rem,1.05cqw,0.72rem)] font-semibold"
         style={{ color: "#0E7C7B", background: "#fff", borderTop: `1px solid ${tema.lembut}` }}>
@@ -728,7 +742,7 @@ const TUNGGU_COVER = 150;
 /* ── Slideshow ───────────────────────────────────────────────────────────── */
 
 function SlideDeckViewerSession({
-  slides, title, subtitle, lang, onClose,
+  slides: slidesAsli, title, subtitle, lang, onClose,
 }: {
   slides: MateriSlide[];
   /** [slide-tts-v1] Kode bahasa target ("es") — tanpa ini kata tidak bisa diklik. */
@@ -738,6 +752,22 @@ function SlideDeckViewerSession({
   onClose: () => void;
 }) {
   const t = useT(); // [ui-lang-switcher-v1]
+  // [slide-terjemah-en-v2] Arti & penjelasan: Indonesia atau English (bawaan ikut bahasa UI).
+  const [arti, setArti] = useState<BahasaArti>(bacaBahasaArti);
+  const [slidesEn, setSlidesEn] = useState<MateriSlide[] | null>(() => (arti === "en" ? dekEnTersimpan(slidesAsli) : null));
+  const [menerjemah, setMenerjemah] = useState(false);
+  useEffect(() => {
+    if (arti !== "en" || slidesEn) return;
+    let batal = false;
+    setMenerjemah(true);
+    terjemahkanDekEn(slidesAsli, lang)
+      .then((d) => { if (!batal) setSlidesEn(d); })
+      .catch(() => { if (!batal) setArti("id"); })
+      .finally(() => { if (!batal) setMenerjemah(false); });
+    return () => { batal = true; };
+  }, [arti, slidesEn, slidesAsli, lang]);
+  const gantiArti = (b: BahasaArti) => { setArti(b); simpanBahasaArti(b); };
+  const slides = arti === "en" && slidesEn ? slidesEn : slidesAsli;
   // [slide-cepat-v1] Slide tampil seketika — tak ada layar "Memuat…".
   // Kalau cover tujuan belum siap, tunggu paling lama TUNGGU_COVER ms supaya teks
   // & gambar tetap berganti bersamaan; lewat dari itu pindah saja, gambar menyusul.
@@ -833,6 +863,15 @@ function SlideDeckViewerSession({
               <Volume2 size={12} /> Klik kata untuk dengar
             </span>
           )}
+          <div className="mr-1 inline-flex items-center rounded-full bg-white/10 p-0.5 text-[11px] font-bold" title="Bahasa arti & penjelasan / Meaning & explanation language">
+            {menerjemah && <span className="mx-1 inline-block h-3 w-3 animate-spin rounded-full border-2 border-gray-400 border-t-transparent" />}
+            {(["id", "en"] as const).map((b) => (
+              <button key={b} onClick={() => gantiArti(b)}
+                className={`rounded-full px-2 py-0.5 transition ${arti === b ? "bg-[#1A9E9E] text-white" : "text-gray-300 hover:text-white"}`}>
+                {b === "id" ? "ID" : "EN"}
+              </button>
+            ))}
+          </div>
           {(s.type === "practice" || s.type === "quiz") && (
             <button onClick={() => setKunci((k) => !k)} title={kunci ? "Sembunyikan kunci jawaban" : "Tampilkan kunci jawaban"}
               className="rounded-lg p-1.5 text-gray-400 transition hover:bg-gray-800 hover:text-white">
