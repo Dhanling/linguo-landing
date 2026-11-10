@@ -1180,312 +1180,346 @@ const SET_EN = new Set(kataDaftar(LEKSIKON_EN));
    menambah kata dengan tangan — jalankan ulang skripnya. */
 const LEKSIKON_PENGANTAR_EN = `
   abbreviations abilities ability able about above absolute absorb ac academic accents
-  accept acceptance accepted accident accidentally according account accustomed ache
-  achetons achievements acquaintance across actions activities actor actual actually
-  adapted add added adding address adds adjectives adjustment adjusts admit adress advance
-  advanced advantage adverb adverbials adverbs advice advisor ae affection after afternoon
-  afternoons afterward afterwards again against agency ages ago agree agreed agreeing
-  ahead ahn aht aid aiming ain air airplane airport airports aisle alcohol alcoholic alike
-  alipay alive all allergic allow allowed almost alone along alongside aloud alphabet
-  alphabetical alphabetically already alternate alternative although altogether always
-  amazing ambulance ambush america americans amounts an and andi animal anime anna another
-  answer answered answers any anymore anyone anything anyway apart apartment apology
-  apostrophe app appeals appear appeared appears appetite apple applies apply applying
-  appointment appointments are aren around arrange arrangements arrival arrive arrived
-  arrives arriving article artigt as aside ask asked asks asleep aspirated assault
-  assembled assignment assimil assistant assumes at ate attaches attaching attending
-  attention attitude aunt auntie aunts automatic automatically autre available avenue
-  avoid avoided aware away awesome awkward awkwardness ay ayudarme baby back backbone
-  background backpack backup backward backwards bad badar badly bag bags baguette bake
-  baked bakeries bali ball banana bananas bandon bankid barbecue barbecues bare bargaining
-  barnen barnet bars basket bathe bathed bathroom be beach beanie beard beautiful became
-  because become becomes bed beddo bedtime been before began begin beginner beginners
-  beginning begins behave behind beijingers beim being beings believe belong belongings
-  belongs below belt bending beneath berries beside best better between beverage bicycle
-  biff big bigger biggest bike biljetter biljetterna billigt birth birthday birthdays
-  black blanks bleibe blessing blind block blocking blocks blue blunt blur board boarding
-  boards bodies body bohn boil boiled bonfire bonfires boo boohk book bookstore boos booth
-  born borrow borrowed borrowing borrows boss bosses both bother bothnia bottle bought
-  boulangerie bounce bounces bound boundaries bowing bowls box boxes boy boyfriend bracket
-  brackets brain breach bread break breakfast breaking breaks breathy bridge briefly bring
-  bringing brings british broken brother brothers brought brown browse brush buddhist
-  buddy bue build buildings builds built bump bumping bunch buns burden bus busan business
-  businessperson bustling busy but butcher button buy buys bweh by cabin cafeteria call
-  called calls calm calmly came camera camille camp can canceled canceling candidates
-  candlelit cannot cansados canteen canyon cap capital capitalization capitalize
-  capitalized capitals card cards care careful carefully caretaker caring carlos caros
-  carries carrot carry carrying cart carton cartons case cases cash cashier cashiers
-  casual casually catch catches cathedral caught cause causes cefr celebrate celebration
-  celebrations cell center centers centimeters central centuries century cerrados certain
-  certainly certificate chain chained chair chance chances change changed channels chaos
-  chapter chapters character characters chart chase chasing chaud cheap cheaper cheapest
-  check checked checking checkout checks chee cheek cheerful cheers cheese chef chicken
-  child childish chili chinese chocolat choice choose chooses chopped christmas chst cht
-  church cinema cinnamon circle circumstances cities city civil class classes classic
-  classifier classmate classmates classrooms clauses clean cleaner clear clearly clerk
-  climb climbed clings clinic clinics clock clocks close closed closely closeness closest
-  closet closing cloth clothes cloud cloudy clue clueless coat code coffee coins cold
-  colder colds colleague colleagues colored colors column columns combination combine come
-  comes comfort comfortable coming command commands commas commit common company
-  comparative compare compared comparing comparison complaint complaints complete
-  completely completes completion compliment compliments components compounds
-  comprehension compulsory concern concretely condensed condescending condition
-  conditional conditioner conditioning conditionnel conditions condo confirm confirming
-  confuse confused confuses confusion congratulate congratulating congratulations
-  conjugation connect connected connector conscious consecutive consider consideration
-  considered considering consists constantly contact contain contains content contents
-  context continents continue continues contractions contradicting convenience convenient
-  conversation conversations cook cookie cooking cooler copy copying corner correct
-  corrections correctly corrects corridor cost costs cottage cotton cough could couldn
-  count countable counted counterpart country countryside counts courier course courses
-  courtyard cousin cousins cover covered covers coworker coworkers cramped crayfish cream
-  created crisp cross crosses crowded crutch cuarta cube cuestan cuisine culture cultures
-  cupboard curious curled curry curves custom customer customs cuts cutting dahn daily
-  damage dancing danger danish darfst dark darkness dash dashboard data date dates
-  daughter day days daytime deadline dealing dear dearer deathbed debate decent deceptive
-  decide decided decides deciding decision decked declined declines declining decoration
-  dedicated deeper deeply defensive definitely definiteness degree degrees dehs delay
-  delayed deliberate deliberately delicious delighted delivering demand demanding demands
-  denmark denominations dense dent dentist depart departure departures depend depending
-  depends deposit dermatology descent describe describing descriptions deserve deserves
-  design designed desire desk despite dessert destroy detail detective developer dialect
-  dialogues dians diarrhea dictionary did didn dietary differ difference different
-  differently differs difficult difficulties difficulty digit digits diligent diligently
-  diminutive dine dinner dinners direct direction directions directly dirty disappeared
-  disappearing disappears discount discounts discourage discover discovering discuss dish
-  dishes dislike disliked displayed disposable distance distances distancing distant
-  distinction distinctive distinguishes disturb divide divorced do doctor does doesn doing
-  dollars don done dongzhimen door doorway dorm dorms dot dote doubled doubles doubt down
-  dozen dragging drama dramas draw drawer dress dressed drifted drill drilled drink
-  drinking drinks dripping drive driver drivers drop dropping drugstore dry ds duck due
-  duermen dumplings duration during dying dyohs dyrt each eagle ear earlier early earn
-  ears earth ease easier easiest easily east easter easy eat eaten eating eaux economical
-  economics ed eel effective effort egg eight eighty einen either electricity element
-  elementary elevate eleven else elsewhere elva emergency emit emma emphasis emphasized
-  emphatic employee empty emptying encouragement end enda ending energetic engineer
-  english enjoy enjoyable enormous enough enrolling ent enter entering enthusiastic
-  entirely entrance entry envious envy eo episode episodes equal equally equals equivalent
-  error escape especially espresso essay estuvimos etiquette europe european evaluating
-  even evening evenings evenly events ever every everyday everyman everyone everything
-  everywhere evidence evident evil exact exactly exam example examples exams excellent
-  except exception exceptions excessive exchange exchanged exclamation excuse exercise
-  exercises exercising exhausted exhausting exist exists exit expand expect expected
-  expects expensive experience explain explaining explains explanation explanations
-  exploiting express expresses expressing expression expressions extended eye eyes ez
-  fabric face faces fact factory facts fade fades fail fails faintly fair fairly fall
-  falling falls false familiar family famous famously fancy fantastic far fastest father
-  fault fe fear fearsome feather feature features fee feel feeling feels fees feet feh
-  felt female feminine festivals fever few fewer fewest fifteen fifteenth fifth fifty
-  fight fighting fill filles fills films filtered finally find finds fine finish finished
-  finishes fire fireworks firmer first fish fished fit fits fitting five fix fixed fixture
-  flap flaschen flatter flavor flavoring flavors flea flexibility flickor flickorna flies
-  flight flik flipped floor flow flower flowers flowing flows flu fluent fly follow
-  followed following follows fond food foon foot for forbid force forced forces foreign
-  foreigner foreigners forest foreword forget forgetting forgive forgot forgotten fork
-  form formal formally format forms formula fort fortune forty forward found foundation
-  four fourteen fragments frame framework frank free freeze freezes french frequency
+  accept acceptance accepted accident accidentally according account accusing accustomed
+  ache achetons achievements acquaintance across actions activities activity actor actual
+  actually ad adapted add added adding address adds adjectives adjustment adjusts admit
+  adress adresse ads advance advanced advantage adverb adverbials adverbs advice advisor
+  adze ae affection after afternoon afternoons afterward afterwards again against agency
+  ages ago agree agreed agreeing ah ahead ahn aht aid aiming ain air airplane airport
+  airports aisle alcohol alcoholic alike alipay alive all allergic allow allowed almost
+  alone along alongside aloud alphabet alphabetical alphabetically already also alternate
+  alternative although altogether always amazing ambulance ambush america american
+  americans amica amiche amounts an and andi animal anime anna another answer answered
+  answers any anymore anyone anything anyway apart apartment apology apostrophe app
+  appeals appear appeared appears appetite apple applies apply applying appointment
+  appointments arance are aren armchair around arrange arrangements arrival arrive arrived
+  arrives arriving article artigt arzt as aside ask asked asks asleep aspirated assault
+  assembled assignment assimil assistant assistants assumes at ate attaches attaching
+  attending attention attentive attic attitude aunt auntie aunts austria autobus automatic
+  automatically autre available avenue avoid avoided aware away awesome awkward
+  awkwardness ay ayudarme baby back backbone background backpack backup backward backwards
+  badar badly bag bags baguette bake baked baker bakeries balcony bali ball banana bananas
+  bandon bankid barbecue barbecues barcelona bare bargaining barnen barnet bars basement
+  basil basket bass bath bathe bathed bathroom be beach beanie beard beautiful became
+  because become becomes bed beddo bedroom bedtime been beer before began begin beginner
+  beginners beginning begins behave behaves behind beijingers being beings believe bella
+  belli belong belongings belongs below belt bending beneath berries beside best better
+  between beverage bianca bicycle biff big bigger biggest bike biljetter biljetterna bill
+  billigt birth birthday birthdays bisogno bistro bit black blanks bleibe blessing blind
+  block blocking blocks blond blue blunt blur board boarding boards bodies body bohn boil
+  boiled bologna bonfire bonfires boo boohk book bookcase booked bookstore boos booth
+  boots born borrow borrowed borrowing borrows boss bosses both bother bothnia bottle
+  bought boulangerie bounce bounces bound boundaries bowing bowls box boxes boy boyfriend
+  bracket brackets brain breach bread breaded break breakfast breaking breaks breathy
+  bridge briefly bright bring bringing brings british broken brother brothers brought
+  brown browse brush buddhist buddy budi bue build buildings builds built bump bumping
+  bunch buns burden bus busan business businessperson bustling busy but butcher button buy
+  buying buys bweh bwohn by bye cabin cafeteria call called calls calm calmly came camera
+  camp can canceled canceling candidates candlelit cannot cansados canteen canyon cap
+  capital capitalization capitalize capitalized capitals carbonara card cards care careful
+  carefully caretaker caring carlos caros carpet carries carrot carry carrying cart carton
+  cartons case cases cash cashier cashiers casual casually catch catches cathedral caught
+  cause causes cefr celebrate celebration celebrations cell cellar center centers
+  centimeters central centuries century cerrados certain certainly certificate chain
+  chained chair chance chances change changed changes channels chaos chapter chapters
+  character characters charge chart chase chasing cheap cheaper check checked checking
+  checkout checks chee cheek cheerful cheers cheese cheet chef chicken child childish
+  chili chinese chocolat choice choose chooses chopped chosen christmas chst cht church
+  cinema cinnamon circle circumstances cities city civil class classes classic classifier
+  classmate classmates classrooms clauses clean cleaner clear clearly clerk climb climbed
+  clings clinic clinics clock clocks close closed closely closeness closest closet closing
+  cloth clothes cloud cloudy clue clueless coat code coffee coins cold colder colds
+  colleague colleagues color colored colors column columns combination combine come comes
+  comfort comfortable coming command commands commas commit common company comparative
+  compare compared comparing comparison complain complaint complaints complete completely
+  completes completion compliment compliments components compound compounds comprehension
+  compulsory concern conclude conclusion concretely condensed condescending condition
+  conditional conditioner conditioning conditionnel conditions condizionale condo confirm
+  confirming confuse confused confuses confusion congratulate congratulating
+  congratulations conjugation connect connected connector conscious consecutive consider
+  consideration considered considering consists constantly contact contain contains
+  content contents context continents continue continues contractions contradicting
+  convenience convenient conversation conversations cook cooked cookie cooking cooler copy
+  copying corner correct corrections correctly corrects corridor cost costs cottage cotton
+  cough could couldn count countable counted counterpart countries country countryside
+  counts courier course courses courtyard cousin cousins cover covered covers coworker
+  coworkers cramped crayfish created crisp cross crosses crowded crutch cuarta cube
+  cuestan cuisine culture cultures cupboard curious curled curly curry curves custom
+  customer customs cutlet cuts cutting dahn daily damage dancing danger danish darfst dark
+  darkness dash dashboard data date dates daughter day days daytime deadline dealing dear
+  dearer deathbed debate decent deceptive decide decided decides deciding decision decked
+  declined declines declining decoration dedicated dee deeper deeply defensive definitely
+  definiteness degree degrees dehs delay delayed deliberate deliberately delicious
+  delighted delivering demand demanding demands denmark denominations dense dent dentist
+  depart departure departures depend depending depends deposit dermatology descent
+  describe describing descriptions deserve deserves design designed desire desk despite
+  destroy detail details detective developer dialect dialogues dian dians diarrhea
+  dictionary did didn diese dietary differ difference different differently differs
+  difficult difficulties difficulty digit digits diligent diligently diminutive dine
+  dinner dinners direct direction directions directly dirty disappeared disappearing
+  disappears discount discounts discourage discover discovering discuss dish dishes
+  dislike disliked displayed disposable distance distances distancing distant distinction
+  distinctive distinguishes distractions disturb divide divorced do doctor does doesn
+  doing dollars don done dongzhimen door doorway dorm dorms dot dote doubled doubles doubt
+  down downstairs dozen dragging drama dramas draw drawer dress dressed drifted drill
+  drilled drin drink drinking drinks dripping drive driver drivers drop dropping drugstore
+  dry ds duck duermen dumplings duration during dying dyohs dyrt each eagle ear earlier
+  early earn ears earth ease easier easiest easily east easter easy eat eaten eating eaux
+  economical economics ed eel effective effort egg eight eighty either electricity elegant
+  element elementary elevate eleven else elsewhere elva emergency emit emma emphasis
+  emphasized emphatic employee empty emptying enchanted encouragement end enda ending
+  energetic engineer english enjoy enjoyable enormous enough enrolling ent enter entering
+  enthusiastic entire entirely entrance entry envious envy eo episode episodes equal
+  equally equals equivalent ere error escape especially espresso essay estuvimos etiquette
+  etti europe european evaluating even evening evenings evenly events ever every everyday
+  everyman everyone everything everywhere evidence evident evil exact exactly exam example
+  examples exams excellent except exception exceptions excessive exchange exchanged
+  exclamation excuse exercise exercises exercising exhausted exhausting exist exists exit
+  expand expect expected expects expensive experience explain explaining explains
+  explanation explanations exploiting express expresses expressing expression expressions
+  extended extra extremely eye eyes ez fabric face faces fact factory facts fades fail
+  fails faintly fair fairly fall falling falls false familiar family famous famously fancy
+  fantastic far farmacie faster fastest father fault fe fear fearsome feather feature
+  features fee feel feeling feels fees feet feh fellow felt female feminine festivals
+  fever few fewer fewest fifteen fifteenth fifth fifty fight fighting fill filles fills
+  film films filtered finally find finds fine finish finished finishes fire fireworks
+  firmer first fish fished fit fits fitted fitting five fix fixed fixture flap flaschen
+  flatter flavor flavoring flavors flea flexibility flickor flickorna flies flight flik
+  flipped floor flow flower flowers flowing flows flu fluent fly follow followed following
+  follows fond food foods foon foot for forbid force forced forces foreign foreigner
+  foreigners forest foreword forget forgetting forgive forgot forgotten fork form formal
+  formally format forms formula fort fortune forty forward found foundation four fourteen
+  fow fragments frame framework frank frau free freeze freezes french frequency frequent
   frequently friday fridays fridge friend friendlier friendliest friendliness friendly
-  friends fries frisk from front frowning fry fuera fungerar funnel funny fur furigana
-  further furthest futur gains gammalt garbage garlic gate gathered gathering gathers gave
-  gayts gebe geer gender genders generalize generally gentle gentleman gentler genuinely
-  german germans get gets getting gift gifts girl girlfriend give given giver giving
-  gladly glance glancing glide glossary gloves glued go goal goes going gold gone gongbao
-  good goodbye goodbyes goods google got gothenburg gotland gotten government governs grab
-  gracefully graduate graduated graduating graduation grahn grahnd grammar grams granada
-  granddaughter grandfather grandmother grandparents grandson grannar grape grapes
-  grateful gray greasy great greater green greens greet greeted greeting greetings grej
-  grew grill groceries grocery ground groundwork group groups grow grown guangdong
-  guangzhou guapas guess guessable guessed guesses guessing gulf gum guy gyeongbokgung
-  habit had haeundae haggle haggled hahlp hair halal half halfway hall hallmark hallway
-  halves hand handbag handful handle handled handles handout hands handshake handsome
-  handwriting handy hang hangeul hanging happen happened happening happens happily happy
-  hard harden harder hardest hardly hardworking harsh has hasn hate hause have haven
-  having he head headache headaches heading health healthy hear heard hearing heart heated
-  heaven heavily heavy height hello help helper helpful helps her here herring hers
-  hesitate heureuses high hijos hiking him hiragana his hiss hissing historic historical
-  hmm hobbies hold holding holds holidays home homemaker homework honest hong honorable
-  honorably honorific hope hospitality hospitals hot hour hours house housemate houses
-  housing how hrst hrt huge human humble humbly hundarna hundred hundreds hung hunger
-  hungry hunt hurried hurry hurrying hurt hurts husband hygiene hypotheticals ic ice iced
-  icoca id ideas identical identity if ignore ignored illness imagine imitate imm
-  immediately imparfait imperial impolite important impossible impression impressions
-  impressive improve improves include included includes including inconvenience
-  increasingly incredibly indeed individual indonesian indoors infinitive ing ingenting
-  ingredients inheritance inherited inne innermost ins inserted inside insincere insist
-  insists instantly instead institution institutions instruction insult insurance
-  intelligentes intend intensifiers intention interactive interchangeably interest
-  interesting internal international internship interpreters interrupting intersection
-  intimate into intonation introduce introduces introduction inversion invitations invite
-  invited invites inviting iron is island islands isn iso issues it italian italic italics
-  item items its itself jacket jakarta jammed japan japanese jar jargon jaw jealous jeans
-  jee jj jlpt job jobbet jobs jog john join joining joke journalist journey jours jr
-  judges judging judgment juice jump jumper june juniors just kahf kaiwa kakaotalk
-  kakarimashita kallast kana kanji karaoke katakana keen keena keep keeping keeps keigo
-  key keyboards keys kg kick kid kilometers kim kind kindly kindness kinds king kiss
-  kisses kitchen kitchens kk klarat kleines knew knife knit knives know knowing knowledge
-  known knows kong konjunktiv koo korea korean koreans korsningen krank ks kuchen kung
-  kungfu kyoto label lady lahr laid lait lamb land landmarks lands lange language
-  languages lanterns laptop largas larger lars last late lately later latin laugh laughing
-  laughs laundry law lawyer lay layered layering layers layout lead leafy lean leaning
-  leans learn learned learner learners learning learns leave leaves leaving lecture leeway
-  left leftover leg legal leh lend length lenient leo less lesson let lets letter letting
-  lettuce level li liaison library libro lie lies life lifeline lifesavers light lighter
-  lights like likes liking lilt limited line lined lines linguo link linked linking lips
-  liquid lisa list listed listen listener listening literal little live lived liveliest
-  lively lives living ll loanwords local locals located lock locks logged logical lol
-  longer longest look looked looking looks loosely lose losing loss lot lots loud louder
-  love loved lovely lower lowercase lowest luck lucky luggage lunchtime luxury ly lying
-  lyssna macau madam magazine mahr mainland make makes male malls manage managed manager
-  mandarin mandatory mangoes mannen manner manners many map mapping maps margin mark
-  marked markers market marketplace markets marking marriage married marry masculine
-  master mastered match matches matching material math matte matter matters mature may
-  maybe mayores meal meals mealtime mealtimes mean means meant measure meat medical
-  medication medicine medieval medium mee meet meeting meetings meets meinem melody melts
-  member members memorization memorize memorized memorizing memory mentioned mentions menu
-  merdeka mere merge merry mess message messages met metal meters mexico michael midday
-  middot midnight midsummer might migration mild milk mimasen mimic mind mine ming mini
-  minor minus minute minutes mishear misplaced mispronounced misreading miss missing
-  mistake mistaken mistakes mister misunderstand misunderstanding misunderstood mittens
-  mix mixed mm modal modals modern modesty module mom moment monday mondays money month
-  months mood morbror more moreover morning mos mosque most mother mothers motivated
-  motorbike motorcycle mouth mouths move moved movement movements moves movie moving mr
-  mrs ms much muscles museos museum mushrooms music muslim must mustache mustn mutton my
-  myeongdong myself nahs name named names naming nap narimashita narrow narrows nasal
-  nationality native natto natural naturally nd near nearby nearest nearly neat neater
-  neck need needed needing needs negate negated negating negation negative negotiating
-  nehme neighbor neighborhood neighbors neither nephew nephews nerve network neue neutral
-  never new newcomer newcomers news newspaper next nhk nice nicer niece nieces night
-  nihonjin nine ninety nittio nobody nod nodding node noh nohn noisy nomimasen noon
-  normally north northern northernmost northward norway nose nosiness nosy not note
-  notebook notes nothing notice noticeable noticed noun nouns now nuhf number numbers
-  numerous nurse nuts object obligation obstacle obviously occasion occupation occurrence
-  odd oddly of off offended offending offends offense offenses offer offered offering
-  offers office officer offices official officialdom often oh ohn oil oilier ok okay old
-  older oldest omelet one ones oneself onion only oont oops open opened opener openers
-  opening opinion opinions opportunity opposite opposites or oranges order orders ordinal
-  ordinary ore organic organizes organs original other others otherwise ought ours out
-  outermost outside outsider over overcast overconfident overdo overlap overly overrides
-  overusing own owned owner owns oyoide pace pack packed packet packs padlock page pages
-  paid painful painting pairs palate panic panicking pants pao paragraph paraguas parcel
-  pardon parents park parked parl part participle particle particular parting partings
-  partizip partner partners parts party pasmo pass passend passenger passengers passes
-  passing passive passport passports past pasta patron pattern patterns pay pays peace
-  peaceful peek peer peking penalty pencil people pepper per percent perfect perfectly
-  perhaps period periods permanent permission permit persevere personalities persons
-  pharmacies pharmacist pharmacy phone phones phoning photo phrase pick picked pickup
+  friends fries frisk from front frowning fry fuera full fungerar funnel funny fur
+  furigana furniture further furthest futur futuro gains gammalt garbage garden garlic
+  gate gathered gathering gathers gave gayts gebe geer gehe gen gender genders generalize
+  generally gentle gentleman gentler genuinely german germans germany get gets getting
+  giacche giapponese gift gifts girl girlfriend giulia give given giver giving gladly
+  glance glancing glass glide glides glossary gloves glued go goal goat goes going gold
+  gone gongbao good goodbye goodbyes goods google got gothenburg gotland gotten government
+  governs grab gracefully graduate graduated graduating graduation grahn grahnd grammar
+  grams granada granddaughter grandfather grandmother grandparents grandson grannar grape
+  grapes grateful gray greasy great greater green greens greet greeted greeting greetings
+  grej grew grill groceries grocery ground groundwork group grow grown guangdong guangzhou
+  guapas guess guessable guessed guesses guessing gulf gum guy gyeongbokgung habit had
+  haeundae haggle haggled hahlp hair hairs halal half halfway hall hallmark hallway halves
+  hand handbag handful handle handled handles handout hands handshake handsome handwriting
+  handy hang hangeul hanging happen happened happening happens happily happy hard harden
+  harder hardest hardly hardworking harsh has hasn hate hause have haven having he head
+  headache headaches heading headings health healthy hear heard hearing heart heated
+  heating heaven heavily heavy height hello help helper helpful helps her here herring
+  hers hesitate heureuses high hijos hiking him hiragana his hiss hissing historic
+  historical hiver hmm hobbies hold holding holds holidays home homemade homemaker
+  homework honest honestly hong honorable honorably honorific hope hospitality hospitals
+  hot hour hours house housemate houses housing how hrst hrt huge human humble humbly
+  hundarna hundred hundreds hung hunger hungry hunt hurried hurry hurrying hurt hurts
+  husband hygiene hypotheticals ic iced icoca id ideas identical identity if ignore
+  ignored illness imagine imitate imm immediately imparfait imperative imperfetto imperial
+  impolite important impossible impression impressions impressive improve improves in incl
+  include included includes including inconvenience increasingly incredibly indeed
+  individual indonesian indoors infinitive informal ing ingenting ingredients inheritance
+  inherited inne innermost ins inserted inside insincere insist insists instantly instead
+  institution institutions instruction insult insurance intelligentes intend intensifiers
+  intention interactive interchangeably intercity interessante interest interesting
+  internal international internship interpreters interrupting intersection intimate into
+  intonation introduce introduces introduction invalid inversion invitations invite
+  invited invites inviting ire iron is island islands isn iso issimo issues it italian
+  italiane italiani italians italic italics italy item items its itself jacket jakarta
+  jammed japan japanese jar jargon jaw jealous jee jj jlpt job jobbet jobs jog john johr
+  join joining joke journalist journey jours jr judges judging judgment jug juice jump
+  jumper june juniors just kaffee kahf kaiwa kakaotalk kakarimashita kallast kana kanji
+  karaoke katakana keen keena keep keeping keeps keigo key keyboard keyboards keys kg kick
+  kid kilometers kim kind kindly kindness kinds king kiss kisses kitchen kitchens kk
+  klarat kleines knew knife knit knives know knowing knowledge known knows koh kong
+  konjunktiv koo korea korean koreans korsningen krank ks kung kungfu kyoto label lady
+  lahr laid lait lamb land landmarks lands lange language languages lanterns laptop largas
+  larger lars last late lately later latin laugh laughing laughs laundry law lawyer lay
+  layered layering layers layout lead leafy lean leaning leans learn learned learner
+  learners learning learns leave leaves leaving lecture leeway left leftover leg legal leh
+  lehrer lemon lend length lenient leo less lesson let lets letter letting lettuce level
+  li liaison library lie lieblingsessen lies life lifeline lifesavers light lighter lights
+  likable like likes liking lilt limited line lined lines linguo link linked linking lips
+  liquid lisa list listed listen listener listening liter literal little live lived
+  liveliest lively lives living ll lli loanwords local locals located lock locks logged
+  logical lol long longer longest look looked looking looks loose loosely lose losing loss
+  lot lots loud louder love loved lovely lower lowercase lowest luck luckier lucky luggage
+  lunch lunchtime luxury ly lying lyssna macau machst madam magazine mahr mainland make
+  makes male malls manage managed manager mandarin mandatory mangoes mannen manner manners
+  many map mapping maps margin mark marked markers market marketplace markets marking
+  marriage married marry masc masculine master mastered match matches matching material
+  math matte matter matters mature may maybe mayores meal meals mealtime mealtimes mean
+  means meant measure measures meat medical medication medicine medieval medium meet
+  meeting meetings meets meinem melody melts member members memorization memorize
+  memorized memorizing memory mentioned mentions menu menus merdeka mere merge merry mess
+  message messages met metal meters mexico michael midday middle middot midnight midsummer
+  might migration milano mild milk mimasen mimic mind mine ming mini minor minus minute
+  minutes mishear misplaced mispronounced misreading miss missing mistake mistaken
+  mistakes mister misunderstand misunderstanding misunderstood mittens mix mixed mm modal
+  modals model modern modesty module mom moment monday mondays money month months moo mood
+  morbror more moreover morning mos mosque most mother mothers motivated motorbike
+  motorcycle mouth mouths move moved movement movements moves movie moving mr mrs ms much
+  multi muscles museos museum mushroom mushrooms music muslim must mustache mustn mutton
+  my myeongdong myself nahs name named names naming nap napoli narimashita narrow narrows
+  nasal nationality native natto natural naturally navigate nd near nearby nearest nearly
+  neat neater neck need needed needing needs negate negated negating negation negative
+  negotiating negozi neighbor neighborhood neighbors neither nephew nephews nere nerve
+  network neutral never new newcomer newcomers news newspaper next nhk nice nicer niece
+  nieces night nihonjin nine ninety ninth nittio nobody nod nodding node noh nohn noires
+  noisy nomimasen none noon normal normally north northern northernmost northward norway
+  nose nosiness nosy not note notebook notes nothing notice noticeable noticed noun nouns
+  now nuhf number numerous nurse nuts object obligation obstacle obviously occasion
+  occupation occurrence odd oddest oddly of off offended offending offends offense
+  offenses offer offered offering offers office officer offices official officialdom often
+  ohn oil oilier ok okay old older oldest omelet on once one ones oneself onion only oont
+  oops open opened opener openers opening opinion opinions opportunity opposite opposites
+  option or oranges order orders ordinal ordinary ore organic organizes organs original
+  osaka oskar other others otherwise ought ours out outermost outside outsider outskirts
+  oven over overcast overconfident overdo overlap overly overrides overusing own owned
+  owner owns oyoide pace pack packed packet packs padlock page pages paid painful painless
+  painting pairs palate panic panicking pants pao paragraph paraguas parcel parents park
+  parked parl part participle particle particular parting partings partizip partner
+  partners parts party pasmo pass passend passenger passengers passes passing passive
+  passport passports past patron pattern patterns pay pays peace peaceful peach peek peer
+  peking penalty pencil people pepper percent perfect perfectly perhaps period periods
+  permanent permission permit persevere person personalities persons pharmacies pharmacist
+  pharmacy phone phones phoning photo phrase phrases piacciono piccola pick picked pickup
   picture piece pieces pierre pig pile piles pink pity pizza place places placing plain
   plainly plane planned plant plastic plate platform platforms pleading pleasant please
   pleases plenty plurals pocket pockets podcasts point pointing poison pole police polish
-  polite politely politeness politest popular population porridge port portions position
-  positions positive possessive possibility post posted pot potato potatoes pound pour
-  pouring pp practical practically practice practicing praise preachy precisely precision
-  predicate predictable predictions prefer preferences preparation prepare prepares
-  prepositions prescription present press pretty previously price prices pricey pride
-  primary primas prime printed priserna private probably problems process procession
-  proclaimed product productive profession professional professor program programmer
-  progress progressive prohibition prohibitions projects promise promises promising
-  pronoun pronounce pronounceable pronounced pronounces pronunciation proof prop properly
-  prosper prosperity protected proud provided public pueden puh pull pulling pulls punch
-  punctuality punctuation pupil pupils purely purple purpose push pushed pushy put puts
-  putting qr quality quantities quarrel quarter question questions queue quickest quickly
-  quiet quinto quirk quite racking radical radio rahng rail rain rained rainiest raining
-  rains rainy raise ramen ramps random rare rarely rarer rate rather rattles raw re reach
-  reached reaches read readable readers reading reads ready real realizing really reason
-  reasons rebuild receipt receive receiving recently reception receptionist reciprocal
-  recognize recognizing recommend record recover red reference refill refined reflexive
+  polite politely politeness politest popular population pork porridge port portions
+  position positions positive possessive possibility post posted pot potato potatoes
+  potsdam pound pouring practical practically practice practicing praise preachy precise
+  precisely precision predicate predictable predictions prefer preferably preferences
+  preparation prepare prepares prescription present press pretty previously price prices
+  pricey pride primary primas prime printed priserna private probably problem problems
+  process procession proclaimed produce product productive profession professional
+  professor program programmer progress progressive prohibition prohibitions projects
+  promise promises promising pronoun pronounce pronounceable pronounced pronounces
+  pronouns pronunciation proof prop proper properly prosper prosperity protected proud
+  provided public pueden puh pulling pulls punch punctuality punctuation pupil pupils pure
+  purely purple purpose push pushed pushy put puts putting qr quality quantities quarrel
+  quarter question questioning questions queue quick quickest quickly quiet quieter quinto
+  quirk quite racking rad radical rahng rail rain rained rainiest raining rains rainy
+  raise ramen ramps random rare rarely rarer rate rather rattles raw re reach reached
+  reaches read readable readers reading reads ready real realizing really reason reasons
+  rebuild receipt receive receiving recently reception receptionist reciprocal recognize
+  recognizing recommend record recover red reduction reference refill refined reflexive
   refreshing refusal refuse refuses refusing regardless register regret regularly reindeer
   reiwa rejection relative relatively relatives relaxed relaxing release released relief
   relies religious remain remaining remarkably remember remembering remembers removing
-  rented reopen repair repeat repeated repeating repeats repetition replace reply replying
-  reputation request requesting requests require requirement requires reread rereading res
-  rescue rescues resemble reserve reshaped reside residence resident residents resist
-  respectful respellings responds response rest rested restrictions restroom results
-  retire retired return returned returning reverse review reviewing reviews revisit
-  revisited rewrite rhymes rid ride right ripe riper rising risk risky road roast robert
-  role rolled romance romanized room roommate rooms rose roti rougher roughly round
-  rounded rounding route routine routines row rows rubios rude rudeness ruder rule rules
-  running runs russian sad safely safer safest said saint sake salad same samuku sandwich
-  sari saturday saturdays satzklammer sauna sausage sausages save saved saves saving saw
-  say saying says scales scan scandinavia scared scarf scary scenery schedule schedules
-  scholarship school schools scissors scolding scorching screen screens script scripts sea
-  season seasonal seasons seat seated sechs second secondhand secret section sections
-  security see seeking seem seems seen sees sehr sejong seldom selection self sell seller
-  sellers selling semi send sending sense senses sensible sent sentence sentences seoul
-  separate separates sequence serious seriously servant served serves session set sets
-  seven seventy severe seville shall shame shanghai shapes share shared shares she shee
-  sheep sheet shelf shelves shieh shift shifted shining shinto ship shirt shoes shop
-  shopping short shortcut shortened shorter should shouldn shouted show shower shows shp
-  shrine shrinks sht shuffled shutting shy sibling sichuan sick side sides sightsee sign
-  signals signing signs silence silently similar simma simple simpler simplest simply
-  since sincere singer singing single singular sink sino sir sister sisters sit site sits
-  sitting sittings situation situations six sixteen sixth sixty size sizes sjutton
-  skeleton ski skill skilled skimming skin skip skipping skirt skoo sleep sleeping sleepy
-  slept slice slight slim slip slippery slot slow slowly small smaller smallness smart
-  smartphone smell smells smhi smile smiling smoke smoking smooth smoother snabbare
-  snabbast snacks snap snart sneakers snow snowing snows soccer social soda soft soften
-  softened softener softeners softening softer softly software soil solar sold soldier
-  solid solves some somebody someday someone something sometime sometimes somewhat
-  somewhere song songbook songs soo soon sooner sor sorry sort sorted sorting sorts sound
-  sounding sounds soup source south souvenir souvenirs spaced spaces spacious spain
-  spaniards spanish spans speak speaker speakers speaking special specialty speed spelled
-  spelling spells spend spent spicy spilling spiral spirit split splits splitting spoken
-  spook spoon sport sportif sportive sports spot spots spr spread square squeezed squint
-  ss stack stacked staff stairs stake stalling stalls stand standard standing stands
-  stannar star start started starting starts state stated statements stating stations
-  status stay stayed staying stays steamed stehe step stern stick sticks stiga still stock
-  stomach stoor stop stopped stopping stops storage store stores stories story
-  storytelling straddle straight strange stranger strangers strawberries strawberry stray
-  street stress stressed stressing stretch stretching stricter strictly strike string
-  strip stripe stroke strokes strolling strong stronger structure stubborn stuck studenter
-  students studied study studying stuff stumble stumbling stuttered style subject
-  subordinate substance subtitles subtly subway such suddenly suffices suffix sugar
-  suggested suggesting suggestion suggestions suica suit suitable suitcase summers sums
-  sunday sundays sunny sunset sunshine super superior superiors superlative supermarket
-  supermarkets supine support suppose supposed supposedly sure surely surface surnamed
-  surnames surprise surprised surprises survive surviving suwatte svt swallow swallows
-  swam swap swapping sweater swede sweden swedes swedish sweets swim swimming swimsuit
-  swing switch switching syllable symbolize symbols symptom symptoms system systems table
-  tablet tablets taboo tacked tackles tact tahk tahn tahr taiwan take taken takes taking
-  talk talking talks tall tam tapes target targets task taste tasted tasty taught tax tea
-  teach teacher teaches teaching ted tee teet telc telephone tell telling tells
-  temperature template temple temples temporarily temporary tempted tempting ten tend tens
-  tense tenth tercer tercera term terminal terms terrace terribly test tested tests text
-  textbook th thai than thank thanking thanks that the theater their theirs them then
-  theory there therefore thermal these they thick thin thing things thingy think thinking
-  thinner thirsty thirties thirty this those though thought thoughts thousand thousands
+  rent rental rented reopen repair repeat repeated repeating repeats repetition replace
+  reply replying reputation request requesting requests require required requirement
+  requires reread rereading res rescue rescues resemble reservation reserve reserved
+  reshaped reside residence resident residents resist respectful respellings responds
+  response rest restaurants rested restrictions restroom results retire retired return
+  returned returning reverse review reviewing reviews revisit revisited rewrite rhymes rid
+  ride right ripe riper rise rising risk risky road roast roasted robert role roll rolled
+  romance romanized room roommate rooms rose rosse roti rougher roughly round rounded
+  rounding route routine routines row rows rubios rude rudeness ruder rug rule rules
+  running runs rush russian sad safely safer safest said saint sake salad sales same
+  samuku sandwich sari saturday saturdays satzklammer sauna sausage sausages save saved
+  saves saving saw say saying says scales scan scandinavia scared scarf scary scenery
+  schedule schedules schmidt scholarship school schools scissors scolding scorching screen
+  screens script scripts sea seafood search season seasonal seasons seat seated sechs
+  second secondhand secret section sections security see seeking seem seems seen sees
+  sejong seldom selection self sell seller sellers selling semi send sending sense senses
+  sensible sent sentence sentences seoul separate separates sequence series serious
+  seriously servant serve served serves session set sets seven seventy severe seville
+  shall shame shanghai shapes share shared shares she shee sheep sheet shelf shelves shieh
+  shift shifted shining shinto ship shirt shoes shop shopping short shortcut shortened
+  shorter should shouldn shouted show shower shows shp shrine shrinks sht shuffled
+  shutting shy sibling sichuan sick side sides sightsee sign signals signing signs silence
+  silently similar simma simpatica simple simpler simplest simply since sincere singer
+  singing single singular sink sino sir sister sisters sit site sits sitting sittings
+  situation situations six sixteen sixth sixty size sizes sjutton skeleton ski skill
+  skilled skimming skin skip skipping skirt sleep sleeping sleeps sleepy sleeves slept
+  slice slide sliding slight slim slip slippery slot slow slowly small smaller smallness
+  smart smartphone smell smells smhi smile smiling smoke smoking smooth smoother snabbare
+  snabbast snacks snap snart sneakers sneaks snow snowing snows so soccer social soda soft
+  soften softened softener softeners softening softer softly software soil solar sold
+  soldier solid solves some somebody someday someone something sometime sometimes somewhat
+  somewhere song songbook songs soo soon sooner sor sorelle sorry sort sorted sorting
+  sorts sound sounding sounds soup soups source south southern souvenir souvenirs spaced
+  spaces spacious spain spaniards spanish spans speak speaker speakers speaking special
+  specialty speed spell spelled spelling spells spend spent spicy spilling spinach spiral
+  spirit split splits splitting spoken spook spoon sport sportif sportive sports spot
+  spots spr spread square squeezed squint stack stacked staff stairs stake stalling stalls
+  stanchissimo stand standard standing stands stannar star start started starter starting
+  starts stated statements stating station stations status stay stayed staying stays
+  steamed stehe step stern stick sticks stiga still stock stomach stoor stop stopped
+  stopping stops storage store stores stories story storytelling stove straddle straight
+  strands strange stranger strangers strawberries strawberry stray street streetcar stress
+  stressed stressing stretch stretching stretti strict stricter strictly strike string
+  strip stripe stroke strokes strolling strong stronger structure stubborn stuck student
+  studenter students studied study studying stuff stuffed stumble stumbling sturdy
+  stuttered style subject subordinate substance subtitles subtly subway such suche
+  suddenly suffices suffix sugar suggested suggesting suggestion suggestions suica suit
+  suitable suitcase suits summary summers sums sunday sundays sunny sunset sunshine
+  superior superiors superlative supermarket supermarkets supine support suppose supposed
+  supposedly sure surely surface surnamed surnames surprise surprised surprises survive
+  surviving suwatte svt swallow swallows swam swap swapping sweater swede sweden swedes
+  swedish sweets swim swimming swimsuit swing switch switching syllable symbolize symbols
+  symptom symptoms system systems table tablet tablets taboo tacked tackle tackles tact
+  tahk tahn tahr taiwan take taken takes taking talk talking talks tall tam tap tapes
+  target targets tart task taste tasted tastes tasty taught tax tea teach teacher teaches
+  teaching ted teet telc telephone tell telling tells temperature template temple temples
+  temporarily temporary tempted tempting ten tend tens tense tenth tercer tercera term
+  terminal terms terrace terribly test tested tests text textbook th thai than thank
+  thanking thanks that the theater their theirs them themselves then theory there
+  therefore thermal these they thick thin thing things thingy think thinking thinner
+  thirst thirsty thirties thirty this those though thought thoughts thousand thousands
   three threshold throat throaty through throughout throw throws thumb thunder thursday
-  thursdays ti tianhe ticket tidy tie tied ties tiles timed times timetable ting tiniest
-  tired tiring title to toast toasts today together toi toilet toko told tomato tomatoes
-  tomorrow tonight too took tools tooo tooth topics topik totally touch touched touching
-  tourist touristy tous toward towel town towns trabajaste trace traced track tracks
-  traditional traffic train trained training trains transaction transfer translate
-  translated translation translations transparent transport trap traps trash travel
-  travelers treacherous treat treated treatment tree trehundrasextiofem trevlig trevliga
-  trick tried tries trip trips tropical trouble true truly trust truth try trying ts
-  tuesday tuesdays turn turning turns tusen tv twelve twenties twenty twice two typhoon
-  typical typing typo ugh uhn umbrella unable unappreciative unasked unaspirated uncle
-  uncles uncomfortable under underground underneath understand understanding understands
-  understood underwear undisturbed unfamiliar unfortunately unique unit united units
-  university unless unlike unlock unpleasant unrelated unreliable unrounded unskilled
-  unsure until unusual unvoiced unwell up upcoming upper upside upstairs ur urgent us
-  usable use used useful useless uses using usual usually vacation vacuum vague vaht valid
-  value vanished variant variety vay ve vee vegetables vegetarian vehicle veinticuatro
-  veis vek vendor verb verbs verdict version versions versus very video visa visible
-  visitamos visitan visited visiting vlogs vocabulary voice voiceless volvieron vuelven
-  wah wait waiter waitress wake waking walk walked walking walks wall wallet walls wang
-  want wanted wanting wants warm warmer warmest warmly warning wash washes washing waste
-  watch watched watching water wave waves way ways we weaker wear wears weather web wechat
-  wedding wednesday wednesdays week weekdays weekend weekends weekly weeks weigh weight
-  welcome well went were weren western what whatever when whenever where wherever whether
-  which while white who whoever whole whose why wide widow widower wife wild willing wind
-  window windy wine winner wins winter winters wise wish wishes wishing witches with
-  within without wohnung woman women won wonder wonderful wood wooden word words work
-  worked worker working workplace workplaces works world worlds worried worry worse worst
-  would wow wrapped wrapping wraps wrestled write writes writing written wrong year yearly
-  years yellow yen yeo yes yesterday yet yngre yokute yoo you young younger your yours
-  yourself yuan yuko zero zhongshan zhoor zuh zum zur
+  thursdays tianhe ticket tidy tie tied ties tight tiles time timed times timetable ting
+  tiniest tipping tired tiring title to toast toasts today together toilet toko told
+  tomato tomatoes tomorrow tonight too took tools tooo tooth topics topik totally touch
+  touched touching tourist touristy tous toward towel town towns trabajaste trace traced
+  track tracks traditional traffic train trained training trains tram tranquilla
+  transaction transfer transit translate translated translation translations transparent
+  transport transportation trap traps trash travel travelers treacherous treat treated
+  treatment tree trehundrasextiofem treno trevlig trevliga trick tried tries trinke trip
+  trips tropical trouble trousers trout true truly trust truth try trying ts tsoh tuesday
+  tuesdays tuh turn turning turns tusen tv twelve twenties twenty twice two typhoon
+  typical typically typing typo ugh uhn umbrella unable unappreciative unasked unaspirated
+  uncle uncles uncomfortable under underground underneath understand understanding
+  understands understood underwear undisturbed unexplained unfamiliar unfortunately unique
+  unit united units university unless unlike unlock unnamed unpleasant unrelated
+  unreliable unrounded unskilled unsure until unusual unvalidated unvoiced unwell up
+  upcoming upper upright upside upstairs ur urgent us usable use used useful useless uses
+  using usual usually utilities uto vacation vacuum vague vaht valid validate value
+  vanished variant variety vay ve vee vegetables vegetarian vegetarians vehicle
+  veinticuatro veis vek vendor verb verbs verdict verlaufen version versions versus vert
+  very video violet violette visa visible visitamos visitan visited visiting vlogs
+  vocabulary voice voiceless volvieron vuelven wah wait waiter waitress wake waking walk
+  walked walking walks wall wallet walls wang want wanted wanting wants wardrobe warm
+  warmer warmest warmly warning warten was wash washes washing waste watch watched
+  watching water wave waves way ways we weaker wear wears weather web wechat wedding
+  wednesday wednesdays week weekdays weekend weekends weekly weeks weigh weight welcome
+  well went were weren western what whatever when whenever where wherever whether which
+  while white who whoever whole whose why wide widow widower wife wild will willing wind
+  window windows windowsill windy wine winner wins winter winters wise wish wishes wishing
+  witches with within without wochenende woman women won wonder wonderful wood wooden word
+  words work worked worker working workplace workplaces works world worlds worried worry
+  worse worst would wow wrapped wrapping wraps wrestled write writes writing written wrong
+  yard year yearly years yellow yen yeo yes yesterday yet yngre yokute yoo you young
+  younger your yours yourself yourselves yuan yuko zaino zee zeitungen zero zhongshan
+  zhoor zuh
 `;
 const SET_PENGANTAR_EN = kataDaftar(LEKSIKON_PENGANTAR_EN);
+/* [ebook-pengantar-en-v3] Kata daftar pengantar yang JUGA tercetak di teks
+   target modul edisi Inggris bahasa itu ("was"/"die" Jerman, "come" Italia) —
+   di modul bahasanya kata ini dibiarkan berbunyi, di modul lain tetap bisu.
+   Keluaran scripts/leksikon-id-ebook.mjs; jangan disunting tangan. */
+const KECUALI_PENGANTAR_EN_MENTAH: Record<string, string> = {
+  "de": "ah also budi bus extra in liter problem so student warm was will",
+  "es": "ah barcelona color normal once osaka series",
+  "fr": "ah blond budi jakarta long menu on strict",
+  "it": "come do in so",
+  "sv": "bit dian faster film full in lunch oskar person student time",
+};
+const KECUALI_PENGANTAR_EN: Record<string, Set<string>> = Object.fromEntries(
+  Object.entries(KECUALI_PENGANTAR_EN_MENTAH).map(([b, d]) => [b, new Set(d.split(" "))]),
+);
 
 /** Bahasa pengantar modul yang sedang terbuka. Satu reader = satu modul, jadi
  *  cukup disetel reader saat modulnya dibuka (lihat aturPengantarEbook). */
@@ -1558,7 +1592,7 @@ function kataIdMurni(k: string, kode: string): boolean {
      Inggris, tanpa daftar & imbuhan Indonesia sama sekali. Terjemahan harfiah
      bersambung tanda hubung ("today-goes") tetap diputus per penggal. */
   if (pengantarAktif === "en" && kode !== "en") {
-    if (SET_PENGANTAR_EN.has(k)) return true;
+    if (SET_PENGANTAR_EN.has(k) && !KECUALI_PENGANTAR_EN[kode]?.has(k)) return true;
     /* Singkatan & kepemilikan Inggris — "it's", "I'm", "don't", "Elin's". Bahasa
        target Latin yang kita jual tak memakai ekor apostrof begini. */
     if (/^\p{L}+['’](?:s|m|t|ll|ve|re|d)$/u.test(k)) return true;

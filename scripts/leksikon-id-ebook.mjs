@@ -64,6 +64,13 @@ let pengantarEn = false;
    memakai tgSkema: tgSkema memuat dialog modul Inggris (en-*), yang isinya
    persis kata pengantar kita. */
 const penSkema = new Set();
+/* [ebook-pengantar-en-v3] penSkema per bahasa target. Daftar pengantar TIDAK
+   lagi dicoret oleh kata target modul edisi Inggris lain — "was", "also",
+   "die" di dialog Jerman dulu ikut mencoret "was"/"also" Inggris dari daftar,
+   lalu modul Swedia bocor. Bentrokannya dikeluarkan per bahasa sebagai
+   KECUALI_PENGANTAR_EN: kata itu cuma dibiarkan berbunyi di modul bahasanya. */
+const penSkemaBahasa = new Map();
+let bahasaKini = "";
 let tgF = tgUtama;
 /* [ebook-jaga-bahasa-en-v1] Modul Inggris butuh daftar KEDUA. Bahasa Inggris
    ditulis dengan huruf Latin polos, jadi `kataTargetJelas` di ebookTts.ts tak
@@ -101,7 +108,10 @@ const teksSkema = (s) => {
   /* [ebook-pengantar-en-v2] Bacaan ruby `[あれ|are]`, `[安|ān]` bukan teks
      target yang dibunyikan — kalau ikut dihitung, kata Inggris "are", "an",
      "age" tercoret dari daftar begitu modul Jepang/Mandarin edisi Inggris masuk. */
-  if (typeof s === "string" && pengantarEn) pecah(s.replace(/\[([^|\]]*)\|[^\]]*\]/g, "$1")).forEach((w) => penSkema.add(w));
+  if (typeof s === "string" && pengantarEn) pecah(s.replace(/\[([^|\]]*)\|[^\]]*\]/g, "$1")).forEach((w) => {
+    penSkema.add(w);
+    (penSkemaBahasa.get(bahasaKini) ?? penSkemaBahasa.set(bahasaKini, new Set()).get(bahasaKini)).add(w);
+  });
   if (typeof s === "string" && !modulSerumpun && !modulKini.startsWith("su-")) pecah(s).forEach((w) => tgSkema.add(w));
 };
 
@@ -167,6 +177,7 @@ for (const modul of fs.readdirSync(AKAR)) {
   if (!fs.statSync(dir).isDirectory()) continue;
   modulEn = /^en-/.test(modul);
   modulKini = modul;
+  bahasaKini = modul.replace(/-(a1|a2|b1|b2|c1|c2)(-en)?$/, "");
   modulSerumpun = MODUL_SERUMPUN.test(modul);
   let edisi = "";
   try { edisi = JSON.parse(fs.readFileSync(path.join(dir, "meta.json"), "utf8")).edition ?? ""; } catch { /* tanpa meta */ }
@@ -240,7 +251,7 @@ console.log(barisEn.join("\n"));
    baru satu dua, dan kata Inggris tak mungkin bocor dari bahasa target Latin
    lain karena tgSkema sudah menyaringnya. */
 const kataPen = [...penIdF.entries()]
-  .filter(([w, n]) => w.length >= 2 && /^[a-z']+$/.test(w) && n >= 6 * (penTgF.get(w) || 0) && !penSkema.has(w))
+  .filter(([w, n]) => w.length >= 2 && /^[a-z']+$/.test(w) && n >= 6 * (penTgF.get(w) || 0))
   .map(([w]) => w)
   .sort();
 const barisPen = [];
@@ -252,4 +263,10 @@ for (const w of kataPen) {
 barisPen.push("  " + kiniPen.trim());
 console.log("\n/* ── LEKSIKON_PENGANTAR_EN ───────────────────────────────── */");
 console.log(barisPen.join("\n"));
+const setPen = new Set(kataPen);
+console.log("\n/* ── KECUALI_PENGANTAR_EN ───────────────────────────────── */");
+for (const [b, set] of [...penSkemaBahasa.entries()].sort()) {
+  const kena = [...set].filter((w) => setPen.has(w)).sort();
+  if (kena.length) console.log(`  "${b}": "${kena.join(" ")}",`);
+}
 console.error(`${kata.length} kata Indonesia · ${kataEn.length} kata Inggris · ${kataPen.length} kata pengantar Inggris`);
