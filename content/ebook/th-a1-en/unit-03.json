@@ -1,0 +1,607 @@
+{
+  "title": "How much is it?",
+  "title_target": "เท่าไหร่ครับ — Thâo-rài khráp",
+  "goal": "Count from zero to a million, ask prices, bargain politely, and understand your change — including the three quirks of Thai numbers that make people mishear prices.",
+  "bekal": [
+    "count 0-1,000,000 in Thai",
+    "ask prices with เท่าไหร่",
+    "bargain with ลดหน่อยได้ไหม",
+    "say expensive, cheap, and \"I'll take it at this price\"",
+    "understand and check your change"
+  ],
+  "dialogs": [
+    {
+      "title": "บทสนทนา — At Chatuchak market, a T-shirt stall",
+      "intro": "Nok takes Budi shopping on the weekend. Notice that bargaining in Thailand isn't a fight: it happens with a smile, and it stops as soon as one side says ไม่ได้.",
+      "lines": [
+        {
+          "speaker": "บูดี:",
+          "text": "[ขอโทษ|Khǎaw-thôot][ครับ|khráp] [เสื้อ|Sûuea][ตัว|tua][นี้|níi][เท่าไหร่|thâo-rài][ครับ|khráp]",
+          "id": "Excuse me, how much is this shirt?",
+          "literal": "ask-for-punishment — (polite). shirt — (classifier) — this — how-much — (polite)?"
+        },
+        {
+          "speaker": "แม่ค้า:",
+          "text": "[สาม|Sǎam][ร้อย|ráwy][ห้า|hâa][สิบ|sìp][บาท|bàat][ค่ะ|khâ]",
+          "id": "Three hundred fifty baht.",
+          "literal": "three — hundred — five — ten — baht — (polite)."
+        },
+        {
+          "speaker": "บูดี:",
+          "text": "[โอ้โห|Ôo-hǒo] [แพง|phaaeng][จัง|jang][ครับ|khráp] [ลด|Lót][หน่อย|nàwy][ได้|dâai][ไหม|mǎi][ครับ|khráp]",
+          "id": "Wow, that's expensive. Could you go a bit lower?",
+          "literal": "wow — expensive — so — (polite). reduce — a-little — can — (question) — (polite)?"
+        },
+        {
+          "speaker": "แม่ค้า:",
+          "text": "[ลด|Lót][ได้|dâai][ค่ะ|khâ] [สาม|Sǎam][ร้อย|ráwy][ค่ะ|khâ]",
+          "id": "I can. Three hundred.",
+          "literal": "reduce — can — (polite). three — hundred — (polite)."
+        },
+        {
+          "speaker": "นก:",
+          "text": "[สอง|Sǎawng][ร้อย|ráwy][ห้า|hâa][สิบ|sìp][ได้|dâai][ไหม|mǎi][คะ|khá] [เอา|Ao][สอง|sǎawng][ตัว|tua][ค่ะ|khâ]",
+          "id": "How about two hundred fifty? We'll take two.",
+          "literal": "two — hundred — five — ten — can — (question) — (polite)? take — two — (classifier) — (polite)."
+        },
+        {
+          "speaker": "แม่ค้า:",
+          "text": "[สอง|Sǎawng][ตัว|tua][เหรอ|rǒoe][คะ|khá] [งั้น|Ngán] [ตัว|tua][ละ|lá][สอง|sǎawng][ร้อย|ráwy][แปด|pàaet][สิบ|sìp][ค่ะ|khâ]",
+          "id": "Two? Then two hundred eighty each.",
+          "literal": "two — (classifier) — huh — (polite)? in-that-case — (classifier) — per — two — hundred — eight — ten — (polite)."
+        },
+        {
+          "speaker": "นก:",
+          "text": "[สอง|Sǎawng][ร้อย|ráwy][เจ็ด|jèt][สิบ|sìp][นะ|ná][คะ|khá] [เอา|Ao][เลย|loei][ค่ะ|khâ]",
+          "id": "Two hundred seventy, okay? We'll take them.",
+          "literal": "two — hundred — seven — ten — okay — (polite). take — right-away — (polite)."
+        },
+        {
+          "speaker": "แม่ค้า:",
+          "text": "[ได้|Dâai][ค่ะ|khâ] [ทั้งหมด|Tháng-mòt][ห้า|hâa][ร้อย|ráwy][สี่|sìi][สิบ|sìp][บาท|bàat][ค่ะ|khâ]",
+          "id": "Okay. That's five hundred forty baht altogether.",
+          "literal": "can — (polite). altogether — five — hundred — four — ten — baht — (polite)."
+        },
+        {
+          "speaker": "บูดี:",
+          "text": "[นี่|Nîi][ครับ|khráp] [หก|Hòk][ร้อย|ráwy]",
+          "id": "Here's six hundred.",
+          "literal": "this — (polite). six — hundred."
+        },
+        {
+          "speaker": "แม่ค้า:",
+          "text": "[ทอน|Thawn][หก|hòk][สิบ|sìp][บาท|bàat][ค่ะ|khâ] [ขอบคุณ|Khàwp-khun][ค่ะ|khâ]",
+          "id": "Sixty baht change. Thank you.",
+          "literal": "give-change — six — ten — baht — (polite). thank-you — (polite)."
+        },
+        {
+          "speaker": "บูดี:",
+          "text": "[ขอบคุณ|Khàwp-khun][ครับ|khráp] [นก|Nók][ต่อ|tàw][เก่ง|kèng][มาก|mâak][ครับ|khráp]",
+          "id": "Thanks. Nok, you're great at bargaining.",
+          "literal": "thank-you — (polite). Nok — bargain — skilled — very — (polite)."
+        },
+        {
+          "speaker": "นก:",
+          "text": "[ธรรมดา|Tham-má-daa][ค่ะ|khâ] [แต่|Tàae][ที่|thîi][ห้าง|hâang][ต่อ|tàw][ไม่|mâi][ได้|dâai][นะ|ná][คะ|khá]",
+          "id": "It's nothing. But you can't bargain at the mall, okay?",
+          "literal": "ordinary — (polite). but — at — mall — bargain — not — can — okay — (polite)."
+        }
+      ],
+      "notes": [
+        "**เท่าไหร่ thâo-rài asks about a price or an amount you don't count one by one.** It always goes at the **end** of the sentence: *อันนี้เท่าไหร่* (how much is this), *ทั้งหมดเท่าไหร่* (how much altogether). Compare *กี่ kìi*, which asks **how many items** and is always followed by a classifier: *กี่คน* (how many people), *กี่บาท* (how many baht).",
+        "**บาท bàat is Thailand's currency**, and it works as its own classifier. The number attaches directly: *ห้าสิบบาท* (fifty baht). In fast speech *บาท* is often dropped altogether — people just say *ห้าสิบ* and everyone understands.",
+        "**ลด lót means \"to reduce\", and it's the key word for bargaining.** The full sentence is *ลดหน่อยได้ไหม* — \"could you go a bit lower?\". The word *หน่อย nàwy* in the middle is a softener; without it the sentence sounds like an order.",
+        "**ต่อ tàw means \"to bargain\".** *ต่อได้ไหม tàw dâai mǎi* = \"can I bargain?\". ⚠️ The unwritten rule: **at markets and street stalls, bargaining is normal; at malls, convenience stores, and restaurants, never.** Bargaining in the wrong place confuses the seller rather than offending them.",
+        "**ละ lá means \"per\".** *ตัวละสองร้อย* = two hundred each, *คนละร้อย* = a hundred per person, *วันละสองครั้ง* = twice a day. The order is: **classifier + ละ + price**.",
+        "**ทอน thawn is change (money).** The seller will say *ทอนหกสิบบาทค่ะ*. If you need to ask for your change: *ขอเงินทอนด้วยครับ khǎaw ngoen-thawn dûai khráp*.",
+        "**เอา ao means \"to take\", and it's the most common way to say \"I'll have this\".** It sounds perfectly normal, not rude — but for something softer use *ขอ khǎaw* (may I have), covered in Unit 6.",
+        "**งั้น ngán = \"in that case\"**, short for *ถ้างั้น thâa-ngán*. It comes up a lot in bargaining, when one side adjusts the offer."
+      ],
+      "grammars": [
+        {
+          "title": "Numbers: the whole system in one table",
+          "body": [
+            "Thai counts much like English — ones, tens, hundreds, built up from left to right — with three exceptions marked below the table."
+          ],
+          "table": {
+            "head": [
+              "Number",
+              "Thai",
+              "Pronunciation",
+              "Number",
+              "Thai",
+              "Pronunciation"
+            ],
+            "rows": [
+              [
+                "0",
+                "ศูนย์",
+                "*sǔun*",
+                "11",
+                "สิบเอ็ด",
+                "*sìp-èt*"
+              ],
+              [
+                "1",
+                "หนึ่ง",
+                "*nùeng*",
+                "12",
+                "สิบสอง",
+                "*sìp-sǎawng*"
+              ],
+              [
+                "2",
+                "สอง",
+                "*sǎawng*",
+                "20",
+                "ยี่สิบ",
+                "*yîi-sìp*"
+              ],
+              [
+                "3",
+                "สาม",
+                "*sǎam*",
+                "21",
+                "ยี่สิบเอ็ด",
+                "*yîi-sìp-èt*"
+              ],
+              [
+                "4",
+                "สี่",
+                "*sìi*",
+                "30",
+                "สามสิบ",
+                "*sǎam-sìp*"
+              ],
+              [
+                "5",
+                "ห้า",
+                "*hâa*",
+                "100",
+                "หนึ่งร้อย",
+                "*nùeng-ráwy*"
+              ],
+              [
+                "6",
+                "หก",
+                "*hòk*",
+                "500",
+                "ห้าร้อย",
+                "*hâa-ráwy*"
+              ],
+              [
+                "7",
+                "เจ็ด",
+                "*jèt*",
+                "1,000",
+                "หนึ่งพัน",
+                "*nùeng-phan*"
+              ],
+              [
+                "8",
+                "แปด",
+                "*pàaet*",
+                "10,000",
+                "หนึ่งหมื่น",
+                "*nùeng-mùuen*"
+              ],
+              [
+                "9",
+                "เก้า",
+                "*kâao*",
+                "100,000",
+                "หนึ่งแสน",
+                "*nùeng-sǎaen*"
+              ],
+              [
+                "10",
+                "สิบ",
+                "*sìp*",
+                "1,000,000",
+                "หนึ่งล้าน",
+                "*nùeng-láan*"
+              ]
+            ]
+          },
+          "after": [
+            "⚠️ **Quirk 1 — เอ็ด èt replaces หนึ่ง in the ones place from 11 up.** 11 = *สิบเอ็ด*, 21 = *ยี่สิบเอ็ด*, 101 = *ร้อยเอ็ด*. *หนึ่ง* is still used for the number one on its own.",
+            "⚠️ **Quirk 2 — 20 is ยี่สิบ *yîi-sìp*, not สองสิบ.** Only twenty works this way; 30, 40, 50 are all regular.",
+            "⚠️ **Quirk 3 — หมื่น *mùuen* (10,000) and แสน *sǎaen* (100,000) have no English equivalent.** 50,000 baht is *ห้าหมื่นบาท* (five × ten-thousand), not counted in thousands. This is the number-one reason foreigners mishear rents and salaries."
+          ]
+        },
+        {
+          "title": "Price words that always come in handy",
+          "table": {
+            "head": [
+              "Thai",
+              "Pronunciation",
+              "Meaning"
+            ],
+            "rows": [
+              [
+                "เท่าไหร่",
+                "*thâo-rài*",
+                "how much (price/amount)"
+              ],
+              [
+                "แพง",
+                "*phaaeng*",
+                "expensive"
+              ],
+              [
+                "ถูก",
+                "*thùuk*",
+                "cheap — and also \"correct\""
+              ],
+              [
+                "แพงไป",
+                "*phaaeng pai*",
+                "too expensive"
+              ],
+              [
+                "ลดหน่อยได้ไหม",
+                "*lót nàwy dâai mǎi*",
+                "could you go a bit lower?"
+              ],
+              [
+                "ต่อได้ไหม",
+                "*tàw dâai mǎi*",
+                "can I bargain?"
+              ],
+              [
+                "ทั้งหมด",
+                "*tháng-mòt*",
+                "altogether, the total"
+              ],
+              [
+                "เงินทอน",
+                "*ngoen-thawn*",
+                "change (money)"
+              ],
+              [
+                "เงินสด",
+                "*ngoen-sòt*",
+                "cash"
+              ],
+              [
+                "จ่ายบัตรได้ไหม",
+                "*jàai bàt dâai mǎi*",
+                "can I pay by card?"
+              ],
+              [
+                "สแกนได้ไหม",
+                "*sà-kaen dâai mǎi*",
+                "can I pay by QR?"
+              ],
+              [
+                "ใบเสร็จ",
+                "*bai-sèt*",
+                "receipt"
+              ]
+            ]
+          },
+          "after": [
+            "⚠️ *ถูก thùuk* has two completely different meanings: **cheap** and **correct**. *ถูกต้อง thùuk-tâwng* always means \"correct\"; *ถูก* on its own in a shopping context almost always means \"cheap\".",
+            "QR payment (*พร้อมเพย์ phráawm-phee*) is now used everywhere, even by street vendors. *สแกนได้ไหมครับ* is often more useful than asking about cards."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Reading long prices without panicking",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Thai prices are read straight from left to right, just as in English. The only thing to practice is speed."
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Number",
+            "Thai",
+            "Pronunciation"
+          ],
+          "rows": [
+            [
+              "45",
+              "สี่สิบห้า",
+              "*sìi-sìp-hâa*"
+            ],
+            [
+              "99",
+              "เก้าสิบเก้า",
+              "*kâao-sìp-kâao*"
+            ],
+            [
+              "120",
+              "ร้อยยี่สิบ",
+              "*ráwy-yîi-sìp*"
+            ],
+            [
+              "250",
+              "สองร้อยห้าสิบ",
+              "*sǎawng-ráwy-hâa-sìp*"
+            ],
+            [
+              "1,500",
+              "พันห้าร้อย",
+              "*phan-hâa-ráwy*"
+            ],
+            [
+              "3,900",
+              "สามพันเก้าร้อย",
+              "*sǎam-phan-kâao-ráwy*"
+            ],
+            [
+              "12,000",
+              "หมื่นสองพัน",
+              "*mùuen-sǎawng-phan*"
+            ],
+            [
+              "35,000",
+              "สามหมื่นห้าพัน",
+              "*sǎam-mùuen-hâa-phan*"
+            ],
+            [
+              "250,000",
+              "สองแสนห้าหมื่น",
+              "*sǎawng-sǎaen-hâa-mùuen*"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "Note that *หนึ่ง* in front of *ร้อย, พัน, หมื่น* is usually **dropped** in conversation: 120 is more often *ร้อยยี่สิบ* than *หนึ่งร้อยยี่สิบ*."
+        },
+        {
+          "type": "kotak",
+          "title": "If you didn't catch the price",
+          "items": [
+            "**พูดอีกทีได้ไหมครับ/คะ** *phûut ìik thii dâai mǎi* — could you say that again?",
+            "**เขียนให้หน่อยได้ไหมครับ/คะ** *khǐan hâi nàwy dâai mǎi* — could you write it down? This is the most powerful trick at a market; almost every vendor has a calculator and will type the number right in.",
+            "**พูดช้าๆ ได้ไหมครับ/คะ** *phûut cháa-cháa dâai mǎi* — could you speak slowly?"
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Bargaining without making anyone uncomfortable",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Bargaining in Thailand has an unwritten limit of politeness, and crossing it doesn't make people angry — it just makes them go quiet and refuse with a smile, which is actually worse."
+        },
+        {
+          "type": "list",
+          "items": [
+            "**Aim about 10-20 percent lower, not half.** Offering half price is a habit from other countries and here sounds like an insult to the goods.",
+            "**Smile.** Bargaining with a serious face turns it into a fight, and Thais avoid fights by simply not selling to you.",
+            "**Buying more than one is your best bargaining tool.** *เอาสองตัว ลดได้ไหมคะ* almost always works.",
+            "**If the seller says ไม่ได้ *mâi dâai* — stop.** That isn't the start of a new round; it's the final answer, delivered as politely as possible.",
+            "**Don't bargain if you don't intend to buy.** This is the mistake that sours the mood most."
+          ]
+        },
+        {
+          "type": "kotak",
+          "title": "Four bargaining lines, from gentle to firm",
+          "items": [
+            "**ลดหน่อยได้ไหมครับ/คะ** — could you go a bit lower? (safest)",
+            "**สองร้อยได้ไหมครับ/คะ** — would two hundred be okay? (naming your own price)",
+            "**ถ้าเอาสองอัน ลดได้ไหมครับ/คะ** — if I take two, can you go lower?",
+            "**แพงไปหน่อยครับ/ค่ะ** — it's a bit too expensive. Said with a smile, this often gets the seller to drop the price without being asked."
+          ]
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "th": "เท่าไหร่",
+      "baca": "thâo-rài",
+      "en": "how much (price, amount)"
+    },
+    {
+      "th": "กี่",
+      "baca": "kìi",
+      "en": "how many (with a classifier)"
+    },
+    {
+      "th": "บาท",
+      "baca": "bàat",
+      "en": "baht (Thai currency)"
+    },
+    {
+      "th": "เงิน",
+      "baca": "ngoen",
+      "en": "money"
+    },
+    {
+      "th": "เงินทอน",
+      "baca": "ngoen-thawn",
+      "en": "change (money)"
+    },
+    {
+      "th": "ทอน",
+      "baca": "thawn",
+      "en": "to give change"
+    },
+    {
+      "th": "แพง",
+      "baca": "phaaeng",
+      "en": "expensive"
+    },
+    {
+      "th": "ถูก",
+      "baca": "thùuk",
+      "en": "cheap; correct"
+    },
+    {
+      "th": "ลด",
+      "baca": "lót",
+      "en": "to reduce, give a discount"
+    },
+    {
+      "th": "ต่อ",
+      "baca": "tàw",
+      "en": "to bargain"
+    },
+    {
+      "th": "หน่อย",
+      "baca": "nàwy",
+      "en": "a little (softens a request)"
+    },
+    {
+      "th": "เอา",
+      "baca": "ao",
+      "en": "to take, want"
+    },
+    {
+      "th": "ทั้งหมด",
+      "baca": "tháng-mòt",
+      "en": "altogether, total"
+    },
+    {
+      "th": "ละ",
+      "baca": "lá",
+      "en": "per (unit)"
+    },
+    {
+      "th": "งั้น",
+      "baca": "ngán",
+      "en": "in that case"
+    },
+    {
+      "th": "เลย",
+      "baca": "loei",
+      "en": "right away; at all"
+    },
+    {
+      "th": "เสื้อ",
+      "baca": "sûuea",
+      "en": "shirt, top"
+    },
+    {
+      "th": "ตัว",
+      "baca": "tua",
+      "en": "classifier: clothes, animals, chairs"
+    },
+    {
+      "th": "นี้",
+      "baca": "níi",
+      "en": "this (after a noun)"
+    },
+    {
+      "th": "นี่",
+      "baca": "nîi",
+      "en": "this (on its own)"
+    },
+    {
+      "th": "ห้าง",
+      "baca": "hâang",
+      "en": "mall, department store"
+    },
+    {
+      "th": "ตลาด",
+      "baca": "tà-làat",
+      "en": "market"
+    },
+    {
+      "th": "ร้าน",
+      "baca": "ráan",
+      "en": "shop, stall"
+    },
+    {
+      "th": "ธรรมดา",
+      "baca": "tham-má-daa",
+      "en": "ordinary, nothing special"
+    },
+    {
+      "th": "โอ้โห",
+      "baca": "ôo-hǒo",
+      "en": "wow! (amazement or shock)"
+    },
+    {
+      "th": "บัตร",
+      "baca": "bàt",
+      "en": "card"
+    },
+    {
+      "th": "จ่าย",
+      "baca": "jàai",
+      "en": "to pay"
+    },
+    {
+      "th": "ใบเสร็จ",
+      "baca": "bai-sèt",
+      "en": "receipt"
+    },
+    {
+      "th": "เขียน",
+      "baca": "khǐan",
+      "en": "to write"
+    },
+    {
+      "th": "อีกที",
+      "baca": "ìik thii",
+      "en": "once more"
+    },
+    {
+      "th": "ช้าๆ",
+      "baca": "cháa-cháa",
+      "en": "slowly"
+    }
+  ],
+  "exercises": [
+    {
+      "prompt": "Write these numbers in Thai (the pronunciation alone is fine).",
+      "items": [
+        "11 = ____",
+        "20 = ____",
+        "45 = ____",
+        "101 = ____",
+        "250 = ____",
+        "30,000 = ____"
+      ]
+    },
+    {
+      "prompt": "Fill in the missing word.",
+      "items": [
+        "\"How much is this?\" → อันนี้____ครับ",
+        "\"Could you go a bit lower?\" → ____หน่อยได้ไหมคะ",
+        "\"How much altogether?\" → ____เท่าไหร่ครับ",
+        "\"It's too expensive.\" → ____ไปหน่อยค่ะ",
+        "\"Two hundred each.\" → ตัว____สองร้อย"
+      ]
+    },
+    {
+      "prompt": "Put the words in the right order.",
+      "items": [
+        "ครับ / เท่าไหร่ / นี้ / เสื้อ / ตัว",
+        "คะ / ได้ไหม / ลด / หน่อย",
+        "ค่ะ / สองตัว / เอา",
+        "ครับ / ทั้งหมด / เท่าไหร่",
+        "คะ / ได้ไหม / บัตร / จ่าย"
+      ]
+    },
+    {
+      "prompt": "Translate into Thai. Imagine you're a woman.",
+      "items": [
+        "Excuse me, how much is this?",
+        "It's so expensive.",
+        "Could you go a bit lower?",
+        "Would two hundred fifty be okay?",
+        "I'll take two.",
+        "Can I pay by QR?"
+      ]
+    }
+  ],
+  "answers": [
+    "สิบเอ็ด sìp-èt — ยี่สิบ yîi-sìp — สี่สิบห้า sìi-sìp-hâa — ร้อยเอ็ด ráwy-èt — สองร้อยห้าสิบ sǎawng-ráwy-hâa-sìp — สามหมื่น sǎam-mùuen",
+    "เท่าไหร่ — ลด — ทั้งหมด — แพง — ละ",
+    "เสื้อตัวนี้เท่าไหร่ครับ — ลดหน่อยได้ไหมคะ — เอาสองตัวค่ะ — ทั้งหมดเท่าไหร่ครับ — จ่ายบัตรได้ไหมคะ",
+    "ขอโทษค่ะ อันนี้เท่าไหร่คะ — แพงจังค่ะ — ลดหน่อยได้ไหมคะ — สองร้อยห้าสิบได้ไหมคะ — เอาสองอันค่ะ — สแกนได้ไหมคะ"
+  ],
+  "wave": "Review Unit 1: cover the Thai, then say all the greetings and introductions from memory — this time paying attention to the tone of each word, not just its sounds."
+}

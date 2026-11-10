@@ -1,0 +1,715 @@
+{
+  "title": "Days, dates, and daily routines",
+  "title_target": "วันนี้วันอะไร — Wan-níi wan à-rai",
+  "goal": "Name days and dates, describe your daily routine from waking up to going to bed, and use time adverbs — all without changing a single verb form.",
+  "bekal": [
+    "name the seven days and twelve months",
+    "say dates and understand the Buddhist year",
+    "describe your daily activities in order",
+    "use ทุกวัน, บางครั้ง, ไม่เคย to say how often",
+    "ask \"when\" with วันไหน and เมื่อไหร่"
+  ],
+  "dialogs": [
+    {
+      "title": "บทสนทนา — Coffee break, talking about the weekend",
+      "intro": "Nok asks about Budi's habits. Notice one thing that should be a relief: not a single verb in this dialogue changes form, whether for yesterday, today, or tomorrow.",
+      "lines": [
+        {
+          "speaker": "นก:",
+          "text": "[วันนี้|Wan-níi][วัน|wan][อะไร|à-rai][คะ|khá] [ลืม|Luuem][ไป|pai][เลย|loei][ค่ะ|khâ]",
+          "id": "What day is it today? I totally forgot.",
+          "literal": "today — day — what — (polite)? forget — go — completely — (polite)."
+        },
+        {
+          "speaker": "บูดี:",
+          "text": "[วัน|Wan][พฤหัส|phá-rúe-hàt][ครับ|khráp] [พรุ่งนี้|Phrûng-níi][วัน|wan][ศุกร์|sùk][แล้ว|láaeo][ครับ|khráp]",
+          "id": "Thursday. Tomorrow's already Friday.",
+          "literal": "day — Thursday — (polite). tomorrow — day — Friday — already — (polite)."
+        },
+        {
+          "speaker": "นก:",
+          "text": "[ดี|Dii][จัง|jang][ค่ะ|khâ] [เสาร์|Sǎo][อาทิตย์|aa-thít][นี้|níi][บูดี|Buu-dii][ทำ|tham][อะไร|à-rai][คะ|khá]",
+          "id": "Nice. What are you doing this weekend, Budi?",
+          "literal": "good — so — (polite). Saturday — Sunday — this — Budi — do — what — (polite)?"
+        },
+        {
+          "speaker": "บูดี:",
+          "text": "[วัน|Wan][เสาร์|sǎo][ไป|pai][ตลาด|tà-làat][ครับ|khráp] [วัน|Wan][อาทิตย์|aa-thít][อยู่|yùu][บ้าน|bâan][ครับ|khráp]",
+          "id": "On Saturday I'm going to the market. On Sunday I'm staying home.",
+          "literal": "day — Saturday — go — market — (polite). day — Sunday — stay — home — (polite)."
+        },
+        {
+          "speaker": "นก:",
+          "text": "[ปกติ|Pà-kà-tì][ตื่น|tùuen][กี่|kìi][โมง|moong][คะ|khá]",
+          "id": "What time do you usually get up?",
+          "literal": "usually — wake — how-many — o'clock — (polite)?"
+        },
+        {
+          "speaker": "บูดี:",
+          "text": "[ทุกวัน|Thúk-wan][ตื่น|tùuen][หก|hòk][โมง|moong][ครึ่ง|khrûeng][ครับ|khráp] [อาบน้ำ|Àap-náam][แล้ว|láaeo][ก็|kâw][กิน|kin][ข้าว|khâao][เช้า|cháao][ครับ|khráp]",
+          "id": "Every day I get up at 6:30. I shower and then have breakfast.",
+          "literal": "every-day — wake — six — o'clock — half — (polite). bathe-water — then — also — eat — rice — morning — (polite)."
+        },
+        {
+          "speaker": "นก:",
+          "text": "[ไป|Pai][ทำงาน|tham-ngaan][ยังไง|yang-ngai][คะ|khá]",
+          "id": "How do you get to work?",
+          "literal": "go — work — how — (polite)?"
+        },
+        {
+          "speaker": "บูดี:",
+          "text": "[นั่ง|Nâng][บีทีเอส|BTS][ครับ|khráp] [บางครั้ง|Baang-khráng][เดิน|dooen][ก็|kâw][ได้|dâai][ครับ|khráp] [ใกล้|Klâi][มาก|mâak][ครับ|khráp]",
+          "id": "I take the BTS. Sometimes I can walk too. It's really close.",
+          "literal": "sit — BTS — (polite). sometimes — walk — also — can — (polite). near — very — (polite)."
+        },
+        {
+          "speaker": "นก:",
+          "text": "[เคย|Khoei][ไป|pai][เชียงใหม่|Chiang-mài][ไหม|mǎi][คะ|khá]",
+          "id": "Have you ever been to Chiang Mai?",
+          "literal": "ever — go — Chiang-Mai — (question) — (polite)?"
+        },
+        {
+          "speaker": "บูดี:",
+          "text": "[ยัง|Yang][ไม่|mâi][เคย|khoei][ครับ|khráp] [เดือน|Duuean][หน้า|nâa][จะ|jà][ไป|pai][ครับ|khráp] [วันที่|Wan-thîi][สิบ|sìp][ห้า|hâa][ครับ|khráp]",
+          "id": "Not yet. I'm going next month, on the fifteenth.",
+          "literal": "still — not — ever — (polite). month — front — will — go — (polite). day-number — ten — five — (polite)."
+        },
+        {
+          "speaker": "นก:",
+          "text": "[หนาว|Nǎao][นะ|ná][คะ|khá] [เดือน|Duuean][ธันวา|than-waa][เชียงใหม่|Chiang-mài][หนาว|nǎao][มาก|mâak][ค่ะ|khâ]",
+          "id": "It's cold, you know. Chiang Mai is really cold in December.",
+          "literal": "cold — okay — (polite). month — December — Chiang-Mai — cold — very — (polite)."
+        }
+      ],
+      "notes": [
+        "**Day names always start with วัน wan (day).** *วันจันทร์* (Monday), *วันอังคาร* (Tuesday), and so on. In fast speech *วัน* is often dropped: *เสาร์อาทิตย์นี้* = this weekend.",
+        "**The seven day names come from the planets, just as English Sunday, Monday, and Saturday do** — here via Sanskrit: *อาทิตย์ aa-thít* (Sunday/the sun) is related to Sanskrit \"Aditya\", *จันทร์ jan* (Monday/the moon) to \"Chandra\", *ศุกร์ sùk* (Friday/Venus) to \"Shukra\". Sun-day and Moon-day work the same way in both languages.",
+        "**Each day has its own color in Thailand**, and it's more than an old belief: Monday's color is yellow, and to this day many people wear yellow on Mondays. The colors: Sunday red, Monday yellow, Tuesday pink, Wednesday green, Thursday orange, Friday blue, Saturday purple.",
+        "**Dates use วันที่ wan-thîi + number.** *วันที่สิบห้า* = the 15th. The full order: *วันที่ 15 เดือนธันวาคม ปี 2569* — day, month, year, as in British English.",
+        "**Thailand's official year is the Buddhist Era, 543 years ahead of the Western calendar.** 2026 = 2569 พ.ศ. This number turns up on receipts, ID cards, and expiry dates. If you see \"2569\", don't panic — subtract 543.",
+        "**Month names have an ending that tells you the number of days**, and that's the key to learning them: 31-day months end in **-คม *-khom***, 30-day months end in **-ยน *-yon***, and February stands alone with **-พันธ์ *-phan***. So *มกราคม* must have 31 days, *เมษายน* must have 30.",
+        "**เคย khoei means \"have ever\" and goes before the verb.** *เคยไป* (have been), *ไม่เคยกิน* (have never eaten). Short answers: *เคยครับ* (yes, I have) or *ไม่เคยครับ* (no, never).",
+        "**หน้า nâa means \"front\", and with time it means \"next\".** *เดือนหน้า* (next month), *อาทิตย์หน้า* (next week), *ปีหน้า* (next year). The opposite is *ที่แล้ว thîi-láaeo*: *เดือนที่แล้ว* (last month)."
+      ],
+      "grammars": [
+        {
+          "title": "The days, and the time words around them",
+          "table": {
+            "head": [
+              "Thai",
+              "Pronunciation",
+              "English",
+              "Day color"
+            ],
+            "rows": [
+              [
+                "วันอาทิตย์",
+                "*wan aa-thít*",
+                "Sunday",
+                "red"
+              ],
+              [
+                "วันจันทร์",
+                "*wan jan*",
+                "Monday",
+                "yellow"
+              ],
+              [
+                "วันอังคาร",
+                "*wan ang-khaan*",
+                "Tuesday",
+                "pink"
+              ],
+              [
+                "วันพุธ",
+                "*wan phút*",
+                "Wednesday",
+                "green"
+              ],
+              [
+                "วันพฤหัสบดี",
+                "*wan phá-rúe-hàt-sà-baw-dii*",
+                "Thursday",
+                "orange"
+              ],
+              [
+                "วันศุกร์",
+                "*wan sùk*",
+                "Friday",
+                "blue"
+              ],
+              [
+                "วันเสาร์",
+                "*wan sǎo*",
+                "Saturday",
+                "purple"
+              ],
+              [
+                "เมื่อวาน",
+                "*mûea-waan*",
+                "yesterday",
+                "—"
+              ],
+              [
+                "วันนี้",
+                "*wan-níi*",
+                "today",
+                "—"
+              ],
+              [
+                "พรุ่งนี้",
+                "*phrûng-níi*",
+                "tomorrow",
+                "—"
+              ],
+              [
+                "มะรืนนี้",
+                "*má-ruuen-níi*",
+                "the day after tomorrow",
+                "—"
+              ],
+              [
+                "เมื่อวานซืน",
+                "*mûea-waan-suuen*",
+                "the day before yesterday",
+                "—"
+              ]
+            ]
+          },
+          "after": [
+            "⚠️ *วันพฤหัสบดี* really is that long, and almost nobody says it in full. In daily life people say **วันพฤหัส *wan phá-rúe-hàt*** or even just *พฤหัส*."
+          ]
+        },
+        {
+          "title": "Months: the ending tells you how many days",
+          "table": {
+            "head": [
+              "Month",
+              "Thai",
+              "Pronunciation",
+              "Days"
+            ],
+            "rows": [
+              [
+                "January",
+                "มกราคม",
+                "*mók-kà-raa-khom*",
+                "31"
+              ],
+              [
+                "February",
+                "กุมภาพันธ์",
+                "*kum-phaa-phan*",
+                "28"
+              ],
+              [
+                "March",
+                "มีนาคม",
+                "*mii-naa-khom*",
+                "31"
+              ],
+              [
+                "April",
+                "เมษายน",
+                "*mee-sǎa-yon*",
+                "30"
+              ],
+              [
+                "May",
+                "พฤษภาคม",
+                "*phrúet-sà-phaa-khom*",
+                "31"
+              ],
+              [
+                "June",
+                "มิถุนายน",
+                "*mí-thù-naa-yon*",
+                "30"
+              ],
+              [
+                "July",
+                "กรกฎาคม",
+                "*kà-rá-kà-daa-khom*",
+                "31"
+              ],
+              [
+                "August",
+                "สิงหาคม",
+                "*sǐng-hǎa-khom*",
+                "31"
+              ],
+              [
+                "September",
+                "กันยายน",
+                "*kan-yaa-yon*",
+                "30"
+              ],
+              [
+                "October",
+                "ตุลาคม",
+                "*tù-laa-khom*",
+                "31"
+              ],
+              [
+                "November",
+                "พฤศจิกายน",
+                "*phrúet-sà-jì-kaa-yon*",
+                "30"
+              ],
+              [
+                "December",
+                "ธันวาคม",
+                "*than-waa-khom*",
+                "31"
+              ]
+            ]
+          },
+          "after": [
+            "In conversation, month names are almost always shortened: *มกรา, กุมภา, มีนา, เมษา, พฤษภา, มิถุนา, กรกฎา, สิงหา, กันยา, ตุลา, พฤศจิกา, ธันวา*. Feel free to use these short forms from now on — they actually sound more natural."
+          ]
+        },
+        {
+          "title": "How often",
+          "table": {
+            "head": [
+              "Thai",
+              "Pronunciation",
+              "Meaning",
+              "Position"
+            ],
+            "rows": [
+              [
+                "ทุกวัน",
+                "*thúk wan*",
+                "every day",
+                "start or end of sentence"
+              ],
+              [
+                "ทุกอาทิตย์",
+                "*thúk aa-thít*",
+                "every week",
+                "start or end"
+              ],
+              [
+                "ปกติ",
+                "*pà-kà-tì*",
+                "usually",
+                "start of sentence"
+              ],
+              [
+                "บ่อย",
+                "*bàwy*",
+                "often",
+                "after the verb"
+              ],
+              [
+                "บางครั้ง / บางที",
+                "*baang-khráng / baang-thii*",
+                "sometimes",
+                "start of sentence"
+              ],
+              [
+                "นานๆ ครั้ง",
+                "*naan-naan khráng*",
+                "once in a while",
+                "start of sentence"
+              ],
+              [
+                "ไม่ค่อย",
+                "*mâi khâwy*",
+                "rarely, not much",
+                "before the verb"
+              ],
+              [
+                "ไม่เคย",
+                "*mâi khoei*",
+                "never",
+                "before the verb"
+              ],
+              [
+                "เสมอ / ตลอด",
+                "*sà-mǒoe / tà-làwt*",
+                "always",
+                "after the verb"
+              ]
+            ]
+          },
+          "after": [
+            "⚠️ *ไม่ค่อย mâi khâwy* and *ไม่เคย mâi khoei* look alike but differ in meaning and tone: the first is \"rarely\", the second \"never at all\". Watch the vowel — *khâwy* with the mouth more open, as in \"law\"."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "A whole day in twelve verbs",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "This list is enough to describe your whole day. None of the verbs change form — for yesterday or tomorrow, you just add the time word."
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Thai",
+            "Pronunciation",
+            "English"
+          ],
+          "rows": [
+            [
+              "ตื่น / ตื่นนอน",
+              "*tùuen / tùuen-nawn*",
+              "to wake up"
+            ],
+            [
+              "อาบน้ำ",
+              "*àap-náam*",
+              "to shower, bathe"
+            ],
+            [
+              "แปรงฟัน",
+              "*praaeng-fan*",
+              "to brush your teeth"
+            ],
+            [
+              "แต่งตัว",
+              "*tàaeng-tua*",
+              "to get dressed"
+            ],
+            [
+              "กินข้าวเช้า",
+              "*kin khâao cháao*",
+              "to have breakfast"
+            ],
+            [
+              "ไปทำงาน",
+              "*pai tham-ngaan*",
+              "to go to work"
+            ],
+            [
+              "เลิกงาน",
+              "*lôoek-ngaan*",
+              "to finish work"
+            ],
+            [
+              "กลับบ้าน",
+              "*klàp bâan*",
+              "to go home"
+            ],
+            [
+              "ทำอาหาร",
+              "*tham aa-hǎan*",
+              "to cook"
+            ],
+            [
+              "ดูทีวี",
+              "*duu thii-wii*",
+              "to watch TV"
+            ],
+            [
+              "ออกกำลังกาย",
+              "*àwk-kam-lang-kaai*",
+              "to exercise"
+            ],
+            [
+              "นอน",
+              "*nawn*",
+              "to sleep, lie down"
+            ]
+          ]
+        },
+        {
+          "type": "kotak",
+          "title": "Three linking words that make your story flow",
+          "items": [
+            "**แล้วก็ *láaeo kâw*** — \"and then\". *อาบน้ำแล้วก็กินข้าว* = shower and then eat.",
+            "**ก่อน *kàwn*** — \"first, beforehand\", placed **at the end**: *กินข้าวก่อน* = eat first.",
+            "**หลังจากนั้น *lǎng-jàak-nán*** — \"after that\". A little more formal, good for storytelling."
+          ]
+        },
+        {
+          "type": "p",
+          "text": "A complete example: *ปกติผมตื่นหกโมงครึ่ง อาบน้ำแล้วก็กินข้าวเช้า แปดโมงไปทำงาน เลิกงานหกโมงเย็น กลับบ้านแล้วก็ทำอาหาร นอนประมาณห้าทุ่มครับ* — and that's your whole workday in one breath."
+        }
+      ]
+    },
+    {
+      "title": "Holidays you should know",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "The Thai calendar has many holidays, and some of them transform the whole country. Knowing them saves you from closed offices and sold-out tickets."
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Thai",
+            "Pronunciation",
+            "When",
+            "What it is"
+          ],
+          "rows": [
+            [
+              "วันสงกรานต์",
+              "*wan sǒng-kraan*",
+              "April 13-15",
+              "Thai New Year — a nationwide water fight"
+            ],
+            [
+              "วันลอยกระทง",
+              "*wan lawy krà-thong*",
+              "November",
+              "floating flower rafts on rivers"
+            ],
+            [
+              "วันปีใหม่",
+              "*wan pii mài*",
+              "January 1",
+              "Western New Year"
+            ],
+            [
+              "วันตรุษจีน",
+              "*wan trùt jiin*",
+              "Jan/Feb",
+              "Chinese New Year — lively in Yaowarat"
+            ],
+            [
+              "วันวิสาขบูชา",
+              "*wan wí-sǎa-khà-buu-chaa*",
+              "May",
+              "Visakha Bucha (Buddha's birth); no alcohol sold"
+            ],
+            [
+              "วันเข้าพรรษา",
+              "*wan khâo phan-sǎa*",
+              "July",
+              "start of the monks' rains retreat"
+            ]
+          ]
+        },
+        {
+          "type": "kotak",
+          "title": "สงกรานต์ and one thing to prepare for",
+          "items": [
+            "During Songkran, **every street turns into a water fight** for three full days — with no exceptions for people in a hurry or in nice clothes. Keep your phone in a plastic bag.",
+            "The tradition's roots are gentle: pouring scented water over elders' hands as a sign of respect and a request for blessings. The water fight is the rowdy version.",
+            "A useful phrase: **สวัสดีปีใหม่ไทย *sà-wàt-dii pii-mài thai*** — happy Thai New Year. Said while soaking wet, it always gets a laugh."
+          ]
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "th": "วัน",
+      "baca": "wan",
+      "en": "day"
+    },
+    {
+      "th": "วันนี้",
+      "baca": "wan-níi",
+      "en": "today"
+    },
+    {
+      "th": "พรุ่งนี้",
+      "baca": "phrûng-níi",
+      "en": "tomorrow"
+    },
+    {
+      "th": "มะรืนนี้",
+      "baca": "má-ruuen-níi",
+      "en": "the day after tomorrow"
+    },
+    {
+      "th": "อาทิตย์",
+      "baca": "aa-thít",
+      "en": "week; Sunday"
+    },
+    {
+      "th": "ปี",
+      "baca": "pii",
+      "en": "year"
+    },
+    {
+      "th": "วันที่",
+      "baca": "wan-thîi",
+      "en": "date (day of the month)"
+    },
+    {
+      "th": "หน้า",
+      "baca": "nâa",
+      "en": "front; next"
+    },
+    {
+      "th": "ที่แล้ว",
+      "baca": "thîi-láaeo",
+      "en": "last (week, month…)"
+    },
+    {
+      "th": "ปกติ",
+      "baca": "pà-kà-tì",
+      "en": "usually, normal"
+    },
+    {
+      "th": "ทุกวัน",
+      "baca": "thúk-wan",
+      "en": "every day"
+    },
+    {
+      "th": "บ่อย",
+      "baca": "bàwy",
+      "en": "often"
+    },
+    {
+      "th": "บางครั้ง",
+      "baca": "baang-khráng",
+      "en": "sometimes"
+    },
+    {
+      "th": "เคย",
+      "baca": "khoei",
+      "en": "have ever"
+    },
+    {
+      "th": "เสมอ",
+      "baca": "sà-mǒoe",
+      "en": "always"
+    },
+    {
+      "th": "ตื่น",
+      "baca": "tùuen",
+      "en": "to wake up"
+    },
+    {
+      "th": "นอน",
+      "baca": "nawn",
+      "en": "to sleep, lie down"
+    },
+    {
+      "th": "อาบน้ำ",
+      "baca": "àap-náam",
+      "en": "to shower, bathe"
+    },
+    {
+      "th": "แปรงฟัน",
+      "baca": "praaeng-fan",
+      "en": "to brush your teeth"
+    },
+    {
+      "th": "แต่งตัว",
+      "baca": "tàaeng-tua",
+      "en": "to get dressed"
+    },
+    {
+      "th": "กลับ",
+      "baca": "klàp",
+      "en": "to return, go back"
+    },
+    {
+      "th": "บ้าน",
+      "baca": "bâan",
+      "en": "house, home"
+    },
+    {
+      "th": "ทำ",
+      "baca": "tham",
+      "en": "to do, make"
+    },
+    {
+      "th": "ดู",
+      "baca": "duu",
+      "en": "to look, watch"
+    },
+    {
+      "th": "เดิน",
+      "baca": "dooen",
+      "en": "to walk"
+    },
+    {
+      "th": "ออกกำลังกาย",
+      "baca": "àwk-kam-lang-kaai",
+      "en": "to exercise"
+    },
+    {
+      "th": "ยังไง",
+      "baca": "yang-ngai",
+      "en": "how"
+    },
+    {
+      "th": "หนาว",
+      "baca": "nǎao",
+      "en": "cold (weather)"
+    },
+    {
+      "th": "แล้วก็",
+      "baca": "láaeo-kâw",
+      "en": "and then"
+    },
+    {
+      "th": "เชียงใหม่",
+      "baca": "Chiang-mài",
+      "en": "Chiang Mai"
+    },
+    {
+      "th": "สงกรานต์",
+      "baca": "sǒng-kraan",
+      "en": "Thai New Year (April)"
+    },
+    {
+      "th": "วันหยุด",
+      "baca": "wan-yùt",
+      "en": "holiday, day off"
+    }
+  ],
+  "exercises": [
+    {
+      "prompt": "Write the names of the days in Thai.",
+      "items": [
+        "Monday = ____",
+        "Wednesday = ____",
+        "Friday = ____",
+        "Saturday = ____",
+        "Sunday = ____"
+      ]
+    },
+    {
+      "prompt": "Fill in the blanks.",
+      "items": [
+        "\"What day is it today?\" → วันนี้____อะไรคะ",
+        "\"Tomorrow's already Friday\" → ____วันศุกร์แล้วครับ",
+        "\"Every day I get up at six\" → ____ตื่นหกโมงครับ",
+        "\"Not yet (never so far)\" → ยังไม่____ครับ",
+        "\"Next month\" → เดือน____"
+      ]
+    },
+    {
+      "prompt": "Put the words in the right order.",
+      "items": [
+        "คะ / วันอะไร / วันนี้",
+        "ครับ / ตื่น / หกโมงครึ่ง / ทุกวัน",
+        "ครับ / แล้วก็ / อาบน้ำ / กินข้าวเช้า",
+        "คะ / เชียงใหม่ / ไหม / เคย / ไป",
+        "ครับ / จะไป / เดือนหน้า / ผม"
+      ]
+    },
+    {
+      "prompt": "Translate into Thai. Imagine you're a man.",
+      "items": [
+        "Today is Thursday.",
+        "On Saturday I'm going to the market.",
+        "I usually get up at 6:30.",
+        "I shower and then have breakfast.",
+        "Have you ever been to Chiang Mai?",
+        "Not yet. I'm going next month."
+      ]
+    }
+  ],
+  "answers": [
+    "วันจันทร์ — วันพุธ — วันศุกร์ — วันเสาร์ — วันอาทิตย์",
+    "วัน — พรุ่งนี้ — ทุกวัน — เคย — หน้า",
+    "วันนี้วันอะไรคะ — ทุกวันตื่นหกโมงครึ่งครับ — อาบน้ำแล้วก็กินข้าวเช้าครับ — เคยไปเชียงใหม่ไหมคะ — เดือนหน้าผมจะไปครับ",
+    "วันนี้วันพฤหัสครับ — วันเสาร์ผมไปตลาดครับ — ปกติผมตื่นหกโมงครึ่งครับ — อาบน้ำแล้วก็กินข้าวเช้าครับ — เคยไปเชียงใหม่ไหมครับ — ยังไม่เคยครับ เดือนหน้าจะไปครับ"
+  ],
+  "wave": "Review Unit 6: cover the Thai, then order a complete lunch from memory — from asking for the menu to asking for the check, including the no-pork phrase."
+}

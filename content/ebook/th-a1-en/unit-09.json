@@ -1,0 +1,615 @@
+{
+  "title": "Turn left at the traffic light",
+  "title_target": "เลี้ยวซ้ายตรงไฟแดง — Líao sáai trong fai-daaeng",
+  "goal": "Ask for directions, tell a driver to stop, and choose among eight ways of getting around Bangkok — including the sentence that keeps your taxi fare from ballooning.",
+  "bekal": [
+    "ask for directions with ไปยังไง and อยู่ที่ไหน",
+    "understand directions: ตรงไป, เลี้ยวซ้าย, เลี้ยวขวา, จอด",
+    "name eight forms of transportation",
+    "make sure a taxi uses the meter with one sentence",
+    "ask how far it is and how long it takes"
+  ],
+  "dialogs": [
+    {
+      "title": "บทสนทนา — Taking a taxi to Wat Pho",
+      "intro": "Budi flags down a taxi. Pay attention to the second sentence he says — it's the only one in this whole dialogue that really matters.",
+      "lines": [
+        {
+          "speaker": "บูดี:",
+          "text": "[ไป|Pai][วัดโพธิ์|Wát-Phoo][ไหม|mǎi][ครับ|khráp]",
+          "id": "Will you go to Wat Pho?",
+          "literal": "go — Wat-Pho — (question) — (polite)?"
+        },
+        {
+          "speaker": "คนขับ:",
+          "text": "[ไป|Pai][ครับ|khráp] [ขึ้น|Khûen][เลย|loei][ครับ|khráp]",
+          "id": "Sure. Hop in.",
+          "literal": "go — (polite). get-on — right-away — (polite)."
+        },
+        {
+          "speaker": "บูดี:",
+          "text": "[กด|Kòt][มิเตอร์|mí-tôee][ด้วย|dûai][นะ|ná][ครับ|khráp]",
+          "id": "With the meter, please.",
+          "literal": "press — meter — please — okay — (polite)."
+        },
+        {
+          "speaker": "คนขับ:",
+          "text": "[ได้|Dâai][ครับ|khráp] [รถ|Rót][ติด|tìt][นิดหน่อย|nít-nàwy][นะ|ná][ครับ|khráp]",
+          "id": "Sure. There's a bit of traffic, though.",
+          "literal": "can — (polite). car — stuck — a-little — okay — (polite)."
+        },
+        {
+          "speaker": "บูดี:",
+          "text": "[ไม่เป็นไร|Mâi pen rai][ครับ|khráp] [ใช้|Chái][เวลา|wee-laa][กี่|kìi][นาที|naa-thii][ครับ|khráp]",
+          "id": "That's fine. About how many minutes?",
+          "literal": "not-be-anything — (polite). use — time — how-many — minute — (polite)?"
+        },
+        {
+          "speaker": "คนขับ:",
+          "text": "[ประมาณ|Prà-maan][สาม|sǎam][สิบ|sìp][นาที|naa-thii][ครับ|khráp] [ไม่|Mâi][ไกล|klai][ครับ|khráp]",
+          "id": "About thirty minutes. It's not far.",
+          "literal": "about — three — ten — minute — (polite). not — far — (polite)."
+        },
+        {
+          "speaker": "คนขับ:",
+          "text": "[ตรง|Trong][ไฟแดง|fai-daaeng][เลี้ยว|líao][ซ้าย|sáai][ใช่|châi][ไหม|mǎi][ครับ|khráp]",
+          "id": "Left at the traffic light, right?",
+          "literal": "right-at — light-red — turn — left — correct — (question) — (polite)?"
+        },
+        {
+          "speaker": "บูดี:",
+          "text": "[ผม|Phǒm][ไม่|mâi][แน่ใจ|nâae-jai][ครับ|khráp] [แผนที่|Phǎaen-thîi][บอก|bàwk][ว่า|wâa][ตรง|trong][ไป|pai][แล้ว|láaeo][เลี้ยว|líao][ขวา|khwǎa][ครับ|khráp]",
+          "id": "I'm not sure. The map says straight ahead and then turn right.",
+          "literal": "I — not — sure — (polite). map — say — that — straight — go — then — turn — right — (polite)."
+        },
+        {
+          "speaker": "คนขับ:",
+          "text": "[อ๋อ|Ǎw] [เข้าใจ|khâo-jai][แล้ว|láaeo][ครับ|khráp] [ใกล้|Klâi][ท่าเรือ|thâa-ruuea][ใช่|châi][ไหม|mǎi][ครับ|khráp]",
+          "id": "Oh, got it. Near the pier, right?",
+          "literal": "oh — understand — already — (polite). near — pier — correct — (question) — (polite)?"
+        },
+        {
+          "speaker": "บูดี:",
+          "text": "[ใช่|Châi][ครับ|khráp]",
+          "id": "That's right.",
+          "literal": "correct — (polite)."
+        },
+        {
+          "speaker": "คนขับ:",
+          "text": "[ถึง|Thǔeng][แล้ว|láaeo][ครับ|khráp] [หนึ่ง|Nùeng][ร้อย|ráwy][สี่|sìi][สิบ|sìp][บาท|bàat][ครับ|khráp]",
+          "id": "Here we are. A hundred forty baht.",
+          "literal": "arrive — already — (polite). one — hundred — four — ten — baht — (polite)."
+        },
+        {
+          "speaker": "บูดี:",
+          "text": "[จอด|Jàwt][ตรงนี้|trong-níi][ได้|dâai][ครับ|khráp] [ขอบคุณ|Khàwp-khun][ครับ|khráp] [ไม่|Mâi][ต้อง|tâwng][ทอน|thawn][ครับ|khráp]",
+          "id": "You can stop right here. Thank you, keep the change.",
+          "literal": "stop — right-here — can — (polite). thank-you — (polite). not — must — give-change — (polite)."
+        }
+      ],
+      "notes": [
+        "**กดมิเตอร์ด้วยนะครับ/ค่ะ is the most important sentence in this whole unit.** Literally \"press the meter, please\". In tourist areas some drivers offer a flat fare that can be two or three times the metered price. Saying this before you set off settles the matter without an argument — and if the driver refuses, just get out and find another taxi. That's normal, not an insult.",
+        "**ไปวัดโพธิ์ไหมครับ is said BEFORE you get in**, through the open window. Bangkok taxi drivers may turn down a destination, and asking first saves everyone time.",
+        "**ใช่ไหม châi mǎi means \"right?\"** and is used to confirm something you already suspect. Compare plain *ไหม mǎi*, which asks about something you don't know at all.",
+        "**ถึงแล้ว thǔeng láaeo = \"we're here, we've arrived\".** *ถึง* also means \"to reach\": *ไปถึงบ้าน* (to get home). It often appears together with *แล้ว*.",
+        "**ไม่ต้องทอน mâi tâwng thawn means \"keep the change\".** Tipping taxis isn't required in Thailand, but rounding the fare up is a common habit and always welcome. The word *ไม่ต้อง mâi tâwng* (no need) is covered fully in Unit 12.",
+        "**จอด jàwt means \"to stop, park\" for vehicles**, while *หยุด yùt* means \"to stop\" in general. To tell a driver to stop, use *จอด*: *จอดตรงนี้ครับ* (stop here).",
+        "**ตรง trong means both \"straight\" and \"right at\".** *ตรงไป* (straight ahead), *ตรงนี้* (right here), *ตรงไฟแดง* (right at the traffic light). One word, two jobs you'll often need.",
+        "**แน่ใจ nâae-jai means \"sure, certain\".** Notice the word *ใจ jai* (heart) at the end — Thai forms dozens of feeling words this way: *เข้าใจ khâo-jai* (to understand, literally \"enter the heart\"), *ดีใจ dii-jai* (glad), *เสียใจ sǐa-jai* (sad, sorry), *ใจดี jai-dii* (kind), *ใจร้อน jai-ráwn* (impatient, \"hot-hearted\"). When you see *ใจ*, you're looking at a word about feelings."
+      ],
+      "grammars": [
+        {
+          "title": "Directions: ten words to get you anywhere",
+          "table": {
+            "head": [
+              "Thai",
+              "Pronunciation",
+              "Meaning"
+            ],
+            "rows": [
+              [
+                "ตรงไป",
+                "*trong pai*",
+                "go straight"
+              ],
+              [
+                "เลี้ยวซ้าย",
+                "*líao sáai*",
+                "turn left"
+              ],
+              [
+                "เลี้ยวขวา",
+                "*líao khwǎa*",
+                "turn right"
+              ],
+              [
+                "กลับรถ",
+                "*klàp rót*",
+                "make a U-turn"
+              ],
+              [
+                "จอดตรงนี้",
+                "*jàwt trong-níi*",
+                "stop here"
+              ],
+              [
+                "เลยไปหน่อย",
+                "*loei pai nàwy*",
+                "a little further"
+              ],
+              [
+                "ข้ามสะพาน",
+                "*khâam sà-phaan*",
+                "cross the bridge"
+              ],
+              [
+                "ตรงไฟแดง",
+                "*trong fai-daaeng*",
+                "at the traffic light"
+              ],
+              [
+                "ตรงหัวมุม",
+                "*trong hǔa-mum*",
+                "at the corner"
+              ],
+              [
+                "ตรงข้าม",
+                "*trong-khâam*",
+                "opposite, across from"
+              ]
+            ]
+          },
+          "after": [
+            "⚠️ *เลย loei* has two very different jobs: as a verb it means **to go past** (*เลยไปหน่อย* = a little further past), and as a particle it means **\"right away\"** or **\"at all\"** (*ไม่ชอบเลย* = don't like it at all). The difference is always clear from its position."
+          ]
+        },
+        {
+          "title": "Eight ways to get around Bangkok",
+          "table": {
+            "head": [
+              "Thai",
+              "Pronunciation",
+              "What it is",
+              "When to use it"
+            ],
+            "rows": [
+              [
+                "รถไฟฟ้า / บีทีเอส",
+                "*rót-fai-fáa / BTS*",
+                "elevated train (Skytrain)",
+                "rush hour, medium distances"
+              ],
+              [
+                "รถไฟใต้ดิน / เอ็มอาร์ที",
+                "*rót-fai-tâai-din / MRT*",
+                "subway",
+                "rush hour"
+              ],
+              [
+                "แท็กซี่",
+                "*tháek-sîi*",
+                "taxi",
+                "at night, lots of luggage"
+              ],
+              [
+                "มอเตอร์ไซค์รับจ้าง",
+                "*maw-tôoe-sai ráp-jâang*",
+                "motorcycle taxi",
+                "short distances, traffic jams"
+              ],
+              [
+                "รถเมล์",
+                "*rót-mee*",
+                "city bus",
+                "cheap, slow"
+              ],
+              [
+                "เรือ",
+                "*ruuea*",
+                "river/canal boat",
+                "fast at rush hour"
+              ],
+              [
+                "ตุ๊กตุ๊ก",
+                "*túk-túk*",
+                "tuk-tuk (motorized rickshaw)",
+                "sightseeing; must bargain"
+              ],
+              [
+                "สองแถว",
+                "*sǎawng-thǎaeo*",
+                "pickup truck with two benches",
+                "small towns, outside Bangkok"
+              ]
+            ]
+          },
+          "after": [
+            "**มอเตอร์ไซค์รับจ้าง** — the drivers wear orange vests and wait at the mouth of side streets. Literally \"motorcycle for hire\". For short distances in Bangkok it's almost always the fastest option, usually 20-40 baht.",
+            "⚠️ **A ตุ๊กตุ๊ก is almost always more expensive than a taxi** and has no meter. It's great fun to try once, but it's not an everyday way to travel. Bargain first, and agree on the price before you get in."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Asking people on the street for directions",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "Thai",
+            "Pronunciation",
+            "Meaning"
+          ],
+          "rows": [
+            [
+              "ขอโทษครับ/ค่ะ",
+              "*khǎaw-thôot*",
+              "excuse me (a must as an opener)"
+            ],
+            [
+              "…อยู่ที่ไหน",
+              "*…yùu thîi nǎi*",
+              "where is …?"
+            ],
+            [
+              "ไป…ยังไง",
+              "*pai … yang-ngai*",
+              "how do I get to …?"
+            ],
+            [
+              "ไกลไหม",
+              "*klai mǎi*",
+              "is it far?"
+            ],
+            [
+              "เดินไปได้ไหม",
+              "*dooen pai dâai mǎi*",
+              "can I walk there?"
+            ],
+            [
+              "ใช้เวลากี่นาที",
+              "*chái wee-laa kìi naa-thii*",
+              "how many minutes does it take?"
+            ],
+            [
+              "ทางนี้ใช่ไหม",
+              "*thaang níi châi mǎi*",
+              "is it this way?"
+            ],
+            [
+              "หลงทาง",
+              "*lǒng thaang*",
+              "lost"
+            ],
+            [
+              "ห้องน้ำอยู่ไหน",
+              "*hâwng-náam yùu nǎi*",
+              "where's the restroom?"
+            ],
+            [
+              "สถานีต่อไป",
+              "*sà-thǎa-nii tàw-pai*",
+              "the next station"
+            ]
+          ]
+        },
+        {
+          "type": "kotak",
+          "title": "Two things that make asking for directions work better",
+          "items": [
+            "**Show the name in writing, don't just say it.** Thai place names depend heavily on tone, and one wrong tone can make a name completely unrecognizable. Showing a phone screen with the name in Thai script solves this in a second.",
+            "⚠️ **Be wary of overly confident answers.** Thai culture is very reluctant to disappoint someone asking for help, so some people would rather point in any direction than say \"I don't know\". If the answer sounds hesitant, ask a second person — that's not rude, it's sensible."
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Places people often look for",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "Thai",
+            "Pronunciation",
+            "English"
+          ],
+          "rows": [
+            [
+              "สถานี",
+              "*sà-thǎa-nii*",
+              "station"
+            ],
+            [
+              "สนามบิน",
+              "*sà-nǎam-bin*",
+              "airport"
+            ],
+            [
+              "โรงพยาบาล",
+              "*roong-phá-yaa-baan*",
+              "hospital"
+            ],
+            [
+              "โรงแรม",
+              "*roong-raaem*",
+              "hotel"
+            ],
+            [
+              "ธนาคาร",
+              "*thá-naa-khaan*",
+              "bank"
+            ],
+            [
+              "ตู้เอทีเอ็ม",
+              "*tûu ee-thii-em*",
+              "ATM"
+            ],
+            [
+              "ร้านสะดวกซื้อ",
+              "*ráan sà-dùak-súue*",
+              "convenience store"
+            ],
+            [
+              "ตลาด",
+              "*tà-làat*",
+              "market"
+            ],
+            [
+              "วัด",
+              "*wát*",
+              "temple"
+            ],
+            [
+              "มัสยิด",
+              "*mát-sà-yít*",
+              "mosque"
+            ],
+            [
+              "ห้องน้ำ",
+              "*hâwng-náam*",
+              "restroom"
+            ],
+            [
+              "ท่าเรือ",
+              "*thâa-ruuea*",
+              "pier"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "Notice the pattern **โรง roong** in front of a word: it means \"a large building for…\". *โรงเรียน roong-rian* (school — building for studying), *โรงพยาบาล* (hospital — building for nursing), *โรงแรม* (hotel), *โรงหนัง roong-nǎng* (movie theater), *โรงงาน roong-ngaan* (factory). Just like *นัก-* and *ข้าง-*, one pattern unlocks many words at once."
+        },
+        {
+          "type": "kotak",
+          "title": "If you're really lost",
+          "items": [
+            "**ผม/ฉันหลงทางครับ/ค่ะ** *lǒng thaang* — I'm lost. This sentence almost always makes people stop and help.",
+            "**ช่วยหน่อยได้ไหมครับ/คะ** *chûai nàwy dâai mǎi* — could you help me for a moment?",
+            "**พาไปหน่อยได้ไหมครับ/คะ** *phaa pai nàwy dâai mǎi* — could you take me there? It's a big ask, but in Thailand it's granted surprisingly often."
+          ]
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "th": "เลี้ยว",
+      "baca": "líao",
+      "en": "to turn"
+    },
+    {
+      "th": "ซ้าย",
+      "baca": "sáai",
+      "en": "left"
+    },
+    {
+      "th": "ขวา",
+      "baca": "khwǎa",
+      "en": "right"
+    },
+    {
+      "th": "ตรงไป",
+      "baca": "trong pai",
+      "en": "straight ahead"
+    },
+    {
+      "th": "จอด",
+      "baca": "jàwt",
+      "en": "to stop, park (a vehicle)"
+    },
+    {
+      "th": "หยุด",
+      "baca": "yùt",
+      "en": "to stop"
+    },
+    {
+      "th": "ขึ้น",
+      "baca": "khûen",
+      "en": "to get on, go up"
+    },
+    {
+      "th": "ลง",
+      "baca": "long",
+      "en": "to get off, go down"
+    },
+    {
+      "th": "ข้าม",
+      "baca": "khâam",
+      "en": "to cross"
+    },
+    {
+      "th": "ทาง",
+      "baca": "thaang",
+      "en": "way, route"
+    },
+    {
+      "th": "หลงทาง",
+      "baca": "lǒng thaang",
+      "en": "to be lost"
+    },
+    {
+      "th": "แผนที่",
+      "baca": "phǎaen-thîi",
+      "en": "map"
+    },
+    {
+      "th": "ไฟแดง",
+      "baca": "fai-daaeng",
+      "en": "traffic light (red light)"
+    },
+    {
+      "th": "สะพาน",
+      "baca": "sà-phaan",
+      "en": "bridge"
+    },
+    {
+      "th": "หัวมุม",
+      "baca": "hǔa-mum",
+      "en": "corner"
+    },
+    {
+      "th": "ตรงข้าม",
+      "baca": "trong-khâam",
+      "en": "opposite, across from"
+    },
+    {
+      "th": "มิเตอร์",
+      "baca": "mí-tôee",
+      "en": "taxi meter"
+    },
+    {
+      "th": "แท็กซี่",
+      "baca": "tháek-sîi",
+      "en": "taxi"
+    },
+    {
+      "th": "รถไฟฟ้า",
+      "baca": "rót-fai-fáa",
+      "en": "Skytrain (BTS)"
+    },
+    {
+      "th": "รถเมล์",
+      "baca": "rót-mee",
+      "en": "city bus"
+    },
+    {
+      "th": "เรือ",
+      "baca": "ruuea",
+      "en": "boat"
+    },
+    {
+      "th": "มอเตอร์ไซค์",
+      "baca": "maw-tôoe-sai",
+      "en": "motorcycle"
+    },
+    {
+      "th": "สถานี",
+      "baca": "sà-thǎa-nii",
+      "en": "station"
+    },
+    {
+      "th": "สนามบิน",
+      "baca": "sà-nǎam-bin",
+      "en": "airport"
+    },
+    {
+      "th": "โรงแรม",
+      "baca": "roong-raaem",
+      "en": "hotel"
+    },
+    {
+      "th": "โรงพยาบาล",
+      "baca": "roong-phá-yaa-baan",
+      "en": "hospital"
+    },
+    {
+      "th": "ห้องน้ำ",
+      "baca": "hâwng-náam",
+      "en": "restroom, bathroom"
+    },
+    {
+      "th": "วัด",
+      "baca": "wát",
+      "en": "temple"
+    },
+    {
+      "th": "แน่ใจ",
+      "baca": "nâae-jai",
+      "en": "sure, certain"
+    },
+    {
+      "th": "ช่วย",
+      "baca": "chûai",
+      "en": "to help"
+    },
+    {
+      "th": "พา",
+      "baca": "phaa",
+      "en": "to take, lead (a person)"
+    },
+    {
+      "th": "ใช้",
+      "baca": "chái",
+      "en": "to use"
+    },
+    {
+      "th": "ใช่ไหม",
+      "baca": "châi mǎi",
+      "en": "right? (confirming)"
+    }
+  ],
+  "exercises": [
+    {
+      "prompt": "Fill in the blanks.",
+      "items": [
+        "\"Go straight\" → ____ไป",
+        "\"Turn left\" → เลี้ยว____",
+        "\"Stop here\" → ____ตรงนี้ครับ",
+        "\"With the meter, please\" → กด____ด้วยนะครับ",
+        "\"We're here\" → ____แล้วครับ",
+        "\"I'm lost\" → ผม____ครับ"
+      ]
+    },
+    {
+      "prompt": "Match each form of transportation to its description: write the Thai name.",
+      "items": [
+        "the elevated train in Bangkok = ____",
+        "motorcycle taxi with an orange vest = ____",
+        "Thai motorized rickshaw = ____",
+        "river boat = ____",
+        "city bus = ____"
+      ]
+    },
+    {
+      "prompt": "Put the words in the right order.",
+      "items": [
+        "ครับ / ไหม / วัดโพธิ์ / ไป",
+        "ครับ / ด้วยนะ / กด / มิเตอร์",
+        "คะ / อยู่ที่ไหน / ห้องน้ำ",
+        "ครับ / กี่นาที / ใช้เวลา",
+        "ครับ / ได้ / ตรงนี้ / จอด"
+      ]
+    },
+    {
+      "prompt": "Translate into Thai. Imagine you're a woman.",
+      "items": [
+        "Excuse me, where's the station?",
+        "Is it far?",
+        "Can I walk there?",
+        "How do I get to the airport?",
+        "Go straight and then turn right.",
+        "Stop right here, thank you."
+      ]
+    }
+  ],
+  "answers": [
+    "ตรง — ซ้าย — จอด — มิเตอร์ — ถึง — หลงทาง",
+    "รถไฟฟ้า / บีทีเอส — มอเตอร์ไซค์รับจ้าง — ตุ๊กตุ๊ก — เรือ — รถเมล์",
+    "ไปวัดโพธิ์ไหมครับ — กดมิเตอร์ด้วยนะครับ — ห้องน้ำอยู่ที่ไหนคะ — ใช้เวลากี่นาทีครับ — จอดตรงนี้ได้ครับ",
+    "ขอโทษค่ะ สถานีอยู่ที่ไหนคะ — ไกลไหมคะ — เดินไปได้ไหมคะ — ไปสนามบินยังไงคะ — ตรงไปแล้วเลี้ยวขวาค่ะ — จอดตรงนี้ค่ะ ขอบคุณค่ะ"
+  ],
+  "wave": "Review Unit 7: cover the Thai, then say ten different times across the day in the Thai system — from ตีห้า to ห้าทุ่ม."
+}

@@ -1,0 +1,647 @@
+{
+  "title": "Finding a place to live",
+  "title_target": "หาที่อยู่ — Hǎa thîi-yùu",
+  "goal": "Ask about rent, inspect a room, name the things in a home, and place objects precisely with prepositions — while understanding rent figures that are often misheard.",
+  "bekal": [
+    "asking about monthly rent and extra charges",
+    "naming rooms and household items",
+    "placing objects with บน ใต้ ใน ข้าง ระหว่าง",
+    "describing size and condition: กว้าง แคบ สว่าง มืด",
+    "reporting a breakdown to the building manager"
+  ],
+  "dialogs": [
+    {
+      "title": "บทสนทนา — Viewing a room in a ซอย near the BTS",
+      "intro": "Budi is looking for a place to live. Pay attention to the rent figure — it uses *หมื่น*, a unit English doesn't have and the one newcomers most often mishear.",
+      "lines": [
+        {
+          "speaker": "บูดี:",
+          "text": "[สวัสดี|Sà-wàt-dii][ครับ|khráp] [มี|Mii][ห้อง|hâwng][ว่าง|wâang][ไหม|mǎi][ครับ|khráp]",
+          "id": "Good afternoon. Do you have a room available?",
+          "literal": "well-being — (polite). have — room — vacant — (question) — (polite)?"
+        },
+        {
+          "speaker": "เจ้าของ:",
+          "text": "[มี|Mii][ค่ะ|khâ] [ชั้น|Chán][สี่|sìi][ห้อง|hâwng][หนึ่ง|nùeng][ค่ะ|khâ] [ขึ้น|Khûen][ไป|pai][ดู|duu][ก่อน|kàwn][ไหม|mǎi][คะ|khá]",
+          "id": "Yes. One room on the fourth floor. Would you like to go up and see it first?",
+          "literal": "have — (polite). floor — four — room — one — (polite). go-up — go — see — first — (question) — (polite)?"
+        },
+        {
+          "speaker": "บูดี:",
+          "text": "[ครับ|Khráp] [ค่าเช่า|Khâa-châo][เดือน|duuean][ละ|lá][เท่าไหร่|thâo-rài][ครับ|khráp]",
+          "id": "Yes. How much is the rent per month?",
+          "literal": "(polite). rent — month — per — how-much — (polite)?"
+        },
+        {
+          "speaker": "เจ้าของ:",
+          "text": "[หนึ่ง|Nùeng][หมื่น|mùuen][สอง|sǎawng][พัน|phan][ค่ะ|khâ] [ยัง|Yang][ไม่|mâi][รวม|ruam][ค่าน้ำ|khâa-náam][ค่าไฟ|khâa-fai][ค่ะ|khâ]",
+          "id": "Twelve thousand. Water and electricity not included.",
+          "literal": "one — ten-thousand — two — thousand — (polite). still — not — include — water-fee — power-fee — (polite)."
+        },
+        {
+          "speaker": "บูดี:",
+          "text": "[ต้อง|Tâwng][วาง|waang][มัดจำ|mát-jam][ไหม|mǎi][ครับ|khráp]",
+          "id": "Do I have to pay a deposit?",
+          "literal": "must — put-down — deposit — (question) — (polite)?"
+        },
+        {
+          "speaker": "เจ้าของ:",
+          "text": "[ต้อง|Tâwng][ค่ะ|khâ] [สอง|Sǎawng][เดือน|duuean][ค่ะ|khâ] [สัญญา|Sǎn-yaa][หนึ่ง|nùeng][ปี|pii][ค่ะ|khâ]",
+          "id": "Yes. Two months. The contract is one year.",
+          "literal": "must — (polite). two — month — (polite). contract — one — year — (polite)."
+        },
+        {
+          "speaker": "บูดี:",
+          "text": "[ห้อง|Hâwng][กว้าง|kwâang][ดี|dii][ครับ|khráp] [มี|Mii][แอร์|aae][ด้วย|dûai][ครับ|khráp] [เครื่องซักผ้า|Khrûeang-sák-phâa][มี|mii][ไหม|mǎi][ครับ|khráp]",
+          "id": "The room's nice and spacious. There's AC too. Is there a washing machine?",
+          "literal": "room — spacious — good — (polite). have — AC — too — (polite). machine-wash-clothes — have — (question) — (polite)?"
+        },
+        {
+          "speaker": "เจ้าของ:",
+          "text": "[ในห้อง|Nai-hâwng][ไม่มี|mâi mii][ค่ะ|khâ] [อยู่|Yùu][ข้างล่าง|khâang-lâang][ค่ะ|khâ] [ข้างๆ|Khâang-khâang][ที่จอดรถ|thîi-jàwt-rót][ค่ะ|khâ]",
+          "id": "Not in the room. It's downstairs, next to the parking lot.",
+          "literal": "in-room — not-have — (polite). located — downstairs — (polite). beside — place-park-car — (polite)."
+        },
+        {
+          "speaker": "บูดี:",
+          "text": "[ใกล้|Klâi][บีทีเอส|BTS][ไหม|mǎi][ครับ|khráp]",
+          "id": "Is it near the BTS?",
+          "literal": "near — BTS — (question) — (polite)?"
+        },
+        {
+          "speaker": "เจ้าของ:",
+          "text": "[เดิน|Dooen][ห้า|hâa][นาที|naa-thii][ค่ะ|khâ] [ตรง|Trong][ปาก|pàak][ซอย|sawy][มี|mii][ร้าน|ráan][สะดวกซื้อ|sà-dùak-súue][ด้วย|dûai][ค่ะ|khâ]",
+          "id": "Five minutes' walk. There's a convenience store at the mouth of the soi too.",
+          "literal": "walk — five — minute — (polite). right-at — mouth — soi — have — shop — convenient-buy — too — (polite)."
+        },
+        {
+          "speaker": "บูดี:",
+          "text": "[ดี|Dii][เลย|loei][ครับ|khráp] [ขอ|Khǎaw][คิด|khít][ดู|duu][ก่อน|kàwn][นะ|ná][ครับ|khráp] [เดี๋ยว|Dǐao][โทร|thoo][มา|maa][ครับ|khráp]",
+          "id": "Great. Let me think about it first. I'll call you.",
+          "literal": "good — really — (polite). ask — think — see — first — okay — (polite). in-a-moment — phone — come — (polite)."
+        }
+      ],
+      "notes": [
+        "**ค่า khâa means \"fee, cost\", and it attaches to the front of anything you pay for.** *ค่าเช่า* (rent), *ค่าน้ำ* (water bill), *ค่าไฟ* (electricity), *ค่าอาหาร* (food costs), *ค่ารถ* (fare), *ค่าเทอม khâa-thoome* (school fees). This one pattern saves you dozens of words.",
+        "⚠️ **หนึ่งหมื่นสองพัน = 12,000, not 1,200.** *หมื่น mùuen* is ten thousand, a unit with no single-word equivalent in English — and it's the number one reason newcomers mishear rent prices. If in doubt, ask for it in writing: *เขียนให้หน่อยได้ไหมครับ*.",
+        "**ซอย sawy is a lane or side street branching off a main road**, and every Bangkok address is built on it: *สุขุมวิท ซอย 11* means lane number 11 off Sukhumvit Road. *ปากซอย pàak sawy* (mouth of the soi) is where the lane meets the main road — and it's the landmark everyone uses to meet up.",
+        "**ข้างล่าง khâang-lâang (below) and ข้างบน khâang-bon (above) are used for building floors** too, not just for where things are. *อยู่ข้างล่าง* = it's downstairs.",
+        "**ข้างๆ khâang-khâang means \"next to\"** — with repetition. Without repetition, *ข้าง* alone more often becomes part of another word (*ข้างใน, ข้างนอก*).",
+        "**มัดจำ mát-jam is a security deposit.** In Bangkok, two months' rent is the usual amount, and by custom (not law) it's returned when you move out if there's no damage. Ask for a written *สัญญา sǎn-yaa* (contract), and keep photos of the room's condition on day one.",
+        "**ขอคิดดูก่อนนะครับ/คะ is the key phrase you already met in unit 12.** Here it's used honestly — to really think it over. But remember, the same sentence often means a gentle no when a Thai person says it to you.",
+        "**โทร thoo is short for โทรศัพท์ thoo-rá-sàp** and means \"to phone\". *เดี๋ยวโทรมา* (I'll call you), *โทรหา thoo hǎa* (to call someone)."
+      ],
+      "grammars": [
+        {
+          "title": "The home and what's in it",
+          "table": {
+            "head": [
+              "Thai",
+              "Pronunciation",
+              "English",
+              "Thai",
+              "Pronunciation",
+              "English"
+            ],
+            "rows": [
+              [
+                "บ้าน",
+                "*bâan*",
+                "house",
+                "เตียง",
+                "*tiang*",
+                "bed"
+              ],
+              [
+                "ห้อง",
+                "*hâwng*",
+                "room",
+                "ตู้เย็น",
+                "*tûu-yen*",
+                "fridge"
+              ],
+              [
+                "ห้องนอน",
+                "*hâwng-nawn*",
+                "bedroom",
+                "แอร์",
+                "*aae*",
+                "AC"
+              ],
+              [
+                "ห้องน้ำ",
+                "*hâwng-náam*",
+                "bathroom",
+                "พัดลม",
+                "*phát-lom*",
+                "electric fan"
+              ],
+              [
+                "ห้องครัว",
+                "*hâwng-khrua*",
+                "kitchen",
+                "โทรทัศน์ / ทีวี",
+                "*thoo-rá-thát / thii-wii*",
+                "television"
+              ],
+              [
+                "ห้องนั่งเล่น",
+                "*hâwng-nâng-lên*",
+                "living room",
+                "เครื่องซักผ้า",
+                "*khrûeang-sák-phâa*",
+                "washing machine"
+              ],
+              [
+                "ระเบียง",
+                "*rá-biang*",
+                "balcony",
+                "ตู้เสื้อผ้า",
+                "*tûu-sûuea-phâa*",
+                "wardrobe"
+              ],
+              [
+                "บันได",
+                "*ban-dai*",
+                "stairs",
+                "ที่จอดรถ",
+                "*thîi-jàwt-rót*",
+                "parking lot"
+              ],
+              [
+                "ลิฟต์",
+                "*líp*",
+                "elevator",
+                "กุญแจ",
+                "*kun-jaae*",
+                "key"
+              ],
+              [
+                "หน้าต่าง",
+                "*nâa-tàang*",
+                "window",
+                "ประตู",
+                "*prà-tuu*",
+                "door"
+              ]
+            ]
+          },
+          "after": [
+            "Notice **ตู้ tûu** (cabinet/box), which forms many words: *ตู้เย็น* (cold cabinet = fridge), *ตู้เสื้อผ้า* (clothes cabinet = wardrobe), *ตู้เอทีเอ็ม* (ATM), *ตู้ไปรษณีย์* (mailbox). It's the same pattern as *โรง-*, *นัก-*, *ค่า-*, and *น้ำ-* that you've already met."
+          ]
+        },
+        {
+          "title": "Placing things: ten prepositions",
+          "table": {
+            "head": [
+              "Thai",
+              "Pronunciation",
+              "Meaning",
+              "Example"
+            ],
+            "rows": [
+              [
+                "บน",
+                "*bon*",
+                "on (touching)",
+                "บนโต๊ะ"
+              ],
+              [
+                "ข้างบน",
+                "*khâang-bon*",
+                "above, upstairs",
+                "อยู่ข้างบน"
+              ],
+              [
+                "ใต้",
+                "*tâai*",
+                "under",
+                "ใต้เตียง"
+              ],
+              [
+                "ข้างล่าง",
+                "*khâang-lâang*",
+                "below, downstairs",
+                "อยู่ข้างล่าง"
+              ],
+              [
+                "ใน",
+                "*nai*",
+                "inside",
+                "ในตู้เย็น"
+              ],
+              [
+                "นอก / ข้างนอก",
+                "*nâwk / khâang-nâwk*",
+                "outside",
+                "รออยู่ข้างนอก"
+              ],
+              [
+                "ข้างๆ",
+                "*khâang-khâang*",
+                "next to",
+                "ข้างๆ ประตู"
+              ],
+              [
+                "ระหว่าง",
+                "*rá-wàang*",
+                "between",
+                "ระหว่างตู้กับเตียง"
+              ],
+              [
+                "ตรงข้าม",
+                "*trong-khâam*",
+                "opposite",
+                "ตรงข้ามร้าน"
+              ],
+              [
+                "ใกล้ / ไกลจาก",
+                "*klâi / klai jàak*",
+                "near / far from",
+                "ใกล้บีทีเอส"
+              ]
+            ]
+          },
+          "after": [
+            "⚠️ **ใกล้ klâi (near) and ไกล klai (far) differ only in tone** — the first is falling, the second mid. This is the pair beginners mix up most, and the meanings are opposite. Practice them side by side: *klâi — klai, klâi — klai*."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Asking about and checking a place",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "Thai",
+            "Pronunciation",
+            "Meaning"
+          ],
+          "rows": [
+            [
+              "มีห้องว่างไหม",
+              "*mii hâwng wâang mǎi*",
+              "do you have a room available?"
+            ],
+            [
+              "ค่าเช่าเดือนละเท่าไหร่",
+              "*khâa-châo duuean lá thâo-rài*",
+              "how much is the rent per month?"
+            ],
+            [
+              "รวมค่าน้ำค่าไฟไหม",
+              "*ruam khâa-náam khâa-fai mǎi*",
+              "are water and electricity included?"
+            ],
+            [
+              "ต้องวางมัดจำเท่าไหร่",
+              "*tâwng waang mát-jam thâo-rài*",
+              "how much is the deposit?"
+            ],
+            [
+              "สัญญากี่ปี",
+              "*sǎn-yaa kìi pii*",
+              "how many years is the contract?"
+            ],
+            [
+              "มีเฟอร์นิเจอร์ไหม",
+              "*mii foee-ní-jôee mǎi*",
+              "is it furnished?"
+            ],
+            [
+              "มีอินเทอร์เน็ตไหม",
+              "*mii in-thoee-nét mǎi*",
+              "is there internet?"
+            ],
+            [
+              "เลี้ยงสัตว์ได้ไหม",
+              "*líang sàt dâai mǎi*",
+              "are pets allowed?"
+            ],
+            [
+              "ขอดูห้องหน่อยได้ไหม",
+              "*khǎaw duu hâwng nàwy dâai mǎi*",
+              "may I see the room?"
+            ],
+            [
+              "เข้าอยู่ได้เมื่อไหร่",
+              "*khâo yùu dâai mûea-rài*",
+              "when can I move in?"
+            ]
+          ]
+        },
+        {
+          "type": "kotak",
+          "title": "Reporting a problem",
+          "items": [
+            "**…เสีย *sǐa*** — broken. *แอร์เสียครับ* (the AC is broken), *น้ำไม่ไหลครับ náam mâi lǎi* (the water isn't running), *ไฟดับ fai dàp* (the power's out).",
+            "**ช่วยมาดูหน่อยได้ไหมครับ/คะ** — could you come and take a look?",
+            "**ซ่อมได้เมื่อไหร่ครับ/คะ *sâwm dâai mûea-rài*** — when can it be fixed?",
+            "⚠️ The word *เสีย sǐa* has several meanings: broken, lost, and also \"to pay\" (*เสียค่าเช่า*). Which one is meant is always clear from the sentence."
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Describing a place",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "Thai",
+            "Pronunciation",
+            "English",
+            "Opposite"
+          ],
+          "rows": [
+            [
+              "กว้าง",
+              "*kwâang*",
+              "spacious",
+              "แคบ *khâaep* — cramped"
+            ],
+            [
+              "ใหญ่",
+              "*yài*",
+              "big",
+              "เล็ก *lék* — small"
+            ],
+            [
+              "สว่าง",
+              "*sà-wàang*",
+              "bright",
+              "มืด *mûuet* — dark"
+            ],
+            [
+              "สะอาด",
+              "*sà-àat*",
+              "clean",
+              "สกปรก *sòk-kà-pròk* — dirty"
+            ],
+            [
+              "เงียบ",
+              "*ngîap*",
+              "quiet, peaceful",
+              "เสียงดัง *sǐang dang* — noisy"
+            ],
+            [
+              "ใหม่",
+              "*mài*",
+              "new",
+              "เก่า *kào* — old"
+            ],
+            [
+              "แพง",
+              "*phaaeng*",
+              "expensive",
+              "ถูก *thùuk* — cheap"
+            ],
+            [
+              "สบาย",
+              "*sà-baai*",
+              "comfortable",
+              "อึดอัด *ùet-àt* — stuffy"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "Thai adjectives come **after** the noun and need no \"is\": *ห้องกว้าง* (the room is spacious), *ห้องไม่สะอาด* (the room isn't clean). To intensify, add *มาก mâak* (very) or *จัง jang* (so) after: *กว้างมาก*, *สะอาดจัง*."
+        },
+        {
+          "type": "kotak",
+          "title": "One thing to check in Bangkok",
+          "items": [
+            "**Ask about the electricity rate per unit.** Many rental buildings set their own rate, well above the state rate, and with the AC on every night the difference can be bigger than a rent increase. The phrase: *ค่าไฟยูนิตละเท่าไหร่ครับ/คะ khâa-fai yuu-nít lá thâo-rài*.",
+            "**Check the real walking distance to the station.** \"Five minutes\" in an ad often means five minutes by motorbike taxi. In Thai listings the honest word is *เดิน dooen* (walk) — if it isn't mentioned, it's most likely not on foot."
+          ]
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "th": "ที่อยู่",
+      "baca": "thîi-yùu",
+      "en": "address, residence"
+    },
+    {
+      "th": "เช่า",
+      "baca": "châo",
+      "en": "to rent"
+    },
+    {
+      "th": "ค่าเช่า",
+      "baca": "khâa-châo",
+      "en": "rent"
+    },
+    {
+      "th": "ค่าน้ำ",
+      "baca": "khâa-náam",
+      "en": "water bill"
+    },
+    {
+      "th": "ค่าไฟ",
+      "baca": "khâa-fai",
+      "en": "electricity bill"
+    },
+    {
+      "th": "มัดจำ",
+      "baca": "mát-jam",
+      "en": "security deposit"
+    },
+    {
+      "th": "สัญญา",
+      "baca": "sǎn-yaa",
+      "en": "contract, agreement"
+    },
+    {
+      "th": "รวม",
+      "baca": "ruam",
+      "en": "to include, to combine"
+    },
+    {
+      "th": "เจ้าของ",
+      "baca": "jâo-khǎawng",
+      "en": "owner"
+    },
+    {
+      "th": "ซอย",
+      "baca": "sawy",
+      "en": "soi, lane"
+    },
+    {
+      "th": "ปากซอย",
+      "baca": "pàak sawy",
+      "en": "mouth of the soi"
+    },
+    {
+      "th": "ห้องนอน",
+      "baca": "hâwng-nawn",
+      "en": "bedroom"
+    },
+    {
+      "th": "ห้องครัว",
+      "baca": "hâwng-khrua",
+      "en": "kitchen"
+    },
+    {
+      "th": "เตียง",
+      "baca": "tiang",
+      "en": "bed"
+    },
+    {
+      "th": "ตู้เย็น",
+      "baca": "tûu-yen",
+      "en": "fridge"
+    },
+    {
+      "th": "แอร์",
+      "baca": "aae",
+      "en": "AC"
+    },
+    {
+      "th": "พัดลม",
+      "baca": "phát-lom",
+      "en": "electric fan"
+    },
+    {
+      "th": "เครื่องซักผ้า",
+      "baca": "khrûeang-sák-phâa",
+      "en": "washing machine"
+    },
+    {
+      "th": "ระเบียง",
+      "baca": "rá-biang",
+      "en": "balcony"
+    },
+    {
+      "th": "บันได",
+      "baca": "ban-dai",
+      "en": "stairs"
+    },
+    {
+      "th": "ระหว่าง",
+      "baca": "rá-wàang",
+      "en": "between"
+    },
+    {
+      "th": "ข้างล่าง",
+      "baca": "khâang-lâang",
+      "en": "below, downstairs"
+    },
+    {
+      "th": "ข้างบน",
+      "baca": "khâang-bon",
+      "en": "above, upstairs"
+    },
+    {
+      "th": "กว้าง",
+      "baca": "kwâang",
+      "en": "spacious, wide"
+    },
+    {
+      "th": "แคบ",
+      "baca": "khâaep",
+      "en": "cramped, narrow"
+    },
+    {
+      "th": "สว่าง",
+      "baca": "sà-wàang",
+      "en": "bright"
+    },
+    {
+      "th": "มืด",
+      "baca": "mûuet",
+      "en": "dark"
+    },
+    {
+      "th": "สะอาด",
+      "baca": "sà-àat",
+      "en": "clean"
+    },
+    {
+      "th": "เงียบ",
+      "baca": "ngîap",
+      "en": "quiet, peaceful"
+    },
+    {
+      "th": "เสีย",
+      "baca": "sǐa",
+      "en": "broken; to pay"
+    },
+    {
+      "th": "ซ่อม",
+      "baca": "sâwm",
+      "en": "to repair"
+    },
+    {
+      "th": "โทร",
+      "baca": "thoo",
+      "en": "to phone"
+    },
+    {
+      "th": "เลี้ยง",
+      "baca": "líang",
+      "en": "to raise (pets); to treat (someone)"
+    },
+    {
+      "th": "หมื่น",
+      "baca": "mùuen",
+      "en": "ten thousand"
+    }
+  ],
+  "exercises": [
+    {
+      "prompt": "Write the number.",
+      "items": [
+        "หนึ่งหมื่นสองพัน = ____",
+        "แปดพันห้าร้อย = ____",
+        "สองหมื่น = ____",
+        "หนึ่งแสน = ____",
+        "หมื่นห้า = ____"
+      ]
+    },
+    {
+      "prompt": "Fill in the blanks.",
+      "items": [
+        "\"Do you have a room available?\" → มีห้อง____ไหมครับ",
+        "\"How much is the rent per month?\" → ____เดือนละเท่าไหร่คะ",
+        "\"Electricity not included\" → ยังไม่____ค่าไฟค่ะ",
+        "\"The AC is broken\" → แอร์____ครับ",
+        "\"Next to the parking lot\" → ____ที่จอดรถค่ะ"
+      ]
+    },
+    {
+      "prompt": "Put the words in the right order.",
+      "items": [
+        "ครับ / มีห้องว่าง / ไหม",
+        "คะ / เท่าไหร่ / ค่าเช่า / เดือนละ",
+        "ครับ / ไหม / มัดจำ / ต้องวาง",
+        "ครับ / ได้ไหม / ขอดูห้อง / หน่อย",
+        "ค่ะ / ห้านาที / เดิน"
+      ]
+    },
+    {
+      "prompt": "Translate into Thai. Imagine you're a man.",
+      "items": [
+        "Do you have a room available?",
+        "How much is the rent per month?",
+        "Are water and electricity included?",
+        "How much is the deposit?",
+        "Is it near the BTS?",
+        "Let me think about it first; I'll call you."
+      ]
+    }
+  ],
+  "answers": [
+    "12,000 — 8,500 — 20,000 — 100,000 — 15,000",
+    "ว่าง — ค่าเช่า — รวม — เสีย — ข้างๆ",
+    "มีห้องว่างไหมครับ — ค่าเช่าเดือนละเท่าไหร่คะ — ต้องวางมัดจำไหมครับ — ขอดูห้องหน่อยได้ไหมครับ — เดินห้านาทีค่ะ",
+    "มีห้องว่างไหมครับ — ค่าเช่าเดือนละเท่าไหร่ครับ — รวมค่าน้ำค่าไฟไหมครับ — ต้องวางมัดจำเท่าไหร่ครับ — ใกล้บีทีเอสไหมครับ — ขอคิดดูก่อนนะครับ เดี๋ยวโทรมาครับ"
+  ],
+  "wave": "Review unit 11: cover the Thai, then describe one thing you've done, one you're doing, and one you will do — with exactly the same verb."
+}

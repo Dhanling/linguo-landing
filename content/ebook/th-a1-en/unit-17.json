@@ -1,0 +1,525 @@
+{
+  "title": "Calling, messaging, rescheduling",
+  "title_target": "โทรหา นัดใหม่ — Thoo hǎa, nát mài",
+  "goal": "Make and answer phone calls, leave a message, set up an appointment and change it — including how to apologize for being late without making the other person feel slighted.",
+  "bekal": [
+    "opening and closing a phone call",
+    "asking for someone and leaving a message",
+    "setting up an appointment: day, time, place",
+    "postponing or canceling politely",
+    "writing natural short messages on LINE"
+  ],
+  "dialogs": [
+    {
+      "title": "บทสนทนา — Calling the office, then rescheduling",
+      "intro": "Budi calls Nok's office. Notice that Thai phone calls have an opening and a closing that are almost fixed — memorize both and everything in between gets much easier.",
+      "lines": [
+        {
+          "speaker": "พนักงาน:",
+          "text": "[สวัสดี|Sà-wàt-dii][ค่ะ|khâ] [บริษัท|Baw-rí-sàt][ลิงกัว|Ling-kua][ค่ะ|khâ]",
+          "id": "Good afternoon, Lingua Company.",
+          "literal": "well-being — (polite). company — Lingua — (polite)."
+        },
+        {
+          "speaker": "บูดี:",
+          "text": "[สวัสดี|Sà-wàt-dii][ครับ|khráp] [ขอ|Khǎaw][สาย|sǎai][คุณ|khun][นก|Nók][หน่อย|nàwy][ครับ|khráp]",
+          "id": "Good afternoon. May I speak to Khun Nok, please?",
+          "literal": "well-being — (polite). ask-for — line — Khun — Nok — a-little — (polite)."
+        },
+        {
+          "speaker": "พนักงาน:",
+          "text": "[รอ|Raw][สักครู่|sàk-khrûu][นะ|ná][คะ|khá] … [ตอนนี้|Tawn-níi][คุณ|khun][นก|Nók][ไม่|mâi][อยู่|yùu][ค่ะ|khâ] [ติด|Tìt][ประชุม|prà-chum][ค่ะ|khâ]",
+          "id": "One moment, please… Khun Nok isn't available right now. She's in a meeting.",
+          "literal": "wait — a-moment — okay — (polite) … right-now — Khun — Nok — not — present — (polite). stuck — meeting — (polite)."
+        },
+        {
+          "speaker": "บูดี:",
+          "text": "[ฝาก|Fàak][ข้อความ|khâw-khwaam][ได้|dâai][ไหม|mǎi][ครับ|khráp]",
+          "id": "Could I leave a message?",
+          "literal": "leave — message — can — (question) — (polite)?"
+        },
+        {
+          "speaker": "พนักงาน:",
+          "text": "[ได้|Dâai][ค่ะ|khâ] [ขอ|Khǎaw][ทราบ|sâap][ชื่อ|chûue][ด้วย|dûai][ค่ะ|khâ]",
+          "id": "Of course. May I have your name?",
+          "literal": "can — (polite). ask — know — name — also — (polite)."
+        },
+        {
+          "speaker": "บูดี:",
+          "text": "[ผม|Phǒm][บูดี|Buu-dii][ครับ|khráp] [ช่วย|Chûai][บอก|bàwk][ว่า|wâa][พรุ่งนี้|phrûng-níi][ผม|phǒm][ไป|pai][ไม่|mâi][ได้|dâai][ครับ|khráp]",
+          "id": "I'm Budi. Please tell her I can't come tomorrow.",
+          "literal": "I — Budi — (polite). help — tell — that — tomorrow — I — go — not — can — (polite)."
+        },
+        {
+          "speaker": "พนักงาน:",
+          "text": "[ค่ะ|Khâ] [แล้ว|Láaeo][จะ|jà][นัด|nát][ใหม่|mài][เมื่อไหร่|mûea-rài][คะ|khá]",
+          "id": "All right. And when would you like to reschedule?",
+          "literal": "(polite). then — will — appoint — new — when — (polite)?"
+        },
+        {
+          "speaker": "บูดี:",
+          "text": "[วัน|Wan][ศุกร์|sùk][บ่าย|bàai][สอง|sǎawng][โมง|moong][ได้|dâai][ไหม|mǎi][ครับ|khráp] [ถ้า|Thâa][ไม่|mâi][สะดวก|sà-dùak][รบกวน|róp-kuan][โทร|thoo][กลับ|klàp][ครับ|khráp]",
+          "id": "Would Friday at 2 p.m. work? If that's not convenient, could she call me back?",
+          "literal": "day — Friday — afternoon — two — o'clock — can — (question) — (polite)? if — not — convenient — trouble — phone — back — (polite)."
+        },
+        {
+          "speaker": "พนักงาน:",
+          "text": "[รับทราบ|Ráp-sâap][ค่ะ|khâ] [เดี๋ยว|Dǐao][แจ้ง|jâaeng][ให้|hâi][ค่ะ|khâ]",
+          "id": "Noted. I'll pass it on.",
+          "literal": "receive-know — (polite). in-a-moment — inform — for — (polite)."
+        },
+        {
+          "speaker": "บูดี:",
+          "text": "[ขอบคุณ|Khàwp-khun][มาก|mâak][ครับ|khráp] [สวัสดี|Sà-wàt-dii][ครับ|khráp]",
+          "id": "Thank you very much. Goodbye.",
+          "literal": "thank-you — much — (polite). well-being — (polite)."
+        },
+        {
+          "speaker": "นก:",
+          "text": "[ฮัลโหล|Han-lǒo] [พี่|phîi][บูดี|Buu-dii][คะ|khá] [เพิ่ง|Phôeng][เห็น|hěn][ข้อความ|khâw-khwaam][ค่ะ|khâ] [ศุกร์|Sùk][บ่าย|bàai][สอง|sǎawng][ว่าง|wâang][ค่ะ|khâ]",
+          "id": "Hello, Phi Budi. I just saw your message. I'm free Friday at two.",
+          "literal": "hello — older-sibling — Budi — (polite). just — see — message — (polite). Friday — afternoon — two — free — (polite)."
+        },
+        {
+          "speaker": "บูดี:",
+          "text": "[ขอโทษ|Khǎaw-thôot][ที่|thîi][เลื่อน|lûuean][นะ|ná][ครับ|khráp] [เจอ|Joee][กัน|kan][ที่|thîi][เดิม|dooem][ครับ|khráp]",
+          "id": "Sorry for postponing. See you at the usual place.",
+          "literal": "sorry — that — shift — okay — (polite). meet — together — at — original — (polite)."
+        }
+      ],
+      "notes": [
+        "**ขอสาย… หน่อยครับ/ค่ะ is the standard phrase for \"may I speak to…\".** The word *สาย sǎai* here means \"phone line\" — yet another meaning, different from the *สาย* that means \"late\" (unit 7).",
+        "**ติดประชุม tìt prà-chum means \"in a meeting, can't be disturbed\".** The word *ติด tìt* (stuck) forms many excuses: *ติดธุระ* (tied up with something), *ติดงาน* (busy at work), *ติดประชุม*, and of course *รถติด* (traffic jam) from unit 7.",
+        "**ฝากข้อความ fàak khâw-khwaam = leave a message.** The word *ฝาก fàak* (entrust) is very handy: *ฝากบอก…หน่อย* (please pass on to…), *ฝากซื้อ…หน่อย* (could you pick up … for me). The last one is something Thai people say every day to a coworker heading out for lunch.",
+        "**ทราบ sâap is the respectful form of รู้ rúu (know)**, and you'll hear it on office phones, at airports, and in announcements. You don't need to use it yourself; just recognize it. The form *รับทราบ ráp-sâap* means \"noted, understood\" — the standard reply at work.",
+        "**นัด nát means \"appointment\", both as a noun and a verb.** *นัดใหม่* (reschedule), *มีนัด* (have an appointment), *ผิดนัด phìt nát* (miss an appointment). ⚠️ Don't confuse it with *สัญญา sǎn-yaa*, which means a promise or a contract.",
+        "**เลื่อน lûuean means \"to shift, to postpone\".** *ขอเลื่อนนัดได้ไหม* (could we move the appointment?). The firmer form: *ยกเลิก yók-lôoek* (cancel). In Thailand, postponing is much preferred to canceling — it keeps the relationship open.",
+        "**ขอโทษที่… khǎaw-thôot thîi … means \"sorry for…\".** *ขอโทษที่เลื่อน* (sorry for postponing), *ขอโทษที่มาสาย* (sorry I'm late), *ขอโทษที่โทรมาดึก* (sorry for calling so late).",
+        "**ที่เดิม thîi dooem = \"the usual place\".** The word *เดิม dooem* means \"original, as before\": *ราคาเดิม* (the original price), *ที่เดิม*, *เวลาเดิม* (the usual time)."
+      ],
+      "grammars": [
+        {
+          "title": "Phone calls: the framework",
+          "table": {
+            "head": [
+              "Step",
+              "Thai",
+              "Pronunciation"
+            ],
+            "rows": [
+              [
+                "answering",
+                "ฮัลโหล / สวัสดีครับ-ค่ะ",
+                "*han-lǒo / sà-wàt-dii*"
+              ],
+              [
+                "introducing yourself",
+                "ผม/ดิฉัน…พูดครับ/ค่ะ",
+                "*phǒm/dì-chǎn … phûut*"
+              ],
+              [
+                "asking for someone",
+                "ขอสาย…หน่อยครับ/ค่ะ",
+                "*khǎaw sǎai … nàwy*"
+              ],
+              [
+                "holding",
+                "รอสักครู่นะครับ/คะ",
+                "*raw sàk-khrûu ná*"
+              ],
+              [
+                "the person isn't in",
+                "…ไม่อยู่ครับ/ค่ะ",
+                "*… mâi yùu*"
+              ],
+              [
+                "leaving a message",
+                "ฝากข้อความได้ไหมครับ/คะ",
+                "*fàak khâw-khwaam dâai mǎi*"
+              ],
+              [
+                "asking for a call back",
+                "รบกวนโทรกลับด้วยครับ/ค่ะ",
+                "*róp-kuan thoo klàp dûai*"
+              ],
+              [
+                "wrong number",
+                "โทรผิดครับ/ค่ะ",
+                "*thoo phìt*"
+              ],
+              [
+                "the line is breaking up",
+                "สัญญาณไม่ดีครับ/ค่ะ",
+                "*sǎn-yaan mâi dii*"
+              ],
+              [
+                "hanging up",
+                "ขอบคุณครับ/ค่ะ สวัสดีครับ/ค่ะ",
+                "*khàwp-khun … sà-wàt-dii*"
+              ]
+            ]
+          },
+          "after": [
+            "⚠️ **Ending a call in Thailand almost always uses สวัสดีครับ/ค่ะ, not \"bye\".** Hanging up without it feels like slamming a door — even among close friends there's usually a *บ๊ายบายค่ะ báai-baai khâ* or *แล้วเจอกันนะ*."
+          ]
+        },
+        {
+          "title": "Making, moving, and canceling appointments",
+          "table": {
+            "head": [
+              "Thai",
+              "Pronunciation",
+              "Meaning"
+            ],
+            "rows": [
+              [
+                "ว่างวันไหน",
+                "*wâang wan nǎi*",
+                "what day are you free?"
+              ],
+              [
+                "นัดวันศุกร์ได้ไหม",
+                "*nát wan sùk dâai mǎi*",
+                "can we meet on Friday?"
+              ],
+              [
+                "กี่โมงดี",
+                "*kìi moong dii*",
+                "what time works best?"
+              ],
+              [
+                "เจอกันที่ไหนดี",
+                "*joee kan thîi nǎi dii*",
+                "where's good to meet?"
+              ],
+              [
+                "ที่เดิมนะ",
+                "*thîi dooem ná*",
+                "at the usual place, then"
+              ],
+              [
+                "ขอเลื่อนได้ไหม",
+                "*khǎaw lûuean dâai mǎi*",
+                "could we move it?"
+              ],
+              [
+                "ขอเลื่อนเป็นวันจันทร์",
+                "*khǎaw lûuean pen wan jan*",
+                "let's move it to Monday"
+              ],
+              [
+                "ขอยกเลิกนะ",
+                "*khǎaw yók-lôoek ná*",
+                "I'll have to cancel"
+              ],
+              [
+                "ขอโทษที่มาสาย",
+                "*khǎaw-thôot thîi maa sǎai*",
+                "sorry I'm late"
+              ],
+              [
+                "จะสายประมาณสิบนาที",
+                "*jà sǎai prà-maan sìp naa-thii*",
+                "I'll be about ten minutes late"
+              ],
+              [
+                "ถึงแล้วบอกด้วยนะ",
+                "*thǔeng láaeo bàwk dûai ná*",
+                "let me know when you arrive"
+              ]
+            ]
+          },
+          "after": [
+            "**The sentence *จะสายประมาณสิบนาที* is what's appreciated most** when you're running late. Letting people know in advance matters far more than apologizing after you arrive — and that holds in any office."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "LINE: how Thai people really message",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "In Thailand, everyday messaging happens almost entirely on **LINE**, not WhatsApp or SMS. Swapping contacts means swapping LINE, and the question goes: *ขอไลน์ได้ไหมครับ/คะ khǎaw lai dâai mǎi* — could I get your LINE?"
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Thai",
+            "Pronunciation",
+            "Meaning"
+          ],
+          "rows": [
+            [
+              "ขอไลน์ได้ไหม",
+              "*khǎaw lai dâai mǎi*",
+              "could I get your LINE?"
+            ],
+            [
+              "แอดไลน์มานะ",
+              "*àaet lai maa ná*",
+              "add me on LINE"
+            ],
+            [
+              "ทักมาได้เลย",
+              "*thák maa dâai loei*",
+              "just message me directly"
+            ],
+            [
+              "ส่งมาให้หน่อย",
+              "*sòng maa hâi nàwy*",
+              "please send it"
+            ],
+            [
+              "อ่านแล้วนะ",
+              "*àan láaeo ná*",
+              "I've read it"
+            ],
+            [
+              "เดี๋ยวตอบนะ",
+              "*dǐao tàwp ná*",
+              "I'll reply later"
+            ],
+            [
+              "โอเคค่ะ / ได้ครับ",
+              "*oo-khee / dâai*",
+              "okay"
+            ],
+            [
+              "555",
+              "*hâa-hâa-hâa*",
+              "hahaha"
+            ]
+          ]
+        },
+        {
+          "type": "kotak",
+          "title": "Why 555 means laughing",
+          "items": [
+            "The number **5** in Thai is read *ห้า hâa*. So **555** reads *hâa-hâa-hâa* — and that's how Thai people write laughter, just like \"hahaha\" or \"lol\".",
+            "The longer the string, the funnier: *5555555*. If you get a message full of fives, you've made someone laugh — it's not a phone number.",
+            "Other casual spellings you'll see: *ค่า* and *คับ* (cutesy forms of *ค่ะ* and *ครับ*), *จ้า jâa* (a warm \"yes\"), and *นะคะ/นะครับ* written out in full as an extra touch of politeness."
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Phone and messaging etiquette",
+      "blocks": [
+        {
+          "type": "list",
+          "items": [
+            "**Don't call out of the blue about something you could write.** In Thailand, an unannounced call feels somewhat urgent; a LINE message is preferred for routine matters.",
+            "**If you must call outside working hours**, open with *ขอโทษที่โทรมาดึกนะครับ/คะ* (sorry for calling so late) — that opening line takes care of all the politeness in one go.",
+            "**Reply to messages even if you can't answer yet.** *รับทราบครับ/ค่ะ* (noted) or *เดี๋ยวตอบนะครับ/คะ* (I'll get back to you) is enough — staying silent too long comes across as rude.",
+            "**If you're the one at fault**, don't explain at length. *ขอโทษครับ/ค่ะ* followed by a clear fix is valued far more than a detailed excuse."
+          ]
+        },
+        {
+          "type": "kotak",
+          "title": "Asking favors by message",
+          "items": [
+            "**ฝากซื้อ…หน่อยได้ไหมครับ/คะ** — could you pick up … for me?",
+            "**ช่วยส่งไฟล์ให้หน่อยได้ไหมครับ/คะ** *chûai sòng fai hâi nàwy dâai mǎi* — could you send me the file?",
+            "**รบกวนด้วยนะครับ/คะ** — sorry for the trouble. Added to the end of any request, this makes the whole message sound much softer."
+          ]
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "th": "โทร",
+      "baca": "thoo",
+      "en": "to phone"
+    },
+    {
+      "th": "โทรกลับ",
+      "baca": "thoo klàp",
+      "en": "to call back"
+    },
+    {
+      "th": "สาย",
+      "baca": "sǎai",
+      "en": "phone line"
+    },
+    {
+      "th": "ฮัลโหล",
+      "baca": "han-lǒo",
+      "en": "hello (on the phone)"
+    },
+    {
+      "th": "สักครู่",
+      "baca": "sàk-khrûu",
+      "en": "a moment"
+    },
+    {
+      "th": "ฝาก",
+      "baca": "fàak",
+      "en": "to entrust, to leave (with someone)"
+    },
+    {
+      "th": "ข้อความ",
+      "baca": "khâw-khwaam",
+      "en": "message"
+    },
+    {
+      "th": "ทราบ",
+      "baca": "sâap",
+      "en": "to know (respectful)"
+    },
+    {
+      "th": "รับทราบ",
+      "baca": "ráp-sâap",
+      "en": "noted, understood"
+    },
+    {
+      "th": "แจ้ง",
+      "baca": "jâaeng",
+      "en": "to inform"
+    },
+    {
+      "th": "นัด",
+      "baca": "nát",
+      "en": "appointment"
+    },
+    {
+      "th": "เลื่อน",
+      "baca": "lûuean",
+      "en": "to shift, to postpone"
+    },
+    {
+      "th": "ยกเลิก",
+      "baca": "yók-lôoek",
+      "en": "to cancel"
+    },
+    {
+      "th": "ติด",
+      "baca": "tìt",
+      "en": "stuck, tied up"
+    },
+    {
+      "th": "เดิม",
+      "baca": "dooem",
+      "en": "original, the usual"
+    },
+    {
+      "th": "บริษัท",
+      "baca": "baw-rí-sàt",
+      "en": "company"
+    },
+    {
+      "th": "ผิด",
+      "baca": "phìt",
+      "en": "wrong"
+    },
+    {
+      "th": "สัญญาณ",
+      "baca": "sǎn-yaan",
+      "en": "signal"
+    },
+    {
+      "th": "ตอบ",
+      "baca": "tàwp",
+      "en": "to answer, to reply"
+    },
+    {
+      "th": "ทัก",
+      "baca": "thák",
+      "en": "to reach out first"
+    },
+    {
+      "th": "ส่ง",
+      "baca": "sòng",
+      "en": "to send"
+    },
+    {
+      "th": "ไลน์",
+      "baca": "lai",
+      "en": "LINE (messaging app)"
+    },
+    {
+      "th": "เบอร์",
+      "baca": "booe",
+      "en": "(phone) number"
+    },
+    {
+      "th": "ว่าง",
+      "baca": "wâang",
+      "en": "free, available"
+    },
+    {
+      "th": "โอเค",
+      "baca": "oo-khee",
+      "en": "okay"
+    },
+    {
+      "th": "ไฟล์",
+      "baca": "fai",
+      "en": "file"
+    },
+    {
+      "th": "ประชุม",
+      "baca": "prà-chum",
+      "en": "meeting"
+    },
+    {
+      "th": "อีเมล",
+      "baca": "ii-meeo",
+      "en": "email"
+    }
+  ],
+  "exercises": [
+    {
+      "prompt": "Fill in the blanks.",
+      "items": [
+        "\"May I speak to Khun Nok?\" → ขอ____คุณนกหน่อยครับ",
+        "\"One moment, please\" → รอ____นะคะ",
+        "\"Could I leave a message?\" → ____ข้อความได้ไหมครับ",
+        "\"Please call back\" → รบกวน____ด้วยครับ",
+        "\"Could we move it?\" → ขอ____ได้ไหมคะ",
+        "\"Sorry I'm late\" → ขอโทษที่____ครับ"
+      ]
+    },
+    {
+      "prompt": "Match each excuse to its meaning: write the Thai word.",
+      "items": [
+        "in a meeting = ____",
+        "tied up with something = ____",
+        "traffic jam = ____",
+        "can't come = ไป____",
+        "wrong number = ____"
+      ]
+    },
+    {
+      "prompt": "Put the words in the right order.",
+      "items": [
+        "ครับ / หน่อย / ขอสาย / คุณนก",
+        "คะ / ไม่อยู่ / ตอนนี้ / คุณนก",
+        "ครับ / ได้ไหม / ฝากข้อความ",
+        "คะ / เมื่อไหร่ / จะนัดใหม่",
+        "ครับ / นะ / ที่เลื่อน / ขอโทษ"
+      ]
+    },
+    {
+      "prompt": "Translate into Thai. Imagine you're a woman.",
+      "items": [
+        "Hello, may I speak to Khun Budi?",
+        "One moment, please.",
+        "He's in a meeting.",
+        "Could I leave a message?",
+        "I can't come tomorrow.",
+        "Would Friday at 2 p.m. work?"
+      ]
+    }
+  ],
+  "answers": [
+    "สาย — สักครู่ — ฝาก — โทรกลับ — เลื่อน — มาสาย",
+    "ติดประชุม — ติดธุระ — รถติด — ไม่ได้ — โทรผิด",
+    "ขอสายคุณนกหน่อยครับ — ตอนนี้คุณนกไม่อยู่ค่ะ — ฝากข้อความได้ไหมครับ — จะนัดใหม่เมื่อไหร่คะ — ขอโทษที่เลื่อนนะครับ",
+    "ฮัลโหล ขอสายคุณบูดีหน่อยค่ะ — รอสักครู่นะคะ — ตอนนี้ติดประชุมค่ะ — ฝากข้อความได้ไหมคะ — พรุ่งนี้ฉันไปไม่ได้ค่ะ — วันศุกร์บ่ายสองโมงได้ไหมคะ"
+  ],
+  "wave": "Review unit 15: cover the Thai, then invite someone to a concert — and turn down the same invitation politely."
+}

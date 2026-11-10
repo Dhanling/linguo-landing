@@ -1,0 +1,568 @@
+{
+  "title": "Two bottles of water: classifiers",
+  "title_target": "น้ำสองขวด — Náam sǎawng khùat",
+  "goal": "Master the part of Thai that trips up almost every Western learner but is simpler than it looks: classifiers — and the \"noun, number, classifier\" order that never changes.",
+  "bekal": [
+    "state quantities of things in the right order",
+    "use the ten most common classifiers",
+    "point to a specific item: เสื้อตัวนี้, คนนั้น",
+    "ask \"how many\" with กี่",
+    "get unstuck when you forget a classifier"
+  ],
+  "dialogs": [
+    {
+      "title": "บทสนทนา — At a convenience store, before catching a train",
+      "intro": "Budi is shopping for a trip. Notice one pattern that repeats six times in this dialogue: the thing first, then the number, and the classifier last. That order never changes.",
+      "lines": [
+        {
+          "speaker": "บูดี:",
+          "text": "[ขอ|Khǎaw][น้ำ|náam][สอง|sǎawng][ขวด|khùat][ครับ|khráp]",
+          "id": "Two bottles of water, please.",
+          "literal": "ask-for — water — two — bottle — (polite)."
+        },
+        {
+          "speaker": "พนักงาน:",
+          "text": "[ขวด|Khùat][ใหญ่|yài][หรือ|rǔue][ขวด|khùat][เล็ก|lék][คะ|khá]",
+          "id": "Big bottles or small?",
+          "literal": "bottle — big — or — bottle — small — (polite)?"
+        },
+        {
+          "speaker": "บูดี:",
+          "text": "[ขวด|Khùat][ใหญ่|yài][ครับ|khráp] [แล้ว|Láaeo][ก็|kâw][ขอ|khǎaw][กาแฟ|kaa-fae][หนึ่ง|nùeng][แก้ว|kâaeo][ด้วย|dûai][ครับ|khráp]",
+          "id": "Big ones. And a cup of coffee too, please.",
+          "literal": "bottle — big — (polite). then — also — ask-for — coffee — one — glass — too — (polite)."
+        },
+        {
+          "speaker": "พนักงาน:",
+          "text": "[ร้อน|Ráwn][หรือ|rǔue][เย็น|yen][คะ|khá]",
+          "id": "Hot or iced?",
+          "literal": "hot — or — cold — (polite)?"
+        },
+        {
+          "speaker": "บูดี:",
+          "text": "[เย็น|Yen][ครับ|khráp] [มี|Mii][ขนมปัง|khà-nǒm-pang][ไหม|mǎi][ครับ|khráp]",
+          "id": "Iced. Do you have any bread?",
+          "literal": "cold — (polite). have — bread — (question) — (polite)?"
+        },
+        {
+          "speaker": "พนักงาน:",
+          "text": "[มี|Mii][ค่ะ|khâ] [อยู่|Yùu][ตรง|trong][นั้น|nán][ค่ะ|khâ]",
+          "id": "Yes. It's over there.",
+          "literal": "have — (polite). be-located — right — there — (polite)."
+        },
+        {
+          "speaker": "บูดี:",
+          "text": "[เอา|Ao][สาม|sǎam][ชิ้น|chín][ครับ|khráp] [แล้ว|Láaeo][ก็|kâw][ขอ|khǎaw][ถุง|thǔng][หนึ่ง|nùeng][ใบ|bai][ด้วย|dûai][ครับ|khráp]",
+          "id": "I'll take three pieces. And a bag too, please.",
+          "literal": "take — three — piece — (polite). then — also — ask-for — bag — one — sheet — too — (polite)."
+        },
+        {
+          "speaker": "พนักงาน:",
+          "text": "[ถุง|Thǔng][ใบ|bai][ละ|lá][สอง|sǎawng][บาท|bàat][นะ|ná][คะ|khá]",
+          "id": "Bags are two baht each, okay?",
+          "literal": "bag — sheet — per — two — baht — okay — (polite)?"
+        },
+        {
+          "speaker": "บูดี:",
+          "text": "[ไม่เป็นไร|Mâi pen rai][ครับ|khráp] [ทั้งหมด|Tháng-mòt][กี่|kìi][บาท|bàat][ครับ|khráp]",
+          "id": "That's fine. How many baht altogether?",
+          "literal": "not-be-anything — (polite). altogether — how-many — baht — (polite)?"
+        },
+        {
+          "speaker": "พนักงาน:",
+          "text": "[แปด|Pàaet][สิบ|sìp][เจ็ด|jèt][บาท|bàat][ค่ะ|khâ] [รับ|Ráp][ถุง|thǔng][กี่|kìi][ใบ|bai][คะ|khá]",
+          "id": "Eighty-seven baht. How many bags would you like?",
+          "literal": "eight — ten — seven — baht — (polite). receive — bag — how-many — sheet — (polite)?"
+        },
+        {
+          "speaker": "บูดี:",
+          "text": "[ใบ|Bai][เดียว|diao][ครับ|khráp] [พอ|Phaw][แล้ว|láaeo][ครับ|khráp]",
+          "id": "Just one. That's enough.",
+          "literal": "sheet — single — (polite). enough — already — (polite)."
+        }
+      ],
+      "notes": [
+        "**The order is always: NOUN — NUMBER — CLASSIFIER.** *น้ำสองขวด* = water two bottle. *เสื้อสามตัว* = shirt three (body). English puts the number first (\"two bottles of water\"); Thai puts the thing first. Once that clicks, the rest follows.",
+        "**When the number is ONE, the order can flip** to **NOUN — CLASSIFIER — หนึ่ง**: *ถุงใบหนึ่ง* sounds more natural than *ถุงหนึ่งใบ*, though both are correct. Shorter still: **NOUN — CLASSIFIER — เดียว** (*diao*, single) means \"just one\": *ใบเดียว* = just one (bag).",
+        "**To point to a specific item, the classifier is required too**: **NOUN — CLASSIFIER — นี้/นั้น**. *เสื้อตัวนี้* = this shirt. *คนนั้น* = that person. ⚠️ This one often gets forgotten: \"this shirt\" isn't *เสื้อนี้* but *เสื้อ**ตัว**นี้*.",
+        "**กี่ kìi asks \"how many\", and it is ALWAYS followed by a classifier**, never on its own: *กี่คน* (how many people), *กี่ใบ* (how many bags/tickets), *กี่บาท* (how many baht). Compare *เท่าไหร่* from Unit 3, which is never followed by a classifier.",
+        "**ขอ khǎaw means \"may I have\" and is softer than เอา ao.** For small items and food, *ขอ…ครับ/ค่ะ* is the most comfortable form. Add *หน่อย nàwy* to make it gentler still: *ขอน้ำหน่อยครับ*.",
+        "**ด้วย dûai at the end means \"too, as well\" when asking for something extra.** *ขอถุงด้วยครับ* = a bag too, please. The same word also means \"with\" and \"together\".",
+        "**Some nouns serve as their own classifier.** *ห้องสองห้อง* (two rooms), *คนสามคน* (three people), *ประเทศห้าประเทศ* (five countries). If a noun sounds like a container or a unit, it's very likely its own classifier.",
+        "**พนักงาน phá-nák-ngaan means \"staff member, employee\"** — the general word for anyone serving you in a shop. To address them, Thais use *น้อง náwng* (younger sibling) if they're younger, or *พี่ phîi* (older sibling) if they're older. These terms are warm, not condescending."
+      ],
+      "grammars": [
+        {
+          "title": "Twelve classifiers that cover almost all A1 needs",
+          "body": [
+            "Learn the first ten rows; the rest will come on their own through use."
+          ],
+          "table": {
+            "head": [
+              "Classifier",
+              "Pronunciation",
+              "For",
+              "Example"
+            ],
+            "rows": [
+              [
+                "คน",
+                "*khon*",
+                "people",
+                "นักเรียนสามคน — three students"
+              ],
+              [
+                "ตัว",
+                "*tua*",
+                "animals, clothes, chairs, tables",
+                "หมาสองตัว — two dogs"
+              ],
+              [
+                "ใบ",
+                "*bai*",
+                "containers & sheets: bags, tickets, empty glasses, documents",
+                "ตั๋วสองใบ — two tickets"
+              ],
+              [
+                "ขวด",
+                "*khùat*",
+                "bottles",
+                "เบียร์สามขวด — three bottles of beer"
+              ],
+              [
+                "แก้ว",
+                "*kâaeo*",
+                "glasses of a drink",
+                "กาแฟหนึ่งแก้ว — a cup of coffee"
+              ],
+              [
+                "จาน",
+                "*jaan*",
+                "plates; also servings of food",
+                "ผัดไทยสองจาน — two plates of pad thai"
+              ],
+              [
+                "ชิ้น",
+                "*chín*",
+                "pieces, slices",
+                "เค้กสองชิ้น — two pieces of cake"
+              ],
+              [
+                "ลูก",
+                "*lûuk*",
+                "round things: fruit, balls, eggs",
+                "ส้มห้าลูก — five oranges"
+              ],
+              [
+                "เล่ม",
+                "*lêm*",
+                "books",
+                "หนังสือสองเล่ม — two books"
+              ],
+              [
+                "คัน",
+                "*khan*",
+                "wheeled vehicles, umbrellas",
+                "รถหนึ่งคัน — one car"
+              ],
+              [
+                "เครื่อง",
+                "*khrûeang*",
+                "machines: fridges, air conditioners, computers",
+                "แอร์สองเครื่อง — two air conditioners"
+              ],
+              [
+                "อัน",
+                "*an*",
+                "small things in general — and your safety net",
+                "อันนี้ — this one"
+              ]
+            ]
+          },
+          "after": [
+            "⚠️ **ใบ and แก้ว are often mixed up.** *แก้ว* is for a glass **of a drink** you order; *ใบ* is for a glass as an **empty object** you buy. Ordering *กาแฟหนึ่งใบ* sounds like you're buying the cup, not the coffee.",
+            "⚠️ **ตัว is used for both clothes and animals**, and that's no joke — the logic is \"things with a body\". Chairs and tables belong here too."
+          ]
+        },
+        {
+          "title": "Three patterns that use classifiers",
+          "table": {
+            "head": [
+              "Purpose",
+              "Pattern",
+              "Example"
+            ],
+            "rows": [
+              [
+                "stating a quantity",
+                "noun + number + classifier",
+                "น้ำสองขวด — two bottles of water"
+              ],
+              [
+                "just one",
+                "noun + classifier + หนึ่ง / เดียว",
+                "ถุงใบหนึ่ง / ใบเดียว"
+              ],
+              [
+                "pointing",
+                "noun + classifier + นี้ / นั้น / ไหน",
+                "เสื้อตัวนี้ — this shirt"
+              ],
+              [
+                "asking how many",
+                "noun + กี่ + classifier",
+                "คนกี่คน — how many people"
+              ],
+              [
+                "price per unit",
+                "classifier + ละ + price",
+                "ใบละสองบาท — two baht each"
+              ],
+              [
+                "all of them",
+                "noun + ทุก + classifier",
+                "ทุกคน — everyone"
+              ]
+            ]
+          },
+          "after": [
+            "The fourth pattern, *…กี่…*, is the one you'll **hear** most: *กี่คนคะ* (how many people?) is the first thing a restaurant server says as you walk in the door."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "If you forget the classifier",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "It will happen, often, and it's no big deal. There are three ways out, and Thais will understand all of them."
+        },
+        {
+          "type": "kotak",
+          "title": "Three ways out",
+          "items": [
+            "**Use อัน *an*.** It's the general classifier for small things and works as a safety net. You'll sound foreign, but you'll always be understood.",
+            "**Repeat the noun as its own classifier.** *ขอกาแฟสองกาแฟ* is wrong, but people will still give you two coffees. Plenty of nouns really do work this way (ห้อง, คน, ประเทศ).",
+            "**Point and say just the number.** *สองครับ* while pointing at a bottle of water is enough, and that's what Thais do themselves when they're in a hurry."
+          ]
+        },
+        {
+          "type": "p",
+          "text": "What you **can't** skip is the classifier in the pointing pattern: *เสื้อนี้* sounds broken to a Thai ear, while *เสื้อตัวนี้* sounds natural. If you have to choose one place to be careful, choose this one."
+        }
+      ]
+    },
+    {
+      "title": "Some nouns you'll use today",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "Thai",
+            "Pronunciation",
+            "English",
+            "Classifier"
+          ],
+          "rows": [
+            [
+              "น้ำ",
+              "*náam*",
+              "water",
+              "ขวด / แก้ว"
+            ],
+            [
+              "กาแฟ",
+              "*kaa-fae*",
+              "coffee",
+              "แก้ว"
+            ],
+            [
+              "ชา",
+              "*chaa*",
+              "tea",
+              "แก้ว"
+            ],
+            [
+              "เบียร์",
+              "*bia*",
+              "beer",
+              "ขวด"
+            ],
+            [
+              "ข้าว",
+              "*khâao*",
+              "rice, meal",
+              "จาน"
+            ],
+            [
+              "ขนมปัง",
+              "*khà-nǒm-pang*",
+              "bread",
+              "ชิ้น / แผ่น"
+            ],
+            [
+              "ผลไม้",
+              "*phǒn-lá-mái*",
+              "fruit",
+              "ลูก / ผล"
+            ],
+            [
+              "ถุง",
+              "*thǔng*",
+              "bag, plastic bag",
+              "ใบ"
+            ],
+            [
+              "ตั๋ว",
+              "*tǔa*",
+              "ticket",
+              "ใบ"
+            ],
+            [
+              "หนังสือ",
+              "*nǎng-sǔue*",
+              "book",
+              "เล่ม"
+            ],
+            [
+              "โทรศัพท์",
+              "*thoo-rá-sàp*",
+              "telephone, cell phone",
+              "เครื่อง"
+            ],
+            [
+              "รถ",
+              "*rót*",
+              "car, vehicle",
+              "คัน"
+            ]
+          ]
+        },
+        {
+          "type": "kotak",
+          "title": "น้ำ: one word, many faces",
+          "items": [
+            "*น้ำ náam* means \"water\", but it also heads dozens of other words: *น้ำแข็ง náam-khǎeng* (ice — literally \"hard water\"), *น้ำผลไม้ náam-phǒn-lá-mái* (juice), *น้ำมัน náam-man* (oil — \"oily water\"), *น้ำหอม náam-hǎwm* (perfume — \"fragrant water\"), *น้ำตา náam-taa* (tears — \"eye water\"), *ห้องน้ำ hâwng-náam* (bathroom — \"water room\").",
+            "Mastering this one word unlocks dozens of others at once. It's a pattern that repeats across all of Thai: simple words are combined into new ones, rather than borrowed from foreign roots."
+          ]
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "th": "ขอ",
+      "baca": "khǎaw",
+      "en": "may I have (polite request)"
+    },
+    {
+      "th": "ด้วย",
+      "baca": "dûai",
+      "en": "too, as well; with"
+    },
+    {
+      "th": "ขวด",
+      "baca": "khùat",
+      "en": "bottle (classifier)"
+    },
+    {
+      "th": "แก้ว",
+      "baca": "kâaeo",
+      "en": "glass (classifier); glass"
+    },
+    {
+      "th": "ใบ",
+      "baca": "bai",
+      "en": "sheet, item (classifier); leaf"
+    },
+    {
+      "th": "ชิ้น",
+      "baca": "chín",
+      "en": "piece (classifier)"
+    },
+    {
+      "th": "จาน",
+      "baca": "jaan",
+      "en": "plate, serving (classifier)"
+    },
+    {
+      "th": "ลูก",
+      "baca": "lûuk",
+      "en": "classifier for round things; child"
+    },
+    {
+      "th": "เล่ม",
+      "baca": "lêm",
+      "en": "classifier for books"
+    },
+    {
+      "th": "คัน",
+      "baca": "khan",
+      "en": "classifier for vehicles"
+    },
+    {
+      "th": "เครื่อง",
+      "baca": "khrûeang",
+      "en": "classifier for machines"
+    },
+    {
+      "th": "อัน",
+      "baca": "an",
+      "en": "general classifier for small things"
+    },
+    {
+      "th": "เดียว",
+      "baca": "diao",
+      "en": "just one, single"
+    },
+    {
+      "th": "ทุก",
+      "baca": "thúk",
+      "en": "every, all"
+    },
+    {
+      "th": "น้ำ",
+      "baca": "náam",
+      "en": "water"
+    },
+    {
+      "th": "กาแฟ",
+      "baca": "kaa-fae",
+      "en": "coffee"
+    },
+    {
+      "th": "ชา",
+      "baca": "chaa",
+      "en": "tea"
+    },
+    {
+      "th": "ขนมปัง",
+      "baca": "khà-nǒm-pang",
+      "en": "bread"
+    },
+    {
+      "th": "ถุง",
+      "baca": "thǔng",
+      "en": "bag, plastic bag"
+    },
+    {
+      "th": "ตั๋ว",
+      "baca": "tǔa",
+      "en": "ticket"
+    },
+    {
+      "th": "หนังสือ",
+      "baca": "nǎng-sǔue",
+      "en": "book"
+    },
+    {
+      "th": "โทรศัพท์",
+      "baca": "thoo-rá-sàp",
+      "en": "telephone, cell phone"
+    },
+    {
+      "th": "รถ",
+      "baca": "rót",
+      "en": "car, vehicle"
+    },
+    {
+      "th": "ใหญ่",
+      "baca": "yài",
+      "en": "big"
+    },
+    {
+      "th": "เล็ก",
+      "baca": "lék",
+      "en": "small"
+    },
+    {
+      "th": "ร้อน",
+      "baca": "ráwn",
+      "en": "hot"
+    },
+    {
+      "th": "เย็น",
+      "baca": "yen",
+      "en": "cold; evening"
+    },
+    {
+      "th": "มี",
+      "baca": "mii",
+      "en": "there is; to have"
+    },
+    {
+      "th": "พอ",
+      "baca": "phaw",
+      "en": "enough"
+    },
+    {
+      "th": "ตรงนั้น",
+      "baca": "trong-nán",
+      "en": "right there, over there"
+    },
+    {
+      "th": "รับ",
+      "baca": "ráp",
+      "en": "to receive; to take (an order)"
+    },
+    {
+      "th": "พนักงาน",
+      "baca": "phá-nák-ngaan",
+      "en": "staff member, employee"
+    }
+  ],
+  "exercises": [
+    {
+      "prompt": "Complete with the right classifier.",
+      "items": [
+        "น้ำสอง____ (two bottles of water)",
+        "กาแฟหนึ่ง____ (a cup of coffee)",
+        "นักเรียนสาม____ (three students)",
+        "หนังสือสี่____ (four books)",
+        "เสื้อสอง____ (two shirts)",
+        "ตั๋วห้า____ (five tickets)"
+      ]
+    },
+    {
+      "prompt": "Fill in the blanks.",
+      "items": [
+        "\"This shirt\" → เสื้อ____นี้",
+        "\"How many people?\" → ____คนคะ",
+        "\"Two baht each\" → ใบ____สองบาท",
+        "\"Just one bag\" → ถุงใบ____",
+        "\"Some water too, please\" → ขอน้ำ____ครับ"
+      ]
+    },
+    {
+      "prompt": "Put the words in the right order.",
+      "items": [
+        "ครับ / สองขวด / ขอ / น้ำ",
+        "คะ / กี่ / คน",
+        "ครับ / เอา / สามชิ้น / ขนมปัง",
+        "ค่ะ / ตัวนี้ / เท่าไหร่ / เสื้อ",
+        "ครับ / ใบเดียว / พอแล้ว"
+      ]
+    },
+    {
+      "prompt": "Translate into Thai. Imagine you're a man.",
+      "items": [
+        "Two bottles of water, please.",
+        "One iced coffee, please.",
+        "Do you have any bread?",
+        "I'll take three pieces.",
+        "How many baht altogether?",
+        "How much is this shirt?"
+      ]
+    }
+  ],
+  "answers": [
+    "ขวด — แก้ว — คน — เล่ม — ตัว — ใบ",
+    "ตัว — กี่ — ละ — หนึ่ง — ด้วย",
+    "ขอน้ำสองขวดครับ — กี่คนคะ — เอาขนมปังสามชิ้นครับ — เสื้อตัวนี้เท่าไหร่ค่ะ — ใบเดียวพอแล้วครับ",
+    "ขอน้ำสองขวดครับ — ขอกาแฟเย็นหนึ่งแก้วครับ — มีขนมปังไหมครับ — เอาสามชิ้นครับ — ทั้งหมดกี่บาทครับ — เสื้อตัวนี้เท่าไหร่ครับ"
+  ],
+  "wave": "Review Unit 2: cover the Thai, then say for yourself where you're from, where you live, and what you do — three sentences, without looking."
+}

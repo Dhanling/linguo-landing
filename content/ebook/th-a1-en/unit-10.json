@@ -1,0 +1,568 @@
+{
+  "title": "Family, age, and surprising questions",
+  "title_target": "ครอบครัว — Khrâwp-khrua",
+  "goal": "Name family members with a system that distinguishes older from younger, say your age, and answer personal questions that in Thailand count as friendly — not nosy.",
+  "bekal": [
+    "name members of your immediate and extended family",
+    "use พี่ and น้อง according to age, not gender",
+    "ask and give ages with อายุ",
+    "answer questions about marital status and children",
+    "use พี่/น้อง to address strangers"
+  ],
+  "dialogs": [
+    {
+      "title": "บทสนทนา — Lunch in the cafeteria, showing photos",
+      "intro": "Nok shows a photo of her family. Notice that Thai words for siblings first ask \"older or younger\", and only then \"male or female\" — the reverse of English \"brother\" and \"sister\".",
+      "lines": [
+        {
+          "speaker": "นก:",
+          "text": "[นี่|Nîi][รูป|rûup][ครอบครัว|khrâwp-khrua][ค่ะ|khâ]",
+          "id": "This is a photo of my family.",
+          "literal": "this — picture — family — (polite)."
+        },
+        {
+          "speaker": "บูดี:",
+          "text": "[คน|Khon][นี้|níi][ใคร|khrai][ครับ|khráp]",
+          "id": "Who's this?",
+          "literal": "person — this — who — (polite)?"
+        },
+        {
+          "speaker": "นก:",
+          "text": "[พ่อ|Phâw][กับ|kàp][แม่|mâae][ค่ะ|khâ] [แล้ว|Láaeo][คน|khon][นั้น|nán][พี่ชาย|phîi-chaai][ค่ะ|khâ]",
+          "id": "My father and mother. And that's my older brother.",
+          "literal": "father — with — mother — (polite). then — person — that — older-sibling-male — (polite)."
+        },
+        {
+          "speaker": "บูดี:",
+          "text": "[มี|Mii][พี่น้อง|phîi-náwng][กี่|kìi][คน|khon][ครับ|khráp]",
+          "id": "How many brothers and sisters do you have?",
+          "literal": "have — older-sibling-younger-sibling — how-many — person — (polite)?"
+        },
+        {
+          "speaker": "นก:",
+          "text": "[สาม|Sǎam][คน|khon][ค่ะ|khâ] [พี่ชาย|Phîi-chaai][หนึ่ง|nùeng][คน|khon] [น้องสาว|náwng-sǎao][หนึ่ง|nùeng][คน|khon][ค่ะ|khâ]",
+          "id": "Three of us. One older brother and one younger sister.",
+          "literal": "three — person — (polite). older-sibling-male — one — person — younger-sibling-female — one — person — (polite)."
+        },
+        {
+          "speaker": "บูดี:",
+          "text": "[น้องสาว|Náwng-sǎao][อายุ|aa-yú][เท่าไหร่|thâo-rài][ครับ|khráp]",
+          "id": "How old is your younger sister?",
+          "literal": "younger-sibling-female — age — how-much — (polite)?"
+        },
+        {
+          "speaker": "นก:",
+          "text": "[สิบ|Sìp][แปด|pàaet][ค่ะ|khâ] [เรียน|Rian][มหาวิทยาลัย|má-hǎa-wít-thá-yaa-lai][ปี|pii][หนึ่ง|nùeng][ค่ะ|khâ] [แล้ว|Láaeo][บูดี|Buu-dii][ล่ะ|lâ][คะ|khá] [อายุ|Aa-yú][เท่าไหร่|thâo-rài][คะ|khá]",
+          "id": "Eighteen. She's a first-year university student. And you, Budi? How old are you?",
+          "literal": "ten — eight — (polite). study — university — year — one — (polite). then — Budi — what-about — (polite)? age — how-much — (polite)?"
+        },
+        {
+          "speaker": "บูดี:",
+          "text": "[สาม|Sǎam][สิบ|sìp][สอง|sǎawng][ครับ|khráp] [ที่|Thîi][อินโดนีเซีย|In-doo-nii-sia][ถาม|thǎam][อายุ|aa-yú][ไม่|mâi][ค่อย|khâwy][สุภาพ|sù-phâap][นะ|ná][ครับ|khráp]",
+          "id": "Thirty-two. In Indonesia, asking someone's age is a bit impolite, you know.",
+          "literal": "three — ten — two — (polite). in — Indonesia — ask — age — not — really — polite — (softener) — (polite)."
+        },
+        {
+          "speaker": "นก:",
+          "text": "[ที่|Thîi][นี่|nîi][ไม่|mâi][เป็นไร|pen-rai][ค่ะ|khâ] [ต้อง|Tâwng][รู้|rúu][อายุ|aa-yú][ก่อน|kàwn][ค่ะ|khâ] [จะ|Jà][ได้|dâai][รู้|rúu][ว่า|wâa][เรียก|rîak][พี่|phîi][หรือ|rǔue][น้อง|náwng][ค่ะ|khâ]",
+          "id": "Here it's fine. We need to know your age first, so we know whether to call you phi or nong.",
+          "literal": "at — here — not — matter — (polite). must — know — age — first — (polite). will — get-to — know — that — call — older-sibling — or — younger-sibling — (polite)."
+        },
+        {
+          "speaker": "บูดี:",
+          "text": "[อ๋อ|Ǎw] [เข้าใจ|khâo-jai][แล้ว|láaeo][ครับ|khráp] [นก|Nók][อายุ|aa-yú][เท่าไหร่|thâo-rài][ครับ|khráp]",
+          "id": "Oh, now I get it. How old are you, Nok?",
+          "literal": "oh — understand — already — (polite). Nok — age — how-much — (polite)?"
+        },
+        {
+          "speaker": "นก:",
+          "text": "[ยี่|Yîi][สิบ|sìp][แปด|pàaet][ค่ะ|khâ] [งั้น|Ngán][เรียก|rîak][พี่|phîi][บูดี|Buu-dii][นะ|ná][คะ|khá]",
+          "id": "Twenty-eight. So I'll call you Phi Budi, okay?",
+          "literal": "two — ten — eight — (polite). in-that-case — call — older-sibling — Budi — okay — (polite)?"
+        },
+        {
+          "speaker": "บูดี:",
+          "text": "[ได้|Dâai][ครับ|khráp] [แล้ว|Láaeo][ผม|phǒm][เรียก|rîak][น้อง|náwng][นก|Nók][นะ|ná][ครับ|khráp]",
+          "id": "Sure. Then I'll call you Nong Nok, okay?",
+          "literal": "can — (polite). then — I — call — younger-sibling — Nok — okay — (polite)."
+        }
+      ],
+      "notes": [
+        "**Thai divides siblings by AGE first, and only then by gender.** *พี่ phîi* = older sibling, *น้อง náwng* = younger sibling. Then *ชาย chaai* (male) or *สาว sǎao* (female) is added: *พี่ชาย* (older brother), *พี่สาว* (older sister), *น้องชาย* (younger brother), *น้องสาว* (younger sister). English starts with gender (brother/sister) and often leaves age unsaid; Thai can't.",
+        "**พี่ and น้อง go far beyond family — they're the social addressing system of the whole country.** An older coworker is called *พี่*, a younger server is *น้อง*, and neighbors, vendors, drivers all fall into one of these two words. That's why Thais need to know your age.",
+        "**So asking someone's age in Thailand is NOT rude.** ⚠️ This is the opposite of the habit in many Western cultures, and newcomers often misread it. *อายุเท่าไหร่* isn't an attempt to judge you; it's an attempt to find the right form of address. Answer honestly — and if you'd rather not, *เดาสิคะ/ครับ dao sì* (\"take a guess\") is accepted with a laugh.",
+        "**อายุ aa-yú means age, and the number STANDS ALONE without the word \"years\".** *อายุสามสิบสอง* = thirty-two years old. Adding *ปี pii* isn't wrong, just unnecessary.",
+        "**Nicknames (ชื่อเล่น chûue-lên) are used far more than real names.** Almost every Thai has a one-syllable nickname — *นก* (bird), *ต้น* (tree), *เบียร์* (beer), *เอ* (A) — and that's what's used at work, at school, even in formal meetings. Real Thai names can be five syllables long and usually appear only on documents.",
+        "**คุณ khun before a name is the safest form for someone new.** *คุณนก* = Ms. Nok. Once you're on friendly terms, people switch to *พี่นก* or *น้องนก* depending on age.",
+        "**จะได้ jà dâai means \"so that\".** *ต้องรู้อายุก่อน จะได้รู้ว่าเรียกพี่หรือน้อง* = we need to know your age first, so that we know what to call you. This pattern is very often used to explain a purpose.",
+        "**เรียก rîak means \"to call, address\".** *เรียกผมว่าบูดีก็ได้ครับ rîak phǒm wâa Buu-dii kâw dâai khráp* = just call me Budi. A very useful sentence when introducing yourself."
+      ],
+      "grammars": [
+        {
+          "title": "Family: twenty words that cover the whole family tree",
+          "table": {
+            "head": [
+              "Thai",
+              "Pronunciation",
+              "English"
+            ],
+            "rows": [
+              [
+                "ครอบครัว",
+                "*khrâwp-khrua*",
+                "family"
+              ],
+              [
+                "พ่อ",
+                "*phâw*",
+                "father"
+              ],
+              [
+                "แม่",
+                "*mâae*",
+                "mother"
+              ],
+              [
+                "พ่อแม่",
+                "*phâw-mâae*",
+                "parents"
+              ],
+              [
+                "ลูก",
+                "*lûuk*",
+                "child (son or daughter)"
+              ],
+              [
+                "ลูกชาย / ลูกสาว",
+                "*lûuk-chaai / lûuk-sǎao*",
+                "son / daughter"
+              ],
+              [
+                "พี่ชาย / พี่สาว",
+                "*phîi-chaai / phîi-sǎao*",
+                "older brother / older sister"
+              ],
+              [
+                "น้องชาย / น้องสาว",
+                "*náwng-chaai / náwng-sǎao*",
+                "younger brother / younger sister"
+              ],
+              [
+                "พี่น้อง",
+                "*phîi-náwng*",
+                "siblings"
+              ],
+              [
+                "สามี",
+                "*sǎa-mii*",
+                "husband"
+              ],
+              [
+                "ภรรยา / เมีย",
+                "*phan-rá-yaa / mia*",
+                "wife (formal / everyday)"
+              ],
+              [
+                "แฟน",
+                "*faaen*",
+                "boyfriend, girlfriend; also partner"
+              ],
+              [
+                "ปู่ / ย่า",
+                "*pùu / yâa*",
+                "grandfather / grandmother (father's side)"
+              ],
+              [
+                "ตา / ยาย",
+                "*taa / yaai*",
+                "grandfather / grandmother (mother's side)"
+              ],
+              [
+                "ลุง / ป้า",
+                "*lung / pâa*",
+                "uncle / aunt (older than your parent)"
+              ],
+              [
+                "น้า / อา",
+                "*náa / aa*",
+                "younger uncle or aunt (mother's side / father's side)"
+              ],
+              [
+                "หลาน",
+                "*lǎan*",
+                "niece, nephew; grandchild"
+              ],
+              [
+                "ญาติ",
+                "*yâat*",
+                "relative"
+              ]
+            ]
+          },
+          "after": [
+            "⚠️ **Grandparents are distinguished by WHICH SIDE of the family**: *ปู่/ย่า* on your father's side, *ตา/ยาย* on your mother's side. English doesn't make this distinction, and Thais consider it as important as telling father from mother.",
+            "⚠️ **แฟน faaen comes from the English word *fan* but means a boyfriend, girlfriend, or steady partner** — not a fan. *มีแฟนหรือยัง mii faaen rǔue yang* (\"do you have a boyfriend/girlfriend yet?\") is one of the questions you'll be asked most often."
+          ]
+        },
+        {
+          "title": "Personal questions you'll be asked, and how to answer them",
+          "body": [
+            "These questions often come up in the first ten minutes of meeting someone. All of them count as friendly, not nosy."
+          ],
+          "table": {
+            "head": [
+              "Question",
+              "Pronunciation",
+              "Safe answer"
+            ],
+            "rows": [
+              [
+                "อายุเท่าไหร่",
+                "*aa-yú thâo-rài*",
+                "อายุสามสิบครับ/ค่ะ"
+              ],
+              [
+                "แต่งงานหรือยัง",
+                "*tàaeng-ngaan rǔue yang*",
+                "แต่งแล้ว / ยังครับ-ค่ะ"
+              ],
+              [
+                "มีลูกกี่คน",
+                "*mii lûuk kìi khon*",
+                "มีสองคน / ยังไม่มีครับ-ค่ะ"
+              ],
+              [
+                "มีแฟนหรือยัง",
+                "*mii faaen rǔue yang*",
+                "มีแล้ว / ยังครับ-ค่ะ"
+              ],
+              [
+                "ทำงานอะไร",
+                "*tham-ngaan à-rai*",
+                "เป็นครูครับ/ค่ะ"
+              ],
+              [
+                "อยู่คนเดียวเหรอ",
+                "*yùu khon diao rǒoe*",
+                "ครับ/ค่ะ อยู่คนเดียว"
+              ]
+            ]
+          },
+          "after": [
+            "**…หรือยัง *rǔue yang* means \"…yet?\"** and there are only two answers: *แล้ว láaeo* (yes, already) or *ยัง yang* (not yet). This pattern comes back in Unit 11 and works for anything: *กินข้าวหรือยัง* (have you eaten yet?), *ถึงหรือยัง* (are you there yet?).",
+            "If you don't want to answer, the polite way out isn't refusing but smiling and deflecting: *เป็นความลับครับ/ค่ะ pen khwaam-láp* — \"it's a secret\". Said with a laugh, it's accepted without any problem."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Addressing people you don't know",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Thai has no neutral \"sir\" or \"ma'am\" that fits everyone — what it has are terms that place people on an age map. This list will save you in almost every situation."
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Term",
+            "Pronunciation",
+            "For whom"
+          ],
+          "rows": [
+            [
+              "คุณ",
+              "*khun*",
+              "anyone, neutral, always safe"
+            ],
+            [
+              "พี่",
+              "*phîi*",
+              "someone who looks older than you"
+            ],
+            [
+              "น้อง",
+              "*náwng*",
+              "someone who looks younger; servers, cashiers"
+            ],
+            [
+              "ลุง / ป้า",
+              "*lung / pâa*",
+              "people your parents' age — warm, familiar"
+            ],
+            [
+              "คุณลุง / คุณป้า",
+              "*khun lung / khun pâa*",
+              "a more polite version of the above"
+            ],
+            [
+              "น้า",
+              "*náa*",
+              "a middle-aged woman vendor — very common at markets"
+            ],
+            [
+              "หนู",
+              "*nǔu*",
+              "a small child; also used by girls to refer to themselves"
+            ],
+            [
+              "ครู / อาจารย์",
+              "*khruu / aa-jaan*",
+              "teachers and lecturers — addressed by their title"
+            ]
+          ]
+        },
+        {
+          "type": "kotak",
+          "title": "If you guess the age wrong",
+          "items": [
+            "Calling someone *พี่* who turns out to be younger is **perfectly fine** — it sounds respectful.",
+            "⚠️ Calling someone *น้อง* who turns out to be older **feels a bit off**. When in doubt, always choose *พี่*. It's a practical rule that never backfires.",
+            "For restaurant servers, the most common form of address is *น้อง* followed by *ครับ/ค่ะ* — or simply raising your hand. Don't snap your fingers or whistle; that's considered rude everywhere."
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Describing your family in five sentences",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "You can use this pattern as is; just swap in your own numbers."
+        },
+        {
+          "type": "list",
+          "items": [
+            "**ครอบครัวผม/ฉันมีห้าคนครับ/ค่ะ** — there are five people in my family.",
+            "**มีพ่อ แม่ พี่ชาย และน้องสาวครับ/ค่ะ** — my father, my mother, an older brother, and a younger sister.",
+            "**พ่อเป็นครู แม่เป็นแม่บ้านครับ/ค่ะ** — my father is a teacher, my mother is a homemaker.",
+            "**ผม/ฉันอายุสามสิบสองครับ/ค่ะ** — I'm thirty-two.",
+            "**ยังไม่ได้แต่งงานครับ/ค่ะ** — I'm not married yet."
+          ]
+        },
+        {
+          "type": "kotak",
+          "title": "One thing to know about Thai families",
+          "items": [
+            "A child's duty to their parents — called *กตัญญู kà-tan-yuu* — is a very strong value in Thailand, and it's more than a feeling: many young people send a large part of their salary home every month, and that's considered normal, not a sacrifice.",
+            "So the question *ส่งเงินให้ที่บ้านไหม sòng ngoen hâi thîi bâan mǎi* (\"do you send money home?\") can come up in ordinary conversation. It isn't a question about your money; it's a question about your relationship with your family."
+          ]
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "th": "ครอบครัว",
+      "baca": "khrâwp-khrua",
+      "en": "family"
+    },
+    {
+      "th": "พ่อ",
+      "baca": "phâw",
+      "en": "father"
+    },
+    {
+      "th": "แม่",
+      "baca": "mâae",
+      "en": "mother"
+    },
+    {
+      "th": "พี่",
+      "baca": "phîi",
+      "en": "older sibling; term for someone older"
+    },
+    {
+      "th": "น้อง",
+      "baca": "náwng",
+      "en": "younger sibling; term for someone younger"
+    },
+    {
+      "th": "พี่ชาย",
+      "baca": "phîi-chaai",
+      "en": "older brother"
+    },
+    {
+      "th": "พี่สาว",
+      "baca": "phîi-sǎao",
+      "en": "older sister"
+    },
+    {
+      "th": "น้องชาย",
+      "baca": "náwng-chaai",
+      "en": "younger brother"
+    },
+    {
+      "th": "น้องสาว",
+      "baca": "náwng-sǎao",
+      "en": "younger sister"
+    },
+    {
+      "th": "พี่น้อง",
+      "baca": "phîi-náwng",
+      "en": "siblings"
+    },
+    {
+      "th": "ลูก",
+      "baca": "lûuk",
+      "en": "child (son/daughter)"
+    },
+    {
+      "th": "สามี",
+      "baca": "sǎa-mii",
+      "en": "husband"
+    },
+    {
+      "th": "ภรรยา",
+      "baca": "phan-rá-yaa",
+      "en": "wife"
+    },
+    {
+      "th": "แฟน",
+      "baca": "faaen",
+      "en": "boyfriend, girlfriend, partner"
+    },
+    {
+      "th": "ปู่",
+      "baca": "pùu",
+      "en": "grandfather (father's side)"
+    },
+    {
+      "th": "ยาย",
+      "baca": "yaai",
+      "en": "grandmother (mother's side)"
+    },
+    {
+      "th": "ลุง",
+      "baca": "lung",
+      "en": "uncle (older)"
+    },
+    {
+      "th": "ป้า",
+      "baca": "pâa",
+      "en": "aunt (older)"
+    },
+    {
+      "th": "หลาน",
+      "baca": "lǎan",
+      "en": "niece, nephew, grandchild"
+    },
+    {
+      "th": "ญาติ",
+      "baca": "yâat",
+      "en": "relative"
+    },
+    {
+      "th": "อายุ",
+      "baca": "aa-yú",
+      "en": "age"
+    },
+    {
+      "th": "แต่งงาน",
+      "baca": "tàaeng-ngaan",
+      "en": "to marry, be married"
+    },
+    {
+      "th": "ชื่อเล่น",
+      "baca": "chûue-lên",
+      "en": "nickname"
+    },
+    {
+      "th": "เรียก",
+      "baca": "rîak",
+      "en": "to call, address"
+    },
+    {
+      "th": "รูป",
+      "baca": "rûup",
+      "en": "picture, photo"
+    },
+    {
+      "th": "รู้",
+      "baca": "rúu",
+      "en": "to know"
+    },
+    {
+      "th": "สุภาพ",
+      "baca": "sù-phâap",
+      "en": "polite"
+    },
+    {
+      "th": "มหาวิทยาลัย",
+      "baca": "má-hǎa-wít-thá-yaa-lai",
+      "en": "university"
+    },
+    {
+      "th": "คนเดียว",
+      "baca": "khon diao",
+      "en": "alone, by oneself"
+    },
+    {
+      "th": "ความลับ",
+      "baca": "khwaam-láp",
+      "en": "secret"
+    },
+    {
+      "th": "ส่ง",
+      "baca": "sòng",
+      "en": "to send"
+    },
+    {
+      "th": "ให้",
+      "baca": "hâi",
+      "en": "to give; for"
+    }
+  ],
+  "exercises": [
+    {
+      "prompt": "Write the Thai word for each family member.",
+      "items": [
+        "older sister = ____",
+        "younger brother = ____",
+        "father = ____",
+        "daughter = ____",
+        "grandmother (mother's side) = ____"
+      ]
+    },
+    {
+      "prompt": "Fill in the blanks.",
+      "items": [
+        "\"How old are you?\" → ____เท่าไหร่คะ",
+        "\"How many siblings do you have?\" → มี____กี่คนครับ",
+        "\"Are you married yet?\" → แต่งงาน____",
+        "\"I don't have children yet\" → ยังไม่มี____ค่ะ",
+        "\"Just call me Budi\" → ____ผมว่าบูดีก็ได้ครับ"
+      ]
+    },
+    {
+      "prompt": "Put the words in the right order.",
+      "items": [
+        "ครับ / กี่คน / มี / พี่น้อง",
+        "ค่ะ / สามคน / มี / ครอบครัวฉัน",
+        "คะ / อายุ / เท่าไหร่ / น้องสาว",
+        "ครับ / ยังไม่ได้ / ผม / แต่งงาน",
+        "คะ / นะ / เรียก / พี่บูดี"
+      ]
+    },
+    {
+      "prompt": "Translate into Thai. Imagine you're a man.",
+      "items": [
+        "This is a photo of my family.",
+        "I have two siblings.",
+        "One older brother and one younger sister.",
+        "I'm thirty-two.",
+        "I'm not married yet.",
+        "How old is your younger sister?"
+      ]
+    }
+  ],
+  "answers": [
+    "พี่สาว — น้องชาย — พ่อ — ลูกสาว — ยาย",
+    "อายุ — พี่น้อง — หรือยัง — ลูก — เรียก",
+    "มีพี่น้องกี่คนครับ — ครอบครัวฉันมีสามคนค่ะ — น้องสาวอายุเท่าไหร่คะ — ผมยังไม่ได้แต่งงานครับ — เรียกพี่บูดีนะคะ",
+    "นี่รูปครอบครัวผมครับ — ผมมีพี่น้องสองคนครับ — พี่ชายหนึ่งคน น้องสาวหนึ่งคนครับ — ผมอายุสามสิบสองครับ — ยังไม่ได้แต่งงานครับ — น้องสาวอายุเท่าไหร่ครับ"
+  ],
+  "wave": "Review Unit 8: cover the Thai, then describe your whole day from waking up to going to bed — and say what day it is today, was yesterday, and will be tomorrow."
+}

@@ -1,0 +1,633 @@
+{
+  "title": "Ordering food without misunderstandings",
+  "title_target": "สั่งอาหาร — Sàng aa-hǎan",
+  "goal": "Order at a street stall or a restaurant, set the spice level, ask for something to be left out, and ask for the bill — including the phrases Muslim, vegetarian, and pork-free diners especially need.",
+  "bekal": [
+    "order with ขอ and เอา plus the right classifier",
+    "set the spice level: เผ็ดน้อย, ไม่เผ็ด, เผ็ดมาก",
+    "ask for something to be left out with ไม่ใส่",
+    "name ten Thai dishes found almost everywhere",
+    "ask for the bill and say you're full"
+  ],
+  "dialogs": [
+    {
+      "title": "บทสนทนา — At a ร้านอาหาร near the office, lunchtime",
+      "intro": "Budi and Nok are having lunch. Notice how one small word — ใส่ (to put in) — saves the whole meal for anyone with dietary restrictions.",
+      "lines": [
+        {
+          "speaker": "พนักงาน:",
+          "text": "[กี่|Kìi][ท่าน|thâan][คะ|khá]",
+          "id": "How many people?",
+          "literal": "how-many — person(honorific) — (polite)?"
+        },
+        {
+          "speaker": "นก:",
+          "text": "[สอง|Sǎawng][คน|khon][ค่ะ|khâ] [ขอ|Khǎaw][เมนู|mee-nuu][หน่อย|nàwy][ค่ะ|khâ]",
+          "id": "Two. Could we have the menu, please?",
+          "literal": "two — person — (polite). ask-for — menu — a-little — (polite)."
+        },
+        {
+          "speaker": "พนักงาน:",
+          "text": "[ได้|Dâai][ค่ะ|khâ] [รับ|Ráp][อะไร|à-rai][ดี|dii][คะ|khá]",
+          "id": "Sure. What would you like?",
+          "literal": "can — (polite). receive — what — good — (polite)?"
+        },
+        {
+          "speaker": "นก:",
+          "text": "[เอา|Ao][ต้มยำกุ้ง|tôm-yam-kûng][หนึ่ง|nùeng][ที่|thîi][กับ|kàp][ข้าวผัด|khâao-phàt][หนึ่ง|nùeng][จาน|jaan][ค่ะ|khâ]",
+          "id": "One tom yam goong and one plate of fried rice.",
+          "literal": "take — tom-yam-shrimp — one — serving — with — fried-rice — one — plate — (polite)."
+        },
+        {
+          "speaker": "บูดี:",
+          "text": "[ผม|Phǒm][ขอ|khǎaw][ผัดไทย|phàt-thai][ครับ|khráp] [ไม่|Mâi][ใส่|sài][หมู|mǔu][นะ|ná][ครับ|khráp] [ผม|Phǒm][เป็น|pen][มุสลิม|mút-sà-lim][ครับ|khráp]",
+          "id": "I'll have pad thai. No pork, please. I'm Muslim.",
+          "literal": "I — ask-for — pad-thai — (polite). not — put-in — pork — okay — (polite). I — be — Muslim — (polite)."
+        },
+        {
+          "speaker": "พนักงาน:",
+          "text": "[เข้าใจ|Khâo-jai][ค่ะ|khâ] [ใส่|Sài][ไก่|kài][แทน|thaaen][ได้|dâai][ไหม|mǎi][คะ|khá]",
+          "id": "Understood. Is chicken instead okay?",
+          "literal": "understand — (polite). put-in — chicken — instead — can — (question) — (polite)?"
+        },
+        {
+          "speaker": "บูดี:",
+          "text": "[ได้|Dâai][ครับ|khráp] [แล้ว|Láaeo][ก็|kâw][ขอ|khǎaw][ไม่|mâi][เผ็ด|phèt][ครับ|khráp] [เผ็ด|Phèt][ไม่|mâi][ค่อย|khâwy][ได้|dâai][ครับ|khráp]",
+          "id": "Sure. And not spicy, please. I can't really handle spicy food.",
+          "literal": "can — (polite). then — also — ask-for — not — spicy — (polite). spicy — not — really — can — (polite)."
+        },
+        {
+          "speaker": "นก:",
+          "text": "[เมื่อกี้|Mûea-kîi][บอก|bàwk][คน|khon][อินโดฯ|In-doo][กิน|kin][เผ็ด|phèt][ได้|dâai][ไง|ngai][คะ|khá]",
+          "id": "Didn't you just say Indonesians can handle spicy food?",
+          "literal": "just-now — say — person — Indo — eat — spicy — can — right — (polite)?"
+        },
+        {
+          "speaker": "บูดี:",
+          "text": "[เผ็ด|Phèt][ไทย|thai][กับ|kàp][เผ็ด|phèt][อินโดฯ|In-doo][ไม่|mâi][เหมือน|mǔuean][กัน|kan][ครับ|khráp]",
+          "id": "Thai spicy and Indonesian spicy aren't the same.",
+          "literal": "spicy — Thai — with — spicy — Indo — not — same — each-other — (polite)."
+        },
+        {
+          "speaker": "พนักงาน:",
+          "text": "[รับ|Ráp][เครื่องดื่ม|khrûeang-dùuem][อะไร|à-rai][คะ|khá]",
+          "id": "What would you like to drink?",
+          "literal": "receive — drink — what — (polite)?"
+        },
+        {
+          "speaker": "นก:",
+          "text": "[น้ำเปล่า|Náam-plào][สอง|sǎawng][ขวด|khùat][ค่ะ|khâ] [เย็น|Yen][นะ|ná][คะ|khá]",
+          "id": "Two bottles of water. Cold ones, please.",
+          "literal": "water-plain — two — bottle — (polite). cold — okay — (polite)."
+        },
+        {
+          "speaker": "บูดี:",
+          "text": "[อร่อย|À-ràwy][มาก|mâak][ครับ|khráp] [อิ่ม|Ìm][แล้ว|láaeo][ครับ|khráp] [เช็คบิล|Chék-bin][ด้วย|dûai][ครับ|khráp]",
+          "id": "That was delicious. I'm full. Check, please.",
+          "literal": "delicious — very — (polite). full — already — (polite). check-bill — please — (polite)."
+        }
+      ],
+      "notes": [
+        "**ขอ khǎaw and เอา ao both mean \"I'll have\", but they feel different.** *ขอ* is softer and fits anything; *เอา* is more direct and very common at street stalls. A safe rule: use *ขอ* for small things (the menu, water, a spoon) and *เอา* for ordering dishes. Both are polite as long as they end with *ครับ/ค่ะ*.",
+        "**ที่ thîi is the classifier for a SERVING of food**, not just \"place\". *ต้มยำหนึ่งที่* = one serving of tom yam. For dishes served on a plate, *จาน jaan* is also correct. Both sound natural; *ที่* is a little more flexible.",
+        "**ใส่ sài means \"to put in\", and ไม่ใส่ is the key to every dietary restriction.** *ไม่ใส่หมู* (no pork), *ไม่ใส่ผงชูรส* (no MSG), *ไม่ใส่น้ำปลา* (no fish sauce), *ไม่ใส่น้ำตาล* (no sugar). This one pattern solves more problems than any list of food vocabulary.",
+        "**Spice levels have their own ladder**, and you'd better start at the bottom: *ไม่เผ็ด mâi phèt* (not spicy) → *เผ็ดนิดหน่อย phèt nít-nàwy* (a little spicy) → *เผ็ดน้อย phèt náwy* (mildly spicy) → *เผ็ดปกติ phèt pà-kà-tì* (normal spicy) → *เผ็ดมาก phèt mâak* (very spicy). ⚠️ \"Normal spicy\" in Thailand is often \"very spicy\" by most foreigners' standards, especially for *ส้มตำ* and Isan food.",
+        "**ไม่ค่อย mâi khâwy means \"not really\", and it softens a refusal.** *เผ็ดไม่ค่อยได้* = \"I can't really handle spicy food\". This is much gentler than *ไม่ได้*, which sounds blunt. Thai loves softened forms like this; Unit 19 explains why.",
+        "**เช็คบิล chék-bin means \"check, please\"**, borrowed from English *check bill* and used everywhere. The native Thai form is *คิดเงินด้วยครับ khít-ngoen dûai khráp* (literally \"please count the money\"), which is actually more common at simple stalls.",
+        "**ท่าน thâan is an honorific word for \"person\"**, used by restaurant, airport, and office staff. You don't need to use it yourself — just understand it when you hear it. Answer with plain *คน khon*.",
+        "**อิ่ม ìm means full, and it's an adjective — so no \"to be\" is needed.** *อิ่มแล้วครับ* = I'm full. Its opposite is *หิว hǐu* (hungry). These two words, plus *อร่อย*, are enough to give complete feedback on any meal."
+      ],
+      "grammars": [
+        {
+          "title": "Ten dishes found at almost every stall",
+          "table": {
+            "head": [
+              "Thai",
+              "Pronunciation",
+              "What it is"
+            ],
+            "rows": [
+              [
+                "ผัดไทย",
+                "*phàt-thai*",
+                "Thai-style stir-fried rice noodles, usually not spicy"
+              ],
+              [
+                "ข้าวผัด",
+                "*khâao-phàt*",
+                "fried rice — name the filling: ข้าวผัดไก่ (chicken), ข้าวผัดกุ้ง (shrimp)"
+              ],
+              [
+                "ต้มยำกุ้ง",
+                "*tôm-yam-kûng*",
+                "hot and sour soup with shrimp"
+              ],
+              [
+                "ต้มข่าไก่",
+                "*tôm-khàa-kài*",
+                "coconut galangal soup with chicken — barely spicy"
+              ],
+              [
+                "ส้มตำ",
+                "*sôm-tam*",
+                "green papaya salad — **very** spicy by default"
+              ],
+              [
+                "ผัดกะเพรา",
+                "*phàt-kà-phrao*",
+                "holy basil stir-fry, spicy; the number-one everyday meal"
+              ],
+              [
+                "ข้าวมันไก่",
+                "*khâao-man-kài*",
+                "Hainanese chicken rice"
+              ],
+              [
+                "ผัดซีอิ๊ว",
+                "*phàt-sii-íu*",
+                "noodles stir-fried in soy sauce, not spicy"
+              ],
+              [
+                "แกงเขียวหวาน",
+                "*kaaeng-khǐao-wǎan*",
+                "green coconut curry, medium spicy"
+              ],
+              [
+                "ก๋วยเตี๋ยว",
+                "*kǔai-tǐao*",
+                "noodle soup — you season it yourself at the table"
+              ]
+            ]
+          },
+          "after": [
+            "Thai dish names follow a very regular pattern: **cooking method + ingredient**. *ผัด phàt* = stir-fry, *ต้ม tôm* = boil, *ทอด thâwt* = deep-fry, *ย่าง yâang* = grill, *นึ่ง nûeng* = steam, *แกง kaaeng* = curry. Combine with *ไก่ kài* (chicken), *หมู mǔu* (pork), *เนื้อ núuea* (beef), *กุ้ง kûng* (shrimp), *ปลา plaa* (fish), *ผัก phàk* (vegetables) — and you can read half the menu without ever memorizing it."
+          ]
+        },
+        {
+          "title": "Ordering phrases, from start to paying",
+          "table": {
+            "head": [
+              "Thai",
+              "Pronunciation",
+              "Meaning"
+            ],
+            "rows": [
+              [
+                "ขอเมนูหน่อยครับ/ค่ะ",
+                "*khǎaw mee-nuu nàwy*",
+                "could I have the menu?"
+              ],
+              [
+                "มีอะไรแนะนำไหม",
+                "*mii à-rai náe-nam mǎi*",
+                "anything you'd recommend?"
+              ],
+              [
+                "อันนี้เผ็ดไหม",
+                "*an-níi phèt mǎi*",
+                "is this one spicy?"
+              ],
+              [
+                "ขอไม่เผ็ดนะ",
+                "*khǎaw mâi phèt ná*",
+                "not spicy, please"
+              ],
+              [
+                "ไม่ใส่หมูนะ",
+                "*mâi sài mǔu ná*",
+                "no pork, please"
+              ],
+              [
+                "ขอน้ำเปล่าหน่อย",
+                "*khǎaw náam-plào nàwy*",
+                "some water, please"
+              ],
+              [
+                "ขอช้อนเพิ่มหน่อย",
+                "*khǎaw cháwn phôoem nàwy*",
+                "another spoon, please"
+              ],
+              [
+                "อร่อยมาก",
+                "*à-ràwy mâak*",
+                "very delicious"
+              ],
+              [
+                "อิ่มแล้ว",
+                "*ìm láaeo*",
+                "I'm full"
+              ],
+              [
+                "เช็คบิลด้วย",
+                "*chék-bin dûai*",
+                "check, please"
+              ],
+              [
+                "ห่อกลับบ้าน",
+                "*hàw klàp bâan*",
+                "to go, take away"
+              ]
+            ]
+          },
+          "after": [
+            "⚠️ *ห่อกลับบ้าน* literally means \"wrap, go back home\", and that really is how Thai says \"to go\". At stalls many people just say *ใส่ถุงครับ/ค่ะ sài thǔng* — \"put it in a bag\"."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "For Muslim readers and anyone avoiding pork: phrases to learn",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Thailand has a sizable Muslim population, especially in the south, and the terms are widely understood in big cities. What you need to watch for isn't visible pork, but the **broth and seasonings** you can't see."
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Thai",
+            "Pronunciation",
+            "Meaning"
+          ],
+          "rows": [
+            [
+              "ผม/ฉันเป็นมุสลิม",
+              "*phǒm/chǎn pen mút-sà-lim*",
+              "I'm Muslim"
+            ],
+            [
+              "กินหมูไม่ได้",
+              "*kin mǔu mâi dâai*",
+              "I can't eat pork"
+            ],
+            [
+              "ไม่ใส่หมูนะ",
+              "*mâi sài mǔu ná*",
+              "no pork, please"
+            ],
+            [
+              "ไม่ใส่น้ำมันหมู",
+              "*mâi sài náam-man-mǔu*",
+              "no lard, please"
+            ],
+            [
+              "มีอาหารฮาลาลไหม",
+              "*mii aa-hǎan haa-laan mǎi*",
+              "do you have halal food?"
+            ],
+            [
+              "ร้านนี้ฮาลาลไหม",
+              "*ráan níi haa-laan mǎi*",
+              "is this place halal?"
+            ],
+            [
+              "ใส่ไก่แทนได้ไหม",
+              "*sài kài thaaen dâai mǎi*",
+              "can you use chicken instead?"
+            ],
+            [
+              "ไม่กินเนื้อสัตว์",
+              "*mâi kin núuea-sàt*",
+              "I don't eat meat"
+            ],
+            [
+              "กินเจ",
+              "*kin jee*",
+              "vegan (no animal products at all)"
+            ],
+            [
+              "มัสยิดอยู่ที่ไหน",
+              "*mát-sà-yít yùu thîi nǎi*",
+              "where's the mosque?"
+            ]
+          ]
+        },
+        {
+          "type": "kotak",
+          "title": "Three practical tips",
+          "items": [
+            "**Look for the green ฮาลาล (haa-laan) sign** on the stall's window. In Bangkok, the Nana area, Ramkhamhaeng, and the area around the Java Mosque have plenty of options.",
+            "**กินเจ *kin jee* is your magic word when in doubt.** It means strict vegan in the Chinese-Thai tradition: no meat, no animal broth, not even garlic or onion. Stalls with a yellow flag marked เจ are guaranteed pork-free.",
+            "⚠️ **น้ำปลา *náam-plaa* (fish sauce) is in almost every Thai dish**, which isn't a problem for most people — but *ผัดกะเพรา* and *ก๋วยเตี๋ยว* very often use pork broth without saying so. Asking *ใส่หมูไหมคะ/ครับ* before you order is safer than guessing from how it looks."
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Tastes and reactions",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "Thai",
+            "Pronunciation",
+            "English"
+          ],
+          "rows": [
+            [
+              "อร่อย",
+              "*à-ràwy*",
+              "delicious"
+            ],
+            [
+              "ไม่อร่อย",
+              "*mâi à-ràwy*",
+              "not tasty"
+            ],
+            [
+              "เผ็ด",
+              "*phèt*",
+              "spicy"
+            ],
+            [
+              "หวาน",
+              "*wǎan*",
+              "sweet"
+            ],
+            [
+              "เค็ม",
+              "*khem*",
+              "salty"
+            ],
+            [
+              "เปรี้ยว",
+              "*prîao*",
+              "sour"
+            ],
+            [
+              "ขม",
+              "*khǒm*",
+              "bitter"
+            ],
+            [
+              "จืด",
+              "*jùuet*",
+              "bland"
+            ],
+            [
+              "มัน",
+              "*man*",
+              "rich, oily"
+            ],
+            [
+              "ร้อน / เย็น",
+              "*ráwn / yen*",
+              "hot / cold"
+            ],
+            [
+              "หิว",
+              "*hǐu*",
+              "hungry"
+            ],
+            [
+              "อิ่ม",
+              "*ìm*",
+              "full"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "To compliment someone's cooking, the best phrase isn't just *อร่อย* but **อร่อยมากครับ/ค่ะ** or **อร่อยจัง** — both sound sincere. If someone asks *เผ็ดไหม* and you're overwhelmed, the safest answer is *เผ็ดนิดหน่อยครับ/ค่ะ* with a smile; your host will hand you water rather than feel offended."
+        },
+        {
+          "type": "kotak",
+          "title": "\"กินข้าวหรือยัง\" is not an invitation to eat",
+          "items": [
+            "*กินข้าวหรือยัง kin khâao rǔue yang* — \"have you eaten yet?\" — is a greeting, not an invitation. Thais use it exactly as English speakers use \"how's it going?\".",
+            "There are only two standard answers: *กินแล้วครับ/ค่ะ kin láaeo* (yes, I have) or *ยังครับ/ค่ะ yang* (not yet). If you answer \"not yet\", there's a real chance you'll actually be invited to eat — and turning that down takes skills covered in Unit 19."
+          ]
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "th": "สั่ง",
+      "baca": "sàng",
+      "en": "to order"
+    },
+    {
+      "th": "เมนู",
+      "baca": "mee-nuu",
+      "en": "menu"
+    },
+    {
+      "th": "ใส่",
+      "baca": "sài",
+      "en": "to put in; to wear"
+    },
+    {
+      "th": "ไม่ใส่",
+      "baca": "mâi sài",
+      "en": "without, leave out"
+    },
+    {
+      "th": "แทน",
+      "baca": "thaaen",
+      "en": "instead"
+    },
+    {
+      "th": "ไม่ค่อย",
+      "baca": "mâi khâwy",
+      "en": "not really, not very"
+    },
+    {
+      "th": "หมู",
+      "baca": "mǔu",
+      "en": "pork, pig"
+    },
+    {
+      "th": "ไก่",
+      "baca": "kài",
+      "en": "chicken"
+    },
+    {
+      "th": "เนื้อ",
+      "baca": "núuea",
+      "en": "meat (beef)"
+    },
+    {
+      "th": "กุ้ง",
+      "baca": "kûng",
+      "en": "shrimp"
+    },
+    {
+      "th": "ปลา",
+      "baca": "plaa",
+      "en": "fish"
+    },
+    {
+      "th": "ผัก",
+      "baca": "phàk",
+      "en": "vegetables"
+    },
+    {
+      "th": "ไข่",
+      "baca": "khài",
+      "en": "egg"
+    },
+    {
+      "th": "ข้าว",
+      "baca": "khâao",
+      "en": "rice; meal"
+    },
+    {
+      "th": "ผัด",
+      "baca": "phàt",
+      "en": "to stir-fry"
+    },
+    {
+      "th": "ต้ม",
+      "baca": "tôm",
+      "en": "to boil"
+    },
+    {
+      "th": "ทอด",
+      "baca": "thâwt",
+      "en": "to deep-fry"
+    },
+    {
+      "th": "ย่าง",
+      "baca": "yâang",
+      "en": "to grill"
+    },
+    {
+      "th": "แกง",
+      "baca": "kaaeng",
+      "en": "curry"
+    },
+    {
+      "th": "น้ำเปล่า",
+      "baca": "náam-plào",
+      "en": "plain water"
+    },
+    {
+      "th": "เครื่องดื่ม",
+      "baca": "khrûeang-dùuem",
+      "en": "drink, beverage"
+    },
+    {
+      "th": "ช้อน",
+      "baca": "cháwn",
+      "en": "spoon"
+    },
+    {
+      "th": "ส้อม",
+      "baca": "sâwm",
+      "en": "fork"
+    },
+    {
+      "th": "เพิ่ม",
+      "baca": "phôoem",
+      "en": "to add, extra"
+    },
+    {
+      "th": "อิ่ม",
+      "baca": "ìm",
+      "en": "full (after eating)"
+    },
+    {
+      "th": "หิว",
+      "baca": "hǐu",
+      "en": "hungry"
+    },
+    {
+      "th": "เช็คบิล",
+      "baca": "chék-bin",
+      "en": "check, please"
+    },
+    {
+      "th": "คิดเงิน",
+      "baca": "khít-ngoen",
+      "en": "to add up the bill"
+    },
+    {
+      "th": "ห่อ",
+      "baca": "hàw",
+      "en": "to wrap"
+    },
+    {
+      "th": "แนะนำ",
+      "baca": "náe-nam",
+      "en": "to recommend"
+    },
+    {
+      "th": "เข้าใจ",
+      "baca": "khâo-jai",
+      "en": "to understand"
+    },
+    {
+      "th": "มุสลิม",
+      "baca": "mút-sà-lim",
+      "en": "Muslim"
+    },
+    {
+      "th": "ฮาลาล",
+      "baca": "haa-laan",
+      "en": "halal"
+    },
+    {
+      "th": "เมื่อกี้",
+      "baca": "mûea-kîi",
+      "en": "just now, a moment ago"
+    },
+    {
+      "th": "บอก",
+      "baca": "bàwk",
+      "en": "to tell, say"
+    }
+  ],
+  "exercises": [
+    {
+      "prompt": "Fill in the blanks.",
+      "items": [
+        "\"Could I have the menu?\" → ขอ____หน่อยค่ะ",
+        "\"No pork, please\" → ____หมูนะครับ",
+        "\"Not spicy, please\" → ขอ____ค่ะ",
+        "\"I'm full\" → ____แล้วครับ",
+        "\"Check, please\" → ____ด้วยค่ะ"
+      ]
+    },
+    {
+      "prompt": "Rank the spice levels from mildest to hottest: write the order.",
+      "items": [
+        "เผ็ดมาก",
+        "ไม่เผ็ด",
+        "เผ็ดปกติ",
+        "เผ็ดนิดหน่อย",
+        "เผ็ดน้อย"
+      ]
+    },
+    {
+      "prompt": "Put the words in the right order.",
+      "items": [
+        "ค่ะ / สองคน",
+        "ครับ / หนึ่งจาน / เอา / ข้าวผัดไก่",
+        "ครับ / เป็นมุสลิม / ผม / ไม่ใส่หมูนะ",
+        "คะ / ไหม / อันนี้ / เผ็ด",
+        "ครับ / เช็คบิล / ด้วย"
+      ]
+    },
+    {
+      "prompt": "Translate into Thai. Imagine you're a man.",
+      "items": [
+        "How many people? (the server asking)",
+        "I'll have one serving of pad thai.",
+        "I'm Muslim, no pork, please.",
+        "Can you use chicken instead?",
+        "Is this one spicy?",
+        "Very delicious. Check, please."
+      ]
+    }
+  ],
+  "answers": [
+    "เมนู — ไม่ใส่ — ไม่เผ็ด — อิ่ม — เช็คบิล",
+    "5 (hottest) — 1 (mildest) — 4 — 2 — 3",
+    "สองคนค่ะ — เอาข้าวผัดไก่หนึ่งจานครับ — ผมเป็นมุสลิมครับ ไม่ใส่หมูนะ — อันนี้เผ็ดไหมคะ — เช็คบิลด้วยครับ",
+    "กี่คนครับ — ผมขอผัดไทยหนึ่งที่ครับ — ผมเป็นมุสลิมครับ ไม่ใส่หมูนะครับ — ใส่ไก่แทนได้ไหมครับ — อันนี้เผ็ดไหมครับ — อร่อยมากครับ เช็คบิลด้วยครับ"
+  ],
+  "wave": "Review Unit 4: cover the Thai, then order six different things with the correct classifiers — water, coffee, bread, a ticket, a book, a bag."
+}

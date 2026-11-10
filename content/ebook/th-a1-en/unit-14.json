@@ -1,0 +1,652 @@
+{
+  "title": "Colors, sizes, and trying on clothes",
+  "title_target": "สีอะไร ไซส์ไหน — Sǐi à-rai, sái nǎi",
+  "goal": "Name colors and sizes, ask to try clothes on, say something is too small or too big, and exchange items — while using adjectives that stand after the noun they describe.",
+  "bekal": [
+    "naming twelve colors",
+    "asking about sizes and requesting another size",
+    "asking to try something on with ลอง…ได้ไหม",
+    "saying something is too big, too small, too tight",
+    "exchanging items and asking about fabric"
+  ],
+  "dialogs": [
+    {
+      "title": "บทสนทนา — At a clothing shop, second floor",
+      "intro": "Budi is looking for a shirt for a meeting. Watch the order of adjectives: colors and sizes always stand **after** the thing they describe, the reverse of English.",
+      "lines": [
+        {
+          "speaker": "พนักงาน:",
+          "text": "[หา|Hǎa][อะไร|à-rai][อยู่|yùu][คะ|khá]",
+          "id": "What are you looking for?",
+          "literal": "look-for — what — (ongoing) — (polite)?"
+        },
+        {
+          "speaker": "บูดี:",
+          "text": "[หา|Hǎa][เสื้อเชิ้ต|sûuea-chóoet][ครับ|khráp] [มี|Mii][สี|sǐi][ขาว|khǎao][ไหม|mǎi][ครับ|khráp]",
+          "id": "A shirt. Do you have any in white?",
+          "literal": "look-for — shirt — (polite). have — color — white — (question) — (polite)?"
+        },
+        {
+          "speaker": "พนักงาน:",
+          "text": "[มี|Mii][ค่ะ|khâ] [ใส่|Sài][ไซส์|sái][อะไร|à-rai][คะ|khá]",
+          "id": "Yes. What size do you wear?",
+          "literal": "have — (polite). wear — size — what — (polite)?"
+        },
+        {
+          "speaker": "บูดี:",
+          "text": "[ไม่|Mâi][แน่ใจ|nâae-jai][ครับ|khráp] [ที่|Thîi][อินโดนีเซีย|In-doo-nii-sia][ใส่|sài][แอล|aae-o][ครับ|khráp]",
+          "id": "I'm not sure. In Indonesia I wear L.",
+          "literal": "not — sure — (polite). at — Indonesia — wear — L — (polite)."
+        },
+        {
+          "speaker": "พนักงาน:",
+          "text": "[ที่|Thîi][ไทย|thai][ไซส์|sái][เล็ก|lék][กว่า|kwàa][ค่ะ|khâ] [ลอง|Laawng][เอ็กซ์แอล|ék-aae-o][ดู|duu][ไหม|mǎi][คะ|khá]",
+          "id": "Thai sizes run smaller. Want to try an XL?",
+          "literal": "at — Thai — size — small — more — (polite). try — XL — see — (question) — (polite)?"
+        },
+        {
+          "speaker": "บูดี:",
+          "text": "[ลอง|Laawng][ได้|dâai][ไหม|mǎi][ครับ|khráp] [ห้องลอง|Hâwng-laawng][อยู่|yùu][ไหน|nǎi][ครับ|khráp]",
+          "id": "May I try it on? Where's the fitting room?",
+          "literal": "try — can — (question) — (polite)? room-try — located — where — (polite)?"
+        },
+        {
+          "speaker": "พนักงาน:",
+          "text": "[ตรงนั้น|Trong-nán][ค่ะ|khâ] [ข้างๆ|Khâang-khâang][กระจก|krà-jòk][ค่ะ|khâ]",
+          "id": "Over there. Next to the mirror.",
+          "literal": "right-there — (polite). beside — mirror — (polite)."
+        },
+        {
+          "speaker": "บูดี:",
+          "text": "[ตัว|Tua][นี้|níi][แขน|khǎaen][ยาว|yaao][ไป|pai][หน่อย|nàwy][ครับ|khráp] [มี|Mii][แขนสั้น|khǎaen-sân][ไหม|mǎi][ครับ|khráp]",
+          "id": "The sleeves on this one are a bit too long. Do you have short sleeves?",
+          "literal": "(classifier) — this — sleeve — long — too — a-little — (polite). have — short-sleeve — (question) — (polite)?"
+        },
+        {
+          "speaker": "พนักงาน:",
+          "text": "[มี|Mii][ค่ะ|khâ] [แต่|Tàae][สี|sǐi][ขาว|khǎao][หมด|mòt][ค่ะ|khâ] [มี|Mii][สี|sǐi][ฟ้า|fáa][กับ|kàp][สี|sǐi][เทา|thao][ค่ะ|khâ]",
+          "id": "Yes. But white is sold out. There's light blue and gray.",
+          "literal": "have — (polite). but — color — white — run-out — (polite). have — color — sky-blue — and — color — gray — (polite)."
+        },
+        {
+          "speaker": "บูดี:",
+          "text": "[ขอ|Khǎaw][สี|sǐi][ฟ้า|fáa][ครับ|khráp] [ผ้า|Phâa][อะไร|à-rai][ครับ|khráp] [ร้อน|Ráwn][ไหม|mǎi][ครับ|khráp]",
+          "id": "The light blue, please. What's the fabric? Is it hot?",
+          "literal": "ask-for — color — sky-blue — (polite). fabric — what — (polite)? hot — (question) — (polite)?"
+        },
+        {
+          "speaker": "พนักงาน:",
+          "text": "[ผ้า|Phâa][ฝ้าย|fâai][ค่ะ|khâ] [ใส่|Sài][สบาย|sà-baai][ค่ะ|khâ] [ซัก|Sák][ได้|dâai][ปกติ|pà-kà-tì][ค่ะ|khâ]",
+          "id": "Cotton. Comfortable to wear. You can wash it normally.",
+          "literal": "fabric — cotton — (polite). wear — comfortable — (polite). wash — can — normal — (polite)."
+        },
+        {
+          "speaker": "บูดี:",
+          "text": "[เอา|Ao][ตัว|tua][นี้|níi][ครับ|khráp] [ถ้า|Thâa][ไม่|mâi][พอดี|phaw-dii][เปลี่ยน|plìan][ได้|dâai][ไหม|mǎi][ครับ|khráp]",
+          "id": "I'll take this one. If it doesn't fit, can I exchange it?",
+          "literal": "take — (classifier) — this — (polite). if — not — fit — exchange — can — (question) — (polite)?"
+        },
+        {
+          "speaker": "พนักงาน:",
+          "text": "[ได้|Dâai][ค่ะ|khâ] [ภายใน|Phaai-nai][เจ็ด|jèt][วัน|wan][ค่ะ|khâ] [เก็บ|Kèp][ใบเสร็จ|bai-sèt][ไว้|wái][นะ|ná][คะ|khá]",
+          "id": "Yes. Within seven days. Keep the receipt, okay?",
+          "literal": "can — (polite). within — seven — day — (polite). keep — receipt — put-away — okay — (polite)."
+        }
+      ],
+      "notes": [
+        "**สี sǐi means \"color\", and it stands IN FRONT of the color name**: *สีขาว* (white), *สีแดง* (red). When attached to an object, the whole cluster moves behind it: *เสื้อสีขาว* (a white shirt — literally \"shirt color white\"). ⚠️ This order is the reverse of English.",
+        "**Thai adjectives always stand AFTER the noun**: *เสื้อใหญ่* (big shirt — literally \"shirt big\"), *ห้องเล็ก* (small room). Once you get used to it, the order feels logical: first the thing, then what it's like.",
+        "**…ไป pai after an adjective means \"too\".** *ใหญ่ไป* (too big), *แพงไป* (too expensive), *ยาวไป* (too long). Adding *หน่อย nàwy* at the end softens it to \"a bit too\": *ยาวไปหน่อย* (a bit too long) — and this is the politest form when turning down an item in a shop.",
+        "**ลอง laawng means \"to try\", and is often followed by ดู duu (look).** *ลองดู* = give it a try. *ลองใส่ดู* = try it on. The pattern *verb + ดู* means \"try …-ing\" for many verbs: *ชิมดู chim duu* (try a taste), *ถามดู thǎam duu* (try asking).",
+        "**พอดี phaw-dii means \"just right, fits\" — and it's used constantly outside clothing too.** *พอดีเลย* = what luck, perfect timing. The word *พอ phaw* alone means enough.",
+        "**หมด mòt means \"used up, sold out\".** *สีขาวหมด* (white is sold out), *เงินหมด* (the money's run out), *หมดแล้ว* (all gone). It also forms *ทั้งหมด tháng-mòt* (all of it), which you've been using since unit 3.",
+        "**ไซส์ sái is borrowed from English *size*.** Letter sizes are used as is: *เอส S, เอ็ม M, แอล L, เอ็กซ์แอล XL*. ⚠️ Note the clerk's warning — Thai sizes really do run **one size smaller** than Western sizes for the same brand.",
+        "**ถ้า thâa means \"if\", and it goes at the start of the clause.** *ถ้าไม่พอดี เปลี่ยนได้ไหม* (if it doesn't fit, can I exchange it?). You'll use this pattern constantly from now on."
+      ],
+      "grammars": [
+        {
+          "title": "Twelve colors",
+          "table": {
+            "head": [
+              "Thai",
+              "Pronunciation",
+              "Color",
+              "Thai",
+              "Pronunciation",
+              "Color"
+            ],
+            "rows": [
+              [
+                "สีขาว",
+                "*sǐi khǎao*",
+                "white",
+                "สีเขียว",
+                "*sǐi khǐao*",
+                "green"
+              ],
+              [
+                "สีดำ",
+                "*sǐi dam*",
+                "black",
+                "สีฟ้า",
+                "*sǐi fáa*",
+                "sky blue"
+              ],
+              [
+                "สีแดง",
+                "*sǐi daaeng*",
+                "red",
+                "สีน้ำเงิน",
+                "*sǐi náam-ngoen*",
+                "dark blue"
+              ],
+              [
+                "สีเหลือง",
+                "*sǐi lǔueang*",
+                "yellow",
+                "สีม่วง",
+                "*sǐi mûang*",
+                "purple"
+              ],
+              [
+                "สีส้ม",
+                "*sǐi sôm*",
+                "orange",
+                "สีชมพู",
+                "*sǐi chom-phuu*",
+                "pink"
+              ],
+              [
+                "สีน้ำตาล",
+                "*sǐi náam-taan*",
+                "brown",
+                "สีเทา",
+                "*sǐi thao*",
+                "gray"
+              ]
+            ]
+          },
+          "after": [
+            "Some Thai color names are pictures of things, just like English \"orange\": *สีส้ม* from the orange fruit (*ส้ม*), *สีน้ำตาล* from palm sugar (*น้ำตาล*), *สีฟ้า* from the sky (*ฟ้า*), *สีชมพู* from the name of the rose apple fruit.",
+            "⚠️ **สีฟ้า and สีน้ำเงิน are both \"blue\" but can't be swapped**: the first is light blue like the sky, the second is dark blue. Thai treats them as genuinely different colors, not shades of the same one."
+          ]
+        },
+        {
+          "title": "Shopping for clothes: the sentences you need",
+          "table": {
+            "head": [
+              "Thai",
+              "Pronunciation",
+              "Meaning"
+            ],
+            "rows": [
+              [
+                "มีสีอื่นไหม",
+                "*mii sǐi ùuen mǎi*",
+                "do you have other colors?"
+              ],
+              [
+                "มีไซส์ใหญ่กว่านี้ไหม",
+                "*mii sái yài kwàa níi mǎi*",
+                "do you have a bigger size?"
+              ],
+              [
+                "ลองได้ไหม",
+                "*laawng dâai mǎi*",
+                "may I try it on?"
+              ],
+              [
+                "ห้องลองอยู่ไหน",
+                "*hâwng-laawng yùu nǎi*",
+                "where's the fitting room?"
+              ],
+              [
+                "ใหญ่ไปหน่อย",
+                "*yài pai nàwy*",
+                "a bit too big"
+              ],
+              [
+                "เล็กไปหน่อย",
+                "*lék pai nàwy*",
+                "a bit too small"
+              ],
+              [
+                "พอดีเลย",
+                "*phaw-dii loei*",
+                "fits perfectly"
+              ],
+              [
+                "ผ้าอะไร",
+                "*phâa à-rai*",
+                "what's the fabric?"
+              ],
+              [
+                "ซักเครื่องได้ไหม",
+                "*sák khrûeang dâai mǎi*",
+                "is it machine washable?"
+              ],
+              [
+                "เปลี่ยนได้ไหม",
+                "*plìan dâai mǎi*",
+                "can I exchange it?"
+              ],
+              [
+                "คืนได้ไหม",
+                "*khuuen dâai mǎi*",
+                "can I return it?"
+              ],
+              [
+                "ลดราคาไหม",
+                "*lót raa-khaa mǎi*",
+                "is there a discount?"
+              ]
+            ]
+          },
+          "after": [
+            "⚠️ **เปลี่ยน *plìan* (exchange for another item) is different from คืน *khuuen* (return for a refund).** In Thailand the first is widely accepted; the second is rare, and at markets almost never. Ask before you pay, not after."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Clothes and accessories",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "Thai",
+            "Pronunciation",
+            "English",
+            "Classifier"
+          ],
+          "rows": [
+            [
+              "เสื้อ",
+              "*sûuea*",
+              "top, shirt",
+              "ตัว"
+            ],
+            [
+              "เสื้อเชิ้ต",
+              "*sûuea-chóoet*",
+              "dress shirt",
+              "ตัว"
+            ],
+            [
+              "เสื้อยืด",
+              "*sûuea-yûuet*",
+              "T-shirt",
+              "ตัว"
+            ],
+            [
+              "กางเกง",
+              "*kaang-keeng*",
+              "pants",
+              "ตัว"
+            ],
+            [
+              "กระโปรง",
+              "*krà-proong*",
+              "skirt",
+              "ตัว"
+            ],
+            [
+              "ชุด",
+              "*chút*",
+              "suit, dress",
+              "ชุด"
+            ],
+            [
+              "รองเท้า",
+              "*rawng-tháo*",
+              "shoes",
+              "คู่"
+            ],
+            [
+              "ถุงเท้า",
+              "*thǔng-tháo*",
+              "socks",
+              "คู่"
+            ],
+            [
+              "หมวก",
+              "*mùak*",
+              "hat",
+              "ใบ"
+            ],
+            [
+              "เข็มขัด",
+              "*khěm-khàt*",
+              "belt",
+              "เส้น"
+            ],
+            [
+              "ผ้าคลุมผม",
+              "*phâa-khlum-phǒm*",
+              "headscarf",
+              "ผืน"
+            ],
+            [
+              "นาฬิกา",
+              "*naa-lí-kaa*",
+              "wristwatch",
+              "เรือน"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "Notice **คู่ khûu** for things that come in pairs (shoes, socks) — the same word also means \"partner\" in the romantic sense. And **ผ้า phâa** (cloth) forms many words: *ผ้าเช็ดตัว phâa-chét-tua* (towel), *ผ้าปูที่นอน* (bedsheet), *ผ้าห่ม phâa-hòm* (blanket)."
+        },
+        {
+          "type": "kotak",
+          "title": "Dressing in Thailand: three practical points",
+          "items": [
+            "**Temples require covered shoulders and knees** — for men and women alike. Some big temples rent out cloth wraps, but the lines are long. Keeping a thin long-sleeved shirt in your bag solves this once and for all.",
+            "**Thai offices are generally smarter than newcomers expect** — collared shirts are standard, and on Mondays many people wear yellow (Monday's color, see unit 8).",
+            "**Indoor AC is very cold** even when it's 35 degrees outside. Cinemas, intercity buses, and office buildings almost always leave people shivering. A word you'll say often: *หนาว nǎao* (cold)."
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Adjectives in pairs",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "Thai",
+            "Pronunciation",
+            "English",
+            "Opposite"
+          ],
+          "rows": [
+            [
+              "ยาว",
+              "*yaao*",
+              "long",
+              "สั้น *sân* — short"
+            ],
+            [
+              "หนา",
+              "*nǎa*",
+              "thick",
+              "บาง *baang* — thin"
+            ],
+            [
+              "หนัก",
+              "*nàk*",
+              "heavy",
+              "เบา *bao* — light"
+            ],
+            [
+              "แน่น",
+              "*nâaen*",
+              "tight",
+              "หลวม *lǔam* — loose"
+            ],
+            [
+              "สวย",
+              "*sǔai*",
+              "beautiful, pretty",
+              "น่าเกลียด *nâa-klìat* — ugly"
+            ],
+            [
+              "เท่",
+              "*thêe*",
+              "cool, stylish",
+              "เชย *chooei* — tacky, dated"
+            ],
+            [
+              "นุ่ม",
+              "*nûm*",
+              "soft",
+              "แข็ง *khǎeng* — hard"
+            ],
+            [
+              "ใหม่",
+              "*mài*",
+              "new",
+              "เก่า *kào* — old"
+            ]
+          ]
+        },
+        {
+          "type": "kotak",
+          "title": "Giving compliments the right way",
+          "items": [
+            "**สวยจัง *sǔai jang*** — so pretty. Used for things and people; for people, usually for women.",
+            "**เท่จัง *thêe jang*** — so cool. Better suited to men and to things like watches or motorbikes.",
+            "**น่ารัก *nâa-rák*** — cute, lovely. This word is used very widely in Thailand — for children, animals, objects, even adults — and is almost always received as a warm compliment.",
+            "⚠️ The **น่า- *nâa-*** pattern forms many adjectives: *น่ากิน* (appetizing), *น่าสนใจ* (interesting), *น่าเบื่อ* (boring), *น่ากลัว* (scary). Literally \"worth …-ing\"."
+          ]
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "th": "สี",
+      "baca": "sǐi",
+      "en": "color"
+    },
+    {
+      "th": "ขาว",
+      "baca": "khǎao",
+      "en": "white"
+    },
+    {
+      "th": "ดำ",
+      "baca": "dam",
+      "en": "black"
+    },
+    {
+      "th": "แดง",
+      "baca": "daaeng",
+      "en": "red"
+    },
+    {
+      "th": "เหลือง",
+      "baca": "lǔueang",
+      "en": "yellow"
+    },
+    {
+      "th": "เขียว",
+      "baca": "khǐao",
+      "en": "green"
+    },
+    {
+      "th": "ฟ้า",
+      "baca": "fáa",
+      "en": "sky blue; sky"
+    },
+    {
+      "th": "น้ำเงิน",
+      "baca": "náam-ngoen",
+      "en": "dark blue"
+    },
+    {
+      "th": "ชมพู",
+      "baca": "chom-phuu",
+      "en": "pink"
+    },
+    {
+      "th": "เทา",
+      "baca": "thao",
+      "en": "gray"
+    },
+    {
+      "th": "ไซส์",
+      "baca": "sái",
+      "en": "size"
+    },
+    {
+      "th": "ลอง",
+      "baca": "laawng",
+      "en": "to try"
+    },
+    {
+      "th": "ห้องลอง",
+      "baca": "hâwng-laawng",
+      "en": "fitting room"
+    },
+    {
+      "th": "พอดี",
+      "baca": "phaw-dii",
+      "en": "just right; by chance"
+    },
+    {
+      "th": "หมด",
+      "baca": "mòt",
+      "en": "used up, sold out"
+    },
+    {
+      "th": "เปลี่ยน",
+      "baca": "plìan",
+      "en": "to exchange, to change"
+    },
+    {
+      "th": "คืน",
+      "baca": "khuuen",
+      "en": "to return; night"
+    },
+    {
+      "th": "ผ้า",
+      "baca": "phâa",
+      "en": "cloth, fabric"
+    },
+    {
+      "th": "ฝ้าย",
+      "baca": "fâai",
+      "en": "cotton"
+    },
+    {
+      "th": "ซัก",
+      "baca": "sák",
+      "en": "to wash (clothes)"
+    },
+    {
+      "th": "เก็บ",
+      "baca": "kèp",
+      "en": "to keep, to store"
+    },
+    {
+      "th": "ภายใน",
+      "baca": "phaai-nai",
+      "en": "within (a time period)"
+    },
+    {
+      "th": "ถ้า",
+      "baca": "thâa",
+      "en": "if"
+    },
+    {
+      "th": "อื่น",
+      "baca": "ùuen",
+      "en": "other"
+    },
+    {
+      "th": "ราคา",
+      "baca": "raa-khaa",
+      "en": "price"
+    },
+    {
+      "th": "เสื้อเชิ้ต",
+      "baca": "sûuea-chóoet",
+      "en": "dress shirt"
+    },
+    {
+      "th": "กางเกง",
+      "baca": "kaang-keeng",
+      "en": "pants"
+    },
+    {
+      "th": "แขน",
+      "baca": "khǎaen",
+      "en": "sleeve"
+    },
+    {
+      "th": "ยาว",
+      "baca": "yaao",
+      "en": "long"
+    },
+    {
+      "th": "สั้น",
+      "baca": "sân",
+      "en": "short"
+    },
+    {
+      "th": "กระจก",
+      "baca": "krà-jòk",
+      "en": "mirror, glass"
+    },
+    {
+      "th": "สวย",
+      "baca": "sǔai",
+      "en": "beautiful, pretty"
+    },
+    {
+      "th": "น่ารัก",
+      "baca": "nâa-rák",
+      "en": "cute, lovely"
+    },
+    {
+      "th": "สบาย",
+      "baca": "sà-baai",
+      "en": "comfortable, pleasant"
+    }
+  ],
+  "exercises": [
+    {
+      "prompt": "Write the colors in Thai.",
+      "items": [
+        "white = ____",
+        "black = ____",
+        "red = ____",
+        "sky blue = ____",
+        "gray = ____",
+        "pink = ____"
+      ]
+    },
+    {
+      "prompt": "Fill in the blanks.",
+      "items": [
+        "\"May I try it on?\" → ____ได้ไหมครับ",
+        "\"A bit too big\" → ใหญ่____หน่อยค่ะ",
+        "\"Fits perfectly\" → ____เลยครับ",
+        "\"White is sold out\" → สีขาว____ค่ะ",
+        "\"Can I exchange it?\" → ____ได้ไหมครับ"
+      ]
+    },
+    {
+      "prompt": "Put the words in the right order.",
+      "items": [
+        "ครับ / มี / ไหม / สีขาว",
+        "คะ / อยู่ไหน / ห้องลอง",
+        "ครับ / หน่อย / แขนยาว / ไป / ตัวนี้",
+        "คะ / กว่านี้ / มีไซส์ / ไหม / ใหญ่",
+        "ครับ / ได้ไหม / ถ้าไม่พอดี / เปลี่ยน"
+      ]
+    },
+    {
+      "prompt": "Translate into Thai. Imagine you're a woman.",
+      "items": [
+        "Do you have any other colors?",
+        "May I try it on?",
+        "Where's the fitting room?",
+        "It's a bit too small.",
+        "Do you have a bigger size?",
+        "If it doesn't fit, can I exchange it?"
+      ]
+    }
+  ],
+  "answers": [
+    "สีขาว — สีดำ — สีแดง — สีฟ้า — สีเทา — สีชมพู",
+    "ลอง — ไป — พอดี — หมด — เปลี่ยน",
+    "มีสีขาวไหมครับ — ห้องลองอยู่ไหนคะ — ตัวนี้แขนยาวไปหน่อยครับ — มีไซส์ใหญ่กว่านี้ไหมคะ — ถ้าไม่พอดีเปลี่ยนได้ไหมครับ",
+    "มีสีอื่นไหมคะ — ลองได้ไหมคะ — ห้องลองอยู่ไหนคะ — เล็กไปหน่อยค่ะ — มีไซส์ใหญ่กว่านี้ไหมคะ — ถ้าไม่พอดีเปลี่ยนได้ไหมคะ"
+  ],
+  "wave": "Review unit 12: cover the Thai, then ask for five different permissions with …ได้ไหม, and turn down two requests politely."
+}

@@ -1,0 +1,668 @@
+{
+  "title": "What time is it?",
+  "title_target": "กี่โมงแล้ว — Kìi moong láaeo",
+  "goal": "Tell the time with the Thai system that splits the day into six blocks, make appointments, and name the parts of the day — a system that looks complicated on paper but takes one sitting to learn.",
+  "bekal": [
+    "ask and tell the time in the everyday Thai system",
+    "name parts of the day with ตอน",
+    "make plans: กี่โมง, เมื่อไหร่, ตอนไหน",
+    "say minutes, half past, and \"about\"",
+    "understand the 24-hour system used at stations and airports"
+  ],
+  "dialogs": [
+    {
+      "title": "บทสนทนา — Making dinner plans",
+      "intro": "Nok and Budi are planning dinner. Notice that the same number — \"six\" — is used for two different times, and what tells them apart is the word that follows.",
+      "lines": [
+        {
+          "speaker": "บูดี:",
+          "text": "[ตอนนี้|Tawn-níi][กี่|kìi][โมง|moong][แล้ว|láaeo][ครับ|khráp]",
+          "id": "What time is it now?",
+          "literal": "now — how-many — o'clock — already — (polite)?"
+        },
+        {
+          "speaker": "นก:",
+          "text": "[บ่าย|Bàai][สอง|sǎawng][โมง|moong][ครึ่ง|khrûeng][ค่ะ|khâ]",
+          "id": "Half past two in the afternoon.",
+          "literal": "afternoon — two — o'clock — half — (polite)."
+        },
+        {
+          "speaker": "บูดี:",
+          "text": "[เย็น|Yen][นี้|níi][ว่าง|wâang][ไหม|mǎi][ครับ|khráp] [ไป|Pai][กิน|kin][ข้าว|khâao][กัน|kan][ไหม|mǎi][ครับ|khráp]",
+          "id": "Are you free this evening? Want to grab dinner together?",
+          "literal": "evening — this — free — (question) — (polite)? go — eat — rice — together — (question) — (polite)?"
+        },
+        {
+          "speaker": "นก:",
+          "text": "[ว่าง|Wâang][ค่ะ|khâ] [กี่|Kìi][โมง|moong][ดี|dii][คะ|khá]",
+          "id": "I'm free. What time works?",
+          "literal": "free — (polite). how-many — o'clock — good — (polite)?"
+        },
+        {
+          "speaker": "บูดี:",
+          "text": "[หก|Hòk][โมง|moong][เย็น|yen][ได้|dâai][ไหม|mǎi][ครับ|khráp]",
+          "id": "Is 6 p.m. okay?",
+          "literal": "six — o'clock — evening — can — (question) — (polite)?"
+        },
+        {
+          "speaker": "นก:",
+          "text": "[หก|Hòk][โมง|moong][เย็น|yen][ยัง|yang][ไม่|mâi][เลิก|lôoek][งาน|ngaan][ค่ะ|khâ] [หนึ่ง|Nùeng][ทุ่ม|thûm][ได้|dâai][ไหม|mǎi][คะ|khá]",
+          "id": "At 6 p.m. I won't be off work yet. How about 7 p.m.?",
+          "literal": "six — o'clock — evening — still — not — finish — work — (polite). one — night-hour — can — (question) — (polite)?"
+        },
+        {
+          "speaker": "บูดี:",
+          "text": "[ได้|Dâai][ครับ|khráp] [เจอ|Joee][กัน|kan][ที่|thîi][ไหน|nǎi][ดี|dii][ครับ|khráp]",
+          "id": "Sure. Where should we meet?",
+          "literal": "can — (polite). meet — each-other — at — where — good — (polite)?"
+        },
+        {
+          "speaker": "นก:",
+          "text": "[หน้า|Nâa][บีทีเอส|BTS][อโศก|À-sòok][ค่ะ|khâ] [อย่า|Yàa][มา|maa][สาย|sǎai][นะ|ná][คะ|khá]",
+          "id": "In front of BTS Asok. Don't be late, okay?",
+          "literal": "front — BTS — Asok — (polite). don't — come — late — okay — (polite)."
+        },
+        {
+          "speaker": "บูดี:",
+          "text": "[ไม่|Mâi][สาย|sǎai][ครับ|khráp] [ผม|Phǒm][จะ|jà][ไป|pai][ถึง|thǔeng][ประมาณ|prà-maan][หก|hòk][โมง|moong][สี่|sìi][สิบ|sìp][ห้า|hâa][ครับ|khráp]",
+          "id": "I won't be. I'll get there around 6:45.",
+          "literal": "not — late — (polite). I — will — go — arrive — about — six — o'clock — four — ten — five — (polite)."
+        },
+        {
+          "speaker": "นก:",
+          "text": "[รถ|Rót][ติด|tìt][นะ|ná][คะ|khá] [ตอน|Tawn][เย็น|yen][รถ|rót][ติด|tìt][มาก|mâak][ค่ะ|khâ]",
+          "id": "Traffic's bad, you know. In the evening the traffic is terrible.",
+          "literal": "car — stuck — okay — (polite). time — evening — car — stuck — very — (polite)."
+        },
+        {
+          "speaker": "บูดี:",
+          "text": "[ผม|Phǒm][นั่ง|nâng][บีทีเอส|BTS][ครับ|khráp] [เร็ว|Reo][กว่า|kwàa][ครับ|khráp]",
+          "id": "I'll take the BTS. It's faster.",
+          "literal": "I — sit — BTS — (polite). fast — more — (polite)."
+        }
+      ],
+      "notes": [
+        "**Thai splits the day into SIX blocks, and each block has its own word for the hour.** That's what makes the system look complicated, though it only needs to be learned once. The blocks: early morning (*ตี*), morning (*โมงเช้า*), noon (*เที่ยง*), afternoon (*บ่าย…โมง*), evening (*โมงเย็น*), night (*ทุ่ม*).",
+        "**The number \"six\" appears twice a day, and that doesn't confuse Thais** because the tails differ: *หกโมงเช้า* (6 a.m.) and *หกโมงเย็น* (6 p.m.). The words *เช้า* and *เย็น* at the end decide it.",
+        "**ทุ่ม thûm starts counting again from 7 p.m.** *หนึ่งทุ่ม* = 7 p.m., *สองทุ่ม* = 8 p.m., *สามทุ่ม* = 9 p.m., up to *ห้าทุ่ม* = 11 p.m. The word comes from the sound of the drum once beaten to mark the hours of the night.",
+        "**ตี tii counts the early-morning hours.** *ตีหนึ่ง* = 1 a.m., *ตีห้า* = 5 a.m. This also comes from the sound of a strike — *ตี* literally means \"to hit\".",
+        "**ครึ่ง khrûeng = half, and it goes at the end.** *หกโมงครึ่ง* = 6:30 a.m. or p.m. For other minutes, say the number and then *นาที naa-thii*: *บ่ายสองโมงยี่สิบนาที* = 2:20 p.m. In fast speech *นาที* is often dropped.",
+        "**ตอน tawn means \"at the time of\" and forms parts of the day.** *ตอนเช้า* (in the morning), *ตอนบ่าย* (in the afternoon), *ตอนเย็น* (in the evening), *ตอนกลางคืน* (at night), *ตอนนี้* (now). It's used far more than exact times — Thais would rather say \"evening\" than \"five o'clock\".",
+        "**อย่า yàa means \"don't\" and goes before the verb.** *อย่ามาสาย* = don't be late. ⚠️ Don't confuse it with *ไม่ mâi*, which only means \"not\"; *อย่า* is a prohibition.",
+        "**รถติด rót tìt literally means \"cars stuck\", and it's the word for a traffic jam.** You'll hear it every day in Bangkok, and it's an excuse for lateness that is always accepted."
+      ],
+      "grammars": [
+        {
+          "title": "Thai time: the whole day in one table",
+          "body": [
+            "Read it once calmly, then come back whenever you need it. The last column is what people actually say."
+          ],
+          "table": {
+            "head": [
+              "Time",
+              "Block",
+              "Thai",
+              "Pronunciation"
+            ],
+            "rows": [
+              [
+                "1 a.m.",
+                "ตี",
+                "ตีหนึ่ง",
+                "*tii nùeng*"
+              ],
+              [
+                "5 a.m.",
+                "ตี",
+                "ตีห้า",
+                "*tii hâa*"
+              ],
+              [
+                "6 a.m.",
+                "เช้า",
+                "หกโมงเช้า",
+                "*hòk moong cháao*"
+              ],
+              [
+                "9 a.m.",
+                "เช้า",
+                "เก้าโมงเช้า",
+                "*kâao moong cháao*"
+              ],
+              [
+                "11 a.m.",
+                "เช้า",
+                "สิบเอ็ดโมงเช้า",
+                "*sìp-èt moong cháao*"
+              ],
+              [
+                "12 noon",
+                "เที่ยง",
+                "เที่ยง / เที่ยงวัน",
+                "*thîang / thîang wan*"
+              ],
+              [
+                "1 p.m.",
+                "บ่าย",
+                "บ่ายโมง",
+                "*bàai moong*"
+              ],
+              [
+                "2 p.m.",
+                "บ่าย",
+                "บ่ายสองโมง",
+                "*bàai sǎawng moong*"
+              ],
+              [
+                "4 p.m.",
+                "บ่าย",
+                "บ่ายสี่โมง",
+                "*bàai sìi moong*"
+              ],
+              [
+                "5 p.m.",
+                "เย็น",
+                "ห้าโมงเย็น",
+                "*hâa moong yen*"
+              ],
+              [
+                "6 p.m.",
+                "เย็น",
+                "หกโมงเย็น",
+                "*hòk moong yen*"
+              ],
+              [
+                "7 p.m.",
+                "ทุ่ม",
+                "หนึ่งทุ่ม",
+                "*nùeng thûm*"
+              ],
+              [
+                "9 p.m.",
+                "ทุ่ม",
+                "สามทุ่ม",
+                "*sǎam thûm*"
+              ],
+              [
+                "11 p.m.",
+                "ทุ่ม",
+                "ห้าทุ่ม",
+                "*hâa thûm*"
+              ],
+              [
+                "12 midnight",
+                "เที่ยงคืน",
+                "เที่ยงคืน",
+                "*thîang khuuen*"
+              ]
+            ]
+          },
+          "after": [
+            "⚠️ **บ่ายโมง (1 p.m.) doesn't use the number \"one\".** *หนึ่ง* is dropped; people say *บ่ายโมง*, not *บ่ายหนึ่งโมง*.",
+            "If all this feels like too much for today, there's a legitimate shortcut: **use the 24-hour system** — *สิบเก้านาฬิกา sìp-kâao naa-lí-kaa* (19:00). Everyone understands it; it just sounds like a station announcement. What matters is that you can **understand** the everyday system; speaking the official one won't cause anyone trouble."
+          ]
+        },
+        {
+          "title": "Parts of the day with ตอน",
+          "table": {
+            "head": [
+              "Thai",
+              "Pronunciation",
+              "Roughly",
+              "English"
+            ],
+            "rows": [
+              [
+                "ตอนเช้า",
+                "*tawn cháao*",
+                "6–11 a.m.",
+                "morning"
+              ],
+              [
+                "ตอนสาย",
+                "*tawn sǎai*",
+                "9–11 a.m.",
+                "late morning"
+              ],
+              [
+                "ตอนเที่ยง",
+                "*tawn thîang*",
+                "12 noon",
+                "noon"
+              ],
+              [
+                "ตอนบ่าย",
+                "*tawn bàai*",
+                "1–4 p.m.",
+                "afternoon"
+              ],
+              [
+                "ตอนเย็น",
+                "*tawn yen*",
+                "5–7 p.m.",
+                "early evening"
+              ],
+              [
+                "ตอนค่ำ",
+                "*tawn khâm*",
+                "7–9 p.m.",
+                "evening"
+              ],
+              [
+                "ตอนกลางคืน",
+                "*tawn klaang-khuuen*",
+                "night",
+                "night"
+              ],
+              [
+                "ตอนดึก",
+                "*tawn dùek*",
+                "late",
+                "late at night"
+              ],
+              [
+                "ตอนนี้",
+                "*tawn níi*",
+                "—",
+                "now"
+              ]
+            ]
+          },
+          "after": [
+            "⚠️ *สาย sǎai* has two meanings that are easy to mix up: **late morning** and **late (not on time)**. *มาสาย maa sǎai* = to come late. They're really one idea — showing up when the morning is already well along."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Making plans in four sentences",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "Thai",
+            "Pronunciation",
+            "Meaning"
+          ],
+          "rows": [
+            [
+              "ตอนนี้กี่โมงแล้ว",
+              "*tawn-níi kìi moong láaeo*",
+              "what time is it now?"
+            ],
+            [
+              "กี่โมงดี",
+              "*kìi moong dii*",
+              "what time works?"
+            ],
+            [
+              "เมื่อไหร่",
+              "*mûea-rài*",
+              "when?"
+            ],
+            [
+              "ตอนไหน",
+              "*tawn nǎi*",
+              "what part of the day?"
+            ],
+            [
+              "ว่างไหม",
+              "*wâang mǎi*",
+              "are you free?"
+            ],
+            [
+              "ไม่ว่าง",
+              "*mâi wâang*",
+              "not free, busy"
+            ],
+            [
+              "เจอกันที่ไหนดี",
+              "*joee kan thîi nǎi dii*",
+              "where should we meet?"
+            ],
+            [
+              "ประมาณ…",
+              "*prà-maan*",
+              "about…"
+            ],
+            [
+              "ตรงเวลา",
+              "*trong wee-laa*",
+              "on time"
+            ],
+            [
+              "มาสาย",
+              "*maa sǎai*",
+              "to come late"
+            ],
+            [
+              "รอ",
+              "*raw*",
+              "to wait"
+            ],
+            [
+              "สายหน่อยนะ",
+              "*sǎai nàwy ná*",
+              "I'll be a bit late (letting someone know)"
+            ]
+          ]
+        },
+        {
+          "type": "kotak",
+          "title": "…ดี at the end of a question",
+          "items": [
+            "Adding **ดี *dii*** (good) to the end of a question turns it from an interrogation into an invitation to decide together: *กี่โมง* (what time?) versus *กี่โมงดี* (what time would be good?). Compare *กินอะไรดี* (what shall we eat?) and *ไปไหนดี* (where shall we go?).",
+            "This is one of the Thai habits that makes you sound natural fastest. It signals that you're inviting the other person to decide with you, not demanding an answer."
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Time words that often go with the clock",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "Thai",
+            "Pronunciation",
+            "English"
+          ],
+          "rows": [
+            [
+              "เวลา",
+              "*wee-laa*",
+              "time"
+            ],
+            [
+              "ชั่วโมง",
+              "*chûa-moong*",
+              "hour (duration)"
+            ],
+            [
+              "นาที",
+              "*naa-thii*",
+              "minute"
+            ],
+            [
+              "ครึ่ง",
+              "*khrûeng*",
+              "half"
+            ],
+            [
+              "ประมาณ",
+              "*prà-maan*",
+              "about, approximately"
+            ],
+            [
+              "ก่อน",
+              "*kàwn*",
+              "before, first"
+            ],
+            [
+              "หลัง",
+              "*lǎng*",
+              "after"
+            ],
+            [
+              "ตั้งแต่…ถึง…",
+              "*tâng-tàae … thǔeng …*",
+              "from … until …"
+            ],
+            [
+              "เร็ว",
+              "*reo*",
+              "fast, early"
+            ],
+            [
+              "ช้า",
+              "*cháa*",
+              "slow"
+            ],
+            [
+              "ทัน",
+              "*than*",
+              "in time"
+            ],
+            [
+              "ไม่ทัน",
+              "*mâi than*",
+              "not in time"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "⚠️ **ชั่วโมง chûa-moong means \"hour\" as a DURATION**, while *โมง moong* marks a point in time. \"Two hours\" is *สองชั่วโมง*; \"two o'clock\" is *บ่ายสองโมง*. English makes the same distinction (\"two hours\" vs. \"two o'clock\"); Thai just uses two different words."
+        },
+        {
+          "type": "kotak",
+          "title": "Thailand's time zone",
+          "items": [
+            "Thailand uses a single time zone for the whole country: **UTC+7** — the same as Jakarta, Hanoi, and Phnom Penh, one hour behind Singapore and Hong Kong, and 12 hours ahead of New York in winter.",
+            "A useful sentence for calling home: *ที่อินโดนีเซียตอนนี้กี่โมง thîi in-doo-nii-sia tawn-níi kìi moong* — what time is it in Indonesia now? Swap in your own country's name."
+          ]
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "th": "โมง",
+      "baca": "moong",
+      "en": "o'clock (point in time)"
+    },
+    {
+      "th": "ชั่วโมง",
+      "baca": "chûa-moong",
+      "en": "hour (duration)"
+    },
+    {
+      "th": "นาที",
+      "baca": "naa-thii",
+      "en": "minute"
+    },
+    {
+      "th": "ครึ่ง",
+      "baca": "khrûeng",
+      "en": "half"
+    },
+    {
+      "th": "ตอน",
+      "baca": "tawn",
+      "en": "at the time of, during"
+    },
+    {
+      "th": "ตอนนี้",
+      "baca": "tawn-níi",
+      "en": "now"
+    },
+    {
+      "th": "เช้า",
+      "baca": "cháao",
+      "en": "morning"
+    },
+    {
+      "th": "สาย",
+      "baca": "sǎai",
+      "en": "late morning; late"
+    },
+    {
+      "th": "เที่ยง",
+      "baca": "thîang",
+      "en": "noon"
+    },
+    {
+      "th": "บ่าย",
+      "baca": "bàai",
+      "en": "afternoon"
+    },
+    {
+      "th": "เย็น",
+      "baca": "yen",
+      "en": "early evening; cold"
+    },
+    {
+      "th": "ค่ำ",
+      "baca": "khâm",
+      "en": "evening"
+    },
+    {
+      "th": "กลางคืน",
+      "baca": "klaang-khuuen",
+      "en": "night"
+    },
+    {
+      "th": "ดึก",
+      "baca": "dùek",
+      "en": "late at night"
+    },
+    {
+      "th": "ทุ่ม",
+      "baca": "thûm",
+      "en": "night hour (7–11 p.m.)"
+    },
+    {
+      "th": "ตี",
+      "baca": "tii",
+      "en": "early-morning hour (1–5 a.m.); to hit"
+    },
+    {
+      "th": "เวลา",
+      "baca": "wee-laa",
+      "en": "time"
+    },
+    {
+      "th": "เมื่อไหร่",
+      "baca": "mûea-rài",
+      "en": "when"
+    },
+    {
+      "th": "ว่าง",
+      "baca": "wâang",
+      "en": "free, available; empty"
+    },
+    {
+      "th": "ประมาณ",
+      "baca": "prà-maan",
+      "en": "about, approximately"
+    },
+    {
+      "th": "ถึง",
+      "baca": "thǔeng",
+      "en": "to arrive; until"
+    },
+    {
+      "th": "ก่อน",
+      "baca": "kàwn",
+      "en": "before, first"
+    },
+    {
+      "th": "หลัง",
+      "baca": "lǎng",
+      "en": "after; back"
+    },
+    {
+      "th": "รอ",
+      "baca": "raw",
+      "en": "to wait"
+    },
+    {
+      "th": "อย่า",
+      "baca": "yàa",
+      "en": "don't"
+    },
+    {
+      "th": "เลิกงาน",
+      "baca": "lôoek-ngaan",
+      "en": "to finish work"
+    },
+    {
+      "th": "งาน",
+      "baca": "ngaan",
+      "en": "work; event"
+    },
+    {
+      "th": "รถติด",
+      "baca": "rót-tìt",
+      "en": "traffic jam"
+    },
+    {
+      "th": "นั่ง",
+      "baca": "nâng",
+      "en": "to sit; to ride (a vehicle)"
+    },
+    {
+      "th": "เร็ว",
+      "baca": "reo",
+      "en": "fast"
+    },
+    {
+      "th": "ช้า",
+      "baca": "cháa",
+      "en": "slow"
+    },
+    {
+      "th": "กว่า",
+      "baca": "kwàa",
+      "en": "more (…than)"
+    },
+    {
+      "th": "ทัน",
+      "baca": "than",
+      "en": "in time"
+    }
+  ],
+  "exercises": [
+    {
+      "prompt": "Write these times in the everyday Thai system (the pronunciation alone is fine).",
+      "items": [
+        "7 a.m. = ____",
+        "12 noon = ____",
+        "2 p.m. = ____",
+        "6 p.m. = ____",
+        "8 p.m. = ____",
+        "3 a.m. = ____"
+      ]
+    },
+    {
+      "prompt": "Fill in the blanks.",
+      "items": [
+        "\"What time is it now?\" → ตอนนี้____โมงแล้วคะ",
+        "\"Are you free this evening?\" → เย็นนี้____ไหมครับ",
+        "\"Don't be late, okay?\" → ____มาสายนะคะ",
+        "\"Around 7 p.m.\" → ____หนึ่งทุ่ม",
+        "\"Where should we meet?\" → เจอกันที่ไหน____ครับ"
+      ]
+    },
+    {
+      "prompt": "Put the words in the right order.",
+      "items": [
+        "ครับ / กี่โมง / ตอนนี้ / แล้ว",
+        "คะ / ดี / กี่โมง",
+        "ครับ / ได้ไหม / หนึ่งทุ่ม",
+        "ค่ะ / รถติด / ตอนเย็น / มาก",
+        "ครับ / เร็วกว่า / บีทีเอส / นั่ง / ผม"
+      ]
+    },
+    {
+      "prompt": "Translate into Thai. Imagine you're a woman.",
+      "items": [
+        "What time is it now?",
+        "Half past two in the afternoon.",
+        "Are you free this evening?",
+        "Is 7 p.m. okay?",
+        "I'll get there around 6 p.m.",
+        "Don't be late, okay?"
+      ]
+    }
+  ],
+  "answers": [
+    "เจ็ดโมงเช้า jèt moong cháao — เที่ยง thîang — บ่ายสองโมง bàai sǎawng moong — หกโมงเย็น hòk moong yen — สองทุ่ม sǎawng thûm — ตีสาม tii sǎam",
+    "กี่ — ว่าง — อย่า — ประมาณ — ดี",
+    "ตอนนี้กี่โมงแล้วครับ — กี่โมงดีคะ — หนึ่งทุ่มได้ไหมครับ — ตอนเย็นรถติดมากค่ะ — ผมนั่งบีทีเอสเร็วกว่าครับ",
+    "ตอนนี้กี่โมงแล้วคะ — บ่ายสองโมงครึ่งค่ะ — เย็นนี้ว่างไหมคะ — หนึ่งทุ่มได้ไหมคะ — ฉันจะไปถึงประมาณหกโมงเย็นค่ะ — อย่ามาสายนะคะ"
+  ],
+  "wave": "Review Unit 5: cover the Thai, then ask about five things around you — what it is, whose it is, what's inside it."
+}

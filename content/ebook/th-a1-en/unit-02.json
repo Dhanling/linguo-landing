@@ -1,0 +1,595 @@
+{
+  "title": "I'm from Indonesia",
+  "title_target": "ผมมาจากอินโดนีเซีย — Phǒm maa jàak In-doo-nii-sia",
+  "goal": "Say where you're from, where you live, and what you do — and meet three words that are all translated \"to be\" but can't replace each other: เป็น, อยู่, and คือ.",
+  "bekal": [
+    "answer the question คุณมาจากไหน",
+    "state nationality with the pattern คน + country name",
+    "state your job with เป็น",
+    "say where you live with อยู่",
+    "say which languages you speak"
+  ],
+  "dialogs": [
+    {
+      "title": "บทสนทนา — In a taxi heading to Ratchada",
+      "intro": "Budi takes a taxi, and the driver, like almost every taxi driver in Bangkok, wants to know everything right away. Notice that country names never change form — only the word in front of them does.",
+      "lines": [
+        {
+          "speaker": "คนขับ:",
+          "text": "[คุณ|Khun][มา|maa][จาก|jàak][ไหน|nǎi][ครับ|khráp]",
+          "id": "Where are you from?",
+          "literal": "you — come — from — where — (polite)?"
+        },
+        {
+          "speaker": "บูดี:",
+          "text": "[ผม|Phǒm][มา|maa][จาก|jàak][อินโดนีเซีย|In-doo-nii-sia][ครับ|khráp]",
+          "id": "I'm from Indonesia.",
+          "literal": "I — come — from — Indonesia — (polite)."
+        },
+        {
+          "speaker": "คนขับ:",
+          "text": "[อ๋อ|Ǎw] [คน|khon][อินโดนีเซีย|In-doo-nii-sia][เหรอ|rǒoe][ครับ|khráp] [พูด|Phûut][ไทย|thai][เก่ง|kèng][นะ|ná]",
+          "id": "Oh, Indonesian, huh? Your Thai is good.",
+          "literal": "oh — person — Indonesia — huh — (polite)? speak — Thai — skilled — (softener)."
+        },
+        {
+          "speaker": "บูดี:",
+          "text": "[ยัง|Yang][ไม่|mâi][เก่ง|kèng][ครับ|khráp] [กำลัง|Kam-lang][เรียน|rian][อยู่|yùu][ครับ|khráp]",
+          "id": "Not good yet. I'm still learning.",
+          "literal": "still — not — skilled — (polite). in-the-middle-of — study — (ongoing) — (polite)."
+        },
+        {
+          "speaker": "คนขับ:",
+          "text": "[อยู่|Yùu][เมืองไทย|Muueang-Thai][นาน|naan][ไหม|mǎi][ครับ|khráp]",
+          "id": "Have you been in Thailand long?",
+          "literal": "stay — Land-Thai — long — (question) — (polite)?"
+        },
+        {
+          "speaker": "บูดี:",
+          "text": "[สาม|Sǎam][เดือน|duuean][ครับ|khráp] [ผม|Phǒm][อยู่|yùu][ที่|thîi][กรุงเทพฯ|Krung-thêep][ครับ|khráp]",
+          "id": "Three months. I live in Bangkok.",
+          "literal": "three — month — (polite). I — stay — at — Bangkok — (polite)."
+        },
+        {
+          "speaker": "คนขับ:",
+          "text": "[มา|Maa][ทำงาน|tham-ngaan][หรือ|rǔue][มา|maa][เที่ยว|thîao][ครับ|khráp]",
+          "id": "Here for work or for travel?",
+          "literal": "come — work — or — come — travel — (polite)?"
+        },
+        {
+          "speaker": "บูดี:",
+          "text": "[มา|Maa][ทำงาน|tham-ngaan][ครับ|khráp] [ผม|Phǒm][เป็น|pen][วิศวกร|wít-sà-wá-kawn][ครับ|khráp]",
+          "id": "For work. I'm an engineer.",
+          "literal": "come — work — (polite). I — be — engineer — (polite)."
+        },
+        {
+          "speaker": "คนขับ:",
+          "text": "[เก่ง|Kèng][จัง|jang][เลย|loei][ครับ|khráp] [ผม|Phǒm][เป็น|pen][คน|khon][อีสาน|Ii-sǎan][ครับ|khráp] [มา|maa][จาก|jàak][ขอนแก่น|Khǎwn-kàaen]",
+          "id": "Impressive. I'm from Isan, from Khon Kaen.",
+          "literal": "skilled — so — really — (polite). I — be — person — Isan — (polite). come — from — Khon Kaen."
+        },
+        {
+          "speaker": "บูดี:",
+          "text": "[ขอนแก่น|Khǎwn-kàaen][อยู่|yùu][ที่ไหน|thîi-nǎi][ครับ|khráp]",
+          "id": "Where's Khon Kaen?",
+          "literal": "Khon Kaen — be-located — where — (polite)?"
+        },
+        {
+          "speaker": "คนขับ:",
+          "text": "[อยู่|Yùu][ภาค|phâak][อีสาน|ii-sǎan][ครับ|khráp] [ไกล|Klai][จาก|jàak][กรุงเทพฯ|Krung-thêep][มาก|mâak]",
+          "id": "In the Isan region. Very far from Bangkok.",
+          "literal": "be-located — region — northeast — (polite). far — from — Bangkok — very."
+        },
+        {
+          "speaker": "บูดี:",
+          "text": "[ผม|Phǒm][อยาก|yàak][ไป|pai][ครับ|khráp] [ได้ยิน|Dâai-yin][ว่า|wâa][อาหาร|aa-hǎan][อร่อย|à-ràwy][มาก|mâak]",
+          "id": "I'd like to go. I hear the food is delicious.",
+          "literal": "I — want — go — (polite). hear — that — food — delicious — very."
+        },
+        {
+          "speaker": "คนขับ:",
+          "text": "[อร่อย|À-ràwy][ครับ|khráp] [แต่|Tàae][เผ็ด|phèt][นะ|ná] [คน|Khon][อินโดฯ|In-doo][กิน|kin][เผ็ด|phèt][ได้|dâai][ไหม|mǎi][ครับ|khráp]",
+          "id": "It is. But it's spicy, you know. Can Indonesians handle spicy food?",
+          "literal": "delicious — (polite). but — spicy — (softener). person — Indo — eat — spicy — can — (question) — (polite)?"
+        },
+        {
+          "speaker": "บูดี:",
+          "text": "[ได้|Dâai][ครับ|khráp] [คน|Khon][อินโดนีเซีย|In-doo-nii-sia][ก็|kâw][กิน|kin][เผ็ด|phèt][เหมือนกัน|mǔuean-kan][ครับ|khráp]",
+          "id": "Sure. Indonesians eat spicy food too.",
+          "literal": "can — (polite). person — Indonesia — also — eat — spicy — likewise — (polite)."
+        }
+      ],
+      "notes": [
+        "**คน khon means \"person\", and that's how nationalities are formed.** Just put it in front of the country name: *คนไทย* (Thai person), *คนอินโดนีเซีย* (Indonesian), *คนญี่ปุ่น* (Japanese person), *คนอเมริกัน* (American). No suffixes like *-ese* or *-ian*, no changes in form — just \"person + country\".",
+        "**ภาษา phaa-sǎa means \"language\", and the pattern is the same.** *ภาษาไทย* (Thai language), *ภาษาอินโดนีเซีย*, *ภาษาอังกฤษ* (English). In conversation, *ภาษา* is often dropped: *พูดไทยได้ไหม* clearly means \"can you speak Thai?\".",
+        "**เป็น pen is used for \"to be\" when what follows is a NOUN.** *ผมเป็นครู* (I'm a teacher), *เขาเป็นคนไทย* (he's Thai). ⚠️ The biggest mistake English speakers make: *เป็น* is **not used** before adjectives. \"I'm tired\" is *ผมเหนื่อย*, not *ผมเป็นเหนื่อย*. In Thai, an adjective already contains \"to be\".",
+        "**อยู่ yùu is used for PLACE — to be located, to live.** *ผมอยู่กรุงเทพฯ* (I live in Bangkok), *ขอนแก่นอยู่ภาคอีสาน* (Khon Kaen is in Isan). The word *ที่ thîi* (at) can be added but is often dropped: *อยู่ที่กรุงเทพฯ* and *อยู่กรุงเทพฯ* mean the same.",
+        "**อยู่ has a second job: marking an action in progress,** and it goes **after** the verb. *กำลังเรียนอยู่* (am studying). This is covered fully in Unit 11; for now just recognize the form.",
+        "**เหรอ rǒoe is a casual \"huh?\" or \"right?\"** — the spoken form of *หรือ rǔue*. It turns a statement into a gentle check: *คนอินโดนีเซียเหรอ* = \"oh, you're Indonesian?\". Compare *ไหม mǎi*, which asks about something you really don't know.",
+        "**You'll hear \"พูดไทยเก่งนะ\" constantly, and almost always too soon.** It's a kind courtesy, not an assessment. The right reply isn't a strong denial but *ยังไม่เก่งครับ yang mâi kèng khráp* (not good yet) or *กำลังเรียนอยู่ครับ kam-lang rian yùu khráp* (I'm still learning). Both sound modest and friendly — and the second usually makes the other person slow down.",
+        "**เมืองไทย muueang-thai is the everyday way to say Thailand** — literally \"the land of the Thai\". The official name is *ประเทศไทย prà-thêet thai*. Both are correct; the first sounds warmer, like \"home country\"."
+      ],
+      "grammars": [
+        {
+          "title": "Three words for one \"to be\"",
+          "body": [
+            "This is the most important box in this unit. English uses one verb \"to be\" (am/is/are) for every situation; Thai splits it into three, and choosing wrong makes a sentence sound odd — sometimes funny."
+          ],
+          "table": {
+            "head": [
+              "Word",
+              "Used when",
+              "Example"
+            ],
+            "rows": [
+              [
+                "เป็น *pen*",
+                "followed by a **noun**: job, nationality, role",
+                "ผมเป็นครู — I'm a teacher"
+              ],
+              [
+                "อยู่ *yùu*",
+                "stating a **place**: be located, live",
+                "ผมอยู่เชียงใหม่ — I'm in Chiang Mai"
+              ],
+              [
+                "คือ *khuue*",
+                "**equating two things**, like an equals sign; often to explain",
+                "นี่คือปัญหา — this is the problem"
+              ],
+              [
+                "— (nothing)",
+                "followed by an **adjective**",
+                "ผมเหนื่อย — I'm tired"
+              ]
+            ]
+          },
+          "after": [
+            "⚠️ *เป็น* has an unexpected second meaning: **to have an illness**. *เป็นหวัด pen wàt* = to have a cold. So *ผมเป็นเหนื่อย* sounds like \"I suffer from the disease of tiredness\" — not just ungrammatical, but funny.",
+            "For A1, the practical rule is: **noun → เป็น, place → อยู่, adjective → nothing at all.** You'll rarely need *คือ* until later."
+          ]
+        },
+        {
+          "title": "Countries, people, and languages",
+          "body": [
+            "Read across, not down. What needs to stick is the pattern, not the list."
+          ],
+          "table": {
+            "head": [
+              "Country",
+              "Its people",
+              "Its language"
+            ],
+            "rows": [
+              [
+                "ไทย *thai*",
+                "คนไทย *khon thai*",
+                "ภาษาไทย *phaa-sǎa thai*"
+              ],
+              [
+                "อินโดนีเซีย *in-doo-nii-sia*",
+                "คนอินโดนีเซีย",
+                "ภาษาอินโดนีเซีย"
+              ],
+              [
+                "มาเลเซีย *maa-lee-sia*",
+                "คนมาเลเซีย",
+                "ภาษามาเลย์ *phaa-sǎa maa-lee*"
+              ],
+              [
+                "ญี่ปุ่น *yîi-pùn*",
+                "คนญี่ปุ่น",
+                "ภาษาญี่ปุ่น"
+              ],
+              [
+                "จีน *jiin*",
+                "คนจีน",
+                "ภาษาจีน"
+              ],
+              [
+                "เกาหลี *kao-lǐi*",
+                "คนเกาหลี",
+                "ภาษาเกาหลี"
+              ],
+              [
+                "อังกฤษ *ang-krìt*",
+                "คนอังกฤษ",
+                "ภาษาอังกฤษ"
+              ],
+              [
+                "อเมริกา *à-mee-rí-kaa*",
+                "คนอเมริกัน *khon à-mee-rí-kan*",
+                "ภาษาอังกฤษ"
+              ],
+              [
+                "สิงคโปร์ *sǐng-khá-poo*",
+                "คนสิงคโปร์",
+                "—"
+              ]
+            ]
+          },
+          "after": [
+            "⚠️ *อังกฤษ ang-krìt* means **English / England**, and it comes from the Portuguese word *inglês* — not from English itself. Thais use the same word for Britain as a whole.",
+            "The word *ฝรั่ง fà-ràng* means \"Westerner\" in general, and you'll hear it everywhere. It **isn't an insult** — the same word also means guava. Thais often guess Southeast Asian visitors are Malaysian, Filipino, or even southern Thai."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Asking where someone's from, three levels deep",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "A first conversation with a Thai almost always walks down the same staircase: country, how long you've been here, then work or food."
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Question",
+            "Pronunciation",
+            "Asks about"
+          ],
+          "rows": [
+            [
+              "คุณมาจากไหน",
+              "*khun maa jàak nǎi*",
+              "home country/city"
+            ],
+            [
+              "คุณเป็นคนที่ไหน",
+              "*khun pen khon thîi nǎi*",
+              "home region, more personal"
+            ],
+            [
+              "อยู่ที่ไหน",
+              "*yùu thîi nǎi*",
+              "where you live now"
+            ],
+            [
+              "อยู่เมืองไทยนานไหม",
+              "*yùu muueang-thai naan mǎi*",
+              "been in Thailand long?"
+            ],
+            [
+              "มาทำอะไร",
+              "*maa tham à-rai*",
+              "what you came for"
+            ],
+            [
+              "ทำงานอะไร",
+              "*tham-ngaan à-rai*",
+              "what you do for work"
+            ]
+          ]
+        },
+        {
+          "type": "kotak",
+          "title": "Three answers that always work",
+          "items": [
+            "**ผม/ฉันมาจากอินโดนีเซียครับ/ค่ะ** — a safe answer for anyone (swap in your own country).",
+            "**มาทำงานครับ/ค่ะ** or **มาเที่ยวครับ/ค่ะ** — both answer \"what did you come for\" in two words.",
+            "⚠️ Don't answer *ผมเป็นอินโดนีเซีย* — that means \"I am the country of Indonesia\". The correct forms are *ผมเป็น**คน**อินโดนีเซีย* or *ผม**มาจาก**อินโดนีเซีย*."
+          ]
+        },
+        {
+          "type": "p",
+          "text": "One thing that may surprise you: questions about salary, age, and marital status often come up in the first five minutes, and that is **not** considered rude. It's how Thais place you on the social map so they know which pronoun to use. Units 10 and 19 go into this further."
+        }
+      ]
+    },
+    {
+      "title": "The most commonly mentioned jobs",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "Thai",
+            "Pronunciation",
+            "English"
+          ],
+          "rows": [
+            [
+              "ครู / อาจารย์",
+              "*khruu / aa-jaan*",
+              "teacher / lecturer"
+            ],
+            [
+              "นักเรียน / นักศึกษา",
+              "*nák-rian / nák-sùek-sǎa*",
+              "student (school) / student (university)"
+            ],
+            [
+              "หมอ",
+              "*mǎw*",
+              "doctor"
+            ],
+            [
+              "พยาบาล",
+              "*phá-yaa-baan*",
+              "nurse"
+            ],
+            [
+              "วิศวกร",
+              "*wít-sà-wá-kawn*",
+              "engineer"
+            ],
+            [
+              "พนักงานบริษัท",
+              "*phá-nák-ngaan baw-rí-sàt*",
+              "office worker"
+            ],
+            [
+              "แม่บ้าน",
+              "*mâae-bâan*",
+              "housewife"
+            ],
+            [
+              "พ่อค้า / แม่ค้า",
+              "*phâw-kháa / mâae-kháa*",
+              "vendor (male / female)"
+            ],
+            [
+              "คนขับรถ",
+              "*khon-khàp-rót*",
+              "driver"
+            ],
+            [
+              "ตำรวจ",
+              "*tam-rùat*",
+              "police officer"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "Notice the prefix **นัก- nák-** in front of a word: it forms \"a person skilled at / engaged in\", much like English *-er*. *นักเรียน* (one who studies = student), *นักร้อง nák-ráwng* (singer), *นักท่องเที่ยว nák-thâwng-thîao* (tourist). This pattern will help you guess dozens of new words."
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "th": "มา",
+      "baca": "maa",
+      "en": "to come"
+    },
+    {
+      "th": "จาก",
+      "baca": "jàak",
+      "en": "from"
+    },
+    {
+      "th": "ไหน",
+      "baca": "nǎi",
+      "en": "where; which"
+    },
+    {
+      "th": "ที่ไหน",
+      "baca": "thîi-nǎi",
+      "en": "where"
+    },
+    {
+      "th": "คน",
+      "baca": "khon",
+      "en": "person"
+    },
+    {
+      "th": "ภาษา",
+      "baca": "phaa-sǎa",
+      "en": "language"
+    },
+    {
+      "th": "เป็น",
+      "baca": "pen",
+      "en": "to be (followed by a noun)"
+    },
+    {
+      "th": "อยู่",
+      "baca": "yùu",
+      "en": "to be located, to live; in progress"
+    },
+    {
+      "th": "คือ",
+      "baca": "khuue",
+      "en": "namely, to be (equating)"
+    },
+    {
+      "th": "ที่",
+      "baca": "thîi",
+      "en": "at; place; that/which"
+    },
+    {
+      "th": "เมืองไทย",
+      "baca": "muueang-thai",
+      "en": "Thailand (everyday)"
+    },
+    {
+      "th": "ประเทศ",
+      "baca": "prà-thêet",
+      "en": "country"
+    },
+    {
+      "th": "กรุงเทพฯ",
+      "baca": "Krung-thêep",
+      "en": "Bangkok"
+    },
+    {
+      "th": "นาน",
+      "baca": "naan",
+      "en": "long (time)"
+    },
+    {
+      "th": "เดือน",
+      "baca": "duuean",
+      "en": "month"
+    },
+    {
+      "th": "ทำงาน",
+      "baca": "tham-ngaan",
+      "en": "to work"
+    },
+    {
+      "th": "เที่ยว",
+      "baca": "thîao",
+      "en": "to travel, go out for fun"
+    },
+    {
+      "th": "หรือ",
+      "baca": "rǔue",
+      "en": "or"
+    },
+    {
+      "th": "เหรอ",
+      "baca": "rǒoe",
+      "en": "…huh? really? (casual check)"
+    },
+    {
+      "th": "อ๋อ",
+      "baca": "ǎw",
+      "en": "oh (I see)"
+    },
+    {
+      "th": "เก่ง",
+      "baca": "kèng",
+      "en": "skilled, good at"
+    },
+    {
+      "th": "ยัง",
+      "baca": "yang",
+      "en": "still; not yet (with ไม่)"
+    },
+    {
+      "th": "ไม่",
+      "baca": "mâi",
+      "en": "not"
+    },
+    {
+      "th": "กำลัง",
+      "baca": "kam-lang",
+      "en": "be in the middle of (-ing)"
+    },
+    {
+      "th": "เรียน",
+      "baca": "rian",
+      "en": "to study, learn"
+    },
+    {
+      "th": "ไกล",
+      "baca": "klai",
+      "en": "far"
+    },
+    {
+      "th": "ใกล้",
+      "baca": "klâi",
+      "en": "near"
+    },
+    {
+      "th": "อยาก",
+      "baca": "yàak",
+      "en": "to want to"
+    },
+    {
+      "th": "ไป",
+      "baca": "pai",
+      "en": "to go"
+    },
+    {
+      "th": "ได้ยิน",
+      "baca": "dâai-yin",
+      "en": "to hear"
+    },
+    {
+      "th": "ว่า",
+      "baca": "wâa",
+      "en": "that (conjunction)"
+    },
+    {
+      "th": "อาหาร",
+      "baca": "aa-hǎan",
+      "en": "food"
+    },
+    {
+      "th": "อร่อย",
+      "baca": "à-ràwy",
+      "en": "delicious"
+    },
+    {
+      "th": "เผ็ด",
+      "baca": "phèt",
+      "en": "spicy"
+    },
+    {
+      "th": "แต่",
+      "baca": "tàae",
+      "en": "but"
+    },
+    {
+      "th": "กิน",
+      "baca": "kin",
+      "en": "to eat"
+    },
+    {
+      "th": "เหมือนกัน",
+      "baca": "mǔuean-kan",
+      "en": "likewise, too"
+    },
+    {
+      "th": "จัง",
+      "baca": "jang",
+      "en": "so, really"
+    }
+  ],
+  "exercises": [
+    {
+      "prompt": "Choose เป็น or อยู่. If neither is needed, write a dash.",
+      "items": [
+        "ผม ____ คนอินโดนีเซีย",
+        "เขา ____ ที่เชียงใหม่",
+        "อาหารไทย ____ อร่อย",
+        "นก ____ ครู",
+        "ขอนแก่น ____ ภาคอีสาน",
+        "ผม ____ เหนื่อย"
+      ]
+    },
+    {
+      "prompt": "Turn each country into its nationality and language. Example: ไทย → คนไทย, ภาษาไทย.",
+      "items": [
+        "ญี่ปุ่น → ____",
+        "จีน → ____",
+        "อินโดนีเซีย → ____",
+        "เกาหลี → ____",
+        "อังกฤษ → ____"
+      ]
+    },
+    {
+      "prompt": "Put the words in the right order.",
+      "items": [
+        "ครับ / มาจาก / ผม / อินโดนีเซีย",
+        "ไหม / อยู่ / นาน / เมืองไทย",
+        "ครับ / ทำงาน / มา / ผม",
+        "คะ / อะไร / ทำงาน / คุณ",
+        "ครับ / เรียน / กำลัง / อยู่ / ผม"
+      ]
+    },
+    {
+      "prompt": "Translate into Thai. Imagine you're a man.",
+      "items": [
+        "Where are you from?",
+        "I'm from Indonesia.",
+        "I'm Indonesian.",
+        "I live in Bangkok.",
+        "I'm an engineer.",
+        "My Thai isn't good yet; I'm still learning."
+      ]
+    }
+  ],
+  "answers": [
+    "เป็น — อยู่ — (none needed) — เป็น — อยู่ — (none needed)",
+    "คนญี่ปุ่น, ภาษาญี่ปุ่น — คนจีน, ภาษาจีน — คนอินโดนีเซีย, ภาษาอินโดนีเซีย — คนเกาหลี, ภาษาเกาหลี — คนอังกฤษ, ภาษาอังกฤษ",
+    "ผมมาจากอินโดนีเซียครับ — อยู่เมืองไทยนานไหม — ผมมาทำงานครับ — คุณทำงานอะไรคะ — ผมกำลังเรียนอยู่ครับ",
+    "คุณมาจากไหนครับ — ผมมาจากอินโดนีเซียครับ — ผมเป็นคนอินโดนีเซียครับ — ผมอยู่ที่กรุงเทพฯ ครับ — ผมเป็นวิศวกรครับ — ผมพูดไทยยังไม่เก่งครับ กำลังเรียนอยู่ครับ"
+  ],
+  "wave": "Before moving on to Unit 3, cover the Thai in the Unit 1 dialogue and rebuild Budi and Nok's whole introduction from the English — with the correct ครับ/ค่ะ."
+}

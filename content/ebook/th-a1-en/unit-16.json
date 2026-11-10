@@ -1,0 +1,665 @@
+{
+  "title": "Weather, the body, and the pharmacy",
+  "title_target": "ไม่สบาย — Mâi sà-baai",
+  "goal": "Talk about the weather, name parts of the body, explain your symptoms to a pharmacist or doctor, and understand the two words that separate \"sharp pain\" from \"throbbing ache\".",
+  "bekal": [
+    "talking about the weather and Thailand's three seasons",
+    "naming the body parts people most often complain about",
+    "telling เจ็บ and ปวด apart",
+    "explaining symptoms at a pharmacy",
+    "calling for emergency help"
+  ],
+  "dialogs": [
+    {
+      "title": "บทสนทนา — At the ร้านขายยา in the next soi",
+      "intro": "Budi isn't feeling well after getting caught in the rain. Watch for two words that both mean \"pain\" but can't be swapped — and how the pharmacist uses them to pin down his symptoms.",
+      "lines": [
+        {
+          "speaker": "เภสัชกร:",
+          "text": "[สวัสดี|Sà-wàt-dii][ค่ะ|khâ] [เป็น|Pen][อะไร|à-rai][คะ|khá]",
+          "id": "Good afternoon. What's wrong?",
+          "literal": "well-being — (polite). suffer — what — (polite)?"
+        },
+        {
+          "speaker": "บูดี:",
+          "text": "[ไม่|Mâi][ค่อย|khâwy][สบาย|sà-baai][ครับ|khráp] [ปวด|Pùat][หัว|hǔa][กับ|kàp][เจ็บ|jèp][คอ|khaw][ครับ|khráp]",
+          "id": "I'm not feeling well. I have a headache and a sore throat.",
+          "literal": "not — very — comfortable — (polite). ache — head — with — hurt — throat — (polite)."
+        },
+        {
+          "speaker": "เภสัชกร:",
+          "text": "[มี|Mii][ไข้|khâi][ไหม|mǎi][คะ|khá] [ไอ|Ai][ด้วย|dûai][ไหม|mǎi][คะ|khá]",
+          "id": "Do you have a fever? A cough too?",
+          "literal": "have — fever — (question) — (polite)? cough — too — (question) — (polite)?"
+        },
+        {
+          "speaker": "บูดี:",
+          "text": "[ไอ|Ai][นิดหน่อย|nít-nàwy][ครับ|khráp] [ไข้|Khâi][ไม่|mâi][มี|mii][ครับ|khráp] [เมื่อวาน|Mûea-waan][ตาก|tàak][ฝน|fǒn][มา|maa][ครับ|khráp]",
+          "id": "A little cough. No fever. I got caught in the rain yesterday.",
+          "literal": "cough — a-little — (polite). fever — not — have — (polite). yesterday — get-hit — rain — come — (polite)."
+        },
+        {
+          "speaker": "เภสัชกร:",
+          "text": "[เป็น|Pen][มา|maa][กี่|kìi][วัน|wan][แล้ว|láaeo][คะ|khá]",
+          "id": "How many days has it been like this?",
+          "literal": "suffer — come — how-many — day — already — (polite)?"
+        },
+        {
+          "speaker": "บูดี:",
+          "text": "[สอง|Sǎawng][วัน|wan][ครับ|khráp] [แพ้|Pháae][ยา|yaa][อะไร|à-rai][ไม่|mâi][รู้|rúu][ครับ|khráp] [ไม่|Mâi][เคย|khoei][แพ้|pháae][ครับ|khráp]",
+          "id": "Two days. I don't know of any drug allergies. I've never had one.",
+          "literal": "two — day — (polite). allergic — drug — what — not — know — (polite). not — ever — allergic — (polite)."
+        },
+        {
+          "speaker": "เภสัชกร:",
+          "text": "[งั้น|Ngán] [ยา|yaa][ชุด|chút][นี้|níi][ค่ะ|khâ] [กิน|Kin][หลัง|lǎng][อาหาร|aa-hǎan][วัน|wan][ละ|lá][สาม|sǎam][ครั้ง|khráng][ค่ะ|khâ]",
+          "id": "Then take this medicine pack. After meals, three times a day.",
+          "literal": "in-that-case — medicine — set — this — (polite). eat — after — food — day — per — three — time — (polite)."
+        },
+        {
+          "speaker": "บูดี:",
+          "text": "[ง่วง|Ngûang][ไหม|mǎi][ครับ|khráp] [ผม|Phǒm][ต้อง|tâwng][ทำงาน|tham-ngaan][ครับ|khráp]",
+          "id": "Will it make me drowsy? I have to work.",
+          "literal": "sleepy — (question) — (polite)? I — must — work — (polite)."
+        },
+        {
+          "speaker": "เภสัชกร:",
+          "text": "[เม็ด|Mét][สีขาว|sǐi-khǎao][ง่วง|ngûang][ค่ะ|khâ] [กิน|Kin][ตอน|tawn][กลางคืน|klaang-khuuen][ก็|kâw][พอ|phaw][ค่ะ|khâ]",
+          "id": "The white tablet will. Just take it at night.",
+          "literal": "tablet — color-white — sleepy — (polite). eat — at — night — also — enough — (polite)."
+        },
+        {
+          "speaker": "บูดี:",
+          "text": "[ถ้า|Thâa][ไม่|mâi][ดีขึ้น|dii-khûen][ต้อง|tâwng][ทำ|tham][ยังไง|yang-ngai][ครับ|khráp]",
+          "id": "What should I do if it doesn't get better?",
+          "literal": "if — not — good-up — must — do — how — (polite)?"
+        },
+        {
+          "speaker": "เภสัชกร:",
+          "text": "[สาม|Sǎam][วัน|wan][ไม่|mâi][ดีขึ้น|dii-khûen][ไป|pai][หา|hǎa][หมอ|mǎw][นะ|ná][คะ|khá] [โรงพยาบาล|Roong-phá-yaa-baan][อยู่|yùu][ปาก|pàak][ซอย|sawy][ค่ะ|khâ]",
+          "id": "If it's no better in three days, see a doctor, okay? The hospital is at the mouth of the soi.",
+          "literal": "three — day — not — good-up — go — find — doctor — okay — (polite). hospital — located — mouth — soi — (polite)."
+        },
+        {
+          "speaker": "บูดี:",
+          "text": "[ขอบคุณ|Khàwp-khun][มาก|mâak][ครับ|khráp]",
+          "id": "Thank you very much.",
+          "literal": "thank-you — much — (polite)."
+        }
+      ],
+      "notes": [
+        "**เจ็บ jèp and ปวด pùat both mean \"pain\", and the difference is real.** *เจ็บ* is pain that's **sharp, from outside, from an injury** — a scratch, a prick, a raw throat: *เจ็บคอ, เจ็บมือ, เจ็บแผล*. *ปวด* is pain that **throbs, from inside**: *ปวดหัว* (headache), *ปวดท้อง* (stomachache), *ปวดฟัน* (toothache), *ปวดหลัง* (backache). ⚠️ Mixing them up can get you the wrong medicine.",
+        "**ไม่สบาย mâi sà-baai means \"not feeling well\"**, an umbrella expression for any illness that isn't serious. Notice that it's the direct opposite of *สบายดี* from unit 1 — the circle closes here.",
+        "**เป็นอะไร pen à-rai is \"what's wrong?\" — not \"what's up?\".** *เป็น* here carries its second meaning: **to suffer from an illness**, as flagged in unit 2. *เป็นหวัด* (have a cold), *เป็นไข้* (have a fever), *เป็นไข้หวัดใหญ่* (have the flu).",
+        "**แพ้ pháae means \"allergic\" — and also \"to lose\".** *แพ้ยา* (allergic to medicine), *แพ้อาหารทะเล* (allergic to seafood), *แพ้กุ้ง* (allergic to shrimp). ⚠️ *ผม/ฉันแพ้…ครับ/ค่ะ* is one of the most important sentences for anyone with an allergy to memorize, and you should save it on your phone in Thai script.",
+        "**…ขึ้น khûen after an adjective means \"getting more…\".** *ดีขึ้น* (getting better), *แย่ลง yâae long* (getting worse — with *ลง*, meaning down). The pair *ขึ้น/ลง* is used for many changes: *ร้อนขึ้น* (getting hotter), *ถูกลง* (getting cheaper).",
+        "**ครั้ง khráng is the classifier for \"times\".** *วันละสามครั้ง* (three times a day), *อีกครั้ง* (once more). Dosage instructions almost always use the pattern *วันละ… ครั้ง*.",
+        "**หา hǎa means \"to look for\", but ไปหาหมอ means \"go see a doctor\"** — literally \"go look for the doctor\". The pattern *ไปหา + person* is the standard way to say \"visit someone\": *ไปหาเพื่อน* (go see a friend).",
+        "**The ร้านขายยา ráan khǎai yaa (pharmacy) is the first place Thai people go**, not the hospital. Thai pharmacists are used to hearing symptoms and putting together a *ยาชุด yaa chút* — a small bag of medicine for a few days. For minor complaints, this is much faster and cheaper."
+      ],
+      "grammars": [
+        {
+          "title": "The body parts people most often complain about",
+          "table": {
+            "head": [
+              "Thai",
+              "Pronunciation",
+              "English",
+              "Thai",
+              "Pronunciation",
+              "English"
+            ],
+            "rows": [
+              [
+                "หัว",
+                "*hǔa*",
+                "head",
+                "ท้อง",
+                "*tháwng*",
+                "stomach"
+              ],
+              [
+                "ตา",
+                "*taa*",
+                "eye",
+                "หลัง",
+                "*lǎng*",
+                "back"
+              ],
+              [
+                "หู",
+                "*hǔu*",
+                "ear",
+                "แขน",
+                "*khǎaen*",
+                "arm"
+              ],
+              [
+                "จมูก",
+                "*jà-mùuk*",
+                "nose",
+                "มือ",
+                "*muue*",
+                "hand"
+              ],
+              [
+                "ปาก",
+                "*pàak*",
+                "mouth",
+                "ขา",
+                "*khǎa*",
+                "leg"
+              ],
+              [
+                "ฟัน",
+                "*fan*",
+                "tooth",
+                "เท้า",
+                "*tháo*",
+                "foot"
+              ],
+              [
+                "คอ",
+                "*khaw*",
+                "neck, throat",
+                "นิ้ว",
+                "*níu*",
+                "finger"
+              ],
+              [
+                "ไหล่",
+                "*lài*",
+                "shoulder",
+                "เข่า",
+                "*khào*",
+                "knee"
+              ]
+            ]
+          },
+          "after": [
+            "⚠️ **หัว *hǔa* (head) and หู *hǔu* (ear) differ only in the vowel**, and both have a rising tone. Practice them side by side: *hǔa — hǔu*.",
+            "Remember the cultural rule from unit 12: **the head is the highest part of the body and must not be touched**, not even a child's; **the feet are the lowest** and must not be pointed at people or at Buddha images."
+          ]
+        },
+        {
+          "title": "Explaining your symptoms",
+          "table": {
+            "head": [
+              "Thai",
+              "Pronunciation",
+              "Meaning"
+            ],
+            "rows": [
+              [
+                "ไม่สบาย",
+                "*mâi sà-baai*",
+                "not feeling well"
+              ],
+              [
+                "ปวดหัว",
+                "*pùat hǔa*",
+                "headache"
+              ],
+              [
+                "ปวดท้อง",
+                "*pùat tháwng*",
+                "stomachache"
+              ],
+              [
+                "เจ็บคอ",
+                "*jèp khaw*",
+                "sore throat"
+              ],
+              [
+                "เป็นไข้",
+                "*pen khâi*",
+                "fever"
+              ],
+              [
+                "เป็นหวัด",
+                "*pen wàt*",
+                "a cold"
+              ],
+              [
+                "ไอ",
+                "*ai*",
+                "cough"
+              ],
+              [
+                "น้ำมูกไหล",
+                "*náam-mûuk lǎi*",
+                "runny nose"
+              ],
+              [
+                "ท้องเสีย",
+                "*tháwng-sǐa*",
+                "diarrhea"
+              ],
+              [
+                "คลื่นไส้",
+                "*khlûuen-sâi*",
+                "nausea"
+              ],
+              [
+                "เวียนหัว",
+                "*wian hǔa*",
+                "dizzy, spinning"
+              ],
+              [
+                "แพ้…",
+                "*pháae …*",
+                "allergic to …"
+              ],
+              [
+                "เป็นมากี่วันแล้ว",
+                "*pen maa kìi wan láaeo*",
+                "how many days has it been?"
+              ],
+              [
+                "ดีขึ้นแล้ว",
+                "*dii-khûen láaeo*",
+                "getting better"
+              ]
+            ]
+          },
+          "after": [
+            "**Emergency phrases to memorize word for word:** *ช่วยด้วย chûai dûai* (help!), *เรียกรถพยาบาลหน่อย rîak rót-phá-yaa-baan nàwy* (call an ambulance), *ผม/ฉันแพ้… phǒm/chǎn pháae …* (I'm allergic to …).",
+            "Emergency numbers in Thailand: **191** for police, **1669** for an ambulance, **1155** for the English-speaking tourist police."
+          ]
+        },
+        {
+          "title": "Weather and the three seasons",
+          "table": {
+            "head": [
+              "Thai",
+              "Pronunciation",
+              "Meaning"
+            ],
+            "rows": [
+              [
+                "อากาศ",
+                "*aa-kàat*",
+                "weather, air"
+              ],
+              [
+                "ร้อน",
+                "*ráwn*",
+                "hot"
+              ],
+              [
+                "หนาว",
+                "*nǎao*",
+                "cold"
+              ],
+              [
+                "เย็น",
+                "*yen*",
+                "cool"
+              ],
+              [
+                "ฝนตก",
+                "*fǒn tòk*",
+                "it's raining"
+              ],
+              [
+                "แดดออก",
+                "*dàaet àwk*",
+                "strong sun"
+              ],
+              [
+                "ลมแรง",
+                "*lom raaeng*",
+                "strong wind"
+              ],
+              [
+                "ฟ้าร้อง",
+                "*fáa ráwng*",
+                "thunder"
+              ],
+              [
+                "ชื้น",
+                "*chúuen*",
+                "humid"
+              ],
+              [
+                "หน้าร้อน",
+                "*nâa-ráwn*",
+                "hot season (Mar–May)"
+              ],
+              [
+                "หน้าฝน",
+                "*nâa-fǒn*",
+                "rainy season (Jun–Oct)"
+              ],
+              [
+                "หน้าหนาว",
+                "*nâa-nǎao*",
+                "cool season (Nov–Feb)"
+              ]
+            ]
+          },
+          "after": [
+            "**หน้า nâa here means \"season\"** — the third meaning of a word that also means \"front\" and \"face\". Thai really does like to give one word many jobs.",
+            "⚠️ **Thailand's \"cold season\" isn't cold by European standards** — in Bangkok it means about 22–25 degrees. But up north, Chiang Mai and its mountains really can drop to 10 degrees, and locals wear thick jackets. For anyone from the tropics, that genuinely feels cold."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Small talk about the weather",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "The weather is the safest small-talk topic anywhere, and Thailand is no different. These four sentences work with anyone."
+        },
+        {
+          "type": "list",
+          "items": [
+            "**วันนี้ร้อนจังนะครับ/คะ** — it's so hot today, isn't it?",
+            "**ฝนจะตกแล้ว** *fǒn jà tòk láaeo* — it's about to rain.",
+            "**เอาร่มไปด้วยนะครับ/คะ** — take an umbrella, okay?",
+            "**อากาศดีนะครับ/คะ** — nice weather, isn't it?"
+          ]
+        },
+        {
+          "type": "kotak",
+          "title": "The rainy season isn't rain all day",
+          "items": [
+            "In the rainy season, Bangkok's rain usually comes down hard for an hour or two in the late afternoon, then stops. It's not the all-day rain newcomers imagine.",
+            "What to watch out for is **น้ำท่วม *náam thûam*** — flooding — which can make roads impassable for a few hours. Useful phrases: *น้ำท่วมไหมครับ/คะ* (is it flooded?) and *รถผ่านได้ไหมครับ/คะ rót phàan dâai mǎi* (can cars get through?).",
+            "A folding umbrella in the bag is a habit almost every Thai person keeps — and it's used for both rain and sun."
+          ]
+        }
+      ]
+    },
+    {
+      "title": "At the hospital",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "Thai",
+            "Pronunciation",
+            "Meaning"
+          ],
+          "rows": [
+            [
+              "ทำบัตรใหม่",
+              "*tham bàt mài*",
+              "register as a new patient"
+            ],
+            [
+              "นัดหมอ",
+              "*nát mǎw*",
+              "make an appointment with a doctor"
+            ],
+            [
+              "ไม่ได้นัดมา",
+              "*mâi dâai nát maa*",
+              "walk in without an appointment"
+            ],
+            [
+              "มีประกันไหม",
+              "*mii prà-kan mǎi*",
+              "do you have insurance?"
+            ],
+            [
+              "พาสปอร์ต",
+              "*páat-sà-pàwt*",
+              "passport"
+            ],
+            [
+              "รอคิว",
+              "*raw khiu*",
+              "wait in line"
+            ],
+            [
+              "ห้องฉุกเฉิน",
+              "*hâwng chùk-chǒoen*",
+              "emergency room"
+            ],
+            [
+              "ใบรับรองแพทย์",
+              "*bai ráp-rawng phâaet*",
+              "medical certificate"
+            ],
+            [
+              "ค่ารักษา",
+              "*khâa rák-sǎa*",
+              "medical fees"
+            ]
+          ]
+        },
+        {
+          "type": "kotak",
+          "title": "Three practical points",
+          "items": [
+            "**Bring your passport.** Thai hospitals register patients under their passport name, and without it the process stops at the first desk.",
+            "**Private hospitals are much faster and English-speaking**, but they can cost several times more. Public hospitals (*โรงพยาบาลรัฐ*) are far cheaper, with long lines.",
+            "**Keep your allergies written in Thai script on your phone.** For example: *ฉันแพ้ยาเพนนิซิลลิน* (I'm allergic to penicillin). In an emergency, showing a screen is much faster than speaking."
+          ]
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "th": "ไม่สบาย",
+      "baca": "mâi sà-baai",
+      "en": "not feeling well"
+    },
+    {
+      "th": "ปวด",
+      "baca": "pùat",
+      "en": "to ache (from inside)"
+    },
+    {
+      "th": "เจ็บ",
+      "baca": "jèp",
+      "en": "to hurt (sharp, from outside)"
+    },
+    {
+      "th": "ไข้",
+      "baca": "khâi",
+      "en": "fever"
+    },
+    {
+      "th": "หวัด",
+      "baca": "wàt",
+      "en": "a cold"
+    },
+    {
+      "th": "ไอ",
+      "baca": "ai",
+      "en": "to cough"
+    },
+    {
+      "th": "แพ้",
+      "baca": "pháae",
+      "en": "allergic; to lose"
+    },
+    {
+      "th": "ยา",
+      "baca": "yaa",
+      "en": "medicine"
+    },
+    {
+      "th": "ร้านขายยา",
+      "baca": "ráan khǎai yaa",
+      "en": "pharmacy"
+    },
+    {
+      "th": "หมอ",
+      "baca": "mǎw",
+      "en": "doctor"
+    },
+    {
+      "th": "ครั้ง",
+      "baca": "khráng",
+      "en": "time(s)"
+    },
+    {
+      "th": "เม็ด",
+      "baca": "mét",
+      "en": "tablet, pill"
+    },
+    {
+      "th": "ง่วง",
+      "baca": "ngûang",
+      "en": "sleepy, drowsy"
+    },
+    {
+      "th": "ดีขึ้น",
+      "baca": "dii-khûen",
+      "en": "getting better"
+    },
+    {
+      "th": "หัว",
+      "baca": "hǔa",
+      "en": "head"
+    },
+    {
+      "th": "ท้อง",
+      "baca": "tháwng",
+      "en": "stomach"
+    },
+    {
+      "th": "คอ",
+      "baca": "khaw",
+      "en": "neck, throat"
+    },
+    {
+      "th": "ฟัน",
+      "baca": "fan",
+      "en": "tooth"
+    },
+    {
+      "th": "มือ",
+      "baca": "muue",
+      "en": "hand"
+    },
+    {
+      "th": "ขา",
+      "baca": "khǎa",
+      "en": "leg, foot"
+    },
+    {
+      "th": "ตา",
+      "baca": "taa",
+      "en": "eye"
+    },
+    {
+      "th": "หู",
+      "baca": "hǔu",
+      "en": "ear"
+    },
+    {
+      "th": "ท้องเสีย",
+      "baca": "tháwng-sǐa",
+      "en": "diarrhea"
+    },
+    {
+      "th": "อากาศ",
+      "baca": "aa-kàat",
+      "en": "weather, air"
+    },
+    {
+      "th": "ฝน",
+      "baca": "fǒn",
+      "en": "rain"
+    },
+    {
+      "th": "ตก",
+      "baca": "tòk",
+      "en": "to fall, to drop"
+    },
+    {
+      "th": "แดด",
+      "baca": "dàaet",
+      "en": "sunlight"
+    },
+    {
+      "th": "ลม",
+      "baca": "lom",
+      "en": "wind"
+    },
+    {
+      "th": "น้ำท่วม",
+      "baca": "náam thûam",
+      "en": "flood"
+    },
+    {
+      "th": "หน้าฝน",
+      "baca": "nâa-fǒn",
+      "en": "rainy season"
+    },
+    {
+      "th": "ตาก",
+      "baca": "tàak",
+      "en": "to be exposed to (rain, sun); to dry in the sun"
+    },
+    {
+      "th": "ฉุกเฉิน",
+      "baca": "chùk-chǒoen",
+      "en": "emergency"
+    },
+    {
+      "th": "ประกัน",
+      "baca": "prà-kan",
+      "en": "insurance"
+    }
+  ],
+  "exercises": [
+    {
+      "prompt": "Choose ปวด or เจ็บ.",
+      "items": [
+        "____หัว (headache)",
+        "____คอ (raw, sore throat)",
+        "____ท้อง (stomachache)",
+        "____ฟัน (toothache)",
+        "____มือ (injured hand)"
+      ]
+    },
+    {
+      "prompt": "Fill in the blanks.",
+      "items": [
+        "\"Not feeling well\" → ____ครับ",
+        "\"Do you have a fever?\" → มี____ไหมคะ",
+        "\"I'm allergic to shrimp\" → ผม____กุ้งครับ",
+        "\"Three times a day\" → วันละสาม____",
+        "\"Getting better already\" → ____แล้วค่ะ",
+        "\"It's raining\" → ฝน____"
+      ]
+    },
+    {
+      "prompt": "Put the words in the right order.",
+      "items": [
+        "ครับ / เจ็บคอ / กับ / ปวดหัว",
+        "คะ / ไหม / มีไข้",
+        "ครับ / กี่วันแล้ว / เป็นมา",
+        "ค่ะ / หลังอาหาร / กิน / วันละสามครั้ง",
+        "ครับ / ไปหาหมอ / ถ้าไม่ดีขึ้น"
+      ]
+    },
+    {
+      "prompt": "Translate into Thai. Imagine you're a man.",
+      "items": [
+        "I'm not feeling well.",
+        "I have a headache and a sore throat.",
+        "No fever, a little cough.",
+        "It's been two days.",
+        "Does this medicine make you drowsy?",
+        "It's so hot today, isn't it?"
+      ]
+    }
+  ],
+  "answers": [
+    "ปวด — เจ็บ — ปวด — ปวด — เจ็บ",
+    "ไม่สบาย — ไข้ — แพ้ — ครั้ง — ดีขึ้น — ตก",
+    "ปวดหัวกับเจ็บคอครับ — มีไข้ไหมคะ — เป็นมากี่วันแล้วครับ — กินหลังอาหารวันละสามครั้งค่ะ — ถ้าไม่ดีขึ้นไปหาหมอครับ",
+    "ผมไม่ค่อยสบายครับ — ปวดหัวกับเจ็บคอครับ — ไข้ไม่มีครับ ไอนิดหน่อยครับ — เป็นมาสองวันแล้วครับ — ยาง่วงไหมครับ — วันนี้ร้อนจังนะครับ"
+  ],
+  "wave": "Review unit 14: cover the Thai, then buy a piece of clothing from start to finish — color, size, trying on, and exchanging."
+}

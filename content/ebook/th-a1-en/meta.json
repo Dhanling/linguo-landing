@@ -1,0 +1,1982 @@
+{
+  "brand": "LINGUO",
+  "cover": "cover.png",
+  "title": "ภาษาไทย 101",
+  "subtitle": "A self-study course in Thai for complete beginners",
+  "level": "Level A1 (CEFR)",
+  "edition": "English Edition",
+  "ruby": true,
+  "labels": {
+    "unit": "Unit",
+    "dialog": "บทสนทนา Bot sǒn-thá-naa",
+    "notes": "Notes",
+    "vocab": "Vocabulary in this unit",
+    "exercises": "Exercises",
+    "answers": "Answer key",
+    "bekal": "By the end of this unit you can:",
+    "literal": "literally:",
+    "wave": "Wave review:",
+    "bagian": "Part"
+  },
+  "page_margin": "13mm 12mm 12mm",
+  "font_size": "9.5pt",
+  "line_height": "1.46",
+  "font_cjk_serif": "\"Thonburi\", \"Sukhumvit Set\", \"Ayuthaya\", \"Noto Serif Thai\", \"Arial Unicode MS\"",
+  "font_cjk_sans": "\"Sukhumvit Set\", \"Thonburi\", \"Noto Sans Thai\", \"Arial Unicode MS\"",
+  "vocab_columns": [
+    {
+      "head": "ภาษาไทย",
+      "key": "th"
+    },
+    {
+      "head": "Pronunciation",
+      "key": "baca"
+    },
+    {
+      "head": "English",
+      "key": "en"
+    }
+  ],
+  "product": {
+    "slug": "modul-thailand-101-en",
+    "title": "Thai 101 - A1 (English Edition)",
+    "type": "ebook",
+    "language": "Thai",
+    "level": "A1",
+    "file": "thai-101-a1-en.pdf",
+    "description": "Twenty Assimil-style self-study units that take you from zero to A1 Thai: the pronunciation is printed right above every Thai word — tone marks included — with short dialogues, word-for-word translations that show how Thai builds its sentences, grammar notes, vocabulary, exercises, and an answer key. Also included: a table of all 44 consonants with their three classes, a map of the five tones, a list of classifiers, a summary of particles, and a glossary. Written for English speakers — each unit targets one of the spots that actually trip learners up, from tones that change the meaning to the classifiers you can't leave out.",
+    "pages": 143
+  },
+  "cover_design": {
+    "bg": "#123A57",
+    "accent": "#E8B55A",
+    "label": "THAI",
+    "judul": "ภาษาไทย",
+    "judul_size": "140px",
+    "cap": "ๆ",
+    "pola_opacity": 0.4,
+    "pola": "background-image:repeating-linear-gradient(135deg, rgba(255,255,255,.10) 0 3px, transparent 3px 44px),repeating-linear-gradient(45deg, rgba(0,0,0,.10) 0 3px, transparent 3px 44px);",
+    "ringkas": "A self-study course in Thai for complete beginners — from ordering at a street stall to telling the story of last weekend.",
+    "catatan": "The pronunciation, with tones, is printed above every word; a word-for-word translation sits under every line of dialogue.",
+    "merek_sub": "SELF-STUDY MODULE",
+    "kaki_sub": "units · dialogues · exercises · answer key"
+  },
+  "front": [
+    {
+      "title": "Foreword",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Thai has two reputations that seem to contradict each other. The first: the script is terrifying — 44 consonants, vowels that can sit in front of, behind, above, and below their letter, and writing that runs on with no spaces between words. The second: the grammar is the cheapest in Asia — no verb conjugation, no plurals, no gendered nouns."
+        },
+        {
+          "type": "p",
+          "text": "Both are true. And precisely because both are true, Thai is a language you can **put to use very quickly**. The sentence *ผมกินข้าว* is built exactly like English, word for word: \"I — eat — rice\". Nothing to flip around, no endings to attach, no past-tense forms to memorize. If it happened yesterday, you just add the word \"yesterday\"."
+        },
+        {
+          "type": "p",
+          "text": "So Thai does have its difficulties, but they are not where you expect them. They lie in three places, and this course is built around all three."
+        },
+        {
+          "type": "p",
+          "text": "**First, tones.** The very same syllable can mean five different things depending on the rise and fall of your voice: *มา* (maa, to come), *ม้า* (máa, horse), *หมา* (mǎa, dog). To an English ear this feels impossible in week one and perfectly normal by month two — as long as the tones are practiced from the very first word, not put off. That is why **every word in this course is printed with its tone mark**, from the first page, without exception."
+        },
+        {
+          "type": "p",
+          "text": "**Second, classifiers.** \"Two bottles of water\" in Thai is *น้ำสองขวด* — \"water two bottle\". English has a faint echo of this (two **loaves** of bread, three **head** of cattle), but in Thai a counting word is required every time you count anything. The work is simple: learn the list of classifiers and the slightly unusual word order."
+        },
+        {
+          "type": "p",
+          "text": "**Third, the politeness particles** *ครับ* and *ค่ะ*. Thai marks politeness at the end of the sentence, and the marker depends on the gender of **the speaker** — not the listener. Leaving it off isn't a grammar mistake, it's a manners mistake: a perfectly correct sentence sounds rude without that tail."
+        },
+        {
+          "type": "p",
+          "text": "The script itself isn't put off, but it isn't forced on you either. The \"Thai script\" chapter up front introduces the system once; after that, every Thai word in the course carries its pronunciation above its head, so you can keep moving while the letters slowly sink in on their own. Many readers find they can read shop signs by Unit 10 without ever feeling they were memorizing."
+        },
+        {
+          "type": "p",
+          "text": "The explanations are deliberately short. What's long isn't the theory — it's the practice."
+        },
+        {
+          "type": "kotak",
+          "title": "Before you start",
+          "items": [
+            "Set aside 20-30 undisturbed minutes, not two hours chopped into pieces. Languages stick through short, frequent repetition, not one long assault.",
+            "Read out loud — in Thai this isn't a suggestion, it's a requirement. Tones can't be learned with your eyes. If you read *มา* silently, your brain reads it with no tone at all, and the version that sticks is the wrong one.",
+            "The five tones are practiced from the first word, not in a special chapter. Every time you see a ˊ ˋ ˆ ˇ mark in the pronunciation, voice the rise and fall. Ten seconds per word, and tones stop being theory.",
+            "Don't wait for perfect tones before you dare to speak. Thais are used to guessing from context: point at a glass and say *น้ำ* in any tone, and water will still arrive. What isn't forgiven is forgetting *ครับ/ค่ะ*."
+          ]
+        },
+        {
+          "type": "p",
+          "text": "Happy learning. *โชคดีครับ! Chôok-dii khráp!*"
+        }
+      ]
+    },
+    {
+      "type": "isi",
+      "title": "Contents",
+      "intro": "This course works best in order — each unit reuses what the previous ones set up."
+    },
+    {
+      "title": "How to use this course",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "This course is designed for **self-study**. Each unit is meant to be finished in one sitting, about 20-30 minutes. What matters isn't how fast you move forward, but how often you come back."
+        },
+        {
+          "type": "p",
+          "text": "Every unit has the same layout, and the order is deliberate:"
+        },
+        {
+          "type": "list",
+          "items": [
+            "**Dialogue** — first read the Thai out loud, following the pronunciation above each word. Don't look at the English on the first pass. Let your ears work before your brain demands explanations.",
+            "**Word-for-word translation** — the small italic line under the English. This is the part people skip most, yet it's where you see how Thai *thinks*. Example: *ไปไหนมา* literally means \"go where come?\", not \"where have you been?\".",
+            "**Notes** — short explanations of whatever just felt strange.",
+            "**Vocabulary** — the unit's new words, with their toned pronunciation.",
+            "**Exercises** — do them without looking at the key. Mistakes are part of the process.",
+            "**Answer key** — open it only after you've really tried."
+          ]
+        },
+        {
+          "type": "kotak",
+          "title": "Wave review",
+          "items": [
+            "From Unit 3 on, each unit asks you to revisit an earlier unit — usually two steps back, the right distance to make memory work without feeling like starting over. Do it in reverse: cover the Thai, look at the English, then rebuild the Thai sentence from memory — **tones included**.",
+            "This is the part that turns \"I once understood it\" into \"I can use it\". Don't skip it."
+          ]
+        },
+        {
+          "type": "kotak",
+          "title": "One habit specific to this course",
+          "items": [
+            "Every time you meet a new word, say it **three times in a row with the same tone**. Thai tones live in your muscles, not your memory; a word read only once will come out with a random tone the moment you get nervous.",
+            "If you're unsure of a word's tone, don't guess from its meaning — check the mark in the pronunciation. This course prints it at every occurrence of a word, not just the first, precisely so you never have an excuse to guess."
+          ]
+        },
+        {
+          "type": "p",
+          "text": "One last rule: **say it out loud**. Thai rewards that more than anything, because half of it simply isn't on the page."
+        }
+      ]
+    },
+    {
+      "title": "The pronunciation system used in this course",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "The **pronunciation** shown throughout this course uses a romanization common in English-language Thai textbooks. Most letters sound roughly as you'd expect; the vowels have their \"continental\" values (as in Spanish or Italian), not English ones. There are just four things to learn below."
+        },
+        {
+          "type": "sub",
+          "text": "1. Tone marks above the vowel"
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Mark",
+            "Tone",
+            "How it sounds",
+            "Example"
+          ],
+          "rows": [
+            [
+              "*aa*",
+              "mid tone",
+              "flat, your normal speaking pitch",
+              "*มา maa* = to come"
+            ],
+            [
+              "*àa*",
+              "low tone",
+              "flat, but lower than your normal pitch",
+              "*ไม่ mâi*… see the next row"
+            ],
+            [
+              "*âa*",
+              "falling tone",
+              "rises a little, then drops sharply — like an emphatic \"No!\"",
+              "*ไม่ mâi* = not"
+            ],
+            [
+              "*áa*",
+              "high tone",
+              "held high, rising slightly at the end",
+              "*ม้า máa* = horse"
+            ],
+            [
+              "*ǎa*",
+              "rising tone",
+              "dips first, then rises — like a puzzled \"Huh?\"",
+              "*หมา mǎa* = dog"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "The mark always sits on the **main vowel** of the syllable. If a word has two syllables, each carries its own mark: *สวัสดี* → *sà-wàt-dii* (low — low — mid)."
+        },
+        {
+          "type": "sub",
+          "text": "2. Long vowels are written double"
+        },
+        {
+          "type": "p",
+          "text": "Vowel length in Thai **changes the meaning**, just as seriously as tone does. *ข้าว khâao* is rice; *ขาว khǎao* is white. So long vowels are always written double: *aa, ii, uu, ee, oo*. If you see a single letter, keep it short."
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Written",
+            "Sounds like",
+            "Example"
+          ],
+          "rows": [
+            [
+              "*a / aa*",
+              "*a* in **father**, short or held",
+              "*กัน kan* / *กาน kaan*"
+            ],
+            [
+              "*i / ii*",
+              "*i* in **machine**",
+              "*ดิน din* / *ดีน diin*"
+            ],
+            [
+              "*u / uu*",
+              "*u* in **rule** (never as in \"cup\")",
+              "*ดุ du* / *ดู duu*"
+            ],
+            [
+              "*e / ee*",
+              "*e* in **bet**; long like \"eh\"",
+              "*เด็ก dèk* / *เดน deen*"
+            ],
+            [
+              "*ae / aae*",
+              "*a* in **bad**, mouth wide open",
+              "*แกะ kàe* / *แก kae*"
+            ],
+            [
+              "*o / oo*",
+              "*o* in **go**, but pure — no \"w\" glide",
+              "*ต้ม tôm* / *โต too*"
+            ],
+            [
+              "*aw / aaw*",
+              "*aw* in **law** or **saw** (British)",
+              "*เกาะ kàw* / *ขอ khǎaw*"
+            ],
+            [
+              "*oe / oee*",
+              "the *u* in **hurt** or *e* in **her**, without any r",
+              "*เงิน ngoen* / *เธอ thoee*"
+            ],
+            [
+              "*ue / uue*",
+              "\"oo\" said with lips **spread** as for \"ee\", not rounded",
+              "*หนึ่ง nùeng* / *มือ muue*"
+            ]
+          ]
+        },
+        {
+          "type": "sub",
+          "text": "3. Consonants to watch: aspirated vs. unaspirated"
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Written",
+            "What it means",
+            "Watch out"
+          ],
+          "rows": [
+            [
+              "*k*",
+              "*k* with **no** puff of air — like the k in **skin**, not **kin**",
+              "*ไก่ kài* = chicken"
+            ],
+            [
+              "*kh*",
+              "*k* **with** a strong puff of air — like **kin**",
+              "*ไข่ khài* = egg — a different word!"
+            ],
+            [
+              "*p*",
+              "*p* with no puff — like the p in **spin**, almost a b",
+              "*ปา paa* = to throw"
+            ],
+            [
+              "*ph*",
+              "*p* with a puff — like **pin**. **Never** an *f* sound",
+              "*ผม phǒm* is \"pom\", not \"fom\""
+            ],
+            [
+              "*t / th*",
+              "the same pattern: **stop** (no puff) vs. **top** (puff)",
+              "*ตา taa* eye, *ท่า thâa* pier"
+            ],
+            [
+              "*ng*",
+              "*ng* as in **singer** — in Thai it can also **start** a word",
+              "*งู nguu* = snake"
+            ],
+            [
+              "*-k -t -p*",
+              "at the end of a word, held and not released",
+              "*ครับ khráp* ends with lips closed"
+            ]
+          ]
+        },
+        {
+          "type": "kotak",
+          "title": "The trap that catches almost every beginner",
+          "items": [
+            "**ph is not f.** The name *ภูเก็ต* is spelled \"Phuket\" and pronounced *phuu-kèt* — \"poo-ket\", not \"foo-ket\". Likewise *ผม phǒm* (I, male) sounds like \"pǒm\". The *h* only marks the puff of air. Hold a hand in front of your mouth: *ph, th, kh* should hit it; *p, t, k* should not. Likewise *ch* (ช, ฉ) has a puff, while *j* (จ) is an unaspirated sound between the \"j\" in **jam** and the \"ch\" in **itchy**.",
+            "**th is not the English sound in *think*.** *ไทย thai* is pronounced \"tai\" with a puff of air, never \"θai\"."
+          ]
+        },
+        {
+          "type": "sub",
+          "text": "4. Hyphens separate syllables"
+        },
+        {
+          "type": "p",
+          "text": "Thai is written without spaces, so the pronunciation uses hyphens to show the joints: *ขอบคุณ* → *khàwp-khun*, *โรงเรียน* → *roong-rian*. Give each piece equal weight — Thai **has no word stress** the way English does, so no syllable needs to be punched."
+        }
+      ]
+    },
+    {
+      "title": "The Thai script: how it works, in two pages",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "You can read this section once now and then leave it. This course doesn't require you to read Thai script to make progress — the pronunciation is always printed above each word. But understanding the *system* once at the start helps the script sink in on its own, and around Unit 10 most readers find they can already spell out shop signs."
+        },
+        {
+          "type": "sub",
+          "text": "Six things that explain almost everything"
+        },
+        {
+          "type": "list",
+          "items": [
+            "**There are no capital letters and no spaces between words.** Spaces work like our commas and periods: they separate parts of a sentence, not words. The sentence *ผมชื่อบูดี* is three words stuck together.",
+            "**It runs from left to right**, just like English.",
+            "**Consonants are the backbone.** There are 44 consonants, but many sound alike — those 44 letters produce only 21 sounds.",
+            "**Vowels orbit their consonant.** A vowel can stand **after** (กา), **before** (เก), **above** (กิ), **below** (กุ), or **surround** it from several sides at once (เกีย). Note: a vowel written in front is still **pronounced after** its consonant. เก is read *kee*, not *eek*.",
+            "**If there is no vowel mark at all, there is still a vowel** — a hidden one. คน is read *khon*, not *khn*. A short *o* sound appears automatically between two consonants.",
+            "**Tone isn't always marked.** There are four tone marks, but a syllable's tone is decided by the combination of **consonant class** + **tone mark** + **vowel length** + **final consonant**. This is the part that makes most people give up — and the part that is safest to put off."
+          ]
+        },
+        {
+          "type": "sub",
+          "text": "Why 44 letters for 21 sounds?"
+        },
+        {
+          "type": "p",
+          "text": "For the same reason English writes \"ph\" in *phone* and \"ch\" in *chorus*: the letters were inherited from Sanskrit and Pali through religious texts, and their original sounds merged long ago. ท, ธ, ฑ, ฒ are all read as the same *th*."
+        },
+        {
+          "type": "p",
+          "text": "But they are **not wasted**, and this is the key to the whole system: the look-alike letters are split into **three classes** — middle, high, low — and the class is what decides the syllable's tone. So ท and ถ sound the same but produce different tones. Thai script stores tone information in the choice of letter."
+        },
+        {
+          "type": "kotak",
+          "title": "If you only memorize one thing from this chapter",
+          "items": [
+            "Memorize the **nine middle-class consonants**: ก จ ด ต บ ป อ ฎ ฏ. They are the most common in everyday words, and their tones are the easiest to predict — no tone mark means mid tone, ่ means low, ้ means falling. These nine letters are enough to read half the signs on a Bangkok street.",
+            "Let the rest come on their own. Every unit of this course brings the script past your eyes, again and again, and that is a far cheaper path than memorizing tables."
+          ]
+        },
+        {
+          "type": "sub",
+          "text": "Letter names: why ก is called \"kaw kài\""
+        },
+        {
+          "type": "p",
+          "text": "Because many letters sound the same, Thais name each letter by **its sound + an example word**, just like spelling over the phone with \"B as in Bravo\". ก is called *kaw kài* (ก for chicken), ข is *khǎaw khài* (ข for egg), ค is *khaw khwaai* (ค for buffalo). Thai children learn all 44 letters through this chain, and adults still use it to spell names over the phone."
+        }
+      ]
+    },
+    {
+      "title": "Thai script table",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "This table isn't meant to be memorized in one sitting. It's placed up front so you have somewhere to come back to whenever you're curious about a letter that keeps showing up."
+        },
+        {
+          "type": "sub",
+          "text": "Middle-class consonants (อักษรกลาง) — 9 letters"
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Letter",
+            "Name",
+            "Initial sound",
+            "Final sound"
+          ],
+          "rows": [
+            [
+              "ก",
+              "kaw kài (chicken)",
+              "*k*",
+              "*-k*"
+            ],
+            [
+              "จ",
+              "jaw jaan (plate)",
+              "*j*",
+              "*-t*"
+            ],
+            [
+              "ฎ",
+              "daw chá-daa (headdress)",
+              "*d*",
+              "*-t*"
+            ],
+            [
+              "ฏ",
+              "taw pà-tàk (spear)",
+              "*t*",
+              "*-t*"
+            ],
+            [
+              "ด",
+              "daw dèk (child)",
+              "*d*",
+              "*-t*"
+            ],
+            [
+              "ต",
+              "taw tào (turtle)",
+              "*t*",
+              "*-t*"
+            ],
+            [
+              "บ",
+              "baw bai-máai (leaf)",
+              "*b*",
+              "*-p*"
+            ],
+            [
+              "ป",
+              "paw plaa (fish)",
+              "*p*",
+              "*-p*"
+            ],
+            [
+              "อ",
+              "aw àang (basin)",
+              "— (vowel carrier)",
+              "—"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "⚠️ **อ is not a dead letter.** It is an empty chair for a vowel to sit on when a syllable begins with a vowel. *อาหาร aa-hǎan* (food) starts with อ because the sound really does start with *aa* — the letter itself makes no sound."
+        },
+        {
+          "type": "sub",
+          "text": "High-class consonants (อักษรสูง) — 11 letters"
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Letter",
+            "Name",
+            "Initial sound",
+            "Final sound"
+          ],
+          "rows": [
+            [
+              "ข",
+              "khǎaw khài (egg)",
+              "*kh*",
+              "*-k*"
+            ],
+            [
+              "ฃ",
+              "khǎaw khùat (bottle)",
+              "*kh* — no longer used",
+              "—"
+            ],
+            [
+              "ฉ",
+              "chǎw chìng (cymbals)",
+              "*ch*",
+              "—"
+            ],
+            [
+              "ฐ",
+              "thǎw thǎan (pedestal)",
+              "*th*",
+              "*-t*"
+            ],
+            [
+              "ถ",
+              "thǎw thǔng (sack)",
+              "*th*",
+              "*-t*"
+            ],
+            [
+              "ผ",
+              "phǎw phuueng (bee)",
+              "*ph*",
+              "—"
+            ],
+            [
+              "ฝ",
+              "fǎw fǎa (lid)",
+              "*f*",
+              "—"
+            ],
+            [
+              "ศ",
+              "sǎw sǎa-laa (pavilion)",
+              "*s*",
+              "*-t*"
+            ],
+            [
+              "ษ",
+              "sǎw ruue-sǐi (hermit)",
+              "*s*",
+              "*-t*"
+            ],
+            [
+              "ส",
+              "sǎw sǔea (tiger)",
+              "*s*",
+              "*-t*"
+            ],
+            [
+              "ห",
+              "hǎw hìip (chest)",
+              "*h*",
+              "—"
+            ]
+          ]
+        },
+        {
+          "type": "sub",
+          "text": "Low-class consonants (อักษรต่ำ) — 24 letters"
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Letter",
+            "Sound",
+            "Letter",
+            "Sound",
+            "Letter",
+            "Sound"
+          ],
+          "rows": [
+            [
+              "ค",
+              "*kh*",
+              "ฅ",
+              "*kh* (obsolete)",
+              "ฆ",
+              "*kh*"
+            ],
+            [
+              "ง",
+              "*ng*",
+              "ช",
+              "*ch*",
+              "ซ",
+              "*s*"
+            ],
+            [
+              "ฌ",
+              "*ch*",
+              "ญ",
+              "*y*",
+              "ฑ",
+              "*th*"
+            ],
+            [
+              "ฒ",
+              "*th*",
+              "ณ",
+              "*n*",
+              "ท",
+              "*th*"
+            ],
+            [
+              "ธ",
+              "*th*",
+              "น",
+              "*n*",
+              "พ",
+              "*ph*"
+            ],
+            [
+              "ฟ",
+              "*f*",
+              "ภ",
+              "*ph*",
+              "ม",
+              "*m*"
+            ],
+            [
+              "ย",
+              "*y*",
+              "ร",
+              "*r*",
+              "ล",
+              "*l*"
+            ],
+            [
+              "ว",
+              "*w*",
+              "ฬ",
+              "*l*",
+              "ฮ",
+              "*h*"
+            ]
+          ]
+        },
+        {
+          "type": "sub",
+          "text": "Vowels: examples with the consonant ก"
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Short",
+            "Pronunciation",
+            "Long",
+            "Pronunciation",
+            "Position"
+          ],
+          "rows": [
+            [
+              "กะ",
+              "*ka*",
+              "กา",
+              "*kaa*",
+              "after"
+            ],
+            [
+              "กิ",
+              "*ki*",
+              "กี",
+              "*kii*",
+              "above"
+            ],
+            [
+              "กึ",
+              "*kue*",
+              "กื",
+              "*kuue*",
+              "above"
+            ],
+            [
+              "กุ",
+              "*ku*",
+              "กู",
+              "*kuu*",
+              "below"
+            ],
+            [
+              "เกะ",
+              "*ke*",
+              "เก",
+              "*kee*",
+              "before"
+            ],
+            [
+              "แกะ",
+              "*kae*",
+              "แก",
+              "*kaae*",
+              "before"
+            ],
+            [
+              "โกะ",
+              "*ko*",
+              "โก",
+              "*koo*",
+              "before"
+            ],
+            [
+              "เกาะ",
+              "*kaw*",
+              "กอ",
+              "*kaaw*",
+              "surrounding / after"
+            ],
+            [
+              "เกอะ",
+              "*koe*",
+              "เกอ",
+              "*koee*",
+              "surrounding"
+            ],
+            [
+              "เกียะ",
+              "*kia*",
+              "เกีย",
+              "*kiia*",
+              "surrounding"
+            ],
+            [
+              "เกือะ",
+              "*kuea*",
+              "เกือ",
+              "*kuuea*",
+              "surrounding"
+            ],
+            [
+              "กัวะ",
+              "*kua*",
+              "กัว / กว",
+              "*kuua*",
+              "surrounding"
+            ],
+            [
+              "ไก / ใก",
+              "*kai*",
+              "กาย",
+              "*kaai*",
+              "before / mixed"
+            ],
+            [
+              "เกา",
+              "*kao*",
+              "กาว",
+              "*kaao*",
+              "surrounding"
+            ]
+          ]
+        },
+        {
+          "type": "kotak",
+          "title": "Two other marks you'll see often",
+          "items": [
+            "**ๆ** (*mái yá-mók*) means \"repeat the previous word\". *เด็กๆ dèk-dèk* = children. A built-in ditto mark.",
+            "**์** (*mái than-thá-khâat*) is a silencer: the letter under it isn't pronounced. It almost always appears in loanwords — *เบียร์ bia* (beer), *คอมพิวเตอร์ khawm-phiu-tôee* (computer)."
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Five tones: the one thing that changes everything",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "If one chapter decides whether Thais will understand you or not, this is it. The good news: it's only five sounds — and English already uses all five, just for other purposes."
+        },
+        {
+          "type": "sub",
+          "text": "The five tones, with English equivalents"
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Tone",
+            "Mark",
+            "What it feels like in English",
+            "Example"
+          ],
+          "rows": [
+            [
+              "Mid",
+              "*aa*",
+              "like saying \"okay\" flatly, with no emotion",
+              "*คา khaa* = stuck"
+            ],
+            [
+              "Low",
+              "*àa*",
+              "like a quiet, low, flat \"mm…\"",
+              "*ข่า khàa* = galangal"
+            ],
+            [
+              "Falling",
+              "*âa*",
+              "like an emphatic \"No!\" — up a little, then down hard",
+              "*ค่า khâa* = price, value"
+            ],
+            [
+              "High",
+              "*áa*",
+              "like a crisp \"Hi!\" held high",
+              "*ค้า kháa* = to trade"
+            ],
+            [
+              "Rising",
+              "*ǎa*",
+              "like \"Huh?\" when you didn't catch something",
+              "*ขา khǎa* = leg"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "The last four words above differ only in tone, and they mean galangal, price, to trade, leg. The sentence *ขาไม่มีค่า* (*khǎa mâi mii khâa* — the leg has no value) changes completely if the tones get swapped."
+        },
+        {
+          "type": "kotak",
+          "title": "A drill that really works",
+          "items": [
+            "Say them in a row without stopping: *khaa — khàa — khâa — kháa — khǎa*. Five times a day, ten seconds. Within a week your mouth will find all five without thinking.",
+            "Record yourself on your phone and listen back. Almost every beginner thinks they're making five different sounds when they're really making two."
+          ]
+        },
+        {
+          "type": "sub",
+          "text": "Four tone marks — and why the marks aren't enough"
+        },
+        {
+          "type": "p",
+          "text": "Thai has four tone marks, written above the consonant: **่** (*mái èek*), **้** (*mái thoo*), **๊** (*mái trii*), **๋** (*mái jàt-tà-waa*). But the same mark produces a different tone depending on the consonant class. That's why the letter classes matter."
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Consonant class",
+            "no mark",
+            "+ ่",
+            "+ ้",
+            "+ ๊",
+            "+ ๋"
+          ],
+          "rows": [
+            [
+              "Middle (ก จ ด ต บ ป อ)",
+              "mid",
+              "low",
+              "falling",
+              "high",
+              "rising"
+            ],
+            [
+              "High (ข ฉ ถ ผ ฝ ส ห)",
+              "rising",
+              "low",
+              "falling",
+              "—",
+              "—"
+            ],
+            [
+              "Low (ค ง ช ท น พ ม ย ร ล ว)",
+              "mid",
+              "falling",
+              "high",
+              "—",
+              "—"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "The table above applies to **live syllables** — those ending in a vowel or in *-m, -n, -ng, -i, -o*. **Dead syllables** — those ending in *-k, -t, -p* — have rules of their own, and the result is always a low or falling tone, never rising."
+        },
+        {
+          "type": "kotak",
+          "title": "A relief",
+          "items": [
+            "You **don't need** to memorize this table to use this course. Every Thai word here comes with its tone printed above it, so you always know how it should sound.",
+            "These rules only become useful later, when you start reading words you've never heard. Until then, let them be a map that's there when you need it, not homework waiting for you.",
+            "And one last comfort: **Thais themselves don't think about it.** They read tones the way you read the \"ough\" in *though* and *tough* — automatically, without any conscious rule. That's the end goal."
+          ]
+        }
+      ]
+    }
+  ],
+  "back": [
+    {
+      "title": "Classifiers: the complete A1 list",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "The order is always the same and never changes: **noun — number — classifier**. *เบียร์สองขวด bia sǎawng khùat* = beer two bottle. When the number is \"one\", the order can flip to **noun — classifier — หนึ่ง**, and that's what you'll hear more often: *เบียร์ขวดหนึ่ง*."
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Classifier",
+            "Pronunciation",
+            "Used for"
+          ],
+          "rows": [
+            [
+              "คน",
+              "*khon*",
+              "people (except monks & royalty)"
+            ],
+            [
+              "ตัว",
+              "*tua*",
+              "animals, shirts, pants, chairs, tables — things with a \"body\""
+            ],
+            [
+              "อัน",
+              "*an*",
+              "small things in general; also your safety net if you forget"
+            ],
+            [
+              "ใบ",
+              "*bai*",
+              "containers, sheets: glasses, plates, bags, tickets, documents"
+            ],
+            [
+              "ขวด",
+              "*khùat*",
+              "bottles"
+            ],
+            [
+              "แก้ว",
+              "*kâaeo*",
+              "glasses (filled)"
+            ],
+            [
+              "ถ้วย",
+              "*thûai*",
+              "bowls, cups"
+            ],
+            [
+              "จาน",
+              "*jaan*",
+              "plates — also servings of food"
+            ],
+            [
+              "ลูก",
+              "*lûuk*",
+              "round things: balls, oranges, eggs, mountains"
+            ],
+            [
+              "เล่ม",
+              "*lêm*",
+              "books, notebooks, knives"
+            ],
+            [
+              "คัน",
+              "*khan*",
+              "wheeled vehicles, umbrellas, spoons"
+            ],
+            [
+              "เครื่อง",
+              "*khrûeang*",
+              "machines: fridges, air conditioners, computers"
+            ],
+            [
+              "หลัง",
+              "*lǎng*",
+              "houses, buildings"
+            ],
+            [
+              "ห้อง",
+              "*hâwng*",
+              "rooms"
+            ],
+            [
+              "ที่",
+              "*thîi*",
+              "seats, servings"
+            ],
+            [
+              "ชิ้น",
+              "*chín*",
+              "pieces, slices"
+            ],
+            [
+              "ผล",
+              "*phǒn*",
+              "fruit (more formal than ลูก)"
+            ],
+            [
+              "คู่",
+              "*khûu*",
+              "pairs: shoes, socks, chopsticks"
+            ],
+            [
+              "ครั้ง",
+              "*khráng*",
+              "times (occurrences)"
+            ],
+            [
+              "องค์",
+              "*ong*",
+              "monks, Buddha images, members of the royal family"
+            ]
+          ]
+        },
+        {
+          "type": "kotak",
+          "title": "Three lifesaving rules",
+          "items": [
+            "If you really forget, use **อัน** *an*. You'll sound foreign, but you'll always be understood.",
+            "If the item is already clear from context, say just the classifier: pointing at a beer and saying *สองขวดครับ sǎawng khùat khráp* is enough.",
+            "Some nouns are their own classifiers: *ห้องสองห้อง hâwng sǎawng hâwng* (two rooms), *คนสามคน khon sǎam khon* (three people)."
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Summary of verb helpers and particles",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Thai never changes the form of its verbs. Time, possibility, and attitude are all handled by small words that stand **before** or **after** the verb. This page is your entire A1 toolkit in one place."
+        },
+        {
+          "type": "sub",
+          "text": "Time"
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Word",
+            "Pronunciation",
+            "Position",
+            "Meaning"
+          ],
+          "rows": [
+            [
+              "จะ",
+              "*jà*",
+              "before the verb",
+              "will"
+            ],
+            [
+              "กำลัง",
+              "*kam-lang*",
+              "before the verb",
+              "be …-ing"
+            ],
+            [
+              "อยู่",
+              "*yùu*",
+              "after the verb",
+              "be …-ing (ongoing); often with กำลัง"
+            ],
+            [
+              "แล้ว",
+              "*láaeo*",
+              "at the end of the sentence",
+              "already"
+            ],
+            [
+              "ยัง…อยู่",
+              "*yang…yùu*",
+              "around the verb",
+              "still"
+            ],
+            [
+              "ยังไม่",
+              "*yang mâi*",
+              "before the verb",
+              "not yet"
+            ],
+            [
+              "เคย",
+              "*khoei*",
+              "before the verb",
+              "have ever"
+            ],
+            [
+              "ไม่เคย",
+              "*mâi khoei*",
+              "before the verb",
+              "have never"
+            ],
+            [
+              "เพิ่ง",
+              "*phôeng*",
+              "before the verb",
+              "have just"
+            ]
+          ]
+        },
+        {
+          "type": "sub",
+          "text": "Can, may, must, want"
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Word",
+            "Pronunciation",
+            "Position",
+            "Meaning"
+          ],
+          "rows": [
+            [
+              "ได้",
+              "*dâai*",
+              "after the verb",
+              "can (able / allowed)"
+            ],
+            [
+              "เป็น",
+              "*pen*",
+              "after the verb",
+              "can (because you've learned how)"
+            ],
+            [
+              "ไหว",
+              "*wǎi*",
+              "after the verb",
+              "physically able, can manage"
+            ],
+            [
+              "ต้อง",
+              "*tâwng*",
+              "before the verb",
+              "must"
+            ],
+            [
+              "ไม่ต้อง",
+              "*mâi tâwng*",
+              "before the verb",
+              "don't need to"
+            ],
+            [
+              "ควร",
+              "*khuan*",
+              "before the verb",
+              "should"
+            ],
+            [
+              "อยาก",
+              "*yàak*",
+              "before the verb",
+              "want to"
+            ],
+            [
+              "ต้องการ",
+              "*tâwng-kaan*",
+              "before a noun/verb",
+              "need, require (formal)"
+            ],
+            [
+              "ชอบ",
+              "*châwp*",
+              "before a verb/noun",
+              "like"
+            ]
+          ]
+        },
+        {
+          "type": "sub",
+          "text": "Sentence-final particles"
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Particle",
+            "Pronunciation",
+            "Function"
+          ],
+          "rows": [
+            [
+              "ครับ",
+              "*khráp*",
+              "politeness, used by **male** speakers"
+            ],
+            [
+              "ค่ะ",
+              "*khâ*",
+              "politeness, **female** speakers, in statements"
+            ],
+            [
+              "คะ",
+              "*khá*",
+              "politeness, **female** speakers, in **questions**"
+            ],
+            [
+              "ไหม",
+              "*mǎi*",
+              "turns a sentence into a yes/no question"
+            ],
+            [
+              "หรือ / เหรอ",
+              "*rǔue / rǒoe*",
+              "checking question: \"…right?\", \"really?\""
+            ],
+            [
+              "นะ",
+              "*ná*",
+              "softens; invites agreement — \"okay?\""
+            ],
+            [
+              "สิ",
+              "*sì*",
+              "insists; urges — \"go on\", \"of course\""
+            ],
+            [
+              "ด้วย",
+              "*dûai*",
+              "too, also; \"please\" when asking for something"
+            ],
+            [
+              "เลย",
+              "*loei*",
+              "at all (with ไม่); or \"just go ahead\""
+            ],
+            [
+              "หน่อย",
+              "*nàwy*",
+              "a little — softens a request"
+            ]
+          ]
+        },
+        {
+          "type": "kotak",
+          "title": "Four patterns that cover half of A1 conversation",
+          "items": [
+            "**Yes/no question:** sentence + *ไหม* → *อร่อยไหม à-ràwy mǎi* (is it tasty?)",
+            "**Saying \"no\":** *ไม่* + verb → *ไม่ชอบ mâi châwp* (don't like)",
+            "**\"Already\":** sentence + *แล้ว* → *กินแล้ว kin láaeo* (have eaten already)",
+            "**Polite request:** *ขอ* + thing + *หน่อย* + *ครับ/ค่ะ* → *ขอน้ำหน่อยครับ khǎaw náam nàwy khráp* (some water, please)"
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Numbers, time, and dates",
+      "blocks": [
+        {
+          "type": "sub",
+          "text": "Numbers"
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Number",
+            "Thai",
+            "Pronunciation",
+            "Number",
+            "Thai",
+            "Pronunciation"
+          ],
+          "rows": [
+            [
+              "0",
+              "ศูนย์ / ๐",
+              "*sǔun*",
+              "10",
+              "สิบ / ๑๐",
+              "*sìp*"
+            ],
+            [
+              "1",
+              "หนึ่ง / ๑",
+              "*nùeng*",
+              "11",
+              "สิบเอ็ด",
+              "*sìp-èt*"
+            ],
+            [
+              "2",
+              "สอง / ๒",
+              "*sǎawng*",
+              "20",
+              "ยี่สิบ",
+              "*yîi-sìp*"
+            ],
+            [
+              "3",
+              "สาม / ๓",
+              "*sǎam*",
+              "21",
+              "ยี่สิบเอ็ด",
+              "*yîi-sìp-èt*"
+            ],
+            [
+              "4",
+              "สี่ / ๔",
+              "*sìi*",
+              "30",
+              "สามสิบ",
+              "*sǎam-sìp*"
+            ],
+            [
+              "5",
+              "ห้า / ๕",
+              "*hâa*",
+              "100",
+              "ร้อย",
+              "*ráwy*"
+            ],
+            [
+              "6",
+              "หก / ๖",
+              "*hòk*",
+              "1,000",
+              "พัน",
+              "*phan*"
+            ],
+            [
+              "7",
+              "เจ็ด / ๗",
+              "*jèt*",
+              "10,000",
+              "หมื่น",
+              "*mùuen*"
+            ],
+            [
+              "8",
+              "แปด / ๘",
+              "*pàaet*",
+              "100,000",
+              "แสน",
+              "*sǎaen*"
+            ],
+            [
+              "9",
+              "เก้า / ๙",
+              "*kâao*",
+              "1,000,000",
+              "ล้าน",
+              "*láan*"
+            ]
+          ]
+        },
+        {
+          "type": "kotak",
+          "title": "Three number quirks you must know",
+          "items": [
+            "**11, 21, 31 use เอ็ด *èt*, not หนึ่ง.** *สิบเอ็ด sìp-èt* = eleven.",
+            "**20 is ยี่สิบ *yîi-sìp*, not สองสิบ.** Only twenty works like this.",
+            "**หมื่น and แสน have no English equivalent.** 50,000 is *hâa mùuen* (five ten-thousands), not \"fifty thousand\" counted in พัน. This is what most often makes people mishear prices."
+          ]
+        },
+        {
+          "type": "sub",
+          "text": "Telling time: six parts of the day"
+        },
+        {
+          "type": "p",
+          "text": "Everyday Thai timekeeping divides the day into blocks, and each block has its own word. The 24-hour system (*นาฬิกา naa-lí-kaa*) does exist, but it's used almost only at stations and in official announcements."
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Time",
+            "The Thai way",
+            "Pronunciation"
+          ],
+          "rows": [
+            [
+              "6–11 a.m.",
+              "หกโมงเช้า … สิบเอ็ดโมงเช้า",
+              "*hòk moong cháao*"
+            ],
+            [
+              "12:00 noon",
+              "เที่ยง",
+              "*thîang*"
+            ],
+            [
+              "1–4 p.m.",
+              "บ่ายโมง … บ่ายสี่โมง",
+              "*bàai moong*"
+            ],
+            [
+              "5–6 p.m.",
+              "ห้าโมงเย็น, หกโมงเย็น",
+              "*hâa moong yen*"
+            ],
+            [
+              "7–11 p.m.",
+              "หนึ่งทุ่ม … ห้าทุ่ม",
+              "*nùeng thûm*"
+            ],
+            [
+              "12:00 midnight",
+              "เที่ยงคืน",
+              "*thîang khuuen*"
+            ],
+            [
+              "1–5 a.m.",
+              "ตีหนึ่ง … ตีห้า",
+              "*tii nùeng*"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "Minutes are added at the end with *นาที naa-thii*: *บ่ายสองโมงสิบห้านาที* = 2:15 p.m. Half past is *ครึ่ง khrûeng*: *หกโมงครึ่ง* = 6:30."
+        },
+        {
+          "type": "sub",
+          "text": "Days, months, years"
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Day",
+            "Pronunciation",
+            "Month",
+            "Pronunciation"
+          ],
+          "rows": [
+            [
+              "วันจันทร์ Monday",
+              "*wan jan*",
+              "มกราคม January",
+              "*mók-kà-raa-khom*"
+            ],
+            [
+              "วันอังคาร Tuesday",
+              "*wan ang-khaan*",
+              "กุมภาพันธ์ February",
+              "*kum-phaa-phan*"
+            ],
+            [
+              "วันพุธ Wednesday",
+              "*wan phút*",
+              "มีนาคม March",
+              "*mii-naa-khom*"
+            ],
+            [
+              "วันพฤหัสบดี Thursday",
+              "*wan phá-rúe-hàt*",
+              "เมษายน April",
+              "*mee-sǎa-yon*"
+            ],
+            [
+              "วันศุกร์ Friday",
+              "*wan sùk*",
+              "พฤษภาคม May",
+              "*phrúet-sà-phaa-khom*"
+            ],
+            [
+              "วันเสาร์ Saturday",
+              "*wan sǎo*",
+              "มิถุนายน June",
+              "*mí-thù-naa-yon*"
+            ],
+            [
+              "วันอาทิตย์ Sunday",
+              "*wan aa-thít*",
+              "กรกฎาคม July",
+              "*kà-rá-kà-daa-khom*"
+            ],
+            [
+              "เมื่อวาน yesterday",
+              "*mûea-waan*",
+              "สิงหาคม August",
+              "*sǐng-hǎa-khom*"
+            ],
+            [
+              "วันนี้ today",
+              "*wan-níi*",
+              "กันยายน September",
+              "*kan-yaa-yon*"
+            ],
+            [
+              "พรุ่งนี้ tomorrow",
+              "*phrûng-níi*",
+              "ตุลาคม October",
+              "*tù-laa-khom*"
+            ],
+            [
+              "สัปดาห์ week",
+              "*sàp-daa*",
+              "พฤศจิกายน November",
+              "*phrúet-sà-jì-kaa-yon*"
+            ],
+            [
+              "เดือน month",
+              "*duuean*",
+              "ธันวาคม December",
+              "*than-waa-khom*"
+            ]
+          ]
+        },
+        {
+          "type": "kotak",
+          "title": "The Buddhist year",
+          "items": [
+            "Thailand's official calendar uses the **Buddhist Era** (พ.ศ. *phaw sǎaw*), which runs **543 years** ahead of the Western calendar. The year 2026 is 2569 พ.ศ.",
+            "That number turns up everywhere: expiry dates, receipts, date boards in offices. If you see \"2569\", don't panic — subtract 543."
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Pronouns, question words, and demonstratives",
+      "blocks": [
+        {
+          "type": "sub",
+          "text": "Personal pronouns"
+        },
+        {
+          "type": "p",
+          "text": "Thai has dozens of pronouns, and the choice signals social distance. This list is the set that's safe in every A1 situation."
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Thai",
+            "Pronunciation",
+            "Meaning",
+            "Notes"
+          ],
+          "rows": [
+            [
+              "ผม",
+              "*phǒm*",
+              "I",
+              "male, polite, always safe"
+            ],
+            [
+              "ดิฉัน",
+              "*dì-chǎn*",
+              "I",
+              "female, formal"
+            ],
+            [
+              "ฉัน",
+              "*chǎn*",
+              "I",
+              "female, casual"
+            ],
+            [
+              "เรา",
+              "*rao*",
+              "we; also \"I\"",
+              "casual, gender-neutral"
+            ],
+            [
+              "คุณ",
+              "*khun*",
+              "you",
+              "polite, always safe"
+            ],
+            [
+              "เธอ",
+              "*thoee*",
+              "you",
+              "intimate; careful with new people"
+            ],
+            [
+              "เขา",
+              "*khǎo*",
+              "he / she",
+              "for men and women alike"
+            ],
+            [
+              "พวกเขา",
+              "*phûak-khǎo*",
+              "they",
+              ""
+            ],
+            [
+              "พี่",
+              "*phîi*",
+              "older sibling / you (someone older)",
+              "warm and very common"
+            ],
+            [
+              "น้อง",
+              "*náwng*",
+              "younger sibling / you (someone younger)",
+              "also used to call waitstaff"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "⚠️ Pronouns are often **dropped entirely** when context makes them clear. *ไปไหน pai nǎi* (going where?) mentions no one at all, and it's a perfectly normal sentence."
+        },
+        {
+          "type": "sub",
+          "text": "Question words"
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Thai",
+            "Pronunciation",
+            "Meaning",
+            "Position"
+          ],
+          "rows": [
+            [
+              "อะไร",
+              "*à-rai*",
+              "what",
+              "at the end: *นี่อะไร nîi à-rai*"
+            ],
+            [
+              "ใคร",
+              "*khrai*",
+              "who",
+              "at the start or end"
+            ],
+            [
+              "ที่ไหน / ไหน",
+              "*thîi-nǎi / nǎi*",
+              "where",
+              "at the end"
+            ],
+            [
+              "เมื่อไหร่",
+              "*mûea-rài*",
+              "when",
+              "at the end"
+            ],
+            [
+              "ทำไม",
+              "*tham-mai*",
+              "why",
+              "at the start or end"
+            ],
+            [
+              "ยังไง / อย่างไร",
+              "*yang-ngai*",
+              "how",
+              "at the end"
+            ],
+            [
+              "เท่าไหร่",
+              "*thâo-rài*",
+              "how much / how many",
+              "at the end"
+            ],
+            [
+              "กี่",
+              "*kìi*",
+              "how many (with a classifier)",
+              "before the classifier"
+            ],
+            [
+              "อันไหน",
+              "*an-nǎi*",
+              "which one",
+              "at the end"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "Thai questions **don't invert the word order**. *คุณไปไหน* is \"you go where\" — the question word simply sits where the answer will go."
+        },
+        {
+          "type": "sub",
+          "text": "Demonstratives"
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "On its own",
+            "Pronunciation",
+            "After a noun",
+            "Pronunciation",
+            "Meaning"
+          ],
+          "rows": [
+            [
+              "นี่",
+              "*nîi*",
+              "นี้",
+              "*níi*",
+              "this (near the speaker)"
+            ],
+            [
+              "นั่น",
+              "*nân*",
+              "นั้น",
+              "*nán*",
+              "that (near the listener)"
+            ],
+            [
+              "โน่น",
+              "*nôon*",
+              "โน้น",
+              "*nóon*",
+              "that over there (far from both)"
+            ],
+            [
+              "ที่นี่",
+              "*thîi-nîi*",
+              "—",
+              "—",
+              "here"
+            ],
+            [
+              "ที่นั่น",
+              "*thîi-nân*",
+              "—",
+              "—",
+              "there"
+            ],
+            [
+              "แบบนี้",
+              "*bàaep-níi*",
+              "—",
+              "—",
+              "like this"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "title": "English — Thai glossary",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "The words people look up most, grouped by need rather than alphabetically — so you can use it while standing at a food stall."
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "English",
+            "Thai",
+            "Pronunciation"
+          ],
+          "rows": [
+            [
+              "hello / good …",
+              "สวัสดี",
+              "*sà-wàt-dii*"
+            ],
+            [
+              "thank you",
+              "ขอบคุณ",
+              "*khàwp-khun*"
+            ],
+            [
+              "sorry / excuse me",
+              "ขอโทษ",
+              "*khǎaw-thôot*"
+            ],
+            [
+              "never mind / no problem",
+              "ไม่เป็นไร",
+              "*mâi pen rai*"
+            ],
+            [
+              "yes / that's right",
+              "ใช่",
+              "*châi*"
+            ],
+            [
+              "no / that's not it",
+              "ไม่ใช่",
+              "*mâi châi*"
+            ],
+            [
+              "there isn't / don't have",
+              "ไม่มี",
+              "*mâi mii*"
+            ],
+            [
+              "there is / have",
+              "มี",
+              "*mii*"
+            ],
+            [
+              "I don't understand",
+              "ไม่เข้าใจ",
+              "*mâi khâo-jai*"
+            ],
+            [
+              "understand",
+              "เข้าใจ",
+              "*khâo-jai*"
+            ],
+            [
+              "please say it again",
+              "พูดอีกทีได้ไหม",
+              "*phûut ìik thii dâai mǎi*"
+            ],
+            [
+              "slowly, please",
+              "พูดช้าๆ",
+              "*phûut cháa-cháa*"
+            ],
+            [
+              "how much?",
+              "เท่าไหร่",
+              "*thâo-rài*"
+            ],
+            [
+              "expensive",
+              "แพง",
+              "*phaaeng*"
+            ],
+            [
+              "cheap",
+              "ถูก",
+              "*thùuk*"
+            ],
+            [
+              "a discount, please?",
+              "ลดหน่อยได้ไหม",
+              "*lót nàwy dâai mǎi*"
+            ],
+            [
+              "delicious",
+              "อร่อย",
+              "*à-ràwy*"
+            ],
+            [
+              "spicy",
+              "เผ็ด",
+              "*phèt*"
+            ],
+            [
+              "not spicy",
+              "ไม่เผ็ด",
+              "*mâi phèt*"
+            ],
+            [
+              "water",
+              "น้ำ",
+              "*náam*"
+            ],
+            [
+              "rice / meal",
+              "ข้าว",
+              "*khâao*"
+            ],
+            [
+              "full (after eating)",
+              "อิ่ม",
+              "*ìm*"
+            ],
+            [
+              "hungry",
+              "หิว",
+              "*hǐu*"
+            ],
+            [
+              "restroom",
+              "ห้องน้ำ",
+              "*hâwng-náam*"
+            ],
+            [
+              "where?",
+              "ที่ไหน",
+              "*thîi-nǎi*"
+            ],
+            [
+              "right / left",
+              "ขวา / ซ้าย",
+              "*khwǎa / sáai*"
+            ],
+            [
+              "straight ahead",
+              "ตรงไป",
+              "*trong pai*"
+            ],
+            [
+              "stop here",
+              "จอดที่นี่",
+              "*jàwt thîi-nîi*"
+            ],
+            [
+              "hurt / ache",
+              "เจ็บ / ปวด",
+              "*jèp / pùat*"
+            ],
+            [
+              "hospital",
+              "โรงพยาบาล",
+              "*roong-phá-yaa-baan*"
+            ],
+            [
+              "help!",
+              "ช่วยด้วย",
+              "*chûai dûai*"
+            ],
+            [
+              "I'm Indonesian (male speaker)",
+              "ผมเป็นคนอินโดนีเซีย",
+              "*phǒm pen khon in-doo-nii-sia*"
+            ],
+            [
+              "Muslim",
+              "มุสลิม",
+              "*mút-sà-lim*"
+            ],
+            [
+              "halal",
+              "ฮาลาล",
+              "*haa-laan*"
+            ],
+            [
+              "no pork",
+              "ไม่ใส่หมู",
+              "*mâi sài mǔu*"
+            ],
+            [
+              "mosque",
+              "มัสยิด",
+              "*mát-sà-yít*"
+            ],
+            [
+              "nice to meet you",
+              "ยินดีที่ได้รู้จัก",
+              "*yin-dii thîi dâai rúu-jàk*"
+            ],
+            [
+              "see you",
+              "แล้วเจอกัน",
+              "*láaeo joee kan*"
+            ],
+            [
+              "good luck",
+              "โชคดี",
+              "*chôok-dii*"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "title": "What's next",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "If you've reached this page after working through all twenty units, you now hold the whole framework of everyday Thai: five tones, a word order that never changes, classifiers, time markers, and enough vocabulary to survive a week alone in Thailand. What's left isn't system anymore — it's **flight hours**."
+        },
+        {
+          "type": "sub",
+          "text": "Three things that will raise your level fastest now"
+        },
+        {
+          "type": "list",
+          "items": [
+            "**Learn to really read the script.** You've seen Thai script thousands of times in this course, so half the job is done. Take the table in the front chapter, memorize the nine middle-class consonants, then start spelling out signs and menus. It feels like unlocking a door: from there new words come in through your eyes, not just your ears.",
+            "**Watch with Thai subtitles, not English ones.** Thai soap operas and variety shows speak at exactly the speed you need. Listen to one scene, replay it, imitate the tones.",
+            "**Speak earlier than feels comfortable.** Thais rarely meet foreigners who try their language, and almost always welcome it warmly. The tone mistakes you fear are usually guessed from context."
+          ]
+        },
+        {
+          "type": "sub",
+          "text": "Where to go after A1"
+        },
+        {
+          "type": "p",
+          "text": "Level A2 adds three main things: relative clauses with *ที่ thîi* (\"who/which/that…\"), the passive with *ถูก thùuk* and *โดน doon*, and a much wider vocabulary for telling stories — including linking words like *เพราะว่า phráw-wâa* (because), *ถึงแม้ว่า thǔeng-máae-wâa* (although), and *ก่อนที่จะ kàwn-thîi-jà* (before)."
+        },
+        {
+          "type": "kotak",
+          "title": "One thing no textbook teaches",
+          "items": [
+            "Thai runs on one word that has no exact translation: **เกรงใจ *kreeng-jai*** — reluctance to impose on others. It explains why Thais say no with a smile, why a first offer is often turned down, and why \"never mind\" (*ไม่เป็นไร*) is said even when something clearly is wrong.",
+            "If you remember just one thing from this course years from now, remember this: **tones may slip, manners may not.** A messy sentence said with a smile and ended with *ครับ/ค่ะ* will take you much further than perfect grammar said in a hurry."
+          ]
+        },
+        {
+          "type": "p",
+          "text": "*ขอให้โชคดีนะครับ Khǎaw hâi chôok-dii ná khráp* — good luck to you."
+        }
+      ]
+    }
+  ]
+}
