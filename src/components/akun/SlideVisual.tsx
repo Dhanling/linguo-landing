@@ -1070,6 +1070,93 @@ function VisualBunyi({ v, ucap, siapkan, aksen }: { v: Extract<Visual, { kind: "
   );
 }
 
+/** [slide-tabel-v1] Sorotan tabel = KATA UTUH (tak menyala di dalam kata lain: "a" ≠ "ani", "er" ≠ "dere").
+ *  Aksara tanpa spasi (Han, Kana, Thai, Lao, Khmer, Burma) tetap dicocokkan sebagai potongan. */
+const TANPA_SPASI = /[\u0E00-\u0EFF\u1000-\u109F\u1780-\u17FF\u3040-\u30FF\u3400-\u9FFF\uAC00-\uD7AF]/;
+function potongKata(teks: string, sorot: string[]): Array<{ t: string; s: boolean }> {
+  const lolos = (x: string) => x.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+  const pola = [...sorot].filter(Boolean).sort((a, b) => b.length - a.length)
+    .map((x) => (TANPA_SPASI.test(x) ? lolos(x) : `(?<![\\p{L}\\p{M}])${lolos(x)}(?![\\p{L}\\p{M}])`));
+  if (!pola.length) return [{ t: teks, s: false }];
+  const re = new RegExp(pola.join("|"), "giu");
+  const out: Array<{ t: string; s: boolean }> = [];
+  let i = 0;
+  for (const m of teks.matchAll(re)) {
+    if (!m[0]) continue;
+    if (m.index! > i) out.push({ t: teks.slice(i, m.index), s: false });
+    out.push({ t: m[0], s: true });
+    i = m.index! + m[0].length;
+  }
+  if (i < teks.length) out.push({ t: teks.slice(i), s: false });
+  return out;
+}
+
+function VisualTabel({ v, ucap, siapkan, aksen }: { v: Extract<Visual, { kind: "tabel" }>; ucap?: Ucap; siapkan?: (t: string) => void; aksen: string }) {
+  const kotak = useRef<HTMLDivElement>(null);
+  const isi = useRef<HTMLDivElement>(null);
+  const [skala, setSkala] = useState(1);
+  useLayoutEffect(() => {
+    const el = kotak.current, x = isi.current;
+    if (!el || !x) return;
+    if (x.offsetHeight > el.clientHeight + 1 && skala > 0.5) setSkala((k) => Math.max(0.5, +(k - 0.06).toFixed(2)));
+  }, [skala, v]);
+  useEffect(() => {
+    const el = kotak.current;
+    if (!el) return;
+    let lebar = el.clientWidth, tinggi = el.clientHeight;
+    const ro = new ResizeObserver(() => {
+      if (el.clientWidth === lebar && el.clientHeight === tinggi) return;
+      lebar = el.clientWidth; tinggi = el.clientHeight;
+      setSkala(1);
+    });
+    ro.observe(el);
+    return () => ro.disconnect();
+  }, []);
+  const sorot = v.sorot || [];
+  // Kolom Indonesia (label persona) sempit; kolom target dan kolom contoh panjang mendapat ruang lebih.
+  const lebarKolom = v.kolom.map((k, i) => {
+    const panjang = Math.max(k.label.length, ...v.baris.map((b) => (b[i]?.t || "").length));
+    return panjang > 14 ? "minmax(0,2.2fr)" : "minmax(0,1fr)";
+  }).join(" ");
+  return (
+    <div className="flex h-full flex-col gap-[0.8cqh]">
+      <style>{MUNCUL}</style>
+      <div ref={kotak} className="min-h-0 flex-1 overflow-hidden">
+        <div ref={isi} style={{ fontSize: `${skala}em`, ...KARTU, overflow: "hidden" }}>
+          <div className="grid" style={{ gridTemplateColumns: lebarKolom }}>
+            {v.kolom.map((k, i) => (
+              <div key={i} className="px-[0.8em] py-[0.45em] text-[0.78em] font-extrabold uppercase tracking-wider text-white"
+                style={{ background: aksen, borderLeft: i ? "1px solid rgba(255,255,255,0.35)" : undefined }}>{k.label}</div>
+            ))}
+            {v.baris.map((b, r) => b.map((c, i) => {
+              const target = !!v.kolom[i]?.target;
+              const latar = r % 2 ? "#F9FAFB" : "#FFFFFF";
+              const gaya: React.CSSProperties = {
+                background: latar, borderTop: "1px solid #E5E7EB", borderLeft: i ? "1px solid #F1F5F9" : undefined,
+                animation: `slideVisMuncul .3s ease-out ${r * 0.07}s both`,
+              };
+              const isiSel = (
+                <>
+                  <span dir="auto" className={`${target ? "text-[1.12em] font-extrabold" : "text-[0.95em] font-bold"} leading-tight`} style={{ color: target ? "#111827" : "#374151", ...longgar(c.t) }}>
+                    {target && sorot.length ? potongKata(c.t, sorot).map((b, k) => <span key={k} style={b.s ? { color: aksen } : undefined}>{b.t}</span>) : c.t}
+                  </span>
+                  {c.tr && <span className="text-[0.74em] font-bold leading-tight" style={{ color: aksen }}>{c.tr}</span>}
+                  {c.arti && <span className="text-[0.7em] leading-tight" style={{ color: "#6B7280" }}>{c.arti}</span>}
+                </>
+              );
+              const kelas = "sv-anim flex min-w-0 flex-col justify-center gap-[0.1em] px-[0.8em] py-[0.4em]";
+              return target && ucap && c.t
+                ? <Bunyi key={`${r}-${i}`} teks={c.t} ucap={ucap} siapkan={siapkan} className={`${kelas} !rounded-none !shadow-none`} style={gaya}>{isiSel}</Bunyi>
+                : <div key={`${r}-${i}`} className={kelas} style={gaya}>{isiSel}</div>;
+            }))}
+          </div>
+        </div>
+      </div>
+      {v.ket && <p className="shrink-0 text-[0.78em] font-medium" style={{ color: "#4B5563" }}>{v.ket}</p>}
+    </div>
+  );
+}
+
 export function SlideVisual({ visual, aksen, ucap, siapkan, lang }: {
   visual: Visual; aksen: string;
   /** Kode bahasa slide — klip rekaman hanya dipakai untuk Mandarin ("zh"). */
@@ -1086,6 +1173,7 @@ export function SlideVisual({ visual, aksen, ucap, siapkan, lang }: {
       ? visual.groups.flatMap((g) => g.chips.map((c) => c.hanzi || ""))
       : visual.kind === "sejarah" ? visual.peristiwa.map((p) => p.asli || "")
       : visual.kind === "banding" ? visual.rows.flatMap((r) => r.target.map((t) => t.t))
+      : visual.kind === "tabel" ? visual.baris.flatMap((b) => b.filter((_, i) => visual.kolom[i]?.target).map((c) => c.t))
       : visual.kind === "alfabet" || visual.kind === "bunyi" || visual.kind === "isyarat" ? []
       : visual.rows.map((r) => r.hanzi || "");
     teks.forEach((t) => { const u = urlKlip(t); if (u) void fetch(u, { cache: "force-cache" }).catch(() => {}); });
@@ -1106,6 +1194,7 @@ function Isi({ visual, aksen, ucap, siapkan }: { visual: Visual; aksen: string; 
   if (visual.kind === "sejarah") return <VisualSejarah v={visual} ucap={ucap} siapkan={siapkan} aksen={aksen} />;
   if (visual.kind === "banding") return <VisualBanding v={visual} ucap={ucap} siapkan={siapkan} aksen={aksen} />;
   if (visual.kind === "bunyi") return <VisualBunyi v={visual} ucap={ucap} siapkan={siapkan} aksen={aksen} />;
+  if (visual.kind === "tabel") return <VisualTabel v={visual} ucap={ucap} siapkan={siapkan} aksen={aksen} />;
   if (visual.kind === "alfabet") return <VisualAlfabet v={visual} ucap={ucap} siapkan={siapkan} aksen={aksen} />;
   return null;
 }

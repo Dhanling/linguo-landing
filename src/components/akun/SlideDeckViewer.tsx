@@ -36,7 +36,7 @@ import { RectFlag } from "@/components/RectFlag";
 // (memori → Cache API → CDN bucket `tts-cache` → /api/tts). Kata yang pernah
 // dibunyikan siapa pun — di e-book maupun di slide — tidak disintesis ulang.
 import {
-  bisaDibunyikan, bukaKunciAudio, hentikanEbookTts, siapkanEbook, ucapkanEbook,
+  bisaDibunyikan, bukaKunciAudio, hentikanEbookTts, siapkanEbook, ucapkanEbook, audioEbookAktif
 } from "@/lib/ebookTts";
 // [slide-arti-v1] Arti kata yang SAMA dengan kartu ketuk-kata reader e-book
 // (cache memori → localStorage → cache bersama di server).
@@ -102,6 +102,10 @@ type Tip = { kata: string; x: number; y: number; bawah: boolean; arti: HasilArti
 
 function Ucap({ teks, lang, kalimat = true }: { teks: string; lang?: string | null; kalimat?: boolean }) {
   const [aktif, setAktif] = useState<number | null>(null);
+  // [tts-karaoke-v1] Indeks kepingan yang sedang dibaca saat TTS satu kalimat diputar.
+  const [baca, setBaca] = useState<number | null>(null);
+  const putaran = useRef(0);
+  useEffect(() => () => { putaran.current++; }, []);
   const [tip, setTip] = useState<Tip | null>(null);
   const adaTip = !!tip;
   useEffect(() => {
@@ -136,7 +140,34 @@ function Ucap({ teks, lang, kalimat = true }: { teks: string; lang?: string | nu
     bukaKunciAudio();
     setAktif(idx);
     if (idx >= 0) bukaTip(apa, e.currentTarget as HTMLElement);
-    void ucapkanEbook(apa, lang).finally(() => setTimeout(() => setAktif((a) => (a === idx ? null : a)), 700));
+    const ke = ++putaran.current;
+    setBaca(null);
+    void ucapkanEbook(apa, lang)
+      .then((h) => { if (idx === -1 && h === "ok" && ke === putaran.current) karaoke(ke); })
+      .finally(() => setTimeout(() => setAktif((a) => (a === idx ? null : a)), 700));
+  };
+  /* [tts-karaoke-v1] Permintaan owner 10 Nov 2026: saat kalimat diputar, kata
+     disorot bergantian seperti karaoke. TTS tak memberi waktu per kata, jadi
+     posisi diperkirakan dari progres audio dibagi bobot panjang tiap kata
+     (huruf + 1 untuk jeda). Berhenti saat audio selesai/diganti klik lain. */
+  const karaoke = (ke: number) => {
+    const a = audioEbookAktif();
+    if (!a) return;
+    const src = a.src;
+    const bobot = bagian.map((b) => (/\p{L}/u.test(b) ? Array.from(b.replace(TEPI, "")).length + 1 : 0));
+    const total = bobot.reduce((x, y) => x + y, 0) || 1;
+    const langkah = () => {
+      if (ke !== putaran.current) return;
+      if (a.src !== src || a.ended || a.paused) { setBaca(null); return; }
+      if (a.duration && Number.isFinite(a.duration)) {
+        const sampai = (a.currentTime / a.duration) * total;
+        let c = 0, k = -1;
+        for (let i = 0; i < bobot.length; i++) { if (!bobot[i]) continue; k = i; c += bobot[i]; if (c >= sampai) break; }
+        setBaca(k);
+      }
+      requestAnimationFrame(langkah);
+    };
+    requestAnimationFrame(langkah);
   };
   // Pemisah tampilan ("·", "/", "→") dibaca sebagai jeda, bukan dieja.
   const utuh = teks.replace(/\s*[·/→]\s*/g, ", ").replace(/[()]/g, " ").trim();
@@ -156,7 +187,10 @@ function Ucap({ teks, lang, kalimat = true }: { teks: string; lang?: string | nu
             onMouseEnter={() => siapkanEbook(kata, lang)}
             onClick={bunyikan(kata, i)}
             className="cursor-pointer rounded-[0.25em] transition-colors hover:bg-teal-100/80"
-            style={aktif === i ? { background: "#99E6DC" } : undefined}>
+            style={aktif === i ? { background: "#99E6DC" }
+              : baca === null ? undefined
+              : i === baca ? { background: "#99E6DC", color: "#0B5E5D" }
+              : i < baca ? { color: "#0E7C7B" } : undefined}>
             {b}
           </span>
         );
@@ -395,7 +429,7 @@ export function SlideBody({ s, kunci, lang }: { s: MateriSlide; kunci?: boolean;
       <div className={`shrink-0 ${kiriSaja ? "" : "pr-[9%]"}`}>
         <span className="inline-block rounded-full px-[0.9em] py-[0.2em] text-[clamp(0.5rem,1cqw,0.7rem)] font-extrabold uppercase tracking-[0.12em] text-white"
           style={{ background: tema.aksen }}>
-          {s.visual?.kind === "isyarat" ? (s.visual.baris?.length ? "Dialog isyarat" : "Isyarat 3D") : s.visual?.kind === "sejarah" ? "Sejarah" : s.visual?.kind === "banding" ? "Perbandingan" : s.visual?.kind === "alfabet" ? "Alfabet" : s.visual?.kind === "bunyi" ? "Pelafalan" : SLIDE_TYPE_LABEL[s.type]}
+          {s.visual?.kind === "isyarat" ? (s.visual.baris?.length ? "Dialog isyarat" : "Isyarat 3D") : s.visual?.kind === "sejarah" ? "Sejarah" : s.visual?.kind === "banding" ? "Perbandingan" : s.visual?.kind === "alfabet" ? "Alfabet" : s.visual?.kind === "bunyi" ? "Pelafalan" : s.visual?.kind === "tabel" ? "Tabel" : SLIDE_TYPE_LABEL[s.type]}
         </span>
         <h3 className="mt-[0.8cqh] text-[clamp(1rem,2.4cqw,1.7rem)] font-extrabold leading-snug text-gray-900">{s.heading}</h3>
         {s.subheading && <p className="mt-0.5 text-[clamp(0.68rem,1.4cqw,0.95rem)] text-gray-500">{s.subheading}</p>}
@@ -421,13 +455,13 @@ export function SlideBody({ s, kunci, lang }: { s: MateriSlide; kunci?: boolean;
               <li key={i} className={kartu} style={{ borderLeft: `0.35em solid ${tema.aksen}` }}>
                 <div className="flex flex-wrap items-baseline gap-x-2 gap-y-0.5">
                   <span className="font-bold text-gray-900"><Ucap teks={it.term} lang={lang} /></span>
-                  {it.translit && <span className="text-gray-400">/{it.translit}/</span>}
+                  {it.translit && <span className="text-gray-900">/{it.translit}/</span>}
                   <span className="text-gray-600">— {it.meaning}</span>
                 </div>
                 {it.example && (
                   <div className="mt-1 border-l-2 pl-2 text-[0.92em] italic text-gray-600" style={{ borderColor: tema.aksen }}>
                     <Ucap teks={it.example} lang={lang} />
-                    {it.example_translit && <span className="not-italic text-gray-400"> /{it.example_translit}/</span>}
+                    {it.example_translit && <span className="not-italic text-gray-900"> /{it.example_translit}/</span>}
                     {it.example_meaning && <span className="not-italic text-gray-400"> ({it.example_meaning})</span>}
                   </div>
                 )}
@@ -448,7 +482,7 @@ export function SlideBody({ s, kunci, lang }: { s: MateriSlide; kunci?: boolean;
               {(s.examples || []).map((e, i) => (
                 <li key={i} className={kartu}>
                   <div className="font-semibold text-gray-900"><Ucap teks={e.target} lang={lang} /></div>
-                  {e.translit && <div className="text-[0.9em] text-gray-400">{e.translit}</div>}
+                  {e.translit && <div className="text-[0.9em] text-gray-900">{e.translit}</div>}
                   {e.meaning && <div className="text-gray-500">{e.meaning}</div>}
                 </li>
               ))}
@@ -473,7 +507,7 @@ export function SlideBody({ s, kunci, lang }: { s: MateriSlide; kunci?: boolean;
                     <div className="font-semibold text-gray-900">
                       <Ucap teks={l.text} lang={lang} />
                     </div>
-                    {l.translit && <div className="text-[0.88em] text-gray-400">{l.translit}</div>}
+                    {l.translit && <div className="text-[0.88em] text-gray-900">{l.translit}</div>}
                     {l.meaning && <div className="text-[0.88em] text-gray-500">{l.meaning}</div>}
                   </div>
                 </div>

@@ -1719,6 +1719,10 @@ function ucapkanBrowser(teks: string, kode: string, laju = 1) {
   }
 }
 
+/** [tts-karaoke-v1] Elemen audio yang sedang/terakhir memutar TTS — dibaca
+ *  penyorot karaoke (currentTime/duration → kata yang sedang dibaca). */
+export function audioEbookAktif(): HTMLAudioElement | null { return audio; }
+
 async function mainkan(base64: string, laju = 1): Promise<boolean> {
   if (!audio) audio = new Audio();
   try { audio.pause(); } catch { /* diam */ }

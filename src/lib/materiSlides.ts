@@ -156,6 +156,12 @@ export interface BunyiKhas { tulisan: string; bunyi: string; info?: string; soro
 export interface IsyaratTanda { kode: string; gloss?: string; arti?: string }
 export interface IsyaratBaris { siapa: "A" | "B"; urut: string[]; gloss: string; arti: string; wajah?: string }
 
+/* [slide-tabel-v1] Tabel konjugasi/paradigma (mis. umur: я → мені, ти → тобі …).
+   `kolom[i].target` = kolom berbahasa target: selnya bisa diklik untuk TTS dan
+   bagian yang cocok dengan `sorot` diberi warna aksen. `arti` tampil kecil di bawah sel. */
+export interface TabelKolom { label: string; target?: boolean }
+export interface TabelSel { t: string; tr?: string; arti?: string }
+
 export type SlideVisual =
   | { kind: "isyarat"; bahasa: string; tanda?: IsyaratTanda[]; baris?: IsyaratBaris[]; nama?: [string, string]; eja?: boolean; tokoh?: "A" | "B"; avatar?: "vrm" }
   | { kind: "nada"; rows: VisualNadaRow[] }
@@ -179,7 +185,9 @@ export type SlideVisual =
   /** `ket` = ganti teks legenda blok merah (default "bunyinya beda dari bahasa Indonesia"), mis. Khmer "konsonan seri-o". */
   | { kind: "alfabet"; huruf: AlfabetHuruf[]; ui?: "en"; ket?: string }
   /** `vokalJudul`/`vokalKet` = ganti label kotak vokal (default "Vokal murni"). */
-  | { kind: "bunyi"; vokal: BunyiVokal[]; khas: BunyiKhas[]; vokalJudul?: string; vokalKet?: string; ui?: "en" };
+  | { kind: "bunyi"; vokal: BunyiVokal[]; khas: BunyiKhas[]; vokalJudul?: string; vokalKet?: string; ui?: "en" }
+  /** `sorot` = potongan teks yang diwarnai di sel target; `ket` = catatan kecil di bawah tabel. */
+  | { kind: "tabel"; kolom: TabelKolom[]; baris: TabelSel[][]; sorot?: string[]; ket?: string };
 
 export interface MateriSlide {
   type: SlideType;
@@ -380,6 +388,14 @@ function normVisual(v: any): SlideVisual | undefined {
       contoh: arr(h?.contoh).map((c) => ({ kata: str(c?.kata), arti: str(c?.arti), ikon: opt(c?.ikon), baca: opt(c?.baca) })).filter((c) => c.kata),
     })).filter((h) => h.huruf && h.nama);
     return huruf.length ? { kind: "alfabet", huruf, ui: v.ui === "en" ? "en" : undefined, ket: opt(v.ket) } : undefined;
+  }
+  if (v.kind === "tabel") {
+    const kolom = arr(v.kolom).map((k) => ({ label: str(k?.label), ...(k?.target === true ? { target: true } : null) })).slice(0, 6);
+    if (kolom.length < 2) return undefined;
+    const sel = (x: any): TabelSel => (typeof x === "string" ? { t: str(x) } : { t: str(x?.t), tr: opt(x?.tr), arti: opt(x?.arti) });
+    const baris = arr(v.baris).map((b) => kolom.map((_, i) => sel(arr(b)[i]))).filter((b) => b.some((x) => x.t)).slice(0, 12);
+    const sorot = strList(v.sorot);
+    return baris.length ? { kind: "tabel", kolom, baris, ...(sorot.length ? { sorot } : null), ...(opt(v.ket) ? { ket: opt(v.ket) } : null) } : undefined;
   }
   if (v.kind === "bunyi") {
     const vokal = arr(v.vokal).map((x) => ({
