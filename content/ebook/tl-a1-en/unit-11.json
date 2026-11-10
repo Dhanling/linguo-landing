@@ -1,0 +1,626 @@
+{
+  "title": "Verbs that don't care about time",
+  "title_target": "Nagluluto, nagluto, magluluto",
+  "goal": "Use *mag-* verbs in three stages — done, ongoing, coming — and see that Tagalog marks stages, not tense.",
+  "bekal": [
+    "building the three aspects of a *mag-* verb from its root",
+    "ordering a verb sentence: verb first, doer after",
+    "negating verbs with *hindi* and spotting the *hindi pa* trap"
+  ],
+  "dialogs": [
+    {
+      "title": "Dialogue — Sino ang nagluluto?",
+      "intro": "Late afternoon in the shared kitchen. Mia is cooking, Budi has just come home, and Ana has just woken up.",
+      "lines": [
+        {
+          "speaker": "Budi:",
+          "text": "Ang bango! Ano ang niluluto mo, Mia?",
+          "id": "Smells great! What are you cooking, Mia?",
+          "literal": "how fragrant! what the being-cooked your, Mia?"
+        },
+        {
+          "speaker": "Mia:",
+          "text": "Nagluluto ako ng adobo. Paborito ni Ate.",
+          "id": "I'm cooking adobo. Big Sis's favorite.",
+          "literal": "cooking I of adobo. favorite of Big-Sis."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Nagluto ka na ba kahapon?",
+          "id": "Did you cook yesterday?",
+          "literal": "cooked you already Q yesterday?"
+        },
+        {
+          "speaker": "Mia:",
+          "text": "Hindi. Nag-order lang kami kahapon. Tamad ako eh.",
+          "id": "No. We just ordered in yesterday. I was lazy, you know.",
+          "literal": "no. ordered just we yesterday. lazy I you-know."
+        },
+        {
+          "speaker": "Ana:",
+          "text": "Magluluto rin ako bukas. Sinigang naman.",
+          "id": "I'll cook tomorrow too. Sinigang this time.",
+          "literal": "will-cook also I tomorrow. sinigang for-a-change."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Ano ang ginagawa mo ngayon, Ate?",
+          "id": "What are you doing now, Sis?",
+          "literal": "what the being-done your now, Big-Sis?"
+        },
+        {
+          "speaker": "Ana:",
+          "text": "Wala. Nagpapahinga lang ako. Nagtrabaho ako buong araw kahapon.",
+          "id": "Nothing. I'm just resting. I worked all day yesterday.",
+          "literal": "nothing. resting just I. worked I whole day yesterday."
+        },
+        {
+          "speaker": "Mia:",
+          "text": "Ikaw, Kuya Budi? Nag-aral ka ba kagabi?",
+          "id": "And you, Budi? Did you study last night?",
+          "literal": "you, Big-Bro Budi? studied you Q last-night?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Hindi pa. Mag-aaral ako mamaya, pagkatapos kumain.",
+          "id": "Not yet. I'll study later, after eating.",
+          "literal": "not yet. will-study I later, after eating."
+        },
+        {
+          "speaker": "Ana:",
+          "text": "Laging pagkatapos kumain, tapos natutulog ka na!",
+          "id": "Always after eating, and then you fall asleep!",
+          "literal": "always after eating, then sleeping you already!"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Hindi po ngayon! Mag-aaral talaga ako, promise.",
+          "id": "Not this time! I'll really study, promise.",
+          "literal": "not ma'am now! will-study really I, promise."
+        }
+      ],
+      "notes": [
+        "**Tagalog has no tense — it has stages.** The verb doesn't ask \"when?\" but \"has it started, has it finished?\" So *nagluto* covers anything already done — yesterday, this morning, or five years ago. The *when* comes from time words (*kahapon*, *kanina*, *noong isang taon*), not from the verb.",
+        "**Mag- turns into nag- once the action has started.** This is the key to the whole system: an *m-* prefix means not started, an *n-* prefix means started. *Magluto* (will/not yet) → *nagluto* (done). The same rule turns *ma-* into *na-* in the next unit.",
+        "**Repeating the first syllable means not finished.** *Nagluluto* (is cooking) and *magluluto* (will cook) both repeat *lu-*. The only difference is the first letter: *n-* means started (so: ongoing), *m-* means not started (so: coming).",
+        "**The verb comes first.** *Nagluluto ako ng adobo*, not *Ako nagluluto*. The standard order: verb → doer → object → extras. This is the reverse of English and takes a few days of conscious practice.",
+        "**The doer is marked with ang or si; the object with ng.** *Nagluluto **ako** ng **adobo*** — the doer is in the spotlight (*ako*, the *ang* set), the object is not (*ng adobo*). This is called actor focus, and unit 13 shows what happens when the spotlight moves.",
+        "**Niluluto and ginagawa** in the dialogue use object focus — the form you'll properly meet in unit 13. For now just learn these two whole sentences as everyday questions: *Ano ang niluluto mo?* and *Ano ang ginagawa mo?*",
+        "**Hindi pa means \"not yet\"**, not \"no\". Answering just *hindi* to *Nag-aral ka ba?* means \"no, and I won't\". Adding *pa* turns it into \"not yet\" — almost always more honest and more polite.",
+        "**Eh at the end of a sentence** is a softening particle typical of Filipino speech, a bit like \"you know\" or \"though\": *Tamad ako eh.* It gives a reason and asks for understanding at the same time.",
+        "**Talaga means \"really\"** and works on its own as a reaction: *Talaga?* — \"Really?\" One of the words you'll hear most in everyday conversation."
+      ],
+      "grammars": [
+        {
+          "title": "The three stages of mag- verbs",
+          "body": [
+            "Take the root and do two things: choose the prefix (*mag-* if not started, *nag-* if started), and repeat the first syllable of the root if the action isn't finished."
+          ],
+          "table": {
+            "head": [
+              "Root",
+              "Infinitive (not yet)",
+              "Done",
+              "Ongoing",
+              "Coming",
+              "Meaning"
+            ],
+            "rows": [
+              [
+                "luto",
+                "**mag**luto",
+                "**nag**luto",
+                "**nag**lu**lu**to",
+                "**mag**lu**lu**to",
+                "cook"
+              ],
+              [
+                "trabaho",
+                "**mag**trabaho",
+                "**nag**trabaho",
+                "**nag**tra**tra**baho",
+                "**mag**tra**tra**baho",
+                "work"
+              ],
+              [
+                "aral",
+                "**mag**-aral",
+                "**nag**-aral",
+                "**nag**-a**a**ral",
+                "**mag**-a**a**ral",
+                "study"
+              ],
+              [
+                "linis",
+                "**mag**linis",
+                "**nag**linis",
+                "**nag**li**li**nis",
+                "**mag**li**li**nis",
+                "clean"
+              ],
+              [
+                "laba",
+                "**mag**laba",
+                "**nag**laba",
+                "**nag**la**la**ba",
+                "**mag**la**la**ba",
+                "do laundry"
+              ],
+              [
+                "basa",
+                "**mag**basa",
+                "**nag**basa",
+                "**nag**ba**ba**sa",
+                "**mag**ba**ba**sa",
+                "read"
+              ],
+              [
+                "bayad",
+                "**mag**bayad",
+                "**nag**bayad",
+                "**nag**ba**ba**yad",
+                "**mag**ba**ba**yad",
+                "pay"
+              ],
+              [
+                "hintay",
+                "**mag**hintay",
+                "**nag**hintay",
+                "**nag**hi**hin**tay",
+                "**mag**hi**hin**tay",
+                "wait"
+              ]
+            ]
+          },
+          "after": [
+            "**What repeats is the root's first syllable, not the prefix.** *Nagluluto*, not *nanagluto*. Only the first consonant + vowel repeats: *lu-*, *tra-*, *a-*, *li-*.",
+            "Roots starting with a vowel take a hyphen after *mag-*: *mag-aral*, *mag-ingat*, *mag-alala*. This is a spelling rule, not a sound.",
+            "The two forms beginners mix up most are *nagluluto* (ongoing) and *magluluto* (coming). Only the first letter differs. When in doubt, remember: **n = already rolling, m = not rolling yet.**"
+          ]
+        },
+        {
+          "title": "Word order in verb sentences",
+          "body": [
+            "Standard Tagalog puts the verb first. Everything else follows in a fairly loose order."
+          ],
+          "table": {
+            "head": [
+              "Sentence",
+              "Literal",
+              "Meaning"
+            ],
+            "rows": [
+              [
+                "**Nagluluto** ang nanay.",
+                "cooking the mother",
+                "Mom is cooking."
+              ],
+              [
+                "**Nagluluto** ang nanay **ng** adobo.",
+                "cooking the mother of adobo",
+                "Mom is cooking adobo."
+              ],
+              [
+                "**Nagluluto** **siya** **sa** kusina.",
+                "cooking she in kitchen",
+                "She's cooking in the kitchen."
+              ],
+              [
+                "**Nag-aral** **ako** kahapon.",
+                "studied I yesterday",
+                "I studied yesterday."
+              ],
+              [
+                "**Hindi** **ako** nag-aral.",
+                "not I studied",
+                "I didn't study."
+              ],
+              [
+                "**Hindi pa** **ako** nag-aaral.",
+                "not yet I studying",
+                "I haven't studied yet."
+              ]
+            ]
+          },
+          "after": [
+            "Look at the last two rows: as soon as *hindi* appears, the short pronoun jumps in front of the verb. *Hindi ako nag-aral*, not *hindi nag-aral ako*. The same goes for all particles: they gather right after the first word.",
+            "To ask who is doing something: *Sino ang nagluluto?* The answer puts the doer up front with *ang*: *Si Mia ang nagluluto.* This *X ang Y* pattern adds emphasis — \"it's Mia who's cooking\".",
+            "To ask what someone is doing: *Ano ang ginagawa mo?* Learn it whole; its cousin *Anong ginagawa mo?* means the same."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "The most common mag- verbs",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "Infinitive",
+            "Meaning",
+            "Done",
+            "Ongoing",
+            "Coming"
+          ],
+          "rows": [
+            [
+              "mag-aral",
+              "study",
+              "nag-aral",
+              "nag-aaral",
+              "mag-aaral"
+            ],
+            [
+              "magtrabaho",
+              "work",
+              "nagtrabaho",
+              "nagtatrabaho",
+              "magtatrabaho"
+            ],
+            [
+              "magluto",
+              "cook",
+              "nagluto",
+              "nagluluto",
+              "magluluto"
+            ],
+            [
+              "maglinis",
+              "clean",
+              "naglinis",
+              "naglilinis",
+              "maglilinis"
+            ],
+            [
+              "maglaba",
+              "do laundry",
+              "naglaba",
+              "naglalaba",
+              "maglalaba"
+            ],
+            [
+              "magbasa",
+              "read",
+              "nagbasa",
+              "nagbabasa",
+              "magbabasa"
+            ],
+            [
+              "magsulat",
+              "write",
+              "nagsulat",
+              "nagsusulat",
+              "magsusulat"
+            ],
+            [
+              "magbayad",
+              "pay",
+              "nagbayad",
+              "nagbabayad",
+              "magbabayad"
+            ],
+            [
+              "magdala",
+              "bring",
+              "nagdala",
+              "nagdadala",
+              "magdadala"
+            ],
+            [
+              "maghintay",
+              "wait",
+              "naghintay",
+              "naghihintay",
+              "maghihintay"
+            ],
+            [
+              "magbihis",
+              "get dressed",
+              "nagbihis",
+              "nagbibihis",
+              "magbibihis"
+            ],
+            [
+              "magsalita",
+              "speak",
+              "nagsalita",
+              "nagsasalita",
+              "magsasalita"
+            ],
+            [
+              "magtanong",
+              "ask",
+              "nagtanong",
+              "nagtatanong",
+              "magtatanong"
+            ],
+            [
+              "maglakad",
+              "walk",
+              "naglakad",
+              "naglalakad",
+              "maglalakad"
+            ],
+            [
+              "magpahinga",
+              "rest",
+              "nagpahinga",
+              "nagpapahinga",
+              "magpapahinga"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "*Mag-* verbs tend to mark actions that are **deliberate and carried out by the doer**. This will matter in the next unit, when you meet *-um-* — a verb group covering nearby but not identical ground."
+        },
+        {
+          "type": "kotak",
+          "title": "Mag- + English words",
+          "items": [
+            "This prefix is very productive and happily takes English words: *mag-shopping*, *nag-jogging*, *mag-online*, *nag-text*, *mag-Zoom*.",
+            "The aspect forms follow the same rules: *nag-shoshopping* (is shopping), *mag-tetext ako* (I'll text). Odd on the page, perfectly normal to the ear."
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Time words that go with each aspect",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Since the verb doesn't mark time, time words do the work. These pairings are the most common."
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Aspect",
+            "Matching time words",
+            "Example"
+          ],
+          "rows": [
+            [
+              "Done",
+              "kahapon, kanina, kagabi, noong Lunes",
+              "Nagtrabaho ako kahapon."
+            ],
+            [
+              "Done",
+              "kanina lang, kababalik lang",
+              "Nagluto siya kanina lang."
+            ],
+            [
+              "Ongoing",
+              "ngayon, sa ngayon",
+              "Nag-aaral ako ngayon."
+            ],
+            [
+              "Ongoing (habit)",
+              "araw-araw, tuwing Lunes, palagi",
+              "Nagtatrabaho ako araw-araw."
+            ],
+            [
+              "Coming",
+              "bukas, mamaya, sa Lunes, sa susunod",
+              "Magluluto ako bukas."
+            ],
+            [
+              "Not yet",
+              "hindi pa, wala pa",
+              "Hindi pa ako nag-aaral."
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "The fourth row deserves attention: **the \"ongoing\" form is also used for habits.** *Nagtatrabaho ako araw-araw* doesn't mean \"I am working every day\" but \"I work every day\". English splits these into two forms; Tagalog uses one."
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "tl": "mag-aral",
+      "baca": "mahg-AH-rahl",
+      "en": "study"
+    },
+    {
+      "tl": "magtrabaho",
+      "baca": "mahg-trah-BAH-hoh",
+      "en": "work"
+    },
+    {
+      "tl": "magluto",
+      "baca": "mahg-LOO-toh'",
+      "en": "cook"
+    },
+    {
+      "tl": "maglinis",
+      "baca": "mahg-LEE-nees",
+      "en": "clean"
+    },
+    {
+      "tl": "maglaba",
+      "baca": "mahg-lah-BAH",
+      "en": "do laundry"
+    },
+    {
+      "tl": "magbasa",
+      "baca": "mahg-BAH-sah",
+      "en": "read"
+    },
+    {
+      "tl": "magsulat",
+      "baca": "mahg-SOO-laht",
+      "en": "write"
+    },
+    {
+      "tl": "magbayad",
+      "baca": "mahg-BAH-yahd",
+      "en": "pay"
+    },
+    {
+      "tl": "magdala",
+      "baca": "mahg-dah-LAH",
+      "en": "bring, carry"
+    },
+    {
+      "tl": "maghintay",
+      "baca": "mahg-heen-TAI",
+      "en": "wait"
+    },
+    {
+      "tl": "magsalita",
+      "baca": "mahg-sah-lee-TAH'",
+      "en": "speak"
+    },
+    {
+      "tl": "magtanong",
+      "baca": "mahg-tah-NOHNG",
+      "en": "ask"
+    },
+    {
+      "tl": "maglakad",
+      "baca": "mahg-lah-KAHD",
+      "en": "walk"
+    },
+    {
+      "tl": "magpahinga",
+      "baca": "mahg-pah-hee-NGAH",
+      "en": "rest"
+    },
+    {
+      "tl": "magbihis",
+      "baca": "mahg-BEE-hees",
+      "en": "get dressed"
+    },
+    {
+      "tl": "adobo",
+      "baca": "ah-DOH-boh",
+      "en": "adobo (signature dish)"
+    },
+    {
+      "tl": "sinigang",
+      "baca": "see-nee-GAHNG",
+      "en": "Filipino sour soup"
+    },
+    {
+      "tl": "kusina",
+      "baca": "koo-SEE-nah",
+      "en": "kitchen"
+    },
+    {
+      "tl": "paborito",
+      "baca": "pah-boh-REE-toh",
+      "en": "favorite"
+    },
+    {
+      "tl": "mabango",
+      "baca": "mah-bah-NGOH",
+      "en": "fragrant, smells good"
+    },
+    {
+      "tl": "tamad",
+      "baca": "TAH-mahd",
+      "en": "lazy"
+    },
+    {
+      "tl": "masipag",
+      "baca": "mah-SEE-pahg",
+      "en": "hardworking"
+    },
+    {
+      "tl": "buong araw",
+      "baca": "boo-OHNG AH-row",
+      "en": "all day"
+    },
+    {
+      "tl": "pagkatapos",
+      "baca": "pahg-kah-TAH-pohs",
+      "en": "after"
+    },
+    {
+      "tl": "talaga",
+      "baca": "tah-lah-GAH",
+      "en": "really, truly"
+    },
+    {
+      "tl": "palagi",
+      "baca": "pah-lah-GEE",
+      "en": "always"
+    },
+    {
+      "tl": "araw-araw",
+      "baca": "AH-row AH-row",
+      "en": "every day"
+    },
+    {
+      "tl": "ginagawa",
+      "baca": "gee-nah-gah-WAH",
+      "en": "being done"
+    },
+    {
+      "tl": "eh",
+      "baca": "eh",
+      "en": "you know (softening particle)"
+    },
+    {
+      "tl": "tapos",
+      "baca": "TAH-pohs",
+      "en": "then; finished"
+    }
+  ],
+  "exercises": [
+    {
+      "prompt": "Change to the form asked for.",
+      "items": [
+        "magluto (done) → ____",
+        "mag-aral (ongoing) → ____",
+        "magtrabaho (coming) → ____",
+        "maglinis (done) → ____",
+        "magbasa (ongoing) → ____",
+        "maghintay (coming) → ____"
+      ]
+    },
+    {
+      "prompt": "Fill in the blanks with the right verb form.",
+      "items": [
+        "____ ako ng adobo kahapon. (magluto)",
+        "____ siya ngayon sa kusina. (magluto)",
+        "____ kami bukas ng umaga. (mag-aral)",
+        "____ ang nanay ko araw-araw. (magtrabaho)",
+        "Hindi pa ako ____. (mag-aral, ongoing form)",
+        "____ tayo mamaya sa parke. (maglakad)"
+      ]
+    },
+    {
+      "prompt": "Translate into Tagalog.",
+      "items": [
+        "I studied yesterday.",
+        "She's cooking adobo.",
+        "Tomorrow we'll work.",
+        "I haven't studied yet.",
+        "My mom works every day."
+      ]
+    },
+    {
+      "prompt": "Put the words in the right order.",
+      "items": [
+        "ako / adobo / nagluluto / ng",
+        "ka / nag-aral / ba / kagabi / ?",
+        "mamaya / ako / mag-aaral",
+        "ako / hindi / nag-aral / pa",
+        "araw-araw / nanay / nagtatrabaho / ang / ko"
+      ]
+    }
+  ],
+  "answers": [
+    "nagluto — nag-aaral — magtatrabaho — naglinis — nagbabasa — maghihintay",
+    "Nagluto — Nagluluto — Mag-aaral — Nagtatrabaho — nag-aaral — Maglalakad",
+    "Nag-aral ako kahapon. — Nagluluto siya ng adobo. — Magtatrabaho kami bukas. — Hindi pa ako nag-aaral. — Nagtatrabaho ang nanay ko araw-araw.",
+    "Nagluluto ako ng adobo. — Nag-aral ka ba kagabi? — Mag-aaral ako mamaya. — Hindi pa ako nag-aral. — Nagtatrabaho ang nanay ko araw-araw."
+  ],
+  "wave": "Review **unit 9**: describe your schedule for a whole week — days, times and activities — using *sa Lunes*, *alas-otso ng umaga*, and so on."
+}

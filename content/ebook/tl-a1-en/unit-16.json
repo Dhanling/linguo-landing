@@ -1,0 +1,548 @@
+{
+  "title": "Want, don't want, must, may",
+  "title_target": "Gusto, ayaw, kailangan, puwede, dapat",
+  "goal": "Express wanting, refusing, needing, permission and obligation — five words that open up half of everyday conversation.",
+  "bekal": [
+    "telling *gusto ko ng kape* from *gusto kong uminom ng kape*",
+    "knowing which words take *ko/mo/niya* and which take *ako/ka/siya*",
+    "asking permission with *puwede* without sounding pushy"
+  ],
+  "dialogs": [
+    {
+      "title": "Dialogue — Ano ang gusto mo?",
+      "intro": "Midday at the campus canteen. Ana, Mia and Budi pick their food while having a little argument.",
+      "lines": [
+        {
+          "speaker": "Ana:",
+          "text": "Ano ang gusto mong kainin?",
+          "id": "What do you want to eat?",
+          "literal": "what the want your-that be-eaten?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Gusto ko ng sinigang. Ikaw?",
+          "id": "I want sinigang. You?",
+          "literal": "want my of sinigang. you?"
+        },
+        {
+          "speaker": "Ana:",
+          "text": "Ayoko ng maasim. Adobo na lang ako.",
+          "id": "I don't like sour things. I'll just have adobo.",
+          "literal": "don't-want-I of sour. adobo now just I."
+        },
+        {
+          "speaker": "Mia:",
+          "text": "Gusto kong sumubok ng bagong pagkain. Puwede ba akong kumuha ng dalawa?",
+          "id": "I want to try a new dish. Can I take two?",
+          "literal": "want my-that try of new-that food. can Q I-that take of two?"
+        },
+        {
+          "speaker": "Ana:",
+          "text": "Puwede, pero dapat mong ubusin, ha?",
+          "id": "Sure, but you have to finish them, okay?",
+          "literal": "can, but must your be-finished, huh?"
+        },
+        {
+          "speaker": "Mia:",
+          "text": "Kaya ko iyan!",
+          "id": "I can do it!",
+          "literal": "able my that!"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Kailangan ko ring bumili ng tubig. Nauuhaw ako.",
+          "id": "I need to buy water too. I'm thirsty.",
+          "literal": "need my also-that buy of water. thirsty I."
+        },
+        {
+          "speaker": "Ana:",
+          "text": "Ayaw mo bang softdrinks? Mas mura dito.",
+          "id": "Don't you want a soda? It's cheaper here.",
+          "literal": "don't-want you Q-that softdrinks? more cheap here."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Hindi na po. Ayaw kong tumaba.",
+          "id": "No thanks. I don't want to get fat.",
+          "literal": "no now ma'am. don't-want my-that get-fat."
+        },
+        {
+          "speaker": "Mia:",
+          "text": "Dapat kang kumain nang marami, ang payat mo!",
+          "id": "You should eat a lot, you're so thin!",
+          "literal": "must you-that eat in-manner much, how thin you!"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Hindi ako payat! Fit lang, ha.",
+          "id": "I'm not thin! Just fit, okay.",
+          "literal": "not I thin! fit just, huh."
+        }
+      ],
+      "notes": [
+        "**Gusto has two different patterns.** If you want a **thing**, use *ng*: *gusto ko ng kape*. If you want to **do** something, use the linker: *gusto kong uminom ng kape*. Forgetting the linker in the second pattern is the most common beginner mistake you'll hear.",
+        "**Ayoko is short for ayaw ko.** The long form is still correct, but hardly anyone uses it in conversation. Note that the short form exists only for the first person: *ayaw mo*, *ayaw niya* aren't shortened.",
+        "**Gusto, ayaw and kailangan take ko/mo/niya**, while **puwede and dapat take ako/ka/siya**. There's no logic to this split; just learn it as it is — the good news is that it never changes.",
+        "**Puwede ba akong…?** is the most polite way to ask permission. The casual form is *pwede ba…?* and the shortest version that's still polite: *Pwede po?* while pointing.",
+        "**Dapat means \"must\" or \"should\"** — both. For something firmer, use *kailangan* (need, have to). Compare: *Dapat kang matulog* (you should sleep) versus *Kailangan mong matulog* (you need to sleep).",
+        "**Kaya means \"able\"** and is said *KA-ya*. Don't confuse it with *ka-YA* (\"so\") from unit 15. *Kaya ko* = I can; *Kaya mo iyan!* = you can do it! — the most typical Filipino words of encouragement.",
+        "**Nang marami** uses *nang* (spelled n-a-n-g) to mark manner. It's a different word from the marker *ng*, though they sound exactly alike: *nang* for manner and time, *ng* for marking things. Even native speakers often mix up the spelling.",
+        "**Mas mura** uses *mas* (from Spanish) to compare: *mas mura* (cheaper), *mas malaki* (bigger), *mas mabuti* (better). The superlative uses *pinaka-*: *pinakamura* (cheapest).",
+        "**Fit lang, ha** — Taglish again, and again the particle *ha* turning a denial into a joke."
+      ],
+      "grammars": [
+        {
+          "title": "Five words and their pronouns",
+          "body": [
+            "These words aren't full verbs: they have no aspect and never change form. Only the verb that follows them changes."
+          ],
+          "table": {
+            "head": [
+              "Word",
+              "Meaning",
+              "Pronoun",
+              "Example",
+              "Translation"
+            ],
+            "rows": [
+              [
+                "**gusto**",
+                "want, like",
+                "ko / mo / niya",
+                "**Gusto kong** kumain.",
+                "I want to eat."
+              ],
+              [
+                "**ayaw**",
+                "not want",
+                "ko / mo / niya",
+                "**Ayaw kong** kumain.",
+                "I don't want to eat."
+              ],
+              [
+                "**kailangan**",
+                "need",
+                "ko / mo / niya",
+                "**Kailangan kong** mag-aral.",
+                "I need to study."
+              ],
+              [
+                "**puwede**",
+                "may, can",
+                "ako / ka / siya",
+                "**Puwede akong** umalis?",
+                "May I leave?"
+              ],
+              [
+                "**dapat**",
+                "must, should",
+                "ako / ka / siya",
+                "**Dapat kang** matulog.",
+                "You should sleep."
+              ],
+              [
+                "**kaya**",
+                "be able",
+                "ko / mo / niya",
+                "**Kaya kong** gawin.",
+                "I can do it."
+              ]
+            ]
+          },
+          "after": [
+            "The verb that follows is always in the **infinitive** — the basic form without aspect: *kumain*, *mag-aral*, *matulog*, *umalis*. Never *kumakain* or *nag-aral*.",
+            "A linker is required between the pronoun and the verb: *gusto **kong** kumain*, *dapat **kang** matulog*, *puwede **akong** umalis*. The same *-ng* linker as in unit 3.",
+            "To negate, put *hindi* in front: *Hindi ko gusto* (I don't like it — though *ayaw ko* is more common), *Hindi ko kailangan* (I don't need it), *Hindi puwede* (not allowed)."
+          ]
+        },
+        {
+          "title": "A thing or an action?",
+          "body": [
+            "This is the part that goes wrong most. Notice that the marker changes, not the word."
+          ],
+          "table": {
+            "head": [
+              "What you want",
+              "Pattern",
+              "Example",
+              "Translation"
+            ],
+            "rows": [
+              [
+                "a thing",
+                "gusto + ko + **ng** + thing",
+                "Gusto ko **ng** kape.",
+                "I want coffee."
+              ],
+              [
+                "an action",
+                "gusto + ko**ng** + verb",
+                "Gusto **kong** uminom ng kape.",
+                "I want to drink coffee."
+              ],
+              [
+                "a specific thing",
+                "gusto + ko + **ang** + thing",
+                "Gusto ko **ang** kapeng ito.",
+                "I like this coffee."
+              ],
+              [
+                "a person",
+                "gusto + ko + **si** + name",
+                "Gusto ko **si** Ana.",
+                "I like Ana."
+              ],
+              [
+                "refusing a thing",
+                "ayaw + ko + **ng** + thing",
+                "Ayoko **ng** maasim.",
+                "I don't like sour things."
+              ],
+              [
+                "refusing an action",
+                "ayaw + ko**ng** + verb",
+                "Ayaw **kong** tumaba.",
+                "I don't want to get fat."
+              ]
+            ]
+          },
+          "after": [
+            "The third row hides a subtle lesson: *gusto ko ng kape* means \"I want coffee\" (any coffee), while *gusto ko ang kape* means \"I like this coffee\" or \"I like coffee\" in general, as something you enjoy. The *ng* / *ang* difference here is exactly the focus difference from unit 13.",
+            "*Gusto kita* means \"I like you\" — using the combined form *kita* you know from unit 4. Use it with care: it's fairly close to a declaration of love.",
+            "To offer something, use the question form: *Gusto mo ba ng kape?* — \"would you like coffee?\" The most standard host's line in the Philippines."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Asking permission and offering help",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "Tagalog",
+            "Meaning",
+            "Note"
+          ],
+          "rows": [
+            [
+              "Puwede po ba?",
+              "May I?",
+              "shortest, while pointing"
+            ],
+            [
+              "Puwede po bang tumawad?",
+              "Can I bargain?",
+              "at the market"
+            ],
+            [
+              "Puwede ba akong umupo dito?",
+              "May I sit here?",
+              "on public transport"
+            ],
+            [
+              "Puwede mo ba akong tulungan?",
+              "Can you help me?",
+              "asking for help"
+            ],
+            [
+              "Puwede na ba?",
+              "Is it okay now? / Is that enough?",
+              ""
+            ],
+            [
+              "Hindi puwede.",
+              "Not allowed.",
+              "firm refusal"
+            ],
+            [
+              "Bawal.",
+              "Forbidden.",
+              "on signs"
+            ],
+            [
+              "Kaya mo ba?",
+              "Can you manage?",
+              ""
+            ],
+            [
+              "Kaya ko na po.",
+              "I can manage, thank you.",
+              "politely declining help"
+            ],
+            [
+              "Tutulungan kita.",
+              "I'll help you.",
+              ""
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "**Bawal** is worth learning separately because it's everywhere on signs: *bawal umihi dito* (no urinating here), *bawal pumasok* (no entry), *bawal tumawid* (no crossing). It's one of the first words newcomers to Manila pick up."
+        },
+        {
+          "type": "kotak",
+          "title": "Saying no without offending",
+          "items": [
+            "A flat *ayaw ko* sounds rather harsh in Filipino culture. Softer: *Sige, sa susunod na lang po.* (\"Maybe next time.\")",
+            "Declining food: *Busog pa po ako, salamat.* (\"I'm still full, thank you.\") Your host will offer once or twice more — that's etiquette, not real pressure."
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Comparing",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "Pattern",
+            "Example",
+            "Translation"
+          ],
+          "rows": [
+            [
+              "**mas** + adjective",
+              "mas mura",
+              "cheaper"
+            ],
+            [
+              "**mas** + adjective + **kaysa sa**",
+              "mas mura kaysa sa mangga",
+              "cheaper than mangoes"
+            ],
+            [
+              "**pinaka-** + adjective",
+              "pinakamura",
+              "cheapest"
+            ],
+            [
+              "**kasing-** + root",
+              "kasingtaas ko",
+              "as tall as me"
+            ],
+            [
+              "**hindi kasing-**",
+              "hindi kasingtaas ko",
+              "not as tall as me"
+            ],
+            [
+              "**sobrang** + root",
+              "sobrang mura",
+              "super cheap"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "*Kaysa sa* shortens to *kaysa* in conversation, and often disappears entirely when the comparison is clear from context: *Mas gusto ko ito.* — \"I prefer this one.\""
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "tl": "gusto",
+      "baca": "GOOS-toh",
+      "en": "want, like"
+    },
+    {
+      "tl": "ayaw",
+      "baca": "AH-yow",
+      "en": "not want"
+    },
+    {
+      "tl": "ayoko",
+      "baca": "ah-YOH-koh",
+      "en": "I don't want"
+    },
+    {
+      "tl": "kailangan",
+      "baca": "kai-LAH-ngahn",
+      "en": "need"
+    },
+    {
+      "tl": "puwede / pwede",
+      "baca": "PWEH-deh",
+      "en": "may, can"
+    },
+    {
+      "tl": "dapat",
+      "baca": "DAH-paht",
+      "en": "must, should"
+    },
+    {
+      "tl": "kaya",
+      "baca": "KAH-yah",
+      "en": "be able"
+    },
+    {
+      "tl": "bawal",
+      "baca": "BAH-wahl",
+      "en": "forbidden"
+    },
+    {
+      "tl": "mas",
+      "baca": "mahs",
+      "en": "more"
+    },
+    {
+      "tl": "kaysa",
+      "baca": "KAI-sah",
+      "en": "than"
+    },
+    {
+      "tl": "pinaka-",
+      "baca": "pee-nah-KAH",
+      "en": "most"
+    },
+    {
+      "tl": "sumubok",
+      "baca": "soo-MOO-bohk",
+      "en": "try"
+    },
+    {
+      "tl": "ubusin",
+      "baca": "oo-BOO-seen",
+      "en": "finish up (food)"
+    },
+    {
+      "tl": "tumulong",
+      "baca": "too-MOO-lohng",
+      "en": "help"
+    },
+    {
+      "tl": "maasim",
+      "baca": "mah-AH-seem",
+      "en": "sour"
+    },
+    {
+      "tl": "matamis",
+      "baca": "mah-tah-MEES",
+      "en": "sweet"
+    },
+    {
+      "tl": "maalat",
+      "baca": "mah-AH-laht",
+      "en": "salty"
+    },
+    {
+      "tl": "maanghang",
+      "baca": "mah-ahng-HAHNG",
+      "en": "spicy"
+    },
+    {
+      "tl": "mapait",
+      "baca": "mah-pah-EET",
+      "en": "bitter"
+    },
+    {
+      "tl": "busog",
+      "baca": "boo-SOHG",
+      "en": "full (after eating)"
+    },
+    {
+      "tl": "gutom",
+      "baca": "goo-TOHM",
+      "en": "hungry"
+    },
+    {
+      "tl": "payat",
+      "baca": "pah-YAHT",
+      "en": "thin"
+    },
+    {
+      "tl": "mataba",
+      "baca": "mah-tah-BAH'",
+      "en": "fat"
+    },
+    {
+      "tl": "softdrinks",
+      "baca": "SOFT-drinks",
+      "en": "soda"
+    },
+    {
+      "tl": "tsaa",
+      "baca": "tsah-AH",
+      "en": "tea"
+    },
+    {
+      "tl": "juice",
+      "baca": "joos",
+      "en": "juice"
+    },
+    {
+      "tl": "kanin",
+      "baca": "KAH-neen",
+      "en": "cooked rice"
+    },
+    {
+      "tl": "ulam",
+      "baca": "oo-LAHM",
+      "en": "main dish (eaten with rice)"
+    },
+    {
+      "tl": "sabaw",
+      "baca": "sah-BOW",
+      "en": "broth, soup"
+    },
+    {
+      "tl": "nang",
+      "baca": "nahng",
+      "en": "in a … way; when"
+    }
+  ],
+  "exercises": [
+    {
+      "prompt": "Fill in the blanks with the right form: ko, mo, niya, ako, ka, siya.",
+      "items": [
+        "Gusto ____ ng kape. (I)",
+        "Ayaw ____ ng maanghang. (she)",
+        "Kailangan ____ mag-aral. (you)",
+        "Puwede ba ____ umalis? (I)",
+        "Dapat ____ matulog nang maaga. (you)",
+        "Kaya ____ iyan! (you)"
+      ]
+    },
+    {
+      "prompt": "Fill in the blanks with gusto, ayaw, kailangan, puwede or dapat.",
+      "items": [
+        "____ kong kumain, gutom na ako. (want)",
+        "____ kong tumaba. (don't want)",
+        "____ kong mag-aral bukas. (need)",
+        "____ ba akong umalis? (may)",
+        "____ kang matulog nang maaga. (must)"
+      ]
+    },
+    {
+      "prompt": "Translate into Tagalog.",
+      "items": [
+        "What do you want to eat?",
+        "I want sinigang.",
+        "I don't like sour things.",
+        "May I sit here?",
+        "You should go to bed earlier."
+      ]
+    },
+    {
+      "prompt": "Put the words in the right order.",
+      "items": [
+        "kong / gusto / kumain",
+        "ng / gusto / kape / ko",
+        "akong / puwede / ba / umalis / ?",
+        "matulog / kang / dapat",
+        "iyan / kaya / ko"
+      ]
+    }
+  ],
+  "answers": [
+    "ko — niya — mo — ako — ka — mo",
+    "Gusto — Ayaw — Kailangan — Puwede — Dapat",
+    "Ano ang gusto mong kainin? — Gusto ko ng sinigang. — Ayoko ng maasim. — Puwede ba akong umupo dito? — Dapat kang matulog nang maaga.",
+    "Gusto kong kumain. — Gusto ko ng kape. — Puwede ba akong umalis? — Dapat kang matulog. — Kaya ko iyan."
+  ],
+  "wave": "Review **unit 14**: take five plain sentences you've made yourself and add particles — *na*, *pa*, *lang*, *naman*, *po* — until the tone has changed three times."
+}

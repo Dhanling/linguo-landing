@@ -1,0 +1,636 @@
+{
+  "title": "What time is it?",
+  "title_target": "Anong oras na?",
+  "goal": "Tell the time the way people really say it, name the days and months, and place events in yesterday, today or tomorrow.",
+  "bekal": [
+    "read the clock with *alas-* and add the part of day (*ng umaga*, *ng gabi*)",
+    "name the seven days and twelve months — all from Spanish",
+    "use *kanina*, *mamaya*, *kahapon*, *bukas* correctly"
+  ],
+  "dialogs": [
+    {
+      "title": "Dialogue — Anong oras ang klase?",
+      "intro": "Budi has just signed up for a course. Mia explains the schedule while typing it into her phone.",
+      "lines": [
+        {
+          "speaker": "Budi:",
+          "text": "Anong oras ang klase bukas?",
+          "id": "What time is class tomorrow?",
+          "literal": "what-kind hour si class tomorrow?"
+        },
+        {
+          "speaker": "Mia:",
+          "text": "Alas-otso ng umaga. Huwag kang ma-late!",
+          "id": "Eight in the morning. Don't be late!",
+          "literal": "o'clock-eight of morning. don't you be-late!"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Alas-otso? Ang aga naman!",
+          "id": "Eight? That's so early!",
+          "literal": "o'clock-eight? how early indeed!"
+        },
+        {
+          "speaker": "Mia:",
+          "text": "Hanggang alas-onse lang naman. May pahinga sa alas-nuwebe y medya.",
+          "id": "Only until eleven. There's a break at half past nine.",
+          "literal": "until o'clock-eleven only indeed. there-is rest at o'clock-nine and half."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Sige. Anong araw ang klase?",
+          "id": "Okay. What days is the class?",
+          "literal": "all-right. what-kind day si class?"
+        },
+        {
+          "speaker": "Mia:",
+          "text": "Lunes, Miyerkules, at Biyernes.",
+          "id": "Monday, Wednesday and Friday.",
+          "literal": "Monday, Wednesday, and Friday."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Wala bang klase sa Sabado?",
+          "id": "No class on Saturday?",
+          "literal": "none [question] class on Saturday?"
+        },
+        {
+          "speaker": "Mia:",
+          "text": "Wala. Pero may practice tayo sa Sabado ng hapon.",
+          "id": "No. But we have practice on Saturday afternoon.",
+          "literal": "none. but there-is practice we on Saturday of afternoon."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Anong petsa ngayon?",
+          "id": "What's the date today?",
+          "literal": "what-kind date today?"
+        },
+        {
+          "speaker": "Mia:",
+          "text": "Ika-labinlima ng Hunyo. Mag-eexam tayo sa katapusan ng buwan.",
+          "id": "The fifteenth of June. We have an exam at the end of the month.",
+          "literal": "15th of June. will-have-exam we at end of month."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Naku! Kailangan ko nang mag-aral.",
+          "id": "Oh no! I need to start studying.",
+          "literal": "oh-no! need my now to-study."
+        }
+      ],
+      "notes": [
+        "**Time uses Spanish numbers, always.** *Alas-otso* (8 o'clock), *alas-dos* (2 o'clock), *alas-singko* (5 o'clock). The only exception is one o'clock: *ala-una*, with *ala-* not *alas-*, because in Spanish \"one o'clock\" is singular.",
+        "**The part of the day is added with ng.** *Alas-otso ng umaga* (8 a.m.), *alas-otso ng gabi* (8 p.m.). Without this, a time in the Philippines can mean two different times twelve hours apart.",
+        "**Y medya means half** (from Spanish *y media*): *alas-nuwebe y medya* = half past nine, literally \"nine o'clock and a half\". Same logic as English \"half past\", with no \"half to\" trick.",
+        "**Ika- is the formal form.** *Ika-walo ng umaga* equals *alas-otso ng umaga*, but is used in invitations, official schedules and news. For dates, though, *ika-* is the usual one: *ika-labinlima ng Hunyo*.",
+        "**Ang aga naman** uses the unit 3 exclamation pattern with the root *aga* (early morning). Its cousins: *ang gabi na* (it's already so late), *ang tagal* (so long).",
+        "**Hanggang means \"until\"** — used for time and place alike: *hanggang alas-onse*, *hanggang Maynila*. It's also used when parting: *hanggang bukas* (until tomorrow).",
+        "**Ma-late is perfect Taglish**: the Tagalog prefix *ma-* attached to the English word *late*. The pattern is alive and productive — *mag-shopping*, *nag-jogging*, *ma-stress*. You'll hear it often, and nobody thinks it's wrong.",
+        "**Naku!** is an all-purpose exclamation: surprise, disappointment, dismay, exasperation. Longer form *ay naku*, and a stronger one *naku po*. The closest English matches: \"oh my!\" or \"oh no!\"",
+        "**Katapusan ng buwan** = end of the month. The word *katapusan* also means \"end\" in general, from the root *tapos* (finished). A nice reminder that one root can generate a whole family of words."
+      ],
+      "grammars": [
+        {
+          "title": "Reading the clock",
+          "body": [
+            "The standard question is *Anong oras na?* and the standard answer uses *alas-* + a Spanish number."
+          ],
+          "table": {
+            "head": [
+              "Time",
+              "Tagalog",
+              "Say it",
+              "Note"
+            ],
+            "rows": [
+              [
+                "1:00",
+                "ala-una",
+                "ah-lah OO-nah",
+                "**ala-**, not *alas-*"
+              ],
+              [
+                "2:00",
+                "alas-dos",
+                "ah-lahs DOHS",
+                ""
+              ],
+              [
+                "3:00",
+                "alas-tres",
+                "ah-lahs TREHS",
+                ""
+              ],
+              [
+                "5:00",
+                "alas-singko",
+                "ah-lahs SEENG-koh",
+                ""
+              ],
+              [
+                "7:00",
+                "alas-siyete",
+                "ah-lahs SYEH-teh",
+                ""
+              ],
+              [
+                "8:30",
+                "alas-otso y medya",
+                "ah-lahs OHT-soh ee MEHD-yah",
+                "*y medya* = and a half"
+              ],
+              [
+                "9:15",
+                "alas-nuwebe kinse",
+                "ah-lahs noo-WEH-beh KEEN-seh",
+                "past, plus fifteen"
+              ],
+              [
+                "10:45",
+                "menos kinse alas-onse",
+                "MEH-nohs KEEN-seh",
+                "minus fifteen to eleven"
+              ],
+              [
+                "12:00 noon",
+                "alas-dose ng tanghali",
+                "ah-lahs DOH-seh",
+                ""
+              ],
+              [
+                "12:00 midnight",
+                "hatinggabi",
+                "hah-teeng-gah-BEE",
+                "literally: middle of the night"
+              ]
+            ]
+          },
+          "after": [
+            "The parts of day you can attach: *ng umaga* (morning, 6-11), *ng tanghali* (midday, 11-1), *ng hapon* (afternoon, 1-6), *ng gabi* (night, 6-12), *ng madaling-araw* (before dawn, 1-5).",
+            "To ask what time something happens: *Anong oras ang klase?* To answer when, add *sa*: *Sa alas-otso.*",
+            "Times that aren't round are often said in English: *eight forty-five*. That isn't laziness but habit — even native speakers do it."
+          ]
+        },
+        {
+          "title": "Days, months and time words",
+          "body": [
+            "The names of the days and months all come from Spanish, so none of them needs guessing."
+          ],
+          "tables": [
+            {
+              "head": [
+                "Day",
+                "Say it",
+                "Meaning"
+              ],
+              "rows": [
+                [
+                  "Lunes",
+                  "LOO-nehs",
+                  "Monday"
+                ],
+                [
+                  "Martes",
+                  "MAHR-tehs",
+                  "Tuesday"
+                ],
+                [
+                  "Miyerkules",
+                  "mee-YEHR-koo-lehs",
+                  "Wednesday"
+                ],
+                [
+                  "Huwebes",
+                  "hoo-WEH-behs",
+                  "Thursday"
+                ],
+                [
+                  "Biyernes",
+                  "bee-YEHR-nehs",
+                  "Friday"
+                ],
+                [
+                  "Sabado",
+                  "SAH-bah-doh",
+                  "Saturday"
+                ],
+                [
+                  "Linggo",
+                  "leeng-GOH",
+                  "Sunday; also means *week*"
+                ]
+              ]
+            },
+            {
+              "head": [
+                "Month",
+                "Meaning",
+                "Month",
+                "Meaning"
+              ],
+              "rows": [
+                [
+                  "Enero",
+                  "January",
+                  "Hulyo",
+                  "July"
+                ],
+                [
+                  "Pebrero",
+                  "February",
+                  "Agosto",
+                  "August"
+                ],
+                [
+                  "Marso",
+                  "March",
+                  "Setyembre",
+                  "September"
+                ],
+                [
+                  "Abril",
+                  "April",
+                  "Oktubre",
+                  "October"
+                ],
+                [
+                  "Mayo",
+                  "May",
+                  "Nobyembre",
+                  "November"
+                ],
+                [
+                  "Hunyo",
+                  "June",
+                  "Disyembre",
+                  "December"
+                ]
+              ]
+            }
+          ],
+          "after": [
+            "*Linggo* does two jobs: Sunday **and** one week. *Sa Linggo* = on Sunday; *isang linggo* = one week. Context separates them, and native speakers are never confused.",
+            "Days always begin with *sa*: *sa Lunes* (on Monday). For habitual repetition use *tuwing*: *tuwing Lunes* (every Monday).",
+            "Dates are written with *ika-*: *ika-lima ng Mayo* (May 5). In fast speech, people often switch straight to English: *May five*."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "When: yesterday, now, later",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "Tagalog",
+            "Say it",
+            "Meaning",
+            "Note"
+          ],
+          "rows": [
+            [
+              "ngayon",
+              "ngah-YOHN",
+              "now; today",
+              "also \"nowadays\""
+            ],
+            [
+              "kanina",
+              "kah-NEE-nah",
+              "earlier",
+              "still today"
+            ],
+            [
+              "mamaya",
+              "mah-mah-YAH",
+              "later",
+              "still today"
+            ],
+            [
+              "kahapon",
+              "kah-HAH-pohn",
+              "yesterday",
+              ""
+            ],
+            [
+              "bukas",
+              "boo-KAHS",
+              "tomorrow",
+              "stress at the back!"
+            ],
+            [
+              "kamakalawa",
+              "kah-mah-kah-lah-WAH",
+              "the day before yesterday",
+              ""
+            ],
+            [
+              "sa makalawa",
+              "sah mah-kah-lah-WAH",
+              "the day after tomorrow",
+              ""
+            ],
+            [
+              "noong isang linggo",
+              "noh-OHNG ee-SAHNG leeng-GOH",
+              "last week",
+              ""
+            ],
+            [
+              "sa susunod na linggo",
+              "sah soo-SOO-nohd nah leeng-GOH",
+              "next week",
+              ""
+            ],
+            [
+              "mamayang gabi",
+              "mah-mah-YAHNG gah-BEE",
+              "later tonight",
+              ""
+            ],
+            [
+              "kagabi",
+              "kah-gah-BEE",
+              "last night",
+              ""
+            ],
+            [
+              "araw-araw",
+              "AH-row AH-row",
+              "every day",
+              "repetition = recurrence"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "Notice two opposing prefixes: **ka-** points backward (*kahapon*, *kagabi*, *kanina*), while **sa** points forward (*sa makalawa*, *sa Linggo*, *sa susunod*). Once you see this pattern, half the words in this table don't need to be memorized one by one."
+        },
+        {
+          "type": "kotak",
+          "title": "Noong and sa",
+          "items": [
+            "**Noong** marks past time: *noong Lunes* (last Monday), *noong 2020*, *noong bata pa ako* (when I was little).",
+            "**Sa** marks future time: *sa Lunes* (next Monday), *sa Disyembre*, *sa susunod na taon*.",
+            "These two small words replace the whole tense system that Tagalog doesn't have — and that's why Tagalog verbs don't need to mark time themselves."
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Asking about time",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "Question",
+            "Meaning",
+            "Sample answer"
+          ],
+          "rows": [
+            [
+              "Anong oras na?",
+              "What time is it now?",
+              "Alas-tres na."
+            ],
+            [
+              "Anong oras ang klase?",
+              "What time is class?",
+              "Alas-otso ng umaga."
+            ],
+            [
+              "Anong araw ngayon?",
+              "What day is it today?",
+              "Miyerkules."
+            ],
+            [
+              "Anong petsa ngayon?",
+              "What's today's date?",
+              "Ika-lima ng Hunyo."
+            ],
+            [
+              "Kailan ka darating?",
+              "When will you arrive?",
+              "Bukas ng hapon."
+            ],
+            [
+              "Gaano katagal?",
+              "How long?",
+              "Isang oras lang."
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "*Gaano katagal* asks for duration, and the answer uses ordinary time units: *limang minuto*, *dalawang oras*, *tatlong araw*, *isang linggo*, *anim na buwan*, *isang taon*."
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "tl": "oras",
+      "baca": "OH-rahs",
+      "en": "hour, time"
+    },
+    {
+      "tl": "minuto",
+      "baca": "mee-NOO-toh",
+      "en": "minute"
+    },
+    {
+      "tl": "alas-",
+      "baca": "ah-lahs",
+      "en": "o'clock marker"
+    },
+    {
+      "tl": "y medya",
+      "baca": "ee MEHD-yah",
+      "en": "and a half"
+    },
+    {
+      "tl": "hatinggabi",
+      "baca": "hah-teeng-gah-BEE",
+      "en": "midnight"
+    },
+    {
+      "tl": "madaling-araw",
+      "baca": "mah-dah-LEENG AH-row",
+      "en": "before dawn"
+    },
+    {
+      "tl": "tanghali",
+      "baca": "tahng-HAH-lee'",
+      "en": "midday"
+    },
+    {
+      "tl": "Lunes",
+      "baca": "LOO-nehs",
+      "en": "Monday"
+    },
+    {
+      "tl": "Martes",
+      "baca": "MAHR-tehs",
+      "en": "Tuesday"
+    },
+    {
+      "tl": "Miyerkules",
+      "baca": "mee-YEHR-koo-lehs",
+      "en": "Wednesday"
+    },
+    {
+      "tl": "Huwebes",
+      "baca": "hoo-WEH-behs",
+      "en": "Thursday"
+    },
+    {
+      "tl": "Biyernes",
+      "baca": "bee-YEHR-nehs",
+      "en": "Friday"
+    },
+    {
+      "tl": "Sabado",
+      "baca": "SAH-bah-doh",
+      "en": "Saturday"
+    },
+    {
+      "tl": "Linggo",
+      "baca": "leeng-GOH",
+      "en": "Sunday; week"
+    },
+    {
+      "tl": "petsa",
+      "baca": "PEHT-sah",
+      "en": "date (calendar)"
+    },
+    {
+      "tl": "kailan",
+      "baca": "kai-LAHN",
+      "en": "when"
+    },
+    {
+      "tl": "ngayon",
+      "baca": "ngah-YOHN",
+      "en": "now; today"
+    },
+    {
+      "tl": "kanina",
+      "baca": "kah-NEE-nah",
+      "en": "earlier"
+    },
+    {
+      "tl": "mamaya",
+      "baca": "mah-mah-YAH",
+      "en": "later"
+    },
+    {
+      "tl": "kahapon",
+      "baca": "kah-HAH-pohn",
+      "en": "yesterday"
+    },
+    {
+      "tl": "kagabi",
+      "baca": "kah-gah-BEE",
+      "en": "last night"
+    },
+    {
+      "tl": "noong",
+      "baca": "noh-OHNG",
+      "en": "on (past time)"
+    },
+    {
+      "tl": "tuwing",
+      "baca": "too-WEENG",
+      "en": "every (recurring)"
+    },
+    {
+      "tl": "hanggang",
+      "baca": "hahng-GAHNG",
+      "en": "until"
+    },
+    {
+      "tl": "katapusan",
+      "baca": "kah-tah-POO-sahn",
+      "en": "end"
+    },
+    {
+      "tl": "simula",
+      "baca": "see-moo-LAH'",
+      "en": "beginning, start"
+    },
+    {
+      "tl": "pahinga",
+      "baca": "pah-hee-NGAH",
+      "en": "break, rest"
+    },
+    {
+      "tl": "klase",
+      "baca": "KLAH-seh",
+      "en": "class"
+    },
+    {
+      "tl": "gaano katagal",
+      "baca": "gah-AH-noh kah-tah-GAHL",
+      "en": "how long"
+    },
+    {
+      "tl": "naku",
+      "baca": "nah-KOO",
+      "en": "oh my, oh no"
+    }
+  ],
+  "exercises": [
+    {
+      "prompt": "Write the following times in Tagalog.",
+      "items": [
+        "8:00 a.m.",
+        "1:00 p.m.",
+        "7:30 p.m.",
+        "10:15",
+        "12:00 midnight",
+        "5:00 a.m."
+      ]
+    },
+    {
+      "prompt": "Fill in the right time word: kahapon, bukas, kanina, mamaya, ngayon, kagabi.",
+      "items": [
+        "Umuwi ako ____. (two hours ago, today)",
+        "May klase ako ____. (the next day)",
+        "Natulog ako nang maaga ____. (the night just past)",
+        "Miyerkules ____. (today)",
+        "Kumain kami sa labas ____. (one day before today)",
+        "Tawagan mo ako ____. (in a few hours)"
+      ]
+    },
+    {
+      "prompt": "Translate into Tagalog.",
+      "items": [
+        "What time is it now?",
+        "What day is it today?",
+        "The class is at eight in the morning.",
+        "There's no class on Saturday.",
+        "Every Monday I work."
+      ]
+    },
+    {
+      "prompt": "Put the words in the right order.",
+      "items": [
+        "na / oras / anong / ?",
+        "umaga / alas-otso / ng",
+        "klase / bukas / ang / anong / oras / ?",
+        "Sabado / klase / walang / sa",
+        "linggo / sa / darating / susunod / na / siya"
+      ]
+    }
+  ],
+  "answers": [
+    "alas-otso ng umaga — ala-una ng hapon — alas-siyete y medya ng gabi — alas-diyes kinse ng umaga — hatinggabi — alas-singko ng umaga",
+    "kanina — bukas — kagabi — ngayon — kahapon — mamaya",
+    "Anong oras na? — Anong araw ngayon? — Alas-otso ng umaga ang klase. — Walang klase sa Sabado. — Tuwing Lunes ako nagtatrabaho.",
+    "Anong oras na? — Alas-otso ng umaga. — Anong oras ang klase bukas? — Walang klase sa Sabado. — Darating siya sa susunod na linggo."
+  ],
+  "wave": "Review **unit 7**: say the price of five things you recently bought using Spanish numbers, then count the number of items with native Tagalog numbers, with their linkers."
+}

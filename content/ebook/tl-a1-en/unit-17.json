@@ -1,0 +1,614 @@
+{
+  "title": "Eating out",
+  "title_target": "Kain tayo!",
+  "goal": "Order food, name flavors, ask for more, pay — and understand why \"have you eaten?\" is the most important question in the Philippines.",
+  "bekal": [
+    "ordering with the pattern *isang* + food + *po*",
+    "asking for more rice, broth and a spoon without awkwardness",
+    "responding to an invitation to eat the right way"
+  ],
+  "dialogs": [
+    {
+      "title": "Dialogue — Sa karinderya",
+      "intro": "A simple roadside eatery. Dishes line up behind glass, and customers point at what they want.",
+      "lines": [
+        {
+          "speaker": "Tindera:",
+          "text": "Sir, ano po ang ulam ninyo?",
+          "id": "Sir, what dish would you like?",
+          "literal": "sir, what ma'am the dish your-all?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Ano po ang masarap dito?",
+          "id": "What's good here, ma'am?",
+          "literal": "what ma'am the tasty here?"
+        },
+        {
+          "speaker": "Tindera:",
+          "text": "Bagong luto ang adobo at ang sinigang na baboy.",
+          "id": "The adobo and the pork sinigang are freshly cooked.",
+          "literal": "newly cooked the adobo and the sinigang that pork."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Sinigang na lang po. Isang kanin din po.",
+          "id": "Just the sinigang, please. And one rice too.",
+          "literal": "sinigang now just ma'am. one rice also ma'am."
+        },
+        {
+          "speaker": "Tindera:",
+          "text": "Dine-in o take-out po?",
+          "id": "Dine-in or take-out?",
+          "literal": "dine-in or take-out ma'am?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Dito na lang po. May tubig po ba?",
+          "id": "Here, please. Is there water?",
+          "literal": "here now just ma'am. there's water ma'am Q?"
+        },
+        {
+          "speaker": "Tindera:",
+          "text": "Mayroon, libre po ang tubig.",
+          "id": "Yes, the water is free.",
+          "literal": "there-is, free ma'am the water."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Salamat po. Pahingi rin po ng kutsara.",
+          "id": "Thank you. Could I also have a spoon?",
+          "literal": "thanks ma'am. please-give also ma'am of spoon."
+        },
+        {
+          "speaker": "Tindera:",
+          "text": "Heto po. Kain po kayo!",
+          "id": "Here you go. Enjoy your meal!",
+          "literal": "here-it-is ma'am. eat ma'am you-all!"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Sarap! Puwede po bang dagdagan ng kanin?",
+          "id": "Delicious! Could I have more rice?",
+          "literal": "tasty! can ma'am Q be-added of rice?"
+        },
+        {
+          "speaker": "Tindera:",
+          "text": "Oo naman. Unlimited po ang kanin dito.",
+          "id": "Of course. The rice is unlimited here.",
+          "literal": "yes naman. unlimited ma'am the rice here."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Ang galing! Magkano po lahat?",
+          "id": "Awesome! How much is it all together?",
+          "literal": "how great! how-much ma'am all?"
+        },
+        {
+          "speaker": "Tindera:",
+          "text": "Siyento bente po lahat.",
+          "id": "One hundred twenty altogether.",
+          "literal": "hundred twenty ma'am all."
+        }
+      ],
+      "notes": [
+        "**A karinderya is a people's eatery**: dishes cooked since morning line up behind glass and you simply point. Think of a cafeteria-style lunch counter. Another word for this kind of place: *turo-turo*, literally \"point-point\" — from how you order.",
+        "**Ulam is a word worth understanding properly.** It means the dish eaten with rice — anything served alongside it. Filipinos don't consider a meal complete without rice, so *ano ang ulam?* really asks \"what are we having with our rice today?\".",
+        "**Kanin is cooked rice**, *bigas* is raw rice, and *palay* is rice in the paddy. Three words for one thing at three stages — English has just \"rice\" for all of them. (Malay and Indonesian share this kind of split, a clear sign the languages are related.)",
+        "**Kain po kayo!** is an invitation you'll hear everywhere, even from strangers eating next to you. It's sincere hospitality but also etiquette: the polite reply is *Salamat po, kumain na po ako* if you don't want to join.",
+        "**Dagdagan ng kanin** uses receiver focus from unit 13: what gets added to is your plate. A shorter form that's also common: *Extra rice po.*",
+        "**Unlimited rice** is an institution in the Philippines — many eateries offer endless rice, and that's where the English phrase is used as is, with no translation.",
+        "**Sarap!** is the short form of *ang sarap!* and works as a compliment on its own. Praising the cooking out loud in the Philippines isn't excessive, it's expected.",
+        "**Libre means free** (from Spanish *libre*). It's also used for treating someone: *Libre kita* — \"my treat\". One of the offers you'll hear most from Filipino friends.",
+        "**Dine-in or take-out** — two English terms used even in the tiniest eatery. Tagalog equivalents exist (*dito kakainin* / *iuuwi*), but they're rarely used."
+      ],
+      "grammars": [
+        {
+          "title": "Ordering: the pattern that always works",
+          "body": [
+            "Orders in the Philippines nearly always take the form: number + linker + food + *po*. No verb needed at all."
+          ],
+          "table": {
+            "head": [
+              "Tagalog",
+              "Literal",
+              "Meaning"
+            ],
+            "rows": [
+              [
+                "**Isang** adobo **po**.",
+                "one adobo ma'am",
+                "One adobo, please."
+              ],
+              [
+                "**Dalawang** kanin **po**.",
+                "two rice ma'am",
+                "Two rice, please."
+              ],
+              [
+                "**Tatlong** kape **po**, please.",
+                "three coffee ma'am",
+                "Three coffees, please."
+              ],
+              [
+                "**Pahingi po ng** tubig.",
+                "please-give ma'am of water",
+                "Could I have some water?"
+              ],
+              [
+                "**Pabili po ng** kanin.",
+                "please-sell ma'am of rice",
+                "I'd like to buy rice."
+              ],
+              [
+                "**Ano po ang** masarap dito?",
+                "what ma'am the tasty here",
+                "What's good here?"
+              ],
+              [
+                "**Para sa** dalawang tao **po**.",
+                "for two person ma'am",
+                "For two people."
+              ]
+            ]
+          },
+          "after": [
+            "The first pattern is enough for your whole life in the Philippines. If you only memorize one sentence from this unit, make it *Isang … po.*",
+            "To ask for the check: *Bill out po* or *Ang bill po*. To ask for a takeaway box: *Pa-take-out po*.",
+            "For a dish whose name you don't know, just point and say *Iyan po* — \"that one\". Nobody considers it rude at a karinderya."
+          ]
+        },
+        {
+          "title": "Flavors and the state of food",
+          "body": [
+            "All the flavor words use the *ma-* prefix you know from unit 3."
+          ],
+          "table": {
+            "head": [
+              "Tagalog",
+              "Say it",
+              "Meaning",
+              "Root"
+            ],
+            "rows": [
+              [
+                "masarap",
+                "mah-sah-RAHP",
+                "tasty",
+                "sarap"
+              ],
+              [
+                "matamis",
+                "mah-tah-MEES",
+                "sweet",
+                "tamis"
+              ],
+              [
+                "maalat",
+                "mah-AH-laht",
+                "salty",
+                "alat"
+              ],
+              [
+                "maasim",
+                "mah-AH-seem",
+                "sour",
+                "asim"
+              ],
+              [
+                "mapait",
+                "mah-pah-EET",
+                "bitter",
+                "pait"
+              ],
+              [
+                "maanghang",
+                "mah-ahng-HAHNG",
+                "spicy",
+                "anghang"
+              ],
+              [
+                "malansa",
+                "mah-lahn-SAH",
+                "fishy",
+                "lansa"
+              ],
+              [
+                "mainit",
+                "mah-ee-NEET",
+                "hot",
+                "init"
+              ],
+              [
+                "malamig",
+                "mah-lah-MEEG",
+                "cold",
+                "lamig"
+              ],
+              [
+                "sariwa",
+                "sah-ree-WAH'",
+                "fresh",
+                "—"
+              ],
+              [
+                "panis",
+                "pah-NEES",
+                "spoiled",
+                "—"
+              ],
+              [
+                "luto",
+                "LOO-toh'",
+                "cooked",
+                "—"
+              ]
+            ]
+          },
+          "after": [
+            "Look at *maalat* and *maasim* — close cousins of Malay/Indonesian *asin* and *asam* (salty, sour), with the letters shifted slightly.",
+            "The exclamation form drops *ma-*: *Ang sarap!*, *Ang anghang!*, *Ang tamis!* This is what you'll say most at the table.",
+            "To decline politely, use *hindi masyado*: *Hindi masyadong maanghang para sa akin* — \"not very spicy for me\" or \"too spicy for me\", depending on tone."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Dishes you should know",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "Name",
+            "What it is",
+            "Note for visitors"
+          ],
+          "rows": [
+            [
+              "**adobo**",
+              "meat cooked in vinegar, soy sauce, garlic and bay leaf",
+              "the national dish; tastes sour-salty, not sweet"
+            ],
+            [
+              "**sinigang**",
+              "sour soup with tamarind or starfruit",
+              "like a tangy tamarind stew"
+            ],
+            [
+              "**lechon**",
+              "whole roast pig",
+              "party dish; there's also *lechon manok* (chicken)"
+            ],
+            [
+              "**sisig**",
+              "chopped pig's head on a sizzling plate",
+              "savory, sour, spicy"
+            ],
+            [
+              "**pancit**",
+              "stir-fried noodles with vegetables and meat",
+              "a must at birthdays — a symbol of long life"
+            ],
+            [
+              "**lumpia**",
+              "spring rolls; fried or fresh",
+              "the same word as in Malay/Indonesian"
+            ],
+            [
+              "**halo-halo**",
+              "shaved-ice dessert with milk and purple yam",
+              "literally \"mix-mix\""
+            ],
+            [
+              "**taho**",
+              "sweet silken tofu with tapioca pearls",
+              "sold door to door in the morning"
+            ],
+            [
+              "**balut**",
+              "boiled duck egg with an embryo",
+              "don't refuse with a look of horror; just say *hindi po muna*"
+            ],
+            [
+              "**kare-kare**",
+              "peanut stew with oxtail",
+              "eaten with *bagoong* (shrimp paste)"
+            ]
+          ]
+        },
+        {
+          "type": "kotak",
+          "title": "If you don't eat pork",
+          "items": [
+            "Say so from the start: *Hindi po ako kumakain ng baboy.* — \"I don't eat pork.\" It's understood at once and respected, not least because the Philippines has a large Muslim population in the south.",
+            "Look for **manok** (chicken), **isda** (fish), **baka** (beef) and **gulay** (vegetables) on the dish list. Avoid **baboy** (pork), **lechon**, **sisig**, **chicharon** and **bagoong**, which often contain pork or shrimp.",
+            "Halal restaurants exist in many cities; look for a *halal* sign or ask *May halal po ba dito?*"
+          ]
+        }
+      ]
+    },
+    {
+      "title": "At the table",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "Tagalog",
+            "Meaning",
+            "When to use"
+          ],
+          "rows": [
+            [
+              "Kain tayo!",
+              "Let's eat!",
+              "inviting"
+            ],
+            [
+              "Kain po kayo.",
+              "Please, go ahead and eat.",
+              "offering to elders"
+            ],
+            [
+              "Salamat po, busog pa ako.",
+              "Thank you, I'm still full.",
+              "declining politely"
+            ],
+            [
+              "Ang sarap!",
+              "So delicious!",
+              "praising"
+            ],
+            [
+              "Pahingi po ng kutsara.",
+              "Could I have a spoon?",
+              ""
+            ],
+            [
+              "Pakiabot po ng asin.",
+              "Please pass the salt.",
+              ""
+            ],
+            [
+              "Puwede pong dagdagan?",
+              "Could I have more?",
+              ""
+            ],
+            [
+              "Tama na po, salamat.",
+              "That's enough, thank you.",
+              "stopping a refill"
+            ],
+            [
+              "Busog na busog ako.",
+              "I'm completely full.",
+              ""
+            ],
+            [
+              "Bill out po.",
+              "The check, please.",
+              "in a restaurant"
+            ],
+            [
+              "Kanya-kanyang bayad.",
+              "Everyone pays for themselves.",
+              "splitting the bill"
+            ],
+            [
+              "Libre kita.",
+              "My treat.",
+              ""
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "The main utensils in the Philippines are a **spoon and fork** — knives rarely appear on a home table, since dishes are cut small in the kitchen. Eating with your hands (*kamayan*) is also common and seen as special, especially at shared feasts spread on banana leaves (*boodle fight*)."
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "tl": "kumain",
+      "baca": "koo-MAH-een",
+      "en": "eat"
+    },
+    {
+      "tl": "pagkain",
+      "baca": "pahg-kah-EEN",
+      "en": "food"
+    },
+    {
+      "tl": "ulam",
+      "baca": "oo-LAHM",
+      "en": "main dish (eaten with rice)"
+    },
+    {
+      "tl": "kanin",
+      "baca": "KAH-neen",
+      "en": "cooked rice"
+    },
+    {
+      "tl": "bigas",
+      "baca": "bee-GAHS",
+      "en": "uncooked rice"
+    },
+    {
+      "tl": "baboy",
+      "baca": "BAH-boy",
+      "en": "pork, pig"
+    },
+    {
+      "tl": "manok",
+      "baca": "mah-NOHK",
+      "en": "chicken"
+    },
+    {
+      "tl": "baka",
+      "baca": "BAH-kah",
+      "en": "beef, cow"
+    },
+    {
+      "tl": "isda",
+      "baca": "ees-DAH'",
+      "en": "fish"
+    },
+    {
+      "tl": "hipon",
+      "baca": "HEE-pohn",
+      "en": "shrimp"
+    },
+    {
+      "tl": "gulay",
+      "baca": "GOO-lai",
+      "en": "vegetables"
+    },
+    {
+      "tl": "sabaw",
+      "baca": "sah-BOW",
+      "en": "broth, soup"
+    },
+    {
+      "tl": "asin",
+      "baca": "ah-SEEN",
+      "en": "salt"
+    },
+    {
+      "tl": "asukal",
+      "baca": "ah-SOO-kahl",
+      "en": "sugar"
+    },
+    {
+      "tl": "toyo",
+      "baca": "TOH-yoh",
+      "en": "soy sauce"
+    },
+    {
+      "tl": "suka",
+      "baca": "soo-KAH'",
+      "en": "vinegar"
+    },
+    {
+      "tl": "sili",
+      "baca": "SEE-lee",
+      "en": "chili"
+    },
+    {
+      "tl": "kutsara",
+      "baca": "koo-TSAH-rah",
+      "en": "spoon"
+    },
+    {
+      "tl": "tinidor",
+      "baca": "tee-nee-DOHR",
+      "en": "fork"
+    },
+    {
+      "tl": "plato",
+      "baca": "PLAH-toh",
+      "en": "plate"
+    },
+    {
+      "tl": "baso",
+      "baca": "BAH-soh",
+      "en": "glass"
+    },
+    {
+      "tl": "karinderya",
+      "baca": "kah-reen-DEHR-yah",
+      "en": "roadside eatery"
+    },
+    {
+      "tl": "restawran",
+      "baca": "rehs-tow-RAHN",
+      "en": "restaurant"
+    },
+    {
+      "tl": "libre",
+      "baca": "LEEB-reh",
+      "en": "free; (my) treat"
+    },
+    {
+      "tl": "dagdagan",
+      "baca": "dahg-DAH-gahn",
+      "en": "add to"
+    },
+    {
+      "tl": "masarap",
+      "baca": "mah-sah-RAHP",
+      "en": "tasty"
+    },
+    {
+      "tl": "matamis",
+      "baca": "mah-tah-MEES",
+      "en": "sweet"
+    },
+    {
+      "tl": "maanghang",
+      "baca": "mah-ahng-HAHNG",
+      "en": "spicy"
+    },
+    {
+      "tl": "busog",
+      "baca": "boo-SOHG",
+      "en": "full (after eating)"
+    },
+    {
+      "tl": "panis",
+      "baca": "pah-NEES",
+      "en": "spoiled, stale"
+    }
+  ],
+  "exercises": [
+    {
+      "prompt": "Translate into Tagalog.",
+      "items": [
+        "What's good here, ma'am?",
+        "One adobo, please.",
+        "Could I have a spoon, please?",
+        "Could I have more rice?",
+        "So delicious!",
+        "How much is it all together?"
+      ]
+    },
+    {
+      "prompt": "Fill in the blanks with the right flavor word: masarap, matamis, maalat, maasim, maanghang.",
+      "items": [
+        "Ang sinigang ay ____. (sour)",
+        "Ang halo-halo ay ____. (sweet)",
+        "Sobrang ____ ang sili. (spicy)",
+        "____ ang adobo, gusto ko! (tasty)",
+        "Masyadong ____ ang isda. (salty)"
+      ]
+    },
+    {
+      "prompt": "Choose the right sentence for each situation.",
+      "items": [
+        "You're offered food but you're already full. You say ____.",
+        "You want to praise your host's cooking. You say ____.",
+        "You don't eat pork. You say ____.",
+        "You want to pay at a restaurant. You say ____.",
+        "You invite a friend to eat. You say ____."
+      ]
+    },
+    {
+      "prompt": "Put the words in the right order.",
+      "items": [
+        "po / adobo / isang",
+        "po / kutsara / ng / pahingi",
+        "bang / dagdagan / puwede / po / ?",
+        "po / lahat / magkano / ?",
+        "po / kumakain / hindi / baboy / ako / ng"
+      ]
+    }
+  ],
+  "answers": [
+    "Ano po ang masarap dito? — Isang adobo po. — Pahingi po ng kutsara. — Puwede pong dagdagan ng kanin? — Ang sarap! — Magkano po lahat?",
+    "maasim — matamis — maanghang — Masarap — maalat",
+    "Salamat po, busog pa ako. — Ang sarap po! — Hindi po ako kumakain ng baboy. — Bill out po. — Kain tayo!",
+    "Isang adobo po. — Pahingi po ng kutsara. — Puwede po bang dagdagan? — Magkano po lahat? — Hindi po ako kumakain ng baboy."
+  ],
+  "wave": "Review **unit 15**: ask yourself ten things in front of a mirror — name, origin, where you live, reasons, ways, prices — then answer them all out loud."
+}

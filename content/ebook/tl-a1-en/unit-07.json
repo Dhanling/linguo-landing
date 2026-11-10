@@ -1,0 +1,660 @@
+{
+  "title": "How many, how much",
+  "title_target": "Ilan? Magkano?",
+  "goal": "Count with native Tagalog numbers, read prices and times with Spanish numbers, and know which to use when.",
+  "bekal": [
+    "count from 1 to 100 with the native Tagalog numbers",
+    "say prices with Spanish numbers — the way it's really done in the market",
+    "attach the linker to numbers: *isang libro*, *apat na bata*"
+  ],
+  "dialogs": [
+    {
+      "title": "Dialogue — Sa bakery",
+      "intro": "Morning at a bakery. Budi is buying pandesal, the small round rolls that are breakfast for millions of Filipinos.",
+      "lines": [
+        {
+          "speaker": "Tindera:",
+          "text": "Magandang umaga po! Ano po ang kailangan ninyo?",
+          "id": "Good morning, sir! What do you need?",
+          "literal": "beautiful-of morning sir! what sir si need your-all?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Magkano po ang pandesal?",
+          "id": "How much is the pandesal, ma'am?",
+          "literal": "how-much ma'am si pandesal?"
+        },
+        {
+          "speaker": "Tindera:",
+          "text": "Tatlong piso bawat isa po.",
+          "id": "Three pesos each, sir.",
+          "literal": "three peso each one sir."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Bigyan ninyo ako ng sampu.",
+          "id": "Give me ten.",
+          "literal": "give you-all me of ten."
+        },
+        {
+          "speaker": "Tindera:",
+          "text": "Sampung pandesal po. Trenta pesos lahat.",
+          "id": "Ten pandesal. Thirty pesos in all.",
+          "literal": "ten pandesal sir. thirty pesos all."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Heto po ang singkwenta.",
+          "id": "Here's fifty, ma'am.",
+          "literal": "here-it-is ma'am si fifty."
+        },
+        {
+          "speaker": "Tindera:",
+          "text": "Bente pesos po ang sukli ninyo. Salamat po!",
+          "id": "Your change is twenty pesos, sir. Thank you!",
+          "literal": "twenty pesos ma'am si change your-all. thanks ma'am!"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "May kape rin po ba kayo?",
+          "id": "Do you have coffee too, ma'am?",
+          "literal": "there-is coffee also ma'am [question] you-all?"
+        },
+        {
+          "speaker": "Tindera:",
+          "text": "Mayroon po. Dalawampung piso ang isang tasa.",
+          "id": "Yes, sir. Twenty pesos a cup.",
+          "literal": "there-is ma'am. twenty peso si one cup."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Isa po. Salamat!",
+          "id": "One, please. Thanks!",
+          "literal": "one ma'am. thanks!"
+        },
+        {
+          "speaker": "Tindera:",
+          "text": "Sige po. Balik po kayo, ha?",
+          "id": "Okay, sir. Come back again, okay?",
+          "literal": "all-right ma'am. return sir you-all, okay?"
+        }
+      ],
+      "notes": [
+        "**Two number systems live side by side.** The native Tagalog numbers (*isa, dalawa, tatlo*) are used to count things. The Spanish numbers (*uno, dos, tres*) are used for **prices, time and dates**. Neither replaces the other: the same person uses both in a single sentence, as in this dialogue.",
+        "**Magkano asks for price**, *ilan* asks for quantity. Don't mix them up: *Ilan ang pandesal?* asks how many rolls, *Magkano ang pandesal?* asks how many pesos.",
+        "**Numbers need a linker too.** *Sampung pandesal*, *tatlong piso*, *dalawampung piso* — all use *-ng* because the numbers end in a vowel. Those ending in a consonant use *na*: *apat na tao*, *anim na libro*, *siyam na araw*.",
+        "**Bawat isa** means \"each one\" or \"per piece\". Another form with the same meaning: *isahan*, and in conversation people often just say *tig-tatlo* (three each).",
+        "**Heto** means \"here it is\" — used when handing something over, like \"here you go\" in English. Its cousins: *hayan* (there it is, near you) and *hayun* (there it is, far away).",
+        "**Pesos or piso?** The Tagalog form is *piso*, the English/Spanish form is *pesos*. Both are used without strict rules, often in the same sentence. On written prices you'll see ₱ or \"Php\".",
+        "**Bigyan ninyo ako ng sampu** is polite and a little formal. At a stall, people more often just say the number: *Sampu po* — and that's enough.",
+        "**Ha? at the end of a sentence** softens a request or invitation, like \"okay?\" in English: *Balik po kayo, ha?* The tone is warm, not challenging.",
+        "**Pandesal** (from Spanish *pan de sal*, salt bread) is the national breakfast of the Philippines — and even though the name means \"salt bread\", it actually tastes slightly sweet."
+      ],
+      "grammars": [
+        {
+          "title": "Native Tagalog numbers",
+          "body": [
+            "These numbers are used to count objects, people, days and ages. A few will feel familiar if you know Malay or Indonesian: *lima* (five) and *anim* (six, cf. *enam*) are from the same Austronesian roots."
+          ],
+          "table": {
+            "head": [
+              "Number",
+              "Tagalog",
+              "Say it",
+              "Number",
+              "Tagalog",
+              "Say it"
+            ],
+            "rows": [
+              [
+                "1",
+                "isa",
+                "ee-SAH",
+                "11",
+                "labing-isa",
+                "lah-beeng ee-SAH"
+              ],
+              [
+                "2",
+                "dalawa",
+                "dah-lah-WAH",
+                "12",
+                "labindalawa",
+                "lah-been-dah-lah-WAH"
+              ],
+              [
+                "3",
+                "tatlo",
+                "taht-LOH",
+                "13",
+                "labintatlo",
+                "lah-been-taht-LOH"
+              ],
+              [
+                "4",
+                "apat",
+                "AH-paht",
+                "20",
+                "dalawampu",
+                "dah-lah-wahm-POO"
+              ],
+              [
+                "5",
+                "lima",
+                "lee-MAH",
+                "21",
+                "dalawampu't isa",
+                "dah-lah-wahm-POOT ee-SAH"
+              ],
+              [
+                "6",
+                "anim",
+                "AH-neem",
+                "30",
+                "tatlumpu",
+                "taht-loom-POO"
+              ],
+              [
+                "7",
+                "pito",
+                "pee-TOH",
+                "40",
+                "apatnapu",
+                "ah-paht-nah-POO"
+              ],
+              [
+                "8",
+                "walo",
+                "wah-LOH",
+                "50",
+                "limampu",
+                "lee-mahm-POO"
+              ],
+              [
+                "9",
+                "siyam",
+                "see-YAHM",
+                "100",
+                "isang daan",
+                "ee-SAHNG dah-AHN"
+              ],
+              [
+                "10",
+                "sampu",
+                "sahm-POO",
+                "1,000",
+                "isang libo",
+                "ee-SAHNG LEE-boh"
+              ]
+            ]
+          },
+          "after": [
+            "The teens pattern: **labing-** + the units number, with sound adjustments (*labindalawa*, *labintatlo*, *labing-apat*). The tens pattern: number + **-mpu** or **-napu** (*dalawampu*, *tatlumpu*, *apatnapu*).",
+            "The connector **'t** (short for *at*, \"and\") goes between tens and units: *dalawampu't lima* (25), *limampu't anim* (56).",
+            "For age, native numbers are used: *Dalawampu't lima anong taon ako* — or more commonly, *Beinte singko anyos ako*, with Spanish numbers. You'll hear both."
+          ]
+        },
+        {
+          "title": "Spanish numbers — for money and time",
+          "body": [
+            "For prices and time, Filipinos almost always use Spanish numbers. Using native numbers here isn't wrong, but it sounds like reading from a textbook."
+          ],
+          "table": {
+            "head": [
+              "Number",
+              "Spanish-Tagalog",
+              "Say it",
+              "Number",
+              "Spanish-Tagalog",
+              "Say it"
+            ],
+            "rows": [
+              [
+                "1",
+                "uno",
+                "OO-noh",
+                "20",
+                "bente",
+                "BEHN-teh"
+              ],
+              [
+                "2",
+                "dos",
+                "dohs",
+                "25",
+                "bente singko",
+                "BEHN-teh SEENG-koh"
+              ],
+              [
+                "3",
+                "tres",
+                "trehs",
+                "30",
+                "trenta",
+                "TREHN-tah"
+              ],
+              [
+                "4",
+                "kwatro",
+                "KWAHT-roh",
+                "40",
+                "kwarenta",
+                "kwah-REHN-tah"
+              ],
+              [
+                "5",
+                "singko",
+                "SEENG-koh",
+                "50",
+                "singkwenta",
+                "seeng-KWEHN-tah"
+              ],
+              [
+                "6",
+                "sais",
+                "sah-EES",
+                "60",
+                "sisenta",
+                "see-SEHN-tah"
+              ],
+              [
+                "7",
+                "siyete",
+                "SYEH-teh",
+                "70",
+                "setenta",
+                "seh-TEHN-tah"
+              ],
+              [
+                "8",
+                "otso",
+                "OHT-soh",
+                "80",
+                "otsenta",
+                "oht-SEHN-tah"
+              ],
+              [
+                "9",
+                "nuwebe",
+                "noo-WEH-beh",
+                "90",
+                "nobenta",
+                "noh-BEHN-tah"
+              ],
+              [
+                "10",
+                "diyes",
+                "dyehs",
+                "100",
+                "siyento",
+                "SYEHN-toh"
+              ]
+            ]
+          },
+          "after": [
+            "Prices are said straight followed by *pesos*: *bente pesos*, *singkwenta pesos*, *siyento singkwenta pesos* (150).",
+            "For big hundreds and thousands, people go back to a mixture: *isang libo* (1,000) is more usual than *mil*, but *dos mil* (2,000) is also often heard.",
+            "⚠️ Spanish numbers are **not** used to count objects. *Dos pandesal* sounds odd; the right form is *dalawang pandesal*."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "The linker with numbers",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Numbers and nouns are always joined with a linker, and its form follows the rule you know from unit 3: the last letter of the number decides."
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Number",
+            "Ends in",
+            "Form",
+            "Example",
+            "Meaning"
+          ],
+          "rows": [
+            [
+              "isa",
+              "vowel",
+              "isa**ng**",
+              "isang libro",
+              "one book"
+            ],
+            [
+              "dalawa",
+              "vowel",
+              "dalawa**ng**",
+              "dalawang bata",
+              "two children"
+            ],
+            [
+              "tatlo",
+              "vowel",
+              "tatlo**ng**",
+              "tatlong araw",
+              "three days"
+            ],
+            [
+              "apat",
+              "consonant",
+              "apat **na**",
+              "apat na tao",
+              "four people"
+            ],
+            [
+              "lima",
+              "vowel",
+              "lima**ng**",
+              "limang piso",
+              "five pesos"
+            ],
+            [
+              "anim",
+              "consonant",
+              "anim **na**",
+              "anim na buwan",
+              "six months"
+            ],
+            [
+              "pito",
+              "vowel",
+              "pito**ng**",
+              "pitong taon",
+              "seven years"
+            ],
+            [
+              "walo",
+              "vowel",
+              "walo**ng**",
+              "walong oras",
+              "eight hours"
+            ],
+            [
+              "siyam",
+              "consonant",
+              "siyam **na**",
+              "siyam na tao",
+              "nine people"
+            ],
+            [
+              "sampu",
+              "vowel",
+              "sampu**ng**",
+              "sampung piso",
+              "ten pesos"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "Notice that only three of the first ten numbers use *na*: **apat**, **anim** and **siyam** — all ending in a consonant. The rest use the attached *-ng*. Memorize those three exceptions and the rest runs itself."
+        }
+      ]
+    },
+    {
+      "title": "Asking how many",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "Question",
+            "Asks for",
+            "Sample answer"
+          ],
+          "rows": [
+            [
+              "**Magkano** ito?",
+              "price",
+              "Singkwenta pesos."
+            ],
+            [
+              "**Ilan** ang gusto mo?",
+              "quantity",
+              "Tatlo po."
+            ],
+            [
+              "**Ilang taon** ka na?",
+              "age",
+              "Bente singko na ako."
+            ],
+            [
+              "**Anong oras** na?",
+              "time",
+              "Alas-otso na."
+            ],
+            [
+              "**Ilang araw**?",
+              "how many days",
+              "Tatlong araw."
+            ],
+            [
+              "**Pang-ilan** ito?",
+              "order",
+              "Pangalawa."
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "*Ilan* stands alone; when followed by a noun it becomes *ilang*: *Ilang tao?* (how many people), *Ilang piso?* (how many pesos). The same linker again."
+        },
+        {
+          "type": "kotak",
+          "title": "Ordinals: pang-",
+          "items": [
+            "*una* (first), *pangalawa* (second), *pangatlo* (third), *pang-apat* (fourth), *panlima* (fifth).",
+            "*Una* stands alone because it comes from Spanish; the rest use the prefix **pang-** on the native numbers."
+          ]
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "tl": "isa",
+      "baca": "ee-SAH",
+      "en": "one"
+    },
+    {
+      "tl": "dalawa",
+      "baca": "dah-lah-WAH",
+      "en": "two"
+    },
+    {
+      "tl": "tatlo",
+      "baca": "taht-LOH",
+      "en": "three"
+    },
+    {
+      "tl": "apat",
+      "baca": "AH-paht",
+      "en": "four"
+    },
+    {
+      "tl": "lima",
+      "baca": "lee-MAH",
+      "en": "five"
+    },
+    {
+      "tl": "anim",
+      "baca": "AH-neem",
+      "en": "six"
+    },
+    {
+      "tl": "pito",
+      "baca": "pee-TOH",
+      "en": "seven"
+    },
+    {
+      "tl": "walo",
+      "baca": "wah-LOH",
+      "en": "eight"
+    },
+    {
+      "tl": "siyam",
+      "baca": "see-YAHM",
+      "en": "nine"
+    },
+    {
+      "tl": "sampu",
+      "baca": "sahm-POO",
+      "en": "ten"
+    },
+    {
+      "tl": "dalawampu",
+      "baca": "dah-lah-wahm-POO",
+      "en": "twenty"
+    },
+    {
+      "tl": "isang daan",
+      "baca": "ee-SAHNG dah-AHN",
+      "en": "one hundred"
+    },
+    {
+      "tl": "isang libo",
+      "baca": "ee-SAHNG LEE-boh",
+      "en": "one thousand"
+    },
+    {
+      "tl": "magkano",
+      "baca": "mahg-KAH-noh",
+      "en": "how much (price)"
+    },
+    {
+      "tl": "ilan",
+      "baca": "ee-LAHN",
+      "en": "how many"
+    },
+    {
+      "tl": "piso / pesos",
+      "baca": "PEE-soh / PEH-sohs",
+      "en": "peso (currency)"
+    },
+    {
+      "tl": "sukli",
+      "baca": "sook-LEE'",
+      "en": "change (money back)"
+    },
+    {
+      "tl": "bayad",
+      "baca": "BAH-yahd",
+      "en": "payment"
+    },
+    {
+      "tl": "lahat",
+      "baca": "lah-HAHT",
+      "en": "all, everything"
+    },
+    {
+      "tl": "bawat",
+      "baca": "BAH-waht",
+      "en": "each, every"
+    },
+    {
+      "tl": "heto",
+      "baca": "HEH-toh",
+      "en": "here it is (handing over)"
+    },
+    {
+      "tl": "pandesal",
+      "baca": "pahn-deh-SAHL",
+      "en": "small round bread roll"
+    },
+    {
+      "tl": "tinapay",
+      "baca": "tee-NAH-pai",
+      "en": "bread"
+    },
+    {
+      "tl": "kape",
+      "baca": "kah-PEH",
+      "en": "coffee"
+    },
+    {
+      "tl": "tasa",
+      "baca": "TAH-sah",
+      "en": "cup"
+    },
+    {
+      "tl": "kailangan",
+      "baca": "kai-LAH-ngahn",
+      "en": "need"
+    },
+    {
+      "tl": "taon",
+      "baca": "tah-OHN",
+      "en": "year"
+    },
+    {
+      "tl": "buwan",
+      "baca": "boo-WAHN",
+      "en": "month"
+    },
+    {
+      "tl": "araw",
+      "baca": "AH-row",
+      "en": "day; sun"
+    },
+    {
+      "tl": "oras",
+      "baca": "OH-rahs",
+      "en": "hour, time"
+    }
+  ],
+  "exercises": [
+    {
+      "prompt": "Write in words using native Tagalog numbers.",
+      "items": [
+        "3 days",
+        "4 people",
+        "6 months",
+        "9 years",
+        "10 pesos",
+        "25"
+      ]
+    },
+    {
+      "prompt": "Fill in the right linker: na or -ng.",
+      "items": [
+        "isa____ libro",
+        "apat ____ bata",
+        "lima____ piso",
+        "anim ____ buwan",
+        "sampu____ tao",
+        "siyam ____ araw"
+      ]
+    },
+    {
+      "prompt": "Convert these prices into the Spanish numbers normally used.",
+      "items": [
+        "₱20 → ____",
+        "₱50 → ____",
+        "₱15 → ____",
+        "₱100 → ____",
+        "₱30 → ____"
+      ]
+    },
+    {
+      "prompt": "Put the words in the right order.",
+      "items": [
+        "po / ang / magkano / pandesal / ?",
+        "piso / tatlong / isa / bawat",
+        "pesos / lahat / trenta",
+        "ba / ilan / gusto / ang / mo / ?",
+        "ang / bente / sukli / pesos"
+      ]
+    }
+  ],
+  "answers": [
+    "tatlong araw — apat na tao — anim na buwan — siyam na taon — sampung piso — dalawampu't lima",
+    "-ng — na — -ng — na — -ng — na",
+    "bente — singkwenta — kinse — siyento — trenta",
+    "Magkano po ang pandesal? — Tatlong piso bawat isa. — Trenta pesos lahat. — Ilan ba ang gusto mo? — Bente pesos ang sukli."
+  ],
+  "wave": "Review **unit 5**: name five places in your town with the *nasa* pattern — *Nasa kalye Sudirman ang bangko* — then ask about their location in return with *nasaan*."
+}

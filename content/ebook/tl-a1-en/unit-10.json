@@ -1,0 +1,634 @@
+{
+  "title": "Family",
+  "title_target": "Ang pamilya",
+  "goal": "Name family members, explain relationships with *ni* and *kay*, and understand why birth order matters so much in the Philippines.",
+  "bekal": [
+    "name members of the immediate and extended family",
+    "explain relationships: *kapatid ni Ana*, *anak nina Ben at Lisa*",
+    "use *ate*, *kuya* and respectful forms of address for elders"
+  ],
+  "dialogs": [
+    {
+      "title": "Dialogue — Ilan kayong magkakapatid?",
+      "intro": "Dinner at Ana's family home. Nanay Lita, her mother, is asking about Budi's family.",
+      "lines": [
+        {
+          "speaker": "Nanay Lita:",
+          "text": "Ilan kayong magkakapatid, iho?",
+          "id": "How many brothers and sisters do you have, son?",
+          "literal": "how-many you-all-who siblings, son?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Apat po kami. Ako ang panganay.",
+          "id": "Four of us, ma'am. I'm the eldest.",
+          "literal": "four ma'am we. I si eldest."
+        },
+        {
+          "speaker": "Nanay Lita:",
+          "text": "Ay, panganay ka rin pala! Katulad ni Ana.",
+          "id": "Oh, so you're an eldest too! Just like Ana.",
+          "literal": "oh, eldest you also it-turns-out! same of-si Ana."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "May dalawa akong kapatid na babae at isang lalaki.",
+          "id": "I have two sisters and one brother.",
+          "literal": "there-are two my sibling that female and one male."
+        },
+        {
+          "speaker": "Nanay Lita:",
+          "text": "Nasa Indonesia ba silang lahat?",
+          "id": "Are they all in Indonesia?",
+          "literal": "located-in Indonesia [question] they-who all?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Opo. Ang bunso po namin ay nag-aaral pa.",
+          "id": "Yes, ma'am. Our youngest is still in school.",
+          "literal": "yes-ma'am. si youngest ma'am our is studying still."
+        },
+        {
+          "speaker": "Nanay Lita:",
+          "text": "Ang tatay mo, ano ang trabaho niya?",
+          "id": "Your father, what's his job?",
+          "literal": "si father your, what si job his?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Guro po siya. Ang nanay ko naman ay may tindahan.",
+          "id": "He's a teacher, ma'am. And my mother has a shop.",
+          "literal": "teacher ma'am he. si mother my as-for is has shop."
+        },
+        {
+          "speaker": "Nanay Lita:",
+          "text": "Mabuti naman. Miss mo na sila, ano?",
+          "id": "That's good. You must miss them, don't you?",
+          "literal": "good indeed. miss your already them, what?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Opo, sobra. Pero tumatawag po ako tuwing Linggo.",
+          "id": "Yes, ma'am, a lot. But I call every Sunday.",
+          "literal": "yes-ma'am, excessively. but calling ma'am I every Sunday."
+        },
+        {
+          "speaker": "Nanay Lita:",
+          "text": "Mabait kang bata. Kain pa, marami pang pagkain!",
+          "id": "You're a good boy. Eat more, there's still lots of food!",
+          "literal": "kind you-who child. eat more, many still-that food!"
+        }
+      ],
+      "notes": [
+        "**Magkakapatid means \"siblings\"** — the prefix *magka-* (and its plural form *magkaka-*) makes words expressing a mutual relationship. Cousins: *magkaibigan* (friends with each other), *magkasama* (together), *mag-asawa* (married couple), *mag-ina* (mother and child).",
+        "**Panganay and bunso carry social weight.** The eldest child is expected to be responsible for younger siblings, often well into adulthood; the youngest is pampered and still called *bunso* at forty. Calling yourself *panganay* in the Philippines tells your listener a lot at once.",
+        "**Kapatid doesn't distinguish gender** — the word covers both brothers and sisters. When needed: *kapatid na babae* (sister), *kapatid na lalaki* (brother). What does matter is **age**, through the forms of address *ate* and *kuya*.",
+        "**Ate and kuya must be used with older siblings.** Calling an older sibling by name alone is considered disrespectful in many Filipino families. The same rule applies to older cousins, and even to older friends.",
+        "**Nanay and tatay** are the warmest and most common words for mother and father. There are also *inay/itay* (more intimate), *ina/ama* (standard and a bit formal), and *mama/papa* and *mommy/daddy* used by city families.",
+        "**Ang nanay ko naman ay …** uses *naman* as a contrast marker: \"as for my mother\". This is one of the most frequent jobs of *naman* — shifting the spotlight from one person to another without sounding argumentative.",
+        "**Miss mo na sila** is perfect Taglish once more: the English word *miss* used as a Tagalog root. The full form is *na-mi-miss mo sila*, and the pure Tagalog form is *nasasabik ka sa kanila* — which almost no one uses.",
+        "**Kain pa!** is a command that isn't really a command but hospitality. At a Filipino table, the host will tell you to eat more again and again; refusing once or twice is considered normal and doesn't stop the offers.",
+        "**Katulad ni Ana** = \"just like Ana\". Notice the marker *ni* because the comparison is with a person's name. For things: *katulad ng bahay namin*."
+      ],
+      "grammars": [
+        {
+          "title": "Explaining relationships with ni, kay and nina",
+          "body": [
+            "All family relationships are expressed with the markers you set up in unit 5. The only new thing here is the plural forms."
+          ],
+          "table": {
+            "head": [
+              "Pattern",
+              "Example",
+              "Meaning"
+            ],
+            "rows": [
+              [
+                "thing + **ni** + name",
+                "kapatid **ni** Ana",
+                "Ana's sibling"
+              ],
+              [
+                "thing + **nina** + two names",
+                "anak **nina** Ben at Lisa",
+                "Ben and Lisa's child"
+              ],
+              [
+                "thing + NG set",
+                "kapatid **ko**",
+                "my sibling"
+              ],
+              [
+                "**si** + thing + **ni**",
+                "**Si** Mia ang kapatid **ni** Ana.",
+                "Mia is Ana's sibling."
+              ],
+              [
+                "**kay** + name",
+                "Ibigay mo **kay** Nanay.",
+                "Give it to Mother."
+              ],
+              [
+                "**kina** + name",
+                "Pumunta ako **kina** Ana.",
+                "I went to Ana's (place, with her family)."
+              ]
+            ]
+          },
+          "after": [
+            "*Kina* has a distinct meaning worth noting: **\"to the home/place of so-and-so and their people\"**. *Pumunta ako kina Ana* doesn't mean \"I went to Ana\" but \"I went to Ana's place\".",
+            "To ask about a relationship: *Ano ang relasyon mo kay Ana?* or, more casually, *Ano siya sa iyo?* — \"what is she to you?\"",
+            "Mentioning someone else's parent still uses the respectful marker: *ang nanay **ni** Ana*, not *si nanay ni Ana*."
+          ]
+        },
+        {
+          "title": "Family members",
+          "body": [
+            "Notice how many you may already know: *anak*, *asawa*, *biyenan*, *bayaw* all have cousins in Malay."
+          ],
+          "tables": [
+            {
+              "head": [
+                "Tagalog",
+                "Say it",
+                "Meaning"
+              ],
+              "rows": [
+                [
+                  "magulang",
+                  "mah-GOO-lahng",
+                  "parents"
+                ],
+                [
+                  "nanay / ina",
+                  "NAH-nai / ee-NAH",
+                  "mother"
+                ],
+                [
+                  "tatay / ama",
+                  "TAH-tai / ah-MAH",
+                  "father"
+                ],
+                [
+                  "anak",
+                  "ah-NAHK",
+                  "child"
+                ],
+                [
+                  "kapatid",
+                  "kah-pah-TEED",
+                  "sibling"
+                ],
+                [
+                  "ate",
+                  "AH-teh",
+                  "older sister"
+                ],
+                [
+                  "kuya",
+                  "KOO-yah",
+                  "older brother"
+                ],
+                [
+                  "bunso",
+                  "boon-SOH'",
+                  "youngest child"
+                ],
+                [
+                  "panganay",
+                  "pah-NGAH-nai",
+                  "eldest child"
+                ],
+                [
+                  "asawa",
+                  "ah-SAH-wah",
+                  "husband or wife"
+                ]
+              ]
+            },
+            {
+              "head": [
+                "Tagalog",
+                "Say it",
+                "Meaning"
+              ],
+              "rows": [
+                [
+                  "lolo / lola",
+                  "LOH-loh / LOH-lah",
+                  "grandfather / grandmother"
+                ],
+                [
+                  "apo",
+                  "ah-POH",
+                  "grandchild"
+                ],
+                [
+                  "tito / tita",
+                  "TEE-toh / TEE-tah",
+                  "uncle / aunt"
+                ],
+                [
+                  "pinsan",
+                  "PEEN-sahn",
+                  "cousin"
+                ],
+                [
+                  "pamangkin",
+                  "pah-mahng-KEEN",
+                  "niece/nephew"
+                ],
+                [
+                  "biyenan",
+                  "bee-YEH-nahn",
+                  "parent-in-law"
+                ],
+                [
+                  "manugang",
+                  "mah-NOO-gahng",
+                  "son/daughter-in-law"
+                ],
+                [
+                  "bayaw / hipag",
+                  "BAH-yow / HEE-pahg",
+                  "brother-in-law / sister-in-law"
+                ],
+                [
+                  "ninong / ninang",
+                  "NEE-nohng / NEE-nahng",
+                  "godfather / godmother"
+                ],
+                [
+                  "kamag-anak",
+                  "kah-mahg-AH-nahk",
+                  "relatives"
+                ]
+              ]
+            }
+          ],
+          "after": [
+            "**Ninong and ninang** are a social institution of their own in the Philippines: godparents who have lifelong duties to give gifts, help with school and help the godchild find work. One child can have a dozen or more.",
+            "*Kamag-anak* (relatives) contains the word *anak* (child) inside — a structure that's easy to read once you know the root.",
+            "The forms *tito* and *tita* are also used with parents' friends who aren't relatives at all, just like \"uncle\" and \"auntie\" in many Asian and Philippine English settings."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Asking about family",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "Question",
+            "Meaning",
+            "Sample answer"
+          ],
+          "rows": [
+            [
+              "Ilan kayong magkakapatid?",
+              "How many siblings are you?",
+              "Apat kami."
+            ],
+            [
+              "May asawa ka na ba?",
+              "Are you married yet?",
+              "Wala pa. / Mayroon na."
+            ],
+            [
+              "May anak ka ba?",
+              "Do you have children?",
+              "Oo, dalawa."
+            ],
+            [
+              "Ano ang trabaho ng tatay mo?",
+              "What does your father do?",
+              "Guro siya."
+            ],
+            [
+              "Nasaan ang pamilya mo?",
+              "Where's your family?",
+              "Nasa Indonesia."
+            ],
+            [
+              "Panganay ka ba?",
+              "Are you the eldest?",
+              "Opo, ako ang panganay."
+            ],
+            [
+              "Ilang taon ang bunso ninyo?",
+              "How old is your youngest?",
+              "Labindalawa pa lang."
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "Questions about marital status, age and salary are far more ordinary in the Philippines than in most Western settings — and aren't considered impolite. Answering briefly with a smile is enough; you aren't required to explain."
+        },
+        {
+          "type": "kotak",
+          "title": "Pamilya isn't just the nuclear family",
+          "items": [
+            "A Filipino household commonly contains three generations plus a cousin studying at college. When someone says *nakatira ako sa bahay namin*, the number of people in it could be ten.",
+            "That's why *ate* and *kuya* are used far beyond biological siblings: cousins, neighbors, an older sibling's friend, even a regular driver. The rule isn't blood, it's age."
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Occupations",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "Tagalog",
+            "Say it",
+            "Meaning"
+          ],
+          "rows": [
+            [
+              "guro / titser",
+              "GOO-roh' / TEET-sehr",
+              "teacher"
+            ],
+            [
+              "doktor",
+              "dohk-TOHR",
+              "doctor"
+            ],
+            [
+              "nars",
+              "nahrs",
+              "nurse"
+            ],
+            [
+              "inhinyero",
+              "een-heen-YEH-roh",
+              "engineer"
+            ],
+            [
+              "abogado",
+              "ah-boh-GAH-doh",
+              "lawyer"
+            ],
+            [
+              "negosyante",
+              "neh-gohs-YAHN-teh",
+              "businessperson"
+            ],
+            [
+              "magsasaka",
+              "mahg-sah-SAH-kah",
+              "farmer"
+            ],
+            [
+              "mangingisda",
+              "mah-ngee-ngees-DAH'",
+              "fisherman"
+            ],
+            [
+              "drayber",
+              "DRAI-behr",
+              "driver"
+            ],
+            [
+              "katulong",
+              "kah-TOO-lohng",
+              "household helper"
+            ],
+            [
+              "pulis",
+              "poo-LEES",
+              "police officer"
+            ],
+            [
+              "sundalo",
+              "soon-DAH-loh",
+              "soldier"
+            ],
+            [
+              "estudyante",
+              "ehs-tood-YAHN-teh",
+              "student"
+            ],
+            [
+              "OFW",
+              "oh-ehf-DAHB-yoo",
+              "Overseas Filipino Worker"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "**OFW** — *Overseas Filipino Worker* — isn't just an abbreviation but one of the most meaningful words in the Philippines. Around ten percent of the population works abroad, and almost every family has one. Asking about it is a natural conversation opener, but remember it often carries a story of long separation."
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "tl": "pamilya",
+      "baca": "pah-MEEL-yah",
+      "en": "family"
+    },
+    {
+      "tl": "magulang",
+      "baca": "mah-GOO-lahng",
+      "en": "parents"
+    },
+    {
+      "tl": "nanay",
+      "baca": "NAH-nai",
+      "en": "mother"
+    },
+    {
+      "tl": "tatay",
+      "baca": "TAH-tai",
+      "en": "father"
+    },
+    {
+      "tl": "anak",
+      "baca": "ah-NAHK",
+      "en": "child"
+    },
+    {
+      "tl": "kapatid",
+      "baca": "kah-pah-TEED",
+      "en": "sibling"
+    },
+    {
+      "tl": "ate",
+      "baca": "AH-teh",
+      "en": "older sister"
+    },
+    {
+      "tl": "kuya",
+      "baca": "KOO-yah",
+      "en": "older brother"
+    },
+    {
+      "tl": "bunso",
+      "baca": "boon-SOH'",
+      "en": "youngest child"
+    },
+    {
+      "tl": "panganay",
+      "baca": "pah-NGAH-nai",
+      "en": "eldest child"
+    },
+    {
+      "tl": "asawa",
+      "baca": "ah-SAH-wah",
+      "en": "husband/wife"
+    },
+    {
+      "tl": "lolo / lola",
+      "baca": "LOH-loh / LOH-lah",
+      "en": "grandfather / grandmother"
+    },
+    {
+      "tl": "apo",
+      "baca": "ah-POH",
+      "en": "grandchild"
+    },
+    {
+      "tl": "pinsan",
+      "baca": "PEEN-sahn",
+      "en": "cousin"
+    },
+    {
+      "tl": "pamangkin",
+      "baca": "pah-mahng-KEEN",
+      "en": "niece/nephew"
+    },
+    {
+      "tl": "tito / tita",
+      "baca": "TEE-toh / TEE-tah",
+      "en": "uncle / aunt"
+    },
+    {
+      "tl": "kamag-anak",
+      "baca": "kah-mahg-AH-nahk",
+      "en": "relatives"
+    },
+    {
+      "tl": "babae",
+      "baca": "bah-BAH-eh",
+      "en": "woman"
+    },
+    {
+      "tl": "lalaki",
+      "baca": "lah-LAH-kee",
+      "en": "man"
+    },
+    {
+      "tl": "bata",
+      "baca": "BAH-tah'",
+      "en": "child (young)"
+    },
+    {
+      "tl": "matanda",
+      "baca": "mah-tahn-DAH'",
+      "en": "elderly person"
+    },
+    {
+      "tl": "trabaho",
+      "baca": "trah-BAH-hoh",
+      "en": "job"
+    },
+    {
+      "tl": "guro",
+      "baca": "GOO-roh'",
+      "en": "teacher"
+    },
+    {
+      "tl": "doktor",
+      "baca": "dohk-TOHR",
+      "en": "doctor"
+    },
+    {
+      "tl": "negosyante",
+      "baca": "neh-gohs-YAHN-teh",
+      "en": "businessperson"
+    },
+    {
+      "tl": "magsasaka",
+      "baca": "mahg-sah-SAH-kah",
+      "en": "farmer"
+    },
+    {
+      "tl": "katulad",
+      "baca": "kah-TOO-lahd",
+      "en": "same as, like"
+    },
+    {
+      "tl": "nakatira",
+      "baca": "nah-kah-tee-RAH",
+      "en": "live, reside"
+    },
+    {
+      "tl": "tumawag",
+      "baca": "too-MAH-wahg",
+      "en": "call (phone)"
+    },
+    {
+      "tl": "pagkain",
+      "baca": "pahg-kah-EEN",
+      "en": "food"
+    }
+  ],
+  "exercises": [
+    {
+      "prompt": "Translate into Tagalog.",
+      "items": [
+        "How many brothers and sisters are you?",
+        "There are four of us.",
+        "I'm the eldest.",
+        "I have two sisters.",
+        "My father is a teacher.",
+        "My family is in Indonesia."
+      ]
+    },
+    {
+      "prompt": "Fill in ni, nina, kay or kina.",
+      "items": [
+        "Kapatid ____ Ana si Mia.",
+        "Anak ____ Ben at Lisa sila.",
+        "Ibigay mo ____ Nanay.",
+        "Pumunta kami ____ Ana kahapon.",
+        "Ang bahay ____ Kuya Ben ay malaki.",
+        "Sumulat ako ____ Lolo."
+      ]
+    },
+    {
+      "prompt": "Name the relationship. Example: Your mother's child, not you. → kapatid",
+      "items": [
+        "Your mother's mother. → ____",
+        "Your sibling's child. → ____",
+        "Your uncle's child. → ____",
+        "Your child's spouse. → ____",
+        "The youngest child in the family. → ____"
+      ]
+    },
+    {
+      "prompt": "Put the words in the right order.",
+      "items": [
+        "magkakapatid / kayong / ilan / ?",
+        "ang / ako / panganay",
+        "kapatid / dalawang / may / akong / babae / na",
+        "ng / ang / trabaho / ano / tatay / mo / ?",
+        "Indonesia / nasa / pamilya / ang / ko"
+      ]
+    }
+  ],
+  "answers": [
+    "Ilan kayong magkakapatid? — Apat kami. — Ako ang panganay. — May dalawa akong kapatid na babae. — Guro ang tatay ko. — Nasa Indonesia ang pamilya ko.",
+    "ni — nina — kay — kina — ni — kay",
+    "lola — pamangkin — pinsan — manugang — bunso",
+    "Ilan kayong magkakapatid? — Ako ang panganay. — May dalawa akong kapatid na babae. — Ano ang trabaho ng tatay mo? — Nasa Indonesia ang pamilya ko."
+  ],
+  "wave": "Review **unit 8**: act out a market haggling scene from start to finish — greet the seller, ask the price, bargain, name the quantity, pay, say goodbye. All aloud."
+}

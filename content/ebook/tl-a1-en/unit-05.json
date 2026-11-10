@@ -1,0 +1,561 @@
+{
+  "title": "Three little words that run everything",
+  "title_target": "Ang, ng, sa",
+  "goal": "Master the three markers of Tagalog and their forms for people's names, and use *nasa* to say that something is located somewhere.",
+  "bekal": [
+    "choose *ang*, *ng* or *sa* for a reason, not by guessing",
+    "swap the three for *si*, *ni* and *kay* before people's names",
+    "state a location with *nasa* and ask about it with *nasaan*"
+  ],
+  "dialogs": [
+    {
+      "title": "Dialogue — Nasaan ang susi?",
+      "intro": "Early morning at the boarding house. The front-door key is missing, and everyone starts looking for it.",
+      "lines": [
+        {
+          "speaker": "Ana:",
+          "text": "Nasaan ang susi ng pinto?",
+          "id": "Where's the door key?",
+          "literal": "where si key of door?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Nasa mesa kanina. Ngayon, wala na.",
+          "id": "It was on the table a moment ago. Now it's gone.",
+          "literal": "located-at table earlier. now, none already."
+        },
+        {
+          "speaker": "Ana:",
+          "text": "Baka nasa bag ni Mia. Lagi niyang kinukuha iyon.",
+          "id": "Maybe it's in Mia's bag. She's always taking it.",
+          "literal": "maybe located-at bag of-Mia. always her taking that."
+        },
+        {
+          "speaker": "Mia:",
+          "text": "Wala sa akin! Ibinigay ko kay Kuya Ben kahapon.",
+          "id": "It's not with me! I gave it to Kuya Ben yesterday.",
+          "literal": "none with me! given my to-si Kuya Ben yesterday."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Sino ang may hawak ngayon?",
+          "id": "Who's holding it now?",
+          "literal": "who si has holding now?"
+        },
+        {
+          "speaker": "Mia:",
+          "text": "Si Ben. Nasa opisina siya.",
+          "id": "Ben is. He's at the office.",
+          "literal": "si Ben. located-at office he."
+        },
+        {
+          "speaker": "Ana:",
+          "text": "Sige, tawagan natin siya. Nasa akin ang numero niya.",
+          "id": "Okay, let's call him. I have his number.",
+          "literal": "all-right, call our him. located-at me si number his."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Sandali. Ano ito sa bulsa ko?",
+          "id": "Wait. What's this in my pocket?",
+          "literal": "moment. what this in pocket my?"
+        },
+        {
+          "speaker": "Mia:",
+          "text": "Ang susi! Nasa iyo pala!",
+          "id": "The key! It was with you all along!",
+          "literal": "si key! located-at you it-turns-out!"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Pasensya na. Nakalimutan ko.",
+          "id": "Sorry. I forgot.",
+          "literal": "patience now. forgotten my."
+        },
+        {
+          "speaker": "Ana:",
+          "text": "Ayos lang. Tara, late na tayo!",
+          "id": "It's fine. Come on, we're late!",
+          "literal": "okay just. let's-go, late now we!"
+        }
+      ],
+      "notes": [
+        "**Nasaan asks about location.** It's used only for things or people, not for events. \"Where is the class?\" in the sense of where it takes place uses *saan*: *Saan ang klase?* The difference is subtle: *nasaan* asks where something is, *saan* asks where something happens.",
+        "**Nasa is its answer partner.** *Nasa mesa* (on the table), *nasa bahay* (at home), *nasa opisina* (at the office). For a person's name, *nasa* becomes *nasa kay*: *Nasa kay Ben ang susi.* For pronouns, just use the *sa* set: *nasa akin*, *nasa iyo*.",
+        "**Susi ng pinto** — here *ng* links two things: the key belonging to the door. This is the easiest use of *ng* for an English speaker, since it's the same as \"door key\" or \"the door's key\".",
+        "**Wala has two related meanings**: \"there isn't\" (existence) and \"doesn't have\" (possession). *Wala na* = it's gone; *wala akong pera* = I have no money. Unit 6 covers it fully.",
+        "**Kanina means \"earlier\"** — past time within the same day. For yesterday, use *kahapon*. Tagalog separates the two sharply.",
+        "**Lagi** means \"always\" and stands in front of its verb. Handy for beginners: *Lagi akong late* — I'm always late.",
+        "**Sandali** = \"a moment\". The fuller forms are *sandali lang* or *saglit lang*, used just like \"just a moment\" in English.",
+        "**Ayos lang** is one of the most characteristically Filipino expressions: \"it's okay\", \"no problem\", \"all good\". If you memorize only one mood-calmer, pick this one.",
+        "**Late na tayo** shows Taglish in the wild: the English word *late* dropped into the middle of a perfectly good Tagalog sentence. This isn't broken language, it's how Manila really talks."
+      ],
+      "grammars": [
+        {
+          "title": "The three markers and their forms for people's names",
+          "body": [
+            "This is the framework of the whole language. Everything after this unit — verbs, questions, ownership — leans on this small table."
+          ],
+          "table": {
+            "head": [
+              "Job",
+              "Common nouns",
+              "Name, one person",
+              "Names, several people",
+              "Example"
+            ],
+            "rows": [
+              [
+                "Spotlight of the sentence",
+                "**ang**",
+                "**si**",
+                "**sina**",
+                "Maganda **ang** bahay. / Guro **si** Ana."
+              ],
+              [
+                "Owner & non-spotlight doer",
+                "**ng**",
+                "**ni**",
+                "**nina**",
+                "susi **ng** pinto / bahay **ni** Ana"
+              ],
+              [
+                "Direction, place, recipient",
+                "**sa**",
+                "**kay**",
+                "**kina**",
+                "pumunta **sa** Maynila / ibigay **kay** Ben"
+              ]
+            ]
+          },
+          "after": [
+            "**Ang** marks what's at the center of attention in the sentence — what's being \"told about\". English signals this by word order and intonation; Tagalog uses one dedicated word.",
+            "**Ng** (read *nang*) does two jobs at once: it marks the owner (*bahay ng guro*) and it marks the thing or doer that's **not** in the spotlight (*kumain ng mangga*). The two jobs feel far apart, but they'll merge once you reach unit 11.",
+            "**Sa** is an all-purpose preposition: in, at, to, from, for, toward. There's no one-to-one match in English, because this single Tagalog word covers half of our prepositions."
+          ]
+        },
+        {
+          "title": "Nasa — be located at",
+          "body": [
+            "*Nasa* isn't a verb, though it's often translated by one. It's a fusion of *na* + *sa* and means \"already at\"."
+          ],
+          "table": {
+            "head": [
+              "Sentence",
+              "Literal",
+              "Meaning"
+            ],
+            "rows": [
+              [
+                "**Nasa** bahay si Ana.",
+                "located-at house si Ana",
+                "Ana is at home."
+              ],
+              [
+                "**Nasa** mesa ang susi.",
+                "located-at table ang key",
+                "The key is on the table."
+              ],
+              [
+                "**Nasa akin** ang pera.",
+                "located-at me ang money",
+                "I have the money (it's with me)."
+              ],
+              [
+                "**Nasa kay** Ben ang susi.",
+                "located-at to-si Ben ang key",
+                "Ben has the key."
+              ],
+              [
+                "**Nasaan** ang banyo?",
+                "where ang bathroom",
+                "Where's the bathroom?"
+              ],
+              [
+                "**Wala** si Ana.",
+                "none si Ana",
+                "Ana isn't here."
+              ]
+            ]
+          },
+          "after": [
+            "The opposite of *nasa* is **wala**: *Nasa bahay siya* (he's at home) → *Wala siya sa bahay* (he's not at home). Notice that *nasa* splits back into *sa* when it's negated.",
+            "Three place words you know from unit 2 work without *nasa*: *nandito* (here), *nandiyan* (there), *nandoon* (over there). Short forms: *andito*, *andiyan*, *andoon*.",
+            "For a place that's a destination rather than a location, plain *sa* is used: *Pupunta ako sa palengke* — I'm going to the market."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "When to use ng, when to use sa",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "This is the question Tagalog learners ask most, worldwide. The answer fits in one sentence: **ng for owners and things; sa for places and the person aimed at.**"
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Sentence",
+            "Marker",
+            "Why"
+          ],
+          "rows": [
+            [
+              "bahay **ng** guro",
+              "ng",
+              "owner — the teacher's house"
+            ],
+            [
+              "pumunta **sa** bahay",
+              "sa",
+              "destination — go to the house"
+            ],
+            [
+              "kumain **ng** mangga",
+              "ng",
+              "the thing eaten, not in the spotlight"
+            ],
+            [
+              "ibigay **sa** bata",
+              "sa",
+              "recipient — given to the child"
+            ],
+            [
+              "taga-**Maynila**",
+              "none",
+              "origin uses *taga-*, not a marker"
+            ],
+            [
+              "galing **sa** Maynila",
+              "sa",
+              "origin of movement — coming from Manila"
+            ],
+            [
+              "para **sa** iyo",
+              "sa",
+              "intended for — for you"
+            ],
+            [
+              "takot **sa** aso",
+              "sa",
+              "target of a feeling — afraid of dogs"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "The last row shows a pattern to memorize as is: feelings with a target use *sa*. *Takot sa aso* (afraid of dogs), *galit sa kaniya* (angry at him/her), *sanay sa init* (used to the heat)."
+        },
+        {
+          "type": "kotak",
+          "title": "When you're really unsure",
+          "items": [
+            "Ask yourself: does this word answer **\"whose\"** or **\"what\"**? If so, *ng*.",
+            "Does it answer **\"where\"**, **\"to where\"** or **\"to whom\"**? If so, *sa*.",
+            "And is it the answer to **\"who/what is being talked about\"**? If so, *ang*."
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Places around town",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "Tagalog",
+            "Say it",
+            "English"
+          ],
+          "rows": [
+            [
+              "bahay",
+              "BAH-hai",
+              "house"
+            ],
+            [
+              "paaralan / eskwelahan",
+              "pah-ah-RAH-lahn",
+              "school"
+            ],
+            [
+              "opisina",
+              "oh-pee-SEE-nah",
+              "office"
+            ],
+            [
+              "palengke",
+              "pah-LEHNG-keh",
+              "market"
+            ],
+            [
+              "tindahan",
+              "teen-DAH-hahn",
+              "small shop"
+            ],
+            [
+              "simbahan",
+              "seem-BAH-hahn",
+              "church"
+            ],
+            [
+              "ospital",
+              "ohs-pee-TAHL",
+              "hospital"
+            ],
+            [
+              "botika",
+              "boh-TEE-kah",
+              "pharmacy"
+            ],
+            [
+              "bangko",
+              "bahng-KOH",
+              "bank"
+            ],
+            [
+              "parke",
+              "PAHR-keh",
+              "park"
+            ],
+            [
+              "kalye",
+              "KAHL-yeh",
+              "street"
+            ],
+            [
+              "mall",
+              "mohl",
+              "mall"
+            ],
+            [
+              "restawran",
+              "rehs-tow-RAHN",
+              "restaurant"
+            ],
+            [
+              "terminal",
+              "tehr-mee-NAHL",
+              "bus terminal"
+            ],
+            [
+              "bayan",
+              "BAH-yahn",
+              "town; hometown"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "*Bayan* has two meanings that are both alive: \"town\" and \"homeland\". The Philippine national anthem begins with *Bayang magiliw* — \"beloved land\". The same word exists in Malay as *bayan* in older usage — a small reminder of the shared Austronesian family."
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "tl": "nasa",
+      "baca": "NAH-sah",
+      "en": "be located at"
+    },
+    {
+      "tl": "nasaan",
+      "baca": "nah-sah-AHN",
+      "en": "where (is)"
+    },
+    {
+      "tl": "wala",
+      "baca": "wah-LAH'",
+      "en": "there isn't; doesn't have"
+    },
+    {
+      "tl": "nandito",
+      "baca": "nahn-DEE-toh",
+      "en": "be here"
+    },
+    {
+      "tl": "nandoon",
+      "baca": "nahn-doh-OHN",
+      "en": "be over there"
+    },
+    {
+      "tl": "sino",
+      "baca": "SEE-noh",
+      "en": "who"
+    },
+    {
+      "tl": "opisina",
+      "baca": "oh-pee-SEE-nah",
+      "en": "office"
+    },
+    {
+      "tl": "palengke",
+      "baca": "pah-LEHNG-keh",
+      "en": "market"
+    },
+    {
+      "tl": "paaralan",
+      "baca": "pah-ah-RAH-lahn",
+      "en": "school"
+    },
+    {
+      "tl": "simbahan",
+      "baca": "seem-BAH-hahn",
+      "en": "church"
+    },
+    {
+      "tl": "ospital",
+      "baca": "ohs-pee-TAHL",
+      "en": "hospital"
+    },
+    {
+      "tl": "bangko",
+      "baca": "bahng-KOH",
+      "en": "bank"
+    },
+    {
+      "tl": "kalye",
+      "baca": "KAHL-yeh",
+      "en": "street"
+    },
+    {
+      "tl": "bayan",
+      "baca": "BAH-yahn",
+      "en": "town; homeland"
+    },
+    {
+      "tl": "bulsa",
+      "baca": "BOOL-sah",
+      "en": "pocket"
+    },
+    {
+      "tl": "numero",
+      "baca": "NOO-meh-roh",
+      "en": "number"
+    },
+    {
+      "tl": "kanina",
+      "baca": "kah-NEE-nah",
+      "en": "earlier (today)"
+    },
+    {
+      "tl": "kahapon",
+      "baca": "kah-HAH-pohn",
+      "en": "yesterday"
+    },
+    {
+      "tl": "lagi",
+      "baca": "LAH-gee",
+      "en": "always"
+    },
+    {
+      "tl": "sandali",
+      "baca": "sahn-dah-LEE'",
+      "en": "a moment"
+    },
+    {
+      "tl": "ayos lang",
+      "baca": "AH-yohs lahng",
+      "en": "it's okay"
+    },
+    {
+      "tl": "pasensya na",
+      "baca": "pah-SEHN-shah nah",
+      "en": "sorry (lit. be patient)"
+    },
+    {
+      "tl": "galing sa",
+      "baca": "GAH-leeng sah",
+      "en": "from, coming from"
+    },
+    {
+      "tl": "para sa",
+      "baca": "PAH-rah sah",
+      "en": "for"
+    },
+    {
+      "tl": "takot",
+      "baca": "TAH-koht",
+      "en": "afraid"
+    },
+    {
+      "tl": "galit",
+      "baca": "GAH-leet",
+      "en": "angry"
+    },
+    {
+      "tl": "hawak",
+      "baca": "HAH-wahk",
+      "en": "hold; grip"
+    },
+    {
+      "tl": "nakalimutan",
+      "baca": "nah-kah-lee-MOO-tahn",
+      "en": "forgotten"
+    },
+    {
+      "tl": "aso",
+      "baca": "AH-soh",
+      "en": "dog"
+    },
+    {
+      "tl": "pusa",
+      "baca": "POO-sah'",
+      "en": "cat"
+    }
+  ],
+  "exercises": [
+    {
+      "prompt": "Translate into Tagalog.",
+      "items": [
+        "Where's the key?",
+        "The key is on the table.",
+        "Ana is at the office.",
+        "Ana's house is big.",
+        "I have the money.",
+        "Ben isn't at home."
+      ]
+    },
+    {
+      "prompt": "Fill in the right marker: ang, ng, sa, si, ni, kay.",
+      "items": [
+        "Maganda ____ bahay.",
+        "Guro ____ Ana.",
+        "Bahay ____ guro ito.",
+        "Pumunta siya ____ palengke.",
+        "Ibigay mo ____ Ben.",
+        "Susi ____ pinto iyan."
+      ]
+    },
+    {
+      "prompt": "Answer with nasa. Example: Nasaan ang susi? (mesa) → Nasa mesa ang susi.",
+      "items": [
+        "Nasaan si Ana? (opisina) → ____",
+        "Nasaan ang pera? (bag ko) → ____",
+        "Nasaan ang libro? (mesa) → ____",
+        "Nasaan si Ben? (paaralan) → ____",
+        "Nasaan ang cellphone? (bulsa mo) → ____"
+      ]
+    },
+    {
+      "prompt": "Put the words in the right order.",
+      "items": [
+        "ang / nasaan / susi / ?",
+        "si / nasa / Ana / opisina",
+        "ni / bahay / ang / Ana / maganda",
+        "sa / wala / bahay / siya",
+        "akin / ang / nasa / pera"
+      ]
+    }
+  ],
+  "answers": [
+    "Nasaan ang susi? — Nasa mesa ang susi. — Nasa opisina si Ana. — Malaki ang bahay ni Ana. — Nasa akin ang pera. — Wala si Ben sa bahay.",
+    "ang — si — ng — sa — kay — ng",
+    "Nasa opisina si Ana. — Nasa bag ko ang pera. — Nasa mesa ang libro. — Nasa paaralan si Ben. — Nasa bulsa mo ang cellphone.",
+    "Nasaan ang susi? — Nasa opisina si Ana. — Maganda ang bahay ni Ana. — Wala siya sa bahay. — Nasa akin ang pera."
+  ],
+  "wave": "Review **unit 3**: name five things around you, each with an adjective and its linker — *malinis na mesa*, *magandang bahay* — without looking at your notes."
+}

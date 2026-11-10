@@ -1,0 +1,574 @@
+{
+  "title": "Moving the spotlight",
+  "title_target": "Kinain, ibinigay, binigyan",
+  "goal": "Use verbs that focus on the object, the receiver and the thing moved — the part of Tagalog that feels most foreign to English speakers, and the part that matters most.",
+  "bekal": [
+    "seeing that *ang* marks a specific, known thing, not the doer",
+    "building *-in*, *i-* and *-an* verbs in three aspects",
+    "choosing the right focus for what you want to highlight"
+  ],
+  "dialogs": [
+    {
+      "title": "Dialogue — Sino ang kumain ng tinapay?",
+      "intro": "Morning. The bread Ana left on the table is gone, and the investigation begins.",
+      "lines": [
+        {
+          "speaker": "Ana:",
+          "text": "Sino ang kumain ng tinapay ko?",
+          "id": "Who ate my bread?",
+          "literal": "who the one-who-ate of bread my?"
+        },
+        {
+          "speaker": "Mia:",
+          "text": "Hindi ako! Kinain ni Kuya Budi, siguro.",
+          "id": "Not me! Budi ate it, probably.",
+          "literal": "not I! eaten by Big-Bro Budi, maybe."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Kinain ko nga, pasensya na. Akala ko sa akin iyon.",
+          "id": "Yes, I ate it, sorry. I thought it was mine.",
+          "literal": "eaten by-me indeed, patience now. thought my to me that."
+        },
+        {
+          "speaker": "Ana:",
+          "text": "Ay, ayos lang. Bibili na lang ako ulit mamaya.",
+          "id": "Oh, it's fine. I'll just buy more later.",
+          "literal": "oh, fine just. will-buy now just I again later."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Ako na ang bibili. Ibibigay ko sa iyo mamaya.",
+          "id": "Let me buy it. I'll give it to you later.",
+          "literal": "I now the one-who-will-buy. will-be-given by-me to you later."
+        },
+        {
+          "speaker": "Mia:",
+          "text": "Bilhan mo rin ako ng gatas, Kuya.",
+          "id": "Buy me some milk too, Bro.",
+          "literal": "buy-for by-you also me of milk, Big-Bro."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Sige. Ano pa ang kailangan ninyo?",
+          "id": "Okay. What else do you all need?",
+          "literal": "okay. what else the need your-all?"
+        },
+        {
+          "speaker": "Ana:",
+          "text": "Itlog. At pakisara mo ang pinto paglabas mo.",
+          "id": "Eggs. And please close the door on your way out.",
+          "literal": "egg. and please-close by-you the door upon-going-out your."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Sige po. Binigyan niyo na ba ako ng pera?",
+          "id": "Yes, ma'am. Have you given me any money?",
+          "literal": "okay ma'am. given-to by-you-all already Q me of money?"
+        },
+        {
+          "speaker": "Mia:",
+          "text": "Hindi pa. Heto, dalawang daan.",
+          "id": "Not yet. Here, two hundred.",
+          "literal": "not yet. here-it-is, two hundred."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Salamat. Babalik ako agad.",
+          "id": "Thanks. I'll be right back.",
+          "literal": "thanks. will-return I right-away."
+        }
+      ],
+      "notes": [
+        "**Kumain and kinain share the same root.** The difference isn't time but **who is in the spotlight**. *Kumain ang bata ng tinapay* spotlights the child; *Kinain ng bata ang tinapay* spotlights the bread. Both mean \"the child ate bread\" — and both are correct.",
+        "**One rule explains the whole system:** whatever is marked with *ang* is in the spotlight, and **the verb form must match that spotlight**. Spotlight on the doer: *mag-/-um-/ma-*. On the object: *-in*. On the receiver: *-an*. On the thing being moved: *i-*.",
+        "**When to use object focus?** A rule of thumb that rarely fails: **if the thing is specific — that one, the one we know — use object focus.** Ana's bread is specific bread, so *kinain*. If you eat just any bread: *kumain ako ng tinapay*.",
+        "**The doer moves to ng.** Look at *kinain **ko***, *ibibigay **ko***, *binigyan **ninyo***. Once the spotlight moves to the object, the doer is demoted and takes the *ng* set. This is why Tagalog sentences can sound \"passive\" to English ears — but it isn't passive, it's focus.",
+        "**Bilhan mo ako ng gatas** uses receiver focus: the spotlight is on **me**, the person being bought for. Compare *bumili ako ng gatas* (I bought milk) and *binili ko ang gatas* (I bought the milk).",
+        "**Ibibigay ko sa iyo** focuses on the thing being moved. *I-* verbs almost always deal with something changing hands or place: *ibigay* (give), *ilagay* (put), *itapon* (throw away), *isara* (close).",
+        "**Everyday commands are almost always object focus.** *Kainin mo!* (eat it), *Isara mo ang pinto* (close the door), *Basahin mo ito* (read this). If you want to sound natural when asking someone to do something, this is the form to master.",
+        "**Akala ko** = \"I thought\". Always used for a guess that turned out wrong, so it nearly always comes with an apology — like English \"I thought it was…\".",
+        "**Ako na ang bibili** uses the emphasis pattern *X ang Y*: \"let me be the one who buys\". The most common way to volunteer, and *na* here means \"never mind, let me\"."
+      ],
+      "grammars": [
+        {
+          "title": "Four focuses, one event",
+          "body": [
+            "One and the same event — someone buying bread for a friend — can be told from four angles. The meaning doesn't change; what changes is who stands in the spotlight."
+          ],
+          "table": {
+            "head": [
+              "Focus",
+              "Sentence",
+              "In the spotlight",
+              "Translation"
+            ],
+            "rows": [
+              [
+                "Doer",
+                "**Bumili** ako ng tinapay para kay Ana.",
+                "ako",
+                "I bought bread for Ana."
+              ],
+              [
+                "Object",
+                "**Binili** ko ang tinapay.",
+                "tinapay",
+                "The bread, I bought."
+              ],
+              [
+                "Receiver",
+                "**Binilhan** ko si Ana ng tinapay.",
+                "si Ana",
+                "Ana, I bought bread for."
+              ],
+              [
+                "Thing moved",
+                "**Ibinigay** ko ang tinapay kay Ana.",
+                "tinapay",
+                "The bread, I gave to Ana."
+              ]
+            ]
+          },
+          "after": [
+            "Notice that **the doer is always the same** — me. What changes is the marker: *ako* (the *ang* set) when the doer is in the spotlight, *ko* (the *ng* set) when it isn't.",
+            "English does something similar with active and passive: \"I bought the bread\" versus \"the bread was bought by me\". The difference: Tagalog has four angles, not two, and uses them far more often.",
+            "At A1, master the first two, and be able to **recognize** the last two when you hear them."
+          ]
+        },
+        {
+          "title": "Building object-focus verbs",
+          "body": [
+            "All three affixes use the infix **-in-** to show the action has started, and syllable repetition to show it isn't finished — the same pattern as units 11 and 12."
+          ],
+          "tables": [
+            {
+              "head": [
+                "Affix",
+                "Root",
+                "Not yet",
+                "Done",
+                "Ongoing",
+                "Coming"
+              ],
+              "rows": [
+                [
+                  "**-in**",
+                  "kain",
+                  "kainin",
+                  "k**in**ain",
+                  "k**in**a**ka**in",
+                  "**ka**kainin"
+                ],
+                [
+                  "**-in**",
+                  "basa",
+                  "basahin",
+                  "b**in**asa",
+                  "b**in**a**ba**sa",
+                  "**ba**basahin"
+                ],
+                [
+                  "**-in**",
+                  "bili",
+                  "bilhin",
+                  "b**in**ili",
+                  "b**in**i**bi**li",
+                  "**bi**bilhin"
+                ],
+                [
+                  "**i-**",
+                  "bigay",
+                  "ibigay",
+                  "**i**b**in**igay",
+                  "**i**b**ini**bigay",
+                  "**i**bi**bi**gay"
+                ],
+                [
+                  "**i-**",
+                  "sara",
+                  "isara",
+                  "**i**s**in**ara",
+                  "**i**s**ina**sara",
+                  "**i**sa**sa**ra"
+                ],
+                [
+                  "**-an**",
+                  "bigay",
+                  "bigyan",
+                  "b**in**igyan",
+                  "b**in**i**bi**gyan",
+                  "**bi**bigyan"
+                ],
+                [
+                  "**-an**",
+                  "tulong",
+                  "tulungan",
+                  "t**in**ulungan",
+                  "t**in**u**tu**lungan",
+                  "**tu**tulungan"
+                ]
+              ]
+            }
+          ],
+          "after": [
+            "Roots starting with a vowel take the prefix *in-* instead of the infix: *inom* → *ininom*, *abot* → *inabot*.",
+            "Some roots change shape slightly with *-in* or *-an*: *bili* → *bilhin*, *dala* → *dalhin*, *bigay* → *bigyan*, *kuha* → *kunin*. A small group to learn as they are.",
+            "⚠️ Don't panic at this table. In everyday conversation, what you'll need most is the **command** form (*kainin mo*, *isara mo*, *bigyan mo*) and the **done** form (*kinain*, *binili*, *ibinigay*). The rest will come on its own."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Everyday commands",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "This is where object focus shows up most in real life. Notice that the doer is *mo* or *ninyo*, not *ka*."
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Tagalog",
+            "Literal",
+            "Meaning"
+          ],
+          "rows": [
+            [
+              "Kainin mo.",
+              "be-eaten by-you",
+              "Eat it."
+            ],
+            [
+              "Inumin mo ang gamot.",
+              "be-drunk by-you the medicine",
+              "Take your medicine."
+            ],
+            [
+              "Basahin mo ito.",
+              "be-read by-you this",
+              "Read this."
+            ],
+            [
+              "Isara mo ang pinto.",
+              "be-closed by-you the door",
+              "Close the door."
+            ],
+            [
+              "Buksan mo ang bintana.",
+              "be-opened by-you the window",
+              "Open the window."
+            ],
+            [
+              "Ilagay mo sa mesa.",
+              "be-put by-you on table",
+              "Put it on the table."
+            ],
+            [
+              "Bigyan mo ako ng tubig.",
+              "be-given by-you me of water",
+              "Give me some water."
+            ],
+            [
+              "Tulungan mo ako.",
+              "be-helped by-you me",
+              "Help me."
+            ],
+            [
+              "Tawagan mo siya.",
+              "be-called by-you her",
+              "Call her."
+            ],
+            [
+              "Huwag mong kalimutan.",
+              "don't by-you be-forgotten",
+              "Don't forget."
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "Adding *po* and the prefix *paki-* turns all of these into polite requests: *Pakisara po ng pinto.* Use this form with older people or strangers — a bare command sounds rude in any language."
+        },
+        {
+          "type": "kotak",
+          "title": "Telling someone not to",
+          "items": [
+            "*Huwag* + pronoun + verb: *Huwag kang umalis* (don't go), *Huwag mong kainin* (don't eat it).",
+            "Notice the linker that appears: *huwag **kang***, *huwag **mong***. This is the *-ng* linker you've known since unit 3."
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Which focus when",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "This question haunts every learner of Tagalog. The table below is the most practical summary possible."
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "If you want to…",
+            "Use focus",
+            "Example"
+          ],
+          "rows": [
+            [
+              "say what you did",
+              "doer",
+              "Kumain ako ng tinapay."
+            ],
+            [
+              "answer \"what happened to X\"",
+              "object",
+              "Kinain ko ang tinapay."
+            ],
+            [
+              "talk about a specific thing (that one)",
+              "object",
+              "Binili ko ang libro."
+            ],
+            [
+              "talk about any thing (not specific)",
+              "doer",
+              "Bumili ako ng libro."
+            ],
+            [
+              "tell someone to do something",
+              "object",
+              "Kainin mo!"
+            ],
+            [
+              "say who the action is for",
+              "receiver",
+              "Binilhan ko si Ana."
+            ],
+            [
+              "name the thing being moved",
+              "i-",
+              "Ibinigay ko ang pera."
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "If it all feels like too much at once, hold on to this one sentence: **a specific thing calls for object focus.** English marks this with \"the\" versus \"a\"; in Tagalog, the marker is the verb form itself."
+        },
+        {
+          "type": "kotak",
+          "title": "Mistakes that are okay",
+          "items": [
+            "Using doer focus where object focus belongs **won't cause misunderstandings**. People will understand *Kumain ako ng tinapay mo* — a bit odd, but clear.",
+            "So don't wait until you've mastered it all before you start speaking. Focus improves fastest through listening, and slowest through memorizing tables."
+          ]
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "tl": "kainin",
+      "baca": "kah-ee-NEEN",
+      "en": "eat (object focus)"
+    },
+    {
+      "tl": "inumin",
+      "baca": "ee-noo-MEEN",
+      "en": "drink (object focus)"
+    },
+    {
+      "tl": "basahin",
+      "baca": "bah-sah-HEEN",
+      "en": "read (object focus)"
+    },
+    {
+      "tl": "bilhin",
+      "baca": "beel-HEEN",
+      "en": "buy (object focus)"
+    },
+    {
+      "tl": "kunin",
+      "baca": "KOO-neen",
+      "en": "take, get (object focus)"
+    },
+    {
+      "tl": "dalhin",
+      "baca": "dahl-HEEN",
+      "en": "bring (object focus)"
+    },
+    {
+      "tl": "ibigay",
+      "baca": "ee-bee-GAI",
+      "en": "give"
+    },
+    {
+      "tl": "ilagay",
+      "baca": "ee-lah-GAI",
+      "en": "put, place"
+    },
+    {
+      "tl": "isara",
+      "baca": "ee-sah-RAH",
+      "en": "close"
+    },
+    {
+      "tl": "buksan",
+      "baca": "book-SAHN",
+      "en": "open"
+    },
+    {
+      "tl": "itapon",
+      "baca": "ee-TAH-pohn",
+      "en": "throw away"
+    },
+    {
+      "tl": "bigyan",
+      "baca": "beeg-YAHN",
+      "en": "give to (receiver focus)"
+    },
+    {
+      "tl": "tulungan",
+      "baca": "too-loo-NGAHN",
+      "en": "help"
+    },
+    {
+      "tl": "tawagan",
+      "baca": "tah-WAH-gahn",
+      "en": "call (receiver focus)"
+    },
+    {
+      "tl": "bilhan",
+      "baca": "beel-HAHN",
+      "en": "buy for"
+    },
+    {
+      "tl": "kalimutan",
+      "baca": "kah-lee-MOO-tahn",
+      "en": "forget"
+    },
+    {
+      "tl": "hanapin",
+      "baca": "hah-NAH-peen",
+      "en": "look for"
+    },
+    {
+      "tl": "gawin",
+      "baca": "gah-WEEN",
+      "en": "do, make"
+    },
+    {
+      "tl": "sabihin",
+      "baca": "sah-BEE-heen",
+      "en": "say, tell"
+    },
+    {
+      "tl": "tinapay",
+      "baca": "tee-NAH-pai",
+      "en": "bread"
+    },
+    {
+      "tl": "gatas",
+      "baca": "GAH-tahs",
+      "en": "milk"
+    },
+    {
+      "tl": "gamot",
+      "baca": "gah-MOHT",
+      "en": "medicine"
+    },
+    {
+      "tl": "akala",
+      "baca": "ah-kah-LAH'",
+      "en": "(mistaken) thought"
+    },
+    {
+      "tl": "siguro",
+      "baca": "see-GOO-roh",
+      "en": "maybe, probably"
+    },
+    {
+      "tl": "agad",
+      "baca": "ah-GAHD",
+      "en": "right away"
+    },
+    {
+      "tl": "para kay",
+      "baca": "PAH-rah kai",
+      "en": "for (a person)"
+    },
+    {
+      "tl": "babalik",
+      "baca": "bah-bah-LEEK",
+      "en": "will come back"
+    },
+    {
+      "tl": "paglabas",
+      "baca": "pahg-lah-BAHS",
+      "en": "on going out"
+    },
+    {
+      "tl": "dalawang daan",
+      "baca": "dah-lah-WAHNG dah-AHN",
+      "en": "two hundred"
+    },
+    {
+      "tl": "ulit",
+      "baca": "oo-LEET",
+      "en": "again"
+    }
+  ],
+  "exercises": [
+    {
+      "prompt": "Change from doer focus to object focus. Example: Kumain ako ng tinapay. → Kinain ko ang tinapay.",
+      "items": [
+        "Bumili siya ng libro. → ____",
+        "Uminom ako ng gamot. → ____",
+        "Nagluto si Mia ng adobo. → ____",
+        "Nagbasa kami ng diyaryo. → ____",
+        "Kumuha siya ng tubig. → ____"
+      ]
+    },
+    {
+      "prompt": "Make commands with mo.",
+      "items": [
+        "kain → ____ ang kanin.",
+        "sara → ____ ang pinto.",
+        "basa → ____ ang libro.",
+        "buksan → ____ ang bintana.",
+        "tulong → ____ ako.",
+        "tawag → ____ si Ana."
+      ]
+    },
+    {
+      "prompt": "Translate into Tagalog.",
+      "items": [
+        "Who ate my bread?",
+        "I ate the bread.",
+        "I'll give it to you later.",
+        "Buy me some milk.",
+        "Please close the door."
+      ]
+    },
+    {
+      "prompt": "Put the words in the right order.",
+      "items": [
+        "ko / ang / kinain / tinapay",
+        "sa / ibibigay / iyo / ko / mamaya",
+        "ng / mo / ako / bilhan / gatas",
+        "mo / pinto / isara / ang",
+        "ako / ng / binigyan / pera / nila"
+      ]
+    }
+  ],
+  "answers": [
+    "Binili niya ang libro. — Ininom ko ang gamot. — Niluto ni Mia ang adobo. — Binasa namin ang diyaryo. — Kinuha niya ang tubig.",
+    "Kainin — Isara — Basahin — Buksan — Tulungan — Tawagan",
+    "Sino ang kumain ng tinapay ko? — Kinain ko ang tinapay. — Ibibigay ko sa iyo mamaya. — Bilhan mo ako ng gatas. — Pakisara mo ang pinto.",
+    "Kinain ko ang tinapay. — Ibibigay ko sa iyo mamaya. — Bilhan mo ako ng gatas. — Isara mo ang pinto. — Binigyan nila ako ng pera."
+  ],
+  "wave": "Review **unit 11**: take five *mag-* verbs, say all three aspects out loud, then make one sentence for each with a matching time word."
+}

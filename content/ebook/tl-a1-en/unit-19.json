@@ -1,0 +1,673 @@
+{
+  "title": "When you don't feel well",
+  "title_target": "Masakit ang ulo ko",
+  "goal": "Say which body part hurts, name common complaints, buy medicine at a pharmacy, and ask for help in an emergency.",
+  "bekal": [
+    "using the pattern *masakit ang* + body part + possessor",
+    "naming complaints with *may* and with forms like *nilalagnat*",
+    "asking for help clearly and quickly"
+  ],
+  "dialogs": [
+    {
+      "title": "Dialogue — Sa botika",
+      "intro": "Budi wakes up feeling unwell after getting caught in the rain yesterday. Mia takes him to the pharmacy at the end of the street.",
+      "lines": [
+        {
+          "speaker": "Mia:",
+          "text": "Kuya, ang pula ng mata mo. Ayos ka lang ba?",
+          "id": "Bro, your eyes are so red. Are you okay?",
+          "literal": "big-bro, how red of eye your. fine you just Q?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Hindi masyado. Masakit ang ulo ko at may sipon ako.",
+          "id": "Not really. My head hurts and I have a runny nose.",
+          "literal": "not very. painful the head my and there's cold I."
+        },
+        {
+          "speaker": "Mia:",
+          "text": "Nilalagnat ka ba?",
+          "id": "Do you have a fever?",
+          "literal": "being-feverish you Q?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Konti. Naulanan kasi ako kahapon.",
+          "id": "A little. I got rained on yesterday, you see.",
+          "literal": "little. rained-on because I yesterday."
+        },
+        {
+          "speaker": "Mia:",
+          "text": "Halika, pumunta tayo sa botika.",
+          "id": "Come on, let's go to the pharmacy.",
+          "literal": "come-here, go we to pharmacy."
+        },
+        {
+          "speaker": "Parmasyutiko:",
+          "text": "Magandang umaga po. Ano po ang kailangan ninyo?",
+          "id": "Good morning. What do you need?",
+          "literal": "beautiful morning ma'am. what ma'am the need your-all?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "May gamot po ba para sa sipon at sakit ng ulo?",
+          "id": "Do you have medicine for a cold and a headache?",
+          "literal": "there's medicine ma'am Q for to cold and ache of head?"
+        },
+        {
+          "speaker": "Parmasyutiko:",
+          "text": "Mayroon po. Ito po ay iniinom tuwing anim na oras.",
+          "id": "Yes. This one is taken every six hours.",
+          "literal": "there-is ma'am. this ma'am is being-drunk every six that hour."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Pagkatapos po ba kumain?",
+          "id": "After eating?",
+          "literal": "after ma'am Q eating?"
+        },
+        {
+          "speaker": "Parmasyutiko:",
+          "text": "Opo, huwag pong inumin nang walang laman ang tiyan.",
+          "id": "Yes, don't take it on an empty stomach.",
+          "literal": "yes-ma'am, don't ma'am drink in without content the stomach."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Salamat po. Magkano po lahat?",
+          "id": "Thank you. How much is it all together?",
+          "literal": "thanks ma'am. how-much ma'am all?"
+        },
+        {
+          "speaker": "Parmasyutiko:",
+          "text": "Otsenta pesos po. Kung hindi bumuti sa dalawang araw, magpatingin po kayo sa doktor.",
+          "id": "Eighty pesos. If it doesn't get better in two days, please see a doctor.",
+          "literal": "eighty pesos ma'am. if not improve in two days, have-yourself-seen ma'am you-all by doctor."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Opo, salamat po talaga.",
+          "id": "Yes, thank you so much.",
+          "literal": "yes-ma'am, thanks ma'am really."
+        }
+      ],
+      "notes": [
+        "**Masakit ang ulo ko** is literally \"painful the head my\" — the adjective first, the thing after, exactly the pattern from unit 3. English says \"my head hurts\"; Tagalog flips the order, and this pattern works for every complaint.",
+        "**Nilalagnat ka ba?** uses an interesting form: illness is treated as something that **befalls** a person, not a state they possess. Its cousins: *sinisipon ako* (I've caught a cold), *inuubo ako* (I'm coughing), *sinusuka ako* (I'm throwing up).",
+        "**May sipon ako** is the simpler form and just as correct. For beginners, the pattern *may* + complaint + pronoun covers nearly every need: *may lagnat ako*, *may ubo ako*, *may sugat ako*.",
+        "**Naulanan ako** means \"I got caught in the rain\" — the prefix *na-* with the suffix *-an* marks something that happens to the doer against their will. Its cousins: *nabasa* (got wet), *nasunog* (got burned), *nahulog* (fell).",
+        "**A botika is a pharmacy**, and in the Philippines pharmacies may sell many medicines without a prescription. Those that need one are called *reseta*, and the pharmacist will ask for it if needed.",
+        "**Magpatingin sa doktor** is literally \"have yourself looked at by a doctor\". The prefix *magpa-* means having someone else do something for you — a form you'll learn fully at A2, but this phrase is worth memorizing whole now.",
+        "**Kung means \"if\"** and always stands in front of the condition: *Kung masakit pa bukas, pumunta ka sa doktor.* For a hypothetical \"if\" that didn't happen, use *kung sana*.",
+        "**Walang laman ang tiyan** = \"the stomach has no content\", Tagalog for an empty stomach. Note *wala* again as the negator of existence, as in unit 6.",
+        "**Ayos ka lang ba?** is the most common question when someone looks unwell or has just fallen. The standard answers are *Ayos lang* or *Okay lang* — both are equally common."
+      ],
+      "grammars": [
+        {
+          "title": "Saying which body part hurts",
+          "body": [
+            "There are three patterns, all equally correct. Pick whichever comes most easily."
+          ],
+          "table": {
+            "head": [
+              "Pattern",
+              "Example",
+              "Translation"
+            ],
+            "rows": [
+              [
+                "**Masakit ang** + part + possessor",
+                "Masakit ang ulo ko.",
+                "My head hurts."
+              ],
+              [
+                "**Sumasakit ang** + part",
+                "Sumasakit ang tiyan ko.",
+                "My stomach is hurting."
+              ],
+              [
+                "**May sakit** + person",
+                "May sakit ako.",
+                "I'm sick."
+              ],
+              [
+                "**May** + complaint + person",
+                "May lagnat ako.",
+                "I have a fever."
+              ],
+              [
+                "**Ni-/-in-** + complaint",
+                "Nilalagnat ako.",
+                "I'm running a fever."
+              ],
+              [
+                "**Hindi maganda ang pakiramdam**",
+                "Hindi maganda ang pakiramdam ko.",
+                "I don't feel well."
+              ]
+            ]
+          },
+          "after": [
+            "*Pakiramdam* means \"bodily feeling\" and is used for complaints with no clear location. The question: *Kumusta ang pakiramdam mo?* — \"how are you feeling?\"",
+            "To ask where it hurts: *Saan masakit?* or *Ano ang masakit?* A doctor will ask exactly that.",
+            "To say you're getting better: *Mas mabuti na ako* or *Gumaling na ako.*"
+          ]
+        },
+        {
+          "title": "Body parts",
+          "body": [
+            "A few have Malay/Indonesian cousins (*mata* eye, *balat* skin, *buto* bone), but most you'll simply need to learn."
+          ],
+          "tables": [
+            {
+              "head": [
+                "Tagalog",
+                "Say it",
+                "Meaning"
+              ],
+              "rows": [
+                [
+                  "ulo",
+                  "OO-loh",
+                  "head"
+                ],
+                [
+                  "buhok",
+                  "boo-HOHK",
+                  "hair"
+                ],
+                [
+                  "mukha",
+                  "mook-HAH'",
+                  "face"
+                ],
+                [
+                  "mata",
+                  "mah-TAH",
+                  "eye"
+                ],
+                [
+                  "ilong",
+                  "ee-LOHNG",
+                  "nose"
+                ],
+                [
+                  "bibig",
+                  "bee-BEEG",
+                  "mouth"
+                ],
+                [
+                  "ngipin",
+                  "NGEE-peen",
+                  "tooth"
+                ],
+                [
+                  "dila",
+                  "DEE-lah'",
+                  "tongue"
+                ],
+                [
+                  "tainga",
+                  "TAH-ee-ngah",
+                  "ear"
+                ],
+                [
+                  "leeg",
+                  "LEH-ehg",
+                  "neck"
+                ]
+              ]
+            },
+            {
+              "head": [
+                "Tagalog",
+                "Say it",
+                "Meaning"
+              ],
+              "rows": [
+                [
+                  "balikat",
+                  "bah-lee-KAHT",
+                  "shoulder"
+                ],
+                [
+                  "braso",
+                  "BRAH-soh",
+                  "arm"
+                ],
+                [
+                  "kamay",
+                  "kah-MAI",
+                  "hand"
+                ],
+                [
+                  "daliri",
+                  "dah-lee-REE'",
+                  "finger"
+                ],
+                [
+                  "dibdib",
+                  "deeb-DEEB",
+                  "chest"
+                ],
+                [
+                  "likod",
+                  "lee-KOHD",
+                  "back"
+                ],
+                [
+                  "tiyan",
+                  "tee-YAHN",
+                  "stomach"
+                ],
+                [
+                  "binti",
+                  "been-TEE'",
+                  "lower leg"
+                ],
+                [
+                  "paa",
+                  "pah-AH",
+                  "foot"
+                ],
+                [
+                  "balat",
+                  "bah-LAHT",
+                  "skin"
+                ]
+              ]
+            }
+          ],
+          "after": [
+            "*Kamay* means hand, and it's where *kamayan* — eating with your hands, from unit 17 — comes from.",
+            "*Paa* means the foot from the ankle down; for the whole leg use *binti* (lower leg) or *hita* (thigh).",
+            "Body parts nearly always come with a possessor: *ulo **ko***, *kamay **mo***, *mata **niya***. Without it, the sentence sounds left hanging."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "The most common complaints",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "Tagalog",
+            "Say it",
+            "Meaning"
+          ],
+          "rows": [
+            [
+              "sakit ng ulo",
+              "sah-KEET nahng OO-loh",
+              "headache"
+            ],
+            [
+              "lagnat",
+              "LAHG-naht",
+              "fever"
+            ],
+            [
+              "sipon",
+              "SEE-pohn",
+              "runny nose, cold"
+            ],
+            [
+              "ubo",
+              "oo-BOH",
+              "cough"
+            ],
+            [
+              "sakit ng tiyan",
+              "sah-KEET nahng tee-YAHN",
+              "stomachache"
+            ],
+            [
+              "pagtatae",
+              "pahg-tah-tah-EH",
+              "diarrhea"
+            ],
+            [
+              "pagsusuka",
+              "pahg-soo-soo-KAH",
+              "vomiting"
+            ],
+            [
+              "hilo",
+              "HEE-loh",
+              "dizziness"
+            ],
+            [
+              "pagod",
+              "PAH-gohd",
+              "tiredness"
+            ],
+            [
+              "sugat",
+              "SOO-gaht",
+              "wound"
+            ],
+            [
+              "pasa",
+              "PAH-sah",
+              "bruise"
+            ],
+            [
+              "kagat ng lamok",
+              "kah-GAHT nahng lah-MOHK",
+              "mosquito bite"
+            ],
+            [
+              "allergy",
+              "AH-lehr-jee",
+              "allergy"
+            ],
+            [
+              "hika",
+              "HEE-kah'",
+              "asthma"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "**Dengue fever** is an illness whose name you should know, because it's a real risk in the Philippines. If a fever comes with red spots or severe joint pain, don't wait: *Kailangan ko pong magpatingin sa doktor ngayon.*"
+        },
+        {
+          "type": "kotak",
+          "title": "At a clinic or hospital",
+          "items": [
+            "*Gusto ko pong magpatingin sa doktor.* — I'd like to see a doctor.",
+            "*May appointment po ba kailangan?* — Do I need an appointment?",
+            "*Magkano po ang konsulta?* — How much is the consultation?",
+            "*May allergy po ako sa …* — I'm allergic to …",
+            "*Buntis po ako.* — I'm pregnant."
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Emergencies",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "Tagalog",
+            "Meaning",
+            "When"
+          ],
+          "rows": [
+            [
+              "Tulong po!",
+              "Help!",
+              "any emergency"
+            ],
+            [
+              "Saklolo!",
+              "Help!",
+              "more urgent, rarely used day to day"
+            ],
+            [
+              "Tumawag po kayo ng ambulansya!",
+              "Please call an ambulance!",
+              ""
+            ],
+            [
+              "May aksidente po!",
+              "There's been an accident!",
+              ""
+            ],
+            [
+              "May nasaktan po!",
+              "Someone's hurt!",
+              ""
+            ],
+            [
+              "Nasaan ang pinakamalapit na ospital?",
+              "Where's the nearest hospital?",
+              ""
+            ],
+            [
+              "Ninakawan po ako.",
+              "I've been robbed.",
+              "reporting to the police"
+            ],
+            [
+              "Nawala ang pasaporte ko.",
+              "My passport is lost.",
+              ""
+            ],
+            [
+              "Tawagan po ninyo ang embahada ng Indonesia.",
+              "Please call the Indonesian embassy.",
+              ""
+            ],
+            [
+              "Hindi po ako marunong mag-Tagalog nang mabuti.",
+              "I don't speak Tagalog well.",
+              "asking for patience"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "The Philippines' national emergency number is **911**, the same as in the United States. Operators speak English, so in a panic you may use English entirely — that's not a failure of language, it's safety."
+        },
+        {
+          "type": "kotak",
+          "title": "Sentences you hope you'll never need",
+          "items": [
+            "*Hindi ako makahinga.* — I can't breathe.",
+            "*Nahimatay siya.* — He/she fainted.",
+            "*May dugo.* — There's blood.",
+            "*Dalhin po ninyo ako sa ospital.* — Please take me to the hospital."
+          ]
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "tl": "masakit",
+      "baca": "mah-sah-KEET",
+      "en": "painful, hurting"
+    },
+    {
+      "tl": "sumakit",
+      "baca": "soo-mah-KEET",
+      "en": "start to hurt"
+    },
+    {
+      "tl": "sakit",
+      "baca": "sah-KEET",
+      "en": "pain; illness"
+    },
+    {
+      "tl": "lagnat",
+      "baca": "LAHG-naht",
+      "en": "fever"
+    },
+    {
+      "tl": "sipon",
+      "baca": "SEE-pohn",
+      "en": "runny nose, cold"
+    },
+    {
+      "tl": "ubo",
+      "baca": "oo-BOH",
+      "en": "cough"
+    },
+    {
+      "tl": "hilo",
+      "baca": "HEE-loh",
+      "en": "dizziness"
+    },
+    {
+      "tl": "sugat",
+      "baca": "SOO-gaht",
+      "en": "wound"
+    },
+    {
+      "tl": "gamot",
+      "baca": "gah-MOHT",
+      "en": "medicine"
+    },
+    {
+      "tl": "botika",
+      "baca": "boh-TEE-kah",
+      "en": "pharmacy"
+    },
+    {
+      "tl": "doktor",
+      "baca": "dohk-TOHR",
+      "en": "doctor"
+    },
+    {
+      "tl": "ospital",
+      "baca": "ohs-pee-TAHL",
+      "en": "hospital"
+    },
+    {
+      "tl": "ulo",
+      "baca": "OO-loh",
+      "en": "head"
+    },
+    {
+      "tl": "mata",
+      "baca": "mah-TAH",
+      "en": "eye"
+    },
+    {
+      "tl": "ilong",
+      "baca": "ee-LOHNG",
+      "en": "nose"
+    },
+    {
+      "tl": "bibig",
+      "baca": "bee-BEEG",
+      "en": "mouth"
+    },
+    {
+      "tl": "ngipin",
+      "baca": "NGEE-peen",
+      "en": "tooth"
+    },
+    {
+      "tl": "tainga",
+      "baca": "TAH-ee-ngah",
+      "en": "ear"
+    },
+    {
+      "tl": "tiyan",
+      "baca": "tee-YAHN",
+      "en": "stomach"
+    },
+    {
+      "tl": "likod",
+      "baca": "lee-KOHD",
+      "en": "back"
+    },
+    {
+      "tl": "kamay",
+      "baca": "kah-MAI",
+      "en": "hand"
+    },
+    {
+      "tl": "paa",
+      "baca": "pah-AH",
+      "en": "foot"
+    },
+    {
+      "tl": "balat",
+      "baca": "bah-LAHT",
+      "en": "skin"
+    },
+    {
+      "tl": "pakiramdam",
+      "baca": "pah-kee-rahm-DAHM",
+      "en": "bodily feeling"
+    },
+    {
+      "tl": "gumaling",
+      "baca": "goo-mah-LEENG",
+      "en": "get well"
+    },
+    {
+      "tl": "magpatingin",
+      "baca": "mahg-pah-tee-NGEEN",
+      "en": "see a doctor, get checked"
+    },
+    {
+      "tl": "kung",
+      "baca": "koong",
+      "en": "if"
+    },
+    {
+      "tl": "tulong",
+      "baca": "TOO-lohng",
+      "en": "help"
+    },
+    {
+      "tl": "aksidente",
+      "baca": "ahk-see-DEHN-teh",
+      "en": "accident"
+    },
+    {
+      "tl": "ambulansya",
+      "baca": "ahm-boo-LAHN-shah",
+      "en": "ambulance"
+    }
+  ],
+  "exercises": [
+    {
+      "prompt": "Translate into Tagalog.",
+      "items": [
+        "My head hurts.",
+        "I have a fever.",
+        "I have a cold and a cough.",
+        "Do you have medicine for a stomachache?",
+        "Where's the nearest hospital?",
+        "Help!"
+      ]
+    },
+    {
+      "prompt": "Fill in the blanks with the right body part.",
+      "items": [
+        "Masakit ang ____ ko, kailangan ko ng dentista. (tooth)",
+        "Masakit ang ____ ko, hindi ako makakain. (stomach)",
+        "Ang pula ng ____ mo. (eyes)",
+        "May sugat sa ____ ko. (hand)",
+        "Masakit ang ____ ko kakaupo buong araw. (back)"
+      ]
+    },
+    {
+      "prompt": "Choose the right sentence for each situation.",
+      "items": [
+        "You want to buy fever medicine at a pharmacy. You say ____.",
+        "You want to see a doctor. You say ____.",
+        "You're allergic to shrimp. You say ____.",
+        "Your friend looks pale. You ask ____.",
+        "Your passport is lost. You say ____."
+      ]
+    },
+    {
+      "prompt": "Put the words in the right order.",
+      "items": [
+        "ko / ang / masakit / ulo",
+        "ako / lagnat / may",
+        "sipon / po / ba / para / gamot / sa / may / ?",
+        "sa / doktor / po / magpatingin / kayo",
+        "po / ako / nawawala"
+      ]
+    }
+  ],
+  "answers": [
+    "Masakit ang ulo ko. — May lagnat ako. — May sipon at ubo ako. — May gamot po ba para sa sakit ng tiyan? — Nasaan ang pinakamalapit na ospital? — Tulong po!",
+    "ngipin — tiyan — mata — kamay — likod",
+    "May gamot po ba para sa lagnat? — Gusto ko pong magpatingin sa doktor. — May allergy po ako sa hipon. — Ayos ka lang ba? — Nawala po ang pasaporte ko.",
+    "Masakit ang ulo ko. — May lagnat ako. — May gamot po ba para sa sipon? — Magpatingin po kayo sa doktor. — Nawawala po ako."
+  ],
+  "wave": "Review **unit 17**: order a full meal from start to finish, through to paying, then add one complaint about its taste using *masyado*."
+}

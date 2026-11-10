@@ -1,0 +1,578 @@
+{
+  "title": "There is and there isn't",
+  "title_target": "May, mayroon, wala",
+  "goal": "Say that something exists or that you have it, negate it with *wala*, and recognize when *may* turns into *mayroon*.",
+  "bekal": [
+    "use *may* for both \"there is\" and \"have\"",
+    "negate existence and possession with *wala*, not with *hindi*",
+    "combine *may* with short pronouns: *may kotse ako*, *mayroon akong kotse*"
+  ],
+  "dialogs": [
+    {
+      "title": "Dialogue — Sa boarding house",
+      "intro": "Budi is looking around a new rented room. Aling Nena explains what's in it.",
+      "lines": [
+        {
+          "speaker": "Budi:",
+          "text": "May wifi po ba dito?",
+          "id": "Is there wifi here, ma'am?",
+          "literal": "there-is wifi ma'am [question] here?"
+        },
+        {
+          "speaker": "Aling Nena:",
+          "text": "Oo, may wifi. Mabilis pa.",
+          "id": "Yes, there's wifi. Fast, too.",
+          "literal": "yes, there-is wifi. fast also."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Mayroon po bang aircon sa kwarto?",
+          "id": "Is there an air conditioner in the room, ma'am?",
+          "literal": "there-is ma'am [question] aircon in room?"
+        },
+        {
+          "speaker": "Aling Nena:",
+          "text": "Wala. Bentilador lang. Pero malamig dito sa gabi.",
+          "id": "No. Just a fan. But it's cool here at night.",
+          "literal": "none. fan only. but cold here in night."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Ayos lang po. May kusina ba kayo?",
+          "id": "That's fine, ma'am. Do you have a kitchen?",
+          "literal": "okay just ma'am. there-is kitchen [question] you-all?"
+        },
+        {
+          "speaker": "Aling Nena:",
+          "text": "Mayroon, sa baba. Pero walang gas ngayon.",
+          "id": "Yes, downstairs. But there's no gas right now.",
+          "literal": "there-is, in below. but no-gas now."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "May tindahan po ba malapit dito?",
+          "id": "Is there a shop near here, ma'am?",
+          "literal": "there-is shop ma'am [question] near here?"
+        },
+        {
+          "speaker": "Aling Nena:",
+          "text": "Marami! May sari-sari store sa kanto.",
+          "id": "Plenty! There's a sari-sari store on the corner.",
+          "literal": "many! there-is sari-sari store on corner."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Salamat po. Wala na po akong tanong.",
+          "id": "Thank you, ma'am. I don't have any more questions.",
+          "literal": "thanks ma'am. none now ma'am I-that question."
+        },
+        {
+          "speaker": "Aling Nena:",
+          "text": "Sige. May susi ka na ba?",
+          "id": "Good. Do you have a key yet?",
+          "literal": "all-right. there-is key you now [question]?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Wala pa po. Bukas na lang po.",
+          "id": "Not yet, ma'am. Tomorrow will do.",
+          "literal": "none yet ma'am. tomorrow now just ma'am."
+        }
+      ],
+      "notes": [
+        "**May does two jobs at once**: \"there is\" (existence) and \"have\" (possession). *May wifi dito* = there's wifi here. *May kotse ako* = I have a car. Tagalog doesn't feel the need to separate them, and after a few days neither will you.",
+        "**Mayroon is may that can stand alone.** *May* always needs a noun right behind it; if a particle gets in the way (*ba*, *po*, *ka*), the form switches to *mayroon*: *May aircon ba?* is fine, but *Mayroon po bang aircon?* is neater. And as a one-word answer only *mayroon* works: *Mayroon.* (There is.)",
+        "**Wala negates both.** This is important: existence and possession are **not** negated with *hindi*. *Hindi may kotse ako* is totally wrong; the correct form is *wala akong kotse*.",
+        "**Walang gas** shows the linker you learned in unit 3: *wala* + *-ng* + noun. Likewise *walang tanong*, *walang pera*, *walang problema*.",
+        "**Wala pa means \"not yet\"**, while *wala na* means \"no longer\". These two small particles reverse the direction of time, and both are covered fully in unit 14.",
+        "**The sari-sari store** is a Philippine social institution, not just a shop. A tiny neighborhood store in front of someone's house, selling everything in sachet sizes — and usually also the spot where people stand chatting all afternoon. *Sari-sari* itself means \"assorted\", a word that also lives in Malay.",
+        "**Kanto** (from Spanish *canto*) means a street corner. *Sa kanto* is one of the most common directions you'll hear in the Philippines, because so much is located on corners.",
+        "**Aircon** from *air conditioner*, shortened in a typically Filipino way. The same clipping gives *ref* (fridge) and *CR* (bathroom, from *comfort room*) — English-based words that aren't used like that anywhere except the Philippines.",
+        "**Bukas na lang** = \"tomorrow will do\". The *na lang* combination marks a decision replacing an earlier plan, much like \"…just do it tomorrow instead\" in English."
+      ],
+      "grammars": [
+        {
+          "title": "May, mayroon, wala — which one to use",
+          "body": [
+            "The three state the same thing from different sides. What decides the form isn't the meaning, but **what stands after it**."
+          ],
+          "table": {
+            "head": [
+              "Form",
+              "Followed by",
+              "Example",
+              "Meaning"
+            ],
+            "rows": [
+              [
+                "**may**",
+                "a noun directly",
+                "**May** kotse ako.",
+                "I have a car."
+              ],
+              [
+                "**may**",
+                "a noun directly",
+                "**May** tao sa labas.",
+                "There's someone outside."
+              ],
+              [
+                "**mayroon**",
+                "a pronoun / particle",
+                "**Mayroon** akong kotse.",
+                "I have a car."
+              ],
+              [
+                "**mayroon**",
+                "standing alone",
+                "**Mayroon.**",
+                "There is."
+              ],
+              [
+                "**meron**",
+                "spoken form",
+                "**Meron** ba?",
+                "Is there any?"
+              ],
+              [
+                "**wala**",
+                "anything",
+                "**Wala** akong kotse.",
+                "I don't have a car."
+              ],
+              [
+                "**wala**",
+                "standing alone",
+                "**Wala.**",
+                "There isn't."
+              ]
+            ]
+          },
+          "after": [
+            "*Meron* is *mayroon* shortened in conversation. You'll hear it far more often than the long form; in writing, still use *mayroon*.",
+            "Notice the linker that appears as soon as there's a pronoun: *mayroon **akong** kotse*, *wala **akong** pera*. Pronoun and noun are joined with *-ng* — just the unit 3 rule.",
+            "⚠️ The question is *May … ba?* or *Mayroon bang …?* Don't combine them: *May bang kotse?* is wrong."
+          ]
+        },
+        {
+          "title": "Wala versus hindi",
+          "body": [
+            "Tagalog has three words for \"no/not\", and choosing the wrong one is the beginner mistake that shows fastest."
+          ],
+          "table": {
+            "head": [
+              "Word",
+              "Negates",
+              "Example",
+              "Meaning"
+            ],
+            "rows": [
+              [
+                "**hindi**",
+                "adjectives, nouns, verbs",
+                "**Hindi** ako guro.",
+                "I'm not a teacher."
+              ],
+              [
+                "**hindi**",
+                "verbs",
+                "**Hindi** siya kumain.",
+                "He/she didn't eat."
+              ],
+              [
+                "**wala**",
+                "existence",
+                "**Wala** si Ana.",
+                "Ana isn't here."
+              ],
+              [
+                "**wala**",
+                "possession",
+                "**Wala** akong pera.",
+                "I have no money."
+              ],
+              [
+                "**wala**",
+                "location",
+                "**Wala** siya sa bahay.",
+                "He/she isn't at home."
+              ],
+              [
+                "**huwag**",
+                "commands",
+                "**Huwag** kang umalis.",
+                "Don't leave."
+              ]
+            ]
+          },
+          "after": [
+            "The short rule: if the positive sentence uses *may* or *nasa*, the negative is **always** *wala*. Otherwise, *hindi*.",
+            "*Huwag* is only for forbidding, and is often shortened to *wag* in conversation and texting: *Wag ka nang umiyak.*",
+            "The \"no\" answer to a *may…?* question is also *wala*, not *hindi*: — *May pera ka ba?* — *Wala.*"
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "What you find in a Filipino home",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "Tagalog",
+            "Say it",
+            "English"
+          ],
+          "rows": [
+            [
+              "ref",
+              "rehf",
+              "fridge (from *refrigerator*)"
+            ],
+            [
+              "kalan",
+              "kah-LAHN",
+              "stove"
+            ],
+            [
+              "aircon",
+              "EHR-kohn",
+              "air conditioner"
+            ],
+            [
+              "bentilador",
+              "behn-tee-lah-DOHR",
+              "electric fan"
+            ],
+            [
+              "CR",
+              "see-AHR",
+              "bathroom (from *comfort room*)"
+            ],
+            [
+              "kuryente",
+              "koor-YEHN-teh",
+              "electricity"
+            ],
+            [
+              "tubig",
+              "TOO-beeg",
+              "water"
+            ],
+            [
+              "gripo",
+              "GREE-poh",
+              "faucet"
+            ],
+            [
+              "basurahan",
+              "bah-soo-RAH-hahn",
+              "trash can"
+            ],
+            [
+              "walis",
+              "wah-LEES",
+              "broom"
+            ],
+            [
+              "sabon",
+              "sah-BOHN",
+              "soap"
+            ],
+            [
+              "tuwalya",
+              "too-WAHL-yah",
+              "towel"
+            ],
+            [
+              "kutson",
+              "koot-SOHN",
+              "mattress"
+            ],
+            [
+              "kulambo",
+              "koo-LAHM-boh",
+              "mosquito net"
+            ],
+            [
+              "terrace",
+              "TEH-rahs",
+              "terrace"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "Notice *walis* (broom) and *sabon* (soap) — if you know Malay or Spanish you may recognize *sabon* (cf. Spanish *jabón*, Malay *sabun*) right away. *Tubig* (water) is a typically Philippine word, related to Malay *tubir* only distantly."
+        },
+        {
+          "type": "kotak",
+          "title": "English words you must use",
+          "items": [
+            "*CR* for the bathroom. Asking *Nasaan ang banyo?* will be understood, but *Nasaan po ang CR?* is what people actually say.",
+            "*Ref*, *aircon*, *cellphone*, *load* (phone credit), *sachet*, *tricycle*. For modern objects, Tagalog is truly English-speaking."
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Asking whether something is available",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "This question pattern you'll use every day — in shops, boarding houses, restaurants, terminals."
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Tagalog",
+            "Meaning",
+            "Yes answer",
+            "No answer"
+          ],
+          "rows": [
+            [
+              "May tubig ba?",
+              "Is there water?",
+              "Mayroon / Meron.",
+              "Wala."
+            ],
+            [
+              "Mayroon po bang wifi?",
+              "Is there wifi, sir/ma'am?",
+              "Opo, mayroon po.",
+              "Wala po."
+            ],
+            [
+              "May sukli ba kayo?",
+              "Do you have change?",
+              "Meron.",
+              "Wala, pasensya na."
+            ],
+            [
+              "May bakante pa ba?",
+              "Is there still a vacancy?",
+              "Mayroon pa.",
+              "Wala na."
+            ],
+            [
+              "May tanong ka ba?",
+              "Do you have a question?",
+              "Meron.",
+              "Wala."
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "*Wala na* and *mayroon pa* use two opposing particles: *na* means \"already\", *pa* means \"still\". The combinations are very productive — *wala na* (none left), *meron pa* (still some), *wala pa* (none yet), *meron na* (there already is)."
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "tl": "may",
+      "baca": "mai",
+      "en": "there is; have"
+    },
+    {
+      "tl": "mayroon / meron",
+      "baca": "mai-ROH-ohn / MEH-rohn",
+      "en": "there is (standalone form)"
+    },
+    {
+      "tl": "wala",
+      "baca": "wah-LAH'",
+      "en": "there isn't; don't have"
+    },
+    {
+      "tl": "huwag",
+      "baca": "hoo-WAHG",
+      "en": "don't (command)"
+    },
+    {
+      "tl": "tao",
+      "baca": "TAH-oh",
+      "en": "person"
+    },
+    {
+      "tl": "kotse",
+      "baca": "KOHT-seh",
+      "en": "car"
+    },
+    {
+      "tl": "wifi",
+      "baca": "WAI-fai",
+      "en": "wifi"
+    },
+    {
+      "tl": "aircon",
+      "baca": "EHR-kohn",
+      "en": "air conditioner"
+    },
+    {
+      "tl": "ref",
+      "baca": "rehf",
+      "en": "fridge"
+    },
+    {
+      "tl": "kalan",
+      "baca": "kah-LAHN",
+      "en": "stove"
+    },
+    {
+      "tl": "kuryente",
+      "baca": "koor-YEHN-teh",
+      "en": "electricity"
+    },
+    {
+      "tl": "gripo",
+      "baca": "GREE-poh",
+      "en": "faucet"
+    },
+    {
+      "tl": "sabon",
+      "baca": "sah-BOHN",
+      "en": "soap"
+    },
+    {
+      "tl": "tuwalya",
+      "baca": "too-WAHL-yah",
+      "en": "towel"
+    },
+    {
+      "tl": "walis",
+      "baca": "wah-LEES",
+      "en": "broom"
+    },
+    {
+      "tl": "basura",
+      "baca": "bah-SOO-rah",
+      "en": "trash"
+    },
+    {
+      "tl": "kanto",
+      "baca": "KAHN-toh",
+      "en": "street corner"
+    },
+    {
+      "tl": "sari-sari store",
+      "baca": "SAH-ree SAH-ree stohr",
+      "en": "neighborhood variety store"
+    },
+    {
+      "tl": "sukli",
+      "baca": "sook-LEE'",
+      "en": "change (money)"
+    },
+    {
+      "tl": "bakante",
+      "baca": "bah-KAHN-teh",
+      "en": "vacant, available"
+    },
+    {
+      "tl": "tanong",
+      "baca": "tah-NOHNG",
+      "en": "question"
+    },
+    {
+      "tl": "problema",
+      "baca": "prohb-LEH-mah",
+      "en": "problem"
+    },
+    {
+      "tl": "gabi",
+      "baca": "gah-BEE",
+      "en": "night"
+    },
+    {
+      "tl": "umaga",
+      "baca": "oo-MAH-gah",
+      "en": "morning"
+    },
+    {
+      "tl": "hapon",
+      "baca": "HAH-pohn",
+      "en": "afternoon"
+    },
+    {
+      "tl": "labas",
+      "baca": "lah-BAHS",
+      "en": "outside"
+    },
+    {
+      "tl": "loob",
+      "baca": "loh-OHB",
+      "en": "inside"
+    },
+    {
+      "tl": "baba",
+      "baca": "bah-BAH'",
+      "en": "below, downstairs"
+    },
+    {
+      "tl": "taas",
+      "baca": "tah-AHS",
+      "en": "above, upstairs"
+    },
+    {
+      "tl": "na lang",
+      "baca": "nah lahng",
+      "en": "…instead (replacing a plan)"
+    }
+  ],
+  "exercises": [
+    {
+      "prompt": "Translate into Tagalog.",
+      "items": [
+        "Is there wifi here?",
+        "There's no air conditioner.",
+        "I have a car.",
+        "I have no money.",
+        "There's someone outside.",
+        "Is there still a vacancy?"
+      ]
+    },
+    {
+      "prompt": "Fill in may, mayroon or wala.",
+      "items": [
+        "____ tubig sa ref.",
+        "____ ba kayong sukli?",
+        "____ akong pera ngayon.",
+        "____ tao sa labas.",
+        "____ pa bang bakante?",
+        "____ na ang tinapay. (none left)"
+      ]
+    },
+    {
+      "prompt": "Negate the following sentences. Example: May kotse ako. → Wala akong kotse.",
+      "items": [
+        "May pera siya. → ____",
+        "Nasa bahay si Ana. → ____",
+        "Guro ako. → ____",
+        "May wifi dito. → ____",
+        "Masarap ang pagkain. → ____"
+      ]
+    },
+    {
+      "prompt": "Put the words in the right order.",
+      "items": [
+        "ba / dito / may / wifi / ?",
+        "akong / wala / pera",
+        "sa / may / tao / labas",
+        "bang / mayroon / aircon / po / ?",
+        "na / wala / tinapay"
+      ]
+    }
+  ],
+  "answers": [
+    "May wifi ba dito? — Walang aircon. — May kotse ako. — Wala akong pera. — May tao sa labas. — May bakante pa ba?",
+    "May — Mayroon — Wala — May — Mayroon — Wala",
+    "Wala siyang pera. — Wala si Ana sa bahay. — Hindi ako guro. — Walang wifi dito. — Hindi masarap ang pagkain.",
+    "May wifi ba dito? — Wala akong pera. — May tao sa labas. — Mayroon po bang aircon? — Wala nang tinapay."
+  ],
+  "wave": "Review **unit 4**: name five items in your bag with their owners — *cellphone ko*, *susi ni Ana* — then turn each sentence into the stating form: *akin ang cellphone*."
+}

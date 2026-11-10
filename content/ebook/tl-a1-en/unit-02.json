@@ -1,0 +1,565 @@
+{
+  "title": "What's this?",
+  "title_target": "Ano ito?",
+  "goal": "Point to things around you, name them, ask yes/no questions with *ba*, and meet the marker *ang* — the most important word in the whole language.",
+  "bekal": [
+    "tell *ito*, *iyan* and *iyon* apart by distance from the speaker",
+    "make yes/no questions by slipping in *ba*",
+    "use *ang* and *mga* to mark the thing being talked about"
+  ],
+  "dialogs": [
+    {
+      "title": "Dialogue — Sa loob ng bahay",
+      "intro": "Budi has just walked into his rented room. Aling Nena, the landlady, shows him what's in the room one thing at a time.",
+      "lines": [
+        {
+          "speaker": "Aling Nena:",
+          "text": "Ito ang kwarto mo. Maliit, pero malinis.",
+          "id": "This is your room. Small, but clean.",
+          "literal": "this si room your. small, but clean."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Maganda po! Ano po ito?",
+          "id": "Lovely, ma'am! What's this?",
+          "literal": "beautiful ma'am! what ma'am this?"
+        },
+        {
+          "speaker": "Aling Nena:",
+          "text": "Iyan ay bentilador. Mainit dito sa Maynila.",
+          "id": "That's a fan. It's hot here in Manila.",
+          "literal": "that is fan. hot here in Manila."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "At iyon po? Aparador ba iyon?",
+          "id": "And that one, ma'am? Is that a wardrobe?",
+          "literal": "and that ma'am? wardrobe [question] that?"
+        },
+        {
+          "speaker": "Aling Nena:",
+          "text": "Oo, aparador iyon. Nasa loob ang mga unan.",
+          "id": "Yes, that's a wardrobe. The pillows are inside.",
+          "literal": "yes, wardrobe that. located inside si plural pillow."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Salamat po. Ano ang tawag dito sa Tagalog?",
+          "id": "Thank you, ma'am. What do you call this in Tagalog?",
+          "literal": "thanks ma'am. what si call to-this in Tagalog?"
+        },
+        {
+          "speaker": "Aling Nena:",
+          "text": "Kulambo. Para sa lamok.",
+          "id": "Kulambo. It's for the mosquitoes.",
+          "literal": "mosquito-net. for to mosquito."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Ay, marami po bang lamok dito?",
+          "id": "Oh, are there a lot of mosquitoes here, ma'am?",
+          "literal": "oh, many ma'am [question] mosquito here?"
+        },
+        {
+          "speaker": "Aling Nena:",
+          "text": "Hindi naman. Pero mag-ingat ka pa rin.",
+          "id": "Not really. But still be careful.",
+          "literal": "not indeed. but take-care you still also."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Sige po. Malinis po ang kwarto. Salamat!",
+          "id": "Okay, ma'am. The room is clean. Thank you!",
+          "literal": "all-right ma'am. clean ma'am si room. thanks!"
+        },
+        {
+          "speaker": "Aling Nena:",
+          "text": "Walang anuman, iho. Magpahinga ka na.",
+          "id": "You're welcome, son. Go get some rest.",
+          "literal": "nothing anything, son. rest you now."
+        }
+      ],
+      "notes": [
+        "**Three distances, not two.** English splits the world into \"this\" and \"that\". Tagalog splits it into three: *ito* (near me), *iyan* (near you), *iyon* (far from us both). Spanish and Japanese do the same, and English once did too — think of old \"yon\" in *yonder*.",
+        "**Ang marks the thing in the spotlight.** In *Ito ang kwarto mo*, the word *ang* attaches to *kwarto* and says: this is what we're talking about. Think of *ang* as a stage spotlight. All of Tagalog grammar revolves around this light, and from unit 10 on you'll see why.",
+        "**Mga makes things plural, and is pronounced mah-NGAH.** *Ang unan* = the pillow; *ang mga unan* = the pillows. The noun itself doesn't change — you simply add *mga* before it, like adding \"the\" plus an extra word.",
+        "**Ba turns a statement into a question.** *Aparador iyon* (that's a wardrobe) → *Aparador ba iyon?* (is that a wardrobe?). No reversing the order (no \"is that…\"), no question word. Just slip *ba* in after the first word, and your voice can stay flat.",
+        "**Iyan ay bentilador** uses *ay*, a formal linker that flips the sentence into English-style order (subject first). Aling Nena uses it because she's explaining carefully. In fast conversation people say *Bentilador iyan* — and that's the one to imitate.",
+        "**Adjectives come first.** *Maliit ang kwarto*, not *ang kwarto maliit*. It's the same pattern as *Guro ako* in unit 1: the description in front, what it describes behind. You'll repeat this pattern hundreds of times.",
+        "**Hindi naman** is a gentle way to say \"not really\" or \"not particularly\". *Naman* softens almost anything it touches — refusing, correcting, comparing. Without *naman*, a bare *hindi* sounds firm and a bit cold.",
+        "**Iho** (from Spanish *hijo*, son) is used by older people to a young man; for a girl it's *iha*. The word is warm, not condescending — like \"dear\" or \"son\" from an older neighbor.",
+        "**Aling** before a woman's name (and *Mang* for a man) is a respectful address for an older person in the neighborhood: *Aling Nena*, *Mang Kanor*. The nearest English feel is \"Mrs.\" and \"Mr.\" said in a friendly village way."
+      ],
+      "grammars": [
+        {
+          "title": "Ito, iyan, iyon — three distances",
+          "body": [
+            "Tagalog demonstratives come in three sets of forms, and this unit sets up the first one — the *ang* set, used when the pointer word is the spotlight of the sentence."
+          ],
+          "table": {
+            "head": [
+              "Form",
+              "Say it",
+              "Distance",
+              "Example"
+            ],
+            "rows": [
+              [
+                "**ito**",
+                "ee-TOH",
+                "near the speaker",
+                "Ano ito? — What is this?"
+              ],
+              [
+                "**iyan**",
+                "ee-YAHN",
+                "near the listener",
+                "Ano iyan? — What is that? (the one you're holding)"
+              ],
+              [
+                "**iyon**",
+                "ee-YOHN",
+                "far from both",
+                "Ano iyon? — What is that? (the one over there)"
+              ],
+              [
+                "**dito**",
+                "DEE-toh",
+                "here",
+                "Mainit dito. — It's hot here."
+              ],
+              [
+                "**diyan**",
+                "d-YAHN",
+                "there (near you)",
+                "Ilagay mo diyan. — Put it there."
+              ],
+              [
+                "**doon**",
+                "doh-OHN",
+                "over there",
+                "Doon ang palengke. — The market is over there."
+              ]
+            ]
+          },
+          "after": [
+            "In fast speech, *iyan* and *iyon* are often shortened to *yan* and *yun* (written *'yan*, *'yun*). You'll hear these short forms more often than the long ones.",
+            "*Ito* is also used to introduce people: *Ito si Ana* — \"this is Ana\". Notice the marker changes to *si* because what's pointed at is a person's name.",
+            "The second set (*nito*, *niyan*, *niyon*) and how to use it comes in unit 5, after all three markers are in place."
+          ]
+        },
+        {
+          "title": "Ang and mga — the spotlight and the plural marker",
+          "body": [
+            "*Ang* is the most frequent word in Tagalog and also the hardest to translate: it isn't \"that\", it isn't \"the\" exactly. Its job is to mark **which thing is the spotlight of the sentence**."
+          ],
+          "table": {
+            "head": [
+              "Sentence",
+              "Literal",
+              "Meaning"
+            ],
+            "rows": [
+              [
+                "Maganda **ang** bahay.",
+                "beautiful ang house",
+                "The house is nice."
+              ],
+              [
+                "Malinis **ang mga** kwarto.",
+                "clean ang plural room",
+                "The rooms are clean."
+              ],
+              [
+                "Guro **si** Ana.",
+                "teacher si Ana",
+                "Ana is a teacher."
+              ],
+              [
+                "Mabait **sina** Ana at Budi.",
+                "kind sina Ana and Budi",
+                "Ana and Budi are kind."
+              ],
+              [
+                "Nasaan **ang** susi?",
+                "where ang key",
+                "Where's the key?"
+              ]
+            ]
+          },
+          "after": [
+            "**For people's names, *ang* becomes *si*** (one person) or *sina* (several people). It's mandatory and can't be skipped: *Guro Ana* sounds as wrong to a Filipino ear as \"going Jakarta\" without \"to\" does to ours.",
+            "**Mga always stands after its marker**, never alone at the start of a sentence: *ang mga bata*, *ng mga bata*, *sa mga bata*.",
+            "Nouns with no marker at all also appear often — *Guro ako*, *Bentilador iyan*. In this pattern the noun is acting as a description, not as the spotlight. The spotlight is *ako* and *iyan*."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Things around you",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Most Tagalog household nouns come from Spanish, so if you know any Spanish many of them will feel familiar right away."
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Tagalog",
+            "Say it",
+            "English"
+          ],
+          "rows": [
+            [
+              "mesa",
+              "MEH-sah",
+              "table"
+            ],
+            [
+              "silya",
+              "SEEL-yah",
+              "chair"
+            ],
+            [
+              "kama",
+              "KAH-mah",
+              "bed"
+            ],
+            [
+              "unan",
+              "OO-nahn",
+              "pillow"
+            ],
+            [
+              "kumot",
+              "KOO-moht",
+              "blanket"
+            ],
+            [
+              "aparador",
+              "ah-pah-rah-DOHR",
+              "wardrobe"
+            ],
+            [
+              "bintana",
+              "been-TAH-nah",
+              "window"
+            ],
+            [
+              "pinto",
+              "peen-TOH'",
+              "door"
+            ],
+            [
+              "ilaw",
+              "EE-low",
+              "light"
+            ],
+            [
+              "bentilador",
+              "behn-tee-lah-DOHR",
+              "electric fan"
+            ],
+            [
+              "banyo",
+              "BAHN-yoh",
+              "bathroom"
+            ],
+            [
+              "kusina",
+              "koo-SEE-nah",
+              "kitchen"
+            ],
+            [
+              "kwarto",
+              "KWAHR-toh",
+              "room"
+            ],
+            [
+              "susi",
+              "soo-SEE'",
+              "key"
+            ],
+            [
+              "salamin",
+              "sah-lah-MEEN",
+              "glass; mirror"
+            ]
+          ]
+        },
+        {
+          "type": "kotak",
+          "title": "Words you may already know",
+          "items": [
+            "*Bintana* from *ventana*, *baso* from *vaso*, *kutsara* from *cuchara*: the **v becomes b** and **c becomes k** patterns from the pronunciation page are at work here.",
+            "*Kusina* (kitchen) is a cousin of English \"cuisine\" and Spanish *cocina*. *Silya* comes from Spanish *silla* — the same word, respelled the way Tagalog speakers say it."
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Asking with ba",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Yes/no questions in Tagalog are made with one small word slipped into the sentence, not by reversing the word order as English does."
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Statement",
+            "Question",
+            "Meaning"
+          ],
+          "rows": [
+            [
+              "Guro siya.",
+              "Guro **ba** siya?",
+              "Is she a teacher?"
+            ],
+            [
+              "Malinis ang kwarto.",
+              "Malinis **ba** ang kwarto?",
+              "Is the room clean?"
+            ],
+            [
+              "Taga-Cebu ka.",
+              "Taga-Cebu **ka ba**?",
+              "Are you from Cebu?"
+            ],
+            [
+              "Marami ang lamok.",
+              "Marami **ba** ang lamok?",
+              "Are there a lot of mosquitoes?"
+            ],
+            [
+              "Ito ang bahay mo.",
+              "Ito **ba** ang bahay mo?",
+              "Is this your house?"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "Notice the third row: if the sentence contains *ka*, *ko* or *mo*, those short words **come before** *ba*. The order among particles has its own rules, covered in full in unit 14. For now just memorize the forms *ka ba*, *mo ba*, *ko ba*."
+        },
+        {
+          "type": "p",
+          "text": "Answering is short: *Oo* or *Hindi*, with *po* if you're being polite. To be clear, repeat the key word: *Oo, guro siya.* — *Hindi, hindi siya guro.* Notice that *hindi* appears twice: once as the answer, once as the negation of the sentence."
+        },
+        {
+          "type": "kotak",
+          "title": "Ba is not a politeness marker",
+          "items": [
+            "A question without *ba* is still correct if your voice rises: *Guro siya?* But in writing and in clear conversation, *ba* is far more usual.",
+            "Don't confuse it with English \"ba\" sounds or baby talk. This is a real function word and is required in almost every yes/no question."
+          ]
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "tl": "ito",
+      "baca": "ee-TOH",
+      "en": "this"
+    },
+    {
+      "tl": "iyan",
+      "baca": "ee-YAHN",
+      "en": "that (near the listener)"
+    },
+    {
+      "tl": "iyon",
+      "baca": "ee-YOHN",
+      "en": "that (far)"
+    },
+    {
+      "tl": "dito",
+      "baca": "DEE-toh",
+      "en": "here"
+    },
+    {
+      "tl": "doon",
+      "baca": "doh-OHN",
+      "en": "over there"
+    },
+    {
+      "tl": "ang",
+      "baca": "ahng",
+      "en": "spotlight marker"
+    },
+    {
+      "tl": "mga",
+      "baca": "mah-NGAH",
+      "en": "plural marker"
+    },
+    {
+      "tl": "ba",
+      "baca": "bah",
+      "en": "question marker"
+    },
+    {
+      "tl": "bahay",
+      "baca": "BAH-hai",
+      "en": "house"
+    },
+    {
+      "tl": "kwarto",
+      "baca": "KWAHR-toh",
+      "en": "room"
+    },
+    {
+      "tl": "mesa",
+      "baca": "MEH-sah",
+      "en": "table"
+    },
+    {
+      "tl": "silya",
+      "baca": "SEEL-yah",
+      "en": "chair"
+    },
+    {
+      "tl": "kama",
+      "baca": "KAH-mah",
+      "en": "bed"
+    },
+    {
+      "tl": "unan",
+      "baca": "OO-nahn",
+      "en": "pillow"
+    },
+    {
+      "tl": "aparador",
+      "baca": "ah-pah-rah-DOHR",
+      "en": "wardrobe"
+    },
+    {
+      "tl": "bentilador",
+      "baca": "behn-tee-lah-DOHR",
+      "en": "electric fan"
+    },
+    {
+      "tl": "pinto",
+      "baca": "peen-TOH'",
+      "en": "door"
+    },
+    {
+      "tl": "bintana",
+      "baca": "been-TAH-nah",
+      "en": "window"
+    },
+    {
+      "tl": "susi",
+      "baca": "soo-SEE'",
+      "en": "key"
+    },
+    {
+      "tl": "banyo",
+      "baca": "BAHN-yoh",
+      "en": "bathroom"
+    },
+    {
+      "tl": "kusina",
+      "baca": "koo-SEE-nah",
+      "en": "kitchen"
+    },
+    {
+      "tl": "maliit",
+      "baca": "mah-lee-EET",
+      "en": "small"
+    },
+    {
+      "tl": "malaki",
+      "baca": "mah-lah-KEE",
+      "en": "big"
+    },
+    {
+      "tl": "malinis",
+      "baca": "mah-lee-NEES",
+      "en": "clean"
+    },
+    {
+      "tl": "madumi",
+      "baca": "mah-doo-MEE",
+      "en": "dirty"
+    },
+    {
+      "tl": "mainit",
+      "baca": "mah-ee-NEET",
+      "en": "hot"
+    },
+    {
+      "tl": "malamig",
+      "baca": "mah-lah-MEEG",
+      "en": "cold"
+    },
+    {
+      "tl": "marami",
+      "baca": "mah-RAH-mee",
+      "en": "many, a lot"
+    },
+    {
+      "tl": "lamok",
+      "baca": "lah-MOHK",
+      "en": "mosquito"
+    },
+    {
+      "tl": "pero",
+      "baca": "PEH-roh",
+      "en": "but"
+    }
+  ],
+  "exercises": [
+    {
+      "prompt": "Translate into Tagalog.",
+      "items": [
+        "What's this?",
+        "That's a fan.",
+        "Is that a wardrobe?",
+        "The room is clean.",
+        "The house is big.",
+        "There are a lot of mosquitoes."
+      ]
+    },
+    {
+      "prompt": "Fill in the right pointer word: ito, iyan, iyon, dito, doon.",
+      "items": [
+        "Ano ____? (an object in your own hand)",
+        "Ano ____? (an object the listener is holding)",
+        "Ano ____? (an object across the street)",
+        "Mainit ____. (in the place where you're standing)",
+        "Ang palengke ay ____. (far off)",
+        "____ si Ana. (introducing the person next to you)"
+      ]
+    },
+    {
+      "prompt": "Turn into a question with ba.",
+      "items": [
+        "Guro siya. → ____",
+        "Malinis ang banyo. → ____",
+        "Taga-Maynila ka. → ____",
+        "Malaki ang bahay. → ____",
+        "Ito ang susi. → ____"
+      ]
+    },
+    {
+      "prompt": "Put the words in the right order.",
+      "items": [
+        "ang / maliit / kwarto",
+        "iyan / ba / aparador / ?",
+        "mga / ang / malinis / silya",
+        "ito / ang / mo / bahay / ba / ?",
+        "dito / lamok / marami / ba / ?"
+      ]
+    }
+  ],
+  "answers": [
+    "Ano ito? — Bentilador iyan. — Aparador ba iyon? — Malinis ang kwarto. — Malaki ang bahay. — Marami ang lamok.",
+    "ito — iyan — iyon — dito — doon — Ito",
+    "Guro ba siya? — Malinis ba ang banyo? — Taga-Maynila ka ba? — Malaki ba ang bahay? — Ito ba ang susi?",
+    "Maliit ang kwarto. — Aparador ba iyan? — Malinis ang mga silya. — Ito ba ang bahay mo? — Marami ba ang lamok dito?"
+  ]
+}

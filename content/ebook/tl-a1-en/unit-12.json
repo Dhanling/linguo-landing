@@ -1,0 +1,652 @@
+{
+  "title": "Verbs that slip into the middle",
+  "title_target": "Kumain, uminom, natulog",
+  "goal": "Use *-um-* and *ma-* verbs, see why the infix goes inside the word, and know how they differ from *mag-*.",
+  "bekal": [
+    "inserting *-um-* after the root's first consonant",
+    "building *-um-* and *ma-* aspects without mixing them up with *mag-*",
+    "choosing *mag-* or *-um-* for roots that take both"
+  ],
+  "dialogs": [
+    {
+      "title": "Dialogue — Kumain ka na ba?",
+      "intro": "Almost noon. Ana checks on Budi, who has just woken up after staying up late.",
+      "lines": [
+        {
+          "speaker": "Ana:",
+          "text": "Kumain ka na ba?",
+          "id": "Have you eaten?",
+          "literal": "ate you already Q?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Hindi pa. Kagigising ko lang.",
+          "id": "Not yet. I just woke up.",
+          "literal": "not yet. just-woken my only."
+        },
+        {
+          "speaker": "Ana:",
+          "text": "Anong oras ka natulog kagabi?",
+          "id": "What time did you go to bed last night?",
+          "literal": "what-that hour you slept last-night?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Natulog ako ng alas-dos. Nag-aral kasi ako.",
+          "id": "I slept at two. I was studying, see.",
+          "literal": "slept I at two-o'clock. studied because I."
+        },
+        {
+          "speaker": "Ana:",
+          "text": "Naku! Kumain ka muna, tapos matulog ka ulit.",
+          "id": "Oh dear! Eat first, then go back to sleep.",
+          "literal": "oh-dear! eat you first, then sleep you again."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Uminom muna ako ng kape. May kape pa ba?",
+          "id": "I'll have some coffee first. Is there any coffee left?",
+          "literal": "drink first I of coffee. there's coffee still Q?"
+        },
+        {
+          "speaker": "Ana:",
+          "text": "Meron pa. Bumili ako kanina sa tindahan.",
+          "id": "There's still some. I bought some at the shop earlier.",
+          "literal": "there's still. bought I earlier at shop."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Salamat, Ate! Saan ka pupunta mamaya?",
+          "id": "Thanks, Sis! Where are you going later?",
+          "literal": "thanks, Big-Sis! where you will-go later?"
+        },
+        {
+          "speaker": "Ana:",
+          "text": "Pupunta ako sa palengke. Sasama ka ba?",
+          "id": "I'm going to the market. Want to come?",
+          "literal": "will-go I to market. will-come-along you Q?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Sasama ako! Maliligo lang ako, sandali.",
+          "id": "I'm coming! Just let me shower, one moment.",
+          "literal": "will-come-along I! will-bathe just I, moment."
+        },
+        {
+          "speaker": "Ana:",
+          "text": "Sige, maghihintay ako sa labas.",
+          "id": "Okay, I'll wait outside.",
+          "literal": "okay, will-wait I at outside."
+        }
+      ],
+      "notes": [
+        "**-um- is an infix, not a prefix.** It goes **inside** the root, right after the first consonant: *kain* → *k-um-ain* → *kumain*. Roots that start with a vowel take it at the front: *inom* → *uminom*, *alis* → *umalis*. English has nothing like this outside jokes like \"abso-bloody-lutely\"; Malay and Indonesian keep fossil traces of the same infix.",
+        "**The \"done\" form and the basic -um- form are identical.** *Kumain* means both \"eat\" (basic form) and \"ate\". Only the context tells them apart: after *gusto*, *huwag* or *dapat*, it hasn't happened yet. This is economy, not confusion — once you're used to it, it's one less form to learn.",
+        "**The \"coming\" form of -um- drops the infix.** *Kakain* (will eat), not *kukumain*. All that remains is the repeated first syllable of the root. This is the form beginners get wrong most often.",
+        "**Ma- marks a state that happens to the doer.** *Matulog* (sleep), *magutom* (get hungry), *maligo* (bathe), *mapagod* (get tired). The doer isn't fully acting — they're experiencing. The aspects follow the pattern you know: *ma-* becomes *na-* once started.",
+        "**Kagigising ko lang** uses a special form meaning \"just did\": the prefix *ka-* + repetition + root. Its cousins: *kararating lang* (just arrived), *kakakain lang* (just ate). Very common and worth learning whole.",
+        "**Kasi means \"because, see\"** and usually goes in the middle or at the end, not at the front like English \"because\": *Nag-aral kasi ako.* The more formal word is *dahil*.",
+        "**Natulog ako ng alas-dos** uses *ng* to mark time. This is a use of *ng* you haven't seen yet: besides possession and objects, it also marks time and manner. *Ng alas-dos* (at two), *ng mabilis* (quickly).",
+        "**Muna means \"first\"** in the sense of sequence: *Kumain ka muna* (eat first), *Sandali muna* (hold on a moment). One of the most useful particles, and easy, because it works just like English \"first\" at the end of a request.",
+        "**Sasama ka ba?** comes from the root *sama* (go along, together). It also gives *kasama* (companion) and *magkasama* (together) — a word family you'll use a lot."
+      ],
+      "grammars": [
+        {
+          "title": "The three stages of -um- verbs",
+          "body": [
+            "Look at the second and third columns: they're identical. Not a typo — that's how *-um-* verbs really work."
+          ],
+          "table": {
+            "head": [
+              "Root",
+              "Infinitive (not yet)",
+              "Done",
+              "Ongoing",
+              "Coming",
+              "Meaning"
+            ],
+            "rows": [
+              [
+                "kain",
+                "k**um**ain",
+                "k**um**ain",
+                "k**um**a**ka**in",
+                "**ka**kain",
+                "eat"
+              ],
+              [
+                "inom",
+                "**um**inom",
+                "**um**inom",
+                "**um**i**i**nom",
+                "**i**inom",
+                "drink"
+              ],
+              [
+                "punta",
+                "p**um**unta",
+                "p**um**unta",
+                "p**um**u**pun**ta",
+                "**pu**punta",
+                "go to"
+              ],
+              [
+                "alis",
+                "**um**alis",
+                "**um**alis",
+                "**um**a**a**lis",
+                "**a**alis",
+                "leave"
+              ],
+              [
+                "bili",
+                "b**um**ili",
+                "b**um**ili",
+                "b**um**i**bi**li",
+                "**bi**bili",
+                "buy"
+              ],
+              [
+                "upo",
+                "**um**upo",
+                "**um**upo",
+                "**um**u**u**po",
+                "**u**upo",
+                "sit"
+              ],
+              [
+                "dating",
+                "d**um**ating",
+                "d**um**ating",
+                "d**um**a**ra**ting",
+                "**da**rating",
+                "arrive"
+              ],
+              [
+                "uwi",
+                "**um**uwi",
+                "**um**uwi",
+                "**um**u**u**wi",
+                "**u**uwi",
+                "go home"
+              ]
+            ]
+          },
+          "after": [
+            "Note *dumarating* — the root is *dating*, but *d* becomes *r* when squeezed between two vowels. The sound rule from the pronunciation pages at work.",
+            "The \"coming\" form never contains *-um-*: *kakain*, *iinom*, *pupunta*, *aalis*. If you catch yourself saying *kukumain*, stop and try again.",
+            "Roots starting with a vowel repeat that vowel: *inom* → *iinom*, *alis* → *aalis*, *upo* → *uupo*. Odd in writing, natural in speech."
+          ]
+        },
+        {
+          "title": "Ma- verbs — experienced, not done",
+          "body": [
+            "A small group, but full of words you'll use every day."
+          ],
+          "table": {
+            "head": [
+              "Root",
+              "Infinitive",
+              "Done",
+              "Ongoing",
+              "Coming",
+              "Meaning"
+            ],
+            "rows": [
+              [
+                "tulog",
+                "**ma**tulog",
+                "**na**tulog",
+                "**na**tu**tu**log",
+                "**ma**tu**tu**log",
+                "sleep"
+              ],
+              [
+                "ligo",
+                "**ma**ligo",
+                "**na**ligo",
+                "**na**li**li**go",
+                "**ma**li**li**go",
+                "bathe, shower"
+              ],
+              [
+                "gutom",
+                "**ma**gutom",
+                "**na**gutom",
+                "**na**gu**gu**tom",
+                "**ma**gu**gu**tom",
+                "get hungry"
+              ],
+              [
+                "uhaw",
+                "**ma**uhaw",
+                "**na**uhaw",
+                "**na**u**u**haw",
+                "**ma**u**u**haw",
+                "get thirsty"
+              ],
+              [
+                "pagod",
+                "**ma**pagod",
+                "**na**pagod",
+                "**na**pa**pa**god",
+                "**ma**pa**pa**god",
+                "get tired"
+              ],
+              [
+                "tuto",
+                "**ma**tuto",
+                "**na**tuto",
+                "**na**tu**tu**to",
+                "**ma**tu**tu**to",
+                "learn (to master)"
+              ]
+            ]
+          },
+          "after": [
+            "For bodily states, the \"ongoing\" form is the most common: *Nagugutom ako* (I'm hungry), *Napapagod ako* (I'm tired), *Nauuhaw ako* (I'm thirsty).",
+            "Note that *natulog* means \"slept\" — a finished action — while \"is sleeping\" is *natutulog*. Pick the wrong one and you'll tell a midnight caller \"I slept\" instead of \"I was sleeping\".",
+            "*Matuto* differs from *mag-aral*: the first means to master something, the second to study it. *Nag-aral ako ng Tagalog* (I studied), *Natuto akong mag-Tagalog* (I learned to speak it)."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Mag- or -um-?",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Some roots take both, and the meaning shifts. No rule holds one hundred percent, but the tendency is clear enough to use."
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Tendency",
+            "-um-",
+            "mag-"
+          ],
+          "rows": [
+            [
+              "Direction of action",
+              "back toward the doer",
+              "out from the doer"
+            ],
+            [
+              "bili",
+              "**bumili** = buy",
+              "**magbili** = sell"
+            ],
+            [
+              "akyat",
+              "**umakyat** = go up",
+              "**mag-akyat** = carry things up"
+            ],
+            [
+              "labas",
+              "**lumabas** = go out",
+              "**maglabas** = take something out"
+            ],
+            [
+              "sulat",
+              "**sumulat** = write (a letter)",
+              "**magsulat** = write (as an activity)"
+            ],
+            [
+              "luto",
+              "**lumuto** = rarely used",
+              "**magluto** = cook"
+            ],
+            [
+              "In general",
+              "movement & bodily states",
+              "purposeful, repeated activities"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "If you're really unsure, pick the form you hear most. Living languages don't wait for rules: *kumain*, *uminom*, *pumunta*, *umalis*, *matulog* are used in that form and almost never in another."
+        },
+        {
+          "type": "kotak",
+          "title": "The sentence you'll hear most",
+          "items": [
+            "*Kumain ka na ba?* — \"Have you eaten?\" It's a greeting, not a real question; in the Philippines it's the equivalent of \"how are you?\" — and is often followed by a very real offer of food.",
+            "Safe answers: *Kumain na po ako, salamat.* or *Hindi pa po.* If you give the second one, be ready to actually be told to eat."
+          ]
+        }
+      ]
+    },
+    {
+      "title": "The most common -um- verbs",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "Infinitive",
+            "Meaning",
+            "Done",
+            "Ongoing",
+            "Coming"
+          ],
+          "rows": [
+            [
+              "kumain",
+              "eat",
+              "kumain",
+              "kumakain",
+              "kakain"
+            ],
+            [
+              "uminom",
+              "drink",
+              "uminom",
+              "umiinom",
+              "iinom"
+            ],
+            [
+              "pumunta",
+              "go to",
+              "pumunta",
+              "pumupunta",
+              "pupunta"
+            ],
+            [
+              "umalis",
+              "leave",
+              "umalis",
+              "umaalis",
+              "aalis"
+            ],
+            [
+              "dumating",
+              "arrive",
+              "dumating",
+              "dumarating",
+              "darating"
+            ],
+            [
+              "umuwi",
+              "go home",
+              "umuwi",
+              "umuuwi",
+              "uuwi"
+            ],
+            [
+              "bumili",
+              "buy",
+              "bumili",
+              "bumibili",
+              "bibili"
+            ],
+            [
+              "kumuha",
+              "take, get",
+              "kumuha",
+              "kumukuha",
+              "kukuha"
+            ],
+            [
+              "sumakay",
+              "ride, get on",
+              "sumakay",
+              "sumasakay",
+              "sasakay"
+            ],
+            [
+              "bumaba",
+              "go down, get off",
+              "bumaba",
+              "bumababa",
+              "bababa"
+            ],
+            [
+              "umupo",
+              "sit",
+              "umupo",
+              "umuupo",
+              "uupo"
+            ],
+            [
+              "tumayo",
+              "stand",
+              "tumayo",
+              "tumatayo",
+              "tatayo"
+            ],
+            [
+              "tumawag",
+              "call (on the phone)",
+              "tumawag",
+              "tumatawag",
+              "tatawag"
+            ],
+            [
+              "sumagot",
+              "answer",
+              "sumagot",
+              "sumasagot",
+              "sasagot"
+            ],
+            [
+              "gumising",
+              "wake up",
+              "gumising",
+              "gumigising",
+              "gigising"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "These fifteen verbs plus the fifteen *mag-* verbs from the last unit are enough to describe a whole day — which is exactly what you'll do in unit 20."
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "tl": "kumain",
+      "baca": "koo-MAH-een",
+      "en": "eat"
+    },
+    {
+      "tl": "uminom",
+      "baca": "oo-MEE-nohm",
+      "en": "drink"
+    },
+    {
+      "tl": "pumunta",
+      "baca": "poo-MOON-tah",
+      "en": "go to"
+    },
+    {
+      "tl": "umalis",
+      "baca": "oo-MAH-lees",
+      "en": "leave, set off"
+    },
+    {
+      "tl": "dumating",
+      "baca": "doo-mah-TEENG",
+      "en": "arrive"
+    },
+    {
+      "tl": "umuwi",
+      "baca": "oo-moo-WEE'",
+      "en": "go home"
+    },
+    {
+      "tl": "bumili",
+      "baca": "boo-MEE-lee",
+      "en": "buy"
+    },
+    {
+      "tl": "kumuha",
+      "baca": "koo-MOO-hah",
+      "en": "take, get"
+    },
+    {
+      "tl": "sumakay",
+      "baca": "soo-MAH-kai",
+      "en": "ride, get on"
+    },
+    {
+      "tl": "bumaba",
+      "baca": "boo-mah-BAH'",
+      "en": "go down, get off"
+    },
+    {
+      "tl": "umupo",
+      "baca": "oo-moo-POH'",
+      "en": "sit down"
+    },
+    {
+      "tl": "tumayo",
+      "baca": "too-mah-YOH'",
+      "en": "stand up"
+    },
+    {
+      "tl": "tumawag",
+      "baca": "too-MAH-wahg",
+      "en": "call (on the phone)"
+    },
+    {
+      "tl": "gumising",
+      "baca": "goo-mee-SEENG",
+      "en": "wake up"
+    },
+    {
+      "tl": "sumama",
+      "baca": "soo-MAH-mah",
+      "en": "come along"
+    },
+    {
+      "tl": "matulog",
+      "baca": "mah-TOO-lohg",
+      "en": "sleep"
+    },
+    {
+      "tl": "maligo",
+      "baca": "mah-LEE-goh'",
+      "en": "bathe, shower"
+    },
+    {
+      "tl": "magutom",
+      "baca": "mah-GOO-tohm",
+      "en": "get hungry"
+    },
+    {
+      "tl": "mauhaw",
+      "baca": "mah-OO-how",
+      "en": "get thirsty"
+    },
+    {
+      "tl": "mapagod",
+      "baca": "mah-PAH-gohd",
+      "en": "get tired"
+    },
+    {
+      "tl": "matuto",
+      "baca": "mah-TOO-toh",
+      "en": "learn (to master)"
+    },
+    {
+      "tl": "muna",
+      "baca": "MOO-nah",
+      "en": "first (in sequence)"
+    },
+    {
+      "tl": "kasi",
+      "baca": "kah-SEE",
+      "en": "because, see"
+    },
+    {
+      "tl": "dahil",
+      "baca": "DAH-heel",
+      "en": "because"
+    },
+    {
+      "tl": "ulit",
+      "baca": "oo-LEET",
+      "en": "again"
+    },
+    {
+      "tl": "kanin",
+      "baca": "KAH-neen",
+      "en": "cooked rice"
+    },
+    {
+      "tl": "ulam",
+      "baca": "oo-LAHM",
+      "en": "main dish (eaten with rice)"
+    },
+    {
+      "tl": "almusal",
+      "baca": "ahl-moo-SAHL",
+      "en": "breakfast"
+    },
+    {
+      "tl": "tanghalian",
+      "baca": "tahng-hah-lee-AHN",
+      "en": "lunch"
+    },
+    {
+      "tl": "hapunan",
+      "baca": "hah-POO-nahn",
+      "en": "dinner"
+    }
+  ],
+  "exercises": [
+    {
+      "prompt": "Change to the form asked for.",
+      "items": [
+        "kumain (coming) → ____",
+        "uminom (ongoing) → ____",
+        "pumunta (coming) → ____",
+        "matulog (done) → ____",
+        "bumili (ongoing) → ____",
+        "maligo (coming) → ____"
+      ]
+    },
+    {
+      "prompt": "Fill in the blanks with the right verb form.",
+      "items": [
+        "____ ka na ba? (kumain, done)",
+        "____ ako ng kape kanina. (uminom, done)",
+        "____ kami sa palengke mamaya. (pumunta, coming)",
+        "____ siya ngayon. (matulog, ongoing)",
+        "____ ako ng alas-dos kagabi. (matulog, done)",
+        "____ ako, gutom na gutom na ako. (kumain, coming)"
+      ]
+    },
+    {
+      "prompt": "Translate into Tagalog.",
+      "items": [
+        "Have you eaten?",
+        "Not yet.",
+        "I'll have coffee first.",
+        "We'll go to the market later.",
+        "I'm hungry."
+      ]
+    },
+    {
+      "prompt": "Put the words in the right order.",
+      "items": [
+        "na / kumain / ba / ka / ?",
+        "kape / uminom / ako / ng / muna",
+        "sa / pupunta / palengke / ako",
+        "kagabi / natulog / ako / alas-dos / ng",
+        "ako / maliligo / sandali / lang"
+      ]
+    }
+  ],
+  "answers": [
+    "kakain — umiinom — pupunta — natulog — bumibili — maliligo",
+    "Kumain — Uminom — Pupunta — Natutulog — Natulog — Kakain",
+    "Kumain ka na ba? — Hindi pa. — Uminom muna ako ng kape. — Pupunta kami sa palengke mamaya. — Nagugutom ako.",
+    "Kumain ka na ba? — Uminom muna ako ng kape. — Pupunta ako sa palengke. — Natulog ako ng alas-dos kagabi. — Maliligo lang ako sandali."
+  ],
+  "wave": "Review **unit 10**: talk about your family out loud — how many siblings, who's the eldest, what your parents do — using *ni*, *kay* and *may*."
+}

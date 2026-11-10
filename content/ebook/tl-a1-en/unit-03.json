@@ -1,0 +1,613 @@
+{
+  "title": "How lovely!",
+  "title_target": "Ang ganda naman!",
+  "goal": "Describe things and people with adjectives, attach them to nouns with the linker *na/-ng*, and exclaim with *ang*.",
+  "bekal": [
+    "recognize that almost all Tagalog adjectives begin with *ma-*",
+    "use the linker *na* or *-ng* correctly between two words",
+    "praise and complain with the pattern *ang* + adjective"
+  ],
+  "dialogs": [
+    {
+      "title": "Dialogue — Sa Luneta Park",
+      "intro": "Late afternoon at Rizal Park in Manila. Budi is out for a stroll with Ana and her little sister, Mia.",
+      "lines": [
+        {
+          "speaker": "Mia:",
+          "text": "Ang ganda ng parke, ano?",
+          "id": "The park is lovely, isn't it?",
+          "literal": "how beautiful of park, what?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Oo nga! Malaki at malinis.",
+          "id": "It really is! Big and clean.",
+          "literal": "yes indeed! big and clean."
+        },
+        {
+          "speaker": "Ana:",
+          "text": "Pero ang init ngayon. Uminom tayo ng malamig na tubig.",
+          "id": "But it's so hot today. Let's drink some cold water.",
+          "literal": "but how hot now. drink we of cold that water."
+        },
+        {
+          "speaker": "Mia:",
+          "text": "May tindahan doon. Mura raw ang buko juice.",
+          "id": "There's a shop over there. They say the buko juice is cheap.",
+          "literal": "there-is shop over-there. cheap they-say si coconut juice."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Masarap ba iyon?",
+          "id": "Is it good?",
+          "literal": "tasty [question] that?"
+        },
+        {
+          "speaker": "Mia:",
+          "text": "Sobrang sarap! At malamig na malamig.",
+          "id": "So delicious! And ice-cold.",
+          "literal": "excessively tasty! and cold that cold."
+        },
+        {
+          "speaker": "Ana:",
+          "text": "Ang bait ng ate mo, Mia. Siya ang bibili.",
+          "id": "Your sister is so kind, Mia. She's the one who'll buy.",
+          "literal": "how kind of older-sister your, Mia. she si the-one-who-will-buy."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Hindi na po. Ako na lang. Mabait din ako!",
+          "id": "No, ma'am, that's all right. Let me do it. I'm kind too!",
+          "literal": "no now ma'am. I now only. kind also I!"
+        },
+        {
+          "speaker": "Mia:",
+          "text": "Ang galing ng Tagalog mo, kuya!",
+          "id": "Your Tagalog is so good, kuya!",
+          "literal": "how good of Tagalog your, big-brother!"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Salamat. Mahirap pero masaya.",
+          "id": "Thanks. It's hard but fun.",
+          "literal": "thanks. hard but happy."
+        }
+      ],
+      "notes": [
+        "**Ma- is the adjective factory.** Take a root meaning a quality or thing, attach *ma-* in front, and you get an adjective: *ganda* (beauty) → *maganda* (beautiful); *init* (heat) → *mainit*; *dumi* (dirt) → *madumi*; *bait* (kindness) → *mabait*. This pattern covers perhaps eight out of ten adjectives you'll meet. Fun fact: Malay and Indonesian use *ber-* or bare roots for similar things, but the *ma-* idea is shared across many Austronesian languages.",
+        "**Ang + root = exclamation.** Notice that Mia says *ang ganda*, not *ang maganda*. In the exclamation pattern the *ma-* prefix is dropped and only the root remains: *ang init!*, *ang sarap!*, *ang bait!*. This is the most common form of praise you'll hear in the Philippines.",
+        "**Ng after an exclamation points to its owner.** *Ang ganda ng parke* — \"how lovely the park is\". The word *ng* here is the second marker of Tagalog, fully set up in unit 5. For now, memorize the whole pattern: *ang* + adjective + *ng* + thing.",
+        "**Ano? at the end of a sentence** means \"right?\" or \"isn't it?\" — asking for agreement, like English tag questions (\"isn't it?\"). Another form with the same meaning: *di ba?*",
+        "**Oo nga** = \"yes, that's true\". *Nga* confirms and affirms; it also softens requests (*pakiulit nga* — please repeat, would you).",
+        "**Sobrang** (from Spanish *sobra*, excess) is the most common way to say \"very\": *sobrang init*, *sobrang sarap*, *sobrang bait*. It goes in front of the root, not in front of the *ma-* form.",
+        "**Malamig na malamig** — repeating the adjective with the linker *na* in the middle means \"very, really\". The pattern is like English \"cold, cold\" or \"really really cold\".",
+        "**Raw / daw** means \"they say\". *Mura raw* = they say it's cheap. The form is *raw* after a vowel, *daw* after a consonant — the same rule as *rin/din*.",
+        "**Hindi na po** literally means \"not anymore\" and is used to decline an offer gently. Declining with just *hindi* sounds harsh; *na* makes it soft, and *po* makes it polite."
+      ],
+      "grammars": [
+        {
+          "title": "Ma- adjectives and their roots",
+          "body": [
+            "Seeing the root behind an adjective isn't just extra knowledge: it's immediately useful, because the exclamation form and the \"very\" form use the root, not the *ma-* form."
+          ],
+          "table": {
+            "head": [
+              "Root",
+              "Root meaning",
+              "Adjective",
+              "Exclamation",
+              "Meaning"
+            ],
+            "rows": [
+              [
+                "ganda",
+                "beauty",
+                "maganda",
+                "Ang ganda!",
+                "beautiful, nice"
+              ],
+              [
+                "init",
+                "heat",
+                "mainit",
+                "Ang init!",
+                "hot"
+              ],
+              [
+                "lamig",
+                "coldness",
+                "malamig",
+                "Ang lamig!",
+                "cold"
+              ],
+              [
+                "sarap",
+                "deliciousness",
+                "masarap",
+                "Ang sarap!",
+                "tasty"
+              ],
+              [
+                "bait",
+                "kindness",
+                "mabait",
+                "Ang bait!",
+                "kind"
+              ],
+              [
+                "galing",
+                "skill",
+                "magaling",
+                "Ang galing!",
+                "great, skilled"
+              ],
+              [
+                "laki",
+                "large size",
+                "malaki",
+                "Ang laki!",
+                "big"
+              ],
+              [
+                "hirap",
+                "difficulty",
+                "mahirap",
+                "Ang hirap!",
+                "difficult; poor"
+              ],
+              [
+                "dami",
+                "amount",
+                "marami",
+                "Ang dami!",
+                "many"
+              ],
+              [
+                "ingay",
+                "noise",
+                "maingay",
+                "Ang ingay!",
+                "noisy"
+              ]
+            ]
+          },
+          "after": [
+            "Note *marami* versus *madami*: the standard form is *marami*, because *d* between two vowels becomes *r*. *Madami* is heard in everyday speech and won't cause confusion, but in writing use *marami*.",
+            "Not all adjectives start with *ma-*. The most common ones without it: *mura* (cheap), *mahal* (expensive), *bago* (new), *luma* (old, for objects), *matanda* (old, for people), *bata* (young), *masama* (bad), *mabuti* (good).",
+            "⚠️ *Mahal* means expensive **and** beloved. *Mahal kita* isn't \"you're expensive\" but \"I love you\" — one of the biggest traps for beginners."
+          ]
+        },
+        {
+          "title": "The linker na / -ng — Tagalog's glue",
+          "body": [
+            "Whenever two words describe each other in Tagalog, a linker is required between them. The linker has no meaning; its job is only to join. Its form is decided by **the last letter of the first word**."
+          ],
+          "table": {
+            "head": [
+              "First word ends in",
+              "Form",
+              "Example",
+              "Meaning"
+            ],
+            "rows": [
+              [
+                "a vowel (a, e, i, o, u)",
+                "**-ng** attached",
+                "maganda**ng** bahay",
+                "nice house"
+              ],
+              [
+                "the letter n",
+                "**-g** attached",
+                "mari**ng** ulan → *marami**ng** ulan*",
+                "a lot of rain"
+              ],
+              [
+                "any other consonant",
+                "**na** separate",
+                "malinis **na** kwarto",
+                "clean room"
+              ],
+              [
+                "vowel + noun",
+                "**-ng**",
+                "malamig **na** tubig / tubig **na** malamig",
+                "cold water"
+              ],
+              [
+                "a number",
+                "**-ng**",
+                "isa**ng** libro",
+                "one book"
+              ],
+              [
+                "gusto + verb",
+                "**-ng**",
+                "gusto **kong** kumain",
+                "I want to eat"
+              ]
+            ]
+          },
+          "after": [
+            "The order of adjective and noun is **free to reverse**, as long as the linker adjusts with it: *magandang bahay* and *bahay na maganda* are both correct and equally common.",
+            "This linker will appear in every unit that follows — with numbers (*dalawang bata*), with *gusto* (*gusto kong matulog*), and in relative clauses (*ang taong mabait*). If there's one small thing worth drilling until it's automatic, this is it.",
+            "The most typical beginner mistake isn't the wrong form, but **forgetting it altogether**: *maganda bahay* sounds to a Filipino like \"nicehouse\" with no space — understood, but clearly foreign."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "The most common adjectives",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "Tagalog",
+            "Say it",
+            "Meaning",
+            "Opposite"
+          ],
+          "rows": [
+            [
+              "maganda",
+              "mah-gahn-DAH",
+              "beautiful, nice",
+              "pangit (ugly)"
+            ],
+            [
+              "malaki",
+              "mah-lah-KEE",
+              "big",
+              "maliit (small)"
+            ],
+            [
+              "mahaba",
+              "mah-HAH-bah'",
+              "long",
+              "maikli (short)"
+            ],
+            [
+              "mataas",
+              "mah-tah-AHS",
+              "tall, high",
+              "mababa (low)"
+            ],
+            [
+              "mabilis",
+              "mah-bee-LEES",
+              "fast",
+              "mabagal (slow)"
+            ],
+            [
+              "mainit",
+              "mah-ee-NEET",
+              "hot",
+              "malamig (cold)"
+            ],
+            [
+              "masaya",
+              "mah-sah-YAH",
+              "happy",
+              "malungkot (sad)"
+            ],
+            [
+              "mabait",
+              "mah-bah-EET",
+              "kind",
+              "masungit (grumpy)"
+            ],
+            [
+              "mahal",
+              "mah-HAHL",
+              "expensive",
+              "mura (cheap)"
+            ],
+            [
+              "bago",
+              "BAH-goh",
+              "new",
+              "luma (old)"
+            ],
+            [
+              "matanda",
+              "mah-tahn-DAH'",
+              "old",
+              "bata (young)"
+            ],
+            [
+              "mahirap",
+              "mah-hee-RAHP",
+              "difficult; poor",
+              "madali (easy); mayaman (rich)"
+            ],
+            [
+              "masarap",
+              "mah-sah-RAHP",
+              "tasty",
+              "hindi masarap (not tasty)"
+            ],
+            [
+              "malinis",
+              "mah-lee-NEES",
+              "clean",
+              "madumi (dirty)"
+            ],
+            [
+              "malapit",
+              "mah-LAH-peet",
+              "near",
+              "malayo (far)"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "*Mahirap* does two jobs at once: \"difficult\" for things, \"poor\" for people. Context separates them and it never confuses native speakers: *Mahirap ang Tagalog* (Tagalog is hard) can't possibly be understood as \"Tagalog is poor\"."
+        }
+      ]
+    },
+    {
+      "title": "Five ways to say very",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "Pattern",
+            "Example",
+            "Meaning",
+            "Feel"
+          ],
+          "rows": [
+            [
+              "**ang** + root",
+              "Ang init!",
+              "So hot!",
+              "exclamation, very common"
+            ],
+            [
+              "**sobrang** + root",
+              "Sobrang init.",
+              "Super hot.",
+              "casual, everyday"
+            ],
+            [
+              "adjective + **na** + adjective",
+              "Mainit na mainit.",
+              "Really hot.",
+              "emphatic, a bit literary"
+            ],
+            [
+              "**napaka-** + root",
+              "Napakainit.",
+              "Extremely hot.",
+              "formal, written language"
+            ],
+            [
+              "**masyadong** + adjective",
+              "Masyadong mainit.",
+              "Too hot.",
+              "complaint — has a negative tone"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "Tell the last row apart from the others: *masyado* means **too**, and almost always carries a complaining tone. *Ang sarap* praises food; *masyadong maalat* complains about it."
+        },
+        {
+          "type": "kotak",
+          "title": "The opposite: hindi masyado",
+          "items": [
+            "*Hindi masyadong mainit* = \"not too hot\". The pattern *hindi masyadong* + adjective is the gentlest way to express dislike without offending anyone.",
+            "This matters in the Philippines, where open criticism is considered rude. Asked whether the food is good, answering *hindi masarap* sounds harsh; *hindi masyado* is much safer."
+          ]
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "tl": "maganda",
+      "baca": "mah-gahn-DAH",
+      "en": "beautiful, nice"
+    },
+    {
+      "tl": "pangit",
+      "baca": "PAH-ngeet",
+      "en": "ugly"
+    },
+    {
+      "tl": "masarap",
+      "baca": "mah-sah-RAHP",
+      "en": "tasty"
+    },
+    {
+      "tl": "mabait",
+      "baca": "mah-bah-EET",
+      "en": "kind"
+    },
+    {
+      "tl": "masungit",
+      "baca": "mah-soo-NGEET",
+      "en": "grumpy"
+    },
+    {
+      "tl": "mabilis",
+      "baca": "mah-bee-LEES",
+      "en": "fast"
+    },
+    {
+      "tl": "mabagal",
+      "baca": "mah-bah-GAHL",
+      "en": "slow"
+    },
+    {
+      "tl": "mataas",
+      "baca": "mah-tah-AHS",
+      "en": "tall, high"
+    },
+    {
+      "tl": "mababa",
+      "baca": "mah-BAH-bah'",
+      "en": "low"
+    },
+    {
+      "tl": "malungkot",
+      "baca": "mah-loong-KOHT",
+      "en": "sad"
+    },
+    {
+      "tl": "mahirap",
+      "baca": "mah-hee-RAHP",
+      "en": "difficult; poor"
+    },
+    {
+      "tl": "madali",
+      "baca": "mah-dah-LEE'",
+      "en": "easy; quick"
+    },
+    {
+      "tl": "mura",
+      "baca": "MOO-rah",
+      "en": "cheap"
+    },
+    {
+      "tl": "mahal",
+      "baca": "mah-HAHL",
+      "en": "expensive; beloved"
+    },
+    {
+      "tl": "bago",
+      "baca": "BAH-goh",
+      "en": "new"
+    },
+    {
+      "tl": "luma",
+      "baca": "LOO-mah'",
+      "en": "old, worn (things)"
+    },
+    {
+      "tl": "matanda",
+      "baca": "mah-tahn-DAH'",
+      "en": "old (people)"
+    },
+    {
+      "tl": "malapit",
+      "baca": "mah-LAH-peet",
+      "en": "near"
+    },
+    {
+      "tl": "maingay",
+      "baca": "mah-EE-ngai",
+      "en": "noisy"
+    },
+    {
+      "tl": "tahimik",
+      "baca": "tah-HEE-meek",
+      "en": "quiet, calm"
+    },
+    {
+      "tl": "sobrang",
+      "baca": "SOHB-rahng",
+      "en": "very, so"
+    },
+    {
+      "tl": "masyado",
+      "baca": "mahs-YAH-doh",
+      "en": "too (much)"
+    },
+    {
+      "tl": "napaka-",
+      "baca": "nah-pah-KAH",
+      "en": "very (prefix)"
+    },
+    {
+      "tl": "parke",
+      "baca": "PAHR-keh",
+      "en": "park"
+    },
+    {
+      "tl": "tindahan",
+      "baca": "teen-DAH-hahn",
+      "en": "shop, small store"
+    },
+    {
+      "tl": "tubig",
+      "baca": "TOO-beeg",
+      "en": "water"
+    },
+    {
+      "tl": "buko",
+      "baca": "BOO-koh'",
+      "en": "young coconut"
+    },
+    {
+      "tl": "daw / raw",
+      "baca": "dow / row",
+      "en": "they say"
+    },
+    {
+      "tl": "nga",
+      "baca": "ngah'",
+      "en": "indeed; do (emphasis)"
+    },
+    {
+      "tl": "ngayon",
+      "baca": "ngah-YOHN",
+      "en": "now, today"
+    }
+  ],
+  "exercises": [
+    {
+      "prompt": "Translate into Tagalog.",
+      "items": [
+        "A nice house.",
+        "Cold water.",
+        "A clean room.",
+        "So hot!",
+        "The park is so lovely.",
+        "Too noisy."
+      ]
+    },
+    {
+      "prompt": "Fill in the right linker: na or -ng.",
+      "items": [
+        "maganda____ babae",
+        "malinis ____ kwarto",
+        "marami____ tao",
+        "malamig ____ tubig",
+        "bago____ sapatos",
+        "masarap ____ pagkain"
+      ]
+    },
+    {
+      "prompt": "Turn into an exclamation with ang. Example: Mainit ang araw. → Ang init ng araw!",
+      "items": [
+        "Maganda ang parke. → ____",
+        "Masarap ang pagkain. → ____",
+        "Mabait ang guro. → ____",
+        "Malaki ang bahay. → ____",
+        "Marami ang tao. → ____"
+      ]
+    },
+    {
+      "prompt": "Put the words in the right order.",
+      "items": [
+        "tubig / malamig / na / uminom / tayo / ng",
+        "ng / ang / parke / ganda",
+        "masarap / ba / iyon / ?",
+        "mahirap / masaya / pero",
+        "mainit / masyadong / ngayon"
+      ]
+    }
+  ],
+  "answers": [
+    "Magandang bahay. — Malamig na tubig. — Malinis na kwarto. — Ang init! — Ang ganda ng parke. — Masyadong maingay.",
+    "-ng — na — -ng — na — -ng — na",
+    "Ang ganda ng parke! — Ang sarap ng pagkain! — Ang bait ng guro! — Ang laki ng bahay! — Ang dami ng tao!",
+    "Uminom tayo ng malamig na tubig. — Ang ganda ng parke. — Masarap ba iyon? — Mahirap pero masaya. — Masyadong mainit ngayon."
+  ],
+  "wave": "Review **unit 1** first: cover the Tagalog column, look at the English translation, then say the greetings and self-introduction aloud again, with *po*. Only then start this unit."
+}

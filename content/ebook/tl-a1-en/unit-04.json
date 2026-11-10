@@ -1,0 +1,571 @@
+{
+  "title": "Mine, yours",
+  "title_target": "Akin, iyo, kaniya",
+  "goal": "Use the three sets of personal pronouns, express ownership with *ko/mo/niya*, and answer the question *kanino*.",
+  "bekal": [
+    "say whose something is with two patterns: *bahay ko* and *akin ang bahay*",
+    "tell *tayo* (we, including you) from *kami* (we, excluding you) — a distinction English doesn't make",
+    "put *ka*, *ko* and *mo* in the right place in a sentence"
+  ],
+  "dialogs": [
+    {
+      "title": "Dialogue — Kaninong cellphone?",
+      "intro": "After class, a phone has been left on a table. Mia, Ana and Budi try to find its owner.",
+      "lines": [
+        {
+          "speaker": "Mia:",
+          "text": "Kaninong cellphone ito?",
+          "id": "Whose phone is this?",
+          "literal": "whose-of phone this?"
+        },
+        {
+          "speaker": "Ana:",
+          "text": "Hindi ko alam. Hindi akin.",
+          "id": "I don't know. It's not mine.",
+          "literal": "not my know. not mine."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Iyo ba iyan, Mia?",
+          "id": "Is that yours, Mia?",
+          "literal": "yours [question] that, Mia?"
+        },
+        {
+          "speaker": "Mia:",
+          "text": "Hindi. Ang cellphone ko ay nasa bag ko.",
+          "id": "No. My phone is in my bag.",
+          "literal": "no. si phone my is located-in bag my."
+        },
+        {
+          "speaker": "Ana:",
+          "text": "Baka kay Kuya Ben. Siya ang huling umalis.",
+          "id": "Maybe it's Kuya Ben's. He was the last one to leave.",
+          "literal": "maybe to-si Kuya Ben. he si last who-left."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Tama ka. Kanila ang mga gamit sa mesa.",
+          "id": "You're right. The things on the table are theirs.",
+          "literal": "right you. theirs si plural things on table."
+        },
+        {
+          "speaker": "Mia:",
+          "text": "Sige, ibalik natin sa kaniya bukas.",
+          "id": "Okay, let's give it back to him tomorrow.",
+          "literal": "all-right, return our to him tomorrow."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Natin? Kami ni Ana ang uuwi ngayon, hindi ikaw!",
+          "id": "Let's? Ana and I are the ones going home today, not you!",
+          "literal": "our-incl? we with-si Ana si the-ones-going-home today, not you!"
+        },
+        {
+          "speaker": "Mia:",
+          "text": "Sorry! Ibalik ninyo pala, hindi natin.",
+          "id": "Sorry! You two should return it, not us.",
+          "literal": "sorry! return your-plural it-turns-out, not our-incl."
+        },
+        {
+          "speaker": "Ana:",
+          "text": "Ayan, tama na ang Tagalog mo!",
+          "id": "There you go, your Tagalog is already correct!",
+          "literal": "there, right now si Tagalog your!"
+        }
+      ],
+      "notes": [
+        "**Ownership has two patterns.** The first attaches a short pronoun behind the thing: *bahay ko* (my house), *cellphone mo* (your phone). The second puts a long form in front: *akin ang bahay* (the house is mine). The first is for naming, the second for stating who owns it.",
+        "**Kanino means \"whose\".** With the linker it becomes *kaninong*: *Kaninong cellphone ito?* The answer uses the *sa* forms: *akin*, *iyo*, *kaniya*, or *kay* + name: *kay Ben*.",
+        "**Tayo and kami both mean \"we\", but they're not the same.** *Tayo* includes the person you're talking to — \"you and I and maybe others\". *Kami* excludes them: \"we, but not you\". English has no such split, so think of *tayo* as \"we (including you)\" and *kami* as \"we (not you)\". Fun fact: Malay and Indonesian make the same distinction (*kita* / *kami*), so this is a well-known Austronesian feature.",
+        "**Ang cellphone ko ay nasa bag ko** uses *ay*, which makes the sentence sound tidy and a bit formal. In ordinary conversation: *Nasa bag ko ang cellphone ko.* The place first, the spotlighted thing last.",
+        "**Baka means \"maybe\"** and is read *bah-KAH'* with stress at the end. With stress at the front (*BAH-kah*), it means \"cow\". One of the stress pairs Filipinos most often joke about with foreign learners.",
+        "**Kami ni Ana** literally means \"we with Ana\" and means \"Ana and I\". This is a typical Tagalog pattern: plural pronoun + *ni* + name. Compare *tayo ni Ana* (you, me and Ana), *sila ni Ben* (he/she and Ben).",
+        "**Pala marks surprise** — \"oh, so it turns out\". It's one of the most useful and distinctive particles; its full chapter is in unit 14. For now just feel its tone: *Ikaw pala!* = \"oh, it's you!\"",
+        "**Ayan** (from *iyan*) is used like \"there you go\" in English — to mark that something has finally worked out.",
+        "**Tama na** literally means \"right now\" and means \"enough\" or \"that's just right\". Very often used to stop something politely: *Tama na po* — \"that's enough, thank you\"."
+      ],
+      "grammars": [
+        {
+          "title": "Three sets of personal pronouns",
+          "body": [
+            "Tagalog uses three forms for each person, and all three must be learned together, not one by one. The sets are named after the marker they replace: the *ang* set, the *ng* set and the *sa* set."
+          ],
+          "table": {
+            "head": [
+              "Meaning",
+              "ANG set (doer / spotlight)",
+              "NG set (owner / non-spotlight doer)",
+              "SA set (direction / stressed owner)"
+            ],
+            "rows": [
+              [
+                "I",
+                "**ako**",
+                "**ko**",
+                "**akin**"
+              ],
+              [
+                "you",
+                "**ikaw / ka**",
+                "**mo**",
+                "**iyo**"
+              ],
+              [
+                "he, she",
+                "**siya**",
+                "**niya**",
+                "**kaniya**"
+              ],
+              [
+                "we (including you)",
+                "**tayo**",
+                "**natin**",
+                "**atin**"
+              ],
+              [
+                "we (not including you)",
+                "**kami**",
+                "**namin**",
+                "**amin**"
+              ],
+              [
+                "you (plural)",
+                "**kayo**",
+                "**ninyo**",
+                "**inyo**"
+              ],
+              [
+                "they",
+                "**sila**",
+                "**nila**",
+                "**kanila**"
+              ]
+            ]
+          },
+          "after": [
+            "**Ikaw stands in front, ka attaches behind.** *Ikaw ang guro* (you're the teacher) but *Guro ka* (you're a teacher). The rule is simple: if the word starts the sentence, use *ikaw*; if not, use *ka*.",
+            "The *sa* set is also used after prepositions: *sa akin* (to me), *para sa iyo* (for you), *kasama nila* (with them).",
+            "The polite form to one person uses the plural forms: *kayo*, *ninyo*, *inyo* — just like *vous* in French or *usted*-style formality in many languages."
+          ]
+        },
+        {
+          "title": "Two ways to say ownership",
+          "body": [
+            "The difference between them isn't right versus wrong, but what you're putting in the spotlight."
+          ],
+          "table": {
+            "head": [
+              "Pattern",
+              "Example",
+              "Meaning",
+              "What's highlighted"
+            ],
+            "rows": [
+              [
+                "thing + NG set",
+                "bahay **ko**",
+                "my house",
+                "the house"
+              ],
+              [
+                "thing + NG set",
+                "pangalan **mo**",
+                "your name",
+                "the name"
+              ],
+              [
+                "SA set + ang + thing",
+                "**Akin** ang bahay.",
+                "The house is mine.",
+                "who owns it"
+              ],
+              [
+                "SA set + ang + thing",
+                "**Kaniya** ang libro.",
+                "The book is his/hers.",
+                "who owns it"
+              ],
+              [
+                "ni + name",
+                "bahay **ni** Ana",
+                "Ana's house",
+                "the house"
+              ],
+              [
+                "kay + name",
+                "**Kay** Ana ang bahay.",
+                "The house is Ana's.",
+                "who owns it"
+              ]
+            ]
+          },
+          "after": [
+            "For people's names, the *ng* set becomes **ni** and the *sa* set becomes **kay**: *libro ni Ben*, *kay Ben ang libro*. The plural forms are *nina* and *kina*.",
+            "There's a third, longer form: *ang bahay na akin* or *ang aking bahay*. The last one is often used in writing and speeches, and its order is the reverse of the usual: *ang aking pangalan* = my name.",
+            "⚠️ Don't mix the two patterns: *akin ang bahay ko* means \"my house is mine\" — grammatical but going in circles."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Where the short pronouns stand",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "*Ka*, *ko*, *mo* and their friends are words that can't stand alone: they must lean on another word. Their place is always **after the first word** of the sentence."
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Sentence",
+            "Literal",
+            "Meaning"
+          ],
+          "rows": [
+            [
+              "Guro **ka** ba?",
+              "teacher you [question]",
+              "Are you a teacher?"
+            ],
+            [
+              "Hindi **ko** alam.",
+              "not my know",
+              "I don't know."
+            ],
+            [
+              "Ano **ang** pangalan **mo**?",
+              "what ang name your",
+              "What's your name?"
+            ],
+            [
+              "Nasaan **ka**?",
+              "where you",
+              "Where are you?"
+            ],
+            [
+              "Mabait **siya**.",
+              "kind he/she",
+              "He/she is kind."
+            ],
+            [
+              "Kumain **na kami**.",
+              "eat already we",
+              "We've already eaten."
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "Notice *hindi ko alam* — not *hindi alam ko*. Because *hindi* is the first word, all the short words gather right after it. You'll say this sentence dozens of times a day as a beginner, so memorize the whole form."
+        },
+        {
+          "type": "kotak",
+          "title": "Two short words at once",
+          "items": [
+            "If there are two, the one that goes first is the **one-syllable** one: *Ibigay mo sa akin* but *Ibigay mo ito sa akin*.",
+            "The combination *ko* + *ikaw* has a special form you must memorize: **kita**. *Mahal kita* = \"I love you\", not *mahal ko ikaw*. This form exists only for the pair I→you."
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Personal belongings",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "Tagalog",
+            "Say it",
+            "English"
+          ],
+          "rows": [
+            [
+              "cellphone",
+              "SEHL-fohn",
+              "mobile phone (English word, used as is)"
+            ],
+            [
+              "bag",
+              "bahg",
+              "bag"
+            ],
+            [
+              "pitaka",
+              "pee-TAH-kah'",
+              "wallet"
+            ],
+            [
+              "pera",
+              "PEH-rah",
+              "money"
+            ],
+            [
+              "susi",
+              "soo-SEE'",
+              "key"
+            ],
+            [
+              "libro",
+              "LEEB-roh",
+              "book"
+            ],
+            [
+              "papel",
+              "pah-PEHL",
+              "paper"
+            ],
+            [
+              "bolpen",
+              "BOHL-pehn",
+              "ballpoint pen"
+            ],
+            [
+              "damit",
+              "dah-MEET",
+              "clothes"
+            ],
+            [
+              "sapatos",
+              "sah-PAH-tohs",
+              "shoes"
+            ],
+            [
+              "relo",
+              "reh-LOH",
+              "watch"
+            ],
+            [
+              "salamin sa mata",
+              "sah-lah-MEEN sah mah-TAH",
+              "eyeglasses"
+            ],
+            [
+              "payong",
+              "PAH-yohng",
+              "umbrella"
+            ],
+            [
+              "gamit",
+              "GAH-meet",
+              "belongings, things"
+            ],
+            [
+              "ID",
+              "ai-DEE",
+              "ID card"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "Notice how many English words are used as they are. For modern objects, Filipinos almost always use the English word — forcing a Tagalog equivalent for *cellphone* or *laptop* just makes you sound like an old textbook."
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "tl": "akin",
+      "baca": "AH-keen",
+      "en": "mine"
+    },
+    {
+      "tl": "iyo",
+      "baca": "ee-YOH",
+      "en": "yours"
+    },
+    {
+      "tl": "kaniya",
+      "baca": "kahn-YAH",
+      "en": "his, hers"
+    },
+    {
+      "tl": "atin",
+      "baca": "AH-teen",
+      "en": "ours (including you)"
+    },
+    {
+      "tl": "amin",
+      "baca": "AH-meen",
+      "en": "ours (excluding you)"
+    },
+    {
+      "tl": "inyo",
+      "baca": "een-YOH",
+      "en": "yours (plural)"
+    },
+    {
+      "tl": "kanila",
+      "baca": "kah-NEE-lah",
+      "en": "theirs"
+    },
+    {
+      "tl": "tayo",
+      "baca": "TAH-yoh",
+      "en": "we (including the listener)"
+    },
+    {
+      "tl": "kami",
+      "baca": "kah-MEE",
+      "en": "we (excluding the listener)"
+    },
+    {
+      "tl": "sila",
+      "baca": "see-LAH",
+      "en": "they"
+    },
+    {
+      "tl": "kanino",
+      "baca": "kah-NEE-noh",
+      "en": "whose"
+    },
+    {
+      "tl": "ni / kay",
+      "baca": "nee / kai",
+      "en": "possession / direction marker for names"
+    },
+    {
+      "tl": "cellphone",
+      "baca": "SEHL-fohn",
+      "en": "mobile phone"
+    },
+    {
+      "tl": "bag",
+      "baca": "bahg",
+      "en": "bag"
+    },
+    {
+      "tl": "pitaka",
+      "baca": "pee-TAH-kah'",
+      "en": "wallet"
+    },
+    {
+      "tl": "pera",
+      "baca": "PEH-rah",
+      "en": "money"
+    },
+    {
+      "tl": "libro",
+      "baca": "LEEB-roh",
+      "en": "book"
+    },
+    {
+      "tl": "bolpen",
+      "baca": "BOHL-pehn",
+      "en": "ballpoint pen"
+    },
+    {
+      "tl": "damit",
+      "baca": "dah-MEET",
+      "en": "clothes"
+    },
+    {
+      "tl": "sapatos",
+      "baca": "sah-PAH-tohs",
+      "en": "shoes"
+    },
+    {
+      "tl": "payong",
+      "baca": "PAH-yohng",
+      "en": "umbrella"
+    },
+    {
+      "tl": "gamit",
+      "baca": "GAH-meet",
+      "en": "belongings"
+    },
+    {
+      "tl": "baka",
+      "baca": "bah-KAH'",
+      "en": "maybe"
+    },
+    {
+      "tl": "tama",
+      "baca": "tah-MAH",
+      "en": "right, correct"
+    },
+    {
+      "tl": "mali",
+      "baca": "mah-LEE'",
+      "en": "wrong"
+    },
+    {
+      "tl": "alam",
+      "baca": "ah-LAHM",
+      "en": "know"
+    },
+    {
+      "tl": "pala",
+      "baca": "pah-LAH",
+      "en": "it turns out (particle)"
+    },
+    {
+      "tl": "ibalik",
+      "baca": "ee-bah-LEEK",
+      "en": "return, give back"
+    },
+    {
+      "tl": "bukas",
+      "baca": "boo-KAHS",
+      "en": "tomorrow"
+    },
+    {
+      "tl": "kasama",
+      "baca": "kah-SAH-mah",
+      "en": "together; companion"
+    }
+  ],
+  "exercises": [
+    {
+      "prompt": "Translate into Tagalog.",
+      "items": [
+        "Whose phone is this?",
+        "It's not mine.",
+        "The house is Ana's.",
+        "I don't know.",
+        "What's your name?",
+        "The bag is theirs."
+      ]
+    },
+    {
+      "prompt": "Fill in the NG-set pronoun: ko, mo, niya, natin, namin, ninyo, nila.",
+      "items": [
+        "Ang bahay ____ ay malaki. (my)",
+        "Ano ang pangalan ____? (your)",
+        "Mabait ang guro ____. (their)",
+        "Hindi ____ alam. (we, excluding you)",
+        "Ang kwarto ____ ay malinis. (his/her)",
+        "Ang bayan ____ ay maganda. (our, including you)"
+      ]
+    },
+    {
+      "prompt": "Change to the ownership-stating pattern. Example: Bahay ko ito. → Akin ang bahay na ito.",
+      "items": [
+        "Libro mo ito. → ____",
+        "Cellphone niya iyan. → ____",
+        "Pera namin iyon. → ____",
+        "Bag nila ito. → ____",
+        "Susi ni Ana iyan. → ____"
+      ]
+    },
+    {
+      "prompt": "Put the words in the right order.",
+      "items": [
+        "ito / cellphone / kaninong / ?",
+        "ko / hindi / alam",
+        "ang / nasa / cellphone / bag / ko / ko",
+        "ni / ang / Ana / bahay / maganda",
+        "kami / uuwi / ang / ni / Ana"
+      ]
+    }
+  ],
+  "answers": [
+    "Kaninong cellphone ito? — Hindi akin. — Kay Ana ang bahay. — Hindi ko alam. — Ano ang pangalan mo? — Kanila ang bag.",
+    "ko — mo — nila — namin — niya — natin",
+    "Iyo ang librong ito. — Kaniya ang cellphone na iyan. — Amin ang perang iyon. — Kanila ang bag na ito. — Kay Ana ang susing iyan.",
+    "Kaninong cellphone ito? — Hindi ko alam. — Nasa bag ko ang cellphone ko. — Maganda ang bahay ni Ana. — Kami ni Ana ang uuwi."
+  ],
+  "wave": "Review **unit 2**: cover the Tagalog column, point to five objects in your room, and name them with *ito*, *iyan* or *iyon* according to distance."
+}

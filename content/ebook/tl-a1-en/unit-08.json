@@ -1,0 +1,624 @@
+{
+  "title": "At the market",
+  "title_target": "Sa palengke",
+  "goal": "Shop for real: ask prices, request specific amounts, bargain politely, and name colors and sizes.",
+  "bekal": [
+    "ask for items with *pabili* and *pakibigyan*",
+    "bargain with sentences that offend no one",
+    "name units: kilo, dozen, bundle, piece"
+  ],
+  "dialogs": [
+    {
+      "title": "Dialogue — Tawad nang kaunti",
+      "intro": "A wet market in Quiapo. Budi is with Mia, buying fruit and vegetables for the week.",
+      "lines": [
+        {
+          "speaker": "Budi:",
+          "text": "Ate, magkano po ang mangga?",
+          "id": "Ate, how much are the mangoes?",
+          "literal": "older-sister, how-much sir/ma'am si mango?"
+        },
+        {
+          "speaker": "Tindera:",
+          "text": "Otsenta pesos ang kilo, sir.",
+          "id": "Eighty pesos a kilo, sir.",
+          "literal": "eighty peso si kilo, sir."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Ang mahal naman! Puwede po bang tumawad?",
+          "id": "That's expensive! May I bargain, ma'am?",
+          "literal": "how expensive indeed! possible ma'am [question] to-bargain?"
+        },
+        {
+          "speaker": "Tindera:",
+          "text": "Sige, setenta na lang. Sariwa iyan, galing Cebu.",
+          "id": "All right, seventy then. They're fresh, from Cebu.",
+          "literal": "all-right, seventy now just. fresh that, from Cebu."
+        },
+        {
+          "speaker": "Mia:",
+          "text": "Kuya, dalawang kilo na lang para mura.",
+          "id": "Kuya, just take two kilos so it's cheaper.",
+          "literal": "older-brother, two kilo now just so cheap."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Sige. Dalawang kilo po. Pabili rin po ng kamatis.",
+          "id": "Okay. Two kilos, ma'am. And I'd like to buy some tomatoes too.",
+          "literal": "all-right. two kilo ma'am. please-buy also ma'am of tomato."
+        },
+        {
+          "speaker": "Tindera:",
+          "text": "Ilang piraso po?",
+          "id": "How many pieces, sir?",
+          "literal": "how-many piece sir?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Anim na piraso. At isang tali na sibuyas.",
+          "id": "Six pieces. And one bunch of onions.",
+          "literal": "six piece. and one bunch that onion."
+        },
+        {
+          "speaker": "Tindera:",
+          "text": "Ayan po. Isang daan at bente lahat.",
+          "id": "Here you go, sir. A hundred and twenty in all.",
+          "literal": "there-it-is sir. one hundred and twenty all."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Heto po ang bayad. Salamat po, ate!",
+          "id": "Here's the payment. Thank you, ate!",
+          "literal": "here-it-is ma'am si payment. thanks ma'am, older-sister!"
+        },
+        {
+          "speaker": "Tindera:",
+          "text": "Salamat din! Balik po kayo, ha?",
+          "id": "Thank you too! Come back again, okay?",
+          "literal": "thanks also! return sir you-all, okay?"
+        }
+      ],
+      "notes": [
+        "**Ate and kuya are used with strangers.** Addressing a vendor as *ate* or *kuya* isn't small talk, it's basic manners. For someone much older: *nanay*, *tatay*, *lola*, *lolo*. Skipping them makes you sound cold.",
+        "**Pabili is the magic word at a stall.** Literally \"please buy for me\", it begins nearly every small transaction: *Pabili po ng tubig.* Family members: *pahingi* (ask for), *pakiabot* (please pass), *pakibigyan* (please give).",
+        "**Tumawad means to bargain.** Bargaining in a wet market is normal and expected; in malls and shops with price tags, it isn't. *Puwede po bang tumawad?* asks permission first and will never be taken as rude.",
+        "**Ang mahal naman!** uses *naman* to soften the complaint. Without *naman*, *ang mahal!* sounds like an accusation; with *naman*, it's a playful invitation to lower the price.",
+        "**Na lang marks a final offer**: *setenta na lang* = \"seventy then, just\". This is the characteristic sound of Philippine bargaining, and it almost always closes the deal.",
+        "**Piraso** (from Spanish *pieza*) means \"piece\", used for things counted one by one. *Tali* means a bunch or tied bundle.",
+        "**Isang daan at bente** shows a mixture of the two number systems in one price: the hundreds are native numbers, the tens are Spanish. This is very common and no one considers it wrong.",
+        "**Sariwa** means fresh. You'll hear this word often as the seller's reason for holding the price — and as praise when you really get good produce.",
+        "**Galing Cebu** shortens *galing sa Cebu*. In fast speech, *sa* often drops after *galing* when a place name follows."
+      ],
+      "grammars": [
+        {
+          "title": "Asking politely — the paki- family",
+          "body": [
+            "Tagalog has one prefix whose only job is to make a request sound polite. It attaches in front of a verb and instantly turns a command into a plea."
+          ],
+          "table": {
+            "head": [
+              "Form",
+              "Literal",
+              "Used for",
+              "Example"
+            ],
+            "rows": [
+              [
+                "**pabili**",
+                "please buy for me",
+                "buying at a stall",
+                "Pabili po ng tubig."
+              ],
+              [
+                "**pahingi**",
+                "please give",
+                "asking for something free",
+                "Pahingi po ng plastik."
+              ],
+              [
+                "**pakiabot**",
+                "please pass",
+                "asking someone to hand it over",
+                "Pakiabot po ng asin."
+              ],
+              [
+                "**pakibigay**",
+                "please give",
+                "asking someone to deliver it",
+                "Pakibigay po kay Ana."
+              ],
+              [
+                "**pakiulit**",
+                "please repeat",
+                "asking for repetition",
+                "Pakiulit po."
+              ],
+              [
+                "**pakisabi**",
+                "please tell",
+                "leaving a message",
+                "Pakisabi po sa kaniya."
+              ]
+            ]
+          },
+          "after": [
+            "All these forms are polite on their own, but *po* is still added for older or unfamiliar people. Adding *po* is never wrong.",
+            "The thing requested takes *ng*: *pabili po **ng** tubig*, *pahingi po **ng** tissue*. The person addressed takes *sa* or *kay*: *pakibigay po **kay** Ben*.",
+            "The shortest form that's still polite at a stall: say the item, the amount, then *po*. *Dalawang tubig po.* That's enough, and it's what real people say."
+          ]
+        },
+        {
+          "title": "Units and quantities",
+          "body": [
+            "Most Philippine units come from Spanish, and others are market units with no exact equivalent in English."
+          ],
+          "table": {
+            "head": [
+              "Unit",
+              "Say it",
+              "Meaning",
+              "Example"
+            ],
+            "rows": [
+              [
+                "kilo",
+                "KEE-loh",
+                "kilogram",
+                "dalawang kilo ng mangga"
+              ],
+              [
+                "piraso",
+                "pee-RAH-soh",
+                "piece",
+                "anim na piraso"
+              ],
+              [
+                "dosena",
+                "doh-SEH-nah",
+                "dozen (12)",
+                "isang dosenang itlog"
+              ],
+              [
+                "tali",
+                "TAH-lee'",
+                "bundle, bunch",
+                "isang tali na sibuyas"
+              ],
+              [
+                "bote",
+                "BOH-teh",
+                "bottle",
+                "tatlong bote ng tubig"
+              ],
+              [
+                "pakete",
+                "pah-KEH-teh",
+                "pack",
+                "isang paketeng biskwit"
+              ],
+              [
+                "sachet",
+                "sah-SHEH",
+                "small sachet",
+                "limang sachet ng kape"
+              ],
+              [
+                "salop",
+                "SAH-lohp",
+                "rice measure (~2 kg)",
+                "isang salop na bigas"
+              ]
+            ]
+          },
+          "after": [
+            "The sachet unit deserves its own mention: in the Philippines nearly every household item is sold in single-use packets — shampoo, coffee, soy sauce, detergent. This *tingi-tingi* (retail by the piece) economy is the everyday face of the sari-sari store.",
+            "*Tingi* means buying in small retail amounts: *Tingi po, dalawang sachet lang.* There's no exact English word for it, though the practice will be familiar to anyone who has bought a single cigarette or a one-shot coffee packet."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Bargaining sentences",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "Tagalog",
+            "Say it",
+            "English"
+          ],
+          "rows": [
+            [
+              "Magkano po ito?",
+              "mahg-KAH-noh poh' ee-TOH",
+              "How much is this?"
+            ],
+            [
+              "Ang mahal naman!",
+              "ahng mah-HAHL nah-MAHN",
+              "That's so expensive!"
+            ],
+            [
+              "Puwede po bang tumawad?",
+              "PWEH-deh poh' bahng too-MAH-wahd",
+              "May I bargain?"
+            ],
+            [
+              "Pabarat naman po.",
+              "pah-BAH-raht nah-MAHN poh'",
+              "Lower it a little, please."
+            ],
+            [
+              "Setenta na lang po.",
+              "seh-TEHN-tah nah lahng poh'",
+              "Seventy then, please."
+            ],
+            [
+              "Wala po bang diskwento?",
+              "wah-LAH' poh' bahng dees-KWEHN-toh",
+              "No discount?"
+            ],
+            [
+              "Sobra pong mahal.",
+              "SOHB-rah pohng mah-HAHL",
+              "It's too expensive."
+            ],
+            [
+              "Sige, kukunin ko.",
+              "SEE-geh koo-KOO-neen koh",
+              "Okay, I'll take it."
+            ],
+            [
+              "Isipin ko muna.",
+              "ee-SEE-peen koh MOO-nah",
+              "Let me think about it first."
+            ],
+            [
+              "Salamat po, sa uulitin.",
+              "sah-LAH-maht poh' sah oo-oo-LEE-teen",
+              "Thanks, until next time."
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "*Sa uulitin* literally means \"to the one to be repeated\" and is used when leaving without buying, or when saying goodbye after being hosted. It's polite and not awkward — far better than slipping away silently."
+        },
+        {
+          "type": "kotak",
+          "title": "Unwritten rules of bargaining",
+          "items": [
+            "Bargain at wet markets and street stalls; don't bargain in shops with price tags, pharmacies or restaurants.",
+            "Bargaining with a smile and one joke almost always works; bargaining with a serious face rarely does.",
+            "If the vendor refuses and you buy anyway, say thank you as usual. Bargaining is not a fight, and mustn't be treated like one."
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Colors and sizes",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "Tagalog",
+            "Say it",
+            "Meaning",
+            "Note"
+          ],
+          "rows": [
+            [
+              "pula",
+              "poo-LAH",
+              "red",
+              "also has a political meaning: left-wing"
+            ],
+            [
+              "asul / bughaw",
+              "ah-SOOL",
+              "blue",
+              "*asul* from Spanish *azul*"
+            ],
+            [
+              "dilaw",
+              "dee-LOW",
+              "yellow",
+              "color of the Aquino political movement"
+            ],
+            [
+              "berde / luntian",
+              "BEHR-deh",
+              "green",
+              "*luntian* is literary"
+            ],
+            [
+              "itim",
+              "ee-TEEM",
+              "black",
+              "cf. Malay *hitam*"
+            ],
+            [
+              "puti",
+              "poo-TEE'",
+              "white",
+              "cf. Malay *putih*"
+            ],
+            [
+              "kayumanggi",
+              "kah-yoo-mahng-GEE",
+              "brown, golden-brown",
+              "the typical Filipino skin tone"
+            ],
+            [
+              "kulay abo",
+              "koo-LAI ah-BOH",
+              "gray",
+              "literally: ash-colored"
+            ],
+            [
+              "rosas",
+              "ROH-sahs",
+              "pink",
+              "from *rosa*"
+            ],
+            [
+              "kulay",
+              "koo-LAI",
+              "color",
+              "*Anong kulay?* — what color?"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "*Itim* and *puti* are two words you barely need to memorize if you know Malay or Indonesian: they're direct cousins of *hitam* and *putih*. Note also *kayumanggi*, a word with no exact English equivalent that carries its own pride in the Philippines."
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Size",
+            "Tagalog",
+            "Example"
+          ],
+          "rows": [
+            [
+              "big",
+              "malaki",
+              "malaking bag"
+            ],
+            [
+              "small",
+              "maliit",
+              "maliit na tasa"
+            ],
+            [
+              "long",
+              "mahaba",
+              "mahabang damit"
+            ],
+            [
+              "short",
+              "maikli",
+              "maikling buhok"
+            ],
+            [
+              "wide",
+              "malapad",
+              "malapad na mesa"
+            ],
+            [
+              "narrow",
+              "makitid",
+              "makitid na kalye"
+            ]
+          ]
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "tl": "palengke",
+      "baca": "pah-LEHNG-keh",
+      "en": "market"
+    },
+    {
+      "tl": "tindera / tindero",
+      "baca": "teen-DEH-rah",
+      "en": "seller (f / m)"
+    },
+    {
+      "tl": "pabili",
+      "baca": "pah-BEE-lee",
+      "en": "please buy for me"
+    },
+    {
+      "tl": "pahingi",
+      "baca": "pah-hee-NGEE'",
+      "en": "please give"
+    },
+    {
+      "tl": "pakiabot",
+      "baca": "pah-kee-AH-boht",
+      "en": "please pass"
+    },
+    {
+      "tl": "tumawad",
+      "baca": "too-MAH-wahd",
+      "en": "to bargain"
+    },
+    {
+      "tl": "diskwento",
+      "baca": "dees-KWEHN-toh",
+      "en": "discount"
+    },
+    {
+      "tl": "kilo",
+      "baca": "KEE-loh",
+      "en": "kilogram"
+    },
+    {
+      "tl": "piraso",
+      "baca": "pee-RAH-soh",
+      "en": "piece"
+    },
+    {
+      "tl": "dosena",
+      "baca": "doh-SEH-nah",
+      "en": "dozen"
+    },
+    {
+      "tl": "tali",
+      "baca": "TAH-lee'",
+      "en": "bundle, bunch"
+    },
+    {
+      "tl": "bote",
+      "baca": "BOH-teh",
+      "en": "bottle"
+    },
+    {
+      "tl": "sariwa",
+      "baca": "sah-ree-WAH'",
+      "en": "fresh"
+    },
+    {
+      "tl": "mangga",
+      "baca": "mahng-GAH",
+      "en": "mango"
+    },
+    {
+      "tl": "saging",
+      "baca": "SAH-geeng",
+      "en": "banana"
+    },
+    {
+      "tl": "kamatis",
+      "baca": "kah-mah-TEES",
+      "en": "tomato"
+    },
+    {
+      "tl": "sibuyas",
+      "baca": "see-BOO-yahs",
+      "en": "onion"
+    },
+    {
+      "tl": "bawang",
+      "baca": "BAH-wahng",
+      "en": "garlic"
+    },
+    {
+      "tl": "gulay",
+      "baca": "GOO-lai",
+      "en": "vegetables"
+    },
+    {
+      "tl": "prutas",
+      "baca": "PROO-tahs",
+      "en": "fruit"
+    },
+    {
+      "tl": "isda",
+      "baca": "ees-DAH'",
+      "en": "fish"
+    },
+    {
+      "tl": "karne",
+      "baca": "KAHR-neh",
+      "en": "meat"
+    },
+    {
+      "tl": "manok",
+      "baca": "mah-NOHK",
+      "en": "chicken"
+    },
+    {
+      "tl": "bigas",
+      "baca": "bee-GAHS",
+      "en": "rice (uncooked)"
+    },
+    {
+      "tl": "itlog",
+      "baca": "eet-LOHG",
+      "en": "egg"
+    },
+    {
+      "tl": "pula",
+      "baca": "poo-LAH",
+      "en": "red"
+    },
+    {
+      "tl": "itim",
+      "baca": "ee-TEEM",
+      "en": "black"
+    },
+    {
+      "tl": "puti",
+      "baca": "poo-TEE'",
+      "en": "white"
+    },
+    {
+      "tl": "berde",
+      "baca": "BEHR-deh",
+      "en": "green"
+    },
+    {
+      "tl": "kulay",
+      "baca": "koo-LAI",
+      "en": "color"
+    }
+  ],
+  "exercises": [
+    {
+      "prompt": "Translate into Tagalog.",
+      "items": [
+        "How much are the mangoes, ma'am?",
+        "That's so expensive!",
+        "May I bargain, ma'am?",
+        "Just two kilos.",
+        "I'd like to buy some water too, ma'am.",
+        "Thank you, until next time."
+      ]
+    },
+    {
+      "prompt": "Fill in the right unit: kilo, piraso, dosena, tali, bote.",
+      "items": [
+        "Dalawang ____ ng mangga. (weight)",
+        "Anim na ____ ng kamatis. (counted singly)",
+        "Isang ____ ng itlog. (twelve eggs)",
+        "Isang ____ na sibuyas. (a bunch)",
+        "Tatlong ____ ng tubig. (bottles)"
+      ]
+    },
+    {
+      "prompt": "Turn into a polite request with paki- or pa-. Example: Bumili ka ng tubig. → Pabili po ng tubig.",
+      "items": [
+        "Bumili ka ng kape. → ____",
+        "Ulitin mo. → ____",
+        "Abutin mo ang asin. → ____",
+        "Ibigay mo kay Ana. → ____",
+        "Sabihin mo sa kaniya. → ____"
+      ]
+    },
+    {
+      "prompt": "Put the words in the right order.",
+      "items": [
+        "ang / po / magkano / mangga / ?",
+        "naman / mahal / ang / !",
+        "bang / tumawad / puwede / po / ?",
+        "lang / na / setenta / po",
+        "kilo / po / dalawang"
+      ]
+    }
+  ],
+  "answers": [
+    "Ate, magkano po ang mangga? — Ang mahal naman! — Puwede po bang tumawad? — Dalawang kilo na lang. — Pabili rin po ng tubig. — Salamat po, sa uulitin.",
+    "kilo — piraso — dosena — tali — bote",
+    "Pabili po ng kape. — Pakiulit po. — Pakiabot po ng asin. — Pakibigay po kay Ana. — Pakisabi po sa kaniya.",
+    "Magkano po ang mangga? — Ang mahal naman! — Puwede po bang tumawad? — Setenta na lang po. — Dalawang kilo po."
+  ],
+  "wave": "Review **unit 6**: name five things in your room with *may*, then five that aren't there with *wala* — all aloud, without looking at your notes."
+}

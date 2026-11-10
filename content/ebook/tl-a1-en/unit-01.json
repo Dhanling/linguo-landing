@@ -1,0 +1,592 @@
+{
+  "title": "Hello, what's your name?",
+  "title_target": "Kumusta ka? Ano ang pangalan mo?",
+  "goal": "Greet people at the right time of day, give your name and where you're from, ask how someone is, and use *po* from the very first sentence.",
+  "bekal": [
+    "greet with *magandang umaga/hapon/gabi* at the right moments",
+    "give your name with *ako si* and ask someone else's",
+    "add *po* to be polite without changing anything else"
+  ],
+  "dialogs": [
+    {
+      "title": "Dialogue — Unang araw sa Maynila",
+      "intro": "First day in Manila. Budi has just stepped off the plane and meets Ana, a language-school staff member who has come to pick him up.",
+      "lines": [
+        {
+          "speaker": "Ana:",
+          "text": "Magandang umaga po! Ako si Ana.",
+          "id": "Good morning, sir! I'm Ana.",
+          "literal": "beautiful-of morning sir! I si Ana."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Magandang umaga rin po. Ako si Budi.",
+          "id": "Good morning to you too, ma'am. I'm Budi.",
+          "literal": "beautiful-of morning also ma'am. I si Budi."
+        },
+        {
+          "speaker": "Ana:",
+          "text": "Kumusta ka?",
+          "id": "How are you?",
+          "literal": "how-are you?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Mabuti naman, salamat po. Ikaw?",
+          "id": "Fine, thank you, ma'am. And you?",
+          "literal": "good indeed, thanks ma'am. you?"
+        },
+        {
+          "speaker": "Ana:",
+          "text": "Mabuti rin ako. Taga-saan ka?",
+          "id": "I'm fine too. Where are you from?",
+          "literal": "good also I. from-where you?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Taga-Indonesia po ako. Taga-Jakarta.",
+          "id": "I'm from Indonesia, ma'am. From Jakarta.",
+          "literal": "from-Indonesia ma'am I. from-Jakarta."
+        },
+        {
+          "speaker": "Ana:",
+          "text": "Ang layo! Nag-aaral ka ba ng Tagalog?",
+          "id": "So far away! Are you studying Tagalog?",
+          "literal": "how far! studying you [question] of Tagalog?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Opo, nag-aaral po ako. Konti pa lang.",
+          "id": "Yes, ma'am, I'm studying. Just a little so far.",
+          "literal": "yes-ma'am, studying ma'am I. little still only."
+        },
+        {
+          "speaker": "Ana:",
+          "text": "Ang galing mo! Masaya akong makilala ka.",
+          "id": "Well done! Nice to meet you.",
+          "literal": "how good you! happy I-that to-meet you."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Ako rin po. Maraming salamat.",
+          "id": "Nice to meet you too, ma'am. Thank you very much.",
+          "literal": "I also ma'am. many thanks."
+        },
+        {
+          "speaker": "Ana:",
+          "text": "Walang anuman. Tara na, sa kotse tayo.",
+          "id": "You're welcome. Come on, let's go to the car.",
+          "literal": "no anything. come now, to car we."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Sige po. Salamat ulit!",
+          "id": "Okay, ma'am. Thanks again!",
+          "literal": "all-right ma'am. thanks again!"
+        }
+      ],
+      "notes": [
+        "**Kumusta comes from Spanish.** It was originally *¿Cómo está?* — \"how are you\". That's why it doesn't look like other Tagalog words, and why it never changes form: *kumusta ka*, *kumusta po kayo*, *kumusta si Ana*. One form for everyone.",
+        "**The standard answer is *mabuti*.** It means \"good\" and almost always travels with *naman*: *mabuti naman*. Without *naman* the answer sounds flat, like filling in a form; with it, it sounds like real conversation. Particles like this get full treatment in unit 14.",
+        "**Po is the whole Tagalog politeness system in one syllable.** It has no meaning of its own and changes no grammar — you just slip it into the sentence. Use *po* with older people, people you've just met, officials, anyone you respect. Leaving it out isn't a grammar mistake, it's a bad impression.",
+        "**Opo isn't just \"yes\".** *Oo* is plain \"yes\"; *opo* is polite \"yes\". They aren't interchangeable: answering *oo* to an elder in the Philippines sounds like saying \"yeah\" in a bored tone to your boss's mother.",
+        "**Ako si Budi has no verb.** Literally it's just \"I si Budi\". Like many languages (Russian, Arabic), Tagalog doesn't need a word like \"am/is\" to link two things. What Tagalog does add is the marker *si* in front of a person's name — and it's mandatory.",
+        "**Taga- attaches to a place name** and means \"person from\". *Taga-Jakarta*, *taga-Maynila*, *taga-Cebu*. The hyphen is used when the next word is a proper name; with ordinary nouns it's written together: *tagabundok* (mountain person).",
+        "**Ang layo, ang galing** — the word *ang* here is not the marker you'll learn in unit 2, but an exclamation: \"how …!\" Compare *ang ganda!* (so pretty!), *ang init!* (so hot!). This pattern is very common and very easy: *ang* + adjective, done.",
+        "**Walang anuman** literally means \"there is nothing\" — the standard reply to \"thank you\". In casual talk people often answer more briefly: *sige* (okay) or even *no problem* in English. All three are normal.",
+        "**Tara na** is the most characteristically Filipino invitation: \"let's go\". It almost always appears with *na*. If you memorize only one invitation from this course, make it this one."
+      ],
+      "grammars": [
+        {
+          "title": "Introductions — no verb needed",
+          "body": [
+            "Introductions use the simplest pattern in the whole language: two things placed side by side, with no linking word."
+          ],
+          "table": {
+            "head": [
+              "Tagalog",
+              "Say it",
+              "Literal",
+              "Meaning"
+            ],
+            "rows": [
+              [
+                "**Ako si** Budi.",
+                "ah-KOH see BOO-dee",
+                "I si Budi",
+                "I'm Budi."
+              ],
+              [
+                "**Si** Ana **ako**.",
+                "see AH-nah ah-KOH",
+                "si Ana I",
+                "I'm Ana. (stress on the name)"
+              ],
+              [
+                "**Guro ako.**",
+                "GOO-roh' ah-KOH",
+                "teacher I",
+                "I'm a teacher."
+              ],
+              [
+                "**Estudyante siya.**",
+                "ehs-tood-YAHN-teh shah",
+                "student he/she",
+                "She's a student."
+              ],
+              [
+                "**Taga-Jakarta kami.**",
+                "tah-gah-jah-KAHR-tah kah-MEE",
+                "from-Jakarta we",
+                "We're from Jakarta."
+              ]
+            ]
+          },
+          "after": [
+            "Notice the order: **the description first, the person after**. *Guro ako*, not *ako guro*. This is the opposite of English and will keep recurring throughout the course — Tagalog almost always puts the \"news\" first.",
+            "*Ako ay si Budi* is also correct and you may have seen it in old books. *Ay* flips the order to look like English, but it sounds formal, like a speech or a newspaper. People don't use it in conversation.",
+            "⚠️ *Si* is only for **people's names**. For things, use *ang*: *Ang bahay*, not *si bahay*. These markers are set up in units 2 and 5."
+          ]
+        },
+        {
+          "title": "Po and opo — one syllable that changes everything",
+          "body": [
+            "Tagalog has no layered speech levels like Javanese or Korean. All it has are two small words, and both work by attaching."
+          ],
+          "table": {
+            "head": [
+              "Plain",
+              "Polite",
+              "Meaning"
+            ],
+            "rows": [
+              [
+                "Kumusta ka?",
+                "Kumusta **po** kayo?",
+                "How are you?"
+              ],
+              [
+                "Oo.",
+                "**Opo.**",
+                "Yes."
+              ],
+              [
+                "Hindi.",
+                "Hindi **po**.",
+                "No."
+              ],
+              [
+                "Salamat.",
+                "Salamat **po**.",
+                "Thank you."
+              ],
+              [
+                "Ano ang pangalan mo?",
+                "Ano **po** ang pangalan **ninyo**?",
+                "What is your name?"
+              ],
+              [
+                "Taga-saan ka?",
+                "Taga-saan **po** kayo?",
+                "Where are you from?"
+              ]
+            ]
+          },
+          "after": [
+            "Two things change when you're polite: **po** is slipped in, and **ka/mo** rise to **kayo/ninyo** — the plural forms used as a respectful singular, exactly like *vous* in French.",
+            "*Po* almost always goes **after the first word** of the sentence. *Salamat po*, *Hindi po ako guro*, *Taga-saan po kayo?* When in doubt, put it after the first word and you'll be right nine times out of ten.",
+            "There's also *ho* — a more relaxed version of *po*, used with people only slightly older or about your age. As a newcomer, stick with *po*: being too polite is never a problem in the Philippines."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Sentences that keep you afloat",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "These twelve sentences aren't grammar to memorize — they're emergency tools. Learn the whole phrase now; understand its structure later."
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Tagalog",
+            "Say it",
+            "English"
+          ],
+          "rows": [
+            [
+              "Oo / Hindi",
+              "OH-oh' / heen-DEE'",
+              "Yes / No"
+            ],
+            [
+              "Salamat po",
+              "sah-LAH-maht poh'",
+              "Thank you"
+            ],
+            [
+              "Walang anuman",
+              "wah-LAHNG ah-noo-MAHN",
+              "You're welcome"
+            ],
+            [
+              "Pasensya na po",
+              "pah-SEHN-shah nah poh'",
+              "Sorry / excuse me"
+            ],
+            [
+              "Excuse me po",
+              "ehks-KYOOS mee poh'",
+              "Excuse me (used as is)"
+            ],
+            [
+              "Hindi ko po alam",
+              "heen-DEE' koh poh' ah-LAHM",
+              "I don't know"
+            ],
+            [
+              "Hindi ko po maintindihan",
+              "heen-DEE' koh poh' mah-een-teen-DEE-hahn",
+              "I don't understand"
+            ],
+            [
+              "Pakiulit po",
+              "pah-kee-OO-leet poh'",
+              "Please repeat"
+            ],
+            [
+              "Dahan-dahan po",
+              "DAH-hahn DAH-hahn poh'",
+              "Slowly, please"
+            ],
+            [
+              "Marunong po ba kayo ng Ingles?",
+              "mah-roo-NOHNG poh' bah kah-YOH nahng eeng-LEHS",
+              "Do you speak English?"
+            ],
+            [
+              "Ano po ito sa Tagalog?",
+              "ah-NOH poh' ee-TOH sah tah-GAH-lohg",
+              "What's this in Tagalog?"
+            ],
+            [
+              "Tulong po!",
+              "TOO-lohng poh'",
+              "Help!"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "*Pasensya na* literally means \"patience now\" — from Spanish *paciencia*. For a deeper apology there is *paumanhin po*, but it sounds formal; in daily life *pasensya na po* covers nearly everything."
+        },
+        {
+          "type": "kotak",
+          "title": "One sentence that will change your experience in the Philippines",
+          "items": [
+            "*Nag-aaral po ako ng Tagalog. Puwede po bang mag-Tagalog tayo?* — \"I'm studying Tagalog. May we speak Tagalog?\"",
+            "The typical difficulty of learning Tagalog isn't that people are harsh, but the opposite: almost every Filipino speaks English and will switch to it automatically as soon as they hear your accent, thinking they're helping. The sentence above politely stops them — and is almost always met with a smile, because foreigners who want to learn Tagalog are still rare."
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Greetings by time of day",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "Greeting",
+            "Say it",
+            "When",
+            "Note"
+          ],
+          "rows": [
+            [
+              "Magandang umaga",
+              "mah-gahn-DAHNG oo-MAH-gah",
+              "until ~11 a.m.",
+              "literally: beautiful morning"
+            ],
+            [
+              "Magandang tanghali",
+              "mah-gahn-DAHNG tahng-HAH-lee'",
+              "~11 a.m. to ~1 p.m.",
+              "lunchtime"
+            ],
+            [
+              "Magandang hapon",
+              "mah-gahn-DAHNG HAH-pohn",
+              "afternoon",
+              "most commonly used"
+            ],
+            [
+              "Magandang gabi",
+              "mah-gahn-DAHNG gah-BEE",
+              "after sunset",
+              "also used when parting"
+            ],
+            [
+              "Magandang araw",
+              "mah-gahn-DAHNG AH-row",
+              "any time",
+              "neutral, a bit formal"
+            ],
+            [
+              "Kumusta",
+              "koo-MOOS-tah",
+              "any time",
+              "\"how are you\", also used as a greeting"
+            ],
+            [
+              "Hoy / Uy",
+              "hoy / ooy",
+              "any time",
+              "very casual — close friends only"
+            ],
+            [
+              "Paalam",
+              "pah-AH-lahm",
+              "parting",
+              "formal; rare in conversation"
+            ],
+            [
+              "Sige po",
+              "SEE-geh poh'",
+              "parting",
+              "\"okay\" — the most common goodbye"
+            ],
+            [
+              "Ingat ka",
+              "EE-ngaht kah",
+              "parting",
+              "\"take care\" — warm and very common"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "Notice that all the time-of-day greetings follow the same pattern: *maganda* (beautiful) + the linker **-ng** + the name of the time. That linker is called a *linker*, and it appears in nearly every unit of this course. Its rules are set up in unit 3."
+        },
+        {
+          "type": "p",
+          "text": "To answer a greeting, just repeat it and add *rin* or *din* (\"too\"): *Magandang umaga rin po*. It's written *rin* after a word ending in a vowel and *din* after a consonant — a leftover of the d→r sound rule you saw on the pronunciation page."
+        },
+        {
+          "type": "kotak",
+          "title": "Words for addressing people",
+          "items": [
+            "**Ate** (AH-teh, older sister) and **Kuya** (KOO-yah, older brother) are used for anyone slightly older — restaurant staff, drivers, shopkeepers. They aren't only family terms but everyday polite forms of address.",
+            "**Tita / Tito** for people the age of your parents, **Lola / Lolo** for the age of your grandparents.",
+            "**Ma'am / Sir** are widely used in English, especially in shops and offices. There's nothing odd about mixing: *Salamat po, ma'am.*"
+          ]
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "tl": "kumusta",
+      "baca": "koo-MOOS-tah",
+      "en": "how are you"
+    },
+    {
+      "tl": "magandang umaga",
+      "baca": "mah-gahn-DAHNG oo-MAH-gah",
+      "en": "good morning"
+    },
+    {
+      "tl": "magandang hapon",
+      "baca": "mah-gahn-DAHNG HAH-pohn",
+      "en": "good afternoon"
+    },
+    {
+      "tl": "magandang gabi",
+      "baca": "mah-gahn-DAHNG gah-BEE",
+      "en": "good evening"
+    },
+    {
+      "tl": "mabuti",
+      "baca": "mah-BOO-tee",
+      "en": "good, fine"
+    },
+    {
+      "tl": "salamat",
+      "baca": "sah-LAH-maht",
+      "en": "thank you"
+    },
+    {
+      "tl": "maraming salamat",
+      "baca": "mah-RAH-meeng sah-LAH-maht",
+      "en": "thank you very much"
+    },
+    {
+      "tl": "walang anuman",
+      "baca": "wah-LAHNG ah-noo-MAHN",
+      "en": "you're welcome"
+    },
+    {
+      "tl": "oo / opo",
+      "baca": "OH-oh' / oh-POH'",
+      "en": "yes / yes (polite)"
+    },
+    {
+      "tl": "hindi",
+      "baca": "heen-DEE'",
+      "en": "no, not"
+    },
+    {
+      "tl": "po",
+      "baca": "poh'",
+      "en": "politeness particle"
+    },
+    {
+      "tl": "ako",
+      "baca": "ah-KOH",
+      "en": "I"
+    },
+    {
+      "tl": "ikaw / ka",
+      "baca": "ee-KOW / kah",
+      "en": "you"
+    },
+    {
+      "tl": "siya",
+      "baca": "shah",
+      "en": "he, she"
+    },
+    {
+      "tl": "kayo",
+      "baca": "kah-YOH",
+      "en": "you (plural; polite singular)"
+    },
+    {
+      "tl": "pangalan",
+      "baca": "pah-NGAH-lahn",
+      "en": "name"
+    },
+    {
+      "tl": "ano",
+      "baca": "ah-NOH",
+      "en": "what"
+    },
+    {
+      "tl": "saan",
+      "baca": "sah-AHN",
+      "en": "where"
+    },
+    {
+      "tl": "taga-",
+      "baca": "tah-gah",
+      "en": "from (origin)"
+    },
+    {
+      "tl": "guro",
+      "baca": "GOO-roh'",
+      "en": "teacher"
+    },
+    {
+      "tl": "estudyante",
+      "baca": "ehs-tood-YAHN-teh",
+      "en": "student"
+    },
+    {
+      "tl": "kaibigan",
+      "baca": "kah-ee-BEE-gahn",
+      "en": "friend"
+    },
+    {
+      "tl": "masaya",
+      "baca": "mah-sah-YAH",
+      "en": "happy, glad"
+    },
+    {
+      "tl": "malayo",
+      "baca": "mah-LAH-yoh'",
+      "en": "far"
+    },
+    {
+      "tl": "magaling",
+      "baca": "mah-gah-LEENG",
+      "en": "good, skilled"
+    },
+    {
+      "tl": "konti",
+      "baca": "kohn-TEE'",
+      "en": "a little"
+    },
+    {
+      "tl": "sige",
+      "baca": "SEE-geh",
+      "en": "okay; go ahead"
+    },
+    {
+      "tl": "tara na",
+      "baca": "TAH-rah nah",
+      "en": "let's go (invitation)"
+    },
+    {
+      "tl": "ingat",
+      "baca": "EE-ngaht",
+      "en": "take care"
+    },
+    {
+      "tl": "bukas",
+      "baca": "boo-KAHS",
+      "en": "tomorrow"
+    }
+  ],
+  "exercises": [
+    {
+      "prompt": "Translate into Tagalog. Use *po* in every sentence.",
+      "items": [
+        "Good morning, ma'am!",
+        "I'm Budi.",
+        "I'm from Indonesia.",
+        "How are you?",
+        "Fine, thank you.",
+        "Thank you very much."
+      ]
+    },
+    {
+      "prompt": "Fill in the correct pronoun.",
+      "items": [
+        "Guro ____. (I)",
+        "Taga-Cebu ____. (he/she)",
+        "Kumusta ____? (you)",
+        "Masaya ____. (we, not including you)",
+        "Estudyante ____. (they)",
+        "Kumusta po ____? (you, polite)"
+      ]
+    },
+    {
+      "prompt": "Choose the right greeting. Write out the full answer.",
+      "items": [
+        "You walk into a bakery at seven in the morning. To the seller you say ____.",
+        "You meet a classmate at three in the afternoon. You say ____.",
+        "You enter a restaurant at eight at night. To the waiter you say ____.",
+        "You say a warm goodbye to a friend. You say ____.",
+        "Someone thanks you. You answer ____."
+      ]
+    },
+    {
+      "prompt": "Put the words in the right order.",
+      "items": [
+        "si / ako / Budi",
+        "ka / taga-saan / ?",
+        "ako / taga-Jakarta / po",
+        "naman / mabuti / po / salamat",
+        "ba / nag-aaral / ka / Tagalog / ng / ?"
+      ]
+    }
+  ],
+  "answers": [
+    "Magandang umaga po! — Ako po si Budi. — Taga-Indonesia po ako. — Kumusta po kayo? — Mabuti naman po, salamat. — Maraming salamat po.",
+    "ako — siya — ka — kami — sila — kayo",
+    "Magandang umaga po. — Magandang hapon. — Magandang gabi po. — Ingat ka! — Walang anuman.",
+    "Ako si Budi. — Taga-saan ka? — Taga-Jakarta po ako. — Mabuti naman po, salamat. — Nag-aaral ka ba ng Tagalog?"
+  ]
+}
