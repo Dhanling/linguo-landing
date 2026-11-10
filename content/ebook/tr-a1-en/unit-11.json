@@ -1,0 +1,632 @@
+{
+  "title": "Where did you go yesterday?",
+  "title_target": "Dün ne yaptın?",
+  "goal": "Talk about what has already happened with the past suffix *-di*, including with nouns and adjectives.",
+  "bekal": [
+    "forming *geldim, geldin, geldi, geldik, geldiniz, geldiler*",
+    "choosing between the eight forms *-dı, -di, -du, -dü, -tı, -ti, -tu, -tü*",
+    "saying \"I was tired\" and \"there was\" with *-ydi* and *vardı*"
+  ],
+  "dialogs": [
+    {
+      "title": "Dialogue — Dün akşam",
+      "intro": "Morning in Fatma Hanım's kitchen. Budi has just woken up; Emre is already on his second tea.",
+      "lines": [
+        {
+          "speaker": "Emre:",
+          "text": "Günaydın! Dün akşam nerede kaldın?",
+          "id": "Good morning! Where were you last night?",
+          "literal": "good-morning! yesterday evening where stayed-you?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Sultanahmet'e gittim. Çok yürüdüm!",
+          "id": "I went to Sultanahmet. I walked so much!",
+          "literal": "Sultanahmet-to went-I. very walked-I!"
+        },
+        {
+          "speaker": "Emre:",
+          "text": "Ayasofya'yı gördün mü?",
+          "id": "Did you see Hagia Sophia?",
+          "literal": "Hagia-Sophia-(object) saw-you question?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Gördüm ama içeri girmedim. Sıra çok uzundu.",
+          "id": "I saw it, but I didn't go in. The line was really long.",
+          "literal": "saw-I but inside not-entered-I. line very long-was."
+        },
+        {
+          "speaker": "Emre:",
+          "text": "Anladım. Peki akşam ne yedin?",
+          "id": "I see. So what did you eat in the evening?",
+          "literal": "understood-I. well evening what ate-you?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Bir balıkçıda balık ekmek yedim. Harikaydı.",
+          "id": "I had a fish sandwich at a fish stall. It was amazing.",
+          "literal": "a fish-seller-at fish bread ate-I. wonderful-was."
+        },
+        {
+          "speaker": "Emre:",
+          "text": "Kaça?",
+          "id": "How much?",
+          "literal": "how-much-for?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Yüz elli lira. Pahalı mıydı?",
+          "id": "A hundred and fifty lira. Was that expensive?",
+          "literal": "hundred fifty lira. expensive question-was?"
+        },
+        {
+          "speaker": "Emre:",
+          "text": "Turist fiyatı! Ama sorun değil, güzeldi değil mi?",
+          "id": "Tourist price! But never mind, it was good, wasn't it?",
+          "literal": "tourist price-its! but problem not, nice-was not question?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Çok güzeldi. Sonra vapurla döndüm.",
+          "id": "It was really good. Then I came back by ferry.",
+          "literal": "very nice-was. then ferry-with returned-I."
+        },
+        {
+          "speaker": "Emre:",
+          "text": "Yorgun musun şimdi?",
+          "id": "Are you tired now?",
+          "literal": "tired question-you now?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Dün çok yorgundum, bugün iyiyim.",
+          "id": "I was very tired yesterday; today I'm fine.",
+          "literal": "yesterday very tired-was-I, today good-I."
+        }
+      ],
+      "notes": [
+        "**The person endings are different from the ones you know.** The *-di* form uses the second set: *-m, -n, —, -k, -niz, -ler*. That's why \"I came\" is *geldim*, not *geldiyim*. This set is also used for the conditional later on.",
+        "**Adjectives can go into the past too.** *Yorgunum* (I'm tired) → *yorgundum* (I was tired). *Güzel* → *güzeldi*. *Var* → *vardı*, *yok* → *yoktu*. After a vowel, a *y* is inserted: *harika* → *harikaydı*.",
+        "**Balık ekmek** is a grilled-fish sandwich sold on the Eminönü waterfront — Istanbul's most famous street food, and the simplest noun + noun pattern there is: fish + bread.",
+        "**Pahalı mıydı?** shows an order worth noticing: adjective, then the question particle, then the past suffix. Turkish stacks them in exactly that order, and never the other way round."
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "The past tense -di",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "The past suffix has **eight forms** — four from vowel harmony, times two from consonant harmony. That sounds like a lot, but both are rules you've been using since unit 5."
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Stem ends in",
+            "Vowel a, ı",
+            "Vowel e, i",
+            "Vowel o, u",
+            "Vowel ö, ü"
+          ],
+          "rows": [
+            [
+              "soft letter",
+              "al**dı**m",
+              "gel**di**m",
+              "ol**du**m",
+              "gör**dü**m"
+            ],
+            [
+              "hard letter (FiSTiKÇi ŞaHaP)",
+              "bak**tı**m",
+              "git**ti**m",
+              "unut**tu**m",
+              "öp**tü**m"
+            ]
+          ]
+        },
+        {
+          "type": "sub",
+          "text": "Second-set person endings"
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "",
+            "gelmek",
+            "gitmek",
+            "yapmak",
+            "görmek"
+          ],
+          "rows": [
+            [
+              "ben",
+              "gel**dim**",
+              "git**tim**",
+              "yap**tım**",
+              "gör**düm**"
+            ],
+            [
+              "sen",
+              "gel**din**",
+              "git**tin**",
+              "yap**tın**",
+              "gör**dün**"
+            ],
+            [
+              "o",
+              "gel**di**",
+              "git**ti**",
+              "yap**tı**",
+              "gör**dü**"
+            ],
+            [
+              "biz",
+              "gel**dik**",
+              "git**tik**",
+              "yap**tık**",
+              "gör**dük**"
+            ],
+            [
+              "siz",
+              "gel**diniz**",
+              "git**tiniz**",
+              "yap**tınız**",
+              "gör**dünüz**"
+            ],
+            [
+              "onlar",
+              "gel**diler**",
+              "git**tiler**",
+              "yap**tılar**",
+              "gör**düler**"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "Negation still uses *-me/-ma* before the tense suffix: *gelmedim* (I didn't come), *yapmadım*, *görmedim*. Questions still use the separate particle, this time AFTER the past suffix: *geldin mi?*, *yaptınız mı?*, *gelmedi mi?*"
+        },
+        {
+          "type": "kotak",
+          "title": "Why gitmek becomes gittim",
+          "items": [
+            "The stem *git-* ends in *t*, one of the hard letters — so the suffix becomes *-ti*. The result is two t's side by side: *git-tim*. That's correct, and it's spelled that way.",
+            "Compare the *-yor* form, where the *t* SOFTENS instead, because the suffix starts with a vowel: *gidiyorum*. Same word, two directions of change — both decided by the first letter of the suffix."
+          ]
+        }
+      ]
+    },
+    {
+      "title": "I used to be ..., there was ...",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "The past suffix can also attach to nouns and adjectives, to say something **was that way**. The form is the same; you just need a linking *y* after a vowel."
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Now",
+            "Past",
+            "English"
+          ],
+          "rows": [
+            [
+              "öğrenciyim",
+              "öğrenci**ydim**",
+              "I was a student"
+            ],
+            [
+              "yorgunum",
+              "yorgun**dum**",
+              "I was tired"
+            ],
+            [
+              "güzel",
+              "güzel**di**",
+              "it was nice"
+            ],
+            [
+              "harika",
+              "harika**ydı**",
+              "it was great"
+            ],
+            [
+              "var",
+              "var**dı**",
+              "there was"
+            ],
+            [
+              "yok",
+              "yok**tu**",
+              "there wasn't"
+            ],
+            [
+              "değil",
+              "değil**di**",
+              "it wasn't"
+            ],
+            [
+              "evde",
+              "evde**ydim**",
+              "I was at home"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "Notice *yoktu*: since *yok* ends in *k* — a hard letter — the suffix becomes *-tu*, not *-du*. The Fıstıkçı Şahap rule works here exactly as it does with verbs."
+        },
+        {
+          "type": "sub",
+          "text": "Time words for storytelling"
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Türkçe",
+            "English",
+            "Türkçe",
+            "English"
+          ],
+          "rows": [
+            [
+              "dün",
+              "yesterday",
+              "önceki gün",
+              "the day before yesterday"
+            ],
+            [
+              "geçen hafta",
+              "last week",
+              "geçen ay",
+              "last month"
+            ],
+            [
+              "geçen yıl",
+              "last year",
+              "az önce",
+              "just now"
+            ],
+            [
+              "sonra",
+              "then, after that",
+              "önce",
+              "before, earlier"
+            ],
+            [
+              "birden",
+              "suddenly",
+              "sonunda",
+              "finally"
+            ],
+            [
+              "ilk önce",
+              "first of all",
+              "en son",
+              "last of all"
+            ]
+          ]
+        },
+        {
+          "type": "kotak",
+          "title": "Building a story",
+          "items": [
+            "Turkish stories are almost always strung together with three words: *önce* (first), *sonra* (then), *en son* (finally). All three go at the start of the sentence.",
+            "*Önce Sultanahmet'e gittim. Sonra Ayasofya'yı gördüm. En son vapurla döndüm.* — three short sentences, one complete story. At A1, that's enough to tell the story of your whole day."
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Verbs for storytelling",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "Türkçe",
+            "Past form",
+            "English"
+          ],
+          "rows": [
+            [
+              "gitmek",
+              "gittim",
+              "go"
+            ],
+            [
+              "gelmek",
+              "geldim",
+              "come"
+            ],
+            [
+              "görmek",
+              "gördüm",
+              "see"
+            ],
+            [
+              "yemek",
+              "yedim",
+              "eat"
+            ],
+            [
+              "içmek",
+              "içtim",
+              "drink"
+            ],
+            [
+              "almak",
+              "aldım",
+              "buy"
+            ],
+            [
+              "yapmak",
+              "yaptım",
+              "do"
+            ],
+            [
+              "kalkmak",
+              "kalktım",
+              "get up, depart"
+            ],
+            [
+              "uyumak",
+              "uyudum",
+              "sleep"
+            ],
+            [
+              "dönmek",
+              "döndüm",
+              "return, go home"
+            ],
+            [
+              "girmek",
+              "girdim",
+              "enter"
+            ],
+            [
+              "çıkmak",
+              "çıktım",
+              "go out"
+            ],
+            [
+              "başlamak",
+              "başladım",
+              "begin"
+            ],
+            [
+              "bitirmek",
+              "bitirdim",
+              "finish"
+            ],
+            [
+              "unutmak",
+              "unuttum",
+              "forget"
+            ],
+            [
+              "bulmak",
+              "buldum",
+              "find"
+            ]
+          ]
+        },
+        {
+          "type": "kotak",
+          "title": "Unit 9 review",
+          "items": [
+            "Cover the Turkish and rebuild these from memory: \"How much is it?\" · \"That's really expensive!\" · \"I'll take this one.\" · \"Is there a discount?\" · \"Can I pay by card?\"",
+            "Then mark the object correctly: \"I'm reading the book.\" · \"I'm waiting for you.\""
+          ]
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "tr": "dün",
+      "baca": "dün",
+      "en": "yesterday"
+    },
+    {
+      "tr": "geçen hafta",
+      "baca": "ge-CHEN haf-TA",
+      "en": "last week"
+    },
+    {
+      "tr": "az önce",
+      "baca": "az ÖN-je",
+      "en": "just now"
+    },
+    {
+      "tr": "sonunda",
+      "baca": "so-nun-DA",
+      "en": "finally"
+    },
+    {
+      "tr": "birden",
+      "baca": "bir-DEN",
+      "en": "suddenly"
+    },
+    {
+      "tr": "gitmek",
+      "baca": "git-MEK",
+      "en": "to go"
+    },
+    {
+      "tr": "dönmek",
+      "baca": "dön-MEK",
+      "en": "to return, go home"
+    },
+    {
+      "tr": "girmek / çıkmak",
+      "baca": "gir-MEK / chuhk-MAK",
+      "en": "to enter / to go out"
+    },
+    {
+      "tr": "kalkmak",
+      "baca": "kalk-MAK",
+      "en": "to get up, depart"
+    },
+    {
+      "tr": "uyumak",
+      "baca": "u-yu-MAK",
+      "en": "to sleep"
+    },
+    {
+      "tr": "unutmak",
+      "baca": "u-nut-MAK",
+      "en": "to forget"
+    },
+    {
+      "tr": "bulmak",
+      "baca": "bul-MAK",
+      "en": "to find"
+    },
+    {
+      "tr": "bitirmek",
+      "baca": "bi-tir-MEK",
+      "en": "to finish"
+    },
+    {
+      "tr": "yorgun",
+      "baca": "yor-GUN",
+      "en": "tired"
+    },
+    {
+      "tr": "sıra",
+      "baca": "suh-RA",
+      "en": "line, turn"
+    },
+    {
+      "tr": "uzun / kısa",
+      "baca": "u-ZUN / kuh-SA",
+      "en": "long / short"
+    },
+    {
+      "tr": "turist",
+      "baca": "tu-RIST",
+      "en": "tourist"
+    },
+    {
+      "tr": "müze",
+      "baca": "mü-ZE",
+      "en": "museum"
+    },
+    {
+      "tr": "içeri / dışarı",
+      "baca": "i-CHE-ri / duh-SHA-ruh",
+      "en": "inside / outside"
+    },
+    {
+      "tr": "balıkçı",
+      "baca": "ba-luhk-CHUH",
+      "en": "fish seller"
+    },
+    {
+      "tr": "harika",
+      "baca": "ha-ri-KA",
+      "en": "wonderful"
+    },
+    {
+      "tr": "vardı / yoktu",
+      "baca": "var-DUH / yok-TU",
+      "en": "there was / there wasn't"
+    },
+    {
+      "tr": "hava durumu",
+      "baca": "ha-VA du-ru-MU",
+      "en": "weather conditions"
+    },
+    {
+      "tr": "yürümek",
+      "baca": "yü-rü-MEK",
+      "en": "to walk"
+    },
+    {
+      "tr": "gezmek",
+      "baca": "gez-MEK",
+      "en": "to stroll, travel around"
+    },
+    {
+      "tr": "beğenmek",
+      "baca": "be-en-MEK",
+      "en": "to like"
+    },
+    {
+      "tr": "sonra / önce",
+      "baca": "son-RA / ÖN-je",
+      "en": "then / first"
+    },
+    {
+      "tr": "geçmek",
+      "baca": "gech-MEK",
+      "en": "to pass, go by"
+    },
+    {
+      "tr": "kaldım",
+      "baca": "kal-DUHM",
+      "en": "I stayed"
+    },
+    {
+      "tr": "anladım",
+      "baca": "an-la-DUHM",
+      "en": "I understood, I see"
+    }
+  ],
+  "exercises": [
+    {
+      "prompt": "Put the verb into the past for the person in brackets.",
+      "items": [
+        "gelmek (ben) → ____",
+        "gitmek (sen) → ____",
+        "görmek (o) → ____",
+        "yapmak (biz) → ____",
+        "unutmak (siz) → ____",
+        "almak (onlar) → ____"
+      ]
+    },
+    {
+      "prompt": "Make it negative or a question as indicated.",
+      "items": [
+        "geldim (negative) → ____",
+        "gittin (question) → ____",
+        "gördü (negative) → ____",
+        "yaptınız (question) → ____",
+        "aldık (negative) → ____",
+        "geldiler (question) → ____"
+      ]
+    },
+    {
+      "prompt": "Put into the past (adjectives and nouns).",
+      "items": [
+        "yorgunum → ____",
+        "güzel → ____",
+        "var → ____",
+        "yok → ____",
+        "öğrenciyim → ____",
+        "evdeyim → ____"
+      ]
+    },
+    {
+      "prompt": "Put the words in the right order.",
+      "items": [
+        "yaptın / dün / ne / ?",
+        "gittim / Sultanahmet'e / ben",
+        "mü / gördün / Ayasofya'yı / ?",
+        "yedim / balık / bir / ekmek",
+        "yorgundum / dün / çok",
+        "döndüm / vapurla / sonra"
+      ]
+    }
+  ],
+  "answers": [
+    "geldim — gittin — gördü — yaptık — unuttunuz — aldılar",
+    "gelmedim — gittin mi? — görmedi — yaptınız mı? — almadık — geldiler mi?",
+    "yorgundum — güzeldi — vardı — yoktu — öğrenciydim — evdeydim",
+    "Dün ne yaptın? — Ben Sultanahmet'e gittim. — Ayasofya'yı gördün mü? — Bir balık ekmek yedim. — Dün çok yorgundum. — Sonra vapurla döndüm."
+  ]
+}

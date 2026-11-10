@@ -1,0 +1,612 @@
+{
+  "title": "Calls and invitations",
+  "title_target": "Telefonda ve davette",
+  "goal": "Make phone calls, give and answer invitations, and say what you like with the pattern *-meyi sevmek*.",
+  "bekal": [
+    "opening and closing a phone call properly",
+    "turning verbs into nouns: *yüzmeyi seviyorum*",
+    "saying something needs doing with *-mek lazım* and *-meli*"
+  ],
+  "dialogs": [
+    {
+      "title": "Dialogue — Bir davet",
+      "intro": "Budi's phone rings on Friday afternoon. It's a number he doesn't know.",
+      "lines": [
+        {
+          "speaker": "Budi:",
+          "text": "Alo?",
+          "id": "Hello?",
+          "literal": "hello?"
+        },
+        {
+          "speaker": "Ayşe:",
+          "text": "Alo Budi, ben Ayşe. Rahatsız ediyor muyum?",
+          "id": "Hello Budi, it's Ayşe. Am I disturbing you?",
+          "literal": "hello Budi, I Ayşe. uncomfortable making question-I?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Hiç de değil. Buyurun Ayşe Hanım.",
+          "id": "Not at all. Go ahead, Ms. Ayşe.",
+          "literal": "at-all also not. please Ayşe Ms."
+        },
+        {
+          "speaker": "Ayşe:",
+          "text": "Pazar günü bize gelir misin? Küçük bir yemek var.",
+          "id": "Would you like to come over on Sunday? We're having a little dinner.",
+          "literal": "Sunday day-its us-to come question-you? small a meal there-is."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Çok isterim! Saat kaçta?",
+          "id": "I'd love to! What time?",
+          "literal": "very would-want-I! hour what-at?"
+        },
+        {
+          "speaker": "Ayşe:",
+          "text": "Yediye doğru. Eşim mantı yapacak.",
+          "id": "Around seven. My husband is making mantı.",
+          "literal": "seven-to toward. spouse-my mantı will-make."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Mantı yemeyi çok seviyorum! Ne getireyim?",
+          "id": "I love eating mantı! What should I bring?",
+          "literal": "mantı eating-(object) very love-I! what bring-shall-I?"
+        },
+        {
+          "speaker": "Ayşe:",
+          "text": "Hiçbir şey. Sadece kendini getir.",
+          "id": "Nothing at all. Just bring yourself.",
+          "literal": "no-one thing. only self-your-(object) bring."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Olmaz, bir şey almam lazım. Tatlı getireyim mi?",
+          "id": "No way, I need to bring something. Shall I bring a dessert?",
+          "literal": "won't-do, a thing taking-my necessary. sweet bring-shall-I question?"
+        },
+        {
+          "speaker": "Ayşe:",
+          "text": "Tamam, madem ısrar ediyorsun. Ama pahalı bir şey alma!",
+          "id": "OK, since you insist. But don't buy anything expensive!",
+          "literal": "OK, since insisting are-you. but expensive a thing don't-take!"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Söz. Adresi mesaj atar mısınız?",
+          "id": "Promise. Could you text me the address?",
+          "literal": "promise. address-the message throw question-you(formal)?"
+        },
+        {
+          "speaker": "Ayşe:",
+          "text": "Hemen atıyorum. Pazar görüşürüz, iyi akşamlar!",
+          "id": "Sending it right now. See you Sunday, good evening!",
+          "literal": "right-away throwing-I. Sunday see-each-other-we, good evening-s!"
+        }
+      ],
+      "notes": [
+        "**Alo is only used on the phone.** In person, it's *merhaba*. Saying who you are with *ben ...* at the start of a phone call is an almost compulsory Turkish habit.",
+        "**Rahatsız ediyor muyum?** — \"am I disturbing you?\" — is the polite way to open a call, and the answer is almost always *hiç de değil* or *estağfurullah* (\"not at all\"). These courtesies are expected, not just decoration.",
+        "**Getireyim mi?** uses the *-eyim* form, a close relative of *-elim* from unit 15: one for \"let me\", one for \"let's\". *Ne yapayım?* (what should I do?), *Gideyim mi?* (shall I go?).",
+        "**Arriving at a Turkish home empty-handed is considered a bit rude.** The usual gifts: *tatlı* (sweets), *çiçek* (flowers), or something for the hosts' children. The host will say no — and you should still bring it."
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Verbs that become nouns",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "To say \"I like swimming\", Turkish first turns the verb into a noun, then gives it the object suffix: **stem + -me/-ma + -yi** — much like English *swim → swimming*."
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Verb",
+            "As a noun",
+            "+ object",
+            "Sentence"
+          ],
+          "rows": [
+            [
+              "yüzmek (to swim)",
+              "yüzme",
+              "yüzme**yi**",
+              "Yüzmeyi seviyorum."
+            ],
+            [
+              "okumak (to read)",
+              "okuma",
+              "okuma**yı**",
+              "Okumayı seviyorum."
+            ],
+            [
+              "yemek (to eat)",
+              "yeme",
+              "yeme**yi**",
+              "Mantı yemeyi seviyorum."
+            ],
+            [
+              "konuşmak",
+              "konuşma",
+              "konuşma**yı**",
+              "Türkçe konuşmayı seviyorum."
+            ],
+            [
+              "gezmek",
+              "gezme",
+              "gezme**yi**",
+              "Gezmeyi seviyorum."
+            ],
+            [
+              "çalışmak",
+              "çalışma",
+              "çalışma**yı**",
+              "Çalışmayı sevmiyorum."
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "Compare the pattern from unit 10: *yüzmek istiyorum* (I want to swim) uses the full dictionary form, while *yüzmeyi seviyorum* (I like swimming) uses the noun form. Different verbs demand different forms — so learn the partner together with the verb."
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Takes the dictionary form (-mek)",
+            "Takes the noun form (-meyi)"
+          ],
+          "rows": [
+            [
+              "istemek — gitmek istiyorum",
+              "sevmek — gitmeyi seviyorum"
+            ],
+            [
+              "-ebilmek — gidebilirim",
+              "denemek — gitmeyi deniyorum"
+            ],
+            [
+              "lazım — gitmem lazım",
+              "öğrenmek — yüzmeyi öğreniyorum"
+            ],
+            [
+              "",
+              "unutmak — kapatmayı unuttum"
+            ]
+          ]
+        },
+        {
+          "type": "kotak",
+          "title": "Hoşuma gidiyor",
+          "items": [
+            "There's a second way to say \"I like\", and Turks use it as often as *sevmek*: *hoşuma gidiyor*, literally \"it goes to my pleasure\".",
+            "*Bu şarkı hoşuma gidiyor* (I like this song). *Sevmek* feels deeper and more lasting; *hoşuma gitmek* is lighter, about the impression in the moment."
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Must and need to",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "There are two ways to say something needs to be done, and both are common."
+        },
+        {
+          "type": "sub",
+          "text": "First way: -mem lazım"
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Türkçe",
+            "Broken down",
+            "English"
+          ],
+          "rows": [
+            [
+              "Gitmem lazım.",
+              "going-my necessary",
+              "I have to go."
+            ],
+            [
+              "Gitmen lazım.",
+              "going-your necessary",
+              "You have to go."
+            ],
+            [
+              "Çalışmam lazım.",
+              "working-my necessary",
+              "I have to study."
+            ],
+            [
+              "Beklemeniz lazım.",
+              "waiting-your(formal) necessary",
+              "You have to wait."
+            ],
+            [
+              "Bir şey almam lazım.",
+              "a thing taking-my necessary",
+              "I need to buy something."
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "The form: stem + *-me/-ma* + possessive suffix + *lazım*. The word *gerek* can replace *lazım* without changing the meaning."
+        },
+        {
+          "type": "sub",
+          "text": "Second way: -meli"
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Türkçe",
+            "English"
+          ],
+          "rows": [
+            [
+              "Gitmeliyim.",
+              "I must go."
+            ],
+            [
+              "Çalışmalısın.",
+              "You must study."
+            ],
+            [
+              "Dinlenmeli.",
+              "He/She must rest."
+            ],
+            [
+              "Gitmeliyiz.",
+              "We must go."
+            ],
+            [
+              "Doktora gitmelisiniz.",
+              "You should see a doctor."
+            ],
+            [
+              "Gitmemeliyim.",
+              "I'd better not go."
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "*-meli* feels a little stronger and more written; *lazım* is more everyday. At A1, master one of them well — and understand the other when you hear it."
+        }
+      ]
+    },
+    {
+      "title": "On the phone and at an invitation",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "Türkçe",
+            "English"
+          ],
+          "rows": [
+            [
+              "Alo, ben Budi.",
+              "Hello, it's Budi."
+            ],
+            [
+              "Rahatsız ediyor muyum?",
+              "Am I disturbing you?"
+            ],
+            [
+              "Kiminle görüşüyorum?",
+              "Who am I speaking to?"
+            ],
+            [
+              "Bir dakika lütfen.",
+              "One moment, please."
+            ],
+            [
+              "Sesiniz iyi gelmiyor.",
+              "I can't hear you well."
+            ],
+            [
+              "Şimdi müsait değilim.",
+              "I'm not free right now."
+            ],
+            [
+              "Sonra arayabilir miyim?",
+              "Can I call you back later?"
+            ],
+            [
+              "Mesaj atarım.",
+              "I'll text you."
+            ],
+            [
+              "Yanlış numara.",
+              "Wrong number."
+            ],
+            [
+              "Görüşmek üzere.",
+              "See you."
+            ]
+          ]
+        },
+        {
+          "type": "sub",
+          "text": "Inviting and replying"
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Türkçe",
+            "English",
+            "What for"
+          ],
+          "rows": [
+            [
+              "Bize gelir misin?",
+              "Would you like to come over?",
+              "inviting"
+            ],
+            [
+              "Bu akşam müsait misin?",
+              "Are you free this evening?",
+              "inviting"
+            ],
+            [
+              "Çok isterim.",
+              "I'd love to.",
+              "accepting"
+            ],
+            [
+              "Memnuniyetle.",
+              "With pleasure.",
+              "accepting"
+            ],
+            [
+              "Maalesef müsait değilim.",
+              "Unfortunately I'm not free.",
+              "declining"
+            ],
+            [
+              "Belki başka zaman.",
+              "Maybe another time.",
+              "declining"
+            ],
+            [
+              "Ne getireyim?",
+              "What should I bring?",
+              "asking"
+            ],
+            [
+              "Davet için teşekkürler.",
+              "Thanks for the invitation.",
+              "closing"
+            ]
+          ]
+        },
+        {
+          "type": "kotak",
+          "title": "Visiting a Turkish home",
+          "items": [
+            "Shoes come off at the door — almost always, and the host will offer slippers. Tea will arrive without your asking, and your second glass will be filled without a question.",
+            "Turning food down once counts as good manners, not refusal; the host will offer again. If you really are full: *Çok tokum, gerçekten* — \"I'm really full\"."
+          ]
+        },
+        {
+          "type": "kotak",
+          "title": "Unit 17 review",
+          "items": [
+            "Cover the Turkish and rebuild these from memory: \"I'm sick.\" · \"I have a headache.\" · \"Get well soon.\" · \"I have no allergies.\" · \"How many times a day?\"",
+            "Then name five body parts with the \"my\" suffix."
+          ]
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "tr": "aramak",
+      "baca": "a-ra-MAK",
+      "en": "to call; to look for"
+    },
+    {
+      "tr": "telefon etmek",
+      "baca": "te-le-FON et-MEK",
+      "en": "to phone"
+    },
+    {
+      "tr": "mesaj atmak",
+      "baca": "me-SAJ at-MAK",
+      "en": "to send a message, text"
+    },
+    {
+      "tr": "müsait",
+      "baca": "mü-sa-IT",
+      "en": "free, available"
+    },
+    {
+      "tr": "rahatsız etmek",
+      "baca": "ra-hat-SUHZ et-MEK",
+      "en": "to disturb"
+    },
+    {
+      "tr": "davet",
+      "baca": "da-VET",
+      "en": "invitation"
+    },
+    {
+      "tr": "misafir",
+      "baca": "mi-sa-FIR",
+      "en": "guest"
+    },
+    {
+      "tr": "ev sahibi",
+      "baca": "ev sa-hi-BI",
+      "en": "host"
+    },
+    {
+      "tr": "getirmek",
+      "baca": "ge-tir-MEK",
+      "en": "to bring"
+    },
+    {
+      "tr": "götürmek",
+      "baca": "gö-tür-MEK",
+      "en": "to take (away)"
+    },
+    {
+      "tr": "sevmek",
+      "baca": "sev-MEK",
+      "en": "to like, love"
+    },
+    {
+      "tr": "hoşuma gitmek",
+      "baca": "ho-SHU-ma git-MEK",
+      "en": "I like it"
+    },
+    {
+      "tr": "öğrenmek",
+      "baca": "öö-ren-MEK",
+      "en": "to learn"
+    },
+    {
+      "tr": "yüzmek",
+      "baca": "yüz-MEK",
+      "en": "to swim"
+    },
+    {
+      "tr": "lazım, gerek",
+      "baca": "LA-zuhm, ge-REK",
+      "en": "necessary, needed"
+    },
+    {
+      "tr": "mantı",
+      "baca": "man-TUH",
+      "en": "Turkish dumplings"
+    },
+    {
+      "tr": "çiçek",
+      "baca": "chi-CHEK",
+      "en": "flower"
+    },
+    {
+      "tr": "tok / aç",
+      "baca": "tok / ach",
+      "en": "full / hungry"
+    },
+    {
+      "tr": "sadece",
+      "baca": "sa-de-JE",
+      "en": "only, just"
+    },
+    {
+      "tr": "madem",
+      "baca": "ma-DEM",
+      "en": "since, seeing that"
+    },
+    {
+      "tr": "ısrar etmek",
+      "baca": "uhs-RAR et-MEK",
+      "en": "to insist"
+    },
+    {
+      "tr": "adres",
+      "baca": "ad-RES",
+      "en": "address"
+    },
+    {
+      "tr": "yanlış / doğru",
+      "baca": "yan-LUHSH / do-RU",
+      "en": "wrong / right"
+    },
+    {
+      "tr": "ses",
+      "baca": "ses",
+      "en": "voice, sound"
+    },
+    {
+      "tr": "memnuniyetle",
+      "baca": "mem-nu-ni-yet-LE",
+      "en": "with pleasure"
+    },
+    {
+      "tr": "başka zaman",
+      "baca": "BASH-ka za-MAN",
+      "en": "another time"
+    },
+    {
+      "tr": "şarkı",
+      "baca": "shar-KUH",
+      "en": "song"
+    },
+    {
+      "tr": "kendi",
+      "baca": "ken-DI",
+      "en": "self, own"
+    },
+    {
+      "tr": "görüşmek üzere",
+      "baca": "gö-rüsh-MEK ü-ze-RE",
+      "en": "see you"
+    },
+    {
+      "tr": "estağfurullah",
+      "baca": "es-taa-fu-rul-LAH",
+      "en": "oh no, not at all (modest reply)"
+    }
+  ],
+  "exercises": [
+    {
+      "prompt": "Make the *-meyi sevmek* pattern for *ben*.",
+      "items": [
+        "yüzmek → ____",
+        "okumak → ____",
+        "gezmek → ____",
+        "yemek → ____",
+        "konuşmak → ____",
+        "çalışmak (negative) → ____"
+      ]
+    },
+    {
+      "prompt": "Make \"have to\" sentences with the *-mem lazım* pattern.",
+      "items": [
+        "gitmek (ben) → ____",
+        "çalışmak (sen) → ____",
+        "beklemek (siz) → ____",
+        "almak (ben) → ____",
+        "dinlenmek (o) → ____",
+        "gitmek (biz) → ____"
+      ]
+    },
+    {
+      "prompt": "Translate into Turkish.",
+      "items": [
+        "Hello, it's Budi.",
+        "Am I disturbing you?",
+        "I'm not free right now.",
+        "Would you like to come over to our place on Sunday?",
+        "I'd love to!",
+        "What should I bring?"
+      ]
+    },
+    {
+      "prompt": "Put the words in the right order.",
+      "items": [
+        "misin / bize / gelir / ?",
+        "seviyorum / yemeyi / mantı / çok",
+        "getireyim / ne / ?",
+        "lazım / almam / şey / bir",
+        "değilim / şimdi / müsait",
+        "üzere / görüşmek"
+      ]
+    }
+  ],
+  "answers": [
+    "Yüzmeyi seviyorum. — Okumayı seviyorum. — Gezmeyi seviyorum. — Yemeyi seviyorum. — Konuşmayı seviyorum. — Çalışmayı sevmiyorum.",
+    "Gitmem lazım. — Çalışman lazım. — Beklemeniz lazım. — Almam lazım. — Dinlenmesi lazım. — Gitmemiz lazım.",
+    "Alo, ben Budi. — Rahatsız ediyor muyum? — Şimdi müsait değilim. — Pazar günü bize gelir misin? — Çok isterim! — Ne getireyim?",
+    "Bize gelir misin? — Mantı yemeyi çok seviyorum. — Ne getireyim? — Bir şey almam lazım. — Şimdi müsait değilim. — Görüşmek üzere."
+  ]
+}

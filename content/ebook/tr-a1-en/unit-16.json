@@ -1,0 +1,603 @@
+{
+  "title": "What's the weather like?",
+  "title_target": "Hava nasıl?",
+  "goal": "Talk about the weather and the seasons, then compare two things with *daha* and *en*.",
+  "bekal": [
+    "answering *hava nasıl* for all four seasons",
+    "comparing with the pattern *X, Y'den daha ...*",
+    "naming the most with *en*"
+  ],
+  "dialogs": [
+    {
+      "title": "Dialogue — Kar yağıyor",
+      "intro": "Early December. Budi stands at the window, looking out over the whitening rooftops of Kadıköy. Emre comes in with two glasses of tea.",
+      "lines": [
+        {
+          "speaker": "Budi:",
+          "text": "Emre, bak! Kar yağıyor!",
+          "id": "Emre, look! It's snowing!",
+          "literal": "Emre, look! snow is-falling!"
+        },
+        {
+          "speaker": "Emre:",
+          "text": "İlk karın mı?",
+          "id": "Your first snow?",
+          "literal": "first snow-your question?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Evet! Endonezya'da hiç kar yok.",
+          "id": "Yes! There's no snow at all in Indonesia.",
+          "literal": "yes! Indonesia-in at-all snow there-isn't."
+        },
+        {
+          "speaker": "Emre:",
+          "text": "Hiç mi? Peki hava nasıl orada?",
+          "id": "None at all? So what's the weather like there?",
+          "literal": "at-all question? well weather how there?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Her zaman sıcak. Otuz derece, bazen daha fazla.",
+          "id": "Always hot. Thirty degrees, sometimes more.",
+          "literal": "every time hot. thirty degree, sometimes more much."
+        },
+        {
+          "speaker": "Emre:",
+          "text": "Yazın İstanbul da sıcak olur ama Jakarta kadar değil.",
+          "id": "Istanbul gets hot in summer too, but not like Jakarta.",
+          "literal": "in-summer Istanbul too hot becomes but Jakarta as-much not."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Şimdi kaç derece?",
+          "id": "How many degrees is it now?",
+          "literal": "now how-many degree?"
+        },
+        {
+          "speaker": "Emre:",
+          "text": "Sıfır. Yarın daha soğuk olacak, eksi üç.",
+          "id": "Zero. Tomorrow it'll be colder, minus three.",
+          "literal": "zero. tomorrow more cold will-be, minus three."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Eksi üç mü? Donarım ben!",
+          "id": "Minus three? I'll freeze!",
+          "literal": "minus three question? freeze-I I!"
+        },
+        {
+          "speaker": "Emre:",
+          "text": "Merak etme. Kalın bir mont al, bir de atkı.",
+          "id": "Don't worry. Get a thick coat, and a scarf too.",
+          "literal": "worry don't-do. thick a coat take, one also scarf."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Türkiye'nin en soğuk ayı hangisi?",
+          "id": "What's the coldest month in Turkey?",
+          "literal": "Turkey-of most cold month-its which-one?"
+        },
+        {
+          "speaker": "Emre:",
+          "text": "Ocak. Ama Erzurum'da kış İstanbul'dan çok daha zor.",
+          "id": "January. But in Erzurum the winter is much harder than in Istanbul.",
+          "literal": "January. but Erzurum-in winter Istanbul-from very more hard."
+        }
+      ],
+      "notes": [
+        "**Kar yağıyor, yağmur yağıyor.** Turkish uses one verb for everything that falls from the sky: *yağmak*. Snow, rain and hail all *yağar*, and the thing itself is named first.",
+        "**Yazın means \"in summer\".** The four seasons have their own adverb forms, with *-ın*: *yazın*, *kışın*, *ilkbaharda*, *sonbaharda*. The first two are leftovers of an old suffix that survives in just a handful of words.",
+        "**Kadar means \"as much as\".** *Jakarta kadar sıcak değil* = \"not as hot as Jakarta\". To compare equals, Turkish uses *kadar*; for differences, *-den daha*.",
+        "**Donarım ben** uses the aorist from unit 13 for something that hasn't happened yet — a playful Turkish exaggeration, like \"I'll freeze to death!\" in English."
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "The weather",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "Türkçe",
+            "English",
+            "Türkçe",
+            "English"
+          ],
+          "rows": [
+            [
+              "Hava nasıl?",
+              "What's the weather like?",
+              "Hava güzel.",
+              "The weather's nice."
+            ],
+            [
+              "güneşli",
+              "sunny",
+              "bulutlu",
+              "cloudy"
+            ],
+            [
+              "yağmurlu",
+              "rainy",
+              "karlı",
+              "snowy"
+            ],
+            [
+              "rüzgârlı",
+              "windy",
+              "sisli",
+              "foggy"
+            ],
+            [
+              "sıcak",
+              "hot",
+              "soğuk",
+              "cold"
+            ],
+            [
+              "ılık",
+              "warm",
+              "serin",
+              "cool"
+            ],
+            [
+              "nemli",
+              "humid",
+              "kuru",
+              "dry"
+            ],
+            [
+              "Yağmur yağıyor.",
+              "It's raining.",
+              "Kar yağıyor.",
+              "It's snowing."
+            ],
+            [
+              "Kaç derece?",
+              "How many degrees?",
+              "eksi",
+              "minus"
+            ],
+            [
+              "fırtına",
+              "storm",
+              "gök gürültüsü",
+              "thunder"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "The suffix *-lı* found in almost every weather word means \"with\" or \"having\": *yağmur-lu* (rainy), *kar-lı* (snowy), *rüzgâr-lı* (windy) — much like English *-y*. Its opposite is *-sız* (\"without\"), and both are covered fully in the next unit."
+        },
+        {
+          "type": "sub",
+          "text": "The four seasons"
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Season",
+            "Türkçe",
+            "In that season",
+            "In Turkey"
+          ],
+          "rows": [
+            [
+              "spring",
+              "ilkbahar",
+              "ilkbaharda",
+              "March–May, rainy and green"
+            ],
+            [
+              "summer",
+              "yaz",
+              "yazın",
+              "June–August, dry and scorching"
+            ],
+            [
+              "fall",
+              "sonbahar",
+              "sonbaharda",
+              "September–November, cool"
+            ],
+            [
+              "winter",
+              "kış",
+              "kışın",
+              "December–February, snowy in many cities"
+            ]
+          ]
+        },
+        {
+          "type": "kotak",
+          "title": "Turkey isn't one climate",
+          "items": [
+            "The Mediterranean coast (Antalya, Alanya) is warm all year. The Black Sea coast (Trabzon, Rize) is the wettest place in Turkey — rain almost every month, and that's where the tea gardens are.",
+            "Eastern Anatolia (Erzurum, Kars) can drop to minus thirty in January. If someone asks *Türkiye'de hava nasıl?*, the honest answer is always: *Nerede?*"
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Comparing",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Turkish never changes the adjective itself. For \"more\", it puts the word **daha** in front; for \"most\", the word **en**. The thing being compared with takes the *-den* suffix."
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Pattern",
+            "Example",
+            "English"
+          ],
+          "rows": [
+            [
+              "**daha** + adjective",
+              "daha büyük",
+              "bigger"
+            ],
+            [
+              "X, Y**'den daha** + adjective",
+              "İstanbul, Ankara'dan daha büyük.",
+              "Istanbul is bigger than Ankara."
+            ],
+            [
+              "X, Y**'den** + adjective",
+              "İstanbul, Ankara'dan büyük.",
+              "same meaning — *daha* can be dropped"
+            ],
+            [
+              "**en** + adjective",
+              "en büyük şehir",
+              "the biggest city"
+            ],
+            [
+              "X **kadar** + adjective",
+              "Ankara, İstanbul kadar büyük.",
+              "Ankara is as big as Istanbul."
+            ],
+            [
+              "X **kadar** + adjective + **değil**",
+              "Ankara, İstanbul kadar büyük değil.",
+              "Ankara isn't as big as Istanbul."
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "To strengthen it, put *çok* before *daha*: *çok daha soğuk* (much colder). To weaken it: *biraz daha soğuk* (a little colder)."
+        },
+        {
+          "type": "sub",
+          "text": "Comparison questions"
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Türkçe",
+            "English"
+          ],
+          "rows": [
+            [
+              "Hangisi daha büyük?",
+              "Which one is bigger?"
+            ],
+            [
+              "Hangisini seviyorsun?",
+              "Which one do you like?"
+            ],
+            [
+              "En sevdiğin şehir hangisi?",
+              "Which is your favorite city?"
+            ],
+            [
+              "Daha ucuz bir şey var mı?",
+              "Is there anything cheaper?"
+            ],
+            [
+              "Türkçe zor mu, kolay mı?",
+              "Is Turkish hard or easy?"
+            ],
+            [
+              "Bence Türkçe daha kolay.",
+              "I think Turkish is easier."
+            ]
+          ]
+        },
+        {
+          "type": "kotak",
+          "title": "Bence, sence, ona göre",
+          "items": [
+            "\"In my opinion\" is *bence* — the suffix *-ce* attached to a pronoun: *bence*, *sence*, *bizce*. The same suffix forms language names: *Türk-çe*, *İngiliz-ce*, *Endonezce*.",
+            "For a third person, a different form is used: *ona göre* (according to him/her), *Ayşe'ye göre* (according to Ayşe)."
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Clothes for every weather",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "Türkçe",
+            "English",
+            "Türkçe",
+            "English"
+          ],
+          "rows": [
+            [
+              "mont",
+              "coat, winter jacket",
+              "ceket",
+              "jacket, blazer"
+            ],
+            [
+              "kazak",
+              "sweater",
+              "gömlek",
+              "shirt"
+            ],
+            [
+              "tişört",
+              "T-shirt",
+              "pantolon",
+              "pants"
+            ],
+            [
+              "etek",
+              "skirt",
+              "elbise",
+              "dress"
+            ],
+            [
+              "ayakkabı",
+              "shoes",
+              "çorap",
+              "socks"
+            ],
+            [
+              "şapka",
+              "hat",
+              "atkı",
+              "scarf"
+            ],
+            [
+              "eldiven",
+              "gloves",
+              "şemsiye",
+              "umbrella"
+            ],
+            [
+              "giymek",
+              "to put on, wear",
+              "çıkarmak",
+              "to take off"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "*Ayakkabı* is literally \"foot container\" — *ayak* (foot) + *kap* (container) + *-ı*. Turkish is full of compounds like this: *buzdolabı* (fridge, \"ice cupboard\"), *bilgisayar* (computer, \"information counter\"), *çamaşır makinesi* (washing machine)."
+        },
+        {
+          "type": "kotak",
+          "title": "Unit 14 review",
+          "items": [
+            "Cover the Turkish and rebuild these from memory: \"May I ask something?\" · \"May I come in?\" · \"Unfortunately I can't.\" · \"Could you help?\" · \"It might rain.\"",
+            "Then turn these into \"can't\": *gelirim*, *yaparsın*, *gidiyorum*."
+          ]
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "tr": "hava",
+      "baca": "ha-VA",
+      "en": "weather, air"
+    },
+    {
+      "tr": "güneşli",
+      "baca": "gü-nesh-LI",
+      "en": "sunny"
+    },
+    {
+      "tr": "bulutlu",
+      "baca": "bu-lut-LU",
+      "en": "cloudy"
+    },
+    {
+      "tr": "yağmurlu",
+      "baca": "yaa-mur-LU",
+      "en": "rainy"
+    },
+    {
+      "tr": "karlı",
+      "baca": "kar-LUH",
+      "en": "snowy"
+    },
+    {
+      "tr": "rüzgâr",
+      "baca": "rüz-GYAR",
+      "en": "wind"
+    },
+    {
+      "tr": "kar",
+      "baca": "kar",
+      "en": "snow"
+    },
+    {
+      "tr": "yağmak",
+      "baca": "yaa-MAK",
+      "en": "to fall (rain/snow)"
+    },
+    {
+      "tr": "derece",
+      "baca": "de-re-JE",
+      "en": "degree"
+    },
+    {
+      "tr": "eksi",
+      "baca": "ek-SI",
+      "en": "minus"
+    },
+    {
+      "tr": "ılık / serin",
+      "baca": "uh-LUHK / se-RIN",
+      "en": "warm / cool"
+    },
+    {
+      "tr": "ilkbahar",
+      "baca": "ilk-ba-HAR",
+      "en": "spring"
+    },
+    {
+      "tr": "yaz / kış",
+      "baca": "yaz / kuhsh",
+      "en": "summer / winter"
+    },
+    {
+      "tr": "sonbahar",
+      "baca": "son-ba-HAR",
+      "en": "fall, autumn"
+    },
+    {
+      "tr": "daha",
+      "baca": "da-HA",
+      "en": "more"
+    },
+    {
+      "tr": "en",
+      "baca": "en",
+      "en": "most"
+    },
+    {
+      "tr": "kadar",
+      "baca": "ka-DAR",
+      "en": "as much as, until"
+    },
+    {
+      "tr": "hangisi",
+      "baca": "han-gi-SI",
+      "en": "which one"
+    },
+    {
+      "tr": "bence",
+      "baca": "ben-JE",
+      "en": "in my opinion"
+    },
+    {
+      "tr": "fazla",
+      "baca": "faz-LA",
+      "en": "more, too much"
+    },
+    {
+      "tr": "mont",
+      "baca": "mont",
+      "en": "coat, winter jacket"
+    },
+    {
+      "tr": "kazak",
+      "baca": "ka-ZAK",
+      "en": "sweater"
+    },
+    {
+      "tr": "ayakkabı",
+      "baca": "a-yak-ka-BUH",
+      "en": "shoes"
+    },
+    {
+      "tr": "şemsiye",
+      "baca": "shem-si-YE",
+      "en": "umbrella"
+    },
+    {
+      "tr": "atkı",
+      "baca": "at-KUH",
+      "en": "scarf"
+    },
+    {
+      "tr": "giymek",
+      "baca": "giy-MEK",
+      "en": "to put on, wear"
+    },
+    {
+      "tr": "kalın / ince",
+      "baca": "ka-LUHN / in-JE",
+      "en": "thick / thin"
+    },
+    {
+      "tr": "donmak",
+      "baca": "don-MAK",
+      "en": "to freeze"
+    },
+    {
+      "tr": "şehir",
+      "baca": "she-HIR",
+      "en": "city"
+    },
+    {
+      "tr": "ülke",
+      "baca": "ül-KE",
+      "en": "country"
+    }
+  ],
+  "exercises": [
+    {
+      "prompt": "Answer in one sentence as indicated.",
+      "items": [
+        "Hava nasıl? (sunny)",
+        "Hava nasıl? (raining)",
+        "Hava nasıl? (very cold)",
+        "Kaç derece? (25)",
+        "Kaç derece? (minus 3)",
+        "Hava nasıl? (snowing)"
+      ]
+    },
+    {
+      "prompt": "Compare using *-den daha*. The first word is the subject.",
+      "items": [
+        "İstanbul + Ankara + büyük → ____",
+        "yaz + kış + sıcak → ____",
+        "Türkçe + Arapça + kolay → ____",
+        "bu şal + o şal + pahalı → ____",
+        "otobüs + taksi + ucuz → ____",
+        "bugün + dün + soğuk → ____"
+      ]
+    },
+    {
+      "prompt": "Translate into Turkish.",
+      "items": [
+        "What's the weather like?",
+        "Today is colder than yesterday.",
+        "Which is the coldest month?",
+        "Is there anything cheaper?",
+        "I think Turkish is easier.",
+        "Ankara isn't as big as Istanbul."
+      ]
+    },
+    {
+      "prompt": "Put the words in the right order.",
+      "items": [
+        "nasıl / hava / ?",
+        "yağıyor / kar / bugün",
+        "soğuk / yarın / olacak / daha",
+        "ayı / en / hangisi / soğuk / ?",
+        "değil / kadar / Jakarta / sıcak / İstanbul",
+        "kolay / bence / daha / Türkçe"
+      ]
+    }
+  ],
+  "answers": [
+    "Hava güneşli. — Yağmur yağıyor. — Hava çok soğuk. — Yirmi beş derece. — Eksi üç derece. — Kar yağıyor.",
+    "İstanbul, Ankara'dan daha büyük. — Yaz, kıştan daha sıcak. — Türkçe, Arapçadan daha kolay. — Bu şal, o şaldan daha pahalı. — Otobüs, taksiden daha ucuz. — Bugün, dünden daha soğuk.",
+    "Hava nasıl? — Bugün dünden daha soğuk. — En soğuk ay hangisi? — Daha ucuz bir şey var mı? — Bence Türkçe daha kolay. — Ankara, İstanbul kadar büyük değil.",
+    "Hava nasıl? — Bugün kar yağıyor. — Yarın daha soğuk olacak. — En soğuk ay hangisi? — İstanbul, Jakarta kadar sıcak değil. — Bence Türkçe daha kolay."
+  ]
+}

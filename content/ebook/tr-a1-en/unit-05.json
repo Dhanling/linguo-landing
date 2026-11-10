@@ -1,0 +1,607 @@
+{
+  "title": "Where are you?",
+  "title_target": "Neredesin?",
+  "goal": "Say where something is with the ending *-de*, and place things in relation to other things.",
+  "bekal": [
+    "choose between *-de*, *-da*, *-te* and *-ta* without hesitating",
+    "name everyday places in a Turkish city",
+    "use *yanında*, *karşısında*, *içinde* to describe where things are"
+  ],
+  "dialogs": [
+    {
+      "title": "Dialogue — Telefonda",
+      "intro": "Budi calls Ayşe. He's standing somewhere in Kadıköy and has absolutely no idea where.",
+      "lines": [
+        {
+          "speaker": "Ayşe:",
+          "text": "Alo Budi, neredesin?",
+          "id": "Hello, Budi, where are you?",
+          "literal": "hello Budi, where-are-you?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Bilmiyorum! Bir caddedeyim.",
+          "id": "I don't know! I'm on a main road.",
+          "literal": "not-knowing-I! a avenue-on-I-am."
+        },
+        {
+          "speaker": "Ayşe:",
+          "text": "Etrafında ne var? Bak biraz.",
+          "id": "What's around you? Have a look.",
+          "literal": "surroundings-your-in what there-is? look a-little."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Sağımda büyük bir cami var.",
+          "id": "There's a big mosque on my right.",
+          "literal": "right-my-on big a mosque there-is."
+        },
+        {
+          "speaker": "Ayşe:",
+          "text": "Caminin karşısında ne var?",
+          "id": "What's across from the mosque?",
+          "literal": "mosque-'s opposite-its-at what there-is?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Bir banka ve bir eczane. Eczanenin yanında bir market.",
+          "id": "A bank and a pharmacy. Next to the pharmacy there's a grocery store.",
+          "literal": "a bank and a pharmacy. pharmacy-'s side-its-at a market."
+        },
+        {
+          "speaker": "Ayşe:",
+          "text": "Tamam, anladım. Moda'dasın.",
+          "id": "OK, got it. You're in Moda.",
+          "literal": "OK, understood-I. Moda-in-you-are."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Sen neredesin şimdi?",
+          "id": "Where are you now?",
+          "literal": "you where-are-you now?"
+        },
+        {
+          "speaker": "Ayşe:",
+          "text": "Okuldayım, sınıftayım. Ders var.",
+          "id": "I'm at school, in the classroom. I have a class.",
+          "literal": "school-at-I-am, classroom-in-I-am. lesson there-is."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Özür dilerim! Meşgul müsün?",
+          "id": "Sorry! Are you busy?",
+          "literal": "apology wish-I! busy question-you-are?"
+        },
+        {
+          "speaker": "Ayşe:",
+          "text": "Sorun değil. Deniz kenarında bir kafe var, orada buluşalım.",
+          "id": "No problem. There's a café by the sea, let's meet there.",
+          "literal": "problem not. sea edge-its-at a café there-is, there let-us-meet."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Harika. Ben kafedeyim o zaman.",
+          "id": "Great. I'll be at the café, then.",
+          "literal": "great. I café-at-I-am that time."
+        }
+      ],
+      "notes": [
+        "**Neredesin = nerede + sin.** The question word \"where\" already contains the ending *-de*: *ne-re-de*, literally \"at what place\". The person ending just attaches to it: *neredeyim*, *neredesin*, *nerede*, *neredeyiz*, *neredesiniz*.",
+        "**Sorun değil, not sorun yok.** To brush off someone's apology, Turkish uses *sorun değil* (\"it's not a problem\") or *önemli değil* (\"it's not important\"). Both are equally polite and equally common.",
+        "**Place words take the possessive first, then -de.** *Karşı* means \"opposite\", but \"across from the mosque\" becomes *caminin karşısında*: mosque-'s + opposite-its + at. Three endings stacked, always in that order.",
+        "**Bak means \"look\" as a command.** It's also used like \"hey, listen\" to get attention: *Bak, sana bir şey söyleyeceğim* — \"Listen, I'm going to tell you something.\""
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "The ending -de: in, at, on",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "The location ending has **four forms**: two from vowel harmony and two more from consonant harmony. That second part is new — and it applies to many more endings later on."
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Word ends in",
+            "Last vowel a, ı, o, u",
+            "Last vowel e, i, ö, ü"
+          ],
+          "rows": [
+            [
+              "a soft letter (everything else)",
+              "**-da** — okulda, Ankara'da",
+              "**-de** — evde, İzmir'de"
+            ],
+            [
+              "a hard letter f s t k ç ş h p",
+              "**-ta** — kitapta, uçakta",
+              "**-te** — işte, derste"
+            ]
+          ]
+        },
+        {
+          "type": "kotak",
+          "title": "FiSTiKÇi ŞaHaP",
+          "items": [
+            "Turkish's eight hard consonants — **f, s, t, k, ç, ş, h, p** — are memorized by Turkish schoolchildren as one made-up name: *Fıstıkçı Şahap*, \"Şahap the pistachio seller\".",
+            "If a word ends in one of those eight letters, an ending starting with *d* changes to *t*: *kitap-ta*, *iş-te*, *uçak-ta*, *genç-ten*.",
+            "Learn the made-up name now. It'll come in handy again in Unit 8 (*-den*) and Unit 11 (*-di*)."
+          ]
+        },
+        {
+          "type": "sub",
+          "text": "What it's used for"
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Example",
+            "English",
+            "Note"
+          ],
+          "rows": [
+            [
+              "Evdeyim.",
+              "I'm at home.",
+              "place"
+            ],
+            [
+              "Kitap masada.",
+              "The book is on the table.",
+              "place"
+            ],
+            [
+              "Saat üçte.",
+              "At three o'clock.",
+              "time"
+            ],
+            [
+              "Bende para yok.",
+              "I don't have any money on me.",
+              "\"on me\""
+            ],
+            [
+              "Türkiye'de yağmur var.",
+              "It's raining in Turkey.",
+              "country"
+            ],
+            [
+              "Ne iş yapıyorsun, nerede?",
+              "What do you do, and where?",
+              "question"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Places in town",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "Türkçe",
+            "English",
+            "Türkçe",
+            "English"
+          ],
+          "rows": [
+            [
+              "okul",
+              "school",
+              "sınıf",
+              "class, classroom"
+            ],
+            [
+              "üniversite",
+              "university",
+              "kütüphane",
+              "library"
+            ],
+            [
+              "hastane",
+              "hospital",
+              "eczane",
+              "pharmacy"
+            ],
+            [
+              "market",
+              "grocery store",
+              "pazar",
+              "market; Sunday"
+            ],
+            [
+              "banka",
+              "bank",
+              "postane",
+              "post office"
+            ],
+            [
+              "cami",
+              "mosque",
+              "kilise",
+              "church"
+            ],
+            [
+              "park",
+              "park",
+              "meydan",
+              "square"
+            ],
+            [
+              "durak",
+              "bus stop",
+              "istasyon",
+              "station"
+            ],
+            [
+              "lokanta",
+              "restaurant, eatery",
+              "kafe",
+              "café"
+            ],
+            [
+              "otel",
+              "hotel",
+              "sinema",
+              "movie theater"
+            ],
+            [
+              "cadde",
+              "avenue, main road",
+              "sokak",
+              "street, side street"
+            ],
+            [
+              "deniz",
+              "sea",
+              "köprü",
+              "bridge"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "Notice how many words end in *-hane* (Persian for \"house\"): *eczane* (medicine house), *postane* (post house), *hastane* (house of the sick), *kütüphane* (house of books — and *kütüp* is the Arabic plural of *kitap*). Once you see the pattern, four words become one."
+        }
+      ]
+    },
+    {
+      "title": "Next to, across from, inside",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Turkish has no prepositions like *on* or *under*. What it has are **place nouns** that take a possessive ending and then *-de*. The pattern is always the same: *[thing]-nın [place]-ı-nda*."
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Word",
+            "Meaning",
+            "Example",
+            "English"
+          ],
+          "rows": [
+            [
+              "yan",
+              "side",
+              "evin yanında",
+              "next to the house"
+            ],
+            [
+              "karşı",
+              "opposite side",
+              "caminin karşısında",
+              "across from the mosque"
+            ],
+            [
+              "iç",
+              "inside",
+              "çantanın içinde",
+              "inside the bag"
+            ],
+            [
+              "üst",
+              "top",
+              "masanın üstünde",
+              "on the table"
+            ],
+            [
+              "alt",
+              "bottom",
+              "masanın altında",
+              "under the table"
+            ],
+            [
+              "ön",
+              "front",
+              "okulun önünde",
+              "in front of the school"
+            ],
+            [
+              "arka",
+              "back",
+              "evin arkasında",
+              "behind the house"
+            ],
+            [
+              "ara",
+              "space between",
+              "iki ev arasında",
+              "between two houses"
+            ],
+            [
+              "kenar",
+              "edge",
+              "deniz kenarında",
+              "by the sea"
+            ],
+            [
+              "orta",
+              "middle",
+              "odanın ortasında",
+              "in the middle of the room"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "If the owner is a personal pronoun, the *-in* ending still shows up in its own form: *benim yanımda* (next to me), *senin arkanda* (behind you), *onun önünde* (in front of him/her)."
+        },
+        {
+          "type": "sub",
+          "text": "Points of the compass and sides"
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Türkçe",
+            "English",
+            "Türkçe",
+            "English"
+          ],
+          "rows": [
+            [
+              "sağ",
+              "right",
+              "sol",
+              "left"
+            ],
+            [
+              "kuzey",
+              "north",
+              "güney",
+              "south"
+            ],
+            [
+              "doğu",
+              "east",
+              "batı",
+              "west"
+            ],
+            [
+              "yukarı",
+              "up",
+              "aşağı",
+              "down"
+            ]
+          ]
+        },
+        {
+          "type": "kotak",
+          "title": "Unit 3 review",
+          "items": [
+            "Cover the Turkish and rebuild it from memory: \"Is there any water?\" · \"There's no bread.\" · \"How many lira?\" · \"Are you a student?\" · \"I have no money.\"",
+            "Then say out loud: 14, 33, 68, 175, 1,200."
+          ]
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "tr": "nerede",
+      "baca": "NE-re-de",
+      "en": "where"
+    },
+    {
+      "tr": "burada / orada",
+      "baca": "BU-ra-da / O-ra-da",
+      "en": "here / there"
+    },
+    {
+      "tr": "okul",
+      "baca": "o-KUL",
+      "en": "school"
+    },
+    {
+      "tr": "sınıf",
+      "baca": "suh-NUHF",
+      "en": "class, classroom"
+    },
+    {
+      "tr": "ders",
+      "baca": "ders",
+      "en": "lesson, class"
+    },
+    {
+      "tr": "hastane",
+      "baca": "has-ta-NE",
+      "en": "hospital"
+    },
+    {
+      "tr": "eczane",
+      "baca": "ej-za-NE",
+      "en": "pharmacy"
+    },
+    {
+      "tr": "kütüphane",
+      "baca": "kü-tüp-ha-NE",
+      "en": "library"
+    },
+    {
+      "tr": "market",
+      "baca": "mar-KET",
+      "en": "grocery store"
+    },
+    {
+      "tr": "banka",
+      "baca": "ban-KA",
+      "en": "bank"
+    },
+    {
+      "tr": "cami",
+      "baca": "ja-MI",
+      "en": "mosque"
+    },
+    {
+      "tr": "park",
+      "baca": "park",
+      "en": "park"
+    },
+    {
+      "tr": "durak",
+      "baca": "du-RAK",
+      "en": "bus stop"
+    },
+    {
+      "tr": "cadde",
+      "baca": "jad-DE",
+      "en": "avenue, main road"
+    },
+    {
+      "tr": "deniz",
+      "baca": "de-NIZ",
+      "en": "sea"
+    },
+    {
+      "tr": "köprü",
+      "baca": "köp-RÜ",
+      "en": "bridge"
+    },
+    {
+      "tr": "yan",
+      "baca": "yan",
+      "en": "side"
+    },
+    {
+      "tr": "karşı",
+      "baca": "kar-SHUH",
+      "en": "opposite side"
+    },
+    {
+      "tr": "iç / dış",
+      "baca": "ich / duhsh",
+      "en": "inside / outside"
+    },
+    {
+      "tr": "üst / alt",
+      "baca": "üst / alt",
+      "en": "top / bottom"
+    },
+    {
+      "tr": "ön / arka",
+      "baca": "ön / ar-KA",
+      "en": "front / back"
+    },
+    {
+      "tr": "arasında",
+      "baca": "a-ra-suhn-DA",
+      "en": "between"
+    },
+    {
+      "tr": "kenar",
+      "baca": "ke-NAR",
+      "en": "edge, side"
+    },
+    {
+      "tr": "sağ / sol",
+      "baca": "saa / sol",
+      "en": "right / left"
+    },
+    {
+      "tr": "etraf",
+      "baca": "et-RAF",
+      "en": "surroundings"
+    },
+    {
+      "tr": "meşgul",
+      "baca": "mesh-GUL",
+      "en": "busy"
+    },
+    {
+      "tr": "sorun",
+      "baca": "so-RUN",
+      "en": "problem"
+    },
+    {
+      "tr": "özür dilerim",
+      "baca": "ö-ZÜR di-le-RIM",
+      "en": "I'm sorry"
+    },
+    {
+      "tr": "bakmak",
+      "baca": "bak-MAK",
+      "en": "to look"
+    },
+    {
+      "tr": "buluşmak",
+      "baca": "bu-lush-MAK",
+      "en": "to meet (by arrangement)"
+    }
+  ],
+  "exercises": [
+    {
+      "prompt": "Add the right location ending: *-de*, *-da*, *-te* or *-ta*.",
+      "items": [
+        "ev → ____",
+        "okul → ____",
+        "kitap → ____",
+        "İstanbul → ____",
+        "sınıf → ____",
+        "Ankara → ____"
+      ]
+    },
+    {
+      "prompt": "Fill in the blanks with the right place word.",
+      "items": [
+        "Kitap masanın ____. (on top of)",
+        "Eczane caminin ____. (across from)",
+        "Market bankanın ____. (next to)",
+        "Çanta sandalyenin ____. (under)",
+        "Kafe okulun ____. (in front of)",
+        "Anahtar çantanın ____. (inside)"
+      ]
+    },
+    {
+      "prompt": "Translate into Turkish.",
+      "items": [
+        "Where are you?",
+        "I'm at home.",
+        "We're at school.",
+        "What's around you?",
+        "There's a big mosque.",
+        "There's a pharmacy across from the bank."
+      ]
+    },
+    {
+      "prompt": "Put the words in the right order.",
+      "items": [
+        "neredesin / sen / ?",
+        "evdeyim / şimdi / ben",
+        "var / ne / etrafında / ?",
+        "üstünde / kitap / masanın",
+        "yanında / bir / eczanenin / market / var",
+        "değil / sorun"
+      ]
+    }
+  ],
+  "answers": [
+    "evde — okulda — kitapta — İstanbul'da — sınıfta — Ankara'da",
+    "üstünde — karşısında — yanında — altında — önünde — içinde",
+    "Neredesin? — Evdeyim. — Okuldayız. — Etrafında ne var? — Büyük bir cami var. — Bankanın karşısında bir eczane var.",
+    "Sen neredesin? — Ben şimdi evdeyim. — Etrafında ne var? — Masanın üstünde kitap. — Eczanenin yanında bir market var. — Sorun değil."
+  ]
+}

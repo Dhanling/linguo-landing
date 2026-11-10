@@ -1,0 +1,584 @@
+{
+  "title": "Straight on, then turn right",
+  "title_target": "Düz git, sonra sağa dön",
+  "goal": "Give commands and prohibitions, make suggestions, and ask for and understand directions.",
+  "bekal": [
+    "forming *gel!*, *gelin!*, *gelme!*, *gelmeyin!* and *gidelim!*",
+    "asking the way and understanding the answer",
+    "using *lütfen* and the *-ir misiniz* form to soften commands"
+  ],
+  "dialogs": [
+    {
+      "title": "Dialogue — Yol tarifi",
+      "intro": "Budi is lost in Beyoğlu, looking for a bookshop. He stops a woman on the sidewalk.",
+      "lines": [
+        {
+          "speaker": "Budi:",
+          "text": "Affedersiniz, bir şey sorabilir miyim?",
+          "id": "Excuse me, may I ask something?",
+          "literal": "forgive-you(formal), one thing can-ask question-I?"
+        },
+        {
+          "speaker": "Kadın:",
+          "text": "Tabii, buyurun.",
+          "id": "Of course, go ahead.",
+          "literal": "of-course, please-go-ahead."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Robinson Kitabevi nerede, biliyor musunuz?",
+          "id": "Do you know where the Robinson Bookshop is?",
+          "literal": "Robinson Book-house-its where, know question-you(formal)?"
+        },
+        {
+          "speaker": "Kadın:",
+          "text": "Biliyorum. Buradan düz gidin, yaklaşık iki yüz metre.",
+          "id": "I do. Go straight on from here, about two hundred meters.",
+          "literal": "know-I. here-from straight go-you(formal), about two hundred meter."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Düz. Tamam.",
+          "id": "Straight on. OK.",
+          "literal": "straight. OK."
+        },
+        {
+          "speaker": "Kadın:",
+          "text": "Sonra ikinci sokaktan sağa dönün. Köşede bir eczane var.",
+          "id": "Then turn right at the second street. There's a pharmacy on the corner.",
+          "literal": "then second street-from right-to turn-you(formal). corner-at a pharmacy there-is."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Eczaneden sonra?",
+          "id": "After the pharmacy?",
+          "literal": "pharmacy-from after?"
+        },
+        {
+          "speaker": "Kadın:",
+          "text": "Biraz yürüyün. Kitabevi solda, sinemanın yanında.",
+          "id": "Walk a little way. The bookshop is on the left, next to the cinema.",
+          "literal": "a-little walk-you(formal). book-house left-on, cinema-of side-its-at."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Yürüyerek ne kadar sürer?",
+          "id": "How long does it take on foot?",
+          "literal": "walking how much lasts?"
+        },
+        {
+          "speaker": "Kadın:",
+          "text": "Beş dakika. Kaybolmayın, tabela büyük.",
+          "id": "Five minutes. You won't get lost — the sign is big.",
+          "literal": "five minute. don't-get-lost-you(formal), sign big."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Çok teşekkür ederim, çok yardımcı oldunuz.",
+          "id": "Thank you so much, you've been very helpful.",
+          "literal": "very thanks do-I, very helpful became-you(formal)."
+        },
+        {
+          "speaker": "Kadın:",
+          "text": "Rica ederim. Kolay gelsin!",
+          "id": "You're welcome. Kolay gelsin!",
+          "literal": "request do-I. easy may-it-come!"
+        }
+      ],
+      "notes": [
+        "**Affedersiniz is the standard opener with strangers.** Literally \"you forgive\", it's used just like \"excuse me\" — to stop someone, to get past, or to catch a waiter's attention.",
+        "**Commands in the siz form sound polite, not bossy.** *Gidin*, *dönün*, *yürüyün* are the normal way Turks give directions to strangers. The *sen* form (*git*, *dön*) is only for friends, children or younger people.",
+        "**Yürüyerek means \"on foot\".** The suffix *-erek* describes how something is done; it's A2 material, but you can already use two forms as whole words: *yürüyerek* (on foot) and *koşarak* (running).",
+        "**Kolay gelsin** (\"may it come easy\") is said to anyone who's working — cashiers, builders, drivers, waiters, even a stranger carrying boxes. English has no exact equivalent, and nothing sounds more Turkish."
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "The imperative",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "The Turkish imperative is the simplest form there is: for *sen*, just the stem, with nothing added. For *siz*, add *-in / -ın / -un / -ün*."
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Verb",
+            "sen",
+            "siz",
+            "English"
+          ],
+          "rows": [
+            [
+              "gelmek",
+              "gel!",
+              "gelin!",
+              "come!"
+            ],
+            [
+              "gitmek",
+              "git!",
+              "gidin!",
+              "go!"
+            ],
+            [
+              "bakmak",
+              "bak!",
+              "bakın!",
+              "look!"
+            ],
+            [
+              "oturmak",
+              "otur!",
+              "oturun!",
+              "sit!"
+            ],
+            [
+              "dönmek",
+              "dön!",
+              "dönün!",
+              "turn!"
+            ],
+            [
+              "beklemek",
+              "bekle!",
+              "bekleyin!",
+              "wait!"
+            ],
+            [
+              "okumak",
+              "oku!",
+              "okuyun!",
+              "read!"
+            ],
+            [
+              "yardım etmek",
+              "yardım et!",
+              "yardım edin!",
+              "help!"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "There's an even more formal form, *-iniz*: *geliniz*, *buyurunuz*. It's used on signs, in airport announcements and in official letters — rarely in conversation."
+        },
+        {
+          "type": "sub",
+          "text": "Prohibitions"
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "sen",
+            "siz",
+            "English"
+          ],
+          "rows": [
+            [
+              "gelme!",
+              "gelmeyin!",
+              "don't come!"
+            ],
+            [
+              "gitme!",
+              "gitmeyin!",
+              "don't go!"
+            ],
+            [
+              "unutma!",
+              "unutmayın!",
+              "don't forget!"
+            ],
+            [
+              "korkma!",
+              "korkmayın!",
+              "don't be afraid!"
+            ],
+            [
+              "merak etme!",
+              "merak etmeyin!",
+              "don't worry!"
+            ],
+            [
+              "acele etme!",
+              "acele etmeyin!",
+              "don't rush!"
+            ]
+          ]
+        },
+        {
+          "type": "kotak",
+          "title": "Let's — the -elim form",
+          "items": [
+            "To suggest doing something together, use *-elim / -alım*: *gidelim!* (let's go), *başlayalım!* (let's start), *bakalım* (let's see), *görüşelim* (let's meet).",
+            "*Bakalım* is used far more widely than its meaning suggests: it closes a sentence as \"we'll see\" — *Bakalım ne olacak.*"
+          ]
+        },
+        {
+          "type": "sub",
+          "text": "Softened commands"
+        },
+        {
+          "type": "p",
+          "text": "A bare command is rarely used with adults you don't know. Three ways to soften it, from lightest to most polite:"
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Form",
+            "Example",
+            "How it feels"
+          ],
+          "rows": [
+            [
+              "command + lütfen",
+              "Bekleyin lütfen.",
+              "polite, neutral"
+            ],
+            [
+              "-ir misiniz",
+              "Bekler misiniz?",
+              "polite, asking"
+            ],
+            [
+              "-ebilir misiniz",
+              "Bekleyebilir misiniz?",
+              "most polite"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Asking for and giving directions",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "Türkçe",
+            "English"
+          ],
+          "rows": [
+            [
+              "Affedersiniz, ... nerede?",
+              "Excuse me, where is ...?"
+            ],
+            [
+              "... nasıl gidebilirim?",
+              "How can I get to ...?"
+            ],
+            [
+              "Buraya uzak mı?",
+              "Is it far from here?"
+            ],
+            [
+              "Yürüyerek ne kadar sürer?",
+              "How long is it on foot?"
+            ],
+            [
+              "Kayboldum.",
+              "I'm lost."
+            ],
+            [
+              "Burası neresi?",
+              "Where is this place?"
+            ],
+            [
+              "Haritada gösterebilir misiniz?",
+              "Could you show me on the map?"
+            ]
+          ]
+        },
+        {
+          "type": "sub",
+          "text": "Answers you'll hear"
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Türkçe",
+            "English",
+            "Türkçe",
+            "English"
+          ],
+          "rows": [
+            [
+              "düz git / gidin",
+              "go straight on",
+              "sağa dön / dönün",
+              "turn right"
+            ],
+            [
+              "sola dön / dönün",
+              "turn left",
+              "geri dön / dönün",
+              "turn back"
+            ],
+            [
+              "karşıya geç / geçin",
+              "cross over",
+              "yukarı çık / çıkın",
+              "go up"
+            ],
+            [
+              "aşağı in / inin",
+              "go down",
+              "burada dur / durun",
+              "stop here"
+            ],
+            [
+              "ilk sokak",
+              "first street",
+              "ikinci sokak",
+              "second street"
+            ],
+            [
+              "köşe",
+              "corner",
+              "trafik ışığı",
+              "traffic light"
+            ],
+            [
+              "yaklaşık",
+              "about",
+              "metre",
+              "meter"
+            ],
+            [
+              "yakın / uzak",
+              "near / far",
+              "karşısında",
+              "opposite it"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "Notice that directions take the *-e* suffix: *sağ-a dön* (turn TO the right), *sol-a*, *yukarı-ya*, *karşı-ya*. This is the direction suffix from unit 8, working exactly as it does with place names."
+        },
+        {
+          "type": "kotak",
+          "title": "Ordinal numbers",
+          "items": [
+            "\"First, second, third\" are formed with *-inci / -ıncı / -uncu / -üncü*: *birinci*, *ikinci*, *üçüncü*, *dördüncü*, *beşinci*, *altıncı*, *yedinci*, *sekizinci*, *dokuzuncu*, *onuncu*.",
+            "They're used for floors (*üçüncü kat*), streets (*ikinci sokak*) and dates (*ayın on beşinci günü*)."
+          ]
+        },
+        {
+          "type": "kotak",
+          "title": "Unit 13 review",
+          "items": [
+            "Cover the Turkish and rebuild these from memory: \"What do you usually do in the mornings?\" · \"I usually get up early.\" · \"I don't smoke.\" · \"We drink tea every day.\" · \"Will you have another glass?\"",
+            "Then make the aorist negative: *gelirim*, *yaparsın*, *içeriz*."
+          ]
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "tr": "affedersiniz",
+      "baca": "af-fe-der-si-NIZ",
+      "en": "excuse me, sorry"
+    },
+    {
+      "tr": "yol tarifi",
+      "baca": "yol ta-ri-FI",
+      "en": "directions"
+    },
+    {
+      "tr": "düz",
+      "baca": "düz",
+      "en": "straight"
+    },
+    {
+      "tr": "dönmek",
+      "baca": "dön-MEK",
+      "en": "to turn, return"
+    },
+    {
+      "tr": "geçmek",
+      "baca": "gech-MEK",
+      "en": "to cross, pass"
+    },
+    {
+      "tr": "durmak",
+      "baca": "dur-MAK",
+      "en": "to stop"
+    },
+    {
+      "tr": "çıkmak / inmek",
+      "baca": "chuhk-MAK / in-MEK",
+      "en": "to go up / go down"
+    },
+    {
+      "tr": "köşe",
+      "baca": "kö-SHE",
+      "en": "corner"
+    },
+    {
+      "tr": "trafik ışığı",
+      "baca": "tra-FIK uh-shuh-UH",
+      "en": "traffic light"
+    },
+    {
+      "tr": "kat",
+      "baca": "kat",
+      "en": "floor, story"
+    },
+    {
+      "tr": "birinci / ikinci",
+      "baca": "bi-rin-JI / i-kin-JI",
+      "en": "first / second"
+    },
+    {
+      "tr": "üçüncü",
+      "baca": "ü-chün-JÜ",
+      "en": "third"
+    },
+    {
+      "tr": "metre",
+      "baca": "met-RE",
+      "en": "meter"
+    },
+    {
+      "tr": "yaklaşık",
+      "baca": "yak-la-SHUHK",
+      "en": "about, approximately"
+    },
+    {
+      "tr": "sürmek",
+      "baca": "sür-MEK",
+      "en": "to last, take (time)"
+    },
+    {
+      "tr": "kaybolmak",
+      "baca": "kai-bol-MAK",
+      "en": "to get lost"
+    },
+    {
+      "tr": "harita",
+      "baca": "ha-ri-TA",
+      "en": "map"
+    },
+    {
+      "tr": "göstermek",
+      "baca": "gös-ter-MEK",
+      "en": "to show"
+    },
+    {
+      "tr": "tabela",
+      "baca": "ta-be-LA",
+      "en": "sign"
+    },
+    {
+      "tr": "kitabevi",
+      "baca": "ki-ta-be-VI",
+      "en": "bookshop"
+    },
+    {
+      "tr": "acele etmek",
+      "baca": "a-je-LE et-MEK",
+      "en": "to hurry"
+    },
+    {
+      "tr": "korkmak",
+      "baca": "kork-MAK",
+      "en": "to be afraid"
+    },
+    {
+      "tr": "unutmak",
+      "baca": "u-nut-MAK",
+      "en": "to forget"
+    },
+    {
+      "tr": "beklemek",
+      "baca": "bek-le-MEK",
+      "en": "to wait"
+    },
+    {
+      "tr": "kolay gelsin",
+      "baca": "ko-LAI gel-SIN",
+      "en": "may it come easy (to someone working)"
+    },
+    {
+      "tr": "bakalım",
+      "baca": "ba-ka-LUHM",
+      "en": "let's see, we'll see"
+    },
+    {
+      "tr": "gidelim",
+      "baca": "gi-de-LIM",
+      "en": "let's go"
+    },
+    {
+      "tr": "buyurun",
+      "baca": "bu-yu-RUN",
+      "en": "here you are, go ahead"
+    },
+    {
+      "tr": "burası",
+      "baca": "bu-ra-SUH",
+      "en": "this place"
+    },
+    {
+      "tr": "yaya",
+      "baca": "ya-YA",
+      "en": "pedestrian"
+    }
+  ],
+  "exercises": [
+    {
+      "prompt": "Write the imperative for *siz*.",
+      "items": [
+        "gelmek → ____",
+        "gitmek → ____",
+        "beklemek → ____",
+        "dönmek → ____",
+        "oturmak → ____",
+        "okumak → ____"
+      ]
+    },
+    {
+      "prompt": "Make a prohibition for the person in brackets.",
+      "items": [
+        "gelmek (sen) → ____",
+        "gitmek (siz) → ____",
+        "unutmak (sen) → ____",
+        "korkmak (siz) → ____",
+        "acele etmek (sen) → ____",
+        "kaybolmak (siz) → ____"
+      ]
+    },
+    {
+      "prompt": "Translate into Turkish. Use the polite form.",
+      "items": [
+        "Excuse me, where's the pharmacy?",
+        "Go straight on from here.",
+        "Turn right at the second street.",
+        "The bookshop is on the left.",
+        "How long is it on foot?",
+        "I'm lost."
+      ]
+    },
+    {
+      "prompt": "Put the words in the right order.",
+      "items": [
+        "gidin / buradan / düz",
+        "dönün / sokaktan / sağa / ikinci",
+        "var / bir / köşede / eczane",
+        "yanında / kitabevi / sinemanın",
+        "sürer / kadar / yürüyerek / ne / ?",
+        "gelsin / kolay"
+      ]
+    }
+  ],
+  "answers": [
+    "gelin — gidin — bekleyin — dönün — oturun — okuyun",
+    "gelme — gitmeyin — unutma — korkmayın — acele etme — kaybolmayın",
+    "Affedersiniz, eczane nerede? — Buradan düz gidin. — İkinci sokaktan sağa dönün. — Kitabevi solda. — Yürüyerek ne kadar sürer? — Kayboldum.",
+    "Buradan düz gidin. — İkinci sokaktan sağa dönün. — Köşede bir eczane var. — Kitabevi sinemanın yanında. — Yürüyerek ne kadar sürer? — Kolay gelsin."
+  ]
+}

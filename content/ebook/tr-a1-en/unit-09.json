@@ -1,0 +1,593 @@
+{
+  "title": "How much is it?",
+  "title_target": "Ne kadar?",
+  "goal": "Go shopping: ask prices, haggle, name colors and sizes — and mark a specific object with the ending *-i*.",
+  "bekal": [
+    "tell *kitap okuyorum* and *kitabı okuyorum* apart",
+    "ask the price with *ne kadar* and *kaça*",
+    "haggle without offending anyone"
+  ],
+  "dialogs": [
+    {
+      "title": "Dialogue — Kapalıçarşı'da",
+      "intro": "Inside the Grand Bazaar. Budi stops in front of a scarf stall. The seller, Hakan, has had his eye on him for a while.",
+      "lines": [
+        {
+          "speaker": "Hakan:",
+          "text": "Buyurun abi, hoş geldiniz! Bakın, çok güzel şallar.",
+          "id": "Come in, brother, welcome! Look, beautiful scarves.",
+          "literal": "please big-brother, pleasant came-you! look-you, very beautiful scarf-s."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Şu maviyi görebilir miyim?",
+          "id": "Can I see that blue one?",
+          "literal": "that blue-the can-see question-I?"
+        },
+        {
+          "speaker": "Hakan:",
+          "text": "Tabii! Bu ipek. Elinize alın, çok yumuşak.",
+          "id": "Of course! It's silk. Feel it, it's so soft.",
+          "literal": "of-course! this silk. hand-your-to take-you, very soft."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Gerçekten güzel. Ne kadar?",
+          "id": "It really is nice. How much is it?",
+          "literal": "truly beautiful. what amount?"
+        },
+        {
+          "speaker": "Hakan:",
+          "text": "Sekiz yüz lira. Ama size yedi yüz.",
+          "id": "Eight hundred lira. But for you, seven hundred.",
+          "literal": "eight hundred lira. but you-to seven hundred."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Pahalı. Öğrenciyim, param az.",
+          "id": "That's expensive. I'm a student, I don't have much money.",
+          "literal": "expensive. student-I-am, money-my little."
+        },
+        {
+          "speaker": "Hakan:",
+          "text": "Öğrenci misin? Peki, altı yüz. Son fiyat.",
+          "id": "You're a student? All right, six hundred. Final price.",
+          "literal": "student question-you-are? well, six hundred. last price."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Beş yüz olur mu?",
+          "id": "How about five hundred?",
+          "literal": "five hundred becomes question?"
+        },
+        {
+          "speaker": "Hakan:",
+          "text": "Vallahi olmaz. Beş yüz elli, tamam mı?",
+          "id": "I swear I can't. Five hundred fifty, OK?",
+          "literal": "by-God doesn't-become. five hundred fifty, OK question?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Tamam, alıyorum. Kartla ödeyebilir miyim?",
+          "id": "OK, I'll take it. Can I pay by card?",
+          "literal": "OK, am-taking-I. card-with can-pay question-I?"
+        },
+        {
+          "speaker": "Hakan:",
+          "text": "Tabii abi. Poşet istiyor musun?",
+          "id": "Sure, brother. Do you want a bag?",
+          "literal": "of-course big-brother. bag wanting question-you?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "İstemiyorum, çantam var. Teşekkürler!",
+          "id": "No thanks, I've got a bag. Thanks!",
+          "literal": "not-wanting-I, bag-my there-is. thanks-plural!"
+        }
+      ],
+      "notes": [
+        "**Haggling is expected in the covered bazaars, not in ordinary shops.** In the Kapalıçarşı, the Mısır Çarşısı (Spice Bazaar) and tourist stalls, the first price really is inflated. In supermarkets, pharmacies, restaurants and shops with price tags, haggling is considered odd.",
+        "**Olur mu? is the key to haggling.** Literally \"does it work?\" — used to propose a number. The answer is *olur* (OK) or *olmaz* (no way). These two words settle almost every small negotiation in Turkey.",
+        "**Sellers call male customers abi and female customers abla** — even when the customer is older. It's the friendly language of trade, not family. Don't be offended, and don't feel you have to return it.",
+        "**Maviyi, not mavi.** Because he means a specific scarf that's being pointed at, the word gets the object ending *-yi*. That's this unit's grammar point, and the one foreign learners skip most often."
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "The ending -i: marking a specific object",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Turkish has no word for \"the\", but it does have a way to tell **a specific thing** from **any thing** — the ending *-i / -ı / -u / -ü* on the object of the sentence."
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Without the ending",
+            "With the ending",
+            "The difference"
+          ],
+          "rows": [
+            [
+              "Kitap okuyorum.",
+              "Kitabı okuyorum.",
+              "I'm reading a book / I'm reading THE book"
+            ],
+            [
+              "Çay içiyorum.",
+              "Çayı içiyorum.",
+              "I'm drinking tea / I'm drinking THE tea"
+            ],
+            [
+              "Film izliyoruz.",
+              "Filmi izliyoruz.",
+              "We're watching a movie / THE movie"
+            ],
+            [
+              "Ekmek alıyorum.",
+              "Ekmeği alıyorum.",
+              "Buying bread / buying THE bread"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "The practical rule: use the ending when **the listener knows which thing you mean** — because it's been mentioned, pointed at, or there's only one. Without the ending, the sentence talks about a kind of thing, not an item."
+        },
+        {
+          "type": "sub",
+          "text": "Always takes the ending"
+        },
+        {
+          "type": "list",
+          "items": [
+            "**Names of people and places**: *Ayşe'yi görüyorum* (I see Ayşe), *İstanbul'u seviyorum*.",
+            "**Pronouns**: *beni*, *seni*, *onu*, *bizi*, *sizi*, *onları* — *Beni bekliyor musun?*",
+            "**Demonstratives**: *bunu*, *şunu*, *onu* — *Bunu alıyorum* (I'll take this one).",
+            "**Things that already have a possessive ending**: *çantamı*, *evini*, *arabasını*."
+          ]
+        },
+        {
+          "type": "kotak",
+          "title": "The most common mistake",
+          "items": [
+            "Beginners often put *-i* on EVERY object. So *Su içiyorum* (I'm drinking water) becomes *Suyu içiyorum* — which means \"I'm drinking THE water\", and sounds as if you're pointing at a particular glass in front of someone.",
+            "When in doubt, leave the ending off. Turkish forgives an under-marked object more readily than an over-marked one."
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Asking prices and haggling",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "Türkçe",
+            "Say it",
+            "English"
+          ],
+          "rows": [
+            [
+              "Ne kadar?",
+              "ne ka-DAR",
+              "How much is it?"
+            ],
+            [
+              "Kaç para?",
+              "kach pa-RA",
+              "How much? (casual)"
+            ],
+            [
+              "Bu kaça?",
+              "bu ka-CHA",
+              "How much is this?"
+            ],
+            [
+              "Çok pahalı!",
+              "chok pa-ha-LUH",
+              "That's really expensive!"
+            ],
+            [
+              "Biraz indirim var mı?",
+              "bi-RAZ in-di-RIM var muh",
+              "Any chance of a small discount?"
+            ],
+            [
+              "Son fiyat ne?",
+              "son fi-YAT ne",
+              "What's your final price?"
+            ],
+            [
+              "Olur mu?",
+              "o-LUR mu",
+              "Would that work?"
+            ],
+            [
+              "Düşünüyorum.",
+              "dü-SHÜ-nü-yo-rum",
+              "I'll think about it."
+            ],
+            [
+              "Kartla ödeyebilir miyim?",
+              "kart-LA ö-de-ye-bi-LIR mi-yim",
+              "Can I pay by card?"
+            ],
+            [
+              "Fiş alabilir miyim?",
+              "fish a-la-bi-LIR mi-yim",
+              "Can I have a receipt?"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "*Düşünüyorum* — \"I'm thinking\" — is the most polite way to leave without buying. It's understood as a gentle no, and a good seller won't chase you after that."
+        },
+        {
+          "type": "sub",
+          "text": "Sizes and quantities"
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Türkçe",
+            "English",
+            "Türkçe",
+            "English"
+          ],
+          "rows": [
+            [
+              "kilo",
+              "kilogram",
+              "yarım kilo",
+              "half a kilo"
+            ],
+            [
+              "gram",
+              "gram",
+              "adet, tane",
+              "piece, item"
+            ],
+            [
+              "paket",
+              "pack",
+              "şişe",
+              "bottle"
+            ],
+            [
+              "poşet",
+              "plastic bag",
+              "kutu",
+              "box"
+            ],
+            [
+              "beden",
+              "clothing size",
+              "numara",
+              "shoe size"
+            ],
+            [
+              "büyük / küçük",
+              "large / small",
+              "orta",
+              "medium"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Colors and describing things",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "Türkçe",
+            "English",
+            "Türkçe",
+            "English"
+          ],
+          "rows": [
+            [
+              "kırmızı",
+              "red",
+              "mavi",
+              "blue"
+            ],
+            [
+              "yeşil",
+              "green",
+              "sarı",
+              "yellow"
+            ],
+            [
+              "siyah",
+              "black",
+              "beyaz",
+              "white"
+            ],
+            [
+              "kahverengi",
+              "brown",
+              "gri",
+              "gray"
+            ],
+            [
+              "turuncu",
+              "orange",
+              "mor",
+              "purple"
+            ],
+            [
+              "pembe",
+              "pink",
+              "lacivert",
+              "navy blue"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "*Kahverengi* literally means \"coffee color\" — *kahve* + *rengi*. The same pattern is used for other colors named after things: *gül rengi* (rose color), *deniz mavisi* (sea blue)."
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Türkçe",
+            "English",
+            "Türkçe",
+            "English"
+          ],
+          "rows": [
+            [
+              "pahalı / ucuz",
+              "expensive / cheap",
+              "yeni / eski",
+              "new / old"
+            ],
+            [
+              "güzel / çirkin",
+              "nice / ugly",
+              "temiz / kirli",
+              "clean / dirty"
+            ],
+            [
+              "yumuşak / sert",
+              "soft / hard",
+              "ağır / hafif",
+              "heavy / light"
+            ],
+            [
+              "uzun / kısa",
+              "long / short",
+              "kalın / ince",
+              "thick / thin"
+            ]
+          ]
+        },
+        {
+          "type": "kotak",
+          "title": "Adjectives always come before the noun",
+          "items": [
+            "*Mavi şal* (a blue scarf), *büyük ev* (a big house), *güzel bir gün* (a beautiful day). Note that *bir* goes BETWEEN the adjective and the noun, not in front of both: *güzel bir gün*, not *bir güzel gün*.",
+            "When the adjective is the predicate, it moves to the end and takes a person ending: *Bu şal mavi.* (This scarf is blue.) *Yorgunum.* (I'm tired.)"
+          ]
+        },
+        {
+          "type": "kotak",
+          "title": "Unit 7 review",
+          "items": [
+            "Cover the Turkish and rebuild it from memory: \"What time is it now?\" · \"Classes start on Monday.\" · \"I study every day.\" · \"When's the exam?\" · \"I don't work on the weekend.\"",
+            "Then say 7:30, 10:15 and 2:45 in Turkish."
+          ]
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "tr": "ne kadar",
+      "baca": "ne ka-DAR",
+      "en": "how much (is it)"
+    },
+    {
+      "tr": "kaça",
+      "baca": "ka-CHA",
+      "en": "how much (price)"
+    },
+    {
+      "tr": "fiyat",
+      "baca": "fi-YAT",
+      "en": "price"
+    },
+    {
+      "tr": "pahalı / ucuz",
+      "baca": "pa-ha-LUH / u-JUZ",
+      "en": "expensive / cheap"
+    },
+    {
+      "tr": "indirim",
+      "baca": "in-di-RIM",
+      "en": "discount"
+    },
+    {
+      "tr": "ödemek",
+      "baca": "ö-de-MEK",
+      "en": "to pay"
+    },
+    {
+      "tr": "kart",
+      "baca": "kart",
+      "en": "card"
+    },
+    {
+      "tr": "nakit",
+      "baca": "na-KIT",
+      "en": "cash"
+    },
+    {
+      "tr": "fiş",
+      "baca": "fish",
+      "en": "receipt"
+    },
+    {
+      "tr": "poşet",
+      "baca": "po-SHET",
+      "en": "plastic bag"
+    },
+    {
+      "tr": "kilo",
+      "baca": "ki-LO",
+      "en": "kilogram"
+    },
+    {
+      "tr": "tane, adet",
+      "baca": "ta-NE, a-DET",
+      "en": "piece, item"
+    },
+    {
+      "tr": "beden",
+      "baca": "be-DEN",
+      "en": "clothing size"
+    },
+    {
+      "tr": "şal",
+      "baca": "shal",
+      "en": "scarf, shawl"
+    },
+    {
+      "tr": "ipek",
+      "baca": "i-PEK",
+      "en": "silk"
+    },
+    {
+      "tr": "çarşı",
+      "baca": "char-SHUH",
+      "en": "market, bazaar"
+    },
+    {
+      "tr": "kırmızı",
+      "baca": "kuhr-muh-ZUH",
+      "en": "red"
+    },
+    {
+      "tr": "mavi",
+      "baca": "ma-VI",
+      "en": "blue"
+    },
+    {
+      "tr": "yeşil",
+      "baca": "ye-SHIL",
+      "en": "green"
+    },
+    {
+      "tr": "sarı",
+      "baca": "sa-RUH",
+      "en": "yellow"
+    },
+    {
+      "tr": "siyah / beyaz",
+      "baca": "si-YAH / be-YAZ",
+      "en": "black / white"
+    },
+    {
+      "tr": "kahverengi",
+      "baca": "kah-ve-ren-GI",
+      "en": "brown"
+    },
+    {
+      "tr": "renk",
+      "baca": "renk",
+      "en": "color"
+    },
+    {
+      "tr": "yumuşak",
+      "baca": "yu-mu-SHAK",
+      "en": "soft"
+    },
+    {
+      "tr": "ağır / hafif",
+      "baca": "a-UHR / ha-FIF",
+      "en": "heavy / light"
+    },
+    {
+      "tr": "az / çok",
+      "baca": "az / chok",
+      "en": "little / a lot"
+    },
+    {
+      "tr": "son",
+      "baca": "son",
+      "en": "last, final; end"
+    },
+    {
+      "tr": "olur / olmaz",
+      "baca": "o-LUR / ol-MAZ",
+      "en": "OK, fine / no way"
+    },
+    {
+      "tr": "düşünmek",
+      "baca": "dü-shün-MEK",
+      "en": "to think"
+    },
+    {
+      "tr": "gerçekten",
+      "baca": "ger-CHEK-ten",
+      "en": "really, truly"
+    }
+  ],
+  "exercises": [
+    {
+      "prompt": "Add the object ending *-i/-ı/-u/-ü* (with a linking letter if needed).",
+      "items": [
+        "kitap → ____",
+        "çay → ____",
+        "ev → ____",
+        "araba → ____",
+        "Ayşe → ____",
+        "bu → ____"
+      ]
+    },
+    {
+      "prompt": "Object ending or not? Write the full sentence.",
+      "items": [
+        "I'm drinking tea (any tea). ____",
+        "I'm drinking the tea. ____",
+        "I'm reading the book. ____",
+        "I'm waiting for you. ____",
+        "We're buying bread (any bread). ____",
+        "I love Istanbul. ____"
+      ]
+    },
+    {
+      "prompt": "Translate into Turkish.",
+      "items": [
+        "How much is it?",
+        "That's really expensive!",
+        "Is there a discount?",
+        "I'll take this one.",
+        "Can I pay by card?",
+        "I'll think about it."
+      ]
+    },
+    {
+      "prompt": "Put the words in the right order.",
+      "items": [
+        "kadar / bu / ne / ?",
+        "pahalı / çok / bu",
+        "alıyorum / bunu / ben",
+        "mı / var / indirim / ?",
+        "güzel / bir / şal / mavi",
+        "mu / olur / yüz / beş / ?"
+      ]
+    }
+  ],
+  "answers": [
+    "kitabı — çayı — evi — arabayı — Ayşe'yi — bunu",
+    "Çay içiyorum. — Çayı içiyorum. — Kitabı okuyorum. — Seni bekliyorum. — Ekmek alıyoruz. — İstanbul'u seviyorum.",
+    "Ne kadar? — Çok pahalı! — İndirim var mı? — Bunu alıyorum. — Kartla ödeyebilir miyim? — Düşünüyorum.",
+    "Bu ne kadar? — Bu çok pahalı. — Ben bunu alıyorum. — İndirim var mı? — Güzel bir mavi şal. — Beş yüz olur mu?"
+  ]
+}

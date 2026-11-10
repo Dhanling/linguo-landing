@@ -1,0 +1,708 @@
+{
+  "title": "Home, sweet home",
+  "title_target": "Ev ve eşyalar",
+  "goal": "Describe where you live, and build new words yourself with the suffixes *-lı*, *-sız*, *-ci* and *-lik*.",
+  "bekal": [
+    "naming rooms and furniture",
+    "forming *şekerli*, *şekersiz*, *kitapçı*, *güzellik* from words you already know",
+    "reading a rental ad without a dictionary"
+  ],
+  "dialogs": [
+    {
+      "title": "Dialogue — Yeni daire",
+      "intro": "Budi is looking for a room closer to campus. Emre goes with him to see a small apartment.",
+      "lines": [
+        {
+          "speaker": "Emlakçı:",
+          "text": "Buyurun, girin. İki artı bir, altmış metrekare.",
+          "id": "Come in, please. Two bedrooms plus a living room, sixty square meters.",
+          "literal": "please, enter-you(formal). two plus one, sixty square-meter."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "İki artı bir ne demek?",
+          "id": "What does \"two plus one\" mean?",
+          "literal": "two plus one what saying?"
+        },
+        {
+          "speaker": "Emre:",
+          "text": "İki oda ve bir salon. Türkiye'de hep böyle yazılır.",
+          "id": "Two rooms and one living room. In Turkey it's always written like that.",
+          "literal": "two room and one living-room. Turkey-in always like-this is-written."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Anladım. Mutfak nerede?",
+          "id": "I see. Where's the kitchen?",
+          "literal": "understood-I. kitchen where?"
+        },
+        {
+          "speaker": "Emlakçı:",
+          "text": "Şurada. Küçük ama pencereli, çok aydınlık.",
+          "id": "Over there. It's small but it has a window — very bright.",
+          "literal": "over-there. small but window-with, very bright."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Eşyalı mı, eşyasız mı?",
+          "id": "Furnished or unfurnished?",
+          "literal": "furniture-with question, furniture-without question?"
+        },
+        {
+          "speaker": "Emlakçı:",
+          "text": "Eşyalı. Yatak, dolap, masa, buzdolabı var.",
+          "id": "Furnished. There's a bed, a wardrobe, a table and a fridge.",
+          "literal": "furniture-with. bed, cupboard, table, ice-cupboard-its there-is."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Kira ne kadar?",
+          "id": "How much is the rent?",
+          "literal": "rent how much?"
+        },
+        {
+          "speaker": "Emlakçı:",
+          "text": "On sekiz bin lira, aidat dahil.",
+          "id": "Eighteen thousand lira, building fees included.",
+          "literal": "ten eight thousand lira, fee included."
+        },
+        {
+          "speaker": "Emre:",
+          "text": "Su ve elektrik dahil mi?",
+          "id": "Are water and electricity included?",
+          "literal": "water and electricity included question?"
+        },
+        {
+          "speaker": "Emlakçı:",
+          "text": "Hayır, onlar ayrı. Ama internet bedava.",
+          "id": "No, those are separate. But the internet is free.",
+          "literal": "no, they separate. but internet free."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Düşüneceğim. Yarın haber veririm.",
+          "id": "I'll think about it. I'll let you know tomorrow.",
+          "literal": "will-think-I. tomorrow news give-I."
+        }
+      ],
+      "notes": [
+        "**2+1 is the language of Turkish housing ads.** The first number is bedrooms, the second is living rooms (*salon*). *1+1* is a small studio, *3+1* a family home. You'll see it on every *kiralık* sign in a real-estate office window.",
+        "**Eşyalı and eşyasız use two opposite suffixes.** *-lı* means \"with, having\"; *-sız* means \"without\" — like English *-ful* and *-less*. These two suffixes are the adjective factory of Turkish, and part of this unit's grammar.",
+        "**Buzdolabı** = *buz* (ice) + *dolap* (cupboard) + *-ı*, with *p* softening to *b*. The noun + noun pattern from unit 4 forms almost every name for household items.",
+        "**Haber veririm** uses the aorist for a light promise — \"I'll let you know\". Compare *haber vereceğim*, which sounds more binding. For everyday matters, the aorist is actually more polite because it's looser."
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "The home",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "Türkçe",
+            "English",
+            "Türkçe",
+            "English"
+          ],
+          "rows": [
+            [
+              "ev",
+              "house, home",
+              "daire",
+              "apartment"
+            ],
+            [
+              "apartman",
+              "apartment building",
+              "kat",
+              "floor"
+            ],
+            [
+              "oda",
+              "room",
+              "salon",
+              "living room"
+            ],
+            [
+              "yatak odası",
+              "bedroom",
+              "mutfak",
+              "kitchen"
+            ],
+            [
+              "banyo",
+              "bathroom",
+              "tuvalet",
+              "toilet"
+            ],
+            [
+              "balkon",
+              "balcony",
+              "bahçe",
+              "garden, yard"
+            ],
+            [
+              "asansör",
+              "elevator",
+              "merdiven",
+              "stairs"
+            ],
+            [
+              "kapı",
+              "door",
+              "pencere",
+              "window"
+            ],
+            [
+              "duvar",
+              "wall",
+              "yer",
+              "floor, place"
+            ],
+            [
+              "kira",
+              "rent",
+              "kiralık",
+              "for rent"
+            ]
+          ]
+        },
+        {
+          "type": "sub",
+          "text": "Furniture and appliances"
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Türkçe",
+            "English",
+            "Türkçe",
+            "English"
+          ],
+          "rows": [
+            [
+              "yatak",
+              "bed",
+              "dolap",
+              "cupboard, wardrobe"
+            ],
+            [
+              "masa",
+              "table",
+              "sandalye",
+              "chair"
+            ],
+            [
+              "koltuk",
+              "sofa, armchair",
+              "halı",
+              "carpet, rug"
+            ],
+            [
+              "buzdolabı",
+              "fridge",
+              "fırın",
+              "oven"
+            ],
+            [
+              "çamaşır makinesi",
+              "washing machine",
+              "bulaşık makinesi",
+              "dishwasher"
+            ],
+            [
+              "televizyon",
+              "television",
+              "klima",
+              "air conditioner"
+            ],
+            [
+              "lamba",
+              "lamp",
+              "perde",
+              "curtain"
+            ],
+            [
+              "ayna",
+              "mirror",
+              "havlu",
+              "towel"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "*Çamaşır makinesi* and *bulaşık makinesi* show the same pattern once again: *çamaşır* (laundry) + *makine* + *-si*. Once you know one, you can guess them all."
+        }
+      ]
+    },
+    {
+      "title": "Making your own words",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Turkish builds new words by attaching word-forming suffixes, not by borrowing. The four suffixes below are the most common, and you can use all of them right away on words you already have."
+        },
+        {
+          "type": "sub",
+          "text": "-lı / -li / -lu / -lü — with, having"
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Base word",
+            "+ -lı",
+            "Meaning"
+          ],
+          "rows": [
+            [
+              "şeker (sugar)",
+              "şekerli",
+              "sweet, with sugar"
+            ],
+            [
+              "süt (milk)",
+              "sütlü",
+              "with milk"
+            ],
+            [
+              "et (meat)",
+              "etli",
+              "with meat"
+            ],
+            [
+              "su (water)",
+              "sulu",
+              "juicy, with broth"
+            ],
+            [
+              "eşya (furniture)",
+              "eşyalı",
+              "furnished"
+            ],
+            [
+              "İstanbul",
+              "İstanbullu",
+              "a person from Istanbul"
+            ]
+          ]
+        },
+        {
+          "type": "sub",
+          "text": "-sız / -siz / -suz / -süz — without"
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Base word",
+            "+ -sız",
+            "Meaning"
+          ],
+          "rows": [
+            [
+              "şeker",
+              "şekersiz",
+              "sugar-free"
+            ],
+            [
+              "et",
+              "etsiz",
+              "meatless"
+            ],
+            [
+              "tuz (salt)",
+              "tuzsuz",
+              "unsalted"
+            ],
+            [
+              "su",
+              "susuz",
+              "waterless, thirsty"
+            ],
+            [
+              "iş (work)",
+              "işsiz",
+              "unemployed"
+            ],
+            [
+              "ev",
+              "evsiz",
+              "homeless"
+            ]
+          ]
+        },
+        {
+          "type": "sub",
+          "text": "-cı / -ci / -cu / -cü — a person who deals with"
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Base word",
+            "+ -cı",
+            "Meaning"
+          ],
+          "rows": [
+            [
+              "ekmek (bread)",
+              "ekmekçi",
+              "baker"
+            ],
+            [
+              "kitap",
+              "kitapçı",
+              "bookseller"
+            ],
+            [
+              "balık (fish)",
+              "balıkçı",
+              "fisherman, fishmonger"
+            ],
+            [
+              "çay",
+              "çaycı",
+              "tea seller"
+            ],
+            [
+              "yol (road)",
+              "yolcu",
+              "passenger"
+            ],
+            [
+              "emlak (property)",
+              "emlakçı",
+              "real-estate agent"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "After a hard letter, *c* hardens to *ç*: *kitap-çı*, *simit-çi*, *sanat-çı*. The Fıstıkçı Şahap rule again — and the memory phrase is itself an example: *fıstık* + *-çı*."
+        },
+        {
+          "type": "sub",
+          "text": "-lık / -lik / -luk / -lük — -ness, place, tool"
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Base word",
+            "+ -lık",
+            "Meaning"
+          ],
+          "rows": [
+            [
+              "güzel (beautiful)",
+              "güzellik",
+              "beauty"
+            ],
+            [
+              "iyi (good)",
+              "iyilik",
+              "goodness, a favor"
+            ],
+            [
+              "göz (eye)",
+              "gözlük",
+              "glasses"
+            ],
+            [
+              "tuz (salt)",
+              "tuzluk",
+              "salt shaker"
+            ],
+            [
+              "kira (rent)",
+              "kiralık",
+              "for rent"
+            ],
+            [
+              "gün (day)",
+              "günlük",
+              "daily, diary"
+            ]
+          ]
+        },
+        {
+          "type": "kotak",
+          "title": "Four suffixes, hundreds of words",
+          "items": [
+            "Try it now: from *şeker*, *su*, *ev* and *çay* you can make *şekerli*, *şekersiz*, *şekerlik*, *şekerci*, *sulu*, *susuz*, *evli*, *evsiz*, *çaylı*, *çaysız*, *çaycı*, *çaylık*.",
+            "Not every word you can build is actually used — but nearly all of them will be understood. This is the skill that grows your vocabulary far faster than memorizing lists."
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Reading a rental ad",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "Türkçe",
+            "English"
+          ],
+          "rows": [
+            [
+              "kiralık daire",
+              "apartment for rent"
+            ],
+            [
+              "satılık ev",
+              "house for sale"
+            ],
+            [
+              "eşyalı / eşyasız",
+              "furnished / unfurnished"
+            ],
+            [
+              "asansörlü",
+              "with elevator"
+            ],
+            [
+              "balkonlu",
+              "with balcony"
+            ],
+            [
+              "doğalgazlı",
+              "with natural gas"
+            ],
+            [
+              "depozito",
+              "deposit"
+            ],
+            [
+              "aidat",
+              "building fees"
+            ],
+            [
+              "dahil / hariç",
+              "included / not included"
+            ],
+            [
+              "ara kat",
+              "middle floor"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "You can now take apart every *-lı* word on that list yourself: *asansör-lü* (with elevator), *balkon-lu*, *doğalgaz-lı*. Turkish property ads are really grammar practice in disguise."
+        },
+        {
+          "type": "kotak",
+          "title": "Unit 16 review",
+          "items": [
+            "Cover the Turkish and rebuild these from memory: \"What's the weather like?\" · \"Today is colder than yesterday.\" · \"Is there anything cheaper?\" · \"I think Turkish is easier.\" · \"It's snowing.\"",
+            "Then compare: *İstanbul / Ankara / büyük* and *yaz / kış / sıcak*."
+          ]
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "tr": "daire",
+      "baca": "da-i-RE",
+      "en": "apartment"
+    },
+    {
+      "tr": "apartman",
+      "baca": "a-part-MAN",
+      "en": "apartment building"
+    },
+    {
+      "tr": "salon",
+      "baca": "sa-LON",
+      "en": "living room"
+    },
+    {
+      "tr": "mutfak",
+      "baca": "mut-FAK",
+      "en": "kitchen"
+    },
+    {
+      "tr": "banyo",
+      "baca": "ban-YO",
+      "en": "bathroom"
+    },
+    {
+      "tr": "balkon",
+      "baca": "bal-KON",
+      "en": "balcony"
+    },
+    {
+      "tr": "bahçe",
+      "baca": "bah-CHE",
+      "en": "garden, yard"
+    },
+    {
+      "tr": "asansör",
+      "baca": "a-san-SÖR",
+      "en": "elevator"
+    },
+    {
+      "tr": "merdiven",
+      "baca": "mer-di-VEN",
+      "en": "stairs"
+    },
+    {
+      "tr": "duvar",
+      "baca": "du-VAR",
+      "en": "wall"
+    },
+    {
+      "tr": "koltuk",
+      "baca": "kol-TUK",
+      "en": "sofa, armchair"
+    },
+    {
+      "tr": "halı",
+      "baca": "ha-LUH",
+      "en": "carpet, rug"
+    },
+    {
+      "tr": "buzdolabı",
+      "baca": "buz-do-la-BUH",
+      "en": "fridge"
+    },
+    {
+      "tr": "çamaşır makinesi",
+      "baca": "cha-ma-SHUHR ma-ki-ne-SI",
+      "en": "washing machine"
+    },
+    {
+      "tr": "klima",
+      "baca": "kli-MA",
+      "en": "air conditioner"
+    },
+    {
+      "tr": "perde",
+      "baca": "per-DE",
+      "en": "curtain"
+    },
+    {
+      "tr": "havlu",
+      "baca": "hav-LU",
+      "en": "towel"
+    },
+    {
+      "tr": "ayna",
+      "baca": "ai-NA",
+      "en": "mirror"
+    },
+    {
+      "tr": "eşya",
+      "baca": "esh-YA",
+      "en": "furniture, belongings"
+    },
+    {
+      "tr": "kira / kiralık",
+      "baca": "ki-RA / ki-ra-LUHK",
+      "en": "rent / for rent"
+    },
+    {
+      "tr": "depozito",
+      "baca": "de-po-zi-TO",
+      "en": "deposit"
+    },
+    {
+      "tr": "aidat",
+      "baca": "a-i-DAT",
+      "en": "building fees"
+    },
+    {
+      "tr": "dahil / hariç",
+      "baca": "da-HIL / ha-RICH",
+      "en": "included / not included"
+    },
+    {
+      "tr": "elektrik",
+      "baca": "e-lek-TRIK",
+      "en": "electricity"
+    },
+    {
+      "tr": "bedava",
+      "baca": "be-da-VA",
+      "en": "free (of charge)"
+    },
+    {
+      "tr": "aydınlık",
+      "baca": "ai-duhn-LUHK",
+      "en": "bright"
+    },
+    {
+      "tr": "emlakçı",
+      "baca": "em-lak-CHUH",
+      "en": "real-estate agent"
+    },
+    {
+      "tr": "metrekare",
+      "baca": "met-re-ka-RE",
+      "en": "square meter"
+    },
+    {
+      "tr": "haber vermek",
+      "baca": "ha-BER ver-MEK",
+      "en": "to let someone know"
+    },
+    {
+      "tr": "ayrı",
+      "baca": "ai-RUH",
+      "en": "separate"
+    }
+  ],
+  "exercises": [
+    {
+      "prompt": "Form adjectives with *-lı* (with).",
+      "items": [
+        "şeker → ____",
+        "süt → ____",
+        "et → ____",
+        "balkon → ____",
+        "asansör → ____",
+        "eşya → ____"
+      ]
+    },
+    {
+      "prompt": "Form adjectives with *-sız* (without).",
+      "items": [
+        "şeker → ____",
+        "et → ____",
+        "tuz → ____",
+        "su → ____",
+        "iş → ____",
+        "ev → ____"
+      ]
+    },
+    {
+      "prompt": "Form new words with *-cı* or *-lık* to match the meaning.",
+      "items": [
+        "kitap (bookseller) → ____",
+        "balık (fisherman) → ____",
+        "çay (tea seller) → ____",
+        "göz (glasses) → ____",
+        "güzel (beauty) → ____",
+        "kira (for rent) → ____"
+      ]
+    },
+    {
+      "prompt": "Put the words in the right order.",
+      "items": [
+        "kadar / kira / ne / ?",
+        "mı / eşyalı / daire / ?",
+        "var / buzdolabı / mutfakta",
+        "dahil / mi / elektrik / ?",
+        "bedava / internet / ama",
+        "veririm / yarın / haber"
+      ]
+    }
+  ],
+  "answers": [
+    "şekerli — sütlü — etli — balkonlu — asansörlü — eşyalı",
+    "şekersiz — etsiz — tuzsuz — susuz — işsiz — evsiz",
+    "kitapçı — balıkçı — çaycı — gözlük — güzellik — kiralık",
+    "Kira ne kadar? — Daire eşyalı mı? — Mutfakta buzdolabı var. — Elektrik dahil mi? — Ama internet bedava. — Yarın haber veririm."
+  ]
+}

@@ -1,0 +1,580 @@
+{
+  "title": "I'm sick",
+  "title_target": "Hastayım",
+  "goal": "Name parts of the body, say what hurts, and look after yourself at a pharmacy or clinic.",
+  "bekal": [
+    "saying *başım ağrıyor* and ten other complaints",
+    "answering *neyin var* and *geçmiş olsun*",
+    "buying medicine and explaining allergies"
+  ],
+  "dialogs": [
+    {
+      "title": "Dialogue — Eczanede",
+      "intro": "Budi walks into the pharmacy near home. His voice is hoarse and his nose is red.",
+      "lines": [
+        {
+          "speaker": "Eczacı:",
+          "text": "Buyurun, nasıl yardımcı olabilirim?",
+          "id": "Hello, how can I help you?",
+          "literal": "please, how helpful can-be-I?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "İyi değilim. Galiba grip oldum.",
+          "id": "I'm not well. I think I've got the flu.",
+          "literal": "well not-I. I-guess flu became-I."
+        },
+        {
+          "speaker": "Eczacı:",
+          "text": "Geçmiş olsun. Neyin var?",
+          "id": "Get well soon. What's wrong?",
+          "literal": "passed may-it-be. what-your there-is?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Boğazım ağrıyor ve başım ağrıyor. Ateşim de var.",
+          "id": "My throat hurts and I have a headache. I have a fever too.",
+          "literal": "throat-my aches and head-my aches. fever-my too there-is."
+        },
+        {
+          "speaker": "Eczacı:",
+          "text": "Kaç gündür böyle?",
+          "id": "How many days has it been like this?",
+          "literal": "how-many day-for like-this?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "İki gündür. Dün gece hiç uyuyamadım.",
+          "id": "Two days. Last night I couldn't sleep at all.",
+          "literal": "two day-for. yesterday night at-all couldn't-sleep-I."
+        },
+        {
+          "speaker": "Eczacı:",
+          "text": "Alerjin var mı? İlaç kullanıyor musun?",
+          "id": "Do you have any allergies? Are you taking any medicine?",
+          "literal": "allergy-your there-is question? medicine using question-you?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Alerjim yok, ilaç da kullanmıyorum.",
+          "id": "I have no allergies, and I'm not taking any medicine.",
+          "literal": "allergy-my there-isn't, medicine also not-using-I."
+        },
+        {
+          "speaker": "Eczacı:",
+          "text": "Bu ağrı kesici, günde iki kere. Bu da boğaz için pastil.",
+          "id": "This is a painkiller, twice a day. And these are throat lozenges.",
+          "literal": "this pain cutter, day-in two times. this also throat for lozenge."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Yemekten önce mi, sonra mı?",
+          "id": "Before meals or after?",
+          "literal": "food-from before question, after question?"
+        },
+        {
+          "speaker": "Eczacı:",
+          "text": "Yemekten sonra. Bol su iç ve dinlen. İki gün geçmezse doktora git.",
+          "id": "After meals. Drink plenty of water and rest. If it's not better in two days, go to a doctor.",
+          "literal": "food-from after. plenty water drink and rest. two day if-not-pass doctor-to go."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Anladım, teşekkür ederim.",
+          "id": "I understand, thank you.",
+          "literal": "understood-I, thanks do-I."
+        }
+      ],
+      "notes": [
+        "**Geçmiş olsun is said to anyone who is sick or just recovering** — also after an accident, a tough exam or a minor misfortune. Literally \"may it be over\". The reply is *teşekkür ederim*.",
+        "**Neyin var? is literally \"what do you have?\"** — the Turkish way to ask about symptoms. The answer uses the same pattern: *ateşim var* (I have a fever), *başım ağrıyor*, *midem bulanıyor* (I feel sick).",
+        "**Grip oldum, not gribim.** For an illness that HAPPENS to you, use *olmak*: *grip oldum* (I've caught the flu), *hasta oldum* (I got sick). For an ongoing state, use the ordinary person ending: *hastayım* (I'm sick).",
+        "**Kaç gündür** uses the suffix *-dır*, meaning \"for, since\": *iki gündür* (for two days), *bir haftadır* (for a week), *yıllardır* (for years). It's very common and easy to learn as a whole."
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "The body",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "Türkçe",
+            "English",
+            "Türkçe",
+            "English"
+          ],
+          "rows": [
+            [
+              "baş",
+              "head",
+              "saç",
+              "hair"
+            ],
+            [
+              "göz",
+              "eye",
+              "kulak",
+              "ear"
+            ],
+            [
+              "burun",
+              "nose",
+              "ağız",
+              "mouth"
+            ],
+            [
+              "diş",
+              "tooth",
+              "dil",
+              "tongue; language"
+            ],
+            [
+              "boğaz",
+              "throat",
+              "boyun",
+              "neck"
+            ],
+            [
+              "el",
+              "hand",
+              "kol",
+              "arm"
+            ],
+            [
+              "parmak",
+              "finger",
+              "ayak",
+              "foot"
+            ],
+            [
+              "bacak",
+              "leg",
+              "sırt",
+              "back"
+            ],
+            [
+              "karın",
+              "belly",
+              "mide",
+              "stomach"
+            ],
+            [
+              "kalp",
+              "heart",
+              "cilt",
+              "skin"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "Some of these words drop a vowel as soon as a suffix is added: *burun → burnum* (my nose), *ağız → ağzım*, *karın → karnım*, *boyun → boynum*. The same pattern as *oğul → oğlum* in unit 4."
+        },
+        {
+          "type": "kotak",
+          "title": "Dil means two things",
+          "items": [
+            "*Dil* is both \"tongue\" and \"language\" — just like English \"mother tongue\" and Arabic *lisan*. *Türk dili* = the Turkish language. *Dilim yandı* = I burned my tongue.",
+            "The word *göz* does double duty too: besides \"eye\", it means \"drawer\" and \"compartment\". *Gözlük* (glasses) is literally \"eye gear\"."
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Saying what hurts",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "The pattern is always the same: **body part + possessive suffix + ağrıyor**. Turkish doesn't say \"I have a headache\" but \"my head is aching\"."
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Türkçe",
+            "English"
+          ],
+          "rows": [
+            [
+              "Başım ağrıyor.",
+              "I have a headache."
+            ],
+            [
+              "Karnım ağrıyor.",
+              "I have a stomachache."
+            ],
+            [
+              "Boğazım ağrıyor.",
+              "I have a sore throat."
+            ],
+            [
+              "Dişim ağrıyor.",
+              "I have a toothache."
+            ],
+            [
+              "Sırtım ağrıyor.",
+              "My back hurts."
+            ],
+            [
+              "Ateşim var.",
+              "I have a fever."
+            ],
+            [
+              "Öksürüyorum.",
+              "I'm coughing."
+            ],
+            [
+              "Midem bulanıyor.",
+              "I feel sick."
+            ],
+            [
+              "Başım dönüyor.",
+              "I feel dizzy."
+            ],
+            [
+              "Yorgunum, halsizim.",
+              "I'm tired and weak."
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "*Başım dönüyor* is literally \"my head is spinning\" — exactly the same image as in English. Languages often agree without ever having met."
+        },
+        {
+          "type": "sub",
+          "text": "Key sentences at the clinic and pharmacy"
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Türkçe",
+            "English"
+          ],
+          "rows": [
+            [
+              "Hastayım.",
+              "I'm sick."
+            ],
+            [
+              "Doktora gitmem lazım.",
+              "I need to see a doctor."
+            ],
+            [
+              "Randevu alabilir miyim?",
+              "Can I make an appointment?"
+            ],
+            [
+              "Alerjim var.",
+              "I have an allergy."
+            ],
+            [
+              "Penisiline alerjim var.",
+              "I'm allergic to penicillin."
+            ],
+            [
+              "Bu ilaç reçeteli mi?",
+              "Does this medicine need a prescription?"
+            ],
+            [
+              "Günde kaç kere?",
+              "How many times a day?"
+            ],
+            [
+              "Aç karnına mı?",
+              "On an empty stomach?"
+            ],
+            [
+              "Acil servis nerede?",
+              "Where's the emergency room?"
+            ],
+            [
+              "Sigortam var.",
+              "I have insurance."
+            ]
+          ]
+        },
+        {
+          "type": "kotak",
+          "title": "Nöbetçi eczane",
+          "items": [
+            "Pharmacies in Turkey close at night, but every district always has one on duty — the *nöbetçi eczane*. The list is posted on the door of every closed pharmacy, and you can find it online.",
+            "Many medicines sold over the counter elsewhere need a *reçete* (prescription) in Turkey. Turkish pharmacists are well trained and used to advising on minor complaints — they're the first stop, not the doctor."
+          ]
+        }
+      ]
+    },
+    {
+      "title": "The blessings and courtesies that go with it",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "Türkçe",
+            "When it's used",
+            "The reply"
+          ],
+          "rows": [
+            [
+              "Geçmiş olsun.",
+              "to someone sick or just recovered",
+              "Teşekkür ederim."
+            ],
+            [
+              "Çok yaşa!",
+              "to someone who sneezes",
+              "Sen de gör."
+            ],
+            [
+              "Kolay gelsin.",
+              "to someone working",
+              "Teşekkürler."
+            ],
+            [
+              "Afiyet olsun.",
+              "to someone eating",
+              "Teşekkürler."
+            ],
+            [
+              "Elinize sağlık.",
+              "to whoever cooked",
+              "Afiyet olsun."
+            ],
+            [
+              "Sıhhatler olsun.",
+              "to someone fresh from a bath or haircut",
+              "Teşekkürler."
+            ],
+            [
+              "Başınız sağ olsun.",
+              "to a grieving family",
+              "Dostlar sağ olsun."
+            ],
+            [
+              "Allah şifa versin.",
+              "a prayer for recovery",
+              "Âmin."
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "This list isn't decoration. Blessings like these are a big part of everyday Turkish conversation, and using them in the right place will make you sound natural faster than a hundred new nouns."
+        },
+        {
+          "type": "kotak",
+          "title": "Unit 15 review",
+          "items": [
+            "Cover the Turkish and rebuild these from memory: \"Excuse me, where's the pharmacy?\" · \"Go straight on from here.\" · \"Turn right at the second street.\" · \"I'm lost.\" · \"Kolay gelsin!\"",
+            "Then make *siz* prohibitions: *gitmek*, *unutmak*, *acele etmek*."
+          ]
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "tr": "hasta",
+      "baca": "has-TA",
+      "en": "sick"
+    },
+    {
+      "tr": "hastane",
+      "baca": "has-ta-NE",
+      "en": "hospital"
+    },
+    {
+      "tr": "eczane",
+      "baca": "ej-za-NE",
+      "en": "pharmacy"
+    },
+    {
+      "tr": "doktor",
+      "baca": "dok-TOR",
+      "en": "doctor"
+    },
+    {
+      "tr": "ilaç",
+      "baca": "i-LACH",
+      "en": "medicine"
+    },
+    {
+      "tr": "reçete",
+      "baca": "re-che-TE",
+      "en": "prescription"
+    },
+    {
+      "tr": "randevu",
+      "baca": "ran-de-VU",
+      "en": "appointment"
+    },
+    {
+      "tr": "ağrı",
+      "baca": "aa-RUH",
+      "en": "pain"
+    },
+    {
+      "tr": "ağrımak",
+      "baca": "aa-ruh-MAK",
+      "en": "to ache, hurt"
+    },
+    {
+      "tr": "ateş",
+      "baca": "a-TESH",
+      "en": "fever; fire"
+    },
+    {
+      "tr": "grip",
+      "baca": "grip",
+      "en": "flu"
+    },
+    {
+      "tr": "öksürmek",
+      "baca": "ök-sür-MEK",
+      "en": "to cough"
+    },
+    {
+      "tr": "alerji",
+      "baca": "a-ler-ZHI",
+      "en": "allergy"
+    },
+    {
+      "tr": "baş",
+      "baca": "bash",
+      "en": "head"
+    },
+    {
+      "tr": "göz / kulak",
+      "baca": "göz / ku-LAK",
+      "en": "eye / ear"
+    },
+    {
+      "tr": "burun / ağız",
+      "baca": "bu-RUN / a-UHZ",
+      "en": "nose / mouth"
+    },
+    {
+      "tr": "diş",
+      "baca": "dish",
+      "en": "tooth"
+    },
+    {
+      "tr": "boğaz",
+      "baca": "bo-AZ",
+      "en": "throat"
+    },
+    {
+      "tr": "el / ayak",
+      "baca": "el / a-YAK",
+      "en": "hand / foot"
+    },
+    {
+      "tr": "karın / mide",
+      "baca": "ka-RUHN / mi-DE",
+      "en": "belly / stomach"
+    },
+    {
+      "tr": "sırt",
+      "baca": "suhrt",
+      "en": "back"
+    },
+    {
+      "tr": "kalp",
+      "baca": "kalp",
+      "en": "heart"
+    },
+    {
+      "tr": "dinlenmek",
+      "baca": "din-len-MEK",
+      "en": "to rest"
+    },
+    {
+      "tr": "geçmiş olsun",
+      "baca": "gech-MISH ol-SUN",
+      "en": "get well soon"
+    },
+    {
+      "tr": "çok yaşa",
+      "baca": "chok ya-SHA",
+      "en": "bless you (after a sneeze)"
+    },
+    {
+      "tr": "bol",
+      "baca": "bol",
+      "en": "plenty, abundant"
+    },
+    {
+      "tr": "kere, kez, defa",
+      "baca": "ke-RE, kez, de-FA",
+      "en": "time(s)"
+    },
+    {
+      "tr": "galiba",
+      "baca": "ga-li-BA",
+      "en": "I think, probably"
+    },
+    {
+      "tr": "acil",
+      "baca": "a-JIL",
+      "en": "emergency"
+    },
+    {
+      "tr": "sigorta",
+      "baca": "si-gor-TA",
+      "en": "insurance"
+    }
+  ],
+  "exercises": [
+    {
+      "prompt": "Say what hurts, using the pattern *... ağrıyor*.",
+      "items": [
+        "head → ____",
+        "belly → ____",
+        "throat → ____",
+        "tooth → ____",
+        "back → ____",
+        "ear → ____"
+      ]
+    },
+    {
+      "prompt": "Complete the sentences at the pharmacy.",
+      "items": [
+        "____ olsun. (get well soon)",
+        "____ var. (I have a fever)",
+        "____ yok. (I have no allergies)",
+        "Günde kaç ____? (times)",
+        "Bu ilaç ____ mi? (needs a prescription)",
+        "Doktora ____ lazım. (I need to go)"
+      ]
+    },
+    {
+      "prompt": "Translate into Turkish.",
+      "items": [
+        "I'm sick.",
+        "I think I've got the flu.",
+        "I have a headache.",
+        "It's been like this for two days.",
+        "Before meals or after?",
+        "Drink plenty of water and rest."
+      ]
+    },
+    {
+      "prompt": "Put the words in the right order.",
+      "items": [
+        "var / neyin / ?",
+        "ağrıyor / başım / benim",
+        "var / ateşim / de",
+        "olsun / geçmiş",
+        "yok / alerjim / benim",
+        "git / doktora / yarın"
+      ]
+    }
+  ],
+  "answers": [
+    "Başım ağrıyor. — Karnım ağrıyor. — Boğazım ağrıyor. — Dişim ağrıyor. — Sırtım ağrıyor. — Kulağım ağrıyor.",
+    "Geçmiş — Ateşim — Alerjim — kere — reçeteli — gitmem",
+    "Hastayım. — Galiba grip oldum. — Başım ağrıyor. — İki gündür böyle. — Yemekten önce mi, sonra mı? — Bol su iç ve dinlen.",
+    "Neyin var? — Benim başım ağrıyor. — Ateşim de var. — Geçmiş olsun. — Benim alerjim yok. — Yarın doktora git."
+  ]
+}

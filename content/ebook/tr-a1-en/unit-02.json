@@ -1,0 +1,587 @@
+{
+  "title": "What's this?",
+  "title_target": "Bu ne?",
+  "goal": "Point at the things around you, name them, make plurals — and meet vowel harmony, the law that governs this whole language.",
+  "bekal": [
+    "tell *bu*, *şu* and *o* apart by distance from the speaker",
+    "read the last vowel of a word and predict the shape of the ending that will attach to it",
+    "make plurals with *-ler* or *-lar* without ever picking the wrong one"
+  ],
+  "dialogs": [
+    {
+      "title": "Dialogue — Yeni oda",
+      "intro": "Ayşe takes Budi to his rented room in Kadıköy and shows him what's in it, one thing at a time.",
+      "lines": [
+        {
+          "speaker": "Ayşe:",
+          "text": "İşte oda. Beğendiniz mi?",
+          "id": "Here's the room. Do you like it?",
+          "literal": "here-is room. liked-you question?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Çok güzel! Bu ne?",
+          "id": "It's lovely! What's this?",
+          "literal": "very beautiful! this what?"
+        },
+        {
+          "speaker": "Ayşe:",
+          "text": "O bir dolap. Şu da masa.",
+          "id": "That's a wardrobe. And that one's a table.",
+          "literal": "that a wardrobe. that-there too table."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Masa mı? Bizde \"masa\" başka bir şey!",
+          "id": "A table? Back home \"masa\" is something else!",
+          "literal": "table question? us-at \"masa\" other a thing!"
+        },
+        {
+          "speaker": "Ayşe:",
+          "text": "Öyle mi? Peki bunlar ne, biliyor musunuz?",
+          "id": "Really? Well, do you know what these are?",
+          "literal": "so question? well these what, knowing are-you?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Kitaplar ve defterler. Bunları biliyorum!",
+          "id": "Books and notebooks. These I know!",
+          "literal": "book-s and notebook-s. these-the am-knowing-I!"
+        },
+        {
+          "speaker": "Ayşe:",
+          "text": "Aferin. Peki bu kim?",
+          "id": "Well done. And who's this?",
+          "literal": "well-done. well this who?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Bilmiyorum. Bir kadın.",
+          "id": "I don't know. A woman.",
+          "literal": "not-knowing-I. a woman."
+        },
+        {
+          "speaker": "Ayşe:",
+          "text": "O ev sahibi, Fatma Hanım. Çok iyi bir insan.",
+          "id": "That's the landlady, Ms. Fatma. A very kind person.",
+          "literal": "she house owner-its, Fatma Ms. very good a person."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Anahtar nerede?",
+          "id": "Where's the key?",
+          "literal": "key where?"
+        },
+        {
+          "speaker": "Ayşe:",
+          "text": "Kapıda. İşte anahtarlar.",
+          "id": "In the door. Here are the keys.",
+          "literal": "door-at. here-are key-s."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Teşekkürler Ayşe Hanım. Çok iyisiniz.",
+          "id": "Thank you, Ms. Ayşe. You're very kind.",
+          "literal": "thanks-plural Ayşe Ms. very good-you-are."
+        }
+      ],
+      "notes": [
+        "**Turkish has no obligatory \"a\".** *Dolap* already means \"wardrobe\" or \"a wardrobe\". The word *bir* (one) can be used like \"a\", but it adds a sense of \"some, one or other\": *bir kadın* = \"a woman (someone I don't know)\".",
+        "**No \"the\" either.** If you want to say \"THAT book, the one we just talked about\", Turkish marks it not in front of the word but with the object ending *-i* after it. That's for Unit 9 — for now just know the marker exists, and that it goes at the end.",
+        "**Bunları, not bunlar.** In the dialogue, *Bunları biliyorum* has an extra *-ı* because the things are the target of the verb \"know\". Don't memorize this now; just notice that the same word changes its tail depending on its job in the sentence.",
+        "**Aferin** is used to praise children, students, or anyone who has just managed something — just like \"well done!\" or \"good job!\". To praise an adult for something serious, use *helal olsun* or *bravo*."
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Vowel harmony — the one law of Turkish",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "If you could remember only one page of this entire course, pick this one. Turkish endings have no fixed form: they **adapt to the last vowel of the word they attach to**. That's why \"in/at\" can appear as *-de*, *-da*, *-te* or *-ta* — and all four are the same ending."
+        },
+        {
+          "type": "p",
+          "text": "Turkish's eight vowels split in two by tongue position. **Back** vowels: *a, ı, o, u*. **Front** vowels: *e, i, ö, ü*. The rule: an ending follows the group of the last vowel of its host word."
+        },
+        {
+          "type": "sub",
+          "text": "Two-form endings (e / a)"
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Last vowel",
+            "Ending",
+            "Plural example",
+            "\"In/at\" example"
+          ],
+          "rows": [
+            [
+              "a, ı, o, u",
+              "**-a**",
+              "masa → masa**lar**",
+              "okul → okul**da**"
+            ],
+            [
+              "e, i, ö, ü",
+              "**-e**",
+              "ev → ev**ler**",
+              "ev → ev**de**"
+            ]
+          ]
+        },
+        {
+          "type": "sub",
+          "text": "Four-form endings (i / ı / u / ü)"
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Last vowel",
+            "Ending",
+            "Question example",
+            "\"My\" example"
+          ],
+          "rows": [
+            [
+              "a, ı",
+              "**-ı**",
+              "kadın **mı**?",
+              "kız → kız**ım**"
+            ],
+            [
+              "e, i",
+              "**-i**",
+              "ev **mi**?",
+              "ev → ev**im**"
+            ],
+            [
+              "o, u",
+              "**-u**",
+              "okul **mu**?",
+              "okul → okul**um**"
+            ],
+            [
+              "ö, ü",
+              "**-ü**",
+              "göz **mü**?",
+              "göz → göz**üm**"
+            ]
+          ]
+        },
+        {
+          "type": "kotak",
+          "title": "Use it in your head, not from the table",
+          "items": [
+            "Don't memorize the table. Practice one habit: every time you meet a new word, say its last vowel out loud. *Kitap* → **a**. *Deniz* → **i**. *Okul* → **u**. *Göz* → **ö**.",
+            "After that, the ending simply follows. The matching vowel will feel comfortable in your mouth, the wrong one will feel awkward — and after a few weeks, your ear decides, not the table.",
+            "Loanwords occasionally rebel: *saat* → *saatler* (not *saatlar*), *kalp* → *kalbim*. There are only a few, and this course flags them every time they come up."
+          ]
+        }
+      ]
+    },
+    {
+      "title": "This, that, and that over there",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "Türkçe",
+            "Say it",
+            "Distance",
+            "Plural"
+          ],
+          "rows": [
+            [
+              "bu",
+              "bu",
+              "close to the speaker — \"this\"",
+              "bunlar"
+            ],
+            [
+              "şu",
+              "shu",
+              "a bit further, just pointed out — \"that\"",
+              "şunlar"
+            ],
+            [
+              "o",
+              "o",
+              "far away, or already known — \"that\"",
+              "onlar"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "*O* does double duty: besides \"that\", it also means \"he/she/it\". *O öğretmen* can mean \"he/she is a teacher\" or \"that teacher\" — context decides, and in practice it almost never causes confusion."
+        },
+        {
+          "type": "p",
+          "text": "*Şu* has a special flavor: it points to something that **has just entered the conversation**, often while pointing with your hand. If you're unsure between *şu* and *o*, use *o*."
+        },
+        {
+          "type": "sub",
+          "text": "Two questions that open everything"
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Question",
+            "Used for",
+            "Sample answer"
+          ],
+          "rows": [
+            [
+              "Bu ne?",
+              "things",
+              "Bu bir kitap."
+            ],
+            [
+              "Bu kim?",
+              "people",
+              "Bu Fatma Hanım."
+            ],
+            [
+              "Bunlar ne?",
+              "several things",
+              "Bunlar defterler."
+            ],
+            [
+              "Şu ne?",
+              "a thing a bit further away",
+              "Şu bir dolap."
+            ],
+            [
+              "Bu ne demek?",
+              "the meaning of a word",
+              "\"Masa\" demek."
+            ]
+          ]
+        },
+        {
+          "type": "kotak",
+          "title": "When the plural is not used",
+          "items": [
+            "After a number, the noun STAYS singular: *üç kitap* (three books), not *üç kitaplar*. The number already makes it plural, so *-lar* is redundant — and sounds wrong to a Turkish ear.",
+            "The same goes after *çok* (many) and *birkaç* (a few): *çok insan*, *birkaç gün*."
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Things around you",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "Türkçe",
+            "English",
+            "Türkçe",
+            "English"
+          ],
+          "rows": [
+            [
+              "oda",
+              "room",
+              "ev",
+              "house, home"
+            ],
+            [
+              "kapı",
+              "door",
+              "pencere",
+              "window"
+            ],
+            [
+              "masa",
+              "table",
+              "sandalye",
+              "chair"
+            ],
+            [
+              "yatak",
+              "bed",
+              "dolap",
+              "wardrobe, cupboard"
+            ],
+            [
+              "anahtar",
+              "key",
+              "çanta",
+              "bag"
+            ],
+            [
+              "kitap",
+              "book",
+              "defter",
+              "notebook"
+            ],
+            [
+              "kalem",
+              "pen, pencil",
+              "kâğıt",
+              "paper"
+            ],
+            [
+              "telefon",
+              "phone",
+              "bilgisayar",
+              "computer"
+            ],
+            [
+              "su",
+              "water",
+              "çay",
+              "tea"
+            ],
+            [
+              "para",
+              "money",
+              "saat",
+              "clock, watch, time"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "*Bilgisayar* is one of the modern Turkish words that were coined, not borrowed: *bilgi* (information) + *saymak* (to count) — \"information counter\". Turkish has an institution that busily mints words like this, and some of them really catch on."
+        },
+        {
+          "type": "kotak",
+          "title": "Unit 1 review",
+          "items": [
+            "Cover Unit 1, then rebuild the Turkish sentences from memory: \"My name is Budi.\" · \"I'm from Indonesia.\" · \"How are you, ma'am?\" · \"I'm not a teacher.\" · \"See you!\"",
+            "If three out of five come out without stopping to think, you can move on."
+          ]
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "tr": "bu / şu / o",
+      "baca": "bu / shu / o",
+      "en": "this / that / that (far)"
+    },
+    {
+      "tr": "bunlar",
+      "baca": "bun-LAR",
+      "en": "these"
+    },
+    {
+      "tr": "kim",
+      "baca": "kim",
+      "en": "who"
+    },
+    {
+      "tr": "işte",
+      "baca": "ISH-te",
+      "en": "here is, there is"
+    },
+    {
+      "tr": "oda",
+      "baca": "o-DA",
+      "en": "room"
+    },
+    {
+      "tr": "ev",
+      "baca": "ev",
+      "en": "house, home"
+    },
+    {
+      "tr": "kapı",
+      "baca": "ka-PUH",
+      "en": "door"
+    },
+    {
+      "tr": "pencere",
+      "baca": "pen-je-RE",
+      "en": "window"
+    },
+    {
+      "tr": "masa",
+      "baca": "ma-SA",
+      "en": "table"
+    },
+    {
+      "tr": "sandalye",
+      "baca": "san-dal-YE",
+      "en": "chair"
+    },
+    {
+      "tr": "yatak",
+      "baca": "ya-TAK",
+      "en": "bed"
+    },
+    {
+      "tr": "dolap",
+      "baca": "do-LAP",
+      "en": "wardrobe, cupboard"
+    },
+    {
+      "tr": "anahtar",
+      "baca": "a-nah-TAR",
+      "en": "key"
+    },
+    {
+      "tr": "çanta",
+      "baca": "chan-TA",
+      "en": "bag"
+    },
+    {
+      "tr": "kitap",
+      "baca": "ki-TAP",
+      "en": "book"
+    },
+    {
+      "tr": "defter",
+      "baca": "def-TER",
+      "en": "notebook"
+    },
+    {
+      "tr": "kalem",
+      "baca": "ka-LEM",
+      "en": "pen, pencil"
+    },
+    {
+      "tr": "kâğıt",
+      "baca": "kyaa-UHT",
+      "en": "paper"
+    },
+    {
+      "tr": "bilgisayar",
+      "baca": "bil-gi-sa-YAR",
+      "en": "computer"
+    },
+    {
+      "tr": "para",
+      "baca": "pa-RA",
+      "en": "money"
+    },
+    {
+      "tr": "kadın / erkek",
+      "baca": "ka-DUHN / er-KEK",
+      "en": "woman / man"
+    },
+    {
+      "tr": "insan",
+      "baca": "in-SAN",
+      "en": "human being, person"
+    },
+    {
+      "tr": "ev sahibi",
+      "baca": "ev sa-hi-BI",
+      "en": "landlord, landlady"
+    },
+    {
+      "tr": "güzel",
+      "baca": "gü-ZEL",
+      "en": "beautiful, nice, pretty"
+    },
+    {
+      "tr": "yeni",
+      "baca": "ye-NI",
+      "en": "new"
+    },
+    {
+      "tr": "bir",
+      "baca": "bir",
+      "en": "one, a"
+    },
+    {
+      "tr": "ve",
+      "baca": "ve",
+      "en": "and"
+    },
+    {
+      "tr": "başka",
+      "baca": "BASH-ka",
+      "en": "other, different"
+    },
+    {
+      "tr": "şey",
+      "baca": "shey",
+      "en": "thing"
+    },
+    {
+      "tr": "peki",
+      "baca": "pe-KI",
+      "en": "well, all right then"
+    },
+    {
+      "tr": "öyle mi?",
+      "baca": "ÖY-le mi",
+      "en": "really? is that so?"
+    },
+    {
+      "tr": "aferin",
+      "baca": "a-fe-RIN",
+      "en": "well done (praise)"
+    },
+    {
+      "tr": "beğenmek",
+      "baca": "be-en-MEK",
+      "en": "to like"
+    },
+    {
+      "tr": "ne demek?",
+      "baca": "ne de-MEK",
+      "en": "what does it mean?"
+    }
+  ],
+  "exercises": [
+    {
+      "prompt": "Write the plural (*-ler* or *-lar*).",
+      "items": [
+        "kitap → ____",
+        "ev → ____",
+        "okul → ____",
+        "öğrenci → ____",
+        "kapı → ____",
+        "göz → ____"
+      ]
+    },
+    {
+      "prompt": "Choose the right form of the four-form ending (*-im*, *-ım*, *-um*, *-üm* = \"my\").",
+      "items": [
+        "ev → ____",
+        "kalem → ____",
+        "çanta → ____",
+        "okul → ____",
+        "göz → ____",
+        "kız → ____"
+      ]
+    },
+    {
+      "prompt": "Answer the question with a full sentence, using the hint in brackets.",
+      "items": [
+        "Bu ne? (a book)",
+        "Bu kim? (Ms. Fatma)",
+        "Bunlar ne? (keys)",
+        "Şu ne? (a wardrobe)",
+        "O kim? (a teacher)",
+        "Bu ne? (a new bag)"
+      ]
+    },
+    {
+      "prompt": "Put the words in the right order.",
+      "items": [
+        "ne / bu / ?",
+        "bir / bu / kitap",
+        "güzel / oda / çok",
+        "ne / bunlar / ?",
+        "sandalye / masa / ve",
+        "kim / o / ?"
+      ]
+    }
+  ],
+  "answers": [
+    "kitaplar — evler — okullar — öğrenciler — kapılar — gözler",
+    "evim — kalemim — çantam — okulum — gözüm — kızım",
+    "Bu bir kitap. — Bu Fatma Hanım. — Bunlar anahtarlar. — Şu bir dolap. — O bir öğretmen. — Bu yeni bir çanta.",
+    "Bu ne? — Bu bir kitap. — Oda çok güzel. — Bunlar ne? — Masa ve sandalye. — O kim?"
+  ]
+}

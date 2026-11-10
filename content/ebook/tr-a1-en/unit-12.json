@@ -1,0 +1,610 @@
+{
+  "title": "Where are we going tomorrow?",
+  "title_target": "Yarın nereye gideceğiz?",
+  "goal": "Talk about plans and promises with the future suffix *-ecek*, and put together a weekend plan.",
+  "bekal": [
+    "forming *geleceğim, gelmeyeceğim, gelecek misin*",
+    "telling firm plans (*-ecek*) apart from near plans (*-yor*)",
+    "using *belki*, *kesinlikle* and *inşallah* in the right places"
+  ],
+  "dialogs": [
+    {
+      "title": "Dialogue — Hafta sonu planı",
+      "intro": "Friday afternoon in class. Ayşe is writing something on the board; Emre is waiting for Budi at the door.",
+      "lines": [
+        {
+          "speaker": "Emre:",
+          "text": "Budi, hafta sonu ne yapacaksın?",
+          "id": "Budi, what are you doing this weekend?",
+          "literal": "Budi, week end-its what will-do-you?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Bilmiyorum. Belki ders çalışacağım.",
+          "id": "I don't know. Maybe I'll study.",
+          "literal": "not-know-I. maybe lesson will-work-I."
+        },
+        {
+          "speaker": "Emre:",
+          "text": "Olmaz! Biz Kapadokya'ya gideceğiz. Sen de geleceksin.",
+          "id": "No way! We're going to Cappadocia. You're coming too.",
+          "literal": "won't-do! we Cappadocia-to will-go-we. you too will-come-you."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Gerçekten mi? Nasıl gideceğiz?",
+          "id": "Really? How will we get there?",
+          "literal": "really question? how will-go-we?"
+        },
+        {
+          "speaker": "Emre:",
+          "text": "Gece otobüsüyle. Cuma akşam kalkacak, sabah varacağız.",
+          "id": "By night bus. It leaves Friday evening and we arrive in the morning.",
+          "literal": "night bus-its-with. Friday evening will-depart, morning will-arrive-we."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Kaç gün kalacağız?",
+          "id": "How many days will we stay?",
+          "literal": "how-many day will-stay-we?"
+        },
+        {
+          "speaker": "Emre:",
+          "text": "İki gün. Pazar akşamı döneceğiz.",
+          "id": "Two days. We'll come back Sunday evening.",
+          "literal": "two day. Sunday evening-its will-return-we."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Balon turu yapacak mıyız?",
+          "id": "Will we go on a balloon ride?",
+          "literal": "balloon tour-its will-do question-we?"
+        },
+        {
+          "speaker": "Emre:",
+          "text": "Pahalı ama deneyeceğiz. Sabah beşte kalkacağız.",
+          "id": "It's expensive, but we'll try. We'll get up at five in the morning.",
+          "literal": "expensive but will-try-we. morning five-at will-get-up-we."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Beşte mi? Uyuyamayacağım!",
+          "id": "At five? I won't be able to sleep!",
+          "literal": "five-at question? sleep-not-able-will-I!"
+        },
+        {
+          "speaker": "Emre:",
+          "text": "Otobüste uyursun. Peki geliyor musun?",
+          "id": "You'll sleep on the bus. So, are you coming?",
+          "literal": "bus-on sleep-you. well coming question-you?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Geliyorum! Bileti bugün alacağım.",
+          "id": "I'm coming! I'll buy the ticket today.",
+          "literal": "coming-I! ticket-the today will-take-I."
+        }
+      ],
+      "notes": [
+        "**Gelecek becomes geleceğim.** Because the person ending starts with a vowel, the *k* at the end of *-ecek* softens to *ğ* — exactly the rule from unit 4. This only happens with *ben* and *biz*: *geleceğim*, *geleceğiz*; the rest keep *k*: *geleceksin*, *gelecek*, *gelecekler*.",
+        "**Firm plans take -ecek, near plans take -yor.** At the end Emre asks *geliyor musun?* — not *gelecek misin?* — because he's asking about a decision now, not a prediction. English does the same: \"are you coming?\" feels different from \"will you come?\"",
+        "**Uyuyamayacağım** stacks four things at once: sleep + can't + will + I. You don't need to build it yourself yet; the *-ama-* piece (\"can't\") is unpacked in unit 14. What matters now: the order is always stem first, person ending last.",
+        "**İnşallah is used far more often than you'd expect.** It goes with almost every plan — not as a religious statement, but as a way of saying \"hopefully\". Answering someone's plan with *inşallah* always sounds polite."
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "The -ecek form: will",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "The future suffix has two forms, *-ecek* and *-acak*, plus a linking **y** after a stem ending in a vowel. The person endings go back to the first set — the same as with *-yor*."
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "",
+            "gelmek",
+            "gitmek",
+            "yapmak",
+            "beklemek"
+          ],
+          "rows": [
+            [
+              "ben",
+              "gele**ceğim**",
+              "gide**ceğim**",
+              "yapa**cağım**",
+              "bekle**yeceğim**"
+            ],
+            [
+              "sen",
+              "gele**ceksin**",
+              "gide**ceksin**",
+              "yapa**caksın**",
+              "bekle**yeceksin**"
+            ],
+            [
+              "o",
+              "gele**cek**",
+              "gide**cek**",
+              "yapa**cak**",
+              "bekle**yecek**"
+            ],
+            [
+              "biz",
+              "gele**ceğiz**",
+              "gide**ceğiz**",
+              "yapa**cağız**",
+              "bekle**yeceğiz**"
+            ],
+            [
+              "siz",
+              "gele**ceksiniz**",
+              "gide**ceksiniz**",
+              "yapa**caksınız**",
+              "bekle**yeceksiniz**"
+            ],
+            [
+              "onlar",
+              "gele**cekler**",
+              "gide**cekler**",
+              "yapa**caklar**",
+              "bekle**yecekler**"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "Notice *gideceğim*: *gitmek* softens *t* to *d* because the suffix starts with a vowel — just like *gidiyorum*. Once you know these two verbs (*gitmek*, *etmek*), there are no more surprises."
+        },
+        {
+          "type": "sub",
+          "text": "Negatives and questions"
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Türkçe",
+            "English"
+          ],
+          "rows": [
+            [
+              "Gelmeyeceğim.",
+              "I won't come."
+            ],
+            [
+              "Gitmeyeceksin.",
+              "You won't go."
+            ],
+            [
+              "Yapmayacak.",
+              "He/She won't do it."
+            ],
+            [
+              "Gelecek misin?",
+              "Will you come?"
+            ],
+            [
+              "Gidecek miyiz?",
+              "Will we go?"
+            ],
+            [
+              "Gelmeyecek misiniz?",
+              "Won't you come? (formal)"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "The negative inserts *-me/-ma* as usual, then the linking *y*: *gel-me-y-eceğim*. It's a long chain, but you already know each piece on its own."
+        },
+        {
+          "type": "kotak",
+          "title": "Two forms for the future",
+          "items": [
+            "*Yarın geliyorum* and *Yarın geleceğim* are both correct. The first sounds like something already agreed; the second like an intention or a prediction.",
+            "For promises and official schedules, use *-ecek*: *Ders saat dokuzda başlayacak*. For a plan that's just been agreed, *-yor* is actually more natural: *Tamam, geliyorum*."
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Talking about plans",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "Türkçe",
+            "English",
+            "Türkçe",
+            "English"
+          ],
+          "rows": [
+            [
+              "belki",
+              "maybe",
+              "kesinlikle",
+              "definitely"
+            ],
+            [
+              "herhalde",
+              "probably",
+              "inşallah",
+              "hopefully, God willing"
+            ],
+            [
+              "mutlaka",
+              "must, for sure",
+              "galiba",
+              "I guess, seems like"
+            ],
+            [
+              "plan",
+              "plan",
+              "program",
+              "program, schedule"
+            ],
+            [
+              "tatil",
+              "vacation",
+              "gezi",
+              "trip, outing"
+            ],
+            [
+              "tur",
+              "tour",
+              "rezervasyon",
+              "reservation"
+            ],
+            [
+              "otel",
+              "hotel",
+              "pansiyon",
+              "guesthouse"
+            ],
+            [
+              "valiz, bavul",
+              "suitcase",
+              "pasaport",
+              "passport"
+            ]
+          ]
+        },
+        {
+          "type": "sub",
+          "text": "Ready-made plan sentences"
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Türkçe",
+            "English"
+          ],
+          "rows": [
+            [
+              "Hafta sonu ne yapacaksın?",
+              "What are you doing this weekend?"
+            ],
+            [
+              "Yarın ne zaman geleceksin?",
+              "What time will you come tomorrow?"
+            ],
+            [
+              "Kaç gün kalacaksınız?",
+              "How many days will you stay?"
+            ],
+            [
+              "Bir plan yapalım.",
+              "Let's make a plan."
+            ],
+            [
+              "Sonra karar vereceğiz.",
+              "We'll decide later."
+            ],
+            [
+              "Söz veriyorum.",
+              "I promise."
+            ]
+          ]
+        },
+        {
+          "type": "kotak",
+          "title": "Cappadocia",
+          "items": [
+            "Cappadocia in Central Anatolia is the best-known destination after Istanbul: valleys of soft rock, cave houses, underground churches, and hundreds of hot-air balloons rising together at six in the morning.",
+            "Istanbul to Cappadocia is about 730 km. Night buses leave around 8:00 p.m. and arrive at dawn — the cheapest option, and the most Turkish way to travel."
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Common verbs for plans",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "Türkçe",
+            "-ecek form",
+            "English"
+          ],
+          "rows": [
+            [
+              "gitmek",
+              "gideceğim",
+              "go"
+            ],
+            [
+              "kalmak",
+              "kalacağım",
+              "stay"
+            ],
+            [
+              "dönmek",
+              "döneceğim",
+              "go back home"
+            ],
+            [
+              "görmek",
+              "göreceğim",
+              "see"
+            ],
+            [
+              "gezmek",
+              "gezeceğim",
+              "travel around"
+            ],
+            [
+              "almak",
+              "alacağım",
+              "buy"
+            ],
+            [
+              "denemek",
+              "deneyeceğim",
+              "try"
+            ],
+            [
+              "başlamak",
+              "başlayacağım",
+              "start"
+            ],
+            [
+              "beklemek",
+              "bekleyeceğim",
+              "wait"
+            ],
+            [
+              "karar vermek",
+              "karar vereceğim",
+              "decide"
+            ],
+            [
+              "hazırlanmak",
+              "hazırlanacağım",
+              "get ready"
+            ],
+            [
+              "dinlenmek",
+              "dinleneceğim",
+              "rest"
+            ]
+          ]
+        },
+        {
+          "type": "kotak",
+          "title": "Unit 10 review",
+          "items": [
+            "Cover the Turkish and rebuild these from memory: \"I'd like to try this.\" · \"What's in it?\" · \"Is the meat halal?\" · \"The bill, please.\" · \"Enjoy your meal!\"",
+            "Then turn these into \"I want to ...\" sentences: *gitmek*, *öğrenmek*, *çay içmek*."
+          ]
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "tr": "yarın",
+      "baca": "ya-RUHN",
+      "en": "tomorrow"
+    },
+    {
+      "tr": "plan",
+      "baca": "plan",
+      "en": "plan"
+    },
+    {
+      "tr": "tatil",
+      "baca": "ta-TIL",
+      "en": "vacation"
+    },
+    {
+      "tr": "gezi",
+      "baca": "ge-ZI",
+      "en": "trip, outing"
+    },
+    {
+      "tr": "tur",
+      "baca": "tur",
+      "en": "tour"
+    },
+    {
+      "tr": "balon",
+      "baca": "ba-LON",
+      "en": "hot-air balloon"
+    },
+    {
+      "tr": "otel",
+      "baca": "o-TEL",
+      "en": "hotel"
+    },
+    {
+      "tr": "rezervasyon",
+      "baca": "re-zer-vas-YON",
+      "en": "reservation"
+    },
+    {
+      "tr": "bavul, valiz",
+      "baca": "ba-VUL, va-LIZ",
+      "en": "suitcase"
+    },
+    {
+      "tr": "pasaport",
+      "baca": "pa-sa-PORT",
+      "en": "passport"
+    },
+    {
+      "tr": "belki",
+      "baca": "bel-KI",
+      "en": "maybe"
+    },
+    {
+      "tr": "kesinlikle",
+      "baca": "ke-sin-lik-LE",
+      "en": "definitely"
+    },
+    {
+      "tr": "herhalde",
+      "baca": "her-hal-DE",
+      "en": "probably"
+    },
+    {
+      "tr": "inşallah",
+      "baca": "in-shal-LAH",
+      "en": "hopefully, God willing"
+    },
+    {
+      "tr": "mutlaka",
+      "baca": "mut-la-KA",
+      "en": "must, for sure"
+    },
+    {
+      "tr": "varmak",
+      "baca": "var-MAK",
+      "en": "to arrive"
+    },
+    {
+      "tr": "karar vermek",
+      "baca": "ka-RAR ver-MEK",
+      "en": "to decide"
+    },
+    {
+      "tr": "söz vermek",
+      "baca": "söz ver-MEK",
+      "en": "to promise"
+    },
+    {
+      "tr": "hazırlanmak",
+      "baca": "ha-zuhr-lan-MAK",
+      "en": "to get ready"
+    },
+    {
+      "tr": "dinlenmek",
+      "baca": "din-len-MEK",
+      "en": "to rest"
+    },
+    {
+      "tr": "gece otobüsü",
+      "baca": "ge-JE o-to-bü-SÜ",
+      "en": "night bus"
+    },
+    {
+      "tr": "kalkmak",
+      "baca": "kalk-MAK",
+      "en": "to depart, get up"
+    },
+    {
+      "tr": "uyumak",
+      "baca": "u-yu-MAK",
+      "en": "to sleep"
+    },
+    {
+      "tr": "gerçekten mi?",
+      "baca": "ger-CHEK-ten mi",
+      "en": "really?"
+    },
+    {
+      "tr": "olmaz",
+      "baca": "ol-MAZ",
+      "en": "no way, that won't do"
+    },
+    {
+      "tr": "nasıl",
+      "baca": "NA-suhl",
+      "en": "how"
+    },
+    {
+      "tr": "kaç gün",
+      "baca": "kach gün",
+      "en": "how many days"
+    },
+    {
+      "tr": "sabah erken",
+      "baca": "sa-BAH er-KEN",
+      "en": "early in the morning"
+    },
+    {
+      "tr": "vadi",
+      "baca": "va-DI",
+      "en": "valley"
+    },
+    {
+      "tr": "manzara",
+      "baca": "man-za-RA",
+      "en": "view, scenery"
+    }
+  ],
+  "exercises": [
+    {
+      "prompt": "Put the verb into the *-ecek* form for the person in brackets.",
+      "items": [
+        "gelmek (ben) → ____",
+        "gitmek (sen) → ____",
+        "yapmak (o) → ____",
+        "kalmak (biz) → ____",
+        "beklemek (siz) → ____",
+        "almak (onlar) → ____"
+      ]
+    },
+    {
+      "prompt": "Make it negative or a question as indicated.",
+      "items": [
+        "geleceğim (negative) → ____",
+        "gideceksin (question) → ____",
+        "yapacak (negative) → ____",
+        "kalacağız (question) → ____",
+        "bekleyecekler (negative) → ____",
+        "alacaksınız (question) → ____"
+      ]
+    },
+    {
+      "prompt": "Translate into Turkish.",
+      "items": [
+        "What are you doing this weekend?",
+        "We're going to Cappadocia.",
+        "How many days will we stay?",
+        "I won't come.",
+        "I'll buy the ticket today.",
+        "Maybe I'll study."
+      ]
+    },
+    {
+      "prompt": "Put the words in the right order.",
+      "items": [
+        "yapacaksın / hafta sonu / ne / ?",
+        "gideceğiz / Kapadokya'ya / biz",
+        "kalacağız / gün / iki",
+        "misin / gelecek / sen / ?",
+        "alacağım / bileti / bugün",
+        "çalışacağım / belki / ders"
+      ]
+    }
+  ],
+  "answers": [
+    "geleceğim — gideceksin — yapacak — kalacağız — bekleyeceksiniz — alacaklar",
+    "gelmeyeceğim — gidecek misin? — yapmayacak — kalacak mıyız? — beklemeyecekler — alacak mısınız?",
+    "Hafta sonu ne yapacaksın? — Kapadokya'ya gideceğiz. — Kaç gün kalacağız? — Gelmeyeceğim. — Bileti bugün alacağım. — Belki ders çalışacağım.",
+    "Hafta sonu ne yapacaksın? — Biz Kapadokya'ya gideceğiz. — İki gün kalacağız. — Sen gelecek misin? — Bileti bugün alacağım. — Belki ders çalışacağım."
+  ]
+}

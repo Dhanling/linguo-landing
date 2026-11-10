@@ -1,0 +1,608 @@
+{
+  "title": "My family",
+  "title_target": "Benim ailem",
+  "goal": "Attach possession to the end of a noun, name the members of your family, and say how old you are.",
+  "bekal": [
+    "form *evim, evin, evi, evimiz, eviniz, evleri* without looking at the table",
+    "link two nouns with the pattern *Ayşe'nin evi* — owner first, then the thing owned",
+    "ask and give ages with *kaç yaşındasın*"
+  ],
+  "dialogs": [
+    {
+      "title": "Dialogue — Aile fotoğrafı",
+      "intro": "Fatma Hanım, the landlady, knocks on the door with a tray of tea. There's a family photo on Budi's desk.",
+      "lines": [
+        {
+          "speaker": "Fatma:",
+          "text": "Budi, çayın hazır. Bu fotoğraf kimin?",
+          "id": "Budi, your tea's ready. Whose photo is this?",
+          "literal": "Budi, tea-your ready. this photo whose?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Benim. Bu benim ailem.",
+          "id": "Mine. This is my family.",
+          "literal": "mine. this my family-my."
+        },
+        {
+          "speaker": "Fatma:",
+          "text": "Maşallah! Bu kim? Annen mi?",
+          "id": "Mashallah! Who's this? Your mother?",
+          "literal": "mashallah! this who? mother-your question?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Evet, annem. Yanındaki babam.",
+          "id": "Yes, my mother. The one next to her is my father.",
+          "literal": "yes, mother-my. side-her-at-the-one father-my."
+        },
+        {
+          "speaker": "Fatma:",
+          "text": "Kardeşin var mı?",
+          "id": "Do you have brothers or sisters?",
+          "literal": "sibling-your there-is question?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Evet, bir ablam ve bir erkek kardeşim var.",
+          "id": "Yes, I have an older sister and a younger brother.",
+          "literal": "yes, one big-sister-my and one male sibling-my there-is."
+        },
+        {
+          "speaker": "Fatma:",
+          "text": "Ablan kaç yaşında?",
+          "id": "How old is your sister?",
+          "literal": "big-sister-your how-many age-her-at?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Yirmi yedi yaşında. Evli, bir kızı var.",
+          "id": "Twenty-seven. She's married and has a daughter.",
+          "literal": "twenty seven age-her-at. married, one daughter-her there-is."
+        },
+        {
+          "speaker": "Fatma:",
+          "text": "Yani sen dayısın! Peki sen kaç yaşındasın?",
+          "id": "So you're an uncle! And how old are you?",
+          "literal": "so you uncle-you-are! well you how-many age-at-you-are?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Yirmi bir yaşındayım.",
+          "id": "I'm twenty-one.",
+          "literal": "twenty one age-at-I-am."
+        },
+        {
+          "speaker": "Fatma:",
+          "text": "Benim oğlum da senin yaşında. Adı Emre.",
+          "id": "My son is your age too. His name is Emre.",
+          "literal": "my son-my too your age-at. name-his Emre."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Aileniz büyük mü Fatma Teyze?",
+          "id": "Is your family big, Aunt Fatma?",
+          "literal": "family-your big question Fatma Aunt?"
+        },
+        {
+          "speaker": "Fatma:",
+          "text": "Çok büyük! Beş çocuk, on iki torun.",
+          "id": "Very big! Five children, twelve grandchildren.",
+          "literal": "very big! five child, ten two grandchild."
+        }
+      ],
+      "notes": [
+        "**Possession is marked twice — and that's normal.** *Benim ailem* uses *benim* (\"my\") AND the ending *-m* on *aile*. The ending is required; the word *benim* can be dropped. You use it only for emphasis: \"MY family, not someone else's\".",
+        "**Kaç yaşında literally means \"at what age\".** Turkish treats age as a place, not a quantity: *yirmi bir yaşındayım* = \"I am at age twenty-one\". That's why there's a *-da* in the middle.",
+        "**Kardeş doesn't say whether it's a brother or a sister.** It means \"sibling\", male or female. To be specific: *erkek kardeş* (brother), *kız kardeş* (sister). For older siblings a completely different word is used: *abi* and *abla*.",
+        "**Dayı and amca are two different words.** *Amca* is your FATHER's brother, *dayı* your MOTHER's brother. Likewise *hala* (father's sister) and *teyze* (mother's sister). Turkish distinguishes family lines that English lumps together as \"uncle\" and \"aunt\"."
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Possessive endings",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Just like \"am/is/are\", possession isn't a separate word but an ending. Its form follows four-form vowel harmony, and it adds a linking letter if the host word ends in a vowel."
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Owner",
+            "Ending",
+            "ev (house)",
+            "araba (car)",
+            "göz (eye)"
+          ],
+          "rows": [
+            [
+              "benim (my)",
+              "-(i)m",
+              "ev**im**",
+              "araba**m**",
+              "göz**üm**"
+            ],
+            [
+              "senin (your)",
+              "-(i)n",
+              "ev**in**",
+              "araba**n**",
+              "göz**ün**"
+            ],
+            [
+              "onun (his/her)",
+              "-(s)i",
+              "ev**i**",
+              "araba**sı**",
+              "göz**ü**"
+            ],
+            [
+              "bizim (our)",
+              "-(i)miz",
+              "ev**imiz**",
+              "araba**mız**",
+              "göz**ümüz**"
+            ],
+            [
+              "sizin (your, formal)",
+              "-(i)niz",
+              "ev**iniz**",
+              "araba**nız**",
+              "göz**ünüz**"
+            ],
+            [
+              "onların (their)",
+              "-leri",
+              "ev**leri**",
+              "araba**ları**",
+              "göz**leri**"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "Look at the third row: words ending in a vowel use the linking letter **s** — *araba-s-ı*, *anne-s-i*, *kapı-s-ı*. This is the second of the three linking letters promised in Unit 1."
+        },
+        {
+          "type": "sub",
+          "text": "Consonants that soften"
+        },
+        {
+          "type": "p",
+          "text": "If a word ends in **p, ç, t, k** and the ending starts with a vowel, that consonant softens to **b, c, d, ğ**. This isn't an exception but a rule that runs through the whole language:"
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Base word",
+            "+ possessive",
+            "Change"
+          ],
+          "rows": [
+            [
+              "kitap (book)",
+              "kita**b**ım",
+              "p → b"
+            ],
+            [
+              "ağaç (tree)",
+              "ağa**c**ım",
+              "ç → c"
+            ],
+            [
+              "kanat (wing)",
+              "kana**d**ım",
+              "t → d"
+            ],
+            [
+              "sokak (street)",
+              "soka**ğ**ım",
+              "k → ğ"
+            ],
+            [
+              "renk (color)",
+              "ren**g**im",
+              "k → g after n"
+            ],
+            [
+              "at (horse)",
+              "a**t**ım",
+              "one-syllable words often DON'T soften"
+            ]
+          ]
+        },
+        {
+          "type": "kotak",
+          "title": "Why this rule matters right now",
+          "items": [
+            "This softening works for ALL endings that start with a vowel, not just possessives: *kitabı* (his book), *kitaba* (to the book), *sokağa* (to the street), *ağacın* (the tree's).",
+            "If you say *kitapım*, people will still understand — but a Turkish ear instantly hears a foreign accent. Softening is one of the cheapest fixes for sounding natural."
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Linking two nouns",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "To say \"Ayşe's house\" or \"the door of the room\", Turkish uses a pattern you'll need to look at twice before it makes sense: **owner + ending -in, then the thing owned + ending -i**. Both are marked."
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "English",
+            "Türkçe",
+            "Taken apart"
+          ],
+          "rows": [
+            [
+              "Ayşe's house",
+              "Ayşe'**nin** ev**i**",
+              "Ayşe-'s house-her"
+            ],
+            [
+              "Budi's book",
+              "Budi'**nin** kitab**ı**",
+              "Budi-'s book-his"
+            ],
+            [
+              "the door of the room",
+              "oda**nın** kapı**sı**",
+              "room-'s door-its"
+            ],
+            [
+              "the teacher's mother",
+              "öğretmen**in** anne**si**",
+              "teacher-'s mother-her"
+            ],
+            [
+              "my phone number",
+              "benim telefon numara**m**",
+              "my phone number-my"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "There's a second, looser pattern: if the owner isn't a specific person or thing but a **type**, the *-in* ending is dropped and only the second word is marked. *Türk kahvesi* (Turkish coffee), *öğrenci yurdu* (student dorm), *ders kitabı* (textbook), *domates çorbası* (tomato soup). You'll see this pattern on every menu."
+        },
+        {
+          "type": "kotak",
+          "title": "The apostrophe on proper names",
+          "items": [
+            "Endings attached to **names of people, cities or countries** are separated by an apostrophe: *Ayşe'nin*, *İstanbul'da*, *Türkiye'ye*, *Jakarta'dan*.",
+            "This spelling rule is official and used in all writing, WhatsApp messages included. Without the apostrophe, your writing looks like you never finished school."
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Family and age",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "Türkçe",
+            "English",
+            "Türkçe",
+            "English"
+          ],
+          "rows": [
+            [
+              "anne",
+              "mother",
+              "baba",
+              "father"
+            ],
+            [
+              "abla",
+              "older sister",
+              "abi (ağabey)",
+              "older brother"
+            ],
+            [
+              "kız kardeş",
+              "younger sister",
+              "erkek kardeş",
+              "younger brother"
+            ],
+            [
+              "oğul (oğlum)",
+              "son",
+              "kız",
+              "daughter; girl"
+            ],
+            [
+              "çocuk",
+              "child",
+              "torun",
+              "grandchild"
+            ],
+            [
+              "dede",
+              "grandfather",
+              "nine",
+              "grandmother"
+            ],
+            [
+              "eş",
+              "spouse",
+              "koca / karı",
+              "husband / wife"
+            ],
+            [
+              "amca / dayı",
+              "uncle (father's / mother's side)",
+              "hala / teyze",
+              "aunt (father's / mother's side)"
+            ],
+            [
+              "yeğen",
+              "nephew, niece",
+              "kuzen",
+              "cousin"
+            ],
+            [
+              "evli / bekâr",
+              "married / single",
+              "akraba",
+              "relative"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "*Oğul* changes shape once it gets an ending: *oğlum*, *oğlun*, *oğlu* — the *u* in the second syllable drops out. A few short words behave like this: *burun → burnum* (my nose), *şehir → şehri* (its city), *akıl → aklım* (my mind)."
+        },
+        {
+          "type": "sub",
+          "text": "Age"
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Question / answer",
+            "English"
+          ],
+          "rows": [
+            [
+              "Kaç yaşındasın?",
+              "How old are you? (informal)"
+            ],
+            [
+              "Kaç yaşındasınız?",
+              "How old are you? (formal)"
+            ],
+            [
+              "Yirmi bir yaşındayım.",
+              "I'm 21."
+            ],
+            [
+              "Kardeşim on yaşında.",
+              "My little brother is 10."
+            ],
+            [
+              "Doğum günün ne zaman?",
+              "When's your birthday?"
+            ]
+          ]
+        },
+        {
+          "type": "kotak",
+          "title": "Unit 2 review",
+          "items": [
+            "Cover the Turkish and rebuild it from memory: \"What's this?\" · \"These are books and notebooks.\" · \"Who's that?\" · \"The room is very nice.\" · \"Where's the key?\"",
+            "Then one harder extra: give the plurals of *sokak*, *öğretmen*, *kapı* and *göz* without looking."
+          ]
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "tr": "aile",
+      "baca": "a-i-LE",
+      "en": "family"
+    },
+    {
+      "tr": "anne",
+      "baca": "an-NE",
+      "en": "mother"
+    },
+    {
+      "tr": "baba",
+      "baca": "ba-BA",
+      "en": "father"
+    },
+    {
+      "tr": "abla",
+      "baca": "AB-la",
+      "en": "older sister"
+    },
+    {
+      "tr": "abi",
+      "baca": "a-BI",
+      "en": "older brother"
+    },
+    {
+      "tr": "kardeş",
+      "baca": "kar-DESH",
+      "en": "sibling"
+    },
+    {
+      "tr": "oğul",
+      "baca": "o-UL",
+      "en": "son"
+    },
+    {
+      "tr": "kız",
+      "baca": "kuhz",
+      "en": "daughter, girl"
+    },
+    {
+      "tr": "çocuk",
+      "baca": "cho-JUK",
+      "en": "child"
+    },
+    {
+      "tr": "torun",
+      "baca": "to-RUN",
+      "en": "grandchild"
+    },
+    {
+      "tr": "dede / nine",
+      "baca": "de-DE / ni-NE",
+      "en": "grandfather / grandmother"
+    },
+    {
+      "tr": "eş",
+      "baca": "esh",
+      "en": "spouse, husband/wife"
+    },
+    {
+      "tr": "dayı / hala",
+      "baca": "da-YUH / ha-LA",
+      "en": "uncle (mother's side) / aunt (father's side)"
+    },
+    {
+      "tr": "yeğen",
+      "baca": "ye-EN",
+      "en": "nephew, niece"
+    },
+    {
+      "tr": "evli / bekâr",
+      "baca": "ev-LI / be-KYAR",
+      "en": "married / single"
+    },
+    {
+      "tr": "yaş",
+      "baca": "yash",
+      "en": "age, years old"
+    },
+    {
+      "tr": "doğum günü",
+      "baca": "do-UM gü-NÜ",
+      "en": "birthday"
+    },
+    {
+      "tr": "fotoğraf",
+      "baca": "fo-to-RAF",
+      "en": "photo"
+    },
+    {
+      "tr": "kimin?",
+      "baca": "ki-MIN",
+      "en": "whose?"
+    },
+    {
+      "tr": "benim / senin",
+      "baca": "be-NIM / se-NIN",
+      "en": "my, mine / your, yours"
+    },
+    {
+      "tr": "onun",
+      "baca": "o-NUN",
+      "en": "his, her, its"
+    },
+    {
+      "tr": "bizim / sizin",
+      "baca": "bi-ZIM / si-ZIN",
+      "en": "our / your (formal)"
+    },
+    {
+      "tr": "ağaç",
+      "baca": "a-ACH",
+      "en": "tree"
+    },
+    {
+      "tr": "hazır",
+      "baca": "ha-ZUHR",
+      "en": "ready"
+    },
+    {
+      "tr": "yani",
+      "baca": "ya-NI",
+      "en": "that is, so, I mean"
+    },
+    {
+      "tr": "maşallah",
+      "baca": "ma-shal-LAH",
+      "en": "mashallah (praise)"
+    },
+    {
+      "tr": "renk",
+      "baca": "renk",
+      "en": "color"
+    },
+    {
+      "tr": "numara",
+      "baca": "nu-ma-RA",
+      "en": "number"
+    },
+    {
+      "tr": "şehir",
+      "baca": "she-HIR",
+      "en": "city"
+    },
+    {
+      "tr": "sokak",
+      "baca": "so-KAK",
+      "en": "street, side street"
+    }
+  ],
+  "exercises": [
+    {
+      "prompt": "Add the possessive ending \"my\" (*benim*).",
+      "items": [
+        "ev → ____",
+        "kitap → ____",
+        "araba → ____",
+        "anne → ____",
+        "oğul → ____",
+        "sokak → ____"
+      ]
+    },
+    {
+      "prompt": "Link the two nouns with the *-in ... -i* pattern.",
+      "items": [
+        "Ayşe + ev → ____",
+        "Budi + kitap → ____",
+        "oda + kapı → ____",
+        "öğretmen + araba → ____",
+        "Türkiye + başkent → ____",
+        "kardeşim + ad → ____"
+      ]
+    },
+    {
+      "prompt": "Translate into Turkish.",
+      "items": [
+        "This is my mother.",
+        "Do you have any brothers or sisters?",
+        "I have an older sister.",
+        "How old are you?",
+        "I'm twenty-one.",
+        "My little brother is ten."
+      ]
+    },
+    {
+      "prompt": "Put the words in the right order.",
+      "items": [
+        "ailem / bu / benim",
+        "var / kardeşin / mı / ?",
+        "yaşındayım / bir / yirmi",
+        "evi / Ayşe'nin / güzel / çok",
+        "kimin / bu / fotoğraf / ?",
+        "yaşında / kaç / ablan / ?"
+      ]
+    }
+  ],
+  "answers": [
+    "evim — kitabım — arabam — annem — oğlum — sokağım",
+    "Ayşe'nin evi — Budi'nin kitabı — odanın kapısı — öğretmenin arabası — Türkiye'nin başkenti — kardeşimin adı",
+    "Bu benim annem. — Kardeşin var mı? — Bir ablam var. — Kaç yaşındasın? — Yirmi bir yaşındayım. — Kardeşim on yaşında.",
+    "Bu benim ailem. — Kardeşin var mı? — Yirmi bir yaşındayım. — Ayşe'nin evi çok güzel. — Bu fotoğraf kimin? — Ablan kaç yaşında?"
+  ]
+}

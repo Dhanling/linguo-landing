@@ -1,0 +1,640 @@
+{
+  "title": "Hello, what's your name?",
+  "title_target": "Merhaba, adınız ne?",
+  "goal": "Greet people at the right time of day, give your name and where you're from, ask how someone is, and attach the ending that means \"am/is/are\" from the very first sentence.",
+  "bekal": [
+    "greet with *günaydın*, *iyi günler* and *iyi akşamlar*, each at the right time",
+    "give your own name with *benim adım* and ask someone else's",
+    "attach *-im/-sin/-siniz* to say \"I am / you are ...\""
+  ],
+  "dialogs": [
+    {
+      "title": "Dialogue — İstanbul'da ilk gün",
+      "intro": "Day one in Istanbul. Budi has just come out of the airport and meets Ayşe, a member of staff at the language school who has come to pick him up.",
+      "lines": [
+        {
+          "speaker": "Ayşe:",
+          "text": "Merhaba! Hoş geldiniz. Ben Ayşe.",
+          "id": "Hello! Welcome. I'm Ayşe.",
+          "literal": "hello! pleasant came-you. I Ayşe."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Merhaba, hoş bulduk. Benim adım Budi.",
+          "id": "Hello, thank you. My name is Budi.",
+          "literal": "hello, pleasant found-we. my name-my Budi."
+        },
+        {
+          "speaker": "Ayşe:",
+          "text": "Memnun oldum Budi Bey. Nasılsınız?",
+          "id": "Nice to meet you, Mr. Budi. How are you?",
+          "literal": "pleased became-I Budi Mr. how-you-are?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "İyiyim, teşekkür ederim. Siz nasılsınız?",
+          "id": "I'm fine, thank you. How are you?",
+          "literal": "fine-I-am, thanks do-I. you how-you-are?"
+        },
+        {
+          "speaker": "Ayşe:",
+          "text": "Ben de iyiyim, sağ olun. Nerelisiniz?",
+          "id": "I'm fine too, thanks. Where are you from?",
+          "literal": "I too fine-I-am, healthy be-you. where-from-you-are?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Endonezyalıyım, Jakartalıyım.",
+          "id": "I'm from Indonesia, from Jakarta.",
+          "literal": "Indonesia-from-I-am, Jakarta-from-I-am."
+        },
+        {
+          "speaker": "Ayşe:",
+          "text": "Çok uzak! Türkçe biliyor musunuz?",
+          "id": "That's so far! Do you speak Turkish?",
+          "literal": "very far! Turkish knowing are-you?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Biraz. Öğrenciyim, Türkçe öğreniyorum.",
+          "id": "A little. I'm a student, I'm learning Turkish.",
+          "literal": "a-little. student-I-am, Turkish am-learning-I."
+        },
+        {
+          "speaker": "Ayşe:",
+          "text": "Harika! Ben de öğretmenim.",
+          "id": "Great! And I'm a teacher.",
+          "literal": "great! I too teacher-I-am."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Çok memnun oldum.",
+          "id": "Very nice to meet you.",
+          "literal": "very pleased became-I."
+        },
+        {
+          "speaker": "Ayşe:",
+          "text": "Buyurun, araba burada.",
+          "id": "This way, the car is here.",
+          "literal": "please, car here."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Tamam, teşekkürler!",
+          "id": "OK, thanks!",
+          "literal": "OK, thanks-plural!"
+        }
+      ],
+      "notes": [
+        "**Hoş geldiniz demands a fixed reply.** Literally \"you came pleasantly\", and the answer is always *hoş bulduk* — \"we found (everything) pleasant\". Not *teşekkür ederim*. This pair is used everywhere: in people's homes, in shops, even on planes.",
+        "**There are two words for \"you\", and picking the wrong one stings.** *Sen* is for friends, people your age, children. *Siz* is for people you've just met, older people, or customers — like *vous* in French. When in doubt, use *siz*: being too polite never offends; being too familiar can.",
+        "**Bey and Hanım go after the first name, not the surname.** *Budi Bey*, *Ayşe Hanım*. Roughly \"Mr. Budi\" and \"Ms. Ayşe\" — but note the order: name first, title after, like everything else in this language.",
+        "**\"Am/is/are\" never stands alone.** *Öğrenciyim* = student + I-am. *İyiyim* = fine + I-am. There's no separate word for \"am\": it is attached to the end of the last word. If that word ends in a vowel, a linking *y* slips in — *iyi-y-im*, not *iyiim*."
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Survival phrases",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "These twelve phrases are not grammar material — they're an emergency kit. Memorize them whole now, understand how they work later."
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Türkçe",
+            "Say it",
+            "English"
+          ],
+          "rows": [
+            [
+              "Evet / Hayır",
+              "e-VET / ha-YUHR",
+              "Yes / No"
+            ],
+            [
+              "Teşekkür ederim",
+              "te-shek-KÜR e-de-RIM",
+              "Thank you"
+            ],
+            [
+              "Rica ederim",
+              "ri-JA e-de-RIM",
+              "You're welcome"
+            ],
+            [
+              "Özür dilerim",
+              "ö-ZÜR di-le-RIM",
+              "I'm sorry"
+            ],
+            [
+              "Pardon",
+              "par-DON",
+              "Excuse me (used as is)"
+            ],
+            [
+              "Bilmiyorum",
+              "bil-MI-yo-rum",
+              "I don't know"
+            ],
+            [
+              "Anlamıyorum",
+              "an-la-MUH-yo-rum",
+              "I don't understand"
+            ],
+            [
+              "Tekrar eder misiniz?",
+              "tek-RAR e-DER mi-si-niz",
+              "Could you repeat that?"
+            ],
+            [
+              "Yavaş lütfen",
+              "ya-VASH LÜT-fen",
+              "Slowly, please"
+            ],
+            [
+              "İngilizce biliyor musunuz?",
+              "in-gi-LIZ-je bi-li-YOR mu-su-nuz",
+              "Do you speak English?"
+            ],
+            [
+              "Bu Türkçe ne demek?",
+              "bu türk-CHE ne de-MEK",
+              "How do you say this in Turkish?"
+            ],
+            [
+              "Yardım edin!",
+              "yar-DUHM e-DIN",
+              "Help!"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "*Rica ederim* literally means \"I request\" — and yet it's the standard reply to thank you, just as odd as \"don't mention it\" if you think too hard. Another one that's just as common: *bir şey değil* (\"it's nothing\")."
+        },
+        {
+          "type": "kotak",
+          "title": "One sentence that changes your time in Turkey",
+          "items": [
+            "*Türkçe öğreniyorum. Türkçe konuşabilir miyiz?* — \"I'm learning Turkish. Can we speak Turkish?\"",
+            "Unlike in many other countries, Turks rarely switch to English — often simply because they can't. What happens more often is the opposite: they speak too fast because they're delighted you're trying. The sentence above, plus *yavaş lütfen*, solves both."
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Greetings by time of day",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "Greeting",
+            "Say it",
+            "When",
+            "Note"
+          ],
+          "rows": [
+            [
+              "Günaydın",
+              "gü-nai-DUHN",
+              "until midday",
+              "literally: the day is bright"
+            ],
+            [
+              "İyi günler",
+              "i-YI gün-LER",
+              "daytime, any time",
+              "also used when parting"
+            ],
+            [
+              "İyi akşamlar",
+              "i-YI ak-sham-LAR",
+              "after sunset",
+              "also when parting"
+            ],
+            [
+              "İyi geceler",
+              "i-YI ge-je-LER",
+              "before bed",
+              "only for parting"
+            ],
+            [
+              "Merhaba",
+              "mer-ha-BA",
+              "any time",
+              "safest with everyone"
+            ],
+            [
+              "Selam",
+              "se-LAM",
+              "any time",
+              "casual, for friends"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "Notice that three of the greetings use the plural — *günler*, *akşamlar*, *geceler*, literally \"good days\", \"good evenings\". Turkish feels a wish is warmer in the plural; you'll meet this pattern again in *teşekkürler* and *kolay gelsin*."
+        },
+        {
+          "type": "sub",
+          "text": "Saying goodbye"
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Türkçe",
+            "Say it",
+            "Who says it"
+          ],
+          "rows": [
+            [
+              "Hoşça kal",
+              "HOSH-cha kal",
+              "the one leaving, to the one staying"
+            ],
+            [
+              "Güle güle",
+              "gü-LE gü-LE",
+              "the one staying, to the one leaving"
+            ],
+            [
+              "Görüşürüz",
+              "gö-rü-shü-RÜZ",
+              "both — \"see you\""
+            ],
+            [
+              "Kendine iyi bak",
+              "ken-di-NE i-YI bak",
+              "both — \"take care\""
+            ],
+            [
+              "İyi yolculuklar",
+              "i-YI yol-ju-luk-LAR",
+              "to someone about to travel"
+            ]
+          ]
+        },
+        {
+          "type": "kotak",
+          "title": "Don't mix them up",
+          "items": [
+            "*Güle güle* must NOT be said by the person leaving. Literally \"laughing, laughing\" — a wish for someone else's journey. The one leaving says *hoşça kal* (to one person) or *hoşça kalın* (to several people or to someone you address formally).",
+            "If you're unsure which is which, *görüşürüz* is safe for anyone, going either way."
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Ben kimim? — the ending that means \"am/is/are\"",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Turkish has no word for \"am/is/are\". Instead there are **person endings** attached to a noun or adjective. Since the ending already says who the subject is, the pronoun in front can be dropped — and it usually is."
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Pronoun",
+            "Ending",
+            "öğrenci (student)",
+            "English"
+          ],
+          "rows": [
+            [
+              "ben (I)",
+              "-im",
+              "öğrenciyim",
+              "I am a student"
+            ],
+            [
+              "sen (you)",
+              "-sin",
+              "öğrencisin",
+              "you are a student"
+            ],
+            [
+              "o (he/she)",
+              "— / -dir",
+              "öğrenci(dir)",
+              "he/she is a student"
+            ],
+            [
+              "biz (we)",
+              "-iz",
+              "öğrenciyiz",
+              "we are students"
+            ],
+            [
+              "siz (you pl./formal)",
+              "-siniz",
+              "öğrencisiniz",
+              "you are students"
+            ],
+            [
+              "onlar (they)",
+              "-ler",
+              "öğrenciler",
+              "they are students"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "The third person singular has no ending at all in conversation: *O öğretmen* — \"he/she (is a) teacher\". The ending *-dir* exists, but it sounds formal: it shows up on notices, packaging and in the news (*Kapı kapalıdır* — \"the door is closed\")."
+        },
+        {
+          "type": "sub",
+          "text": "Saying \"not\": değil"
+        },
+        {
+          "type": "p",
+          "text": "To say \"not\", add the separate word *değil* — and the person ending moves onto it: *Öğretmen değilim* (I'm not a teacher), *Türk değilsin* (you're not Turkish), *Hazır değiliz* (we're not ready)."
+        },
+        {
+          "type": "sub",
+          "text": "Where are you from?"
+        },
+        {
+          "type": "p",
+          "text": "The ending *-li/-lı/-lu/-lü* means \"person from\" or \"having\". Attach it to a place name: *İstanbullu* (someone from Istanbul), *Ankaralı*, *Jakartalı*, *Endonezyalı*. Then add the person ending after it: **Endonezyalıyım** — I'm from Indonesia."
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Question",
+            "Say it",
+            "Meaning"
+          ],
+          "rows": [
+            [
+              "Adınız ne?",
+              "a-duh-NUHZ ne",
+              "What's your name? (formal)"
+            ],
+            [
+              "Adın ne?",
+              "a-DUHN ne",
+              "What's your name? (informal)"
+            ],
+            [
+              "Nerelisiniz?",
+              "ne-re-li-si-NIZ",
+              "Where are you from? (formal)"
+            ],
+            [
+              "Nasılsınız?",
+              "na-SUHL-suh-nuhz",
+              "How are you? (formal)"
+            ],
+            [
+              "Nasılsın?",
+              "NA-suhl-suhn",
+              "How are you? (informal)"
+            ],
+            [
+              "Ne iş yapıyorsunuz?",
+              "ne ish ya-puh-yor-su-NUZ",
+              "What do you do for a living?"
+            ]
+          ]
+        },
+        {
+          "type": "kotak",
+          "title": "Why \"iyiyim\" has a y in it",
+          "items": [
+            "Turkish doesn't like two vowels colliding. If a word ends in a vowel and the ending also starts with one, a linking consonant is inserted — here **y**: *iyi + im* → *iyiyim*, *Ayşe + im* → *Ayşe'yim*.",
+            "These linking letters will keep appearing throughout the course, in three different forms: *y*, *n* and *s*. Each time, the reason is the same: to keep two vowels from bumping into each other."
+          ]
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "tr": "merhaba",
+      "baca": "mer-ha-BA",
+      "en": "hello"
+    },
+    {
+      "tr": "günaydın",
+      "baca": "gü-nai-DUHN",
+      "en": "good morning"
+    },
+    {
+      "tr": "iyi günler",
+      "baca": "i-YI gün-LER",
+      "en": "good day, good afternoon"
+    },
+    {
+      "tr": "iyi akşamlar",
+      "baca": "i-YI ak-sham-LAR",
+      "en": "good evening"
+    },
+    {
+      "tr": "iyi geceler",
+      "baca": "i-YI ge-je-LER",
+      "en": "good night"
+    },
+    {
+      "tr": "hoş geldiniz",
+      "baca": "hosh gel-di-NIZ",
+      "en": "welcome"
+    },
+    {
+      "tr": "hoş bulduk",
+      "baca": "hosh bul-DUK",
+      "en": "reply to \"welcome\""
+    },
+    {
+      "tr": "nasılsınız",
+      "baca": "na-SUHL-suh-nuhz",
+      "en": "how are you (formal)"
+    },
+    {
+      "tr": "iyi",
+      "baca": "i-YI",
+      "en": "good, fine"
+    },
+    {
+      "tr": "teşekkür ederim",
+      "baca": "te-shek-KÜR e-de-RIM",
+      "en": "thank you"
+    },
+    {
+      "tr": "sağ olun",
+      "baca": "saa o-LUN",
+      "en": "thanks (casual)"
+    },
+    {
+      "tr": "rica ederim",
+      "baca": "ri-JA e-de-RIM",
+      "en": "you're welcome"
+    },
+    {
+      "tr": "evet / hayır",
+      "baca": "e-VET / ha-YUHR",
+      "en": "yes / no"
+    },
+    {
+      "tr": "ben / sen",
+      "baca": "ben / sen",
+      "en": "I / you"
+    },
+    {
+      "tr": "o",
+      "baca": "o",
+      "en": "he, she, it"
+    },
+    {
+      "tr": "biz / siz",
+      "baca": "biz / siz",
+      "en": "we / you (pl., formal)"
+    },
+    {
+      "tr": "onlar",
+      "baca": "on-LAR",
+      "en": "they"
+    },
+    {
+      "tr": "ad, isim",
+      "baca": "ad, i-SIM",
+      "en": "name"
+    },
+    {
+      "tr": "ne",
+      "baca": "ne",
+      "en": "what"
+    },
+    {
+      "tr": "nerede",
+      "baca": "NE-re-de",
+      "en": "where"
+    },
+    {
+      "tr": "-li / -lı / -lu / -lü",
+      "baca": "li / luh / lu / lü",
+      "en": "person from (origin)"
+    },
+    {
+      "tr": "öğrenci",
+      "baca": "öö-ren-JI",
+      "en": "student"
+    },
+    {
+      "tr": "öğretmen",
+      "baca": "öö-ret-MEN",
+      "en": "teacher"
+    },
+    {
+      "tr": "doktor",
+      "baca": "dok-TOR",
+      "en": "doctor"
+    },
+    {
+      "tr": "değil",
+      "baca": "de-YIL",
+      "en": "not"
+    },
+    {
+      "tr": "de / da",
+      "baca": "de / da",
+      "en": "too, also"
+    },
+    {
+      "tr": "çok",
+      "baca": "chok",
+      "en": "very, a lot"
+    },
+    {
+      "tr": "biraz",
+      "baca": "bi-RAZ",
+      "en": "a little"
+    },
+    {
+      "tr": "memnun oldum",
+      "baca": "mem-NUN ol-DUM",
+      "en": "nice to meet you"
+    },
+    {
+      "tr": "buyurun",
+      "baca": "bu-yu-RUN",
+      "en": "please, here you are, go ahead"
+    },
+    {
+      "tr": "tamam",
+      "baca": "ta-MAM",
+      "en": "OK, fine"
+    },
+    {
+      "tr": "harika",
+      "baca": "ha-ri-KA",
+      "en": "great, wonderful"
+    },
+    {
+      "tr": "görüşürüz",
+      "baca": "gö-rü-shü-RÜZ",
+      "en": "see you"
+    },
+    {
+      "tr": "Türkçe",
+      "baca": "türk-CHE",
+      "en": "Turkish (language)"
+    }
+  ],
+  "exercises": [
+    {
+      "prompt": "Translate into Turkish. Use the polite form (*siz*).",
+      "items": [
+        "Good morning!",
+        "My name is Budi.",
+        "I'm from Indonesia.",
+        "How are you?",
+        "I'm fine, thank you.",
+        "Nice to meet you."
+      ]
+    },
+    {
+      "prompt": "Fill in the blanks with the right person ending.",
+      "items": [
+        "Öğrenci____. (I)",
+        "Öğretmen____. (you, informal)",
+        "İstanbullu____. (we)",
+        "Doktor____. (you, formal)",
+        "Hazır____. (I)",
+        "İyi____. (you, informal)"
+      ]
+    },
+    {
+      "prompt": "Choose the right greeting. Write out the full answer.",
+      "items": [
+        "You walk into a bakery at eight in the morning. You say ____.",
+        "You run into a classmate at three in the afternoon. You say ____.",
+        "You walk into a restaurant at nine in the evening. You say ____.",
+        "You're leaving a friend's house. You say ____.",
+        "You walk that friend to the door as they leave. You say ____.",
+        "Someone thanks you. You reply ____."
+      ]
+    },
+    {
+      "prompt": "Put the words in the right order.",
+      "items": [
+        "Budi / benim / adım",
+        "nerelisiniz / siz / ?",
+        "öğreniyorum / Türkçe / ben",
+        "değilim / öğretmen / ben",
+        "misiniz / Türkçe / biliyor / ?",
+        "iyiyim / teşekkür / ederim"
+      ]
+    }
+  ],
+  "answers": [
+    "Günaydın! — Benim adım Budi. — Endonezyalıyım. — Nasılsınız? — İyiyim, teşekkür ederim. — Memnun oldum.",
+    "Öğrenciyim. — Öğretmensin. — İstanbulluyuz. — Doktorsunuz. — Hazırım. — İyisin.",
+    "Günaydın. — İyi günler. — İyi akşamlar. — Hoşça kalın. — Güle güle. — Rica ederim.",
+    "Benim adım Budi. — Siz nerelisiniz? — Ben Türkçe öğreniyorum. — Ben öğretmen değilim. — Türkçe biliyor musunuz? — İyiyim, teşekkür ederim."
+  ]
+}

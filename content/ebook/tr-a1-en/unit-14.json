@@ -1,0 +1,546 @@
+{
+  "title": "Can and may",
+  "title_target": "Yapabilir miyim?",
+  "goal": "Express ability, permission and possibility with the insert *-ebil*, and inability with *-eme*.",
+  "bekal": [
+    "forming *gelebilirim*, *gelemem*, *gelebilir miyim*",
+    "asking permission and offering help politely",
+    "saying something might happen: *yağmur yağabilir*"
+  ],
+  "dialogs": [
+    {
+      "title": "Dialogue — Okul ofisinde",
+      "intro": "Budi knocks on the door of the school office. Ayşe is sorting files at her desk.",
+      "lines": [
+        {
+          "speaker": "Budi:",
+          "text": "Ayşe Hanım, bir şey sorabilir miyim?",
+          "id": "Ms. Ayşe, may I ask you something?",
+          "literal": "Ayşe Ms., one thing can-ask question-I?"
+        },
+        {
+          "speaker": "Ayşe:",
+          "text": "Tabii, sorabilirsin. Otur.",
+          "id": "Of course, go ahead. Sit down.",
+          "literal": "of-course, can-ask-you. sit."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Salı günü derse gelemeyeceğim. İzin alabilir miyim?",
+          "id": "I can't come to class on Tuesday. May I be excused?",
+          "literal": "Tuesday day-its lesson-to can't-come-will-I. permission can-take question-I?"
+        },
+        {
+          "speaker": "Ayşe:",
+          "text": "Neden gelemiyorsun?",
+          "id": "Why can't you come?",
+          "literal": "why can't-come-you?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Vize işlerim var. Göç İdaresine gitmem lazım.",
+          "id": "I have visa matters. I need to go to the immigration office.",
+          "literal": "visa matter-s-my there-is. migration Office-its-to going-my necessary."
+        },
+        {
+          "speaker": "Ayşe:",
+          "text": "Anlıyorum. Tabii gelmeyebilirsin. Ödevi yapabilir misin?",
+          "id": "I understand. Of course you can skip it. Can you do the homework?",
+          "literal": "understand-I. of-course may-not-come-you. homework-the can-do question-you?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Yapabilirim ama biraz zor. Yardım edebilir misiniz?",
+          "id": "I can, but it's a bit hard. Could you help?",
+          "literal": "can-do-I but a-bit hard. help can-do question-you(formal)?"
+        },
+        {
+          "speaker": "Ayşe:",
+          "text": "Elbette. Çarşamba erken gelebilir misin? Yarım saat çalışırız.",
+          "id": "Of course. Can you come early on Wednesday? We'll work for half an hour.",
+          "literal": "of-course. Wednesday early can-come question-you? half hour work-we."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Gelebilirim. Saat sekiz olur mu?",
+          "id": "I can. Is eight o'clock OK?",
+          "literal": "can-come-I. hour eight becomes question?"
+        },
+        {
+          "speaker": "Ayşe:",
+          "text": "Olur. Ama geç kalma, sekizde başlarız.",
+          "id": "That's fine. But don't be late — we start at eight.",
+          "literal": "becomes. but late don't-stay, eight-at start-we."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Söz. Bir şey daha sorabilir miyim?",
+          "id": "I promise. May I ask one more thing?",
+          "literal": "promise. one thing more can-ask question-I?"
+        },
+        {
+          "speaker": "Ayşe:",
+          "text": "Sorabilirsin ama çabuk — dersim var!",
+          "id": "You may, but quickly — I have a class!",
+          "literal": "can-ask-you but quick — lesson-my there-is!"
+        }
+      ],
+      "notes": [
+        "**-ebilmek was originally two verbs fused together**: the main stem + *bilmek* (to know). So \"I can come\" is literally \"I know how to come\". English *can* has a similar history: it once meant \"to know\".",
+        "**This insert never stands alone.** After *-ebil* there must always be a tense suffix: *gelebilirim* (can, in general), *gelebiliyorum* (can, right now), *gelebildim* (could, managed to), *gelebileceğim* (will be able to).",
+        "**İzin almak means \"to take permission\", not \"to ask for it\".** Turkish uses *almak* for many things English says with other verbs: *ders almak* (take a class), *duş almak* (take a shower), *nefes almak* (breathe), *haber almak* (get news).",
+        "**Geç kalma!** is a prohibition form, unpacked in unit 15. Literally \"don't stay late\" — Turkish uses *geç kalmak* for \"to be late\", not a single word."
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Can: the insert -ebil",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "To say \"can\" or \"may\", insert **-ebil / -abil** between the stem and the tense suffix. If the stem ends in a vowel, a linking *y* goes in."
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Stem",
+            "+ -ebil + -ir",
+            "English"
+          ],
+          "rows": [
+            [
+              "gel-",
+              "gel**ebil**irim",
+              "I can come"
+            ],
+            [
+              "yap-",
+              "yap**abil**irim",
+              "I can do it"
+            ],
+            [
+              "gör-",
+              "gör**ebil**irim",
+              "I can see"
+            ],
+            [
+              "oku-",
+              "oku**yabil**irim",
+              "I can read"
+            ],
+            [
+              "bekle-",
+              "bekle**yebil**irim",
+              "I can wait"
+            ],
+            [
+              "git-",
+              "gid**ebil**irim",
+              "I can go"
+            ]
+          ]
+        },
+        {
+          "type": "sub",
+          "text": "With other tense suffixes"
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Türkçe",
+            "English"
+          ],
+          "rows": [
+            [
+              "Gelebiliyorum.",
+              "I can come (right now)."
+            ],
+            [
+              "Gelebildim.",
+              "I was able to come."
+            ],
+            [
+              "Gelebileceğim.",
+              "I'll be able to come."
+            ],
+            [
+              "Gelebilir miyim?",
+              "May I come?"
+            ],
+            [
+              "Yardım edebilir misiniz?",
+              "Could you help?"
+            ],
+            [
+              "Yağmur yağabilir.",
+              "It might rain."
+            ]
+          ]
+        },
+        {
+          "type": "kotak",
+          "title": "Three meanings in one form",
+          "items": [
+            "*Yapabilirim* can mean three things, and context tells them apart: **ability** (I'm able to do it), **permission** (I'm allowed to do it), and **possibility** (I might do it).",
+            "To ask permission, the first-person question is almost always the one used: *Girebilir miyim?* (may I come in?), *Oturabilir miyim?* (may I sit?), *Bakabilir miyim?* (may I look?)."
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Can't: the insert -eme",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "The negative isn't *-ebilme* but a shorter insert: **-eme / -ama**. The *bil* piece disappears completely."
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Can",
+            "Can't",
+            "English"
+          ],
+          "rows": [
+            [
+              "gelebilirim",
+              "gel**eme**m",
+              "I can't come"
+            ],
+            [
+              "yapabilirsin",
+              "yap**ama**zsın",
+              "you can't do it"
+            ],
+            [
+              "görebilir",
+              "gör**eme**z",
+              "he/she can't see"
+            ],
+            [
+              "gelebiliyorum",
+              "gel**emi**yorum",
+              "I can't come right now"
+            ],
+            [
+              "gelebildim",
+              "gel**eme**dim",
+              "I couldn't come"
+            ],
+            [
+              "gelebileceğim",
+              "gel**eme**yeceğim",
+              "I won't be able to come"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "Look at the first row: the aorist negative uses the special pattern from unit 13 — *gelemem*, not *gelemezim*. For *biz*: *gelemeyiz*."
+        },
+        {
+          "type": "kotak",
+          "title": "Two negatives, two meanings",
+          "items": [
+            "*Gelmiyorum* = I'm not coming (because I choose not to). *Gelemiyorum* = I CAN'T come (something's in the way).",
+            "One letter separates them, and the difference is big. If you're turning down an invitation because you're busy, use the second — it sounds like a reason, not a refusal."
+          ]
+        },
+        {
+          "type": "sub",
+          "text": "Allowed not to"
+        },
+        {
+          "type": "p",
+          "text": "There's a third form that's rarely taught but often used: *-meyebil*, \"may not\" or \"might not\". *Gelmeyebilirsin* = you don't have to come. *Yağmur yağmayabilir* = it might not rain."
+        }
+      ]
+    },
+    {
+      "title": "Asking, offering, declining",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "Türkçe",
+            "English",
+            "What for"
+          ],
+          "rows": [
+            [
+              "Bir şey sorabilir miyim?",
+              "May I ask something?",
+              "starting a conversation"
+            ],
+            [
+              "Girebilir miyim?",
+              "May I come in?",
+              "permission"
+            ],
+            [
+              "Buraya oturabilir miyim?",
+              "May I sit here?",
+              "permission"
+            ],
+            [
+              "Fotoğraf çekebilir miyim?",
+              "May I take a photo?",
+              "permission"
+            ],
+            [
+              "Yardım edebilir miyim?",
+              "Can I help?",
+              "offering"
+            ],
+            [
+              "Size nasıl yardımcı olabilirim?",
+              "How can I help you?",
+              "in a shop/office"
+            ],
+            [
+              "Maalesef yapamam.",
+              "Unfortunately I can't.",
+              "declining"
+            ],
+            [
+              "Şimdi konuşamam.",
+              "I can't talk right now.",
+              "declining"
+            ],
+            [
+              "Bir dakika bekleyebilir misiniz?",
+              "Could you wait a moment?",
+              "requesting"
+            ],
+            [
+              "Tekrar edebilir misiniz?",
+              "Could you repeat that?",
+              "requesting"
+            ]
+          ]
+        },
+        {
+          "type": "kotak",
+          "title": "Words that go with permission",
+          "items": [
+            "*Elbette* and *tabii* both mean \"of course\" and are interchangeable. *Elbette* is a little firmer; *tabii* (often spelled *tabi*) is more casual.",
+            "To decline gently, *maalesef* (unfortunately) almost always goes in front: *Maalesef bugün gelemem.*"
+          ]
+        },
+        {
+          "type": "kotak",
+          "title": "Unit 12 review",
+          "items": [
+            "Cover the Turkish and rebuild these from memory: \"What are you doing this weekend?\" · \"We're going to Cappadocia.\" · \"How many days will we stay?\" · \"I won't come.\" · \"Maybe I'll study.\"",
+            "Then put these into the future: *geliyorum*, *yapıyorsun*, *kalıyoruz*."
+          ]
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "tr": "-ebilmek",
+      "baca": "e-bil-MEK",
+      "en": "can, may"
+    },
+    {
+      "tr": "izin",
+      "baca": "i-ZIN",
+      "en": "permission"
+    },
+    {
+      "tr": "elbette",
+      "baca": "el-bet-TE",
+      "en": "of course"
+    },
+    {
+      "tr": "maalesef",
+      "baca": "ma-a-le-SEF",
+      "en": "unfortunately"
+    },
+    {
+      "tr": "yardımcı olmak",
+      "baca": "yar-duhm-JUH ol-MAK",
+      "en": "to help"
+    },
+    {
+      "tr": "sormak",
+      "baca": "sor-MAK",
+      "en": "to ask"
+    },
+    {
+      "tr": "zor / kolay",
+      "baca": "zor / ko-LAI",
+      "en": "hard / easy"
+    },
+    {
+      "tr": "çabuk",
+      "baca": "cha-BUK",
+      "en": "quick, quickly"
+    },
+    {
+      "tr": "geç kalmak",
+      "baca": "gech kal-MAK",
+      "en": "to be late"
+    },
+    {
+      "tr": "ofis",
+      "baca": "o-FIS",
+      "en": "office"
+    },
+    {
+      "tr": "vize",
+      "baca": "vi-ZE",
+      "en": "visa"
+    },
+    {
+      "tr": "iş",
+      "baca": "ish",
+      "en": "matter, work"
+    },
+    {
+      "tr": "ödev",
+      "baca": "ö-DEV",
+      "en": "homework"
+    },
+    {
+      "tr": "tekrar etmek",
+      "baca": "tek-RAR et-MEK",
+      "en": "to repeat"
+    },
+    {
+      "tr": "fotoğraf çekmek",
+      "baca": "fo-to-RAF chek-MEK",
+      "en": "to take a photo"
+    },
+    {
+      "tr": "duş almak",
+      "baca": "dush al-MAK",
+      "en": "to take a shower"
+    },
+    {
+      "tr": "nefes almak",
+      "baca": "ne-FES al-MAK",
+      "en": "to breathe"
+    },
+    {
+      "tr": "ders almak",
+      "baca": "ders al-MAK",
+      "en": "to take a class"
+    },
+    {
+      "tr": "yağmur",
+      "baca": "yaa-MUR",
+      "en": "rain"
+    },
+    {
+      "tr": "yağmak",
+      "baca": "yaa-MAK",
+      "en": "to fall (rain, snow)"
+    },
+    {
+      "tr": "yarım saat",
+      "baca": "ya-RUHM sa-AT",
+      "en": "half an hour"
+    },
+    {
+      "tr": "söz",
+      "baca": "söz",
+      "en": "promise; word"
+    },
+    {
+      "tr": "oturmak",
+      "baca": "o-tur-MAK",
+      "en": "to sit"
+    },
+    {
+      "tr": "girmek",
+      "baca": "gir-MEK",
+      "en": "to enter"
+    },
+    {
+      "tr": "beklemek",
+      "baca": "bek-le-MEK",
+      "en": "to wait"
+    },
+    {
+      "tr": "konuşmak",
+      "baca": "ko-nush-MAK",
+      "en": "to speak"
+    },
+    {
+      "tr": "başka bir şey",
+      "baca": "BASH-ka bir shey",
+      "en": "something else"
+    },
+    {
+      "tr": "daha",
+      "baca": "da-HA",
+      "en": "more, another"
+    },
+    {
+      "tr": "göç idaresi",
+      "baca": "göch i-da-re-SI",
+      "en": "immigration office"
+    },
+    {
+      "tr": "belge",
+      "baca": "bel-GE",
+      "en": "document"
+    }
+  ],
+  "exercises": [
+    {
+      "prompt": "Make the \"can\" form for *ben* (aorist).",
+      "items": [
+        "gelmek → ____",
+        "yapmak → ____",
+        "görmek → ____",
+        "okumak → ____",
+        "beklemek → ____",
+        "gitmek → ____"
+      ]
+    },
+    {
+      "prompt": "Make the \"can't\" form in the tense shown in brackets.",
+      "items": [
+        "gelmek, ben (aorist) → ____",
+        "yapmak, sen (aorist) → ____",
+        "gelmek, ben (present) → ____",
+        "gitmek, o (past) → ____",
+        "gelmek, ben (future) → ____",
+        "yapmak, biz (aorist) → ____"
+      ]
+    },
+    {
+      "prompt": "Translate into Turkish.",
+      "items": [
+        "May I ask something?",
+        "May I come in?",
+        "Could you help? (formal)",
+        "Unfortunately I can't.",
+        "Could you wait a moment? (formal)",
+        "It might rain."
+      ]
+    },
+    {
+      "prompt": "Put the words in the right order.",
+      "items": [
+        "miyim / sorabilir / şey / bir / ?",
+        "gelemeyeceğim / salı / derse / günü",
+        "misiniz / yardım / edebilir / ?",
+        "yapamam / maalesef",
+        "gelebilirim / erken / çarşamba",
+        "yağabilir / yarın / yağmur"
+      ]
+    }
+  ],
+  "answers": [
+    "gelebilirim — yapabilirim — görebilirim — okuyabilirim — bekleyebilirim — gidebilirim",
+    "gelemem — yapamazsın — gelemiyorum — gidemedi — gelemeyeceğim — yapamayız",
+    "Bir şey sorabilir miyim? — Girebilir miyim? — Yardım edebilir misiniz? — Maalesef yapamam. — Bir dakika bekleyebilir misiniz? — Yağmur yağabilir.",
+    "Bir şey sorabilir miyim? — Salı günü derse gelemeyeceğim. — Yardım edebilir misiniz? — Maalesef yapamam. — Çarşamba erken gelebilirim. — Yarın yağmur yağabilir."
+  ]
+}

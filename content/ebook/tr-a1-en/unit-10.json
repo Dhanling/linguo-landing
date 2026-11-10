@@ -1,0 +1,622 @@
+{
+  "title": "At the restaurant",
+  "title_target": "Lokantada",
+  "goal": "Read a Turkish menu, order food, and say what you want to do with the pattern *-mek istemek*.",
+  "bekal": [
+    "build \"I want to ...\" sentences from any verb",
+    "order, ask for the check, and ask what's in a dish",
+    "recognize the dish names you'll meet on every menu"
+  ],
+  "dialogs": [
+    {
+      "title": "Dialogue — Akşam yemeği",
+      "intro": "Emre takes Budi to a small restaurant in Kadıköy. The waiter comes over with the menu.",
+      "lines": [
+        {
+          "speaker": "Garson:",
+          "text": "Hoş geldiniz. Buyurun, menü.",
+          "id": "Welcome. Here's the menu.",
+          "literal": "pleasant came-you. please, menu."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Teşekkürler. Ne tavsiye ediyorsunuz?",
+          "id": "Thanks. What do you recommend?",
+          "literal": "thanks-plural. what recommendation are-doing-you?"
+        },
+        {
+          "speaker": "Garson:",
+          "text": "Bugün mercimek çorbası ve İskender çok iyi.",
+          "id": "Today the lentil soup and the İskender are very good.",
+          "literal": "today lentil soup-its and Iskender very good."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "İskender ne demek?",
+          "id": "What's İskender?",
+          "literal": "Iskender what saying?"
+        },
+        {
+          "speaker": "Emre:",
+          "text": "Döner, pide, domates sosu ve yoğurt. Çok lezzetli.",
+          "id": "Döner, pide bread, tomato sauce and yogurt. It's delicious.",
+          "literal": "döner, pide, tomato sauce-its and yogurt. very tasty."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Tamam, onu denemek istiyorum. Ama önce bir soru: eti helal mi?",
+          "id": "OK, I want to try that. But first, one question: is the meat halal?",
+          "literal": "OK, that-the to-try am-wanting-I. but first a question: meat-its halal question?"
+        },
+        {
+          "speaker": "Garson:",
+          "text": "Tabii, bütün etlerimiz helal. Domuz eti yok.",
+          "id": "Of course, all our meat is halal. There's no pork.",
+          "literal": "of-course, all meat-s-our halal. pig meat-its there-isn't."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Güzel. Bir İskender ve bir ayran lütfen.",
+          "id": "Great. One İskender and one ayran, please.",
+          "literal": "nice. one Iskender and one ayran please."
+        },
+        {
+          "speaker": "Emre:",
+          "text": "Bana da bir Adana kebap. Acılı olsun.",
+          "id": "And an Adana kebab for me. Make it spicy.",
+          "literal": "me-to too one Adana kebab. spicy let-it-be."
+        },
+        {
+          "speaker": "Garson:",
+          "text": "Çorba istiyor musunuz?",
+          "id": "Would you like soup?",
+          "literal": "soup wanting question-you?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Evet, bir mercimek çorbası içmek istiyorum.",
+          "id": "Yes, I'd like a lentil soup.",
+          "literal": "yes, one lentil soup-its to-drink am-wanting-I."
+        },
+        {
+          "speaker": "Garson:",
+          "text": "Hemen geliyor. Afiyet olsun!",
+          "id": "Coming right up. Enjoy your meal!",
+          "literal": "right-away is-coming. health let-it-be!"
+        }
+      ],
+      "notes": [
+        "**Soup is drunk, not eaten.** Turkish uses *içmek* for soup — and for cigarettes too (*sigara içmek*). Whatever goes down without chewing is drunk.",
+        "**Afiyet olsun is said before OR after eating**, by anyone to anyone who's eating. The reply is *teşekkürler*. To the cook, say *elinize sağlık* — \"health to your hands\", the highest compliment for food in Turkey.",
+        "**Acılı means \"with chili\", acısız \"without chili\".** These two endings — *-lı* (with) and *-sız* (without) — are taken apart in Unit 18, but they show up on menus first: *şekerli* (with sugar), *şekersiz*, *sütlü* (with milk), *tuzsuz* (unsalted).",
+        "**Olsun means \"let it be\".** In the dialogue, *acılı olsun* = \"let it be spicy\". The word appears in many wishes and set phrases: *afiyet olsun*, *geçmiş olsun* (get well soon), *kolay gelsin* (may it come easy), *başınız sağ olsun* (my condolences)."
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "I want to — the pattern -mek istemek",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "To say \"I want to do something\", Turkish uses the **full dictionary form** (ending in *-mek/-mak*) followed by *istemek*, which takes the person ending. The first verb doesn't change at all."
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Türkçe",
+            "Taken apart",
+            "English"
+          ],
+          "rows": [
+            [
+              "Gitmek istiyorum.",
+              "to-go want-I",
+              "I want to go."
+            ],
+            [
+              "Yemek istiyorum.",
+              "to-eat want-I",
+              "I want to eat."
+            ],
+            [
+              "Denemek istiyorum.",
+              "to-try want-I",
+              "I want to try."
+            ],
+            [
+              "Türkçe öğrenmek istiyorum.",
+              "Turkish to-learn want-I",
+              "I want to learn Turkish."
+            ],
+            [
+              "Gitmek istemiyorum.",
+              "to-go don't-want-I",
+              "I don't want to go."
+            ],
+            [
+              "Gitmek istiyor musun?",
+              "to-go want question-you",
+              "Do you want to go?"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "The object still stands in front of the first verb: *Bir çay içmek istiyorum* — \"one tea to-drink want-I\". Everything else piles up in front; only *istemek* carries the person ending."
+        },
+        {
+          "type": "kotak",
+          "title": "İstemek can also stand alone",
+          "items": [
+            "With a noun, *istemek* simply means \"to want\": *Su istiyorum* (I want water), *Poşet istemiyorum* (I don't want a bag).",
+            "When ordering, the short form is actually more common than a full sentence: *Bir çay lütfen* sounds far more natural than *Bir çay içmek istiyorum*. The long version is for explaining what you'd like, not for ordering."
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Reading the menu",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "A Turkish menu is built almost entirely from the two-noun pattern you learned in Unit 4: **ingredient + dish-its**. Once you see the pattern, you can guess what's on the plate without a dictionary."
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Menü",
+            "Taken apart",
+            "What it is"
+          ],
+          "rows": [
+            [
+              "mercimek çorba**sı**",
+              "lentil soup-its",
+              "red lentil soup"
+            ],
+            [
+              "domates çorba**sı**",
+              "tomato soup-its",
+              "tomato soup"
+            ],
+            [
+              "çoban salata**sı**",
+              "shepherd salad-its",
+              "tomato and cucumber salad"
+            ],
+            [
+              "Türk kahve**si**",
+              "Turkish coffee-its",
+              "Turkish coffee"
+            ],
+            [
+              "tavuk şiş",
+              "chicken skewer",
+              "chicken kebab on a skewer"
+            ],
+            [
+              "karışık ızgara",
+              "mixed grill",
+              "assorted grilled meats"
+            ]
+          ]
+        },
+        {
+          "type": "sub",
+          "text": "What you'll find everywhere"
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Türkçe",
+            "English",
+            "Türkçe",
+            "English"
+          ],
+          "rows": [
+            [
+              "çorba",
+              "soup",
+              "kebap",
+              "grilled meat, kebab"
+            ],
+            [
+              "döner",
+              "rotisserie meat",
+              "lahmacun",
+              "thin Turkish flatbread pizza"
+            ],
+            [
+              "pide",
+              "flatbread; boat-shaped pizza",
+              "börek",
+              "layered pastry"
+            ],
+            [
+              "köfte",
+              "meatballs",
+              "pilav",
+              "rice"
+            ],
+            [
+              "menemen",
+              "eggs scrambled with tomato",
+              "simit",
+              "sesame bread ring"
+            ],
+            [
+              "meze",
+              "starters",
+              "kahvaltı",
+              "breakfast"
+            ],
+            [
+              "baklava",
+              "layered syrup pastry",
+              "künefe",
+              "sweet baked cheese pastry"
+            ],
+            [
+              "sütlaç",
+              "rice pudding",
+              "dondurma",
+              "ice cream"
+            ],
+            [
+              "ayran",
+              "salty yogurt drink",
+              "şalgam",
+              "fermented purple-carrot juice"
+            ]
+          ]
+        },
+        {
+          "type": "sub",
+          "text": "Ingredients"
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Türkçe",
+            "English",
+            "Türkçe",
+            "English"
+          ],
+          "rows": [
+            [
+              "et",
+              "meat",
+              "tavuk",
+              "chicken"
+            ],
+            [
+              "balık",
+              "fish",
+              "sebze",
+              "vegetables"
+            ],
+            [
+              "peynir",
+              "cheese",
+              "yumurta",
+              "egg"
+            ],
+            [
+              "zeytin",
+              "olive",
+              "bal",
+              "honey"
+            ],
+            [
+              "ekmek",
+              "bread",
+              "pirinç",
+              "rice (uncooked)"
+            ],
+            [
+              "domates",
+              "tomato",
+              "salatalık",
+              "cucumber"
+            ],
+            [
+              "soğan",
+              "onion",
+              "biber",
+              "pepper, chili"
+            ],
+            [
+              "tuz",
+              "salt",
+              "şeker",
+              "sugar"
+            ]
+          ]
+        },
+        {
+          "type": "kotak",
+          "title": "Halal, pork, alcohol",
+          "items": [
+            "Beef, chicken and lamb in Turkish restaurants are generally slaughtered according to Islamic rules, and *domuz eti* (pork) is practically never on an ordinary menu — you'll only find it in a few specialty shops in big cities.",
+            "If you keep halal, the two things worth asking about are *gelatin* in desserts, and alcohol. A restaurant labeled *içkili* serves alcoholic drinks; one labeled *içkisiz* doesn't. A useful sentence: *Bunun içinde alkol var mı?* — \"Is there alcohol in this?\""
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Phrases at the table",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "Türkçe",
+            "English"
+          ],
+          "rows": [
+            [
+              "Menü alabilir miyim?",
+              "Can I have the menu?"
+            ],
+            [
+              "Ne tavsiye edersiniz?",
+              "What do you recommend?"
+            ],
+            [
+              "Bir porsiyon ... lütfen.",
+              "One portion of ..., please."
+            ],
+            [
+              "Bu ne kadar acı?",
+              "How spicy is this?"
+            ],
+            [
+              "İçinde ne var?",
+              "What's in it?"
+            ],
+            [
+              "Vejetaryenim.",
+              "I'm vegetarian."
+            ],
+            [
+              "Bir şişe su lütfen.",
+              "A bottle of water, please."
+            ],
+            [
+              "Hesap lütfen.",
+              "The check, please."
+            ],
+            [
+              "Servis dahil mi?",
+              "Is service included?"
+            ],
+            [
+              "Çok lezzetliydi.",
+              "That was delicious."
+            ],
+            [
+              "Elinize sağlık.",
+              "Compliments to the cook."
+            ],
+            [
+              "Afiyet olsun.",
+              "Enjoy your meal."
+            ]
+          ]
+        },
+        {
+          "type": "kotak",
+          "title": "Unit 8 review",
+          "items": [
+            "Cover the Turkish and rebuild it from memory: \"Where are you going?\" · \"I'm going to school.\" · \"We're coming from home.\" · \"We're taking the tram.\" · \"Is it far from here?\"",
+            "Then add the direction and origin endings to: *ev*, *okul*, *Ankara*, *iş*."
+          ]
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "tr": "lokanta",
+      "baca": "lo-kan-TA",
+      "en": "restaurant, eatery"
+    },
+    {
+      "tr": "garson",
+      "baca": "gar-SON",
+      "en": "waiter"
+    },
+    {
+      "tr": "menü",
+      "baca": "me-NÜ",
+      "en": "menu"
+    },
+    {
+      "tr": "hesap",
+      "baca": "he-SAP",
+      "en": "check, bill"
+    },
+    {
+      "tr": "porsiyon",
+      "baca": "por-si-YON",
+      "en": "portion"
+    },
+    {
+      "tr": "çorba",
+      "baca": "chor-BA",
+      "en": "soup"
+    },
+    {
+      "tr": "kebap",
+      "baca": "ke-BAP",
+      "en": "grilled meat, kebab"
+    },
+    {
+      "tr": "et",
+      "baca": "et",
+      "en": "meat"
+    },
+    {
+      "tr": "tavuk",
+      "baca": "ta-VUK",
+      "en": "chicken"
+    },
+    {
+      "tr": "balık",
+      "baca": "ba-LUHK",
+      "en": "fish"
+    },
+    {
+      "tr": "sebze",
+      "baca": "seb-ZE",
+      "en": "vegetables"
+    },
+    {
+      "tr": "peynir",
+      "baca": "pey-NIR",
+      "en": "cheese"
+    },
+    {
+      "tr": "yumurta",
+      "baca": "yu-mur-TA",
+      "en": "egg"
+    },
+    {
+      "tr": "pilav",
+      "baca": "pi-LAV",
+      "en": "rice (cooked)"
+    },
+    {
+      "tr": "salata",
+      "baca": "sa-la-TA",
+      "en": "salad"
+    },
+    {
+      "tr": "ayran",
+      "baca": "ai-RAN",
+      "en": "salty yogurt drink"
+    },
+    {
+      "tr": "kahvaltı",
+      "baca": "kah-val-TUH",
+      "en": "breakfast"
+    },
+    {
+      "tr": "tatlı",
+      "baca": "tat-LUH",
+      "en": "dessert; sweet"
+    },
+    {
+      "tr": "acı",
+      "baca": "a-JUH",
+      "en": "spicy; bitter"
+    },
+    {
+      "tr": "tuz / şeker",
+      "baca": "tuz / she-KER",
+      "en": "salt / sugar"
+    },
+    {
+      "tr": "lezzetli",
+      "baca": "lez-zet-LI",
+      "en": "delicious"
+    },
+    {
+      "tr": "helal / domuz",
+      "baca": "he-LAL / do-MUZ",
+      "en": "halal / pig, pork"
+    },
+    {
+      "tr": "içmek",
+      "baca": "ich-MEK",
+      "en": "to drink"
+    },
+    {
+      "tr": "denemek",
+      "baca": "de-ne-MEK",
+      "en": "to try"
+    },
+    {
+      "tr": "tavsiye etmek",
+      "baca": "tav-si-YE et-MEK",
+      "en": "to recommend"
+    },
+    {
+      "tr": "istemek",
+      "baca": "is-te-MEK",
+      "en": "to want"
+    },
+    {
+      "tr": "afiyet olsun",
+      "baca": "a-fi-YET ol-SUN",
+      "en": "enjoy your meal"
+    },
+    {
+      "tr": "elinize sağlık",
+      "baca": "e-li-ni-ZE saa-LUHK",
+      "en": "compliments to the cook"
+    },
+    {
+      "tr": "şişe",
+      "baca": "shi-SHE",
+      "en": "bottle"
+    },
+    {
+      "tr": "bardak",
+      "baca": "bar-DAK",
+      "en": "glass"
+    }
+  ],
+  "exercises": [
+    {
+      "prompt": "Turn these into \"I want to ...\" sentences with the *-mek istemek* pattern.",
+      "items": [
+        "gitmek → ____",
+        "yemek → ____",
+        "denemek → ____",
+        "Türkçe öğrenmek → ____",
+        "çay içmek → ____",
+        "İstanbul'a gitmek → ____"
+      ]
+    },
+    {
+      "prompt": "Fill in the blanks with restaurant phrases.",
+      "items": [
+        "____ alabilir miyim? (menu)",
+        "Ne ____ edersiniz? (recommend)",
+        "Bir ____ su lütfen. (bottle)",
+        "____ lütfen. (check)",
+        "Servis ____ mi? (included)",
+        "____ olsun! (enjoy your meal)"
+      ]
+    },
+    {
+      "prompt": "Translate into Turkish.",
+      "items": [
+        "I want to try the İskender.",
+        "Is the meat halal?",
+        "I don't eat pork.",
+        "What's in it?",
+        "It's delicious.",
+        "The check, please."
+      ]
+    },
+    {
+      "prompt": "Put the words in the right order.",
+      "items": [
+        "istiyorum / denemek / bunu",
+        "lütfen / bir / ayran",
+        "mı / eti / helal / ?",
+        "var / içinde / ne / ?",
+        "istiyor / çorba / musunuz / ?",
+        "lütfen / hesap"
+      ]
+    }
+  ],
+  "answers": [
+    "Gitmek istiyorum. — Yemek istiyorum. — Denemek istiyorum. — Türkçe öğrenmek istiyorum. — Çay içmek istiyorum. — İstanbul'a gitmek istiyorum.",
+    "Menü — tavsiye — şişe — Hesap — dahil — Afiyet",
+    "İskender denemek istiyorum. — Et helal mi? — Domuz eti yemiyorum. — İçinde ne var? — Çok lezzetli. — Hesap lütfen.",
+    "Bunu denemek istiyorum. — Bir ayran lütfen. — Et helal mi? — İçinde ne var? — Çorba istiyor musunuz? — Hesap lütfen."
+  ]
+}

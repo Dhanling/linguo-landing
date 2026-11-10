@@ -1,0 +1,628 @@
+{
+  "title": "Where are you going?",
+  "title_target": "Nereye gidiyorsun?",
+  "goal": "Express direction with *-e* and origin with *-den*, then use both to get around town.",
+  "bekal": [
+    "tell apart *evde* (at home), *eve* (to the house) and *evden* (from the house)",
+    "say how you travel with *ile* or its short form *-le*",
+    "read signs and ask the way at bus stops, ferry piers and metro stations"
+  ],
+  "dialogs": [
+    {
+      "title": "Dialogue — Vapurda",
+      "intro": "Budi and Emre take the ferry from Kadıköy to Eminönü. The wind is strong and seagulls are chasing the boat.",
+      "lines": [
+        {
+          "speaker": "Emre:",
+          "text": "Bak, İstanbul'a böyle bakmak lazım.",
+          "id": "Look, this is how you have to see Istanbul.",
+          "literal": "look, Istanbul-to like-this to-look necessary."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "İnanılmaz. Bu vapur nereye gidiyor?",
+          "id": "Unbelievable. Where is this ferry going?",
+          "literal": "unbelievable. this ferry where-to is-going?"
+        },
+        {
+          "speaker": "Emre:",
+          "text": "Eminönü'ye. Kadıköy'den Eminönü'ye yirmi dakika.",
+          "id": "To Eminönü. Kadıköy to Eminönü is twenty minutes.",
+          "literal": "Eminönü-to. Kadıköy-from Eminönü-to twenty minute."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Sonra nereye gidiyoruz?",
+          "id": "Where are we going after that?",
+          "literal": "after where-to are-going-we?"
+        },
+        {
+          "speaker": "Emre:",
+          "text": "Kapalıçarşı'ya. Tramvayla gidiyoruz.",
+          "id": "To the Grand Bazaar. We're taking the tram.",
+          "literal": "Covered-Bazaar-to. tram-with are-going-we."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Tramvay nereden kalkıyor?",
+          "id": "Where does the tram leave from?",
+          "literal": "tram where-from is-departing?"
+        },
+        {
+          "speaker": "Emre:",
+          "text": "İskeleden. Vapurdan iniyoruz, hemen karşısında.",
+          "id": "From the pier. We get off the ferry, and it's right across.",
+          "literal": "pier-from. ferry-from are-getting-off-we, right opposite-its-at."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Bilet nereden alıyoruz?",
+          "id": "Where do we buy tickets?",
+          "literal": "ticket where-from are-taking-we?"
+        },
+        {
+          "speaker": "Emre:",
+          "text": "Bilet yok, İstanbulkart var. Sana bir tane alıyorum.",
+          "id": "There are no tickets, there's the İstanbulkart. I'll get you one.",
+          "literal": "ticket there-isn't, Istanbul-card there-is. you-to one piece am-taking-I."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Çok teşekkür ederim. Sana borcum var.",
+          "id": "Thanks so much. I owe you.",
+          "literal": "very thanks do-I. you-to debt-my there-is."
+        },
+        {
+          "speaker": "Emre:",
+          "text": "Boş ver. Sen bana çay ısmarlıyorsun, tamam mı?",
+          "id": "Forget it. You're buying me a tea, OK?",
+          "literal": "empty give. you me-to tea are-treating-you, OK question?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Anlaştık!",
+          "id": "Deal!",
+          "literal": "agreed-we!"
+        }
+      ],
+      "notes": [
+        "**Three endings, one place.** *Ev-de* = at home. *Ev-e* = to the house. *Ev-den* = from the house. All three attach to the same word, and Turkish has no prepositions at all — every question of direction is settled at the tail of the word.",
+        "**Gitmek always requires -e.** \"Go to Ankara\" is *Ankara'ya gitmek*, never *Ankara gitmek*. The same goes for *binmek* (to get on a vehicle): *otobüse binmek*, literally \"get on TO the bus\". By contrast *inmek* (to get off) requires *-den*: *otobüsten inmek*.",
+        "**Boş ver literally means \"give empty\"** — that is, \"never mind, forget it\". One of the few expressions you can't guess from its words, and one of the ones you'll hear most.",
+        "**Anlaştık** means \"we've agreed\", from *anlaşmak* (to understand each other). It's in the past because the deal has just been made — Turkish treats it as done the moment the word is spoken, much like English \"Done!\"."
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "The ending -e: to, toward, for",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "The direction ending has just two forms — *-e* and *-a* — plus a linking **y** if the word ends in a vowel. Hard consonants don't matter here, because the ending doesn't start with *d*."
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Word",
+            "+ direction",
+            "English"
+          ],
+          "rows": [
+            [
+              "ev",
+              "ev**e**",
+              "to the house, home"
+            ],
+            [
+              "okul",
+              "okul**a**",
+              "to school"
+            ],
+            [
+              "İstanbul",
+              "İstanbul'**a**",
+              "to Istanbul"
+            ],
+            [
+              "Ankara",
+              "Ankara'**ya**",
+              "to Ankara"
+            ],
+            [
+              "sinema",
+              "sinema**ya**",
+              "to the movies"
+            ],
+            [
+              "sokak",
+              "soka**ğa**",
+              "to the street (k softens)"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "Personal pronouns change shape a little and must be memorized: **bana** (to me), **sana** (to you), **ona**, **bize**, **size**, **onlara**. The first two break the pattern — not *bene* and *sene*."
+        },
+        {
+          "type": "sub",
+          "text": "Verbs that require -e"
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Türkçe",
+            "English",
+            "Example"
+          ],
+          "rows": [
+            [
+              "gitmek",
+              "to go to",
+              "Okula gidiyorum."
+            ],
+            [
+              "gelmek",
+              "to come to",
+              "Bize geliyor musun?"
+            ],
+            [
+              "binmek",
+              "to get on",
+              "Otobüse biniyoruz."
+            ],
+            [
+              "bakmak",
+              "to look at, to look after",
+              "Denize bakıyorum."
+            ],
+            [
+              "sormak",
+              "to ask (someone)",
+              "Sana bir şey soruyorum."
+            ],
+            [
+              "başlamak",
+              "to start (something)",
+              "Derse başlıyoruz."
+            ],
+            [
+              "yardım etmek",
+              "to help",
+              "Bana yardım eder misin?"
+            ],
+            [
+              "inanmak",
+              "to believe",
+              "Sana inanıyorum."
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "title": "The ending -den: from, since, because of",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "The origin ending has **four forms**, because it starts with *d* and obeys Fıstıkçı Şahap: *-den*, *-dan*, *-ten*, *-tan*."
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Word",
+            "+ origin",
+            "English"
+          ],
+          "rows": [
+            [
+              "ev",
+              "ev**den**",
+              "from the house"
+            ],
+            [
+              "okul",
+              "okul**dan**",
+              "from school"
+            ],
+            [
+              "iş",
+              "iş**ten**",
+              "from work"
+            ],
+            [
+              "uçak",
+              "uçak**tan**",
+              "from the plane"
+            ],
+            [
+              "Jakarta",
+              "Jakarta'**dan**",
+              "from Jakarta"
+            ],
+            [
+              "ben / sen",
+              "ben**den** / sen**den**",
+              "from me / from you"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "Besides direction, *-den* also expresses material (*tahtadan* — made of wood), cause (*yorgunluktan* — from tiredness), and comparison (*benden büyük* — bigger than me, see Unit 16)."
+        },
+        {
+          "type": "sub",
+          "text": "From where to where"
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Türkçe",
+            "English"
+          ],
+          "rows": [
+            [
+              "Nereden geliyorsun?",
+              "Where are you coming from?"
+            ],
+            [
+              "Nereye gidiyorsun?",
+              "Where are you going?"
+            ],
+            [
+              "Evden okula gidiyorum.",
+              "I go from home to school."
+            ],
+            [
+              "Kadıköy'den Eminönü'ye.",
+              "From Kadıköy to Eminönü."
+            ],
+            [
+              "Saat dokuzdan üçe kadar.",
+              "From nine to three."
+            ],
+            [
+              "Buradan uzak mı?",
+              "Is it far from here?"
+            ]
+          ]
+        },
+        {
+          "type": "kotak",
+          "title": "Nereli, nereden, nerede",
+          "items": [
+            "*Nerelisin?* asks about your origins — the city or country you come from. The answer is *Endonezyalıyım*.",
+            "*Nereden geliyorsun?* asks where you've just come from. The answer is *okuldan*, *işten*, *evden*.",
+            "*Neredesin?* asks where you are right now. Three questions, three endings, one and the same root: *nere*."
+          ]
+        }
+      ]
+    },
+    {
+      "title": "How you get there",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "The word *ile* means \"with\" and \"and\". In conversation it almost always attaches as **-le / -la**, with a linking *y* after a vowel."
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Long form",
+            "Attached form",
+            "English"
+          ],
+          "rows": [
+            [
+              "otobüs ile",
+              "otobüs**le**",
+              "by bus"
+            ],
+            [
+              "araba ile",
+              "araba**yla**",
+              "by car"
+            ],
+            [
+              "Ayşe ile",
+              "Ayşe'**yle**",
+              "with Ayşe"
+            ],
+            [
+              "ben ile",
+              "**benimle**",
+              "with me"
+            ],
+            [
+              "sen ile",
+              "**seninle**",
+              "with you"
+            ],
+            [
+              "o ile",
+              "**onunla**",
+              "with him/her"
+            ]
+          ]
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Türkçe",
+            "English",
+            "Türkçe",
+            "English"
+          ],
+          "rows": [
+            [
+              "otobüs",
+              "bus",
+              "metro",
+              "subway, metro"
+            ],
+            [
+              "vapur",
+              "ferry",
+              "tramvay",
+              "tram"
+            ],
+            [
+              "dolmuş",
+              "shared minibus",
+              "minibüs",
+              "minibus"
+            ],
+            [
+              "taksi",
+              "taxi",
+              "araba",
+              "car"
+            ],
+            [
+              "tren",
+              "train",
+              "uçak",
+              "plane"
+            ],
+            [
+              "bisiklet",
+              "bicycle",
+              "iskele",
+              "pier"
+            ],
+            [
+              "durak",
+              "stop",
+              "istasyon",
+              "station"
+            ],
+            [
+              "bilet",
+              "ticket",
+              "yolcu",
+              "passenger"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "*Dolmuş* literally means \"filled up\" — a vehicle that leaves as soon as its seats are taken. The word was born in Istanbul and has spread to several other languages. For going on foot there's a verb of its own: *yürüyorum*."
+        },
+        {
+          "type": "kotak",
+          "title": "Unit 6 review",
+          "items": [
+            "Cover the Turkish and rebuild it from memory: \"What are you doing?\" · \"I'm studying Turkish.\" · \"I don't understand.\" · \"We're waiting.\" · \"What are you drinking?\"",
+            "Then make these negative: *geliyorum*, *biliyorsun*, *okuyor*, *anlıyoruz*."
+          ]
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "tr": "nereye",
+      "baca": "NE-re-ye",
+      "en": "where to"
+    },
+    {
+      "tr": "nereden",
+      "baca": "NE-re-den",
+      "en": "where from"
+    },
+    {
+      "tr": "bana / sana",
+      "baca": "ba-NA / sa-NA",
+      "en": "to me / to you"
+    },
+    {
+      "tr": "ona / bize",
+      "baca": "o-NA / bi-ZE",
+      "en": "to him/her / to us"
+    },
+    {
+      "tr": "ile, -le",
+      "baca": "i-LE, le",
+      "en": "with, by"
+    },
+    {
+      "tr": "otobüs",
+      "baca": "o-to-BÜS",
+      "en": "bus"
+    },
+    {
+      "tr": "metro",
+      "baca": "met-RO",
+      "en": "subway, metro"
+    },
+    {
+      "tr": "vapur",
+      "baca": "va-PUR",
+      "en": "ferry"
+    },
+    {
+      "tr": "tramvay",
+      "baca": "tram-VAI",
+      "en": "tram"
+    },
+    {
+      "tr": "dolmuş",
+      "baca": "dol-MUSH",
+      "en": "shared minibus"
+    },
+    {
+      "tr": "taksi",
+      "baca": "tak-SI",
+      "en": "taxi"
+    },
+    {
+      "tr": "uçak",
+      "baca": "u-CHAK",
+      "en": "plane"
+    },
+    {
+      "tr": "tren",
+      "baca": "tren",
+      "en": "train"
+    },
+    {
+      "tr": "bisiklet",
+      "baca": "bi-sik-LET",
+      "en": "bicycle"
+    },
+    {
+      "tr": "iskele",
+      "baca": "is-ke-LE",
+      "en": "pier"
+    },
+    {
+      "tr": "bilet",
+      "baca": "bi-LET",
+      "en": "ticket"
+    },
+    {
+      "tr": "yolcu",
+      "baca": "yol-JU",
+      "en": "passenger"
+    },
+    {
+      "tr": "yol",
+      "baca": "yol",
+      "en": "road, way, journey"
+    },
+    {
+      "tr": "dakika",
+      "baca": "da-ki-KA",
+      "en": "minute"
+    },
+    {
+      "tr": "binmek",
+      "baca": "bin-MEK",
+      "en": "to get on (a vehicle)"
+    },
+    {
+      "tr": "inmek",
+      "baca": "in-MEK",
+      "en": "to get off"
+    },
+    {
+      "tr": "kalkmak",
+      "baca": "kalk-MAK",
+      "en": "to depart; to get up"
+    },
+    {
+      "tr": "yürümek",
+      "baca": "yü-rü-MEK",
+      "en": "to walk"
+    },
+    {
+      "tr": "sormak",
+      "baca": "sor-MAK",
+      "en": "to ask"
+    },
+    {
+      "tr": "yardım etmek",
+      "baca": "yar-DUHM et-MEK",
+      "en": "to help"
+    },
+    {
+      "tr": "ısmarlamak",
+      "baca": "uhs-mar-la-MAK",
+      "en": "to treat (someone); to order"
+    },
+    {
+      "tr": "borç",
+      "baca": "borch",
+      "en": "debt"
+    },
+    {
+      "tr": "boş ver",
+      "baca": "bosh ver",
+      "en": "never mind, forget it"
+    },
+    {
+      "tr": "inanılmaz",
+      "baca": "i-na-nuhl-MAZ",
+      "en": "unbelievable, amazing"
+    },
+    {
+      "tr": "lazım",
+      "baca": "LA-zuhm",
+      "en": "necessary, needed"
+    }
+  ],
+  "exercises": [
+    {
+      "prompt": "Add the direction ending *-e/-a* (with a linking letter if needed).",
+      "items": [
+        "ev → ____",
+        "okul → ____",
+        "Ankara → ____",
+        "sinema → ____",
+        "İstanbul → ____",
+        "sokak → ____"
+      ]
+    },
+    {
+      "prompt": "Add the origin ending *-den/-dan/-ten/-tan*.",
+      "items": [
+        "ev → ____",
+        "okul → ____",
+        "iş → ____",
+        "uçak → ____",
+        "Jakarta → ____",
+        "ben → ____"
+      ]
+    },
+    {
+      "prompt": "Translate into Turkish.",
+      "items": [
+        "Where are you going?",
+        "I'm going to school.",
+        "We're coming from home.",
+        "We're taking the tram.",
+        "Kadıköy to Eminönü is twenty minutes.",
+        "Could you help me?"
+      ]
+    },
+    {
+      "prompt": "Put the words in the right order.",
+      "items": [
+        "gidiyorsun / nereye / ?",
+        "gidiyorum / okula / ben",
+        "geliyoruz / evden / biz",
+        "biniyoruz / otobüse / hemen",
+        "gidiyoruz / tramvayla / Kapalıçarşı'ya",
+        "var / borcum / sana"
+      ]
+    }
+  ],
+  "answers": [
+    "eve — okula — Ankara'ya — sinemaya — İstanbul'a — sokağa",
+    "evden — okuldan — işten — uçaktan — Jakarta'dan — benden",
+    "Nereye gidiyorsun? — Okula gidiyorum. — Evden geliyoruz. — Tramvayla gidiyoruz. — Kadıköy'den Eminönü'ye yirmi dakika. — Bana yardım eder misin?",
+    "Nereye gidiyorsun? — Ben okula gidiyorum. — Biz evden geliyoruz. — Hemen otobüse biniyoruz. — Tramvayla Kapalıçarşı'ya gidiyoruz. — Sana borcum var."
+  ]
+}

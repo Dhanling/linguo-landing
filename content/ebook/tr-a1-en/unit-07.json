@@ -1,0 +1,652 @@
+{
+  "title": "What time is it?",
+  "title_target": "Saat kaç?",
+  "goal": "Tell the time, the day and the month; say when something happens; and put together your daily schedule.",
+  "bekal": [
+    "answer *saat kaç* and ask *saat kaçta*",
+    "name the seven days and the twelve months",
+    "use frequency words: *her gün*, *bazen*, *hiç*"
+  ],
+  "dialogs": [
+    {
+      "title": "Dialogue — Ders programı",
+      "intro": "First day of the course. In the teachers' room, Ayşe goes over the schedule with Budi.",
+      "lines": [
+        {
+          "speaker": "Ayşe:",
+          "text": "Budi, dersler pazartesi başlıyor.",
+          "id": "Budi, classes start on Monday.",
+          "literal": "Budi, lesson-s Monday is-starting."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Saat kaçta?",
+          "id": "At what time?",
+          "literal": "hour how-many-at?"
+        },
+        {
+          "speaker": "Ayşe:",
+          "text": "Sabah dokuzda. Öğlene kadar devam ediyor.",
+          "id": "At nine in the morning. They go on until noon.",
+          "literal": "morning nine-at. noon-to until continuation is-doing."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Her gün mü?",
+          "id": "Every day?",
+          "literal": "every day question?"
+        },
+        {
+          "speaker": "Ayşe:",
+          "text": "Hayır. Pazartesi, çarşamba ve cuma. Haftada üç gün.",
+          "id": "No. Monday, Wednesday and Friday. Three days a week.",
+          "literal": "no. Monday, Wednesday and Friday. week-in three day."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Peki salı ve perşembe ne yapıyorum?",
+          "id": "So what do I do on Tuesday and Thursday?",
+          "literal": "well Tuesday and Thursday what am-doing-I?"
+        },
+        {
+          "speaker": "Ayşe:",
+          "text": "Evde çalışıyorsun! Ödev veriyorum.",
+          "id": "You study at home! I give homework.",
+          "literal": "home-at are-studying-you! homework am-giving-I."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Anladım. Hafta sonu ders var mı?",
+          "id": "Got it. Are there classes on the weekend?",
+          "literal": "understood-I. week end-its lesson there-is question?"
+        },
+        {
+          "speaker": "Ayşe:",
+          "text": "Cumartesi bazen var, pazar hiç yok.",
+          "id": "Sometimes on Saturday, never on Sunday.",
+          "literal": "Saturday sometimes there-is, Sunday at-all there-isn't."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Sınav ne zaman?",
+          "id": "When's the exam?",
+          "literal": "exam what time?"
+        },
+        {
+          "speaker": "Ayşe:",
+          "text": "Aralık ayında, ayın on beşinde.",
+          "id": "In December, on the fifteenth.",
+          "literal": "December month-its-in, month-'s ten five-its-on."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Çok vaktim var o zaman. Teşekkürler!",
+          "id": "Then I've got plenty of time. Thanks!",
+          "literal": "much time-my there-is that time. thanks-plural!"
+        }
+      ],
+      "notes": [
+        "**Saat kaç? asks the time; saat kaçta? asks when.** The first wants a number (\"Saat üç\" — it's three o'clock). The second wants an appointment (\"Saat üçte\" — at three o'clock). One ending apart, two different questions.",
+        "**Day names aren't capitalized when they stand alone in mid-sentence** — but they are when they refer to a specific date. In everyday practice Turks capitalize both, and nobody minds.",
+        "**Haftada üç gün** — \"three days in a week\". To express frequency, Turkish puts *-de* on the unit of time: *günde iki kere* (twice a day), *ayda bir* (once a month), *yılda dört kez* (four times a year).",
+        "**Hiç means \"not at all\" or \"ever\".** With a negative sentence it adds force: *hiç yok* (there's none at all), *hiç bilmiyorum* (I have no idea at all). In a question it means \"ever\": *Hiç İstanbul'a gittin mi?* — \"Have you ever been to Istanbul?\""
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Telling the time",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "For the full hour, just *saat* + number. For half past, add *buçuk*. For quarters there are two phrases: *çeyrek geçiyor* (quarter past) and *çeyrek var* (quarter to)."
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Time",
+            "Türkçe",
+            "Say it"
+          ],
+          "rows": [
+            [
+              "3:00",
+              "Saat üç.",
+              "sa-AT üch"
+            ],
+            [
+              "3:30",
+              "Saat üç buçuk.",
+              "sa-AT üch bu-CHUK"
+            ],
+            [
+              "3:15",
+              "Üçü çeyrek geçiyor.",
+              "ü-CHÜ chey-REK ge-CHI-yor"
+            ],
+            [
+              "3:45",
+              "Dörde çeyrek var.",
+              "dör-DE chey-REK var"
+            ],
+            [
+              "12:00",
+              "Saat on iki.",
+              "sa-AT on i-KI"
+            ],
+            [
+              "12:30",
+              "Yarım.",
+              "ya-RUHM"
+            ],
+            [
+              "9:00 a.m.",
+              "Sabah dokuz.",
+              "sa-BAH do-KUZ"
+            ],
+            [
+              "9:00 p.m.",
+              "Akşam dokuz.",
+              "ak-SHAM do-KUZ"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "Half past twelve has a word of its own: **yarım** (12:30), and noon is *öğlen*. Don't confuse *yarım* with *buçuk*, which always attaches to another number."
+        },
+        {
+          "type": "sub",
+          "text": "At what time — the ending -de"
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Türkçe",
+            "English"
+          ],
+          "rows": [
+            [
+              "Saat kaçta?",
+              "At what time?"
+            ],
+            [
+              "Saat üçte.",
+              "At three."
+            ],
+            [
+              "Saat dokuzda.",
+              "At nine."
+            ],
+            [
+              "Saat yedide.",
+              "At seven."
+            ],
+            [
+              "Üç buçukta.",
+              "At half past three."
+            ],
+            [
+              "Sabah erken.",
+              "Early in the morning."
+            ]
+          ]
+        },
+        {
+          "type": "kotak",
+          "title": "Tricky numbers",
+          "items": [
+            "*Bir* takes *-de*: *birde*; *altı* and *yedi* become *altıda*, *yedide*. Numbers ending in a hard consonant take *-te*: *beşte*, *üçte*, *dörtte* — note the two t's in *dörtte*.",
+            "The safest method: say the number, listen to its last letter, then apply Fıstıkçı Şahap from Unit 5."
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Days, months, seasons",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "Türkçe",
+            "English",
+            "Where the word comes from"
+          ],
+          "rows": [
+            [
+              "pazartesi",
+              "Monday",
+              "the day after market day"
+            ],
+            [
+              "salı",
+              "Tuesday",
+              "from Hebrew"
+            ],
+            [
+              "çarşamba",
+              "Wednesday",
+              "from Persian \"fourth\""
+            ],
+            [
+              "perşembe",
+              "Thursday",
+              "from Persian \"fifth\""
+            ],
+            [
+              "cuma",
+              "Friday",
+              "from Arabic \"gathering\""
+            ],
+            [
+              "cumartesi",
+              "Saturday",
+              "the day after Friday"
+            ],
+            [
+              "pazar",
+              "Sunday",
+              "market day"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "Two day names are built with *ertesi* (\"the day after\"): *pazar-ertesi* → *pazartesi*, and *cuma-ertesi* → *cumartesi*. Once you see it, the two longest words on the list become easy."
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Month",
+            "Türkçe",
+            "Month",
+            "Türkçe"
+          ],
+          "rows": [
+            [
+              "January",
+              "Ocak",
+              "July",
+              "Temmuz"
+            ],
+            [
+              "February",
+              "Şubat",
+              "August",
+              "Ağustos"
+            ],
+            [
+              "March",
+              "Mart",
+              "September",
+              "Eylül"
+            ],
+            [
+              "April",
+              "Nisan",
+              "October",
+              "Ekim"
+            ],
+            [
+              "May",
+              "Mayıs",
+              "November",
+              "Kasım"
+            ],
+            [
+              "June",
+              "Haziran",
+              "December",
+              "Aralık"
+            ]
+          ]
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Season",
+            "Türkçe",
+            "Time of day",
+            "Türkçe"
+          ],
+          "rows": [
+            [
+              "spring",
+              "ilkbahar",
+              "morning",
+              "sabah"
+            ],
+            [
+              "summer",
+              "yaz",
+              "noon",
+              "öğlen"
+            ],
+            [
+              "fall",
+              "sonbahar",
+              "afternoon",
+              "ikindi"
+            ],
+            [
+              "winter",
+              "kış",
+              "evening / night",
+              "akşam / gece"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "title": "When, how often",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "Türkçe",
+            "English",
+            "Türkçe",
+            "English"
+          ],
+          "rows": [
+            [
+              "ne zaman",
+              "when",
+              "şimdi",
+              "now"
+            ],
+            [
+              "bugün",
+              "today",
+              "dün",
+              "yesterday"
+            ],
+            [
+              "yarın",
+              "tomorrow",
+              "önce",
+              "before, earlier"
+            ],
+            [
+              "sonra",
+              "after, later",
+              "hemen",
+              "right away"
+            ],
+            [
+              "hafta",
+              "week",
+              "hafta sonu",
+              "weekend"
+            ],
+            [
+              "ay",
+              "month",
+              "yıl / sene",
+              "year"
+            ],
+            [
+              "her gün",
+              "every day",
+              "her zaman",
+              "always"
+            ],
+            [
+              "genellikle",
+              "usually",
+              "bazen",
+              "sometimes"
+            ],
+            [
+              "nadiren",
+              "rarely",
+              "hiç",
+              "never"
+            ],
+            [
+              "erken",
+              "early",
+              "geç",
+              "late"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "Time words go **after the subject and before the verb**: *Ben her gün Türkçe çalışıyorum*. This order is flexible — the only thing that can't change is the verb's place at the end."
+        },
+        {
+          "type": "kotak",
+          "title": "Ay means two things",
+          "items": [
+            "*Ay* is both the moon in the sky and the month on the calendar — just as English *moon* and *month* come from the same old root. The Turkish flag has an *ay yıldız*, \"moon and star\".",
+            "*Ay!* is also a cry of surprise or pain, like \"ow!\". Context tells them apart, and they never get mixed up."
+          ]
+        },
+        {
+          "type": "kotak",
+          "title": "Unit 5 review",
+          "items": [
+            "Cover the Turkish and rebuild it from memory: \"Where are you?\" · \"I'm at school.\" · \"There's a bank across from the mosque.\" · \"The book is on the table.\" · \"No problem.\"",
+            "Then add the right location ending to: *kitap*, *sınıf*, *Ankara*, *ev*."
+          ]
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "tr": "saat",
+      "baca": "sa-AT",
+      "en": "hour, clock, time"
+    },
+    {
+      "tr": "buçuk",
+      "baca": "bu-CHUK",
+      "en": "and a half (after a number)"
+    },
+    {
+      "tr": "çeyrek",
+      "baca": "chey-REK",
+      "en": "quarter"
+    },
+    {
+      "tr": "ne zaman",
+      "baca": "ne za-MAN",
+      "en": "when"
+    },
+    {
+      "tr": "gün",
+      "baca": "gün",
+      "en": "day"
+    },
+    {
+      "tr": "hafta",
+      "baca": "haf-TA",
+      "en": "week"
+    },
+    {
+      "tr": "ay",
+      "baca": "ai",
+      "en": "month; moon"
+    },
+    {
+      "tr": "yıl, sene",
+      "baca": "yuhl, se-NE",
+      "en": "year"
+    },
+    {
+      "tr": "pazartesi",
+      "baca": "pa-zar-TE-si",
+      "en": "Monday"
+    },
+    {
+      "tr": "salı",
+      "baca": "sa-LUH",
+      "en": "Tuesday"
+    },
+    {
+      "tr": "çarşamba",
+      "baca": "char-sham-BA",
+      "en": "Wednesday"
+    },
+    {
+      "tr": "perşembe",
+      "baca": "per-shem-BE",
+      "en": "Thursday"
+    },
+    {
+      "tr": "cuma",
+      "baca": "ju-MA",
+      "en": "Friday"
+    },
+    {
+      "tr": "cumartesi",
+      "baca": "ju-mar-TE-si",
+      "en": "Saturday"
+    },
+    {
+      "tr": "pazar",
+      "baca": "pa-ZAR",
+      "en": "Sunday; market"
+    },
+    {
+      "tr": "hafta sonu",
+      "baca": "haf-TA so-NU",
+      "en": "weekend"
+    },
+    {
+      "tr": "sabah",
+      "baca": "sa-BAH",
+      "en": "morning"
+    },
+    {
+      "tr": "öğlen",
+      "baca": "öö-LEN",
+      "en": "noon, midday"
+    },
+    {
+      "tr": "gece",
+      "baca": "ge-JE",
+      "en": "night"
+    },
+    {
+      "tr": "dün",
+      "baca": "dün",
+      "en": "yesterday"
+    },
+    {
+      "tr": "önce / sonra",
+      "baca": "ÖN-je / son-RA",
+      "en": "before / after"
+    },
+    {
+      "tr": "erken / geç",
+      "baca": "er-KEN / gech",
+      "en": "early / late"
+    },
+    {
+      "tr": "her",
+      "baca": "her",
+      "en": "every"
+    },
+    {
+      "tr": "bazen",
+      "baca": "BA-zen",
+      "en": "sometimes"
+    },
+    {
+      "tr": "genellikle",
+      "baca": "ge-nel-lik-LE",
+      "en": "usually"
+    },
+    {
+      "tr": "hiç",
+      "baca": "hich",
+      "en": "never, (not) at all"
+    },
+    {
+      "tr": "ödev",
+      "baca": "ö-DEV",
+      "en": "homework"
+    },
+    {
+      "tr": "sınav",
+      "baca": "suh-NAV",
+      "en": "exam"
+    },
+    {
+      "tr": "başlamak",
+      "baca": "bash-la-MAK",
+      "en": "to begin, to start"
+    },
+    {
+      "tr": "devam etmek",
+      "baca": "de-VAM et-MEK",
+      "en": "to continue"
+    },
+    {
+      "tr": "kadar",
+      "baca": "ka-DAR",
+      "en": "until; as much as"
+    },
+    {
+      "tr": "yaz / kış",
+      "baca": "yaz / kuhsh",
+      "en": "summer / winter"
+    }
+  ],
+  "exercises": [
+    {
+      "prompt": "Write the time in Turkish.",
+      "items": [
+        "5:00 → ____",
+        "7:30 → ____",
+        "10:15 → ____",
+        "12:30 → ____",
+        "2:45 → ____",
+        "8:00 p.m. → ____"
+      ]
+    },
+    {
+      "prompt": "Fill in the blanks with the time ending *-de/-da/-te/-ta*.",
+      "items": [
+        "Ders saat dokuz____ başlıyor.",
+        "Sınav aralık ay____.",
+        "Hafta____ üç gün ders var.",
+        "Saat üç____ buluşalım.",
+        "Sabah yedi____ kalkıyorum.",
+        "Cumartesi akşam____ maç var."
+      ]
+    },
+    {
+      "prompt": "Translate into Turkish.",
+      "items": [
+        "What time is it now?",
+        "Classes start on Monday.",
+        "I study every day.",
+        "I don't work on the weekend.",
+        "When's the exam?",
+        "Sometimes I drink coffee."
+      ]
+    },
+    {
+      "prompt": "Put the words in the right order.",
+      "items": [
+        "kaç / saat / ?",
+        "başlıyor / ders / pazartesi",
+        "çalışıyorum / her / Türkçe / gün",
+        "var / mı / ders / hafta sonu / ?",
+        "zaman / sınav / ne / ?",
+        "kalkıyorum / yedide / sabah / ben"
+      ]
+    }
+  ],
+  "answers": [
+    "Saat beş. — Saat yedi buçuk. — Onu çeyrek geçiyor. — Yarım. — Üçe çeyrek var. — Akşam sekiz.",
+    "dokuzda — ayında — Haftada — üçte — yedide — akşamı",
+    "Saat kaç? — Ders pazartesi başlıyor. — Her gün çalışıyorum. — Hafta sonu çalışmıyorum. — Sınav ne zaman? — Bazen kahve içiyorum.",
+    "Saat kaç? — Ders pazartesi başlıyor. — Her gün Türkçe çalışıyorum. — Hafta sonu ders var mı? — Sınav ne zaman? — Ben sabah yedide kalkıyorum."
+  ]
+}

@@ -1,0 +1,623 @@
+{
+  "title": "That's how it is every day",
+  "title_target": "Her gün böyle olur",
+  "goal": "Talk about habits and general truths with the aorist *-ir*, and use it for polite requests.",
+  "bekal": [
+    "forming *gelirim, gelmem, gelir misin*",
+    "telling habits (*-ir*) apart from what's happening now (*-yor*)",
+    "asking for something politely: *bir çay alır mısınız?*"
+  ],
+  "dialogs": [
+    {
+      "title": "Dialogue — Mutfakta sohbet",
+      "intro": "Saturday morning. Fatma Hanım is making breakfast; Budi is helping slice tomatoes.",
+      "lines": [
+        {
+          "speaker": "Fatma:",
+          "text": "Budi, sen sabahları ne yaparsın?",
+          "id": "Budi, what do you usually do in the mornings?",
+          "literal": "Budi, you morning-s-its what do-you?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Genellikle erken kalkarım, sonra biraz Türkçe çalışırım.",
+          "id": "I usually get up early, then study a little Turkish.",
+          "literal": "usually early get-up-I, then a-little Turkish-language work-I."
+        },
+        {
+          "speaker": "Fatma:",
+          "text": "Kahvaltı yapar mısın?",
+          "id": "Do you eat breakfast?",
+          "literal": "breakfast do question-you?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Bazen. Endonezya'da genellikle pirinç yeriz.",
+          "id": "Sometimes. In Indonesia we usually eat rice.",
+          "literal": "sometimes. Indonesia-in usually rice eat-we."
+        },
+        {
+          "speaker": "Fatma:",
+          "text": "Sabah sabah pirinç mi? İnanmam!",
+          "id": "Rice first thing in the morning? I don't believe it!",
+          "literal": "morning morning rice question? not-believe-I!"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Gerçek! Peki Türkler kahvaltıda ne yer?",
+          "id": "It's true! So what do Turks eat for breakfast?",
+          "literal": "true! well Turk-s breakfast-at what eat?"
+        },
+        {
+          "speaker": "Fatma:",
+          "text": "Peynir, zeytin, domates, ekmek. Ve tabii çay içeriz.",
+          "id": "Cheese, olives, tomatoes, bread. And of course we drink tea.",
+          "literal": "cheese, olive, tomato, bread. and of-course tea drink-we."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Günde kaç bardak çay içersiniz?",
+          "id": "How many glasses of tea do you drink a day?",
+          "literal": "day-in how-many glass tea drink-you(formal)?"
+        },
+        {
+          "speaker": "Fatma:",
+          "text": "Ben mi? On, on beş. Az içerim!",
+          "id": "Me? Ten, fifteen. I drink very little!",
+          "literal": "I question? ten, ten five. little drink-I!"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Az mı?! Ben günde iki içerim, yeter.",
+          "id": "Little?! I drink two a day, and that's enough.",
+          "literal": "little question?! I day-in two drink-I, enough."
+        },
+        {
+          "speaker": "Fatma:",
+          "text": "Alışırsın. Herkes alışır. Bir bardak daha alır mısın?",
+          "id": "You'll get used to it. Everyone does. Will you have another glass?",
+          "literal": "get-used-you. everyone gets-used. one glass more take question-you?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Alırım tabii. Elinize sağlık!",
+          "id": "Of course I will. Thank you for the food!",
+          "literal": "take-I of-course. hand-your-to health!"
+        }
+      ],
+      "notes": [
+        "**Sabahları means \"in the mornings\", not \"early in the morning\".** The plural + *-ı* on a time word turns it into a habit: *sabahları*, *akşamları*, *pazartesileri*, *kışları*. This form always pairs with an *-ir* verb.",
+        "**İnanmam is a negative, not a typo.** The aorist has its own negative that doesn't follow any other pattern: *ben* takes *-mem/-mam*, *biz* takes *-meyiz/-mayız*. Everyone else takes *-mez/-maz*.",
+        "**Alır mısın? is a polite way to offer.** The aorist is used for gentle requests, much like \"would you ...\" in English. *Kapıyı kapatır mısın?* (would you close the door?), *Bir dakika bekler misiniz?* (could you wait a moment?).",
+        "**In Turkey, tea isn't measured in cups but in *ince belli bardak*** — small tulip-shaped glasses. Fifteen glasses a day is no joke: Turkey drinks more tea per person than any other country in the world."
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "The aorist -ir: habits and truths",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "The form Turks call *geniş zaman* — \"broad time\" — is used for things that are **always, usually or basically** true. It's not a specific time; it's time without limits."
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Stem type",
+            "Suffix",
+            "Example"
+          ],
+          "rows": [
+            [
+              "ends in a vowel",
+              "**-r**",
+              "bekle-**r**, oku-**r**, başla-**r**"
+            ],
+            [
+              "one syllable, ends in a consonant",
+              "**-ar / -er**",
+              "yap-**ar**, git-me → gi**der**, yaz-**ar**"
+            ],
+            [
+              "more than one syllable",
+              "**-ir / -ır / -ur / -ür**",
+              "çalış-**ır**, otur-**ur**, konuş-**ur**"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "Thirteen one-syllable verbs rebel and take *-ir* instead of *-er*. They're all very common words, so you'll pick them up without trying:"
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Verb",
+            "Aorist",
+            "Verb",
+            "Aorist"
+          ],
+          "rows": [
+            [
+              "almak",
+              "alır",
+              "bilmek",
+              "bilir"
+            ],
+            [
+              "bulmak",
+              "bulur",
+              "durmak",
+              "durur"
+            ],
+            [
+              "gelmek",
+              "gelir",
+              "görmek",
+              "görür"
+            ],
+            [
+              "kalmak",
+              "kalır",
+              "olmak",
+              "olur"
+            ],
+            [
+              "ölmek",
+              "ölür",
+              "sanmak",
+              "sanır"
+            ],
+            [
+              "varmak",
+              "varır",
+              "vermek",
+              "verir"
+            ],
+            [
+              "vurmak",
+              "vurur",
+              "",
+              ""
+            ]
+          ]
+        },
+        {
+          "type": "sub",
+          "text": "Person endings"
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "",
+            "gelmek",
+            "yapmak",
+            "çalışmak",
+            "beklemek"
+          ],
+          "rows": [
+            [
+              "ben",
+              "gelir**im**",
+              "yapar**ım**",
+              "çalışır**ım**",
+              "bekler**im**"
+            ],
+            [
+              "sen",
+              "gelir**sin**",
+              "yapar**sın**",
+              "çalışır**sın**",
+              "bekler**sin**"
+            ],
+            [
+              "o",
+              "gelir",
+              "yapar",
+              "çalışır",
+              "bekler"
+            ],
+            [
+              "biz",
+              "gelir**iz**",
+              "yapar**ız**",
+              "çalışır**ız**",
+              "bekler**iz**"
+            ],
+            [
+              "siz",
+              "gelir**siniz**",
+              "yapar**sınız**",
+              "çalışır**sınız**",
+              "bekler**siniz**"
+            ],
+            [
+              "onlar",
+              "gelir**ler**",
+              "yapar**lar**",
+              "çalışır**lar**",
+              "bekler**ler**"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "title": "A negative all its own",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "This is the one place in all of Turkish that really has to be memorized separately. The negative of *geniş zaman* doesn't use *-ir* at all:"
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "",
+            "Positive",
+            "Negative",
+            "English"
+          ],
+          "rows": [
+            [
+              "ben",
+              "gelirim",
+              "gel**mem**",
+              "I don't (ever) come"
+            ],
+            [
+              "sen",
+              "gelirsin",
+              "gel**mezsin**",
+              "you don't come"
+            ],
+            [
+              "o",
+              "gelir",
+              "gel**mez**",
+              "he/she doesn't come"
+            ],
+            [
+              "biz",
+              "geliriz",
+              "gel**meyiz**",
+              "we don't come"
+            ],
+            [
+              "siz",
+              "gelirsiniz",
+              "gel**mezsiniz**",
+              "you (formal) don't come"
+            ],
+            [
+              "onlar",
+              "gelirler",
+              "gel**mezler**",
+              "they don't come"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "For stems with back vowels, the forms are *-mam*, *-mazsın*, *-maz*, *-mayız*, *-mazsınız*, *-mazlar*: *yapmam*, *anlamaz*, *çalışmayız*."
+        },
+        {
+          "type": "kotak",
+          "title": "Olmaz — a word you'll hear every day",
+          "items": [
+            "*Olmaz* is the *geniş zaman* negative of *olmak*, and it means \"can't, not allowed, no way\". It turns down offers, prices, ideas and plans.",
+            "Its partner is *olur* — \"fine, OK, sure\". These two words are the yes and no buttons of everyday Turkish life, and you've been using them since unit 9 without knowing the form."
+          ]
+        },
+        {
+          "type": "sub",
+          "text": "Asking and requesting"
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Türkçe",
+            "English",
+            "Tone"
+          ],
+          "rows": [
+            [
+              "Çay içer misin?",
+              "Do you drink tea?",
+              "habit / offer"
+            ],
+            [
+              "Kapıyı kapatır mısın?",
+              "Would you close the door?",
+              "polite request"
+            ],
+            [
+              "Bir dakika bekler misiniz?",
+              "Could you wait a moment?",
+              "very polite request"
+            ],
+            [
+              "Yardım eder misin?",
+              "Can you help?",
+              "request"
+            ],
+            [
+              "Ne dersin?",
+              "What do you think?",
+              "asking for an opinion"
+            ],
+            [
+              "Olur mu?",
+              "Is that OK?",
+              "suggesting"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "title": "-ir or -yor?",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "Aorist -ir",
+            "-yor form",
+            "The difference"
+          ],
+          "rows": [
+            [
+              "Her sabah çay içerim.",
+              "Şimdi çay içiyorum.",
+              "habit / right now"
+            ],
+            [
+              "Sigara içmem.",
+              "Sigara içmiyorum.",
+              "never / not at the moment"
+            ],
+            [
+              "Türkçe konuşurum.",
+              "Türkçe konuşuyorum.",
+              "can & usually do / speaking now"
+            ],
+            [
+              "Su yüz derecede kaynar.",
+              "Su kaynıyor.",
+              "general truth / the water is boiling"
+            ],
+            [
+              "Yarın gelirim.",
+              "Yarın geliyorum.",
+              "I'll come if needed / definitely coming"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "The subtlest difference is in the last row. *Yarın gelirim* sounds like willingness (\"I can come tomorrow\"), while *yarın geliyorum* is a settled plan. For a binding promise, Turks choose *-ecek*: *yarın geleceğim*."
+        },
+        {
+          "type": "kotak",
+          "title": "Adverbs that call for -ir",
+          "items": [
+            "Some words almost always pair with the aorist: *her gün*, *her zaman*, *genellikle*, *bazen*, *hiç*, *sık sık* (often), *nadiren* (rarely), *asla* (never ever).",
+            "If one of these words shows up in your sentence, the verb is almost certainly *-ir*, not *-yor*."
+          ]
+        },
+        {
+          "type": "kotak",
+          "title": "Unit 11 review",
+          "items": [
+            "Cover the Turkish and rebuild these from memory: \"What did you do yesterday?\" · \"I went to Sultanahmet.\" · \"Did you see Hagia Sophia?\" · \"I was very tired yesterday.\" · \"Then I came back by ferry.\"",
+            "Then put these into the past: *geliyorum*, *yapıyorsun*, *görüyor*, *yorgunum*."
+          ]
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "tr": "genellikle",
+      "baca": "ge-nel-lik-LE",
+      "en": "usually"
+    },
+    {
+      "tr": "sık sık",
+      "baca": "suhk suhk",
+      "en": "often"
+    },
+    {
+      "tr": "nadiren",
+      "baca": "NA-di-ren",
+      "en": "rarely"
+    },
+    {
+      "tr": "asla",
+      "baca": "AS-la",
+      "en": "never ever"
+    },
+    {
+      "tr": "herkes",
+      "baca": "HER-kes",
+      "en": "everyone"
+    },
+    {
+      "tr": "sabahları",
+      "baca": "sa-bah-la-RUH",
+      "en": "in the mornings"
+    },
+    {
+      "tr": "kahvaltı yapmak",
+      "baca": "kah-val-TUH yap-MAK",
+      "en": "to have breakfast"
+    },
+    {
+      "tr": "pirinç",
+      "baca": "pi-RINCH",
+      "en": "rice"
+    },
+    {
+      "tr": "zeytin",
+      "baca": "zey-TIN",
+      "en": "olive"
+    },
+    {
+      "tr": "bardak",
+      "baca": "bar-DAK",
+      "en": "glass"
+    },
+    {
+      "tr": "mutfak",
+      "baca": "mut-FAK",
+      "en": "kitchen"
+    },
+    {
+      "tr": "sohbet",
+      "baca": "soh-BET",
+      "en": "chat"
+    },
+    {
+      "tr": "alışmak",
+      "baca": "a-luhsh-MAK",
+      "en": "to get used to"
+    },
+    {
+      "tr": "inanmak",
+      "baca": "i-nan-MAK",
+      "en": "to believe"
+    },
+    {
+      "tr": "yetmek",
+      "baca": "yet-MEK",
+      "en": "to be enough"
+    },
+    {
+      "tr": "kapatmak",
+      "baca": "ka-pat-MAK",
+      "en": "to close"
+    },
+    {
+      "tr": "açmak",
+      "baca": "ach-MAK",
+      "en": "to open, turn on"
+    },
+    {
+      "tr": "durmak",
+      "baca": "dur-MAK",
+      "en": "to stop"
+    },
+    {
+      "tr": "vermek",
+      "baca": "ver-MEK",
+      "en": "to give"
+    },
+    {
+      "tr": "bulmak",
+      "baca": "bul-MAK",
+      "en": "to find"
+    },
+    {
+      "tr": "oturmak",
+      "baca": "o-tur-MAK",
+      "en": "to sit, live (somewhere)"
+    },
+    {
+      "tr": "kalkmak",
+      "baca": "kalk-MAK",
+      "en": "to get up"
+    },
+    {
+      "tr": "sigara",
+      "baca": "si-ga-RA",
+      "en": "cigarette"
+    },
+    {
+      "tr": "gerçek",
+      "baca": "ger-CHEK",
+      "en": "reality, real"
+    },
+    {
+      "tr": "daha",
+      "baca": "da-HA",
+      "en": "more; again"
+    },
+    {
+      "tr": "böyle / şöyle",
+      "baca": "BÖY-le / SHÖY-le",
+      "en": "like this / like that"
+    },
+    {
+      "tr": "yeter",
+      "baca": "ye-TER",
+      "en": "that's enough"
+    },
+    {
+      "tr": "olur / olmaz",
+      "baca": "o-LUR / ol-MAZ",
+      "en": "OK / not OK"
+    },
+    {
+      "tr": "ne dersin?",
+      "baca": "ne der-SIN",
+      "en": "what do you think?"
+    },
+    {
+      "tr": "günde",
+      "baca": "gün-DE",
+      "en": "a day (frequency)"
+    }
+  ],
+  "exercises": [
+    {
+      "prompt": "Put into the aorist *-ir* for *ben*.",
+      "items": [
+        "gelmek → ____",
+        "yapmak → ____",
+        "çalışmak → ____",
+        "beklemek → ____",
+        "almak → ____",
+        "içmek → ____"
+      ]
+    },
+    {
+      "prompt": "Make it negative (watch out for the special form).",
+      "items": [
+        "gelirim → ____",
+        "yaparsın → ____",
+        "içer → ____",
+        "çalışırız → ____",
+        "bilirsiniz → ____",
+        "anlarlar → ____"
+      ]
+    },
+    {
+      "prompt": "Choose the right form: *-ir* or *-yor*. Write the full sentence.",
+      "items": [
+        "I drink tea every morning. ____",
+        "I'm drinking tea right now. ____",
+        "I don't smoke. ____",
+        "He's studying. ____",
+        "We usually eat rice. ____",
+        "Would you close the door? ____"
+      ]
+    },
+    {
+      "prompt": "Put the words in the right order.",
+      "items": [
+        "yaparsın / sabahları / ne / ?",
+        "kalkarım / genellikle / erken",
+        "içeriz / çay / her gün",
+        "içmem / sigara / ben",
+        "mısın / bir / alır / bardak / daha / ?",
+        "alışırsın / sen / de"
+      ]
+    }
+  ],
+  "answers": [
+    "gelirim — yaparım — çalışırım — beklerim — alırım — içerim",
+    "gelmem — yapmazsın — içmez — çalışmayız — bilmezsiniz — anlamazlar",
+    "Her sabah çay içerim. — Şimdi çay içiyorum. — Sigara içmem. — Ders çalışıyor. — Genellikle pirinç yeriz. — Kapıyı kapatır mısın?",
+    "Sabahları ne yaparsın? — Genellikle erken kalkarım. — Her gün çay içeriz. — Ben sigara içmem. — Bir bardak daha alır mısın? — Sen de alışırsın."
+  ]
+}

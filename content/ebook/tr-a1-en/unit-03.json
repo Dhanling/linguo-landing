@@ -1,0 +1,579 @@
+{
+  "title": "There is, there isn't",
+  "title_target": "Var mı, yok mu?",
+  "goal": "Say that something exists or doesn't, ask yes/no questions with *mı*, and count from zero to a million.",
+  "bekal": [
+    "use *var* and *yok* for existence and possession",
+    "make yes/no questions with *mı/mi/mu/mü*, written as a separate word",
+    "say numbers into the thousands and ask how many with *kaç*"
+  ],
+  "dialogs": [
+    {
+      "title": "Dialogue — Bakkalda",
+      "intro": "Budi walks into the little corner shop at the end of the street. The shopkeeper, Mehmet Amca, is watching TV.",
+      "lines": [
+        {
+          "speaker": "Budi:",
+          "text": "İyi günler! Su var mı?",
+          "id": "Good afternoon! Do you have water?",
+          "literal": "good day-s! water there-is question?"
+        },
+        {
+          "speaker": "Mehmet:",
+          "text": "Var tabii. Küçük mü, büyük mü?",
+          "id": "Of course. Small or large?",
+          "literal": "there-is of-course. small question, large question?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Büyük lütfen. Ekmek de var mı?",
+          "id": "Large, please. Do you have bread too?",
+          "literal": "large please. bread too there-is question?"
+        },
+        {
+          "speaker": "Mehmet:",
+          "text": "Maalesef ekmek yok. Yarın var.",
+          "id": "Sorry, there's no bread. There will be tomorrow.",
+          "literal": "unfortunately bread there-isn't. tomorrow there-is."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Peki. Kaç lira?",
+          "id": "OK. How many lira?",
+          "literal": "well. how-many lira?"
+        },
+        {
+          "speaker": "Mehmet:",
+          "text": "On beş lira. Sen öğrenci misin?",
+          "id": "Fifteen lira. Are you a student?",
+          "literal": "ten five lira. you student question-you-are?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Evet, öğrenciyim. Nasıl bildiniz?",
+          "id": "Yes, I'm a student. How did you know?",
+          "literal": "yes, student-I-am. how knew-you?"
+        },
+        {
+          "speaker": "Mehmet:",
+          "text": "Burada çok öğrenci var. Sen Türk değilsin, değil mi?",
+          "id": "There are lots of students here. You're not Turkish, are you?",
+          "literal": "here many student there-is. you Turk not-you-are, not question?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Hayır, Endonezyalıyım.",
+          "id": "No, I'm from Indonesia.",
+          "literal": "no, Indonesia-from-I-am."
+        },
+        {
+          "speaker": "Mehmet:",
+          "text": "Maşallah! Endonezya çok uzak. Ailen burada mı?",
+          "id": "Mashallah! Indonesia is so far. Is your family here?",
+          "literal": "mashallah! Indonesia very far. family-your here question?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Hayır, ailem Jakarta'da. Burada arkadaşım yok.",
+          "id": "No, my family is in Jakarta. I don't have any friends here.",
+          "literal": "no, family-my Jakarta-in. here friend-my there-isn't."
+        },
+        {
+          "speaker": "Mehmet:",
+          "text": "Şimdi var! Buyur, çay içelim.",
+          "id": "Now you do! Come, let's have some tea.",
+          "literal": "now there-is! please, tea let-us-drink."
+        }
+      ],
+      "notes": [
+        "**Var and yok are a pair, and neither is a verb.** *Var* means \"there is, available\", *yok* means \"there isn't\". Note that you don't negate *var* with *değil* — Turkish has a separate word for that.",
+        "**There is no verb \"to have\" in Turkish.** Instead you say \"my X exists\": *arkadaşım var* = \"my friend exists\" = I have a friend. *Param yok* = \"my money doesn't exist\" = I have no money. The thing gets a possessive ending first, then *var* or *yok* closes the sentence.",
+        "**Değil mi? is a tag question** — \"isn't it?\", \"aren't you?\", \"right?\". It goes at the end of the sentence to ask for agreement, and its form never changes, no matter who the sentence is about: *Güzel, değil mi?*, *Öğrencisin, değil mi?*",
+        "**Amca, teyze, abi, abla are used with strangers.** Literally \"uncle, aunt, big brother, big sister\", but Turks use them for anyone a little or a lot older. Calling the shopkeeper *amca* is far warmer than calling him *bey*."
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Asking with mı — a word that stands alone",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "To make a yes/no question, Turkish doesn't swap the word order or add a helper like *do*. It adds one particle: **mı / mi / mu / mü**, chosen by vowel harmony and **written separately** from the word before it."
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Statement",
+            "Question",
+            "English"
+          ],
+          "rows": [
+            [
+              "Su var.",
+              "Su var **mı**?",
+              "Is there water?"
+            ],
+            [
+              "Ekmek yok.",
+              "Ekmek yok **mu**?",
+              "Is there no bread?"
+            ],
+            [
+              "Bu güzel.",
+              "Bu güzel **mi**?",
+              "Is this nice?"
+            ],
+            [
+              "Türk.",
+              "Türk **mü**?",
+              "Is he Turkish?"
+            ],
+            [
+              "Öğrencisin.",
+              "Öğrenci **misin**?",
+              "Are you a student?"
+            ],
+            [
+              "Öğretmensiniz.",
+              "Öğretmen **misiniz**?",
+              "Are you a teacher? (formal)"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "Look at the last two rows: the person ending **moves onto the particle**. Not *öğrencisin mi*, but *öğrenci misin*. The rule holds: the question particle stands alone as a word, and the person ending attaches to it."
+        },
+        {
+          "type": "kotak",
+          "title": "Where it goes decides what it means",
+          "items": [
+            "*mı* is placed after **the word being asked about**, and moving it changes the meaning of the sentence:",
+            "*Budi yarın Ankara'ya mı gidiyor?* — \"Is it to ANKARA that Budi is going tomorrow?\" · *Budi yarın mı Ankara'ya gidiyor?* — \"Is it TOMORROW that Budi is going to Ankara?\" · *Budi mi yarın Ankara'ya gidiyor?* — \"Is it BUDI who is going to Ankara tomorrow?\"",
+            "If nothing needs highlighting, put it at the end of the sentence, before the person ending — that's the neutral form."
+          ]
+        },
+        {
+          "type": "sub",
+          "text": "Questions without a yes/no answer"
+        },
+        {
+          "type": "p",
+          "text": "If your question uses a question word — *ne*, *kim*, *nerede*, *kaç* — the particle *mı* is NOT used. *Bu ne mi?* is wrong; the right form is *Bu ne?*"
+        }
+      ]
+    },
+    {
+      "title": "Numbers",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "Number",
+            "Türkçe",
+            "Say it",
+            "Number",
+            "Türkçe",
+            "Say it"
+          ],
+          "rows": [
+            [
+              "0",
+              "sıfır",
+              "suh-FUHR",
+              "10",
+              "on",
+              "on"
+            ],
+            [
+              "1",
+              "bir",
+              "bir",
+              "20",
+              "yirmi",
+              "yir-MI"
+            ],
+            [
+              "2",
+              "iki",
+              "i-KI",
+              "30",
+              "otuz",
+              "o-TUZ"
+            ],
+            [
+              "3",
+              "üç",
+              "üch",
+              "40",
+              "kırk",
+              "kuhrk"
+            ],
+            [
+              "4",
+              "dört",
+              "dört",
+              "50",
+              "elli",
+              "el-LI"
+            ],
+            [
+              "5",
+              "beş",
+              "besh",
+              "60",
+              "altmış",
+              "alt-MUHSH"
+            ],
+            [
+              "6",
+              "altı",
+              "al-TUH",
+              "70",
+              "yetmiş",
+              "yet-MISH"
+            ],
+            [
+              "7",
+              "yedi",
+              "ye-DI",
+              "80",
+              "seksen",
+              "sek-SEN"
+            ],
+            [
+              "8",
+              "sekiz",
+              "se-KIZ",
+              "90",
+              "doksan",
+              "dok-SAN"
+            ],
+            [
+              "9",
+              "dokuz",
+              "do-KUZ",
+              "100",
+              "yüz",
+              "yüz"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "Compound numbers are said **from largest to smallest, with no linking word at all**: *on bir* (11), *yirmi beş* (25), *kırk yedi* (47), *yüz elli* (150), *bin dokuz yüz doksan dokuz* (1999). No \"and\", no hyphen — just line them up."
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Türkçe",
+            "Number",
+            "Note"
+          ],
+          "rows": [
+            [
+              "bin",
+              "1,000",
+              "NEVER *bir bin*"
+            ],
+            [
+              "iki bin",
+              "2,000",
+              ""
+            ],
+            [
+              "on bin",
+              "10,000",
+              ""
+            ],
+            [
+              "yüz bin",
+              "100,000",
+              ""
+            ],
+            [
+              "bir milyon",
+              "1,000,000",
+              "here *bir* IS used"
+            ],
+            [
+              "buçuk",
+              "half",
+              "iki buçuk = two and a half"
+            ],
+            [
+              "yarım",
+              "half (on its own)",
+              "yarım ekmek = half a loaf"
+            ]
+          ]
+        },
+        {
+          "type": "kotak",
+          "title": "Bin without bir, yüz without bir",
+          "items": [
+            "\"A hundred\" is *yüz*, not *bir yüz*. \"A thousand\" is *bin*, not *bir bin*. Adding *bir* in front of either sounds like a foreigner's mistake — and it usually is.",
+            "But from a million up, *bir* is required again: *bir milyon*, *bir milyar*."
+          ]
+        },
+        {
+          "type": "sub",
+          "text": "Asking about quantity and price"
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Question",
+            "Say it",
+            "Meaning"
+          ],
+          "rows": [
+            [
+              "Kaç?",
+              "kach",
+              "How many?"
+            ],
+            [
+              "Kaç tane?",
+              "kach ta-NE",
+              "How many (items)?"
+            ],
+            [
+              "Kaç lira?",
+              "kach li-RA",
+              "How many lira?"
+            ],
+            [
+              "Ne kadar?",
+              "ne ka-DAR",
+              "How much is it?"
+            ],
+            [
+              "Kaç yaşındasın?",
+              "kach ya-SHUHN-da-suhn",
+              "How old are you?"
+            ],
+            [
+              "Kaç kişi?",
+              "kach ki-SHI",
+              "How many people?"
+            ]
+          ]
+        },
+        {
+          "type": "kotak",
+          "title": "Unit 1 review",
+          "items": [
+            "Cover the Turkish and rebuild it from memory: \"Good evening, ma'am.\" · \"Nice to meet you.\" · \"Where are you from?\" · \"I'm learning Turkish.\" · \"See you!\"",
+            "This is the second time you've pulled these sentences from memory. The two-unit gap is deliberate."
+          ]
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "tr": "var / yok",
+      "baca": "var / yok",
+      "en": "there is / there isn't"
+    },
+    {
+      "tr": "mı, mi, mu, mü",
+      "baca": "muh, mi, mu, mü",
+      "en": "question particle"
+    },
+    {
+      "tr": "değil mi?",
+      "baca": "de-YIL mi",
+      "en": "isn't it? right?"
+    },
+    {
+      "tr": "kaç",
+      "baca": "kach",
+      "en": "how many"
+    },
+    {
+      "tr": "tane",
+      "baca": "ta-NE",
+      "en": "piece, item (counter word)"
+    },
+    {
+      "tr": "lira",
+      "baca": "li-RA",
+      "en": "lira (Turkish currency)"
+    },
+    {
+      "tr": "bakkal",
+      "baca": "bak-KAL",
+      "en": "corner shop, grocery"
+    },
+    {
+      "tr": "ekmek",
+      "baca": "ek-MEK",
+      "en": "bread"
+    },
+    {
+      "tr": "su",
+      "baca": "su",
+      "en": "water"
+    },
+    {
+      "tr": "çay",
+      "baca": "chai",
+      "en": "tea"
+    },
+    {
+      "tr": "küçük / büyük",
+      "baca": "kü-CHÜK / bü-YÜK",
+      "en": "small / big"
+    },
+    {
+      "tr": "aile",
+      "baca": "a-i-LE",
+      "en": "family"
+    },
+    {
+      "tr": "arkadaş",
+      "baca": "ar-ka-DASH",
+      "en": "friend"
+    },
+    {
+      "tr": "amca / teyze",
+      "baca": "am-JA / tey-ZE",
+      "en": "uncle / aunt (also as a form of address)"
+    },
+    {
+      "tr": "abi / abla",
+      "baca": "a-BI / AB-la",
+      "en": "big brother / big sister"
+    },
+    {
+      "tr": "burada",
+      "baca": "BU-ra-da",
+      "en": "here"
+    },
+    {
+      "tr": "orada",
+      "baca": "O-ra-da",
+      "en": "there"
+    },
+    {
+      "tr": "şimdi",
+      "baca": "SHIM-di",
+      "en": "now"
+    },
+    {
+      "tr": "yarın",
+      "baca": "ya-RUHN",
+      "en": "tomorrow"
+    },
+    {
+      "tr": "bugün",
+      "baca": "bu-GÜN",
+      "en": "today"
+    },
+    {
+      "tr": "lütfen",
+      "baca": "LÜT-fen",
+      "en": "please"
+    },
+    {
+      "tr": "tabii",
+      "baca": "ta-BII",
+      "en": "of course"
+    },
+    {
+      "tr": "maalesef",
+      "baca": "ma-a-le-SEF",
+      "en": "unfortunately"
+    },
+    {
+      "tr": "uzak / yakın",
+      "baca": "u-ZAK / ya-KUHN",
+      "en": "far / near"
+    },
+    {
+      "tr": "yaş",
+      "baca": "yash",
+      "en": "age"
+    },
+    {
+      "tr": "kişi",
+      "baca": "ki-SHI",
+      "en": "person (for counting)"
+    },
+    {
+      "tr": "buçuk",
+      "baca": "bu-CHUK",
+      "en": "and a half (after a number)"
+    },
+    {
+      "tr": "sıfır",
+      "baca": "suh-FUHR",
+      "en": "zero"
+    },
+    {
+      "tr": "bin",
+      "baca": "bin",
+      "en": "thousand"
+    },
+    {
+      "tr": "yüz",
+      "baca": "yüz",
+      "en": "hundred; also: face"
+    }
+  ],
+  "exercises": [
+    {
+      "prompt": "Write these numbers out in words.",
+      "items": [
+        "7 → ____",
+        "13 → ____",
+        "28 → ____",
+        "45 → ____",
+        "160 → ____",
+        "2,500 → ____"
+      ]
+    },
+    {
+      "prompt": "Turn these into questions with the right question particle.",
+      "items": [
+        "Su var. → ____",
+        "Bu güzel. → ____",
+        "Ekmek yok. → ____",
+        "Öğretmensin. → ____",
+        "O Türk. → ____",
+        "Burada okul var. → ____"
+      ]
+    },
+    {
+      "prompt": "Translate into Turkish. Remember: \"to have\" = possessive ending + *var*.",
+      "items": [
+        "I have a friend.",
+        "I have no money.",
+        "There are lots of students here.",
+        "There's no bread.",
+        "Do you have a key? (formal)",
+        "My family is in Jakarta."
+      ]
+    },
+    {
+      "prompt": "Put the words in the right order.",
+      "items": [
+        "var / su / mı / ?",
+        "yok / param / benim",
+        "lira / kaç / ?",
+        "misin / sen / öğrenci / ?",
+        "çok / burada / var / öğrenci",
+        "mi / güzel / değil / ?"
+      ]
+    }
+  ],
+  "answers": [
+    "yedi — on üç — yirmi sekiz — kırk beş — yüz altmış — iki bin beş yüz",
+    "Su var mı? — Bu güzel mi? — Ekmek yok mu? — Öğretmen misin? — O Türk mü? — Burada okul var mı?",
+    "Arkadaşım var. — Param yok. — Burada çok öğrenci var. — Ekmek yok. — Anahtarınız var mı? — Ailem Jakarta'da.",
+    "Su var mı? — Benim param yok. — Kaç lira? — Sen öğrenci misin? — Burada çok öğrenci var. — Güzel, değil mi?"
+  ]
+}
