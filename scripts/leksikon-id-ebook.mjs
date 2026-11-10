@@ -70,6 +70,17 @@ const penSkema = new Set();
    lalu modul Swedia bocor. Bentrokannya dikeluarkan per bahasa sebagai
    KECUALI_PENGANTAR_EN: kata itu cuma dibiarkan berbunyi di modul bahasanya. */
 const penSkemaBahasa = new Map();
+/* [ebook-pengantar-en-v4] Hitungan per bahasa: kata target (penSkemaN) lawan
+   kata prosa pengantar (penProsaN) di modul edisi Inggris bahasa itu. Satu dua
+   kemunculan di teks target — "to"/"for" Norwegia yang dikutip modul Swedia B2,
+   "is" (es) — tak boleh membuat kata Inggris paling umum berbunyi Swedia di
+   seluruh modulnya. Lihat syarat di bagian KECUALI_PENGANTAR_EN. */
+const penSkemaN = new Map();
+const penProsaN = new Map();
+const tambahN = (m, w) => {
+  const b = m.get(bahasaKini) ?? m.set(bahasaKini, new Map()).get(bahasaKini);
+  b.set(w, (b.get(w) || 0) + 1);
+};
 let bahasaKini = "";
 let tgF = tgUtama;
 /* [ebook-jaga-bahasa-en-v1] Modul Inggris butuh daftar KEDUA. Bahasa Inggris
@@ -87,6 +98,7 @@ const teksEnMiring = (s) => { if (modulEn && typeof s === "string") catat(enLema
 const pecah = (s) => String(s).toLowerCase().split(/[^\p{L}]+/u).filter(Boolean);
 const catat = (m, s) => pecah(s).forEach((w) => {
   m.set(w, (m.get(w) || 0) + 1);
+  if (m === penIdF) tambahN(penProsaN, w);
   if (m === idUtama) (idModul.get(w) ?? idModul.set(w, new Set()).get(w)).add(modulKini);
 });
 /* [ebook-jaga-bahasa-id-v3] Di modul mana saja kata itu tercetak di prosa
@@ -111,6 +123,7 @@ const teksSkema = (s) => {
   if (typeof s === "string" && pengantarEn) pecah(s.replace(/\[([^|\]]*)\|[^\]]*\]/g, "$1")).forEach((w) => {
     penSkema.add(w);
     (penSkemaBahasa.get(bahasaKini) ?? penSkemaBahasa.set(bahasaKini, new Set()).get(bahasaKini)).add(w);
+    tambahN(penSkemaN, w);
   });
   if (typeof s === "string" && !modulSerumpun && !modulKini.startsWith("su-")) pecah(s).forEach((w) => tgSkema.add(w));
 };
@@ -266,7 +279,14 @@ console.log(barisPen.join("\n"));
 const setPen = new Set(kataPen);
 console.log("\n/* ── KECUALI_PENGANTAR_EN ───────────────────────────────── */");
 for (const [b, set] of [...penSkemaBahasa.entries()].sort()) {
-  const kena = [...set].filter((w) => setPen.has(w)).sort();
+  /* [ebook-pengantar-en-v4] Dikecualikan hanya kalau kata itu sungguh hidup di
+     teks target bahasa ini: minimal 2 kali, dan tak tenggelam di prosa Inggris
+     modul yang sama (≥ 1:50). "was" Jerman (puluhan kali di dialog) lolos;
+     "to"/"is"/"it" yang cuma terkutip sekali-dua kali di modul Swedia tidak. */
+  const tg = penSkemaN.get(b) ?? new Map();
+  const pr = penProsaN.get(b) ?? new Map();
+  const kena = [...set].filter((w) => setPen.has(w) && (tg.get(w) || 0) >= 2
+    && (tg.get(w) || 0) * 50 >= (pr.get(w) || 0)).sort();
   if (kena.length) console.log(`  "${b}": "${kena.join(" ")}",`);
 }
 console.error(`${kata.length} kata Indonesia · ${kataEn.length} kata Inggris · ${kataPen.length} kata pengantar Inggris`);

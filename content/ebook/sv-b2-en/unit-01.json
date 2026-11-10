@@ -1,0 +1,636 @@
+{
+ "title": "The architecture of a Swedish sentence",
+ "title_target": "Det nya hamnar helst i slutet av meningen.",
+ "goal": "See every Swedish sentence as a row of fixed slots, and choose deliberately what goes into the first one so your texts flow from what is known to what is new.",
+ "bekal": [
+  "you can map any main or subordinate clause onto the field model",
+  "you can front an object, an adjective or *det* for contrast and cohesion",
+  "you can rewrite a paragraph so that each sentence starts with something already known"
+ ],
+ "wave": "Go back to Svenska 103, Unit 3: take the ten example sentences with *inte*, *alltid*, *kanske* and *nog*, and say each one twice — once as a main clause and once after *Hon sa att…*.",
+ "dialogs": [
+  {
+   "title": "Dialogue — Hos handledaren",
+   "intro": "Dian is back in Stockholm after her internship in Göteborg. She is in the last term of her master's program and has started her thesis on sustainable cities. Her supervisor, Birgitta, has read the first pages.",
+   "lines": [
+    {
+     "speaker": "Birgitta:",
+     "text": "Välkommen tillbaka till Stockholm! Hur var det att komma hem från Göteborg?",
+     "id": "Welcome back to Stockholm! What was it like coming home from Göteborg?",
+     "literal": "welcome back to Stockholm! how was it to come home from Göteborg?"
+    },
+    {
+     "speaker": "Dian:",
+     "text": "Konstigt men skönt. Och nu har jag äntligen börjat skriva på uppsatsen.",
+     "id": "Strange but nice. And now I've finally started working on my thesis.",
+     "literal": "strange but nice. and now have I finally begun write on thesis-the."
+    },
+    {
+     "speaker": "Birgitta:",
+     "text": "Jag har läst din inledning. Innehållet är bra, men texten är svår att följa.",
+     "id": "I've read your introduction. The content is good, but the text is hard to follow.",
+     "literal": "I have read your introduction. content-the is good, but text-the is hard to follow."
+    },
+    {
+     "speaker": "Dian:",
+     "text": "Är det grammatiken? Jag har kontrollerat varje mening.",
+     "id": "Is it the grammar? I've checked every sentence.",
+     "literal": "is it grammar-the? I have checked every sentence."
+    },
+    {
+     "speaker": "Birgitta:",
+     "text": "Nej, grammatiken är korrekt. Det handlar om ordningen — vad du sätter först.",
+     "id": "No, the grammar is correct. It's about the order — what you put first.",
+     "literal": "no, grammar-the is correct. it deals about order-the — what you put first."
+    },
+    {
+     "speaker": "Birgitta:",
+     "text": "Här skriver du om cykelbanorna i Hammarby sjöstad. Sedan kommer: ”En ny trafikplan antogs av kommunen 2019.”",
+     "id": "Here you write about the bike lanes in Hammarby sjöstad. Then comes: “A new traffic plan was adopted by the municipality in 2019.”",
+     "literal": "here write you about bike-lanes-the in Hammarby lake-town. then comes: a new traffic-plan was-adopted by municipality-the 2019."
+    },
+    {
+     "speaker": "Dian:",
+     "text": "Och vad är fel med det?",
+     "id": "And what's wrong with that?",
+     "literal": "and what is wrong with that?"
+    },
+    {
+     "speaker": "Birgitta:",
+     "text": "Inget fel, men läsaren tappar tråden. Börja med det kända: ”De här cykelbanorna byggdes enligt en ny trafikplan från 2019.”",
+     "id": "Nothing wrong, but the reader loses the thread. Start with what's known: “These bike lanes were built according to a new traffic plan from 2019.”",
+     "literal": "nothing wrong, but reader-the drops thread-the. begin with the known: these here bike-lanes-the were-built according-to a new traffic-plan from 2019."
+    },
+    {
+     "speaker": "Dian:",
+     "text": "Alltså gammal information först och ny information sist?",
+     "id": "So old information first and new information last?",
+     "literal": "so old information first and new information last?"
+    },
+    {
+     "speaker": "Birgitta:",
+     "text": "Precis. Det nya hamnar helst i slutet av meningen, där betoningen ligger.",
+     "id": "Exactly. The new part ideally goes at the end of the sentence, where the stress falls.",
+     "literal": "exactly. the new lands preferably in end-the of sentence-the, where stress-the lies."
+    },
+    {
+     "speaker": "Dian:",
+     "text": "Men får man inte börja med tid eller plats? Det gör ju alla svenska tidningar.",
+     "id": "But aren't you allowed to start with a time or a place? All the Swedish newspapers do it.",
+     "literal": "but may one not begin with time or place? that do of-course all Swedish newspapers."
+    },
+    {
+     "speaker": "Birgitta:",
+     "text": "Jo, absolut. Men gör det för att det binder ihop texten, inte av gammal vana.",
+     "id": "Yes, absolutely. But do it because it ties the text together, not out of habit.",
+     "literal": "yes, absolutely. but do it because it binds together text-the, not of old habit."
+    },
+    {
+     "speaker": "Dian:",
+     "text": "Då går jag igenom hela inledningen igen i helgen — med nya ögon.",
+     "id": "Then I'll go through the whole introduction again this weekend — with fresh eyes.",
+     "literal": "then go I through whole introduction-the again in weekend-the — with new eyes."
+    }
+   ],
+   "notes": [
+    "**Skriva på uppsatsen** — the little word *på* turns the action into work in progress: *skriva på* something is to be busy writing it, not to finish it. The same goes for *jobba på*, *bygga på*, *läsa på* (in the sense \"keep reading\"). *Jag skriver på en uppsats* = I'm working on an essay; *jag har skrivit en uppsats* = it's done. **En uppsats** (**ÜP-sahts**) covers everything from a school essay to a master's thesis.",
+    "**Antogs** — the s-passive past of *anta* (to adopt, to pass a plan or a law), pronounced **AHN-toogs**. *Anta* also means \"to assume\": *jag antar att du är trött*. In officialese and news, the s-passive is the normal way to say what an authority decided, which is exactly why Birgitta's example sounds like a press release dropped into the middle of Dian's argument.",
+    "**Tappa tråden** — \"lose the thread\", the same image as in English. *Tappa* on its own means \"to drop\" (*jag tappade nycklarna*), but also \"to lose\" something abstract: *tappa lusten*, *tappa fokus*, *tappa räkningen* (lose count).",
+    "**Hamnar helst** — *hamna* (**HAHM-nah**) means \"to end up, to land\" (it comes from *hamn*, harbor: where a boat finally arrives). *Helst* is the top of the ladder *gärna – hellre – helst* (gladly – rather – preferably): *Jag dricker helst te* = I'd ideally have tea.",
+    "**Jo, absolut** — Birgitta answers a negative question (*får man inte…?*) with *jo*, the yes that contradicts a no. Using *ja* here would sound as if you hadn't heard the *inte*. This is A1 material, but people stumble over it right up to C1, so keep listening for it.",
+    "**Hammarby sjöstad** (**HAHM-mahr-bü HWÖ-stahd**) is a district in southern Stockholm built on old industrial land from the late 1990s on. Waste, energy and water were planned as one cycle, and it is still visited by city planners from all over the world, which makes it the obvious case study for Dian's thesis."
+   ],
+   "grammars": [
+    {
+     "title": "The field model: one sentence, fixed slots",
+     "body": [
+      "Swedish grammarians describe every main clause as a row of positions (*fält*, fields). Words can move between sentences, but the slots themselves never move. Once you can see them, almost every word-order question answers itself.",
+      "The first slot, the **fundament**, holds exactly one element — a subject, an adverbial, an object, even a whole subordinate clause. The second slot always holds the **finite verb**. If the subject is not in the fundament, it moves into the slot right after the verb. That is the whole of V2."
+     ],
+     "table": {
+      "head": [
+       "Fundament",
+       "Finite verb",
+       "Subject",
+       "Sentence adverb",
+       "Non-finite verb",
+       "Object / complement",
+       "Adverbials"
+      ],
+      "rows": [
+       [
+        "Jag",
+        "har",
+        "—",
+        "inte",
+        "läst",
+        "inledningen",
+        "ännu."
+       ],
+       [
+        "Inledningen",
+        "har",
+        "jag",
+        "inte",
+        "läst",
+        "—",
+        "ännu."
+       ],
+       [
+        "I helgen",
+        "går",
+        "jag",
+        "nog",
+        "igenom",
+        "texten",
+        "igen."
+       ],
+       [
+        "Cykelbanorna",
+        "byggdes",
+        "—",
+        "faktiskt",
+        "—",
+        "—",
+        "efter 2019."
+       ],
+       [
+        "Om du vill",
+        "kan",
+        "vi",
+        "—",
+        "ses",
+        "—",
+        "i morgon."
+       ]
+      ]
+     },
+     "after": [
+      "Read the second and third rows again: the object *inledningen* and the adverbial *i helgen* have been moved into the fundament, and the subject *jag* waits after the verb. Nothing else changes.",
+      "Sentence adverbs (*inte*, *aldrig*, *nog*, *faktiskt*, *ju*, *kanske*…) have their own slot after the subject. In a main clause that puts them after the finite verb; you will see in Section 1 how the same slots line up differently in a subordinate clause.",
+      "Particles of particle verbs (*igenom*, *ihop*, *upp*) belong with the non-finite verb, which is why *går… igenom* splits around the subject and the adverb."
+     ]
+    },
+    {
+     "title": "Known before new",
+     "body": [
+      "Because the fundament can hold almost anything, Swedes use it to build a bridge from the previous sentence. The rule of thumb in good Swedish prose: **start with something the reader already knows, and save the new information for the end**, where the sentence stress naturally falls.",
+      "English follows the same principle, but its rigid subject-first order often forces you into the passive or into “As for…”. Swedish simply fronts the known element and moves on."
+     ],
+     "table": {
+      "head": [
+       "Previous sentence ends with…",
+       "Weaker next sentence",
+       "Better next sentence"
+      ],
+      "rows": [
+       [
+        "…nya cykelbanor.",
+        "En trafikplan från 2019 låg bakom dem.",
+        "**Cykelbanorna** byggdes enligt en trafikplan från 2019."
+       ],
+       [
+        "…en rapport från kommunen.",
+        "Många viktiga siffror finns i rapporten.",
+        "**I rapporten** finns många viktiga siffror."
+       ],
+       [
+        "…ett nytt avfallssystem.",
+        "Invånarna tyckte först att det var krångligt.",
+        "**Systemet** tyckte invånarna först var krångligt."
+       ]
+      ]
+     },
+     "after": [
+      "The third example fronts an object out of a subordinate clause — completely normal in speech and acceptable in writing, but if it feels too bold, *Först tyckte invånarna att systemet var krångligt* works too.",
+      "What usually does **not** belong in the fundament: a long, heavy, brand-new subject. Swedes would rather start with *Det*, a time or a place, and let the heavy part come later."
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Dialogue — I köket på Söder",
+   "intro": "That evening, in the kitchen of the shared flat on Södermalm. Elin has just come home from the library and finds Dian staring at her laptop.",
+   "lines": [
+    {
+     "speaker": "Elin:",
+     "text": "Du ser trött ut. Har handledaren varit elak?",
+     "id": "You look tired. Has your supervisor been mean?",
+     "literal": "you see tired out. has supervisor-the been mean?"
+    },
+    {
+     "speaker": "Dian:",
+     "text": "Elak har hon inte varit. Men hon säger att jag sätter fel saker först.",
+     "id": "Mean she hasn't been. But she says I put the wrong things first.",
+     "literal": "mean has she not been. but she says that I put wrong things first."
+    },
+    {
+     "speaker": "Elin:",
+     "text": "Fel saker först? Det låter som en låttext av Jonas.",
+     "id": "The wrong things first? Sounds like one of Jonas's lyrics.",
+     "literal": "wrong things first? it sounds like a song-text by Jonas."
+    },
+    {
+     "speaker": "Dian:",
+     "text": "Lyssna nu. Om jag säger ”Kaffe dricker jag inte efter tre” — låter det naturligt?",
+     "id": "Listen. If I say “Coffee I don't drink after three” — does that sound natural?",
+     "literal": "listen now. if I say coffee drink I not after three — sounds it natural?"
+    },
+    {
+     "speaker": "Elin:",
+     "text": "Helt naturligt, om vi nyss har pratat om te. Då blir kaffet en kontrast.",
+     "id": "Perfectly natural, if we've just been talking about tea. Then the coffee becomes a contrast.",
+     "literal": "completely natural, if we just-now have talked about tea. then becomes coffee-the a contrast."
+    },
+    {
+     "speaker": "Dian:",
+     "text": "Och ”Det har jag aldrig tänkt på”? Det hör jag hela tiden.",
+     "id": "And “I've never thought about that”? I hear that all the time.",
+     "literal": "and that have I never thought on? that hear I whole time-the."
+    },
+    {
+     "speaker": "Elin:",
+     "text": "Ja, ”det” först är jättevanligt. Det pekar tillbaka på det som just sades.",
+     "id": "Yes, “det” first is extremely common. It points back to what was just said.",
+     "literal": "yes, it first is giant-common. it points back on that which just was-said."
+    },
+    {
+     "speaker": "Dian:",
+     "text": "Så svenskan bygger meningar som ett tåg: varje vagn hänger ihop med den förra.",
+     "id": "So Swedish builds sentences like a train: each car is coupled to the one before.",
+     "literal": "so Swedish-the builds sentences like a train: every car hangs together with the previous."
+    },
+    {
+     "speaker": "Elin:",
+     "text": "Snyggt sagt. Skriv in det i uppsatsen!",
+     "id": "Nicely put. Put that in your thesis!",
+     "literal": "neatly said. write in it in thesis-the!"
+    },
+    {
+     "speaker": "Dian:",
+     "text": "I uppsatsen? Där hör tåg bara hemma i kapitlet om kollektivtrafik.",
+     "id": "In the thesis? Trains only belong in the chapter on public transport there.",
+     "literal": "in thesis-the? there belong trains only home in chapter-the about collective-traffic."
+    },
+    {
+     "speaker": "Elin:",
+     "text": "Då har du ju redan ett fundament till nästa stycke.",
+     "id": "Then you've already got a fundament for your next paragraph.",
+     "literal": "then have you of-course already a foundation to next paragraph."
+    }
+   ],
+   "notes": [
+    "**Elak har hon inte varit** — Dian picks up Elin's word *elak* and puts it first. In English, “Mean she hasn't been” sounds theatrical; in Swedish it is completely everyday. Fronting the word the other person just used is the most natural way to answer: *Trött? Trött är jag inte, bara hungrig.*",
+    "**Du ser trött ut** — *se ut* (look, appear) is a particle verb, and the adjective slips in between: *se trött ut*, *se glad ut*, *se ut som en turist*. **Ut** is never left out, and the main stress goes on the adjective: **dü sehr TRÖT üt**.",
+    "**Nyss** (**nüs**) means “just now, a moment ago” and always points backwards in time: *hon gick nyss* = she just left. **Just** means “exactly” or “just” in a broader sense: *just det* (exactly), *just nu* (right now). Elin uses both: *om vi nyss har pratat…*, *det som just sades*.",
+    "**Sades** — the s-passive past of *säga*, pronounced **SAH-des**. *Det som sades* (what was said) is a fixed little phrase you will meet constantly in reports and news: *det som sades på mötet*.",
+    "**Hör hemma** — *höra hemma* (**HÖ-rah HEM-mah**) means “to belong (somewhere)”: *Var hör den här boken hemma?* (Where does this book go?). Dian's sentence fronts *Där*, pointing back to *uppsatsen*, which is exactly the trick she has just learned.",
+    "**Fundament** (**fün-dah-MENT**) is both the grammar term for the first slot and an ordinary word for a foundation. Elin is making a grammar joke, which tells you something about having a librarian as a flatmate."
+   ],
+   "grammars": [
+    {
+     "title": "Why you front: four motives",
+     "body": [
+      "A neutral sentence starts with the subject, and that is never wrong. When something else takes the fundament, there is always a reason. Learning to hear these reasons is what separates an advanced reader from an intermediate one."
+     ],
+     "table": {
+      "head": [
+       "Motive",
+       "What goes first",
+       "Example"
+      ],
+      "rows": [
+       [
+        "Linking back (cohesion)",
+        "*det*, *där*, *då*, a word just mentioned",
+        "*Det* har jag aldrig tänkt på."
+       ],
+       [
+        "Contrast",
+        "the element set against something else",
+        "*Kaffe* dricker jag inte, men te gärna."
+       ],
+       [
+        "Setting the scene",
+        "time or place",
+        "*Efter 2019* byggdes fler cykelbanor."
+       ],
+       [
+        "Structuring an argument",
+        "connective adverbs",
+        "*Därför* behövs en ny plan."
+       ]
+      ]
+     },
+     "after": [
+      "**Det** in the fundament is the champion of spoken Swedish: *Det vet jag inte*, *Det tror jag*, *Det gör jag gärna*. An English speaker's instinct, *Jag vet inte det*, is grammatical but sounds flat and slightly stubborn.",
+      "Fronted **objects** and **adjectives** are almost always contrastive or echoing. Use them in speech freely; in formal writing, use them when there really is a contrast, otherwise they read as a stylistic tic."
+     ]
+    }
+   ]
+  }
+ ],
+ "sections": [
+  {
+   "title": "The same slots in a subordinate clause",
+   "blocks": [
+    {
+     "type": "p",
+     "text": "A subordinate clause has no fundament and no V2. Its slots come in a different, fixed order: the **connective** first, then the **subject**, then the **sentence adverb**, and only then the **finite verb**. That order is the whole reason behind the BIFF rule you learned in Swedish 101: *inte* is not jumping forward, it simply sits in its own slot, which happens to come before the verb."
+    },
+    {
+     "type": "tabel",
+     "head": [
+      "Connective",
+      "Subject",
+      "Sentence adverb",
+      "Finite verb",
+      "Non-finite verb",
+      "Object / adverbials"
+     ],
+     "rows": [
+      [
+       "…att",
+       "läsaren",
+       "inte",
+       "hänger",
+       "med",
+       "i texten."
+      ],
+      [
+       "…eftersom",
+       "jag",
+       "ju",
+       "har",
+       "skrivit",
+       "om Hammarby sjöstad."
+      ],
+      [
+       "…om",
+       "du",
+       "faktiskt",
+       "vill",
+       "byta",
+       "ordning."
+      ],
+      [
+       "…som",
+       "—",
+       "aldrig",
+       "har",
+       "planerats",
+       "ordentligt."
+      ]
+     ]
+    },
+    {
+     "type": "p",
+     "text": "In the last row, *som* is the subject itself, so the subject slot stays empty. And when several sentence adverbs meet, they line up in a fairly stable order: small attitude words first, then the rest, then *inte*: *Hon har **ju faktiskt inte** svarat*, *…att hon **ju faktiskt inte** har svarat*."
+    },
+    {
+     "type": "kotak",
+     "title": "Words that live in the sentence-adverb slot",
+     "items": [
+      "Negation and frequency: *inte*, *aldrig*, *alltid*, *ofta*, *sällan*, *ibland*",
+      "Certainty and opinion: *kanske*, *nog*, *säkert*, *troligen*, *verkligen*, *faktiskt*",
+      "Attitude particles: *ju*, *väl*, *dock*, *ändå* (as a sentence adverb)",
+      "Others: *redan*, *bara*, *också*, *inte heller*, *gärna*",
+      "Test: if the word can stand between *Han har* and *kommit*, it is a sentence adverb, and it goes before the verb in a subordinate clause."
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Talking about your thesis",
+   "blocks": [
+    {
+     "type": "tabel",
+     "head": [
+      "Svenska",
+      "Pronunciation",
+      "English"
+     ],
+     "rows": [
+      [
+       "en uppsats / ett examensarbete",
+       "en ÜP-sahts · et ek-SAH-mens-ahr-beh-teh",
+       "a thesis"
+      ],
+      [
+       "en handledare",
+       "en HAHND-leh-dah-reh",
+       "a supervisor"
+      ],
+      [
+       "en frågeställning",
+       "en FROH-geh-stel-ning",
+       "a research question"
+      ],
+      [
+       "en inledning",
+       "en IN-lehd-ning",
+       "an introduction"
+      ],
+      [
+       "ett stycke",
+       "et STÜK-keh",
+       "a paragraph"
+      ],
+      [
+       "ett kapitel",
+       "et kah-PIT-el",
+       "a chapter"
+      ],
+      [
+       "en källa",
+       "en SHEL-lah",
+       "a source"
+      ],
+      [
+       "en slutsats",
+       "en SLÜT-sahts",
+       "a conclusion"
+      ]
+     ]
+    },
+    {
+     "type": "p",
+     "text": "Swedish academic writing values a **clear thread** (*en röd tråd*, literally “a red thread”) above elegant variation. A supervisor who writes *saknar röd tråd* in your margin is saying exactly what Birgitta said aloud: each sentence must grow out of the one before. Repeating a key noun (*cykelbanorna… cykelbanorna*) is considered good style, not clumsy, if it keeps the thread visible."
+    },
+    {
+     "type": "kotak",
+     "title": "A five-step check for any paragraph",
+     "items": [
+      "Underline the fundament of every main clause.",
+      "Ask: does it point back to something already mentioned, or set a scene?",
+      "If a brand-new, heavy subject stands first, try moving it to the end.",
+      "Make sure each fronted object or adjective expresses a real contrast.",
+      "Read it aloud: the stress should land near the end of each sentence."
+     ]
+    }
+   ]
+  }
+ ],
+ "vocab": [
+  {
+   "sv": "en uppsats",
+   "baca": "en ÜP-sahts",
+   "en": "a thesis, an essay"
+  },
+  {
+   "sv": "en handledare",
+   "baca": "en HAHND-leh-dah-reh",
+   "en": "a supervisor"
+  },
+  {
+   "sv": "en inledning",
+   "baca": "en IN-lehd-ning",
+   "en": "an introduction"
+  },
+  {
+   "sv": "ett stycke",
+   "baca": "et STÜK-keh",
+   "en": "a paragraph; a piece"
+  },
+  {
+   "sv": "en betoning",
+   "baca": "en beh-TOO-ning",
+   "en": "stress, emphasis"
+  },
+  {
+   "sv": "ett fundament",
+   "baca": "et fün-dah-MENT",
+   "en": "the first position (grammar); a foundation"
+  },
+  {
+   "sv": "ett satsadverb",
+   "baca": "et SAHTS-ahd-verb",
+   "en": "a sentence adverb"
+  },
+  {
+   "sv": "en läsare",
+   "baca": "en LEH-sah-reh",
+   "en": "a reader"
+  },
+  {
+   "sv": "att tappa tråden",
+   "baca": "aht TAHP-pah TROH-den",
+   "en": "to lose the thread"
+  },
+  {
+   "sv": "en röd tråd",
+   "baca": "en röd trohd",
+   "en": "a common thread, a clear line of argument"
+  },
+  {
+   "sv": "att hamna",
+   "baca": "aht HAHM-nah",
+   "en": "to end up, to land"
+  },
+  {
+   "sv": "helst",
+   "baca": "helst",
+   "en": "preferably, ideally"
+  },
+  {
+   "sv": "att anta (antog, antagit)",
+   "baca": "aht AHN-tah",
+   "en": "to adopt (a plan, a law); to assume"
+  },
+  {
+   "sv": "en kommun",
+   "baca": "en ko-MÜN",
+   "en": "a municipality"
+  },
+  {
+   "sv": "en cykelbana",
+   "baca": "en SÜ-kel-bah-nah",
+   "en": "a bike lane"
+  },
+  {
+   "sv": "att binda ihop",
+   "baca": "aht BIN-dah ee-HOOP",
+   "en": "to tie together, to link"
+  },
+  {
+   "sv": "en vana",
+   "baca": "en VAH-nah",
+   "en": "a habit"
+  },
+  {
+   "sv": "elak",
+   "baca": "EH-lahk",
+   "en": "mean, nasty"
+  },
+  {
+   "sv": "nyss",
+   "baca": "nüs",
+   "en": "just now, a moment ago"
+  },
+  {
+   "sv": "att höra hemma",
+   "baca": "aht HÖ-rah HEM-mah",
+   "en": "to belong (somewhere)"
+  },
+  {
+   "sv": "en kontrast",
+   "baca": "en kon-TRAHST",
+   "en": "a contrast"
+  },
+  {
+   "sv": "kollektivtrafik",
+   "baca": "ko-lek-TEEV-trah-feek",
+   "en": "public transport"
+  }
+ ],
+ "exercises": [
+  {
+   "prompt": "Put the words in order. The first element given (capitalized) must stay in the fundament.",
+   "items": [
+    "I helgen / jag / går / igenom / texten / igen.",
+    "Det / aldrig / jag / har / tänkt / på.",
+    "Cykelbanorna / byggdes / efter 2019. / faktiskt",
+    "Kaffe / inte / jag / dricker / efter tre.",
+    "I rapporten / många / finns / siffror. / viktiga",
+    "Därför / en ny plan. / behövs"
+   ]
+  },
+  {
+   "prompt": "Rewrite each sentence, starting with the element in brackets.",
+   "items": [
+    "Jag har aldrig sett den filmen. (Den filmen)",
+    "Vi ska diskutera inledningen på fredag. (På fredag)",
+    "Läsaren tappar tråden här. (Här)",
+    "Jag vet inte det. (Det)",
+    "Hon har inte varit elak. (Elak)"
+   ]
+  },
+  {
+   "prompt": "Fill in a fundament that links back to the previous sentence (one or two words).",
+   "items": [
+    "Vi besökte Hammarby sjöstad. ____ byggdes på gammal industrimark.",
+    "Kommunen skrev en rapport 2020. ____ finns alla siffror om trafiken.",
+    "Dian läste texten högt. ____ hörde hon var betoningen hamnade.",
+    "Har du läst inledningen? Nej, ____ har jag inte hunnit läsa än.",
+    "Jonas skriver låttexter. ____ handlar oftast om Stockholm."
+   ]
+  },
+  {
+   "prompt": "Translate into Swedish. Think about what belongs in the fundament.",
+   "items": [
+    "I've never thought about that.",
+    "The reader loses the thread here.",
+    "These bike lanes were built after 2019.",
+    "Coffee I don't drink, but tea I'd gladly have.",
+    "I'm working on my thesis this weekend.",
+    "She says that the reader doesn't follow along."
+   ]
+  }
+ ],
+ "answers": [
+  "I helgen går jag igenom texten igen. — Det har jag aldrig tänkt på. — Cykelbanorna byggdes faktiskt efter 2019. — Kaffe dricker jag inte efter tre. — I rapporten finns många viktiga siffror. — Därför behövs en ny plan.",
+  "Den filmen har jag aldrig sett. — På fredag ska vi diskutera inledningen. — Här tappar läsaren tråden. — Det vet jag inte. — Elak har hon inte varit.",
+  "Stadsdelen — I rapporten — Då — den — De",
+  "Det har jag aldrig tänkt på. — Här tappar läsaren tråden. — De här cykelbanorna byggdes efter 2019. — Kaffe dricker jag inte, men te dricker jag gärna. — I helgen skriver jag på min uppsats. — Hon säger att läsaren inte hänger med."
+ ]
+}

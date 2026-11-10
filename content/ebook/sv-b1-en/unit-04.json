@@ -1,0 +1,611 @@
+{
+ "title": "Long sentences",
+ "title_target": "Om du vill, kan jag skriva en kort text",
+ "goal": "Build long, well-shaped sentences: put a whole clause in first position, report questions without inverting, and chain *att*, *om* and *när* clauses without losing track of the verb.",
+ "bekal": [
+  "start a sentence with a subordinate clause and keep the verb next (*Om du vill, kan vi…*)",
+  "turn direct questions into indirect ones (*Vet du när han kommer?*)",
+  "link three or four clauses into one smooth sentence"
+ ],
+ "wave": "Go back to Svenska 102, Unit 15 (indirect speech): take five questions you asked someone this week and report them aloud — *Jag frågade om…*, *Jag undrade vad…* — watching that *inte* comes before the verb.",
+ "dialogs": [
+  {
+   "title": "Dialogue — Skisserna",
+   "intro": "Dian has spent two days on sketches for the client in Borås. On Wednesday afternoon Karin stops by her desk with the printouts in her hand.",
+   "lines": [
+    {
+     "speaker": "Karin:",
+     "text": "Hej Dian, har du en minut? Jag har tittat på dina skisser.",
+     "id": "Hi Dian, have you got a minute? I've looked at your sketches.",
+     "literal": "hi Dian, have you a minute? I have looked at your sketches."
+    },
+    {
+     "speaker": "Dian:",
+     "text": "Ja, absolut. Vad tycker du?",
+     "id": "Yes, of course. What do you think?",
+     "literal": "yes, absolutely. what think you?"
+    },
+    {
+     "speaker": "Karin:",
+     "text": "Jag tycker att de är snygga, men jag undrar om kunden förstår vad de visar.",
+     "id": "I think they look good, but I wonder if the client will understand what they show.",
+     "literal": "I think that they are nice-looking, but I wonder if client-the understands what they show."
+    },
+    {
+     "speaker": "Dian:",
+     "text": "Hur menar du? Är de för otydliga?",
+     "id": "What do you mean? Are they too unclear?",
+     "literal": "how mean you? are they too unclear?"
+    },
+    {
+     "speaker": "Karin:",
+     "text": "Nej, men eftersom kunden aldrig har sett sådana här skisser, behöver vi förklara dem.",
+     "id": "No, but since the client has never seen sketches like these, we need to explain them.",
+     "literal": "no, but since client-the never has seen such here sketches, need we explain them."
+    },
+    {
+     "speaker": "Dian:",
+     "text": "Om du vill, kan jag skriva en kort text under varje bild.",
+     "id": "If you like, I can write a short text under each picture.",
+     "literal": "if you want, can I write a short text under every picture."
+    },
+    {
+     "speaker": "Karin:",
+     "text": "Bra idé. Och när du har gjort det, kan du skicka dem till Mattias, så att han hinner kolla dem.",
+     "id": "Good idea. And when you've done that, you can send them to Mattias, so that he has time to check them.",
+     "literal": "good idea. and when you have done it, can you send them to Mattias, so that he has-time check them."
+    },
+    {
+     "speaker": "Dian:",
+     "text": "Visst. Vet du när han kommer tillbaka från lunchen?",
+     "id": "Sure. Do you know when he's coming back from lunch?",
+     "literal": "sure. know you when he comes back from lunch-the?"
+    },
+    {
+     "speaker": "Karin:",
+     "text": "Ingen aning, men jag vet att han har ett möte klockan två.",
+     "id": "No idea, but I know he has a meeting at two o'clock.",
+     "literal": "no idea, but I know that he has a meeting clock-the two."
+    },
+    {
+     "speaker": "Dian:",
+     "text": "Då skickar jag dem innan han går på mötet.",
+     "id": "Then I'll send them before he goes to the meeting.",
+     "literal": "then send I them before he goes on meeting-the."
+    },
+    {
+     "speaker": "Karin:",
+     "text": "Perfekt. Och Dian – det syns att du har jobbat hårt. Bra jobbat!",
+     "id": "Perfect. And Dian — it shows that you've worked hard. Well done!",
+     "literal": "perfect. and Dian – it is-seen that you have worked hard. good worked!"
+    },
+    {
+     "speaker": "Dian:",
+     "text": "Tack, vad roligt att höra!",
+     "id": "Thanks, that's lovely to hear!",
+     "literal": "thanks, what fun to hear!"
+    }
+   ],
+   "notes": [
+    "**Jag undrar om kunden förstår vad de visar** — one sentence, three clauses: a main clause, an *om*-clause (whether), and a *vad*-clause inside that. Each subordinate clause keeps straight word order, subject before verb: *om **kunden förstår***, *vad **de visar***.",
+    "**Eftersom kunden aldrig har sett…, behöver vi…** — the whole *eftersom*-clause fills the first slot, so the main clause has to continue with the **verb**: *behöver vi*. Notice *aldrig* before *har*: BIFF applies to every sentence adverb, not just *inte*.",
+    "**Sådana här skisser** — \"sketches like these\". *Sådan* (**SOH-dahn**) means \"such, that kind of\"; *sådan här* = this kind, *sådan där* = that kind. In speech it shrinks to *sån här* / *sånt här* / *såna här*.",
+    "**Så att han hinner kolla dem** — *så att* introduces purpose or result: \"so that\". Don't mix it up with plain *så* at the start of a main clause (\"so, then\"), which is followed by the verb: *Så skickade jag dem.*",
+    "**Det syns att…** — *synas* (**SÜ-nahs**), \"to be visible, to show\", is one of the -s verbs from Svenska 102. *Det syns att du har jobbat hårt* = \"It shows that you've worked hard\". Its sister *det märks att…* means \"you can tell that…\".",
+    "**Bra jobbat!** — \"Well done!\", literally \"good worked\". Swedish praise is usually short and low-key, so when your boss says *Bra jobbat!*, take it as a real compliment."
+   ],
+   "grammars": [
+    {
+     "title": "A whole clause in first position",
+     "body": [
+      "The first slot of a main clause (the *fundament*) can hold a single word — *Idag kommer han* — or a whole subordinate clause. The rule doesn't change: whatever fills the first slot, the **finite verb comes next**, then the subject."
+     ],
+     "table": {
+      "head": [
+       "First slot (subordinate clause)",
+       "Verb",
+       "Subject",
+       "Rest"
+      ],
+      "rows": [
+       [
+        "Om du vill,",
+        "kan",
+        "jag",
+        "skriva en kort text."
+       ],
+       [
+        "När du har gjort det,",
+        "kan",
+        "du",
+        "skicka dem till Mattias."
+       ],
+       [
+        "Eftersom kunden aldrig har sett sådana skisser,",
+        "behöver",
+        "vi",
+        "förklara dem."
+       ],
+       [
+        "Innan han går på mötet,",
+        "skickar",
+        "jag",
+        "dem."
+       ],
+       [
+        "Om det regnar,",
+        "går",
+        "vi",
+        "på museum i stället."
+       ]
+      ]
+     },
+     "after": [
+      "The **comma** after the first clause is optional in Swedish, and many writers leave it out in short sentences: *Om du vill kan jag skriva en text.* Use it when the sentence is long — it helps the reader.",
+      "In speech, Swedes often add a little **så** before the verb: *Om du vill, **så** kan jag hjälpa dig.* It works like English \"then\" in \"If you want, then I can…\". Fine in conversation, but leave it out in formal writing.",
+      "The most common mistake is to keep subject-first order in the main clause: *Om du vill, jag kan…* (wrong). Say it aloud a few times: *Om du vill, **kan jag**… När jag kommer hem, **ringer jag**…*"
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Dialogue — Planer för lördagen",
+   "intro": "On Thursday evening Oskar calls Dian. He has an idea for the weekend: a day out in the Göteborg archipelago, the hundreds of islands just outside the city.",
+   "lines": [
+    {
+     "speaker": "Oskar:",
+     "text": "Tjena! Vad gör du på lördag?",
+     "id": "Hey! What are you doing on Saturday?",
+     "literal": "hi! what do you on Saturday?"
+    },
+    {
+     "speaker": "Dian:",
+     "text": "Jag vet inte än. Varför undrar du?",
+     "id": "I don't know yet. Why do you ask?",
+     "literal": "I know not yet. why wonder you?"
+    },
+    {
+     "speaker": "Oskar:",
+     "text": "Om vädret är fint, tänkte jag att vi kunde åka ut i skärgården.",
+     "id": "If the weather's nice, I thought we could go out to the archipelago.",
+     "literal": "if weather-the is nice, thought I that we could go out in archipelago-the."
+    },
+    {
+     "speaker": "Dian:",
+     "text": "Gärna! Men jag vet inte hur man tar sig dit.",
+     "id": "I'd love to! But I don't know how you get there.",
+     "literal": "gladly! but I know not how one takes oneself there."
+    },
+    {
+     "speaker": "Oskar:",
+     "text": "Man tar spårvagnen till Saltholmen och sedan båten till Styrsö. Det tar ungefär en timme.",
+     "id": "You take the tram to Saltholmen and then the boat to Styrsö. It takes about an hour.",
+     "literal": "one takes tram-the to Saltholmen and then boat-the to Styrsö. it takes about an hour."
+    },
+    {
+     "speaker": "Dian:",
+     "text": "Vet du om mitt månadskort gäller på båten också?",
+     "id": "Do you know if my monthly pass is valid on the boat too?",
+     "literal": "know you if my month-card applies on boat-the also?"
+    },
+    {
+     "speaker": "Oskar:",
+     "text": "Ja, det ingår. Kan du kolla när båtarna går? Jag har ingen tidtabell här.",
+     "id": "Yes, it's included. Can you check when the boats leave? I don't have a timetable here.",
+     "literal": "yes, it is-included. can you check when boats-the go? I have no timetable here."
+    },
+    {
+     "speaker": "Dian:",
+     "text": "Visst. Men vad gör vi om det regnar?",
+     "id": "Sure. But what do we do if it rains?",
+     "literal": "sure. but what do we if it rains?"
+    },
+    {
+     "speaker": "Oskar:",
+     "text": "Om det regnar, går vi på Universeum i stället.",
+     "id": "If it rains, we'll go to Universeum instead.",
+     "literal": "if it rains, go we on Universeum in place."
+    },
+    {
+     "speaker": "Dian:",
+     "text": "Bra plan. Jag undrar bara om jag hinner hem innan sju, eftersom jag ska ringa mamma då.",
+     "id": "Good plan. I just wonder if I'll make it home before seven, because I'm calling my mom then.",
+     "literal": "good plan. I wonder only if I have-time home before seven, since I shall call mom then."
+    },
+    {
+     "speaker": "Oskar:",
+     "text": "Inga problem. Båtarna går ofta, så vi kan åka hem när du vill.",
+     "id": "No problem. The boats run often, so we can go home whenever you like.",
+     "literal": "no problems. boats-the go often, so we can go home when you want."
+    },
+    {
+     "speaker": "Dian:",
+     "text": "Då säger vi så. Jag skickar ett sms när jag har kollat tiderna.",
+     "id": "Let's say that, then. I'll text you when I've checked the times.",
+     "literal": "then say we so. I send an SMS when I have checked times-the."
+    },
+    {
+     "speaker": "Oskar:",
+     "text": "Toppen. Hörs!",
+     "id": "Great. Talk soon!",
+     "literal": "top-the. hear-each-other!"
+    }
+   ],
+   "notes": [
+    "**Tänkte jag att vi kunde…** — a very Swedish way to suggest something gently: \"I was thinking we could…\". The past tense (*tänkte*, *kunde*) makes it softer than *Vi kan åka ut*. Notice the verb-first order again: the *om*-clause filled the first slot.",
+    "**Hur man tar sig dit** — *ta sig* + direction means \"to get (somewhere)\": *Hur tar jag mig till stationen?* It's reflexive, so the pronoun changes: *jag tar **mig***, *man tar **sig***. And *hur man tar sig dit* is an indirect question: subject before verb.",
+    "**Skärgården** (**HWEHR-goh-den**) — the archipelago. Both Stockholm and Göteborg have one right on their doorstep. Göteborg's southern islands, like Styrsö, have no cars, and the boats are part of ordinary public transport — so yes, the monthly pass (*månadskortet*) is valid.",
+    "**Det ingår** — *ingå* (**IN-goh**) means \"to be included\": *Frukost ingår* (breakfast is included). Stress falls on the first part: this is one of the fused particle verbs you'll meet in Unit 7.",
+    "**Vad gör vi om det regnar?** — notice that the main clause comes first here, so there's no inversion problem at all. When the *om*-clause comes first, the main clause starts with the verb: *Om det regnar, **går vi**…*",
+    "**Hörs!** (**hösh**) — \"Talk soon!\", from *höras* (hear each other), the phone and text cousin of *Vi ses!*. *Tjena!* (**SHEH-nah**) is a casual \"Hi!\", and *Toppen!* means \"Great!\"."
+   ],
+   "grammars": [
+    {
+     "title": "Indirect questions and att-clauses",
+     "body": [
+      "When a question is tucked inside a longer sentence (\"Do you know **when the boats leave**?\"), it becomes a subordinate clause. Two things happen: the subject comes **before** the verb, and sentence adverbs go **in front of** the verb (BIFF). English does the first one too — \"when the boats leave\", not \"when do the boats leave\"."
+     ],
+     "table": {
+      "head": [
+       "Direct question",
+       "Indirect question"
+      ],
+      "rows": [
+       [
+        "När går båtarna?",
+        "Kan du kolla **när båtarna går**?"
+       ],
+       [
+        "Gäller kortet på båten?",
+        "Vet du **om kortet gäller** på båten?"
+       ],
+       [
+        "Hur tar man sig dit?",
+        "Jag vet inte **hur man tar sig dit**."
+       ],
+       [
+        "Varför kommer han inte?",
+        "Jag undrar **varför han inte kommer**."
+       ],
+       [
+        "Hinner jag hem innan sju?",
+        "Jag undrar **om jag hinner** hem innan sju."
+       ]
+      ]
+     },
+     "after": [
+      "**Yes/no questions** become *om*-clauses (\"whether, if\"); **question-word questions** keep their question word: *när, var, hur, varför, vad, vem, vilken*.",
+      "When the question word itself is the **subject**, Swedish adds *som*: *Vem ringde?* → *Jag vet inte **vem som** ringde.* Unit 11 deals with *vad som* and *det som* in detail.",
+      "**Att** is often dropped after *tror, tycker, säger, hoppas, vet*: *Jag tror (att) hon kommer.* With a negation, Swedes prefer to negate the main verb, just like English: *Jag **tror inte** att hon kommer* (I don't think she's coming)."
+     ]
+    }
+   ]
+  }
+ ],
+ "sections": [
+  {
+   "title": "Building long sentences",
+   "blocks": [
+    {
+     "type": "p",
+     "text": "Long Swedish sentences are not harder than short ones — they are short ones stacked together. The trick is to know, at every moment, whether you are in a **main clause** (verb second, *inte* after the verb) or a **subordinate clause** (subject–adverb–verb). The linking word tells you."
+    },
+    {
+     "type": "tabel",
+     "head": [
+      "Linking word",
+      "Meaning",
+      "Example"
+     ],
+     "rows": [
+      [
+       "**även om**",
+       "even if, even though",
+       "Vi åker ut **även om** det blåser."
+      ],
+      [
+       "**trots att**",
+       "although, despite the fact that",
+       "Hon kom **trots att** hon var sjuk."
+      ],
+      [
+       "**så fort**",
+       "as soon as",
+       "Jag ringer **så fort** jag vet."
+      ],
+      [
+       "**sedan / sen**",
+       "since (time)",
+       "Det har regnat **sedan** jag kom."
+      ],
+      [
+       "**tills**",
+       "until",
+       "Vänta **tills** jag kommer."
+      ],
+      [
+       "**utan att**",
+       "without (-ing)",
+       "Han gick **utan att** säga hej då."
+      ],
+      [
+       "**i stället för att**",
+       "instead of (-ing)",
+       "Vi tog båten **i stället för att** åka buss."
+      ],
+      [
+       "**så att**",
+       "so that",
+       "Skicka dem nu **så att** han hinner läsa."
+      ]
+     ]
+    },
+    {
+     "type": "kotak",
+     "title": "Stacking a sentence in four steps",
+     "items": [
+      "**1. Main clause:** *Jag skickar skisserna.*",
+      "**2. Add time:** *Jag skickar skisserna **innan Mattias går på mötet**.*",
+      "**3. Add a condition in front:** ***Om Karin vill**, skickar jag skisserna innan Mattias går på mötet.*",
+      "**4. Add an indirect question:** *Om Karin vill, skickar jag skisserna innan Mattias går på mötet, **men jag vet inte när mötet börjar**.*",
+      "Read the final sentence aloud and point at each verb: is it second (main clause) or after the subject (subordinate clause)?"
+     ]
+    }
+   ]
+  },
+  {
+   "title": "A day in the archipelago",
+   "blocks": [
+    {
+     "type": "tabel",
+     "head": [
+      "Svenska",
+      "Pronunciation",
+      "English"
+     ],
+     "rows": [
+      [
+       "en skärgård",
+       "en HWEHR-gohd",
+       "an archipelago"
+      ],
+      [
+       "en ö",
+       "en ö",
+       "an island"
+      ],
+      [
+       "en brygga",
+       "en BRÜG-gah",
+       "a jetty, a pier"
+      ],
+      [
+       "en klippa",
+       "en KLIP-pah",
+       "a rock, a cliff"
+      ],
+      [
+       "att bada",
+       "aht BAH-dah",
+       "to swim, to bathe"
+      ],
+      [
+       "en tidtabell",
+       "en TEED-tah-bel",
+       "a timetable"
+      ],
+      [
+       "ett månadskort",
+       "et MOH-nahds-koht",
+       "a monthly pass"
+      ],
+      [
+       "en väderprognos",
+       "en VEH-der-prog-nohs",
+       "a weather forecast"
+      ],
+      [
+       "att ta sig",
+       "aht TAH say",
+       "to get (somewhere)"
+      ],
+      [
+       "att ingå",
+       "aht IN-goh",
+       "to be included"
+      ]
+     ]
+    },
+    {
+     "type": "p",
+     "text": "For Göteborgers, an island day means smooth pink granite rocks (*klippor*) that warm up in the sun, a swim from the rocks even when the water is 17 degrees, a coffee from a thermos, and the boat home in the evening light. Swedes check the forecast obsessively: *Vad säger prognosen?* is a normal question on a Friday."
+    },
+    {
+     "type": "kotak",
+     "title": "Spiral review — back to Unit 3",
+     "items": [
+      "Put a sentence adverb into five subordinate clauses: *…eftersom kunden **aldrig** har sett…*, *…om båten **kanske** är sen…*, *…att han **inte** hinner…*",
+      "Then move each subordinate clause to the front and check the verb: ***Eftersom kunden aldrig har sett dem, behöver** vi förklara dem.*",
+      "Front an object in the main clause, too, for a final challenge: *Skisserna skickar jag innan han går.*"
+     ]
+    }
+   ]
+  }
+ ],
+ "vocab": [
+  {
+   "sv": "snygg",
+   "baca": "snüg",
+   "en": "good-looking, nice"
+  },
+  {
+   "sv": "att undra",
+   "baca": "aht ÜND-rah",
+   "en": "to wonder"
+  },
+  {
+   "sv": "otydlig",
+   "baca": "OO-tüd-lee",
+   "en": "unclear"
+  },
+  {
+   "sv": "sådan här",
+   "baca": "SOH-dahn hehr",
+   "en": "this kind of, like this"
+  },
+  {
+   "sv": "att förklara",
+   "baca": "aht för-KLAH-rah",
+   "en": "to explain"
+  },
+  {
+   "sv": "att kolla",
+   "baca": "aht KOL-lah",
+   "en": "to check"
+  },
+  {
+   "sv": "ingen aning",
+   "baca": "ING-en AH-ning",
+   "en": "no idea"
+  },
+  {
+   "sv": "att synas",
+   "baca": "aht SÜ-nahs",
+   "en": "to be visible, to show"
+  },
+  {
+   "sv": "Bra jobbat!",
+   "baca": "brah YOB-baht",
+   "en": "Well done!"
+  },
+  {
+   "sv": "Tjena!",
+   "baca": "SHEH-nah",
+   "en": "Hi! Hey! (casual)"
+  },
+  {
+   "sv": "en skärgård",
+   "baca": "en HWEHR-gohd",
+   "en": "an archipelago"
+  },
+  {
+   "sv": "att ta sig",
+   "baca": "aht TAH say",
+   "en": "to get (somewhere)"
+  },
+  {
+   "sv": "ungefär",
+   "baca": "ün-yeh-FEHR",
+   "en": "about, approximately"
+  },
+  {
+   "sv": "ett månadskort",
+   "baca": "et MOH-nahds-koht",
+   "en": "a monthly pass"
+  },
+  {
+   "sv": "att ingå",
+   "baca": "aht IN-goh",
+   "en": "to be included"
+  },
+  {
+   "sv": "en tidtabell",
+   "baca": "en TEED-tah-bel",
+   "en": "a timetable"
+  },
+  {
+   "sv": "i stället",
+   "baca": "ee STEL-let",
+   "en": "instead"
+  },
+  {
+   "sv": "Toppen!",
+   "baca": "TOP-pen",
+   "en": "Great!"
+  },
+  {
+   "sv": "Hörs!",
+   "baca": "hösh",
+   "en": "Talk soon!"
+  },
+  {
+   "sv": "även om",
+   "baca": "EH-ven om",
+   "en": "even if, even though"
+  },
+  {
+   "sv": "trots att",
+   "baca": "trots aht",
+   "en": "although"
+  },
+  {
+   "sv": "så fort",
+   "baca": "soh FOT",
+   "en": "as soon as"
+  },
+  {
+   "sv": "utan att",
+   "baca": "Ü-tahn aht",
+   "en": "without (-ing)"
+  }
+ ],
+ "exercises": [
+  {
+   "prompt": "Move the subordinate clause to the front. Watch the verb in the main clause.",
+   "items": [
+    "Vi kan ses imorgon om du vill.",
+    "Jag ringer dig när jag har kollat tiderna.",
+    "Vi behöver förklara skisserna eftersom kunden aldrig har sett sådana.",
+    "Vi går på museum om det regnar.",
+    "Han hade redan gått innan jag kom."
+   ]
+  },
+  {
+   "prompt": "Make the question indirect, starting with the words in brackets.",
+   "items": [
+    "När går båten? (Vet du…)",
+    "Gäller kortet på båten? (Jag undrar…)",
+    "Varför svarar kunden inte? (Karin undrar…)",
+    "Hur tar man sig till Styrsö? (Kan du förklara…)",
+    "Vad tycker du om skisserna? (Jag vill veta…)"
+   ]
+  },
+  {
+   "prompt": "Fill in the missing linking word: *om, även om, så att, utan att, tills, så fort*.",
+   "items": [
+    "Vi åker ut ____ det blåser lite.",
+    "Skicka skisserna nu ____ Mattias hinner läsa dem.",
+    "Jag ringer ____ jag vet något.",
+    "Han gick ____ säga hej då.",
+    "Vänta här ____ jag kommer tillbaka.",
+    "____ det regnar, stannar vi hemma."
+   ]
+  },
+  {
+   "prompt": "Put the words in the right order. Start with the word in capitals.",
+   "items": [
+    "Om / du / vill / kan / jag / skriva / en / text.",
+    "Jag / vet / inte / hur / man / tar / sig / dit.",
+    "När / du / har / gjort / det / kan / du / skicka / dem.",
+    "Jag / undrar / varför / han inte / kommer."
+   ]
+  },
+  {
+   "prompt": "Translate into Swedish.",
+   "items": [
+    "If the weather is nice, we'll go out to the archipelago.",
+    "Do you know when the meeting starts?",
+    "I don't think she's coming.",
+    "When I've checked the times, I'll send a text.",
+    "Even if it's windy, we're going out to the archipelago."
+   ]
+  }
+ ],
+ "answers": [
+  "Om du vill, kan vi ses imorgon. — När jag har kollat tiderna, ringer jag dig. — Eftersom kunden aldrig har sett sådana, behöver vi förklara skisserna. — Om det regnar, går vi på museum. — Innan jag kom, hade han redan gått.",
+  "Vet du när båten går? — Jag undrar om kortet gäller på båten. — Karin undrar varför kunden inte svarar. — Kan du förklara hur man tar sig till Styrsö? — Jag vill veta vad du tycker om skisserna.",
+  "även om — så att — så fort — utan att — tills — Om",
+  "Om du vill kan jag skriva en text. — Jag vet inte hur man tar sig dit. — När du har gjort det kan du skicka dem. — Jag undrar varför han inte kommer.",
+  "Om vädret är fint, åker vi ut i skärgården. — Vet du när mötet börjar? — Jag tror inte att hon kommer. — När jag har kollat tiderna, skickar jag ett sms. — Även om det blåser, åker vi ut i skärgården."
+ ]
+}

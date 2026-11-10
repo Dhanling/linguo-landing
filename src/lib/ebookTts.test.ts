@@ -363,3 +363,30 @@ describe("modul edisi Inggris (sv-a1-en)", () => {
     expect(kataIndonesia("dengan", "sv", "dengan kata kerja")).toBe(true);
   });
 });
+
+/* [ebook-pengantar-en-v4] Swedish 102–104 edisi Inggris ditulis dari nol, prosa
+   jauh lebih panjang dari A1 — pagar yang sama untuk ketiganya. */
+describe("Swedish 102–104 edisi Inggris", () => {
+  for (const modul of ["sv-a2-en", "sv-b1-en", "sv-b2-en"]) {
+    const dir = path.join(AKAR, modul);
+    if (!fs.existsSync(dir)) continue;
+    it(`${modul}: terjemahan Inggris terkunci, dialog Swedia bebas`, () => {
+      const en: Contoh[] = [];
+      const sv: Contoh[] = [];
+      for (const berkas of fs.readdirSync(dir)) {
+        if (!/^unit-\d+\.json$/.test(berkas)) continue;
+        const j = JSON.parse(fs.readFileSync(path.join(dir, berkas), "utf8"));
+        for (const d of j.dialogs || []) for (const l of d.lines || []) { kumpul(sv, l.text); kumpul(en, l.id); }
+      }
+      aturPengantarEbook("en");
+      try {
+        const enLolos = en.filter((c) => !kataIndonesia(c.kata, "sv", c.konteks)).length / en.length;
+        const svKunci = sv.filter((c) => kataIndonesia(c.kata, "sv", c.konteks)).length / sv.length;
+        expect(enLolos).toBeLessThan(0.08);
+        expect(svKunci).toBeLessThan(0.02);
+      } finally {
+        aturPengantarEbook("id");
+      }
+    });
+  }
+});

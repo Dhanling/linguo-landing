@@ -1,0 +1,586 @@
+{
+ "title": "Building words: prefixes and suffixes",
+ "title_target": "Jag tror att jag har knäckt koden!",
+ "goal": "Take Swedish words apart and guess their meaning from the pieces — the fastest way to grow your vocabulary at B2.",
+ "bekal": [
+  "the prefixes *o-*, *miss-*, *för-*, *be-*, *sam-*, *ur-*",
+  "the suffixes *-het*, *-skap*, *-dom*, *-lig*, *-bar*, *-aktig*",
+  "reading a Swedish job ad and decoding its long words"
+ ],
+ "wave": "Go back to Unit 7: list ten nouns in *-ning*, *-else*, *-het* and *-ande* from its dialogues and split each one into stem + suffix (*förtät + ning*, *betyd + else*). Today you add six prefixes and five more suffixes to the same toolbox.",
+ "dialogs": [
+  {
+   "title": "Dialogue — Ordleken",
+   "intro": "Dian has just sent the complete draft of her thesis to Birgitta. Elin wants to celebrate — in her own way, which, being a librarian, involves words. They sit in the library café after closing time.",
+   "lines": [
+    {
+     "speaker": "Elin:",
+     "text": "Grattis till det färdiga utkastet! Nu firar vi med en ordlek: jag säger ett ord, du gissar vad det betyder. ”Ohållbar.”",
+     "id": "Congratulations on finishing your draft! Now we celebrate with a word game: I say a word, you guess what it means. \"Ohållbar.\"",
+     "literal": "congrats to the finished draft-the! now celebrate we with a word-game: I say a word, you guess what it means. un-hold-able"
+    },
+    {
+     "speaker": "Dian:",
+     "text": "Lätt. ”O-” betyder ”inte”, så det är något som inte är hållbart. Min specialitet!",
+     "id": "Easy. \"O-\" means \"not\", so it's something that isn't sustainable. My specialty!",
+     "literal": "easy. o- means not, so it is something that not is sustainable. my specialty!"
+    },
+    {
+     "speaker": "Elin:",
+     "text": "Rätt. ”Missförstånd”?",
+     "id": "Right. \"Missförstånd\"?",
+     "literal": "right. mis-understanding?"
+    },
+    {
+     "speaker": "Dian:",
+     "text": "”Miss-” betyder att något går fel… så man har förstått fel?",
+     "id": "\"Miss-\" means something goes wrong… so someone has understood wrongly?",
+     "literal": "mis- means that something goes wrong… so one has understood wrong?"
+    },
+    {
+     "speaker": "Elin:",
+     "text": "Exakt, ett missförstånd. Nu ett svårare: ”ursprung”.",
+     "id": "Exactly, a misunderstanding. Now a harder one: \"ursprung\".",
+     "literal": "exactly, a misunderstanding. now a harder: origin"
+    },
+    {
+     "speaker": "Dian:",
+     "text": "Det som något har sprungit ur? Där något kommer ifrån?",
+     "id": "What something has sprung out of? Where something comes from?",
+     "literal": "that which something has sprung out-of? where something comes from?"
+    },
+    {
+     "speaker": "Elin:",
+     "text": "Ja! Och ”ur-” betyder ofta ”den första, den äldsta”, som i urskog och urinvånare.",
+     "id": "Yes! And \"ur-\" often means \"the first, the oldest\", as in old-growth forest and indigenous people.",
+     "literal": "yes! and ur- means often the first, the oldest, as in primeval-forest and original-inhabitants"
+    },
+    {
+     "speaker": "Dian:",
+     "text": "Då är en urstockholmare någon vars familj alltid har bott här?",
+     "id": "So an \"urstockholmare\" is someone whose family has always lived here?",
+     "literal": "then is an original-Stockholmer someone whose family always has lived here?"
+    },
+    {
+     "speaker": "Elin:",
+     "text": "Precis, som jag. Sista ordet: ”barnslig”.",
+     "id": "Exactly, like me. Last word: \"barnslig\".",
+     "literal": "exactly, like me. last word-the: child-ish"
+    },
+    {
+     "speaker": "Dian:",
+     "text": "Någon som beter sig som ett barn. Men ”barnvänlig” är väl något positivt?",
+     "id": "Someone who behaves like a child. But \"barnvänlig\" is something positive, isn't it?",
+     "literal": "someone who behaves self like a child. but child-friendly is surely something positive?"
+    },
+    {
+     "speaker": "Elin:",
+     "text": "Ja, en barnvänlig restaurang är bra för familjer. Du lär dig snabbt!",
+     "id": "Yes, a child-friendly restaurant is good for families. You're learning fast!",
+     "literal": "yes, a child-friendly restaurant is good for families. you learn yourself fast!"
+    },
+    {
+     "speaker": "Dian:",
+     "text": "Jag tror att jag har knäckt koden! Svenska är ju bara Lego.",
+     "id": "I think I've cracked the code! Swedish is just Lego, really.",
+     "literal": "I think that I have cracked code-the! Swedish is ju only Lego"
+    }
+   ],
+   "notes": [
+    "**Ohållbar** — the prefix *o-* is Swedish \"un-/in-/non-\" and it takes the **main stress**: **OO-hohl-bahr**, *OO-möj-lee* (*omöjlig*, impossible), *OO-vahn-lee* (*ovanlig*, unusual). If you stress the root instead, the negative meaning is easy to miss. Careful: not every word starting with *o* is negated — *orsak* (cause) and *ord* (word) have nothing to do with it.",
+    "**Missförstånd** — *miss-* (\"wrongly, badly\") works just like English \"mis-\": *missförstå* (misunderstand), *missbruk* (abuse), *missnöjd* (dissatisfied), *misslyckas* (to fail). Note the double *s*: *miss* + *förstånd*.",
+    "**Ursprung** — *ur* is an old word for \"out of\" (still alive in *ur* = from inside: *Han tog boken ur väskan*). As a prefix, *ur-* means \"original, primeval, the very first\": *urskog* (primeval forest), *urinvånare* (indigenous inhabitants), *urpremiär* (world premiere). It can also intensify, colloquially: *urgammal* (ancient), *urtrist* (incredibly boring).",
+    "**Vars** — \"whose\" in a relative clause, from Svenska 102: *någon **vars** familj alltid har bott här*. It is the same for all genders and numbers.",
+    "**Barnslig vs barnvänlig** — *-lig* turns a noun into an adjective, often with a negative shade when used of adults: *barnslig* (childish). The compound *-vänlig* (\"-friendly\") is always positive: *barnvänlig*, *miljövänlig*, *användarvänlig* (user-friendly). Say *barnslig* **BAHNSH-lee**: *rns* becomes \"nsh\".",
+    "**Knäcka koden** — \"to crack the code\", exactly as in English. *Knäcka* is also \"to crack\" a nut and, colloquially, a *knäck* is a side job (*extraknäck*) — and a Christmas toffee."
+   ],
+   "grammars": [
+    {
+     "title": "Six prefixes that change meaning",
+     "body": [
+      "Swedish prefixes are few, but each one is productive — they appear in thousands of words. Learn what they do, and an unknown word stops being a black box."
+     ],
+     "table": {
+      "head": [
+       "Prefix",
+       "Meaning",
+       "Examples"
+      ],
+      "rows": [
+       [
+        "**o-**",
+        "not, un-, in- (stressed)",
+        "olycklig (unhappy), oberoende (independent), ohållbar (unsustainable), ovän (enemy)"
+       ],
+       [
+        "**miss-**",
+        "wrongly, badly",
+        "missförstå (misunderstand), missnöjd (dissatisfied), misstänka (suspect), missbruk (abuse)"
+       ],
+       [
+        "**för-**",
+        "make more X; do wrongly or too much",
+        "förbättra (improve), förenkla (simplify), förkorta (shorten); försova sig (oversleep), förirra sig (get lost)"
+       ],
+       [
+        "**be-**",
+        "turns a word into a transitive verb",
+        "befria (free, from *fri*), berika (enrich, from *rik*), besvara (answer), bedöma (assess)"
+       ],
+       [
+        "**sam-**",
+        "together, co-",
+        "samarbete (cooperation), samhälle (society), samtal (conversation), samverkan"
+       ],
+       [
+        "**ur-**",
+        "original, primeval; extremely",
+        "ursprung (origin), urskog (old-growth forest), urinvånare (indigenous people), urgammal (ancient)"
+       ]
+      ]
+     },
+     "after": [
+      "**För-** is the trickiest: the same prefix can mean \"make more\" (*förstora*, enlarge), \"do wrongly\" (*förväxla*, confuse two things) or simply mark a formal verb (*förklara*, explain). When in doubt, look at the adjective or verb inside it.",
+      "With **be-** and **för-** the prefix is unstressed and the stress falls on the root: *be-SVAH-rah*, *för-BEH-trah*. With **o-**, **miss-**, **sam-** and **ur-** the stress falls on the prefix: *OO-lük-lee*, *MIS-nöyd*, *SAHM-tahl*, *ÜR-skoog*."
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Text — Platsannonsen",
+   "intro": "That same evening Dian finds a job ad that looks as if it had been written for her. Reading it is a word-formation exercise in itself.",
+   "lines": [
+    {
+     "speaker": "Text:",
+     "text": "Hållbara Städer AB söker en hållbarhetskonsult till vårt kontor i Stockholm.",
+     "id": "Hållbara Städer AB is looking for a sustainability consultant for our Stockholm office.",
+     "literal": "Sustainable Cities Ltd seeks a sustainability-consultant to our office in Stockholm"
+    },
+    {
+     "speaker": "Text:",
+     "text": "Vi är ett snabbväxande konsultbolag som hjälper kommuner och fastighetsägare att minska sin klimatpåverkan.",
+     "id": "We are a fast-growing consultancy that helps municipalities and property owners reduce their climate impact.",
+     "literal": "we are a fast-growing consulting-company that helps municipalities and property-owners to reduce their climate-impact"
+    },
+    {
+     "speaker": "Text:",
+     "text": "Som konsult kommer du att arbeta i nära samarbete med våra kunder.",
+     "id": "As a consultant, you will work in close cooperation with our clients.",
+     "literal": "as consultant come you to work in close together-work with our customers"
+    },
+    {
+     "speaker": "Text:",
+     "text": "Du har en relevant akademisk examen och goda kunskaper i svenska och engelska.",
+     "id": "You have a relevant university degree and a good command of Swedish and English.",
+     "literal": "you have a relevant academic degree and good knowledges in Swedish and English"
+    },
+    {
+     "speaker": "Text:",
+     "text": "Vi ser gärna att du har erfarenhet av stadsplanering eller miljöfrågor.",
+     "id": "Experience in urban planning or environmental issues is a plus.",
+     "literal": "we see gladly that you have experience of city-planning or environment-questions"
+    },
+    {
+     "speaker": "Text:",
+     "text": "Som person är du nyfiken, ansvarstagande och samarbetsvillig.",
+     "id": "As a person, you are curious, responsible and a team player.",
+     "literal": "as person are you new-eager, responsibility-taking and cooperation-willing"
+    },
+    {
+     "speaker": "Text:",
+     "text": "Du trivs med självständigt arbete men uppskattar också gemenskapen i ett litet team.",
+     "id": "You enjoy working independently but also appreciate the community of a small team.",
+     "literal": "you thrive with self-standing work but appreciate also community-the in a little team"
+    },
+    {
+     "speaker": "Text:",
+     "text": "Ofullständiga ansökningar kommer inte att behandlas.",
+     "id": "Incomplete applications will not be considered.",
+     "literal": "un-complete applications come not to be-handled"
+    },
+    {
+     "speaker": "Text:",
+     "text": "Tjänsten är en tillsvidareanställning med sex månaders provanställning.",
+     "id": "The position is permanent, with a six-month probationary period.",
+     "literal": "position-the is an until-further-employment with six months' trial-employment"
+    },
+    {
+     "speaker": "Text:",
+     "text": "Urvalet sker löpande, så vänta inte med din ansökan!",
+     "id": "We review applications on a rolling basis, so don't wait to apply!",
+     "literal": "selection-the happens running, so wait not with your application!"
+    }
+   ],
+   "notes": [
+    "**Snabbväxande** — *snabb* + *växande* (present participle of *växa*, to grow): \"fast-growing\". Swedish builds compound adjectives from participles as freely as English does: *långtgående* (far-reaching), *nyutexaminerad* (newly graduated).",
+    "**Klimatpåverkan** — *klimat* + *påverkan* (influence, impact). *Påverkan* itself comes from the verb *påverka* — a noun in *-an*, a small but useful group: *påverkan*, *samverkan*, *början*, *längtan*.",
+    "**Vi ser gärna att du har…** — the classic job-ad formula for \"it's a plus if you have…\". Its sister is *Det är meriterande om du har…* (\"it counts in your favor if…\"). Requirements, in contrast, are introduced with *Du har…* or *Vi kräver…*",
+    "**Ansvarstagande och samarbetsvillig** — two compound adjectives at the heart of Swedish work culture: *ansvar* + *tagande* (\"responsibility-taking\"), *samarbete* + *villig* (\"willing to cooperate\"). The *-s-* in between is the binding *s* from Svenska 103: *ansvar**s**tagande*, *samarbet**s**villig*.",
+    "**Ofullständiga** — *o-* + *fullständig* (complete): \"incomplete\". The *o-* prefix even works on long words: *oförutsägbar* (unpredictable), *oundviklig* (inevitable).",
+    "**En tillsvidareanställning** — literally \"an until-further-notice employment\": a permanent contract. It is usually preceded by *provanställning* (probation, max six months). The opposite is *visstidsanställning* (fixed-term contract). **Urvalet sker löpande** — applications are reviewed as they come in, so the job may be gone before the deadline."
+   ],
+   "grammars": [
+    {
+     "title": "Suffixes that make nouns and adjectives",
+     "body": [
+      "Suffixes tell you the **word class** — and with nouns, usually the **gender** too. Once you know them, you can read a word you have never seen and still know how to use it in a sentence."
+     ],
+     "table": {
+      "head": [
+       "Suffix",
+       "Makes",
+       "Meaning",
+       "Examples"
+      ],
+      "rows": [
+       [
+        "**-het**",
+        "en-noun from adjective",
+        "-ness, -ity",
+        "en tydlighet, en hållbarhet, en enkelhet"
+       ],
+       [
+        "**-skap**",
+        "noun (mostly en)",
+        "-ship; state or group",
+        "en vänskap, en kunskap, ett ledarskap, ett landskap"
+       ],
+       [
+        "**-dom**",
+        "en-noun",
+        "-hood, -dom; state",
+        "en barndom, en ungdom, en sjukdom, en rikedom"
+       ],
+       [
+        "**-lig**",
+        "adjective from noun/verb",
+        "-ly, -ish, -ful",
+        "personlig, barnslig, farlig, begriplig"
+       ],
+       [
+        "**-bar**",
+        "adjective from verb",
+        "-able, -ible",
+        "hållbar, läsbar, ätbar, tänkbar"
+       ],
+       [
+        "**-aktig**",
+        "adjective from noun/adjective",
+        "-ish, -like",
+        "grönaktig, barnaktig, svampaktig"
+       ]
+      ]
+     },
+     "after": [
+      "**-skap** wavers between genders: *en vänskap*, *en kunskap*, but *ett landskap*, *ett sällskap*, *ett ledarskap*. Check the dictionary for each one.",
+      "**-lig** and **-ig** are pronounced the same in speech: the *g* is silent (*begriplig* → **beh-GREEP-lee**, *självständig* → **HWELV-sten-dee**). In the neuter, the *-t* comes back: *begripligt*, *självständigt*."
+     ]
+    }
+   ]
+  }
+ ],
+ "sections": [
+  {
+   "title": "Guessing meaning from parts",
+   "blocks": [
+    {
+     "type": "p",
+     "text": "At B2 you will meet many words a day that you have never seen before, and most of them are built from parts you already know. Before you reach for a dictionary, try this method — it works on almost every long Swedish word."
+    },
+    {
+     "type": "list",
+     "items": [
+      "**Peel off the prefix**: *o-*, *miss-*, *för-*, *be-*, *sam-*, *ur-*.",
+      "**Peel off the suffix** — it tells you the word class and often the gender.",
+      "**Split compounds from the end**: the last part is the main word, the rest describe it. Look for the binding *-s-*.",
+      "**Find the root** and ask what it means in the context of the sentence.",
+      "**Check the guess** against the context. If the sentence still makes sense, you are probably right."
+     ]
+    },
+    {
+     "type": "tabel",
+     "head": [
+      "Word",
+      "Parts",
+      "Meaning"
+     ],
+     "rows": [
+      [
+       "oförutsägbar",
+       "o + förut + säga + bar",
+       "unpredictable"
+      ],
+      [
+       "missnöjesyttring",
+       "miss + nöje + s + yttring",
+       "an expression of dissatisfaction"
+      ],
+      [
+       "samhällsomvandling",
+       "sam + häll + s + om + vandl + ing",
+       "social transformation"
+      ],
+      [
+       "ursprungsbefolkning",
+       "ur + sprung + s + be + folk + ning",
+       "indigenous population"
+      ],
+      [
+       "användarvänlighet",
+       "använd + are + vän + lig + het",
+       "user-friendliness"
+      ],
+      [
+       "oberoende",
+       "o + be + ro + ende",
+       "independence; independent"
+      ]
+     ]
+    },
+    {
+     "type": "kotak",
+     "title": "When the parts lie",
+     "items": [
+      "Some words have drifted so far that the parts no longer help: *ursäkt* (excuse, apology) has nothing to do with \"original\".",
+      "*Förlåt* (sorry) is not \"let wrongly\", and *förstå* (understand) is not \"stand wrongly\".",
+      "So: guess from the parts, but always confirm in context."
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Reading a Swedish job ad",
+   "blocks": [
+    {
+     "type": "p",
+     "text": "Swedish job ads (*platsannonser*) follow a predictable pattern: who we are, what you will do, who you are, practical information. The vocabulary is just as predictable."
+    },
+    {
+     "type": "tabel",
+     "head": [
+      "Svenska",
+      "Pronunciation",
+      "English"
+     ],
+     "rows": [
+      [
+       "en tjänst",
+       "en shenst",
+       "a position, a post"
+      ],
+      [
+       "en tillsvidareanställning",
+       "en tils-VEE-dah-reh-ahn-stel-ning",
+       "a permanent position"
+      ],
+      [
+       "en visstidsanställning",
+       "en VIS-teeds-ahn-stel-ning",
+       "a fixed-term position"
+      ],
+      [
+       "en provanställning",
+       "en PROOV-ahn-stel-ning",
+       "a probationary period"
+      ],
+      [
+       "meriterande",
+       "meh-ree-TEH-rahn-deh",
+       "an advantage, a plus (in a job ad)"
+      ],
+      [
+       "tillträde",
+       "TIL-treh-deh",
+       "start date"
+      ],
+      [
+       "enligt överenskommelse",
+       "EHN-lit Ö-ver-ens-kom-mel-seh",
+       "by agreement"
+      ],
+      [
+       "sista ansökningsdag",
+       "SIS-tah AHN-sök-nings-dahg",
+       "application deadline"
+      ],
+      [
+       "ett personligt brev",
+       "et peh-SHOON-lit brehv",
+       "a cover letter"
+      ],
+      [
+       "löpande urval",
+       "LÖ-pahn-deh ÜR-vahl",
+       "rolling review of applications"
+      ]
+     ]
+    },
+    {
+     "type": "kotak",
+     "title": "Spiral review — back to Svenska 103, Unit 17",
+     "items": [
+      "There you learned the binding *-s-* in compounds: *arbets|miljö|verket*.",
+      "Find every binding *-s-* in today's job ad: *hållbarhet**s**konsult*, *fastighet**s**ägare*, *ansvar**s**tagande*, *samarbet**s**villig*.",
+      "Rule of thumb: after *-het*, *-ning*, *-skap* and *-tion*, a binding *-s-* is almost always used."
+     ]
+    }
+   ]
+  }
+ ],
+ "vocab": [
+  {
+   "sv": "ohållbar",
+   "baca": "OO-hohl-bahr",
+   "en": "unsustainable; untenable"
+  },
+  {
+   "sv": "ett missförstånd",
+   "baca": "et MIS-för-stond",
+   "en": "a misunderstanding"
+  },
+  {
+   "sv": "ett ursprung",
+   "baca": "et ÜR-sprüng",
+   "en": "an origin"
+  },
+  {
+   "sv": "en barndom",
+   "baca": "en BAHN-doom",
+   "en": "a childhood"
+  },
+  {
+   "sv": "barnslig",
+   "baca": "BAHNSH-lee",
+   "en": "childish"
+  },
+  {
+   "sv": "barnvänlig",
+   "baca": "BAHN-ven-lee",
+   "en": "child-friendly"
+  },
+  {
+   "sv": "att knäcka",
+   "baca": "aht KNEK-kah",
+   "en": "to crack"
+  },
+  {
+   "sv": "en ordlek",
+   "baca": "en OOD-lehk",
+   "en": "a word game, a pun"
+  },
+  {
+   "sv": "en hållbarhetskonsult",
+   "baca": "en HOHL-bahr-hehts-kon-sült",
+   "en": "a sustainability consultant"
+  },
+  {
+   "sv": "ett konsultbolag",
+   "baca": "et kon-SÜLT-boo-lahg",
+   "en": "a consultancy, a consulting firm"
+  },
+  {
+   "sv": "klimatpåverkan",
+   "baca": "klee-MAHT-poh-ver-kahn",
+   "en": "climate impact"
+  },
+  {
+   "sv": "en fastighetsägare",
+   "baca": "en FAHS-tee-hehts-eh-gah-reh",
+   "en": "a property owner"
+  },
+  {
+   "sv": "ansvarstagande",
+   "baca": "AHN-svahsh-tah-gahn-deh",
+   "en": "responsible, taking responsibility"
+  },
+  {
+   "sv": "samarbetsvillig",
+   "baca": "SAHM-ahr-behts-vil-lee",
+   "en": "cooperative, a team player"
+  },
+  {
+   "sv": "självständig",
+   "baca": "HWELV-sten-dee",
+   "en": "independent"
+  },
+  {
+   "sv": "en gemenskap",
+   "baca": "en yeh-MEHN-skahp",
+   "en": "a community, a sense of belonging"
+  },
+  {
+   "sv": "ofullständig",
+   "baca": "OO-fül-sten-dee",
+   "en": "incomplete"
+  },
+  {
+   "sv": "att uppskatta",
+   "baca": "aht ÜP-skaht-tah",
+   "en": "to appreciate; to estimate"
+  },
+  {
+   "sv": "ett urval",
+   "baca": "et ÜR-vahl",
+   "en": "a selection"
+  },
+  {
+   "sv": "löpande",
+   "baca": "LÖ-pahn-deh",
+   "en": "ongoing, continuous, on a rolling basis"
+  }
+ ],
+ "exercises": [
+  {
+   "title": "Prefixes",
+   "prompt": "Fill in the missing prefix: *o-*, *miss-*, *för-*, *be-*, *sam-* or *ur-*.",
+   "items": [
+    "Det går inte. Det är ____möjligt.",
+    "Han förstod fel. Det var ett ____förstånd.",
+    "Vi arbetar tillsammans. Det är ett bra ____arbete.",
+    "Texten är för svår. Kan du ____enkla den?",
+    "Hon har inte ____svarat mitt mejl än.",
+    "Skogen har aldrig huggits ned. Det är en ____skog."
+   ]
+  },
+  {
+   "title": "Suffixes",
+   "prompt": "Build one Swedish word from the root and the description.",
+   "items": [
+    "barn + the time of life when you are a child",
+    "vän + the relationship between friends",
+    "läsa + possible to read",
+    "sjuk + a disease",
+    "grön + slightly green"
+   ]
+  },
+  {
+   "title": "Word order",
+   "prompt": "Put the words in the right order. The capitalized word starts the sentence.",
+   "items": [
+    "är / en / ohållbar / situation. / Det",
+    "var / ett / missförstånd. / Det / bara",
+    "ansökningar / behandlas. / Ofullständiga / inte / kommer / att",
+    "sker / Urvalet / löpande.",
+    "trivs / med / Jag / självständigt arbete."
+   ]
+  },
+  {
+   "title": "Translation",
+   "prompt": "Translate into Swedish.",
+   "items": [
+    "The situation is unsustainable.",
+    "What is the origin of the word?",
+    "I had a happy childhood.",
+    "This restaurant is very child-friendly.",
+    "The position is permanent, with a six-month probationary period.",
+    "Don't wait to send your application!"
+   ]
+  }
+ ],
+ "answers": [
+  "o — miss — sam — för — be — ur",
+  "barndom — vänskap — läsbar — sjukdom — grönaktig",
+  "Det är en ohållbar situation. — Det var bara ett missförstånd. — Ofullständiga ansökningar kommer inte att behandlas. — Urvalet sker löpande. — Jag trivs med självständigt arbete.",
+  "Situationen är ohållbar. — Vad är ordets ursprung? — Jag hade en lycklig barndom. — Den här restaurangen är väldigt barnvänlig. — Tjänsten är en tillsvidareanställning med sex månaders provanställning. — Vänta inte med att skicka din ansökan!"
+ ]
+}

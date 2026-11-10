@@ -1,0 +1,646 @@
+{
+ "title": "Word order deep dive",
+ "title_target": "Det har jag aldrig tänkt på",
+ "goal": "Start your sentences with whatever matters most — an object, a time, a place — and always know where *inte*, *alltid* and *kanske* belong.",
+ "bekal": [
+  "front an object or an adverbial and keep the verb in second place (*Det vet jag inte*)",
+  "place sentence adverbs correctly in main clauses, inverted clauses and subordinate clauses",
+  "combine several adverbs in the natural order (*nog inte*, *faktiskt aldrig*)"
+ ],
+ "wave": "Go back to Svenska 101, Unit 18 (the BIFF rule): say the five pairs in the grammar table aloud — *Jag förstår inte* / *…eftersom jag inte förstår* — then make five new pairs with *alltid*, *aldrig* and *kanske* instead of *inte*.",
+ "dialogs": [
+  {
+   "title": "Dialogue — Veckomötet",
+   "intro": "Monday morning, nine o'clock: the weekly team meeting. Karin runs it from the end of the table, laptop open. The main topic is a client in Borås, a textile company that wants a new website.",
+   "lines": [
+    {
+     "speaker": "Karin:",
+     "text": "Okej, då kör vi. Först: kunden i Borås. Har alla läst deras mejl?",
+     "id": "OK, let's get going. First: the client in Borås. Has everyone read their email?",
+     "literal": "okay, then drive we. first: client-the in Borås. have all read their email?"
+    },
+    {
+     "speaker": "Mattias:",
+     "text": "Mejlet har jag läst, men bilagan har jag inte hunnit öppna.",
+     "id": "I've read the email, but I haven't had time to open the attachment.",
+     "literal": "email-the have I read, but attachment-the have I not had-time open."
+    },
+    {
+     "speaker": "Karin:",
+     "text": "Bilagan är viktig. Den måste vi gå igenom före torsdag.",
+     "id": "The attachment is important. We have to go through it before Thursday.",
+     "literal": "attachment-the is important. it must we go through before Thursday."
+    },
+    {
+     "speaker": "Leila:",
+     "text": "Jag har tittat på den. Ärligt talat förstår jag inte riktigt vad de vill.",
+     "id": "I've looked at it. To be honest, I don't really understand what they want.",
+     "literal": "I have looked at it. honestly spoken understand I not really what they want."
+    },
+    {
+     "speaker": "Karin:",
+     "text": "Det förstår jag inte heller. Därför ringer jag dem i eftermiddag.",
+     "id": "Neither do I. That's why I'm calling them this afternoon.",
+     "literal": "that understand I not either. therefore call I them in afternoon."
+    },
+    {
+     "speaker": "Dian:",
+     "text": "Ska jag kanske göra några enkla skisser till torsdag?",
+     "id": "Shall I maybe do a few simple sketches for Thursday?",
+     "literal": "shall I maybe make some simple sketches to Thursday?"
+    },
+    {
+     "speaker": "Karin:",
+     "text": "Gärna! Skisser gillar de alltid.",
+     "id": "Yes, please! They always like sketches.",
+     "literal": "gladly! sketches like they always."
+    },
+    {
+     "speaker": "Mattias:",
+     "text": "Fast de svarar sällan snabbt. Förra gången väntade vi i tre veckor.",
+     "id": "Although they rarely answer quickly. Last time we waited three weeks.",
+     "literal": "though they answer rarely quickly. last time-the waited we in three weeks."
+    },
+    {
+     "speaker": "Karin:",
+     "text": "Det är sant. Om de inte har svarat på fredag, skickar jag en påminnelse.",
+     "id": "That's true. If they haven't answered by Friday, I'll send a reminder.",
+     "literal": "it is true. if they not have answered on Friday, send I a reminder."
+    },
+    {
+     "speaker": "Leila:",
+     "text": "Bra. Och fikat på fredag – vem tar med något den här gången?",
+     "id": "Good. And the fika on Friday — who's bringing something this time?",
+     "literal": "good. and fika-the on Friday – who takes with something this here time-the?"
+    },
+    {
+     "speaker": "Dian:",
+     "text": "Det gör jag! Kanelbullar kan jag faktiskt baka.",
+     "id": "I will! Cinnamon buns I actually can bake.",
+     "literal": "that do I! cinnamon-buns can I actually bake."
+    },
+    {
+     "speaker": "Karin:",
+     "text": "Utmärkt. Då är vi klara. Tack, allihop!",
+     "id": "Excellent. Then we're done. Thanks, everyone!",
+     "literal": "excellent. then are we finished. thanks, all-of-you!"
+    }
+   ],
+   "notes": [
+    "**Mejlet har jag läst, men bilagan har jag inte…** — both halves start with the **object**. Mattias does it to contrast the two things: the email yes, the attachment no. In English \"The email I've read\" sounds dramatic; in Swedish it is completely ordinary. Note the verb stays in second place and the subject jumps behind it: *har jag*.",
+    "**Den måste vi gå igenom** — Karin fronts *den* because it links straight back to the attachment she just mentioned. This is the most common reason for fronting: **the known thing comes first, the new information last**. *Gå igenom* (**goh ee-YEH-nom**) means \"to go through, to review\".",
+    "**Det förstår jag inte heller** — the Swedish way to say \"Neither do I\". *Inte heller* = not either. The positive version is *Det gör jag också* (So do I). You'll hear *Det vet jag inte* (I don't know) a hundred times a day — starting with *det* is the default, not a stylistic choice.",
+    "**Om de inte har svarat på fredag** — a subordinate clause, so BIFF puts *inte* before *har*. And since the whole *om*-clause stands first, the main clause continues verb-first: *skickar jag*. Unit 4 looks at these long sentences in detail. Note too *på fredag* = by/on (this coming) Friday.",
+    "**Vem tar med något?** — *ta med* (**tah MEHD**) = to bring along. Bringing something for *fikat* (cake, buns, cookies) usually rotates in the team. *Den här gången* = this time.",
+    "**Kanelbullar** (**kah-NEHL-bül-lahr**) — cinnamon buns, the national pastry, with their own national day on October 4: *kanelbullens dag*. Dian fronts the object again, with a touch of pride: \"*Cinnamon buns* I can bake.\""
+   ],
+   "grammars": [
+    {
+     "title": "Fronting: the first slot is yours to choose",
+     "body": [
+      "Every Swedish main clause has one slot in front of the verb — Swedish grammarians call it the *fundament*. The subject is simply the most common thing to put there. But **anything** can go there: an object, a time, a place, a whole clause. Whatever you choose, the verb stays second and the subject moves in right behind it."
+     ],
+     "table": {
+      "head": [
+       "What goes first",
+       "Example",
+       "English"
+      ],
+      "rows": [
+       [
+        "Subject (neutral)",
+        "**Jag** har inte läst bilagan.",
+        "I haven't read the attachment."
+       ],
+       [
+        "Object (contrast or link)",
+        "**Bilagan** har jag inte läst.",
+        "The attachment I haven't read."
+       ],
+       [
+        "*det* (link to what was said)",
+        "**Det** vet jag inte.",
+        "I don't know (that)."
+       ],
+       [
+        "Time",
+        "**I eftermiddag** ringer jag dem.",
+        "This afternoon I'll call them."
+       ],
+       [
+        "Place",
+        "**I Borås** finns det många textilföretag.",
+        "In Borås there are lots of textile companies."
+       ],
+       [
+        "Linking adverb",
+        "**Därför** ringer jag dem.",
+        "That's why I'm calling them."
+       ],
+       [
+        "Sentence adverb",
+        "**Kanske** kan jag hjälpa till.",
+        "Maybe I can help."
+       ]
+      ]
+     },
+     "after": [
+      "**Why front?** Mostly to tie the sentence to what came before (*det*, *den*, *då*, *därför*) or to set a contrast (*Mejlet… men bilagan…*). New, important information then lands at the end, where Swedes put the stress.",
+      "**Don't overdo it.** Only one element fits in front. *Igår i Borås jag träffade…* is wrong twice over: two elements in front, and the verb isn't second. Write *Igår träffade jag kunden i Borås*."
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Dialogue — På spårvagnen hem",
+   "intro": "After work Dian and Leila take the same tram home. Leila grew up in Göteborg and is curious how Swedish looks from the outside.",
+   "lines": [
+    {
+     "speaker": "Leila:",
+     "text": "Du pratar riktigt bra svenska. Hur länge har du läst?",
+     "id": "You speak really good Swedish. How long have you been studying it?",
+     "literal": "you speak really good Swedish. how long have you read?"
+    },
+    {
+     "speaker": "Dian:",
+     "text": "Tack! I två år. Men ordföljden glömmer jag fortfarande ibland.",
+     "id": "Thanks! For two years. But I still forget the word order sometimes.",
+     "literal": "thanks! in two years. but word-order-the forget I still sometimes."
+    },
+    {
+     "speaker": "Leila:",
+     "text": "Ordföljden? Den tänker jag aldrig på.",
+     "id": "Word order? I never think about it.",
+     "literal": "word-order-the? it think I never on."
+    },
+    {
+     "speaker": "Dian:",
+     "text": "Nej, det gör ni svenskar ju inte. Men för mig är ”inte” ett problem.",
+     "id": "No, of course you Swedes don't. But for me \"inte\" is a problem.",
+     "literal": "no, that do you Swedes of-course not. but for me is \"inte\" a problem."
+    },
+    {
+     "speaker": "Leila:",
+     "text": "Hur menar du?",
+     "id": "What do you mean?",
+     "literal": "how mean you?"
+    },
+    {
+     "speaker": "Dian:",
+     "text": "I huvudsatser står det efter verbet, men i bisatser hamnar det före.",
+     "id": "In main clauses it comes after the verb, but in subordinate clauses it ends up before.",
+     "literal": "in main-clauses stands it after verb-the, but in subordinate-clauses lands it before."
+    },
+    {
+     "speaker": "Leila:",
+     "text": "Ge mig ett exempel.",
+     "id": "Give me an example.",
+     "literal": "give me an example."
+    },
+    {
+     "speaker": "Dian:",
+     "text": "”Jag kommer inte”, men ”Jag sa att jag inte kommer”.",
+     "id": "\"Jag kommer inte\" (I'm not coming), but \"Jag sa att jag inte kommer\" (I said I'm not coming).",
+     "literal": "I come not, but I said that I not come."
+    },
+    {
+     "speaker": "Leila:",
+     "text": "Oj, det har jag aldrig tänkt på! Jag säger det bara.",
+     "id": "Wow, I've never thought about that! I just say it.",
+     "literal": "oh, that have I never thought on! I say it just."
+    },
+    {
+     "speaker": "Dian:",
+     "text": "Precis. Och om man börjar med något annat än subjektet, måste verbet komma på andra plats.",
+     "id": "Exactly. And if you start with something other than the subject, the verb has to come in second place.",
+     "literal": "exactly. and if one begins with something other than subject-the, must verb-the come on second place."
+    },
+    {
+     "speaker": "Leila:",
+     "text": "Som ”Imorgon jobbar jag hemifrån”?",
+     "id": "Like \"Imorgon jobbar jag hemifrån\" (Tomorrow I'm working from home)?",
+     "literal": "like tomorrow work I from-home?"
+    },
+    {
+     "speaker": "Dian:",
+     "text": "Exakt! Om man säger ”Imorgon jag jobbar”, hör alla att man inte är härifrån.",
+     "id": "Exactly! If you say \"Imorgon jag jobbar\", everyone can hear you're not from here.",
+     "literal": "exactly! if one says tomorrow I work, hear all that one not is from-here."
+    },
+    {
+     "speaker": "Leila:",
+     "text": "Då ska jag lyssna lite noggrannare på mina föräldrar. De säger fortfarande så.",
+     "id": "Then I'll listen a bit more carefully to my parents. They still say it that way.",
+     "literal": "then shall I listen little more-carefully on my parents. they say still so."
+    }
+   ],
+   "notes": [
+    "**Det gör ni svenskar ju inte** — two sentence adverbs in a row: *ju* (as you know, of course) comes **before** *inte*. The little modal words *ju*, *väl*, *nog* almost always come first in the line-up. *Det gör ni ju inte* = \"Well, you don't, do you\".",
+    "**Hur menar du?** — \"What do you mean?\", literally \"How do you mean?\". Never *Vad menar du?* in this sense — that sounds like a challenge (\"What are you implying?\").",
+    "**Huvudsats** (**HÜ-vüd-sahts**) and **bisats** (**BEE-sahts**) — main clause and subordinate clause. Worth learning: every Swedish grammar book and teacher uses them. *Hamna* means \"to land, to end up\": *Var hamnade vi?* (Where were we?).",
+    "**Komma på andra plats** — \"come in second place\". This is the V2 rule in one phrase, and Dian has clearly heard it many times from her teacher Lena in Stockholm. In grammar talk it is called the **V2 rule**, just like in German.",
+    "**Hemifrån** (**HEM-ee-frohn**) — \"from home\": *jobba hemifrån*. Its partner *härifrån* means \"from here\": *Jag är inte härifrån* (I'm not from around here).",
+    "**Noggrannare** — the comparative of *noggrann* (**NOG-grahn**, careful, thorough). Leila's joke is a gentle one: many people who learned Swedish as adults, like her parents, keep a few habits like this for life, and nobody minds."
+   ],
+   "grammars": [
+    {
+     "title": "Where do inte, alltid and kanske go?",
+     "body": [
+      "*Inte* and the other **sentence adverbs** (*alltid, aldrig, ofta, sällan, kanske, nog, ju, väl, faktiskt, också, redan, bara*) comment on the whole sentence. Their place depends on the type of clause. Read this table column by column: the position of the adverb never changes in a main clause — right after the verb and the subject."
+     ],
+     "table": {
+      "head": [
+       "First slot",
+       "Finite verb",
+       "Subject",
+       "Adverb",
+       "Other verbs",
+       "Rest"
+      ],
+      "rows": [
+       [
+        "Jag",
+        "dricker",
+        "",
+        "**inte**",
+        "",
+        "kaffe."
+       ],
+       [
+        "Kaffe",
+        "dricker",
+        "jag",
+        "**inte**",
+        "",
+        ""
+       ],
+       [
+        "Idag",
+        "har",
+        "Leila",
+        "**kanske**",
+        "jobbat",
+        "hemifrån."
+       ],
+       [
+        "Bilagan",
+        "har",
+        "jag",
+        "**inte**",
+        "hunnit öppna.",
+        ""
+       ],
+       [
+        "Det",
+        "gör",
+        "ni svenskar",
+        "**ju inte**",
+        "",
+        ""
+       ]
+      ]
+     },
+     "after": [
+      "**Subordinate clauses** are different: the adverb jumps in front of the finite verb (BIFF): *…att jag **inte** dricker kaffe*, *…eftersom Leila **kanske** har jobbat hemifrån*, *…om du **alltid** glömmer det*.",
+      "**Unstressed pronouns may slip in front of *inte*:** *Jag känner **honom** inte* and *Jag förstår **det** inte* are just as common as *Jag känner inte honom*. Nouns never do this: only *Jag känner inte Karin*.",
+      "**Several adverbs** follow a fixed order: small modal words first, then *inte*: *ju inte*, *nog inte*, *väl inte*, *faktiskt inte*, *kanske inte*. *Han kommer **nog inte*** = He probably won't come."
+     ]
+    }
+   ]
+  }
+ ],
+ "sections": [
+  {
+   "title": "Sentence adverbs you use every day",
+   "blocks": [
+    {
+     "type": "tabel",
+     "head": [
+      "Svenska",
+      "Pronunciation",
+      "English"
+     ],
+     "rows": [
+      [
+       "inte heller",
+       "IN-teh HEL-ler",
+       "not either, neither"
+      ],
+      [
+       "sällan",
+       "SEL-lahn",
+       "rarely, seldom"
+      ],
+      [
+       "fortfarande",
+       "FOT-fah-rahn-deh",
+       "still"
+      ],
+      [
+       "faktiskt",
+       "FAHK-tiskt",
+       "actually, in fact"
+      ],
+      [
+       "verkligen",
+       "VERK-lee-gen",
+       "really"
+      ],
+      [
+       "gärna",
+       "YEH-nah",
+       "gladly, preferably"
+      ],
+      [
+       "nog",
+       "noog",
+       "probably; enough"
+      ],
+      [
+       "ju",
+       "yü",
+       "you know, of course"
+      ],
+      [
+       "väl",
+       "vehl",
+       "surely, I suppose"
+      ],
+      [
+       "ärligt talat",
+       "EH-lit TAH-laht",
+       "to be honest, frankly"
+      ]
+     ]
+    },
+    {
+     "type": "p",
+     "text": "*Fortfarande* and *ännu* both translate \"still\", but in a positive statement Swedes prefer *fortfarande*: *Jag bor **fortfarande** i Majorna.* *Ännu* shines with negatives: *Hon har inte kommit **ännu*** (She hasn't come yet) — here *än* means the same, and is more relaxed."
+    },
+    {
+     "type": "kotak",
+     "title": "The three classic word-order slips",
+     "items": [
+      "**Verb not second after a fronted word:** not *Idag jag jobbar* but *Idag **jobbar jag***.",
+      "**Inte after the verb in a subordinate clause:** not *…att jag kommer inte* but *…att jag **inte kommer***.",
+      "**Inte before the verb in a main clause:** not *Jag inte förstår* but *Jag **förstår inte***. In a main clause, the verb always comes before *inte* — even after *och*, *men* and *för*: *…men jag förstår inte*."
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Meetings and office words",
+   "blocks": [
+    {
+     "type": "tabel",
+     "head": [
+      "Svenska",
+      "Pronunciation",
+      "English"
+     ],
+     "rows": [
+      [
+       "ett veckomöte",
+       "et VEK-koo-mö-teh",
+       "a weekly meeting"
+      ],
+      [
+       "en kund",
+       "en künd",
+       "a client, a customer"
+      ],
+      [
+       "en bilaga",
+       "en BEE-lah-gah",
+       "an attachment"
+      ],
+      [
+       "att gå igenom",
+       "aht goh ee-YEH-nom",
+       "to go through, to review"
+      ],
+      [
+       "en skiss",
+       "en skis",
+       "a sketch, a draft"
+      ],
+      [
+       "en påminnelse",
+       "en POH-min-nel-seh",
+       "a reminder"
+      ],
+      [
+       "att ta med",
+       "aht tah MEHD",
+       "to bring along"
+      ],
+      [
+       "en deadline",
+       "en DED-lain",
+       "a deadline"
+      ],
+      [
+       "Då kör vi!",
+       "doh SHÖR vee",
+       "Let's get going!"
+      ],
+      [
+       "Då är vi klara.",
+       "doh eh vee KLAH-rah",
+       "That's it, we're done."
+      ]
+     ]
+    },
+    {
+     "type": "p",
+     "text": "Swedish meetings tend to start and end on time, follow an agenda (*en dagordning*), and give everyone a chance to speak. *Då kör vi* (literally \"then we drive\") is how a meeting gets going; *Då är vi klara* or *Tack för idag* closes it. More on meeting culture in Unit 18."
+    },
+    {
+     "type": "kotak",
+     "title": "Spiral review — back to Unit 2",
+     "items": [
+      "Front the object in five sentences with strong verbs: *Kaffet **drack** jag upp. Mejlet **skrev** Karin igår. Bilagan **har** jag inte **läst**.*",
+      "Add a sentence adverb to each: *Kaffet drack jag **faktiskt** upp.*",
+      "Then turn each one into a subordinate clause after *Hon sa att…*: *Hon sa att jag **faktiskt** drack upp kaffet.*"
+     ]
+    }
+   ]
+  }
+ ],
+ "vocab": [
+  {
+   "sv": "ett veckomöte",
+   "baca": "et VEK-koo-mö-teh",
+   "en": "a weekly meeting"
+  },
+  {
+   "sv": "en kund",
+   "baca": "en künd",
+   "en": "a client, a customer"
+  },
+  {
+   "sv": "en bilaga",
+   "baca": "en BEE-lah-gah",
+   "en": "an attachment"
+  },
+  {
+   "sv": "att gå igenom",
+   "baca": "aht goh ee-YEH-nom",
+   "en": "to go through, to review"
+  },
+  {
+   "sv": "ärligt talat",
+   "baca": "EH-lit TAH-laht",
+   "en": "to be honest, frankly"
+  },
+  {
+   "sv": "inte heller",
+   "baca": "IN-teh HEL-ler",
+   "en": "not either, neither"
+  },
+  {
+   "sv": "en skiss",
+   "baca": "en skis",
+   "en": "a sketch, a draft"
+  },
+  {
+   "sv": "sällan",
+   "baca": "SEL-lahn",
+   "en": "rarely, seldom"
+  },
+  {
+   "sv": "en påminnelse",
+   "baca": "en POH-min-nel-seh",
+   "en": "a reminder"
+  },
+  {
+   "sv": "att ta med",
+   "baca": "aht tah MEHD",
+   "en": "to bring along"
+  },
+  {
+   "sv": "en kanelbulle",
+   "baca": "en kah-NEHL-bül-leh",
+   "en": "a cinnamon bun"
+  },
+  {
+   "sv": "att baka",
+   "baca": "aht BAH-kah",
+   "en": "to bake"
+  },
+  {
+   "sv": "utmärkt",
+   "baca": "ÜT-merkt",
+   "en": "excellent"
+  },
+  {
+   "sv": "allihop",
+   "baca": "ahl-lee-HOOP",
+   "en": "everyone, all of you"
+  },
+  {
+   "sv": "en ordföljd",
+   "baca": "en OOD-följd",
+   "en": "word order"
+  },
+  {
+   "sv": "en huvudsats",
+   "baca": "en HÜ-vüd-sahts",
+   "en": "a main clause"
+  },
+  {
+   "sv": "en bisats",
+   "baca": "en BEE-sahts",
+   "en": "a subordinate clause"
+  },
+  {
+   "sv": "att hamna",
+   "baca": "aht HAHM-nah",
+   "en": "to end up, to land"
+  },
+  {
+   "sv": "fortfarande",
+   "baca": "FOT-fah-rahn-deh",
+   "en": "still"
+  },
+  {
+   "sv": "hemifrån",
+   "baca": "HEM-ee-frohn",
+   "en": "from home"
+  },
+  {
+   "sv": "härifrån",
+   "baca": "HEHR-ee-frohn",
+   "en": "from here"
+  },
+  {
+   "sv": "noggrann",
+   "baca": "NOG-grahn",
+   "en": "careful, thorough"
+  },
+  {
+   "sv": "faktiskt",
+   "baca": "FAHK-tiskt",
+   "en": "actually, in fact"
+  }
+ ],
+ "exercises": [
+  {
+   "prompt": "Rewrite each sentence so that it starts with the word(s) in brackets. Keep the verb in second place.",
+   "items": [
+    "Jag har inte läst bilagan. (Bilagan)",
+    "Vi ringer kunden i eftermiddag. (I eftermiddag)",
+    "Jag vet inte det. (Det)",
+    "Leila jobbar hemifrån på fredagar. (På fredagar)",
+    "De gillar alltid skisser. (Skisser)",
+    "Jag kan kanske hjälpa till. (Kanske)"
+   ]
+  },
+  {
+   "prompt": "Add the adverb in brackets in the right place.",
+   "items": [
+    "Hon sa att hon kommer. (inte)",
+    "Idag har Mattias jobbat hemifrån. (kanske)",
+    "Eftersom kunden svarar snabbt, väntar vi. (sällan)",
+    "Han kommer. (nog inte)",
+    "Jag vet att du har bakat bullar. (aldrig)"
+   ]
+  },
+  {
+   "prompt": "Answer with *också* or *inte heller*.",
+   "items": [
+    "Jag förstår inte bilagan. – Det gör jag ____.",
+    "Karin gillar skisser. – Det gör kunden ____.",
+    "Mattias har inte hunnit läsa mejlet. – Det har Leila ____.",
+    "Dian kan baka. – Det kan Leila ____.",
+    "Vi har aldrig varit i Borås. – Det har vi ____."
+   ]
+  },
+  {
+   "prompt": "Put the words in the right order. Start with the word in capitals.",
+   "items": [
+    "Bilagan / måste / vi / gå / igenom / före / torsdag.",
+    "Därför / ringer / jag / dem / i / eftermiddag.",
+    "Om / de inte / har / svarat / skickar / jag / en / påminnelse.",
+    "Det / har / jag / aldrig / tänkt / på."
+   ]
+  },
+  {
+   "prompt": "Translate into Swedish. Start each sentence with the word in italics.",
+   "items": [
+    "I don't know *that*.",
+    "*Tomorrow* I'm working from home.",
+    "*Cinnamon buns* I can actually bake.",
+    "I don't understand that *either*. (Start with *Det*.)",
+    "*Last time* we waited three weeks."
+   ]
+  }
+ ],
+ "answers": [
+  "Bilagan har jag inte läst. — I eftermiddag ringer vi kunden. — Det vet jag inte. — På fredagar jobbar Leila hemifrån. — Skisser gillar de alltid. — Kanske kan jag hjälpa till.",
+  "Hon sa att hon inte kommer. — Idag har Mattias kanske jobbat hemifrån. — Eftersom kunden sällan svarar snabbt, väntar vi. — Han kommer nog inte. — Jag vet att du aldrig har bakat bullar.",
+  "inte heller — också — inte heller — också — inte heller",
+  "Bilagan måste vi gå igenom före torsdag. — Därför ringer jag dem i eftermiddag. — Om de inte har svarat skickar jag en påminnelse. — Det har jag aldrig tänkt på.",
+  "Det vet jag inte. — Imorgon jobbar jag hemifrån. — Kanelbullar kan jag faktiskt baka. — Det förstår jag inte heller. — Förra gången väntade vi i tre veckor."
+ ]
+}
