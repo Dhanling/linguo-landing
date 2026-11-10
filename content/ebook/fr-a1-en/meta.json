@@ -1,0 +1,932 @@
+{
+  "brand": "LINGUO",
+  "cover": "cover.png",
+  "title": "Français 101",
+  "subtitle": "A self-study course in French for complete beginners",
+  "level": "Level A1 (CEFR)",
+  "edition": "English Edition",
+  "ruby": false,
+  "font_size": "9.8pt",
+  "page_margin": "15mm 13mm 13mm",
+  "labels": {
+    "unit": "Unit",
+    "dialog": "Dialogue",
+    "notes": "Notes",
+    "vocab": "Vocabulary in this unit",
+    "exercises": "Exercises",
+    "answers": "Answer key",
+    "bekal": "By the end of this unit you can:",
+    "literal": "literally:",
+    "wave": "Wave review:",
+    "bagian": "Part"
+  },
+  "vocab_columns": [
+    {
+      "head": "Français",
+      "key": "fr"
+    },
+    {
+      "head": "Pronunciation",
+      "key": "baca"
+    },
+    {
+      "head": "English",
+      "key": "en"
+    }
+  ],
+  "cover_design": {
+    "bg": "#26265E",
+    "accent": "#EE8B6B",
+    "label": "FRENCH",
+    "judul": "Français",
+    "judul_size": "180px",
+    "cap": "ç",
+    "pola_opacity": 0.45,
+    "pola": "background-image:repeating-linear-gradient(135deg, rgba(255,255,255,.10) 0 2px, transparent 2px 46px),repeating-linear-gradient(45deg, rgba(255,255,255,.05) 0 2px, transparent 2px 46px);",
+    "ringkas": "A self-study course in French for complete beginners — from saying hello at the boulangerie to telling the story of last weekend.",
+    "catatan": "Every line of dialogue comes with a word-for-word translation and a pronunciation guide.",
+    "merek_sub": "SELF-STUDY MODULE",
+    "kaki_sub": "units · dialogues · exercises · answer key"
+  },
+  "product": {
+    "slug": "modul-prancis-101-en",
+    "title": "French 101 - A1 (English Edition)",
+    "type": "ebook",
+    "language": "French",
+    "level": "A1",
+    "file": "francais-101-a1-en.pdf",
+    "description": "Twenty Assimil-style self-study units that take you from zero to A1 French: short dialogues, word-for-word translations that show how French builds its sentences, grammar notes, vocabulary with an English-friendly pronunciation guide, exercises, and an answer key. As an English speaker you already recognize thousands of French words — the challenge is hearing and saying them. Each unit targets one of the spots that actually trip learners up, from the silent letters at the end of words and the gender of every noun to the little articles English doesn't have and the choice between avoir and être in the past tense.",
+    "pages": 142
+  },
+  "front": [
+    {
+      "title": "Foreword",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "French has a double reputation. People call it the most beautiful language in the world, and in the very next breath call it the hardest language in the world to read aloud. Both come from the same source: French writes more than it pronounces."
+        },
+        {
+          "type": "p",
+          "text": "That is the first surprise. English spelling is famously unreliable too, but French is unreliable in a different way. *Beaucoup* is written with eight letters and spoken as two short syllables. *Ils parlent* and *il parle* look very different on the page but sound exactly the same. The last letter of a French word is more often silent than spoken."
+        },
+        {
+          "type": "p",
+          "text": "The second surprise comes later and is more stubborn: every French noun has a gender you can't guess from its meaning, and almost no noun can stand without an article. \"I eat bread\" is three words in English; in French it needs an extra word that has no English translation at all — *je mange **du** pain*."
+        },
+        {
+          "type": "p",
+          "text": "This course tackles all three — sound, gender and articles — from the very first units instead of saving them for the last chapter. Its twenty short units cover the whole of **Level A1 (CEFR)**: greeting people, introducing yourself, talking about family and age, ordering at a café, telling the time, describing an ordinary day, asking for directions, shopping, saying what you like and dislike, and telling what happened yesterday."
+        },
+        {
+          "type": "p",
+          "text": "Each unit starts from a conversation you can use right away, and only then explains why the sentences look the way they do. The explanations are deliberately short. What is long is not the theory but the practice."
+        },
+        {
+          "type": "kotak",
+          "title": "Before you start",
+          "items": [
+            "Set aside 20-30 undisturbed minutes, not two hours broken into pieces. Languages stick through short, frequent repetition, not one long assault.",
+            "Read out loud — and for French this is not a suggestion, it is a requirement. If you study in silence, you are memorizing spelling, not a language.",
+            "From the first unit, learn every noun **with its article**: not *maison*, but *une maison*. It is a small habit that saves months of confusion later.",
+            "Don't trust your eyes. When in doubt about a sound, trust the \"Pronunciation\" column — your eyes will try to read French like English, and French will fool them again and again."
+          ]
+        },
+        {
+          "type": "p",
+          "text": "Enjoy the journey. *Bon courage !*"
+        }
+      ]
+    },
+    {
+      "type": "isi",
+      "title": "Contents",
+      "intro": "This course works best in order — each unit reuses what the previous ones put in place."
+    },
+    {
+      "title": "How to use this course",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "This course is built for **self-study**. Each unit is designed to be finished in one sitting, about 20-30 minutes. What matters is not how fast you move forward, but how often you come back."
+        },
+        {
+          "type": "p",
+          "text": "Every unit has the same layout, and the order is deliberate:"
+        },
+        {
+          "type": "list",
+          "items": [
+            "**Dialogue** — first read the French out loud without looking at the translation. Let your ears do the work before your brain demands an explanation.",
+            "**Literal translation** — the small italic line under the translation. This is the part people skip most often, yet it is where you see how French *thinks*. Example: *Je m'appelle Ana* literally means \"I call myself Ana\", not \"my name is Ana\".",
+            "**Notes** — short explanations of whatever just felt strange.",
+            "**Vocabulary** — the new words of the unit, each with its pronunciation. Nouns are always given with their article, so the gender sticks along with the word.",
+            "**Exercises** — do them without looking at the key. Mistakes are part of the process.",
+            "**Answer key** — open it only after you have genuinely tried."
+          ]
+        },
+        {
+          "type": "kotak",
+          "title": "Wave review",
+          "items": [
+            "From Unit 3 on, each unit asks you to revisit an earlier unit — usually two steps back, just the right distance to make your memory work without feeling like starting over. Do it in reverse: cover the French, look at the English translation, and rebuild the French sentence from memory.",
+            "This is what turns \"I understood it once\" into \"I can use it\". Don't skip it."
+          ]
+        },
+        {
+          "type": "p",
+          "text": "One last rule, and for French it is stricter than for any other language: **say it out loud**. The gap between spelling and sound is so wide that reading silently will plant the wrong pronunciation in your head, and pulling it out later costs far more than saying it right now."
+        }
+      ]
+    },
+    {
+      "title": "French pronunciation",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "You've already heard the bad news: French spelling and French sound are far apart. The good news is rarely mentioned — the gap is **regular**. French has almost none of the wild exceptions of English; once you know the table below, you can correctly read words you have never seen before."
+        },
+        {
+          "type": "sub",
+          "text": "Silent final letters"
+        },
+        {
+          "type": "p",
+          "text": "The single most useful rule: **consonants at the end of a word are usually silent** — *petit* (puh-TEE), *grand* (grahn), *vous* (voo), *parlez* (pahr-LAY), *beaucoup* (boh-KOO). Only four usually survive, easy to remember with the word **C-a-R-e-F-u-L**: **c, r, f, l** — *avec* (ah-VEK), *bonjour* (bohn-ZHOOR), *neuf* (nuhf), *il* (eel)."
+        },
+        {
+          "type": "p",
+          "text": "A final **e** is silent too, and that is exactly what makes the letter before it heard: *petit* (puh-TEE) but *petite* (puh-TEET); *grand* (grahn) but *grande* (grahnd). This is how a French ear tells masculine from feminine."
+        },
+        {
+          "type": "sub",
+          "text": "Letter combinations"
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Spelling",
+            "Sounds like",
+            "Example"
+          ],
+          "rows": [
+            [
+              "ou",
+              "oo",
+              "*vous* (voo) = you (plural / polite)"
+            ],
+            [
+              "u",
+              "ü — lips rounded for \"oo\", tongue in the \"ee\" position",
+              "*tu* (tü) = you"
+            ],
+            [
+              "au, eau",
+              "oh",
+              "*beau* (boh) = beautiful"
+            ],
+            [
+              "ai, ei",
+              "eh, as in \"bed\"",
+              "*mais* (meh) = but"
+            ],
+            [
+              "oi",
+              "wah",
+              "*moi* (mwah) = me"
+            ],
+            [
+              "eu, œu",
+              "uh — lips rounded, tongue as for \"eh\"",
+              "*deux* (duh) = two"
+            ],
+            [
+              "é",
+              "ay, as in \"day\" but short, with no glide",
+              "*café* (kah-FAY)"
+            ],
+            [
+              "è, ê",
+              "eh, as in \"bed\"",
+              "*père* (pehr) = father"
+            ],
+            [
+              "ch",
+              "sh",
+              "*chat* (shah) = cat"
+            ],
+            [
+              "gn",
+              "ny, as in \"canyon\"",
+              "*montagne* (mohn-TAH-ny) = mountain"
+            ],
+            [
+              "qu",
+              "k",
+              "*qui* (kee) = who"
+            ],
+            [
+              "j, g + e/i",
+              "zh, like the \"s\" in \"measure\"",
+              "*je* (zhuh), *girafe* (zhee-RAHF)"
+            ],
+            [
+              "h",
+              "**always silent**",
+              "*hôtel* (oh-TEL)"
+            ],
+            [
+              "r",
+              "made at the **back** of the throat, not with the tip of the tongue",
+              "*Paris* (pah-REE)"
+            ],
+            [
+              "ill",
+              "ee-y",
+              "*famille* (fah-MEEY) = family"
+            ],
+            [
+              "s between two vowels",
+              "z",
+              "*maison* (meh-ZOHN) = house"
+            ]
+          ]
+        },
+        {
+          "type": "kotak",
+          "title": "Nasal vowels",
+          "items": [
+            "A vowel + **n** or **m** at the end of a syllable is not pronounced with an \"n\"; it melts into a single nasal sound — the air comes out through your nose, and the n itself is never heard.",
+            "This book writes them like this: **an/en/am/em** → **ahn** (*dans* dahn, *temps* tahn); **on/om** → **ohn** (*bon* bohn, *nom* nohn); **in/im/ain/ein** → **an**, as in \"bang\" without the g (*vin* van, *pain* pan, *matin* mah-TAN); **un** → **uhn** (*un* uhn — many French speakers today say it just like *in*).",
+            "As soon as the n is followed by a vowel or doubled, the nasal disappears: *bon* is nasal, but *bonne* is said BONN with a clear n. *An* is nasal, *année* is not.",
+            "English has no such sounds. Whatever the \"Pronunciation\" column shows, never close your mouth on an n."
+          ]
+        },
+        {
+          "type": "kotak",
+          "title": "Liaison — silent letters that suddenly wake up",
+          "items": [
+            "When the next word begins with a vowel or h, a silent final consonant crosses over and is pronounced at the start of that word: *vous* (voo) but *vous avez* (voo-zah-VAY); *les* (lay) but *les amis* (lay-zah-MEE); *un* (uhn) but *un ami* (uh-nah-MEE).",
+            "**s** and **x** cross over as a **z** sound; **d** becomes **t**: *un grand homme* (uhn grahn-TOHM).",
+            "This is not decoration. Without liaison your sentences sound spelled out word by word — and that is exactly where French people spot a foreign speaker fastest."
+          ]
+        },
+        {
+          "type": "kotak",
+          "title": "Word stress",
+          "items": [
+            "The most relaxing news in this whole chapter: French has almost no word stress. Every syllable gets nearly equal weight, with a slight push on the **last pronounced syllable**.",
+            "So don't copy the up-and-down pattern of English. French flows evenly, then rises a little at the end."
+          ]
+        },
+        {
+          "type": "p",
+          "text": "In this course, the \"Pronunciation\" column uses English-friendly spelling, and **capital letters mark the slightly stressed syllable**. The key: **ahn** = an/en, **ohn** = on, **an** = in/ain, **uhn** = un (all nasal, no n heard); a plain, non-nasal *on/onne* is written **onn** (*bonne* = BONN); **ah** = a, **ee** = i, **oh** = o/au; **ü** = u; **uh** = eu/œu and also the light *e* of *le*, *de*, *je*; **oo** = ou; **wah** = oi; **ay** = é and final -ez/-er/-ier (*-ier* = yay); **eh** = è/ê; **yan** = -ien; **wee** = ui; **zh** = j and g before e/i; **sh** = ch; **y** = ill, **ny** = gn. Silent final letters are simply left out."
+        }
+      ]
+    }
+  ],
+  "back": [
+    {
+      "title": "A1 grammar summary",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Everything from the twenty units, packed into a few pages. This section is not meant to be read in order — it is for coming back to whenever you hesitate in the middle of a sentence."
+        },
+        {
+          "type": "sub",
+          "text": "Articles"
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "",
+            "Masc. singular",
+            "Fem. singular",
+            "Before a vowel / h",
+            "Plural"
+          ],
+          "rows": [
+            [
+              "Definite (the)",
+              "le",
+              "la",
+              "l'",
+              "les"
+            ],
+            [
+              "Indefinite (a, an)",
+              "un",
+              "une",
+              "un / une",
+              "des"
+            ],
+            [
+              "Partitive (some, uncountable)",
+              "du",
+              "de la",
+              "de l'",
+              "des"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "⚠️ French nouns almost never stand without an article. *Je mange du pain*, not *je mange pain*. After a negative, every indefinite and partitive article shrinks to **de**: *je n'ai pas de voiture*, *je ne bois pas de café*. The same happens after quantities: *un kilo de riz*, *beaucoup d'amis*."
+        },
+        {
+          "type": "p",
+          "text": "Plurals: add a silent **-s**. Endings **-al → -aux** (*journal → journaux*), **-eau → -eaux** (*bateau → bateaux*). Words already ending in -s, -x or -z don't change: *le fils → les fils*."
+        },
+        {
+          "type": "sub",
+          "text": "à and de merging with the article"
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "",
+            "le",
+            "la",
+            "l'",
+            "les"
+          ],
+          "rows": [
+            [
+              "à",
+              "**au**",
+              "à la",
+              "à l'",
+              "**aux**"
+            ],
+            [
+              "de",
+              "**du**",
+              "de la",
+              "de l'",
+              "**des**"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "Places: **à** for cities (*à Paris*), **en** for feminine countries and those starting with a vowel (*en France*, *en Indonésie*), **au** for masculine countries (*au Japon*), **aux** for plural countries (*aux États-Unis*)."
+        },
+        {
+          "type": "sub",
+          "text": "Adjectives"
+        },
+        {
+          "type": "list",
+          "items": [
+            "They agree in gender and number: **+e** for feminine, **+s** for plural — *petit, petite, petits, petites*.",
+            "That extra letter often **changes the sound**: *petit* (puh-TEE) → *petite* (puh-TEET). Adjectives already ending in -e keep the same feminine form: *rouge, jeune, facile*.",
+            "Common irregular forms: *beau/belle*, *nouveau/nouvelle*, *vieux/vieille*, *blanc/blanche*, *long/longue*, *heureux/heureuse*, *cher/chère*, *bon/bonne*, *gros/grosse*.",
+            "They go **after** the noun — *une voiture rouge*. Only a small group goes in front: *beau, bon, grand, gros, jeune, joli, mauvais, nouveau, petit, vieux*.",
+            "A mixed group of men and women takes the masculine plural.",
+            "Comparing: *plus… que*, *moins… que*, *aussi… que*. Special forms: *bon → meilleur*, *bien → mieux*.",
+            "*Très* before an adjective = very (*très beau*); *beaucoup* goes with verbs and nouns (*j'aime beaucoup*, *beaucoup de livres*), never with adjectives."
+          ]
+        },
+        {
+          "type": "sub",
+          "text": "Possessives"
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Owner",
+            "Masc. singular",
+            "Fem. singular",
+            "Plural"
+          ],
+          "rows": [
+            [
+              "my",
+              "mon",
+              "ma",
+              "mes"
+            ],
+            [
+              "your (tu)",
+              "ton",
+              "ta",
+              "tes"
+            ],
+            [
+              "his / her",
+              "son",
+              "sa",
+              "ses"
+            ],
+            [
+              "our",
+              "notre",
+              "notre",
+              "nos"
+            ],
+            [
+              "your (vous)",
+              "votre",
+              "votre",
+              "vos"
+            ],
+            [
+              "their",
+              "leur",
+              "leur",
+              "leurs"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "⚠️ The form agrees with **the thing owned**, not the owner: *son père* can mean his father or her father. And before a feminine word starting with a vowel, *ma* becomes **mon** for the sake of sound: *mon amie*, *mon école*."
+        },
+        {
+          "type": "sub",
+          "text": "Ce, cet, cette, ces"
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Masc. singular",
+            "Masc. before a vowel / h",
+            "Fem. singular",
+            "Plural"
+          ],
+          "rows": [
+            [
+              "ce livre",
+              "cet homme",
+              "cette table",
+              "ces livres / ces tables"
+            ]
+          ]
+        },
+        {
+          "type": "sub",
+          "text": "Negatives and questions"
+        },
+        {
+          "type": "list",
+          "items": [
+            "A negative needs **two** words wrapped around the verb: **ne … pas** — *je ne comprends pas*. In everyday speech *ne* often disappears (*je comprends pas*), but in writing it is required.",
+            "Before a vowel, *ne* becomes *n'*: *je n'ai pas*, *il n'est pas*.",
+            "Its relatives: *ne… jamais* (never), *ne… rien* (nothing), *ne… personne* (nobody), *ne… plus* (no longer), *ne… pas encore* (not yet).",
+            "Three ways to ask: rising intonation alone (*Tu viens ?*), *est-ce que* in front (*Est-ce que tu viens ?*), or inversion (*Viens-tu ?* — the most formal).",
+            "Question words: *qui* (who), *que / quoi* (what), *où* (where), *quand* (when), *pourquoi* (why), *comment* (how), *combien* (how much / how many), *quel/quelle* (which)."
+          ]
+        },
+        {
+          "type": "sub",
+          "text": "The past — passé composé"
+        },
+        {
+          "type": "list",
+          "items": [
+            "Built from a helper verb in the present + the past participle: *j'ai mangé*, *je suis allé*.",
+            "Regular past participles: **-er → -é**, **-ir → -i**, **-re → -u**.",
+            "Most verbs take **avoir**, and the participle doesn't change.",
+            "Fourteen verbs of movement and change of state take **être** — *aller, venir, arriver, partir, entrer, sortir, monter, descendre, rester, retourner, tomber, naître, mourir, devenir* — and the participle agrees with the subject in gender and number: *elle est allée*, *ils sont partis*.",
+            "All reflexive verbs take **être**: *je me suis levé*, *nous nous sommes réveillés*.",
+            "*Déjà*, *encore*, *jamais*, *toujours*, *bien* go between the helper verb and the participle: *j'ai déjà mangé*.",
+            "The negative wraps around **the helper verb only**: *je n'ai pas mangé*, *elle n'est pas venue*."
+          ]
+        },
+        {
+          "type": "sub",
+          "text": "Future plans"
+        },
+        {
+          "type": "p",
+          "text": "At A1 you don't need the real future tense. Use **aller + infinitive**: *je vais manger* (I'm going to eat), *on va partir demain*. Or simply the present plus a time word: *demain je travaille*."
+        }
+      ]
+    },
+    {
+      "title": "The most common verbs",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "The sixteen verbs below cover most everyday conversation. Most of them are irregular — and those are precisely the ones that come out of French mouths most often."
+        },
+        {
+          "type": "sub",
+          "text": "Three regular groups"
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "",
+            "parler (-er)",
+            "finir (-ir)",
+            "attendre (-re)"
+          ],
+          "rows": [
+            [
+              "je",
+              "parle",
+              "finis",
+              "attends"
+            ],
+            [
+              "tu",
+              "parles",
+              "finis",
+              "attends"
+            ],
+            [
+              "il / elle / on",
+              "parle",
+              "finit",
+              "attend"
+            ],
+            [
+              "nous",
+              "parlons",
+              "finissons",
+              "attendons"
+            ],
+            [
+              "vous",
+              "parlez",
+              "finissez",
+              "attendez"
+            ],
+            [
+              "ils / elles",
+              "parlent",
+              "finissent",
+              "attendent"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "⚠️ Four of the **-er** forms (*parle, parles, parle, parlent*) sound **exactly the same**: PAHRL. The difference is only on paper. Only *parlons* and *parlez* sound different."
+        },
+        {
+          "type": "sub",
+          "text": "The irregulars"
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "",
+            "être",
+            "avoir",
+            "aller",
+            "faire"
+          ],
+          "rows": [
+            [
+              "je / j'",
+              "suis",
+              "ai",
+              "vais",
+              "fais"
+            ],
+            [
+              "tu",
+              "es",
+              "as",
+              "vas",
+              "fais"
+            ],
+            [
+              "il / elle",
+              "est",
+              "a",
+              "va",
+              "fait"
+            ],
+            [
+              "nous",
+              "sommes",
+              "avons",
+              "allons",
+              "faisons"
+            ],
+            [
+              "vous",
+              "êtes",
+              "avez",
+              "allez",
+              "faites"
+            ],
+            [
+              "ils / elles",
+              "sont",
+              "ont",
+              "vont",
+              "font"
+            ]
+          ]
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "",
+            "venir",
+            "prendre",
+            "voir",
+            "boire"
+          ],
+          "rows": [
+            [
+              "je",
+              "viens",
+              "prends",
+              "vois",
+              "bois"
+            ],
+            [
+              "tu",
+              "viens",
+              "prends",
+              "vois",
+              "bois"
+            ],
+            [
+              "il / elle",
+              "vient",
+              "prend",
+              "voit",
+              "boit"
+            ],
+            [
+              "nous",
+              "venons",
+              "prenons",
+              "voyons",
+              "buvons"
+            ],
+            [
+              "vous",
+              "venez",
+              "prenez",
+              "voyez",
+              "buvez"
+            ],
+            [
+              "ils / elles",
+              "viennent",
+              "prennent",
+              "voient",
+              "boivent"
+            ]
+          ]
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "",
+            "pouvoir",
+            "devoir",
+            "vouloir",
+            "savoir"
+          ],
+          "rows": [
+            [
+              "je",
+              "peux",
+              "dois",
+              "veux",
+              "sais"
+            ],
+            [
+              "tu",
+              "peux",
+              "dois",
+              "veux",
+              "sais"
+            ],
+            [
+              "il / elle",
+              "peut",
+              "doit",
+              "veut",
+              "sait"
+            ],
+            [
+              "nous",
+              "pouvons",
+              "devons",
+              "voulons",
+              "savons"
+            ],
+            [
+              "vous",
+              "pouvez",
+              "devez",
+              "voulez",
+              "savez"
+            ],
+            [
+              "ils / elles",
+              "peuvent",
+              "doivent",
+              "veulent",
+              "savent"
+            ]
+          ]
+        },
+        {
+          "type": "sub",
+          "text": "Irregular past participles"
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Infinitive",
+            "Past",
+            "Infinitive",
+            "Past",
+            "Infinitive",
+            "Past"
+          ],
+          "rows": [
+            [
+              "être",
+              "été",
+              "prendre",
+              "pris",
+              "venir",
+              "venu"
+            ],
+            [
+              "avoir",
+              "eu",
+              "mettre",
+              "mis",
+              "naître",
+              "né"
+            ],
+            [
+              "faire",
+              "fait",
+              "écrire",
+              "écrit",
+              "mourir",
+              "mort"
+            ],
+            [
+              "voir",
+              "vu",
+              "dire",
+              "dit",
+              "ouvrir",
+              "ouvert"
+            ],
+            [
+              "boire",
+              "bu",
+              "lire",
+              "lu",
+              "offrir",
+              "offert"
+            ],
+            [
+              "pouvoir",
+              "pu",
+              "connaître",
+              "connu",
+              "partir",
+              "parti"
+            ],
+            [
+              "vouloir",
+              "voulu",
+              "recevoir",
+              "reçu",
+              "descendre",
+              "descendu"
+            ],
+            [
+              "devoir",
+              "dû",
+              "répondre",
+              "répondu",
+              "attendre",
+              "attendu"
+            ]
+          ]
+        },
+        {
+          "type": "sub",
+          "text": "Numbers"
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "",
+            "",
+            "",
+            ""
+          ],
+          "rows": [
+            [
+              "1 un",
+              "2 deux",
+              "3 trois",
+              "4 quatre"
+            ],
+            [
+              "5 cinq",
+              "6 six",
+              "7 sept",
+              "8 huit"
+            ],
+            [
+              "9 neuf",
+              "10 dix",
+              "11 onze",
+              "12 douze"
+            ],
+            [
+              "13 treize",
+              "14 quatorze",
+              "15 quinze",
+              "16 seize"
+            ],
+            [
+              "17 dix-sept",
+              "18 dix-huit",
+              "19 dix-neuf",
+              "20 vingt"
+            ],
+            [
+              "30 trente",
+              "40 quarante",
+              "50 cinquante",
+              "60 soixante"
+            ],
+            [
+              "70 soixante-dix",
+              "80 quatre-vingts",
+              "90 quatre-vingt-dix",
+              "100 cent"
+            ],
+            [
+              "200 deux cents",
+              "1,000 mille",
+              "2,000 deux mille",
+              "1,000,000 un million"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "⚠️ The last three tens have no names of their own and are counted out: **70** = 60+10 (*soixante-dix*), **71** = 60+11 (*soixante et onze*), **80** = 4×20 (*quatre-vingts*), **90** = 4×20+10 (*quatre-vingt-dix*), **97** = 4×20+17 (*quatre-vingt-dix-sept*). The numbers 21, 31, 41, 51 and 61 slip in an *et*: *vingt et un*, *trente et un*."
+        }
+      ]
+    },
+    {
+      "title": "What's next",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "You have just completed Level A1. What you have now is not knowledge about French, but a set of sentences that can come out of your mouth without being assembled first. That difference is everything."
+        },
+        {
+          "type": "sub",
+          "text": "Waiting for you at A2"
+        },
+        {
+          "type": "list",
+          "items": [
+            "**Imparfait** — the past tense for habits and descriptions, and how it shares the work with the *passé composé*: *quand j'étais petit, je jouais au foot*.",
+            "**Futur simple** — the real future tense, especially for promises and predictions.",
+            "**Object pronouns** — *le, la, les, lui, leur, y, en*: *je le vois*, *j'en ai deux*.",
+            "**Conditionnel** — hypotheticals and polite requests, which you've already tasted with *je voudrais*.",
+            "**Relative clauses with *qui* and *que*** — how to join two sentences into one, the step that separates beginner sentences from grown-up ones."
+          ]
+        },
+        {
+          "type": "sub",
+          "text": "How to keep what you have"
+        },
+        {
+          "type": "list",
+          "items": [
+            "**Repeat the dialogues out loud**, one unit a day, until you can say them without reading. For French this is not memory practice but mouth practice: the sounds *u*, *eu* and *r* need muscles you have never used.",
+            "**Change the content, not the pattern.** Take the Unit 5 dialogue and swap in the names and numbers of your own family. A pattern used for your own story sticks far better.",
+            "**Listen without understanding everything.** French radio, songs or the news, fifteen minutes a day. What you are training is not comprehension but your ear — and the French ear takes the longest.",
+            "**Find someone to talk to now, not later.** A hundred words you use beat a thousand words you keep in storage.",
+            "**Write down your mistakes, not your new words.** New words come by themselves; a mistake you don't write down will be repeated for years."
+          ]
+        },
+        {
+          "type": "p",
+          "text": "And one last thing no book can give you: French lives among people — in the boulangerie line, at café terrace tables, in conversations that pile on top of one another. Go there."
+        },
+        {
+          "type": "p",
+          "text": "*Bon courage — et bonne continuation !*"
+        }
+      ]
+    }
+  ]
+}

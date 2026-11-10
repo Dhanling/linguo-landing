@@ -1,0 +1,528 @@
+{
+  "title": "Days, months, dates",
+  "title_target": "On est quel jour aujourd'hui ?",
+  "goal": "Say days and dates, write big numbers including the seventies and eighties, and give your date of birth.",
+  "bekal": [
+    "say days, months and full dates",
+    "read 70, 80 and 90, which are counted out rather than named",
+    "tell *le lundi* (every Monday) from *lundi* (this Monday)"
+  ],
+  "wave": "Go back to **Unit 7** first: read ten random times off a clock in conversational style, then again in 24-hour style.",
+  "dialogs": [
+    {
+      "title": "Dialogue — Le formulaire",
+      "intro": "Budi fills in a library registration form. The clerk helps him.",
+      "lines": [
+        {
+          "speaker": "Employée:",
+          "text": "Bonjour. Votre date de naissance, s'il vous plaît ?",
+          "id": "Hello. Your date of birth, please?",
+          "literal": "good-day. your date of birth, please?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Le quinze mars deux mille cinq.",
+          "id": "March fifteenth, two thousand five.",
+          "literal": "the fifteen March two thousand five."
+        },
+        {
+          "speaker": "Employée:",
+          "text": "Très bien. Et votre adresse à Lyon ?",
+          "id": "Very good. And your address in Lyon?",
+          "literal": "very well. and your address in Lyon?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Soixante-douze, rue Victor Hugo.",
+          "id": "Seventy-two, rue Victor Hugo.",
+          "literal": "sixty-twelve, street Victor Hugo."
+        },
+        {
+          "speaker": "Employée:",
+          "text": "Soixante-douze. Et le code postal ?",
+          "id": "Seventy-two. And the zip code?",
+          "literal": "sixty-twelve. and the code postal?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Six neuf zéro zéro trois.",
+          "id": "Six nine zero zero three.",
+          "literal": "six nine zero zero three."
+        },
+        {
+          "speaker": "Employée:",
+          "text": "Parfait. La bibliothèque ouvre du mardi au samedi.",
+          "id": "Perfect. The library is open Tuesday to Saturday.",
+          "literal": "perfect. the library opens from-the Tuesday to-the Saturday."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Elle est fermée le lundi, alors ?",
+          "id": "So it's closed on Mondays?",
+          "literal": "she is closed the Monday, then?"
+        },
+        {
+          "speaker": "Employée:",
+          "text": "Oui, et le dimanche aussi. Voici votre carte.",
+          "id": "Yes, and on Sundays too. Here's your card.",
+          "literal": "yes, and the Sunday also. here-is your card."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Merci. Elle est valable jusqu'à quand ?",
+          "id": "Thank you. How long is it valid?",
+          "literal": "thanks. she is valid until when?"
+        },
+        {
+          "speaker": "Employée:",
+          "text": "Jusqu'au trente et un décembre. Un an complet.",
+          "id": "Until December thirty-first. A full year.",
+          "literal": "until-the thirty and one December. a year complete."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Parfait. Bonne journée, madame !",
+          "id": "Perfect. Have a nice day, ma'am!",
+          "literal": "perfect. good day, madam!"
+        }
+      ],
+      "notes": [
+        "**Days and months take a small letter.** *lundi*, *mars*, *décembre* — unlike English. Capitals only at the start of a sentence.",
+        "**Le lundi means \"every Monday\".** Without the article, *lundi* means \"this Monday\" or \"last Monday\", depending on the sentence. *Je travaille le lundi* = I work on Mondays; *je travaille lundi* = I'm working on Monday. One tiny word that changes your whole schedule.",
+        "**Dates use le + an ordinary number.** *Le quinze mars* (\"the fifteen March\"), not *le quinzième mars* — unlike English \"the fifteenth\". The one exception is the 1st: *le premier mars*.",
+        "**Years are read as one whole number.** 2005 = *deux mille cinq*, 1998 = *mille neuf cent quatre-vingt-dix-huit*. French doesn't split them into two numbers the way English does (\"nineteen ninety-eight\").",
+        "**Soixante-douze = 72**, literally \"sixty-twelve\". French runs out of number names at 69 and starts adding. This is the part of French foreigners laugh at most — and Belgians and the Swiss do use the saner *septante* and *nonante*. But in France, the counting system rules.",
+        "**Du mardi au samedi** = from Tuesday to Saturday. Notice the merging: *de + le = du*, *à + le = au*. The same merging you used in Unit 8.",
+        "**Bonne journée** is said when parting in the morning or afternoon: \"have a nice day\". Its relatives: *bonne soirée* (evening), *bon week-end*, *bonne semaine*, *bonnes vacances*."
+      ],
+      "grammars": [
+        {
+          "title": "Numbers above 60 — a system that counts",
+          "body": [
+            "Up to 69, everything makes sense. From 70 up, French stops naming and starts adding."
+          ],
+          "table": {
+            "head": [
+              "Number",
+              "French",
+              "How it's counted"
+            ],
+            "rows": [
+              [
+                "70",
+                "soixante-dix",
+                "60 + 10"
+              ],
+              [
+                "71",
+                "soixante et onze",
+                "60 + 11"
+              ],
+              [
+                "75",
+                "soixante-quinze",
+                "60 + 15"
+              ],
+              [
+                "79",
+                "soixante-dix-neuf",
+                "60 + 19"
+              ],
+              [
+                "80",
+                "quatre-vingts",
+                "4 × 20"
+              ],
+              [
+                "81",
+                "quatre-vingt-un",
+                "4 × 20 + 1"
+              ],
+              [
+                "90",
+                "quatre-vingt-dix",
+                "4 × 20 + 10"
+              ],
+              [
+                "95",
+                "quatre-vingt-quinze",
+                "4 × 20 + 15"
+              ],
+              [
+                "99",
+                "quatre-vingt-dix-neuf",
+                "4 × 20 + 19"
+              ],
+              [
+                "100",
+                "cent",
+                "—"
+              ]
+            ]
+          },
+          "after": [
+            "⚠️ *Quatre-vingts* takes an s only when it stands alone at the end. As soon as another number follows, the s disappears: *quatre-vingt-un*, *quatre-vingt-cinq*.",
+            "*Et* appears only in 21, 31, 41, 51, 61 and **71**. Not in 81 and 91: *quatre-vingt-un*, not *quatre-vingt-et-un*.",
+            "Hundreds: *cent, deux cents, trois cents*. The s disappears here too when another number follows: *deux cent cinquante*. *Mille* never takes an s: *deux mille*, *dix mille*."
+          ]
+        },
+        {
+          "title": "Saying the date",
+          "body": [
+            "One pattern for everything: le + number + month + year. Note that French writes the day before the month."
+          ],
+          "table": {
+            "head": [
+              "Written (day/month)",
+              "Said",
+              "English"
+            ],
+            "rows": [
+              [
+                "1/3/2026",
+                "*le premier mars deux mille vingt-six*",
+                "March 1, 2026"
+              ],
+              [
+                "15/3/2026",
+                "*le quinze mars deux mille vingt-six*",
+                "March 15, 2026"
+              ],
+              [
+                "21/8/2026",
+                "*le vingt et un août*",
+                "August 21"
+              ],
+              [
+                "31/12",
+                "*le trente et un décembre*",
+                "December 31"
+              ],
+              [
+                "today's date",
+                "*Nous sommes le quinze mars.*",
+                "Today is March 15"
+              ],
+              [
+                "which day",
+                "*On est quel jour aujourd'hui ?*",
+                "What day is it today?"
+              ]
+            ]
+          },
+          "after": [
+            "Asking the date: *Quelle est la date aujourd'hui ?* or *On est le combien ?* The answer is *on est le quinze* or *nous sommes le quinze*.",
+            "Months take **en** or **au mois de**: *en mars*, *au mois de mars*. Years take **en**: *en 2026*. Seasons take *en* except spring: *en été, en automne, en hiver*, but *au printemps*."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Days, months and time words",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "Day",
+            "Pronunciation",
+            "Month",
+            "Pronunciation"
+          ],
+          "rows": [
+            [
+              "lundi",
+              "luhn-DEE",
+              "janvier",
+              "zhahn-VYAY"
+            ],
+            [
+              "mardi",
+              "mahr-DEE",
+              "février",
+              "fay-vree-YAY"
+            ],
+            [
+              "mercredi",
+              "mehr-kruh-DEE",
+              "mars",
+              "MAHRS"
+            ],
+            [
+              "jeudi",
+              "zhuh-DEE",
+              "avril",
+              "ah-VREEL"
+            ],
+            [
+              "vendredi",
+              "vahn-druh-DEE",
+              "mai",
+              "MEH"
+            ],
+            [
+              "samedi",
+              "sahm-DEE",
+              "juin",
+              "ZHWAN"
+            ],
+            [
+              "dimanche",
+              "dee-MAHNSH",
+              "juillet",
+              "zhwee-YEH"
+            ],
+            [
+              "—",
+              "—",
+              "août",
+              "OOT"
+            ],
+            [
+              "—",
+              "—",
+              "septembre",
+              "sep-TAHNBR"
+            ],
+            [
+              "—",
+              "—",
+              "octobre",
+              "ohk-TOHBR"
+            ],
+            [
+              "—",
+              "—",
+              "novembre",
+              "noh-VAHNBR"
+            ],
+            [
+              "—",
+              "—",
+              "décembre",
+              "day-SAHNBR"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "The French week starts on **lundi** (Monday), not Sunday. Calendars, timetables and planners all put Monday in the first column."
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Français",
+            "English",
+            "Français",
+            "English"
+          ],
+          "rows": [
+            [
+              "aujourd'hui",
+              "today",
+              "cette semaine",
+              "this week"
+            ],
+            [
+              "hier",
+              "yesterday",
+              "la semaine dernière",
+              "last week"
+            ],
+            [
+              "demain",
+              "tomorrow",
+              "la semaine prochaine",
+              "next week"
+            ],
+            [
+              "avant-hier",
+              "the day before yesterday",
+              "ce mois-ci",
+              "this month"
+            ],
+            [
+              "après-demain",
+              "the day after tomorrow",
+              "l'année dernière",
+              "last year"
+            ],
+            [
+              "ce matin",
+              "this morning",
+              "l'année prochaine",
+              "next year"
+            ]
+          ]
+        },
+        {
+          "type": "kotak",
+          "title": "Seasons and holidays",
+          "items": [
+            "*le printemps* (spring), *l'été* (summer), *l'automne* (fall), *l'hiver* (winter).",
+            "*au printemps*, but *en été*, *en automne*, *en hiver*. Only spring takes *au*.",
+            "*Noël* (Christmas), *le Nouvel An* (New Year), *Pâques* (Easter), *la fête nationale* (July 14).",
+            "*Bonnes vacances !* — have a good vacation. *Bonne année !* — happy New Year."
+          ]
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "fr": "le jour",
+      "baca": "luh ZHOOR",
+      "en": "day"
+    },
+    {
+      "fr": "la semaine",
+      "baca": "lah suh-MEN",
+      "en": "week"
+    },
+    {
+      "fr": "le mois",
+      "baca": "luh MWAH",
+      "en": "month"
+    },
+    {
+      "fr": "l'année (f)",
+      "baca": "lah-NAY",
+      "en": "year"
+    },
+    {
+      "fr": "la date",
+      "baca": "lah DAHT",
+      "en": "date"
+    },
+    {
+      "fr": "la naissance",
+      "baca": "lah neh-SAHNS",
+      "en": "birth"
+    },
+    {
+      "fr": "aujourd'hui",
+      "baca": "oh-zhoor-DWEE",
+      "en": "today"
+    },
+    {
+      "fr": "l'adresse (f)",
+      "baca": "lah-DRES",
+      "en": "address"
+    },
+    {
+      "fr": "la rue",
+      "baca": "lah RÜ",
+      "en": "street"
+    },
+    {
+      "fr": "le code postal",
+      "baca": "luh kohd pohs-TAHL",
+      "en": "zip code, postcode"
+    },
+    {
+      "fr": "ouvrir",
+      "baca": "oo-VREER",
+      "en": "to open"
+    },
+    {
+      "fr": "fermer",
+      "baca": "fehr-MAY",
+      "en": "to close"
+    },
+    {
+      "fr": "ouvert / fermé",
+      "baca": "oo-VEHR / fehr-MAY",
+      "en": "open / closed"
+    },
+    {
+      "fr": "jusqu'à",
+      "baca": "zhüs-KAH",
+      "en": "until"
+    },
+    {
+      "fr": "valable",
+      "baca": "vah-LAHBL",
+      "en": "valid"
+    },
+    {
+      "fr": "complet",
+      "baca": "kohn-PLEH",
+      "en": "complete, full"
+    },
+    {
+      "fr": "parfait",
+      "baca": "pahr-FEH",
+      "en": "perfect"
+    },
+    {
+      "fr": "un formulaire",
+      "baca": "uhn fohr-mü-LEHR",
+      "en": "form"
+    },
+    {
+      "fr": "prochain / dernier",
+      "baca": "proh-SHAN / dehr-NYAY",
+      "en": "next / last"
+    },
+    {
+      "fr": "les vacances",
+      "baca": "lay vah-KAHNS",
+      "en": "vacation, holidays"
+    },
+    {
+      "fr": "l'anniversaire (m)",
+      "baca": "lah-nee-vehr-SEHR",
+      "en": "birthday"
+    }
+  ],
+  "exercises": [
+    {
+      "prompt": "Write the numbers out in words.",
+      "items": [
+        "72",
+        "80",
+        "91",
+        "68",
+        "99",
+        "250"
+      ]
+    },
+    {
+      "prompt": "Write out the full date in words (day/month).",
+      "items": [
+        "1/1",
+        "14/7",
+        "21/8",
+        "31/12",
+        "15/3/2026"
+      ]
+    },
+    {
+      "prompt": "Fill in le, or write « rien » (nothing) if no article is used.",
+      "items": [
+        "Je travaille ____ lundi, tous les lundis.",
+        "____ mardi prochain, je vais à Paris.",
+        "La bibliothèque est fermée ____ dimanche.",
+        "____ samedi, je suis allé au cinéma.",
+        "Je fais du sport ____ mercredi, chaque semaine."
+      ]
+    },
+    {
+      "prompt": "Translate into French.",
+      "items": [
+        "What day is it today?",
+        "My date of birth is March fifteenth.",
+        "The library is open Tuesday to Saturday.",
+        "It's valid until December thirty-first.",
+        "Next week I'm on vacation."
+      ]
+    }
+  ],
+  "answers": [
+    "soixante-douze — quatre-vingts — quatre-vingt-onze — soixante-huit — quatre-vingt-dix-neuf — deux cent cinquante",
+    "le premier janvier — le quatorze juillet — le vingt et un août — le trente et un décembre — le quinze mars deux mille vingt-six",
+    "le — rien — le — rien — le",
+    "On est quel jour aujourd'hui ? — Ma date de naissance est le quinze mars. — La bibliothèque ouvre du mardi au samedi. — C'est valable jusqu'au trente et un décembre. — La semaine prochaine, je suis en vacances."
+  ]
+}

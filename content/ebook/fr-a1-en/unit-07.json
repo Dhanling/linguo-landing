@@ -1,0 +1,451 @@
+{
+  "title": "What time is it?",
+  "title_target": "Quelle heure est-il ?",
+  "goal": "Read and say the time in two systems, make an appointment, and ask questions in three different ways.",
+  "bekal": [
+    "tell the time with *il est … heures*",
+    "tell conversational time from official 24-hour time",
+    "ask questions with intonation, with *est-ce que*, and with inversion"
+  ],
+  "wave": "Go back to **Unit 5** first: describe your own family from memory — who they are, how old they are, where they live.",
+  "dialogs": [
+    {
+      "title": "Dialogue — On se donne rendez-vous",
+      "intro": "Camille and Budi set a time to meet and study together.",
+      "lines": [
+        {
+          "speaker": "Camille:",
+          "text": "Excuse-moi, quelle heure est-il ?",
+          "id": "Sorry, what time is it?",
+          "literal": "excuse-me, which hour is-it?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Il est dix heures et quart.",
+          "id": "It's a quarter past ten.",
+          "literal": "it is ten hours and quarter."
+        },
+        {
+          "speaker": "Camille:",
+          "text": "Déjà ? Le cours commence à onze heures.",
+          "id": "Already? Class starts at eleven.",
+          "literal": "already? the course begins at eleven hours."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "On a le temps. Il finit à quelle heure ?",
+          "id": "We have time. What time does it end?",
+          "literal": "one has the time. it finishes at which hour?"
+        },
+        {
+          "speaker": "Camille:",
+          "text": "À midi et demi. Tu es libre cet après-midi ?",
+          "id": "At half past twelve. Are you free this afternoon?",
+          "literal": "at midday and half. you are free this after-midday?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Oui. Est-ce que tu veux réviser ensemble ?",
+          "id": "Yes. Do you want to study together?",
+          "literal": "yes. is-it-that you want review together?"
+        },
+        {
+          "speaker": "Camille:",
+          "text": "Avec plaisir. À quatorze heures à la bibliothèque ?",
+          "id": "I'd love to. At 2:00 at the library?",
+          "literal": "with pleasure. at fourteen hours at the library?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Quatorze heures, donc deux heures de l'après-midi.",
+          "id": "Fourteen hundred, so two in the afternoon.",
+          "literal": "fourteen hours, so two hours of the after-midday."
+        },
+        {
+          "speaker": "Camille:",
+          "text": "Voilà. Ne sois pas en retard !",
+          "id": "That's it. Don't be late!",
+          "literal": "there-it-is. not be not in lateness!"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Je suis toujours à l'heure, moi !",
+          "id": "I'm always on time!",
+          "literal": "I am always at the-hour, me!"
+        },
+        {
+          "speaker": "Camille:",
+          "text": "Ah bon ? Hier tu es arrivé à midi moins dix.",
+          "id": "Oh really? Yesterday you showed up at ten to twelve.",
+          "literal": "ah good? yesterday you are arrived at midday minus ten."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Le bus, encore le bus. Ce n'est pas ma faute !",
+          "id": "The bus, the bus again. It's not my fault!",
+          "literal": "the bus, again the bus. it not-is not my fault!"
+        }
+      ],
+      "notes": [
+        "**Il est … heures**, and the word *heures* can't be dropped. *Il est dix* on its own means nothing. Compare English, where \"it's ten\" is enough.",
+        "**Il here doesn't refer to anyone.** Just like *il y a*, this is an empty *il*, there only to carry the verb — exactly like English \"it\" in \"it's ten o'clock\". The weather verbs in Unit 18 use the same *il*.",
+        "**Une heure is singular, deux heures plural.** *Il est une heure* (one o'clock), *il est deux heures* (two o'clock). The s in *heures* is silent, but you still have to write it.",
+        "**Midi and minuit don't take heures.** *Il est midi* (noon), *il est minuit* (midnight). Both are masculine, so the half hour is *midi et demi*, not *demie*.",
+        "**Et quart, et demie, moins le quart.** Quarter past, half past, quarter to. Notice that *demie* agrees with feminine *heure* — except after *midi* and *minuit*.",
+        "**Official time uses the 24-hour clock.** Train timetables, movie times and formal appointments always say *quatorze heures*, *dix-neuf heures trente*. In everyday conversation people use the 12-hour clock and add *du matin*, *de l'après-midi*, *du soir* — like a.m. and p.m.",
+        "**Ne sois pas** is the negative command form of *être*. Commands are covered in full in Unit 17; for now just recognize *ne sois pas en retard* as one whole chunk."
+      ],
+      "grammars": [
+        {
+          "title": "Telling the time",
+          "body": [
+            "Two systems living side by side. The conversational one is used between friends; the 24-hour one is used for anything written."
+          ],
+          "table": {
+            "head": [
+              "Time",
+              "Conversational",
+              "Official (24-hour)"
+            ],
+            "rows": [
+              [
+                "8:00",
+                "*huit heures*",
+                "*huit heures*"
+              ],
+              [
+                "8:15",
+                "*huit heures et quart*",
+                "*huit heures quinze*"
+              ],
+              [
+                "8:30",
+                "*huit heures et demie*",
+                "*huit heures trente*"
+              ],
+              [
+                "8:45",
+                "*neuf heures moins le quart*",
+                "*huit heures quarante-cinq*"
+              ],
+              [
+                "8:50",
+                "*neuf heures moins dix*",
+                "*huit heures cinquante*"
+              ],
+              [
+                "12:00",
+                "*midi*",
+                "*douze heures*"
+              ],
+              [
+                "14:00",
+                "*deux heures de l'après-midi*",
+                "*quatorze heures*"
+              ],
+              [
+                "20:30",
+                "*huit heures et demie du soir*",
+                "*vingt heures trente*"
+              ],
+              [
+                "0:00",
+                "*minuit*",
+                "*zéro heure*"
+              ]
+            ]
+          },
+          "after": [
+            "⚠️ *Moins* counts back from the **next** hour: 8:45 is not \"eight forty-five\" but \"nine minus a quarter\". English does the same with \"a quarter to nine\", so this one is actually easy.",
+            "To ask when something happens, use **à**: *à quelle heure ?* — *à huit heures*. Don't mix it up with *quelle heure est-il ?*, which asks the time right now.",
+            "Time-of-day helpers: *du matin* (in the morning, until about 11), *de l'après-midi* (in the afternoon), *du soir* (in the evening), *de la nuit* (late at night)."
+          ]
+        },
+        {
+          "title": "Three ways to ask a question",
+          "body": [
+            "French has three levels of formality for the same question. All are correct; only the setting differs."
+          ],
+          "table": {
+            "head": [
+              "Method",
+              "Example",
+              "Setting"
+            ],
+            "rows": [
+              [
+                "Rising intonation only",
+                "*Tu viens ?*",
+                "Casual conversation"
+              ],
+              [
+                "Est-ce que in front",
+                "*Est-ce que tu viens ?*",
+                "Neutral, the safest"
+              ],
+              [
+                "Inversion",
+                "*Viens-tu ?*",
+                "Formal, written"
+              ],
+              [
+                "With a question word",
+                "*Quand est-ce que tu viens ?*",
+                "Neutral"
+              ],
+              [
+                "Question word at the end",
+                "*Tu viens quand ?*",
+                "Very casual"
+              ]
+            ]
+          },
+          "after": [
+            "*Est-ce que* has no meaning of its own at all — it just signals that a question is coming, a bit like English \"do\" in \"do you come?\". It's said ehs-kuh, and before a vowel it becomes *est-ce qu'* (*est-ce qu'il vient ?*).",
+            "Inversion slips in a **-t-** when two vowels collide: *a-t-il ?*, *va-t-elle ?*, *parle-t-on ?* That t is there purely for the sound.",
+            "When in doubt, use *est-ce que*. It's right in any setting and never changes the word order."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Numbers 1 to 60",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "To tell the time you only need up to 60. The numbers above that have surprises of their own and are saved for Unit 9."
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "",
+            "",
+            "",
+            ""
+          ],
+          "rows": [
+            [
+              "1 un",
+              "2 deux",
+              "3 trois",
+              "4 quatre"
+            ],
+            [
+              "5 cinq",
+              "6 six",
+              "7 sept",
+              "8 huit"
+            ],
+            [
+              "9 neuf",
+              "10 dix",
+              "11 onze",
+              "12 douze"
+            ],
+            [
+              "13 treize",
+              "14 quatorze",
+              "15 quinze",
+              "16 seize"
+            ],
+            [
+              "17 dix-sept",
+              "18 dix-huit",
+              "19 dix-neuf",
+              "20 vingt"
+            ],
+            [
+              "21 vingt et un",
+              "22 vingt-deux",
+              "30 trente",
+              "31 trente et un"
+            ],
+            [
+              "40 quarante",
+              "41 quarante et un",
+              "50 cinquante",
+              "60 soixante"
+            ]
+          ]
+        },
+        {
+          "type": "kotak",
+          "title": "Number sound traps",
+          "items": [
+            "*Six* and *dix* on their own are said SEES and DEES. Before a noun starting with a consonant, the last letter goes silent: *six livres* (see LEEVR). Before a vowel it becomes a z sound: *dix ans* (dee-ZAHN).",
+            "*Neuf* is said NUHF, but before *ans* and *heures* the f turns into a v: *neuf ans* (nuh-VAHN), *neuf heures* (nuh-VUHR). Only those two words.",
+            "*Huit* is said WEET, and its h blocks liaison: *les huit livres* (lay WEE LEEVR), not lay-ZWEET.",
+            "*Vingt* on its own is said VAN, but from 21 to 29 the t wakes up: *vingt-deux* (vant-DUH)."
+          ]
+        },
+        {
+          "type": "p",
+          "text": "The numbers 21, 31, 41, 51 and 61 slip in **et** with no hyphen: *vingt et un*, *trente et un*. The others use a hyphen: *vingt-deux*, *trente-trois*."
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "fr": "l'heure (f)",
+      "baca": "LUHR",
+      "en": "hour, time"
+    },
+    {
+      "fr": "quelle heure est-il ?",
+      "baca": "keh-LUHR eh-TEEL",
+      "en": "what time is it?"
+    },
+    {
+      "fr": "midi",
+      "baca": "mee-DEE",
+      "en": "noon"
+    },
+    {
+      "fr": "minuit",
+      "baca": "mee-NWEE",
+      "en": "midnight"
+    },
+    {
+      "fr": "et quart",
+      "baca": "ay KAHR",
+      "en": "quarter past"
+    },
+    {
+      "fr": "et demie",
+      "baca": "ay duh-MEE",
+      "en": "half past"
+    },
+    {
+      "fr": "moins le quart",
+      "baca": "mwan luh KAHR",
+      "en": "quarter to"
+    },
+    {
+      "fr": "le matin",
+      "baca": "luh mah-TAN",
+      "en": "morning"
+    },
+    {
+      "fr": "l'après-midi",
+      "baca": "lah-preh-mee-DEE",
+      "en": "afternoon"
+    },
+    {
+      "fr": "la nuit",
+      "baca": "lah NWEE",
+      "en": "night"
+    },
+    {
+      "fr": "le temps",
+      "baca": "luh TAHN",
+      "en": "time"
+    },
+    {
+      "fr": "commencer",
+      "baca": "koh-mahn-SAY",
+      "en": "to begin, to start"
+    },
+    {
+      "fr": "libre",
+      "baca": "LEEBR",
+      "en": "free"
+    },
+    {
+      "fr": "réviser",
+      "baca": "ray-vee-ZAY",
+      "en": "to review, to study"
+    },
+    {
+      "fr": "la bibliothèque",
+      "baca": "lah bee-blee-oh-TEK",
+      "en": "library"
+    },
+    {
+      "fr": "un rendez-vous",
+      "baca": "uhn rahn-day-VOO",
+      "en": "appointment, date"
+    },
+    {
+      "fr": "en retard",
+      "baca": "ahn ruh-TAHR",
+      "en": "late"
+    },
+    {
+      "fr": "en avance",
+      "baca": "ah-nah-VAHNS",
+      "en": "early"
+    },
+    {
+      "fr": "à l'heure",
+      "baca": "ah LUHR",
+      "en": "on time"
+    },
+    {
+      "fr": "hier",
+      "baca": "ee-YEHR",
+      "en": "yesterday"
+    },
+    {
+      "fr": "avec plaisir",
+      "baca": "ah-vek pleh-ZEER",
+      "en": "with pleasure"
+    },
+    {
+      "fr": "voilà",
+      "baca": "vwah-LAH",
+      "en": "there you go, that's it"
+    }
+  ],
+  "exercises": [
+    {
+      "prompt": "Write the time out in words, conversational style.",
+      "items": [
+        "7:00",
+        "9:15",
+        "11:30",
+        "13:45",
+        "18:50",
+        "0:00"
+      ]
+    },
+    {
+      "prompt": "Turn these into questions with est-ce que.",
+      "items": [
+        "Tu viens ce soir.",
+        "Il travaille le samedi.",
+        "Vous parlez français.",
+        "Elle habite à Lyon.",
+        "Nous commençons à huit heures."
+      ]
+    },
+    {
+      "prompt": "Fill in the blanks.",
+      "items": [
+        "Il ____ dix heures et quart.",
+        "Le cours commence ____ neuf heures.",
+        "____ heure est-il ?",
+        "Je suis toujours ____ l'heure.",
+        "Il est midi et ____."
+      ]
+    },
+    {
+      "prompt": "Translate into French.",
+      "items": [
+        "What time is it?",
+        "It's a quarter past ten.",
+        "Class starts at eleven.",
+        "Are you free this afternoon?",
+        "Don't be late!"
+      ]
+    }
+  ],
+  "answers": [
+    "Il est sept heures. — Il est neuf heures et quart. — Il est onze heures et demie. — Il est deux heures moins le quart. — Il est sept heures moins dix. — Il est minuit.",
+    "Est-ce que tu viens ce soir ? — Est-ce qu'il travaille le samedi ? — Est-ce que vous parlez français ? — Est-ce qu'elle habite à Lyon ? — Est-ce que nous commençons à huit heures ?",
+    "est — à — Quelle — à — demi",
+    "Quelle heure est-il ? — Il est dix heures et quart. — Le cours commence à onze heures. — Tu es libre cet après-midi ? — Ne sois pas en retard !"
+  ]
+}

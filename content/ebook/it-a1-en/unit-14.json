@@ -1,0 +1,468 @@
+{
+  "title": "At a clothing store",
+  "title_target": "In un negozio di vestiti",
+  "goal": "Buy clothes: name colors and sizes, point at items with *questo* and *quello*, and try things on before paying.",
+  "bekal": [
+    "name clothes, colors, and sizes",
+    "use *questo* and *quello* in the right form",
+    "ask for another size, another color, or the fitting room"
+  ],
+  "dialogs": [
+    {
+      "title": "Dialogo — Provo la taglia più grande",
+      "intro": "Budi is looking for a fall jacket. Notice how *questo* and *quello* change form to match the noun.",
+      "lines": [
+        {
+          "speaker": "Commessa:",
+          "text": "Buongiorno, posso aiutarLa?",
+          "id": "Good morning, can I help you?",
+          "literal": "good-morning, I-can help-you?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Sì, cerco una giacca per l'autunno.",
+          "id": "Yes, I'm looking for a jacket for the fall.",
+          "literal": "yes, I-look-for a jacket for the autumn."
+        },
+        {
+          "speaker": "Commessa:",
+          "text": "Che taglia porta?",
+          "id": "What size are you?",
+          "literal": "what size you-wear?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Non lo so, di solito la media. In Indonesia porto la L.",
+          "id": "I don't know, usually a medium. In Indonesia I wear an L.",
+          "literal": "not it I-know, of usual the medium. in Indonesia I-wear the L."
+        },
+        {
+          "speaker": "Commessa:",
+          "text": "Allora provi questa. È una quarantotto.",
+          "id": "Then try this one. It's a 48.",
+          "literal": "then try this. is a forty-eight."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Quella blu mi piace di più. Ce l'ha nella mia taglia?",
+          "id": "I like that blue one better. Do you have it in my size?",
+          "literal": "that blue to-me pleases of more. there it-you-have in-the my size?"
+        },
+        {
+          "speaker": "Commessa:",
+          "text": "Controllo… sì, eccola. Il camerino è in fondo a destra.",
+          "id": "Let me check… yes, here it is. The fitting room is at the back on the right.",
+          "literal": "I-check… yes, here-it. the fitting-room is at bottom to right."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Grazie… Allora? Come mi sta?",
+          "id": "Thanks… Well? How does it look on me?",
+          "literal": "thanks… so? how to-me stays?"
+        },
+        {
+          "speaker": "Commessa:",
+          "text": "Le sta benissimo. Ma le maniche sono un po' lunghe.",
+          "id": "It looks great on you. But the sleeves are a bit long.",
+          "literal": "to-you stays very-well. but the sleeves are a bit long."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Sì, ha ragione. Quanto costa?",
+          "id": "Yes, you're right. How much is it?",
+          "literal": "yes, you-have reason. how-much costs?"
+        },
+        {
+          "speaker": "Commessa:",
+          "text": "Novantacinque euro. Ma questa settimana c'è il venti per cento di sconto.",
+          "id": "Ninety-five euros. But this week there's twenty percent off.",
+          "literal": "ninety-five euro. but this week there-is the twenty per cent of discount."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Allora la prendo. Posso pagare con la carta?",
+          "id": "Then I'll take it. Can I pay by card?",
+          "literal": "then it I-take. I-can pay with the card?"
+        }
+      ],
+      "notes": [
+        "**Come mi sta?** = \"How does it look on me?\" The verb *stare* is used for how clothes fit. The answer is *ti sta bene* (informal) or *Le sta bene* (formal). Asking *è bello?* will be understood, but it asks something else — whether the item is nice, not whether it suits you.",
+        "**Italian sizes use numbers, not letters.** Men's clothes 46–56, women's 38–50, shoes 35–46. S, M, L appear in big chain stores, but numbers are more common. They don't line up with US or UK sizes at all.",
+        "**Ha ragione** = \"you're right\", literally \"you have reason\". Again *avere*, not *essere*. The opposite is *ha torto* (you're wrong). *Sono ragione* isn't Italian at all.",
+        "**Ce l'ha?** = \"Do you have it?\" A short form beyond A1 but heard daily in shops. Learn it as a whole; it pairs with *ce l'ho* (I have it) and *non ce l'ho* (I don't have it).",
+        "**Provare means to try**, and trying on clothes is *provare*. The fitting room is *il camerino*. *Posso provare?* is the sentence you'll need most in a clothing store.",
+        "**Sconto means discount**, and *i saldi* are the seasonal sales. Sales in Italy are regulated by the state: twice a year, early January and early July, with official dates set by each region.",
+        "**Blu never changes form.** A few colors are fixed like this: *blu*, *rosa*, *viola*, *beige*, *arancione* (this one changes only in the plural). *Una giacca blu*, *due giacche blu*.",
+        "**Mi piace di più** = \"I like it better\". The verb *piacere* has a reversed structure that's fully unpacked in the next unit. For now, learn *mi piace* (I like it, one thing) and *mi piacciono* (I like them, several things)."
+      ],
+      "grammars": [
+        {
+          "title": "Questo and quello",
+          "body": [
+            "*Questo* (this) behaves like a normal adjective. *Quello* (that) behaves like the article *il/lo/la* — its form depends on the first letter of the next word."
+          ],
+          "table": {
+            "head": [
+              "",
+              "Masc. singular",
+              "Fem. singular",
+              "Masc. plural",
+              "Fem. plural"
+            ],
+            "rows": [
+              [
+                "this",
+                "quest**o** libro",
+                "quest**a** giacca",
+                "quest**i** libri",
+                "quest**e** giacche"
+              ],
+              [
+                "that (consonant)",
+                "que**l** libro",
+                "que**lla** giacca",
+                "que**i** libri",
+                "que**lle** giacche"
+              ],
+              [
+                "that (vowel)",
+                "que**ll'**amico",
+                "que**ll'**amica",
+                "que**gli** amici",
+                "que**lle** amiche"
+              ],
+              [
+                "that (z, s+consonant)",
+                "que**llo** zaino",
+                "—",
+                "que**gli** zaini",
+                "—"
+              ]
+            ]
+          },
+          "after": [
+            "Compare with the article table in unit 3: *quel* ↔ *il*, *quello* ↔ *lo*, *quella* ↔ *la*, *quei* ↔ *i*, *quegli* ↔ *gli*, *quelle* ↔ *le*. The pattern is exactly the same, just with *que-* stuck on front.",
+            "Before a vowel, *questo* is also often shortened: *quest'anno*, *quest'amica*. This is optional.",
+            "Standing alone without a noun, the form is simpler: *Prendo questo.* / *Preferisco quello.*"
+          ]
+        },
+        {
+          "title": "Colors",
+          "body": [
+            "Some change form, some never do."
+          ],
+          "table": {
+            "head": [
+              "Changing (-o/-a/-i/-e)",
+              "Changing (-e/-i)",
+              "Never changing"
+            ],
+            "rows": [
+              [
+                "bianco — white",
+                "verde — green",
+                "blu — dark blue"
+              ],
+              [
+                "nero — black",
+                "marrone — brown",
+                "rosa — pink"
+              ],
+              [
+                "rosso — red",
+                "arancione — orange",
+                "viola — purple"
+              ],
+              [
+                "giallo — yellow",
+                "celeste — sky blue",
+                "beige — beige"
+              ],
+              [
+                "azzurro — blue",
+                "",
+                ""
+              ],
+              [
+                "grigio — gray",
+                "",
+                ""
+              ]
+            ]
+          },
+          "after": [
+            "*Azzurro* and *blu* are both blue: *azzurro* is light blue like the sky and the national team's jersey, *blu* is dark blue. Italian treats them as two separate colors, not two shades of one."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Clothes",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "Italiano",
+            "English",
+            "Italiano",
+            "English"
+          ],
+          "rows": [
+            [
+              "la camicia",
+              "shirt",
+              "il vestito",
+              "dress, suit"
+            ],
+            [
+              "la maglietta",
+              "T-shirt",
+              "la gonna",
+              "skirt"
+            ],
+            [
+              "il maglione",
+              "sweater",
+              "i pantaloni",
+              "pants, trousers"
+            ],
+            [
+              "la giacca",
+              "jacket",
+              "i jeans",
+              "jeans"
+            ],
+            [
+              "il cappotto",
+              "coat",
+              "i calzini",
+              "socks"
+            ],
+            [
+              "le scarpe",
+              "shoes",
+              "la cintura",
+              "belt"
+            ],
+            [
+              "gli stivali",
+              "boots",
+              "il cappello",
+              "hat"
+            ],
+            [
+              "la borsa",
+              "bag",
+              "gli occhiali",
+              "glasses"
+            ],
+            [
+              "la sciarpa",
+              "scarf",
+              "l'orologio",
+              "watch"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "Notice that *i pantaloni*, *gli occhiali*, and *le scarpe* are always plural — just like English \"pants\" and \"glasses\". To count them, use *un paio di* (a pair of): *un paio di scarpe*, *un paio di pantaloni*."
+        },
+        {
+          "type": "kotak",
+          "title": "Ready-made phrases for the shop",
+          "items": [
+            "*Sto solo guardando, grazie.* — I'm just looking, thanks.",
+            "*Posso provare?* — Can I try it on?",
+            "*Dov'è il camerino?* — Where's the fitting room?",
+            "*Ce l'ha in un'altra taglia?* — Do you have it in another size?",
+            "*Ce l'ha in nero?* — Do you have it in black?",
+            "*È troppo stretto / largo / corto / lungo.* — It's too tight / loose / short / long.",
+            "*Quanto costa?* / *Quant'è?* — How much is it?",
+            "*Lo prendo.* / *La prendo.* — I'll take it."
+          ]
+        },
+        {
+          "type": "p",
+          "text": "The first phrase saves you from very attentive Italian shop assistants. Without it, you'll have company for your entire visit."
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "it": "il negozio",
+      "baca": "eel neh-GOH-tsyoh",
+      "en": "shop, store"
+    },
+    {
+      "it": "i vestiti",
+      "baca": "ee vehs-TEE-tee",
+      "en": "clothes"
+    },
+    {
+      "it": "la giacca",
+      "baca": "lah JAHK-kah",
+      "en": "jacket"
+    },
+    {
+      "it": "la camicia",
+      "baca": "lah kah-MEE-chah",
+      "en": "shirt"
+    },
+    {
+      "it": "i pantaloni",
+      "baca": "ee pahn-tah-LOH-nee",
+      "en": "pants, trousers"
+    },
+    {
+      "it": "le scarpe",
+      "baca": "leh SKAHR-peh",
+      "en": "shoes"
+    },
+    {
+      "it": "la taglia",
+      "baca": "lah TAH-lyah",
+      "en": "clothing size"
+    },
+    {
+      "it": "il numero",
+      "baca": "eel NOO-meh-roh",
+      "en": "number, shoe size"
+    },
+    {
+      "it": "il camerino",
+      "baca": "eel kah-meh-REE-noh",
+      "en": "fitting room"
+    },
+    {
+      "it": "provare",
+      "baca": "proh-VAH-reh",
+      "en": "to try (on)"
+    },
+    {
+      "it": "cercare",
+      "baca": "chehr-KAH-reh",
+      "en": "to look for"
+    },
+    {
+      "it": "lo sconto",
+      "baca": "loh SKOHN-toh",
+      "en": "discount"
+    },
+    {
+      "it": "i saldi",
+      "baca": "ee SAHL-dee",
+      "en": "seasonal sales"
+    },
+    {
+      "it": "bianco",
+      "baca": "BYAHN-koh",
+      "en": "white"
+    },
+    {
+      "it": "nero",
+      "baca": "NEH-roh",
+      "en": "black"
+    },
+    {
+      "it": "rosso",
+      "baca": "ROHS-soh",
+      "en": "red"
+    },
+    {
+      "it": "verde",
+      "baca": "VEHR-deh",
+      "en": "green"
+    },
+    {
+      "it": "blu",
+      "baca": "bloo",
+      "en": "dark blue"
+    },
+    {
+      "it": "giallo",
+      "baca": "JAHL-loh",
+      "en": "yellow"
+    },
+    {
+      "it": "grigio",
+      "baca": "GREE-joh",
+      "en": "gray"
+    },
+    {
+      "it": "stretto",
+      "baca": "STREHT-toh",
+      "en": "tight, narrow"
+    },
+    {
+      "it": "largo",
+      "baca": "LAHR-goh",
+      "en": "loose, wide"
+    },
+    {
+      "it": "troppo",
+      "baca": "TROHP-poh",
+      "en": "too (much)"
+    },
+    {
+      "it": "aiutare",
+      "baca": "ah-yoo-TAH-reh",
+      "en": "to help"
+    }
+  ],
+  "exercises": [
+    {
+      "prompt": "Fill in the correct form of questo.",
+      "items": [
+        "____ libro è interessante.",
+        "____ giacca è bella.",
+        "____ scarpe sono care.",
+        "____ pantaloni sono stretti.",
+        "____ camicia mi sta bene."
+      ]
+    },
+    {
+      "prompt": "Fill in the correct form of quello.",
+      "items": [
+        "____ maglione è caldo.",
+        "____ zaino è nuovo.",
+        "____ amica è simpatica.",
+        "____ occhiali sono belli.",
+        "____ scarpe sono nere.",
+        "____ vestito è troppo lungo."
+      ]
+    },
+    {
+      "prompt": "Translate into Italian.",
+      "items": [
+        "I'm looking for a jacket.",
+        "What size are you?",
+        "Can I try it on?",
+        "Where's the fitting room?",
+        "Do you have it in black?",
+        "It's too tight."
+      ]
+    },
+    {
+      "prompt": "Make the color agree.",
+      "items": [
+        "una camicia (bianco) ____",
+        "due giacche (nero) ____",
+        "i pantaloni (verde) ____",
+        "una borsa (blu) ____",
+        "le scarpe (rosso) ____",
+        "un maglione (grigio) ____"
+      ]
+    }
+  ],
+  "answers": [
+    "Questo — Questa — Queste — Questi — Questa",
+    "Quel — Quello — Quell' — Quegli — Quelle — Quel",
+    "Cerco una giacca. — Che taglia porta? — Posso provare? — Dov'è il camerino? — Ce l'ha in nero? — È troppo stretto.",
+    "bianca — nere — verdi — blu — rosse — grigio"
+  ],
+  "wave": "Review **unit 12** first: do a week's market shopping from memory — name ten foods, each with its measure."
+}

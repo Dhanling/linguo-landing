@@ -1,0 +1,497 @@
+{
+  "title": "The weekend",
+  "title_target": "Am Wochenende",
+  "goal": "Master the rule that decides how your German sentences sound more than any other: the verb sits in second place, whatever comes before it.",
+  "bekal": [
+    "put the verb in the right position",
+    "start a sentence with a time or place expression",
+    "order your expressions (time → manner → place)",
+    "say what you like doing with *gern*"
+  ],
+  "dialogs": [
+    {
+      "title": "Dialogue — Was machst du am Wochenende?",
+      "intro": "Friday afternoon. Watch the position of the verb in every sentence closely — some sentences start with the subject, some don't, but the verb never moves.",
+      "lines": [
+        {
+          "speaker": "Lena:",
+          "text": "Was machst du am Wochenende?",
+          "id": "What are you doing this weekend?",
+          "literal": "what make you on-the weekend?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Am Samstag gehe ich ins Schwimmbad. Ich schwimme sehr gern.",
+          "id": "On Saturday I'm going to the pool. I love swimming.",
+          "literal": "on Saturday go I into-the swimming-pool. I swim very gladly."
+        },
+        {
+          "speaker": "Lena:",
+          "text": "Um wie viel Uhr?",
+          "id": "What time?",
+          "literal": "at how much o'clock?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Ich gehe morgens um acht dorthin. Dann ist es noch leer.",
+          "id": "I go there at eight in the morning. It's still empty then.",
+          "literal": "I go mornings at eight there-to. then is it still empty."
+        },
+        {
+          "speaker": "Lena:",
+          "text": "Und am Sonntag?",
+          "id": "And on Sunday?",
+          "literal": "and on Sunday?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Am Sonntag besuche ich meinen Onkel in Potsdam.",
+          "id": "On Sunday I'm visiting my uncle in Potsdam.",
+          "literal": "on Sunday visit I my uncle in Potsdam."
+        },
+        {
+          "speaker": "Lena:",
+          "text": "Fährst du mit dem Zug?",
+          "id": "Are you taking the train?",
+          "literal": "ride you with the train?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Ja, ich fahre am Sonntag mit dem Zug nach Potsdam.",
+          "id": "Yes, I'm taking the train to Potsdam on Sunday.",
+          "literal": "yes, I ride on Sunday with the train to Potsdam."
+        },
+        {
+          "speaker": "Lena:",
+          "text": "Das ist schön. Ich bleibe zu Hause und lese.",
+          "id": "That's nice. I'm staying home and reading.",
+          "literal": "that is beautiful. I stay at home and read."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Liest du gern?",
+          "id": "Do you like reading?",
+          "literal": "read you gladly?"
+        },
+        {
+          "speaker": "Lena:",
+          "text": "Sehr gern. Aber Sport mache ich nicht gern.",
+          "id": "Very much. But sports I don't like.",
+          "literal": "very gladly. but sport make I not gladly."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Vielleicht kommst du am Samstag mit?",
+          "id": "Maybe you'd like to come along on Saturday?",
+          "literal": "maybe come you on Saturday along?"
+        },
+        {
+          "speaker": "Lena:",
+          "text": "Um acht Uhr morgens? Nein danke!",
+          "id": "At eight in the morning? No thanks!",
+          "literal": "at eight o'clock mornings? no thanks!"
+        }
+      ],
+      "notes": [
+        "**Look at lines 2, 6, 8 and 12.** They all start with something other than the subject — *Am Samstag*, *Am Sonntag*, *Vielleicht* — and in all of them the subject steps behind the verb. What never moves is the verb itself: always the **second element** in the sentence.",
+        "**Compare lines 8 and 2 word by word.** *Ich fahre am Sonntag mit dem Zug nach Potsdam* and *Am Samstag gehe ich ins Schwimmbad*. The content can be arranged two ways, and both are correct. Whatever comes first is what you want to highlight.",
+        "***gern* is not a verb meaning \"like\".** It's an adverb that attaches to another verb: *Ich lese gern* = \"I read gladly\" = I like reading. The negative is *nicht gern*: *Ich koche nicht gern*.",
+        "**Line 11: *Sport mache ich nicht gern*.** Even the object of the action (*Sport*) can move to the front for emphasis — and the rule stays the same: verb second, subject third. To German ears this sounds completely natural; in English it only works in a few emphatic sentences (\"Sports I don't like\").",
+        "***mit dem Zug*, *mit dem Bus*, *mit dem Auto*** — means of transport always take *mit dem/der*. The exception is walking: *zu Fuß*. The form *dem* here is the Dativ, taken apart in Unit 13.",
+        "***zu Hause* and *nach Hause*.** The first means being at home (*Ich bleibe zu Hause*), the second means going home (*Ich gehe nach Hause*). Two frozen phrases to learn exactly as they are."
+      ],
+      "grammars": [
+        {
+          "title": "The verb in second place — the one rule",
+          "body": [
+            "If you could remember only one rule of German grammar, this would be it. In a statement, **the conjugated verb is always the second element**. Not the second word — the second element: the block of meaning in front of it can be as long as you like."
+          ],
+          "table": {
+            "head": [
+              "Position 1",
+              "Position 2 (verb)",
+              "The rest"
+            ],
+            "rows": [
+              [
+                "Ich",
+                "**fahre**",
+                "am Sonntag nach Potsdam."
+              ],
+              [
+                "Am Sonntag",
+                "**fahre**",
+                "ich nach Potsdam."
+              ],
+              [
+                "Nach Potsdam",
+                "**fahre**",
+                "ich am Sonntag."
+              ],
+              [
+                "Mit dem Zug",
+                "**fahre**",
+                "ich am Sonntag nach Potsdam."
+              ],
+              [
+                "Meinen Onkel",
+                "**besuche**",
+                "ich am Sonntag."
+              ],
+              [
+                "Vielleicht",
+                "**kommst**",
+                "du mit?"
+              ]
+            ]
+          },
+          "after": [
+            "⚠️ The most typical English-speaker mistake: putting **two** elements in front of the verb — *Am Sonntag ich fahre nach Potsdam*, copying \"On Sunday I'm going\". That sentence instantly sounds foreign to a German, far more noticeable than a wrong article. If something moves to the front, the subject **must** step back.",
+            "This rule has two siblings you've been using since Unit 1: in **yes/no questions** the verb moves to **first** place (*Fährst du mit dem Zug?*), and in **commands** too (*Komm mit!*). A question word doesn't count as an ordinary first element — it simply belongs at the front, and the verb still follows it: *Wann **fährst** du?*"
+          ]
+        },
+        {
+          "title": "Order of expressions: time, manner, place",
+          "body": [
+            "When a sentence contains more than one expression, their order isn't free. German arranges them **time → manner → place** — the reverse of the English habit, which puts place first."
+          ],
+          "table": {
+            "head": [
+              "",
+              "TIME",
+              "MANNER",
+              "PLACE"
+            ],
+            "rows": [
+              [
+                "Ich fahre",
+                "am Sonntag",
+                "mit dem Zug",
+                "nach Potsdam."
+              ],
+              [
+                "Wir gehen",
+                "heute Abend",
+                "zu Fuß",
+                "ins Kino."
+              ],
+              [
+                "Sie kommt",
+                "morgen",
+                "mit dem Auto",
+                "nach Berlin."
+              ],
+              [
+                "Ich lerne",
+                "jeden Tag",
+                "allein",
+                "zu Hause."
+              ]
+            ]
+          },
+          "after": [
+            "Compare English: *I'm going **to Potsdam by train on Sunday*** — exactly backwards. Translating the English order word for word is one of the main sources of German sentences that are \"correct but strange\".",
+            "If one expression moves to first place, the rest stay in the same order: *Am Sonntag fahre ich mit dem Zug nach Potsdam.* The one that moves is usually the **time**, which is why everyday German sentences so often start with *heute*, *morgen*, *am Montag*.",
+            "The object of the action (Akkusativ) stands **before** the place expression but usually **after** the time expression: *Ich besuche **am Sonntag** meinen Onkel **in Potsdam**.*"
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Free-time activities",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "German",
+            "Pronunciation",
+            "English"
+          ],
+          "rows": [
+            [
+              "Sport machen",
+              "shport MAH-khen",
+              "to do sports"
+            ],
+            [
+              "schwimmen",
+              "SHVIM-men",
+              "to swim"
+            ],
+            [
+              "Fußball spielen",
+              "FOOS-bahl SHPEE-len",
+              "to play soccer"
+            ],
+            [
+              "Musik hören",
+              "moo-ZEEK HÖH-ren",
+              "to listen to music"
+            ],
+            [
+              "fernsehen",
+              "FAIRN-zay-en",
+              "to watch TV"
+            ],
+            [
+              "ins Kino gehen",
+              "ins KEE-noh GAY-en",
+              "to go to the movies"
+            ],
+            [
+              "spazieren gehen",
+              "shpah-TSEE-ren",
+              "to go for a walk"
+            ],
+            [
+              "Freunde treffen",
+              "FROYN-de TREF-fen",
+              "to meet friends"
+            ],
+            [
+              "kochen",
+              "KOKH-en",
+              "to cook"
+            ],
+            [
+              "lesen",
+              "LAY-zen",
+              "to read"
+            ]
+          ]
+        },
+        {
+          "type": "sub",
+          "text": "Saying what you like and dislike"
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "German",
+            "English",
+            "Note"
+          ],
+          "rows": [
+            [
+              "Ich lese **gern**.",
+              "I like reading.",
+              "gern attaches to the verb"
+            ],
+            [
+              "Ich lese **sehr gern**.",
+              "I love reading.",
+              "emphasis"
+            ],
+            [
+              "Ich lese **nicht gern**.",
+              "I don't like reading.",
+              "negative"
+            ],
+            [
+              "Ich lese **nicht so gern**.",
+              "I'm not so keen on reading.",
+              "softer"
+            ],
+            [
+              "**Liest** du gern?",
+              "Do you like reading?",
+              "question"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "⚠️ Don't say *Ich liebe lesen* to copy English *I love reading*. German uses *gern* for things you enjoy, and keeps *lieben* for love of people. You will hear *Ich liebe Pizza* in casual talk, but it sounds over the top — rather like declaring \"I'm in love with pizza\"."
+        }
+      ]
+    },
+    {
+      "title": "Fixing your own word order",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "The fastest way to check your own sentence: point to the verb, then count backwards. If there's more than one element to its left, the sentence is wrong."
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Wrong",
+            "Right",
+            "Why"
+          ],
+          "rows": [
+            [
+              "*Am Montag ich gehe zur Arbeit.*",
+              "Am Montag **gehe ich** zur Arbeit.",
+              "two elements before the verb"
+            ],
+            [
+              "*Ich gehe zur Schule jeden Tag.*",
+              "Ich gehe **jeden Tag** zur Schule.",
+              "time before place"
+            ],
+            [
+              "*Heute ich bin müde.*",
+              "Heute **bin ich** müde.",
+              "the subject steps back"
+            ],
+            [
+              "*Ich fahre nach Berlin mit dem Zug.*",
+              "Ich fahre **mit dem Zug nach Berlin**.",
+              "manner before place"
+            ],
+            [
+              "*Gern ich lese Bücher.*",
+              "Ich lese **gern** Bücher.",
+              "gern doesn't start the sentence"
+            ]
+          ]
+        },
+        {
+          "type": "kotak",
+          "title": "Five-minute drill",
+          "items": [
+            "Take five sentences you've written in earlier units, and rewrite each with its time expression at the front.",
+            "Say both versions out loud, one after the other: *Ich gehe am Samstag ins Kino* / *Am Samstag gehe ich ins Kino*. Feel how the verb doesn't move.",
+            "If one of your versions sounds odd, check just one thing: how many elements come before the verb."
+          ]
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "de": "das Wochenende",
+      "baca": "VOKH-en-en-de",
+      "en": "weekend"
+    },
+    {
+      "de": "der Sport",
+      "baca": "shport",
+      "en": "sport(s)"
+    },
+    {
+      "de": "schwimmen",
+      "baca": "SHVIM-men",
+      "en": "to swim"
+    },
+    {
+      "de": "das Schwimmbad",
+      "baca": "SHVIM-baht",
+      "en": "swimming pool"
+    },
+    {
+      "de": "spielen",
+      "baca": "SHPEE-len",
+      "en": "to play"
+    },
+    {
+      "de": "treffen",
+      "baca": "TREF-fen",
+      "en": "to meet"
+    },
+    {
+      "de": "besuchen",
+      "baca": "be-ZOO-khen",
+      "en": "to visit"
+    },
+    {
+      "de": "bleiben",
+      "baca": "BLEYE-ben",
+      "en": "to stay"
+    },
+    {
+      "de": "reisen",
+      "baca": "REYE-zen",
+      "en": "to travel"
+    },
+    {
+      "de": "das Kino",
+      "baca": "KEE-noh",
+      "en": "movie theater"
+    },
+    {
+      "de": "die Musik",
+      "baca": "moo-ZEEK",
+      "en": "music"
+    },
+    {
+      "de": "der Zug",
+      "baca": "tsook",
+      "en": "train"
+    },
+    {
+      "de": "der Bus",
+      "baca": "boos",
+      "en": "bus"
+    },
+    {
+      "de": "das Auto",
+      "baca": "OW-toh",
+      "en": "car"
+    },
+    {
+      "de": "das Fahrrad",
+      "baca": "FAHR-raht",
+      "en": "bicycle"
+    },
+    {
+      "de": "zu Fuß",
+      "baca": "tsoo FOOS",
+      "en": "on foot"
+    },
+    {
+      "de": "zu Hause",
+      "baca": "tsoo HOW-ze",
+      "en": "at home"
+    },
+    {
+      "de": "nach Hause",
+      "baca": "nahkh HOW-ze",
+      "en": "(going) home"
+    }
+  ],
+  "exercises": [
+    {
+      "prompt": "Translate into English.",
+      "items": [
+        "Was machst du am Wochenende?",
+        "Am Samstag gehe ich ins Schwimmbad.",
+        "Ich fahre am Sonntag mit dem Zug nach Potsdam.",
+        "Ich bleibe zu Hause und lese.",
+        "Sport mache ich nicht gern.",
+        "Vielleicht kommst du mit?"
+      ]
+    },
+    {
+      "prompt": "Fill in the verb in the right position.",
+      "items": [
+        "Am Montag ____ ich zur Arbeit. (gehen)",
+        "Heute ____ ich müde. (sein)",
+        "Morgen ____ wir nach Berlin. (fahren)",
+        "Vielleicht ____ du mit. (kommen)",
+        "Am Wochenende ____ ich Freunde. (treffen)",
+        "Jeden Tag ____ er Musik. (hören)"
+      ]
+    },
+    {
+      "prompt": "Put the words in the right order. Start with the first expression given.",
+      "items": [
+        "am Samstag / ich / ins Kino / gehe",
+        "mit dem Zug / ich / nach Potsdam / fahre / am Sonntag",
+        "gern / ich / lese / sehr",
+        "zu Hause / bleibe / ich / heute",
+        "jeden Tag / ich / zu Fuß / gehe / zur Schule",
+        "meinen Onkel / ich / besuche / am Sonntag"
+      ]
+    }
+  ],
+  "answers": [
+    "What are you doing this weekend? — On Saturday I'm going to the pool. — I'm taking the train to Potsdam on Sunday. — I'm staying home and reading. — Sports I don't like. — Maybe you'd like to come along?",
+    "gehe — bin — fahren — kommst — treffe — hört",
+    "Am Samstag gehe ich ins Kino. — Am Sonntag fahre ich mit dem Zug nach Potsdam. — Ich lese sehr gern. — Heute bleibe ich zu Hause. — Ich gehe jeden Tag zu Fuß zur Schule. — Am Sonntag besuche ich meinen Onkel."
+  ],
+  "wave": "Before starting Unit 11, go back to the dialogue in **Unit 3**. Pay special attention to the articles — do you still remember *der*, *die* or *das* for each thing?"
+}

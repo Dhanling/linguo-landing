@@ -1,0 +1,506 @@
+{
+  "title": "This is my family",
+  "title_target": "Das ist meine Familie",
+  "goal": "Talk about your family, and use the possessives (*mein*, *dein*, *sein*, *ihr*) whose ending follows the gender of the thing owned — not the owner.",
+  "bekal": [
+    "name the members of your family",
+    "use the verb *haben* (to have)",
+    "say who something belongs to (*mein Bruder*, *meine Schwester*)",
+    "say you don't have something (*Ich habe keine Geschwister*)"
+  ],
+  "dialogs": [
+    {
+      "title": "Dialogue — Familienfotos",
+      "intro": "Break time. Lena pulls out her phone, and Budi gets caught in the same ritual found in every language on earth: looking at someone else's family photos.",
+      "lines": [
+        {
+          "speaker": "Lena:",
+          "text": "Schau mal, das ist meine Familie.",
+          "id": "Look, this is my family.",
+          "literal": "look once, that is my family."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Oh, schön! Wer ist das?",
+          "id": "Oh, nice! Who's this?",
+          "literal": "oh, beautiful! who is that?"
+        },
+        {
+          "speaker": "Lena:",
+          "text": "Das sind meine Eltern. Mein Vater heißt Thomas, meine Mutter heißt Petra.",
+          "id": "Those are my parents. My father's name is Thomas, my mother's name is Petra.",
+          "literal": "that are my parents. my father is-called Thomas, my mother is-called Petra."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Und hast du Geschwister?",
+          "id": "And do you have any brothers or sisters?",
+          "literal": "and have you siblings?"
+        },
+        {
+          "speaker": "Lena:",
+          "text": "Ja, ich habe einen Bruder und zwei Schwestern.",
+          "id": "Yes, I have a brother and two sisters.",
+          "literal": "yes, I have a brother and two sisters."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Wie alt ist dein Bruder?",
+          "id": "How old is your brother?",
+          "literal": "how old is your brother?"
+        },
+        {
+          "speaker": "Lena:",
+          "text": "Er ist zwanzig. Seine Frau heißt Mia. Sie haben ein Kind.",
+          "id": "He's twenty. His wife's name is Mia. They have a child.",
+          "literal": "he is twenty. his wife is-called Mia. they have a child."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Also bist du Tante!",
+          "id": "So you're an aunt!",
+          "literal": "so are you aunt!"
+        },
+        {
+          "speaker": "Lena:",
+          "text": "Genau. Und du? Wie ist deine Familie?",
+          "id": "Exactly. And you? What's your family like?",
+          "literal": "exactly. and you? how is your family?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Ich habe keine Geschwister. Ich bin Einzelkind.",
+          "id": "I don't have any brothers or sisters. I'm an only child.",
+          "literal": "I have no siblings. I am single-child."
+        },
+        {
+          "speaker": "Lena:",
+          "text": "Und deine Eltern? Wo wohnen sie?",
+          "id": "And your parents? Where do they live?",
+          "literal": "and your parents? where live they?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Sie wohnen in Bandung. Ihr Haus ist klein, aber sehr gemütlich.",
+          "id": "They live in Bandung. Their house is small, but very cozy.",
+          "literal": "they live in Bandung. their house is small, but very cozy."
+        }
+      ],
+      "notes": [
+        "***mein* or *meine*? The thing owned decides, not the owner.** *Mein Vater* (masculine) but *meine Mutter* (feminine) — even though the owner is the same person. English *my* never changes, so this is the longest-lasting source of beginner mistakes.",
+        "***sein* for a male owner, *ihr* for a female owner.** Line 7: *Seine Frau* = **his** wife. If Lena were talking about her sister, she'd say *ihr Mann* = **her** husband. So far, just like English his/her — but then the ending (*-e* or nothing) marks the thing owned on top of that.",
+        "**Line 5: *einen Bruder*, not *ein Bruder*.** A masculine noun changes form as soon as it becomes the object of an action — here, the object of \"have\". This is called the **Akkusativ**, and it's taken apart fully in Unit 7. For now just note the pattern: *ich habe **einen** Bruder*, *ich habe **eine** Schwester*, *ich habe **ein** Kind*.",
+        "***Geschwister* is always plural.** It has no singular — if you have one sibling, you say *einen Bruder* or *eine Schwester*. The same goes for *die Eltern* (parents), which is never singular.",
+        "***Wie alt…?*** means \"how old\", and the answer uses *sein*, not *haben*: *Ich **bin** zwanzig* — just as in English, and not \"I have twenty years\" as in French or Spanish.",
+        "***Schau mal*** = \"have a look\". The word *mal* in the middle of a sentence softens a command into a relaxed invitation — *Komm mal!*, *Sag mal…* Without *mal*, the sentence sounds like an order."
+      ],
+      "grammars": [
+        {
+          "title": "haben (to have) — the second verb you must know by heart",
+          "body": [
+            "Together with *sein*, this verb holds up half of German: it's used for possession, for hunger and thirst, and later — in Unit 17 — to build almost all of the past tense."
+          ],
+          "table": {
+            "head": [
+              "Person",
+              "haben",
+              "Pronunciation",
+              "Example"
+            ],
+            "rows": [
+              [
+                "ich",
+                "**habe**",
+                "HAH-be",
+                "Ich habe Zeit."
+              ],
+              [
+                "du",
+                "**hast**",
+                "hahst",
+                "Hast du Geschwister?"
+              ],
+              [
+                "er / sie / es",
+                "**hat**",
+                "haht",
+                "Er hat ein Kind."
+              ],
+              [
+                "wir",
+                "**haben**",
+                "HAH-ben",
+                "Wir haben Hunger."
+              ],
+              [
+                "ihr",
+                "**habt**",
+                "hahpt",
+                "Habt ihr Zeit?"
+              ],
+              [
+                "sie / Sie",
+                "**haben**",
+                "HAH-ben",
+                "Sie haben ein Haus."
+              ]
+            ]
+          },
+          "after": [
+            "Only the two middle forms are irregular: *du hast* and *er hat* drop their **b**. The rest follow the regular verb pattern you set up in Unit 2.",
+            "Some everyday expressions use *haben* where English uses *be* + adjective: *Ich habe Hunger* (\"I'm hungry\", literally \"I have hunger\"), *Ich habe Durst* (I'm thirsty), *Ich habe Zeit* (I have time), *Ich habe keine Zeit* (I'm busy)."
+          ]
+        },
+        {
+          "title": "Possessives: one family, two endings",
+          "body": [
+            "All possessives behave exactly like *ein* / *kein* — that's why grammar books call them *ein-Wörter*. There are only two endings: **nothing** for masculine & neuter, **-e** for feminine & plural."
+          ],
+          "table": {
+            "head": [
+              "Owner",
+              "+ masculine / neuter",
+              "+ feminine / plural",
+              "English"
+            ],
+            "rows": [
+              [
+                "ich",
+                "**mein** Vater / mein Kind",
+                "**meine** Mutter / meine Eltern",
+                "my"
+              ],
+              [
+                "du",
+                "**dein** Bruder",
+                "**deine** Schwester",
+                "your (informal)"
+              ],
+              [
+                "er / es",
+                "**sein** Sohn",
+                "**seine** Frau",
+                "his / its"
+              ],
+              [
+                "sie",
+                "**ihr** Mann",
+                "**ihre** Tochter",
+                "her"
+              ],
+              [
+                "wir",
+                "**unser** Haus",
+                "**unsere** Familie",
+                "our"
+              ],
+              [
+                "ihr",
+                "**euer** Lehrer",
+                "**eure** Schule",
+                "your (plural)"
+              ],
+              [
+                "sie (they)",
+                "**ihr** Haus",
+                "**ihre** Kinder",
+                "their"
+              ],
+              [
+                "Sie (formal you)",
+                "**Ihr** Name",
+                "**Ihre** Adresse",
+                "your (formal)"
+              ]
+            ]
+          },
+          "after": [
+            "⚠️ The last three rows look almost identical, and that really is confusing at first: *ihr* can mean \"her\", \"their\", or — capitalized, *Ihr* — \"your\" (formal). Only context and the capital letter tell them apart. The good news: in conversation, the three rarely collide in the same sentence.",
+            "Notice also *euer* → *eure*: the **e** in the middle drops out as soon as an ending is added. The same thing happens with *unser* → *unsre* in fast speech, though *unsere* remains the written form."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Family members",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "German",
+            "Plural",
+            "Pronunciation",
+            "English"
+          ],
+          "rows": [
+            [
+              "die Familie",
+              "die Familien",
+              "fah-MEE-lee-e",
+              "family"
+            ],
+            [
+              "die Eltern",
+              "(always plural)",
+              "EL-tuhn",
+              "parents"
+            ],
+            [
+              "der Vater",
+              "die Väter",
+              "FAH-tuh",
+              "father"
+            ],
+            [
+              "die Mutter",
+              "die Mütter",
+              "MOOT-tuh",
+              "mother"
+            ],
+            [
+              "der Bruder",
+              "die Brüder",
+              "BROO-duh",
+              "brother"
+            ],
+            [
+              "die Schwester",
+              "die Schwestern",
+              "SHVES-tuh",
+              "sister"
+            ],
+            [
+              "die Geschwister",
+              "(always plural)",
+              "ge-SHVIS-tuh",
+              "siblings"
+            ],
+            [
+              "der Sohn",
+              "die Söhne",
+              "zohn",
+              "son"
+            ],
+            [
+              "die Tochter",
+              "die Töchter",
+              "TOKH-tuh",
+              "daughter"
+            ],
+            [
+              "das Kind",
+              "die Kinder",
+              "kint",
+              "child"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "⚠️ *Mein Freund* and *meine Freundin* have a double meaning: \"my friend\" or \"my boyfriend / girlfriend\". To make clear you mean just a friend, people say *ein Freund von mir* (\"a friend of mine\"). One word's difference, and a fairly costly misunderstanding."
+        },
+        {
+          "type": "sub",
+          "text": "Asking about family"
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "German",
+            "English"
+          ],
+          "rows": [
+            [
+              "Hast du Geschwister?",
+              "Do you have brothers or sisters?"
+            ],
+            [
+              "Wie viele Kinder hast du?",
+              "How many children do you have?"
+            ],
+            [
+              "Wie heißt deine Mutter?",
+              "What's your mother's name?"
+            ],
+            [
+              "Wie alt ist dein Vater?",
+              "How old is your father?"
+            ],
+            [
+              "Bist du verheiratet?",
+              "Are you married?"
+            ],
+            [
+              "Ich bin ledig / verheiratet.",
+              "I'm single / married."
+            ],
+            [
+              "Ich bin Einzelkind.",
+              "I'm an only child."
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Building sentences about other people",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "The three sentences below use everything in this unit at once. Try changing the names to those of your own family and say them out loud — what sticks is material about your life, not Lena's."
+        },
+        {
+          "type": "list",
+          "items": [
+            "*Meine Mutter heißt Siti. Sie ist fünfzig und sie arbeitet in Bandung.*",
+            "*Ich habe einen Bruder. Er heißt Rian und er ist Student.*",
+            "*Meine Eltern wohnen in Indonesien. Ihr Haus ist klein, aber sehr gemütlich.*"
+          ]
+        },
+        {
+          "type": "kotak",
+          "title": "One habit that saves months",
+          "items": [
+            "Every time you meet a new noun, say three things at once: its article, the word and its plural — *die Schwester, die Schwestern*.",
+            "If you write vocabulary in a notebook, write the article in a different color for each gender. The brain remembers colors far better than the letters d-e-r.",
+            "Never write a bare noun in your notes. *Bruder* alone is half the information, and the missing half is exactly what you'll need later."
+          ]
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "de": "haben",
+      "baca": "HAH-ben",
+      "en": "to have"
+    },
+    {
+      "de": "mein / meine",
+      "baca": "meyen / MEYE-ne",
+      "en": "my"
+    },
+    {
+      "de": "dein / deine",
+      "baca": "deyen / DEYE-ne",
+      "en": "your (informal)"
+    },
+    {
+      "de": "sein / seine",
+      "baca": "zeyen / ZEYE-ne",
+      "en": "his"
+    },
+    {
+      "de": "ihr / ihre",
+      "baca": "eer / EE-re",
+      "en": "her / their"
+    },
+    {
+      "de": "unser / unsere",
+      "baca": "OON-zuh",
+      "en": "our"
+    },
+    {
+      "de": "die Familie",
+      "baca": "fah-MEE-lee-e",
+      "en": "family"
+    },
+    {
+      "de": "die Eltern",
+      "baca": "EL-tuhn",
+      "en": "parents"
+    },
+    {
+      "de": "der Vater",
+      "baca": "FAH-tuh",
+      "en": "father"
+    },
+    {
+      "de": "die Mutter",
+      "baca": "MOOT-tuh",
+      "en": "mother"
+    },
+    {
+      "de": "der Bruder",
+      "baca": "BROO-duh",
+      "en": "brother"
+    },
+    {
+      "de": "die Schwester",
+      "baca": "SHVES-tuh",
+      "en": "sister"
+    },
+    {
+      "de": "die Geschwister",
+      "baca": "ge-SHVIS-tuh",
+      "en": "siblings"
+    },
+    {
+      "de": "das Kind",
+      "baca": "kint",
+      "en": "child"
+    },
+    {
+      "de": "der Sohn",
+      "baca": "zohn",
+      "en": "son"
+    },
+    {
+      "de": "die Tochter",
+      "baca": "TOKH-tuh",
+      "en": "daughter"
+    },
+    {
+      "de": "das Haus",
+      "baca": "hows",
+      "en": "house"
+    },
+    {
+      "de": "die Tante",
+      "baca": "TAHN-te",
+      "en": "aunt"
+    }
+  ],
+  "exercises": [
+    {
+      "prompt": "Translate into English.",
+      "items": [
+        "Das ist meine Familie.",
+        "Hast du Geschwister?",
+        "Ich habe einen Bruder und zwei Schwestern.",
+        "Wie alt ist dein Vater?",
+        "Seine Frau heißt Mia.",
+        "Ich habe keine Zeit."
+      ]
+    },
+    {
+      "prompt": "Fill in the correct form of *haben*.",
+      "items": [
+        "Ich ____ zwei Schwestern.",
+        "____ du Geschwister?",
+        "Er ____ ein Kind.",
+        "Wir ____ Hunger.",
+        "Ihr ____ keine Zeit.",
+        "Sie ____ ein Haus in Berlin."
+      ]
+    },
+    {
+      "prompt": "Put the words in the right order.",
+      "items": [
+        "das / meine / ist / Familie",
+        "Geschwister / du / hast",
+        "keine / ich / Geschwister / habe",
+        "Vater / heißt / Thomas / mein",
+        "wohnen / in Bandung / meine Eltern",
+        "ist / dein / wie alt / Bruder"
+      ]
+    }
+  ],
+  "answers": [
+    "This is my family. — Do you have any brothers or sisters? — I have a brother and two sisters. — How old is your father? — His wife's name is Mia. — I don't have time.",
+    "habe — Hast — hat — haben — habt — haben",
+    "Das ist meine Familie. — Hast du Geschwister? — Ich habe keine Geschwister. — Mein Vater heißt Thomas. — Meine Eltern wohnen in Bandung. — Wie alt ist dein Bruder?"
+  ]
+}

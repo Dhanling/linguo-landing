@@ -1,0 +1,476 @@
+{
+  "title": "At the clothing store",
+  "title_target": "Dans un magasin de vêtements",
+  "goal": "Buy clothes, give sizes and colors, and point things out with ce, cet, cette, ces.",
+  "bekal": [
+    "pointing things out with *ce, cet, cette, ces*",
+    "colors and sizes that agree in gender",
+    "trying on, comparing, and saying no politely"
+  ],
+  "wave": "Review **Unit 12** first: write a shopping list of ten items with their quantities, then say the price of each one.",
+  "dialogs": [
+    {
+      "title": "Dialogue — Je peux essayer ?",
+      "intro": "Budi is looking for a jacket for the fall. A sales assistant comes over.",
+      "lines": [
+        {
+          "speaker": "Vendeuse:",
+          "text": "Bonjour, je peux vous aider ?",
+          "id": "Hello, can I help you?",
+          "literal": "good-day, I can you help?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Oui, je cherche une veste pour l'automne.",
+          "id": "Yes, I'm looking for a jacket for the fall.",
+          "literal": "yes, I search a jacket for the-autumn."
+        },
+        {
+          "speaker": "Vendeuse:",
+          "text": "Cette veste bleue est très populaire. Quelle taille ?",
+          "id": "This blue jacket is very popular. What size are you?",
+          "literal": "this jacket blue is very popular. which size?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Je fais du quarante, je crois.",
+          "id": "A forty, I think.",
+          "literal": "I make some forty, I believe."
+        },
+        {
+          "speaker": "Vendeuse:",
+          "text": "Voilà. Vous pouvez essayer, la cabine est là-bas.",
+          "id": "Here you go. You can try it on — the fitting room is over there.",
+          "literal": "there-it-is. you can try, the cabin is over-there."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Merci… Elle est un peu grande, non ?",
+          "id": "Thanks… It's a bit big, isn't it?",
+          "literal": "thanks… it is a-little big, no?"
+        },
+        {
+          "speaker": "Vendeuse:",
+          "text": "Un peu. Vous voulez essayer ce modèle en trente-huit ?",
+          "id": "A little. Would you like to try this style in a thirty-eight?",
+          "literal": "a-little. you want try this model in thirty-eight?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Volontiers. Vous l'avez en noir aussi ?",
+          "id": "Sure. Do you have it in black too?",
+          "literal": "gladly. you it-have in black also?"
+        },
+        {
+          "speaker": "Vendeuse:",
+          "text": "Oui, en noir et en gris. Le noir est plus élégant.",
+          "id": "Yes, in black and in gray. The black is more elegant.",
+          "literal": "yes, in black and in gray. the black is more elegant."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Elle coûte combien, cette veste noire ?",
+          "id": "How much is it, this black jacket?",
+          "literal": "it costs how-much, this jacket black?"
+        },
+        {
+          "speaker": "Vendeuse:",
+          "text": "Quatre-vingt-neuf euros. Il y a une réduction cette semaine.",
+          "id": "Eighty-nine euros. There's a discount this week.",
+          "literal": "four-twenties-nine euros. there-is a reduction this week."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Parfait, je la prends. Vous acceptez la carte ?",
+          "id": "Perfect, I'll take it. Do you take cards?",
+          "literal": "perfect, I it take. you accept the card?"
+        }
+      ],
+      "notes": [
+        "**Je fais du quarante** is how the French give their clothing size. Literally \"I make some forty\". For shoes: *je fais du quarante-deux* or *je chausse du quarante-deux*.",
+        "**Colors agree with the noun.** *Une veste **bleue**, un pantalon **bleu**, des chaussures **bleues**.* ⚠️ Some colors never change because they were originally nouns: *marron* (chestnut), *orange* (the fruit), and compound colors like *bleu clair*, *vert foncé*.",
+        "**Je la prends** — *la* here stands for *la veste*. Object pronouns like this are A2 material and you don't have to master them yet, but you'll hear them constantly in shops, so learn to spot the pattern: the pronoun goes **before** the verb, not after it as in English (\"I take it\").",
+        "**Volontiers** (voh-lohn-TYAY) = gladly, sure. A polite, very French yes. Its cousins: *avec plaisir*, *je veux bien*.",
+        "**Essayer** needs an object or none at all: *je peux essayer ?* is enough at the fitting room. Its forms bend a little because of the y: *j'essaie, tu essaies, nous essayons*.",
+        "**Une réduction** = a discount. Other words you'll see in shop windows: *les soldes* (the official sales, twice a year), *une promo*, *moins 30 %*.",
+        "**Vous pouvez essayer** — a polite offer. Note that the second verb is always in the infinitive after *pouvoir*, *vouloir*, *devoir*. This gets unpacked fully in the next unit."
+      ],
+      "grammars": [
+        {
+          "title": "Ce, cet, cette, ces — pointing things out",
+          "body": [
+            "One word that replaces *le/la/les* when you point to a specific thing in front of you. English has \"this\" and \"that\"; French uses one form for both."
+          ],
+          "table": {
+            "head": [
+              "Noun",
+              "Form",
+              "Example"
+            ],
+            "rows": [
+              [
+                "masculine singular",
+                "**ce**",
+                "*ce pantalon*"
+              ],
+              [
+                "masculine before a vowel / h",
+                "**cet**",
+                "*cet homme, cet imperméable*"
+              ],
+              [
+                "feminine singular",
+                "**cette**",
+                "*cette veste*"
+              ],
+              [
+                "plural (both genders)",
+                "**ces**",
+                "*ces chaussures*"
+              ]
+            ]
+          },
+          "after": [
+            "*Cet* and *cette* sound **exactly the same**: seht. The difference is only in writing — a spelling trap that catches many learners in exams.",
+            "If you need to separate \"this\" from \"that\", add **-ci** and **-là** to the end of the noun: *cette veste-**ci*** (this jacket) versus *cette veste-**là*** (that jacket). Use it only when you really need the contrast."
+          ]
+        },
+        {
+          "title": "Colors",
+          "body": [
+            "Ordinary adjectives, so they follow the rules of Unit 11. The interesting part is the exceptions."
+          ],
+          "table": {
+            "head": [
+              "Masculine",
+              "Feminine",
+              "English"
+            ],
+            "rows": [
+              [
+                "blanc",
+                "blanche",
+                "white"
+              ],
+              [
+                "noir",
+                "noire",
+                "black"
+              ],
+              [
+                "rouge",
+                "rouge",
+                "red"
+              ],
+              [
+                "bleu",
+                "bleue",
+                "blue"
+              ],
+              [
+                "vert",
+                "verte",
+                "green"
+              ],
+              [
+                "jaune",
+                "jaune",
+                "yellow"
+              ],
+              [
+                "gris",
+                "grise",
+                "gray"
+              ],
+              [
+                "violet",
+                "violette",
+                "purple"
+              ],
+              [
+                "rose",
+                "rose",
+                "pink"
+              ],
+              [
+                "marron",
+                "marron",
+                "brown"
+              ],
+              [
+                "orange",
+                "orange",
+                "orange"
+              ],
+              [
+                "beige",
+                "beige",
+                "beige"
+              ]
+            ]
+          },
+          "after": [
+            "⚠️ *Marron* and *orange* never change: *des chaussures marron*, *une veste orange*. That's because both are names of fruits borrowed as colors.",
+            "Compound colors freeze too: *une veste bleu clair*, *des yeux vert foncé*. As soon as there's a second word, the whole combination stops changing."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Clothes and sizes",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "Français",
+            "Pronunciation",
+            "English"
+          ],
+          "rows": [
+            [
+              "un pantalon",
+              "uhn pahn-tah-LOHN",
+              "pants, trousers"
+            ],
+            [
+              "une chemise",
+              "ün shuh-MEEZ",
+              "shirt"
+            ],
+            [
+              "un tee-shirt",
+              "uhn tee-SHUHRT",
+              "T-shirt"
+            ],
+            [
+              "un pull",
+              "uhn PÜL",
+              "sweater"
+            ],
+            [
+              "une veste",
+              "ün VEHST",
+              "jacket"
+            ],
+            [
+              "un manteau",
+              "uhn mahn-TOH",
+              "coat"
+            ],
+            [
+              "une robe",
+              "ün ROHB",
+              "dress"
+            ],
+            [
+              "une jupe",
+              "ün ZHÜP",
+              "skirt"
+            ],
+            [
+              "des chaussures",
+              "day shoh-SÜR",
+              "shoes"
+            ],
+            [
+              "des chaussettes",
+              "day shoh-SEHT",
+              "socks"
+            ],
+            [
+              "une écharpe",
+              "ün-nay-SHAHRP",
+              "scarf"
+            ],
+            [
+              "un chapeau",
+              "uhn shah-POH",
+              "hat"
+            ],
+            [
+              "une ceinture",
+              "ün san-TÜR",
+              "belt"
+            ],
+            [
+              "un sac à main",
+              "uhn sah-kah-MAN",
+              "handbag"
+            ]
+          ]
+        },
+        {
+          "type": "kotak",
+          "title": "Phrases for the store",
+          "items": [
+            "*Je cherche un pull.* — I'm looking for a sweater.",
+            "*Je peux essayer ?* — Can I try it on?",
+            "*Quelle taille faites-vous ?* — What size are you?",
+            "*C'est trop grand / trop petit / trop serré.* — It's too big / too small / too tight.",
+            "*Vous l'avez en bleu ?* — Do you have it in blue?",
+            "*Ça vous va très bien.* — It really suits you.",
+            "*Je vais réfléchir.* — I'll think about it. (a gentle no)"
+          ]
+        },
+        {
+          "type": "p",
+          "text": "*Je vais réfléchir* is the most useful way to say no in all of French. Polite, painless, and every seller understands it as \"not buying\" without anyone having to say so."
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "fr": "un vêtement",
+      "baca": "uhn veht-MAHN",
+      "en": "piece of clothing"
+    },
+    {
+      "fr": "un vendeur / une vendeuse",
+      "baca": "uhn vahn-DUHR",
+      "en": "sales assistant"
+    },
+    {
+      "fr": "chercher",
+      "baca": "shehr-SHAY",
+      "en": "to look for"
+    },
+    {
+      "fr": "essayer",
+      "baca": "ay-seh-YAY",
+      "en": "to try (on)"
+    },
+    {
+      "fr": "la taille",
+      "baca": "lah TIGH",
+      "en": "size"
+    },
+    {
+      "fr": "la cabine",
+      "baca": "lah kah-BEEN",
+      "en": "fitting room"
+    },
+    {
+      "fr": "là-bas",
+      "baca": "lah-BAH",
+      "en": "over there"
+    },
+    {
+      "fr": "un modèle",
+      "baca": "uhn moh-DEHL",
+      "en": "style, model"
+    },
+    {
+      "fr": "aider",
+      "baca": "eh-DAY",
+      "en": "to help"
+    },
+    {
+      "fr": "volontiers",
+      "baca": "voh-lohn-TYAY",
+      "en": "gladly"
+    },
+    {
+      "fr": "élégant",
+      "baca": "ay-lay-GAHN",
+      "en": "elegant"
+    },
+    {
+      "fr": "coûter",
+      "baca": "koo-TAY",
+      "en": "to cost"
+    },
+    {
+      "fr": "une réduction",
+      "baca": "ün ray-dük-SYOHN",
+      "en": "discount"
+    },
+    {
+      "fr": "les soldes",
+      "baca": "lay SOHLD",
+      "en": "the sales"
+    },
+    {
+      "fr": "accepter",
+      "baca": "ahk-sehp-TAY",
+      "en": "to accept"
+    },
+    {
+      "fr": "serré",
+      "baca": "seh-RAY",
+      "en": "tight"
+    },
+    {
+      "fr": "croire",
+      "baca": "KRWAHR",
+      "en": "to believe, to think"
+    },
+    {
+      "fr": "l'automne (m)",
+      "baca": "loh-TONN",
+      "en": "fall, autumn"
+    },
+    {
+      "fr": "populaire",
+      "baca": "poh-pü-LEHR",
+      "en": "popular"
+    },
+    {
+      "fr": "porter",
+      "baca": "pohr-TAY",
+      "en": "to wear"
+    }
+  ],
+  "exercises": [
+    {
+      "prompt": "Fill in with ce, cet, cette or ces.",
+      "items": [
+        "____ pantalon",
+        "____ veste",
+        "____ chaussures",
+        "____ homme",
+        "____ jupe",
+        "____ pull"
+      ]
+    },
+    {
+      "prompt": "Fill in the correct form of the color.",
+      "items": [
+        "une veste ____ (bleu)",
+        "des chaussures ____ (noir)",
+        "une robe ____ (blanc)",
+        "un pull ____ (vert)",
+        "des chaussettes ____ (marron)",
+        "une jupe ____ (violet)"
+      ]
+    },
+    {
+      "prompt": "Put the words in the right order.",
+      "items": [
+        "cherche / je / veste / une",
+        "essayer / peux / je / ?",
+        "prends / la / je",
+        "en / avez / l' / vous / noir / ?",
+        "réfléchir / vais / je"
+      ]
+    },
+    {
+      "prompt": "Translate into French.",
+      "items": [
+        "I'm looking for a sweater for the winter.",
+        "What size are you?",
+        "Can I try it on?",
+        "It's a bit big.",
+        "How much is it, this black jacket?"
+      ]
+    }
+  ],
+  "answers": [
+    "ce pantalon — cette veste — ces chaussures — cet homme — cette jupe — ce pull",
+    "bleue — noires — blanche — vert — marron — violette",
+    "Je cherche une veste. — Je peux essayer ? — Je la prends. — Vous l'avez en noir ? — Je vais réfléchir.",
+    "Je cherche un pull pour l'hiver. — Quelle taille faites-vous ? — Je peux essayer ? — C'est un peu grand. — Elle coûte combien, cette veste noire ?"
+  ]
+}

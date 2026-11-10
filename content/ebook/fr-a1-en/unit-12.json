@@ -1,0 +1,492 @@
+{
+  "title": "At the market",
+  "title_target": "Au marché",
+  "goal": "Buy groceries, say quantities and prices, and choose between the partitive article and a quantity word.",
+  "bekal": [
+    "saying amounts with *un kilo de*, *une bouteille de*, *un peu de*",
+    "asking about and understanding prices",
+    "telling *du pain* apart from *un kilo de pain*"
+  ],
+  "wave": "Review **Unit 10** first: describe where five places in your own neighborhood are, using *à côté de*, *en face de*, *près de*, *derrière*, *entre*.",
+  "dialogs": [
+    {
+      "title": "Dialogue — Chez le marchand de fruits",
+      "intro": "Saturday morning at the open-air market. Camille is teaching Budi how to shop.",
+      "lines": [
+        {
+          "speaker": "Marchand:",
+          "text": "Bonjour messieurs-dames ! Vous désirez ?",
+          "id": "Good morning! What would you like?",
+          "literal": "good-day sir-madam! you desire?"
+        },
+        {
+          "speaker": "Camille:",
+          "text": "Bonjour. Un kilo de pommes, s'il vous plaît.",
+          "id": "Good morning. A kilo of apples, please.",
+          "literal": "good-day. one kilo of apples, please."
+        },
+        {
+          "speaker": "Marchand:",
+          "text": "Voilà. Et avec ça ?",
+          "id": "Here you go. Anything else?",
+          "literal": "there-it-is. and with that?"
+        },
+        {
+          "speaker": "Camille:",
+          "text": "Une demi-livre de fraises et trois bananes.",
+          "id": "Half a pound of strawberries and three bananas.",
+          "literal": "a half-pound of strawberries and three bananas."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Est-ce que vous avez des mangues ?",
+          "id": "Do you have any mangoes?",
+          "literal": "have-you some mangoes?"
+        },
+        {
+          "speaker": "Marchand:",
+          "text": "Non, désolé. Ce n'est pas la saison.",
+          "id": "No, sorry. They're not in season.",
+          "literal": "no, sorry. it not-is not the season."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Tant pis. Alors un peu de raisin.",
+          "id": "Oh well. Some grapes, then.",
+          "literal": "so-much worse. then a-little of grapes."
+        },
+        {
+          "speaker": "Marchand:",
+          "text": "Combien ? Une grappe ou deux ?",
+          "id": "How many? One bunch or two?",
+          "literal": "how-many? one bunch or two?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Une seule, merci. Ça fait combien ?",
+          "id": "Just one, thanks. How much is that?",
+          "literal": "one single, thanks. that makes how-much?"
+        },
+        {
+          "speaker": "Marchand:",
+          "text": "Ça fait douze euros quatre-vingts.",
+          "id": "That's twelve euros eighty.",
+          "literal": "that makes twelve euros four-twenties."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Voilà quinze euros.",
+          "id": "Here's fifteen euros.",
+          "literal": "there-it-is fifteen euros."
+        },
+        {
+          "speaker": "Marchand:",
+          "text": "Et deux euros vingt. Merci, bonne journée !",
+          "id": "And two euros twenty change. Thank you, have a nice day!",
+          "literal": "and two euros twenty. thanks, good day!"
+        }
+      ],
+      "notes": [
+        "**Quantities always take de without an article.** *Un kilo **de** pommes*, not *un kilo des pommes*. After any quantity word — *kilo, litre, bouteille, paquet, morceau, tranche, peu, beaucoup, assez, trop* — the article drops out and only *de* is left.",
+        "**Compare three sentences that all have \"apples\" in English.** *Je mange **des** pommes* (I eat apples, some unspecified amount), *je mange **un kilo de** pommes* (a kilo), *j'aime **les** pommes* (I like apples, in general). Picking the wrong one won't stop people from understanding you, but it marks you as a beginner right away.",
+        "**Et avec ça ?** is the standard line of every French market seller. Literally \"and with that?\" — it means \"anything else?\" Answer *c'est tout, merci* when you're done.",
+        "**Ça fait combien ?** = how much is it altogether. Its cousins: *c'est combien ?* (for one item) and *je vous dois combien ?* (how much do I owe you — the most polite).",
+        "**Prices are read with euros in the middle.** *Douze euros quatre-vingts* = €12.80. The word *centimes* is usually left out. Note also that French writes it 12,80 € — a comma for decimals, not a point.",
+        "**Tant pis** = \"oh well, never mind\", a very common shrug of a phrase. Its opposite is *tant mieux* = \"so much the better\".",
+        "**Une demi-livre** = half a pound, about 250 grams. At a French market *la livre* means 500 grams, not the British or American pound. Market sellers still use it even though the official unit is the kilogram."
+      ],
+      "grammars": [
+        {
+          "title": "Partitive article versus quantity word",
+          "body": [
+            "One decision tree that settles almost every doubt in front of a food noun."
+          ],
+          "table": {
+            "head": [
+              "You mean",
+              "Use",
+              "Example"
+            ],
+            "rows": [
+              [
+                "an unspecified amount",
+                "du / de la / des",
+                "*Je veux du pain.*"
+              ],
+              [
+                "a stated quantity",
+                "**number/quantity + de**",
+                "*Un kilo de pommes.*"
+              ],
+              [
+                "the thing in general",
+                "le / la / les",
+                "*J'aime le pain.*"
+              ],
+              [
+                "one countable item",
+                "un / une",
+                "*Je veux une pomme.*"
+              ],
+              [
+                "after a negative",
+                "**de**",
+                "*Je ne veux pas de pain.*"
+              ],
+              [
+                "after beaucoup, peu, trop",
+                "**de**",
+                "*Beaucoup de pain.*"
+              ]
+            ]
+          },
+          "after": [
+            "Notice that the last three rows all give a bare **de**. This is a big French pattern: as soon as the amount is limited or denied, the article steps aside.",
+            "⚠️ One exception that trips people up: after *bien* (meaning \"many, a lot\") the article stays — *bien **du** monde*, *bien **des** fois*."
+          ]
+        },
+        {
+          "title": "Everyday quantities",
+          "body": [
+            "All are followed by *de*, with no article."
+          ],
+          "table": {
+            "head": [
+              "Français",
+              "English",
+              "Example"
+            ],
+            "rows": [
+              [
+                "un kilo de",
+                "a kilo",
+                "*un kilo de riz*"
+              ],
+              [
+                "cinq cents grammes de",
+                "five hundred grams",
+                "*500 g de viande*"
+              ],
+              [
+                "une livre de",
+                "half a kilo",
+                "*une livre de fraises*"
+              ],
+              [
+                "un litre de",
+                "a liter",
+                "*un litre de lait*"
+              ],
+              [
+                "une bouteille de",
+                "a bottle",
+                "*une bouteille d'eau*"
+              ],
+              [
+                "un paquet de",
+                "a packet",
+                "*un paquet de pâtes*"
+              ],
+              [
+                "une boîte de",
+                "a can/box",
+                "*une boîte de thon*"
+              ],
+              [
+                "une tranche de",
+                "a slice",
+                "*une tranche de jambon*"
+              ],
+              [
+                "un morceau de",
+                "a piece",
+                "*un morceau de fromage*"
+              ],
+              [
+                "une douzaine de",
+                "a dozen",
+                "*une douzaine d'œufs*"
+              ],
+              [
+                "un peu de",
+                "a little",
+                "*un peu de sucre*"
+              ],
+              [
+                "beaucoup de",
+                "a lot, many",
+                "*beaucoup de légumes*"
+              ]
+            ]
+          },
+          "after": [
+            "Before a vowel, *de* becomes *d'*: *une bouteille d'eau*, *une douzaine d'œufs*, *beaucoup d'amis*.",
+            "*Combien de…?* follows the same rule: *Combien de pommes ?*, not *combien des pommes*."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Grocery shopping",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "Fruit & vegetables",
+            "Pronunciation",
+            "Meat & more",
+            "Pronunciation"
+          ],
+          "rows": [
+            [
+              "une pomme",
+              "ün POHM",
+              "le poulet",
+              "luh poo-LEH"
+            ],
+            [
+              "une banane",
+              "ün bah-NAHN",
+              "le bœuf",
+              "luh BUHF"
+            ],
+            [
+              "une orange",
+              "ün-noh-RAHNZH",
+              "le poisson",
+              "luh pwah-SOHN"
+            ],
+            [
+              "une fraise",
+              "ün FREHZ",
+              "le jambon",
+              "luh zhahn-BOHN"
+            ],
+            [
+              "le raisin",
+              "luh reh-ZAN",
+              "un œuf",
+              "uhn-NUHF"
+            ],
+            [
+              "une tomate",
+              "ün toh-MAHT",
+              "le fromage",
+              "luh froh-MAHZH"
+            ],
+            [
+              "une carotte",
+              "ün kah-ROHT",
+              "le beurre",
+              "luh BUHR"
+            ],
+            [
+              "une pomme de terre",
+              "ün pohm duh TEHR",
+              "le riz",
+              "luh REE"
+            ],
+            [
+              "une salade",
+              "ün sah-LAHD",
+              "les pâtes",
+              "lay PAHT"
+            ],
+            [
+              "un oignon",
+              "uhn-noh-NYOHN",
+              "le sucre",
+              "luh SÜKR"
+            ],
+            [
+              "un légume",
+              "uhn lay-GÜM",
+              "le sel",
+              "luh SEHL"
+            ],
+            [
+              "un fruit",
+              "uhn FRWEE",
+              "l'huile",
+              "LWEEL"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "⚠️ *Un œuf* is said uhn-NUHF, but the plural *des œufs* is said day-ZUH — the f disappears. A sound exception that applies only to this word."
+        },
+        {
+          "type": "kotak",
+          "title": "Shopping phrases",
+          "items": [
+            "*Je voudrais un kilo de tomates, s'il vous plaît.* — I'd like a kilo of tomatoes, please.",
+            "*Vous avez des fraises ?* — Do you have strawberries?",
+            "*C'est combien le kilo ?* — How much per kilo?",
+            "*Ça fait combien ?* — How much is that altogether?",
+            "*Je peux payer par carte ?* — Can I pay by card?",
+            "*C'est trop cher.* — That's too expensive."
+          ]
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "fr": "le marché",
+      "baca": "luh mahr-SHAY",
+      "en": "market"
+    },
+    {
+      "fr": "un marchand",
+      "baca": "uhn mahr-SHAN",
+      "en": "seller, vendor"
+    },
+    {
+      "fr": "un kilo",
+      "baca": "uhn kee-LOH",
+      "en": "kilogram"
+    },
+    {
+      "fr": "un gramme",
+      "baca": "uhn GRAHM",
+      "en": "gram"
+    },
+    {
+      "fr": "un litre",
+      "baca": "uhn LEETR",
+      "en": "liter"
+    },
+    {
+      "fr": "une bouteille",
+      "baca": "ün boo-TEHY",
+      "en": "bottle"
+    },
+    {
+      "fr": "un paquet",
+      "baca": "uhn pah-KEH",
+      "en": "packet"
+    },
+    {
+      "fr": "une tranche",
+      "baca": "ün TRAHNSH",
+      "en": "slice"
+    },
+    {
+      "fr": "un morceau",
+      "baca": "uhn mohr-SOH",
+      "en": "piece"
+    },
+    {
+      "fr": "une douzaine",
+      "baca": "ün doo-ZEHN",
+      "en": "dozen"
+    },
+    {
+      "fr": "un peu de",
+      "baca": "uhn PUH duh",
+      "en": "a little"
+    },
+    {
+      "fr": "la saison",
+      "baca": "lah seh-ZOHN",
+      "en": "season"
+    },
+    {
+      "fr": "désolé",
+      "baca": "day-zoh-LAY",
+      "en": "sorry"
+    },
+    {
+      "fr": "tant pis",
+      "baca": "tahn PEE",
+      "en": "oh well, never mind"
+    },
+    {
+      "fr": "l'argent (m)",
+      "baca": "lahr-ZHAHN",
+      "en": "money"
+    },
+    {
+      "fr": "un euro",
+      "baca": "uhn-nuh-ROH",
+      "en": "euro"
+    },
+    {
+      "fr": "cher",
+      "baca": "shehr",
+      "en": "expensive"
+    },
+    {
+      "fr": "pas cher",
+      "baca": "pah SHEHR",
+      "en": "cheap"
+    },
+    {
+      "fr": "acheter",
+      "baca": "ahsh-TAY",
+      "en": "to buy"
+    },
+    {
+      "fr": "coûter",
+      "baca": "koo-TAY",
+      "en": "to cost"
+    },
+    {
+      "fr": "la monnaie",
+      "baca": "lah moh-NEH",
+      "en": "change (coins)"
+    }
+  ],
+  "exercises": [
+    {
+      "prompt": "Fill in with du, de la, de l', des or de.",
+      "items": [
+        "Je voudrais ____ pain.",
+        "Un kilo ____ tomates.",
+        "Elle achète ____ fromage.",
+        "Beaucoup ____ légumes.",
+        "Une bouteille ____ eau.",
+        "Je ne veux pas ____ sucre."
+      ]
+    },
+    {
+      "prompt": "Fill in a quantity that makes sense.",
+      "items": [
+        "____ de lait",
+        "____ de jambon",
+        "____ d'œufs",
+        "____ de pâtes",
+        "____ de fromage"
+      ]
+    },
+    {
+      "prompt": "Choose le/la/les, du/de la/des, or un/une.",
+      "items": [
+        "J'aime ____ chocolat.",
+        "Je mange ____ chocolat tous les jours.",
+        "Je voudrais ____ chocolat chaud.",
+        "Elle n'aime pas ____ poisson.",
+        "Nous achetons ____ poisson au marché."
+      ]
+    },
+    {
+      "prompt": "Translate into French.",
+      "items": [
+        "A kilo of apples, please.",
+        "Do you have strawberries?",
+        "How much is that altogether?",
+        "That's too expensive.",
+        "I don't want any sugar."
+      ]
+    }
+  ],
+  "answers": [
+    "du pain — de tomates — du fromage — de légumes — d'eau — de sucre",
+    "un litre — une tranche — une douzaine — un paquet — un morceau",
+    "le chocolat — du chocolat — un chocolat chaud — le poisson — du poisson",
+    "Un kilo de pommes, s'il vous plaît. — Vous avez des fraises ? — Ça fait combien ? — C'est trop cher. — Je ne veux pas de sucre."
+  ]
+}

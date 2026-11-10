@@ -1,0 +1,448 @@
+{
+  "title": "What's the weather like?",
+  "title_target": "Che tempo fa?",
+  "goal": "Talk about the weather, tell *essere* and *stare* apart, and say what is happening right now.",
+  "bekal": [
+    "describe the weather with the right verb",
+    "tell *sono* and *sto* apart",
+    "say what's going on right now with *sto facendo*"
+  ],
+  "dialogs": [
+    {
+      "title": "Dialogo — Piove ancora",
+      "intro": "A phone call on a wet afternoon. Count how many times the weather is described with the verb *fare*.",
+      "lines": [
+        {
+          "speaker": "Giulia:",
+          "text": "Pronto, Budi? Che stai facendo?",
+          "id": "Hello, Budi? What are you doing?",
+          "literal": "ready, Budi? what you-are doing?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Sto guardando la pioggia dalla finestra. Che tempo!",
+          "id": "I'm watching the rain from the window. What weather!",
+          "literal": "I-am watching the rain from-the window. what weather!"
+        },
+        {
+          "speaker": "Giulia:",
+          "text": "Piove ancora? Qui ha smesso mezz'ora fa.",
+          "id": "Is it still raining? Here it stopped half an hour ago.",
+          "literal": "rains still? here has stopped half-hour ago."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Qui diluvia. E fa freddo, sono solo dodici gradi.",
+          "id": "It's pouring here. And it's cold, only twelve degrees.",
+          "literal": "here floods. and makes cold, are only twelve degrees."
+        },
+        {
+          "speaker": "Giulia:",
+          "text": "Beh, è novembre. Cosa ti aspettavi?",
+          "id": "Well, it's November. What did you expect?",
+          "literal": "well, is november. what yourself you-expected?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "In Indonesia piove anche di più, ma fa sempre caldo.",
+          "id": "In Indonesia it rains even more, but it's always hot.",
+          "literal": "in Indonesia rains also of more, but makes always hot."
+        },
+        {
+          "speaker": "Giulia:",
+          "text": "Ecco, il freddo è la parte difficile. Come stai, a proposito?",
+          "id": "Right, the cold is the hard part. How are you, by the way?",
+          "literal": "there, the cold is the part difficult. how you-are, at purpose?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Sto bene, ma sono un po' stanco. Sto studiando da stamattina.",
+          "id": "I'm fine, but a bit tired. I've been studying since this morning.",
+          "literal": "I-am well, but am a bit tired. I-am studying from this-morning."
+        },
+        {
+          "speaker": "Giulia:",
+          "text": "Allora esci! Domani fa bello, dicono.",
+          "id": "Then go out! They say it'll be nice tomorrow.",
+          "literal": "then go-out! tomorrow makes nice, they-say."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Davvero? Sole?",
+          "id": "Really? Sunshine?",
+          "literal": "really? sun?"
+        },
+        {
+          "speaker": "Giulia:",
+          "text": "Sole e diciotto gradi. Andiamo in collina?",
+          "id": "Sunshine and eighteen degrees. Shall we go up to the hills?",
+          "literal": "sun and eighteen degrees. we-go in hill?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Volentieri. Ma porto l'ombrello lo stesso.",
+          "id": "Gladly. But I'm bringing the umbrella anyway.",
+          "literal": "gladly. but I-bring the umbrella the same."
+        }
+      ],
+      "notes": [
+        "**Weather uses fare.** *Fa caldo*, *fa freddo*, *fa bello*, *fa brutto*. Literally \"it makes hot\". There's no real subject — like the \"it\" in English \"it's hot\", except Italian doesn't even say the \"it\".",
+        "**But not always.** *Piove* (it's raining), *nevica* (it's snowing), *tira vento* (it's windy), and *c'è il sole* / *c'è nebbia* use their own verbs. The key thing: never say *è caldo* about the weather — that describes a hot object, not the air.",
+        "**Essere vs stare.** *Essere* is for lasting qualities and identity: *sono italiano*, *sono stanco*. *Stare* is for temporary states and health: *sto bene*, *sto male*. That's why *come stai?* uses *stare*, while *com'è?* uses *essere*.",
+        "**Sto facendo = I'm doing.** It's *stare* + a verb ending in *-ando* or *-endo*. It's used much less than the English -ing form: only to stress that something is happening right this moment.",
+        "**Without that emphasis, the normal form is enough.** *Che fai?* and *che stai facendo?* both mean \"what are you doing\". The first is heard more often.",
+        "**Pronto?** is how Italians answer the phone, literally \"ready\". Both the caller and the person answering use it, and it's never used outside phone calls.",
+        "**Temperature uses essere and gradi.** *Sono dodici gradi*, *fa venti gradi*. Both are correct. Below zero: *sono meno cinque gradi*. (Italy uses Celsius.)",
+        "**Lo stesso** at the end of a sentence means \"anyway\". *Porto l'ombrello lo stesso* = I'm bringing the umbrella anyway. A short, very useful expression."
+      ],
+      "grammars": [
+        {
+          "title": "Weather — which verb for what",
+          "body": [],
+          "table": {
+            "head": [
+              "Italiano",
+              "English",
+              "Verb"
+            ],
+            "rows": [
+              [
+                "Fa caldo.",
+                "It's hot.",
+                "fare"
+              ],
+              [
+                "Fa freddo.",
+                "It's cold.",
+                "fare"
+              ],
+              [
+                "Fa bello / bel tempo.",
+                "It's nice out.",
+                "fare"
+              ],
+              [
+                "Fa brutto tempo.",
+                "The weather's bad.",
+                "fare"
+              ],
+              [
+                "Fa fresco.",
+                "It's cool.",
+                "fare"
+              ],
+              [
+                "Piove.",
+                "It's raining.",
+                "piovere"
+              ],
+              [
+                "Nevica.",
+                "It's snowing.",
+                "nevicare"
+              ],
+              [
+                "Tira vento.",
+                "It's windy.",
+                "tirare"
+              ],
+              [
+                "C'è il sole.",
+                "It's sunny.",
+                "esserci"
+              ],
+              [
+                "C'è nebbia.",
+                "It's foggy.",
+                "esserci"
+              ],
+              [
+                "È nuvoloso.",
+                "It's cloudy.",
+                "essere"
+              ],
+              [
+                "Sono venti gradi.",
+                "It's twenty degrees.",
+                "essere"
+              ]
+            ]
+          },
+          "after": [
+            "To ask: *Che tempo fa?* (what's the weather like) or *Che tempo fa oggi a Bologna?*. Note that *il tempo* means weather **and** time; context tells them apart."
+          ]
+        },
+        {
+          "title": "Stare + the -ando / -endo form",
+          "body": [
+            "To form it: drop the verb ending, add *-ando* for *-are* verbs and *-endo* for the other two groups."
+          ],
+          "table": {
+            "head": [
+              "Verb",
+              "Progressive form",
+              "Example"
+            ],
+            "rows": [
+              [
+                "parl-**are**",
+                "parl**ando**",
+                "Sto parlando con Marco."
+              ],
+              [
+                "legg-**ere**",
+                "legg**endo**",
+                "Sta leggendo il giornale."
+              ],
+              [
+                "dorm-**ire**",
+                "dorm**endo**",
+                "I bambini stanno dormendo."
+              ],
+              [
+                "fare",
+                "**facendo**",
+                "Che stai facendo?"
+              ],
+              [
+                "bere",
+                "**bevendo**",
+                "Sto bevendo un caffè."
+              ],
+              [
+                "dire",
+                "**dicendo**",
+                "Che stai dicendo?"
+              ]
+            ]
+          },
+          "after": [
+            "Forms of *stare*: *sto, stai, sta, stiamo, state, stanno*. The *-ando/-endo* form never changes.",
+            "⚠️ Don't use this form for future plans the way English does. *Domani sto andando a Roma* is wrong; say *domani vado a Roma*."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Essere or stare",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "Use essere for",
+            "Use stare for"
+          ],
+          "rows": [
+            [
+              "Identity: *Sono Budi.*",
+              "Health: *Sto bene.*"
+            ],
+            [
+              "Nationality: *Sono indonesiano.*",
+              "How you are: *Come stai?*"
+            ],
+            [
+              "Job: *Sono ingegnere.*",
+              "How clothes fit: *Ti sta bene.*"
+            ],
+            [
+              "Personality: *È simpatico.*",
+              "Ongoing action: *Sto studiando.*"
+            ],
+            [
+              "States: *Sono stanco.*",
+              "Staying put: *Sto a casa.*"
+            ],
+            [
+              "Location: *La banca è in centro.*",
+              "Expressions: *Stai zitto!* (be quiet!)"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "The biggest trap is in rows four and five of the left column: *sono stanco* (I'm tired) uses *essere* even though the state is clearly temporary. Italian is less consistent than Spanish here — most physical and emotional states still take *essere*."
+        },
+        {
+          "type": "kotak",
+          "title": "Ready-made weather phrases",
+          "items": [
+            "*Che tempo fa oggi?* — What's the weather like today?",
+            "*Fa un caldo terribile.* — It's terribly hot.",
+            "*Piove a dirotto.* — It's pouring.",
+            "*Domani dovrebbe fare bello.* — It should be nice tomorrow.",
+            "*Porta l'ombrello!* — Take an umbrella!",
+            "*Che bella giornata!* — What a beautiful day!"
+          ]
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "it": "il tempo",
+      "baca": "eel TEHM-poh",
+      "en": "weather, time"
+    },
+    {
+      "it": "la pioggia",
+      "baca": "lah PYOHJ-jah",
+      "en": "rain"
+    },
+    {
+      "it": "piovere",
+      "baca": "PYOH-veh-reh",
+      "en": "to rain"
+    },
+    {
+      "it": "la neve",
+      "baca": "lah NEH-veh",
+      "en": "snow"
+    },
+    {
+      "it": "nevicare",
+      "baca": "neh-vee-KAH-reh",
+      "en": "to snow"
+    },
+    {
+      "it": "il sole",
+      "baca": "eel SOH-leh",
+      "en": "sun"
+    },
+    {
+      "it": "il vento",
+      "baca": "eel VEHN-toh",
+      "en": "wind"
+    },
+    {
+      "it": "la nebbia",
+      "baca": "lah NEHB-byah",
+      "en": "fog"
+    },
+    {
+      "it": "la nuvola",
+      "baca": "lah NOO-voh-lah",
+      "en": "cloud"
+    },
+    {
+      "it": "nuvoloso",
+      "baca": "noo-voh-LOH-zoh",
+      "en": "cloudy"
+    },
+    {
+      "it": "il grado",
+      "baca": "eel GRAH-doh",
+      "en": "degree"
+    },
+    {
+      "it": "l'ombrello",
+      "baca": "lohm-BREHL-loh",
+      "en": "umbrella"
+    },
+    {
+      "it": "il cielo",
+      "baca": "eel CHEH-loh",
+      "en": "sky"
+    },
+    {
+      "it": "fresco",
+      "baca": "FREHS-koh",
+      "en": "cool, fresh"
+    },
+    {
+      "it": "umido",
+      "baca": "OO-mee-doh",
+      "en": "humid"
+    },
+    {
+      "it": "il giornale",
+      "baca": "eel johr-NAH-leh",
+      "en": "newspaper"
+    },
+    {
+      "it": "pronto",
+      "baca": "PROHN-toh",
+      "en": "ready, hello (phone)"
+    },
+    {
+      "it": "ancora",
+      "baca": "ahn-KOH-rah",
+      "en": "still, again"
+    },
+    {
+      "it": "smettere",
+      "baca": "ZMEHT-teh-reh",
+      "en": "to stop"
+    },
+    {
+      "it": "lo stesso",
+      "baca": "loh STEHS-soh",
+      "en": "anyway"
+    },
+    {
+      "it": "a proposito",
+      "baca": "ah proh-POH-zee-toh",
+      "en": "by the way"
+    },
+    {
+      "it": "terribile",
+      "baca": "tehr-REE-bee-leh",
+      "en": "terrible"
+    }
+  ],
+  "exercises": [
+    {
+      "prompt": "Fill in fa, piove, c'è, or sono.",
+      "items": [
+        "____ freddo oggi.",
+        "____ molto. Prendi l'ombrello!",
+        "____ il sole.",
+        "____ venti gradi.",
+        "____ bel tempo domani.",
+        "____ nebbia stamattina."
+      ]
+    },
+    {
+      "prompt": "Fill in the correct form of essere or stare.",
+      "items": [
+        "Io ____ indonesiano.",
+        "Come ____ (tu)?",
+        "Marco ____ molto simpatico.",
+        "Noi ____ bene, grazie.",
+        "Loro ____ stanchi.",
+        "La banca ____ in centro."
+      ]
+    },
+    {
+      "prompt": "Change into the progressive form with stare.",
+      "items": [
+        "Studio italiano.",
+        "Marco legge il giornale.",
+        "I bambini dormono.",
+        "Beviamo un caffè.",
+        "Che cosa fai?",
+        "Parlano con Giulia."
+      ]
+    },
+    {
+      "prompt": "Translate into Italian.",
+      "items": [
+        "What's the weather like today?",
+        "It's cold and raining.",
+        "Tomorrow it'll be nice.",
+        "It's twelve degrees now.",
+        "What are you doing?",
+        "I'm studying."
+      ]
+    }
+  ],
+  "answers": [
+    "Fa — Piove — C'è — Sono — Fa — C'è",
+    "sono — stai — è — stiamo — sono — è",
+    "Sto studiando italiano. — Marco sta leggendo il giornale. — I bambini stanno dormendo. — Stiamo bevendo un caffè. — Che cosa stai facendo? — Stanno parlando con Giulia.",
+    "Che tempo fa oggi? — Fa freddo e piove. — Domani fa bello. — Adesso sono dodici gradi. — Che stai facendo? — Sto studiando."
+  ],
+  "wave": "Review **unit 16** first: politely turn down three different invitations and accept one — using *posso*, *devo*, and *voglio*."
+}

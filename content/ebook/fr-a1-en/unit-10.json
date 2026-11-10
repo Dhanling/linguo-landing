@@ -1,0 +1,524 @@
+{
+  "title": "Is there a pharmacy near here?",
+  "title_target": "Il y a une pharmacie près d'ici ?",
+  "goal": "Say that something exists, describe where things are, and ask about places nearby.",
+  "bekal": [
+    "use *il y a* and its negative *il n'y a pas de*",
+    "say where things are: *sur, sous, dans, devant, derrière, à côté de*",
+    "merge *de* with the article: *du, de la, des*"
+  ],
+  "wave": "Go back to **Unit 8** first: tell the story of your own day from getting up to going to bed, using *d'abord, ensuite, après, enfin*.",
+  "dialogs": [
+    {
+      "title": "Dialogue — Dans le quartier",
+      "intro": "Budi has just moved into a new room and asks his neighbor about the area.",
+      "lines": [
+        {
+          "speaker": "Budi:",
+          "text": "Excusez-moi, il y a une pharmacie près d'ici ?",
+          "id": "Excuse me, is there a pharmacy near here?",
+          "literal": "excuse-me, it there has a pharmacy near from-here?"
+        },
+        {
+          "speaker": "Voisine:",
+          "text": "Oui, il y en a une au bout de la rue.",
+          "id": "Yes, there's one at the end of the street.",
+          "literal": "yes, it there of-it has one at-the end of the street."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Et une boulangerie ?",
+          "id": "And a bakery?",
+          "literal": "and a bakery?"
+        },
+        {
+          "speaker": "Voisine:",
+          "text": "Juste en face de la pharmacie. Elle est excellente.",
+          "id": "Right across from the pharmacy. It's excellent.",
+          "literal": "just in face of the pharmacy. she is excellent."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Parfait. Et un supermarché ?",
+          "id": "Perfect. And a supermarket?",
+          "literal": "perfect. and a supermarket?"
+        },
+        {
+          "speaker": "Voisine:",
+          "text": "Il y a un petit magasin à côté de la banque.",
+          "id": "There's a small store next to the bank.",
+          "literal": "it there has a small store at side of the bank."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Il n'y a pas de grand supermarché dans le quartier ?",
+          "id": "Isn't there a big supermarket in the neighborhood?",
+          "literal": "it not-there has not of big supermarket in the neighborhood?"
+        },
+        {
+          "speaker": "Voisine:",
+          "text": "Non, mais il y en a un derrière la gare.",
+          "id": "No, but there's one behind the train station.",
+          "literal": "no, but it there of-it has one behind the station."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "C'est loin d'ici ?",
+          "id": "Is it far from here?",
+          "literal": "it-is far from-here?"
+        },
+        {
+          "speaker": "Voisine:",
+          "text": "Non, à dix minutes à pied. Vous avez un plan ?",
+          "id": "No, ten minutes on foot. Do you have a map?",
+          "literal": "no, at ten minutes on foot. you have a map?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Non, mais j'ai mon téléphone. Merci beaucoup !",
+          "id": "No, but I have my phone. Thanks a lot!",
+          "literal": "no, but I-have my phone. thanks much!"
+        },
+        {
+          "speaker": "Voisine:",
+          "text": "Je vous en prie. Bienvenue dans le quartier !",
+          "id": "You're welcome. Welcome to the neighborhood!",
+          "literal": "I you of-it pray. welcome in the neighborhood!"
+        }
+      ],
+      "notes": [
+        "**Il y a means both \"there is\" and \"there are\".** *Il y a une pharmacie*, *il y a trois pharmacies* — the form never changes. English distinguishes *there is* from *there are*; French doesn't bother.",
+        "**The negative drops the article.** *Il y a un supermarché* → *il n'y a pas **de** supermarché*. The old rule from Units 4 and 6 is back — and it will keep coming back until you don't have to think about it.",
+        "**Il y en a un** = \"there's one (of them)\". The little word *en* stands for the thing already mentioned, so you don't have to repeat it. You don't need to produce it yourself at A1, but you'll hear it constantly, so learn to recognize it.",
+        "**Je vous en prie** is the polite form of \"you're welcome\". Its more casual relatives: *de rien*, and the most casual, *pas de problème*.",
+        "**En face de, à côté de, près de, loin de** all end in *de*, and that *de* merges with the article after it: *à côté **du** parc*, *en face **de la** gare*, *près **des** magasins*.",
+        "**Le quartier** is a very French word: not just a \"neighborhood\" but a little piece of the city with its own bakery, café and pharmacy. French daily life revolves around it.",
+        "**À dix minutes à pied** — notice that *à* is used for distance measured in travel time. *À cinq minutes en voiture*, *à une heure de Paris*."
+      ],
+      "grammars": [
+        {
+          "title": "Il y a and c'est",
+          "body": [
+            "Both are often translated \"there is\" or \"it is\", but they do different jobs. *Il y a* introduces something's existence; *c'est* points it out and describes it."
+          ],
+          "table": {
+            "head": [
+              "Job",
+              "Form",
+              "Example"
+            ],
+            "rows": [
+              [
+                "Saying something exists",
+                "**il y a**",
+                "*Il y a une banque ici.*"
+              ],
+              [
+                "Saying it doesn't exist",
+                "**il n'y a pas de**",
+                "*Il n'y a pas de banque ici.*"
+              ],
+              [
+                "Asking if it exists",
+                "**il y a … ?**",
+                "*Il y a une pharmacie ?*"
+              ],
+              [
+                "Pointing something out",
+                "**c'est**",
+                "*C'est la banque.*"
+              ],
+              [
+                "Describing it",
+                "**c'est**",
+                "*C'est loin.*"
+              ],
+              [
+                "Giving a number",
+                "**il y a**",
+                "*Il y a trois chaises.*"
+              ]
+            ]
+          },
+          "after": [
+            "*Il y a* is also used for time gone by: *il y a deux ans* = two years ago. Context tells you which.",
+            "Asking how many: *Combien de chaises est-ce qu'il y a ?* or, more casually, *Il y a combien de chaises ?*"
+          ]
+        },
+        {
+          "title": "Saying where things are",
+          "body": [
+            "The prepositions of place that cover almost every daily need. The ones ending in *de* merge with the article."
+          ],
+          "table": {
+            "head": [
+              "Français",
+              "English",
+              "Example"
+            ],
+            "rows": [
+              [
+                "dans",
+                "in, inside",
+                "*dans le sac*"
+              ],
+              [
+                "sur",
+                "on (touching)",
+                "*sur la table*"
+              ],
+              [
+                "sous",
+                "under",
+                "*sous la chaise*"
+              ],
+              [
+                "devant",
+                "in front of",
+                "*devant la maison*"
+              ],
+              [
+                "derrière",
+                "behind",
+                "*derrière la gare*"
+              ],
+              [
+                "entre",
+                "between",
+                "*entre la banque et la poste*"
+              ],
+              [
+                "à côté **de**",
+                "next to",
+                "*à côté du parc*"
+              ],
+              [
+                "en face **de**",
+                "across from",
+                "*en face de la pharmacie*"
+              ],
+              [
+                "près **de**",
+                "near",
+                "*près de l'école*"
+              ],
+              [
+                "loin **de**",
+                "far from",
+                "*loin des magasins*"
+              ],
+              [
+                "au-dessus **de**",
+                "above (not touching)",
+                "*au-dessus de la porte*"
+              ],
+              [
+                "au bout **de**",
+                "at the end of",
+                "*au bout de la rue*"
+              ]
+            ]
+          },
+          "after": [
+            "⚠️ Merging *de* is compulsory, exactly like merging *à* in Unit 8: **de + le = du**, **de + les = des**. With *la* and *l'* nothing changes.",
+            "Writing *à côté de le parc* is a flat-out mistake. The correct form is *à côté du parc*."
+          ]
+        },
+        {
+          "title": "à and de merging, the full picture",
+          "body": [
+            "Two little rows that hold up hundreds of sentences. Learn them together."
+          ],
+          "table": {
+            "head": [
+              "",
+              "+ le",
+              "+ la",
+              "+ l'",
+              "+ les"
+            ],
+            "rows": [
+              [
+                "**à** (to, at)",
+                "**au**",
+                "à la",
+                "à l'",
+                "**aux**"
+              ],
+              [
+                "**de** (from, of)",
+                "**du**",
+                "de la",
+                "de l'",
+                "**des**"
+              ]
+            ]
+          },
+          "after": [
+            "A matching pair: *Je vais **au** marché et je reviens **du** marché.*",
+            "*Des* has two lives: the merged *de + les* (*je parle des enfants*) and the indefinite plural article (*j'ai des amis*). Same form, and context tells them apart — so don't be confused when you find it in two different places."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Places around you",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "Français",
+            "Pronunciation",
+            "English"
+          ],
+          "rows": [
+            [
+              "une pharmacie",
+              "ün fahr-mah-SEE",
+              "pharmacy"
+            ],
+            [
+              "une boulangerie",
+              "ün boo-lahn-zhuh-REE",
+              "bakery"
+            ],
+            [
+              "une banque",
+              "ün BAHNK",
+              "bank"
+            ],
+            [
+              "la poste",
+              "lah POHST",
+              "post office"
+            ],
+            [
+              "une gare",
+              "ün GAHR",
+              "train station"
+            ],
+            [
+              "un supermarché",
+              "uhn sü-pehr-mahr-SHAY",
+              "supermarket"
+            ],
+            [
+              "un magasin",
+              "uhn mah-gah-ZAN",
+              "store, shop"
+            ],
+            [
+              "un parc",
+              "uhn PAHRK",
+              "park"
+            ],
+            [
+              "une école",
+              "ü-nay-KOHL",
+              "school"
+            ],
+            [
+              "un hôpital",
+              "uh-noh-pee-TAHL",
+              "hospital"
+            ],
+            [
+              "une église",
+              "ü-nay-GLEEZ",
+              "church"
+            ],
+            [
+              "un restaurant",
+              "uhn res-toh-RAHN",
+              "restaurant"
+            ],
+            [
+              "un marché",
+              "uhn mahr-SHAY",
+              "market"
+            ],
+            [
+              "une place",
+              "ün PLAHS",
+              "town square"
+            ],
+            [
+              "un arrêt de bus",
+              "uh-nah-reh duh BÜS",
+              "bus stop"
+            ],
+            [
+              "une station de métro",
+              "ün stah-SYOHN duh may-TROH",
+              "subway station"
+            ]
+          ]
+        },
+        {
+          "type": "kotak",
+          "title": "Lifesaver phrases",
+          "items": [
+            "*Il y a une pharmacie près d'ici ?* — Is there a pharmacy near here?",
+            "*C'est loin ?* — Is it far?",
+            "*C'est à combien de minutes à pied ?* — How many minutes on foot?",
+            "*Où sont les toilettes ?* — Where are the restrooms?",
+            "*Est-ce que c'est ouvert le dimanche ?* — Is it open on Sundays?"
+          ]
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "fr": "il y a",
+      "baca": "ee-lyah",
+      "en": "there is, there are"
+    },
+    {
+      "fr": "le quartier",
+      "baca": "luh kahr-TYAY",
+      "en": "neighborhood"
+    },
+    {
+      "fr": "près de",
+      "baca": "preh duh",
+      "en": "near"
+    },
+    {
+      "fr": "loin de",
+      "baca": "lwan duh",
+      "en": "far from"
+    },
+    {
+      "fr": "à côté de",
+      "baca": "ah koh-TAY duh",
+      "en": "next to"
+    },
+    {
+      "fr": "en face de",
+      "baca": "ahn FAHS duh",
+      "en": "across from"
+    },
+    {
+      "fr": "devant",
+      "baca": "duh-VAHN",
+      "en": "in front of"
+    },
+    {
+      "fr": "derrière",
+      "baca": "deh-RYEHR",
+      "en": "behind"
+    },
+    {
+      "fr": "dans",
+      "baca": "dahn",
+      "en": "in, inside"
+    },
+    {
+      "fr": "sur",
+      "baca": "sür",
+      "en": "on"
+    },
+    {
+      "fr": "sous",
+      "baca": "soo",
+      "en": "under"
+    },
+    {
+      "fr": "entre",
+      "baca": "AHNTR",
+      "en": "between"
+    },
+    {
+      "fr": "au bout de",
+      "baca": "oh BOO duh",
+      "en": "at the end of"
+    },
+    {
+      "fr": "juste",
+      "baca": "ZHÜST",
+      "en": "just, right"
+    },
+    {
+      "fr": "excellent",
+      "baca": "ek-say-LAHN",
+      "en": "excellent"
+    },
+    {
+      "fr": "un voisin / une voisine",
+      "baca": "uhn vwah-ZAN",
+      "en": "neighbor"
+    },
+    {
+      "fr": "un plan",
+      "baca": "uhn PLAHN",
+      "en": "city map"
+    },
+    {
+      "fr": "je vous en prie",
+      "baca": "zhuh voo-zahn PREE",
+      "en": "you're welcome (polite)"
+    },
+    {
+      "fr": "où",
+      "baca": "oo",
+      "en": "where"
+    },
+    {
+      "fr": "les toilettes",
+      "baca": "lay twah-LET",
+      "en": "restroom, toilet"
+    }
+  ],
+  "exercises": [
+    {
+      "prompt": "Fill in au, à la, à l', aux, du, de la, de l' or des.",
+      "items": [
+        "Je vais ____ marché.",
+        "La pharmacie est à côté ____ banque.",
+        "Il revient ____ université.",
+        "Nous allons ____ toilettes.",
+        "C'est en face ____ parc.",
+        "Elle parle ____ enfants."
+      ]
+    },
+    {
+      "prompt": "Make these sentences negative.",
+      "items": [
+        "Il y a une banque ici.",
+        "Il y a des restaurants dans le quartier.",
+        "Il y a un supermarché près d'ici.",
+        "Il y a de la place.",
+        "Il y a un problème."
+      ]
+    },
+    {
+      "prompt": "Fill in the right preposition of place.",
+      "items": [
+        "Le livre est ____ la table.",
+        "Le chat dort ____ la chaise.",
+        "La banque est ____ la poste et l'école.",
+        "Il y a un parc ____ la gare.",
+        "Mes clés sont ____ mon sac."
+      ]
+    },
+    {
+      "prompt": "Translate into French.",
+      "items": [
+        "Is there a pharmacy near here?",
+        "There's no supermarket in the neighborhood.",
+        "The bakery is right across from the bank.",
+        "Ten minutes on foot.",
+        "Where are the restrooms?"
+      ]
+    }
+  ],
+  "answers": [
+    "au marché — de la banque — de l'université — aux toilettes — du parc — des enfants",
+    "Il n'y a pas de banque ici. — Il n'y a pas de restaurants dans le quartier. — Il n'y a pas de supermarché près d'ici. — Il n'y a pas de place. — Il n'y a pas de problème.",
+    "sur — sous — entre — derrière — dans",
+    "Il y a une pharmacie près d'ici ? — Il n'y a pas de supermarché dans le quartier. — La boulangerie est juste en face de la banque. — À dix minutes à pied. — Où sont les toilettes ?"
+  ]
+}

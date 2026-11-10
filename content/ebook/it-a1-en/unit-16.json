@@ -1,0 +1,418 @@
+{
+  "title": "Can, must, want",
+  "title_target": "Posso, devo, voglio",
+  "goal": "Master three helper verbs that unlock hundreds of new sentences: asking permission, expressing obligation, and saying what you want.",
+  "bekal": [
+    "ask permission with *posso*",
+    "say what you have to do with *devo*",
+    "turn down and accept invitations gracefully"
+  ],
+  "dialogs": [
+    {
+      "title": "Dialogo — Non posso, devo lavorare",
+      "intro": "Marco invites Budi over. Budi has to say no — and saying no politely is a skill of its own.",
+      "lines": [
+        {
+          "speaker": "Marco:",
+          "text": "Budi, stasera vuoi venire a cena da noi?",
+          "id": "Budi, do you want to come to dinner at our place tonight?",
+          "literal": "Budi, tonight you-want to-come to dinner from us?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Vorrei tanto, ma non posso. Devo studiare.",
+          "id": "I'd love to, but I can't. I have to study.",
+          "literal": "I-would-like much, but not I-can. I-must to-study."
+        },
+        {
+          "speaker": "Marco:",
+          "text": "Dai, puoi studiare domani!",
+          "id": "Come on, you can study tomorrow!",
+          "literal": "come-on, you-can to-study tomorrow!"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Domani devo lavorare tutto il giorno. Ho un esame venerdì.",
+          "id": "Tomorrow I have to work all day. I have an exam on Friday.",
+          "literal": "tomorrow I-must to-work all the day. I-have an exam friday."
+        },
+        {
+          "speaker": "Marco:",
+          "text": "Va bene, capisco. Possiamo fare sabato?",
+          "id": "OK, I understand. Can we do Saturday?",
+          "literal": "goes well, I-understand. we-can to-do saturday?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Sabato sì, volentieri! A che ora devo venire?",
+          "id": "Saturday, yes, gladly! What time should I come?",
+          "literal": "saturday yes, gladly! at what hour I-must to-come?"
+        },
+        {
+          "speaker": "Marco:",
+          "text": "Verso le otto. Non devi portare niente.",
+          "id": "Around eight. You don't need to bring anything.",
+          "literal": "toward the eight. not you-must to-bring nothing."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Posso portare almeno il vino?",
+          "id": "Can I at least bring the wine?",
+          "literal": "I-can to-bring at-least the wine?"
+        },
+        {
+          "speaker": "Marco:",
+          "text": "Se vuoi. Ma davvero non devi.",
+          "id": "If you want. But you really don't have to.",
+          "literal": "if you-want. but truly not you-must."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Voglio portare qualcosa. È la mia educazione.",
+          "id": "I want to bring something. It's how I was raised.",
+          "literal": "I-want to-bring something. is the my upbringing."
+        },
+        {
+          "speaker": "Marco:",
+          "text": "Allora porta il vino. Ma non devi portare tutto il negozio!",
+          "id": "Then bring the wine. But don't bring the whole store!",
+          "literal": "then bring the wine. but not you-must to-bring all the store!"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Prometto. A sabato, allora!",
+          "id": "I promise. See you Saturday, then!",
+          "literal": "I-promise. to saturday, then!"
+        }
+      ],
+      "notes": [
+        "**All three are followed by an infinitive.** *Posso venire*, *devo studiare*, *voglio portare* — the second verb doesn't change at all. Good news: only the first verb needs to be learned in all its forms.",
+        "**Non devo isn't \"I mustn't\".** *Non devo portare niente* means \"I don't need to bring anything\". For \"mustn't\", use *non posso* or *non si può*. This difference causes misunderstandings that are not funny.",
+        "**Vorrei is the soft form of voglio.** You've been using it since unit 4. Now it's clear where it comes from: it's the polite form of *volere*. When asking for something, always choose *vorrei*.",
+        "**Dai! means \"come on\".** One of the most frequent words in Italian conversation, used to coax, encourage, or show disbelief. It sounds like English \"dye\", one syllable.",
+        "**Saying no politely has its own pattern.** *Vorrei tanto, ma non posso* — first say you'd like to, then the obstacle. A bare *no, non posso* sounds cold by Italian standards.",
+        "**Verso le otto** = \"around eight\". *Verso* softens a time, and Italians use it constantly. In practice, *verso le otto* means between eight and eight-thirty.",
+        "**Niente and nulla both mean \"nothing\"**, and both need *non* before the verb: *non porto niente*. This double negative is required, just like *non… mai* in unit 7.",
+        "**Se vuoi** = \"if you want\". The formal version is *se vuole*. A gentle way to leave the choice to someone, a partner to *come vuoi* from unit 4."
+      ],
+      "grammars": [
+        {
+          "title": "Three helper verbs",
+          "body": [
+            "All three are irregular and all three are essential. Notice the shared pattern: the *noi* and *voi* forms are always the most regular."
+          ],
+          "table": {
+            "head": [
+              "",
+              "potere (can, may)",
+              "dovere (must)",
+              "volere (want)"
+            ],
+            "rows": [
+              [
+                "io",
+                "**posso**",
+                "**devo**",
+                "**voglio**"
+              ],
+              [
+                "tu",
+                "puoi",
+                "devi",
+                "vuoi"
+              ],
+              [
+                "lui / lei / Lei",
+                "può",
+                "deve",
+                "vuole"
+              ],
+              [
+                "noi",
+                "possiamo",
+                "dobbiamo",
+                "vogliamo"
+              ],
+              [
+                "voi",
+                "potete",
+                "dovete",
+                "volete"
+              ],
+              [
+                "loro",
+                "possono",
+                "devono",
+                "vogliono"
+              ]
+            ]
+          },
+          "after": [
+            "*Può* has an accent; without it the word doesn't exist. The same goes for *può darsi* (maybe), a common expression.",
+            "The soft forms of all three: *potrei* (could I), *dovrei* (I should), *vorrei* (I'd like). They're B1 level, but *vorrei* is a must right now."
+          ]
+        },
+        {
+          "title": "When to use which",
+          "body": [],
+          "table": {
+            "head": [
+              "Meaning",
+              "Italiano",
+              "Example"
+            ],
+            "rows": [
+              [
+                "Asking permission",
+                "Posso…?",
+                "Posso entrare?"
+              ],
+              [
+                "Ability",
+                "Posso / Non posso",
+                "Non posso venire."
+              ],
+              [
+                "Obligation",
+                "Devo…",
+                "Devo lavorare."
+              ],
+              [
+                "No need",
+                "Non devo…",
+                "Non devi portare niente."
+              ],
+              [
+                "Not allowed",
+                "Non posso / Non si può",
+                "Qui non si può fumare."
+              ],
+              [
+                "Wanting",
+                "Voglio…",
+                "Voglio imparare l'italiano."
+              ],
+              [
+                "Polite request",
+                "Vorrei…",
+                "Vorrei un caffè."
+              ],
+              [
+                "Invitation",
+                "Vuoi…?",
+                "Vuoi venire con noi?"
+              ]
+            ]
+          },
+          "after": [
+            "*Si può* and *non si può* mean \"it's allowed\" and \"it's not allowed\" in general, without saying who. Italian signs often read like this: *Non si può parcheggiare qui.*"
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Accepting and declining",
+      "blocks": [
+        {
+          "type": "kotak",
+          "title": "Inviting",
+          "items": [
+            "*Vuoi venire con me?* — Do you want to come with me?",
+            "*Andiamo a bere qualcosa?* — Shall we grab a drink?",
+            "*Ti va di andare al cinema?* — Do you feel like going to the movies?",
+            "*Che ne dici di sabato?* — How about Saturday?"
+          ]
+        },
+        {
+          "type": "kotak",
+          "title": "Accepting",
+          "items": [
+            "*Sì, volentieri!* — Yes, gladly!",
+            "*Certo!* — Of course!",
+            "*Perché no?* — Why not?",
+            "*Ottima idea!* — Great idea!"
+          ]
+        },
+        {
+          "type": "kotak",
+          "title": "Declining politely",
+          "items": [
+            "*Mi dispiace, ma non posso.* — I'm sorry, but I can't.",
+            "*Vorrei tanto, ma devo lavorare.* — I'd love to, but I have to work.",
+            "*Magari un'altra volta.* — Maybe another time.",
+            "*Purtroppo ho già un impegno.* — Unfortunately I already have plans."
+          ]
+        },
+        {
+          "type": "p",
+          "text": "*Magari* is a very hard Italian word to translate. It can mean \"maybe\", \"if only\", or — said on its own with a sigh — \"I wish!\". If someone answers your invitation with *magari!*, they'd really love to but can't."
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "it": "potere",
+      "baca": "poh-TEH-reh",
+      "en": "can, may"
+    },
+    {
+      "it": "dovere",
+      "baca": "doh-VEH-reh",
+      "en": "must, to have to"
+    },
+    {
+      "it": "volere",
+      "baca": "voh-LEH-reh",
+      "en": "to want"
+    },
+    {
+      "it": "l'esame",
+      "baca": "leh-ZAH-meh",
+      "en": "exam"
+    },
+    {
+      "it": "l'impegno",
+      "baca": "leem-PEH-nyoh",
+      "en": "commitment, plans"
+    },
+    {
+      "it": "promettere",
+      "baca": "proh-MEHT-teh-reh",
+      "en": "to promise"
+    },
+    {
+      "it": "entrare",
+      "baca": "ehn-TRAH-reh",
+      "en": "to enter"
+    },
+    {
+      "it": "fumare",
+      "baca": "foo-MAH-reh",
+      "en": "to smoke"
+    },
+    {
+      "it": "aiutare",
+      "baca": "ah-yoo-TAH-reh",
+      "en": "to help"
+    },
+    {
+      "it": "qualcosa",
+      "baca": "kwahl-KOH-zah",
+      "en": "something"
+    },
+    {
+      "it": "niente",
+      "baca": "NYEHN-teh",
+      "en": "nothing"
+    },
+    {
+      "it": "nessuno",
+      "baca": "nehs-SOO-noh",
+      "en": "nobody"
+    },
+    {
+      "it": "verso",
+      "baca": "VEHR-soh",
+      "en": "around (a time)"
+    },
+    {
+      "it": "almeno",
+      "baca": "ahl-MEH-noh",
+      "en": "at least"
+    },
+    {
+      "it": "davvero",
+      "baca": "dahv-VEH-roh",
+      "en": "really"
+    },
+    {
+      "it": "purtroppo",
+      "baca": "poor-TROHP-poh",
+      "en": "unfortunately"
+    },
+    {
+      "it": "magari",
+      "baca": "mah-GAH-ree",
+      "en": "if only, maybe"
+    },
+    {
+      "it": "dai!",
+      "baca": "dye",
+      "en": "come on!"
+    },
+    {
+      "it": "mi dispiace",
+      "baca": "mee dees-PYAH-cheh",
+      "en": "I'm sorry"
+    },
+    {
+      "it": "l'idea",
+      "baca": "lee-DEH-ah",
+      "en": "idea"
+    },
+    {
+      "it": "l'educazione",
+      "baca": "leh-doo-kah-TSYOH-neh",
+      "en": "upbringing, manners"
+    },
+    {
+      "it": "un'altra volta",
+      "baca": "oo-NAHL-trah VOHL-tah",
+      "en": "another time"
+    }
+  ],
+  "exercises": [
+    {
+      "prompt": "Fill in the form of potere, dovere, or volere given in brackets.",
+      "items": [
+        "Io non ____ venire stasera. (potere)",
+        "Tu ____ studiare per l'esame. (dovere)",
+        "Marco ____ imparare l'italiano. (volere)",
+        "Noi ____ andare al cinema? (potere)",
+        "Voi ____ lavorare domani? (dovere)",
+        "I bambini ____ giocare fuori. (volere)"
+      ]
+    },
+    {
+      "prompt": "Translate into Italian.",
+      "items": [
+        "May I come in?",
+        "I have to work tomorrow.",
+        "You don't need to bring anything.",
+        "Do you want to come with us?",
+        "I'm sorry, but I can't.",
+        "I'd love to, but I have an exam."
+      ]
+    },
+    {
+      "prompt": "Choose non posso or non devo, then write the full sentence.",
+      "items": [
+        "I don't need to pay, it's already free. ____ pagare.",
+        "I can't come, I'm sick. ____ venire.",
+        "You don't need to bring anything. ____ portare niente.",
+        "You can't smoke here. Qui ____ fumare.",
+        "We don't need to get up early on Sundays. La domenica ____ alzarci presto."
+      ]
+    },
+    {
+      "prompt": "Put the words in the right order.",
+      "items": [
+        "posso / non / venire",
+        "lavorare / devo / domani",
+        "italiano / imparare / voglio / l'",
+        "niente / non / portare / devi",
+        "entrare / posso / ?"
+      ]
+    }
+  ],
+  "answers": [
+    "posso — devi — vuole — possiamo — dovete — vogliono",
+    "Posso entrare? — Devo lavorare domani. — Non devi portare niente. — Vuoi venire con noi? — Mi dispiace, ma non posso. — Vorrei tanto, ma ho un esame.",
+    "Non devo — Non posso — Non devi — non si può — non dobbiamo",
+    "Non posso venire. — Devo lavorare domani. — Voglio imparare l'italiano. — Non devi portare niente. — Posso entrare?"
+  ],
+  "wave": "Review **unit 14** first: buy a jacket and a pair of shoes from memory — size, color, trying on, price."
+}

@@ -1,0 +1,570 @@
+{
+  "title": "My day",
+  "title_target": "Mein Tag",
+  "goal": "Tell the time and describe your daily routine — while facing verbs that split in two and send half of themselves to the end of the sentence.",
+  "bekal": [
+    "say and ask the time",
+    "use separable verbs (*Ich stehe um sechs auf*)",
+    "describe the order of your daily activities",
+    "use *um*, *von … bis* and the parts of the day"
+  ],
+  "dialogs": [
+    {
+      "title": "Dialogue — Ein ganz normaler Tag",
+      "intro": "Lena asks about Budi's daily schedule. Watch the little word that turns up at the end of the sentence — *auf*, *an*, *ein* — and see where it comes from.",
+      "lines": [
+        {
+          "speaker": "Lena:",
+          "text": "Wann stehst du morgens auf?",
+          "id": "What time do you get up in the morning?",
+          "literal": "when stand you mornings up?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Ich stehe um halb sieben auf. Manchmal um sieben.",
+          "id": "I get up at six-thirty. Sometimes at seven.",
+          "literal": "I stand at half seven up. sometimes at seven."
+        },
+        {
+          "speaker": "Lena:",
+          "text": "Und wann fängt der Kurs an?",
+          "id": "And when does the course start?",
+          "literal": "and when catches the course on?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Der Kurs fängt um neun Uhr an und hört um zwölf auf.",
+          "id": "The course starts at nine and finishes at twelve.",
+          "literal": "the course catches at nine o'clock on and hears at twelve up."
+        },
+        {
+          "speaker": "Lena:",
+          "text": "Was machst du am Nachmittag?",
+          "id": "What do you do in the afternoon?",
+          "literal": "what make you on-the afternoon?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Ich lerne bis vier, dann kaufe ich ein.",
+          "id": "I study until four, then I go shopping.",
+          "literal": "I learn until four, then buy I in."
+        },
+        {
+          "speaker": "Lena:",
+          "text": "Kochst du selbst?",
+          "id": "Do you cook for yourself?",
+          "literal": "cook you self?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Ja, ich koche um Viertel nach sechs. Um acht rufe ich meine Eltern an.",
+          "id": "Yes, I cook at a quarter past six. At eight I call my parents.",
+          "literal": "yes, I cook at quarter after six. at eight call I my parents on."
+        },
+        {
+          "speaker": "Lena:",
+          "text": "In Indonesien ist es dann schon Mitternacht, oder?",
+          "id": "It's already midnight in Indonesia by then, isn't it?",
+          "literal": "in Indonesia is it then already midnight, or?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Fast. Es ist ein Uhr nachts. Meine Mutter schläft nie früh.",
+          "id": "Almost. It's one in the morning. My mother never goes to bed early.",
+          "literal": "almost. it is one o'clock at-night. my mother sleeps never early."
+        },
+        {
+          "speaker": "Lena:",
+          "text": "Und wann gehst du ins Bett?",
+          "id": "And when do you go to bed?",
+          "literal": "and when go you into-the bed?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Um Viertel vor elf. Aber heute sehe ich noch einen Film.",
+          "id": "At a quarter to eleven. But today I'm still watching a movie.",
+          "literal": "at quarter before eleven. but today see I still a film."
+        }
+      ],
+      "notes": [
+        "**Verbs that split in two.** *aufstehen* (get up) becomes *ich stehe … **auf***; *anfangen* (start) becomes *der Kurs fängt … **an***; *einkaufen* (shop) becomes *ich kaufe … **ein***. The prefix flies to the end of the sentence, and everything else stands in between. English does something similar with phrasal verbs (*I get up*, *I call my parents up*) — German just always sends the little word to the very end. The grammar box below shows how it works.",
+        "***um* for an exact time.** *um sieben*, *um halb acht*, *um Viertel nach sechs*. For a range, use *von … bis*: *von neun bis zwölf*. For an end point alone, *bis* is enough: *Ich lerne bis vier*.",
+        "**⚠️ *halb sieben* = 6:30, not 7:30.** German counts the half hour **toward** the next hour: \"half (on the way to) seven\". English speakers trip badly here, because *half past six* points the other way. Every time you see *halb*, subtract thirty minutes from the number you hear.",
+        "***Uhr* is required with official whole hours**, and can be dropped in casual speech: *um neun Uhr* or *um neun*. But never use *Stunde* for clock time — *Stunde* is a length of time (\"two hours\"), *Uhr* is a point in time (\"two o'clock\").",
+        "**Parts of the day take *am*, except night.** *am Morgen*, *am Vormittag*, *am Nachmittag*, *am Abend* — but ***in der Nacht***, because *Nacht* is feminine. There are also adverb forms without a preposition, which sound more casual: *morgens*, *abends*, *nachts*.",
+        "**Lines 6 and 8: *dann kaufe ich ein* and *Um acht rufe ich … an*.** A sentence starting with a time expression still puts its verb in second place — and the separable prefix still goes to the end. Two rules working at once, and Germans use both without thinking."
+      ],
+      "grammars": [
+        {
+          "title": "Telling time: two ways, one clock",
+          "body": [
+            "German has two systems living side by side. The **official** one uses the numbers 0-24 and is used on train timetables, broadcasts and formal appointments. The **everyday** one uses 1-12 with *nach*, *vor* and *halb*."
+          ],
+          "table": {
+            "head": [
+              "Time",
+              "Everyday",
+              "Official"
+            ],
+            "rows": [
+              [
+                "8:00 a.m.",
+                "acht (Uhr)",
+                "acht Uhr"
+              ],
+              [
+                "8:05 a.m.",
+                "fünf nach acht",
+                "acht Uhr fünf"
+              ],
+              [
+                "8:15 a.m.",
+                "Viertel nach acht",
+                "acht Uhr fünfzehn"
+              ],
+              [
+                "8:30 a.m.",
+                "halb neun",
+                "acht Uhr dreißig"
+              ],
+              [
+                "8:45 a.m.",
+                "Viertel vor neun",
+                "acht Uhr fünfundvierzig"
+              ],
+              [
+                "8:50 a.m.",
+                "zehn vor neun",
+                "acht Uhr fünfzig"
+              ],
+              [
+                "12:00 p.m.",
+                "zwölf / Mittag",
+                "zwölf Uhr"
+              ],
+              [
+                "12:00 a.m.",
+                "Mitternacht",
+                "null Uhr"
+              ],
+              [
+                "7:30 p.m.",
+                "halb acht (abends)",
+                "neunzehn Uhr dreißig"
+              ]
+            ]
+          },
+          "after": [
+            "⚠️ The **8:30 a.m.** row is where every English speaker slips: *halb neun* counts **toward** the next hour. Read it as \"half to nine\", never \"half past nine\".",
+            "Two questions to keep apart: ***Wie spät ist es?*** (\"what time is it?\") and ***Wann…?*** (\"when?\"). The answer to the first starts with *Es ist…*; the answer to the second starts with *Um…*"
+          ],
+          "tables": [
+            {
+              "head": [
+                "Question",
+                "Answer",
+                "English"
+              ],
+              "rows": [
+                [
+                  "Wie spät ist es?",
+                  "Es ist halb acht.",
+                  "It's seven-thirty."
+                ],
+                [
+                  "Wann stehst du auf?",
+                  "Um sechs Uhr.",
+                  "At six o'clock."
+                ],
+                [
+                  "Wie lange arbeitest du?",
+                  "Von neun bis fünf.",
+                  "From nine to five."
+                ],
+                [
+                  "Ab wann hast du Zeit?",
+                  "Ab sieben.",
+                  "From seven on."
+                ]
+              ]
+            }
+          ]
+        },
+        {
+          "title": "Separable verbs (trennbare Verben)",
+          "body": [
+            "Some German verbs are made of **prefix + verb**: *auf + stehen*, *an + fangen*, *ein + kaufen*. In the dictionary they're written as one word, but as soon as they're used in a sentence, the prefix breaks off and flies to the end.",
+            "Everything else — object, time, place — stands between the two parts. This structure is called the **Satzklammer**, the \"sentence bracket\", because the verb really does bracket the content of the sentence."
+          ],
+          "table": {
+            "head": [
+              "Infinitiv",
+              "English",
+              "In a sentence"
+            ],
+            "rows": [
+              [
+                "**auf**stehen",
+                "to get up",
+                "Ich stehe um sechs **auf**."
+              ],
+              [
+                "**an**fangen",
+                "to start",
+                "Der Kurs fängt um neun **an**."
+              ],
+              [
+                "**auf**hören",
+                "to stop",
+                "Wir hören um zwölf **auf**."
+              ],
+              [
+                "**ein**kaufen",
+                "to go shopping",
+                "Ich kaufe am Abend **ein**."
+              ],
+              [
+                "**an**rufen",
+                "to call (phone)",
+                "Ich rufe meine Eltern **an**."
+              ],
+              [
+                "**fern**sehen",
+                "to watch TV",
+                "Er sieht jeden Abend **fern**."
+              ],
+              [
+                "**mit**kommen",
+                "to come along",
+                "Kommst du **mit**?"
+              ],
+              [
+                "**zurück**kommen",
+                "to come back",
+                "Sie kommt um acht **zurück**."
+              ],
+              [
+                "**ab**holen",
+                "to pick up",
+                "Ich hole dich **ab**."
+              ],
+              [
+                "**an**kommen",
+                "to arrive",
+                "Der Zug kommt um zehn **an**."
+              ]
+            ]
+          },
+          "after": [
+            "The prefixes that most often split off: **auf-, an-, ein-, aus-, mit-, ab-, zu-, vor-, nach-, zurück-, fern-, weg-**. They're all short words that also stand alone as prepositions or adverbs, and they're all **stressed** when spoken: *AUFstehen*, *ANrufen*.",
+            "On the other hand, the prefixes **be-, ge-, er-, ver-, ent-, emp-, zer-** never split off and are never stressed: *beSUchen* (to visit) → *Ich besuche meine Oma*, in one piece. This difference in stress is how a German ear recognizes the type, long before the sentence is over.",
+            "⚠️ If there's a helper verb like *möchten* or *können*, the separable verb **joins back together** and moves to the end: *Ich möchte um sechs **aufstehen***. The rules don't clash — only one thing is allowed at the end of the sentence."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Through the day",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "German",
+            "Pronunciation",
+            "English",
+            "Adverb form"
+          ],
+          "rows": [
+            [
+              "der Morgen",
+              "MOR-gen",
+              "morning",
+              "am Morgen / morgens"
+            ],
+            [
+              "der Vormittag",
+              "FOR-mit-tahk",
+              "late morning",
+              "am Vormittag / vormittags"
+            ],
+            [
+              "der Mittag",
+              "MIT-tahk",
+              "noon, midday",
+              "am Mittag / mittags"
+            ],
+            [
+              "der Nachmittag",
+              "NAHKH-mit-tahk",
+              "afternoon",
+              "am Nachmittag / nachmittags"
+            ],
+            [
+              "der Abend",
+              "AH-bent",
+              "evening",
+              "am Abend / abends"
+            ],
+            [
+              "die Nacht",
+              "nahkht",
+              "night",
+              "in der Nacht / nachts"
+            ],
+            [
+              "heute",
+              "HOY-te",
+              "today",
+              "—"
+            ],
+            [
+              "morgen",
+              "MOR-gen",
+              "tomorrow",
+              "—"
+            ],
+            [
+              "gestern",
+              "GES-tuhn",
+              "yesterday",
+              "—"
+            ],
+            [
+              "jetzt",
+              "yetst",
+              "now",
+              "—"
+            ]
+          ]
+        },
+        {
+          "type": "sub",
+          "text": "Daily activities"
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "German",
+            "English",
+            "Example"
+          ],
+          "rows": [
+            [
+              "aufstehen",
+              "to get up",
+              "Ich stehe um sechs auf."
+            ],
+            [
+              "frühstücken",
+              "to have breakfast",
+              "Ich frühstücke um sieben."
+            ],
+            [
+              "duschen",
+              "to shower",
+              "Ich dusche jeden Morgen."
+            ],
+            [
+              "zur Arbeit gehen",
+              "to go to work",
+              "Ich gehe um acht zur Arbeit."
+            ],
+            [
+              "Mittag essen",
+              "to have lunch",
+              "Wir essen um eins Mittag."
+            ],
+            [
+              "kochen",
+              "to cook",
+              "Ich koche am Abend."
+            ],
+            [
+              "einkaufen",
+              "to go shopping",
+              "Ich kaufe am Samstag ein."
+            ],
+            [
+              "fernsehen",
+              "to watch TV",
+              "Er sieht abends fern."
+            ],
+            [
+              "ins Bett gehen",
+              "to go to bed",
+              "Ich gehe um elf ins Bett."
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "*Frühstücken* is one of the few verbs born from a noun (*das Frühstück*, breakfast). It's completely regular, and it does **not** split, even though it looks as if it starts with a *früh-* prefix."
+        }
+      ]
+    },
+    {
+      "title": "Telling the story of one day",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Write your own daily routine using the pattern below. What matters isn't the length, but that every sentence contains a time — that's where separable verbs show up most."
+        },
+        {
+          "type": "list",
+          "items": [
+            "*Ich stehe um … auf.* — I get up at …",
+            "*Dann frühstücke ich und dusche.* — Then I have breakfast and shower.",
+            "*Um … fängt meine Arbeit an.* — At … my work starts.",
+            "*Ich arbeite von … bis …* — I work from … to …",
+            "*Am Abend kaufe ich ein und koche.* — In the evening I go shopping and cook.",
+            "*Um … gehe ich ins Bett.* — At … I go to bed."
+          ]
+        },
+        {
+          "type": "kotak",
+          "title": "Test yourself: where does the prefix go?",
+          "items": [
+            "*Ich … meine Mutter … (anrufen, um acht)* → **Ich rufe um acht meine Mutter an.**",
+            "*Wir … um zwölf … (aufhören)* → **Wir hören um zwölf auf.**",
+            "*… du heute Abend …? (mitkommen)* → **Kommst du heute Abend mit?**"
+          ]
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "de": "die Uhr",
+      "baca": "oor",
+      "en": "clock; o'clock"
+    },
+    {
+      "de": "die Stunde",
+      "baca": "SHTOON-de",
+      "en": "hour (length of time)"
+    },
+    {
+      "de": "die Minute",
+      "baca": "mee-NOO-te",
+      "en": "minute"
+    },
+    {
+      "de": "halb",
+      "baca": "hahlp",
+      "en": "half"
+    },
+    {
+      "de": "das Viertel",
+      "baca": "FEER-tel",
+      "en": "quarter"
+    },
+    {
+      "de": "nach",
+      "baca": "nahkh",
+      "en": "past, after"
+    },
+    {
+      "de": "vor",
+      "baca": "for",
+      "en": "to, before"
+    },
+    {
+      "de": "um",
+      "baca": "oom",
+      "en": "at (a time)"
+    },
+    {
+      "de": "bis",
+      "baca": "bis",
+      "en": "until"
+    },
+    {
+      "de": "aufstehen",
+      "baca": "OWF-shtay-en",
+      "en": "to get up"
+    },
+    {
+      "de": "anfangen",
+      "baca": "AHN-fahng-en",
+      "en": "to start"
+    },
+    {
+      "de": "aufhören",
+      "baca": "OWF-höh-ren",
+      "en": "to stop"
+    },
+    {
+      "de": "einkaufen",
+      "baca": "EYEN-kow-fen",
+      "en": "to go shopping"
+    },
+    {
+      "de": "anrufen",
+      "baca": "AHN-roo-fen",
+      "en": "to call (phone)"
+    },
+    {
+      "de": "fernsehen",
+      "baca": "FAIRN-zay-en",
+      "en": "to watch TV"
+    },
+    {
+      "de": "mitkommen",
+      "baca": "MIT-kom-men",
+      "en": "to come along"
+    },
+    {
+      "de": "frühstücken",
+      "baca": "FRÜ-shtük-ken",
+      "en": "to have breakfast"
+    },
+    {
+      "de": "duschen",
+      "baca": "DOO-shen",
+      "en": "to shower"
+    }
+  ],
+  "exercises": [
+    {
+      "prompt": "Write the time in everyday German.",
+      "items": [
+        "7:00 a.m.",
+        "8:15 a.m.",
+        "9:30 a.m.",
+        "10:45 a.m.",
+        "12:00 p.m.",
+        "6:30 p.m."
+      ]
+    },
+    {
+      "prompt": "Fill in the missing prefix.",
+      "items": [
+        "Ich stehe um sechs ____.",
+        "Der Kurs fängt um neun ____.",
+        "Wir hören um zwölf ____.",
+        "Ich rufe meine Eltern ____.",
+        "Er sieht jeden Abend ____.",
+        "Kommst du heute Abend ____?"
+      ]
+    },
+    {
+      "prompt": "Put the words in the right order.",
+      "items": [
+        "auf / ich / um sechs / stehe",
+        "an / der Kurs / um neun / fängt",
+        "ein / am Abend / ich / kaufe",
+        "ins Bett / um elf / ich / gehe",
+        "an / meine Eltern / ich / rufe / um acht",
+        "auf / wann / du / stehst"
+      ]
+    }
+  ],
+  "answers": [
+    "sieben Uhr — Viertel nach acht — halb zehn — Viertel vor elf — zwölf Uhr — halb sieben",
+    "auf — an — auf — an — fern — mit",
+    "Ich stehe um sechs auf. — Der Kurs fängt um neun an. — Am Abend kaufe ich ein. — Um elf gehe ich ins Bett. — Ich rufe um acht meine Eltern an. — Wann stehst du auf?"
+  ],
+  "wave": "Before starting Unit 9, go back to the dialogue in **Unit 1**. Cover the German, read the English translation, then try to rebuild the German sentences from memory."
+}

@@ -1,0 +1,492 @@
+{
+  "title": "Asking for directions",
+  "title_target": "Pardon, où est la gare ?",
+  "goal": "Ask for and give directions using the imperative, and get around on public transportation.",
+  "bekal": [
+    "forming commands from three verb forms",
+    "giving directions: turn, straight on, as far as",
+    "asking questions and understanding the answers on the street"
+  ],
+  "wave": "Review **Unit 15** first: name five things you like and five you don't, each at a different strength of liking.",
+  "dialogs": [
+    {
+      "title": "Dialogue — Perdu dans le centre-ville",
+      "intro": "Budi is lost looking for a museum. He asks a man on the sidewalk.",
+      "lines": [
+        {
+          "speaker": "Budi:",
+          "text": "Pardon, monsieur. Je cherche le musée des Beaux-Arts.",
+          "id": "Excuse me, sir. I'm looking for the Museum of Fine Arts.",
+          "literal": "pardon, sir. I search the museum of-the beautiful-arts."
+        },
+        {
+          "speaker": "Passant:",
+          "text": "Ah, ce n'est pas loin. Continuez tout droit.",
+          "id": "Oh, it's not far. Keep going straight.",
+          "literal": "ah, it not-is not far. continue all straight."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Tout droit jusqu'où ?",
+          "id": "Straight on as far as where?",
+          "literal": "all straight until-where?"
+        },
+        {
+          "speaker": "Passant:",
+          "text": "Jusqu'au feu rouge. Puis tournez à gauche.",
+          "id": "To the red light. Then turn left.",
+          "literal": "until-to-the light red. then turn at left."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "À gauche au feu. D'accord.",
+          "id": "Left at the light. OK.",
+          "literal": "at left at-the light. agreed."
+        },
+        {
+          "speaker": "Passant:",
+          "text": "Prenez la deuxième rue à droite, après la pharmacie.",
+          "id": "Take the second street on the right, after the pharmacy.",
+          "literal": "take the second street at right, after the pharmacy."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Et le musée est dans cette rue ?",
+          "id": "And the museum is on that street?",
+          "literal": "and the museum is in this street?"
+        },
+        {
+          "speaker": "Passant:",
+          "text": "Oui, au bout, sur la place. Vous ne pouvez pas le rater.",
+          "id": "Yes, at the end, on the square. You can't miss it.",
+          "literal": "yes, at-the end, on the square. you not can not it miss."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "C'est loin à pied ?",
+          "id": "Is it far on foot?",
+          "literal": "it-is far on foot?"
+        },
+        {
+          "speaker": "Passant:",
+          "text": "Dix minutes, pas plus. Sinon, prenez le tram, ligne deux.",
+          "id": "Ten minutes, no more. Otherwise, take the tram, line two.",
+          "literal": "ten minutes, not more. if-not, take the tram, line two."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Merci beaucoup, monsieur. Vous êtes très gentil.",
+          "id": "Thank you so much, sir. That's very kind of you.",
+          "literal": "thanks many, sir. you are very kind."
+        },
+        {
+          "speaker": "Passant:",
+          "text": "Je vous en prie. Bonne visite !",
+          "id": "You're welcome. Enjoy your visit!",
+          "literal": "I you of-it beg. good visit!"
+        }
+      ],
+      "notes": [
+        "**Commands are made by dropping the pronoun.** *Tu tournes* → *Tourne !*; *vous tournez* → *Tournez !*; *nous tournons* → *Tournons !* No new forms to memorize — just delete *tu*, *vous*, or *nous*, the way English \"you turn\" becomes \"Turn!\".",
+        "**⚠️ -er verbs drop the s in the tu form.** *Tu parles* → *Parle !*, *tu vas* → *Va !*. Only the -er group (and *aller*) does this; the others keep their s: *tu finis* → *Finis !*",
+        "**With strangers, always use the vous form.** *Tournez*, *prenez*, *continuez*. Using *tu* with someone you just met on the street sounds rude — and the imperative makes it feel twice as blunt.",
+        "**Pardon is how you start a conversation on the street.** Its cousin is *excusez-moi*. Always follow it with *monsieur* or *madame* — the French feel properly addressed, and the answer usually becomes longer and more helpful.",
+        "**Jusqu'au feu rouge** — *jusqu'à* merges with the article just like *à*: *jusqu'**au** feu*, *jusqu'**à la** gare*, *jusqu'**aux** feux*.",
+        "**La deuxième rue** — ordinal numbers are made by adding **-ième**: *deux → deuxième*, *trois → troisième*. The only exception is the first: *premier / première*.",
+        "**Vous ne pouvez pas le rater** = \"you can't miss it\". The standard line of direction-givers all over France — and, sadly, not always true."
+      ],
+      "grammars": [
+        {
+          "title": "The imperative",
+          "body": [
+            "Just three forms, all taken from the present tense you already know."
+          ],
+          "table": {
+            "head": [
+              "Verb",
+              "tu",
+              "vous",
+              "nous"
+            ],
+            "rows": [
+              [
+                "tourner (-er)",
+                "Tourne !",
+                "Tournez !",
+                "Tournons !"
+              ],
+              [
+                "prendre (-re)",
+                "Prends !",
+                "Prenez !",
+                "Prenons !"
+              ],
+              [
+                "finir (-ir)",
+                "Finis !",
+                "Finissez !",
+                "Finissons !"
+              ],
+              [
+                "aller",
+                "Va !",
+                "Allez !",
+                "Allons !"
+              ],
+              [
+                "être",
+                "Sois !",
+                "Soyez !",
+                "Soyons !"
+              ],
+              [
+                "avoir",
+                "Aie !",
+                "Ayez !",
+                "Ayons !"
+              ]
+            ]
+          },
+          "after": [
+            "The negative wraps around as usual: *Ne tourne pas !*, *N'ayez pas peur !*",
+            "*Être* and *avoir* have their own imperatives that must be memorized — but both are rare outside set phrases: *Sois sage !* (be good), *N'aie pas peur !* (don't be afraid), *Soyez le bienvenu !* (welcome).",
+            "Reflexive verbs put the pronoun **after** the verb with a hyphen: *Lève-**toi** !*, *Asseyez-**vous** !*, *Dépêche-**toi** !* But in the negative, it moves back in front: *Ne te lève pas !*"
+          ]
+        },
+        {
+          "title": "Direction words",
+          "body": [
+            "What French people actually say when giving directions."
+          ],
+          "table": {
+            "head": [
+              "Français",
+              "Pronunciation",
+              "English"
+            ],
+            "rows": [
+              [
+                "tout droit",
+                "too DRWAH",
+                "straight on"
+              ],
+              [
+                "à droite",
+                "ah DRWAHT",
+                "to the right"
+              ],
+              [
+                "à gauche",
+                "ah GOHSH",
+                "to the left"
+              ],
+              [
+                "tournez",
+                "toor-NAY",
+                "turn"
+              ],
+              [
+                "continuez",
+                "kohn-tee-nü-AY",
+                "keep going"
+              ],
+              [
+                "traversez",
+                "trah-vehr-SAY",
+                "cross"
+              ],
+              [
+                "prenez la rue…",
+                "pruh-NAY lah RÜ",
+                "take … street"
+              ],
+              [
+                "jusqu'à",
+                "zhüs-KAH",
+                "as far as, until"
+              ],
+              [
+                "au coin de",
+                "oh KWAN duh",
+                "at the corner of"
+              ],
+              [
+                "le feu rouge",
+                "luh fuh ROOZH",
+                "red light"
+              ],
+              [
+                "le carrefour",
+                "luh kahr-FOOR",
+                "intersection"
+              ],
+              [
+                "le rond-point",
+                "luh rohn-PWAN",
+                "traffic circle"
+              ]
+            ]
+          },
+          "after": [
+            "⚠️ *À droite* (to the right) and *tout droit* (straight on) differ by just one word and are easily confused. Mishearing at an intersection can send you to the wrong end of town.",
+            "Ordinal numbers: *premier/première, deuxième, troisième, quatrième, cinquième*. From *cinq* up, just add -ième, with small spelling adjustments (*neuf → neuvième*)."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Public transportation",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "Français",
+            "Pronunciation",
+            "English"
+          ],
+          "rows": [
+            [
+              "le métro",
+              "luh may-TROH",
+              "subway"
+            ],
+            [
+              "le bus",
+              "luh BÜS",
+              "bus"
+            ],
+            [
+              "le tram",
+              "luh TRAHM",
+              "tram"
+            ],
+            [
+              "le train",
+              "luh TRAN",
+              "train"
+            ],
+            [
+              "un billet",
+              "uhn bee-YEH",
+              "ticket (train, show)"
+            ],
+            [
+              "un ticket",
+              "uhn tee-KEH",
+              "ticket (bus, metro)"
+            ],
+            [
+              "une ligne",
+              "ün LEENY",
+              "line"
+            ],
+            [
+              "une station",
+              "ün stah-SYOHN",
+              "metro station"
+            ],
+            [
+              "un arrêt",
+              "uhn-nah-REH",
+              "stop"
+            ],
+            [
+              "une correspondance",
+              "ün koh-rehs-pohn-DAHNS",
+              "connection, transfer"
+            ],
+            [
+              "un aller simple",
+              "uhn-nah-lay SANPL",
+              "one-way ticket"
+            ],
+            [
+              "un aller-retour",
+              "uhn-nah-lay ruh-TOOR",
+              "round-trip ticket"
+            ],
+            [
+              "le quai",
+              "luh KEH",
+              "platform"
+            ],
+            [
+              "composter",
+              "kohn-pohs-TAY",
+              "to validate a ticket"
+            ]
+          ]
+        },
+        {
+          "type": "kotak",
+          "title": "Lifesaving phrases",
+          "items": [
+            "*Pardon, où est la gare, s'il vous plaît ?* — Excuse me, where is the station?",
+            "*Je cherche cette adresse.* — I'm looking for this address.",
+            "*Je suis perdu / perdue.* — I'm lost.",
+            "*C'est loin d'ici ?* — Is it far from here?",
+            "*Quel bus va au centre-ville ?* — Which bus goes downtown?",
+            "*Vous pouvez répéter plus lentement, s'il vous plaît ?* — Could you repeat that more slowly?",
+            "*Un aller-retour pour Paris, s'il vous plaît.* — A round-trip ticket to Paris, please."
+          ]
+        },
+        {
+          "type": "p",
+          "text": "The last phrase in that box — *plus lentement* — may be the most useful in the whole unit. French people speak fast, and asking them to slow down is perfectly normal."
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "fr": "pardon",
+      "baca": "pahr-DOHN",
+      "en": "excuse me, sorry"
+    },
+    {
+      "fr": "tout droit",
+      "baca": "too DRWAH",
+      "en": "straight on"
+    },
+    {
+      "fr": "à droite / à gauche",
+      "baca": "ah DRWAHT / ah GOHSH",
+      "en": "to the right / to the left"
+    },
+    {
+      "fr": "tourner",
+      "baca": "toor-NAY",
+      "en": "to turn"
+    },
+    {
+      "fr": "continuer",
+      "baca": "kohn-tee-nü-AY",
+      "en": "to continue"
+    },
+    {
+      "fr": "traverser",
+      "baca": "trah-vehr-SAY",
+      "en": "to cross"
+    },
+    {
+      "fr": "le feu rouge",
+      "baca": "luh fuh ROOZH",
+      "en": "red light"
+    },
+    {
+      "fr": "le carrefour",
+      "baca": "luh kahr-FOOR",
+      "en": "intersection"
+    },
+    {
+      "fr": "le coin",
+      "baca": "luh KWAN",
+      "en": "corner"
+    },
+    {
+      "fr": "le centre-ville",
+      "baca": "luh sahntr-VEEL",
+      "en": "downtown, city center"
+    },
+    {
+      "fr": "un musée",
+      "baca": "uhn mü-ZAY",
+      "en": "museum"
+    },
+    {
+      "fr": "perdu",
+      "baca": "pehr-DÜ",
+      "en": "lost"
+    },
+    {
+      "fr": "deuxième",
+      "baca": "duh-ZYEHM",
+      "en": "second"
+    },
+    {
+      "fr": "sinon",
+      "baca": "see-NOHN",
+      "en": "otherwise"
+    },
+    {
+      "fr": "un plan",
+      "baca": "uhn PLAHN",
+      "en": "map"
+    },
+    {
+      "fr": "lentement",
+      "baca": "lahnt-MAHN",
+      "en": "slowly"
+    },
+    {
+      "fr": "répéter",
+      "baca": "ray-pay-TAY",
+      "en": "to repeat"
+    },
+    {
+      "fr": "une visite",
+      "baca": "ün vee-ZEET",
+      "en": "visit"
+    },
+    {
+      "fr": "un passant",
+      "baca": "uhn pah-SAHN",
+      "en": "passerby"
+    },
+    {
+      "fr": "à pied",
+      "baca": "ah PYAY",
+      "en": "on foot"
+    }
+  ],
+  "exercises": [
+    {
+      "prompt": "Change into the vous imperative.",
+      "items": [
+        "Vous tournez à gauche.",
+        "Vous prenez la deuxième rue.",
+        "Vous continuez tout droit.",
+        "Vous traversez la place.",
+        "Vous allez jusqu'au feu."
+      ]
+    },
+    {
+      "prompt": "Change into the tu imperative.",
+      "items": [
+        "Tu parles plus lentement.",
+        "Tu finis ton travail.",
+        "Tu vas à la gare.",
+        "Tu attends ici.",
+        "Tu te lèves."
+      ]
+    },
+    {
+      "prompt": "Fill in the blanks with the right direction word.",
+      "items": [
+        "Continuez ____ droit.",
+        "Tournez ____ gauche au feu.",
+        "Allez ____ au carrefour.",
+        "Prenez la ____ rue à droite.",
+        "Le musée est ____ bout de la rue."
+      ]
+    },
+    {
+      "prompt": "Translate into French.",
+      "items": [
+        "Excuse me, where is the station?",
+        "Keep going straight to the red light.",
+        "Then turn left.",
+        "I'm lost.",
+        "Could you repeat that more slowly?"
+      ]
+    }
+  ],
+  "answers": [
+    "Tournez à gauche. — Prenez la deuxième rue. — Continuez tout droit. — Traversez la place. — Allez jusqu'au feu.",
+    "Parle plus lentement. — Finis ton travail. — Va à la gare. — Attends ici. — Lève-toi.",
+    "tout — à — jusqu' — deuxième — au",
+    "Pardon, où est la gare, s'il vous plaît ? — Continuez tout droit jusqu'au feu rouge. — Puis tournez à gauche. — Je suis perdu. — Vous pouvez répéter plus lentement, s'il vous plaît ?"
+  ]
+}

@@ -1,0 +1,571 @@
+{
+  "title": "Shopping",
+  "title_target": "Einkaufen im Supermarkt",
+  "goal": "Shop for groceries: name quantities, ask about prices, and point to the item you mean.",
+  "bekal": [
+    "name quantities (*ein Kilo*, *eine Flasche*, *ein Stück*)",
+    "ask about prices and whether something is in stock",
+    "use *welcher* and *dieser* to choose",
+    "name everyday groceries"
+  ],
+  "dialogs": [
+    {
+      "title": "Dialogue — An der Käsetheke",
+      "intro": "Saturday morning, and the supermarket is packed. Budi is shopping for the week and stops at the cheese counter — the only spot in a German supermarket still served by a human.",
+      "lines": [
+        {
+          "speaker": "Verkäuferin:",
+          "text": "Der Nächste, bitte! Was darf es sein?",
+          "id": "Next, please! What can I get you?",
+          "literal": "the next, please! what may it be?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Ich hätte gern zweihundert Gramm Käse.",
+          "id": "I'd like two hundred grams of cheese.",
+          "literal": "I would-have gladly two-hundred gram cheese."
+        },
+        {
+          "speaker": "Verkäuferin:",
+          "text": "Welchen Käse möchten Sie? Wir haben Gouda, Emmentaler und Bergkäse.",
+          "id": "Which cheese would you like? We have Gouda, Emmentaler and Bergkäse.",
+          "literal": "which cheese would-like you? we have Gouda, Emmentaler and mountain-cheese."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Diesen hier, bitte. Wie viel kostet er?",
+          "id": "This one here, please. How much is it?",
+          "literal": "this-one here, please. how much costs he?"
+        },
+        {
+          "speaker": "Verkäuferin:",
+          "text": "Zwei Euro neunzig pro hundert Gramm. Sonst noch etwas?",
+          "id": "Two euros ninety per hundred grams. Anything else?",
+          "literal": "two euro ninety per hundred gram. otherwise still something?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Ja, ein Kilo Tomaten und drei Bananen.",
+          "id": "Yes, a kilo of tomatoes and three bananas.",
+          "literal": "yes, one kilo tomatoes and three bananas."
+        },
+        {
+          "speaker": "Verkäuferin:",
+          "text": "Obst und Gemüse müssen Sie selbst wiegen. Dort hinten.",
+          "id": "You have to weigh fruit and vegetables yourself. Over there at the back.",
+          "literal": "fruit and vegetables must you yourself weigh. there at-the-back."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Ach so. Und haben Sie noch Milch?",
+          "id": "Oh, I see. And do you still have milk?",
+          "literal": "ah so. and have you still milk?"
+        },
+        {
+          "speaker": "Verkäuferin:",
+          "text": "Ja, hinten links. Eine Flasche oder eine Packung?",
+          "id": "Yes, at the back on the left. Bottle or carton?",
+          "literal": "yes, at-the-back left. a bottle or a pack?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Zwei Packungen, bitte. Das ist alles.",
+          "id": "Two cartons, please. That's everything.",
+          "literal": "two packs, please. that is all."
+        },
+        {
+          "speaker": "Verkäuferin:",
+          "text": "Gut. Dann macht das zusammen vierzehn Euro zwanzig.",
+          "id": "Fine. Then that comes to fourteen euros twenty.",
+          "literal": "good. then makes that together fourteen euro twenty."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Brauche ich eine Tüte?",
+          "id": "Do I need a bag?",
+          "literal": "need I a bag?"
+        },
+        {
+          "speaker": "Verkäuferin:",
+          "text": "Die kostet extra. Die meisten Leute bringen eine Tasche mit.",
+          "id": "Bags cost extra. Most people bring their own shopping bag.",
+          "literal": "that costs extra. the most people bring a carry-bag."
+        }
+      ],
+      "notes": [
+        "***Ich hätte gern…*** is the politest way to ask for something, and in shops it has nearly replaced *Ich möchte*. It's a conditional form, but just use it as a set phrase — the grammar comes apart in A2.",
+        "***Was darf es sein?*** literally \"what may it be?\", meaning \"what can I get you?\". It's the standard line at every bread, meat and cheese counter in Germany. All you need to answer is: *Ich hätte gern…*",
+        "**Units don't take a plural after a number.** *zwei **Kilo***, *drei **Stück***, *fünf **Euro***, *hundert **Gramm*** — no plural ending. What **does** go plural is the container: *zwei **Packungen***, *drei **Flaschen***. This seemingly tiny rule is clearly audible to German ears.",
+        "**Line 4: *Diesen hier*.** *Dieser* (\"this\") behaves exactly like *der*, including turning into *diesen* in the Akkusativ. Pointing at an item and saying *Diesen hier, bitte* is the safest way to shop while your vocabulary is still small.",
+        "**Line 4 also uses *er* for the cheese.** Because *der Käse* is masculine, the pronoun is *er*, not *es*. Where English says \"it\" for every object, German calls things *er* or *sie* according to their article — and it sounds perfectly natural once you're used to it.",
+        "***Obst und Gemüse*** almost always come as a pair, and both are **uncountable**: there's no *zwei Obst*. You buy *ein Kilo Obst* or name the kind: *drei Äpfel*, *zwei Bananen*."
+      ],
+      "grammars": [
+        {
+          "title": "Quantities and containers",
+          "body": [
+            "Grocery shopping is almost entirely number + unit + item, with no word in between: *ein Kilo Tomaten*, *eine Flasche Wasser*, *zweihundert Gramm Käse* — where English says \"a kilo **of** tomatoes\", German just leaves the \"of\" out."
+          ],
+          "table": {
+            "head": [
+              "Unit",
+              "Pronunciation",
+              "Meaning",
+              "Example"
+            ],
+            "rows": [
+              [
+                "das Gramm",
+                "grahm",
+                "gram",
+                "200 Gramm Käse"
+              ],
+              [
+                "das Kilo",
+                "KEE-loh",
+                "kilogram",
+                "ein Kilo Tomaten"
+              ],
+              [
+                "das Pfund",
+                "pfoont",
+                "half a kilo",
+                "ein Pfund Butter"
+              ],
+              [
+                "der Liter",
+                "LEE-tuh",
+                "liter",
+                "ein Liter Milch"
+              ],
+              [
+                "das Stück",
+                "shtük",
+                "piece, slice",
+                "drei Stück Kuchen"
+              ],
+              [
+                "die Flasche",
+                "FLAH-she",
+                "bottle",
+                "eine Flasche Wein"
+              ],
+              [
+                "die Packung",
+                "PAH-koong",
+                "pack, carton",
+                "zwei Packungen Milch"
+              ],
+              [
+                "die Dose",
+                "DOH-ze",
+                "can",
+                "eine Dose Tomaten"
+              ],
+              [
+                "das Glas",
+                "glahs",
+                "jar, glass",
+                "ein Glas Honig"
+              ],
+              [
+                "die Scheibe",
+                "SHEYE-be",
+                "slice",
+                "fünf Scheiben Schinken"
+              ]
+            ]
+          },
+          "after": [
+            "⚠️ In Germany *ein Pfund* means **500 grams**, not an English pound (454 grams). At markets and meat counters it's still used every day, even though it was officially replaced by the kilogram long ago.",
+            "Asking about prices comes in two forms you need to keep apart: ***Wie viel kostet** das?* for one item, and ***Wie viel kosten** die Tomaten?* for plural items. What changes is the verb, which follows the item — just like English \"how much **is** it\" vs. \"how much **are** they\"."
+          ]
+        },
+        {
+          "title": "welcher and dieser — choosing and pointing",
+          "body": [
+            "These two words behave exactly like *der/die/das*: their ending follows the gender and changes in the Akkusativ. If you already know *der → den*, you already know *dieser → diesen*."
+          ],
+          "table": {
+            "head": [
+              "",
+              "masculine",
+              "feminine",
+              "neuter",
+              "plural"
+            ],
+            "rows": [
+              [
+                "Nominativ",
+                "welch**er** / dies**er**",
+                "welch**e** / dies**e**",
+                "welch**es** / dies**es**",
+                "welch**e** / dies**e**"
+              ],
+              [
+                "Akkusativ",
+                "welch**en** / dies**en**",
+                "welch**e** / dies**e**",
+                "welch**es** / dies**es**",
+                "welch**e** / dies**e**"
+              ],
+              [
+                "Example",
+                "Welchen Käse?",
+                "Welche Milch?",
+                "Welches Brot?",
+                "Welche Äpfel?"
+              ]
+            ]
+          },
+          "after": [
+            "Notice that the endings match the last letter of *der*, *die*, *das* exactly: **-er**, **-e**, **-es**. Once you see that pattern, the whole table above stops feeling like something new to memorize.",
+            "In everyday conversation people usually shorten it: *Welchen?* (\"which one?\") and *Diesen hier* (\"this one\") without repeating the noun at all. Those two words, plus your index finger, are enough to buy anything."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "In the shopping basket",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "German",
+            "Pronunciation",
+            "English",
+            "German",
+            "English"
+          ],
+          "rows": [
+            [
+              "das Brot",
+              "broht",
+              "bread",
+              "der Apfel",
+              "apple"
+            ],
+            [
+              "die Butter",
+              "BOO-tuh",
+              "butter",
+              "die Banane",
+              "banana"
+            ],
+            [
+              "der Käse",
+              "KAY-ze",
+              "cheese",
+              "die Orange",
+              "orange"
+            ],
+            [
+              "das Ei / die Eier",
+              "eye / EYE-uh",
+              "egg / eggs",
+              "die Tomate",
+              "tomato"
+            ],
+            [
+              "die Milch",
+              "milkh",
+              "milk",
+              "die Kartoffel",
+              "potato"
+            ],
+            [
+              "das Fleisch",
+              "fleyesh",
+              "meat",
+              "die Zwiebel",
+              "onion"
+            ],
+            [
+              "das Hähnchen",
+              "HAYN-khen",
+              "chicken",
+              "die Karotte",
+              "carrot"
+            ],
+            [
+              "der Fisch",
+              "fish",
+              "fish",
+              "der Salat",
+              "lettuce, salad"
+            ],
+            [
+              "der Reis",
+              "reyes",
+              "rice",
+              "das Gemüse",
+              "vegetables"
+            ],
+            [
+              "die Nudeln",
+              "NOO-deln",
+              "noodles, pasta",
+              "das Obst",
+              "fruit"
+            ]
+          ]
+        },
+        {
+          "type": "sub",
+          "text": "Shopping phrases"
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "German",
+            "English"
+          ],
+          "rows": [
+            [
+              "Ich hätte gern ein Kilo Tomaten.",
+              "I'd like a kilo of tomatoes."
+            ],
+            [
+              "Haben Sie Milch?",
+              "Do you have milk?"
+            ],
+            [
+              "Wo finde ich Reis?",
+              "Where can I find rice?"
+            ],
+            [
+              "Wie viel kostet das?",
+              "How much is that?"
+            ],
+            [
+              "Was kosten die Äpfel?",
+              "How much are the apples?"
+            ],
+            [
+              "Das ist alles, danke.",
+              "That's all, thank you."
+            ],
+            [
+              "Sonst noch etwas?",
+              "Anything else?"
+            ],
+            [
+              "Nein, danke. Das war's.",
+              "No, thanks. That's it."
+            ],
+            [
+              "Kann ich mit Karte zahlen?",
+              "Can I pay by card?"
+            ],
+            [
+              "Brauchen Sie eine Tüte?",
+              "Do you need a bag?"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "At the checkout you'll also often hear ***Haben Sie es passend?*** — \"do you have the exact change?\". Answering *Nein, tut mir leid* is perfectly fine; the question is only about giving change."
+        }
+      ]
+    },
+    {
+      "title": "Where Germans shop",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "The name of a shop also tells you what it sells, and almost all of them are built the same way: product + *-ei*, or + *Laden/Geschäft*."
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "German",
+            "English",
+            "Good to know"
+          ],
+          "rows": [
+            [
+              "der Supermarkt",
+              "supermarket",
+              "closed on Sundays, like all shops"
+            ],
+            [
+              "bakery",
+              "toko roti",
+              "opens at dawn, often on Sunday mornings too"
+            ],
+            [
+              "die Metzgerei",
+              "butcher's",
+              "also sells ready-to-eat food"
+            ],
+            [
+              "die Apotheke",
+              "pharmacy",
+              "medicine, including over-the-counter"
+            ],
+            [
+              "die Drogerie",
+              "drugstore",
+              "soap, cosmetics — not medicine"
+            ],
+            [
+              "der Wochenmarkt",
+              "weekly market",
+              "once or twice a week on the town square"
+            ],
+            [
+              "der Kiosk / der Späti",
+              "corner shop",
+              "open late, a lifesaver on Saturday night"
+            ]
+          ]
+        },
+        {
+          "type": "kotak",
+          "title": "Three things that surprise newcomers",
+          "items": [
+            "**Bottles carry a deposit (*Pfand*).** You pay 8–25 cents extra per bottle and get it back when you return it to the machine at the supermarket. Don't throw your bottles away — they're money.",
+            "**German cashiers are very fast.** Items fly down the belt and you're expected to bag them at the same speed. Many people pack first and pay afterwards.",
+            "**Sunday really is closed.** Except for some bakeries, train stations and the Späti. Doing your weekly shopping on Saturday isn't a tip, it's a plan."
+          ]
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "de": "einkaufen",
+      "baca": "EYEN-kow-fen",
+      "en": "go shopping"
+    },
+    {
+      "de": "der Supermarkt",
+      "baca": "ZOO-puh-mahrkt",
+      "en": "supermarket"
+    },
+    {
+      "de": "die Bäckerei",
+      "baca": "beh-ke-REYE",
+      "en": "bakery"
+    },
+    {
+      "de": "kosten",
+      "baca": "KOHS-ten",
+      "en": "cost"
+    },
+    {
+      "de": "brauchen",
+      "baca": "BROW-khen",
+      "en": "need"
+    },
+    {
+      "de": "finden",
+      "baca": "FIN-den",
+      "en": "find"
+    },
+    {
+      "de": "wiegen",
+      "baca": "VEE-gen",
+      "en": "weigh"
+    },
+    {
+      "de": "das Kilo",
+      "baca": "KEE-loh",
+      "en": "kilogram"
+    },
+    {
+      "de": "das Gramm",
+      "baca": "grahm",
+      "en": "gram"
+    },
+    {
+      "de": "der Liter",
+      "baca": "LEE-tuh",
+      "en": "liter"
+    },
+    {
+      "de": "das Stück",
+      "baca": "shtük",
+      "en": "piece, slice"
+    },
+    {
+      "de": "die Flasche",
+      "baca": "FLAH-she",
+      "en": "bottle"
+    },
+    {
+      "de": "die Packung",
+      "baca": "PAH-koong",
+      "en": "pack, carton"
+    },
+    {
+      "de": "die Tüte",
+      "baca": "TÜ-te",
+      "en": "bag"
+    },
+    {
+      "de": "das Obst",
+      "baca": "ohpst",
+      "en": "fruit"
+    },
+    {
+      "de": "das Gemüse",
+      "baca": "ge-MÜ-ze",
+      "en": "vegetables"
+    },
+    {
+      "de": "der Käse",
+      "baca": "KAY-ze",
+      "en": "cheese"
+    },
+    {
+      "de": "das Fleisch",
+      "baca": "fleyesh",
+      "en": "meat"
+    }
+  ],
+  "exercises": [
+    {
+      "prompt": "Translate into English.",
+      "items": [
+        "Ich hätte gern zweihundert Gramm Käse.",
+        "Welchen Käse möchten Sie?",
+        "Wie viel kostet das?",
+        "Ein Kilo Tomaten und drei Bananen, bitte.",
+        "Sonst noch etwas?",
+        "Das ist alles, danke."
+      ]
+    },
+    {
+      "prompt": "Fill in the right unit.",
+      "items": [
+        "Ich möchte ein ____ Tomaten. (1 kg)",
+        "Bitte zweihundert ____ Käse.",
+        "Wir brauchen einen ____ Milch.",
+        "Ich nehme zwei ____ Wasser. (bottles)",
+        "Drei ____ Kuchen, bitte. (pieces)",
+        "Zwei ____ Milch, bitte. (cartons)"
+      ]
+    },
+    {
+      "prompt": "Put the words in the right order.",
+      "items": [
+        "Käse / ich / gern / hätte / zweihundert Gramm",
+        "kostet / wie viel / das",
+        "möchten / welchen / Sie / Käse",
+        "eine Tüte / ich / brauche",
+        "Tomaten / ein Kilo / bitte / und / drei Bananen",
+        "alles / das / ist"
+      ]
+    }
+  ],
+  "answers": [
+    "I'd like two hundred grams of cheese. — Which cheese would you like? — How much is that? — A kilo of tomatoes and three bananas, please. — Anything else? — That's all, thank you.",
+    "Kilo — Gramm — Liter — Flaschen — Stück — Packungen",
+    "Ich hätte gern zweihundert Gramm Käse. — Wie viel kostet das? — Welchen Käse möchten Sie? — Ich brauche eine Tüte. — Ein Kilo Tomaten und drei Bananen, bitte. — Das ist alles."
+  ],
+  "wave": "Before you start unit 13, go back to the dialogue in **Unit 5**. Say all the numbers out loud — especially the ones above twenty."
+}

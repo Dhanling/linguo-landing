@@ -1,0 +1,595 @@
+{
+  "title": "What do you do?",
+  "title_target": "Was machst du beruflich?",
+  "goal": "Talk about your job and workplace — while installing a group of verbs whose vowel quietly changes in the *du* and *er/sie* forms.",
+  "bekal": [
+    "say what you do (*Ich bin Lehrer*, *Ich arbeite als…*)",
+    "use vowel-changing verbs (*du sprichst*, *er fährt*)",
+    "name your workplace with *bei* and *in*",
+    "use *man* to talk about people in general"
+  ],
+  "dialogs": [
+    {
+      "title": "Dialogue — In der Kantine",
+      "intro": "Lunch in the school cafeteria. Marek, who came from Poland two years ago, talks about his job — and about his family, who work all over the place.",
+      "lines": [
+        {
+          "speaker": "Budi:",
+          "text": "Marek, was machst du beruflich?",
+          "id": "Marek, what do you do for a living?",
+          "literal": "Marek, what make you professionally?"
+        },
+        {
+          "speaker": "Marek:",
+          "text": "Ich arbeite als Koch. Ich arbeite in einem Restaurant in Mitte.",
+          "id": "I work as a cook. I work in a restaurant in Mitte.",
+          "literal": "I work as cook. I work in a restaurant in Mitte."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Interessant! Und deine Frau? Arbeitet sie auch?",
+          "id": "Interesting! And your wife? Does she work too?",
+          "literal": "interesting! and your wife? works she also?"
+        },
+        {
+          "speaker": "Marek:",
+          "text": "Ja, sie ist Ärztin. Sie arbeitet bei der Charité.",
+          "id": "Yes, she's a doctor. She works at the Charité hospital.",
+          "literal": "yes, she is doctor-female. she works at the Charité."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Sie spricht sicher sehr gut Deutsch.",
+          "id": "Her German must be very good.",
+          "literal": "she speaks surely very well German."
+        },
+        {
+          "speaker": "Marek:",
+          "text": "Sie spricht besser als ich. Sie liest jeden Abend deutsche Bücher.",
+          "id": "She speaks it better than I do. She reads German books every evening.",
+          "literal": "she speaks better than I. she reads every evening German books."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Und dein Bruder? Was macht er?",
+          "id": "And your brother? What does he do?",
+          "literal": "and your brother? what makes he?"
+        },
+        {
+          "speaker": "Marek:",
+          "text": "Er fährt Taxi in Warschau. Er fährt jeden Tag zehn Stunden.",
+          "id": "He drives a taxi in Warsaw. He drives ten hours every day.",
+          "literal": "he drives taxi in Warsaw. he drives every day ten hours."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Zehn Stunden! Das ist viel.",
+          "id": "Ten hours! That's a lot.",
+          "literal": "ten hours! that is much."
+        },
+        {
+          "speaker": "Marek:",
+          "text": "Ja. Er schläft wenig und isst schlecht. Aber er verdient gut.",
+          "id": "Yes. He sleeps little and eats badly. But he earns well.",
+          "literal": "yes. he sleeps little and eats badly. but he earns well."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "In Deutschland arbeitet man auch viel, oder?",
+          "id": "People work a lot in Germany too, right?",
+          "literal": "in Germany works one also much, or?"
+        },
+        {
+          "speaker": "Marek:",
+          "text": "Nein, hier macht man Feierabend. Um fünf ist Schluss.",
+          "id": "No, here people stop on time. At five it's over.",
+          "literal": "no, here makes one end-of-work. at five is close."
+        }
+      ],
+      "notes": [
+        "***Ich bin Lehrer* or *Ich arbeite als Lehrer*** — both are correct. The first states an identity, the second the role you're currently doing. If you work outside your field, *als* fits better: *Ich bin Ingenieur, aber ich arbeite als Kellner*.",
+        "***bei* for companies/people, *in* for buildings/places.** *Ich arbeite **bei** Siemens*, *Ich arbeite **bei** der Charité*, but *Ich arbeite **in** einem Restaurant*, *Ich arbeite **im** Büro*. If it's a company name, it's almost always *bei*.",
+        "**Lines 6 and 8: *spricht*, *liest*, *fährt*.** The vowel in the middle of the word changes, but only for *du* and *er/sie/es*. *Ich spreche* but *er spricht*; *ich fahre* but *er fährt*. The grammar box below takes the group apart.",
+        "***man*** means \"people in general\", like English *one* or *you* in \"you never know\". It always takes the *er/sie/es* form of the verb: *man arbeitet*, *man sagt*, *man macht*. ⚠️ Don't confuse it with *der Mann* (man), which sounds almost the same — the only difference is one n and a capital letter.",
+        "***besser als*** = \"better than\". Here *als* means \"than\", unlike the *als* in line 2, which means \"as\". German uses one word for two jobs; its position in the sentence tells them apart.",
+        "***Feierabend*** has no real English equivalent: the moment work ends and the part of the day that's yours begins. *Feierabend machen* = to knock off for the day. This word explains a lot about German work culture, including why offices really are empty at five."
+      ],
+      "grammars": [
+        {
+          "title": "Verbs whose vowel changes",
+          "body": [
+            "About fifty German verbs change the vowel of their stem — and only in two forms: **du** and **er/sie/es**. The other forms behave as usual. There are three patterns, and every changing verb falls into one of them."
+          ],
+          "table": {
+            "head": [
+              "Pattern",
+              "Infinitiv",
+              "ich",
+              "du",
+              "er / sie / es",
+              "English"
+            ],
+            "rows": [
+              [
+                "**e → i**",
+                "sprechen",
+                "spreche",
+                "spr**i**chst",
+                "spr**i**cht",
+                "to speak"
+              ],
+              [
+                "",
+                "essen",
+                "esse",
+                "**isst**",
+                "**isst**",
+                "to eat"
+              ],
+              [
+                "",
+                "helfen",
+                "helfe",
+                "h**i**lfst",
+                "h**i**lft",
+                "to help"
+              ],
+              [
+                "",
+                "nehmen",
+                "nehme",
+                "n**imm**st",
+                "n**imm**t",
+                "to take"
+              ],
+              [
+                "**e → ie**",
+                "lesen",
+                "lese",
+                "l**ie**st",
+                "l**ie**st",
+                "to read"
+              ],
+              [
+                "",
+                "sehen",
+                "sehe",
+                "s**ie**hst",
+                "s**ie**ht",
+                "to see"
+              ],
+              [
+                "**a → ä**",
+                "fahren",
+                "fahre",
+                "f**ä**hrst",
+                "f**ä**hrt",
+                "to drive, to ride"
+              ],
+              [
+                "",
+                "schlafen",
+                "schlafe",
+                "schl**ä**fst",
+                "schl**ä**ft",
+                "to sleep"
+              ],
+              [
+                "",
+                "tragen",
+                "trage",
+                "tr**ä**gst",
+                "tr**ä**gt",
+                "to carry, to wear"
+              ],
+              [
+                "",
+                "waschen",
+                "wasche",
+                "w**ä**schst",
+                "w**ä**scht",
+                "to wash"
+              ]
+            ]
+          },
+          "after": [
+            "Notice that **the endings stay normal** — *-st* for *du*, *-t* for *er*. Only the vowel changes. So you're not learning new verbs, just an alternative spelling for two forms.",
+            "⚠️ *essen* and *lesen* produce **exactly the same** *du* and *er* forms (*du isst / er isst*, *du liest / er liest*), because the stem already ends in s. Only the pronoun tells them apart.",
+            "Dictionaries mark this group by listing the *er* form: *sprechen (spricht)*. If that mark is missing, the verb is regular."
+          ]
+        },
+        {
+          "title": "Talking about work",
+          "body": [
+            "The four sentence patterns below cover almost everything you need to say about work at A1 level."
+          ],
+          "table": {
+            "head": [
+              "Pattern",
+              "Example",
+              "English"
+            ],
+            "rows": [
+              [
+                "**sein** + job (no article)",
+                "Ich bin Lehrer.",
+                "I'm a teacher."
+              ],
+              [
+                "**arbeiten als** + job",
+                "Ich arbeite als Kellner.",
+                "I work as a waiter."
+              ],
+              [
+                "**arbeiten bei** + company",
+                "Ich arbeite bei Siemens.",
+                "I work at Siemens."
+              ],
+              [
+                "**arbeiten in** + place",
+                "Ich arbeite in einer Schule.",
+                "I work in a school."
+              ],
+              [
+                "the question",
+                "Was machst du beruflich?",
+                "What do you do?"
+              ],
+              [
+                "the formal question",
+                "Was sind Sie von Beruf?",
+                "What is your occupation?"
+              ]
+            ]
+          },
+          "after": [
+            "For situations that aren't paid work, use these words: *Ich bin **arbeitslos*** (unemployed), *Ich bin **Rentner*** (retired), *Ich bin **Hausfrau/Hausmann*** (I keep house), *Ich bin noch **Schüler*** (I'm still at school).",
+            "⚠️ *Student* is only for university students. A schoolchild is a *Schüler / Schülerin*. Calling a high-school kid a *Student* sounds wrong to German ears."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "The most common jobs",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "Male",
+            "Female",
+            "Pronunciation",
+            "English"
+          ],
+          "rows": [
+            [
+              "der Lehrer",
+              "die Lehrerin",
+              "LAY-ruh",
+              "teacher"
+            ],
+            [
+              "der Arzt",
+              "die Ärztin",
+              "ahrtst",
+              "doctor"
+            ],
+            [
+              "der Krankenpfleger",
+              "die Krankenschwester",
+              "KRAHN-ken-pflay-guh",
+              "nurse"
+            ],
+            [
+              "der Ingenieur",
+              "die Ingenieurin",
+              "in-zhe-NYÖR",
+              "engineer"
+            ],
+            [
+              "der Koch",
+              "die Köchin",
+              "kokh",
+              "cook, chef"
+            ],
+            [
+              "der Kellner",
+              "die Kellnerin",
+              "KEL-nuh",
+              "waiter"
+            ],
+            [
+              "der Verkäufer",
+              "die Verkäuferin",
+              "fair-KOY-fuh",
+              "salesperson"
+            ],
+            [
+              "der Fahrer",
+              "die Fahrerin",
+              "FAH-ruh",
+              "driver"
+            ],
+            [
+              "der Programmierer",
+              "die Programmiererin",
+              "proh-grah-MEE-ruh",
+              "programmer"
+            ],
+            [
+              "der Student",
+              "die Studentin",
+              "shtoo-DENT",
+              "university student"
+            ]
+          ]
+        },
+        {
+          "type": "sub",
+          "text": "Workplaces"
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "German",
+            "English",
+            "Example sentence"
+          ],
+          "rows": [
+            [
+              "das Büro",
+              "office",
+              "Ich arbeite im Büro."
+            ],
+            [
+              "die Schule",
+              "school",
+              "Sie arbeitet in einer Schule."
+            ],
+            [
+              "das Krankenhaus",
+              "hospital",
+              "Er arbeitet im Krankenhaus."
+            ],
+            [
+              "das Restaurant",
+              "restaurant",
+              "Wir arbeiten in einem Restaurant."
+            ],
+            [
+              "die Firma",
+              "company",
+              "Meine Firma ist klein."
+            ],
+            [
+              "die Fabrik",
+              "factory",
+              "Mein Vater arbeitet in einer Fabrik."
+            ],
+            [
+              "der Laden",
+              "shop",
+              "Sie arbeitet in einem Laden."
+            ],
+            [
+              "zu Hause",
+              "at home",
+              "Ich arbeite oft zu Hause."
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "title": "How often, how much",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "These words turn up in almost every sentence about work and routine, and their position is fairly free — usually right after the verb."
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "German",
+            "Pronunciation",
+            "English"
+          ],
+          "rows": [
+            [
+              "immer",
+              "IM-muh",
+              "always"
+            ],
+            [
+              "oft",
+              "oft",
+              "often"
+            ],
+            [
+              "manchmal",
+              "MAHNKH-mahl",
+              "sometimes"
+            ],
+            [
+              "selten",
+              "ZEL-ten",
+              "rarely"
+            ],
+            [
+              "nie",
+              "nee",
+              "never"
+            ],
+            [
+              "jeden Tag",
+              "YAY-den TAHK",
+              "every day"
+            ],
+            [
+              "viel",
+              "feel",
+              "a lot, much"
+            ],
+            [
+              "wenig",
+              "VAY-nikh",
+              "little"
+            ],
+            [
+              "gut / schlecht",
+              "goot / shlekht",
+              "good, well / bad, badly"
+            ]
+          ]
+        },
+        {
+          "type": "kotak",
+          "title": "Four sentences about yourself",
+          "items": [
+            "*Ich bin …* — say your job, without *ein*.",
+            "*Ich arbeite bei / in …* — say where.",
+            "*Ich arbeite jeden Tag … Stunden.* — say how many hours.",
+            "*Meine Arbeit ist interessant / schwer / gut.* — say what you think of it."
+          ]
+        },
+        {
+          "type": "p",
+          "text": "Those four sentences are a complete answer to *Was machst du beruflich?* Practice until they come out without a pause, because it's the second question every new German acquaintance will ask you — right after *Woher kommst du?*"
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "de": "der Beruf",
+      "baca": "be-ROOF",
+      "en": "occupation, job"
+    },
+    {
+      "de": "beruflich",
+      "baca": "be-ROOF-likh",
+      "en": "professionally, for work"
+    },
+    {
+      "de": "arbeiten",
+      "baca": "AHR-beye-ten",
+      "en": "to work"
+    },
+    {
+      "de": "die Arbeit",
+      "baca": "AHR-beyet",
+      "en": "work, job"
+    },
+    {
+      "de": "als",
+      "baca": "ahls",
+      "en": "as; than"
+    },
+    {
+      "de": "bei",
+      "baca": "beye",
+      "en": "at (a company), with"
+    },
+    {
+      "de": "die Firma",
+      "baca": "FEER-mah",
+      "en": "company"
+    },
+    {
+      "de": "das Büro",
+      "baca": "bü-ROH",
+      "en": "office"
+    },
+    {
+      "de": "das Krankenhaus",
+      "baca": "KRAHN-ken-hows",
+      "en": "hospital"
+    },
+    {
+      "de": "der Arzt / die Ärztin",
+      "baca": "ahrtst / AYRTS-tin",
+      "en": "doctor"
+    },
+    {
+      "de": "der Koch / die Köchin",
+      "baca": "kokh / KÖ-khin",
+      "en": "cook, chef"
+    },
+    {
+      "de": "sprechen",
+      "baca": "SHPREH-khen",
+      "en": "to speak"
+    },
+    {
+      "de": "lesen",
+      "baca": "LAY-zen",
+      "en": "to read"
+    },
+    {
+      "de": "sehen",
+      "baca": "ZAY-en",
+      "en": "to see"
+    },
+    {
+      "de": "essen",
+      "baca": "ES-sen",
+      "en": "to eat"
+    },
+    {
+      "de": "fahren",
+      "baca": "FAH-ren",
+      "en": "to drive, to ride"
+    },
+    {
+      "de": "schlafen",
+      "baca": "SHLAH-fen",
+      "en": "to sleep"
+    },
+    {
+      "de": "helfen",
+      "baca": "HEL-fen",
+      "en": "to help"
+    }
+  ],
+  "exercises": [
+    {
+      "prompt": "Translate into English.",
+      "items": [
+        "Was machst du beruflich?",
+        "Ich arbeite als Koch.",
+        "Sie ist Ärztin und arbeitet im Krankenhaus.",
+        "Er fährt jeden Tag zehn Stunden.",
+        "Sie liest jeden Abend deutsche Bücher.",
+        "In Deutschland arbeitet man viel."
+      ]
+    },
+    {
+      "prompt": "Fill in the correct verb form.",
+      "items": [
+        "Er ____ sehr gut Deutsch. (sprechen)",
+        "Du ____ jeden Abend ein Buch. (lesen)",
+        "Sie ____ jeden Tag Taxi. (fahren)",
+        "Was ____ du zum Frühstück? (essen)",
+        "Er ____ nur fünf Stunden. (schlafen)",
+        "Du ____ mir sehr. (helfen)"
+      ]
+    },
+    {
+      "prompt": "Put the words in the right order.",
+      "items": [
+        "als / ich / arbeite / Koch",
+        "im Krankenhaus / sie / arbeitet",
+        "du / machst / beruflich / was",
+        "Taxi / fährt / er / in Warschau",
+        "sehr gut / spricht / Deutsch / meine Frau",
+        "viel / man / in Deutschland / arbeitet"
+      ]
+    }
+  ],
+  "answers": [
+    "What do you do for a living? — I work as a cook. — She's a doctor and works in a hospital. — He drives ten hours every day. — She reads German books every evening. — People work a lot in Germany.",
+    "spricht — liest — fährt — isst — schläft — hilfst",
+    "Ich arbeite als Koch. — Sie arbeitet im Krankenhaus. — Was machst du beruflich? — Er fährt Taxi in Warschau. — Meine Frau spricht sehr gut Deutsch. — In Deutschland arbeitet man viel."
+  ]
+}

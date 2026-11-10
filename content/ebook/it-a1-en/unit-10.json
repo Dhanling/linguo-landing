@@ -1,0 +1,543 @@
+{
+  "title": "Is there a pharmacy near here?",
+  "title_target": "C'è una farmacia qui vicino?",
+  "goal": "Say that something exists with *c'è* and *ci sono*, name places around town, and master prepositions merged with articles.",
+  "bekal": [
+    "ask whether something is nearby",
+    "say where things are with *sopra*, *sotto*, *dentro*, *accanto a*",
+    "merge *a*, *di*, *da*, *in*, *su* with their articles"
+  ],
+  "dialogs": [
+    {
+      "title": "Dialogo — In cerca di una farmacia",
+      "intro": "Budi isn't feeling well and is looking for a pharmacy. Watch the merged words like *nella*, *del*, *sulla* — they're the heart of this unit.",
+      "lines": [
+        {
+          "speaker": "Budi:",
+          "text": "Scusi, c'è una farmacia qui vicino?",
+          "id": "Excuse me, is there a pharmacy near here?",
+          "literal": "excuse-me, there-is a pharmacy here near?"
+        },
+        {
+          "speaker": "Signora:",
+          "text": "Sì, ce n'è una nella piazza, davanti alla banca.",
+          "id": "Yes, there's one in the square, in front of the bank.",
+          "literal": "yes, there of-it-is one in-the square, in-front to-the bank."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "È lontana?",
+          "id": "Is it far?",
+          "literal": "is far?"
+        },
+        {
+          "speaker": "Signora:",
+          "text": "No, cinque minuti a piedi. Vada dritto fino al semaforo.",
+          "id": "No, five minutes on foot. Go straight on to the traffic lights.",
+          "literal": "no, five minutes on feet. go(formal) straight until to-the traffic-light."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "E poi?",
+          "id": "And then?",
+          "literal": "and then?"
+        },
+        {
+          "speaker": "Signora:",
+          "text": "Poi a destra. La farmacia è accanto al supermercato.",
+          "id": "Then right. The pharmacy is next to the supermarket.",
+          "literal": "then to right. the pharmacy is beside to-the supermarket."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Ci sono anche altre farmacie in centro?",
+          "id": "Are there other pharmacies downtown too?",
+          "literal": "there are also other pharmacies in center?"
+        },
+        {
+          "speaker": "Signora:",
+          "text": "Ce ne sono tre, ma la domenica sono chiuse quasi tutte.",
+          "id": "There are three, but on Sundays almost all of them are closed.",
+          "literal": "there of-them are three, but the Sunday are closed almost all."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "E se è chiusa? Non c'è niente di aperto?",
+          "id": "And if it's closed? Is there nothing open?",
+          "literal": "and if is closed? not there-is nothing of open?"
+        },
+        {
+          "speaker": "Signora:",
+          "text": "C'è sempre una farmacia di turno. L'elenco è sulla porta.",
+          "id": "There's always a pharmacy on duty. The list is on the door.",
+          "literal": "there-is always a pharmacy of turn. the list is on-the door."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Che gentile, grazie mille!",
+          "id": "That's so kind, thanks a lot!",
+          "literal": "what kind, thanks thousand!"
+        },
+        {
+          "speaker": "Signora:",
+          "text": "Si figuri. Guarisca presto!",
+          "id": "Not at all. Get well soon!",
+          "literal": "yourself imagine(formal). heal(formal) soon!"
+        }
+      ],
+      "notes": [
+        "**C'è and ci sono are one pair, just like English \"there is\" and \"there are\".** *C'è* for one thing, *ci sono* for several. *C'è una farmacia*, *ci sono tre farmacie*. What decides is the thing that follows, not the speaker.",
+        "**Don't confuse it with è.** *È una farmacia* means \"it's a pharmacy\". *C'è una farmacia* means \"there's a pharmacy\". Dropping the *ci* changes the meaning completely.",
+        "**Ce n'è and ce ne sono.** When the thing has already been mentioned, it's replaced by *ne* (\"of it/of them\"): *Ce n'è una* (there's one), *ce ne sono tre* (there are three). It sounds complicated but it's used all the time — learn those two sentences whole first.",
+        "**Merged prepositions.** *A + la* becomes *alla*, *in + la* becomes *nella*, *su + la* becomes *sulla*. This isn't a stylistic choice but a requirement: writing *a la banca* is wrong.",
+        "**Vada and guarisca are formal commands.** With strangers, commands use a special form that's unpacked in Unit 16. For now, just recognize what they mean.",
+        "**Si figuri** = \"don't mention it\", a polite reply to thanks. The informal form is *figurati*. It belongs with *prego* and *di niente*.",
+        "**Farmacia di turno.** Italian pharmacies take turns opening outside business hours and on holidays, and the rota is posted on the door of every pharmacy. Practical knowledge that can save a Saturday night.",
+        "**Quasi tutte** = almost all. *Tutto* agrees in gender and number: *tutto il giorno*, *tutta la notte*, *tutti i giorni*, *tutte le farmacie*."
+      ],
+      "grammars": [
+        {
+          "title": "Prepositions merged with articles",
+          "body": [
+            "Five prepositions must merge. Learn this table once and use it for life."
+          ],
+          "table": {
+            "head": [
+              "",
+              "il",
+              "lo",
+              "la",
+              "l'",
+              "i",
+              "gli",
+              "le"
+            ],
+            "rows": [
+              [
+                "**a** (to, at)",
+                "al",
+                "allo",
+                "alla",
+                "all'",
+                "ai",
+                "agli",
+                "alle"
+              ],
+              [
+                "**di** (of, from)",
+                "del",
+                "dello",
+                "della",
+                "dell'",
+                "dei",
+                "degli",
+                "delle"
+              ],
+              [
+                "**da** (from, at someone's)",
+                "dal",
+                "dallo",
+                "dalla",
+                "dall'",
+                "dai",
+                "dagli",
+                "dalle"
+              ],
+              [
+                "**in** (in)",
+                "nel",
+                "nello",
+                "nella",
+                "nell'",
+                "nei",
+                "negli",
+                "nelle"
+              ],
+              [
+                "**su** (on)",
+                "sul",
+                "sullo",
+                "sulla",
+                "sull'",
+                "sui",
+                "sugli",
+                "sulle"
+              ]
+            ]
+          },
+          "after": [
+            "The pattern is very regular: take the preposition, attach the article, drop the letters that collide. *Di + il* → *del*, *in + il* → *nel*, *su + il* → *sul*.",
+            "*Con* (with) and *per* (for) do **not** merge in modern Italian: *con il treno*, *per il fine settimana*. The form *col* is still heard but feels old-fashioned.",
+            "⚠️ Merging is only required when there actually is an article. *Vado a Roma* stays *a Roma* because city names don't take an article; but *vado al mercato* must merge."
+          ]
+        },
+        {
+          "title": "Saying where things are",
+          "body": [
+            "Some location words are followed by *a* or *di*, and that word merges too."
+          ],
+          "table": {
+            "head": [
+              "Italiano",
+              "English",
+              "Example"
+            ],
+            "rows": [
+              [
+                "sopra",
+                "on, above",
+                "sopra il tavolo"
+              ],
+              [
+                "sotto",
+                "under",
+                "sotto la sedia"
+              ],
+              [
+                "dentro",
+                "inside",
+                "dentro la borsa"
+              ],
+              [
+                "fuori",
+                "outside",
+                "fuori casa"
+              ],
+              [
+                "davanti **a**",
+                "in front of",
+                "davanti alla banca"
+              ],
+              [
+                "dietro",
+                "behind",
+                "dietro la chiesa"
+              ],
+              [
+                "accanto **a**",
+                "next to",
+                "accanto al bar"
+              ],
+              [
+                "vicino **a**",
+                "near",
+                "vicino alla stazione"
+              ],
+              [
+                "lontano **da**",
+                "far from",
+                "lontano dal centro"
+              ],
+              [
+                "tra / fra",
+                "between",
+                "tra la banca e il bar"
+              ],
+              [
+                "in fondo **a**",
+                "at the end of",
+                "in fondo alla strada"
+              ],
+              [
+                "di fronte **a**",
+                "opposite",
+                "di fronte al cinema"
+              ]
+            ]
+          },
+          "after": [
+            "The six that attach to *a* or *da* are the ones most often used wrongly. Learn them together with their preposition, just as you learn nouns together with their article."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Places around town",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "Italiano",
+            "English",
+            "Italiano",
+            "English"
+          ],
+          "rows": [
+            [
+              "la farmacia",
+              "pharmacy",
+              "la banca",
+              "bank"
+            ],
+            [
+              "il supermercato",
+              "supermarket",
+              "la posta",
+              "post office"
+            ],
+            [
+              "il mercato",
+              "market",
+              "l'ospedale",
+              "hospital"
+            ],
+            [
+              "la stazione",
+              "station",
+              "la chiesa",
+              "church"
+            ],
+            [
+              "l'aeroporto",
+              "airport",
+              "il museo",
+              "museum"
+            ],
+            [
+              "la piazza",
+              "square",
+              "il parco",
+              "park"
+            ],
+            [
+              "la strada / la via",
+              "street, road",
+              "il ponte",
+              "bridge"
+            ],
+            [
+              "il centro",
+              "downtown, center",
+              "la periferia",
+              "outskirts"
+            ],
+            [
+              "il negozio",
+              "shop, store",
+              "il ristorante",
+              "restaurant"
+            ],
+            [
+              "la biblioteca",
+              "library",
+              "la scuola",
+              "school"
+            ],
+            [
+              "l'albergo",
+              "hotel",
+              "il cinema",
+              "movie theater"
+            ],
+            [
+              "il bagno",
+              "bathroom, restroom",
+              "il semaforo",
+              "traffic lights"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "Watch out for *la libreria*: it's a bookstore, **not** a library. A library is *la biblioteca*. A classic false friend for English speakers."
+        },
+        {
+          "type": "kotak",
+          "title": "Ready-made sentences",
+          "items": [
+            "*C'è un bagno qui?* — Is there a restroom here?",
+            "*Dov'è la stazione?* — Where's the station?",
+            "*È lontano da qui?* — Is it far from here?",
+            "*Quanto tempo ci vuole?* — How long does it take?",
+            "*È aperto adesso?* — Is it open now?",
+            "*A che ora chiude?* — What time does it close?"
+          ]
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "it": "la farmacia",
+      "baca": "lah fahr-mah-CHEE-ah",
+      "en": "pharmacy"
+    },
+    {
+      "it": "la banca",
+      "baca": "lah BAHN-kah",
+      "en": "bank"
+    },
+    {
+      "it": "la piazza",
+      "baca": "lah PYAHT-tsah",
+      "en": "square"
+    },
+    {
+      "it": "il supermercato",
+      "baca": "eel soo-pehr-mehr-KAH-toh",
+      "en": "supermarket"
+    },
+    {
+      "it": "l'ospedale",
+      "baca": "lohs-peh-DAH-leh",
+      "en": "hospital"
+    },
+    {
+      "it": "la chiesa",
+      "baca": "lah KYEH-zah",
+      "en": "church"
+    },
+    {
+      "it": "il centro",
+      "baca": "eel CHEHN-troh",
+      "en": "downtown, center"
+    },
+    {
+      "it": "la via",
+      "baca": "lah VEE-ah",
+      "en": "street"
+    },
+    {
+      "it": "il semaforo",
+      "baca": "eel seh-MAH-foh-roh",
+      "en": "traffic lights"
+    },
+    {
+      "it": "la biblioteca",
+      "baca": "lah bee-blyoh-TEH-kah",
+      "en": "library"
+    },
+    {
+      "it": "la libreria",
+      "baca": "lah lee-breh-REE-ah",
+      "en": "bookstore"
+    },
+    {
+      "it": "l'albergo",
+      "baca": "lahl-BEHR-goh",
+      "en": "hotel"
+    },
+    {
+      "it": "il bagno",
+      "baca": "eel BAH-nyoh",
+      "en": "bathroom, restroom"
+    },
+    {
+      "it": "sopra",
+      "baca": "SOH-prah",
+      "en": "on, above"
+    },
+    {
+      "it": "sotto",
+      "baca": "SOHT-toh",
+      "en": "under"
+    },
+    {
+      "it": "dentro",
+      "baca": "DEHN-troh",
+      "en": "inside"
+    },
+    {
+      "it": "fuori",
+      "baca": "FWOH-ree",
+      "en": "outside"
+    },
+    {
+      "it": "dietro",
+      "baca": "DYEH-troh",
+      "en": "behind"
+    },
+    {
+      "it": "lontano",
+      "baca": "lohn-TAH-noh",
+      "en": "far"
+    },
+    {
+      "it": "aperto",
+      "baca": "ah-PEHR-toh",
+      "en": "open"
+    },
+    {
+      "it": "chiuso",
+      "baca": "KYOO-zoh",
+      "en": "closed"
+    },
+    {
+      "it": "a destra",
+      "baca": "ah DEHS-trah",
+      "en": "to the right"
+    },
+    {
+      "it": "a sinistra",
+      "baca": "ah see-NEES-trah",
+      "en": "to the left"
+    },
+    {
+      "it": "dritto",
+      "baca": "DREET-toh",
+      "en": "straight on"
+    },
+    {
+      "it": "gentile",
+      "baca": "jehn-TEE-leh",
+      "en": "kind"
+    }
+  ],
+  "exercises": [
+    {
+      "prompt": "Fill in c'è or ci sono.",
+      "items": [
+        "____ una farmacia qui vicino?",
+        "In centro ____ molti negozi.",
+        "____ un bagno in questo bar?",
+        "Nella piazza ____ due banche.",
+        "Non ____ nessuno in ufficio.",
+        "____ tre farmacie in città."
+      ]
+    },
+    {
+      "prompt": "Merge the preposition and the article.",
+      "items": [
+        "a + il = ____",
+        "di + la = ____",
+        "in + il = ____",
+        "su + la = ____",
+        "da + lo = ____",
+        "a + le = ____",
+        "in + gli = ____",
+        "di + l' = ____"
+      ]
+    },
+    {
+      "prompt": "Fill in the right merged form.",
+      "items": [
+        "La farmacia è accanto ____ supermercato.",
+        "Il libro è ____ tavolo.",
+        "Abito vicino ____ stazione.",
+        "Vengo ____ Indonesia.",
+        "L'elenco è ____ porta.",
+        "Andiamo ____ cinema stasera."
+      ]
+    },
+    {
+      "prompt": "Translate into Italian.",
+      "items": [
+        "Is there a pharmacy near here?",
+        "The pharmacy is next to the bank.",
+        "Go straight on to the traffic lights.",
+        "Is it far from here?",
+        "Downtown there are lots of stores.",
+        "Is it open now?"
+      ]
+    }
+  ],
+  "answers": [
+    "C'è — ci sono — C'è — ci sono — c'è — Ci sono",
+    "al — della — nel — sulla — dallo — alle — negli — dell'",
+    "al — sul — alla — dall' — sulla — al",
+    "C'è una farmacia qui vicino? — La farmacia è accanto alla banca. — Vada dritto fino al semaforo. — È lontano da qui? — In centro ci sono molti negozi. — È aperto adesso?"
+  ],
+  "wave": "Go back to **Unit 8** first: describe your whole day from waking up to going to bed without looking at the book, using *prima*, *poi*, *dopo*, *infine*."
+}

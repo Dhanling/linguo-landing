@@ -1,0 +1,524 @@
+{
+  "title": "My family",
+  "title_target": "La mia famiglia",
+  "goal": "Name family members, use *avere*, and master the odd rule of possessives: the article is dropped for a single family member.",
+  "bekal": [
+    "name members of your close and extended family",
+    "use *avere* for possession",
+    "use *mio*, *tuo*, *suo* with or without the article, as the rule requires"
+  ],
+  "dialogs": [
+    {
+      "title": "Dialogo — Le foto sul telefono",
+      "intro": "Giulia shows Budi some family photos on her phone.",
+      "lines": [
+        {
+          "speaker": "Giulia:",
+          "text": "Guarda, questa è la mia famiglia.",
+          "id": "Look, this is my family.",
+          "literal": "look, this is the my family."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Che bella foto! Chi è questa signora?",
+          "id": "What a lovely photo! Who's this lady?",
+          "literal": "what beautiful photo! who is this lady?"
+        },
+        {
+          "speaker": "Giulia:",
+          "text": "È mia madre. Si chiama Anna, ha cinquantadue anni.",
+          "id": "That's my mother. Her name is Anna, she's fifty-two.",
+          "literal": "is my mother. herself-calls Anna, has fifty-two years."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "E lui accanto a lei?",
+          "id": "And the man next to her?",
+          "literal": "and him beside to her?"
+        },
+        {
+          "speaker": "Giulia:",
+          "text": "Mio padre, Paolo. E questi sono i miei fratelli.",
+          "id": "My father, Paolo. And these are my brothers and sisters.",
+          "literal": "my father, Paolo. and these are the my siblings."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Quanti fratelli hai?",
+          "id": "How many brothers and sisters do you have?",
+          "literal": "how-many siblings you-have?"
+        },
+        {
+          "speaker": "Giulia:",
+          "text": "Ho un fratello e due sorelle. Io sono la più piccola.",
+          "id": "I have one brother and two sisters. I'm the youngest.",
+          "literal": "I-have one brother and two sisters. I am the most small."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Anche tua sorella abita a Bologna?",
+          "id": "Does your sister live in Bologna too?",
+          "literal": "also your sister lives in Bologna?"
+        },
+        {
+          "speaker": "Giulia:",
+          "text": "No, lei vive a Milano. È sposata e ha un bambino.",
+          "id": "No, she lives in Milan. She's married and has a little boy.",
+          "literal": "no, she lives in Milan. is married and has a child."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Allora sei zia! E tu, sei sposata?",
+          "id": "So you're an aunt! And you, are you married?",
+          "literal": "then you-are aunt! and you, you-are married?"
+        },
+        {
+          "speaker": "Giulia:",
+          "text": "No, sono single. Ho solo un gatto molto grasso.",
+          "id": "No, I'm single. I just have a very fat cat.",
+          "literal": "no, am single. I-have only a cat very fat."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Ah, allora avete la stessa passione: mangiare!",
+          "id": "Ah, so you share the same passion: eating!",
+          "literal": "ah, then you(pl)-have the same passion: to-eat!"
+        }
+      ],
+      "notes": [
+        "**Age uses avere, not essere.** *Ho ventidue anni* literally means \"I have twenty-two years\". Saying *sono ventidue* is the most common mistake English speakers make here, and it's instantly noticeable. Italian agrees with French and Spanish on this: you have your age, you don't \"are\" it.",
+        "**The word anni can't be dropped.** In English \"I'm twenty-two\" is complete. In Italian *ho ventidue* just hangs there meaninglessly — *anni* is required.",
+        "**The odd rule of possessives.** Possessives normally take an article: *il mio libro*, *la mia casa*. But with a **single** family member, the article is dropped: *mia madre*, *mio padre*, *tua sorella*.",
+        "**In the plural, the article comes back.** *I miei fratelli*, *le mie sorelle*. So the rule is: family + singular = no article; everything else takes one.",
+        "**And as soon as something is added, it comes back too.** *La mia sorella maggiore* (my older sister) takes the article, because the noun has been described. The same goes for affectionate forms: *la mia mamma*.",
+        "**Abitare and vivere both mean \"to live\".** *Abitare* points more to your address, *vivere* more to your life. *Abito a Bologna* and *vivo a Bologna* are both correct and both common.",
+        "**A for cities, in for countries.** *A Bologna*, *a Giacarta*, but *in Italia*, *in Indonesia*. Learn this pair from the start; mistakes here really stand out.",
+        "**Che bella foto!** To pay a compliment: *che* + adjective + noun, with no article. *Che bel ragazzo!*, *Che buona pizza!* The pattern is simple and used constantly."
+      ],
+      "grammars": [
+        {
+          "title": "Avere — the verb \"to have\"",
+          "body": [
+            "Irregular like *essere*, and used just as often. Notice the **h** in four of the forms: it's completely silent, just a spelling marker so they aren't confused with other words."
+          ],
+          "table": {
+            "head": [
+              "",
+              "avere",
+              "example"
+            ],
+            "rows": [
+              [
+                "io",
+                "**ho**",
+                "Ho un fratello."
+              ],
+              [
+                "tu",
+                "**hai**",
+                "Quanti anni hai?"
+              ],
+              [
+                "lui / lei / Lei",
+                "**ha**",
+                "Ha due figli."
+              ],
+              [
+                "noi",
+                "**abbiamo**",
+                "Abbiamo fame."
+              ],
+              [
+                "voi",
+                "**avete**",
+                "Avete l'acqua?"
+              ],
+              [
+                "loro",
+                "**hanno**",
+                "Hanno una casa grande."
+              ]
+            ]
+          },
+          "after": [
+            "*Ho* is said \"oh\", *hai* \"eye\", *ha* \"ah\", *hanno* \"AHN-noh\". Without the h, they'd clash with *o* (or), *ai* (to the), *a* (to, at), *anno* (year).",
+            "*Avere* is also used for physical states: *ho fame* (I'm hungry), *ho sete* (thirsty), *ho freddo* (cold), *ho caldo* (hot), *ho sonno* (sleepy), *ho paura* (scared). All of them are \"have\", not \"be\"."
+          ]
+        },
+        {
+          "title": "Possessives",
+          "body": [
+            "Italian possessives agree with the **thing owned**, not the owner. *Il suo libro* can mean his book or her book; what decides the form is *libro*."
+          ],
+          "table": {
+            "head": [
+              "Owner",
+              "Masc. sing.",
+              "Fem. sing.",
+              "Masc. pl.",
+              "Fem. pl."
+            ],
+            "rows": [
+              [
+                "my",
+                "il mio",
+                "la mia",
+                "i miei",
+                "le mie"
+              ],
+              [
+                "your",
+                "il tuo",
+                "la tua",
+                "i tuoi",
+                "le tue"
+              ],
+              [
+                "his / her / your (formal)",
+                "il suo",
+                "la sua",
+                "i suoi",
+                "le sue"
+              ],
+              [
+                "our",
+                "il nostro",
+                "la nostra",
+                "i nostri",
+                "le nostre"
+              ],
+              [
+                "your (plural)",
+                "il vostro",
+                "la vostra",
+                "i vostri",
+                "le vostre"
+              ],
+              [
+                "their",
+                "il loro",
+                "la loro",
+                "i loro",
+                "le loro"
+              ]
+            ]
+          },
+          "after": [
+            "The *loro* row is the only one that never changes — only its article adjusts.",
+            "Because the form follows the thing owned, *Marco ama la sua città* can mean Marco's city or someone else's. If you need to be clear, add *di lui* or *di lei*."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Family members",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "Male",
+            "Female",
+            "English"
+          ],
+          "rows": [
+            [
+              "il padre / papà",
+              "la madre / mamma",
+              "father / mother"
+            ],
+            [
+              "il figlio",
+              "la figlia",
+              "son / daughter"
+            ],
+            [
+              "il fratello",
+              "la sorella",
+              "brother / sister"
+            ],
+            [
+              "il nonno",
+              "la nonna",
+              "grandfather / grandmother"
+            ],
+            [
+              "il nipote",
+              "la nipote",
+              "grandchild, nephew / niece"
+            ],
+            [
+              "lo zio",
+              "la zia",
+              "uncle / aunt"
+            ],
+            [
+              "il cugino",
+              "la cugina",
+              "cousin"
+            ],
+            [
+              "il marito",
+              "la moglie",
+              "husband / wife"
+            ],
+            [
+              "il ragazzo",
+              "la ragazza",
+              "boyfriend / girlfriend (also: young person)"
+            ],
+            [
+              "il suocero",
+              "la suocera",
+              "father-in-law / mother-in-law"
+            ],
+            [
+              "il genero",
+              "la nuora",
+              "son-in-law / daughter-in-law"
+            ],
+            [
+              "i genitori",
+              "—",
+              "parents"
+            ],
+            [
+              "i parenti",
+              "—",
+              "relatives"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "Watch out for *i parenti*: it means \"relatives\", **not** \"parents\". Parents are *i genitori*. It's a classic trap for English speakers."
+        },
+        {
+          "type": "p",
+          "text": "Mixed groups always take the masculine plural: two brothers and three sisters are still *i fratelli*. That's why *Quanti fratelli hai?* actually asks about all your siblings, not just the brothers."
+        },
+        {
+          "type": "kotak",
+          "title": "Talking about age and status",
+          "items": [
+            "*Quanti anni hai?* — How old are you? (informal) / *Quanti anni ha?* (formal)",
+            "*Ho trent'anni.* — I'm thirty. Notice *trenta anni* clipped to *trent'anni*.",
+            "*Sei sposato / sposata?* — Are you married?",
+            "*Sono single.* / *Sono sposato.* / *Sono divorziato.*",
+            "*Hai figli?* — Do you have children? Answer: *Sì, ho due figli.* or *No, non ho figli.*"
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Numbers 20-100",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "",
+            "",
+            ""
+          ],
+          "rows": [
+            [
+              "20 venti",
+              "30 trenta",
+              "40 quaranta"
+            ],
+            [
+              "50 cinquanta",
+              "60 sessanta",
+              "70 settanta"
+            ],
+            [
+              "80 ottanta",
+              "90 novanta",
+              "100 cento"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "Combining them is just a matter of sticking them together: *ventitré*, *trentacinque*, *sessantotto*. Two small adjustments: before *uno* and *otto*, the tens drop their last vowel — *ventuno* (not *ventiuno*), *ventotto*, *trentuno*, *quarantotto*. And a final three takes an accent: *ventitré*, *trentatré*."
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "it": "la famiglia",
+      "baca": "lah fah-MEE-lyah",
+      "en": "family"
+    },
+    {
+      "it": "il padre",
+      "baca": "eel PAH-dreh",
+      "en": "father"
+    },
+    {
+      "it": "la madre",
+      "baca": "lah MAH-dreh",
+      "en": "mother"
+    },
+    {
+      "it": "il fratello",
+      "baca": "eel frah-TEHL-loh",
+      "en": "brother"
+    },
+    {
+      "it": "la sorella",
+      "baca": "lah soh-REHL-lah",
+      "en": "sister"
+    },
+    {
+      "it": "il figlio",
+      "baca": "eel FEE-lyoh",
+      "en": "son"
+    },
+    {
+      "it": "i genitori",
+      "baca": "ee jeh-nee-TOH-ree",
+      "en": "parents"
+    },
+    {
+      "it": "il nonno",
+      "baca": "eel NOHN-noh",
+      "en": "grandfather"
+    },
+    {
+      "it": "lo zio",
+      "baca": "loh TSEE-oh",
+      "en": "uncle"
+    },
+    {
+      "it": "il marito",
+      "baca": "eel mah-REE-toh",
+      "en": "husband"
+    },
+    {
+      "it": "la moglie",
+      "baca": "lah MOH-lyeh",
+      "en": "wife"
+    },
+    {
+      "it": "avere",
+      "baca": "ah-VEH-reh",
+      "en": "to have"
+    },
+    {
+      "it": "l'anno",
+      "baca": "LAHN-noh",
+      "en": "year"
+    },
+    {
+      "it": "abitare",
+      "baca": "ah-bee-TAH-reh",
+      "en": "to live (reside)"
+    },
+    {
+      "it": "vivere",
+      "baca": "VEE-veh-reh",
+      "en": "to live"
+    },
+    {
+      "it": "sposato / sposata",
+      "baca": "spoh-ZAH-toh",
+      "en": "married"
+    },
+    {
+      "it": "il bambino",
+      "baca": "eel bahm-BEE-noh",
+      "en": "child, little boy"
+    },
+    {
+      "it": "il gatto",
+      "baca": "eel GAHT-toh",
+      "en": "cat"
+    },
+    {
+      "it": "il cane",
+      "baca": "eel KAH-neh",
+      "en": "dog"
+    },
+    {
+      "it": "piccolo",
+      "baca": "PEEK-koh-loh",
+      "en": "small, young"
+    },
+    {
+      "it": "grande",
+      "baca": "GRAHN-deh",
+      "en": "big"
+    },
+    {
+      "it": "accanto a",
+      "baca": "ahk-KAHN-toh ah",
+      "en": "next to"
+    },
+    {
+      "it": "solo",
+      "baca": "SOH-loh",
+      "en": "only"
+    },
+    {
+      "it": "stesso / stessa",
+      "baca": "STEHS-soh",
+      "en": "same"
+    }
+  ],
+  "exercises": [
+    {
+      "prompt": "Translate into Italian.",
+      "items": [
+        "This is my family.",
+        "I'm twenty-five years old.",
+        "How many brothers and sisters do you have?",
+        "I have one brother and two sisters.",
+        "My mother lives in Milan.",
+        "I don't have children."
+      ]
+    },
+    {
+      "prompt": "Fill in the right form of avere.",
+      "items": [
+        "Io ____ due sorelle.",
+        "Tu quanti anni ____?",
+        "Mio padre ____ sessant'anni.",
+        "Noi ____ una casa a Roma.",
+        "Voi ____ figli?",
+        "I miei nonni ____ un gatto."
+      ]
+    },
+    {
+      "prompt": "Fill in the right possessive. Remember the article rule for a single family member.",
+      "items": [
+        "Questa è ____ madre. (my)",
+        "____ fratelli abitano a Roma. (my)",
+        "Dov'è ____ sorella? (your)",
+        "____ casa è molto grande. (our)",
+        "Marco ama ____ città. (his)",
+        "____ genitori sono italiani. (your)"
+      ]
+    },
+    {
+      "prompt": "Write the numbers out in words.",
+      "items": [
+        "21",
+        "28",
+        "33",
+        "45",
+        "68",
+        "90"
+      ]
+    }
+  ],
+  "answers": [
+    "Questa è la mia famiglia. — Ho venticinque anni. — Quanti fratelli hai? — Ho un fratello e due sorelle. — Mia madre abita a Milano. — Non ho figli.",
+    "ho — hai — ha — abbiamo — avete — hanno",
+    "mia — I miei — tua — La nostra — la sua — I tuoi",
+    "ventuno — ventotto — trentatré — quarantacinque — sessantotto — novanta"
+  ],
+  "wave": "Go back to **Unit 3** first: point at ten things around you and name each one with its article, then make them plural."
+}

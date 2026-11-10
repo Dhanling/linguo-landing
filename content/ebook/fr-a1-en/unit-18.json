@@ -1,0 +1,497 @@
+{
+  "title": "What's the weather like?",
+  "title_target": "Quel temps fait-il ?",
+  "goal": "Talk about the weather and the seasons, say how your body feels, and master verbs with no real subject.",
+  "bekal": [
+    "using *il fait*, *il y a*, and *il pleut* for the weather",
+    "naming the seasons and the temperature",
+    "saying how you feel with *avoir* and *être*"
+  ],
+  "wave": "Review **Unit 16** first: make five plans with *je vais* + infinitive, then turn three of them into obligations with *je dois*.",
+  "dialogs": [
+    {
+      "title": "Dialogue — Un dimanche gris",
+      "intro": "Camille calls Budi to invite him for a walk, but the weather is uncertain.",
+      "lines": [
+        {
+          "speaker": "Camille:",
+          "text": "Allô Budi ? Quel temps fait-il chez toi ?",
+          "id": "Hi Budi? What's the weather like at your place?",
+          "literal": "hello Budi? what weather makes-it at-place you?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Il fait gris et il y a du vent. Et chez toi ?",
+          "id": "It's gray and windy. And at yours?",
+          "literal": "it makes gray and there-is some wind. and at-place you?"
+        },
+        {
+          "speaker": "Camille:",
+          "text": "Ici il pleut depuis ce matin. C'est déprimant.",
+          "id": "Here it's been raining since this morning. It's depressing.",
+          "literal": "here it rains since this morning. it-is depressing."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "On annule la promenade, alors ?",
+          "id": "So we're canceling the walk?",
+          "literal": "one cancels the walk, then?"
+        },
+        {
+          "speaker": "Camille:",
+          "text": "Attends. La météo dit qu'il va faire beau cet après-midi.",
+          "id": "Wait. The forecast says it'll be nice this afternoon.",
+          "literal": "wait. the weather-report says that it goes make nice this after-noon."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Vraiment ? Il fait quelle température ?",
+          "id": "Really? What's the temperature?",
+          "literal": "really? it makes what temperature?"
+        },
+        {
+          "speaker": "Camille:",
+          "text": "Quinze degrés. C'est doux pour un mois d'octobre.",
+          "id": "Fifteen degrees. Mild for October.",
+          "literal": "fifteen degrees. it-is mild for a month of-October."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Chez moi il fait toujours trente degrés en octobre.",
+          "id": "Back home it's always thirty degrees in October.",
+          "literal": "at-place me it makes always thirty degrees in October."
+        },
+        {
+          "speaker": "Camille:",
+          "text": "Trente ! Tu dois avoir froid ici tout le temps.",
+          "id": "Thirty! You must be cold here all the time.",
+          "literal": "thirty! you must have cold here all the time."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "J'ai froid, oui. Mais je m'habitue lentement.",
+          "id": "I'm cold, yes. But I'm slowly getting used to it.",
+          "literal": "I-have cold, yes. but I myself accustom little by little."
+        },
+        {
+          "speaker": "Camille:",
+          "text": "Prends une écharpe. Et un parapluie, on ne sait jamais.",
+          "id": "Bring a scarf. And an umbrella, just in case.",
+          "literal": "take a scarf. and an umbrella, one not knows never."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "D'accord. À quatorze heures devant le parc ?",
+          "id": "OK. Two o'clock in front of the park?",
+          "literal": "agreed. at fourteen hours in-front-of-the park?"
+        }
+      ],
+      "notes": [
+        "**Weather uses an il that refers to no one.** *Il fait beau*, *il pleut*, *il neige* — the *il* is empty, just like in *il y a* and *il est dix heures*, and just like English \"it\" in \"it's raining\". French, like English, always needs something in the subject slot.",
+        "**Three weather patterns to tell apart.** *Il **fait*** + adjective (*il fait beau, il fait froid*); *il y a* + noun (*il y a du vent, il y a du soleil*); and a verb on its own (*il pleut, il neige*). Picking the wrong one — *il fait du pluie* — sounds wrong immediately.",
+        "**⚠️ Cold weather takes faire, a cold body takes avoir.** *Il **fait** froid* = it's cold out. *J'**ai** froid* = I'm cold. Swapping them gives a funny sentence: *je suis froid* means \"I'm a cold person\", that is, unfriendly.",
+        "**Chez toi, chez moi** = at your place, at my place. *Chez* means \"at someone's home or place\", and English has no one-word equivalent. It's also used for shops: *chez le boulanger*, *chez le médecin*.",
+        "**Il va faire beau** — the future plan from Unit 16, used for weather forecasts. Note that *faire* stays in the infinitive after *aller*.",
+        "**Quinze degrés** — temperatures always use *degrés* (Celsius), and it's never dropped. Below zero: *moins cinq degrés* or *cinq degrés en dessous de zéro*.",
+        "**On ne sait jamais** = \"you never know\", literally \"one never knows\". Used exactly as in English."
+      ],
+      "grammars": [
+        {
+          "title": "Three weather patterns",
+          "body": [
+            "Choose the pattern by the word that follows, not by the meaning."
+          ],
+          "table": {
+            "head": [
+              "Pattern",
+              "Example",
+              "English"
+            ],
+            "rows": [
+              [
+                "**il fait** + adjective",
+                "*Il fait beau.*",
+                "The weather's nice"
+              ],
+              [
+                "",
+                "*Il fait mauvais.*",
+                "The weather's bad"
+              ],
+              [
+                "",
+                "*Il fait chaud / froid.*",
+                "It's hot / cold"
+              ],
+              [
+                "",
+                "*Il fait gris.*",
+                "It's gray, overcast"
+              ],
+              [
+                "**il y a** + noun",
+                "*Il y a du vent.*",
+                "It's windy"
+              ],
+              [
+                "",
+                "*Il y a du soleil.*",
+                "It's sunny"
+              ],
+              [
+                "",
+                "*Il y a des nuages.*",
+                "It's cloudy"
+              ],
+              [
+                "",
+                "*Il y a du brouillard.*",
+                "It's foggy"
+              ],
+              [
+                "**verb on its own**",
+                "*Il pleut.*",
+                "It's raining"
+              ],
+              [
+                "",
+                "*Il neige.*",
+                "It's snowing"
+              ],
+              [
+                "",
+                "*Il gèle.*",
+                "It's freezing"
+              ]
+            ]
+          },
+          "after": [
+            "Asking about the weather: *Quel temps fait-il ?* or, more casually, *Il fait quel temps ?* The answer always uses one of the three patterns above.",
+            "⚠️ *Le temps* has two meanings: \"weather\" and \"time\". *Je n'ai pas le temps* = I don't have time; *le temps est beau* = the weather is nice. Context tells them apart."
+          ]
+        },
+        {
+          "title": "How you feel: avoir or être",
+          "body": [
+            "One of the places where English speakers most often pick the wrong verb — because English says \"I am cold\", \"I am hungry\"."
+          ],
+          "table": {
+            "head": [
+              "Français",
+              "English",
+              "Verb"
+            ],
+            "rows": [
+              [
+                "j'ai froid",
+                "I'm cold",
+                "avoir"
+              ],
+              [
+                "j'ai chaud",
+                "I'm hot",
+                "avoir"
+              ],
+              [
+                "j'ai faim / soif",
+                "I'm hungry / thirsty",
+                "avoir"
+              ],
+              [
+                "j'ai sommeil",
+                "I'm sleepy",
+                "avoir"
+              ],
+              [
+                "j'ai mal à la tête",
+                "I have a headache",
+                "avoir"
+              ],
+              [
+                "je suis fatigué",
+                "I'm tired",
+                "être"
+              ],
+              [
+                "je suis malade",
+                "I'm sick",
+                "être"
+              ],
+              [
+                "je suis en forme",
+                "I'm in good shape",
+                "être"
+              ]
+            ]
+          },
+          "after": [
+            "A rough but useful rule: if the feeling can be pictured as **something you have** (hunger, cold, pain), use *avoir*. If it's **a state you're in**, use *être*.",
+            "*Avoir mal à* + body part: *j'ai mal **à la** tête*, *au ventre*, *aux dents*, *à la gorge*. The usual merging applies."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Weather, seasons, and the body",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "Season",
+            "Pronunciation",
+            "Preposition",
+            "Typical weather"
+          ],
+          "rows": [
+            [
+              "le printemps",
+              "luh pran-TAHN",
+              "**au** printemps",
+              "*il fait doux, il pleut*"
+            ],
+            [
+              "l'été",
+              "lay-TAY",
+              "**en** été",
+              "*il fait chaud, il y a du soleil*"
+            ],
+            [
+              "l'automne",
+              "loh-TONN",
+              "**en** automne",
+              "*il fait gris, il y a du vent*"
+            ],
+            [
+              "l'hiver",
+              "lee-VEHR",
+              "**en** hiver",
+              "*il fait froid, il neige*"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "Only spring takes *au*; the other three take *en*. There's no reason — just memorize it."
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Body part",
+            "Pronunciation",
+            "Body part",
+            "Pronunciation"
+          ],
+          "rows": [
+            [
+              "la tête",
+              "lah TEHT",
+              "le ventre",
+              "luh VAHNTR"
+            ],
+            [
+              "les yeux",
+              "lay-ZYUH",
+              "le dos",
+              "luh DOH"
+            ],
+            [
+              "le nez",
+              "luh NAY",
+              "la main",
+              "lah MAN"
+            ],
+            [
+              "la bouche",
+              "lah BOOSH",
+              "le bras",
+              "luh BRAH"
+            ],
+            [
+              "les dents",
+              "lay DAHN",
+              "la jambe",
+              "lah ZHAHNB"
+            ],
+            [
+              "la gorge",
+              "lah GOHRZH",
+              "le pied",
+              "luh PYAY"
+            ]
+          ]
+        },
+        {
+          "type": "kotak",
+          "title": "At the pharmacy and the doctor's",
+          "items": [
+            "*J'ai mal à la tête.* — I have a headache.",
+            "*Je suis malade depuis hier.* — I've been sick since yesterday.",
+            "*J'ai de la fièvre.* — I have a fever.",
+            "*Vous avez quelque chose contre le rhume ?* — Do you have anything for a cold?",
+            "*Je voudrais prendre rendez-vous chez le médecin.* — I'd like to make a doctor's appointment.",
+            "*Ça va mieux.* — I'm feeling better."
+          ]
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "fr": "le temps",
+      "baca": "luh TAHN",
+      "en": "weather, time"
+    },
+    {
+      "fr": "la météo",
+      "baca": "lah may-tay-OH",
+      "en": "weather forecast"
+    },
+    {
+      "fr": "il fait beau",
+      "baca": "eel feh BOH",
+      "en": "the weather's nice"
+    },
+    {
+      "fr": "il pleut",
+      "baca": "eel PLUH",
+      "en": "it's raining"
+    },
+    {
+      "fr": "il neige",
+      "baca": "eel NEHZH",
+      "en": "it's snowing"
+    },
+    {
+      "fr": "le vent",
+      "baca": "luh VAHN",
+      "en": "wind"
+    },
+    {
+      "fr": "le soleil",
+      "baca": "luh soh-LEHY",
+      "en": "sun"
+    },
+    {
+      "fr": "un nuage",
+      "baca": "uhn nü-AHZH",
+      "en": "cloud"
+    },
+    {
+      "fr": "le brouillard",
+      "baca": "luh broo-YAHR",
+      "en": "fog"
+    },
+    {
+      "fr": "un degré",
+      "baca": "uhn duh-GRAY",
+      "en": "degree"
+    },
+    {
+      "fr": "la température",
+      "baca": "lah tahn-pay-rah-TÜR",
+      "en": "temperature"
+    },
+    {
+      "fr": "doux",
+      "baca": "DOO",
+      "en": "mild, soft"
+    },
+    {
+      "fr": "chez",
+      "baca": "shay",
+      "en": "at the home/place of"
+    },
+    {
+      "fr": "annuler",
+      "baca": "ah-nü-LAY",
+      "en": "to cancel"
+    },
+    {
+      "fr": "une promenade",
+      "baca": "ün prohm-NAHD",
+      "en": "walk, stroll"
+    },
+    {
+      "fr": "un parapluie",
+      "baca": "uhn pah-rah-PLWEE",
+      "en": "umbrella"
+    },
+    {
+      "fr": "s'habituer",
+      "baca": "sah-bee-tü-AY",
+      "en": "to get used to"
+    },
+    {
+      "fr": "malade",
+      "baca": "mah-LAHD",
+      "en": "sick"
+    },
+    {
+      "fr": "avoir mal à",
+      "baca": "ah-vwahr MAHL ah",
+      "en": "to have a pain in"
+    },
+    {
+      "fr": "la fièvre",
+      "baca": "lah FYEHVR",
+      "en": "fever"
+    },
+    {
+      "fr": "le rhume",
+      "baca": "luh RÜM",
+      "en": "cold (illness)"
+    }
+  ],
+  "exercises": [
+    {
+      "prompt": "Fill in with il fait, il y a or the right weather verb.",
+      "items": [
+        "____ beau aujourd'hui.",
+        "____ du vent.",
+        "____ depuis ce matin. (rain)",
+        "____ froid en hiver.",
+        "____ du soleil.",
+        "____ en janvier. (snow)"
+      ]
+    },
+    {
+      "prompt": "Choose avoir or être. Write the correct form.",
+      "items": [
+        "J' ____ froid.",
+        "Je ____ fatigué.",
+        "Elle ____ mal à la tête.",
+        "Ils ____ malades.",
+        "Nous ____ faim.",
+        "Tu ____ en forme ?"
+      ]
+    },
+    {
+      "prompt": "Fill in with au or en.",
+      "items": [
+        "____ printemps",
+        "____ été",
+        "____ automne",
+        "____ hiver",
+        "____ octobre"
+      ]
+    },
+    {
+      "prompt": "Translate into French.",
+      "items": [
+        "What's the weather like?",
+        "It's gray and windy.",
+        "Here it's been raining since this morning.",
+        "Fifteen degrees.",
+        "I have a headache."
+      ]
+    }
+  ],
+  "answers": [
+    "Il fait — Il y a — Il pleut — Il fait — Il y a — Il neige",
+    "ai — suis — a — sont — avons — es",
+    "au printemps — en été — en automne — en hiver — en octobre",
+    "Quel temps fait-il ? — Il fait gris et il y a du vent. — Ici il pleut depuis ce matin. — Quinze degrés. — J'ai mal à la tête."
+  ]
+}

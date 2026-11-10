@@ -1,0 +1,577 @@
+{
+  "title": "What day is it? What's the date?",
+  "title_target": "Welcher Tag ist heute?",
+  "goal": "Make appointments: name days, months and dates, then agree on a time over the phone.",
+  "bekal": [
+    "name the days of the week and the months",
+    "read and say dates (*am dritten Mai*)",
+    "choose between *am*, *im* and *um*",
+    "make, move and cancel appointments"
+  ],
+  "dialogs": [
+    {
+      "title": "Dialogue — Einen Termin machen",
+      "intro": "Budi calls a dentist's office. Phone calls in Germany follow a fixed pattern — and they start with your own name, not \"hello\".",
+      "lines": [
+        {
+          "speaker": "Praxis:",
+          "text": "Zahnarztpraxis Dr. Beck, Schneider, guten Morgen.",
+          "id": "Dr. Beck's dental office, Schneider speaking, good morning.",
+          "literal": "tooth-doctor-practice Dr. Beck, Schneider, good morning."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Guten Morgen, hier ist Budi Santoso. Ich möchte einen Termin machen.",
+          "id": "Good morning, this is Budi Santoso. I'd like to make an appointment.",
+          "literal": "good morning, here is Budi Santoso. I would-like an appointment make."
+        },
+        {
+          "speaker": "Praxis:",
+          "text": "Gern. Haben Sie Schmerzen?",
+          "id": "Of course. Are you in pain?",
+          "literal": "gladly. have you pains?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Nein, es ist nur eine Kontrolle.",
+          "id": "No, it's just a checkup.",
+          "literal": "no, it is only a check."
+        },
+        {
+          "speaker": "Praxis:",
+          "text": "Gut. Können Sie am Dienstag um zehn Uhr?",
+          "id": "Good. Can you make Tuesday at ten?",
+          "literal": "good. can you on Tuesday at ten o'clock?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Am Dienstag habe ich leider Kurs bis zwölf.",
+          "id": "Unfortunately I have class until twelve on Tuesday.",
+          "literal": "on Tuesday have I unfortunately course until twelve."
+        },
+        {
+          "speaker": "Praxis:",
+          "text": "Und am Donnerstag um halb vier?",
+          "id": "And Thursday at three-thirty?",
+          "literal": "and on Thursday at half four?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Am Donnerstag passt gut. Der wievielte ist das?",
+          "id": "Thursday works well. What's the date?",
+          "literal": "on Thursday fits well. the how-many-th is that?"
+        },
+        {
+          "speaker": "Praxis:",
+          "text": "Das ist der elfte September.",
+          "id": "That's September eleventh.",
+          "literal": "that is the eleventh September."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Also am elften September um fünfzehn Uhr dreißig.",
+          "id": "So September eleventh at 3:30 p.m.",
+          "literal": "so on-the eleventh September at fifteen o'clock thirty."
+        },
+        {
+          "speaker": "Praxis:",
+          "text": "Genau. Bringen Sie bitte Ihre Versichertenkarte mit.",
+          "id": "Exactly. Please bring your health insurance card.",
+          "literal": "exactly. bring you please your insured-card along."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Mache ich. Vielen Dank und auf Wiederhören.",
+          "id": "Will do. Thank you very much, and goodbye.",
+          "literal": "do I. many thanks and until hearing-again."
+        }
+      ],
+      "notes": [
+        "**A German phone call starts with a name, not \"hello\".** The person answering gives the name of the place and then their own name; the caller says *Hier ist… / Mein Name ist…* Answering the phone with just *Hallo?* sounds like an unknown number.",
+        "***Auf Wiederhören*** ends a phone call — \"until we hear each other again\", since you can't see each other. Using *Auf Wiedersehen* on the phone isn't wrong, but this is the proper form.",
+        "***am* for days and dates, *im* for months and seasons, *um* for clock times.** Three short words, three different territories: *am Montag*, *im Mai*, *um acht*. Rather like English *on*, *in* and *at* — and one of the three will turn up in almost every time sentence you make.",
+        "**Dates use ordinal numbers, and ordinals end in -e or -en.** *der elfte September* (when naming it), but *am elft**en** September* (after *am*). This small change is hard to avoid, so learn the pair: *der erste / am ersten*.",
+        "***Der wievielte ist heute?*** = \"what's the date today?\". The word *wievielte* (\"the how-many-th\") is long and awkward, but there's no shorter version — this question comes up in every German office.",
+        "***leider*** (\"unfortunately\") softens a refusal. Turning down a suggested time without *leider* sounds cold: compare *Am Dienstag habe ich Kurs* with *Am Dienstag habe ich **leider** Kurs*."
+      ],
+      "grammars": [
+        {
+          "title": "Days, months and seasons",
+          "body": [
+            "All days are **masculine** (*der Montag*), all months are **masculine** (*der Mai*), all seasons are **masculine** (*der Sommer*). One gender for the whole calendar — for once German is being kind."
+          ],
+          "table": {
+            "head": [
+              "Day",
+              "Pronunciation",
+              "Month",
+              "Month"
+            ],
+            "rows": [
+              [
+                "Montag",
+                "MOHN-tahk",
+                "Januar",
+                "Juli"
+              ],
+              [
+                "Dienstag",
+                "DEENS-tahk",
+                "Februar",
+                "August"
+              ],
+              [
+                "Mittwoch",
+                "MIT-vokh",
+                "März",
+                "September"
+              ],
+              [
+                "Donnerstag",
+                "DON-nuhs-tahk",
+                "April",
+                "Oktober"
+              ],
+              [
+                "Freitag",
+                "FREYE-tahk",
+                "Mai",
+                "November"
+              ],
+              [
+                "Samstag",
+                "ZAHMS-tahk",
+                "Juni",
+                "Dezember"
+              ],
+              [
+                "Sonntag",
+                "ZON-tahk",
+                "—",
+                "—"
+              ]
+            ]
+          },
+          "after": [
+            "*Mittwoch* (\"mid-week\") is the only day that doesn't end in *-tag*, and that makes sense: the German week starts on **Monday**, so Wednesday really is right in the middle. ⚠️ German calendars put *Montag* in the first column, not *Sonntag* — watch for this when reading schedules.",
+            "Saturday has two names: *Samstag* in the south and west (and on official broadcasts), *Sonnabend* in the northeast. Both are correct; *Samstag* is safer for beginners.",
+            "The four seasons: *der Frühling* (spring), *der Sommer* (summer), *der Herbst* (fall), *der Winter* (winter). They all take *im*: *im Sommer*, *im Winter*."
+          ],
+          "tables": [
+            {
+              "head": [
+                "Preposition",
+                "Used for",
+                "Example",
+                "English"
+              ],
+              "rows": [
+                [
+                  "**am**",
+                  "days, dates, parts of the day",
+                  "am Freitag, am 3. Mai, am Abend",
+                  "on Friday…"
+                ],
+                [
+                  "**im**",
+                  "months, seasons, decades",
+                  "im Juni, im Winter",
+                  "in June…"
+                ],
+                [
+                  "**um**",
+                  "clock times",
+                  "um halb acht",
+                  "at seven-thirty"
+                ],
+                [
+                  "**von … bis**",
+                  "ranges",
+                  "von Montag bis Freitag",
+                  "Monday to Friday"
+                ],
+                [
+                  "**ab**",
+                  "starting from",
+                  "ab Montag",
+                  "from Monday on"
+                ],
+                [
+                  "(nothing)",
+                  "heute, morgen, gestern",
+                  "Ich komme morgen.",
+                  "I'm coming tomorrow."
+                ]
+              ]
+            }
+          ]
+        },
+        {
+          "title": "Ordinal numbers and dates",
+          "body": [
+            "Ordinals are formed by adding **-te** to the numbers 1-19 and **-ste** from 20 on. Written as a figure, the marker is a **period**: *3. Mai* is read *dritter Mai* (like English *3rd May*)."
+          ],
+          "table": {
+            "head": [
+              "Number",
+              "Ordinal",
+              "Number",
+              "Ordinal"
+            ],
+            "rows": [
+              [
+                "1.",
+                "**erste** (irregular)",
+                "11.",
+                "elfte"
+              ],
+              [
+                "2.",
+                "zweite",
+                "12.",
+                "zwölfte"
+              ],
+              [
+                "3.",
+                "**dritte** (irregular)",
+                "16.",
+                "sechzehnte"
+              ],
+              [
+                "4.",
+                "vierte",
+                "20.",
+                "zwanzig**ste**"
+              ],
+              [
+                "5.",
+                "fünfte",
+                "21.",
+                "einundzwanzig**ste**"
+              ],
+              [
+                "7.",
+                "**siebte** (no -en-)",
+                "30.",
+                "dreißig**ste**"
+              ],
+              [
+                "8.",
+                "**achte** (only one t)",
+                "31.",
+                "einunddreißig**ste**"
+              ]
+            ]
+          },
+          "after": [
+            "The five odd ones are marked in bold: *erste*, *dritte*, *siebte*, *achte*, and the switch to *-ste* from twenty on. The rest are completely uniform — just as English has its own odd ones in *first*, *second*, *third*.",
+            "In a sentence, the form changes slightly depending on its position: ***Heute ist der** dritte Mai* (naming), but ***Ich komme am** dritt**en** Mai* (when something happens). Rule of thumb: after *am*, always **-en**.",
+            "Dates are written **day.month.year**: *11.09.2026* means September 11, not November 9. This is the British habit and the reverse of the American one — and misreading it is the most common way to miss an appointment."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Making appointments",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "German",
+            "English"
+          ],
+          "rows": [
+            [
+              "Ich möchte einen Termin machen.",
+              "I'd like to make an appointment."
+            ],
+            [
+              "Haben Sie am Montag Zeit?",
+              "Are you free on Monday?"
+            ],
+            [
+              "Wann passt es Ihnen?",
+              "When suits you?"
+            ],
+            [
+              "Geht es am Mittwoch um drei?",
+              "Would Wednesday at three work?"
+            ],
+            [
+              "Ja, das passt mir gut.",
+              "Yes, that suits me fine."
+            ],
+            [
+              "Nein, das geht leider nicht.",
+              "Unfortunately that doesn't work."
+            ],
+            [
+              "Können wir den Termin verschieben?",
+              "Can we move the appointment?"
+            ],
+            [
+              "Ich muss den Termin absagen.",
+              "I have to cancel the appointment."
+            ],
+            [
+              "Bis Donnerstag!",
+              "See you Thursday!"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "⚠️ Appointments in Germany are taken more seriously than in many other places. Turning up fifteen minutes late without a word is already considered rude, and canceling a doctor's appointment less than 24 hours ahead can be billed. Better learn *Ich muss den Termin absagen* now, not later."
+        },
+        {
+          "type": "sub",
+          "text": "Other common time words"
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "German",
+            "English",
+            "German",
+            "English"
+          ],
+          "rows": [
+            [
+              "heute",
+              "today",
+              "übermorgen",
+              "the day after tomorrow"
+            ],
+            [
+              "morgen",
+              "tomorrow",
+              "vorgestern",
+              "the day before yesterday"
+            ],
+            [
+              "gestern",
+              "yesterday",
+              "nächste Woche",
+              "next week"
+            ],
+            [
+              "am Wochenende",
+              "on the weekend",
+              "letzte Woche",
+              "last week"
+            ],
+            [
+              "jeden Tag",
+              "every day",
+              "diese Woche",
+              "this week"
+            ],
+            [
+              "montags",
+              "on Mondays",
+              "am Monatsende",
+              "at the end of the month"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "Notice the forms *montags*, *dienstags*, *freitags* — lowercase, ending in -s, and meaning \"every such day\". *Ich arbeite **montags*** = I work on Mondays, unlike *Ich arbeite **am Montag*** = I'm working this Monday."
+        }
+      ]
+    },
+    {
+      "title": "Public holidays you should know",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Shops in Germany close completely on public holidays and every Sunday — not closing early, but closed. It's the first surprise for almost every newcomer, and it has real consequences: shopping on Saturday isn't an option, it's a must."
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "German",
+            "English",
+            "When"
+          ],
+          "rows": [
+            [
+              "Neujahr",
+              "New Year's Day",
+              "1. Januar"
+            ],
+            [
+              "Ostern",
+              "Easter",
+              "March or April"
+            ],
+            [
+              "Tag der Arbeit",
+              "Labor Day",
+              "1. Mai"
+            ],
+            [
+              "Tag der Deutschen Einheit",
+              "German Unity Day",
+              "3. Oktober"
+            ],
+            [
+              "Weihnachten",
+              "Christmas",
+              "25. und 26. Dezember"
+            ],
+            [
+              "Silvester",
+              "New Year's Eve",
+              "31. Dezember"
+            ]
+          ]
+        },
+        {
+          "type": "kotak",
+          "title": "Three sentences to learn whole",
+          "items": [
+            "*Welcher Tag ist heute?* — What day is it today?",
+            "*Der wievielte ist heute?* — What's the date today?",
+            "*Heute ist Donnerstag, der elfte September.* — Today is Thursday, September eleventh."
+          ]
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "de": "der Tag",
+      "baca": "tahk",
+      "en": "day"
+    },
+    {
+      "de": "die Woche",
+      "baca": "VOKH-e",
+      "en": "week"
+    },
+    {
+      "de": "der Monat",
+      "baca": "MOH-naht",
+      "en": "month"
+    },
+    {
+      "de": "das Jahr",
+      "baca": "yahr",
+      "en": "year"
+    },
+    {
+      "de": "der Montag",
+      "baca": "MOHN-tahk",
+      "en": "Monday"
+    },
+    {
+      "de": "der Dienstag",
+      "baca": "DEENS-tahk",
+      "en": "Tuesday"
+    },
+    {
+      "de": "der Mittwoch",
+      "baca": "MIT-vokh",
+      "en": "Wednesday"
+    },
+    {
+      "de": "der Donnerstag",
+      "baca": "DON-nuhs-tahk",
+      "en": "Thursday"
+    },
+    {
+      "de": "der Freitag",
+      "baca": "FREYE-tahk",
+      "en": "Friday"
+    },
+    {
+      "de": "der Samstag",
+      "baca": "ZAHMS-tahk",
+      "en": "Saturday"
+    },
+    {
+      "de": "der Sonntag",
+      "baca": "ZON-tahk",
+      "en": "Sunday"
+    },
+    {
+      "de": "das Wochenende",
+      "baca": "VOKH-en-en-de",
+      "en": "weekend"
+    },
+    {
+      "de": "der Termin",
+      "baca": "tair-MEEN",
+      "en": "appointment"
+    },
+    {
+      "de": "passen",
+      "baca": "PAHS-sen",
+      "en": "to suit, to fit"
+    },
+    {
+      "de": "verschieben",
+      "baca": "fair-SHEE-ben",
+      "en": "to postpone, to move"
+    },
+    {
+      "de": "absagen",
+      "baca": "AHP-zah-gen",
+      "en": "to cancel"
+    },
+    {
+      "de": "mitbringen",
+      "baca": "MIT-bring-en",
+      "en": "to bring along"
+    },
+    {
+      "de": "die Praxis",
+      "baca": "PRAHK-sis",
+      "en": "doctor's office"
+    }
+  ],
+  "exercises": [
+    {
+      "prompt": "Translate into English.",
+      "items": [
+        "Welcher Tag ist heute?",
+        "Ich möchte einen Termin machen.",
+        "Am Dienstag habe ich leider Kurs.",
+        "Das passt mir gut.",
+        "Ich komme am dritten Mai.",
+        "Können wir den Termin verschieben?"
+      ]
+    },
+    {
+      "prompt": "Fill in *am*, *im* or *um*.",
+      "items": [
+        "Der Kurs beginnt ____ neun Uhr.",
+        "Ich komme ____ Montag.",
+        "____ Sommer fahre ich nach Bali.",
+        "Wir haben ____ Wochenende Zeit.",
+        "Mein Geburtstag ist ____ Mai.",
+        "Der Termin ist ____ halb vier."
+      ]
+    },
+    {
+      "prompt": "Put the words in the right order.",
+      "items": [
+        "einen Termin / ich / machen / möchte",
+        "Zeit / haben / am Montag / Sie",
+        "gut / das / mir / passt",
+        "ist / heute / Tag / welcher",
+        "am elften September / der Termin / ist",
+        "absagen / ich / den Termin / muss"
+      ]
+    }
+  ],
+  "answers": [
+    "What day is it today? — I'd like to make an appointment. — Unfortunately I have class on Tuesday. — That suits me fine. — I'm coming on May third. — Can we move the appointment?",
+    "um — am — Im — am — im — um",
+    "Ich möchte einen Termin machen. — Haben Sie am Montag Zeit? — Das passt mir gut. — Welcher Tag ist heute? — Der Termin ist am elften September. — Ich muss den Termin absagen."
+  ],
+  "wave": "Before starting Unit 10, go back to the dialogue in **Unit 2**. Cover the German and rebuild the sentences from the English translation."
+}

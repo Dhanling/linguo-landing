@@ -1,0 +1,460 @@
+{
+  "title": "Asking for directions",
+  "title_target": "Scusi, dov'è la stazione?",
+  "goal": "Ask strangers for directions, understand the answer, and use the imperative — including the formal form, which works differently.",
+  "bekal": [
+    "ask the way and the distance politely",
+    "understand directions given at full speed",
+    "use the informal and formal imperative"
+  ],
+  "dialogs": [
+    {
+      "title": "Dialogo — Per andare alla stazione?",
+      "intro": "Budi is lost. Pay attention to the verb forms the man uses in his answer — that's the formal imperative.",
+      "lines": [
+        {
+          "speaker": "Budi:",
+          "text": "Scusi, signore. Per andare alla stazione?",
+          "id": "Excuse me, sir. How do I get to the station?",
+          "literal": "excuse, sir. for to-go to-the station?"
+        },
+        {
+          "speaker": "Signore:",
+          "text": "La stazione? Allora, vada sempre dritto.",
+          "id": "The station? OK, go straight ahead.",
+          "literal": "the station? so, go always straight."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Sempre dritto per questa via?",
+          "id": "Straight ahead along this street?",
+          "literal": "always straight for this street?"
+        },
+        {
+          "speaker": "Signore:",
+          "text": "Sì. Al secondo semaforo giri a sinistra.",
+          "id": "Yes. At the second traffic light, turn left.",
+          "literal": "yes. at-the second traffic-light turn to left."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "A sinistra. E poi?",
+          "id": "Left. And then?",
+          "literal": "to left. and then?"
+        },
+        {
+          "speaker": "Signore:",
+          "text": "Attraversi la piazza e prenda la prima a destra.",
+          "id": "Cross the square and take the first right.",
+          "literal": "cross the square and take the first to right."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "È lontano? Devo prendere l'autobus?",
+          "id": "Is it far? Do I need to take the bus?",
+          "literal": "is far? I-must to-take the bus?"
+        },
+        {
+          "speaker": "Signore:",
+          "text": "No, no. Dieci minuti a piedi, non di più.",
+          "id": "No, no. Ten minutes on foot, no more.",
+          "literal": "no, no. ten minutes on feet, not of more."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Scusi, può ripetere? Non ho capito bene.",
+          "id": "Sorry, could you repeat that? I didn't quite get it.",
+          "literal": "excuse, you-can to-repeat? not I-have understood well."
+        },
+        {
+          "speaker": "Signore:",
+          "text": "Dritto, sinistra al semaforo, attraversi la piazza, prima a destra.",
+          "id": "Straight, left at the light, cross the square, first right.",
+          "literal": "straight, left at-the traffic-light, cross the square, first to right."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Adesso ho capito. Grazie mille, molto gentile!",
+          "id": "Now I've got it. Thanks a lot, that's very kind!",
+          "literal": "now I-have understood. thanks thousand, very kind!"
+        },
+        {
+          "speaker": "Signore:",
+          "text": "Di niente. Buona giornata e buon viaggio!",
+          "id": "Not at all. Have a nice day and a good trip!",
+          "literal": "of nothing. good day and good trip!"
+        }
+      ],
+      "notes": [
+        "**Per andare a…?** is the most practical way to ask for directions. Literally \"for going to…?\", with no main verb at all. It's shorter and more common than a full sentence.",
+        "**The formal imperative takes the \"wrong\" vowel.** *-are* verbs end in *-i* (*giri!*, *attraversi!*), while *-ere* and *-ire* verbs end in *-a* (*prenda!*, *senta!*). Exactly the reverse of the normal forms. That's why street directions often sound strange even when you know the words.",
+        "**The informal imperative is easy.** It's the same as the *tu* form, except *-are* verbs end in *-a*: *gira!*, *prendi!*, *senti!*, *scusa!*.",
+        "**Scusi vs scusa** — now you know where they come from: both are imperatives of *scusare*, one formal, one informal. Likewise *senta!* (excuse me, formal) and *senti!* (hey, informal) — two words for getting someone's attention.",
+        "**Può ripetere?** is a lifesaver. Together with *può parlare più lentamente?* (could you speak more slowly?), it's your only tool when Italians answer at full speed — and they always do.",
+        "**Non ho capito** uses a past form even though it refers to now. Italians almost always say it this way, not *non capisco*. For now learn it whole; the form itself is unpacked in unit 19.",
+        "**Ordinal numbers.** *Il primo*, *il secondo*, *il terzo*, *il quarto*, *il quinto*. Used for turns, floors, and the first of the month. They agree in gender: *la prima a destra* because it refers to *la strada*.",
+        "**Di niente** = \"you're welcome\", alongside *prego* and *si figuri*. All three are interchangeable."
+      ],
+      "grammars": [
+        {
+          "title": "The imperative",
+          "body": [
+            "Two columns you need to master now. The *tu* column is for friends, the *Lei* column for strangers on the street."
+          ],
+          "table": {
+            "head": [
+              "Verb",
+              "tu (informal)",
+              "Lei (formal)",
+              "noi (let's)"
+            ],
+            "rows": [
+              [
+                "girare",
+                "gir**a**!",
+                "gir**i**!",
+                "gir**iamo**!"
+              ],
+              [
+                "scusare",
+                "scus**a**!",
+                "scus**i**!",
+                "—"
+              ],
+              [
+                "prendere",
+                "prend**i**!",
+                "prend**a**!",
+                "prend**iamo**!"
+              ],
+              [
+                "sentire",
+                "sent**i**!",
+                "sent**a**!",
+                "sent**iamo**!"
+              ],
+              [
+                "andare",
+                "va'!",
+                "vad**a**!",
+                "andiamo!"
+              ],
+              [
+                "fare",
+                "fa'!",
+                "facci**a**!",
+                "facciamo!"
+              ],
+              [
+                "venire",
+                "vieni!",
+                "veng**a**!",
+                "veniamo!"
+              ]
+            ]
+          },
+          "after": [
+            "Remember the reversed pattern: **-are** formal takes *-i*, **-ere/-ire** formal takes *-a*. When in doubt, listen to officials or shop staff — they use these forms all day long.",
+            "Informal prohibitions use *non* + the infinitive: *non parlare!*, *non andare!*. In the formal form, just add *non*: *non parli!*.",
+            "The *noi* form is used as \"let's\" and is identical to the normal form: *andiamo!* (let's go), *mangiamo!* (let's eat), *aspettiamo!* (let's wait)."
+          ]
+        },
+        {
+          "title": "Words for direction and distance",
+          "body": [],
+          "table": {
+            "head": [
+              "Italiano",
+              "English",
+              "Italiano",
+              "English"
+            ],
+            "rows": [
+              [
+                "sempre dritto",
+                "straight ahead",
+                "girare a destra",
+                "turn right"
+              ],
+              [
+                "a destra",
+                "on/to the right",
+                "girare a sinistra",
+                "turn left"
+              ],
+              [
+                "a sinistra",
+                "on/to the left",
+                "attraversare",
+                "to cross"
+              ],
+              [
+                "la prima a destra",
+                "the first right",
+                "il semaforo",
+                "traffic light"
+              ],
+              [
+                "l'incrocio",
+                "intersection",
+                "l'angolo",
+                "corner"
+              ],
+              [
+                "il marciapiede",
+                "sidewalk",
+                "la rotonda",
+                "roundabout"
+              ],
+              [
+                "di fronte a",
+                "opposite",
+                "in fondo a",
+                "at the end of"
+              ],
+              [
+                "a due passi",
+                "very close",
+                "lontano",
+                "far"
+              ]
+            ]
+          },
+          "after": [
+            "*A due passi* literally means \"two steps away\" and means very close. Beware of Italian optimism about distance: *a due passi* can mean a ten-minute walk."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Getting around and buying tickets",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "Italiano",
+            "English",
+            "Italiano",
+            "English"
+          ],
+          "rows": [
+            [
+              "l'autobus",
+              "city bus",
+              "il binario",
+              "platform"
+            ],
+            [
+              "il tram",
+              "tram",
+              "la fermata",
+              "stop"
+            ],
+            [
+              "la metro",
+              "subway",
+              "il biglietto",
+              "ticket"
+            ],
+            [
+              "il treno",
+              "train",
+              "l'andata",
+              "one way"
+            ],
+            [
+              "il taxi",
+              "taxi",
+              "l'andata e ritorno",
+              "round trip"
+            ],
+            [
+              "la macchina",
+              "car",
+              "in orario",
+              "on time"
+            ],
+            [
+              "la bici",
+              "bike",
+              "in ritardo",
+              "late"
+            ]
+          ]
+        },
+        {
+          "type": "kotak",
+          "title": "Ready-made phrases",
+          "items": [
+            "*Scusi, dov'è la fermata dell'autobus?* — Excuse me, where's the bus stop?",
+            "*Quale autobus va in centro?* — Which bus goes downtown?",
+            "*Un biglietto per Firenze, andata e ritorno.* — A round-trip ticket to Florence.",
+            "*Da quale binario parte?* — Which platform does it leave from?",
+            "*Devo cambiare?* — Do I have to change?",
+            "*Quanto ci vuole?* — How long does it take?",
+            "*Mi può dire quando scendere?* — Can you tell me when to get off?"
+          ]
+        },
+        {
+          "type": "p",
+          "text": "⚠️ Bus and tram tickets in Italy must be **validated** in the little machine on board as soon as you get on — *timbrare il biglietto*. An unvalidated ticket counts as unused, and the fine is steep. This is the rule that catches newcomers most often."
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "it": "la strada",
+      "baca": "lah STRAH-dah",
+      "en": "street, road"
+    },
+    {
+      "it": "girare",
+      "baca": "jee-RAH-reh",
+      "en": "to turn"
+    },
+    {
+      "it": "attraversare",
+      "baca": "aht-trah-vehr-SAH-reh",
+      "en": "to cross"
+    },
+    {
+      "it": "l'incrocio",
+      "baca": "leen-KROH-choh",
+      "en": "intersection"
+    },
+    {
+      "it": "l'angolo",
+      "baca": "LAHN-goh-loh",
+      "en": "corner"
+    },
+    {
+      "it": "la fermata",
+      "baca": "lah fehr-MAH-tah",
+      "en": "stop (bus, tram)"
+    },
+    {
+      "it": "il binario",
+      "baca": "eel bee-NAH-ryoh",
+      "en": "platform"
+    },
+    {
+      "it": "scendere",
+      "baca": "SHEHN-deh-reh",
+      "en": "to get off, go down"
+    },
+    {
+      "it": "salire",
+      "baca": "sah-LEE-reh",
+      "en": "to get on, go up"
+    },
+    {
+      "it": "cambiare",
+      "baca": "kahm-BYAH-reh",
+      "en": "to change"
+    },
+    {
+      "it": "ripetere",
+      "baca": "ree-PEH-teh-reh",
+      "en": "to repeat"
+    },
+    {
+      "it": "lentamente",
+      "baca": "lehn-tah-MEHN-teh",
+      "en": "slowly"
+    },
+    {
+      "it": "primo",
+      "baca": "PREE-moh",
+      "en": "first"
+    },
+    {
+      "it": "secondo",
+      "baca": "seh-KOHN-doh",
+      "en": "second"
+    },
+    {
+      "it": "terzo",
+      "baca": "TEHR-tsoh",
+      "en": "third"
+    },
+    {
+      "it": "quale",
+      "baca": "KWAH-leh",
+      "en": "which"
+    },
+    {
+      "it": "timbrare",
+      "baca": "teem-BRAH-reh",
+      "en": "to validate (a ticket)"
+    },
+    {
+      "it": "l'andata e ritorno",
+      "baca": "lahn-DAH-tah eh ree-TOHR-noh",
+      "en": "round trip"
+    },
+    {
+      "it": "di niente",
+      "baca": "dee NYEHN-teh",
+      "en": "you're welcome"
+    },
+    {
+      "it": "a due passi",
+      "baca": "ah DOO-eh PAHS-see",
+      "en": "very close"
+    }
+  ],
+  "exercises": [
+    {
+      "prompt": "Change these informal commands into the formal form.",
+      "items": [
+        "Gira a destra!",
+        "Prendi la prima a sinistra!",
+        "Scusa!",
+        "Attraversa la piazza!",
+        "Senti!",
+        "Vai dritto!"
+      ]
+    },
+    {
+      "prompt": "Translate into Italian.",
+      "items": [
+        "Excuse me, where's the station?",
+        "Go straight ahead.",
+        "Turn left at the traffic light.",
+        "Is it far from here?",
+        "Could you repeat that?",
+        "Could you speak more slowly?"
+      ]
+    },
+    {
+      "prompt": "Fill in the right direction word.",
+      "items": [
+        "Vada sempre ____.",
+        "Giri a ____ al semaforo.",
+        "____ la piazza e prenda la prima a destra.",
+        "La banca è di ____ al cinema.",
+        "La farmacia è in ____ alla strada."
+      ]
+    },
+    {
+      "prompt": "Put the words in the right order.",
+      "items": [
+        "stazione / dov'è / scusi / la / ?",
+        "dritto / vada / sempre",
+        "sinistra / giri / a",
+        "ripetere / può / ?",
+        "biglietto / Firenze / un / per"
+      ]
+    }
+  ],
+  "answers": [
+    "Giri a destra! — Prenda la prima a sinistra! — Scusi! — Attraversi la piazza! — Senta! — Vada dritto!",
+    "Scusi, dov'è la stazione? — Vada sempre dritto. — Giri a sinistra al semaforo. — È lontano da qui? — Può ripetere? — Può parlare più lentamente?",
+    "dritto — sinistra — Attraversi — fronte — fondo",
+    "Scusi, dov'è la stazione? — Vada sempre dritto. — Giri a sinistra. — Può ripetere? — Un biglietto per Firenze."
+  ],
+  "wave": "Review **unit 15** first: name five things you like and five you don't, making sure you pick *piace* or *piacciono* correctly."
+}

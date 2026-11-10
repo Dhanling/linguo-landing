@@ -1,0 +1,434 @@
+{
+  "title": "Meet my friend",
+  "title_target": "Je te présente un ami",
+  "goal": "Introduce other people, say what they do and where they live, and tell apart two ways of saying \"he/she/it is\": c'est and il est.",
+  "bekal": [
+    "introduce a third person with *voici* and *je te présente*",
+    "state a job without an article: *il est professeur*",
+    "tell *c'est* (pointing someone out) from *il est* (describing them)"
+  ],
+  "dialogs": [
+    {
+      "title": "Dialogue — À la cafétéria",
+      "intro": "Camille introduces Budi to her friend in the campus cafeteria.",
+      "lines": [
+        {
+          "speaker": "Camille:",
+          "text": "Budi, je te présente Thomas. C'est un ami.",
+          "id": "Budi, this is Thomas. He's a friend.",
+          "literal": "Budi, I to-you present Thomas. it-is a friend."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Bonjour Thomas, enchanté.",
+          "id": "Hi Thomas, nice to meet you.",
+          "literal": "good-day Thomas, enchanted."
+        },
+        {
+          "speaker": "Thomas:",
+          "text": "Enchanté. Tu es dans la classe de Camille ?",
+          "id": "Nice to meet you too. Are you in Camille's class?",
+          "literal": "enchanted. you you-are in the class of Camille?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Oui, on est ensemble. Et toi, tu es étudiant ?",
+          "id": "Yes, we're in it together. And you, are you a student?",
+          "literal": "yes, one is together. and you, you you-are student?"
+        },
+        {
+          "speaker": "Thomas:",
+          "text": "Non, je travaille. Je suis architecte.",
+          "id": "No, I work. I'm an architect.",
+          "literal": "no, I I-work. I I-am architect."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Ah, c'est intéressant ! Tu habites à Lyon ?",
+          "id": "Oh, that's interesting! Do you live in Lyon?",
+          "literal": "ah, it-is interesting! you you-live in Lyon?"
+        },
+        {
+          "speaker": "Thomas:",
+          "text": "Oui, j'habite ici depuis trois ans. Et toi ?",
+          "id": "Yes, I've lived here for three years. And you?",
+          "literal": "yes, I-live here since three years. and you?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Moi, je suis ici depuis deux semaines seulement.",
+          "id": "I've only been here for two weeks.",
+          "literal": "me, I I-am here since two weeks only."
+        },
+        {
+          "speaker": "Camille:",
+          "text": "Il parle déjà bien français, non ?",
+          "id": "His French is already good, isn't it?",
+          "literal": "he speaks already well French, no?"
+        },
+        {
+          "speaker": "Thomas:",
+          "text": "Oui, vraiment ! Tu apprends vite.",
+          "id": "Yes, really! You learn fast.",
+          "literal": "yes, truly! you you-learn fast."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Merci ! Mais je fais encore beaucoup de fautes.",
+          "id": "Thanks! But I still make lots of mistakes.",
+          "literal": "thanks! but I make still much of mistakes."
+        },
+        {
+          "speaker": "Camille:",
+          "text": "Ce n'est pas grave. C'est normal !",
+          "id": "No big deal. That's normal!",
+          "literal": "that not-is not serious. it-is normal!"
+        }
+      ],
+      "notes": [
+        "**Jobs take no article.** *Je suis architecte*, not *je suis un architecte*. This is one of the few places where French drops its article — and exactly where English speakers tend to add one (*I am an architect*).",
+        "**On is used for \"we\".** Grammatically *on* means \"one\" and takes the same verb form as *il/elle*, but in everyday speech it almost always means *nous*. *On est ensemble* = we're together. *Nous* sounds more formal; on the street, French people say *on*.",
+        "**Depuis = since/for, and the sentence stays in the present.** *J'habite ici depuis trois ans* — literally \"I live here since three years\". English uses \"I have lived\", but French uses the plain present.",
+        "**J'habite, not je habite.** When the verb starts with a vowel or a silent h, *je* is cut to *j'*. The same happens with *le → l'*, *ne → n'*, *de → d'*. French doesn't like two vowels colliding.",
+        "**Non? at the end of a sentence** is the lightest way to ask for agreement, like \"right?\" or \"isn't it?\" in English. Its more common relatives: *n'est-ce pas ?* and, in casual talk, *hein ?*",
+        "**Beaucoup de fautes**, not *beaucoup fautes*. After quantity words like *beaucoup*, *peu*, *assez*, *trop*, French always slips in **de** and drops the article. This rule comes back in full in Unit 12.",
+        "**Ce n'est pas grave** is literally \"it's not serious\" — the most useful phrase in all of French. It is used to forgive, to reassure, and to close an awkward moment. The short street form: *c'est pas grave*."
+      ],
+      "grammars": [
+        {
+          "title": "C'est or il est?",
+          "body": [
+            "Both translate as \"he/she is\" or \"it is\", and learners almost always pick the wrong one. The dividing line is simple: look at the word that follows."
+          ],
+          "table": {
+            "head": [
+              "What follows",
+              "Use",
+              "Example"
+            ],
+            "rows": [
+              [
+                "noun + article",
+                "**c'est**",
+                "*C'est un ami.*"
+              ],
+              [
+                "a person's name",
+                "**c'est**",
+                "*C'est Thomas.*"
+              ],
+              [
+                "adjective describing a general situation",
+                "**c'est**",
+                "*C'est intéressant.*"
+              ],
+              [
+                "job (no article)",
+                "**il / elle est**",
+                "*Il est architecte.*"
+              ],
+              [
+                "nationality",
+                "**il / elle est**",
+                "*Elle est française.*"
+              ],
+              [
+                "adjective about a specific person",
+                "**il / elle est**",
+                "*Il est grand.*"
+              ]
+            ]
+          },
+          "after": [
+            "A shortcut that rarely fails: **an article after it → c'est**. No article → *il est*.",
+            "The plurals are *ce sont* (*ce sont mes amis*) and *ils sont* (*ils sont étudiants*). In conversation, *ce sont* is often replaced by plain *c'est*."
+          ]
+        },
+        {
+          "title": "-er verbs, the first group",
+          "body": [
+            "Nine out of ten French verbs end in **-er**, and they all behave the same way. Drop the -er and add the endings below."
+          ],
+          "table": {
+            "head": [
+              "",
+              "parler (to speak)",
+              "pronunciation",
+              "habiter (to live)"
+            ],
+            "rows": [
+              [
+                "je / j'",
+                "parl**e**",
+                "PAHRL",
+                "j'habite"
+              ],
+              [
+                "tu",
+                "parl**es**",
+                "PAHRL",
+                "tu habites"
+              ],
+              [
+                "il / elle / on",
+                "parl**e**",
+                "PAHRL",
+                "il habite"
+              ],
+              [
+                "nous",
+                "parl**ons**",
+                "pahr-LOHN",
+                "nous habitons"
+              ],
+              [
+                "vous",
+                "parl**ez**",
+                "pahr-LAY",
+                "vous habitez"
+              ],
+              [
+                "ils / elles",
+                "parl**ent**",
+                "PAHRL",
+                "ils habitent"
+              ]
+            ]
+          },
+          "after": [
+            "⚠️ Four forms — *parle, parles, parle, parlent* — sound **exactly the same**: PAHRL. The endings *-es* and *-ent* are completely silent. Only *parlons* and *parlez* actually sound different.",
+            "Which means your ear can never tell *il parle* from *ils parlent*. The pronoun makes the difference — and that is why pronouns can never be dropped in French.",
+            "Other verbs that behave the same way and are useful right away: *travailler* (to work), *aimer* (to like), *étudier* (to study), *regarder* (to watch), *écouter* (to listen), *manger* (to eat)."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Introducing people, three ways",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "French has three levels of formality for something as simple as introducing a friend. Choose according to who you are talking to, not who is being introduced."
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Sentence",
+            "Pronunciation",
+            "Used with"
+          ],
+          "rows": [
+            [
+              "Voici Thomas.",
+              "vwah-SEE toh-MAH",
+              "Anyone — neutral, slightly formal"
+            ],
+            [
+              "Je te présente Thomas.",
+              "zhuh tuh pray-ZAHNT",
+              "Friends, peers (casual)"
+            ],
+            [
+              "Je vous présente Thomas.",
+              "zhuh voo pray-ZAHNT",
+              "People you address politely, or more than one person"
+            ],
+            [
+              "C'est Thomas, un ami.",
+              "seh toh-MAH uh-nah-MEE",
+              "Most relaxed"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "The standard reply is *enchanté(e)*. In a relaxed setting, *bonjour* plus your own name is enough. In everyday conversation French people often just answer *salut*."
+        },
+        {
+          "type": "kotak",
+          "title": "The jobs you'll name most often",
+          "items": [
+            "*étudiant / étudiante* (student), *professeur* (teacher, lecturer — the same for women), *médecin* (doctor), *ingénieur* (engineer), *architecte* (architect).",
+            "*infirmier / infirmière* (nurse), *serveur / serveuse* (waiter / waitress), *vendeur / vendeuse* (salesperson), *cuisinier / cuisinière* (cook), *employé / employée* (employee).",
+            "Remember: no article after *être*. But with an article after *c'est* — *c'est un médecin*."
+          ]
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "fr": "présenter",
+      "baca": "pray-zahn-TAY",
+      "en": "to introduce"
+    },
+    {
+      "fr": "voici",
+      "baca": "vwah-SEE",
+      "en": "here is, this is"
+    },
+    {
+      "fr": "un ami / une amie",
+      "baca": "uh-nah-MEE",
+      "en": "friend"
+    },
+    {
+      "fr": "la classe",
+      "baca": "lah KLAHS",
+      "en": "class"
+    },
+    {
+      "fr": "ensemble",
+      "baca": "ahn-SAHNBL",
+      "en": "together"
+    },
+    {
+      "fr": "un étudiant",
+      "baca": "uh-nay-tü-DYAHN",
+      "en": "student"
+    },
+    {
+      "fr": "travailler",
+      "baca": "trah-vah-YAY",
+      "en": "to work"
+    },
+    {
+      "fr": "un architecte",
+      "baca": "uh-nahr-shee-TEKT",
+      "en": "architect"
+    },
+    {
+      "fr": "intéressant",
+      "baca": "an-tay-ray-SAHN",
+      "en": "interesting"
+    },
+    {
+      "fr": "habiter",
+      "baca": "ah-bee-TAY",
+      "en": "to live (somewhere)"
+    },
+    {
+      "fr": "ici",
+      "baca": "ee-SEE",
+      "en": "here"
+    },
+    {
+      "fr": "depuis",
+      "baca": "duh-PWEE",
+      "en": "since, for"
+    },
+    {
+      "fr": "un an / une année",
+      "baca": "uh-NAHN / ü-nah-NAY",
+      "en": "year"
+    },
+    {
+      "fr": "une semaine",
+      "baca": "ün suh-MEN",
+      "en": "week"
+    },
+    {
+      "fr": "seulement",
+      "baca": "suhl-MAHN",
+      "en": "only"
+    },
+    {
+      "fr": "déjà",
+      "baca": "day-ZHAH",
+      "en": "already"
+    },
+    {
+      "fr": "vraiment",
+      "baca": "vreh-MAHN",
+      "en": "really, truly"
+    },
+    {
+      "fr": "apprendre",
+      "baca": "ah-PRAHNDR",
+      "en": "to learn"
+    },
+    {
+      "fr": "vite",
+      "baca": "VEET",
+      "en": "fast, quickly"
+    },
+    {
+      "fr": "mais",
+      "baca": "meh",
+      "en": "but"
+    },
+    {
+      "fr": "encore",
+      "baca": "ahn-KOHR",
+      "en": "still, again"
+    },
+    {
+      "fr": "une faute",
+      "baca": "ün FOHT",
+      "en": "mistake"
+    },
+    {
+      "fr": "grave",
+      "baca": "GRAHV",
+      "en": "serious"
+    },
+    {
+      "fr": "normal",
+      "baca": "nohr-MAHL",
+      "en": "normal"
+    }
+  ],
+  "exercises": [
+    {
+      "prompt": "Choose c'est or il/elle est.",
+      "items": [
+        "____ un ami de Camille.",
+        "____ architecte.",
+        "____ intéressant, ce livre.",
+        "____ française.",
+        "____ Thomas.",
+        "____ étudiante à Lyon."
+      ]
+    },
+    {
+      "prompt": "Fill in the correct verb form.",
+      "items": [
+        "Je ____ (parler) français.",
+        "Tu ____ (habiter) à Lyon ?",
+        "Camille ____ (travailler) à Paris.",
+        "Nous ____ (étudier) ensemble.",
+        "Vous ____ (aimer) le café ?",
+        "Ils ____ (regarder) un film."
+      ]
+    },
+    {
+      "prompt": "Translate into French.",
+      "items": [
+        "Let me introduce Thomas.",
+        "He's an architect.",
+        "I've lived in Lyon for two years.",
+        "Are you a student?",
+        "You already speak French well.",
+        "No big deal, that's normal."
+      ]
+    },
+    {
+      "prompt": "Put the words in the right order.",
+      "items": [
+        "présente / je / Thomas / te",
+        "est / architecte / il",
+        "habite / j' / Lyon / à",
+        "parles / tu / bien / français",
+        "grave / n' / ce / est / pas"
+      ]
+    }
+  ],
+  "answers": [
+    "C'est — Il est — C'est — Elle est — C'est — Elle est",
+    "parle — habites — travaille — étudions — aimez — regardent",
+    "Je te présente Thomas. — Il est architecte. — J'habite à Lyon depuis deux ans. — Tu es étudiant ? — Tu parles déjà bien français. — Ce n'est pas grave, c'est normal.",
+    "Je te présente Thomas. — Il est architecte. — J'habite à Lyon. — Tu parles bien français. — Ce n'est pas grave."
+  ]
+}

@@ -1,0 +1,539 @@
+{
+  "title": "At the restaurant",
+  "title_target": "Im Restaurant",
+  "goal": "Read a menu, order a full meal, and say which option you like better.",
+  "bekal": [
+    "read and understand a menu",
+    "express degrees of liking (*gern – lieber – am liebsten*)",
+    "compare with *besser*, *mehr* and *als*",
+    "compliment, complain and pay"
+  ],
+  "dialogs": [
+    {
+      "title": "Dialogue — Ein Abendessen zu zweit",
+      "intro": "Budi and Lena are having dinner at a German restaurant. German menus are full of long compound words — and almost all of them break down into two short words you already know.",
+      "lines": [
+        {
+          "speaker": "Kellner:",
+          "text": "Guten Abend. Haben Sie reserviert?",
+          "id": "Good evening. Do you have a reservation?",
+          "literal": "good evening. have you reserved?"
+        },
+        {
+          "speaker": "Lena:",
+          "text": "Nein, aber ist ein Tisch für zwei frei?",
+          "id": "No, but is there a table for two free?",
+          "literal": "no, but is a table for two free?"
+        },
+        {
+          "speaker": "Kellner:",
+          "text": "Ja, dort am Fenster. Hier ist die Speisekarte.",
+          "id": "Yes, over there by the window. Here's the menu.",
+          "literal": "yes, there at-the window. here is the food-card."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Danke. Was empfehlen Sie?",
+          "id": "Thank you. What do you recommend?",
+          "literal": "thanks. what recommend you?"
+        },
+        {
+          "speaker": "Kellner:",
+          "text": "Das Schnitzel ist heute sehr gut. Und die Gemüsesuppe als Vorspeise.",
+          "id": "The schnitzel is very good today. And the vegetable soup as a starter.",
+          "literal": "the schnitzel is today very good. and the vegetable-soup as starter."
+        },
+        {
+          "speaker": "Lena:",
+          "text": "Ich esse gern Fisch. Haben Sie auch Fisch?",
+          "id": "I like fish. Do you have fish too?",
+          "literal": "I eat gladly fish. have you also fish?"
+        },
+        {
+          "speaker": "Kellner:",
+          "text": "Ja, Forelle mit Kartoffeln.",
+          "id": "Yes, trout with potatoes.",
+          "literal": "yes, trout with potatoes."
+        },
+        {
+          "speaker": "Lena:",
+          "text": "Perfekt, das nehme ich. Und als Getränk ein Glas Weißwein.",
+          "id": "Perfect, I'll have that. And to drink, a glass of white wine.",
+          "literal": "perfect, that take I. and as drink a glass white-wine."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Ich esse lieber Fleisch. Ich nehme das Schnitzel mit Pommes.",
+          "id": "I prefer meat. I'll have the schnitzel with fries.",
+          "literal": "I eat rather meat. I take the schnitzel with fries."
+        },
+        {
+          "speaker": "Kellner:",
+          "text": "Sehr gern. Und zu trinken?",
+          "id": "Certainly. And to drink?",
+          "literal": "very gladly. and to drink?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Ein großes Bier, bitte. Kein Alkohol für mich — ein alkoholfreies.",
+          "id": "A large beer, please. No alcohol for me — an alcohol-free one.",
+          "literal": "a large beer, please. no alcohol for me — an alcohol-free."
+        },
+        {
+          "speaker": "Kellner:",
+          "text": "Alles klar. Guten Appetit später!",
+          "id": "Very good. Enjoy your meal later!",
+          "literal": "all clear. good appetite later!"
+        },
+        {
+          "speaker": "Lena:",
+          "text": "Wie schmeckt dein Schnitzel?",
+          "id": "How's your schnitzel?",
+          "literal": "how tastes your schnitzel?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Sehr gut, danke! Besser als in Berlin.",
+          "id": "Very good, thanks! Better than in Berlin.",
+          "literal": "very good, thanks! better than in Berlin."
+        }
+      ],
+      "notes": [
+        "**Long compound words are just stacks of short ones.** *Speisekarte* = *Speise* (dish) + *Karte* (card). *Gemüsesuppe* = *Gemüse* + *Suppe*. The gender always comes from the **last word**: *die Karte* → *die Speisekarte*, *die Suppe* → *die Gemüsesuppe*. This rule works for words of any length.",
+        "***gern → lieber → am liebsten*.** Three levels of liking: *Ich esse **gern** Fisch* (like), *Ich esse **lieber** Fleisch* (prefer), *Ich esse **am liebsten** Pizza* (like best). This is the most common way to state a preference, and it's completely irregular — learn the three together.",
+        "***schmecken*** is used specifically for how food tastes: *Wie schmeckt es?* (\"how does it taste?\"), *Es schmeckt gut* (\"it's good\"). German doesn't use *gut sein* for taste — *Das Essen ist gut* sounds like rating the quality, not the flavor.",
+        "***Guten Appetit!*** is said before eating, and the reply is simply *Danke, gleichfalls* (\"thanks, you too\"). At a table with Germans, nobody starts eating before this has been said.",
+        "**Line 9: *Ich esse lieber Fleisch*.** Notice where *lieber* goes — right after the verb, just like *gern*. Both are adverbs, not verbs, so neither ever stands alone as an answer.",
+        "***als*** in the last line means \"than\" and is used for comparing: *besser als*, *größer als*, *teurer als*. It's the same *als* you saw in unit 6 meaning \"as\" — once again, its position decides its meaning."
+      ],
+      "grammars": [
+        {
+          "title": "Expressing likes: three levels",
+          "body": [
+            "German has two ways of saying you like something. The first puts *gern* after the verb — used for **activities**. The second uses *mögen* — used for **things**."
+          ],
+          "table": {
+            "head": [
+              "Level",
+              "For activities",
+              "For things",
+              "Meaning"
+            ],
+            "rows": [
+              [
+                "like",
+                "Ich trinke **gern** Tee.",
+                "Ich **mag** Tee.",
+                "I like tea."
+              ],
+              [
+                "prefer",
+                "Ich trinke **lieber** Kaffee.",
+                "Ich mag Kaffee **lieber**.",
+                "I prefer coffee."
+              ],
+              [
+                "like best",
+                "Ich trinke **am liebsten** Wasser.",
+                "Am liebsten mag ich Wasser.",
+                "I like water best."
+              ],
+              [
+                "don't like",
+                "Ich trinke **nicht gern** Bier.",
+                "Ich **mag** kein Bier.",
+                "I don't like beer."
+              ]
+            ]
+          },
+          "after": [
+            "⚠️ Look at the last column of row four: *mögen* is negated with ***kein***, not *nicht*, because what's being negated is the noun. *Ich mag **keinen** Fisch*, *Ich mag **keine** Milch*.",
+            "*Mögen* and *möchten* are related but not interchangeable: *Ich **mag** Kaffee* = I like coffee (in general); *Ich **möchte** einen Kaffee* = I'd like a coffee (now, here). Ordering with *Ich mag einen Kaffee* sounds strange."
+          ]
+        },
+        {
+          "title": "Comparing things",
+          "body": [
+            "Comparisons are made by adding **-er** to the adjective, and the comparing word is **als** — just like English \"cheap**er** than\". Short adjectives with a, o, u usually take an Umlaut as well."
+          ],
+          "table": {
+            "head": [
+              "Adjective",
+              "More…",
+              "Most…",
+              "Example"
+            ],
+            "rows": [
+              [
+                "billig (cheap)",
+                "billig**er**",
+                "am billig**sten**",
+                "Das ist billiger als das."
+              ],
+              [
+                "klein",
+                "klein**er**",
+                "am klein**sten**",
+                "Meine Wohnung ist kleiner."
+              ],
+              [
+                "groß",
+                "gr**öß**er",
+                "am größten",
+                "Berlin ist größer als Potsdam."
+              ],
+              [
+                "alt",
+                "**ä**lter",
+                "am ältesten",
+                "Mein Bruder ist älter als ich."
+              ],
+              [
+                "**gut**",
+                "**besser**",
+                "**am besten**",
+                "Das schmeckt besser."
+              ],
+              [
+                "**viel**",
+                "**mehr**",
+                "**am meisten**",
+                "Ich esse mehr als du."
+              ],
+              [
+                "**gern**",
+                "**lieber**",
+                "**am liebsten**",
+                "Ich trinke lieber Tee."
+              ]
+            ]
+          },
+          "after": [
+            "The last three rows are completely irregular, and they're the ones used most. The good news: there are only three — just like English *good – better – best*.",
+            "To say **the same**, use *so … wie*: *Berlin ist **so** teuer **wie** München.* Notice the comparing word changes from *als* to *wie* — using *als* here is a mistake even some native speakers make.",
+            "At A1 you only need these forms **after the verb** (*Das ist billiger*). Using them in front of a noun (*ein billigeres Hotel*) requires adjective endings, which come apart in A2."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Reading the menu",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "German menus almost always follow the same order. Recognizing the four section headings is enough to know where to look."
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Menu section",
+            "Meaning",
+            "Typical items"
+          ],
+          "rows": [
+            [
+              "die Vorspeise",
+              "starter",
+              "Suppe, Salat"
+            ],
+            [
+              "das Hauptgericht",
+              "main course",
+              "Schnitzel, Braten, Fisch"
+            ],
+            [
+              "die Beilage",
+              "side dish",
+              "Pommes, Kartoffeln, Reis"
+            ],
+            [
+              "der Nachtisch",
+              "dessert",
+              "Eis, Kuchen, Apfelstrudel"
+            ],
+            [
+              "die Getränke",
+              "drinks",
+              "Bier, Wein, Wasser, Saft"
+            ],
+            [
+              "das Tagesmenü",
+              "menu of the day",
+              "usually the cheapest"
+            ]
+          ]
+        },
+        {
+          "type": "sub",
+          "text": "Food you'll come across"
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "German",
+            "English",
+            "German",
+            "English"
+          ],
+          "rows": [
+            [
+              "das Schnitzel",
+              "breaded cutlet",
+              "die Wurst",
+              "sausage"
+            ],
+            [
+              "der Braten",
+              "roast",
+              "das Brötchen",
+              "bread roll"
+            ],
+            [
+              "die Suppe",
+              "soup",
+              "der Salat",
+              "salad"
+            ],
+            [
+              "die Kartoffeln",
+              "potatoes",
+              "die Pommes",
+              "fries"
+            ],
+            [
+              "die Nudeln",
+              "noodles, pasta",
+              "der Reis",
+              "rice"
+            ],
+            [
+              "das Hähnchen",
+              "chicken",
+              "das Rindfleisch",
+              "beef"
+            ],
+            [
+              "das Schweinefleisch",
+              "pork",
+              "der Fisch",
+              "fish"
+            ],
+            [
+              "der Nachtisch",
+              "dessert",
+              "das Eis",
+              "ice cream"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "⚠️ If you don't eat pork, the sentence to memorize is ***Ich esse kein Schweinefleisch***, plus the question ***Ist da Schweinefleisch drin?*** (\"is there pork in it?\"). Pork is very common in German cooking, including in sausages and soups whose names don't mention it. For vegetarians: *Ich bin Vegetarier / Vegetarierin*, and *Haben Sie etwas Vegetarisches?*"
+        }
+      ]
+    },
+    {
+      "title": "At the table",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "German",
+            "English"
+          ],
+          "rows": [
+            [
+              "Haben Sie einen Tisch für zwei?",
+              "Do you have a table for two?"
+            ],
+            [
+              "Die Speisekarte, bitte.",
+              "The menu, please."
+            ],
+            [
+              "Was empfehlen Sie?",
+              "What do you recommend?"
+            ],
+            [
+              "Ich nehme das Schnitzel.",
+              "I'll have the schnitzel."
+            ],
+            [
+              "Als Vorspeise nehme ich die Suppe.",
+              "As a starter I'll have the soup."
+            ],
+            [
+              "Guten Appetit!",
+              "Enjoy your meal!"
+            ],
+            [
+              "Danke, gleichfalls.",
+              "Thanks, you too."
+            ],
+            [
+              "Wie schmeckt es?",
+              "How does it taste?"
+            ],
+            [
+              "Es schmeckt sehr gut.",
+              "It's very good."
+            ],
+            [
+              "Noch ein Bier, bitte.",
+              "Another beer, please."
+            ]
+          ]
+        },
+        {
+          "type": "kotak",
+          "title": "When something's wrong",
+          "items": [
+            "*Entschuldigung, das habe ich nicht bestellt.* — Excuse me, I didn't order this.",
+            "*Die Suppe ist kalt.* — The soup is cold.",
+            "*Können wir bitte noch Wasser haben?* — Could we have some more water, please?",
+            "*Ich glaube, die Rechnung stimmt nicht.* — I think the bill isn't right."
+          ]
+        },
+        {
+          "type": "p",
+          "text": "All the complaints above open with *Entschuldigung* and end on a questioning note, not an accusing one. That works far better than a blunt statement — which, without any softening words, easily sounds rude in German."
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "de": "das Restaurant",
+      "baca": "rehs-toh-RAHNG",
+      "en": "restaurant"
+    },
+    {
+      "de": "die Speisekarte",
+      "baca": "SHPEYE-ze-kahr-te",
+      "en": "menu"
+    },
+    {
+      "de": "das Gericht",
+      "baca": "ge-RIKHT",
+      "en": "dish"
+    },
+    {
+      "de": "die Vorspeise",
+      "baca": "FOH-uh-shpeye-ze",
+      "en": "starter"
+    },
+    {
+      "de": "das Hauptgericht",
+      "baca": "HOWPT-ge-rikht",
+      "en": "main course"
+    },
+    {
+      "de": "der Nachtisch",
+      "baca": "NAHKH-tish",
+      "en": "dessert"
+    },
+    {
+      "de": "das Getränk",
+      "baca": "ge-TREHNK",
+      "en": "drink"
+    },
+    {
+      "de": "empfehlen",
+      "baca": "ehmp-FAY-len",
+      "en": "recommend"
+    },
+    {
+      "de": "bestellen",
+      "baca": "be-SHTEH-len",
+      "en": "order"
+    },
+    {
+      "de": "reservieren",
+      "baca": "reh-zehr-VEE-ren",
+      "en": "reserve, book"
+    },
+    {
+      "de": "schmecken",
+      "baca": "SHMEH-ken",
+      "en": "taste (good)"
+    },
+    {
+      "de": "mögen",
+      "baca": "MÖ-gen",
+      "en": "like"
+    },
+    {
+      "de": "lieber",
+      "baca": "LEE-buh",
+      "en": "rather, preferably"
+    },
+    {
+      "de": "am liebsten",
+      "baca": "ahm LEEPS-ten",
+      "en": "best of all"
+    },
+    {
+      "de": "besser",
+      "baca": "BEH-suh",
+      "en": "better"
+    },
+    {
+      "de": "mehr",
+      "baca": "MAY-uh",
+      "en": "more"
+    },
+    {
+      "de": "das Fleisch",
+      "baca": "fleyesh",
+      "en": "meat"
+    },
+    {
+      "de": "der Fisch",
+      "baca": "fish",
+      "en": "fish"
+    }
+  ],
+  "exercises": [
+    {
+      "prompt": "Translate into English.",
+      "items": [
+        "Haben Sie einen Tisch für zwei?",
+        "Was empfehlen Sie?",
+        "Ich esse gern Fisch.",
+        "Ich esse lieber Fleisch.",
+        "Wie schmeckt dein Schnitzel?",
+        "Besser als in Berlin."
+      ]
+    },
+    {
+      "prompt": "Fill in *gern*, *lieber* or *am liebsten*.",
+      "items": [
+        "Ich trinke ____ Tee. (like)",
+        "Kaffee trinke ich ____ als Tee. (prefer)",
+        "Ich esse ____ Pizza — das ist mein Lieblingsessen. (like best)",
+        "Was machst du ____ am Wochenende? (like)",
+        "Fährst du ____ mit dem Bus oder mit dem Rad? (prefer)",
+        "Sie liest ____ Bücher als Zeitungen. (prefer)"
+      ]
+    },
+    {
+      "prompt": "Put the words in the right order.",
+      "items": [
+        "für zwei / haben Sie / einen Tisch",
+        "Sie / was / empfehlen",
+        "das Schnitzel / ich / nehme",
+        "gern / ich / Fisch / esse",
+        "als / besser / in Berlin / das schmeckt",
+        "bitte / die Rechnung"
+      ]
+    }
+  ],
+  "answers": [
+    "Do you have a table for two? — What do you recommend? — I like fish. — I prefer meat. — How's your schnitzel? — Better than in Berlin.",
+    "gern — lieber — am liebsten — gern — lieber — lieber",
+    "Haben Sie einen Tisch für zwei? — Was empfehlen Sie? — Ich nehme das Schnitzel. — Ich esse gern Fisch. — Das schmeckt besser als in Berlin. — Die Rechnung, bitte."
+  ],
+  "wave": "Before you start unit 16, go back to the dialogue in **Unit 8**. Say all the times out loud, then check the prefixes of the separable verbs."
+}

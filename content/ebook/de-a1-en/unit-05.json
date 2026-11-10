@@ -1,0 +1,529 @@
+{
+  "title": "Numbers, age and phone numbers",
+  "title_target": "Zahlen und Alter",
+  "goal": "Master German numbers, including their most confusing habit: the ones come before the tens.",
+  "bekal": [
+    "count from zero to a thousand",
+    "give your age and date of birth",
+    "dictate a phone number and an address",
+    "ask the price (*Wie viel kostet das?*)"
+  ],
+  "dialogs": [
+    {
+      "title": "Dialogue — Bei der Anmeldung",
+      "intro": "Budi is signing up for the next course. The secretary is filling in a form, and this whole conversation contains almost nothing but numbers.",
+      "lines": [
+        {
+          "speaker": "Sekretärin:",
+          "text": "Guten Tag. Wie ist Ihr Name, bitte?",
+          "id": "Hello. What's your name, please?",
+          "literal": "good day. how is your name, please?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Budi Santoso. S-A-N-T-O-S-O.",
+          "id": "Budi Santoso. S-A-N-T-O-S-O.",
+          "literal": "Budi Santoso. S-A-N-T-O-S-O."
+        },
+        {
+          "speaker": "Sekretärin:",
+          "text": "Danke. Wie alt sind Sie?",
+          "id": "Thank you. How old are you?",
+          "literal": "thanks. how old are you?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Ich bin vierundzwanzig Jahre alt.",
+          "id": "I'm twenty-four years old.",
+          "literal": "I am four-and-twenty years old."
+        },
+        {
+          "speaker": "Sekretärin:",
+          "text": "Und Ihre Adresse?",
+          "id": "And your address?",
+          "literal": "and your address?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Gneisenaustraße siebenundvierzig, zehntausendneunhunderteinundsechzig Berlin.",
+          "id": "Gneisenaustraße 47, 10961 Berlin.",
+          "literal": "Gneisenau-street seven-and-forty, ten-thousand-nine-hundred-one-and-sixty Berlin."
+        },
+        {
+          "speaker": "Sekretärin:",
+          "text": "Langsam, bitte! Vier-sieben?",
+          "id": "Slowly, please! Four-seven?",
+          "literal": "slowly, please! four-seven?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Ja, siebenundvierzig. Vier, sieben.",
+          "id": "Yes, forty-seven. Four, seven.",
+          "literal": "yes, seven-and-forty. four, seven."
+        },
+        {
+          "speaker": "Sekretärin:",
+          "text": "Gut. Und Ihre Handynummer?",
+          "id": "Good. And your cell number?",
+          "literal": "good. and your cell-number?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Null eins sieben — drei zwei — acht neun — vier vier.",
+          "id": "Zero one seven — three two — eight nine — four four.",
+          "literal": "zero one seven — three two — eight nine — four four."
+        },
+        {
+          "speaker": "Sekretärin:",
+          "text": "Perfekt. Der Kurs kostet zweihundertfünfzig Euro.",
+          "id": "Perfect. The course costs two hundred and fifty euros.",
+          "literal": "perfect. the course costs two-hundred-fifty euro."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Wie bitte? Wie viel kostet der Kurs?",
+          "id": "Sorry? How much does the course cost?",
+          "literal": "how please? how much costs the course?"
+        },
+        {
+          "speaker": "Sekretärin:",
+          "text": "Zweihundertfünfzig. 250 Euro für zwölf Wochen.",
+          "id": "Two hundred and fifty. 250 euros for twelve weeks.",
+          "literal": "two-hundred-fifty. 250 euro for twelve weeks."
+        }
+      ],
+      "notes": [
+        "**Ones before tens.** *vierundzwanzig* literally means \"four-and-twenty\" = 24 (like the nursery rhyme's *four-and-twenty blackbirds*). It goes on like this up to 99. That's why Budi says *siebenundvierzig* and the secretary hears \"four-seven\" for a moment — a beginner's ear catches the first number first, and the first number is the ones.",
+        "**Numbers are written as one word without spaces**, however long: *einundzwanzig*, *zweihundertfünfzig*, *zehntausendneunhunderteinundsechzig*. It looks scary on paper, but it's said chunk by chunk and there's no new rule to learn.",
+        "**Phone numbers are read digit by digit, often in pairs.** *null eins sieben* for 017, then pairs of two. Never read them as one big number — nobody would be able to follow.",
+        "**Postal codes are said as a whole number or digit by digit**; both are accepted. The safer choice for beginners: digit by digit, like a phone number.",
+        "***Wie viel* or *wie viele*?** *Wie viel* for things you can't count — money, time, water (*Wie viel kostet das?*). *Wie viele* for things you can count — people, books, children (*Wie viele Kinder haben Sie?*). Just like English *how much* and *how many*.",
+        "***Langsam, bitte!*** (\"slowly, please\") is the sentence you'll need most when dealing with numbers. Other lifesavers: *Noch einmal, bitte* (\"once more, please\") and *Können Sie das buchstabieren?* (\"could you spell that?\")."
+      ],
+      "grammars": [
+        {
+          "title": "Numbers 0 to 100",
+          "body": [
+            "The first twenty numbers have to be learned whole. After that, the whole system is just multiplying and gluing together."
+          ],
+          "table": {
+            "head": [
+              "",
+              "",
+              "",
+              "",
+              "",
+              ""
+            ],
+            "rows": [
+              [
+                "0 null",
+                "1 eins",
+                "2 zwei",
+                "3 drei",
+                "4 vier",
+                "5 fünf"
+              ],
+              [
+                "6 sechs",
+                "7 sieben",
+                "8 acht",
+                "9 neun",
+                "10 zehn",
+                "11 elf"
+              ],
+              [
+                "12 zwölf",
+                "13 dreizehn",
+                "14 vierzehn",
+                "15 fünfzehn",
+                "16 sechzehn",
+                "17 siebzehn"
+              ],
+              [
+                "18 achtzehn",
+                "19 neunzehn",
+                "20 zwanzig",
+                "30 dreißig",
+                "40 vierzig",
+                "50 fünfzig"
+              ],
+              [
+                "60 sechzig",
+                "70 siebzig",
+                "80 achtzig",
+                "90 neunzig",
+                "100 hundert",
+                "1,000 tausend"
+              ]
+            ]
+          },
+          "after": [
+            "Four small irregularities to watch: **16** and **60** drop the s (*sechzehn*, not *sechszehn*), **17** and **70** drop the syllable *-en* (*siebzehn*, not *siebenzehn*), and **30** uses ß (*dreißig*, alone among all the tens ending in *-zig*).",
+            "Compound numbers are put together with one glue word, **und**: ones + *und* + tens, all joined. *21 = einundzwanzig*, *45 = fünfundvierzig*, *99 = neunundneunzig*. ⚠️ Notice that **1** loses its s inside a compound: *ein**und**zwanzig*, not *eins-und-zwanzig*."
+          ],
+          "tables": [
+            {
+              "head": [
+                "Number",
+                "German",
+                "Pronunciation"
+              ],
+              "rows": [
+                [
+                  "21",
+                  "einundzwanzig",
+                  "EYEN-oont-tsvahn-tsikh"
+                ],
+                [
+                  "36",
+                  "sechsunddreißig",
+                  "ZEKS-oont-dreye-sikh"
+                ],
+                [
+                  "47",
+                  "siebenundvierzig",
+                  "ZEE-ben-oont-feer-tsikh"
+                ],
+                [
+                  "88",
+                  "achtundachtzig",
+                  "AHKHT-oont-ahkh-tsikh"
+                ],
+                [
+                  "100",
+                  "(ein)hundert",
+                  "HOON-duht"
+                ],
+                [
+                  "250",
+                  "zweihundertfünfzig",
+                  "TSVEYE-hoon-duht-fünf-tsikh"
+                ],
+                [
+                  "1,000",
+                  "(ein)tausend",
+                  "TOW-zent"
+                ],
+                [
+                  "2,024",
+                  "zweitausendvierundzwanzig",
+                  "TSVEYE-tow-zent-feer-oont-tsvahn-tsikh"
+                ]
+              ]
+            }
+          ]
+        },
+        {
+          "title": "Age, prices and years",
+          "body": [
+            "The three things you'll be asked for most often in German are all numbers, and each has its own pattern."
+          ],
+          "table": {
+            "head": [
+              "What's asked",
+              "Question",
+              "Answer"
+            ],
+            "rows": [
+              [
+                "age",
+                "Wie alt bist du?",
+                "Ich bin 24 (Jahre alt)."
+              ],
+              [
+                "price",
+                "Wie viel kostet das?",
+                "Das kostet 12 Euro 50."
+              ],
+              [
+                "number",
+                "Wie ist deine Nummer?",
+                "Null eins sieben, drei zwei…"
+              ],
+              [
+                "quantity",
+                "Wie viele Kinder haben Sie?",
+                "Ich habe zwei Kinder."
+              ],
+              [
+                "year of birth",
+                "Wann bist du geboren?",
+                "Ich bin 1999 geboren."
+              ]
+            ]
+          },
+          "after": [
+            "**Age uses *sein*, not *haben*.** *Ich **bin** vierundzwanzig* — and *Jahre alt* can be dropped entirely, just as English can say simply \"I'm twenty-four\".",
+            "**Prices:** *12,50 €* is said *zwölf Euro fünfzig*. Notice that in German the decimal mark is a **comma** and the thousands separator is a **period** — the reverse of the English habit, so *1.000* in a German shop means one thousand.",
+            "**Years** up to 1999 are read in pairs with the word *hundert*: 1990 = *neunzehnhundertneunzig* (\"nineteen hundred ninety\"), just like English. From 2000 on, they're read as ordinary numbers: 2024 = *zweitausendvierundzwanzig*."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Forms: the words that always appear",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "German forms — course sign-ups, phone contracts, library cards — use a list of words that hardly ever changes. Learn these sixteen words once and every form after that will feel the same."
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "German",
+            "English",
+            "German",
+            "English"
+          ],
+          "rows": [
+            [
+              "der Vorname",
+              "first name",
+              "der Nachname",
+              "last name"
+            ],
+            [
+              "die Adresse",
+              "address",
+              "die Straße",
+              "street"
+            ],
+            [
+              "die Hausnummer",
+              "house number",
+              "die Postleitzahl (PLZ)",
+              "postal code"
+            ],
+            [
+              "der Wohnort",
+              "town of residence",
+              "das Land",
+              "country"
+            ],
+            [
+              "das Geburtsdatum",
+              "date of birth",
+              "der Geburtsort",
+              "place of birth"
+            ],
+            [
+              "die Telefonnummer",
+              "phone number",
+              "die Handynummer",
+              "cell number"
+            ],
+            [
+              "die E-Mail-Adresse",
+              "email address",
+              "der Beruf",
+              "occupation"
+            ],
+            [
+              "die Staatsangehörigkeit",
+              "nationality",
+              "die Unterschrift",
+              "signature"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "Email addresses are read out with two words you need to know: **@** is called *at*, and the **dot** is called *Punkt*. So *budi@mail.de* is read *budi at mail Punkt de*."
+        }
+      ]
+    },
+    {
+      "title": "Counting out loud",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Numbers are the one part of a language you can't master by reading. They have to go through your mouth and ears, because what you're training isn't knowledge but speed."
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "German",
+            "English",
+            "Example"
+          ],
+          "rows": [
+            [
+              "plus",
+              "plus",
+              "drei plus vier ist sieben"
+            ],
+            [
+              "minus",
+              "minus",
+              "zehn minus zwei ist acht"
+            ],
+            [
+              "mal",
+              "times",
+              "vier mal fünf ist zwanzig"
+            ],
+            [
+              "geteilt durch",
+              "divided by",
+              "zwölf geteilt durch drei ist vier"
+            ],
+            [
+              "ungefähr",
+              "about",
+              "ungefähr fünfzig Euro"
+            ],
+            [
+              "zusammen",
+              "in total",
+              "Das macht zusammen 18 Euro."
+            ]
+          ]
+        },
+        {
+          "type": "kotak",
+          "title": "Three five-minute drills",
+          "items": [
+            "Count down from 20 to 0 out loud. Repeat until there's no thinking pause at any number.",
+            "Read out the phone numbers of anyone in your contacts in German, digit by digit. Ten numbers is enough for one session.",
+            "Say the prices of things around you — groceries, tickets, bills — in euros. You're not training the exchange rate, you're training your tongue."
+          ]
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "de": "die Zahl",
+      "baca": "tsahl",
+      "en": "number"
+    },
+    {
+      "de": "null",
+      "baca": "nool",
+      "en": "zero"
+    },
+    {
+      "de": "eins",
+      "baca": "eyens",
+      "en": "one"
+    },
+    {
+      "de": "zwei",
+      "baca": "tsveye",
+      "en": "two"
+    },
+    {
+      "de": "drei",
+      "baca": "dreye",
+      "en": "three"
+    },
+    {
+      "de": "vier",
+      "baca": "feer",
+      "en": "four"
+    },
+    {
+      "de": "fünf",
+      "baca": "fünf",
+      "en": "five"
+    },
+    {
+      "de": "sechs",
+      "baca": "zeks",
+      "en": "six"
+    },
+    {
+      "de": "sieben",
+      "baca": "ZEE-ben",
+      "en": "seven"
+    },
+    {
+      "de": "acht",
+      "baca": "ahkht",
+      "en": "eight"
+    },
+    {
+      "de": "neun",
+      "baca": "noyn",
+      "en": "nine"
+    },
+    {
+      "de": "zehn",
+      "baca": "tsayn",
+      "en": "ten"
+    },
+    {
+      "de": "hundert",
+      "baca": "HOON-duht",
+      "en": "hundred"
+    },
+    {
+      "de": "tausend",
+      "baca": "TOW-zent",
+      "en": "thousand"
+    },
+    {
+      "de": "die Nummer",
+      "baca": "NOOM-muh",
+      "en": "number (phone, house)"
+    },
+    {
+      "de": "die Adresse",
+      "baca": "ah-DRES-se",
+      "en": "address"
+    },
+    {
+      "de": "die Straße",
+      "baca": "SHTRAH-se",
+      "en": "street"
+    },
+    {
+      "de": "der Name",
+      "baca": "NAH-me",
+      "en": "name"
+    }
+  ],
+  "exercises": [
+    {
+      "prompt": "Write the numbers out in German words.",
+      "items": [
+        "13",
+        "21",
+        "36",
+        "47",
+        "68",
+        "250"
+      ]
+    },
+    {
+      "prompt": "Fill in the missing word.",
+      "items": [
+        "Wie ____ bist du? — Ich bin 24.",
+        "Wie viel ____ der Kurs?",
+        "Ich bin vierundzwanzig ____ alt.",
+        "Wie ist Ihre ____? — Gneisenaustraße 47.",
+        "Der Kurs kostet 250 ____.",
+        "____ bitte! Ich verstehe nicht so schnell."
+      ]
+    },
+    {
+      "prompt": "Put the words in the right order.",
+      "items": [
+        "alt / wie / du / bist",
+        "vierundzwanzig / ich / bin",
+        "kostet / wie viel / das",
+        "Handynummer / ist / wie / deine",
+        "Euro / zweihundertfünfzig / kostet / der Kurs",
+        "geboren / wann / du / bist"
+      ]
+    }
+  ],
+  "answers": [
+    "dreizehn — einundzwanzig — sechsunddreißig — siebenundvierzig — achtundsechzig — zweihundertfünfzig",
+    "alt — kostet — Jahre — Adresse — Euro — Langsam",
+    "Wie alt bist du? — Ich bin vierundzwanzig. — Wie viel kostet das? — Wie ist deine Handynummer? — Der Kurs kostet zweihundertfünfzig Euro. — Wann bist du geboren?"
+  ]
+}

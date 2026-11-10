@@ -1,0 +1,441 @@
+{
+  "title": "Hi, what's your name?",
+  "title_target": "Ciao! Come ti chiami?",
+  "goal": "Greet people at the right time of day, say your name, ask how someone is, and recognize the two ways of greeting: informal and formal.",
+  "bekal": [
+    "greet with *ciao*, *buongiorno*, and *buonasera*, each at the right time",
+    "say your name and ask other people theirs",
+    "use *sono* and *sei* to say who you are"
+  ],
+  "dialogs": [
+    {
+      "title": "Dialogo — Al primo giorno di corso",
+      "intro": "The first day of an Italian course in Bologna. Two new students sit down next to each other.",
+      "lines": [
+        {
+          "speaker": "Giulia:",
+          "text": "Ciao! Come ti chiami?",
+          "id": "Hi! What's your name?",
+          "literal": "hi! how you-call-yourself?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Ciao! Mi chiamo Budi. E tu?",
+          "id": "Hi! My name is Budi. And you?",
+          "literal": "hi! myself-I-call Budi. and you?"
+        },
+        {
+          "speaker": "Giulia:",
+          "text": "Io sono Giulia. Piacere!",
+          "id": "I'm Giulia. Nice to meet you!",
+          "literal": "I am Giulia. pleasure!"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Piacere mio. Come stai?",
+          "id": "Nice to meet you too. How are you?",
+          "literal": "pleasure mine. how you-are?"
+        },
+        {
+          "speaker": "Giulia:",
+          "text": "Sto bene, grazie. E tu?",
+          "id": "I'm fine, thanks. And you?",
+          "literal": "I-am well, thanks. and you?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Anch'io sto bene. Sei italiana?",
+          "id": "I'm fine too. Are you Italian?",
+          "literal": "also-I I-am well. you-are Italian(female)?"
+        },
+        {
+          "speaker": "Giulia:",
+          "text": "Sì, sono di Bologna. E tu, sei cinese?",
+          "id": "Yes, I'm from Bologna. And you, are you Chinese?",
+          "literal": "yes, am of Bologna. and you, you-are Chinese?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "No, sono indonesiano. Sono di Giacarta.",
+          "id": "No, I'm Indonesian. I'm from Jakarta.",
+          "literal": "no, am Indonesian(male). am of Jakarta."
+        },
+        {
+          "speaker": "Giulia:",
+          "text": "Che bello! Benvenuto a Bologna!",
+          "id": "How lovely! Welcome to Bologna!",
+          "literal": "what beautiful! welcome to Bologna!"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Grazie mille! A domani, Giulia.",
+          "id": "Thanks a lot! See you tomorrow, Giulia.",
+          "literal": "thanks thousand! until tomorrow, Giulia."
+        },
+        {
+          "speaker": "Giulia:",
+          "text": "A domani! Ciao ciao!",
+          "id": "See you tomorrow! Bye-bye!",
+          "literal": "until tomorrow! hi hi!"
+        }
+      ],
+      "notes": [
+        "**Ciao works both ways.** One word for both \"hi\" and \"bye\". Doubling it (*ciao ciao*) makes it sound light and warm — a typical casual goodbye.",
+        "**But ciao is informal.** With people you've just met who are clearly older, with officials, doctors, or your boss, Italian uses *buongiorno* (until about five in the afternoon) and *buonasera* (after that). Getting this wrong isn't a grammar mistake but a manners mistake — and people notice that more.",
+        "**Mi chiamo is not \"my name is\".** Literally it's \"I call myself\". That's why there is no word for \"name\" in it, and that's also why the question is *come ti chiami* — \"how do you call yourself\", not \"what is your name\".",
+        "**Io can be dropped.** *Io sono Giulia* and *Sono Giulia* are both correct. The verb form already tells you who the subject is, so the pronoun is only used for emphasis or contrast: *io sono di Bologna, tu sei di Giacarta*. That's the opposite of English, which always needs the subject.",
+        "**Come stai vs come sei.** Asking how someone is uses *stare*, not *essere*. *Come stai?* = how are you doing. *Come sei?* actually means \"what are you like\" — a question about personality, not well-being.",
+        "**Nationalities are lowercase.** *italiano*, *indonesiano*, *cinese* — unlike English. Country names keep their capital: *Italia*, *Indonesia*. The form also follows the speaker's gender: a man is *italiano*, a woman *italiana*.",
+        "**Anch'io** = \"me too\". The full form is *anche io*, but the two vowels in a row get clipped to *anch'io*. You'll see this kind of clipping often; Italian doesn't like two vowels colliding.",
+        "**Grazie mille** literally means \"a thousand thanks\". Italian exaggerates with numbers for emphasis, just like \"thanks a million\". The reply is *prego* — one all-purpose word meaning \"you're welcome\", \"go ahead\", and even \"sorry, what was that?\"."
+      ],
+      "grammars": [
+        {
+          "title": "Essere — the verb \"to be\"",
+          "body": [
+            "The first verb you have to master. It's irregular, so learn it as it is. In this unit you only need the first two rows; the rest follows in Unit 3."
+          ],
+          "table": {
+            "head": [
+              "",
+              "essere",
+              "meaning"
+            ],
+            "rows": [
+              [
+                "io",
+                "**sono**",
+                "I am"
+              ],
+              [
+                "tu",
+                "**sei**",
+                "you are"
+              ],
+              [
+                "lui / lei / Lei",
+                "**è**",
+                "he/she is / you (formal) are"
+              ],
+              [
+                "noi",
+                "siamo",
+                "we are"
+              ],
+              [
+                "voi",
+                "siete",
+                "you (plural) are"
+              ],
+              [
+                "loro",
+                "sono",
+                "they are"
+              ]
+            ]
+          },
+          "after": [
+            "Notice that *è* has an accent sloping to the left. Without the accent, *e* means \"and\" — the two words beginners mix up most: *lui e Giulia* (he and Giulia) is not at all *lui è Giulia* (he is Giulia).",
+            "The *io* and *loro* rows both happen to be *sono*. Context tells them apart, and in practice it's never confusing."
+          ]
+        },
+        {
+          "title": "Greeting by the clock and by closeness",
+          "body": [
+            "Two axes, not one. The first is time of day, the second is how close you are to the person you're talking to."
+          ],
+          "table": {
+            "head": [
+              "When",
+              "Informal (friends, peers)",
+              "Formal (strangers, superiors)"
+            ],
+            "rows": [
+              [
+                "Morning to afternoon",
+                "Ciao",
+                "Buongiorno"
+              ],
+              [
+                "Late afternoon to night",
+                "Ciao",
+                "Buonasera"
+              ],
+              [
+                "Saying goodbye",
+                "Ciao / A presto",
+                "Arrivederci"
+              ],
+              [
+                "At night, going to bed",
+                "Buonanotte",
+                "Buonanotte"
+              ],
+              [
+                "Asking how someone is",
+                "Come stai?",
+                "Come sta?"
+              ]
+            ]
+          },
+          "after": [
+            "*Buonanotte* is not an ordinary evening greeting — it's what you say when parting to go to sleep. If you walk into a restaurant at eight in the evening and say it, you've just told everyone to go to bed.",
+            "*Salve* is a useful middle ground: more polite than *ciao*, more relaxed than *buongiorno*, and not tied to the clock. When in doubt, use this one."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "First words to keep in your pocket",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "The dozen or so words below cover most of the small talk on day one. Learn them whole; don't take the grammar apart yet."
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Italiano",
+            "Say it",
+            "English"
+          ],
+          "rows": [
+            [
+              "Sì / No",
+              "see / noh",
+              "Yes / No"
+            ],
+            [
+              "Grazie",
+              "GRAH-tsyeh",
+              "Thank you"
+            ],
+            [
+              "Prego",
+              "PREH-goh",
+              "You're welcome, go ahead"
+            ],
+            [
+              "Per favore",
+              "pehr fah-VOH-reh",
+              "Please"
+            ],
+            [
+              "Scusa / Scusi",
+              "SKOO-zah / SKOO-zee",
+              "Sorry, excuse me (informal / formal)"
+            ],
+            [
+              "Piacere",
+              "pyah-CHEH-reh",
+              "Nice to meet you"
+            ],
+            [
+              "Non capisco",
+              "nohn kah-PEES-koh",
+              "I don't understand"
+            ],
+            [
+              "Non lo so",
+              "nohn loh soh",
+              "I don't know"
+            ],
+            [
+              "Puoi ripetere?",
+              "PWOY ree-PEH-teh-reh",
+              "Can you repeat that?"
+            ],
+            [
+              "Come si dice…?",
+              "KOH-meh see DEE-cheh",
+              "How do you say…?"
+            ],
+            [
+              "A domani",
+              "ah doh-MAH-nee",
+              "See you tomorrow"
+            ],
+            [
+              "A presto",
+              "ah PREHS-toh",
+              "See you soon"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "*Scusa* for a friend, *scusi* for someone you address formally. This one-letter difference at the end will come up again and again throughout the course — it's the most common marker of politeness."
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "it": "ciao",
+      "baca": "CHOW",
+      "en": "hi, bye"
+    },
+    {
+      "it": "buongiorno",
+      "baca": "bwohn-JOHR-noh",
+      "en": "good morning/afternoon"
+    },
+    {
+      "it": "buonasera",
+      "baca": "bwoh-nah-SEH-rah",
+      "en": "good evening"
+    },
+    {
+      "it": "buonanotte",
+      "baca": "bwoh-nah-NOHT-teh",
+      "en": "good night"
+    },
+    {
+      "it": "arrivederci",
+      "baca": "ahr-ree-veh-DEHR-chee",
+      "en": "goodbye (formal)"
+    },
+    {
+      "it": "salve",
+      "baca": "SAHL-veh",
+      "en": "hello (neutral)"
+    },
+    {
+      "it": "come",
+      "baca": "KOH-meh",
+      "en": "how"
+    },
+    {
+      "it": "chiamarsi",
+      "baca": "kyah-MAHR-see",
+      "en": "to be called"
+    },
+    {
+      "it": "il nome",
+      "baca": "eel NOH-meh",
+      "en": "name"
+    },
+    {
+      "it": "essere",
+      "baca": "EHS-seh-reh",
+      "en": "to be"
+    },
+    {
+      "it": "stare",
+      "baca": "STAH-reh",
+      "en": "to be, to stay (of state)"
+    },
+    {
+      "it": "bene",
+      "baca": "BEH-neh",
+      "en": "well, fine"
+    },
+    {
+      "it": "male",
+      "baca": "MAH-leh",
+      "en": "badly"
+    },
+    {
+      "it": "così così",
+      "baca": "koh-SEE koh-SEE",
+      "en": "so-so"
+    },
+    {
+      "it": "e",
+      "baca": "eh",
+      "en": "and"
+    },
+    {
+      "it": "anche",
+      "baca": "AHN-keh",
+      "en": "also, too"
+    },
+    {
+      "it": "di",
+      "baca": "dee",
+      "en": "from, of"
+    },
+    {
+      "it": "italiano / italiana",
+      "baca": "ee-tah-LYAH-noh",
+      "en": "Italian"
+    },
+    {
+      "it": "indonesiano / indonesiana",
+      "baca": "een-doh-neh-SYAH-noh",
+      "en": "Indonesian"
+    },
+    {
+      "it": "benvenuto",
+      "baca": "behn-veh-NOO-toh",
+      "en": "welcome"
+    },
+    {
+      "it": "che bello!",
+      "baca": "keh BEHL-loh",
+      "en": "how lovely!"
+    },
+    {
+      "it": "grazie mille",
+      "baca": "GRAH-tsyeh MEEL-leh",
+      "en": "thanks a lot"
+    },
+    {
+      "it": "domani",
+      "baca": "doh-MAH-nee",
+      "en": "tomorrow"
+    }
+  ],
+  "exercises": [
+    {
+      "prompt": "Translate into Italian.",
+      "items": [
+        "Hi! What's your name?",
+        "My name is Budi.",
+        "I'm Indonesian.",
+        "How are you?",
+        "I'm fine, thanks.",
+        "Are you from Bologna?"
+      ]
+    },
+    {
+      "prompt": "Fill in the right form of essere.",
+      "items": [
+        "Io ____ indonesiano.",
+        "Tu ____ italiana?",
+        "Giulia ____ di Bologna.",
+        "Noi ____ studenti.",
+        "Voi ____ di Roma?",
+        "Loro ____ italiani."
+      ]
+    },
+    {
+      "prompt": "Choose the right greeting. Write out the whole sentence.",
+      "items": [
+        "You walk into a bakery at eight in the morning. To the baker you say ____.",
+        "You meet a classmate on campus at ten. You say ____.",
+        "You walk into a restaurant at seven in the evening. To the waiter you say ____.",
+        "You part from your professor at the end of the hallway. You say ____.",
+        "You show a guest to their room at eleven at night. You say ____."
+      ]
+    },
+    {
+      "prompt": "Put the words in the right order.",
+      "items": [
+        "chiamo / mi / Giulia",
+        "sono / di / io / Giacarta",
+        "stai / come / ?",
+        "italiana / sei / tu / ?",
+        "bene / sto / grazie"
+      ]
+    }
+  ],
+  "answers": [
+    "Ciao! Come ti chiami? — Mi chiamo Budi. — Sono indonesiano. — Come stai? — Sto bene, grazie. — Sei di Bologna?",
+    "sono — sei — è — siamo — siete — sono",
+    "Buongiorno. — Ciao. — Buonasera. — Arrivederci. — Buonanotte.",
+    "Mi chiamo Giulia. — Io sono di Giacarta. — Come stai? — Tu sei italiana? — Sto bene, grazie."
+  ]
+}

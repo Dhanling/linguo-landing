@@ -1,0 +1,466 @@
+{
+  "title": "Days, months, dates",
+  "title_target": "Che giorno è oggi?",
+  "goal": "Name days, months, dates, and seasons; make plans for a particular day; and use *a*, *in*, and *da* for place and time.",
+  "bekal": [
+    "say a full date, including the year",
+    "tell *sabato* and *il sabato* apart",
+    "use *a* for cities and *in* for countries without hesitating"
+  ],
+  "dialogs": [
+    {
+      "title": "Dialogo — Quando parti?",
+      "intro": "Budi is planning a short trip. Giulia helps him pick the dates.",
+      "lines": [
+        {
+          "speaker": "Giulia:",
+          "text": "Che giorno è oggi? Ho perso il conto.",
+          "id": "What's the date today? I've lost track.",
+          "literal": "what day is today? I-have lost the count."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Oggi è giovedì, il diciotto settembre.",
+          "id": "Today is Thursday, September eighteenth.",
+          "literal": "today is Thursday, the eighteen September."
+        },
+        {
+          "speaker": "Giulia:",
+          "text": "Già! E quando parti per Firenze?",
+          "id": "Already! And when are you leaving for Florence?",
+          "literal": "already! and when you-leave for Florence?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Sabato mattina. Torno lunedì sera.",
+          "id": "Saturday morning. I'm back Monday evening.",
+          "literal": "Saturday morning. I-return Monday evening."
+        },
+        {
+          "speaker": "Giulia:",
+          "text": "Quindi stai lì tre giorni. Vai in treno?",
+          "id": "So you're there for three days. Are you going by train?",
+          "literal": "so you-stay there three days. you-go in train?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Sì. Il treno parte alle sette e venti da Bologna.",
+          "id": "Yes. The train leaves Bologna at seven twenty.",
+          "literal": "yes. the train leaves at-the seven and twenty from Bologna."
+        },
+        {
+          "speaker": "Giulia:",
+          "text": "In agosto Firenze è insopportabile, ma a settembre è perfetta.",
+          "id": "In August Florence is unbearable, but in September it's perfect.",
+          "literal": "in August Florence is unbearable, but in September is perfect."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Meno turisti?",
+          "id": "Fewer tourists?",
+          "literal": "less tourists?"
+        },
+        {
+          "speaker": "Giulia:",
+          "text": "Meno turisti e meno caldo. In autunno è la città più bella d'Italia.",
+          "id": "Fewer tourists and less heat. In the fall it's the most beautiful city in Italy.",
+          "literal": "less tourists and less heat. in autumn is the city more beautiful of-Italy."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "E tu, che fai il fine settimana?",
+          "id": "And you, what are you doing this weekend?",
+          "literal": "and you, what you-do the end week?"
+        },
+        {
+          "speaker": "Giulia:",
+          "text": "Il sabato lavoro sempre. La domenica dormo fino a mezzogiorno.",
+          "id": "I always work on Saturdays. On Sundays I sleep till noon.",
+          "literal": "the Saturday I-work always. the Sunday I-sleep until to noon."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Allora ci vediamo martedì prossimo. Buon viaggio a me!",
+          "id": "Then see you next Tuesday. Bon voyage to me!",
+          "literal": "then us we-see Tuesday next. good journey to me!"
+        }
+      ],
+      "notes": [
+        "**Days and months are lowercase.** *lunedì*, *settembre* — unlike English. They only take a capital at the start of a sentence.",
+        "**Sabato vs il sabato.** Without the article = just this Saturday. With the article = every Saturday. *Sabato lavoro* (I'm working this Saturday) is very different from *il sabato lavoro* (I work on Saturdays).",
+        "**Six days are masculine, one feminine.** *Il lunedì*, *il martedì*, right up to *il sabato* are all masculine. Only *la domenica* is feminine — the only one you need to remember specially.",
+        "**Dates use ordinary numbers, except the first.** *Il due maggio*, *il quindici agosto*, but *il primo maggio*. Only the first of the month uses the ordinal form — unlike English, which says \"second\", \"fifteenth\".",
+        "**The order is day-month, with no linking word.** *Il diciotto settembre*, not *il diciotto di settembre*. Written: 18/09/2026 — day first, as in Britain, not as in the US.",
+        "**In for months and seasons, a for cities.** *In settembre* and *a settembre* are both correct for months; *in autunno*, *in inverno* for seasons; but *a Firenze*, *a Roma* for cities. Countries always take *in*: *in Italia*, *in Indonesia*.",
+        "**Da marks a starting point.** *Da Bologna* (from Bologna), *dalle sette* (from seven o'clock), *da lunedì* (starting Monday). It also means \"at someone's place\": *da Marco* = at Marco's, *dal dottore* = at the doctor's.",
+        "**Buon viaggio** is one of a string of *buon* wishes to learn whole: *buon appetito*, *buon lavoro*, *buona fortuna*, *buon weekend*. *Buon* or *buona* follows the gender of the next word."
+      ],
+      "grammars": [
+        {
+          "title": "Days and months",
+          "body": [
+            "Learn them in order once, then shuffle them yourself until you don't need to count from the start."
+          ],
+          "table": {
+            "head": [
+              "Days",
+              "Months",
+              "Months"
+            ],
+            "rows": [
+              [
+                "lunedì — Monday",
+                "gennaio — January",
+                "luglio — July"
+              ],
+              [
+                "martedì — Tuesday",
+                "febbraio — February",
+                "agosto — August"
+              ],
+              [
+                "mercoledì — Wednesday",
+                "marzo — March",
+                "settembre — September"
+              ],
+              [
+                "giovedì — Thursday",
+                "aprile — April",
+                "ottobre — October"
+              ],
+              [
+                "venerdì — Friday",
+                "maggio — May",
+                "novembre — November"
+              ],
+              [
+                "sabato — Saturday",
+                "giugno — June",
+                "dicembre — December"
+              ],
+              [
+                "domenica — Sunday",
+                "",
+                ""
+              ]
+            ]
+          },
+          "after": [
+            "The first five days are stressed on the **last** syllable and carry an accent: *lune-DÌ*, *marte-DÌ*, *mercole-DÌ*, *giove-DÌ*, *vener-DÌ*. The two weekend days aren't: *SA-bato*, *do-ME-nica*.",
+            "Note that *mercoledì* is stressed at the end even though it's long — not *mer-co-LE-dì*."
+          ]
+        },
+        {
+          "title": "A, in, da — place and time",
+          "body": [
+            "The three prepositions that get mixed up most. This table covers nine out of ten uses."
+          ],
+          "table": {
+            "head": [
+              "Meaning",
+              "Preposition",
+              "Example"
+            ],
+            "rows": [
+              [
+                "City",
+                "**a**",
+                "a Roma, a Giacarta"
+              ],
+              [
+                "Country, continent",
+                "**in**",
+                "in Italia, in Asia"
+              ],
+              [
+                "Means of transport",
+                "**in**",
+                "in treno, in macchina"
+              ],
+              [
+                "On foot",
+                "**a**",
+                "a piedi"
+              ],
+              [
+                "Month",
+                "**a** / **in**",
+                "a maggio, in maggio"
+              ],
+              [
+                "Season",
+                "**in**",
+                "in estate, in inverno"
+              ],
+              [
+                "Year",
+                "**nel**",
+                "nel 2026"
+              ],
+              [
+                "Clock time",
+                "**alle**",
+                "alle otto"
+              ],
+              [
+                "Starting point",
+                "**da**",
+                "da Bologna, dalle sette"
+              ],
+              [
+                "At someone's place",
+                "**da**",
+                "da Marco, dal dottore"
+              ]
+            ]
+          },
+          "after": [
+            "Small islands take *a* like cities (*a Capri*); large islands take *in* like regions (*in Sicilia*, *in Sardegna*). When in doubt, use the city-country rule.",
+            "*In macchina* without an article means \"by car\". If the article appears, the meaning changes to \"in that car\": *nella macchina*."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Seasons, dates, years",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "Season",
+            "Italiano",
+            "Months"
+          ],
+          "rows": [
+            [
+              "Spring",
+              "la primavera",
+              "marzo, aprile, maggio"
+            ],
+            [
+              "Summer",
+              "l'estate",
+              "giugno, luglio, agosto"
+            ],
+            [
+              "Fall",
+              "l'autunno",
+              "settembre, ottobre, novembre"
+            ],
+            [
+              "Winter",
+              "l'inverno",
+              "dicembre, gennaio, febbraio"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "Notice that *l'estate* is feminine while the other three seasons are masculine. Once again it's the article that tells you, not the ending."
+        },
+        {
+          "type": "sub",
+          "text": "Saying the year"
+        },
+        {
+          "type": "p",
+          "text": "The year is said in full as one big number, not split in two the way English does (\"twenty twenty-six\"). 2026 = *duemilaventisei*, written as one word. 1998 = *millenovecentonovantotto*. To say \"in the year\", use *nel*: *Sono nato nel millenovecentonovantotto*."
+        },
+        {
+          "type": "kotak",
+          "title": "Ready-made sentences",
+          "items": [
+            "*Che giorno è oggi?* — What day / what's the date today?",
+            "*Oggi è il tre marzo.* — Today is March third.",
+            "*Quando?* — When?",
+            "*La settimana prossima.* — Next week.",
+            "*La settimana scorsa.* — Last week.",
+            "*Fra due giorni.* — In two days.",
+            "*Ogni lunedì.* — Every Monday.",
+            "*Buon compleanno!* — Happy birthday!"
+          ]
+        },
+        {
+          "type": "p",
+          "text": "*Prossimo* (next) and *scorso* (last) agree with the noun's gender: *l'anno prossimo*, *la settimana scorsa*, *il mese prossimo*, *sabato scorso*."
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "it": "il giorno",
+      "baca": "eel JOHR-noh",
+      "en": "day"
+    },
+    {
+      "it": "la settimana",
+      "baca": "lah seht-tee-MAH-nah",
+      "en": "week"
+    },
+    {
+      "it": "il mese",
+      "baca": "eel MEH-zeh",
+      "en": "month"
+    },
+    {
+      "it": "l'anno",
+      "baca": "LAHN-noh",
+      "en": "year"
+    },
+    {
+      "it": "lunedì",
+      "baca": "loo-neh-DEE",
+      "en": "Monday"
+    },
+    {
+      "it": "mercoledì",
+      "baca": "mehr-koh-leh-DEE",
+      "en": "Wednesday"
+    },
+    {
+      "it": "venerdì",
+      "baca": "veh-nehr-DEE",
+      "en": "Friday"
+    },
+    {
+      "it": "gennaio",
+      "baca": "jehn-NAH-yoh",
+      "en": "January"
+    },
+    {
+      "it": "maggio",
+      "baca": "MAHJ-joh",
+      "en": "May"
+    },
+    {
+      "it": "agosto",
+      "baca": "ah-GOHS-toh",
+      "en": "August"
+    },
+    {
+      "it": "l'estate",
+      "baca": "lehs-TAH-teh",
+      "en": "summer"
+    },
+    {
+      "it": "l'inverno",
+      "baca": "leen-VEHR-noh",
+      "en": "winter"
+    },
+    {
+      "it": "la primavera",
+      "baca": "lah pree-mah-VEH-rah",
+      "en": "spring"
+    },
+    {
+      "it": "l'autunno",
+      "baca": "low-TOON-noh",
+      "en": "fall, autumn"
+    },
+    {
+      "it": "partire",
+      "baca": "pahr-TEE-reh",
+      "en": "to leave, to depart"
+    },
+    {
+      "it": "il treno",
+      "baca": "eel TREH-noh",
+      "en": "train"
+    },
+    {
+      "it": "il viaggio",
+      "baca": "eel VYAHJ-joh",
+      "en": "trip, journey"
+    },
+    {
+      "it": "quando",
+      "baca": "KWAHN-doh",
+      "en": "when"
+    },
+    {
+      "it": "prossimo",
+      "baca": "PROHS-see-moh",
+      "en": "next"
+    },
+    {
+      "it": "scorso",
+      "baca": "SKOHR-soh",
+      "en": "last"
+    },
+    {
+      "it": "il compleanno",
+      "baca": "eel kohm-pleh-AHN-noh",
+      "en": "birthday"
+    },
+    {
+      "it": "il turista",
+      "baca": "eel too-REES-tah",
+      "en": "tourist"
+    },
+    {
+      "it": "il caldo",
+      "baca": "eel KAHL-doh",
+      "en": "heat"
+    },
+    {
+      "it": "già",
+      "baca": "jah",
+      "en": "already"
+    }
+  ],
+  "exercises": [
+    {
+      "prompt": "Fill in a, in, or da.",
+      "items": [
+        "Abito ____ Bologna.",
+        "Vivo ____ Italia.",
+        "Vado ____ Firenze ____ treno.",
+        "Il treno parte ____ Roma.",
+        "____ estate fa molto caldo.",
+        "Stasera andiamo ____ Marco."
+      ]
+    },
+    {
+      "prompt": "Translate into Italian.",
+      "items": [
+        "Today is Thursday.",
+        "Today is September eighteenth.",
+        "I'm leaving on Saturday morning.",
+        "On Sundays I sleep till noon.",
+        "Next week I'm going to Rome.",
+        "Happy birthday!"
+      ]
+    },
+    {
+      "prompt": "Write the dates in Italian.",
+      "items": [
+        "May 1",
+        "March 3",
+        "August 15",
+        "December 25",
+        "June 21",
+        "January 31"
+      ]
+    },
+    {
+      "prompt": "Choose the right form and write out the whole sentence.",
+      "items": [
+        "I work every Saturday. ____ lavoro.",
+        "I'm working this Saturday. ____ lavoro.",
+        "I rest every Sunday. ____ mi riposo.",
+        "I'm leaving next Monday. Parto ____.",
+        "Last week I was in Rome. ____ ero a Roma."
+      ]
+    }
+  ],
+  "answers": [
+    "a — in — a, in — da — In — da",
+    "Oggi è giovedì. — Oggi è il diciotto settembre. — Parto sabato mattina. — La domenica dormo fino a mezzogiorno. — La settimana prossima vado a Roma. — Buon compleanno!",
+    "il primo maggio — il tre marzo — il quindici agosto — il venticinque dicembre — il ventuno giugno — il trentuno gennaio",
+    "Il sabato — Sabato — La domenica — lunedì prossimo — La settimana scorsa"
+  ],
+  "wave": "Go back to **Unit 7** first: read ten random times out loud, then make appointments for three different times."
+}

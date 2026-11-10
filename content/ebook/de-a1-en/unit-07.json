@@ -1,0 +1,568 @@
+{
+  "title": "At the café",
+  "title_target": "Im Café",
+  "goal": "Order food and drinks — while facing the Akkusativ, a change in the article that sounds scary but touches only one box out of four.",
+  "bekal": [
+    "order with *Ich möchte…* and *Ich nehme…*",
+    "turn a masculine article into the Akkusativ (*einen Kaffee*)",
+    "ask for the bill and pay",
+    "name everyday food and drinks"
+  ],
+  "dialogs": [
+    {
+      "title": "Dialogue — Bestellen und bezahlen",
+      "intro": "Late afternoon at a small café in Kreuzberg. Budi and Lena sit outside. Watch the form of the article every time something is ordered.",
+      "lines": [
+        {
+          "speaker": "Kellner:",
+          "text": "Guten Tag. Was möchten Sie trinken?",
+          "id": "Hello. What would you like to drink?",
+          "literal": "good day. what would-like you drink?"
+        },
+        {
+          "speaker": "Lena:",
+          "text": "Ich möchte einen Kaffee, bitte. Mit Milch.",
+          "id": "I'd like a coffee, please. With milk.",
+          "literal": "I would-like a coffee, please. with milk."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Und ich nehme einen Tee und ein Wasser.",
+          "id": "And I'll have a tea and a water.",
+          "literal": "and I take a tea and a water."
+        },
+        {
+          "speaker": "Kellner:",
+          "text": "Möchten Sie auch etwas essen?",
+          "id": "Would you like something to eat too?",
+          "literal": "would-like you also something eat?"
+        },
+        {
+          "speaker": "Lena:",
+          "text": "Ja, ich nehme einen Apfelkuchen.",
+          "id": "Yes, I'll have an apple cake.",
+          "literal": "yes, I take an apple-cake."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Haben Sie ein Sandwich?",
+          "id": "Do you have a sandwich?",
+          "literal": "have you a sandwich?"
+        },
+        {
+          "speaker": "Kellner:",
+          "text": "Tut mir leid, wir haben keine Sandwiches mehr. Aber wir haben eine Suppe.",
+          "id": "Sorry, we're out of sandwiches. But we have a soup.",
+          "literal": "does to-me sorrow, we have no sandwiches more. but we have a soup."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Gut, dann nehme ich die Suppe.",
+          "id": "OK, then I'll have the soup.",
+          "literal": "good, then take I the soup."
+        },
+        {
+          "speaker": "Kellner:",
+          "text": "Sehr gern. Kommt sofort.",
+          "id": "Certainly. Coming right up.",
+          "literal": "very gladly. comes immediately."
+        },
+        {
+          "speaker": "Lena:",
+          "text": "Entschuldigung, wir möchten zahlen, bitte.",
+          "id": "Excuse me, we'd like to pay, please.",
+          "literal": "apology, we would-like pay, please."
+        },
+        {
+          "speaker": "Kellner:",
+          "text": "Zusammen oder getrennt?",
+          "id": "Together or separately?",
+          "literal": "together or separated?"
+        },
+        {
+          "speaker": "Lena:",
+          "text": "Zusammen, bitte. Wie viel macht das?",
+          "id": "Together, please. How much is that?",
+          "literal": "together, please. how much makes that?"
+        },
+        {
+          "speaker": "Kellner:",
+          "text": "Das macht sechzehn Euro achtzig.",
+          "id": "That's sixteen euros eighty.",
+          "literal": "that makes sixteen euro eighty."
+        },
+        {
+          "speaker": "Lena:",
+          "text": "Achtzehn Euro. Stimmt so.",
+          "id": "Eighteen euros. Keep the change.",
+          "literal": "eighteen euro. is-right so."
+        }
+      ],
+      "notes": [
+        "**Lines 2 and 3: *einen*, not *ein*.** As soon as a thing becomes the **object** of an action — what's ordered, bought, drunk, seen — its masculine article changes: *ein → einen*, *der → den*. Feminine and neuter words don't change at all. That's the whole of the Akkusativ.",
+        "***Ich möchte* and *Ich nehme* are both polite.** *Möchte* (\"I'd like\") sounds soft; *nehme* (\"I'll take\") is quicker and just as common. What you **don't** use is *Ich will* (\"I want\") — it sounds like a child making demands.",
+        "**The most polite form: *Ich hätte gern…*** (\"I would gladly have\"). It's a conditional form only taken apart at A2, but as a fixed phrase it's very useful now: *Ich hätte gern einen Kaffee, bitte.*",
+        "***Tut mir leid*** literally means \"does me sorrow\" = \"I'm sorry\". Keep it apart from *Entschuldigung*, which is used to get someone's attention or apologize for a small disturbance — like English *excuse me*.",
+        "***keine … mehr*** = \"no more …\", for things that have run out. The pattern: *kein* before the noun, *mehr* at the end. *Wir haben keinen Kaffee mehr.*",
+        "**Line 8: *dann nehme ich…*** The sentence starts with *dann*, so the subject steps behind the verb. The same rule as *Jetzt wohne ich…* in Unit 2, taken apart fully in Unit 10."
+      ],
+      "grammars": [
+        {
+          "title": "Akkusativ: the one box that changes",
+          "body": [
+            "German marks a noun's role in the sentence through its article. The subject takes the **Nominativ** form; the object of the action takes the **Akkusativ** form. The good news was already mentioned above — only masculine words really change. (English does this only with pronouns: *he* → *him*.)"
+          ],
+          "table": {
+            "head": [
+              "",
+              "masculine",
+              "feminine",
+              "neuter",
+              "plural"
+            ],
+            "rows": [
+              [
+                "Nominativ (subject)",
+                "der / ein / kein",
+                "die / eine / keine",
+                "das / ein / kein",
+                "die / — / keine"
+              ],
+              [
+                "Akkusativ (object)",
+                "**den / einen / keinen**",
+                "die / eine / keine",
+                "das / ein / kein",
+                "die / — / keine"
+              ]
+            ]
+          },
+          "after": [
+            "Compare these two sentences: ***Der** Kaffee ist gut* (coffee = subject, Nominativ) and *Ich trinke **den** Kaffee* (coffee = what's drunk, Akkusativ). Same word, different role, different form.",
+            "Possessives follow the same rule because they follow *ein*: *mein → meinen*, *dein → deinen*, *sein → seinen*, *unser → unseren*. *Ich sehe **meinen** Bruder* but *Ich sehe **meine** Schwester*.",
+            "The verbs that call for the Akkusativ are verbs that have an object: *haben, nehmen, kaufen, trinken, essen, sehen, lesen, brauchen, möchten, suchen, finden*. On the other hand, ***sein*** never takes the Akkusativ — whatever follows *sein* stays Nominativ: *Das ist **ein** Kaffee*."
+          ],
+          "tables": [
+            {
+              "head": [
+                "Nominativ",
+                "→ Akkusativ",
+                "Example sentence"
+              ],
+              "rows": [
+                [
+                  "der Kaffee",
+                  "**den** Kaffee",
+                  "Ich trinke den Kaffee."
+                ],
+                [
+                  "ein Tee",
+                  "**einen** Tee",
+                  "Ich möchte einen Tee."
+                ],
+                [
+                  "kein Kuchen",
+                  "**keinen** Kuchen",
+                  "Ich esse keinen Kuchen."
+                ],
+                [
+                  "die Suppe",
+                  "die Suppe",
+                  "Ich nehme die Suppe."
+                ],
+                [
+                  "eine Cola",
+                  "eine Cola",
+                  "Ich möchte eine Cola."
+                ],
+                [
+                  "das Wasser",
+                  "das Wasser",
+                  "Ich trinke das Wasser."
+                ],
+                [
+                  "die Pommes (plural)",
+                  "die Pommes",
+                  "Ich nehme die Pommes."
+                ]
+              ]
+            }
+          ]
+        },
+        {
+          "title": "möchten — the ordering verb",
+          "body": [
+            "*Möchten* is really a conditional form of *mögen* (to like), but it's used so often as a word of its own that it's better to learn it as a complete verb now."
+          ],
+          "table": {
+            "head": [
+              "Person",
+              "möchten",
+              "Example"
+            ],
+            "rows": [
+              [
+                "ich",
+                "möchte",
+                "Ich möchte einen Kaffee."
+              ],
+              [
+                "du",
+                "möchtest",
+                "Möchtest du auch einen?"
+              ],
+              [
+                "er / sie / es",
+                "möchte",
+                "Er möchte ein Wasser."
+              ],
+              [
+                "wir",
+                "möchten",
+                "Wir möchten zahlen."
+              ],
+              [
+                "ihr",
+                "möchtet",
+                "Möchtet ihr etwas essen?"
+              ],
+              [
+                "sie / Sie",
+                "möchten",
+                "Was möchten Sie trinken?"
+              ]
+            ]
+          },
+          "after": [
+            "⚠️ Notice that *ich* and *er/sie/es* use **exactly the same** form, with no *-t* ending for *er*. This is typical of the whole group of helper verbs you'll meet again in Unit 11 (*kann*, *muss*, *will*).",
+            "If *möchten* is followed by another verb, that verb is sent to the **end of the sentence** in its basic form: *Ich möchte einen Kaffee **trinken***. This bracket structure is one of the most distinctive features of German, and all of Unit 11 is devoted to it."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Drinks and snacks",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "German",
+            "Pronunciation",
+            "English",
+            "When ordering"
+          ],
+          "rows": [
+            [
+              "der Kaffee",
+              "KAH-fay",
+              "coffee",
+              "einen Kaffee"
+            ],
+            [
+              "der Tee",
+              "tay",
+              "tea",
+              "einen Tee"
+            ],
+            [
+              "der Saft",
+              "zahft",
+              "juice",
+              "einen Saft"
+            ],
+            [
+              "der Wein",
+              "vine",
+              "wine",
+              "einen Wein"
+            ],
+            [
+              "das Wasser",
+              "VAHS-suh",
+              "water",
+              "ein Wasser"
+            ],
+            [
+              "das Bier",
+              "beer",
+              "beer",
+              "ein Bier"
+            ],
+            [
+              "die Milch",
+              "milkh",
+              "milk",
+              "eine Milch"
+            ],
+            [
+              "die Cola",
+              "KOH-lah",
+              "cola",
+              "eine Cola"
+            ],
+            [
+              "der Kuchen",
+              "KOO-khen",
+              "cake",
+              "einen Kuchen"
+            ],
+            [
+              "das Brot",
+              "broht",
+              "bread",
+              "ein Brot"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "⚠️ Water in Germany is almost always sparkling unless you ask otherwise. Plain *ein Wasser* will arrive fizzy; if you want still water, ask for ***ein stilles Wasser***. And free tap water isn't the custom — ordering *Leitungswasser* is fine, but don't be surprised if it's on the bill."
+        },
+        {
+          "type": "sub",
+          "text": "Phrases for ordering and paying"
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "German",
+            "English"
+          ],
+          "rows": [
+            [
+              "Ich möchte einen Kaffee, bitte.",
+              "I'd like a coffee, please."
+            ],
+            [
+              "Ich hätte gern eine Suppe.",
+              "I'd like a soup. (most polite)"
+            ],
+            [
+              "Ich nehme den Salat.",
+              "I'll have the salad."
+            ],
+            [
+              "Haben Sie …?",
+              "Do you have …?"
+            ],
+            [
+              "Was möchten Sie trinken?",
+              "What would you like to drink?"
+            ],
+            [
+              "Die Rechnung, bitte.",
+              "The bill, please."
+            ],
+            [
+              "Zusammen oder getrennt?",
+              "Together or separately?"
+            ],
+            [
+              "Wie viel macht das?",
+              "How much is that?"
+            ],
+            [
+              "Stimmt so.",
+              "Keep the change."
+            ],
+            [
+              "Kann ich mit Karte zahlen?",
+              "Can I pay by card?"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "The last question matters more than it seems: many small cafés in Germany **only take cash**, and a sign saying *Nur Barzahlung* on the door means exactly that. Always carry some bills."
+        }
+      ]
+    },
+    {
+      "title": "Eye training: Nominativ or Akkusativ?",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "The quickest way to tell them apart: ask *wer?* (who is doing it) for the Nominativ, and *wen?* or *was?* (whom/what is it done to) for the Akkusativ — just like English *who* and *whom*."
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Sentence",
+            "Subject (Nom.)",
+            "Object (Akk.)"
+          ],
+          "rows": [
+            [
+              "Der Kellner bringt den Kaffee.",
+              "der Kellner",
+              "den Kaffee"
+            ],
+            [
+              "Ich nehme einen Salat.",
+              "ich",
+              "einen Salat"
+            ],
+            [
+              "Meine Schwester trinkt keinen Wein.",
+              "meine Schwester",
+              "keinen Wein"
+            ],
+            [
+              "Wir möchten die Rechnung.",
+              "wir",
+              "die Rechnung"
+            ],
+            [
+              "Das Bier ist kalt.",
+              "das Bier",
+              "— (none, because of *sein*)"
+            ]
+          ]
+        },
+        {
+          "type": "kotak",
+          "title": "If you only have time to learn one thing from this unit",
+          "items": [
+            "Learn this: **der → den, ein → einen, kein → keinen, mein → meinen**. They all add -en, and only for masculine words.",
+            "Feminine, neuter and plural words don't change at all in the Akkusativ. Three quarters of the table is a copy.",
+            "After *sein* there's never an Akkusativ: *Das ist ein Kaffee*, not *das ist einen Kaffee*."
+          ]
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "de": "möchten",
+      "baca": "MÖKH-ten",
+      "en": "would like"
+    },
+    {
+      "de": "nehmen",
+      "baca": "NAY-men",
+      "en": "to take"
+    },
+    {
+      "de": "trinken",
+      "baca": "TRIN-ken",
+      "en": "to drink"
+    },
+    {
+      "de": "essen",
+      "baca": "ES-sen",
+      "en": "to eat"
+    },
+    {
+      "de": "zahlen",
+      "baca": "TSAH-len",
+      "en": "to pay"
+    },
+    {
+      "de": "bestellen",
+      "baca": "be-SHTEL-len",
+      "en": "to order"
+    },
+    {
+      "de": "bringen",
+      "baca": "BRING-en",
+      "en": "to bring"
+    },
+    {
+      "de": "der Kaffee",
+      "baca": "KAH-fay",
+      "en": "coffee"
+    },
+    {
+      "de": "der Tee",
+      "baca": "tay",
+      "en": "tea"
+    },
+    {
+      "de": "das Wasser",
+      "baca": "VAHS-suh",
+      "en": "water"
+    },
+    {
+      "de": "die Milch",
+      "baca": "milkh",
+      "en": "milk"
+    },
+    {
+      "de": "der Kuchen",
+      "baca": "KOO-khen",
+      "en": "cake"
+    },
+    {
+      "de": "die Suppe",
+      "baca": "ZOOP-pe",
+      "en": "soup"
+    },
+    {
+      "de": "der Salat",
+      "baca": "zah-LAHT",
+      "en": "salad"
+    },
+    {
+      "de": "das Brot",
+      "baca": "broht",
+      "en": "bread"
+    },
+    {
+      "de": "die Rechnung",
+      "baca": "REKH-noong",
+      "en": "bill, check"
+    },
+    {
+      "de": "das Café",
+      "baca": "kah-FAY",
+      "en": "café"
+    },
+    {
+      "de": "der Kellner",
+      "baca": "KEL-nuh",
+      "en": "waiter"
+    }
+  ],
+  "exercises": [
+    {
+      "prompt": "Translate into English.",
+      "items": [
+        "Was möchten Sie trinken?",
+        "Ich möchte einen Kaffee, bitte.",
+        "Wir haben keine Sandwiches mehr.",
+        "Dann nehme ich die Suppe.",
+        "Die Rechnung, bitte.",
+        "Zusammen oder getrennt?"
+      ]
+    },
+    {
+      "prompt": "Fill in the correct Akkusativ form: *einen*, *eine* or *ein*.",
+      "items": [
+        "Ich möchte ____ Kaffee.",
+        "Ich nehme ____ Suppe.",
+        "Sie trinkt ____ Wasser.",
+        "Er möchte ____ Tee.",
+        "Wir nehmen ____ Salat.",
+        "Ich esse ____ Brötchen."
+      ]
+    },
+    {
+      "prompt": "Put the words in the right order.",
+      "items": [
+        "einen / ich / Kaffee / möchte",
+        "die Rechnung / wir / möchten",
+        "Sie / möchten / trinken / was",
+        "keinen / ich / trinke / Wein",
+        "nehme / die Suppe / ich / dann",
+        "oder / zusammen / getrennt"
+      ]
+    }
+  ],
+  "answers": [
+    "What would you like to drink? — I'd like a coffee, please. — We're out of sandwiches. — Then I'll have the soup. — The bill, please. — Together or separately?",
+    "einen — eine — ein — einen — einen — ein",
+    "Ich möchte einen Kaffee. — Wir möchten die Rechnung. — Was möchten Sie trinken? — Ich trinke keinen Wein. — Dann nehme ich die Suppe. — Zusammen oder getrennt?"
+  ]
+}

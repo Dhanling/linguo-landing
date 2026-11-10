@@ -1,0 +1,457 @@
+{
+  "title": "At the café",
+  "title_target": "Au café",
+  "goal": "Order drinks and snacks politely, use je voudrais, and meet the partitive articles du / de la.",
+  "bekal": [
+    "order with *je voudrais* and *je prends*",
+    "use *du*, *de la*, *de l'* for things you can't count",
+    "ask for the check and pay: *l'addition, s'il vous plaît*"
+  ],
+  "wave": "Go back to **Unit 2** first: cover the French, then introduce Thomas to a friend from memory — say what he does and how long he has lived in Lyon.",
+  "dialogs": [
+    {
+      "title": "Dialogue — À la terrasse",
+      "intro": "Budi and Camille sit down on a café terrace. The waiter comes over.",
+      "lines": [
+        {
+          "speaker": "Serveur:",
+          "text": "Bonjour ! Vous désirez ?",
+          "id": "Hello! What would you like?",
+          "literal": "good-day! you desire?"
+        },
+        {
+          "speaker": "Camille:",
+          "text": "Bonjour. Un café, s'il vous plaît.",
+          "id": "Hello. A coffee, please.",
+          "literal": "good-day. a coffee, if-it to-you pleases."
+        },
+        {
+          "speaker": "Serveur:",
+          "text": "Très bien. Et pour vous, monsieur ?",
+          "id": "Very good. And for you, sir?",
+          "literal": "very well. and for you, sir?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Je voudrais un thé au lait, s'il vous plaît.",
+          "id": "I'd like a tea with milk, please.",
+          "literal": "I would-want a tea with-the milk, please."
+        },
+        {
+          "speaker": "Serveur:",
+          "text": "D'accord. Vous prenez quelque chose à manger ?",
+          "id": "All right. Anything to eat?",
+          "literal": "agreed. you take something to eat?"
+        },
+        {
+          "speaker": "Camille:",
+          "text": "Oui, deux croissants, s'il vous plaît.",
+          "id": "Yes, two croissants, please.",
+          "literal": "yes, two croissants, please."
+        },
+        {
+          "speaker": "Serveur:",
+          "text": "Très bien. Ce sera tout ?",
+          "id": "Very good. Will that be all?",
+          "literal": "very well. it will-be all?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Oui, c'est tout, merci.",
+          "id": "Yes, that's all, thank you.",
+          "literal": "yes, it-is all, thanks."
+        },
+        {
+          "speaker": "Camille:",
+          "text": "Tu ne bois pas de café le matin ?",
+          "id": "You don't drink coffee in the morning?",
+          "literal": "you not drink not of coffee the morning?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Non, je bois du thé. Le café, c'est trop fort.",
+          "id": "No, I drink tea. Coffee is too strong.",
+          "literal": "no, I drink some tea. the coffee, it-is too strong."
+        },
+        {
+          "speaker": "Camille:",
+          "text": "Ah, moi je ne peux pas travailler sans café !",
+          "id": "Oh, I can't work without coffee!",
+          "literal": "ah, me I not can not work without coffee!"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "L'addition, s'il vous plaît ! Je t'invite.",
+          "id": "The check, please! It's on me.",
+          "literal": "the-bill, please! I you-invite."
+        }
+      ],
+      "notes": [
+        "**Je voudrais is the magic phrase.** Literally \"I would want\" — the polite form of *je veux* (I want). *Je veux un café* sounds like a small child's demand; *je voudrais un café* sounds like an adult. Always use this form in shops, restaurants and at counters.",
+        "**Un café means an espresso.** If you want a big milky coffee, order *un café au lait* or *un crème*. *Un café américain* is for a long, American-style coffee. Ordering plain \"coffee\" in France gets you a tiny cup gone in two sips.",
+        "**S'il vous plaît is not decoration.** Leaving it out in France isn't just a little impolite — it sounds rude. The full meaning is \"if it pleases you\". With friends: *s'il te plaît*.",
+        "**Vous désirez ?** is how waiters ask. Its relatives are *Vous prenez quelque chose ?* and *Qu'est-ce que je vous sers ?* You don't need to say them — just recognize them when you hear them.",
+        "**Ce sera tout ?** uses a future form you haven't learned yet, and there's no need to take it apart now. Just recognize it as \"anything else?\" and answer *c'est tout* (that's all) or *non, aussi…*",
+        "**The negative drops the article.** *Je bois du café* → *je ne bois pas **de** café*. This is not a minor exception but a major rule: after a negative, *du*, *de la*, *des*, *un*, *une* all shrink to **de**. Only *le, la, les* survive.",
+        "**Je t'invite** is literally \"I invite you\", and it's how French people say \"I'm paying\". The polite comeback: *non, c'est moi !* or *on partage* (let's split it)."
+      ],
+      "grammars": [
+        {
+          "title": "Du, de la, de l' — articles for things you can't count",
+          "body": [
+            "English can say \"I drink coffee\" with nothing in front of the noun. French can't: it has to mark that you're drinking *some* coffee, not all the coffee in the world — a bit like English \"some\", except that in French it's compulsory."
+          ],
+          "table": {
+            "head": [
+              "Type of noun",
+              "Article",
+              "Example"
+            ],
+            "rows": [
+              [
+                "masculine uncountable",
+                "**du**",
+                "*Je bois du thé.*"
+              ],
+              [
+                "feminine uncountable",
+                "**de la**",
+                "*Je mange de la salade.*"
+              ],
+              [
+                "before a vowel / h",
+                "**de l'**",
+                "*Je bois de l'eau.*"
+              ],
+              [
+                "indefinite plural",
+                "**des**",
+                "*Je mange des frites.*"
+              ],
+              [
+                "after a negative",
+                "**de / d'**",
+                "*Je ne bois pas de thé.*"
+              ]
+            ]
+          },
+          "after": [
+            "Three articles, three different meanings for what in English could all be \"coffee\": *j'aime **le** café* (I like coffee, in general), *je bois **du** café* (I drink coffee, some of it), *je voudrais **un** café* (I'd like a cup of coffee).",
+            "After *aimer*, *adorer*, *détester* it's always **le / la / les** — because what you like is the thing as a whole. This comes back in full in Unit 15.",
+            "⚠️ Leaving out the article entirely (*je bois café*) is the mistake that marks a foreign speaker fastest. Pick one, but never leave it empty."
+          ]
+        },
+        {
+          "title": "Prendre and boire",
+          "body": [
+            "Two verbs you can't avoid at a café. Both are irregular, and both double a consonant in the *ils* form."
+          ],
+          "table": {
+            "head": [
+              "",
+              "prendre (to take, to order)",
+              "boire (to drink)",
+              "manger (to eat)"
+            ],
+            "rows": [
+              [
+                "je",
+                "prends",
+                "bois",
+                "mange"
+              ],
+              [
+                "tu",
+                "prends",
+                "bois",
+                "manges"
+              ],
+              [
+                "il / elle / on",
+                "prend",
+                "boit",
+                "mange"
+              ],
+              [
+                "nous",
+                "prenons",
+                "buvons",
+                "mangeons"
+              ],
+              [
+                "vous",
+                "prenez",
+                "buvez",
+                "mangez"
+              ],
+              [
+                "ils / elles",
+                "prennent",
+                "boivent",
+                "mangent"
+              ]
+            ]
+          },
+          "after": [
+            "*Prendre* covers far more than \"to take\": ordering food (*je prends une salade*), taking transport (*je prends le bus*), and taking medicine (*je prends un médicament*).",
+            "*Mangeons* slips in a silent **e** so the g stays soft. Other verbs ending in -ger do the same: *nous voyageons*, *nous changeons*."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Café menu",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "What people really order in a French café. Learn them with their articles, as usual."
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Français",
+            "Pronunciation",
+            "English"
+          ],
+          "rows": [
+            [
+              "un café",
+              "uhn kah-FAY",
+              "espresso"
+            ],
+            [
+              "un café au lait",
+              "uhn kah-FAY oh LEH",
+              "coffee with milk"
+            ],
+            [
+              "un thé",
+              "uhn TAY",
+              "tea"
+            ],
+            [
+              "un chocolat chaud",
+              "uhn shoh-koh-LAH SHOH",
+              "hot chocolate"
+            ],
+            [
+              "un jus d'orange",
+              "uhn zhü doh-RAHNZH",
+              "orange juice"
+            ],
+            [
+              "une eau minérale",
+              "ü-noh mee-nay-RAHL",
+              "mineral water"
+            ],
+            [
+              "un verre de vin",
+              "uhn vehr duh VAN",
+              "glass of wine"
+            ],
+            [
+              "une bière",
+              "ün BYEHR",
+              "beer"
+            ],
+            [
+              "un croissant",
+              "uhn krwah-SAHN",
+              "croissant"
+            ],
+            [
+              "un sandwich",
+              "uhn sahnd-WEECH",
+              "sandwich"
+            ],
+            [
+              "une salade",
+              "ün sah-LAHD",
+              "salad"
+            ],
+            [
+              "une glace",
+              "ün GLAHS",
+              "ice cream"
+            ]
+          ]
+        },
+        {
+          "type": "kotak",
+          "title": "Lifesaver phrases",
+          "items": [
+            "*Une table pour deux, s'il vous plaît.* — A table for two, please.",
+            "*Qu'est-ce que vous avez comme dessert ?* — What do you have for dessert?",
+            "*C'est combien ?* — How much is it?",
+            "*L'addition, s'il vous plaît.* — The check, please. In France the check never comes by itself; you have to ask for it.",
+            "*Je peux payer par carte ?* — Can I pay by card?"
+          ]
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "fr": "un café",
+      "baca": "uhn kah-FAY",
+      "en": "coffee, café"
+    },
+    {
+      "fr": "un serveur / une serveuse",
+      "baca": "uhn sehr-VUHR",
+      "en": "waiter / waitress"
+    },
+    {
+      "fr": "désirer",
+      "baca": "day-zee-RAY",
+      "en": "to wish for, to want"
+    },
+    {
+      "fr": "je voudrais",
+      "baca": "zhuh voo-DREH",
+      "en": "I would like (polite)"
+    },
+    {
+      "fr": "prendre",
+      "baca": "PRAHNDR",
+      "en": "to take, to order"
+    },
+    {
+      "fr": "boire",
+      "baca": "BWAHR",
+      "en": "to drink"
+    },
+    {
+      "fr": "manger",
+      "baca": "mahn-ZHAY",
+      "en": "to eat"
+    },
+    {
+      "fr": "le lait",
+      "baca": "luh LEH",
+      "en": "milk"
+    },
+    {
+      "fr": "l'eau (f)",
+      "baca": "LOH",
+      "en": "water"
+    },
+    {
+      "fr": "le thé",
+      "baca": "luh TAY",
+      "en": "tea"
+    },
+    {
+      "fr": "quelque chose",
+      "baca": "kel-kuh SHOHZ",
+      "en": "something"
+    },
+    {
+      "fr": "d'accord",
+      "baca": "dah-KOHR",
+      "en": "OK, all right"
+    },
+    {
+      "fr": "tout",
+      "baca": "too",
+      "en": "all, everything"
+    },
+    {
+      "fr": "le matin",
+      "baca": "luh mah-TAN",
+      "en": "morning"
+    },
+    {
+      "fr": "trop",
+      "baca": "troh",
+      "en": "too (much)"
+    },
+    {
+      "fr": "fort",
+      "baca": "fohr",
+      "en": "strong"
+    },
+    {
+      "fr": "sans",
+      "baca": "sahn",
+      "en": "without"
+    },
+    {
+      "fr": "l'addition (f)",
+      "baca": "lah-dee-SYOHN",
+      "en": "the check, the bill"
+    },
+    {
+      "fr": "inviter",
+      "baca": "an-vee-TAY",
+      "en": "to invite, to treat"
+    },
+    {
+      "fr": "payer",
+      "baca": "peh-YAY",
+      "en": "to pay"
+    },
+    {
+      "fr": "une carte",
+      "baca": "ün KAHRT",
+      "en": "card, menu"
+    },
+    {
+      "fr": "combien",
+      "baca": "kohn-BYAN",
+      "en": "how much, how many"
+    }
+  ],
+  "exercises": [
+    {
+      "prompt": "Fill in du, de la, de l' or des.",
+      "items": [
+        "Je bois ____ café.",
+        "Elle mange ____ salade.",
+        "Nous buvons ____ eau.",
+        "Tu prends ____ frites ?",
+        "Il mange ____ pain.",
+        "Vous voulez ____ bière ?"
+      ]
+    },
+    {
+      "prompt": "Make these sentences negative.",
+      "items": [
+        "Je bois du thé.",
+        "Elle mange de la viande.",
+        "Nous prenons des croissants.",
+        "Il a une voiture.",
+        "Tu veux un café."
+      ]
+    },
+    {
+      "prompt": "Fill in the correct verb form.",
+      "items": [
+        "Je ____ (prendre) un café.",
+        "Tu ____ (boire) du thé ?",
+        "Nous ____ (manger) au restaurant.",
+        "Ils ____ (prendre) le bus.",
+        "Vous ____ (boire) du vin ?",
+        "Elle ____ (manger) une glace."
+      ]
+    },
+    {
+      "prompt": "Translate into French.",
+      "items": [
+        "I'd like a tea with milk, please.",
+        "Two croissants, please.",
+        "I don't drink coffee.",
+        "The check, please.",
+        "How much is it?"
+      ]
+    }
+  ],
+  "answers": [
+    "du — de la — de l' — des — du — de la",
+    "Je ne bois pas de thé. — Elle ne mange pas de viande. — Nous ne prenons pas de croissants. — Il n'a pas de voiture. — Tu ne veux pas de café.",
+    "prends — bois — mangeons — prennent — buvez — mange",
+    "Je voudrais un thé au lait, s'il vous plaît. — Deux croissants, s'il vous plaît. — Je ne bois pas de café. — L'addition, s'il vous plaît. — C'est combien ?"
+  ]
+}

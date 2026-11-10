@@ -1,0 +1,461 @@
+{
+  "title": "Let me introduce my friend",
+  "title_target": "Ti presento un amico",
+  "goal": "Introduce other people, tell informal and formal address apart right down to the verb form, and say what people do for a living.",
+  "bekal": [
+    "introduce a third person to the person you're talking to",
+    "switch from *tu* to *Lei* when the situation calls for it",
+    "state a job without an article"
+  ],
+  "dialogs": [
+    {
+      "title": "Dialogo — In corridoio",
+      "intro": "Giulia runs into Budi in the hallway along with one of the professors. Notice how her way of speaking changes depending on whom she is talking to.",
+      "lines": [
+        {
+          "speaker": "Giulia:",
+          "text": "Budi, ti presento Marco. È il mio amico.",
+          "id": "Budi, this is Marco. He's my friend.",
+          "literal": "Budi, to-you I-introduce Marco. is the friend my."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Piacere, Marco. Io sono Budi.",
+          "id": "Nice to meet you, Marco. I'm Budi.",
+          "literal": "pleasure, Marco. I am Budi."
+        },
+        {
+          "speaker": "Marco:",
+          "text": "Piacere! Sei uno studente del corso?",
+          "id": "Nice to meet you! Are you a student on the course?",
+          "literal": "pleasure! you-are a student of-the course?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Sì. Tu che lavoro fai?",
+          "id": "Yes. What do you do?",
+          "literal": "yes. you what work you-do?"
+        },
+        {
+          "speaker": "Marco:",
+          "text": "Sono cuoco. Lavoro in un ristorante qui vicino.",
+          "id": "I'm a cook. I work in a restaurant near here.",
+          "literal": "am cook. I-work in a restaurant here near."
+        },
+        {
+          "speaker": "Giulia:",
+          "text": "Buongiorno, professoressa! Le presento Budi.",
+          "id": "Good morning, Professor! May I introduce Budi?",
+          "literal": "good-morning, professor(female)! to-you(formal) I-introduce Budi."
+        },
+        {
+          "speaker": "Prof.:",
+          "text": "Buongiorno. Piacere. Lei come si chiama?",
+          "id": "Good morning. Nice to meet you. What's your name?",
+          "literal": "good-morning. pleasure. you(formal) how yourself-calls?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Mi chiamo Budi Santoso. Sono indonesiano.",
+          "id": "My name is Budi Santoso. I'm Indonesian.",
+          "literal": "myself-I-call Budi Santoso. am Indonesian."
+        },
+        {
+          "speaker": "Prof.:",
+          "text": "Benvenuto. E che cosa fa nella vita?",
+          "id": "Welcome. And what do you do for a living?",
+          "literal": "welcome. and what thing you(formal)-do in-the life?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Sono ingegnere. Ma adesso sono qui per studiare.",
+          "id": "I'm an engineer. But right now I'm here to study.",
+          "literal": "am engineer. but now am here for to-study."
+        },
+        {
+          "speaker": "Prof.:",
+          "text": "Molto bene. Ci vediamo in aula, allora.",
+          "id": "Very good. See you in class, then.",
+          "literal": "much well. us we-see in classroom, then."
+        }
+      ],
+      "notes": [
+        "**Lei is not \"she\" here.** Italian shows respect by using the third-person feminine form, written with a capital letter: *Lei come si chiama?* is literally \"how does she call herself?\" — and it's used for men and women alike. It feels odd at first, but this is how Italian keeps a polite distance.",
+        "**So the verb moves too.** *Come stai?* (informal) becomes *Come sta?* (formal). *Che lavoro fai?* becomes *Che lavoro fa?*. The form used is the *lui/lei* form, not the *tu* form.",
+        "**When to switch to Lei.** With older people, officials, doctors, shop owners, and anyone you don't know who seems senior to you. Only drop to the informal form when the other person offers (*diamoci del tu* = let's just use *tu*). Italians rarely take offense because you were too polite, but often do for the opposite.",
+        "**Jobs without an article.** *Sono cuoco*, not *sono un cuoco*. That's different from English, which needs *a*. The article only appears when the job is described: *sono un cuoco bravo* (I'm a good cook).",
+        "**Ti presento vs Le presento.** *Ti* = to you, *Le* = to you (formal). These little pronouns go **before** the verb, unlike English, which puts them after.",
+        "**Che lavoro fai** literally means \"what work do you do\". The alternatives are *Che cosa fai?* or, in full, *Che cosa fai nella vita?* — \"what do you do in life\". All three are common.",
+        "**Ci vediamo** = \"see you\", literally \"we see each other\". It's one of the goodbyes Italians use most every day, alongside *ciao* and *a presto*.",
+        "**Allora** is an all-purpose linking word: \"then\", \"so\", \"well then\". It also fills pauses while you think, like \"so…\" or \"well…\". You don't have to use it, but you do have to recognize it — Italians sprinkle it everywhere."
+      ],
+      "grammars": [
+        {
+          "title": "Two registers — informal and formal",
+          "body": [
+            "Compare the left and right columns. It's not only the pronoun that changes, but the verb form too."
+          ],
+          "table": {
+            "head": [
+              "Meaning",
+              "Informal (tu)",
+              "Formal (Lei)"
+            ],
+            "rows": [
+              [
+                "What's your name?",
+                "Come **ti** chiam**i**?",
+                "Come **si** chiam**a**?"
+              ],
+              [
+                "How are you?",
+                "Come st**ai**?",
+                "Come st**a**?"
+              ],
+              [
+                "Where are you from?",
+                "Di dove **sei**?",
+                "Di dove **è**?"
+              ],
+              [
+                "What do you do?",
+                "Che lavoro **fai**?",
+                "Che lavoro **fa**?"
+              ],
+              [
+                "This is…",
+                "**Ti** presento…",
+                "**Le** presento…"
+              ],
+              [
+                "Sorry",
+                "Scus**a**",
+                "Scus**i**"
+              ]
+            ]
+          },
+          "after": [
+            "The formal form uses the *lui/lei* row — exactly the same form as \"he/she\". So every time you learn the \"he/she\" form, you've learned the polite form too. Two for the price of one.",
+            "Writing *Lei* with a capital L is a habit of formal writing. In conversation you obviously can't see it, but it's kept in emails and letters."
+          ]
+        },
+        {
+          "title": "Fare — the verb \"to do, to make\"",
+          "body": [
+            "The second verb you must learn by heart. It's irregular and shows up everywhere: asking about jobs, the weather, making things."
+          ],
+          "table": {
+            "head": [
+              "",
+              "fare",
+              "example"
+            ],
+            "rows": [
+              [
+                "io",
+                "**faccio**",
+                "Faccio l'ingegnere."
+              ],
+              [
+                "tu",
+                "**fai**",
+                "Che lavoro fai?"
+              ],
+              [
+                "lui / lei / Lei",
+                "**fa**",
+                "Che lavoro fa?"
+              ],
+              [
+                "noi",
+                "facciamo",
+                "Facciamo una pausa."
+              ],
+              [
+                "voi",
+                "fate",
+                "Che cosa fate?"
+              ],
+              [
+                "loro",
+                "fanno",
+                "Fanno colazione."
+              ]
+            ]
+          },
+          "after": [
+            "You can state a job two ways: *sono ingegnere* (no article) or *faccio l'ingegnere* (with an article, because here the job is the object). Both are common; the first is slightly more neutral."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Jobs",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Most job titles change form to match the person's gender. Those ending in **-e** usually don't change at all."
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Male",
+            "Female",
+            "English"
+          ],
+          "rows": [
+            [
+              "studente",
+              "studentessa",
+              "student"
+            ],
+            [
+              "insegnante",
+              "insegnante",
+              "teacher"
+            ],
+            [
+              "professore",
+              "professoressa",
+              "professor, teacher"
+            ],
+            [
+              "medico / dottore",
+              "medico / dottoressa",
+              "doctor"
+            ],
+            [
+              "infermiere",
+              "infermiera",
+              "nurse"
+            ],
+            [
+              "ingegnere",
+              "ingegnere",
+              "engineer"
+            ],
+            [
+              "avvocato",
+              "avvocata",
+              "lawyer"
+            ],
+            [
+              "impiegato",
+              "impiegata",
+              "office worker"
+            ],
+            [
+              "commesso",
+              "commessa",
+              "shop assistant"
+            ],
+            [
+              "cuoco",
+              "cuoca",
+              "cook"
+            ],
+            [
+              "cameriere",
+              "cameriera",
+              "waiter, waitress"
+            ],
+            [
+              "operaio",
+              "operaia",
+              "factory worker"
+            ],
+            [
+              "casalingo",
+              "casalinga",
+              "homemaker"
+            ],
+            [
+              "disoccupato",
+              "disoccupata",
+              "unemployed"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "*Dottore* and *dottoressa* are used far more widely than the English \"doctor\": anyone with a university degree can be addressed this way, and in government offices it's almost automatic. The short form before a name: *dottor Rossi*."
+        },
+        {
+          "type": "kotak",
+          "title": "Asking about jobs",
+          "items": [
+            "Informal: *Che lavoro fai?* / *Che cosa fai?*",
+            "Formal: *Che lavoro fa?* / *Che cosa fa nella vita?*",
+            "Answering: *Sono insegnante.* or *Faccio l'insegnante.*",
+            "Not working yet: *Studio ancora.* (I'm still studying) or *Sono disoccupato.*"
+          ]
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "it": "presentare",
+      "baca": "preh-zehn-TAH-reh",
+      "en": "to introduce"
+    },
+    {
+      "it": "l'amico / l'amica",
+      "baca": "lah-MEE-koh",
+      "en": "friend"
+    },
+    {
+      "it": "il lavoro",
+      "baca": "eel lah-VOH-roh",
+      "en": "work, job"
+    },
+    {
+      "it": "fare",
+      "baca": "FAH-reh",
+      "en": "to do, to make"
+    },
+    {
+      "it": "lavorare",
+      "baca": "lah-voh-RAH-reh",
+      "en": "to work"
+    },
+    {
+      "it": "studiare",
+      "baca": "stoo-DYAH-reh",
+      "en": "to study"
+    },
+    {
+      "it": "lo studente",
+      "baca": "loh stoo-DEHN-teh",
+      "en": "student"
+    },
+    {
+      "it": "il cuoco",
+      "baca": "eel KWOH-koh",
+      "en": "cook"
+    },
+    {
+      "it": "l'ingegnere",
+      "baca": "leen-jeh-NYEH-reh",
+      "en": "engineer"
+    },
+    {
+      "it": "il ristorante",
+      "baca": "eel rees-toh-RAHN-teh",
+      "en": "restaurant"
+    },
+    {
+      "it": "il corso",
+      "baca": "eel KOHR-soh",
+      "en": "course"
+    },
+    {
+      "it": "l'aula",
+      "baca": "LOW-lah",
+      "en": "classroom"
+    },
+    {
+      "it": "qui",
+      "baca": "kwee",
+      "en": "here"
+    },
+    {
+      "it": "vicino",
+      "baca": "vee-CHEE-noh",
+      "en": "near"
+    },
+    {
+      "it": "adesso",
+      "baca": "ah-DEHS-soh",
+      "en": "now"
+    },
+    {
+      "it": "ma",
+      "baca": "mah",
+      "en": "but"
+    },
+    {
+      "it": "per",
+      "baca": "pehr",
+      "en": "for, in order to"
+    },
+    {
+      "it": "allora",
+      "baca": "ahl-LOH-rah",
+      "en": "then, so"
+    },
+    {
+      "it": "molto",
+      "baca": "MOHL-toh",
+      "en": "very, a lot"
+    },
+    {
+      "it": "ci vediamo",
+      "baca": "chee veh-DYAH-moh",
+      "en": "see you"
+    },
+    {
+      "it": "la vita",
+      "baca": "lah VEE-tah",
+      "en": "life"
+    },
+    {
+      "it": "che cosa",
+      "baca": "keh KOH-zah",
+      "en": "what"
+    }
+  ],
+  "exercises": [
+    {
+      "prompt": "Change these informal sentences into the formal form.",
+      "items": [
+        "Come ti chiami?",
+        "Come stai?",
+        "Di dove sei?",
+        "Che lavoro fai?",
+        "Ti presento Marco.",
+        "Scusa, sei italiano?"
+      ]
+    },
+    {
+      "prompt": "Translate into Italian.",
+      "items": [
+        "Let me introduce my friend Marco.",
+        "I'm a cook.",
+        "I work in a restaurant.",
+        "What do you do? (formal)",
+        "He's a student.",
+        "See you in class!"
+      ]
+    },
+    {
+      "prompt": "Fill in the right form of fare.",
+      "items": [
+        "Io ____ l'ingegnere.",
+        "Tu che lavoro ____?",
+        "Lei che cosa ____ nella vita?",
+        "Noi ____ una pausa.",
+        "Loro ____ colazione al bar."
+      ]
+    },
+    {
+      "prompt": "Write the female form of these job titles.",
+      "items": [
+        "studente",
+        "professore",
+        "cuoco",
+        "cameriere",
+        "impiegato",
+        "ingegnere"
+      ]
+    }
+  ],
+  "answers": [
+    "Come si chiama? — Come sta? — Di dove è? — Che lavoro fa? — Le presento Marco. — Scusi, è italiano?",
+    "Ti presento il mio amico Marco. — Sono cuoco. — Lavoro in un ristorante. — Che lavoro fa? — È studente. — Ci vediamo in aula!",
+    "faccio — fai — fa — facciamo — fanno",
+    "studentessa — professoressa — cuoca — cameriera — impiegata — ingegnere"
+  ]
+}

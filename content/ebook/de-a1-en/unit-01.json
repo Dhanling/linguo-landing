@@ -1,0 +1,533 @@
+{
+  "title": "Hello, what's your name?",
+  "title_target": "Hallo! Wie heißt du?",
+  "goal": "Greet people according to the time of day, introduce yourself, and choose between *du* and *Sie* — the first decision you have to make every time you open your mouth in German.",
+  "bekal": [
+    "say hello and goodbye",
+    "give your name (*Ich heiße…*) and ask someone else's",
+    "say who you are (*Ich bin Student*)",
+    "choose between informal *du* and polite *Sie*"
+  ],
+  "dialogs": [
+    {
+      "title": "Dialogue — In der Sprachschule",
+      "intro": "The first day of a language course in Berlin. Budi is waiting in the hallway when someone sits down next to him. Read the German out loud first, then glance at the translation.",
+      "lines": [
+        {
+          "speaker": "Lena:",
+          "text": "Hallo! Guten Morgen.",
+          "id": "Hi! Good morning.",
+          "literal": "hello! good morning."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Guten Morgen. Wie heißt du?",
+          "id": "Good morning. What's your name?",
+          "literal": "good morning. how are-called you?"
+        },
+        {
+          "speaker": "Lena:",
+          "text": "Ich heiße Lena. Und du?",
+          "id": "My name's Lena. And you?",
+          "literal": "I am-called Lena. and you?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Ich bin Budi. Freut mich.",
+          "id": "I'm Budi. Nice to meet you.",
+          "literal": "I am Budi. pleases me."
+        },
+        {
+          "speaker": "Lena:",
+          "text": "Freut mich auch. Bist du Student?",
+          "id": "Nice to meet you too. Are you a student?",
+          "literal": "pleases me also. are you student?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Ja, ich bin Student. Und du? Bist du Lehrerin?",
+          "id": "Yes, I'm a student. And you? Are you a teacher?",
+          "literal": "yes, I am student. and you? are you teacher-female?"
+        },
+        {
+          "speaker": "Lena:",
+          "text": "Nein, ich bin keine Lehrerin. Ich bin auch Studentin.",
+          "id": "No, I'm not a teacher. I'm a student too.",
+          "literal": "no, I am no teacher-female. I am also student-female."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Wie geht es dir?",
+          "id": "How are you?",
+          "literal": "how goes it to-you?"
+        },
+        {
+          "speaker": "Lena:",
+          "text": "Danke, gut. Und dir?",
+          "id": "Fine, thanks. And you?",
+          "literal": "thanks, good. and to-you?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Auch gut, danke. Ein bisschen müde.",
+          "id": "Fine too, thanks. A bit tired.",
+          "literal": "also good, thanks. a little-bit tired."
+        },
+        {
+          "speaker": "Lena:",
+          "text": "Ah, verstehe. Bis später, Budi!",
+          "id": "Ah, I see. See you later, Budi!",
+          "literal": "ah, I-understand. until later, Budi!"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Tschüss, Lena. Bis morgen!",
+          "id": "Bye, Lena. See you tomorrow!",
+          "literal": "bye, Lena. until tomorrow!"
+        }
+      ],
+      "notes": [
+        "**All nouns are capitalized.** *Student*, *Lehrerin*, *Morgen* — not just at the start of a sentence, but everywhere. This rule has no exceptions in German, and copying it from the very first line is much cheaper than fixing it later.",
+        "**Jobs take no article.** *Ich bin Student*, not *ich bin ein Student*. This is where German differs from English, which demands *a student*.",
+        "**Women get their own form.** Almost every job title adds **-in** for a woman: *Student → Studentin*, *Lehrer → Lehrerin*, *Arzt → Ärztin*. Lena says *Studentin* because she's a woman; Budi says *Student*.",
+        "**Negating a noun uses *kein*, not *nicht*.** *Ich bin **keine** Lehrerin* — not *ich bin nicht Lehrerin*. The full rule comes in Unit 5; for now just learn the pairs: *kein Student*, *keine Lehrerin*.",
+        "***Wie geht es dir?*** literally means \"how goes it to-you?\" — and the answer isn't about you either, but about \"it\": *Danke, gut*. In quick conversation people shorten it to *Wie geht's?* To someone you address as *Sie*, it's *Wie geht es Ihnen?*",
+        "**Greetings follow the time of day.** *Guten Morgen* until about ten, *Guten Tag* through the day, *Guten Abend* after sunset. *Gute Nacht* is only for parting before bed — never for saying hello. In southern Germany and Austria you'll often hear *Grüß Gott* in place of all of them."
+      ],
+      "grammars": [
+        {
+          "title": "The verb sein (to be) — the most important verb in German",
+          "body": [
+            "*Sein* expresses **identity and state** — who you are, what you do, how you feel. Its forms are irregular and look nothing like each other, so it's better to learn them whole now than piece by piece:"
+          ],
+          "table": {
+            "head": [
+              "German",
+              "Pronunciation",
+              "English"
+            ],
+            "rows": [
+              [
+                "ich **bin**",
+                "ikh bin",
+                "I am"
+              ],
+              [
+                "du **bist**",
+                "doo bist",
+                "you are (informal)"
+              ],
+              [
+                "er / sie / es **ist**",
+                "air / zee / ess ist",
+                "he / she / it is"
+              ],
+              [
+                "wir **sind**",
+                "veer zint",
+                "we are"
+              ],
+              [
+                "ihr **seid**",
+                "eer zeyet",
+                "you are (plural)"
+              ],
+              [
+                "sie / Sie **sind**",
+                "zee / zee zint",
+                "they are / you are (formal)"
+              ]
+            ]
+          },
+          "after": [
+            "The last three forms are written together on purpose so you can see the pattern: *wir*, *sie* (they) and *Sie* (formal you) always use exactly the same form throughout German. This rule is never broken, for any verb.",
+            "To make a yes/no question, just **move the verb to the front**: *Du bist Student* → *Bist du Student?* There's no helper verb like English *do*, and no extra question word."
+          ]
+        },
+        {
+          "title": "du or Sie? A decision you can't avoid",
+          "body": [
+            "German forces its speakers to choose from the very first word: address the other person as **du** (informal) or **Sie** (polite). Choosing wrong won't make you misunderstood, but it stands out — a bit like calling your future in-laws \"dude\"."
+          ],
+          "table": {
+            "head": [
+              "",
+              "du",
+              "Sie"
+            ],
+            "rows": [
+              [
+                "Used with",
+                "friends, family, fellow students, children",
+                "adult strangers, bosses, officials, shop staff"
+              ],
+              [
+                "Name used",
+                "first name (*Lena*)",
+                "title + last name (*Frau Schmidt*)"
+              ],
+              [
+                "What's your name?",
+                "Wie heißt **du**?",
+                "Wie heißen **Sie**?"
+              ],
+              [
+                "How are you?",
+                "Wie geht es **dir**?",
+                "Wie geht es **Ihnen**?"
+              ],
+              [
+                "Where are you from?",
+                "Woher kommst **du**?",
+                "Woher kommen **Sie**?"
+              ]
+            ]
+          },
+          "after": [
+            "**Sie** is always capitalized, wherever it stands — that's what sets it apart from *sie* (\"she\" / \"they\"), which sounds exactly the same. In conversation, your ear tells them apart by the verb form and the tone of the situation, not by the sound.",
+            "The practical rule: **when in doubt, use *Sie***. A German who feels too formally treated will offer *Wir können uns duzen* (\"we can say du to each other\"), and only then do you switch. Using *du* with someone who expects *Sie* is rarely corrected — but it's noted."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Hello and goodbye",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "This list is best learned whole rather than word by word. They're all fixed phrases that never change form."
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "German",
+            "Pronunciation",
+            "English",
+            "When"
+          ],
+          "rows": [
+            [
+              "Hallo!",
+              "HAH-loh",
+              "Hello",
+              "any time, with anyone"
+            ],
+            [
+              "Guten Morgen",
+              "GOO-ten MOR-gen",
+              "Good morning",
+              "until about 10:00 a.m."
+            ],
+            [
+              "Guten Tag",
+              "GOO-ten TAHK",
+              "Good afternoon / Hello",
+              "all day; the safest greeting"
+            ],
+            [
+              "Guten Abend",
+              "GOO-ten AH-bent",
+              "Good evening",
+              "after sunset"
+            ],
+            [
+              "Gute Nacht",
+              "GOO-te NAHKHT",
+              "Good night",
+              "only when leaving for bed"
+            ],
+            [
+              "Grüß Gott",
+              "grüs GOT",
+              "Hello",
+              "southern Germany & Austria"
+            ],
+            [
+              "Wie geht's?",
+              "vee GAYTS",
+              "How are you?",
+              "informal, short version"
+            ],
+            [
+              "Auf Wiedersehen",
+              "owf VEE-duh-zay-en",
+              "Goodbye",
+              "polite, with anyone"
+            ],
+            [
+              "Tschüss",
+              "chüss",
+              "Bye",
+              "informal"
+            ],
+            [
+              "Bis später",
+              "bis SHPAY-tuh",
+              "See you later",
+              "the same day"
+            ]
+          ]
+        },
+        {
+          "type": "sub",
+          "text": "Answering \"how are you\""
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "German",
+            "English"
+          ],
+          "rows": [
+            [
+              "Sehr gut, danke.",
+              "Very well, thanks."
+            ],
+            [
+              "Danke, gut.",
+              "Fine, thanks."
+            ],
+            [
+              "Es geht.",
+              "So-so. (literally: \"it goes\")"
+            ],
+            [
+              "Nicht so gut.",
+              "Not so good."
+            ],
+            [
+              "Ein bisschen müde.",
+              "A bit tired."
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "⚠️ Unlike English *How are you?*, *Wie geht's?* is not just empty small talk. Germans tend to answer it honestly — even if the answer is *nicht so gut*. Don't be surprised if your polite question gets a short story in reply."
+        }
+      ]
+    },
+    {
+      "title": "Spelling your name: the German alphabet",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "You'll almost certainly be asked to spell your name — in class, at an office, on the phone. The question is *Wie schreibt man das?* (\"how does one write that?\") or *Können Sie das buchstabieren?*"
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Letter",
+            "Pronunciation",
+            "Letter",
+            "Pronunciation"
+          ],
+          "rows": [
+            [
+              "A",
+              "ah",
+              "N",
+              "en"
+            ],
+            [
+              "B",
+              "bay",
+              "O",
+              "oh"
+            ],
+            [
+              "C",
+              "tsay",
+              "P",
+              "pay"
+            ],
+            [
+              "D",
+              "day",
+              "Q",
+              "koo"
+            ],
+            [
+              "E",
+              "ay",
+              "R",
+              "air"
+            ],
+            [
+              "F",
+              "ef",
+              "S",
+              "ess"
+            ],
+            [
+              "G",
+              "gay",
+              "T",
+              "tay"
+            ],
+            [
+              "H",
+              "hah",
+              "U",
+              "oo"
+            ],
+            [
+              "I",
+              "ee",
+              "V",
+              "fow"
+            ],
+            [
+              "J",
+              "yot",
+              "W",
+              "vay"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "Four extra letters: **Ä** (\"A-umlaut\"), **Ö** (\"O-umlaut\"), **Ü** (\"U-umlaut\"), and **ß**, spelled *eszett* or *scharfes S*. If your keyboard has no ß, writing it as **ss** is accepted everywhere."
+        },
+        {
+          "type": "p",
+          "text": "The two letters beginners mix up most: **V** is called \"fow\" but sounds like *f*, while **W** is called \"vay\" and sounds like *v*. So *Wagen* sounds like \"VAH-gen\", and *Vater* like \"FAH-tuh\"."
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "de": "hallo",
+      "baca": "HAH-loh",
+      "en": "hello"
+    },
+    {
+      "de": "guten Morgen",
+      "baca": "GOO-ten MOR-gen",
+      "en": "good morning"
+    },
+    {
+      "de": "guten Tag",
+      "baca": "GOO-ten TAHK",
+      "en": "good afternoon, hello"
+    },
+    {
+      "de": "guten Abend",
+      "baca": "GOO-ten AH-bent",
+      "en": "good evening"
+    },
+    {
+      "de": "tschüss",
+      "baca": "chüss",
+      "en": "bye"
+    },
+    {
+      "de": "auf Wiedersehen",
+      "baca": "owf VEE-duh-zay-en",
+      "en": "goodbye (polite)"
+    },
+    {
+      "de": "ich",
+      "baca": "ikh",
+      "en": "I"
+    },
+    {
+      "de": "du",
+      "baca": "doo",
+      "en": "you (informal)"
+    },
+    {
+      "de": "Sie",
+      "baca": "zee",
+      "en": "you (polite)"
+    },
+    {
+      "de": "sein",
+      "baca": "zeyen",
+      "en": "to be"
+    },
+    {
+      "de": "heißen",
+      "baca": "HEYE-sen",
+      "en": "to be called"
+    },
+    {
+      "de": "wie",
+      "baca": "vee",
+      "en": "how"
+    },
+    {
+      "de": "und",
+      "baca": "oont",
+      "en": "and"
+    },
+    {
+      "de": "ja",
+      "baca": "yah",
+      "en": "yes"
+    },
+    {
+      "de": "nein",
+      "baca": "neyen",
+      "en": "no"
+    },
+    {
+      "de": "auch",
+      "baca": "owkh",
+      "en": "also, too"
+    },
+    {
+      "de": "danke",
+      "baca": "DAHN-ke",
+      "en": "thank you"
+    },
+    {
+      "de": "bitte",
+      "baca": "BIT-te",
+      "en": "please, you're welcome, here you go"
+    }
+  ],
+  "exercises": [
+    {
+      "prompt": "Translate into English.",
+      "items": [
+        "Ich heiße Lena.",
+        "Bist du Student?",
+        "Nein, ich bin keine Lehrerin.",
+        "Wie geht es dir?",
+        "Guten Abend! Bis morgen.",
+        "Sie ist auch Studentin."
+      ]
+    },
+    {
+      "prompt": "Fill in the correct form of *sein*.",
+      "items": [
+        "Ich ____ Budi.",
+        "Du ____ Studentin.",
+        "Er ____ Lehrer.",
+        "Wir ____ müde.",
+        "Ihr ____ auch hier.",
+        "Sie ____ Frau Schmidt."
+      ]
+    },
+    {
+      "prompt": "Put the words in the right order.",
+      "items": [
+        "wie / du / heißt",
+        "ich / Student / bin",
+        "auch / bin / müde / ich",
+        "du / bist / Lehrerin",
+        "geht / wie / es / dir",
+        "Lena / heiße / ich"
+      ]
+    }
+  ],
+  "answers": [
+    "My name's Lena. — Are you a student? — No, I'm not a teacher. — How are you? — Good evening! See you tomorrow. — She's a student too.",
+    "bin — bist — ist — sind — seid — sind",
+    "Wie heißt du? — Ich bin Student. — Ich bin auch müde. — Du bist Lehrerin. — Wie geht es dir? — Ich heiße Lena."
+  ]
+}

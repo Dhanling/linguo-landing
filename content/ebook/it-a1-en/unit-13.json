@@ -1,0 +1,473 @@
+{
+  "title": "Dinner at a restaurant",
+  "title_target": "Al ristorante",
+  "goal": "Navigate the multi-course Italian menu, order each course, and ask for the bill without any confusion about tipping.",
+  "bekal": [
+    "read a menu and understand the order of courses",
+    "order with *per me*, *mi porta*, and *vorrei*",
+    "ask for the bill and understand what *coperto* is"
+  ],
+  "dialogs": [
+    {
+      "title": "Dialogo — Una cena in trattoria",
+      "intro": "A trattoria is a family restaurant, simpler and cheaper than a *ristorante*. Budi and Giulia are having dinner.",
+      "lines": [
+        {
+          "speaker": "Cameriere:",
+          "text": "Buonasera. Avete prenotato?",
+          "id": "Good evening. Do you have a reservation?",
+          "literal": "good-evening. you-have booked?"
+        },
+        {
+          "speaker": "Giulia:",
+          "text": "Sì, un tavolo per due a nome Rossi.",
+          "id": "Yes, a table for two under Rossi.",
+          "literal": "yes, a table for two at name Rossi."
+        },
+        {
+          "speaker": "Cameriere:",
+          "text": "Prego, accomodatevi. Ecco il menù.",
+          "id": "Please, have a seat. Here's the menu.",
+          "literal": "please, seat-yourselves. here-is the menu."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Grazie. Che cosa mi consiglia?",
+          "id": "Thank you. What do you recommend?",
+          "literal": "thanks. what thing to-me you-recommend?"
+        },
+        {
+          "speaker": "Cameriere:",
+          "text": "Stasera i tortellini sono ottimi. Fatti in casa.",
+          "id": "Tonight the tortellini are excellent. Homemade.",
+          "literal": "tonight the tortellini are excellent. made in house."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Allora per me i tortellini. E come secondo?",
+          "id": "Then the tortellini for me. And for the main course?",
+          "literal": "then for me the tortellini. and as second?"
+        },
+        {
+          "speaker": "Cameriere:",
+          "text": "Il pesce del giorno è branzino al forno.",
+          "id": "The fish of the day is baked sea bass.",
+          "literal": "the fish of-the day is sea-bass at-the oven."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Perfetto, prendo quello. Con un contorno di verdure.",
+          "id": "Perfect, I'll have that. With a side of vegetables.",
+          "literal": "perfect, I-take that. with a side of vegetables."
+        },
+        {
+          "speaker": "Giulia:",
+          "text": "Per me solo un primo: risotto ai funghi. Non ho molta fame.",
+          "id": "Just a first course for me: mushroom risotto. I'm not very hungry.",
+          "literal": "for me only a first: risotto at-the mushrooms. not I-have much hunger."
+        },
+        {
+          "speaker": "Cameriere:",
+          "text": "Da bere? Acqua, vino?",
+          "id": "Anything to drink? Water, wine?",
+          "literal": "to drink? water, wine?"
+        },
+        {
+          "speaker": "Giulia:",
+          "text": "Una bottiglia d'acqua naturale e mezzo litro di vino rosso della casa.",
+          "id": "A bottle of still water and half a liter of the house red.",
+          "literal": "a bottle of-water natural and half liter of wine red of-the house."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "E dopo, il conto per favore. Insieme, non separato.",
+          "id": "And afterward, the bill please. Together, not separate.",
+          "literal": "and after, the bill for favor. together, not separate."
+        }
+      ],
+      "notes": [
+        "**The Italian menu comes in courses, and nobody has to order them all.** *Antipasto* (starter), *primo* (pasta, risotto, soup), *secondo* (meat or fish), *contorno* (side vegetables), *dolce* (dessert). Ordering just a *primo* like Giulia is perfectly normal.",
+        "**The contorno is ordered separately.** The main course arrives alone on the plate — vegetables or potatoes don't come with it automatically. This surprises many newcomers.",
+        "**Per me** is the shortest way to order: *per me i tortellini* = \"the tortellini for me\". No verb needed at all. Italian waiters hear this more often than full sentences.",
+        "**Cosa mi consiglia?** = \"What do you recommend?\" At a family restaurant this always gets an honest answer, and often the best dish of the evening.",
+        "**Coperto is a cover charge, not a tip.** One to three euros per person, listed on the menu, for bread and the table setting. It's mandatory and official. Extra tipping isn't expected in Italy; rounding up is more than enough.",
+        "**Vino della casa** is the house wine — poured from the barrel, sold by the quarter, half, or full liter. Much cheaper than a bottle and usually quite good.",
+        "**Il conto, per favore.** In Italy the bill never comes on its own; waiting silently can last until closing time. Asking for it isn't rude — it's the only way.",
+        "**Avete prenotato** and *fatti in casa* use a past form you'll learn in unit 19. For now, just recognize them as whole phrases."
+      ],
+      "grammars": [
+        {
+          "title": "Ordering — patterns that will last you a lifetime",
+          "body": [
+            "Four patterns, from shortest to fullest. All of them are polite."
+          ],
+          "table": {
+            "head": [
+              "Pattern",
+              "Example",
+              "Note"
+            ],
+            "rows": [
+              [
+                "**Per me…**",
+                "Per me i tortellini.",
+                "shortest"
+              ],
+              [
+                "**Prendo…**",
+                "Prendo il pesce.",
+                "everyday"
+              ],
+              [
+                "**Vorrei…**",
+                "Vorrei un contorno di verdure.",
+                "polite, safe"
+              ],
+              [
+                "**Mi porta…?**",
+                "Mi porta un altro bicchiere?",
+                "asking to be brought"
+              ],
+              [
+                "**Posso avere…?**",
+                "Posso avere il sale?",
+                "asking for something"
+              ],
+              [
+                "**Che cosa mi consiglia?**",
+                "—",
+                "asking for advice"
+              ]
+            ]
+          },
+          "after": [
+            "*Mi porta* literally means \"you bring me\", said as a question. The tone of voice makes it polite, not any extra word."
+          ]
+        },
+        {
+          "title": "Bere — the verb \"to drink\"",
+          "body": [
+            "Irregular and very common. Notice that the stem changes from *be-* to *bev-*."
+          ],
+          "table": {
+            "head": [
+              "",
+              "bere",
+              "example"
+            ],
+            "rows": [
+              [
+                "io",
+                "**bevo**",
+                "Bevo solo acqua."
+              ],
+              [
+                "tu",
+                "bevi",
+                "Che cosa bevi?"
+              ],
+              [
+                "lui / lei",
+                "beve",
+                "Non beve vino."
+              ],
+              [
+                "noi",
+                "beviamo",
+                "Beviamo un caffè?"
+              ],
+              [
+                "voi",
+                "bevete",
+                "Bevete qualcosa?"
+              ],
+              [
+                "loro",
+                "bevono",
+                "Bevono birra."
+              ]
+            ]
+          },
+          "after": [
+            "*Da bere* means \"to drink\" — the waiter's standard question. Its partner is *da mangiare* (to eat): *Qualcosa da mangiare?*"
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Reading the menu",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "Menu section",
+            "What's usually in it"
+          ],
+          "rows": [
+            [
+              "**Antipasti**",
+              "prosciutto e melone, bruschetta, affettati misti"
+            ],
+            [
+              "**Primi**",
+              "spaghetti, tortellini, risotto, lasagne, zuppa"
+            ],
+            [
+              "**Secondi**",
+              "bistecca, pollo, branzino, vitello, cotoletta"
+            ],
+            [
+              "**Contorni**",
+              "insalata mista, patate al forno, verdure grigliate, spinaci"
+            ],
+            [
+              "**Dolci**",
+              "tiramisù, panna cotta, gelato, torta"
+            ],
+            [
+              "**Bevande**",
+              "acqua, vino, birra, caffè"
+            ]
+          ]
+        },
+        {
+          "type": "sub",
+          "text": "Cooking methods"
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Italiano",
+            "English",
+            "Italiano",
+            "English"
+          ],
+          "rows": [
+            [
+              "al forno",
+              "oven-baked",
+              "fritto",
+              "fried"
+            ],
+            [
+              "alla griglia",
+              "grilled",
+              "crudo",
+              "raw"
+            ],
+            [
+              "bollito",
+              "boiled",
+              "cotto",
+              "cooked"
+            ],
+            [
+              "al vapore",
+              "steamed",
+              "ripieno",
+              "stuffed"
+            ],
+            [
+              "arrosto",
+              "roasted",
+              "misto",
+              "mixed"
+            ]
+          ]
+        },
+        {
+          "type": "kotak",
+          "title": "Phrases that will save your dinner",
+          "items": [
+            "*Sono vegetariano / vegetariana.* — I'm vegetarian.",
+            "*Non mangio carne di maiale.* — I don't eat pork.",
+            "*C'è del maiale in questo piatto?* — Is there pork in this dish?",
+            "*Sono allergico ai frutti di mare.* — I'm allergic to seafood.",
+            "*Senza formaggio, per favore.* — No cheese, please.",
+            "*Il conto, per favore.* — The bill, please.",
+            "*Posso pagare con la carta?* — Can I pay by card?"
+          ]
+        },
+        {
+          "type": "p",
+          "text": "If you don't eat pork, learn the two middle phrases by heart: pork sneaks into many Italian dishes through the back door — *prosciutto*, *pancetta*, *guanciale*, *salame*, *speck*, *lardo*, *salsiccia*, *mortadella* are all pork, even though none of them says *maiale*."
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "it": "il ristorante",
+      "baca": "eel rees-toh-RAHN-teh",
+      "en": "restaurant"
+    },
+    {
+      "it": "la trattoria",
+      "baca": "lah traht-toh-REE-ah",
+      "en": "family restaurant"
+    },
+    {
+      "it": "il cameriere",
+      "baca": "eel kah-meh-RYEH-reh",
+      "en": "waiter"
+    },
+    {
+      "it": "il menù",
+      "baca": "eel meh-NOO",
+      "en": "menu"
+    },
+    {
+      "it": "il piatto",
+      "baca": "eel PYAHT-toh",
+      "en": "plate, dish"
+    },
+    {
+      "it": "l'antipasto",
+      "baca": "lahn-tee-PAHS-toh",
+      "en": "starter"
+    },
+    {
+      "it": "il primo",
+      "baca": "eel PREE-moh",
+      "en": "first course"
+    },
+    {
+      "it": "il secondo",
+      "baca": "eel seh-KOHN-doh",
+      "en": "main course"
+    },
+    {
+      "it": "il contorno",
+      "baca": "eel kohn-TOHR-noh",
+      "en": "side dish"
+    },
+    {
+      "it": "il dolce",
+      "baca": "eel DOHL-cheh",
+      "en": "dessert"
+    },
+    {
+      "it": "la bevanda",
+      "baca": "lah beh-VAHN-dah",
+      "en": "drink"
+    },
+    {
+      "it": "bere",
+      "baca": "BEH-reh",
+      "en": "to drink"
+    },
+    {
+      "it": "il vino",
+      "baca": "eel VEE-noh",
+      "en": "wine"
+    },
+    {
+      "it": "la birra",
+      "baca": "lah BEER-rah",
+      "en": "beer"
+    },
+    {
+      "it": "il bicchiere",
+      "baca": "eel beek-KYEH-reh",
+      "en": "glass"
+    },
+    {
+      "it": "consigliare",
+      "baca": "kohn-see-LYAH-reh",
+      "en": "to recommend"
+    },
+    {
+      "it": "prenotare",
+      "baca": "preh-noh-TAH-reh",
+      "en": "to book, reserve"
+    },
+    {
+      "it": "portare",
+      "baca": "pohr-TAH-reh",
+      "en": "to bring"
+    },
+    {
+      "it": "la fame",
+      "baca": "lah FAH-meh",
+      "en": "hunger"
+    },
+    {
+      "it": "la sete",
+      "baca": "lah SEH-teh",
+      "en": "thirst"
+    },
+    {
+      "it": "il coperto",
+      "baca": "eel koh-PEHR-toh",
+      "en": "cover charge"
+    },
+    {
+      "it": "la mancia",
+      "baca": "lah MAHN-chah",
+      "en": "tip"
+    },
+    {
+      "it": "ottimo",
+      "baca": "OHT-tee-moh",
+      "en": "excellent"
+    },
+    {
+      "it": "insieme",
+      "baca": "een-SYEH-meh",
+      "en": "together"
+    }
+  ],
+  "exercises": [
+    {
+      "prompt": "Translate into Italian.",
+      "items": [
+        "A table for two, please.",
+        "What do you recommend?",
+        "Mushroom risotto for me.",
+        "A bottle of still water.",
+        "I don't eat pork.",
+        "The bill, please."
+      ]
+    },
+    {
+      "prompt": "Fill in the correct form of bere.",
+      "items": [
+        "Io ____ solo acqua.",
+        "Tu che cosa ____?",
+        "Marco non ____ vino.",
+        "Noi ____ un caffè dopo cena.",
+        "Loro ____ sempre birra."
+      ]
+    },
+    {
+      "prompt": "Match each dish to its menu section. Write: antipasto, primo, secondo, contorno, or dolce.",
+      "items": [
+        "tiramisù",
+        "spaghetti alla carbonara",
+        "insalata mista",
+        "bruschetta",
+        "branzino al forno",
+        "risotto ai funghi"
+      ]
+    },
+    {
+      "prompt": "Put the words in the right order.",
+      "items": [
+        "due / tavolo / per / un",
+        "consiglia / cosa / mi / che / ?",
+        "favore / conto / il / per",
+        "bere / da / cosa / ?",
+        "carne / mangio / non"
+      ]
+    }
+  ],
+  "answers": [
+    "Un tavolo per due, per favore. — Che cosa mi consiglia? — Per me risotto ai funghi. — Una bottiglia d'acqua naturale. — Non mangio carne di maiale. — Il conto, per favore.",
+    "bevo — bevi — beve — beviamo — bevono",
+    "dolce — primo — contorno — antipasto — secondo — primo",
+    "Un tavolo per due. — Che cosa mi consiglia? — Il conto per favore. — Cosa da bere? — Non mangio carne."
+  ],
+  "wave": "Review **unit 11** first: describe three people you know — build, hair, eyes, personality — without looking at the book."
+}

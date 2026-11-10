@@ -1,0 +1,467 @@
+{
+  "title": "The verb engine",
+  "title_target": "Parlo, prendo, dormo",
+  "goal": "Install the main engine of Italian: the three regular verb groups and their six forms — and see why the subject pronoun can be dropped.",
+  "bekal": [
+    "conjugate *-are*, *-ere*, and *-ire* verbs for all six persons",
+    "make negative sentences with *non*",
+    "ask questions without changing the word order"
+  ],
+  "dialogs": [
+    {
+      "title": "Dialogo — Che cosa fai la sera?",
+      "intro": "Budi and Marco are waiting for the bus. Small talk that, without meaning to, uses all three verb groups at once.",
+      "lines": [
+        {
+          "speaker": "Marco:",
+          "text": "Budi, che cosa fai di solito la sera?",
+          "id": "Budi, what do you usually do in the evening?",
+          "literal": "Budi, what thing you-do of usual the evening?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Studio italiano e guardo un film. Tu?",
+          "id": "I study Italian and watch a movie. You?",
+          "literal": "I-study Italian and I-watch a film. you?"
+        },
+        {
+          "speaker": "Marco:",
+          "text": "Io lavoro fino alle undici. Poi torno a casa e dormo.",
+          "id": "I work until eleven. Then I go home and sleep.",
+          "literal": "I I-work until at-the eleven. then I-return to home and I-sleep."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Non mangi a casa?",
+          "id": "Don't you eat at home?",
+          "literal": "not you-eat at home?"
+        },
+        {
+          "speaker": "Marco:",
+          "text": "Mangio al ristorante, dove lavoro. È un vantaggio.",
+          "id": "I eat at the restaurant where I work. It's a perk.",
+          "literal": "I-eat at-the restaurant, where I-work. is an advantage."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "E il fine settimana? Riposate un po'?",
+          "id": "And the weekend? Do you get some rest?",
+          "literal": "and the end week? you(pl)-rest a bit?"
+        },
+        {
+          "speaker": "Marco:",
+          "text": "Il sabato lavoriamo tutti. La domenica chiudiamo.",
+          "id": "On Saturdays we all work. On Sundays we're closed.",
+          "literal": "the Saturday we-work all. the Sunday we-close."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "E la domenica che cosa fai?",
+          "id": "And what do you do on Sundays?",
+          "literal": "and the Sunday what thing you-do?"
+        },
+        {
+          "speaker": "Marco:",
+          "text": "Dormo fino a tardi, poi leggo e ascolto musica.",
+          "id": "I sleep in, then I read and listen to music.",
+          "literal": "I-sleep until to late, then I-read and I-listen music."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Anche i tuoi amici lavorano tanto?",
+          "id": "Do your friends work that much too?",
+          "literal": "also the your friends they-work so-much?"
+        },
+        {
+          "speaker": "Marco:",
+          "text": "Alcuni sì, altri no. Dipende dal lavoro.",
+          "id": "Some do, some don't. It depends on the job.",
+          "literal": "some yes, others no. depends from-the work."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Capisco. Ecco il bus, finalmente!",
+          "id": "I see. Here's the bus, finally!",
+          "literal": "I-understand. here-is the bus, finally!"
+        }
+      ],
+      "notes": [
+        "**The subject pronoun is almost always dropped.** *Studio italiano*, not *io studio italiano*. Each verb form is already unique to its person, so the pronoun is redundant. It's used only for emphasis or contrast — look at *Io lavoro fino alle undici* in line three, where Marco really is contrasting himself with Budi.",
+        "**This is a habit to practice, not just understand.** English speakers tend to stick *io* everywhere, because English can't drop \"I\". It's not wrong, but it sounds like a translation.",
+        "**Negating takes just one word: non**, placed right before the verb. *Non mangio*, *non lavoro*, *non capisco*. There's no helper verb like English *do*.",
+        "**Asking a question changes nothing in the order.** *Mangi a casa* and *Mangi a casa?* have exactly the same letters; the only difference is your voice rising at the end. Good news: one less thing to think about.",
+        "**Il sabato means \"every Saturday\".** An article in front of a day name turns it into a repeated habit. Without the article, *sabato* means just this Saturday: *sabato lavoro* (I'm working this Saturday) vs *il sabato lavoro* (I work on Saturdays).",
+        "**Un po'** is short for *un poco*, and the apostrophe is required. It means \"a bit\", and it's one of the most common words in everyday conversation.",
+        "**Capisco** comes from *capire*, an *-ire* verb that inserts *-isc-*. This group is unpacked in the second grammar box — don't skip it, because it's full of very common words.",
+        "**Dipende da** = \"it depends on\". Notice *dal* in *dipende dal lavoro*: that's *da* + *il* merged. These merged forms are covered fully in Unit 10."
+      ],
+      "grammars": [
+        {
+          "title": "The three regular verb groups",
+          "body": [
+            "Every Italian verb ends in *-are*, *-ere*, or *-ire*. Remove that ending, then attach the endings below to what's left."
+          ],
+          "table": {
+            "head": [
+              "",
+              "parl-**are** (speak)",
+              "prend-**ere** (take)",
+              "dorm-**ire** (sleep)"
+            ],
+            "rows": [
+              [
+                "io",
+                "parl**o**",
+                "prend**o**",
+                "dorm**o**"
+              ],
+              [
+                "tu",
+                "parl**i**",
+                "prend**i**",
+                "dorm**i**"
+              ],
+              [
+                "lui / lei / Lei",
+                "parl**a**",
+                "prend**e**",
+                "dorm**e**"
+              ],
+              [
+                "noi",
+                "parl**iamo**",
+                "prend**iamo**",
+                "dorm**iamo**"
+              ],
+              [
+                "voi",
+                "parl**ate**",
+                "prend**ete**",
+                "dorm**ite**"
+              ],
+              [
+                "loro",
+                "parl**ano**",
+                "prend**ono**",
+                "dorm**ono**"
+              ]
+            ]
+          },
+          "after": [
+            "Notice how much is actually the same. The *io* form is always **-o**, the *tu* form always **-i**, the *noi* form always **-iamo**. Three of the six rows don't need separate memorizing at all.",
+            "Only the other three rows really differ, and even *-ere* and *-ire* are near twins — they differ only in the *voi* row.",
+            "⚠️ In the *loro* form the stress moves back: *PAR-lano*, *PREN-dono*, *DOR-mono* — not *par-LA-no*. It's one of the quickest ways to tell a trained speaker from an untrained one."
+          ]
+        },
+        {
+          "title": "The -ire verbs that insert -isc-",
+          "body": [
+            "Some *-ire* verbs slip *-isc-* into four of their forms. No rule tells you which ones; they have to be learned, but there aren't many and they're important words."
+          ],
+          "table": {
+            "head": [
+              "",
+              "cap-ire (understand)",
+              "prefer-ire (prefer)"
+            ],
+            "rows": [
+              [
+                "io",
+                "cap**isc**o",
+                "prefer**isc**o"
+              ],
+              [
+                "tu",
+                "cap**isc**i",
+                "prefer**isc**i"
+              ],
+              [
+                "lui / lei",
+                "cap**isc**e",
+                "prefer**isc**e"
+              ],
+              [
+                "noi",
+                "capiamo",
+                "preferiamo"
+              ],
+              [
+                "voi",
+                "capite",
+                "preferite"
+              ],
+              [
+                "loro",
+                "cap**isc**ono",
+                "prefer**isc**ono"
+              ]
+            ]
+          },
+          "after": [
+            "The pattern is tidy: the insert appears in four forms and disappears in *noi* and *voi*. Once you've seen the shape, just follow it.",
+            "The most common members of this group: *capire*, *preferire*, *finire* (finish), *pulire* (clean), *spedire* (send), *costruire* (build).",
+            "Common verbs that do **not** follow this pattern: *dormire*, *aprire* (open), *partire* (leave), *sentire* (hear, feel), *offrire* (offer), *seguire* (follow)."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Verbs enough for your first hundred sentences",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "-are",
+            "-ere",
+            "-ire"
+          ],
+          "rows": [
+            [
+              "parlare — speak",
+              "prendere — take",
+              "dormire — sleep"
+            ],
+            [
+              "mangiare — eat",
+              "leggere — read",
+              "aprire — open"
+            ],
+            [
+              "lavorare — work",
+              "scrivere — write",
+              "partire — leave"
+            ],
+            [
+              "studiare — study",
+              "vedere — see",
+              "sentire — hear"
+            ],
+            [
+              "abitare — live",
+              "vivere — live",
+              "capire (isc) — understand"
+            ],
+            [
+              "guardare — watch",
+              "chiudere — close",
+              "finire (isc) — finish"
+            ],
+            [
+              "ascoltare — listen to",
+              "chiedere — ask",
+              "preferire (isc) — prefer"
+            ],
+            [
+              "comprare — buy",
+              "rispondere — answer",
+              "pulire (isc) — clean"
+            ],
+            [
+              "aspettare — wait for",
+              "credere — believe",
+              "offrire — offer"
+            ],
+            [
+              "tornare — come back",
+              "correre — run",
+              "seguire — follow"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "These thirty verbs, times six forms, give you a hundred and eighty sentences you can use right away. That's far more than three hundred nouns could do without a single verb."
+        },
+        {
+          "type": "kotak",
+          "title": "Spelling traps",
+          "items": [
+            "Verbs ending in **-care** and **-gare** add an **h** before *i* and *e*, so the hard sound stays hard: *cerco → cerchi*, *pago → paghi*, *paghiamo*.",
+            "Verbs ending in **-ciare** and **-giare** instead drop one **i**, so there are never two i's in a row: *mangio → mangi* (not *mangii*), *cominci*, *mangiamo*.",
+            "Both rules are purely about spelling, not grammar. The sound stays exactly the same."
+          ]
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "it": "parlare",
+      "baca": "pahr-LAH-reh",
+      "en": "to speak"
+    },
+    {
+      "it": "mangiare",
+      "baca": "mahn-JAH-reh",
+      "en": "to eat"
+    },
+    {
+      "it": "leggere",
+      "baca": "LEHJ-jeh-reh",
+      "en": "to read"
+    },
+    {
+      "it": "scrivere",
+      "baca": "SKREE-veh-reh",
+      "en": "to write"
+    },
+    {
+      "it": "dormire",
+      "baca": "dohr-MEE-reh",
+      "en": "to sleep"
+    },
+    {
+      "it": "capire",
+      "baca": "kah-PEE-reh",
+      "en": "to understand"
+    },
+    {
+      "it": "preferire",
+      "baca": "preh-feh-REE-reh",
+      "en": "to prefer"
+    },
+    {
+      "it": "finire",
+      "baca": "fee-NEE-reh",
+      "en": "to finish"
+    },
+    {
+      "it": "aprire",
+      "baca": "ah-PREE-reh",
+      "en": "to open"
+    },
+    {
+      "it": "chiudere",
+      "baca": "KYOO-deh-reh",
+      "en": "to close"
+    },
+    {
+      "it": "ascoltare",
+      "baca": "ahs-kohl-TAH-reh",
+      "en": "to listen to"
+    },
+    {
+      "it": "tornare",
+      "baca": "tohr-NAH-reh",
+      "en": "to come back, to go home"
+    },
+    {
+      "it": "riposare",
+      "baca": "ree-poh-ZAH-reh",
+      "en": "to rest"
+    },
+    {
+      "it": "la sera",
+      "baca": "lah SEH-rah",
+      "en": "evening"
+    },
+    {
+      "it": "il film",
+      "baca": "eel feelm",
+      "en": "movie"
+    },
+    {
+      "it": "la musica",
+      "baca": "lah MOO-zee-kah",
+      "en": "music"
+    },
+    {
+      "it": "il fine settimana",
+      "baca": "eel FEE-neh seht-tee-MAH-nah",
+      "en": "weekend"
+    },
+    {
+      "it": "il sabato",
+      "baca": "eel SAH-bah-toh",
+      "en": "Saturday"
+    },
+    {
+      "it": "la domenica",
+      "baca": "lah doh-MEH-nee-kah",
+      "en": "Sunday"
+    },
+    {
+      "it": "poi",
+      "baca": "poy",
+      "en": "then, next"
+    },
+    {
+      "it": "fino a",
+      "baca": "FEE-noh ah",
+      "en": "until"
+    },
+    {
+      "it": "di solito",
+      "baca": "dee SOH-lee-toh",
+      "en": "usually"
+    },
+    {
+      "it": "un po'",
+      "baca": "oon poh",
+      "en": "a bit"
+    },
+    {
+      "it": "tardi",
+      "baca": "TAHR-dee",
+      "en": "late"
+    },
+    {
+      "it": "dipende",
+      "baca": "dee-PEHN-deh",
+      "en": "it depends"
+    }
+  ],
+  "exercises": [
+    {
+      "prompt": "Put the verb in brackets into the right form.",
+      "items": [
+        "Io (studiare) ____ italiano ogni sera.",
+        "Tu (leggere) ____ molti libri.",
+        "Marco (dormire) ____ fino a tardi.",
+        "Noi (lavorare) ____ in un ristorante.",
+        "Voi (prendere) ____ il caffè al banco?",
+        "I miei amici (parlare) ____ tre lingue."
+      ]
+    },
+    {
+      "prompt": "Put the -isc- verb in brackets into the right form.",
+      "items": [
+        "Io non (capire) ____ bene.",
+        "Tu (preferire) ____ il tè o il caffè?",
+        "Lei (finire) ____ alle sette.",
+        "Noi (capire) ____ tutto.",
+        "Loro (pulire) ____ la casa la domenica."
+      ]
+    },
+    {
+      "prompt": "Make these sentences negative.",
+      "items": [
+        "Mangio la carne.",
+        "Marco lavora il sabato.",
+        "Capiamo il problema.",
+        "Loro parlano indonesiano.",
+        "Tu prendi il bus."
+      ]
+    },
+    {
+      "prompt": "Translate into Italian. Drop the subject pronoun.",
+      "items": [
+        "I study Italian every evening.",
+        "We work until eleven.",
+        "He sleeps in.",
+        "Do you (plural) understand?",
+        "They don't eat at home.",
+        "I prefer tea."
+      ]
+    }
+  ],
+  "answers": [
+    "studio — leggi — dorme — lavoriamo — prendete — parlano",
+    "capisco — preferisci — finisce — capiamo — puliscono",
+    "Non mangio la carne. — Marco non lavora il sabato. — Non capiamo il problema. — Loro non parlano indonesiano. — Tu non prendi il bus.",
+    "Studio italiano ogni sera. — Lavoriamo fino alle undici. — Dorme fino a tardi. — Capite? — Non mangiano a casa. — Preferisco il tè."
+  ],
+  "wave": "Go back to **Unit 4** first: order a full breakfast at the bar from memory, including asking the price and paying."
+}

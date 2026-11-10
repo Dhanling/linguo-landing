@@ -1,0 +1,977 @@
+{
+  "brand": "LINGUO",
+  "cover": "cover.png",
+  "title": "Italiano 101",
+  "subtitle": "A self-study course in Italian for complete beginners",
+  "level": "Level A1 (CEFR)",
+  "edition": "English Edition",
+  "ruby": false,
+  "labels": {
+    "unit": "Unit",
+    "dialog": "Dialogue",
+    "notes": "Notes",
+    "vocab": "Vocabulary in this unit",
+    "exercises": "Exercises",
+    "answers": "Answer key",
+    "bekal": "By the end of this unit you can:",
+    "literal": "literally:",
+    "wave": "Wave review:",
+    "bagian": "Part"
+  },
+  "vocab_columns": [
+    {
+      "head": "Italiano",
+      "key": "it"
+    },
+    {
+      "head": "Say it",
+      "key": "baca"
+    },
+    {
+      "head": "English",
+      "key": "en"
+    }
+  ],
+  "cover_design": {
+    "bg": "#123B57",
+    "accent": "#5FD6CA",
+    "label": "ITALIAN",
+    "judul": "Italiano",
+    "cap": "è",
+    "pola_opacity": 0.5,
+    "pola": "background-image:repeating-linear-gradient(0deg, rgba(255,255,255,.13) 0 2px, transparent 2px 44px),repeating-linear-gradient(90deg, rgba(255,255,255,.06) 0 2px, transparent 2px 44px);",
+    "ringkas": "A self-study course in Italian for complete beginners — from saying hello at the bar to telling the story of last weekend.",
+    "catatan": "Every line of dialogue comes with a word-for-word translation underneath.",
+    "merek_sub": "SELF-STUDY MODULE",
+    "kaki_sub": "units · dialogues · exercises · answer key"
+  },
+  "product": {
+    "slug": "modul-italia-101-en",
+    "title": "Italian 101 - A1 (English Edition)",
+    "type": "ebook",
+    "language": "Italian",
+    "level": "A1",
+    "file": "italiano-101-a1-en.pdf",
+    "description": "Twenty Assimil-style self-study units that take you from zero to A1 Italian: short dialogues, word-for-word translations that show how Italian builds its sentences, grammar notes, vocabulary with an English-friendly pronunciation guide, exercises, and an answer key. Italian spelling is honest and thousands of its words are already familiar to English speakers — so each unit goes straight for the points that really trip learners up, from the gender of nouns to choosing essere or avere in the past tense.",
+    "pages": 144
+  },
+  "front": [
+    {
+      "title": "Foreword",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "People usually fall in love with Italian before they ever study it. They hear it in films, in songs, in restaurant kitchens, and conclude that it must be easy, because it sounds so bright and every letter is read just as it is written."
+        },
+        {
+          "type": "p",
+          "text": "Half of that conclusion is right. Italian is one of the friendliest European languages for an English speaker's ear and mouth: it has five clean vowels that never slide into other sounds, almost every letter sounds the way it is written, and thousands of words — *famiglia*, *università*, *problema*, *telefono* — read themselves. What nobody mentions is the other half: every Italian noun has a gender, the article changes shape depending on the first letter of the next word, and the past tense chooses between two helper verbs by a rule English simply doesn't have."
+        },
+        {
+          "type": "p",
+          "text": "Those three points are where English-speaking learners stumble most, and none of them is a vocabulary problem. This course is built to tackle them head-on, not to put them off until the last chapter."
+        },
+        {
+          "type": "p",
+          "text": "Its twenty short units cover the whole of **Level A1 (CEFR)**: greeting people, introducing yourself, saying where you're from and talking about your family, ordering at the bar, telling the time, describing an ordinary day, asking the way, shopping, saying what you like and don't like, and telling what happened yesterday. Each unit starts from a conversation you can use straight away, and only then explains why the sentences look the way they do."
+        },
+        {
+          "type": "p",
+          "text": "The explanations are deliberately short. The long part is not the theory but the practice."
+        },
+        {
+          "type": "kotak",
+          "title": "Before you start",
+          "items": [
+            "Set aside 20-30 minutes without distractions, not two hours chopped into pieces. A language sticks through short, frequent repetition, not one long assault.",
+            "Read out loud. Italian is pronounced almost exactly as it is written, and your mouth remembers what your eyes forget.",
+            "From the very first unit, learn every noun **together with its article**: not *libro*, but *il libro*. It's a small habit that saves months of confusion later.",
+            "Keep a small notebook. Words you write out yourself last far longer than words you only read."
+          ]
+        },
+        {
+          "type": "p",
+          "text": "Enjoy the journey. *In bocca al lupo!*"
+        }
+      ]
+    },
+    {
+      "type": "isi",
+      "title": "Contents",
+      "intro": "This course works best in order — each unit reuses what the previous ones put in place."
+    },
+    {
+      "title": "How to use this course",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "This course is built for **self-study**. Each unit is designed to be finished in one sitting, about 20-30 minutes. What matters is not how fast you move forward, but how often you come back."
+        },
+        {
+          "type": "p",
+          "text": "Every unit has the same layout, and the order is deliberate:"
+        },
+        {
+          "type": "list",
+          "items": [
+            "**Dialogue** — first read the Italian out loud without looking at the translation. Let your ears do the work before your brain demands an explanation.",
+            "**Literal translation** — the small italic line under the translation. This is the part people skip most often, yet it is where you see how Italian *thinks*. Example: *Mi chiamo Ana* literally means \"I call myself Ana\", not \"my name is Ana\".",
+            "**Notes** — short explanations of whatever just felt strange.",
+            "**Vocabulary** — the new words of the unit, each with its pronunciation. Nouns are always given with their article, so their gender sticks from the very first time you see them.",
+            "**Exercises** — do them without looking at the key. Mistakes are part of the process.",
+            "**Answer key** — open it only after you have genuinely tried."
+          ]
+        },
+        {
+          "type": "kotak",
+          "title": "Wave review",
+          "items": [
+            "From Unit 3 on, each unit asks you to revisit an earlier unit — usually two steps back, just the right distance to make your memory work without feeling like starting over. This time you do it in reverse: cover the Italian, look at the English translation, and rebuild the Italian sentence from memory.",
+            "This is the step that turns \"I understood it once\" into \"I can use it\". Don't skip it."
+          ]
+        },
+        {
+          "type": "p",
+          "text": "One last rule: **say it out loud**. Italian sounds are honest — almost every letter is read as written, and its five vowels never change. Reading silently throws that advantage away."
+        }
+      ]
+    },
+    {
+      "title": "Italian pronunciation",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "The good news: Italian is written the way it is spoken, and it has exactly five vowels — *a, e, i, o, u* — short, clear, and never sliding into another sound the way English vowels do (Italian *no* is a pure \"noh\", not \"noh-oo\"). Once you know the table below, you can read any word correctly, even one you've never seen."
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Letter",
+            "Sound",
+            "Example"
+          ],
+          "rows": [
+            [
+              "a, e, i, o, u",
+              "ah, eh, ee, oh, oo — short and pure, no glide",
+              "*casa* (KAH-zah) = house"
+            ],
+            [
+              "c + a/o/u",
+              "k",
+              "*casa*, *come*, *cucina*"
+            ],
+            [
+              "c + e/i",
+              "ch as in \"church\"",
+              "*cena* (CHEH-nah) = dinner"
+            ],
+            [
+              "ch",
+              "k (the h just keeps it hard)",
+              "*chi* (kee) = who"
+            ],
+            [
+              "g + a/o/u",
+              "g as in \"go\"",
+              "*gatto* (GAHT-toh) = cat"
+            ],
+            [
+              "g + e/i",
+              "j as in \"jam\"",
+              "*gelato* (jeh-LAH-toh) = ice cream"
+            ],
+            [
+              "gh",
+              "hard g",
+              "*spaghetti* (spah-GEHT-tee)"
+            ],
+            [
+              "gli",
+              "ly, like the lli in \"million\"",
+              "*famiglia* (fah-MEE-lyah) = family"
+            ],
+            [
+              "gn",
+              "ny, like in \"canyon\"",
+              "*signora* (see-NYOH-rah) = madam"
+            ],
+            [
+              "sc + e/i",
+              "sh",
+              "*pesce* (PEH-sheh) = fish"
+            ],
+            [
+              "sc + a/o/u",
+              "sk",
+              "*scusa* (SKOO-zah) = sorry"
+            ],
+            [
+              "h",
+              "**always silent**",
+              "*ho* (oh) = I have"
+            ],
+            [
+              "z",
+              "ts or dz",
+              "*grazie* (GRAH-tsyeh) = thank you"
+            ],
+            [
+              "s between two vowels",
+              "z",
+              "*casa* (KAH-zah) = house"
+            ],
+            [
+              "r",
+              "a quick tap or roll of the tongue, like the tt in American \"butter\"",
+              "*Roma* (ROH-mah)"
+            ]
+          ]
+        },
+        {
+          "type": "kotak",
+          "title": "Double consonants",
+          "items": [
+            "*nn*, *tt*, *ll*, *ss*, *pp* are not decoration: the consonant is genuinely **held longer**, like the k-k in \"bookcase\" or the n-n in \"unnamed\".",
+            "The difference changes the meaning: *nono* (ninth) vs *nonno* (grandfather), *casa* (house) vs *cassa* (checkout), *pena* (pity) vs *penna* (pen).",
+            "English only does this across word boundaries, never inside a word. Hold the consonant for an extra beat on purpose; don't rush it."
+          ]
+        },
+        {
+          "type": "kotak",
+          "title": "Word stress",
+          "items": [
+            "Most words are stressed on the **second-to-last** syllable: *casa* (KAH-zah), *ragazzo* (rah-GAHT-tsoh), *italiano* (ee-tah-LYAH-noh).",
+            "An accent on the last letter (*à*, *è*, *ì*, *ò*, *ù*) → the stress falls right there: *città* (cheet-TAH), *caffè* (kahf-FEH), *perché* (pehr-KEH). The mark is not decoration.",
+            "A group of words is stressed on the **third-to-last** syllable, and these have to be learned one by one: *sabato* (SAH-bah-toh), *medico* (MEH-dee-koh), *abitano* (AH-bee-tah-noh), *musica* (MOO-zee-kah)."
+          ]
+        },
+        {
+          "type": "p",
+          "text": "In this course the \"Say it\" column is written for English readers, and **capital letters mark the stressed syllable**. The key: **ah** as in \"father\", **eh** as in \"bed\", **ee** as in \"see\", **oh** as in \"go\" (without the glide), **oo** as in \"moon\"; **ch** as in \"church\", **k** and **g** always hard, **j** as in \"jam\", **sh** as in \"shop\", **ly** and **ny** as in \"million\" and \"canyon\", **ts**/**dz** as in \"cats\" and \"adze\"; **y** and **w** are quick glides (*grazie* → GRAH-tsyeh, *buongiorno* → bwohn-JOHR-noh). Double consonants are written double — hold them."
+        }
+      ]
+    }
+  ],
+  "back": [
+    {
+      "title": "A1 grammar summary",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Everything the twenty units have put in place, packed into a few pages. This section is not for reading in order — it's for opening again whenever you hesitate in the middle of a sentence."
+        },
+        {
+          "type": "sub",
+          "text": "Articles"
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Noun begins with",
+            "Masc. sing.",
+            "Masc. pl.",
+            "Fem. sing.",
+            "Fem. pl."
+          ],
+          "rows": [
+            [
+              "a consonant",
+              "il / un",
+              "i",
+              "la / una",
+              "le"
+            ],
+            [
+              "a vowel",
+              "l' / un",
+              "gli",
+              "l' / un'",
+              "le"
+            ],
+            [
+              "z, s+consonant, gn, ps",
+              "lo / uno",
+              "gli",
+              "la / una",
+              "le"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "Plurals: **-o → -i**, **-a → -e**, **-e → -i**. Words with a final accent and foreign words don't change: *le città*, *i bar*. Exceptions that often trip people up: *il problema*, *il programma*, *il cinema* (masculine); *la mano*, *la foto*, *la moto*, *la radio* (feminine); *l'uovo → le uova*."
+        },
+        {
+          "type": "sub",
+          "text": "Prepositions + articles"
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "",
+            "il",
+            "lo",
+            "la",
+            "l'",
+            "i",
+            "gli",
+            "le"
+          ],
+          "rows": [
+            [
+              "a",
+              "al",
+              "allo",
+              "alla",
+              "all'",
+              "ai",
+              "agli",
+              "alle"
+            ],
+            [
+              "di",
+              "del",
+              "dello",
+              "della",
+              "dell'",
+              "dei",
+              "degli",
+              "delle"
+            ],
+            [
+              "da",
+              "dal",
+              "dallo",
+              "dalla",
+              "dall'",
+              "dai",
+              "dagli",
+              "dalle"
+            ],
+            [
+              "in",
+              "nel",
+              "nello",
+              "nella",
+              "nell'",
+              "nei",
+              "negli",
+              "nelle"
+            ],
+            [
+              "su",
+              "sul",
+              "sullo",
+              "sulla",
+              "sull'",
+              "sui",
+              "sugli",
+              "sulle"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "*Con* and *per* don't merge. Places: **a** for cities, **in** for countries and means of transport, **da** for a starting point and for \"at someone's place\"."
+        },
+        {
+          "type": "sub",
+          "text": "Adjectives"
+        },
+        {
+          "type": "list",
+          "items": [
+            "The **-o** group: four forms — *alto, alta, alti, alte*.",
+            "The **-e** group: two forms — *grande, grandi*.",
+            "They go **after** the noun, except for a small group (*bello, buono, nuovo, vecchio, grande, piccolo, giovane*) that often goes in front.",
+            "A mixed group of men and women takes the masculine plural.",
+            "Comparing: *più… di*, *meno… di*, *tanto… quanto* or *come*. Special forms: *buono → migliore*, *cattivo → peggiore*.",
+            "*Molto* before an adjective = very, and never changes. Before a noun = many/much, and it agrees: *molti amici*, *molte cose*.",
+            "The ending **-issimo** = extremely: *bellissimo*, *buonissimo*, *stanchissima*."
+          ]
+        },
+        {
+          "type": "sub",
+          "text": "Possessives"
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Owner",
+            "Masc. sing.",
+            "Fem. sing.",
+            "Masc. pl.",
+            "Fem. pl."
+          ],
+          "rows": [
+            [
+              "my",
+              "il mio",
+              "la mia",
+              "i miei",
+              "le mie"
+            ],
+            [
+              "your",
+              "il tuo",
+              "la tua",
+              "i tuoi",
+              "le tue"
+            ],
+            [
+              "his / her / your (formal)",
+              "il suo",
+              "la sua",
+              "i suoi",
+              "le sue"
+            ],
+            [
+              "our",
+              "il nostro",
+              "la nostra",
+              "i nostri",
+              "le nostre"
+            ],
+            [
+              "your (plural)",
+              "il vostro",
+              "la vostra",
+              "i vostri",
+              "le vostre"
+            ],
+            [
+              "their",
+              "il loro",
+              "la loro",
+              "i loro",
+              "le loro"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "⚠️ A **single** family member drops the article: *mia madre*, *tuo fratello*. As soon as it's plural or has an extra description, the article comes back: *i miei fratelli*, *la mia sorella maggiore*."
+        },
+        {
+          "type": "sub",
+          "text": "Questo and quello"
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "",
+            "Masc. sing.",
+            "Fem. sing.",
+            "Masc. pl.",
+            "Fem. pl."
+          ],
+          "rows": [
+            [
+              "this",
+              "questo",
+              "questa",
+              "questi",
+              "queste"
+            ],
+            [
+              "that (consonant)",
+              "quel",
+              "quella",
+              "quei",
+              "quelle"
+            ],
+            [
+              "that (vowel)",
+              "quell'",
+              "quell'",
+              "quegli",
+              "quelle"
+            ],
+            [
+              "that (z, s+consonant)",
+              "quello",
+              "—",
+              "quegli",
+              "—"
+            ]
+          ]
+        },
+        {
+          "type": "sub",
+          "text": "Negatives and questions"
+        },
+        {
+          "type": "list",
+          "items": [
+            "Negating: **non** goes right before the verb — *non capisco*, *non mi piace*, *non ho visto*.",
+            "Double negatives are required: *non… mai*, *non… niente*, *non… nessuno*, *non… ancora*.",
+            "Questions don't change the word order; just let your voice rise at the end.",
+            "Question words: *chi* (who), *che cosa* (what), *dove* (where), *quando* (when), *perché* (why), *come* (how), *quanto* (how much), *quale* (which)."
+          ]
+        },
+        {
+          "type": "sub",
+          "text": "Piacere"
+        },
+        {
+          "type": "p",
+          "text": "The structure is flipped: the thing you like is the subject (\"it pleases me\"). **piace** for one thing or activity, **piacciono** for several things. The small words: *mi, ti, gli, le, ci, vi, gli*. For other people use *a*: *a Marco piace il calcio*. Negative: *non mi piace*."
+        },
+        {
+          "type": "sub",
+          "text": "The past tense"
+        },
+        {
+          "type": "list",
+          "items": [
+            "Built from a helper verb + past participle: *ho mangiato*, *sono andato*.",
+            "Regular past participles: **-are → -ato**, **-ere → -uto**, **-ire → -ito**.",
+            "Most verbs take **avere**, and the participle doesn't change.",
+            "Verbs of movement and change of state take **essere** — *andare, venire, arrivare, partire, entrare, uscire, salire, scendere, tornare, restare, rimanere, nascere, morire, essere, stare, diventare, piacere* — and the last letter agrees with the subject's gender and number.",
+            "All reflexive verbs take **essere**: *mi sono alzato*, *ci siamo svegliate*.",
+            "*Già*, *ancora*, *mai*, *sempre* slip in between the helper verb and the participle."
+          ]
+        },
+        {
+          "type": "sub",
+          "text": "Future plans"
+        },
+        {
+          "type": "p",
+          "text": "At A1 you don't need the future tense at all. Use the present plus a time word (*domani vado al mare*), or *andare a* + infinitive (*vado a mangiare*), or *pensare di* + infinitive (*penso di partire lunedì*)."
+        }
+      ]
+    },
+    {
+      "title": "The most common verbs",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "The sixteen verbs below cover most everyday conversation. Ten of them are irregular — and those are exactly the ones Italians use most."
+        },
+        {
+          "type": "sub",
+          "text": "Three regular groups"
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "",
+            "parlare",
+            "prendere",
+            "dormire",
+            "capire (isc)"
+          ],
+          "rows": [
+            [
+              "io",
+              "parlo",
+              "prendo",
+              "dormo",
+              "capisco"
+            ],
+            [
+              "tu",
+              "parli",
+              "prendi",
+              "dormi",
+              "capisci"
+            ],
+            [
+              "lui / lei / Lei",
+              "parla",
+              "prende",
+              "dorme",
+              "capisce"
+            ],
+            [
+              "noi",
+              "parliamo",
+              "prendiamo",
+              "dormiamo",
+              "capiamo"
+            ],
+            [
+              "voi",
+              "parlate",
+              "prendete",
+              "dormite",
+              "capite"
+            ],
+            [
+              "loro",
+              "parlano",
+              "prendono",
+              "dormono",
+              "capiscono"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "In the *loro* form the stress moves back: *PAR-lano*, *PREN-dono*, *DOR-mono*, *ca-PIS-cono*."
+        },
+        {
+          "type": "sub",
+          "text": "The irregular ones"
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "",
+            "essere",
+            "avere",
+            "fare",
+            "stare"
+          ],
+          "rows": [
+            [
+              "io",
+              "sono",
+              "ho",
+              "faccio",
+              "sto"
+            ],
+            [
+              "tu",
+              "sei",
+              "hai",
+              "fai",
+              "stai"
+            ],
+            [
+              "lui / lei",
+              "è",
+              "ha",
+              "fa",
+              "sta"
+            ],
+            [
+              "noi",
+              "siamo",
+              "abbiamo",
+              "facciamo",
+              "stiamo"
+            ],
+            [
+              "voi",
+              "siete",
+              "avete",
+              "fate",
+              "state"
+            ],
+            [
+              "loro",
+              "sono",
+              "hanno",
+              "fanno",
+              "stanno"
+            ]
+          ]
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "",
+            "andare",
+            "venire",
+            "uscire",
+            "bere"
+          ],
+          "rows": [
+            [
+              "io",
+              "vado",
+              "vengo",
+              "esco",
+              "bevo"
+            ],
+            [
+              "tu",
+              "vai",
+              "vieni",
+              "esci",
+              "bevi"
+            ],
+            [
+              "lui / lei",
+              "va",
+              "viene",
+              "esce",
+              "beve"
+            ],
+            [
+              "noi",
+              "andiamo",
+              "veniamo",
+              "usciamo",
+              "beviamo"
+            ],
+            [
+              "voi",
+              "andate",
+              "venite",
+              "uscite",
+              "bevete"
+            ],
+            [
+              "loro",
+              "vanno",
+              "vengono",
+              "escono",
+              "bevono"
+            ]
+          ]
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "",
+            "potere",
+            "dovere",
+            "volere",
+            "sapere"
+          ],
+          "rows": [
+            [
+              "io",
+              "posso",
+              "devo",
+              "voglio",
+              "so"
+            ],
+            [
+              "tu",
+              "puoi",
+              "devi",
+              "vuoi",
+              "sai"
+            ],
+            [
+              "lui / lei",
+              "può",
+              "deve",
+              "vuole",
+              "sa"
+            ],
+            [
+              "noi",
+              "possiamo",
+              "dobbiamo",
+              "vogliamo",
+              "sappiamo"
+            ],
+            [
+              "voi",
+              "potete",
+              "dovete",
+              "volete",
+              "sapete"
+            ],
+            [
+              "loro",
+              "possono",
+              "devono",
+              "vogliono",
+              "sanno"
+            ]
+          ]
+        },
+        {
+          "type": "sub",
+          "text": "Irregular past participles"
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Infinitive",
+            "Past",
+            "Infinitive",
+            "Past",
+            "Infinitive",
+            "Past"
+          ],
+          "rows": [
+            [
+              "fare",
+              "fatto",
+              "aprire",
+              "aperto",
+              "essere",
+              "stato"
+            ],
+            [
+              "dire",
+              "detto",
+              "offrire",
+              "offerto",
+              "nascere",
+              "nato"
+            ],
+            [
+              "vedere",
+              "visto",
+              "chiudere",
+              "chiuso",
+              "morire",
+              "morto"
+            ],
+            [
+              "prendere",
+              "preso",
+              "scrivere",
+              "scritto",
+              "venire",
+              "venuto"
+            ],
+            [
+              "leggere",
+              "letto",
+              "rispondere",
+              "risposto",
+              "rimanere",
+              "rimasto"
+            ],
+            [
+              "bere",
+              "bevuto",
+              "mettere",
+              "messo",
+              "scendere",
+              "sceso"
+            ],
+            [
+              "chiedere",
+              "chiesto",
+              "perdere",
+              "perso",
+              "vincere",
+              "vinto"
+            ],
+            [
+              "scegliere",
+              "scelto",
+              "conoscere",
+              "conosciuto",
+              "spegnere",
+              "spento"
+            ]
+          ]
+        },
+        {
+          "type": "sub",
+          "text": "Numbers"
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "",
+            "",
+            "",
+            ""
+          ],
+          "rows": [
+            [
+              "1 uno",
+              "2 due",
+              "3 tre",
+              "4 quattro"
+            ],
+            [
+              "5 cinque",
+              "6 sei",
+              "7 sette",
+              "8 otto"
+            ],
+            [
+              "9 nove",
+              "10 dieci",
+              "11 undici",
+              "12 dodici"
+            ],
+            [
+              "13 tredici",
+              "14 quattordici",
+              "15 quindici",
+              "16 sedici"
+            ],
+            [
+              "17 diciassette",
+              "18 diciotto",
+              "19 diciannove",
+              "20 venti"
+            ],
+            [
+              "30 trenta",
+              "40 quaranta",
+              "50 cinquanta",
+              "60 sessanta"
+            ],
+            [
+              "70 settanta",
+              "80 ottanta",
+              "90 novanta",
+              "100 cento"
+            ],
+            [
+              "200 duecento",
+              "1,000 mille",
+              "2,000 duemila",
+              "1,000,000 un milione"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "Before *uno* and *otto*, the tens drop their last vowel: *ventuno*, *ventotto*, *trentuno*, *quarantotto*. A final three takes an accent: *ventitré*, *trentatré*."
+        }
+      ]
+    },
+    {
+      "title": "What's next",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "You have just finished Level A1. What you have now is not knowledge about Italian, but a set of sentences that can come out of your mouth without being assembled first. That's the difference that counts."
+        },
+        {
+          "type": "sub",
+          "text": "Waiting for you at A2"
+        },
+        {
+          "type": "list",
+          "items": [
+            "**Imperfetto** — the past tense for habits and descriptions: *da bambino giocavo a calcio*.",
+            "**Futuro** — the real future tense, used above all for predictions and guesses.",
+            "**Object pronouns** — *lo, la, li, le, ne, ci*: *lo prendo*, *non ne ho*.",
+            "**Condizionale** — for hypotheticals and polite requests, which you've already tasted in *vorrei*.",
+            "**Combined pronouns** — *glielo do*, *me lo dai*: the forms that appeared in Unit 12 and were deliberately left unexplained."
+          ]
+        },
+        {
+          "type": "sub",
+          "text": "How to keep what you have"
+        },
+        {
+          "type": "list",
+          "items": [
+            "**Repeat the dialogues out loud**, one unit a day, until you can say them without reading. Ten minutes a day beats three hours once a week.",
+            "**Change the content, not the pattern.** Take the Unit 5 dialogue and swap the names and numbers for your own family. A pattern used for your own story sticks far better.",
+            "**Listen without understanding everything.** Italian radio, songs, or the news for fifteen minutes a day. What you're training is not comprehension but your ear.",
+            "**Find someone to talk to now, not later.** A hundred words you use beat a thousand words you store.",
+            "**Write down your mistakes, not your new words.** New words come by themselves; mistakes you don't write down get repeated for years."
+          ]
+        },
+        {
+          "type": "p",
+          "text": "And one last thing no book can give you: Italian lives among people — at the dinner table, in the line at the bar, in conversations that pile on top of one another. Go there."
+        },
+        {
+          "type": "p",
+          "text": "*In bocca al lupo — e buon proseguimento!*"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,584 @@
+{
+  "title": "At the doctor's",
+  "title_target": "Beim Arzt",
+  "goal": "Say which part of your body hurts, and use pronouns in the Akkusativ and Dativ — *mich*, *mir*, *dich*, *dir*.",
+  "bekal": [
+    "name parts of the body and symptoms",
+    "use Akkusativ and Dativ pronouns",
+    "use *wehtun* and other verbs that take the Dativ",
+    "understand the doctor's advice and how to take medicine"
+  ],
+  "dialogs": [
+    {
+      "title": "Dialogue — Ich fühle mich nicht gut",
+      "intro": "Budi has had a fever for two days and finally goes to the doctor's office. Watch the little pronouns in each sentence — *mir*, *mich*, *Ihnen* — and which form appears where.",
+      "lines": [
+        {
+          "speaker": "Ärztin:",
+          "text": "Guten Tag, Herr Santoso. Was fehlt Ihnen?",
+          "id": "Hello, Mr. Santoso. What seems to be the problem?",
+          "literal": "good day, Mr. Santoso. what lacks to-you?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Ich fühle mich seit zwei Tagen nicht gut.",
+          "id": "I haven't been feeling well for two days.",
+          "literal": "I feel myself since two days not good."
+        },
+        {
+          "speaker": "Ärztin:",
+          "text": "Haben Sie Schmerzen? Wo genau?",
+          "id": "Are you in pain? Where exactly?",
+          "literal": "have you pains? where exactly?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Mein Kopf tut weh. Und der Hals auch.",
+          "id": "My head hurts. And my throat too.",
+          "literal": "my head does pain. and the throat too."
+        },
+        {
+          "speaker": "Ärztin:",
+          "text": "Haben Sie Fieber?",
+          "id": "Do you have a fever?",
+          "literal": "have you fever?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Ja, gestern hatte ich achtunddreißig Grad.",
+          "id": "Yes, yesterday I had thirty-eight degrees.",
+          "literal": "yes, yesterday had I eight-and-thirty degree."
+        },
+        {
+          "speaker": "Ärztin:",
+          "text": "Machen Sie bitte den Mund auf. Sagen Sie „Ah\".",
+          "id": "Please open your mouth. Say \"Ah\".",
+          "literal": "make you please the mouth open. say you \"Ah\"."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Ahhh.",
+          "id": "Ahhh.",
+          "literal": "ahhh."
+        },
+        {
+          "speaker": "Ärztin:",
+          "text": "Das ist eine Erkältung. Nichts Schlimmes. Ich gebe Ihnen ein Rezept.",
+          "id": "It's a cold. Nothing serious. I'll give you a prescription.",
+          "literal": "that is a cold. nothing bad. I give to-you a prescription."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Muss ich zu Hause bleiben?",
+          "id": "Do I have to stay at home?",
+          "literal": "must I at home stay?"
+        },
+        {
+          "speaker": "Ärztin:",
+          "text": "Ja, drei Tage. Sie sollen viel trinken und viel schlafen.",
+          "id": "Yes, three days. You should drink a lot and sleep a lot.",
+          "literal": "yes, three days. you should much drink and much sleep."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Und die Tabletten? Wie oft?",
+          "id": "And the tablets? How often?",
+          "literal": "and the tablets? how often?"
+        },
+        {
+          "speaker": "Ärztin:",
+          "text": "Dreimal täglich nach dem Essen. Gute Besserung!",
+          "id": "Three times a day after meals. Get well soon!",
+          "literal": "three-times daily after the meal. good recovery!"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Danke Ihnen. Auf Wiedersehen.",
+          "id": "Thank you. Goodbye.",
+          "literal": "thank you. until see-again."
+        }
+      ],
+      "notes": [
+        "***Was fehlt Ihnen?*** literally \"what are you lacking?\", meaning \"what seems to be the problem?\". It's the standard opening line of every doctor's visit in Germany. The standard beginner's reply: *Ich fühle mich nicht gut.*",
+        "***sich fühlen*** needs a pronoun pointing back to the subject: *ich fühle **mich***, *du fühlst **dich***, *er fühlt **sich*** — a bit like English \"myself\", \"yourself\". German has many verbs like this (*sich freuen*, *sich setzen*), and they're covered fully in A2; for now, learn *ich fühle mich* as a whole.",
+        "***wehtun* takes the Dativ.** You can say *Mir tut der Kopf weh* or *Mein Kopf tut weh* — both are correct and equally common. If more than one thing hurts, the verb goes plural: *Mir tun die Füße weh.*",
+        "***Ich gebe Ihnen ein Rezept*** has two objects at once: the **receiver** in the Dativ (*Ihnen*) and the **thing** in the Akkusativ (*ein Rezept*) — English does the same in \"I'll give **you** **a prescription**\". This is the second use of the Dativ, after places in unit 13 — and it will grow fully in A2.",
+        "***sollen* for a doctor's advice.** *Sie sollen viel trinken* = \"you should drink a lot\", an instruction coming from someone else. Compare *Sie müssen*, which is an absolute must.",
+        "**Line 7: *Machen Sie den Mund auf*.** *Aufmachen* (to open) is a separable verb, so the prefix still flies to the end even when the sentence is a command."
+      ],
+      "grammars": [
+        {
+          "title": "Pronouns in three forms",
+          "body": [
+            "Personal pronouns change form according to their role in the sentence, just like articles. English does this too, a little — *I → me*, *he → him* — but German has one more form, so this table is worth learning whole."
+          ],
+          "table": {
+            "head": [
+              "Nominativ (subject)",
+              "Akkusativ (object)",
+              "Dativ (receiver)",
+              "Meaning"
+            ],
+            "rows": [
+              [
+                "ich",
+                "**mich**",
+                "**mir**",
+                "I / me"
+              ],
+              [
+                "du",
+                "**dich**",
+                "**dir**",
+                "you"
+              ],
+              [
+                "er",
+                "**ihn**",
+                "**ihm**",
+                "he / him"
+              ],
+              [
+                "sie",
+                "**sie**",
+                "**ihr**",
+                "she / her"
+              ],
+              [
+                "es",
+                "**es**",
+                "**ihm**",
+                "it"
+              ],
+              [
+                "wir",
+                "**uns**",
+                "**uns**",
+                "we / us"
+              ],
+              [
+                "ihr",
+                "**euch**",
+                "**euch**",
+                "you (all)"
+              ],
+              [
+                "sie",
+                "**sie**",
+                "**ihnen**",
+                "they / them"
+              ],
+              [
+                "Sie",
+                "**Sie**",
+                "**Ihnen**",
+                "you (formal)"
+              ]
+            ]
+          },
+          "after": [
+            "Notice that *wir*, *ihr* and *Sie* use **the same form** in the Akkusativ and Dativ (*uns*, *euch*, *Sie/Ihnen* — the first two are truly identical). The only ones you really need to tell apart are at the top: *mich/mir*, *dich/dir*, *ihn/ihm*.",
+            "When to use which? **Akkusativ** when it's the direct object of the action: *Ich sehe **dich***, *Er ruft **mich** an*. **Dativ** when it's the receiver or the one affected: *Er hilft **mir***, *Ich gebe **dir** das Buch*, *Wie geht es **dir**?*",
+            "⚠️ *Ihnen* with a capital letter means \"to you\" (formal); *ihnen* in lowercase means \"to them\". Once again, the capital letter saves the day."
+          ]
+        },
+        {
+          "title": "Verbs that take the Dativ",
+          "body": [
+            "A small group of verbs takes the Dativ, not the Akkusativ, even though in English they feel like they have an ordinary object. There are only a few — learn them as a list."
+          ],
+          "table": {
+            "head": [
+              "Verb",
+              "Meaning",
+              "Example",
+              "Meaning of example"
+            ],
+            "rows": [
+              [
+                "**helfen**",
+                "help",
+                "Kannst du **mir** helfen?",
+                "Can you help me?"
+              ],
+              [
+                "**gefallen**",
+                "please, be liked",
+                "Berlin gefällt **mir**.",
+                "I like Berlin."
+              ],
+              [
+                "**schmecken**",
+                "taste good",
+                "Das Essen schmeckt **mir**.",
+                "I like the food."
+              ],
+              [
+                "**gehören**",
+                "belong to",
+                "Das Buch gehört **mir**.",
+                "That book is mine."
+              ],
+              [
+                "**passen**",
+                "suit, fit",
+                "Der Termin passt **mir**.",
+                "The appointment suits me."
+              ],
+              [
+                "**wehtun**",
+                "hurt",
+                "Der Kopf tut **mir** weh.",
+                "My head hurts."
+              ],
+              [
+                "**danken**",
+                "thank",
+                "Ich danke **Ihnen**.",
+                "Thank you."
+              ],
+              [
+                "**geben**",
+                "give",
+                "Ich gebe **dir** das Buch.",
+                "I'll give you the book."
+              ]
+            ]
+          },
+          "after": [
+            "*Gefallen* hides a small trap: the subject isn't the person but the **thing**. *Berlin gefällt mir* is literally \"Berlin pleases me\". That's why the verb follows the thing: *Die Bücher gefall**en** mir.*",
+            "The last row, *geben*, uses **both** at once: the receiver in the Dativ, the thing in the Akkusativ. The same pattern works for *schicken* (send), *zeigen* (show) and *bringen* (bring)."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Parts of the body",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "German",
+            "Plural",
+            "Pronunciation",
+            "English"
+          ],
+          "rows": [
+            [
+              "der Kopf",
+              "die Köpfe",
+              "kopf",
+              "head"
+            ],
+            [
+              "das Auge",
+              "die Augen",
+              "OW-ge",
+              "eye"
+            ],
+            [
+              "das Ohr",
+              "die Ohren",
+              "OH-uh",
+              "ear"
+            ],
+            [
+              "die Nase",
+              "die Nasen",
+              "NAH-ze",
+              "nose"
+            ],
+            [
+              "der Mund",
+              "die Münder",
+              "moont",
+              "mouth"
+            ],
+            [
+              "der Zahn",
+              "die Zähne",
+              "tsahn",
+              "tooth"
+            ],
+            [
+              "der Hals",
+              "die Hälse",
+              "hahls",
+              "neck, throat"
+            ],
+            [
+              "der Bauch",
+              "die Bäuche",
+              "bowkh",
+              "stomach, belly"
+            ],
+            [
+              "der Rücken",
+              "die Rücken",
+              "RÜ-ken",
+              "back"
+            ],
+            [
+              "der Arm",
+              "die Arme",
+              "ahrm",
+              "arm"
+            ]
+          ]
+        },
+        {
+          "type": "sub",
+          "text": "Describing symptoms"
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "German",
+            "English"
+          ],
+          "rows": [
+            [
+              "Ich fühle mich nicht gut.",
+              "I don't feel well."
+            ],
+            [
+              "Mein Kopf tut weh.",
+              "My head hurts."
+            ],
+            [
+              "Ich habe Kopfschmerzen.",
+              "I have a headache."
+            ],
+            [
+              "Ich habe Bauchschmerzen.",
+              "I have a stomachache."
+            ],
+            [
+              "Ich habe Halsschmerzen.",
+              "I have a sore throat."
+            ],
+            [
+              "Ich habe Fieber.",
+              "I have a fever."
+            ],
+            [
+              "Ich habe Husten und Schnupfen.",
+              "I have a cough and a runny nose."
+            ],
+            [
+              "Ich bin erkältet.",
+              "I have a cold."
+            ],
+            [
+              "Ich bin müde und schwach.",
+              "I'm tired and weak."
+            ],
+            [
+              "Mir ist schlecht.",
+              "I feel sick."
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "Notice the *-schmerzen* pattern: body part + *Schmerzen* gives you the name of the complaint — just like English \"head**ache**\", \"stomach**ache**\". *Kopf* → *Kopfschmerzen*, *Bauch* → *Bauchschmerzen*, *Zahn* → *Zahnschmerzen*, *Rücken* → *Rückenschmerzen*. One pattern, every complaint."
+        }
+      ]
+    },
+    {
+      "title": "At the pharmacy and the doctor's office",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "German",
+            "English"
+          ],
+          "rows": [
+            [
+              "Ich brauche einen Termin.",
+              "I need an appointment."
+            ],
+            [
+              "Haben Sie etwas gegen Kopfschmerzen?",
+              "Do you have something for a headache?"
+            ],
+            [
+              "Das Rezept, bitte.",
+              "The prescription, please."
+            ],
+            [
+              "Wie oft muss ich das nehmen?",
+              "How often do I have to take this?"
+            ],
+            [
+              "Dreimal täglich nach dem Essen.",
+              "Three times a day after meals."
+            ],
+            [
+              "Sie sollen viel trinken.",
+              "You should drink a lot."
+            ],
+            [
+              "Bleiben Sie im Bett.",
+              "Stay in bed."
+            ],
+            [
+              "Gute Besserung!",
+              "Get well soon!"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "⚠️ In Germany, any medicine stronger than a mild painkiller is only sold at the **Apotheke**, often with a prescription — not at the supermarket or the *Drogerie*. And if you're sick for more than three days, your employer will ask for a ***Krankschreibung***, a doctor's sick note."
+        },
+        {
+          "type": "kotak",
+          "title": "Emergency numbers",
+          "items": [
+            "**112** — ambulance and fire service, valid all over Europe, free from any phone.",
+            "**110** — police.",
+            "**116 117** — out-of-hours doctor service (*ärztlicher Bereitschaftsdienst*), for problems that aren't emergencies.",
+            "Sentences to remember: *Ich brauche einen Arzt* and *Bitte rufen Sie einen Krankenwagen.*"
+          ]
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "de": "der Arzt / die Ärztin",
+      "baca": "ahrtst / AYRTS-tin",
+      "en": "doctor (m / f)"
+    },
+    {
+      "de": "die Praxis",
+      "baca": "PRAHK-sis",
+      "en": "doctor's office"
+    },
+    {
+      "de": "die Apotheke",
+      "baca": "ah-poh-TAY-ke",
+      "en": "pharmacy"
+    },
+    {
+      "de": "das Rezept",
+      "baca": "reh-TSEHPT",
+      "en": "prescription"
+    },
+    {
+      "de": "die Tablette",
+      "baca": "tah-BLEH-te",
+      "en": "tablet, pill"
+    },
+    {
+      "de": "die Medizin",
+      "baca": "meh-dee-TSEEN",
+      "en": "medicine"
+    },
+    {
+      "de": "der Kopf",
+      "baca": "kohpf",
+      "en": "head"
+    },
+    {
+      "de": "der Hals",
+      "baca": "hahls",
+      "en": "neck, throat"
+    },
+    {
+      "de": "der Bauch",
+      "baca": "bowkh",
+      "en": "stomach, belly"
+    },
+    {
+      "de": "der Rücken",
+      "baca": "RÜ-ken",
+      "en": "back"
+    },
+    {
+      "de": "die Hand",
+      "baca": "hahnt",
+      "en": "hand"
+    },
+    {
+      "de": "das Bein",
+      "baca": "beyen",
+      "en": "leg"
+    },
+    {
+      "de": "wehtun",
+      "baca": "VAY-toon",
+      "en": "hurt"
+    },
+    {
+      "de": "die Schmerzen",
+      "baca": "SHMEHR-tsen",
+      "en": "pain"
+    },
+    {
+      "de": "das Fieber",
+      "baca": "FEE-buh",
+      "en": "fever"
+    },
+    {
+      "de": "der Husten",
+      "baca": "HOOS-ten",
+      "en": "cough"
+    },
+    {
+      "de": "die Erkältung",
+      "baca": "ehr-KEHL-toong",
+      "en": "cold, flu"
+    },
+    {
+      "de": "krank",
+      "baca": "krahnk",
+      "en": "sick, ill"
+    }
+  ],
+  "exercises": [
+    {
+      "prompt": "Translate into English.",
+      "items": [
+        "Was fehlt Ihnen?",
+        "Ich fühle mich nicht gut.",
+        "Mein Kopf tut weh.",
+        "Haben Sie Fieber?",
+        "Sie sollen viel trinken.",
+        "Dreimal täglich nach dem Essen."
+      ]
+    },
+    {
+      "prompt": "Fill in the right pronoun.",
+      "items": [
+        "Kannst du ____ helfen? (to me)",
+        "Berlin gefällt ____ sehr. (to me)",
+        "Ich rufe ____ morgen an. (you, object)",
+        "Wie geht es ____? (to you)",
+        "Ich gebe ____ das Rezept. (to you, formal)",
+        "Das Buch gehört ____. (to me)"
+      ]
+    },
+    {
+      "prompt": "Put the words in the right order.",
+      "items": [
+        "nicht gut / ich / mich / fühle",
+        "weh / mein Kopf / tut",
+        "Fieber / Sie / haben",
+        "viel / Sie / trinken / sollen",
+        "helfen / kannst / mir / du",
+        "Ihnen / gebe / ein Rezept / ich"
+      ]
+    }
+  ],
+  "answers": [
+    "What seems to be the problem? — I don't feel well. — My head hurts. — Do you have a fever? — You should drink a lot. — Three times a day after meals.",
+    "mir — mir — dich — dir — Ihnen — mir",
+    "Ich fühle mich nicht gut. — Mein Kopf tut weh. — Haben Sie Fieber? — Sie sollen viel trinken. — Kannst du mir helfen? — Ich gebe Ihnen ein Rezept."
+  ],
+  "wave": "Before you start unit 20, go back to the dialogue in **Unit 12**. Say all the quantities and prices out loud."
+}

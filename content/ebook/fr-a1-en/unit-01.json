@@ -1,0 +1,463 @@
+{
+  "title": "Hello, what's your name?",
+  "title_target": "Bonjour ! Comment tu t'appelles ?",
+  "goal": "Greet people at the right time of day, say your name, ask how someone is, and recognize the two ways of greeting: casual and polite.",
+  "bekal": [
+    "greet with *bonjour*, *bonsoir* and *salut*, each in its proper place",
+    "say your own name and ask someone else's",
+    "use *je suis* and *tu es* to say who you are"
+  ],
+  "dialogs": [
+    {
+      "title": "Dialogue — Le premier jour de cours",
+      "intro": "The first day of a French course in Lyon. Two new students sit down next to each other.",
+      "lines": [
+        {
+          "speaker": "Camille:",
+          "text": "Bonjour ! Comment tu t'appelles ?",
+          "id": "Hello! What's your name?",
+          "literal": "good-day! how you you-call-yourself?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Bonjour ! Je m'appelle Budi. Et toi ?",
+          "id": "Hello! My name is Budi. And you?",
+          "literal": "good-day! I I-call-myself Budi. and you?"
+        },
+        {
+          "speaker": "Camille:",
+          "text": "Moi, c'est Camille. Enchantée !",
+          "id": "I'm Camille. Nice to meet you!",
+          "literal": "me, it-is Camille. enchanted(fem.)!"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Enchanté. Comment ça va ?",
+          "id": "Nice to meet you too. How are you?",
+          "literal": "enchanted. how that goes?"
+        },
+        {
+          "speaker": "Camille:",
+          "text": "Ça va bien, merci. Et toi ?",
+          "id": "I'm fine, thanks. And you?",
+          "literal": "that goes well, thanks. and you?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Ça va aussi. Tu es française ?",
+          "id": "I'm fine too. Are you French?",
+          "literal": "that goes also. you you-are French(fem.)?"
+        },
+        {
+          "speaker": "Camille:",
+          "text": "Oui, je suis de Lyon. Et toi, tu es chinois ?",
+          "id": "Yes, I'm from Lyon. And you, are you Chinese?",
+          "literal": "yes, I I-am from Lyon. and you, you you-are Chinese?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Non, je suis indonésien. Je suis de Jakarta.",
+          "id": "No, I'm Indonesian. I'm from Jakarta.",
+          "literal": "no, I I-am Indonesian(masc.). I I-am from Jakarta."
+        },
+        {
+          "speaker": "Camille:",
+          "text": "Ah, super ! Bienvenue à Lyon !",
+          "id": "Oh, great! Welcome to Lyon!",
+          "literal": "ah, super! welcome to Lyon!"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Merci beaucoup ! À demain, Camille.",
+          "id": "Thanks a lot! See you tomorrow, Camille.",
+          "literal": "thanks much! until tomorrow, Camille."
+        },
+        {
+          "speaker": "Camille:",
+          "text": "À demain ! Salut !",
+          "id": "See you tomorrow! Bye!",
+          "literal": "until tomorrow! hi/bye!"
+        }
+      ],
+      "notes": [
+        "**Bonjour works all day, and it is compulsory.** In France, walking into a shop or getting into a taxi without saying *bonjour* is considered rude — far ruder than a grammar mistake. Say it first, then get down to business. After about six in the evening, switch to *bonsoir*.",
+        "**Salut works both ways, but only with friends.** The same word means \"hi\" and \"bye\", just like Italian *ciao*. Don't use it with officials, doctors or older people — use *bonjour* and *au revoir*.",
+        "**Je m'appelle is not \"my name is\".** Literally it is \"I call myself\". That's why there is no word for \"name\" in it, and why the question is *comment tu t'appelles* — \"how do you call yourself\", not \"what is your name\".",
+        "**Moi, c'est Camille** is a shortcut French people use all the time to introduce themselves — more relaxed than *je m'appelle*. Literally \"me, it's Camille\".",
+        "**Enchanté changes its spelling.** A man writes *enchanté*, a woman *enchantée*. They sound exactly the same (ahn-shahn-TAY) — the extra **e** is silent. This is your first taste of a French habit: writing distinctions you can't hear.",
+        "**Je can't be dropped.** Unlike Italian or Spanish, French **must** state the subject. *Suis de Lyon* is wrong; it has to be *je suis de Lyon*. The reason is sound: so many verb endings are silent that without the pronoun nothing would tell you who is doing what.",
+        "**Comment ça va** is literally \"how does it go\". The answer reuses the same phrase: *ça va bien*, *ça va*, or if things aren't great, *ça ne va pas très bien*. The polite form is *comment allez-vous ?*",
+        "**Nationalities take a small letter.** *français*, *indonésien*, *chinois* — unlike English. Country names keep their capital: *la France*, *l'Indonésie*. The form also follows the speaker's gender: a man is *indonésien*, a woman *indonésienne*."
+      ],
+      "grammars": [
+        {
+          "title": "Être — the verb \"to be\"",
+          "body": [
+            "The first verb you need to master, and the most irregular verb in all of French. In this unit you only need the first two lines; the rest comes in Unit 3."
+          ],
+          "table": {
+            "head": [
+              "",
+              "être",
+              "pronunciation",
+              "meaning"
+            ],
+            "rows": [
+              [
+                "je",
+                "**suis**",
+                "zhuh SWEE",
+                "I am"
+              ],
+              [
+                "tu",
+                "**es**",
+                "tü EH",
+                "you are"
+              ],
+              [
+                "il / elle / on",
+                "**est**",
+                "eel EH",
+                "he / she is"
+              ],
+              [
+                "nous",
+                "sommes",
+                "noo SOHM",
+                "we are"
+              ],
+              [
+                "vous",
+                "êtes",
+                "voo-ZET",
+                "you are (plural / polite)"
+              ],
+              [
+                "ils / elles",
+                "sont",
+                "eel SOHN",
+                "they are"
+              ]
+            ]
+          },
+          "after": [
+            "*es* and *est* sound **exactly the same** (eh). The last letters are silent — and that is not an exception but a general rule of French you'll meet on every page.",
+            "*Vous êtes* is run together: voo-ZET, not voo ET. The **s** at the end of *vous* wakes up because the next word starts with a vowel. This is the liaison explained in the pronunciation chapter."
+          ]
+        },
+        {
+          "title": "Greeting by time of day and by closeness",
+          "body": [
+            "Two axes, not one. The first is time; the second is how close you are to the person you're talking to."
+          ],
+          "table": {
+            "head": [
+              "When",
+              "Casual (friends, peers)",
+              "Polite (strangers, superiors)"
+            ],
+            "rows": [
+              [
+                "Morning to late afternoon",
+                "Salut",
+                "Bonjour"
+              ],
+              [
+                "Evening to night",
+                "Salut",
+                "Bonsoir"
+              ],
+              [
+                "Saying goodbye",
+                "Salut / À plus",
+                "Au revoir"
+              ],
+              [
+                "At night, going to bed",
+                "Bonne nuit",
+                "Bonne nuit"
+              ],
+              [
+                "Asking how someone is",
+                "Ça va ?",
+                "Comment allez-vous ?"
+              ]
+            ]
+          },
+          "after": [
+            "*Bonne nuit* is not an ordinary evening greeting — it is what you say when parting for the night. If you walk into a restaurant at eight in the evening and say it, you've just told everyone to go to bed. The right word is *bonsoir*.",
+            "*Bonjour* is said once a day to the same person. Meeting again in the afternoon, a French person will say *rebonjour* — or simply smile."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "First words to keep in your pocket",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "The dozen or so words below cover most first-day small talk. Learn them whole; don't take the grammar apart yet."
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Français",
+            "Pronunciation",
+            "English"
+          ],
+          "rows": [
+            [
+              "Oui / Non",
+              "wee / nohn",
+              "Yes / No"
+            ],
+            [
+              "Merci",
+              "mehr-SEE",
+              "Thank you"
+            ],
+            [
+              "De rien",
+              "duh RYAN",
+              "You're welcome"
+            ],
+            [
+              "S'il vous plaît",
+              "seel voo PLEH",
+              "Please (polite)"
+            ],
+            [
+              "S'il te plaît",
+              "seel tuh PLEH",
+              "Please (casual)"
+            ],
+            [
+              "Pardon / Excusez-moi",
+              "pahr-DOHN / ek-skü-zay-MWAH",
+              "Sorry, excuse me"
+            ],
+            [
+              "Enchanté(e)",
+              "ahn-shahn-TAY",
+              "Nice to meet you"
+            ],
+            [
+              "Je ne comprends pas",
+              "zhuh nuh kohn-prahn PAH",
+              "I don't understand"
+            ],
+            [
+              "Je ne sais pas",
+              "zhuh nuh seh PAH",
+              "I don't know"
+            ],
+            [
+              "Vous pouvez répéter ?",
+              "voo poo-VAY ray-pay-TAY",
+              "Could you repeat that?"
+            ],
+            [
+              "Comment on dit… ?",
+              "koh-mahn-tohn DEE",
+              "How do you say…?"
+            ],
+            [
+              "À demain",
+              "ah duh-MAN",
+              "See you tomorrow"
+            ],
+            [
+              "À bientôt",
+              "ah byan-TOH",
+              "See you soon"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "*S'il te plaît* for friends, *s'il vous plaît* for people you address politely. This *te* vs *vous* difference will come up again and again throughout the course — it is the most common marker of politeness in French."
+        },
+        {
+          "type": "kotak",
+          "title": "Tu or vous?",
+          "items": [
+            "**Tu** for friends, family, fellow students, children, and anyone who has invited you to use it.",
+            "**Vous** for strangers, officials, shop staff, bosses, and anyone older. *Vous* is also the plural — so the same word means both polite \"you\" and \"you all\".",
+            "When in doubt, use **vous**. Using *vous* with a friend just sounds stiff; using *tu* with a stranger sounds rude.",
+            "If the other person wants to be more casual, they'll say *on peut se tutoyer* — \"we can say *tu* to each other\"."
+          ]
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "fr": "bonjour",
+      "baca": "bohn-ZHOOR",
+      "en": "hello, good morning/afternoon"
+    },
+    {
+      "fr": "bonsoir",
+      "baca": "bohn-SWAHR",
+      "en": "good evening"
+    },
+    {
+      "fr": "bonne nuit",
+      "baca": "bonn NWEE",
+      "en": "good night (going to bed)"
+    },
+    {
+      "fr": "salut",
+      "baca": "sah-LÜ",
+      "en": "hi, bye (casual)"
+    },
+    {
+      "fr": "au revoir",
+      "baca": "oh ruh-VWAHR",
+      "en": "goodbye (polite)"
+    },
+    {
+      "fr": "comment",
+      "baca": "koh-MAHN",
+      "en": "how"
+    },
+    {
+      "fr": "s'appeler",
+      "baca": "sah-PLAY",
+      "en": "to be called"
+    },
+    {
+      "fr": "le nom",
+      "baca": "luh NOHN",
+      "en": "name"
+    },
+    {
+      "fr": "être",
+      "baca": "EHTR",
+      "en": "to be"
+    },
+    {
+      "fr": "ça va",
+      "baca": "sah VAH",
+      "en": "fine, it's going OK"
+    },
+    {
+      "fr": "bien",
+      "baca": "byan",
+      "en": "well, good"
+    },
+    {
+      "fr": "mal",
+      "baca": "mahl",
+      "en": "badly"
+    },
+    {
+      "fr": "comme ci comme ça",
+      "baca": "kohm SEE kohm SAH",
+      "en": "so-so"
+    },
+    {
+      "fr": "et",
+      "baca": "ay",
+      "en": "and"
+    },
+    {
+      "fr": "aussi",
+      "baca": "oh-SEE",
+      "en": "also, too"
+    },
+    {
+      "fr": "de",
+      "baca": "duh",
+      "en": "from, of"
+    },
+    {
+      "fr": "moi / toi",
+      "baca": "mwah / twah",
+      "en": "me / you (stressed form)"
+    },
+    {
+      "fr": "français / française",
+      "baca": "frahn-SEH / frahn-SEHZ",
+      "en": "French (man / woman)"
+    },
+    {
+      "fr": "indonésien / indonésienne",
+      "baca": "an-doh-nay-ZYAN",
+      "en": "Indonesian"
+    },
+    {
+      "fr": "bienvenue",
+      "baca": "byan-vuh-NÜ",
+      "en": "welcome"
+    },
+    {
+      "fr": "super !",
+      "baca": "sü-PEHR",
+      "en": "great!, awesome!"
+    },
+    {
+      "fr": "merci beaucoup",
+      "baca": "mehr-SEE boh-KOO",
+      "en": "thank you very much"
+    },
+    {
+      "fr": "demain",
+      "baca": "duh-MAN",
+      "en": "tomorrow"
+    }
+  ],
+  "exercises": [
+    {
+      "prompt": "Translate into French.",
+      "items": [
+        "Hello! What's your name?",
+        "My name is Budi.",
+        "I'm Indonesian.",
+        "How are you?",
+        "Fine, thank you.",
+        "Are you from Lyon?"
+      ]
+    },
+    {
+      "prompt": "Fill in the correct form of être.",
+      "items": [
+        "Je ____ indonésien.",
+        "Tu ____ française ?",
+        "Camille ____ de Lyon.",
+        "Nous ____ étudiants.",
+        "Vous ____ de Paris ?",
+        "Ils ____ français."
+      ]
+    },
+    {
+      "prompt": "Choose the right greeting. Write out the full sentence.",
+      "items": [
+        "You walk into a bakery at eight in the morning. To the baker you say ____.",
+        "You meet a classmate on campus at ten. You say ____.",
+        "You walk into a restaurant at seven in the evening. To the waiter you say ____.",
+        "You part from your professor at the end of the corridor. You say ____.",
+        "You show a guest to their room at eleven at night. You say ____."
+      ]
+    },
+    {
+      "prompt": "Put the words in the right order.",
+      "items": [
+        "appelle / je / Camille / m'",
+        "suis / de / je / Jakarta",
+        "va / ça / ?",
+        "française / es / tu / ?",
+        "bien / va / ça / merci"
+      ]
+    }
+  ],
+  "answers": [
+    "Bonjour ! Comment tu t'appelles ? — Je m'appelle Budi. — Je suis indonésien. — Comment ça va ? — Ça va bien, merci. — Tu es de Lyon ?",
+    "suis — es — est — sommes — êtes — sont",
+    "Bonjour. — Salut. — Bonsoir. — Au revoir. — Bonne nuit.",
+    "Je m'appelle Camille. — Je suis de Jakarta. — Ça va ? — Tu es française ? — Ça va bien, merci."
+  ]
+}

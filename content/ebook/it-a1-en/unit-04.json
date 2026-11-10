@@ -1,0 +1,488 @@
+{
+  "title": "At the bar",
+  "title_target": "Al bar",
+  "goal": "Order drinks and snacks, use *vorrei* and *prendo*, and understand the unwritten rules of the Italian bar.",
+  "bekal": [
+    "order politely using *vorrei* and *per favore*",
+    "ask the price and pay",
+    "tell *un caffè*, *un cappuccino*, and *un caffellatte* apart like an Italian"
+  ],
+  "dialogs": [
+    {
+      "title": "Dialogo — Al bar, alle otto di mattina",
+      "intro": "An Italian bar is not a place for beer at night — it's a coffee shop that opens at dawn. Budi orders breakfast.",
+      "lines": [
+        {
+          "speaker": "Barista:",
+          "text": "Buongiorno! Mi dica.",
+          "id": "Good morning! What can I get you?",
+          "literal": "good-morning! to-me tell(formal)."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Buongiorno. Vorrei un cappuccino e un cornetto, per favore.",
+          "id": "Good morning. I'd like a cappuccino and a croissant, please.",
+          "literal": "good-morning. I-would-like a cappuccino and a croissant, for favor."
+        },
+        {
+          "speaker": "Barista:",
+          "text": "Il cornetto vuoto o con la crema?",
+          "id": "Plain croissant or with custard?",
+          "literal": "the croissant empty or with the cream?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Con la crema, grazie. Quanto costa?",
+          "id": "With custard, thanks. How much is it?",
+          "literal": "with the cream, thanks. how-much costs?"
+        },
+        {
+          "speaker": "Barista:",
+          "text": "Tre euro e cinquanta. Al banco o al tavolo?",
+          "id": "Three euros fifty. At the counter or at a table?",
+          "literal": "three euro and fifty. at-the counter or at-the table?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Al banco. Perché, al tavolo costa di più?",
+          "id": "At the counter. Why, does it cost more at a table?",
+          "literal": "at-the counter. why, at-the table costs of more?"
+        },
+        {
+          "speaker": "Barista:",
+          "text": "Sì, al tavolo c'è il servizio. Ecco il cappuccino.",
+          "id": "Yes, at a table there's a service charge. Here's your cappuccino.",
+          "literal": "yes, at-the table there-is the service. here-is the cappuccino."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Grazie. Un'altra cosa: avete l'acqua naturale?",
+          "id": "Thanks. One more thing: do you have still water?",
+          "literal": "thanks. an-other thing: you(pl)-have the water natural?"
+        },
+        {
+          "speaker": "Barista:",
+          "text": "Certo. Naturale o frizzante?",
+          "id": "Of course. Still or sparkling?",
+          "literal": "certain. natural or sparkling?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Naturale. Pago adesso o dopo?",
+          "id": "Still. Do I pay now or later?",
+          "literal": "natural. I-pay now or after?"
+        },
+        {
+          "speaker": "Barista:",
+          "text": "Come vuole. Sono quattro e venti in tutto.",
+          "id": "As you like. That's four twenty altogether.",
+          "literal": "how you(formal)-want. are four and twenty in all."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Ecco a Lei. Buona giornata!",
+          "id": "Here you are. Have a nice day!",
+          "literal": "here-is to you(formal). good day!"
+        }
+      ],
+      "notes": [
+        "**Vorrei is the most useful word in this unit.** It means \"I would like\", with a polite tone, like \"could I have\". The blunt form is *voglio* (I want) — grammatically correct, but it sounds like a child making demands. Use *vorrei*.",
+        "**Prendo is also common and more casual.** Literally \"I take\": *prendo un caffè*. Among friends it's actually the one you'll hear most, like \"I'll have\".",
+        "**In Italy un caffè means an espresso.** A small cup, one sip, drunk standing at the counter in two minutes. If you want a long American-style coffee, order *un caffè americano* or *un caffè lungo*.",
+        "**Cappuccino only until about eleven in the morning.** It's not a written rule, but it's a strong habit: milk is considered breakfast food. Ordering a cappuccino after lunch won't be refused, but it will instantly mark you as a tourist.",
+        "**Al banco is cheaper than al tavolo.** Counter prices and table prices really are different, and they're officially posted. In tourist towns the difference can be double.",
+        "**Ecco** = \"here it is\", used when handing something over or finding something. *Ecco a Lei* when giving to someone you address formally, *eccoti* to a friend.",
+        "**Acqua naturale vs frizzante.** You'll be asked this every single time you order water in Italy. *Naturale* is still, *frizzante* or *gassata* is sparkling.",
+        "**Come vuole** = \"as you like\", literally \"how you want\". The informal form is *come vuoi*. A gentle, common way of leaving the choice to the other person."
+      ],
+      "grammars": [
+        {
+          "title": "Ordering — three ways, from most casual to most polite",
+          "body": [
+            "All three are correct. Only the tone changes."
+          ],
+          "table": {
+            "head": [
+              "Form",
+              "Tone",
+              "Example"
+            ],
+            "rows": [
+              [
+                "**Un caffè, per favore.**",
+                "shortest, still polite",
+                "Un caffè, per favore."
+              ],
+              [
+                "**Prendo…**",
+                "casual, everyday",
+                "Prendo un cornetto."
+              ],
+              [
+                "**Vorrei…**",
+                "polite, safe anywhere",
+                "Vorrei un cappuccino."
+              ],
+              [
+                "**Voglio…**",
+                "demanding, avoid",
+                "Voglio un caffè."
+              ]
+            ]
+          },
+          "after": [
+            "Adding *per favore* at the end makes any of them softer still, and is never wrong. If you only have time to learn one pattern from this unit, learn *Vorrei… per favore*."
+          ]
+        },
+        {
+          "title": "Numbers 0-20",
+          "body": [
+            "Eleven to sixteen have their own forms; from seventeen the pattern flips around."
+          ],
+          "table": {
+            "head": [
+              "",
+              "",
+              "",
+              ""
+            ],
+            "rows": [
+              [
+                "0 zero",
+                "1 uno",
+                "2 due",
+                "3 tre"
+              ],
+              [
+                "4 quattro",
+                "5 cinque",
+                "6 sei",
+                "7 sette"
+              ],
+              [
+                "8 otto",
+                "9 nove",
+                "10 dieci",
+                "11 undici"
+              ],
+              [
+                "12 dodici",
+                "13 tredici",
+                "14 quattordici",
+                "15 quindici"
+              ],
+              [
+                "16 sedici",
+                "17 diciassette",
+                "18 diciotto",
+                "19 diciannove"
+              ],
+              [
+                "20 venti",
+                "",
+                "",
+                ""
+              ]
+            ]
+          },
+          "after": [
+            "11-16 put the unit first, a bit like English \"four-teen\": *dodici* = \"two-ten\". From 17 the order flips to \"ten-seven\": *diciassette*.",
+            "*Sei* means \"six\" **and** \"you are\". Context tells them apart, and in practice it's never confusing: *sei euro* is clearly not \"you are euro\"."
+          ]
+        },
+        {
+          "title": "Prices and money",
+          "body": [
+            "Italians say prices with the word *e* (and) in the middle, where English would say the cents straight after the euros."
+          ],
+          "table": {
+            "head": [
+              "Written",
+              "Said",
+              "Meaning"
+            ],
+            "rows": [
+              [
+                "€ 1,00",
+                "un euro",
+                "one euro"
+              ],
+              [
+                "€ 2,50",
+                "due euro e cinquanta",
+                "two euros fifty"
+              ],
+              [
+                "€ 3,20",
+                "tre euro e venti",
+                "three euros twenty"
+              ],
+              [
+                "€ 15,00",
+                "quindici euro",
+                "fifteen euros"
+              ]
+            ]
+          },
+          "after": [
+            "Notice that *euro* **doesn't take a plural**: *due euro*, not *due euri*. It's an official exception, set when the currency was born.",
+            "Italian swaps the comma and the period compared with English: *1.500,00* means one thousand five hundred."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "An order list that will do for your first month",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "Italiano",
+            "What you actually get"
+          ],
+          "rows": [
+            [
+              "un caffè",
+              "espresso, small cup"
+            ],
+            [
+              "un caffè macchiato",
+              "espresso with a dash of milk"
+            ],
+            [
+              "un cappuccino",
+              "espresso with lots of frothy milk"
+            ],
+            [
+              "un caffellatte",
+              "espresso with lots of milk, no froth"
+            ],
+            [
+              "un caffè americano",
+              "espresso topped up with hot water"
+            ],
+            [
+              "un tè caldo / freddo",
+              "hot / iced tea"
+            ],
+            [
+              "una spremuta",
+              "freshly squeezed orange juice"
+            ],
+            [
+              "un succo di frutta",
+              "bottled fruit juice"
+            ],
+            [
+              "una bottiglia d'acqua",
+              "a bottle of water"
+            ],
+            [
+              "un cornetto",
+              "croissant, filled with custard or jam"
+            ],
+            [
+              "un panino",
+              "filled roll, sandwich"
+            ],
+            [
+              "un tramezzino",
+              "triangle sandwich on soft white bread"
+            ],
+            [
+              "una pasta",
+              "small sweet pastry (not noodles!)"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "Watch the last trap: *una pasta* at a bar means a pastry, not spaghetti. If you mean pasta the dish, name the kind — *gli spaghetti*, *le penne*, *le lasagne*."
+        },
+        {
+          "type": "kotak",
+          "title": "Ready-made sentences",
+          "items": [
+            "*Vorrei un caffè, per favore.* — I'd like an espresso, please.",
+            "*Quanto costa?* — How much is it? (one item)",
+            "*Quant'è?* — How much is it altogether?",
+            "*Posso pagare con la carta?* — Can I pay by card?",
+            "*Il conto, per favore.* — The check, please.",
+            "*Va bene così.* — Keep the change."
+          ]
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "it": "il bar",
+      "baca": "eel bahr",
+      "en": "bar, café"
+    },
+    {
+      "it": "il caffè",
+      "baca": "eel kahf-FEH",
+      "en": "coffee, espresso"
+    },
+    {
+      "it": "il cappuccino",
+      "baca": "eel kahp-poo-CHEE-noh",
+      "en": "cappuccino"
+    },
+    {
+      "it": "il cornetto",
+      "baca": "eel kohr-NEHT-toh",
+      "en": "croissant"
+    },
+    {
+      "it": "l'acqua",
+      "baca": "LAHK-kwah",
+      "en": "water"
+    },
+    {
+      "it": "naturale",
+      "baca": "nah-too-RAH-leh",
+      "en": "still, natural"
+    },
+    {
+      "it": "frizzante",
+      "baca": "freed-DZAHN-teh",
+      "en": "sparkling"
+    },
+    {
+      "it": "il banco",
+      "baca": "eel BAHN-koh",
+      "en": "counter"
+    },
+    {
+      "it": "il tavolo",
+      "baca": "eel TAH-voh-loh",
+      "en": "table"
+    },
+    {
+      "it": "vorrei",
+      "baca": "vohr-RAY",
+      "en": "I'd like (polite)"
+    },
+    {
+      "it": "prendere",
+      "baca": "PREHN-deh-reh",
+      "en": "to take, to have (order)"
+    },
+    {
+      "it": "pagare",
+      "baca": "pah-GAH-reh",
+      "en": "to pay"
+    },
+    {
+      "it": "costare",
+      "baca": "kohs-TAH-reh",
+      "en": "to cost"
+    },
+    {
+      "it": "quanto",
+      "baca": "KWAHN-toh",
+      "en": "how much"
+    },
+    {
+      "it": "l'euro",
+      "baca": "LEH-oo-roh",
+      "en": "euro"
+    },
+    {
+      "it": "il conto",
+      "baca": "eel KOHN-toh",
+      "en": "check, bill"
+    },
+    {
+      "it": "la carta",
+      "baca": "lah KAHR-tah",
+      "en": "card"
+    },
+    {
+      "it": "ecco",
+      "baca": "EHK-koh",
+      "en": "here is, here you are"
+    },
+    {
+      "it": "certo",
+      "baca": "CHEHR-toh",
+      "en": "of course"
+    },
+    {
+      "it": "dopo",
+      "baca": "DOH-poh",
+      "en": "after, later"
+    },
+    {
+      "it": "il panino",
+      "baca": "eel pah-NEE-noh",
+      "en": "filled roll, sandwich"
+    },
+    {
+      "it": "la spremuta",
+      "baca": "lah spreh-MOO-tah",
+      "en": "fresh-squeezed juice"
+    },
+    {
+      "it": "buona giornata",
+      "baca": "BWOH-nah johr-NAH-tah",
+      "en": "have a nice day"
+    }
+  ],
+  "exercises": [
+    {
+      "prompt": "Translate into Italian.",
+      "items": [
+        "I'd like a cappuccino, please.",
+        "How much is it?",
+        "Do you have still water?",
+        "I'll pay now.",
+        "The check, please.",
+        "Can I pay by card?"
+      ]
+    },
+    {
+      "prompt": "Write the prices out in words.",
+      "items": [
+        "€ 2,00",
+        "€ 3,50",
+        "€ 7,20",
+        "€ 11,00",
+        "€ 15,40",
+        "€ 19,00"
+      ]
+    },
+    {
+      "prompt": "Put the words in the right order.",
+      "items": [
+        "vorrei / caffè / un / favore / per",
+        "costa / quanto / ?",
+        "banco / al / prendo / lo",
+        "acqua / avete / naturale / l' / ?",
+        "conto / il / favore / per"
+      ]
+    },
+    {
+      "prompt": "Fill in the right Italian number.",
+      "items": [
+        "6 = ____",
+        "12 = ____",
+        "15 = ____",
+        "17 = ____",
+        "19 = ____",
+        "20 = ____"
+      ]
+    }
+  ],
+  "answers": [
+    "Vorrei un cappuccino, per favore. — Quanto costa? — Avete l'acqua naturale? — Pago adesso. — Il conto, per favore. — Posso pagare con la carta?",
+    "due euro — tre euro e cinquanta — sette euro e venti — undici euro — quindici euro e quaranta — diciannove euro",
+    "Vorrei un caffè per favore. — Quanto costa? — Lo prendo al banco. — Avete l'acqua naturale? — Il conto per favore.",
+    "sei — dodici — quindici — diciassette — diciannove — venti"
+  ],
+  "wave": "Go back to **Unit 2** first: introduce yourself to two different people — once with *tu*, once with *Lei* — without looking at the book."
+}

@@ -1,0 +1,509 @@
+{
+  "title": "At the market",
+  "title_target": "Al mercato",
+  "goal": "Shop for groceries: give quantities, use the partitive article, and handle the conversations that really happen at a produce stall.",
+  "bekal": [
+    "ask for specific amounts using Italian measures",
+    "use *del*, *della*, *dei* for \"some\"",
+    "name everyday foods"
+  ],
+  "dialogs": [
+    {
+      "title": "Dialogo — Dal fruttivendolo",
+      "intro": "An open-air market in the morning. Budi is shopping for the week. In Italy, customers usually don't pick their own fruit — the seller does it for you.",
+      "lines": [
+        {
+          "speaker": "Venditore:",
+          "text": "Buongiorno! Mi dica, cosa Le do?",
+          "id": "Good morning! What can I get you?",
+          "literal": "good-morning! to-me say, what to-you I-give?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Buongiorno. Vorrei un chilo di pomodori, per favore.",
+          "id": "Good morning. I'd like a kilo of tomatoes, please.",
+          "literal": "good-morning. I-would-like a kilo of tomatoes, for favor."
+        },
+        {
+          "speaker": "Venditore:",
+          "text": "Per l'insalata o per il sugo?",
+          "id": "For salad or for sauce?",
+          "literal": "for the salad or for the sauce?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Per il sugo. Perché, sono diversi?",
+          "id": "For sauce. Why, are they different?",
+          "literal": "for the sauce. why, are different?"
+        },
+        {
+          "speaker": "Venditore:",
+          "text": "Certo che sono diversi! Prenda questi, sono più maturi.",
+          "id": "Of course they're different! Take these, they're riper.",
+          "literal": "certain that are different! take these, are more ripe."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Va bene. Poi mezzo chilo di mele e delle banane.",
+          "id": "OK. Then half a kilo of apples and some bananas.",
+          "literal": "goes well. then half kilo of apples and of-the bananas."
+        },
+        {
+          "speaker": "Venditore:",
+          "text": "Quante banane? Tre, quattro?",
+          "id": "How many bananas? Three, four?",
+          "literal": "how-many bananas? three, four?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Quattro. E un po' di basilico, se c'è.",
+          "id": "Four. And a little basil, if you have some.",
+          "literal": "four. and a bit of basil, if there-is."
+        },
+        {
+          "speaker": "Venditore:",
+          "text": "Il basilico glielo do io. È un regalo.",
+          "id": "The basil's on me. It's a gift.",
+          "literal": "the basil to-you-it give I. is a gift."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Che gentile! Quant'è in tutto?",
+          "id": "How kind! How much is it altogether?",
+          "literal": "what kind! how-much-is in all?"
+        },
+        {
+          "speaker": "Venditore:",
+          "text": "Sei euro e ottanta. Facciamo sei e cinquanta.",
+          "id": "Six euros eighty. Let's say six fifty.",
+          "literal": "six euro and eighty. we-make six and fifty."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Grazie! A domenica prossima!",
+          "id": "Thanks! See you next Sunday!",
+          "literal": "thanks! to sunday next!"
+        }
+      ],
+      "notes": [
+        "**Cosa Le do?** literally \"what do I give you?\" — the standard greeting of an Italian seller. You'll hear it at every stall. The informal form is *cosa ti do?*.",
+        "**Shop by measure, not by count.** *Un chilo di pomodori*, *mezzo chilo di mele*, *un etto di prosciutto*. Asking for \"five tomatoes\" might be understood, but it sounds odd.",
+        "**Un etto = 100 grams**, the most common measure for cold cuts and cheese: *due etti di prosciutto* = 200 grams. Textbooks rarely teach it, but it's used every day.",
+        "**Delle banane = some bananas.** *Di* + a plural article means \"some\". This is the partitive article, and Italian uses it where English often says \"some\" or nothing at all.",
+        "**Un po' di also means a little, but for things you can't count.** *Un po' di pane*, *un po' di acqua*, *un po' di basilico*. If you can count it, use *qualche* or *alcuni*.",
+        "**Don't touch the fruit yourself.** At traditional Italian markets and many greengrocers, picking produce with your own hands is considered rude. Just say what you want; the seller picks it, and usually picks better than you would.",
+        "**Facciamo sei e cinquanta** — the seller rounds down. This isn't haggling; market prices in Italy are fixed. The small rounding and the free basil are friendliness, not negotiation.",
+        "**Glielo do io** packs two little words together — *gli* + *lo*. This form is beyond A1; for now just recognize it. What matters: the seller is saying the basil is free."
+      ],
+      "grammars": [
+        {
+          "title": "The partitive article — some, a little",
+          "body": [
+            "It's made from *di* + the article, and it means \"an unspecified amount\"."
+          ],
+          "table": {
+            "head": [
+              "Form",
+              "Used for",
+              "Example"
+            ],
+            "rows": [
+              [
+                "**del** / **dello** / **della**",
+                "uncountable things",
+                "del pane, della carne, dell'acqua"
+              ],
+              [
+                "**dei** / **degli** / **delle**",
+                "countable things, plural",
+                "dei pomodori, delle mele"
+              ],
+              [
+                "**un po' di**",
+                "uncountable things",
+                "un po' di sale"
+              ],
+              [
+                "**qualche** + singular",
+                "countable things",
+                "qualche mela (some apples)"
+              ],
+              [
+                "**alcuni** / **alcune** + plural",
+                "countable things",
+                "alcune mele"
+              ]
+            ]
+          },
+          "after": [
+            "⚠️ *Qualche* is always followed by a **singular** noun even though the meaning is plural: *qualche amico*, not *qualche amici*. Just memorize this exception as it is.",
+            "In negative sentences the partitive is dropped: *Non ho pane* (I don't have any bread), not *non ho del pane*."
+          ]
+        },
+        {
+          "title": "Measures and containers",
+          "body": [
+            "All of them link to the noun with *di*, and here *di* does **not** merge with an article."
+          ],
+          "table": {
+            "head": [
+              "Italiano",
+              "English",
+              "Example"
+            ],
+            "rows": [
+              [
+                "un chilo di",
+                "a kilo of",
+                "un chilo di pane"
+              ],
+              [
+                "mezzo chilo di",
+                "half a kilo of",
+                "mezzo chilo di mele"
+              ],
+              [
+                "un etto di",
+                "100 grams of",
+                "due etti di formaggio"
+              ],
+              [
+                "un litro di",
+                "a liter of",
+                "un litro di latte"
+              ],
+              [
+                "una bottiglia di",
+                "a bottle of",
+                "una bottiglia di vino"
+              ],
+              [
+                "un pacco di",
+                "a pack of",
+                "un pacco di pasta"
+              ],
+              [
+                "una scatola di",
+                "a box of",
+                "una scatola di biscotti"
+              ],
+              [
+                "una fetta di",
+                "a slice of",
+                "una fetta di torta"
+              ],
+              [
+                "un pezzo di",
+                "a piece of",
+                "un pezzo di formaggio"
+              ],
+              [
+                "una decina di",
+                "about ten",
+                "una decina di uova"
+              ]
+            ]
+          },
+          "after": [
+            "Note *un chilo di pane*, not *un chilo del pane*. After a measure, the noun stands bare with no article."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Food",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "Fruit & veg",
+            "English",
+            "Other",
+            "English"
+          ],
+          "rows": [
+            [
+              "il pomodoro",
+              "tomato",
+              "il pane",
+              "bread"
+            ],
+            [
+              "la patata",
+              "potato",
+              "la pasta",
+              "pasta"
+            ],
+            [
+              "la cipolla",
+              "onion",
+              "il riso",
+              "rice"
+            ],
+            [
+              "l'aglio",
+              "garlic",
+              "il formaggio",
+              "cheese"
+            ],
+            [
+              "l'insalata",
+              "lettuce, salad",
+              "il latte",
+              "milk"
+            ],
+            [
+              "la carota",
+              "carrot",
+              "il burro",
+              "butter"
+            ],
+            [
+              "gli spinaci",
+              "spinach",
+              "l'uovo / le uova",
+              "egg"
+            ],
+            [
+              "la mela",
+              "apple",
+              "la carne",
+              "meat"
+            ],
+            [
+              "la banana",
+              "banana",
+              "il pollo",
+              "chicken"
+            ],
+            [
+              "l'arancia",
+              "orange",
+              "il pesce",
+              "fish"
+            ],
+            [
+              "l'uva",
+              "grapes",
+              "il prosciutto",
+              "ham"
+            ],
+            [
+              "la fragola",
+              "strawberry",
+              "il sale",
+              "salt"
+            ],
+            [
+              "il limone",
+              "lemon",
+              "l'olio",
+              "oil"
+            ],
+            [
+              "la pesca",
+              "peach",
+              "lo zucchero",
+              "sugar"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "*L'uovo* is the oddest word on this list: masculine in the singular, but feminine in the plural with an -a ending — *le uova*. A small group of nouns behaves this way, and eggs are the one you'll use most."
+        },
+        {
+          "type": "kotak",
+          "title": "Ready-made phrases for the shop",
+          "items": [
+            "*Vorrei un chilo di…* — I'd like a kilo of…",
+            "*Quanto costa al chilo?* — How much per kilo?",
+            "*Avete del pane fresco?* — Do you have fresh bread?",
+            "*Basta così, grazie.* — That's all, thanks.",
+            "*Quant'è in tutto?* — How much altogether?",
+            "*Posso avere un sacchetto?* — Can I have a bag?"
+          ]
+        },
+        {
+          "type": "p",
+          "text": "*Basta così* is the most common way to wrap up your shopping, and it's handy at restaurants too when you don't want anything more."
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "it": "il mercato",
+      "baca": "eel mehr-KAH-toh",
+      "en": "market"
+    },
+    {
+      "it": "il chilo",
+      "baca": "eel KEE-loh",
+      "en": "kilo"
+    },
+    {
+      "it": "l'etto",
+      "baca": "LEHT-toh",
+      "en": "100 grams"
+    },
+    {
+      "it": "il litro",
+      "baca": "eel LEE-troh",
+      "en": "liter"
+    },
+    {
+      "it": "il pomodoro",
+      "baca": "eel poh-moh-DOH-roh",
+      "en": "tomato"
+    },
+    {
+      "it": "la mela",
+      "baca": "lah MEH-lah",
+      "en": "apple"
+    },
+    {
+      "it": "il pane",
+      "baca": "eel PAH-neh",
+      "en": "bread"
+    },
+    {
+      "it": "il formaggio",
+      "baca": "eel fohr-MAHJ-joh",
+      "en": "cheese"
+    },
+    {
+      "it": "la carne",
+      "baca": "lah KAHR-neh",
+      "en": "meat"
+    },
+    {
+      "it": "il pesce",
+      "baca": "eel PEH-sheh",
+      "en": "fish"
+    },
+    {
+      "it": "l'uovo / le uova",
+      "baca": "LWOH-voh / leh WOH-vah",
+      "en": "egg / eggs"
+    },
+    {
+      "it": "il latte",
+      "baca": "eel LAHT-teh",
+      "en": "milk"
+    },
+    {
+      "it": "l'insalata",
+      "baca": "leen-sah-LAH-tah",
+      "en": "lettuce, salad"
+    },
+    {
+      "it": "il sugo",
+      "baca": "eel SOO-goh",
+      "en": "sauce"
+    },
+    {
+      "it": "fresco",
+      "baca": "FREHS-koh",
+      "en": "fresh"
+    },
+    {
+      "it": "maturo",
+      "baca": "mah-TOO-roh",
+      "en": "ripe"
+    },
+    {
+      "it": "il sacchetto",
+      "baca": "eel sahk-KEHT-toh",
+      "en": "bag"
+    },
+    {
+      "it": "la bottiglia",
+      "baca": "lah boht-TEE-lyah",
+      "en": "bottle"
+    },
+    {
+      "it": "la fetta",
+      "baca": "lah FEHT-tah",
+      "en": "slice"
+    },
+    {
+      "it": "qualche",
+      "baca": "KWAHL-keh",
+      "en": "some, a few"
+    },
+    {
+      "it": "alcuni / alcune",
+      "baca": "ahl-KOO-nee / ahl-KOO-neh",
+      "en": "some, a few"
+    },
+    {
+      "it": "diverso",
+      "baca": "dee-VEHR-soh",
+      "en": "different"
+    },
+    {
+      "it": "il regalo",
+      "baca": "eel reh-GAH-loh",
+      "en": "gift"
+    },
+    {
+      "it": "basta",
+      "baca": "BAHS-tah",
+      "en": "that's enough"
+    }
+  ],
+  "exercises": [
+    {
+      "prompt": "Fill in the partitive article: del, dello, della, dell', dei, degli, or delle.",
+      "items": [
+        "Vorrei ____ pane.",
+        "Compro ____ mele.",
+        "Ho bisogno ____ acqua.",
+        "Prendiamo ____ formaggio.",
+        "Mangio ____ spinaci.",
+        "Ci sono ____ arance sul tavolo."
+      ]
+    },
+    {
+      "prompt": "Translate into Italian.",
+      "items": [
+        "I'd like a kilo of tomatoes, please.",
+        "Half a kilo of apples.",
+        "Two hundred grams of cheese.",
+        "A bottle of milk.",
+        "How much is it altogether?",
+        "That's all, thanks."
+      ]
+    },
+    {
+      "prompt": "Fill in qualche, alcuni, alcune, or un po' di.",
+      "items": [
+        "Compro ____ mela.",
+        "Ho ____ amici italiani.",
+        "Vorrei ____ sale.",
+        "Ci sono ____ farmacie in centro.",
+        "Prendo ____ zucchero nel caffè."
+      ]
+    },
+    {
+      "prompt": "Put the words in the right order.",
+      "items": [
+        "chilo / di / vorrei / pomodori / un",
+        "tutto / in / quant'è / ?",
+        "pane / avete / fresco / del / ?",
+        "grazie / basta / così",
+        "sacchetto / posso / un / avere / ?"
+      ]
+    }
+  ],
+  "answers": [
+    "del — delle — dell' — del — degli — delle",
+    "Vorrei un chilo di pomodori, per favore. — Mezzo chilo di mele. — Due etti di formaggio. — Una bottiglia di latte. — Quant'è in tutto? — Basta così, grazie.",
+    "qualche — alcuni — un po' di — alcune — un po' di",
+    "Vorrei un chilo di pomodori. — Quant'è in tutto? — Avete del pane fresco? — Basta così, grazie. — Posso avere un sacchetto?"
+  ],
+  "wave": "Review **unit 10** first: name five places in your town and where they are, using the merged prepositions."
+}

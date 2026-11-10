@@ -1,0 +1,522 @@
+{
+  "title": "What's this?",
+  "title_target": "Was ist das?",
+  "goal": "Face the thing that makes most beginners give up: every German noun has a gender, and that gender has to be learned along with the word.",
+  "bekal": [
+    "ask what something is called (*Was ist das?*)",
+    "use *der*, *die*, *das* and *ein*, *eine*",
+    "guess a noun's gender from its ending",
+    "negate a noun with *kein* / *keine*"
+  ],
+  "dialogs": [
+    {
+      "title": "Dialogue — Im Klassenzimmer",
+      "intro": "Marek has just moved up from the beginners' class. He knows lots of words, but always trips over the little word in front of them.",
+      "lines": [
+        {
+          "speaker": "Marek:",
+          "text": "Entschuldigung, was ist das?",
+          "id": "Excuse me, what's this?",
+          "literal": "apology, what is that?"
+        },
+        {
+          "speaker": "Frau Weber:",
+          "text": "Das ist ein Wörterbuch. Das Wörterbuch ist neu.",
+          "id": "That's a dictionary. The dictionary is new.",
+          "literal": "that is a dictionary. the dictionary is new."
+        },
+        {
+          "speaker": "Marek:",
+          "text": "Und das hier? Ist das ein Heft?",
+          "id": "And this one? Is this a notebook?",
+          "literal": "and that here? is that a notebook?"
+        },
+        {
+          "speaker": "Frau Weber:",
+          "text": "Nein, das ist kein Heft. Das ist eine Zeitung.",
+          "id": "No, that's not a notebook. That's a newspaper.",
+          "literal": "no, that is no notebook. that is a newspaper."
+        },
+        {
+          "speaker": "Marek:",
+          "text": "Ach so. Die Zeitung ist sehr interessant.",
+          "id": "Oh, I see. The newspaper is very interesting.",
+          "literal": "ah so. the newspaper is very interesting."
+        },
+        {
+          "speaker": "Frau Weber:",
+          "text": "Wie heißt das auf Deutsch?",
+          "id": "What's this called in German?",
+          "literal": "how is-called that on German?"
+        },
+        {
+          "speaker": "Marek:",
+          "text": "Der Stuhl? Oder der Tisch?",
+          "id": "The chair? Or the table?",
+          "literal": "the chair? or the table?"
+        },
+        {
+          "speaker": "Frau Weber:",
+          "text": "Genau, der Stuhl. Und die Tafel ist dort.",
+          "id": "Exactly, the chair. And the board is over there.",
+          "literal": "exactly, the chair. and the board is there."
+        },
+        {
+          "speaker": "Marek:",
+          "text": "Sind das Fenster?",
+          "id": "Are those windows?",
+          "literal": "are that windows?"
+        },
+        {
+          "speaker": "Frau Weber:",
+          "text": "Ja, das sind Fenster. Und das sind die Türen.",
+          "id": "Yes, those are windows. And those are the doors.",
+          "literal": "yes, that are windows. and that are the doors."
+        },
+        {
+          "speaker": "Marek:",
+          "text": "Das ist schwer! Der, die, das — warum?",
+          "id": "This is hard! Der, die, das — why?",
+          "literal": "that is heavy! der, die, das — why?"
+        },
+        {
+          "speaker": "Frau Weber:",
+          "text": "Keine Angst. Lernen Sie das Wort und den Artikel zusammen, immer.",
+          "id": "Don't worry. Learn the word and the article together, always.",
+          "literal": "no fear. learn you the word and the article together, always."
+        }
+      ],
+      "notes": [
+        "***Das ist…* is always *das*, whatever it points to.** Look at line 2: *Das ist **ein** Wörterbuch*, then ***Das** Wörterbuch ist neu*. The first *das* means \"this/that\" and never changes; the second *das* is the article belonging to *Wörterbuch*. Two words that look the same, two different jobs.",
+        "**For plural things, *das ist* becomes *das sind*.** *Das sind Fenster* — \"those are windows\". What changes is the verb, not the *das*.",
+        "***ein* and *eine* have no plural.** *ein Stuhl* → *Stühle* (no article at all), just as English drops *a* in the plural: *a chair* → *chairs*.",
+        "***kein* = *nicht* + *ein*.** To negate a noun, don't use *nicht*: *Das ist **kein** Heft*, not *das ist nicht ein Heft*. Its form follows the noun's gender, just like *ein* — and unlike *ein*, *kein* **does** have a plural: *keine Bücher*.",
+        "***auf Deutsch*** = \"in German\". *Wie heißt das auf Deutsch?* will be the sentence you use most in your first year; learn it whole.",
+        "***Genau*** (\"exactly\") is the word you'll hear most in everyday German conversation — for confirming, agreeing, or just filling a pause. Its neighbors: *ach so* (\"oh, I see\") and *alles klar* (\"all right, got it\")."
+      ],
+      "grammars": [
+        {
+          "title": "der, die, das — and how to guess them",
+          "body": [
+            "German has three noun genders, and each has a pair of articles: one for a thing already known (*der/die/das*, like \"the\"), and one for a thing just mentioned (*ein/eine*, like \"a\")."
+          ],
+          "table": {
+            "head": [
+              "Gender",
+              "Definite",
+              "Indefinite",
+              "Negative",
+              "English"
+            ],
+            "rows": [
+              [
+                "masculine",
+                "**der** Tisch",
+                "**ein** Tisch",
+                "**kein** Tisch",
+                "table"
+              ],
+              [
+                "feminine",
+                "**die** Tür",
+                "**eine** Tür",
+                "**keine** Tür",
+                "door"
+              ],
+              [
+                "neuter",
+                "**das** Fenster",
+                "**ein** Fenster",
+                "**kein** Fenster",
+                "window"
+              ],
+              [
+                "plural",
+                "**die** Fenster",
+                "— Fenster",
+                "**keine** Fenster",
+                "windows"
+              ]
+            ]
+          },
+          "after": [
+            "The last row carries a piece of good news textbooks rarely mention: **every plural noun takes *die***, no exceptions, whatever the gender of the singular. One rule that is truly exception-free.",
+            "About 80% of nouns can be guessed from their ending. The list below doesn't cover everything, but it covers the most common ones:"
+          ],
+          "tables": [
+            {
+              "head": [
+                "Almost always der",
+                "Almost always die",
+                "Almost always das"
+              ],
+              "rows": [
+                [
+                  "-er (der Lehrer)",
+                  "-ung (die Zeitung)",
+                  "-chen (das Mädchen)"
+                ],
+                [
+                  "-ling (der Frühling)",
+                  "-heit (die Freiheit)",
+                  "-lein (das Fräulein)"
+                ],
+                [
+                  "-ismus (der Tourismus)",
+                  "-keit (die Möglichkeit)",
+                  "-ment (das Dokument)"
+                ],
+                [
+                  "days, months, seasons (der Montag)",
+                  "-schaft (die Freundschaft)",
+                  "-um (das Museum)"
+                ],
+                [
+                  "weather (der Regen, der Wind)",
+                  "-ion (die Nation)",
+                  "verbs used as nouns (das Essen)"
+                ],
+                [
+                  "compass points (der Norden)",
+                  "-e (die Lampe, die Blume)",
+                  "languages & colors (das Deutsch, das Rot)"
+                ]
+              ]
+            }
+          ]
+        },
+        {
+          "title": "Plurals: five patterns, one habit",
+          "body": [
+            "German has no single plural ending like English *-s*. There are five patterns, and no rule can predict which pattern a word takes — so the plural gets learned along with the word too."
+          ],
+          "table": {
+            "head": [
+              "Pattern",
+              "Singular",
+              "Plural",
+              "Common with"
+            ],
+            "rows": [
+              [
+                "**-e**",
+                "der Tisch",
+                "die Tisch**e**",
+                "short masculine words"
+              ],
+              [
+                "**-e + Umlaut**",
+                "der Stuhl",
+                "die St**ü**hl**e**",
+                "masculine words with a, o, u"
+              ],
+              [
+                "**-(e)n**",
+                "die Tür",
+                "die Tür**en**",
+                "almost all feminine words"
+              ],
+              [
+                "**-er + Umlaut**",
+                "das Buch",
+                "die B**ü**ch**er**",
+                "short neuter words"
+              ],
+              [
+                "**no change**",
+                "das Fenster",
+                "die Fenster",
+                "words ending in -er, -en, -chen"
+              ],
+              [
+                "**-s**",
+                "das Auto",
+                "die Auto**s**",
+                "borrowed words"
+              ]
+            ]
+          },
+          "after": [
+            "Dictionaries write it in shorthand: *der Stuhl, -\"e* means the plural is *Stühle*; *die Tür, -en* means *Türen*. Once you're used to reading those marks, one dictionary line holds everything you need to learn.",
+            "The way of learning that saves the most time: learn **three things at once** in one breath — *der Stuhl, die Stühle*. Learning the word first, the gender later and the plural later still means learning the same word three times."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Things around you",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Learn the whole row, not just the middle column. A wrong article won't stop people understanding you, but it spreads everywhere once you reach the Akkusativ and Dativ."
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "German",
+            "Plural",
+            "Pronunciation",
+            "English"
+          ],
+          "rows": [
+            [
+              "der Tisch",
+              "die Tische",
+              "tish",
+              "table"
+            ],
+            [
+              "der Stuhl",
+              "die Stühle",
+              "shtool",
+              "chair"
+            ],
+            [
+              "der Kugelschreiber",
+              "die Kugelschreiber",
+              "KOO-gel-shreye-buh",
+              "ballpoint pen"
+            ],
+            [
+              "der Computer",
+              "die Computer",
+              "kom-PYOO-tuh",
+              "computer"
+            ],
+            [
+              "der Schlüssel",
+              "die Schlüssel",
+              "SHLÜS-sel",
+              "key"
+            ],
+            [
+              "die Tür",
+              "die Türen",
+              "tür",
+              "door"
+            ],
+            [
+              "die Tafel",
+              "die Tafeln",
+              "TAH-fel",
+              "board"
+            ],
+            [
+              "die Zeitung",
+              "die Zeitungen",
+              "TSEYE-toong",
+              "newspaper"
+            ],
+            [
+              "die Lampe",
+              "die Lampen",
+              "LAHM-pe",
+              "lamp"
+            ],
+            [
+              "die Tasche",
+              "die Taschen",
+              "TAH-she",
+              "bag"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "⚠️ *Das Handy* is an English word that English speakers don't use — you'd say *cell phone* or *mobile*. German is full of words like this (*das Handy*, *der Beamer*, *das Public Viewing*); people call them *Scheinanglizismus*, \"fake English\"."
+        }
+      ]
+    },
+    {
+      "title": "Negating: kein or nicht?",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "English already has a rough version of this split: *no* or *not a* before nouns (*no time*, *not a book*), *not* everywhere else. German makes it strict."
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "What's negated",
+            "Negative word",
+            "Example",
+            "English"
+          ],
+          "rows": [
+            [
+              "a noun",
+              "**kein**",
+              "Das ist **kein** Buch.",
+              "That's not a book."
+            ],
+            [
+              "a verb",
+              "**nicht**",
+              "Ich arbeite **nicht**.",
+              "I don't work."
+            ],
+            [
+              "an adjective",
+              "**nicht**",
+              "Das ist **nicht** neu.",
+              "That's not new."
+            ],
+            [
+              "a noun with a definite article",
+              "**nicht**",
+              "Das ist **nicht** der Lehrer.",
+              "That's not the teacher."
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "Quick rule of thumb: if the noun could take *ein/eine* or stands with no article, use **kein**. If it already has *der/die/das*, *mein*, or is a person's name, use **nicht**."
+        },
+        {
+          "type": "kotak",
+          "title": "Three sentences that save a conversation",
+          "items": [
+            "*Ich weiß nicht.* — I don't know.",
+            "*Ich verstehe nicht.* — I don't understand.",
+            "*Kein Problem!* — No problem! (note: *kein*, because *Problem* is a noun)"
+          ]
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "de": "das",
+      "baca": "dahs",
+      "en": "this, that"
+    },
+    {
+      "de": "der / die / das",
+      "baca": "dair / dee / dahs",
+      "en": "the (definite articles)"
+    },
+    {
+      "de": "ein / eine",
+      "baca": "eyen / EYE-ne",
+      "en": "a, an"
+    },
+    {
+      "de": "kein / keine",
+      "baca": "keyen / KEYE-ne",
+      "en": "no, not a (for nouns)"
+    },
+    {
+      "de": "nicht",
+      "baca": "nikht",
+      "en": "not"
+    },
+    {
+      "de": "der Tisch",
+      "baca": "tish",
+      "en": "table"
+    },
+    {
+      "de": "der Stuhl",
+      "baca": "shtool",
+      "en": "chair"
+    },
+    {
+      "de": "die Tür",
+      "baca": "tür",
+      "en": "door"
+    },
+    {
+      "de": "das Fenster",
+      "baca": "FENS-tuh",
+      "en": "window"
+    },
+    {
+      "de": "das Buch",
+      "baca": "bookh",
+      "en": "book"
+    },
+    {
+      "de": "das Heft",
+      "baca": "heft",
+      "en": "notebook"
+    },
+    {
+      "de": "das Wörterbuch",
+      "baca": "VÖR-tuh-bookh",
+      "en": "dictionary"
+    },
+    {
+      "de": "die Zeitung",
+      "baca": "TSEYE-toong",
+      "en": "newspaper"
+    },
+    {
+      "de": "die Tafel",
+      "baca": "TAH-fel",
+      "en": "board"
+    },
+    {
+      "de": "die Tasche",
+      "baca": "TAH-she",
+      "en": "bag"
+    },
+    {
+      "de": "das Handy",
+      "baca": "HEN-dee",
+      "en": "cell phone"
+    },
+    {
+      "de": "das Wort",
+      "baca": "vort",
+      "en": "word"
+    },
+    {
+      "de": "neu",
+      "baca": "noy",
+      "en": "new"
+    }
+  ],
+  "exercises": [
+    {
+      "prompt": "Translate into English.",
+      "items": [
+        "Was ist das?",
+        "Das ist ein Wörterbuch.",
+        "Das ist kein Heft.",
+        "Die Zeitung ist sehr interessant.",
+        "Das sind Fenster.",
+        "Wie heißt das auf Deutsch?"
+      ]
+    },
+    {
+      "prompt": "Fill in *der*, *die* or *das*.",
+      "items": [
+        "____ Tisch ist neu.",
+        "____ Tür ist alt.",
+        "____ Fenster ist groß.",
+        "____ Zeitung ist interessant.",
+        "____ Buch ist schwer.",
+        "____ Stuhl ist hier."
+      ]
+    },
+    {
+      "prompt": "Put the words in the right order.",
+      "items": [
+        "ist / das / ein / Buch",
+        "kein / das / Heft / ist",
+        "sind / Fenster / das",
+        "neu / Wörterbuch / das / ist",
+        "auf Deutsch / heißt / wie / das",
+        "und / den Artikel / lernen Sie / zusammen / das Wort"
+      ]
+    }
+  ],
+  "answers": [
+    "What's this? — That's a dictionary. — That's not a notebook. — The newspaper is very interesting. — Those are windows. — What's this called in German?",
+    "Der — Die — Das — Die — Das — Der",
+    "Das ist ein Buch. — Das ist kein Heft. — Das sind Fenster. — Das Wörterbuch ist neu. — Wie heißt das auf Deutsch? — Lernen Sie das Wort und den Artikel zusammen."
+  ]
+}

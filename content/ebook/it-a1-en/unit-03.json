@@ -1,0 +1,479 @@
+{
+  "title": "Every thing has a gender",
+  "title_target": "Il, lo, la — che cos'è?",
+  "goal": "Tackle head-on the thing that trips up English speakers most: Italian nouns have a gender, and the article changes shape to match the first sound of the next word.",
+  "bekal": [
+    "guess a noun's gender from its ending",
+    "choose *il*, *lo*, *la*, or *l'* correctly",
+    "make a noun and its article plural at the same time"
+  ],
+  "dialogs": [
+    {
+      "title": "Dialogo — Che cos'è questo?",
+      "intro": "In the classroom. Budi points at things and asks questions. Watch the little word in front of each thing — that's what this unit is about.",
+      "lines": [
+        {
+          "speaker": "Budi:",
+          "text": "Scusa Giulia, che cos'è questo?",
+          "id": "Sorry Giulia, what's this?",
+          "literal": "sorry Giulia, what thing-is this?"
+        },
+        {
+          "speaker": "Giulia:",
+          "text": "È una penna. E quello è un libro.",
+          "id": "It's a pen. And that's a book.",
+          "literal": "is a pen. and that is a book."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Perché una penna e un libro? Non capisco.",
+          "id": "Why una penna but un libro? I don't understand.",
+          "literal": "why a pen and a book? not I-understand."
+        },
+        {
+          "speaker": "Giulia:",
+          "text": "Perché la penna è femminile e il libro è maschile.",
+          "id": "Because penna is feminine and libro is masculine.",
+          "literal": "because the pen is feminine and the book is masculine."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Anche le cose hanno un genere?",
+          "id": "Even things have a gender?",
+          "literal": "also the things they-have a gender?"
+        },
+        {
+          "speaker": "Giulia:",
+          "text": "Sì, tutte. Non c'è una ragione, è così e basta.",
+          "id": "Yes, all of them. There's no reason, it's just the way it is.",
+          "literal": "yes, all. not there-is a reason, is so and enough."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "E come faccio a saperlo?",
+          "id": "So how do I know?",
+          "literal": "and how I-do to know-it?"
+        },
+        {
+          "speaker": "Giulia:",
+          "text": "Guarda l'ultima lettera. In -o di solito è maschile, in -a femminile.",
+          "id": "Look at the last letter. Ending in -o it's usually masculine, in -a feminine.",
+          "literal": "look the last letter. in -o usually is masculine, in -a feminine."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "E lo zaino? Perché non il zaino?",
+          "id": "What about lo zaino? Why not il zaino?",
+          "literal": "and the backpack? why not the backpack?"
+        },
+        {
+          "speaker": "Giulia:",
+          "text": "Bravo, hai visto bene. Davanti a z e s+consonante si usa lo.",
+          "id": "Well spotted. Before z and s+consonant you use lo.",
+          "literal": "good, you-have seen well. in-front to z and s+consonant one uses lo."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Ah, è una questione di suono, non di significato!",
+          "id": "Ah, so it's about sound, not meaning!",
+          "literal": "ah, is a question of sound, not of meaning!"
+        },
+        {
+          "speaker": "Giulia:",
+          "text": "Esatto! Impara sempre il nome con l'articolo. Sempre.",
+          "id": "Exactly! Always learn the noun with its article. Always.",
+          "literal": "exact! learn always the noun with the article. always."
+        }
+      ],
+      "notes": [
+        "**Gender here isn't about meaning.** *Il libro* is masculine and *la penna* feminine not because books are more manly than pens. It's purely a grammatical category, inherited from Latin. Don't look for the logic; look for the pattern.",
+        "**The ending pattern covers most cases.** Nouns ending in **-o** are almost always masculine, those in **-a** almost always feminine. Those ending in **-e** can be either and have to be learned one by one — that's where the dictionary becomes your friend.",
+        "**The article's form depends on sound, not meaning.** *Il* becomes *lo* before words starting with *z*, *s* + consonant, *gn*, *ps*, *y*, and *x* — simply because *il zaino* is hard to say. It's the same reason English has *a* and *an*.",
+        "**Before a vowel everything becomes l'.** *L'amico* (masculine), *l'amica* (feminine) — same form, different gender. The difference only shows in the plural: *gli amici* vs *le amiche*.",
+        "**Che cos'è** is short for *che cosa è*. In fast speech you'll also hear just *cos'è?* or *che è?* — they all mean \"what is it?\".",
+        "**Questo and quello** = this and that. Both change for gender: *questo libro*, *questa penna*, *quel libro*, *quella penna*. The full set is unpacked in Unit 14.",
+        "**È così e basta** — \"that's just how it is, period\". A very useful, very Italian phrase. *Basta* on its own means \"enough\", and is often used by itself to stop something.",
+        "**Bravo changes too:** *bravo* for a man, *brava* for a woman, *bravi* for a group. If you're applauding a female singer, the right word is *brava*."
+      ],
+      "grammars": [
+        {
+          "title": "The definite article — \"the\"",
+          "body": [
+            "Four forms in the singular, three in the plural. What decides is not the noun's meaning but its first letter."
+          ],
+          "table": {
+            "head": [
+              "Noun begins with",
+              "Masculine singular",
+              "Masculine plural",
+              "Feminine singular",
+              "Feminine plural"
+            ],
+            "rows": [
+              [
+                "an ordinary consonant",
+                "**il** libro",
+                "**i** libri",
+                "**la** casa",
+                "**le** case"
+              ],
+              [
+                "a vowel",
+                "**l'** amico",
+                "**gli** amici",
+                "**l'** amica",
+                "**le** amiche"
+              ],
+              [
+                "z, s+consonant, gn, ps, y, x",
+                "**lo** zaino",
+                "**gli** zaini",
+                "—",
+                "—"
+              ]
+            ]
+          },
+          "after": [
+            "Feminine is much easier: only *la* and *le*, with *l'* before a vowel. All the complexity is on the masculine side.",
+            "The third row is masculine only — feminine words starting with *s*+consonant stay *la*: *la stazione*, *la strada*."
+          ]
+        },
+        {
+          "title": "The indefinite article — \"a, an\"",
+          "body": [
+            "The pattern follows the same logic, with slightly different forms."
+          ],
+          "table": {
+            "head": [
+              "Noun begins with",
+              "Masculine",
+              "Feminine"
+            ],
+            "rows": [
+              [
+                "an ordinary consonant",
+                "**un** libro",
+                "**una** penna"
+              ],
+              [
+                "a vowel",
+                "**un** amico",
+                "**un'** amica"
+              ],
+              [
+                "z, s+consonant, gn, ps",
+                "**uno** zaino",
+                "**una** studentessa"
+              ]
+            ]
+          },
+          "after": [
+            "Watch the little trap: masculine before a vowel is written *un amico* **without** an apostrophe, but feminine is written *un'amica* **with** one. That single punctuation mark is what shows the gender in writing.",
+            "*Uno* is used exactly where *lo* is used. Learn one and you automatically know the other."
+          ]
+        },
+        {
+          "title": "Making plurals",
+          "body": [
+            "Italian doesn't add -s. It **changes the last letter**."
+          ],
+          "table": {
+            "head": [
+              "Singular",
+              "Plural",
+              "Example"
+            ],
+            "rows": [
+              [
+                "-o (masculine)",
+                "-i",
+                "il libr**o** → i libr**i**"
+              ],
+              [
+                "-a (feminine)",
+                "-e",
+                "la cas**a** → le cas**e**"
+              ],
+              [
+                "-e (masc. or fem.)",
+                "-i",
+                "il fior**e** → i fior**i**; la chiav**e** → le chiav**i**"
+              ],
+              [
+                "final accent (città)",
+                "no change",
+                "la citt**à** → le citt**à**"
+              ],
+              [
+                "foreign words (bar, sport)",
+                "no change",
+                "il bar → i bar"
+              ]
+            ]
+          },
+          "after": [
+            "Because words ending in **-e** become **-i** in the plural whatever their gender, the article is the only clue left: *i fiori* is masculine, *le chiavi* feminine. Once again: learn every noun with its article."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "The exceptions that trip people up most",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "The -o/-a pattern covers maybe nine words out of ten. The rest have to be memorized, and unfortunately those are the ones you use most."
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Word",
+            "Looks like",
+            "Actually is"
+          ],
+          "rows": [
+            [
+              "il problema",
+              "feminine (-a)",
+              "**masculine**"
+            ],
+            [
+              "il programma",
+              "feminine (-a)",
+              "**masculine**"
+            ],
+            [
+              "il cinema",
+              "feminine (-a)",
+              "**masculine**"
+            ],
+            [
+              "il clima",
+              "feminine (-a)",
+              "**masculine**"
+            ],
+            [
+              "la mano",
+              "masculine (-o)",
+              "**feminine** — plural *le mani*"
+            ],
+            [
+              "la foto",
+              "masculine (-o)",
+              "**feminine** — short for *fotografia*"
+            ],
+            [
+              "la moto",
+              "masculine (-o)",
+              "**feminine** — short for *motocicletta*"
+            ],
+            [
+              "la radio",
+              "masculine (-o)",
+              "**feminine**"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "The last few words are feminine because their long forms are feminine and were shortened without changing gender. Once you know where they come from, you don't need to memorize them anymore."
+        },
+        {
+          "type": "kotak",
+          "title": "A habit that saves months",
+          "items": [
+            "Never write down *casa*. Write down *la casa*.",
+            "Never write down *zaino*. Write down *lo zaino*.",
+            "When you meet a word ending in **-e**, look up its article in the dictionary before you turn the page. Without it, you've only learned half the word.",
+            "Words ending in **-zione** and **-tà** are always feminine: *la stazione*, *la lezione*, *la città*, *la libertà*. These two endings alone rescue hundreds of words."
+          ]
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "it": "la cosa",
+      "baca": "lah KOH-zah",
+      "en": "thing"
+    },
+    {
+      "it": "il libro",
+      "baca": "eel LEE-broh",
+      "en": "book"
+    },
+    {
+      "it": "la penna",
+      "baca": "lah PEHN-nah",
+      "en": "pen"
+    },
+    {
+      "it": "lo zaino",
+      "baca": "loh DZYE-noh",
+      "en": "backpack"
+    },
+    {
+      "it": "il quaderno",
+      "baca": "eel kwah-DEHR-noh",
+      "en": "notebook"
+    },
+    {
+      "it": "il tavolo",
+      "baca": "eel TAH-voh-loh",
+      "en": "table"
+    },
+    {
+      "it": "la sedia",
+      "baca": "lah SEH-dyah",
+      "en": "chair"
+    },
+    {
+      "it": "la porta",
+      "baca": "lah POHR-tah",
+      "en": "door"
+    },
+    {
+      "it": "la finestra",
+      "baca": "lah fee-NEHS-trah",
+      "en": "window"
+    },
+    {
+      "it": "la chiave",
+      "baca": "lah KYAH-veh",
+      "en": "key"
+    },
+    {
+      "it": "il telefono",
+      "baca": "eel teh-LEH-foh-noh",
+      "en": "phone"
+    },
+    {
+      "it": "la casa",
+      "baca": "lah KAH-zah",
+      "en": "house, home"
+    },
+    {
+      "it": "la città",
+      "baca": "lah cheet-TAH",
+      "en": "city"
+    },
+    {
+      "it": "la stazione",
+      "baca": "lah stah-TSYOH-neh",
+      "en": "station"
+    },
+    {
+      "it": "la lezione",
+      "baca": "lah leh-TSYOH-neh",
+      "en": "lesson"
+    },
+    {
+      "it": "il fiore",
+      "baca": "eel FYOH-reh",
+      "en": "flower"
+    },
+    {
+      "it": "la mano",
+      "baca": "lah MAH-noh",
+      "en": "hand"
+    },
+    {
+      "it": "il problema",
+      "baca": "eel proh-BLEH-mah",
+      "en": "problem"
+    },
+    {
+      "it": "questo / questa",
+      "baca": "KWEHS-toh",
+      "en": "this"
+    },
+    {
+      "it": "quello / quella",
+      "baca": "KWEHL-loh",
+      "en": "that"
+    },
+    {
+      "it": "perché",
+      "baca": "pehr-KEH",
+      "en": "why, because"
+    },
+    {
+      "it": "guardare",
+      "baca": "gwahr-DAH-reh",
+      "en": "to look at, to watch"
+    },
+    {
+      "it": "imparare",
+      "baca": "eem-pah-RAH-reh",
+      "en": "to learn"
+    },
+    {
+      "it": "sempre",
+      "baca": "SEHM-preh",
+      "en": "always"
+    },
+    {
+      "it": "esatto",
+      "baca": "eh-ZAHT-toh",
+      "en": "exactly, right"
+    }
+  ],
+  "exercises": [
+    {
+      "prompt": "Fill in the definite article: il, lo, la, or l'.",
+      "items": [
+        "____ libro",
+        "____ zaino",
+        "____ casa",
+        "____ amico",
+        "____ studente",
+        "____ amica",
+        "____ stazione",
+        "____ problema"
+      ]
+    },
+    {
+      "prompt": "Fill in the indefinite article: un, uno, una, or un'.",
+      "items": [
+        "____ penna",
+        "____ zaino",
+        "____ amico",
+        "____ amica",
+        "____ studentessa",
+        "____ telefono"
+      ]
+    },
+    {
+      "prompt": "Make these plural, article and all.",
+      "items": [
+        "il libro",
+        "la casa",
+        "lo zaino",
+        "l'amica",
+        "la chiave",
+        "il fiore",
+        "la città",
+        "la mano"
+      ]
+    },
+    {
+      "prompt": "Translate into Italian.",
+      "items": [
+        "What's this?",
+        "That's a book.",
+        "The book is masculine.",
+        "I don't understand.",
+        "Always learn the noun with its article."
+      ]
+    }
+  ],
+  "answers": [
+    "il — lo — la — l' — lo — l' — la — il",
+    "una — uno — un — un' — una — un",
+    "i libri — le case — gli zaini — le amiche — le chiavi — i fiori — le città — le mani",
+    "Che cos'è questo? — Quello è un libro. — Il libro è maschile. — Non capisco. — Impara sempre il nome con l'articolo."
+  ],
+  "wave": "Go back to **Unit 1** first: cover the Italian column, look at the English translation, and rebuild the whole introduction dialogue from memory — out loud."
+}

@@ -1,0 +1,487 @@
+{
+  "title": "What time is it?",
+  "title_target": "Che ore sono?",
+  "goal": "Tell the time in Italian, make plans for a set time, and cope with the 24-hour clock on official timetables.",
+  "bekal": [
+    "tell the time with *sono le* and the exception *è l'una*",
+    "tell *che ore sono* (what time is it) from *a che ora* (what time does it happen)",
+    "read train and movie timetables that use the 24-hour clock"
+  ],
+  "dialogs": [
+    {
+      "title": "Dialogo — Un appuntamento",
+      "intro": "Giulia and Budi are arranging to see a movie. Notice the two different questions about time in the first and fourth lines.",
+      "lines": [
+        {
+          "speaker": "Budi:",
+          "text": "Scusa, che ore sono?",
+          "id": "Sorry, what time is it?",
+          "literal": "sorry, what hours are?"
+        },
+        {
+          "speaker": "Giulia:",
+          "text": "Sono le tre e mezza.",
+          "id": "It's half past three.",
+          "literal": "are the three and half."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Così tardi! Il film comincia presto?",
+          "id": "That late! Does the movie start early?",
+          "literal": "so late! the film begins early?"
+        },
+        {
+          "speaker": "Giulia:",
+          "text": "A che ora vuoi andare? C'è alle sei e alle otto e un quarto.",
+          "id": "What time do you want to go? There's one at six and one at a quarter past eight.",
+          "literal": "at what hour you-want to-go? there-is at-the six and at-the eight and a quarter."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Alle otto è meglio. Finisco di lavorare alle sette.",
+          "id": "Eight is better. I finish work at seven.",
+          "literal": "at-the eight is better. I-finish of to-work at-the seven."
+        },
+        {
+          "speaker": "Giulia:",
+          "text": "Perfetto. Ci vediamo alle otto meno dieci davanti al cinema.",
+          "id": "Perfect. See you at ten to eight in front of the movie theater.",
+          "literal": "perfect. us we-see at-the eight minus ten in-front to-the cinema."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Va bene. E dopo? I bar chiudono a mezzanotte?",
+          "id": "OK. And afterwards? Do the bars close at midnight?",
+          "literal": "goes well. and after? the bars they-close at midnight?"
+        },
+        {
+          "speaker": "Giulia:",
+          "text": "Alcuni sì. Ma il locale vicino chiude all'una.",
+          "id": "Some do. But the place nearby closes at one.",
+          "literal": "some yes. but the place near closes at-the one."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Ah, il biglietto dice ventidue e trenta. Che ora è?",
+          "id": "Oh, the ticket says 22:30. What time is that?",
+          "literal": "ah, the ticket says twenty-two and thirty. what hour is?"
+        },
+        {
+          "speaker": "Giulia:",
+          "text": "Le dieci e mezza di sera. Gli orari ufficiali usano le ventiquattro ore.",
+          "id": "Half past ten at night. Official timetables use the 24-hour clock.",
+          "literal": "the ten and half of evening. the timetables official they-use the twenty-four hours."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Capito. Allora a stasera, alle otto meno dieci!",
+          "id": "Got it. See you tonight then, at ten to eight!",
+          "literal": "understood. then until this-evening, at-the eight minus ten!"
+        },
+        {
+          "speaker": "Giulia:",
+          "text": "A stasera! E non fare tardi!",
+          "id": "See you tonight! And don't be late!",
+          "literal": "until this-evening! and not to-make late!"
+        }
+      ],
+      "notes": [
+        "**Sono le, not è le.** Times are plural because what's really meant is *le ore* — the hours. So the verb is plural: *sono le tre*, *sono le otto*.",
+        "**Except for three singular times.** *È l'una* (one o'clock), *è mezzogiorno* (noon), *è mezzanotte* (midnight). All three take *è*, because there's only one of each.",
+        "**Che ore sono vs a che ora.** The first asks the time now. The second asks when something happens: *A che ora comincia il film?* Mixing them up is a mistake people hear at once. *Che ora è?* is also correct and means the same as *che ore sono?*.",
+        "**Answer \"at what time\" with alle.** *Alle otto*, *all'una*, *a mezzogiorno*. Notice how *a* merges with the article — exactly the merging that's unpacked in Unit 10.",
+        "**Minutes are added with e and subtracted with meno.** *Le otto e dieci* (ten past eight), *le otto meno dieci* (ten to eight). After the half hour, Italians usually count down to the next hour.",
+        "**Le tre e mezza = half past three.** Here Italian works just like English: the hour first, then the minutes added on. (If you know some German, forget *halb vier* — Italian never counts the half toward the next hour.)",
+        "**The 24-hour clock is used on all official timetables.** Trains, planes, movie theaters, offices: *le quattordici e trenta* for 14:30. In everyday conversation people still use the 12-hour clock and add *di mattina*, *di pomeriggio*, *di sera*, *di notte*.",
+        "**Non fare tardi** = don't be late. This is the negative command, which in the informal form uses *non* + the infinitive. Commands are unpacked in Unit 16."
+      ],
+      "grammars": [
+        {
+          "title": "Telling the time",
+          "body": [
+            "One pattern for almost everything, plus three exceptions to learn."
+          ],
+          "table": {
+            "head": [
+              "Time",
+              "Italiano",
+              "Note"
+            ],
+            "rows": [
+              [
+                "1:00",
+                "**È l'una.**",
+                "singular"
+              ],
+              [
+                "12:00",
+                "**È mezzogiorno.**",
+                "singular"
+              ],
+              [
+                "0:00",
+                "**È mezzanotte.**",
+                "singular"
+              ],
+              [
+                "2:00",
+                "Sono le due.",
+                ""
+              ],
+              [
+                "3:15",
+                "Sono le tre e un quarto.",
+                "also: *e quindici*"
+              ],
+              [
+                "3:30",
+                "Sono le tre e mezza.",
+                "also: *e trenta*"
+              ],
+              [
+                "3:45",
+                "Sono le quattro meno un quarto.",
+                "also: *le tre e quarantacinque*"
+              ],
+              [
+                "7:50",
+                "Sono le otto meno dieci.",
+                "counted down"
+              ],
+              [
+                "19:20",
+                "Sono le sette e venti di sera.",
+                "everyday"
+              ],
+              [
+                "19:20",
+                "Sono le diciannove e venti.",
+                "official timetables"
+              ]
+            ]
+          },
+          "after": [
+            "The forms *e quindici*, *e trenta*, *e quarantacinque* are always safe and never wrong. If you're not yet sure of *meno* and *mezza*, just use the numbers for now."
+          ]
+        },
+        {
+          "title": "Parts of the day",
+          "body": [
+            "To make clear whether a 12-hour time is morning or night, Italians tack on the part of the day."
+          ],
+          "table": {
+            "head": [
+              "Italiano",
+              "Roughly",
+              "Example"
+            ],
+            "rows": [
+              [
+                "di mattina",
+                "5:00 - 12:00",
+                "le nove di mattina"
+              ],
+              [
+                "di pomeriggio",
+                "12:00 - 17:00",
+                "le tre di pomeriggio"
+              ],
+              [
+                "di sera",
+                "17:00 - 23:00",
+                "le nove di sera"
+              ],
+              [
+                "di notte",
+                "23:00 - 5:00",
+                "le due di notte"
+              ]
+            ]
+          },
+          "after": [
+            "The boundaries aren't fixed, and Italians themselves disagree, especially about when *pomeriggio* ends. What matters is that you get your meaning across.",
+            "Notice that *sera* stretches late, to about eleven — so \"nine at night\" is still *le nove di sera*. A dinner invitation *alle otto di sera* is an ordinary dinner, not a late one."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Time words you must have",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "Italiano",
+            "English",
+            "Example"
+          ],
+          "rows": [
+            [
+              "adesso / ora",
+              "now",
+              "Adesso studio."
+            ],
+            [
+              "oggi",
+              "today",
+              "Oggi lavoro."
+            ],
+            [
+              "stamattina",
+              "this morning",
+              "Stamattina dormo."
+            ],
+            [
+              "stasera",
+              "this evening, tonight",
+              "A stasera!"
+            ],
+            [
+              "stanotte",
+              "tonight (late), last night",
+              "Stanotte parto."
+            ],
+            [
+              "domani",
+              "tomorrow",
+              "A domani!"
+            ],
+            [
+              "dopodomani",
+              "the day after tomorrow",
+              "Dopodomani torno."
+            ],
+            [
+              "ieri",
+              "yesterday",
+              "Ieri ero a casa."
+            ],
+            [
+              "presto",
+              "early, soon",
+              "Comincia presto."
+            ],
+            [
+              "tardi",
+              "late",
+              "È tardi!"
+            ],
+            [
+              "sempre",
+              "always",
+              "Arrivo sempre tardi."
+            ],
+            [
+              "mai",
+              "never",
+              "Non arrivo mai tardi."
+            ],
+            [
+              "spesso",
+              "often",
+              "Mangio spesso fuori."
+            ],
+            [
+              "ogni giorno",
+              "every day",
+              "Studio ogni giorno."
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "Watch *mai*: it needs *non* in front of the verb. *Non arrivo mai tardi* is literally \"I don't arrive never late\". In English that double negative is \"wrong\"; in Italian it's correct and required."
+        },
+        {
+          "type": "kotak",
+          "title": "Making plans",
+          "items": [
+            "*A che ora ci vediamo?* — What time shall we meet?",
+            "*Ci vediamo alle otto.* — Let's meet at eight.",
+            "*Va bene alle sette?* — Is seven OK?",
+            "*Sono in ritardo, scusa.* — I'm late, sorry.",
+            "*Arrivo tra dieci minuti.* — I'll be there in ten minutes.",
+            "*Facciamo più tardi?* — Shall we make it later?"
+          ]
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "it": "l'ora",
+      "baca": "LOH-rah",
+      "en": "hour, time"
+    },
+    {
+      "it": "il minuto",
+      "baca": "eel mee-NOO-toh",
+      "en": "minute"
+    },
+    {
+      "it": "mezzogiorno",
+      "baca": "mehd-dzoh-JOHR-noh",
+      "en": "noon"
+    },
+    {
+      "it": "mezzanotte",
+      "baca": "mehd-dzah-NOHT-teh",
+      "en": "midnight"
+    },
+    {
+      "it": "il quarto",
+      "baca": "eel KWAHR-toh",
+      "en": "quarter"
+    },
+    {
+      "it": "mezza",
+      "baca": "MEHD-dzah",
+      "en": "half"
+    },
+    {
+      "it": "meno",
+      "baca": "MEH-noh",
+      "en": "minus, to (the hour)"
+    },
+    {
+      "it": "la mattina",
+      "baca": "lah maht-TEE-nah",
+      "en": "morning"
+    },
+    {
+      "it": "il pomeriggio",
+      "baca": "eel poh-meh-REEJ-joh",
+      "en": "afternoon"
+    },
+    {
+      "it": "la notte",
+      "baca": "lah NOHT-teh",
+      "en": "night"
+    },
+    {
+      "it": "l'appuntamento",
+      "baca": "lahp-poon-tah-MEHN-toh",
+      "en": "appointment, date"
+    },
+    {
+      "it": "il cinema",
+      "baca": "eel CHEE-neh-mah",
+      "en": "movie theater"
+    },
+    {
+      "it": "il biglietto",
+      "baca": "eel bee-LYEHT-toh",
+      "en": "ticket"
+    },
+    {
+      "it": "l'orario",
+      "baca": "loh-RAH-ryoh",
+      "en": "timetable, schedule"
+    },
+    {
+      "it": "cominciare",
+      "baca": "koh-meen-CHAH-reh",
+      "en": "to begin"
+    },
+    {
+      "it": "andare",
+      "baca": "ahn-DAH-reh",
+      "en": "to go"
+    },
+    {
+      "it": "presto",
+      "baca": "PREHS-toh",
+      "en": "early, soon"
+    },
+    {
+      "it": "in ritardo",
+      "baca": "een ree-TAHR-doh",
+      "en": "late (behind time)"
+    },
+    {
+      "it": "tra",
+      "baca": "trah",
+      "en": "in (time), between"
+    },
+    {
+      "it": "davanti a",
+      "baca": "dah-VAHN-tee ah",
+      "en": "in front of"
+    },
+    {
+      "it": "meglio",
+      "baca": "MEH-lyoh",
+      "en": "better"
+    },
+    {
+      "it": "perfetto",
+      "baca": "pehr-FEHT-toh",
+      "en": "perfect"
+    },
+    {
+      "it": "spesso",
+      "baca": "SPEHS-soh",
+      "en": "often"
+    },
+    {
+      "it": "mai",
+      "baca": "my",
+      "en": "never"
+    }
+  ],
+  "exercises": [
+    {
+      "prompt": "Write the time in Italian.",
+      "items": [
+        "2:00",
+        "1:00",
+        "12:00",
+        "5:15",
+        "9:30",
+        "10:45",
+        "18:20",
+        "0:00"
+      ]
+    },
+    {
+      "prompt": "Fill in che ore sono or a che ora.",
+      "items": [
+        "____? Sono le quattro.",
+        "____ comincia il film?",
+        "____ finisci di lavorare?",
+        "Scusi, ____?",
+        "____ ci vediamo domani?"
+      ]
+    },
+    {
+      "prompt": "Translate into Italian.",
+      "items": [
+        "What time is it?",
+        "It's half past three.",
+        "The movie starts at eight.",
+        "I finish work at seven.",
+        "Let's meet at a quarter to nine.",
+        "I'm late, sorry."
+      ]
+    },
+    {
+      "prompt": "Change these official times into everyday conversation.",
+      "items": [
+        "le quattordici",
+        "le diciotto e trenta",
+        "le venti e quindici",
+        "le ventidue",
+        "le tredici e quaranta"
+      ]
+    }
+  ],
+  "answers": [
+    "Sono le due. — È l'una. — È mezzogiorno. — Sono le cinque e un quarto. — Sono le nove e mezza. — Sono le undici meno un quarto. — Sono le sei e venti di sera. — È mezzanotte.",
+    "Che ore sono — A che ora — A che ora — che ore sono — A che ora",
+    "Che ore sono? — Sono le tre e mezza. — Il film comincia alle otto. — Finisco di lavorare alle sette. — Ci vediamo alle nove meno un quarto. — Sono in ritardo, scusa.",
+    "le due di pomeriggio — le sei e mezza di sera — le otto e un quarto di sera — le dieci di sera — l'una e quaranta di pomeriggio"
+  ],
+  "wave": "Go back to **Unit 5** first: describe your family from memory — how many brothers and sisters, how old they are, where they live."
+}

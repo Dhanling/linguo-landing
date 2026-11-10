@@ -1,0 +1,546 @@
+{
+  "title": "Where are you from?",
+  "title_target": "Woher kommst du?",
+  "goal": "Say where you come from, where you live and which languages you speak — while installing the German verb engine you'll use for the rest of the course.",
+  "bekal": [
+    "say where you come from and where you live",
+    "change the verb to match its subject (*ich wohne*, *du wohnst*)",
+    "name the languages you speak",
+    "ask questions with *wo*, *woher*, *was* and *wer*"
+  ],
+  "dialogs": [
+    {
+      "title": "Dialogue — Die erste Stunde",
+      "intro": "The first lesson begins. The teacher goes around asking where everyone is from, and the same sentence is repeated six times with different names — just like a language class anywhere.",
+      "lines": [
+        {
+          "speaker": "Frau Weber:",
+          "text": "Guten Tag. Ich bin Frau Weber. Woher kommen Sie?",
+          "id": "Hello. I'm Mrs. Weber. Where are you from?",
+          "literal": "good day. I am Mrs. Weber. where-from come you?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Ich komme aus Indonesien, aus Bandung.",
+          "id": "I'm from Indonesia, from Bandung.",
+          "literal": "I come out-of Indonesia, out-of Bandung."
+        },
+        {
+          "speaker": "Frau Weber:",
+          "text": "Und wo wohnen Sie jetzt?",
+          "id": "And where do you live now?",
+          "literal": "and where live you now?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Jetzt wohne ich in Berlin, in Kreuzberg.",
+          "id": "Now I live in Berlin, in Kreuzberg.",
+          "literal": "now live I in Berlin, in Kreuzberg."
+        },
+        {
+          "speaker": "Frau Weber:",
+          "text": "Sehr schön. Und was machen Sie hier?",
+          "id": "Very nice. And what do you do here?",
+          "literal": "very beautiful. and what make you here?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Ich studiere Informatik und ich lerne Deutsch.",
+          "id": "I study computer science and I'm learning German.",
+          "literal": "I study computer-science and I learn German."
+        },
+        {
+          "speaker": "Frau Weber:",
+          "text": "Welche Sprachen sprechen Sie?",
+          "id": "Which languages do you speak?",
+          "literal": "which languages speak you?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Ich spreche Indonesisch, Englisch und ein bisschen Deutsch.",
+          "id": "I speak Indonesian, English and a little German.",
+          "literal": "I speak Indonesian, English and a little-bit German."
+        },
+        {
+          "speaker": "Frau Weber:",
+          "text": "Sie sprechen sehr gut Deutsch!",
+          "id": "Your German is very good!",
+          "literal": "you speak very well German!"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Danke. Woher kommen Sie, Frau Weber?",
+          "id": "Thank you. Where are you from, Mrs. Weber?",
+          "literal": "thanks. where-from come you, Mrs. Weber?"
+        },
+        {
+          "speaker": "Frau Weber:",
+          "text": "Ich komme aus Österreich, aber ich lebe seit zehn Jahren hier.",
+          "id": "I'm from Austria, but I've lived here for ten years.",
+          "literal": "I come out-of Austria, but I live since ten years here."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Und wer ist das dort?",
+          "id": "And who's that over there?",
+          "literal": "and who is that there?"
+        },
+        {
+          "speaker": "Frau Weber:",
+          "text": "Das ist Marek. Er kommt aus Polen.",
+          "id": "That's Marek. He's from Poland.",
+          "literal": "that is Marek. he comes out-of Poland."
+        }
+      ],
+      "notes": [
+        "**Country names take no article.** *aus Indonesien*, *aus Polen*, *in Berlin* — just like that. A handful of countries do need one: *aus **der** Schweiz* (Switzerland), *aus **der** Türkei* (Turkey), *in **den** USA*. There are only a few, so learn the exceptions, not the rule.",
+        "***aus* for origin, *in* for where you are now.** *Ich komme **aus** Indonesien* tells where you set out from; *Ich wohne **in** Berlin* tells where you are. They can't be swapped, and beginners often crash them together into *ich wohne aus Berlin*.",
+        "**Language name = country name + ending.** *Deutschland → Deutsch*, *England → Englisch*, *Indonesien → Indonesisch*, *Spanien → Spanisch*. Capitalized, and with no article: *Ich spreche Deutsch*, not *ich spreche das Deutsch*.",
+        "**Look at line 4: *Jetzt wohne ich…*** The sentence doesn't start with *ich*. As soon as something else moves to the front (*jetzt*), the subject steps behind the verb. The verb itself doesn't budge from second place — German's most distinctive rule, taken apart fully in Unit 10.",
+        "***studieren*, not *lernen*.** *Studieren* is for studying at university (*Ich studiere Medizin*); *lernen* is for learning anything else, including languages (*Ich lerne Deutsch*). Saying *ich studiere Deutsch* means you're majoring in German literature.",
+        "***wohnen* and *leben*.** *Wohnen* points to an address — which house, which city. *Leben* points to your life as a whole, often with a span of time: *Ich lebe seit zehn Jahren hier*. Notice that German uses the present tense here, where English says \"I've lived\". When in doubt in everyday conversation, *wohnen* is almost always safe."
+      ],
+      "grammars": [
+        {
+          "title": "Regular verbs: one stem, six endings",
+          "body": [
+            "Almost every German verb works the same way: drop the **-en** from the dictionary form, then attach the ending that matches the subject. *wohnen* → stem *wohn-*:"
+          ],
+          "table": {
+            "head": [
+              "Person",
+              "wohnen (to live)",
+              "kommen (to come)",
+              "arbeiten (to work)"
+            ],
+            "rows": [
+              [
+                "ich",
+                "wohn**e**",
+                "komm**e**",
+                "arbeit**e**"
+              ],
+              [
+                "du",
+                "wohn**st**",
+                "komm**st**",
+                "arbeit**est**"
+              ],
+              [
+                "er / sie / es",
+                "wohn**t**",
+                "komm**t**",
+                "arbeit**et**"
+              ],
+              [
+                "wir",
+                "wohn**en**",
+                "komm**en**",
+                "arbeit**en**"
+              ],
+              [
+                "ihr",
+                "wohn**t**",
+                "komm**t**",
+                "arbeit**et**"
+              ],
+              [
+                "sie / Sie",
+                "wohn**en**",
+                "komm**en**",
+                "arbeit**en**"
+              ]
+            ]
+          },
+          "after": [
+            "The third column shows the only complication: if the stem ends in **-t** or **-d** (*arbeiten*, *finden*, *reden*), an **-e-** is slipped in so it can be pronounced. Try saying *arbeitst* once and you'll see why.",
+            "English only marks one person (*he lives*); German marks almost all of them, so the ending already points to the subject. But unlike Spanish or Italian, **the pronoun is still required**. There's no *wohne in Berlin* without *ich*."
+          ]
+        },
+        {
+          "title": "Asking questions: two forms, one rule",
+          "body": [
+            "A **yes/no** question puts the verb in first place. A **question-word** question puts the question word first, then the verb. In both forms, the verb is never further back than second place."
+          ],
+          "table": {
+            "head": [
+              "Question word",
+              "Meaning",
+              "Example",
+              "Example meaning"
+            ],
+            "rows": [
+              [
+                "**wer**",
+                "who",
+                "Wer ist das?",
+                "Who's that?"
+              ],
+              [
+                "**was**",
+                "what",
+                "Was machst du?",
+                "What are you doing?"
+              ],
+              [
+                "**wo**",
+                "where",
+                "Wo wohnst du?",
+                "Where do you live?"
+              ],
+              [
+                "**woher**",
+                "where from",
+                "Woher kommst du?",
+                "Where are you from?"
+              ],
+              [
+                "**wohin**",
+                "where to",
+                "Wohin gehst du?",
+                "Where are you going?"
+              ],
+              [
+                "**wie**",
+                "how",
+                "Wie heißt du?",
+                "What's your name?"
+              ],
+              [
+                "**wann**",
+                "when",
+                "Wann kommst du?",
+                "When are you coming?"
+              ],
+              [
+                "**warum**",
+                "why",
+                "Warum lernst du Deutsch?",
+                "Why are you learning German?"
+              ]
+            ]
+          },
+          "after": [
+            "⚠️ The three place words get mixed up because everyday English uses plain \"where\" for all of them. Keep them apart like this: **wo** = staying somewhere, **woher** = setting out from there (old English *whence*), **wohin** = heading there (*whither*). If you can answer with *aus…*, the question is *woher*; if the answer is *nach…*, it's *wohin*.",
+            "Notice too that German has **no question helper at all** — no *do*, no *does*. *Du wohnst hier* becomes *Wohnst du hier?* just by swapping the first two words."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Countries, people and languages",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "The first three columns are three different words, and beginners often use one for another. *Ich komme aus **Deutschland*** (the country), *er ist **Deutscher*** (the person), *ich spreche **Deutsch*** (the language)."
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Country",
+            "Person (m / f)",
+            "Language",
+            "Pronunciation (country)"
+          ],
+          "rows": [
+            [
+              "Deutschland",
+              "Deutscher / Deutsche",
+              "Deutsch",
+              "DOYCH-lahnt"
+            ],
+            [
+              "Österreich",
+              "Österreicher / -in",
+              "Deutsch",
+              "ÖS-tuh-reyekh"
+            ],
+            [
+              "die Schweiz",
+              "Schweizer / -in",
+              "Deutsch, Französisch",
+              "shveyets"
+            ],
+            [
+              "Indonesien",
+              "Indonesier / -in",
+              "Indonesisch",
+              "in-doh-NAY-zee-en"
+            ],
+            [
+              "England",
+              "Engländer / -in",
+              "Englisch",
+              "ENG-lahnt"
+            ],
+            [
+              "Frankreich",
+              "Franzose / Französin",
+              "Französisch",
+              "FRAHNK-reyekh"
+            ],
+            [
+              "Spanien",
+              "Spanier / -in",
+              "Spanisch",
+              "SHPAH-nee-en"
+            ],
+            [
+              "Italien",
+              "Italiener / -in",
+              "Italienisch",
+              "ee-TAH-lee-en"
+            ],
+            [
+              "die Türkei",
+              "Türke / Türkin",
+              "Türkisch",
+              "tür-KEYE"
+            ],
+            [
+              "Polen",
+              "Pole / Polin",
+              "Polnisch",
+              "POH-len"
+            ]
+          ]
+        },
+        {
+          "type": "sub",
+          "text": "Three sentences you'll say hundreds of times"
+        },
+        {
+          "type": "list",
+          "items": [
+            "*Ich komme aus Indonesien.* — I'm from Indonesia.",
+            "*Ich wohne in Berlin.* — I live in Berlin.",
+            "*Ich spreche Indonesisch und ein bisschen Deutsch.* — I speak Indonesian and a little German."
+          ]
+        },
+        {
+          "type": "kotak",
+          "title": "Three lifesavers in language class",
+          "items": [
+            "*Wie bitte?* — Sorry, what was that? (asking for a repeat; much more polite than *was?*)",
+            "*Können Sie das bitte wiederholen?* — Could you repeat that, please?",
+            "*Was bedeutet das?* — What does that mean?"
+          ]
+        }
+      ]
+    },
+    {
+      "title": "The verbs beginners use most",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "German",
+            "Pronunciation",
+            "English",
+            "ich / du form"
+          ],
+          "rows": [
+            [
+              "kommen",
+              "KOM-men",
+              "to come, to be from",
+              "ich komme / du kommst"
+            ],
+            [
+              "wohnen",
+              "VOH-nen",
+              "to live (have an address)",
+              "ich wohne / du wohnst"
+            ],
+            [
+              "leben",
+              "LAY-ben",
+              "to live, to be alive",
+              "ich lebe / du lebst"
+            ],
+            [
+              "lernen",
+              "LAIR-nen",
+              "to learn",
+              "ich lerne / du lernst"
+            ],
+            [
+              "studieren",
+              "shtoo-DEE-ren",
+              "to study (at university)",
+              "ich studiere / du studierst"
+            ],
+            [
+              "arbeiten",
+              "AHR-beye-ten",
+              "to work",
+              "ich arbeite / du arbeitest"
+            ],
+            [
+              "machen",
+              "MAH-khen",
+              "to make, to do",
+              "ich mache / du machst"
+            ],
+            [
+              "gehen",
+              "GAY-en",
+              "to go, to walk",
+              "ich gehe / du gehst"
+            ],
+            [
+              "kaufen",
+              "KOW-fen",
+              "to buy",
+              "ich kaufe / du kaufst"
+            ],
+            [
+              "hören",
+              "HÖH-ren",
+              "to hear",
+              "ich höre / du hörst"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "These verbs are all regular — once you've mastered one, the rest follow exactly the same pattern. The verbs that **don't** behave number about two hundred in all of German, and the ones you'll really use often are fewer than thirty. They're all in the appendix at the back of this course."
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "de": "woher",
+      "baca": "voh-HAIR",
+      "en": "where from"
+    },
+    {
+      "de": "wo",
+      "baca": "voh",
+      "en": "where"
+    },
+    {
+      "de": "wohin",
+      "baca": "voh-HIN",
+      "en": "where to"
+    },
+    {
+      "de": "wer",
+      "baca": "vair",
+      "en": "who"
+    },
+    {
+      "de": "was",
+      "baca": "vahs",
+      "en": "what"
+    },
+    {
+      "de": "wann",
+      "baca": "vahn",
+      "en": "when"
+    },
+    {
+      "de": "warum",
+      "baca": "vah-ROOM",
+      "en": "why"
+    },
+    {
+      "de": "aus",
+      "baca": "ows",
+      "en": "from (origin), out of"
+    },
+    {
+      "de": "in",
+      "baca": "in",
+      "en": "in, into"
+    },
+    {
+      "de": "jetzt",
+      "baca": "yetst",
+      "en": "now"
+    },
+    {
+      "de": "hier",
+      "baca": "heer",
+      "en": "here"
+    },
+    {
+      "de": "dort",
+      "baca": "dort",
+      "en": "there"
+    },
+    {
+      "de": "aber",
+      "baca": "AH-buh",
+      "en": "but"
+    },
+    {
+      "de": "sehr",
+      "baca": "zair",
+      "en": "very"
+    },
+    {
+      "de": "schön",
+      "baca": "shöhn",
+      "en": "beautiful, nice"
+    },
+    {
+      "de": "die Sprache",
+      "baca": "SHPRAH-khe",
+      "en": "language"
+    },
+    {
+      "de": "sprechen",
+      "baca": "SHPREH-khen",
+      "en": "to speak"
+    },
+    {
+      "de": "wohnen",
+      "baca": "VOH-nen",
+      "en": "to live (reside)"
+    }
+  ],
+  "exercises": [
+    {
+      "prompt": "Translate into English.",
+      "items": [
+        "Woher kommst du?",
+        "Ich wohne jetzt in Berlin.",
+        "Was machen Sie hier?",
+        "Er kommt aus Polen und spricht Polnisch.",
+        "Wir lernen Deutsch.",
+        "Wer ist das dort?"
+      ]
+    },
+    {
+      "prompt": "Fill in the correct verb form.",
+      "items": [
+        "Ich ____ aus Indonesien. (kommen)",
+        "Du ____ in Bandung. (wohnen)",
+        "Er ____ Informatik. (studieren)",
+        "Wir ____ Deutsch. (lernen)",
+        "Sie ____ in Berlin. (arbeiten)",
+        "Ihr ____ nichts. (machen)"
+      ]
+    },
+    {
+      "prompt": "Put the words in the right order to make a sentence or question.",
+      "items": [
+        "du / woher / kommst",
+        "aus / ich / Indonesien / komme",
+        "wohnen / wo / Sie",
+        "in / wohne / ich / Berlin / jetzt",
+        "Deutsch / wir / lernen",
+        "sprechen / Sprachen / welche / Sie"
+      ]
+    }
+  ],
+  "answers": [
+    "Where are you from? — I live in Berlin now. — What do you do here? — He's from Poland and speaks Polish. — We're learning German. — Who's that over there?",
+    "komme — wohnst — studiert — lernen — arbeitet — macht",
+    "Woher kommst du? — Ich komme aus Indonesien. — Wo wohnen Sie? — Jetzt wohne ich in Berlin. — Wir lernen Deutsch. — Welche Sprachen sprechen Sie?"
+  ]
+}

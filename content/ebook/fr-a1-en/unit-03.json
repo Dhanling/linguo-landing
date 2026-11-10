@@ -1,0 +1,521 @@
+{
+  "title": "Every noun has a gender",
+  "title_target": "Le, la, un, une — qu'est-ce que c'est ?",
+  "goal": "Understand that every French noun is masculine or feminine, choose the right article, and make nouns plural without changing their sound.",
+  "bekal": [
+    "tell *le / la / l' / les* from *un / une / des*",
+    "ask what something is with *qu'est-ce que c'est ?*",
+    "make nouns plural and recognize that the -s is silent"
+  ],
+  "wave": "Go back to **Unit 1** first: cover the French, look at the English translation, and rebuild the whole introduction dialogue from memory — out loud.",
+  "dialogs": [
+    {
+      "title": "Dialogue — Dans la salle de classe",
+      "intro": "Budi asks his teacher about the things around him.",
+      "lines": [
+        {
+          "speaker": "Budi:",
+          "text": "Madame, qu'est-ce que c'est ?",
+          "id": "Excuse me, ma'am, what's this?",
+          "literal": "madam, what is-it-that it-is?"
+        },
+        {
+          "speaker": "Prof:",
+          "text": "C'est une gomme. Une gomme, féminin.",
+          "id": "It's an eraser. Une gomme, feminine.",
+          "literal": "it-is a(fem.) eraser. an eraser, feminine."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Et ça, c'est un livre ?",
+          "id": "And that, is it a book?",
+          "literal": "and that, it-is a(masc.) book?"
+        },
+        {
+          "speaker": "Prof:",
+          "text": "Oui, c'est un livre. Masculin.",
+          "id": "Yes, it's a book. Masculine.",
+          "literal": "yes, it-is a book. masculine."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Comment on sait si c'est masculin ou féminin ?",
+          "id": "How do you know if it's masculine or feminine?",
+          "literal": "how one knows if it-is masculine or feminine?"
+        },
+        {
+          "speaker": "Prof:",
+          "text": "On ne sait pas. On apprend le mot avec l'article.",
+          "id": "You don't. You learn the word with its article.",
+          "literal": "one not knows not. one learns the word with the-article."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Toujours ? Il n'y a pas de règle ?",
+          "id": "Always? Isn't there a rule?",
+          "literal": "always? it not-there has not of rule?"
+        },
+        {
+          "speaker": "Prof:",
+          "text": "Il y a des tendances, mais beaucoup d'exceptions.",
+          "id": "There are tendencies, but lots of exceptions.",
+          "literal": "it there has some tendencies, but much of exceptions."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Donc j'apprends « une table », pas « table ».",
+          "id": "So I learn \"une table\", not \"table\".",
+          "literal": "so I-learn a table, not table."
+        },
+        {
+          "speaker": "Prof:",
+          "text": "Exactement ! C'est le secret. Bravo, Budi.",
+          "id": "Exactly! That's the secret. Well done, Budi.",
+          "literal": "exactly! it-is the secret. bravo, Budi."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Et au pluriel, on dit « les tables » ?",
+          "id": "And in the plural, you say \"les tables\"?",
+          "literal": "and in-the plural, one says the tables?"
+        },
+        {
+          "speaker": "Prof:",
+          "text": "Oui. Mais attention : le « s » ne s'entend pas.",
+          "id": "Yes. But careful: the \"s\" isn't heard.",
+          "literal": "yes. but attention: the s not itself-hears not."
+        }
+      ],
+      "notes": [
+        "**A noun's gender can't be guessed** — and the teacher is being honest. *Le soleil* (sun) is masculine, *la lune* (moon) feminine; in German it's the other way round. English gives you no help here, since English nouns have no grammatical gender at all.",
+        "**So learn every noun with its article.** Not *table* but *une table*; not *livre* but *un livre*. This habit looks trivial in Unit 3 and decides everything by Unit 15.",
+        "**Qu'est-ce que c'est ?** looks long and scary, but it is one solid chunk you learn as is: kes-kuh-SEH. It means \"what is this/that?\" for things. For people, the question is *qui est-ce ?*",
+        "**Ça** is an all-purpose pointing word meaning \"this\" or \"that\", whatever the gender. The full form is *cela*, but hardly anyone uses it in conversation.",
+        "**Il y a** = \"there is / there are\". Literally \"it there has\" — it makes no sense taken apart, so don't take it apart. The negative is *il n'y a pas de…*, and notice that the article shrinks to *de*.",
+        "**Beaucoup d'exceptions**, not *beaucoup des exceptions*. After a quantity word, the article always shrinks to *de* — and before a vowel, *de* becomes *d'*.",
+        "**The plural s is completely silent.** *La table* and *les tables* sound different not because of the s but because of the article: la (LAH) versus les (LAY). That's why French articles can never be dropped — they are the only audible sign of number."
+      ],
+      "grammars": [
+        {
+          "title": "Eight articles that hold up all of French",
+          "body": [
+            "English has \"the\" and \"a\" — French has a version of each for every gender and number. The first row points to something both speakers already know (\"the book\"), the second introduces something new (\"a book\")."
+          ],
+          "table": {
+            "head": [
+              "",
+              "Masc. singular",
+              "Fem. singular",
+              "Before a vowel / h",
+              "Plural"
+            ],
+            "rows": [
+              [
+                "Definite",
+                "**le** livre",
+                "**la** table",
+                "**l'** ami, **l'** école",
+                "**les** livres"
+              ],
+              [
+                "Indefinite",
+                "**un** livre",
+                "**une** table",
+                "**un** ami, **une** école",
+                "**des** livres"
+              ]
+            ]
+          },
+          "after": [
+            "*Le* and *la* are both cut to **l'** before a vowel or silent h — so *l'ami* and *l'amie* look and sound exactly the same. The gender only shows up in other words around them.",
+            "*Des* has no English equivalent. \"I have friends\" = *j'ai **des** amis*. Leaving it out is the most common beginner mistake.",
+            "⚠️ French nouns almost never stand alone. If you write a sentence and there's a noun with nothing in front of it, something is almost certainly wrong."
+          ]
+        },
+        {
+          "title": "Tendencies you can partly trust",
+          "body": [
+            "Not rules, just odds. Useful for guessing when you really have to, not for relying on."
+          ],
+          "table": {
+            "head": [
+              "Ending",
+              "Usually",
+              "Examples",
+              "Common exceptions"
+            ],
+            "rows": [
+              [
+                "-tion, -sion",
+                "feminine",
+                "*la nation, la maison*",
+                "—"
+              ],
+              [
+                "-té, -ité",
+                "feminine",
+                "*la liberté, la cité*",
+                "*le côté*"
+              ],
+              [
+                "-ette, -elle, -esse",
+                "feminine",
+                "*la fourchette, la vaisselle*",
+                "—"
+              ],
+              [
+                "-ance, -ence",
+                "feminine",
+                "*la chance, la science*",
+                "*le silence*"
+              ],
+              [
+                "-age",
+                "masculine",
+                "*le fromage, le village*",
+                "*la page, la plage, l'image*"
+              ],
+              [
+                "-ment",
+                "masculine",
+                "*le moment, le vêtement*",
+                "—"
+              ],
+              [
+                "-eau, -ou",
+                "masculine",
+                "*le bateau, le bijou*",
+                "*l'eau* (fem.)"
+              ],
+              [
+                "-isme, -in, -on",
+                "masculine",
+                "*le tourisme, le vin*",
+                "*la maison, la façon*"
+              ]
+            ]
+          },
+          "after": [
+            "Jobs and living beings usually have two forms: *un étudiant / une étudiante*, *un chat / une chatte*. The feminine usually just adds **-e** — and that letter makes the consonant before it heard: *étudiant* (ay-tü-DYAHN) → *étudiante* (ay-tü-DYAHNT).",
+            "Names of languages and days are always masculine: *le français*, *le lundi*. Country names follow their ending: *la France*, *le Japon*, *l'Indonésie* (feminine)."
+          ]
+        },
+        {
+          "title": "Être, now complete",
+          "body": [
+            "The last four lines held over from Unit 1. Learn them all at once — this verb appears in almost every French sentence."
+          ],
+          "table": {
+            "head": [
+              "",
+              "être",
+              "pronunciation",
+              "example"
+            ],
+            "rows": [
+              [
+                "je",
+                "suis",
+                "zhuh SWEE",
+                "*Je suis étudiant.*"
+              ],
+              [
+                "tu",
+                "es",
+                "tü EH",
+                "*Tu es français ?*"
+              ],
+              [
+                "il / elle / on",
+                "est",
+                "eel EH",
+                "*C'est une table.*"
+              ],
+              [
+                "nous",
+                "sommes",
+                "noo SOHM",
+                "*Nous sommes ici.*"
+              ],
+              [
+                "vous",
+                "êtes",
+                "voo-ZET",
+                "*Vous êtes professeur ?*"
+              ],
+              [
+                "ils / elles",
+                "sont",
+                "eel SOHN",
+                "*Ils sont amis.*"
+              ]
+            ]
+          },
+          "after": [
+            "*Elles* is used only when **everyone** being talked about is female. Add one man to the group and the whole group becomes *ils*. The same rule applies to adjectives.",
+            "Listen: *ils sont* (eel SOHN) versus *ils ont* (eel-ZOHN, from *avoir*). The only difference is one z sound, and it is the only clue. Start training your ear now."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Things around you",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Learn this table complete with the articles. Cover the first column and say them again — if you remember the word but forget its *le* or *la*, you haven't learned it yet."
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Français",
+            "Pronunciation",
+            "English"
+          ],
+          "rows": [
+            [
+              "un livre",
+              "uhn LEEVR",
+              "book"
+            ],
+            [
+              "un stylo",
+              "uhn stee-LOH",
+              "pen"
+            ],
+            [
+              "un cahier",
+              "uhn kah-YAY",
+              "notebook"
+            ],
+            [
+              "un sac",
+              "uhn SAHK",
+              "bag"
+            ],
+            [
+              "un téléphone",
+              "uhn tay-lay-FONN",
+              "phone"
+            ],
+            [
+              "un ordinateur",
+              "uh-nohr-dee-nah-TUHR",
+              "computer"
+            ],
+            [
+              "une table",
+              "ün TAHBL",
+              "table"
+            ],
+            [
+              "une chaise",
+              "ün SHEZ",
+              "chair"
+            ],
+            [
+              "une porte",
+              "ün POHRT",
+              "door"
+            ],
+            [
+              "une fenêtre",
+              "ün fuh-NETR",
+              "window"
+            ],
+            [
+              "une gomme",
+              "ün GOHM",
+              "eraser"
+            ],
+            [
+              "une feuille",
+              "ün FUHY",
+              "sheet of paper"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "Notice that meaning and gender have nothing to do with each other. Table is feminine, chair is feminine, but book and bag are masculine — and nobody can tell you why."
+        },
+        {
+          "type": "kotak",
+          "title": "Making plurals",
+          "items": [
+            "The usual rule: add an unpronounced **-s** — *un livre → des livres*.",
+            "Endings **-eau, -eu** add **-x**: *un bateau → des bateaux*, *un cheveu → des cheveux*. The x is silent too.",
+            "The ending **-al** changes to **-aux**: *un journal → des journaux*, *un animal → des animaux*. This one **can be heard** — zhoor-NAHL becomes zhoor-NOH.",
+            "Words already ending in -s, -x or -z don't change at all: *un fils → des fils*, *un prix → des prix*.",
+            "One irregular and very common one: *un œil* (eye) → *des yeux* (day ZYUH)."
+          ]
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "fr": "un article",
+      "baca": "uh-nahr-TEEKL",
+      "en": "article"
+    },
+    {
+      "fr": "masculin",
+      "baca": "mahs-kü-LAN",
+      "en": "masculine"
+    },
+    {
+      "fr": "féminin",
+      "baca": "fay-mee-NAN",
+      "en": "feminine"
+    },
+    {
+      "fr": "le pluriel",
+      "baca": "luh plü-RYEL",
+      "en": "plural"
+    },
+    {
+      "fr": "qu'est-ce que c'est ?",
+      "baca": "kes-kuh-SEH",
+      "en": "what is this/that?"
+    },
+    {
+      "fr": "ça",
+      "baca": "sah",
+      "en": "this, that"
+    },
+    {
+      "fr": "un mot",
+      "baca": "uhn MOH",
+      "en": "word"
+    },
+    {
+      "fr": "une règle",
+      "baca": "ün REGL",
+      "en": "rule"
+    },
+    {
+      "fr": "une exception",
+      "baca": "ü-nek-sep-SYOHN",
+      "en": "exception"
+    },
+    {
+      "fr": "il y a",
+      "baca": "ee-lyah",
+      "en": "there is, there are"
+    },
+    {
+      "fr": "toujours",
+      "baca": "too-ZHOOR",
+      "en": "always"
+    },
+    {
+      "fr": "donc",
+      "baca": "dohnk",
+      "en": "so, therefore"
+    },
+    {
+      "fr": "exactement",
+      "baca": "eg-zahk-tuh-MAHN",
+      "en": "exactly"
+    },
+    {
+      "fr": "un secret",
+      "baca": "uhn suh-KREH",
+      "en": "secret"
+    },
+    {
+      "fr": "attention !",
+      "baca": "ah-tahn-SYOHN",
+      "en": "careful!, watch out!"
+    },
+    {
+      "fr": "entendre",
+      "baca": "ahn-TAHNDR",
+      "en": "to hear"
+    },
+    {
+      "fr": "savoir",
+      "baca": "sah-VWAHR",
+      "en": "to know"
+    },
+    {
+      "fr": "ou",
+      "baca": "oo",
+      "en": "or"
+    },
+    {
+      "fr": "madame / monsieur",
+      "baca": "mah-DAHM / muh-SYUH",
+      "en": "madam / sir"
+    },
+    {
+      "fr": "une salle de classe",
+      "baca": "ün sahl duh KLAHS",
+      "en": "classroom"
+    },
+    {
+      "fr": "un journal",
+      "baca": "uhn zhoor-NAHL",
+      "en": "newspaper"
+    },
+    {
+      "fr": "un animal",
+      "baca": "uh-nah-nee-MAHL",
+      "en": "animal"
+    }
+  ],
+  "exercises": [
+    {
+      "prompt": "Fill in le, la or l'.",
+      "items": [
+        "____ livre",
+        "____ table",
+        "____ école",
+        "____ ordinateur",
+        "____ chaise",
+        "____ ami"
+      ]
+    },
+    {
+      "prompt": "Fill in un or une.",
+      "items": [
+        "____ stylo",
+        "____ fenêtre",
+        "____ téléphone",
+        "____ gomme",
+        "____ cahier",
+        "____ porte"
+      ]
+    },
+    {
+      "prompt": "Make these plural.",
+      "items": [
+        "un livre",
+        "une table",
+        "un journal",
+        "un bateau",
+        "le fils",
+        "l'animal"
+      ]
+    },
+    {
+      "prompt": "Translate into French.",
+      "items": [
+        "What's this?",
+        "It's a book.",
+        "There is a table and two chairs.",
+        "I learn the word with its article.",
+        "There's no rule."
+      ]
+    }
+  ],
+  "answers": [
+    "le livre — la table — l'école — l'ordinateur — la chaise — l'ami",
+    "un stylo — une fenêtre — un téléphone — une gomme — un cahier — une porte",
+    "des livres — des tables — des journaux — des bateaux — les fils — les animaux",
+    "Qu'est-ce que c'est ? — C'est un livre. — Il y a une table et deux chaises. — J'apprends le mot avec l'article. — Il n'y a pas de règle."
+  ]
+}

@@ -1,0 +1,578 @@
+{
+  "title": "Asking the way",
+  "title_target": "Wie komme ich zum Bahnhof?",
+  "goal": "Ask for and give directions — using the imperative, and choosing between *nach*, *zu* and *in* for the word \"to\".",
+  "bekal": [
+    "ask for directions politely",
+    "give directions with the imperative (*Gehen Sie…*)",
+    "choose between *nach*, *zu* and *in*",
+    "name public places in town"
+  ],
+  "dialogs": [
+    {
+      "title": "Dialogue — Entschuldigung, wo ist…?",
+      "intro": "Budi is lost in a small town near Potsdam. He stops someone on the sidewalk — and gets a typically German answer: precise, in order, and long.",
+      "lines": [
+        {
+          "speaker": "Budi:",
+          "text": "Entschuldigung, wie komme ich zum Bahnhof?",
+          "id": "Excuse me, how do I get to the station?",
+          "literal": "excuse(-me), how come I to-the station?"
+        },
+        {
+          "speaker": "Passantin:",
+          "text": "Zum Bahnhof? Gehen Sie hier geradeaus bis zur Ampel.",
+          "id": "To the station? Go straight on from here as far as the traffic lights.",
+          "literal": "to-the station? go you here straight until to-the traffic-light."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Bis zur Ampel, gut.",
+          "id": "As far as the traffic lights, OK.",
+          "literal": "until to-the traffic-light, good."
+        },
+        {
+          "speaker": "Passantin:",
+          "text": "Dann biegen Sie links ab und gehen Sie über die Brücke.",
+          "id": "Then turn left and go over the bridge.",
+          "literal": "then turn you left off and go you over the bridge."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Über die Brücke. Und dann?",
+          "id": "Over the bridge. And then?",
+          "literal": "over the bridge. and then?"
+        },
+        {
+          "speaker": "Passantin:",
+          "text": "Nach der Brücke sehen Sie rechts eine Kirche. Der Bahnhof ist direkt dahinter.",
+          "id": "After the bridge you'll see a church on the right. The station is right behind it.",
+          "literal": "after the bridge see you right a church. the station is directly behind-it."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Ist es weit?",
+          "id": "Is it far?",
+          "literal": "is it far?"
+        },
+        {
+          "speaker": "Passantin:",
+          "text": "Nein, zehn Minuten zu Fuß. Sie können auch den Bus nehmen, die Linie 6.",
+          "id": "No, ten minutes on foot. You can also take the bus, number 6.",
+          "literal": "no, ten minutes to foot. you can also the bus take, the line 6."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Wo ist die Haltestelle?",
+          "id": "Where's the bus stop?",
+          "literal": "where is the stop?"
+        },
+        {
+          "speaker": "Passantin:",
+          "text": "Gleich da drüben, vor der Apotheke.",
+          "id": "Just across the street, in front of the pharmacy.",
+          "literal": "right there opposite, in-front-of the pharmacy."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Vielen Dank! Sie sind sehr nett.",
+          "id": "Thank you so much! That's very kind of you.",
+          "literal": "many thanks! you are very kind."
+        },
+        {
+          "speaker": "Passantin:",
+          "text": "Nichts zu danken. Gute Reise!",
+          "id": "You're welcome. Have a good trip!",
+          "literal": "nothing to thank. good journey!"
+        }
+      ],
+      "notes": [
+        "***Wie komme ich zu…?*** is the standard formula for asking the way, and far more useful than *Wo ist…?* because the answer is directions, not just pointing.",
+        "**The polite imperative puts *Sie* after the verb.** *Gehen Sie…*, *Biegen Sie…*, *Nehmen Sie…*. Unlike English, the pronoun isn't dropped — and it's precisely its presence that makes the command sound polite.",
+        "***abbiegen* is a separable verb**, so the prefix still flies to the end: *Biegen Sie links **ab***. Other separable verbs you'll hear in directions: *einsteigen* (get on), *aussteigen* (get off), *umsteigen* (change, transfer).",
+        "**Line 4: *über die Brücke* takes the Akkusativ.** There's movement — you're crossing the bridge — so it isn't *über der Brücke*. Compare line 6: *nach **der** Brücke* (Dativ), because *nach* is always Dativ, no matter what.",
+        "***zum* and *zur*.** *zu dem → zum* (masculine & neuter), *zu der → zur* (feminine). *zum Bahnhof*, *zur Ampel*, *zur Apotheke*, *zum Markt*. You'll hear these contractions in almost every set of directions.",
+        "***Nichts zu danken*** (\"nothing to thank for\") is one of several ways to reply to thanks. Others: *Bitte*, *Bitte schön*, *Gern geschehen*, *Kein Problem*. The one you'll hear most is the shortest — *bitte*."
+      ],
+      "grammars": [
+        {
+          "title": "The imperative (Imperativ)",
+          "body": [
+            "There are three forms, one for each way of addressing people. The one you'll use most with strangers is the *Sie* form — and it's the easiest, because it's identical to the normal form, just with the word order flipped."
+          ],
+          "table": {
+            "head": [
+              "To",
+              "How it's formed",
+              "gehen",
+              "nehmen",
+              "sein"
+            ],
+            "rows": [
+              [
+                "**Sie**",
+                "verb + Sie",
+                "Gehen Sie!",
+                "Nehmen Sie!",
+                "Seien Sie!"
+              ],
+              [
+                "**du**",
+                "stem, no ending",
+                "Geh!",
+                "Nimm!",
+                "Sei!"
+              ],
+              [
+                "**ihr**",
+                "same as the ihr form",
+                "Geht!",
+                "Nehmt!",
+                "Seid!"
+              ]
+            ]
+          },
+          "after": [
+            "The **du** form is made by dropping *-st* from the normal *du* form: *du gehst → Geh!*, *du kommst → Komm!*, *du machst → Mach!* Verbs whose vowel changes **keep** the new vowel: *du nimmst → Nimm!*, *du sprichst → Sprich!* — but the ones with an Umlaut **lose** it: *du fährst → **Fahr**!*",
+            "*Bitte* softens any command, and with strangers it's almost obligatory: *Kommen Sie **bitte** herein!* Without *bitte*, a German imperative really does sound like an order.",
+            "To forbid something, just add *nicht*: *Geh **nicht** dorthin!* A softer version uses a modal verb: *Sie dürfen hier nicht parken.*"
+          ],
+          "tables": [
+            {
+              "head": [
+                "Commands you'll hear",
+                "Meaning"
+              ],
+              "rows": [
+                [
+                  "Gehen Sie geradeaus.",
+                  "Go straight on."
+                ],
+                [
+                  "Biegen Sie rechts ab.",
+                  "Turn right."
+                ],
+                [
+                  "Nehmen Sie die zweite Straße links.",
+                  "Take the second street on the left."
+                ],
+                [
+                  "Fahren Sie mit der U-Bahn.",
+                  "Take the subway."
+                ],
+                [
+                  "Steigen Sie am Hauptbahnhof aus.",
+                  "Get off at the main station."
+                ],
+                [
+                  "Warten Sie einen Moment, bitte.",
+                  "Wait a moment, please."
+                ],
+                [
+                  "Sprechen Sie bitte langsamer.",
+                  "Please speak more slowly."
+                ]
+              ]
+            }
+          ]
+        },
+        {
+          "title": "nach, zu or in? Three ways to say \"to\"",
+          "body": [
+            "English uses one word, \"to\", for all of these; German divides them by the kind of destination. There are only a few rules, and they don't change."
+          ],
+          "table": {
+            "head": [
+              "Preposition",
+              "Used for",
+              "Form",
+              "Example"
+            ],
+            "rows": [
+              [
+                "**nach**",
+                "cities, countries without an article, directions",
+                "+ bare name",
+                "nach Berlin, nach Hause, nach links"
+              ],
+              [
+                "**zu**",
+                "people, buildings, places as a destination",
+                "+ Dativ",
+                "zum Arzt, zur Schule, zu meiner Freundin"
+              ],
+              [
+                "**in**",
+                "going inside something",
+                "+ Akkusativ",
+                "ins Kino, in die Stadt, in den Supermarkt"
+              ],
+              [
+                "**an**",
+                "going to the edge of something",
+                "+ Akkusativ",
+                "ans Meer, an den See"
+              ],
+              [
+                "**auf**",
+                "onto / to an open place",
+                "+ Akkusativ",
+                "auf den Markt, auf die Post"
+              ]
+            ]
+          },
+          "after": [
+            "The difference between *zu* and *in* is subtle but real: *Ich gehe **zur** Schule* means heading for the school (maybe just as far as the gate), while *Ich gehe **in die** Schule* stresses going inside. In everyday speech *zu* is the safest choice.",
+            "⚠️ Countries with an article don't take *nach* but *in*: *in **die** Schweiz*, *in **die** Türkei*, *in **die** USA*. There are only a few, and you've seen them all in unit 2.",
+            "Fixed phrases to memorize: ***nach Hause*** (home, going home) and ***zu Hause*** (at home). Neither follows any rule, and both are used every day."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Places in town",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "German",
+            "Pronunciation",
+            "English",
+            "Getting there"
+          ],
+          "rows": [
+            [
+              "der Bahnhof",
+              "BAHN-hohf",
+              "train station",
+              "zum Bahnhof"
+            ],
+            [
+              "die Haltestelle",
+              "HAHL-te-shteh-le",
+              "bus/tram stop",
+              "zur Haltestelle"
+            ],
+            [
+              "der Flughafen",
+              "FLOOK-hah-fen",
+              "airport",
+              "zum Flughafen"
+            ],
+            [
+              "die Post",
+              "pohst",
+              "post office",
+              "zur Post"
+            ],
+            [
+              "die Bank",
+              "bahnk",
+              "bank",
+              "zur Bank"
+            ],
+            [
+              "die Apotheke",
+              "ah-poh-TAY-ke",
+              "pharmacy",
+              "zur Apotheke"
+            ],
+            [
+              "das Krankenhaus",
+              "KRAHN-ken-hows",
+              "hospital",
+              "zum Krankenhaus"
+            ],
+            [
+              "die Kirche",
+              "KIR-khe",
+              "church",
+              "zur Kirche"
+            ],
+            [
+              "der Markt",
+              "mahrkt",
+              "market",
+              "zum Markt"
+            ],
+            [
+              "das Rathaus",
+              "RAHT-hows",
+              "town hall",
+              "zum Rathaus"
+            ]
+          ]
+        },
+        {
+          "type": "sub",
+          "text": "Directions and distance"
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "German",
+            "Meaning",
+            "German",
+            "Meaning"
+          ],
+          "rows": [
+            [
+              "links",
+              "left",
+              "geradeaus",
+              "straight on"
+            ],
+            [
+              "rechts",
+              "right",
+              "zurück",
+              "back"
+            ],
+            [
+              "nach links",
+              "to the left",
+              "die erste Straße",
+              "the first street"
+            ],
+            [
+              "nach rechts",
+              "to the right",
+              "die Ecke",
+              "corner"
+            ],
+            [
+              "gegenüber",
+              "opposite",
+              "die Ampel",
+              "traffic lights"
+            ],
+            [
+              "weit",
+              "far",
+              "die Kreuzung",
+              "intersection"
+            ],
+            [
+              "in der Nähe",
+              "nearby",
+              "die Brücke",
+              "bridge"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "Lifesavers if you're truly lost: ***Ich habe mich verlaufen*** (\"I'm lost\", on foot) or ***Ich suche diese Adresse*** while showing your phone screen. The second one works even if you don't catch a single word of the answer."
+        }
+      ]
+    },
+    {
+      "title": "Public transportation",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "German",
+            "English",
+            "Example"
+          ],
+          "rows": [
+            [
+              "der Bus",
+              "bus",
+              "Ich fahre mit dem Bus."
+            ],
+            [
+              "die U-Bahn",
+              "subway",
+              "Nehmen Sie die U-Bahn."
+            ],
+            [
+              "die S-Bahn",
+              "city train",
+              "Die S-Bahn fährt alle 10 Minuten."
+            ],
+            [
+              "die Straßenbahn",
+              "streetcar, tram",
+              "Die Straßenbahn hält hier."
+            ],
+            [
+              "der Zug",
+              "intercity train",
+              "Der Zug kommt um acht an."
+            ],
+            [
+              "das Ticket / die Fahrkarte",
+              "ticket",
+              "Ich brauche eine Fahrkarte."
+            ],
+            [
+              "einsteigen / aussteigen",
+              "get on / get off",
+              "Steigen Sie hier aus."
+            ],
+            [
+              "umsteigen",
+              "change, transfer",
+              "Sie müssen am Hauptbahnhof umsteigen."
+            ],
+            [
+              "die Linie",
+              "line",
+              "Nehmen Sie die Linie 6."
+            ]
+          ]
+        },
+        {
+          "type": "kotak",
+          "title": "Three sentences that get you anywhere",
+          "items": [
+            "*Entschuldigung, wie komme ich zum/zur …?* — Excuse me, how do I get to …?",
+            "*Ist das weit von hier?* — Is it far from here?",
+            "*Welche Linie fährt zum Bahnhof?* — Which line goes to the station?"
+          ]
+        },
+        {
+          "type": "p",
+          "text": "⚠️ In many places you have to **validate** your city transit ticket yourself in a small machine before boarding (*entwerten*). An unvalidated ticket counts as invalid, and the fine is sixty euros — no matter how polite your German is."
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "de": "der Weg",
+      "baca": "vayk",
+      "en": "way, route"
+    },
+    {
+      "de": "geradeaus",
+      "baca": "ge-RAH-de-ows",
+      "en": "straight on"
+    },
+    {
+      "de": "links / rechts",
+      "baca": "links / rehkhts",
+      "en": "left / right"
+    },
+    {
+      "de": "abbiegen",
+      "baca": "AHP-bee-gen",
+      "en": "turn (off)"
+    },
+    {
+      "de": "die Ampel",
+      "baca": "AHM-pel",
+      "en": "traffic lights"
+    },
+    {
+      "de": "die Kreuzung",
+      "baca": "KROY-tsoong",
+      "en": "intersection"
+    },
+    {
+      "de": "die Ecke",
+      "baca": "EH-ke",
+      "en": "corner"
+    },
+    {
+      "de": "die Brücke",
+      "baca": "BRÜ-ke",
+      "en": "bridge"
+    },
+    {
+      "de": "der Bahnhof",
+      "baca": "BAHN-hohf",
+      "en": "train station"
+    },
+    {
+      "de": "die Haltestelle",
+      "baca": "HAHL-te-shteh-le",
+      "en": "bus/tram stop"
+    },
+    {
+      "de": "die Apotheke",
+      "baca": "ah-poh-TAY-ke",
+      "en": "pharmacy"
+    },
+    {
+      "de": "die Kirche",
+      "baca": "KIR-khe",
+      "en": "church"
+    },
+    {
+      "de": "die Stadt",
+      "baca": "shtaht",
+      "en": "town, city"
+    },
+    {
+      "de": "die U-Bahn",
+      "baca": "OO-bahn",
+      "en": "subway"
+    },
+    {
+      "de": "die Fahrkarte",
+      "baca": "FAHR-kahr-te",
+      "en": "ticket"
+    },
+    {
+      "de": "einsteigen",
+      "baca": "EYEN-shteye-gen",
+      "en": "get on (a vehicle)"
+    },
+    {
+      "de": "aussteigen",
+      "baca": "OWS-shteye-gen",
+      "en": "get off"
+    },
+    {
+      "de": "umsteigen",
+      "baca": "OOM-shteye-gen",
+      "en": "change, transfer"
+    }
+  ],
+  "exercises": [
+    {
+      "prompt": "Translate into English.",
+      "items": [
+        "Entschuldigung, wie komme ich zum Bahnhof?",
+        "Gehen Sie geradeaus bis zur Ampel.",
+        "Dann biegen Sie links ab.",
+        "Ist es weit?",
+        "Wo ist die Haltestelle?",
+        "Sie können auch den Bus nehmen."
+      ]
+    },
+    {
+      "prompt": "Fill in *nach*, *zum*, *zur* or *in*.",
+      "items": [
+        "Ich fahre ____ Berlin.",
+        "Wie komme ich ____ Bahnhof?",
+        "Ich gehe ____ Apotheke.",
+        "Wir gehen ____ die Stadt.",
+        "Ich fahre jetzt ____ Hause.",
+        "Sie geht ____ Arzt."
+      ]
+    },
+    {
+      "prompt": "Put the words in the right order to make a command.",
+      "items": [
+        "Sie / geradeaus / gehen",
+        "ab / Sie / rechts / biegen",
+        "Sie / den Bus / nehmen",
+        "aus / am Bahnhof / Sie / steigen",
+        "bitte / Sie / langsamer / sprechen",
+        "einen Moment / Sie / warten / bitte"
+      ]
+    }
+  ],
+  "answers": [
+    "Excuse me, how do I get to the station? — Go straight on as far as the traffic lights. — Then turn left. — Is it far? — Where's the bus stop? — You can also take the bus.",
+    "nach — zum — zur — in — nach — zum",
+    "Gehen Sie geradeaus. — Biegen Sie rechts ab. — Nehmen Sie den Bus. — Steigen Sie am Bahnhof aus. — Sprechen Sie bitte langsamer. — Warten Sie bitte einen Moment."
+  ],
+  "wave": "Before you start unit 15, go back to the dialogue in **Unit 7**. Check every article: which ones are Akkusativ, and why?"
+}

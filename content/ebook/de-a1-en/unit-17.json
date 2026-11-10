@@ -1,0 +1,519 @@
+{
+  "title": "What did you do yesterday?",
+  "title_target": "Was hast du gestern gemacht?",
+  "goal": "Talk about things that have happened using the *Perfekt* — the only past tense Germans use in everyday conversation.",
+  "bekal": [
+    "form the Partizip II of regular and irregular verbs",
+    "build past-tense sentences with *haben* + Partizip II",
+    "ask about the past",
+    "tell people about your own weekend"
+  ],
+  "dialogs": [
+    {
+      "title": "Dialogue — Montagmorgen",
+      "intro": "Monday morning in class. Frau Weber's first question is always the same, and the answers always have the same shape: *haben* in second position, the main verb at the end.",
+      "lines": [
+        {
+          "speaker": "Frau Weber:",
+          "text": "Guten Morgen! Was haben Sie am Wochenende gemacht?",
+          "id": "Good morning! What did you do at the weekend?",
+          "literal": "good morning! what have you at-the weekend made?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Ich habe am Samstag Fußball gespielt.",
+          "id": "On Saturday I played soccer.",
+          "literal": "I have on Saturday soccer played."
+        },
+        {
+          "speaker": "Frau Weber:",
+          "text": "Schön! Und danach?",
+          "id": "Nice! And after that?",
+          "literal": "nice! and after-that?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Danach habe ich geduscht und ein bisschen geschlafen.",
+          "id": "After that I took a shower and slept a bit.",
+          "literal": "after-that have I showered and a bit slept."
+        },
+        {
+          "speaker": "Marek:",
+          "text": "Ich habe am Samstag gearbeitet. Zwölf Stunden!",
+          "id": "I worked on Saturday. Twelve hours!",
+          "literal": "I have on Saturday worked. twelve hours!"
+        },
+        {
+          "speaker": "Frau Weber:",
+          "text": "Zwölf Stunden? Haben Sie wenigstens gut gegessen?",
+          "id": "Twelve hours? Did you at least eat well?",
+          "literal": "twelve hours? have you at-least well eaten?"
+        },
+        {
+          "speaker": "Marek:",
+          "text": "Nein. Ich habe nur einen Kaffee getrunken.",
+          "id": "No. I only had a coffee.",
+          "literal": "no. I have only a coffee drunk."
+        },
+        {
+          "speaker": "Lena:",
+          "text": "Ich habe das ganze Wochenende gelesen. Zwei Bücher!",
+          "id": "I read all weekend. Two books!",
+          "literal": "I have the whole weekend read. two books!"
+        },
+        {
+          "speaker": "Frau Weber:",
+          "text": "Zwei Bücher! Und was haben Sie am Sonntag gemacht, Budi?",
+          "id": "Two books! And what did you do on Sunday, Budi?",
+          "literal": "two books! and what have you on Sunday made, Budi?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Ich habe meinen Onkel besucht und wir haben zusammen gekocht.",
+          "id": "I visited my uncle and we cooked together.",
+          "literal": "I have my uncle visited and we have together cooked."
+        },
+        {
+          "speaker": "Frau Weber:",
+          "text": "Und haben Sie auch Deutsch gelernt?",
+          "id": "And did you study German as well?",
+          "literal": "and have you also German learned?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Ähm… Ich habe die Hausaufgaben vergessen. Tut mir leid!",
+          "id": "Um… I forgot the homework. Sorry!",
+          "literal": "um… I have the homework forgotten. makes me sorry!"
+        }
+      ],
+      "notes": [
+        "**Perfekt = *haben* in second position + Partizip II at the end.** A German past-tense sentence is always a bracket, exactly like the modal-verb sentences in unit 11: *Ich **habe** am Samstag Fußball **gespielt**.* Only *haben* changes form; the Partizip II never changes at all.",
+        "**Unlike English, spoken German hardly uses the simple past.** There is a *Präteritum* (*ich spielte*, *ich machte*), but that's written language — newspapers, novels, fairy tales. When you tell a story out loud, use the *Perfekt*, always. So *Ich habe gespielt* covers both \"I played\" and \"I have played\".",
+        "**Two exceptions you'll use every day:** *sein* and *haben* appear more often in their Präteritum form, ***war*** and ***hatte***. *Ich **war** gestern zu Hause* sounds far more natural than *ich bin gewesen*, and *Ich **hatte** keine Zeit* is more common than *ich habe gehabt*.",
+        "**Line 4: *Danach habe ich geduscht*.** The sentence starts with an adverb, so *haben* stays in second position and the subject moves behind it. Every word-order rule you've put in place still applies — the Perfekt adds no new rules, it just fills the end of the sentence.",
+        "**Perfekt questions put *haben* first:** *Haben Sie gut gegessen?*, *Was hast du gemacht?* The Partizip II stays at the end, whatever happens at the front.",
+        "***besucht*** and ***vergessen*** (lines 10 and 12) don't take *ge-*. Verbs beginning with *be-*, *ver-*, *er-*, *ent-* never get it — their past form is the same as, or almost the same as, the basic form."
+      ],
+      "grammars": [
+        {
+          "title": "Forming the Partizip II",
+          "body": [
+            "The Partizip II is a frozen form of the verb — it never changes with the subject. There are four patterns, and which one applies depends on the type of verb."
+          ],
+          "table": {
+            "head": [
+              "Type",
+              "Pattern",
+              "Example",
+              "Partizip II"
+            ],
+            "rows": [
+              [
+                "regular",
+                "**ge-** + akar + **-t**",
+                "machen, spielen, kaufen",
+                "**ge**mach**t**, **ge**spiel**t**, **ge**kauf**t**"
+              ],
+              [
+                "regular, stem ends in -t/-d",
+                "ge- + akar + **-et**",
+                "arbeiten, warten",
+                "**ge**arbeit**et**, **ge**wart**et**"
+              ],
+              [
+                "irregular",
+                "**ge-** + changed stem + **-en**",
+                "trinken, essen, lesen",
+                "**ge**trunk**en**, **ge**gess**en**, **ge**les**en**"
+              ],
+              [
+                "inseparable prefix",
+                "**no ge-**",
+                "besuchen, verstehen, bezahlen",
+                "besuch**t**, verstand**en**, bezahl**t**"
+              ],
+              [
+                "ending in -ieren",
+                "**no ge-**",
+                "studieren, telefonieren",
+                "studier**t**, telefonier**t**"
+              ],
+              [
+                "separable verbs",
+                "prefix + **ge** + the rest",
+                "einkaufen, anrufen, aufräumen",
+                "ein**ge**kauft, an**ge**rufen, auf**ge**räumt"
+              ]
+            ]
+          },
+          "after": [
+            "The last row is the most distinctive: *ge-* is slipped **into the middle** of the word, right between the prefix and the verb. *Ich habe gestern **eingekauft**.* It looks odd, but once you see the separable verb joining back together at the end of the sentence, the position of *ge-* makes sense.",
+            "⚠️ There's no way to guess whether a verb is regular or not — just like English (*walk → walked* but *drink → drunk*). There are about two hundred irregular verbs, and fewer than fifty are really common. The appendix at the back of this book lists all the ones that appear here.",
+            "The most efficient way to memorize: learn each one **together with its helper verb** in one breath — *trinken, hat getrunken*. Learning a Partizip II without its *hat* or *ist* means learning half the information."
+          ]
+        },
+        {
+          "title": "Past-tense word order",
+          "body": [
+            "Same as with modal verbs: two poles, with the rest of the sentence in between."
+          ],
+          "table": {
+            "head": [
+              "Position 1",
+              "haben",
+              "Middle",
+              "End"
+            ],
+            "rows": [
+              [
+                "Ich",
+                "**habe**",
+                "gestern Fußball",
+                "**gespielt**."
+              ],
+              [
+                "Gestern",
+                "**habe**",
+                "ich Fußball",
+                "**gespielt**."
+              ],
+              [
+                "**Hast**",
+                "",
+                "du die Hausaufgaben",
+                "**gemacht**?"
+              ],
+              [
+                "Was",
+                "**hast**",
+                "du am Wochenende",
+                "**gemacht**?"
+              ],
+              [
+                "Wir",
+                "**haben**",
+                "zusammen",
+                "**gekocht**."
+              ],
+              [
+                "Ich",
+                "**habe**",
+                "nichts",
+                "**verstanden**."
+              ]
+            ]
+          },
+          "after": [
+            "The form of *haben* follows the subject as usual: *ich habe*, *du hast*, *er hat*, *wir haben*, *ihr habt*, *sie/Sie haben*. If you know the table from unit 4, you've already mastered half of the Perfekt.",
+            "**Where *nicht* goes:** right before the Partizip II. *Ich habe das **nicht** verstanden.* Same rule as with modal verbs — *nicht* always leans on the verb part at the end."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "The thirty most common Partizip II forms",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "All the verbs in this table use *haben*. The ones that use *sein* are collected in the next unit — don't mix the two yet."
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Infinitiv",
+            "Partizip II",
+            "Meaning",
+            "Infinitiv",
+            "Partizip II",
+            "Meaning"
+          ],
+          "rows": [
+            [
+              "machen",
+              "gemacht",
+              "do, make",
+              "trinken",
+              "getrunken",
+              "drink"
+            ],
+            [
+              "spielen",
+              "gespielt",
+              "play",
+              "essen",
+              "gegessen",
+              "eat"
+            ],
+            [
+              "kaufen",
+              "gekauft",
+              "buy",
+              "lesen",
+              "gelesen",
+              "read"
+            ],
+            [
+              "lernen",
+              "gelernt",
+              "learn, study",
+              "sehen",
+              "gesehen",
+              "see"
+            ],
+            [
+              "kochen",
+              "gekocht",
+              "cook",
+              "sprechen",
+              "gesprochen",
+              "speak"
+            ],
+            [
+              "hören",
+              "gehört",
+              "hear",
+              "schreiben",
+              "geschrieben",
+              "write"
+            ],
+            [
+              "duschen",
+              "geduscht",
+              "shower",
+              "nehmen",
+              "genommen",
+              "take"
+            ],
+            [
+              "arbeiten",
+              "gearbeitet",
+              "work",
+              "schlafen",
+              "geschlafen",
+              "sleep"
+            ],
+            [
+              "warten",
+              "gewartet",
+              "wait",
+              "finden",
+              "gefunden",
+              "find"
+            ],
+            [
+              "suchen",
+              "gesucht",
+              "look for",
+              "helfen",
+              "geholfen",
+              "help"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "Notice *vergessen*: its Partizip II is **exactly the same** as its basic form. A few other verbs behave this way — *bekommen*, *beginnen* — and it always happens with irregular verbs that have an inseparable prefix."
+        }
+      ]
+    },
+    {
+      "title": "Talking about yesterday",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "German",
+            "English"
+          ],
+          "rows": [
+            [
+              "Was hast du gestern gemacht?",
+              "What did you do yesterday?"
+            ],
+            [
+              "Was haben Sie am Wochenende gemacht?",
+              "What did you do at the weekend?"
+            ],
+            [
+              "Ich habe gearbeitet.",
+              "I worked."
+            ],
+            [
+              "Ich habe nichts gemacht.",
+              "I didn't do anything."
+            ],
+            [
+              "Ich war zu Hause.",
+              "I was at home."
+            ],
+            [
+              "Ich hatte keine Zeit.",
+              "I didn't have time."
+            ],
+            [
+              "Es hat viel Spaß gemacht!",
+              "It was great fun!"
+            ],
+            [
+              "Wie war dein Wochenende?",
+              "How was your weekend?"
+            ],
+            [
+              "Es war sehr schön.",
+              "It was really nice."
+            ]
+          ]
+        },
+        {
+          "type": "kotak",
+          "title": "Words that move a story along",
+          "items": [
+            "**zuerst** — first. *Zuerst habe ich gefrühstückt.*",
+            "**dann / danach** — then, after that. *Dann habe ich eingekauft.*",
+            "**später** — later. *Später habe ich Freunde getroffen.*",
+            "**am Ende / zum Schluss** — in the end, finally. *Zum Schluss habe ich ferngesehen.*"
+          ]
+        },
+        {
+          "type": "p",
+          "text": "Those four words turn a list of sentences into a story. And because they all stand in position one, they all push the subject behind *haben* — word-order practice that comes free with your past-tense practice."
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "de": "gestern",
+      "baca": "GEHS-tuhn",
+      "en": "yesterday"
+    },
+    {
+      "de": "vorgestern",
+      "baca": "FOH-uh-gehs-tuhn",
+      "en": "the day before yesterday"
+    },
+    {
+      "de": "letzte Woche",
+      "baca": "LEHTS-te VOH-khe",
+      "en": "last week"
+    },
+    {
+      "de": "danach",
+      "baca": "dah-NAHKH",
+      "en": "after that, afterwards"
+    },
+    {
+      "de": "zuerst",
+      "baca": "tsoo-AYRST",
+      "en": "first, at first"
+    },
+    {
+      "de": "später",
+      "baca": "SHPAY-tuh",
+      "en": "later"
+    },
+    {
+      "de": "gemacht",
+      "baca": "ge-MAHKHT",
+      "en": "done, made"
+    },
+    {
+      "de": "gespielt",
+      "baca": "ge-SHPEELT",
+      "en": "played"
+    },
+    {
+      "de": "gegessen",
+      "baca": "ge-GEH-sen",
+      "en": "eaten"
+    },
+    {
+      "de": "getrunken",
+      "baca": "ge-TROON-ken",
+      "en": "drunk"
+    },
+    {
+      "de": "gelesen",
+      "baca": "ge-LAY-zen",
+      "en": "read"
+    },
+    {
+      "de": "geschlafen",
+      "baca": "ge-SHLAH-fen",
+      "en": "slept"
+    },
+    {
+      "de": "gearbeitet",
+      "baca": "ge-AHR-beye-tet",
+      "en": "worked"
+    },
+    {
+      "de": "besucht",
+      "baca": "be-ZOOKHT",
+      "en": "visited"
+    },
+    {
+      "de": "vergessen",
+      "baca": "fuh-GEH-sen",
+      "en": "forget; forgotten"
+    },
+    {
+      "de": "verstanden",
+      "baca": "fuh-SHTAHN-den",
+      "en": "understood"
+    },
+    {
+      "de": "geschrieben",
+      "baca": "ge-SHREE-ben",
+      "en": "written"
+    },
+    {
+      "de": "getroffen",
+      "baca": "ge-TROH-fen",
+      "en": "met"
+    }
+  ],
+  "exercises": [
+    {
+      "prompt": "Translate into English.",
+      "items": [
+        "Was hast du gestern gemacht?",
+        "Ich habe am Samstag Fußball gespielt.",
+        "Ich habe nur einen Kaffee getrunken.",
+        "Wir haben zusammen gekocht.",
+        "Ich habe die Hausaufgaben vergessen.",
+        "Es hat viel Spaß gemacht."
+      ]
+    },
+    {
+      "prompt": "Fill in the right Partizip II.",
+      "items": [
+        "Ich habe Fußball ____. (spielen)",
+        "Er hat einen Kaffee ____. (trinken)",
+        "Wir haben zusammen ____. (kochen)",
+        "Sie hat zwei Bücher ____. (lesen)",
+        "Ich habe zwölf Stunden ____. (arbeiten)",
+        "Hast du deinen Onkel ____? (besuchen)"
+      ]
+    },
+    {
+      "prompt": "Put the words in the right order to make a past-tense sentence.",
+      "items": [
+        "gemacht / du / hast / was / gestern",
+        "gespielt / ich / Fußball / habe",
+        "habe / ich / danach / geschlafen",
+        "gekocht / wir / zusammen / haben",
+        "vergessen / die Hausaufgaben / ich / habe",
+        "gearbeitet / am Samstag / er / hat"
+      ]
+    }
+  ],
+  "answers": [
+    "What did you do yesterday? — On Saturday I played soccer. — I only had a coffee. — We cooked together. — I forgot the homework. — It was great fun.",
+    "gespielt — getrunken — gekocht — gelesen — gearbeitet — besucht",
+    "Was hast du gestern gemacht? — Ich habe Fußball gespielt. — Danach habe ich geschlafen. — Wir haben zusammen gekocht. — Ich habe die Hausaufgaben vergessen. — Am Samstag hat er gearbeitet."
+  ],
+  "wave": "Before you start unit 18, go back to the dialogue in **Unit 10**. Check just one thing: how many elements come before the verb in each sentence?"
+}
