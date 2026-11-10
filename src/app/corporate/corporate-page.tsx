@@ -86,6 +86,8 @@ const CLIENTS = [
   { name: "Bitget", img: "/images/clients/bitget.png" },
   { name: "CIMSA", img: "/images/clients/cimsa.png" },
   { name: "Dexa Medica", img: "/images/clients/dexa-medica.png" },
+  { name: "Alfamart", img: "/images/clients/alfamart.png" },
+  { name: "Dua Kelinci", img: "/images/clients/dua-kelinci-v2.png" },
 ];
 
 const STEPS = [
@@ -137,21 +139,25 @@ export default function CorporatePage() {
   const wizardSteps = useMemo(() => {
     const st: { key: string; label: string }[] = [
       { key: "service", label: "Layanan" },
-      { key: "company", label: "Perusahaan" },
     ];
+    // Bahasa di langkah sendiri supaya langkah Layanan tak terlalu ramai.
+    // Simulasi saja → selalu bahasa Inggris, langkah ini dilewati.
+    if (!simOnly) st.push({ key: "lang", label: "Bahasa" });
+    st.push({ key: "company", label: "Perusahaan" });
     if (hasTraining || form.services.length === 0) st.push({ key: "training", label: "Kebutuhan" });
     if (hasInterpreting) st.push({ key: "event", label: "Detail Acara" });
     if (hasTranslation) st.push({ key: "doc", label: "Dokumen" });
     if (hasSimulation) st.push({ key: "sim", label: "Simulasi Tes" });
     st.push({ key: "pic", label: "PIC & Kirim" });
     return st;
-  }, [hasTraining, hasInterpreting, hasTranslation, hasSimulation, form.services.length]);
+  }, [hasTraining, hasInterpreting, hasTranslation, hasSimulation, simOnly, form.services.length]);
   // Daftar langkah bisa menyusut saat pilihan layanan diubah → jaga indeksnya.
   const stepIdx = Math.min(step, wizardSteps.length - 1);
   const cur = wizardSteps[stepIdx].key;
   const isLast = stepIdx === wizardSteps.length - 1;
   const canNext =
-    cur === "service" ? form.services.length > 0 && (form.languages.length > 0 || simOnly)
+    cur === "service" ? form.services.length > 0
+    : cur === "lang" ? form.languages.length > 0 || simOnly
     : cur === "company" ? !!form.company_name && !!form.industry
     : true;
 
@@ -237,12 +243,12 @@ export default function CorporatePage() {
     setSaving(false);
   };
 
-  const fade = { initial: { opacity: 0, y: 20 }, whileInView: { opacity: 1, y: 0 }, viewport: { once: true } };
+  const fade = { initial: { opacity: 0, y: 20 }, whileInView: { opacity: 1, y: 0 }, viewport: { once: true, margin: "0px 0px -40px 0px" } };
 
   return (
     <div className="min-h-screen bg-white" style={{ fontFamily: "'Plus Jakarta Sans', sans-serif" }}>
       {/* HEADER */}
-      <header className="sticky top-[var(--promo-bar-h,0px)] z-50 bg-white/80 backdrop-blur-xl border-b border-slate-100">
+      <header className="sticky top-[var(--promo-bar-h,0px)] z-50 bg-white/95 border-b border-slate-100">
         <div className="max-w-6xl mx-auto px-4 h-16 flex items-center justify-between">
           <Link href="/" className="flex items-center gap-2 text-slate-800 hover:text-teal-600 transition-colors">
             <Image src="/images/logo-white.png" alt="Linguo" width={90} height={32} priority className="h-8 w-auto brightness-0" />
@@ -286,8 +292,10 @@ export default function CorporatePage() {
         <p className="text-center text-xs font-semibold text-slate-400 uppercase tracking-widest mb-6">Dipercaya oleh perusahaan & institusi terkemuka</p>
         <div className="flex items-center justify-center flex-wrap gap-8 sm:gap-12 px-6 max-w-5xl mx-auto">
           {CLIENTS.map((c, i) => (
-            <motion.img key={i} src={c.img} alt={c.name} className="h-8 sm:h-10 object-contain grayscale opacity-60 hover:grayscale-0 hover:opacity-100 transition-all"
-              {...fade} transition={{ delay: i * 0.05 }} />
+            <motion.div key={i} {...fade} transition={{ delay: i * 0.05 }}>
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img src={c.img} alt={c.name} className="h-8 sm:h-10 w-auto max-w-[120px] sm:max-w-[160px] object-contain grayscale opacity-60 hover:grayscale-0 hover:opacity-100 transition-[filter,opacity]" />
+            </motion.div>
           ))}
         </div>
       </section>
@@ -302,7 +310,7 @@ export default function CorporatePage() {
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
             {BENEFITS.map((b, i) => (
               <motion.div key={i} {...fade} transition={{ delay: i * 0.08 }}
-                className="bg-white border-2 border-slate-100 rounded-2xl p-6 hover:border-[#1A9E9E]/30 hover:shadow-lg transition-all group">
+                className="bg-white border-2 border-slate-100 rounded-2xl p-6 hover:border-[#1A9E9E]/30 hover:shadow-lg transition-[border-color,box-shadow] group">
                 <span className="mb-3 inline-flex h-11 w-11 items-center justify-center rounded-xl bg-[#1A9E9E]/10 text-[#1A9E9E] group-hover:bg-[#1A9E9E] group-hover:text-white transition-colors">
                   <b.Icon aria-hidden className="h-5 w-5" strokeWidth={1.9} />
                 </span>
@@ -325,7 +333,7 @@ export default function CorporatePage() {
           <div className="grid sm:grid-cols-2 gap-5">
             {PROGRAMS.map((p, i) => (
               <motion.div key={i} {...fade} transition={{ delay: i * 0.1 }}
-                className="bg-white rounded-2xl border-2 border-slate-100 overflow-hidden hover:shadow-lg hover:border-[#1A9E9E]/20 transition-all">
+                className="bg-white rounded-2xl border-2 border-slate-100 overflow-hidden hover:shadow-lg hover:border-[#1A9E9E]/20 transition-[border-color,box-shadow]">
                 <div className={`bg-gradient-to-r ${p.color} px-6 py-4`}>
                   <h3 className="font-bold text-white text-lg">{p.title}</h3>
                 </div>
@@ -430,6 +438,12 @@ export default function CorporatePage() {
                       <a href="/interpreter" className="text-[#1A9E9E] font-semibold underline">linguo.id/interpreter</a>.
                     </p>
                   )}
+                </div>
+              )}
+
+              {/* Langkah 2: Bahasa */}
+              {cur === "lang" && (
+                <div className="space-y-4">
                   <div>
                     <label className="text-xs font-semibold text-slate-500 mb-2 block">Bahasa yang Dibutuhkan {simOnly ? "(opsional — simulasi tes berbahasa Inggris)" : "* (bisa pilih lebih dari 1)"}</label>
                     <div className="grid grid-cols-3 sm:grid-cols-4 gap-2">
@@ -447,7 +461,7 @@ export default function CorporatePage() {
                 </div>
               )}
 
-              {/* Langkah 2: Profil perusahaan */}
+              {/* Langkah 3: Profil perusahaan */}
               {cur === "company" && (
                 <div className="space-y-4">
                   <div>
