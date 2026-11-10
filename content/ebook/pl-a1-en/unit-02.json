@@ -1,0 +1,589 @@
+{
+  "title": "Where are you from?",
+  "title_target": "Skąd jesteś?",
+  "goal": "Say where you're from, your nationality, and your job; say which languages you speak; and recognize the *-em* / *-ą* endings that always appear after *jestem*.",
+  "bekal": [
+    "answer *skąd jesteś?* with a country and a city",
+    "give your job with *jestem…* and the right ending for men and women",
+    "say which languages you speak with *mówię po…*"
+  ],
+  "dialogs": [
+    {
+      "title": "Dialogue — W kuchni akademika",
+      "intro": "The shared kitchen in a student dorm, late afternoon. Ania is making tea; Budi comes in with a mug.",
+      "lines": [
+        {
+          "speaker": "Ania:",
+          "text": "Skąd jesteś, Budi?",
+          "id": "Where are you from, Budi?",
+          "literal": "from-where you-are, Budi?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Jestem z Indonezji, z Dżakarty. A ty jesteś z Krakowa, prawda?",
+          "id": "I'm from Indonesia, from Jakarta. And you're from Kraków, right?",
+          "literal": "I-am from Indonesia, from Jakarta. and you are from Kraków, true?"
+        },
+        {
+          "speaker": "Ania:",
+          "text": "Tak. Mieszkam w Krakowie od urodzenia. Co robisz w Polsce?",
+          "id": "Yes. I've lived in Kraków since I was born. What are you doing in Poland?",
+          "literal": "yes. I-live in Kraków since birth. what you-do in Poland?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Studiuję informatykę. A ty? Kim jesteś z zawodu?",
+          "id": "I study computer science. And you? What do you do for a living?",
+          "literal": "I-study computer-science. and you? who you-are by profession?"
+        },
+        {
+          "speaker": "Ania:",
+          "text": "Jestem nauczycielką. Uczę angielskiego.",
+          "id": "I'm a teacher. I teach English.",
+          "literal": "I-am teacher-woman. I-teach English."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Naprawdę? Mój brat też jest nauczycielem.",
+          "id": "Really? My brother is a teacher too.",
+          "literal": "really? my brother also is teacher-man."
+        },
+        {
+          "speaker": "Ania:",
+          "text": "Świetnie! A mówisz po polsku bardzo dobrze.",
+          "id": "Great! And your Polish is really good.",
+          "literal": "great! and you-speak in-Polish very well."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Dziękuję, ale mówię tylko trochę. Uczę się dwa miesiące.",
+          "id": "Thanks, but I only speak a little. I've been learning for two months.",
+          "literal": "thanks, but I-speak only a-little. I-teach self two months."
+        },
+        {
+          "speaker": "Ania:",
+          "text": "Dwa miesiące? Nie wierzę!",
+          "id": "Two months? I don't believe it!",
+          "literal": "two months? not I-believe!"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Mówię po angielsku, po indonezyjsku i trochę po polsku.",
+          "id": "I speak English, Indonesian, and a little Polish.",
+          "literal": "I-speak in-English, in-Indonesian and a-little in-Polish."
+        },
+        {
+          "speaker": "Ania:",
+          "text": "To dużo. Ja mówię tylko po polsku i po angielsku.",
+          "id": "That's a lot. I only speak Polish and English.",
+          "literal": "that a-lot. I speak only in-Polish and in-English."
+        }
+      ],
+      "notes": [
+        "**Skąd** means \"where from\" — one word. It has two partners: *gdzie?* (where) and *dokąd?* (where to). English can blur these (\"where are you going?\"), but Polish keeps the three directions strictly apart, and using the wrong one sounds odd right away.",
+        "**Country names change after z.** *Indonezja* becomes *z Indonezji*, *Polska* becomes *z Polski*, *Kraków* becomes *z Krakowa*. This ending is called *dopełniacz* and will be covered fully in Unit 14. For now, memorize your own country as one chunk: **z Indonezji**.",
+        "**Mieszkam w Krakowie** — note the ending *-ie*. The city name changes again, in a **different** way from after *z*. The rule comes in Unit 11; for now, two ready-made chunks are enough: *z Krakowa* (from Kraków), *w Krakowie* (in Kraków).",
+        "**Kim jesteś z zawodu?** literally means \"who are you by profession\". Polish asks about jobs with \"who\", not \"what\" — because it's asking about the person, not a thing. The short answer is just *jestem nauczycielem*.",
+        "**Nauczycielem or nauczycielką?** A job after *jestem* always takes the *narzędnik* form: men get the ending **-em**, women get **-ą**. See the grammar box below.",
+        "**Mówię po polsku**, not *mówię polski*. The language is treated here as a **manner**: literally \"I speak in a Polish way\". This *po …-sku* form never changes at all, so it's one of the easiest things in the whole course.",
+        "**Uczę się** (I learn) and **uczę** (I teach) differ by one small word. *Się* shows that the action comes back to yourself: teaching yourself = learning. Dropping *się* changes the meaning completely.",
+        "**Nie wierzę** — notice that *nie* always stands **right before** the verb, with no helper word like English \"don't\". Polish negates in the simplest way imaginable: put *nie* in front of the verb."
+      ],
+      "grammars": [
+        {
+          "title": "Jestem + narzędnik — jobs and nationalities",
+          "body": [
+            "A rule that looks complicated but is really one sentence: after *jestem*, a noun that says **who you are** takes a special ending."
+          ],
+          "table": {
+            "head": [
+              "Gender",
+              "Dictionary form",
+              "After *jestem*",
+              "Meaning"
+            ],
+            "rows": [
+              [
+                "male",
+                "*student*",
+                "*jestem student**em***",
+                "I'm a student"
+              ],
+              [
+                "male",
+                "*nauczyciel*",
+                "*jestem nauczyciel**em***",
+                "I'm a teacher"
+              ],
+              [
+                "male",
+                "*Polak*",
+                "*jestem Polak**iem***",
+                "I'm Polish"
+              ],
+              [
+                "female",
+                "*studentka*",
+                "*jestem studentk**ą***",
+                "I'm a student"
+              ],
+              [
+                "female",
+                "*nauczycielka*",
+                "*jestem nauczycielk**ą***",
+                "I'm a teacher"
+              ],
+              [
+                "female",
+                "*Polka*",
+                "*jestem Polk**ą***",
+                "I'm Polish"
+              ]
+            ]
+          },
+          "after": [
+            "There are only two endings: **-em** for men, **-ą** for women. If the base word ends in *k* or *g*, the ending becomes **-iem** (*Polak → Polakiem*) — that *i* just softens the sound; it isn't a separate thing to memorize.",
+            "The same rule works for everyone: *on jest studentem*, *ona jest studentką*, *jesteśmy studentami*.",
+            "⚠️ **Names** don't follow this rule: *Jestem Budi*, not *Jestem Budim*. Only common nouns change — jobs, nationalities, roles."
+          ]
+        },
+        {
+          "title": "Languages: po …-sku",
+          "body": [
+            "To say which language is being used, Polish doesn't use a noun but an adverb form that never changes."
+          ],
+          "table": {
+            "head": [
+              "Country",
+              "Language (adjective)",
+              "\"speak …\"",
+              "Say it"
+            ],
+            "rows": [
+              [
+                "*Polska*",
+                "*polski*",
+                "*po polsku*",
+                "po POL-skoo"
+              ],
+              [
+                "*Anglia*",
+                "*angielski*",
+                "*po angielsku*",
+                "po an-GYEL-skoo"
+              ],
+              [
+                "*Indonezja*",
+                "*indonezyjski*",
+                "*po indonezyjsku*",
+                "po in-do-ne-ZYYS-koo"
+              ],
+              [
+                "*Niemcy*",
+                "*niemiecki*",
+                "*po niemiecku*",
+                "po nye-MYETS-koo"
+              ],
+              [
+                "*Chiny*",
+                "*chiński*",
+                "*po chińsku*",
+                "po HEENY-skoo"
+              ],
+              [
+                "*Japonia*",
+                "*japoński*",
+                "*po japońsku*",
+                "po ya-PONY-skoo"
+              ]
+            ]
+          },
+          "after": [
+            "It's used with the three most common verbs: *mówić* (speak), *rozumieć* (understand), *czytać* (read). *Rozumiem po polsku* = I understand Polish.",
+            "There's a second form used for **learning** a language: *uczę się polskiego* (I'm learning Polish) — here the language becomes a noun and changes its ending. Just recognize it as one chunk for now."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Countries, nationalities, languages",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Three columns per country, because Polish uses different words for the country, its people, and its language. Nationalities are always **capitalized**; languages are always **lowercase**."
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Country",
+            "Man",
+            "Woman",
+            "Language"
+          ],
+          "rows": [
+            [
+              "*Polska*",
+              "*Polak*",
+              "*Polka*",
+              "*po polsku*"
+            ],
+            [
+              "*Indonezja*",
+              "*Indonezyjczyk*",
+              "*Indonezyjka*",
+              "*po indonezyjsku*"
+            ],
+            [
+              "*Anglia*",
+              "*Anglik*",
+              "*Angielka*",
+              "*po angielsku*"
+            ],
+            [
+              "*Niemcy*",
+              "*Niemiec*",
+              "*Niemka*",
+              "*po niemiecku*"
+            ],
+            [
+              "*Francja*",
+              "*Francuz*",
+              "*Francuzka*",
+              "*po francusku*"
+            ],
+            [
+              "*Chiny*",
+              "*Chińczyk*",
+              "*Chinka*",
+              "*po chińsku*"
+            ],
+            [
+              "*Japonia*",
+              "*Japończyk*",
+              "*Japonka*",
+              "*po japońsku*"
+            ],
+            [
+              "*Ukraina*",
+              "*Ukrainiec*",
+              "*Ukrainka*",
+              "*po ukraińsku*"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "A helpful pattern: the female form is almost always **the male form + -ka** (*Polak → Polka*, *Anglik → Angielka*). The same pattern works for jobs too."
+        },
+        {
+          "type": "kotak",
+          "title": "Where you come from",
+          "items": [
+            "*Jestem z Indonezji.* — I'm from Indonesia.",
+            "*Jestem Indonezyjczykiem.* (m) / *Jestem Indonezyjką.* (f) — I'm Indonesian.",
+            "*Mieszkam w Dżakarcie.* — I live in Jakarta.",
+            "*Urodziłem się w Bandungu.* (m) / *Urodziłam się…* (f) — I was born in Bandung."
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Jobs",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "All of these are used with *jestem* + the ending *-em* (m) or *-ą* (f)."
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Man",
+            "Woman",
+            "Say it",
+            "Meaning"
+          ],
+          "rows": [
+            [
+              "*student*",
+              "*studentka*",
+              "STOO-dent / stoo-DENT-ka",
+              "student"
+            ],
+            [
+              "*nauczyciel*",
+              "*nauczycielka*",
+              "na-oo-CHY-chyel",
+              "teacher"
+            ],
+            [
+              "*lekarz*",
+              "*lekarka*",
+              "LE-kash",
+              "doctor"
+            ],
+            [
+              "*inżynier*",
+              "*inżynierka*",
+              "in-ZHY-nyer",
+              "engineer"
+            ],
+            [
+              "*programista*",
+              "*programistka*",
+              "pro-gra-MEES-ta",
+              "programmer"
+            ],
+            [
+              "*kelner*",
+              "*kelnerka*",
+              "KEL-ner",
+              "waiter / waitress"
+            ],
+            [
+              "*sprzedawca*",
+              "*sprzedawczyni*",
+              "spshe-DAV-tsa",
+              "salesperson"
+            ],
+            [
+              "*kucharz*",
+              "*kucharka*",
+              "KOO-hash",
+              "cook"
+            ],
+            [
+              "*kierowca*",
+              "*kierowczyni*",
+              "kye-ROV-tsa",
+              "driver"
+            ],
+            [
+              "*urzędnik*",
+              "*urzędniczka*",
+              "oo-ZHEND-nik",
+              "office worker"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "⚠️ *programista*, *sprzedawca*, and *kierowca* end in *-a* like feminine words, but they are **masculine** — because they mean male people. Their ending in *narzędnik* is still *-ą*: *jestem programistą*. A sensible exception, and there are only a few of them."
+        },
+        {
+          "type": "kotak",
+          "title": "If your job isn't on the list",
+          "items": [
+            "*Pracuję w banku / w szkole / w restauracji.* — I work at a bank / a school / a restaurant.",
+            "*Pracuję w firmie IT.* — I work at an IT company.",
+            "*Jeszcze się uczę.* — I'm still at school.",
+            "*Nie pracuję.* — I don't work."
+          ]
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "pl": "skąd",
+      "baca": "skont",
+      "en": "where from"
+    },
+    {
+      "pl": "gdzie",
+      "baca": "gjyeh",
+      "en": "where"
+    },
+    {
+      "pl": "co",
+      "baca": "tso",
+      "en": "what"
+    },
+    {
+      "pl": "kto",
+      "baca": "kto",
+      "en": "who"
+    },
+    {
+      "pl": "mieszkać",
+      "baca": "MYESH-kach",
+      "en": "to live (reside)"
+    },
+    {
+      "pl": "pracować",
+      "baca": "pra-TSO-vach",
+      "en": "to work"
+    },
+    {
+      "pl": "studiować",
+      "baca": "stoo-DYO-vach",
+      "en": "to study (at university)"
+    },
+    {
+      "pl": "uczyć się",
+      "baca": "OO-chych sheh",
+      "en": "to learn"
+    },
+    {
+      "pl": "mówić",
+      "baca": "MOO-vich",
+      "en": "to speak"
+    },
+    {
+      "pl": "rozumieć",
+      "baca": "ro-ZOO-myech",
+      "en": "to understand"
+    },
+    {
+      "pl": "wierzyć",
+      "baca": "VYE-zhych",
+      "en": "to believe"
+    },
+    {
+      "pl": "robić",
+      "baca": "RO-bich",
+      "en": "to do, to make"
+    },
+    {
+      "pl": "zawód",
+      "baca": "ZA-voot",
+      "en": "profession, job"
+    },
+    {
+      "pl": "student / studentka",
+      "baca": "STOO-dent",
+      "en": "student (m/f)"
+    },
+    {
+      "pl": "nauczyciel",
+      "baca": "na-oo-CHY-chyel",
+      "en": "teacher"
+    },
+    {
+      "pl": "lekarz",
+      "baca": "LE-kash",
+      "en": "doctor"
+    },
+    {
+      "pl": "informatyka",
+      "baca": "in-for-MA-ty-ka",
+      "en": "computer science"
+    },
+    {
+      "pl": "brat",
+      "baca": "brat",
+      "en": "brother"
+    },
+    {
+      "pl": "siostra",
+      "baca": "SHOS-tra",
+      "en": "sister"
+    },
+    {
+      "pl": "mój / moja",
+      "baca": "mooy / MO-ya",
+      "en": "my (m / f)"
+    },
+    {
+      "pl": "trochę",
+      "baca": "TRO-heh",
+      "en": "a little"
+    },
+    {
+      "pl": "tylko",
+      "baca": "TYL-ko",
+      "en": "only"
+    },
+    {
+      "pl": "dużo",
+      "baca": "DOO-zho",
+      "en": "a lot, much"
+    },
+    {
+      "pl": "naprawdę",
+      "baca": "na-PRAV-deh",
+      "en": "really; truly"
+    },
+    {
+      "pl": "świetnie",
+      "baca": "SHVYET-nyeh",
+      "en": "great; excellent"
+    },
+    {
+      "pl": "prawda",
+      "baca": "PRAV-da",
+      "en": "true; truth"
+    },
+    {
+      "pl": "ale",
+      "baca": "A-leh",
+      "en": "but"
+    },
+    {
+      "pl": "miesiąc",
+      "baca": "MYE-shonts",
+      "en": "month"
+    },
+    {
+      "pl": "w",
+      "baca": "v",
+      "en": "in; at"
+    },
+    {
+      "pl": "od",
+      "baca": "ot",
+      "en": "since; from"
+    }
+  ],
+  "exercises": [
+    {
+      "prompt": "Translate into Polish.",
+      "items": [
+        "Where are you from?",
+        "I'm from Indonesia.",
+        "I live in Kraków.",
+        "I'm a student. (male)",
+        "She is a teacher.",
+        "I speak a little Polish."
+      ]
+    },
+    {
+      "prompt": "Fill in the right *narzędnik* form (ending *-em* or *-ą*).",
+      "items": [
+        "Jestem ____ . (student, male)",
+        "Ona jest ____ . (nauczycielka)",
+        "On jest ____ . (lekarz)",
+        "Jestem ____ . (Polka)",
+        "Mój brat jest ____ . (kelner)",
+        "Moja siostra jest ____ . (studentka)"
+      ]
+    },
+    {
+      "prompt": "Match each country with its language. Write a full sentence: *Mieszkam w… i mówię po…*",
+      "items": [
+        "Polska",
+        "Indonezja",
+        "Anglia",
+        "Niemcy",
+        "Japonia"
+      ]
+    },
+    {
+      "prompt": "Put the words in the right order.",
+      "items": [
+        "z / jestem / Indonezji",
+        "po / mówię / polsku / trochę",
+        "jesteś / z / skąd / ?",
+        "nauczycielką / jest / ona",
+        "w / mieszkam / Krakowie"
+      ]
+    }
+  ],
+  "answers": [
+    "Skąd jesteś? — Jestem z Indonezji. — Mieszkam w Krakowie. — Jestem studentem. — Ona jest nauczycielką. — Mówię trochę po polsku.",
+    "studentem — nauczycielką — lekarzem — Polką — kelnerem — studentką",
+    "Mieszkam w Polsce i mówię po polsku. — Mieszkam w Indonezji i mówię po indonezyjsku. — Mieszkam w Anglii i mówię po angielsku. — Mieszkam w Niemczech i mówię po niemiecku. — Mieszkam w Japonii i mówię po japońsku.",
+    "Jestem z Indonezji. — Mówię trochę po polsku. — Skąd jesteś? — Ona jest nauczycielką. — Mieszkam w Krakowie."
+  ]
+}

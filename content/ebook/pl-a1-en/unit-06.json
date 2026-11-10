@@ -1,0 +1,603 @@
+{
+  "title": "My family",
+  "title_target": "Moja rodzina",
+  "goal": "Name family members, use possessives that follow the noun's gender, and give ages with numbers up to a hundred.",
+  "bekal": [
+    "use *mój / moja / moje* and their twins for every person",
+    "ask and answer *ile masz lat?* correctly",
+    "see why ages sometimes take *lata* and sometimes *lat*"
+  ],
+  "dialogs": [
+    {
+      "title": "Dialogue — Zdjęcie rodzinne",
+      "intro": "The dorm common room. Ania opens the photo gallery on her phone.",
+      "lines": [
+        {
+          "speaker": "Ania:",
+          "text": "To jest moja rodzina. Chcesz zobaczyć zdjęcie?",
+          "id": "This is my family. Do you want to see a photo?",
+          "literal": "this is my family. you-want see photo?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Chętnie. Kto to jest?",
+          "id": "Sure. Who's this?",
+          "literal": "gladly. who this is?"
+        },
+        {
+          "speaker": "Ania:",
+          "text": "To moi rodzice. Tata ma pięćdziesiąt lat, a mama czterdzieści osiem.",
+          "id": "These are my parents. Dad is fifty, and Mom is forty-eight.",
+          "literal": "these my parents. dad has fifty years, and mom forty eight."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "A ta dziewczyna obok?",
+          "id": "And the girl next to them?",
+          "literal": "and this-f girl next-to?"
+        },
+        {
+          "speaker": "Ania:",
+          "text": "To moja siostra Kasia. Ma dwadzieścia dwa lata i studiuje medycynę.",
+          "id": "That's my sister Kasia. She's twenty-two and studies medicine.",
+          "literal": "this my sister Kasia. has twenty two years and studies medicine."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Masz brata?",
+          "id": "Do you have a brother?",
+          "literal": "you-have brother?"
+        },
+        {
+          "speaker": "Ania:",
+          "text": "Tak, mam starszego brata. Nazywa się Piotr i jest żonaty.",
+          "id": "Yes, I have an older brother. His name is Piotr and he's married.",
+          "literal": "yes, I-have older brother. names self Piotr and is married."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "A ja mam dwie siostry i jednego brata.",
+          "id": "I have two sisters and one brother.",
+          "literal": "and I have two-f sisters and one brother."
+        },
+        {
+          "speaker": "Ania:",
+          "text": "Duża rodzina! Ile lat ma twój brat?",
+          "id": "A big family! How old is your brother?",
+          "literal": "big family! how-many years has your brother?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Ma szesnaście lat. Jeszcze chodzi do szkoły.",
+          "id": "He's sixteen. He's still at school.",
+          "literal": "has sixteen years. still walks to school."
+        },
+        {
+          "speaker": "Ania:",
+          "text": "A ty? Ile masz lat?",
+          "id": "And you? How old are you?",
+          "literal": "and you? how-many you-have years?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Mam dwadzieścia trzy lata. Tęsknię za rodziną.",
+          "id": "I'm twenty-three. I miss my family.",
+          "literal": "I-have twenty three years. I-miss after family."
+        }
+      ],
+      "notes": [
+        "**Ile masz lat?** literally \"how many years do you have\". Polish **has** an age; it doesn't *be* an age like English. The answer uses *mam* too: *mam dwadzieścia trzy lata*.",
+        "**Lata or lat?** Both mean \"years\". *Lata* comes after numbers ending in 2, 3, 4 (*dwa lata*, *dwadzieścia trzy lata*); *lat* after other numbers (*pięć lat*, *szesnaście lat*, *pięćdziesiąt lat*). The full rule is in the second grammar box.",
+        "**Moi rodzice** — not *moje*. Possessives have their own form for groups that **include men**: *moi*. The pattern you saw in *ci studenci* (Unit 3) and *wszyscy* (Unit 4) shows up here again, and will keep showing up.",
+        "**Rodzice** means \"parents\" and is always plural — there's no singular form. For one parent, use *tata* or *mama*.",
+        "**Mam brata, mam starszego brata.** Why *brata*, not *brat*? Because it's the **object** of the verb *mieć*, and masculine nouns for living beings change their ending as objects. That's Unit 7 — you're already seeing its shadow.",
+        "**Dwie siostry, dwa lata.** The number \"two\" has two faces: *dwa* for masculine and neuter words, *dwie* for feminine words. Only two behaves like this; the others have just one form.",
+        "**Chodzi do szkoły** — \"walks to school\", but it means \"goes to school\" (is a pupil). *Chodzić* is used for **repeated** actions, *iść* for what's happening right now. Pairs like this are handled in Unit 13.",
+        "**Tęsknię za rodziną** — \"I miss my family\". *Za* here requires the *narzędnik* form (*rodzina → rodziną*), the same form as after *jestem*. Learn it as a package: *tęsknię za domem*, *tęsknię za mamą*."
+      ],
+      "grammars": [
+        {
+          "title": "Possessives — they follow the thing owned",
+          "body": [
+            "What decides the form is not the owner but **the thing**. \"My book\" and \"my table\" use different possessives because book and table have different genders."
+          ],
+          "table": {
+            "head": [
+              "Owner",
+              "+ męski",
+              "+ żeński",
+              "+ nijaki",
+              "+ plural, male people"
+            ],
+            "rows": [
+              [
+                "I",
+                "*mój dom*",
+                "*moja siostra*",
+                "*moje okno*",
+                "*moi rodzice*"
+              ],
+              [
+                "you",
+                "*twój dom*",
+                "*twoja siostra*",
+                "*twoje okno*",
+                "*twoi rodzice*"
+              ],
+              [
+                "he",
+                "*jego dom*",
+                "*jego siostra*",
+                "*jego okno*",
+                "*jego rodzice*"
+              ],
+              [
+                "she",
+                "*jej dom*",
+                "*jej siostra*",
+                "*jej okno*",
+                "*jej rodzice*"
+              ],
+              [
+                "we",
+                "*nasz dom*",
+                "*nasza siostra*",
+                "*nasze okno*",
+                "*nasi rodzice*"
+              ],
+              [
+                "you (plural)",
+                "*wasz dom*",
+                "*wasza siostra*",
+                "*wasze okno*",
+                "*wasi rodzice*"
+              ],
+              [
+                "they",
+                "*ich dom*",
+                "*ich siostra*",
+                "*ich okno*",
+                "*ich rodzice*"
+              ]
+            ]
+          },
+          "after": [
+            "The good news is in three rows: ***jego***, ***jej***, and ***ich*** **never change at all**. A third of this table is nothing to memorize.",
+            "Only *mój*, *twój*, *nasz*, *wasz* change — and the pattern is uniform: add **-a** for feminine, **-e** for neuter, **-i** for groups with men.",
+            "When talking about family, the possessive is often **dropped** when it's obvious: *Tata ma pięćdziesiąt lat* — \"(my) dad is fifty\". Saying *mój tata* every time actually sounds excessive."
+          ]
+        },
+        {
+          "title": "Numbers and nouns: the 2-3-4 rule",
+          "body": [
+            "The most typically Polish rule of all, and the most surprising for English speakers, who only ever switch between singular and plural."
+          ],
+          "table": {
+            "head": [
+              "Number",
+              "Noun form",
+              "Example (rok/lata)",
+              "Example (książka)"
+            ],
+            "rows": [
+              [
+                "1",
+                "ordinary singular",
+                "*jeden rok*",
+                "*jedna książka*"
+              ],
+              [
+                "2, 3, 4",
+                "ordinary plural",
+                "*dwa lata*",
+                "*dwie książki*"
+              ],
+              [
+                "5–21",
+                "special form",
+                "*pięć lat*",
+                "*pięć książek*"
+              ],
+              [
+                "22, 23, 24",
+                "back to ordinary plural",
+                "*dwadzieścia dwa lata*",
+                "*dwadzieścia dwie książki*"
+              ],
+              [
+                "25–31",
+                "special form again",
+                "*dwadzieścia pięć lat*",
+                "*dwadzieścia pięć książek*"
+              ]
+            ]
+          },
+          "after": [
+            "The rule depends on the **last digit**, not on how big the number is. So 22, 32, 42 all behave like 2, while 12, 13, 14 do **not** — the teens always join the \"five and up\" group: *dwanaście lat*.",
+            "For now, two chunks you really use every day are enough: **…dwa/trzy/cztery lata** and **…lat** for the rest. The special form is called *dopełniacz* plural and comes in Unit 15."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Family members",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "Polski",
+            "Say it",
+            "Meaning",
+            "Polski",
+            "Say it",
+            "Meaning"
+          ],
+          "rows": [
+            [
+              "*rodzina*",
+              "ro-JYEE-na",
+              "family",
+              "*dziadek*",
+              "JYA-dek",
+              "grandfather"
+            ],
+            [
+              "*rodzice*",
+              "ro-JYEE-tseh",
+              "parents",
+              "*babcia*",
+              "BAB-chya",
+              "grandmother"
+            ],
+            [
+              "*tata / ojciec*",
+              "TA-ta / OY-chyets",
+              "dad / father",
+              "*wnuk*",
+              "vnook",
+              "grandson"
+            ],
+            [
+              "*mama / matka*",
+              "MA-ma / MAT-ka",
+              "mom / mother",
+              "*wnuczka*",
+              "VNOOCH-ka",
+              "granddaughter"
+            ],
+            [
+              "*brat*",
+              "brat",
+              "brother",
+              "*mąż*",
+              "monsh",
+              "husband"
+            ],
+            [
+              "*siostra*",
+              "SHOS-tra",
+              "sister",
+              "*żona*",
+              "ZHO-na",
+              "wife"
+            ],
+            [
+              "*syn*",
+              "syn",
+              "son",
+              "*ciocia*",
+              "CHYO-chya",
+              "aunt"
+            ],
+            [
+              "*córka*",
+              "TSOOR-ka",
+              "daughter",
+              "*wujek*",
+              "VOO-yek",
+              "uncle"
+            ],
+            [
+              "*dziecko*",
+              "JYETS-ko",
+              "child",
+              "*kuzyn*",
+              "KOO-zyn",
+              "cousin"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "Like English, Polish has no single word for \"older brother\" or \"younger sister\". To be specific, use an adjective: *starszy brat* (older brother), *młodsza siostra* (younger sister)."
+        },
+        {
+          "type": "kotak",
+          "title": "Ready-made family sentences",
+          "items": [
+            "*Mam dwie siostry i jednego brata.* — I have two sisters and one brother.",
+            "*Nie mam rodzeństwa.* — I'm an only child. (literally: I have no siblings)",
+            "*Jestem żonaty.* (m) / *Jestem mężatką.* (f) — I'm married.",
+            "*Jestem singlem.* / *Nie jestem żonaty.* — I'm single.",
+            "*Moja rodzina mieszka w Indonezji.* — My family lives in Indonesia."
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Numbers 20–100",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "Number",
+            "Polski",
+            "Say it",
+            "Number",
+            "Polski",
+            "Say it"
+          ],
+          "rows": [
+            [
+              "20",
+              "*dwadzieścia*",
+              "dva-JYESH-chya",
+              "70",
+              "*siedemdziesiąt*",
+              "she-dem-JYE-shont"
+            ],
+            [
+              "30",
+              "*trzydzieści*",
+              "tshy-JYESH-chi",
+              "80",
+              "*osiemdziesiąt*",
+              "o-shem-JYE-shont"
+            ],
+            [
+              "40",
+              "*czterdzieści*",
+              "chter-JYESH-chi",
+              "90",
+              "*dziewięćdziesiąt*",
+              "jye-vyench-JYE-shont"
+            ],
+            [
+              "50",
+              "*pięćdziesiąt*",
+              "pyench-JYE-shont",
+              "100",
+              "*sto*",
+              "sto"
+            ],
+            [
+              "60",
+              "*sześćdziesiąt*",
+              "sheshch-JYE-shont",
+              "1,000",
+              "*tysiąc*",
+              "TY-shonts"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "Compound numbers are built just like in English — tens first, then units, but with no hyphen or \"and\": *dwadzieścia trzy* (23), *czterdzieści osiem* (48), *dziewięćdziesiąt dziewięć* (99)."
+        },
+        {
+          "type": "kotak",
+          "title": "Pronunciation tips",
+          "items": [
+            "All tens from 50 up contain *-dziesiąt* — read **JYE-shont**, and it sticks tightly to its number.",
+            "*sześćdziesiąt* (60) really does look impossible. Split it into *sześć* + *dziesiąt* and it's tamed at once: sheshch-JYE-shont.",
+            "For phone numbers, Poles read the digits in groups of two or three, much as English speakers do."
+          ]
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "pl": "rodzina",
+      "baca": "ro-JYEE-na",
+      "en": "family"
+    },
+    {
+      "pl": "rodzice",
+      "baca": "ro-JYEE-tseh",
+      "en": "parents"
+    },
+    {
+      "pl": "brat / siostra",
+      "baca": "brat / SHOS-tra",
+      "en": "brother / sister"
+    },
+    {
+      "pl": "syn / córka",
+      "baca": "syn / TSOOR-ka",
+      "en": "son / daughter"
+    },
+    {
+      "pl": "dziecko",
+      "baca": "JYETS-ko",
+      "en": "child"
+    },
+    {
+      "pl": "mąż / żona",
+      "baca": "monsh / ZHO-na",
+      "en": "husband / wife"
+    },
+    {
+      "pl": "dziadek / babcia",
+      "baca": "JYA-dek / BAB-chya",
+      "en": "grandfather / grandmother"
+    },
+    {
+      "pl": "rodzeństwo",
+      "baca": "ro-DZENY-stfo",
+      "en": "siblings"
+    },
+    {
+      "pl": "mój / moja / moje",
+      "baca": "mooy / MO-ya / MO-yeh",
+      "en": "my (m / f / n)"
+    },
+    {
+      "pl": "twój / twoja",
+      "baca": "tfooy / TFO-ya",
+      "en": "your (m / f)"
+    },
+    {
+      "pl": "jego / jej",
+      "baca": "YE-go / yey",
+      "en": "his / her"
+    },
+    {
+      "pl": "nasz / wasz",
+      "baca": "nash / vash",
+      "en": "our / your (plural)"
+    },
+    {
+      "pl": "ich",
+      "baca": "ih",
+      "en": "their"
+    },
+    {
+      "pl": "rok / lata / lat",
+      "baca": "rok / LA-ta / lat",
+      "en": "year / years"
+    },
+    {
+      "pl": "ile masz lat?",
+      "baca": "EE-leh mash lat",
+      "en": "how old are you?"
+    },
+    {
+      "pl": "starszy / młodszy",
+      "baca": "STAR-shy / MWOT-shy",
+      "en": "older / younger"
+    },
+    {
+      "pl": "zdjęcie",
+      "baca": "ZDYEN-chyeh",
+      "en": "photo"
+    },
+    {
+      "pl": "dziewczyna",
+      "baca": "jyef-CHY-na",
+      "en": "girl; girlfriend"
+    },
+    {
+      "pl": "chłopak",
+      "baca": "HWO-pak",
+      "en": "boy; boyfriend"
+    },
+    {
+      "pl": "żonaty / mężatka",
+      "baca": "zho-NA-ty",
+      "en": "married (man / woman)"
+    },
+    {
+      "pl": "chcieć",
+      "baca": "hchyech",
+      "en": "to want"
+    },
+    {
+      "pl": "zobaczyć",
+      "baca": "zo-BA-chych",
+      "en": "to see"
+    },
+    {
+      "pl": "chodzić",
+      "baca": "HO-jyich",
+      "en": "to walk; to go regularly"
+    },
+    {
+      "pl": "tęsknić za",
+      "baca": "TENSK-nich za",
+      "en": "to miss (someone)"
+    },
+    {
+      "pl": "medycyna",
+      "baca": "me-dy-TSY-na",
+      "en": "medicine (field of study)"
+    },
+    {
+      "pl": "chętnie",
+      "baca": "HENT-nyeh",
+      "en": "gladly, sure"
+    },
+    {
+      "pl": "obok",
+      "baca": "O-bok",
+      "en": "next to"
+    },
+    {
+      "pl": "dwie",
+      "baca": "dvyeh",
+      "en": "two (for feminine words)"
+    },
+    {
+      "pl": "jeden / jedna",
+      "baca": "YE-den / YED-na",
+      "en": "one (m / f)"
+    },
+    {
+      "pl": "sto / tysiąc",
+      "baca": "sto / TY-shonts",
+      "en": "a hundred / a thousand"
+    }
+  ],
+  "exercises": [
+    {
+      "prompt": "Fill in the blanks with the right possessive.",
+      "items": [
+        "____ brat mieszka w Warszawie. (my)",
+        "____ siostra studiuje medycynę. (my)",
+        "____ dom jest duży. (our)",
+        "____ rodzice są w Polsce. (your, plural with men)",
+        "To jest ____ zdjęcie. (her)",
+        "____ mieszkanie jest małe. (their)"
+      ]
+    },
+    {
+      "prompt": "Write the age out in words, with *lat* or *lata*.",
+      "items": [
+        "Mam 23 ____ .",
+        "Ona ma 16 ____ .",
+        "Tata ma 50 ____ .",
+        "Brat ma 4 ____ .",
+        "Babcia ma 72 ____ ."
+      ]
+    },
+    {
+      "prompt": "Translate into Polish.",
+      "items": [
+        "This is my family.",
+        "I have two sisters.",
+        "My brother is sixteen.",
+        "How old are you?",
+        "My parents live in Indonesia."
+      ]
+    },
+    {
+      "prompt": "Put the words in the right order.",
+      "items": [
+        "moja / to / rodzina / jest",
+        "lat / ile / masz / ?",
+        "siostry / mam / dwie",
+        "brat / w / mieszka / Warszawie / mój",
+        "rodziną / tęsknię / za"
+      ]
+    }
+  ],
+  "answers": [
+    "Mój — Moja — Nasz — Twoi — jej — Ich",
+    "dwadzieścia trzy lata — szesnaście lat — pięćdziesiąt lat — cztery lata — siedemdziesiąt dwa lata",
+    "To jest moja rodzina. — Mam dwie siostry. — Mój brat ma szesnaście lat. — Ile masz lat? — Moi rodzice mieszkają w Indonezji.",
+    "To jest moja rodzina. — Ile masz lat? — Mam dwie siostry. — Mój brat mieszka w Warszawie. — Tęsknię za rodziną."
+  ],
+  "wave": "Read the Unit 4 dialogue out loud, then name five members of your own family with their ages."
+}

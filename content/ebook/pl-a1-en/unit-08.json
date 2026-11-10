@@ -1,0 +1,547 @@
+{
+  "title": "At the café",
+  "title_target": "Poproszę dużą kawę",
+  "goal": "Order food and drinks, pay, and use *poproszę* — the most useful word a visitor to Poland can have.",
+  "bekal": [
+    "order with *poproszę* + the object form",
+    "answer the waiter's questions about seating and how you'll pay",
+    "ask for something politely with *czy mogę prosić o…*"
+  ],
+  "dialogs": [
+    {
+      "title": "Dialogue — W kawiarni",
+      "intro": "A small café next to campus, four in the afternoon. The waiter comes over with a notepad.",
+      "lines": [
+        {
+          "speaker": "Kelner:",
+          "text": "Dzień dobry. Co podać?",
+          "id": "Good afternoon. What can I get you?",
+          "literal": "day good. what serve?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Poproszę dużą kawę i sernik.",
+          "id": "I'll have a large coffee and a sernik, please.",
+          "literal": "I-will-ask big coffee and cheesecake."
+        },
+        {
+          "speaker": "Kelner:",
+          "text": "A dla pani?",
+          "id": "And for you, madam?",
+          "literal": "and for madam?"
+        },
+        {
+          "speaker": "Ania:",
+          "text": "Dla mnie herbatę z cytryną, proszę.",
+          "id": "Tea with lemon for me, please.",
+          "literal": "for me tea with lemon, please."
+        },
+        {
+          "speaker": "Kelner:",
+          "text": "Na miejscu czy na wynos?",
+          "id": "For here or to go?",
+          "literal": "on place or for taking-out?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Na miejscu. Czy jest wolny stolik przy oknie?",
+          "id": "For here. Is there a free table by the window?",
+          "literal": "on place. whether is free table by window?"
+        },
+        {
+          "speaker": "Kelner:",
+          "text": "Oczywiście. Płatność kartą czy gotówką?",
+          "id": "Of course. Paying by card or cash?",
+          "literal": "of-course. payment by-card or by-cash?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Kartą. Razem, na jeden rachunek.",
+          "id": "Card. Together, on one bill.",
+          "literal": "by-card. together, on one bill."
+        },
+        {
+          "speaker": "Kelner:",
+          "text": "Dobrze. Zaraz podaję.",
+          "id": "Fine. I'll bring it right away.",
+          "literal": "good. right-away I-serve."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Przepraszam, czy mogę prosić o wodę?",
+          "id": "Excuse me, could I have some water?",
+          "literal": "sorry, whether I-may ask about water?"
+        },
+        {
+          "speaker": "Kelner:",
+          "text": "Gazowana czy niegazowana?",
+          "id": "Sparkling or still?",
+          "literal": "carbonated or non-carbonated?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Niegazowana, dziękuję. I rachunek, proszę.",
+          "id": "Still, thanks. And the bill, please.",
+          "literal": "non-carbonated, thanks. and bill, please."
+        }
+      ],
+      "notes": [
+        "**Poproszę** is the magic word in Poland. Literally \"I will ask for\", it's used just like \"I'll have\" or \"please\" — and it's considered more polite than *chcę* (I want), which sounds demanding. It's always followed by the **object** form: *poproszę kawę*, *poproszę rachunek*.",
+        "**Dużą kawę** — both words change. The adjective *duża* becomes *dużą*, the noun *kawa* becomes *kawę*. This is the Unit 7 rule in real use; if this part feels heavy, go back there for a moment.",
+        "**Dla mnie** means \"for me\" and is used constantly when ordering together. Its twins: *dla niego* (for him), *dla niej* (for her), *dla nas* (for us).",
+        "**A dla pani?** Waiters address you with *pan* / *pani*, never *ty*. You should reply with *pan* / *pani* too if you want to ask back: *A pan co poleca?* (What would you recommend?)",
+        "**Kartą, gotówką** — the ending *-ą* again, but this time not an object but an **instrument**. The *narzędnik* form you know from *jestem studentem* is also used to say \"with what\" or \"by what\": *piszę długopisem* (I write with a pen), *jadę autobusem* (I go by bus).",
+        "**Na miejscu czy na wynos** is a question you're sure to hear in every Polish café. Learn the answers now so you won't freeze: *na miejscu* (for here) or *na wynos* (to go).",
+        "**Czy mogę prosić o…** is the most polite request formula, usable anywhere — restaurant, office, street. After *o* always comes the object form: *o wodę*, *o rachunek*, *o pomoc*.",
+        "**Sernik** (cheesecake) is one of three cakes found in almost every Polish café, along with *szarlotka* (apple pie) and *makowiec* (poppy seed cake). Ordering one without hesitation makes you sound like someone who knows the place."
+      ],
+      "grammars": [
+        {
+          "title": "Ordering: poproszę + object",
+          "body": [
+            "One formula that covers almost every buying-and-selling situation in Poland."
+          ],
+          "table": {
+            "head": [
+              "Formula",
+              "Example",
+              "Meaning"
+            ],
+            "rows": [
+              [
+                "*Poproszę* + object",
+                "*Poproszę kawę.*",
+                "I'll have a coffee."
+              ],
+              [
+                "*Poproszę* + number + object",
+                "*Poproszę dwa piwa.*",
+                "I'll have two beers."
+              ],
+              [
+                "*Dla mnie* + object",
+                "*Dla mnie herbatę.*",
+                "Tea for me."
+              ],
+              [
+                "*Czy mogę prosić o* + object",
+                "*Czy mogę prosić o wodę?*",
+                "Could I have some water?"
+              ],
+              [
+                "*Chciałbym / Chciałabym* + object",
+                "*Chciałbym sernik.*",
+                "I'd like a sernik. (m / f)"
+              ]
+            ]
+          },
+          "after": [
+            "The last row is the most refined form, and it differs by the gender of the **speaker**: a man says *chciałbym*, a woman *chciałabym*. It's a conditional form that really belongs to A2 — just use it as a memorized chunk.",
+            "⚠️ Avoid *chcę kawę* when ordering. It's grammatically correct, but it sounds like \"I want coffee, now\". The difference in politeness is about the gap between \"gimme a coffee\" and \"could I have a coffee\"."
+          ]
+        },
+        {
+          "title": "Narzędnik — with what, by what",
+          "body": [
+            "The same ending as after *jestem*, used for tools, vehicles, and companions."
+          ],
+          "table": {
+            "head": [
+              "Use",
+              "Example",
+              "Meaning"
+            ],
+            "rows": [
+              [
+                "way of paying",
+                "*Płacę kart**ą**.*",
+                "I'm paying by card."
+              ],
+              [
+                "tool",
+                "*Piszę długopis**em**.*",
+                "I write with a pen."
+              ],
+              [
+                "vehicle",
+                "*Jadę autobus**em**.*",
+                "I'm going by bus."
+              ],
+              [
+                "together with whom",
+                "*Idę z Ani**ą**.*",
+                "I'm going with Ania."
+              ],
+              [
+                "who you are",
+                "*Jestem student**em**.*",
+                "I'm a student."
+              ]
+            ]
+          },
+          "after": [
+            "The endings are exactly as in Unit 2: **-em** for masculine and neuter words, **-ą** for feminine words.",
+            "Look at the \"together with whom\" row: *z* here means \"with\". The same word also means \"from\" (*jestem z Indonezji*), and what tells them apart is the noun's ending — more proof that in Polish the ending does the work, not the preposition."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "A Polish café menu",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "Do picia (drinks)",
+            "Meaning",
+            "Do jedzenia (food)",
+            "Meaning"
+          ],
+          "rows": [
+            [
+              "*kawa czarna*",
+              "black coffee",
+              "*sernik*",
+              "cheesecake"
+            ],
+            [
+              "*kawa z mlekiem*",
+              "coffee with milk",
+              "*szarlotka*",
+              "apple pie"
+            ],
+            [
+              "*herbata z cytryną*",
+              "tea with lemon",
+              "*makowiec*",
+              "poppy seed cake"
+            ],
+            [
+              "*woda niegazowana*",
+              "still water",
+              "*kanapka*",
+              "sandwich"
+            ],
+            [
+              "*woda gazowana*",
+              "sparkling water",
+              "*zupa*",
+              "soup"
+            ],
+            [
+              "*sok pomarańczowy*",
+              "orange juice",
+              "*pierogi*",
+              "pierogi"
+            ],
+            [
+              "*piwo*",
+              "beer",
+              "*bigos*",
+              "hunter's stew (sauerkraut and meat)"
+            ],
+            [
+              "*wino*",
+              "wine",
+              "*żurek*",
+              "sour rye soup"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "The last three names are the dishes tourists ask about most. *Bigos* and *żurek* have almost no equivalent in any cuisine you know — order them once to find out, then decide for yourself."
+        },
+        {
+          "type": "kotak",
+          "title": "If you have dietary restrictions",
+          "items": [
+            "*Nie jem mięsa.* — I don't eat meat.",
+            "*Nie jem wieprzowiny.* — I don't eat pork.",
+            "*Jestem wegetarianinem.* (m) / *wegetarianką.* (f) — I'm vegetarian.",
+            "*Czy to jest bez mięsa?* — Is this meat-free?",
+            "*Czy w tym jest wieprzowina?* — Is there pork in this?"
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Phrases for cafés and restaurants",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "Polski",
+            "Say it",
+            "Meaning"
+          ],
+          "rows": [
+            [
+              "*Stolik dla dwóch osób, proszę.*",
+              "STO-lik dla dvooh O-soop",
+              "A table for two, please."
+            ],
+            [
+              "*Poproszę menu.*",
+              "po-PRO-sheh ME-noo",
+              "Could I see the menu?"
+            ],
+            [
+              "*Co pan poleca?*",
+              "tso pan po-LE-tsa",
+              "What would you recommend?"
+            ],
+            [
+              "*Poproszę to samo.*",
+              "po-PRO-sheh to SA-mo",
+              "I'll have the same."
+            ],
+            [
+              "*Smacznego!*",
+              "smach-NE-go",
+              "Enjoy your meal!"
+            ],
+            [
+              "*Bardzo smaczne.*",
+              "BAR-dzo SMACH-neh",
+              "Very tasty."
+            ],
+            [
+              "*Rachunek, proszę.*",
+              "ra-HOO-nek PRO-sheh",
+              "The bill, please."
+            ],
+            [
+              "*Osobno czy razem?*",
+              "o-SOB-no chy RA-zem",
+              "Separately or together?"
+            ],
+            [
+              "*Reszty nie trzeba.*",
+              "RESH-ty nyeh TSHE-ba",
+              "Keep the change."
+            ],
+            [
+              "*Czy jest wi-fi?*",
+              "chy yest VAY-fay",
+              "Is there wifi?"
+            ]
+          ]
+        },
+        {
+          "type": "kotak",
+          "title": "Three things to know before you walk in",
+          "items": [
+            "**Water isn't free.** In Polish restaurants water is always ordered and paid for, and the waiter will ask *gazowana czy niegazowana*.",
+            "**A tip of about ten percent** is usual in restaurants, but not expected in small cafés. Saying *reszty nie trzeba* is enough — don't just leave money on the table without a word.",
+            "**Smacznego** is said by the waiter when bringing food, and also by strangers at the next table. Reply with *dziękuję*."
+          ]
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "pl": "poproszę",
+      "baca": "po-PRO-sheh",
+      "en": "I'll have; please"
+    },
+    {
+      "pl": "kelner / kelnerka",
+      "baca": "KEL-ner",
+      "en": "waiter / waitress"
+    },
+    {
+      "pl": "podać",
+      "baca": "PO-dach",
+      "en": "to serve"
+    },
+    {
+      "pl": "menu",
+      "baca": "ME-noo",
+      "en": "menu"
+    },
+    {
+      "pl": "stolik",
+      "baca": "STO-lik",
+      "en": "table (in a restaurant)"
+    },
+    {
+      "pl": "wolny",
+      "baca": "VOL-ny",
+      "en": "free; vacant"
+    },
+    {
+      "pl": "na miejscu",
+      "baca": "na MYEY-stsoo",
+      "en": "for here (eat in)"
+    },
+    {
+      "pl": "na wynos",
+      "baca": "na VY-nos",
+      "en": "to go (takeaway)"
+    },
+    {
+      "pl": "płacić",
+      "baca": "PWA-chich",
+      "en": "to pay"
+    },
+    {
+      "pl": "płatność",
+      "baca": "PWAT-noshch",
+      "en": "payment"
+    },
+    {
+      "pl": "karta",
+      "baca": "KAR-ta",
+      "en": "card"
+    },
+    {
+      "pl": "gotówka",
+      "baca": "go-TOOF-ka",
+      "en": "cash"
+    },
+    {
+      "pl": "rachunek",
+      "baca": "ra-HOO-nek",
+      "en": "bill, check"
+    },
+    {
+      "pl": "razem / osobno",
+      "baca": "RA-zem / o-SOB-no",
+      "en": "together / separately"
+    },
+    {
+      "pl": "reszta",
+      "baca": "RESH-ta",
+      "en": "change (money back)"
+    },
+    {
+      "pl": "sernik",
+      "baca": "SER-nik",
+      "en": "cheesecake"
+    },
+    {
+      "pl": "szarlotka",
+      "baca": "shar-LOT-ka",
+      "en": "apple pie"
+    },
+    {
+      "pl": "cytryna",
+      "baca": "tsyt-RY-na",
+      "en": "lemon"
+    },
+    {
+      "pl": "mleko",
+      "baca": "MLE-ko",
+      "en": "milk"
+    },
+    {
+      "pl": "gazowany",
+      "baca": "ga-zo-VA-ny",
+      "en": "sparkling, carbonated"
+    },
+    {
+      "pl": "smaczny",
+      "baca": "SMACH-ny",
+      "en": "tasty"
+    },
+    {
+      "pl": "smacznego",
+      "baca": "smach-NE-go",
+      "en": "enjoy your meal"
+    },
+    {
+      "pl": "oczywiście",
+      "baca": "o-chy-VEESH-chyeh",
+      "en": "of course"
+    },
+    {
+      "pl": "zaraz",
+      "baca": "ZA-ras",
+      "en": "right away"
+    },
+    {
+      "pl": "dla",
+      "baca": "dla",
+      "en": "for"
+    },
+    {
+      "pl": "przy",
+      "baca": "pshy",
+      "en": "by, near"
+    },
+    {
+      "pl": "polecać",
+      "baca": "po-LE-tsach",
+      "en": "to recommend"
+    },
+    {
+      "pl": "osoba",
+      "baca": "o-SO-ba",
+      "en": "person"
+    },
+    {
+      "pl": "wieprzowina",
+      "baca": "vyep-sho-VEE-na",
+      "en": "pork"
+    },
+    {
+      "pl": "autobus",
+      "baca": "ow-TO-boos",
+      "en": "bus"
+    }
+  ],
+  "exercises": [
+    {
+      "prompt": "Order each item with *poproszę*. Watch the ending.",
+      "items": [
+        "kawa",
+        "herbata",
+        "sernik",
+        "woda",
+        "zupa",
+        "piwo"
+      ]
+    },
+    {
+      "prompt": "Fill in the *narzędnik* form (ending *-em* or *-ą*).",
+      "items": [
+        "Płacę ____ . (karta)",
+        "Płacę ____ . (gotówka)",
+        "Jadę ____ . (autobus)",
+        "Idę z ____ . (Ania)",
+        "Jestem ____ . (student)"
+      ]
+    },
+    {
+      "prompt": "Translate into Polish.",
+      "items": [
+        "I'll have a large coffee.",
+        "For here, not to go.",
+        "Could I have some water?",
+        "The bill, please.",
+        "I don't eat meat."
+      ]
+    },
+    {
+      "prompt": "Put the words in the right order.",
+      "items": [
+        "kawę / poproszę / dużą",
+        "czy / miejscu / na / wynos / na / ?",
+        "proszę / rachunek",
+        "wodę / mogę / czy / o / prosić / ?",
+        "kartą / płacę"
+      ]
+    }
+  ],
+  "answers": [
+    "Poproszę kawę. — Poproszę herbatę. — Poproszę sernik. — Poproszę wodę. — Poproszę zupę. — Poproszę piwo.",
+    "kartą — gotówką — autobusem — Anią — studentem",
+    "Poproszę dużą kawę. — Na miejscu, nie na wynos. — Czy mogę prosić o wodę? — Rachunek, proszę. — Nie jem mięsa.",
+    "Poproszę dużą kawę. — Na miejscu czy na wynos? — Rachunek, proszę. — Czy mogę prosić o wodę? — Płacę kartą."
+  ],
+  "wave": "Read the Unit 6 dialogue out loud, then order five different items with *poproszę* — without looking at the ending table."
+}

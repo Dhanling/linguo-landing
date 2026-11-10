@@ -1,0 +1,575 @@
+{
+  "title": "Ten, ta, to — the three noun genders",
+  "title_target": "Ten stół, ta lampa, to okno",
+  "goal": "Recognize a noun's gender from its ending, point things out with *ten / ta / to*, and count to twenty.",
+  "bekal": [
+    "guess a noun's gender from its last letter, right more than nine times out of ten",
+    "ask *co to jest?* and answer it",
+    "use the numbers 0–20 and ask *ile?*"
+  ],
+  "dialogs": [
+    {
+      "title": "Dialogue — Co to jest?",
+      "intro": "The classroom after the lesson. Ania points at things around the room; Budi guesses their names.",
+      "lines": [
+        {
+          "speaker": "Ania:",
+          "text": "Budi, co to jest?",
+          "id": "Budi, what's this?",
+          "literal": "Budi, what this is?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "To jest książka. Polska książka.",
+          "id": "It's a book. A Polish book.",
+          "literal": "this is book. Polish book."
+        },
+        {
+          "speaker": "Ania:",
+          "text": "Dobrze. A to?",
+          "id": "Good. And this?",
+          "literal": "good. and this?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "To jest… nie wiem. Jak to się nazywa po polsku?",
+          "id": "It's a… I don't know. What's it called in Polish?",
+          "literal": "this is… not I-know. how this self names in-Polish?"
+        },
+        {
+          "speaker": "Ania:",
+          "text": "To jest okno. Okno jest duże.",
+          "id": "It's a window. The window is big.",
+          "literal": "this is window. window is big."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Aha. A ten stół? Ten stół jest mały.",
+          "id": "Oh. And this table? This table is small.",
+          "literal": "aha. and this-m table? this-m table is small."
+        },
+        {
+          "speaker": "Ania:",
+          "text": "Tak! Ten stół, ta lampa, to okno.",
+          "id": "Yes! Ten stół, ta lampa, to okno.",
+          "literal": "yes! this-m table, this-f lamp, this-n window."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Dlaczego ten, ta i to? Nie rozumiem.",
+          "id": "Why ten, ta, and to? I don't understand.",
+          "literal": "why ten, ta and to? not I-understand."
+        },
+        {
+          "speaker": "Ania:",
+          "text": "Bo każdy rzeczownik ma rodzaj: męski, żeński albo nijaki.",
+          "id": "Because every noun has a gender: masculine, feminine, or neuter.",
+          "literal": "because every noun has gender: masculine, feminine or neuter."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "A jak poznać rodzaj?",
+          "id": "And how do you tell the gender?",
+          "literal": "and how recognize gender?"
+        },
+        {
+          "speaker": "Ania:",
+          "text": "Popatrz na koniec słowa. To cała tajemnica.",
+          "id": "Look at the end of the word. That's the whole secret.",
+          "literal": "look at end of-word. this whole secret."
+        }
+      ],
+      "notes": [
+        "**To jest… works for anything.** When introducing a thing — of any gender — the sentence is always *to jest*, never *ten jest* or *ta jest*. *To jest książka*, *to jest stół*, *to jest okno*. This is the biggest shortcut in the unit: as long as you're just **pointing**, you don't need to know the gender at all.",
+        "**What changes is *ten / ta / to* when it's attached to the noun.** Compare: *To jest stół* (this is a table) and *Ten stół jest mały* (this table is small). The first points; the second describes.",
+        "**Jest can disappear.** *To cała tajemnica* in the last line has no *jest*, and it's still a complete sentence. In short sentences that equate two things, *jest* is often simply dropped — something English never allows.",
+        "**Nie wiem** (I don't know) is one of the sentences you'll use most in your first months. Its partner: *nie rozumiem* (I don't understand). *Wiedzieć* is knowing a **fact**; for knowing a **person**, Polish uses *znać*.",
+        "**Jak to się nazywa po polsku?** Lifesaver phrase number one. Memorize it whole, don't take it apart — it will replace a dictionary in many situations.",
+        "**Adjectives come first.** *Polska książka* (a Polish book), *duże okno* (a big window) — same as English. Notice too that the adjective's ending follows the noun's gender: *mały stół*, *mała lampa*, *małe okno*.",
+        "**Bo** means \"because\" and always sits in the middle of the sentence. To start a sentence with \"because\", use *ponieważ*, which sounds more formal."
+      ],
+      "grammars": [
+        {
+          "title": "The three noun genders — and how to guess them",
+          "body": [
+            "Every Polish noun has one of three genders. The good news: the gender can almost always be read from the **last letter**, so there's no need to memorize each one like German *der/die/das*."
+          ],
+          "table": {
+            "head": [
+              "Gender",
+              "Word ending",
+              "\"this\"",
+              "Examples"
+            ],
+            "rows": [
+              [
+                "**męski** (masculine)",
+                "consonant",
+                "*ten*",
+                "*stół*, *dom*, *kot*, *student*"
+              ],
+              [
+                "**żeński** (feminine)",
+                "**-a**",
+                "*ta*",
+                "*książka*, *lampa*, *kawa*, *kobieta*"
+              ],
+              [
+                "**nijaki** (neuter)",
+                "**-o, -e, -ę**",
+                "*to*",
+                "*okno*, *morze*, *imię*"
+              ]
+            ]
+          },
+          "after": [
+            "This rule works for more than nine nouns out of ten. The exceptions you'll really meet come in just two groups: words ending in *-ość* (*miłość*, *radość*), which are **żeński** despite ending in a consonant, and words like *mężczyzna* (man), *kolega* (friend), *tata* (dad), which end in *-a* but are **męski** because they mean male people.",
+            "⚠️ Gender here is a matter of **grammar**, not meaning. *Stół* (table) isn't male in any sense; it just belongs to the group whose endings behave that way. Don't look for reasons; look at the ending.",
+            "Why does this matter right now? Because noun gender decides almost every other ending in Polish: adjectives, \"this/that\", possessives, and the noun's own shape in the six other noun forms. Guess the gender wrong here and the mistake spreads to every unit that follows."
+          ]
+        },
+        {
+          "title": "Ten, ta, to — and their twins",
+          "body": [
+            "The pointing word follows the noun's gender, and there are only two plural forms."
+          ],
+          "table": {
+            "head": [
+              "",
+              "Singular",
+              "Example",
+              "Plural",
+              "Plural example"
+            ],
+            "rows": [
+              [
+                "męski",
+                "*ten*",
+                "*ten stół*",
+                "*te*",
+                "*te stoły*"
+              ],
+              [
+                "żeński",
+                "*ta*",
+                "*ta lampa*",
+                "*te*",
+                "*te lampy*"
+              ],
+              [
+                "nijaki",
+                "*to*",
+                "*to okno*",
+                "*te*",
+                "*te okna*"
+              ],
+              [
+                "male people (plural)",
+                "—",
+                "—",
+                "*ci*",
+                "*ci studenci*"
+              ]
+            ]
+          },
+          "after": [
+            "For \"that\" (far away) there's *tamten / tamta / tamto*, but in everyday speech Poles much more often just use *ten* and point.",
+            "The last row shows something typically Polish: a group that **includes men** is treated differently from other groups. This pattern comes back in the past tense (Unit 17). Just recognize it; you don't need to use it yet."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Things around you",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Grouped by gender so your eyes get used to the pattern instead of memorizing a random list."
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Męski — *ten*",
+            "Żeński — *ta*",
+            "Nijaki — *to*"
+          ],
+          "rows": [
+            [
+              "*stół* — table",
+              "*lampa* — lamp",
+              "*okno* — window"
+            ],
+            [
+              "*dom* — house",
+              "*książka* — book",
+              "*krzesło* — chair"
+            ],
+            [
+              "*telefon* — phone",
+              "*kawa* — coffee",
+              "*mieszkanie* — apartment"
+            ],
+            [
+              "*komputer* — computer",
+              "*herbata* — tea",
+              "*miasto* — city"
+            ],
+            [
+              "*klucz* — key",
+              "*woda* — water",
+              "*morze* — sea"
+            ],
+            [
+              "*chleb* — bread",
+              "*torba* — bag",
+              "*jedzenie* — food"
+            ],
+            [
+              "*kot* — cat",
+              "*gazeta* — newspaper",
+              "*piwo* — beer"
+            ],
+            [
+              "*pies* — dog",
+              "*szkoła* — school",
+              "*imię* — first name"
+            ]
+          ]
+        },
+        {
+          "type": "kotak",
+          "title": "Eye training: three seconds per word",
+          "items": [
+            "Cover the header row, then read down the list saying *ten*, *ta*, or *to* before each word.",
+            "If in doubt, don't think too long — look at the last letter. Ending in *-a*: almost certainly *ta*; ending in *-o* or *-e*: almost certainly *to*; everything else: *ten*.",
+            "Repeat this once a day for a week. After that, noun gender stops being memorization and starts being a reflex."
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Numbers 0–20",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "Number",
+            "Polski",
+            "Say it",
+            "Number",
+            "Polski",
+            "Say it"
+          ],
+          "rows": [
+            [
+              "0",
+              "*zero*",
+              "ZE-ro",
+              "11",
+              "*jedenaście*",
+              "ye-de-NASH-chyeh"
+            ],
+            [
+              "1",
+              "*jeden*",
+              "YE-den",
+              "12",
+              "*dwanaście*",
+              "dva-NASH-chyeh"
+            ],
+            [
+              "2",
+              "*dwa*",
+              "dva",
+              "13",
+              "*trzynaście*",
+              "tshy-NASH-chyeh"
+            ],
+            [
+              "3",
+              "*trzy*",
+              "tshy",
+              "14",
+              "*czternaście*",
+              "chter-NASH-chyeh"
+            ],
+            [
+              "4",
+              "*cztery*",
+              "CHTE-ry",
+              "15",
+              "*piętnaście*",
+              "pyent-NASH-chyeh"
+            ],
+            [
+              "5",
+              "*pięć*",
+              "pyench",
+              "16",
+              "*szesnaście*",
+              "shes-NASH-chyeh"
+            ],
+            [
+              "6",
+              "*sześć*",
+              "sheshch",
+              "17",
+              "*siedemnaście*",
+              "she-dem-NASH-chyeh"
+            ],
+            [
+              "7",
+              "*siedem*",
+              "SHE-dem",
+              "18",
+              "*osiemnaście*",
+              "o-shem-NASH-chyeh"
+            ],
+            [
+              "8",
+              "*osiem*",
+              "O-shem",
+              "19",
+              "*dziewiętnaście*",
+              "jye-vyent-NASH-chyeh"
+            ],
+            [
+              "9",
+              "*dziewięć*",
+              "JYE-vyench",
+              "20",
+              "*dwadzieścia*",
+              "dva-JYESH-chya"
+            ],
+            [
+              "10",
+              "*dziesięć*",
+              "JYE-shench",
+              "",
+              "",
+              ""
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "A pattern that saves memorizing: 11–19 all end in **-naście**, which comes from \"on top of ten\" — like English *-teen*. Just know 1–10, then add the ending: *cztery → czternaście*, *sześć → szesnaście*."
+        },
+        {
+          "type": "kotak",
+          "title": "Numbers and nouns — an early warning",
+          "items": [
+            "A noun after a number **changes its form**, and the rule is unlike any language you know: *jeden bilet*, *dwa bilety*, but *pięć biletów*.",
+            "Don't deal with it now. All you need in this unit are the numbers themselves; the nouns are handled in Units 6 and 15.",
+            "To ask about quantity, use *ile?* — *Ile to kosztuje?* (how much does it cost?), *Ile masz lat?* (how old are you?)."
+          ]
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "pl": "co to jest?",
+      "baca": "tso to yest",
+      "en": "what is this?"
+    },
+    {
+      "pl": "to jest",
+      "baca": "to yest",
+      "en": "this is"
+    },
+    {
+      "pl": "ten / ta / to",
+      "baca": "ten / ta / to",
+      "en": "this (m / f / n)"
+    },
+    {
+      "pl": "rzeczownik",
+      "baca": "zhe-CHOV-nik",
+      "en": "noun"
+    },
+    {
+      "pl": "rodzaj",
+      "baca": "RO-dzay",
+      "en": "gender (of a word)"
+    },
+    {
+      "pl": "męski",
+      "baca": "MENS-ki",
+      "en": "masculine"
+    },
+    {
+      "pl": "żeński",
+      "baca": "ZHENY-ski",
+      "en": "feminine"
+    },
+    {
+      "pl": "nijaki",
+      "baca": "ni-YA-ki",
+      "en": "neuter"
+    },
+    {
+      "pl": "stół",
+      "baca": "stoow",
+      "en": "table"
+    },
+    {
+      "pl": "krzesło",
+      "baca": "KSHE-swo",
+      "en": "chair"
+    },
+    {
+      "pl": "okno",
+      "baca": "OK-no",
+      "en": "window"
+    },
+    {
+      "pl": "lampa",
+      "baca": "LAM-pa",
+      "en": "lamp"
+    },
+    {
+      "pl": "książka",
+      "baca": "KSHONSH-ka",
+      "en": "book"
+    },
+    {
+      "pl": "dom",
+      "baca": "dom",
+      "en": "house"
+    },
+    {
+      "pl": "mieszkanie",
+      "baca": "myesh-KA-nyeh",
+      "en": "apartment"
+    },
+    {
+      "pl": "klucz",
+      "baca": "klooch",
+      "en": "key"
+    },
+    {
+      "pl": "telefon",
+      "baca": "te-LE-fon",
+      "en": "phone"
+    },
+    {
+      "pl": "kot / pies",
+      "baca": "kot / pyes",
+      "en": "cat / dog"
+    },
+    {
+      "pl": "duży",
+      "baca": "DOO-zhy",
+      "en": "big"
+    },
+    {
+      "pl": "mały",
+      "baca": "MA-wy",
+      "en": "small"
+    },
+    {
+      "pl": "nowy / stary",
+      "baca": "NO-vy / STA-ry",
+      "en": "new / old"
+    },
+    {
+      "pl": "wiedzieć",
+      "baca": "VYE-jyech",
+      "en": "to know (a fact)"
+    },
+    {
+      "pl": "znać",
+      "baca": "znach",
+      "en": "to know (a person)"
+    },
+    {
+      "pl": "dlaczego",
+      "baca": "dla-CHE-go",
+      "en": "why"
+    },
+    {
+      "pl": "bo",
+      "baca": "bo",
+      "en": "because"
+    },
+    {
+      "pl": "każdy",
+      "baca": "KAZH-dy",
+      "en": "every"
+    },
+    {
+      "pl": "albo",
+      "baca": "AL-bo",
+      "en": "or"
+    },
+    {
+      "pl": "ile",
+      "baca": "EE-leh",
+      "en": "how many, how much"
+    },
+    {
+      "pl": "koniec",
+      "baca": "KO-nyets",
+      "en": "end"
+    },
+    {
+      "pl": "słowo",
+      "baca": "SWO-vo",
+      "en": "word"
+    }
+  ],
+  "exercises": [
+    {
+      "prompt": "Write *ten*, *ta*, or *to* before each noun.",
+      "items": [
+        "____ stół",
+        "____ lampa",
+        "____ okno",
+        "____ książka",
+        "____ telefon",
+        "____ mieszkanie"
+      ]
+    },
+    {
+      "prompt": "Translate into Polish.",
+      "items": [
+        "What's this?",
+        "It's a book.",
+        "This window is big.",
+        "This table is small.",
+        "I don't know.",
+        "What's it called in Polish?"
+      ]
+    },
+    {
+      "prompt": "Write the numbers out in words.",
+      "items": [
+        "3",
+        "7",
+        "12",
+        "15",
+        "20"
+      ]
+    },
+    {
+      "prompt": "Put the words in the right order.",
+      "items": [
+        "to / co / jest / ?",
+        "jest / książka / to",
+        "mały / stół / ten / jest",
+        "rodzaj / rzeczownik / ma / każdy",
+        "wiem / nie"
+      ]
+    }
+  ],
+  "answers": [
+    "ten — ta — to — ta — ten — to",
+    "Co to jest? — To jest książka. — To okno jest duże. — Ten stół jest mały. — Nie wiem. — Jak to się nazywa po polsku?",
+    "trzy — siedem — dwanaście — piętnaście — dwadzieścia",
+    "Co to jest? — To jest książka. — Ten stół jest mały. — Każdy rzeczownik ma rodzaj. — Nie wiem."
+  ],
+  "wave": "Read the Unit 1 dialogue out loud once, then name five nouns from Unit 2, adding *ten*, *ta*, or *to* in front of each."
+}

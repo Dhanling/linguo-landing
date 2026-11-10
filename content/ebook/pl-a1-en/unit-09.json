@@ -1,0 +1,563 @@
+{
+  "title": "How much is it?",
+  "title_target": "Ile to kosztuje?",
+  "goal": "Ask about and understand prices, read big numbers, and see why Polish money has three forms: *złoty*, *złote*, and *złotych*.",
+  "bekal": [
+    "ask prices with *ile kosztuje* and *ile płacę*",
+    "read prices in *złoty* and *grosz* with the right form",
+    "read hundreds and thousands"
+  ],
+  "dialogs": [
+    {
+      "title": "Dialogue — W kiosku z biletami",
+      "intro": "The public transport ticket counter at the station. Budi wants to buy a monthly pass.",
+      "lines": [
+        {
+          "speaker": "Sprzedawca:",
+          "text": "Dzień dobry, w czym mogę pomóc?",
+          "id": "Good afternoon, how can I help?",
+          "literal": "day good, in what I-can help?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Ile kosztuje bilet miesięczny?",
+          "id": "How much is a monthly ticket?",
+          "literal": "how-much costs ticket monthly?"
+        },
+        {
+          "speaker": "Sprzedawca:",
+          "text": "Sto dziesięć złotych. A studencki pięćdziesiąt pięć.",
+          "id": "A hundred and ten złoty. The student one is fifty-five.",
+          "literal": "hundred ten złotys. and student's fifty five."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Mam legitymację studencką.",
+          "id": "I have a student ID.",
+          "literal": "I-have ID-card student."
+        },
+        {
+          "speaker": "Sprzedawca:",
+          "text": "Świetnie. Poproszę pięćdziesiąt pięć złotych.",
+          "id": "Great. That'll be fifty-five złoty, please.",
+          "literal": "great. I-ask fifty five złotys."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Czy mogę zapłacić kartą?",
+          "id": "Can I pay by card?",
+          "literal": "whether I-may pay by-card?"
+        },
+        {
+          "speaker": "Sprzedawca:",
+          "text": "Oczywiście. Proszę bardzo.",
+          "id": "Of course. Here you go.",
+          "literal": "of-course. please very."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Jeszcze jedno pytanie. Ile kosztuje bilet jednorazowy?",
+          "id": "One more question. How much is a single ticket?",
+          "literal": "still one question. how-much costs ticket single-use?"
+        },
+        {
+          "speaker": "Sprzedawca:",
+          "text": "Cztery złote i czterdzieści groszy.",
+          "id": "Four złoty forty groszy.",
+          "literal": "four złotys and forty groszes."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "A bilet dwudziestominutowy?",
+          "id": "And a twenty-minute ticket?",
+          "literal": "and ticket twenty-minute?"
+        },
+        {
+          "speaker": "Sprzedawca:",
+          "text": "Trzy złote sześćdziesiąt. Proszę, to pana bilet.",
+          "id": "Three sixty. Here's your ticket, sir.",
+          "literal": "three złotys sixty. please, this sir's ticket."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Dziękuję za pomoc. Do widzenia!",
+          "id": "Thanks for your help. Goodbye!",
+          "literal": "thanks for help. until seeing!"
+        }
+      ],
+      "notes": [
+        "**Ile kosztuje** for one item, **ile kosztują** for several: *Ile kosztuje bilet?* but *Ile kosztują bilety?*. The safest form if you're unsure: *Ile to kosztuje?* — \"how much is this\", pointing at the item.",
+        "**Złoty, złote, złotych.** Polish currency follows the number rule you saw in Unit 6: *jeden złoty*, *dwa/trzy/cztery złote*, *pięć złotych*. The rule is exactly the same as *rok / lata / lat*, so you already have the pattern.",
+        "**Grosz** is the hundredth part, and it follows the same pattern: *jeden grosz*, *dwa grosze*, *pięć groszy*. In conversation, Poles often drop *grosze* altogether: *trzy złote sześćdziesiąt* — just like saying \"three sixty\" in English.",
+        "**Bilet miesięczny, bilet jednorazowy** — an adjective stands **after** the noun when it names a type, not a quality. Compare *duży bilet* (a big ticket) with *bilet miesięczny* (monthly ticket, a fixed term). The same pattern appears in *woda gazowana* and *kawa czarna* in Unit 8.",
+        "**Legitymacja studencka** — student ID. It's valuable in Poland: many discounts on transport, museums, and cinemas require it, and the discount is often half price.",
+        "**W czym mogę pomóc** literally \"in what can I help\". The standard line of shop staff; just answer with *poproszę…* or *szukam…*.",
+        "**Dziękuję za pomoc** — after *za* comes the object form (*pomoc* happens not to change). Ready-made pattern: *dziękuję za kawę*, *dziękuję za informację*.",
+        "**To pana bilet** — \"this is your ticket, sir\". The possessive for someone addressed politely isn't *twój* but *pana* (m) or *pani* (f). One of the politeness markers beginners forget most easily."
+      ],
+      "grammars": [
+        {
+          "title": "Money: złoty, złote, złotych",
+          "body": [
+            "Three forms, chosen by the **last digit**, exactly like years in Unit 6."
+          ],
+          "table": {
+            "head": [
+              "Number",
+              "Form",
+              "Example",
+              "Say it"
+            ],
+            "rows": [
+              [
+                "1",
+                "*złoty*",
+                "*jeden złoty*",
+                "YE-den ZWO-ty"
+              ],
+              [
+                "2, 3, 4",
+                "*złote*",
+                "*trzy złote*",
+                "tshy ZWO-teh"
+              ],
+              [
+                "5–21",
+                "*złotych*",
+                "*dziesięć złotych*",
+                "JYE-shench ZWO-tyh"
+              ],
+              [
+                "22, 23, 24",
+                "*złote*",
+                "*dwadzieścia dwa złote*",
+                "dva-JYESH-chya dva ZWO-teh"
+              ],
+              [
+                "25 and up",
+                "*złotych*",
+                "*sto złotych*",
+                "sto ZWO-tyh"
+              ]
+            ]
+          },
+          "after": [
+            "The same rule applies to almost every counted noun: *bilet / bilety / biletów*, *książka / książki / książek*, *osoba / osoby / osób*.",
+            "An honest shortcut: if you're unsure, **just say the number without the currency**. *Ile? — Pięćdziesiąt pięć.* Poles do it all day long, and nobody will suspect you're dodging the grammar.",
+            "⚠️ The official abbreviation is **zł**, written after the number: *55 zł*. The bank code is PLN."
+          ]
+        },
+        {
+          "title": "Big numbers",
+          "body": [
+            "Hundreds and thousands are simply strung together in order, with no \"and\" in between."
+          ],
+          "table": {
+            "head": [
+              "Number",
+              "Polski",
+              "Say it"
+            ],
+            "rows": [
+              [
+                "100",
+                "*sto*",
+                "sto"
+              ],
+              [
+                "200",
+                "*dwieście*",
+                "DVYESH-chyeh"
+              ],
+              [
+                "300",
+                "*trzysta*",
+                "TSHYS-ta"
+              ],
+              [
+                "400",
+                "*czterysta*",
+                "chte-RYS-ta"
+              ],
+              [
+                "500",
+                "*pięćset*",
+                "PYENCH-set"
+              ],
+              [
+                "600",
+                "*sześćset*",
+                "SHESHCH-set"
+              ],
+              [
+                "700",
+                "*siedemset*",
+                "SHE-dem-set"
+              ],
+              [
+                "800",
+                "*osiemset*",
+                "O-shem-set"
+              ],
+              [
+                "900",
+                "*dziewięćset*",
+                "JYE-vyench-set"
+              ],
+              [
+                "1,000",
+                "*tysiąc*",
+                "TY-shonts"
+              ],
+              [
+                "2,000",
+                "*dwa tysiące*",
+                "dva ty-SHON-tseh"
+              ],
+              [
+                "5,000",
+                "*pięć tysięcy*",
+                "pyench ty-SHEN-tsy"
+              ]
+            ]
+          },
+          "after": [
+            "500–900 all end in *-set* and are written as one word. 200–400 don't, and their forms have to be learned as they are.",
+            "Combined examples: *tysiąc dwieście pięćdziesiąt* (1,250), *dwa tysiące dwadzieścia sześć* (2026).",
+            "Notice that *tysiąc* itself follows the 2-3-4 rule: *dwa tysiące*, but *pięć tysięcy*."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Prices and paying",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "Polski",
+            "Say it",
+            "Meaning"
+          ],
+          "rows": [
+            [
+              "*Ile to kosztuje?*",
+              "EE-leh to kosh-TOO-yeh",
+              "How much is this?"
+            ],
+            [
+              "*Ile płacę?*",
+              "EE-leh PWA-tseh",
+              "How much do I pay?"
+            ],
+            [
+              "*To za drogo.*",
+              "to za DRO-go",
+              "That's too expensive."
+            ],
+            [
+              "*Czy jest zniżka studencka?*",
+              "chy yest ZNEESH-ka",
+              "Is there a student discount?"
+            ],
+            [
+              "*Czy mogę zapłacić kartą?*",
+              "chy MO-geh za-PWA-chich KAR-ton",
+              "Can I pay by card?"
+            ],
+            [
+              "*Tylko gotówka.*",
+              "TYL-ko go-TOOF-ka",
+              "Cash only."
+            ],
+            [
+              "*Czy ma pan drobne?*",
+              "chy ma pan DROB-neh",
+              "Do you have small change, sir?"
+            ],
+            [
+              "*Poproszę paragon.*",
+              "po-PRO-sheh pa-RA-gon",
+              "A receipt, please."
+            ],
+            [
+              "*Czy to jest w promocji?*",
+              "chy to yest f pro-MO-tsyi",
+              "Is this on sale?"
+            ],
+            [
+              "*Biorę to.*",
+              "BYO-reh to",
+              "I'll take this one."
+            ]
+          ]
+        },
+        {
+          "type": "kotak",
+          "title": "Haggling in Poland?",
+          "items": [
+            "In shops, supermarkets, and kiosks — **no**. Prices are fixed, and haggling would feel odd to the seller.",
+            "At flea markets (*pchli targ*) and open-air markets, haggling is normal. The phrase: *Czy może być taniej?* (can it be cheaper?).",
+            "What newcomers often forget: there are many official discounts (students, weekends, apps) that you only have to ask for — *Czy jest jakaś zniżka?*"
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Numbers in everyday life",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Numbers aren't only for prices. These four uses come up every day in Poland."
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "What for",
+            "Example",
+            "Meaning"
+          ],
+          "rows": [
+            [
+              "phone number",
+              "*Mój numer to 601 234 567.*",
+              "My number is 601 234 567."
+            ],
+            [
+              "house number",
+              "*Mieszkam na Długiej 15.*",
+              "I live at 15 Długa Street."
+            ],
+            [
+              "bus number",
+              "*Jadę autobusem numer 52.*",
+              "I'm taking bus number 52."
+            ],
+            [
+              "temperature",
+              "*Jest minus pięć stopni.*",
+              "It's minus five degrees."
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "Polish phone numbers have nine digits and are read in groups of three. The emergency number is **112**, as everywhere in the European Union."
+        },
+        {
+          "type": "kotak",
+          "title": "Asking for a number",
+          "items": [
+            "*Jaki masz numer telefonu?* — What's your phone number?",
+            "*Możesz powtórzyć wolniej?* — Can you repeat that more slowly?",
+            "*Napiszesz mi to?* — Could you write it down for me?",
+            "That last one is the most honest weapon a beginner has: numbers spoken fast are hard to catch even after a year of study."
+          ]
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "pl": "kosztować",
+      "baca": "kosh-TO-vach",
+      "en": "to cost"
+    },
+    {
+      "pl": "cena",
+      "baca": "TSE-na",
+      "en": "price"
+    },
+    {
+      "pl": "złoty",
+      "baca": "ZWO-ty",
+      "en": "złoty (currency)"
+    },
+    {
+      "pl": "grosz",
+      "baca": "grosh",
+      "en": "grosz (1/100 złoty)"
+    },
+    {
+      "pl": "bilet",
+      "baca": "BEE-let",
+      "en": "ticket"
+    },
+    {
+      "pl": "miesięczny",
+      "baca": "mye-SHENCH-ny",
+      "en": "monthly"
+    },
+    {
+      "pl": "jednorazowy",
+      "baca": "yed-no-ra-ZO-vy",
+      "en": "single-use"
+    },
+    {
+      "pl": "legitymacja",
+      "baca": "le-gi-ty-MA-tsya",
+      "en": "ID card"
+    },
+    {
+      "pl": "zniżka",
+      "baca": "ZNEESH-ka",
+      "en": "discount"
+    },
+    {
+      "pl": "promocja",
+      "baca": "pro-MO-tsya",
+      "en": "special offer, sale"
+    },
+    {
+      "pl": "paragon",
+      "baca": "pa-RA-gon",
+      "en": "receipt"
+    },
+    {
+      "pl": "drobne",
+      "baca": "DROB-neh",
+      "en": "small change"
+    },
+    {
+      "pl": "sprzedawca",
+      "baca": "spshe-DAV-tsa",
+      "en": "salesperson"
+    },
+    {
+      "pl": "pomoc",
+      "baca": "PO-mots",
+      "en": "help"
+    },
+    {
+      "pl": "pomóc",
+      "baca": "PO-moots",
+      "en": "to help"
+    },
+    {
+      "pl": "pytanie",
+      "baca": "py-TA-nyeh",
+      "en": "question"
+    },
+    {
+      "pl": "numer",
+      "baca": "NOO-mer",
+      "en": "number"
+    },
+    {
+      "pl": "za drogo",
+      "baca": "za DRO-go",
+      "en": "too expensive"
+    },
+    {
+      "pl": "taniej",
+      "baca": "TA-nyey",
+      "en": "cheaper"
+    },
+    {
+      "pl": "dwieście",
+      "baca": "DVYESH-chyeh",
+      "en": "two hundred"
+    },
+    {
+      "pl": "pięćset",
+      "baca": "PYENCH-set",
+      "en": "five hundred"
+    },
+    {
+      "pl": "tysiąc",
+      "baca": "TY-shonts",
+      "en": "a thousand"
+    },
+    {
+      "pl": "stopień",
+      "baca": "STO-pyeny",
+      "en": "degree"
+    },
+    {
+      "pl": "zapłacić",
+      "baca": "za-PWA-chich",
+      "en": "to pay (completely)"
+    },
+    {
+      "pl": "powtórzyć",
+      "baca": "pof-TOO-zhych",
+      "en": "to repeat"
+    },
+    {
+      "pl": "wolniej",
+      "baca": "VOL-nyey",
+      "en": "more slowly"
+    },
+    {
+      "pl": "ulica",
+      "baca": "oo-LEE-tsa",
+      "en": "street"
+    },
+    {
+      "pl": "pana / pani",
+      "baca": "PA-na / PA-ni",
+      "en": "your (polite, to a man / woman)"
+    },
+    {
+      "pl": "za",
+      "baca": "za",
+      "en": "for; too"
+    },
+    {
+      "pl": "miłego dnia",
+      "baca": "mi-WE-go dnya",
+      "en": "have a nice day"
+    }
+  ],
+  "exercises": [
+    {
+      "prompt": "Write out the price with the right form of *złoty*.",
+      "items": [
+        "1 zł",
+        "3 zł",
+        "7 zł",
+        "22 zł",
+        "100 zł"
+      ]
+    },
+    {
+      "prompt": "Write the numbers out in words.",
+      "items": [
+        "200",
+        "500",
+        "1,000",
+        "1,250",
+        "2026"
+      ]
+    },
+    {
+      "prompt": "Translate into Polish.",
+      "items": [
+        "How much is this?",
+        "How much is a monthly ticket?",
+        "Can I pay by card?",
+        "That's too expensive.",
+        "Is there a student discount?"
+      ]
+    },
+    {
+      "prompt": "Put the words in the right order.",
+      "items": [
+        "kosztuje / to / ile / ?",
+        "złotych / pięćdziesiąt / pięć",
+        "kartą / mogę / zapłacić / czy / ?",
+        "pomoc / dziękuję / za",
+        "drogo / to / za"
+      ]
+    }
+  ],
+  "answers": [
+    "jeden złoty — trzy złote — siedem złotych — dwadzieścia dwa złote — sto złotych",
+    "dwieście — pięćset — tysiąc — tysiąc dwieście pięćdziesiąt — dwa tysiące dwadzieścia sześć",
+    "Ile to kosztuje? — Ile kosztuje bilet miesięczny? — Czy mogę zapłacić kartą? — To za drogo. — Czy jest zniżka studencka?",
+    "Ile to kosztuje? — pięćdziesiąt pięć złotych — Czy mogę zapłacić kartą? — Dziękuję za pomoc. — To za drogo."
+  ],
+  "wave": "Read the Unit 7 dialogue out loud, then say five random prices from a shopping receipt in Polish."
+}

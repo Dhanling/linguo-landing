@@ -1,0 +1,620 @@
+{
+  "title": "Tell me about your weekend",
+  "title_target": "Opowiedz o swoim weekendzie",
+  "goal": "String short sentences into a whole story with linking words, and close a conversation like someone who's used to it.",
+  "bekal": [
+    "using ten linking words that turn a list of sentences into a story",
+    "reacting naturally to other people's stories",
+    "telling one event from beginning to end"
+  ],
+  "dialogs": [
+    {
+      "title": "Dialogue — No i jak było w górach?",
+      "intro": "Monday morning. Ania has been waiting for the full story ever since Budi's Saturday text that just said \"I'll tell you later\".",
+      "lines": [
+        {
+          "speaker": "Ania:",
+          "text": "No i jak było w górach?",
+          "id": "So, how was it in the mountains?",
+          "literal": "well and how was in mountains?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Wspaniale! Chociaż na początku prawie się spóźniłem na pociąg.",
+          "id": "Amazing! Even though at first I nearly missed the train.",
+          "literal": "wonderful! although at start almost self I-was-late for train."
+        },
+        {
+          "speaker": "Ania:",
+          "text": "Znowu? Co się stało?",
+          "id": "Again? What happened?",
+          "literal": "again? what self happened?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Budzik nie zadzwonił, bo telefon się rozładował.",
+          "id": "My alarm didn't go off — my phone had died.",
+          "literal": "alarm-clock not rang, because phone self discharged."
+        },
+        {
+          "speaker": "Ania:",
+          "text": "I zdążyłeś?",
+          "id": "And did you make it?",
+          "literal": "and you-made-it?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Ledwo. Pobiegłem na dworzec i wskoczyłem do pociągu w ostatniej chwili.",
+          "id": "Barely. I ran to the station and jumped on the train at the last second.",
+          "literal": "barely. I-ran to station and I-jumped into train at last moment."
+        },
+        {
+          "speaker": "Ania:",
+          "text": "A pogoda dopisała?",
+          "id": "And was the weather on your side?",
+          "literal": "and weather wrote-up?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Najpierw było zimno i mgliście, ale potem wyszło słońce.",
+          "id": "At first it was cold and foggy, but then the sun came out.",
+          "literal": "first was cold and foggy, but then came-out sun."
+        },
+        {
+          "speaker": "Ania:",
+          "text": "Widziałeś Morskie Oko?",
+          "id": "Did you see Morskie Oko?",
+          "literal": "you-saw Sea Eye?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Tak, i zrobiłem sto zdjęć. Woda była zielona jak szkło.",
+          "id": "Yes, and I took a hundred photos. The water was green as glass.",
+          "literal": "yes, and I-made hundred photos. water was green like glass."
+        },
+        {
+          "speaker": "Ania:",
+          "text": "Zazdroszczę. A wróciliście późno?",
+          "id": "I'm jealous. Did you get back late?",
+          "literal": "I-envy. and you-returned late?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Około jedenastej. Byłem tak zmęczony, że zasnąłem w pociągu.",
+          "id": "Around eleven. I was so tired I fell asleep on the train.",
+          "literal": "about eleventh. I-was so tired, that I-fell-asleep in train."
+        },
+        {
+          "speaker": "Ania:",
+          "text": "Ale było warto, prawda?",
+          "id": "But it was worth it, right?",
+          "literal": "but was worth, right?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Zdecydowanie. W przyszłym miesiącu pojedziemy jeszcze raz. Jedziesz z nami?",
+          "id": "Definitely. We're going again next month. Want to come?",
+          "literal": "definitely. in next month we-will-go still once. you-go with us?"
+        },
+        {
+          "speaker": "Ania:",
+          "text": "Jasne! Tylko obiecaj, że naładujesz telefon.",
+          "id": "Of course! Just promise you'll charge your phone.",
+          "literal": "clear! only promise, that you-will-charge phone."
+        }
+      ],
+      "notes": [
+        "**No i…** is the most typically Polish way to start a story — like English \"so…\" or \"well, and…\". It means nothing literally, and that's exactly why it makes your conversation sound alive.",
+        "**Chociaż** (although) turns two separate sentences into one with a shape. Compare: *Było wspaniale. Prawie się spóźniłem.* with *Było wspaniale, chociaż prawie się spóźniłem.* Same content; the second sounds like someone who can tell a story.",
+        "**Co się stało?** — \"what happened?\", literally \"what happened itself\". One of the most common questions, and one of the most useful to learn whole.",
+        "**Pobiegłem, wskoczyłem, wyszło** — completed verbs with prefixes, all in the past. Polish stories about the past are almost always built from completed forms for **events** and ongoing forms for the **background** (*było zimno*, *woda była zielona*).",
+        "**Tak zmęczony, że zasnąłem** — \"so tired that I fell asleep\". The formula *tak… że…* works exactly like English \"so… that…\".",
+        "**Morskie Oko** (literally \"eye of the sea\") is the most famous lake in the Tatra Mountains and Poland's most popular day hike. Mention it and Poles will know right away where you went.",
+        "**Zazdroszczę** — \"I'm jealous\", and in Poland it's a compliment, not a complaint. Its warmer sibling: *Cieszę się!* (I'm happy for you).",
+        "**Obiecaj, że…** — the command form of *obiecać*. Note that *że* is required and comes after a comma, as you learned in unit 5."
+      ],
+      "grammars": [
+        {
+          "title": "Linking words",
+          "body": [
+            "Ten words that make the difference between a list of sentences and a story. You've met them all in this module; this page brings them together."
+          ],
+          "table": {
+            "head": [
+              "Polski",
+              "English",
+              "Example"
+            ],
+            "rows": [
+              [
+                "*i*",
+                "and",
+                "*Zjadłem i wyszedłem.*"
+              ],
+              [
+                "*ale*",
+                "but",
+                "*Chciałem iść, ale padało.*"
+              ],
+              [
+                "*bo*",
+                "because",
+                "*Nie poszedłem, bo byłem chory.*"
+              ],
+              [
+                "*więc*",
+                "so",
+                "*Padało, więc zostałem w domu.*"
+              ],
+              [
+                "*że*",
+                "that",
+                "*Myślę, że masz rację.*"
+              ],
+              [
+                "*chociaż*",
+                "although",
+                "*Poszedłem, chociaż padało.*"
+              ],
+              [
+                "*kiedy*",
+                "when",
+                "*Kiedy wróciłem, było ciemno.*"
+              ],
+              [
+                "*zanim*",
+                "before",
+                "*Zjadłem, zanim wyszedłem.*"
+              ],
+              [
+                "*potem*",
+                "then",
+                "*Najpierw kawa, potem praca.*"
+              ],
+              [
+                "*dlatego*",
+                "that's why",
+                "*Byłem zmęczony, dlatego spałem.*"
+              ]
+            ]
+          },
+          "after": [
+            "**A comma is almost always required** before *że*, *bo*, *kiedy*, *chociaż* and *zanim*. In Polish, commas aren't a matter of taste as they often are in English; they're part of the grammar.",
+            "*Bo* and *dlatego* work in opposite directions: *bo* gives the **cause** after it, *dlatego* gives the **result** after it. The same sentence can go both ways: *Spałem, bo byłem zmęczony* = *Byłem zmęczony, dlatego spałem.*",
+            "To start a sentence with \"because\", use *ponieważ*, not *bo*. *Bo* always stands in the middle."
+          ]
+        },
+        {
+          "title": "Reacting to other people's stories",
+          "body": [
+            "A conversation isn't taking turns at monologues. These short reactions keep the other person telling their story."
+          ],
+          "table": {
+            "head": [
+              "Polski",
+              "Say it",
+              "When to use"
+            ],
+            "rows": [
+              [
+                "*Naprawdę?*",
+                "na-PRAV-deh",
+                "Really? — shows you're listening"
+              ],
+              [
+                "*Serio?*",
+                "SE-ryo",
+                "Seriously? — more casual"
+              ],
+              [
+                "*Super!*",
+                "SOO-per",
+                "Cool!"
+              ],
+              [
+                "*Świetnie!*",
+                "SHVYET-nyeh",
+                "Brilliant!"
+              ],
+              [
+                "*Szkoda.*",
+                "SHKO-da",
+                "What a shame."
+              ],
+              [
+                "*Współczuję.*",
+                "fspoow-CHOO-yeh",
+                "I'm sorry to hear that."
+              ],
+              [
+                "*Co się stało?*",
+                "tso sheh STA-wo",
+                "What happened?"
+              ],
+              [
+                "*I co dalej?*",
+                "i tso DA-ley",
+                "And then what?"
+              ],
+              [
+                "*Zazdroszczę!*",
+                "za-ZDROSH-cheh",
+                "I'm jealous!"
+              ],
+              [
+                "*Nie wierzę!*",
+                "nyeh VYE-zheh",
+                "I don't believe it!"
+              ]
+            ]
+          },
+          "after": [
+            "*I co dalej?* is the most useful phrase in this whole table: it asks the other person to keep talking, which is exactly what you need as a beginner — more time listening than building sentences.",
+            "Poles react with short sounds that often come across as murmurs: *no*, *mhm*, *aha*. That's not rude; it's a sign of listening."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "A story frame: one event, ten sentences",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "This structure works for any story — a trip, a chaotic workday, a memorable dinner. Change the content, keep the frame."
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Part",
+            "Polski",
+            "English"
+          ],
+          "rows": [
+            [
+              "when",
+              "*W sobotę rano…*",
+              "On Saturday morning…"
+            ],
+            [
+              "setting",
+              "*Pogoda była piękna.*",
+              "The weather was beautiful."
+            ],
+            [
+              "start",
+              "*Najpierw pojechałem na dworzec.*",
+              "First I went to the station."
+            ],
+            [
+              "problem",
+              "*Ale prawie spóźniłem się na pociąg.*",
+              "But I almost missed the train."
+            ],
+            [
+              "cause",
+              "*Bo budzik nie zadzwonił.*",
+              "Because my alarm didn't go off."
+            ],
+            [
+              "next",
+              "*Potem spotkałem kolegów w górach.*",
+              "Then I met my friends in the mountains."
+            ],
+            [
+              "high point",
+              "*Widzieliśmy Morskie Oko — było wspaniale.*",
+              "We saw Morskie Oko — amazing."
+            ],
+            [
+              "result",
+              "*Byłem tak zmęczony, że zasnąłem w pociągu.*",
+              "I was so tired I fell asleep on the train."
+            ],
+            [
+              "ending",
+              "*Wróciłem o jedenastej.*",
+              "I got home at eleven."
+            ],
+            [
+              "verdict",
+              "*Ale było warto.*",
+              "But it was worth it."
+            ]
+          ]
+        },
+        {
+          "type": "kotak",
+          "title": "The final exercise of this module",
+          "items": [
+            "Write one story of your own using the frame above — ten sentences, no more.",
+            "Read it aloud three times. That's not pointless repetition: the first time is for accuracy, the second for fluency, the third for your own ear.",
+            "If you have a friend who's learning Polish, tell them the story. If not, record yourself and listen again in a week — the difference will surprise you."
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Closing a conversation",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "Polski",
+            "English",
+            "Tone"
+          ],
+          "rows": [
+            [
+              "*Muszę już iść.*",
+              "I have to go.",
+              "neutral"
+            ],
+            [
+              "*Miło było cię poznać.*",
+              "Nice to meet you.",
+              "introductions"
+            ],
+            [
+              "*Trzymaj się!*",
+              "Take care!",
+              "friendly"
+            ],
+            [
+              "*Do zobaczenia!*",
+              "See you!",
+              "neutral"
+            ],
+            [
+              "*Do usłyszenia!*",
+              "Talk to you later.",
+              "phone"
+            ],
+            [
+              "*Miłego dnia!*",
+              "Have a nice day!",
+              "polite"
+            ],
+            [
+              "*Odezwę się.*",
+              "I'll let you know.",
+              "friendly"
+            ],
+            [
+              "*Pozdrów rodzinę.*",
+              "Say hi to your family.",
+              "warm"
+            ],
+            [
+              "*Powodzenia!*",
+              "Good luck!",
+              "before an exam"
+            ],
+            [
+              "*Na razie!*",
+              "Bye, see you later!",
+              "friendly"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "*Na razie* literally means \"for the time being\" and is the most common goodbye between friends — roughly \"see ya\". It's too casual to use with a professor or an official."
+        },
+        {
+          "type": "kotak",
+          "title": "Twenty units done — what you actually have now",
+          "items": [
+            "You can introduce yourself, say where you're from and what you do, and ask the same back.",
+            "You can shop, order food, pay and ask about prices.",
+            "You can ask for directions, use public transport and explain where you live.",
+            "You can talk about yesterday and make plans for tomorrow.",
+            "And most importantly: you can read any Polish word aloud without stumbling. The next page shows where to go from here."
+          ]
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "pl": "opowiedzieć",
+      "baca": "o-po-VYE-jyech",
+      "en": "to tell (a story)"
+    },
+    {
+      "pl": "chociaż",
+      "baca": "HO-chyash",
+      "en": "although"
+    },
+    {
+      "pl": "więc",
+      "baca": "vyents",
+      "en": "so"
+    },
+    {
+      "pl": "ponieważ",
+      "baca": "po-NYE-vash",
+      "en": "because (at the start of a sentence)"
+    },
+    {
+      "pl": "dlatego",
+      "baca": "dla-TE-go",
+      "en": "that's why"
+    },
+    {
+      "pl": "znowu",
+      "baca": "ZNO-voo",
+      "en": "again"
+    },
+    {
+      "pl": "prawie",
+      "baca": "PRA-vyeh",
+      "en": "almost"
+    },
+    {
+      "pl": "ledwo",
+      "baca": "LED-vo",
+      "en": "barely"
+    },
+    {
+      "pl": "około",
+      "baca": "o-KO-wo",
+      "en": "about, around"
+    },
+    {
+      "pl": "budzik",
+      "baca": "BOO-jyik",
+      "en": "alarm clock"
+    },
+    {
+      "pl": "rozładować się",
+      "baca": "roz-wa-DO-vach sheh",
+      "en": "to run out of battery"
+    },
+    {
+      "pl": "naładować",
+      "baca": "na-wa-DO-vach",
+      "en": "to charge"
+    },
+    {
+      "pl": "zdążyć",
+      "baca": "ZDON-zhych",
+      "en": "to make it (in time)"
+    },
+    {
+      "pl": "pobiec",
+      "baca": "PO-byets",
+      "en": "to run (once)"
+    },
+    {
+      "pl": "wskoczyć",
+      "baca": "FSKO-chych",
+      "en": "to jump in"
+    },
+    {
+      "pl": "chwila",
+      "baca": "HVEE-la",
+      "en": "moment"
+    },
+    {
+      "pl": "zasnąć",
+      "baca": "ZAS-nonch",
+      "en": "to fall asleep"
+    },
+    {
+      "pl": "wspaniale",
+      "baca": "fspa-NYA-leh",
+      "en": "wonderfully, amazing"
+    },
+    {
+      "pl": "zdecydowanie",
+      "baca": "zde-tsy-do-VA-nyeh",
+      "en": "definitely"
+    },
+    {
+      "pl": "zazdrościć",
+      "baca": "za-ZDROSH-chich",
+      "en": "to envy"
+    },
+    {
+      "pl": "cieszyć się",
+      "baca": "CHYE-shych sheh",
+      "en": "to be glad"
+    },
+    {
+      "pl": "obiecać",
+      "baca": "o-BYE-tsach",
+      "en": "to promise"
+    },
+    {
+      "pl": "szkło",
+      "baca": "shk-wo",
+      "en": "glass"
+    },
+    {
+      "pl": "zielony",
+      "baca": "zhe-LO-ny",
+      "en": "green"
+    },
+    {
+      "pl": "mgliście",
+      "baca": "MGLEESH-chyeh",
+      "en": "foggy"
+    },
+    {
+      "pl": "trzymaj się",
+      "baca": "TSHY-may sheh",
+      "en": "take care"
+    },
+    {
+      "pl": "na razie",
+      "baca": "na RA-zheh",
+      "en": "bye for now"
+    },
+    {
+      "pl": "powodzenia",
+      "baca": "po-vo-DZE-nya",
+      "en": "good luck"
+    },
+    {
+      "pl": "pozdrowić",
+      "baca": "poz-DRO-vich",
+      "en": "to say hello (to someone)"
+    },
+    {
+      "pl": "i co dalej?",
+      "baca": "i tso DA-ley",
+      "en": "and then what?"
+    }
+  ],
+  "exercises": [
+    {
+      "prompt": "Join the two sentences with the linking word in brackets.",
+      "items": [
+        "Byłem zmęczony. Poszedłem spać. (dlatego)",
+        "Chciałem iść. Padało. (ale)",
+        "Nie poszedłem. Byłem chory. (bo)",
+        "Wróciłem. Było ciemno. (kiedy)",
+        "Poszedłem na spacer. Padało. (chociaż)"
+      ]
+    },
+    {
+      "prompt": "Write a suitable reaction in Polish.",
+      "items": [
+        "Your friend says they've just come back from the Tatras. →",
+        "Your friend says they've lost their phone. →",
+        "Your friend is telling a story and you want them to go on. →",
+        "Your friend says they have an exam tomorrow. →",
+        "Your friend tells you some hard-to-believe news. →"
+      ]
+    },
+    {
+      "prompt": "Translate into Polish (male speaker).",
+      "items": [
+        "How was it in the mountains?",
+        "At first it was cold, but then the sun came out.",
+        "I was so tired I fell asleep on the train.",
+        "But it was worth it.",
+        "We're going there again next month."
+      ]
+    },
+    {
+      "prompt": "Put the words in the right order.",
+      "items": [
+        "górach / było / jak / w / ?",
+        "stało / co / się / ?",
+        "warto / było / ale",
+        "dalej / co / i / ?",
+        "się / trzymaj"
+      ]
+    }
+  ],
+  "answers": [
+    "Byłem zmęczony, dlatego poszedłem spać. — Chciałem iść, ale padało. — Nie poszedłem, bo byłem chory. — Kiedy wróciłem, było ciemno. — Poszedłem na spacer, chociaż padało.",
+    "Zazdroszczę! — Współczuję. — I co dalej? — Powodzenia! — Nie wierzę!",
+    "Jak było w górach? — Najpierw było zimno, ale potem wyszło słońce. — Byłem tak zmęczony, że zasnąłem w pociągu. — Ale było warto. — W przyszłym miesiącu pojedziemy jeszcze raz.",
+    "Jak było w górach? — Co się stało? — Ale było warto. — I co dalej? — Trzymaj się."
+  ],
+  "wave": "Read the unit 18 and 19 dialogues aloud again, then tell the story of your own weekend using this unit's ten-sentence frame — without looking at your notes."
+}

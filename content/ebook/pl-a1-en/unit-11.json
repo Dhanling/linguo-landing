@@ -1,0 +1,590 @@
+{
+  "title": "Where? — the place form",
+  "title_target": "Mieszkam w Krakowie",
+  "goal": "Say where things are with *w* and *na*, recognize the *miejscownik* endings, and understand why some places take *w* and others *na*.",
+  "bekal": [
+    "forming the *miejscownik* of the most common nouns",
+    "choosing between *w* and *na* without guessing",
+    "giving your address and where you work"
+  ],
+  "dialogs": [
+    {
+      "title": "Dialogue — Gdzie mieszkasz?",
+      "intro": "A bench on campus during the break. Ania and Budi swap stories about where they live.",
+      "lines": [
+        {
+          "speaker": "Ania:",
+          "text": "Gdzie mieszkasz w Krakowie?",
+          "id": "Where do you live in Kraków?",
+          "literal": "where you-live in Kraków?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "W akademiku, na kampusie. A ty?",
+          "id": "In the dorm, on campus. And you?",
+          "literal": "in dorm, on campus. and you?"
+        },
+        {
+          "speaker": "Ania:",
+          "text": "W centrum, na ulicy Długiej.",
+          "id": "In the center, on Długa Street.",
+          "literal": "in center, on street Długa."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Daleko od uniwersytetu?",
+          "id": "Far from the university?",
+          "literal": "far from university?"
+        },
+        {
+          "speaker": "Ania:",
+          "text": "Nie, dwadzieścia minut na piechotę. Pracuję też w kawiarni na rynku.",
+          "id": "No, twenty minutes on foot. I also work in a café on the main square.",
+          "literal": "no, twenty minutes on foot. I-work also in café on square."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Naprawdę? W której kawiarni?",
+          "id": "Really? Which café?",
+          "literal": "really? in which café?"
+        },
+        {
+          "speaker": "Ania:",
+          "text": "W Kolorowej. Jest w starym budynku przy kościele.",
+          "id": "Kolorowa. It's in an old building by the church.",
+          "literal": "in Kolorowa. is in old building by church."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Byłem tam raz. Siedzieliśmy na tarasie.",
+          "id": "I've been there once. We sat on the terrace.",
+          "literal": "I-was there once. we-sat on terrace."
+        },
+        {
+          "speaker": "Ania:",
+          "text": "Latem taras jest najlepszy. Zimą siedzimy w środku.",
+          "id": "In summer the terrace is the best. In winter we sit inside.",
+          "literal": "in-summer terrace is best. in-winter we-sit in inside."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "A gdzie jest twoja siostra? W domu?",
+          "id": "And where's your sister? At home?",
+          "literal": "and where is your sister? in home?"
+        },
+        {
+          "speaker": "Ania:",
+          "text": "Nie, jest na uczelni. Ma egzamin o dziesiątej.",
+          "id": "No, she's at the university. She has an exam at ten.",
+          "literal": "no, is at college. has exam at tenth."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "To trzymam kciuki.",
+          "id": "Then I'll keep my fingers crossed.",
+          "literal": "so I-hold thumbs."
+        }
+      ],
+      "notes": [
+        "**Kraków becomes Krakowie, ulica becomes ulicy, kawiarnia becomes kawiarni.** Every noun after *w*, *na*, *przy* and *o* takes the form called *miejscownik* (the locative) — a form that never appears on its own without a preposition.",
+        "**This is the form that changes the most letters inside a word.** *Warszawa → w Warszawie*, *szkoła → w szkole*, *miasto → w mieście*. The reason is the same one you met with verbs: the *-e* sound softens the letter before it, and Polish spells that softening with a different letter.",
+        "**W akademiku, na kampusie.** Why one *w* and one *na*? Rough rule: *w* for things **inside** something, *na* for things **on top of** or on an **open surface**. In reality, some have simply become fixed habits — the list is in the extra section of this unit.",
+        "**Na ulicy Długiej** — addresses use *na*, and the street name changes its ending too, because it's an adjective (*Długa → Długiej*). With a house number: *na Długiej 15*.",
+        "**Byłem tam raz** — the past form of *być*, with the masculine ending *-em*. A woman says *byłam*. *Byłem w…* (\"I've been to…\") is so common that it's worth memorizing before the full past-tense rules in unit 17.",
+        "**Latem, zimą** — seasons used as time expressions take the *narzędnik* form you already know: *lato → latem*, *zima → zimą*, *wiosna → wiosną*, *jesień → jesienią*. One form, two jobs — more proof that Polish reuses its endings rather than piling on new ones.",
+        "**W której kawiarni** — the question word *która* (which) changes too, to *której*. Adjectives and question words always move in step with their noun.",
+        "**Trzymam kciuki** literally means \"I'm holding thumbs\" — the equivalent of \"fingers crossed\". Poles really do make a fist with the thumb tucked inside, instead of crossing their fingers."
+      ],
+      "grammars": [
+        {
+          "title": "Miejscownik — the form after w, na, przy, o",
+          "body": [
+            "The form that answers *gdzie?* (where) and *o czym?* (about what). It only ever appears with a preposition — never alone."
+          ],
+          "table": {
+            "head": [
+              "Gender",
+              "Dictionary form",
+              "Miejscownik",
+              "Example"
+            ],
+            "rows": [
+              [
+                "żeński",
+                "*Warszawa*",
+                "*Warszaw**ie***",
+                "*w Warszawie*"
+              ],
+              [
+                "żeński",
+                "*szkoła*",
+                "*szkol**e***",
+                "*w szkole*"
+              ],
+              [
+                "żeński",
+                "*kawiarnia*",
+                "*kawiarn**i***",
+                "*w kawiarni*"
+              ],
+              [
+                "żeński",
+                "*ulica*",
+                "*ulic**y***",
+                "*na ulicy*"
+              ],
+              [
+                "męski",
+                "*Kraków*",
+                "*Krakow**ie***",
+                "*w Krakowie*"
+              ],
+              [
+                "męski",
+                "*dom*",
+                "*dom**u***",
+                "*w domu*"
+              ],
+              [
+                "męski",
+                "*sklep*",
+                "*sklep**ie***",
+                "*w sklepie*"
+              ],
+              [
+                "nijaki",
+                "*miasto*",
+                "*mieśc**ie***",
+                "*w mieście*"
+              ],
+              [
+                "nijaki",
+                "*centrum*",
+                "*centrum* (unchanged)",
+                "*w centrum*"
+              ]
+            ]
+          },
+          "after": [
+            "There are only three endings: **-e / -ie**, **-u**, or **-y / -i**. What decides is the last letter of the stem, not the gender.",
+            "**The -u ending** goes on masculine and neuter words ending in *k*, *g*, *ch* and soft letters: *akademik → w akademiku*, *ratusz → w ratuszu*, *dom → w domu*. Words ending in other hard letters take *-e/-ie*.",
+            "⚠️ You don't need to learn the letter changes inside words (*miasto → mieście*, *szkoła → szkole*) as rules. Memorize the **finished forms** of the ten places you mention every day; the pattern will sink in through your ears."
+          ]
+        },
+        {
+          "title": "W or na?",
+          "body": [
+            "The main rule fits in one sentence, but there's a list of fixed habits to know — and the list is short."
+          ],
+          "tables": [
+            {
+              "head": [
+                "Use *w* for…",
+                "Example"
+              ],
+              "rows": [
+                [
+                  "enclosed spaces",
+                  "*w domu*, *w sklepie*, *w kawiarni*, *w banku*"
+                ],
+                [
+                  "towns and countries",
+                  "*w Krakowie*, *w Polsce*, *w Indonezji*"
+                ],
+                [
+                  "buildings where people work",
+                  "*w szkole*, *w biurze*, *w szpitalu*"
+                ]
+              ]
+            },
+            {
+              "head": [
+                "Use *na* for…",
+                "Example"
+              ],
+              "rows": [
+                [
+                  "open surfaces",
+                  "*na stole*, *na ulicy*, *na tarasie*"
+                ],
+                [
+                  "open spaces in town",
+                  "*na rynku*, *na dworcu*, *na lotnisku*"
+                ],
+                [
+                  "events and activities",
+                  "*na zajęciach*, *na koncercie*, *na imprezie*"
+                ],
+                [
+                  "fixed habits",
+                  "*na poczcie*, *na uniwersytecie*, *na uczelni*"
+                ]
+              ]
+            }
+          ],
+          "after": [
+            "The last row is the annoying one: *na poczcie* (at the post office) and *na uniwersytecie* (at the university) take *na* for no reason you can feel. Memorize the five most common and you're set for A1: *na poczcie*, *na dworcu*, *na lotnisku*, *na uniwersytecie*, *na rynku*.",
+            "If you pick the wrong one, you'll still be understood — it's not a mistake that changes the meaning. It just sounds like an accent."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Places in town",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "Polski",
+            "At that place",
+            "Say it",
+            "English"
+          ],
+          "rows": [
+            [
+              "*sklep*",
+              "*w sklepie*",
+              "SKLE-pyeh",
+              "shop"
+            ],
+            [
+              "*bank*",
+              "*w banku*",
+              "BAN-koo",
+              "bank"
+            ],
+            [
+              "*apteka*",
+              "*w aptece*",
+              "ap-TE-tseh",
+              "pharmacy"
+            ],
+            [
+              "*poczta*",
+              "*na poczcie*",
+              "POCH-chyeh",
+              "post office"
+            ],
+            [
+              "*dworzec*",
+              "*na dworcu*",
+              "DVOR-tsoo",
+              "station"
+            ],
+            [
+              "*lotnisko*",
+              "*na lotnisku*",
+              "lot-NEES-koo",
+              "airport"
+            ],
+            [
+              "*rynek*",
+              "*na rynku*",
+              "RYN-koo",
+              "main square"
+            ],
+            [
+              "*kościół*",
+              "*w kościele*",
+              "kosh-CHYE-leh",
+              "church"
+            ],
+            [
+              "*szpital*",
+              "*w szpitalu*",
+              "shp-TA-loo",
+              "hospital"
+            ],
+            [
+              "*muzeum*",
+              "*w muzeum*",
+              "moo-ZE-oom",
+              "museum"
+            ],
+            [
+              "*park*",
+              "*w parku*",
+              "PAR-koo",
+              "park"
+            ],
+            [
+              "*restauracja*",
+              "*w restauracji*",
+              "res-tow-RA-tsyi",
+              "restaurant"
+            ]
+          ]
+        },
+        {
+          "type": "kotak",
+          "title": "Asking where things are",
+          "items": [
+            "*Gdzie jest apteka?* — Where's the pharmacy?",
+            "*Czy tu jest bankomat?* — Is there an ATM here?",
+            "*Jak daleko stąd?* — How far is it from here?",
+            "*Jest niedaleko.* — It's not far.",
+            "*Dwadzieścia minut na piechotę.* — Twenty minutes on foot."
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Talking about where you live",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "These patterns answer almost every question you'll get in your first month. Swap in your own details, then read them aloud until they flow."
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Polski",
+            "English"
+          ],
+          "rows": [
+            [
+              "*Mieszkam w Krakowie, w akademiku.*",
+              "I live in Kraków, in a dorm."
+            ],
+            [
+              "*Mieszkam z kolegą z Wietnamu.*",
+              "I live with a friend from Vietnam."
+            ],
+            [
+              "*Mój pokój jest mały, ale wygodny.*",
+              "My room is small but comfortable."
+            ],
+            [
+              "*Uniwersytet jest niedaleko, dziesięć minut na piechotę.*",
+              "The university is close, ten minutes on foot."
+            ],
+            [
+              "*W pobliżu jest sklep i apteka.*",
+              "There's a shop and a pharmacy nearby."
+            ],
+            [
+              "*Wcześniej mieszkałem w Dżakarcie.*",
+              "Before that I lived in Jakarta."
+            ]
+          ]
+        },
+        {
+          "type": "kotak",
+          "title": "The Polish cities you'll hear most often",
+          "items": [
+            "*Warszawa → w Warszawie* (Warsaw, the capital)",
+            "*Kraków → w Krakowie* (the old city in the south)",
+            "*Wrocław → we Wrocławiu* — note *we*, not *w*",
+            "*Gdańsk → w Gdańsku* (the port city in the north)",
+            "*Poznań → w Poznaniu* · *Łódź → w Łodzi* — pronounced **wooj**, not \"lodz\""
+          ]
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "pl": "gdzie",
+      "baca": "gjyeh",
+      "en": "where"
+    },
+    {
+      "pl": "akademik",
+      "baca": "a-ka-DE-mik",
+      "en": "student dorm"
+    },
+    {
+      "pl": "kampus",
+      "baca": "KAM-poos",
+      "en": "campus"
+    },
+    {
+      "pl": "centrum",
+      "baca": "TSEN-troom",
+      "en": "city center"
+    },
+    {
+      "pl": "ulica",
+      "baca": "oo-LEE-tsa",
+      "en": "street"
+    },
+    {
+      "pl": "rynek",
+      "baca": "RY-nek",
+      "en": "main square; market"
+    },
+    {
+      "pl": "budynek",
+      "baca": "boo-DY-nek",
+      "en": "building"
+    },
+    {
+      "pl": "kościół",
+      "baca": "KOSH-chyoow",
+      "en": "church"
+    },
+    {
+      "pl": "taras",
+      "baca": "TA-ras",
+      "en": "terrace"
+    },
+    {
+      "pl": "pokój",
+      "baca": "PO-kooy",
+      "en": "room"
+    },
+    {
+      "pl": "mieszkanie",
+      "baca": "myesh-KA-nyeh",
+      "en": "apartment"
+    },
+    {
+      "pl": "dworzec",
+      "baca": "DVO-zhets",
+      "en": "station"
+    },
+    {
+      "pl": "lotnisko",
+      "baca": "lot-NEES-ko",
+      "en": "airport"
+    },
+    {
+      "pl": "poczta",
+      "baca": "POCH-ta",
+      "en": "post office"
+    },
+    {
+      "pl": "apteka",
+      "baca": "ap-TE-ka",
+      "en": "pharmacy"
+    },
+    {
+      "pl": "bankomat",
+      "baca": "ban-KO-mat",
+      "en": "ATM"
+    },
+    {
+      "pl": "uczelnia",
+      "baca": "oo-CHEL-nya",
+      "en": "university, college"
+    },
+    {
+      "pl": "egzamin",
+      "baca": "eg-ZA-min",
+      "en": "exam"
+    },
+    {
+      "pl": "daleko / niedaleko",
+      "baca": "da-LE-ko",
+      "en": "far / not far"
+    },
+    {
+      "pl": "na piechotę",
+      "baca": "na pye-HO-teh",
+      "en": "on foot"
+    },
+    {
+      "pl": "w pobliżu",
+      "baca": "f po-BLEE-zhoo",
+      "en": "nearby"
+    },
+    {
+      "pl": "siedzieć",
+      "baca": "SHE-jyech",
+      "en": "to sit"
+    },
+    {
+      "pl": "w środku",
+      "baca": "f SHROT-koo",
+      "en": "inside"
+    },
+    {
+      "pl": "lato / latem",
+      "baca": "LA-to / LA-tem",
+      "en": "summer / in summer"
+    },
+    {
+      "pl": "zima / zimą",
+      "baca": "ZEE-ma / ZEE-mon",
+      "en": "winter / in winter"
+    },
+    {
+      "pl": "stary / nowy",
+      "baca": "STA-ry / NO-vy",
+      "en": "old / new"
+    },
+    {
+      "pl": "wygodny",
+      "baca": "vy-GOD-ny",
+      "en": "comfortable"
+    },
+    {
+      "pl": "raz",
+      "baca": "ras",
+      "en": "once"
+    },
+    {
+      "pl": "który / która",
+      "baca": "KTOO-ry / KTOO-ra",
+      "en": "which"
+    },
+    {
+      "pl": "trzymać kciuki",
+      "baca": "TSHY-mach KCHYOO-ki",
+      "en": "to keep your fingers crossed; good luck"
+    }
+  ],
+  "exercises": [
+    {
+      "prompt": "Fill in the blanks with the right *miejscownik* form.",
+      "items": [
+        "Mieszkam w ____ . (Kraków)",
+        "Jestem w ____ . (dom)",
+        "Pracuję w ____ . (kawiarnia)",
+        "Ona jest w ____ . (szkoła)",
+        "Byłem w ____ . (Warszawa)",
+        "Czekam na ____ . (dworzec)"
+      ]
+    },
+    {
+      "prompt": "Choose *w* or *na*.",
+      "items": [
+        "____ poczcie",
+        "____ sklepie",
+        "____ uniwersytecie",
+        "____ banku",
+        "____ lotnisku",
+        "____ Polsce"
+      ]
+    },
+    {
+      "prompt": "Translate into Polish.",
+      "items": [
+        "Where do you live?",
+        "I live in a dorm.",
+        "Where's the pharmacy?",
+        "Not far, ten minutes on foot.",
+        "My sister is at the university."
+      ]
+    },
+    {
+      "prompt": "Put the words in the right order.",
+      "items": [
+        "mieszkasz / gdzie / ?",
+        "w / mieszkam / akademiku",
+        "jest / apteka / gdzie / ?",
+        "kawiarni / pracuję / w",
+        "domu / jest / w / ona"
+      ]
+    }
+  ],
+  "answers": [
+    "Krakowie — domu — kawiarni — szkole — Warszawie — dworcu",
+    "na — w — na — w — na — w",
+    "Gdzie mieszkasz? — Mieszkam w akademiku. — Gdzie jest apteka? — Niedaleko, dziesięć minut na piechotę. — Moja siostra jest na uczelni.",
+    "Gdzie mieszkasz? — Mieszkam w akademiku. — Gdzie jest apteka? — Pracuję w kawiarni. — Ona jest w domu."
+  ],
+  "wave": "Read the unit 9 dialogue aloud again, then name five places you went this week with the right *w* or *na*."
+}

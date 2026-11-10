@@ -1,0 +1,640 @@
+{
+  "title": "What time is it?",
+  "title_target": "Która godzina?",
+  "goal": "Tell the time, make appointments, and see why Polish clock times use the feminine form.",
+  "bekal": [
+    "answer *która godzina?* with times on the hour, past, and to",
+    "say when something happens with *o* + the hour",
+    "name the days of the week and the most common time expressions"
+  ],
+  "dialogs": [
+    {
+      "title": "Dialogue — Umawiamy się",
+      "intro": "A campus corridor. Ania glances at the wall clock as she packs her bag.",
+      "lines": [
+        {
+          "speaker": "Ania:",
+          "text": "Która godzina?",
+          "id": "What time is it?",
+          "literal": "which-f hour?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Za piętnaście trzecia.",
+          "id": "A quarter to three.",
+          "literal": "in fifteen third-f."
+        },
+        {
+          "speaker": "Ania:",
+          "text": "Już? Muszę iść. Mam zajęcia o trzeciej.",
+          "id": "Already? I have to go. I have a class at three.",
+          "literal": "already? I-must go. I-have classes at third-f."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Kiedy kończysz?",
+          "id": "When do you finish?",
+          "literal": "when you-finish?"
+        },
+        {
+          "speaker": "Ania:",
+          "text": "O wpół do piątej. A ty?",
+          "id": "At half past four. And you?",
+          "literal": "at half to fifth-f. and you?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Zaczynam o czwartej i kończę o szóstej.",
+          "id": "I start at four and finish at six.",
+          "literal": "I-start at fourth-f and I-finish at sixth-f."
+        },
+        {
+          "speaker": "Ania:",
+          "text": "To może spotkajmy się o siódmej?",
+          "id": "So shall we meet at seven?",
+          "literal": "so maybe let's-meet self at seventh-f?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Dobrze. Gdzie się spotykamy?",
+          "id": "OK. Where shall we meet?",
+          "literal": "good. where self we-meet?"
+        },
+        {
+          "speaker": "Ania:",
+          "text": "Przed biblioteką. Tylko nie spóźnij się!",
+          "id": "In front of the library. Just don't be late!",
+          "literal": "in-front-of library. only don't be-late self!"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Nigdy się nie spóźniam.",
+          "id": "I'm never late.",
+          "literal": "never self not I-am-late."
+        },
+        {
+          "speaker": "Ania:",
+          "text": "Wczoraj czekałam dwadzieścia minut.",
+          "id": "Yesterday I waited twenty minutes.",
+          "literal": "yesterday I-waited-f twenty minutes."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "To był wyjątek. Do zobaczenia o siódmej!",
+          "id": "That was an exception. See you at seven!",
+          "literal": "that was exception. until seeing at seventh-f!"
+        }
+      ],
+      "notes": [
+        "**Która godzina** literally means \"which hour\". Because *godzina* (hour) is a **feminine** word, all clock numbers take the feminine form: *pierwsza*, *druga*, *trzecia* (first, second, third). That's the only reason the forms look odd — no new rule, just adjectives agreeing.",
+        "**Za piętnaście trzecia** — \"in fifteen, the third\". Polish says **what's left first**, then the hour it's heading to — just like English \"a quarter to three\".",
+        "**Wpół do piątej** is the trap that catches almost every beginner. Literally \"half **toward** the fifth\" — it means **4:30**, not 5:30. Polish counts the half hour **toward** the next hour, exactly like German and Dutch.",
+        "**O trzeciej, o czwartej, o siódmej.** To say **at** what time, the number changes again — ending *-ej*. This form is called *miejscownik* and is covered fully in the next unit. For now, two steps are enough: say the hour, then change its ending to *-ej*.",
+        "**Spotkajmy się** — \"let's meet\". Suggestions are made with the ending *-my* on the command form. Other examples: *chodźmy* (let's go), *zróbmy to* (let's do it).",
+        "**Nigdy się nie spóźniam** — notice there are **two** negatives: *nigdy* (never) and *nie*. Polish requires a double negative, and dropping one of them is actually wrong — the opposite of standard English. Same with *nikt nie wie* (nobody knows) and *nic nie rozumiem* (I don't understand anything).",
+        "**Czekałam** — a past form, and the ending *-am* shows the speaker is a **woman**. If Budi said it, the form would be *czekałem*. That's Unit 17; for now, just notice it.",
+        "**Przed biblioteką** — \"in front of the library\", with the ending *-ą* (*narzędnik*) because the preposition *przed* requires it. The group of place prepositions that take this ending: *przed* (in front of), *za* (behind), *nad* (above), *pod* (under), *między* (between)."
+      ],
+      "grammars": [
+        {
+          "title": "Telling the time",
+          "body": [
+            "Clock numbers take the **feminine** form because they agree with *godzina*. Learn these twelve forms; everything else is just combining them."
+          ],
+          "table": {
+            "head": [
+              "Hour",
+              "Its form",
+              "At that hour (*o…*)",
+              "Say it"
+            ],
+            "rows": [
+              [
+                "1",
+                "*pierwsza*",
+                "*o pierwszej*",
+                "PYERF-sha"
+              ],
+              [
+                "2",
+                "*druga*",
+                "*o drugiej*",
+                "DROO-ga"
+              ],
+              [
+                "3",
+                "*trzecia*",
+                "*o trzeciej*",
+                "TSHE-chya"
+              ],
+              [
+                "4",
+                "*czwarta*",
+                "*o czwartej*",
+                "CHFAR-ta"
+              ],
+              [
+                "5",
+                "*piąta*",
+                "*o piątej*",
+                "PYON-ta"
+              ],
+              [
+                "6",
+                "*szósta*",
+                "*o szóstej*",
+                "SHOOS-ta"
+              ],
+              [
+                "7",
+                "*siódma*",
+                "*o siódmej*",
+                "SHOOD-ma"
+              ],
+              [
+                "8",
+                "*ósma*",
+                "*o ósmej*",
+                "OOS-ma"
+              ],
+              [
+                "9",
+                "*dziewiąta*",
+                "*o dziewiątej*",
+                "jye-VYON-ta"
+              ],
+              [
+                "10",
+                "*dziesiąta*",
+                "*o dziesiątej*",
+                "jye-SHON-ta"
+              ],
+              [
+                "11",
+                "*jedenasta*",
+                "*o jedenastej*",
+                "ye-de-NAS-ta"
+              ],
+              [
+                "12",
+                "*dwunasta*",
+                "*o dwunastej*",
+                "dvoo-NAS-ta"
+              ]
+            ]
+          },
+          "after": [
+            "The pattern is uniform: the basic form ends in **-a**, the \"at\" form in **-ej**. If you can do one, you can do all twelve.",
+            "To add minutes: *pierwsza dziesięć* (1:10), *druga dwadzieścia pięć* (2:25) — hour first, then minutes, with nothing in between.",
+            "The word *godzina* itself is almost always dropped in conversation: just *o trzeciej*, not *o godzinie trzeciej*."
+          ]
+        },
+        {
+          "title": "Past, to, and half",
+          "body": [
+            "Three formulas that cover every way Poles say a time that isn't on the hour."
+          ],
+          "table": {
+            "head": [
+              "Time",
+              "How to say it",
+              "Literally"
+            ],
+            "rows": [
+              [
+                "2:00 p.m.",
+                "*druga*",
+                "second"
+              ],
+              [
+                "2:10 p.m.",
+                "*druga dziesięć*",
+                "second ten"
+              ],
+              [
+                "2:15 p.m.",
+                "*piętnaście po drugiej*",
+                "fifteen after second"
+              ],
+              [
+                "2:30 p.m.",
+                "*wpół do trzeciej*",
+                "half toward third"
+              ],
+              [
+                "2:45 p.m.",
+                "*za piętnaście trzecia*",
+                "in fifteen third"
+              ],
+              [
+                "2:50 p.m.",
+                "*za dziesięć trzecia*",
+                "in ten third"
+              ]
+            ]
+          },
+          "after": [
+            "⚠️ The **wpół do** row is beginner mistake number one. *Wpół do trzeciej* = 2:30, not 3:30. If in doubt when making an appointment, just use the official way.",
+            "**The official way** uses the 24-hour clock and plain numbers: *czternasta trzydzieści* (14:30). It's what you hear at stations, airports, and on class timetables — and it's easier for beginners because there's no counting backward.",
+            "To tell morning from evening in conversation: *rano* (in the morning), *po południu* (in the afternoon), *wieczorem* (in the evening), *w nocy* (at night). *Trzecia po południu* = three in the afternoon."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Days and time expressions",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "Day",
+            "Say it",
+            "On that day"
+          ],
+          "rows": [
+            [
+              "*poniedziałek*",
+              "po-nye-JYA-wek",
+              "*w poniedziałek*"
+            ],
+            [
+              "*wtorek*",
+              "FTO-rek",
+              "*we wtorek*"
+            ],
+            [
+              "*środa*",
+              "SHRO-da",
+              "*w środę*"
+            ],
+            [
+              "*czwartek*",
+              "CHFAR-tek",
+              "*w czwartek*"
+            ],
+            [
+              "*piątek*",
+              "PYON-tek",
+              "*w piątek*"
+            ],
+            [
+              "*sobota*",
+              "so-BO-ta",
+              "*w sobotę*"
+            ],
+            [
+              "*niedziela*",
+              "nye-JYE-la",
+              "*w niedzielę*"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "Notice *we wtorek* — the preposition *w* becomes *we* before a word starting with two consonants, simply so it can be pronounced. The same pattern: *we Wrocławiu*, *ze mną*. Day names are lowercase in Polish."
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Polski",
+            "Meaning",
+            "Polski",
+            "Meaning"
+          ],
+          "rows": [
+            [
+              "*dziś / dzisiaj*",
+              "today",
+              "*rano*",
+              "in the morning"
+            ],
+            [
+              "*wczoraj*",
+              "yesterday",
+              "*po południu*",
+              "in the afternoon"
+            ],
+            [
+              "*jutro*",
+              "tomorrow",
+              "*wieczorem*",
+              "in the evening"
+            ],
+            [
+              "*pojutrze*",
+              "the day after tomorrow",
+              "*w nocy*",
+              "at night"
+            ],
+            [
+              "*w tym tygodniu*",
+              "this week",
+              "*zawsze*",
+              "always"
+            ],
+            [
+              "*w przyszłym tygodniu*",
+              "next week",
+              "*często*",
+              "often"
+            ],
+            [
+              "*w weekend*",
+              "at the weekend",
+              "*czasem*",
+              "sometimes"
+            ],
+            [
+              "*teraz*",
+              "now",
+              "*nigdy*",
+              "never"
+            ]
+          ]
+        },
+        {
+          "type": "kotak",
+          "title": "Making plans",
+          "items": [
+            "*Masz czas w piątek?* — Are you free on Friday?",
+            "*Spotkajmy się o szóstej.* — Let's meet at six.",
+            "*Pasuje ci?* — Does that work for you?",
+            "*Może być.* — Sure, that works.",
+            "*Niestety nie mogę.* — Unfortunately I can't."
+          ]
+        }
+      ]
+    },
+    {
+      "title": "A whole day, in order",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Read the Polish column out loud from top to bottom, as if telling the story of your own day."
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Time",
+            "Polski",
+            "Meaning"
+          ],
+          "rows": [
+            [
+              "6:30 a.m.",
+              "*Wstaję o wpół do siódmej.*",
+              "I get up at half past six."
+            ],
+            [
+              "7:00 a.m.",
+              "*O siódmej jem śniadanie.*",
+              "At seven I have breakfast."
+            ],
+            [
+              "8:15 a.m.",
+              "*Piętnaście po ósmej wychodzę z domu.*",
+              "At a quarter past eight I leave the house."
+            ],
+            [
+              "9:00 a.m.",
+              "*Zajęcia zaczynają się o dziewiątej.*",
+              "Classes start at nine."
+            ],
+            [
+              "1:00 p.m.",
+              "*O pierwszej jem obiad.*",
+              "At one I have lunch."
+            ],
+            [
+              "5:30 p.m.",
+              "*Wracam do domu o wpół do szóstej.*",
+              "I get home at half past five."
+            ],
+            [
+              "8:00 p.m.",
+              "*O ósmej jem kolację.*",
+              "At eight I have dinner."
+            ],
+            [
+              "11:00 p.m.",
+              "*Idę spać o jedenastej.*",
+              "I go to bed at eleven."
+            ]
+          ]
+        },
+        {
+          "type": "kotak",
+          "title": "Three time phrases you'll use most",
+          "items": [
+            "*Jestem spóźniony.* (m) / *spóźniona.* (f) — I'm late.",
+            "*Mam mało czasu.* — I don't have much time.",
+            "*Za pięć minut.* — In five minutes."
+          ]
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "pl": "godzina",
+      "baca": "go-JYEE-na",
+      "en": "hour; o'clock"
+    },
+    {
+      "pl": "minuta",
+      "baca": "mi-NOO-ta",
+      "en": "minute"
+    },
+    {
+      "pl": "która godzina?",
+      "baca": "KTOO-ra go-JYEE-na",
+      "en": "what time is it?"
+    },
+    {
+      "pl": "wpół do",
+      "baca": "fpoow do",
+      "en": "half (toward the next hour)"
+    },
+    {
+      "pl": "za",
+      "baca": "za",
+      "en": "to (before the hour)"
+    },
+    {
+      "pl": "po",
+      "baca": "po",
+      "en": "past; after"
+    },
+    {
+      "pl": "zaczynać",
+      "baca": "za-CHY-nach",
+      "en": "to start"
+    },
+    {
+      "pl": "kończyć",
+      "baca": "KONY-chych",
+      "en": "to finish"
+    },
+    {
+      "pl": "spotykać się",
+      "baca": "spo-TY-kach sheh",
+      "en": "to meet"
+    },
+    {
+      "pl": "spóźniać się",
+      "baca": "SPOOZH-nyach sheh",
+      "en": "to be late"
+    },
+    {
+      "pl": "zajęcia",
+      "baca": "za-YEN-chya",
+      "en": "classes"
+    },
+    {
+      "pl": "musieć",
+      "baca": "MOO-shech",
+      "en": "must, to have to"
+    },
+    {
+      "pl": "wstawać",
+      "baca": "fsta-VACH",
+      "en": "to get up"
+    },
+    {
+      "pl": "śniadanie",
+      "baca": "shna-DA-nyeh",
+      "en": "breakfast"
+    },
+    {
+      "pl": "obiad",
+      "baca": "O-byat",
+      "en": "lunch (main midday meal)"
+    },
+    {
+      "pl": "kolacja",
+      "baca": "ko-LA-tsya",
+      "en": "dinner"
+    },
+    {
+      "pl": "spać",
+      "baca": "spach",
+      "en": "to sleep"
+    },
+    {
+      "pl": "poniedziałek",
+      "baca": "po-nye-JYA-wek",
+      "en": "Monday"
+    },
+    {
+      "pl": "wtorek / środa",
+      "baca": "FTO-rek / SHRO-da",
+      "en": "Tuesday / Wednesday"
+    },
+    {
+      "pl": "czwartek / piątek",
+      "baca": "CHFAR-tek / PYON-tek",
+      "en": "Thursday / Friday"
+    },
+    {
+      "pl": "sobota / niedziela",
+      "baca": "so-BO-ta / nye-JYE-la",
+      "en": "Saturday / Sunday"
+    },
+    {
+      "pl": "tydzień",
+      "baca": "TY-jyeny",
+      "en": "week"
+    },
+    {
+      "pl": "wczoraj",
+      "baca": "FCHO-ray",
+      "en": "yesterday"
+    },
+    {
+      "pl": "zawsze / często",
+      "baca": "ZAF-sheh / CHENS-to",
+      "en": "always / often"
+    },
+    {
+      "pl": "czasem / nigdy",
+      "baca": "CHA-sem / NEEG-dy",
+      "en": "sometimes / never"
+    },
+    {
+      "pl": "już",
+      "baca": "yoosh",
+      "en": "already"
+    },
+    {
+      "pl": "przed",
+      "baca": "pshet",
+      "en": "in front of; before"
+    },
+    {
+      "pl": "wyjątek",
+      "baca": "vy-YON-tek",
+      "en": "exception"
+    },
+    {
+      "pl": "pasować",
+      "baca": "pa-SO-vach",
+      "en": "to suit, to fit"
+    },
+    {
+      "pl": "niestety",
+      "baca": "nye-STE-ty",
+      "en": "unfortunately"
+    }
+  ],
+  "exercises": [
+    {
+      "prompt": "Write the time in Polish (the conversational way).",
+      "items": [
+        "1:00 p.m.",
+        "4:15 p.m.",
+        "6:30 p.m.",
+        "8:45 p.m.",
+        "10:00 p.m."
+      ]
+    },
+    {
+      "prompt": "Fill in the right *o…* form.",
+      "items": [
+        "Mam zajęcia ____ . (3)",
+        "Zaczynam pracę ____ . (8)",
+        "Jem obiad ____ . (1)",
+        "Wracam do domu ____ . (5)",
+        "Idę spać ____ . (11)"
+      ]
+    },
+    {
+      "prompt": "Translate into Polish.",
+      "items": [
+        "What time is it?",
+        "I get up at half past six.",
+        "Let's meet at seven.",
+        "I'm never late.",
+        "Are you free on Friday?"
+      ]
+    },
+    {
+      "prompt": "Put the words in the right order.",
+      "items": [
+        "godzina / która / ?",
+        "trzeciej / zajęcia / o / mam",
+        "siódmej / się / spotkajmy / o",
+        "się / nigdy / spóźniam / nie",
+        "czas / masz / w / piątek / ?"
+      ]
+    }
+  ],
+  "answers": [
+    "pierwsza — piętnaście po czwartej — wpół do siódmej — za piętnaście dziewiąta — dziesiąta",
+    "o trzeciej — o ósmej — o pierwszej — o piątej — o jedenastej",
+    "Która godzina? — Wstaję o wpół do siódmej. — Spotkajmy się o siódmej. — Nigdy się nie spóźniam. — Masz czas w piątek?",
+    "Która godzina? — Mam zajęcia o trzeciej. — Spotkajmy się o siódmej. — Nigdy się nie spóźniam. — Masz czas w piątek?"
+  ],
+  "wave": "Read the Unit 8 dialogue out loud, then describe your schedule today from getting up to going to bed, with times."
+}

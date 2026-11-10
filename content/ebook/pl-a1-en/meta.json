@@ -1,0 +1,986 @@
+{
+  "brand": "LINGUO",
+  "cover": "cover.png",
+  "title": "Polski 101",
+  "subtitle": "A self-study course in Polish for complete beginners",
+  "level": "Level A1 (CEFR)",
+  "edition": "English Edition",
+  "ruby": false,
+  "font_size": "9.4pt",
+  "page_margin": "12mm 11mm 10mm",
+  "labels": {
+    "unit": "Unit",
+    "dialog": "Dialogue",
+    "notes": "Notes",
+    "vocab": "Vocabulary in this unit",
+    "exercises": "Exercises",
+    "answers": "Answer key",
+    "bekal": "By the end of this unit you can:",
+    "literal": "literally:",
+    "wave": "Wave review:",
+    "bagian": "Part"
+  },
+  "vocab_columns": [
+    {
+      "head": "Polski",
+      "key": "pl"
+    },
+    {
+      "head": "Say it",
+      "key": "baca"
+    },
+    {
+      "head": "English",
+      "key": "en"
+    }
+  ],
+  "cover_design": {
+    "bg": "#8E1B2E",
+    "accent": "#F4D9C6",
+    "label": "POLISH",
+    "judul": "Polski",
+    "cap": "ł",
+    "pola_opacity": 0.35,
+    "pola": "background-image:repeating-linear-gradient(125deg, rgba(255,255,255,.10) 0 2px, transparent 2px 40px),repeating-linear-gradient(55deg, rgba(255,255,255,.06) 0 2px, transparent 2px 40px);",
+    "ringkas": "A self-study course in Polish for complete beginners — from saying hello in Kraków to telling the story of last weekend.",
+    "catatan": "Every line of dialogue comes with a word-for-word translation and a pronunciation guide.",
+    "merek_sub": "SELF-STUDY MODULE",
+    "kaki_sub": "units · dialogues · exercises · answer key"
+  },
+  "product": {
+    "slug": "modul-polandia-101-en",
+    "title": "Polish 101 - A1 (English Edition)",
+    "type": "ebook",
+    "language": "Polish",
+    "level": "A1",
+    "file": "polski-101-a1-en.pdf",
+    "description": "Twenty Assimil-style self-study units that take you from zero to A1 Polish: short dialogues, word-for-word translations that show how Polish builds its sentences, grammar notes, vocabulary with an English-friendly pronunciation guide, exercises, and an answer key. Polish is easier than its reputation in places nobody mentions: no articles, no continuous tenses, fixed stress, and spelling that always sounds the way it looks. Each unit targets one of the spots that actually trip learners up, from strings of consonants that look unreadable to the seven noun forms that do the job English gives to prepositions.",
+    "pages": 152
+  },
+  "front": [
+    {
+      "title": "Foreword",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Polish has two reputations, and both scare people off before they even try. The first is about **the writing**: *szczęście*, *wszystko*, *przepraszam* — strings of consonants that look like typos. The second is about **the grammar**: seven noun forms, three genders, verbs that change with every person."
+        },
+        {
+          "type": "p",
+          "text": "The first reputation is **misplaced**. Polish spelling is one of the most honest in Europe: a letter (or a pair of letters) always makes the same sound, wherever it stands. *sz* is always \"sh\", *cz* always \"ch\", *w* always \"v\" — no exceptions, no silent letters, none of the surprises of English or French. What makes Polish words look impossible is only the habit of reading **letter by letter**. Once your eyes learn to read *sz*, *cz*, *rz*, *dz* as **one sound**, a word like *przepraszam* shrinks to three ordinary syllables: pshe-PRA-sham. And you never have to memorize stress — it is **always on the second-to-last syllable**."
+        },
+        {
+          "type": "p",
+          "text": "The second reputation is **true**, but not in the way you imagine. Seven noun forms are not seven extra lists to memorize; they are **seven prepositions stuck onto the end of the word**. English says \"in Warsaw\"; Polish says *w Warszawie*. English says \"I drink coffee\"; Polish says *piję kawę* — the ending *-ę* is what marks coffee as **the thing being drunk**, not the drinker. The information is the same; the marker has just moved from word order to the end of the word."
+        },
+        {
+          "type": "p",
+          "text": "And there is a list of things that are actually **easier** than in English, a list nobody talks about. Polish has **no articles at all**: no \"a\", no \"the\". It has no *continuous* forms; \"I eat\" and \"I am eating\" are one and the same form. Word order is flexible: *Ania czyta książkę* and *Książkę czyta Ania* are both correct. The verb \"to be\" can disappear in short sentences. And because the verb ending already shows who is doing what, the pronouns \"I\", \"you\", \"he\" can almost always be **dropped** — *jestem* already means \"I am\", no *ja* needed."
+        },
+        {
+          "type": "p",
+          "text": "So the difficulty of Polish is not where you think it is. It lies in three other places: **noun gender**, which decides almost every other ending; **noun forms that change with their role in the sentence**; and **verb pairs** that separate an action in progress from an action completed. None of the three has a real counterpart in English. That is why this course introduces gender in Unit 3, brings in the noun forms **one at a time** — not all seven in one despair-inducing table — and saves verb pairs for Unit 18, once you have enough sentences to feel the difference."
+        },
+        {
+          "type": "p",
+          "text": "The explanations are deliberately short. What is long is not the theory but the practice — and the practice is in your hands, not on this page."
+        },
+        {
+          "type": "kotak",
+          "title": "Before you start",
+          "items": [
+            "This course asks just one thing of you: **say it out loud**. Similar-sounding Polish sounds (*s / sz / ś*, *c / cz / ć*) cannot be told apart by the eye, only by the mouth and ear.",
+            "Do one unit per sitting, 20–30 minutes. Twenty units take less than two months at five days a week.",
+            "Don't skip the pronunciation chapter on the next pages. It is not an extra; it is the foundation used in every unit — and it is the only chapter that will make *szczęśliwy* stop looking impossible."
+          ]
+        },
+        {
+          "type": "p",
+          "text": "Happy learning. *Powodzenia!*"
+        }
+      ]
+    },
+    {
+      "type": "isi",
+      "title": "Contents",
+      "intro": "Twenty units, arranged so that each one clears up a single spot that most often trips up English speakers."
+    },
+    {
+      "title": "How to use this course",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "This course is built for **self-study**. Each unit is designed to be finished in one sitting, 20 to 30 minutes, and asks nothing of you except a willingness to read out loud."
+        },
+        {
+          "type": "p",
+          "text": "Every unit has the same layout, and the order is deliberate:"
+        },
+        {
+          "type": "list",
+          "items": [
+            "**Dialogue** — first read only the Polish lines, without glancing below. Only then read the translation.",
+            "**Literal translation** — the small line under each sentence. It often sounds odd in English, and that is the point: it shows how Polish *actually* builds a thought, not how we would tidy it up in translation.",
+            "**Notes** — things that are visible in the dialogue but that you may not have noticed.",
+            "**Grammar box** — the rule you have just seen at work, explained after you have seen it, not before.",
+            "**Extra sections** — reference tables, ready-made phrases, culture notes.",
+            "**Vocabulary** — all the new words of the unit, with pronunciation.",
+            "**Exercises** and **answer key** — four groups of questions; do them all before opening the key."
+          ]
+        },
+        {
+          "type": "kotak",
+          "title": "Spaced review",
+          "items": [
+            "After finishing a new unit, quickly revisit the unit from **two days ago** and the one from **a week ago** — just read the dialogue out loud, two minutes per unit.",
+            "This is not a time-saving tip; it is the only way Unit 3 will still be alive in your head when you reach Unit 15."
+          ]
+        },
+        {
+          "type": "kotak",
+          "title": "A warning about word endings",
+          "items": [
+            "From Unit 8 on, you will see the same word appear with different endings: *kawa* becomes *kawę*, *Warszawa* becomes *Warszawie*. **That is not a typo.**",
+            "Don't try to memorize the whole table at once. Each unit introduces just one form, and the appendix at the back brings them all together if you want to see the full map."
+          ]
+        },
+        {
+          "type": "p",
+          "text": "One last rule: **say it out loud**. Polish tells words apart with sounds that, to an English ear, are almost identical — *czy* (question word) and *ci* (to you) are different words. Read each dialogue at least twice aloud: once slowly while looking at the translation, once a bit faster without looking."
+        }
+      ]
+    },
+    {
+      "title": "Polish pronunciation",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "This is the most important part of the whole course, and it comes first because you will use everything in it on every page that follows. The good news first: the hardest part of pronouncing other languages — **guessing the sound from the spelling** — barely exists here. The respellings in this course are meant to be read the way an English speaker naturally would: **oo** as in \"moon\", **ee** as in \"see\", **eh** as in \"bed\", **y** at the start of a syllable as in \"yes\", and **y** as a vowel like the *i* in \"bit\" with the tongue pulled back."
+        },
+        {
+          "type": "p",
+          "text": "Polish spelling is faithful to sound. A letter always sounds the same, and a letter pair (*sz*, *cz*, *rz*, *dz*) also always sounds the same. No silent letters, no surprises. All you need to do is stop reading letter by letter and start reading **the pairs as one sound**."
+        },
+        {
+          "type": "sub",
+          "text": "Six letters with unfamiliar shapes"
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Letter",
+            "Our respelling",
+            "Sound",
+            "Example"
+          ],
+          "rows": [
+            [
+              "**ł**",
+              "w",
+              "like *w* in \"water\" — **not** *l*",
+              "*mały* → MA-wy (small)"
+            ],
+            [
+              "**w**",
+              "v",
+              "like *v* in \"visa\" — **not** *w*",
+              "*woda* → VO-da (water)"
+            ],
+            [
+              "**ó**",
+              "oo",
+              "exactly the same as *u*",
+              "*mój* → mooy (my)"
+            ],
+            [
+              "**y**",
+              "y",
+              "between *i* and *e*; like *i* in \"bit\", tongue pulled back",
+              "*ty* → ty (you)"
+            ],
+            [
+              "**ą**",
+              "on",
+              "nasal *o*; becomes **om** before *b/p*",
+              "*są* → son (they are)"
+            ],
+            [
+              "**ę**",
+              "en",
+              "nasal *e*; a plain *e* at the end of a word",
+              "*ręka* → REN-ka (hand)"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "The first two are the biggest traps for an English-reading eye, and both work the opposite way from what you'd guess: **ł is read w**, while **w is read v**. *Wisła* (the Vistula river) is read **VEES-wa**. Practice these two until they are a reflex, because they appear in almost every sentence."
+        },
+        {
+          "type": "sub",
+          "text": "Letter pairs: read them as one sound"
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Spelling",
+            "Our respelling",
+            "Sounds like",
+            "Example"
+          ],
+          "rows": [
+            [
+              "**sz**",
+              "sh",
+              "*sh* in \"shop\"",
+              "*szkoła* → SHKO-wa (school)"
+            ],
+            [
+              "**cz**",
+              "ch",
+              "*ch* in \"church\"",
+              "*czekam* → CHE-kam (I'm waiting)"
+            ],
+            [
+              "**rz** / **ż**",
+              "zh",
+              "*s* in \"measure\"",
+              "*rzeka* → ZHE-ka (river)"
+            ],
+            [
+              "**dz**",
+              "dz",
+              "*d* + *z* melted together, as in \"adze\"",
+              "*dzwon* → dzvon (bell)"
+            ],
+            [
+              "**dż**",
+              "j",
+              "*j* in \"jam\"",
+              "*dżem* → jem (jam)"
+            ],
+            [
+              "**ch** / **h**",
+              "h",
+              "*h* in \"hat\", a little rougher",
+              "*chleb* → hlep (bread)"
+            ],
+            [
+              "**j**",
+              "y",
+              "always *y* as in \"yes\", never *j*",
+              "*jak* → yak (how)"
+            ],
+            [
+              "**c**",
+              "ts",
+              "*ts* in \"cats\"",
+              "*co* → tso (what)"
+            ],
+            [
+              "**ni**",
+              "ny",
+              "*ny* in \"canyon\"",
+              "*nie* → nyeh (no)"
+            ]
+          ]
+        },
+        {
+          "type": "kotak",
+          "title": "How to read a word that looks impossible",
+          "items": [
+            "*przepraszam* (sorry) → **pshe-PRA-sham**. Split it: prze-pra-szam. Three syllables, not eleven letters.",
+            "*szczęście* (happiness) → **SHCHEN-shcheh**. Split it: szcz-ę-ście → sh+ch, en, sh+cheh.",
+            "*wszystko* (everything) → **FSHYST-ko**. Split it: wszy-stko.",
+            "**There is just one rule:** never read letter by letter. Find the pairs (*sz*, *cz*, *rz*, *dz*) first, then read the rest."
+          ]
+        },
+        {
+          "type": "sub",
+          "text": "Hard sounds and soft sounds"
+        },
+        {
+          "type": "p",
+          "text": "Polish has three rows of hissing sounds that sound alike to an English ear: the **hard** ones (*sz cz ż*), the **soft** ones (*ś ć ź*, written *si ci zi* before a vowel), and the **plain** ones (*s c z*). The difference is real to Poles, but at A1 picking the wrong one almost always still gets you understood."
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Plain",
+            "Hard",
+            "Soft",
+            "How to tell them apart"
+          ],
+          "rows": [
+            [
+              "*s* — s",
+              "*sz* — sh",
+              "*ś / si* — soft sh",
+              "hard: tongue pulled back; soft: tongue pressed to the roof of the mouth"
+            ],
+            [
+              "*c* — ts",
+              "*cz* — ch",
+              "*ć / ci* — soft ch",
+              "*czy* (question word) vs *ci* (to you)"
+            ],
+            [
+              "*z* — z",
+              "*ż / rz* — zh",
+              "*ź / zi* — soft zh",
+              "*żona* (wife) vs *zima* (winter)"
+            ],
+            [
+              "*dz* — dz",
+              "*dż* — j",
+              "*dź / dzi* — soft j",
+              "*dziękuję* → jyen-KOO-yeh"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "To keep the **Say it** column readable, this course deliberately does **not** separate hard and soft: *sz* and *ś* are both written \"sh\", *cz* and *ć* both \"ch\". What tells them apart for you is **the spelling** — an accent ´ over the letter, or an *i* after it, always means \"soften it\". Say the soft version with your tongue further forward against the roof of your mouth and a slight smile; that is enough for A1."
+        },
+        {
+          "type": "sub",
+          "text": "Stress: always on the second-to-last syllable"
+        },
+        {
+          "type": "p",
+          "text": "No exceptions you need to worry about at this level, and nothing to memorize word by word: *ko-BIE-ta*, *dzię-KU-ję*, *POL-ska*, *stu-DENT-ka*. That is a huge saving compared with English or Russian, where stress has to be learned for each word."
+        },
+        {
+          "type": "kotak",
+          "title": "Good news for English speakers",
+          "items": [
+            "In English, stress jumps around: PHO-to-graph, pho-TO-gra-phy, pho-to-GRA-phic. In Polish it **never** jumps — the second-to-last syllable, every time.",
+            "So one big beginner burden — guessing the stress — simply doesn't exist. Count back two syllables and you're right."
+          ]
+        },
+        {
+          "type": "sub",
+          "text": "The nasal vowels ą and ę"
+        },
+        {
+          "type": "p",
+          "text": "These two letters have no English equivalent, but there is a shortcut that works: say **on** and **en** with the *n* half swallowed, the way French speakers say *bon*. Even if you pronounce the *n* in full, you will still be understood."
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Letter",
+            "Position",
+            "Say it",
+            "Example"
+          ],
+          "rows": [
+            [
+              "**ą**",
+              "usually",
+              "on",
+              "*wąski* → VONS-ki (narrow)"
+            ],
+            [
+              "**ą**",
+              "before *b*, *p*",
+              "om",
+              "*ząb* → zomp (tooth)"
+            ],
+            [
+              "**ę**",
+              "in the middle of a word",
+              "en",
+              "*język* → YEN-zyk (language)"
+            ],
+            [
+              "**ę**",
+              "before *b*, *p*",
+              "em",
+              "*zęby* → ZEM-by (teeth)"
+            ],
+            [
+              "**ę**",
+              "**at the end of a word**",
+              "plain e",
+              "*proszę* → PRO-sheh (please)"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "That last row matters and is often missed: *ę* at the end of a word — and it ends thousands of verbs — is pronounced as a **plain e** in everyday speech. *Dziękuję* is not \"jyen-koo-yen\" but **jyen-KOO-yeh**."
+        },
+        {
+          "type": "sub",
+          "text": "Consonants that lose their voice"
+        },
+        {
+          "type": "p",
+          "text": "One last pattern explains why our respellings sometimes don't seem to match the spelling. At the **end of a word**, a voiced consonant turns into its voiceless partner: *b→p*, *d→t*, *g→k*, *w→f*, *z→s*, *ż→sz*."
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Spelling",
+            "Say it",
+            "Meaning"
+          ],
+          "rows": [
+            [
+              "*chleb*",
+              "hlep",
+              "bread"
+            ],
+            [
+              "*obiad*",
+              "O-byat",
+              "lunch"
+            ],
+            [
+              "*Bóg*",
+              "book",
+              "God"
+            ],
+            [
+              "*Kraków*",
+              "KRA-koof",
+              "Kraków"
+            ],
+            [
+              "*mąż*",
+              "monsh",
+              "husband"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "The same pattern works inside a word when two consonants meet: *wszystko* → **fshystko** (*w* becomes *f* because it meets the voiceless *sz*). Don't memorize this; just know that when the Say it column writes a different letter from the spelling, this is usually why."
+        },
+        {
+          "type": "kotak",
+          "title": "Eight words to get right from day one",
+          "items": [
+            "*cześć* → **cheshch** (hi; bye) — the most common greeting.",
+            "*dziękuję* → **jyen-KOO-yeh** (thank you) — final *ę* becomes *e*.",
+            "*proszę* → **PRO-sheh** (please; here you are; you're welcome) — one word, three uses.",
+            "*przepraszam* → **pshe-PRA-sham** (sorry; excuse me).",
+            "*dzień dobry* → **jyeny DOB-ry** (good morning/afternoon) — the polite greeting.",
+            "*do widzenia* → **do vi-DZE-nya** (goodbye) — the polite farewell.",
+            "*tak / nie* → **tak / nyeh** (yes / no) — careful: *nie* means \"no\", not \"yes\".",
+            "*Polska* → **POL-ska** (Poland) — the Poles' own name for their country."
+          ]
+        },
+        {
+          "type": "p",
+          "text": "Don't try to memorize this whole chapter now. Read it once calmly, then start Unit 1. You will come back to this page many times on your own, and each time it will make more sense than the time before."
+        }
+      ]
+    }
+  ],
+  "back": [
+    {
+      "title": "A1 grammar summary",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Everything used in the twenty units, gathered in one place. This page is not for memorizing — it is for opening when you forget an ending in the middle of an exercise."
+        },
+        {
+          "type": "sub",
+          "text": "The three noun genders"
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Gender",
+            "Typical ending",
+            "Examples",
+            "\"this\""
+          ],
+          "rows": [
+            [
+              "**męski** (masculine)",
+              "consonant",
+              "*dom*, *kot*, *student*",
+              "*ten*"
+            ],
+            [
+              "**żeński** (feminine)",
+              "-a",
+              "*kawa*, *książka*, *kobieta*",
+              "*ta*"
+            ],
+            [
+              "**nijaki** (neuter)",
+              "-o, -e, -um",
+              "*okno*, *morze*, *muzeum*",
+              "*to*"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "The most common exceptions: *mężczyzna* (man) and *kolega* (friend) end in *-a* but are **męski**, because they mean male people."
+        },
+        {
+          "type": "sub",
+          "text": "The seven noun forms — the full map"
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Form",
+            "Answers",
+            "Used after",
+            "Example (kawa)"
+          ],
+          "rows": [
+            [
+              "**mianownik**",
+              "kto? co?",
+              "dictionary form; subject of the sentence",
+              "*To jest kawa.*"
+            ],
+            [
+              "**biernik**",
+              "kogo? co?",
+              "verbs like *mam*, *lubię*, *piję*",
+              "*Piję kawę.*"
+            ],
+            [
+              "**dopełniacz**",
+              "kogo? czego?",
+              "*nie ma*, *dwa kilo*, *bez*, *do*, *od*",
+              "*Nie ma kawy.*"
+            ],
+            [
+              "**miejscownik**",
+              "o kim? o czym?",
+              "*w*, *na*, *o*, *przy*",
+              "*Rozmawiamy o kawie.*"
+            ],
+            [
+              "**narzędnik**",
+              "kim? czym?",
+              "*jestem*, *z*, tools",
+              "*Jestem studentem.*"
+            ],
+            [
+              "**celownik**",
+              "komu? czemu?",
+              "*daję*, *pomagam*",
+              "*Daję kawę koledze.*"
+            ],
+            [
+              "**wołacz**",
+              "calling someone",
+              "addressing a person by name",
+              "*Aniu!*"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "At A1 you really need the first four. **Celownik** and **wołacz** only need to be recognized; **narzędnik** is enough for one pattern: *jestem…* (Unit 2)."
+        },
+        {
+          "type": "sub",
+          "text": "Noun endings used in this course"
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Form",
+            "Męski (thing)",
+            "Męski (person)",
+            "Żeński",
+            "Nijaki"
+          ],
+          "rows": [
+            [
+              "mianownik",
+              "*dom*",
+              "*student*",
+              "*kawa*",
+              "*okno*"
+            ],
+            [
+              "biernik",
+              "*dom* (same)",
+              "*studenta*",
+              "*kaw**ę***",
+              "*okno* (same)"
+            ],
+            [
+              "dopełniacz",
+              "*dom**u***",
+              "*student**a***",
+              "*kaw**y***",
+              "*okn**a***"
+            ],
+            [
+              "miejscownik",
+              "*dom**u***",
+              "*stud**encie***",
+              "*kaw**ie***",
+              "*okn**ie***"
+            ],
+            [
+              "narzędnik",
+              "*dom**em***",
+              "*student**em***",
+              "*kaw**ą***",
+              "*okn**em***"
+            ]
+          ]
+        },
+        {
+          "type": "sub",
+          "text": "The three verb groups"
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Person",
+            "I: *-ę / -esz*",
+            "II: *-ę / -isz*",
+            "III: *-am / -asz*"
+          ],
+          "rows": [
+            [
+              "ja",
+              "*id**ę***",
+              "*mów**ię***",
+              "*czyt**am***"
+            ],
+            [
+              "ty",
+              "*idzi**esz***",
+              "*mów**isz***",
+              "*czyt**asz***"
+            ],
+            [
+              "on / ona / ono",
+              "*idzi**e***",
+              "*mów**i***",
+              "*czyt**a***"
+            ],
+            [
+              "my",
+              "*idzi**emy***",
+              "*mów**imy***",
+              "*czyt**amy***"
+            ],
+            [
+              "wy",
+              "*idzi**ecie***",
+              "*mów**icie***",
+              "*czyt**acie***"
+            ],
+            [
+              "oni / one",
+              "*id**ą***",
+              "*mów**ią***",
+              "*czyt**ają***"
+            ]
+          ]
+        },
+        {
+          "type": "sub",
+          "text": "The past tense"
+        },
+        {
+          "type": "p",
+          "text": "Take the dictionary form, drop *-ć*, and add an ending that **follows the gender of the subject**: male *-łem/-łeś/-ł*, female *-łam/-łaś/-ła*. Plural: male (or mixed) people *-liśmy/-liście/-li*, everything else *-łyśmy/-łyście/-ły*."
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Person",
+            "*być* (male)",
+            "*być* (female)"
+          ],
+          "rows": [
+            [
+              "ja",
+              "*byłem*",
+              "*byłam*"
+            ],
+            [
+              "ty",
+              "*byłeś*",
+              "*byłaś*"
+            ],
+            [
+              "on / ona",
+              "*był*",
+              "*była*"
+            ],
+            [
+              "my",
+              "*byliśmy*",
+              "*byłyśmy*"
+            ],
+            [
+              "wy",
+              "*byliście*",
+              "*byłyście*"
+            ],
+            [
+              "oni / one",
+              "*byli*",
+              "*były*"
+            ]
+          ]
+        },
+        {
+          "type": "sub",
+          "text": "The most common verbs"
+        },
+        {
+          "type": "p",
+          "text": "These verbs cover most everyday A1 conversation. The forms given are *ja* and *ty*, because from those two the rest can be guessed."
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Dictionary form",
+            "ja",
+            "ty",
+            "Meaning"
+          ],
+          "rows": [
+            [
+              "*być*",
+              "*jestem*",
+              "*jesteś*",
+              "to be"
+            ],
+            [
+              "*mieć*",
+              "*mam*",
+              "*masz*",
+              "to have"
+            ],
+            [
+              "*móc*",
+              "*mogę*",
+              "*możesz*",
+              "can, to be able"
+            ],
+            [
+              "*chcieć*",
+              "*chcę*",
+              "*chcesz*",
+              "to want"
+            ],
+            [
+              "*musieć*",
+              "*muszę*",
+              "*musisz*",
+              "must, to have to"
+            ],
+            [
+              "*wiedzieć*",
+              "*wiem*",
+              "*wiesz*",
+              "to know (a fact)"
+            ],
+            [
+              "*rozumieć*",
+              "*rozumiem*",
+              "*rozumiesz*",
+              "to understand"
+            ],
+            [
+              "*mówić*",
+              "*mówię*",
+              "*mówisz*",
+              "to speak"
+            ],
+            [
+              "*mieszkać*",
+              "*mieszkam*",
+              "*mieszkasz*",
+              "to live"
+            ],
+            [
+              "*pracować*",
+              "*pracuję*",
+              "*pracujesz*",
+              "to work"
+            ],
+            [
+              "*studiować*",
+              "*studiuję*",
+              "*studiujesz*",
+              "to study (at university)"
+            ],
+            [
+              "*czytać*",
+              "*czytam*",
+              "*czytasz*",
+              "to read"
+            ],
+            [
+              "*pisać*",
+              "*piszę*",
+              "*piszesz*",
+              "to write"
+            ],
+            [
+              "*jeść*",
+              "*jem*",
+              "*jesz*",
+              "to eat"
+            ],
+            [
+              "*pić*",
+              "*piję*",
+              "*pijesz*",
+              "to drink"
+            ],
+            [
+              "*iść*",
+              "*idę*",
+              "*idziesz*",
+              "to go (on foot)"
+            ],
+            [
+              "*jechać*",
+              "*jadę*",
+              "*jedziesz*",
+              "to go (by vehicle)"
+            ],
+            [
+              "*robić*",
+              "*robię*",
+              "*robisz*",
+              "to do, to make"
+            ],
+            [
+              "*lubić*",
+              "*lubię*",
+              "*lubisz*",
+              "to like"
+            ],
+            [
+              "*słuchać*",
+              "*słucham*",
+              "*słuchasz*",
+              "to listen"
+            ],
+            [
+              "*kupować*",
+              "*kupuję*",
+              "*kupujesz*",
+              "to buy"
+            ],
+            [
+              "*płacić*",
+              "*płacę*",
+              "*płacisz*",
+              "to pay"
+            ],
+            [
+              "*dziękować*",
+              "*dziękuję*",
+              "*dziękujesz*",
+              "to thank"
+            ],
+            [
+              "*czekać*",
+              "*czekam*",
+              "*czekasz*",
+              "to wait"
+            ],
+            [
+              "*pytać*",
+              "*pytam*",
+              "*pytasz*",
+              "to ask"
+            ],
+            [
+              "*wstawać*",
+              "*wstaję*",
+              "*wstajesz*",
+              "to get up"
+            ],
+            [
+              "*spać*",
+              "*śpię*",
+              "*śpisz*",
+              "to sleep"
+            ],
+            [
+              "*uczyć się*",
+              "*uczę się*",
+              "*uczysz się*",
+              "to learn"
+            ],
+            [
+              "*nazywać się*",
+              "*nazywam się*",
+              "*nazywasz się*",
+              "to be called"
+            ],
+            [
+              "*podobać się*",
+              "*podoba mi się*",
+              "*podoba ci się*",
+              "to like (to appeal to)"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "title": "What's next",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "If you have reached this page after really working through all twenty units, you are at **full A1**: you can introduce yourself, shop, order food, ask for directions, talk about yesterday, and make plans for tomorrow. That is no small thing."
+        },
+        {
+          "type": "sub",
+          "text": "Three things that help most now"
+        },
+        {
+          "type": "list",
+          "items": [
+            "**Review Units 8, 11, and 14.** Those three units contain the three most used noun forms (*biernik*, *miejscownik*, *dopełniacz*). Once all three are a reflex, the road to A2 gets much gentler.",
+            "**Read out loud ten minutes a day.** Not new words — dialogues you already understand. What you are training here is not knowledge but your mouth.",
+            "**Collect verb pairs.** From Unit 18 on you know that every action has two faces (*robić / zrobić*). Each time you meet a new verb, note its pair as well — this small habit saves months at A2."
+          ]
+        },
+        {
+          "type": "sub",
+          "text": "What awaits you at A2"
+        },
+        {
+          "type": "list",
+          "items": [
+            "**Celownik** (*komu?*) in full use: *pomagam koledze*, *jest mi zimno*.",
+            "**Adjectives in all their forms** — in this course you mostly used them in the basic form.",
+            "**The imperative** (*rób!*, *zrób!*) and the conditional (*chciałbym* — \"I would like\").",
+            "**Motion verbs with prefixes**: *iść → przyjść, wyjść, pójść* — one root, ten meanings."
+          ]
+        },
+        {
+          "type": "kotak",
+          "title": "If you'd like company",
+          "items": [
+            "Polish classes at Linguo run in small groups or one-to-one, and this course is used as companion material at A1.",
+            "Bring one thing to your first session: the ability to read out loud without stumbling. Everything else is far easier to teach than that."
+          ]
+        },
+        {
+          "type": "p",
+          "text": "*Powodzenia i do zobaczenia!*"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,601 @@
+{
+  "title": "Two faces of every action",
+  "title_target": "Pisałem, ale nie napisałem",
+  "goal": "Recognize Polish verb pairs — one for an action in progress, one for an action completed — and choose between them.",
+  "bekal": [
+    "telling *robić* from *zrobić*, *pisać* from *napisać*",
+    "recognizing the prefixes that mark a completed action",
+    "understanding why the completed form has no present tense"
+  ],
+  "dialogs": [
+    {
+      "title": "Dialogue — Napisałeś już podanie?",
+      "intro": "A study desk in the library. The same assignment is still hanging over both of them.",
+      "lines": [
+        {
+          "speaker": "Ania:",
+          "text": "Napisałeś już podanie?",
+          "id": "Have you finished the application yet?",
+          "literal": "you-wrote-completed already application?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Pisałem wczoraj dwie godziny, ale nie skończyłem.",
+          "id": "I wrote for two hours yesterday, but I didn't finish.",
+          "literal": "I-wrote-ongoing yesterday two hours, but not I-finished-completed."
+        },
+        {
+          "speaker": "Ania:",
+          "text": "Czyli pisałeś, ale nie napisałeś.",
+          "id": "So you were writing, but you didn't get it written.",
+          "literal": "that-is you-wrote-ongoing, but not you-wrote-completed."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Dokładnie. Zawsze piszę powoli.",
+          "id": "Exactly. I always write slowly.",
+          "literal": "exactly. always I-write slowly."
+        },
+        {
+          "speaker": "Ania:",
+          "text": "Ja też. Wczoraj czytałam artykuł trzy razy, zanim przeczytałam do końca.",
+          "id": "Me too. Yesterday I read the article three times before I finally got through it.",
+          "literal": "I too. yesterday I-read-ongoing article three times, before I-read-completed to end."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "A zrobiłaś zadanie z gramatyki?",
+          "id": "And have you done the grammar exercise?",
+          "literal": "and you-did-completed task from grammar?"
+        },
+        {
+          "speaker": "Ania:",
+          "text": "Robiłam wieczorem, ale zrobiłam tylko połowę.",
+          "id": "I worked on it last night, but only got half done.",
+          "literal": "I-did-ongoing evening, but I-did-completed only half."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "To zróbmy resztę razem po zajęciach.",
+          "id": "Let's do the rest together after class, then.",
+          "literal": "so let's-do-completed rest together after classes."
+        },
+        {
+          "speaker": "Ania:",
+          "text": "Dobrze. A kupiłeś już nowy słownik?",
+          "id": "OK. By the way, have you bought a new dictionary yet?",
+          "literal": "good. and you-bought-completed already new dictionary?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Jeszcze nie. Szukam taniego.",
+          "id": "Not yet. I'm still looking for a cheap one.",
+          "literal": "still not. I-look-for cheap-one."
+        },
+        {
+          "speaker": "Ania:",
+          "text": "Kupię ci jeden na urodziny.",
+          "id": "I'll buy you one for your birthday.",
+          "literal": "I-will-buy to-you one for birthday."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Dziękuję! Ale najpierw skończmy zadanie.",
+          "id": "Thanks! But let's finish the assignment first.",
+          "literal": "thanks! but first let's-finish task."
+        }
+      ],
+      "notes": [
+        "**Almost every Polish verb lives in a pair.** One presents the action as an **activity** (*pisać* — write, be writing, usually write), the other presents it as a **finished result** (*napisać* — write something to completion).",
+        "**Pisałem, ale nie napisałem** is the key sentence of this unit. Literally \"I was writing, but I didn't write it\" — and in Polish that's not a strange sentence at all, but the most natural way to say \"I worked on it but didn't finish\".",
+        "**English handles this with extra words and tenses** — \"was writing\", \"have written\", \"finished\", \"got done\". Polish handles it by **choosing a different verb**. The meaning is the same; once again the marker has moved inside the word.",
+        "**Kupię ci jeden** — note that this is **not** the present tense. The completed form (*kupić*) has no present tense at all: give it present-tense endings and it automatically means the **future**. A surprising piece of good news — you can already talk about the future without learning any new forms.",
+        "**Zanim** means \"before\" and links two events: *Czytałam trzy razy, zanim przeczytałam do końca.*",
+        "**Zróbmy, skończmy** — the \"let's\" form almost always uses the **completed** verb, because you're inviting people to get something done, not to wallow in it.",
+        "**Jeszcze nie** — \"not yet\". Its partner: *już* (already). These two little words work together with the verb pairs: *Już napisałem* (I've finished writing it) vs *Jeszcze nie napisałem* (I haven't finished it yet).",
+        "**Na urodziny** — \"for your birthday\". Birthday in Polish is always plural (*urodziny*), like \"births\". The greeting: *Wszystkiego najlepszego!* (all the best)."
+      ],
+      "grammars": [
+        {
+          "title": "Two faces, three tenses",
+          "body": [
+            "Why this rule matters: your choice of form decides the **tense** of your sentence, not just its shade of meaning."
+          ],
+          "table": {
+            "head": [
+              "",
+              "Ongoing (*niedokonany*)",
+              "Completed (*dokonany*)"
+            ],
+            "rows": [
+              [
+                "dictionary form",
+                "*pisać*",
+                "*napisać*"
+              ],
+              [
+                "past",
+                "*pisałem* — I was writing",
+                "*napisałem* — I wrote (and finished)"
+              ],
+              [
+                "present",
+                "*piszę* — I write, I'm writing",
+                "**none**"
+              ],
+              [
+                "future",
+                "*będę pisać* — I'll be writing",
+                "*napiszę* — I'll write (and finish)"
+              ],
+              [
+                "used for",
+                "habits, ongoing activities, repetition",
+                "results, one-off, finished"
+              ]
+            ]
+          },
+          "after": [
+            "That empty \"present\" cell isn't a gap; it makes sense: something **completed** can't be in progress right now.",
+            "And since the completed form doesn't use its present-tense endings for anything else, they're recycled for the future. That's why *napiszę* means \"I will write (it to the end)\" — more on this in unit 19.",
+            "⚠️ When in doubt at A1, use the **ongoing** form. It's almost always understood, while a completed form in the wrong place can sound like an unfinished sentence."
+          ]
+        },
+        {
+          "title": "How the pairs are formed",
+          "body": [
+            "Three ways, and the first covers most of the verbs you know."
+          ],
+          "table": {
+            "head": [
+              "Method",
+              "Ongoing",
+              "Completed",
+              "English"
+            ],
+            "rows": [
+              [
+                "add a prefix",
+                "*robić*",
+                "**z**robić",
+                "to do"
+              ],
+              [
+                "add a prefix",
+                "*pisać*",
+                "**na**pisać",
+                "to write"
+              ],
+              [
+                "add a prefix",
+                "*czytać*",
+                "**prze**czytać",
+                "to read"
+              ],
+              [
+                "add a prefix",
+                "*jeść*",
+                "**z**jeść",
+                "to eat"
+              ],
+              [
+                "add a prefix",
+                "*pić*",
+                "**wy**pić",
+                "to drink"
+              ],
+              [
+                "change the inside",
+                "*kupować*",
+                "*kupić*",
+                "to buy"
+              ],
+              [
+                "change the inside",
+                "*dawać*",
+                "*dać*",
+                "to give"
+              ],
+              [
+                "a different word",
+                "*brać*",
+                "*wziąć*",
+                "to take"
+              ],
+              [
+                "a different word",
+                "*mówić*",
+                "*powiedzieć*",
+                "to speak / to say"
+              ]
+            ]
+          },
+          "after": [
+            "The prefix differs from verb to verb and **can't be guessed** — *zrobić* but *napisać*, *przeczytać* but *wypić*. So the only method that works: note down every new verb **as a pair**, from day one.",
+            "Look at the pair *kupować / kupić*: here it's the **shorter** form that's completed. The same goes for *dawać / dać*, *wracać / wrócić*, *zaczynać / zacząć*.",
+            "Some prefixes also change the **meaning**, not just the completeness: *pisać* (write) → *podpisać* (sign), *przepisać* (copy out), *zapisać* (write down, sign up). That's for A2; for now just know that one root can produce a whole family of words."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "The most common pairs",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "These twenty pairs cover almost every everyday A1 sentence. Learn them in pairs — drilling only one form is the most wasteful way to learn Polish."
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Ongoing",
+            "Completed",
+            "English",
+            "Ongoing",
+            "Completed",
+            "English"
+          ],
+          "rows": [
+            [
+              "*robić*",
+              "*zrobić*",
+              "to do",
+              "*kupować*",
+              "*kupić*",
+              "to buy"
+            ],
+            [
+              "*pisać*",
+              "*napisać*",
+              "to write",
+              "*dawać*",
+              "*dać*",
+              "to give"
+            ],
+            [
+              "*czytać*",
+              "*przeczytać*",
+              "to read",
+              "*wracać*",
+              "*wrócić*",
+              "to come back"
+            ],
+            [
+              "*jeść*",
+              "*zjeść*",
+              "to eat",
+              "*zaczynać*",
+              "*zacząć*",
+              "to start"
+            ],
+            [
+              "*pić*",
+              "*wypić*",
+              "to drink",
+              "*kończyć*",
+              "*skończyć*",
+              "to finish"
+            ],
+            [
+              "*uczyć się*",
+              "*nauczyć się*",
+              "to learn",
+              "*spotykać się*",
+              "*spotkać się*",
+              "to meet"
+            ],
+            [
+              "*gotować*",
+              "*ugotować*",
+              "to cook",
+              "*brać*",
+              "*wziąć*",
+              "to take"
+            ],
+            [
+              "*sprzątać*",
+              "*posprzątać*",
+              "to tidy up",
+              "*mówić*",
+              "*powiedzieć*",
+              "to say"
+            ],
+            [
+              "*oglądać*",
+              "*obejrzeć*",
+              "to watch",
+              "*dzwonić*",
+              "*zadzwonić*",
+              "to call"
+            ],
+            [
+              "*płacić*",
+              "*zapłacić*",
+              "to pay",
+              "*pytać*",
+              "*zapytać*",
+              "to ask"
+            ]
+          ]
+        },
+        {
+          "type": "kotak",
+          "title": "Four sentences that show the difference",
+          "items": [
+            "*Wczoraj czytałem książkę.* — Yesterday I was reading a book. (the activity)",
+            "*Wczoraj przeczytałem książkę.* — Yesterday I finished the book. (the result)",
+            "*Codziennie gotuję obiad.* — I cook lunch every day. (a habit → always ongoing)",
+            "*Ugotowałem obiad.* — I've made lunch. (one-off, finished)"
+          ]
+        }
+      ]
+    },
+    {
+      "title": "When to use which",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "If your sentence has…",
+            "Use",
+            "Example"
+          ],
+          "rows": [
+            [
+              "*zawsze*, *często*, *codziennie*",
+              "ongoing",
+              "*Codziennie piję kawę.*"
+            ],
+            [
+              "*przez godzinę*, *długo*",
+              "ongoing",
+              "*Uczyłem się przez godzinę.*"
+            ],
+            [
+              "*czasem*, *zwykle*",
+              "ongoing",
+              "*Zwykle gotuję w niedzielę.*"
+            ],
+            [
+              "*już*",
+              "completed",
+              "*Już zjadłem.*"
+            ],
+            [
+              "*wreszcie*, *w końcu*",
+              "completed",
+              "*W końcu skończyłem.*"
+            ],
+            [
+              "one time, with a result",
+              "completed",
+              "*Zadzwoniłem do mamy.*"
+            ],
+            [
+              "invitations *zróbmy*, *chodźmy*",
+              "completed",
+              "*Zróbmy to razem.*"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "The adverbs in the left column are **reliable clues**. If your sentence says \"every day\", the completed form is almost certainly wrong; if it says \"finally\", the ongoing form is almost certainly wrong."
+        },
+        {
+          "type": "kotak",
+          "title": "Don't worry too much",
+          "items": [
+            "This is the part of Polish that takes longest to sink in — foreigners who've lived in Poland for years still occasionally pick the wrong one.",
+            "Mistakes here **rarely get in the way of understanding**. What matters is the right verb; the right face can come later.",
+            "The most effective way to learn isn't memorizing rules but **collecting ready-made sentences**. Every time you hear a sentence that feels right, write it down whole."
+          ]
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "pl": "napisać",
+      "baca": "na-PEE-sach",
+      "en": "to write (to completion)"
+    },
+    {
+      "pl": "przeczytać",
+      "baca": "pshe-CHY-tach",
+      "en": "to read (to the end)"
+    },
+    {
+      "pl": "zrobić",
+      "baca": "ZRO-bich",
+      "en": "to do (completed)"
+    },
+    {
+      "pl": "zjeść / wypić",
+      "baca": "zyeshch / VY-pich",
+      "en": "to eat up / to drink up"
+    },
+    {
+      "pl": "kupić",
+      "baca": "KOO-pich",
+      "en": "to buy (completed)"
+    },
+    {
+      "pl": "skończyć",
+      "baca": "SKONY-chych",
+      "en": "to finish"
+    },
+    {
+      "pl": "zacząć",
+      "baca": "ZA-chyonch",
+      "en": "to start"
+    },
+    {
+      "pl": "zadzwonić",
+      "baca": "za-DZVO-nich",
+      "en": "to call (once)"
+    },
+    {
+      "pl": "powiedzieć",
+      "baca": "po-VYE-jyech",
+      "en": "to say"
+    },
+    {
+      "pl": "wziąć",
+      "baca": "vzhonch",
+      "en": "to take"
+    },
+    {
+      "pl": "obejrzeć",
+      "baca": "o-BEY-zhech",
+      "en": "to watch (to the end)"
+    },
+    {
+      "pl": "nauczyć się",
+      "baca": "na-OO-chych sheh",
+      "en": "to learn (completed)"
+    },
+    {
+      "pl": "zadanie",
+      "baca": "za-DA-nyeh",
+      "en": "task, exercise"
+    },
+    {
+      "pl": "gramatyka",
+      "baca": "gra-MA-ty-ka",
+      "en": "grammar"
+    },
+    {
+      "pl": "artykuł",
+      "baca": "ar-TY-koow",
+      "en": "article"
+    },
+    {
+      "pl": "podanie",
+      "baca": "po-DA-nyeh",
+      "en": "application (letter)"
+    },
+    {
+      "pl": "urodziny",
+      "baca": "oo-ro-JYEE-ny",
+      "en": "birthday"
+    },
+    {
+      "pl": "prezent",
+      "baca": "PRE-zent",
+      "en": "present, gift"
+    },
+    {
+      "pl": "zanim",
+      "baca": "ZA-nim",
+      "en": "before"
+    },
+    {
+      "pl": "czyli",
+      "baca": "CHY-li",
+      "en": "that is; so"
+    },
+    {
+      "pl": "jeszcze nie",
+      "baca": "YESH-cheh nyeh",
+      "en": "not yet"
+    },
+    {
+      "pl": "już",
+      "baca": "yoosh",
+      "en": "already"
+    },
+    {
+      "pl": "wreszcie",
+      "baca": "VRESH-chyeh",
+      "en": "at last"
+    },
+    {
+      "pl": "w końcu",
+      "baca": "f KONY-tsoo",
+      "en": "finally, in the end"
+    },
+    {
+      "pl": "do końca",
+      "baca": "do KONY-tsa",
+      "en": "to the end"
+    },
+    {
+      "pl": "reszta",
+      "baca": "RESH-ta",
+      "en": "the rest"
+    },
+    {
+      "pl": "razem",
+      "baca": "RA-zem",
+      "en": "together"
+    },
+    {
+      "pl": "dokładnie",
+      "baca": "do-KWAD-nyeh",
+      "en": "exactly"
+    },
+    {
+      "pl": "połowa",
+      "baca": "po-WO-va",
+      "en": "half"
+    },
+    {
+      "pl": "wszystkiego najlepszego",
+      "baca": "fshyst-KYE-go nay-LEP-she-go",
+      "en": "happy birthday; all the best"
+    }
+  ],
+  "exercises": [
+    {
+      "prompt": "Write the completed partner.",
+      "items": [
+        "robić →",
+        "pisać →",
+        "czytać →",
+        "jeść →",
+        "kupować →",
+        "dzwonić →"
+      ]
+    },
+    {
+      "prompt": "Choose the right form — ongoing or completed.",
+      "items": [
+        "Codziennie ____ kawę. (pić or wypić)",
+        "Wczoraj ____ całą książkę. (czytałem or przeczytałem)",
+        "Już ____ obiad. (jadłem or zjadłem)",
+        "Zwykle ____ w niedzielę. (gotuję or ugotuję)",
+        "W końcu ____ zadanie. (robiłem or zrobiłem)"
+      ]
+    },
+    {
+      "prompt": "Translate into Polish (male speaker).",
+      "items": [
+        "I wrote for two hours, but didn't finish.",
+        "I've already read it to the end.",
+        "I cook lunch every day.",
+        "I haven't bought it yet.",
+        "Let's do it together."
+      ]
+    },
+    {
+      "prompt": "Put the words in the right order.",
+      "items": [
+        "napisałem / ale / pisałem / nie / ,",
+        "zjadłem / już",
+        "codziennie / kawę / piję",
+        "razem / to / zróbmy",
+        "nie / jeszcze / kupiłem"
+      ]
+    }
+  ],
+  "answers": [
+    "zrobić — napisać — przeczytać — zjeść — kupić — zadzwonić",
+    "piję — przeczytałem — zjadłem — gotuję — zrobiłem",
+    "Pisałem dwie godziny, ale nie napisałem. — Już przeczytałem. — Codziennie gotuję obiad. — Jeszcze nie kupiłem. — Zróbmy to razem.",
+    "Pisałem, ale nie napisałem. — Już zjadłem. — Codziennie piję kawę. — Zróbmy to razem. — Jeszcze nie kupiłem."
+  ],
+  "wave": "Read the unit 16 dialogue aloud again, then name ten verbs you know together with their completed partners."
+}

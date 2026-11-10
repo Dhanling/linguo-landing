@@ -1,0 +1,553 @@
+{
+  "title": "Hi, what's your name?",
+  "title_target": "Cześć! Jak się nazywasz?",
+  "goal": "Greet people at the right time of day, say your name, ask how someone is, and see why the word \"I\" can almost always be dropped.",
+  "bekal": [
+    "greet with *cześć*, *dzień dobry*, and *dobry wieczór*, each in its proper place",
+    "give your name with *nazywam się* and ask other people theirs",
+    "use *być* (to be) for every person, and know when to drop the pronoun"
+  ],
+  "dialogs": [
+    {
+      "title": "Dialogue — Pierwszy dzień w szkole językowej",
+      "intro": "The first day of a course at a language school in Kraków. Two new students sit down next to each other.",
+      "lines": [
+        {
+          "speaker": "Ania:",
+          "text": "Cześć! Jak się nazywasz?",
+          "id": "Hi! What's your name?",
+          "literal": "hi! how self you-name?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Cześć! Nazywam się Budi. A ty?",
+          "id": "Hi! My name's Budi. And you?",
+          "literal": "hi! I-name self Budi. and you?"
+        },
+        {
+          "speaker": "Ania:",
+          "text": "Jestem Ania. Miło mi.",
+          "id": "I'm Ania. Nice to meet you.",
+          "literal": "I-am Ania. pleasant to-me."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Mnie również. Jak się masz?",
+          "id": "Likewise. How are you?",
+          "literal": "to-me also. how self you-have?"
+        },
+        {
+          "speaker": "Ania:",
+          "text": "Dobrze, dziękuję. A ty?",
+          "id": "Fine, thanks. And you?",
+          "literal": "well, I-thank. and you?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Też dobrze. Jesteś Polką?",
+          "id": "Fine too. Are you Polish?",
+          "literal": "also well. you-are Polish-woman?"
+        },
+        {
+          "speaker": "Ania:",
+          "text": "Tak, jestem z Krakowa. A ty? Jesteś Chińczykiem?",
+          "id": "Yes, I'm from Kraków. And you? Are you Chinese?",
+          "literal": "yes, I-am from Kraków. and you? you-are Chinese-man?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Nie, jestem Indonezyjczykiem. Jestem z Dżakarty.",
+          "id": "No, I'm Indonesian. I'm from Jakarta.",
+          "literal": "no, I-am Indonesian-man. I-am from Jakarta."
+        },
+        {
+          "speaker": "Ania:",
+          "text": "Jak ciekawie! Witamy w Polsce!",
+          "id": "How interesting! Welcome to Poland!",
+          "literal": "how interesting! we-welcome in Poland!"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Dziękuję bardzo! Do zobaczenia jutro, Aniu.",
+          "id": "Thanks a lot! See you tomorrow, Ania.",
+          "literal": "I-thank very! until seeing tomorrow, Ania!"
+        },
+        {
+          "speaker": "Ania:",
+          "text": "Do zobaczenia! Cześć!",
+          "id": "See you! Bye!",
+          "literal": "until seeing! hi!"
+        }
+      ],
+      "notes": [
+        "**Cześć works both ways.** One word for \"hi\" and \"bye\" — like Italian *ciao*. But it is **informal**: for friends, people your age, and young people. To strangers or older people, the greeting is *dzień dobry*.",
+        "**Jak się nazywasz is not \"what is your name\".** Literally it's \"how do you call yourself\". *Nazywać się* is a full verb that always comes with *się* — a little word meaning \"oneself\". That's why the answer is a verb too: *nazywam się Budi*.",
+        "**There's a shorter way.** *Jestem Ania* — \"I'm Ania\" — is just as correct and actually more common among friends. Save *nazywam się* for slightly formal introductions: in class, at work, on the phone.",
+        "**Miło mi** literally means \"pleasant to me\", and it's a complete sentence — no \"I\" and no \"is\" in it. The reply is *mnie również* (\"to me too\") or simply *miło mi*.",
+        "**Watch out for the biggest trap:** *tak* means **yes**. \"No\" is *nie*. Both words are short and easy to swap in a hurry, and swapping them is no small mistake.",
+        "**The pronoun is missing.** Notice: *nazywam się*, *jestem*, *dziękuję* — none of them has *ja* (I) in front. The verb ending already shows who is speaking, so the pronoun isn't needed. *Ja jestem Budi* isn't wrong, but it sounds like stressing \"**I'm** Budi\".",
+        "**Jesteś Polką? Jestem Indonezyjczykiem?** A nationality after *jestem* takes a special ending (*-ą* for women, *-em* for men). That form is called *narzędnik*, and you'll deal with it properly in Unit 2. For now, just accept the form as it is.",
+        "**Nationalities are capitalized.** *Polka*, *Indonezyjczyk*, *Chińczyk* — just as in English. Language names, though, are lowercase: *polski*, *indonezyjski*.",
+        "**Aniu**, not *Ania*. When calling someone by name, Polish uses a special form called *wołacz*. For women's names ending in *-a*, the ending changes to *-u*: *Ania → Aniu*, *Marta → Marto*. Just recognize it for now; it won't be tested."
+      ],
+      "grammars": [
+        {
+          "title": "Być — the verb \"to be\"",
+          "body": [
+            "The first verb you must master, and the only one whose forms really have to be memorized whole."
+          ],
+          "table": {
+            "head": [
+              "Person",
+              "Say it",
+              "być",
+              "meaning"
+            ],
+            "rows": [
+              [
+                "ja",
+                "ya",
+                "**jestem**",
+                "I am"
+              ],
+              [
+                "ty",
+                "ty",
+                "**jesteś**",
+                "you are"
+              ],
+              [
+                "on / ona / ono",
+                "on / O-na / O-no",
+                "**jest**",
+                "he / she / it is"
+              ],
+              [
+                "my",
+                "my",
+                "**jesteśmy**",
+                "we are"
+              ],
+              [
+                "wy",
+                "vy",
+                "**jesteście**",
+                "you (plural) are"
+              ],
+              [
+                "oni / one",
+                "O-ni / O-neh",
+                "**są**",
+                "they are"
+              ]
+            ]
+          },
+          "after": [
+            "Look at the ending pattern: **-m** for I, **-sz/-ś** for you, **-my** for we, **-cie** for you plural. The same pattern shows up in every other verb in this course, so spotting it now saves a lot of memorizing later.",
+            "⚠️ *są* is read **son** — the letter *ą* is a nasal *o*, not an *a*. One of the most persistent mistakes, because the letter's shape fools the eye.",
+            "There are two words for \"they\": ***oni*** if the group has **at least one man**, ***one*** if it's only women, children, or things. This distinction comes back again and again in Polish."
+          ]
+        },
+        {
+          "title": "Personal pronouns — and why they're often dropped",
+          "body": [
+            "Polish has a full set of personal pronouns, but in ordinary sentences they're mostly **left out**."
+          ],
+          "table": {
+            "head": [
+              "Pronoun",
+              "Say it",
+              "Meaning",
+              "When is it used?"
+            ],
+            "rows": [
+              [
+                "*ja*",
+                "ya",
+                "I",
+                "only for emphasis"
+              ],
+              [
+                "*ty*",
+                "ty",
+                "you",
+                "only for emphasis"
+              ],
+              [
+                "*on / ona / ono*",
+                "on / O-na / O-no",
+                "he / she / it",
+                "often — the verb form is the same"
+              ],
+              [
+                "*my*",
+                "my",
+                "we",
+                "only for emphasis"
+              ],
+              [
+                "*wy*",
+                "vy",
+                "you (plural)",
+                "only for emphasis"
+              ],
+              [
+                "*oni / one*",
+                "O-ni / O-neh",
+                "they (with men / no men)",
+                "often"
+              ]
+            ]
+          },
+          "after": [
+            "Why are *on*, *ona*, *oni* used so often? Because the verb form for all three is **exactly the same** (*jest*, *są*), so without the pronoun you can't tell who is meant.",
+            "*Jestem*, on the other hand, can only mean \"I\". Adding *ja* isn't wrong, but it sounds like raising your voice: *Ja jestem Budi* = \"**I'm** Budi (not him)\"."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Survival phrases",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "These twelve phrases cover almost everything you need on day one. Memorize the sound, not the structure — the grammar will follow in later units."
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Polski",
+            "Say it",
+            "English"
+          ],
+          "rows": [
+            [
+              "*Dzień dobry.*",
+              "jyeny DOB-ry",
+              "Good morning / afternoon. (polite, until evening)"
+            ],
+            [
+              "*Dobry wieczór.*",
+              "DOB-ry VYE-choor",
+              "Good evening. (greeting)"
+            ],
+            [
+              "*Dobranoc.*",
+              "do-BRA-nots",
+              "Good night. (when leaving / going to bed)"
+            ],
+            [
+              "*Cześć.*",
+              "cheshch",
+              "Hi. / Bye. (informal)"
+            ],
+            [
+              "*Do widzenia.*",
+              "do vi-DZE-nya",
+              "Goodbye. (polite)"
+            ],
+            [
+              "*Proszę.*",
+              "PRO-sheh",
+              "Please. / Here you are. / You're welcome."
+            ],
+            [
+              "*Dziękuję.*",
+              "jyen-KOO-yeh",
+              "Thank you."
+            ],
+            [
+              "*Przepraszam.*",
+              "pshe-PRA-sham",
+              "Sorry. / Excuse me."
+            ],
+            [
+              "*Nie rozumiem.*",
+              "nyeh ro-ZOO-myem",
+              "I don't understand."
+            ],
+            [
+              "*Mówisz po angielsku?*",
+              "MOO-vish po an-GYEL-skoo",
+              "Do you speak English?"
+            ],
+            [
+              "*Jak to się mówi po polsku?*",
+              "yak to sheh MOO-vi po POL-skoo",
+              "How do you say that in Polish?"
+            ],
+            [
+              "*Powoli, proszę.*",
+              "po-VO-li PRO-sheh",
+              "Slowly, please."
+            ]
+          ]
+        },
+        {
+          "type": "kotak",
+          "title": "One word, three uses",
+          "items": [
+            "*Proszę* is the most versatile word in Polish. It means **\"please\"** when asking (*Kawę, proszę* — coffee, please), **\"here you are\"** when giving (offering a chair with a *proszę*), and **\"you're welcome\"** in reply to thanks.",
+            "There's a fourth use: *Proszę?* with rising intonation means \"sorry, what was that?\" — a polite \"pardon?\"."
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Polite or informal: Pan, Pani, and ty",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Polish draws a sharp line between talking **informally** and talking **politely** — English has no such line at all. Choosing wrong won't make you incomprehensible, but it feels like calling your professor \"dude\"."
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "To whom",
+            "Form of address",
+            "Example"
+          ],
+          "rows": [
+            [
+              "Friends, peers, young people",
+              "*ty*",
+              "*Jak się masz?* (how are you?)"
+            ],
+            [
+              "A man you don't know well",
+              "*pan*",
+              "*Jak się pan ma?*"
+            ],
+            [
+              "A woman you don't know well",
+              "*pani*",
+              "*Jak się pani ma?*"
+            ],
+            [
+              "Several people, politely",
+              "*państwo*",
+              "*Jak się państwo mają?*"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "Look at the verb form: with *pan* and *pani* you use the **he/she** form (*ma*), not the **you** form (*masz*). Polish is polite by speaking *about* the person rather than *to* them — like saying \"Would sir like…?\" in English."
+        },
+        {
+          "type": "kotak",
+          "title": "A practical rule for beginners",
+          "items": [
+            "Greet anyone you don't know with *dzień dobry*, not *cześć*. This is almost never wrong.",
+            "Wait for the Polish person to offer *ty* first (*Możemy na ty?* — \"can we use *ty*?\"). Accepting is polite; jumping ahead may not be.",
+            "Among students, in language class, and among people your age, *ty* is used right away with no ceremony."
+          ]
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "pl": "cześć",
+      "baca": "cheshch",
+      "en": "hi; bye (informal)"
+    },
+    {
+      "pl": "dzień dobry",
+      "baca": "jyeny DOB-ry",
+      "en": "good morning/afternoon"
+    },
+    {
+      "pl": "dobry wieczór",
+      "baca": "DOB-ry VYE-choor",
+      "en": "good evening (greeting)"
+    },
+    {
+      "pl": "dobranoc",
+      "baca": "do-BRA-nots",
+      "en": "good night (when leaving)"
+    },
+    {
+      "pl": "do widzenia",
+      "baca": "do vi-DZE-nya",
+      "en": "goodbye (polite)"
+    },
+    {
+      "pl": "do zobaczenia",
+      "baca": "do zo-ba-CHE-nya",
+      "en": "see you"
+    },
+    {
+      "pl": "być",
+      "baca": "bych",
+      "en": "to be"
+    },
+    {
+      "pl": "nazywać się",
+      "baca": "na-ZY-vach sheh",
+      "en": "to be called"
+    },
+    {
+      "pl": "mieć",
+      "baca": "myech",
+      "en": "to have"
+    },
+    {
+      "pl": "jak",
+      "baca": "yak",
+      "en": "how"
+    },
+    {
+      "pl": "jak się masz?",
+      "baca": "yak sheh mash",
+      "en": "how are you?"
+    },
+    {
+      "pl": "dobrze",
+      "baca": "DOB-zheh",
+      "en": "well; fine"
+    },
+    {
+      "pl": "źle",
+      "baca": "zhleh",
+      "en": "badly"
+    },
+    {
+      "pl": "tak",
+      "baca": "tak",
+      "en": "yes"
+    },
+    {
+      "pl": "nie",
+      "baca": "nyeh",
+      "en": "no; not"
+    },
+    {
+      "pl": "też",
+      "baca": "tesh",
+      "en": "also, too"
+    },
+    {
+      "pl": "a",
+      "baca": "a",
+      "en": "and; and what about (contrast)"
+    },
+    {
+      "pl": "i",
+      "baca": "i",
+      "en": "and"
+    },
+    {
+      "pl": "z",
+      "baca": "z",
+      "en": "from; with"
+    },
+    {
+      "pl": "miło mi",
+      "baca": "MEE-wo mi",
+      "en": "nice to meet you"
+    },
+    {
+      "pl": "dziękuję",
+      "baca": "jyen-KOO-yeh",
+      "en": "thank you"
+    },
+    {
+      "pl": "bardzo",
+      "baca": "BAR-dzo",
+      "en": "very"
+    },
+    {
+      "pl": "proszę",
+      "baca": "PRO-sheh",
+      "en": "please; here you are; you're welcome"
+    },
+    {
+      "pl": "przepraszam",
+      "baca": "pshe-PRA-sham",
+      "en": "sorry; excuse me"
+    },
+    {
+      "pl": "Polska",
+      "baca": "POL-ska",
+      "en": "Poland"
+    },
+    {
+      "pl": "Polak / Polka",
+      "baca": "PO-lak / POL-ka",
+      "en": "Pole (m/f)"
+    },
+    {
+      "pl": "Indonezja",
+      "baca": "in-do-NE-zya",
+      "en": "Indonesia"
+    },
+    {
+      "pl": "Indonezyjczyk",
+      "baca": "in-do-ne-ZYY-chyk",
+      "en": "Indonesian (man)"
+    },
+    {
+      "pl": "jutro",
+      "baca": "YOO-tro",
+      "en": "tomorrow"
+    },
+    {
+      "pl": "pan / pani",
+      "baca": "pan / PA-ni",
+      "en": "Mr. / Mrs., Ms. (polite address)"
+    }
+  ],
+  "exercises": [
+    {
+      "prompt": "Translate into Polish.",
+      "items": [
+        "Hi! What's your name?",
+        "My name is Budi.",
+        "I'm from Jakarta.",
+        "How are you?",
+        "Fine, thank you.",
+        "See you tomorrow!"
+      ]
+    },
+    {
+      "prompt": "Fill in the blanks with the right form of *być*.",
+      "items": [
+        "Ja ____ Budi. (I)",
+        "Ty ____ z Krakowa. (you)",
+        "Ona ____ Polką. (she)",
+        "My ____ w Polsce. (we)",
+        "Wy ____ studentami. (you plural)",
+        "Oni ____ z Indonezji. (they)"
+      ]
+    },
+    {
+      "prompt": "Choose the right greeting. Write out the whole sentence.",
+      "items": [
+        "You walk into a bakery at eight in the morning. To the baker you say ____.",
+        "You meet a classmate in the cafeteria at eleven. You say ____.",
+        "You walk into a restaurant at eight in the evening. To the waiter you say ____.",
+        "You say goodbye to your professor at the end of the corridor. You say ____.",
+        "You part from your roommate before bed. You say ____."
+      ]
+    },
+    {
+      "prompt": "Put the words in the right order.",
+      "items": [
+        "się / nazywam / Budi",
+        "z / jestem / Dżakarty",
+        "się / jak / masz / ?",
+        "Polką / jesteś / ?",
+        "bardzo / dziękuję"
+      ]
+    }
+  ],
+  "answers": [
+    "Cześć! Jak się nazywasz? — Nazywam się Budi. — Jestem z Dżakarty. — Jak się masz? — Dobrze, dziękuję. — Do zobaczenia jutro!",
+    "jestem — jesteś — jest — jesteśmy — jesteście — są",
+    "Dzień dobry. — Cześć. — Dobry wieczór. — Do widzenia. — Dobranoc.",
+    "Nazywam się Budi. — Jestem z Dżakarty. — Jak się masz? — Jesteś Polką? — Dziękuję bardzo."
+  ]
+}

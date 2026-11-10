@@ -1,0 +1,554 @@
+{
+  "title": "Where are you going?",
+  "title_target": "Dokąd idziesz?",
+  "goal": "Tell walking apart from riding, ask for directions in the street, and use *do*, *na* and *w* for destinations.",
+  "bekal": [
+    "choosing between *iść* and *jechać* without hesitating",
+    "asking for and understanding simple directions",
+    "naming a destination with the right preposition"
+  ],
+  "dialogs": [
+    {
+      "title": "Dialogue — Jak dojść do dworca?",
+      "intro": "A sidewalk in the city center. Budi stops a passerby, holding a phone with a dead battery.",
+      "lines": [
+        {
+          "speaker": "Budi:",
+          "text": "Przepraszam, jak dojść do dworca?",
+          "id": "Excuse me, how do I get to the station?",
+          "literal": "sorry, how reach-on-foot to station?"
+        },
+        {
+          "speaker": "Przechodzień:",
+          "text": "Idzie pan prosto, a potem w lewo przy kościele.",
+          "id": "Go straight ahead, then turn left at the church.",
+          "literal": "walks sir straight, and then to left by church."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Daleko stąd?",
+          "id": "Is it far from here?",
+          "literal": "far from-here?"
+        },
+        {
+          "speaker": "Przechodzień:",
+          "text": "Jakieś dziesięć minut pieszo. Albo jedzie pan tramwajem numer cztery.",
+          "id": "About ten minutes on foot. Or take tram number four.",
+          "literal": "about ten minutes on-foot. or rides sir by-tram number four."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "A gdzie jest przystanek?",
+          "id": "And where's the stop?",
+          "literal": "and where is stop?"
+        },
+        {
+          "speaker": "Przechodzień:",
+          "text": "Za rogiem, po prawej stronie.",
+          "id": "Around the corner, on the right.",
+          "literal": "behind corner, on right side."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Czy ten tramwaj jedzie też na lotnisko?",
+          "id": "Does that tram go to the airport too?",
+          "literal": "whether this tram rides also to airport?"
+        },
+        {
+          "speaker": "Przechodzień:",
+          "text": "Nie, na lotnisko jedzie pociąg z dworca głównego.",
+          "id": "No, a train goes to the airport from the main station.",
+          "literal": "no, to airport rides train from station main."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Ile kosztuje bilet na pociąg?",
+          "id": "How much is a train ticket?",
+          "literal": "how-much costs ticket for train?"
+        },
+        {
+          "speaker": "Przechodzień:",
+          "text": "Nie wiem dokładnie. Chyba siedemnaście złotych.",
+          "id": "I'm not exactly sure. Seventeen złoty, I think.",
+          "literal": "not I-know exactly. probably seventeen złoty."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Dziękuję bardzo za pomoc!",
+          "id": "Thank you so much for your help!",
+          "literal": "thank-you very for help!"
+        },
+        {
+          "speaker": "Przechodzień:",
+          "text": "Nie ma za co. Miłego dnia!",
+          "id": "You're welcome. Have a nice day!",
+          "literal": "not is for what. nice day!"
+        }
+      ],
+      "notes": [
+        "**Iść or jechać?** Polish has no single word for \"go\". *Iść* is for going **on foot**, *jechać* for going **by vehicle** — bus, car, train, bike. Using the wrong one won't stop people understanding you, but it sounds foreign straight away.",
+        "**Idzie pan prosto** — note the form *idzie* (the \"he\" form), not *idziesz*. With *pan* and *pani* you always use the third person, a rule you met in unit 1. It's also a gentle way to give directions: literally \"the gentleman walks straight\", not an order.",
+        "**Do dworca, na lotnisko, w lewo.** Three prepositions for three kinds of destination. Rough pattern: *do* for buildings and towns (*do sklepu*, *do Krakowa*), *na* for open places and events (*na lotnisko*, *na koncert*), and the fixed pairs follow the *w / na* rule you learned in unit 11.",
+        "**After do, the noun ends in -a or -u**: *dworzec → do dworca*, *sklep → do sklepu*, *dom → do domu*. This form is called *dopełniacz* and is the whole topic of unit 15. For now, just recognize the pattern.",
+        "**Tramwajem, pociągiem, autobusem** — vehicles take the *narzędnik* ending you've known since unit 8: \"by tram\", \"by train\". Ready-made formula: *jadę* + vehicle + *-em*.",
+        "**Za rogiem, po prawej stronie.** Directions use a mix of forms, and honestly there's no point unpacking them at this level. Learn them as chunks; the eight expressions in the extra section cover almost every situation.",
+        "**Chyba** means \"I think, probably\", and Poles use it constantly. It's not an awkward sign of doubt; it sounds natural and honest.",
+        "**Nie ma za co** — the standard reply to \"thank you\", literally \"there's nothing for what\". Its siblings: *proszę bardzo* and *drobiazg* (\"a small thing\")."
+      ],
+      "grammars": [
+        {
+          "title": "Iść, jechać — and their routine partners",
+          "body": [
+            "Polish uses different verbs for a trip that's **happening now** and one that's **repeated**. Four words, two pairs."
+          ],
+          "table": {
+            "head": [
+              "",
+              "Now / this once",
+              "Habit / repeated"
+            ],
+            "rows": [
+              [
+                "on foot",
+                "*iść* — *idę, idziesz, idzie*",
+                "*chodzić* — *chodzę, chodzisz, chodzi*"
+              ],
+              [
+                "by vehicle",
+                "*jechać* — *jadę, jedziesz, jedzie*",
+                "*jeździć* — *jeżdżę, jeździsz, jeździ*"
+              ],
+              [
+                "example",
+                "*Idę do sklepu.* (I'm going to the shop now)",
+                "*Chodzę do szkoły.* (I go to school)"
+              ],
+              [
+                "example",
+                "*Jadę do Warszawy.* (I'm on my way to Warsaw)",
+                "*Jeżdżę do Warszawy co miesiąc.* (every month)"
+              ]
+            ]
+          },
+          "after": [
+            "How to choose: if you can add \"now\" or \"tomorrow\" without it sounding odd, use *iść / jechać*. If the sentence has \"always\", \"every day\" or \"often\", use *chodzić / jeździć*.",
+            "⚠️ *Idę* is also used for near-future plans, just like English \"I'm going\": *Jutro idę do kina* — I'm going to the cinema tomorrow. Polish doesn't need a future form for this.",
+            "Motion verbs with prefixes (*przyjść*, *wyjść*, *pójść*, *dojść*) are a world of their own waiting in A2. You only need one now: *jak dojść do…?* — how do I get to…"
+          ]
+        },
+        {
+          "title": "Where to? — do, na, w",
+          "body": [
+            "Destinations take different prepositions from locations, and the pairs are easy to remember side by side."
+          ],
+          "table": {
+            "head": [
+              "Where (unit 11)",
+              "Where to (this unit)",
+              "English"
+            ],
+            "rows": [
+              [
+                "*w sklepie*",
+                "*do sklepu*",
+                "in the shop / to the shop"
+              ],
+              [
+                "*w domu*",
+                "*do domu*",
+                "at home / home"
+              ],
+              [
+                "*w Krakowie*",
+                "*do Krakowa*",
+                "in Kraków / to Kraków"
+              ],
+              [
+                "*na poczcie*",
+                "*na pocztę*",
+                "at the post office / to the post office"
+              ],
+              [
+                "*na lotnisku*",
+                "*na lotnisko*",
+                "at the airport / to the airport"
+              ],
+              [
+                "*na zajęciach*",
+                "*na zajęcia*",
+                "in class / to class"
+              ]
+            ]
+          },
+          "after": [
+            "The rule is neat: places that take *w* switch to **do**, places that take *na* keep **na** — only the noun ending changes, to the object form.",
+            "So you don't need to learn a new list at all. Whatever you decided in unit 11 still applies here."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Asking for and giving directions",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "Polski",
+            "Say it",
+            "English"
+          ],
+          "rows": [
+            [
+              "*Jak dojść do…?*",
+              "yak doyshch do",
+              "How do I get to… on foot?"
+            ],
+            [
+              "*Jak dojechać do…?*",
+              "yak do-YE-hach do",
+              "How do I get to… by transport?"
+            ],
+            [
+              "*Gdzie jest przystanek?*",
+              "gjyeh yest pshys-TA-nek",
+              "Where's the stop?"
+            ],
+            [
+              "*Prosto*",
+              "PROS-to",
+              "Straight ahead"
+            ],
+            [
+              "*W lewo / w prawo*",
+              "v LE-vo / f PRA-vo",
+              "To the left / to the right"
+            ],
+            [
+              "*Po lewej / po prawej stronie*",
+              "po LE-vey STRO-nyeh",
+              "On the left / right"
+            ],
+            [
+              "*Za rogiem*",
+              "za RO-gyem",
+              "Around the corner"
+            ],
+            [
+              "*Naprzeciwko*",
+              "na-pshe-CHEEF-ko",
+              "Opposite"
+            ],
+            [
+              "*Obok*",
+              "O-bok",
+              "Next door"
+            ],
+            [
+              "*Na końcu ulicy*",
+              "na KONY-tsoo oo-LEE-tsy",
+              "At the end of the street"
+            ],
+            [
+              "*Pierwsza przecznica*",
+              "PYERF-sha pshech-NEE-tsa",
+              "The first intersection"
+            ],
+            [
+              "*Zgubiłem się.*",
+              "zgoo-BEE-wem sheh",
+              "I'm lost. (m)"
+            ]
+          ]
+        },
+        {
+          "type": "kotak",
+          "title": "If the directions are too fast",
+          "items": [
+            "*Wolniej, proszę.* — Slower, please.",
+            "*Może pan pokazać na mapie?* — Could you show me on the map?",
+            "*Czy to daleko?* — Is it far?",
+            "Don't be shy about using your phone: *Proszę napisać.* (please write it down) has rescued more foreigners than any memorized phrase."
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Vehicles and ways of getting around",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "Vehicle",
+            "By that vehicle",
+            "English"
+          ],
+          "rows": [
+            [
+              "*autobus*",
+              "*autobusem*",
+              "bus"
+            ],
+            [
+              "*tramwaj*",
+              "*tramwajem*",
+              "tram"
+            ],
+            [
+              "*pociąg*",
+              "*pociągiem*",
+              "train"
+            ],
+            [
+              "*samochód*",
+              "*samochodem*",
+              "car"
+            ],
+            [
+              "*rower*",
+              "*rowerem*",
+              "bicycle"
+            ],
+            [
+              "*taksówka*",
+              "*taksówką*",
+              "taxi"
+            ],
+            [
+              "*metro*",
+              "*metrem*",
+              "metro"
+            ],
+            [
+              "*samolot*",
+              "*samolotem*",
+              "plane"
+            ],
+            [
+              "— (on foot)",
+              "*pieszo / na piechotę*",
+              "on foot"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "Trams are the backbone of transport in Polish cities and are used far more than buses in Kraków, Wrocław and Poznań. The same ticket works on trams and buses, and it **must be validated** as soon as you board — in a small yellow or red machine near the door."
+        },
+        {
+          "type": "kotak",
+          "title": "Phrases on public transport",
+          "items": [
+            "*Czy ten autobus jedzie do centrum?* — Does this bus go to the center?",
+            "*Ile przystanków?* — How many stops?",
+            "*Wysiadam na następnym.* — I'm getting off at the next one.",
+            "*Przepraszam, czy to miejsce jest wolne?* — Excuse me, is this seat free?",
+            "*Gdzie mogę skasować bilet?* — Where can I validate my ticket?"
+          ]
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "pl": "dokąd",
+      "baca": "DO-kont",
+      "en": "where to"
+    },
+    {
+      "pl": "iść / jechać",
+      "baca": "ishch / YE-hach",
+      "en": "to go (on foot / by vehicle)"
+    },
+    {
+      "pl": "chodzić / jeździć",
+      "baca": "HO-jyich / YEZH-jyich",
+      "en": "to go regularly (on foot / by vehicle)"
+    },
+    {
+      "pl": "dojść / dojechać",
+      "baca": "doyshch",
+      "en": "to get to, reach"
+    },
+    {
+      "pl": "prosto",
+      "baca": "PROS-to",
+      "en": "straight"
+    },
+    {
+      "pl": "w lewo / w prawo",
+      "baca": "v LE-vo",
+      "en": "to the left / to the right"
+    },
+    {
+      "pl": "strona",
+      "baca": "STRO-na",
+      "en": "side"
+    },
+    {
+      "pl": "róg / za rogiem",
+      "baca": "rook",
+      "en": "corner / around the corner"
+    },
+    {
+      "pl": "naprzeciwko",
+      "baca": "na-pshe-CHEEF-ko",
+      "en": "opposite"
+    },
+    {
+      "pl": "przystanek",
+      "baca": "pshys-TA-nek",
+      "en": "stop (bus, tram)"
+    },
+    {
+      "pl": "tramwaj",
+      "baca": "TRAM-vay",
+      "en": "tram"
+    },
+    {
+      "pl": "pociąg",
+      "baca": "PO-chyonk",
+      "en": "train"
+    },
+    {
+      "pl": "samolot",
+      "baca": "sa-MO-lot",
+      "en": "plane"
+    },
+    {
+      "pl": "rower",
+      "baca": "RO-ver",
+      "en": "bicycle"
+    },
+    {
+      "pl": "taksówka",
+      "baca": "tak-SOOF-ka",
+      "en": "taxi"
+    },
+    {
+      "pl": "dworzec główny",
+      "baca": "DVO-zhets GWOOV-ny",
+      "en": "main station"
+    },
+    {
+      "pl": "pieszo",
+      "baca": "PYE-sho",
+      "en": "on foot"
+    },
+    {
+      "pl": "mapa",
+      "baca": "MA-pa",
+      "en": "map"
+    },
+    {
+      "pl": "przechodzień",
+      "baca": "pshe-HO-jyeny",
+      "en": "passerby"
+    },
+    {
+      "pl": "wysiadać",
+      "baca": "vy-SHA-dach",
+      "en": "to get off"
+    },
+    {
+      "pl": "wsiadać",
+      "baca": "FSHA-dach",
+      "en": "to get on"
+    },
+    {
+      "pl": "skasować",
+      "baca": "ska-SO-vach",
+      "en": "to validate (a ticket)"
+    },
+    {
+      "pl": "następny",
+      "baca": "nas-TEMP-ny",
+      "en": "next"
+    },
+    {
+      "pl": "miejsce",
+      "baca": "MYEY-stseh",
+      "en": "place; seat"
+    },
+    {
+      "pl": "stąd",
+      "baca": "stont",
+      "en": "from here"
+    },
+    {
+      "pl": "chyba",
+      "baca": "HY-ba",
+      "en": "probably, I think"
+    },
+    {
+      "pl": "dokładnie",
+      "baca": "do-KWAD-nyeh",
+      "en": "exactly"
+    },
+    {
+      "pl": "jakieś",
+      "baca": "YA-kyesh",
+      "en": "some, about"
+    },
+    {
+      "pl": "zgubić się",
+      "baca": "ZGOO-bich sheh",
+      "en": "to get lost"
+    },
+    {
+      "pl": "nie ma za co",
+      "baca": "nyeh ma za tso",
+      "en": "you're welcome"
+    }
+  ],
+  "exercises": [
+    {
+      "prompt": "Choose *idę* or *jadę*.",
+      "items": [
+        "____ do sklepu obok domu. (on foot)",
+        "____ do Warszawy pociągiem.",
+        "____ na uniwersytet rowerem.",
+        "____ do kuchni po wodę.",
+        "____ na lotnisko taksówką."
+      ]
+    },
+    {
+      "prompt": "Turn the location into a destination.",
+      "items": [
+        "w sklepie → ____",
+        "w domu → ____",
+        "na poczcie → ____",
+        "w Krakowie → ____",
+        "na zajęciach → ____"
+      ]
+    },
+    {
+      "prompt": "Translate into Polish.",
+      "items": [
+        "Excuse me, how do I get to the station?",
+        "Go straight, then turn left.",
+        "Where's the stop?",
+        "Does this bus go to the center?",
+        "Thank you so much for your help."
+      ]
+    },
+    {
+      "prompt": "Put the words in the right order.",
+      "items": [
+        "do / jak / dworca / dojść / ?",
+        "prosto / lewo / potem / w / i",
+        "tramwajem / jadę / cztery / numer",
+        "przystanek / gdzie / jest / ?",
+        "za / nie / co / ma"
+      ]
+    }
+  ],
+  "answers": [
+    "Idę — Jadę — Jadę — Idę — Jadę",
+    "do sklepu — do domu — na pocztę — do Krakowa — na zajęcia",
+    "Przepraszam, jak dojść do dworca? — Prosto, potem w lewo. — Gdzie jest przystanek? — Czy ten autobus jedzie do centrum? — Dziękuję bardzo za pomoc.",
+    "Jak dojść do dworca? — Prosto i potem w lewo. — Jadę tramwajem numer cztery. — Gdzie jest przystanek? — Nie ma za co."
+  ],
+  "wave": "Read the unit 12 dialogue aloud again, then explain the way from your home to work or campus in five Polish sentences."
+}

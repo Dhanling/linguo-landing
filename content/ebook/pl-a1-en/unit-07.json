@@ -1,0 +1,602 @@
+{
+  "title": "The object of an action: biernik",
+  "title_target": "Mam kota i lubię kawę",
+  "goal": "Change a noun when it becomes the object of an action — *-ę* for feminine words, *-a* for male living beings, and no change at all for the rest.",
+  "bekal": [
+    "use *biernik* after *mam*, *lubię*, *piję*, *znam*, *kupuję*",
+    "recognize which nouns **don't** change at all",
+    "adjust an adjective attached to the object"
+  ],
+  "dialogs": [
+    {
+      "title": "Dialogue — Mam kota",
+      "intro": "Late afternoon on the dorm balcony. Ania shows a photo of her dog; Budi pulls up a photo of his cat.",
+      "lines": [
+        {
+          "speaker": "Ania:",
+          "text": "Masz zwierzę w domu?",
+          "id": "Do you have a pet at home?",
+          "literal": "you-have animal at home?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Mam kota. Nazywa się Oyen. A ty?",
+          "id": "I have a cat. His name is Oyen. And you?",
+          "literal": "I-have cat. names self Oyen. and you?"
+        },
+        {
+          "speaker": "Ania:",
+          "text": "Mam psa i dwa koty. Kocham zwierzęta.",
+          "id": "I have a dog and two cats. I love animals.",
+          "literal": "I-have dog and two cats. I-love animals."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Kto karmi psa, kiedy jesteś w szkole?",
+          "id": "Who feeds the dog when you're at school?",
+          "literal": "who feeds dog, when you-are at school?"
+        },
+        {
+          "speaker": "Ania:",
+          "text": "Mama. Ona ma czas rano.",
+          "id": "My mom. She has time in the morning.",
+          "literal": "mom. she has time morning."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Rozumiem. Ja piję kawę rano, a siostra pije herbatę.",
+          "id": "I see. I drink coffee in the morning, and my sister drinks tea.",
+          "literal": "I-understand. I drink coffee morning, and sister drinks tea."
+        },
+        {
+          "speaker": "Ania:",
+          "text": "Ja też lubię kawę, ale wolę herbatę wieczorem.",
+          "id": "I like coffee too, but in the evening I prefer tea.",
+          "literal": "I also like coffee, but prefer tea evening."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Znasz tę kawiarnię obok uniwersytetu?",
+          "id": "Do you know that café next to the university?",
+          "literal": "you-know that-f café next-to university?"
+        },
+        {
+          "speaker": "Ania:",
+          "text": "Znam. Mają dobrą kawę i tanie ciasto.",
+          "id": "I do. They have good coffee and cheap cake.",
+          "literal": "I-know. they-have good coffee and cheap cake."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "To idziemy tam jutro? Stawiam kawę.",
+          "id": "So shall we go there tomorrow? Coffee's on me.",
+          "literal": "so we-go there tomorrow? I-stand coffee."
+        },
+        {
+          "speaker": "Ania:",
+          "text": "Chętnie! Biorę duże cappuccino.",
+          "id": "Sure! I'll have a large cappuccino.",
+          "literal": "gladly! I-take big cappuccino."
+        }
+      ],
+      "notes": [
+        "**Kawa becomes kawę, herbata becomes herbatę.** A feminine noun ending in *-a* changes to *-ę* when it becomes the **object** of an action. This is the ending you've seen wandering around since Unit 4 (*gazetę*, *aplikację*, *kolację*), and now it gets its name: *biernik*.",
+        "**Kot becomes kota, pies becomes psa.** **Living** masculine nouns — people and animals — get the ending *-a*. Notice *pies → psa*: the *e* inside the word disappears. A small group of words does this (*pies*, *chłopiec*, *ojciec*); there are few of them, and you can learn them as you meet them.",
+        "**Masculine nouns that aren't living beings DON'T change.** *Mam telefon*, *mam samochód*, *piję sok* — exactly the same as the dictionary form. A big saving beginners rarely notice: half of all masculine nouns need nothing done to them.",
+        "**Neuter nouns don't change either.** *Mam zwierzę*, *kupuję piwo*, *lubię ciasto*. The friendliest group of all.",
+        "**Dobra kawa becomes dobrą kawę.** The adjective changes along with its noun. For feminine words, the ending *-a* becomes **-ą**. Remember: adjective and noun always walk hand in hand; if one changes, so does the other.",
+        "**Tę kawiarnię** — the *biernik* form of *ta*. Pointing words follow the rule too: *ten → ten/tego*, *ta → tę*, *to → to*. In everyday speech many Poles say *tą* instead of *tę*; the correct written form is still *tę*.",
+        "**Kto karmi psa?** This sentence has a subject (*kto*) and an object (*psa*), and what tells them apart is not word order but **the endings**. That's why Polish can shuffle word order freely without losing the meaning — something English can't do (\"dog bites man\" vs \"man bites dog\").",
+        "**Stawiam kawę** — \"coffee's on me\", literally \"I stand coffee\". A fixed expression; don't take it apart."
+      ],
+      "grammars": [
+        {
+          "title": "Biernik — the object ending",
+          "body": [
+            "The form that answers *kogo? co?* — whom/what the action is done to. It's the second most used form after the dictionary form."
+          ],
+          "table": {
+            "head": [
+              "Noun type",
+              "Dictionary form",
+              "Becomes",
+              "Example sentence"
+            ],
+            "rows": [
+              [
+                "**żeński** (-a)",
+                "*kawa*",
+                "*kaw**ę***",
+                "*Piję kawę.*"
+              ],
+              [
+                "**żeński** (-a)",
+                "*książka*",
+                "*książk**ę***",
+                "*Czytam książkę.*"
+              ],
+              [
+                "**męski**, living",
+                "*kot*",
+                "*kot**a***",
+                "*Mam kota.*"
+              ],
+              [
+                "**męski**, living",
+                "*brat*",
+                "*brat**a***",
+                "*Znam twojego brata.*"
+              ],
+              [
+                "**męski**, thing",
+                "*telefon*",
+                "*telefon* (same)",
+                "*Mam telefon.*"
+              ],
+              [
+                "**nijaki**",
+                "*piwo*",
+                "*piwo* (same)",
+                "*Kupuję piwo.*"
+              ]
+            ]
+          },
+          "after": [
+            "In short, there are just three lines to remember: **feminine → -ę**, **masculine living → -a**, **everything else stays the same**. Two of the three groups ask nothing of you.",
+            "Feminine words ending in a consonant (*noc*, *rzecz*, *miłość*) don't change either — a small, pleasant group.",
+            "⚠️ Don't be fooled by the sound: final *-ę* is read as a **plain e**. *Kawę* is read **KA-veh**, not \"ka-ven\"."
+          ]
+        },
+        {
+          "title": "Verbs that take biernik",
+          "body": [
+            "Not every verb uses this form, but almost all of the most common everyday ones do."
+          ],
+          "table": {
+            "head": [
+              "Verb",
+              "Meaning",
+              "Example"
+            ],
+            "rows": [
+              [
+                "*mieć*",
+                "to have",
+                "*Mam siostrę.*"
+              ],
+              [
+                "*lubić*",
+                "to like",
+                "*Lubię kawę.*"
+              ],
+              [
+                "*kochać*",
+                "to love",
+                "*Kocham muzykę.*"
+              ],
+              [
+                "*pić*",
+                "to drink",
+                "*Piję herbatę.*"
+              ],
+              [
+                "*jeść*",
+                "to eat",
+                "*Jem zupę.*"
+              ],
+              [
+                "*czytać*",
+                "to read",
+                "*Czytam gazetę.*"
+              ],
+              [
+                "*znać*",
+                "to know (a person)",
+                "*Znam Anię.*"
+              ],
+              [
+                "*kupować*",
+                "to buy",
+                "*Kupuję książkę.*"
+              ],
+              [
+                "*oglądać*",
+                "to watch",
+                "*Oglądam telewizję.*"
+              ],
+              [
+                "*brać*",
+                "to take",
+                "*Biorę kawę.*"
+              ]
+            ]
+          },
+          "after": [
+            "⚠️ **One big trap awaits in Unit 14:** as soon as the sentence is negated, the object moves into a different form. *Mam kawę* → *Nie mam kawy*. *Lubię herbatę* → *Nie lubię herbaty*. Recognize the symptom now; the rule comes later.",
+            "Some verbs do **not** use *biernik* and require another form: *słuchać* (*słucham muzyki*), *szukać* (*szukam klucza*), *pomagać* (*pomagam mamie*). Learn them together with their examples, never on their own."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Eye training: one word, two forms",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Read each line out loud twice. What you're training is not memorizing rules but an ear that starts to feel something is off when the ending is wrong."
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "As subject",
+            "As object",
+            "Type"
+          ],
+          "rows": [
+            [
+              "*Kawa jest dobra.*",
+              "*Piję kawę.*",
+              "żeński"
+            ],
+            [
+              "*Herbata jest gorąca.*",
+              "*Lubię herbatę.*",
+              "żeński"
+            ],
+            [
+              "*Książka jest nowa.*",
+              "*Czytam książkę.*",
+              "żeński"
+            ],
+            [
+              "*Siostra jest w domu.*",
+              "*Znam jego siostrę.*",
+              "żeński"
+            ],
+            [
+              "*Kot śpi.*",
+              "*Mam kota.*",
+              "męski, living"
+            ],
+            [
+              "*Pies je.*",
+              "*Karmię psa.*",
+              "męski, living"
+            ],
+            [
+              "*Brat pracuje.*",
+              "*Znam jej brata.*",
+              "męski, living"
+            ],
+            [
+              "*Telefon jest stary.*",
+              "*Mam telefon.*",
+              "męski, thing"
+            ],
+            [
+              "*Chleb jest świeży.*",
+              "*Kupuję chleb.*",
+              "męski, thing"
+            ],
+            [
+              "*Piwo jest zimne.*",
+              "*Piję piwo.*",
+              "nijaki"
+            ]
+          ]
+        },
+        {
+          "type": "kotak",
+          "title": "How to check yourself",
+          "items": [
+            "Ask your sentence: **who/what is doing it?** That's the dictionary form. **Who/what is it done to?** That's *biernik*.",
+            "If the noun ends in *-a* and it's the one the action is done to, change it to *-ę*. That one change covers most beginner mistakes.",
+            "If it's masculine and alive, add *-a*. If it's neither — leave it alone."
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Food, drink, and animals",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "Polski",
+            "As object",
+            "Say it",
+            "Meaning"
+          ],
+          "rows": [
+            [
+              "*kawa*",
+              "*kawę*",
+              "KA-va / KA-veh",
+              "coffee"
+            ],
+            [
+              "*herbata*",
+              "*herbatę*",
+              "her-BA-ta",
+              "tea"
+            ],
+            [
+              "*woda*",
+              "*wodę*",
+              "VO-da",
+              "water"
+            ],
+            [
+              "*zupa*",
+              "*zupę*",
+              "ZOO-pa",
+              "soup"
+            ],
+            [
+              "*kanapka*",
+              "*kanapkę*",
+              "ka-NAP-ka",
+              "sandwich"
+            ],
+            [
+              "*sok*",
+              "*sok*",
+              "sok",
+              "juice"
+            ],
+            [
+              "*chleb*",
+              "*chleb*",
+              "hlep",
+              "bread"
+            ],
+            [
+              "*ser*",
+              "*ser*",
+              "ser",
+              "cheese"
+            ],
+            [
+              "*piwo*",
+              "*piwo*",
+              "PEE-vo",
+              "beer"
+            ],
+            [
+              "*mleko*",
+              "*mleko*",
+              "MLE-ko",
+              "milk"
+            ],
+            [
+              "*kot*",
+              "*kota*",
+              "kot / KO-ta",
+              "cat"
+            ],
+            [
+              "*pies*",
+              "*psa*",
+              "pyes / psa",
+              "dog"
+            ]
+          ]
+        },
+        {
+          "type": "kotak",
+          "title": "Sentences you can use right away",
+          "items": [
+            "*Piję kawę bez cukru.* — I drink coffee without sugar.",
+            "*Nie jem mięsa.* — I don't eat meat. (note: negated, so the ending is different again)",
+            "*Lubię polskie jedzenie.* — I like Polish food.",
+            "*Biorę to.* — I'll take this one."
+          ]
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "pl": "zwierzę",
+      "baca": "ZVYE-zheh",
+      "en": "animal"
+    },
+    {
+      "pl": "kot / kota",
+      "baca": "kot / KO-ta",
+      "en": "cat (subject / object)"
+    },
+    {
+      "pl": "pies / psa",
+      "baca": "pyes / psa",
+      "en": "dog (subject / object)"
+    },
+    {
+      "pl": "karmić",
+      "baca": "KAR-mich",
+      "en": "to feed"
+    },
+    {
+      "pl": "kawa",
+      "baca": "KA-va",
+      "en": "coffee"
+    },
+    {
+      "pl": "herbata",
+      "baca": "her-BA-ta",
+      "en": "tea"
+    },
+    {
+      "pl": "woda",
+      "baca": "VO-da",
+      "en": "water"
+    },
+    {
+      "pl": "sok",
+      "baca": "sok",
+      "en": "juice"
+    },
+    {
+      "pl": "piwo",
+      "baca": "PEE-vo",
+      "en": "beer"
+    },
+    {
+      "pl": "ciasto",
+      "baca": "CHYAS-to",
+      "en": "cake"
+    },
+    {
+      "pl": "kawiarnia",
+      "baca": "ka-VYAR-nya",
+      "en": "café"
+    },
+    {
+      "pl": "uniwersytet",
+      "baca": "oo-ni-VER-sy-tet",
+      "en": "university"
+    },
+    {
+      "pl": "telewizja",
+      "baca": "te-le-VEE-zya",
+      "en": "television"
+    },
+    {
+      "pl": "muzyka",
+      "baca": "MOO-zy-ka",
+      "en": "music"
+    },
+    {
+      "pl": "samochód",
+      "baca": "sa-MO-hoot",
+      "en": "car"
+    },
+    {
+      "pl": "dobry / dobra",
+      "baca": "DOB-ry / DOB-ra",
+      "en": "good; tasty (m / f)"
+    },
+    {
+      "pl": "tani",
+      "baca": "TA-ni",
+      "en": "cheap"
+    },
+    {
+      "pl": "drogi",
+      "baca": "DRO-gi",
+      "en": "expensive"
+    },
+    {
+      "pl": "zimny / gorący",
+      "baca": "ZEEM-ny / go-RON-tsy",
+      "en": "cold / hot"
+    },
+    {
+      "pl": "świeży",
+      "baca": "SHVYE-zhy",
+      "en": "fresh"
+    },
+    {
+      "pl": "tam",
+      "baca": "tam",
+      "en": "there"
+    },
+    {
+      "pl": "tu / tutaj",
+      "baca": "too / TOO-tay",
+      "en": "here"
+    },
+    {
+      "pl": "bez",
+      "baca": "bes",
+      "en": "without"
+    },
+    {
+      "pl": "cukier",
+      "baca": "TSOO-kyer",
+      "en": "sugar"
+    },
+    {
+      "pl": "mięso",
+      "baca": "MYEN-so",
+      "en": "meat"
+    },
+    {
+      "pl": "jedzenie",
+      "baca": "ye-DZE-nyeh",
+      "en": "food"
+    },
+    {
+      "pl": "stawiać",
+      "baca": "STA-vyach",
+      "en": "to treat (someone to something)"
+    },
+    {
+      "pl": "kto",
+      "baca": "kto",
+      "en": "who"
+    },
+    {
+      "pl": "kogo / co",
+      "baca": "KO-go / tso",
+      "en": "whom / what (object)"
+    },
+    {
+      "pl": "tę",
+      "baca": "teh",
+      "en": "this, that (f, object)"
+    }
+  ],
+  "exercises": [
+    {
+      "prompt": "Change the word in brackets into the object form (*biernik*).",
+      "items": [
+        "Piję ____ . (kawa)",
+        "Mam ____ . (kot)",
+        "Czytam ____ . (książka)",
+        "Kupuję ____ . (chleb)",
+        "Znam jego ____ . (siostra)",
+        "Lubię ____ . (piwo)"
+      ]
+    },
+    {
+      "prompt": "Mark which nouns **don't** change as objects. Write out the object form of each.",
+      "items": [
+        "telefon",
+        "herbata",
+        "mleko",
+        "brat",
+        "sok"
+      ]
+    },
+    {
+      "prompt": "Translate into Polish.",
+      "items": [
+        "I have a cat.",
+        "I drink tea in the morning.",
+        "Do you like coffee?",
+        "We're buying bread and cheese.",
+        "I know her brother."
+      ]
+    },
+    {
+      "prompt": "Put the words in the right order.",
+      "items": [
+        "kawę / piję / rano",
+        "kota / mam / i / psa",
+        "książkę / czytam / polską",
+        "znasz / siostrę / moją / ?",
+        "kupuję / ser / chleb / i"
+      ]
+    }
+  ],
+  "answers": [
+    "kawę — kota — książkę — chleb — siostrę — piwo",
+    "telefon — herbatę — mleko — brata — sok",
+    "Mam kota. — Piję herbatę rano. — Lubisz kawę? — Kupujemy chleb i ser. — Znam jej brata.",
+    "Rano piję kawę. — Mam kota i psa. — Czytam polską książkę. — Znasz moją siostrę? — Kupuję chleb i ser."
+  ],
+  "wave": "Read the Unit 5 dialogue out loud, then turn ten nouns from Unit 3 into the object form, saying *mam…* in front of each."
+}

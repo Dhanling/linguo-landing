@@ -1,0 +1,601 @@
+{
+  "title": "What did you do yesterday?",
+  "title_target": "Co robiłeś wczoraj?",
+  "goal": "Talk about things that have already happened, and understand why the Polish past tense changes with the speaker's gender.",
+  "bekal": [
+    "forming a past-tense sentence from any dictionary form",
+    "choosing the masculine, feminine or plural ending correctly",
+    "using the most common past time expressions"
+  ],
+  "dialogs": [
+    {
+      "title": "Dialogue — Co robiłeś wczoraj?",
+      "intro": "Morning in the canteen. Budi looks short on sleep; Ania is waiting for an explanation.",
+      "lines": [
+        {
+          "speaker": "Ania:",
+          "text": "Co robiłeś wczoraj wieczorem?",
+          "id": "What did you do last night?",
+          "literal": "what you-did-m yesterday evening?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Byłem w kinie z kolegami. A ty?",
+          "id": "I went to the cinema with friends. You?",
+          "literal": "I-was-m in cinema with friends. and you?"
+        },
+        {
+          "speaker": "Ania:",
+          "text": "Byłam w domu. Czytałam i wcześnie poszłam spać.",
+          "id": "I was at home. I read and went to bed early.",
+          "literal": "I-was-f in home. I-read-f and early I-went-f sleep."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Nie dzwoniłaś do mnie?",
+          "id": "Didn't you call me?",
+          "literal": "not you-called-f to me?"
+        },
+        {
+          "speaker": "Ania:",
+          "text": "Dzwoniłam dwa razy, ale nie odbierałeś.",
+          "id": "I called twice, but you didn't pick up.",
+          "literal": "I-called-f two times, but not you-picked-up-m."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Przepraszam, telefon był wyciszony w kinie.",
+          "id": "Sorry, my phone was on silent at the cinema.",
+          "literal": "sorry, phone was silenced in cinema."
+        },
+        {
+          "speaker": "Ania:",
+          "text": "Nie szkodzi. Jaki był film?",
+          "id": "No problem. How was the film?",
+          "literal": "not harms. what-kind was film?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Bardzo dobry. Śmialiśmy się przez dwie godziny.",
+          "id": "Really good. We laughed for two whole hours.",
+          "literal": "very good. we-laughed self for two hours."
+        },
+        {
+          "speaker": "Ania:",
+          "text": "A potem?",
+          "id": "And then?",
+          "literal": "and then?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Poszliśmy na piwo. Wróciłem do domu o północy.",
+          "id": "We went for a beer. I got home at midnight.",
+          "literal": "we-went for beer. I-returned-m to home at midnight."
+        },
+        {
+          "speaker": "Ania:",
+          "text": "Dlatego wyglądasz dziś tak zmęczony.",
+          "id": "That's why you look so tired today.",
+          "literal": "that's-why you-look today so tired."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Właśnie. Ale było warto.",
+          "id": "Exactly. But it was worth it.",
+          "literal": "exactly. but was worth."
+        }
+      ],
+      "notes": [
+        "**Robiłeś or robiłaś?** The Polish past tense **carries the speaker's gender**. Men: *robiłem, robiłeś, robił*. Women: *robiłam, robiłaś, robiła*. English has nothing like this, and it's the only hard part of this unit.",
+        "**That means you have to think about who's speaking.** If you're a woman, you say *byłam*; if you're a man, *byłem*. Getting this wrong is the beginner's mistake a Polish ear catches fastest.",
+        "**You can still drop the pronoun**, because the ending already marks both the person and the gender. *Byłam w domu* is complete: \"(I, a woman) was at home\".",
+        "**Poszłam, poszliśmy** — the past of *iść* is completely irregular: *poszedłem* (m), *poszłam* (f), *poszliśmy* (we, incl. men), *poszłyśmy* (we, all women). It's too common to skip, so learn all four.",
+        "**Śmialiśmy się** — *się* verbs keep their *się* in the past, and it can still move: *śmialiśmy się* or *się śmialiśmy*.",
+        "**Przez dwie godziny** — \"for two hours\". The preposition *przez* says how long something lasted and takes the object form.",
+        "**Było warto** — \"it was worth it\". Subjectless words (*trzeba*, *można*, *warto*) go into the past by adding *było* in front: *trzeba było* (you should have), *można było* (you could have)."
+      ],
+      "grammars": [
+        {
+          "title": "Forming the past tense",
+          "body": [
+            "Three steps, no helper words: take the dictionary form, drop *-ć*, add the ending that matches the subject."
+          ],
+          "table": {
+            "head": [
+              "Subject",
+              "Masculine",
+              "Feminine",
+              "Example (*robić*)"
+            ],
+            "rows": [
+              [
+                "ja",
+                "**-łem**",
+                "**-łam**",
+                "*robiłem / robiłam*"
+              ],
+              [
+                "ty",
+                "**-łeś**",
+                "**-łaś**",
+                "*robiłeś / robiłaś*"
+              ],
+              [
+                "on / ona / ono",
+                "**-ł**",
+                "**-ła** / **-ło**",
+                "*robił / robiła / robiło*"
+              ],
+              [
+                "my",
+                "**-liśmy**",
+                "**-łyśmy**",
+                "*robiliśmy / robiłyśmy*"
+              ],
+              [
+                "wy",
+                "**-liście**",
+                "**-łyście**",
+                "*robiliście / robiłyście*"
+              ],
+              [
+                "oni / one",
+                "**-li**",
+                "**-ły**",
+                "*robili / robiły*"
+              ]
+            ]
+          },
+          "after": [
+            "The \"masculine\" column is also used for **mixed** groups — one man among ten women is enough for *robiliśmy*. The \"feminine\" column is for groups made up entirely of women, children or things.",
+            "Notice the letter **ł** in every form. That's the real past-tense marker; the ending after it just shows who did it.",
+            "Verbs of every group behave the same way in the past: *czytać → czytałem*, *mówić → mówiłem*, *pracować → pracowałem*. After all the complications of the present tense, the past is actually more regular."
+          ]
+        },
+        {
+          "title": "Być in the past — and five irregular verbs",
+          "body": [
+            "*Być* is the most used, and the five verbs below have past forms you can't guess from the dictionary form."
+          ],
+          "tables": [
+            {
+              "head": [
+                "Subject",
+                "Masculine",
+                "Feminine"
+              ],
+              "rows": [
+                [
+                  "ja",
+                  "*byłem*",
+                  "*byłam*"
+                ],
+                [
+                  "ty",
+                  "*byłeś*",
+                  "*byłaś*"
+                ],
+                [
+                  "on / ona",
+                  "*był*",
+                  "*była*"
+                ],
+                [
+                  "my",
+                  "*byliśmy*",
+                  "*byłyśmy*"
+                ],
+                [
+                  "wy",
+                  "*byliście*",
+                  "*byłyście*"
+                ],
+                [
+                  "oni / one",
+                  "*byli*",
+                  "*były*"
+                ]
+              ]
+            },
+            {
+              "head": [
+                "Dictionary form",
+                "Past (m)",
+                "Past (f)",
+                "English"
+              ],
+              "rows": [
+                [
+                  "*iść*",
+                  "*szedłem*",
+                  "*szłam*",
+                  "to go (on foot)"
+                ],
+                [
+                  "*pójść*",
+                  "*poszedłem*",
+                  "*poszłam*",
+                  "to go (once)"
+                ],
+                [
+                  "*jeść*",
+                  "*jadłem*",
+                  "*jadłam*",
+                  "to eat"
+                ],
+                [
+                  "*móc*",
+                  "*mogłem*",
+                  "*mogłam*",
+                  "can"
+                ],
+                [
+                  "*znaleźć*",
+                  "*znalazłem*",
+                  "*znalazłam*",
+                  "to find"
+                ]
+              ]
+            }
+          ],
+          "after": [
+            "*Byłem w…* is how you say \"I've been to…\": *Byłem w Warszawie* — I've been to Warsaw. Polish doesn't need a separate \"have been\" form.",
+            "Negating works as usual — *nie* in front: *Nie byłem w domu*, *Nie widziałam go*. And remember that a negated object moves to *dopełniacz*: *Nie miałem czasu*."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Past time expressions",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "Polski",
+            "Say it",
+            "English"
+          ],
+          "rows": [
+            [
+              "*wczoraj*",
+              "FCHO-ray",
+              "yesterday"
+            ],
+            [
+              "*przedwczoraj*",
+              "pshet-FCHO-ray",
+              "the day before yesterday"
+            ],
+            [
+              "*wczoraj wieczorem*",
+              "FCHO-ray vye-CHO-rem",
+              "last night"
+            ],
+            [
+              "*dziś rano*",
+              "jyish RA-no",
+              "this morning"
+            ],
+            [
+              "*w zeszłym tygodniu*",
+              "v ZESH-wym",
+              "last week"
+            ],
+            [
+              "*w zeszłym miesiącu*",
+              "v ZESH-wym",
+              "last month"
+            ],
+            [
+              "*w zeszłym roku*",
+              "v ZESH-wym RO-koo",
+              "last year"
+            ],
+            [
+              "*w weekend*",
+              "v WEE-kend",
+              "on the weekend"
+            ],
+            [
+              "*dwa dni temu*",
+              "dva dni TE-moo",
+              "two days ago"
+            ],
+            [
+              "*dawno temu*",
+              "DAV-no TE-moo",
+              "a long time ago"
+            ],
+            [
+              "*niedawno*",
+              "nye-DAV-no",
+              "recently"
+            ],
+            [
+              "*już*",
+              "yoosh",
+              "already"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "*Temu* always comes **after** the length of time, just like English \"ago\": *tydzień temu* (a week ago), *pięć minut temu* (five minutes ago)."
+        },
+        {
+          "type": "kotak",
+          "title": "Asking about the past",
+          "items": [
+            "*Co robiłeś w weekend?* (m) / *Co robiłaś…?* (f) — What did you do on the weekend?",
+            "*Gdzie byłeś wczoraj?* — Where were you yesterday?",
+            "*Podobało ci się?* — Did you like it?",
+            "*Jak było?* — How was it?",
+            "*Byłeś kiedyś w Polsce?* — Have you ever been to Poland?"
+          ]
+        }
+      ]
+    },
+    {
+      "title": "A story to read aloud",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Every verb is in the past tense. Read it twice: once slowly while looking at the translation, once a little faster without looking."
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Polski",
+            "English"
+          ],
+          "rows": [
+            [
+              "*W sobotę wstałem późno, o jedenastej.*",
+              "On Saturday I slept in until eleven."
+            ],
+            [
+              "*Zjadłem śniadanie i poszedłem do parku.*",
+              "I had breakfast and walked to the park."
+            ],
+            [
+              "*Pogoda była piękna — słońce i osiemnaście stopni.*",
+              "The weather was beautiful — sunshine and eighteen degrees."
+            ],
+            [
+              "*Spotkałem Anię przy fontannie.*",
+              "I met Ania by the fountain."
+            ],
+            [
+              "*Potem poszliśmy na obiad do małej restauracji.*",
+              "Then we had lunch at a small restaurant."
+            ],
+            [
+              "*Zamówiłem pierogi, a Ania zupę.*",
+              "I ordered pierogi, Ania ordered soup."
+            ],
+            [
+              "*Wszystko było bardzo smaczne i niedrogie.*",
+              "Everything was delicious and not expensive."
+            ],
+            [
+              "*To był dobry dzień.*",
+              "It was a lovely day."
+            ]
+          ]
+        },
+        {
+          "type": "kotak",
+          "title": "The most useful exercise this week",
+          "items": [
+            "Rewrite the story above with your own details — day, place, food, friends. Ten sentences, no more.",
+            "If you're a woman, change every *-łem* ending to *-łam*, and *-szedłem* to *-szłam*. Doing this once, consciously, locks in the rule better than reading the table ten times.",
+            "Read the result aloud. Any sentence you stumble over is the one to repeat tomorrow."
+          ]
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "pl": "wczoraj",
+      "baca": "FCHO-ray",
+      "en": "yesterday"
+    },
+    {
+      "pl": "temu",
+      "baca": "TE-moo",
+      "en": "ago"
+    },
+    {
+      "pl": "zeszły",
+      "baca": "ZESH-wy",
+      "en": "last (week/month)"
+    },
+    {
+      "pl": "dzwonić",
+      "baca": "DZVO-nich",
+      "en": "to call, phone"
+    },
+    {
+      "pl": "odbierać",
+      "baca": "od-BYE-rach",
+      "en": "to pick up (the phone)"
+    },
+    {
+      "pl": "śmiać się",
+      "baca": "shimyach sheh",
+      "en": "to laugh"
+    },
+    {
+      "pl": "rozmawiać",
+      "baca": "roz-MA-vyach",
+      "en": "to talk"
+    },
+    {
+      "pl": "spotkać",
+      "baca": "SPOT-kach",
+      "en": "to meet"
+    },
+    {
+      "pl": "zamówić",
+      "baca": "za-MOO-vich",
+      "en": "to order"
+    },
+    {
+      "pl": "wrócić",
+      "baca": "VROO-chich",
+      "en": "to come back, return"
+    },
+    {
+      "pl": "zjeść",
+      "baca": "zyeshch",
+      "en": "to eat (up)"
+    },
+    {
+      "pl": "pójść",
+      "baca": "pooyshch",
+      "en": "to go (once)"
+    },
+    {
+      "pl": "znaleźć",
+      "baca": "ZNA-leshch",
+      "en": "to find"
+    },
+    {
+      "pl": "zmęczony",
+      "baca": "zmen-CHO-ny",
+      "en": "tired"
+    },
+    {
+      "pl": "północ",
+      "baca": "POOW-nots",
+      "en": "midnight"
+    },
+    {
+      "pl": "pogoda",
+      "baca": "po-GO-da",
+      "en": "weather"
+    },
+    {
+      "pl": "słońce",
+      "baca": "SWONY-tseh",
+      "en": "sun"
+    },
+    {
+      "pl": "fontanna",
+      "baca": "fon-TAN-na",
+      "en": "fountain"
+    },
+    {
+      "pl": "przez",
+      "baca": "pshes",
+      "en": "for (time); through"
+    },
+    {
+      "pl": "dlatego",
+      "baca": "dla-TE-go",
+      "en": "that's why"
+    },
+    {
+      "pl": "właśnie",
+      "baca": "VWASH-nyeh",
+      "en": "exactly; just"
+    },
+    {
+      "pl": "piękny",
+      "baca": "PYENK-ny",
+      "en": "beautiful"
+    },
+    {
+      "pl": "kiedyś",
+      "baca": "KYE-dysh",
+      "en": "once; ever"
+    },
+    {
+      "pl": "podobać się",
+      "baca": "po-DO-bach sheh",
+      "en": "to be liked, to please"
+    },
+    {
+      "pl": "wyciszony",
+      "baca": "vy-chy-SHO-ny",
+      "en": "silenced"
+    },
+    {
+      "pl": "niedrogi",
+      "baca": "nye-DRO-gi",
+      "en": "inexpensive"
+    },
+    {
+      "pl": "dawno",
+      "baca": "DAV-no",
+      "en": "long ago"
+    },
+    {
+      "pl": "niedawno",
+      "baca": "nye-DAV-no",
+      "en": "recently"
+    },
+    {
+      "pl": "restauracja",
+      "baca": "res-tow-RA-tsya",
+      "en": "restaurant"
+    },
+    {
+      "pl": "warto",
+      "baca": "VAR-to",
+      "en": "worth it"
+    }
+  ],
+  "exercises": [
+    {
+      "prompt": "Put into the past tense. The speaker is **male**.",
+      "items": [
+        "Czytam książkę. →",
+        "Jestem w domu. →",
+        "Pracuję w banku. →",
+        "Idę do kina. →",
+        "Mam czas. →"
+      ]
+    },
+    {
+      "prompt": "Put into the past tense. The speaker is **female**.",
+      "items": [
+        "Czytam książkę. →",
+        "Jestem w domu. →",
+        "Dzwonię do mamy. →",
+        "Idę do sklepu. →",
+        "Uczę się polskiego. →"
+      ]
+    },
+    {
+      "prompt": "Translate into Polish (male speaker).",
+      "items": [
+        "What did you do last night?",
+        "I went to the cinema with friends.",
+        "I got home at midnight.",
+        "We talked for an hour.",
+        "It was a good day."
+      ]
+    },
+    {
+      "prompt": "Put the words in the right order.",
+      "items": [
+        "wczoraj / robiłeś / co / ?",
+        "w / byłem / kinie",
+        "domu / do / wróciłem / o / szóstej",
+        "godzinę / rozmawialiśmy / przez",
+        "dzień / to / dobry / był"
+      ]
+    }
+  ],
+  "answers": [
+    "Czytałem książkę. — Byłem w domu. — Pracowałem w banku. — Poszedłem do kina. — Miałem czas.",
+    "Czytałam książkę. — Byłam w domu. — Dzwoniłam do mamy. — Poszłam do sklepu. — Uczyłam się polskiego.",
+    "Co robiłeś wczoraj wieczorem? — Byłem w kinie z kolegami. — Wróciłem do domu o północy. — Rozmawialiśmy przez godzinę. — To był dobry dzień.",
+    "Co robiłeś wczoraj? — Byłem w kinie. — Wróciłem do domu o szóstej. — Rozmawialiśmy przez godzinę. — To był dobry dzień."
+  ],
+  "wave": "Read the unit 15 dialogue aloud again, then tell the story of last weekend in ten past-tense sentences."
+}

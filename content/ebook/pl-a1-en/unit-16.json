@@ -1,0 +1,622 @@
+{
+  "title": "Adjectives: describing people and things",
+  "title_target": "Jaki jest twój nowy współlokator?",
+  "goal": "Match adjectives to their nouns, describe people and places, and make simple comparisons.",
+  "bekal": [
+    "using the adjective endings *-y/-i*, *-a*, *-e* correctly",
+    "describing people's looks and personality",
+    "comparing with *-szy* and *bardziej*"
+  ],
+  "dialogs": [
+    {
+      "title": "Dialogue — Nowy współlokator",
+      "intro": "A bench outside the dorm. Budi has been sharing a place with someone new for a week.",
+      "lines": [
+        {
+          "speaker": "Ania:",
+          "text": "Jaki jest twój nowy współlokator?",
+          "id": "So what's your new roommate like?",
+          "literal": "what-kind is your new roommate?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Miły i spokojny. Trochę nieśmiały.",
+          "id": "Nice and calm. A bit shy.",
+          "literal": "nice and calm. a-bit shy."
+        },
+        {
+          "speaker": "Ania:",
+          "text": "Wysoki czy niski?",
+          "id": "Tall or short?",
+          "literal": "tall or low?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Wysoki, ciemne włosy, okulary. Wygląda poważnie, ale jest zabawny.",
+          "id": "Tall, dark hair, glasses. He looks serious, but he's funny.",
+          "literal": "tall, dark hair, glasses. looks seriously, but is funny."
+        },
+        {
+          "speaker": "Ania:",
+          "text": "Ile ma lat?",
+          "id": "How old is he?",
+          "literal": "how-many has years?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Chyba dwadzieścia pięć. Jest z Wietnamu.",
+          "id": "Twenty-five, I think. He's from Vietnam.",
+          "literal": "probably twenty five. is from Vietnam."
+        },
+        {
+          "speaker": "Ania:",
+          "text": "A wasze mieszkanie? Duże?",
+          "id": "And your apartment? Is it big?",
+          "literal": "and your apartment? big?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Nie bardzo. Małe, ale jasne i czyste. Kuchnia jest nowa.",
+          "id": "Not really. Small, but bright and clean. The kitchen is new.",
+          "literal": "not very. small, but bright and clean. kitchen is new."
+        },
+        {
+          "speaker": "Ania:",
+          "text": "To najważniejsze. Moje mieszkanie jest tanie, ale ciemne i zimne.",
+          "id": "That's what matters most. Mine is cheap, but dark and cold.",
+          "literal": "that most-important. my apartment is cheap, but dark and cold."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Zimne? To niedobrze.",
+          "id": "Cold? That's not good.",
+          "literal": "cold? that not-good."
+        },
+        {
+          "speaker": "Ania:",
+          "text": "Stary budynek. Zimą muszę nosić sweter w domu.",
+          "id": "It's an old building. In winter I have to wear a sweater indoors.",
+          "literal": "old building. in-winter I-must wear sweater in home."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Współczuję. Może przenieś się bliżej centrum?",
+          "id": "I'm sorry. Maybe move closer to the center?",
+          "literal": "I-sympathize. maybe move self closer center?"
+        }
+      ],
+      "notes": [
+        "**Jaki? Jaka? Jakie?** — even the question word \"what kind of\" follows the noun's gender. *Jaki jest twój pokój?* (m), *Jaka jest twoja siostra?* (f), *Jakie jest twoje mieszkanie?* (n).",
+        "**Ciemne włosy** — plural. Hair in Polish is always plural, like \"hairs\", and the adjective is plural too. The same goes for *okulary* (glasses) and *drzwi* (door), which have no singular form.",
+        "**Wygląda poważnie** — \"he looks serious\". After *wyglądać* you use the adverb (*poważnie*), not the adjective (*poważny*). Compare *jest poważny* (he is serious) with *wygląda poważnie* (he looks serious).",
+        "**Małe, jasne, czyste** — all end in *-e* because they describe *mieszkanie*, a neuter word. Notice that every adjective in the row changes, not just the first.",
+        "**Najważniejsze** — the \"most\" form: the prefix *naj-* goes on the comparative form. *Ważny → ważniejszy → najważniejszy*. The pattern is the same for almost all adjectives.",
+        "**Niedobrze** — the prefix *nie-* is written as one word with adverbs and adjectives: *dobry → niedobry*, *drogi → niedrogi*, *daleko → niedaleko*. Notice the difference from *nie* standing alone before a verb.",
+        "**Zimą** — winter as a time expression, the form you know from unit 11. Compare *zima jest długa* (the winter is long) with *zimą jest zimno* (in winter it's cold).",
+        "**Współczuję** — \"I sympathize\", an everyday expression of sympathy, much lighter than \"my condolences\". For real bad news people say *moje kondolencje*."
+      ],
+      "grammars": [
+        {
+          "title": "Adjective endings",
+          "body": [
+            "An adjective always adapts to the noun it describes — in gender, number and form."
+          ],
+          "table": {
+            "head": [
+              "Noun",
+              "Ending",
+              "Example",
+              "English"
+            ],
+            "rows": [
+              [
+                "męski",
+                "**-y / -i**",
+                "*dobr**y** dzień*",
+                "a good day"
+              ],
+              [
+                "męski",
+                "**-y / -i**",
+                "*tan**i** hotel*",
+                "a cheap hotel"
+              ],
+              [
+                "żeński",
+                "**-a**",
+                "*dobr**a** kawa*",
+                "good coffee"
+              ],
+              [
+                "nijaki",
+                "**-e**",
+                "*dobr**e** piwo*",
+                "good beer"
+              ],
+              [
+                "plural (no men)",
+                "**-e**",
+                "*dobr**e** książki*",
+                "good books"
+              ],
+              [
+                "plural (with men)",
+                "**-i / -y**",
+                "*dobr**zy** studenci*",
+                "good students"
+              ]
+            ]
+          },
+          "after": [
+            "The **-i** ending is used when the stem ends in *k*, *g* or a soft letter: *polski*, *drogi*, *tani*. Otherwise it's **-y**: *dobry*, *nowy*, *stary*.",
+            "Adjectives also change when their noun changes form: *dobra kawa* → *dobrą kawę* (object) → *dobrej kawy* (negated). For now you only need the basic forms; the rest will come through habit.",
+            "The last row is the plural for groups that include men — a pattern you've already met in *ci*, *wszyscy*, *moi*. It often changes the last letter of the stem (*dobry → dobrzy*, *miły → mili*), and at A1 it's enough to recognize it."
+          ]
+        },
+        {
+          "title": "Comparing",
+          "body": [
+            "Two ways — and the second works for any adjective if you forget the first."
+          ],
+          "table": {
+            "head": [
+              "Basic",
+              "More…",
+              "Most…",
+              "English"
+            ],
+            "rows": [
+              [
+                "*tani*",
+                "*tańszy*",
+                "*najtańszy*",
+                "cheap"
+              ],
+              [
+                "*nowy*",
+                "*nowszy*",
+                "*najnowszy*",
+                "new"
+              ],
+              [
+                "*ładny*",
+                "*ładniejszy*",
+                "*najładniejszy*",
+                "pretty"
+              ],
+              [
+                "*dobry*",
+                "**lepszy**",
+                "**najlepszy**",
+                "good"
+              ],
+              [
+                "*zły*",
+                "**gorszy**",
+                "**najgorszy**",
+                "bad"
+              ],
+              [
+                "*duży*",
+                "**większy**",
+                "**największy**",
+                "big"
+              ],
+              [
+                "*mały*",
+                "**mniejszy**",
+                "**najmniejszy**",
+                "small"
+              ],
+              [
+                "*interesujący*",
+                "*bardziej interesujący*",
+                "*najbardziej interesujący*",
+                "interesting"
+              ]
+            ]
+          },
+          "after": [
+            "The four rows in bold are irregular — and they're the most common ones, just like English good/better/best. Learn all four now; you can form the rest yourself.",
+            "The last row shows the way out: long adjectives put ***bardziej*** (more) and ***najbardziej*** (most) in front, without changing the adjective at all — just like English \"more interesting\". When in doubt, this always works and is always correct.",
+            "\"Than\" in comparisons: ***niż*** or ***od***. *Kraków jest mniejszy niż Warszawa* — Kraków is smaller than Warsaw."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Describing people",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "Looks",
+            "English",
+            "Personality",
+            "English"
+          ],
+          "rows": [
+            [
+              "*wysoki / niski*",
+              "tall / short",
+              "*miły*",
+              "nice, friendly"
+            ],
+            [
+              "*szczupły / gruby*",
+              "slim / fat",
+              "*sympatyczny*",
+              "pleasant"
+            ],
+            [
+              "*młody / stary*",
+              "young / old",
+              "*spokojny*",
+              "calm"
+            ],
+            [
+              "*ładny / przystojny*",
+              "pretty / handsome",
+              "*wesoły*",
+              "cheerful"
+            ],
+            [
+              "*ciemne włosy*",
+              "dark hair",
+              "*zabawny*",
+              "funny"
+            ],
+            [
+              "*jasne włosy*",
+              "fair hair",
+              "*poważny*",
+              "serious"
+            ],
+            [
+              "*krótkie włosy*",
+              "short hair",
+              "*nieśmiały*",
+              "shy"
+            ],
+            [
+              "*okulary*",
+              "glasses",
+              "*pracowity*",
+              "hardworking"
+            ],
+            [
+              "*broda*",
+              "beard",
+              "*leniwy*",
+              "lazy"
+            ],
+            [
+              "*niebieskie oczy*",
+              "blue eyes",
+              "*mądry*",
+              "smart"
+            ]
+          ]
+        },
+        {
+          "type": "kotak",
+          "title": "Describing someone in four sentences",
+          "items": [
+            "*To jest mój kolega Adam.* — This is my friend Adam.",
+            "*Jest wysoki i ma ciemne włosy.* — He's tall and has dark hair.",
+            "*Ma dwadzieścia pięć lat i studiuje medycynę.* — He's twenty-five and studies medicine.",
+            "*Jest bardzo miły, ale trochę nieśmiały.* — He's very nice, but a bit shy.",
+            "These four sentences are a frame you can use for anyone. Just swap in the details."
+          ]
+        }
+      ]
+    },
+    {
+      "title": "The most common adjective pairs",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "Polski",
+            "English",
+            "Opposite",
+            "English"
+          ],
+          "rows": [
+            [
+              "*duży*",
+              "big",
+              "*mały*",
+              "small"
+            ],
+            [
+              "*nowy*",
+              "new",
+              "*stary*",
+              "old"
+            ],
+            [
+              "*dobry*",
+              "good; tasty",
+              "*zły*",
+              "bad"
+            ],
+            [
+              "*tani*",
+              "cheap",
+              "*drogi*",
+              "expensive"
+            ],
+            [
+              "*łatwy*",
+              "easy",
+              "*trudny*",
+              "difficult"
+            ],
+            [
+              "*ciepły*",
+              "warm",
+              "*zimny*",
+              "cold"
+            ],
+            [
+              "*jasny*",
+              "bright, light",
+              "*ciemny*",
+              "dark"
+            ],
+            [
+              "*czysty*",
+              "clean",
+              "*brudny*",
+              "dirty"
+            ],
+            [
+              "*szybki*",
+              "fast",
+              "*wolny*",
+              "slow"
+            ],
+            [
+              "*ciekawy*",
+              "interesting",
+              "*nudny*",
+              "boring"
+            ],
+            [
+              "*długi*",
+              "long",
+              "*krótki*",
+              "short"
+            ],
+            [
+              "*bliski*",
+              "near",
+              "*daleki*",
+              "far"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "⚠️ *Wolny* has two meanings, both common: **slow** (*wolny internet*) and **free / available** (*wolny stolik*). The context decides, and mixing them up rarely causes real trouble."
+        },
+        {
+          "type": "kotak",
+          "title": "Giving your opinion politely",
+          "items": [
+            "*Bardzo mi się podoba.* — I really like it. (for things, places, looks)",
+            "*Nie bardzo.* — Not really.",
+            "*Może być.* — It's OK.",
+            "*Szkoda, że…* — It's a pity that…",
+            "*Najlepsze, co jest.* — The best there is."
+          ]
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "pl": "jaki / jaka / jakie",
+      "baca": "YA-ki",
+      "en": "what kind of"
+    },
+    {
+      "pl": "wysoki / niski",
+      "baca": "vy-SO-ki / NEES-ki",
+      "en": "tall / short"
+    },
+    {
+      "pl": "szczupły / gruby",
+      "baca": "SHCHOOP-wy / GROO-by",
+      "en": "slim / fat"
+    },
+    {
+      "pl": "młody / stary",
+      "baca": "MWO-dy / STA-ry",
+      "en": "young / old"
+    },
+    {
+      "pl": "ładny",
+      "baca": "WAD-ny",
+      "en": "pretty; nice"
+    },
+    {
+      "pl": "przystojny",
+      "baca": "pshys-TOY-ny",
+      "en": "handsome"
+    },
+    {
+      "pl": "miły",
+      "baca": "MEE-wy",
+      "en": "nice, friendly"
+    },
+    {
+      "pl": "spokojny",
+      "baca": "spo-KOY-ny",
+      "en": "calm"
+    },
+    {
+      "pl": "wesoły",
+      "baca": "ve-SO-wy",
+      "en": "cheerful"
+    },
+    {
+      "pl": "zabawny",
+      "baca": "za-BAV-ny",
+      "en": "funny"
+    },
+    {
+      "pl": "poważny",
+      "baca": "po-VAZH-ny",
+      "en": "serious"
+    },
+    {
+      "pl": "nieśmiały",
+      "baca": "nye-SHMYA-wy",
+      "en": "shy"
+    },
+    {
+      "pl": "pracowity / leniwy",
+      "baca": "pra-tso-VEE-ty",
+      "en": "hardworking / lazy"
+    },
+    {
+      "pl": "mądry",
+      "baca": "MOND-ry",
+      "en": "smart"
+    },
+    {
+      "pl": "włosy",
+      "baca": "VWO-sy",
+      "en": "hair"
+    },
+    {
+      "pl": "oczy",
+      "baca": "O-chy",
+      "en": "eye"
+    },
+    {
+      "pl": "okulary",
+      "baca": "o-koo-LA-ry",
+      "en": "glasses"
+    },
+    {
+      "pl": "broda",
+      "baca": "BRO-da",
+      "en": "beard"
+    },
+    {
+      "pl": "czysty / brudny",
+      "baca": "CHYS-ty / BROOD-ny",
+      "en": "clean / dirty"
+    },
+    {
+      "pl": "jasny / ciemny",
+      "baca": "YAS-ny / CHYEM-ny",
+      "en": "bright / dark"
+    },
+    {
+      "pl": "łatwy / trudny",
+      "baca": "WAT-fy / TROOD-ny",
+      "en": "easy / difficult"
+    },
+    {
+      "pl": "ciekawy / nudny",
+      "baca": "chye-KA-vy / NOOD-ny",
+      "en": "interesting / boring"
+    },
+    {
+      "pl": "ważny",
+      "baca": "VAZH-ny",
+      "en": "important"
+    },
+    {
+      "pl": "lepszy / gorszy",
+      "baca": "LEP-shy / GOR-shy",
+      "en": "better / worse"
+    },
+    {
+      "pl": "większy / mniejszy",
+      "baca": "VYENK-shy / MNYEY-shy",
+      "en": "bigger / smaller"
+    },
+    {
+      "pl": "bardziej / najbardziej",
+      "baca": "BAR-jyey",
+      "en": "more / most"
+    },
+    {
+      "pl": "współlokator",
+      "baca": "fspoow-lo-KA-tor",
+      "en": "roommate"
+    },
+    {
+      "pl": "wyglądać",
+      "baca": "vy-GLON-dach",
+      "en": "to look (like)"
+    },
+    {
+      "pl": "nosić",
+      "baca": "NO-shich",
+      "en": "to wear"
+    },
+    {
+      "pl": "sweter",
+      "baca": "SFE-ter",
+      "en": "sweater"
+    }
+  ],
+  "exercises": [
+    {
+      "prompt": "Fill in the blanks with the right adjective ending.",
+      "items": [
+        "dobr__ dzień (męski)",
+        "dobr__ kawa (żeński)",
+        "dobr__ piwo (nijaki)",
+        "now__ mieszkanie (nijaki)",
+        "mał__ pokój (męski)",
+        "tan__ hotel (męski)"
+      ]
+    },
+    {
+      "prompt": "Write the \"more…\" and \"most…\" forms.",
+      "items": [
+        "dobry",
+        "duży",
+        "mały",
+        "tani",
+        "zły"
+      ]
+    },
+    {
+      "prompt": "Translate into Polish.",
+      "items": [
+        "What's your new roommate like?",
+        "He's tall and has dark hair.",
+        "My room is small but bright.",
+        "Kraków is smaller than Warsaw.",
+        "I really like it."
+      ]
+    },
+    {
+      "prompt": "Put the words in the right order.",
+      "items": [
+        "jest / twój / jaki / pokój / ?",
+        "ciemne / ma / włosy / on",
+        "ale / małe / jasne / mieszkanie / ,",
+        "niż / mniejszy / Kraków / Warszawa / jest",
+        "podoba / mi / się / bardzo"
+      ]
+    }
+  ],
+  "answers": [
+    "dobry — dobra — dobre — nowe — mały — tani",
+    "lepszy / najlepszy — większy / największy — mniejszy / najmniejszy — tańszy / najtańszy — gorszy / najgorszy",
+    "Jaki jest twój nowy współlokator? — Jest wysoki i ma ciemne włosy. — Mój pokój jest mały, ale jasny. — Kraków jest mniejszy niż Warszawa. — Bardzo mi się podoba.",
+    "Jaki jest twój pokój? — On ma ciemne włosy. — Mieszkanie małe, ale jasne. — Kraków jest mniejszy niż Warszawa. — Bardzo mi się podoba."
+  ],
+  "wave": "Read the unit 14 dialogue aloud again, then describe three people you know, four sentences each."
+}

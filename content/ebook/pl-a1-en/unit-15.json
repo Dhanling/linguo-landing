@@ -1,0 +1,628 @@
+{
+  "title": "None, without, and amounts: dopełniacz",
+  "title_target": "Nie ma chleba",
+  "goal": "Use the noun form that comes after negation, amounts, and the prepositions *do*, *od*, *bez*, *dla* — the second most important form after *biernik*.",
+  "bekal": [
+    "turning *mam…* into *nie mam…* with the right ending",
+    "saying amounts: *kilo*, *pół kilo*, *butelka*, *dużo*",
+    "shopping at a store or market from start to paying"
+  ],
+  "dialogs": [
+    {
+      "title": "Dialogue — W sklepie",
+      "intro": "A small corner grocery. A short line; it's Budi's turn.",
+      "lines": [
+        {
+          "speaker": "Sprzedawczyni:",
+          "text": "Dzień dobry, słucham?",
+          "id": "Good afternoon, what can I get you?",
+          "literal": "day good, I-listen?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Poproszę kilo jabłek i pół kilo pomidorów.",
+          "id": "A kilo of apples and half a kilo of tomatoes, please.",
+          "literal": "I-ask kilo apples and half kilo tomatoes."
+        },
+        {
+          "speaker": "Sprzedawczyni:",
+          "text": "Coś jeszcze?",
+          "id": "Anything else?",
+          "literal": "something still?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Czy jest mleko bez laktozy?",
+          "id": "Do you have lactose-free milk?",
+          "literal": "whether is milk without lactose?"
+        },
+        {
+          "speaker": "Sprzedawczyni:",
+          "text": "Niestety nie ma. Mamy tylko zwykłe.",
+          "id": "Unfortunately not. We only have regular.",
+          "literal": "unfortunately not is. we-have only regular."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "To poproszę dwa litry zwykłego. I bochenek chleba.",
+          "id": "Then two liters of regular. And a loaf of bread.",
+          "literal": "so I-ask two liters regular. and loaf bread."
+        },
+        {
+          "speaker": "Sprzedawczyni:",
+          "text": "Chleb się skończył. Będzie po drugiej.",
+          "id": "The bread's run out. There'll be more after two.",
+          "literal": "bread self finished. will-be after second."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Szkoda. W takim razie to wszystko. Ile płacę?",
+          "id": "Shame. In that case, that's everything. How much do I owe?",
+          "literal": "pity. in such case this everything. how-much I-pay?"
+        },
+        {
+          "speaker": "Sprzedawczyni:",
+          "text": "Dwadzieścia trzy złote czterdzieści.",
+          "id": "Twenty-three forty.",
+          "literal": "twenty three złoty forty."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Proszę. Nie mam drobnych, przepraszam.",
+          "id": "Here you go. Sorry, I don't have small change.",
+          "literal": "please. not I-have change, sorry."
+        },
+        {
+          "speaker": "Sprzedawczyni:",
+          "text": "Nie szkodzi. Proszę resztę i paragon.",
+          "id": "No problem. Here's your change and the receipt.",
+          "literal": "not harms. please change and receipt."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Dziękuję. Do widzenia!",
+          "id": "Thank you. Goodbye!",
+          "literal": "thank-you. till seeing!"
+        }
+      ],
+      "notes": [
+        "**Nie ma is the most important phrase in this unit.** It means \"there isn't / there's no\" and is **always** followed by the *dopełniacz* form: *nie ma chleba*, *nie ma czasu*, *nie ma problemu*. It never changes for anything — one chunk for every situation.",
+        "**Negation shifts the ending.** *Mam czas* → *Nie mam czasu*. *Piję kawę* → *Nie piję kawy*. Every object that was in *biernik* moves to *dopełniacz* as soon as the sentence is negated. This rule has no exceptions — and nothing like it exists in English.",
+        "**Kilo jabłek, pół kilo pomidorów.** Amounts take this form too, and here it's **plural**: *jabłka → jabłek*, *pomidory → pomidorów*. The plural ending is *-ów* for masculine words, and often **no ending at all** for feminine and neuter words (*jabłka → jabłek*, *książki → książek*).",
+        "**Bez laktozy, do sklepu, od mamy, dla ciebie** — the four most common prepositions, and all four take *dopełniacz*. Know just these four and you're already using this form correctly dozens of times a day.",
+        "**Chleb się skończył** — \"the bread's run out\", literally \"the bread finished itself\". You'll hear it often in shops and bakeries toward the afternoon.",
+        "**Będzie po drugiej** — *będzie* is the future form of *być*: \"there will be\". The full future comes in unit 19; *będzie* alone is worth learning now because it's used so much.",
+        "**Nie szkodzi** — \"no problem, never mind\", the standard reply to a small apology. Its siblings: *nic się nie stało* (nothing happened) and *w porządku* (it's fine).",
+        "**W takim razie** — \"in that case\", a linking phrase that makes you sound far more advanced than your grammar really is. Use it as often as you can."
+      ],
+      "grammars": [
+        {
+          "title": "Dopełniacz — the endings",
+          "body": [
+            "The form that answers *kogo? czego?* — \"there's no what\", \"how much of what\", \"whose\"."
+          ],
+          "table": {
+            "head": [
+              "Gender",
+              "Dictionary form",
+              "Dopełniacz",
+              "Example"
+            ],
+            "rows": [
+              [
+                "żeński",
+                "*kawa*",
+                "*kaw**y***",
+                "*Nie piję kawy.*"
+              ],
+              [
+                "żeński",
+                "*herbata*",
+                "*herbat**y***",
+                "*Nie lubię herbaty.*"
+              ],
+              [
+                "żeński",
+                "*kawiarnia*",
+                "*kawiarn**i***",
+                "*Idę do kawiarni.*"
+              ],
+              [
+                "męski (thing)",
+                "*chleb*",
+                "*chleb**a***",
+                "*Nie ma chleba.*"
+              ],
+              [
+                "męski (thing)",
+                "*sklep*",
+                "*sklep**u***",
+                "*Idę do sklepu.*"
+              ],
+              [
+                "męski (person)",
+                "*brat*",
+                "*brat**a***",
+                "*Nie mam brata.*"
+              ],
+              [
+                "nijaki",
+                "*mleko*",
+                "*mlek**a***",
+                "*Nie ma mleka.*"
+              ],
+              [
+                "nijaki",
+                "*piwo*",
+                "*piw**a***",
+                "*Butelka piwa.*"
+              ]
+            ]
+          },
+          "after": [
+            "**Feminine** words take **-y** (or **-i** after a soft letter). **Neuter** words always take **-a**. **Masculine** words take **-a** or **-u**, and there's no rule you can really rely on — living beings almost always get *-a*, things can go either way.",
+            "An honest shortcut for masculine words: learn the *do…* form together with each new word. *Sklep → do sklepu*, *dom → do domu*, *dworzec → do dworca*. Since *do* is used so often, the right form will stick through habit.",
+            "The plural: **-ów** for masculine words (*pomidorów*, *biletów*), and **no ending** for many feminine and neuter words (*jabłek*, *książek*, *piw*)."
+          ]
+        },
+        {
+          "title": "Four uses you must recognize",
+          "body": [
+            "This form shows up in four situations, and all four often come up in the same conversation."
+          ],
+          "table": {
+            "head": [
+              "Situation",
+              "Example",
+              "English"
+            ],
+            "rows": [
+              [
+                "after *nie ma*",
+                "*Nie ma mleka.*",
+                "There's no milk."
+              ],
+              [
+                "negated object",
+                "*Nie mam czasu.*",
+                "I don't have time."
+              ],
+              [
+                "amounts & quantities",
+                "*Dużo pracy. Kilo jabłek.*",
+                "Lots of work. A kilo of apples."
+              ],
+              [
+                "after *do, od, bez, dla, u*",
+                "*Idę do lekarza.*",
+                "I'm going to the doctor."
+              ],
+              [
+                "possession",
+                "*Samochód brata.*",
+                "My brother's car."
+              ]
+            ]
+          },
+          "after": [
+            "The last row explains something that often confuses learners: Polish puts the owner **after** the thing — \"brother's car\" is *samochód brata*, literally \"car of-brother\". It works like English \"the car of my brother\", never like \"brother's car\".",
+            "⚠️ *Dużo*, *mało*, *trochę*, *ile* all take this form: *dużo czasu*, *mało pieniędzy*, *trochę mleka*, *ile wody*. It's one of the quickest giveaways of a foreigner who's got it versus one who hasn't."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Groceries and amounts",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "Amount",
+            "Example",
+            "English"
+          ],
+          "rows": [
+            [
+              "*kilo*",
+              "*kilo jabłek*",
+              "a kilo of apples"
+            ],
+            [
+              "*pół kilo*",
+              "*pół kilo pomidorów*",
+              "half a kilo"
+            ],
+            [
+              "*deko* (10 g)",
+              "*dwadzieścia deko sera*",
+              "200 g of cheese"
+            ],
+            [
+              "*litr*",
+              "*litr mleka*",
+              "a liter of milk"
+            ],
+            [
+              "*butelka*",
+              "*butelka wody*",
+              "a bottle of water"
+            ],
+            [
+              "*paczka*",
+              "*paczka herbaty*",
+              "a packet of tea"
+            ],
+            [
+              "*bochenek*",
+              "*bochenek chleba*",
+              "a loaf of bread"
+            ],
+            [
+              "*kawałek*",
+              "*kawałek sera*",
+              "a piece of cheese"
+            ],
+            [
+              "*sztuka*",
+              "*trzy sztuki*",
+              "three (items)"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "⚠️ *Deko* is a typically Polish measure: one *deko* = 10 grams. At the meat and cheese counter people order *dwadzieścia deko* (200 grams), not grams. Saying grams will be understood, but it sounds like reading a label."
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Polski",
+            "English",
+            "Polski",
+            "English"
+          ],
+          "rows": [
+            [
+              "*chleb*",
+              "bread",
+              "*jabłko*",
+              "apple"
+            ],
+            [
+              "*bułka*",
+              "bread roll",
+              "*banan*",
+              "banana"
+            ],
+            [
+              "*masło*",
+              "butter",
+              "*pomidor*",
+              "tomato"
+            ],
+            [
+              "*ser*",
+              "cheese",
+              "*ogórek*",
+              "cucumber"
+            ],
+            [
+              "*jajka*",
+              "egg",
+              "*ziemniaki*",
+              "potato"
+            ],
+            [
+              "*mleko*",
+              "milk",
+              "*cebula*",
+              "onion"
+            ],
+            [
+              "*woda*",
+              "water",
+              "*ryż*",
+              "rice"
+            ],
+            [
+              "*sok*",
+              "juice",
+              "*makaron*",
+              "pasta; noodles"
+            ],
+            [
+              "*cukier*",
+              "sugar",
+              "*kurczak*",
+              "chicken"
+            ],
+            [
+              "*sól*",
+              "salt",
+              "*ryba*",
+              "fish"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Phrases in the shop",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "Polski",
+            "Say it",
+            "English"
+          ],
+          "rows": [
+            [
+              "*Słucham?*",
+              "SWOO-ham",
+              "What can I get you?"
+            ],
+            [
+              "*Czy jest…?*",
+              "chy yest",
+              "Do you have…?"
+            ],
+            [
+              "*Nie ma.*",
+              "nyeh ma",
+              "There isn't any."
+            ],
+            [
+              "*Coś jeszcze?*",
+              "tsosh YESH-cheh",
+              "Anything else?"
+            ],
+            [
+              "*To wszystko.*",
+              "to FSHYST-ko",
+              "That's all."
+            ],
+            [
+              "*Szukam…*",
+              "SHOO-kam",
+              "I'm looking for…"
+            ],
+            [
+              "*Gdzie mogę znaleźć…?*",
+              "gjyeh MO-geh ZNA-leshch",
+              "Where can I find…?"
+            ],
+            [
+              "*Ile to kosztuje za kilo?*",
+              "EE-leh to kosh-TOO-yeh",
+              "How much is a kilo?"
+            ],
+            [
+              "*Poproszę reklamówkę.*",
+              "re-kla-MOOF-keh",
+              "A bag, please."
+            ],
+            [
+              "*Nie szkodzi.*",
+              "nyeh SHKO-jyi",
+              "No problem."
+            ]
+          ]
+        },
+        {
+          "type": "kotak",
+          "title": "Three things that surprise newcomers in Polish shops",
+          "items": [
+            "**Plastic bags cost extra.** You'll always be asked first, and Poles almost always bring their own bags.",
+            "**You weigh fruit and vegetables yourself** in big supermarkets, including typing the product number into the scale. In small shops, the seller does the weighing.",
+            "**Small shops close early** and many are closed on Sundays — Poland has restricted Sunday trading in recent years. Look for *niedziela handlowa* (trading Sunday) before planning a shopping trip."
+          ]
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "pl": "nie ma",
+      "baca": "nyeh ma",
+      "en": "there isn't, there's no"
+    },
+    {
+      "pl": "bez",
+      "baca": "bes",
+      "en": "without"
+    },
+    {
+      "pl": "dla",
+      "baca": "dla",
+      "en": "for"
+    },
+    {
+      "pl": "od",
+      "baca": "ot",
+      "en": "from"
+    },
+    {
+      "pl": "u",
+      "baca": "oo",
+      "en": "at (someone's place)"
+    },
+    {
+      "pl": "dużo / mało",
+      "baca": "DOO-zho / MA-wo",
+      "en": "a lot / a little"
+    },
+    {
+      "pl": "trochę",
+      "baca": "TRO-heh",
+      "en": "a bit, some"
+    },
+    {
+      "pl": "kilo",
+      "baca": "KEE-lo",
+      "en": "kilogram"
+    },
+    {
+      "pl": "pół",
+      "baca": "poow",
+      "en": "half"
+    },
+    {
+      "pl": "litr",
+      "baca": "litr",
+      "en": "liter"
+    },
+    {
+      "pl": "butelka",
+      "baca": "boo-TEL-ka",
+      "en": "bottle"
+    },
+    {
+      "pl": "paczka",
+      "baca": "PACH-ka",
+      "en": "packet"
+    },
+    {
+      "pl": "kawałek",
+      "baca": "ka-VA-wek",
+      "en": "piece"
+    },
+    {
+      "pl": "sklep spożywczy",
+      "baca": "sklep spo-ZHYF-chy",
+      "en": "grocery store"
+    },
+    {
+      "pl": "chleb / bułka",
+      "baca": "hlep / BOOW-ka",
+      "en": "bread / bread roll"
+    },
+    {
+      "pl": "masło / ser",
+      "baca": "MAS-wo / ser",
+      "en": "butter / cheese"
+    },
+    {
+      "pl": "jajko",
+      "baca": "YAY-ko",
+      "en": "egg"
+    },
+    {
+      "pl": "jabłko",
+      "baca": "YAP-ko",
+      "en": "apple"
+    },
+    {
+      "pl": "pomidor",
+      "baca": "po-MEE-dor",
+      "en": "tomato"
+    },
+    {
+      "pl": "ziemniak",
+      "baca": "ZHEM-nyak",
+      "en": "potato"
+    },
+    {
+      "pl": "kurczak",
+      "baca": "KOOR-chak",
+      "en": "chicken"
+    },
+    {
+      "pl": "ryba",
+      "baca": "RY-ba",
+      "en": "fish"
+    },
+    {
+      "pl": "warzywa / owoce",
+      "baca": "va-ZHY-va / o-VO-tseh",
+      "en": "vegetable / fruit"
+    },
+    {
+      "pl": "reklamówka",
+      "baca": "re-kla-MOOF-ka",
+      "en": "plastic bag"
+    },
+    {
+      "pl": "skończyć się",
+      "baca": "SKONY-chych sheh",
+      "en": "to run out"
+    },
+    {
+      "pl": "szkoda",
+      "baca": "SHKO-da",
+      "en": "pity, shame"
+    },
+    {
+      "pl": "nie szkodzi",
+      "baca": "nyeh SHKO-jyi",
+      "en": "never mind, no problem"
+    },
+    {
+      "pl": "w takim razie",
+      "baca": "f TA-kim RA-zheh",
+      "en": "in that case"
+    },
+    {
+      "pl": "pieniądze",
+      "baca": "pye-NYON-dzeh",
+      "en": "money"
+    },
+    {
+      "pl": "problem",
+      "baca": "PROB-lem",
+      "en": "problem"
+    }
+  ],
+  "exercises": [
+    {
+      "prompt": "Make the sentences negative. Watch the ending change.",
+      "items": [
+        "Mam czas. →",
+        "Piję kawę. →",
+        "Lubię herbatę. →",
+        "Mam brata. →",
+        "Kupuję chleb. →"
+      ]
+    },
+    {
+      "prompt": "Fill in the blanks with the *dopełniacz* form.",
+      "items": [
+        "Nie ma ____ . (mleko)",
+        "Idę do ____ . (sklep)",
+        "Butelka ____ . (woda)",
+        "Kilo ____ . (jabłka)",
+        "Dużo ____ . (praca)",
+        "Herbata bez ____ . (cukier)"
+      ]
+    },
+    {
+      "prompt": "Translate into Polish.",
+      "items": [
+        "A kilo of apples, please.",
+        "There's no bread.",
+        "I don't have time.",
+        "Do you have lactose-free milk?",
+        "That's all. How much do I owe?"
+      ]
+    },
+    {
+      "prompt": "Put the words in the right order.",
+      "items": [
+        "ma / chleba / nie",
+        "jabłek / poproszę / kilo",
+        "czasu / mam / nie",
+        "sklepu / idę / do",
+        "wszystko / to"
+      ]
+    }
+  ],
+  "answers": [
+    "Nie mam czasu. — Nie piję kawy. — Nie lubię herbaty. — Nie mam brata. — Nie kupuję chleba.",
+    "mleka — sklepu — wody — jabłek — pracy — cukru",
+    "Poproszę kilo jabłek. — Nie ma chleba. — Nie mam czasu. — Czy jest mleko bez laktozy? — To wszystko. Ile płacę?",
+    "Nie ma chleba. — Poproszę kilo jabłek. — Nie mam czasu. — Idę do sklepu. — To wszystko."
+  ],
+  "wave": "Read the unit 13 dialogue aloud again, then turn ten *mam…* sentences from earlier units into their negative form."
+}
