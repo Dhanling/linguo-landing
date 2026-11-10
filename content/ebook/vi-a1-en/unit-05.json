@@ -1,0 +1,564 @@
+{
+  "title": "My family — possession",
+  "title_target": "Đây là gia đình của tôi.",
+  "goal": "Name family members with the right words, express possession with *của* — and see that *của* can be dropped, just as English often skips \"of\".",
+  "bekal": [
+    "express possession with *của*, and know when it can be dropped",
+    "name family members, which are distinguished by age and by the father's or mother's side",
+    "ask and answer about jobs with *làm nghề gì?*"
+  ],
+  "dialogs": [
+    {
+      "title": "Dialogue — Ảnh gia đình",
+      "intro": "In the campus canteen. Budi shows a photo of his family to Nam, a married classmate.",
+      "lines": [
+        {
+          "speaker": "Nam:",
+          "text": "Ảnh này đẹp quá! Ai đây?",
+          "id": "What a lovely photo! Who's this?",
+          "literal": "picture this pretty too-much! who here?",
+          "baca": "Ảng này dẹp kwá! Ai dây?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Đây là gia đình của tôi.",
+          "id": "This is my family.",
+          "literal": "here be family of I.",
+          "baca": "Dây là za dìng kủa tôi."
+        },
+        {
+          "speaker": "Nam:",
+          "text": "Gia đình anh có mấy người?",
+          "id": "How many people are in your family?",
+          "literal": "family older-brother have how-many person?",
+          "baca": "Za dìng ang kó mấy người?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Có năm người: bố mẹ tôi, hai chị gái và tôi.",
+          "id": "Five: my parents, my two older sisters and me.",
+          "literal": "have five person: father mother I, two older-sister female and I.",
+          "baca": "Kó năm người: bố mẹ tôi, hai chị gái và tôi."
+        },
+        {
+          "speaker": "Nam:",
+          "text": "Chị gái anh làm nghề gì?",
+          "id": "What do your sisters do?",
+          "literal": "older-sister female older-brother do profession what?",
+          "baca": "Chị gái ang làm ngề gì?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Chị cả là kỹ sư, còn chị thứ hai là y tá.",
+          "id": "The eldest is an engineer, and the second is a nurse.",
+          "literal": "older-sister eldest be engineer, and older-sister order two be nurse.",
+          "baca": "Chị kả là kỹ sư, kòn chị thứ hai là y tá."
+        },
+        {
+          "speaker": "Nam:",
+          "text": "Bố mẹ anh sống ở đâu?",
+          "id": "Where do your parents live?",
+          "literal": "father mother older-brother live at where?",
+          "baca": "Bố mẹ ang sống ở dâu?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Bố mẹ tôi sống ở Bandung. Còn gia đình anh?",
+          "id": "My parents live in Bandung. And your family?",
+          "literal": "father mother I live at Bandung. and family older-brother?",
+          "baca": "Bố mẹ tôi sống ở Bandung. Kòn za dìng ang?"
+        },
+        {
+          "speaker": "Nam:",
+          "text": "Nhà tôi chỉ có ba người thôi: tôi, vợ tôi và con gái.",
+          "id": "There are just three of us: me, my wife and our daughter.",
+          "literal": "house I only have three person only: I, wife I and child female.",
+          "baca": "Nyà tôi chỉ kó ba người thôi: tôi, vợ tôi và kon gái."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Con gái anh mấy tuổi rồi?",
+          "id": "How old is your daughter?",
+          "literal": "child female older-brother how-many age already?",
+          "baca": "Kon gái ang mấy tuổi zồi?"
+        },
+        {
+          "speaker": "Nam:",
+          "text": "Cháu ba tuổi. Cháu là con một.",
+          "id": "She's three. She's an only child.",
+          "literal": "grandchild three age. grandchild be child one.",
+          "baca": "Cháu ba tuổi. Cháu là kon một."
+        }
+      ],
+      "notes": [
+        "**Của means \"of, belonging to\", and it's often dropped.** *Gia đình **của** tôi* and *gia đình tôi* both mean \"my family\" (literally \"family of me\" / \"family me\"), and the short one is actually heard more. It's a bit like English choosing \"my house\" over \"the house of mine\".",
+        "**Vietnamese family words make more distinctions than English ones.** English \"brother\" and \"sister\" don't say who's older; Vietnamese always does — *anh* (older) vs *em* (younger) — and then adds male or female (*anh trai* / *chị gái*, *em trai* / *em gái*). For grandparents, uncles and aunts it also says whether they're on the father's or the mother's side.",
+        "**Cháu means \"grandchild\" and \"niece/nephew\" at once**, and is also a gentle way to refer to any small child — as Nam does with his own daughter in the last line. More importantly, *cháu* is the word you use for **yourself** when speaking to someone your grandparents' age.",
+        "**Chỉ … thôi wraps the sentence and means \"only … just\".** *Chỉ có ba người thôi* = \"there are just three of us\". *Chỉ* goes in front, *thôi* at the end; either can be dropped, but using both together sounds most natural in conversation.",
+        "**Làm nghề gì? is the standard way to ask about someone's job** — literally \"do what profession?\". Don't confuse it with *làm gì?*, \"what are you doing (right now)?\". *Anh làm nghề gì?* asks about a profession; *Anh làm gì đấy?* asks what you're busy with at the moment.",
+        "**Chị cả means \"eldest sister\"**, and birth order uses *thứ*: *chị thứ hai* (second sister), *em thứ ba* (third sibling). ⚠️ In southern Vietnam the count shifts by one: the eldest child is called *thứ hai*, not *thứ nhất*. If a southern family calls their first child \"number two\", that's why."
+      ],
+      "grammars": [
+        {
+          "title": "Của — possession, and when it disappears",
+          "body": [
+            "The pattern is **thing + (của) + owner** — like English \"the book of mine\", never \"my book\" order. The thing owned comes first, the owner after."
+          ],
+          "table": {
+            "head": [
+              "Tiếng Việt",
+              "Meaning",
+              "Can it be dropped?"
+            ],
+            "rows": [
+              [
+                "*nhà **của** tôi* → *nhà tôi*",
+                "my house",
+                "✓ almost always dropped"
+              ],
+              [
+                "*gia đình **của** anh* → *gia đình anh*",
+                "your family",
+                "✓ dropped"
+              ],
+              [
+                "*sách **của** tôi*",
+                "my book",
+                "✓ dropped"
+              ],
+              [
+                "*bạn **của** chị Linh*",
+                "Linh's friend",
+                "✓ dropped"
+              ],
+              [
+                "*Cái này **của** ai?*",
+                "Whose is this?",
+                "✗ **required** — it's the point of the sentence"
+              ],
+              [
+                "*Cái này **của** tôi.*",
+                "This is mine.",
+                "✗ **required** — it's the point of the sentence"
+              ]
+            ]
+          },
+          "after": [
+            "⚠️ **Của can't be dropped when it is itself the point of the sentence.** If the sentence is about whose something is, *của* must stay: *Cái này của tôi.* — not *Cái này tôi.* Just as English can't shorten \"this is mine\" to \"this is me\".",
+            "*Của ai?* = \"whose?\" and *của tôi* = \"mine\" are two ready-made chunks you'll need constantly — at a guesthouse, at the airport, at a shared table."
+          ]
+        },
+        {
+          "title": "Family: one word for each place",
+          "body": [
+            "There's no single word that just means \"brother\" or \"sibling\", and no general \"uncle\". You have to know **older or younger**, and for the generation above, **the father's or the mother's side**."
+          ],
+          "table": {
+            "head": [
+              "Tiếng Việt",
+              "Meaning",
+              "Tiếng Việt",
+              "Meaning"
+            ],
+            "rows": [
+              [
+                "*bố* (north) / *ba* (south)",
+                "father",
+                "*mẹ* / *má*",
+                "mother"
+              ],
+              [
+                "*bố mẹ*",
+                "parents",
+                "*con*",
+                "child"
+              ],
+              [
+                "*anh trai*",
+                "older brother",
+                "*chị gái*",
+                "older sister"
+              ],
+              [
+                "*em trai*",
+                "younger brother",
+                "*em gái*",
+                "younger sister"
+              ],
+              [
+                "*con trai*",
+                "son",
+                "*con gái*",
+                "daughter"
+              ],
+              [
+                "*ông nội* / *bà nội*",
+                "grandpa / grandma (father's side)",
+                "*ông ngoại* / *bà ngoại*",
+                "grandpa / grandma (mother's side)"
+              ],
+              [
+                "*chú*",
+                "father's younger brother",
+                "*cô*",
+                "father's younger sister"
+              ],
+              [
+                "*cậu*",
+                "mother's younger brother",
+                "*dì*",
+                "mother's younger sister"
+              ],
+              [
+                "*bác*",
+                "parent's older sibling (M/F)",
+                "*cháu*",
+                "grandchild; niece, nephew"
+              ],
+              [
+                "*chồng* / *vợ*",
+                "husband / wife",
+                "*con một*",
+                "only child"
+              ]
+            ]
+          },
+          "after": [
+            "⚠️ **Nội means \"inside\" and ngoại means \"outside\"** — the father's side was considered inside, the mother's side outside. By today's standards that's not very fair, but the words are frozen in the language and everyone uses them without thinking about where they came from.",
+            "The good news: most words in this table **are also used as pronouns** for strangers, just as some English speakers call older people \"auntie\" or \"grandpa\". So you're not learning two lists; you're deepening the same list from Unit 1."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Jobs",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "Tiếng Việt",
+            "Say it",
+            "English"
+          ],
+          "rows": [
+            [
+              "giáo viên",
+              "záo viên",
+              "teacher"
+            ],
+            [
+              "bác sĩ",
+              "bák sĩ",
+              "doctor"
+            ],
+            [
+              "y tá",
+              "y tá",
+              "nurse"
+            ],
+            [
+              "kỹ sư",
+              "kỹ sư",
+              "engineer"
+            ],
+            [
+              "luật sư",
+              "luật sư",
+              "lawyer"
+            ],
+            [
+              "nhân viên",
+              "nyân viên",
+              "employee, staff"
+            ],
+            [
+              "công nhân",
+              "kông nyân",
+              "factory worker"
+            ],
+            [
+              "nông dân",
+              "nông zân",
+              "farmer"
+            ],
+            [
+              "sinh viên / học sinh",
+              "sing viên / họk sing",
+              "university student / school pupil"
+            ],
+            [
+              "nội trợ",
+              "nội chợ",
+              "homemaker"
+            ],
+            [
+              "đầu bếp",
+              "dầu bếp",
+              "cook, chef"
+            ],
+            [
+              "lái xe",
+              "lái se",
+              "driver"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "Notice that many Vietnamese job names combine two words that each have their own meaning: *nông dân* = farming + people, *công nhân* = work + person, *đầu bếp* = head + kitchen. Taking them apart like this makes new words stick far better than memorizing the sound as a whole."
+        },
+        {
+          "type": "p",
+          "text": "To answer, just *Tôi là* + job: *Tôi là kỹ sư.* If you don't work yet: *Tôi còn đi học.* (\"I'm still in school\") or *Tôi chưa đi làm.* (\"I don't work yet\")."
+        }
+      ]
+    },
+    {
+      "title": "Asking about people",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "Question",
+            "Say it",
+            "Meaning"
+          ],
+          "rows": [
+            [
+              "Ai đây?",
+              "Ai dây?",
+              "Who's this?"
+            ],
+            [
+              "Đây là ai?",
+              "Dây là ai?",
+              "Who is this?"
+            ],
+            [
+              "Cái này của ai?",
+              "Kái này kủa ai?",
+              "Whose is this?"
+            ],
+            [
+              "Gia đình anh có mấy người?",
+              "Za dìng ang kó mấy người?",
+              "How many people are in your family?"
+            ],
+            [
+              "Anh làm nghề gì?",
+              "Ang làm ngề gì?",
+              "What do you do (for a living)?"
+            ],
+            [
+              "Anh có mấy anh chị em?",
+              "Ang kó mấy ang chị em?",
+              "How many brothers and sisters do you have?"
+            ],
+            [
+              "Anh có gia đình chưa?",
+              "Ang kó za dìng chưa?",
+              "Are you married yet?"
+            ],
+            [
+              "Anh sống ở đâu?",
+              "Ang sống ở dâu?",
+              "Where do you live?"
+            ],
+            [
+              "Anh sống với ai?",
+              "Ang sống với ai?",
+              "Who do you live with?"
+            ]
+          ]
+        },
+        {
+          "type": "kotak",
+          "title": "One answer that saves a lot of conversations",
+          "items": [
+            "*Anh có gia đình chưa?* will be asked of you again and again, and simply answering *Chưa* is enough and polite. Adding *Chưa, em còn đi học ạ.* (\"Not yet, I'm still a student\") closes off follow-up questions in a friendly way.",
+            "⚠️ Notice that the question uses *chưa* (\"not yet\"), not *không* (\"no\") — Vietnamese treats having a family as only a matter of time. Answering with *không* sounds like rejecting the idea altogether, which comes across much harsher than you intend."
+          ]
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "vi": "của",
+      "baca": "kủa",
+      "en": "of, belonging to"
+    },
+    {
+      "vi": "ai",
+      "baca": "ai",
+      "en": "who"
+    },
+    {
+      "vi": "ảnh",
+      "baca": "ảng",
+      "en": "photo, picture"
+    },
+    {
+      "vi": "bố / ba",
+      "baca": "bố / ba",
+      "en": "father"
+    },
+    {
+      "vi": "mẹ / má",
+      "baca": "mẹ / má",
+      "en": "mother"
+    },
+    {
+      "vi": "bố mẹ",
+      "baca": "bố mẹ",
+      "en": "parents"
+    },
+    {
+      "vi": "anh trai",
+      "baca": "ang chai",
+      "en": "older brother"
+    },
+    {
+      "vi": "chị gái",
+      "baca": "chị gái",
+      "en": "older sister"
+    },
+    {
+      "vi": "em trai / em gái",
+      "baca": "em chai / em gái",
+      "en": "younger brother / sister"
+    },
+    {
+      "vi": "con trai / con gái",
+      "baca": "kon chai / kon gái",
+      "en": "son / daughter"
+    },
+    {
+      "vi": "ông / bà",
+      "baca": "ông / bà",
+      "en": "grandfather / grandmother"
+    },
+    {
+      "vi": "cháu",
+      "baca": "cháu",
+      "en": "grandchild; niece, nephew"
+    },
+    {
+      "vi": "cả",
+      "baca": "kả",
+      "en": "eldest; whole, all"
+    },
+    {
+      "vi": "thứ",
+      "baca": "thứ",
+      "en": "ordinal marker (-th)"
+    },
+    {
+      "vi": "con một",
+      "baca": "kon một",
+      "en": "only child"
+    },
+    {
+      "vi": "sống",
+      "baca": "sống",
+      "en": "to live"
+    },
+    {
+      "vi": "nghề",
+      "baca": "ngề",
+      "en": "profession, trade"
+    },
+    {
+      "vi": "kỹ sư",
+      "baca": "kỹ sư",
+      "en": "engineer"
+    },
+    {
+      "vi": "y tá",
+      "baca": "y tá",
+      "en": "nurse"
+    },
+    {
+      "vi": "công nhân",
+      "baca": "kông nyân",
+      "en": "factory worker"
+    },
+    {
+      "vi": "nông dân",
+      "baca": "nông zân",
+      "en": "farmer"
+    },
+    {
+      "vi": "nội trợ",
+      "baca": "nội chợ",
+      "en": "homemaker"
+    },
+    {
+      "vi": "chỉ … thôi",
+      "baca": "chỉ … thôi",
+      "en": "only … just"
+    },
+    {
+      "vi": "với",
+      "baca": "với",
+      "en": "with"
+    },
+    {
+      "vi": "tuổi",
+      "baca": "tuổi",
+      "en": "age"
+    }
+  ],
+  "exercises": [
+    {
+      "prompt": "Translate into Vietnamese.",
+      "items": [
+        "This is my family.",
+        "There are five people in my family.",
+        "My parents live in Bandung.",
+        "My older sister is a nurse.",
+        "Whose is this?",
+        "I'm an only child."
+      ]
+    },
+    {
+      "prompt": "Give the Vietnamese word for these family members.",
+      "items": [
+        "older brother",
+        "younger sister",
+        "grandmother on the mother's side",
+        "daughter",
+        "wife",
+        "father's younger sister"
+      ]
+    },
+    {
+      "prompt": "Fill in *của* — or leave it empty if dropping it is more natural.",
+      "items": [
+        "Đây là nhà ____ tôi. (everyday)",
+        "Cái này ____ ai?",
+        "Gia đình ____ anh có mấy người? (everyday)",
+        "Quyển sách này ____ tôi.",
+        "Bạn ____ chị Linh là bác sĩ. (everyday)"
+      ]
+    },
+    {
+      "prompt": "Answer about yourself, in a full sentence.",
+      "items": [
+        "Gia đình anh/chị có mấy người?",
+        "Anh/chị làm nghề gì?",
+        "Bố mẹ anh/chị sống ở đâu?",
+        "Anh/chị có mấy anh chị em?",
+        "Anh/chị sống với ai?"
+      ]
+    }
+  ],
+  "answers": [
+    "Đây là gia đình của tôi. — Gia đình tôi có năm người. — Bố mẹ tôi sống ở Bandung. — Chị gái tôi là y tá. — Cái này của ai? — Tôi là con một.",
+    "anh trai — em gái — bà ngoại — con gái — vợ — cô",
+    "(empty) — của — (empty) — của — (empty)",
+    "Gia đình tôi có … người. — Tôi là … / Tôi còn đi học. — Bố mẹ tôi sống ở … — Tôi có … anh chị em. — Tôi sống với …"
+  ]
+}

@@ -1,0 +1,541 @@
+{
+  "title": "How much is it? — shopping and bargaining",
+  "title_target": "Cái này bao nhiêu tiền?",
+  "goal": "Ask prices, read Vietnamese money with all its zeros, and bargain politely — including spotting a small trap called *rưỡi*.",
+  "bekal": [
+    "ask for and understand prices in hundreds of thousands of *đồng*",
+    "bargain with *bớt*, *trả* and *được không?*",
+    "name colors and sizes, and ask to try things with *thử*"
+  ],
+  "dialogs": [
+    {
+      "title": "Dialogue — Ở chợ Đồng Xuân",
+      "intro": "Đồng Xuân Market, Hà Nội. Budi is looking for shirts to take home as gifts. At markets like this prices aren't marked, and bargaining isn't just allowed — it's expected.",
+      "lines": [
+        {
+          "speaker": "Budi:",
+          "text": "Chị ơi, cái áo này bao nhiêu tiền ạ?",
+          "id": "Excuse me, how much is this shirt?",
+          "literal": "older-sister hey, item shirt this how-much money (polite)?",
+          "baca": "Chị ơi, kái áo này bao nyiêu tiền ạ?"
+        },
+        {
+          "speaker": "Người bán:",
+          "text": "Ba trăm nghìn em ạ.",
+          "id": "Three hundred thousand.",
+          "literal": "three hundred thousand younger-sibling (polite).",
+          "baca": "Ba chăm ngìn em ạ."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Đắt quá! Chị bớt cho em một chút được không?",
+          "id": "That's so expensive! Could you take a little off for me?",
+          "literal": "expensive too-much! older-sister reduce for younger-sibling one little can not?",
+          "baca": "Dắt kwá! Chị bớt cho em một chút dượk không?"
+        },
+        {
+          "speaker": "Người bán:",
+          "text": "Thế em trả bao nhiêu?",
+          "id": "So how much will you pay?",
+          "literal": "so younger-sibling pay how-much?",
+          "baca": "Thế em chả bao nyiêu?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Hai trăm nghìn được không chị?",
+          "id": "Is two hundred OK?",
+          "literal": "two hundred thousand can not older-sister?",
+          "baca": "Hai chăm ngìn dượk không chị?"
+        },
+        {
+          "speaker": "Người bán:",
+          "text": "Không được đâu. Hai trăm rưỡi nhé.",
+          "id": "No way. Two hundred fifty, then.",
+          "literal": "not can at-all. two hundred half OK.",
+          "baca": "Không dượk dâu. Hai chăm zưỡi nyé."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Chị bớt thêm chút nữa đi. Em mua hai cái.",
+          "id": "Come on, a bit more off. I'm buying two.",
+          "literal": "older-sister reduce add little more go. younger-sibling buy two item.",
+          "baca": "Chị bớt thêm chút nữa di. Em mua hai kái."
+        },
+        {
+          "speaker": "Người bán:",
+          "text": "Thôi được. Hai cái bốn trăm rưỡi.",
+          "id": "Oh, all right. Two for four hundred fifty.",
+          "literal": "enough can. two item four hundred half.",
+          "baca": "Thôi dượk. Hai kái bốn chăm zưỡi."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Vâng, em lấy. Có màu xanh không chị?",
+          "id": "OK, I'll take them. Do you have blue?",
+          "literal": "yes, younger-sibling take. have color blue not older-sister?",
+          "baca": "Vâng, em lấy. Kó màu sang không chị?"
+        },
+        {
+          "speaker": "Người bán:",
+          "text": "Có chứ. Em mặc thử đi.",
+          "id": "Of course. Try it on.",
+          "literal": "have of-course. younger-sibling wear try go.",
+          "baca": "Kó chứ. Em mặk thử di."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Vừa quá! Em lấy hai cái này ạ.",
+          "id": "Perfect fit! I'll take these two.",
+          "literal": "fit too-much! younger-sibling take two item this (polite).",
+          "baca": "Vừa kwá! Em lấy hai kái này ạ."
+        }
+      ],
+      "notes": [
+        "⚠️ **Rưỡi means \"and a half of the unit just mentioned\"**, and with money it comes up all the time: *hai trăm rưỡi* = 250,000 (two hundred **thousand** and a half), *bốn trăm rưỡi* = 450,000. Not 200.5 and not 400.5. It's the same word as in *hai giờ rưỡi* in Unit 8 — and needs the same attention.",
+        "**Đồng is almost always dropped, and nghìn often is too.** The vendor says *ba trăm* and means *ba trăm nghìn đồng* — 300,000. Since prices under a thousand đồng practically don't exist anymore, nobody gets confused. For a foreigner that's scary on day one, so remember: **if the number sounds small, add \"thousand\" in your head**.",
+        "**Bớt means \"reduce\", and it's the bargaining verb.** The full polite sentence: *Chị bớt cho em một chút được không?* Shorter: *Bớt chút đi chị.* Note the *cho em* inside — \"for me\" — which makes the request sound like asking a favor, not making a demand.",
+        "**Notice that the pronouns have changed from earlier dialogues.** Budi calls the vendor *chị* and refers to himself as *em*, not *tôi*. At the market, family words like these make bargaining feel warm and almost always get you a better price. *Tôi* isn't wrong, but it sounds distant.",
+        "**Thử means \"try\" and goes AFTER the verb**: *mặc thử* (try on — literally \"wear try\"), *ăn thử* (try eating, taste), *đi thử* (try walking). English puts \"try\" first; Vietnamese puts the action first and the trying after. Practice it until it feels natural.",
+        "**Thôi được means \"oh, all right then\"** — the sign that bargaining is over and a deal has been struck. When you hear it, stop haggling; pushing further after *thôi được* is considered bad form."
+      ],
+      "grammars": [
+        {
+          "title": "Vietnamese money: reading numbers full of zeros",
+          "body": [
+            "The currency is the *đồng*, and the smallest note still in use is 1,000. That's why almost every everyday price is counted in **nghìn** (thousands)."
+          ],
+          "table": {
+            "head": [
+              "Amount",
+              "Tiếng Việt",
+              "Short form people actually say",
+              "Roughly"
+            ],
+            "rows": [
+              [
+                "10,000",
+                "*mười nghìn*",
+                "*mười nghìn*",
+                "an iced tea and a snack"
+              ],
+              [
+                "50,000",
+                "*năm mươi nghìn*",
+                "*năm mươi*",
+                "a bowl of phở"
+              ],
+              [
+                "100,000",
+                "*một trăm nghìn*",
+                "*một trăm*",
+                "a meal for two"
+              ],
+              [
+                "150,000",
+                "*một trăm năm mươi nghìn*",
+                "***một trăm rưỡi***",
+                "a T-shirt"
+              ],
+              [
+                "250,000",
+                "*hai trăm năm mươi nghìn*",
+                "***hai trăm rưỡi***",
+                "a market shirt"
+              ],
+              [
+                "1,000,000",
+                "*một triệu*",
+                "*một triệu* / *một củ*",
+                "a week's room rent"
+              ],
+              [
+                "2,500,000",
+                "*hai triệu rưỡi*",
+                "*hai triệu rưỡi*",
+                "a month's room rent"
+              ]
+            ]
+          },
+          "after": [
+            "⚠️ ***Rưỡi* always means half of the unit right before it.** *Trăm rưỡi* = one hundred fifty thousand; *triệu rưỡi* = one and a half million. If in doubt, ask the vendor to write it down — *Chị viết ra được không?* — nobody finds that odd.",
+            "*Củ* is slang for \"million\", often heard at markets and among young people: *ba củ* = three million. You don't need to use it, but recognizing it can save you from an expensive misunderstanding."
+          ]
+        },
+        {
+          "title": "Bargaining in five sentences",
+          "body": [
+            "The order is almost always the same, and a whole bargaining session can be done with these five sentences."
+          ],
+          "table": {
+            "head": [
+              "Step",
+              "Tiếng Việt",
+              "Meaning"
+            ],
+            "rows": [
+              [
+                "1. ask",
+                "*Cái này bao nhiêu tiền ạ?*",
+                "How much is this?"
+              ],
+              [
+                "2. be shocked",
+                "*Đắt quá!*",
+                "That's so expensive!"
+              ],
+              [
+                "3. request",
+                "*Chị bớt cho em một chút được không?*",
+                "Could you take a little off?"
+              ],
+              [
+                "4. offer",
+                "*Hai trăm được không chị?*",
+                "Is two hundred OK?"
+              ],
+              [
+                "5. close",
+                "*Vâng, em lấy.* / *Thôi, để lần sau.*",
+                "OK, I'll take it. / Maybe next time."
+              ]
+            ]
+          },
+          "after": [
+            "⚠️ **The second option in step five is the real weapon.** *Thôi, để lần sau.* (\"oh well, maybe next time\"), said as you walk away, is the most effective and most polite way to bring the price down. If the vendor calls you back, the price really can drop; if not, the price was already fair.",
+            "**Bargaining is normal at traditional markets and souvenir shops, but NOT in supermarkets, cafés, or anywhere prices are marked.** Haggling where there's a price tag feels like haggling at a chain store — not offensive, just odd."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Colors, clothes, sizes",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "Color",
+            "Tiếng Việt",
+            "Clothes & items",
+            "Tiếng Việt"
+          ],
+          "rows": [
+            [
+              "red",
+              "*màu đỏ*",
+              "shirt, top",
+              "*áo*"
+            ],
+            [
+              "blue; green",
+              "*màu xanh*",
+              "T-shirt",
+              "*áo phông*"
+            ],
+            [
+              "yellow",
+              "*màu vàng*",
+              "trousers",
+              "*quần*"
+            ],
+            [
+              "white",
+              "*màu trắng*",
+              "skirt, dress",
+              "*váy*"
+            ],
+            [
+              "black",
+              "*màu đen*",
+              "shoes",
+              "*giày*"
+            ],
+            [
+              "brown",
+              "*màu nâu*",
+              "sandals",
+              "*dép*"
+            ],
+            [
+              "gray",
+              "*màu xám*",
+              "hat",
+              "*mũ* / *nón*"
+            ],
+            [
+              "pink",
+              "*màu hồng*",
+              "bag",
+              "*túi*"
+            ],
+            [
+              "purple",
+              "*màu tím*",
+              "conical hat",
+              "*nón lá*"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "⚠️ ***Màu xanh* means blue AND green at once.** To separate them, add a word: *xanh da trời* (sky blue) and *xanh lá cây* (leaf green). Vietnamese isn't the only language that merges the two, but for English speakers, who split blue and green from childhood, it's worth remembering when you order something."
+        },
+        {
+          "type": "p",
+          "text": "Sizes use the English words as they are — *size S*, *size M*, *size L* — or the Vietnamese words *rộng* (too big), *chật* (too tight), *vừa* (just right). The sentences you need: *Có size to hơn không?* (do you have a bigger one?) and *Cái này chật quá.* (this is too tight)."
+        }
+      ]
+    },
+    {
+      "title": "Shopping phrases",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "Tiếng Việt",
+            "Say it",
+            "English"
+          ],
+          "rows": [
+            [
+              "Cái này bao nhiêu tiền?",
+              "Kái này bao nyiêu tiền?",
+              "How much is this?"
+            ],
+            [
+              "Tất cả bao nhiêu?",
+              "Tất kả bao nyiêu?",
+              "How much for everything?"
+            ],
+            [
+              "Đắt quá!",
+              "Dắt kwá!",
+              "That's so expensive!"
+            ],
+            [
+              "Bớt cho em một chút đi.",
+              "Bớt cho em một chút di.",
+              "Take a little off, please."
+            ],
+            [
+              "Cho em xem cái kia.",
+              "Cho em sem kái kia.",
+              "Can I see that one?"
+            ],
+            [
+              "Em mặc thử được không?",
+              "Em mặk thử dượk không?",
+              "Can I try it on?"
+            ],
+            [
+              "Có màu khác không?",
+              "Kó màu khák không?",
+              "Do you have other colors?"
+            ],
+            [
+              "Cái này chật quá.",
+              "Kái này chật kwá.",
+              "This is too tight."
+            ],
+            [
+              "Em lấy cái này.",
+              "Em lấy kái này.",
+              "I'll take this one."
+            ],
+            [
+              "Thôi, để lần sau ạ.",
+              "Thôi, dể lần sau ạ.",
+              "Maybe next time."
+            ]
+          ]
+        },
+        {
+          "type": "kotak",
+          "title": "Two things that bring the price down by themselves",
+          "items": [
+            "**Buying more than one.** *Em mua hai cái, chị bớt cho em nhé.* — this almost always works, and vendors are actually happy because their goods move faster.",
+            "**Speaking Vietnamese at all.** This isn't flattery: the price for a foreigner who bargains in Vietnamese is almost always different from the price for one who points and stays silent. The five sentences in the grammar box, said with tones accurate enough to be understood, are enough — a very concrete reason to practice your tones."
+          ]
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "vi": "tiền",
+      "baca": "tiền",
+      "en": "money"
+    },
+    {
+      "vi": "đồng",
+      "baca": "dồng",
+      "en": "đồng (Vietnamese currency)"
+    },
+    {
+      "vi": "nghìn / ngàn",
+      "baca": "ngìn / ngàn",
+      "en": "thousand"
+    },
+    {
+      "vi": "trăm",
+      "baca": "chăm",
+      "en": "hundred"
+    },
+    {
+      "vi": "triệu",
+      "baca": "chiệu",
+      "en": "million"
+    },
+    {
+      "vi": "rưỡi",
+      "baca": "zưỡi",
+      "en": "and a half (of the unit before)"
+    },
+    {
+      "vi": "bớt",
+      "baca": "bớt",
+      "en": "to reduce (a price)"
+    },
+    {
+      "vi": "trả",
+      "baca": "chả",
+      "en": "to pay"
+    },
+    {
+      "vi": "bán / mua",
+      "baca": "bán / mua",
+      "en": "to sell / to buy"
+    },
+    {
+      "vi": "người bán",
+      "baca": "người bán",
+      "en": "vendor, seller"
+    },
+    {
+      "vi": "áo / quần",
+      "baca": "áo / kwần",
+      "en": "shirt, top / trousers"
+    },
+    {
+      "vi": "giày / dép",
+      "baca": "zày / zép",
+      "en": "shoes / sandals"
+    },
+    {
+      "vi": "túi",
+      "baca": "túi",
+      "en": "bag"
+    },
+    {
+      "vi": "màu",
+      "baca": "màu",
+      "en": "color"
+    },
+    {
+      "vi": "đỏ / xanh / vàng",
+      "baca": "dỏ / sang / vàng",
+      "en": "red / blue-green / yellow"
+    },
+    {
+      "vi": "trắng / đen",
+      "baca": "chắng / den",
+      "en": "white / black"
+    },
+    {
+      "vi": "mặc",
+      "baca": "mặk",
+      "en": "to wear, put on (clothes)"
+    },
+    {
+      "vi": "vừa",
+      "baca": "vừa",
+      "en": "fitting, just right"
+    },
+    {
+      "vi": "chật / rộng",
+      "baca": "chật / zộng",
+      "en": "tight / loose, big"
+    },
+    {
+      "vi": "khác",
+      "baca": "khák",
+      "en": "other, different"
+    },
+    {
+      "vi": "xem",
+      "baca": "sem",
+      "en": "to look at, watch"
+    },
+    {
+      "vi": "tất cả",
+      "baca": "tất kả",
+      "en": "all, everything"
+    },
+    {
+      "vi": "thôi được",
+      "baca": "thôi dượk",
+      "en": "oh, all right then"
+    },
+    {
+      "vi": "lần sau",
+      "baca": "lần sau",
+      "en": "next time"
+    },
+    {
+      "vi": "đắt / rẻ",
+      "baca": "dắt / zẻ",
+      "en": "expensive / cheap"
+    }
+  ],
+  "exercises": [
+    {
+      "prompt": "Write the price in Vietnamese, using the short form people actually say.",
+      "items": [
+        "50,000",
+        "100,000",
+        "150,000",
+        "250,000",
+        "1,000,000",
+        "2,500,000"
+      ]
+    },
+    {
+      "prompt": "Translate into Vietnamese.",
+      "items": [
+        "How much is this?",
+        "That's so expensive!",
+        "Could you take a little off?",
+        "Can I try it on?",
+        "Do you have other colors?",
+        "I'll take this one."
+      ]
+    },
+    {
+      "prompt": "How many đồng is it? Write the amount in figures.",
+      "items": [
+        "hai trăm rưỡi",
+        "năm mươi nghìn",
+        "một triệu",
+        "ba trăm nghìn",
+        "hai triệu rưỡi"
+      ]
+    },
+    {
+      "prompt": "Arrange these into a sensible bargaining conversation, in order from 1 to 5.",
+      "items": [
+        "Vâng, em lấy.",
+        "Cái áo này bao nhiêu tiền ạ?",
+        "Hai trăm được không chị?",
+        "Ba trăm nghìn em ạ.",
+        "Đắt quá! Chị bớt cho em một chút đi."
+      ]
+    }
+  ],
+  "answers": [
+    "năm mươi nghìn — một trăm nghìn — một trăm rưỡi — hai trăm rưỡi — một triệu — hai triệu rưỡi",
+    "Cái này bao nhiêu tiền? — Đắt quá! — Chị bớt cho em một chút được không? — Em mặc thử được không? — Có màu khác không? — Em lấy cái này.",
+    "250,000 — 50,000 — 1,000,000 — 300,000 — 2,500,000",
+    "Cái áo này bao nhiêu tiền ạ? — Ba trăm nghìn em ạ. — Đắt quá! Chị bớt cho em một chút đi. — Hai trăm được không chị? — Vâng, em lấy."
+  ]
+}

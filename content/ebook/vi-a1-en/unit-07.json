@@ -1,0 +1,581 @@
+{
+  "title": "Where? — places and directions",
+  "title_target": "Bưu điện ở đâu ạ?",
+  "goal": "Say where things are with *ở*, use position words like *trên*, *dưới*, *bên cạnh*, *đối diện* — and see that Vietnamese question words stay in place instead of jumping to the front as in English.",
+  "bekal": [
+    "ask where something is with *ở đâu?* and answer correctly",
+    "use ten position words: *trên, dưới, trong, ngoài, trước, sau, bên cạnh, giữa, đối diện, gần*",
+    "name the important places in a town"
+  ],
+  "dialogs": [
+    {
+      "title": "Dialogue — Hỏi đường trong khu phố",
+      "intro": "Morning outside the boarding house. Budi needs to send a parcel and get some cash, but doesn't know his new neighborhood yet.",
+      "lines": [
+        {
+          "speaker": "Budi:",
+          "text": "Anh Nam ơi, cho tôi hỏi. Bưu điện ở đâu ạ?",
+          "id": "Nam, can I ask you something? Where's the post office?",
+          "literal": "older-brother Nam hey, let I ask. post-office at where (polite)?",
+          "baca": "Ang Nam ơi, cho tôi hỏi. Bưu diện ở dâu ạ?"
+        },
+        {
+          "speaker": "Nam:",
+          "text": "Bưu điện ở gần chợ, trên đường Lê Lợi.",
+          "id": "The post office is near the market, on Lê Lợi Street.",
+          "literal": "post-office at near market, on street Lê Lợi.",
+          "baca": "Bưu diện ở gần chợ, chên dường Lê Lợi."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Có xa không anh?",
+          "id": "Is it far?",
+          "literal": "have far not older-brother?",
+          "baca": "Kó sa không ang?"
+        },
+        {
+          "speaker": "Nam:",
+          "text": "Không xa đâu. Đi bộ khoảng mười phút thôi.",
+          "id": "Not far at all. About ten minutes on foot, that's all.",
+          "literal": "not far at-all. go foot about ten minute only.",
+          "baca": "Không sa dâu. Di bộ khoảng mười fút thôi."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Còn ngân hàng thì ở đâu ạ?",
+          "id": "And where's the bank?",
+          "literal": "and bank then at where (polite)?",
+          "baca": "Kòn ngân hàng thì ở dâu ạ?"
+        },
+        {
+          "speaker": "Nam:",
+          "text": "Ngân hàng ở bên cạnh bưu điện. Hai nhà cạnh nhau.",
+          "id": "The bank is next to the post office. The two buildings are side by side.",
+          "literal": "bank at side beside post-office. two house beside each-other.",
+          "baca": "Ngân hàng ở bên kạng bưu diện. Hai nyà kạng nyau."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Anh có biết siêu thị không?",
+          "id": "Do you know the supermarket?",
+          "literal": "older-brother have know super-market not?",
+          "baca": "Ang kó biết siêu thị không?"
+        },
+        {
+          "speaker": "Nam:",
+          "text": "Có. Siêu thị ở đằng sau chợ, đối diện trường học.",
+          "id": "Yes. The supermarket is behind the market, opposite the school.",
+          "literal": "have. super-market at side behind market, facing school.",
+          "baca": "Kó. Siêu thị ở dằng sau chợ, dối ziện chường họk."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Cảm ơn anh. À — chìa khoá của tôi đâu rồi nhỉ?",
+          "id": "Thanks. Oh — where did my keys go?",
+          "literal": "feel kindness older-brother. ah — key of I where already huh?",
+          "baca": "Kảm ơn ang. À — chìa khoá kủa tôi dâu zồi nyỉ?"
+        },
+        {
+          "speaker": "Nam:",
+          "text": "Ở trên bàn kìa! Dưới quyển sách.",
+          "id": "On the table, look! Under the book.",
+          "literal": "at on table look! under volume book.",
+          "baca": "Ở chên bàn kìa! Zưới kwyển sák."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Ồ, đúng rồi. Cảm ơn anh nhiều!",
+          "id": "Oh, right. Thanks a lot!",
+          "literal": "oh, correct already. feel kindness older-brother much!",
+          "baca": "Ồ, dúng zồi. Kảm ơn ang nyiều!"
+        }
+      ],
+      "notes": [
+        "**Ở does three jobs at once: \"at/in\", \"to be (located)\" and \"to live\".** *Bưu điện **ở** gần chợ* (the post office **is** near the market), *Tôi **ở** Hà Nội* (I **live** in Hà Nội), *Ở trên bàn* (**on** the table). Because it already works as a verb, *Bưu điện ở đâu?* needs no other verb at all — no \"is\".",
+        "**Question words stay where they are.** *Bưu điện ở đâu?* is literally \"post office at where?\". English moves the question word to the front and flips the verb (*Where is the post office?*); Vietnamese moves nothing. Just put the question word where the answer would go.",
+        "**Đâu rồi? is the sentence for something you've lost.** Literally \"where already?\", it feels like \"where's it gone?\". With *nhỉ* at the end it becomes a mutter to yourself: *Chìa khoá đâu rồi nhỉ?* — \"now where did my keys go?\" You'll use it often.",
+        "**Ơi is how you call out to someone, and you need it.** *Anh Nam ơi!* = \"Hey, Nam!\". Calling someone by their name alone sounds hurried and a bit rude; *ơi* softens it. At food stalls and markets it's the first word out of your mouth: *Chị ơi!*, *Em ơi!*",
+        "**Khoảng means \"about\" and goes before the number**: *khoảng mười phút* (about ten minutes). Its partner *thôi* at the end limits it: *khoảng mười phút thôi* = \"only about ten minutes\" — it's short, don't worry.",
+        "**Đúng rồi means \"right\" or \"that's it\"**, and it's one of the most useful answers in Vietnamese. Its opposite is *không đúng* or *sai rồi* (\"wrong\"). If you could keep only three short phrases from this unit, take *đúng rồi*, *ở đâu* and *bao xa*."
+      ],
+      "grammars": [
+        {
+          "title": "Ten position words",
+          "body": [
+            "They are all nouns meaning \"top part\", \"inside\", \"side\", and so on — not prepositions as in English. That's why they're often preceded by *ở* and followed directly by the thing, with no \"of\" in between."
+          ],
+          "table": {
+            "head": [
+              "Position word",
+              "Meaning",
+              "Example",
+              "Meaning of example"
+            ],
+            "rows": [
+              [
+                "**trên**",
+                "on, above",
+                "*trên bàn*",
+                "on the table"
+              ],
+              [
+                "**dưới**",
+                "under, below",
+                "*dưới ghế*",
+                "under the chair"
+              ],
+              [
+                "**trong**",
+                "in, inside",
+                "*trong nhà*",
+                "in the house"
+              ],
+              [
+                "**ngoài**",
+                "out, outside",
+                "*ngoài đường*",
+                "outside, in the street"
+              ],
+              [
+                "**trước**",
+                "in front of",
+                "*trước cửa*",
+                "in front of the door"
+              ],
+              [
+                "**sau** / **đằng sau**",
+                "behind",
+                "*sau chợ*",
+                "behind the market"
+              ],
+              [
+                "**bên cạnh** / **cạnh**",
+                "next to",
+                "*cạnh bưu điện*",
+                "next to the post office"
+              ],
+              [
+                "**giữa**",
+                "in the middle, between",
+                "*giữa hai nhà*",
+                "between two houses"
+              ],
+              [
+                "**đối diện**",
+                "opposite",
+                "*đối diện trường*",
+                "across from the school"
+              ],
+              [
+                "**gần** / **xa**",
+                "near / far",
+                "*gần chợ*",
+                "near the market"
+              ]
+            ]
+          },
+          "after": [
+            "⚠️ **Bên trái** (left) and **bên phải** (right) use *bên*, meaning \"side\": *bên trái nhà tôi* = \"on the left of my house\". You'll use them fully when giving directions in Unit 11.",
+            "*Trên* is also used for **street names** — *trên đường Lê Lợi* — just like English \"on Lê Lợi Street\". For cities and countries, plain *ở* is used: *ở Hà Nội*, *ở Việt Nam*."
+          ]
+        },
+        {
+          "title": "Question words stay in place",
+          "body": [
+            "Compare the columns side by side. The Vietnamese and the word-for-word columns have exactly the same order, while normal English moves the question word to the front."
+          ],
+          "table": {
+            "head": [
+              "Tiếng Việt",
+              "Word for word",
+              "English"
+            ],
+            "rows": [
+              [
+                "*Bưu điện ở **đâu**?*",
+                "post office at **where**?",
+                "**Where** is the post office?"
+              ],
+              [
+                "*Anh đi **đâu**?*",
+                "you go **where**?",
+                "**Where** are you going?"
+              ],
+              [
+                "*Anh làm **gì**?*",
+                "you do **what**?",
+                "**What** are you doing?"
+              ],
+              [
+                "*Đây là **ai**?*",
+                "this be **who**?",
+                "**Who** is this?"
+              ],
+              [
+                "*Cái này **bao nhiêu**?*",
+                "this **how much**?",
+                "**How much** is this?"
+              ],
+              [
+                "*Anh đi **bao giờ**?*",
+                "you go **when**?",
+                "**When** did you go?"
+              ]
+            ]
+          },
+          "after": [
+            "⚠️ **Because question words don't move, don't add *có … không?*.** A sentence that already has *đâu*, *gì*, *ai* or *bao nhiêu* is already a question; adding the Unit 2 frame makes it wrong — like saying \"do you go where or not?\" in English.",
+            "*Bao giờ* has one quirk: **at the start** of the sentence it points to the future (*Bao giờ anh đi?* — when will you go?); **at the end** it points to the past (*Anh đi bao giờ?* — when did you go?). It's the only question word whose position carries meaning."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Places in town",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "Tiếng Việt",
+            "Say it",
+            "Meaning",
+            "Tiếng Việt",
+            "Say it",
+            "Meaning"
+          ],
+          "rows": [
+            [
+              "chợ",
+              "chợ",
+              "market",
+              "siêu thị",
+              "",
+              "supermarket"
+            ],
+            [
+              "bưu điện",
+              "bưu diện",
+              "post office",
+              "ngân hàng",
+              "",
+              "bank"
+            ],
+            [
+              "bệnh viện",
+              "bệng viện",
+              "hospital",
+              "hiệu thuốc",
+              "",
+              "pharmacy"
+            ],
+            [
+              "trường học",
+              "chường họk",
+              "school",
+              "đại học",
+              "",
+              "university"
+            ],
+            [
+              "nhà hàng",
+              "nyà hàng",
+              "restaurant",
+              "quán ăn",
+              "",
+              "food stall, eatery"
+            ],
+            [
+              "quán cà phê",
+              "kwán kà fê",
+              "café",
+              "khách sạn",
+              "",
+              "hotel"
+            ],
+            [
+              "công viên",
+              "kông viên",
+              "park",
+              "nhà thờ",
+              "",
+              "church"
+            ],
+            [
+              "chùa",
+              "chùa",
+              "pagoda, temple",
+              "nhà ga",
+              "",
+              "train station"
+            ],
+            [
+              "sân bay",
+              "sân bay",
+              "airport",
+              "bến xe",
+              "",
+              "bus station"
+            ],
+            [
+              "nhà vệ sinh",
+              "nyà vệ sing",
+              "restroom",
+              "cây ATM",
+              "",
+              "ATM"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "⚠️ *Nhà vệ sinh* (literally \"hygiene house\") is the word you'll need soonest and most often forget to practice. The full sentence: *Nhà vệ sinh ở đâu ạ?* Learn it now, not later."
+        },
+        {
+          "type": "p",
+          "text": "Notice again that almost all of them combine two meaningful words: *bệnh viện* = illness + institute, *sân bay* = yard + fly, *khách sạn* = guest + lodging, *ngân hàng* = silver + shop. Taking them apart makes Vietnamese vocabulary far cheaper to memorize."
+        }
+      ]
+    },
+    {
+      "title": "Asking about location and distance",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "Tiếng Việt",
+            "Say it",
+            "English"
+          ],
+          "rows": [
+            [
+              "… ở đâu ạ?",
+              "… ở dâu ạ?",
+              "Where is …?"
+            ],
+            [
+              "Có xa không?",
+              "Kó sa không?",
+              "Is it far?"
+            ],
+            [
+              "Bao xa?",
+              "Bao sa?",
+              "How far?"
+            ],
+            [
+              "Đi bộ được không?",
+              "Di bộ dượk không?",
+              "Can I walk there?"
+            ],
+            [
+              "Đi mất bao lâu?",
+              "Di mất bao lâu?",
+              "How long does it take?"
+            ],
+            [
+              "Gần đây có … không?",
+              "Gần dây kó … không?",
+              "Is there a … near here?"
+            ],
+            [
+              "Ở đây là đâu?",
+              "Ở dây là dâu?",
+              "Where am I? (What place is this?)"
+            ],
+            [
+              "Anh chỉ giúp tôi được không?",
+              "Ang chỉ zúp tôi dượk không?",
+              "Could you show me?"
+            ]
+          ]
+        },
+        {
+          "type": "kotak",
+          "title": "Vietnamese addresses run from small to large",
+          "items": [
+            "Addresses are written from **smallest to largest**: *số 25, đường Lê Lợi, quận 1, TP. Hồ Chí Minh* — number 25, Lê Lợi Street, District 1, Hồ Chí Minh City. The order is the same as in English, so nothing needs flipping in your head.",
+            "*Số* means \"number\", *đường* or *phố* means \"street\", *quận* is an urban \"district\", *huyện* a rural one. Branching house numbers are written with a slash — *25/3* is read *hai lăm xuyệt ba* — and mean an alley off an alley. In Hà Nội and Sài Gòn this is very common, so don't be surprised if your address has two slashes."
+          ]
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "vi": "ở đâu",
+      "baca": "ở dâu",
+      "en": "where (at where)"
+    },
+    {
+      "vi": "đâu",
+      "baca": "dâu",
+      "en": "where"
+    },
+    {
+      "vi": "ơi",
+      "baca": "ơi",
+      "en": "(word for calling out to someone)"
+    },
+    {
+      "vi": "trên / dưới",
+      "baca": "chên / zưới",
+      "en": "on, above / under, below"
+    },
+    {
+      "vi": "trong / ngoài",
+      "baca": "chong / ngoài",
+      "en": "in, inside / out, outside"
+    },
+    {
+      "vi": "trước / sau",
+      "baca": "chướk / sau",
+      "en": "in front of / behind"
+    },
+    {
+      "vi": "bên cạnh",
+      "baca": "bên kạng",
+      "en": "next to"
+    },
+    {
+      "vi": "giữa",
+      "baca": "zữa",
+      "en": "between, in the middle"
+    },
+    {
+      "vi": "đối diện",
+      "baca": "dối ziện",
+      "en": "opposite, across from"
+    },
+    {
+      "vi": "bên trái / bên phải",
+      "baca": "bên chái / bên fải",
+      "en": "on the left / on the right"
+    },
+    {
+      "vi": "chợ",
+      "baca": "chợ",
+      "en": "market"
+    },
+    {
+      "vi": "siêu thị",
+      "baca": "siêu thị",
+      "en": "supermarket"
+    },
+    {
+      "vi": "bưu điện",
+      "baca": "bưu diện",
+      "en": "post office"
+    },
+    {
+      "vi": "ngân hàng",
+      "baca": "ngân hàng",
+      "en": "bank"
+    },
+    {
+      "vi": "khách sạn",
+      "baca": "khák sạn",
+      "en": "hotel"
+    },
+    {
+      "vi": "nhà hàng",
+      "baca": "nyà hàng",
+      "en": "restaurant"
+    },
+    {
+      "vi": "công viên",
+      "baca": "kông viên",
+      "en": "park"
+    },
+    {
+      "vi": "nhà vệ sinh",
+      "baca": "nyà vệ sing",
+      "en": "restroom"
+    },
+    {
+      "vi": "đi bộ",
+      "baca": "di bộ",
+      "en": "to walk, on foot"
+    },
+    {
+      "vi": "khoảng",
+      "baca": "khoảng",
+      "en": "about, approximately"
+    },
+    {
+      "vi": "phút",
+      "baca": "fút",
+      "en": "minute"
+    },
+    {
+      "vi": "chìa khoá",
+      "baca": "chìa khoá",
+      "en": "key"
+    },
+    {
+      "vi": "đúng / sai",
+      "baca": "dúng / sai",
+      "en": "right / wrong"
+    },
+    {
+      "vi": "nhỉ",
+      "baca": "nyỉ",
+      "en": "huh, I wonder (musing)"
+    },
+    {
+      "vi": "kìa",
+      "baca": "kìa",
+      "en": "look, over there (pointing far)"
+    }
+  ],
+  "exercises": [
+    {
+      "prompt": "Translate into Vietnamese.",
+      "items": [
+        "Where's the post office?",
+        "The bank is next to the post office.",
+        "The supermarket is behind the market.",
+        "On the table.",
+        "Is it far?",
+        "Where's the restroom?"
+      ]
+    },
+    {
+      "prompt": "Fill in the right position word.",
+      "items": [
+        "Quyển sách ở ____ bàn. (on)",
+        "Ngân hàng ở ____ bưu điện. (next to)",
+        "Siêu thị ở ____ chợ. (behind)",
+        "Nhà tôi ở ____ trường học. (opposite)",
+        "Con mèo ở ____ nhà. (inside)"
+      ]
+    },
+    {
+      "prompt": "Write the question whose answer is the part in italics.",
+      "items": [
+        "Bưu điện ở *gần chợ*.",
+        "Tôi đi *chợ*.",
+        "Chìa khoá ở *trên bàn*.",
+        "Đây là *chị Linh*.",
+        "Tôi sống ở *Hà Nội*."
+      ]
+    },
+    {
+      "prompt": "Read out loud, then write down the meaning.",
+      "items": [
+        "Gần đây có ngân hàng không ạ?",
+        "Đi bộ khoảng mười phút thôi.",
+        "Chìa khoá đâu rồi nhỉ?",
+        "Nhà vệ sinh ở đâu ạ?",
+        "Không xa đâu!"
+      ]
+    }
+  ],
+  "answers": [
+    "Bưu điện ở đâu? — Ngân hàng ở bên cạnh bưu điện. — Siêu thị ở đằng sau chợ. — Ở trên bàn. — Có xa không? — Nhà vệ sinh ở đâu ạ?",
+    "trên — bên cạnh — đằng sau — đối diện — trong",
+    "Bưu điện ở đâu? — Anh đi đâu? — Chìa khoá ở đâu? — Đây là ai? — Anh sống ở đâu?",
+    "Is there a bank near here? — Only about ten minutes on foot. — Now where did my keys go? — Where's the restroom? — It's not far at all!"
+  ]
+}

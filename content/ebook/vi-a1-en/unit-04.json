@@ -1,0 +1,550 @@
+{
+  "title": "How many? — numbers and classifiers",
+  "title_target": "Cho tôi hai quyển sách.",
+  "goal": "Count things with classifiers — the counting words you half-know from \"a loaf of\", \"a sheet of\", \"two head of\" — and master the three number exceptions you must memorize.",
+  "bekal": [
+    "count with the pattern **number + classifier + noun**, like \"three volumes (of) book\"",
+    "choose *cái*, *con*, *người*, *quyển*, *chiếc*, *tờ* in the right places",
+    "say numbers up to a thousand, including *mười lăm*, *hai mươi mốt* and *hai mươi lăm*"
+  ],
+  "dialogs": [
+    {
+      "title": "Dialogue — Ở nhà sách",
+      "intro": "A small bookshop near campus. Budi is stocking up on supplies for the new semester.",
+      "lines": [
+        {
+          "speaker": "Budi:",
+          "text": "Chị ơi, cho tôi hỏi một chút.",
+          "id": "Excuse me, can I ask something?",
+          "literal": "older-sister hey, let I ask one little.",
+          "baca": "Chị ơi, cho tôi hỏi một chút."
+        },
+        {
+          "speaker": "Nhân viên:",
+          "text": "Vâng, anh cần gì ạ?",
+          "id": "Yes, what do you need?",
+          "literal": "yes, older-brother need what (polite)?",
+          "baca": "Vâng, ang kần gì ạ?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Tôi muốn mua hai quyển từ điển.",
+          "id": "I'd like to buy two dictionaries.",
+          "literal": "I want buy two volume word-book.",
+          "baca": "Tôi muốn mua hai kwyển từ diển."
+        },
+        {
+          "speaker": "Nhân viên:",
+          "text": "Từ điển Việt–Anh hay Việt–Indonesia ạ?",
+          "id": "Vietnamese–English or Vietnamese–Indonesian?",
+          "literal": "word-book Việt–English or Việt–Indonesia (polite)?",
+          "baca": "Từ diển Việt–Ang hay Việt–Indonesia ạ?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Việt–Anh. Và ba quyển vở nữa.",
+          "id": "Vietnamese–English. And three notebooks too.",
+          "literal": "Việt–English. and three volume notebook more.",
+          "baca": "Việt–Ang. Và ba kwyển vở nữa."
+        },
+        {
+          "speaker": "Nhân viên:",
+          "text": "Anh có cần bút không ạ?",
+          "id": "Do you need pens?",
+          "literal": "older-brother have need pen not (polite)?",
+          "baca": "Ang kó kần bút không ạ?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Có. Cho tôi năm cái bút.",
+          "id": "Yes. Give me five pens.",
+          "literal": "have. give I five item pen.",
+          "baca": "Kó. Cho tôi năm kái bút."
+        },
+        {
+          "speaker": "Nhân viên:",
+          "text": "Vâng: hai quyển từ điển, ba quyển vở, năm cái bút.",
+          "id": "OK: two dictionaries, three notebooks, five pens.",
+          "literal": "yes: two volume word-book, three volume notebook, five item pen.",
+          "baca": "Vâng: hai kwyển từ diển, ba kwyển vở, năm kái bút."
+        },
+        {
+          "speaker": "Nhân viên:",
+          "text": "Anh mua nhiều thế! Anh có mấy người bạn cùng phòng?",
+          "id": "You're buying so much! How many roommates do you have?",
+          "literal": "older-brother buy much so! older-brother have how-many person friend same room?",
+          "baca": "Ang mua nyiều thế! Ang kó mấy người bạn kùng fòng?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Tôi có ba người bạn — và một con mèo nữa!",
+          "id": "I have three friends — and a cat too!",
+          "literal": "I have three person friend — and one animal cat more!",
+          "baca": "Tôi kó ba người bạn — và một kon mèo nữa!"
+        },
+        {
+          "speaker": "Nhân viên:",
+          "text": "Thế thì mua thêm một quyển nữa nhé!",
+          "id": "In that case, buy one more!",
+          "literal": "so then buy add one volume more OK!",
+          "baca": "Thế thì mua thêm một kwyển nữa nyé!"
+        }
+      ],
+      "notes": [
+        "**Classifiers aren't as strange as they look.** English says \"a **loaf** of bread\", \"a **sheet** of paper\", \"two **head** of cattle\". Vietnamese does the same thing, with the pattern **number + classifier + noun** — but for every noun you count, and with no \"of\". One difference matters: in Vietnamese the classifier is **required**. *Hai sách* is wrong; *hai quyển sách* is right.",
+        "**Cái is the all-purpose classifier.** If you forget the right classifier for an object, use *cái* — you'll be understood and won't sound rude. Living, moving creatures take *con*, people take *người*. Those three already cover most A1 conversation.",
+        "**Classifiers are also used WITHOUT a number**, to point at one particular thing: *cái bàn này* (this table), *con mèo kia* (that cat over there). Here the classifier works a bit like \"the\": it turns a general noun into the specific thing being talked about.",
+        "**Mấy and bao nhiêu both mean \"how many\".** *Mấy* is used when you expect a **small** answer (under ten): *mấy người bạn?*, *mấy giờ?* *Bao nhiêu* is used when the answer could be large or is completely unknown: *bao nhiêu tiền?*, *bao nhiêu tuổi?* Using the wrong one isn't fatal, but it sounds foreign.",
+        "**Nữa means \"more, again\" and goes at the end; thêm means \"add\" and goes before the verb.** They often appear together: *mua thêm một quyển nữa* = \"buy one more\". For ordering food, this is the pair to memorize: *cho tôi một ly nữa* = \"another glass, please\".",
+        "**Cho tôi … is literally \"give me …\", and that's how you order.** It isn't a rude command: in Vietnamese it's the most natural way to ask for anything in a shop, stall or café. Adding *ạ* at the end makes it polite: *Cho tôi hai cái ạ.*"
+      ],
+      "grammars": [
+        {
+          "title": "Numbers — and three exceptions to memorize",
+          "body": [
+            "Vietnamese numbers are beautifully regular up to ten, then hide three traps in the tens. None of them makes sense, none follows a rule, and they simply have to be memorized."
+          ],
+          "table": {
+            "head": [
+              "",
+              "",
+              "",
+              "",
+              ""
+            ],
+            "rows": [
+              [
+                "0 *không*",
+                "1 *một*",
+                "2 *hai*",
+                "3 *ba*",
+                "4 *bốn*"
+              ],
+              [
+                "5 *năm*",
+                "6 *sáu*",
+                "7 *bảy*",
+                "8 *tám*",
+                "9 *chín*"
+              ],
+              [
+                "10 *mười*",
+                "11 *mười một*",
+                "**15 *mười lăm***",
+                "19 *mười chín*",
+                "**20 *hai mươi***"
+              ],
+              [
+                "**21 *hai mươi mốt***",
+                "22 *hai mươi hai*",
+                "**25 *hai mươi lăm***",
+                "30 *ba mươi*",
+                "50 *năm mươi*"
+              ],
+              [
+                "100 *một trăm*",
+                "101 *một trăm linh một*",
+                "1,000 *một nghìn*",
+                "10,000 *mười nghìn*",
+                "1,000,000 *một triệu*"
+              ]
+            ]
+          },
+          "after": [
+            "⚠️ **The three exceptions:** (1) **10** becomes *mươi* inside multiples of ten — *hai mươi*, not *hai mười*; (2) **5** becomes *lăm* after tens — *mười lăm*, *hai mươi lăm*; (3) **1** becomes *mốt* after tens other than *mười* — *hai mươi mốt*, but still *mười một* for 11.",
+            "The number **4** has two forms: *bốn* for counting, *tư* in sequences and dates — *thứ tư* (Wednesday, literally \"fourth in order\"), *mùng bốn* (the 4th). At A1 just use *bốn*, and recognize *tư* when you read it."
+          ]
+        },
+        {
+          "title": "Classifiers: the ten that cover A1",
+          "body": [
+            "Vietnamese has dozens of classifiers, but the ten below are enough for all everyday conversation. The rest you can replace with *cái* without sounding wrong."
+          ],
+          "table": {
+            "head": [
+              "Classifier",
+              "For",
+              "English feel",
+              "Example"
+            ],
+            "rows": [
+              [
+                "**cái**",
+                "any object — the emergency classifier",
+                "a piece, an item",
+                "*hai cái bàn* — two tables"
+              ],
+              [
+                "**con**",
+                "animals; also rivers, knives, roads, numbers",
+                "a head (of)",
+                "*một con mèo* — a cat"
+              ],
+              [
+                "**người**",
+                "people",
+                "person",
+                "*ba người bạn* — three friends"
+              ],
+              [
+                "**quyển / cuốn**",
+                "books, dictionaries, magazines",
+                "a volume",
+                "*hai quyển sách* — two books"
+              ],
+              [
+                "**chiếc**",
+                "vehicles, one of a pair, stylish objects",
+                "a single",
+                "*một chiếc xe máy* — a motorbike"
+              ],
+              [
+                "**tờ**",
+                "sheets: paper, newspapers, banknotes",
+                "a sheet",
+                "*một tờ báo* — a newspaper"
+              ],
+              [
+                "**ly / cốc**",
+                "glasses",
+                "a glass of",
+                "*hai ly cà phê* — two coffees"
+              ],
+              [
+                "**bát / tô**",
+                "bowls",
+                "a bowl of",
+                "*một bát phở* — a bowl of phở"
+              ],
+              [
+                "**quả / trái**",
+                "fruit",
+                "a (piece of) fruit",
+                "*ba quả chuối* — three bananas"
+              ],
+              [
+                "**đôi**",
+                "a pair",
+                "a pair of",
+                "*một đôi giày* — a pair of shoes"
+              ]
+            ]
+          },
+          "after": [
+            "⚠️ Some classifiers differ between north and south: the north uses *quyển*, *bát*, *quả*, *cốc*; the south uses *cuốn*, *tô*, *trái*, *ly*. Both are understood everywhere. This course uses the northern forms, but mentions the southern partners because you're sure to hear them.",
+            "**Con is used for some inanimate things that \"move or stretch out\"**: *con sông* (river), *con đường* (road), *con dao* (knife), *con số* (number). There's no rule you could guess; learn them as small exceptions, and use *cái* if you forget."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Asking how many",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "Question",
+            "Say it",
+            "Meaning",
+            "When to use it"
+          ],
+          "rows": [
+            [
+              "*Mấy người?*",
+              "Mấy người?",
+              "How many people?",
+              "expected to be under ten"
+            ],
+            [
+              "*Mấy giờ rồi?*",
+              "Mấy zờ zồi?",
+              "What time is it?",
+              "clock numbers are always small"
+            ],
+            [
+              "*Bao nhiêu tiền?*",
+              "Bao nyiêu tiền?",
+              "How much is it?",
+              "the answer could be large"
+            ],
+            [
+              "*Bao nhiêu tuổi?*",
+              "Bao nyiêu tuổi?",
+              "How old are you?",
+              "polite form for adults"
+            ],
+            [
+              "*Mấy tuổi?*",
+              "Mấy tuổi?",
+              "How old are you?",
+              "only for small children"
+            ],
+            [
+              "*Bao nhiêu người?*",
+              "Bao nyiêu người?",
+              "How many people?",
+              "crowds, large groups"
+            ],
+            [
+              "*Có nhiều không?*",
+              "Kó nyiều không?",
+              "Are there many?",
+              "no number"
+            ],
+            [
+              "*Bao lâu?*",
+              "Bao lâu?",
+              "How long?",
+              "length of time"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "⚠️ Asking an adult's age with *mấy tuổi* sounds like you're talking to a kindergartner. With adults it's always *bao nhiêu tuổi*, and with someone much older, softer still: *Bác năm nay bao nhiêu tuổi ạ?*"
+        },
+        {
+          "type": "kotak",
+          "title": "Why age comes up so fast",
+          "items": [
+            "You saw the reason in Unit 1: Vietnamese pronouns are chosen by age, so the other person **can't build a sentence** until they know whether you're older or younger. An age question in the first few minutes isn't nosiness — it's a grammatical need.",
+            "Vietnamese people also often place age by birth year in the zodiac rather than by number: *Anh tuổi con gì?* = \"What's your zodiac animal?\". An answer like *Tuổi Ngựa* (Year of the Horse) is enough — a tactful way to give your age without saying the number."
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Counting correctly: six examples",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "English",
+            "Tiếng Việt",
+            "How it's built"
+          ],
+          "rows": [
+            [
+              "two books",
+              "*hai quyển sách*",
+              "hai (2) + quyển (volume) + sách (book)"
+            ],
+            [
+              "three friends",
+              "*ba người bạn*",
+              "ba (3) + người (person) + bạn (friend)"
+            ],
+            [
+              "a cat",
+              "*một con mèo*",
+              "một (1) + con (animal) + mèo (cat)"
+            ],
+            [
+              "five pens",
+              "*năm cái bút*",
+              "năm (5) + cái (item) + bút (pen)"
+            ],
+            [
+              "two cups of coffee",
+              "*hai ly cà phê*",
+              "hai (2) + ly (glass) + cà phê (coffee)"
+            ],
+            [
+              "this new table",
+              "*cái bàn mới này*",
+              "cái + bàn + mới (new) + này (this)"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "The last row shows the full order of a Vietnamese noun phrase, and it never changes: **classifier → noun → adjective → pointer**. English runs the other way (\"this new table\"); Vietnamese says \"item table new this\"."
+        },
+        {
+          "type": "p",
+          "text": "⚠️ If there's a number, it goes first and the pointer still goes last: *hai cái bàn mới này* = \"these two new tables\". No part ever moves, in any sentence. Vietnamese is extremely faithful to its order, and that's exactly what makes it easy to learn."
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "vi": "mua",
+      "baca": "mua",
+      "en": "to buy"
+    },
+    {
+      "vi": "cần",
+      "baca": "kần",
+      "en": "to need"
+    },
+    {
+      "vi": "muốn",
+      "baca": "muốn",
+      "en": "to want"
+    },
+    {
+      "vi": "cho",
+      "baca": "cho",
+      "en": "to give; for"
+    },
+    {
+      "vi": "hỏi",
+      "baca": "hỏi",
+      "en": "to ask"
+    },
+    {
+      "vi": "sách",
+      "baca": "sák",
+      "en": "book"
+    },
+    {
+      "vi": "từ điển",
+      "baca": "từ diển",
+      "en": "dictionary"
+    },
+    {
+      "vi": "vở",
+      "baca": "vở",
+      "en": "notebook"
+    },
+    {
+      "vi": "bút",
+      "baca": "bút",
+      "en": "pen"
+    },
+    {
+      "vi": "báo",
+      "baca": "báo",
+      "en": "newspaper"
+    },
+    {
+      "vi": "mèo",
+      "baca": "mèo",
+      "en": "cat"
+    },
+    {
+      "vi": "chó",
+      "baca": "chó",
+      "en": "dog"
+    },
+    {
+      "vi": "xe máy",
+      "baca": "se máy",
+      "en": "motorbike"
+    },
+    {
+      "vi": "nhân viên",
+      "baca": "nyân viên",
+      "en": "employee, shop assistant"
+    },
+    {
+      "vi": "nhà sách",
+      "baca": "nyà sák",
+      "en": "bookshop"
+    },
+    {
+      "vi": "mấy",
+      "baca": "mấy",
+      "en": "how many (small number)"
+    },
+    {
+      "vi": "bao nhiêu",
+      "baca": "bao nyiêu",
+      "en": "how many, how much (large number)"
+    },
+    {
+      "vi": "tuổi",
+      "baca": "tuổi",
+      "en": "age, years old"
+    },
+    {
+      "vi": "nhiều",
+      "baca": "nyiều",
+      "en": "many, much, a lot"
+    },
+    {
+      "vi": "ít",
+      "baca": "ít",
+      "en": "few, little"
+    },
+    {
+      "vi": "nữa",
+      "baca": "nữa",
+      "en": "more, again"
+    },
+    {
+      "vi": "thêm",
+      "baca": "thêm",
+      "en": "add, extra"
+    },
+    {
+      "vi": "một chút",
+      "baca": "một chút",
+      "en": "a little, a moment"
+    },
+    {
+      "vi": "cùng",
+      "baca": "kùng",
+      "en": "together, same"
+    },
+    {
+      "vi": "thế thì",
+      "baca": "thế thì",
+      "en": "in that case"
+    }
+  ],
+  "exercises": [
+    {
+      "prompt": "Write the number in Vietnamese.",
+      "items": [
+        "4",
+        "15",
+        "20",
+        "21",
+        "25",
+        "105"
+      ]
+    },
+    {
+      "prompt": "Fill in the right classifier.",
+      "items": [
+        "hai ____ sách",
+        "ba ____ bạn",
+        "một ____ mèo",
+        "năm ____ bút",
+        "hai ____ cà phê",
+        "một ____ phở"
+      ]
+    },
+    {
+      "prompt": "Translate into Vietnamese.",
+      "items": [
+        "I'd like to buy two dictionaries.",
+        "Give me five pens.",
+        "I have three friends.",
+        "What do you need? (to an older man)",
+        "How many people?",
+        "Buy one more!"
+      ]
+    },
+    {
+      "prompt": "Choose *mấy* or *bao nhiêu*.",
+      "items": [
+        "____ giờ rồi?",
+        "____ tiền?",
+        "Anh ____ tuổi? (an adult)",
+        "____ người bạn?",
+        "Cái này ____ tiền?"
+      ]
+    }
+  ],
+  "answers": [
+    "bốn — mười lăm — hai mươi — hai mươi mốt — hai mươi lăm — một trăm linh năm",
+    "quyển — người — con — cái — ly — bát",
+    "Tôi muốn mua hai quyển từ điển. — Cho tôi năm cái bút. — Tôi có ba người bạn. — Anh cần gì? — Mấy người? — Mua thêm một cái nữa nhé!",
+    "Mấy — Bao nhiêu — bao nhiêu — Mấy — bao nhiêu"
+  ]
+}

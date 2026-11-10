@@ -1,0 +1,549 @@
+{
+  "title": "Official business",
+  "title_target": "Em muốn thuê phòng hai đêm ạ.",
+  "goal": "Handle things at a guesthouse, a post office and a bank — and ask for help in three different polite ways.",
+  "bekal": [
+    "renting a room, filling in a form, and asking about checkout time",
+    "sending mail and exchanging money",
+    "asking with *giúp em*, *cho em* and *làm ơn*"
+  ],
+  "dialogs": [
+    {
+      "title": "Dialogue — Nhận phòng khách sạn",
+      "intro": "A small guesthouse in Huế. Budi turns up without a booking, and it's the first time he's handled everything by himself in Vietnamese.",
+      "lines": [
+        {
+          "speaker": "Lễ tân:",
+          "text": "Chào anh, anh cần gì ạ?",
+          "id": "Hello, how can I help you?",
+          "literal": "greet older-brother, older-brother need what (polite)?",
+          "baca": "Chào ang, ang kần gì ạ?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Em muốn thuê phòng hai đêm ạ.",
+          "id": "I'd like to rent a room for two nights.",
+          "literal": "younger-sibling want rent room two night (polite).",
+          "baca": "Em muốn thuê fòng hai dêm ạ."
+        },
+        {
+          "speaker": "Lễ tân:",
+          "text": "Anh đặt trước chưa ạ?",
+          "id": "Do you have a reservation?",
+          "literal": "older-brother book beforehand yet (polite)?",
+          "baca": "Ang dặt chướk chưa ạ?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Chưa ạ. Còn phòng không chị?",
+          "id": "No. Do you still have rooms?",
+          "literal": "not-yet (polite). still room not older-sister?",
+          "baca": "Chưa ạ. Kòn fòng không chị?"
+        },
+        {
+          "speaker": "Lễ tân:",
+          "text": "Còn ạ. Anh cho em xem hộ chiếu nhé.",
+          "id": "We do. May I see your passport?",
+          "literal": "still (polite). older-brother let younger-sibling see passport OK.",
+          "baca": "Kòn ạ. Ang cho em sem hộ chiếu nyé."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Đây ạ. Một đêm bao nhiêu tiền ạ?",
+          "id": "Here it is. How much per night?",
+          "literal": "here (polite). one night how-much money (polite)?",
+          "baca": "Dây ạ. Một dêm bao nyiêu tiền ạ?"
+        },
+        {
+          "speaker": "Lễ tân:",
+          "text": "Bốn trăm nghìn một đêm, đã bao gồm ăn sáng.",
+          "id": "Four hundred thousand a night, breakfast included.",
+          "literal": "four hundred thousand one night, already include eat morning.",
+          "baca": "Bốn chăm ngìn một dêm, dã bao gồm ăn sáng."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Phòng có wifi và điều hoà không ạ?",
+          "id": "Does the room have Wi-Fi and air conditioning?",
+          "literal": "room (yes) wifi and cooler not (polite)?",
+          "baca": "Fòng kó wifi và diều hoà không ạ?"
+        },
+        {
+          "speaker": "Lễ tân:",
+          "text": "Có đầy đủ ạ. Anh điền vào tờ khai này giúp em.",
+          "id": "Everything. Please fill in this form.",
+          "literal": "have complete (polite). older-brother fill into sheet declaration this help younger-sibling.",
+          "baca": "Kó dầy dủ ạ. Ang diền vào tờ khai này zúp em."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Vâng. Mấy giờ phải trả phòng ạ?",
+          "id": "OK. What time do I have to check out?",
+          "literal": "yes. how-many hour must return room (polite)?",
+          "baca": "Vâng. Mấy zờ fải chả fòng ạ?"
+        },
+        {
+          "speaker": "Lễ tân:",
+          "text": "Mười hai giờ trưa ạ. Chúc anh ở vui vẻ!",
+          "id": "Twelve noon. Enjoy your stay!",
+          "literal": "twelve hour noon (polite). wish older-brother stay happy!",
+          "baca": "Mười hai zờ chưa ạ. Chúk ang ở vui vẻ!"
+        }
+      ],
+      "notes": [
+        "⚠️ **Staff call themselves *em* and call you *anh*, whatever their age.** In service jobs — receptionists, shop assistants, waiters — the person serving almost always picks pronouns that place the guest above them. Don't be confused if a fifty-year-old woman calls herself *em* with you; it's the courtesy of the job, not of age.",
+        "**Cho em xem literally means \"let me see\", and it's the politest way to ask to look at something.** Its cousins are *cho em hỏi* (\"may I ask\"), *cho em mượn* (\"may I borrow\"). The pattern *cho + person + verb* is one of the ones you'll need most after *cho tôi* in unit 4.",
+        "**Giúp em at the end of a sentence means \"for me, please\"** — you saw it in unit 9. Notice that here it's the **receptionist** asking: *Anh điền vào tờ khai này giúp em.* The form works both ways, and it's much softer than a bare command.",
+        "**Đã bao gồm means \"already included\"**, a phrase you must recognize in anything you pay for: *đã bao gồm ăn sáng* (breakfast included), *đã bao gồm thuế* (tax included). The question: *Có bao gồm … không ạ?*",
+        "**Nhận phòng and trả phòng are \"check in\" and \"check out\"** — literally \"receive the room\" and \"return the room\". Vietnamese translates foreign terms far more often than it borrows them, and the results are usually guessable once you know the basic words.",
+        "**Điền vào means \"fill in\" for forms.** *Vào* after it means \"into\" — you saw direction words attached to verbs in unit 13. *Tờ khai* is a form to fill in; *tờ* is the classifier for sheets, from unit 4."
+      ],
+      "grammars": [
+        {
+          "title": "Three ways to ask politely",
+          "body": [
+            "All three are polite, but they feel different and sit in different places. Choose according to what you're asking for."
+          ],
+          "table": {
+            "head": [
+              "Form",
+              "Position",
+              "For",
+              "Example"
+            ],
+            "rows": [
+              [
+                "**cho em** + verb",
+                "in front",
+                "asking **permission** to do something",
+                "*Cho em xem cái này.*"
+              ],
+              [
+                "**cho em** + noun",
+                "in front",
+                "asking for **things**",
+                "*Cho em một cái nữa.*"
+              ],
+              [
+                "verb + **giúp em**",
+                "after",
+                "asking for **help**",
+                "*Gọi taxi giúp em nhé.*"
+              ],
+              [
+                "**làm ơn** + verb",
+                "in front",
+                "an **official** request, rather formal",
+                "*Làm ơn đợi một chút.*"
+              ],
+              [
+                "… **được không ạ?**",
+                "at the end",
+                "softening **anything**",
+                "*Em xem được không ạ?*"
+              ],
+              [
+                "**xin** + verb",
+                "in front",
+                "a formal plea, written & official",
+                "*Xin nói lại.*"
+              ]
+            ]
+          },
+          "after": [
+            "⚠️ **Làm ơn sounds more distant and formal than beginners expect.** It's not a \"please\" to sprinkle everywhere; in casual conversation it actually feels stiff. For everyday matters, *giúp em* and *được không ạ?* are much warmer and far more common.",
+            "Adding *nhé* at the end of a request makes it softest: *Gọi taxi giúp em nhé.* Adding *ạ* makes it most respectful: *Cho em hỏi một chút ạ.* Two little words from unit 17, put to really important work."
+          ]
+        },
+        {
+          "title": "Documents and luggage",
+          "body": [
+            "You'll be asked for these at guesthouses, airports and government offices. Learn to recognize the written forms, since you'll often read them before you hear them."
+          ],
+          "table": {
+            "head": [
+              "Tiếng Việt",
+              "Meaning",
+              "Tiếng Việt",
+              "Meaning"
+            ],
+            "rows": [
+              [
+                "*hộ chiếu*",
+                "passport",
+                "*thị thực* / *visa*",
+                "visa"
+              ],
+              [
+                "*chứng minh thư* / *căn cước*",
+                "ID card",
+                "*bằng lái xe*",
+                "driver's license"
+              ],
+              [
+                "*vé máy bay*",
+                "plane ticket",
+                "*tờ khai*",
+                "form (to fill in)"
+              ],
+              [
+                "*giấy tờ*",
+                "papers, documents",
+                "*chữ ký*",
+                "signature"
+              ],
+              [
+                "*hành lý*",
+                "luggage, baggage",
+                "*va li*",
+                "suitcase"
+              ],
+              [
+                "*tiền mặt*",
+                "cash",
+                "*thẻ ngân hàng*",
+                "bank card"
+              ],
+              [
+                "*hoá đơn*",
+                "receipt, bill",
+                "*biên lai*",
+                "acknowledgment slip"
+              ]
+            ]
+          },
+          "after": [
+            "⚠️ *Giấy* means \"paper\", and almost every document name uses it as its head: *giấy tờ* (papers), *giấy phép* (permit), *giấy khám sức khoẻ* (health certificate). Once you recognize *giấy*, you can tell something is a document before you know which one.",
+            "*Ký* means \"sign\" and *ký tên* means \"sign your name\": *Anh ký vào đây giúp em.* — \"please sign here\". You'll hear that sentence at every counter."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "At the post office and the bank",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "Tiếng Việt",
+            "Say it",
+            "English"
+          ],
+          "rows": [
+            [
+              "Em muốn gửi thư về Indonesia.",
+              "Em muốn gửi thư về Indonesia.",
+              "I'd like to send a letter to Indonesia."
+            ],
+            [
+              "Gửi bưu phẩm này bao nhiêu tiền ạ?",
+              "Gửi bưu fẩm này bao nyiêu tiền ạ?",
+              "How much to send this parcel?"
+            ],
+            [
+              "Mất bao lâu ạ?",
+              "Mất bao lâu ạ?",
+              "How long will it take?"
+            ],
+            [
+              "Em muốn đổi tiền.",
+              "Em muốn dổi tiền.",
+              "I'd like to exchange money."
+            ],
+            [
+              "Hôm nay tỷ giá bao nhiêu ạ?",
+              "Hôm nay tỷ zá bao nyiêu ạ?",
+              "What's the exchange rate today?"
+            ],
+            [
+              "Em muốn rút tiền.",
+              "Em muốn zút tiền.",
+              "I'd like to withdraw money."
+            ],
+            [
+              "Ở đây có nhận thẻ không ạ?",
+              "Ở dây kó nyận thẻ không ạ?",
+              "Do you take cards here?"
+            ],
+            [
+              "Em trả bằng tiền mặt.",
+              "Em chả bằng tiền mặt.",
+              "I'll pay in cash."
+            ],
+            [
+              "Cho em xin hoá đơn ạ.",
+              "Cho em sin hoá dơn ạ.",
+              "May I have the receipt?"
+            ],
+            [
+              "Em muốn mua sim điện thoại.",
+              "Em muốn mua sim diện thoại.",
+              "I'd like to buy a SIM card."
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "⚠️ *Gửi* means \"send\" **and** \"leave in someone's care\": *gửi thư* (send a letter), *gửi xe* (leave your motorbike at a parking lot). You'll need the second one a lot — almost every building in Vietnam has a *nhà gửi xe*, and you must keep the ticket."
+        },
+        {
+          "type": "p",
+          "text": "*Cho em xin …* is the politest way to ask for small things: *Cho em xin hoá đơn.* (may I have the receipt), *Cho em xin thêm đá.* (could I have more ice). It sounds much softer than plain *cho em*."
+        }
+      ]
+    },
+    {
+      "title": "If something goes wrong",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "Tiếng Việt",
+            "Say it",
+            "English"
+          ],
+          "rows": [
+            [
+              "Giúp tôi với!",
+              "Zúp tôi với!",
+              "Help me!"
+            ],
+            [
+              "Tôi bị mất hộ chiếu.",
+              "Tôi bị mất hộ chiếu.",
+              "I've lost my passport."
+            ],
+            [
+              "Tôi bị mất ví.",
+              "Tôi bị mất ví.",
+              "I've lost my wallet."
+            ],
+            [
+              "Tôi bị lạc đường.",
+              "Tôi bị lạk dường.",
+              "I'm lost."
+            ],
+            [
+              "Gọi bác sĩ giúp tôi!",
+              "Gọi bák sĩ zúp tôi!",
+              "Please call a doctor!"
+            ],
+            [
+              "Gọi công an giúp tôi!",
+              "Gọi kông an zúp tôi!",
+              "Please call the police!"
+            ],
+            [
+              "Tôi không nói được tiếng Việt nhiều.",
+              "Tôi không nói dượk tiếng Việt nyiều.",
+              "I don't speak much Vietnamese."
+            ],
+            [
+              "Ở đây có ai nói tiếng Anh không ạ?",
+              "Ở dây kó ai nói tiếng Ang không ạ?",
+              "Does anyone here speak English?"
+            ],
+            [
+              "Cho tôi gọi điện được không?",
+              "Cho tôi gọi diện dượk không?",
+              "May I make a phone call?"
+            ],
+            [
+              "Đại sứ quán Indonesia ở đâu ạ?",
+              "Dại sứ kwán Indonesia ở dâu ạ?",
+              "Where is the Indonesian embassy?"
+            ]
+          ]
+        },
+        {
+          "type": "kotak",
+          "title": "Three things to sort out before you go",
+          "items": [
+            "**Keep a copy of your passport separate from the passport itself.** Guesthouses usually ask for the original at *nhận phòng* and return it right away; if someone holds on to it longer, the sentence is *Cho em xin lại hộ chiếu ạ.*",
+            "**Vietnam's emergency numbers:** 113 police (*công an*), 114 fire department, 115 ambulance. Keep your embassy's number in Hà Nội in two places — on your phone and on paper.",
+            "**Cash is still king outside the big cities.** Street stalls, markets and street-corner motorbike taxis are almost all *tiền mặt*. The sentence you need: *Ở đây có nhận thẻ không ạ?* — and be ready for a \"no\"."
+          ]
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "vi": "thuê",
+      "en": "rent",
+      "baca": "thuê"
+    },
+    {
+      "vi": "đặt trước",
+      "en": "book in advance",
+      "baca": "dặt chướk"
+    },
+    {
+      "vi": "nhận phòng / trả phòng",
+      "en": "check in / check out",
+      "baca": "nyận fòng / chả fòng"
+    },
+    {
+      "vi": "lễ tân",
+      "en": "receptionist",
+      "baca": "lễ tân"
+    },
+    {
+      "vi": "hộ chiếu",
+      "en": "passport",
+      "baca": "hộ chiếu"
+    },
+    {
+      "vi": "giấy tờ",
+      "en": "papers, documents",
+      "baca": "zấy tờ"
+    },
+    {
+      "vi": "tờ khai",
+      "en": "form (to fill in)",
+      "baca": "tờ khai"
+    },
+    {
+      "vi": "điền",
+      "en": "fill in (a form)",
+      "baca": "diền"
+    },
+    {
+      "vi": "ký",
+      "en": "sign",
+      "baca": "ký"
+    },
+    {
+      "vi": "bao gồm",
+      "en": "include",
+      "baca": "bao gồm"
+    },
+    {
+      "vi": "đầy đủ",
+      "en": "complete, fully equipped",
+      "baca": "dầy dủ"
+    },
+    {
+      "vi": "điều hoà",
+      "en": "air conditioning",
+      "baca": "diều hoà"
+    },
+    {
+      "vi": "hành lý",
+      "en": "luggage",
+      "baca": "hàng lý"
+    },
+    {
+      "vi": "gửi",
+      "en": "send; leave in someone's care",
+      "baca": "gửi"
+    },
+    {
+      "vi": "thư",
+      "en": "letter",
+      "baca": "thư"
+    },
+    {
+      "vi": "bưu phẩm",
+      "en": "parcel",
+      "baca": "bưu fẩm"
+    },
+    {
+      "vi": "đổi tiền",
+      "en": "exchange money",
+      "baca": "dổi tiền"
+    },
+    {
+      "vi": "rút tiền",
+      "en": "withdraw money",
+      "baca": "zút tiền"
+    },
+    {
+      "vi": "tiền mặt",
+      "en": "cash",
+      "baca": "tiền mặt"
+    },
+    {
+      "vi": "hoá đơn",
+      "en": "receipt, bill",
+      "baca": "hoá dơn"
+    },
+    {
+      "vi": "làm ơn",
+      "en": "please (formal)",
+      "baca": "làm ơn"
+    },
+    {
+      "vi": "lạc đường",
+      "en": "get lost",
+      "baca": "lạk dường"
+    },
+    {
+      "vi": "công an",
+      "en": "police",
+      "baca": "kông an"
+    },
+    {
+      "vi": "đại sứ quán",
+      "en": "embassy",
+      "baca": "dại sứ kwán"
+    },
+    {
+      "vi": "vui vẻ",
+      "en": "happy, pleasant",
+      "baca": "vui vẻ"
+    }
+  ],
+  "exercises": [
+    {
+      "prompt": "Translate into Vietnamese.",
+      "items": [
+        "I'd like to rent a room for two nights.",
+        "Do you still have rooms?",
+        "How much per night?",
+        "Is breakfast included?",
+        "What time do I have to check out?",
+        "May I have the receipt?"
+      ]
+    },
+    {
+      "prompt": "Fill in the blanks with *cho em*, *giúp em* or *làm ơn*.",
+      "items": [
+        "____ xem hộ chiếu. (may I see)",
+        "Gọi taxi ____ nhé. (please, for me)",
+        "____ đợi một chút ạ. (formal)",
+        "____ hỏi một chút ạ. (may I ask)",
+        "Anh ký vào đây ____ . (please, for me)"
+      ]
+    },
+    {
+      "prompt": "Name the document in Vietnamese.",
+      "items": [
+        "passport",
+        "visa",
+        "driver's license",
+        "form (to fill in)",
+        "receipt",
+        "plane ticket"
+      ]
+    },
+    {
+      "prompt": "What do you say in each situation? One Vietnamese sentence.",
+      "items": [
+        "You've lost your wallet at the market.",
+        "You're lost and need help.",
+        "You want to know whether the shop takes cards.",
+        "You want to exchange money at the bank.",
+        "You want to ask whether anyone speaks English."
+      ]
+    }
+  ],
+  "answers": [
+    "Em muốn thuê phòng hai đêm. — Còn phòng không ạ? — Một đêm bao nhiêu tiền ạ? — Có bao gồm ăn sáng không ạ? — Mấy giờ phải trả phòng ạ? — Cho em xin hoá đơn ạ.",
+    "Cho em — giúp em — Làm ơn — Cho em — giúp em",
+    "hộ chiếu — thị thực / visa — bằng lái xe — tờ khai — hoá đơn — vé máy bay",
+    "Tôi bị mất ví. — Tôi bị lạc đường, giúp tôi với! — Ở đây có nhận thẻ không ạ? — Em muốn đổi tiền ạ. — Ở đây có ai nói tiếng Anh không ạ?"
+  ]
+}

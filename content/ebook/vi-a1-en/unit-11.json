@@ -1,0 +1,552 @@
+{
+  "title": "How do you get there? — transport and directions",
+  "title_target": "Anh đi bằng gì?",
+  "goal": "Name means of transport with *bằng*, give directions to a driver, and ask how long a trip takes.",
+  "bekal": [
+    "asking and answering *đi bằng gì?* for every kind of vehicle",
+    "giving directions: *đi thẳng*, *rẽ trái*, *rẽ phải*, *dừng lại*",
+    "asking how long a trip takes with *mất bao lâu?*"
+  ],
+  "dialogs": [
+    {
+      "title": "Dialogue — Đi phố cổ",
+      "intro": "Budi wants to visit Hà Nội's Old Quarter for the first time. He asks Nam, then guides the taxi driver who picks him up.",
+      "lines": [
+        {
+          "speaker": "Budi:",
+          "text": "Anh ơi, đi phố cổ bằng gì thì nhanh nhất?",
+          "id": "Nam, what's the fastest way to get to the Old Quarter?",
+          "literal": "older-brother hey, go street old by what then fast most?",
+          "baca": "Ang ơi, di fố kổ bằng gì thì nyang nyất?"
+        },
+        {
+          "speaker": "Nam:",
+          "text": "Đi xe máy nhanh nhất. Nhưng anh chưa biết đường.",
+          "id": "A motorbike is fastest. But you don't know the roads yet.",
+          "literal": "go motorbike fast most. but older-brother not-yet know road.",
+          "baca": "Di se máy nyang nyất. Nyưng ang chưa biết dường."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Thế tôi đi xe buýt được không?",
+          "id": "Then can I take the bus?",
+          "literal": "so I go bus can not?",
+          "baca": "Thế tôi di se buýt dượk không?"
+        },
+        {
+          "speaker": "Nam:",
+          "text": "Được, nhưng lâu lắm. Anh gọi Grab đi.",
+          "id": "You can, but it takes ages. Just call a Grab.",
+          "literal": "can, but long very. older-brother call Grab go.",
+          "baca": "Dượk, nyưng lâu lắm. Ang gọi Grab di."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Từ đây đến phố cổ mất bao lâu?",
+          "id": "How long does it take from here to the Old Quarter?",
+          "literal": "from here reach street old lose how long?",
+          "baca": "Từ dây dến fố kổ mất bao lâu?"
+        },
+        {
+          "speaker": "Nam:",
+          "text": "Khoảng hai mươi phút, nếu không tắc đường.",
+          "id": "About twenty minutes, if there's no traffic jam.",
+          "literal": "about two ten minute, if not jammed road.",
+          "baca": "Khoảng hai mươi fút, nếu không tắk dường."
+        },
+        {
+          "speaker": "Tài xế:",
+          "text": "Anh xuống ở đâu ạ?",
+          "id": "Where are you getting off?",
+          "literal": "older-brother get-down at where (polite)?",
+          "baca": "Ang suống ở dâu ạ?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Anh đi thẳng, đến ngã tư thì rẽ phải.",
+          "id": "Go straight, and turn right at the intersection.",
+          "literal": "older-brother go straight, reach crossroads-four then turn right.",
+          "baca": "Ang di thẳng, dến ngã tư thì zẽ fải."
+        },
+        {
+          "speaker": "Tài xế:",
+          "text": "Rồi sao nữa ạ?",
+          "id": "And then?",
+          "literal": "done how more (polite)?",
+          "baca": "Zồi sao nữa ạ?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Đi thêm khoảng một trăm mét, dừng trước cửa hàng màu vàng.",
+          "id": "Go about a hundred meters more and stop in front of the yellow shop.",
+          "literal": "go more about one hundred meter, stop before door shop color yellow.",
+          "baca": "Di thêm khoảng một chăm mét, zừng chướk kửa hàng màu vàng."
+        },
+        {
+          "speaker": "Tài xế:",
+          "text": "Vâng, đến rồi. Bốn mươi lăm nghìn ạ.",
+          "id": "OK, here we are. Forty-five thousand.",
+          "literal": "yes, arrive already. four ten five thousand (polite).",
+          "baca": "Vâng, dến zồi. Bốn mươi lăm ngìn ạ."
+        }
+      ],
+      "notes": [
+        "**Bằng means \"by/with\" in the sense of a tool**, and that's the word for transport: *đi **bằng** xe máy* (go by motorbike), *viết **bằng** bút* (write with a pen), *nói **bằng** tiếng Việt* (speak in Vietnamese). The question is *đi bằng gì?* — \"how are you getting there?\".",
+        "**In everyday speech, *bằng* is often dropped**: *đi xe máy*, *đi taxi*, *đi bộ*. What you can't drop is the *bằng* in the question *đi bằng gì?*, because without it the sentence becomes *đi gì?*, which sounds like \"go what?\".",
+        "**Mất means \"take\" for time and \"lose\" for things.** *Mất bao lâu?* = \"how long does it take?\"; *mất hai tiếng* = \"it takes two hours\". The same word in *tôi bị mất ví* means \"I lost my wallet\" — and it really is one word, used both ways.",
+        "**Tắc đường (north) and kẹt xe (south) both mean \"traffic jam\".** You'll hear them constantly, usually in the full sentence *Hôm nay tắc đường quá!* — \"the traffic is terrible today!\". At rush hour in Hà Nội and Sài Gòn, that's no small talk.",
+        "**Xuống means \"go down / get off\" and lên means \"go up / get on\"** — for vehicles and for stairs alike. *Anh xuống ở đâu?* (where are you getting off?), *lên xe đi!* (get on, let's go!). For motorbikes and bicycles you'll hear *lên xe* / *xuống xe*; for planes and trains, *lên máy bay*, *xuống tàu*.",
+        "**Rồi sao nữa? means \"and then?\"** and it's what the driver will say every time you give a direction. Have your answers ready in short chunks — one instruction per sentence — because long directions are almost never understood while someone is driving."
+      ],
+      "grammars": [
+        {
+          "title": "Vehicles and bằng",
+          "body": [
+            "Every vehicle uses the word *xe* (wheeled vehicle) as its head, followed by a description. Once again the order is building blocks: the thing described comes first, the description after it."
+          ],
+          "table": {
+            "head": [
+              "Tiếng Việt",
+              "Literally",
+              "Meaning",
+              "Example"
+            ],
+            "rows": [
+              [
+                "*xe máy*",
+                "machine vehicle",
+                "motorbike",
+                "*Tôi đi bằng xe máy.*"
+              ],
+              [
+                "*xe đạp*",
+                "pedal vehicle",
+                "bicycle",
+                "*Tôi đi xe đạp.*"
+              ],
+              [
+                "*xe buýt*",
+                "bus vehicle",
+                "city bus",
+                "*Đi xe buýt lâu lắm.*"
+              ],
+              [
+                "*xe ôm*",
+                "hug vehicle",
+                "motorbike taxi",
+                "*Gọi xe ôm đi.*"
+              ],
+              [
+                "*ô tô* / *xe hơi*",
+                "automobile",
+                "car",
+                "*Nhà tôi có ô tô.*"
+              ],
+              [
+                "*tàu hoả* / *tàu*",
+                "fire ship",
+                "train",
+                "*Đi tàu ra Huế.*"
+              ],
+              [
+                "*máy bay*",
+                "flying machine",
+                "airplane",
+                "*Đi máy bay nhanh nhất.*"
+              ],
+              [
+                "*đi bộ*",
+                "go foot",
+                "on foot",
+                "*Đi bộ mười phút thôi.*"
+              ]
+            ]
+          },
+          "after": [
+            "⚠️ ***Xe ôm* literally means \"hug vehicle\"** — a motorbike taxi, named after the way passengers hold on. Most have now moved to apps (*Grab*, *Be*), but the word and the street-corner stands are still everywhere, and for short trips they're often faster.",
+            "*Tàu* on its own means both ship and train; the add-on tells them apart: *tàu hoả* (train), *tàu thuỷ* (ship). At A1, just remember *tàu* = train, since that's the most common use."
+          ]
+        },
+        {
+          "title": "Giving directions",
+          "body": [
+            "These eight sentences are enough to guide a driver anywhere. Say them one at a time, short, and don't string them together."
+          ],
+          "table": {
+            "head": [
+              "Tiếng Việt",
+              "Say it",
+              "Meaning"
+            ],
+            "rows": [
+              [
+                "Đi thẳng",
+                "Di thẳng",
+                "Go straight"
+              ],
+              [
+                "Rẽ trái / rẽ phải",
+                "Zẽ chái / zẽ fải",
+                "Turn left / turn right"
+              ],
+              [
+                "Đến ngã tư thì rẽ phải",
+                "Dến ngã tư thì zẽ fải",
+                "Turn right at the intersection"
+              ],
+              [
+                "Đến ngã ba thì rẽ trái",
+                "Dến ngã ba thì zẽ chái",
+                "Turn left at the T-junction"
+              ],
+              [
+                "Quay lại",
+                "Kway lại",
+                "Turn around"
+              ],
+              [
+                "Dừng lại ở đây",
+                "Zừng lại ở dây",
+                "Stop here"
+              ],
+              [
+                "Đến rồi, cảm ơn anh",
+                "Dến zồi, kảm ơn ang",
+                "We're here, thank you"
+              ],
+              [
+                "Chờ tôi một chút nhé",
+                "Chờ tôi một chút nyé",
+                "Wait for me a moment"
+              ]
+            ]
+          },
+          "after": [
+            "⚠️ In southern Vietnam *rẽ* is replaced by ***quẹo***: *quẹo phải*, *quẹo trái*. Both are understood everywhere, but if you're in Sài Gòn and the driver hesitates, try the other word.",
+            "*Lại* after a verb means \"back\" or \"again\": *quay lại* (turn around), *dừng lại* (stop), *làm lại* (redo), *nói lại* (say again). One small word that turns up everywhere."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Inside the vehicle",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "Tiếng Việt",
+            "Say it",
+            "English"
+          ],
+          "rows": [
+            [
+              "Cho tôi đi sân bay.",
+              "Cho tôi di sân bay.",
+              "Take me to the airport."
+            ],
+            [
+              "Đi đường này gần hơn.",
+              "Di dường này gần hơn.",
+              "This way is shorter."
+            ],
+            [
+              "Anh đi nhanh hơn được không?",
+              "Ang di nyang hơn dượk không?",
+              "Could you go faster?"
+            ],
+            [
+              "Anh đi chậm thôi ạ.",
+              "Ang di chậm thôi ạ.",
+              "Please go slowly."
+            ],
+            [
+              "Bao nhiêu tiền ạ?",
+              "Bao nyiêu tiền ạ?",
+              "How much is the fare?"
+            ],
+            [
+              "Anh bật đồng hồ nhé.",
+              "Ang bật dồng hồ nyé.",
+              "Please turn on the meter."
+            ],
+            [
+              "Tôi xuống đây.",
+              "Tôi suống dây.",
+              "I'll get off here."
+            ],
+            [
+              "Cho tôi xuống trước cửa hàng.",
+              "Cho tôi suống chướk kửa hàng.",
+              "Let me off in front of the shop."
+            ],
+            [
+              "Chuyến xe buýt này đi đâu?",
+              "Chuyến se buýt này di dâu?",
+              "Where does this bus go?"
+            ],
+            [
+              "Xe này có đi Huế không?",
+              "Se này kó di Huế không?",
+              "Does this one go to Huế?"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "⚠️ *Anh bật đồng hồ nhé* — \"please turn on the meter\" — is a lifesaver for foreigners taking an ordinary taxi. Said kindly at the start of the ride, it spares you an unpleasant haggle at the end. *Đồng hồ* literally means \"clock\", and it's used for both the meter and a watch."
+        }
+      ]
+    },
+    {
+      "title": "Crossing the street in Vietnam",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "This isn't grammar, but it's one of the skills you'll need soonest — and the rules go against most newcomers' instincts."
+        },
+        {
+          "type": "kotak",
+          "title": "Three rules for crossing",
+          "items": [
+            "**Walk slowly and steadily**; don't stop and don't run. Riders calculate where you'll be one second from now and swing around behind you. Stopping suddenly ruins their calculation — that's what's dangerous, not the walking.",
+            "**Don't wait for the road to be empty**, because at rush hour it never will be. Wait for a small gap, then go and don't step back. Raising your hand to chest height makes you more visible.",
+            "**Cars and buses are a different story** — they won't swerve around you. Give way to anything with four wheels, and cross only between motorbikes."
+          ]
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Tiếng Việt",
+            "Say it",
+            "Meaning"
+          ],
+          "rows": [
+            [
+              "tắc đường / kẹt xe",
+              "tắk dường / kẹt se",
+              "traffic jam"
+            ],
+            [
+              "đèn đỏ / đèn xanh",
+              "dèn dỏ / dèn sang",
+              "red / green light"
+            ],
+            [
+              "mũ bảo hiểm",
+              "mũ bảo hiểm",
+              "helmet"
+            ],
+            [
+              "bằng lái xe",
+              "bằng lái se",
+              "driver's license"
+            ],
+            [
+              "xăng",
+              "săng",
+              "gasoline"
+            ],
+            [
+              "cẩn thận!",
+              "kẩn thận!",
+              "careful!"
+            ],
+            [
+              "nguy hiểm",
+              "nguy hiểm",
+              "dangerous"
+            ],
+            [
+              "vỉa hè",
+              "vỉa hè",
+              "sidewalk"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "⚠️ *Mũ bảo hiểm* (helmet) is compulsory in Vietnam for motorbike riders and passengers alike, and the police really do fine people. Every ride-hailing driver carries a spare helmet; if he forgets, just say *Anh cho em mũ bảo hiểm với.*"
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "vi": "bằng",
+      "en": "by (means); by (vehicle)",
+      "baca": "bằng"
+    },
+    {
+      "vi": "xe máy",
+      "en": "motorbike",
+      "baca": "se máy"
+    },
+    {
+      "vi": "xe đạp",
+      "en": "bicycle",
+      "baca": "se dạp"
+    },
+    {
+      "vi": "xe buýt",
+      "en": "city bus",
+      "baca": "se buýt"
+    },
+    {
+      "vi": "xe ôm",
+      "en": "motorbike taxi",
+      "baca": "se ôm"
+    },
+    {
+      "vi": "ô tô",
+      "en": "car",
+      "baca": "ô tô"
+    },
+    {
+      "vi": "tàu",
+      "en": "train; ship",
+      "baca": "tàu"
+    },
+    {
+      "vi": "máy bay",
+      "en": "airplane",
+      "baca": "máy bay"
+    },
+    {
+      "vi": "sân bay",
+      "en": "airport",
+      "baca": "sân bay"
+    },
+    {
+      "vi": "tài xế",
+      "en": "driver",
+      "baca": "tài sế"
+    },
+    {
+      "vi": "đi thẳng",
+      "en": "go straight",
+      "baca": "di thẳng"
+    },
+    {
+      "vi": "rẽ trái / rẽ phải",
+      "en": "turn left / right",
+      "baca": "zẽ chái / zẽ fải"
+    },
+    {
+      "vi": "ngã ba / ngã tư",
+      "en": "T-junction / intersection",
+      "baca": "ngã ba / ngã tư"
+    },
+    {
+      "vi": "dừng lại",
+      "en": "stop",
+      "baca": "zừng lại"
+    },
+    {
+      "vi": "quay lại",
+      "en": "turn around",
+      "baca": "kway lại"
+    },
+    {
+      "vi": "lên / xuống",
+      "en": "go up, get on / go down, get off",
+      "baca": "lên / suống"
+    },
+    {
+      "vi": "chờ / đợi",
+      "en": "wait",
+      "baca": "chờ / dợi"
+    },
+    {
+      "vi": "mất",
+      "en": "take (time); lose",
+      "baca": "mất"
+    },
+    {
+      "vi": "lâu",
+      "en": "long (time)",
+      "baca": "lâu"
+    },
+    {
+      "vi": "nhanh / chậm",
+      "en": "fast / slow",
+      "baca": "nyang / chậm"
+    },
+    {
+      "vi": "tắc đường",
+      "en": "traffic jam",
+      "baca": "tắk dường"
+    },
+    {
+      "vi": "phố cổ",
+      "en": "old quarter",
+      "baca": "fố kổ"
+    },
+    {
+      "vi": "cửa hàng",
+      "en": "shop",
+      "baca": "kửa hàng"
+    },
+    {
+      "vi": "mũ bảo hiểm",
+      "en": "helmet",
+      "baca": "mũ bảo hiểm"
+    },
+    {
+      "vi": "cẩn thận",
+      "en": "careful",
+      "baca": "kẩn thận"
+    }
+  ],
+  "exercises": [
+    {
+      "prompt": "Translate into Vietnamese.",
+      "items": [
+        "How do you get there? (to an older man)",
+        "I go by motorbike.",
+        "How long does it take from here to the airport?",
+        "Go straight, turn right at the intersection.",
+        "Stop here.",
+        "The traffic is terrible today!"
+      ]
+    },
+    {
+      "prompt": "Name the vehicle in Vietnamese.",
+      "items": [
+        "motorbike",
+        "bicycle",
+        "city bus",
+        "motorbike taxi",
+        "train",
+        "airplane"
+      ]
+    },
+    {
+      "prompt": "Fill in the blanks.",
+      "items": [
+        "Anh đi ____ gì? (by what)",
+        "Từ đây đến chợ ____ bao lâu? (takes)",
+        "Đến ngã tư thì ____ phải. (turn)",
+        "Cho tôi ____ ở đây. (get off)",
+        "Anh ____ tôi một chút nhé. (wait)"
+      ]
+    },
+    {
+      "prompt": "Read aloud, then write the meaning.",
+      "items": [
+        "Đi xe máy nhanh nhất.",
+        "Khoảng hai mươi phút, nếu không tắc đường.",
+        "Anh bật đồng hồ nhé.",
+        "Cho tôi xuống trước cửa hàng màu vàng.",
+        "Cẩn thận nhé!"
+      ]
+    }
+  ],
+  "answers": [
+    "Anh đi bằng gì? — Tôi đi bằng xe máy. — Từ đây đến sân bay mất bao lâu? — Đi thẳng, đến ngã tư thì rẽ phải. — Dừng lại ở đây. — Hôm nay tắc đường quá!",
+    "xe máy — xe đạp — xe buýt — xe ôm — tàu hoả — máy bay",
+    "bằng — mất — rẽ — xuống — chờ",
+    "A motorbike is fastest. — About twenty minutes, if there's no traffic jam. — Please turn on the meter. — Let me off in front of the yellow shop. — Be careful!"
+  ]
+}

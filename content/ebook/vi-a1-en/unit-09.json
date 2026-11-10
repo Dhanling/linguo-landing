@@ -1,0 +1,596 @@
+{
+  "title": "Delicious! — eating and ordering",
+  "title_target": "Cho tôi một bát phở.",
+  "goal": "Order food and drink with the *cho tôi …* frame, tell apart two words for \"or\", and talk about flavors and being full.",
+  "bekal": [
+    "order anything with *cho tôi* + number + classifier + noun",
+    "tell *hay* (or, in questions) from *hoặc* (or, in statements)",
+    "name flavors: *ngon, cay, mặn, ngọt, chua, đắng*"
+  ],
+  "dialogs": [
+    {
+      "title": "Dialogue — Ở quán phở",
+      "intro": "A sidewalk phở stall, low plastic stools, seven in the morning. Budi has been here three times, but only now dares to order without pointing.",
+      "lines": [
+        {
+          "speaker": "Chủ quán:",
+          "text": "Anh ăn gì ạ?",
+          "id": "What would you like?",
+          "literal": "older-brother eat what (polite)?",
+          "baca": "Ang ăn gì ạ?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Cho tôi một bát phở bò ạ.",
+          "id": "A bowl of beef phở, please.",
+          "literal": "give I one bowl phở beef (polite).",
+          "baca": "Cho tôi một bát fở bò ạ."
+        },
+        {
+          "speaker": "Chủ quán:",
+          "text": "Anh ăn phở tái hay phở chín?",
+          "id": "Rare beef or well-done?",
+          "literal": "older-brother eat phở rare or phở cooked?",
+          "baca": "Ang ăn fở tái hay fở chín?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Phở chín ạ. Chị ơi, có cay không?",
+          "id": "Well-done, please. Is it spicy?",
+          "literal": "phở cooked (polite). older-sister hey, have spicy not?",
+          "baca": "Fở chín ạ. Chị ơi, kó kay không?"
+        },
+        {
+          "speaker": "Chủ quán:",
+          "text": "Không cay. Anh muốn thêm ớt thì tự cho nhé.",
+          "id": "Not spicy. If you want more chili, help yourself.",
+          "literal": "not spicy. older-brother want add chili then self give OK.",
+          "baca": "Không kay. Ang muốn thêm ớt thì tự cho nyé."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Vâng. Cho tôi thêm một đĩa rau nữa ạ.",
+          "id": "OK. And an extra plate of herbs, please.",
+          "literal": "yes. give I add one plate vegetable more (polite).",
+          "baca": "Vâng. Cho tôi thêm một dĩa zau nữa ạ."
+        },
+        {
+          "speaker": "Chủ quán:",
+          "text": "Anh uống gì không?",
+          "id": "Anything to drink?",
+          "literal": "older-brother drink what not?",
+          "baca": "Ang uống gì không?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Cho tôi một cốc trà đá.",
+          "id": "An iced tea, please.",
+          "literal": "give I one glass tea ice.",
+          "baca": "Cho tôi một kốk chà dá."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Ngon quá! Phở ở đây ngon nhất.",
+          "id": "So good! The phở here is the best.",
+          "literal": "tasty too-much! phở at here tasty most.",
+          "baca": "Ngon kwá! Fở ở dây ngon nyất."
+        },
+        {
+          "speaker": "Chủ quán:",
+          "text": "Cảm ơn anh. Anh ăn no chưa?",
+          "id": "Thank you. Have you had enough?",
+          "literal": "feel kindness older-brother. older-brother eat full not-yet?",
+          "baca": "Kảm ơn ang. Ang ăn no chưa?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "No rồi ạ. Chị tính tiền giúp tôi nhé!",
+          "id": "I'm full. Could I have the bill, please?",
+          "literal": "full already (polite). older-sister count money help I OK!",
+          "baca": "No zồi ạ. Chị tíng tiền zúp tôi nyé!"
+        }
+      ],
+      "notes": [
+        "**Cho tôi … is the only sentence you need to order anything.** Literally \"give me …\", and although it sounds like a command in translation, in Vietnamese it's the most natural and polite form at stalls, shops and cafés. The full pattern is exactly the one from Unit 4: *cho tôi* + number + classifier + noun.",
+        "**Hay and hoặc both mean \"or\", but they can't be swapped.** *Hay* is used in **questions** — *phở tái **hay** phở chín?* *Hoặc* is used in **statements** — *tôi uống cà phê **hoặc** trà* (I drink coffee or tea). English uses one word for both, so this is a genuinely new distinction you have to practice.",
+        "**Tự means \"oneself\" and goes before the verb**: *tự cho* (help yourself), *tự làm* (do it yourself), *tự học* (self-study). On a Vietnamese stall table there's almost always a tray of chili, lime, bean sprouts and herbs — all *tự*, and never charged extra.",
+        "**Trà đá is the drink you'll meet most often**, and at many stalls it's **free** — the iced-tea jug sits on the table and you refill it yourself. Don't be puzzled if it isn't on the bill; that's no oversight.",
+        "**No means \"full\" and đói means \"hungry\"**, and both are adjectives, so they stand alone with no verb: *Tôi no rồi.* (I'm full), *Tôi đói quá!* (I'm starving!). The question *Ăn no chưa?* isn't empty small talk — the owner really will offer more if you say not yet.",
+        "**Giúp tôi means \"help me\" and goes AFTER the verb**: *tính tiền **giúp tôi*** (could you add up the bill), *gọi taxi **giúp tôi*** (could you call me a taxi). It's the gentlest way to ask for help — softer than *xin*, and much warmer."
+      ],
+      "grammars": [
+        {
+          "title": "Ordering: one frame for everything",
+          "body": [
+            "Every row in this table uses the same pattern. Once you have it, you can order anything in Vietnam without pointing."
+          ],
+          "table": {
+            "head": [
+              "Sentence",
+              "Number",
+              "Classifier",
+              "Noun",
+              "Meaning"
+            ],
+            "rows": [
+              [
+                "*Cho tôi **một bát phở**.*",
+                "một",
+                "bát",
+                "phở",
+                "A bowl of phở, please."
+              ],
+              [
+                "*Cho tôi **hai cốc cà phê**.*",
+                "hai",
+                "cốc",
+                "cà phê",
+                "Two coffees, please."
+              ],
+              [
+                "*Cho tôi **một đĩa rau**.*",
+                "một",
+                "đĩa",
+                "rau",
+                "A plate of greens, please."
+              ],
+              [
+                "*Cho tôi **ba chai bia**.*",
+                "ba",
+                "chai",
+                "bia",
+                "Three bottles of beer, please."
+              ],
+              [
+                "*Cho tôi **một cái này**.*",
+                "một",
+                "cái",
+                "này",
+                "One of these, please."
+              ],
+              [
+                "*Cho tôi **thêm một cái nữa**.*",
+                "một",
+                "cái",
+                "—",
+                "One more, please."
+              ]
+            ]
+          },
+          "after": [
+            "⚠️ The fifth row is the emergency exit you must memorize: **Cho tôi một cái này** — \"one of these, please\" — while pointing. With that sentence alone you can eat anywhere in Vietnam from day one, without knowing a single dish name.",
+            "Adding *ạ* at the end raises the politeness by one notch and is always safe: *Cho tôi một bát phở ạ.* With a vendor much older than you, it's not optional but expected."
+          ]
+        },
+        {
+          "title": "Hay or hoặc?",
+          "body": [
+            "The one distinction in this unit that's truly new for English speakers. The rule is short and has no exceptions at A1."
+          ],
+          "table": {
+            "head": [
+              "Word",
+              "Used in",
+              "Example",
+              "Meaning"
+            ],
+            "rows": [
+              [
+                "**hay**",
+                "either-or questions",
+                "*Anh uống cà phê **hay** trà?*",
+                "Coffee or tea?"
+              ],
+              [
+                "**hay**",
+                "either-or questions",
+                "*Phở tái **hay** phở chín?*",
+                "Rare or well-done?"
+              ],
+              [
+                "**hoặc**",
+                "statements",
+                "*Tôi uống cà phê **hoặc** trà.*",
+                "I drink coffee or tea."
+              ],
+              [
+                "**hoặc**",
+                "statements",
+                "*Thứ hai **hoặc** thứ ba đều được.*",
+                "Monday or Tuesday, either is fine."
+              ],
+              [
+                "**hay là**",
+                "suggestions",
+                "***Hay là** mình đi ăn phở?*",
+                "How about we go for phở?"
+              ]
+            ]
+          },
+          "after": [
+            "⚠️ *Hay* has a second, completely different meaning: **\"interesting, good\"** — *Phim này hay quá!* (\"this film is so good!\"). Only position tells them apart: *hay* between two choices means \"or\"; *hay* after a noun means \"good, interesting\".",
+            "*Hay là* at the **start** of a sentence is a gentle way to suggest something — like English \"how about…?\". It's one of the most useful openers for inviting a friend."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Food and drink",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "Tiếng Việt",
+            "Say it",
+            "Meaning",
+            "Tiếng Việt",
+            "Say it",
+            "Meaning"
+          ],
+          "rows": [
+            [
+              "cơm",
+              "kơm",
+              "rice (cooked)",
+              "phở",
+              "",
+              "phở (noodle soup)"
+            ],
+            [
+              "bún",
+              "bún",
+              "rice vermicelli",
+              "mì",
+              "",
+              "wheat noodles"
+            ],
+            [
+              "bánh mì",
+              "báng mì",
+              "bread; baguette sandwich",
+              "xôi",
+              "",
+              "sticky rice"
+            ],
+            [
+              "thịt bò",
+              "thịt bò",
+              "beef",
+              "thịt gà",
+              "",
+              "chicken"
+            ],
+            [
+              "thịt lợn",
+              "thịt lợn",
+              "pork",
+              "cá",
+              "",
+              "fish"
+            ],
+            [
+              "tôm",
+              "tôm",
+              "shrimp",
+              "trứng",
+              "",
+              "egg"
+            ],
+            [
+              "rau",
+              "zau",
+              "vegetables, greens",
+              "hoa quả",
+              "",
+              "fruit"
+            ],
+            [
+              "nước",
+              "nướk",
+              "water",
+              "nước mắm",
+              "",
+              "fish sauce"
+            ],
+            [
+              "trà / chè",
+              "chà / chè",
+              "tea",
+              "cà phê sữa",
+              "",
+              "coffee with milk"
+            ],
+            [
+              "bia",
+              "bia",
+              "beer",
+              "đá",
+              "",
+              "ice"
+            ],
+            [
+              "muối / đường",
+              "muối / dường",
+              "salt / sugar",
+              "ớt",
+              "",
+              "chili"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "⚠️ *Thịt lợn* (pork) is used in the north, *thịt heo* in the south. If you don't eat pork, it's worth recognizing both — and the life-saving sentence is *Tôi không ăn thịt lợn.* or, safer still, *Tôi ăn chay.* (\"I eat vegetarian\"), understood everywhere because Buddhist meat-free days are very common in Vietnam."
+        },
+        {
+          "type": "p",
+          "text": "Notice the building blocks again: *nước mắm* = water + salted fish, *bánh mì* = cake + wheat, *cà phê sữa* = coffee + milk, *thịt bò* = meat + cow. Vietnamese nouns can almost always be taken apart, and doing so is much cheaper than memorizing the whole sound."
+        }
+      ]
+    },
+    {
+      "title": "Flavors, and asking for what you want",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "Tiếng Việt",
+            "Say it",
+            "Meaning",
+            "Ready-made sentence"
+          ],
+          "rows": [
+            [
+              "ngon",
+              "ngon",
+              "tasty",
+              "*Ngon quá!*"
+            ],
+            [
+              "cay",
+              "kay",
+              "spicy",
+              "*Đừng cay quá nhé.*"
+            ],
+            [
+              "mặn",
+              "mặn",
+              "salty",
+              "*Hơi mặn.*"
+            ],
+            [
+              "ngọt",
+              "ngọt",
+              "sweet",
+              "*Ít đường thôi nhé.*"
+            ],
+            [
+              "chua",
+              "chua",
+              "sour",
+              "*Chua quá!*"
+            ],
+            [
+              "đắng",
+              "dắng",
+              "bitter",
+              "*Cà phê đắng lắm.*"
+            ],
+            [
+              "nóng / lạnh",
+              "nóng / lạng",
+              "hot / cold",
+              "*Cho tôi trà nóng.*"
+            ],
+            [
+              "no / đói",
+              "no / dói",
+              "full / hungry",
+              "*Tôi đói quá!*"
+            ],
+            [
+              "chay",
+              "chay",
+              "vegetarian",
+              "*Tôi ăn chay.*"
+            ],
+            [
+              "thử",
+              "thử",
+              "try",
+              "*Cho tôi ăn thử.*"
+            ]
+          ]
+        },
+        {
+          "type": "kotak",
+          "title": "Three table habits worth knowing",
+          "items": [
+            "**All the dishes go in the middle and are shared**, while each person has their own rice bowl — unlike the Western one-plate-each style. Serving food to others — especially older people — is considered very polite.",
+            "**Before starting, the younger invite the older to eat**: *Cháu mời ông bà ăn cơm ạ.* or simply *Mời cả nhà ăn cơm.* Skipping it isn't fatal for a foreigner, but saying it will be noticed and appreciated.",
+            "**Never stand chopsticks upright in rice** — it looks like incense sticks on an ancestor altar, and that's a bad omen. Lay them across the bowl or on a chopstick rest."
+          ]
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "vi": "cho tôi",
+      "baca": "cho tôi",
+      "en": "give me, I'd like"
+    },
+    {
+      "vi": "ăn / uống",
+      "baca": "ăn / uống",
+      "en": "eat / drink"
+    },
+    {
+      "vi": "bát / đĩa",
+      "baca": "bát / dĩa",
+      "en": "bowl / plate"
+    },
+    {
+      "vi": "cốc / ly",
+      "baca": "kốk / ly",
+      "en": "glass"
+    },
+    {
+      "vi": "chai",
+      "baca": "chai",
+      "en": "bottle"
+    },
+    {
+      "vi": "cơm",
+      "baca": "kơm",
+      "en": "rice (cooked); meal"
+    },
+    {
+      "vi": "thịt bò / thịt gà",
+      "baca": "thịt bò / thịt gà",
+      "en": "beef / chicken"
+    },
+    {
+      "vi": "cá / tôm",
+      "baca": "ká / tôm",
+      "en": "fish / shrimp"
+    },
+    {
+      "vi": "rau",
+      "baca": "zau",
+      "en": "vegetables, greens"
+    },
+    {
+      "vi": "trứng",
+      "baca": "chứng",
+      "en": "egg"
+    },
+    {
+      "vi": "nước",
+      "baca": "nướk",
+      "en": "water"
+    },
+    {
+      "vi": "trà đá",
+      "baca": "chà dá",
+      "en": "iced tea"
+    },
+    {
+      "vi": "đá",
+      "baca": "dá",
+      "en": "ice"
+    },
+    {
+      "vi": "ớt",
+      "baca": "ớt",
+      "en": "chili"
+    },
+    {
+      "vi": "cay / mặn / ngọt",
+      "baca": "kay / mặn / ngọt",
+      "en": "spicy / salty / sweet"
+    },
+    {
+      "vi": "chua / đắng",
+      "baca": "chua / dắng",
+      "en": "sour / bitter"
+    },
+    {
+      "vi": "no / đói",
+      "baca": "no / dói",
+      "en": "full / hungry"
+    },
+    {
+      "vi": "chay",
+      "baca": "chay",
+      "en": "vegetarian"
+    },
+    {
+      "vi": "hay",
+      "baca": "hay",
+      "en": "or (in questions); interesting, good"
+    },
+    {
+      "vi": "hoặc",
+      "baca": "hoặk",
+      "en": "or (in statements)"
+    },
+    {
+      "vi": "tự",
+      "baca": "tự",
+      "en": "oneself, by oneself"
+    },
+    {
+      "vi": "thử",
+      "baca": "thử",
+      "en": "to try"
+    },
+    {
+      "vi": "giúp",
+      "baca": "zúp",
+      "en": "to help"
+    },
+    {
+      "vi": "tính tiền",
+      "baca": "tíng tiền",
+      "en": "to add up the bill"
+    },
+    {
+      "vi": "chủ quán",
+      "baca": "chủ kwán",
+      "en": "stall owner"
+    }
+  ],
+  "exercises": [
+    {
+      "prompt": "Order in Vietnamese.",
+      "items": [
+        "A bowl of beef phở.",
+        "Two coffees with milk.",
+        "A plate of greens.",
+        "Three bottles of beer.",
+        "An iced tea.",
+        "One more."
+      ]
+    },
+    {
+      "prompt": "Choose *hay* or *hoặc*.",
+      "items": [
+        "Anh uống cà phê ____ trà?",
+        "Tôi ăn phở ____ bún đều được.",
+        "Phở tái ____ phở chín?",
+        "Thứ hai ____ thứ ba tôi rảnh.",
+        "Anh đi hôm nay ____ ngày mai?"
+      ]
+    },
+    {
+      "prompt": "Translate into Vietnamese.",
+      "items": [
+        "So good!",
+        "I'm hungry.",
+        "I'm full.",
+        "I'm vegetarian.",
+        "Not too spicy, please.",
+        "The bill, please."
+      ]
+    },
+    {
+      "prompt": "Answer the server's questions in full sentences.",
+      "items": [
+        "Anh ăn gì ạ?",
+        "Anh uống gì không?",
+        "Anh ăn phở tái hay phở chín?",
+        "Có cay không ạ?",
+        "Anh ăn no chưa?"
+      ]
+    }
+  ],
+  "answers": [
+    "Cho tôi một bát phở bò. — Cho tôi hai cốc cà phê sữa. — Cho tôi một đĩa rau. — Cho tôi ba chai bia. — Cho tôi một cốc trà đá. — Cho tôi thêm một cái nữa.",
+    "hay — hoặc — hay — hoặc — hay",
+    "Ngon quá! — Tôi đói quá! — Tôi no rồi. — Tôi ăn chay. — Đừng cay quá nhé. — Tính tiền giúp tôi nhé.",
+    "Cho tôi một bát phở ạ. — Cho tôi một cốc trà đá. — Phở chín ạ. — Không cay ạ. / Cay một chút ạ. — No rồi ạ."
+  ]
+}

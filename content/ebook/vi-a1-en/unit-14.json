@@ -1,0 +1,565 @@
+{
+  "title": "What's wrong? — body, weather and bị",
+  "title_target": "Em bị đau đầu ạ.",
+  "goal": "Describe aches and the weather, and master the pair *bị* and *được* — two words that mark whether something happens to you for the worse or for the better.",
+  "bekal": [
+    "describing complaints with *bị* + condition and *đau* + body part",
+    "telling *bị* (something bad happens to you) from *được* (something good comes your way)",
+    "talking about the weather with *trời* as the subject"
+  ],
+  "dialogs": [
+    {
+      "title": "Dialogue — Ở hiệu thuốc",
+      "intro": "A small pharmacy at the end of an alley. Budi has been feeling unwell for two days, and in Vietnam the pharmacy is where people go first, before a doctor.",
+      "lines": [
+        {
+          "speaker": "Dược sĩ:",
+          "text": "Chào anh, anh cần gì ạ?",
+          "id": "Hello, what do you need?",
+          "literal": "greet older-brother, older-brother need what (polite)?",
+          "baca": "Chào ang, ang kần gì ạ?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Em bị đau đầu và hơi sốt ạ.",
+          "id": "I have a headache and a bit of a fever.",
+          "literal": "younger-sibling suffer ache head and slightly fever (polite).",
+          "baca": "Em bị dau dầu và hơi sốt ạ."
+        },
+        {
+          "speaker": "Dược sĩ:",
+          "text": "Bị mấy ngày rồi?",
+          "id": "For how many days?",
+          "literal": "suffer how-many day already?",
+          "baca": "Bị mấy ngày zồi?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Hai ngày rồi ạ. Đêm qua em bị mất ngủ.",
+          "id": "Two days. Last night I couldn't sleep.",
+          "literal": "two day already (polite). night past younger-sibling suffer lose sleep.",
+          "baca": "Hai ngày zồi ạ. Dêm kwa em bị mất ngủ."
+        },
+        {
+          "speaker": "Dược sĩ:",
+          "text": "Em có bị ho không?",
+          "id": "Do you have a cough too?",
+          "literal": "younger-sibling (yes) suffer cough not?",
+          "baca": "Em kó bị ho không?"
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Có, hơi ho ạ. Chắc tại trời lạnh.",
+          "id": "Yes, a bit of a cough. Maybe because of the cold weather.",
+          "literal": "have, slightly cough (polite). probably because sky cold.",
+          "baca": "Kó, hơi ho ạ. Chắk tại chời lạng."
+        },
+        {
+          "speaker": "Dược sĩ:",
+          "text": "Ừ, mấy hôm nay trời trở lạnh. Em uống thuốc này nhé.",
+          "id": "Yes, it's turned cold these past few days. Take this medicine.",
+          "literal": "yes, few day this sky turn cold. younger-sibling drink medicine this OK.",
+          "baca": "Ừ, mấy hôm nay chời chở lạng. Em uống thuốk này nyé."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Em uống thế nào ạ?",
+          "id": "How should I take it?",
+          "literal": "younger-sibling drink how (polite)?",
+          "baca": "Em uống thế nào ạ?"
+        },
+        {
+          "speaker": "Dược sĩ:",
+          "text": "Ngày hai lần, sau khi ăn. Nhớ uống nhiều nước.",
+          "id": "Twice a day, after meals. Remember to drink plenty of water.",
+          "literal": "day two time, after when eat. remember drink much water.",
+          "baca": "Ngày hai lần, sau khi ăn. Nyớ uống nyiều nướk."
+        },
+        {
+          "speaker": "Budi:",
+          "text": "Vâng ạ. Bao nhiêu tiền ạ?",
+          "id": "OK. How much is it?",
+          "literal": "yes OK. how-much money (polite)?",
+          "baca": "Vâng ạ. Bao nyiêu tiền ạ?"
+        },
+        {
+          "speaker": "Dược sĩ:",
+          "text": "Sáu mươi nghìn. Chúc em mau khỏi nhé!",
+          "id": "Sixty thousand. Get well soon!",
+          "literal": "six ten thousand. wish younger-sibling quick recover OK!",
+          "baca": "Sáu mươi ngìn. Chúk em mau khỏi nyé!"
+        }
+      ],
+      "notes": [
+        "**Bị marks that something unpleasant happens to you**, and it stands before the condition: *bị đau đầu* (have a headache), *bị ốm* (be sick), *bị mất ví* (lose your wallet), *bị phạt* (get fined). English does something similar with \"get\" — *get fined*, *get caught in the rain* — so you already know the idea.",
+        "**Được is its twin for pleasant things**: *được nghỉ* (get time off), *được khen* (be praised), *được tăng lương* (get a raise). Swapping them sounds funny: *bị tăng lương* means roughly \"unfortunately, I got a raise\".",
+        "**Đau means \"hurt, ache\", and the body part follows right after it**: *đau đầu* (headache), *đau bụng* (stomachache), *đau răng* (toothache). Just like English \"head-ache\", only in reverse order. The word *ốm* means \"sick\" in the general sense of unwell.",
+        "**Trời means \"sky\", and it's the subject of every weather sentence**: *trời mưa* (it's raining), *trời nắng* (it's sunny and hot), *trời lạnh* (it's cold). Literally \"the sky rains\" — the same job English gives to \"it\". Vietnamese has no separate verb \"to rain\" without it.",
+        "**Thế nào? means \"how?\"** and it sits at the end of the sentence like other question words: *Em uống thế nào?* (how do I take it?), *Phở thế nào?* (how's the phở?). Its southern cousin is *sao?* — *Sao rồi?* (\"how's it going?\").",
+        "**Sau khi means \"after\" and trước khi means \"before\"**, and both are followed by a verb: *sau khi ăn* (after eating), *trước khi ngủ* (before sleeping). *Khi* alone means \"when, the time\", so it's literally \"after the time of eating\"."
+      ],
+      "grammars": [
+        {
+          "title": "Bị and được — two doors for things that happen to you",
+          "body": [
+            "Vietnamese has no passive like English \"be + -ed\". Instead there are two words that mark the **feel** of the event: bad or good. The choice is required, and picking the wrong one is instantly noticeable."
+          ],
+          "table": {
+            "head": [
+              "Bad — *bị*",
+              "Meaning",
+              "Good — *được*",
+              "Meaning"
+            ],
+            "rows": [
+              [
+                "*bị ốm*",
+                "be sick",
+                "*được nghỉ*",
+                "get time off"
+              ],
+              [
+                "*bị đau đầu*",
+                "have a headache",
+                "*được khen*",
+                "be praised"
+              ],
+              [
+                "*bị mất ví*",
+                "lose one's wallet",
+                "*được tặng quà*",
+                "be given a present"
+              ],
+              [
+                "*bị muộn*",
+                "be late",
+                "*được đi*",
+                "get to go"
+              ],
+              [
+                "*bị phạt*",
+                "get fined",
+                "*được ăn ngon*",
+                "get a good meal"
+              ],
+              [
+                "*bị ướt*",
+                "get wet",
+                "*được giúp*",
+                "be helped"
+              ]
+            ]
+          },
+          "after": [
+            "⚠️ **What decides it isn't grammar but your own view of the event.** The same sentence can take either: *được đi Hà Nội* (get the chance to go to Hà Nội — happy) versus *bị đi Hà Nội* (be made to go to Hà Nội — reluctant). Vietnamese makes you state your feelings, and that's what makes these words feel so alive.",
+            "*Bị* is also used to ask how long a complaint has lasted: *Bị mấy ngày rồi?* (\"for how many days?\"). Notice the verb isn't repeated — *bị* alone is enough, since the complaint has already been mentioned."
+          ]
+        },
+        {
+          "title": "Parts of the body",
+          "body": [
+            "To complain, two words are enough: *đau* + the body part. There are no other forms to learn."
+          ],
+          "table": {
+            "head": [
+              "Tiếng Việt",
+              "Meaning",
+              "Tiếng Việt",
+              "Meaning"
+            ],
+            "rows": [
+              [
+                "*đầu*",
+                "head",
+                "*bụng*",
+                "stomach"
+              ],
+              [
+                "*mắt*",
+                "eye",
+                "*lưng*",
+                "back"
+              ],
+              [
+                "*mũi*",
+                "nose",
+                "*tay*",
+                "hand, arm"
+              ],
+              [
+                "*miệng*",
+                "mouth",
+                "*chân*",
+                "foot, leg"
+              ],
+              [
+                "*tai*",
+                "ear",
+                "*tim*",
+                "heart"
+              ],
+              [
+                "*răng*",
+                "tooth",
+                "*họng* / *cổ họng*",
+                "throat"
+              ],
+              [
+                "*cổ*",
+                "neck",
+                "*người*",
+                "body"
+              ]
+            ]
+          },
+          "after": [
+            "⚠️ *Người* means \"person\" **and** \"body\": *Người tôi mệt quá.* = \"my body is so tired\". A word you've known since unit 1 turns out to have a second job — a pattern typical of a language where almost every word is one syllable.",
+            "*Tay* means both hand **and** arm; *chân* means both foot **and** leg. Vietnamese doesn't split them the way English does (*hand/arm*, *foot/leg*) — context tells you which one is meant."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Weather and seasons",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "Tiếng Việt",
+            "Say it",
+            "Meaning",
+            "Tiếng Việt",
+            "Say it",
+            "Meaning"
+          ],
+          "rows": [
+            [
+              "trời mưa",
+              "chời mưa",
+              "it's raining",
+              "trời nắng",
+              "",
+              "sunny and hot"
+            ],
+            [
+              "trời nóng",
+              "chời nóng",
+              "hot weather",
+              "trời lạnh",
+              "",
+              "cold weather"
+            ],
+            [
+              "trời mát",
+              "chời mát",
+              "cool",
+              "trời đẹp",
+              "",
+              "nice weather"
+            ],
+            [
+              "có gió",
+              "kó zó",
+              "windy",
+              "sương mù",
+              "",
+              "foggy"
+            ],
+            [
+              "mùa xuân",
+              "mùa suân",
+              "spring",
+              "mùa hè",
+              "",
+              "summer"
+            ],
+            [
+              "mùa thu",
+              "mùa thu",
+              "fall",
+              "mùa đông",
+              "",
+              "winter"
+            ],
+            [
+              "mùa mưa",
+              "mùa mưa",
+              "rainy season",
+              "mùa khô",
+              "",
+              "dry season"
+            ],
+            [
+              "bão",
+              "bão",
+              "storm, typhoon",
+              "lụt",
+              "",
+              "flood"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "⚠️ **Northern Vietnam has four seasons, the south only two.** Hà Nội gets genuinely cold in *mùa đông* — down to ten degrees Celsius, and homes there rarely have heating, so bring a jacket. Sài Gòn knows only *mùa mưa* and *mùa khô*, like the rest of tropical Southeast Asia. If you're learning the language for travel, this is the difference you'll feel most."
+        },
+        {
+          "type": "p",
+          "text": "*Trở* means \"turn, become\": *trời trở lạnh* (it's turned cold), *trời trở nóng*. And to ask, just say *Hôm nay trời thế nào?* — \"what's the weather like today?\""
+        }
+      ]
+    },
+    {
+      "title": "At the pharmacy and the doctor's",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "Tiếng Việt",
+            "Say it",
+            "English"
+          ],
+          "rows": [
+            [
+              "Em bị đau đầu.",
+              "Em bị dau dầu.",
+              "I have a headache."
+            ],
+            [
+              "Em bị sốt.",
+              "Em bị sốt.",
+              "I have a fever."
+            ],
+            [
+              "Em bị đau bụng.",
+              "Em bị dau bụng.",
+              "I have a stomachache."
+            ],
+            [
+              "Em bị cảm.",
+              "Em bị kảm.",
+              "I have a cold, the flu."
+            ],
+            [
+              "Em bị ho.",
+              "Em bị ho.",
+              "I have a cough."
+            ],
+            [
+              "Em bị dị ứng.",
+              "Em bị zị ứng.",
+              "I have an allergy."
+            ],
+            [
+              "Em mệt quá.",
+              "Em mệt kwá.",
+              "I'm exhausted."
+            ],
+            [
+              "Em uống thuốc thế nào ạ?",
+              "Em uống thuốk thế nào ạ?",
+              "How should I take this medicine?"
+            ],
+            [
+              "Ngày mấy lần ạ?",
+              "Ngày mấy lần ạ?",
+              "How many times a day?"
+            ],
+            [
+              "Có cần đi bác sĩ không ạ?",
+              "Kó kần di bák sĩ không ạ?",
+              "Do I need to see a doctor?"
+            ]
+          ]
+        },
+        {
+          "type": "kotak",
+          "title": "The pharmacy is the first stop",
+          "items": [
+            "In Vietnam, the *hiệu thuốc* (pharmacy) is the first place people go for minor complaints. The pharmacist usually listens to your symptoms and hands you medicine on the spot, and many drugs that need a prescription elsewhere can be bought here. For minor problems it's very convenient; for anything that doesn't improve in two or three days, do go to a *bệnh viện* (hospital) or *phòng khám* (clinic).",
+            "The parting words you'll hear: *Chúc em mau khỏi nhé!* — \"get well soon\". Just answer *Em cảm ơn chị ạ.* And when a friend of yours is sick, this is the sentence they're waiting to hear from you."
+          ]
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "vi": "bị",
+      "en": "suffer (something bad)",
+      "baca": "bị"
+    },
+    {
+      "vi": "đau",
+      "en": "hurt, ache",
+      "baca": "dau"
+    },
+    {
+      "vi": "ốm",
+      "en": "sick (unwell)",
+      "baca": "ốm"
+    },
+    {
+      "vi": "sốt",
+      "en": "fever",
+      "baca": "sốt"
+    },
+    {
+      "vi": "ho",
+      "en": "cough",
+      "baca": "ho"
+    },
+    {
+      "vi": "cảm",
+      "en": "cold, flu",
+      "baca": "kảm"
+    },
+    {
+      "vi": "mệt",
+      "en": "tired",
+      "baca": "mệt"
+    },
+    {
+      "vi": "đầu / bụng",
+      "en": "head / stomach",
+      "baca": "dầu / bụng"
+    },
+    {
+      "vi": "mắt / mũi / tai",
+      "en": "eye / nose / ear",
+      "baca": "mắt / mũi / tai"
+    },
+    {
+      "vi": "tay / chân",
+      "en": "hand, arm / foot, leg",
+      "baca": "tay / chân"
+    },
+    {
+      "vi": "răng",
+      "en": "tooth",
+      "baca": "zăng"
+    },
+    {
+      "vi": "thuốc",
+      "en": "medicine",
+      "baca": "thuốk"
+    },
+    {
+      "vi": "hiệu thuốc",
+      "en": "pharmacy",
+      "baca": "hiệu thuốk"
+    },
+    {
+      "vi": "dược sĩ",
+      "en": "pharmacist",
+      "baca": "zượk sĩ"
+    },
+    {
+      "vi": "khỏi",
+      "en": "recover, get well",
+      "baca": "khỏi"
+    },
+    {
+      "vi": "lần",
+      "en": "time(s)",
+      "baca": "lần"
+    },
+    {
+      "vi": "trời",
+      "en": "sky; weather",
+      "baca": "chời"
+    },
+    {
+      "vi": "mưa / nắng",
+      "en": "rain / sunny",
+      "baca": "mưa / nắng"
+    },
+    {
+      "vi": "nóng / lạnh / mát",
+      "en": "hot / cold / cool",
+      "baca": "nóng / lạng / mát"
+    },
+    {
+      "vi": "gió",
+      "en": "wind",
+      "baca": "zó"
+    },
+    {
+      "vi": "mùa",
+      "en": "season",
+      "baca": "mùa"
+    },
+    {
+      "vi": "thế nào",
+      "en": "how",
+      "baca": "thế nào"
+    },
+    {
+      "vi": "sau khi / trước khi",
+      "en": "after / before",
+      "baca": "sau khi / chướk khi"
+    },
+    {
+      "vi": "nhớ",
+      "en": "remember; miss",
+      "baca": "nyớ"
+    },
+    {
+      "vi": "chắc",
+      "en": "probably, about",
+      "baca": "chắk"
+    }
+  ],
+  "exercises": [
+    {
+      "prompt": "Fill in the blanks with *bị* or *được*.",
+      "items": [
+        "Hôm qua tôi ____ ốm.",
+        "Tuần này tôi ____ nghỉ hai ngày.",
+        "Tôi ____ mất ví rồi.",
+        "Em ____ cô giáo khen.",
+        "Trời mưa, tôi ____ ướt."
+      ]
+    },
+    {
+      "prompt": "Translate into Vietnamese.",
+      "items": [
+        "I have a headache.",
+        "I have a fever and a cough.",
+        "I'm exhausted.",
+        "For how many days?",
+        "How should I take this medicine?",
+        "Get well soon!"
+      ]
+    },
+    {
+      "prompt": "Translate into English.",
+      "items": [
+        "Hôm nay trời thế nào?",
+        "Trời trở lạnh rồi.",
+        "Ngày hai lần, sau khi ăn.",
+        "Chắc tại trời lạnh.",
+        "Có cần đi bác sĩ không ạ?"
+      ]
+    },
+    {
+      "prompt": "Name the body part in Vietnamese.",
+      "items": [
+        "head",
+        "stomach",
+        "tooth",
+        "eye",
+        "hand",
+        "throat"
+      ]
+    }
+  ],
+  "answers": [
+    "bị — được — bị — được — bị",
+    "Em bị đau đầu. — Em bị sốt và ho. — Em mệt quá. — Bị mấy ngày rồi? — Em uống thuốc thế nào ạ? — Chúc anh mau khỏi nhé!",
+    "What's the weather like today? — It's turned cold. — Twice a day, after meals. — Probably because of the cold weather. — Do I need to see a doctor?",
+    "đầu — bụng — răng — mắt — tay — họng"
+  ]
+}
