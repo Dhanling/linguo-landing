@@ -1,0 +1,440 @@
+{
+  "title": "How old are you?",
+  "title_target": "Сколько вам лет? — Skolko vam let?",
+  "goal": "Count to a hundred, give phone numbers and ages — and discover that in Russian your age isn't something you have but something given to you.",
+  "bekal": [
+    "count from 0 to 100",
+    "give and ask for a phone number",
+    "say your age with Мне … лет",
+    "choose год / года / лет to match the number",
+    "use сколько to ask about anything"
+  ],
+  "dialogs": [
+    {
+      "title": "Диалог — Filling in a library card form",
+      "intro": "Ani is signing up at the campus library. The librarian, Нина, fills in the form as she asks questions. Notice that Ani never says \"I am twenty-one\" — in Russian her age is given to her.",
+      "lines": [
+        {
+          "speaker": "Нина:",
+          "text": "[Фамилия|Fa-MEE-li-ya], [имя|EE-mya], [пожалуйста|pa-ZHA-loos-ta].",
+          "id": "Surname and first name, please.",
+          "literal": "surname, name, please."
+        },
+        {
+          "speaker": "Ани:",
+          "text": "[Путри|POOT-ri], [Ани|A-ni].",
+          "id": "Putri, Ani.",
+          "literal": "Putri, Ani."
+        },
+        {
+          "speaker": "Нина:",
+          "text": "[Сколько|SKOL'-ka] [вам|vam] [лет|lyet]?",
+          "id": "How old are you?",
+          "literal": "how-many — to-you — years?"
+        },
+        {
+          "speaker": "Ани:",
+          "text": "[Мне|Mnye] [двадцать|DVA-tsat'] [один|a-DEEN] [год|got].",
+          "id": "I'm twenty-one.",
+          "literal": "to-me — twenty — one — year."
+        },
+        {
+          "speaker": "Нина:",
+          "text": "[Двадцать|DVA-tsat'] [один|a-DEEN]… [хорошо|kha-ra-SHO]. [Ваш|Vash] [телефон|ti-li-FON]?",
+          "id": "Twenty-one… good. Your phone number?",
+          "literal": "twenty — one… good. your — phone?"
+        },
+        {
+          "speaker": "Ани:",
+          "text": "[Восемь|VO-sim'] [девятьсот|di-vit'-SOT] [двенадцать|dvi-NA-tsat'], [триста|TREES-ta] [сорок|SO-rak] [пять|pyat'], [шестьдесят|shys-di-SYAT] [семь|syem'].",
+          "id": "8 912 345 67.",
+          "literal": "eight — nine-hundred — twelve, three-hundred — forty — five, sixty — seven."
+        },
+        {
+          "speaker": "Нина:",
+          "text": "[Медленнее|MYED-li-ni-ye], [пожалуйста|pa-ZHA-loos-ta]! [Ещё|Yi-SHCHO] [раз|ras].",
+          "id": "Slower, please! Once more.",
+          "literal": "slower, please! again — time."
+        },
+        {
+          "speaker": "Ани:",
+          "text": "[Восемь|VO-sim']… [девять|DYE-vit']… [один|a-DEEN]… [два|dva]… [Так|Tak] [легче|LYEKH-chi]?",
+          "id": "Eight… nine… one… two… Is that easier?",
+          "literal": "eight… nine… one… two… so — easier?"
+        },
+        {
+          "speaker": "Нина:",
+          "text": "[Намного|Nam-NO-ga]. [Сколько|SKOL'-ka] [книг|knik] [вы|vy] [хотите|kha-TEE-tye] [взять|vzyat']?",
+          "id": "Much easier. How many books do you want to take?",
+          "literal": "much-more. how-many — books — you — want — to-take?"
+        },
+        {
+          "speaker": "Ани:",
+          "text": "[Три|Tri] [книги|KNEE-gi], [если|YES-li] [можно|MOZH-na].",
+          "id": "Three books, if that's allowed.",
+          "literal": "three — book (special form), if — allowed."
+        },
+        {
+          "speaker": "Нина:",
+          "text": "[Можно|MOZH-na] [пять|pyat'] [книг|knik]. [Вот|Vot] [ваша|VA-sha] [карта|KAR-ta].",
+          "id": "You can take five. Here's your card.",
+          "literal": "allowed — five — books (another form), here-is — your — card."
+        }
+      ],
+      "notes": [
+        "**In Russian your age is given to you, not owned by you.** ⚠️ *Мне двадцать один год* is literally \"to me twenty-one year\". \"I\" becomes **мне** — the dative form — and there is no verb at all. English speakers almost always try *Я двадцать один год* (copying \"I am twenty-one\"), which is wrong, or *У меня двадцать один год* (copying French or Italian \"I have\"), also wrong. Only **Мне … лет** is correct.",
+        "**Год / года / лет — the last digit decides.** This is your first meeting with a big rule that applies to every noun after a number. The grammar box below has the whole rule; learn it through three examples: 21 год, 22 года, 25 лет.",
+        "**Лет is a special form.** Logically it should be годов, but Russian uses лет — an old form of the word лето (summer). So \"twenty-five years\" is literally \"twenty-five summers\". A leftover from the days when people counted their age in summers lived through.",
+        "**Phone numbers in Russia are read in groups, not digit by digit.** The standard pattern is 8-XXX-XXX-XX-XX, and people read it as numbers: *восемь, девятьсот двенадцать, триста сорок пять…*. ⚠️ If you're not fluent yet, reading it digit by digit is perfectly understandable — and often preferred by someone who is writing it down.",
+        "**Сколько is always followed by the genitive plural.** *Сколько книг?* (how many books), *Сколько денег?* (how much money), *Сколько лет?* (how many years). You don't need to master the genitive plural now; just notice that the word after сколько sounds clipped: книга → книг, рубль → рублей.",
+        "**Можно means \"it's allowed\" and stands on its own, without a subject.** *Можно?* by itself means \"may I?\". *Можно пять книг* — you can take five books. The opposite is **нельзя** (not allowed). These two words will save you again and again.",
+        "**Ещё раз** (*yi-SHCHO ras*) — \"once more\". Another lifesaver, a partner to *Повторите, пожалуйста* from Unit 1."
+      ],
+      "grammars": [
+        {
+          "title": "Numbers 0–100",
+          "body": [
+            "The numbers 11–19 all end in **-надцать** (\"on top of ten\") — like English -teen. The tens 50, 60, 70, 80 end in **-десят** (\"ten\") — like English -ty."
+          ],
+          "tables": [
+            {
+              "head": [
+                "",
+                "",
+                "",
+                ""
+              ],
+              "rows": [
+                [
+                  "0 ноль (nol')",
+                  "1 один (a-DEEN)",
+                  "2 два (dva)",
+                  "3 три (tri)"
+                ],
+                [
+                  "4 четыре (chi-TY-ri)",
+                  "5 пять (pyat')",
+                  "6 шесть (shest')",
+                  "7 семь (syem')"
+                ],
+                [
+                  "8 восемь (VO-sim')",
+                  "9 девять (DYE-vit')",
+                  "10 десять (DYE-sit')",
+                  "11 одиннадцать (a-DEE-na-tsat')"
+                ],
+                [
+                  "12 двенадцать (dvi-NA-tsat')",
+                  "13 тринадцать",
+                  "14 четырнадцать",
+                  "15 пятнадцать (pit-NA-tsat')"
+                ],
+                [
+                  "16 шестнадцать",
+                  "17 семнадцать",
+                  "18 восемнадцать",
+                  "19 девятнадцать"
+                ]
+              ]
+            },
+            {
+              "head": [
+                "",
+                "",
+                "",
+                ""
+              ],
+              "rows": [
+                [
+                  "20 двадцать (DVA-tsat')",
+                  "30 тридцать (TREE-tsat')",
+                  "40 сорок (SO-rak) ⚠️",
+                  "50 пятьдесят (pi-di-SYAT)"
+                ],
+                [
+                  "60 шестьдесят (shys-di-SYAT)",
+                  "70 семьдесят (SYEM'-di-sit)",
+                  "80 восемьдесят (VO-sim'-di-sit)",
+                  "90 девяносто (di-vi-NOS-ta) ⚠️"
+                ],
+                [
+                  "100 сто (sto)",
+                  "21 двадцать один",
+                  "35 тридцать пять",
+                  "99 девяносто девять"
+                ]
+              ]
+            }
+          ],
+          "after": [
+            "⚠️ Two numbers break the pattern and must be learned separately: **сорок** (40, not четыредесят) and **девяносто** (90, not девятьдесят). Both are leftovers from an old Russian counting system.",
+            "Compound numbers are simply strung together: 21 = двадцать один, 47 = сорок семь, 100 = сто. No \"and\", no hyphen."
+          ]
+        },
+        {
+          "title": "The number decides the form of the noun ⚠️",
+          "body": [
+            "This rule applies to **every** noun after a number, not just \"year\". What counts is the **last digit**, not the whole number."
+          ],
+          "table": {
+            "head": [
+              "Number ends in",
+              "Noun form",
+              "год (year)",
+              "рубль (ruble)",
+              "книга (book)"
+            ],
+            "rows": [
+              [
+                "**1** (1, 21, 31, 101…) — except 11",
+                "ordinary singular",
+                "1 год",
+                "1 рубль",
+                "1 книга"
+              ],
+              [
+                "**2, 3, 4** (2, 22, 43…) — except 12, 13, 14",
+                "genitive singular",
+                "2 года",
+                "2 рубля",
+                "2 книги"
+              ],
+              [
+                "**5–20, 0** (5, 11, 25, 100…)",
+                "genitive plural",
+                "5 лет",
+                "5 рублей",
+                "5 книг"
+              ]
+            ]
+          },
+          "after": [
+            "⚠️ The numbers 11, 12, 13 and 14 always use the third row even though they end in 1–4: **11 лет**, **12 лет**, **13 лет**, **14 лет**. Don't forget this exception — it happens to cover the school-age years people mention most.",
+            "Full examples: *Мне 1 год. Мне 22 года. Мне 25 лет. Мне 31 год. Мне 44 года. Мне 12 лет.*",
+            "If you really forget the form mid-conversation, just say the number: *Мне двадцать пять.* Russians often do this themselves, and there's nothing wrong with it."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Сколько — the most-used question word",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "Question",
+            "Say it",
+            "Meaning"
+          ],
+          "rows": [
+            [
+              "Сколько вам лет?",
+              "SKOL'-ka vam lyet",
+              "How old are you?"
+            ],
+            [
+              "Сколько это стоит?",
+              "SKOL'-ka E-ta STO-it",
+              "How much is this?"
+            ],
+            [
+              "Сколько времени?",
+              "SKOL'-ka VRYE-mi-ni",
+              "What time is it?"
+            ],
+            [
+              "Сколько человек?",
+              "SKOL'-ka chi-la-VYEK",
+              "How many people?"
+            ],
+            [
+              "Сколько стоит билет?",
+              "SKOL'-ka STO-it bi-LYET",
+              "How much is the ticket?"
+            ]
+          ]
+        },
+        {
+          "type": "kotak",
+          "title": "Numbers in everyday life",
+          "items": [
+            "**House and floor numbers** are read as ordinary numbers: *дом 5, квартира 12, этаж 3*.",
+            "**Prices** use рубль: *сто рублей* (100 rubles), *двести пятьдесят рублей* (250 rubles). Unit 8 covers this fully.",
+            "**Children's ages** most often use лет, since 5–20 covers almost every school age: *Ему 7 лет.* — He's 7.",
+            "⚠️ **Ноль** and **нуль** are both correct for \"zero\", but in phone numbers Russians usually say **ноль**. Same for temperatures: *ноль градусов*."
+          ]
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "ru": "сколько",
+      "baca": "SKOL'-ka",
+      "en": "how many, how much"
+    },
+    {
+      "ru": "мне",
+      "baca": "mnye",
+      "en": "to me (dative)"
+    },
+    {
+      "ru": "вам",
+      "baca": "vam",
+      "en": "to you (polite)"
+    },
+    {
+      "ru": "год / года / лет",
+      "baca": "got / GO-da / lyet",
+      "en": "year (three forms)"
+    },
+    {
+      "ru": "фамилия",
+      "baca": "fa-MEE-li-ya",
+      "en": "surname"
+    },
+    {
+      "ru": "телефон",
+      "baca": "ti-li-FON",
+      "en": "telephone"
+    },
+    {
+      "ru": "номер",
+      "baca": "NO-mir",
+      "en": "number"
+    },
+    {
+      "ru": "карта",
+      "baca": "KAR-ta",
+      "en": "card, map"
+    },
+    {
+      "ru": "билет",
+      "baca": "bi-LYET",
+      "en": "ticket"
+    },
+    {
+      "ru": "деньги",
+      "baca": "DYEN'-gi",
+      "en": "money"
+    },
+    {
+      "ru": "рубль",
+      "baca": "roobl'",
+      "en": "ruble"
+    },
+    {
+      "ru": "человек",
+      "baca": "chi-la-VYEK",
+      "en": "person"
+    },
+    {
+      "ru": "хотеть",
+      "baca": "kha-TYET'",
+      "en": "to want"
+    },
+    {
+      "ru": "взять",
+      "baca": "vzyat'",
+      "en": "to take, to borrow"
+    },
+    {
+      "ru": "можно / нельзя",
+      "baca": "MOZH-na / nil'-ZYA",
+      "en": "allowed / not allowed"
+    },
+    {
+      "ru": "если",
+      "baca": "YES-li",
+      "en": "if"
+    },
+    {
+      "ru": "ещё раз",
+      "baca": "yi-SHCHO ras",
+      "en": "once more"
+    },
+    {
+      "ru": "медленнее",
+      "baca": "MYED-li-ni-ye",
+      "en": "slower"
+    },
+    {
+      "ru": "легче",
+      "baca": "LYEKH-chi",
+      "en": "easier"
+    },
+    {
+      "ru": "намного",
+      "baca": "nam-NO-ga",
+      "en": "much (more)"
+    },
+    {
+      "ru": "квартира",
+      "baca": "kvar-TEE-ra",
+      "en": "apartment"
+    },
+    {
+      "ru": "этаж",
+      "baca": "e-TASH",
+      "en": "floor (story)"
+    },
+    {
+      "ru": "так",
+      "baca": "tak",
+      "en": "so, like that"
+    }
+  ],
+  "exercises": [
+    {
+      "prompt": "Write the numbers in Cyrillic.",
+      "items": [
+        "7 — ____",
+        "15 — ____",
+        "40 — ____",
+        "62 — ____",
+        "90 — ____",
+        "100 — ____"
+      ]
+    },
+    {
+      "prompt": "Choose год, года or лет.",
+      "items": [
+        "Мне 21 ____",
+        "Мне 23 ____",
+        "Мне 30 ____",
+        "Мне 12 ____",
+        "Ему 4 ____",
+        "Ей 45 ____"
+      ]
+    },
+    {
+      "prompt": "Put the words in the right order.",
+      "items": [
+        "вам / сколько / лет / ?",
+        "мне / лет / двадцать / пять",
+        "это / сколько / стоит / ?",
+        "раз / ещё / пожалуйста",
+        "книги / хочу / три / я"
+      ]
+    },
+    {
+      "prompt": "Translate into Russian.",
+      "items": [
+        "How old are you? (polite)",
+        "I'm twenty-one.",
+        "He's seven.",
+        "Slower, please.",
+        "May I have five books?",
+        "How much is this?"
+      ]
+    }
+  ],
+  "answers": [
+    "семь — пятнадцать — сорок — шестьдесят два — девяносто — сто",
+    "год — года — лет — лет — года — лет",
+    "Сколько вам лет? — Мне двадцать пять лет. — Сколько это стоит? — Ещё раз, пожалуйста. — Я хочу три книги.",
+    "Сколько вам лет? — Мне двадцать один год. — Ему семь лет. — Медленнее, пожалуйста. — Можно пять книг? — Сколько это стоит?"
+  ]
+}

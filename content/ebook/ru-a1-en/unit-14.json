@@ -1,0 +1,442 @@
+{
+  "title": "Yesterday I… — and verbs that know your gender",
+  "title_target": "Вчера и завтра — Vchera i zavtra",
+  "goal": "Talk about what has happened and what will happen, and face one of the most famous traps: Russian past-tense verbs agree with the speaker's gender.",
+  "bekal": [
+    "form past-tense verbs for men, women, and plurals",
+    "use был / была / были correctly",
+    "build future sentences with буду + verb",
+    "negate past sentences with не было",
+    "tell what happened yesterday, in order"
+  ],
+  "dialogs": [
+    {
+      "title": "Диалог — Monday morning after the weekend",
+      "intro": "Марко and Ani swap stories about their weekends. Notice that Ani and Марко use different past-tense endings for the same action.",
+      "lines": [
+        {
+          "speaker": "Марко:",
+          "text": "[Привет|Pri-VYET]! [Где|Gdye] [ты|ty] [была|by-LA] [в|f] [субботу|soo-BO-too]?",
+          "id": "Hi! Where were you on Saturday?",
+          "literal": "hi! where — you — was (past f) — on — Saturday?"
+        },
+        {
+          "speaker": "Ани:",
+          "text": "[Я|Ya] [была|by-LA] [дома|DO-ma]. [Я|Ya] [работала|ra-BO-ta-la] [весь|vyes'] [день|dyen'].",
+          "id": "I was at home. I worked all day.",
+          "literal": "I — was (f) — at-home. I — worked (f) — whole — day."
+        },
+        {
+          "speaker": "Марко:",
+          "text": "[А|A] [я|ya] [был|byl] [в|f] [центре|TSENT-rye]. [Гулял|Goo-LYAL] [и|ee] [фотографировал|fa-ta-gra-FEE-ra-val].",
+          "id": "I was downtown. I walked around and took photos.",
+          "literal": "and — I — was (m) — in — center. strolled (m) — and — photographed (m)."
+        },
+        {
+          "speaker": "Ани:",
+          "text": "[Было|BY-la] [холодно|KHO-lad-na]?",
+          "id": "Was it cold?",
+          "literal": "was (n) — cold?"
+        },
+        {
+          "speaker": "Марко:",
+          "text": "[Очень|O-chin']! [Минус|MEE-noos] [пятнадцать|pit-NA-tsat']. [Но|No] [было|BY-la] [красиво|kra-SEE-va].",
+          "id": "Very! Minus fifteen. But beautiful.",
+          "literal": "very! minus — fifteen. but — was — beautiful."
+        },
+        {
+          "speaker": "Ани:",
+          "text": "[Ты|Ty] [не|nye] [замёрз|za-MYORS]?",
+          "id": "Didn't you freeze?",
+          "literal": "you — not — froze (m)?"
+        },
+        {
+          "speaker": "Марко:",
+          "text": "[Замёрз|Za-MYORS]. [Потом|Pa-TOM] [пил|pil] [горячий|ga-RYA-chiy] [чай|chay] [два|dva] [часа|chi-SA].",
+          "id": "I did. Then I drank hot tea for two hours.",
+          "literal": "froze. then — drank (m) — hot — tea — two — hours."
+        },
+        {
+          "speaker": "Ани:",
+          "text": "[У|Oo] [меня|mi-NYA] [не|nye] [было|BY-la] [времени|VRYE-mi-ni] [гулять|goo-LYAT']. [Экзамен|Ek-ZA-min] [в|v] [пятницу|PYAT-ni-tsoo].",
+          "id": "I didn't have time to go out. The exam is on Friday.",
+          "literal": "at — me — not — was — time — to-stroll. exam — on — Friday."
+        },
+        {
+          "speaker": "Марко:",
+          "text": "[Ой|Oy]. [Тогда|Tag-DA] [что|shto] [ты|ty] [будешь|BOO-dish] [делать|DYE-lat'] [в|v] [выходные|vy-khad-NY-ye]?",
+          "id": "Oh no. So what will you do this weekend?",
+          "literal": "oh. then — what — you — will — do — on — weekend?"
+        },
+        {
+          "speaker": "Ани:",
+          "text": "[Буду|BOO-doo] [спать|spat']. [Долго|DOL-ga]. [Потом|Pa-TOM] [буду|BOO-doo] [есть|yest']. [Потом|Pa-TOM] [опять|a-PYAT'] [спать|spat'].",
+          "id": "Sleep. For a long time. Then eat. Then sleep again.",
+          "literal": "will — sleep. long. then — will — eat. then — again — sleep."
+        },
+        {
+          "speaker": "Марко:",
+          "text": "[Отличный|At-LEECH-nyy] [план|plan]. [Я|Ya] [буду|BOO-doo] [готовить|ga-TO-vit']. [Приходи|Pri-kha-DEE].",
+          "id": "Great plan. I'll be cooking. Come over.",
+          "literal": "excellent — plan. I — will — cook. come."
+        }
+      ],
+      "notes": [
+        "**Past-tense verbs agree with the gender of the doer, not the pronoun.** ⚠️ This is the most famous beginner trap in Russian. The endings: **-л** (masculine singular), **-ла** (feminine singular), **-ло** (neuter), **-ли** (plural). A woman who says *я был* immediately sounds wrong — it should be **я была**. Notice that я, ты, and он all take -л if the doer is male; the pronoun doesn't decide.",
+        "**Forming it is very easy: drop -ть, add -л/-ла/-ло/-ли.** работа**ть** → работал, работала, работали. дела**ть** → делал, делала, делали. говори**ть** → говорил, говорила, говорили. Almost no exceptions — much easier than the present tense with its six endings.",
+        "**Быть (to be) is absent in the present tense, but REQUIRED in the past.** *Я студентка* (now, no verb) but *Я **была** студенткой* (back then). *Я дома* but *Я **был** дома*. ⚠️ Leaving out был/была in a past sentence is a mistake; verbless sentences only work in the present.",
+        "**Было is used in sentences with no subject.** *Было холодно* (it was cold), *Было красиво* (it was beautiful), *Было трудно* (it was hard). The neuter form **было** is used because nobody and nothing is the doer — like English \"it.\"",
+        "**Saying something didn't exist in the past uses не было — always the neuter form.** *У меня **не было** времени* (I didn't have time), *У неё **не было** денег* (she didn't have any money). ⚠️ Even if the missing thing is feminine or plural, the form stays **не было**, and the noun goes into the genitive. Compare the positive sentences, which change: *У меня был**а** книга*, *У меня был**и** деньги*.",
+        "**The future is built with буду + the dictionary form.** *Я **буду** работать* (I will work), *Я **буду** спать* (I will sleep). This буду is exactly what you used to order in the café in Unit 8. Endings: буду, будешь, будет, будем, будете, будут.",
+        "**Замёрз is the irregular past of замёрзнуть (to freeze).** Some verbs drop -л in the masculine form: замёрз (not замёрзл), мог (could), шёл (walked). The feminine and plural forms are normal: замёрзла, могла, шла."
+      ],
+      "grammars": [
+        {
+          "title": "The past tense — one rule, four endings",
+          "body": [
+            "Drop **-ть** from the dictionary form and add the ending that matches the doer's gender and number."
+          ],
+          "table": {
+            "head": [
+              "Doer",
+              "Ending",
+              "работать",
+              "быть",
+              "жить"
+            ],
+            "rows": [
+              [
+                "он / я (m) / ты (m)",
+                "**-л**",
+                "работал",
+                "был (byl)",
+                "жил"
+              ],
+              [
+                "она / я (f) / ты (f)",
+                "**-ла**",
+                "работала",
+                "была (by-LA)",
+                "жила (zhy-LA)"
+              ],
+              [
+                "оно",
+                "**-ло**",
+                "работало",
+                "было (BY-la)",
+                "жило"
+              ],
+              [
+                "мы / вы / они",
+                "**-ли**",
+                "работали",
+                "были (BY-li)",
+                "жили"
+              ]
+            ]
+          },
+          "after": [
+            "⚠️ Notice how the stress moves in быть: **был** (BYL) but **была** (by-LA), **было** (BY-la), **были** (BY-li). Only the feminine form is stressed on the ending. This odd pattern shows up in some other short verbs too: жил / жи**ла**, пил / пи**ла**.",
+            "To negate: put **не** in front, as usual. *Я не работал вчера.* — I didn't work yesterday."
+          ]
+        },
+        {
+          "title": "The future with буду",
+          "body": [
+            "The helper verb **быть** in its future form, followed by the dictionary form of the verb."
+          ],
+          "table": {
+            "head": [
+              "Person",
+              "Form",
+              "Say it",
+              "Example"
+            ],
+            "rows": [
+              [
+                "я",
+                "буду",
+                "BOO-doo",
+                "Я буду работать."
+              ],
+              [
+                "ты",
+                "будешь",
+                "BOO-dish",
+                "Ты будешь спать?"
+              ],
+              [
+                "он / она",
+                "будет",
+                "BOO-dit",
+                "Она будет готовить."
+              ],
+              [
+                "мы",
+                "будем",
+                "BOO-dim",
+                "Мы будем учиться."
+              ],
+              [
+                "вы",
+                "будете",
+                "BOO-di-tye",
+                "Вы будете дома?"
+              ],
+              [
+                "они",
+                "будут",
+                "BOO-doot",
+                "Они будут работать."
+              ]
+            ]
+          },
+          "after": [
+            "Буду is also used on its own, with no other verb, meaning \"will be\": *Я буду дома в семь.* — I'll be home at seven. *Завтра будет холодно.* — It will be cold tomorrow.",
+            "⚠️ Russian has a second way to talk about the future, using perfective verbs (*Я сделаю* — I'll get it done). That's covered in Unit 20. For now, **буду + verb** always works and is always correct."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Talking about yesterday",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "Русский",
+            "Say it",
+            "English"
+          ],
+          "rows": [
+            [
+              "вчера",
+              "fchi-RA",
+              "yesterday"
+            ],
+            [
+              "позавчера",
+              "pa-zaf-chi-RA",
+              "the day before yesterday"
+            ],
+            [
+              "на прошлой неделе",
+              "na PROSH-lay ni-DYE-lye",
+              "last week"
+            ],
+            [
+              "в прошлом месяце",
+              "f PROSH-lam MYE-si-tsy",
+              "last month"
+            ],
+            [
+              "в прошлом году",
+              "f PROSH-lam ga-DOO",
+              "last year"
+            ],
+            [
+              "давно",
+              "dav-NO",
+              "a long time ago"
+            ],
+            [
+              "недавно",
+              "ni-DAV-na",
+              "recently"
+            ],
+            [
+              "раньше",
+              "RAN'-shy",
+              "earlier, before"
+            ],
+            [
+              "завтра",
+              "ZAF-tra",
+              "tomorrow"
+            ],
+            [
+              "послезавтра",
+              "pos-lye-ZAF-tra",
+              "the day after tomorrow"
+            ],
+            [
+              "на следующей неделе",
+              "na SLYE-doo-yu-shchyy ni-DYE-lye",
+              "next week"
+            ],
+            [
+              "скоро",
+              "SKO-ra",
+              "soon"
+            ]
+          ]
+        },
+        {
+          "type": "kotak",
+          "title": "The most common past-tense phrases",
+          "items": [
+            "**Где ты был? / Где ты была?** — Where were you? (to a man / a woman). One of the most common questions, and one of the places where gender mistakes are heard most often.",
+            "**Я не знал / Я не знала.** — I didn't know. A lifesaver phrase to learn in both forms.",
+            "**Что случилось?** (*shto sloo-CHEE-las'*) — What happened?",
+            "**Извините, я опоздал / опоздала.** — Sorry, I'm late.",
+            "**У меня не было времени.** — I didn't have time. Notice **не было**, which never changes."
+          ]
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "ru": "был / была / были",
+      "baca": "byl / by-LA / BY-li",
+      "en": "was, were (past of \"to be\")"
+    },
+    {
+      "ru": "не было",
+      "baca": "NYE by-la",
+      "en": "there wasn't / weren't"
+    },
+    {
+      "ru": "буду / будешь / будет",
+      "baca": "BOO-doo / BOO-dish / BOO-dit",
+      "en": "will"
+    },
+    {
+      "ru": "вчера / завтра",
+      "baca": "fchi-RA / ZAF-tra",
+      "en": "yesterday / tomorrow"
+    },
+    {
+      "ru": "прошлый / следующий",
+      "baca": "PROSH-lyy / SLYE-doo-yu-shchiy",
+      "en": "last / next"
+    },
+    {
+      "ru": "раньше",
+      "baca": "RAN'-shy",
+      "en": "earlier, before"
+    },
+    {
+      "ru": "давно / недавно",
+      "baca": "dav-NO / ni-DAV-na",
+      "en": "long ago / recently"
+    },
+    {
+      "ru": "скоро",
+      "baca": "SKO-ra",
+      "en": "soon"
+    },
+    {
+      "ru": "долго",
+      "baca": "DOL-ga",
+      "en": "for a long time"
+    },
+    {
+      "ru": "опять / снова",
+      "baca": "a-PYAT' / SNO-va",
+      "en": "again"
+    },
+    {
+      "ru": "гулять",
+      "baca": "goo-LYAT'",
+      "en": "to stroll, walk around"
+    },
+    {
+      "ru": "фотографировать",
+      "baca": "fa-ta-gra-FEE-ra-vat'",
+      "en": "to take photos"
+    },
+    {
+      "ru": "холодно / жарко",
+      "baca": "KHO-lad-na / ZHAR-ka",
+      "en": "cold / hot"
+    },
+    {
+      "ru": "горячий",
+      "baca": "ga-RYA-chiy",
+      "en": "hot (of things)"
+    },
+    {
+      "ru": "замёрзнуть",
+      "baca": "za-MYORZ-noot'",
+      "en": "to freeze, get cold"
+    },
+    {
+      "ru": "весь день",
+      "baca": "vyes' dyen'",
+      "en": "all day"
+    },
+    {
+      "ru": "план",
+      "baca": "plan",
+      "en": "plan"
+    },
+    {
+      "ru": "случиться",
+      "baca": "sloo-CHEE-tsa",
+      "en": "to happen"
+    },
+    {
+      "ru": "опоздать",
+      "baca": "a-paz-DAT'",
+      "en": "to be late"
+    },
+    {
+      "ru": "приходить",
+      "baca": "pri-kha-DEET'",
+      "en": "to come"
+    }
+  ],
+  "exercises": [
+    {
+      "prompt": "Put the verb in the past tense to match the doer.",
+      "items": [
+        "Я (woman) ____ (быть) дома.",
+        "Он ____ (работать) вчера.",
+        "Мы ____ (жить) в Москве.",
+        "Она ____ (говорить) по-русски.",
+        "Я (man) ____ (гулять) в центре.",
+        "Они ____ (учиться) здесь."
+      ]
+    },
+    {
+      "prompt": "Change to the future with буду.",
+      "items": [
+        "Я работаю. → Я ____",
+        "Она готовит. → Она ____",
+        "Мы учимся. → Мы ____",
+        "Ты спишь? → Ты ____ ?",
+        "Они отдыхают. → Они ____"
+      ]
+    },
+    {
+      "prompt": "Put the words in the right order.",
+      "items": [
+        "была / где / ты / ?",
+        "холодно / было / очень",
+        "не / времени / у / было / меня",
+        "буду / завтра / я / дома",
+        "весь / работала / день / я"
+      ]
+    },
+    {
+      "prompt": "Translate into Russian. Watch the speaker's gender.",
+      "items": [
+        "Where were you on Saturday? (to a woman)",
+        "I was at home. (a woman speaking)",
+        "I was downtown. (a man speaking)",
+        "It was very cold.",
+        "I didn't have time.",
+        "Tomorrow I'll sleep for a long time."
+      ]
+    }
+  ],
+  "answers": [
+    "была — работал — жили — говорила — гулял — учились",
+    "буду работать — будет готовить — будем учиться — будешь спать — будут отдыхать",
+    "Где ты была? — Было очень холодно. — У меня не было времени. — Завтра я буду дома. — Я работала весь день.",
+    "Где ты была в субботу? — Я была дома. — Я был в центре. — Было очень холодно. — У меня не было времени. — Завтра я буду долго спать."
+  ]
+}

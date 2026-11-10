@@ -1,0 +1,445 @@
+{
+  "title": "What's this? The wardrobe is a \"he\"",
+  "title_target": "Что это? — Shto eta?",
+  "goal": "Ask about and name the things around you, then accept the first big fact of Russian: every noun has a gender, including tables, windows and milk.",
+  "bekal": [
+    "ask \"what is this?\" and \"who is this?\"",
+    "name the things in a room",
+    "tell a noun's gender from its last letter",
+    "use он / она / оно for objects",
+    "tell это and вот apart"
+  ],
+  "dialogs": [
+    {
+      "title": "Диалог — Seeing the room",
+      "intro": "Ani has just moved into a dormitory. The warden, Ольга Петровна, shows her to her room. Notice that the things in the room are called \"he\" and \"she\" — and not always the same one.",
+      "lines": [
+        {
+          "speaker": "Ольга:",
+          "text": "[Вот|Vot] [ваша|VA-sha] [комната|KOM-na-ta].",
+          "id": "Here's your room.",
+          "literal": "here-is — your (fem) — room."
+        },
+        {
+          "speaker": "Ани:",
+          "text": "[Спасибо|Spa-SEE-ba]! [А|A] [что|shto] [это|E-ta]?",
+          "id": "Thank you! And what's this?",
+          "literal": "thank-you! and — what — this?"
+        },
+        {
+          "speaker": "Ольга:",
+          "text": "[Это|E-ta] [шкаф|shkaf]. [Он|On] [большой|bal'-SHOY].",
+          "id": "It's a wardrobe. It's big.",
+          "literal": "this — wardrobe. he — big."
+        },
+        {
+          "speaker": "Ани:",
+          "text": "[Он|On]? [Шкаф|Shkaf] — [он|on]?",
+          "id": "He? The wardrobe is a \"he\"?",
+          "literal": "he? wardrobe — he?"
+        },
+        {
+          "speaker": "Ольга:",
+          "text": "[Да|Da], [шкаф|shkaf] — [он|on]. [А|A] [кровать|kra-VAT'] — [она|a-NA]. [А|A] [окно|ak-NO] — [оно|a-NO].",
+          "id": "Yes, the wardrobe is \"he\". The bed is \"she\". The window is \"it\".",
+          "literal": "yes, wardrobe — he. and — bed — she. and — window — it."
+        },
+        {
+          "speaker": "Ани:",
+          "text": "[Понятно|Pa-NYAT-na]… [кажется|KA-zhy-tsa].",
+          "id": "I see… I think.",
+          "literal": "clear… it-seems."
+        },
+        {
+          "speaker": "Ольга:",
+          "text": "[Не|Nye] [волнуйтесь|val-NOOY-tyes']. [Это|E-ta] [просто|PROS-ta]: [смотрите|smat-REE-tye] [на|na] [последнюю|pas-LYED-nyu-yu] [букву|BOOK-voo].",
+          "id": "Don't worry. It's simple: look at the last letter.",
+          "literal": "not — worry. this — simple: look — at — last — letter."
+        },
+        {
+          "speaker": "Ани:",
+          "text": "[А|A] [кто|kto] [это|E-ta]? [На|Na] [фотографии|fa-ta-GRA-fi-i].",
+          "id": "And who's this? In the photo.",
+          "literal": "and — who — this? on — photo."
+        },
+        {
+          "speaker": "Ольга:",
+          "text": "[Это|E-ta] [Пушкин|POOSH-kin]. [Он|On] [поэт|pa-ET].",
+          "id": "That's Pushkin. He's a poet.",
+          "literal": "this — Pushkin. he — poet."
+        },
+        {
+          "speaker": "Ани:",
+          "text": "[Он|On] [здесь|zdyes'] [жил|zhyl]?",
+          "id": "Did he live here?",
+          "literal": "he — here — lived (past m)?"
+        },
+        {
+          "speaker": "Ольга:",
+          "text": "[Нет|Nyet]! [Он|On] [везде|viz-DYE]. [Это|E-ta] [Россия|ra-SEE-ya].",
+          "id": "No! He's everywhere. This is Russia.",
+          "literal": "no! he — everywhere. this — Russia."
+        }
+      ],
+      "notes": [
+        "**Что это? for things, Кто это? for people.** Just like English \"what\" and \"who\", so the split feels natural right away. ⚠️ The trap is the pronunciation: **что** is said *shto*, not *chto*. The ч in this word — and in **конечно** (*ka-NYESH-na*, of course) — is said *sh*. Those are the only two words you need to remember at A1.",
+        "**Это means \"this/that/it\" as a general pointer, and its form never changes.** *Это шкаф*, *Это кровать*, *Это окно* — the same это for all three genders. It only changes when used as an adjective (*этот шкаф* — this wardrobe), which isn't covered in this unit.",
+        "**Вот is not the same as Это.** Вот is used while pointing at or handing over something — \"here it is\", \"here you go\", \"there it is\". Это identifies — \"this is\". *Вот ваша комната* = \"here's your room\" (opening the door). *Это ваша комната* = \"this is your room\" (explaining).",
+        "**Even objects are \"he\" or \"she\".** ⚠️ This is the big surprise for English speakers, whose objects are all \"it\". In Russian a wardrobe is *он*, a bed is *она*, a window is *оно* — and you have to follow suit to be understood. There is no hidden meaning: nobody thinks a wardrobe is more manly than a bed. It's pure grammar.",
+        "**The good news: you can read the gender from the last letter**, and the rule covers more than ninety percent of nouns. The grammar box below contains the whole rule — it really is that short.",
+        "**Понятно** (*pa-NYAT-na*) is a word you'll use constantly: \"got it\", \"clear\", \"I see\". The opposite is **Непонятно** — \"not clear\".",
+        "**Он жил — past-tense verbs follow the gender of the subject.** It's not time for the full story yet (Unit 14), but notice it now: if the person who lived there were a woman, the sentence would be *она жи**ла***. The ending **-л** for a man, **-ла** for a woman."
+      ],
+      "grammars": [
+        {
+          "title": "Three noun genders — read from the last letter",
+          "body": [
+            "Look at the **very last** letter of the dictionary form. That's all. You don't need to know what the word means or where it comes from."
+          ],
+          "table": {
+            "head": [
+              "Ends in",
+              "Gender",
+              "Pronoun",
+              "Examples"
+            ],
+            "rows": [
+              [
+                "a consonant (б, в, г, д, к, м, н, п, р, с, т, ф…)",
+                "masculine",
+                "он",
+                "шкаф (wardrobe), стол (table), дом (house), журнал (magazine)"
+              ],
+              [
+                "-а or -я",
+                "feminine",
+                "она",
+                "комната (room), книга (book), Россия (Russia), неделя (week)"
+              ],
+              [
+                "-о or -е",
+                "neuter",
+                "оно",
+                "окно (window), молоко (milk), море (sea), кафе (café)"
+              ],
+              [
+                "-ь (soft sign)",
+                "either ⚠️",
+                "он or она",
+                "кровать (bed, **fem**), словарь (dictionary, **masc**)"
+              ]
+            ]
+          },
+          "after": [
+            "⚠️ Words ending in **-ь** are the one hole in the system: the last letter tells you nothing, so the gender has to be learned with the word. Luckily there aren't many at A1. In this course such words are always marked **(f)** or **(m)** in the vocabulary tables.",
+            "For people, the gender follows the person's sex, and that beats the last letter: **папа** (dad) ends in -а but is still **он**. Same for **мужчина** (man).",
+            "Why this matters from day one: everything that comes next — adjectives, possessives, case endings, past tense — depends on the noun's gender. Get the gender wrong here and everything downstream goes wrong too."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Things around you",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "The most useful practice for this unit: walk around your own room naming every object with its pronoun. *Стол — он. Дверь — она. Окно — оно.* Five minutes a day for a week, and noun gender stops feeling strange."
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Русский",
+            "Say it",
+            "English",
+            "Gender"
+          ],
+          "rows": [
+            [
+              "стол",
+              "stol",
+              "table",
+              "он"
+            ],
+            [
+              "стул",
+              "stool",
+              "chair",
+              "он"
+            ],
+            [
+              "шкаф",
+              "shkaf",
+              "wardrobe",
+              "он"
+            ],
+            [
+              "телефон",
+              "ti-li-FON",
+              "telephone",
+              "он"
+            ],
+            [
+              "компьютер",
+              "kam-P'YU-ter",
+              "computer",
+              "он"
+            ],
+            [
+              "дом",
+              "dom",
+              "house",
+              "он"
+            ],
+            [
+              "комната",
+              "KOM-na-ta",
+              "room",
+              "она"
+            ],
+            [
+              "книга",
+              "KNEE-ga",
+              "book",
+              "она"
+            ],
+            [
+              "ручка",
+              "ROOCH-ka",
+              "pen",
+              "она"
+            ],
+            [
+              "сумка",
+              "SOOM-ka",
+              "bag",
+              "она"
+            ],
+            [
+              "дверь (f)",
+              "dvyer'",
+              "door",
+              "она"
+            ],
+            [
+              "кровать (f)",
+              "kra-VAT'",
+              "bed",
+              "она"
+            ],
+            [
+              "окно",
+              "ak-NO",
+              "window",
+              "оно"
+            ],
+            [
+              "письмо",
+              "pis'-MO",
+              "letter",
+              "оно"
+            ],
+            [
+              "море",
+              "MO-rye",
+              "sea",
+              "оно"
+            ]
+          ]
+        },
+        {
+          "type": "kotak",
+          "title": "Loanwords: a free gift",
+          "items": [
+            "Russian has absorbed thousands of international words, and you already know what many of them mean before learning anything: **телефон**, **компьютер**, **такси**, **банк**, **отель**, **интернет**, **офис**, **кофе**, **аэропорт**, **паспорт**, **музыка**, **студент**.",
+            "All you need to practice is reading them in Cyrillic and putting the stress in the right place — often **not** where English puts it. Compare English *TEL-e-phone* with Russian **ti-li-FON**, and *com-PU-ter* with **kam-P'YU-ter**.",
+            "⚠️ One trap: **кофе** (coffee) ends in -е, so by the rule it should be neuter — but it's **masculine**, a leftover from its old form кофей. Russians themselves argue about it. Use *он* and you're safe."
+          ]
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "ru": "что",
+      "baca": "shto",
+      "en": "what"
+    },
+    {
+      "ru": "кто",
+      "baca": "kto",
+      "en": "who"
+    },
+    {
+      "ru": "это",
+      "baca": "E-ta",
+      "en": "this, that, it (pointer)"
+    },
+    {
+      "ru": "вот",
+      "baca": "vot",
+      "en": "here is, here you go (pointing)"
+    },
+    {
+      "ru": "здесь",
+      "baca": "zdyes'",
+      "en": "here"
+    },
+    {
+      "ru": "там",
+      "baca": "tam",
+      "en": "there"
+    },
+    {
+      "ru": "комната",
+      "baca": "KOM-na-ta",
+      "en": "room"
+    },
+    {
+      "ru": "шкаф",
+      "baca": "shkaf",
+      "en": "wardrobe"
+    },
+    {
+      "ru": "кровать (f)",
+      "baca": "kra-VAT'",
+      "en": "bed"
+    },
+    {
+      "ru": "окно",
+      "baca": "ak-NO",
+      "en": "window"
+    },
+    {
+      "ru": "дверь (f)",
+      "baca": "dvyer'",
+      "en": "door"
+    },
+    {
+      "ru": "стол",
+      "baca": "stol",
+      "en": "table"
+    },
+    {
+      "ru": "стул",
+      "baca": "stool",
+      "en": "chair"
+    },
+    {
+      "ru": "книга",
+      "baca": "KNEE-ga",
+      "en": "book"
+    },
+    {
+      "ru": "словарь (m)",
+      "baca": "sla-VAR'",
+      "en": "dictionary"
+    },
+    {
+      "ru": "фотография",
+      "baca": "fa-ta-GRA-fi-ya",
+      "en": "photo"
+    },
+    {
+      "ru": "буква",
+      "baca": "BOOK-va",
+      "en": "letter (of the alphabet)"
+    },
+    {
+      "ru": "последний",
+      "baca": "pas-LYED-niy",
+      "en": "last"
+    },
+    {
+      "ru": "большой",
+      "baca": "bal'-SHOY",
+      "en": "big"
+    },
+    {
+      "ru": "маленький",
+      "baca": "MA-lin'-kiy",
+      "en": "small"
+    },
+    {
+      "ru": "поэт",
+      "baca": "pa-ET",
+      "en": "poet"
+    },
+    {
+      "ru": "понятно",
+      "baca": "pa-NYAT-na",
+      "en": "understood, clear"
+    },
+    {
+      "ru": "просто",
+      "baca": "PROS-ta",
+      "en": "simple, easy"
+    },
+    {
+      "ru": "кажется",
+      "baca": "KA-zhy-tsa",
+      "en": "it seems, I think"
+    },
+    {
+      "ru": "везде",
+      "baca": "viz-DYE",
+      "en": "everywhere"
+    },
+    {
+      "ru": "Россия",
+      "baca": "ra-SEE-ya",
+      "en": "Russia"
+    }
+  ],
+  "exercises": [
+    {
+      "prompt": "Write the pronoun: он, она or оно.",
+      "items": [
+        "стол — ____",
+        "книга — ____",
+        "окно — ____",
+        "телефон — ____",
+        "комната — ____",
+        "море — ____"
+      ]
+    },
+    {
+      "prompt": "Fill in что or кто.",
+      "items": [
+        "____ это? — Это Пушкин.",
+        "____ это? — Это шкаф.",
+        "____ это? — Это моя сестра.",
+        "____ это? — Это письмо.",
+        "____ это? — Это врач."
+      ]
+    },
+    {
+      "prompt": "Put the words in the right order.",
+      "items": [
+        "это / что / ?",
+        "шкаф / это",
+        "большой / он",
+        "комната / ваша / вот",
+        "поэт / он"
+      ]
+    },
+    {
+      "prompt": "Translate into Russian.",
+      "items": [
+        "What's this?",
+        "This is a door.",
+        "The door is small.",
+        "Who's this?",
+        "That's a doctor.",
+        "Here's your book. (to a friend)"
+      ]
+    }
+  ],
+  "answers": [
+    "он — она — оно — он — она — оно",
+    "Кто — Что — Кто — Что — Кто",
+    "Что это? — Это шкаф. — Он большой. — Вот ваша комната. — Он поэт.",
+    "Что это? — Это дверь. — Она маленькая. — Кто это? — Это врач. — Вот твоя книга."
+  ]
+}

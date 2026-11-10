@@ -1,0 +1,478 @@
+{
+  "title": "At the shop: prices, quantities and \"there isn't any\"",
+  "title_target": "В магазине — V magazine",
+  "goal": "Shop with confidence: ask prices, give quantities, and say that something isn't there — which in Russian means yet another change of noun ending.",
+  "bekal": [
+    "ask about and understand prices",
+    "use много, мало, немного with the right form",
+    "say \"there isn't any\" with нет + genitive",
+    "name the usual packs and measures in Russian shops",
+    "bargain politely at the market"
+  ],
+  "dialogs": [
+    {
+      "title": "Диалог — The weekly shop",
+      "intro": "Ani is shopping at a small store near the dorm. Watch the nouns change their endings three times: after a number, after много, and after нет.",
+      "lines": [
+        {
+          "speaker": "Ани:",
+          "text": "[Здравствуйте|Zdrast-vooy-tye]! [Сколько|SKOL'-ka] [стоит|STO-it] [хлеб|khlyep]?",
+          "id": "Hello! How much is the bread?",
+          "literal": "hello! how-much — costs — bread?"
+        },
+        {
+          "speaker": "Продавец:",
+          "text": "[Чёрный|CHOR-nyy] — [сорок|SO-rak] [пять|pyat'] [рублей|roob-LYEY], [белый|BYE-lyy] — [пятьдесят|pi-di-SYAT].",
+          "id": "The dark one is 45 rubles, the white one 50.",
+          "literal": "black — forty — five — rubles, white — fifty."
+        },
+        {
+          "speaker": "Ани:",
+          "text": "[Один|A-DEEN] [чёрный|CHOR-nyy], [пожалуйста|pa-ZHA-loos-ta]. [И|Ee] [молоко|ma-la-KO] [есть|yest']?",
+          "id": "One dark, please. And is there any milk?",
+          "literal": "one — black, please. and — milk — is-there?"
+        },
+        {
+          "speaker": "Продавец:",
+          "text": "[Молока|Ma-la-KA] [нет|nyet]. [Есть|Yest'] [кефир|ki-FEER].",
+          "id": "There's no milk. There's kefir.",
+          "literal": "milk (genitive) — there-is-none. there-is — kefir."
+        },
+        {
+          "speaker": "Ани:",
+          "text": "[Кефир|Ki-FEER]? [Что|Shto] [это|E-ta] [такое|ta-KO-ye]?",
+          "id": "Kefir? What's that?",
+          "literal": "kefir? what — this — such?"
+        },
+        {
+          "speaker": "Продавец:",
+          "text": "[Это|E-ta] [как|kak] [молоко|ma-la-KO], [но|no] [кислое|KEES-la-ye]. [Очень|O-chin'] [полезно|pa-LYEZ-na].",
+          "id": "It's like milk, but sour. Very healthy.",
+          "literal": "this — like — milk, but — sour. very — useful."
+        },
+        {
+          "speaker": "Ани:",
+          "text": "[Хорошо|Kha-ra-SHO], [давайте|da-VAY-tye] [один|a-DEEN]. [И|Ee] [сколько|SKOL'-ka] [стоят|STO-yat] [яблоки|YA-bla-ki]?",
+          "id": "OK, just one. And how much are the apples?",
+          "literal": "good, let's — one. and — how-much — cost (pl) — apples?"
+        },
+        {
+          "speaker": "Продавец:",
+          "text": "[Сто|Sto] [двадцать|DVA-tsat'] [за|za] [килограмм|ki-la-GRAM].",
+          "id": "A hundred and twenty a kilo.",
+          "literal": "hundred — twenty — for — kilogram."
+        },
+        {
+          "speaker": "Ани:",
+          "text": "[Полкило|Pol-ki-LO], [пожалуйста|pa-ZHA-loos-ta]. [Сколько|SKOL'-ka] [всего|fsi-VO]?",
+          "id": "Half a kilo, please. How much is it all together?",
+          "literal": "half-kilo, please. how-much — all?"
+        },
+        {
+          "speaker": "Продавец:",
+          "text": "[Сто|Sto] [шестьдесят|shys-di-SYAT] [пять|pyat'] [рублей|roob-LYEY].",
+          "id": "A hundred and sixty-five rubles.",
+          "literal": "hundred — sixty — five — rubles."
+        },
+        {
+          "speaker": "Ани:",
+          "text": "[Вот|Vot], [пожалуйста|pa-ZHA-loos-ta]. [Можно|MOZH-na] [пакет|pa-KYET]?",
+          "id": "Here you go. Could I have a bag?",
+          "literal": "here-is, please. allowed — bag?"
+        },
+        {
+          "speaker": "Продавец:",
+          "text": "[Пакет|Pa-KYET] [пять|pyat'] [рублей|roob-LYEY]. [Берёте|Bi-RYO-tye]?",
+          "id": "A bag is five rubles. Will you take one?",
+          "literal": "bag — five — rubles. take-you?"
+        }
+      ],
+      "notes": [
+        "**Нет + genitive means \"there isn't any\".** ⚠️ *Молока нет* is literally \"of-milk there-is-none\", and the milk must go into the genitive: молок**о** → молок**а**. Compare *Молоко есть* (there's milk), where the form is normal. So as soon as something is declared absent, its ending changes. It's the same pattern as *У меня нет брата* in Unit 4.",
+        "**Сколько стоит for one item, сколько стоят for several.** *Сколько стоит хлеб?* (singular) but *Сколько стоят яблоки?* (plural). Just like English \"how much is\" vs \"how much are\". Russians will understand you if you mix them up — but it's easy to get right.",
+        "**Рубль / рубля / рублей follow the number rule from Unit 7.** 1 рубль, 2–4 рубля, 5+ рублей. Since prices are almost always above five, the form you'll hear most is **рублей**. In everyday speech Russians often drop it altogether: *Сто двадцать* — a hundred and twenty, full stop.",
+        "**Что это такое? is more curious than Что это?** The added такое gives it a \"what on earth is that?\" tone. Very handy in Russian shops, where you'll meet plenty of things you've never seen at home.",
+        "**Давайте means \"let's\", and in a shop it means \"I'll take\".** *Давайте один* — I'll take one. *Давайте два килограмма* — two kilos, then. The familiar form is **давай**. It's also used to suggest things: *Давай пойдём!* — let's go!",
+        "**За means \"per\" or \"for\" when giving prices.** *Сто двадцать за килограмм* — 120 per kilogram. *Сколько за всё?* — how much for everything?",
+        "**A пакет isn't free, anywhere in Russia.** The cashier will ask *Пакет нужен?* (need a bag?) and add five to twenty rubles to the bill. The short answers are *Да, нужен* or *Нет, спасибо*."
+      ],
+      "grammars": [
+        {
+          "title": "Three places the genitive shows up in a shop",
+          "body": [
+            "After the nominative, the genitive is the case you'll meet most. In this unit it appears in three places at once."
+          ],
+          "table": {
+            "head": [
+              "Appears after",
+              "Example",
+              "Meaning"
+            ],
+            "rows": [
+              [
+                "**нет** (there isn't)",
+                "Молок**а** нет.",
+                "There's no milk."
+              ],
+              [
+                "**сколько / много / мало / немного**",
+                "много книг, мало времени, немного сахар**а**",
+                "many books, little time, a little sugar"
+              ],
+              [
+                "**numbers 2–4** and **5+**",
+                "два рубл**я**, пять рубл**ей**",
+                "two rubles, five rubles"
+              ],
+              [
+                "**без** (without)",
+                "без сахар**а**, без газ**а**",
+                "without sugar, still (no gas)"
+              ],
+              [
+                "**из** (from)",
+                "из Москв**ы**",
+                "from Moscow"
+              ],
+              [
+                "**у** (at — for possession)",
+                "у брат**а**",
+                "at (my) brother's"
+              ]
+            ]
+          },
+          "after": [
+            "Genitive singular endings: masculine & neuter → **-а/-я** (хлеб → хлеба, молоко → молока), feminine → **-ы/-и** (вода → воды, Москва → Москвы).",
+            "⚠️ The genitive **plural** is much more complicated and you don't need to master it at A1. Just recognize the few forms you'll meet most in shops: рублей, книг, яблок, денег, лет, человек."
+          ]
+        },
+        {
+          "title": "A lot and a little",
+          "body": [
+            "All these words are followed by the genitive, so the noun always changes."
+          ],
+          "table": {
+            "head": [
+              "Русский",
+              "Say it",
+              "Meaning",
+              "Example"
+            ],
+            "rows": [
+              [
+                "много",
+                "MNO-ga",
+                "a lot, many",
+                "много работы — a lot of work"
+              ],
+              [
+                "мало",
+                "MA-la",
+                "too little, few",
+                "мало времени — not enough time"
+              ],
+              [
+                "немного",
+                "ni-MNO-ga",
+                "a little (enough)",
+                "немного сахара — a little sugar"
+              ],
+              [
+                "несколько",
+                "NYE-skal'-ka",
+                "several",
+                "несколько минут — a few minutes"
+              ],
+              [
+                "достаточно",
+                "das-TA-tach-na",
+                "enough",
+                "достаточно — that's enough"
+              ],
+              [
+                "ещё",
+                "yi-SHCHO",
+                "more, another",
+                "ещё один — one more"
+              ]
+            ]
+          },
+          "after": [
+            "⚠️ **мало** and **немного** both mean \"little\", but their tone is opposite — like English \"little\" vs \"a little\". *Мало времени* complains — there's not enough time. *Немного времени* is neutral — there's a bit of time. Choosing wrong changes the meaning of the sentence."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "At the shop and the market",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "Русский",
+            "Say it",
+            "English"
+          ],
+          "rows": [
+            [
+              "магазин",
+              "ma-ga-ZEEN",
+              "shop, store"
+            ],
+            [
+              "рынок",
+              "RY-nak",
+              "market"
+            ],
+            [
+              "супермаркет",
+              "soo-pir-MAR-kit",
+              "supermarket"
+            ],
+            [
+              "аптека",
+              "ap-TYE-ka",
+              "pharmacy"
+            ],
+            [
+              "продавец",
+              "pra-da-VYETS",
+              "salesperson"
+            ],
+            [
+              "касса",
+              "KA-sa",
+              "checkout, cash desk"
+            ],
+            [
+              "цена",
+              "tsy-NA",
+              "price"
+            ],
+            [
+              "скидка",
+              "SKEET-ka",
+              "discount"
+            ],
+            [
+              "дорого / дёшево",
+              "DO-ra-ga / DYO-shy-va",
+              "expensive / cheap"
+            ],
+            [
+              "килограмм",
+              "ki-la-GRAM",
+              "kilogram"
+            ],
+            [
+              "полкило",
+              "pol-ki-LO",
+              "half a kilo"
+            ],
+            [
+              "штука",
+              "SHTOO-ka",
+              "piece (unit)"
+            ],
+            [
+              "бутылка",
+              "boo-TYL-ka",
+              "bottle"
+            ],
+            [
+              "пакет",
+              "pa-KYET",
+              "bag, packet"
+            ],
+            [
+              "сдача",
+              "ZDA-cha",
+              "change (money back)"
+            ]
+          ]
+        },
+        {
+          "type": "kotak",
+          "title": "Phrases that save you at the checkout",
+          "items": [
+            "**Сколько стоит?** — How much is it? You can say it while pointing, without naming the item.",
+            "**Это дорого.** — That's expensive. At the market (рынок) this opens the bargaining; in a supermarket it's just a statement.",
+            "**Можно скидку?** — Can I get a discount? ⚠️ Only at markets and small shops. Bargaining in a supermarket will be taken as a joke.",
+            "**У вас есть сдача?** — Do you have change? Useful because Russian sellers often ask for exact money: *Мельче нет?* (nothing smaller?).",
+            "**Картой можно?** — Can I pay by card? The answer is almost always yes; Russia is one of the least cash-dependent countries around."
+          ]
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "ru": "магазин",
+      "baca": "ma-ga-ZEEN",
+      "en": "shop, store"
+    },
+    {
+      "ru": "сколько стоит",
+      "baca": "SKOL'-ka STO-it",
+      "en": "how much does it cost"
+    },
+    {
+      "ru": "цена",
+      "baca": "tsy-NA",
+      "en": "price"
+    },
+    {
+      "ru": "рубль / рубля / рублей",
+      "baca": "roobl' / roob-LYA / roob-LYEY",
+      "en": "ruble (three forms)"
+    },
+    {
+      "ru": "нет + genitif",
+      "baca": "nyet",
+      "en": "there isn't any; no"
+    },
+    {
+      "ru": "много / мало",
+      "baca": "MNO-ga / MA-la",
+      "en": "a lot / too little"
+    },
+    {
+      "ru": "немного",
+      "baca": "ni-MNO-ga",
+      "en": "a little"
+    },
+    {
+      "ru": "несколько",
+      "baca": "NYE-skal'-ka",
+      "en": "several"
+    },
+    {
+      "ru": "достаточно",
+      "baca": "das-TA-tach-na",
+      "en": "enough"
+    },
+    {
+      "ru": "ещё",
+      "baca": "yi-SHCHO",
+      "en": "more, another, still"
+    },
+    {
+      "ru": "давайте / давай",
+      "baca": "da-VAY-tye / da-VAY",
+      "en": "let's; I'll take"
+    },
+    {
+      "ru": "дорого / дёшево",
+      "baca": "DO-ra-ga / DYO-shy-va",
+      "en": "expensive / cheap"
+    },
+    {
+      "ru": "скидка",
+      "baca": "SKEET-ka",
+      "en": "discount"
+    },
+    {
+      "ru": "килограмм",
+      "baca": "ki-la-GRAM",
+      "en": "kilogram"
+    },
+    {
+      "ru": "пакет",
+      "baca": "pa-KYET",
+      "en": "shopping bag"
+    },
+    {
+      "ru": "сдача",
+      "baca": "ZDA-cha",
+      "en": "change (money back)"
+    },
+    {
+      "ru": "касса",
+      "baca": "KA-sa",
+      "en": "checkout, cash desk"
+    },
+    {
+      "ru": "кефир",
+      "baca": "ki-FEER",
+      "en": "kefir (sour milk drink)"
+    },
+    {
+      "ru": "кислый",
+      "baca": "KEES-lyy",
+      "en": "sour"
+    },
+    {
+      "ru": "полезно",
+      "baca": "pa-LYEZ-na",
+      "en": "healthy, useful"
+    },
+    {
+      "ru": "за",
+      "baca": "za",
+      "en": "per, for (prices)"
+    },
+    {
+      "ru": "всего",
+      "baca": "fsi-VO",
+      "en": "all, everything, in total"
+    },
+    {
+      "ru": "брать",
+      "baca": "brat'",
+      "en": "to take"
+    }
+  ],
+  "exercises": [
+    {
+      "prompt": "Put into the form used after нет.",
+      "items": [
+        "молоко → ____ нет",
+        "хлеб → ____ нет",
+        "вода → ____ нет",
+        "время → ____ нет",
+        "сахар → ____ нет",
+        "работа → ____ нет"
+      ]
+    },
+    {
+      "prompt": "Choose рубль, рубля or рублей.",
+      "items": [
+        "1 ____",
+        "3 ____",
+        "5 ____",
+        "22 ____",
+        "45 ____",
+        "101 ____"
+      ]
+    },
+    {
+      "prompt": "Put the words in the right order.",
+      "items": [
+        "стоит / хлеб / сколько / ?",
+        "нет / молока",
+        "пожалуйста / полкило",
+        "пакет / можно / ?",
+        "дорого / это"
+      ]
+    },
+    {
+      "prompt": "Translate into Russian.",
+      "items": [
+        "How much is the bread?",
+        "There's no milk.",
+        "A hundred and twenty rubles a kilo.",
+        "Half a kilo, please.",
+        "How much is it all together?",
+        "Can I pay by card?"
+      ]
+    }
+  ],
+  "answers": [
+    "молока — хлеба — воды — времени — сахара — работы",
+    "рубль — рубля — рублей — рубля — рублей — рубль",
+    "Сколько стоит хлеб? — Молока нет. — Полкило, пожалуйста. — Можно пакет? — Это дорого.",
+    "Сколько стоит хлеб? — Молока нет. — Сто двадцать рублей за килограмм. — Полкило, пожалуйста. — Сколько всего? — Картой можно?"
+  ]
+}

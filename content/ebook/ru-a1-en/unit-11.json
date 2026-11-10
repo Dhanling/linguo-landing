@@ -1,0 +1,526 @@
+{
+  "title": "What time is it? — and one famous trap",
+  "title_target": "Который час? — Kotoryy chas?",
+  "goal": "Tell the time, name the days, and make plans. Along the way, meet one famous trap: Russian \"half nine\" doesn't mean what a Brit would think.",
+  "bekal": [
+    "ask and tell the time",
+    "use час / часа / часов correctly",
+    "name the days of the week and say \"on …day\"",
+    "make a simple appointment",
+    "name the parts of the day: morning, afternoon, evening, night"
+  ],
+  "dialogs": [
+    {
+      "title": "Диалог — Making plans",
+      "intro": "Ani and Марко arrange a study session by text, then meet in person. Watch line nine: the Russian way of saying \"half past\" counts toward the next hour.",
+      "lines": [
+        {
+          "speaker": "Марко:",
+          "text": "[Привет|Pri-VYET]! [Когда|Kag-DA] [у|oo] [тебя|ti-BYA] [свободное|sva-BOD-na-ye] [время|VRYE-mya]?",
+          "id": "Hi! When are you free?",
+          "literal": "hi! when — at — you — free — time?"
+        },
+        {
+          "speaker": "Ани:",
+          "text": "[В|V] [среду|SRYE-doo] [и|ee] [в|f] [пятницу|PYAT-ni-tsoo]. [А|A] [что|shto]?",
+          "id": "Wednesday and Friday. Why?",
+          "literal": "on — Wednesday — and — on — Friday. and — what?"
+        },
+        {
+          "speaker": "Марко:",
+          "text": "[Давай|Da-VAY] [заниматься|za-ni-MA-tsa] [вместе|VMYES-tye]. [В|V] [среду|SRYE-doo] [нормально|nar-MAL'-na]?",
+          "id": "Let's study together. Is Wednesday OK?",
+          "literal": "let's — study — together. on — Wednesday — normal?"
+        },
+        {
+          "speaker": "Ани:",
+          "text": "[Да|Da]. [Во|Va] [сколько|SKOL'-ka]?",
+          "id": "Yes. What time?",
+          "literal": "yes. at — how-much?"
+        },
+        {
+          "speaker": "Марко:",
+          "text": "[В|V] [три|tri] [часа|chi-SA]? [Или|EE-li] [позже|POZ-zhy]?",
+          "id": "Three o'clock? Or later?",
+          "literal": "at — three — hours? or — later?"
+        },
+        {
+          "speaker": "Ани:",
+          "text": "[В|V] [три|tri] [у|oo] [меня|mi-NYA] [урок|oo-ROK]. [Давай|Da-VAY] [в|f] [пять|pyat'].",
+          "id": "I have a class at three. Let's say five.",
+          "literal": "at — three — at — me — lesson. let's — at — five."
+        },
+        {
+          "speaker": "Марко:",
+          "text": "[Хорошо|Kha-ra-SHO]. [Где|Gdye]?",
+          "id": "Good. Where?",
+          "literal": "good. where?"
+        },
+        {
+          "speaker": "Ани:",
+          "text": "[В|V] [библиотеке|bib-li-a-TYE-kye]. [Она|A-NA] [работает|ra-BO-ta-yit] [до|da] [девяти|di-vi-TEE].",
+          "id": "At the library. It's open until nine.",
+          "literal": "in — library. it — works — until — nine."
+        },
+        {
+          "speaker": "Марко:",
+          "text": "[Отлично|At-LEECH-na]. [Кстати|KSTA-ti], [сейчас|si-CHAS] [сколько|SKOL'-ka] [времени|VRYE-mi-ni]?",
+          "id": "Great. By the way, what time is it now?",
+          "literal": "excellent. by-the-way, now — how-much — time?"
+        },
+        {
+          "speaker": "Ани:",
+          "text": "[Половина|Pa-la-VEE-na] [девятого|di-VYA-ta-va]. [Полдевятого|Pol-di-VYA-ta-va], [если|YES-li] [коротко|KO-rat-ka].",
+          "id": "Half past eight. Poldevyatovo, for short.",
+          "literal": "half — of-the-ninth. half-ninth, if — short."
+        },
+        {
+          "speaker": "Марко:",
+          "text": "[Половина|Pa-la-VEE-na] [девятого|di-VYA-ta-va] — [это|E-ta] [восемь|VO-sim'] [тридцать|TREE-tsat']?",
+          "id": "\"Half of the ninth\" — so that's eight thirty?",
+          "literal": "half — of-the-ninth — this — eight — thirty?"
+        },
+        {
+          "speaker": "Ани:",
+          "text": "[Да|Da]! [В|V] [индонезийском|in-da-ni-ZEEY-skam] [языке|yi-zy-KYE] [точно|TOCH-na] [так|tak] [же|zhy]. [Наконец-то|Na-ka-NYETS-ta] [что-то|SHTO-ta] [лёгкое|LYOKH-ka-ye]!",
+          "id": "Yes! It's exactly the same in Indonesian. Finally something easy!",
+          "literal": "yes! in — Indonesian — language — exactly — so — same. finally — something — easy!"
+        }
+      ],
+      "notes": [
+        "**This is the big trap: Russian \"half\" points to the *next* hour.** *Половина девятого* literally means \"half of the ninth (hour)\" = **8:30**. ⚠️ English speakers stumble badly here, because British *half nine* means 9:30. Think \"halfway into the ninth hour,\" and you'll get it right. (Ani is pleased because Indonesian, German, and Dutch count the same way as Russian.)",
+        "**The short form is written as one word: полдевятого, полшестого, полодиннадцатого.** That's what people actually say in conversation. The long form *половина девятого* sounds a bit more formal.",
+        "**Час / часа / часов follow the number rule from Unit 7.** 1 час, 2–4 часа, 5+ часов. So: *час* (one o'clock), *два часа* (two o'clock), *пять часов* (five o'clock), *двенадцать часов* (twelve o'clock). ⚠️ Note that one o'clock does **not** use один: just *час*.",
+        "**To say when something happens, use в + the number.** *В три часа* (at three), *в пять* (at five), *в час* (at one). Before some hard-to-say consonant clusters, в becomes **во**: *во сколько?* (at what time?), *во вторник* (on Tuesday).",
+        "**Days of the week take в + accusative.** *в понедельник*, *в среду*, *в пятницу*. Note среда → сред**у** and пятница → пятниц**у** — the feminine accusative ending from Unit 8. Days ending in a consonant (понедельник, вторник, четверг) don't change.",
+        "**До means \"until\" and takes the genitive.** *до девяти* (until nine), *до субботы* (until Saturday), *до свидания* (until the meeting — now you know why свидание became свидания).",
+        "**Кстати means \"by the way,\" and Russians use it all the time.** It's the smoothest way to change the subject."
+      ],
+      "grammars": [
+        {
+          "title": "Telling the time",
+          "body": [
+            "There are two ways: the official way (like train timetables) and the everyday way."
+          ],
+          "tables": [
+            {
+              "head": [
+                "Time",
+                "Everyday form",
+                "Say it"
+              ],
+              "rows": [
+                [
+                  "1:00",
+                  "час",
+                  "chas"
+                ],
+                [
+                  "2:00",
+                  "два часа",
+                  "dva chi-SA"
+                ],
+                [
+                  "5:00",
+                  "пять часов",
+                  "pyat' chi-SOF"
+                ],
+                [
+                  "12:00",
+                  "двенадцать часов",
+                  "dvi-NA-tsat' chi-SOF"
+                ],
+                [
+                  "8:30",
+                  "полдевятого",
+                  "pol-di-VYA-ta-va"
+                ],
+                [
+                  "1:30",
+                  "полвторого",
+                  "pol-fta-RO-va"
+                ],
+                [
+                  "3:15",
+                  "пятнадцать минут четвёртого",
+                  "…chit-VYOR-ta-va"
+                ],
+                [
+                  "4:45",
+                  "без пятнадцати пять",
+                  "byes pit-NA-tsa-ti pyat'"
+                ]
+              ]
+            },
+            {
+              "head": [
+                "Question",
+                "Say it",
+                "Meaning"
+              ],
+              "rows": [
+                [
+                  "Который час?",
+                  "ka-TO-ryy chas",
+                  "What time is it? (a bit formal)"
+                ],
+                [
+                  "Сколько времени?",
+                  "SKOL'-ka VRYE-mi-ni",
+                  "What time is it? (most common)"
+                ],
+                [
+                  "Во сколько?",
+                  "va SKOL'-ka",
+                  "At what time? (for an event)"
+                ],
+                [
+                  "Когда?",
+                  "kag-DA",
+                  "When?"
+                ]
+              ]
+            }
+          ],
+          "after": [
+            "⚠️ The 3:15 and 4:45 forms use ordinal numbers (четвёртого = \"of the fourth\") and aren't required at A1. When in doubt, use the official way, which is always correct: **три пятнадцать** (3:15), **четыре сорок пять** (4:45). Russians use it too, especially for timetables.",
+            "Russian uses the 24-hour clock in writing (18:00) but the 12-hour clock in speech, with a tag: *шесть часов **вечера*** (six in the evening), *шесть часов **утра*** (six in the morning)."
+          ]
+        },
+        {
+          "title": "Days and parts of the day",
+          "body": [
+            "Days take **в + accusative**; parts of the day use instrumental forms you simply memorize."
+          ],
+          "tables": [
+            {
+              "head": [
+                "Day",
+                "Say it",
+                "On that day"
+              ],
+              "rows": [
+                [
+                  "понедельник",
+                  "pa-ni-DYEL'-nik",
+                  "в понедельник"
+                ],
+                [
+                  "вторник",
+                  "FTOR-nik",
+                  "во вторник"
+                ],
+                [
+                  "среда",
+                  "sri-DA",
+                  "в **среду**"
+                ],
+                [
+                  "четверг",
+                  "chit-VYERK",
+                  "в четверг"
+                ],
+                [
+                  "пятница",
+                  "PYAT-ni-tsa",
+                  "в **пятницу**"
+                ],
+                [
+                  "суббота",
+                  "soo-BO-ta",
+                  "в **субботу**"
+                ],
+                [
+                  "воскресенье",
+                  "vas-kri-SYEN'-ye",
+                  "в воскресенье"
+                ]
+              ]
+            },
+            {
+              "head": [
+                "Part of day",
+                "Say it",
+                "At that time",
+                "Say it"
+              ],
+              "rows": [
+                [
+                  "утро — morning",
+                  "OO-tra",
+                  "утром",
+                  "OO-tram"
+                ],
+                [
+                  "день — afternoon",
+                  "dyen'",
+                  "днём",
+                  "dnyom"
+                ],
+                [
+                  "вечер — evening",
+                  "VYE-chir",
+                  "вечером",
+                  "VYE-chi-ram"
+                ],
+                [
+                  "ночь (f) — night",
+                  "noch'",
+                  "ночью",
+                  "NOCH-yu"
+                ]
+              ]
+            }
+          ],
+          "after": [
+            "⚠️ Russian divides the day a little differently from English. **День** runs roughly from 12 to 5 p.m., **вечер** from 5 p.m. until bedtime, and **ночь** is when people are asleep — roughly midnight to dawn. So *спокойной ночи* (good night) is said when parting for bed, not when meeting someone at 8 p.m. To greet someone at 8 p.m., say **добрый вечер**.",
+            "**Сегодня** today, **завтра** tomorrow, **вчера** yesterday, **послезавтра** the day after tomorrow, **позавчера** the day before yesterday."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Making plans",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "Русский",
+            "Say it",
+            "English"
+          ],
+          "rows": [
+            [
+              "Когда у тебя свободное время?",
+              "kag-DA oo ti-BYA sva-BOD-na-ye VRYE-mya",
+              "When are you free?"
+            ],
+            [
+              "Во сколько?",
+              "va SKOL'-ka",
+              "What time?"
+            ],
+            [
+              "Давай в пять.",
+              "da-VAY f pyat'",
+              "Let's say five."
+            ],
+            [
+              "Мне удобно.",
+              "mnye oo-DOB-na",
+              "That works for me."
+            ],
+            [
+              "Мне неудобно.",
+              "mnye ni-oo-DOB-na",
+              "That doesn't really work for me."
+            ],
+            [
+              "Я занят / Я занята.",
+              "ya ZA-nit / ya za-ni-TA",
+              "I'm busy (m / f)"
+            ],
+            [
+              "Я свободен / Я свободна.",
+              "ya sva-BO-din / sva-BOD-na",
+              "I'm free (m / f)"
+            ],
+            [
+              "Договорились!",
+              "da-ga-va-REE-lis'",
+              "Agreed! Deal!"
+            ],
+            [
+              "Я опаздываю.",
+              "ya a-PAZ-dy-va-yu",
+              "I'm running late."
+            ],
+            [
+              "Подожди пять минут.",
+              "pa-dazh-DEE pyat' mi-NOOT",
+              "Wait five minutes."
+            ]
+          ]
+        },
+        {
+          "type": "kotak",
+          "title": "Занят, свободен — short adjectives that follow gender",
+          "items": [
+            "⚠️ A woman says **Я занята** (*za-ni-TA*), a man says **Я занят** (*ZA-nit*). The ending changes and the stress moves. The same goes for **свободен / свободна**, **готов / готова** (ready), **должен / должна** (must).",
+            "These are short adjectives — forms used only after the subject, never in front of a noun. You don't need to master them now; learn the four pairs above as chunks.",
+            "**Договорились** literally means \"we have agreed\" — a very Russian way to wrap up making plans. It's like \"OK, deal.\""
+          ]
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "ru": "который час?",
+      "baca": "ka-TO-ryy chas",
+      "en": "what time is it?"
+    },
+    {
+      "ru": "сколько времени?",
+      "baca": "SKOL'-ka VRYE-mi-ni",
+      "en": "what time is it?"
+    },
+    {
+      "ru": "во сколько?",
+      "baca": "va SKOL'-ka",
+      "en": "at what time?"
+    },
+    {
+      "ru": "час / часа / часов",
+      "baca": "chas / chi-SA / chi-SOF",
+      "en": "hour, o'clock (three forms)"
+    },
+    {
+      "ru": "минута",
+      "baca": "mi-NOO-ta",
+      "en": "minute"
+    },
+    {
+      "ru": "половина / пол-",
+      "baca": "pa-la-VEE-na / pol",
+      "en": "half"
+    },
+    {
+      "ru": "до",
+      "baca": "da",
+      "en": "until"
+    },
+    {
+      "ru": "после",
+      "baca": "POS-lye",
+      "en": "after"
+    },
+    {
+      "ru": "раньше / позже",
+      "baca": "RAN'-shy / POZ-zhy",
+      "en": "earlier / later"
+    },
+    {
+      "ru": "сегодня",
+      "baca": "si-VOD-nya",
+      "en": "today"
+    },
+    {
+      "ru": "завтра / вчера",
+      "baca": "ZAF-tra / fchi-RA",
+      "en": "tomorrow / yesterday"
+    },
+    {
+      "ru": "неделя",
+      "baca": "ni-DYE-lya",
+      "en": "week"
+    },
+    {
+      "ru": "выходные",
+      "baca": "vy-khad-NY-ye",
+      "en": "weekend"
+    },
+    {
+      "ru": "свободное время",
+      "baca": "sva-BOD-na-ye VRYE-mya",
+      "en": "free time"
+    },
+    {
+      "ru": "занят / занята",
+      "baca": "ZA-nit / za-ni-TA",
+      "en": "busy (m / f)"
+    },
+    {
+      "ru": "заниматься",
+      "baca": "za-ni-MA-tsa",
+      "en": "to study, to practice"
+    },
+    {
+      "ru": "вместе",
+      "baca": "VMYES-tye",
+      "en": "together"
+    },
+    {
+      "ru": "урок",
+      "baca": "oo-ROK",
+      "en": "lesson, class"
+    },
+    {
+      "ru": "библиотека",
+      "baca": "bib-li-a-TYE-ka",
+      "en": "library"
+    },
+    {
+      "ru": "кстати",
+      "baca": "KSTA-ti",
+      "en": "by the way"
+    },
+    {
+      "ru": "договорились",
+      "baca": "da-ga-va-REE-lis'",
+      "en": "agreed!"
+    },
+    {
+      "ru": "опаздывать",
+      "baca": "a-PAZ-dy-vat'",
+      "en": "to be late"
+    },
+    {
+      "ru": "наконец-то",
+      "baca": "na-ka-NYETS-ta",
+      "en": "finally"
+    }
+  ],
+  "exercises": [
+    {
+      "prompt": "Choose час, часа, or часов.",
+      "items": [
+        "1 ____",
+        "2 ____",
+        "4 ____",
+        "6 ____",
+        "11 ____",
+        "12 ____"
+      ]
+    },
+    {
+      "prompt": "Write the time in Cyrillic, the everyday way.",
+      "items": [
+        "3:00 — ____",
+        "5:00 — ____",
+        "8:30 — ____",
+        "1:30 — ____",
+        "10:00 — ____"
+      ]
+    },
+    {
+      "prompt": "Put the words in the right order.",
+      "items": [
+        "сколько / во / ?",
+        "в / давай / пять",
+        "среду / в / нормально / ?",
+        "занята / я / сегодня",
+        "времени / сколько / сейчас / ?"
+      ]
+    },
+    {
+      "prompt": "Translate into Russian.",
+      "items": [
+        "What time is it now?",
+        "It's half past eight now.",
+        "On Wednesday at five.",
+        "I'm busy today. (woman)",
+        "When are you free?",
+        "Agreed!"
+      ]
+    }
+  ],
+  "answers": [
+    "час — часа — часа — часов — часов — часов",
+    "три часа — пять часов — полдевятого — полвторого — десять часов",
+    "Во сколько? — Давай в пять. — В среду нормально? — Я занята сегодня. — Сколько сейчас времени?",
+    "Сколько сейчас времени? — Сейчас полдевятого. — В среду в пять. — Я сегодня занята. — Когда у тебя свободное время? — Договорились!"
+  ]
+}

@@ -1,0 +1,510 @@
+{
+  "title": "My family — and an upside-down \"have\"",
+  "title_target": "Моя семья — Maya semya",
+  "goal": "Introduce your family, say what and whom you have, and get your head around two confusing things at once: possessives that follow the gender of the thing owned, and a \"have\" sentence that is built the other way around from English.",
+  "bekal": [
+    "name the members of your immediate family",
+    "use мой / моя / моё / мои correctly",
+    "say \"I have …\" with У меня есть …",
+    "say you don't have something with У меня нет …",
+    "ask about someone else's family"
+  ],
+  "dialogs": [
+    {
+      "title": "Диалог — A photo in the wallet",
+      "intro": "Ani and Марко are sitting in the campus canteen. Марко takes out his phone and shows a family photo. Notice that the word \"have\" never appears in the Russian — what appears instead is the word \"at\".",
+      "lines": [
+        {
+          "speaker": "Марко:",
+          "text": "[Смотри|Smat-REE], [это|E-ta] [моя|ma-YA] [семья|si-M'YA].",
+          "id": "Look, this is my family.",
+          "literal": "look, this — my (fem) — family."
+        },
+        {
+          "speaker": "Ани:",
+          "text": "[Какая|Ka-KA-ya] [большая|bal'-SHA-ya] [семья|si-M'YA]! [Кто|Kto] [это|E-ta]?",
+          "id": "What a big family! Who's this?",
+          "literal": "what-a — big — family! who — this?"
+        },
+        {
+          "speaker": "Марко:",
+          "text": "[Это|E-ta] [мой|moy] [отец|a-TYETS] [и|ee] [моя|ma-YA] [мать|mat']. [А|A] [это|E-ta] [мои|ma-EE] [сёстры|SYOS-try].",
+          "id": "This is my dad and my mom. And these are my sisters.",
+          "literal": "this — my (masc) — dad — and — my (fem) — mom. and — this — my (pl) — sisters."
+        },
+        {
+          "speaker": "Ани:",
+          "text": "[Сколько|SKOL'-ka] [у|oo] [вас|vas] [сестёр|sis-TYOR]?",
+          "id": "How many sisters do you have?",
+          "literal": "how-many — at — you — sisters?"
+        },
+        {
+          "speaker": "Марко:",
+          "text": "[У|Oo] [меня|mi-NYA] [три|tri] [сестры|sist-RY] [и|ee] [один|a-DEEN] [брат|brat]. [А|A] [у|oo] [вас|vas]?",
+          "id": "I have three sisters and one brother. And you?",
+          "literal": "at — me — three — sister — and — one — brother. and — at — you?"
+        },
+        {
+          "speaker": "Ани:",
+          "text": "[У|Oo] [меня|mi-NYA] [есть|yest'] [старший|STAR-shiy] [брат|brat]. [Сестры|Sist-RY] [нет|nyet].",
+          "id": "I have an older brother. No sisters.",
+          "literal": "at — me — is — older — brother. sister — there-is-none."
+        },
+        {
+          "speaker": "Марко:",
+          "text": "[Он|On] [тоже|TO-zhy] [студент|stoo-DYENT]?",
+          "id": "Is he a student too?",
+          "literal": "he — also — student?"
+        },
+        {
+          "speaker": "Ани:",
+          "text": "[Нет|Nyet], [он|on] [инженер|in-zhy-NYER]. [Он|On] [работает|ra-BO-ta-yit] [в|v] [Джакарте|dzha-KAR-tye].",
+          "id": "No, he's an engineer. He works in Jakarta.",
+          "literal": "no, he — engineer. he — works — in — Jakarta."
+        },
+        {
+          "speaker": "Марко:",
+          "text": "[А|A] [ваши|VA-shy] [родители|ra-DEE-ti-li]?",
+          "id": "And your parents?",
+          "literal": "and — your (pl) — parents?"
+        },
+        {
+          "speaker": "Ани:",
+          "text": "[Мой|Moy] [папа|PA-pa] — [учитель|oo-CHEE-til'], [а|a] [мама|MA-ma] [дома|DO-ma].",
+          "id": "My dad is a teacher, and my mom stays at home.",
+          "literal": "my — dad — teacher, whereas — mom — at-home."
+        },
+        {
+          "speaker": "Марко:",
+          "text": "[У|Oo] [вас|vas] [есть|yest'] [собака|sa-BA-ka]?",
+          "id": "Do you have a dog?",
+          "literal": "at — you — is — dog?"
+        },
+        {
+          "speaker": "Ани:",
+          "text": "[Нет|Nyet], [но|no] [у|oo] [нас|nas] [есть|yest'] [кошка|KOSH-ka]. [Её|Yi-YO] [зовут|za-VOOT] [Луна|Loo-NA].",
+          "id": "No, but we have a cat. Her name is Luna.",
+          "literal": "no, but — at — us — is — cat. her (object) — they-call — Luna."
+        }
+      ],
+      "notes": [
+        "**\"I have\" in Russian is \"at me there is\".** ⚠️ This is one of the strangest constructions for English speakers. *У меня есть брат* is literally \"at me is brother\". **The subject of the sentence is not me but the brother** — which is why the noun stays in its dictionary form, while \"I\" turns into меня.",
+        "**Есть can be dropped when existence isn't the point.** *У меня есть брат* stresses that the brother **exists**. But once we know he exists and we're describing him, есть disappears: *У меня **старший** брат* — my brother is older. A rule of thumb for A1: use есть when answering \"do you have one or not\", drop it when explaining \"what kind you have\".",
+        "**To say you don't have something, use нет — and the noun changes too.** *У меня **нет** сестр**ы*** — I don't have a sister. Literally \"at me there-is-none of-sister\". ⚠️ After нет the noun **must** go into the genitive: сестра → сестры, брат → брата, время → времени. This is the second use of the genitive you've met, after из in Unit 3.",
+        "**Possessives follow the gender of the THING owned, not the owner.** ⚠️ This is the second big trap in this unit. In English \"my\" never changes: my book, my sister, my house. In Russian: *мой брат* (masc), *моя сестра* (fem), *моё окно* (neuter), *мои сёстры* (plural). What decides is the word after it, not who is speaking.",
+        "**Его, её, их never change.** A little gift: the third-person possessives are fixed. *его брат*, *его сестра*, *его окно* — all его. Same for её (her) and их (their). So of the six owners, three need no forms memorized at all.",
+        "**Отец/мать are formal, папа/мама everyday.** Adults use both. Отец and мать sound a bit more distant and often appear in documents; папа and мама are what people of any age use in normal conversation. ⚠️ Remember: **папа** ends in -а but is still masculine — *мой папа*, not *моя папа*.",
+        "**Какая большая семья! is an exclamation pattern.** Какой / какая / какое / какие + adjective = \"what a …!\". *Какой красивый город!* — what a beautiful city!"
+      ],
+      "grammars": [
+        {
+          "title": "Possessives — the table you need to master",
+          "body": [
+            "The rows are the owners, the columns are the gender of the thing owned. Only the first three rows change."
+          ],
+          "table": {
+            "head": [
+              "Owner",
+              "+ masc (брат)",
+              "+ fem (сестра)",
+              "+ neuter (окно)",
+              "+ plural (друзья)"
+            ],
+            "rows": [
+              [
+                "my",
+                "**мой** брат",
+                "**моя** сестра",
+                "**моё** окно",
+                "**мои** друзья"
+              ],
+              [
+                "your (ты)",
+                "**твой** брат",
+                "**твоя** сестра",
+                "**твоё** окно",
+                "**твои** друзья"
+              ],
+              [
+                "your (вы)",
+                "**ваш** брат",
+                "**ваша** сестра",
+                "**ваше** окно",
+                "**ваши** друзья"
+              ],
+              [
+                "our",
+                "**наш** брат",
+                "**наша** сестра",
+                "**наше** окно",
+                "**наши** друзья"
+              ],
+              [
+                "his",
+                "**его** брат",
+                "**его** сестра",
+                "**его** окно",
+                "**его** друзья"
+              ],
+              [
+                "her",
+                "**её** брат",
+                "**её** сестра",
+                "**её** окно",
+                "**её** друзья"
+              ],
+              [
+                "their",
+                "**их** брат",
+                "**их** сестра",
+                "**их** окно",
+                "**их** друзья"
+              ]
+            ]
+          },
+          "after": [
+            "Look at the pattern, not each cell: the masculine form ends in a consonant or **-й**, the feminine in **-а/-я**, the neuter in **-ё/-е**, the plural in **-и**. The same pattern comes back with adjectives (Unit 16).",
+            "⚠️ **его** is pronounced *ye-VO*, not *ye-GO*. The г in the endings -его/-ого always sounds like *v*."
+          ]
+        },
+        {
+          "title": "У меня есть — the \"have\" sentence",
+          "body": [
+            "The order is fixed: **У + person (object form) + есть + thing (dictionary form)**."
+          ],
+          "table": {
+            "head": [
+              "Who",
+              "Form after У",
+              "Example"
+            ],
+            "rows": [
+              [
+                "я",
+                "у **меня**",
+                "У меня есть брат. — I have a brother."
+              ],
+              [
+                "ты",
+                "у **тебя**",
+                "У тебя есть время? — Do you have time?"
+              ],
+              [
+                "он",
+                "у **него**",
+                "У него есть машина. — He has a car."
+              ],
+              [
+                "она",
+                "у **неё**",
+                "У неё есть собака. — She has a dog."
+              ],
+              [
+                "мы",
+                "у **нас**",
+                "У нас есть кошка. — We have a cat."
+              ],
+              [
+                "вы",
+                "у **вас**",
+                "У вас есть вопрос? — Do you have a question?"
+              ],
+              [
+                "они",
+                "у **них**",
+                "У них есть дом. — They have a house."
+              ]
+            ]
+          },
+          "after": [
+            "⚠️ After a preposition, его/её/их add an **н**: его → у **н**его, её → у **н**её, их → у **н**их. This applies after every preposition, not just у.",
+            "To negate: replace **есть** with **нет** and put the thing in the genitive. *У меня есть брат* → *У меня **нет брата***. *У неё есть собака* → *У неё **нет собаки***."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Family",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "Русский",
+            "Say it",
+            "English"
+          ],
+          "rows": [
+            [
+              "семья",
+              "si-M'YA",
+              "family"
+            ],
+            [
+              "родители",
+              "ra-DEE-ti-li",
+              "parents"
+            ],
+            [
+              "отец / папа",
+              "a-TYETS / PA-pa",
+              "father / dad"
+            ],
+            [
+              "мать (f) / мама",
+              "mat' / MA-ma",
+              "mother / mom"
+            ],
+            [
+              "брат",
+              "brat",
+              "brother"
+            ],
+            [
+              "сестра",
+              "sist-RA",
+              "sister"
+            ],
+            [
+              "сын",
+              "syn",
+              "son"
+            ],
+            [
+              "дочь (f)",
+              "doch'",
+              "daughter"
+            ],
+            [
+              "муж",
+              "moosh",
+              "husband"
+            ],
+            [
+              "жена",
+              "zhy-NA",
+              "wife"
+            ],
+            [
+              "дедушка",
+              "DYE-doosh-ka",
+              "grandfather"
+            ],
+            [
+              "бабушка",
+              "BA-boosh-ka",
+              "grandmother"
+            ],
+            [
+              "дядя / тётя",
+              "DYA-dya / TYO-tya",
+              "uncle / aunt"
+            ],
+            [
+              "друг / подруга",
+              "drook / pad-ROO-ga",
+              "friend (m) / friend (f)"
+            ],
+            [
+              "старший / младший",
+              "STAR-shiy / MLAT-shiy",
+              "older / younger"
+            ]
+          ]
+        },
+        {
+          "type": "kotak",
+          "title": "What has no exact match",
+          "items": [
+            "Like English, Russian has **no separate words for older and younger siblings**. Брат means brother, full stop. If age matters, add **старший** (older) or **младший** (younger): *старший брат* = older brother.",
+            "On the other hand, Russian has something English lacks: the **отчество**, a middle name made from the father's name. Иван Петрович means \"Ivan, son of Pyotr\". Addressing someone by first name + отчество (*Ольга Петровна*) is the everyday respectful form — roughly like \"Mrs. …\", but warmer and used far more widely.",
+            "Children also use **дядя** and **тётя** for adults they don't know — much like kids in many English-speaking families call family friends \"uncle\" and \"auntie\"."
+          ]
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "ru": "мой / моя / моё / мои",
+      "baca": "moy / ma-YA / ma-YO / ma-EE",
+      "en": "my"
+    },
+    {
+      "ru": "ваш / ваша / ваше / ваши",
+      "baca": "vash / VA-sha / VA-shy / VA-shy",
+      "en": "your (polite / plural)"
+    },
+    {
+      "ru": "его / её / их",
+      "baca": "ye-VO / yi-YO / ikh",
+      "en": "his / her / their"
+    },
+    {
+      "ru": "у меня есть",
+      "baca": "oo mi-NYA yest'",
+      "en": "I have"
+    },
+    {
+      "ru": "у меня нет",
+      "baca": "oo mi-NYA nyet",
+      "en": "I don't have"
+    },
+    {
+      "ru": "сколько",
+      "baca": "SKOL'-ka",
+      "en": "how many, how much"
+    },
+    {
+      "ru": "семья",
+      "baca": "si-M'YA",
+      "en": "family"
+    },
+    {
+      "ru": "родители",
+      "baca": "ra-DEE-ti-li",
+      "en": "parents"
+    },
+    {
+      "ru": "отец",
+      "baca": "a-TYETS",
+      "en": "father"
+    },
+    {
+      "ru": "мать (f)",
+      "baca": "mat'",
+      "en": "mother"
+    },
+    {
+      "ru": "брат / сестра",
+      "baca": "brat / sist-RA",
+      "en": "brother / sister"
+    },
+    {
+      "ru": "муж / жена",
+      "baca": "moosh / zhy-NA",
+      "en": "husband / wife"
+    },
+    {
+      "ru": "сын / дочь (f)",
+      "baca": "syn / doch'",
+      "en": "son / daughter"
+    },
+    {
+      "ru": "друг",
+      "baca": "drook",
+      "en": "friend"
+    },
+    {
+      "ru": "старший / младший",
+      "baca": "STAR-shiy / MLAT-shiy",
+      "en": "older / younger"
+    },
+    {
+      "ru": "инженер",
+      "baca": "in-zhy-NYER",
+      "en": "engineer"
+    },
+    {
+      "ru": "учитель",
+      "baca": "oo-CHEE-til'",
+      "en": "teacher (school)"
+    },
+    {
+      "ru": "работать",
+      "baca": "ra-BO-tat'",
+      "en": "to work"
+    },
+    {
+      "ru": "дома",
+      "baca": "DO-ma",
+      "en": "at home"
+    },
+    {
+      "ru": "собака / кошка",
+      "baca": "sa-BA-ka / KOSH-ka",
+      "en": "dog / cat"
+    },
+    {
+      "ru": "машина",
+      "baca": "ma-SHY-na",
+      "en": "car"
+    },
+    {
+      "ru": "время",
+      "baca": "VRYE-mya",
+      "en": "time"
+    },
+    {
+      "ru": "вопрос",
+      "baca": "va-PROS",
+      "en": "question"
+    },
+    {
+      "ru": "какой / какая",
+      "baca": "ka-KOY / ka-KA-ya",
+      "en": "which, what kind; what a"
+    },
+    {
+      "ru": "смотри / смотрите",
+      "baca": "smat-REE / smat-REE-tye",
+      "en": "look! (familiar / polite)"
+    },
+    {
+      "ru": "а",
+      "baca": "a",
+      "en": "and, whereas (contrast)"
+    }
+  ],
+  "exercises": [
+    {
+      "prompt": "Fill in мой, моя, моё or мои.",
+      "items": [
+        "____ брат",
+        "____ сестра",
+        "____ окно",
+        "____ родители",
+        "____ папа",
+        "____ семья"
+      ]
+    },
+    {
+      "prompt": "Make the sentences negative. Remember the genitive ending.",
+      "items": [
+        "У меня есть брат. → У меня ____",
+        "У неё есть собака. → У неё ____",
+        "У нас есть машина. → У нас ____",
+        "У него есть сестра. → У него ____",
+        "У вас есть время. → У вас ____"
+      ]
+    },
+    {
+      "prompt": "Put the words in the right order.",
+      "items": [
+        "есть / у / брат / меня",
+        "семья / это / моя",
+        "у / сколько / вас / сестёр / ?",
+        "инженер / он",
+        "кошка / у / есть / нас"
+      ]
+    },
+    {
+      "prompt": "Translate into Russian.",
+      "items": [
+        "This is my family.",
+        "I have an older brother.",
+        "I don't have a sister.",
+        "My dad is a teacher.",
+        "Do you have a dog? (polite)",
+        "We have a cat."
+      ]
+    }
+  ],
+  "answers": [
+    "мой — моя — моё — мои — мой — моя",
+    "нет брата — нет собаки — нет машины — нет сестры — нет времени",
+    "У меня есть брат. — Это моя семья. — Сколько у вас сестёр? — Он инженер. — У нас есть кошка.",
+    "Это моя семья. — У меня есть старший брат. — У меня нет сестры. — Мой папа учитель. — У вас есть собака? — У нас есть кошка."
+  ]
+}

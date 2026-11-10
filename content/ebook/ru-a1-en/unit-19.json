@@ -1,0 +1,483 @@
+{
+  "title": "At the pharmacy: my head hurts, not me",
+  "title_target": "У врача — U vracha",
+  "goal": "Explain how you feel to a pharmacist or doctor — using another turned-around pattern: in Russian it isn't you who hurts, it's your body part that hurts you.",
+  "bekal": [
+    "name parts of the body",
+    "use the pattern У меня болит …",
+    "describe the most common symptoms",
+    "ask for medicine at the pharmacy",
+    "use нужно and надо to say you need to"
+  ],
+  "dialogs": [
+    {
+      "title": "Диалог — A headache at the pharmacy",
+      "intro": "Ani walks into a pharmacy with a pounding head. Notice that in every complaint, the body part is the subject of the sentence.",
+      "lines": [
+        {
+          "speaker": "Ани:",
+          "text": "[Здравствуйте|Zdrast-vooy-tye]. [У|Oo] [меня|mi-NYA] [болит|ba-LEET] [голова|ga-la-VA].",
+          "id": "Hello. I have a headache.",
+          "literal": "hello. at — me — hurts — head."
+        },
+        {
+          "speaker": "Аптекарь:",
+          "text": "[Давно|Dav-NO]?",
+          "id": "For a long time?",
+          "literal": "long-ago?"
+        },
+        {
+          "speaker": "Ани:",
+          "text": "[Два|Dva] [дня|dnya]. [И|Ee] [горло|GOR-la] [тоже|TO-zhy] [болит|ba-LEET].",
+          "id": "Two days. And my throat hurts too.",
+          "literal": "two — days. and — throat — also — hurts."
+        },
+        {
+          "speaker": "Аптекарь:",
+          "text": "[Температура|Tim-pi-ra-TOO-ra] [есть|yest']?",
+          "id": "Do you have a fever?",
+          "literal": "temperature — is-there?"
+        },
+        {
+          "speaker": "Ани:",
+          "text": "[Утром|OO-tram] [было|BY-la] [тридцать|TREE-tsat'] [семь|syem'] [и|ee] [пять|pyat'].",
+          "id": "37.5 this morning.",
+          "literal": "in-the-morning — was — thirty — seven — and — five."
+        },
+        {
+          "speaker": "Аптекарь:",
+          "text": "[Небольшая|Ni-bal'-SHA-ya]. [Вы|Vy] [давно|dav-NO] [в|v] [России|Ra-SEE-i]?",
+          "id": "That's not high. Have you been in Russia long?",
+          "literal": "not-big (f). you — long — in — Russia?"
+        },
+        {
+          "speaker": "Ани:",
+          "text": "[Полгода|Pol-GO-da]. [Это|E-ta] [моя|ma-YA] [первая|PYER-va-ya] [зима|zi-MA].",
+          "id": "Six months. This is my first winter.",
+          "literal": "half-year. this — my — first — winter."
+        },
+        {
+          "speaker": "Аптекарь:",
+          "text": "[Понятно|Pa-NYAT-na]. [Вам|Vam] [нужно|NOOZH-na] [больше|BOL'-shy] [отдыхать|at-dy-KHAT'] [и|ee] [пить|pit'] [горячее|ga-RYA-chi-ye].",
+          "id": "I see. You need to rest more and drink hot drinks.",
+          "literal": "to-you — needed — more — rest — and — drink — hot."
+        },
+        {
+          "speaker": "Ани:",
+          "text": "[А|A] [лекарство|li-KARST-va]?",
+          "id": "And medicine?",
+          "literal": "and — medicine?"
+        },
+        {
+          "speaker": "Аптекарь:",
+          "text": "[Вот|Vot] [это|E-ta] [от|at] [головы|ga-la-VY], [а|a] [это|E-ta] [от|at] [горла|GOR-la]. [Три|Tri] [раза|RA-za] [в|v] [день|dyen'].",
+          "id": "This is for your head, and this is for your throat. Three times a day.",
+          "literal": "here — this — from — head, and — this — from — throat. three — times — in — day."
+        },
+        {
+          "speaker": "Ани:",
+          "text": "[После|POS-lye] [еды|yi-DY]?",
+          "id": "After meals?",
+          "literal": "after — food?"
+        },
+        {
+          "speaker": "Аптекарь:",
+          "text": "[Да|Da]. [И|Ee] [если|YES-li] [через|CHE-ris] [три|tri] [дня|dnya] [не|nye] [лучше|LOOCH-shy] — [идите|i-DEE-tye] [к|k] [врачу|vra-CHOO].",
+          "id": "Yes. And if you're not better in three days, go to a doctor.",
+          "literal": "yes. and — if — through — three — days — not — better — go — to — doctor."
+        }
+      ],
+      "notes": [
+        "**У меня болит голова literally means \"at me hurts head.\"** ⚠️ The **head** is the subject of the sentence, and the verb болит agrees with the head, not with me. Good news: this is close to English \"my head hurts.\" If more than one thing hurts, the verb goes plural: *У меня болЯТ ноги* (my legs hurt). Learners often try *Я болю*, which doesn't exist in Russian at all.",
+        "**Я болею means something different from У меня болит.** *Я болею* = I'm sick (in general, with an illness). *У меня болит голова* = my head hurts (one specific complaint). To say you're calling in sick, use the first: *Я болею* or *Я заболел / заболела* (I've gotten sick).",
+        "**От + genitive means \"medicine against.\"** *Таблетки **от** голов**ы*** (headache pills), *лекарство **от** кашл**я*** (cough medicine). Literally \"from the head\" — the medicine keeps the illness away. ⚠️ Don't use для (for); *лекарство для головы* sounds like something to make your head healthier, not a cure.",
+        "**Russians measure body temperature in the armpit, in Celsius.** Normal is 36.6 (about 98 °F). A mild fever starts at 37.0. A truly high one is 38.5 and up. ⚠️ The number 36.6 has a special place in Russian culture — it's a byword for \"perfectly healthy,\" much like 98.6 °F is in the US.",
+        "**К + dative means \"to (a person).\"** *Идите к врачу* (go to the doctor), *Я иду к другу* (I'm going to my friend's). This is the same dative case as in Unit 15, now for going to a person rather than a place.",
+        "**Нужно / надо both mean \"need to, have to,\" and are almost interchangeable.** *Вам нужно отдыхать* / *Вам надо отдыхать*. Надо is a bit more casual. Both take the dative for the person: мне надо, тебе нужно, ему надо.",
+        "**Через + time means \"in (so much time).\"** *через три дня* (in three days), *через час* (in an hour), *через неделю* (in a week). Different from **после**, which means \"after a specific event\": *после еды* (after meals)."
+      ],
+      "grammars": [
+        {
+          "title": "У меня болит — the complaint pattern",
+          "body": [
+            "The verb form follows the body part that hurts, not the person."
+          ],
+          "table": {
+            "head": [
+              "What hurts",
+              "Sentence",
+              "Say it",
+              "Meaning"
+            ],
+            "rows": [
+              [
+                "one part",
+                "У меня бол**ит** голова.",
+                "oo mi-NYA ba-LEET ga-la-VA",
+                "My head hurts."
+              ],
+              [
+                "one part",
+                "У меня бол**ит** живот.",
+                "…zhy-VOT",
+                "My stomach hurts."
+              ],
+              [
+                "one part",
+                "У меня бол**ит** горло.",
+                "…GOR-la",
+                "My throat hurts."
+              ],
+              [
+                "several parts",
+                "У меня бол**ят** ноги.",
+                "…ba-LYAT NO-gi",
+                "My legs hurt."
+              ],
+              [
+                "several parts",
+                "У меня бол**ят** зубы.",
+                "…ZOO-by",
+                "My teeth hurt."
+              ],
+              [
+                "in the past",
+                "У меня бол**ела** голова.",
+                "…ba-LYE-la",
+                "My head hurt (earlier)."
+              ],
+              [
+                "someone else",
+                "У **него** болит горло.",
+                "oo ni-VO",
+                "His throat hurts."
+              ]
+            ]
+          },
+          "after": [
+            "⚠️ The past form agrees with the gender of the body part, not the person: *болел живот* (masc), *болела голова* (fem), *болело горло* (neut), *болели ноги* (pl). A direct application of the rule from Unit 14."
+          ]
+        },
+        {
+          "title": "Parts of the body",
+          "body": [
+            "Dictionary forms in the left column; that's also the form you use in a complaint sentence."
+          ],
+          "tables": [
+            {
+              "head": [
+                "Русский",
+                "Say it",
+                "English",
+                "Русский",
+                "Say it",
+                "English"
+              ],
+              "rows": [
+                [
+                  "голова",
+                  "ga-la-VA",
+                  "head",
+                  "рука",
+                  "roo-KA",
+                  "hand, arm"
+                ],
+                [
+                  "глаз / глаза",
+                  "glas / gla-ZA",
+                  "eye",
+                  "нога / ноги",
+                  "na-GA / NO-gi",
+                  "foot, leg"
+                ],
+                [
+                  "нос",
+                  "nos",
+                  "nose",
+                  "спина",
+                  "spi-NA",
+                  "back"
+                ],
+                [
+                  "рот",
+                  "rot",
+                  "mouth",
+                  "живот",
+                  "zhy-VOT",
+                  "stomach"
+                ],
+                [
+                  "ухо / уши",
+                  "OO-kha / OO-shy",
+                  "ear",
+                  "сердце",
+                  "SYER-tsy",
+                  "heart"
+                ],
+                [
+                  "зуб / зубы",
+                  "zoop / ZOO-by",
+                  "tooth",
+                  "палец",
+                  "PA-lits",
+                  "finger"
+                ],
+                [
+                  "горло",
+                  "GOR-la",
+                  "throat",
+                  "шея",
+                  "SHE-ya",
+                  "neck"
+                ]
+              ]
+            }
+          ],
+          "after": [
+            "⚠️ Some body parts have irregular plurals: глаз → **глаза**, ухо → **уши**, зуб → **зубы**, нога → **ноги**, рука → **руки**. Worth memorizing, since body parts so often come in pairs.",
+            "**Рука** covers both hand and arm; **нога** covers both foot and leg. ⚠️ Russian doesn't split them the way English does (*hand*/*arm*, *foot*/*leg*) — context tells you which one is meant."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Symptoms and medicine",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "Русский",
+            "Say it",
+            "English"
+          ],
+          "rows": [
+            [
+              "Я болею.",
+              "ya ba-LYE-yu",
+              "I'm sick."
+            ],
+            [
+              "Я заболел / заболела.",
+              "za-ba-LYEL / -LA",
+              "I've gotten sick. (m / f)"
+            ],
+            [
+              "У меня температура.",
+              "tim-pi-ra-TOO-ra",
+              "I have a fever."
+            ],
+            [
+              "У меня насморк.",
+              "NAS-mark",
+              "I have a runny nose."
+            ],
+            [
+              "У меня кашель.",
+              "KA-shyl'",
+              "I have a cough."
+            ],
+            [
+              "Меня тошнит.",
+              "mi-NYA tash-NEET",
+              "I feel nauseous."
+            ],
+            [
+              "У меня аллергия на …",
+              "a-lir-GEE-ya na",
+              "I'm allergic to …"
+            ],
+            [
+              "Мне плохо.",
+              "mnye PLO-kha",
+              "I don't feel well."
+            ],
+            [
+              "Мне лучше.",
+              "mnye LOOCH-shy",
+              "I feel better."
+            ],
+            [
+              "Вызовите врача!",
+              "VY-za-vi-tye vra-CHA",
+              "Call a doctor!"
+            ],
+            [
+              "Вызовите скорую!",
+              "VY-za-vi-tye SKO-roo-yu",
+              "Call an ambulance!"
+            ]
+          ]
+        },
+        {
+          "type": "kotak",
+          "title": "A Russian pharmacy works differently",
+          "items": [
+            "**A Russian аптека can give medical advice.** Russian pharmacists are trained and used to recommending medicine for minor complaints without a prescription. Describing your symptoms at the pharmacy is a normal, expected conversation — that's why this unit practices it.",
+            "**Скорая (помощь)** is the ambulance, and its number is **103** from a cell phone. The general emergency number **112** works too. ⚠️ Memorize these two numbers before you travel.",
+            "**Полис** is a health insurance card. International students must have one; without it, medical care must be paid in full.",
+            "**Pharmacy hours:** in big cities many are open 24 hours, marked **круглосуточно** (*kroog-la-SOO-tach-na*) — open around the clock. A long word, but very useful to look for on signs."
+          ]
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "ru": "болеть / болит",
+      "baca": "ba-LYET' / ba-LEET",
+      "en": "to hurt (body part)"
+    },
+    {
+      "ru": "голова",
+      "baca": "ga-la-VA",
+      "en": "head"
+    },
+    {
+      "ru": "горло",
+      "baca": "GOR-la",
+      "en": "throat"
+    },
+    {
+      "ru": "живот",
+      "baca": "zhy-VOT",
+      "en": "stomach"
+    },
+    {
+      "ru": "зуб / зубы",
+      "baca": "zoop / ZOO-by",
+      "en": "tooth / teeth"
+    },
+    {
+      "ru": "рука / нога",
+      "baca": "roo-KA / na-GA",
+      "en": "hand, arm / foot, leg"
+    },
+    {
+      "ru": "глаз / глаза",
+      "baca": "glas / gla-ZA",
+      "en": "eye / eyes"
+    },
+    {
+      "ru": "спина",
+      "baca": "spi-NA",
+      "en": "back"
+    },
+    {
+      "ru": "температура",
+      "baca": "tim-pi-ra-TOO-ra",
+      "en": "temperature, fever"
+    },
+    {
+      "ru": "насморк / кашель",
+      "baca": "NAS-mark / KA-shyl'",
+      "en": "runny nose / cough"
+    },
+    {
+      "ru": "лекарство",
+      "baca": "li-KARST-va",
+      "en": "medicine"
+    },
+    {
+      "ru": "таблетка",
+      "baca": "tab-LYET-ka",
+      "en": "tablet, pill"
+    },
+    {
+      "ru": "аптека",
+      "baca": "ap-TYE-ka",
+      "en": "pharmacy"
+    },
+    {
+      "ru": "врач / доктор",
+      "baca": "vrach / DOK-tar",
+      "en": "doctor"
+    },
+    {
+      "ru": "скорая помощь",
+      "baca": "SKO-ra-ya PO-mashch'",
+      "en": "ambulance"
+    },
+    {
+      "ru": "нужно / надо",
+      "baca": "NOOZH-na / NA-da",
+      "en": "need to, have to"
+    },
+    {
+      "ru": "через",
+      "baca": "CHE-ris",
+      "en": "in (… time), after (a period)"
+    },
+    {
+      "ru": "после",
+      "baca": "POS-lye",
+      "en": "after"
+    },
+    {
+      "ru": "лучше / хуже",
+      "baca": "LOOCH-shy / KHOO-zhy",
+      "en": "better / worse"
+    },
+    {
+      "ru": "раз в день",
+      "baca": "ras v dyen'",
+      "en": "once a day"
+    },
+    {
+      "ru": "полгода",
+      "baca": "pol-GO-da",
+      "en": "six months, half a year"
+    }
+  ],
+  "exercises": [
+    {
+      "prompt": "Fill in болит or болят.",
+      "items": [
+        "У меня ____ голова.",
+        "У меня ____ ноги.",
+        "У него ____ горло.",
+        "У неё ____ зубы.",
+        "У меня ____ живот.",
+        "У них ____ глаза."
+      ]
+    },
+    {
+      "prompt": "Fill in the dative form: мне, вам, ему, ей, нам.",
+      "items": [
+        "____ (я) нужно отдыхать.",
+        "____ (вы) надо пить горячее.",
+        "____ (он) плохо.",
+        "____ (она) лучше.",
+        "____ (мы) нужно идти к врачу."
+      ]
+    },
+    {
+      "prompt": "Put the words in the right order.",
+      "items": [
+        "болит / у / голова / меня",
+        "температура / есть / ?",
+        "раза / три / день / в",
+        "к / идите / врачу",
+        "плохо / мне"
+      ]
+    },
+    {
+      "prompt": "Translate into Russian.",
+      "items": [
+        "I have a headache.",
+        "My throat hurts too.",
+        "I have a fever.",
+        "My legs hurt.",
+        "You need to rest.",
+        "Call an ambulance!"
+      ]
+    }
+  ],
+  "answers": [
+    "болит — болят — болит — болят — болит — болят",
+    "Мне — Вам — Ему — Ей — Нам",
+    "У меня болит голова. — Температура есть? — Три раза в день. — Идите к врачу. — Мне плохо.",
+    "У меня болит голова. — Горло тоже болит. — У меня температура. — У меня болят ноги. — Вам нужно отдыхать. — Вызовите скорую!"
+  ]
+}

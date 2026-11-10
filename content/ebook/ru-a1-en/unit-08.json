@@ -1,0 +1,545 @@
+{
+  "title": "At the café: ordering without pointing",
+  "title_target": "В кафе — V kafe",
+  "goal": "Order food and drinks in full sentences, and learn the accusative case — the ending a noun takes as soon as it becomes the target of an action.",
+  "bekal": [
+    "order with Я хочу … and Я буду …",
+    "put feminine nouns into the accusative",
+    "know when masculine nouns do NOT change",
+    "name the most common Russian foods and drinks",
+    "ask for the check and thank the server"
+  ],
+  "dialogs": [
+    {
+      "title": "Диалог — The first lunch",
+      "intro": "Ani and Марко walk into the campus café. Watch the noun endings after хочу and буду: the feminine ones change, the masculine inanimate ones don't.",
+      "lines": [
+        {
+          "speaker": "Официант:",
+          "text": "[Добрый|DOB-ryy] [день|dyen']! [Вы|Vy] [готовы|ga-TO-vy]?",
+          "id": "Good afternoon! Ready to order?",
+          "literal": "good — day! you — ready?"
+        },
+        {
+          "speaker": "Марко:",
+          "text": "[Да|Da]. [Я|Ya] [буду|BOO-doo] [борщ|borshch] [и|ee] [чёрный|CHOR-nyy] [чай|chay].",
+          "id": "Yes. I'll have borscht and black tea.",
+          "literal": "yes. I — will — borscht — and — black — tea."
+        },
+        {
+          "speaker": "Официант:",
+          "text": "[А|A] [вам|vam]?",
+          "id": "And for you?",
+          "literal": "and — to-you?"
+        },
+        {
+          "speaker": "Ани:",
+          "text": "[Я|Ya] [хочу|kha-CHOO] [пиццу|PEE-tsoo] [и|ee] [воду|VO-doo], [пожалуйста|pa-ZHA-loos-ta].",
+          "id": "I'd like a pizza and water, please.",
+          "literal": "I — want — pizza (accusative) — and — water (accusative), please."
+        },
+        {
+          "speaker": "Официант:",
+          "text": "[Воду|VO-doo] [с|s] [газом|GA-zam] [или|EE-li] [без|byes] [газа|GA-za]?",
+          "id": "Sparkling or still?",
+          "literal": "water — with — gas — or — without — gas?"
+        },
+        {
+          "speaker": "Ани:",
+          "text": "[Без|Byes] [газа|GA-za], [пожалуйста|pa-ZHA-loos-ta].",
+          "id": "Still, please.",
+          "literal": "without — gas, please."
+        },
+        {
+          "speaker": "Официант:",
+          "text": "[Хорошо|Kha-ra-SHO]. [Десерт|Di-SYERT]?",
+          "id": "Fine. Dessert?",
+          "literal": "good. dessert?"
+        },
+        {
+          "speaker": "Марко:",
+          "text": "[Нет|Nyet], [спасибо|spa-SEE-ba]. [Только|TOL'-ka] [счёт|shchot], [когда|kag-DA] [можно|MOZH-na].",
+          "id": "No, thank you. Just the check, when you can.",
+          "literal": "no, thank-you. only — check, when — possible."
+        },
+        {
+          "speaker": "Ани:",
+          "text": "[Подожди|Pa-dazh-DEE]! [Я|Ya] [хочу|kha-CHOO] [мороженое|ma-RO-zhy-na-ye].",
+          "id": "Wait! I want ice cream.",
+          "literal": "wait! I — want — ice-cream."
+        },
+        {
+          "speaker": "Марко:",
+          "text": "[Мороженое|Ma-RO-zhy-na-ye] [зимой|zi-MOY]? [Ты|Ty] [уже|oo-ZHE] [русская|ROOS-ka-ya].",
+          "id": "Ice cream in winter? You're already Russian.",
+          "literal": "ice-cream — in-winter? you — already — Russian (f)."
+        },
+        {
+          "speaker": "Ани:",
+          "text": "[Здесь|Zdyes'] [все|fsye] [едят|yi-DYAT] [мороженое|ma-RO-zhy-na-ye] [зимой|zi-MOY]. [Я|Ya] [просто|PROS-ta] [учусь|oo-CHOOS'].",
+          "id": "Everyone here eats ice cream in winter. I'm just learning.",
+          "literal": "here — all — eat — ice-cream — in-winter. I — simply — learn."
+        }
+      ],
+      "notes": [
+        "**The accusative is the ending for the target of an action.** In *Я хочу пиццу*, the pizza is what's wanted — it's the target, not the doer. Feminine nouns in **-а/-я** change to **-у/-ю**: пицц**а** → пицц**у**, вод**а** → вод**у**, книг**а** → книг**у**. ⚠️ This is the ending beginners forget most, because in English \"pizza\" stays the same whether it's the subject or the object.",
+        "**Masculine inanimate nouns do NOT change in the accusative.** *Я хочу борщ* — борщ stays борщ. *Я читаю журнал* — журнал stays журнал. Big good news: half the objects you'll use need nothing done to them at all.",
+        "**Neuter nouns don't change either.** *Я хочу мороженое* — exactly the same as the dictionary form. So of the four noun types, only **one** changes in the accusative singular: the feminine.",
+        "**Я буду … is the most typically Russian way to order.** Literally \"I will be\" — the future of быть, with no other verb. Russians use it exactly the way English speakers say \"I'll have …\". *Я буду кофе.* — I'll have a coffee. Completely natural, and it sounds softer than *Я хочу*.",
+        "**Я хочу is a little more direct, but not rude.** ⚠️ Unlike English, where *I want* sounds pushy in a restaurant, Russian *Я хочу* is perfectly normal — as long as you finish with пожалуйста. What really feels rude is just naming the dish without a sentence.",
+        "**С means \"with\", без means \"without\", and both change the noun's ending.** *с газ**ом*** (sparkling, instrumental), *без газ**а*** (still, genitive). For now learn this pair as chunks — two phrases you'll use every time you order water in Russia.",
+        "**Счёт means the check, and asking for it has its own etiquette.** The standard phrases: *Счёт, пожалуйста* or *Можно счёт?*. ⚠️ In Russia the server usually does **not** bring the check before you ask, because that would feel like showing guests the door — so don't sit waiting for it."
+      ],
+      "grammars": [
+        {
+          "title": "Accusative singular — only one row changes",
+          "body": [
+            "Compare the second column with the first. Only the feminine rows are different."
+          ],
+          "table": {
+            "head": [
+              "Type",
+              "Dictionary form",
+              "Accusative",
+              "Example"
+            ],
+            "rows": [
+              [
+                "masculine inanimate",
+                "борщ, чай, журнал",
+                "**same**",
+                "Я хочу борщ."
+              ],
+              [
+                "masculine animate ⚠️",
+                "брат, друг, студент",
+                "**-а** (like the genitive)",
+                "Я знаю брат**а**."
+              ],
+              [
+                "feminine -а",
+                "пицца, вода, книга",
+                "**-у**",
+                "Я хочу пицц**у**."
+              ],
+              [
+                "feminine -я",
+                "неделя, кухня",
+                "**-ю**",
+                "Я жду недел**ю**."
+              ],
+              [
+                "neuter",
+                "мороженое, окно, молоко",
+                "**same**",
+                "Я хочу молоко."
+              ],
+              [
+                "feminine -ь",
+                "дверь, кровать",
+                "**same**",
+                "Я вижу дверь."
+              ]
+            ]
+          },
+          "after": [
+            "⚠️ The second row is the only place at A1 where \"alive or not\" matters. Masculine nouns for living beings take the genitive ending **-а** when they're the object: *Я знаю Иван**а***, *Я вижу брат**а***, *Я люблю кот**а***.",
+            "The verbs whose objects go into the accusative are the most common action verbs: **хотеть** (to want), **есть** (to eat), **пить** (to drink), **читать** (to read), **смотреть** (to watch), **знать** (to know), **любить** (to love), **покупать** (to buy), **делать** (to do)."
+          ]
+        },
+        {
+          "title": "Хотеть — a verb that obeys no group",
+          "body": [
+            "Its first half follows Group I, its second half Group II. Learn it whole; you'll use it every day."
+          ],
+          "table": {
+            "head": [
+              "Person",
+              "Form",
+              "Say it"
+            ],
+            "rows": [
+              [
+                "я",
+                "хочу",
+                "kha-CHOO"
+              ],
+              [
+                "ты",
+                "хочешь",
+                "KHO-chish"
+              ],
+              [
+                "он / она",
+                "хочет",
+                "KHO-chit"
+              ],
+              [
+                "мы",
+                "хотим",
+                "kha-TEEM"
+              ],
+              [
+                "вы",
+                "хотите",
+                "kha-TEE-tye"
+              ],
+              [
+                "они",
+                "хотят",
+                "kha-TYAT"
+              ]
+            ]
+          },
+          "after": [
+            "After хотеть you can have a noun (*Я хочу чай*) or a verb in its dictionary form (*Я хочу есть* — I'm hungry, literally \"I want to eat\"). *Я хочу пить* means \"I'm thirsty\"."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Food and drink",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "Русский",
+            "Say it",
+            "English"
+          ],
+          "rows": [
+            [
+              "хлеб",
+              "khlyep",
+              "bread"
+            ],
+            [
+              "суп",
+              "soop",
+              "soup"
+            ],
+            [
+              "борщ",
+              "borshch",
+              "borscht (Russian beet soup)"
+            ],
+            [
+              "салат",
+              "sa-LAT",
+              "salad"
+            ],
+            [
+              "мясо",
+              "MYA-sa",
+              "meat"
+            ],
+            [
+              "курица",
+              "KOO-ri-tsa",
+              "chicken"
+            ],
+            [
+              "рыба",
+              "RY-ba",
+              "fish"
+            ],
+            [
+              "рис",
+              "ris",
+              "rice"
+            ],
+            [
+              "картошка",
+              "kar-TOSH-ka",
+              "potatoes"
+            ],
+            [
+              "овощи",
+              "O-va-shchi",
+              "vegetables"
+            ],
+            [
+              "фрукты",
+              "FROOK-ty",
+              "fruit"
+            ],
+            [
+              "яблоко",
+              "YA-bla-ka",
+              "apple"
+            ],
+            [
+              "сыр",
+              "syr",
+              "cheese"
+            ],
+            [
+              "яйцо",
+              "yiy-TSO",
+              "egg"
+            ],
+            [
+              "мороженое",
+              "ma-RO-zhy-na-ye",
+              "ice cream"
+            ],
+            [
+              "чай / кофе",
+              "chay / KO-fye",
+              "tea / coffee"
+            ],
+            [
+              "вода",
+              "va-DA",
+              "water"
+            ],
+            [
+              "сок",
+              "sok",
+              "juice"
+            ],
+            [
+              "молоко",
+              "ma-la-KO",
+              "milk"
+            ],
+            [
+              "сахар",
+              "SA-khar",
+              "sugar"
+            ]
+          ]
+        },
+        {
+          "type": "kotak",
+          "title": "Three things about eating in Russia that surprise newcomers",
+          "items": [
+            "**Soup is eaten every day, not now and then.** A full Russian lunch has a fixed order: первое (first course, always soup), второе (second course, meat or fish with potatoes or porridge), and компот or чай. Turning down soup in a Russian home can feel odd.",
+            "**Tea is drunk hot and endlessly, but almost always without milk.** Russians drink чай with sugar, lemon or jam — not with milk. ⚠️ Order *чай с молоком* and you'll get it, but you'll be taken for a Brit.",
+            "**Rice isn't a staple.** Russia has картошка (potatoes), хлеб (dark bread) and гречка (buckwheat). Rice exists, but as a side dish, not the center of the plate. Learners from rice-eating cultures who hunt for rice at every meal will go hungry fast — or quickly learn to love dark bread."
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Ready-made phrases for the café",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "Русский",
+            "Say it",
+            "English"
+          ],
+          "rows": [
+            [
+              "Меню, пожалуйста.",
+              "mi-NYU pa-ZHA-loos-ta",
+              "The menu, please."
+            ],
+            [
+              "Что вы посоветуете?",
+              "shto vy pa-sa-VYE-too-yi-tye",
+              "What do you recommend?"
+            ],
+            [
+              "Я буду борщ.",
+              "ya BOO-doo borshch",
+              "I'll have the borscht."
+            ],
+            [
+              "Без мяса, пожалуйста.",
+              "byes MYA-sa",
+              "Without meat, please."
+            ],
+            [
+              "Это острое?",
+              "E-ta OST-ra-ye",
+              "Is this spicy?"
+            ],
+            [
+              "Очень вкусно!",
+              "O-chin' FKOOS-na",
+              "Very tasty!"
+            ],
+            [
+              "Счёт, пожалуйста.",
+              "shchot pa-ZHA-loos-ta",
+              "The check, please."
+            ],
+            [
+              "Можно картой?",
+              "MOZH-na KAR-tay",
+              "Can I pay by card?"
+            ]
+          ]
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "ru": "кафе",
+      "baca": "ka-FE",
+      "en": "café"
+    },
+    {
+      "ru": "меню",
+      "baca": "mi-NYU",
+      "en": "menu"
+    },
+    {
+      "ru": "официант",
+      "baca": "a-fi-tsy-ANT",
+      "en": "server, waiter"
+    },
+    {
+      "ru": "счёт",
+      "baca": "shchot",
+      "en": "check, bill"
+    },
+    {
+      "ru": "хотеть",
+      "baca": "kha-TYET'",
+      "en": "to want"
+    },
+    {
+      "ru": "буду",
+      "baca": "BOO-doo",
+      "en": "I will (also: I'll have)"
+    },
+    {
+      "ru": "готовый",
+      "baca": "ga-TO-vyy",
+      "en": "ready"
+    },
+    {
+      "ru": "с / без",
+      "baca": "s / byes",
+      "en": "with / without"
+    },
+    {
+      "ru": "вкусно",
+      "baca": "FKOOS-na",
+      "en": "tasty, delicious"
+    },
+    {
+      "ru": "острый",
+      "baca": "OST-ryy",
+      "en": "spicy, sharp"
+    },
+    {
+      "ru": "чёрный / белый",
+      "baca": "CHOR-nyy / BYE-lyy",
+      "en": "black / white"
+    },
+    {
+      "ru": "десерт",
+      "baca": "di-SYERT",
+      "en": "dessert"
+    },
+    {
+      "ru": "зимой",
+      "baca": "zi-MOY",
+      "en": "in winter"
+    },
+    {
+      "ru": "уже",
+      "baca": "oo-ZHE",
+      "en": "already"
+    },
+    {
+      "ru": "все",
+      "baca": "fsye",
+      "en": "everyone"
+    },
+    {
+      "ru": "подожди / подождите",
+      "baca": "pa-dazh-DEE / -DEE-tye",
+      "en": "wait (familiar / polite)"
+    },
+    {
+      "ru": "пицца",
+      "baca": "PEE-tsa",
+      "en": "pizza"
+    },
+    {
+      "ru": "борщ",
+      "baca": "borshch",
+      "en": "borscht"
+    },
+    {
+      "ru": "мороженое",
+      "baca": "ma-RO-zhy-na-ye",
+      "en": "ice cream"
+    },
+    {
+      "ru": "курица",
+      "baca": "KOO-ri-tsa",
+      "en": "chicken"
+    },
+    {
+      "ru": "картошка",
+      "baca": "kar-TOSH-ka",
+      "en": "potatoes"
+    },
+    {
+      "ru": "яблоко",
+      "baca": "YA-bla-ka",
+      "en": "apple"
+    }
+  ],
+  "exercises": [
+    {
+      "prompt": "Put into the accusative. Remember: only the feminine changes.",
+      "items": [
+        "пицца → Я хочу ____",
+        "борщ → Я хочу ____",
+        "вода → Я хочу ____",
+        "мороженое → Я хочу ____",
+        "курица → Я хочу ____",
+        "чай → Я хочу ____"
+      ]
+    },
+    {
+      "prompt": "Fill in the right form of хотеть.",
+      "items": [
+        "Я ____ кофе.",
+        "Ты ____ есть?",
+        "Он ____ пиццу.",
+        "Мы ____ воду.",
+        "Вы ____ десерт?",
+        "Они ____ борщ."
+      ]
+    },
+    {
+      "prompt": "Put the words in the right order.",
+      "items": [
+        "буду / борщ / я",
+        "пожалуйста / счёт",
+        "воду / хочу / без / я / газа",
+        "посоветуете / что / вы / ?",
+        "вкусно / очень"
+      ]
+    },
+    {
+      "prompt": "Translate into Russian.",
+      "items": [
+        "I'll have black tea.",
+        "I'd like a pizza, please.",
+        "Still water.",
+        "What do you recommend?",
+        "Very tasty!",
+        "The check, please."
+      ]
+    }
+  ],
+  "answers": [
+    "пиццу — борщ — воду — мороженое — курицу — чай",
+    "хочу — хочешь — хочет — хотим — хотите — хотят",
+    "Я буду борщ. — Счёт, пожалуйста. — Я хочу воду без газа. — Что вы посоветуете? — Очень вкусно.",
+    "Я буду чёрный чай. — Я хочу пиццу, пожалуйста. — Вода без газа. — Что вы посоветуете? — Очень вкусно! — Счёт, пожалуйста."
+  ]
+}

@@ -1,0 +1,482 @@
+{
+  "title": "Where do you live?",
+  "title_target": "Где ты живёшь? — Gde ty zhivyosh?",
+  "goal": "Talk about places: city, home, office, campus. And master the prepositional case — the ending that appears every time a noun follows \"in\" or \"at\".",
+  "bekal": [
+    "answer Где вы живёте? and Где вы работаете?",
+    "put nouns into the prepositional",
+    "choose between в and на",
+    "name the parts of a home and public places",
+    "ask where something is"
+  ],
+  "dialogs": [
+    {
+      "title": "Диалог — Looking for an apartment",
+      "intro": "Ani wants to move out of the dorm. She asks Сергей, her neighbor from Unit 5. Notice that every noun after в and на changes its ending to -е.",
+      "lines": [
+        {
+          "speaker": "Ани:",
+          "text": "[Сергей|Sir-GYEY], [где|gdye] [вы|vy] [живёте|zhy-VYO-tye]?",
+          "id": "Sergey, where do you live?",
+          "literal": "Sergey, where — you — live?"
+        },
+        {
+          "speaker": "Сергей:",
+          "text": "[В|V] [этом|E-tam] [доме|DO-mye], [на|na] [пятом|PYA-tam] [этаже|e-ta-ZHE]. [А|A] [почему|pa-chi-MOO]?",
+          "id": "In this building, on the fifth floor. Why?",
+          "literal": "in — this — building, on — fifth — floor. and — why?"
+        },
+        {
+          "speaker": "Ани:",
+          "text": "[Я|Ya] [ищу|i-SHCHOO] [квартиру|kvar-TEE-roo]. [В|V] [общежитии|ap-shchy-ZHY-ti-i] [шумно|SHOOM-na].",
+          "id": "I'm looking for an apartment. The dorm is noisy.",
+          "literal": "I — look-for — apartment. in — dorm — noisy."
+        },
+        {
+          "speaker": "Сергей:",
+          "text": "[Понимаю|Pa-ni-MA-yu]. [В|V] [нашем|NA-shym] [районе|ra-YO-nye] [есть|yest'] [хорошие|kha-RO-shy-ye] [квартиры|kvar-TEE-ry].",
+          "id": "I see. There are good apartments in our area.",
+          "literal": "understand-I. in — our — district — are — good — apartments."
+        },
+        {
+          "speaker": "Ани:",
+          "text": "[Это|E-ta] [далеко|da-li-KO] [от|at] [университета|oo-ni-vir-si-TYE-ta]?",
+          "id": "Is it far from the university?",
+          "literal": "this — far — from — university?"
+        },
+        {
+          "speaker": "Сергей:",
+          "text": "[Нет|Nyet], [близко|BLEES-ka]. [Пятнадцать|Pit-NA-tsat'] [минут|mi-NOOT] [на|na] [метро|mit-RO].",
+          "id": "No, it's close. Fifteen minutes by metro.",
+          "literal": "no, close. fifteen — minutes — on — metro."
+        },
+        {
+          "speaker": "Ани:",
+          "text": "[А|A] [магазины|ma-ga-ZEE-ny]? [Аптека|Ap-TYE-ka]?",
+          "id": "And shops? A pharmacy?",
+          "literal": "and — shops? pharmacy?"
+        },
+        {
+          "speaker": "Сергей:",
+          "text": "[Всё|Fsyo] [рядом|RYA-dam]. [Магазин|Ma-ga-ZEEN] [на|na] [углу|oog-LOO], [аптека|ap-TYE-ka] [напротив|na-PRO-tif].",
+          "id": "Everything's nearby. The shop is on the corner, the pharmacy across the street.",
+          "literal": "all — nearby. shop — on — corner, pharmacy — opposite."
+        },
+        {
+          "speaker": "Ани:",
+          "text": "[Звучит|Zvoo-CHEET] [отлично|at-LEECH-na]. [Сколько|SKOL'-ka] [стоит|STO-it] [квартира|kvar-TEE-ra] [здесь|zdyes']?",
+          "id": "Sounds great. How much does an apartment cost here?",
+          "literal": "sounds — great. how-much — costs — apartment — here?"
+        },
+        {
+          "speaker": "Сергей:",
+          "text": "[Однокомнатная|Ad-na-KOM-nat-na-ya] — [около|O-ka-la] [сорока|sa-ra-KA] [тысяч|TY-sich] [в|v] [месяц|MYE-sits].",
+          "id": "A one-room place is about forty thousand a month.",
+          "literal": "one-room — about — forty — thousand — in — month."
+        },
+        {
+          "speaker": "Ани:",
+          "text": "[Хм|Khm]. [Может|MO-zhyt] [быть|byt'], [в|v] [общежитии|ap-shchy-ZHY-ti-i] [не|nye] [так|tak] [шумно|SHOOM-na].",
+          "id": "Hmm. Maybe the dorm isn't that noisy after all.",
+          "literal": "hmm. maybe — then, in — dorm — not — so — noisy."
+        }
+      ],
+      "notes": [
+        "**After в and на meaning location, the noun changes its ending to -е.** ⚠️ Москва → в Москв**е**, дом → в дом**е**, работа → на работ**е**, стол → на стол**е**. That's the prepositional case, and it's named that because it **only** ever appears after a preposition — never on its own.",
+        "**The ending is almost always -е, which makes this the easiest case.** Masculine, feminine, neuter: all **-е**. The only exceptions are words ending in **-ия/-ие** (Россия → в Росси**и**, общежитие → в общежити**и**) and a few masculine words that take a stressed **-у** (в углу, в саду, в аэропорту).",
+        "**В means \"in\", на means \"on\" — but part of the real split has to be memorized.** *в доме* (in the house), *на столе* (on the table) make sense. But *на работе* (at work), *на почте* (at the post office), *на вокзале* (at the station) can't be explained with \"on\". English has the same kind of quirks (\"on the bus\", \"at work\"). The grammar box below has the list to learn.",
+        "**⚠️ Don't confuse this with в + accusative.** *Я живу в Москв**е*** (I live in Moscow, prepositional) but *Я еду в Москв**у*** (I'm going to Moscow, accusative). The preposition is exactly the same; only the noun ending differs — and the meaning switches from \"in\" to \"to\". Unit 13 covers this fully; for now just know that **-е means staying put**.",
+        "**Далеко от and близко от take the genitive.** *далеко от университет**а*** (far from the university), *близко от дом**а*** (close to home). The preposition **от** is always followed by the genitive, just like из and без.",
+        "**Однокомнатная квартира means a one-room apartment** — and in Russia the count doesn't include the kitchen. Однокомнатная = one room plus kitchen plus bathroom. Двухкомнатная = two rooms. ⚠️ Not the same as the English \"two-bedroom\": a Russian двухкомнатная often has just one bedroom plus a living room.",
+        "**Может быть means \"maybe\", and is often shortened to just может.** *Может, завтра?* — maybe tomorrow?"
+      ],
+      "grammars": [
+        {
+          "title": "Prepositional — the -е ending for nearly everything",
+          "body": [
+            "Used after **в** (in), **на** (on, at) and **о** (about)."
+          ],
+          "table": {
+            "head": [
+              "Dictionary form",
+              "Prepositional",
+              "Example"
+            ],
+            "rows": [
+              [
+                "дом (masc)",
+                "в дом**е**",
+                "Я в доме. — I'm in the house."
+              ],
+              [
+                "стол (masc)",
+                "на стол**е**",
+                "Книга на столе. — The book is on the table."
+              ],
+              [
+                "Москва (fem)",
+                "в Москв**е**",
+                "Я живу в Москве."
+              ],
+              [
+                "работа (fem)",
+                "на работ**е**",
+                "Он на работе. — He's at work."
+              ],
+              [
+                "окно (neuter)",
+                "в окн**е**",
+                "Кошка в окне."
+              ],
+              [
+                "Россия (fem -ия) ⚠️",
+                "в Росси**и**",
+                "Я живу в России."
+              ],
+              [
+                "общежитие (neuter -ие) ⚠️",
+                "в общежити**и**",
+                "Я живу в общежитии."
+              ],
+              [
+                "угол, сад, аэропорт ⚠️",
+                "в угл**у**, в сад**у**, в аэропорт**у**",
+                "Магазин на углу."
+              ]
+            ]
+          },
+          "after": [
+            "This case is also used for \"about\": *Мы говорим **о работе*** — we're talking about work. *Книга **о России*** — a book about Russia.",
+            "⚠️ The preposition **о** becomes **об** before a vowel: *об Ани*, *об Италии*. Just to make it easier to say — like English \"a\" becoming \"an\"."
+          ]
+        },
+        {
+          "title": "В or на — the list to learn",
+          "body": [
+            "For most enclosed places, use **в**. The list below shows places that take **на** even though the logic isn't obvious."
+          ],
+          "tables": [
+            {
+              "head": [
+                "Takes В",
+                "Takes НА ⚠️"
+              ],
+              "rows": [
+                [
+                  "в доме — in the house",
+                  "на работе — at work"
+                ],
+                [
+                  "в квартире — in the apartment",
+                  "на почте — at the post office"
+                ],
+                [
+                  "в комнате — in the room",
+                  "на вокзале — at the train station"
+                ],
+                [
+                  "в магазине — in the shop",
+                  "на остановке — at the bus stop"
+                ],
+                [
+                  "в кафе — in the café",
+                  "на улице — in the street, outside"
+                ],
+                [
+                  "в университете — at the university",
+                  "на уроке — in class (a lesson)"
+                ],
+                [
+                  "в театре — at the theater",
+                  "на концерте — at a concert"
+                ],
+                [
+                  "в больнице — in the hospital",
+                  "на рынке — at the market"
+                ],
+                [
+                  "в банке — at the bank",
+                  "на этаже — on the floor (story)"
+                ],
+                [
+                  "в Москве — in Moscow",
+                  "на кухне — in the kitchen"
+                ]
+              ]
+            }
+          ],
+          "after": [
+            "No single rule explains the whole right-hand column. A pattern that helps a bit: **на** is used for places pictured as an open area or an activity (улица, площадь, урок, концерт), while **в** is for enclosed spaces. The rest is memorization.",
+            "Mistakes here don't kill communication — *в работе* will still be understood — but they instantly mark you as a foreigner. Learn those ten right-hand rows and you've covered most everyday conversations."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Home and public places",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "Русский",
+            "Say it",
+            "English"
+          ],
+          "rows": [
+            [
+              "дом",
+              "dom",
+              "house, building"
+            ],
+            [
+              "квартира",
+              "kvar-TEE-ra",
+              "apartment"
+            ],
+            [
+              "общежитие",
+              "ap-shchy-ZHY-ti-ye",
+              "dormitory"
+            ],
+            [
+              "кухня",
+              "KOOKH-nya",
+              "kitchen"
+            ],
+            [
+              "ванная",
+              "VA-na-ya",
+              "bathroom"
+            ],
+            [
+              "туалет",
+              "too-a-LYET",
+              "toilet"
+            ],
+            [
+              "спальня",
+              "SPAL'-nya",
+              "bedroom"
+            ],
+            [
+              "балкон",
+              "bal-KON",
+              "balcony"
+            ],
+            [
+              "этаж",
+              "e-TASH",
+              "floor (story)"
+            ],
+            [
+              "улица",
+              "OO-li-tsa",
+              "street"
+            ],
+            [
+              "район",
+              "ra-YON",
+              "district, area"
+            ],
+            [
+              "центр",
+              "tsentr",
+              "city center"
+            ],
+            [
+              "метро",
+              "mit-RO",
+              "metro, subway"
+            ],
+            [
+              "вокзал",
+              "vag-ZAL",
+              "train station"
+            ],
+            [
+              "остановка",
+              "as-ta-NOF-ka",
+              "bus stop"
+            ],
+            [
+              "университет",
+              "oo-ni-vir-si-TYET",
+              "university"
+            ],
+            [
+              "почта",
+              "POCH-ta",
+              "post office"
+            ],
+            [
+              "банк",
+              "bank",
+              "bank"
+            ]
+          ]
+        },
+        {
+          "type": "kotak",
+          "title": "Place words that need no preposition",
+          "items": [
+            "**дома** (*DO-ma*) — at home. Not *в доме*: if you mean \"being at home\" (rather than \"inside the house building\"), the word is дома. *Я дома* — I'm at home.",
+            "**здесь / там / тут** — here / there / here (casual). Never need a preposition.",
+            "**рядом** (*RYA-dam*) — next door, very close. *Магазин рядом* — the shop is close by.",
+            "**напротив** (*na-PRO-tif*) — opposite, across the street. Takes the genitive when you say opposite what: *напротив дом**а***.",
+            "⚠️ **домой** (*da-MOY*) is different from **дома**: домой means \"(to) home\", дома means \"at home\". *Я иду домой* — I'm going home. *Я дома* — I'm at home."
+          ]
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "ru": "где",
+      "baca": "gdye",
+      "en": "where"
+    },
+    {
+      "ru": "жить",
+      "baca": "zhyt'",
+      "en": "to live"
+    },
+    {
+      "ru": "в / на",
+      "baca": "v / na",
+      "en": "in / on, at (two place prepositions)"
+    },
+    {
+      "ru": "от",
+      "baca": "at",
+      "en": "from (distance)"
+    },
+    {
+      "ru": "далеко / близко",
+      "baca": "da-li-KO / BLEES-ka",
+      "en": "far / close"
+    },
+    {
+      "ru": "рядом",
+      "baca": "RYA-dam",
+      "en": "next door, nearby"
+    },
+    {
+      "ru": "напротив",
+      "baca": "na-PRO-tif",
+      "en": "opposite, across"
+    },
+    {
+      "ru": "искать",
+      "baca": "is-KAT'",
+      "en": "to look for"
+    },
+    {
+      "ru": "шумно / тихо",
+      "baca": "SHOOM-na / TEE-kha",
+      "en": "noisy / quiet"
+    },
+    {
+      "ru": "около",
+      "baca": "O-ka-la",
+      "en": "about, approximately"
+    },
+    {
+      "ru": "тысяча",
+      "baca": "TY-si-cha",
+      "en": "thousand"
+    },
+    {
+      "ru": "месяц",
+      "baca": "MYE-sits",
+      "en": "month"
+    },
+    {
+      "ru": "минута",
+      "baca": "mi-NOO-ta",
+      "en": "minute"
+    },
+    {
+      "ru": "угол",
+      "baca": "OO-gal",
+      "en": "corner"
+    },
+    {
+      "ru": "может быть",
+      "baca": "MO-zhyt byt'",
+      "en": "maybe"
+    },
+    {
+      "ru": "звучит",
+      "baca": "zvoo-CHEET",
+      "en": "sounds"
+    },
+    {
+      "ru": "дома / домой",
+      "baca": "DO-ma / da-MOY",
+      "en": "at home / (to) home"
+    },
+    {
+      "ru": "хороший",
+      "baca": "kha-RO-shyy",
+      "en": "good, well"
+    },
+    {
+      "ru": "о / об",
+      "baca": "a / ab",
+      "en": "about (a topic)"
+    }
+  ],
+  "exercises": [
+    {
+      "prompt": "Put into the prepositional after в or на.",
+      "items": [
+        "Москва → Я живу в ____",
+        "дом → Я в ____",
+        "работа → Он на ____",
+        "Россия → Мы в ____",
+        "стол → Книга на ____",
+        "общежитие → Я живу в ____"
+      ]
+    },
+    {
+      "prompt": "Fill in в or на.",
+      "items": [
+        "Я работаю ____ офисе.",
+        "Она ____ работе.",
+        "Мы ____ университете.",
+        "Магазин ____ улице.",
+        "Он ____ кухне.",
+        "Книга ____ сумке."
+      ]
+    },
+    {
+      "prompt": "Put the words in the right order.",
+      "items": [
+        "живёте / вы / где / ?",
+        "в / живу / я / Москве",
+        "рядом / всё",
+        "от / это / университета / далеко / ?",
+        "на / магазин / углу"
+      ]
+    },
+    {
+      "prompt": "Translate into Russian.",
+      "items": [
+        "Where do you live? (polite)",
+        "I live in Moscow.",
+        "He's at work.",
+        "The dorm is noisy.",
+        "Is it far from the university?",
+        "The shop is on the corner."
+      ]
+    }
+  ],
+  "answers": [
+    "Москве — доме — работе — России — столе — общежитии",
+    "в — на — в — на — на — в",
+    "Где вы живёте? — Я живу в Москве. — Всё рядом. — Это далеко от университета? — Магазин на углу.",
+    "Где вы живёте? — Я живу в Москве. — Он на работе. — В общежитии шумно. — Это далеко от университета? — Магазин на углу."
+  ]
+}

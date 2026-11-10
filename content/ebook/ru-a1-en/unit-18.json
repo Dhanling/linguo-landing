@@ -1,0 +1,501 @@
+{
+  "title": "Weather: cold, and another kind of cold",
+  "title_target": "Погода и времена года — Pogoda i vremena goda",
+  "goal": "Talk about weather and seasons — Russia's number-one conversation starter — while separating two kinds of \"cold\" that Russian builds in completely different ways.",
+  "bekal": [
+    "describe today's weather",
+    "tell холодно (it's cold) and мне холодно (I'm cold) apart",
+    "name the four seasons and the months",
+    "read temperatures below zero",
+    "make natural small talk about the weather"
+  ],
+  "dialogs": [
+    {
+      "title": "Диалог — Minus twenty",
+      "intro": "January in Moscow. Ani and Сергей run into each other outside a building. Notice that \"cold\" shows up in two different patterns, with two different meanings.",
+      "lines": [
+        {
+          "speaker": "Сергей:",
+          "text": "[Ани|A-ni]! [Вы|Vy] [живы|ZHY-vy]?",
+          "id": "Ani! Are you still alive?",
+          "literal": "Ani! you — alive (pl)?"
+        },
+        {
+          "speaker": "Ани:",
+          "text": "[Едва|Yid-VA]. [Мне|Mnye] [очень|O-chin'] [холодно|KHO-lad-na]. [Сколько|SKOL'-ka] [градусов|GRA-doo-saf]?",
+          "id": "Barely. I'm freezing. How many degrees is it?",
+          "literal": "barely. to-me — very — cold. how-many — degrees?"
+        },
+        {
+          "speaker": "Сергей:",
+          "text": "[Минус|MEE-noos] [двадцать|DVA-tsat'] [два|dva]. [Сегодня|Si-VOD-nya] [тепло|tip-LO]!",
+          "id": "Minus twenty-two. It's warm today!",
+          "literal": "minus — twenty — two. today — warm!"
+        },
+        {
+          "speaker": "Ани:",
+          "text": "[Тепло|Tip-LO]?! [Минус|MEE-noos] [двадцать|DVA-tsat'] [два|dva] — [это|E-ta] [тепло|tip-LO]?",
+          "id": "Warm?! Minus twenty-two is warm?",
+          "literal": "warm?! minus — twenty — two — this — warm?"
+        },
+        {
+          "speaker": "Сергей:",
+          "text": "[На|Na] [прошлой|PROSH-lay] [неделе|ni-DYE-lye] [было|BY-la] [минус|MEE-noos] [тридцать|TREE-tsat']. [Вот|Vot] [это|E-ta] [было|BY-la] [холодно|KHO-lad-na].",
+          "id": "Last week it was minus thirty. Now that was cold.",
+          "literal": "in — last — week — was — minus — thirty. here — this — was — cold."
+        },
+        {
+          "speaker": "Ани:",
+          "text": "[В|V] [Индонезии|In-da-NE-zi-i] [самая|SA-ma-ya] [низкая|NEES-ka-ya] [температура|tim-pi-ra-TOO-ra] — [плюс|plyus] [восемнадцать|va-sim-NA-tsat'].",
+          "id": "In Indonesia the lowest temperature is plus eighteen.",
+          "literal": "in — Indonesia — most — low — temperature — plus — eighteen."
+        },
+        {
+          "speaker": "Сергей:",
+          "text": "[Восемнадцать|Va-sim-NA-tsat']?! [Это|E-ta] [же|zhy] [лето|LYE-ta]! [У|Oo] [нас|nas] [в|v] [мае|MA-ye] [так|tak].",
+          "id": "Eighteen?! That's summer! That's what May is like here.",
+          "literal": "eighteen?! this — after-all — summer! at — us — in — May — so."
+        },
+        {
+          "speaker": "Ани:",
+          "text": "[Как|Kak] [вы|vy] [здесь|zdyes'] [живёте|zhy-VYO-tye]?",
+          "id": "How do you people live here?",
+          "literal": "how — you-all — here — live?"
+        },
+        {
+          "speaker": "Сергей:",
+          "text": "[Одежда|A-DYEZH-da]. [Термобельё|Ter-ma-bil'-YO], [шапка|SHAP-ka], [хорошие|kha-RO-shy-ye] [сапоги|sa-pa-GEE]. [И|Ee] [чай|chay].",
+          "id": "Clothes. Thermals, a hat, good boots. And tea.",
+          "literal": "clothes. thermal-underwear, hat, good — boots. and — tea."
+        },
+        {
+          "speaker": "Ани:",
+          "text": "[У|Oo] [меня|mi-NYA] [нет|nyet] [шапки|SHAP-ki].",
+          "id": "I don't have a hat.",
+          "literal": "at — me — no — hat."
+        },
+        {
+          "speaker": "Сергей:",
+          "text": "[Ани|A-ni]. [Идите|I-DEE-tye] [в|v] [магазин|ma-ga-ZEEN]. [Сейчас|Si-CHAS]. [Это|E-ta] [не|nye] [шутка|SHOOT-ka].",
+          "id": "Ani. Go to the store. Now. This isn't a joke.",
+          "literal": "Ani. go — to — store. now. this — not — joke."
+        },
+        {
+          "speaker": "Ани:",
+          "text": "[Хорошо|Kha-ra-SHO], [хорошо|kha-ra-SHO]. [Иду|I-DOO].",
+          "id": "OK, OK. I'm going.",
+          "literal": "good, good. I-go."
+        }
+      ],
+      "notes": [
+        "**Холодно without a dative means the weather is cold; with a dative it means a person is cold.** ⚠️ *Сегодня холодно* = it's cold today (a statement about the world). *Мне холодно* = I'm cold (a statement about me). English changes the subject (\"it\" vs. \"I\"); Russian adds the dative. The sentence *Я холодный* does exist, but it means \"I'm a cold person\" — not what you mean.",
+        "**Weather sentences have no subject at all.** *Холодно*, *Тепло*, *Жарко*, *Идёт дождь* — there's no \"it\" or \"weather\" doing anything. English must slip in *it* (\"it's cold\"); Russian doesn't: \"cold\" alone is a full sentence.",
+        "**Temperatures below zero are called минус.** *Минус двадцать* (−20). Russia uses Celsius, so −20 °C is about −4 °F. The word **градус** follows the number rule: 1 градус, 2–4 градуса, 5+ градусов.",
+        "**Идёт дождь literally means \"rain walks.\"** Russian uses a verb of motion for weather: *Идёт дождь* (it's raining), *Идёт снег* (it's snowing). When it stops: *Дождь кончился*. ⚠️ Don't use падает (falls) — it sounds like something falling off a table.",
+        "**Months take в + prepositional, with the ending -е.** *в январ**е***, *в ма**е***, *в июл**е***. Note the stress shifts in some months: январь (yin-VAR') → в январе (v yin-va-RYE).",
+        "**Самый + adjective means \"the most.\"** *самая низкая температура* (the lowest temperature), *самый большой город* (the biggest city). Самый changes its ending to match the noun, like any other adjective.",
+        "**Weather is Russia's number-one conversation starter, and it's not empty small talk.** In a country where the temperature swings fifty degrees over the year, *Ну и холод сегодня!* (it's freezing today!) is a genuine opener that always works — with neighbors, taxi drivers, or people in line."
+      ],
+      "grammars": [
+        {
+          "title": "Today's weather",
+          "body": [
+            "All of these sentences are complete with no subject and no verb."
+          ],
+          "table": {
+            "head": [
+              "Русский",
+              "Say it",
+              "English"
+            ],
+            "rows": [
+              [
+                "Сегодня холодно.",
+                "si-VOD-nya KHO-lad-na",
+                "It's cold today."
+              ],
+              [
+                "Сегодня тепло.",
+                "tip-LO",
+                "It's warm."
+              ],
+              [
+                "Сегодня жарко.",
+                "ZHAR-ka",
+                "It's hot."
+              ],
+              [
+                "Сегодня прохладно.",
+                "pra-KHLAD-na",
+                "It's cool."
+              ],
+              [
+                "Идёт дождь.",
+                "i-DYOT dozhd'",
+                "It's raining."
+              ],
+              [
+                "Идёт снег.",
+                "i-DYOT snyek",
+                "It's snowing."
+              ],
+              [
+                "Дует ветер.",
+                "DOO-yit VYE-tir",
+                "It's windy."
+              ],
+              [
+                "Светит солнце.",
+                "SVYE-tit SON-tsy",
+                "The sun is shining."
+              ],
+              [
+                "Пасмурно.",
+                "PAS-moor-na",
+                "It's cloudy."
+              ],
+              [
+                "Скользко.",
+                "SKOL'-ska",
+                "It's slippery. ⚠️ the key winter word"
+              ]
+            ]
+          },
+          "after": [
+            "For the past add **было**, for the future add **будет**: *Вчера **было** холодно*, *Завтра **будет** тепло*. The form is always neuter.",
+            "For sentences with a verb (идёт дождь), the past form agrees with the noun: *Шёл дождь* (masc), *Шёл снег* (masc)."
+          ]
+        },
+        {
+          "title": "Seasons and months",
+          "body": [
+            "Four seasons, twelve months. The right-hand column is the \"in that month\" form."
+          ],
+          "tables": [
+            {
+              "head": [
+                "Season",
+                "Say it",
+                "Months",
+                "\"in that season\""
+              ],
+              "rows": [
+                [
+                  "зима",
+                  "zi-MA",
+                  "December–February",
+                  "зимой (zi-MOY)"
+                ],
+                [
+                  "весна",
+                  "vis-NA",
+                  "March–May",
+                  "весной (vis-NOY)"
+                ],
+                [
+                  "лето",
+                  "LYE-ta",
+                  "June–August",
+                  "летом (LYE-tam)"
+                ],
+                [
+                  "осень (f)",
+                  "O-sin'",
+                  "September–November",
+                  "осенью (O-sin'-yu)"
+                ]
+              ]
+            },
+            {
+              "head": [
+                "Month",
+                "in …",
+                "Month",
+                "in …"
+              ],
+              "rows": [
+                [
+                  "январь",
+                  "в январе",
+                  "июль",
+                  "в июле"
+                ],
+                [
+                  "февраль",
+                  "в феврале",
+                  "август",
+                  "в августе"
+                ],
+                [
+                  "март",
+                  "в марте",
+                  "сентябрь",
+                  "в сентябре"
+                ],
+                [
+                  "апрель",
+                  "в апреле",
+                  "октябрь",
+                  "в октябре"
+                ],
+                [
+                  "май",
+                  "в мае",
+                  "ноябрь",
+                  "в ноябре"
+                ],
+                [
+                  "июнь",
+                  "в июне",
+                  "декабрь",
+                  "в декабре"
+                ]
+              ]
+            }
+          ],
+          "after": [
+            "⚠️ Months are **not** capitalized in Russian: *в январе*, not *в Январе*. The same rule applies to days of the week and nationalities — all capitalized in English, none in Russian.",
+            "Russian months are easy for English speakers to recognize because they come from the same Latin roots: январь/January, февраль/February, март/March. All you need to practice is the stress, which is almost always on the last syllable."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Surviving a Russian winter",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "This section isn't in any Russian textbook, but every learner from a warm country who comes to Russia needs it in the first week."
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Русский",
+            "Say it",
+            "English"
+          ],
+          "rows": [
+            [
+              "шапка",
+              "SHAP-ka",
+              "winter hat ⚠️ a must"
+            ],
+            [
+              "термобельё",
+              "ter-ma-bil'-YO",
+              "thermal underwear"
+            ],
+            [
+              "пуховик",
+              "poo-kha-VEEK",
+              "down jacket"
+            ],
+            [
+              "варежки / перчатки",
+              "VA-rish-ki / pir-CHAT-ki",
+              "mittens / gloves"
+            ],
+            [
+              "сапоги",
+              "sa-pa-GEE",
+              "boots"
+            ],
+            [
+              "гололёд",
+              "ga-la-LYOT",
+              "icy roads, black ice"
+            ],
+            [
+              "сосулька",
+              "sa-SOOL'-ka",
+              "icicle"
+            ],
+            [
+              "сугроб",
+              "soo-GROP",
+              "snowdrift"
+            ],
+            [
+              "мороз",
+              "ma-ROS",
+              "hard frost"
+            ],
+            [
+              "оттепель (f)",
+              "O-ti-pil'",
+              "thaw"
+            ]
+          ]
+        },
+        {
+          "type": "kotak",
+          "title": "Three things to know in your first Russian winter",
+          "items": [
+            "**A шапка isn't optional.** Russians — especially older women — will scold you in the street if your head is uncovered below zero. The line you'll hear: *Где ваша шапка?!* Take it as a sign of care, because that's what it is.",
+            "**Гололёд is more dangerous than мороз.** Sidewalks with a thin layer of ice are the number-one cause of injury for newcomers. The phrase to recognize: **Осторожно, скользко!** — Careful, it's slippery!",
+            "**Indoors it's actually very hot.** Russian buildings have central heating that can't be turned off; inside it's often 25 °C (77 °F). That's why people dress in layers: coats come off as soon as you walk in. ⚠️ Walking into someone's home or a classroom with your coat on is considered rude — almost every public building has a **гардероб** (coat check), and using it is mandatory at theaters and museums."
+          ]
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "ru": "погода",
+      "baca": "pa-GO-da",
+      "en": "weather"
+    },
+    {
+      "ru": "холодно / тепло / жарко",
+      "baca": "KHO-lad-na / tip-LO / ZHAR-ka",
+      "en": "cold / warm / hot"
+    },
+    {
+      "ru": "градус",
+      "baca": "GRA-doos",
+      "en": "degree"
+    },
+    {
+      "ru": "температура",
+      "baca": "tim-pi-ra-TOO-ra",
+      "en": "temperature"
+    },
+    {
+      "ru": "минус / плюс",
+      "baca": "MEE-noos / plyus",
+      "en": "minus / plus"
+    },
+    {
+      "ru": "дождь (m)",
+      "baca": "dozhd'",
+      "en": "rain"
+    },
+    {
+      "ru": "снег",
+      "baca": "snyek",
+      "en": "snow"
+    },
+    {
+      "ru": "ветер",
+      "baca": "VYE-tir",
+      "en": "wind"
+    },
+    {
+      "ru": "солнце",
+      "baca": "SON-tsy",
+      "en": "sun"
+    },
+    {
+      "ru": "небо",
+      "baca": "NYE-ba",
+      "en": "sky"
+    },
+    {
+      "ru": "скользко",
+      "baca": "SKOL'-ska",
+      "en": "slippery"
+    },
+    {
+      "ru": "осторожно",
+      "baca": "as-ta-ROZH-na",
+      "en": "careful"
+    },
+    {
+      "ru": "зима / весна",
+      "baca": "zi-MA / vis-NA",
+      "en": "winter / spring"
+    },
+    {
+      "ru": "лето / осень (f)",
+      "baca": "LYE-ta / O-sin'",
+      "en": "summer / fall"
+    },
+    {
+      "ru": "зимой / летом",
+      "baca": "zi-MOY / LYE-tam",
+      "en": "in winter / in summer"
+    },
+    {
+      "ru": "самый",
+      "baca": "SA-myy",
+      "en": "the most"
+    },
+    {
+      "ru": "низкий / высокий",
+      "baca": "NEES-kiy / vy-SO-kiy",
+      "en": "low / high"
+    },
+    {
+      "ru": "шапка",
+      "baca": "SHAP-ka",
+      "en": "winter hat"
+    },
+    {
+      "ru": "мороз",
+      "baca": "ma-ROS",
+      "en": "hard frost"
+    },
+    {
+      "ru": "шутка",
+      "baca": "SHOOT-ka",
+      "en": "joke"
+    },
+    {
+      "ru": "едва",
+      "baca": "yid-VA",
+      "en": "barely"
+    }
+  ],
+  "exercises": [
+    {
+      "prompt": "Choose холодно or мне холодно to fit the meaning.",
+      "items": [
+        "It's cold today. → Сегодня ____",
+        "I'm cold. → ____",
+        "Are you cold? → Тебе ____ ?",
+        "It was cold yesterday. → Вчера было ____",
+        "She's cold. → Ей ____"
+      ]
+    },
+    {
+      "prompt": "Fill in the \"in (month)\" form.",
+      "items": [
+        "январь → ____",
+        "май → ____",
+        "июль → ____",
+        "сентябрь → ____",
+        "декабрь → ____",
+        "март → ____"
+      ]
+    },
+    {
+      "prompt": "Put the words in the right order.",
+      "items": [
+        "холодно / сегодня / очень",
+        "дождь / идёт",
+        "градусов / минус / двадцать",
+        "было / вчера / тепло",
+        "скользко / осторожно"
+      ]
+    },
+    {
+      "prompt": "Translate into Russian.",
+      "items": [
+        "It's very cold today.",
+        "I'm cold.",
+        "How many degrees is it?",
+        "Minus twenty-two.",
+        "It's snowing.",
+        "Careful, it's slippery!"
+      ]
+    }
+  ],
+  "answers": [
+    "холодно — Мне холодно — холодно — холодно — холодно",
+    "в январе — в мае — в июле — в сентябре — в декабре — в марте",
+    "Сегодня очень холодно. — Идёт дождь. — Минус двадцать градусов. — Вчера было тепло. — Осторожно, скользко.",
+    "Сегодня очень холодно. — Мне холодно. — Сколько градусов? — Минус двадцать два. — Идёт снег. — Осторожно, скользко!"
+  ]
+}

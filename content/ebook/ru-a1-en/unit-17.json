@@ -1,0 +1,467 @@
+{
+  "title": "How do I get there?",
+  "title_target": "Как пройти? — Kak proyti?",
+  "goal": "Ask strangers for directions and — harder — understand the answer. Along the way, master the imperative, which Russian uses far more often than English does.",
+  "bekal": [
+    "ask for directions with standard phrases",
+    "understand directions: right, left, straight, turn",
+    "form and use the imperative",
+    "talk about distance and landmarks",
+    "ask people to repeat or slow down"
+  ],
+  "dialogs": [
+    {
+      "title": "Диалог — Looking for the post office",
+      "intro": "Ani needs to send a package to Indonesia and doesn't know where the post office is. Notice the imperative forms used by the person answering — they all end in -ите.",
+      "lines": [
+        {
+          "speaker": "Ани:",
+          "text": "[Извините|Iz-vi-NEE-tye], [скажите|ska-ZHY-tye], [пожалуйста|pa-ZHA-loos-ta], [где|gdye] [здесь|zdyes'] [почта|POCH-ta]?",
+          "id": "Excuse me, could you tell me where the post office is around here?",
+          "literal": "excuse-me, tell, please, where — here — post-office?"
+        },
+        {
+          "speaker": "Прохожий:",
+          "text": "[Почта|POCH-ta]? [Идите|I-DEE-tye] [прямо|PRYA-ma] [до|da] [светофора|svi-ta-FO-ra].",
+          "id": "The post office? Go straight to the traffic light.",
+          "literal": "post-office? go — straight — until — traffic-light."
+        },
+        {
+          "speaker": "Ани:",
+          "text": "[До|Da] [светофора|svi-ta-FO-ra]… [хорошо|kha-ra-SHO].",
+          "id": "To the traffic light… OK.",
+          "literal": "until — traffic-light… good."
+        },
+        {
+          "speaker": "Прохожий:",
+          "text": "[Потом|Pa-TOM] [поверните|pa-vir-NEE-tye] [налево|na-LYE-va]. [Там|Tam] [будет|BOO-dit] [аптека|ap-TYE-ka].",
+          "id": "Then turn left. There'll be a pharmacy there.",
+          "literal": "then — turn — to-the-left. there — will-be — pharmacy."
+        },
+        {
+          "speaker": "Ани:",
+          "text": "[Аптека|Ap-TYE-ka]. [А|A] [потом|pa-TOM]?",
+          "id": "A pharmacy. And then?",
+          "literal": "pharmacy. and — then?"
+        },
+        {
+          "speaker": "Прохожий:",
+          "text": "[Почта|POCH-ta] [напротив|na-PRO-tif] [аптеки|ap-TYE-ki]. [Большое|Bal'-SHO-ye] [синее|SEE-ni-ye] [здание|ZDA-ni-ye].",
+          "id": "The post office is across from the pharmacy. A big blue building.",
+          "literal": "post-office — opposite — pharmacy. big — blue — building."
+        },
+        {
+          "speaker": "Ани:",
+          "text": "[Это|E-ta] [далеко|da-li-KO]?",
+          "id": "Is it far?",
+          "literal": "this — far?"
+        },
+        {
+          "speaker": "Прохожий:",
+          "text": "[Нет|Nyet], [минут|mi-NOOT] [пять|pyat'] [пешком|pish-KOM].",
+          "id": "No, about five minutes on foot.",
+          "literal": "no, minutes — five — on-foot."
+        },
+        {
+          "speaker": "Ани:",
+          "text": "[Извините|Iz-vi-NEE-tye], [повторите|paf-ta-REE-tye], [пожалуйста|pa-ZHA-loos-ta]. [Прямо|PRYA-ma], [потом|pa-TOM]…?",
+          "id": "Sorry, could you repeat that? Straight, then…?",
+          "literal": "excuse-me, repeat, please. straight, then…?"
+        },
+        {
+          "speaker": "Прохожий:",
+          "text": "[Прямо|PRYA-ma] [до|da] [светофора|svi-ta-FO-ra], [налево|na-LYE-va], [и|ee] [почта|POCH-ta] [справа|SPRA-va].",
+          "id": "Straight to the traffic light, left, and the post office is on the right.",
+          "literal": "straight — until — traffic-light, to-the-left, and — post-office — on-the-right."
+        },
+        {
+          "speaker": "Ани:",
+          "text": "[Спасибо|Spa-SEE-ba] [большое|bal'-SHO-ye]!",
+          "id": "Thank you so much!",
+          "literal": "thank-you — big!"
+        },
+        {
+          "speaker": "Прохожий:",
+          "text": "[Не|Nye] [за|za] [что|shto]. [Если|YES-li] [заблудитесь|za-bloo-DEE-tyes'], [спросите|spra-SEE-tye] [ещё|yi-SHCHO] [раз|ras].",
+          "id": "You're welcome. If you get lost, just ask again.",
+          "literal": "not — for — what. if — get-lost, ask — again — time."
+        }
+      ],
+      "notes": [
+        "**Imperatives in Russian are polite, not rude.** ⚠️ *Идите прямо* (go straight), *Скажите* (tell me), *Повторите* (repeat) — all imperatives, and all perfectly polite once you add **пожалуйста**. English speakers tend to soften requests with \"could you…?\"; in Russian, avoiding the imperative is what sounds odd and roundabout.",
+        "**There are two imperative forms: -и/-й for ты, -ите/-йте for вы.** *Скажи* (to a friend) vs. *Скажите* (to a stranger). *Иди* vs. *Идите*. The choice follows the same ты/вы rule as in Unit 1.",
+        "**Налево / направо mean \"to the left / to the right\"; слева / справа mean \"on the left / on the right.\"** ⚠️ The same moving-vs.-staying difference as куда vs. где in Unit 13. *Поверните налево* (turn left) but *Почта справа* (the post office is on the right).",
+        "**Минут пять means \"about five minutes.\"** Flipping the number and the noun turns it into an estimate — the trick you met in Unit 12. Very common in directions, since nobody measures exactly.",
+        "**Как пройти is for walking, как доехать for transport.** It pairs with идти/ехать from Unit 13. *Как пройти до почты?* (how do I walk to the post office?), *Как доехать до вокзала?* (how do I get to the station?). After до, always the genitive.",
+        "**Спасибо большое is warmer than plain спасибо.** Other forms: *Огромное спасибо* (thanks a million), *Спасибо вам большое*. For help that really matters, Russians use the long form.",
+        "**Don't expect short directions.** Russians tend to give full directions with landmarks, and they rarely simplify them for foreigners. Two lifesaving phrases: *Повторите, пожалуйста* and *Помедленнее, пожалуйста* (a bit slower, please)."
+      ],
+      "grammars": [
+        {
+          "title": "The imperative",
+          "body": [
+            "Take the **они** form of the verb, drop the ending, then add **-и / -ите** (if what's left ends in a consonant) or **-й / -йте** (if it ends in a vowel)."
+          ],
+          "table": {
+            "head": [
+              "Verb",
+              "они form",
+              "To ты",
+              "To вы",
+              "Meaning"
+            ],
+            "rows": [
+              [
+                "говорить",
+                "говор-ят",
+                "говор**и**",
+                "говор**ите**",
+                "speak"
+              ],
+              [
+                "сказать",
+                "скаж-ут",
+                "скаж**и**",
+                "скаж**ите**",
+                "tell"
+              ],
+              [
+                "идти",
+                "ид-ут",
+                "ид**и**",
+                "ид**ите**",
+                "go, walk"
+              ],
+              [
+                "повернуть",
+                "поверн-ут",
+                "поверн**и**",
+                "поверн**ите**",
+                "turn"
+              ],
+              [
+                "повторить",
+                "повтор-ят",
+                "повтор**и**",
+                "повтор**ите**",
+                "repeat"
+              ],
+              [
+                "читать",
+                "читаj-ут",
+                "чита**й**",
+                "чита**йте**",
+                "read"
+              ],
+              [
+                "слушать",
+                "слушаj-ут",
+                "слуша**й**",
+                "слуша**йте**",
+                "listen"
+              ],
+              [
+                "извинить",
+                "извин-ят",
+                "извин**и**",
+                "извин**ите**",
+                "excuse (me)"
+              ]
+            ]
+          },
+          "after": [
+            "Now you know why **извините**, **скажите**, **повторите**, **подождите**, and **смотрите** all end the same way: they're all imperatives addressed to вы. Words you've used since Unit 1 turn out to be one family.",
+            "⚠️ To forbid, use **не** + imperative: *Не беспокойтесь* (don't worry), *Не спешите* (don't rush). To suggest doing something together, use **давайте**: *Давайте пойдём* (let's go)."
+          ]
+        },
+        {
+          "title": "Direction words",
+          "body": [
+            "Watch the moving / staying pairs — this is where most mistakes happen."
+          ],
+          "table": {
+            "head": [
+              "Moving (toward)",
+              "Staying (position)",
+              "Meaning"
+            ],
+            "rows": [
+              [
+                "налево",
+                "слева",
+                "left"
+              ],
+              [
+                "направо",
+                "справа",
+                "right"
+              ],
+              [
+                "прямо",
+                "прямо",
+                "straight (same)"
+              ],
+              [
+                "назад",
+                "сзади",
+                "back, behind"
+              ],
+              [
+                "вперёд",
+                "впереди",
+                "forward, in front"
+              ],
+              [
+                "наверх",
+                "наверху",
+                "up, above"
+              ],
+              [
+                "вниз",
+                "внизу",
+                "down, below"
+              ]
+            ]
+          },
+          "after": [
+            "*Поверните **направо*** — turn right. *Магазин **справа*** — the store is on the right.",
+            "Other common landmark words: **напротив** (opposite), **рядом с** (next to), **между** (between), **за углом** (around the corner), **через дорогу** (across the street)."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Phrases for asking directions",
+      "blocks": [
+        {
+          "type": "tabel",
+          "head": [
+            "Русский",
+            "Say it",
+            "English"
+          ],
+          "rows": [
+            [
+              "Скажите, пожалуйста, где …?",
+              "ska-ZHY-tye pa-ZHA-loos-ta gdye",
+              "Could you tell me where … is?"
+            ],
+            [
+              "Как пройти до …?",
+              "kak pray-TEE da",
+              "How do I walk to …?"
+            ],
+            [
+              "Как доехать до …?",
+              "kak da-YE-khat' da",
+              "How do I get to …? (by transport)"
+            ],
+            [
+              "Это далеко?",
+              "E-ta da-li-KO",
+              "Is it far?"
+            ],
+            [
+              "Сколько идти пешком?",
+              "SKOL'-ka it-TEE pish-KOM",
+              "How long is it on foot?"
+            ],
+            [
+              "Я заблудился / заблудилась.",
+              "za-bloo-DEEL-sya / -DEE-las'",
+              "I'm lost. (m / f)"
+            ],
+            [
+              "Повторите, пожалуйста.",
+              "paf-ta-REE-tye",
+              "Please repeat that."
+            ],
+            [
+              "Помедленнее, пожалуйста.",
+              "pa-MYED-li-ni-ye",
+              "A bit slower, please."
+            ],
+            [
+              "Покажите на карте.",
+              "pa-ka-ZHY-tye na KAR-tye",
+              "Show me on the map."
+            ],
+            [
+              "Спасибо большое!",
+              "spa-SEE-ba bal'-SHO-ye",
+              "Thank you so much!"
+            ]
+          ]
+        },
+        {
+          "type": "kotak",
+          "title": "Покажите на карте — the real lifesaver",
+          "items": [
+            "Spoken directions in Russian are long and fast, and beginners almost always lose track by the second sentence. **Покажите на карте, пожалуйста** moves the whole conversation onto a picture, and nearly every Russian is happy to do it.",
+            "Its partner: **Напишите, пожалуйста** (please write it down). Street and station names are much easier to read than to hear.",
+            "⚠️ Don't pretend to understand. Nodding and then walking off in the wrong direction is the most common way tourists get lost in Moscow. Asking twice is completely normal, and nobody is offended."
+          ]
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "ru": "как пройти",
+      "baca": "kak pray-TEE",
+      "en": "how do I get to (on foot)"
+    },
+    {
+      "ru": "прямо",
+      "baca": "PRYA-ma",
+      "en": "straight"
+    },
+    {
+      "ru": "налево / направо",
+      "baca": "na-LYE-va / na-PRA-va",
+      "en": "to the left / to the right"
+    },
+    {
+      "ru": "слева / справа",
+      "baca": "SLYE-va / SPRA-va",
+      "en": "on the left / on the right"
+    },
+    {
+      "ru": "повернуть",
+      "baca": "pa-vir-NOOT'",
+      "en": "to turn"
+    },
+    {
+      "ru": "светофор",
+      "baca": "svi-ta-FOR",
+      "en": "traffic light"
+    },
+    {
+      "ru": "перекрёсток",
+      "baca": "pi-ri-KRYOS-tak",
+      "en": "intersection"
+    },
+    {
+      "ru": "угол / за углом",
+      "baca": "OO-gal / za oog-LOM",
+      "en": "corner / around the corner"
+    },
+    {
+      "ru": "здание",
+      "baca": "ZDA-ni-ye",
+      "en": "building"
+    },
+    {
+      "ru": "напротив",
+      "baca": "na-PRO-tif",
+      "en": "opposite, across from"
+    },
+    {
+      "ru": "рядом с",
+      "baca": "RYA-dam s",
+      "en": "next to"
+    },
+    {
+      "ru": "между",
+      "baca": "MYEZH-doo",
+      "en": "between"
+    },
+    {
+      "ru": "через дорогу",
+      "baca": "CHE-ris da-RO-goo",
+      "en": "across the street"
+    },
+    {
+      "ru": "мост",
+      "baca": "most",
+      "en": "bridge"
+    },
+    {
+      "ru": "парк",
+      "baca": "park",
+      "en": "park"
+    },
+    {
+      "ru": "почта",
+      "baca": "POCH-ta",
+      "en": "post office"
+    },
+    {
+      "ru": "повторите",
+      "baca": "paf-ta-REE-tye",
+      "en": "repeat (polite imperative)"
+    },
+    {
+      "ru": "покажите",
+      "baca": "pa-ka-ZHY-tye",
+      "en": "show (me)"
+    },
+    {
+      "ru": "напишите",
+      "baca": "na-pi-SHY-tye",
+      "en": "write (it) down"
+    },
+    {
+      "ru": "спросить",
+      "baca": "spra-SEET'",
+      "en": "to ask"
+    },
+    {
+      "ru": "прохожий",
+      "baca": "pra-KHO-zhyy",
+      "en": "passerby"
+    }
+  ],
+  "exercises": [
+    {
+      "prompt": "Change to the imperative addressed to вы.",
+      "items": [
+        "говорить → ____",
+        "повторить → ____",
+        "идти → ____",
+        "читать → ____",
+        "слушать → ____",
+        "повернуть → ____"
+      ]
+    },
+    {
+      "prompt": "Choose налево/направо or слева/справа.",
+      "items": [
+        "Поверните ____ (left).",
+        "Аптека ____ (on the right).",
+        "Идите ____ (right), потом прямо.",
+        "Магазин ____ (on the left).",
+        "Поверните ____ (right) на перекрёстке."
+      ]
+    },
+    {
+      "prompt": "Put the words in the right order.",
+      "items": [
+        "почта / где / пожалуйста / скажите / ?",
+        "прямо / светофора / идите / до",
+        "налево / потом / поверните",
+        "далеко / это / ?",
+        "пожалуйста / повторите"
+      ]
+    },
+    {
+      "prompt": "Translate into Russian.",
+      "items": [
+        "Could you tell me where the post office is?",
+        "Go straight to the traffic light.",
+        "Then turn left.",
+        "The pharmacy is on the right.",
+        "Is it far?",
+        "Please show me on the map."
+      ]
+    }
+  ],
+  "answers": [
+    "говорите — повторите — идите — читайте — слушайте — поверните",
+    "налево — справа — направо — слева — направо",
+    "Скажите, пожалуйста, где почта? — Идите прямо до светофора. — Потом поверните налево. — Это далеко? — Повторите, пожалуйста.",
+    "Скажите, пожалуйста, где почта? — Идите прямо до светофора. — Потом поверните налево. — Аптека справа. — Это далеко? — Покажите на карте, пожалуйста."
+  ]
+}

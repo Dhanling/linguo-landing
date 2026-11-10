@@ -1,0 +1,450 @@
+{
+  "title": "Hello, my name is Ani",
+  "title_target": "Здравствуйте — Zdrastvuyte",
+  "goal": "Greet anyone safely, say your name, ask someone else's name, and say your first correct Russian sentence — a sentence with no word for \"is\" at all.",
+  "bekal": [
+    "greet formally and casually, and know the difference",
+    "say your name two ways",
+    "ask someone's name",
+    "say thank you and excuse me",
+    "build \"I am X\" sentences with no verb"
+  ],
+  "dialogs": [
+    {
+      "title": "Диалог — First day of the course",
+      "intro": "Ani, a student from Indonesia, walks into a Russian class in Moscow and sits down next to someone she doesn't know. Notice that not one sentence below uses a word meaning \"is\" or \"am\".",
+      "lines": [
+        {
+          "speaker": "Ани:",
+          "text": "[Здравствуйте|ZDRAST-vooy-tye]!",
+          "id": "Hello!",
+          "literal": "be-healthy-you!"
+        },
+        {
+          "speaker": "Иван:",
+          "text": "[Здравствуйте|ZDRAST-vooy-tye]! [Меня|Mi-NYA] [зовут|za-VOOT] [Иван|i-VAN]. [А|A] [вас|vas]?",
+          "id": "Hello! My name is Ivan. And you?",
+          "literal": "be-healthy-you! me (object) — they-call — Ivan. and — you (object)?"
+        },
+        {
+          "speaker": "Ани:",
+          "text": "[Очень|O-chin'] [приятно|pri-YAT-na]. [Я|Ya] [Ани|A-ni].",
+          "id": "Nice to meet you. I'm Ani.",
+          "literal": "very — pleasant. I — Ani."
+        },
+        {
+          "speaker": "Иван:",
+          "text": "[Ани|A-ni]? [Красивое|Kra-SEE-va-ye] [имя|EE-mya]. [Вы|Vy] [студентка|stoo-DYENT-ka]?",
+          "id": "Ani? What a lovely name. Are you a student?",
+          "literal": "Ani? beautiful (neuter) — name. you — student (female)?"
+        },
+        {
+          "speaker": "Ани:",
+          "text": "[Да|Da], [я|ya] [студентка|stoo-DYENT-ka]. [А|A] [вы|vy]?",
+          "id": "Yes, I'm a student. And you?",
+          "literal": "yes, I — student (female). and — you?"
+        },
+        {
+          "speaker": "Иван:",
+          "text": "[Я|Ya] [не|nye] [студент|stoo-DYENT]. [Я|Ya] [преподаватель|pri-pa-da-VA-til'].",
+          "id": "I'm not a student. I'm a teacher.",
+          "literal": "I — not — student. I — teacher."
+        },
+        {
+          "speaker": "Ани:",
+          "text": "[Ой|Oy], [извините|iz-vi-NEE-tye]!",
+          "id": "Oh, sorry!",
+          "literal": "oh, forgive-you!"
+        },
+        {
+          "speaker": "Иван:",
+          "text": "[Ничего|Ni-chi-VO]! [Всё|Fsyo] [хорошо|kha-ra-SHO].",
+          "id": "No problem! It's all fine.",
+          "literal": "nothing! all — good."
+        },
+        {
+          "speaker": "Ани:",
+          "text": "[Спасибо|Spa-SEE-ba].",
+          "id": "Thank you.",
+          "literal": "thank-you."
+        },
+        {
+          "speaker": "Иван:",
+          "text": "[Пожалуйста|Pa-ZHA-loos-ta]. [До|Da] [свидания|svi-DA-ni-ya], [Ани|A-ni]!",
+          "id": "You're welcome. Goodbye, Ani!",
+          "literal": "please / you're-welcome. until — meeting, Ani!"
+        },
+        {
+          "speaker": "Ани:",
+          "text": "[До|Da] [свидания|svi-DA-ni-ya]!",
+          "id": "Goodbye!",
+          "literal": "until — meeting!"
+        }
+      ],
+      "notes": [
+        "**Russian has no word for \"is/am/are\" in the present tense.** *Я студентка* is literally just \"I student\" — two words, nothing linking them. In writing, that missing link is sometimes marked with a dash: *Москва — город* (Moscow is a city). ⚠️ Beginners often hunt for a word for \"is\" and end up forcing in есть, which is **wrong** here. Есть means \"there is\", not \"is\", and you'll learn how to use it in Unit 4.",
+        "**Russian has no \"a\" or \"the\" either.** There are no articles at all. That is good news that rarely gets mentioned: one of the decisions you make in every English sentence simply disappears.",
+        "**Здравствуйте is formal, Привет is casual.** Use Здравствуйте with people you don't know, older people, teachers, officials — anyone you would address as вы. Привет (*pri-VYET*) is only for friends and people your own age. ⚠️ Saying Привет to a lecturer or a passport officer sounds like a child slapping an adult on the back.",
+        "**Здравствуйте really is hard to say — and Russians shorten it too.** The first в practically vanishes in fast speech: *ZDRAST-vooy-tye*, or even *ZDRAS-tye* in very casual talk. Don't pronounce it letter by letter.",
+        "**Меня зовут literally means \"they call me\".** Not \"my name is\". Russians give their name with a sentence whose subject is never named — who \"they\" are is never explained. Just accept it as one chunk: *Меня зовут ___*. To ask back, **А вас?** (\"and you?\") is enough; no need to repeat the whole sentence.",
+        "**Извините and Простите both mean \"sorry\", but they don't weigh the same.** Извините (*iz-vi-NEE-tye*) is for small disturbances: interrupting, squeezing past, saying the wrong name. Простите (*pra-STEE-tye*) is for real mistakes — literally \"forgive me\". Using Простите because you guessed someone's job wrong sounds overdone.",
+        "**Пожалуйста: one word, three jobs.** It means \"please\", \"here you go\" and \"you're welcome\" all at once. You will use it dozens of times a day. ⚠️ The spelling is deceptive: written по-жа-луй-ста but pronounced *pa-ZHA-loos-ta* — the й and the middle part melt away."
+      ],
+      "grammars": [
+        {
+          "title": "Sentences without a verb",
+          "body": [
+            "In the present tense, a Russian \"X is Y\" sentence just puts X and Y side by side. Nothing needs to be added, and adding something is actually wrong."
+          ],
+          "table": {
+            "head": [
+              "Russian",
+              "Say it",
+              "English",
+              "Literally"
+            ],
+            "rows": [
+              [
+                "Я студент.",
+                "ya stoo-DYENT",
+                "I'm a student.",
+                "I student"
+              ],
+              [
+                "Он врач.",
+                "on vrach",
+                "He's a doctor.",
+                "he doctor"
+              ],
+              [
+                "Она дома.",
+                "a-NA DO-ma",
+                "She's at home.",
+                "she at-home"
+              ],
+              [
+                "Это Москва.",
+                "E-ta mask-VA",
+                "This is Moscow.",
+                "this Moscow"
+              ],
+              [
+                "Всё хорошо.",
+                "fsyo kha-ra-SHO",
+                "Everything's fine.",
+                "all good"
+              ]
+            ]
+          },
+          "after": [
+            "To negate, put **не** (*nye*) right in front of the part you're negating: *Я **не** студент* — I'm not a student. One word, always in front, never changes."
+          ]
+        },
+        {
+          "title": "Ты and Вы — two words for \"you\"",
+          "body": [
+            "Russian separates a familiar \"you\" from a polite \"you\", much like French *tu* and *vous* or German *du* and *Sie*. English lost this distinction long ago, but in Russian the choice is **compulsory** and you hear it right away in the verb."
+          ],
+          "table": {
+            "head": [
+              "",
+              "ты (ty)",
+              "вы (vy)"
+            ],
+            "rows": [
+              [
+                "Used with",
+                "friends, peers, family, children",
+                "strangers, older people, bosses, officials — and more than one person"
+              ],
+              [
+                "Greeting",
+                "Привет!",
+                "Здравствуйте!"
+              ],
+              [
+                "\"What's your name?\"",
+                "Как тебя зовут?",
+                "Как вас зовут?"
+              ],
+              [
+                "\"How are you?\"",
+                "Как дела?",
+                "Как вы поживаете?"
+              ]
+            ]
+          },
+          "after": [
+            "⚠️ A rule of thumb for newcomers: **use вы until a Russian offers ты**. The offer usually sounds like *Давай на ты* (\"let's say ty\"). Using вы with a peer sounds a little stiff; using ты with a stranger sounds rude. Of the two mistakes, the first is far cheaper.",
+            "Вы also means \"you\" for several people (\"you all\"), so this one form covers two needs at once."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Phrases to keep in your pocket on day one",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "These ten phrases cover almost all the small talk of day one. Learn them whole, as chunks; the grammar will untangle itself in later units."
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Русский",
+            "Say it",
+            "English"
+          ],
+          "rows": [
+            [
+              "Да / Нет",
+              "da / nyet",
+              "Yes / No"
+            ],
+            [
+              "Спасибо",
+              "spa-SEE-ba",
+              "Thank you"
+            ],
+            [
+              "Большое спасибо",
+              "bal'-SHO-ye spa-SEE-ba",
+              "Thank you very much"
+            ],
+            [
+              "Пожалуйста",
+              "pa-ZHA-loos-ta",
+              "Please / Here you go / You're welcome"
+            ],
+            [
+              "Извините",
+              "iz-vi-NEE-tye",
+              "Sorry, excuse me"
+            ],
+            [
+              "Я не понимаю",
+              "ya nye pa-ni-MA-yu",
+              "I don't understand"
+            ],
+            [
+              "Повторите, пожалуйста",
+              "paf-ta-REE-tye pa-ZHA-loos-ta",
+              "Please say that again"
+            ],
+            [
+              "Говорите медленно, пожалуйста",
+              "ga-va-REE-tye MYED-li-na",
+              "Please speak slowly"
+            ],
+            [
+              "Что это?",
+              "shto E-ta",
+              "What's this?"
+            ],
+            [
+              "Как это по-русски?",
+              "kak E-ta pa-ROOS-ki",
+              "How do you say this in Russian?"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "The last two aren't just vocabulary — they're learning tools. Once you can ask \"what's this?\" and \"how do you say it in Russian?\", every Russian around you turns into a walking dictionary."
+        },
+        {
+          "type": "kotak",
+          "title": "Как дела? and its little trap",
+          "items": [
+            "**Как дела?** (*kak di-LA*) is literally \"how are affairs?\" — an everyday greeting to people you already know.",
+            "Standard answers: **Хорошо** (good), **Нормально** (OK), **Неплохо** (not bad), **Так себе** (so-so).",
+            "⚠️ Unlike English *How are you?*, Как дела? is **not** an empty pleasantry tossed at cashiers or strangers. You ask it of people you know, and the answer is actually listened to. Asking a ticket clerk will just confuse them."
+          ]
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "ru": "здравствуйте",
+      "baca": "ZDRAST-vooy-tye",
+      "en": "hello (formal, to anyone)"
+    },
+    {
+      "ru": "привет",
+      "baca": "pri-VYET",
+      "en": "hi (casual, to friends)"
+    },
+    {
+      "ru": "до свидания",
+      "baca": "da svi-DA-ni-ya",
+      "en": "goodbye"
+    },
+    {
+      "ru": "пока",
+      "baca": "pa-KA",
+      "en": "bye (casual)"
+    },
+    {
+      "ru": "меня зовут",
+      "baca": "mi-NYA za-VOOT",
+      "en": "my name is"
+    },
+    {
+      "ru": "как вас зовут?",
+      "baca": "kak vas za-VOOT",
+      "en": "what's your name?"
+    },
+    {
+      "ru": "очень приятно",
+      "baca": "O-chin' pri-YAT-na",
+      "en": "nice to meet you"
+    },
+    {
+      "ru": "я",
+      "baca": "ya",
+      "en": "I"
+    },
+    {
+      "ru": "вы",
+      "baca": "vy",
+      "en": "you (polite; plural)"
+    },
+    {
+      "ru": "ты",
+      "baca": "ty",
+      "en": "you (familiar)"
+    },
+    {
+      "ru": "он / она",
+      "baca": "on / a-NA",
+      "en": "he / she"
+    },
+    {
+      "ru": "да / нет",
+      "baca": "da / nyet",
+      "en": "yes / no"
+    },
+    {
+      "ru": "не",
+      "baca": "nye",
+      "en": "not (before a word)"
+    },
+    {
+      "ru": "студент / студентка",
+      "baca": "stoo-DYENT / stoo-DYENT-ka",
+      "en": "student (m) / student (f)"
+    },
+    {
+      "ru": "преподаватель",
+      "baca": "pri-pa-da-VA-til'",
+      "en": "teacher, lecturer"
+    },
+    {
+      "ru": "врач",
+      "baca": "vrach",
+      "en": "doctor"
+    },
+    {
+      "ru": "имя",
+      "baca": "EE-mya",
+      "en": "name"
+    },
+    {
+      "ru": "красивый",
+      "baca": "kra-SEE-vyy",
+      "en": "beautiful, lovely"
+    },
+    {
+      "ru": "спасибо",
+      "baca": "spa-SEE-ba",
+      "en": "thank you"
+    },
+    {
+      "ru": "пожалуйста",
+      "baca": "pa-ZHA-loos-ta",
+      "en": "please, you're welcome"
+    },
+    {
+      "ru": "извините",
+      "baca": "iz-vi-NEE-tye",
+      "en": "sorry, excuse me"
+    },
+    {
+      "ru": "ничего",
+      "baca": "ni-chi-VO",
+      "en": "no problem; nothing"
+    },
+    {
+      "ru": "хорошо",
+      "baca": "kha-ra-SHO",
+      "en": "good, well, fine"
+    },
+    {
+      "ru": "всё",
+      "baca": "fsyo",
+      "en": "all, everything"
+    },
+    {
+      "ru": "это",
+      "baca": "E-ta",
+      "en": "this, that, it"
+    },
+    {
+      "ru": "как дела?",
+      "baca": "kak di-LA",
+      "en": "how are you?"
+    }
+  ],
+  "exercises": [
+    {
+      "prompt": "Translate into Russian. Remember: there is no word for \"is\".",
+      "items": [
+        "Hello! (formal)",
+        "My name is Ani.",
+        "I'm a student. (female)",
+        "He's not a doctor.",
+        "What's your name? (polite)",
+        "Goodbye!"
+      ]
+    },
+    {
+      "prompt": "Fill in the right ты or вы form (тебя/вас, твои/ваши).",
+      "items": [
+        "To a lecturer in class: Как ____ зовут?",
+        "To your roommate: Как ____ дела?",
+        "To an official at the airport: Извините, ____ говорите по-английски?",
+        "To the neighbors' seven-year-old: Как ____ зовут?",
+        "To three friends at once: Как ____ дела?"
+      ]
+    },
+    {
+      "prompt": "Put the words in the right order.",
+      "items": [
+        "зовут / меня / Ани",
+        "не / я / студент",
+        "приятно / очень",
+        "хорошо / всё",
+        "вас / как / зовут / ?"
+      ]
+    },
+    {
+      "prompt": "Choose the right phrase. Write your answer in Cyrillic.",
+      "items": [
+        "You walk into the lecturers' room at eight in the morning. You say ____.",
+        "You didn't catch what someone said. You say ____.",
+        "You step on someone's foot on the metro. You say ____.",
+        "Someone has just helped you. You say ____.",
+        "You take a formal leave from an office. You say ____."
+      ]
+    }
+  ],
+  "answers": [
+    "Здравствуйте! — Меня зовут Ани. — Я студентка. — Он не врач. — Как вас зовут? — До свидания!",
+    "вас — твои — вы — тебя — ваши",
+    "Меня зовут Ани. — Я не студент. — Очень приятно. — Всё хорошо. — Как вас зовут?",
+    "Здравствуйте — Повторите, пожалуйста — Извините — Спасибо — До свидания"
+  ]
+}

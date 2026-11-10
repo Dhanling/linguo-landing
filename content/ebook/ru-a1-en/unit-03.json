@@ -1,0 +1,448 @@
+{
+  "title": "I'm from Indonesia",
+  "title_target": "Я из Индонезии — Ya iz Indonezii",
+  "goal": "Say where you're from, give your nationality and home city, and meet for the first time a noun ending that changes because of a preposition.",
+  "bekal": [
+    "answer the question Откуда вы?",
+    "give your nationality in the right form for a man or a woman",
+    "name countries and cities in Russian",
+    "say which languages you speak",
+    "use the preposition из with a changing noun ending"
+  ],
+  "dialogs": [
+    {
+      "title": "Диалог — In the registration queue",
+      "intro": "Day two of the course. Ani is queuing at the registration desk with another student, Марко. Notice that the country names change their endings as soon as из comes before them.",
+      "lines": [
+        {
+          "speaker": "Марко:",
+          "text": "[Извините|Iz-vi-NEE-tye], [вы|vy] [тоже|TO-zhy] [здесь|zdyes'] [учитесь|oo-CHEE-tyes']?",
+          "id": "Excuse me, do you study here too?",
+          "literal": "forgive, you — also — here — study?"
+        },
+        {
+          "speaker": "Ани:",
+          "text": "[Да|Da]. [Меня|Mi-NYA] [зовут|za-VOOT] [Ани|A-ni]. [Откуда|At-KOO-da] [вы|vy]?",
+          "id": "Yes. My name is Ani. Where are you from?",
+          "literal": "yes. me — they-call — Ani. from-where — you?"
+        },
+        {
+          "speaker": "Марко:",
+          "text": "[Я|Ya] [из|is] [Италии|i-TA-li-i], [из|is] [Милана|mi-LA-na]. [Я|Ya] [итальянец|i-ta-L'YA-nyets]. [А|A] [вы|vy]?",
+          "id": "I'm from Italy, from Milan. I'm Italian. And you?",
+          "literal": "I — from — Italy. from — Milan. I — Italian (m). and — you?"
+        },
+        {
+          "speaker": "Ани:",
+          "text": "[Я|Ya] [из|is] [Индонезии|in-da-NE-zi-i]. [Я|Ya] [индонезийка|in-da-ni-ZEEY-ka].",
+          "id": "I'm from Indonesia. I'm Indonesian (a woman).",
+          "literal": "I — from — Indonesia. I — Indonesian (f)."
+        },
+        {
+          "speaker": "Марко:",
+          "text": "[Индонезийка|In-da-ni-ZEEY-ka]? [А|A] [почему|pa-chi-MOO] [не|nye] [индонезиец|in-da-ni-ZEE-yets]?",
+          "id": "Indoneziyka? Why not indoneziyets?",
+          "literal": "Indonesian-woman? and — why — not — Indonesian-man?"
+        },
+        {
+          "speaker": "Ани:",
+          "text": "[Потому|Pa-ta-MOO] [что|shto] [я|ya] [женщина|ZHEN-shchi-na]! [Вы|Vy] — [итальянец|i-ta-L'YA-nyets], [ваша|VA-sha] [сестра|sist-RA] — [итальянка|i-ta-L'YAN-ka].",
+          "id": "Because I'm a woman! You're an italyanets, your sister is an italyanka.",
+          "literal": "because — that — I — woman! you — Italian-man, your — sister — Italian-woman."
+        },
+        {
+          "speaker": "Марко:",
+          "text": "[Ах|Akh], [точно|TOCH-na]. [Русский|ROOS-kiy] [язык|yi-ZYK] [трудный|TROOD-nyy].",
+          "id": "Ah, right. Russian is hard.",
+          "literal": "ah, exactly. Russian — language — difficult."
+        },
+        {
+          "speaker": "Ани:",
+          "text": "[Трудный|TROOD-nyy], [но|no] [интересный|in-ti-RYES-nyy]. [Вы|Vy] [говорите|ga-va-REE-tye] [по-русски|pa-ROOS-ki]?",
+          "id": "Hard, but interesting. Do you speak Russian?",
+          "literal": "difficult, but — interesting. you — speak — in-Russian?"
+        },
+        {
+          "speaker": "Марко:",
+          "text": "[Немного|Ni-MNO-ga]. [А|A] [по-английски|pa-an-GLEEY-ski]?",
+          "id": "A little. And English?",
+          "literal": "a-little. and — in-English?"
+        },
+        {
+          "speaker": "Ани:",
+          "text": "[Да|Da], [хорошо|kha-ra-SHO]. [И|Ee] [по-индонезийски|pa-in-da-ni-ZEEY-ski], [конечно|ka-NYESH-na].",
+          "id": "Yes, well. And Indonesian, of course.",
+          "literal": "yes, well. and — in-Indonesian, of-course."
+        },
+        {
+          "speaker": "Марко:",
+          "text": "[Отлично|At-LEECH-na]! [Значит|ZNA-chit], [мы|my] [коллеги|ka-LYE-gi].",
+          "id": "Excellent! So we're classmates.",
+          "literal": "excellent! means, we — colleagues."
+        }
+      ],
+      "notes": [
+        "**Nationality changes with the sex of the PERSON.** ⚠️ This is a classic mistake for English speakers, whose \"Indonesian\" or \"Italian\" fits everyone. In Russian a woman **cannot** call herself индонезиец. The pattern is tidy: the male form + **-ка** for a woman. *итальянец → итальян**ка***, *американец → американ**ка***, *японец → япон**ка***.",
+        "**The name of the language and the nationality are two different words.** *Я индонезийка* (I'm Indonesian) but *Я говорю по-индонезийски* (I speak Indonesian). The **по-…-ски** form is actually an adverb — literally \"in a Russian way\", \"in an English way\". It never changes, so once you know the pattern, every language is done at once.",
+        "**Из means \"from\", and the word after it MUST change its ending.** This is your first encounter with case. Индонези**я** → из Индонези**и**. Итали**я** → из Итали**и**. Москв**а** → из Москв**ы**. After из the noun is never left in its dictionary form.",
+        "**Why Милана, not Милан?** Masculine cities change too: Милан → из Милан**а**, Лондон → из Лондон**а**. Only foreign names that can't take endings stay put — and Джакарта is not one of them: из Джакарт**ы**. The truly rigid names are the ones ending in a foreign-sounding vowel: из Токио, из Осло.",
+        "**Почему asks \"why\", потому что answers \"because\".** They're a pair and almost always come one after the other. ⚠️ Notice that что in потому что is also said *shto*.",
+        "**Конечно is pronounced ka-NYESH-na.** The second word — after что — where ч sounds like *sh*. After these two, you can assume ч always sounds *ch*.",
+        "**Тоже means \"too, also\".** It moves around, but most often comes right after the word it adds to: *Вы **тоже** здесь учитесь?* — Do you study here too?"
+      ],
+      "grammars": [
+        {
+          "title": "Из + genitive — your first case",
+          "body": [
+            "After the preposition **из** (from), a noun moves into the genitive case. For now just learn the three ending patterns; you can forget the name for the moment."
+          ],
+          "table": {
+            "head": [
+              "Dictionary form",
+              "After из",
+              "Full example"
+            ],
+            "rows": [
+              [
+                "ends in **-а** (Москва)",
+                "**-ы**",
+                "Я из Москв**ы**."
+              ],
+              [
+                "ends in **-я** or **-ия** (Россия, Индонезия)",
+                "**-и**",
+                "Я из Росси**и**. Я из Индонези**и**."
+              ],
+              [
+                "ends in a consonant (Милан, Лондон)",
+                "**-а**",
+                "Я из Милан**а**. Я из Лондон**а**."
+              ],
+              [
+                "ends in **-о** (Токио, Осло)",
+                "no change",
+                "Я из Токио."
+              ]
+            ]
+          },
+          "after": [
+            "In speech, **из** often sounds like *is*: *из Италии* → *i-si-TA-li-i*. You're not mishearing; з really does lose its voice before a voiceless sound.",
+            "⚠️ Don't be tempted to use **от** for \"from\". От also means \"from\", but for **people**, not places: *письмо от мамы* (a letter from Mom). For where you come from, always из."
+          ]
+        },
+        {
+          "title": "The country, its people and its language",
+          "body": [
+            "Three columns for each country. The one you'll need most often in this course is in the top row."
+          ],
+          "table": {
+            "head": [
+              "Country",
+              "Man",
+              "Woman",
+              "Language"
+            ],
+            "rows": [
+              [
+                "Индонезия",
+                "индонезиец",
+                "индонезийка",
+                "по-индонезийски"
+              ],
+              [
+                "Россия",
+                "русский",
+                "русская",
+                "по-русски"
+              ],
+              [
+                "Англия",
+                "англичанин",
+                "англичанка",
+                "по-английски"
+              ],
+              [
+                "Америка",
+                "американец",
+                "американка",
+                "по-английски"
+              ],
+              [
+                "Италия",
+                "итальянец",
+                "итальянка",
+                "по-итальянски"
+              ],
+              [
+                "Германия",
+                "немец",
+                "немка",
+                "по-немецки"
+              ],
+              [
+                "Франция",
+                "француз",
+                "француженка",
+                "по-французски"
+              ],
+              [
+                "Китай",
+                "китаец",
+                "китаянка",
+                "по-китайски"
+              ],
+              [
+                "Япония",
+                "японец",
+                "японка",
+                "по-японски"
+              ],
+              [
+                "Корея",
+                "кореец",
+                "кореянка",
+                "по-корейски"
+              ]
+            ]
+          },
+          "after": [
+            "⚠️ **русский** breaks the pattern: it's an adjective, not a noun, so the female form is **русская** (not русскийка). The rest of the list follows the -ец / -ка pattern.",
+            "Unlike in English, nationalities are **not** capitalized in Russian: *я индонезийка*, not *я Индонезийка*. Only country names get a capital letter."
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Asking where someone is from, three levels deep",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "The \"where are you from\" question has three levels, and Russians usually work down them one by one in a first conversation."
+        },
+        {
+          "type": "tabel",
+          "head": [
+            "Question",
+            "Say it",
+            "Asks"
+          ],
+          "rows": [
+            [
+              "Откуда вы?",
+              "at-KOO-da vy",
+              "where you're from (country/city, most common)"
+            ],
+            [
+              "Вы откуда?",
+              "vy at-KOO-da",
+              "the same, more casual word order"
+            ],
+            [
+              "Из какой вы страны?",
+              "is ka-KOY vy stra-NY",
+              "which country (more formal, on forms)"
+            ],
+            [
+              "В каком городе вы живёте?",
+              "f ka-KOM GO-ra-dye vy zhy-VYO-tye",
+              "which city you live in"
+            ]
+          ]
+        },
+        {
+          "type": "kotak",
+          "title": "Two answers that always work",
+          "items": [
+            "**Я из Индонезии.** — a safe answer for anyone, anywhere.",
+            "**Я из Индонезии, из Джакарты.** — answers the city too, and almost always invites the next question. Russians generally know Bali far better than Jakarta; *Вы знаете Бали? Это Индонезия.* is a sentence that opens many conversations.",
+            "⚠️ Don't answer *Я Индонезия* — that means \"I am the country of Indonesia\". The correct answers are **Я из Индонезии** (from) or **Я индонезийка** (the person)."
+          ]
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "ru": "откуда",
+      "baca": "at-KOO-da",
+      "en": "where from"
+    },
+    {
+      "ru": "из",
+      "baca": "is",
+      "en": "from (place of origin)"
+    },
+    {
+      "ru": "страна",
+      "baca": "stra-NA",
+      "en": "country"
+    },
+    {
+      "ru": "город",
+      "baca": "GO-rat",
+      "en": "city"
+    },
+    {
+      "ru": "Индонезия",
+      "baca": "in-da-NE-zi-ya",
+      "en": "Indonesia"
+    },
+    {
+      "ru": "индонезиец / индонезийка",
+      "baca": "in-da-ni-ZEE-yets / -ZEEY-ka",
+      "en": "Indonesian (m / f)"
+    },
+    {
+      "ru": "русский / русская",
+      "baca": "ROOS-kiy / ROOS-ka-ya",
+      "en": "Russian (m / f)"
+    },
+    {
+      "ru": "язык",
+      "baca": "yi-ZYK",
+      "en": "language, tongue"
+    },
+    {
+      "ru": "по-русски",
+      "baca": "pa-ROOS-ki",
+      "en": "in Russian"
+    },
+    {
+      "ru": "по-английски",
+      "baca": "pa-an-GLEEY-ski",
+      "en": "in English"
+    },
+    {
+      "ru": "говорить",
+      "baca": "ga-va-REET'",
+      "en": "to speak"
+    },
+    {
+      "ru": "учиться",
+      "baca": "oo-CHEE-tsa",
+      "en": "to study (at a school)"
+    },
+    {
+      "ru": "тоже",
+      "baca": "TO-zhy",
+      "en": "too, also"
+    },
+    {
+      "ru": "немного",
+      "baca": "ni-MNO-ga",
+      "en": "a little"
+    },
+    {
+      "ru": "почему",
+      "baca": "pa-chi-MOO",
+      "en": "why"
+    },
+    {
+      "ru": "потому что",
+      "baca": "pa-ta-MOO shto",
+      "en": "because"
+    },
+    {
+      "ru": "женщина / мужчина",
+      "baca": "ZHEN-shchi-na / moo-SHCHEE-na",
+      "en": "woman / man"
+    },
+    {
+      "ru": "сестра / брат",
+      "baca": "sist-RA / brat",
+      "en": "sister / brother"
+    },
+    {
+      "ru": "трудный",
+      "baca": "TROOD-nyy",
+      "en": "difficult"
+    },
+    {
+      "ru": "интересный",
+      "baca": "in-ti-RYES-nyy",
+      "en": "interesting"
+    },
+    {
+      "ru": "но",
+      "baca": "no",
+      "en": "but"
+    },
+    {
+      "ru": "и",
+      "baca": "ee",
+      "en": "and"
+    },
+    {
+      "ru": "конечно",
+      "baca": "ka-NYESH-na",
+      "en": "of course"
+    },
+    {
+      "ru": "точно",
+      "baca": "TOCH-na",
+      "en": "exactly, right"
+    },
+    {
+      "ru": "значит",
+      "baca": "ZNA-chit",
+      "en": "so, that means"
+    },
+    {
+      "ru": "отлично",
+      "baca": "at-LEECH-na",
+      "en": "excellent"
+    }
+  ],
+  "exercises": [
+    {
+      "prompt": "Change the place name to its form after из.",
+      "items": [
+        "Россия → Я из ____",
+        "Москва → Я из ____",
+        "Индонезия → Я из ____",
+        "Лондон → Я из ____",
+        "Джакарта → Я из ____",
+        "Италия → Я из ____"
+      ]
+    },
+    {
+      "prompt": "Write the right nationality form for the person in brackets.",
+      "items": [
+        "Ани (woman, Indonesia) — Она ____",
+        "Марко (man, Italy) — Он ____",
+        "Джон (man, America) — Он ____",
+        "Мария (woman, Russia) — Она ____",
+        "Юки (woman, Japan) — Она ____"
+      ]
+    },
+    {
+      "prompt": "Put the words in the right order.",
+      "items": [
+        "вы / откуда / ?",
+        "Индонезии / я / из",
+        "по-русски / немного / я / говорю",
+        "трудный / русский / язык",
+        "индонезийка / я"
+      ]
+    },
+    {
+      "prompt": "Translate into Russian.",
+      "items": [
+        "Where are you from? (polite)",
+        "I'm from Russia, from Moscow.",
+        "She's Italian.",
+        "I speak a little Russian.",
+        "Russian is hard, but interesting.",
+        "Why? Because I'm a woman."
+      ]
+    }
+  ],
+  "answers": [
+    "России — Москвы — Индонезии — Лондона — Джакарты — Италии",
+    "индонезийка — итальянец — американец — русская — японка",
+    "Откуда вы? — Я из Индонезии. — Я немного говорю по-русски. — Русский язык трудный. — Я индонезийка.",
+    "Откуда вы? — Я из России, из Москвы. — Она итальянка. — Я немного говорю по-русски. — Русский язык трудный, но интересный. — Почему? Потому что я женщина."
+  ]
+}
